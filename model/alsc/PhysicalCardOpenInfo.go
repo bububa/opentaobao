@@ -32,6 +32,8 @@ type PhysicalCardOpenInfo struct {
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 修改人
 	UpdateBy string `json:"update_by,omitempty" xml:"update_by,omitempty"`
+	// 卡方案名称
+	CardTemplateName string `json:"card_template_name,omitempty" xml:"card_template_name,omitempty"`
 	// 扩展信息
 	ExtInfo *Extinfo `json:"ext_info,omitempty" xml:"ext_info,omitempty"`
 	// 逻辑删除

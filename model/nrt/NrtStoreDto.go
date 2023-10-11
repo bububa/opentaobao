@@ -54,6 +54,8 @@ type NrtStoreDto struct {
 	BrandName string `json:"brand_name,omitempty" xml:"brand_name,omitempty"`
 	// 卖场部门Id
 	MallDepid string `json:"mall_depid,omitempty" xml:"mall_depid,omitempty"`
+	// 关联的编码
+	RelateCode string `json:"relate_code,omitempty" xml:"relate_code,omitempty"`
 	// 门店名称
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 区编码

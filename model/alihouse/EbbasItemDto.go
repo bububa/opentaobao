@@ -6,6 +6,8 @@ import (
 
 // EbbasItemDto 结构体
 type EbbasItemDto struct {
+	// 服务者列表
+	BrokerList []CommunityAgentRelationDto `json:"broker_list,omitempty" xml:"broker_list>community_agent_relation_dto,omitempty"`
 	// 商品id
 	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 外部id

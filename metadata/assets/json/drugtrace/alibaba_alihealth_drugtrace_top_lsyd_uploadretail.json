@@ -64,7 +64,7 @@
 		{
 			"name": "user_tel",
 			"type": "String",
-			"description": "购买人电话"
+			"description": "购买人电话(最大长度11)"
 		},
 		{
 			"name": "network_bill_flag",
@@ -74,22 +74,22 @@
 		{
 			"name": "medic_doctor",
 			"type": "String",
-			"description": "开药医师"
+			"description": "开药医师(最大长度20)"
 		},
 		{
 			"name": "medic_dispenser",
 			"type": "String",
-			"description": "药品发药人"
+			"description": "药品发药人(最大长度20)"
 		},
 		{
 			"name": "user_name",
 			"type": "String",
-			"description": "药品使用者姓名"
+			"description": "药品使用者姓名(最大长度20)"
 		},
 		{
 			"name": "user_agent",
 			"type": "String",
-			"description": "药品代理人"
+			"description": "药品代理人(最大长度20)"
 		}
 	],
 	"responseParams": [

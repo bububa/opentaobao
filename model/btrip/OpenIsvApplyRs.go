@@ -10,6 +10,8 @@ type OpenIsvApplyRs struct {
 	TravelerList []OpenUserInfo `json:"traveler_list,omitempty" xml:"traveler_list>open_user_info,omitempty"`
 	// 外部出行人列表
 	ExternalTravelerList []OpenUserInfo `json:"external_traveler_list,omitempty" xml:"external_traveler_list>open_user_info,omitempty"`
+	// 城市集行程列表
+	ItinerarySetList []OpenItineraryInfo `json:"itinerary_set_list,omitempty" xml:"itinerary_set_list>open_itinerary_info,omitempty"`
 	// 商旅审批展示id
 	ApplyShowId string `json:"apply_show_id,omitempty" xml:"apply_show_id,omitempty"`
 	// 商旅企业id
@@ -74,6 +76,8 @@ type OpenIsvApplyRs struct {
 	TogetherBookRule int64 `json:"together_book_rule,omitempty" xml:"together_book_rule,omitempty"`
 	// 酒店合住规则
 	HotelShare *HotelShareInfo `json:"hotel_share,omitempty" xml:"hotel_share,omitempty"`
+	// 申请单城市规则： 0出发&amp;目的地一对一，按列表传行程  1多选N个地点，城市集行程 不传默认为0 会根据商旅管理后台-通用差旅设置-行程城市规则中的设置，校验申请单本字段的值是否正确 当行程城市规则中设置的是“1对1行程”时，必须传0 当行程城市规则中设置的是“多对多城市集行程”时，必须传1 会根据此字段传入的值，校验行程传参是否正确 当申请单城市规则为0，itinerary_list行程列表必填 当申请单城市规则为1，城市集行程必填
+	ItineraryRule int64 `json:"itinerary_rule,omitempty" xml:"itinerary_rule,omitempty"`
 	// 商旅审批单id
 	ApplyId int64 `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
 	// 审批类型（5:机票改签审批、6:机票退票审批、3:超标审批）

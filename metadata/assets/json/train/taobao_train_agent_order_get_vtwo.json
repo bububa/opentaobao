@@ -227,6 +227,11 @@
 					"name": "real_ticket_price",
 					"type": "Number",
 					"description": "实际票价(不包含保险价格),例如100元,输出为10000,精确到分."
+				},
+				{
+					"name": "support_no_seat",
+					"type": "Boolean",
+					"description": "是否支持无座"
 				}
 			],
 			"name": "tickets",
@@ -364,6 +369,11 @@
 					"name": "accept_no_vip_custom",
 					"type": "Number",
 					"description": "是否接受非定制,0不接受,1接受"
+				},
+				{
+					"name": "segment_index",
+					"type": "Number",
+					"description": "联程订单定制序号"
 				}
 			],
 			"name": "vip_custom_list",

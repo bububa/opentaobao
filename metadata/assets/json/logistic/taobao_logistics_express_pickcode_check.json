@@ -1,0 +1,62 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "service_type",
+					"type": "String",
+					"description": "订单业务类型（1-退货业务 ）",
+					"required": true
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "单据标识",
+					"required": true
+				},
+				{
+					"name": "service_flag",
+					"type": "String",
+					"description": "订单所需服务，以英文逗号分隔，当前服务枚举值:（1-上门取退 ",
+					"required": true
+				},
+				{
+					"name": "pick_code",
+					"type": "String",
+					"description": "取件码",
+					"required": true
+				}
+			],
+			"name": "tms_pick_code_request",
+			"type": "TmsPickCodeRequest",
+			"description": "取件码校验参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "suc",
+			"type": "Boolean",
+			"description": "校验成功或者异常"
+		},
+		{
+			"name": "biz_error_message",
+			"type": "String",
+			"description": "错误码描述"
+		},
+		{
+			"name": "biz_error_code",
+			"type": "String",
+			"description": "错误码标识"
+		},
+		{
+			"name": "retry",
+			"type": "Boolean",
+			"description": "是否可重试"
+		}
+	],
+	"name": "taobao.logistics.express.pickcode.check",
+	"apiChineseName": "快递公司取货码校验",
+	"description": "快递公司取货码校验",
+	"id": 66950
+}

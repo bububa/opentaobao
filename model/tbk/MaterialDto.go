@@ -30,6 +30,8 @@ type MaterialDto struct {
 	MinCommissionRate string `json:"min_commission_rate,omitempty" xml:"min_commission_rate,omitempty"`
 	// 商品ID
 	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
+	// 转链成功的场景下，需要补充说明的信息
+	ExtraInfo string `json:"extra_info,omitempty" xml:"extra_info,omitempty"`
 	// 优惠券剩余量
 	CouponRemainCount int64 `json:"coupon_remain_count,omitempty" xml:"coupon_remain_count,omitempty"`
 	// 优惠券总量
@@ -44,4 +46,6 @@ type MaterialDto struct {
 	TopnInfo *StepRateDto `json:"topn_info,omitempty" xml:"topn_info,omitempty"`
 	// 小程序链接(暂未对外开放)
 	MiniProgram *MiniProgramDto `json:"mini_program,omitempty" xml:"mini_program,omitempty"`
+	// 计划类型，0代表通用计划，1代表定向计划，2代表鹊桥计划，3代表营销计划
+	CampaignType int64 `json:"campaign_type,omitempty" xml:"campaign_type,omitempty"`
 }

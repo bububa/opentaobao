@@ -8,6 +8,8 @@ type GoodsPublishDto struct {
 	GoodsPropertyList []GoodsPropertyValueDto `json:"goods_property_list,omitempty" xml:"goods_property_list>goods_property_value_dto,omitempty"`
 	// 商品图片url列表
 	ImageUrlList []GoodsPublishImageDto `json:"image_url_list,omitempty" xml:"image_url_list>goods_publish_image_dto,omitempty"`
+	// 多子属性对象数组，仅在支持多子属性的类目使用
+	MultiPropertyValueList []MultiPropertyValueDto `json:"multi_property_value_list,omitempty" xml:"multi_property_value_list>multi_property_value_dto,omitempty"`
 	// 外部商品ID，用于标识外部系统每次提交过来的商品
 	ExternalGoodsId string `json:"external_goods_id,omitempty" xml:"external_goods_id,omitempty"`
 	// 游戏属性对象

@@ -38,6 +38,10 @@ type TaobaoTbkPrivilegeGetAPIRequest struct {
 	_getTopnRate int64
 	// 是否需要获取小程序链接，需要设置1。(暂未对外开放)
 	_miniProgramLink int64
+	// 商品库服务账户(场景id3权限对应的memberid）
+	_manageItemPubId int64
+	// 入参商品id下的skuid，传入时会透传至转链结果url中
+	_skuId int64
 }
 
 // NewTaobaoTbkPrivilegeGetRequest 初始化TaobaoTbkPrivilegeGetAPIRequest对象
@@ -231,4 +235,30 @@ func (r *TaobaoTbkPrivilegeGetAPIRequest) SetMiniProgramLink(_miniProgramLink in
 // GetMiniProgramLink MiniProgramLink Getter
 func (r TaobaoTbkPrivilegeGetAPIRequest) GetMiniProgramLink() int64 {
 	return r._miniProgramLink
+}
+
+// SetManageItemPubId is ManageItemPubId Setter
+// 商品库服务账户(场景id3权限对应的memberid）
+func (r *TaobaoTbkPrivilegeGetAPIRequest) SetManageItemPubId(_manageItemPubId int64) error {
+	r._manageItemPubId = _manageItemPubId
+	r.Set("manage_item_pub_id", _manageItemPubId)
+	return nil
+}
+
+// GetManageItemPubId ManageItemPubId Getter
+func (r TaobaoTbkPrivilegeGetAPIRequest) GetManageItemPubId() int64 {
+	return r._manageItemPubId
+}
+
+// SetSkuId is SkuId Setter
+// 入参商品id下的skuid，传入时会透传至转链结果url中
+func (r *TaobaoTbkPrivilegeGetAPIRequest) SetSkuId(_skuId int64) error {
+	r._skuId = _skuId
+	r.Set("sku_id", _skuId)
+	return nil
+}
+
+// GetSkuId SkuId Getter
+func (r TaobaoTbkPrivilegeGetAPIRequest) GetSkuId() int64 {
+	return r._skuId
 }

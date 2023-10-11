@@ -31,6 +31,16 @@
 					"type": "String",
 					"description": "3D数据包",
 					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "类型 1：躺平3D户型"
+				},
+				{
+					"name": "jump_url",
+					"type": "String",
+					"description": "跳转链接"
 				}
 			],
 			"name": "three_dimensional_dto",

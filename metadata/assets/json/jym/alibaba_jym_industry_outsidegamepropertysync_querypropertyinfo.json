@@ -1,0 +1,61 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "game_id",
+					"type": "String",
+					"description": "交易猫游戏id",
+					"required": true
+				}
+			],
+			"name": "out_side_query_game_property_info_request_dto",
+			"type": "OutSideQueryGamePropertyInfoRequestDTO",
+			"description": "属性信息查询DTO",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "game_properties_compressed",
+					"type": "String",
+					"description": "加密压缩的属性信息"
+				}
+			],
+			"name": "result",
+			"type": "OutSideQueryGamePropertyInfoResponseDTO",
+			"description": "外部查询需要采集属性结构信息响应DTO"
+		},
+		{
+			"name": "sub_code_type",
+			"type": "String",
+			"description": "子集错误码，提供与业务细节使用"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "接口调用结果: true/false"
+		},
+		{
+			"name": "sub_extra_err_msg",
+			"type": "String",
+			"description": "子集错误描述，提供与业务细节使用"
+		},
+		{
+			"name": "state_code",
+			"type": "String",
+			"description": "错误码枚举"
+		},
+		{
+			"name": "extra_err_msg",
+			"type": "String",
+			"description": "错误详细描述"
+		}
+	],
+	"name": "alibaba.jym.industry.outsidegamepropertysync.querypropertyinfo",
+	"apiChineseName": "外部查询游戏属性库属性信息",
+	"description": "外部查询游戏属性库属性信息",
+	"id": 66724
+}

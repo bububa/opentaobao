@@ -110,6 +110,11 @@
 									"name": "consume_time",
 									"type": "Date",
 									"description": "核销时间"
+								},
+								{
+									"name": "option_list",
+									"type": "String",
+									"description": "选装选配json"
 								}
 							],
 							"name": "sub_orders",

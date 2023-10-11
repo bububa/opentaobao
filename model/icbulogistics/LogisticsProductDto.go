@@ -10,6 +10,8 @@ type LogisticsProductDto struct {
 	ProductName string `json:"product_name,omitempty" xml:"product_name,omitempty"`
 	// 产品编码
 	ProductCode string `json:"product_code,omitempty" xml:"product_code,omitempty"`
+	// 时效类型
+	DeliveryType string `json:"delivery_type,omitempty" xml:"delivery_type,omitempty"`
 	// 是否上门揽收
 	Pickup bool `json:"pickup,omitempty" xml:"pickup,omitempty"`
 }

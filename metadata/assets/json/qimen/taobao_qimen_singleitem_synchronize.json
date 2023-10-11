@@ -370,6 +370,6 @@
 	],
 	"name": "taobao.qimen.singleitem.synchronize",
 	"apiChineseName": "商品同步接口",
-	"description": "ERP调用奇门的接口,同步商品信息给WMS",
+	"description": "taobao.qimen.singleitem.synchronize",
 	"id": 25998
 }

@@ -22,6 +22,8 @@ type BnbLocationDto struct {
 	Doorplate string `json:"doorplate,omitempty" xml:"doorplate,omitempty"`
 	// 经度
 	Longitude string `json:"longitude,omitempty" xml:"longitude,omitempty"`
+	// 城市名称，优先取city字段，city字段如果为空会校验cityName
+	CityName string `json:"city_name,omitempty" xml:"city_name,omitempty"`
 	// 城市编码。参见：http://hotel.alitrip.com/area.htm，domestic为false时，输入对应国家的海外城市编码，可调用海外城市查询接口获取；（更新时为可选）
 	City int64 `json:"city,omitempty" xml:"city,omitempty"`
 	// 国别 0:国内;1:国外。默认是国内

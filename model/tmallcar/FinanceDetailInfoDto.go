@@ -14,8 +14,6 @@ type FinanceDetailInfoDto struct {
 	OuterFinanceOrderId string `json:"outer_finance_order_id,omitempty" xml:"outer_finance_order_id,omitempty"`
 	// 厂商名称
 	ManufactureName string `json:"manufacture_name,omitempty" xml:"manufacture_name,omitempty"`
-	// 用户id
-	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// 商品id
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 订单金额

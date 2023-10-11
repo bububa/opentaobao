@@ -1,0 +1,281 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间戳（毫秒）",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID（服务商发起请求的ID）",
+					"required": true
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "淘天物流服务商ID",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "warehouse_code",
+							"type": "String",
+							"description": "服务商自定义的仓编码，服务商+业务身份下唯一",
+							"required": true
+						},
+						{
+							"name": "warehouse_name",
+							"type": "String",
+							"description": "服务商自定义的仓库名称，创建时必填",
+							"required": true
+						},
+						{
+							"name": "wms_store_code",
+							"type": "String",
+							"description": "WMS系统仓code，创建时必填",
+							"required": true
+						},
+						{
+							"name": "wms_appkey",
+							"type": "String",
+							"description": "WMSAppkey，创建时必填",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态：0=停用，1=启用；创建默认启用"
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省份，string（15)，不支持更新，创建时必填"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "城市，string（15），不支持更新，创建时必填"
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "地区，string（15），不支持更新，创建时必填"
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "乡镇，string（15），不支持更新，创建时必填"
+						},
+						{
+							"name": "detail_address",
+							"type": "String",
+							"description": "详细地址，string（50），不支持更新，创建时必填",
+							"required": true
+						},
+						{
+							"name": "zip_code",
+							"type": "String",
+							"description": "邮编，string（15"
+						},
+						{
+							"subParams": [
+								{
+									"name": "type",
+									"type": "String",
+									"description": "联系人分组，string（50），mr=默认组，th=退货组，kf=客服组，rk=入库组，ck=出库组，kn=库内组，sw=商务组",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "联系人名称，string（20）",
+									"required": true
+								},
+								{
+									"name": "mobile",
+									"type": "String",
+									"description": "联系人手机，string（20)",
+									"required": true
+								},
+								{
+									"name": "tel",
+									"type": "String",
+									"description": "固定电话 ，string（20)"
+								}
+							],
+							"name": "contact_infos",
+							"type": "ContactInfo[]",
+							"description": "联系人信息；(组)，创建时必填",
+							"required": true
+						},
+						{
+							"subParams": [
+								{
+									"name": "daily_order_quantity",
+									"type": "Number",
+									"description": "日均单量，创建时必填"
+								},
+								{
+									"name": "max_outbound_capacity",
+									"type": "Number",
+									"description": "峰值出库能力，创建时必填 1：小于日常20倍 2：大于等于日常20倍小于50倍 3：大于等于日常50倍"
+								},
+								{
+									"name": "platform_delivery_codes",
+									"type": "String[]",
+									"description": "合作快递公司编码列表；最多50个，创建时必填"
+								},
+								{
+									"name": "storage_area",
+									"type": "Number",
+									"description": "仓储面积（m³），创建时必填"
+								},
+								{
+									"name": "b2c_experience",
+									"type": "Number",
+									"description": "B2C经验：创建时必填 1：小于1年 2：大于等于1，小于2年 3：大于等于2，小于5年 4：大于等于5年"
+								},
+								{
+									"name": "goods_categories",
+									"type": "String[]",
+									"description": "优势品类：创建时必填 10=医药健康；11=宠物用品；12=家装家居；13=家清用品；14=母婴亲子；15=美妆个护；16=图书音像；17=服装服饰；18=箱包配件；19=汽车用品；20=电子产品；21=玩具潮玩；22=生鲜；23=运动户外；24=食品"
+								},
+								{
+									"name": "additional_services",
+									"type": "String[]",
+									"description": "增值服务：创建时必填 1=商品有效期管理；2=冷链储运；3=包裹内物品整理；4=礼盒打包；5=商品定制服务；6=送货上门；7=订单仓内拦截；8=订单仓外拦截"
+								},
+								{
+									"name": "warehouse_type",
+									"type": "Number",
+									"description": "仓库类型：创建时必填 1=平库；2=楼库；3=高台库；4=立体仓库"
+								},
+								{
+									"name": "fire_safety_qualification",
+									"type": "Number",
+									"description": "消防资质：创建时必填 1=甲类；2=乙一类；3=乙二类；4=丙一类；5=丙二类；6=丁类；7=戊类"
+								},
+								{
+									"name": "lease_qualification",
+									"type": "Number",
+									"description": "租赁资质：创建时必填 1=租赁物业；2=自建物业"
+								},
+								{
+									"name": "insurance_contract",
+									"type": "Number",
+									"description": "保险合同 1=基本险；2=综合险；3=一切险"
+								},
+								{
+									"name": "fire_safety_acceptances",
+									"type": "String[]",
+									"description": "消防验收凭证链接（仅支持png、jpg、jpge格式，最多6张，每张大小不超过10M）：创建时必填"
+								},
+								{
+									"name": "ownership_proofs",
+									"type": "String[]",
+									"description": "租赁/产权证明链接（仅支持png、jpg、jpge格式，最多6张，每张大小不超过10M）：创建时必填"
+								},
+								{
+									"name": "wh_insurance_policies",
+									"type": "String[]",
+									"description": "仓库/货品保险单链接（仅支持png、jpg、jpge格式，最多6张，每张大小不超过10M）"
+								},
+								{
+									"name": "wh_interior_pictures",
+									"type": "String[]",
+									"description": "仓内图片链接（仅支持png、jpg、jpge格式，最多6张，每张大小不超过10M）：创建时必填"
+								},
+								{
+									"name": "business_licenses",
+									"type": "String[]",
+									"description": "营业执照链接（仅支持png、jpg、jpge格式，最多6张，每张大小不超过10M）：创建时必填"
+								},
+								{
+									"name": "introduction_video",
+									"type": "String",
+									"description": "介绍视频链接（仅支持mov、mp4、avi格式，大小不超过20M建议上传仓内作业视频。且不能露出人脸）"
+								},
+								{
+									"name": "service_products",
+									"type": "String[]",
+									"description": "服务产品列表"
+								}
+							],
+							"name": "extend_info",
+							"type": "ExtendInfo",
+							"description": "仓拓展信息，创建时必填"
+						}
+					],
+					"name": "warehouse_infos",
+					"type": "WarehouseInfo[]",
+					"description": "仓信息数组",
+					"required": true
+				}
+			],
+			"name": "warehouse_update_request",
+			"type": "WarehouseUpdateRequest",
+			"description": "创建/更新仓入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true|false"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息"
+				},
+				{
+					"name": "result",
+					"type": "String",
+					"description": "0=全部失败，1=全部成功，2=部分成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "错误码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "warehouse_code",
+							"type": "String",
+							"description": "服务商自定义的仓编码，服务商+业务身份下唯一，string（50）"
+						}
+					],
+					"name": "data",
+					"type": "WarehouseResultDetail[]",
+					"description": "处理失败的仓（组）"
+				}
+			],
+			"name": "warehouse_update_response",
+			"type": "WarehouseUpdateResponse",
+			"description": "创建/更新仓出参"
+		}
+	],
+	"name": "taobao.logistics.warehouse.resource.update",
+	"apiChineseName": "服务商新建/更新仓",
+	"description": "服务商新建/更新仓",
+	"id": 67389
+}

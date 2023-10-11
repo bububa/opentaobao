@@ -22,6 +22,8 @@ type TaobaoTrainAgentChangeorderdetailQueryVtwoAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 改签子单列表
 	ChangeApplySubOrders []ChangeApplySubOrderDto `json:"change_apply_sub_orders,omitempty" xml:"change_apply_sub_orders>change_apply_sub_order_dto,omitempty"`
+	// 定制信息集合
+	CustomMadeList []CustomMadeItemDto `json:"custom_made_list,omitempty" xml:"custom_made_list>custom_made_item_dto,omitempty"`
 	// 改签申请单主单
 	ChangeApplyOrder *ChangeApplyOrderDto `json:"change_apply_order,omitempty" xml:"change_apply_order,omitempty"`
 }

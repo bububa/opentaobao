@@ -44,7 +44,7 @@
 				{
 					"name": "sid",
 					"type": "String",
-					"description": "物流运单号"
+					"description": "交易编号 (父订单的交易编号)"
 				},
 				{
 					"name": "tid",
@@ -224,7 +224,7 @@
 				{
 					"name": "receiver_name",
 					"type": "String",
-					"description": "收货人的姓名"
+					"description": "收货人的姓名（加密）"
 				},
 				{
 					"name": "receiver_country",
@@ -254,7 +254,7 @@
 				{
 					"name": "receiver_address",
 					"type": "String",
-					"description": "收货人的详细地址"
+					"description": "收货人的详细地址（加密）"
 				},
 				{
 					"name": "receiver_zip",
@@ -264,12 +264,12 @@
 				{
 					"name": "receiver_mobile",
 					"type": "String",
-					"description": "收货人的手机号码"
+					"description": "收货人的手机号码（加密）"
 				},
 				{
 					"name": "receiver_phone",
 					"type": "String",
-					"description": "收货人的电话号码"
+					"description": "收货人的电话号码（加密）"
 				},
 				{
 					"name": "buyer_email",
@@ -1306,6 +1306,108 @@
 							"name": "ship_info",
 							"type": "ShipInfo[]",
 							"description": "发货信息，目前只记录了发货方式"
+						},
+						{
+							"subParams": [
+								{
+									"name": "item_id",
+									"type": "Number",
+									"description": "商品数字编号"
+								},
+								{
+									"name": "sku_id",
+									"type": "Number",
+									"description": "商品的最小库存单位Sku的id"
+								},
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "数量"
+								},
+								{
+									"name": "item_name",
+									"type": "String",
+									"description": "商品名称"
+								},
+								{
+									"name": "outer_iid",
+									"type": "String",
+									"description": "商家外部编码(可与商家外部系统对接)。"
+								},
+								{
+									"name": "sku_title",
+									"type": "String",
+									"description": "SKU标题"
+								},
+								{
+									"name": "origin_fee",
+									"type": "Number",
+									"description": "成分品原价"
+								},
+								{
+									"name": "combine_sub_item_fee",
+									"type": "Number",
+									"description": "成分品套餐原价"
+								},
+								{
+									"name": "ismain",
+									"type": "Boolean",
+									"description": "套餐购是否商品主子成分品\u0000\u0000"
+								},
+								{
+									"name": "estcon_time",
+									"type": "String",
+									"description": "套餐购成分品预计承诺时效(如果为时间格式为yyyy-MM-dd 则为绝对时间，为数字则为相对时间，比如7天内发货)"
+								},
+								{
+									"name": "outer_sku_id",
+									"type": "String",
+									"description": "outer_sku_id"
+								},
+								{
+									"name": "edu_original_fee",
+									"type": "Number",
+									"description": "教育优惠原价"
+								}
+							],
+							"name": "combine_item_info",
+							"type": "CombineSubItemDO[]",
+							"description": "组合品信息"
+						},
+						{
+							"name": "need_return",
+							"type": "Boolean",
+							"description": "仅对赠品子单生效，退货时赠品是否需要随主品一起退回，字段缺失/true-需要退回，false-无需退回"
+						},
+						{
+							"name": "bundle_id",
+							"type": "String",
+							"description": "套餐购套餐ID"
+						},
+						{
+							"name": "bundle_out_name",
+							"type": "String",
+							"description": "套餐购套餐名称"
+						},
+						{
+							"name": "bundle_type",
+							"type": "Number",
+							"description": "套餐购套餐类型标识 1营销套餐-PromoBundle 2人群套餐-CrowdBundle"
+						},
+						{
+							"name": "one_yuan_reservation_orders",
+							"type": "String",
+							"description": "主品关联的1元商品订单号"
+						},
+						{
+							"name": "is_jzfx",
+							"type": "Boolean",
+							"description": "是否家装分销订单，入参fields中传入orders.is_jzfx时返回"
+						},
+						{
+							"name": "jewcc_no",
+							"type": "String",
+							"description": "鉴定编码"
 						}
 					],
 					"name": "orders",
@@ -1519,6 +1621,21 @@
 							"name": "ext_service_biz_id",
 							"type": "String",
 							"description": "服务订单与实物订单关联关系"
+						},
+						{
+							"name": "combine_sub_item_id",
+							"type": "Number",
+							"description": "套餐购对应的成分品id"
+						},
+						{
+							"name": "combine_sub_item_sku_id",
+							"type": "Number",
+							"description": "套餐购对应的成分品的skuId"
+						},
+						{
+							"name": "comm_amount_unit",
+							"type": "String",
+							"description": "套餐购服务原价\u0000 (单位分) "
 						}
 					],
 					"name": "service_orders",
@@ -2028,6 +2145,36 @@
 							"name": "white_delivery_cps",
 							"type": "String",
 							"description": "服务决策的快递白名单列表"
+						},
+						{
+							"name": "biz_delivery_type",
+							"type": "Number",
+							"description": "订单推荐配送类型      * 0：子单无配建议；ERP按照自己的逻辑进行择配。      * 1：子单有推荐配list，erp可按需参考。      * 2：子单有推荐配list，erp必须在推荐配list中选择配品牌。      * 3：子单有禁用配list，erp需要过滤配品牌。"
+						},
+						{
+							"name": "unused_warehouse_error_msg",
+							"type": "String",
+							"description": "未使用仓建议报错"
+						},
+						{
+							"name": "unused_delivery_error_msg",
+							"type": "String",
+							"description": "未使用配建议报错"
+						},
+						{
+							"name": "used_black_delivery_error_msg",
+							"type": "String",
+							"description": "使用禁止配报错"
+						},
+						{
+							"name": "promise_outbound_time",
+							"type": "String",
+							"description": "承诺/最晚出库时间"
+						},
+						{
+							"name": "promise_collect_time",
+							"type": "String",
+							"description": "承诺/最晚揽收时间"
 						}
 					],
 					"name": "logistics_infos",
@@ -2745,6 +2892,311 @@
 					"name": "is_force_dc",
 					"type": "Boolean",
 					"description": "ascp会自动流转到菜鸟仓发货"
+				},
+				{
+					"subParams": [
+						{
+							"name": "invoice_no",
+							"type": "String",
+							"description": "运单号"
+						},
+						{
+							"name": "logistics_company",
+							"type": "String",
+							"description": "物流公司"
+						},
+						{
+							"name": "sub_order_id",
+							"type": "String",
+							"description": "子订单id"
+						},
+						{
+							"subParams": [
+								{
+									"name": "type",
+									"type": "Number",
+									"description": "0普通1组合商品2组套商品3后置赠品4状态推进"
+								},
+								{
+									"name": "consign_status",
+									"type": "Number",
+									"description": "0全部发货1部分发货"
+								},
+								{
+									"name": "amount",
+									"type": "Number",
+									"description": "数量"
+								},
+								{
+									"subParams": [
+										{
+											"name": "item_id",
+											"type": "Number",
+											"description": "商品数字编号"
+										},
+										{
+											"name": "sku_id",
+											"type": "Number",
+											"description": "sku_id"
+										},
+										{
+											"name": "amount",
+											"type": "Number",
+											"description": "数量"
+										}
+									],
+									"name": "goods_details",
+									"type": "PackageGoodsDetail[]",
+									"description": "包裹详情"
+								}
+							],
+							"name": "send_goods_details",
+							"type": "SendGoodsDetail[]",
+							"description": "包裹详情（仅支持成分品）"
+						}
+					],
+					"name": "combine_logistics_details",
+					"type": "CombineLogisticsDetail[]",
+					"description": "子订单组合品物流详情（仅支持拆单发货）"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "detail_order_id",
+									"type": "Number",
+									"description": "子订单号"
+								},
+								{
+									"name": "logistics_company",
+									"type": "String",
+									"description": "物流公司"
+								},
+								{
+									"name": "stage_no",
+									"type": "Number",
+									"description": "阶段号"
+								},
+								{
+									"name": "invoice_no",
+									"type": "String",
+									"description": "运单号"
+								},
+								{
+									"name": "refund_id",
+									"type": "String",
+									"description": "退款单号"
+								},
+								{
+									"name": "refund",
+									"type": "Boolean",
+									"description": "是否退货"
+								}
+							],
+							"name": "identify_logistics_infos",
+							"type": "IdentifyLogisticsInfo[]",
+							"description": "三方鉴定物流相关信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "detail_order_id",
+									"type": "Number",
+									"description": "子订单号"
+								},
+								{
+									"name": "unit_id",
+									"type": "String",
+									"description": "标的物"
+								},
+								{
+									"name": "service_id",
+									"type": "String",
+									"description": "服务单号"
+								}
+							],
+							"name": "identify_service_infos",
+							"type": "IdentifyServiceInfo[]",
+							"description": "三方鉴定服务相关信息"
+						}
+					],
+					"name": "identify_info",
+					"type": "IdentifyInfo",
+					"description": "三方鉴定信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "related_id",
+							"type": "String",
+							"description": "时效关联的订单好"
+						},
+						{
+							"name": "consign_time",
+							"type": "String",
+							"description": "商家的预计发货时间"
+						},
+						{
+							"name": "render_consign_time",
+							"type": "String",
+							"description": "商家的预计发货时间"
+						},
+						{
+							"subParams": [
+								{
+									"name": "comb_id",
+									"type": "String",
+									"description": "套餐组合id"
+								},
+								{
+									"name": "item_id",
+									"type": "String",
+									"description": "套餐内的商品id"
+								},
+								{
+									"name": "sku_id",
+									"type": "String",
+									"description": "套餐内商品的skuId"
+								},
+								{
+									"name": "consign_time",
+									"type": "String",
+									"description": "成分品的预计发货时间"
+								},
+								{
+									"name": "render_consign_time",
+									"type": "String",
+									"description": "成分品的预计发货时间"
+								}
+							],
+							"name": "combine_item",
+							"type": "CombineConsignInfo[]",
+							"description": "成分品发货时效"
+						}
+					],
+					"name": "logistics_consign_info",
+					"type": "LogisticsConsignInfo[]",
+					"description": "物流时效信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "related_id",
+							"type": "String",
+							"description": "修改关联的订单好"
+						},
+						{
+							"name": "consign_time",
+							"type": "String",
+							"description": "修改后的发货时效"
+						},
+						{
+							"name": "origin_consign_time",
+							"type": "String",
+							"description": "修改前的发货时效"
+						},
+						{
+							"name": "modify_time",
+							"type": "String",
+							"description": "修改时间"
+						},
+						{
+							"name": "modify_reason",
+							"type": "String",
+							"description": "修改原因"
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "成分品的商品id"
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "成分品的skuId"
+						},
+						{
+							"name": "comb_id",
+							"type": "String",
+							"description": "成分品的组合id"
+						}
+					],
+					"name": "logistics_modify_info",
+					"type": "LogisticsModifyInfo[]",
+					"description": "发货时效修改记录"
+				},
+				{
+					"name": "priority_consign_time",
+					"type": "String",
+					"description": "优先发货时间"
+				},
+				{
+					"subParams": [
+						{
+							"name": "logistics_service_msg",
+							"type": "String",
+							"description": "服务承诺/异常文案"
+						},
+						{
+							"name": "asdp_biz_type",
+							"type": "String",
+							"description": "物流服务业务身份"
+						},
+						{
+							"name": "asdp_ads",
+							"type": "String",
+							"description": "物流信息，多个值时用英文逗号隔开"
+						},
+						{
+							"name": "sign_time",
+							"type": "String",
+							"description": "计划送达时间"
+						},
+						{
+							"name": "promise_sign_time",
+							"type": "String",
+							"description": "承诺/最晚送达时间"
+						},
+						{
+							"name": "push_time",
+							"type": "String",
+							"description": "ERP应推单时间(主单)"
+						},
+						{
+							"name": "no_detail_part_consign",
+							"type": "String",
+							"description": "1：不支持子单部分发货"
+						},
+						{
+							"name": "sink_type",
+							"type": "String",
+							"description": "1：代表该订单是预售下沉订单类型为前置表达"
+						}
+					],
+					"name": "logistics_agreement",
+					"type": "LogisticsAgreement",
+					"description": "物流服务"
+				},
+				{
+					"name": "real_name_auth_status",
+					"type": "String",
+					"description": "天猫国际实名认证状态，1：实名完成 0：实名未完成"
+				},
+				{
+					"name": "third_party_customs_declaration",
+					"type": "String",
+					"description": "天猫国际第三方报关标识，1：第三方报关 0：非第三方报关"
+				},
+				{
+					"name": "receipt_type",
+					"type": "String",
+					"description": "补差类型，ITEM:商品补差 POSTAGE:邮费补差 OTHER：其他补差"
+				},
+				{
+					"name": "receipt_rel_ids",
+					"type": "String[]",
+					"description": "补差关联订单号列表"
 				}
 			],
 			"name": "trade",

@@ -1,0 +1,314 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "product_code",
+					"type": "String",
+					"description": "产品编号"
+				},
+				{
+					"name": "journey_code",
+					"type": "String",
+					"description": "行程编号"
+				},
+				{
+					"subParams": [
+						{
+							"name": "date",
+							"type": "String",
+							"description": "出团日期 格式yyyy-MM-dd"
+						},
+						{
+							"name": "project_code",
+							"type": "String",
+							"description": "团期计划编号"
+						},
+						{
+							"subParams": [
+								{
+									"name": "price_category",
+									"type": "String",
+									"description": "价格类型 ADULT:成人价 CHILD:儿童价"
+								},
+								{
+									"name": "price",
+									"type": "Number",
+									"description": "同行价"
+								},
+								{
+									"name": "promotion_price",
+									"type": "Number",
+									"description": "加返"
+								},
+								{
+									"name": "sale_price",
+									"type": "Number",
+									"description": "门市价"
+								}
+							],
+							"name": "price_list",
+							"type": "FscRouteProjectPriceApiDto[]",
+							"description": "价格体系"
+						},
+						{
+							"name": "contact_name",
+							"type": "String",
+							"description": "联系人姓名"
+						},
+						{
+							"name": "contact_phone",
+							"type": "String",
+							"description": "联系人电话"
+						},
+						{
+							"name": "booking_unit_price",
+							"type": "Number",
+							"description": "订金单价(单位分)"
+						},
+						{
+							"name": "end_sign_date",
+							"type": "String",
+							"description": "截止报名日期"
+						},
+						{
+							"name": "inv_count",
+							"type": "Number",
+							"description": "剩余库存数量"
+						},
+						{
+							"name": "occupy_count",
+							"type": "Number",
+							"description": "已占库存数量"
+						},
+						{
+							"subParams": [
+								{
+									"name": "commission_type",
+									"type": "String",
+									"description": "佣金类型"
+								},
+								{
+									"name": "commission_num",
+									"type": "String",
+									"description": "佣金数值"
+								}
+							],
+							"name": "fsc_sale_commission",
+							"type": "FscSaleCommissionApiDTO",
+							"description": "佣金设置"
+						},
+						{
+							"subParams": [
+								{
+									"name": "day",
+									"type": "String",
+									"description": "行程天数第几天"
+								},
+								{
+									"name": "date",
+									"type": "String",
+									"description": "行程日期 yyyy-MM-dd"
+								},
+								{
+									"name": "flight_code",
+									"type": "String",
+									"description": "航班号"
+								},
+								{
+									"name": "airline_code",
+									"type": "String",
+									"description": "航空公司代码"
+								},
+								{
+									"name": "start_city",
+									"type": "String",
+									"description": "出发城市名称"
+								},
+								{
+									"name": "start_time",
+									"type": "String",
+									"description": "起飞时间HHmm(时分)"
+								},
+								{
+									"name": "start_airport",
+									"type": "String",
+									"description": "起飞机场代码 机场三字码"
+								},
+								{
+									"name": "arrive_city",
+									"type": "String",
+									"description": "抵达城市"
+								},
+								{
+									"name": "arrive_time",
+									"type": "String",
+									"description": "抵达时间HHmm(时分)"
+								},
+								{
+									"name": "arrive_airport",
+									"type": "String",
+									"description": "降落机场代码"
+								},
+								{
+									"name": "buy_out",
+									"type": "Boolean",
+									"description": "是否包机 true-是false-否"
+								},
+								{
+									"name": "flight_type",
+									"type": "String",
+									"description": "机型"
+								},
+								{
+									"name": "cabin_type",
+									"type": "String",
+									"description": "舱型"
+								}
+							],
+							"name": "depart_flight",
+							"type": "FlightInfoApiDTO",
+							"description": "去程航班"
+						},
+						{
+							"subParams": [
+								{
+									"name": "day",
+									"type": "String",
+									"description": "行程天数第几天"
+								},
+								{
+									"name": "date",
+									"type": "String",
+									"description": "行程日期 yyyy-MM-dd"
+								},
+								{
+									"name": "flight_code",
+									"type": "String",
+									"description": "航班号"
+								},
+								{
+									"name": "airline_code",
+									"type": "String",
+									"description": "航空公司代码"
+								},
+								{
+									"name": "start_city",
+									"type": "String",
+									"description": "出发城市名称"
+								},
+								{
+									"name": "start_time",
+									"type": "String",
+									"description": "起飞时间HHmm(时分)"
+								},
+								{
+									"name": "start_airport",
+									"type": "String",
+									"description": "起飞机场代码 机场三字码"
+								},
+								{
+									"name": "arrive_city",
+									"type": "String",
+									"description": "抵达城市"
+								},
+								{
+									"name": "arrive_time",
+									"type": "String",
+									"description": "抵达时间HHmm(时分)"
+								},
+								{
+									"name": "arrive_airport",
+									"type": "String",
+									"description": "降落机场代码"
+								},
+								{
+									"name": "buy_out",
+									"type": "Boolean",
+									"description": "是否包机 true-是false-否"
+								},
+								{
+									"name": "flight_type",
+									"type": "String",
+									"description": "机型"
+								},
+								{
+									"name": "cabin_type",
+									"type": "String",
+									"description": "舱型"
+								}
+							],
+							"name": "return_flight",
+							"type": "FlightInfoApiDTO",
+							"description": "返程航班"
+						}
+					],
+					"name": "project_list",
+					"type": "FscRouteProjectApiDto[]",
+					"description": "团期列表"
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "供应商id"
+				}
+			],
+			"name": "fsc_project_modify_request",
+			"type": "FscProjectModifyRequest",
+			"description": "fscProjectModifyRequest",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "project_code",
+									"type": "String",
+									"description": "供应商（外部）团期编码"
+								},
+								{
+									"name": "fsc_project_id",
+									"type": "String",
+									"description": "供销平台团期编码"
+								}
+							],
+							"name": "project_map_d_t_o_s",
+							"type": "FscProjectMapDTO[]",
+							"description": "团期计划ID映射"
+						}
+					],
+					"name": "fsc_project_add_api_response",
+					"type": "FscProjectAddApiResponse",
+					"description": "业务数据"
+				}
+			],
+			"name": "top_result",
+			"type": "TopResult",
+			"description": "通用返回结果"
+		}
+	],
+	"name": "taobao.alitrip.travel.fsc.route.api.project.add",
+	"apiChineseName": "新增团期",
+	"description": "新增团期",
+	"id": 66874
+}

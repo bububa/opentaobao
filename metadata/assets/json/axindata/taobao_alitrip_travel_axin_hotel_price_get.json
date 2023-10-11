@@ -296,6 +296,11 @@
 											"name": "hour_room_info_dto",
 											"type": "HourRoomInfoDTO",
 											"description": "小时房信息"
+										},
+										{
+											"name": "invoicing_mode",
+											"type": "Number",
+											"description": "1-订单金额酒店开票，分销商开返佣发票 2-订单金额阿信开票，分销商不开票 3-订单金额无票，分销商开返佣发票"
 										}
 									],
 									"name": "rate_list",

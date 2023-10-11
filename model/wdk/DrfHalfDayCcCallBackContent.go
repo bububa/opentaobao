@@ -1,7 +1,7 @@
 package wdk
 
-// DrfHalfDayCcCallBackContent 结构体
-type DrfHalfDayCcCallBackContent struct {
+// DrfHalfDayCcCallbackContent 结构体
+type DrfHalfDayCcCallbackContent struct {
 	// 子单出库关联的同城令牌
 	SameTownPackages []SameTownPackage `json:"same_town_packages,omitempty" xml:"same_town_packages>same_town_package,omitempty"`
 	// 商品名称

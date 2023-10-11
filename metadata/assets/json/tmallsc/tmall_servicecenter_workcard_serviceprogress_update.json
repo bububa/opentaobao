@@ -1,0 +1,60 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "服务描述"
+				},
+				{
+					"name": "action",
+					"type": "String",
+					"description": "服务动作",
+					"required": true
+				},
+				{
+					"name": "workcard_id",
+					"type": "Number",
+					"description": "工单id",
+					"required": true
+				},
+				{
+					"name": "attribute_map",
+					"type": "String",
+					"description": "扩展信息回传备注"
+				},
+				{
+					"name": "pic_url_list",
+					"type": "String[]",
+					"description": "图片地址回传集合"
+				}
+			],
+			"name": "update_service_progress_request",
+			"type": "UpdateServiceProgressRequest",
+			"description": "服务进度信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否调用成功"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码"
+		}
+	],
+	"name": "tmall.servicecenter.workcard.serviceprogress.update",
+	"apiChineseName": "回传工单服务进度",
+	"description": "回传工单服务进度",
+	"id": 57196
+}

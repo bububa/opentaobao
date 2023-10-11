@@ -10,6 +10,8 @@ type PunishDto struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 版本号
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
+	// 类目编码
+	CategoryCode int64 `json:"category_code,omitempty" xml:"category_code,omitempty"`
 	// 是否处罚
 	IsPunish bool `json:"is_punish,omitempty" xml:"is_punish,omitempty"`
 }

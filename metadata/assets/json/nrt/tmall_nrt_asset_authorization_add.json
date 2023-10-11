@@ -1,0 +1,59 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "phone_list",
+					"type": "String[]",
+					"description": "员工手机号",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "Number",
+					"description": "同城站ID",
+					"required": true
+				}
+			],
+			"name": "top_asset_data_auth_req_dto",
+			"type": "TopAssetDataAuthReqDTO",
+			"description": "添加数据权限请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "succ",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "入参手机号"
+						},
+						{
+							"name": "msg",
+							"type": "String",
+							"description": "添加失败原因"
+						}
+					],
+					"name": "failed",
+					"type": "AuthFailedMsg[]",
+					"description": "添加失败的手机号及原因"
+				}
+			],
+			"name": "data",
+			"type": "TopAssetDataAuthResultDTO",
+			"description": "返回结果"
+		}
+	],
+	"name": "tmall.nrt.asset.authorization.add",
+	"apiChineseName": "增加数据权限授权",
+	"description": "增加数据权限授权",
+	"id": 65292
+}

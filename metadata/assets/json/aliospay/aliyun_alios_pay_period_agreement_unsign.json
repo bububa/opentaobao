@@ -1,0 +1,73 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "请求唯一id，不可重复，服务端会根据此参数防重放",
+					"required": true
+				},
+				{
+					"name": "lang",
+					"type": "String",
+					"description": "语言,en表示英文，zh表示中文",
+					"required": true
+				},
+				{
+					"name": "time",
+					"type": "String",
+					"description": "请求时间戳",
+					"required": true
+				},
+				{
+					"name": "external_period_agreement_code",
+					"type": "String",
+					"description": "外部商户周期扣款签约码，周期扣款协议中标示用户的唯一签约编号（确保在商户系统中唯一）。格式规则：支持大写小写字母和数字，最长32位。",
+					"required": true
+				},
+				{
+					"name": "service_protocol",
+					"type": "String",
+					"description": "cp服务端支持的协议，目前只支持HTTPS"
+				},
+				{
+					"name": "period_unsign_notify_url",
+					"type": "String",
+					"description": "周期扣款解约结果回调地址"
+				}
+			],
+			"name": "period_agreement_unsign_request",
+			"type": "PeriodAgreementUnsignRequest",
+			"description": "请求参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "请求唯一id，不可重复，服务端会根据此参数防重放"
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "错误码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "aliospay_response",
+			"type": "AliOSPayResponse",
+			"description": "响应参数"
+		}
+	],
+	"name": "aliyun.alios.pay.period.agreement.unsign",
+	"apiChineseName": "周期扣款协议解约接口",
+	"description": "周期扣款协议解约接口",
+	"id": 61622
+}

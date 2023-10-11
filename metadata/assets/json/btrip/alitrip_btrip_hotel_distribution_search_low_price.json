@@ -92,6 +92,11 @@
 									"name": "supplier_name",
 									"type": "String",
 									"description": "供应商名称"
+								},
+								{
+									"name": "is_protocol",
+									"type": "Boolean",
+									"description": "协议价标识"
 								}
 							],
 							"name": "hotels",

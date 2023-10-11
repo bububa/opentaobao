@@ -1,0 +1,52 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单号",
+					"required": true
+				},
+				{
+					"name": "token",
+					"type": "String",
+					"description": "鉴权token",
+					"required": true
+				}
+			],
+			"name": "req",
+			"type": "AuthCheckReq",
+			"description": "请求参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误code"
+				}
+			],
+			"name": "result",
+			"type": "AliAutoResult",
+			"description": "出参"
+		}
+	],
+	"name": "tmall.aliauto.fulfillment.auth.check",
+	"apiChineseName": "商家鉴权",
+	"description": "商家鉴权",
+	"id": 66267
+}

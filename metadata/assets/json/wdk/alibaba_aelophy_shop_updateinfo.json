@@ -1,0 +1,62 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "start_time",
+					"type": "String",
+					"description": "营业开始时间(HH:mm)"
+				},
+				{
+					"name": "end_time",
+					"type": "String",
+					"description": "营业结束时间(HH:mm)"
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "经营店ID",
+					"required": true
+				},
+				{
+					"name": "channel_source_type",
+					"type": "Number",
+					"description": "渠道",
+					"required": true
+				}
+			],
+			"name": "shop_info_update_request",
+			"type": "ShopInfoUpdateRequest",
+			"description": "请求对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用结果"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "api调用结果"
+		}
+	],
+	"name": "alibaba.aelophy.shop.updateinfo",
+	"apiChineseName": "更新渠道店基础信息",
+	"description": "更新渠道店基础信息",
+	"id": 66729
+}

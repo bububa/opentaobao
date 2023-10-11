@@ -1,0 +1,82 @@
+{
+	"requestParams": [
+		{
+			"name": "tid",
+			"type": "String",
+			"description": "订单id",
+			"required": true
+		},
+		{
+			"name": "old_company_code",
+			"type": "String",
+			"description": "原物流公司代码.如\"POST\"代表中国邮政,\"ZJS\"代表宅急送。调用 taobao.logistics.companies.get 获取"
+		},
+		{
+			"name": "old_out_sid",
+			"type": "String",
+			"description": "原运单号.具体一个物流公司的真实运单号码。淘宝官方物流会校验，请谨慎传入",
+			"required": true
+		},
+		{
+			"name": "new_company_code",
+			"type": "String",
+			"description": "新物流公司代码.如\"POST\"代表中国邮政,\"ZJS\"代表宅急送。调用 taobao.logistics.companies.get 获取"
+		},
+		{
+			"name": "new_out_sid",
+			"type": "String",
+			"description": "新运单号.具体一个物流公司的真实运单号码。淘宝官方物流会校验，请谨慎传入",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "sub_tid",
+					"type": "String",
+					"description": "子订单id"
+				},
+				{
+					"name": "item_type",
+					"type": "Number",
+					"description": "商品类型 0：普通品 1:赠品 2:成分品，默认0"
+				},
+				{
+					"name": "comp_item_id",
+					"type": "String",
+					"description": "成分品itemId"
+				},
+				{
+					"name": "comp_sku_id",
+					"type": "String",
+					"description": "成分品skuId"
+				}
+			],
+			"name": "goods",
+			"type": "TopConsignGoodsRequest",
+			"description": "原包裹中的商品信息"
+		},
+		{
+			"name": "feature",
+			"type": "String",
+			"description": "feature参数格式，KV之间用“=”分隔，多个key之间用”;”分隔 ，范例: instantMobilePhoneNumber=12345678910表示同城配送物流公司的物流订单收货人手机号，支持11位真实号和15位隐私号\"12345678910-1234\"。"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果"
+				}
+			],
+			"name": "result",
+			"type": "ResultDTO",
+			"description": "异步获取历史数据接口返回结果"
+		}
+	],
+	"name": "alibaba.ascp.logistics.consign.modify",
+	"apiChineseName": "修改物流公司和运单号",
+	"description": "修改物流公司和运单号",
+	"id": 65697
+}

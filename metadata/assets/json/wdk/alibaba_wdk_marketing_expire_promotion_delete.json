@@ -40,12 +40,6 @@
 					"required": true
 				},
 				{
-					"name": "merchant_code",
-					"type": "String",
-					"description": "商家编码",
-					"required": true
-				},
-				{
 					"name": "sku_code",
 					"type": "String",
 					"description": "商品skucode",

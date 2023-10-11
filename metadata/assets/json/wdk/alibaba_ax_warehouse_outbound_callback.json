@@ -1,0 +1,142 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "extension",
+					"type": "String",
+					"description": "扩展字段"
+				},
+				{
+					"name": "biz_order_id",
+					"type": "String",
+					"description": "oms主单号",
+					"required": true
+				},
+				{
+					"name": "out_bound_status",
+					"type": "String",
+					"description": "出库状态",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "out_of_stock_sale_quantity",
+							"type": "String",
+							"description": "缺货出销售数量",
+							"required": true
+						},
+						{
+							"name": "channel_sub_order_no",
+							"type": "String",
+							"description": "渠道子单号"
+						},
+						{
+							"name": "extension",
+							"type": "String",
+							"description": "扩展字段"
+						},
+						{
+							"name": "actual_sale_quantity",
+							"type": "String",
+							"description": "实际出库销售数量",
+							"required": true
+						},
+						{
+							"name": "actual_stock_quantity",
+							"type": "String",
+							"description": "实际出库库存数量",
+							"required": true
+						},
+						{
+							"name": "out_of_stock_stock_quantity",
+							"type": "String",
+							"description": "缺货出库存数量",
+							"required": true
+						},
+						{
+							"name": "biz_sub_order_id",
+							"type": "String",
+							"description": "oms子单号",
+							"required": true
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品sku编码"
+						},
+						{
+							"name": "is_out_stock",
+							"type": "Boolean",
+							"description": "是否缺货出",
+							"required": true
+						},
+						{
+							"subParams": [
+								{
+									"name": "sku_weight",
+									"type": "BigDecimal",
+									"description": "每份重量"
+								}
+							],
+							"name": "sku_weights",
+							"type": "BigDecimal[]",
+							"description": "称重品商品实称重量/g"
+						}
+					],
+					"name": "demand_detail_call_back_requests",
+					"type": "TradeOutBoundDetailCallBackRequest[]",
+					"description": "子单明细列表"
+				},
+				{
+					"name": "channel_order_no",
+					"type": "String",
+					"description": "渠道单号"
+				},
+				{
+					"name": "demand_status_time",
+					"type": "Date",
+					"description": "出库状态发生时间",
+					"required": true
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "仓编码",
+					"required": true
+				},
+				{
+					"name": "channel_source",
+					"type": "String",
+					"description": "渠道类型"
+				}
+			],
+			"name": "trade_out_bound_call_back_request",
+			"type": "TopTradeOutBoundCallBackRequest",
+			"description": "出库回传",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "return_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "return_success",
+			"type": "Boolean",
+			"description": "调用成功"
+		},
+		{
+			"name": "return_message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.ax.warehouse.outbound.callback",
+	"apiChineseName": "翱象出仓回传",
+	"description": "翱象出仓回传",
+	"id": 65425
+}

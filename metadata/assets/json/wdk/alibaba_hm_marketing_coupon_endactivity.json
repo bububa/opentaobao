@@ -1,0 +1,56 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "五道口活动id",
+					"required": true
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "商家的活动id"
+				}
+			],
+			"name": "param",
+			"type": "CommonActivityParam",
+			"description": "需要删除的活动的信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "删除活动是否成功"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "删除活动是否成功"
+				}
+			],
+			"name": "result",
+			"type": "MarketResult",
+			"description": "删除活动返回结果"
+		}
+	],
+	"name": "alibaba.hm.marketing.coupon.endactivity",
+	"apiChineseName": "结束优惠券活动",
+	"description": "结束优惠券活动。优惠券变为结束领取状态，已领取的优惠券可以继续使用",
+	"id": 67225
+}

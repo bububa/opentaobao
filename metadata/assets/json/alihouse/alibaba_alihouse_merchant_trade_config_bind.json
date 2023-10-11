@@ -1,0 +1,99 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_trade_scene_config_id",
+					"type": "String",
+					"description": "外部场景ID",
+					"required": true
+				},
+				{
+					"name": "scene_code",
+					"type": "Number",
+					"description": "场景编码",
+					"required": true
+				},
+				{
+					"name": "merchant_open_id",
+					"type": "Number",
+					"description": "经营主体ID",
+					"required": true
+				},
+				{
+					"name": "bank_id",
+					"type": "Number",
+					"description": "结算账户ID\t否"
+				},
+				{
+					"name": "signature_id",
+					"type": "Number",
+					"description": "电子签章ID"
+				},
+				{
+					"name": "agreement_id",
+					"type": "Number",
+					"description": "协议模版ID"
+				},
+				{
+					"name": "instead_merchant_open_id",
+					"type": "Number",
+					"description": "代收主体id\u0000"
+				},
+				{
+					"name": "instead_bank_id",
+					"type": "Number",
+					"description": "代收结算账户id\u0000"
+				},
+				{
+					"name": "collection_type",
+					"type": "Number",
+					"description": "收费模式 1-直收 2-代收\u0000"
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "是否测试 1-是 0-否",
+					"required": true
+				}
+			],
+			"name": "cis",
+			"type": "TradeSceneAddInfoDTO",
+			"description": "进件资料对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "true或false"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "操作结果"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.merchant.trade.config.bind",
+	"apiChineseName": "交易场景绑定",
+	"description": "交易场景绑定",
+	"id": 67611
+}

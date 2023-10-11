@@ -1,0 +1,173 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码",
+					"required": true
+				}
+			],
+			"name": "top_service_context",
+			"type": "TopServiceContext",
+			"description": "topServiceContext",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "campaign_id_list",
+					"type": "Number[]",
+					"description": "计划id集合",
+					"required": true
+				},
+				{
+					"name": "offset",
+					"type": "Number",
+					"description": "偏移量"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页面大小"
+				}
+			],
+			"name": "adzone_ref_query_v_o",
+			"type": "AdzoneRefQueryVo",
+			"description": "adzoneRefQueryVO",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "ok",
+							"type": "Boolean",
+							"description": "是否成功"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误编码"
+						}
+					],
+					"name": "info",
+					"type": "TopInfo",
+					"description": "请求系统信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "adzone_id",
+									"type": "Number",
+									"description": "资源包id"
+								},
+								{
+									"name": "adzone_name",
+									"type": "String",
+									"description": "资源包名字"
+								},
+								{
+									"name": "campaign_id",
+									"type": "Number",
+									"description": "计划id,计划已经存在场景必填,eg:添加主体、编辑计划状态等场景"
+								},
+								{
+									"name": "campaign_name",
+									"type": "String",
+									"description": "计划名称"
+								},
+								{
+									"name": "bid_type",
+									"type": "String",
+									"description": "出价方式,custom_bid:手动出价,max_amount:最大化拿量,cost_control:控成本,roi_control:控投产比"
+								},
+								{
+									"name": "discount",
+									"type": "Number",
+									"description": "资源位/包 溢价"
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "状态,start:投放,pause:暂停"
+								},
+								{
+									"name": "min_discount",
+									"type": "Number",
+									"description": "资源位支持的最低溢价"
+								},
+								{
+									"name": "max_discount",
+									"type": "Number",
+									"description": "资源位支持的最高溢价"
+								},
+								{
+									"subParams": [
+										{
+											"name": "code",
+											"type": "String",
+											"description": "操作项code"
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "操作项名称"
+										},
+										{
+											"name": "tips",
+											"type": "String",
+											"description": "悬浮提示"
+										},
+										{
+											"name": "disabled",
+											"type": "String",
+											"description": "是否可操作"
+										},
+										{
+											"name": "properties",
+											"type": "String",
+											"description": "扩展属性"
+										}
+									],
+									"name": "operation_list",
+									"type": "Integer[]",
+									"description": "操作按钮列表"
+								}
+							],
+							"name": "adzone_ref_v_o_list",
+							"type": "AdzoneRefVo[]",
+							"description": "批量结果集"
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "数量"
+						}
+					],
+					"name": "adzone_ref_v_o_top_bulk_data",
+					"type": "TopBulkData",
+					"description": "结果集"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.universalbp.adzone.horizontal.findpage",
+	"apiChineseName": "查看资源包列表",
+	"description": "查看已存在的计划上设置的资源包列表",
+	"id": 67150
+}

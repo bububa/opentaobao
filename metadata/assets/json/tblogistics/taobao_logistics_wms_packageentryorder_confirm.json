@@ -1,0 +1,92 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "entry_order_code",
+					"type": "String",
+					"description": "包裹入库单号",
+					"required": true
+				},
+				{
+					"name": "order_type",
+					"type": "String",
+					"description": "业务类型，取值：JYPKZXRK(集运包裹正向入库)、JYPKNXRK(集运包裹逆向入库)",
+					"required": true
+				},
+				{
+					"name": "order_status",
+					"type": "String",
+					"description": "单据状态，取值：confirm(入库确认)、exception(入库异常)",
+					"required": true
+				},
+				{
+					"name": "operate_time",
+					"type": "String",
+					"description": "业务操作时间",
+					"required": true
+				},
+				{
+					"name": "error_type",
+					"type": "String",
+					"description": "异常类型，回传入库异常时必传 【包裹破损】 【含禁运物品】 【入库单异常】 【撤单拦截】 【其他原因】"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "异常原因说明，回传入库异常时必传"
+				},
+				{
+					"name": "logistics_owner",
+					"type": "String",
+					"description": "物流主体，例如：TaoTian(淘天)",
+					"required": true
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "服务商仓code",
+					"required": true
+				},
+				{
+					"name": "outer_order_code",
+					"type": "String",
+					"description": "WMS仓内作业单号",
+					"required": true
+				}
+			],
+			"name": "confirm_package_entry_order_request",
+			"type": "ConfirmPackageOrderRequest",
+			"description": "请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "结果"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误编码"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "ResultWrappe",
+			"description": "结果"
+		}
+	],
+	"name": "taobao.logistics.wms.packageentryorder.confirm",
+	"apiChineseName": "包裹入库单确认",
+	"description": "包裹入库单确认",
+	"id": 67203
+}

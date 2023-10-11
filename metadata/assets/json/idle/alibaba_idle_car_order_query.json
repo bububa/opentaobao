@@ -7,23 +7,6 @@
 					"type": "Number",
 					"description": "订单id",
 					"required": true
-				},
-				{
-					"name": "app_key",
-					"type": "String",
-					"description": "appkey",
-					"required": true
-				},
-				{
-					"name": "source",
-					"type": "String",
-					"description": "来源",
-					"required": true
-				},
-				{
-					"name": "buyer_id",
-					"type": "Number",
-					"description": "服务商id"
 				}
 			],
 			"name": "query",

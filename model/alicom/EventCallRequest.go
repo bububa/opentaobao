@@ -10,7 +10,7 @@ type EventCallRequest struct {
 	CallNo string `json:"call_no,omitempty" xml:"call_no,omitempty"`
 	// 分机号
 	ExtensionNo string `json:"extension_no,omitempty" xml:"extension_no,omitempty"`
-	// 振铃事件：ALERTING  摘机事件：PICKUP
+	// 振铃事件：ALERTING  摘机事件：PICKUP  被叫呼出事件：CALLOUT
 	EventType string `json:"event_type,omitempty" xml:"event_type,omitempty"`
 	// 绑定关系ID
 	SubsId string `json:"subs_id,omitempty" xml:"subs_id,omitempty"`
@@ -24,4 +24,6 @@ type EventCallRequest struct {
 	CalledDisplayNo string `json:"called_display_no,omitempty" xml:"called_display_no,omitempty"`
 	// 呼叫开始时间
 	CallTime string `json:"call_time,omitempty" xml:"call_time,omitempty"`
+	// 呼叫前转号码
+	CallForwardingNo string `json:"call_forwarding_no,omitempty" xml:"call_forwarding_no,omitempty"`
 }

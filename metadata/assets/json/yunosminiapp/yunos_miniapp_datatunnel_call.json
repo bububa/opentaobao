@@ -35,6 +35,11 @@
 							"name": "ac_token",
 							"type": "String",
 							"description": "授权token"
+						},
+						{
+							"name": "device_info",
+							"type": "String",
+							"description": "设备信息"
 						}
 					],
 					"name": "system_param",

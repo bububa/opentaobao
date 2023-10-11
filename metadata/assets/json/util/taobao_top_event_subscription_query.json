@@ -1,0 +1,21 @@
+{
+	"requestParams": [
+		{
+			"name": "trigger_code",
+			"type": "String",
+			"description": "连接平台触发事件TriggerCode",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "start_service",
+			"type": "Boolean",
+			"description": "是否订阅服务"
+		}
+	],
+	"name": "taobao.top.event.subscription.query",
+	"apiChineseName": "三方事件订阅查询",
+	"description": "三方事件订阅查询",
+	"id": 67110
+}

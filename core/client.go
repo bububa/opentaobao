@@ -76,6 +76,7 @@ func (c *SDKClient) SetSignMethod(method model.SignMethod) {
 func (c *SDKClient) Post(req model.IRequest, resp model.IResponse, session string) error {
 	// 新建API请求通用参数
 	commonReq := model.NewCommonRequest(req.GetApiMethodName(), c.appKey)
+	defer model.ReleaseCommonRequest(commonReq)
 	commonReq.SetSession(session)
 	commonReq.SetAPIFormat(c.apiFormat)
 	commonReq.SetSignMethod(c.signMethod)

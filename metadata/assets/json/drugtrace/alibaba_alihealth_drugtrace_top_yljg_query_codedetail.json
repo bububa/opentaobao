@@ -24,7 +24,7 @@
 								{
 									"name": "code_status",
 									"type": "String",
-									"description": "码状态（A:已激活;I:已核注;O:已核销;C:已注销;E:码不存在）"
+									"description": "码状态（A:已激活;I:已核注;O:已核销;C:已注销;S:已售出;E:码不存在）"
 								}
 							],
 							"name": "code_status_type_d_t_o",

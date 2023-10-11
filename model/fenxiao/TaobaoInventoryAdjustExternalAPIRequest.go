@@ -9,7 +9,6 @@ import (
 // TaobaoInventoryAdjustExternalAPIRequest 非交易库存调整单 API请求
 // taobao.inventory.adjust.external
 //
-// 建议使用新接口：taobao.inventory.merchant.adjust ，该接口会逐步停用。
 // 商家非交易调整库存，调拨出库、盘点等时调用
 type TaobaoInventoryAdjustExternalAPIRequest struct {
 	model.Params

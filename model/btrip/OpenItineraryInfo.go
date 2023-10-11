@@ -28,6 +28,10 @@ type OpenItineraryInfo struct {
 	ProjectTitle string `json:"project_title,omitempty" xml:"project_title,omitempty"`
 	// 第三方发票id，和商旅发票id二者选择其一即可
 	ThirdPartInvoiceId string `json:"third_part_invoice_id,omitempty" xml:"third_part_invoice_id,omitempty"`
+	// 离抵城市名称，多个城市请用中文“，”隔开
+	CitySet string `json:"city_set,omitempty" xml:"city_set,omitempty"`
+	// 离抵城市code，多个城市请用中文“，”隔开 当允许预订的类目为1/3/7/9时，仅传行政区划citycode允许通过 当允许预订的类目为0/6时，仅传城市三字码允许通过 city_set和city_code_set必须一对一
+	CityCodeSet string `json:"city_code_set,omitempty" xml:"city_code_set,omitempty"`
 	// 交通方式 0飞机, 1,火车, 2汽车, 3其他
 	TrafficType int64 `json:"traffic_type,omitempty" xml:"traffic_type,omitempty"`
 	// 行程方式：0单程，1往返

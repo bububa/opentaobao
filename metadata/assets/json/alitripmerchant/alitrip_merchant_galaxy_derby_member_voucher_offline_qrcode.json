@@ -42,6 +42,11 @@
 							"name": "q_r_code_image",
 							"type": "String",
 							"description": "线下权益券二维码"
+						},
+						{
+							"name": "offline_redemption",
+							"type": "Boolean",
+							"description": "线下核销是否成功"
 						}
 					],
 					"name": "content",

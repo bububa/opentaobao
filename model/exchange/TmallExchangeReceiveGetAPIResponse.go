@@ -22,8 +22,6 @@ type TmallExchangeReceiveGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
 	Results []Exchange `json:"results,omitempty" xml:"results>exchange,omitempty"`
-	// 所抛出异常
-	Exception string `json:"exception,omitempty" xml:"exception,omitempty"`
 	// 错误码
 	ErrorCodes string `json:"error_codes,omitempty" xml:"error_codes,omitempty"`
 	// 错误信息

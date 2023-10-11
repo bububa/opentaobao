@@ -20,8 +20,12 @@ type TaobaoTbkItemInfoGetAPIRequest struct {
 	_bizSceneId string
 	// 1-自购省，2-推广赚（代理模式专属ID，代理模式必填，非代理模式不用填写该字段）
 	_promotionType string
+	// 渠道关系ID
+	_relationId string
 	// 链接形式：1：PC，2：无线，默认：１
 	_platform int64
+	// 商品库服务账户(场景id3权限对应的memberid）
+	_manageItemPubId int64
 }
 
 // NewTaobaoTbkItemInfoGetRequest 初始化TaobaoTbkItemInfoGetAPIRequest对象
@@ -100,6 +104,19 @@ func (r TaobaoTbkItemInfoGetAPIRequest) GetPromotionType() string {
 	return r._promotionType
 }
 
+// SetRelationId is RelationId Setter
+// 渠道关系ID
+func (r *TaobaoTbkItemInfoGetAPIRequest) SetRelationId(_relationId string) error {
+	r._relationId = _relationId
+	r.Set("relation_id", _relationId)
+	return nil
+}
+
+// GetRelationId RelationId Getter
+func (r TaobaoTbkItemInfoGetAPIRequest) GetRelationId() string {
+	return r._relationId
+}
+
 // SetPlatform is Platform Setter
 // 链接形式：1：PC，2：无线，默认：１
 func (r *TaobaoTbkItemInfoGetAPIRequest) SetPlatform(_platform int64) error {
@@ -111,4 +128,17 @@ func (r *TaobaoTbkItemInfoGetAPIRequest) SetPlatform(_platform int64) error {
 // GetPlatform Platform Getter
 func (r TaobaoTbkItemInfoGetAPIRequest) GetPlatform() int64 {
 	return r._platform
+}
+
+// SetManageItemPubId is ManageItemPubId Setter
+// 商品库服务账户(场景id3权限对应的memberid）
+func (r *TaobaoTbkItemInfoGetAPIRequest) SetManageItemPubId(_manageItemPubId int64) error {
+	r._manageItemPubId = _manageItemPubId
+	r.Set("manage_item_pub_id", _manageItemPubId)
+	return nil
+}
+
+// GetManageItemPubId ManageItemPubId Getter
+func (r TaobaoTbkItemInfoGetAPIRequest) GetManageItemPubId() int64 {
+	return r._manageItemPubId
 }

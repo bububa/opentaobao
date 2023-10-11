@@ -1,0 +1,145 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "delivery_order_code",
+					"type": "String",
+					"description": "包裹入库单号",
+					"required": true
+				},
+				{
+					"name": "order_type",
+					"type": "String",
+					"description": "业务类型，取值：JYPKZXCK(集运包裹正向出库)、JYPKNXCK(集运包裹逆向出库)",
+					"required": true
+				},
+				{
+					"name": "order_status",
+					"type": "String",
+					"description": "单据状态，取值：confirm(出库确认)、exception(出库异常)",
+					"required": true
+				},
+				{
+					"name": "operate_time",
+					"type": "String",
+					"description": "业务操作时间",
+					"required": true
+				},
+				{
+					"name": "logistics_owner",
+					"type": "String",
+					"description": "物流主体，例如：TaoTian(淘天)",
+					"required": true
+				},
+				{
+					"name": "error_type",
+					"type": "String",
+					"description": "异常类型，回传出库异常时必传 【包裹破损】 【撤单拦截】 【出库单异常】 【联系不上商家】 【商家拒绝退回】 【其他原因】"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "异常原因说明，回传出库异常时必传"
+				},
+				{
+					"subParams": [
+						{
+							"name": "tms_cp_code",
+							"type": "String",
+							"description": "正向出库回传二段快递公司 逆向出库回传逆向退货商家仓的快递公司",
+							"required": true
+						},
+						{
+							"name": "mail_no",
+							"type": "String",
+							"description": "正向出库回传二段运单号 逆向出库回传逆向退回商家仓的运单号",
+							"required": true
+						},
+						{
+							"name": "weight",
+							"type": "String",
+							"description": "包裹重量(单位：克)，小数点后2位",
+							"required": true
+						},
+						{
+							"name": "length",
+							"type": "String",
+							"description": "包裹长度 (单位：cm)，小数点后2位"
+						},
+						{
+							"name": "width",
+							"type": "String",
+							"description": "包裹宽度 (单位：cm)，小数点后2位"
+						},
+						{
+							"name": "height",
+							"type": "String",
+							"description": "包裹高度（单位：cm)，小数点后2位"
+						},
+						{
+							"name": "package_line",
+							"type": "String",
+							"description": "包裹仓储单号",
+							"required": true
+						},
+						{
+							"name": "out_package_code",
+							"type": "String",
+							"description": "wms出库包裹单号",
+							"required": true
+						}
+					],
+					"name": "packages",
+					"type": "PackageDTO[]",
+					"description": "包裹信息",
+					"required": true
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "服务商仓code",
+					"required": true
+				},
+				{
+					"name": "outer_order_code",
+					"type": "String",
+					"description": "WMS系统作业单号",
+					"required": true
+				}
+			],
+			"name": "confirm_package_delivery_order_request",
+			"type": "ConfirmPackageOrderRequest",
+			"description": "请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "相应结果"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "响应错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "响应错误信息"
+				}
+			],
+			"name": "result",
+			"type": "ResultWrapper",
+			"description": "响应结果"
+		}
+	],
+	"name": "taobao.logistics.wms.packagedeliveryorder.confirm",
+	"apiChineseName": "包裹出库单确认",
+	"description": "包裹出库单确认",
+	"id": 67204
+}

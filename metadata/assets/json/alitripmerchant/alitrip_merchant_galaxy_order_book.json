@@ -252,9 +252,14 @@
 					"description": "权益券相关参数"
 				},
 				{
-					"name": "version",
+					"name": "area_code",
 					"type": "String",
 					"description": "1"
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "版本号"
 				}
 			],
 			"name": "order_param",

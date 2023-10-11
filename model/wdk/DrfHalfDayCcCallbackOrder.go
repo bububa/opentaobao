@@ -3,7 +3,7 @@ package wdk
 // DrfHalfDayCcCallbackOrder 结构体
 type DrfHalfDayCcCallbackOrder struct {
 	// 作业单元
-	CallbackUnits []DrfHalfDayCcCallBackUnit `json:"callback_units,omitempty" xml:"callback_units>drf_half_day_cc_call_back_unit,omitempty"`
+	CallbackUnits []DrfHalfDayCcCallbackUnit `json:"callback_units,omitempty" xml:"callback_units>drf_half_day_cc_callback_unit,omitempty"`
 	// 容器列表
 	Containers []Container `json:"containers,omitempty" xml:"containers>container,omitempty"`
 	// 作业状态变更时间

@@ -98,7 +98,7 @@
 						{
 							"name": "handing_fee",
 							"type": "Number",
-							"description": "改签手续费"
+							"description": "改签手续费，单位分"
 						},
 						{
 							"name": "change_seat_type_code",
@@ -138,7 +138,7 @@
 						{
 							"name": "change_ticket_price",
 							"type": "String",
-							"description": "改签票票价"
+							"description": "改签票票价，单位分"
 						}
 					],
 					"name": "change_tickets",

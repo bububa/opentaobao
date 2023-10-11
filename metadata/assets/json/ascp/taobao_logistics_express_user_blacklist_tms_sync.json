@@ -1,0 +1,100 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于做幂等",
+					"required": true
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "时间戳（毫秒）",
+					"required": true
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "服务商ID",
+					"required": true
+				},
+				{
+					"name": "service_type",
+					"type": "String",
+					"description": "服务类型（1-上门取退）",
+					"required": true
+				},
+				{
+					"name": "ability_type",
+					"type": "String",
+					"description": "能力（1-上门取退）",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "黑名单用户手机号",
+							"required": true
+						},
+						{
+							"name": "reason",
+							"type": "String",
+							"description": "黑名单用户类型（枚举），多个以英文逗号隔开 1-恶意下单 2-恶意投诉 3-恶意敲诈 4-人身攻击类（辱骂殴打快递员等） 5-其他"
+						}
+					],
+					"name": "blacklist",
+					"type": "Blacklist[]",
+					"description": "黑名单用户",
+					"required": true
+				},
+				{
+					"name": "operate_type",
+					"type": "Number",
+					"description": "更新类型 1-新增(增量新增) /更新 ；2-删除",
+					"required": true
+				}
+			],
+			"name": "user_blacklist_request",
+			"type": "UserBlacklistRequest",
+			"description": "上门取退用户黑名单",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "系统成功失败   true|false"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息"
+				},
+				{
+					"name": "is_retry",
+					"type": "Boolean",
+					"description": "是否可重试"
+				}
+			],
+			"name": "user_blacklist_response",
+			"type": "UserBlacklistResponse",
+			"description": "返回值"
+		}
+	],
+	"name": "taobao.logistics.express.user.blacklist.tms.sync",
+	"apiChineseName": "上门取退用户黑名单同步",
+	"description": "上门取退用户黑名单同步",
+	"id": 67452
+}

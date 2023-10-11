@@ -36,7 +36,7 @@ type RatePlan struct {
 	GuaranteeStartTime string `json:"guarantee_start_time,omitempty" xml:"guarantee_start_time,omitempty"`
 	// 会员等级。支持多个等级&#34;,&#34;分隔
 	MemberLevel string `json:"member_level,omitempty" xml:"member_level,omitempty"`
-	// 销售渠道，目前制定一了一种A-集团协议
+	// 销售渠道。如需开通，需要申请权限。目前支持的渠道有 H:飞猪全渠道（选择H，可实现飞猪、高德、支付宝、手淘均可售卖） O:钉钉商旅 。如果有多个用&#34;,&#34;分开，比如H,O。如果需要投放其他渠道，请联系飞猪运营或者技术支持。
 	Channel string `json:"channel,omitempty" xml:"channel,omitempty"`
 	// rateplan生效开始时间
 	EffectiveTime string `json:"effective_time,omitempty" xml:"effective_time,omitempty"`

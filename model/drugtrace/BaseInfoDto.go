@@ -32,4 +32,12 @@ type BaseInfoDto struct {
 	ApproveNo string `json:"approve_no,omitempty" xml:"approve_no,omitempty"`
 	// 药品类型
 	PhysicType string `json:"physic_type,omitempty" xml:"physic_type,omitempty"`
+	// 原批准文号有效期
+	ApprovalLicenceExpiryOld string `json:"approval_licence_expiry_old,omitempty" xml:"approval_licence_expiry_old,omitempty"`
+	// 批准文号批准日期
+	ApprovalLicenceDate string `json:"approval_licence_date,omitempty" xml:"approval_licence_date,omitempty"`
+	// 批准文号有效期至
+	ApprovalLicenceExpiry string `json:"approval_licence_expiry,omitempty" xml:"approval_licence_expiry,omitempty"`
+	// 原批准文号
+	ApprovalLicenceNoOld string `json:"approval_licence_no_old,omitempty" xml:"approval_licence_no_old,omitempty"`
 }

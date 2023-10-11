@@ -1,0 +1,55 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "product_code_list",
+					"type": "String[]",
+					"description": "产品编号列表"
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "供应商ID"
+				}
+			],
+			"name": "fsc_product_offline_request",
+			"type": "FscProductOfflineRequest",
+			"description": "fscProductOfflineRequest",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "业务数据"
+				}
+			],
+			"name": "top_result",
+			"type": "TopResult",
+			"description": "通用返回结果"
+		}
+	],
+	"name": "taobao.alitrip.travel.fsc.route.api.product.offline",
+	"apiChineseName": "产品下线",
+	"description": "产品下线",
+	"id": 66868
+}

@@ -36,7 +36,7 @@
 				}
 			],
 			"name": "install_list",
-			"type": "PartnerNew []",
+			"type": "Partner []",
 			"description": "安装服务商列表"
 		},
 		{
@@ -63,7 +63,7 @@
 				}
 			],
 			"name": "server_list",
-			"type": "PartnerNew []",
+			"type": "Partner []",
 			"description": "物流配送服务商对象列表"
 		},
 		{

@@ -28,4 +28,14 @@ type WarehouseInfo struct {
 	ZipCode string `json:"zip_code,omitempty" xml:"zip_code,omitempty"`
 	// 状态：0=停用；1=启用
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
+	// 服务商自定义的仓编码，服务商+业务身份下唯一
+	WarehouseCode string `json:"warehouse_code,omitempty" xml:"warehouse_code,omitempty"`
+	// 服务商自定义的仓库名称，创建时必填
+	WarehouseName string `json:"warehouse_name,omitempty" xml:"warehouse_name,omitempty"`
+	// WMS系统仓code，创建时必填
+	WmsStoreCode string `json:"wms_store_code,omitempty" xml:"wms_store_code,omitempty"`
+	// WMSAppkey，创建时必填
+	WmsAppkey string `json:"wms_appkey,omitempty" xml:"wms_appkey,omitempty"`
+	// 仓拓展信息，创建时必填
+	ExtendInfo *ExtendInfo `json:"extend_info,omitempty" xml:"extend_info,omitempty"`
 }

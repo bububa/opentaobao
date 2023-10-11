@@ -28,7 +28,7 @@
 				{
 					"name": "event_type",
 					"type": "String",
-					"description": "振铃事件：ALERTING  摘机事件：PICKUP",
+					"description": "振铃事件：ALERTING  摘机事件：PICKUP  被叫呼出事件：CALLOUT",
 					"required": true
 				},
 				{
@@ -66,6 +66,11 @@
 					"type": "Date",
 					"description": "呼叫开始时间",
 					"required": true
+				},
+				{
+					"name": "call_forwarding_no",
+					"type": "String",
+					"description": "呼叫前转号码"
 				}
 			],
 			"name": "event_call_request",

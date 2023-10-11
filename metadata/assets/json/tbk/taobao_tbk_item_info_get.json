@@ -25,6 +25,16 @@
 			"name": "promotion_type",
 			"type": "String",
 			"description": "1-自购省，2-推广赚（代理模式专属ID，代理模式必填，非代理模式不用填写该字段）"
+		},
+		{
+			"name": "relation_id",
+			"type": "String",
+			"description": "渠道关系ID"
+		},
+		{
+			"name": "manage_item_pub_id",
+			"type": "Number",
+			"description": "商品库服务账户(场景id3权限对应的memberid）"
 		}
 	],
 	"responseParams": [

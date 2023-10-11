@@ -6,6 +6,8 @@ type ProjectSalesTimeDto struct {
 	PrePermitDTOList []ProjectSalesTimePrePermitDto `json:"pre_permit_d_t_o_list,omitempty" xml:"pre_permit_d_t_o_list>project_sales_time_pre_permit_dto,omitempty"`
 	// 外部楼栋id列表
 	OuterTidList []string `json:"outer_tid_list,omitempty" xml:"outer_tid_list>string,omitempty"`
+	// 摇号比例列表
+	RatioDTOList []LotteryRatioDto `json:"ratio_d_t_o_list,omitempty" xml:"ratio_d_t_o_list>lottery_ratio_dto,omitempty"`
 	// 外部项目id
 	OuterSid string `json:"outer_sid,omitempty" xml:"outer_sid,omitempty"`
 	// 外部楼盘id
@@ -54,8 +56,6 @@ type ProjectSalesTimeDto struct {
 	FrozenPrice string `json:"frozen_price,omitempty" xml:"frozen_price,omitempty"`
 	// 冻资银行
 	FrozenBank string `json:"frozen_bank,omitempty" xml:"frozen_bank,omitempty"`
-	// 公示方案
-	PublicPlan string `json:"public_plan,omitempty" xml:"public_plan,omitempty"`
 	// 开盘户型范围
 	OpeningLayoutRange string `json:"opening_layout_range,omitempty" xml:"opening_layout_range,omitempty"`
 	// 户型面积区间
@@ -82,6 +82,4 @@ type ProjectSalesTimeDto struct {
 	IsBlurOpen int64 `json:"is_blur_open,omitempty" xml:"is_blur_open,omitempty"`
 	// 是否具有选房环节 0(否) 1(是)
 	IsSelection int64 `json:"is_selection,omitempty" xml:"is_selection,omitempty"`
-	// 摇号比例信息
-	LotteryRatioDTO *LotteryRatioDto `json:"lottery_ratio_d_t_o,omitempty" xml:"lottery_ratio_d_t_o,omitempty"`
 }

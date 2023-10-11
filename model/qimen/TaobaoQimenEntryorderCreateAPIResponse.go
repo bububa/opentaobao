@@ -9,7 +9,7 @@ import (
 // TaobaoQimenEntryorderCreateAPIResponse 入库单创建接口 API返回值
 // taobao.qimen.entryorder.create
 //
-// ERP调用接口，创建入库单;
+// taobao.qimen.entryorder.create
 type TaobaoQimenEntryorderCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenEntryorderCreateAPIResponseModel

@@ -1,0 +1,146 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "appointment_order_id",
+					"type": "Number",
+					"description": "预约单id",
+					"required": true
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "商家id",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页数量"
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页面下标，从1开始"
+				}
+			],
+			"name": "status_request",
+			"type": "AppointmentOrderStatusRequest",
+			"description": "请求参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "handover_order_code",
+							"type": "String",
+							"description": "预约单号HOxxxxxxxxx"
+						},
+						{
+							"name": "tracking_number",
+							"type": "String",
+							"description": "同预约单号"
+						},
+						{
+							"name": "op_code",
+							"type": "String",
+							"description": "0-全部小包接收成功"
+						},
+						{
+							"name": "operator",
+							"type": "String",
+							"description": "he operator CP's resource code"
+						},
+						{
+							"name": "operator_contact",
+							"type": "String",
+							"description": "Operator contac（name or phone or email"
+						},
+						{
+							"name": "op_remark",
+							"type": "String",
+							"description": "备注"
+						},
+						{
+							"subParams": [
+								{
+									"name": "lg_order_code",
+									"type": "String",
+									"description": "小包LP单号"
+								},
+								{
+									"name": "tracking_number",
+									"type": "String",
+									"description": "包裹运单号"
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "0: 成功 异常详见： 2：少件 3：多件 5：其他"
+								},
+								{
+									"name": "remark",
+									"type": "String",
+									"description": "备注"
+								}
+							],
+							"name": "parcel_list",
+							"type": "Parcel[]",
+							"description": "预约单号"
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "每页数量"
+						},
+						{
+							"name": "total_count",
+							"type": "Number",
+							"description": "符合条件的总条数"
+						},
+						{
+							"name": "current_page_index",
+							"type": "Number",
+							"description": "当前页"
+						}
+					],
+					"name": "appointment_order_difference_details_response",
+					"type": "AppointmentOrderDifferenceDetailsResponse",
+					"description": "响应体"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否响应正常"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "异常code"
+				},
+				{
+					"name": "internal_error_code",
+					"type": "String",
+					"description": "网络异常code"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "异常消息"
+				}
+			],
+			"name": "hsf_result",
+			"type": "HsfResult",
+			"description": "hsfResult"
+		}
+	],
+	"name": "cainiao.global.im.pickup.appointment.order.difference.detail",
+	"apiChineseName": "预约单差异明细查询",
+	"description": "预约单差异明细查询",
+	"id": 65620
+}

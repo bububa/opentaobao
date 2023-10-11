@@ -309,6 +309,16 @@
 									"name": "remark",
 									"type": "String",
 									"description": "备注"
+								},
+								{
+									"name": "coach_no",
+									"type": "String",
+									"description": "车厢号"
+								},
+								{
+									"name": "short_ticket_no",
+									"type": "String",
+									"description": "短票号"
 								}
 							],
 							"name": "data_list",

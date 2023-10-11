@@ -1,0 +1,81 @@
+{
+	"requestParams": [
+		{
+			"name": "trigger_code",
+			"type": "String",
+			"description": "事件编码",
+			"required": true
+		},
+		{
+			"name": "content",
+			"type": "Json",
+			"description": "事件内容",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "process_instance_id",
+							"type": "String",
+							"description": "流程实例ID"
+						},
+						{
+							"name": "process_success",
+							"type": "Boolean",
+							"description": "流程执行是否成功"
+						},
+						{
+							"name": "biz_success",
+							"type": "Boolean",
+							"description": "业务是否成功"
+						},
+						{
+							"name": "process_error_code",
+							"type": "String",
+							"description": "流程错误码"
+						},
+						{
+							"name": "process_error_msg",
+							"type": "String",
+							"description": "流程错误信息"
+						},
+						{
+							"name": "process_remark",
+							"type": "String",
+							"description": "流程备注"
+						},
+						{
+							"name": "process_data",
+							"type": "Json",
+							"description": "流程返回值"
+						}
+					],
+					"name": "response_list",
+					"type": "ProcessResponse[]",
+					"description": "流程返回值列表"
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "traceId"
+				},
+				{
+					"name": "execute_process",
+					"type": "Boolean",
+					"description": "是否触发工作流"
+				}
+			],
+			"name": "data",
+			"type": "EventPublishResponse",
+			"description": "事件返回值"
+		}
+	],
+	"name": "taobao.top.event.publish",
+	"apiChineseName": "同步事件发布",
+	"description": "同步事件发布",
+	"id": 66328
+}

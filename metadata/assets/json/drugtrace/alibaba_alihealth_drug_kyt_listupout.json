@@ -41,7 +41,7 @@
 		{
 			"name": "physic_type",
 			"type": "String",
-			"description": "药品类型"
+			"description": "是否返回经营国家重点品种（1代表返回国家重点品种的单据）"
 		},
 		{
 			"name": "status",

@@ -12,4 +12,6 @@ type VipCustomResultItem struct {
 	Count int64 `json:"count,omitempty" xml:"count,omitempty"`
 	// 是否接受非定制,0不接受,1接受
 	AcceptNoVipCustom int64 `json:"accept_no_vip_custom,omitempty" xml:"accept_no_vip_custom,omitempty"`
+	// 联程订单定制序号
+	SegmentIndex int64 `json:"segment_index,omitempty" xml:"segment_index,omitempty"`
 }

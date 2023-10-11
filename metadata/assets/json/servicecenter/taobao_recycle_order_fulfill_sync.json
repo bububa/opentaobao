@@ -1,0 +1,34 @@
+{
+	"requestParams": [
+		{
+			"name": "fulfill_type",
+			"type": "Number",
+			"description": "取送一体时这个字段传 1，否则传 0",
+			"required": true
+		},
+		{
+			"name": "old_order_id",
+			"type": "Number",
+			"description": "回收单订单 ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "sync_success",
+					"type": "Boolean",
+					"description": "是否同步成功"
+				}
+			],
+			"name": "data",
+			"type": "OfnRecycleOrderSyncFulfillTypeDTO",
+			"description": "同步回收单最终履约方式结果"
+		}
+	],
+	"name": "taobao.recycle.order.fulfill.sync",
+	"apiChineseName": "同步回收单最终履约方式",
+	"description": "同步回收单最终履约方式",
+	"id": 66445
+}

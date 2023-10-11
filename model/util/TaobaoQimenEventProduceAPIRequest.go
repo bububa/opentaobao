@@ -22,6 +22,12 @@ type TaobaoQimenEventProduceAPIRequest struct {
 	_platform string
 	// 外部商家名称。必须同时填写platform
 	_nick string
+	// 主单号对应的erp单号，转单、审单、通知配货、出库 需要填。拆单、合单场景下不用填
+	_erpOrderId string
+	// 淘宝子订单id（拆单、合单场景下不用填，其他场景需要回传,用英文逗号隔开）
+	_taobaoSubOrderIds string
+	// 触发事件的时间
+	_eventTime string
 	// 订单创建时间,数字
 	_create int64
 }
@@ -113,6 +119,45 @@ func (r *TaobaoQimenEventProduceAPIRequest) SetNick(_nick string) error {
 // GetNick Nick Getter
 func (r TaobaoQimenEventProduceAPIRequest) GetNick() string {
 	return r._nick
+}
+
+// SetErpOrderId is ErpOrderId Setter
+// 主单号对应的erp单号，转单、审单、通知配货、出库 需要填。拆单、合单场景下不用填
+func (r *TaobaoQimenEventProduceAPIRequest) SetErpOrderId(_erpOrderId string) error {
+	r._erpOrderId = _erpOrderId
+	r.Set("erp_order_id", _erpOrderId)
+	return nil
+}
+
+// GetErpOrderId ErpOrderId Getter
+func (r TaobaoQimenEventProduceAPIRequest) GetErpOrderId() string {
+	return r._erpOrderId
+}
+
+// SetTaobaoSubOrderIds is TaobaoSubOrderIds Setter
+// 淘宝子订单id（拆单、合单场景下不用填，其他场景需要回传,用英文逗号隔开）
+func (r *TaobaoQimenEventProduceAPIRequest) SetTaobaoSubOrderIds(_taobaoSubOrderIds string) error {
+	r._taobaoSubOrderIds = _taobaoSubOrderIds
+	r.Set("taobao_sub_order_ids", _taobaoSubOrderIds)
+	return nil
+}
+
+// GetTaobaoSubOrderIds TaobaoSubOrderIds Getter
+func (r TaobaoQimenEventProduceAPIRequest) GetTaobaoSubOrderIds() string {
+	return r._taobaoSubOrderIds
+}
+
+// SetEventTime is EventTime Setter
+// 触发事件的时间
+func (r *TaobaoQimenEventProduceAPIRequest) SetEventTime(_eventTime string) error {
+	r._eventTime = _eventTime
+	r.Set("event_time", _eventTime)
+	return nil
+}
+
+// GetEventTime EventTime Getter
+func (r TaobaoQimenEventProduceAPIRequest) GetEventTime() string {
+	return r._eventTime
 }
 
 // SetCreate is Create Setter

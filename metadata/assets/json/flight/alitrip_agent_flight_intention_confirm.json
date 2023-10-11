@@ -11,6 +11,23 @@
 					"name": "intention_id",
 					"type": "Number",
 					"description": "意向单id"
+				},
+				{
+					"subParams": [
+						{
+							"name": "passenger_type",
+							"type": "Number",
+							"description": "乘机人类型,1成人2儿童3婴儿"
+						},
+						{
+							"name": "price",
+							"type": "Number",
+							"description": "乘机人对应的售价，单位：分，个位和十位必须是0，例如可以是19900，不能是19910，也不能是19901"
+						}
+					],
+					"name": "prices",
+					"type": "Price[]",
+					"description": "出价，要么为null，要么集合内必须有值"
 				}
 			],
 			"name": "param_confirm_request_d_t_o",

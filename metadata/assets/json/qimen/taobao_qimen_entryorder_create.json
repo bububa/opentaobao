@@ -434,6 +434,6 @@
 	],
 	"name": "taobao.qimen.entryorder.create",
 	"apiChineseName": "入库单创建接口",
-	"description": "ERP调用接口，创建入库单;",
+	"description": "taobao.qimen.entryorder.create",
 	"id": 25991
 }

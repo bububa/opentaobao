@@ -1,9 +1,50 @@
 {
 	"requestParams": [
 		{
+			"name": "gid",
+			"type": "Number",
+			"description": "不推荐使用，请使用out_rid"
+		},
+		{
+			"name": "rpid",
+			"type": "Number",
+			"description": "不推荐使用，请使用rateplan_code"
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "废弃",
+			"maxLength": 60
+		},
+		{
 			"name": "inventory_price",
 			"type": "String",
 			"description": "每日价格和房价专有库存信息。A:use_room_inventory:是否使用room级别共享库存，可选值 true false 1、true时：使用room级别共享库存（即使用gid对应的XRoom中的inventory），rate_quota_map 的json 数据中不需要录入库存信息,录入的库存信息会忽略 2、false时：使用rate级别私有库存，此时要求价格和库存必填。B:date  日期必须为 T---T+180 日内的日期（T为当天），且不能重复C:price 价格 int类型 取值范围1-99999999 单位为分D:quota 库存 int 类型 取值范围  0-999（数量库存）  60000(状态库存关) 61000(状态库存开)"
+		},
+		{
+			"name": "add_bed",
+			"type": "Number",
+			"description": "不推荐使用"
+		},
+		{
+			"name": "add_bed_price",
+			"type": "Number",
+			"description": "不推荐使用"
+		},
+		{
+			"name": "currency_code",
+			"type": "Number",
+			"description": "不推荐使用（仅支持CNY）"
+		},
+		{
+			"name": "shijia_tag",
+			"type": "Number",
+			"description": "不推荐使用"
+		},
+		{
+			"name": "jishiqueren_tag",
+			"type": "Number",
+			"description": "不推荐使用"
 		},
 		{
 			"name": "vendor",
@@ -42,6 +83,11 @@
 			"name": "online_booking_binding_info",
 			"type": "String",
 			"description": "在线预约关联关系推送，priceRuleNumber：加价规则序号"
+		},
+		{
+			"name": "hotel_xitem_infos",
+			"type": "String",
+			"description": " 是一个JSONArray 字符串 actionType  操作类型 BOUND: 绑定，UNBOUND：解绑; outXcode  元素编码 ; subTypeCode x 元素子类型， 参考：https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.9MjTPx\u0026docType=1\u0026articleId=121402\u0026previewCode=787DFB0895F05C90D167579A04BD32E3; status: 状态是否生效0 失效, 1生效; shortName x元素标题; time 服务时间段(18:00-21:00); value 商品价值(100 - 999900 单位分); itemDesc 商品使用说明; dimensionType 附加产品使用维度   1:每间房维度 2:每间夜维度; picList 图片格式化信息 [{\"url\":\"https://xxxxx/\",\"isMain\":true}]; adultCount 成人数量 (1-99); childCount 儿童数量 (0-99); itemLimit 使用限制, 文字描述,200 字内; checkInStart 入住生效开始时间; checkInEnd 入住生效结束时间; bookStartTime 预定生效开始时间; bookStartEnd 预定生效截止时间; featureDetail 详细信息json字符串 [{\"detailName\":\"免费寄存\",\"detailValue\":[\"\"],\"type\":\"single\",\"priority\":1}]"
 		}
 	],
 	"responseParams": [

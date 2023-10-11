@@ -1,0 +1,109 @@
+{
+	"requestParams": [
+		{
+			"name": "lp_order_id",
+			"type": "Number",
+			"description": "物流发货单号",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "action",
+					"type": "String",
+					"description": "ACCEPT(已揽收),TRANSPORT(运输中),DELIVERING(派送中),SIGN(已签收),CANCEL(已取消),FAILED(物流异常)",
+					"required": true
+				},
+				{
+					"name": "operate_time",
+					"type": "Number",
+					"description": "操作时间戳，精确到毫秒（ms）",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "配送员电话，支持手机、座机、400电话",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "配送员姓名",
+							"required": true
+						}
+					],
+					"name": "delivery",
+					"type": "DeliveryTopDTO",
+					"description": "配送员信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省/直辖市",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "地级市",
+							"required": true
+						},
+						{
+							"name": "district",
+							"type": "String",
+							"description": "区/县",
+							"required": true
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "乡/镇/街道",
+							"required": true
+						},
+						{
+							"name": "lng",
+							"type": "String",
+							"description": "经度，高德地图"
+						},
+						{
+							"name": "lat",
+							"type": "String",
+							"description": "纬度，高德地图"
+						}
+					],
+					"name": "location",
+					"type": "LocationTopDTO",
+					"description": "货物所在的当前位置"
+				}
+			],
+			"name": "nodes",
+			"type": "LogisticsNodeTopDTO[]",
+			"description": "物流节点",
+			"maxListSize": 100,
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true成功，false失败"
+				}
+			],
+			"name": "result",
+			"type": "BatchWriteLogisticsNodeTopResponse",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.ascp.logistics.seller.writelogisticsnode",
+	"apiChineseName": "商家配送写入物流节点",
+	"description": "商家配送的订单，商家写入物流节点",
+	"id": 66352
+}

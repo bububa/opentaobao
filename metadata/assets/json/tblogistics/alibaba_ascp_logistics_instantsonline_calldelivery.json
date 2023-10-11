@@ -1,0 +1,243 @@
+{
+	"requestParams": [
+		{
+			"name": "out_order_id",
+			"type": "String",
+			"description": "ERP单号",
+			"required": true
+		},
+		{
+			"name": "biz_type",
+			"type": "String",
+			"description": "业务类型，INSTANT_ONLINE：同城配送-在线下单",
+			"required": true
+		},
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "淘宝订主单号",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "name",
+					"type": "String",
+					"description": "联系人姓名",
+					"required": true
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "联系人电话，支持手机、座机",
+					"required": true
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "地址门牌号  \t",
+					"required": true
+				},
+				{
+					"name": "lat",
+					"type": "String",
+					"description": "纬度（高德）",
+					"required": true
+				},
+				{
+					"name": "lng",
+					"type": "String",
+					"description": "经度（高德）",
+					"required": true
+				}
+			],
+			"name": "sender",
+			"type": "SenderTopDTO",
+			"description": "发货联系人",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "name",
+					"type": "String",
+					"description": "联系人姓名",
+					"required": true
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "联系人电话，支持手机、座机",
+					"required": true
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "地址门牌号",
+					"required": true
+				},
+				{
+					"name": "lat",
+					"type": "String",
+					"description": "纬度（高德）",
+					"required": true
+				},
+				{
+					"name": "lng",
+					"type": "String",
+					"description": "经度（高德）",
+					"required": true
+				}
+			],
+			"name": "receiver",
+			"type": "ReceiverTopDTO",
+			"description": "收货联系人"
+		},
+		{
+			"subParams": [
+				{
+					"name": "item_name",
+					"type": "String",
+					"description": "商品名称",
+					"required": true
+				},
+				{
+					"name": "item_value",
+					"type": "Number",
+					"description": "商品单价（原价）",
+					"required": true
+				},
+				{
+					"name": "item_quantity",
+					"type": "Number",
+					"description": "商品数量",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品ID",
+					"required": true
+				}
+			],
+			"name": "item_list",
+			"type": "ReceiverTopDTO[]",
+			"description": "商品清单",
+			"maxListSize": 20,
+			"required": true
+		},
+		{
+			"name": "total_item_value",
+			"type": "Number",
+			"description": "商品总价（原价），单位分，默认：商品单价总和"
+		},
+		{
+			"name": "total_item_actual_value",
+			"type": "Number",
+			"description": "商品实付总价（总价），单位分",
+			"required": true
+		},
+		{
+			"name": "total_weight",
+			"type": "Number",
+			"description": "总重量，单位KG，不超过20KG",
+			"required": true
+		},
+		{
+			"name": "default_trade_receiver",
+			"type": "Boolean",
+			"description": "是否默认使用订单收货人地址，默认：true可不填写收货联系人"
+		},
+		{
+			"subParams": [
+				{
+					"name": "resource_request_id",
+					"type": "String",
+					"description": "下单凭证",
+					"required": true
+				},
+				{
+					"name": "resource_code",
+					"type": "String",
+					"description": "资源CODE，用于发货",
+					"required": true
+				},
+				{
+					"name": "actual_fee",
+					"type": "Number",
+					"description": "实付价格",
+					"required": true
+				}
+			],
+			"name": "selected_resource",
+			"type": "SelectedResourceTopDTO",
+			"description": "选择的物流资源",
+			"required": true
+		},
+		{
+			"name": "pickup_code",
+			"type": "String",
+			"description": "指定取件码，不超过16位"
+		},
+		{
+			"name": "default_gen_pickup_code",
+			"type": "Boolean",
+			"description": "默认生成取件码"
+		},
+		{
+			"subParams": [
+				{
+					"name": "group",
+					"type": "String",
+					"description": "取件码分组，分组下唯一"
+				}
+			],
+			"name": "gen_pickup_code_config",
+			"type": "GenPickupCodeConfigTopDTO",
+			"description": "生成取件码配置"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果"
+				},
+				{
+					"name": "cw_order_id",
+					"type": "String",
+					"description": "取号流水号"
+				},
+				{
+					"name": "waybill_code",
+					"type": "String",
+					"description": "物流单号"
+				},
+				{
+					"name": "resource_code",
+					"type": "String",
+					"description": "资源CODE"
+				},
+				{
+					"name": "pickup_code",
+					"type": "String",
+					"description": "取件码"
+				},
+				{
+					"name": "features",
+					"type": "String",
+					"description": "扩展"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "返回值"
+		}
+	],
+	"name": "alibaba.ascp.logistics.instantsonline.calldelivery",
+	"apiChineseName": "同城配送在线下单正式下单呼叫运力",
+	"description": "同城配送在线下单正式下单呼叫运力",
+	"id": 66598
+}

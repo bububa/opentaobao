@@ -1,0 +1,158 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "user_daily_limit_cnt",
+							"type": "Number",
+							"description": "每人每日限购"
+						},
+						{
+							"name": "user_limit_cnt",
+							"type": "Number",
+							"description": "每人活动期间总限购"
+						},
+						{
+							"name": "total_limit_cnt",
+							"type": "Number",
+							"description": "活动期间总限购"
+						}
+					],
+					"name": "limit_info",
+					"type": "LimitInfo",
+					"description": "通用限购信息，-1为不限制，默认为不限制"
+				},
+				{
+					"name": "buy_num",
+					"type": "Number",
+					"description": "买N赠1的N",
+					"required": true
+				},
+				{
+					"name": "gift_sku_code",
+					"type": "String",
+					"description": "赠品的skuCode，如果和主商品的skuCode相同，则为买A赠A；如果不同，则为买A赠B",
+					"required": true
+				},
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "主商品的skuCode",
+					"required": true
+				}
+			],
+			"name": "param0",
+			"type": "ItemBuyGiftSku",
+			"description": "商品对象",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "五道口活动id",
+					"required": true
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "商家活动id"
+				}
+			],
+			"name": "param1",
+			"type": "CommonActivityParam",
+			"description": "活动基本信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "主商品的skuCode"
+						},
+						{
+							"name": "item_shop_relation",
+							"type": "String",
+							"description": "淘宝item和shop的对应关系， k-itemId, v-shopId"
+						},
+						{
+							"name": "gift_sku_code",
+							"type": "String",
+							"description": "赠品的skuCode"
+						},
+						{
+							"name": "sku_name",
+							"type": "String",
+							"description": "主商品名称"
+						},
+						{
+							"name": "buy_num",
+							"type": "Number",
+							"description": "买N赠1的N"
+						},
+						{
+							"name": "gift_sku_name",
+							"type": "String",
+							"description": "赠品名称"
+						},
+						{
+							"subParams": [
+								{
+									"name": "total_limit_cnt",
+									"type": "Number",
+									"description": "活动期间总限购"
+								},
+								{
+									"name": "user_limit_cnt",
+									"type": "Number",
+									"description": "每人活动期间总限购"
+								},
+								{
+									"name": "user_daily_limit_cnt",
+									"type": "Number",
+									"description": "每人每日限购"
+								}
+							],
+							"name": "limit_info",
+							"type": "LimitInfo",
+							"description": "通用限购信息，-1为不限制，默认为不限制"
+						}
+					],
+					"name": "data",
+					"type": "ItemBuyGiftSku",
+					"description": "报名活动成功的商品详情"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否报名成功"
+				}
+			],
+			"name": "result",
+			"type": "MarketResult",
+			"description": "商品报名活动的返回结果"
+		}
+	],
+	"name": "alibaba.hm.marketing.itembuygift.additem",
+	"apiChineseName": "增加买赠活动商品。【注意，此接口暂不支持并发！】",
+	"description": "增加买赠活动商品。【注意，此接口暂不支持并发！】",
+	"id": 67249
+}

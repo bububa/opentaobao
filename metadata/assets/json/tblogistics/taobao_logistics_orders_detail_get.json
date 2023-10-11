@@ -122,12 +122,12 @@
 				},
 				{
 					"name": "receiver_phone",
-					"type": "Number",
+					"type": "String",
 					"description": "收件人电话"
 				},
 				{
 					"name": "receiver_mobile",
-					"type": "Number",
+					"type": "String",
 					"description": "收件人手机号码"
 				},
 				{
@@ -238,6 +238,16 @@
 					"name": "mails",
 					"type": "LogisticsMail[]",
 					"description": "包裹信息,包含运单号及快递公司"
+				},
+				{
+					"name": "receiver_phone_new",
+					"type": "String",
+					"description": "脱敏收件人电话"
+				},
+				{
+					"name": "receiver_mobile_new",
+					"type": "String",
+					"description": "脱敏收件人手机号码"
 				},
 				{
 					"name": "openuid",

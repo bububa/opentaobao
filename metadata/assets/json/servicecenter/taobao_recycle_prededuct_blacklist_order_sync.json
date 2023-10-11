@@ -1,0 +1,28 @@
+{
+	"requestParams": [
+		{
+			"name": "black_order_id",
+			"type": "Number",
+			"description": "需要加入黑名单的回收单订单 ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "sync_success",
+					"type": "Boolean",
+					"description": "是否同步成功"
+				}
+			],
+			"name": "data",
+			"type": "OfnRecyclerSyncBlackListDTO",
+			"description": "同步黑名单结果"
+		}
+	],
+	"name": "taobao.recycle.prededuct.blacklist.order.sync",
+	"apiChineseName": "同步服务商黑名单",
+	"description": "同步服务商黑名单",
+	"id": 66444
+}

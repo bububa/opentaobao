@@ -38,10 +38,16 @@ type OfferDetailsDto struct {
 	ClStartDate string `json:"cl_start_date,omitempty" xml:"cl_start_date,omitempty"`
 	// 子类型
 	SubType string `json:"sub_type,omitempty" xml:"sub_type,omitempty"`
+	// 活动底部点击按钮文案
+	ButtonContent string `json:"button_content,omitempty" xml:"button_content,omitempty"`
 	// offerId
 	OfferId int64 `json:"offer_id,omitempty" xml:"offer_id,omitempty"`
 	// 抽奖活动
 	ActivityLuckyDraw *ActivityLuckyDrawVo `json:"activity_lucky_draw,omitempty" xml:"activity_lucky_draw,omitempty"`
 	// 弹屏信息
 	PopUpInfo *PopUpInfo `json:"pop_up_info,omitempty" xml:"pop_up_info,omitempty"`
+	// 是否配置了活动详情页
+	NeedActivityPage bool `json:"need_activity_page,omitempty" xml:"need_activity_page,omitempty"`
+	// 是否配置了弹屏
+	NeedPopUpScreen bool `json:"need_pop_up_screen,omitempty" xml:"need_pop_up_screen,omitempty"`
 }

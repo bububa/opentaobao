@@ -26,7 +26,7 @@ type AlibabaAlihealthDrugKytListupoutAPIRequest struct {
 	_drugEntBaseInfoId string
 	// 单据类型
 	_billType string
-	// 药品类型
+	// 是否返回经营国家重点品种（1代表返回国家重点品种的单据）
 	_physicType string
 	// 状态
 	_status string
@@ -156,7 +156,7 @@ func (r AlibabaAlihealthDrugKytListupoutAPIRequest) GetBillType() string {
 }
 
 // SetPhysicType is PhysicType Setter
-// 药品类型
+// 是否返回经营国家重点品种（1代表返回国家重点品种的单据）
 func (r *AlibabaAlihealthDrugKytListupoutAPIRequest) SetPhysicType(_physicType string) error {
 	r._physicType = _physicType
 	r.Set("physic_type", _physicType)

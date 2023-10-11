@@ -1,0 +1,245 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于做幂等",
+					"required": true
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "时间戳（毫秒）",
+					"required": true
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "服务商ID",
+					"required": true
+				},
+				{
+					"name": "delivery_code",
+					"type": "String",
+					"description": "服务商配资源唯一编码",
+					"required": true
+				},
+				{
+					"name": "site_id",
+					"type": "String",
+					"description": "网点ID"
+				},
+				{
+					"name": "site_address",
+					"type": "String",
+					"description": "网点地址"
+				},
+				{
+					"name": "ability_type",
+					"type": "String",
+					"description": "能力：1-送货上门",
+					"required": true
+				},
+				{
+					"name": "service_class",
+					"type": "String",
+					"description": "服务：1-送货上门",
+					"required": true
+				},
+				{
+					"name": "category",
+					"type": "String",
+					"description": "品类：0-全部（默认）；1-中小件；2-大件；"
+				},
+				{
+					"name": "service_time",
+					"type": "String",
+					"description": "服务时间"
+				},
+				{
+					"name": "service_cap",
+					"type": "String",
+					"description": "服务容量：包裹件数（不传，默认无上限）"
+				},
+				{
+					"name": "service_scope_type",
+					"type": "String",
+					"description": "服务范围地址类型：1-行政地址；2-地理围栏",
+					"required": true
+				},
+				{
+					"name": "address_type",
+					"type": "String",
+					"description": "地址传入方式 1.菜鸟地址库ID传入 2.中文地址传入",
+					"required": true
+				},
+				{
+					"name": "address_id",
+					"type": "String[]",
+					"description": "当地址传入方式为菜鸟地址库ID传入时，则必须填写 地址id（数组）；四级/三级/二级"
+				},
+				{
+					"subParams": [
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "市"
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "区"
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "街道"
+						}
+					],
+					"name": "address_name",
+					"type": "AddressName[]",
+					"description": "当地址传入方式为详细地址时填写"
+				},
+				{
+					"subParams": [
+						{
+							"name": "latitude",
+							"type": "String",
+							"description": "经度（高德）"
+						},
+						{
+							"name": "longitude",
+							"type": "String",
+							"description": "纬度（高德）"
+						}
+					],
+					"name": "region_id",
+					"type": "RegionId[]",
+					"description": "地理围栏（经纬度），电子围栏最多5000个点（数组）"
+				},
+				{
+					"name": "region_code",
+					"type": "String",
+					"description": "电子围栏外部ID"
+				}
+			],
+			"name": "delivery_send_ability_request",
+			"type": "DeliverySendAbilityRequest",
+			"description": "快递送货上门能力",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "系统成功失败   true|false"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "address_id",
+									"type": "String",
+									"description": "错误的地址ID"
+								},
+								{
+									"name": "error_message",
+									"type": "String",
+									"description": "错误原因"
+								}
+							],
+							"name": "address_id_results",
+							"type": "AddressIdResults[]",
+							"description": "只会返回错误的地址id，如果淘天物流无法识别的地址则返回错误码"
+						},
+						{
+							"subParams": [
+								{
+									"name": "province",
+									"type": "String",
+									"description": "省"
+								},
+								{
+									"name": "city",
+									"type": "String",
+									"description": "市"
+								},
+								{
+									"name": "area",
+									"type": "String",
+									"description": "区"
+								},
+								{
+									"name": "town",
+									"type": "String",
+									"description": "街道"
+								},
+								{
+									"name": "error_message",
+									"type": "String",
+									"description": "错误原因"
+								}
+							],
+							"name": "address_name_results",
+							"type": "AddressNameResults[]",
+							"description": "只会返回错误的地址信息，如果淘天物流无法识别的地址则返回错误码"
+						},
+						{
+							"subParams": [
+								{
+									"name": "latitude",
+									"type": "String",
+									"description": "经度（高德）"
+								},
+								{
+									"name": "longitude",
+									"type": "String",
+									"description": "纬度（高德）"
+								},
+								{
+									"name": "error_message",
+									"type": "String",
+									"description": "错误原因"
+								}
+							],
+							"name": "region_id_results",
+							"type": "RegionIdResults[]",
+							"description": "只会返回错误的地理围栏信息"
+						}
+					],
+					"name": "data",
+					"type": "DataDetails",
+					"description": "处理结果详细信息"
+				}
+			],
+			"name": "delivery_send_ability_async_response",
+			"type": "DeliverySendAblitiyAsyncResponse",
+			"description": "返回值"
+		}
+	],
+	"name": "taobao.logistics.express.delivery.send.ability.async",
+	"apiChineseName": "快递送货上门能力同步/更新接口",
+	"description": "快递送货上门能力同步/更新接口",
+	"id": 67117
+}

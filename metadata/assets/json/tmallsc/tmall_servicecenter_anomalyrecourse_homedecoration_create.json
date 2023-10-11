@@ -1,0 +1,75 @@
+{
+	"requestParams": [
+		{
+			"name": "workcard_id",
+			"type": "Number",
+			"description": "工单ID",
+			"required": true
+		},
+		{
+			"name": "question_code",
+			"type": "String",
+			"description": "问题code",
+			"required": true
+		},
+		{
+			"name": "remark",
+			"type": "String",
+			"description": "投诉描述",
+			"required": true
+		},
+		{
+			"name": "public_opinion",
+			"type": "Number",
+			"description": "是否有消费者投诉风险0：无；1：有"
+		},
+		{
+			"name": "images",
+			"type": "String",
+			"description": "投诉图片url"
+		},
+		{
+			"name": "complain_count",
+			"type": "Number",
+			"description": "投诉份数"
+		},
+		{
+			"name": "apply_compensation_amount",
+			"type": "Number",
+			"description": "申请赔付金额"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "value",
+					"type": "Number",
+					"description": "生成的投诉单id"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
+		}
+	],
+	"name": "tmall.servicecenter.anomalyrecourse.homedecoration.create",
+	"apiChineseName": "天猫服务平台服务商代商家发起投诉单",
+	"description": "天猫服务平台服务商代商家发起投诉单",
+	"id": 66160
+}

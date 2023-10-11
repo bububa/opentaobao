@@ -1,0 +1,121 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "os",
+					"type": "String",
+					"description": "手机系统",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "设备类型 oaid/caid/imei",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "String",
+					"description": "设备值",
+					"required": true
+				},
+				{
+					"name": "is_md5",
+					"type": "Boolean",
+					"description": "是否是md5值",
+					"required": true
+				}
+			],
+			"name": "device_ids",
+			"type": "DeviceIdParam",
+			"description": "设备列表",
+			"required": true
+		},
+		{
+			"name": "query",
+			"type": "String",
+			"description": "查询词",
+			"required": true
+		},
+		{
+			"name": "wanted_size",
+			"type": "Number",
+			"description": "需要数量",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "name",
+					"type": "String",
+					"description": "商品名"
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "商品描述"
+				},
+				{
+					"name": "image_url",
+					"type": "String",
+					"description": "图片链接"
+				},
+				{
+					"name": "tags",
+					"type": "String",
+					"description": "标签属性"
+				},
+				{
+					"name": "category",
+					"type": "String",
+					"description": "类别"
+				},
+				{
+					"name": "deeplink",
+					"type": "String",
+					"description": "唤端链接"
+				},
+				{
+					"name": "click_url",
+					"type": "String",
+					"description": "商品点击链接"
+				},
+				{
+					"name": "exposure_url",
+					"type": "String",
+					"description": "商品曝光链接"
+				},
+				{
+					"name": "product_query",
+					"type": "String",
+					"description": "产品词/召回词"
+				},
+				{
+					"name": "entity_word",
+					"type": "String",
+					"description": "实体词"
+				}
+			],
+			"name": "products",
+			"type": "ProductDto []",
+			"description": "[]"
+		},
+		{
+			"name": "offering",
+			"type": "Boolean",
+			"description": "是否参竞"
+		},
+		{
+			"name": "exposure_url",
+			"type": "String",
+			"description": "榜单曝光链接"
+		}
+	],
+	"name": "taobao.growth.reaching.browser.search",
+	"apiChineseName": "查询搜索关联",
+	"description": "查询搜索关联",
+	"id": 66356
+}

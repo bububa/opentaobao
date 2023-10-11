@@ -1,0 +1,88 @@
+{
+	"requestParams": [
+		{
+			"name": "activity_id",
+			"type": "Number",
+			"description": "社群活动id",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户会话登录token"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "opening_time",
+					"type": "String",
+					"description": "开幕时间"
+				},
+				{
+					"name": "tao_token",
+					"type": "String",
+					"description": "淘口令"
+				},
+				{
+					"name": "reservation",
+					"type": "String",
+					"description": "是否已预约"
+				},
+				{
+					"name": "id",
+					"type": "String",
+					"description": "活动id"
+				},
+				{
+					"name": "activity_title",
+					"type": "String",
+					"description": "活动标题"
+				},
+				{
+					"name": "activity_content",
+					"type": "String",
+					"description": "活动内容"
+				},
+				{
+					"name": "activity_back_url",
+					"type": "String",
+					"description": "活动回流地址"
+				},
+				{
+					"name": "spread_title",
+					"type": "String",
+					"description": "渠道外传播标题"
+				},
+				{
+					"name": "spread_pic_url",
+					"type": "String",
+					"description": "对外传播图片"
+				},
+				{
+					"name": "activity_type",
+					"type": "Number",
+					"description": "活动类型"
+				},
+				{
+					"name": "activity_status",
+					"type": "String",
+					"description": "活动状态"
+				}
+			],
+			"name": "data",
+			"type": "Data",
+			"description": "数据对象"
+		},
+		{
+			"name": "error",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.jhs.community.activity.details",
+	"apiChineseName": "社群活动详情",
+	"description": "社群活动详情",
+	"id": 65912
+}

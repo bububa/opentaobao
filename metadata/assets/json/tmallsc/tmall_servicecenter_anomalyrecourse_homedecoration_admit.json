@@ -1,0 +1,48 @@
+{
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "投诉单id",
+			"required": true
+		},
+		{
+			"name": "tp_admit_responsible_amount",
+			"type": "Number",
+			"description": "认责金额，分"
+		},
+		{
+			"name": "remark",
+			"type": "String",
+			"description": "备注"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
+		}
+	],
+	"name": "tmall.servicecenter.anomalyrecourse.homedecoration.admit",
+	"apiChineseName": "天猫服务平台商家投诉单服务商认责接口",
+	"description": "天猫服务平台商家投诉单服务商认责接口",
+	"id": 66059
+}

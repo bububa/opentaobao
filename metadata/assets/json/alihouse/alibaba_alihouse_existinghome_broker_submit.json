@@ -198,6 +198,31 @@
 					"name": "identity",
 					"type": "String",
 					"description": "身份标识"
+				},
+				{
+					"name": "etc_version",
+					"type": "Number",
+					"description": "版本号"
+				},
+				{
+					"name": "is_receive_customer",
+					"type": "Number",
+					"description": "是否可接待客户，1 - 是，0 - 否，接待模式3.0时，此字段必填。"
+				},
+				{
+					"name": "region_receptive_status",
+					"type": "Number",
+					"description": "区域接待状态0-不可接待 1-可接待"
+				},
+				{
+					"name": "certification_services",
+					"type": "String[]",
+					"description": "1-区域认证小B"
+				},
+				{
+					"name": "e_code",
+					"type": "String",
+					"description": "eCode"
 				}
 			],
 			"name": "brokers",

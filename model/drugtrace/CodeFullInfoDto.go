@@ -10,6 +10,10 @@ type CodeFullInfoDto struct {
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 追溯码
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
+	// 69码
+	Barcode69 string `json:"barcode69,omitempty" xml:"barcode69,omitempty"`
+	// 包装比例
+	PkgRatio string `json:"pkg_ratio,omitempty" xml:"pkg_ratio,omitempty"`
 	// 返回信息
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// 码生产信息对象

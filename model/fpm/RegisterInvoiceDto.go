@@ -100,6 +100,8 @@ type RegisterInvoiceDto struct {
 	RegBizIdentityCode string `json:"reg_biz_identity_code,omitempty" xml:"reg_biz_identity_code,omitempty"`
 	// 运单号
 	WaybillNo string `json:"waybill_no,omitempty" xml:"waybill_no,omitempty"`
+	// 票种类型code
+	InvoiceTypeCode string `json:"invoice_type_code,omitempty" xml:"invoice_type_code,omitempty"`
 	// 登记时，最终所选的bizId
 	RegBizIdentityId int64 `json:"reg_biz_identity_id,omitempty" xml:"reg_biz_identity_id,omitempty"`
 	// 纸票是否到票才认证

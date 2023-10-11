@@ -1,0 +1,178 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "range_type",
+					"type": "String",
+					"description": "优惠券适用范围 [rangeShop:店铺券;rangeItem:商品;rangeCategory:品类券]",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "daily_limit_cnt",
+							"type": "Number",
+							"description": "活动每日总限领"
+						},
+						{
+							"name": "user_daily_limit_cnt",
+							"type": "Number",
+							"description": "每人每日限领"
+						},
+						{
+							"name": "user_limit_cnt",
+							"type": "Number",
+							"description": "每人活动期间总限领"
+						},
+						{
+							"name": "total_limit_cnt",
+							"type": "Number",
+							"description": "必须指定且值为正数，活动期间总限领",
+							"required": true
+						}
+					],
+					"name": "limit_info",
+					"type": "LimitInfo",
+					"description": "通用限购信息，-1为不限制，默认为不限制[如果同时设置了(每人活动期间总限领)和(每人每日限领)，则只能生效(每人活动期间总限领)]",
+					"required": true
+				},
+				{
+					"name": "terminals",
+					"type": "String[]",
+					"description": "优惠适用场景[APP|POS|POS+APP分别对应的值为1|2|1,2]",
+					"required": true
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "商家活动id"
+				},
+				{
+					"name": "send_type",
+					"type": "String",
+					"description": "优惠券发放方式 [anonymous:匿名券;registered:记名券]",
+					"required": true
+				},
+				{
+					"name": "logo_url",
+					"type": "String",
+					"description": "优惠券logo url，设置匿名券时为必传参数"
+				},
+				{
+					"name": "shop_ids",
+					"type": "String[]",
+					"description": "参加活动的渠道店ids",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "Number",
+					"description": "活动结束时间，时间戳[ms单位]"
+				},
+				{
+					"name": "applicable_categories",
+					"type": "Number[]",
+					"description": "适用类目"
+				},
+				{
+					"name": "amount",
+					"type": "Number",
+					"description": "券面额 [单位为分]",
+					"required": true
+				},
+				{
+					"name": "start_time",
+					"type": "Number",
+					"description": "活动开始时间，时间戳[ms单位]"
+				},
+				{
+					"name": "apply_channels",
+					"type": "String[]",
+					"description": "优惠券领取渠道 [fullSendCoupon:满额返券;fallingSendCoupon:天降红包;customerService:客服补偿发券;其他渠道请找接口人申请]",
+					"required": true
+				},
+				{
+					"name": "valid_days",
+					"type": "Number",
+					"description": "领取后N日有效；如果设置了该值，则不需要设置优惠券的开始时间和结束时间 [有效期截止至领取日期+N天的23:59:59。例券设置有效期领取后5天有效，2018.1.1领取的券，有效期截止至2018.1.6 23:59:59； 例券设置有效期领取后0天有效，2018.1.1领取的券，有效期截止至2018.1.1 23:59:59]"
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "优惠券活动描述，不超过100个中文字符",
+					"required": true
+				},
+				{
+					"name": "start_fee",
+					"type": "Number",
+					"description": "[满减券特有，券类型为满减券时为必传参数]金额门槛，值为-1代表无门槛 [单位为分]"
+				},
+				{
+					"name": "activity_name",
+					"type": "String",
+					"description": "优惠券活动名称,不超过10个中文字符",
+					"required": true
+				},
+				{
+					"name": "details",
+					"type": "String[]",
+					"description": "自定义的优惠券使用详情(支持多条)"
+				},
+				{
+					"name": "discount_type",
+					"type": "String",
+					"description": "优惠券优惠类型 [fullReduce:满减券;reduceTo:减至券，即一口价券]",
+					"required": true
+				},
+				{
+					"name": "start_count",
+					"type": "Number",
+					"description": "[减至券特有]件数门槛，值为-1代表无门槛 [单位为整数]【已下线】"
+				},
+				{
+					"name": "count",
+					"type": "Number",
+					"description": "[减至券特有]优惠件数，限制最多优惠N件，值为-1代表不限制优惠件数 [单位为整数]【已下线】"
+				}
+			],
+			"name": "param",
+			"type": "CouponActivity",
+			"description": "创建优惠券活动请求入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "创建成功时会返回五道口优惠券活动id"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "创建优惠券活动是否成功"
+				}
+			],
+			"name": "result",
+			"type": "MarketResult",
+			"description": "创建优惠券活动返回结果"
+		}
+	],
+	"name": "alibaba.hm.marketing.coupon.createactivity",
+	"apiChineseName": "优惠券活动创建",
+	"description": "添加优惠券活动",
+	"id": 67224
+}

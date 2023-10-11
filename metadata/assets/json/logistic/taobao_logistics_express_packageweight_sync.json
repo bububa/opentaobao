@@ -1,0 +1,94 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "mail_no",
+					"type": "String",
+					"description": "运单号",
+					"required": true
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "单据标识"
+				},
+				{
+					"name": "weight",
+					"type": "String",
+					"description": "包裹重量，单位克。若无重量，则需要通过abnormal_type字段给出原因"
+				},
+				{
+					"name": "tms_cp_code",
+					"type": "String",
+					"description": "快递公司资源编码"
+				},
+				{
+					"name": "abnormal_type",
+					"type": "String",
+					"description": "无包裹重量或者包裹不准确的类型 0-包裹重量有效（默认有效） 1-无包裹重量 2-包裹重量不准确。若存在weight，则不需要传该值"
+				},
+				{
+					"name": "abnormal_desc",
+					"type": "String",
+					"description": "无包裹重量或者包裹不准确的原因。若存在weight，则不需要传该值"
+				},
+				{
+					"name": "charging_weight",
+					"type": "String",
+					"description": "服务商侧计费重量，单位g，小数点后2位"
+				},
+				{
+					"name": "throwing_weight",
+					"type": "String",
+					"description": "计抛重量，单位g，小数点后2位"
+				},
+				{
+					"name": "length",
+					"type": "String",
+					"description": "包裹长度 (单位：cm)，小数点后2位"
+				},
+				{
+					"name": "width",
+					"type": "String",
+					"description": "包裹宽度 (单位：cm)，小数点后2位"
+				},
+				{
+					"name": "height",
+					"type": "String",
+					"description": "包裹高度（单位：cm)，小数点后2位"
+				}
+			],
+			"name": "tms_package_weight_request",
+			"type": "TmsPackageWeightRequest",
+			"description": "包裹重量信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "suc",
+			"type": "Boolean",
+			"description": "校验成功或者异常"
+		},
+		{
+			"name": "biz_error_message",
+			"type": "String",
+			"description": "错误码描述"
+		},
+		{
+			"name": "biz_error_code",
+			"type": "String",
+			"description": "错误码标识"
+		},
+		{
+			"name": "retry",
+			"type": "Boolean",
+			"description": "是否可重试"
+		}
+	],
+	"name": "taobao.logistics.express.packageweight.sync",
+	"apiChineseName": "TMS包裹重量回传",
+	"description": "TMS包裹重量回传",
+	"id": 66966
+}

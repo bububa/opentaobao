@@ -1,0 +1,70 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "replace_url",
+					"type": "String",
+					"description": "链接",
+					"required": true
+				},
+				{
+					"name": "tb_user_id",
+					"type": "String",
+					"description": "用户id",
+					"required": true
+				},
+				{
+					"name": "biz_scene",
+					"type": "String",
+					"description": "业务场景",
+					"required": true
+				}
+			],
+			"name": "param",
+			"type": "FcUrlRequest",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "编码"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "msg提示"
+				},
+				{
+					"subParams": [
+						{
+							"name": "replace_url",
+							"type": "String",
+							"description": "返回url"
+						}
+					],
+					"name": "data",
+					"type": "FcUrlDTO",
+					"description": "返回数据"
+				}
+			],
+			"name": "result",
+			"type": "BaseResponse",
+			"description": "响应"
+		}
+	],
+	"name": "alibaba.alsc.growth.interactive.sns.converturl",
+	"apiChineseName": "防封接口",
+	"description": "防封接口",
+	"id": 65689
+}

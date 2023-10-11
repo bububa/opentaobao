@@ -196,6 +196,11 @@
 					"name": "new_order_shop_name",
 					"type": "String",
 					"description": "关联新机单店铺名称"
+				},
+				{
+					"name": "kitchen_appliance_settle_new_order_id",
+					"type": "String",
+					"description": "拆机费结算使用的关联新机单ID"
 				}
 			],
 			"name": "data",

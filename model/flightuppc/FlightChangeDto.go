@@ -32,4 +32,6 @@ type FlightChangeDto struct {
 	ChangeReason string `json:"change_reason,omitempty" xml:"change_reason,omitempty"`
 	// 航变类型,1为取消，2为变更
 	ChangeType int64 `json:"change_type,omitempty" xml:"change_type,omitempty"`
+	// 航变子原因，如延误、恢复、航班保护，详情见新京杭航变接入文档
+	SubType int64 `json:"sub_type,omitempty" xml:"sub_type,omitempty"`
 }

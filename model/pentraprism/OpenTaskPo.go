@@ -18,6 +18,8 @@ type OpenTaskPo struct {
 	OpenToken string `json:"open_token,omitempty" xml:"open_token,omitempty"`
 	// 操作系统名称
 	Platform string `json:"platform,omitempty" xml:"platform,omitempty"`
+	// 私域id，仅供场景模版类型任务使用
+	OpenId string `json:"open_id,omitempty" xml:"open_id,omitempty"`
 	// 领奖励位置，默认为null
 	AwardIndex int64 `json:"award_index,omitempty" xml:"award_index,omitempty"`
 	// 任务系统后台配置投放ID

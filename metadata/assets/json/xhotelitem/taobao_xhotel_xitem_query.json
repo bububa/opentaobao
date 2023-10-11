@@ -1,0 +1,152 @@
+{
+	"requestParams": [
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "系统商，一般不填写，使用须申请"
+		},
+		{
+			"name": "out_hid",
+			"type": "String",
+			"description": "商家酒店ID，指明该 x 元素属于哪家酒店",
+			"required": true
+		},
+		{
+			"name": "out_rid",
+			"type": "String",
+			"description": "商家房型ID，指明该 x 元素关联哪个房型"
+		},
+		{
+			"name": "rate_plan_code",
+			"type": "String",
+			"description": "商家 RP ID，指明该 x 元素关联了哪个 RP"
+		},
+		{
+			"name": "out_x_codes",
+			"type": "String",
+			"description": "需要查询的 x_code 编码"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间"
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间"
+						},
+						{
+							"name": "out_x_code",
+							"type": "String",
+							"description": "外部code"
+						},
+						{
+							"name": "sub_type_code",
+							"type": "String",
+							"description": "子类型code"
+						},
+						{
+							"name": "out_hid",
+							"type": "String",
+							"description": "外部酒店code"
+						},
+						{
+							"name": "short_name",
+							"type": "String",
+							"description": "元素类型简写"
+						},
+						{
+							"name": "time",
+							"type": "String",
+							"description": "服务时间段"
+						},
+						{
+							"name": "value",
+							"type": "Number",
+							"description": "商品价值"
+						},
+						{
+							"name": "item_desc",
+							"type": "String",
+							"description": "商品使用说明"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态是否生效0 失效, 1生效"
+						},
+						{
+							"name": "dimension_type",
+							"type": "Number",
+							"description": "附加产品使用维度   1:每间房维度 2:每间夜维度"
+						},
+						{
+							"name": "audit_status",
+							"type": "Number",
+							"description": " 审核状态-1：拒绝，0：审核中，1：审核通过"
+						},
+						{
+							"name": "audit_reject_reason",
+							"type": "String",
+							"description": "审核拒绝原因"
+						},
+						{
+							"name": "feature_detail",
+							"type": "String",
+							"description": "详细信息json字符串"
+						},
+						{
+							"subParams": [
+								{
+									"name": "url",
+									"type": "String",
+									"description": "图片地址"
+								},
+								{
+									"name": "is_main",
+									"type": "Boolean",
+									"description": "是否主图"
+								}
+							],
+							"name": "pictures",
+							"type": "HotelXItemPicture[]",
+							"description": "酒+X 图片格式化信息"
+						}
+					],
+					"name": "x_items",
+					"type": "HotelXitemDO[]",
+					"description": "查询到的 x 元素"
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "记录总数"
+				}
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "返回结果"
+		}
+	],
+	"name": "taobao.xhotel.xitem.query",
+	"apiChineseName": "查询 x 元素",
+	"description": "查询 x 元素",
+	"id": 67478
+}

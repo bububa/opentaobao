@@ -1,0 +1,82 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "主订单信息",
+					"required": true
+				},
+				{
+					"name": "break_order_time",
+					"type": "Date",
+					"description": "订单毁单时间",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "毁单商品id",
+							"required": true
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "毁单商品名称",
+							"required": true
+						},
+						{
+							"name": "item_broken_time",
+							"type": "Date",
+							"description": "毁单商品下架时间",
+							"required": true
+						}
+					],
+					"name": "broken_order_item_infos",
+					"type": "BrokenOrderItemInfo[]",
+					"description": "毁单商品详细信息",
+					"required": true
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "毁单操作人",
+					"required": true
+				}
+			],
+			"name": "supplier_break_order_request",
+			"type": "SupplierBreakOrderRequest",
+			"description": "毁单请求参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_code",
+			"type": "String",
+			"description": "api错误码"
+		},
+		{
+			"name": "api_data",
+			"type": "Boolean",
+			"description": "api调用结果"
+		},
+		{
+			"name": "api_success",
+			"type": "Boolean",
+			"description": "api调用是否成功"
+		},
+		{
+			"name": "api_message",
+			"type": "String",
+			"description": "api错误信息"
+		}
+	],
+	"name": "taobao.cco.self.coordinate.break.order",
+	"apiChineseName": "天猫国际直购供应商毁单通知",
+	"description": "天猫国际直购供应商毁单通知",
+	"id": 67532
+}

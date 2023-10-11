@@ -1,0 +1,79 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "service_type",
+					"type": "String",
+					"description": "服务类型",
+					"required": true
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "服务商ID",
+					"required": true
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "配资源编码",
+					"required": true
+				},
+				{
+					"name": "delivery_code",
+					"type": "String",
+					"description": "唯一标识单号",
+					"required": true
+				}
+			],
+			"name": "tms2_msc_pay_query_request",
+			"type": "Tms2MscPayQueryRequest",
+			"description": "查询入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "pay_flag",
+					"type": "String",
+					"description": "消费者支付状态"
+				},
+				{
+					"name": "pay_time",
+					"type": "String",
+					"description": "消费者支付时间"
+				}
+			],
+			"name": "data",
+			"type": "Tms2MscPayQueryResponse",
+			"description": "业务处理结果"
+		},
+		{
+			"name": "biz_error_message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "biz_error_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "retry",
+			"type": "Boolean",
+			"description": "是否可重试"
+		},
+		{
+			"name": "suc",
+			"type": "Boolean",
+			"description": "是\t系统成功失败 true|false"
+		}
+	],
+	"name": "taobao.logistics.express.order.pay.tms.query",
+	"apiChineseName": "上门取退运费支付状态查询接口",
+	"description": "上门取退运费支付状态查询接口",
+	"id": 67449
+}

@@ -262,8 +262,7 @@
 				{
 					"name": "city",
 					"type": "Number",
-					"description": "城市编码。参见：http://hotel.alitrip.com/area.htm，domestic为false时，输入对应国家的海外城市编码，可调用海外城市查询接口获取；（更新时为可选）",
-					"required": true
+					"description": "城市编码。参见：http://hotel.alitrip.com/area.htm，domestic为false时，输入对应国家的海外城市编码，可调用海外城市查询接口获取；（更新时为可选）"
 				},
 				{
 					"name": "latitude",
@@ -320,6 +319,11 @@
 					"type": "String",
 					"description": "经度",
 					"required": true
+				},
+				{
+					"name": "city_name",
+					"type": "String",
+					"description": "城市名称，优先取city字段，city字段如果为空会校验cityName"
 				}
 			],
 			"name": "location",

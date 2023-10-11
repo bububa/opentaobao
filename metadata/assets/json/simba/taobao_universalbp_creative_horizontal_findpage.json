@@ -1,0 +1,702 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码",
+					"required": true
+				}
+			],
+			"name": "top_service_context",
+			"type": "TopServiceContext",
+			"description": "topServiceContext",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "adgroup_id_list",
+					"type": "Number[]",
+					"description": "单元id集合"
+				},
+				{
+					"name": "campaign_id_list",
+					"type": "Number[]",
+					"description": "计划id集合",
+					"required": true
+				},
+				{
+					"name": "offset",
+					"type": "Number",
+					"description": "偏移量"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页面大小"
+				},
+				{
+					"subParams": [
+						{
+							"name": "fields",
+							"type": "String",
+							"description": "查询指标字段"
+						},
+						{
+							"subParams": [
+								{
+									"name": "adzone_pkg_id_list",
+									"type": "String[]",
+									"description": "流量来源(资源位包id),可为空"
+								},
+								{
+									"name": "unify_type",
+									"type": "String",
+									"description": "归因口径"
+								},
+								{
+									"name": "start_time",
+									"type": "String",
+									"description": "开始时间"
+								},
+								{
+									"name": "end_time",
+									"type": "String",
+									"description": "结束时间"
+								},
+								{
+									"name": "is_rt",
+									"type": "Boolean",
+									"description": "是否查询实时报表，true查实时、false查离线，不传则默认查离线"
+								}
+							],
+							"name": "condition_list",
+							"type": "RptQueryConditionVO[]",
+							"description": "查询条件列表;场景1、实体列表中只需填充汇总报表数据，此时条件列表传一个即可；场景2、实体列表中需同时查询两天的数据做对比，此时条件列表内传两天各自的查询条件；"
+						}
+					],
+					"name": "rpt_query",
+					"type": "RptQueryVO",
+					"description": "报表查询条件"
+				},
+				{
+					"name": "creative_id",
+					"type": "Number",
+					"description": "创意id"
+				}
+			],
+			"name": "creative_query_v_o",
+			"type": "CreativeQueryVo",
+			"description": "creativeQueryVO",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "ok",
+							"type": "Boolean",
+							"description": "是否成功"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误编码"
+						}
+					],
+					"name": "info",
+					"type": "TopInfo",
+					"description": "请求系统信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "campaign_id",
+									"type": "Number",
+									"description": "计划id"
+								},
+								{
+									"name": "campaign_name",
+									"type": "String",
+									"description": "计划名称"
+								},
+								{
+									"name": "adgroup_id",
+									"type": "Number",
+									"description": "单元id"
+								},
+								{
+									"name": "adgroup_name",
+									"type": "String",
+									"description": "单元名称"
+								},
+								{
+									"name": "creative_id",
+									"type": "Number",
+									"description": "创意id"
+								},
+								{
+									"name": "creative_name",
+									"type": "String",
+									"description": "创意名称"
+								},
+								{
+									"name": "creative_type",
+									"type": "Number",
+									"description": "创意分类,1:静态创意,2:智能创意,3:PSD创意,4:动态文案创意,5:自动化创意,6:智能创意,7:综合静态创意,8:综合智能创意,9:自动直播创意,10:元素化创意,11:素材类创意,12:钻展多图创意"
+								},
+								{
+									"name": "source",
+									"type": "Number",
+									"description": "创意来源,1:本地上传,2:BannerMaker,3:CreativeCenter,4:LuBan,5:直播广场,6:活动招商,7:海棠,8:原生创意"
+								},
+								{
+									"name": "creative_center_id",
+									"type": "String",
+									"description": "前端创意中心id"
+								},
+								{
+									"name": "format",
+									"type": "Number",
+									"description": "创意格式,1:文字,2:图片,3:Flash,4:视频,5:文字链,9:FLASH不遮盖,10:创意模板,11:视频直播,12:微视频,203:智能创意-三图创意"
+								},
+								{
+									"subParams": [
+										{
+											"name": "material_id",
+											"type": "Number",
+											"description": "物料id"
+										},
+										{
+											"name": "video_id",
+											"type": "Number",
+											"description": "视频id"
+										},
+										{
+											"name": "source",
+											"type": "Number",
+											"description": "创意来源,1:本地上传,2:BannerMaker,3:CreativeCenter,4:LuBan,5:直播广场,6:活动招商,7:海棠,8:原生创意"
+										},
+										{
+											"name": "haitang_id",
+											"type": "Number",
+											"description": "对应的海棠id"
+										},
+										{
+											"name": "format_type",
+											"type": "Number",
+											"description": "格式类型,1:图片,2:抄底文案,3:产品词,4:属性词,5:链接,51:淘积木URL,6:文案,7:长图,8:短文本,9:长文本,10:LOGO,11:视频,12:底图,13:tag,14:智能文案,15:促销词,16:标签词,17:优惠券,18:原价,19:折扣价,20:智能标题候选词,21:宝贝图 包括主图 长图 副图,22:宝贝标题,23:智能图,24:美观图,32:短标题,33:算法产出，仅供审核用图,34:淘宝素材中心图片,35:店铺名称,36:商品SKU图,37:商品详情页图,38:创意图,39:算法加工后的直播间封面图,40:算法加工后的直播间宝贝图,41:算法加工后的直播间宝贝标题文案,42:长图3:4,44:创意样式,45:主搜商品卡片轮播图,46:主搜商品3比4图,47:图标图片,48:二跳短视频,101:用户主标题,102:用户副标题,103:用户标题3,25:长图微视频,26:方图微视频,27:审核通过后原图做成的ppt视频,28:账号头像,29:素材组下非审核素材内容，主要传递数据用,30:鹿班商品图,31:算法剪辑视频,60:创意中心打包的图(只有外审使用),50:视频ID素材,124:自动审核通过,125:仅合理性审核的图片,126:仅合理性审核的文案"
+										},
+										{
+											"name": "url",
+											"type": "String",
+											"description": "url"
+										},
+										{
+											"name": "cover_url",
+											"type": "String",
+											"description": "封面url"
+										}
+									],
+									"name": "material_list",
+									"type": "ItemMaterialVo[]",
+									"description": "单品创意素材"
+								},
+								{
+									"name": "template_id",
+									"type": "Number",
+									"description": "创意模板ID,"
+								},
+								{
+									"name": "outer_id",
+									"type": "Number",
+									"description": "外部实体id,eg:前端创意中心id"
+								},
+								{
+									"name": "js_in_html",
+									"type": "String",
+									"description": "从海棠获取的地址"
+								},
+								{
+									"name": "template_data",
+									"type": "String",
+									"description": "从海棠获取的templateData"
+								},
+								{
+									"name": "clickurl_media_type_list",
+									"type": "String[]",
+									"description": "跳转地址媒体类型,1:PC,2:无线,3:PC和无线"
+								},
+								{
+									"subParams": [
+										{
+											"name": "status",
+											"type": "String",
+											"description": "状态,PW:待送审,W:待审核,P:审核通过,R:审核拒绝,AW:合成中,AP:合成通过,AR:合成失败,T:排查中,PP:部分通过,E:创意过期,A:创意故障"
+										},
+										{
+											"name": "audit_status",
+											"type": "Number",
+											"description": "创意审核状态,-10:to_promote,-4:tobeadd,-3:feed_handle,-2:reject,-1:handle,0:notchecked,1:passed,-9:qa_reject,-5:uneffect,-7:item_offshelf,-11:business_reject,-12:to_outer_audit,-13:handle_tanx,-14:part_reject,-15:to_rational_audit,-16:part_passed"
+										},
+										{
+											"name": "effective_time",
+											"type": "String",
+											"description": "生效时间"
+										},
+										{
+											"name": "expire_time",
+											"type": "String",
+											"description": "创意过期时间"
+										},
+										{
+											"name": "audit_reason",
+											"type": "String",
+											"description": "审核原因"
+										}
+									],
+									"name": "audit",
+									"type": "AuditVo",
+									"description": "审核信息"
+								},
+								{
+									"subParams": [
+										{
+											"name": "status",
+											"type": "String",
+											"description": "状态,PW:待送审,W:待审核,P:审核通过,R:审核拒绝,AW:合成中,AP:合成通过,AR:合成失败,T:排查中,PP:部分通过,E:创意过期,A:创意故障"
+										},
+										{
+											"name": "audit_status",
+											"type": "Number",
+											"description": "创意审核状态,-10:to_promote,-4:tobeadd,-3:feed_handle,-2:reject,-1:handle,0:notchecked,1:passed,-9:qa_reject,-5:uneffect,-7:item_offshelf,-11:business_reject,-12:to_outer_audit,-13:handle_tanx,-14:part_reject,-15:to_rational_audit,-16:part_passed"
+										},
+										{
+											"name": "effective_time",
+											"type": "String",
+											"description": "生效时间"
+										},
+										{
+											"name": "expire_time",
+											"type": "String",
+											"description": "创意过期时间"
+										},
+										{
+											"name": "audit_reason",
+											"type": "String",
+											"description": "审核原因"
+										}
+									],
+									"name": "adzone_audit_result_list",
+									"type": "AuditVo[]",
+									"description": "审核信息"
+								},
+								{
+									"subParams": [
+										{
+											"name": "adzone_type",
+											"type": "Number",
+											"description": "资源位类型,1:首焦,2:猜你喜欢,3:NewDetail"
+										},
+										{
+											"name": "adzone_name",
+											"type": "String",
+											"description": "资源包名字"
+										},
+										{
+											"name": "adzone_id",
+											"type": "Number",
+											"description": "资源包id"
+										},
+										{
+											"subParams": [
+												{
+													"name": "preview_format",
+													"type": "Number",
+													"description": "预览创意类型,2:图片,10:创意模板,12:微视频"
+												},
+												{
+													"name": "preview_img_url",
+													"type": "String",
+													"description": "预览创意图片地址"
+												},
+												{
+													"name": "preview_click_url",
+													"type": "String",
+													"description": "预览落地页地址"
+												},
+												{
+													"name": "preview_size",
+													"type": "String",
+													"description": "预览创意尺寸"
+												},
+												{
+													"name": "preview_scale",
+													"type": "String",
+													"description": "预览创意尺寸"
+												},
+												{
+													"name": "preview_video_path",
+													"type": "String",
+													"description": "视频地址"
+												},
+												{
+													"name": "preview_video_image",
+													"type": "String",
+													"description": "视频封面"
+												}
+											],
+											"name": "preview_data_list",
+											"type": "CreativePreviewResultVo[]",
+											"description": "创意预览返回前端展示对象"
+										}
+									],
+									"name": "preview_list",
+									"type": "CreativeAdzonePreviewVo[]",
+									"description": "创意预览信息"
+								},
+								{
+									"name": "creative_size",
+									"type": "String",
+									"description": "创意尺寸"
+								},
+								{
+									"subParams": [
+										{
+											"name": "cover_url",
+											"type": "String",
+											"description": "封面url"
+										},
+										{
+											"name": "poster",
+											"type": "String",
+											"description": "封面url(海棠）"
+										},
+										{
+											"name": "item_id",
+											"type": "Number",
+											"description": "商品"
+										},
+										{
+											"name": "video_url",
+											"type": "String",
+											"description": "视频url"
+										},
+										{
+											"name": "audit_state",
+											"type": "Number",
+											"description": "创意审核状态,-10:to_promote,-4:tobeadd,-3:feed_handle,-2:reject,-1:handle,0:notchecked,1:passed,-9:qa_reject,-5:uneffect,-7:item_offshelf,-11:business_reject,-12:to_outer_audit,-13:handle_tanx,-14:part_reject,-15:to_rational_audit,-16:part_passed"
+										},
+										{
+											"name": "audit_desc",
+											"type": "String",
+											"description": "审核描述"
+										},
+										{
+											"name": "video_id",
+											"type": "Number",
+											"description": "视频id"
+										},
+										{
+											"name": "source",
+											"type": "Number",
+											"description": "创意来源,1:本地上传,2:BannerMaker,3:CreativeCenter,4:LuBan,5:直播广场,6:活动招商,7:海棠,8:原生创意"
+										},
+										{
+											"name": "type",
+											"type": "Number",
+											"description": "格式类型,1:图片,2:抄底文案,3:产品词,4:属性词,5:链接,51:淘积木URL,6:文案,7:长图,8:短文本,9:长文本,10:LOGO,11:视频,12:底图,13:tag,14:智能文案,15:促销词,16:标签词,17:优惠券,18:原价,19:折扣价,20:智能标题候选词,21:宝贝图 包括主图 长图 副图,22:宝贝标题,23:智能图,24:美观图,32:短标题,33:算法产出，仅供审核用图,34:淘宝素材中心图片,35:店铺名称,36:商品SKU图,37:商品详情页图,38:创意图,39:算法加工后的直播间封面图,40:算法加工后的直播间宝贝图,41:算法加工后的直播间宝贝标题文案,42:长图3:4,44:创意样式,45:主搜商品卡片轮播图,46:主搜商品3比4图,47:图标图片,48:二跳短视频,101:用户主标题,102:用户副标题,103:用户标题3,25:长图微视频,26:方图微视频,27:审核通过后原图做成的ppt视频,28:账号头像,29:素材组下非审核素材内容，主要传递数据用,30:鹿班商品图,31:算法剪辑视频,60:创意中心打包的图(只有外审使用),50:视频ID素材,124:自动审核通过,125:仅合理性审核的图片,126:仅合理性审核的文案"
+										},
+										{
+											"name": "width",
+											"type": "Number",
+											"description": "视频宽度"
+										},
+										{
+											"name": "height",
+											"type": "Number",
+											"description": "视频高度"
+										},
+										{
+											"name": "duration",
+											"type": "Number",
+											"description": "视频时长"
+										},
+										{
+											"name": "haitang_id",
+											"type": "Number",
+											"description": "对应的海棠id"
+										}
+									],
+									"name": "item_videos",
+									"type": "ItemVideoVo[]",
+									"description": "单品创意视频"
+								},
+								{
+									"name": "online_status",
+									"type": "Number",
+									"description": "创意状态,1:ON,-1:ARCHIVE"
+								},
+								{
+									"name": "start_time",
+									"type": "String",
+									"description": "创意开始时间，用户设置"
+								},
+								{
+									"name": "end_time",
+									"type": "String",
+									"description": "创意结束时间，用户设置"
+								},
+								{
+									"name": "create_time",
+									"type": "String",
+									"description": "创建时间"
+								},
+								{
+									"name": "update_time",
+									"type": "String",
+									"description": "更新时间"
+								},
+								{
+									"subParams": [
+										{
+											"name": "promotion_type",
+											"type": "String",
+											"description": "推广主体类型,item:商品,item_private_mini:独享橱窗,shop:店铺,content:内容,short_video:短视频,user_define:自定义;"
+										},
+										{
+											"name": "sub_promotion_type",
+											"type": "String",
+											"description": "推广子主体类型,item:商品，item_private_mini:独享橱窗，shop:店铺，you_hao_huo:有好货，picture:图文，short_video:短视频，live_room:直播间，live_spot:看点，tao_blocks:淘积木，user_define_url:自定义url"
+										},
+										{
+											"name": "promotion_entity_id",
+											"type": "Number",
+											"description": "推广主体id"
+										},
+										{
+											"subParams": [
+												{
+													"name": "material_id",
+													"type": "Number",
+													"description": "物料id"
+												},
+												{
+													"name": "img_url",
+													"type": "String",
+													"description": "图片地址"
+												},
+												{
+													"name": "link_url",
+													"type": "String",
+													"description": "跳转链接"
+												},
+												{
+													"name": "material_name",
+													"type": "String",
+													"description": "物料名称"
+												},
+												{
+													"name": "title",
+													"type": "String",
+													"description": "标题"
+												}
+											],
+											"name": "material",
+											"type": "PromotionMaterialInfoVo",
+											"description": "主体物料信息"
+										}
+									],
+									"name": "creative_promotion_entity",
+									"type": "CreativePromotionEntityVo",
+									"description": "推广主体"
+								},
+								{
+									"name": "extend_data",
+									"type": "String",
+									"description": "扩展数据"
+								},
+								{
+									"subParams": [
+										{
+											"name": "material_id",
+											"type": "Number",
+											"description": "物料id"
+										},
+										{
+											"name": "image_position",
+											"type": "Number",
+											"description": "主副图图片位置，主图0,副图从1开始"
+										},
+										{
+											"name": "img_url",
+											"type": "String",
+											"description": "图片链接"
+										},
+										{
+											"name": "link_url",
+											"type": "String",
+											"description": "物料链接"
+										},
+										{
+											"name": "material_name",
+											"type": "String",
+											"description": "物料名称"
+										}
+									],
+									"name": "material_image_info",
+									"type": "MaterialImageInfoVo",
+									"description": "物料图片信息"
+								},
+								{
+									"name": "title",
+									"type": "String",
+									"description": "推广标题"
+								},
+								{
+									"name": "image_path",
+									"type": "String",
+									"description": "一跳地址"
+								},
+								{
+									"name": "click_url",
+									"type": "String",
+									"description": "二跳地址"
+								},
+								{
+									"name": "video_id",
+									"type": "Number",
+									"description": "视频id"
+								},
+								{
+									"name": "video_duration",
+									"type": "String",
+									"description": "视频时长"
+								},
+								{
+									"name": "video_path",
+									"type": "String",
+									"description": "视频地址"
+								},
+								{
+									"name": "video_image_path",
+									"type": "String",
+									"description": "视频封面地址"
+								},
+								{
+									"name": "item_id_list",
+									"type": "Number[]",
+									"description": "创意关联宝贝"
+								},
+								{
+									"subParams": [
+										{
+											"subParams": [
+												{
+													"name": "material_id",
+													"type": "Number",
+													"description": "物料id"
+												},
+												{
+													"name": "video_id",
+													"type": "Number",
+													"description": "视频id"
+												},
+												{
+													"name": "source",
+													"type": "Number",
+													"description": "创意来源,1:本地上传,2:BannerMaker,3:CreativeCenter,4:LuBan,5:直播广场,6:活动招商,7:海棠,8:原生创意"
+												},
+												{
+													"name": "haitang_id",
+													"type": "Number",
+													"description": "对应的海棠id"
+												},
+												{
+													"name": "format_type",
+													"type": "Number",
+													"description": "格式类型,1:图片,2:抄底文案,3:产品词,4:属性词,5:链接,51:淘积木URL,6:文案,7:长图,8:短文本,9:长文本,10:LOGO,11:视频,12:底图,13:tag,14:智能文案,15:促销词,16:标签词,17:优惠券,18:原价,19:折扣价,20:智能标题候选词,21:宝贝图 包括主图 长图 副图,22:宝贝标题,23:智能图,24:美观图,32:短标题,33:算法产出，仅供审核用图,34:淘宝素材中心图片,35:店铺名称,36:商品SKU图,37:商品详情页图,38:创意图,39:算法加工后的直播间封面图,40:算法加工后的直播间宝贝图,41:算法加工后的直播间宝贝标题文案,42:长图3:4,44:创意样式,45:主搜商品卡片轮播图,46:主搜商品3比4图,47:图标图片,48:二跳短视频,101:用户主标题,102:用户副标题,103:用户标题3,25:长图微视频,26:方图微视频,27:审核通过后原图做成的ppt视频,28:账号头像,29:素材组下非审核素材内容，主要传递数据用,30:鹿班商品图,31:算法剪辑视频,60:创意中心打包的图(只有外审使用),50:视频ID素材,124:自动审核通过,125:仅合理性审核的图片,126:仅合理性审核的文案"
+												},
+												{
+													"name": "url",
+													"type": "String",
+													"description": "url"
+												},
+												{
+													"name": "cover_url",
+													"type": "String",
+													"description": "封面url"
+												}
+											],
+											"name": "material_list",
+											"type": "ItemMaterialVo[]",
+											"description": "素材集合"
+										}
+									],
+									"name": "children",
+									"type": "CreativeChildrenVo[]",
+									"description": "关键词推广素材"
+								},
+								{
+									"name": "tab_type",
+									"type": "String",
+									"description": "tab类型,101:竖版大图800x1200,102:竖版视频800x1200,103:竖版长图513x750,104:竖版视频512x750,105:竖版模板513x750,113:方图800x800,114:方视频800x800,115:横版大图320x90,116:横版大图240x100,117:横版大图140x120,118:横版大图730x350,119:横版大图846x220,120:横版大图780x210,121:横版大图840x90,122:横版大图180x100,124:横版大图980x200,125:横版大图820x90,126:竖版视频750x1000,127:竖版视频720x960,128:竖版视频1080x1440,129:竖版视频720x1280,130:竖版视频1080x1920"
+								},
+								{
+									"name": "tab_type_name",
+									"type": "String",
+									"description": "tab类型名称,101:竖版大图800x1200,102:竖版视频800x1200,103:竖版长图513x750,104:竖版视频512x750,105:竖版模板513x750,113:方图800x800,114:方视频800x800,115:横版大图320x90,116:横版大图240x100,117:横版大图140x120,118:横版大图730x350,119:横版大图846x220,120:横版大图780x210,121:横版大图840x90,122:横版大图180x100,124:横版大图980x200,125:横版大图820x90,126:竖版视频750x1000,127:竖版视频720x960,128:竖版视频1080x1440,129:竖版视频720x1280,130:竖版视频1080x1920"
+								},
+								{
+									"name": "type_name",
+									"type": "String",
+									"description": "创意类型名称,1:自定义创意,1:主副图创意,1:主图视频创意,5:智能创意"
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "创意类型名称,1:自定义创意,1:主副图创意,1:主图视频创意,5:智能创意"
+								},
+								{
+									"name": "main_pic_video",
+									"type": "String",
+									"description": "创意是否为主图视频创意，异步创建,1:是,其他不是"
+								}
+							],
+							"name": "creative_ref_v_o_list",
+							"type": "CreativeRefVo[]",
+							"description": "批量结果集"
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "数量"
+						}
+					],
+					"name": "creative_ref_v_o_top_bulk_data",
+					"type": "TopBulkData",
+					"description": "结果集"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.universalbp.creative.horizontal.findpage",
+	"apiChineseName": "横向管理创意分页查询",
+	"description": "横向管理创意分页查询",
+	"id": 67276
+}

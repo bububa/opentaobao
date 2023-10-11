@@ -1,0 +1,50 @@
+{
+	"requestParams": [
+		{
+			"name": "outer_store_id",
+			"type": "String",
+			"description": "1"
+		},
+		{
+			"name": "store_type",
+			"type": "Number",
+			"description": "1"
+		},
+		{
+			"name": "sub_type",
+			"type": "Number",
+			"description": "1"
+		},
+		{
+			"name": "outer_company_id",
+			"type": "String",
+			"description": "1"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "return_code",
+			"type": "String",
+			"description": "1"
+		},
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "1"
+		},
+		{
+			"name": "return_success",
+			"type": "Boolean",
+			"description": "1"
+		},
+		{
+			"name": "return_message",
+			"type": "String",
+			"description": "1"
+		}
+	],
+	"name": "alibaba.alihouse.change.store.type",
+	"apiChineseName": "融合店迁移门店",
+	"description": "融合店迁移门店",
+	"id": 67840
+}

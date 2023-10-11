@@ -1,0 +1,114 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间戳（毫秒）",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID（服务商发起请求的ID）",
+					"required": true
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "淘天物流服务商ID",
+					"required": true
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "服务商仓编码",
+					"required": true
+				},
+				{
+					"name": "normal_capacity",
+					"type": "String",
+					"description": "通用产能（≥0） 注意：当天可用产能=更新产能-当天已占用产能",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "date",
+							"type": "String",
+							"description": "日期（年月日），例如20230506",
+							"required": true
+						},
+						{
+							"name": "capacity",
+							"type": "String",
+							"description": "指定日期下产能（≥0）",
+							"required": true
+						}
+					],
+					"name": "special_date_capacitys",
+					"type": "SpecialDateCapacity[]",
+					"description": "特殊日期产能（组），最多20条"
+				},
+				{
+					"subParams": [
+						{
+							"name": "start_hour",
+							"type": "String",
+							"description": "开始时间",
+							"required": true
+						},
+						{
+							"name": "to_hour",
+							"type": "String",
+							"description": "结束时间",
+							"required": true
+						},
+						{
+							"name": "capacity",
+							"type": "String",
+							"description": "产能",
+							"required": true
+						}
+					],
+					"name": "special_time_capacitys",
+					"type": "SpecialTimeCapacity[]",
+					"description": "特殊时间段产能（组）"
+				}
+			],
+			"name": "capacity_rule_update_request",
+			"type": "CapacityRuleUpdateRequest",
+			"description": "仓产能创建/更新入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true|false"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息"
+				}
+			],
+			"name": "capacity_rule_update_response",
+			"type": "CapacityRuleUpdateResponse",
+			"description": "仓产能创建/更新出参"
+		}
+	],
+	"name": "taobao.logistics.warehouse.capacity.rule.update",
+	"apiChineseName": "仓产能创建/更新",
+	"description": "仓产能创建/更新",
+	"id": 67428
+}

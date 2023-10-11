@@ -52,7 +52,7 @@ type TaobaoXhotelUpdateAPIRequest struct {
 	_service string
 	// 房间的基础设施。json格式示例值：{"bathtub":"true","bathPub":"true"}目前支持维护的设施枚举有：bathtub 独立卫浴;bathPub 公共卫浴
 	_roomFacilities string
-	// 酒店图片只支持远程图片，格式如下：[{"url":"http://123.jpg","ismain":"false","type":"大堂","attribute":"普通图"},{"url":"http://456.jpg","ismain":"true","type":"公共区域","attribute":"全景图"},{"url":"http://789.jpg","ismain":"false","type":"大堂","attribute":"普通图"}] 其中url是远程图片的访问地址，main是否为主图（主图只能有一个）,attribute表示图片属性，取值范围只能是：[普通图, 平面图, 全景图] ,type表示图片类型，取值范围只能是：[周边, 外观, 商务中心, 健身房, 其他, 会议室, 餐厅, 浴室, 客房, 公共区域, 娱乐设施, 大堂, 泳池]，图片数量最多10张。要求：无logo、水印、边框、人物，不模糊、重复、歪斜，房间图清晰，图片尺寸不小于300*225，不小于5M
+	// 酒店图片只支持远程图片，格式如下：[{"url":"http://123.jpg","ismain":"false","type":"大堂","attribute":"普通图"},{"url":"http://456.jpg","ismain":"true","type":"公共区域","attribute":"全景图"},{"url":"http://789.jpg","ismain":"false","type":"大堂","attribute":"普通图"}] 其中url是远程图片的访问地址，main是否为主图（主图只能有一个）,attribute表示图片属性，取值范围只能是：[普通图, 平面图, 全景图] ,type表示图片类型，取值范围只能是：[周边, 外观, 商务中心, 其他, 餐厅, 浴室, 客房, 公共区域, 娱乐设施, 大堂]，图片数量最多10张。要求：无logo、水印、边框、人物，不模糊、重复、歪斜，房间图清晰，图片尺寸不小于300*225，不小于5M
 	_pics string
 	// 酒店品牌。取值为数字。枚举见链接：https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.S16vXH&docType=1&articleId=120180
 	_brand string
@@ -88,6 +88,10 @@ type TaobaoXhotelUpdateAPIRequest struct {
 	_standardAmuseFacilities string
 	// 标识坐标系类型。WGS84，表示地球坐标系 ；GCJ02，表示火星坐标系
 	_coordinateSystem string
+	// 酒店英文地址
+	_addressEn string
+	// 酒店英文描述
+	_descriptionEn string
 	// （已废弃）请使用outer_id来标识要修改的酒店
 	_hid int64
 	// 是否国内酒店。0:国内;1:国外
@@ -395,7 +399,7 @@ func (r TaobaoXhotelUpdateAPIRequest) GetRoomFacilities() string {
 }
 
 // SetPics is Pics Setter
-// 酒店图片只支持远程图片，格式如下：[{&#34;url&#34;:&#34;http://123.jpg&#34;,&#34;ismain&#34;:&#34;false&#34;,&#34;type&#34;:&#34;大堂&#34;,&#34;attribute&#34;:&#34;普通图&#34;},{&#34;url&#34;:&#34;http://456.jpg&#34;,&#34;ismain&#34;:&#34;true&#34;,&#34;type&#34;:&#34;公共区域&#34;,&#34;attribute&#34;:&#34;全景图&#34;},{&#34;url&#34;:&#34;http://789.jpg&#34;,&#34;ismain&#34;:&#34;false&#34;,&#34;type&#34;:&#34;大堂&#34;,&#34;attribute&#34;:&#34;普通图&#34;}] 其中url是远程图片的访问地址，main是否为主图（主图只能有一个）,attribute表示图片属性，取值范围只能是：[普通图, 平面图, 全景图] ,type表示图片类型，取值范围只能是：[周边, 外观, 商务中心, 健身房, 其他, 会议室, 餐厅, 浴室, 客房, 公共区域, 娱乐设施, 大堂, 泳池]，图片数量最多10张。要求：无logo、水印、边框、人物，不模糊、重复、歪斜，房间图清晰，图片尺寸不小于300*225，不小于5M
+// 酒店图片只支持远程图片，格式如下：[{&#34;url&#34;:&#34;http://123.jpg&#34;,&#34;ismain&#34;:&#34;false&#34;,&#34;type&#34;:&#34;大堂&#34;,&#34;attribute&#34;:&#34;普通图&#34;},{&#34;url&#34;:&#34;http://456.jpg&#34;,&#34;ismain&#34;:&#34;true&#34;,&#34;type&#34;:&#34;公共区域&#34;,&#34;attribute&#34;:&#34;全景图&#34;},{&#34;url&#34;:&#34;http://789.jpg&#34;,&#34;ismain&#34;:&#34;false&#34;,&#34;type&#34;:&#34;大堂&#34;,&#34;attribute&#34;:&#34;普通图&#34;}] 其中url是远程图片的访问地址，main是否为主图（主图只能有一个）,attribute表示图片属性，取值范围只能是：[普通图, 平面图, 全景图] ,type表示图片类型，取值范围只能是：[周边, 外观, 商务中心, 其他, 餐厅, 浴室, 客房, 公共区域, 娱乐设施, 大堂]，图片数量最多10张。要求：无logo、水印、边框、人物，不模糊、重复、歪斜，房间图清晰，图片尺寸不小于300*225，不小于5M
 func (r *TaobaoXhotelUpdateAPIRequest) SetPics(_pics string) error {
 	r._pics = _pics
 	r.Set("pics", _pics)
@@ -626,6 +630,32 @@ func (r *TaobaoXhotelUpdateAPIRequest) SetCoordinateSystem(_coordinateSystem str
 // GetCoordinateSystem CoordinateSystem Getter
 func (r TaobaoXhotelUpdateAPIRequest) GetCoordinateSystem() string {
 	return r._coordinateSystem
+}
+
+// SetAddressEn is AddressEn Setter
+// 酒店英文地址
+func (r *TaobaoXhotelUpdateAPIRequest) SetAddressEn(_addressEn string) error {
+	r._addressEn = _addressEn
+	r.Set("address_en", _addressEn)
+	return nil
+}
+
+// GetAddressEn AddressEn Getter
+func (r TaobaoXhotelUpdateAPIRequest) GetAddressEn() string {
+	return r._addressEn
+}
+
+// SetDescriptionEn is DescriptionEn Setter
+// 酒店英文描述
+func (r *TaobaoXhotelUpdateAPIRequest) SetDescriptionEn(_descriptionEn string) error {
+	r._descriptionEn = _descriptionEn
+	r.Set("description_en", _descriptionEn)
+	return nil
+}
+
+// GetDescriptionEn DescriptionEn Getter
+func (r TaobaoXhotelUpdateAPIRequest) GetDescriptionEn() string {
+	return r._descriptionEn
 }
 
 // SetHid is Hid Setter

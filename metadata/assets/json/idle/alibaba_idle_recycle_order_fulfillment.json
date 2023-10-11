@@ -93,6 +93,21 @@
 							"name": "close_reason_code",
 							"type": "String",
 							"description": "order_status=103、101时候填写 关闭原因code。QA_STAFF_NOT_VISIT_HOME(\"质检员未上门取件\"), SELLER_CAN_NOT_CONTACT(\"用户无法联系\"), SELLER_NOT_COME_STORE_AT_TIME(\"用户未按时到店\"), CANCEL_BY_SELLER_DEMAND(\"用户要求不回收了\"), QA_NOT_QUALIFIED(\"不符合服务商质检要求\"), OTHER(\"其他原因\")"
+						},
+						{
+							"name": "refund_logistics_fee",
+							"type": "String",
+							"description": "逆向退回邮费，单位分"
+						},
+						{
+							"name": "compensation_fee",
+							"type": "String",
+							"description": "补偿给卖家的费用"
+						},
+						{
+							"name": "agree_use_address_change",
+							"type": "String",
+							"description": "是否允许用户修改地址"
 						}
 					],
 					"name": "attribute",

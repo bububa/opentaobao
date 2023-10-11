@@ -1,0 +1,100 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "时间戳(毫秒级)",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "幂等ID",
+					"required": true
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "服务商ID",
+					"required": true
+				},
+				{
+					"name": "delivery_name",
+					"type": "String",
+					"description": "配品牌名称（资源名称）",
+					"required": true
+				},
+				{
+					"name": "delivery_type",
+					"type": "Number",
+					"description": "配资源类型，枚举： 20：快递 10：即时配",
+					"required": true
+				},
+				{
+					"name": "brand_code",
+					"type": "String",
+					"description": "配品牌",
+					"required": true
+				},
+				{
+					"name": "delivery_code",
+					"type": "String",
+					"description": "服务商配资源唯一编码",
+					"required": true
+				},
+				{
+					"name": "platform_code",
+					"type": "String",
+					"description": "平台快递资源",
+					"required": true
+				},
+				{
+					"name": "con_name",
+					"type": "String",
+					"description": "联系人姓名",
+					"required": true
+				},
+				{
+					"name": "con_phone",
+					"type": "String",
+					"description": "联系人电话",
+					"required": true
+				}
+			],
+			"name": "delivery_resource_create_request",
+			"type": "DeliveryResourceCreateRequest",
+			"description": "配资源",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "系统成功失败   true|false"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息"
+				}
+			],
+			"name": "delivery_resource_create_response",
+			"type": "DeliveryResourceCreateResponse",
+			"description": "返回值"
+		}
+	],
+	"name": "taobao.logistics.express.delivery.resource.create",
+	"apiChineseName": "新建/更新配资源",
+	"description": "新建/更新配资源",
+	"id": 67094
+}

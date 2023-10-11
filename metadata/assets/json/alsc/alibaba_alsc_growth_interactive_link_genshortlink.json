@@ -1,0 +1,63 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "domain_type",
+					"type": "String",
+					"description": "域名类型，按实际填写，目前映射关系：{   \"alipay\": \"alipays://platformapi/startapp\",   \"duanqu\": \"https://m.duanqu.com\",   \"eleH5\": \"https://h5.ele.me\",   \"eleMiniApp\": \"eleme://miniapp\",   \"elemeSns\": \"eleme://sns_share_v2\",   \"koubei\": \"koubei://platformapi/startapp\",   \"mod\": \"https://tb.ele.me\",   \"modPpe\": \"https://ppe-tb.ele.me\",   \"ppe-r\": \"https://ppe-r.ele.me\",   \"pt\": \"https://pt.ele.me\",   \"ptPre\": \"https://ppe-pt.ele.me\",   \"r\": \"https://r.ele.me\" }",
+					"required": true
+				},
+				{
+					"name": "path",
+					"type": "String",
+					"description": "域名后面的路径",
+					"required": true
+				},
+				{
+					"name": "biz_scene",
+					"type": "String",
+					"description": "业务场景",
+					"required": true
+				}
+			],
+			"name": "param",
+			"type": "GenShortLinkRequest",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功标志"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回编码"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "返回数据"
+				}
+			],
+			"name": "result",
+			"type": "BaseResponse",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.alsc.growth.interactive.link.genshortlink",
+	"apiChineseName": "短链接口",
+	"description": "短链接口",
+	"id": 65714
+}

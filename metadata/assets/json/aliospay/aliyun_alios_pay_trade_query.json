@@ -76,6 +76,51 @@
 							"name": "pay_result",
 							"type": "String",
 							"description": "支付结果状态,取值为:INIT初始，WAIT_BUYER_PAY : 等待用户付款。TRADE_SUCCESS:支付已经成功。 TRADE_CLOSED:未付款交易超时关闭，或支付完成后全额退款。TRADE_FINISHED交易结束，不可退款"
+						},
+						{
+							"name": "order_time",
+							"type": "Number",
+							"description": "订单创建时间，时间戳毫秒格式"
+						},
+						{
+							"name": "gmt_refund",
+							"type": "Number",
+							"description": "退款时间，时间戳毫秒格式"
+						},
+						{
+							"name": "refund_fee",
+							"type": "Number",
+							"description": "退款金额，单位为分"
+						},
+						{
+							"name": "pay_way",
+							"type": "String",
+							"description": "支付方式，SCAN-扫码，AUTH-免密支付，APP-手机支付，ALL_DEDUCTION-全额抵扣，SIGN_AND_PAY-签约并支付，WAP-手机网页支付，PERIOD_PAY-周期扣款"
+						},
+						{
+							"name": "pay_order_id",
+							"type": "String",
+							"description": "斑马支付单Id"
+						},
+						{
+							"name": "biz_order_id",
+							"type": "String",
+							"description": "业务订单号"
+						},
+						{
+							"name": "pay_channel",
+							"type": "String",
+							"description": "支付渠道，ALIPAY支付宝，WECHAT微信"
+						},
+						{
+							"name": "extra_trade_no",
+							"type": "String",
+							"description": "支付渠道交易流水号"
+						},
+						{
+							"name": "replenish_amount",
+							"type": "Number",
+							"description": "补差金额，单位为分"
 						}
 					],
 					"name": "data",

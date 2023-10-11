@@ -1,0 +1,167 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码",
+					"required": true
+				}
+			],
+			"name": "top_service_context",
+			"type": "TopServiceContext",
+			"description": "topServiceContext",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "campaign_id_list",
+					"type": "Number[]",
+					"description": "计划id集合,计划已经存在场景必填"
+				},
+				{
+					"name": "adgroup_id_list",
+					"type": "Number[]",
+					"description": "单元id集合,单元已经存在场景必填"
+				}
+			],
+			"name": "word_package_query_v_o",
+			"type": "WordPackageQueryVo",
+			"description": "wordPackageQueryVO",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "ok",
+							"type": "Boolean",
+							"description": "是否成功"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误编码"
+						}
+					],
+					"name": "info",
+					"type": "TopInfo",
+					"description": "请求系统信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "campaign_id",
+									"type": "Number",
+									"description": "计划id,计划已经存在场景必填,eg:添加主体、编辑计划状态等场景"
+								},
+								{
+									"name": "adgroup_id",
+									"type": "Number",
+									"description": "单元id"
+								},
+								{
+									"name": "word_package_id",
+									"type": "Number",
+									"description": "词包id"
+								},
+								{
+									"name": "word_package_name",
+									"type": "String",
+									"description": "词包名称"
+								},
+								{
+									"name": "word_package_type",
+									"type": "Number",
+									"description": "词包类型,0:流量智选,1:好词优选,19:捡漏,20:卖点词包,21:类目优选"
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "词包状态,1:在线,0:下线"
+								},
+								{
+									"name": "bid_price",
+									"type": "String",
+									"description": "词包基础出价"
+								},
+								{
+									"subParams": [
+										{
+											"name": "strategy_id",
+											"type": "Number",
+											"description": "词包策略,0:流量智选,1:好词优选,2:捡漏,2:卖点词包,3:类目优选"
+										},
+										{
+											"name": "strategy_name",
+											"type": "String",
+											"description": "词包策略名称"
+										},
+										{
+											"name": "word_package_type",
+											"type": "Number",
+											"description": "词包类型,0:流量智选,1:好词优选,19:捡漏,20:卖点词包,21:类目优选"
+										},
+										{
+											"name": "bid_price",
+											"type": "String",
+											"description": "关键词基础出价"
+										},
+										{
+											"name": "online_status",
+											"type": "Number",
+											"description": "策略状态,1:在线,0:下线"
+										},
+										{
+											"name": "adgroup_id",
+											"type": "Number",
+											"description": "单元id"
+										},
+										{
+											"name": "campaign_id",
+											"type": "Number",
+											"description": "计划id,计划已经存在场景必填,eg:添加主体、编辑计划状态等场景"
+										}
+									],
+									"name": "strategy_list",
+									"type": "WordPackageStrategyVo[]",
+									"description": "词包策略信息"
+								}
+							],
+							"name": "word_package_v_o_list",
+							"type": "WordPackageVo[]",
+							"description": "批量结果集"
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "数量"
+						}
+					],
+					"name": "word_package_v_o_top_bulk_data",
+					"type": "TopBulkData",
+					"description": "结果集"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.universalbp.wordpackage.findlist",
+	"apiChineseName": "词包列表查询",
+	"description": "根据计划+单元id，查绑定的词包列表",
+	"id": 67207
+}

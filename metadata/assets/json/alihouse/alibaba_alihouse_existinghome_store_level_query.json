@@ -59,6 +59,43 @@
 									"name": "grade_item_code",
 									"type": "String",
 									"description": "权益编号"
+								},
+								{
+									"subParams": [
+										{
+											"name": "sub_item_name",
+											"type": "String",
+											"description": "子项名称"
+										},
+										{
+											"name": "sub_item_value",
+											"type": "String",
+											"description": "子项指标值"
+										},
+										{
+											"name": "sub_item_target_value",
+											"type": "String",
+											"description": "子项指标目标值"
+										},
+										{
+											"name": "target_score",
+											"type": "Number",
+											"description": "子项目标分"
+										},
+										{
+											"name": "score",
+											"type": "String",
+											"description": "score"
+										},
+										{
+											"name": "sort",
+											"type": "Number",
+											"description": "排序键"
+										}
+									],
+									"name": "store_level_sub_item_d_t_o_list",
+									"type": "StoreLevelSubItemDTO[]",
+									"description": "子项列表"
 								}
 							],
 							"name": "grade_item_d_t_o_list",

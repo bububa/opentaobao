@@ -1,0 +1,62 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "external_applet_biz_code",
+					"type": "String",
+					"description": "业务代码",
+					"required": true
+				},
+				{
+					"name": "sign_type",
+					"type": "String",
+					"description": "证书签名算法",
+					"required": true
+				}
+			],
+			"name": "alipay_query_cert_sn_req",
+			"type": "AlipayQueryCertSnReq",
+			"description": "入参结构体",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "app_cert_sn",
+					"type": "String",
+					"description": "app证书序列号"
+				},
+				{
+					"name": "alipay_cert_sn",
+					"type": "String",
+					"description": "alipay证书序列号"
+				},
+				{
+					"name": "alipay_root_cert_sn",
+					"type": "String",
+					"description": "alipay根证书序列号"
+				}
+			],
+			"name": "result",
+			"type": "AlipayCertSnDTO",
+			"description": "证书编码结构体"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否请求成功"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "请求失败描述"
+		}
+	],
+	"name": "alitrip.flight.external.alipay.sn.query",
+	"apiChineseName": "支付宝小程序查询证书序列号",
+	"description": "支付宝小程序查询证书序列号",
+	"id": 65910
+}

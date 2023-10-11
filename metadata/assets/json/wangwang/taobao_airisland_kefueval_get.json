@@ -1,0 +1,80 @@
+{
+	"requestParams": [
+		{
+			"name": "query_ids",
+			"type": "String",
+			"description": "客服的nick，多个用逗号分隔，不要超过10个，带cntaobao的长nick",
+			"required": true
+		},
+		{
+			"name": "btime",
+			"type": "String",
+			"description": "开始时间，格式yyyyMMddHHmmss，时间范围：[now-90d,now-1d]",
+			"required": true
+		},
+		{
+			"name": "etime",
+			"type": "String",
+			"description": "结束时间，格式yyyyMMddHHmmss，时间范围：[now-90d,now-1d]",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_count",
+			"type": "Number",
+			"description": "评价结果数"
+		},
+		{
+			"subParams": [
+				{
+					"name": "eval_code",
+					"type": "Number",
+					"description": "评分：0-非常满意；1-满意；2-一般；3-不满意；4-非常不满意"
+				},
+				{
+					"name": "eval_sender",
+					"type": "String",
+					"description": "发送评价邀请的商家客服昵称"
+				},
+				{
+					"name": "eval_time",
+					"type": "Date",
+					"description": "最后一次评价的时间"
+				},
+				{
+					"name": "open_uid",
+					"type": "String",
+					"description": "接收评价的消费者用户ID"
+				},
+				{
+					"name": "send_time",
+					"type": "Date",
+					"description": "评价的发送时间"
+				},
+				{
+					"name": "source",
+					"type": "Number",
+					"description": "评价来源：0-客服邀评；1-消费者自主评价；2-系统邀评"
+				},
+				{
+					"name": "label_name",
+					"type": "String",
+					"description": "评价标签，可空"
+				},
+				{
+					"name": "eval_recer",
+					"type": "String",
+					"description": "脱敏后的买家nick，可空"
+				}
+			],
+			"name": "staff_eval_details",
+			"type": "EvalDetail []",
+			"description": "评价明细"
+		}
+	],
+	"name": "taobao.airisland.kefueval.get",
+	"apiChineseName": "客服评价详情接口_V2",
+	"description": "获取买家对客服的服务评价\n\n注意：\n\n\n1. 请求超时[isp.top-remote-connection-timeout]或者数据过大错误[isp.runtime-max-limit]：因为某些帐号请求的数据会非常大，【需要通过减少请求时间范围避免该问题】\n\n2. 时间范围：[now()-90d\u003c=btime ~ etime \u003c= now()-1d ] AND etime-btime \u003c=7d\n\n3. 变更eval_recer：可空，返回脱敏的买家nick，如：摩天轮 -\u003e 摩**\n\n4. 新增labelName：可空",
+	"id": 66033
+}

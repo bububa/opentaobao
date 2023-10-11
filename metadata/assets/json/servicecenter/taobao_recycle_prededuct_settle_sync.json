@@ -1,0 +1,40 @@
+{
+	"requestParams": [
+		{
+			"name": "offline_settle_fee",
+			"type": "Number",
+			"description": "线下打款金额，正数表示 服务商向用户支付的 金额，负数表示 服务商收取用户 的金额，单位为 分",
+			"required": true
+		},
+		{
+			"name": "old_order_id",
+			"type": "Number",
+			"description": "回收单 ID",
+			"required": true
+		},
+		{
+			"name": "version",
+			"type": "Number",
+			"description": "数据版本号，从1开始递增，天猫平台收到请求后会对这个字段做校验，只有比当前版本大的请求才会处理。",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "sync_success",
+					"type": "Boolean",
+					"description": "是否同步成功"
+				}
+			],
+			"name": "data",
+			"type": "OfnRecycleOrderSyncOfflineSettleInfoDTO",
+			"description": "同步线下打款明细结果"
+		}
+	],
+	"name": "taobao.recycle.prededuct.settle.sync",
+	"apiChineseName": "同步回收单线下打款明细",
+	"description": "同步回收单线下打款明细",
+	"id": 66446
+}

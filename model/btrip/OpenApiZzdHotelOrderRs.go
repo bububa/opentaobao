@@ -78,6 +78,8 @@ type OpenApiZzdHotelOrderRs struct {
 	TravelStandardAmount int64 `json:"travel_standard_amount,omitempty" xml:"travel_standard_amount,omitempty"`
 	// 订单类型：1：全额支付、5：到店支付、6：信用住&#39;,
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+	// 发票类型。-1 不可开票，1 大发票，2 行程单+航意险发票，5 商旅火车票凭证，11 增值税普通发票，12 增值税专用发票
+	VoucherType int64 `json:"voucher_type,omitempty" xml:"voucher_type,omitempty"`
 	// 酒店信息
 	HotelInfoDo *HotelInfoDo `json:"hotel_info_do,omitempty" xml:"hotel_info_do,omitempty"`
 	// 房间信息

@@ -1,0 +1,74 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "jym_game_id",
+					"type": "String",
+					"description": "交易猫游戏ID"
+				},
+				{
+					"name": "channel",
+					"type": "String",
+					"description": "渠道标识"
+				}
+			],
+			"name": "jym_max_price_request",
+			"type": "JymMaxPriceRequestDTO",
+			"description": "请求"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "jym_game_id",
+					"type": "String",
+					"description": "交易猫游戏ID"
+				},
+				{
+					"name": "jym_game_name",
+					"type": "String",
+					"description": "交易猫游戏名称"
+				},
+				{
+					"name": "order_price",
+					"type": "Number",
+					"description": "订单价格"
+				}
+			],
+			"name": "result",
+			"type": "JymMaxPriceOrderInfoDTO",
+			"description": "最高价订单信息"
+		},
+		{
+			"name": "sub_code_type",
+			"type": "String",
+			"description": "子错误码"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "sub_extra_err_msg",
+			"type": "String",
+			"description": "子错误码描述"
+		},
+		{
+			"name": "state_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "extra_err_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.jym.industry.trade.max.price.get",
+	"apiChineseName": "获取交易猫单个游戏渠道帐号交易成功最高价",
+	"description": "获取交易猫单个游戏渠道帐号交易成功最高价",
+	"id": 66834
+}

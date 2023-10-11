@@ -178,7 +178,7 @@
 		{
 			"name": "type",
 			"type": "String",
-			"description": "操作类型: publish=发布，update=更新",
+			"description": "操作类型: publish=发布，update=更新, 更新时如果套餐列表内套餐有移除则视为删除套餐",
 			"required": true
 		},
 		{

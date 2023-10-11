@@ -87,6 +87,11 @@
 							"type": "String",
 							"description": "收货人电话",
 							"required": true
+						},
+						{
+							"name": "privacy_phone_flag",
+							"type": "Number",
+							"description": "是否隐私号 0：非隐私号  1：隐私号"
 						}
 					],
 					"name": "delivery",
@@ -309,6 +314,11 @@
 									"name": "consignee_phone",
 									"type": "String",
 									"description": "收货人电话"
+								},
+								{
+									"name": "privacy_phone_flag",
+									"type": "Number",
+									"description": "是否隐私号 0：非隐私号  1：隐私号"
 								}
 							],
 							"name": "delivery",

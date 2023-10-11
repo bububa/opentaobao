@@ -1,0 +1,77 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_target_ids",
+					"type": "String[]",
+					"description": "外部id列表"
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "是否测试",
+					"required": true
+				},
+				{
+					"name": "target_type",
+					"type": "Number",
+					"description": "类型",
+					"required": true
+				}
+			],
+			"name": "category_control_dto",
+			"type": "CategoryControlDTO",
+			"description": "dto",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "return_code",
+			"type": "String",
+			"description": "code"
+		},
+		{
+			"subParams": [
+				{
+					"name": "outer_target_id",
+					"type": "String",
+					"description": "外部id"
+				},
+				{
+					"name": "target_type",
+					"type": "Number",
+					"description": "类型"
+				},
+				{
+					"name": "second_category",
+					"type": "Number[]",
+					"description": "二级类目列表"
+				},
+				{
+					"name": "third_category",
+					"type": "Number[]",
+					"description": "三级类目列表"
+				}
+			],
+			"name": "data",
+			"type": "CategoryControlDTO []",
+			"description": "data"
+		},
+		{
+			"name": "return_success",
+			"type": "Boolean",
+			"description": "success"
+		},
+		{
+			"name": "return_message",
+			"type": "String",
+			"description": "message"
+		}
+	],
+	"name": "alibaba.alihouse.category.control.query",
+	"apiChineseName": "类目权限查询",
+	"description": "类目权限查询",
+	"id": 67473
+}

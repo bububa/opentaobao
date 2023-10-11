@@ -26,6 +26,8 @@ type ProjectPictureDto struct {
 	OuterBuildingId string `json:"outer_building_id,omitempty" xml:"outer_building_id,omitempty"`
 	// 1111
 	OuterStoreId string `json:"outer_store_id,omitempty" xml:"outer_store_id,omitempty"`
+	// 1111
+	OuterSalesTimeId string `json:"outer_sales_time_id,omitempty" xml:"outer_sales_time_id,omitempty"`
 	// 是否封面图
 	IsCover int64 `json:"is_cover,omitempty" xml:"is_cover,omitempty"`
 	// 是否焦点图

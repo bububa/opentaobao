@@ -1,0 +1,152 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码",
+					"required": true
+				}
+			],
+			"name": "top_service_context",
+			"type": "TopServiceContext",
+			"description": "topServiceContext",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "campaign_id_list",
+					"type": "Number[]",
+					"description": "计划id集合,计划已经存在场景必填"
+				},
+				{
+					"name": "adgroup_id_list",
+					"type": "Number[]",
+					"description": "单元id集合,单元已经存在场景必填"
+				}
+			],
+			"name": "word_query_v_o",
+			"type": "WordQueryVo",
+			"description": "wordQueryVO",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "ok",
+							"type": "Boolean",
+							"description": "是否成功"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误编码"
+						}
+					],
+					"name": "info",
+					"type": "TopInfo",
+					"description": "请求系统信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "campaign_id",
+									"type": "Number",
+									"description": "计划id,计划已经存在场景必填,eg:添加主体、编辑计划状态等场景"
+								},
+								{
+									"name": "adgroup_id",
+									"type": "Number",
+									"description": "单元id"
+								},
+								{
+									"name": "word",
+									"type": "String",
+									"description": "词"
+								},
+								{
+									"name": "bid_price",
+									"type": "String",
+									"description": "关键词基础出价"
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "状态,reject:排查拒绝,preview:排查中,launch:投放中,noflow:无展现"
+								},
+								{
+									"name": "match_scope",
+									"type": "Number",
+									"description": "匹配类型,1:精准匹配,4:广泛匹配"
+								},
+								{
+									"name": "bidword_id",
+									"type": "Number",
+									"description": "词id"
+								},
+								{
+									"subParams": [
+										{
+											"name": "dicount",
+											"type": "Number",
+											"description": "溢价"
+										},
+										{
+											"name": "status",
+											"type": "Number",
+											"description": "0停止，1生效"
+										},
+										{
+											"name": "rank",
+											"type": "Number",
+											"description": "抢位排名"
+										},
+										{
+											"name": "rank_name",
+											"type": "String",
+											"description": "名称"
+										}
+									],
+									"name": "bid_strategy_info",
+									"type": "BidStrategyVO",
+									"description": "抢位信息"
+								}
+							],
+							"name": "word_v_o_list",
+							"type": "WordVo[]",
+							"description": "批量结果集"
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "数量"
+						}
+					],
+					"name": "word_v_o_top_bulk_data",
+					"type": "TopBulkData",
+					"description": "结果集"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.universalbp.bidword.findlist",
+	"apiChineseName": "词列表查询",
+	"description": "根据计划+单元id，查绑定的词列表",
+	"id": 67162
+}

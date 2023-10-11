@@ -24,6 +24,8 @@ type AgentConfirmBookRq struct {
 	TicketCount int64 `json:"ticket_count,omitempty" xml:"ticket_count,omitempty"`
 	// 总价格
 	TotalPrice int64 `json:"total_price,omitempty" xml:"total_price,omitempty"`
+	// 车辆&amp;司机电话等信息
+	AgentConfirmBookScheduleInfo *AgentConfirmBookScheduleInfo `json:"agent_confirm_book_schedule_info,omitempty" xml:"agent_confirm_book_schedule_info,omitempty"`
 	// 是否出票成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

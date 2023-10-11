@@ -30,7 +30,7 @@ type TaobaoTbkScOrderDetailsGetAPIRequest struct {
 	_jumpType int64
 	// 第几页，默认1，1~100
 	_pageNo int64
-	// 场景订单场景类型，1:常规订单，2:渠道订单，3:会员运营订单，默认为1
+	// 筛选订单类型，1:所有订单，2:渠道订单，3:会员运营订单，默认为1
 	_orderScene int64
 	// member组ID
 	_memberGroupId int64
@@ -178,7 +178,7 @@ func (r TaobaoTbkScOrderDetailsGetAPIRequest) GetPageNo() int64 {
 }
 
 // SetOrderScene is OrderScene Setter
-// 场景订单场景类型，1:常规订单，2:渠道订单，3:会员运营订单，默认为1
+// 筛选订单类型，1:所有订单，2:渠道订单，3:会员运营订单，默认为1
 func (r *TaobaoTbkScOrderDetailsGetAPIRequest) SetOrderScene(_orderScene int64) error {
 	r._orderScene = _orderScene
 	r.Set("order_scene", _orderScene)

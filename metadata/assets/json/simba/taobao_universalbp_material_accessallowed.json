@@ -1,0 +1,120 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码",
+					"required": true
+				}
+			],
+			"name": "top_service_context",
+			"type": "TopServiceContext",
+			"description": "topServiceContext",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "material_id_list",
+					"type": "Number[]",
+					"description": "宝贝id集合"
+				},
+				{
+					"name": "material_type",
+					"type": "Number",
+					"description": "物料类型,1:淘宝宝贝,2:淘宝店铺,3:cms LandingPage页面,4:cms 分流总页面,5:自定义,201:PC店铺LandingPage页面,202:无线店铺LandingPage页面,203:内容LandingPage页面,204:淘宝直播,210:淘宝直播用户ID,205:有好货,209:无线店铺Tab3页面,212:超级品牌日LandingPage页面,211:超级发布会LandingPage页面,301:ICBU商品,302:ICBU PC店铺LandingPage页面,303:ICBU PC店铺,8:用户ID,9:信息流淘积木用户ID,10:口碑用户ID,206:店铺优惠券,207:商品优惠券,208:直播单品,309:直播间商品半屏卡,304:1688商品,305:内容平台-短视频,306:附近门店-用户ID,307:饿了么-菜品,401:LAZADA商品,501:飞猪酒店,502:飞猪商品,503:飞猪短信,601:淘积木页面,1001:AE宝贝,1101:淘宝宝贝SKU,310:内容平台-订阅内容"
+				},
+				{
+					"name": "need_qualification",
+					"type": "Boolean",
+					"description": "是否需要校验资质,true:校验,false:不校验"
+				},
+				{
+					"name": "promotion_type",
+					"type": "String",
+					"description": "推广主体类型,item:商品,item_private_mini:独享橱窗,shop:店铺,content:内容,short_video:短视频,user_define:自定义;"
+				},
+				{
+					"name": "sub_promotion_type",
+					"type": "String",
+					"description": "推广子主体类型,item:商品，item_private_mini:独享橱窗，shop:店铺，you_hao_huo:有好货，picture:图文，short_video:短视频，live_room:直播间，live_spot:看点，tao_blocks:淘积木，user_define_url:自定义url"
+				}
+			],
+			"name": "material_access_allow_query_v_o",
+			"type": "MaterialAccessAllowQueryVo",
+			"description": "materialAccessAllowQueryVO",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "ok",
+							"type": "Boolean",
+							"description": "是否成功"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误编码"
+						}
+					],
+					"name": "info",
+					"type": "TopInfo",
+					"description": "请求系统信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "material_id",
+									"type": "Number",
+									"description": "物料id"
+								},
+								{
+									"name": "access_allowed",
+									"type": "Boolean",
+									"description": "是否通过准入,true:是,false:否"
+								},
+								{
+									"name": "reason",
+									"type": "String",
+									"description": "准入不通过原因"
+								}
+							],
+							"name": "material_access_allow_v_o_list",
+							"type": "MaterialAccessAllowVo[]",
+							"description": "批量结果集"
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "数量"
+						}
+					],
+					"name": "material_access_allow_v_o_top_bulk_data",
+					"type": "TopBulkData",
+					"description": "结果集"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.universalbp.material.accessallowed",
+	"apiChineseName": "物料准入判断",
+	"description": "入参推广信息，出参相关主体是否可投放。如果投放了风控不准入的商品，无法正常投放。",
+	"id": 67288
+}

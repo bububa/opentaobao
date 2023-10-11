@@ -1,0 +1,94 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "extension",
+					"type": "String",
+					"description": "扩展字段"
+				},
+				{
+					"name": "reverse_source_order_no",
+					"type": "String",
+					"description": "退仓来源单号/退款单号",
+					"required": true
+				},
+				{
+					"name": "test",
+					"type": "Boolean",
+					"description": "测试标记"
+				},
+				{
+					"subParams": [
+						{
+							"name": "extension",
+							"type": "String",
+							"description": "子单扩展字段"
+						},
+						{
+							"name": "biz_order_id",
+							"type": "String",
+							"description": "oms主单号",
+							"required": true
+						},
+						{
+							"name": "actual_sale_quantity",
+							"type": "String",
+							"description": "实际入库销售数量",
+							"required": true
+						},
+						{
+							"name": "actual_stock_quantity",
+							"type": "String",
+							"description": "实际入库库存数量",
+							"required": true
+						},
+						{
+							"name": "biz_sub_order_id",
+							"type": "String",
+							"description": "oms子单号",
+							"required": true
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "sku编码"
+						}
+					],
+					"name": "details",
+					"type": "ReverseInBoundDetailCallBackRequest[]",
+					"description": "消息体"
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "仓编码"
+				}
+			],
+			"name": "reverse_in_bound_call_back_request",
+			"type": "TopReverseInBoundCallBackRequest",
+			"description": "消息体"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "return_code",
+			"type": "String",
+			"description": "错误编码"
+		},
+		{
+			"name": "return_success",
+			"type": "Boolean",
+			"description": "调用成功"
+		},
+		{
+			"name": "return_message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.ax.warehouse.inbound.callback",
+	"apiChineseName": "翱象入库回传",
+	"description": "翱象入库回传",
+	"id": 65426
+}

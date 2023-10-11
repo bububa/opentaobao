@@ -2,6 +2,8 @@ package tbrefund
 
 // Refund 结构体
 type Refund struct {
+	// 组合品信息
+	CombineItemInfo []CombineSubItemDo `json:"combine_item_info,omitempty" xml:"combine_item_info>combine_sub_item_do,omitempty"`
 	// 卖家收货地址
 	Address string `json:"address,omitempty" xml:"address,omitempty"`
 	// 支付宝交易号
@@ -62,6 +64,8 @@ type Refund struct {
 	BuyerOpenUid string `json:"buyer_open_uid,omitempty" xml:"buyer_open_uid,omitempty"`
 	// crm改造新增ouid返回
 	Ouid string `json:"ouid,omitempty" xml:"ouid,omitempty"`
+	// 退款类型，可选值REFUND(仅退款),REFUND_AND_RETURN(退货退款),TMALL_EXCHANGE(天猫换货),TAOBAO_EXCHANGE(淘宝换货),REPAIR(维修),RESHIPPING(补寄),OTHERS(其他)
+	DisputeType string `json:"dispute_type,omitempty" xml:"dispute_type,omitempty"`
 	// 逆向特殊部分退类型：价保服务（priceProtect）、退差返现(cashBack)
 	SpecialRefundType string `json:"special_refund_type,omitempty" xml:"special_refund_type,omitempty"`
 	// 退款先行垫付默认的未申请状态 0;退款先行垫付申请中  1;退款先行垫付，垫付完成 2;退款先行垫付，卖家拒绝收货 3;退款先行垫付，垫付关闭 4;退款先行垫付，垫付分账成功 5;

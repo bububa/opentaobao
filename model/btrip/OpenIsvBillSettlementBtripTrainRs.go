@@ -94,6 +94,10 @@ type OpenIsvBillSettlementBtripTrainRs struct {
 	SettlementGrantFee string `json:"settlement_grant_fee,omitempty" xml:"settlement_grant_fee,omitempty"`
 	// 备注
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
+	// 车厢号
+	CoachNo string `json:"coach_no,omitempty" xml:"coach_no,omitempty"`
+	// 短票号
+	ShortTicketNo string `json:"short_ticket_no,omitempty" xml:"short_ticket_no,omitempty"`
 	// 主键id，遇到相同id，已最新为准（数据会更新）
 	PrimaryId int64 `json:"primary_id,omitempty" xml:"primary_id,omitempty"`
 	// 入账状态，枚举详见语雀

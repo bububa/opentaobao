@@ -187,6 +187,11 @@
 											"name": "status",
 											"type": "String",
 											"description": "状态"
+										},
+										{
+											"name": "card_template_name",
+											"type": "String",
+											"description": "卡方案名称"
 										}
 									],
 									"name": "physical_cards",
@@ -259,6 +264,16 @@
 									"name": "status",
 									"type": "String",
 									"description": "电子卡状态，SOLD：已出售，ACTIVED：已激活，STOP：已停用，INVALID：已作废，EXPIRED：已过期，REFUND：已退卡"
+								},
+								{
+									"name": "expire_start",
+									"type": "Date",
+									"description": "有效期开始时间"
+								},
+								{
+									"name": "expire_end",
+									"type": "Date",
+									"description": "有效期结束时间"
 								}
 							],
 							"name": "card_open_info_list",

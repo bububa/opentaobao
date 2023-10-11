@@ -47,7 +47,7 @@
 				}
 			],
 			"name": "to_address",
-			"type": "ReciverAddressDo",
+			"type": "ReciverAddressDO",
 			"description": "买家收货地信息",
 			"required": true
 		},

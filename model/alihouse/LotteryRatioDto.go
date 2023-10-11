@@ -16,6 +16,8 @@ type LotteryRatioDto struct {
 	NoRoomSuccessRate string `json:"no_room_success_rate,omitempty" xml:"no_room_success_rate,omitempty"`
 	// 有房中签率
 	YesRoomSuccessRate string `json:"yes_room_success_rate,omitempty" xml:"yes_room_success_rate,omitempty"`
+	// 摇号比例类型 1-廊内 2-廊外
+	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 有无人才优惠 (0-无 1-有)
 	HasExistenceTalent int64 `json:"has_existence_talent,omitempty" xml:"has_existence_talent,omitempty"`
 	// 有无入围条件 (0-无 1-有)

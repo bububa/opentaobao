@@ -1,0 +1,218 @@
+{
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业标识",
+			"required": true
+		},
+		{
+			"name": "license_token",
+			"type": "String",
+			"description": "服务时间",
+			"required": true
+		},
+		{
+			"name": "auth_ref_user_id",
+			"type": "String",
+			"description": "货主",
+			"required": true
+		},
+		{
+			"name": "begin_date",
+			"type": "String",
+			"description": "开始日期",
+			"required": true
+		},
+		{
+			"name": "end_date",
+			"type": "String",
+			"description": "结束日期",
+			"required": true
+		},
+		{
+			"name": "partner_id_send",
+			"type": "String",
+			"description": "发货企业"
+		},
+		{
+			"name": "partner_id_recv",
+			"type": "String",
+			"description": "收货企业"
+		},
+		{
+			"name": "agent_ref_user_id",
+			"type": "String",
+			"description": "代理企业"
+		},
+		{
+			"name": "bill_code",
+			"type": "String",
+			"description": "单据号码"
+		},
+		{
+			"name": "bill_type",
+			"type": "String",
+			"description": "单据类型  A : 所有  AI :入库    AO:出库"
+		},
+		{
+			"name": "cur_page",
+			"type": "Number",
+			"description": "当前页",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页大小",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "bill_type",
+									"type": "String",
+									"description": "单据类型"
+								},
+								{
+									"name": "bill_code",
+									"type": "String",
+									"description": "单号号码"
+								},
+								{
+									"name": "from_user_id",
+									"type": "String",
+									"description": "发货企业ID"
+								},
+								{
+									"name": "ref_user_name",
+									"type": "String",
+									"description": "企业名称"
+								},
+								{
+									"name": "ref_user_id",
+									"type": "String",
+									"description": "企业ID"
+								},
+								{
+									"name": "produce_date",
+									"type": "String",
+									"description": "生产日期"
+								},
+								{
+									"name": "upload_file_name",
+									"type": "String",
+									"description": "上传文件名"
+								},
+								{
+									"name": "from_user_name",
+									"type": "String",
+									"description": "发货单位"
+								},
+								{
+									"name": "to_user_id",
+									"type": "String",
+									"description": "收货单位"
+								},
+								{
+									"name": "produce_ent_id",
+									"type": "String",
+									"description": "生产企业ID"
+								},
+								{
+									"name": "bill_time",
+									"type": "String",
+									"description": "单据时间"
+								},
+								{
+									"name": "user_role_type",
+									"type": "String",
+									"description": "角色类型"
+								},
+								{
+									"name": "process_date",
+									"type": "String",
+									"description": "处理日期"
+								},
+								{
+									"name": "bill_id",
+									"type": "String",
+									"description": "单据ID"
+								},
+								{
+									"name": "to_user_name",
+									"type": "String",
+									"description": "收货单位"
+								},
+								{
+									"name": "agent_user_name",
+									"type": "String",
+									"description": "代理企业"
+								},
+								{
+									"name": "agent_ref_user_id",
+									"type": "String",
+									"description": "代理企业ID"
+								},
+								{
+									"name": "bill_type_name",
+									"type": "String",
+									"description": "单据类型"
+								},
+								{
+									"name": "to_ref_user_id",
+									"type": "String",
+									"description": "收货单位ID"
+								},
+								{
+									"name": "from_ref_user_id",
+									"type": "String",
+									"description": "发货单位ID"
+								}
+							],
+							"name": "result_list",
+							"type": "BillChkInOutDo[]",
+							"description": "返回结果"
+						},
+						{
+							"name": "total_num",
+							"type": "Number",
+							"description": "总计"
+						}
+					],
+					"name": "model",
+					"type": "PageInfoDto",
+					"description": "返回模型"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "返回码"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否响应成功"
+				}
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "监控宝推送网站监控信息，返回结果"
+		}
+	],
+	"name": "alibaba.alihealth.drug.kyt.wes.searchbill",
+	"apiChineseName": "通过时间段批量查询入出库单信息",
+	"description": "通过时间段批量查询入出库单信息",
+	"id": 65764
+}

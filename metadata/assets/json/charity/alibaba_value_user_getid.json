@@ -1,0 +1,47 @@
+{
+	"requestParams": [
+		{
+			"name": "auth_code",
+			"type": "String",
+			"description": "登录凭证"
+		},
+		{
+			"name": "channel_code",
+			"type": "String",
+			"description": "渠道编码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resp_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "resp_code",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"subParams": [
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "用户开放标识"
+				}
+			],
+			"name": "data",
+			"type": "UserChannelOpenDTO",
+			"description": "用户渠道开放信息"
+		},
+		{
+			"name": "success_status",
+			"type": "Boolean",
+			"description": "成功状态"
+		}
+	],
+	"name": "alibaba.value.user.getid",
+	"apiChineseName": "获取用户userId",
+	"description": "获取用户userId",
+	"id": 65687
+}

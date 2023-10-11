@@ -1,0 +1,232 @@
+{
+	"requestParams": [
+		{
+			"name": "fields",
+			"type": "String[]",
+			"description": "需要返回的字段。目前支持有：refund_id, tid, title, buyer_nick, seller_nick, total_fee, status, created, refund_fee, oid, good_status, company_name, sid, payment, reason, desc, has_good_return, modified, order_status,refund_phase,dispute_type",
+			"maxListSize": 100,
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "退款状态，默认查询所有退款状态的数据，除了默认值外每次只能查询一种状态。WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意) WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货) WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货) SELLER_REFUSE_BUYER(卖家拒绝退款) CLOSED(退款关闭) SUCCESS(退款成功)WAIT_BUYER_CONFIRM_EXCHANGE_SELLER_SEND_GOODS(等待买家确认换货卖家发货商品)EXCHANGE_TRANSFORM_TO_REFUND(换货关闭转退款)WAIT_SELLER_CONSIGN_GOODS(商家确认收货等待商家发货)"
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "交易类型列表，一次查询多种类型可用半角逗号分隔，默认同时查询guarantee_trade, auto_delivery这两种类型的数据，\u003ca href=\"http://open.taobao.com/doc/detail.htm?id=102855\" target=\"_blank\"\u003e查看可选值\u003c/a\u003e"
+		},
+		{
+			"name": "start_modified",
+			"type": "Date",
+			"description": "查询修改时间开始。格式: yyyy-MM-dd HH:mm:ss"
+		},
+		{
+			"name": "end_modified",
+			"type": "Date",
+			"description": "查询修改时间结束。格式: yyyy-MM-dd HH:mm:ss"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码。取值范围:大于零的整数; 默认值:1",
+			"minValue": 1
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页条数。取值范围:大于零的整数; 默认值:40;最大值:100",
+			"maxValue": 100,
+			"minValue": 1
+		},
+		{
+			"name": "use_has_next",
+			"type": "Boolean",
+			"description": "是否启用has_next的分页方式，如果指定true,则返回的结果中不包含总记录数，但是会新增一个是否存在下一页的的字段，通过此种方式获取增量退款，接口调用成功率在原有的基础上有所提升。"
+		},
+		{
+			"name": "ouid",
+			"type": "String",
+			"description": "系统自动生成"
+		},
+		{
+			"name": "buyer_open_uid",
+			"type": "String",
+			"description": "买家OpenId"
+		},
+		{
+			"name": "buyer_nick",
+			"type": "String",
+			"description": "买家昵称"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "搜索到的退款信息总数"
+		},
+		{
+			"name": "has_next",
+			"type": "Boolean",
+			"description": "是否存在下一页"
+		},
+		{
+			"subParams": [
+				{
+					"name": "refund_id",
+					"type": "String",
+					"description": "退款单号"
+				},
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "淘宝交易单号"
+				},
+				{
+					"name": "oid",
+					"type": "Number",
+					"description": "子订单号。如果是单笔交易oid会等于tid"
+				},
+				{
+					"name": "total_fee",
+					"type": "String",
+					"description": "交易总金额。精确到2位小数;单位:元。如:200.07，表示:200元7分"
+				},
+				{
+					"name": "seller_nick",
+					"type": "String",
+					"description": "卖家昵称"
+				},
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "退款申请时间。格式:yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "更新时间。格式:yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "order_status",
+					"type": "String",
+					"description": "退款对应的订单交易状态。可选值TRADE_NO_CREATE_PAY(没有创建支付宝交易) WAIT_BUYER_PAY(等待买家付款) WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款) WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货) TRADE_BUYER_SIGNED(买家已签收,货到付款专用) TRADE_FINISHED(交易成功) TRADE_CLOSED(交易关闭) TRADE_CLOSED_BY_TAOBAO(交易被淘宝关闭) ALL_WAIT_PAY(包含：WAIT_BUYER_PAY、TRADE_NO_CREATE_PAY) ALL_CLOSED(包含：TRADE_CLOSED、TRADE_CLOSED_BY_TAOBAO) 取自\u0026quot;http://open.taobao.com/dev/index.php/%E4%BA%A4%E6%98%93%E7%8A%B6%E6%80%81\u0026quot;"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "退款状态。可选值WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意) WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货) WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货) SELLER_REFUSE_BUYER(卖家拒绝退款) CLOSED(退款关闭) SUCCESS(退款成功)"
+				},
+				{
+					"name": "good_status",
+					"type": "String",
+					"description": "货物状态。可选值BUYER_NOT_RECEIVED (买家未收到货) BUYER_RECEIVED (买家已收到货) BUYER_RETURNED_GOODS (买家已退货)"
+				},
+				{
+					"name": "has_good_return",
+					"type": "Boolean",
+					"description": "买家是否需要退货。可选值:true(是),false(否)"
+				},
+				{
+					"name": "refund_fee",
+					"type": "String",
+					"description": "退还金额(退还给买家的金额)。精确到2位小数;单位:元。如:200.07，表示:200元7分"
+				},
+				{
+					"name": "payment",
+					"type": "String",
+					"description": "支付给卖家的金额(交易总金额-退还给买家的金额)。精确到2位小数;单位:元。如:200.07，表示:200元7分"
+				},
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "退款原因"
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "退款说明"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "商品标题"
+				},
+				{
+					"name": "num",
+					"type": "Number",
+					"description": "商品购买数量"
+				},
+				{
+					"name": "company_name",
+					"type": "String",
+					"description": "物流公司名称"
+				},
+				{
+					"name": "sid",
+					"type": "String",
+					"description": "退货运单号"
+				},
+				{
+					"name": "refund_phase",
+					"type": "String",
+					"description": "退款阶段，可选值：onsale/aftersale"
+				},
+				{
+					"name": "refund_version",
+					"type": "Number",
+					"description": "退款版本号（时间戳）"
+				},
+				{
+					"name": "sku",
+					"type": "String",
+					"description": "商品SKU信息"
+				},
+				{
+					"name": "attribute",
+					"type": "String",
+					"description": "退款扩展属性"
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "商品外部商家编码"
+				},
+				{
+					"name": "operation_contraint",
+					"type": "String",
+					"description": "退款约束，可选值：cannot_refuse（不允许操作），refund_onweb（需要到网页版操作）"
+				},
+				{
+					"name": "ouid",
+					"type": "String",
+					"description": "ouid"
+				},
+				{
+					"name": "buyer_open_uid",
+					"type": "String",
+					"description": "买家账号的OpenUID"
+				},
+				{
+					"name": "buyer_nick",
+					"type": "String",
+					"description": "买家昵称"
+				},
+				{
+					"name": "dispute_type",
+					"type": "String",
+					"description": "退款类型"
+				}
+			],
+			"name": "refunds",
+			"type": "Refund []",
+			"description": "搜索到的退款信息列表"
+		}
+	],
+	"name": "taobao.refunds.receive.get",
+	"apiChineseName": "查询卖家收到的退款列表",
+	"description": "查询卖家收到的退款列表",
+	"id": 52
+}

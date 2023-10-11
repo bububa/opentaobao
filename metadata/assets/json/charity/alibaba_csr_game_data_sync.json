@@ -1,0 +1,51 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "event_id",
+					"type": "String",
+					"description": "请求Id 用于排查问题",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "String[]",
+					"description": "数据",
+					"required": true
+				},
+				{
+					"name": "action",
+					"type": "String",
+					"description": "数据类型",
+					"required": true
+				}
+			],
+			"name": "snake_data_sync_request",
+			"type": "SnakeDataSyncRequest",
+			"description": "请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误内容"
+		},
+		{
+			"name": "result_code",
+			"type": "Number",
+			"description": "结果码"
+		},
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	],
+	"name": "alibaba.csr.game.data.sync",
+	"apiChineseName": "公益互动 外部游戏数据同步",
+	"description": "公益互动 外部游戏数据同步",
+	"id": 67771
+}

@@ -1,0 +1,181 @@
+{
+	"requestParams": [
+		{
+			"name": "out_order_id",
+			"type": "String",
+			"description": "ERP单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果"
+				},
+				{
+					"subParams": [
+						{
+							"name": "cw_order_id",
+							"type": "String",
+							"description": "业务流水号"
+						},
+						{
+							"name": "waybill_code",
+							"type": "String",
+							"description": "物流单号  \t"
+						},
+						{
+							"name": "pickup_code",
+							"type": "String",
+							"description": "取件码"
+						},
+						{
+							"name": "out_order_id",
+							"type": "String",
+							"description": "ERP单号"
+						},
+						{
+							"name": "tid",
+							"type": "Number",
+							"description": "淘宝订主单号"
+						},
+						{
+							"subParams": [
+								{
+									"name": "name",
+									"type": "String",
+									"description": "联系人姓名"
+								},
+								{
+									"name": "address",
+									"type": "String",
+									"description": "地址门牌号"
+								},
+								{
+									"name": "lat",
+									"type": "String",
+									"description": "纬度（高德）"
+								},
+								{
+									"name": "lng",
+									"type": "String",
+									"description": "经度（高德）"
+								}
+							],
+							"name": "sender",
+							"type": "SenderTopDTO",
+							"description": "发货联系人"
+						},
+						{
+							"subParams": [
+								{
+									"name": "item_name",
+									"type": "String",
+									"description": "商品名称"
+								},
+								{
+									"name": "item_value",
+									"type": "Number",
+									"description": "商品单价（原价）"
+								},
+								{
+									"name": "item_quantity",
+									"type": "Number",
+									"description": "商品数量"
+								},
+								{
+									"name": "item_id",
+									"type": "Number",
+									"description": "商品ID"
+								},
+								{
+									"name": "item_cate",
+									"type": "String",
+									"description": "商品类目"
+								}
+							],
+							"name": "item_list",
+							"type": "ItemTopDTO[]",
+							"description": "商品清单"
+						},
+						{
+							"name": "delivery_name",
+							"type": "String",
+							"description": "配送员姓名"
+						},
+						{
+							"name": "delivery_phone",
+							"type": "String",
+							"description": "配送员电话"
+						},
+						{
+							"subParams": [
+								{
+									"name": "resource_request_id",
+									"type": "String",
+									"description": "下单凭证"
+								},
+								{
+									"name": "resource_code",
+									"type": "String",
+									"description": "资源CODE，用于发货"
+								},
+								{
+									"name": "actual_fee",
+									"type": "Number",
+									"description": "实付价格"
+								}
+							],
+							"name": "selected_resource",
+							"type": "SelectedResourceTopDTO",
+							"description": "选择的物流资源"
+						},
+						{
+							"name": "features",
+							"type": "String",
+							"description": "扩展"
+						},
+						{
+							"name": "biz_type",
+							"type": "String",
+							"description": "业务类型，INSTANT_ONLINE：同城配送-在线下单"
+						},
+						{
+							"name": "total_item_value",
+							"type": "Number",
+							"description": "商品总价（原价），单位分，默认：商品单价总和"
+						},
+						{
+							"name": "total_item_actual_value",
+							"type": "Number",
+							"description": "商品实付总价（总价），单位分"
+						},
+						{
+							"name": "total_weight",
+							"type": "Number",
+							"description": "总重量，单位KG"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态，INIT(初始化),CREATED(已创建),ACCEPTED(骑手已接单),SHIPPING(配送中),SUCCESS(妥投/签收),CANCELED(已取消),ABNORMAL(配送异常),REFUSED(拒收)"
+						}
+					],
+					"name": "data",
+					"type": "GetDeliveryOrderTopResponse",
+					"description": "数据"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "返回值"
+		}
+	],
+	"name": "alibaba.ascp.logistics.instantsonline.deliveryorder.get",
+	"apiChineseName": "同城配送在线下单获取配送单",
+	"description": "同城配送在线下单获取配送单",
+	"id": 66600
+}

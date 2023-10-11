@@ -864,6 +864,11 @@
 					"name": "item_rectangle_imgs",
 					"type": "ItemImg[]",
 					"description": "3:4主图"
+				},
+				{
+					"name": "first_starts_time",
+					"type": "Date",
+					"description": "商品首次上架时间"
 				}
 			],
 			"name": "item",

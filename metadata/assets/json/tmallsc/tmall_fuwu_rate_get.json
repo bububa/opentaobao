@@ -1,0 +1,67 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "order_type",
+					"type": "Number",
+					"description": "单据类型：工单0 服务单1",
+					"required": true
+				},
+				{
+					"name": "service_code",
+					"type": "String",
+					"description": "服务编码"
+				},
+				{
+					"name": "work_order_id",
+					"type": "Number",
+					"description": "单据id",
+					"required": true
+				},
+				{
+					"name": "rate_id",
+					"type": "Number",
+					"description": "评价单id",
+					"required": true
+				}
+			],
+			"name": "service_rate_message_query_cmd",
+			"type": "ServiceRateMessageQueryCmd",
+			"description": "请求"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "value",
+					"type": "String",
+					"description": "评价信息json字符串"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回值"
+		}
+	],
+	"name": "tmall.fuwu.rate.get",
+	"apiChineseName": "服务商需获取到单条服务单评价信息",
+	"description": "服务商需获取到单条服务单评价信息",
+	"id": 66700
+}

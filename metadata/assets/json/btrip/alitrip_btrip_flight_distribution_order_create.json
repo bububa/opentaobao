@@ -168,7 +168,8 @@
 				{
 					"name": "order_params",
 					"type": "String",
-					"description": "搜索下单参数"
+					"description": "搜索下单参数",
+					"required": true
 				},
 				{
 					"name": "sub_channel",
@@ -217,6 +218,31 @@
 							"type": "String",
 							"description": "员工ID",
 							"required": true
+						},
+						{
+							"name": "sex",
+							"type": "byte",
+							"description": "性别，0是男，1是女"
+						},
+						{
+							"name": "cert_valid_date",
+							"type": "String",
+							"description": "证件有效期"
+						},
+						{
+							"name": "cert_issue_country",
+							"type": "String",
+							"description": "证件签发国"
+						},
+						{
+							"name": "nationality",
+							"type": "String",
+							"description": "国籍"
+						},
+						{
+							"name": "nationality_code",
+							"type": "String",
+							"description": "国籍二字码"
 						}
 					],
 					"name": "traveler_info_list",

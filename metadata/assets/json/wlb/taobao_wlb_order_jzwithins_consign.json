@@ -11,22 +11,26 @@
 				{
 					"name": "tp_code",
 					"type": "String",
-					"description": "服务商编码"
+					"description": "服务商编码",
+					"required": true
 				},
 				{
 					"name": "tp_name",
 					"type": "String",
-					"description": "服务商名称"
+					"description": "服务商名称",
+					"required": true
 				},
 				{
 					"name": "service_type",
 					"type": "Number",
-					"description": "服务类型"
+					"description": "服务类型",
+					"required": true
 				},
 				{
 					"name": "is_virtual_tp",
 					"type": "Boolean",
-					"description": "是否是虚拟服务商（家装-商家自有物流）"
+					"description": "是否是虚拟服务商（家装-商家自有物流）",
+					"required": true
 				}
 			],
 			"name": "tms_partner",

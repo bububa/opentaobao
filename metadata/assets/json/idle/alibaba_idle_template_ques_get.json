@@ -54,6 +54,26 @@
 							"name": "pre_questionnaire",
 							"type": "String",
 							"description": "预发布问卷"
+						},
+						{
+							"name": "pre_template_id",
+							"type": "Number",
+							"description": "预发模板ID"
+						},
+						{
+							"name": "pre_template_name",
+							"type": "String",
+							"description": "预发模板名称"
+						},
+						{
+							"name": "online_template_id",
+							"type": "Number",
+							"description": "线上模板ID"
+						},
+						{
+							"name": "online_template_name",
+							"type": "String",
+							"description": "线上模板名称"
 						}
 					],
 					"name": "data",

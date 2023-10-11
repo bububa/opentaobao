@@ -9,7 +9,7 @@ import (
 // TaobaoQimenSingleitemSynchronizeAPIResponse 商品同步接口 API返回值
 // taobao.qimen.singleitem.synchronize
 //
-// ERP调用奇门的接口,同步商品信息给WMS
+// taobao.qimen.singleitem.synchronize
 type TaobaoQimenSingleitemSynchronizeAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenSingleitemSynchronizeAPIResponseModel

@@ -1,0 +1,63 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "sub_channel",
+					"type": "String",
+					"description": "子渠道",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小,不能超过50（默认20）"
+				},
+				{
+					"name": "last_hotel_id",
+					"type": "Number",
+					"description": "首次传空，之后每次请求传入上次返回的hotelId。 这个和分页只能用一种如果俩个都传递就按照hotelId来查询"
+				}
+			],
+			"name": "hot_hotel_search_list_r_q",
+			"type": "HotHotelSearchListRQ",
+			"description": "列表入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "hotel_ids",
+							"type": "String[]",
+							"description": "酒店Id列表"
+						}
+					],
+					"name": "module",
+					"type": "HotHotelIdListRs",
+					"description": "返回出参"
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "返回状态"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "返回描述"
+				}
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "返回出参"
+		}
+	],
+	"name": "alitrip.btrip.hotel.distribution.search.hot.hotel",
+	"apiChineseName": "商旅酒店api分销-热点酒店",
+	"description": "商旅酒店api分销-热点酒店",
+	"id": 66161
+}

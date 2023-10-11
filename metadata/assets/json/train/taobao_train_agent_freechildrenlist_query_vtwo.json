@@ -1,0 +1,42 @@
+{
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "结果"
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "错误code"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误文案"
+				},
+				{
+					"subParams": [
+						{
+							"name": "free_children_ticket_need_deal_list",
+							"type": "String[]",
+							"description": "待处理列表"
+						}
+					],
+					"name": "module",
+					"type": "FreeChildrenTicketListRS",
+					"description": "返回结果"
+				}
+			],
+			"name": "result",
+			"type": "TapResult",
+			"description": "rs"
+		}
+	],
+	"name": "taobao.train.agent.freechildrenlist.query.vtwo",
+	"apiChineseName": "免费儿童列表查询",
+	"description": "免费儿童列表查询",
+	"id": 65966
+}

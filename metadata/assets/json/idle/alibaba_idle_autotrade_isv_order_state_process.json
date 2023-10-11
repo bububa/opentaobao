@@ -1,0 +1,72 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "scenario",
+					"type": "String",
+					"description": "场景",
+					"required": true
+				},
+				{
+					"name": "biz_order_id",
+					"type": "Number",
+					"description": "订单id",
+					"required": true
+				},
+				{
+					"name": "x_global_biz_code",
+					"type": "String",
+					"description": "AT交易产品标识",
+					"required": true
+				},
+				{
+					"name": "extra_param",
+					"type": "String",
+					"description": "额外参数"
+				},
+				{
+					"name": "version",
+					"type": "String",
+					"description": "API版本"
+				}
+			],
+			"name": "auto_trade_api_param",
+			"type": "AutoTradeAPIParam",
+			"description": "AutoTradeAPI通用入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "异常码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "异常提示"
+				}
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.idle.autotrade.isv.order.state.process",
+	"apiChineseName": "闲鱼订单状态推进",
+	"description": "闲鱼订单状态推进",
+	"id": 66704
+}

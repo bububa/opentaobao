@@ -1,0 +1,56 @@
+{
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "调用接口的企业ID",
+			"required": true
+		},
+		{
+			"name": "license_token",
+			"type": "String",
+			"description": "服务时间",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true：接口调用成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "url",
+							"type": "String",
+							"description": "文件下载地址。下载文件的字段顺序的含义为：药品ID，平台药品类型，生产厂，通用名，剂型，制剂规格，包装规格，批准文号，商品名，类别码，包装比例，包装级别，子类编码"
+						}
+					],
+					"name": "model",
+					"type": "JSONObject",
+					"description": "返回值"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "接口调用失败具体信息"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "接口调用失败具体code"
+				}
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "接口返回"
+		}
+	],
+	"name": "alibaba.alihealth.drug.kyt.wes.getdruginfo.downloadurl",
+	"apiChineseName": "药品全量数据下载",
+	"description": "药品全量数据下载",
+	"id": 66491
+}

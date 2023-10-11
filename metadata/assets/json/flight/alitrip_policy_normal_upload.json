@@ -64,7 +64,7 @@
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "政策状态：1，有效；2，挂起；0，删除"
+							"description": "政策状态：1，有效；2，挂起；0，删除 3，停用"
 						},
 						{
 							"name": "travel_end_date",
@@ -235,6 +235,16 @@
 									"name": "max_price_limit",
 									"type": "Number",
 									"description": "最大票面价，单位：元"
+								},
+								{
+									"name": "bidd_fee",
+									"type": "Number",
+									"description": "固定金额竞价空间，单位分，非必填，非负。录入的数值即为竞价阈值。当固定金额和百分比竞价空间同时有值时，取两者之和做为实际的竞价阈值"
+								},
+								{
+									"name": "bidd_fee_percent",
+									"type": "Number",
+									"description": "百分比竞价空间，单位分，如传100表示为1%，非必填，支持录入0~100%，根据票面价*百分比竞价空间计算竞价阈值，向下进位到小数点后两位。当固定金额和百分比竞价空间同时有值时，取两者之和做为实际的竞价阈值。"
 								}
 							],
 							"name": "price",
@@ -274,7 +284,7 @@
 								{
 									"name": "stay_day",
 									"type": "String",
-									"description": "只能输入A-B的格式，AB都是0-365之间的整数。往返航班之间的停留天数，以天数为单位，默认不限制。空表示默认"
+									"description": "往返航班之间的停留时长，非必填，为空表示不限制；支持格式：A-B或者A，B\u003eA且均为整数；A-B包含边界值"
 								},
 								{
 									"name": "sale_mode_code",
@@ -284,7 +294,12 @@
 								{
 									"name": "goods_market",
 									"type": "String[]",
-									"description": "0-B2C, 1-B2B, 2-B2G, 3-宝贝。可多选，多个请用英文”,”隔开"
+									"description": "0-B2C, 1-B2B, 2-B2G, 3-宝贝。单选，为空表示不限制"
+								},
+								{
+									"name": "stay_time_unit",
+									"type": "Number",
+									"description": "往返停留时长单位：非必填，0-单位:天，3-单位:小时；默认为0"
 								}
 							],
 							"name": "sale",
@@ -294,13 +309,13 @@
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "政策状态：1，有效；2，挂起；0，删除",
+							"description": "政策状态：1，有效；2，挂起；0，删除 3，停用",
 							"required": true
 						},
 						{
 							"name": "is_white",
 							"type": "Number",
-							"description": "舱位条件:0,白名单；1，黑名单"
+							"description": "0-白名单，航班舱位命中填写的去程/回程舱位，则可以使用本条政策；1-黑名单，航班舱位命中填写的去程/回程舱位，则不可以使用本条政策；默认为0-白名单。"
 						},
 						{
 							"name": "memo",
@@ -331,6 +346,11 @@
 							"name": "direct_transfer_type",
 							"type": "Number",
 							"description": "直达中转：0，直达；1，中转；默认为0"
+						},
+						{
+							"name": "out_main_flight",
+							"type": "Boolean",
+							"description": "是否支持共享出主飞;是:true，否:false"
 						}
 					],
 					"name": "policy_list",

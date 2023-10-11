@@ -8,8 +8,8 @@
 		{
 			"name": "name",
 			"type": "String",
-			"description": "房型名称。不能超过30字",
-			"maxLength": 30,
+			"description": "房型名称。不能超过200个字符",
+			"maxLength": 200,
 			"required": true
 		},
 		{
@@ -96,7 +96,8 @@
 		{
 			"name": "name_e",
 			"type": "String",
-			"description": "卖家房型英文名称"
+			"description": "卖家房型英文名称",
+			"maxLength": 200
 		},
 		{
 			"name": "operator",
@@ -117,6 +118,21 @@
 			"name": "standard_room_facilities",
 			"type": "String",
 			"description": "酒店房型设施"
+		},
+		{
+			"name": "window_desc",
+			"type": "String",
+			"description": "窗型，窗型（windowType）： 0=无窗 1=有窗 2=部分有窗  窗型缺陷（windowTypeDefect）： 0=窗户不可打开通风 1=窗外有遮挡 2=窗外为酒店内景观  特殊窗（windowTypeSpecial）： 0=落地窗 1=飘窗 2=天窗 3=小窗。  当为有窗或部分有窗时，窗型缺陷可多选，特殊窗型需单选"
+		},
+		{
+			"name": "add_bed",
+			"type": "String",
+			"description": "房型加床政策。 费用(fee) 说明(desc)"
+		},
+		{
+			"name": "children_policy",
+			"type": "String",
+			"description": "儿童政策"
 		}
 	],
 	"responseParams": [

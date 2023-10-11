@@ -1,0 +1,89 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品编码",
+					"required": true
+				},
+				{
+					"name": "logic_group_number",
+					"type": "Number",
+					"description": "商家阶梯序号"
+				}
+			],
+			"name": "param0",
+			"type": "ItemPoolSku[]",
+			"description": "sku信息",
+			"maxListSize": 20,
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "商家外部活动Id"
+				},
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "活动Id",
+					"required": true
+				}
+			],
+			"name": "param1",
+			"type": "CommonActivityParam",
+			"description": "活动信息",
+			"required": true
+		},
+		{
+			"name": "version",
+			"type": "Number",
+			"description": "alibaba.wdk.marketing.version.generate接口生成",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "操作结果信息摘要"
+				},
+				{
+					"subParams": [
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "skuCode"
+						}
+					],
+					"name": "datas",
+					"type": "ItemPoolSku[]",
+					"description": "data"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				}
+			],
+			"name": "result",
+			"type": "MarketResult",
+			"description": "结果信息"
+		}
+	],
+	"name": "alibaba.hm.marketing.itempool.item.remove.async",
+	"apiChineseName": "商品池删除商品",
+	"description": "新模型下删除商品",
+	"id": 67239
+}

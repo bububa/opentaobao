@@ -1,0 +1,216 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "门店编码",
+					"required": true
+				},
+				{
+					"name": "biz_order_id",
+					"type": "Number",
+					"description": "订单ID",
+					"required": true
+				}
+			],
+			"name": "warehouse_order_get_request",
+			"type": "WarehouseOrderGetRequest",
+			"description": "查询入参对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "merchant_code",
+							"type": "String",
+							"description": "商家编码"
+						},
+						{
+							"name": "store_id",
+							"type": "String",
+							"description": "门店编码"
+						},
+						{
+							"name": "biz_order_id",
+							"type": "Number",
+							"description": "订单ID"
+						},
+						{
+							"name": "order_from",
+							"type": "Number",
+							"description": "订单来源 (2=美团/3=饿了么/26=京东到家/31=淘鲜达/28=私域渠道)"
+						},
+						{
+							"name": "out_order_id",
+							"type": "String",
+							"description": "渠道订单ID"
+						},
+						{
+							"name": "warehouse_status",
+							"type": "Number",
+							"description": "仓作业单状态 \u00001 = 任务生成 2 = 拣货开始 3 = 拣货完成 4 = 打包开始 5 = 打包完成 -1 = 任务取消"
+						},
+						{
+							"name": "warehouse_status_desc",
+							"type": "String",
+							"description": "仓作业单状态描述"
+						},
+						{
+							"name": "delivery_time_mind",
+							"type": "Number",
+							"description": "订单配送时效  1 = 自提 / 2 = 小时达"
+						},
+						{
+							"name": "exc_status_desc",
+							"type": "String",
+							"description": "仓单异常状态 (正常/缺货出/任务取消)"
+						},
+						{
+							"name": "task_dispatched_time",
+							"type": "Date",
+							"description": "仓作业任务下发时间(仓接单)"
+						},
+						{
+							"name": "task_generate_time",
+							"type": "Date",
+							"description": "仓作业任务生成时间(准备开始作业)"
+						},
+						{
+							"name": "pick_worker_id",
+							"type": "String",
+							"description": "拣货人员ID"
+						},
+						{
+							"name": "pick_worker_name",
+							"type": "String",
+							"description": "拣货人员姓名"
+						},
+						{
+							"name": "pick_start_time",
+							"type": "Date",
+							"description": "拣货开始时间(人员开始拣货)"
+						},
+						{
+							"name": "pick_finish_time",
+							"type": "Date",
+							"description": "拣货结束时间"
+						},
+						{
+							"name": "pack_worker_id",
+							"type": "String",
+							"description": "打包人员ID"
+						},
+						{
+							"name": "pack_worker_name",
+							"type": "String",
+							"description": "打包人员姓名"
+						},
+						{
+							"name": "pack_start_time",
+							"type": "Date",
+							"description": "打包开始时间"
+						},
+						{
+							"name": "pack_finish_time",
+							"type": "Date",
+							"description": "打包结束时间"
+						},
+						{
+							"name": "latest_arrival_time",
+							"type": "Date",
+							"description": "用户选择最晚送达时间"
+						},
+						{
+							"name": "latest_outbound_time",
+							"type": "Date",
+							"description": "最晚出库时间"
+						},
+						{
+							"name": "actual_outbound_time",
+							"type": "Date",
+							"description": "实际出库时间"
+						},
+						{
+							"name": "cancel_time",
+							"type": "Date",
+							"description": "仓作业取消时间"
+						},
+						{
+							"subParams": [
+								{
+									"name": "biz_sub_order_id",
+									"type": "Number",
+									"description": "交易子单号"
+								},
+								{
+									"name": "out_sub_order_id",
+									"type": "String",
+									"description": "渠道子单号"
+								},
+								{
+									"name": "sku_code",
+									"type": "String",
+									"description": "商品编码"
+								},
+								{
+									"name": "sku_name",
+									"type": "String",
+									"description": "商品名称"
+								},
+								{
+									"name": "stock_unit",
+									"type": "String",
+									"description": "库存单位"
+								},
+								{
+									"name": "buy_stock_quantity",
+									"type": "BigDecimal",
+									"description": "库存单位购买数量(应拣数量)"
+								},
+								{
+									"name": "pick_stock_quantity",
+									"type": "BigDecimal",
+									"description": "库存单位拣货数量"
+								}
+							],
+							"name": "sub_orders",
+							"type": "WarehouseSubOrderResponse[]",
+							"description": "子单列表"
+						}
+					],
+					"name": "model",
+					"type": "WarehouseOrderResponse",
+					"description": "仓单对象"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口是否成功"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "返回码"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "返回码说明"
+				}
+			],
+			"name": "api_result",
+			"type": "TopBaseResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.tcls.aelophy.warehouse.order.get",
+	"apiChineseName": "仓作业单获取",
+	"description": "仓作业单获取",
+	"id": 68010
+}

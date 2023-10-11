@@ -1,0 +1,45 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "source_content",
+					"type": "String",
+					"description": "待加密明文",
+					"required": true
+				},
+				{
+					"name": "external_applet_biz_code",
+					"type": "String",
+					"description": "业务代码",
+					"required": true
+				}
+			],
+			"name": "alipay_encrypt_req",
+			"type": "AlipayEncryptReq",
+			"description": "入参结构体",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "明文加密后的密文"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否请求成功"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "请求失败描述"
+		}
+	],
+	"name": "alitrip.flight.external.alipay.encrypt",
+	"apiChineseName": "支付宝小程序明文加密",
+	"description": "支付宝小程序明文加密",
+	"id": 65908
+}

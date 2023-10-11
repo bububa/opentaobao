@@ -66,7 +66,7 @@ type OpenApiTrainOrderRs struct {
 	ApplyId int64 `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
 	// 票数
 	TicketCount int64 `json:"ticket_count,omitempty" xml:"ticket_count,omitempty"`
-	// 订单状态：0待支付,1出票中,2已关闭,3,改签成功,4退票成功,5出票完成,6退票申请中,7改签申请中,8已出票,已发货,9出票失败,10改签失败,11退票失败
+	// 订单状态：0待支付,1出票中,2已关闭,3,改签成功,4退票成功,5出票完成,6退票申请中,7改签申请中,8已出票,已发货,9出票失败,10改签失败,11退票失败,12有线下改签,13有线下退票,14有线下退改
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 成本中心对象
 	CostCenter *OpenCostCenterDo `json:"cost_center,omitempty" xml:"cost_center,omitempty"`

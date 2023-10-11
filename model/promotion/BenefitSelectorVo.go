@@ -10,4 +10,6 @@ type BenefitSelectorVo struct {
 	BenefitType string `json:"benefit_type,omitempty" xml:"benefit_type,omitempty"`
 	// 权益类型id
 	BenefitTypeLong int64 `json:"benefit_type_long,omitempty" xml:"benefit_type_long,omitempty"`
+	// 选择器步骤选择2时，查询指定类型权益列表分页查询返回值，数据总量
+	TemplateTotalCount int64 `json:"template_total_count,omitempty" xml:"template_total_count,omitempty"`
 }

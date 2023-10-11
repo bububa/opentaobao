@@ -1,0 +1,154 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "apply_no",
+					"type": "Number",
+					"description": "申请单号",
+					"required": true
+				}
+			],
+			"name": "free_children_ticket_detail_rq",
+			"type": "FreeChildrenTicketDetailRQ",
+			"description": "请求参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "结果"
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "失败code"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "失败文案"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "train_to",
+									"type": "String",
+									"description": "到达站"
+								},
+								{
+									"name": "train_from",
+									"type": "String",
+									"description": "出发站"
+								},
+								{
+									"name": "sequence_no",
+									"type": "String",
+									"description": "票号"
+								},
+								{
+									"name": "train_date",
+									"type": "String",
+									"description": "出发时间"
+								},
+								{
+									"name": "train_no",
+									"type": "String",
+									"description": "车次号"
+								},
+								{
+									"name": "choose_seat",
+									"type": "String",
+									"description": "坐席信息"
+								}
+							],
+							"name": "train_info",
+							"type": "TrainInfo",
+							"description": "火车信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "certificate_type_code",
+									"type": "String",
+									"description": "证件类型"
+								},
+								{
+									"name": "passenger_name",
+									"type": "String",
+									"description": "乘客"
+								},
+								{
+									"name": "certificate_no",
+									"type": "String",
+									"description": "证件号"
+								}
+							],
+							"name": "passenger_info",
+							"type": "PassengerInfo",
+							"description": "成人信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "certificate_type_code",
+									"type": "String",
+									"description": "证件类型"
+								},
+								{
+									"name": "passenger_name",
+									"type": "String",
+									"description": "乘客"
+								},
+								{
+									"name": "certificate_no",
+									"type": "String",
+									"description": "证件号"
+								}
+							],
+							"name": "free_children_passenger_info",
+							"type": "PassengerInfo",
+							"description": "儿童信息"
+						},
+						{
+							"name": "operator_type",
+							"type": "Number",
+							"description": "操作类型"
+						},
+						{
+							"name": "apply_no",
+							"type": "String",
+							"description": "唯一标识"
+						},
+						{
+							"name": "timeout",
+							"type": "String",
+							"description": "超时时间"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态"
+						}
+					],
+					"name": "module",
+					"type": "FreeChildrenTicketDetailRS",
+					"description": "返回信息"
+				}
+			],
+			"name": "result",
+			"type": "TapResult",
+			"description": "rs"
+		}
+	],
+	"name": "taobao.train.agent.freechildrendetail.query.vtwo",
+	"apiChineseName": "免费儿童详情",
+	"description": "免费儿童列表详情",
+	"id": 65967
+}

@@ -82,6 +82,11 @@
 							"name": "exchange_total_limit",
 							"type": "Number",
 							"description": "换购限量"
+						},
+						{
+							"name": "exchange_order_limit",
+							"type": "Number",
+							"description": "该商品每单可换购最大数"
 						}
 					],
 					"name": "sku_list",

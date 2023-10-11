@@ -99,6 +99,11 @@
 							"name": "change_reason",
 							"type": "String",
 							"description": "航变原因"
+						},
+						{
+							"name": "sub_type",
+							"type": "Number",
+							"description": "航变子原因，如延误、恢复、航班保护，详情见新京杭航变接入文档"
 						}
 					],
 					"name": "flight_change",

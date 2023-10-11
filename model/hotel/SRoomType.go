@@ -8,11 +8,11 @@ type SRoomType struct {
 	Floor string `json:"floor,omitempty" xml:"floor,omitempty"`
 	// 床型。json格式：[{&#34;bedType&#34;:&#34;大床&#34;,&#34;bedSize&#34;:&#34;1.5m&#34;},{&#34;bedType&#34;:&#34;双床&#34;,&#34;bedSize&#34;:&#34;1.2m&#34;}]
 	Bed string `json:"bed,omitempty" xml:"bed,omitempty"`
-	// 宽带服务&lt;br/&gt;&#34;0&#34;,&#34;有线上网(免费),&lt;br/&gt;&#34;1&#34;,&#34;有线上网(无)&#34;,&lt;br/&gt;&#34;2&#34;,&#34;有线上网(收费)&#34;,&lt;br/&gt;&#34;3&#34;,&#34;有线上网(部分有且免费)&#34;,&lt;br/&gt;&#34;4&#34;,&#34;有线上网(部分有且收费)&#34;
+	// 宽带服务&#34;0&#34;,&#34;有线上网(免费),&#34;1&#34;,&#34;有线上网(无)&#34;,&#34;2&#34;,&#34;有线上网(收费)&#34;,&#34;3&#34;,&#34;有线上网(部分有且免费)&#34;,&#34;4&#34;,&#34;有线上网(部分有且收费)&#34;
 	Internet string `json:"internet,omitempty" xml:"internet,omitempty"`
-	// pic_url
+	// 房型图片
 	PicUrl string `json:"pic_url,omitempty" xml:"pic_url,omitempty"`
-	// facility
+	// 房间设施
 	Facility string `json:"facility,omitempty" xml:"facility,omitempty"`
 	// 面积
 	Area string `json:"area,omitempty" xml:"area,omitempty"`

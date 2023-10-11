@@ -24,6 +24,8 @@ type ReservationDto struct {
 	NextResvTime string `json:"next_resv_time,omitempty" xml:"next_resv_time,omitempty"`
 	// 身份证信息
 	WorkerIdNum string `json:"worker_id_num,omitempty" xml:"worker_id_num,omitempty"`
+	// 预约时间段，会取代resv_time的上午/下午/晚上
+	ResvAccurateTime string `json:"resv_accurate_time,omitempty" xml:"resv_accurate_time,omitempty"`
 	// 预约时间,0:上午,1:下午,2:晚上
 	ResvTime int64 `json:"resv_time,omitempty" xml:"resv_time,omitempty"`
 	// 1：电话占线/无人接听/电话关机 	 2：未收到货 	 3：用户暂不需要安装 	 4：取消安装 	 5：电话号码错误

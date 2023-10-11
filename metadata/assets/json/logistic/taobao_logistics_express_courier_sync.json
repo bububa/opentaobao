@@ -1,0 +1,114 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "service_type",
+					"type": "String",
+					"description": "服务类型",
+					"required": true
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "单号",
+					"required": true
+				},
+				{
+					"name": "service_flag",
+					"type": "String",
+					"description": "服务标识"
+				},
+				{
+					"name": "tms_cp_code",
+					"type": "String",
+					"description": "快递公司资源编码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "courier_name",
+							"type": "String",
+							"description": "小件员名称 ",
+							"required": true
+						},
+						{
+							"name": "courier_mobile",
+							"type": "String",
+							"description": "小件员电话号码",
+							"required": true
+						},
+						{
+							"name": "courier_no",
+							"type": "String",
+							"description": "小件员编码"
+						},
+						{
+							"name": "site_name",
+							"type": "String",
+							"description": "小件员所属的网点名称"
+						},
+						{
+							"name": "site_code",
+							"type": "String",
+							"description": "小件员所属的网点编码"
+						}
+					],
+					"name": "tms_courier_info",
+					"type": "TmsCourierInfoRequest",
+					"description": "小件员信息",
+					"required": true
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "服务商ID"
+				},
+				{
+					"name": "delivery_code",
+					"type": "String",
+					"description": "配资源编码"
+				},
+				{
+					"name": "update_type",
+					"type": "String",
+					"description": "更新类型 1-首次分配小件员 2-改派小件员"
+				},
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "改派小件员原因 1-客服改派（上报超区、人工分单） 2-小件员转单 3-其他(update_type=2时，必填)"
+				}
+			],
+			"name": "tms_courier_request",
+			"type": "TmsCourierRequest",
+			"description": "小件员信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "suc",
+			"type": "Boolean",
+			"description": "校验成功或者异常"
+		},
+		{
+			"name": "biz_error_message",
+			"type": "String",
+			"description": "错误码描述"
+		},
+		{
+			"name": "biz_error_code",
+			"type": "String",
+			"description": "错误码标识"
+		},
+		{
+			"name": "retry",
+			"type": "Boolean",
+			"description": "是否可重试"
+		}
+	],
+	"name": "taobao.logistics.express.courier.sync",
+	"apiChineseName": "快递公司同步小件员信息",
+	"description": "快递公司同步小件员信息",
+	"id": 66967
+}

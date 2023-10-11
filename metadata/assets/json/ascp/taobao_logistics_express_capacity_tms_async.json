@@ -1,0 +1,181 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于做幂等",
+					"required": true
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "时间戳（毫秒）",
+					"required": true
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "服务商ID",
+					"required": true
+				},
+				{
+					"name": "delivery_code",
+					"type": "String",
+					"description": "配资源编码",
+					"required": true
+				},
+				{
+					"name": "service_type",
+					"type": "String",
+					"description": "服务类型：1-上门取退",
+					"required": true
+				},
+				{
+					"name": "ability_type",
+					"type": "String",
+					"description": "能力：1-上门取退",
+					"required": true
+				},
+				{
+					"name": "service_scope_type",
+					"type": "String",
+					"description": "服务范围地址类型：1-行政地址；2-电子围栏",
+					"required": true
+				},
+				{
+					"name": "address_type",
+					"type": "String",
+					"description": "如果传入为行政地址，行政地址传入类型 1- 菜鸟地址库ID 传入 2- 中文地址传入"
+				},
+				{
+					"name": "address_ids",
+					"type": "String[]",
+					"description": "行政地址id（菜鸟地址库id）"
+				},
+				{
+					"subParams": [
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "市"
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "区"
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "街道"
+						}
+					],
+					"name": "address_names",
+					"type": "AddressName[]",
+					"description": "中文地址信息"
+				},
+				{
+					"name": "region_code",
+					"type": "String",
+					"description": "电子围栏外部ID64\t条件必填（service_scope_type=2时，必填）"
+				},
+				{
+					"name": "update_method",
+					"type": "Number",
+					"description": "产能更新方式：1-全量更新；2-部分更新 ● 电子围栏产能首次同步时，需选择全量更新 ● 选择全量更新时，日常及指定日期时间段产能均做全量覆盖更新； ● 选择部分更新时，日常及指定日期时间段产能仅对传入的时间段的产能进行更新，其他时间段不做处理，维持原状",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "time_range",
+							"type": "String",
+							"description": "单位时间段（整点小时纬度，HH:MM-HH:MM） 只能传入单位整点时间段，eg：01:00-02:00"
+						},
+						{
+							"name": "capacity",
+							"type": "Number",
+							"description": "时间段产能 （单），表示时间段内可揽可上门单数"
+						}
+					],
+					"name": "daily_capacity_infos",
+					"type": "CapacityInfo[]",
+					"description": "日常产能信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "specify_date",
+							"type": "String",
+							"description": "指定日期，YYYY-MM-DD "
+						},
+						{
+							"subParams": [
+								{
+									"name": "time_range",
+									"type": "String",
+									"description": "单位时间段（整点小时纬度，HH:MM-HH:MM） 只能传入单位整点时间段，eg：01:00-02:00"
+								},
+								{
+									"name": "capacity",
+									"type": "Number",
+									"description": "时间段产能 （单），表示时间段内可揽可上门单数"
+								}
+							],
+							"name": "specify_date_capacity",
+							"type": "CapacityInfo[]",
+							"description": "时间段产能 "
+						}
+					],
+					"name": "specify_capacity_infos",
+					"type": "SpecifyCapacityInfo[]",
+					"description": "指定日期产能信息"
+				}
+			],
+			"name": "capacity_request",
+			"type": "CapacityRequest",
+			"description": "上门取退产能信息同步/更新",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "系统成功失败   true|false"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息"
+				},
+				{
+					"name": "is_retry",
+					"type": "Boolean",
+					"description": "是否可重试"
+				}
+			],
+			"name": "capacity_response",
+			"type": "CapacityResponse",
+			"description": "返回值"
+		}
+	],
+	"name": "taobao.logistics.express.capacity.tms.async",
+	"apiChineseName": "上门取退产能信息同步/更新",
+	"description": "上门取退产能信息同步/更新",
+	"id": 67665
+}

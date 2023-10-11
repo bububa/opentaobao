@@ -275,6 +275,38 @@
 			"name": "change_apply_order",
 			"type": "ChangeApplyOrderDTO",
 			"description": "改签申请单主单"
+		},
+		{
+			"subParams": [
+				{
+					"name": "custom_type",
+					"type": "String",
+					"description": "定制类型"
+				},
+				{
+					"name": "count",
+					"type": "Number",
+					"description": "定制份数"
+				},
+				{
+					"name": "carriage_custom",
+					"type": "String",
+					"description": "定制车厢集合字符串"
+				},
+				{
+					"name": "seat_custom",
+					"type": "String",
+					"description": "选座坐席号集合字符串"
+				},
+				{
+					"name": "accept_no_vip_custom",
+					"type": "Number",
+					"description": "是否接受非定制,0不接受,1接受"
+				}
+			],
+			"name": "custom_made_list",
+			"type": "CustomMadeItemDTO []",
+			"description": "定制信息集合"
 		}
 	],
 	"name": "taobao.train.agent.changeorderdetail.query.vtwo",

@@ -1,0 +1,100 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "spu_id_list",
+							"type": "Number[]",
+							"description": "SPU ID列表",
+							"required": true
+						},
+						{
+							"name": "main",
+							"type": "Boolean",
+							"description": "是否主接口",
+							"required": true
+						}
+					],
+					"name": "group_list",
+					"type": "GroupRequest[]",
+					"description": "分组",
+					"required": true
+				},
+				{
+					"name": "business_type",
+					"type": "String",
+					"description": "业务类型",
+					"required": true
+				}
+			],
+			"name": "dsf_supplier_spu_request",
+			"type": "DsfSupplierSpuRequest",
+			"description": "切流请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"subParams": [
+				{
+					"name": "business_type",
+					"type": "String",
+					"description": "业务类型"
+				},
+				{
+					"subParams": [
+						{
+							"name": "main",
+							"type": "Boolean",
+							"description": "是否主接口"
+						},
+						{
+							"name": "spu_map",
+							"type": "String",
+							"description": "spu的结构"
+						},
+						{
+							"subParams": [
+								{
+									"name": "api_type",
+									"type": "String",
+									"description": "接口类型"
+								},
+								{
+									"name": "url",
+									"type": "String",
+									"description": "接口地址"
+								}
+							],
+							"name": "interface_list",
+							"type": "Interface[]",
+							"description": "接口"
+						}
+					],
+					"name": "group_list",
+					"type": "Group[]",
+					"description": "分组"
+				}
+			],
+			"name": "data",
+			"type": "DsfSupplierSpuVO",
+			"description": "返回结果"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "taobao.virtual.dsf.supplier.interface.switch",
+	"apiChineseName": "虚拟供应商履约接口切换",
+	"description": "虚拟供应商履约接口切换",
+	"id": 67251
+}

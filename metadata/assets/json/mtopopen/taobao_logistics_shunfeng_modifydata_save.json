@@ -1,0 +1,83 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "order_code",
+					"type": "String",
+					"description": "订单ID",
+					"required": true
+				},
+				{
+					"name": "cp_code",
+					"type": "String",
+					"description": "快递公司标准编码",
+					"required": true
+				},
+				{
+					"name": "mail_no",
+					"type": "String",
+					"description": "快递单号",
+					"required": true
+				},
+				{
+					"name": "fetcher",
+					"type": "String",
+					"description": "修改后收件人"
+				},
+				{
+					"name": "delivery_time",
+					"type": "String",
+					"description": "修改后派送时间"
+				}
+			],
+			"name": "modify_request",
+			"type": "ModifyRequest",
+			"description": "请求对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "通讯成功/失败"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "通讯失败码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "通讯失败信息"
+		},
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "信息回传是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "信息回传错误码(成功情况无需关注)"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "信息回传错误原因(成功情况无需关注)"
+				}
+			],
+			"name": "modify_response",
+			"type": "ModifyResponse",
+			"description": "回传返回结果对象"
+		}
+	],
+	"name": "taobao.logistics.shunfeng.modifydata.save",
+	"apiChineseName": "顺丰小程序修改配送信息回传接口",
+	"description": "顺丰小程序修改配送信息回传接口",
+	"id": 66215
+}

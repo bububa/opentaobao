@@ -1,0 +1,103 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "action_type",
+					"type": "String",
+					"description": "绑定类型",
+					"required": true
+				},
+				{
+					"name": "ent_name",
+					"type": "String",
+					"description": "企业名称"
+				},
+				{
+					"name": "bind_site_user_id",
+					"type": "Number",
+					"description": "被绑定用户Id",
+					"required": true
+				},
+				{
+					"name": "ent_id",
+					"type": "Number",
+					"description": "企业id"
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "业务身份",
+					"required": true
+				},
+				{
+					"name": "operate_time",
+					"type": "Number",
+					"description": "操作时间戳",
+					"required": true
+				},
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "手机号",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "绑定的用户id",
+					"required": true
+				},
+				{
+					"name": "scene",
+					"type": "String",
+					"description": "场景",
+					"required": true
+				}
+			],
+			"name": "nrt_ea_login_dto",
+			"type": "NrtEaLoginDTO",
+			"description": "参数对象"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "redirect_url",
+							"type": "String",
+							"description": "登录地址"
+						}
+					],
+					"name": "data",
+					"type": "NrtEaLoginDTO",
+					"description": "数据对象"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求结果"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "ResultDO",
+			"description": "返回结果"
+		}
+	],
+	"name": "tmall.nrt.miaoling.third.login",
+	"apiChineseName": "喵零第三方免登",
+	"description": "喵零第三方免登",
+	"id": 66002
+}

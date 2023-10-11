@@ -8,7 +8,7 @@
 		{
 			"name": "page_no",
 			"type": "Number",
-			"description": "第几页"
+			"description": "第几页，下标从0开始"
 		},
 		{
 			"name": "page_size",

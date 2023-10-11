@@ -12,4 +12,10 @@ type UserAuthInfo struct {
 	SecretNo string `json:"secret_no,omitempty" xml:"secret_no,omitempty"`
 	// 虚拟号过期时间
 	SecretExpireTime string `json:"secret_expire_time,omitempty" xml:"secret_expire_time,omitempty"`
+	// 运单所属快递公司code
+	CpCode string `json:"cp_code,omitempty" xml:"cp_code,omitempty"`
+	// 收件人手机号是否为虚拟号主号(虚拟号前11位)
+	MainSecretNo bool `json:"main_secret_no,omitempty" xml:"main_secret_no,omitempty"`
+	// 收件人手机号是否在柜机黑名单中
+	Black bool `json:"black,omitempty" xml:"black,omitempty"`
 }

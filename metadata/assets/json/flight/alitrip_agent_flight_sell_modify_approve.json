@@ -85,6 +85,11 @@
 									"name": "od_index",
 									"type": "Number",
 									"description": "航程序号"
+								},
+								{
+									"name": "ticket_no",
+									"type": "String",
+									"description": "该航段对应的票号"
 								}
 							],
 							"name": "after_change_segments",

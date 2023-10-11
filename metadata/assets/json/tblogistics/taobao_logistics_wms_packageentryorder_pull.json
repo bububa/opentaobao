@@ -1,0 +1,107 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "mail_no",
+					"type": "String",
+					"description": "入库运单号，正向入库传一段运单号，逆向入库传二段运单号",
+					"required": true
+				},
+				{
+					"name": "order_type",
+					"type": "String",
+					"description": "业务类型，取值：JYPKZXRK(集运包裹正向入库)、JYPK\u0000NXRK(集运包裹逆向入库)",
+					"required": true
+				},
+				{
+					"name": "logistics_owner",
+					"type": "String",
+					"description": "物流主体，例如：TaoTian(淘天)",
+					"required": true
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "服务商仓code",
+					"required": true
+				},
+				{
+					"name": "package_owner_code",
+					"type": "String",
+					"description": "包裹货主"
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "物流服务商ID",
+					"required": true
+				}
+			],
+			"name": "pull_package_entry_order_request",
+			"type": "PullPackageOrderRequest",
+			"description": "请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "结果"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误编码"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "entry_order_code",
+							"type": "String",
+							"description": "包裹入库单号"
+						},
+						{
+							"name": "mail_no",
+							"type": "String",
+							"description": "包裹运单号"
+						},
+						{
+							"name": "tms_cp_code",
+							"type": "String",
+							"description": "快递公司code，正向入库下发一段快递公司，逆向入库下发二段快递公司"
+						},
+						{
+							"name": "logistics_owner",
+							"type": "String",
+							"description": "物流主体，例如：TaoTian(淘天)"
+						},
+						{
+							"name": "extend_props",
+							"type": "String",
+							"description": "拓展字段"
+						}
+					],
+					"name": "data",
+					"type": "PullPackageOrderResponse",
+					"description": "结果"
+				}
+			],
+			"name": "result",
+			"type": "ResultWrapper",
+			"description": "结果"
+		}
+	],
+	"name": "taobao.logistics.wms.packageentryorder.pull",
+	"apiChineseName": "包裹入库单拉单",
+	"description": "包裹入库单拉单",
+	"id": 67188
+}

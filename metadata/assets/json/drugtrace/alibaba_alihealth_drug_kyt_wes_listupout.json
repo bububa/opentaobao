@@ -15,14 +15,12 @@
 		{
 			"name": "begin_date",
 			"type": "String",
-			"description": "单据时间的开始日期（不写时分秒）",
-			"required": true
+			"description": "单据时间的开始日期（不写时分秒）"
 		},
 		{
 			"name": "end_date",
 			"type": "String",
-			"description": "单据时间的结束日期（不写时分秒）",
-			"required": true
+			"description": "单据时间的结束日期（不写时分秒）"
 		},
 		{
 			"name": "from_user_id",

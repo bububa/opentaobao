@@ -1,0 +1,44 @@
+{
+	"requestParams": [
+		{
+			"name": "biz_type",
+			"type": "String",
+			"description": "业务类型，INSTANT_ONLINE：同城配送-在线下单"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "auth_status",
+							"type": "Number",
+							"description": "0正常,1异常"
+						},
+						{
+							"name": "features",
+							"type": "String",
+							"description": "扩展"
+						}
+					],
+					"name": "data",
+					"type": "CheckDeliveryAuthTopResponse",
+					"description": "数据"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "返回值"
+		}
+	],
+	"name": "alibaba.ascp.logistics.instantsonline.checkdeliveryauth",
+	"apiChineseName": "同城配送在线下单检查授权",
+	"description": "同城配送在线下单检查授权",
+	"id": 66596
+}

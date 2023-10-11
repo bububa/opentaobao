@@ -24,6 +24,12 @@ type TicketingDetailDto struct {
 	IntentionId string `json:"intention_id,omitempty" xml:"intention_id,omitempty"`
 	// 支付成功后30分钟内出票
 	SlaDesc string `json:"sla_desc,omitempty" xml:"sla_desc,omitempty"`
+	// xxx
+	CorrelationOutId string `json:"correlation_out_id,omitempty" xml:"correlation_out_id,omitempty"`
+	// 催出后服务时效
+	UrgeSla string `json:"urge_sla,omitempty" xml:"urge_sla,omitempty"`
+	// 2023-05-26 20:13:08后存在订单被取消的风险
+	UrgeSlaDesc string `json:"urge_sla_desc,omitempty" xml:"urge_sla_desc,omitempty"`
 	// 店铺id
 	AgentId int64 `json:"agent_id,omitempty" xml:"agent_id,omitempty"`
 	// 国内国际标识

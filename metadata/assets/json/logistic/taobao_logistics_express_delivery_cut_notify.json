@@ -1,0 +1,66 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "mail_no",
+					"type": "String",
+					"description": "快递单号",
+					"required": true
+				},
+				{
+					"name": "outer_order_id",
+					"type": "String",
+					"description": "业务单号"
+				},
+				{
+					"name": "intercept_status",
+					"type": "String",
+					"description": "拦截状态，1拦截成功，2拦截失败，3拦截取消",
+					"required": true
+				},
+				{
+					"name": "tms_cp_code",
+					"type": "String",
+					"description": "快递公司",
+					"required": true
+				},
+				{
+					"name": "intercept_status_message",
+					"type": "String",
+					"description": "拦截失败、拦截取消原因"
+				}
+			],
+			"name": "notify_cut_off_delivery_process_status_request",
+			"type": "NotifyCutOffDeliveryProcessStatusRequest",
+			"description": "请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "suc",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "biz_error_message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "biz_error_code",
+			"type": "Boolean",
+			"description": "错误编码"
+		},
+		{
+			"name": "retry",
+			"type": "Boolean",
+			"description": "是否支持重试"
+		}
+	],
+	"name": "taobao.logistics.express.delivery.cut.notify",
+	"apiChineseName": "TMS配拦截结果回告",
+	"description": "TMS配拦截结果回告",
+	"id": 66638
+}

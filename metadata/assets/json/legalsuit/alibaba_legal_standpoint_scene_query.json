@@ -1,0 +1,47 @@
+{
+	"requestParams": [
+		{
+			"name": "input_system_code",
+			"type": "String",
+			"description": "系统标识"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "success_res",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "error_code_res",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"subParams": [
+				{
+					"name": "text",
+					"type": "String",
+					"description": "场景名称"
+				},
+				{
+					"name": "value",
+					"type": "String",
+					"description": "场景code"
+				}
+			],
+			"name": "content",
+			"type": "SceneOption []",
+			"description": "场景集合"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误描述"
+		}
+	],
+	"name": "alibaba.legal.standpoint.scene.query",
+	"apiChineseName": "查询场景",
+	"description": "查询场景",
+	"id": 66890
+}

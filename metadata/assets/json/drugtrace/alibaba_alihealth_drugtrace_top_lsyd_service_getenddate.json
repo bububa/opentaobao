@@ -1,0 +1,55 @@
+{
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "调用接口的企业ID",
+			"required": true
+		},
+		{
+			"name": "business",
+			"type": "Number",
+			"description": "药 行业线：传 1 ",
+			"required": true
+		},
+		{
+			"name": "service",
+			"type": "Number",
+			"description": "基础版：传 11",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true：接口调用成功"
+				},
+				{
+					"name": "end_date",
+					"type": "String",
+					"description": "服务截止时间"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "接口调用失败具体信息"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "接口调用失败具体code"
+				}
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "接口返回"
+		}
+	],
+	"name": "alibaba.alihealth.drugtrace.top.lsyd.service.getenddate",
+	"apiChineseName": "获取企业服务截止时间",
+	"description": "获取企业服务截止时间",
+	"id": 66088
+}

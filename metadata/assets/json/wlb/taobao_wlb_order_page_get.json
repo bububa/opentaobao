@@ -80,11 +80,6 @@
 					"description": "订单总价"
 				},
 				{
-					"name": "user_id",
-					"type": "Number",
-					"description": "卖家ID"
-				},
-				{
 					"name": "user_nick",
 					"type": "String",
 					"description": "卖家NICK"
@@ -275,9 +270,9 @@
 					"description": "发货速度 ， 101-当日达， 102-次晨达， 103-次日达"
 				},
 				{
-					"name": "open_uid",
-					"type": "String",
-					"description": "买家Id"
+					"name": "user_id",
+					"type": "Number",
+					"description": "卖家ID"
 				}
 			],
 			"name": "order_list",

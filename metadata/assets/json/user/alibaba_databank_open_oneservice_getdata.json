@@ -1,0 +1,68 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "filter",
+					"type": "String",
+					"description": "过滤条件",
+					"required": true
+				},
+				{
+					"name": "measure",
+					"type": "String[]",
+					"description": "指标",
+					"required": true
+				},
+				{
+					"name": "date_type",
+					"type": "String",
+					"description": "日期类型",
+					"required": true
+				},
+				{
+					"name": "name_space",
+					"type": "String",
+					"description": "固定",
+					"required": true
+				},
+				{
+					"name": "smart_id",
+					"type": "Number",
+					"description": "CGP绑定的数据银行品牌商ID",
+					"required": true
+				}
+			],
+			"name": "data_indicator_query_param",
+			"type": "DataIndicatorQueryParam",
+			"description": "参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "String []",
+			"description": "指标结果"
+		},
+		{
+			"name": "errcode",
+			"type": "Number",
+			"description": "请求成功"
+		},
+		{
+			"name": "errmsg",
+			"type": "String",
+			"description": "空"
+		},
+		{
+			"name": "code_class",
+			"type": "String",
+			"description": "请求成功"
+		}
+	],
+	"name": "alibaba.databank.open.oneservice.getdata",
+	"apiChineseName": "瓴羊DaaS消费者运营CGP取数接口",
+	"description": "瓴羊DaaS消费者运营CGP取数接口",
+	"id": 66782
+}

@@ -1,0 +1,69 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "business_type",
+					"type": "Number",
+					"description": "业务域 1：新房 2：二手房 3：租房",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "类型1-公司  2-城市品牌店 3-品牌  4-标准门店  5-签约公司 6-经纪人/置业顾问 7-TP账号",
+					"required": true
+				},
+				{
+					"name": "scene_type",
+					"type": "Number",
+					"description": "查询的场景类型",
+					"required": true
+				},
+				{
+					"name": "outer_target_ids",
+					"type": "String[]",
+					"description": "外部查询ID",
+					"required": true
+				}
+			],
+			"name": "query_info",
+			"type": "ActivityQueryInfoDTO",
+			"description": "查询的参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "结果信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "处理完成后的消息"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误/成功码"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.activity.query",
+	"apiChineseName": "五福活动经纪人获取",
+	"description": "五福活动经纪人获取",
+	"id": 65513
+}

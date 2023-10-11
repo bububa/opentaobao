@@ -16,4 +16,6 @@ type EndCallIvr struct {
 	MaxLoop int64 `json:"max_loop,omitempty" xml:"max_loop,omitempty"`
 	// 挂机等待时长
 	WaitingEndCall int64 `json:"waiting_end_call,omitempty" xml:"waiting_end_call,omitempty"`
+	// 0:主叫,1:被叫
+	Direction int64 `json:"direction,omitempty" xml:"direction,omitempty"`
 }

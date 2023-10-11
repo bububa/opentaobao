@@ -1,0 +1,160 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "market",
+					"type": "String",
+					"description": "市场"
+				},
+				{
+					"name": "item_id",
+					"type": "String",
+					"description": "商品id"
+				},
+				{
+					"name": "group_name",
+					"type": "String",
+					"description": "分组名称"
+				},
+				{
+					"name": "sort",
+					"type": "Number",
+					"description": "排序"
+				},
+				{
+					"name": "series_id",
+					"type": "Number",
+					"description": "系列id"
+				},
+				{
+					"name": "custom_version",
+					"type": "String",
+					"description": "定制展示名称"
+				}
+			],
+			"name": "series_item_request",
+			"type": "SeriesItemRequest",
+			"description": "系列商品编辑入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误描述信息"
+						},
+						{
+							"name": "mes_code",
+							"type": "String",
+							"description": "错误代码"
+						}
+					],
+					"name": "error_codes",
+					"type": "ErrorCode[]",
+					"description": "错误码集合"
+				},
+				{
+					"subParams": [
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "更新时间"
+						},
+						{
+							"name": "sort",
+							"type": "Number",
+							"description": "排序值"
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间"
+						},
+						{
+							"name": "series_id",
+							"type": "Number",
+							"description": "系列id"
+						},
+						{
+							"name": "market",
+							"type": "String",
+							"description": "市场"
+						},
+						{
+							"name": "features",
+							"type": "Number",
+							"description": "特征"
+						},
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "用户id"
+						},
+						{
+							"name": "seg_id",
+							"type": "Number",
+							"description": "分组id"
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "商品id"
+						},
+						{
+							"subParams": [
+								{
+									"name": "text",
+									"type": "String",
+									"description": "文本"
+								},
+								{
+									"name": "value",
+									"type": "String",
+									"description": "值"
+								},
+								{
+									"name": "key",
+									"type": "String",
+									"description": "key"
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "type"
+								}
+							],
+							"name": "fields",
+							"type": "SeriesField[]",
+							"description": "分组信息"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态"
+						}
+					],
+					"name": "model",
+					"type": "ErrorCode",
+					"description": "实际返回对象"
+				}
+			],
+			"name": "result",
+			"type": "ResultDO",
+			"description": "返回值"
+		}
+	],
+	"name": "tmall.item.series.itemseries.insertseriesitem",
+	"apiChineseName": "向系列中添加系列商品",
+	"description": "向系列中添加系列商品",
+	"id": 66478
+}

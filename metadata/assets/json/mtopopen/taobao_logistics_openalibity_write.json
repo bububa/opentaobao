@@ -1,0 +1,101 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "cp_code",
+					"type": "String",
+					"description": "快递公司标准编码",
+					"required": true
+				},
+				{
+					"name": "mail_no",
+					"type": "String",
+					"description": "运单号",
+					"required": true
+				},
+				{
+					"name": "current_logistics_status",
+					"type": "String",
+					"description": "运单关联包裹的当前物流状态，需和平台侧定义的枚举名保持一致。",
+					"required": true
+				},
+				{
+					"name": "receiver_phone",
+					"type": "String",
+					"description": "运单关联包裹的收件人手机号。淘内包裹必须不填，淘外包裹必填，否则无法发送push消息"
+				},
+				{
+					"name": "extend_param",
+					"type": "String",
+					"description": "待写入的数据，key值需要按照平台侧定义的标准。isSupportDeliveryHome：是否支持送货上门。hasSignPic：是否有签收照片。value为String类型，TRUE代表真，FALSE代表假",
+					"required": true
+				},
+				{
+					"name": "openid",
+					"type": "String",
+					"description": "用户在手淘中登陆并授权小程序后的唯一标识。登陆过淘宝小程序的用户都会有一个openid，如果有尽量传过来，因为如果缺少openid，则无法判断用户是否为高活用户，也就无法决策是否推送push消息"
+				},
+				{
+					"name": "package_type",
+					"type": "String",
+					"description": "INTERNAL：淘内包裹，EXTERNAL：淘外包裹",
+					"required": true
+				},
+				{
+					"name": "scene",
+					"type": "String",
+					"description": "DELIVERY_HOME：送货上门。SIGN_PIC：签收照片",
+					"required": true
+				}
+			],
+			"name": "general_logistics_data_write_request",
+			"type": "GeneralLogisticsDataWriteRequest",
+			"description": "信息写入请求对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "接口调用失败信息"
+		},
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "信息写入是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "信息写入错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "信息写入错误信息"
+				}
+			],
+			"name": "write_response",
+			"type": "GeneralLogisticsDataWriteResponse",
+			"description": "信息写入返回结果对象"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "接口调用失败码"
+		},
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "接口调用是否成功"
+		}
+	],
+	"name": "taobao.logistics.openalibity.write",
+	"apiChineseName": "为快递公司提供的物流信息通用写入接口",
+	"description": "为快递公司提供的物流信息通用写入接口",
+	"id": 68032
+}

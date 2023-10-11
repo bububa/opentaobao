@@ -21,6 +21,16 @@
 			"name": "rate_infos",
 			"type": "PromoRateInfo",
 			"description": "外部价格信息"
+		},
+		{
+			"name": "check_in_from",
+			"type": "Date",
+			"description": "活动入住时间，民宿通用营销必填"
+		},
+		{
+			"name": "check_out_to",
+			"type": "Date",
+			"description": "活动离店时间，民宿通用营销必填"
 		}
 	],
 	"responseParams": [

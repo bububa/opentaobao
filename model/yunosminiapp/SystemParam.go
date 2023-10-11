@@ -10,6 +10,8 @@ type SystemParam struct {
 	AppId string `json:"app_id,omitempty" xml:"app_id,omitempty"`
 	// 授权token
 	AcToken string `json:"ac_token,omitempty" xml:"ac_token,omitempty"`
+	// 设备信息
+	DeviceInfo string `json:"device_info,omitempty" xml:"device_info,omitempty"`
 	// 更新access_token
 	ModifyToken bool `json:"modify_token,omitempty" xml:"modify_token,omitempty"`
 	// token过期

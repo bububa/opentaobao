@@ -182,6 +182,26 @@
 									"name": "merchant_voucher_subsidy_fee",
 									"type": "BigDecimal",
 									"description": "商家承担红包补贴费用"
+								},
+								{
+									"name": "merchant_send_subsidy_fee",
+									"type": "BigDecimal",
+									"description": "商家配送费补贴"
+								},
+								{
+									"name": "plat_send_subsidy_fee",
+									"type": "BigDecimal",
+									"description": "渠道配送费补贴"
+								},
+								{
+									"name": "src_settle_company_name",
+									"type": "String",
+									"description": "结算公司名称"
+								},
+								{
+									"name": "dispute_fee",
+									"type": "BigDecimal",
+									"description": "申诉赔付金"
 								}
 							],
 							"name": "txd_bill_detail_b_o_s",

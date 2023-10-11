@@ -1,0 +1,91 @@
+{
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "宝贝id"
+		},
+		{
+			"name": "item_title",
+			"type": "String",
+			"description": "宝贝名称"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页大小"
+		},
+		{
+			"name": "current_page_no",
+			"type": "Number",
+			"description": "当前页"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "itemid"
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间"
+						},
+						{
+							"name": "online_status",
+							"type": "Number",
+							"description": "审核状态"
+						},
+						{
+							"subParams": [
+								{
+									"name": "sku_id",
+									"type": "Number",
+									"description": "sku id"
+								},
+								{
+									"name": "sku_name",
+									"type": "String",
+									"description": "套餐名称"
+								},
+								{
+									"name": "price",
+									"type": "String",
+									"description": "价格"
+								},
+								{
+									"name": "nights",
+									"type": "Number",
+									"description": "间夜"
+								}
+							],
+							"name": "tuan_item_online_skus",
+							"type": "TuanItemOnlineSkuManagerVO[]",
+							"description": "sku"
+						},
+						{
+							"name": "online_status_desc",
+							"type": "String",
+							"description": "下线"
+						}
+					],
+					"name": "tuan_item_onlines",
+					"type": "TuanItemOnlineManagerVO[]",
+					"description": "宝贝信息"
+				}
+			],
+			"name": "data",
+			"type": "ItemInfoListResult",
+			"description": "返回值"
+		}
+	],
+	"name": "taobao.xhotel.combo.status.get",
+	"apiChineseName": "酒店宝贝状态查询",
+	"description": "酒店宝贝状态查询",
+	"id": 66636
+}

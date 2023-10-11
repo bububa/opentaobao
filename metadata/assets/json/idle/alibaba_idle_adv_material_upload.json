@@ -1,0 +1,112 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "url",
+							"type": "String",
+							"description": "素材地址，必传字段, 如果链接有有效期，尽量有效期放开到1个小时",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "素材类型，1 图片 2 视频",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "素材名称",
+							"required": true
+						},
+						{
+							"name": "cover_url",
+							"type": "String",
+							"description": "如果是视频素材，需要传当前视频的封面图地址,视频素材必填项"
+						},
+						{
+							"name": "width",
+							"type": "Number",
+							"description": "必填项,如果是视频素材，需要传当前视频的封面图的宽,如果是图片素材，需要传当前图片的宽",
+							"required": true
+						},
+						{
+							"name": "height",
+							"type": "Number",
+							"description": "必填项,如果是视频素材，需要传当前视频的封面图的宽,如果是图片素材，需要传当前图片的高",
+							"required": true
+						}
+					],
+					"name": "upload_details",
+					"type": "IdleAdvMaterialUploadDetailTopParam[]",
+					"description": "素材上传详细信息参数",
+					"required": true
+				}
+			],
+			"name": "upload_top_param",
+			"type": "IdleAdvMaterialUploadTopParam",
+			"description": "素材上传参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "title",
+							"type": "String",
+							"description": "失败的素材的名称，和参数传入的title对应"
+						},
+						{
+							"subParams": [
+								{
+									"name": "err_code",
+									"type": "String",
+									"description": "错误码"
+								},
+								{
+									"name": "err_msg",
+									"type": "String",
+									"description": "错误原因描述"
+								}
+							],
+							"name": "result",
+							"type": "IdleAdvBaseResult",
+							"description": "当前错误原因"
+						}
+					],
+					"name": "err_detail",
+					"type": "IdleAdvMaterialUploadTopResult[]",
+					"description": "部分失败的素材错误原因细节列表，如果素材上传成功，不会在该列表中"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口层面是否成功"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "接口层面错误的错误码"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "接口层面错误的错误原因描述"
+				}
+			],
+			"name": "result",
+			"type": "IdleAdvResult",
+			"description": "1"
+		}
+	],
+	"name": "alibaba.idle.adv.material.upload",
+	"apiChineseName": "闲鱼用户增长素材中心素材上传接口",
+	"description": "闲鱼用户增长素材中心素材上传接口",
+	"id": 67023
+}

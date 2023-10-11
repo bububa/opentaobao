@@ -1,0 +1,48 @@
+{
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业唯一标识",
+			"required": true
+		},
+		{
+			"name": "license_token",
+			"type": "String",
+			"description": "服务时间",
+			"required": true
+		},
+		{
+			"name": "codes",
+			"type": "String",
+			"description": "码列表【多个码时用逗号拼接的字符串。要求数量在4000个码以下，但一般不要传这么多，如果网络不好很容易传输一半报错】",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "models",
+			"type": "String []",
+			"description": "未激活或者不存在的码"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "消息码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "消息提示内容"
+		},
+		{
+			"name": "response_success",
+			"type": "Boolean",
+			"description": "是否成功(true 成功 ,false失败)"
+		}
+	],
+	"name": "alibaba.alihealth.drug.kyt.wes.querycodeactive",
+	"apiChineseName": "查询码是否激活",
+	"description": "查询码是否激活",
+	"id": 66495
+}

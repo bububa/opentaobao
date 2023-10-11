@@ -1,0 +1,58 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "经营店ID",
+					"required": true
+				},
+				{
+					"name": "channel_source_type",
+					"type": "Number",
+					"description": "渠道",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "营业状态(1:营业,-1:不营业)",
+					"required": true
+				}
+			],
+			"name": "shop_status_update_request",
+			"type": "ShopStatusUpdateRequest",
+			"description": "请求对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用结果"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "api调用结果"
+		}
+	],
+	"name": "alibaba.aelophy.shop.updatestatus",
+	"apiChineseName": "更新渠道店营业状态",
+	"description": "更新渠道店营业状态",
+	"id": 66727
+}

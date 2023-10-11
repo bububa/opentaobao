@@ -206,6 +206,41 @@
 					"name": "decoration_standard",
 					"type": "Number",
 					"description": "装修标准"
+				},
+				{
+					"name": "building_describe",
+					"type": "String",
+					"description": "1栋"
+				},
+				{
+					"name": "balcony",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "belong_buildings",
+					"type": "String",
+					"description": "1,2"
+				},
+				{
+					"name": "belong_units",
+					"type": "String",
+					"description": "1,2"
+				},
+				{
+					"name": "belong_rooms",
+					"type": "String",
+					"description": "1,2"
+				},
+				{
+					"name": "room_number",
+					"type": "String",
+					"description": "1,2"
+				},
+				{
+					"name": "outer_consultant_ids",
+					"type": "String[]",
+					"description": "1,2"
 				}
 			],
 			"name": "sync_project_layout_data",

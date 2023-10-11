@@ -18,7 +18,7 @@ type AlibabaAlihealthExaminationGoodsPublishAPIRequest struct {
 	_groupId string
 	// 商品名称
 	_groupName string
-	// 操作类型: publish=发布，update=更新
+	// 操作类型: publish=发布，update=更新, 更新时如果套餐列表内套餐有移除则视为删除套餐
 	_type string
 	// 最多200个字，界面对应商品详情页描述
 	_goodsDesc string
@@ -100,7 +100,7 @@ func (r AlibabaAlihealthExaminationGoodsPublishAPIRequest) GetGroupName() string
 }
 
 // SetType is Type Setter
-// 操作类型: publish=发布，update=更新
+// 操作类型: publish=发布，update=更新, 更新时如果套餐列表内套餐有移除则视为删除套餐
 func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetType(_type string) error {
 	r._type = _type
 	r.Set("type", _type)

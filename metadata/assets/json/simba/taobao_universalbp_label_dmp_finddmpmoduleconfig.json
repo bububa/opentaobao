@@ -1,0 +1,82 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码",
+					"required": true
+				}
+			],
+			"name": "top_service_context",
+			"type": "TopServiceContext",
+			"description": "topServiceContext",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "ok",
+							"type": "Boolean",
+							"description": "是否成功"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误编码"
+						}
+					],
+					"name": "info",
+					"type": "TopInfo",
+					"description": "请求系统信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "app_id_list",
+									"type": "Number[]",
+									"description": "数据来源app"
+								},
+								{
+									"name": "display_name",
+									"type": "String",
+									"description": "来源展示名称"
+								}
+							],
+							"name": "dmp_base_optional_select_app_list",
+							"type": "DmpBaseOptionalSelectVo[]",
+							"description": "dmp数据来源选项"
+						},
+						{
+							"name": "deliver_app_id",
+							"type": "Number",
+							"description": "投放渠道id，筛在达摩盘平台上创建且同步到业务线的人群"
+						}
+					],
+					"name": "dmp_module_config_v_o",
+					"type": "DmpModuleConfigVo",
+					"description": "结果集"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.universalbp.label.dmp.finddmpmoduleconfig",
+	"apiChineseName": "查询dmp浮层配置",
+	"description": "入参账号信息，出参达摩盘相关配置信息",
+	"id": 67268
+}

@@ -1,0 +1,99 @@
+{
+	"requestParams": [
+		{
+			"name": "form_code",
+			"type": "String",
+			"description": "探迹定义，formcode",
+			"required": true
+		},
+		{
+			"name": "operate_type",
+			"type": "String",
+			"description": "操作类型，create，update，delete",
+			"required": true
+		},
+		{
+			"name": "event_timestamp",
+			"type": "Number",
+			"description": "事件发生的时间戳",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "修改时间",
+					"required": true
+				},
+				{
+					"name": "creator",
+					"type": "String",
+					"description": "创建人名称",
+					"required": true
+				},
+				{
+					"name": "instance_id",
+					"type": "String",
+					"description": "实例id",
+					"required": true
+				},
+				{
+					"name": "creator_ding_user_id",
+					"type": "String",
+					"description": "创建人dingId",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "数据json,修改时包括before data",
+					"required": true
+				},
+				{
+					"name": "modifier_ding_user_id",
+					"type": "String",
+					"description": "修改人dingId",
+					"required": true
+				},
+				{
+					"name": "modifier",
+					"type": "String",
+					"description": "修改人名称",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建时间",
+					"required": true
+				}
+			],
+			"name": "crm_entity",
+			"type": "CrmEntity",
+			"description": "crm实体",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "返回码，200成功，500失败"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息，如果失败时，错误信息"
+		},
+		{
+			"name": "content",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	],
+	"name": "taobao.rhino.crm.gateway",
+	"apiChineseName": "crm实体变更回调接口",
+	"description": "crm实体变更回调接口",
+	"id": 65267
+}

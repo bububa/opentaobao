@@ -1,0 +1,218 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "货品id"
+						},
+						{
+							"name": "item_quantity",
+							"type": "Number",
+							"description": "货品数量"
+						}
+					],
+					"name": "waybill_gen_item_list",
+					"type": "WaybillGenItemList[]",
+					"description": "货品信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "delivery_type",
+							"type": "String",
+							"description": "服务类型：0为送装一体，1为只送到家不安装，2为只送不装到楼下，3为自提",
+							"required": true
+						}
+					],
+					"name": "waybill_gen_serv",
+					"type": "WaybillGenServ",
+					"description": "服务类型",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "detail_address",
+							"type": "String",
+							"description": "详细地址",
+							"required": true
+						},
+						{
+							"name": "sender_province",
+							"type": "String",
+							"description": "省",
+							"required": true
+						},
+						{
+							"name": "sender_city",
+							"type": "String",
+							"description": "市"
+						},
+						{
+							"name": "sender_area",
+							"type": "String",
+							"description": "区"
+						}
+					],
+					"name": "waybill_gen_sender",
+					"type": "WaybillGenSender",
+					"description": "发货人信息",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "contact_mobile",
+							"type": "String",
+							"description": "联系人电话",
+							"required": true
+						},
+						{
+							"name": "contact_name",
+							"type": "String",
+							"description": "联系人名称",
+							"required": true
+						},
+						{
+							"name": "detail_address",
+							"type": "String",
+							"description": "详细地址",
+							"required": true
+						},
+						{
+							"name": "receiver_province",
+							"type": "String",
+							"description": "省",
+							"required": true
+						},
+						{
+							"name": "receiver_city",
+							"type": "String",
+							"description": "市"
+						},
+						{
+							"name": "receiver_area",
+							"type": "String",
+							"description": "区"
+						}
+					],
+					"name": "waybill_gen_receiver",
+					"type": "WaybillGenReceiver",
+					"description": "收货人信息",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "total_volume",
+							"type": "String",
+							"description": "总体积",
+							"required": true
+						},
+						{
+							"name": "gather_num",
+							"type": "Number",
+							"description": "拼单数量"
+						},
+						{
+							"name": "related_order_code",
+							"type": "String",
+							"description": "外部单号",
+							"required": true
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						},
+						{
+							"name": "gather",
+							"type": "Number",
+							"description": "是否拼单：0为否，1为是"
+						},
+						{
+							"name": "main_trade_no",
+							"type": "String",
+							"description": "交易单号",
+							"required": true
+						},
+						{
+							"name": "seller_id",
+							"type": "String",
+							"description": "商家id",
+							"required": true
+						},
+						{
+							"name": "total_pack_num",
+							"type": "Number",
+							"description": "总包件数",
+							"required": true
+						},
+						{
+							"subParams": [
+								{
+									"name": "download_url",
+									"type": "String",
+									"description": "备注图片英文逗号分隔"
+								}
+							],
+							"name": "remark_picture",
+							"type": "RemarkPicture",
+							"description": "备注图片"
+						},
+						{
+							"name": "order_channel",
+							"type": "Number",
+							"description": "交易渠道：1为淘宝/天猫，2为其它，3为抖音，4为拼多多，5为京东，6为唯品会"
+						}
+					],
+					"name": "waybill_gen_info",
+					"type": "WaybillGenInfo",
+					"description": "开单信息",
+					"required": true
+				}
+			],
+			"name": "waybill_gen_request",
+			"type": "WaybillGenRequest",
+			"description": "开单信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功"
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "运单号"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "ResultWrapper",
+			"description": "返回对象"
+		}
+	],
+	"name": "alibaba.ascp.industry.waybill.accept",
+	"apiChineseName": "商家ERP预推单",
+	"description": "商家ERP预推单",
+	"id": 65650
+}

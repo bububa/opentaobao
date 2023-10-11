@@ -1,0 +1,102 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "source_id",
+					"type": "String",
+					"description": "下单时MOS传的唯一编码"
+				},
+				{
+					"name": "final_report_res_sel",
+					"type": "String",
+					"description": "报告结果(1:绿灯，2:红灯， 3:黄灯，10:蓝灯)"
+				},
+				{
+					"name": "order_no",
+					"type": "String",
+					"description": "外部订单号"
+				},
+				{
+					"name": "record_status",
+					"type": "String",
+					"description": "获取结果时背调状态(0:未背调，3:待授权，4:背调中，5:已完成，6:系统取消，7:银泰取消，8:授权超期取消，9:无需背调)"
+				},
+				{
+					"name": "report_data",
+					"type": "String",
+					"description": "报告格式化json数据"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "final_version",
+					"type": "String",
+					"description": "是否最终版本(1:最终版本 0:非终版)"
+				},
+				{
+					"name": "estimate_finish_time",
+					"type": "String",
+					"description": "预计报告时间"
+				},
+				{
+					"name": "background_company_name",
+					"type": "String",
+					"description": "背调公司"
+				}
+			],
+			"name": "hr_background_report_notify_dto",
+			"type": "HrBackgroundReportNotifyDTO",
+			"description": "背调结果通知对象"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "调用链id"
+		},
+		{
+			"name": "async_result",
+			"type": "String",
+			"description": "异步结果"
+		},
+		{
+			"name": "data",
+			"type": "String",
+			"description": "返回对象"
+		},
+		{
+			"name": "issuccess",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		},
+		{
+			"name": "errcode",
+			"type": "String",
+			"description": "错误code"
+		},
+		{
+			"name": "is_async",
+			"type": "Boolean",
+			"description": "是否同步"
+		},
+		{
+			"name": "attributes",
+			"type": "Json",
+			"description": "扩展字段"
+		},
+		{
+			"name": "err_message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.mos.hr.background.report.notify",
+	"apiChineseName": "背调公司背调结果通知",
+	"description": "背调公司背调结果通知",
+	"id": 67511
+}

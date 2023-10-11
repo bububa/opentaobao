@@ -46,6 +46,8 @@ type MultiCabinClassInfo struct {
 	BuildPrice int64 `json:"build_price,omitempty" xml:"build_price,omitempty"`
 	// 总价=销售价+基建+燃油费
 	TotalPrice int64 `json:"total_price,omitempty" xml:"total_price,omitempty"`
+	// 舱位基准价
+	BasicCabinPrice int64 `json:"basic_cabin_price,omitempty" xml:"basic_cabin_price,omitempty"`
 	// 是否协议价
 	IsProtocol bool `json:"is_protocol,omitempty" xml:"is_protocol,omitempty"`
 }

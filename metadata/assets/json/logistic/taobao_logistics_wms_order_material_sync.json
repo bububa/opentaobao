@@ -1,0 +1,164 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "order_type",
+					"type": "String",
+					"description": "订单类型",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "仓储系统出库单号"
+				},
+				{
+					"name": "owner_code",
+					"type": "String",
+					"description": "货主编码",
+					"required": true
+				},
+				{
+					"name": "material_type",
+					"type": "Number",
+					"description": "1=包材; 2=耗材",
+					"required": true
+				},
+				{
+					"name": "order_code",
+					"type": "String",
+					"description": "出库单号",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "material_name",
+									"type": "String",
+									"description": "包材名称"
+								},
+								{
+									"name": "material_num",
+									"type": "Number",
+									"description": "包材使用数量"
+								},
+								{
+									"name": "material_code",
+									"type": "String",
+									"description": "包材编码"
+								}
+							],
+							"name": "materials",
+							"type": "WmsMaterialDetailDTO[]",
+							"description": "包材信息"
+						},
+						{
+							"name": "package_code",
+							"type": "String",
+							"description": "包裹编码"
+						},
+						{
+							"name": "express_code",
+							"type": "String",
+							"description": "SF23434",
+							"required": true
+						},
+						{
+							"name": "logistics_code",
+							"type": "String",
+							"description": "SF",
+							"required": true
+						},
+						{
+							"subParams": [
+								{
+									"name": "item_id",
+									"type": "String",
+									"description": "商品仓储系统编码"
+								},
+								{
+									"name": "owner_code",
+									"type": "String",
+									"description": "货主编码"
+								},
+								{
+									"subParams": [
+										{
+											"name": "material_name",
+											"type": "String",
+											"description": "耗材名称"
+										},
+										{
+											"name": "material_num",
+											"type": "Number",
+											"description": "耗材使用数量"
+										},
+										{
+											"name": "material_code",
+											"type": "String",
+											"description": "耗材编码"
+										}
+									],
+									"name": "materials",
+									"type": "WmsMaterialDetailDTO[]",
+									"description": "耗材信息"
+								},
+								{
+									"name": "item_code",
+									"type": "String",
+									"description": "商品编码"
+								}
+							],
+							"name": "items",
+							"type": "WmsMaterialPackageItemDTO[]",
+							"description": "商品信息"
+						}
+					],
+					"name": "packages",
+					"type": "WmsMaterialPackageDTO[]",
+					"description": "包裹明细",
+					"required": true
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "仓库编码",
+					"required": true
+				}
+			],
+			"name": "wms_material_request",
+			"type": "WmsMaterialRequest",
+			"description": "包材耗材信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "suc",
+			"type": "Boolean",
+			"description": "校验成功或者异常"
+		},
+		{
+			"name": "biz_error_message",
+			"type": "String",
+			"description": "错误码描述"
+		},
+		{
+			"name": "biz_error_code",
+			"type": "String",
+			"description": "错误码标识"
+		},
+		{
+			"name": "retry",
+			"type": "Boolean",
+			"description": "是否可重试"
+		}
+	],
+	"name": "taobao.logistics.wms.order.material.sync",
+	"apiChineseName": "仓服务商订单包材耗材信息同步",
+	"description": "仓服务商订单包材耗材信息同步",
+	"id": 68020
+}

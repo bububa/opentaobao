@@ -1,0 +1,50 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部门店id",
+					"required": true
+				},
+				{
+					"name": "extends_info",
+					"type": "String",
+					"description": "扩展信息",
+					"required": true
+				}
+			],
+			"name": "store_extends_info_dto",
+			"type": "StoreExtendsInfoDTO",
+			"description": "dto",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "return_code",
+			"type": "String",
+			"description": "aaa"
+		},
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "aaa"
+		},
+		{
+			"name": "return_success",
+			"type": "Boolean",
+			"description": "aaa"
+		},
+		{
+			"name": "return_message",
+			"type": "String",
+			"description": "aaa"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.store.extends.sync",
+	"apiChineseName": "门店扩展信息变更",
+	"description": "门店扩展信息变更",
+	"id": 66634
+}

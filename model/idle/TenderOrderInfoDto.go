@@ -98,10 +98,28 @@ type TenderOrderInfoDto struct {
 	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 返现金额，单位：分
 	CashFee string `json:"cash_fee,omitempty" xml:"cash_fee,omitempty"`
+	// 估价版本，第几次估价
+	QuoteVersion string `json:"quote_version,omitempty" xml:"quote_version,omitempty"`
+	// 服务商预付款打款支付宝流水号
+	PrePayNo string `json:"pre_pay_no,omitempty" xml:"pre_pay_no,omitempty"`
+	// 门店信息
+	StationInfo string `json:"station_info,omitempty" xml:"station_info,omitempty"`
 	// 拍场订单Id
 	TenderOrderId int64 `json:"tender_order_id,omitempty" xml:"tender_order_id,omitempty"`
 	// 服务费(分)
 	ServiceFee int64 `json:"service_fee,omitempty" xml:"service_fee,omitempty"`
+	// 买家服务费，分
+	BuyerFee int64 `json:"buyer_fee,omitempty" xml:"buyer_fee,omitempty"`
+	// 一口价金额，分
+	BuyoutPrice int64 `json:"buyout_price,omitempty" xml:"buyout_price,omitempty"`
+	// 回收金额，分
+	RecyclePrice int64 `json:"recycle_price,omitempty" xml:"recycle_price,omitempty"`
+	// 应付预付款金额，分
+	PrePayAmount int64 `json:"pre_pay_amount,omitempty" xml:"pre_pay_amount,omitempty"`
+	// 预付款状态：1-未付款；2-已付款；
+	PrePayStatus int64 `json:"pre_pay_status,omitempty" xml:"pre_pay_status,omitempty"`
+	// 尾款，分
+	PreFinalAmount int64 `json:"pre_final_amount,omitempty" xml:"pre_final_amount,omitempty"`
 	// 是否为返现订单
 	CashOrder bool `json:"cash_order,omitempty" xml:"cash_order,omitempty"`
 }

@@ -1,0 +1,83 @@
+{
+	"requestParams": [
+		{
+			"name": "token",
+			"type": "String",
+			"description": "登录授权后返回的token信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "调用链id"
+		},
+		{
+			"name": "async_result",
+			"type": "String",
+			"description": "异步结果"
+		},
+		{
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "operator id"
+				},
+				{
+					"name": "ali_work_no",
+					"type": "String",
+					"description": "阿里工号"
+				},
+				{
+					"name": "comp_work_no",
+					"type": "String",
+					"description": "银泰工号"
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "淘宝id"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "姓名"
+				}
+			],
+			"name": "data",
+			"type": "OperatorUserInfo",
+			"description": "授权的人员信息"
+		},
+		{
+			"name": "issuccess",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		},
+		{
+			"name": "errcode",
+			"type": "String",
+			"description": "错误code"
+		},
+		{
+			"name": "is_async",
+			"type": "Boolean",
+			"description": "是否同步"
+		},
+		{
+			"name": "attributes",
+			"type": "Json",
+			"description": "扩展字段"
+		},
+		{
+			"name": "err_message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.mos.common.auth.operator.info",
+	"apiChineseName": "获取当前人员信息",
+	"description": "获取当前人员信息",
+	"id": 67785
+}

@@ -89,6 +89,11 @@
 					"name": "is_open_net_business",
 					"type": "Number",
 					"description": "是否开网商子户"
+				},
+				{
+					"name": "scene_type",
+					"type": "Number",
+					"description": "场景 5-融合店"
 				}
 			],
 			"name": "existing_home_bank_card_dto",

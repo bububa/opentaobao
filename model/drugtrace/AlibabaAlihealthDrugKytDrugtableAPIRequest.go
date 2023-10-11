@@ -28,7 +28,7 @@ type AlibabaAlihealthDrugKytDrugtableAPIRequest struct {
 	_packageSpec string
 	// 制剂规格
 	_prepnSpec string
-	// 页大小
+	// 页大小（最大每页查询条数100）
 	_pageSize int64
 	// 页码
 	_page int64
@@ -163,7 +163,7 @@ func (r AlibabaAlihealthDrugKytDrugtableAPIRequest) GetPrepnSpec() string {
 }
 
 // SetPageSize is PageSize Setter
-// 页大小
+// 页大小（最大每页查询条数100）
 func (r *AlibabaAlihealthDrugKytDrugtableAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
 	r.Set("page_size", _pageSize)

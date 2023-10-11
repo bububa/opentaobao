@@ -12,7 +12,7 @@ import (
 // 大包面单查询
 type CainiaoGlobalImPickupBigbagWaybillInfoAPIRequest struct {
 	model.Params
-	// 请求参数
+	// bigbagId和appointmentOrderId必填一个
 	_bigbagWaybillRequest *BigbagWaybillRequest
 }
 
@@ -41,7 +41,7 @@ func (r CainiaoGlobalImPickupBigbagWaybillInfoAPIRequest) GetRawParams() model.P
 }
 
 // SetBigbagWaybillRequest is BigbagWaybillRequest Setter
-// 请求参数
+// bigbagId和appointmentOrderId必填一个
 func (r *CainiaoGlobalImPickupBigbagWaybillInfoAPIRequest) SetBigbagWaybillRequest(_bigbagWaybillRequest *BigbagWaybillRequest) error {
 	r._bigbagWaybillRequest = _bigbagWaybillRequest
 	r.Set("bigbag_waybill_request", _bigbagWaybillRequest)

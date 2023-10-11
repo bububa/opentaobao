@@ -179,6 +179,47 @@
 							"name": "taobao_first_image",
 							"type": "GoodsPublishImageDTO",
 							"description": "入淘商品首图，可不传"
+						},
+						{
+							"subParams": [
+								{
+									"name": "property_name",
+									"type": "String",
+									"description": "父属性名"
+								},
+								{
+									"subParams": [
+										{
+											"name": "value",
+											"type": "String",
+											"description": "属性值"
+										},
+										{
+											"subParams": [
+												{
+													"name": "key",
+													"type": "String",
+													"description": "属性键"
+												},
+												{
+													"name": "value",
+													"type": "String",
+													"description": "属性值"
+												}
+											],
+											"name": "child_property_key_value_list",
+											"type": "ChildPropertyKeyValueDTO[]",
+											"description": "子属性列表"
+										}
+									],
+									"name": "property_value_list",
+									"type": "PropertyValueDTO[]",
+									"description": "属性值对象数组"
+								}
+							],
+							"name": "multi_property_value_list",
+							"type": "MultiPropertyValueDTO[]",
+							"description": "多子属性对象数组，仅在支持多子属性的类目使用"
 						}
 					],
 					"name": "goods_list",

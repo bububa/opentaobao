@@ -21,9 +21,9 @@ type TaobaoWlbOrderJzpartnerQueryAPIResponseModel struct {
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 安装服务商列表
-	InstallList []PartnerNew `json:"install_list,omitempty" xml:"install_list>partner_new,omitempty"`
+	InstallList []Partner `json:"install_list,omitempty" xml:"install_list>partner,omitempty"`
 	// 物流配送服务商对象列表
-	ServerList []PartnerNew `json:"server_list,omitempty" xml:"server_list>partner_new,omitempty"`
+	ServerList []Partner `json:"server_list,omitempty" xml:"server_list>partner,omitempty"`
 	// 查询返回信息，如果失败，存储错误信息
 	ResultInfo string `json:"result_info,omitempty" xml:"result_info,omitempty"`
 	// 接口查询成功或者失败

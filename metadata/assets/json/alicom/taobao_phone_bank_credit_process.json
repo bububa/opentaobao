@@ -1,0 +1,86 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "bank_code",
+					"type": "String",
+					"description": "银行编码",
+					"required": true
+				},
+				{
+					"name": "new_pay",
+					"type": "Boolean",
+					"description": "是否该自然人首刷",
+					"required": true
+				},
+				{
+					"name": "new_customer",
+					"type": "Boolean",
+					"description": "是否该自然人首卡",
+					"required": true
+				},
+				{
+					"name": "event_time",
+					"type": "Number",
+					"description": "事件时间时间戳",
+					"required": true
+				},
+				{
+					"name": "event_type",
+					"type": "String",
+					"description": "事件类型",
+					"required": true
+				},
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "用户的openId",
+					"required": true
+				}
+			],
+			"name": "bank_credit_request",
+			"type": "BankCreditProcessRequest",
+			"description": "办卡进度的回调",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "返回的结果码"
+		},
+		{
+			"subParams": [
+				{
+					"name": "bank_code",
+					"type": "String",
+					"description": "银行编码"
+				},
+				{
+					"name": "state",
+					"type": "String",
+					"description": "用户在该行的申请状态"
+				},
+				{
+					"name": "event_time",
+					"type": "Number",
+					"description": "事件发生的时间戳"
+				}
+			],
+			"name": "data",
+			"type": "BankCreditResponse",
+			"description": "响应结果"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "响应说明"
+		}
+	],
+	"name": "taobao.phone.bank.credit.process",
+	"apiChineseName": "虚拟话费任务银行信用卡办理进度回传",
+	"description": "虚拟话费任务银行信用卡办理进度回传",
+	"id": 66591
+}

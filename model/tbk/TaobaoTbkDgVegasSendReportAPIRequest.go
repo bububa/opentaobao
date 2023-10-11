@@ -14,6 +14,10 @@ type TaobaoTbkDgVegasSendReportAPIRequest struct {
 	model.Params
 	// 统计日期
 	_bizDate string
+	// 媒体推广pid
+	_pid string
+	// 查询维度，不填写默认是pid维度
+	_rptDim string
 	// 渠道关系id
 	_relationId int64
 	// 已下线，后续不需要填写
@@ -22,6 +26,8 @@ type TaobaoTbkDgVegasSendReportAPIRequest struct {
 	_pageNo int64
 	// 每页大小
 	_pageSize int64
+	// 查询红包类型，1-超级红包，2-福利购，3-签到红包，4-福利直降，不传时默认查询超级红包数据
+	_activityCategory int64
 }
 
 // NewTaobaoTbkDgVegasSendReportRequest 初始化TaobaoTbkDgVegasSendReportAPIRequest对象
@@ -59,6 +65,32 @@ func (r *TaobaoTbkDgVegasSendReportAPIRequest) SetBizDate(_bizDate string) error
 // GetBizDate BizDate Getter
 func (r TaobaoTbkDgVegasSendReportAPIRequest) GetBizDate() string {
 	return r._bizDate
+}
+
+// SetPid is Pid Setter
+// 媒体推广pid
+func (r *TaobaoTbkDgVegasSendReportAPIRequest) SetPid(_pid string) error {
+	r._pid = _pid
+	r.Set("pid", _pid)
+	return nil
+}
+
+// GetPid Pid Getter
+func (r TaobaoTbkDgVegasSendReportAPIRequest) GetPid() string {
+	return r._pid
+}
+
+// SetRptDim is RptDim Setter
+// 查询维度，不填写默认是pid维度
+func (r *TaobaoTbkDgVegasSendReportAPIRequest) SetRptDim(_rptDim string) error {
+	r._rptDim = _rptDim
+	r.Set("rpt_dim", _rptDim)
+	return nil
+}
+
+// GetRptDim RptDim Getter
+func (r TaobaoTbkDgVegasSendReportAPIRequest) GetRptDim() string {
+	return r._rptDim
 }
 
 // SetRelationId is RelationId Setter
@@ -111,4 +143,17 @@ func (r *TaobaoTbkDgVegasSendReportAPIRequest) SetPageSize(_pageSize int64) erro
 // GetPageSize PageSize Getter
 func (r TaobaoTbkDgVegasSendReportAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+// SetActivityCategory is ActivityCategory Setter
+// 查询红包类型，1-超级红包，2-福利购，3-签到红包，4-福利直降，不传时默认查询超级红包数据
+func (r *TaobaoTbkDgVegasSendReportAPIRequest) SetActivityCategory(_activityCategory int64) error {
+	r._activityCategory = _activityCategory
+	r.Set("activity_category", _activityCategory)
+	return nil
+}
+
+// GetActivityCategory ActivityCategory Getter
+func (r TaobaoTbkDgVegasSendReportAPIRequest) GetActivityCategory() int64 {
+	return r._activityCategory
 }

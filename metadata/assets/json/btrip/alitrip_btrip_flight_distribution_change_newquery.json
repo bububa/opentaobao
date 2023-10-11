@@ -255,6 +255,124 @@
 											"name": "ota_itemid",
 											"type": "String",
 											"description": "商品Id"
+										},
+										{
+											"subParams": [
+												{
+													"subParams": [
+														{
+															"name": "title",
+															"type": "String",
+															"description": "表格标题"
+														},
+														{
+															"name": "table_head",
+															"type": "String",
+															"description": "表格首行内容"
+														},
+														{
+															"name": "type",
+															"type": "Number",
+															"description": "内容类型"
+														},
+														{
+															"name": "index",
+															"type": "Number",
+															"description": "排序使用"
+														},
+														{
+															"name": "refund_sub_items",
+															"type": "RefundSubItem[]",
+															"description": "退改表达内容"
+														},
+														{
+															"name": "extra_contents",
+															"type": "RefundSubItem[]",
+															"description": "纯文字段落"
+														}
+													],
+													"name": "refund_details",
+													"type": "ChangeOtaItemRuleRQ[]",
+													"description": "退票规则"
+												},
+												{
+													"subParams": [
+														{
+															"name": "title",
+															"type": "String",
+															"description": "表格标题"
+														},
+														{
+															"name": "table_head",
+															"type": "String",
+															"description": "表格首行内容"
+														},
+														{
+															"name": "type",
+															"type": "Number",
+															"description": "内容类型"
+														},
+														{
+															"name": "index",
+															"type": "Number",
+															"description": "排序使用"
+														},
+														{
+															"name": "refund_sub_items",
+															"type": "RefundSubItem[]",
+															"description": "退改表达内容"
+														},
+														{
+															"name": "extra_contents",
+															"type": "RefundSubItem[]",
+															"description": "纯文字段落"
+														}
+													],
+													"name": "change_details",
+													"type": "RefundDetailShowVO[]",
+													"description": "改签规则"
+												},
+												{
+													"subParams": [
+														{
+															"name": "title",
+															"type": "String",
+															"description": "表格标题"
+														},
+														{
+															"name": "table_head",
+															"type": "String",
+															"description": "表格首行内容"
+														},
+														{
+															"name": "type",
+															"type": "Number",
+															"description": "内容类型"
+														},
+														{
+															"name": "index",
+															"type": "Number",
+															"description": "排序使用"
+														},
+														{
+															"name": "baggage_sub_items",
+															"type": "BaggageSubItem[]",
+															"description": "行李表达内容"
+														},
+														{
+															"name": "tips",
+															"type": "Tips",
+															"description": "提示"
+														}
+													],
+													"name": "baggage_details",
+													"type": "RefundDetailShowVO[]",
+													"description": "行李额"
+												}
+											],
+											"name": "change_ota_item_rule_rq",
+											"type": "ChangeOtaItemRuleRQ",
+											"description": "改签航班的退改签规则"
 										}
 									],
 									"name": "cabin_list",

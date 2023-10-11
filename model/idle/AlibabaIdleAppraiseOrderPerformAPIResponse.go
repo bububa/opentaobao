@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIdleAppraiseOrderPerformAPIResponse 闲鱼验货担保服务商订单履约V1 API返回值
+// AlibabaIdleAppraiseOrderPerformAPIResponse 闲鱼验货宝服务商订单履约 API返回值
 // alibaba.idle.appraise.order.perform
 //
 // 闲鱼验货担保业务中,外部服务商作为鉴定方 需要驱动交易节点变化
@@ -15,7 +15,7 @@ type AlibabaIdleAppraiseOrderPerformAPIResponse struct {
 	AlibabaIdleAppraiseOrderPerformAPIResponseModel
 }
 
-// AlibabaIdleAppraiseOrderPerformAPIResponseModel is 闲鱼验货担保服务商订单履约V1 成功返回结果
+// AlibabaIdleAppraiseOrderPerformAPIResponseModel is 闲鱼验货宝服务商订单履约 成功返回结果
 type AlibabaIdleAppraiseOrderPerformAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_idle_appraise_order_perform_response"`
 	// 平台颁发的每次请求访问的唯一标识

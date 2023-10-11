@@ -1,0 +1,79 @@
+{
+	"requestParams": [
+		{
+			"name": "code",
+			"type": "String",
+			"description": "追溯码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "produce_date",
+									"type": "String",
+									"description": "生产日期"
+								},
+								{
+									"name": "exprie_date",
+									"type": "String",
+									"description": "有效期至"
+								},
+								{
+									"name": "produce_batch_no",
+									"type": "String",
+									"description": "产品批号"
+								}
+							],
+							"name": "code_produce_info_d_t_o",
+							"type": "CodeProduceInfoDTO",
+							"description": "码生产信息集合"
+						},
+						{
+							"subParams": [
+								{
+									"name": "md_storage_con",
+									"type": "String",
+									"description": "产品有效期"
+								}
+							],
+							"name": "drug_ent_base_d_t_o",
+							"type": "DrugEntBaseDTO",
+							"description": "药品基本信息对象"
+						}
+					],
+					"name": "model",
+					"type": "CodeFullInfoDto",
+					"description": "内层大对象"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "消息码"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "消息提示内容"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "查询成功失败标记"
+				}
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "最外层结果"
+		}
+	],
+	"name": "alibaba.alihealth.drug.kyt.scqy.listcodefullinfodtomedicaldevice",
+	"apiChineseName": "医疗器械的码查询信息接口",
+	"description": "医疗器械的码查询信息接口",
+	"id": 67301
+}

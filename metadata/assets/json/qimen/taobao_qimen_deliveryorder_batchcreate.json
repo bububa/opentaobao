@@ -643,6 +643,6 @@
 	],
 	"name": "taobao.qimen.deliveryorder.batchcreate",
 	"apiChineseName": "发货单创建批量接口",
-	"description": "ERP调用接口，将发货信息批量推送给WMS",
+	"description": "taobao.qimen.deliveryorder.batchcreate",
 	"id": 25994
 }

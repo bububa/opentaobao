@@ -1,0 +1,34 @@
+{
+	"requestParams": [
+		{
+			"name": "recycle_order_id",
+			"type": "String",
+			"description": "回收单ID",
+			"required": true
+		},
+		{
+			"name": "open_uid",
+			"type": "String",
+			"description": "开放小程序ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "auth_pass",
+					"type": "Boolean",
+					"description": "是否鉴权通过"
+				}
+			],
+			"name": "data",
+			"type": "OfnSelfRecycleAuthDTO",
+			"description": "鉴权结果"
+		}
+	],
+	"name": "taobao.ofn.self.recycle.auth",
+	"apiChineseName": "自助回收鉴权",
+	"description": "自助回收鉴权",
+	"id": 68014
+}

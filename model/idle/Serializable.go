@@ -94,12 +94,16 @@ type Serializable struct {
 	SpuIdList string `json:"spu_id_list,omitempty" xml:"spu_id_list,omitempty"`
 	// 返现金额，单位分
 	CashFee string `json:"cash_fee,omitempty" xml:"cash_fee,omitempty"`
+	// 估计版本，第几次估价
+	QuoteVersion string `json:"quote_version,omitempty" xml:"quote_version,omitempty"`
 	// 回收场景
 	SceneType string `json:"scene_type,omitempty" xml:"scene_type,omitempty"`
 	// 取件截止时间
 	ShipTimeEnd string `json:"ship_time_end,omitempty" xml:"ship_time_end,omitempty"`
 	// 当前代扣状态：104代扣失败、105代扣成功、106代扣逾期
 	DkStatus string `json:"dk_status,omitempty" xml:"dk_status,omitempty"`
+	// 卖家地址-乡镇/街道
+	Town string `json:"town,omitempty" xml:"town,omitempty"`
 	// 支付宝交易号
 	AlipayOrderId string `json:"alipay_order_id,omitempty" xml:"alipay_order_id,omitempty"`
 	// 金额

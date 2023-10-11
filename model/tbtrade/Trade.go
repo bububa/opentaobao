@@ -20,6 +20,14 @@ type Trade struct {
 	AddressDetails []AddressDetail `json:"address_details,omitempty" xml:"address_details>address_detail,omitempty"`
 	// 交付计划
 	DeliveryPlan []DeliveryPlan `json:"delivery_plan,omitempty" xml:"delivery_plan>delivery_plan,omitempty"`
+	// 子订单组合品物流详情（仅支持拆单发货）
+	CombineLogisticsDetails []CombineLogisticsDetail `json:"combine_logistics_details,omitempty" xml:"combine_logistics_details>combine_logistics_detail,omitempty"`
+	// 物流时效信息
+	LogisticsConsignInfo []LogisticsConsignInfo `json:"logistics_consign_info,omitempty" xml:"logistics_consign_info>logistics_consign_info,omitempty"`
+	// 发货时效修改记录
+	LogisticsModifyInfo []LogisticsModifyInfo `json:"logistics_modify_info,omitempty" xml:"logistics_modify_info>logistics_modify_info,omitempty"`
+	// 补差关联订单号列表
+	ReceiptRelIds []string `json:"receipt_rel_ids,omitempty" xml:"receipt_rel_ids>string,omitempty"`
 	// 交易修改时间(用户对订单的任何修改都会更新此字段)。格式:yyyy-MM-dd HH:mm:ss
 	Modified string `json:"modified,omitempty" xml:"modified,omitempty"`
 	// 买家OpenUid
@@ -30,7 +38,7 @@ type Trade struct {
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
 	// 交易创建时间。格式:yyyy-MM-dd HH:mm:ss
 	Created string `json:"created,omitempty" xml:"created,omitempty"`
-	// 物流运单号
+	// 交易编号 (父订单的交易编号)
 	Sid string `json:"sid,omitempty" xml:"sid,omitempty"`
 	// Acookie订单唯一ID。
 	AcookieId string `json:"acookie_id,omitempty" xml:"acookie_id,omitempty"`
@@ -84,7 +92,7 @@ type Trade struct {
 	ShippingType string `json:"shipping_type,omitempty" xml:"shipping_type,omitempty"`
 	// 买家支付宝账号
 	BuyerAlipayNo string `json:"buyer_alipay_no,omitempty" xml:"buyer_alipay_no,omitempty"`
-	// 收货人的姓名
+	// 收货人的姓名（加密）
 	ReceiverName string `json:"receiver_name,omitempty" xml:"receiver_name,omitempty"`
 	// 收货人国籍
 	ReceiverCountry string `json:"receiver_country,omitempty" xml:"receiver_country,omitempty"`
@@ -96,13 +104,13 @@ type Trade struct {
 	ReceiverDistrict string `json:"receiver_district,omitempty" xml:"receiver_district,omitempty"`
 	// 收货人街道地址
 	ReceiverTown string `json:"receiver_town,omitempty" xml:"receiver_town,omitempty"`
-	// 收货人的详细地址
+	// 收货人的详细地址（加密）
 	ReceiverAddress string `json:"receiver_address,omitempty" xml:"receiver_address,omitempty"`
 	// 收货人的邮编
 	ReceiverZip string `json:"receiver_zip,omitempty" xml:"receiver_zip,omitempty"`
-	// 收货人的手机号码
+	// 收货人的手机号码（加密）
 	ReceiverMobile string `json:"receiver_mobile,omitempty" xml:"receiver_mobile,omitempty"`
-	// 收货人的电话号码
+	// 收货人的电话号码（加密）
 	ReceiverPhone string `json:"receiver_phone,omitempty" xml:"receiver_phone,omitempty"`
 	// 买家邮件地址
 	BuyerEmail string `json:"buyer_email,omitempty" xml:"buyer_email,omitempty"`
@@ -428,6 +436,14 @@ type Trade struct {
 	ScenarioGroup string `json:"scenario_group,omitempty" xml:"scenario_group,omitempty"`
 	// 拼团玩法垂直标
 	PlayType string `json:"play_type,omitempty" xml:"play_type,omitempty"`
+	// 优先发货时间
+	PriorityConsignTime string `json:"priority_consign_time,omitempty" xml:"priority_consign_time,omitempty"`
+	// 天猫国际实名认证状态，1：实名完成 0：实名未完成
+	RealNameAuthStatus string `json:"real_name_auth_status,omitempty" xml:"real_name_auth_status,omitempty"`
+	// 天猫国际第三方报关标识，1：第三方报关 0：非第三方报关
+	ThirdPartyCustomsDeclaration string `json:"third_party_customs_declaration,omitempty" xml:"third_party_customs_declaration,omitempty"`
+	// 补差类型，ITEM:商品补差 POSTAGE:邮费补差 OTHER：其他补差
+	ReceiptType string `json:"receipt_type,omitempty" xml:"receipt_type,omitempty"`
 	// 同步到卖家库的时间，taobao.trades.sold.incrementv.get接口返回此字段
 	AsyncModified string `json:"async_modified,omitempty" xml:"async_modified,omitempty"`
 	// 卡易售垂直表信息，去除下单ip之后的结果
@@ -494,6 +510,10 @@ type Trade struct {
 	ExpandcardInfo *ExpandCardInfo `json:"expandcard_info,omitempty" xml:"expandcard_info,omitempty"`
 	// 天猫商家使用，订单使用的红包信息
 	TmallCouponFee int64 `json:"tmall_coupon_fee,omitempty" xml:"tmall_coupon_fee,omitempty"`
+	// 三方鉴定信息
+	IdentifyInfo *IdentifyInfo `json:"identify_info,omitempty" xml:"identify_info,omitempty"`
+	// 物流服务
+	LogisticsAgreement *LogisticsAgreement `json:"logistics_agreement,omitempty" xml:"logistics_agreement,omitempty"`
 	// 买家的支付宝id号，在UIC中有记录，买家支付宝的唯一标示，不因为买家更换Email账号而改变。
 	AlipayId int64 `json:"alipay_id,omitempty" xml:"alipay_id,omitempty"`
 	// 卖家是否已评价。可选值:true(已评价),false(未评价)

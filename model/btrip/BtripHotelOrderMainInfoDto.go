@@ -16,6 +16,10 @@ type BtripHotelOrderMainInfoDto struct {
 	OrderStatusDesc string `json:"order_status_desc,omitempty" xml:"order_status_desc,omitempty"`
 	// 供应商订单id
 	SupplierOrderId string `json:"supplier_order_id,omitempty" xml:"supplier_order_id,omitempty"`
+	// 实际入住时间
+	RealCheckinTime string `json:"real_checkin_time,omitempty" xml:"real_checkin_time,omitempty"`
+	// 实际离店时间
+	RealCheckoutTime string `json:"real_checkout_time,omitempty" xml:"real_checkout_time,omitempty"`
 	// 商旅订单id
 	BtripOrderId int64 `json:"btrip_order_id,omitempty" xml:"btrip_order_id,omitempty"`
 	// 买家实退金额

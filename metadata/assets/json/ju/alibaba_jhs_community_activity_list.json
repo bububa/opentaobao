@@ -1,0 +1,60 @@
+{
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "activity_title",
+					"type": "String",
+					"description": "活动标题"
+				},
+				{
+					"name": "activity_content",
+					"type": "String",
+					"description": "活动内容"
+				},
+				{
+					"name": "opening_time",
+					"type": "Number",
+					"description": "操作时间"
+				},
+				{
+					"name": "reservation_time",
+					"type": "Number",
+					"description": "预约时间"
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "活动id"
+				},
+				{
+					"name": "activity_back_url",
+					"type": "String",
+					"description": "回流地址"
+				},
+				{
+					"name": "spread_title",
+					"type": "String",
+					"description": "标题"
+				},
+				{
+					"name": "spread_pic_url",
+					"type": "String",
+					"description": "传播图片信息"
+				}
+			],
+			"name": "data",
+			"type": "CommunityActivityDTO []",
+			"description": "返回对象"
+		},
+		{
+			"name": "error",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.jhs.community.activity.list",
+	"apiChineseName": "聚划算用增淘外社群服务活动列表",
+	"description": "聚划算用增淘外社群服务活动列表",
+	"id": 65705
+}

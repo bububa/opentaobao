@@ -40,7 +40,7 @@ type AlibabaAlihealthExaminationHospitalPublishAPIRequest struct {
 	_hospitalCode string
 	// 交通线路，通过\r\n 进行换行
 	_routes string
-	// http://images.aliyun.com/image?id=123
+	// 门店logo的url地址 500xp*500xp,不超过200kb
 	_logo string
 	// 社会统一信用代码
 	_socialCreditCode string
@@ -48,9 +48,9 @@ type AlibabaAlihealthExaminationHospitalPublishAPIRequest struct {
 	_reportWay string
 	// 线上体检报告几天出具（如果有电子报告必填）
 	_reportWayOnline string
-	// 环境图片(json字符串数组)，第一张是头图；（传图前先找运营同学要图片规范，别瞎传）
+	// 环境图片(json字符串数组)，第一张是头图；（传图前先找运营同学要图片规范，2000*1500px,比例4:3，不超过200kb）
 	_envImgsUrl string
-	// T10001:免费停车,T10002:电子报告立即出,T10003:24小时前台,T10006:24小时热水,T10007:专家咨询,T10008:支持医保,T10009:免费停车场,T10011:绿色VIP通道,T10012:1V1导检,T10014:免费早餐,T10017:3天出报告,T10018:专家会诊,T10019:独家签约,T10020:接待引导,T10022:当天出报告,T10023:周末可约
+	// 参数传编码，各编码含义：T10009:地铁直达;T10023:周末可约;T10027:周六可约;T10028:免费停车;T10029:地铁周边;T10032:VIP区;T10033:停车便捷;T10034:周日可约;T10035:报告邮寄;T10037:就诊绿通;T10038:支持退改;T10039:营养早餐;T10040:绿色通道。如果有新的其它标签，可联系运营添加定义
 	_specialTagsCode string
 	// 通知信息
 	_notify string
@@ -277,7 +277,7 @@ func (r AlibabaAlihealthExaminationHospitalPublishAPIRequest) GetRoutes() string
 }
 
 // SetLogo is Logo Setter
-// http://images.aliyun.com/image?id=123
+// 门店logo的url地址 500xp*500xp,不超过200kb
 func (r *AlibabaAlihealthExaminationHospitalPublishAPIRequest) SetLogo(_logo string) error {
 	r._logo = _logo
 	r.Set("logo", _logo)
@@ -329,7 +329,7 @@ func (r AlibabaAlihealthExaminationHospitalPublishAPIRequest) GetReportWayOnline
 }
 
 // SetEnvImgsUrl is EnvImgsUrl Setter
-// 环境图片(json字符串数组)，第一张是头图；（传图前先找运营同学要图片规范，别瞎传）
+// 环境图片(json字符串数组)，第一张是头图；（传图前先找运营同学要图片规范，2000*1500px,比例4:3，不超过200kb）
 func (r *AlibabaAlihealthExaminationHospitalPublishAPIRequest) SetEnvImgsUrl(_envImgsUrl string) error {
 	r._envImgsUrl = _envImgsUrl
 	r.Set("env_imgs_url", _envImgsUrl)
@@ -342,7 +342,7 @@ func (r AlibabaAlihealthExaminationHospitalPublishAPIRequest) GetEnvImgsUrl() st
 }
 
 // SetSpecialTagsCode is SpecialTagsCode Setter
-// T10001:免费停车,T10002:电子报告立即出,T10003:24小时前台,T10006:24小时热水,T10007:专家咨询,T10008:支持医保,T10009:免费停车场,T10011:绿色VIP通道,T10012:1V1导检,T10014:免费早餐,T10017:3天出报告,T10018:专家会诊,T10019:独家签约,T10020:接待引导,T10022:当天出报告,T10023:周末可约
+// 参数传编码，各编码含义：T10009:地铁直达;T10023:周末可约;T10027:周六可约;T10028:免费停车;T10029:地铁周边;T10032:VIP区;T10033:停车便捷;T10034:周日可约;T10035:报告邮寄;T10037:就诊绿通;T10038:支持退改;T10039:营养早餐;T10040:绿色通道。如果有新的其它标签，可联系运营添加定义
 func (r *AlibabaAlihealthExaminationHospitalPublishAPIRequest) SetSpecialTagsCode(_specialTagsCode string) error {
 	r._specialTagsCode = _specialTagsCode
 	r.Set("special_tags_code", _specialTagsCode)

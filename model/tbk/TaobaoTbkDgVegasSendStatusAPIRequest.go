@@ -16,14 +16,16 @@ type TaobaoTbkDgVegasSendStatusAPIRequest struct {
 	_relationId string
 	// 会员运营id
 	_specialId string
-	// 加密后的值(ALIPAY_ID除外)，需用MD5加密，32位小写
+	// 加密后的值，需用MD5加密，32位小写
 	_deviceValue string
-	// 入参类型(该模式下返回的结果为模糊匹配结果，和实际情况可能存在误差)： 1. IMEI 2. IDFA 3. OAID 4. MOBILE 5. ALIPAY_ID
+	// 入参类型(该模式下返回的结果为模糊匹配结果，和实际情况可能存在误差)： 1. IMEI 2. IDFA 3. OAID 4. MOBILE
 	_deviceType string
-	// thor平台业务码， 1：coupon 超红
+	// 已废弃，请勿传入
 	_thorBizCode string
 	// 媒体pid
 	_pid string
+	// 查询红包类型，1-超级红包，2-福利购，3-签到红包，4-福利直降，不传时默认查询超级红包数据
+	_activityCategory int64
 }
 
 // NewTaobaoTbkDgVegasSendStatusRequest 初始化TaobaoTbkDgVegasSendStatusAPIRequest对象
@@ -77,7 +79,7 @@ func (r TaobaoTbkDgVegasSendStatusAPIRequest) GetSpecialId() string {
 }
 
 // SetDeviceValue is DeviceValue Setter
-// 加密后的值(ALIPAY_ID除外)，需用MD5加密，32位小写
+// 加密后的值，需用MD5加密，32位小写
 func (r *TaobaoTbkDgVegasSendStatusAPIRequest) SetDeviceValue(_deviceValue string) error {
 	r._deviceValue = _deviceValue
 	r.Set("device_value", _deviceValue)
@@ -90,7 +92,7 @@ func (r TaobaoTbkDgVegasSendStatusAPIRequest) GetDeviceValue() string {
 }
 
 // SetDeviceType is DeviceType Setter
-// 入参类型(该模式下返回的结果为模糊匹配结果，和实际情况可能存在误差)： 1. IMEI 2. IDFA 3. OAID 4. MOBILE 5. ALIPAY_ID
+// 入参类型(该模式下返回的结果为模糊匹配结果，和实际情况可能存在误差)： 1. IMEI 2. IDFA 3. OAID 4. MOBILE
 func (r *TaobaoTbkDgVegasSendStatusAPIRequest) SetDeviceType(_deviceType string) error {
 	r._deviceType = _deviceType
 	r.Set("device_type", _deviceType)
@@ -103,7 +105,7 @@ func (r TaobaoTbkDgVegasSendStatusAPIRequest) GetDeviceType() string {
 }
 
 // SetThorBizCode is ThorBizCode Setter
-// thor平台业务码， 1：coupon 超红
+// 已废弃，请勿传入
 func (r *TaobaoTbkDgVegasSendStatusAPIRequest) SetThorBizCode(_thorBizCode string) error {
 	r._thorBizCode = _thorBizCode
 	r.Set("thor_biz_code", _thorBizCode)
@@ -126,4 +128,17 @@ func (r *TaobaoTbkDgVegasSendStatusAPIRequest) SetPid(_pid string) error {
 // GetPid Pid Getter
 func (r TaobaoTbkDgVegasSendStatusAPIRequest) GetPid() string {
 	return r._pid
+}
+
+// SetActivityCategory is ActivityCategory Setter
+// 查询红包类型，1-超级红包，2-福利购，3-签到红包，4-福利直降，不传时默认查询超级红包数据
+func (r *TaobaoTbkDgVegasSendStatusAPIRequest) SetActivityCategory(_activityCategory int64) error {
+	r._activityCategory = _activityCategory
+	r.Set("activity_category", _activityCategory)
+	return nil
+}
+
+// GetActivityCategory ActivityCategory Getter
+func (r TaobaoTbkDgVegasSendStatusAPIRequest) GetActivityCategory() int64 {
+	return r._activityCategory
 }

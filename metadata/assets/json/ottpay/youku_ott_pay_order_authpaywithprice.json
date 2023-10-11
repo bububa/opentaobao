@@ -1,0 +1,76 @@
+{
+	"requestParams": [
+		{
+			"name": "buyer",
+			"type": "String",
+			"description": "cp用户名",
+			"required": true
+		},
+		{
+			"name": "original_order_no",
+			"type": "String",
+			"description": "连续包月原始cp订单号",
+			"required": true
+		},
+		{
+			"name": "order_no",
+			"type": "String",
+			"description": "委托扣款cp订单号",
+			"required": true
+		},
+		{
+			"name": "product_id",
+			"type": "String",
+			"description": "已配置开通连续包月的产品id",
+			"required": true
+		},
+		{
+			"name": "callback_url",
+			"type": "String",
+			"description": "回调"
+		},
+		{
+			"name": "pay_price",
+			"type": "String",
+			"description": "用于次月扣款营销价，需小于签约时设定续费价"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "qcode_url",
+					"type": "String",
+					"description": "qcodeUrl"
+				},
+				{
+					"name": "version_code",
+					"type": "String",
+					"description": "版本号"
+				},
+				{
+					"name": "order_no",
+					"type": "String",
+					"description": "cp本次订单号"
+				},
+				{
+					"name": "cp_order_no",
+					"type": "String",
+					"description": "cp原始订单号"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "data",
+			"type": "TvOrderResultDTO",
+			"description": "返回结果"
+		}
+	],
+	"name": "youku.ott.pay.order.authpaywithprice",
+	"apiChineseName": "委托代扣可配定价服务",
+	"description": "应用中心sdk连续包月委托代扣服务，次月可配置营销价",
+	"id": 66587
+}

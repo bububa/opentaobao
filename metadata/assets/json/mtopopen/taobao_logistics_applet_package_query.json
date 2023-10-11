@@ -1,0 +1,106 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "cp_code",
+					"type": "String",
+					"description": "快递公司编码",
+					"required": true
+				},
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "用户的唯一标识",
+					"required": true
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页数，从1开始",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页大小",
+					"required": true
+				}
+			],
+			"name": "query_package_list_request",
+			"type": "QueryPackageListRequest",
+			"description": "查询用户的包裹列表",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "total_num",
+					"type": "Number",
+					"description": "包裹总数量"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "查询是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "查询错误码(成功情况无需关注)"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "查询错误原因(成功情况无需关注)"
+				},
+				{
+					"subParams": [
+						{
+							"name": "package_id",
+							"type": "Number",
+							"description": "包裹id"
+						},
+						{
+							"name": "cp_code",
+							"type": "String",
+							"description": "快递公司编码"
+						},
+						{
+							"name": "mail_no",
+							"type": "String",
+							"description": "快递面单编码"
+						}
+					],
+					"name": "package_infos",
+					"type": "PackageInfoVO[]",
+					"description": "包裹信息"
+				}
+			],
+			"name": "query_response",
+			"type": "QueryPackageListResponse",
+			"description": "结果对象"
+		},
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "通讯成功/失败"
+		},
+		{
+			"name": "result_code",
+			"type": "Boolean",
+			"description": "通讯失败码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "通讯失败信息"
+		}
+	],
+	"name": "taobao.logistics.applet.package.query",
+	"apiChineseName": "淘宝包裹查询",
+	"description": "淘宝包裹查询",
+	"id": 67264
+}

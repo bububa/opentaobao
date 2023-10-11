@@ -1,0 +1,147 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于做幂等",
+					"required": true
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "时间戳（毫秒）",
+					"required": true
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "服务商ID",
+					"required": true
+				},
+				{
+					"name": "site_code",
+					"type": "String",
+					"description": "网点编码",
+					"required": true
+				},
+				{
+					"name": "site_name",
+					"type": "String",
+					"description": "网点名称",
+					"required": true
+				},
+				{
+					"name": "province",
+					"type": "String",
+					"description": "省",
+					"required": true
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "市",
+					"required": true
+				},
+				{
+					"name": "area",
+					"type": "String",
+					"description": "区"
+				},
+				{
+					"name": "town",
+					"type": "String",
+					"description": "街道"
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "详细地址",
+					"required": true
+				},
+				{
+					"name": "address_id",
+					"type": "String",
+					"description": "网点所在的行政地址id（菜鸟地址库id，三级/四级地址id",
+					"required": true
+				},
+				{
+					"name": "contact_name",
+					"type": "String",
+					"description": "网点联系人姓名",
+					"required": true
+				},
+				{
+					"name": "contact_mobile",
+					"type": "String",
+					"description": "网点联系人手机号"
+				},
+				{
+					"name": "contact_tel",
+					"type": "String",
+					"description": "网点固定电话"
+				},
+				{
+					"subParams": [
+						{
+							"name": "courier_name",
+							"type": "String",
+							"description": "网点小件员名称"
+						},
+						{
+							"name": "courier_no",
+							"type": "String",
+							"description": "网点小件员编码（如工号等，服务商下唯一身份id）"
+						},
+						{
+							"name": "courier_mobile",
+							"type": "String",
+							"description": "小件员手机号"
+						}
+					],
+					"name": "courier_infos",
+					"type": "CourierInfos[]",
+					"description": "网点小件员信息"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "网点状态  1-启用、2-停用"
+				}
+			],
+			"name": "site_upset_request",
+			"type": "SiteUpsetRequest",
+			"description": "网点信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "系统成功失败   true|false"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息"
+				}
+			],
+			"name": "site_upset_response",
+			"type": "SiteUpsetResponse",
+			"description": "返回值"
+		}
+	],
+	"name": "taobao.logistics.express.site.tms.sync",
+	"apiChineseName": "配服务商网点信息同步",
+	"description": "配服务商网点信息同步",
+	"id": 67436
+}

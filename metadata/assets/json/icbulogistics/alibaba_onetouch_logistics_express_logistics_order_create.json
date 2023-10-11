@@ -411,6 +411,26 @@
 							"type": "String",
 							"description": "报关币种，出口发货中心默认USD",
 							"required": true
+						},
+						{
+							"name": "vat_type",
+							"type": "String",
+							"description": "增值税类型，枚举取值：VAT、IOSS、VOEC"
+						},
+						{
+							"name": "vat_number",
+							"type": "String",
+							"description": "增值税税号"
+						},
+						{
+							"name": "taxpayer_id",
+							"type": "String",
+							"description": "纳税人识别号"
+						},
+						{
+							"name": "eori_number",
+							"type": "String",
+							"description": "欧盟EORI"
 						}
 					],
 					"name": "express_customs",
@@ -432,7 +452,7 @@
 				{
 					"name": "supply_chain_biz_id",
 					"type": "String",
-					"description": "发货批次ID",
+					"description": "发货批次ID，阿里国际站订单发货此字段为必填",
 					"required": true
 				},
 				{
@@ -645,8 +665,7 @@
 				{
 					"name": "trade_biz_id",
 					"type": "String",
-					"description": "信保单ID",
-					"required": true
+					"description": "交易单号（例如阿里国际站的信保单ID），注意此字段不为空时，trade_platform字段必填（默认为ICBU）"
 				},
 				{
 					"subParams": [
@@ -969,6 +988,11 @@
 					"name": "return_address",
 					"type": "ContactAddress",
 					"description": "备用字段（退货地址），目前按退货申请指定地址"
+				},
+				{
+					"name": "trade_platform",
+					"type": "String",
+					"description": "跨境电商平台代码：ICBU（阿里巴巴国际站）、ALIEXPRESS（速卖通）、AMAZON（亚马逊）、TIKTOK、TEMU、SHEIN"
 				}
 			],
 			"name": "paramn_query",

@@ -18,10 +18,18 @@ type LoginParam struct {
 	PhoneIv string `json:"phone_iv,omitempty" xml:"phone_iv,omitempty"`
 	// 用户的基本信息
 	RawData string `json:"raw_data,omitempty" xml:"raw_data,omitempty"`
+	// 场景值
+	SceneDistinction string `json:"scene_distinction,omitempty" xml:"scene_distinction,omitempty"`
+	// 姓名验证
+	NameVerification string `json:"name_verification,omitempty" xml:"name_verification,omitempty"`
+	// 用户信息加密版
+	UserEncryptInfo string `json:"user_encrypt_info,omitempty" xml:"user_encrypt_info,omitempty"`
 	// 用户注册来源
 	Channel int64 `json:"channel,omitempty" xml:"channel,omitempty"`
 	// 新版本用户信息
 	NewUserinfo *NewUserInfo `json:"new_userinfo,omitempty" xml:"new_userinfo,omitempty"`
 	// 是否是老版本
 	OldVersion bool `json:"old_version,omitempty" xml:"old_version,omitempty"`
+	// 注销账号场景
+	DestroyVerification bool `json:"destroy_verification,omitempty" xml:"destroy_verification,omitempty"`
 }

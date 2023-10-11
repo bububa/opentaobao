@@ -1,0 +1,122 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "jym_game_id",
+					"type": "String",
+					"description": "交易猫游戏ID",
+					"required": true
+				},
+				{
+					"name": "min_price",
+					"type": "Number",
+					"description": "最低价",
+					"required": true
+				},
+				{
+					"name": "channel",
+					"type": "String",
+					"description": "渠道标识",
+					"required": true
+				},
+				{
+					"name": "max_price",
+					"type": "Number",
+					"description": "最高价"
+				}
+			],
+			"name": "jym_recommend_goods_request_dto",
+			"type": "JymRecommendGoodsRequestDTO",
+			"description": "请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "jym_game_id",
+					"type": "String",
+					"description": "交易猫游戏ID"
+				},
+				{
+					"subParams": [
+						{
+							"name": "goods_id",
+							"type": "String",
+							"description": "商品ID"
+						},
+						{
+							"name": "goods_title",
+							"type": "String",
+							"description": "商品标题"
+						},
+						{
+							"name": "header_img_url",
+							"type": "String",
+							"description": "商品头图地址"
+						},
+						{
+							"name": "unit_price",
+							"type": "Number",
+							"description": "商品单价"
+						},
+						{
+							"subParams": [
+								{
+									"name": "type",
+									"type": "Number",
+									"description": "标签类型，1-服务 2-卖点"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "标签名称"
+								}
+							],
+							"name": "tags",
+							"type": "JymGoodsTagDTO[]",
+							"description": "标签"
+						}
+					],
+					"name": "goods_list",
+					"type": "JymSingleGoodsDTO[]",
+					"description": "推荐商品"
+				}
+			],
+			"name": "result",
+			"type": "JymRecommendGoodsInfoDTO",
+			"description": "结果集"
+		},
+		{
+			"name": "sub_code_type",
+			"type": "String",
+			"description": "业务编码"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "sub_extra_err_msg",
+			"type": "String",
+			"description": "业务错误信息"
+		},
+		{
+			"name": "state_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "extra_err_msg",
+			"type": "String",
+			"description": "系统错误信息"
+		}
+	],
+	"name": "alibaba.jym.industry.recommend.goods.get",
+	"apiChineseName": "获取交易猫推荐商品",
+	"description": "获取交易猫推荐商品",
+	"id": 66835
+}

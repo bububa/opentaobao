@@ -1,0 +1,109 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "cp_code",
+					"type": "String",
+					"description": "快递公司编码",
+					"required": true
+				},
+				{
+					"name": "mail_no",
+					"type": "String",
+					"description": "运单号",
+					"required": true
+				},
+				{
+					"name": "occur_time",
+					"type": "Number",
+					"description": "发生时间"
+				},
+				{
+					"name": "ext_params",
+					"type": "String",
+					"description": "扩展参数"
+				},
+				{
+					"name": "openid",
+					"type": "String",
+					"description": "openid"
+				},
+				{
+					"name": "logistics_status",
+					"type": "String",
+					"description": "物流状态 揽收 发货 运输 签收等",
+					"required": true
+				},
+				{
+					"name": "scene",
+					"type": "Number",
+					"description": "1-查件 2-寄件",
+					"required": true
+				},
+				{
+					"name": "mobile_phone",
+					"type": "String",
+					"description": "移动电话",
+					"required": true
+				}
+			],
+			"name": "taowai_msg_send_request",
+			"type": "TaowaiMsgSendRequest",
+			"description": "请求对象"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误提示"
+		},
+		{
+			"subParams": [
+				{
+					"name": "operate_time",
+					"type": "Number",
+					"description": "发送操作执行时间"
+				},
+				{
+					"name": "sms_success",
+					"type": "Boolean",
+					"description": "短信发送是否成功"
+				},
+				{
+					"name": "sms_error_code",
+					"type": "String",
+					"description": "短信发送失败结果码(成功情况无需关注)"
+				},
+				{
+					"name": "msg_push_success",
+					"type": "Boolean",
+					"description": "交易物流消息是否发送成功"
+				},
+				{
+					"name": "msg_push_error_code",
+					"type": "String",
+					"description": "交易物流消息发送失败结果码(成功情况无需关注)"
+				}
+			],
+			"name": "result",
+			"type": "MsgSendResponse",
+			"description": "对象"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "通讯成功/通讯失败"
+		}
+	],
+	"name": "taobao.logistics.taowai.msg.send",
+	"apiChineseName": "淘外包裹物流信息走淘宝发包裹状态通知接口",
+	"description": "淘外包裹物流信息走淘宝发包裹状态通知接口",
+	"id": 67261
+}

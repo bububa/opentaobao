@@ -1,0 +1,302 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码",
+					"required": true
+				}
+			],
+			"name": "top_service_context",
+			"type": "TopServiceContext",
+			"description": "topServiceContext",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "campaign_id_list",
+					"type": "Number[]",
+					"description": "计划id集合",
+					"required": true
+				},
+				{
+					"name": "offset",
+					"type": "Number",
+					"description": "偏移量"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页面大小"
+				}
+			],
+			"name": "adgroup_query_v_o",
+			"type": "AdgroupQueryVo",
+			"description": "adgroupQueryVO",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "ok",
+							"type": "Boolean",
+							"description": "是否成功"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误编码"
+						}
+					],
+					"name": "info",
+					"type": "TopInfo",
+					"description": "请求系统信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "campaign_id",
+									"type": "Number",
+									"description": "计划id,计划已经存在场景必填,eg:添加主体、编辑计划状态等场景"
+								},
+								{
+									"name": "campaign_name",
+									"type": "String",
+									"description": "计划名称"
+								},
+								{
+									"name": "adgroup_id",
+									"type": "Number",
+									"description": "单元id"
+								},
+								{
+									"name": "adgroup_name",
+									"type": "String",
+									"description": "单元名称"
+								},
+								{
+									"name": "online_status",
+									"type": "Number",
+									"description": "投放状态,-1:未进入投放状态,0:用户设置状态-下线,1:用户设置状态-上线,2:合同未生效,9:投放结束,105:待支付"
+								},
+								{
+									"name": "display_status",
+									"type": "String",
+									"description": "前端展示状态,pause:暂停推广,start:正在推广,terminate:结束推广,wait:等待推广,pending:准备推广,wait_pay:计划未付款"
+								},
+								{
+									"name": "audit_status",
+									"type": "Number",
+									"description": "风控审核状态,-1:待审核,0:后台下线状态,1:后台上线状态"
+								},
+								{
+									"name": "audit_reason",
+									"type": "String",
+									"description": "审核拒绝原因"
+								},
+								{
+									"subParams": [
+										{
+											"name": "enable_ocpc",
+											"type": "Boolean",
+											"description": "OCPC是否开启，false:否，true:是"
+										},
+										{
+											"name": "ocpc_ratio",
+											"type": "Number",
+											"description": "OCPC溢价比例"
+										}
+									],
+									"name": "adgroup_ocpc",
+									"type": "AdgroupOcpcVo",
+									"description": "单元智能出价信息"
+								},
+								{
+									"name": "promotion_type",
+									"type": "String",
+									"description": "推广主体类型,item:商品,item_private_mini:独享橱窗,shop:店铺,content:内容,short_video:短视频,user_define:自定义;"
+								},
+								{
+									"name": "sub_promotion_type",
+									"type": "String",
+									"description": "推广子主体类型,item:商品，item_private_mini:独享橱窗，shop:店铺，you_hao_huo:有好货，picture:图文，short_video:短视频，live_room:直播间，live_spot:看点，tao_blocks:淘积木，user_define_url:自定义url"
+								},
+								{
+									"subParams": [
+										{
+											"name": "material_id",
+											"type": "Number",
+											"description": "物料id"
+										},
+										{
+											"name": "material_type",
+											"type": "Number",
+											"description": "物料类型,1:淘宝宝贝,2:淘宝店铺,3:cms LandingPage页面,4:cms 分流总页面,5:自定义,201:PC店铺LandingPage页面,202:无线店铺LandingPage页面,203:内容LandingPage页面,204:淘宝直播,210:淘宝直播用户ID,205:有好货,209:无线店铺Tab3页面,212:超级品牌日LandingPage页面,211:超级发布会LandingPage页面,301:ICBU商品,302:ICBU PC店铺LandingPage页面,303:ICBU PC店铺,8:用户ID,9:信息流淘积木用户ID,10:口碑用户ID,206:店铺优惠券,207:商品优惠券,208:直播单品,309:直播间商品半屏卡,304:1688商品,305:内容平台-短视频,306:附近门店-用户ID,307:饿了么-菜品,401:LAZADA商品,501:飞猪酒店,502:飞猪商品,503:飞猪短信,601:淘积木页面,1001:AE宝贝,1101:淘宝宝贝SKU,310:内容平台-订阅内容"
+										},
+										{
+											"name": "material_name",
+											"type": "String",
+											"description": "物料名称"
+										},
+										{
+											"name": "title",
+											"type": "String",
+											"description": "标题"
+										},
+										{
+											"name": "img_url",
+											"type": "String",
+											"description": "图片地址"
+										},
+										{
+											"name": "link_url",
+											"type": "String",
+											"description": "跳转链接"
+										},
+										{
+											"name": "price",
+											"type": "String",
+											"description": "价格"
+										},
+										{
+											"name": "bid_count",
+											"type": "Number",
+											"description": "销量"
+										},
+										{
+											"name": "quantity",
+											"type": "Number",
+											"description": "库存"
+										},
+										{
+											"name": "first_starts_time",
+											"type": "Date",
+											"description": "首次上架时间"
+										},
+										{
+											"name": "starts",
+											"type": "Date",
+											"description": "最近上架时间"
+										},
+										{
+											"name": "category_id",
+											"type": "String",
+											"description": "主站类目路径，空格分隔多级"
+										},
+										{
+											"name": "promotion_type",
+											"type": "String",
+											"description": "推广主体类型,item:商品,item_private_mini:独享橱窗,shop:店铺,content:内容,short_video:短视频,user_define:自定义;"
+										},
+										{
+											"name": "sub_promotion_type",
+											"type": "String",
+											"description": "推广子主体类型,item:商品，item_private_mini:独享橱窗，shop:店铺，you_hao_huo:有好货，picture:图文，short_video:短视频，live_room:直播间，live_spot:看点，tao_blocks:淘积木，user_define_url:自定义url"
+										},
+										{
+											"subParams": [
+												{
+													"name": "life_cycle_desc",
+													"type": "String",
+													"description": "周期文案"
+												},
+												{
+													"name": "color",
+													"type": "String",
+													"description": "文案颜色"
+												},
+												{
+													"name": "tips",
+													"type": "String",
+													"description": "周期提示文案"
+												}
+											],
+											"name": "life_cycle_list",
+											"type": "ItemLifeCycleViewVo[]",
+											"description": "生命周期指标-越迁阶段列表,列表中最多有2个元素。在页面上展示的时候，按照元素的索引，从左到右依次展示即"
+										},
+										{
+											"name": "life_cycle_days",
+											"type": "Number",
+											"description": "生命周期指标-天数"
+										},
+										{
+											"name": "life_cycle_diff_with_avg",
+											"type": "String",
+											"description": "生命周期指标-同叶子类目均值对比"
+										},
+										{
+											"name": "life_cycle_diff_with_avg_tips",
+											"type": "String",
+											"description": "生命周期指标-同叶子类目均值对比提示文案"
+										},
+										{
+											"name": "grow_desc",
+											"type": "String",
+											"description": "商品成长指标-成长文案"
+										},
+										{
+											"name": "grow_rank",
+											"type": "Number",
+											"description": "商品成长指标-成交排名"
+										}
+									],
+									"name": "material",
+									"type": "CommonMaterialVo",
+									"description": "主体类型对应的物料信息"
+								},
+								{
+									"name": "alive_group_id",
+									"type": "Number",
+									"description": "视频组件id,0:宝贝链接,3:订阅店铺,5:直播,6:加购,7:收藏加购,8:入会有礼,12:关注有礼,11:直播联动,10:自定义模板,13:同店搜"
+								},
+								{
+									"name": "alive_group_name",
+									"type": "String",
+									"description": "视频组件名称"
+								},
+								{
+									"name": "black_creative_status",
+									"type": "String",
+									"description": "智能创意生成状态,success:合成成功,fail:合成失败"
+								}
+							],
+							"name": "adgroup_v_o_list",
+							"type": "AdgroupVo[]",
+							"description": "批量结果集"
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "数量"
+						}
+					],
+					"name": "adgroup_v_o_top_bulk_data",
+					"type": "TopBulkData",
+					"description": "结果集"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.universalbp.adgroup.horizontal.findpage",
+	"apiChineseName": "查询单元分页列表",
+	"description": "查询单元分页列表",
+	"id": 67648
+}

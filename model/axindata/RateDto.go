@@ -64,6 +64,8 @@ type RateDto struct {
 	HourRoomInfo *HourRoomInfo `json:"hour_room_info,omitempty" xml:"hour_room_info,omitempty"`
 	// 小时房信息
 	HourRoomInfoDto *HourRoomInfoDto `json:"hour_room_info_dto,omitempty" xml:"hour_room_info_dto,omitempty"`
+	// 1-订单金额酒店开票，分销商开返佣发票 2-订单金额阿信开票，分销商不开票 3-订单金额无票，分销商开返佣发票
+	InvoicingMode int64 `json:"invoicing_mode,omitempty" xml:"invoicing_mode,omitempty"`
 	// 是否复杂价格
 	MultiplePrice bool `json:"multiple_price,omitempty" xml:"multiple_price,omitempty"`
 	// 是否小时房,不为空且为true时标识小时房，否则全日房

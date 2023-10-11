@@ -1,0 +1,68 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "item_ids",
+					"type": "Number[]",
+					"description": "商品id列表",
+					"required": true
+				}
+			],
+			"name": "idle_item_auto_recharge_batch_remove_api_do",
+			"type": "IdleItemAutoRechargeBatchRemoveApiDO",
+			"description": "请求参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "移除失败商品id"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误码"
+						},
+						{
+							"name": "error_msg",
+							"type": "String",
+							"description": "错误说明"
+						}
+					],
+					"name": "data",
+					"type": "IdleItemAutoRechargeBatchRemoveResult[]",
+					"description": "移除失败商品信息列表"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求是否成功"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误说明"
+				}
+			],
+			"name": "result",
+			"type": "TopListResult",
+			"description": "调用结果"
+		}
+	],
+	"name": "alibaba.idle.isv.item.recharge.batch.remove",
+	"apiChineseName": "闲鱼商品直充功能移除",
+	"description": "闲鱼商品直充功能移除",
+	"id": 66735
+}

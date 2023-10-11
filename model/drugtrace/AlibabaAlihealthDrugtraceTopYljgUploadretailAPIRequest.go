@@ -42,7 +42,7 @@ type AlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest struct {
 	_userName string
 	// 代理领药人
 	_userAgent string
-	// 单据类型[321,零售出库][322,疫苗接种]
+	// 单据类型[323,零售出库][322,疫苗接种][116,消费者退货入库]
 	_billType int64
 	// 药品类型[2,特药，3,普药]【可以随便填写，单据上传后会以实际为准】
 	_physicType int64
@@ -268,7 +268,7 @@ func (r AlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest) GetUserAgent() s
 }
 
 // SetBillType is BillType Setter
-// 单据类型[321,零售出库][322,疫苗接种]
+// 单据类型[323,零售出库][322,疫苗接种][116,消费者退货入库]
 func (r *AlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest) SetBillType(_billType int64) error {
 	r._billType = _billType
 	r.Set("bill_type", _billType)

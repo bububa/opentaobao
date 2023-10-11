@@ -1,0 +1,70 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品ID",
+					"required": true
+				},
+				{
+					"name": "account",
+					"type": "String",
+					"description": "业务办理账户",
+					"required": true
+				},
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "商家幂等ID",
+					"required": true
+				}
+			],
+			"name": "create_phone_order_req",
+			"type": "CreatePhoneOrderReq",
+			"description": "创建订单请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "out_order_id",
+							"type": "String",
+							"description": "商家幂等ID"
+						}
+					],
+					"name": "model",
+					"type": "DistributeTradeOrderInfo",
+					"description": "data"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "请求结果"
+		}
+	],
+	"name": "taobao.phone.order.external.create",
+	"apiChineseName": "数字虚拟话费外放下单接口",
+	"description": "数字虚拟话费外放下单接口",
+	"id": 66695
+}

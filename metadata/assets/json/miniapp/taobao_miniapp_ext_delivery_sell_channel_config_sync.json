@@ -1,0 +1,60 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "miniapp_id",
+					"type": "Number",
+					"description": "节点小程序id",
+					"required": true
+				},
+				{
+					"name": "ext_properties",
+					"type": "String",
+					"description": "扩展属性"
+				},
+				{
+					"name": "channel",
+					"type": "String",
+					"description": "渠道id：1-微信；2-抖音；3-今日头条；4-快手；5-百度；6-其他",
+					"required": true
+				},
+				{
+					"name": "config_status",
+					"type": "Number",
+					"description": "0表示未配置，1表示已配置"
+				}
+			],
+			"name": "seller_channel_config",
+			"type": "SellerChannelConfigDTO",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "successful",
+			"type": "Boolean",
+			"description": "true or false"
+		},
+		{
+			"name": "error_type",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "操作结果"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "taobao.miniapp.ext.delivery.sell.channel.config.sync",
+	"apiChineseName": "写入商家配置信息",
+	"description": "写入商家配置信息",
+	"id": 67558
+}

@@ -225,6 +225,11 @@
 					"name": "textbook_id",
 					"type": "String",
 					"description": "教材见类目文档"
+				},
+				{
+					"name": "update_index",
+					"type": "Number",
+					"description": "更新到第几集，如果是未完结状态此字段必填"
 				}
 			],
 			"name": "param_list",

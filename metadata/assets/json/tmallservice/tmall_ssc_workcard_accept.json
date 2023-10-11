@@ -1,0 +1,56 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "workcard_id",
+					"type": "Number",
+					"description": "工单号",
+					"required": true
+				}
+			],
+			"name": "accept_workcard_request",
+			"type": "AcceptWorkcardRequest",
+			"description": "服务商接单入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "display_msg",
+					"type": "String",
+					"description": "错误提示"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "value",
+					"type": "String",
+					"description": "未使用"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误消息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接单结果"
+		}
+	],
+	"name": "tmall.ssc.workcard.accept",
+	"apiChineseName": "服务商接单完成",
+	"description": "工单完结",
+	"id": 65872
+}

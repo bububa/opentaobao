@@ -1,0 +1,134 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "logistics_owner",
+					"type": "String",
+					"description": "物流主体",
+					"required": true
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "物流服务商ID",
+					"required": true
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "服务商仓code",
+					"required": true
+				},
+				{
+					"name": "mail_no",
+					"type": "String",
+					"description": "异常包裹运单号"
+				},
+				{
+					"name": "order_code",
+					"type": "String",
+					"description": "异常作业单号"
+				},
+				{
+					"name": "order_type",
+					"type": "String",
+					"description": "作业单类型"
+				},
+				{
+					"name": "outer_order_code",
+					"type": "String",
+					"description": "异常包裹WMS单据号",
+					"required": true
+				},
+				{
+					"name": "tms_cp_code",
+					"type": "String",
+					"description": "异常包裹快递公司code"
+				},
+				{
+					"name": "operate_time",
+					"type": "String",
+					"description": "异常操作时间",
+					"required": true
+				},
+				{
+					"name": "sender_mobile",
+					"type": "String",
+					"description": "异常包裹寄件人手机号"
+				},
+				{
+					"name": "package_image",
+					"type": "String[]",
+					"description": "异常包裹图片链接"
+				},
+				{
+					"name": "wms_operate_node",
+					"type": "String",
+					"description": "异常发生的仓内作业节点",
+					"required": true
+				},
+				{
+					"name": "error_type",
+					"type": "String[]",
+					"description": "异常类型",
+					"required": true
+				},
+				{
+					"name": "error_operate_status",
+					"type": "String",
+					"description": "异常操作节点",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "异常说明",
+					"required": true
+				},
+				{
+					"name": "package_owner_code",
+					"type": "String",
+					"description": "包裹货主"
+				},
+				{
+					"name": "extend_props",
+					"type": "String",
+					"description": "拓展属性"
+				}
+			],
+			"name": "report_exception_request",
+			"type": "ReportExceptionRequest",
+			"description": "请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "响应状态"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "ResultWrapper",
+			"description": "响应信息"
+		}
+	],
+	"name": "taobao.logistics.wms.packageexception.report",
+	"apiChineseName": "无主件回告",
+	"description": "无主件回告",
+	"id": 67584
+}

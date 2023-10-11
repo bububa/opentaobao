@@ -1,0 +1,52 @@
+{
+	"requestParams": [
+		{
+			"name": "oss_path",
+			"type": "String",
+			"description": "文件在OSS的存储路径，不包含文件名，只包含文件夹路径"
+		},
+		{
+			"name": "file_count",
+			"type": "Number",
+			"description": "上传的文件个数"
+		},
+		{
+			"name": "record_count",
+			"type": "Number",
+			"description": "文件记录总数量"
+		},
+		{
+			"name": "data_type",
+			"type": "Number",
+			"description": "数据的类型，枚举值见文档"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "服务是否成功"
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "DidaResult",
+			"description": "响应结果"
+		}
+	],
+	"name": "taobao.xhotel.hotel.message.receive",
+	"apiChineseName": "接收道消息接口",
+	"description": "接收道消息接口",
+	"id": 65804
+}

@@ -1,0 +1,463 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码",
+					"required": true
+				}
+			],
+			"name": "top_service_context",
+			"type": "TopServiceContext",
+			"description": "topServiceContext",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "status_list",
+					"type": "String[]",
+					"description": "筛选项-主体类型"
+				},
+				{
+					"name": "promotion_type_list",
+					"type": "String[]",
+					"description": "筛选项-主体类型"
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "计划id"
+				},
+				{
+					"name": "offset",
+					"type": "Number",
+					"description": "偏移量"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页面大小"
+				}
+			],
+			"name": "campaign_query_v_o",
+			"type": "CampaignQueryVo",
+			"description": "campaignQueryVO",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "ok",
+							"type": "Boolean",
+							"description": "是否成功"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误编码"
+						}
+					],
+					"name": "info",
+					"type": "TopInfo",
+					"description": "请求系统信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "biz_code",
+									"type": "String",
+									"description": "业务身份,枚举信息同'account.get.can.use.bizcode'服务返回结果"
+								},
+								{
+									"name": "campaign_group_id",
+									"type": "Number",
+									"description": "计划组id"
+								},
+								{
+									"name": "campaign_group_name",
+									"type": "String",
+									"description": "计划组名称"
+								},
+								{
+									"name": "campaign_id",
+									"type": "Number",
+									"description": "计划id,计划已经存在场景必填,eg:添加主体、编辑计划状态等场景"
+								},
+								{
+									"name": "campaign_name",
+									"type": "String",
+									"description": "计划名称"
+								},
+								{
+									"name": "promotion_scene",
+									"type": "String",
+									"description": "推广场景,promotion_scene_crowd:人群方舟,promotion_scene_item:店铺宝贝运营,promotion_scene_traffic:宝藏场景,AD_STRATEGY_LAXIN:策略中心拉新场景,AD_STRATEGY_SHANGXINLI:策略中心上新礼场景,AD_STRATEGY_FRESH_BOX:策略中心小黑盒场景,AD_STRATEGY_LAXIN_XINXIANG:策略中心拉新新享一笔钱场景,AD_STRATEGY_RUHUI_NEW:策略中心入会快新会员场景,AD_STRATEGY_RUHUI_OLD:策略中心入会快老会员场景,AD_STRATEGY_LIUZI:策略中心留资快场景,AD_STRATEGY_YURE:策略中心活动加速场景,AD_STRATEGY_HUODONG_ESCORT:活动全周期护航计划,AD_STRATEGY_CROWD_INDUSTRY:策略中心行业人群通,AD_STRATEGY_WHOLE_SHOP_SMART:策略中心全店放心推-智能托管,AD_STRATEGY_WHOLE_SHOP_CUSTOM:策略中心全店放心推-自定义,AD_STRATEGY_EVEN_BUDGET:策略中心均匀曝光场景,AD_STRATEGY_SXK_GUARANTEE:万相台上新快确定性保障,AD_STRATEGY_HPJS_GUARANTEE:万相台货品加速确定性保障,AD_STRATEGY_HPJS_TIME_LIMIT:万相台货品加速限时加速,AD_STRATEGY_FANS_HEADLINES:万相台粉丝头条,WXT_AGENCY_XST_CPC:服务商版一键起量（CPC）,WXT_AGENCY_XST_CPA:服务商版客源多（CPA）,WXT_AGENCY_SHEQUN:服务商版社群（CPA+CPS）"
+								},
+								{
+									"name": "promotion_goals",
+									"type": "String",
+									"description": "推广目标,shop_item:全店宝贝推广,new_item_speed_car:新品飞车,shop_crowd:店铺人群运营,brand_crowd:品牌人群运营,traffic_shoujiao:淘系焦点图,traffic_nd:全屏微详情"
+								},
+								{
+									"name": "promotion_model",
+									"type": "String",
+									"description": "推广类型"
+								},
+								{
+									"name": "promotion_type",
+									"type": "String",
+									"description": "推广主体类型,item:商品,item_private_mini:独享橱窗,shop:店铺,content:内容,short_video:短视频,user_define:自定义;"
+								},
+								{
+									"name": "promotion_type_list",
+									"type": "String[]",
+									"description": "主体类型，支持一个计划下存在多种类型"
+								},
+								{
+									"name": "sub_promotion_type",
+									"type": "String",
+									"description": "推广子主体类型,item:商品，item_private_mini:独享橱窗，shop:店铺，you_hao_huo:有好货，picture:图文，short_video:短视频，live_room:直播间，live_spot:看点，tao_blocks:淘积木，user_define_url:自定义url"
+								},
+								{
+									"name": "sub_promotion_type_list",
+									"type": "String[]",
+									"description": "子主体类型，支持一个计划下存在多种类型"
+								},
+								{
+									"name": "optimize_target",
+									"type": "String",
+									"description": "优化目标，conv:促进成交,coll_cart:促进加购,click:促进点击,deal_count:促进成交笔数,exposure_pv:促进曝光,mini_view:促进橱窗宝贝浏览个数,mini_interactive:促进橱窗宝贝互动,ad_strategy_wangwang:策略中心旺旺咨询,shop_potential:提升潜客人数,shop_interest_new:提升兴趣新客人数,shop_purchase_new:提升首购新客人数,shop_visit_new:提升访问新客人数,shop_repurchase:提升复购人数,high_cvr:提升高转换人群成交人数,deeplink_d:提升品牌发现人数-D,deeplink_e1:提升品牌种草人数-E,deeplink_e2:提升品牌互动人数-E,deeplink_p:提升品牌行动人数-P,deeplink_i:提升品牌首购人数-I,deeplink_n:提升品牌复购人数-N,deeplink_k:提升品牌挚爱人数-K,hf_grass_plant:预热种草,hf_impoundment:预售蓄水,hf_harvest:爆发收割,nd_click:提高互动量,nd_cart:提高加购量,nd_deal:提高成交量,ad_strategy_ruhui_count:策略中心入会快新会员场景入会量目标,ad_strategy_lzl:策略中心留资快留资量目标,ad_strategy_try:策略中心派样量,ad_strategy_view:策略中心优化展现,ad_strategy_auto_trans:策略中心自动流转,ad_strategy_trial_order:策略中心表单获客成本,ad_strategy_liuzi_cost:策略中心广义留资目标,ad_strategy_cool_start:策略中心自动冷启动,ad_strategy_cool_start_mini_aim:策略中心冷启动分阶段目标流转,wxt_agency_ai:A转I人群流转,wxt_agency_smart:自定义场景,form_submit:表单提交,trial_order:试用下单,wangwang_liuzi:旺旺留资"
+								},
+								{
+									"name": "online_status",
+									"type": "Number",
+									"description": "投放状态,-1:未进入投放状态,0:用户设置状态-下线,1:用户设置状态-上线,2:合同未生效,9:投放结束,105:待支付"
+								},
+								{
+									"name": "display_status",
+									"type": "String",
+									"description": "前端展示状态,pause:暂停推广,start:正在推广,terminate:结束推广,wait:等待推广,pending:准备推广,wait_pay:计划未付款"
+								},
+								{
+									"name": "top_status",
+									"type": "Boolean",
+									"description": "置顶状态,true:置顶，false:不置顶"
+								},
+								{
+									"name": "dmc_type",
+									"type": "String",
+									"description": "预算类型,normal:日预算,total:总预算,cycle:活动周期预算,day_freeze:日预算冻结,unlimit:不限预算"
+								},
+								{
+									"name": "day_budget",
+									"type": "String",
+									"description": "日预算金额"
+								},
+								{
+									"name": "smooth_option",
+									"type": "String",
+									"description": "日预算投放方式, quick:天内尽快,smooth:天内平滑"
+								},
+								{
+									"name": "total_budget",
+									"type": "String",
+									"description": "周期预算金额"
+								},
+								{
+									"name": "budget_period",
+									"type": "Number",
+									"description": "周期预算周期天数"
+								},
+								{
+									"name": "period_smooth",
+									"type": "String",
+									"description": "周期预算投放方式, quick:天内尽快,smooth:天内平滑"
+								},
+								{
+									"name": "bid_type",
+									"type": "String",
+									"description": "出价方式,custom_bid:手动出价,max_amount:最大化拿量,cost_control:控成本,roi_control:控投产比"
+								},
+								{
+									"subParams": [
+										{
+											"name": "enable_ocpc",
+											"type": "String",
+											"description": "OCPC是否开启，0:否，1:是"
+										},
+										{
+											"name": "ocpc_ratio",
+											"type": "Number",
+											"description": "OCPC溢价比例"
+										}
+									],
+									"name": "campaign_ocpc",
+									"type": "CampaignOcpcVo",
+									"description": "ocpc出价"
+								},
+								{
+									"name": "max_price",
+									"type": "String",
+									"description": "手动出价时，最大金额"
+								},
+								{
+									"name": "min_price",
+									"type": "String",
+									"description": "手动出价时，最小金额"
+								},
+								{
+									"name": "bid_unit",
+									"type": "String",
+									"description": "出价单位"
+								},
+								{
+									"name": "constraint_type",
+									"type": "String",
+									"description": "出价约束类型,non:无约束,click:点击成本,coll_cart:收藏加购成本(非场景推广),cart:收藏加购成本(场景推广),conv:成交成本(非场景推广),deal:成交成本(场景推广),dir_conv:直接成交成本,roi:投产比约束"
+								},
+								{
+									"name": "constraint_value",
+									"type": "String",
+									"description": "出价约束值"
+								},
+								{
+									"name": "cold_boot",
+									"type": "Number",
+									"description": "冷启动标识，0:否，1:是"
+								},
+								{
+									"name": "cold_boot_time",
+									"type": "Date",
+									"description": "冷启动时间"
+								},
+								{
+									"name": "cold_boot_stage",
+									"type": "String",
+									"description": "当前计划冷启动阶段，cold:冷启动期,mature:成熟期,acc_fail:冷启动失败,acc_success:冷启动成功,accelerate:加速中"
+								},
+								{
+									"name": "launch_period_discount",
+									"type": "String",
+									"description": "分时折扣比例（取当前时刻对应的实际折扣，格式：80%）"
+								},
+								{
+									"name": "launch_period_display_time",
+									"type": "String",
+									"description": "分时折扣展示时段（取当前时刻对应的半小时区间，格式：09:00-09:30）"
+								},
+								{
+									"subParams": [
+										{
+											"name": "start_time",
+											"type": "Date",
+											"description": "计划开始时间"
+										},
+										{
+											"name": "end_time",
+											"type": "Date",
+											"description": "计划结束时间"
+										},
+										{
+											"name": "launch_forever",
+											"type": "Boolean",
+											"description": "是否长期投放,true:是,false:否"
+										}
+									],
+									"name": "launch_time",
+									"type": "CampaignLaunchTimeVo",
+									"description": "计划投放时间"
+								},
+								{
+									"name": "launch_area_str_list",
+									"type": "String[]",
+									"description": "地域码"
+								},
+								{
+									"subParams": [
+										{
+											"name": "day_of_week",
+											"type": "Number",
+											"description": "本周的第x天"
+										},
+										{
+											"subParams": [
+												{
+													"name": "time",
+													"type": "String",
+													"description": "折扣时间段"
+												},
+												{
+													"name": "discount",
+													"type": "Number",
+													"description": "折扣"
+												}
+											],
+											"name": "time_span_list",
+											"type": "TimeSpanQueryResVo[]",
+											"description": "第x天各时段的折扣情况"
+										}
+									],
+									"name": "launch_period_list",
+									"type": "LaunchPeriodVo[]",
+									"description": "投放折扣时段设置"
+								},
+								{
+									"subParams": [
+										{
+											"name": "behavior",
+											"type": "String",
+											"description": "行为,purchase:购买人群,cart:加购人群,collection:收藏人群,arrival:进店人群"
+										},
+										{
+											"name": "window",
+											"type": "String",
+											"description": "时间窗口,7:7天,15:15天,30:30天,90:90天,180:180天,365:365天"
+										}
+									],
+									"name": "crowd_filter_list",
+									"type": "CampaignCrowdFilterVo[]",
+									"description": "人群过滤"
+								},
+								{
+									"subParams": [
+										{
+											"name": "brand_id",
+											"type": "String",
+											"description": "品牌id"
+										},
+										{
+											"name": "deeplink_list",
+											"type": "String[]",
+											"description": "deeplink维度过滤,Discover:Discover 发现,Engage:Engage 种草,Enthuse:Enthuse 互动,Perform:Perform 行动,Initial:Initial 首购,Numerous:Numerous 复购,Keen:Keen 至爱"
+										}
+									],
+									"name": "brand_filter_list",
+									"type": "CampaignBrandFilterVo[]",
+									"description": "品牌过滤"
+								},
+								{
+									"subParams": [
+										{
+											"name": "deeplink_brand_id",
+											"type": "String",
+											"description": "品牌id"
+										},
+										{
+											"name": "deeplink_brand_name",
+											"type": "String",
+											"description": "品牌名字"
+										}
+									],
+									"name": "deeplink_brand_list",
+									"type": "DeeplinkBrandVo[]",
+									"description": "品牌正向过滤"
+								},
+								{
+									"subParams": [
+										{
+											"name": "gender",
+											"type": "String",
+											"description": "性别,man:男性人群,woman:女性人群"
+										},
+										{
+											"name": "age_list",
+											"type": "String[]",
+											"description": "年龄段,0:,1,2,3,4,5,6"
+										}
+									],
+									"name": "gender_age_filter_list",
+									"type": "CampaignGenderAgeFilterVo[]",
+									"description": "性别年龄过滤"
+								},
+								{
+									"subParams": [
+										{
+											"name": "mini_detail_theme",
+											"type": "String",
+											"description": "橱窗主题,1:默认主题,7:品牌定制主题,4:店铺主题,5:拉新主题,2:新品主题"
+										},
+										{
+											"name": "private_mini_item_id_list",
+											"type": "Number[]",
+											"description": "橱窗宝贝id列表"
+										},
+										{
+											"name": "private_mini_top_item_id_list",
+											"type": "Number[]",
+											"description": "橱窗宝贝里面置顶的id列表"
+										},
+										{
+											"name": "private_mini_type",
+											"type": "Number",
+											"description": "手动选宝贝还是智能,0:黑名单,1:白名单"
+										}
+									],
+									"name": "mini_detail",
+									"type": "CampaignMiniDetailVo",
+									"description": "橱窗相关"
+								},
+								{
+									"name": "item_selected_mode",
+									"type": "String",
+									"description": "选品方式,shop:全店优选,user_define:用户自定义选品,scope:范围圈选,trend:趋势选品"
+								},
+								{
+									"name": "shop_item_type",
+									"type": "String",
+									"description": "优选集合,effect:效果优选,growing:全店成长,activity:活动选品,industry:行业尖货,scope:定义选品"
+								},
+								{
+									"name": "shield_items",
+									"type": "Number[]",
+									"description": "自动化选品时屏蔽宝贝"
+								},
+								{
+									"name": "scope_items",
+									"type": "Number[]",
+									"description": "宝贝优选里面的指定宝贝"
+								},
+								{
+									"name": "top_time",
+									"type": "Date",
+									"description": "置顶时间"
+								}
+							],
+							"name": "campaign_v_o_list",
+							"type": "CampaignVo[]",
+							"description": "批量结果集"
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "数量"
+						}
+					],
+					"name": "campaign_v_o_top_bulk_data",
+					"type": "TopBulkData",
+					"description": "结果集"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.universalbp.campaign.findpage",
+	"apiChineseName": "查询计划分页列表",
+	"description": "分页查询场景内的计划列表",
+	"id": 67135
+}

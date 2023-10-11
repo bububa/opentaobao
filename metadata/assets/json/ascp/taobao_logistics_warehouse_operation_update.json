@@ -1,0 +1,162 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间戳（毫秒）  \t",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID（服务商发起请求的ID）",
+					"required": true
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "淘天物流服务商ID",
+					"required": true
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "服务商仓编码",
+					"required": true
+				},
+				{
+					"name": "rule_type",
+					"type": "Number",
+					"description": "1-通用规则；2-个性化规则 ",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "cut_time",
+							"type": "String",
+							"description": "截单时间，例如17:00，只允许整点或者半点 当业务身份为时效代运营时，截单时间前支付订单，承诺今日发，否则承诺24小时发",
+							"required": true
+						},
+						{
+							"name": "ban_hour_from",
+							"type": "String",
+							"description": "过截单时间后，不表达时间段开始时间（HH）"
+						},
+						{
+							"name": "ban_hour_to",
+							"type": "String",
+							"description": "过截单时间后，不表达时间段结束时间（HH） ● banHourFrom、banHourTo需要一起出现；相隔时间≤5小时，只允许整点"
+						},
+						{
+							"name": "no_delivery_dates",
+							"type": "String[]",
+							"description": "不发货日期列表（年月日），要求不发货日期在90天内；例如20230925"
+						},
+						{
+							"name": "receive_cut_time",
+							"type": "String",
+							"description": "仓接单截单时间",
+							"required": true
+						},
+						{
+							"name": "promise_type",
+							"type": "Number",
+							"description": "是否承诺发 1=承诺发；当截单时间前支付/截单的订单，承诺今日发，否则，承诺24小时发 0=不承诺",
+							"required": true
+						}
+					],
+					"name": "normal_warehouse_timing_rule",
+					"type": "NormalWarehouseTimingRule",
+					"description": "仓时效规则信息，通用规则传入时必填"
+				},
+				{
+					"subParams": [
+						{
+							"name": "wms_owner_code",
+							"type": "String",
+							"description": "wms货主id",
+							"required": true
+						},
+						{
+							"name": "cut_time",
+							"type": "String",
+							"description": "截单时间，例如17:00，只允许整点或者半点； 当业务身份为时效代运营时，截单时间前支付订单，承诺今日发，否则承诺24小时发",
+							"required": true
+						},
+						{
+							"name": "ban_hour_from",
+							"type": "String",
+							"description": "过截单时间后，不表达时间段开始时间（HH）"
+						},
+						{
+							"name": "ban_hour_to",
+							"type": "String",
+							"description": "过截单时间后，不表达时间段结束时间（HH） ● banHourFrom、banHourTo需要一起出现；相隔时间≤5小时，只允许整点"
+						},
+						{
+							"name": "promise_type",
+							"type": "Number",
+							"description": "是否承诺发 1=承诺发；当截单时间前支付/截单的订单，承诺今日发，否则，承诺24小时发 0=不承诺",
+							"required": true
+						},
+						{
+							"name": "receive_cut_time",
+							"type": "String",
+							"description": "最晚接单截单时间（HH:mm），例如17:00，只允许整点或者半点"
+						}
+					],
+					"name": "special_warehouse_timing_rules",
+					"type": "SpecialWarehouseTimingRules",
+					"description": "个性化效规则信息（组），个性化规则传入时必填，最多20个货主"
+				}
+			],
+			"name": "warehouse_operation_update_request",
+			"type": "WarehouseOperationUpdateRequest",
+			"description": "仓作业能力新建/更新入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true|false"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "wms_owner_code",
+							"type": "String",
+							"description": "wms货主id"
+						}
+					],
+					"name": "data",
+					"type": "ConsignRuleResultDetail",
+					"description": "返回结果"
+				}
+			],
+			"name": "warehouse_operation_update_response",
+			"type": "WarehouseOperationUpdateResponse",
+			"description": "仓作业能力新建/更新出参"
+		}
+	],
+	"name": "taobao.logistics.warehouse.operation.update",
+	"apiChineseName": "仓作业能力新建/更新",
+	"description": "仓作业能力新建/更新",
+	"id": 67427
+}

@@ -1,0 +1,82 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "invoice_id",
+					"type": "String",
+					"description": "发票id",
+					"required": true
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "开票操作人",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "express_no",
+							"type": "String",
+							"description": "纸质发票必填-快递单号"
+						},
+						{
+							"name": "express_type",
+							"type": "String",
+							"description": "纸质发票必填-快递服务商"
+						},
+						{
+							"name": "file_url",
+							"type": "String",
+							"description": "电子发票必填-发票文件地址"
+						},
+						{
+							"name": "file_name",
+							"type": "String",
+							"description": "电子发票必填-发票文件名称"
+						}
+					],
+					"name": "file_list",
+					"type": "CsrInvoiceFileDTO[]",
+					"description": "发票文件"
+				}
+			],
+			"name": "csr_invoice_external_org_draw_dto",
+			"type": "CsrInvoiceExternalOrgDrawDTO",
+			"description": "参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "res_msg",
+			"type": "String",
+			"description": "响应描述"
+		},
+		{
+			"name": "res_code",
+			"type": "Number",
+			"description": "响应码"
+		},
+		{
+			"name": "res_data",
+			"type": "String",
+			"description": "空"
+		},
+		{
+			"name": "res_success",
+			"type": "Boolean",
+			"description": "成功"
+		},
+		{
+			"name": "res_localized_msg",
+			"type": "String",
+			"description": "无"
+		}
+	],
+	"name": "alibaba.csr.donate.org.invoice.draw",
+	"apiChineseName": "机构开具商家票据信息",
+	"description": "机构开具商家票据信息",
+	"id": 67038
+}

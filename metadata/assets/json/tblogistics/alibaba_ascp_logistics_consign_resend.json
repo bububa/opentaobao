@@ -31,6 +31,11 @@
 			"description": "包裹包含的运单号及快递公司编号,多包裹时，需要包含所有包裹的运单号等信息",
 			"maxListSize": 999,
 			"required": true
+		},
+		{
+			"name": "feature",
+			"type": "String",
+			"description": "feature参数格式，KV之间用“=”分隔，多个key之间用”;”分隔 ，范例: instantMobilePhoneNumber=12345678910表示同城配送物流公司的物流订单收货人手机号，支持11位真实号和15位隐私号\"12345678910-1234\""
 		}
 	],
 	"responseParams": [

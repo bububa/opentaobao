@@ -1,0 +1,179 @@
+{
+	"requestParams": [
+		{
+			"name": "workcard_id",
+			"type": "Number",
+			"description": "工单id"
+		},
+		{
+			"name": "biz_order_id",
+			"type": "Number",
+			"description": "淘宝交易订单号，实物子订单"
+		},
+		{
+			"name": "page_index",
+			"type": "Number",
+			"description": "当前页数"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页大小"
+		},
+		{
+			"name": "service_order_id",
+			"type": "Number",
+			"description": "交易服务订单号"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总数"
+				},
+				{
+					"subParams": [
+						{
+							"name": "workcard_id",
+							"type": "Number",
+							"description": "工单id"
+						},
+						{
+							"name": "insurance_order_no",
+							"type": "String",
+							"description": "保单号"
+						},
+						{
+							"name": "biz_order_id",
+							"type": "Number",
+							"description": "淘宝交易实物子订单"
+						},
+						{
+							"name": "service_order_id",
+							"type": "Number",
+							"description": "服务订单编号"
+						},
+						{
+							"name": "service_name",
+							"type": "String",
+							"description": "服务产品"
+						},
+						{
+							"name": "auction_id",
+							"type": "Number",
+							"description": "商品id"
+						},
+						{
+							"name": "auction_name",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "sp_service_order_id",
+							"type": "Number",
+							"description": "服务单id"
+						},
+						{
+							"name": "auction_sku_id",
+							"type": "Number",
+							"description": "商品skuid"
+						},
+						{
+							"name": "auction_sku_desc",
+							"type": "String",
+							"description": "商品sku描述"
+						},
+						{
+							"name": "sku_desc",
+							"type": "String",
+							"description": "服务sku描述"
+						},
+						{
+							"name": "gmt_create_workcard",
+							"type": "Date",
+							"description": "工单创建时间"
+						},
+						{
+							"name": "completion_date",
+							"type": "Date",
+							"description": "工单完成时间"
+						},
+						{
+							"name": "problem_desc",
+							"type": "String",
+							"description": "问题描述、故障位置、故障判断"
+						},
+						{
+							"name": "buyer_nick",
+							"type": "String",
+							"description": "买家昵称"
+						},
+						{
+							"name": "sn",
+							"type": "String",
+							"description": "sn"
+						},
+						{
+							"name": "claim_fee",
+							"type": "Number",
+							"description": "理赔金额（分)"
+						},
+						{
+							"name": "recognizee",
+							"type": "String",
+							"description": "被保人"
+						},
+						{
+							"name": "recognizee_unity_number",
+							"type": "String",
+							"description": "被保人社会统一号"
+						},
+						{
+							"name": "task_attribute",
+							"type": "String",
+							"description": "扩展属性 map的json格式"
+						}
+					],
+					"name": "result_data",
+					"type": "SscClaimInfoDTO[]",
+					"description": "分页数据"
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "当前页数"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页大小"
+				}
+			],
+			"name": "result",
+			"type": "PageResult",
+			"description": "请求结果"
+		}
+	],
+	"name": "tmall.msd.claim.query",
+	"apiChineseName": "查询待理赔工单数据接口",
+	"description": "查询待理赔工单数据接口",
+	"id": 67978
+}

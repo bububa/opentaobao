@@ -1,0 +1,69 @@
+{
+	"requestParams": [
+		{
+			"name": "table_id",
+			"type": "String",
+			"description": "工作表表单id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "返回结果条数"
+				},
+				{
+					"subParams": [
+						{
+							"name": "field_name",
+							"type": "String",
+							"description": "字段名称"
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "字段描述"
+						},
+						{
+							"name": "component_type",
+							"type": "String",
+							"description": "组件类型"
+						},
+						{
+							"name": "custom_config",
+							"type": "String",
+							"description": "配置信息"
+						},
+						{
+							"name": "children",
+							"type": "String[]",
+							"description": "子结构"
+						}
+					],
+					"name": "record",
+					"type": "AfterSaleFieldMetaRecord[]"
+				}
+			],
+			"name": "result",
+			"type": "AfterSaleFieldMetaResponse",
+			"description": "返回结果"
+		},
+		{
+			"name": "business_success",
+			"type": "Boolean",
+			"description": "调用结果"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "taobao.smartapp.table.meta.get",
+	"apiChineseName": "智能应用服务登记工作表元数据查询",
+	"description": "智能应用服务登记工作表元数据查询",
+	"id": 67461
+}

@@ -70,7 +70,7 @@
 		{
 			"name": "campaign_type",
 			"type": "String",
-			"description": "CPS佣金类型"
+			"description": "已下线，后续不需要填写"
 		},
 		{
 			"name": "adzone_id",

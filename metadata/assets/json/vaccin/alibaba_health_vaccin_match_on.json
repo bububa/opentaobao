@@ -1,0 +1,48 @@
+{
+	"requestParams": [
+		{
+			"name": "pov_id",
+			"type": "String",
+			"description": "阿里健康的povId",
+			"required": true
+		},
+		{
+			"name": "vaccine_id",
+			"type": "String",
+			"description": "阿里健康的vaccineId",
+			"required": true
+		},
+		{
+			"name": "isv_match_type",
+			"type": "String",
+			"description": "对码类型：ON表示上线，OFF表示下线",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "对码是否成功"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "info"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "code"
+		}
+	],
+	"name": "alibaba.health.vaccin.match.on",
+	"apiChineseName": "isv自主上下线疫苗，可以选择上线还是下线",
+	"description": "isv自主上下线疫苗，可以选择上线还是下线",
+	"id": 67515
+}

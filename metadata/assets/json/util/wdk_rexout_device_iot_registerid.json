@@ -15,7 +15,7 @@
 		{
 			"name": "access_time",
 			"type": "String",
-			"description": "签名时间戳"
+			"description": "签名时间戳,毫秒,加密时使用时间加密则必传"
 		},
 		{
 			"name": "uuid",

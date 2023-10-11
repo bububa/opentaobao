@@ -1,0 +1,54 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "1"
+		},
+		{
+			"name": "derby_method",
+			"type": "String",
+			"description": "方法标识",
+			"required": true
+		},
+		{
+			"name": "derby_body",
+			"type": "String",
+			"description": "德比回调json信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "1"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "回调处理结果"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "返回值"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.derby.voucher.card.unlimited.change.callback",
+	"apiChineseName": "德比无限次券核销通知接口",
+	"description": "德比无限次券核销通知接口",
+	"id": 67004
+}

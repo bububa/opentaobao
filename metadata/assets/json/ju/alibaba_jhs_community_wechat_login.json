@@ -1,0 +1,26 @@
+{
+	"requestParams": [
+		{
+			"name": "code",
+			"type": "String",
+			"description": "动态令牌",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "String",
+			"description": "登录会话"
+		},
+		{
+			"name": "error",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.jhs.community.wechat.login",
+	"apiChineseName": "聚划算用增淘外社群登录",
+	"description": "聚划算用增淘外社群登录",
+	"id": 65707
+}

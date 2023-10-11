@@ -326,6 +326,28 @@
 									"name": "ticket_price",
 									"type": "Number",
 									"description": "票面价"
+								},
+								{
+									"subParams": [
+										{
+											"name": "age",
+											"type": "Number",
+											"description": "年龄，可能为空"
+										},
+										{
+											"name": "card_type",
+											"type": "Number",
+											"description": "0:身份证,1:护照,2:学生证,3:军官证,4:回乡证,5:台胞证,6:港澳通行证,7:国际海员,8:外国人永久居留证,9:其它证件,10:警官证,11:士兵证,12:台湾通行证,13:入台证,14:户口簿,15:出生证明,16:驾驶证,17:港澳居民居住证,18:台湾居民居住证"
+										},
+										{
+											"name": "id_card",
+											"type": "String",
+											"description": "身份证前4位，表明省市，仅当card_type=0时，该属性有值"
+										}
+									],
+									"name": "passenger_base_infos",
+									"type": "PassengerBaseInfo[]",
+									"description": "乘机人基础信息"
 								}
 							],
 							"name": "passenger_item_infos",

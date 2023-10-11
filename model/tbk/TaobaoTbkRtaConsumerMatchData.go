@@ -4,4 +4,6 @@ package tbk
 type TaobaoTbkRtaConsumerMatchData struct {
 	// 返回结果列表
 	ResultList []Resultlist `json:"result_list,omitempty" xml:"result_list>resultlist,omitempty"`
+	// 策略ID的匹配结果，仅在入参strategy_id_list字段非空时返回
+	StrategyResultList []StrategyResultList `json:"strategy_result_list,omitempty" xml:"strategy_result_list>strategy_result_list,omitempty"`
 }

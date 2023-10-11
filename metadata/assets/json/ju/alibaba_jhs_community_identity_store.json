@@ -1,0 +1,38 @@
+{
+	"requestParams": [
+		{
+			"name": "token",
+			"type": "String",
+			"description": "会话token",
+			"required": true
+		},
+		{
+			"name": "nick_name",
+			"type": "String",
+			"description": "用户昵称",
+			"required": true
+		},
+		{
+			"name": "avatar_url",
+			"type": "String",
+			"description": "用户头像",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "操作是否成功"
+		},
+		{
+			"name": "error",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.jhs.community.identity.store",
+	"apiChineseName": "用户信息存储",
+	"description": "用户信息存储",
+	"id": 65917
+}

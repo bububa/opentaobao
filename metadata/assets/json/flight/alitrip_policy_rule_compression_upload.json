@@ -1,0 +1,99 @@
+{
+	"requestParams": [
+		{
+			"name": "file",
+			"type": "byte[]",
+			"description": "alitrip.policy.rule.upload接口的参数经过压缩后得到的字节数组，生成的文件",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "data",
+									"type": "Number",
+									"description": "任务id"
+								},
+								{
+									"name": "error_code",
+									"type": "String",
+									"description": "任务失败错误码"
+								},
+								{
+									"name": "error_msg",
+									"type": "String",
+									"description": "任务失败错误原因"
+								},
+								{
+									"name": "success",
+									"type": "Boolean",
+									"description": "是否成功"
+								}
+							],
+							"name": "create_result",
+							"type": "ResultDto",
+							"description": "创建结果"
+						},
+						{
+							"subParams": [
+								{
+									"name": "data",
+									"type": "Number",
+									"description": "任务id"
+								},
+								{
+									"name": "error_code",
+									"type": "String",
+									"description": "任务失败错误码"
+								},
+								{
+									"name": "error_msg",
+									"type": "String",
+									"description": "任务失败错误原因"
+								},
+								{
+									"name": "success",
+									"type": "Boolean",
+									"description": "是否成功"
+								}
+							],
+							"name": "delete_result",
+							"type": "ResultDto",
+							"description": "删除结果"
+						}
+					],
+					"name": "data",
+					"type": "PolicyCreateResponseDTO",
+					"description": "创建\u0026删除结果参数"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误原因"
+				}
+			],
+			"name": "result",
+			"type": "ResultDTO",
+			"description": "异步获取历史数据接口返回结果"
+		}
+	],
+	"name": "alitrip.policy.rule.compression.upload",
+	"apiChineseName": "大批量上传规则类型的单程/往返政策",
+	"description": "大批量上传规则类型的单程/往返政策",
+	"id": 67842
+}

@@ -1,0 +1,121 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "current",
+							"type": "Number",
+							"description": "当前页数"
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "分页大小"
+						}
+					],
+					"name": "page",
+					"type": "BasePageQuery",
+					"description": "分页参数",
+					"required": true
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "商家活动id"
+				},
+				{
+					"name": "sku_codes",
+					"type": "String[]",
+					"description": "查询指定的skucode"
+				},
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "报名活动Id",
+					"required": true
+				}
+			],
+			"name": "param0",
+			"type": "ActivitySkuQuery",
+			"description": "换购商品查询参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总数"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "查询结果信息"
+				},
+				{
+					"name": "current",
+					"type": "Number",
+					"description": "当前页数"
+				},
+				{
+					"subParams": [
+						{
+							"name": "sku_name",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品skucode"
+						},
+						{
+							"name": "exchange_price",
+							"type": "Number",
+							"description": "换购价格"
+						},
+						{
+							"name": "exchange_total_limit",
+							"type": "Number",
+							"description": "换购限量"
+						}
+					],
+					"name": "sku_list",
+					"type": "ItemPoolSku[]",
+					"description": "查询结果数据"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页数size"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "total_page",
+					"type": "Number",
+					"description": "总页数"
+				}
+			],
+			"name": "result",
+			"type": "MarketPageResult",
+			"description": "查询结果"
+		}
+	],
+	"name": "alibaba.hm.marketing.itempool.stair.queryitem",
+	"apiChineseName": "换购商品查询",
+	"description": "换购商品查询",
+	"id": 67241
+}

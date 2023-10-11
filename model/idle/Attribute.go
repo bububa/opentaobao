@@ -20,6 +20,8 @@ type Attribute struct {
 	IdleAppraiseCheckpointsResult string `json:"idle_appraise_checkpoints_result,omitempty" xml:"idle_appraise_checkpoints_result,omitempty"`
 	// 拒绝识别场景原因枚举值
 	RefuseReasonCode string `json:"refuse_reason_code,omitempty" xml:"refuse_reason_code,omitempty"`
+	// 帮卖打款卖家支付宝流水号
+	PlatformSalePaidZfbId string `json:"platform_sale_paid_zfb_id,omitempty" xml:"platform_sale_paid_zfb_id,omitempty"`
 	// 支付订单号。orderStatus=5时必须上送
 	PayOrderId string `json:"pay_order_id,omitempty" xml:"pay_order_id,omitempty"`
 	// 拍卖订单违约金额，单位分，精确到元。orderSubStatus=204或者214时必须上送；orderStatus=5时必须上送(违约金总额)
@@ -86,4 +88,10 @@ type Attribute struct {
 	SpuMatch string `json:"spu_match,omitempty" xml:"spu_match,omitempty"`
 	// order_status=103、101时候填写 关闭原因code。QA_STAFF_NOT_VISIT_HOME(&#34;质检员未上门取件&#34;), SELLER_CAN_NOT_CONTACT(&#34;用户无法联系&#34;), SELLER_NOT_COME_STORE_AT_TIME(&#34;用户未按时到店&#34;), CANCEL_BY_SELLER_DEMAND(&#34;用户要求不回收了&#34;), QA_NOT_QUALIFIED(&#34;不符合服务商质检要求&#34;), OTHER(&#34;其他原因&#34;)
 	CloseReasonCode string `json:"close_reason_code,omitempty" xml:"close_reason_code,omitempty"`
+	// 逆向退回邮费，单位分
+	RefundLogisticsFee string `json:"refund_logistics_fee,omitempty" xml:"refund_logistics_fee,omitempty"`
+	// 补偿给卖家的费用
+	CompensationFee string `json:"compensation_fee,omitempty" xml:"compensation_fee,omitempty"`
+	// 是否允许用户修改地址
+	AgreeUseAddressChange string `json:"agree_use_address_change,omitempty" xml:"agree_use_address_change,omitempty"`
 }

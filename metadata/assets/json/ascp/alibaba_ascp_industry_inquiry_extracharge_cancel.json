@@ -1,0 +1,73 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "wds_coordination_order_id",
+					"type": "String",
+					"description": "BFC单号",
+					"required": true
+				},
+				{
+					"name": "extra_charge_service_order_id",
+					"type": "String",
+					"description": "增加费用服务调整单ID",
+					"required": true
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "描述"
+				},
+				{
+					"name": "feature",
+					"type": "String",
+					"description": "扩展字段"
+				},
+				{
+					"name": "seller_id",
+					"type": "String",
+					"description": "商家id",
+					"required": true
+				}
+			],
+			"name": "oms_cancel_extra_charge_parameter",
+			"type": "OmsCancelExtraChargeParameter",
+			"description": "请求对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回结果"
+				}
+			],
+			"name": "result",
+			"type": "ResultWrapper",
+			"description": "返回对象"
+		}
+	],
+	"name": "alibaba.ascp.industry.inquiry.extracharge.cancel",
+	"apiChineseName": "送货入户并安装服务商取消增加费用",
+	"description": "送货入户并安装服务商取消增加费用",
+	"id": 67303
+}

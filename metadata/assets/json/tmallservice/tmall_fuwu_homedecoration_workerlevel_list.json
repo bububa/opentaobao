@@ -1,0 +1,89 @@
+{
+	"requestParams": [
+		{
+			"name": "page_index",
+			"type": "Number",
+			"description": "当前页数"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页大小，不传默认只查20条，最大不能超过500"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "当前页码"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页大小"
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总页数"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "service_code",
+							"type": "String",
+							"description": "serviceCode"
+						},
+						{
+							"name": "worker_id",
+							"type": "Number",
+							"description": "工人id"
+						},
+						{
+							"name": "id_number",
+							"type": "String",
+							"description": "工人身份证号"
+						},
+						{
+							"name": "worker_level",
+							"type": "String",
+							"description": "技能等级(中级、初级、试用、高级)"
+						},
+						{
+							"name": "worker_mobile",
+							"type": "String",
+							"description": "工人手机号"
+						}
+					],
+					"name": "data_list",
+					"type": "SupplyLevelWorkerDTO[]",
+					"description": "工人分层数据"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "响应结果"
+		}
+	],
+	"name": "tmall.fuwu.homedecoration.workerlevel.list",
+	"apiChineseName": "查询工人分层数据接口",
+	"description": "查询工人分层数据接口",
+	"id": 67333
+}

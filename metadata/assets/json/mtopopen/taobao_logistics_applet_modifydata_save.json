@@ -1,0 +1,90 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "order_code",
+					"type": "String",
+					"description": "订单ID"
+				},
+				{
+					"name": "cp_code",
+					"type": "String",
+					"description": "快递公司标准编码",
+					"required": true
+				},
+				{
+					"name": "mail_no",
+					"type": "String",
+					"description": "快递单号",
+					"required": true
+				},
+				{
+					"name": "receive_type",
+					"type": "Number",
+					"description": "收货方式「送货上门：0，快递柜/代收点：1，指定地点：2，找人代收：3，其他：-1」",
+					"required": true
+				},
+				{
+					"name": "extend_param",
+					"type": "String",
+					"description": "收货方式对应的参数，送货上门：{\"day\":\"2023-03-22\",\"times\":\"10:00-13:00\"} 派送到指定地点：{\"point\":\"物业\"} 找人代收：{\"fullName\":\"xxxx\",\"mobile\":\"xxxxxx\"}",
+					"required": true
+				},
+				{
+					"name": "channel",
+					"type": "String",
+					"description": "修改渠道-淘宝小程序：taoBao，非淘宝：others",
+					"required": true
+				}
+			],
+			"name": "modify_request",
+			"type": "ModifyDeliveryRequest",
+			"description": "请求对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "通讯成功/失败"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "通讯失败码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "通讯失败信息"
+		},
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "信息回传是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "信息回传错误码(成功情况无需关注)"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "信息回传错误原因(成功情况无需关注)"
+				}
+			],
+			"name": "modify_response",
+			"type": "ModifyDeliveryResponse",
+			"description": "回传返回结果对象"
+		}
+	],
+	"name": "taobao.logistics.applet.modifydata.save",
+	"apiChineseName": "物流小程序修改物流信息回传接口",
+	"description": "物流小程序修改物流信息回传接口",
+	"id": 67263
+}

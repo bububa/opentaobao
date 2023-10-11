@@ -26,6 +26,8 @@ type DerbyVoucherCountVo struct {
 	EndDate string `json:"end_date,omitempty" xml:"end_date,omitempty"`
 	// 1
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
+	// 单次或无限次
+	UseTimes string `json:"use_times,omitempty" xml:"use_times,omitempty"`
 	// 1
 	Count int64 `json:"count,omitempty" xml:"count,omitempty"`
 	// 1

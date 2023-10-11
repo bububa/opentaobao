@@ -9,7 +9,7 @@ import (
 // TaobaoTbkOrderDetailsGetAPIResponse 淘宝客-推广者-所有订单查询 API返回值
 // taobao.tbk.order.details.get
 //
-// 淘宝客订单查询
+// 淘宝客推广带来的所有拍下付款的正向订单明细报表。
 type TaobaoTbkOrderDetailsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTbkOrderDetailsGetAPIResponseModel

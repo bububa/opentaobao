@@ -30,6 +30,8 @@ type ArticleBizOrder struct {
 	RefundFee string `json:"refund_fee,omitempty" xml:"refund_fee,omitempty"`
 	// activityCode
 	ActivityCode string `json:"activity_code,omitempty" xml:"activity_code,omitempty"`
+	// 业务订单状态
+	OrderBizStatus string `json:"order_biz_status,omitempty" xml:"order_biz_status,omitempty"`
 	// 订单类型，1=新订 2=续订 3=升级 4=后台赠送 5=后台自动续订 6=订单审核后生成订购关系（暂时用不到）
 	BizType int64 `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
 	// 子订单号

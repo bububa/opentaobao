@@ -1,0 +1,178 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户标识"
+		},
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "微信认证code"
+				},
+				{
+					"name": "raw_data",
+					"type": "String",
+					"description": "用户的基本信息"
+				},
+				{
+					"name": "signature",
+					"type": "String",
+					"description": "验签数据完整签名"
+				},
+				{
+					"name": "encrypted_info",
+					"type": "String",
+					"description": "用户信息的加密数据"
+				},
+				{
+					"name": "info_iv",
+					"type": "String",
+					"description": "解密unionId的算法初始化向量"
+				},
+				{
+					"name": "encrypted_phone",
+					"type": "String",
+					"description": "包含用户手机号的加密信息"
+				},
+				{
+					"name": "phone_iv",
+					"type": "String",
+					"description": "解密用户手机号的初始化向量"
+				},
+				{
+					"name": "ip",
+					"type": "String",
+					"description": "用户的ip"
+				},
+				{
+					"name": "channel",
+					"type": "Number",
+					"description": "用户注册的渠道"
+				},
+				{
+					"name": "old_version",
+					"type": "Boolean",
+					"description": "是否是老版本"
+				},
+				{
+					"name": "scene_distinction",
+					"type": "String",
+					"description": "场景值"
+				},
+				{
+					"name": "name_verification",
+					"type": "String",
+					"description": "姓名验证"
+				},
+				{
+					"subParams": [
+						{
+							"name": "nk_name",
+							"type": "String",
+							"description": "昵称"
+						},
+						{
+							"name": "gender",
+							"type": "Number",
+							"description": "性别"
+						},
+						{
+							"name": "language",
+							"type": "String",
+							"description": "语言"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "城市"
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省份"
+						},
+						{
+							"name": "country",
+							"type": "String",
+							"description": "国家"
+						},
+						{
+							"name": "avatar_url",
+							"type": "String",
+							"description": "头像"
+						}
+					],
+					"name": "new_userinfo",
+					"type": "NewUserInfo",
+					"description": "新版本的用户信息"
+				}
+			],
+			"name": "login_param",
+			"type": "LoginParam",
+			"description": "微信向程序登录参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "具体错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "token",
+							"type": "String",
+							"description": "token"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "用户当前状态"
+						},
+						{
+							"name": "scene_code",
+							"type": "String",
+							"description": "二次验证场景"
+						},
+						{
+							"name": "for_name_verification",
+							"type": "String",
+							"description": "用户姓"
+						},
+						{
+							"name": "update_toast_sign",
+							"type": "Boolean",
+							"description": "手机号更新换绑提示"
+						}
+					],
+					"name": "content",
+					"type": "UserCurrentStatus",
+					"description": "用户token相关信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "返回结果"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.wechat.user.authorize.login",
+	"apiChineseName": "DFC-ID用户手机号授权登录",
+	"description": "DFC-ID用户手机号授权登录",
+	"id": 67663
+}

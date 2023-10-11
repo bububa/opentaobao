@@ -12,4 +12,6 @@ type DistributeTradeOrderInfo struct {
 	PayUrl string `json:"pay_url,omitempty" xml:"pay_url,omitempty"`
 	// 加密串
 	SignStr string `json:"sign_str,omitempty" xml:"sign_str,omitempty"`
+	// 0:初始化，1:成功，2:失败
+	Status string `json:"status,omitempty" xml:"status,omitempty"`
 }

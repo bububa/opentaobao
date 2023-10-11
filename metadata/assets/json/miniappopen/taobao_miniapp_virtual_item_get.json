@@ -1,0 +1,82 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "item_ids",
+					"type": "Number[]",
+					"description": "商品id列表",
+					"required": true
+				},
+				{
+					"name": "app_id",
+					"type": "Number",
+					"description": "小程序小游戏appId",
+					"required": true
+				}
+			],
+			"name": "item_request",
+			"type": "MiniappItemRequest",
+			"description": "请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "suc",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "e_code",
+			"type": "Number",
+			"description": "业务错误信息"
+		},
+		{
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品id"
+				},
+				{
+					"name": "main_pic_url",
+					"type": "String",
+					"description": "主图"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "商品标题"
+				},
+				{
+					"name": "reserve_price",
+					"type": "Number",
+					"description": "一口价，单位【分】"
+				},
+				{
+					"name": "out_item_id",
+					"type": "String",
+					"description": "外部商品id"
+				},
+				{
+					"name": "auction_status",
+					"type": "Number",
+					"description": "0-正常，其他均为不正常"
+				}
+			],
+			"name": "model",
+			"type": "MiniappItemDTO []",
+			"description": "返回列表"
+		},
+		{
+			"name": "err_message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "taobao.miniapp.virtual.item.get",
+	"apiChineseName": "小程序关联虚拟商品查询",
+	"description": "小程序关联虚拟商品查询",
+	"id": 67373
+}

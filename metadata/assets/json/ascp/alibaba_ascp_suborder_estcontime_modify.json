@@ -1,0 +1,94 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "子单维度的商品id，若是组合商品需要传成分品的商品id",
+					"required": true
+				},
+				{
+					"name": "sub_order_id",
+					"type": "Number",
+					"description": "交易子单编号",
+					"required": true
+				},
+				{
+					"name": "est_con_time",
+					"type": "String",
+					"description": "修改后的发货时效，只允许往前改;1_+绝对时间为修改到当日的23:59:59，2_+天数为修改到付款时间加上天数",
+					"required": true
+				}
+			],
+			"name": "modify_est_con_time_request",
+			"type": "ModifyEstConTimeRequest",
+			"description": "修改商品发货时效请求"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "display_msg",
+					"type": "String",
+					"description": "对用户展示的错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误代码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "sub_order_id",
+							"type": "Number",
+							"description": "交易子单编号"
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品id"
+						},
+						{
+							"name": "modify",
+							"type": "Number",
+							"description": "修改时间（时间戳）"
+						},
+						{
+							"name": "est_con_time",
+							"type": "String",
+							"description": "修改后的发货时效"
+						},
+						{
+							"name": "old_est_con_time",
+							"type": "String",
+							"description": "修改前的发货时效"
+						}
+					],
+					"name": "value",
+					"type": "EstConTimeModifyDTO",
+					"description": "时效修改返回信息"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "系统内部错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回值"
+		}
+	],
+	"name": "alibaba.ascp.suborder.estcontime.modify",
+	"apiChineseName": "向前修改发货时效",
+	"description": "向前修改发货时效",
+	"id": 66577
+}

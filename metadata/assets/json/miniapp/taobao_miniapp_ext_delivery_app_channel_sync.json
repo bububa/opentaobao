@@ -1,0 +1,84 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "miniapp_id",
+					"type": "Number",
+					"description": "节点小程序id",
+					"required": true
+				},
+				{
+					"name": "config_url",
+					"type": "String",
+					"description": "商家配置授权的地址",
+					"required": true
+				},
+				{
+					"name": "ext_properties",
+					"type": "String",
+					"description": "扩展参数"
+				},
+				{
+					"name": "channel",
+					"type": "String",
+					"description": "渠道id：1-微信；2-抖音；3-今日头条；4-快手；5-百度；6-其他",
+					"required": true
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "私域卡片描述。长度不能超过25",
+					"required": true
+				},
+				{
+					"name": "isv_simple_name",
+					"type": "String",
+					"description": "服务商简称，用于卡片角标",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "私域卡片标题。长度不能超过12",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "有效状态"
+				}
+			],
+			"name": "app_channel_config_dto",
+			"type": "AppChannelConfigDTO",
+			"description": "body",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "successful",
+			"type": "Boolean",
+			"description": "true or false"
+		},
+		{
+			"name": "error_type",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "model",
+			"type": "Number",
+			"description": "configId"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "taobao.miniapp.ext.delivery.app.channel.sync",
+	"apiChineseName": "ISV写入应用的渠道信息",
+	"description": "ISV写入应用的渠道信息",
+	"id": 67553
+}

@@ -2,6 +2,8 @@ package btrip
 
 // HotelDetailRateDto 结构体
 type HotelDetailRateDto struct {
+	// 每日优惠后价格DTO
+	PricePlan []DiscountDailyPrice `json:"price_plan,omitempty" xml:"price_plan>discount_daily_price,omitempty"`
 	// 早餐描述
 	Breakfast string `json:"breakfast,omitempty" xml:"breakfast,omitempty"`
 	// 免费取消政策描述

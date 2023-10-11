@@ -1,0 +1,102 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "用户id",
+					"required": true
+				},
+				{
+					"name": "dir_id_for_tu",
+					"type": "Number",
+					"description": "tu业务线图片上传文件夹id，填0上传到根目录"
+				},
+				{
+					"name": "dir_id_for_qnaigc",
+					"type": "Number",
+					"description": "qnaigc业务线图片上传文件夹id，填0上传到根目录"
+				},
+				{
+					"name": "image_data",
+					"type": "byte[]",
+					"description": "图片字节列表，image_data和image_url二选一"
+				},
+				{
+					"name": "image_url",
+					"type": "String",
+					"description": "图片url，image_data和image_url二选一"
+				},
+				{
+					"name": "image_title",
+					"type": "String",
+					"description": "123.jpg"
+				}
+			],
+			"name": "upload_request",
+			"type": "UploadRequest",
+			"description": "qnaigc业务线图片上传请求"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_ext_map",
+					"type": "String",
+					"description": "上传额外信息"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "上传结果状态信息"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "上传结果状态码"
+				},
+				{
+					"name": "http_status_code",
+					"type": "Number",
+					"description": "http状态码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "dir_id",
+							"type": "Number",
+							"description": "上传文件夹id"
+						},
+						{
+							"name": "size",
+							"type": "Number",
+							"description": "图片大小"
+						},
+						{
+							"name": "full_url",
+							"type": "String",
+							"description": "图片url"
+						},
+						{
+							"name": "object_key",
+							"type": "String",
+							"description": "0"
+						}
+					],
+					"name": "model",
+					"type": "FileDO",
+					"description": "图片结果"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "上传结果"
+		}
+	],
+	"name": "taobao.picture.qnaigc.upload",
+	"apiChineseName": "qnaigc业务线图片上传",
+	"description": "qnaigc业务线图片上传",
+	"id": 67398
+}

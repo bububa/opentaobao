@@ -1,0 +1,43 @@
+{
+	"requestParams": [
+		{
+			"name": "table_id",
+			"type": "String",
+			"description": "待更新工作表id",
+			"required": true
+		},
+		{
+			"name": "id",
+			"type": "String",
+			"description": "待更新记录主键",
+			"required": true
+		},
+		{
+			"name": "record",
+			"type": "String",
+			"description": "提交更新数据，更新仅支持单条新增，格式同新增记录接口",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "count",
+			"type": "Number",
+			"description": "更新记录行数"
+		},
+		{
+			"name": "business_success",
+			"type": "Boolean",
+			"description": "调用结果"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "taobao.smartapp.table.update",
+	"apiChineseName": "智能应用服务登记工作表数据更新",
+	"description": "智能应用服务登记工作表数据更新",
+	"id": 67463
+}

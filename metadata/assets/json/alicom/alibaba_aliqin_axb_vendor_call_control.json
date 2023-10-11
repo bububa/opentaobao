@@ -42,6 +42,21 @@
 					"type": "String",
 					"description": "供应商KEY",
 					"required": true
+				},
+				{
+					"name": "call_phase",
+					"type": "String",
+					"description": "呼叫能力阶段，默认填0"
+				},
+				{
+					"name": "b_call_history",
+					"type": "String",
+					"description": "如果有原始被叫号码信息填1"
+				},
+				{
+					"name": "parse_result",
+					"type": "String",
+					"description": "当响应指令为“短信解析”时，供应商平台完成短信内容解析，在重新发起查询请求时会携带；短信解析结果，0：成功，1：失败"
 				}
 			],
 			"name": "start_call_request",
@@ -77,12 +92,12 @@
 						{
 							"name": "call_no_play_code",
 							"type": "String",
-							"description": "主叫放音编码"
+							"description": "主叫放音编码，多个文件用英文逗号分隔。"
 						},
 						{
 							"name": "called_no_play_code",
 							"type": "String",
-							"description": "被叫放音编码"
+							"description": "被叫放音编码，多个文件用英文逗号分隔。"
 						},
 						{
 							"subParams": [
@@ -112,6 +127,16 @@
 											"name": "called_no_play_code",
 											"type": "String",
 											"description": "被叫放音"
+										},
+										{
+											"name": "called_no_caller_play_code",
+											"type": "String",
+											"description": "摘机后主叫侧的放音编码，多个文件用英文逗号分隔。"
+										},
+										{
+											"name": "polling_no",
+											"type": "Number",
+											"description": "顺振序号，从1开始"
 										}
 									],
 									"name": "sequence_calls",
@@ -121,7 +146,7 @@
 								{
 									"name": "sms_channel",
 									"type": "String",
-									"description": "短信通道方式SMS_INTERCEPT(拦截推送阿里)，SMS_NORMAL_SEND(正常现网下发)，SMS_DROP(拦截丢弃)"
+									"description": "短信通道方式SMS_INTERCEPT(拦截推送阿里)，SMS_NORMAL_SEND(正常现网下发)，SMS_INTERCEPT_SEND(截取并转发)，SMS_DROP(拦截丢弃)，"
 								},
 								{
 									"name": "call_type",
@@ -229,11 +254,53 @@
 											"name": "waiting_end_call",
 											"type": "Number",
 											"description": "挂机等待时长"
+										},
+										{
+											"name": "direction",
+											"type": "Number",
+											"description": "0:主叫,1:被叫"
 										}
 									],
 									"name": "end_call_ivr",
 									"type": "EndCallIvr",
 									"description": "挂机IVR参数"
+								},
+								{
+									"subParams": [
+										{
+											"name": "call_no_ringing",
+											"type": "String",
+											"description": "无振铃无法接通时，顺振到下一个号码，例如空号、停机、关机等。该参数不传时默认为1。1：生效"
+										},
+										{
+											"name": "call_forwarded",
+											"type": "String",
+											"description": "忙呼转的情况，指被叫本身设置了【呼叫转移号码】（181信令），出现呼叫转移时顺振到下一个号码。该参数不传时默认为1。1：生效"
+										},
+										{
+											"name": "busy_reject",
+											"type": "String",
+											"description": "忙拒绝情况，指【被叫忙】以及【被叫拒接】时，顺振到下一个号码。该参数不传时默认为1。1：生效"
+										},
+										{
+											"name": "call_timeout",
+											"type": "String",
+											"description": "振铃无响应超时顺振,传入数字n，表示振铃后n秒后顺振到下一个号码。该参数不传时默认为30（也即是30秒顺振下一个号码），单位秒"
+										}
+									],
+									"name": "sequence_call_rule",
+									"type": "SequenceCallRule",
+									"description": "顺振规则"
+								},
+								{
+									"name": "content_format",
+									"type": "String",
+									"description": "格式定义"
+								},
+								{
+									"name": "status_report",
+									"type": "Number",
+									"description": "是否需要状态报告，0：不需要，1：需要"
 								}
 							],
 							"name": "subs",
@@ -244,6 +311,16 @@
 							"name": "media_degrade",
 							"type": "Boolean",
 							"description": "是否媒体资源降级,放弃录音放音功能；接入方无此相关功能，可忽略"
+						},
+						{
+							"name": "call_duration",
+							"type": "Number",
+							"description": "通话持续时长，可选，单位秒，如果出现则通话有效时长为此值，如果没有出现按现在默认处理"
+						},
+						{
+							"name": "called_no_caller_play_code",
+							"type": "String",
+							"description": "摘机后主叫侧的放音编码，多个文件用英文逗号分隔。"
 						}
 					],
 					"name": "control_resp_dto",

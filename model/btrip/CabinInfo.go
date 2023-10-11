@@ -16,6 +16,8 @@ type CabinInfo struct {
 	ChildCabin string `json:"child_cabin,omitempty" xml:"child_cabin,omitempty"`
 	// 商品Id
 	OtaItemid string `json:"ota_itemid,omitempty" xml:"ota_itemid,omitempty"`
+	// 改签航班的退改签规则
+	ChangeOtaItemRuleRq *ChangeOtaItemRuleRq `json:"change_ota_item_rule_rq,omitempty" xml:"change_ota_item_rule_rq,omitempty"`
 	// 舱位折扣
 	CabinDiscount int64 `json:"cabin_discount,omitempty" xml:"cabin_discount,omitempty"`
 }

@@ -6,7 +6,7 @@ type Subs struct {
 	SequenceCalls []SequenceCalls `json:"sequence_calls,omitempty" xml:"sequence_calls>sequence_calls,omitempty"`
 	// 被叫号码
 	CalledNo string `json:"called_no,omitempty" xml:"called_no,omitempty"`
-	// 短信通道方式SMS_INTERCEPT(拦截推送阿里)，SMS_NORMAL_SEND(正常现网下发)，SMS_DROP(拦截丢弃)
+	// 短信通道方式SMS_INTERCEPT(拦截推送阿里)，SMS_NORMAL_SEND(正常现网下发)，SMS_INTERCEPT_SEND(截取并转发)，SMS_DROP(拦截丢弃)，
 	SmsChannel string `json:"sms_channel,omitempty" xml:"sms_channel,omitempty"`
 	// 呼叫类型MASTER(A-&gt;X-&gt;B), CALLED(B-&gt;X-&gt;A), SMS_SENDER, SMS_RECEIVER
 	CallType string `json:"call_type,omitempty" xml:"call_type,omitempty"`
@@ -28,12 +28,18 @@ type Subs struct {
 	OutId string `json:"out_id,omitempty" xml:"out_id,omitempty"`
 	// 实时媒体类型1 彩铃  2 通话  3 彩铃和通话
 	RtpType string `json:"rtp_type,omitempty" xml:"rtp_type,omitempty"`
+	// 格式定义
+	ContentFormat string `json:"content_format,omitempty" xml:"content_format,omitempty"`
 	// 顺振超时时间
 	SequenceTimeout int64 `json:"sequence_timeout,omitempty" xml:"sequence_timeout,omitempty"`
 	// 是否开启铃音检测 0：不开启 1：开启
 	RrdsControl int64 `json:"rrds_control,omitempty" xml:"rrds_control,omitempty"`
 	// 挂机IVR参数
 	EndCallIvr *EndCallIvr `json:"end_call_ivr,omitempty" xml:"end_call_ivr,omitempty"`
+	// 顺振规则
+	SequenceCallRule *SequenceCallRule `json:"sequence_call_rule,omitempty" xml:"sequence_call_rule,omitempty"`
+	// 是否需要状态报告，0：不需要，1：需要
+	StatusReport int64 `json:"status_report,omitempty" xml:"status_report,omitempty"`
 	// 是否需要录音
 	NeedRecord bool `json:"need_record,omitempty" xml:"need_record,omitempty"`
 	// 是否实时媒体

@@ -1,0 +1,211 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码",
+					"required": true
+				}
+			],
+			"name": "top_service_context",
+			"type": "TopServiceContext",
+			"description": "topServiceContext",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "split_type",
+					"type": "String",
+					"description": "汇总类型 sum-汇总,hour-分时,day-分天,week-分周,month-分月",
+					"required": true
+				},
+				{
+					"name": "unify_type",
+					"type": "String",
+					"description": "归因口径，zhai-末次点击归因， mta-mta归因",
+					"required": true
+				},
+				{
+					"name": "start_time",
+					"type": "String",
+					"description": "开始时间",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "String",
+					"description": "结束时间",
+					"required": true
+				},
+				{
+					"name": "effect_equal",
+					"type": "Number",
+					"description": "归因周期，1、3、7、15、30",
+					"required": true
+				},
+				{
+					"name": "biz_code_in_list",
+					"type": "String[]",
+					"description": "场景筛选code"
+				},
+				{
+					"name": "strategy_optimize_target_in_list",
+					"type": "Number[]",
+					"description": "优化目标筛选"
+				},
+				{
+					"name": "strategy_campaign_id_in_list",
+					"type": "Number[]",
+					"description": "计划id筛选"
+				},
+				{
+					"name": "strategy_adgroup_id_or_name",
+					"type": "String",
+					"description": "单元id或者名称筛选"
+				},
+				{
+					"name": "strategy_adgroup_id_in_list",
+					"type": "Number[]",
+					"description": "单元id筛选"
+				},
+				{
+					"name": "sub_promotion_types",
+					"type": "String[]",
+					"description": "主体类型筛选，ITEM_PRIVATE_MINIL-橱窗，SHOP-店铺，USER_DEFINE_URL-自定义"
+				},
+				{
+					"name": "strategy_target_title_like",
+					"type": "String",
+					"description": "人群名称模糊过滤"
+				},
+				{
+					"name": "item_ids",
+					"type": "Number[]",
+					"description": "宝贝id筛选"
+				},
+				{
+					"name": "strategy_creative_id_or_name",
+					"type": "String",
+					"description": "仅创意报表有效,创意筛选"
+				},
+				{
+					"name": "adzone_pkg_id_in_list",
+					"type": "Number[]",
+					"description": "流量来源资源包id筛选"
+				},
+				{
+					"name": "bid_word_type_in_list",
+					"type": "String[]",
+					"description": "词包还是词"
+				},
+				{
+					"name": "strategy_bidword_name_like",
+					"type": "String",
+					"description": "词模糊筛选"
+				},
+				{
+					"name": "strategy_bidword_pkg_name_like",
+					"type": "String",
+					"description": "词包模糊筛选"
+				},
+				{
+					"name": "province_id_in_list",
+					"type": "Number[]",
+					"description": "省份筛选"
+				},
+				{
+					"name": "query_domains",
+					"type": "String[]",
+					"description": "聚合维度，可用值和选择对应报表类型一致"
+				},
+				{
+					"name": "query_field_in_list",
+					"type": "String[]",
+					"description": "需要下载的指标数据"
+				},
+				{
+					"name": "excel_name",
+					"type": "String",
+					"description": "报表异步下载文件名称，下载时必填",
+					"required": true
+				},
+				{
+					"name": "field_type",
+					"type": "String",
+					"description": "下载指标设置， all-全部指标，selected-下载传入指标",
+					"required": true
+				},
+				{
+					"name": "parent_adc_name",
+					"type": "String",
+					"description": "报表下载需要的参数，必填, report_frame_account-账户,report_frame_campaign-计划,report_frame_adgroup-单元,report_frame_bidword-关键词,report_frame_crowd-人群,report_frame_item_promotion-宝贝主体,report_frame_other_promotion-其他主体,report_frame_creative-创意,report_frame_area-地域",
+					"required": true
+				},
+				{
+					"name": "offset",
+					"type": "Number",
+					"description": "偏移量"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页面大小"
+				}
+			],
+			"name": "report_query_v_o",
+			"type": "ReportQueryVo",
+			"description": "reportQueryVO",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "ok",
+							"type": "Boolean",
+							"description": "是否成功"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误编码"
+						}
+					],
+					"name": "info",
+					"type": "TopInfo",
+					"description": "请求系统信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "task_id",
+							"type": "Number",
+							"description": "任务id"
+						}
+					],
+					"name": "top_report_download_v_o",
+					"type": "TopReportDownloadVo",
+					"description": "结果集"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.universalbp.report.async.create.download.task",
+	"apiChineseName": "创建异步下载任务",
+	"description": "入参报表查询信息，出参下载任务id",
+	"id": 67257
+}

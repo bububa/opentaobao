@@ -1,0 +1,83 @@
+{
+	"requestParams": [
+		{
+			"name": "supplier_id",
+			"type": "Number",
+			"description": "淘天物流服务商ID",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "1-图片，2-视频",
+			"required": true
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "图片/视频名称，只支持后缀：.jpg、.png、.mp4",
+			"required": true
+		},
+		{
+			"name": "data",
+			"type": "byte[]",
+			"description": "图片/视频的字节数组",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true|false"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息"
+				},
+				{
+					"name": "result",
+					"type": "String",
+					"description": "0=全部失败，1=全部成功，2=部分成功"
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "traceId"
+				},
+				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "图片/视频名称"
+						},
+						{
+							"name": "path",
+							"type": "String",
+							"description": "图片/视频相对地址"
+						}
+					],
+					"name": "data",
+					"type": "MediaResourceDTO",
+					"description": "上传结果"
+				}
+			],
+			"name": "result",
+			"type": "LspTopResponse",
+			"description": "图片视频上传出参"
+		}
+	],
+	"name": "taobao.logistics.media.resources.upload",
+	"apiChineseName": "图片与视频上传",
+	"description": "图片与视频上传",
+	"id": 67448
+}

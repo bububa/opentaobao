@@ -14,4 +14,6 @@ type CnskuRelationDto struct {
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 状态
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+	// skuId,当商品存在sku时,该参数必传
+	IcSkuId int64 `json:"ic_sku_id,omitempty" xml:"ic_sku_id,omitempty"`
 }

@@ -31,6 +31,21 @@
 			"name": "nick",
 			"type": "String",
 			"description": "外部商家名称。必须同时填写platform"
+		},
+		{
+			"name": "erp_order_id",
+			"type": "String",
+			"description": "主单号对应的erp单号，转单、审单、通知配货、出库 需要填。拆单、合单场景下不用填"
+		},
+		{
+			"name": "taobao_sub_order_ids",
+			"type": "String",
+			"description": "淘宝子订单id（拆单、合单场景下不用填，其他场景需要回传,用英文逗号隔开）"
+		},
+		{
+			"name": "event_time",
+			"type": "String",
+			"description": "触发事件的时间"
 		}
 	],
 	"responseParams": [

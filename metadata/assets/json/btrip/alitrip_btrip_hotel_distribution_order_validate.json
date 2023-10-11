@@ -230,6 +230,16 @@
 													"name": "date",
 													"type": "String",
 													"description": "入住日期"
+												},
+												{
+													"name": "discount_daily_price",
+													"type": "Number",
+													"description": "不取整的每日优惠后价格"
+												},
+												{
+													"name": "rounding_discount_daily_price",
+													"type": "Number",
+													"description": "取整后的每日优惠后价格"
 												}
 											],
 											"name": "daily_price_info_list",

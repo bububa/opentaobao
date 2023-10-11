@@ -1,0 +1,166 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "os",
+					"type": "String",
+					"description": "操作系统： Android/iOS/Windows/macOS",
+					"required": true
+				},
+				{
+					"name": "is_md5",
+					"type": "Boolean",
+					"description": "是否 md5 hash 值",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "设备标识类型： oaid/idfa/imei/caid1/caid2",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "String",
+					"description": "设备标识内容",
+					"required": true
+				}
+			],
+			"name": "device_ids",
+			"type": "DeviceIdParam",
+			"description": "设备信息",
+			"required": true
+		},
+		{
+			"name": "wanted_size",
+			"type": "Number",
+			"description": "需要的数据量，如果产出的数据不足，会返回错误代码：data insufficient"
+		},
+		{
+			"name": "site_id",
+			"type": "String",
+			"description": "媒体站点类型"
+		},
+		{
+			"name": "data_offset",
+			"type": "Number",
+			"description": "数据偏移位置"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "name",
+					"type": "String",
+					"description": "词条"
+				},
+				{
+					"name": "popularity",
+					"type": "Number",
+					"description": "热度"
+				},
+				{
+					"name": "tag",
+					"type": "String",
+					"description": "标签，可选，热、新等"
+				},
+				{
+					"name": "tag_url",
+					"type": "String",
+					"description": "标签对应的图片 url"
+				},
+				{
+					"name": "deeplink_url",
+					"type": "String",
+					"description": "App跳转链接"
+				},
+				{
+					"name": "h5_url",
+					"type": "String",
+					"description": "未安装淘宝时 h5 页面跳"
+				},
+				{
+					"name": "click_url",
+					"type": "String[]",
+					"description": "点击上报链接"
+				},
+				{
+					"name": "exposure_url",
+					"type": "String[]",
+					"description": "词条曝光链接"
+				},
+				{
+					"name": "invalid_time",
+					"type": "Number",
+					"description": "词条失效时间(秒级时间戳)"
+				},
+				{
+					"name": "display_image_url",
+					"type": "String",
+					"description": "展示图片"
+				},
+				{
+					"name": "heat_search_text",
+					"type": "String",
+					"description": "热度搜索文字"
+				},
+				{
+					"name": "sub_title",
+					"type": "String",
+					"description": "副标题"
+				}
+			],
+			"name": "buzzwords",
+			"type": "BuzzwordDto []",
+			"description": "榜单词条列表"
+		},
+		{
+			"subParams": [
+				{
+					"name": "deeplink_url",
+					"type": "String",
+					"description": "App跳转链接"
+				},
+				{
+					"name": "h5_url",
+					"type": "String",
+					"description": "未安装淘宝时 h5 页面跳"
+				},
+				{
+					"name": "exposure_url",
+					"type": "String[]",
+					"description": "拓展曝光上报链接, 可以用于榜单曝光"
+				},
+				{
+					"name": "click_url",
+					"type": "String[]",
+					"description": "拓展点击上报链接, 可以用于“点击更多”上报"
+				}
+			],
+			"name": "extra",
+			"type": "ExtraDto",
+			"description": "更多内容跳转链接"
+		},
+		{
+			"name": "is_offering",
+			"type": "Boolean",
+			"description": "是否针对此设备进行投放"
+		},
+		{
+			"name": "cache_duration",
+			"type": "Number",
+			"description": "缓存时长，单位是秒"
+		},
+		{
+			"name": "exposure_url",
+			"type": "String",
+			"description": "榜单词条曝光链接"
+		}
+	],
+	"name": "taobao.growth.reaching.buzzword.query",
+	"apiChineseName": "淘宝热词榜单数据查询接口",
+	"description": "查询淘宝热词榜单数据",
+	"id": 62182
+}

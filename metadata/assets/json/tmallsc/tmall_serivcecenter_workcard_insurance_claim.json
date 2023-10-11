@@ -1,0 +1,74 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "workcard_id",
+					"type": "Number",
+					"description": "工单ID",
+					"required": true
+				},
+				{
+					"name": "claim_desc",
+					"type": "String",
+					"description": "拒绝理赔原因（拒绝时启用"
+				},
+				{
+					"name": "claim_count",
+					"type": "Number",
+					"description": "理赔单数量：理论都为1",
+					"required": true
+				},
+				{
+					"name": "claim_order_no",
+					"type": "String",
+					"description": "理赔单号",
+					"required": true
+				},
+				{
+					"name": "claim_status",
+					"type": "Number",
+					"description": "理赔状态0：未理赔 1 理赔成功 2：理赔失败",
+					"required": true
+				},
+				{
+					"name": "claim_time",
+					"type": "Date",
+					"description": "理赔时间",
+					"required": true
+				},
+				{
+					"name": "claim_fee",
+					"type": "Number",
+					"description": "理赔金额（分",
+					"required": true
+				}
+			],
+			"name": "workcard_insurance_callback_request",
+			"type": "WorkcardInsuranceCallbackRequest",
+			"description": "工单回传理赔信息入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "tmall.serivcecenter.workcard.insurance.claim",
+	"apiChineseName": "保险理赔回传工单记录",
+	"description": "保险理赔回传工单记录",
+	"id": 65595
+}

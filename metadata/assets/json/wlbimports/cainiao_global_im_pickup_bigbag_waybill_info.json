@@ -11,13 +11,17 @@
 				{
 					"name": "bigbag_id",
 					"type": "Number",
-					"description": "大包id",
-					"required": true
+					"description": "大包id"
+				},
+				{
+					"name": "appointment_order_id",
+					"type": "Number",
+					"description": "预约单id"
 				}
 			],
 			"name": "bigbag_waybill_request",
 			"type": "BigbagWaybillRequest",
-			"description": "请求参数",
+			"description": "bigbagId和appointmentOrderId必填一个",
 			"required": true
 		}
 	],

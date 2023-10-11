@@ -1,0 +1,72 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "template_id_list",
+					"type": "Number[]",
+					"description": "日历模版id集合"
+				},
+				{
+					"name": "sn_no",
+					"type": "String",
+					"description": "序列号",
+					"required": true
+				}
+			],
+			"name": "calender_template_query",
+			"type": "CalenderTemplateQuery",
+			"description": "参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "api_error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "api_success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "api_error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "日期名称"
+						},
+						{
+							"name": "date_list",
+							"type": "Date[]",
+							"description": "时期集合"
+						},
+						{
+							"name": "template_id",
+							"type": "Number",
+							"description": "日期ID"
+						}
+					],
+					"name": "content",
+					"type": "CalendarTemplateDTO[]",
+					"description": "结果内容"
+				}
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.campus.guard.timeperiod.listdatetemplate",
+	"apiChineseName": "门禁控制器查询日期模版",
+	"description": "门禁控制器查询日期模版",
+	"id": 67569
+}

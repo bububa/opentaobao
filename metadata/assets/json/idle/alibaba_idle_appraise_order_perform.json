@@ -54,6 +54,11 @@
 							"name": "refuse_reason_code",
 							"type": "String",
 							"description": "拒绝识别场景原因枚举值"
+						},
+						{
+							"name": "platform_sale_paid_zfb_id",
+							"type": "String",
+							"description": "帮卖打款卖家支付宝流水号"
 						}
 					],
 					"name": "attribute",
@@ -108,7 +113,7 @@
 		}
 	],
 	"name": "alibaba.idle.appraise.order.perform",
-	"apiChineseName": "闲鱼验货担保服务商订单履约V1",
+	"apiChineseName": "闲鱼验货宝服务商订单履约",
 	"description": "闲鱼验货担保业务中,外部服务商作为鉴定方 需要驱动交易节点变化",
 	"id": 50560
 }

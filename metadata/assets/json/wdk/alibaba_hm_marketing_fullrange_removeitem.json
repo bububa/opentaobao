@@ -1,0 +1,69 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品skucode",
+					"required": true
+				}
+			],
+			"name": "param0",
+			"type": "ItemStairSku",
+			"description": "商品sku信息",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "商家活动id"
+				},
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "报名活动Id",
+					"required": true
+				}
+			],
+			"name": "param1",
+			"type": "CommonActivityParam",
+			"description": "活动信息"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "data"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				}
+			],
+			"name": "result",
+			"type": "MarketResult",
+			"description": "result"
+		}
+	],
+	"name": "alibaba.hm.marketing.fullrange.removeitem",
+	"apiChineseName": "全场活动删除购品",
+	"description": "删除换购商品",
+	"id": 67199
+}

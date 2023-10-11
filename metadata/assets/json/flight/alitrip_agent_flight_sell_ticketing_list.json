@@ -15,7 +15,7 @@
 				{
 					"name": "end_pay_time",
 					"type": "Date",
-					"description": "支付结束时间(支付结束时间，限制只能与起始时间相差一天)"
+					"description": "支付结束时间"
 				},
 				{
 					"name": "page",
@@ -25,7 +25,7 @@
 				{
 					"name": "status",
 					"type": "Number",
-					"description": "状态码:1:待支付,2:待出票,3:已完成,4:已取消"
+					"description": "订单状态:1:待支付，2:待出票，3:已完成，4:已取消"
 				}
 			],
 			"name": "param",
@@ -46,7 +46,7 @@
 						{
 							"name": "domestic_intl",
 							"type": "Number",
-							"description": "国内国际标识:1:国内,2:国际"
+							"description": "国内国际标识"
 						},
 						{
 							"name": "order_id",
@@ -57,6 +57,21 @@
 							"name": "pay_time",
 							"type": "Date",
 							"description": "支付时间"
+						},
+						{
+							"name": "serve_deadline",
+							"type": "Date",
+							"description": "服务时效"
+						},
+						{
+							"name": "urge_serve_deadline",
+							"type": "Date",
+							"description": "催出后服务时效"
+						},
+						{
+							"name": "urge_risk_desc",
+							"type": "String",
+							"description": "2023-05-26 20:13:08后存在订单被取消的风险"
 						}
 					],
 					"name": "data_list",
@@ -71,7 +86,7 @@
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码000:系统异常, 001:请求参数不合法, 002:权限不足, 003:操作失败, 004:流量管控"
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",

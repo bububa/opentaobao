@@ -28,4 +28,6 @@ type DrugInfosDto struct {
 	LeastPkgAmount string `json:"least_pkg_amount,omitempty" xml:"least_pkg_amount,omitempty"`
 	// 按最小制剂单位统计数量
 	LeastPrepnAmount string `json:"least_prepn_amount,omitempty" xml:"least_prepn_amount,omitempty"`
+	// 批准文号
+	ApprovalNo string `json:"approval_no,omitempty" xml:"approval_no,omitempty"`
 }

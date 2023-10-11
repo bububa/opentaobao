@@ -6,6 +6,8 @@ type WorkcardDto struct {
 	FeeList []FeeInfo `json:"fee_list,omitempty" xml:"fee_list>fee_info,omitempty"`
 	// 工单备注
 	MemoList []MemoDto `json:"memo_list,omitempty" xml:"memo_list>memo_dto,omitempty"`
+	// 操作记录信息
+	WorkcardOperationInfo []WorkcardOperationDto `json:"workcard_operation_info,omitempty" xml:"workcard_operation_info>workcard_operation_dto,omitempty"`
 	// 额外属性
 	Attributes string `json:"attributes,omitempty" xml:"attributes,omitempty"`
 	// 签到时间

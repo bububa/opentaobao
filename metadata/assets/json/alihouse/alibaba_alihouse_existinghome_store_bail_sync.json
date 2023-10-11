@@ -31,6 +31,11 @@
 					"type": "Number",
 					"description": "行业类型",
 					"required": true
+				},
+				{
+					"name": "category_code",
+					"type": "Number",
+					"description": "类目编码"
 				}
 			],
 			"name": "store_bail_dto",

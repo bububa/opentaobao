@@ -24,44 +24,37 @@
 						{
 							"name": "address_detail",
 							"type": "String",
-							"description": "这里必须写全详细地址",
-							"required": true
+							"description": "这里必须写全详细地址"
 						},
 						{
 							"name": "area",
 							"type": "String",
-							"description": "区",
-							"required": true
+							"description": "区"
 						},
 						{
 							"name": "city",
 							"type": "String",
-							"description": "市",
-							"required": true
+							"description": "市"
 						},
 						{
 							"name": "consignee_name",
 							"type": "String",
-							"description": "收件人姓名",
-							"required": true
+							"description": "收件人姓名"
 						},
 						{
 							"name": "mobile_phone",
 							"type": "String",
-							"description": "手机号码",
-							"required": true
+							"description": "手机号码"
 						},
 						{
 							"name": "post_code",
 							"type": "String",
-							"description": "邮编",
-							"required": true
+							"description": "邮编"
 						},
 						{
 							"name": "province",
 							"type": "String",
-							"description": "省",
-							"required": true
+							"description": "省"
 						},
 						{
 							"name": "tel_no",
@@ -71,8 +64,7 @@
 						{
 							"name": "town",
 							"type": "String",
-							"description": "四级地址 镇/街道",
-							"required": true
+							"description": "四级地址 镇/街道"
 						}
 					],
 					"name": "return_goods_address",

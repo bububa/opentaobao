@@ -5,7 +5,7 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// AlibabaAlihouseNewhomeProjectTradeitem 新二品同步
+// AlibabaAlihouseNewhomeProjectTradeitem 新二租品同步
 // alibaba.alihouse.newhome.project.tradeitem
 //
 // 新二品同步

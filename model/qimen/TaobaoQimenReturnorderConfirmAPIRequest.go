@@ -12,7 +12,7 @@ import (
 // taobao.qimen.returnorder.confirm
 type TaobaoQimenReturnorderConfirmAPIRequest struct {
 	model.Params
-	// 请求内容
+	//
 	_request *ReturnOrderConfirmRequest
 }
 
@@ -41,7 +41,6 @@ func (r TaobaoQimenReturnorderConfirmAPIRequest) GetRawParams() model.Params {
 }
 
 // SetRequest is Request Setter
-// 请求内容
 func (r *TaobaoQimenReturnorderConfirmAPIRequest) SetRequest(_request *ReturnOrderConfirmRequest) error {
 	r._request = _request
 	r.Set("request", _request)

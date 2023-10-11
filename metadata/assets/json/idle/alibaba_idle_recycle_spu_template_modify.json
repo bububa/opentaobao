@@ -3,63 +3,68 @@
 		{
 			"subParams": [
 				{
-					"name": "spu_id",
-					"type": "Number",
-					"description": "spuId"
-				},
-				{
 					"name": "action_type",
 					"type": "Number",
-					"description": "闲鱼端的spu变化，0新增，1删除，2修改名字"
-				},
-				{
-					"name": "biz_code",
-					"type": "String",
-					"description": "可选， 回收V1版本：3C数码\"3C\"，奢侈品\"LUXURIES\"，大件\"BULKS\"，车\"CAR\",母婴\"BABY\"，办公设备\"OFFICE\"，美妆\"MAKEUP\"，服装\"CLOTHING\"，低残值\"LOWVALUE\"，虚拟卡券\"VIRTUAL\" 回收V2版本：3C数码\"3C_NEW\"，奢侈品\"LUXURIES_NEW\"，大件\"BULKS_NEW\"，黄金\"GOLD_NEW\""
-				},
-				{
-					"name": "recycle_type",
-					"type": "Number",
-					"description": "回收商类型 1专业回收商（省心卖） 2淘宝商家兼职回收"
+					"description": "服务商支持的SPU挂载：0和2：第一次请求预挂载新增，二次请求上线，上线后状态不会再变化；1：下线；"
 				},
 				{
 					"name": "recycle_supplier_id",
 					"type": "Number",
-					"description": "回收卖家的id,当 recyclerType 为2时才会有值"
+					"description": "淘宝商家ID，recycle_type = 2时才有效"
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "可选， 回收V1版本：3C数码\"3C\"，奢侈品\"LUXURIES\"，大件\"BULKS\"，车\"CAR\",母婴\"BABY\"，办公设备\"OFFICE\"，美妆\"MAKEUP\"，服装\"CLOTHING\"，低残值\"LOWVALUE\"，虚拟卡券\"VIRTUAL\" "
+				},
+				{
+					"name": "spu_id",
+					"type": "Number",
+					"description": "SPUID"
+				},
+				{
+					"name": "recycle_type",
+					"type": "Number",
+					"description": "回收商类型：1：专业服务商  2：淘宝商家"
+				},
+				{
+					"name": "pd_code",
+					"type": "String",
+					"description": "业务支持的产品类型：BM：帮卖，HS：回收，YJHX:天猫以旧换新，SYHS：淘宝私域回收"
 				}
 			],
 			"name": "recycle_spu_template",
 			"type": "RecycleSpuTemplate",
-			"description": "回收商挂载模版信息"
+			"description": "服务商支持的SPU挂载"
 		}
 	],
 	"responseParams": [
 		{
 			"subParams": [
 				{
-					"name": "err_message",
-					"type": "String",
-					"description": "errMessage"
-				},
-				{
-					"name": "err_code",
-					"type": "String",
-					"description": "errCode"
+					"name": "spu_status",
+					"type": "Number",
+					"description": "闲鱼状态 0：为在线 1：待测试"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success"
+					"description": "结果"
 				},
 				{
-					"name": "spu_status",
-					"type": "Number",
-					"description": "闲鱼后台spu状态，0为在线，1为待测试，需要测试完成后再次挂载，-1为已删除（置为无效）"
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "错误信息"
 				}
 			],
 			"name": "result",
 			"type": "RecycleResult",
-			"description": "result"
+			"description": "出参"
 		}
 	],
 	"name": "alibaba.idle.recycle.spu.template.modify",

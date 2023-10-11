@@ -6,6 +6,8 @@ type AccessProductDto struct {
 	ImgUrlList []string `json:"img_url_list,omitempty" xml:"img_url_list>string,omitempty"`
 	// 产品属性
 	ProductAttrValueList []AccessProductAttrValueDto `json:"product_attr_value_list,omitempty" xml:"product_attr_value_list>access_product_attr_value_dto,omitempty"`
+	// 主导采购组织
+	LeadPurOrg []string `json:"lead_pur_org,omitempty" xml:"lead_pur_org>string,omitempty"`
 	// 阿里采购员工号
 	BuyerWorkNo string `json:"buyer_work_no,omitempty" xml:"buyer_work_no,omitempty"`
 	// 阿里采购三级类目

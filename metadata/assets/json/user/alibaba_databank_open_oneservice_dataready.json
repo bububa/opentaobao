@@ -1,0 +1,62 @@
+{
+	"requestParams": [
+		{
+			"name": "brand_id",
+			"type": "Number",
+			"description": "品牌ID"
+		},
+		{
+			"name": "data_ready_types",
+			"type": "String",
+			"description": "dataReady类型"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "begin_date",
+					"type": "Number",
+					"description": "数据有效开始日期"
+				},
+				{
+					"name": "end_date",
+					"type": "Number",
+					"description": "数据有效结束日期"
+				},
+				{
+					"name": "readyable",
+					"type": "Boolean",
+					"description": "数据可用"
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "81或82"
+				}
+			],
+			"name": "data",
+			"type": "DateRangeModel []",
+			"description": "返回的对象"
+		},
+		{
+			"name": "errcode",
+			"type": "Number",
+			"description": "请求成功"
+		},
+		{
+			"name": "errmsg",
+			"type": "String",
+			"description": "查询成功"
+		},
+		{
+			"name": "code_class",
+			"type": "String",
+			"description": "查询成功"
+		}
+	],
+	"name": "alibaba.databank.open.oneservice.dataready",
+	"apiChineseName": "瓴羊DaaS消费者增长CGP查询DataReady",
+	"description": "瓴羊DaaS消费者增长CGP取数接口",
+	"id": 66781
+}

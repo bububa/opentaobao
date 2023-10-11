@@ -1,0 +1,127 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "fix_price",
+					"type": "Number",
+					"description": "一口价【分】"
+				},
+				{
+					"name": "discount_rate",
+					"type": "Number",
+					"description": "打折【如700,表示打7折】"
+				},
+				{
+					"name": "decrease_money",
+					"type": "Number",
+					"description": "减钱【分】"
+				},
+				{
+					"name": "logic_group_number",
+					"type": "Number",
+					"description": "商家阶梯下分组序号"
+				},
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品编码",
+					"required": true
+				},
+				{
+					"name": "is_decrease_money",
+					"type": "Boolean",
+					"description": "是否减钱"
+				},
+				{
+					"name": "is_discount_rate",
+					"type": "Boolean",
+					"description": "是否打折"
+				},
+				{
+					"name": "is_fix_price",
+					"type": "Boolean",
+					"description": "是否一口价"
+				}
+			],
+			"name": "param0",
+			"type": "ItemPoolSku[]",
+			"description": "阶梯商品信息",
+			"maxListSize": 20
+		},
+		{
+			"subParams": [
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "外部活动编码"
+				},
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "活动Id",
+					"required": true
+				}
+			],
+			"name": "param1",
+			"type": "CommonActivityParam",
+			"description": "系统自动生成"
+		},
+		{
+			"name": "version",
+			"type": "Number",
+			"description": "alibaba.wdk.marketing.version.generate接口生成",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "处理结果"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "sku_name",
+							"type": "String",
+							"description": "sku名称"
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "sku编码"
+						},
+						{
+							"name": "logic_group_number",
+							"type": "Number",
+							"description": "商家阶梯下分组序号"
+						}
+					],
+					"name": "datas",
+					"type": "ItemPoolSku[]",
+					"description": "结果数据"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				}
+			],
+			"name": "result",
+			"type": "MarketResult",
+			"description": "结果信息"
+		}
+	],
+	"name": "alibaba.hm.marketing.itempool.item.add.async",
+	"apiChineseName": "商品池新增商品",
+	"description": "新分组模型下新增商品",
+	"id": 67238
+}

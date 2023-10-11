@@ -22,6 +22,8 @@ type RefundDetailDto struct {
 	ApplyTime string `json:"apply_time,omitempty" xml:"apply_time,omitempty"`
 	// 拒绝原因
 	RefuseReason string `json:"refuse_reason,omitempty" xml:"refuse_reason,omitempty"`
+	// 关联单号
+	CorrelationOrderId string `json:"correlation_order_id,omitempty" xml:"correlation_order_id,omitempty"`
 	// 自愿标识:0.非自愿，1.自愿
 	Voluntary int64 `json:"voluntary,omitempty" xml:"voluntary,omitempty"`
 	// 店铺id

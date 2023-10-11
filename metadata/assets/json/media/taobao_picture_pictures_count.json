@@ -50,6 +50,6 @@
 	],
 	"name": "taobao.picture.pictures.count",
 	"apiChineseName": "图片总数查询",
-	"description": "图片总数查询",
+	"description": "图片总数查询，目前出于对数据库的保护暂不支持此功能",
 	"id": 25592
 }

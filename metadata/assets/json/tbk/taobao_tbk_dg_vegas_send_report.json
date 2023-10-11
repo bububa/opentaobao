@@ -25,6 +25,21 @@
 			"name": "page_size",
 			"type": "Number",
 			"description": "每页大小"
+		},
+		{
+			"name": "pid",
+			"type": "String",
+			"description": "媒体推广pid"
+		},
+		{
+			"name": "rpt_dim",
+			"type": "String",
+			"description": "查询维度，不填写默认是pid维度"
+		},
+		{
+			"name": "activity_category",
+			"type": "Number",
+			"description": "查询红包类型，1-超级红包，2-福利购，3-签到红包，4-福利直降，不传时默认查询超级红包数据"
 		}
 	],
 	"responseParams": [
@@ -53,11 +68,48 @@
 									"name": "fund_num",
 									"type": "Number",
 									"description": "红包发放数量"
+								},
+								{
+									"name": "pid",
+									"type": "String",
+									"description": "渠道关系id关联的pid"
+								},
+								{
+									"name": "use_num",
+									"type": "Number",
+									"description": "红包使用次数"
 								}
 							],
 							"name": "relation_rpt_list",
 							"type": "RightsSendRelationRptDto[]",
 							"description": "渠道关系id的发放数据"
+						},
+						{
+							"subParams": [
+								{
+									"name": "biz_date",
+									"type": "String",
+									"description": "日期"
+								},
+								{
+									"name": "pid",
+									"type": "String",
+									"description": "pid"
+								},
+								{
+									"name": "fund_num",
+									"type": "Number",
+									"description": "红包发放数量"
+								},
+								{
+									"name": "use_num",
+									"type": "Number",
+									"description": "红包使用次数"
+								}
+							],
+							"name": "pid_rpt_list",
+							"type": "RightsSendRelationRptDto[]",
+							"description": "pid的发放数据"
 						}
 					],
 					"name": "model",

@@ -18,6 +18,8 @@ type TmallServicecenterWorkcardCompleteAPIRequest struct {
 	_latitude string
 	// 核销地经度
 	_longitude string
+	// 图片地址回传集合
+	_picUrls string
 	// 工单id
 	_workcardId int64
 	// 完结次数
@@ -87,6 +89,19 @@ func (r *TmallServicecenterWorkcardCompleteAPIRequest) SetLongitude(_longitude s
 // GetLongitude Longitude Getter
 func (r TmallServicecenterWorkcardCompleteAPIRequest) GetLongitude() string {
 	return r._longitude
+}
+
+// SetPicUrls is PicUrls Setter
+// 图片地址回传集合
+func (r *TmallServicecenterWorkcardCompleteAPIRequest) SetPicUrls(_picUrls string) error {
+	r._picUrls = _picUrls
+	r.Set("pic_urls", _picUrls)
+	return nil
+}
+
+// GetPicUrls PicUrls Getter
+func (r TmallServicecenterWorkcardCompleteAPIRequest) GetPicUrls() string {
+	return r._picUrls
 }
 
 // SetWorkcardId is WorkcardId Setter

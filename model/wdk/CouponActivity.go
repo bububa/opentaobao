@@ -26,6 +26,8 @@ type CouponActivity struct {
 	ActivityName string `json:"activity_name,omitempty" xml:"activity_name,omitempty"`
 	// 优惠券优惠类型 [fullReduce:满减券;reduceTo:减至券，即一口价券]
 	DiscountType string `json:"discount_type,omitempty" xml:"discount_type,omitempty"`
+	// 匿名码code
+	MaCode string `json:"ma_code,omitempty" xml:"ma_code,omitempty"`
 	// 通用限购信息，-1为不限制，默认为不限制[如果同时设置了(每人活动期间总限领)和(每人每日限领)，则只能生效(每人活动期间总限领)]
 	LimitInfo *LimitInfo `json:"limit_info,omitempty" xml:"limit_info,omitempty"`
 	// 活动结束时间，时间戳[ms单位]

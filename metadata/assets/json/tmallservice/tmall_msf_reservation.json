@@ -65,6 +65,11 @@
 					"name": "stop_order_type_check_reason",
 					"type": "Number",
 					"description": "跳过订单类型检查的原因ID, 具体原因对应ID值咨询运营，一般不填写"
+				},
+				{
+					"name": "resv_accurate_time",
+					"type": "String",
+					"description": "预约时间段，会取代resv_time的上午/下午/晚上"
 				}
 			],
 			"name": "reserv_info",

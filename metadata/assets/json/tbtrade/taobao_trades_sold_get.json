@@ -263,7 +263,7 @@
 				{
 					"name": "receiver_name",
 					"type": "String",
-					"description": "收货人的姓名"
+					"description": "收货人的姓名(加密)"
 				},
 				{
 					"name": "receiver_state",
@@ -288,7 +288,7 @@
 				{
 					"name": "receiver_address",
 					"type": "String",
-					"description": "收货人的详细地址"
+					"description": "收货人的详细地址(加密)"
 				},
 				{
 					"name": "receiver_zip",
@@ -298,12 +298,12 @@
 				{
 					"name": "receiver_mobile",
 					"type": "String",
-					"description": "收货人的手机号码"
+					"description": "收货人的手机号码(加密)"
 				},
 				{
 					"name": "receiver_phone",
 					"type": "String",
-					"description": "收货人的电话号码"
+					"description": "收货人的电话号码(加密)"
 				},
 				{
 					"name": "seller_flag",
@@ -955,6 +955,85 @@
 					"name": "buyer_nick",
 					"type": "String",
 					"description": "买家昵称"
+				},
+				{
+					"subParams": [
+						{
+							"name": "logistics_service_msg",
+							"type": "String",
+							"description": "服务承诺/异常文案"
+						},
+						{
+							"name": "asdp_biz_type",
+							"type": "String",
+							"description": "物流服务业务身份"
+						},
+						{
+							"name": "asdp_ads",
+							"type": "String",
+							"description": "物流信息，多个值时用英文逗号隔开"
+						},
+						{
+							"name": "sign_time",
+							"type": "String",
+							"description": "计划送达时间"
+						},
+						{
+							"name": "promise_sign_time",
+							"type": "String",
+							"description": "承诺/最晚送达时间"
+						}
+					],
+					"name": "logistics_agreement",
+					"type": "LogisticsAgreement",
+					"description": "物流服务承诺"
+				},
+				{
+					"subParams": [
+						{
+							"name": "biz_delivery_type",
+							"type": "Number",
+							"description": "订单推荐配送类型      * 0：子单无配建议；ERP按照自己的逻辑进行择配。      * 1：子单有推荐配list，erp可按需参考。      * 2：子单有推荐配list，erp必须在推荐配list中选择配品牌。      * 3：子单有禁用配list，erp需要过滤配品牌。"
+						},
+						{
+							"name": "unused_warehouse_error_msg",
+							"type": "String",
+							"description": "未使用仓建议报错"
+						},
+						{
+							"name": "unused_delivery_error_msg",
+							"type": "String",
+							"description": "未使用配建议报错"
+						},
+						{
+							"name": "used_black_delivery_error_msg",
+							"type": "String",
+							"description": "使用禁止配报错"
+						},
+						{
+							"name": "promise_outbound_time",
+							"type": "String",
+							"description": "承诺/最晚出库时间"
+						},
+						{
+							"name": "trade_id",
+							"type": "Number",
+							"description": "主交易号"
+						},
+						{
+							"name": "sub_trade_id",
+							"type": "Number",
+							"description": "子交易号"
+						},
+						{
+							"name": "promise_collect_time",
+							"type": "String",
+							"description": "承诺/最晚揽收时间"
+						}
+					],
+					"name": "logistics_infos",
+					"type": "LogisticsInfo[]",
+					"description": "子单维度物流发货信息"
 				}
 			],
 			"name": "trades",

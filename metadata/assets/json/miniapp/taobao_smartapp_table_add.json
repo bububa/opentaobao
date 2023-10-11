@@ -1,0 +1,37 @@
+{
+	"requestParams": [
+		{
+			"name": "record",
+			"type": "String",
+			"description": "新增记录内容格式为JSON，新增仅支持单条新增，各组件新增输入格式详见文档",
+			"required": true
+		},
+		{
+			"name": "table_id",
+			"type": "String",
+			"description": "待插入表id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "id",
+			"type": "String",
+			"description": "单条新增记录ID"
+		},
+		{
+			"name": "business_success",
+			"type": "Boolean",
+			"description": "调用结果"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误提示"
+		}
+	],
+	"name": "taobao.smartapp.table.add",
+	"apiChineseName": "智能应用服务登记工作表数据新增",
+	"description": "智能应用服务登记工作表数据新增",
+	"id": 67462
+}

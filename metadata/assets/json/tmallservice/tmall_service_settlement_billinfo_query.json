@@ -1,0 +1,82 @@
+{
+	"requestParams": [
+		{
+			"name": "workcard_id",
+			"type": "Number",
+			"description": "已经结算的工单ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "display_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "workcard_id",
+							"type": "Number",
+							"description": "工单ID"
+						},
+						{
+							"name": "amount",
+							"type": "Number",
+							"description": "分成金额（分）"
+						},
+						{
+							"name": "platform_commission_rate",
+							"type": "Number",
+							"description": "平台抽佣比例 0.0 ~ 1.0"
+						},
+						{
+							"subParams": [
+								{
+									"name": "name",
+									"type": "String",
+									"description": "费用名称"
+								},
+								{
+									"name": "amount",
+									"type": "Number",
+									"description": "费用金额（分）"
+								}
+							],
+							"name": "details",
+							"type": "Double[]",
+							"description": "费用明细"
+						}
+					],
+					"name": "value",
+					"type": "WorkcardBillInfoDTO",
+					"description": "工单结算信息"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误提示"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口响应"
+		}
+	],
+	"name": "tmall.service.settlement.billinfo.query",
+	"apiChineseName": "查询工单结算信息",
+	"description": "提供给服务商查询工单结算信息，包含结算的分成金额以及结算的收款明细，平台抽佣比例。用于服务商进行对账",
+	"id": 65793
+}

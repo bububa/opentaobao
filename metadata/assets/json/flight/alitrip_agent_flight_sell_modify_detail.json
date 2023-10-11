@@ -134,6 +134,11 @@
 											"name": "od_index",
 											"type": "Number",
 											"description": "航程序号"
+										},
+										{
+											"name": "is_modify",
+											"type": "Number",
+											"description": "是否需要修改的航段,1:是,0:否"
 										}
 									],
 									"name": "before_change_segments",
@@ -196,6 +201,16 @@
 											"name": "od_index",
 											"type": "Number",
 											"description": "航程序号"
+										},
+										{
+											"name": "is_modify",
+											"type": "Number",
+											"description": "是否需要修改的航段,1:是,0:否"
+										},
+										{
+											"name": "ticket_no",
+											"type": "String",
+											"description": "该航段对应的票号"
 										}
 									],
 									"name": "after_change_segments",
@@ -226,6 +241,51 @@
 									"name": "before_change_tickets",
 									"type": "String[]",
 									"description": "改签前票号"
+								},
+								{
+									"name": "pnr_xe",
+									"type": "Number",
+									"description": "0:没有xe，1:xe了"
+								},
+								{
+									"name": "pnr_xe_time",
+									"type": "Date",
+									"description": "xe时间"
+								},
+								{
+									"name": "sur_name",
+									"type": "String",
+									"description": "姓氏"
+								},
+								{
+									"name": "given_name",
+									"type": "String",
+									"description": "名字"
+								},
+								{
+									"name": "cert_period",
+									"type": "String",
+									"description": "乘机人证件有效期"
+								},
+								{
+									"name": "nationality",
+									"type": "String",
+									"description": "乘机人国籍"
+								},
+								{
+									"name": "cert_issue_country",
+									"type": "String",
+									"description": "乘机人证件颁发国家"
+								},
+								{
+									"name": "birthday",
+									"type": "String",
+									"description": "乘机人生日"
+								},
+								{
+									"name": "gender",
+									"type": "Number",
+									"description": "乘机人性别:1表示男性，2表示女性"
 								}
 							],
 							"name": "change_list",
@@ -276,6 +336,11 @@
 							"name": "trip_type",
 							"type": "Number",
 							"description": "   1:\"单程\",     2:\"往返\",     3:\"多程\""
+						},
+						{
+							"name": "correlation_order_id",
+							"type": "String",
+							"description": "xxxx"
 						}
 					],
 					"name": "data",

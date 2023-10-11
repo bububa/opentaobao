@@ -378,6 +378,115 @@
 					"name": "tp_order_id",
 					"type": "Number",
 					"description": "淘宝订单号"
+				},
+				{
+					"subParams": [
+						{
+							"name": "apply_type",
+							"type": "Number",
+							"description": "0-用户申请1-商家申请2-二次退款"
+						},
+						{
+							"name": "refund_ticket_amount",
+							"type": "Number",
+							"description": "退票款金额单位分"
+						},
+						{
+							"name": "refund_time",
+							"type": "Date",
+							"description": "退款时间"
+						},
+						{
+							"name": "refund_reason",
+							"type": "String",
+							"description": "退款原因"
+						},
+						{
+							"name": "refund_total_amount",
+							"type": "Number",
+							"description": "退款总金额，单位分"
+						},
+						{
+							"name": "refund_status",
+							"type": "Number",
+							"description": "退票状态：1：新申请 2：代理商处理中 3：同意 4：拒绝 5:已退款"
+						},
+						{
+							"name": "ext_attr",
+							"type": "String",
+							"description": "扩展属性"
+						},
+						{
+							"name": "create_time",
+							"type": "Date",
+							"description": "退票创建时间"
+						},
+						{
+							"name": "commission_charge_amount",
+							"type": "Number",
+							"description": "退票手续费，单位分"
+						},
+						{
+							"name": "agree_or_refuse_time",
+							"type": "Date",
+							"description": "同意/拒绝时间"
+						},
+						{
+							"name": "apply_time",
+							"type": "Date",
+							"description": "申请退票时间"
+						},
+						{
+							"name": "refund_service_charge_amount",
+							"type": "Number",
+							"description": "退商家服务费金额，单位分"
+						},
+						{
+							"subParams": [
+								{
+									"name": "agent_ticket_id",
+									"type": "String",
+									"description": "商家票id"
+								},
+								{
+									"name": "service_charge",
+									"type": "Number",
+									"description": "商家服务费"
+								},
+								{
+									"name": "rider_seat_number",
+									"type": "String",
+									"description": "座位号"
+								},
+								{
+									"name": "sub_order_id",
+									"type": "Number",
+									"description": "子订单id"
+								},
+								{
+									"name": "ticket_price",
+									"type": "Number",
+									"description": "票价，单位分"
+								},
+								{
+									"name": "rider_name",
+									"type": "String",
+									"description": "乘客姓名"
+								}
+							],
+							"name": "bus_ticket_info",
+							"type": "MerchantBusTicketInfo",
+							"description": "票信息"
+						},
+						{
+							"name": "apply_id",
+							"type": "Number",
+							"description": "退票申请id"
+						}
+					],
+					"name": "refund_apply_info_list",
+					"type": "MerchantBusRefundApplyInfo[]",
+					"description": "退票信息"
 				}
 			],
 			"name": "order_infos",

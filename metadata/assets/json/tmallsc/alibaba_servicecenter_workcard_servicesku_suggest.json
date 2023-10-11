@@ -23,6 +23,11 @@
 					"name": "pic_url",
 					"type": "String",
 					"description": "问题图片链接"
+				},
+				{
+					"name": "service_sku_price",
+					"type": "String",
+					"description": "服务商调整后的价格"
 				}
 			],
 			"name": "tp_suggest_service_sku_infos",
@@ -30,6 +35,11 @@
 			"description": "服务商反馈服务项",
 			"maxListSize": 999,
 			"required": true
+		},
+		{
+			"name": "extend_info",
+			"type": "Json",
+			"description": "拓展信息"
 		}
 	],
 	"responseParams": [

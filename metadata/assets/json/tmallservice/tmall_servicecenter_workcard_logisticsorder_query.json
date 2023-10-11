@@ -105,6 +105,11 @@
 							"name": "value_added_service_demand",
 							"type": "String",
 							"description": "增值服务需求"
+						},
+						{
+							"name": "extend_info",
+							"type": "String",
+							"description": "扩展属性"
 						}
 					],
 					"name": "result_data",

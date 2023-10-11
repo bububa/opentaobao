@@ -1066,6 +1066,11 @@
 											"name": "flight_rule_list_str",
 											"type": "String",
 											"description": "退改签规则列表json"
+										},
+										{
+											"name": "basic_cabin_price",
+											"type": "Number",
+											"description": "舱位基准价"
 										}
 									],
 									"name": "cabin_info_list",

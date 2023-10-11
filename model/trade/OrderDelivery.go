@@ -22,4 +22,6 @@ type OrderDelivery struct {
 	DelivererName string `json:"deliverer_name,omitempty" xml:"deliverer_name,omitempty"`
 	// 配送费用金额
 	DeliveryFee int64 `json:"delivery_fee,omitempty" xml:"delivery_fee,omitempty"`
+	// 是否隐私号 0：非隐私号  1：隐私号
+	PrivacyPhoneFlag int64 `json:"privacy_phone_flag,omitempty" xml:"privacy_phone_flag,omitempty"`
 }

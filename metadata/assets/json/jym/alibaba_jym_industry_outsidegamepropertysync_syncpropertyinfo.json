@@ -1,0 +1,67 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "game_id",
+					"type": "String",
+					"description": "交易猫游戏id",
+					"required": true
+				},
+				{
+					"name": "game_properties_compressed",
+					"type": "String",
+					"description": "压缩加密后的属性信息",
+					"required": true
+				}
+			],
+			"name": "out_side_sync_game_property_request_dto",
+			"type": "OutSideSyncGamePropertyRequestDTO",
+			"description": "属性信息DTO",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "true - 成功，false - 失败"
+				}
+			],
+			"name": "result",
+			"type": "OutSideSyncGamePropertyResponseDTO",
+			"description": "上报结果DTO"
+		},
+		{
+			"name": "sub_code_type",
+			"type": "String",
+			"description": "子集错误码，提供与业务细节使用"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "接口调用结果: true/false"
+		},
+		{
+			"name": "sub_extra_err_msg",
+			"type": "String",
+			"description": "子集错误描述，提供与业务细节使用"
+		},
+		{
+			"name": "state_code",
+			"type": "String",
+			"description": "错误码枚举"
+		},
+		{
+			"name": "extra_err_msg",
+			"type": "String",
+			"description": "错误详细描述"
+		}
+	],
+	"name": "alibaba.jym.industry.outsidegamepropertysync.syncpropertyinfo",
+	"apiChineseName": "外部上报游戏属性信息",
+	"description": "外部上报游戏属性信息",
+	"id": 66723
+}

@@ -260,7 +260,7 @@
 				{
 					"name": "receiver_name",
 					"type": "String",
-					"description": "收货人的姓名"
+					"description": "收货人的姓名(加密)"
 				},
 				{
 					"name": "receiver_state",
@@ -285,7 +285,7 @@
 				{
 					"name": "receiver_address",
 					"type": "String",
-					"description": "收货人的详细地址"
+					"description": "收货人的详细地址(加密)"
 				},
 				{
 					"name": "receiver_zip",
@@ -295,12 +295,12 @@
 				{
 					"name": "receiver_mobile",
 					"type": "String",
-					"description": "收货人的手机号码"
+					"description": "收货人的手机号码(加密)"
 				},
 				{
 					"name": "receiver_phone",
 					"type": "String",
-					"description": "收货人的电话号码"
+					"description": "收货人的电话号码(加密)"
 				},
 				{
 					"name": "seller_flag",

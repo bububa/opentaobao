@@ -1,0 +1,65 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "product_code",
+					"type": "String",
+					"description": "产品编号"
+				},
+				{
+					"name": "journey_code",
+					"type": "String",
+					"description": "行程编号"
+				},
+				{
+					"name": "project_code_list",
+					"type": "String[]",
+					"description": "团期编号列表"
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "供应商ID"
+				}
+			],
+			"name": "fsc_project_open_request",
+			"type": "FscProjectOpenRequest",
+			"description": "fscProjectOpenRequest",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "业务数据"
+				}
+			],
+			"name": "top_result",
+			"type": "TopResult",
+			"description": "通用返回结果"
+		}
+	],
+	"name": "taobao.alitrip.travel.fsc.route.api.project.open",
+	"apiChineseName": "打开团期",
+	"description": "打开团期",
+	"id": 66871
+}

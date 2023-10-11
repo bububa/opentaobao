@@ -16,6 +16,8 @@ type AlibabaIdleTenderAftersaleOrderGetModule struct {
 	ServiceBizCode string `json:"service_biz_code,omitempty" xml:"service_biz_code,omitempty"`
 	// 售后服务场景类型
 	ServiceSceneType string `json:"service_scene_type,omitempty" xml:"service_scene_type,omitempty"`
+	// 帮卖完结方式
+	MainOrderSettleType string `json:"main_order_settle_type,omitempty" xml:"main_order_settle_type,omitempty"`
 	// 售后申请单主状态
 	MainStatus int64 `json:"main_status,omitempty" xml:"main_status,omitempty"`
 	// 扩展信息

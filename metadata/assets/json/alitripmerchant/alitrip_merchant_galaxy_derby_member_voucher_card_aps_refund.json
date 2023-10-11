@@ -1,0 +1,49 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "tenant_key",
+			"required": true
+		},
+		{
+			"name": "derby_body",
+			"type": "String",
+			"description": "请求String",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "响应体"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "响应"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.derby.member.voucher.card.aps.refund",
+	"apiChineseName": "Aps退券通知接口",
+	"description": "Aps退券通知接口",
+	"id": 65826
+}

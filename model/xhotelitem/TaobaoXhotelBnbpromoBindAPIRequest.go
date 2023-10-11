@@ -14,6 +14,10 @@ type TaobaoXhotelBnbpromoBindAPIRequest struct {
 	model.Params
 	// 营销活动code
 	_activityCode string
+	// 活动入住时间，民宿通用营销必填
+	_checkInFrom string
+	// 活动离店时间，民宿通用营销必填
+	_checkOutTo string
 	// 外部价格信息
 	_rateInfos *PromoRateInfo
 }
@@ -53,6 +57,32 @@ func (r *TaobaoXhotelBnbpromoBindAPIRequest) SetActivityCode(_activityCode strin
 // GetActivityCode ActivityCode Getter
 func (r TaobaoXhotelBnbpromoBindAPIRequest) GetActivityCode() string {
 	return r._activityCode
+}
+
+// SetCheckInFrom is CheckInFrom Setter
+// 活动入住时间，民宿通用营销必填
+func (r *TaobaoXhotelBnbpromoBindAPIRequest) SetCheckInFrom(_checkInFrom string) error {
+	r._checkInFrom = _checkInFrom
+	r.Set("check_in_from", _checkInFrom)
+	return nil
+}
+
+// GetCheckInFrom CheckInFrom Getter
+func (r TaobaoXhotelBnbpromoBindAPIRequest) GetCheckInFrom() string {
+	return r._checkInFrom
+}
+
+// SetCheckOutTo is CheckOutTo Setter
+// 活动离店时间，民宿通用营销必填
+func (r *TaobaoXhotelBnbpromoBindAPIRequest) SetCheckOutTo(_checkOutTo string) error {
+	r._checkOutTo = _checkOutTo
+	r.Set("check_out_to", _checkOutTo)
+	return nil
+}
+
+// GetCheckOutTo CheckOutTo Getter
+func (r TaobaoXhotelBnbpromoBindAPIRequest) GetCheckOutTo() string {
+	return r._checkOutTo
 }
 
 // SetRateInfos is RateInfos Setter

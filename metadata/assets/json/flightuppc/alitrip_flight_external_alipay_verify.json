@@ -1,0 +1,56 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "source_content",
+					"type": "String",
+					"description": "加签自定义参数，格式遵循http请求路径参数的格式",
+					"required": true
+				},
+				{
+					"name": "signature",
+					"type": "String",
+					"description": "签名",
+					"required": true
+				},
+				{
+					"name": "external_applet_biz_code",
+					"type": "String",
+					"description": "业务代码",
+					"required": true
+				},
+				{
+					"name": "sign_type",
+					"type": "String",
+					"description": "签名算法类型"
+				}
+			],
+			"name": "alipay_check_sign_req",
+			"type": "AlipayCheckSignReq",
+			"description": "入参结构体",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "是否验签成功"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否请求成功"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "请求失败描述"
+		}
+	],
+	"name": "alitrip.flight.external.alipay.verify",
+	"apiChineseName": "支付宝小程序验签",
+	"description": "支付宝小程序验签",
+	"id": 65907
+}

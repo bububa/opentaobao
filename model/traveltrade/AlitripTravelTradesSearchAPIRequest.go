@@ -24,6 +24,8 @@ type AlitripTravelTradesSearchAPIRequest struct {
 	_currentPage int64
 	// 类目筛选, 1、旅行购，旅行购定制专用字段，表示搜索旅行购订单。
 	_category int64
+	// 商品ID
+	_itemId int64
 }
 
 // NewAlitripTravelTradesSearchRequest 初始化AlitripTravelTradesSearchAPIRequest对象
@@ -126,4 +128,17 @@ func (r *AlitripTravelTradesSearchAPIRequest) SetCategory(_category int64) error
 // GetCategory Category Getter
 func (r AlitripTravelTradesSearchAPIRequest) GetCategory() int64 {
 	return r._category
+}
+
+// SetItemId is ItemId Setter
+// 商品ID
+func (r *AlitripTravelTradesSearchAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// GetItemId ItemId Getter
+func (r AlitripTravelTradesSearchAPIRequest) GetItemId() int64 {
+	return r._itemId
 }

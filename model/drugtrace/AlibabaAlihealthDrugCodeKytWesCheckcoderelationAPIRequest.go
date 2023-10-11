@@ -15,7 +15,7 @@ type AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIRequest struct {
 	// 企业refentid
 	_refEntId string
 	// 服务校验的token
-	_token string
+	_licenseToken string
 	// 多个码用英文逗号分隔
 	_codes string
 }
@@ -57,17 +57,17 @@ func (r AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIRequest) GetRefEntId()
 	return r._refEntId
 }
 
-// SetToken is Token Setter
+// SetLicenseToken is LicenseToken Setter
 // 服务校验的token
-func (r *AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIRequest) SetToken(_token string) error {
-	r._token = _token
-	r.Set("token", _token)
+func (r *AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIRequest) SetLicenseToken(_licenseToken string) error {
+	r._licenseToken = _licenseToken
+	r.Set("license_token", _licenseToken)
 	return nil
 }
 
-// GetToken Token Getter
-func (r AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIRequest) GetToken() string {
-	return r._token
+// GetLicenseToken LicenseToken Getter
+func (r AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIRequest) GetLicenseToken() string {
+	return r._licenseToken
 }
 
 // SetCodes is Codes Setter

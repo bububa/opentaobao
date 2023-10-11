@@ -6,4 +6,6 @@ type StockChangeReportRequest struct {
 	Items []Item `json:"items,omitempty" xml:"items>item,omitempty"`
 	// 扩展属性
 	SnList []SnList `json:"snList,omitempty" xml:"snList>sn_list,omitempty"`
+	// 扩展属性
+	ExtendProps *TaobaoQimenStockchangeReportMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

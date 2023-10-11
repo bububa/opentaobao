@@ -3,7 +3,7 @@
 		{
 			"name": "fields",
 			"type": "String[]",
-			"description": "需要返回的字段。目前支持有：refund_id, alipay_no, tid, oid, buyer_nick, seller_nick, total_fee, status, created, refund_fee, good_status, has_good_return, payment, reason, desc, num_iid, title, price, num, good_return_time, company_name, sid, address, shipping_type, refund_remind_timeout, refund_phase, refund_version, operation_contraint, attribute, outer_id, sku",
+			"description": "需要返回的字段。目前支持有：refund_id, alipay_no, tid, oid, buyer_nick, seller_nick, total_fee, status, created, refund_fee, good_status, has_good_return, payment, reason, desc, num_iid, title, price, num, good_return_time, company_name, sid, address, shipping_type, refund_remind_timeout, refund_phase, refund_version, operation_contraint, attribute, outer_id,dispute_type,sku,end_time",
 			"maxListSize": 100,
 			"required": true
 		},
@@ -228,6 +228,48 @@
 					"name": "ouid",
 					"type": "String",
 					"description": "crm改造新增ouid返回"
+				},
+				{
+					"subParams": [
+						{
+							"name": "num_iid",
+							"type": "String",
+							"description": "商品数字编号 "
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "商品标题"
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "数量"
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "sku_id"
+						},
+						{
+							"name": "outer_iid",
+							"type": "String",
+							"description": "商家外部编码(可与商家外部系统对接)"
+						},
+						{
+							"name": "outer_sku_id",
+							"type": "String",
+							"description": "123"
+						}
+					],
+					"name": "combine_item_info",
+					"type": "CombineSubItemDO[]",
+					"description": "组合品信息"
+				},
+				{
+					"name": "dispute_type",
+					"type": "String",
+					"description": "退款类型，可选值REFUND(仅退款),REFUND_AND_RETURN(退货退款),TMALL_EXCHANGE(天猫换货),TAOBAO_EXCHANGE(淘宝换货),REPAIR(维修),RESHIPPING(补寄),OTHERS(其他)"
 				}
 			],
 			"name": "refund",

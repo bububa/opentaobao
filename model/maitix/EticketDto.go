@@ -30,7 +30,7 @@ type EticketDto struct {
 	ProjectName string `json:"project_name,omitempty" xml:"project_name,omitempty"`
 	// 二维码原值
 	QrCode string `json:"qr_code,omitempty" xml:"qr_code,omitempty"`
-	// 二维码类型 1、静态二维码 2、动态二维码3-身份证电子票，4-换票码，5-静态码+换票码，如果是4或5，需要展示给用户exchange_code的原值
+	// 二维码类型 1、静态二维码 2、动态二维码3-身份证电子票，4-换票码，5-静态码+换票码，如果是4或5，需要展示给用户exchange_code的原值 6,展示qr_code的值
 	QrCodeType string `json:"qr_code_type,omitempty" xml:"qr_code_type,omitempty"`
 	// 是否对号入座（入座方式）0=不对号入座 1=对号入座 2=对区入座
 	ReserveSeat string `json:"reserve_seat,omitempty" xml:"reserve_seat,omitempty"`

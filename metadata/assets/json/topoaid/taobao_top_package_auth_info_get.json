@@ -12,6 +12,11 @@
 					"name": "cp_code",
 					"type": "String",
 					"description": "快递公司编码"
+				},
+				{
+					"name": "black_mobiles",
+					"type": "String",
+					"description": "柜机黑名单手机号前7位，如有多个用英文逗号,分隔，每个元素仅前七位有效"
 				}
 			],
 			"name": "is_privacy_package_request",
@@ -54,6 +59,21 @@
 							"name": "secret_expire_time",
 							"type": "Date",
 							"description": "虚拟号过期时间"
+						},
+						{
+							"name": "cp_code",
+							"type": "String",
+							"description": "运单所属快递公司code"
+						},
+						{
+							"name": "main_secret_no",
+							"type": "Boolean",
+							"description": "收件人手机号是否为虚拟号主号(虚拟号前11位)"
+						},
+						{
+							"name": "black",
+							"type": "Boolean",
+							"description": "收件人手机号是否在柜机黑名单中"
 						}
 					],
 					"name": "user_auth_infos",

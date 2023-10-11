@@ -1,0 +1,44 @@
+{
+	"requestParams": [
+		{
+			"name": "table_id",
+			"type": "String",
+			"description": "数据空间表名",
+			"required": true
+		},
+		{
+			"name": "id",
+			"type": "String",
+			"description": "数据主键ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "json_record",
+					"type": "String",
+					"description": "查询结果"
+				}
+			],
+			"name": "result",
+			"type": "AfterSaleTableSelectResponse",
+			"description": "查询结果"
+		},
+		{
+			"name": "business_success",
+			"type": "Boolean",
+			"description": "调用结果"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误提示"
+		}
+	],
+	"name": "taobao.smartapp.table.fulldata.get",
+	"apiChineseName": "智能应用工作表地址查询",
+	"description": "智能应用工作表地址查询",
+	"id": 67885
+}

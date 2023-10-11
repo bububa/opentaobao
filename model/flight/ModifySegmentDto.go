@@ -20,6 +20,8 @@ type ModifySegmentDto struct {
 	DepAirport string `json:"dep_airport,omitempty" xml:"dep_airport,omitempty"`
 	// 到达时间
 	ArrTime string `json:"arr_time,omitempty" xml:"arr_time,omitempty"`
+	// 该航段对应的票号
+	TicketNo string `json:"ticket_no,omitempty" xml:"ticket_no,omitempty"`
 	// 航段序号
 	SegmentIndex int64 `json:"segment_index,omitempty" xml:"segment_index,omitempty"`
 	// 航程序号

@@ -1,0 +1,249 @@
+{
+	"requestParams": [
+		{
+			"name": "shids",
+			"type": "Number",
+			"description": "查询报价的酒店列表",
+			"required": true
+		},
+		{
+			"name": "checkin_date",
+			"type": "String",
+			"description": "入住日期 yyyy-MM-dd"
+		},
+		{
+			"name": "checkout_date",
+			"type": "String",
+			"description": "离店日期 yyyy-MM-dd"
+		},
+		{
+			"name": "calendar_checkin_start_date",
+			"type": "String",
+			"description": "日历报价入住开始日期 yyyy-MM-dd"
+		},
+		{
+			"name": "calendar_checkin_end_date",
+			"type": "String",
+			"description": "日历报价入住结束日期 yyyy-MM-dd"
+		},
+		{
+			"name": "is_calendar",
+			"type": "Boolean",
+			"description": "是否日历报价计算，false只用填入离日期，true只用填日历开始结束日期",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "错误码，不为0表示有异常"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "search_id",
+							"type": "String",
+							"description": "用于请求复现"
+						},
+						{
+							"subParams": [
+								{
+									"name": "shid",
+									"type": "Number",
+									"description": "酒店id"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "酒店名称"
+								},
+								{
+									"subParams": [
+										{
+											"name": "srid",
+											"type": "Number",
+											"description": "房型id"
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "房型名称"
+										},
+										{
+											"name": "bed_json",
+											"type": "String",
+											"description": "床型信息json"
+										},
+										{
+											"name": "window_json",
+											"type": "String",
+											"description": "窗型信息json 0无窗 1有窗 2部分有窗 3暗窗 4部分有窗 5落地窗"
+										},
+										{
+											"subParams": [
+												{
+													"name": "rate_id",
+													"type": "Number",
+													"description": "rateId"
+												},
+												{
+													"name": "rateplan_id",
+													"type": "Number",
+													"description": "rpId"
+												},
+												{
+													"name": "item_id",
+													"type": "Number",
+													"description": "iid"
+												},
+												{
+													"name": "currency_code",
+													"type": "String",
+													"description": "币种"
+												},
+												{
+													"name": "attribute",
+													"type": "String[]",
+													"description": "商品属性，INSTANT_CONFIRM(\"及时确认\"),MORNING_ORDER(\"支持凌晨入住\"),"
+												},
+												{
+													"name": "invoice_provider",
+													"type": "Number",
+													"description": "开票类型，0、不开票；1、门店开票；2、商家开票"
+												},
+												{
+													"name": "max_stay_days",
+													"type": "Number",
+													"description": "最大入住天数"
+												},
+												{
+													"name": "min_stay_days",
+													"type": "Number",
+													"description": "最小入住天数"
+												},
+												{
+													"name": "max_occupancy",
+													"type": "Number",
+													"description": "最大入住人数"
+												},
+												{
+													"name": "min_advance_hour",
+													"type": "Number",
+													"description": "最小提前预定小时数"
+												},
+												{
+													"name": "max_advance_hour",
+													"type": "Number",
+													"description": "最大提前预定小时数"
+												},
+												{
+													"name": "effective_daily_start_time",
+													"type": "String",
+													"description": "每天可售起始时间，HH:mm:ss"
+												},
+												{
+													"name": "effective_daily_end_time",
+													"type": "String",
+													"description": "每天可售结束时间，HH:mm:ss"
+												},
+												{
+													"name": "effective_start_time",
+													"type": "String",
+													"description": "可售开始时间，yyyy-MM-dd HH:mm:ss"
+												},
+												{
+													"name": "effective_end_time",
+													"type": "String",
+													"description": "可售结束时间，yyyy-MM-dd HH:mm:ss"
+												},
+												{
+													"subParams": [
+														{
+															"name": "checkin_date",
+															"type": "String",
+															"description": "入住日期 yyyy-MM-dd"
+														},
+														{
+															"name": "checkout_date",
+															"type": "String",
+															"description": "离店日期 yyyy-MM-dd"
+														},
+														{
+															"name": "stay_days",
+															"type": "Number",
+															"description": "入住天数"
+														},
+														{
+															"name": "price",
+															"type": "Number",
+															"description": "商品营销后报价，精度（分）"
+														},
+														{
+															"name": "breakfast_count",
+															"type": "Number",
+															"description": "早餐数，-1代表早餐数和入住人数一致"
+														},
+														{
+															"name": "promotions",
+															"type": "PromotionPrice[]",
+															"description": "飞猪营销优惠列表"
+														},
+														{
+															"name": "original_price",
+															"type": "Number",
+															"description": "商品营销前报价，精度（分）"
+														}
+													],
+													"name": "checkin_checkout_prices",
+													"type": "CheckInCheckOutPrice[]",
+													"description": "日历报价列表"
+												},
+												{
+													"name": "cancel_policy_json",
+													"type": "String",
+													"description": "退改政策json"
+												},
+												{
+													"name": "cancel_policy_desc",
+													"type": "String",
+													"description": "退改政策描述信息"
+												}
+											],
+											"name": "rate_prices",
+											"type": "RatePrice[]",
+											"description": "报价列表"
+										}
+									],
+									"name": "room_prices",
+									"type": "RoomPrice[]",
+									"description": "房型报价列表"
+								}
+							],
+							"name": "hotel_prices",
+							"type": "HotelPrice[]",
+							"description": "酒店报价列表"
+						}
+					],
+					"name": "module",
+					"type": "HotelPricesResponse",
+					"description": "酒店报价信息"
+				}
+			],
+			"name": "hotel_prices_result",
+			"type": "HotelPricesResult",
+			"description": "酒店报价查询结果"
+		}
+	],
+	"name": "taobao.xhotel.distribution.price",
+	"apiChineseName": "飞猪分销通用酒店报价接口",
+	"description": "飞猪分销通用酒店报价接口",
+	"id": 67183
+}

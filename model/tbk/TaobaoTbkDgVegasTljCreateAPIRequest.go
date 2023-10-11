@@ -26,7 +26,7 @@ type TaobaoTbkDgVegasTljCreateAPIRequest struct {
 	_name string
 	// 宝贝ID或营销ID
 	_itemId string
-	// CPS佣金类型
+	// 已下线，后续不需要填写
 	_campaignType string
 	// 必须传入0
 	_securityLevel int64
@@ -158,7 +158,7 @@ func (r TaobaoTbkDgVegasTljCreateAPIRequest) GetItemId() string {
 }
 
 // SetCampaignType is CampaignType Setter
-// CPS佣金类型
+// 已下线，后续不需要填写
 func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetCampaignType(_campaignType string) error {
 	r._campaignType = _campaignType
 	r.Set("campaign_type", _campaignType)

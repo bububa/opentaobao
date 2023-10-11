@@ -78,18 +78,34 @@ type AppraiseOrderInfoDto struct {
 	SellerConfirmBackAddressTime string `json:"seller_confirm_back_address_time,omitempty" xml:"seller_confirm_back_address_time,omitempty"`
 	// 验货宝订单流程版本
 	YhbVersion string `json:"yhb_version,omitempty" xml:"yhb_version,omitempty"`
-	// 验货宝 3.0 支付订单状态
-	Yhb3BillState string `json:"yhb3_bill_state,omitempty" xml:"yhb3_bill_state,omitempty"`
-	// 验货宝 3.0 验货费增值服务订单状态
-	Yhb3FeeState string `json:"yhb3_fee_state,omitempty" xml:"yhb3_fee_state,omitempty"`
-	// 验货宝 3.0 纠纷单状态
-	Yhb3DisputeState string `json:"yhb3_dispute_state,omitempty" xml:"yhb3_dispute_state,omitempty"`
+	// 买家验货费支付宝流水单号（仅在买家需要承担时有效）
+	BuyerInspectionZfbId string `json:"buyer_inspection_zfb_id,omitempty" xml:"buyer_inspection_zfb_id,omitempty"`
+	// 买家验货费支付单号
+	BuyerInspectionOrderId string `json:"buyer_inspection_order_id,omitempty" xml:"buyer_inspection_order_id,omitempty"`
+	// 卖家验货费支付宝流水单号（仅在卖家需要承担时有效）
+	SellerInspectionZfbId string `json:"seller_inspection_zfb_id,omitempty" xml:"seller_inspection_zfb_id,omitempty"`
+	// 卖家验货费支付单号
+	SellerInspectionOrderId string `json:"seller_inspection_order_id,omitempty" xml:"seller_inspection_order_id,omitempty"`
+	// 纠纷单判责结论，只在产生纠纷单并在判责结论出具后有效
+	DisputeConclusion string `json:"dispute_conclusion,omitempty" xml:"dispute_conclusion,omitempty"`
+	// 卖家支付宝 pid
+	SellerAlipayPid string `json:"seller_alipay_pid,omitempty" xml:"seller_alipay_pid,omitempty"`
+	// 仓库 id
+	AcStorageId string `json:"ac_storage_id,omitempty" xml:"ac_storage_id,omitempty"`
+	// 有值代表使用了验货费券，表示金额
+	InspectionCouponFee string `json:"inspection_coupon_fee,omitempty" xml:"inspection_coupon_fee,omitempty"`
 	// 需付给买家的赔付金额，单位分。状态为：已付款后发货超时（101-1 101-2）、卖家取消订单（101-3 101-4）、鉴定为赝品（主状态105）时有值。
 	Compensation2buyer int64 `json:"compensation2buyer,omitempty" xml:"compensation2buyer,omitempty"`
 	// 服务商应收实时分账金额，分。仅当交易成功或者卖家无责买家不买 这两个状态有效，其余为0。当保证金被罚没的状态时，不会实时分账而是线下结算，所以只有上述两个状态有值。
 	SupplierChargeFeeCent int64 `json:"supplier_charge_fee_cent,omitempty" xml:"supplier_charge_fee_cent,omitempty"`
 	// 买家实付金额，单位：分
 	ActualPaidFeeCent int64 `json:"actual_paid_fee_cent,omitempty" xml:"actual_paid_fee_cent,omitempty"`
+	// 确定买家验货费金额，单位：分
+	BuyerInspectionFee int64 `json:"buyer_inspection_fee,omitempty" xml:"buyer_inspection_fee,omitempty"`
+	// 确定买家验货费金额，单位：分
+	SellerInspectionFee int64 `json:"seller_inspection_fee,omitempty" xml:"seller_inspection_fee,omitempty"`
 	// 是否是经主发发布/编辑的验货宝商品
 	AppraiseFromNewPublisher bool `json:"appraise_from_new_publisher,omitempty" xml:"appraise_from_new_publisher,omitempty"`
+	// true 表示交易成功卖家包验货费模式
+	TradeSuccessSellerAssume bool `json:"trade_success_seller_assume,omitempty" xml:"trade_success_seller_assume,omitempty"`
 }

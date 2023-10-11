@@ -16,6 +16,8 @@ type AlibabaHealthVaccinOrderUpdateAPIRequest struct {
 	_actionType string
 	// 预约单id
 	_orderId string
+	// 未接种原因
+	_isvNotInoculateReason string
 	// 时间戳
 	_actionTime int64
 }
@@ -68,6 +70,19 @@ func (r *AlibabaHealthVaccinOrderUpdateAPIRequest) SetOrderId(_orderId string) e
 // GetOrderId OrderId Getter
 func (r AlibabaHealthVaccinOrderUpdateAPIRequest) GetOrderId() string {
 	return r._orderId
+}
+
+// SetIsvNotInoculateReason is IsvNotInoculateReason Setter
+// 未接种原因
+func (r *AlibabaHealthVaccinOrderUpdateAPIRequest) SetIsvNotInoculateReason(_isvNotInoculateReason string) error {
+	r._isvNotInoculateReason = _isvNotInoculateReason
+	r.Set("isv_not_inoculate_reason", _isvNotInoculateReason)
+	return nil
+}
+
+// GetIsvNotInoculateReason IsvNotInoculateReason Getter
+func (r AlibabaHealthVaccinOrderUpdateAPIRequest) GetIsvNotInoculateReason() string {
+	return r._isvNotInoculateReason
 }
 
 // SetActionTime is ActionTime Setter

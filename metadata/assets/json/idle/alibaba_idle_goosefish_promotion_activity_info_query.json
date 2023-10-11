@@ -1,0 +1,69 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "unique_key",
+					"type": "String",
+					"description": "业务唯一标识",
+					"required": true
+				},
+				{
+					"name": "book_time",
+					"type": "String",
+					"description": "预约时间戳，单位秒",
+					"required": true
+				},
+				{
+					"name": "material_id",
+					"type": "Number",
+					"description": "素材ID",
+					"required": true
+				},
+				{
+					"name": "task_id",
+					"type": "Number",
+					"description": "任务ID",
+					"required": true
+				}
+			],
+			"name": "promotion_activity_query_param",
+			"type": "PromotionActivityQueryParam",
+			"description": "活动参与查询入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "joined",
+					"type": "Boolean",
+					"description": "当前用户是否参与了营销活动"
+				}
+			],
+			"name": "data",
+			"type": "PromotionActivityInfoVO",
+			"description": "营销活动参与信息"
+		},
+		{
+			"name": "api_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "api_error_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "api_error_msg",
+			"type": "String",
+			"description": "错误说明"
+		}
+	],
+	"name": "alibaba.idle.goosefish.promotion.activity.info.query",
+	"apiChineseName": "闲鱼三方活动参与信息查询",
+	"description": "闲鱼三方活动参与信息查询",
+	"id": 67798
+}

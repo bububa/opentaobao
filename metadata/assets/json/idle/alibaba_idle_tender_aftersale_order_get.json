@@ -90,6 +90,11 @@
 					"name": "service_scene_type",
 					"type": "String",
 					"description": "售后服务场景类型"
+				},
+				{
+					"name": "main_order_settle_type",
+					"type": "String",
+					"description": "帮卖完结方式"
 				}
 			],
 			"name": "module",

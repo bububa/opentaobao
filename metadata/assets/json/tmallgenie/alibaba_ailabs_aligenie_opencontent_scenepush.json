@@ -219,6 +219,11 @@
 							"name": "is_super_vip_free",
 							"type": "Boolean",
 							"description": "是否仅大会员内容"
+						},
+						{
+							"name": "score",
+							"type": "Number",
+							"description": "专辑评分"
 						}
 					],
 					"name": "open_contents",
