@@ -1,0 +1,83 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "relation_type",
+					"type": "Number",
+					"description": "关系类型;6:商货关系;8:主子货品关系;16:商货预关联关系",
+					"required": true
+				},
+				{
+					"name": "target_item_id",
+					"type": "Number",
+					"description": "货品ID",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品ID",
+					"required": true
+				},
+				{
+					"name": "ic_sku_id",
+					"type": "Number",
+					"description": "skuId,当商品存在sku时,该参数必传"
+				}
+			],
+			"name": "cnsku_relation_dto",
+			"type": "CnskuRelationDTO",
+			"description": "待解绑的货品关系",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "operate_type",
+					"type": "String",
+					"description": "操作类型(默认为DELET)"
+				}
+			],
+			"name": "cnsku_relation_operate_option",
+			"type": "CnskuRelationOperateOption",
+			"description": "操作信息(不要传null)"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "success_result_map",
+			"type": "Json",
+			"description": "成功的关联关系集合"
+		},
+		{
+			"name": "ero_code",
+			"type": "String",
+			"description": "错误编码"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "is_system_failed",
+			"type": "Boolean",
+			"description": "是否系统异常"
+		},
+		{
+			"name": "fail_result_map",
+			"type": "Json",
+			"description": "失败的关联关系集合"
+		},
+		{
+			"name": "ero_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.ascp.cnsku.mapping.delete",
+	"apiChineseName": "货品关系解绑",
+	"description": "货品关系解绑",
+	"id": 67543
+}

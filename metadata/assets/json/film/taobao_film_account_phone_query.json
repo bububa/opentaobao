@@ -3,7 +3,7 @@
 		{
 			"name": "phone",
 			"type": "String",
-			"description": "11位手机号码",
+			"description": "手机号",
 			"required": true
 		}
 	],
@@ -26,6 +26,11 @@
 							"name": "user_nick",
 							"type": "String",
 							"description": "脱敏昵称"
+						},
+						{
+							"name": "is_new_user",
+							"type": "Boolean",
+							"description": "是否新用户"
 						}
 					],
 					"name": "account_list",

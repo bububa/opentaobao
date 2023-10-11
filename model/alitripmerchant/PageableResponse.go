@@ -4,6 +4,8 @@ package alitripmerchant
 type PageableResponse struct {
 	// 返回类型
 	Contents []HotelListSearchDto `json:"contents,omitempty" xml:"contents>hotel_list_search_dto,omitempty"`
+	// 查询抽奖用户数据集合
+	Content []LotteryDataVo `json:"content,omitempty" xml:"content>lottery_data_vo,omitempty"`
 	// 错误编码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息

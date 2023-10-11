@@ -1,0 +1,148 @@
+{
+	"requestParams": [
+		{
+			"name": "warehouse_merchant_code",
+			"type": "String",
+			"description": "仓商家编码"
+		},
+		{
+			"name": "warehouse_code",
+			"type": "String",
+			"description": "仓编码"
+		},
+		{
+			"name": "service_type",
+			"type": "String",
+			"description": "WAVE_ARRIVE-波次达。ONE_HOUR-小时达 "
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "service_type",
+							"type": "String",
+							"description": "网络类型 WAVE_ARRIVE-波次达。ONE_HOUR-小时达"
+						},
+						{
+							"name": "warehouse_merchant_code",
+							"type": "String",
+							"description": "仓商家"
+						},
+						{
+							"subParams": [
+								{
+									"name": "route_id",
+									"type": "String",
+									"description": "线路ID"
+								},
+								{
+									"subParams": [
+										{
+											"name": "node_name",
+											"type": "String",
+											"description": "节点名称"
+										},
+										{
+											"name": "merchant_code",
+											"type": "String",
+											"description": "节点商家编码"
+										},
+										{
+											"name": "prov_name",
+											"type": "String",
+											"description": "浙江省"
+										},
+										{
+											"name": "address",
+											"type": "String",
+											"description": "西集镇任郎路与供杜路交叉口西北200米"
+										},
+										{
+											"name": "node_code",
+											"type": "String",
+											"description": "节点编码"
+										},
+										{
+											"name": "city_id",
+											"type": "String",
+											"description": "110100"
+										},
+										{
+											"name": "poi",
+											"type": "String",
+											"description": "经纬度"
+										},
+										{
+											"name": "node_type",
+											"type": "Number",
+											"description": "/**      * 仓      */     WAREHOUSE(1, \"仓\"),      /**      * 揽运站      */     COLLECT_DOCK(2, \"揽运站\"),      /**      * 配送站      */     DELIVERY_DOCK(3, \"配送站\"),      /**      * 近端履约中心      */     CFC(4, \"近端履约中心\"),     ;"
+										},
+										{
+											"name": "area_id",
+											"type": "String",
+											"description": "区域ID"
+										},
+										{
+											"name": "city_name",
+											"type": "String",
+											"description": "城市名称"
+										},
+										{
+											"name": "area_name",
+											"type": "String",
+											"description": "区域名称"
+										},
+										{
+											"name": "prov_id",
+											"type": "String",
+											"description": "省份id"
+										}
+									],
+									"name": "nodes",
+									"type": "LogisticsNodeFullInfo[]",
+									"description": "节点信息"
+								}
+							],
+							"name": "network_route_dto_list",
+							"type": "NetworkRouteDTO[]",
+							"description": "线路信息"
+						},
+						{
+							"name": "warehouse_code",
+							"type": "String",
+							"description": "仓编码"
+						}
+					],
+					"name": "data",
+					"type": "WarehouseNetworkResultDTO",
+					"description": "数据"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求成功或失败"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误详情"
+				}
+			],
+			"name": "result",
+			"type": "TopApiResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.tc.compass.warehousenetwork.query",
+	"apiChineseName": "按仓维度来查询鸟潮网络",
+	"description": "按仓维度来查询鸟潮网络",
+	"id": 65998
+}

@@ -1,0 +1,93 @@
+{
+	"requestParams": [
+		{
+			"name": "shop_id",
+			"type": "String",
+			"description": "店铺id",
+			"required": true
+		},
+		{
+			"name": "sku_code",
+			"type": "String",
+			"description": "商品skucode",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "promotion_value",
+									"type": "Number",
+									"description": "优惠值"
+								},
+								{
+									"name": "end_hour",
+									"type": "Number",
+									"description": "优惠结束时间（距离过期时间）"
+								},
+								{
+									"name": "start_hour",
+									"type": "Number",
+									"description": "优惠开始时间（距离过期时间）"
+								},
+								{
+									"name": "out_id",
+									"type": "Number",
+									"description": "外部优惠id"
+								}
+							],
+							"name": "period_infos",
+							"type": "ExpirePeriodInfo[]",
+							"description": "优惠详情"
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品"
+						},
+						{
+							"name": "shop_ids",
+							"type": "String[]",
+							"description": "门店"
+						},
+						{
+							"name": "merchant_code",
+							"type": "String",
+							"description": "商家code"
+						}
+					],
+					"name": "data",
+					"type": "ExpirePromotionBo",
+					"description": "data"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "success"
+				}
+			],
+			"name": "result",
+			"type": "MarketResult",
+			"description": "result"
+		}
+	],
+	"name": "alibaba.hm.marketing.expire.promotion.query",
+	"apiChineseName": "短保优惠查询",
+	"description": "短保优惠查询",
+	"id": 67229
+}

@@ -1,0 +1,82 @@
+{
+	"requestParams": [
+		{
+			"name": "status_code",
+			"type": "String",
+			"description": "create, pickup_finished 揽收完成， signed 签收",
+			"required": true
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "外部单据id"
+		},
+		{
+			"name": "logistics_order_id",
+			"type": "Number",
+			"description": "物流单id",
+			"required": true
+		},
+		{
+			"name": "express_code",
+			"type": "String",
+			"description": "物流单号"
+		},
+		{
+			"name": "express_company",
+			"type": "String",
+			"description": "物流公司"
+		},
+		{
+			"name": "courier_mobile",
+			"type": "String",
+			"description": "快递员手机号"
+		},
+		{
+			"name": "courier_name",
+			"type": "String",
+			"description": "快递员名称"
+		},
+		{
+			"name": "extend_info",
+			"type": "Json",
+			"description": "扩展信息"
+		},
+		{
+			"name": "pickup_finish_time",
+			"type": "Date",
+			"description": "揽收完成时间"
+		},
+		{
+			"name": "pickup_door_time",
+			"type": "Date",
+			"description": "揽收上门确认时间"
+		},
+		{
+			"name": "sign_time",
+			"type": "Date",
+			"description": "签收时间"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	],
+	"name": "tmall.servicecenter.workcard.logisticsinfo.update",
+	"apiChineseName": "物流单信息回传接口",
+	"description": "物流单信息回传接口",
+	"id": 57207
+}

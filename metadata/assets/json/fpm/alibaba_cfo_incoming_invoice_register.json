@@ -425,6 +425,11 @@
 							"name": "waybill_no",
 							"type": "String",
 							"description": "运单号"
+						},
+						{
+							"name": "invoice_type_code",
+							"type": "String",
+							"description": "票种类型code"
 						}
 					],
 					"name": "invoice_d_t_o",

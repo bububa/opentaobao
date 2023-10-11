@@ -1,0 +1,135 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "五道口活动id",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "页面大小",
+							"required": true
+						},
+						{
+							"name": "current",
+							"type": "Number",
+							"description": "当前分页，从1开始",
+							"required": true
+						}
+					],
+					"name": "page",
+					"type": "BasePageQuery",
+					"description": "分页参数",
+					"required": true
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "商家活动id"
+				},
+				{
+					"name": "sku_codes",
+					"type": "String[]",
+					"description": "需要查询的商品skuCodes"
+				},
+				{
+					"name": "by_channel",
+					"type": "Boolean",
+					"description": "是否自定义渠道同步"
+				},
+				{
+					"subParams": [
+						{
+							"name": "channel",
+							"type": "String",
+							"description": "淘鲜达:\"31\",饿了么:\"3\",京东到家:\"26\",美团外卖:\"2\""
+						}
+					],
+					"name": "channel_config_list",
+					"type": "ChannelConfig[]",
+					"description": "自定义同步渠道配置"
+				}
+			],
+			"name": "param",
+			"type": "ActivitySkuQuery",
+			"description": "查询入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "参加当前活动的商品总数"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页面大小"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品的skuCode"
+						},
+						{
+							"name": "sku_name",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "item_shop_relation",
+							"type": "String",
+							"description": "淘宝item和shop的对应关系， k-itemId, v-shopId"
+						}
+					],
+					"name": "item_pool_sku_list",
+					"type": "ItemPoolSku[]",
+					"description": "返回的数据"
+				},
+				{
+					"name": "current",
+					"type": "Number",
+					"description": "当前分页"
+				},
+				{
+					"name": "total_page",
+					"type": "Number",
+					"description": "总页数"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "查询商品是否成功"
+				}
+			],
+			"name": "result",
+			"type": "MarketPageResult",
+			"description": "查询返回结果"
+		}
+	],
+	"name": "alibaba.hm.marketing.itempool.queryitems",
+	"apiChineseName": "查询商品池活动下面的商品",
+	"description": "查询商品池活动下面的商品",
+	"id": 67196
+}

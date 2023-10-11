@@ -3,7 +3,7 @@
 		{
 			"name": "delivery_mobile",
 			"type": "String",
-			"description": "派送员手机号",
+			"description": "派送员手机号（支持座机号和400）",
 			"required": true
 		},
 		{
@@ -37,6 +37,11 @@
 			"name": "cancel_id",
 			"type": "Number",
 			"description": "卖家联系人地址库ID，可以通过taobao.logistics.address.search接口查询到地址库ID。 如果为空，取的卖家的默认退货地址"
+		},
+		{
+			"name": "mode",
+			"type": "String",
+			"description": " A（默认，核销签收模式），B（商家回传物流节点模式）"
 		}
 	],
 	"responseParams": [
@@ -45,12 +50,24 @@
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "-"
+					"description": "执行结果"
 				},
 				{
-					"name": "consign_desc",
-					"type": "String",
-					"description": "发货提示文案"
+					"subParams": [
+						{
+							"name": "lp_order_id",
+							"type": "Number",
+							"description": "物流发货单号"
+						},
+						{
+							"name": "consign_desc",
+							"type": "String",
+							"description": "发货文案描述"
+						}
+					],
+					"name": "consign",
+					"type": "ConsignDTO",
+					"description": "-"
 				}
 			],
 			"name": "result",

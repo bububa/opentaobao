@@ -1,0 +1,65 @@
+{
+	"requestParams": [
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "交易号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "out_sid",
+					"type": "String",
+					"description": "运单号"
+				},
+				{
+					"name": "company_name",
+					"type": "String",
+					"description": "物流公司名称"
+				},
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "交易号"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "订单物流状态"
+				},
+				{
+					"subParams": [
+						{
+							"name": "status_time",
+							"type": "String",
+							"description": "状态发生的时间"
+						},
+						{
+							"name": "status_desc",
+							"type": "String",
+							"description": "状态描述"
+						},
+						{
+							"name": "action",
+							"type": "String",
+							"description": "节点说明 ，指明当前节点揽收、派送，签收。"
+						}
+					],
+					"name": "trace_list",
+					"type": "TransitStepInfo[]",
+					"description": "列表"
+				}
+			],
+			"name": "result",
+			"type": "TransitStepResult []",
+			"description": "返回对象"
+		}
+	],
+	"name": "taobao.logistics.trace.get",
+	"apiChineseName": "用户根据交易号查询物流流转信息",
+	"description": "用户根据交易号查询物流流转信息",
+	"id": 65623
+}

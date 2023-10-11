@@ -17,8 +17,7 @@
 				{
 					"name": "city_code",
 					"type": "Number",
-					"description": "城市code",
-					"required": true
+					"description": "城市code"
 				},
 				{
 					"name": "shid",
@@ -245,6 +244,28 @@
 											"name": "daily_price_view",
 											"type": "Number",
 											"description": "界面展示价格"
+										},
+										{
+											"subParams": [
+												{
+													"name": "rate_start_time",
+													"type": "String",
+													"description": "价格计划日期"
+												},
+												{
+													"name": "discount_daily_price",
+													"type": "Number",
+													"description": "不取整的每日优惠后价格"
+												},
+												{
+													"name": "rounding_after_discount_daily_price",
+													"type": "Number",
+													"description": "取整的每日优惠后价格"
+												}
+											],
+											"name": "price_plan",
+											"type": "DiscountDailyPrice[]",
+											"description": "每日优惠后价格DTO"
 										}
 									],
 									"name": "rates",

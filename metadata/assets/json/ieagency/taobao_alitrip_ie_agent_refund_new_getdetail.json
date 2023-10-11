@@ -466,6 +466,65 @@
 							"name": "change_simple_vo",
 							"type": "ChangeSimpleVo",
 							"description": "改签信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "count",
+									"type": "Number",
+									"description": "催退次数"
+								},
+								{
+									"name": "force_refund",
+									"type": "Boolean",
+									"description": "是否触发了强制退款"
+								},
+								{
+									"name": "latest_urgent_to_seller_finish_time",
+									"type": "Date",
+									"description": "最新要求商家处理时间"
+								},
+								{
+									"name": "latest_urgent_to_buyer_promise_time",
+									"type": "Date",
+									"description": "最新平台承若用户完成时间"
+								},
+								{
+									"name": "latest_request_date",
+									"type": "Date",
+									"description": "最新催退时间"
+								},
+								{
+									"subParams": [
+										{
+											"name": "num",
+											"type": "Number",
+											"description": "第num次催退"
+										},
+										{
+											"name": "request_date",
+											"type": "Date",
+											"description": "催退时间"
+										},
+										{
+											"name": "urgent_to_seller_finish_time",
+											"type": "Date",
+											"description": "要求商家处理时间"
+										},
+										{
+											"name": "urgent_to_buyer_promise_time",
+											"type": "Date",
+											"description": "平台承若用户完成时间"
+										}
+									],
+									"name": "urgent_refund_history",
+									"type": "UrgentRefundHistoryDO[]",
+									"description": "催退历史记录"
+								}
+							],
+							"name": "urgent_refund_vo",
+							"type": "UrgentRefundVO",
+							"description": "催退"
 						}
 					],
 					"name": "refund_order_vo",

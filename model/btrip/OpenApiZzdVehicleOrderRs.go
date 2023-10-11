@@ -16,7 +16,7 @@ type OpenApiZzdVehicleOrderRs struct {
 	ThirdpartCorpId string `json:"thirdpart_corp_id,omitempty" xml:"thirdpart_corp_id,omitempty"`
 	// 第三方用户ID
 	UserId string `json:"user_id,omitempty" xml:"user_id,omitempty"`
-	// 用户名称
+	// 企业维护的用户名称
 	UserNick string `json:"user_nick,omitempty" xml:"user_nick,omitempty"`
 	// 部门名称
 	DepartName string `json:"depart_name,omitempty" xml:"depart_name,omitempty"`

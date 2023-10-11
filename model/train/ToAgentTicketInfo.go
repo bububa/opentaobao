@@ -50,4 +50,6 @@ type ToAgentTicketInfo struct {
 	SegmentIndex int64 `json:"segment_index,omitempty" xml:"segment_index,omitempty"`
 	// 实际票价(不包含保险价格),例如100元,输出为10000,精确到分.
 	RealTicketPrice int64 `json:"real_ticket_price,omitempty" xml:"real_ticket_price,omitempty"`
+	// 是否支持无座
+	SupportNoSeat bool `json:"support_no_seat,omitempty" xml:"support_no_seat,omitempty"`
 }

@@ -12,6 +12,8 @@ type OfnRecycleOrderSubsidyDto struct {
 	NewOrderPayStatus string `json:"new_order_pay_status,omitempty" xml:"new_order_pay_status,omitempty"`
 	// 关联新机单店铺名称
 	NewOrderShopName string `json:"new_order_shop_name,omitempty" xml:"new_order_shop_name,omitempty"`
+	// 拆机费结算使用的关联新机单ID
+	KitchenApplianceSettleNewOrderId string `json:"kitchen_appliance_settle_new_order_id,omitempty" xml:"kitchen_appliance_settle_new_order_id,omitempty"`
 	// 旧品款预付款
 	OldItemPreRedPacket *ExternalPreRedPacketDto `json:"old_item_pre_red_packet,omitempty" xml:"old_item_pre_red_packet,omitempty"`
 	// 旧品款尾款

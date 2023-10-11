@@ -1,0 +1,43 @@
+{
+	"requestParams": [
+		{
+			"name": "anomaly_recourse_id",
+			"type": "Number",
+			"description": "投诉单id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "value",
+					"type": "String",
+					"description": "投诉单对象的json字符串"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
+		}
+	],
+	"name": "tmall.servicecenter.anomalyrecourse.homedecoration.querybyid",
+	"apiChineseName": "天猫服务平台服务商查询商家投诉单",
+	"description": "天猫服务平台服务商查询商家投诉单",
+	"id": 65953
+}

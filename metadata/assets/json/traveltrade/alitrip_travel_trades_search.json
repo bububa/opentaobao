@@ -31,6 +31,11 @@
 			"name": "category",
 			"type": "Number",
 			"description": "类目筛选, 1、旅行购，旅行购定制专用字段，表示搜索旅行购订单。"
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID"
 		}
 	],
 	"responseParams": [

@@ -104,7 +104,7 @@
 						{
 							"name": "user_nick",
 							"type": "String",
-							"description": "用户名称"
+							"description": "企业维护的用户名称"
 						},
 						{
 							"name": "depart_name",

@@ -1,0 +1,74 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "insurance_order_no",
+					"type": "String",
+					"description": "保单号",
+					"required": true
+				},
+				{
+					"name": "insurance_count",
+					"type": "Number",
+					"description": "投保数量",
+					"required": true
+				},
+				{
+					"name": "insurance_service_order_id",
+					"type": "Number",
+					"description": "投保对应服务单",
+					"required": true
+				},
+				{
+					"name": "insurance_start_time",
+					"type": "Date",
+					"description": "投保时间",
+					"required": true
+				},
+				{
+					"name": "insurance_refund_time",
+					"type": "Date",
+					"description": "退保时间(暂定）"
+				},
+				{
+					"name": "insurance_type",
+					"type": "Number",
+					"description": "投保类型 1：只换不修；2：碎屏；3：延长保修；4:全面保修;5:意外保；6:无忧退",
+					"required": true
+				},
+				{
+					"name": "insurance_order_status",
+					"type": "Number",
+					"description": " 保单状态 1 投保成功； 99 投保失败",
+					"required": true
+				}
+			],
+			"name": "service_insurance_callback_request",
+			"type": "ServiceInsuranceCallbackRequest",
+			"description": "服务单投保信息回传入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "tmall.serivcecenter.servicerorder.insurance.callback",
+	"apiChineseName": "服务商回传保单信息",
+	"description": "服务商回传保单信息",
+	"id": 65594
+}

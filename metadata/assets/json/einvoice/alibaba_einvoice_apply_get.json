@@ -1,0 +1,210 @@
+{
+	"requestParams": [
+		{
+			"name": "platform_tid",
+			"type": "String",
+			"description": "平台订单号",
+			"required": true
+		},
+		{
+			"name": "apply_id",
+			"type": "String",
+			"description": "开票申请ID，跟消息中的apply_id对应，传入applyId后，只会返回一条开票申请消息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		},
+		{
+			"subParams": [
+				{
+					"name": "platform_code",
+					"type": "String",
+					"description": "电商平台代码,TB,TM,ALIPAY,JD"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "开票申请状态，0=已拒绝，1=申请中，2=已同意"
+				},
+				{
+					"name": "memo",
+					"type": "String",
+					"description": "买家备注"
+				},
+				{
+					"name": "payer_name",
+					"type": "String",
+					"description": "买家抬头"
+				},
+				{
+					"name": "platform_tid",
+					"type": "String",
+					"description": "电商平台对应的订单号"
+				},
+				{
+					"name": "payer_register_no",
+					"type": "String",
+					"description": "买家税号"
+				},
+				{
+					"name": "trigger_status",
+					"type": "String",
+					"description": "开票申请的触发类型，buyer_payed=卖家已付款，sent_goods=卖家已发货，buyer_confirm=买家确认收货，refund_seller_confirm=卖家同意退款，invoice_supply=买家申请补开发票，invoice_change=买家申请改抬头，change_paper=电换纸"
+				},
+				{
+					"name": "invoice_kind",
+					"type": "Number",
+					"description": "发票种类，0=电子发票，1=纸质发票，2=专票，3=电子专用发票，4=全电普通发票，5=全电专用发票"
+				},
+				{
+					"name": "business_type",
+					"type": "Number",
+					"description": "抬头类型，0=个人，1=企业"
+				},
+				{
+					"name": "invoice_type",
+					"type": "String",
+					"description": "发票(开票)类型，蓝票blue,红票red，默认blue"
+				},
+				{
+					"name": "invoice_amount",
+					"type": "String",
+					"description": "开票金额"
+				},
+				{
+					"name": "sum_price",
+					"type": "String",
+					"description": "不含税总金额"
+				},
+				{
+					"name": "sum_tax",
+					"type": "String",
+					"description": "总税额"
+				},
+				{
+					"subParams": [
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "发票项目名称（或商品名称）"
+						},
+						{
+							"name": "amount",
+							"type": "String",
+							"description": "价税合计。(等于sumPrice和tax之和)"
+						},
+						{
+							"name": "row_type",
+							"type": "String",
+							"description": "发票行性质。0表示正常行，1表示折扣行，2表示被折扣行。比如充电器单价100元，折扣10元，则明细为2行，充电器行性质为2，折扣行性质为1。如果充电器没有折扣，则值应为0"
+						},
+						{
+							"name": "specification",
+							"type": "String",
+							"description": "规格型号,可选"
+						},
+						{
+							"name": "sum_price",
+							"type": "String",
+							"description": "总价，格式：100.00(不含税)"
+						},
+						{
+							"name": "tax",
+							"type": "String",
+							"description": "税额"
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "单价，格式：100.00(不含税)"
+						},
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "数量"
+						},
+						{
+							"name": "tax_rate",
+							"type": "String",
+							"description": "税率。税率只能为0或0.03或0.04或0.06或0.11或0.13或0.17"
+						},
+						{
+							"name": "unit",
+							"type": "String",
+							"description": "单位"
+						},
+						{
+							"name": "item_no",
+							"type": "String",
+							"description": "发票项目编号（或商品编号）"
+						},
+						{
+							"name": "biz_order_id",
+							"type": "String",
+							"description": "淘宝子订单号"
+						},
+						{
+							"name": "is_post_fee_row",
+							"type": "Boolean",
+							"description": "是否运费行标识，true:运费行，false:非运费行"
+						},
+						{
+							"name": "zero_rate_flag",
+							"type": "String",
+							"description": "零税率标识，0=出口零税率，1=免税，2=不征收，3=普通零税率"
+						}
+					],
+					"name": "invoice_items",
+					"type": "InvoiceItem[]",
+					"description": "发票明细"
+				},
+				{
+					"name": "payer_phone",
+					"type": "String",
+					"description": "购买方联系电话"
+				},
+				{
+					"name": "payer_address",
+					"type": "String",
+					"description": "购买方地址"
+				},
+				{
+					"name": "payer_bankaccount",
+					"type": "String",
+					"description": "购买方开户行账号"
+				},
+				{
+					"name": "payer_bank",
+					"type": "String",
+					"description": "购买方开户银行"
+				},
+				{
+					"name": "gmt_modified_str",
+					"type": "String",
+					"description": "发票申请修改时间"
+				},
+				{
+					"name": "extend_props",
+					"type": "String",
+					"description": "扩展属性"
+				},
+				{
+					"name": "gmt_create",
+					"type": "String",
+					"description": "发票申请创建时间"
+				}
+			],
+			"name": "apply_list",
+			"type": "Apply []",
+			"description": "开票明细"
+		}
+	],
+	"name": "alibaba.einvoice.apply.get",
+	"apiChineseName": "开票申请数据获取接口",
+	"description": "ERP获取开票申请数据",
+	"id": 27107
+}

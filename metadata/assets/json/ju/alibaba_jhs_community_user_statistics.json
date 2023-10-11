@@ -1,0 +1,32 @@
+{
+	"requestParams": [
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户会话",
+			"required": true
+		},
+		{
+			"name": "extend",
+			"type": "String",
+			"description": "扩展参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "上报数据是否成功"
+		},
+		{
+			"name": "error",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.jhs.community.user.statistics",
+	"apiChineseName": "聚划算社群用户行为上报",
+	"description": "聚划算社群用户行为上报",
+	"id": 67212
+}

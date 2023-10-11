@@ -20,8 +20,12 @@ type AfterChangeSegments struct {
 	DepAirport string `json:"dep_airport,omitempty" xml:"dep_airport,omitempty"`
 	// 到达时间
 	ArrTime string `json:"arr_time,omitempty" xml:"arr_time,omitempty"`
+	// 该航段对应的票号
+	TicketNo string `json:"ticket_no,omitempty" xml:"ticket_no,omitempty"`
 	// 航段序号
 	SegmentIndex int64 `json:"segment_index,omitempty" xml:"segment_index,omitempty"`
 	// 航程序号
 	OdIndex int64 `json:"od_index,omitempty" xml:"od_index,omitempty"`
+	// 是否需要修改的航段,1:是,0:否
+	IsModify int64 `json:"is_modify,omitempty" xml:"is_modify,omitempty"`
 }

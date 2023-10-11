@@ -246,6 +246,11 @@
 							"name": "cash_fee",
 							"type": "String",
 							"description": "返现金额，单位分"
+						},
+						{
+							"name": "quote_version",
+							"type": "String",
+							"description": "估计版本，第几次估价"
 						}
 					],
 					"name": "module",

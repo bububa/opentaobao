@@ -1,0 +1,45 @@
+{
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "gender",
+					"type": "Number",
+					"description": "0男生 1女生"
+				},
+				{
+					"name": "avatar",
+					"type": "String",
+					"description": "闲鱼头像"
+				},
+				{
+					"name": "nick_name",
+					"type": "String",
+					"description": "用户闲鱼昵称"
+				}
+			],
+			"name": "data",
+			"type": "IdleGooseFishUserInfoVO",
+			"description": "用户数据"
+		},
+		{
+			"name": "api_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "api_error_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "api_error_msg",
+			"type": "String",
+			"description": "错误说明"
+		}
+	],
+	"name": "alibaba.idle.goosefish.user.info.query",
+	"apiChineseName": "闲鱼三方容器用户信息获取",
+	"description": "闲鱼三方容器用户信息获取",
+	"id": 67562
+}

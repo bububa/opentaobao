@@ -1,0 +1,101 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "start_time",
+					"type": "Number",
+					"description": "活动开始时间,时间戳",
+					"required": true
+				},
+				{
+					"name": "terminals",
+					"type": "String[]",
+					"description": "优惠适用场景[APP|POS|POS+APP分别对应的值为1|2|1,2]",
+					"required": true
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "买赠活动详情描述,不超过30个英文字符",
+					"required": true
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "商家活动id"
+				},
+				{
+					"name": "shop_ids",
+					"type": "String[]",
+					"description": "参加活动的渠道店ids",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "Number",
+					"description": "活动结束时间,时间戳",
+					"required": true
+				},
+				{
+					"name": "activity_name",
+					"type": "String",
+					"description": "买赠活动名称,不超过10个英文字符",
+					"required": true
+				},
+				{
+					"name": "member_limit",
+					"type": "Number",
+					"description": "会员维度活动参与人群限制[-1:不限制;1:会员专享;2:非会员专享]"
+				},
+				{
+					"name": "merchant_crowd_code",
+					"type": "String",
+					"description": "商家人群编码"
+				},
+				{
+					"name": "txd_crowd_code",
+					"type": "String",
+					"description": "淘鲜达人群编码"
+				}
+			],
+			"name": "param",
+			"type": "ItemBuyGiftActivity",
+			"description": "创建活动请求入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "创建成功时会返回五道口活动id"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "创建活动是否成功"
+				}
+			],
+			"name": "result",
+			"type": "MarketResult",
+			"description": "创建活动返回结果"
+		}
+	],
+	"name": "alibaba.hm.marketing.itembuygift.createactivity",
+	"apiChineseName": "创建买赠活动",
+	"description": "创建买赠活动",
+	"id": 67245
+}

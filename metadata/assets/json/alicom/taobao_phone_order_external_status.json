@@ -1,0 +1,56 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "外部订单id",
+					"required": true
+				}
+			],
+			"name": "query_order_req",
+			"type": "QueryOrderReq",
+			"description": "状态查询请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "响应编码"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"subParams": [
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "外部订单ID"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "0:初始化，1:成功，2:失败"
+				}
+			],
+			"name": "model",
+			"type": "DistributeTradeOrderInfo",
+			"description": "返回结果"
+		},
+		{
+			"name": "desc",
+			"type": "String",
+			"description": "响应描述"
+		}
+	],
+	"name": "taobao.phone.order.external.status",
+	"apiChineseName": "话费外放订单状态接口",
+	"description": "话费外放订单状态接口",
+	"id": 66721
+}

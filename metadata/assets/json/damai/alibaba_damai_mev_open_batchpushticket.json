@@ -131,6 +131,26 @@
 					"name": "print_status",
 					"type": "Number",
 					"description": "纸质票票单换票状态:1=未换，2=已换，"
+				},
+				{
+					"name": "seat_no",
+					"type": "String",
+					"description": "座位号"
+				},
+				{
+					"name": "seat_name",
+					"type": "String",
+					"description": "座位名称"
+				},
+				{
+					"name": "seat_row",
+					"type": "String",
+					"description": "排（文本）"
+				},
+				{
+					"name": "seat_col",
+					"type": "String",
+					"description": "列（文本）"
 				}
 			],
 			"name": "third_ticket_set_open_param_list",

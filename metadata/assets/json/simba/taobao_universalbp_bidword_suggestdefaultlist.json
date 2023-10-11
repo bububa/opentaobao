@@ -1,0 +1,137 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码",
+					"required": true
+				}
+			],
+			"name": "top_service_context",
+			"type": "TopServiceContext",
+			"description": "topServiceContext",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "material_id_list",
+					"type": "Number[]",
+					"description": "宝贝id集合"
+				}
+			],
+			"name": "bidword_default_query_v_o",
+			"type": "BidwordDefaultQueryVo",
+			"description": "bidwordDefaultQueryVO",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "ok",
+							"type": "Boolean",
+							"description": "是否成功"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误编码"
+						}
+					],
+					"name": "info",
+					"type": "TopInfo",
+					"description": "请求系统信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "material_id",
+									"type": "Number",
+									"description": "宝贝id"
+								},
+								{
+									"subParams": [
+										{
+											"name": "word",
+											"type": "String",
+											"description": "关键词"
+										},
+										{
+											"name": "bid_price",
+											"type": "String",
+											"description": "关键词"
+										},
+										{
+											"name": "avg_price",
+											"type": "String",
+											"description": "市场平均出价"
+										},
+										{
+											"name": "impression",
+											"type": "String",
+											"description": "预估展现"
+										},
+										{
+											"name": "relevance_type",
+											"type": "Number",
+											"description": "相关性,1:差,2:中,3:好"
+										},
+										{
+											"name": "ctr",
+											"type": "String",
+											"description": "点击率"
+										},
+										{
+											"name": "cvr",
+											"type": "String",
+											"description": "点击转化率"
+										},
+										{
+											"name": "type",
+											"type": "Number",
+											"description": "分类,0:宝贝,1:店铺"
+										}
+									],
+									"name": "word_list",
+									"type": "SuggestBidwordVo[]",
+									"description": "关键词建议条目集合"
+								}
+							],
+							"name": "bidword_suggest_item_v_o_list",
+							"type": "BidwordSuggestItemVo[]",
+							"description": "批量结果集"
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "数量"
+						}
+					],
+					"name": "bidword_suggest_item_v_o_top_bulk_data",
+					"type": "TopBulkData",
+					"description": "结果集"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.universalbp.bidword.suggestdefaultlist",
+	"apiChineseName": "建议默认关键词",
+	"description": "入参推广信息，出参建议的默认关键词",
+	"id": 67161
+}

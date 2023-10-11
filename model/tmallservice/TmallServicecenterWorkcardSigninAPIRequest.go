@@ -14,6 +14,8 @@ type TmallServicecenterWorkcardSigninAPIRequest struct {
 	model.Params
 	// 核销单外部id
 	_outerId string
+	// 图片地址回传集合
+	_picUrls string
 	// 工单id
 	_workcardId int64
 	// 核销单id
@@ -55,6 +57,19 @@ func (r *TmallServicecenterWorkcardSigninAPIRequest) SetOuterId(_outerId string)
 // GetOuterId OuterId Getter
 func (r TmallServicecenterWorkcardSigninAPIRequest) GetOuterId() string {
 	return r._outerId
+}
+
+// SetPicUrls is PicUrls Setter
+// 图片地址回传集合
+func (r *TmallServicecenterWorkcardSigninAPIRequest) SetPicUrls(_picUrls string) error {
+	r._picUrls = _picUrls
+	r.Set("pic_urls", _picUrls)
+	return nil
+}
+
+// GetPicUrls PicUrls Getter
+func (r TmallServicecenterWorkcardSigninAPIRequest) GetPicUrls() string {
+	return r._picUrls
 }
 
 // SetWorkcardId is WorkcardId Setter

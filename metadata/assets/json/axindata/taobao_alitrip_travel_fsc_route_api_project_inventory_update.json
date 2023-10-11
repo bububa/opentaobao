@@ -1,0 +1,87 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "product_code",
+					"type": "String",
+					"description": "产品编号"
+				},
+				{
+					"name": "journey_code",
+					"type": "String",
+					"description": "行程编号"
+				},
+				{
+					"subParams": [
+						{
+							"name": "date",
+							"type": "String",
+							"description": "出团日期 格式yyyy-MM-dd"
+						},
+						{
+							"name": "project_code",
+							"type": "String",
+							"description": "团期计划编号(供应商唯一团期标识)"
+						},
+						{
+							"name": "inv_count",
+							"type": "Number",
+							"description": "剩余库存数量（余位）"
+						},
+						{
+							"name": "occupy_count",
+							"type": "Number",
+							"description": "已占库存数量"
+						}
+					],
+					"name": "project_list",
+					"type": "FscRouteProjectInventoryApiDto[]",
+					"description": "团期列表"
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "供应商ID"
+				}
+			],
+			"name": "fsc_project_inventory_update_request",
+			"type": "FscProjectInventoryUpdateRequest",
+			"description": "fscProjectInventoryUpdateRequest",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "业务数据"
+				}
+			],
+			"name": "top_result",
+			"type": "TopResult",
+			"description": "通用返回结果"
+		}
+	],
+	"name": "taobao.alitrip.travel.fsc.route.api.project.inventory.update",
+	"apiChineseName": "更新团期库存",
+	"description": "更新团期库存",
+	"id": 66873
+}

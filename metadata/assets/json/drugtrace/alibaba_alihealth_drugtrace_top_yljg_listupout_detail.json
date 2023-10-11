@@ -168,6 +168,11 @@
 									"name": "code_info_list_dto_list",
 									"type": "CodeInfoListDto[]",
 									"description": "码信息"
+								},
+								{
+									"name": "approval_no",
+									"type": "String",
+									"description": "批准文号"
 								}
 							],
 							"name": "drug_infos_dto_list",

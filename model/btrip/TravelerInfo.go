@@ -31,7 +31,13 @@ type TravelerInfo struct {
 	// 证件有效期
 	CertValidDate string `json:"cert_valid_date,omitempty" xml:"cert_valid_date,omitempty"`
 	// 证件签发国
+	CertIssueCountry string `json:"cert_issue_country,omitempty" xml:"cert_issue_country,omitempty"`
+	// 国籍
+	Nationality string `json:"nationality,omitempty" xml:"nationality,omitempty"`
+	// 国籍二字码
+	NationalityCode string `json:"nationality_code,omitempty" xml:"nationality_code,omitempty"`
+	// 证件签发国
 	CertNation string `json:"cert_nation,omitempty" xml:"cert_nation,omitempty"`
-	// 性别
+	// 性别，0是男，1是女
 	Sex *model.File `json:"sex,omitempty" xml:"sex,omitempty"`
 }

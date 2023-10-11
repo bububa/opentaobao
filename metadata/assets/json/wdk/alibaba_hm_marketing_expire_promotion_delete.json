@@ -1,0 +1,117 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "end_hour",
+							"type": "Number",
+							"description": "0到24，小时数值",
+							"required": true
+						},
+						{
+							"name": "start_hour",
+							"type": "Number",
+							"description": "0到24，小时数值",
+							"required": true
+						},
+						{
+							"name": "out_id",
+							"type": "Number",
+							"description": "外部活动id",
+							"required": true
+						},
+						{
+							"name": "promotion_value",
+							"type": "Number",
+							"description": "优惠具体折扣，1到1000",
+							"required": true
+						}
+					],
+					"name": "period_infos",
+					"type": "ExpirePeriodInfo[]",
+					"description": "短保时间段信息"
+				},
+				{
+					"name": "shop_ids",
+					"type": "String[]",
+					"description": "门店id",
+					"required": true
+				},
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品skucode",
+					"required": true
+				}
+			],
+			"name": "param0",
+			"type": "ExpirePromotionBo",
+			"description": "删除短保优惠"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		},
+		{
+			"subParams": [
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode"
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "itemId"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				},
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "skuCode"
+				},
+				{
+					"name": "merchant_code",
+					"type": "String",
+					"description": "merchantCode"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "shopId"
+				}
+			],
+			"name": "datas",
+			"type": "ExpirePromotionResult []",
+			"description": "data"
+		},
+		{
+			"name": "fail_code",
+			"type": "String",
+			"description": "errorCode"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	],
+	"name": "alibaba.hm.marketing.expire.promotion.delete",
+	"apiChineseName": "短保优惠删除",
+	"description": "短保优惠删除",
+	"id": 67248
+}

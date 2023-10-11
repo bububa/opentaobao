@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihouseNewhomeProjectTradeitemAPIRequest 新二品同步 API请求
+// AlibabaAlihouseNewhomeProjectTradeitemAPIRequest 新二租品同步 API请求
 // alibaba.alihouse.newhome.project.tradeitem
 //
 // 新二品同步

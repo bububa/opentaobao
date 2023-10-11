@@ -38,6 +38,8 @@ type VoucherOrderVo struct {
 	PlaceOrderType string `json:"place_order_type,omitempty" xml:"place_order_type,omitempty"`
 	// 套餐卷Id
 	VoucherId string `json:"voucher_id,omitempty" xml:"voucher_id,omitempty"`
+	// 区号
+	AreaCode string `json:"area_code,omitempty" xml:"area_code,omitempty"`
 	// 支付剩余多少秒
 	PayRemainTime int64 `json:"pay_remain_time,omitempty" xml:"pay_remain_time,omitempty"`
 	// 支付类型

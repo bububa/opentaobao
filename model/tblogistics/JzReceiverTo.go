@@ -1,7 +1,7 @@
 package tblogistics
 
-// JzReceiverTo 结构体
-type JzReceiverTo struct {
+// JzReceiverTO 结构体
+type JzReceiverTO struct {
 	// 详细地址
 	Address string `json:"address,omitempty" xml:"address,omitempty"`
 	// 市

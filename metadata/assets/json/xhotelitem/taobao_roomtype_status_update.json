@@ -1,0 +1,35 @@
+{
+	"requestParams": [
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "对接系统商，不填默认taobao"
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "卖家房型id"
+		},
+		{
+			"name": "rid",
+			"type": "Number",
+			"description": "飞猪房型id"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "0在线，-1删除， -2停售）"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误"
+		}
+	],
+	"name": "taobao.roomtype.status.update",
+	"apiChineseName": "top房型状态修改",
+	"description": "top房型状态修改",
+	"id": 67808
+}

@@ -1,0 +1,292 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码",
+					"required": true
+				}
+			],
+			"name": "top_service_context",
+			"type": "TopServiceContext",
+			"description": "topServiceContext",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "offset",
+					"type": "Number",
+					"description": "偏移量"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页面大小"
+				},
+				{
+					"name": "campaign_id_list",
+					"type": "Number[]",
+					"description": "计划id集合"
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "计划id,计划已经存在场景必填"
+				},
+				{
+					"name": "adgroup_id_list",
+					"type": "Number[]",
+					"description": "单元id集合,单元已经存在场景必填"
+				}
+			],
+			"name": "data_list",
+			"type": "CrowdBindQueryVo",
+			"description": "list",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "ok",
+							"type": "Boolean",
+							"description": "是否成功"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误编码"
+						}
+					],
+					"name": "info",
+					"type": "TopInfo",
+					"description": "请求系统信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "campaign_id",
+									"type": "Number",
+									"description": "计划id,计划已经存在场景必填,eg:添加主体、编辑计划状态等场景"
+								},
+								{
+									"name": "adgroup_id",
+									"type": "Number",
+									"description": "单元id"
+								},
+								{
+									"subParams": [
+										{
+											"name": "campaign_id",
+											"type": "Number",
+											"description": "计划id"
+										},
+										{
+											"name": "adgroup_id",
+											"type": "Number",
+											"description": "单元id"
+										},
+										{
+											"name": "crowd_id",
+											"type": "Number",
+											"description": "人群主键id"
+										},
+										{
+											"name": "online_status",
+											"type": "Number",
+											"description": "定向状态,0:下线 1:上线"
+										},
+										{
+											"subParams": [
+												{
+													"name": "crowd_id",
+													"type": "Number",
+													"description": "人群主键id"
+												},
+												{
+													"name": "crowd_name",
+													"type": "String",
+													"description": "人群名称"
+												},
+												{
+													"name": "crowd_value",
+													"type": "String",
+													"description": "人群值"
+												},
+												{
+													"name": "target_type",
+													"type": "Number",
+													"description": "定向类型"
+												},
+												{
+													"subParams": [
+														{
+															"name": "target_type",
+															"type": "Number",
+															"description": "定向标签类型"
+														},
+														{
+															"name": "label_id",
+															"type": "Number",
+															"description": "定向标签id"
+														},
+														{
+															"name": "label_name",
+															"type": "String",
+															"description": "定向标签名称"
+														},
+														{
+															"name": "label_desc",
+															"type": "String",
+															"description": "定向标签描述"
+														},
+														{
+															"name": "label_value",
+															"type": "String",
+															"description": "定向标签值"
+														},
+														{
+															"name": "price_dimension",
+															"type": "String",
+															"description": "出价维度，OPTION:标签出价，多个子人群同时出价、LABEL:选项出价，以子人群为出价最小单位"
+														},
+														{
+															"name": "option_group_list",
+															"type": "OptionGroupVo[]",
+															"description": "标签选项分组"
+														},
+														{
+															"name": "option_list",
+															"type": "OptionVo[]",
+															"description": "标签选项"
+														},
+														{
+															"name": "is_multi",
+															"type": "Boolean",
+															"description": "是否可以绑定多个定向,获取不到 默认为否,true:是 false:否"
+														},
+														{
+															"name": "label_option_properties",
+															"type": "LabelOptionProperties",
+															"description": "透传属性"
+														},
+														{
+															"name": "label_group_name",
+															"type": "String",
+															"description": "人群类型，所属类型"
+														}
+													],
+													"name": "label",
+													"type": "LabelVo",
+													"description": "定向标签"
+												},
+												{
+													"name": "lookalike_multiple",
+													"type": "String",
+													"description": "扩展倍数。低中高对应不同的倍数，由产品定义具体值，未来业务可支持滑动条。注意：倍数是指最终人数/种子人数，比如种子人群100万，扩展比种子多了50万，也就是总共150万，这时候扩展倍数是1.5而不是0.5"
+												},
+												{
+													"subParams": [
+														{
+															"name": "crowd",
+															"type": "ExtendSeedCrowdVo",
+															"description": "种子人群信息"
+														}
+													],
+													"name": "extend_seed_crowd_list",
+													"type": "ExtendSeedCrowdRefVo[]",
+													"description": "种子人群关联信息"
+												},
+												{
+													"subParams": [
+														{
+															"name": "subcrowd_name",
+															"type": "String",
+															"description": "子定向名称"
+														},
+														{
+															"name": "subcrowd_value",
+															"type": "String",
+															"description": "子定向值"
+														}
+													],
+													"name": "sub_crowd_list",
+													"type": "SubCrowdVo[]",
+													"description": "子人群信息"
+												}
+											],
+											"name": "crowd",
+											"type": "CrowdVo",
+											"description": "人群"
+										},
+										{
+											"subParams": [
+												{
+													"name": "bid_price",
+													"type": "String",
+													"description": "出价"
+												},
+												{
+													"name": "fit_bid_price",
+													"type": "String",
+													"description": "建议出价"
+												},
+												{
+													"name": "discount",
+													"type": "String",
+													"description": "溢价"
+												},
+												{
+													"name": "fit_discount",
+													"type": "String",
+													"description": "建议溢价"
+												}
+											],
+											"name": "price",
+											"type": "PriceVo",
+											"description": "出价"
+										}
+									],
+									"name": "crowd_list",
+									"type": "CrowdRefVo[]",
+									"description": "定向关联关系"
+								}
+							],
+							"name": "crowd_bind_result_v_o_list",
+							"type": "CrowdBindResultVo[]",
+							"description": "批量结果集"
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "数量"
+						}
+					],
+					"name": "crowd_bind_result_v_o_top_bulk_data",
+					"type": "TopBulkData",
+					"description": "结果集"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.universalbp.crowd.findlist",
+	"apiChineseName": "查询人群绑定列表",
+	"description": "查询计划和单元上绑定的人群列表",
+	"id": 67271
+}

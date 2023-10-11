@@ -39,6 +39,11 @@
 			"name": "page_size",
 			"type": "Number",
 			"description": "每页大小"
+		},
+		{
+			"name": "need_workcard_operation",
+			"type": "Boolean",
+			"description": "是否查询操作记录信息"
 		}
 	],
 	"responseParams": [
@@ -430,6 +435,11 @@
 											"name": "outer_id_p",
 											"type": "String",
 											"description": "商品编码"
+										},
+										{
+											"name": "parent_order_id",
+											"type": "Number",
+											"description": "实物主订单号"
 										}
 									],
 									"name": "master_trade_order",
@@ -501,6 +511,43 @@
 									"name": "memo_list",
 									"type": "MemoDTO[]",
 									"description": "工单备注"
+								},
+								{
+									"subParams": [
+										{
+											"name": "gmt_modify",
+											"type": "Date",
+											"description": "修改时间"
+										},
+										{
+											"name": "attribute_map",
+											"type": "String",
+											"description": "操作属性扩展字段"
+										},
+										{
+											"name": "gmt_create",
+											"type": "Date",
+											"description": "创建时间"
+										},
+										{
+											"name": "operator",
+											"type": "String",
+											"description": "操作人"
+										},
+										{
+											"name": "action",
+											"type": "String",
+											"description": "动作描述"
+										},
+										{
+											"name": "operator_type",
+											"type": "Number",
+											"description": "操作人类型，1:买家,2:服务商,3:网点"
+										}
+									],
+									"name": "workcard_operation_info",
+									"type": "WorkcardOperationDTO[]",
+									"description": "操作记录信息"
 								}
 							],
 							"name": "data_list",

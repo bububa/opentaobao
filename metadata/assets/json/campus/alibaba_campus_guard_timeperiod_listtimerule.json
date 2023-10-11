@@ -1,0 +1,120 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "time_period_id_list",
+					"type": "Number[]",
+					"description": "时间规则ID",
+					"required": true
+				},
+				{
+					"name": "sn_no",
+					"type": "String",
+					"description": "序列号",
+					"required": true
+				}
+			],
+			"name": "time_period_query",
+			"type": "TimePeriodQuery",
+			"description": "时间规则查询条件参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "api_error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "api_success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "规则名称"
+						},
+						{
+							"subParams": [
+								{
+									"name": "week",
+									"type": "String",
+									"description": "周"
+								},
+								{
+									"subParams": [
+										{
+											"name": "name",
+											"type": "String",
+											"description": "特殊日期名称"
+										},
+										{
+											"name": "template_id",
+											"type": "Number",
+											"description": "特殊日期ID"
+										}
+									],
+									"name": "forbid_template_list",
+									"type": "CalendarTemplateDTO[]",
+									"description": "失效条件"
+								},
+								{
+									"name": "time",
+									"type": "String",
+									"description": "时间"
+								},
+								{
+									"subParams": [
+										{
+											"name": "name",
+											"type": "String",
+											"description": "特殊日期名称"
+										},
+										{
+											"name": "template_id",
+											"type": "Number",
+											"description": "特殊日期ID"
+										}
+									],
+									"name": "allow_template_list",
+									"type": "CalendarTemplateDTO[]",
+									"description": "通行日期"
+								}
+							],
+							"name": "time_rule_list",
+							"type": "TimeRuleConfigDTO[]",
+							"description": "时间规则集合"
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "时间规则ID"
+						}
+					],
+					"name": "content",
+					"type": "TimeRuleConfigDTO[]",
+					"description": "内容"
+				},
+				{
+					"name": "api_error_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.campus.guard.timeperiod.listtimerule",
+	"apiChineseName": "门禁控制器查询时间规则",
+	"description": "门禁控制器查询时间规则",
+	"id": 67570
+}

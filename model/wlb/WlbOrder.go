@@ -78,12 +78,8 @@ type WlbOrder struct {
 	ExpectStartTime string `json:"expect_start_time,omitempty" xml:"expect_start_time,omitempty"`
 	// 计划送达结束时间
 	ExpectEndTime string `json:"expect_end_time,omitempty" xml:"expect_end_time,omitempty"`
-	// 买家Id
-	OpenUid string `json:"open_uid,omitempty" xml:"open_uid,omitempty"`
 	// 订单总价
 	TotalAmount int64 `json:"total_amount,omitempty" xml:"total_amount,omitempty"`
-	// 卖家ID
-	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// 第1位:COD,2:限时配送,3:预售,4:需要发票,5:已投诉,第6位:合单,第7位:拆单 第8位：EXCHANGE-换货， 第9位:VISIT-上门 ， 第10位: MODIFYTRANSPORT-是否可改配送方式，第11位：是否物流代理确认发货
 	OrderFlag int64 `json:"order_flag,omitempty" xml:"order_flag,omitempty"`
 	// 应收金额
@@ -94,6 +90,8 @@ type WlbOrder struct {
 	CancelOrderStatus int64 `json:"cancel_order_status,omitempty" xml:"cancel_order_status,omitempty"`
 	// 发货速度 ， 101-当日达， 102-次晨达， 103-次日达
 	ScheduleSpeed int64 `json:"schedule_speed,omitempty" xml:"schedule_speed,omitempty"`
+	// 卖家ID
+	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// 1
 	IsCompleted bool `json:"is_completed,omitempty" xml:"is_completed,omitempty"`
 }

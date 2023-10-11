@@ -12,6 +12,12 @@ type Event struct {
 	Platform string `json:"platform,omitempty" xml:"platform,omitempty"`
 	// 外部商家名称。必须同时填写platform
 	Nick string `json:"nick,omitempty" xml:"nick,omitempty"`
+	// 主单号对应的erp单号，转单、审单、通知配货、出库 需要填。拆单、合单场景下不用填
+	ErpOrderId string `json:"erp_order_id,omitempty" xml:"erp_order_id,omitempty"`
+	// 淘宝子订单id（拆单、合单场景下不用填，其他场景需要回传,用英文逗号隔开）
+	TaobaoSubOrderIds string `json:"taobao_sub_order_ids,omitempty" xml:"taobao_sub_order_ids,omitempty"`
+	// 触发事件的时间
+	EventTime string `json:"event_time,omitempty" xml:"event_time,omitempty"`
 	// 订单创建时间,数字
 	Create int64 `json:"create,omitempty" xml:"create,omitempty"`
 }

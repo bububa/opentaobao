@@ -1,0 +1,100 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "订单id",
+					"required": true
+				},
+				{
+					"name": "pre_pay_no",
+					"type": "String",
+					"description": "预付款流水号",
+					"required": true
+				},
+				{
+					"name": "pre_pay_action",
+					"type": "Number",
+					"description": "预付款执行动作",
+					"required": true
+				}
+			],
+			"name": "param0",
+			"type": "TenderPrePayCmd",
+			"description": "请求参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "订单id"
+						},
+						{
+							"name": "pre_pay_amount",
+							"type": "Number",
+							"description": "预付款"
+						},
+						{
+							"name": "pre_pay_no",
+							"type": "String",
+							"description": "支付宝流水号"
+						},
+						{
+							"name": "pre_pay_status",
+							"type": "String",
+							"description": "1-未支付，2-已支付"
+						},
+						{
+							"name": "pre_pay_action",
+							"type": "Number",
+							"description": "2-支付预付款"
+						},
+						{
+							"name": "app_key",
+							"type": "String",
+							"description": "服务商appkey"
+						},
+						{
+							"name": "request_id",
+							"type": "String",
+							"description": "请求id"
+						}
+					],
+					"name": "data",
+					"type": "TenderPrepayTopResult",
+					"description": "返回结果对象"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求结果"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "异常编码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "异常描述"
+				}
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.idle.tender.pre.pay.action",
+	"apiChineseName": "服务商预付款完成接口",
+	"description": "服务商预付款完成接口",
+	"id": 67566
+}

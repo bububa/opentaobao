@@ -1,0 +1,139 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品的skuCode",
+					"required": true
+				},
+				{
+					"name": "logic_group_number",
+					"type": "Number",
+					"description": "逻辑分组ID"
+				},
+				{
+					"name": "is_fix_price",
+					"type": "Boolean",
+					"description": "是否为一口价"
+				},
+				{
+					"name": "fix_price",
+					"type": "Number",
+					"description": "一口价金额【分】"
+				},
+				{
+					"name": "is_discount_rate",
+					"type": "Boolean",
+					"description": "是否为商品折扣"
+				},
+				{
+					"name": "discount_rate",
+					"type": "Number",
+					"description": "折扣率，300=3折"
+				},
+				{
+					"name": "is_decrease_money",
+					"type": "Boolean",
+					"description": "是否为减钱"
+				},
+				{
+					"name": "decrease_money",
+					"type": "Number",
+					"description": "减钱【元】"
+				}
+			],
+			"name": "param0",
+			"type": "ItemPoolSku",
+			"description": "商品对象",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "五道口活动id",
+					"required": true
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "商家活动id"
+				},
+				{
+					"name": "by_channel",
+					"type": "Boolean",
+					"description": "是否自定义渠道同步"
+				},
+				{
+					"subParams": [
+						{
+							"name": "channel",
+							"type": "String",
+							"description": "淘鲜达:\"31\",饿了么:\"3\",京东到家:\"26\",美团外卖:\"2\""
+						}
+					],
+					"name": "channel_config_list",
+					"type": "ChannelConfig[]",
+					"description": "自定义同步渠道配置"
+				}
+			],
+			"name": "param1",
+			"type": "CommonActivityParam",
+			"description": "活动基本信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "item_shop_relation",
+							"type": "String",
+							"description": "淘宝item和shop的对应关系， k-itemId, v-shopId"
+						},
+						{
+							"name": "sku_name",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品的skuCode"
+						}
+					],
+					"name": "data",
+					"type": "ItemPoolSku",
+					"description": "报名活动成功的商品详情"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否报名成功"
+				}
+			],
+			"name": "result",
+			"type": "MarketResult",
+			"description": "商品报名活动的返回结果"
+		}
+	],
+	"name": "alibaba.hm.marketing.itempool.additem",
+	"apiChineseName": "增加商品池里面的商品",
+	"description": "增加商品池里面的商品",
+	"id": 67195
+}

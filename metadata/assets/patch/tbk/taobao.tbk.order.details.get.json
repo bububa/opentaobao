@@ -1,21 +1,53 @@
 {
     "apiChineseName": "淘宝客-推广者-所有订单查询",
     "apiErrDemoJson": "{\n\t\"error_response\":{\n\t\t\"msg\":\"Remote service error\",\n\t\t\"code\":50,\n\t\t\"sub_msg\":\"非法参数\",\n\t\t\"sub_code\":\"isv.invalid-parameter\"\n\t}\n}",
-    "apiErrDemoXml": "<error_response>\n    <code>50</code>\n    <msg>Remote service error</msg>\n    <sub_code>isv.invalid-parameter</sub_code>\n    <sub_msg>非法参数</sub_msg>\n</error_response>",
+    "apiErrDemoXml": "<error_response>\n    <code>50<\/code>\n    <msg>Remote service error<\/msg>\n    <sub_code>isv.invalid-parameter<\/sub_code>\n    <sub_msg>非法参数<\/sub_msg>\n<\/error_response>",
     "applyScopes": [
         {
             "descprition": "",
             "name": "淘宝客【推广者】推广订单及数据查询",
-            "url": "//open.taobao.com/docs/api_list.htm?scopeId=16175"
+            "url": "\/\/open.taobao.com\/docs\/api_list.htm?scopeId=16175"
         }
     ],
-    "changeDiff": null,
-    "description": "淘宝客订单查询",
+    "changeDiff": {
+        "gmtModified": 1688701382000,
+        "inputDiff": [],
+        "outputDiff": [
+            "[+] data->results->tp_order_id",
+            "[*] data->results->service_fee_dto_list",
+            "[+] data->results->pub_share_pre_fee_for_commission",
+            "[+] data->results->pub_share_fee_for_commission",
+            "[+] data->results->subsidy_info_dto_list",
+            "[+] data->results->pub_share_rate_for_sdy",
+            "[+] data->results->tk_total_rate_for_sdy",
+            "[+] data->results->pub_share_pre_fee_for_sdy",
+            "[+] data->results->pub_share_fee_for_sdy",
+            "[+] data->results->alimm_share_info_dto",
+            "[+] data->results->platform_special_service_rate",
+            "[+] data->results->platform_special_service_fee",
+            "[+] data->results->platform_special_share_info_dto",
+            "[-] data->results->tk_commission_pre_fee_for_media_platform",
+            "[-] data->results->tk_commission_fee_for_media_platform",
+            "[-] data->results->tk_commission_rate_for_media_platform",
+            "[-] data->results->alsc_id",
+            "[-] data->results->alsc_pid",
+            "[-] data->results->lx_rid",
+            "[-] data->results->is_lx",
+            "[-] data->results->item_category_level3_name",
+            "[-] data->results->tk_contract_share_rate",
+            "[-] data->results->tk_contract_member_id",
+            "[-] data->results->tk_contract_id",
+            "[-] data->results->traffic_tech_service_rate",
+            "[-] data->results->traffic_tech_service_pre_fee",
+            "[-] data->results->traffic_tech_service_fee"
+        ]
+    },
+    "description": "淘宝客推广带来的所有拍下付款的正向订单明细报表。",
     "envConfigs": [
         {
             "env": "正式环境",
-            "httpUrl": "http://gw.api.taobao.com/router/rest",
-            "httpsUrl": "https://eco.taobao.com/router/rest"
+            "httpUrl": "http:\/\/gw.api.taobao.com\/router\/rest",
+            "httpsUrl": "https:\/\/eco.taobao.com\/router\/rest"
         }
     ],
     "errorCodes": [
@@ -78,19 +110,24 @@
             "errorCode": "isp.pubrpt-service-unavailable",
             "errorMsg": "服务不可用",
             "solution": "请检查hsf服务是否正常"
+        },
+        {
+            "errorCode": "3000",
+            "errorMsg": "您的账号因调用不符合要求，当前触发限流。建议您逐一排查各个渠道的总调用量，降低调用频次，次日后重新尝试，若仍然无法使用，可通过淘宝联盟网站\/APP客服中心 联系客服咨询。",
+            "solution": "您的账号因调用不符合要求，当前触发限流。建议您逐一排查各个渠道的总调用量，降低调用频次，次日后重新尝试，若仍然无法使用，可通过淘宝联盟网站\/APP客服中心 联系客服咨询。"
         }
     ],
     "faqs": [],
-    "gmtModified": 1661939375000,
+    "gmtModified": 1688701382000,
     "labels": [
         {
-            "clickUrl": "//open.taobao.com/docs/doc.htm?docType=1&articleId=104559",
+            "clickUrl": "https:\/\/open.taobao.com\/v2\/doc#\/abilityToOpen?docType=1&docId=104559&treeId=775",
             "displayName": "￥开放平台免费API",
             "key": "9",
             "tips": "点击查看收费规则"
         },
         {
-            "clickUrl": "#",
+            "clickUrl": "https:\/\/open.taobao.com\/v2\/doc#\/abilityToOpen?docId=121222&docType=1",
             "displayName": "不需用户授权",
             "key": "no_need",
             "tips": "不需要用户授权，就能获取到数据"
@@ -117,6 +154,7 @@
             "type": "String",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": true
         },
         {
@@ -137,12 +175,13 @@
             "type": "String",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": true
         },
         {
             "defaultValue": "",
             "demoValue": "",
-            "description": "用户登录授权成功后，TOP颁发给应用的授权信息，详细介绍请<a href=\"http://open.taobao.com/docs/doc.htm?docType=1&articleId=102635&treeId=1\" target=\"_blank\">点击这里</a>。当此API的标签上注明：“需要授权”，则此参数必传；“不需要授权”，则此参数不需要传；“可选授权”，则此参数为可选",
+            "description": "用户登录授权成功后，TOP颁发给应用的授权信息，详细介绍请<a href=\"http:\/\/open.taobao.com\/docs\/doc.htm?docType=1&articleId=102635&treeId=1\" target=\"_blank\">点击这里<\/a>。当此API的标签上注明：“需要授权”，则此参数必传；“不需要授权”，则此参数不需要传；“可选授权”，则此参数为可选",
             "fieldsReadLevel": "",
             "fileExt": "",
             "maxLength": null,
@@ -157,6 +196,7 @@
             "type": "String",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": false
         },
         {
@@ -177,6 +217,7 @@
             "type": "String",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": true
         },
         {
@@ -197,6 +238,7 @@
             "type": "String",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": true
         },
         {
@@ -217,12 +259,13 @@
             "type": "String",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": true
         },
         {
             "defaultValue": "",
             "demoValue": "",
-            "description": "API输入参数签名结果，签名算法介绍请<a href=\"http://open.taobao.com/docs/doc.htm?articleId=101617&docType=1&treeId=1\" target=\"_blank\">点击这里</a>",
+            "description": "API输入参数签名结果，签名算法介绍请<a href=\"http:\/\/open.taobao.com\/docs\/doc.htm?articleId=101617&docType=1&treeId=1\" target=\"_blank\">点击这里<\/a>",
             "fieldsReadLevel": "",
             "fileExt": "",
             "maxLength": null,
@@ -237,6 +280,7 @@
             "type": "String",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": true
         },
         {
@@ -257,6 +301,7 @@
             "type": "String",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": false
         },
         {
@@ -277,6 +322,7 @@
             "type": "Boolean",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": false
         }
     ],
@@ -299,6 +345,7 @@
             "type": "String",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": true
         },
         {
@@ -319,6 +366,7 @@
             "type": "String",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": false
         },
         {
@@ -339,6 +387,7 @@
             "type": "String",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": false
         },
         {
@@ -359,6 +408,7 @@
             "type": "String",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": false
         },
         {
@@ -379,6 +429,7 @@
             "type": "String",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": false
         },
         {
@@ -399,6 +450,7 @@
             "type": "String",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": false
         },
         {
@@ -419,6 +471,7 @@
             "type": "String",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": false
         }
     ],
@@ -441,6 +494,7 @@
             "type": "Number",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": false
         },
         {
@@ -461,6 +515,7 @@
             "type": "String",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": false
         },
         {
@@ -481,6 +536,7 @@
             "type": "Number",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": false
         },
         {
@@ -501,6 +557,7 @@
             "type": "Number",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": false
         },
         {
@@ -521,6 +578,7 @@
             "type": "Number",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": false
         },
         {
@@ -541,6 +599,7 @@
             "type": "String",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": true
         },
         {
@@ -561,6 +620,7 @@
             "type": "String",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": true
         },
         {
@@ -581,6 +641,7 @@
             "type": "Number",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": false
         },
         {
@@ -601,12 +662,13 @@
             "type": "Number",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": false
         },
         {
             "defaultValue": "1",
             "demoValue": "1",
-            "description": "场景订单场景类型，1:常规订单，2:渠道订单，3:会员运营订单，默认为1",
+            "description": "筛选订单类型，1:所有订单，2:渠道订单，3:会员运营订单，默认为1",
             "fieldsReadLevel": "",
             "fileExt": "",
             "maxLength": null,
@@ -621,6 +683,7 @@
             "type": "Number",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": false
         }
     ],
@@ -658,7 +721,7 @@
                         {
                             "defaultValue": "",
                             "demoValue": "2019-04-22 15:15:05",
-                            "description": "订单在淘宝拍下付款的时间",
+                            "description": "淘宝付款时间。解释：订单在淘宝付款的时间",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -673,12 +736,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "2019-04-22 15:15:05",
-                            "description": "订单付款的时间，该时间同步淘宝，可能会略晚于买家在淘宝的订单创建时间",
+                            "description": "付款时间。解释：订单付款的时间，该时间同步淘宝，可能会略晚于买家在淘宝的订单付款时间  （预售订单完尾款支付后，付款时间会自动更新为尾款支付的时间）",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -693,12 +757,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "9.11",
-                            "description": "买家确认收货的付款金额（不包含运费金额）",
+                            "description": "结算金额。解释：买家确认收货的付款金额（不包含运费金额）",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -713,12 +778,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "0",
-                            "description": "结算预估收入=结算金额*提成。以买家确认收货的付款金额为基数，预估您可能获得的收入。因买家退款、您违规推广等原因，可能与您最终收入不一致。最终收入以月结后您实际收到的为准",
+                            "description": "结算预估收入。解释：结算预付收入=结算预估佣金收入+结算预估补贴收入",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -733,12 +799,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "294159887445064307",
-                            "description": "买家通过购物车购买的每个商品对应的订单编号，此订单编号并未在淘宝买家后台透出",
+                            "description": "子订单号。解释：买家通过购物车购买的每个商品对应的订单编号，此订单编号并未在淘宝买家后台透出，若平台类型为淘宝、口碑、饿了么等，则订单编号即为淘宝子订单编号、口碑订单编号、饿了么订单编号，以此类推",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -753,12 +820,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "2",
-                            "description": "二方：佣金收益的第一归属者； 三方：从其他淘宝客佣金中进行分成的推广者",
+                            "description": "推广者身份。解释：二方：佣金收益的第一归属者；三方：从其他淘宝客佣金中进行分成的推广者",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -773,12 +841,13 @@
                             "type": "Number",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "2019-04-22 15:15:05",
-                            "description": "订单确认收货后且商家完成佣金支付的时间",
+                            "description": "结算时间。解释：订单确认收货后且商家完成佣金支付的时间",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -793,12 +862,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
-                            "demoValue": "11",
-                            "description": "推广位管理下的推广位名称对应的ID，同时也是pid=mm_1_2_3中的“3”这段数字",
+                            "demoValue": "111112234455",
+                            "description": "推广位ID。解释：“推广管理-推广位管理”中的pid中的最后一段数字，如pid=mm_1_2_3中的“3”这段数字",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -813,12 +883,13 @@
                             "type": "Number",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "100",
-                            "description": "从结算佣金中分得的收益比率",
+                            "description": "佣金分成比率。解释：从佣金中分得的收益比率（含平台技术服务费比率）",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -833,12 +904,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "11",
-                            "description": "unid(本字段不对外开放)",
+                            "description": "unid（不对外开放）",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -853,12 +925,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "0",
-                            "description": "维权标签，0 含义为非维权 1 含义为维权订单",
+                            "description": "维权标签。解释：若该订单产生了维权退款，则会打上“维权单”的提示。0 含义为非维权、1 含义为维权订单",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -873,12 +946,13 @@
                             "type": "Number",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "0",
-                            "description": "平台给与的补贴比率，如天猫、淘宝、聚划算等",
+                            "description": "补贴比率。解释：指该笔订单上各类型补贴的补贴比率总和。补贴比率=a补贴比率+b补贴比率+…。举例：天猫补贴1%、飞猪补贴1%等，则该数值显示为2%",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -893,12 +967,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "9.99",
-                            "description": "提成=收入比率*分成比率。指实际获得收益的比率",
+                            "description": "佣金提成。解释：佣金提成=佣金比率*佣金分成比率。指实际获得的佣金收益比率（含平台技术服务费）",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -913,12 +988,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "服装",
-                            "description": "商品所属的一级类目名称",
+                            "description": "类目名称。解释：商品所属的一级类目名称",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -933,6 +1009,7 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
@@ -953,12 +1030,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "98836808",
-                            "description": "推广者的会员id",
+                            "description": "推广者的账号id",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -973,12 +1051,13 @@
                             "type": "Number",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "0",
-                            "description": "推广者赚取佣金后支付给阿里妈妈的技术服务费用的比率",
+                            "description": "平台技术服务费比率。解释：指该笔订单推广者在需支付给淘宝联盟的所有技术服务费比率总和。平台技术服务费比率=技术服务费比率a+技术服务费比率b+…。（特别说明：补贴从2023-03-10之后都不再收取补贴技术服务费了，故本字段公式中不再提及补贴相关)",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -993,12 +1072,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "--",
-                            "description": "平台出资方，如天猫、淘宝、或聚划算等",
+                            "description": "补贴类型。解释：各补贴类型的类型名称、补贴比率、补贴金额、单笔补贴上限、补贴分成比率的详细说明，如有多个补贴会一并告知，举例：淘宝特价版（补贴比率：1%，补贴金额1.00元，单笔补贴上限金额1000.00元，补贴分成比率：100.00%）、飞猪补贴（补贴比率：1%，补贴金额1.00元，单笔补贴上限金额1000.00元，补贴分成比率：100.00%）",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1013,11 +1093,12 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
-                            "demoValue": "//img.alicdn.com/bao/uploaded/i1/2200782262419/O1CN01b5qlop1TjwarUo8fo_!!2200782262419.jpg",
+                            "demoValue": "\/\/img.alicdn.com\/bao\/uploaded\/i1\/2200782262419\/O1CN01b5qlop1TjwarUo8fo_!!2200782262419.jpg",
                             "description": "商品图片",
                             "fieldsReadLevel": "",
                             "fileExt": "",
@@ -1033,12 +1114,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "0",
-                            "description": "付款预估收入=付款金额*提成。指买家付款金额为基数，预估您可能获得的收入。因买家退款等原因，可能与结算预估收入不一致",
+                            "description": "付款预估收入。解释：付款预付收入=付款预估佣金收入+付款预估补贴收入",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1053,12 +1135,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "11.22",
-                            "description": "买家拍下付款的金额（不包含运费金额）",
+                            "description": "付款金额。解释：买家拍下并付款金额（不包含运费金额、不包含未支付尾款的预售订单金额）；当预售订单完尾款支付后，付款金额会自动更新为订单总金额",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1073,6 +1156,7 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
@@ -1093,12 +1177,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "合伙人",
-                            "description": "媒体管理下的对应ID的自定义名称",
+                            "description": "媒体名称。解释：“推广管理-媒体备案管理”中的媒体名称",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1113,6 +1198,7 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
@@ -1133,12 +1219,13 @@
                             "type": "Number",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "0",
-                            "description": "补贴金额=结算金额*补贴比率",
+                            "description": "补贴金额。解释：指该笔订单上各类补贴的补贴金额总和。补贴金额=a补贴金额+b补贴金额+…=结算金额*a补贴比率+结算金额*b补贴比率+…。若（结算金额*a补贴比率）＞补贴类型a单笔补贴上限，则a补贴金额=补贴类型a单笔补贴上限，b补贴金额等其他补贴金额同理",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1153,12 +1240,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "0",
-                            "description": "技术服务费=结算金额*收入比率*技术服务费率。推广者赚取佣金后支付给阿里妈妈的技术服务费用",
+                            "description": "平台技术服务费。解释：指该笔订单推广者在需支付给淘宝联盟的所有技术服务费费用总和。目前包含以下两类： 1、技术服务费说明：通过淘宝联盟平台推广所需支付的基础技术服务费；2、渠道专项服务费说明：开通渠道管理权限的推广者进行推广需要支付给淘宝联盟的专项技术服务费用。           平台技术服务费=付款金额*佣金比率*平台技术服务费比率。注意：若订单已结算则会按结算金额计算。（特别说明：补贴从2023-03-10之后都不再收取补贴技术服务费了，故本字段公式中不再提及补贴相关)",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1173,12 +1261,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "294159887445064307",
-                            "description": "买家在淘宝后台显示的订单编号",
+                            "description": "订单编号。解释：买家在购买后台显示的订单编号，若平台类型为淘宝、饿了么等，则订单编号即为淘宝订单编号、饿了么订单编号，以此类推",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1193,12 +1282,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "如意淘",
-                            "description": "订单所属平台类型，包括天猫、淘宝、聚划算等",
+                            "description": "平台类型。解释：订单所属平台类型，包括天猫、淘宝、聚划算、口碑等",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1213,12 +1303,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "2019-04-22 15:15:05",
-                            "description": "订单创建的时间，该时间同步淘宝，可能会略晚于买家在淘宝的订单创建时间",
+                            "description": "创建时间。解释：订单创建的时间，该时间同步淘宝，可能会略晚于买家在淘宝的订单创建时间",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1233,12 +1324,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "--",
-                            "description": "产品类型",
+                            "description": "产品类型。解释：若订单属于特定的产品类型，会进行说明，举例：该订单属于“联盟超级活动”、“品牌精选推广”、“自主推广”等，若无说明仅为“--”则为普通类型订单",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1253,12 +1345,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "无线",
-                            "description": "成交平台",
+                            "description": "成交平台。解释：成交来自于PC或无线",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1273,12 +1366,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "2019-04-22 15:14:55",
-                            "description": "通过推广链接达到商品、店铺详情页的点击时间",
+                            "description": "点击时间。解释：通过推广链接达到商品、店铺详情页的点击时间",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1293,12 +1387,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "13",
-                            "description": "已拍下：指订单已拍下，但还未付款 已付款：指订单已付款，但还未确认收货 已收货：指订单已确认收货，但商家佣金未支付 已结算：指订单已确认收货，且商家佣金已支付成功 已失效：指订单关闭/订单佣金小于0.01元，订单关闭主要有：1）买家超时未付款； 2）买家付款前，买家/卖家取消了订单；3）订单付款后发起售中退款成功；3：订单结算，11：拍下未付款，12：订单付款， 13：订单失效，14：订单成功",
+                            "description": "订单状态。状态类型：已付款（指订单已付款，但还未确认收货）、已收货（指订单已确认收货，但商家佣金未支付）、已结算（指订单已确认收货，且商家佣金已支付成功）、已失效（指订单关闭\/订单佣金小于0.01元，订单关闭主要有：①买家超时未付款；②买家付款前，买家\/商家取消了订单；③订单付款后发起售中退款成功；④仅支付定金，到期未支付尾款的预售订单）。注意：当订单商家有实收货款（含交易成功和交易关闭订单），联盟以商家实收货款进行佣金结算(满返\/买返订单等特殊订单除外)。出参数字代表：3:订单结算，12:订单付款，13:订单失效，14:订单成功",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1313,6 +1408,7 @@
                             "type": "Number",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
@@ -1333,6 +1429,7 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
@@ -1353,12 +1450,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "推广位名",
-                            "description": "推广位管理下的自定义推广位名称",
+                            "description": "推广位名称。解释：“推广管理-推广位管理”中的推广位名称",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1373,12 +1471,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "9.99",
-                            "description": "佣金比率",
+                            "description": "佣金比率。解释：商品的佣金比率（含平台技术服务费比率，但不包含平台专项服务费比率）（特别说明：若想知道属于您名下的整体佣金比率，则整体佣金比率=佣金比率+平台专项服务费比率，为了简化展示报表，不再增加整体佣金收入字段，有需要的淘宝客可自行加和，举例：若整体佣金比率为10%，平台专项服务费比率为3%，则此处商品佣金比率显示为7%，即10%-3%=7%）",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1393,11 +1492,12 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
-                            "demoValue": "https://www.taobao.com",
+                            "demoValue": "https:\/\/www.taobao.com",
                             "description": "商品链接",
                             "fieldsReadLevel": "",
                             "fileExt": "",
@@ -1413,12 +1513,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "45598009",
-                            "description": "媒体管理下的ID，同时也是pid=mm_1_2_3中的“2”这段数字",
+                            "description": "媒体ID。解释：“推广管理-媒体备案管理”中的媒体ID，也是pid中的第二段数字，如pid=mm_1_2_3中的“2”这段数字",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1433,6 +1534,7 @@
                             "type": "Number",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
@@ -1453,12 +1555,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "9.99",
-                            "description": "订单结算的佣金比率+平台的补贴比率",
+                            "description": "收入比率。解释：收入比率=佣金比率+补贴比率",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1473,12 +1576,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "0",
-                            "description": "佣金金额=结算金额*佣金比率",
+                            "description": "佣金金额。解释：如果该订单还未结算，则佣金金额=付款金额*佣金比率；如果该订单已经结算，则佣金金额=结算金额*佣金比率",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1493,72 +1597,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
-                            "required": false
-                        },
-                        {
-                            "defaultValue": "",
-                            "demoValue": "1.05",
-                            "description": "预估内容专项服务费：内容场景专项技术服务费，内容推广者在内容场景进行推广需要支付给阿里妈妈专项的技术服务费用。专项服务费＝付款金额＊专项服务费率。",
-                            "fieldsReadLevel": "",
-                            "fileExt": "",
-                            "maxLength": null,
-                            "maxListSize": null,
-                            "maxValue": null,
-                            "minValue": null,
-                            "name": "tk_commission_pre_fee_for_media_platform",
-                            "needShortAuthority": null,
-                            "paramOrder": null,
-                            "parentId": "",
-                            "subParams": [],
-                            "type": "String",
-                            "version": "",
-                            "writeLevel": null,
-                            "required": false
-                        },
-                        {
-                            "defaultValue": "",
-                            "demoValue": "1.05",
-                            "description": "结算内容专项服务费：内容场景专项技术服务费，内容推广者在内容场景进行推广需要支付给阿里妈妈专项的技术服务费用。专项服务费＝结算金额＊专项服务费率。",
-                            "fieldsReadLevel": "",
-                            "fileExt": "",
-                            "maxLength": null,
-                            "maxListSize": null,
-                            "maxValue": null,
-                            "minValue": null,
-                            "name": "tk_commission_fee_for_media_platform",
-                            "needShortAuthority": null,
-                            "paramOrder": null,
-                            "parentId": "",
-                            "subParams": [],
-                            "type": "String",
-                            "version": "",
-                            "writeLevel": null,
-                            "required": false
-                        },
-                        {
-                            "defaultValue": "",
-                            "demoValue": "0.01",
-                            "description": "内容专项服务费率：内容场景专项技术服务费率，内容推广者在内容场景进行推广需要按结算金额支付一定比例给阿里妈妈作为内容场景专项技术服务费，用于提供与内容平台实现产品技术对接等服务。",
-                            "fieldsReadLevel": "",
-                            "fileExt": "",
-                            "maxLength": null,
-                            "maxListSize": null,
-                            "maxValue": null,
-                            "minValue": null,
-                            "name": "tk_commission_rate_for_media_platform",
-                            "needShortAuthority": null,
-                            "paramOrder": null,
-                            "parentId": "",
-                            "subParams": [],
-                            "type": "String",
-                            "version": "",
-                            "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "21321",
-                            "description": "会员运营id",
+                            "description": "会员运营ID。解释：会员运营管理功能中的会员运营ID，若该订单来自于会员的购买，则会展示对应会员运营ID",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1573,12 +1618,13 @@
                             "type": "Number",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "123123",
-                            "description": "渠道关系id",
+                            "description": "渠道关系id。解释：渠道管理功能中的渠道关系ID，若该订单来自于渠道方的推广，则会展示对应渠道关系ID",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1593,12 +1639,13 @@
                             "type": "Number",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "22.32",
-                            "description": "预售时期，用户对预售商品支付的定金金额",
+                            "description": "定金付款金额。解释：预售时期，预售订单支付的定金金额",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1613,12 +1660,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "2019-09-09 12:01:01",
-                            "description": "预售时期，用户对预售商品支付定金的付款时间",
+                            "description": "定金淘宝付款时间。解释：预售时期，预售订单在淘宝支付定金的付款时间",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1633,12 +1681,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "2019-09-09 12:01:01",
-                            "description": "预售时期，用户对预售商品支付定金的付款时间，可能略晚于在淘宝付定金时间",
+                            "description": "定金付款时间。解释：预售时期，预售订单支付定金的付款时间，该时间同步淘宝，可能会略晚于买家在淘宝的订单创建时间",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1653,39 +1702,20 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
-                            "required": false
-                        },
-                        {
-                            "defaultValue": "",
-                            "demoValue": "32434",
-                            "description": "口碑子订单号",
-                            "fieldsReadLevel": "",
-                            "fileExt": "",
-                            "maxLength": null,
-                            "maxListSize": null,
-                            "maxValue": null,
-                            "minValue": null,
-                            "name": "alsc_id",
-                            "needShortAuthority": null,
-                            "paramOrder": null,
-                            "parentId": "",
-                            "subParams": [],
-                            "type": "String",
-                            "version": "",
-                            "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "3434",
-                            "description": "口碑父订单号",
+                            "description": "非电商淘系子订单号",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
                             "maxListSize": null,
                             "maxValue": null,
                             "minValue": null,
-                            "name": "alsc_pid",
+                            "name": "tp_order_id",
                             "needShortAuthority": null,
                             "paramOrder": null,
                             "parentId": "",
@@ -1693,12 +1723,13 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "ServiceFeeDto",
-                            "description": "服务费信息",
+                            "description": "服务费信息（字段已废弃）",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1713,7 +1744,7 @@
                                 {
                                     "defaultValue": "",
                                     "demoValue": "122",
-                                    "description": "专项服务费来源，122-渠道",
+                                    "description": "专项服务费来源，122-渠道（字段已废弃）",
                                     "fieldsReadLevel": "",
                                     "fileExt": "",
                                     "maxLength": null,
@@ -1728,12 +1759,13 @@
                                     "type": "Number",
                                     "version": "",
                                     "writeLevel": null,
+                                    "encryptTag": false,
                                     "required": false
                                 },
                                 {
                                     "defaultValue": "",
                                     "demoValue": "0.10",
-                                    "description": "专项服务费率",
+                                    "description": "专项服务费率（字段已废弃）",
                                     "fieldsReadLevel": "",
                                     "fileExt": "",
                                     "maxLength": null,
@@ -1748,12 +1780,13 @@
                                     "type": "String",
                                     "version": "",
                                     "writeLevel": null,
+                                    "encryptTag": false,
                                     "required": false
                                 },
                                 {
                                     "defaultValue": "",
                                     "demoValue": "11.11",
-                                    "description": "结算专项服务费",
+                                    "description": "结算专项服务费（字段已废弃）",
                                     "fieldsReadLevel": "",
                                     "fileExt": "",
                                     "maxLength": null,
@@ -1768,12 +1801,13 @@
                                     "type": "String",
                                     "version": "",
                                     "writeLevel": null,
+                                    "encryptTag": false,
                                     "required": false
                                 },
                                 {
                                     "defaultValue": "",
                                     "demoValue": "11.11",
-                                    "description": "预估专项服务费",
+                                    "description": "预估专项服务费（字段已废弃）",
                                     "fieldsReadLevel": "",
                                     "fileExt": "",
                                     "maxLength": null,
@@ -1788,58 +1822,20 @@
                                     "type": "String",
                                     "version": "",
                                     "writeLevel": null,
+                                    "encryptTag": false,
                                     "required": false
                                 }
                             ],
-                            "type": "ServiceFeeDto[]",
+                            "type": "ServiceFeeDTO[]",
                             "version": "",
                             "writeLevel": null,
-                            "required": false
-                        },
-                        {
-                            "defaultValue": "",
-                            "demoValue": "12312312",
-                            "description": "激励池对应的rid",
-                            "fieldsReadLevel": "",
-                            "fileExt": "",
-                            "maxLength": null,
-                            "maxListSize": null,
-                            "maxValue": null,
-                            "minValue": null,
-                            "name": "lx_rid",
-                            "needShortAuthority": null,
-                            "paramOrder": null,
-                            "parentId": "",
-                            "subParams": [],
-                            "type": "String",
-                            "version": "",
-                            "writeLevel": null,
-                            "required": false
-                        },
-                        {
-                            "defaultValue": "",
-                            "demoValue": "1",
-                            "description": "订单是否为激励池订单 1，表征是 0，表征否",
-                            "fieldsReadLevel": "",
-                            "fileExt": "",
-                            "maxLength": null,
-                            "maxListSize": null,
-                            "maxValue": null,
-                            "minValue": null,
-                            "name": "is_lx",
-                            "needShortAuthority": null,
-                            "paramOrder": null,
-                            "parentId": "",
-                            "subParams": [],
-                            "type": "String",
-                            "version": "",
-                            "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
                             "defaultValue": "",
                             "demoValue": "营销类型",
-                            "description": "营销类型：该字段中视订单情况有单个或多个值。 例如：淘礼金（自助充值），特价版客户端染色，特价版客户端锁粉，特价版客户端推广。",
+                            "description": "营销类型。解释：该字段中视订单情况有单个或多个类型告知。 举例：联盟超级活动-优品、特价版客户端锁粉、特价版客户端推广等",
                             "fieldsReadLevel": "",
                             "fileExt": "",
                             "maxLength": null,
@@ -1854,6 +1850,7 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
@@ -1874,6 +1871,7 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
@@ -1894,66 +1892,7 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
-                            "required": false
-                        },
-                        {
-                            "defaultValue": "",
-                            "demoValue": "10",
-                            "description": "当前媒体对应契约方的分成比例",
-                            "fieldsReadLevel": "",
-                            "fileExt": "",
-                            "maxLength": null,
-                            "maxListSize": null,
-                            "maxValue": null,
-                            "minValue": null,
-                            "name": "tk_contract_share_rate",
-                            "needShortAuthority": null,
-                            "paramOrder": null,
-                            "parentId": "",
-                            "subParams": [],
-                            "type": "String",
-                            "version": "",
-                            "writeLevel": null,
-                            "required": false
-                        },
-                        {
-                            "defaultValue": "",
-                            "demoValue": "111",
-                            "description": "契约方memberId",
-                            "fieldsReadLevel": "",
-                            "fileExt": "",
-                            "maxLength": null,
-                            "maxListSize": null,
-                            "maxValue": null,
-                            "minValue": null,
-                            "name": "tk_contract_member_id",
-                            "needShortAuthority": null,
-                            "paramOrder": null,
-                            "parentId": "",
-                            "subParams": [],
-                            "type": "Number",
-                            "version": "",
-                            "writeLevel": null,
-                            "required": false
-                        },
-                        {
-                            "defaultValue": "",
-                            "demoValue": "123",
-                            "description": "契约id",
-                            "fieldsReadLevel": "",
-                            "fileExt": "",
-                            "maxLength": null,
-                            "maxListSize": null,
-                            "maxValue": null,
-                            "minValue": null,
-                            "name": "tk_contract_id",
-                            "needShortAuthority": null,
-                            "paramOrder": null,
-                            "parentId": "",
-                            "subParams": [],
-                            "type": "Number",
-                            "version": "",
-                            "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
@@ -1974,6 +1913,7 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         },
                         {
@@ -1994,12 +1934,626 @@
                             "type": "String",
                             "version": "",
                             "writeLevel": null,
+                            "encryptTag": false,
+                            "required": false
+                        },
+                        {
+                            "defaultValue": "",
+                            "demoValue": "1111TTTTTOOOO",
+                            "description": "流量通untts（默认无，限定开放）",
+                            "fieldsReadLevel": "",
+                            "fileExt": "",
+                            "maxLength": null,
+                            "maxListSize": null,
+                            "maxValue": null,
+                            "minValue": null,
+                            "name": "untts",
+                            "needShortAuthority": null,
+                            "paramOrder": null,
+                            "parentId": "",
+                            "subParams": [],
+                            "type": "String",
+                            "version": "",
+                            "writeLevel": null,
+                            "encryptTag": false,
+                            "required": false
+                        },
+                        {
+                            "defaultValue": "",
+                            "demoValue": "0",
+                            "description": "付款预估佣金收入。解释：付款预估佣金收入=付款金额*佣金提成。以买家付款金额为基数，预估您可能获得的付款佣金收入，包含平台技术服务费金额（最终发钱时会减去平台技术服务费）。注意：因买家退款等原因，可能与结算预估佣金收入不一致。（特别说明：若想知道属于您名下的整体佣金收入，则整体付款佣金收入=付款预估佣金收入+平台专项服务费，为了简化展示报表，不再增加整体佣金收入字段，有需要的淘宝客可自行加和）",
+                            "fieldsReadLevel": "",
+                            "fileExt": "",
+                            "maxLength": null,
+                            "maxListSize": null,
+                            "maxValue": null,
+                            "minValue": null,
+                            "name": "pub_share_pre_fee_for_commission",
+                            "needShortAuthority": null,
+                            "paramOrder": null,
+                            "parentId": "",
+                            "subParams": [],
+                            "type": "BigDecimal",
+                            "version": "",
+                            "writeLevel": null,
+                            "encryptTag": false,
+                            "required": false
+                        },
+                        {
+                            "defaultValue": "",
+                            "demoValue": "0",
+                            "description": "结算预估佣金收入。解释：结算预估佣金收入=付款金额*佣金提成。以买家确认收货的付款金额为基数，预估您可能获得的结算佣金收入，包含技术服务费金额（最终发钱时会减去平台技术服务费）。注意：因买家退款、您违规推广等原因，可能与您最终收入不一致，最终收入以月结后您实际收到的为准。（特别说明：若想知道属于您名下的整体佣金收入，则整体结算佣金收入=结算预估佣金收入+平台专项服务费，为了简化展示报表，不再增加整体佣金收入字段，有需要的淘宝客可自行加和）",
+                            "fieldsReadLevel": "",
+                            "fileExt": "",
+                            "maxLength": null,
+                            "maxListSize": null,
+                            "maxValue": null,
+                            "minValue": null,
+                            "name": "pub_share_fee_for_commission",
+                            "needShortAuthority": null,
+                            "paramOrder": null,
+                            "parentId": "",
+                            "subParams": [],
+                            "type": "BigDecimal",
+                            "version": "",
+                            "writeLevel": null,
+                            "encryptTag": false,
+                            "required": false
+                        },
+                        {
+                            "defaultValue": "",
+                            "demoValue": "subsidyDetailDTOList",
+                            "description": "补贴金额明细节点。解释：各补贴类型的类型名称、补贴比率、补贴金额、单笔补贴上限、补贴分成比率的详细说明",
+                            "fieldsReadLevel": "",
+                            "fileExt": "",
+                            "maxLength": null,
+                            "maxListSize": null,
+                            "maxValue": null,
+                            "minValue": null,
+                            "name": "subsidy_info_dto_list",
+                            "needShortAuthority": null,
+                            "paramOrder": null,
+                            "parentId": "",
+                            "subParams": [
+                                {
+                                    "defaultValue": "",
+                                    "demoValue": "妈妈补贴",
+                                    "description": "该笔订单包含的补贴类型",
+                                    "fieldsReadLevel": "",
+                                    "fileExt": "",
+                                    "maxLength": null,
+                                    "maxListSize": null,
+                                    "maxValue": null,
+                                    "minValue": null,
+                                    "name": "subsidy_type",
+                                    "needShortAuthority": null,
+                                    "paramOrder": null,
+                                    "parentId": "",
+                                    "subParams": [],
+                                    "type": "String",
+                                    "version": "",
+                                    "writeLevel": null,
+                                    "encryptTag": false,
+                                    "required": false
+                                },
+                                {
+                                    "defaultValue": "",
+                                    "demoValue": "0",
+                                    "description": "补贴比率",
+                                    "fieldsReadLevel": "",
+                                    "fileExt": "",
+                                    "maxLength": null,
+                                    "maxListSize": null,
+                                    "maxValue": null,
+                                    "minValue": null,
+                                    "name": "subsidy_rate",
+                                    "needShortAuthority": null,
+                                    "paramOrder": null,
+                                    "parentId": "",
+                                    "subParams": [],
+                                    "type": "BigDecimal",
+                                    "version": "",
+                                    "writeLevel": null,
+                                    "encryptTag": false,
+                                    "required": false
+                                },
+                                {
+                                    "defaultValue": "",
+                                    "demoValue": "0",
+                                    "description": "对应补贴类型的补贴金额",
+                                    "fieldsReadLevel": "",
+                                    "fileExt": "",
+                                    "maxLength": null,
+                                    "maxListSize": null,
+                                    "maxValue": null,
+                                    "minValue": null,
+                                    "name": "subsidy_fee",
+                                    "needShortAuthority": null,
+                                    "paramOrder": null,
+                                    "parentId": "",
+                                    "subParams": [],
+                                    "type": "BigDecimal",
+                                    "version": "",
+                                    "writeLevel": null,
+                                    "encryptTag": false,
+                                    "required": false
+                                },
+                                {
+                                    "defaultValue": "",
+                                    "demoValue": "0",
+                                    "description": "单笔订单补贴上限。对应补贴类型的单笔订单补贴上限",
+                                    "fieldsReadLevel": "",
+                                    "fileExt": "",
+                                    "maxLength": null,
+                                    "maxListSize": null,
+                                    "maxValue": null,
+                                    "minValue": null,
+                                    "name": "subsidy_upper_limit",
+                                    "needShortAuthority": null,
+                                    "paramOrder": null,
+                                    "parentId": "",
+                                    "subParams": [],
+                                    "type": "BigDecimal",
+                                    "version": "",
+                                    "writeLevel": null,
+                                    "encryptTag": false,
+                                    "required": false
+                                },
+                                {
+                                    "defaultValue": "",
+                                    "demoValue": "0",
+                                    "description": "补贴分成比率",
+                                    "fieldsReadLevel": "",
+                                    "fileExt": "",
+                                    "maxLength": null,
+                                    "maxListSize": null,
+                                    "maxValue": null,
+                                    "minValue": null,
+                                    "name": "subsidy_share_rate",
+                                    "needShortAuthority": null,
+                                    "paramOrder": null,
+                                    "parentId": "",
+                                    "subParams": [],
+                                    "type": "BigDecimal",
+                                    "version": "",
+                                    "writeLevel": null,
+                                    "encryptTag": false,
+                                    "required": false
+                                }
+                            ],
+                            "type": "SubsidyDetailDTO[]",
+                            "version": "",
+                            "writeLevel": null,
+                            "encryptTag": false,
+                            "required": false
+                        },
+                        {
+                            "defaultValue": "",
+                            "demoValue": "0",
+                            "description": "补贴分成比率。解释：从补贴中分得的收益比率",
+                            "fieldsReadLevel": "",
+                            "fileExt": "",
+                            "maxLength": null,
+                            "maxListSize": null,
+                            "maxValue": null,
+                            "minValue": null,
+                            "name": "pub_share_rate_for_sdy",
+                            "needShortAuthority": null,
+                            "paramOrder": null,
+                            "parentId": "",
+                            "subParams": [],
+                            "type": "BigDecimal",
+                            "version": "",
+                            "writeLevel": null,
+                            "encryptTag": false,
+                            "required": false
+                        },
+                        {
+                            "defaultValue": "",
+                            "demoValue": "0",
+                            "description": "补贴提成。解释：补贴提成=补贴比率*补贴分成比率。指实际获得的补贴收益比率",
+                            "fieldsReadLevel": "",
+                            "fileExt": "",
+                            "maxLength": null,
+                            "maxListSize": null,
+                            "maxValue": null,
+                            "minValue": null,
+                            "name": "tk_total_rate_for_sdy",
+                            "needShortAuthority": null,
+                            "paramOrder": null,
+                            "parentId": "",
+                            "subParams": [],
+                            "type": "BigDecimal",
+                            "version": "",
+                            "writeLevel": null,
+                            "encryptTag": false,
+                            "required": false
+                        },
+                        {
+                            "defaultValue": "",
+                            "demoValue": "0",
+                            "description": "付款预估补贴收入。解释：指以买家付款金额为基数，预估您可能获得的补贴收入。付款预估补贴收入=（付款金额*a补贴比率+付款金额*b补贴比率+……）*补贴分成比率。如果付款金额*a补贴比率＞补贴类型a单笔订单补贴上限，则付款金额*a补贴比率的值取补贴类型a单笔订单补贴上限，b补贴金额等其他类型补贴金额同理。注意：因买家退款等原因，可能与结算预估补贴收入不一致",
+                            "fieldsReadLevel": "",
+                            "fileExt": "",
+                            "maxLength": null,
+                            "maxListSize": null,
+                            "maxValue": null,
+                            "minValue": null,
+                            "name": "pub_share_pre_fee_for_sdy",
+                            "needShortAuthority": null,
+                            "paramOrder": null,
+                            "parentId": "",
+                            "subParams": [],
+                            "type": "BigDecimal",
+                            "version": "",
+                            "writeLevel": null,
+                            "encryptTag": false,
+                            "required": false
+                        },
+                        {
+                            "defaultValue": "",
+                            "demoValue": "0",
+                            "description": "结算预估补贴收入。解释：以买家确认收货的付款金额为基数，预估您可能获得的结算补贴收入。结算预估补贴收入=（结算金额*a补贴比率+结算金额*b补贴比率+……）*补贴分成比率。如果结算金额*a补贴比率＞补贴类型a单笔订单补贴上限，则结算金额*a补贴比率的值取补贴类型a单笔订单补贴上限，b补贴金额等其他类型补贴金额同理。注意：因买家退款、您违规推广等原因，可能与您最终收入不一致，最终收入以月结后您实际收到的为准",
+                            "fieldsReadLevel": "",
+                            "fileExt": "",
+                            "maxLength": null,
+                            "maxListSize": null,
+                            "maxValue": null,
+                            "minValue": null,
+                            "name": "pub_share_fee_for_sdy",
+                            "needShortAuthority": null,
+                            "paramOrder": null,
+                            "parentId": "",
+                            "subParams": [],
+                            "type": "BigDecimal",
+                            "version": "",
+                            "writeLevel": null,
+                            "encryptTag": false,
+                            "required": false
+                        },
+                        {
+                            "defaultValue": "",
+                            "demoValue": "",
+                            "description": "平台技术服务费明细节点。解释：各项平台技术服务费类型的类型名称、扣费比率、扣费金额的详细说明",
+                            "fieldsReadLevel": "",
+                            "fileExt": "",
+                            "maxLength": null,
+                            "maxListSize": null,
+                            "maxValue": null,
+                            "minValue": null,
+                            "name": "alimm_share_info_dto",
+                            "needShortAuthority": null,
+                            "paramOrder": null,
+                            "parentId": "",
+                            "subParams": [
+                                {
+                                    "defaultValue": "",
+                                    "demoValue": "0",
+                                    "description": "技术服务费比率",
+                                    "fieldsReadLevel": "",
+                                    "fileExt": "",
+                                    "maxLength": null,
+                                    "maxListSize": null,
+                                    "maxValue": null,
+                                    "minValue": null,
+                                    "name": "alimm_tech_service_rate",
+                                    "needShortAuthority": null,
+                                    "paramOrder": null,
+                                    "parentId": "",
+                                    "subParams": [],
+                                    "type": "BigDecimal",
+                                    "version": "",
+                                    "writeLevel": null,
+                                    "encryptTag": false,
+                                    "required": false
+                                },
+                                {
+                                    "defaultValue": "",
+                                    "demoValue": "0",
+                                    "description": "预估技术服务费",
+                                    "fieldsReadLevel": "",
+                                    "fileExt": "",
+                                    "maxLength": null,
+                                    "maxListSize": null,
+                                    "maxValue": null,
+                                    "minValue": null,
+                                    "name": "alimm_tech_service_pre_fee",
+                                    "needShortAuthority": null,
+                                    "paramOrder": null,
+                                    "parentId": "",
+                                    "subParams": [],
+                                    "type": "BigDecimal",
+                                    "version": "",
+                                    "writeLevel": null,
+                                    "encryptTag": false,
+                                    "required": false
+                                },
+                                {
+                                    "defaultValue": "",
+                                    "demoValue": "0",
+                                    "description": "结算技术服务费",
+                                    "fieldsReadLevel": "",
+                                    "fileExt": "",
+                                    "maxLength": null,
+                                    "maxListSize": null,
+                                    "maxValue": null,
+                                    "minValue": null,
+                                    "name": "alimm_tech_service_fee",
+                                    "needShortAuthority": null,
+                                    "paramOrder": null,
+                                    "parentId": "",
+                                    "subParams": [],
+                                    "type": "BigDecimal",
+                                    "version": "",
+                                    "writeLevel": null,
+                                    "encryptTag": false,
+                                    "required": false
+                                },
+                                {
+                                    "defaultValue": "",
+                                    "demoValue": "0",
+                                    "description": "渠道专项服务费比率",
+                                    "fieldsReadLevel": "",
+                                    "fileExt": "",
+                                    "maxLength": null,
+                                    "maxListSize": null,
+                                    "maxValue": null,
+                                    "minValue": null,
+                                    "name": "alimm_agent_service_rate",
+                                    "needShortAuthority": null,
+                                    "paramOrder": null,
+                                    "parentId": "",
+                                    "subParams": [],
+                                    "type": "BigDecimal",
+                                    "version": "",
+                                    "writeLevel": null,
+                                    "encryptTag": false,
+                                    "required": false
+                                },
+                                {
+                                    "defaultValue": "",
+                                    "demoValue": "0",
+                                    "description": "预估渠道专项服务费",
+                                    "fieldsReadLevel": "",
+                                    "fileExt": "",
+                                    "maxLength": null,
+                                    "maxListSize": null,
+                                    "maxValue": null,
+                                    "minValue": null,
+                                    "name": "alimm_agent_service_pre_fee",
+                                    "needShortAuthority": null,
+                                    "paramOrder": null,
+                                    "parentId": "",
+                                    "subParams": [],
+                                    "type": "BigDecimal",
+                                    "version": "",
+                                    "writeLevel": null,
+                                    "encryptTag": false,
+                                    "required": false
+                                },
+                                {
+                                    "defaultValue": "",
+                                    "demoValue": "0",
+                                    "description": "结算渠道专项服务费",
+                                    "fieldsReadLevel": "",
+                                    "fileExt": "",
+                                    "maxLength": null,
+                                    "maxListSize": null,
+                                    "maxValue": null,
+                                    "minValue": null,
+                                    "name": "alimm_agent_service_fee",
+                                    "needShortAuthority": null,
+                                    "paramOrder": null,
+                                    "parentId": "",
+                                    "subParams": [],
+                                    "type": "BigDecimal",
+                                    "version": "",
+                                    "writeLevel": null,
+                                    "encryptTag": false,
+                                    "required": false
+                                }
+                            ],
+                            "type": "AlimmShareInfoDTO",
+                            "version": "",
+                            "writeLevel": null,
+                            "encryptTag": false,
+                            "required": false
+                        },
+                        {
+                            "defaultValue": "",
+                            "demoValue": "0",
+                            "description": "平台专项服务费比率。解释：指该笔订单推广者在各种特殊场景下需支付给淘宝联盟的所有专项服务费比率总和。平台专项服务费比率=专项服务费比率a+专项服务费比率b+…",
+                            "fieldsReadLevel": "",
+                            "fileExt": "",
+                            "maxLength": null,
+                            "maxListSize": null,
+                            "maxValue": null,
+                            "minValue": null,
+                            "name": "platform_special_service_rate",
+                            "needShortAuthority": null,
+                            "paramOrder": null,
+                            "parentId": "",
+                            "subParams": [],
+                            "type": "BigDecimal",
+                            "version": "",
+                            "writeLevel": null,
+                            "encryptTag": false,
+                            "required": false
+                        },
+                        {
+                            "defaultValue": "",
+                            "demoValue": "0",
+                            "description": "平台专项服务费。解释：指该笔订单推广者在各种特殊场景下需支付给淘宝联盟的所有专项服务费用总和。目前包含以下两类：1、内容专项服务费说明：内容场景专项技术服务费，内容推广者在内容场景进行推广需要支付给淘宝联盟的专项技术服务费用；2、流量专项服务费说明：流量通产品合作场景专项技术服务费，推广者在流量通产品能力下，进行流量投放推广需要支付给淘宝联盟的专项技术服务费用。           平台专项服务费=付款金额*平台专项服务费比率。注意：若订单已结算则会按结算金额计算",
+                            "fieldsReadLevel": "",
+                            "fileExt": "",
+                            "maxLength": null,
+                            "maxListSize": null,
+                            "maxValue": null,
+                            "minValue": null,
+                            "name": "platform_special_service_fee",
+                            "needShortAuthority": null,
+                            "paramOrder": null,
+                            "parentId": "",
+                            "subParams": [],
+                            "type": "BigDecimal",
+                            "version": "",
+                            "writeLevel": null,
+                            "encryptTag": false,
+                            "required": false
+                        },
+                        {
+                            "defaultValue": "",
+                            "demoValue": "",
+                            "description": "平台专项服务费明细节点。解释：各项平台专项服务费类型的类型名称、扣费比率、扣费金额的详细说明",
+                            "fieldsReadLevel": "",
+                            "fileExt": "",
+                            "maxLength": null,
+                            "maxListSize": null,
+                            "maxValue": null,
+                            "minValue": null,
+                            "name": "platform_special_share_info_dto",
+                            "needShortAuthority": null,
+                            "paramOrder": null,
+                            "parentId": "",
+                            "subParams": [
+                                {
+                                    "defaultValue": "",
+                                    "demoValue": "0",
+                                    "description": "内容专项服务费比率",
+                                    "fieldsReadLevel": "",
+                                    "fileExt": "",
+                                    "maxLength": null,
+                                    "maxListSize": null,
+                                    "maxValue": null,
+                                    "minValue": null,
+                                    "name": "content_tech_service_rate",
+                                    "needShortAuthority": null,
+                                    "paramOrder": null,
+                                    "parentId": "",
+                                    "subParams": [],
+                                    "type": "BigDecimal",
+                                    "version": "",
+                                    "writeLevel": null,
+                                    "encryptTag": false,
+                                    "required": false
+                                },
+                                {
+                                    "defaultValue": "",
+                                    "demoValue": "0",
+                                    "description": "预估内容专项服务费",
+                                    "fieldsReadLevel": "",
+                                    "fileExt": "",
+                                    "maxLength": null,
+                                    "maxListSize": null,
+                                    "maxValue": null,
+                                    "minValue": null,
+                                    "name": "content_tech_service_pre_fee",
+                                    "needShortAuthority": null,
+                                    "paramOrder": null,
+                                    "parentId": "",
+                                    "subParams": [],
+                                    "type": "BigDecimal",
+                                    "version": "",
+                                    "writeLevel": null,
+                                    "encryptTag": false,
+                                    "required": false
+                                },
+                                {
+                                    "defaultValue": "",
+                                    "demoValue": "0",
+                                    "description": "结算内容专项服务费",
+                                    "fieldsReadLevel": "",
+                                    "fileExt": "",
+                                    "maxLength": null,
+                                    "maxListSize": null,
+                                    "maxValue": null,
+                                    "minValue": null,
+                                    "name": "content_tech_service_fee",
+                                    "needShortAuthority": null,
+                                    "paramOrder": null,
+                                    "parentId": "",
+                                    "subParams": [],
+                                    "type": "BigDecimal",
+                                    "version": "",
+                                    "writeLevel": null,
+                                    "encryptTag": false,
+                                    "required": false
+                                },
+                                {
+                                    "defaultValue": "",
+                                    "demoValue": "0",
+                                    "description": "流量专项服务费比率（默认无，限定开放）",
+                                    "fieldsReadLevel": "",
+                                    "fileExt": "",
+                                    "maxLength": null,
+                                    "maxListSize": null,
+                                    "maxValue": null,
+                                    "minValue": null,
+                                    "name": "traffic_tech_service_rate",
+                                    "needShortAuthority": null,
+                                    "paramOrder": null,
+                                    "parentId": "",
+                                    "subParams": [],
+                                    "type": "BigDecimal",
+                                    "version": "",
+                                    "writeLevel": null,
+                                    "encryptTag": false,
+                                    "required": false
+                                },
+                                {
+                                    "defaultValue": "",
+                                    "demoValue": "0",
+                                    "description": "预估流量专项服务费（默认无，限定开放）",
+                                    "fieldsReadLevel": "",
+                                    "fileExt": "",
+                                    "maxLength": null,
+                                    "maxListSize": null,
+                                    "maxValue": null,
+                                    "minValue": null,
+                                    "name": "traffic_tech_service_pre_fee",
+                                    "needShortAuthority": null,
+                                    "paramOrder": null,
+                                    "parentId": "",
+                                    "subParams": [],
+                                    "type": "BigDecimal",
+                                    "version": "",
+                                    "writeLevel": null,
+                                    "encryptTag": false,
+                                    "required": false
+                                },
+                                {
+                                    "defaultValue": "",
+                                    "demoValue": "0",
+                                    "description": "结算流量专项服务费（默认无，限定开放）",
+                                    "fieldsReadLevel": "",
+                                    "fileExt": "",
+                                    "maxLength": null,
+                                    "maxListSize": null,
+                                    "maxValue": null,
+                                    "minValue": null,
+                                    "name": "traffic_tech_service_fee",
+                                    "needShortAuthority": null,
+                                    "paramOrder": null,
+                                    "parentId": "",
+                                    "subParams": [],
+                                    "type": "BigDecimal",
+                                    "version": "",
+                                    "writeLevel": null,
+                                    "encryptTag": false,
+                                    "required": false
+                                }
+                            ],
+                            "type": "PlatformSpecialShareInfoDTO",
+                            "version": "",
+                            "writeLevel": null,
+                            "encryptTag": false,
                             "required": false
                         }
                     ],
                     "type": "PublisherOrderDto[]",
                     "version": "",
                     "writeLevel": null,
+                    "encryptTag": false,
                     "required": false
                 },
                 {
@@ -2020,6 +2574,7 @@
                     "type": "Boolean",
                     "version": "",
                     "writeLevel": null,
+                    "encryptTag": false,
                     "required": false
                 },
                 {
@@ -2040,6 +2595,7 @@
                     "type": "String",
                     "version": "",
                     "writeLevel": null,
+                    "encryptTag": false,
                     "required": false
                 },
                 {
@@ -2060,6 +2616,7 @@
                     "type": "Boolean",
                     "version": "",
                     "writeLevel": null,
+                    "encryptTag": false,
                     "required": false
                 },
                 {
@@ -2080,6 +2637,7 @@
                     "type": "Number",
                     "version": "",
                     "writeLevel": null,
+                    "encryptTag": false,
                     "required": false
                 },
                 {
@@ -2100,18 +2658,20 @@
                     "type": "Number",
                     "version": "",
                     "writeLevel": null,
+                    "encryptTag": false,
                     "required": false
                 }
             ],
             "type": "OrderPage",
             "version": "",
             "writeLevel": null,
+            "encryptTag": false,
             "required": false
         }
     ],
-    "rspSampleJson": "{\n    \"tbk_order_details_get_response\":{\n        \"data\":{\n            \"results\":{\n                \"publisher_order_dto\":[\n                    {\n                        \"tb_paid_time\":\"2019-04-22 15:15:05\",\n                        \"tk_paid_time\":\"2019-04-22 15:15:05\",\n                        \"pay_price\":\"9.11\",\n                        \"pub_share_fee\":\"0\",\n                        \"trade_id\":\"294159887445064307\",\n                        \"tk_order_role\":2,\n                        \"tk_earning_time\":\"2019-04-22 15:15:05\",\n                        \"adzone_id\":11,\n                        \"pub_share_rate\":\"100\",\n                        \"unid\":\"11\",\n                        \"refund_tag\":0,\n                        \"subsidy_rate\":\"0\",\n                        \"tk_total_rate\":\"9.99\",\n                        \"item_category_name\":\"服装\",\n                        \"seller_nick\":\"--\",\n                        \"pub_id\":98836808,\n                        \"alimama_rate\":\"0\",\n                        \"subsidy_type\":\"--\",\n                        \"item_img\":\"\\/\\/img.alicdn.com\\/bao\\/uploaded\\/i1\\/2200782262419\\/O1CN01b5qlop1TjwarUo8fo_!!2200782262419.jpg\",\n                        \"pub_share_pre_fee\":\"0\",\n                        \"alipay_total_price\":\"11.22\",\n                        \"item_title\":\"tsh_rj_测试请不要拍_阶佣11.1\",\n                        \"site_name\":\"合伙人\",\n                        \"item_num\":2,\n                        \"subsidy_fee\":\"0\",\n                        \"alimama_share_fee\":\"0\",\n                        \"trade_parent_id\":\"294159887445064307\",\n                        \"order_type\":\"如意淘\",\n                        \"tk_create_time\":\"2019-04-22 15:15:05\",\n                        \"flow_source\":\"--\",\n                        \"terminal_type\":\"无线\",\n                        \"click_time\":\"2019-04-22 15:14:55\",\n                        \"tk_status\":13,\n                        \"item_price\":\"2.1\",\n                        \"item_id\":\"590141576510\",\n                        \"adzone_name\":\"推广位名\",\n                        \"total_commission_rate\":\"9.99\",\n                        \"item_link\":\"https:\\/\\/www.taobao.com\",\n                        \"site_id\":45598009,\n                        \"seller_shop_title\":\"--\",\n                        \"income_rate\":\"9.99\",\n                        \"total_commission_fee\":\"0\",\n                        \"tk_commission_pre_fee_for_media_platform\":\"1.05\",\n                        \"tk_commission_fee_for_media_platform\":\"1.05\",\n                        \"tk_commission_rate_for_media_platform\":\"0.01\",\n                        \"special_id\":21321,\n                        \"relation_id\":123123,\n                        \"deposit_price\":\"22.32\",\n                        \"tb_deposit_time\":\"2019-09-09 12:01:01\",\n                        \"tk_deposit_time\":\"2019-09-09 12:01:01\",\n                        \"alsc_id\":\"32434\",\n                        \"alsc_pid\":\"3434\",\n                        \"service_fee_dto_list\":{\n                            \"service_fee_dto\":[\n                                {\n                                    \"tk_share_role_type\":122,\n                                    \"share_relative_rate\":\"0.10\",\n                                    \"share_fee\":\"11.11\",\n                                    \"share_pre_fee\":\"11.11\"\n                                }\n                            ]\n                        },\n                        \"lx_rid\":\"12312312\",\n                        \"is_lx\":\"1\",\n                        \"marketing_type\":\"营销类型\",\n                        \"modified_time\":\"2019-09-09 12:01:01\",\n                        \"talent_pid\":\"mm_123_234_424\",\n                        \"tk_contract_share_rate\":\"10\",\n                        \"tk_contract_member_id\":111,\n                        \"tk_contract_id\":123,\n                        \"tb_gmv_total_price\":\"22.32\",\n                        \"extra_mkt_id\":\"123ucbewri\"\n                    }\n                ]\n            },\n            \"has_pre\":false,\n            \"position_index\":\"1555904214_lGltNdNvSX2|1555917305_lJfPMeFmdt2\",\n            \"has_next\":true,\n            \"page_no\":1,\n            \"page_size\":11\n        }\n    }\n}",
-    "rspSampleSimplifyJson": "{\n    \"tbk_order_details_get_response\":{\n        \"data\":{\n            \"results\":[\n                {\n                        \"tb_paid_time\":\"2019-04-22 15:15:05\",\n                        \"tk_paid_time\":\"2019-04-22 15:15:05\",\n                        \"pay_price\":\"9.11\",\n                        \"pub_share_fee\":\"0\",\n                        \"trade_id\":\"294159887445064307\",\n                        \"tk_order_role\":2,\n                        \"tk_earning_time\":\"2019-04-22 15:15:05\",\n                        \"adzone_id\":11,\n                        \"pub_share_rate\":\"100\",\n                        \"unid\":\"11\",\n                        \"refund_tag\":0,\n                        \"subsidy_rate\":\"0\",\n                        \"tk_total_rate\":\"9.99\",\n                        \"item_category_name\":\"服装\",\n                        \"seller_nick\":\"--\",\n                        \"pub_id\":98836808,\n                        \"alimama_rate\":\"0\",\n                        \"subsidy_type\":\"--\",\n                        \"item_img\":\"\\/\\/img.alicdn.com\\/bao\\/uploaded\\/i1\\/2200782262419\\/O1CN01b5qlop1TjwarUo8fo_!!2200782262419.jpg\",\n                        \"pub_share_pre_fee\":\"0\",\n                        \"alipay_total_price\":\"11.22\",\n                        \"item_title\":\"tsh_rj_测试请不要拍_阶佣11.1\",\n                        \"site_name\":\"合伙人\",\n                        \"item_num\":2,\n                        \"subsidy_fee\":\"0\",\n                        \"alimama_share_fee\":\"0\",\n                        \"trade_parent_id\":\"294159887445064307\",\n                        \"order_type\":\"如意淘\",\n                        \"tk_create_time\":\"2019-04-22 15:15:05\",\n                        \"flow_source\":\"--\",\n                        \"terminal_type\":\"无线\",\n                        \"click_time\":\"2019-04-22 15:14:55\",\n                        \"tk_status\":13,\n                        \"item_price\":\"2.1\",\n                        \"item_id\":\"590141576510\",\n                        \"adzone_name\":\"推广位名\",\n                        \"total_commission_rate\":\"9.99\",\n                        \"item_link\":\"https:\\/\\/www.taobao.com\",\n                        \"site_id\":45598009,\n                        \"seller_shop_title\":\"--\",\n                        \"income_rate\":\"9.99\",\n                        \"total_commission_fee\":\"0\",\n                        \"tk_commission_pre_fee_for_media_platform\":\"1.05\",\n                        \"tk_commission_fee_for_media_platform\":\"1.05\",\n                        \"tk_commission_rate_for_media_platform\":\"0.01\",\n                        \"special_id\":21321,\n                        \"relation_id\":123123,\n                        \"deposit_price\":\"22.32\",\n                        \"tb_deposit_time\":\"2019-09-09 12:01:01\",\n                        \"tk_deposit_time\":\"2019-09-09 12:01:01\",\n                        \"alsc_id\":\"32434\",\n                        \"alsc_pid\":\"3434\",\n                        \"service_fee_dto_list\":[\n                            {\n                                    \"tk_share_role_type\":122,\n                                    \"share_relative_rate\":\"0.10\",\n                                    \"share_fee\":\"11.11\",\n                                    \"share_pre_fee\":\"11.11\"\n                            }\n                        ],\n                        \"lx_rid\":\"12312312\",\n                        \"is_lx\":\"1\",\n                        \"marketing_type\":\"营销类型\",\n                        \"modified_time\":\"2019-09-09 12:01:01\",\n                        \"talent_pid\":\"mm_123_234_424\",\n                        \"tk_contract_share_rate\":\"10\",\n                        \"tk_contract_member_id\":111,\n                        \"tk_contract_id\":123,\n                        \"tb_gmv_total_price\":\"22.32\",\n                        \"extra_mkt_id\":\"123ucbewri\"\n                }\n            ],\n            \"has_pre\":false,\n            \"position_index\":\"1555904214_lGltNdNvSX2|1555917305_lJfPMeFmdt2\",\n            \"has_next\":true,\n            \"page_no\":1,\n            \"page_size\":11\n        }\n    }\n}",
-    "rspSampleXml": "<tbk_order_details_get_response>\n    <data>\n        <results>\n            <publisher_order_dto>\n                <tb_paid_time>2019-04-22 15:15:05</tb_paid_time>\n                <tk_paid_time>2019-04-22 15:15:05</tk_paid_time>\n                <pay_price>9.11</pay_price>\n                <pub_share_fee>0</pub_share_fee>\n                <trade_id>294159887445064307</trade_id>\n                <tk_order_role>2</tk_order_role>\n                <tk_earning_time>2019-04-22 15:15:05</tk_earning_time>\n                <adzone_id>11</adzone_id>\n                <pub_share_rate>100</pub_share_rate>\n                <unid>11</unid>\n                <refund_tag>0</refund_tag>\n                <subsidy_rate>0</subsidy_rate>\n                <tk_total_rate>9.99</tk_total_rate>\n                <item_category_name>服装</item_category_name>\n                <seller_nick>--</seller_nick>\n                <pub_id>98836808</pub_id>\n                <alimama_rate>0</alimama_rate>\n                <subsidy_type>--</subsidy_type>\n                <item_img>//img.alicdn.com/bao/uploaded/i1/2200782262419/O1CN01b5qlop1TjwarUo8fo_!!2200782262419.jpg</item_img>\n                <pub_share_pre_fee>0</pub_share_pre_fee>\n                <alipay_total_price>11.22</alipay_total_price>\n                <item_title>tsh_rj_测试请不要拍_阶佣11.1</item_title>\n                <site_name>合伙人</site_name>\n                <item_num>2</item_num>\n                <subsidy_fee>0</subsidy_fee>\n                <alimama_share_fee>0</alimama_share_fee>\n                <trade_parent_id>294159887445064307</trade_parent_id>\n                <order_type>如意淘</order_type>\n                <tk_create_time>2019-04-22 15:15:05</tk_create_time>\n                <flow_source>--</flow_source>\n                <terminal_type>无线</terminal_type>\n                <click_time>2019-04-22 15:14:55</click_time>\n                <tk_status>13</tk_status>\n                <item_price>2.1</item_price>\n                <item_id>590141576510</item_id>\n                <adzone_name>推广位名</adzone_name>\n                <total_commission_rate>9.99</total_commission_rate>\n                <item_link>https://www.taobao.com</item_link>\n                <site_id>45598009</site_id>\n                <seller_shop_title>--</seller_shop_title>\n                <income_rate>9.99</income_rate>\n                <total_commission_fee>0</total_commission_fee>\n                <tk_commission_pre_fee_for_media_platform>1.05</tk_commission_pre_fee_for_media_platform>\n                <tk_commission_fee_for_media_platform>1.05</tk_commission_fee_for_media_platform>\n                <tk_commission_rate_for_media_platform>0.01</tk_commission_rate_for_media_platform>\n                <special_id>21321</special_id>\n                <relation_id>123123</relation_id>\n                <deposit_price>22.32</deposit_price>\n                <tb_deposit_time>2019-09-09 12:01:01</tb_deposit_time>\n                <tk_deposit_time>2019-09-09 12:01:01</tk_deposit_time>\n                <alsc_id>32434</alsc_id>\n                <alsc_pid>3434</alsc_pid>\n                <service_fee_dto_list>\n                    <service_fee_dto>\n                        <tk_share_role_type>122</tk_share_role_type>\n                        <share_relative_rate>0.10</share_relative_rate>\n                        <share_fee>11.11</share_fee>\n                        <share_pre_fee>11.11</share_pre_fee>\n                    </service_fee_dto>\n                </service_fee_dto_list>\n                <lx_rid>12312312</lx_rid>\n                <is_lx>1</is_lx>\n                <marketing_type>营销类型</marketing_type>\n                <modified_time>2019-09-09 12:01:01</modified_time>\n                <talent_pid>mm_123_234_424</talent_pid>\n                <tk_contract_share_rate>10</tk_contract_share_rate>\n                <tk_contract_member_id>111</tk_contract_member_id>\n                <tk_contract_id>123</tk_contract_id>\n                <tb_gmv_total_price>22.32</tb_gmv_total_price>\n                <extra_mkt_id>123ucbewri</extra_mkt_id>\n            </publisher_order_dto>\n        </results>\n        <has_pre>false</has_pre>\n        <position_index>1555904214_lGltNdNvSX2|1555917305_lJfPMeFmdt2</position_index>\n        <has_next>true</has_next>\n        <page_no>1</page_no>\n        <page_size>11</page_size>\n    </data>\n</tbk_order_details_get_response>",
+    "rspSampleJson": "{\n    \"tbk_order_details_get_response\":{\n        \"data\":{\n            \"results\":{\n                \"publisher_order_dto\":[\n                    {\n                        \"tb_paid_time\":\"2019-04-22 15:15:05\",\n                        \"tk_paid_time\":\"2019-04-22 15:15:05\",\n                        \"pay_price\":\"9.11\",\n                        \"pub_share_fee\":\"0\",\n                        \"trade_id\":\"294159887445064307\",\n                        \"tk_order_role\":2,\n                        \"tk_earning_time\":\"2019-04-22 15:15:05\",\n                        \"adzone_id\":111112234455,\n                        \"pub_share_rate\":\"100\",\n                        \"unid\":\"11\",\n                        \"refund_tag\":0,\n                        \"subsidy_rate\":\"0\",\n                        \"tk_total_rate\":\"9.99\",\n                        \"item_category_name\":\"服装\",\n                        \"seller_nick\":\"--\",\n                        \"pub_id\":98836808,\n                        \"alimama_rate\":\"0\",\n                        \"subsidy_type\":\"--\",\n                        \"item_img\":\"\\\/\\\/img.alicdn.com\\\/bao\\\/uploaded\\\/i1\\\/2200782262419\\\/O1CN01b5qlop1TjwarUo8fo_!!2200782262419.jpg\",\n                        \"pub_share_pre_fee\":\"0\",\n                        \"alipay_total_price\":\"11.22\",\n                        \"item_title\":\"tsh_rj_测试请不要拍_阶佣11.1\",\n                        \"site_name\":\"合伙人\",\n                        \"item_num\":2,\n                        \"subsidy_fee\":\"0\",\n                        \"alimama_share_fee\":\"0\",\n                        \"trade_parent_id\":\"294159887445064307\",\n                        \"order_type\":\"如意淘\",\n                        \"tk_create_time\":\"2019-04-22 15:15:05\",\n                        \"flow_source\":\"--\",\n                        \"terminal_type\":\"无线\",\n                        \"click_time\":\"2019-04-22 15:14:55\",\n                        \"tk_status\":13,\n                        \"item_price\":\"2.1\",\n                        \"item_id\":\"590141576510\",\n                        \"adzone_name\":\"推广位名\",\n                        \"total_commission_rate\":\"9.99\",\n                        \"item_link\":\"https:\\\/\\\/www.taobao.com\",\n                        \"site_id\":45598009,\n                        \"seller_shop_title\":\"--\",\n                        \"income_rate\":\"9.99\",\n                        \"total_commission_fee\":\"0\",\n                        \"special_id\":21321,\n                        \"relation_id\":123123,\n                        \"deposit_price\":\"22.32\",\n                        \"tb_deposit_time\":\"2019-09-09 12:01:01\",\n                        \"tk_deposit_time\":\"2019-09-09 12:01:01\",\n                        \"tp_order_id\":\"3434\",\n                        \"service_fee_dto_list\":{\n                            \"service_fee_d_t_o\":[\n                                {\n                                    \"tk_share_role_type\":122,\n                                    \"share_relative_rate\":\"0.10\",\n                                    \"share_fee\":\"11.11\",\n                                    \"share_pre_fee\":\"11.11\"\n                                }\n                            ]\n                        },\n                        \"marketing_type\":\"营销类型\",\n                        \"modified_time\":\"2019-09-09 12:01:01\",\n                        \"talent_pid\":\"mm_123_234_424\",\n                        \"tb_gmv_total_price\":\"22.32\",\n                        \"extra_mkt_id\":\"123ucbewri\",\n                        \"untts\":\"1111TTTTTOOOO\",\n                        \"pub_share_pre_fee_for_commission\":\"0\",\n                        \"pub_share_fee_for_commission\":\"0\",\n                        \"subsidy_info_dto_list\":{\n                            \"subsidy_detail_d_t_o\":[\n                                {\n                                    \"subsidy_type\":\"妈妈补贴\",\n                                    \"subsidy_rate\":\"0\",\n                                    \"subsidy_fee\":\"0\",\n                                    \"subsidy_upper_limit\":\"0\",\n                                    \"subsidy_share_rate\":\"0\"\n                                }\n                            ]\n                        },\n                        \"pub_share_rate_for_sdy\":\"0\",\n                        \"tk_total_rate_for_sdy\":\"0\",\n                        \"pub_share_pre_fee_for_sdy\":\"0\",\n                        \"pub_share_fee_for_sdy\":\"0\",\n                        \"alimm_share_info_dto\":{\n                            \"alimm_tech_service_rate\":\"0\",\n                            \"alimm_tech_service_pre_fee\":\"0\",\n                            \"alimm_tech_service_fee\":\"0\",\n                            \"alimm_agent_service_rate\":\"0\",\n                            \"alimm_agent_service_pre_fee\":\"0\",\n                            \"alimm_agent_service_fee\":\"0\"\n                        },\n                        \"platform_special_service_rate\":\"0\",\n                        \"platform_special_service_fee\":\"0\",\n                        \"platform_special_share_info_dto\":{\n                            \"content_tech_service_rate\":\"0\",\n                            \"content_tech_service_pre_fee\":\"0\",\n                            \"content_tech_service_fee\":\"0\",\n                            \"traffic_tech_service_rate\":\"0\",\n                            \"traffic_tech_service_pre_fee\":\"0\",\n                            \"traffic_tech_service_fee\":\"0\"\n                        }\n                    }\n                ]\n            },\n            \"has_pre\":false,\n            \"position_index\":\"1555904214_lGltNdNvSX2|1555917305_lJfPMeFmdt2\",\n            \"has_next\":true,\n            \"page_no\":1,\n            \"page_size\":11\n        }\n    }\n}",
+    "rspSampleSimplifyJson": "{\n    \"tbk_order_details_get_response\":{\n        \"data\":{\n            \"results\":[\n                {\n                        \"tb_paid_time\":\"2019-04-22 15:15:05\",\n                        \"tk_paid_time\":\"2019-04-22 15:15:05\",\n                        \"pay_price\":\"9.11\",\n                        \"pub_share_fee\":\"0\",\n                        \"trade_id\":\"294159887445064307\",\n                        \"tk_order_role\":2,\n                        \"tk_earning_time\":\"2019-04-22 15:15:05\",\n                        \"adzone_id\":111112234455,\n                        \"pub_share_rate\":\"100\",\n                        \"unid\":\"11\",\n                        \"refund_tag\":0,\n                        \"subsidy_rate\":\"0\",\n                        \"tk_total_rate\":\"9.99\",\n                        \"item_category_name\":\"服装\",\n                        \"seller_nick\":\"--\",\n                        \"pub_id\":98836808,\n                        \"alimama_rate\":\"0\",\n                        \"subsidy_type\":\"--\",\n                        \"item_img\":\"\\\/\\\/img.alicdn.com\\\/bao\\\/uploaded\\\/i1\\\/2200782262419\\\/O1CN01b5qlop1TjwarUo8fo_!!2200782262419.jpg\",\n                        \"pub_share_pre_fee\":\"0\",\n                        \"alipay_total_price\":\"11.22\",\n                        \"item_title\":\"tsh_rj_测试请不要拍_阶佣11.1\",\n                        \"site_name\":\"合伙人\",\n                        \"item_num\":2,\n                        \"subsidy_fee\":\"0\",\n                        \"alimama_share_fee\":\"0\",\n                        \"trade_parent_id\":\"294159887445064307\",\n                        \"order_type\":\"如意淘\",\n                        \"tk_create_time\":\"2019-04-22 15:15:05\",\n                        \"flow_source\":\"--\",\n                        \"terminal_type\":\"无线\",\n                        \"click_time\":\"2019-04-22 15:14:55\",\n                        \"tk_status\":13,\n                        \"item_price\":\"2.1\",\n                        \"item_id\":\"590141576510\",\n                        \"adzone_name\":\"推广位名\",\n                        \"total_commission_rate\":\"9.99\",\n                        \"item_link\":\"https:\\\/\\\/www.taobao.com\",\n                        \"site_id\":45598009,\n                        \"seller_shop_title\":\"--\",\n                        \"income_rate\":\"9.99\",\n                        \"total_commission_fee\":\"0\",\n                        \"special_id\":21321,\n                        \"relation_id\":123123,\n                        \"deposit_price\":\"22.32\",\n                        \"tb_deposit_time\":\"2019-09-09 12:01:01\",\n                        \"tk_deposit_time\":\"2019-09-09 12:01:01\",\n                        \"tp_order_id\":\"3434\",\n                        \"service_fee_dto_list\":[\n                            {\n                                    \"tk_share_role_type\":122,\n                                    \"share_relative_rate\":\"0.10\",\n                                    \"share_fee\":\"11.11\",\n                                    \"share_pre_fee\":\"11.11\"\n                            }\n                        ],\n                        \"marketing_type\":\"营销类型\",\n                        \"modified_time\":\"2019-09-09 12:01:01\",\n                        \"talent_pid\":\"mm_123_234_424\",\n                        \"tb_gmv_total_price\":\"22.32\",\n                        \"extra_mkt_id\":\"123ucbewri\",\n                        \"untts\":\"1111TTTTTOOOO\",\n                        \"pub_share_pre_fee_for_commission\":\"0\",\n                        \"pub_share_fee_for_commission\":\"0\",\n                        \"subsidy_info_dto_list\":[\n                            {\n                                    \"subsidy_type\":\"妈妈补贴\",\n                                    \"subsidy_rate\":\"0\",\n                                    \"subsidy_fee\":\"0\",\n                                    \"subsidy_upper_limit\":\"0\",\n                                    \"subsidy_share_rate\":\"0\"\n                            }\n                        ],\n                        \"pub_share_rate_for_sdy\":\"0\",\n                        \"tk_total_rate_for_sdy\":\"0\",\n                        \"pub_share_pre_fee_for_sdy\":\"0\",\n                        \"pub_share_fee_for_sdy\":\"0\",\n                        \"alimm_share_info_dto\":{\n                            \"alimm_tech_service_rate\":\"0\",\n                            \"alimm_tech_service_pre_fee\":\"0\",\n                            \"alimm_tech_service_fee\":\"0\",\n                            \"alimm_agent_service_rate\":\"0\",\n                            \"alimm_agent_service_pre_fee\":\"0\",\n                            \"alimm_agent_service_fee\":\"0\"\n                        },\n                        \"platform_special_service_rate\":\"0\",\n                        \"platform_special_service_fee\":\"0\",\n                        \"platform_special_share_info_dto\":{\n                            \"content_tech_service_rate\":\"0\",\n                            \"content_tech_service_pre_fee\":\"0\",\n                            \"content_tech_service_fee\":\"0\",\n                            \"traffic_tech_service_rate\":\"0\",\n                            \"traffic_tech_service_pre_fee\":\"0\",\n                            \"traffic_tech_service_fee\":\"0\"\n                        }\n                }\n            ],\n            \"has_pre\":false,\n            \"position_index\":\"1555904214_lGltNdNvSX2|1555917305_lJfPMeFmdt2\",\n            \"has_next\":true,\n            \"page_no\":1,\n            \"page_size\":11\n        }\n    }\n}",
+    "rspSampleXml": "<tbk_order_details_get_response>\n    <data>\n        <results>\n            <publisher_order_dto>\n                <tb_paid_time>2019-04-22 15:15:05<\/tb_paid_time>\n                <tk_paid_time>2019-04-22 15:15:05<\/tk_paid_time>\n                <pay_price>9.11<\/pay_price>\n                <pub_share_fee>0<\/pub_share_fee>\n                <trade_id>294159887445064307<\/trade_id>\n                <tk_order_role>2<\/tk_order_role>\n                <tk_earning_time>2019-04-22 15:15:05<\/tk_earning_time>\n                <adzone_id>111112234455<\/adzone_id>\n                <pub_share_rate>100<\/pub_share_rate>\n                <unid>11<\/unid>\n                <refund_tag>0<\/refund_tag>\n                <subsidy_rate>0<\/subsidy_rate>\n                <tk_total_rate>9.99<\/tk_total_rate>\n                <item_category_name>服装<\/item_category_name>\n                <seller_nick>--<\/seller_nick>\n                <pub_id>98836808<\/pub_id>\n                <alimama_rate>0<\/alimama_rate>\n                <subsidy_type>--<\/subsidy_type>\n                <item_img>\/\/img.alicdn.com\/bao\/uploaded\/i1\/2200782262419\/O1CN01b5qlop1TjwarUo8fo_!!2200782262419.jpg<\/item_img>\n                <pub_share_pre_fee>0<\/pub_share_pre_fee>\n                <alipay_total_price>11.22<\/alipay_total_price>\n                <item_title>tsh_rj_测试请不要拍_阶佣11.1<\/item_title>\n                <site_name>合伙人<\/site_name>\n                <item_num>2<\/item_num>\n                <subsidy_fee>0<\/subsidy_fee>\n                <alimama_share_fee>0<\/alimama_share_fee>\n                <trade_parent_id>294159887445064307<\/trade_parent_id>\n                <order_type>如意淘<\/order_type>\n                <tk_create_time>2019-04-22 15:15:05<\/tk_create_time>\n                <flow_source>--<\/flow_source>\n                <terminal_type>无线<\/terminal_type>\n                <click_time>2019-04-22 15:14:55<\/click_time>\n                <tk_status>13<\/tk_status>\n                <item_price>2.1<\/item_price>\n                <item_id>590141576510<\/item_id>\n                <adzone_name>推广位名<\/adzone_name>\n                <total_commission_rate>9.99<\/total_commission_rate>\n                <item_link>https:\/\/www.taobao.com<\/item_link>\n                <site_id>45598009<\/site_id>\n                <seller_shop_title>--<\/seller_shop_title>\n                <income_rate>9.99<\/income_rate>\n                <total_commission_fee>0<\/total_commission_fee>\n                <special_id>21321<\/special_id>\n                <relation_id>123123<\/relation_id>\n                <deposit_price>22.32<\/deposit_price>\n                <tb_deposit_time>2019-09-09 12:01:01<\/tb_deposit_time>\n                <tk_deposit_time>2019-09-09 12:01:01<\/tk_deposit_time>\n                <tp_order_id>3434<\/tp_order_id>\n                <service_fee_dto_list>\n                    <service_fee_d_t_o>\n                        <tk_share_role_type>122<\/tk_share_role_type>\n                        <share_relative_rate>0.10<\/share_relative_rate>\n                        <share_fee>11.11<\/share_fee>\n                        <share_pre_fee>11.11<\/share_pre_fee>\n                    <\/service_fee_d_t_o>\n                <\/service_fee_dto_list>\n                <marketing_type>营销类型<\/marketing_type>\n                <modified_time>2019-09-09 12:01:01<\/modified_time>\n                <talent_pid>mm_123_234_424<\/talent_pid>\n                <tb_gmv_total_price>22.32<\/tb_gmv_total_price>\n                <extra_mkt_id>123ucbewri<\/extra_mkt_id>\n                <untts>1111TTTTTOOOO<\/untts>\n                <pub_share_pre_fee_for_commission>0<\/pub_share_pre_fee_for_commission>\n                <pub_share_fee_for_commission>0<\/pub_share_fee_for_commission>\n                <subsidy_info_dto_list>\n                    <subsidy_detail_d_t_o>\n                        <subsidy_type>妈妈补贴<\/subsidy_type>\n                        <subsidy_rate>0<\/subsidy_rate>\n                        <subsidy_fee>0<\/subsidy_fee>\n                        <subsidy_upper_limit>0<\/subsidy_upper_limit>\n                        <subsidy_share_rate>0<\/subsidy_share_rate>\n                    <\/subsidy_detail_d_t_o>\n                <\/subsidy_info_dto_list>\n                <pub_share_rate_for_sdy>0<\/pub_share_rate_for_sdy>\n                <tk_total_rate_for_sdy>0<\/tk_total_rate_for_sdy>\n                <pub_share_pre_fee_for_sdy>0<\/pub_share_pre_fee_for_sdy>\n                <pub_share_fee_for_sdy>0<\/pub_share_fee_for_sdy>\n                <alimm_share_info_dto>\n                    <alimm_tech_service_rate>0<\/alimm_tech_service_rate>\n                    <alimm_tech_service_pre_fee>0<\/alimm_tech_service_pre_fee>\n                    <alimm_tech_service_fee>0<\/alimm_tech_service_fee>\n                    <alimm_agent_service_rate>0<\/alimm_agent_service_rate>\n                    <alimm_agent_service_pre_fee>0<\/alimm_agent_service_pre_fee>\n                    <alimm_agent_service_fee>0<\/alimm_agent_service_fee>\n                <\/alimm_share_info_dto>\n                <platform_special_service_rate>0<\/platform_special_service_rate>\n                <platform_special_service_fee>0<\/platform_special_service_fee>\n                <platform_special_share_info_dto>\n                    <content_tech_service_rate>0<\/content_tech_service_rate>\n                    <content_tech_service_pre_fee>0<\/content_tech_service_pre_fee>\n                    <content_tech_service_fee>0<\/content_tech_service_fee>\n                    <traffic_tech_service_rate>0<\/traffic_tech_service_rate>\n                    <traffic_tech_service_pre_fee>0<\/traffic_tech_service_pre_fee>\n                    <traffic_tech_service_fee>0<\/traffic_tech_service_fee>\n                <\/platform_special_share_info_dto>\n            <\/publisher_order_dto>\n        <\/results>\n        <has_pre>false<\/has_pre>\n        <position_index>1555904214_lGltNdNvSX2|1555917305_lJfPMeFmdt2<\/position_index>\n        <has_next>true<\/has_next>\n        <page_no>1<\/page_no>\n        <page_size>11<\/page_size>\n    <\/data>\n<\/tbk_order_details_get_response>",
     "sdkDemos": [
         {
             "descprition": "TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);\nTbkOrderDetailsGetRequest req = new TbkOrderDetailsGetRequest();\nreq.setQueryType(1L);\nreq.setPositionIndex(\"2222_334666\");\nreq.setPageSize(20L);\nreq.setMemberType(2L);\nreq.setTkStatus(12L);\nreq.setEndTime(\"2019-04-23 12:28:22\");\nreq.setStartTime(\"2019-04-05 12:18:22\");\nreq.setJumpType(1L);\nreq.setPageNo(1L);\nreq.setOrderScene(1L);\nTbkOrderDetailsGetResponse rsp = client.execute(req);\nSystem.out.println(rsp.getBody());",
@@ -2129,7 +2689,7 @@
             "url": ""
         },
         {
-            "descprition": "curl -X POST 'http://gw.api.taobao.com/router/rest' \\\n-H 'Content-Type:application/x-www-form-urlencoded;charset=utf-8' \\\n-d 'app_key=12129701' \\\n-d 'format=json' \\\n-d 'method=taobao.tbk.order.details.get' \\\n-d 'partner_id=apidoc' \\\n-d 'sign=ECA346DBE433DD7DAE966D587ABA8B45' \\\n-d 'sign_method=hmac' \\\n-d 'timestamp=2023-01-17+19%3A55%3A52' \\\n-d 'v=2.0' \\\n-d 'end_time=2019-04-23+12%3A28%3A22' \\\n-d 'jump_type=1' \\\n-d 'member_type=2' \\\n-d 'order_scene=1' \\\n-d 'page_no=1' \\\n-d 'page_size=20' \\\n-d 'position_index=2222_334666' \\\n-d 'query_type=1' \\\n-d 'start_time=2019-04-05+12%3A18%3A22' \\\n-d 'tk_status=12'",
+            "descprition": "curl -X POST 'http:\/\/gw.api.taobao.com\/router\/rest' \\\n-H 'Content-Type:application\/x-www-form-urlencoded;charset=utf-8' \\\n-d 'app_key=12129701' \\\n-d 'format=json' \\\n-d 'method=taobao.tbk.order.details.get' \\\n-d 'partner_id=apidoc' \\\n-d 'sign=4D4BF8E62EA5EB29ADA8470E9D850D90' \\\n-d 'sign_method=hmac' \\\n-d 'timestamp=2023-10-11+12%3A21%3A16' \\\n-d 'v=2.0' \\\n-d 'end_time=2019-04-23+12%3A28%3A22' \\\n-d 'jump_type=1' \\\n-d 'member_type=2' \\\n-d 'order_scene=1' \\\n-d 'page_no=1' \\\n-d 'page_size=20' \\\n-d 'position_index=2222_334666' \\\n-d 'query_type=1' \\\n-d 'start_time=2019-04-05+12%3A18%3A22' \\\n-d 'tk_status=12'",
             "name": "CURL",
             "url": ""
         },
@@ -2139,13 +2699,13 @@
             "url": ""
         },
         {
-            "descprition": "TopClient = require('./topClient').TopClient;\nvar client = new TopClient({\n\t'appkey': 'appkey',\n\t'appsecret': 'secret',\n\t'REST_URL': 'http://gw.api.taobao.com/router/rest'\n});\n\nclient.execute('taobao.tbk.order.details.get', {\n\t'query_type':'1',\n\t'position_index':'2222_334666',\n\t'page_size':'20',\n\t'member_type':'2',\n\t'tk_status':'12',\n\t'end_time':'2019-04-23 12:28:22',\n\t'start_time':'2019-04-05 12:18:22',\n\t'jump_type':'1',\n\t'page_no':'1',\n\t'order_scene':'1'\n}, function(error, response) {\n\tif (!error) console.log(response);\n\telse console.log(error);\n})\n",
+            "descprition": "TopClient = require('.\/topClient').TopClient;\nvar client = new TopClient({\n\t'appkey': 'appkey',\n\t'appsecret': 'secret',\n\t'REST_URL': 'http:\/\/gw.api.taobao.com\/router\/rest'\n});\n\nclient.execute('taobao.tbk.order.details.get', {\n\t'query_type':'1',\n\t'position_index':'2222_334666',\n\t'page_size':'20',\n\t'member_type':'2',\n\t'tk_status':'12',\n\t'end_time':'2019-04-23 12:28:22',\n\t'start_time':'2019-04-05 12:18:22',\n\t'jump_type':'1',\n\t'page_no':'1',\n\t'order_scene':'1'\n}, function(error, response) {\n\tif (!error) console.log(response);\n\telse console.log(error);\n})\n",
             "name": "NodeJS",
             "url": ""
         },
         {
             "descprition": "pTopRequest pRequest = alloc_top_request();\npTopResponse pResponse = NULL;\npTaobaoClient pClient = alloc_taobao_client(url, appkey, appsecret);\nset_api_name(pRequest,\"taobao.tbk.order.details.get\");\nadd_param(pRequest,\"query_type\",\"1\");\nadd_param(pRequest,\"position_index\",\"2222_334666\");\nadd_param(pRequest,\"page_size\",\"20\");\nadd_param(pRequest,\"member_type\",\"2\");\nadd_param(pRequest,\"tk_status\",\"12\");\nadd_param(pRequest,\"end_time\",\"2019-04-23 12:28:22\");\nadd_param(pRequest,\"start_time\",\"2019-04-05 12:18:22\");\nadd_param(pRequest,\"jump_type\",\"1\");\nadd_param(pRequest,\"page_no\",\"1\");\nadd_param(pRequest,\"order_scene\",\"1\");\npResponse = top_execute(pClient,pRequest,NULL);\nprintf(\"ret code:%d\\n\",pResponse->code);\nif(pResponse->code == 0){\n\tpTopResponseIterator ite = init_response_iterator(pResponse);\n\tpResultItem pResultItem = alloc_result_item();\n\twhile(parseNext(ite, pResultItem) == 0){\n\t\tprintf(\"%s:%s\\n\",pResultItem->key,pResultItem->value);\n\t}\n\tdestroy_response_iterator(ite);\n\tdestroy_result_item(pResultItem);\n}\ndestroy_top_request(pRequest);\ndestroy_top_response(pResponse);\ndestroy_taobao_client(pClient);\n",
-            "name": "C/C++",
+            "name": "C\/C++",
             "url": ""
         },
         {
@@ -2154,22 +2714,22 @@
             "url": ""
         },
         {
-            "descprition": "package main;\n\nimport (\n    \"fmt\"\n    \"topsdk\"\n    \"topsdk/ability414\"\n    \"topsdk/ability414/request\"\n)\n\nfunc main() {\n    client := topsdk.NewDefaultTopClient(\"<your-appkey>\",\"<your-appsecret>\",\"<top-gateway-url>\",20000,20000)\n    ability := ability414.NewAbility414(&client)\n\n\n    req := request.TaobaoTbkOrderDetailsGetRequest{}\n    req.SetQueryType(1)\n    req.SetPositionIndex(\"2222_334666\")\n    req.SetPageSize(20)\n    req.SetMemberType(2)\n    req.SetTkStatus(12)\n    req.SetEndTime(\"2019-04-23 12:28:22\")\n    req.SetStartTime(\"2019-04-05 12:18:22\")\n    req.SetJumpType(1)\n    req.SetPageNo(1)\n    req.SetOrderScene(1)\n\n\n    resp, err := ability.TaobaoTbkOrderDetailsGet(&req)\n    if(err != nil) {\n        fmt.Println(err)\n    } else {\n        fmt.Println(resp.Body)\n    }\n}\n\n",
+            "descprition": "package main;\n\nimport (\n    \"fmt\"\n    \"topsdk\"\n    \"topsdk\/ability414\"\n    \"topsdk\/ability414\/request\"\n)\n\nfunc main() {\n    client := topsdk.NewDefaultTopClient(\"<your-appkey>\",\"<your-appsecret>\",\"<top-gateway-url>\",20000,20000)\n    ability := ability414.NewAbility414(&client)\n\n\n    req := request.TaobaoTbkOrderDetailsGetRequest{}\n    req.SetQueryType(1)\n    req.SetPositionIndex(\"2222_334666\")\n    req.SetPageSize(20)\n    req.SetMemberType(2)\n    req.SetTkStatus(12)\n    req.SetEndTime(\"2019-04-23 12:28:22\")\n    req.SetStartTime(\"2019-04-05 12:18:22\")\n    req.SetJumpType(1)\n    req.SetPageNo(1)\n    req.SetOrderScene(1)\n\n\n    resp, err := ability.TaobaoTbkOrderDetailsGet(&req)\n    if(err != nil) {\n        fmt.Println(err)\n    } else {\n        fmt.Println(resp.Body)\n    }\n}\n\n",
             "name": "GO",
             "url": ""
         },
         {
-            "descprition": "<?php\nrequire \"../vendor/autoload.php\";\nuse Topsdk\\Topapi\\TopApiClient;\nuse Topsdk\\Topapi\\Ability414\\Request\\TaobaoTbkOrderDetailsGetRequest;\nuse Topsdk\\Topapi\\Ability414\\Ability414;\n\n\n// create Client\n$client = new TopApiClient(\"<your-appkey>\",\"<your-appsecret>\",\"<top-gateway-url>\");\n$ability = new Ability414($client);\n\n// create domain\n\n// create request\n$request = new TaobaoTbkOrderDetailsGetRequest();\n$request->setQueryType(1);\n$request->setPositionIndex(\"2222_334666\");\n$request->setPageSize(20);\n$request->setMemberType(2);\n$request->setTkStatus(12);\n$request->setEndTime(\"2019-04-23 12:28:22\");\n$request->setStartTime(\"2019-04-05 12:18:22\");\n$request->setJumpType(1);\n$request->setPageNo(1);\n$request->setOrderScene(1);\n\n$response = $ability->taobaoTbkOrderDetailsGet($request);\nvar_dump($response);\n\n",
+            "descprition": "<?php\nrequire \"..\/vendor\/autoload.php\";\nuse Topsdk\\Topapi\\TopApiClient;\nuse Topsdk\\Topapi\\Ability414\\Request\\TaobaoTbkOrderDetailsGetRequest;\nuse Topsdk\\Topapi\\Ability414\\Ability414;\n\n\n\/\/ create Client\n$client = new TopApiClient(\"<your-appkey>\",\"<your-appsecret>\",\"<top-gateway-url>\");\n$ability = new Ability414($client);\n\n\/\/ create domain\n\n\/\/ create request\n$request = new TaobaoTbkOrderDetailsGetRequest();\n$request->setQueryType(1);\n$request->setPositionIndex(\"2222_334666\");\n$request->setPageSize(20);\n$request->setMemberType(2);\n$request->setTkStatus(12);\n$request->setEndTime(\"2019-04-23 12:28:22\");\n$request->setStartTime(\"2019-04-05 12:18:22\");\n$request->setJumpType(1);\n$request->setPageNo(1);\n$request->setOrderScene(1);\n\n$response = $ability->taobaoTbkOrderDetailsGet($request);\nvar_dump($response);\n\n",
             "name": "PHP7",
             "url": ""
         },
         {
-            "descprition": "import com.alibaba.fastjson.JSON;\nimport java.io.File;\nimport java.util.ArrayList;\nimport java.util.Date;\nimport com.taobao.top.TopApiClient;\nimport com.taobao.top.DefaultTopApiClient;\nimport com.taobao.top.TopFileItem;\nimport com.taobao.top.ability414.Ability414;\nimport com.taobao.top.ability414.request.TaobaoTbkOrderDetailsGetRequest;\nimport com.taobao.top.ability414.response.TaobaoTbkOrderDetailsGetResponse;\n\npublic class Main {\n\n    public static void main(String[] args) throws Exception {\n        // create Client\n        TopApiClient client = new DefaultTopApiClient(\"<your-appkey>\",\"<your-appsecret>\",\"<top-gateway-url>\");\n        Ability414 apiPackage = new Ability414(client);\n        // create domain\n\n        // create request\n        TaobaoTbkOrderDetailsGetRequest request = new TaobaoTbkOrderDetailsGetRequest();\n        request.setQueryType(1);\n        request.setPositionIndex(\"2222_334666\");\n        request.setPageSize(20);\n        request.setMemberType(2);\n        request.setTkStatus(12);\n        request.setEndTime(\"2019-04-23 12:28:22\");\n        request.setStartTime(\"2019-04-05 12:18:22\");\n        request.setJumpType(1);\n        request.setPageNo(1);\n        request.setOrderScene(1);\n\n        TaobaoTbkOrderDetailsGetResponse response = apiPackage.taobaoTbkOrderDetailsGet(request);\n        if(!response.isSuccess()){\n            System.out.println(response.getSubMsg());\n        }\n        System.out.println(JSON.toJSONString(response));\n    }\n\n}",
+            "descprition": "import com.alibaba.fastjson.JSON;\nimport java.io.File;\nimport java.util.ArrayList;\nimport java.util.Date;\nimport com.taobao.top.TopApiClient;\nimport com.taobao.top.DefaultTopApiClient;\nimport com.taobao.top.TopFileItem;\nimport com.taobao.top.ability414.Ability414;\nimport com.taobao.top.ability414.request.TaobaoTbkOrderDetailsGetRequest;\nimport com.taobao.top.ability414.response.TaobaoTbkOrderDetailsGetResponse;\n\npublic class Main {\n\n    public static void main(String[] args) throws Exception {\n        \/\/ create Client\n        TopApiClient client = new DefaultTopApiClient(\"<your-appkey>\",\"<your-appsecret>\",\"<top-gateway-url>\");\n        Ability414 apiPackage = new Ability414(client);\n        \/\/ create domain\n\n        \/\/ create request\n        TaobaoTbkOrderDetailsGetRequest request = new TaobaoTbkOrderDetailsGetRequest();\n        request.setQueryType(1);\n        request.setPositionIndex(\"2222_334666\");\n        request.setPageSize(20);\n        request.setMemberType(2);\n        request.setTkStatus(12);\n        request.setEndTime(\"2019-04-23 12:28:22\");\n        request.setStartTime(\"2019-04-05 12:18:22\");\n        request.setJumpType(1);\n        request.setPageNo(1);\n        request.setOrderScene(1);\n\n        TaobaoTbkOrderDetailsGetResponse response = apiPackage.taobaoTbkOrderDetailsGet(request);\n        if(!response.isSuccess()){\n            System.out.println(response.getSubMsg());\n        }\n        System.out.println(JSON.toJSONString(response));\n    }\n\n}",
             "name": "JAVA8",
             "url": ""
         },
         {
-            "descprition": "using System;\nusing System.Collections.Generic;\nusing Topsdk.Top;\nusing Topsdk.Top.Ability414;\nusing Topsdk.Top.Ability414.Request;\nusing Topsdk.Util;\n\n\nnamespace MyNamespace\n{\n    class MyClass\n    {\n        static void Main(string[] args)\n        {\n            // create Client\n            ITopApiClient client = new DefaultTopApiClient(\"<your-appkey>\",\"<your-appsecret>\",\"<top-gateway-url>\",10000,20000);\n            Ability414 apiPackage = new Ability414(client);\n\n\n            // create request\n            var request = new TaobaoTbkOrderDetailsGetRequest();\n            request.QueryType = 1;\n            request.PositionIndex = \"2222_334666\";\n            request.PageSize = 20;\n            request.MemberType = 2;\n            request.TkStatus = 12;\n            request.EndTime = \"2019-04-23 12:28:22\";\n            request.StartTime = \"2019-04-05 12:18:22\";\n            request.JumpType = 1;\n            request.PageNo = 1;\n            request.OrderScene = 1;\n\n            var response = apiPackage.TaobaoTbkOrderDetailsGet(request);\n            if (response.isSuccess())\n            {\n                Console.WriteLine(response.Body);\n            }\n            else\n            {\n                Console.WriteLine(response.SubCode);\n            }\n\n        }\n    }\n}",
+            "descprition": "using System;\nusing System.Collections.Generic;\nusing Topsdk.Top;\nusing Topsdk.Top.Ability414;\nusing Topsdk.Top.Ability414.Request;\nusing Topsdk.Util;\n\n\nnamespace MyNamespace\n{\n    class MyClass\n    {\n        static void Main(string[] args)\n        {\n            \/\/ create Client\n            ITopApiClient client = new DefaultTopApiClient(\"<your-appkey>\",\"<your-appsecret>\",\"<top-gateway-url>\",10000,20000);\n            Ability414 apiPackage = new Ability414(client);\n\n\n            \/\/ create request\n            var request = new TaobaoTbkOrderDetailsGetRequest();\n            request.QueryType = 1;\n            request.PositionIndex = \"2222_334666\";\n            request.PageSize = 20;\n            request.MemberType = 2;\n            request.TkStatus = 12;\n            request.EndTime = \"2019-04-23 12:28:22\";\n            request.StartTime = \"2019-04-05 12:18:22\";\n            request.JumpType = 1;\n            request.PageNo = 1;\n            request.OrderScene = 1;\n\n            var response = apiPackage.TaobaoTbkOrderDetailsGet(request);\n            if (response.isSuccess())\n            {\n                Console.WriteLine(response.Body);\n            }\n            else\n            {\n                Console.WriteLine(response.SubCode);\n            }\n\n        }\n    }\n}",
             "name": ".NET6",
             "url": ""
         }
@@ -2178,17 +2738,17 @@
         {
             "descprition": "",
             "name": "API测试工具",
-            "url": "/new/apitesttool?apiName=taobao.tbk.order.details.get"
+            "url": "\/new\/apitesttool?apiName=taobao.tbk.order.details.get"
         },
         {
             "descprition": "",
             "name": "错误码查询工具",
-            "url": "/doc.htm?docId=1&docType=18"
+            "url": "\/doc.htm?docId=1&docType=18"
         },
         {
             "descprition": "",
             "name": "SDK 下载",
-            "url": "/doc.htm?docId=101618&docType=1"
+            "url": "\/doc.htm?docId=101618&docType=1"
         }
     ]
 }

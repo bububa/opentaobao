@@ -1,0 +1,94 @@
+{
+	"requestParams": [
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页大小，不传默认只查20条，最大不能超过500"
+		},
+		{
+			"name": "page_index",
+			"type": "Number",
+			"description": "当前页数"
+		},
+		{
+			"name": "unique_no",
+			"type": "String",
+			"description": "业务唯一编号"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "当前页码"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页大小"
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总页数"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "unique_no",
+							"type": "String",
+							"description": "规则唯一编号"
+						},
+						{
+							"name": "service_code",
+							"type": "String",
+							"description": "servicecode"
+						},
+						{
+							"name": "shop_name",
+							"type": "String",
+							"description": "店铺名称"
+						},
+						{
+							"name": "category_name",
+							"type": "String",
+							"description": "叶子类目\u0000名称"
+						},
+						{
+							"name": "worker_check_type_list",
+							"type": "String[]",
+							"description": "工人校验类型（高级工人/品牌品类工人）"
+						}
+					],
+					"name": "data_list",
+					"type": "SupplyConfigRuleDTO[]",
+					"description": "规则数据"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "响应结果"
+		}
+	],
+	"name": "tmall.fuwu.homedecoration.supplyrule.list",
+	"apiChineseName": "查询供给规则接口",
+	"description": "查询供给规则接口",
+	"id": 67332
+}

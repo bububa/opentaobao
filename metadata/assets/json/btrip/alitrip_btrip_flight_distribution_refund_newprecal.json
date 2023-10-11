@@ -140,7 +140,7 @@
 								{
 									"name": "volunteer",
 									"type": "Number",
-									"description": "自愿或非自愿 0-非自愿、1-自愿  "
+									"description": "自愿或非自愿 1-非自愿、0-自愿  "
 								},
 								{
 									"name": "person",

@@ -27,6 +27,21 @@
 					"type": "Number",
 					"description": "选择器步骤可选1,2,3，1：展示卖家能够选择的权益类型2：必填BenefitType，展示卖家该种类型下的权益3：必填BenefitType和benefitId，展示卖家该权益的详情",
 					"required": true
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "选择器步骤选择2时，查询指定类型权益列表分页查询参数"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "选择器步骤选择2时，查询指定类型权益列表分页查询参数"
+				},
+				{
+					"name": "page_query_request",
+					"type": "Boolean",
+					"description": "传true时列表进行分页查询，分页查询时不会对发放完的模板过滤；传false时分页查询的current_page和page_size不传，接口语义和之前一致。"
 				}
 			],
 			"name": "query",
@@ -109,6 +124,11 @@
 					"name": "pack_detail_list",
 					"type": "BenefitTemplateVo[]",
 					"description": "详情list"
+				},
+				{
+					"name": "template_total_count",
+					"type": "Number",
+					"description": "选择器步骤选择2时，查询指定类型权益列表分页查询返回值，数据总量"
 				}
 			],
 			"name": "benefit_list",

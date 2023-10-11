@@ -9,7 +9,7 @@ import (
 // TaobaoQimenInventoryQueryAPIResponse 库存查询接口（多商品） API返回值
 // taobao.qimen.inventory.query
 //
-// ERP调用奇门的接口,查询商品的库存量
+// taobao.qimen.inventory.query
 type TaobaoQimenInventoryQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenInventoryQueryAPIResponseModel

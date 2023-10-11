@@ -1,0 +1,63 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "new_outer_id",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "1"
+				},
+				{
+					"name": "is_roll_back",
+					"type": "Number",
+					"description": "1"
+				}
+			],
+			"name": "broker_migrate_dto",
+			"type": "BrokerMigrateDTO",
+			"description": "1",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "return_code",
+			"type": "String",
+			"description": "1"
+		},
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "1"
+		},
+		{
+			"name": "return_success",
+			"type": "Boolean",
+			"description": "1"
+		},
+		{
+			"name": "return_message",
+			"type": "String",
+			"description": "1"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.broker.migrate",
+	"apiChineseName": "融合店经纪人迁移",
+	"description": "融合店经纪人迁移",
+	"id": 67839
+}

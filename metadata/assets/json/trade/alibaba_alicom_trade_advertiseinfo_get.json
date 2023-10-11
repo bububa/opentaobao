@@ -1,0 +1,47 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单id",
+					"required": true
+				},
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "用户id",
+					"required": true
+				}
+			],
+			"name": "advertise_info_query",
+			"type": "AdvertiseInfoQuery",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "conversion_tracking",
+					"type": "String",
+					"description": "信息流投放转换追踪标识"
+				},
+				{
+					"name": "advertiser_id",
+					"type": "String",
+					"description": "信息流投放广告账户id"
+				}
+			],
+			"name": "module",
+			"type": "AdvertiseInfoDTO",
+			"description": "信息投放广告信息"
+		}
+	],
+	"name": "alibaba.alicom.trade.advertiseinfo.get",
+	"apiChineseName": "获取订单上的在信息流投放信息",
+	"description": "获取订单上的在信息流投放信息",
+	"id": 67523
+}

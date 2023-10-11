@@ -9,7 +9,7 @@ import (
 // TaobaoQimenEntryorderCreateAPIRequest 入库单创建接口 API请求
 // taobao.qimen.entryorder.create
 //
-// ERP调用接口，创建入库单;
+// taobao.qimen.entryorder.create
 type TaobaoQimenEntryorderCreateAPIRequest struct {
 	model.Params
 	//

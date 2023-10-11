@@ -1,0 +1,128 @@
+{
+	"requestParams": [
+		{
+			"name": "vaccine_ids",
+			"type": "String",
+			"description": "医鹿的苗种，疫苗id",
+			"required": true
+		},
+		{
+			"name": "obtain_date",
+			"type": "Date",
+			"description": "取数日期，如2023-05-25 21:02:19",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "当前页页号，注意页号是从1开始的",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页模型每页的大小",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总量"
+				},
+				{
+					"subParams": [
+						{
+							"name": "subscriber_name",
+							"type": "String",
+							"description": "预约者姓名"
+						},
+						{
+							"name": "subscriber_mobile",
+							"type": "String",
+							"description": "预约者电话"
+						},
+						{
+							"name": "id_card_md5",
+							"type": "String",
+							"description": "身份证号"
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间"
+						},
+						{
+							"name": "subscribe_time",
+							"type": "Date",
+							"description": "预约时间"
+						},
+						{
+							"name": "cancel_time",
+							"type": "Date",
+							"description": "取消时间"
+						},
+						{
+							"name": "pov_id",
+							"type": "Number",
+							"description": "povId"
+						},
+						{
+							"name": "pov_name",
+							"type": "String",
+							"description": "pov名称"
+						},
+						{
+							"name": "pov_province_code",
+							"type": "Number",
+							"description": "省code"
+						},
+						{
+							"name": "pov_city_code",
+							"type": "Number",
+							"description": "市code"
+						},
+						{
+							"name": "area_code",
+							"type": "Number",
+							"description": "区code"
+						},
+						{
+							"name": "isv_order_id",
+							"type": "String",
+							"description": "isvorderId"
+						}
+					],
+					"name": "info_detail_list",
+					"type": "PovSubscribeDetailModel[]",
+					"description": "自有pov预约信息"
+				}
+			],
+			"name": "model",
+			"type": "IsvPovSubscribeInfoResponse",
+			"description": "model"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "info"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "code"
+		}
+	],
+	"name": "alibaba.health.vaccin.subscribe.info.return",
+	"apiChineseName": "自有pov预约信息回传",
+	"description": "自有pov预约信息回传",
+	"id": 66779
+}

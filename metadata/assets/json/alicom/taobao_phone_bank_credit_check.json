@@ -1,0 +1,52 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "bank_code",
+					"type": "String",
+					"description": "银行的编码",
+					"required": true
+				},
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "用户的openId",
+					"required": true
+				}
+			],
+			"name": "bank_credit_check_request",
+			"type": "BankCreditCheckRequest",
+			"description": "能否办理的请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "结果码"
+		},
+		{
+			"subParams": [
+				{
+					"name": "can_apply",
+					"type": "Boolean",
+					"description": "能否申请"
+				}
+			],
+			"name": "data",
+			"type": "BankCreditCheckResponse",
+			"description": "响应结果"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "信息"
+		}
+	],
+	"name": "taobao.phone.bank.credit.check",
+	"apiChineseName": "虚拟话费任务银行信用卡办理检查",
+	"description": "虚拟话费任务银行信用卡办理检查",
+	"id": 66607
+}

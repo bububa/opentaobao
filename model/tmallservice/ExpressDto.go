@@ -28,6 +28,8 @@ type ExpressDto struct {
 	GoodsType string `json:"goods_type,omitempty" xml:"goods_type,omitempty"`
 	// 增值服务需求
 	ValueAddedServiceDemand string `json:"value_added_service_demand,omitempty" xml:"value_added_service_demand,omitempty"`
+	// 扩展属性
+	ExtendInfo string `json:"extend_info,omitempty" xml:"extend_info,omitempty"`
 	// 物流订单号
 	LogisticsOrderId int64 `json:"logistics_order_id,omitempty" xml:"logistics_order_id,omitempty"`
 	// 物流商账号ID（（ERP服务商依据不同的账号ID，走不同的物流系统对接方式））

@@ -28,6 +28,8 @@ type TmallServicecenterWorkcardQueryAPIRequest struct {
 	_currentPage int64
 	// 每页大小
 	_pageSize int64
+	// 是否查询操作记录信息
+	_needWorkcardOperation bool
 }
 
 // NewTmallServicecenterWorkcardQueryRequest 初始化TmallServicecenterWorkcardQueryAPIRequest对象
@@ -156,4 +158,17 @@ func (r *TmallServicecenterWorkcardQueryAPIRequest) SetPageSize(_pageSize int64)
 // GetPageSize PageSize Getter
 func (r TmallServicecenterWorkcardQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+// SetNeedWorkcardOperation is NeedWorkcardOperation Setter
+// 是否查询操作记录信息
+func (r *TmallServicecenterWorkcardQueryAPIRequest) SetNeedWorkcardOperation(_needWorkcardOperation bool) error {
+	r._needWorkcardOperation = _needWorkcardOperation
+	r.Set("need_workcard_operation", _needWorkcardOperation)
+	return nil
+}
+
+// GetNeedWorkcardOperation NeedWorkcardOperation Getter
+func (r TmallServicecenterWorkcardQueryAPIRequest) GetNeedWorkcardOperation() bool {
+	return r._needWorkcardOperation
 }

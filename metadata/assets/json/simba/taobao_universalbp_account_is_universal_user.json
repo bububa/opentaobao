@@ -1,0 +1,65 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码",
+					"required": true
+				}
+			],
+			"name": "top_service_context",
+			"type": "TopServiceContext",
+			"description": "topServiceContext",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "ok",
+							"type": "Boolean",
+							"description": "是否成功"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误编码"
+						}
+					],
+					"name": "info",
+					"type": "TopInfo",
+					"description": "请求系统信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "is_universal_bp_user",
+							"type": "Boolean",
+							"description": "是否是新bp用户"
+						}
+					],
+					"name": "top_account_status_v_o",
+					"type": "TopAccountStatusVo",
+					"description": "结果集"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.universalbp.account.is.universal.user",
+	"apiChineseName": "判断用户是否迁移新bp",
+	"description": "获取客户是否应使用新接口。对于迁移了新bp的客户，使用新接口，没有迁移的，使用老bp接口。不可错乱使用。",
+	"id": 67076
+}

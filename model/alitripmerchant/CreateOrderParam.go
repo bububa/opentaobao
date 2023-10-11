@@ -37,7 +37,7 @@ type CreateOrderParam struct {
 	// 代金券id
 	VoucherId string `json:"voucher_id,omitempty" xml:"voucher_id,omitempty"`
 	// 1
-	Version string `json:"version,omitempty" xml:"version,omitempty"`
+	AreaCode string `json:"area_code,omitempty" xml:"area_code,omitempty"`
 	// 外部outRoomId
 	OutRoomId int64 `json:"out_room_id,omitempty" xml:"out_room_id,omitempty"`
 	// 宝贝ID
@@ -64,6 +64,8 @@ type CreateOrderParam struct {
 	CouponInstanceId int64 `json:"coupon_instance_id,omitempty" xml:"coupon_instance_id,omitempty"`
 	// 权益券相关参数
 	DerbyVoucherUniversalDTO *DerbyVoucherUniversalDto `json:"derby_voucher_universal_d_t_o,omitempty" xml:"derby_voucher_universal_d_t_o,omitempty"`
+	// 版本号
+	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
 	// 是否同意向境外提供个人信息
 	DataExportAgreement bool `json:"data_export_agreement,omitempty" xml:"data_export_agreement,omitempty"`
 }

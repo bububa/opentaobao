@@ -30,4 +30,6 @@ type RefundOrderVo struct {
 	TotalTakeBackActivityMoney int64 `json:"total_take_back_activity_money,omitempty" xml:"total_take_back_activity_money,omitempty"`
 	// 改签信息
 	ChangeSimpleVo *ChangeSimpleVo `json:"change_simple_vo,omitempty" xml:"change_simple_vo,omitempty"`
+	// 催退
+	UrgentRefundVo *UrgentRefundVo `json:"urgent_refund_vo,omitempty" xml:"urgent_refund_vo,omitempty"`
 }

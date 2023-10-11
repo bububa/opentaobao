@@ -1,0 +1,100 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "account",
+					"type": "String",
+					"description": "用户手机号",
+					"required": true
+				}
+			],
+			"name": "phone_distribution_recommend_req",
+			"type": "PhoneDistributionRecommendReq",
+			"description": "选品请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "响应码"
+		},
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品标识"
+						},
+						{
+							"name": "face",
+							"type": "String",
+							"description": "商品面额"
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "商品价格"
+						}
+					],
+					"name": "list",
+					"type": "PhoneDistributionPhoneItemVO[]",
+					"description": "商品列表"
+				},
+				{
+					"subParams": [
+						{
+							"name": "show_cat_name",
+							"type": "String",
+							"description": "手机归属区域"
+						},
+						{
+							"name": "area_name",
+							"type": "String",
+							"description": "手机归属运营商"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "手机归属城市"
+						},
+						{
+							"name": "cat_name",
+							"type": "String",
+							"description": "运营商"
+						}
+					],
+					"name": "cat_info",
+					"type": "CatInfoVO",
+					"description": "号码信息"
+				},
+				{
+					"name": "notice",
+					"type": "String",
+					"description": "公告"
+				}
+			],
+			"name": "data",
+			"type": "PhoneRecommendRes",
+			"description": "返回数据"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "响应状态"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "响应信息"
+		}
+	],
+	"name": "taobao.phone.item.external.recommend",
+	"apiChineseName": "话费选品能力外放",
+	"description": "话费选品能力外放",
+	"id": 66692
+}

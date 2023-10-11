@@ -136,6 +136,16 @@
 									"name": "output_list",
 									"type": "SubDeviceDTO[]",
 									"description": "子设备"
+								},
+								{
+									"name": "open_plan_id",
+									"type": "Number",
+									"description": "常开时间计划"
+								},
+								{
+									"name": "block_plan_id",
+									"type": "Number",
+									"description": "封阻时间计划"
 								}
 							],
 							"name": "config_list",

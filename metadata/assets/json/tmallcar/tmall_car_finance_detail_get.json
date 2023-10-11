@@ -19,11 +19,6 @@
 		{
 			"subParams": [
 				{
-					"name": "user_id",
-					"type": "Number",
-					"description": "用户id"
-				},
-				{
 					"name": "item_id",
 					"type": "Number",
 					"description": "商品id"

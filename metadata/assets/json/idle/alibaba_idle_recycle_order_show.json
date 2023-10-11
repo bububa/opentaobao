@@ -130,7 +130,7 @@
 						{
 							"name": "country",
 							"type": "String",
-							"description": "村"
+							"description": "国家"
 						},
 						{
 							"name": "zm_score",
@@ -241,6 +241,16 @@
 							"name": "dk_status",
 							"type": "String",
 							"description": "当前代扣状态：104代扣失败、105代扣成功、106代扣逾期"
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "卖家地址-乡镇/街道"
+						},
+						{
+							"name": "quote_version",
+							"type": "String",
+							"description": "估价版本"
 						}
 					],
 					"name": "module",

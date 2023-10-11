@@ -47,7 +47,7 @@
 				},
 				{
 					"name": "user_id",
-					"type": "Number",
+					"type": "String",
 					"description": "卖家ID"
 				},
 				{
@@ -239,11 +239,6 @@
 					"name": "schedule_speed",
 					"type": "Number",
 					"description": "发货速度  ，\u003cbr/\u003e101-当日达，\u003cbr/\u003e102-次晨达，\u003cbr/\u003e103-次日达"
-				},
-				{
-					"name": "open_uid",
-					"type": "String",
-					"description": "openuid"
 				}
 			],
 			"name": "wlb_order",

@@ -1,0 +1,82 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "pic_url",
+					"type": "String",
+					"description": "图片url",
+					"required": true
+				},
+				{
+					"name": "site_id",
+					"type": "String",
+					"description": "媒体站点id"
+				},
+				{
+					"name": "pic_id",
+					"type": "String",
+					"description": "图片id",
+					"required": true
+				}
+			],
+			"name": "recognition_param",
+			"type": "RecognitionParam",
+			"description": "识别参数对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "coordinate_str",
+					"type": "String",
+					"description": "坐标字符串"
+				},
+				{
+					"name": "text",
+					"type": "String",
+					"description": "文本"
+				},
+				{
+					"name": "width",
+					"type": "String",
+					"description": "宽"
+				},
+				{
+					"name": "height",
+					"type": "String",
+					"description": "高"
+				},
+				{
+					"name": "label_id",
+					"type": "String",
+					"description": "labelId"
+				},
+				{
+					"name": "ranking",
+					"type": "Number",
+					"description": "序号"
+				}
+			],
+			"name": "region_list",
+			"type": "RegionData []",
+			"description": "识别结果list"
+		},
+		{
+			"name": "pic_id",
+			"type": "String",
+			"description": "图片id"
+		},
+		{
+			"name": "deep_link",
+			"type": "String",
+			"description": "唤端链接"
+		}
+	],
+	"name": "taobao.growth.reaching.pictures.recognize",
+	"apiChineseName": "图片识别",
+	"description": "图片识别",
+	"id": 67097
+}

@@ -1,0 +1,127 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间戳（毫秒）",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID（服务商发起请求的ID）",
+					"required": true
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "淘天物流服务商ID",
+					"required": true
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "服务商仓编码",
+					"required": true
+				},
+				{
+					"name": "cooperation_status",
+					"type": "Number",
+					"description": "确认状态： 1：同意合作 2：拒绝合作",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "wms_owner_code",
+							"type": "String",
+							"description": "wms货主id",
+							"required": true
+						},
+						{
+							"name": "cooperation_wh_code",
+							"type": "String",
+							"description": "合作店铺仓code",
+							"required": true
+						}
+					],
+					"name": "cooperation_warehouses",
+					"type": "CooperationWarehouses[]",
+					"description": "合作商家仓编码列表,最多100条",
+					"required": true
+				},
+				{
+					"name": "business_code",
+					"type": "String",
+					"description": "合作业务： ALL（全部，默认） OFFICIAL_LOGISTICS（官方物流）， TIMES_AGENCY（时效代运营）， MAOCHAO_YUNCANG（猫超云仓）"
+				}
+			],
+			"name": "warehouse_cooperation_batch_confirm_request",
+			"type": "WarehouseCooperationBatchConfirmRequest",
+			"description": "仓合作关系确认入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true|false"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息"
+				},
+				{
+					"name": "result",
+					"type": "String",
+					"description": "0=全部失败，1=全部成功，2=部分成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "错误码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "wms_owner_code",
+							"type": "String",
+							"description": "wms货主id"
+						},
+						{
+							"name": "cooperation_wh_code",
+							"type": "String",
+							"description": "合作店铺仓code"
+						}
+					],
+					"name": "data",
+					"type": "WarehouseCooperationConfirmResultDetail[]",
+					"description": "处理失败的仓（组）"
+				}
+			],
+			"name": "warehouse_cooperation_batch_confirm_response",
+			"type": "WarehouseCooperationBatchConfirmResponse",
+			"description": "仓合作关系确认出参"
+		}
+	],
+	"name": "taobao.logistics.warehouse.cooperation.batch.confirm",
+	"apiChineseName": "仓合作关系确认",
+	"description": "仓合作关系确认",
+	"id": 67408
+}

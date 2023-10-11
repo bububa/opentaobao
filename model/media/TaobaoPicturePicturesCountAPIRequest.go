@@ -9,7 +9,7 @@ import (
 // TaobaoPicturePicturesCountAPIRequest 图片总数查询 API请求
 // taobao.picture.pictures.count
 //
-// 图片总数查询
+// 图片总数查询，目前出于对数据库的保护暂不支持此功能
 type TaobaoPicturePicturesCountAPIRequest struct {
 	model.Params
 	// 是否删除,undeleted代表没有删除,deleted表示删除

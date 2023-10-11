@@ -1,0 +1,77 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "ownerCode",
+					"type": "String",
+					"description": "货主编码",
+					"required": true
+				},
+				{
+					"name": "orderCode",
+					"type": "String",
+					"description": "外部订单号",
+					"required": true
+				},
+				{
+					"name": "payTime",
+					"type": "String",
+					"description": "支付时间",
+					"required": true
+				},
+				{
+					"name": "totalAmount",
+					"type": "Number",
+					"description": "金额(单位为分)",
+					"required": true
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "extendProps",
+					"type": "String",
+					"description": "扩展信息Map"
+				}
+			],
+			"name": "request",
+			"type": "PresalesPackageConsignRequest",
+			"description": "请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure,必填",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				}
+			],
+			"name": "response",
+			"type": "PresalesPackageConsignResponse",
+			"description": "响应"
+		}
+	],
+	"name": "taobao.qimen.presalespackage.consign",
+	"apiChineseName": "预售预包尾款推单发货",
+	"description": "预售预包尾款推单发货",
+	"id": 67302
+}

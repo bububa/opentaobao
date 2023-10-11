@@ -1,0 +1,107 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "poi_outer_id",
+							"type": "String",
+							"description": "POI外部编号（供应商侧编号）"
+						},
+						{
+							"name": "poi_name",
+							"type": "String",
+							"description": "POI名称"
+						},
+						{
+							"name": "poi_name_en",
+							"type": "String",
+							"description": "POI英文名称"
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "POI详情说明"
+						},
+						{
+							"name": "city_id",
+							"type": "String",
+							"description": "城市ID"
+						},
+						{
+							"name": "city_name",
+							"type": "String",
+							"description": "城市名称"
+						},
+						{
+							"name": "province_id",
+							"type": "String",
+							"description": "省份ID"
+						},
+						{
+							"name": "province_name",
+							"type": "String",
+							"description": "省份名称"
+						},
+						{
+							"name": "country_id",
+							"type": "String",
+							"description": "国家ID"
+						},
+						{
+							"name": "country_name",
+							"type": "String",
+							"description": "国家名称"
+						}
+					],
+					"name": "poi_list",
+					"type": "FscPoiApplyApiDto[]",
+					"description": "POI新增列表"
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "供应商ID"
+				}
+			],
+			"name": "fsc_poi_apply_request",
+			"type": "FscPoiApplyRequest",
+			"description": "fscPoiApplyRequest",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "业务数据"
+				}
+			],
+			"name": "top_result",
+			"type": "TopResult",
+			"description": "通用返回结果"
+		}
+	],
+	"name": "taobao.alitrip.travel.fsc.route.api.poi.apply",
+	"apiChineseName": "线路供应商提交新增POI申请",
+	"description": "线路供应商提交新增POI申请",
+	"id": 66878
+}

@@ -12,4 +12,8 @@ type SyncExistingHouseThreeDimensionalDto struct {
 	CoverPictureUrl string `json:"cover_picture_url,omitempty" xml:"cover_picture_url,omitempty"`
 	// 3D数据包
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
+	// 跳转链接
+	JumpUrl string `json:"jump_url,omitempty" xml:"jump_url,omitempty"`
+	// 类型 1：躺平3D户型
+	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 }

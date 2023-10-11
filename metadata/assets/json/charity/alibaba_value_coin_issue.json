@@ -1,0 +1,74 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "issue_time",
+					"type": "Number",
+					"description": "爱豆发放时间",
+					"required": true
+				},
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "开放标识",
+					"required": true
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "业务编码",
+					"required": true
+				},
+				{
+					"name": "idempotent_id",
+					"type": "String",
+					"description": "幂等ID",
+					"required": true
+				},
+				{
+					"name": "action_id",
+					"type": "Number",
+					"description": "行为ID",
+					"required": true
+				},
+				{
+					"name": "channel_code",
+					"type": "String",
+					"description": "渠道编码",
+					"required": true
+				}
+			],
+			"name": "ex_coin_issue_param",
+			"type": "ExCoinIssueParam",
+			"description": "爱豆发放参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resp_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "resp_code",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "null值"
+		},
+		{
+			"name": "success_status",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	],
+	"name": "alibaba.value.coin.issue",
+	"apiChineseName": "爱豆发放",
+	"description": "爱豆发放",
+	"id": 65686
+}

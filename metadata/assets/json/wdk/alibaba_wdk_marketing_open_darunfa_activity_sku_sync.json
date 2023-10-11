@@ -113,6 +113,11 @@
 					"name": "txd_activity_id",
 					"type": "Number",
 					"description": "淘鲜达活动Id"
+				},
+				{
+					"name": "deduct_point",
+					"type": "Number",
+					"description": "对应单品积分活动。对应需要扣除的积分数"
 				}
 			],
 			"name": "activity_sku_list",

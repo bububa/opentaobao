@@ -137,12 +137,16 @@
 						{
 							"name": "sn",
 							"type": "String",
-							"description": "sn编码支持多sn",
-							"required": true
+							"description": "sn编码支持多sn"
 						}
 					],
 					"name": "snList",
 					"type": "SnList[]",
+					"description": "扩展属性"
+				},
+				{
+					"name": "extendProps",
+					"type": "Map",
 					"description": "扩展属性"
 				}
 			],
@@ -178,6 +182,6 @@
 	],
 	"name": "taobao.qimen.stockchange.report",
 	"apiChineseName": "库存异动通知接口",
-	"description": "WMS调用奇门的接口,将库存异动信息信息回传给ERP",
+	"description": "taobao.qimen.stockchange.report",
 	"id": 25996
 }

@@ -1,0 +1,53 @@
+{
+	"requestParams": [
+		{
+			"name": "phone",
+			"type": "String",
+			"description": "手机号"
+		},
+		{
+			"name": "id_number",
+			"type": "String",
+			"description": "身份证ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "system_error",
+					"type": "String",
+					"description": "失败原因"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "失败原因"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "result",
+					"type": "Number",
+					"description": "工人id"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回对象"
+		}
+	],
+	"name": "alibaba.msfservice.worker.queryid",
+	"apiChineseName": "查询师傅workerid",
+	"description": "查询师傅workerid",
+	"id": 66400
+}

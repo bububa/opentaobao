@@ -1,0 +1,88 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_target_id",
+					"type": "String",
+					"description": "外部id",
+					"required": true
+				},
+				{
+					"name": "third_category",
+					"type": "Number[]",
+					"description": "三级类目列表"
+				},
+				{
+					"name": "second_category",
+					"type": "Number[]",
+					"description": "二级类目列表"
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "是否测试",
+					"required": true
+				},
+				{
+					"name": "operate_type",
+					"type": "Number",
+					"description": "操作类型 0-删除 1-新增",
+					"required": true
+				},
+				{
+					"name": "target_type",
+					"type": "Number",
+					"description": "类型 1-门店 2-经纪人",
+					"required": true
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "1"
+				}
+			],
+			"name": "category_control_dto",
+			"type": "CategoryControlDTO",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "return_code",
+			"type": "String",
+			"description": "code"
+		},
+		{
+			"subParams": [
+				{
+					"name": "category_id",
+					"type": "Number",
+					"description": "类目id"
+				},
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "原因"
+				}
+			],
+			"name": "data",
+			"type": "CategoryControlResultDTO []",
+			"description": "list"
+		},
+		{
+			"name": "return_success",
+			"type": "Boolean",
+			"description": "success"
+		},
+		{
+			"name": "return_message",
+			"type": "String",
+			"description": "message"
+		}
+	],
+	"name": "alibaba.alihouse.category.control.sync",
+	"apiChineseName": "类目权限上翻",
+	"description": "类目权限上翻",
+	"id": 67468
+}

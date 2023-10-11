@@ -1,0 +1,205 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "分页页码"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小"
+				}
+			],
+			"name": "csr_invoice_external_org_query_dto",
+			"type": "CsrInvoiceExternalOrgQueryDTO",
+			"description": "请求参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "res_msg",
+			"type": "String",
+			"description": "响应描述信息"
+		},
+		{
+			"name": "res_code",
+			"type": "Number",
+			"description": "响应码，200成功，非200失败"
+		},
+		{
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总条数"
+				},
+				{
+					"name": "pages",
+					"type": "Number",
+					"description": "总页数"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小，默认20，最大100"
+				},
+				{
+					"subParams": [
+						{
+							"name": "seller_nick",
+							"type": "String",
+							"description": "商家昵称"
+						},
+						{
+							"subParams": [
+								{
+									"name": "project_amount",
+									"type": "Number",
+									"description": "项目金额，单位分"
+								},
+								{
+									"name": "project_name",
+									"type": "String",
+									"description": "项目名称"
+								}
+							],
+							"name": "project_list",
+							"type": "CsrInvoiceApplyProjectDTO[]",
+							"description": "项目金额明细"
+						},
+						{
+							"name": "contact_mobile",
+							"type": "String",
+							"description": "商家联系人电话"
+						},
+						{
+							"name": "unified_credit_code",
+							"type": "String",
+							"description": "统一社会信用代码"
+						},
+						{
+							"name": "contact_name",
+							"type": "String",
+							"description": "商家联系人"
+						},
+						{
+							"name": "accept_operator",
+							"type": "String",
+							"description": "受理操作人"
+						},
+						{
+							"subParams": [
+								{
+									"name": "bill_file",
+									"type": "String",
+									"description": "账单明细文件地址，行数据中携带制表符"
+								},
+								{
+									"name": "bill_cycle",
+									"type": "String",
+									"description": "账期"
+								},
+								{
+									"name": "bill_detail_standard_file",
+									"type": "String",
+									"description": "账单明细文件地址,行数据中不带制表符"
+								}
+							],
+							"name": "bill_info",
+							"type": "CsrInvoiceBillDTO",
+							"description": "账单信息"
+						},
+						{
+							"name": "shop_name",
+							"type": "String",
+							"description": "店铺名称"
+						},
+						{
+							"name": "invoice_state",
+							"type": "Number",
+							"description": "发票状态，1:已受理"
+						},
+						{
+							"name": "invoice_amount",
+							"type": "Number",
+							"description": "票据金额，单位分"
+						},
+						{
+							"name": "org_promote_id",
+							"type": "String",
+							"description": "机构唯一标识"
+						},
+						{
+							"name": "account_bank",
+							"type": "String",
+							"description": "开户行名称"
+						},
+						{
+							"name": "account_no",
+							"type": "String",
+							"description": "开户行账号"
+						},
+						{
+							"name": "invoice_type",
+							"type": "String",
+							"description": "纸质:paper/电子electronic"
+						},
+						{
+							"name": "contact_address",
+							"type": "String",
+							"description": "商家联系人地址"
+						},
+						{
+							"name": "invoice_id",
+							"type": "String",
+							"description": "发票id"
+						},
+						{
+							"name": "shop_id",
+							"type": "Number",
+							"description": "店铺id"
+						},
+						{
+							"name": "apply_time",
+							"type": "Number",
+							"description": "申请时间-ms时间戳"
+						},
+						{
+							"name": "invoice_title",
+							"type": "String",
+							"description": "发票抬头"
+						}
+					],
+					"name": "list",
+					"type": "CsrInvoiceExternalOrgQueryResultDTO[]",
+					"description": "分页数据"
+				},
+				{
+					"name": "page_num",
+					"type": "Number",
+					"description": "当前页码"
+				}
+			],
+			"name": "res_data",
+			"type": "CsrPage",
+			"description": "响应数据"
+		},
+		{
+			"name": "res_success",
+			"type": "Boolean",
+			"description": "是否成功响应"
+		},
+		{
+			"name": "res_localized_msg",
+			"type": "String",
+			"description": "无"
+		}
+	],
+	"name": "alibaba.csr.donate.org.invoice.undraw.list",
+	"apiChineseName": "获取机构待开票列表",
+	"description": "获取机构待开票列表",
+	"id": 67036
+}

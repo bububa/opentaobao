@@ -151,11 +151,48 @@
 									"name": "support_nfr_policy",
 									"type": "Boolean",
 									"description": "是否支持描述不符包邮退"
+								},
+								{
+									"name": "support_vnr_policy",
+									"type": "Boolean",
+									"description": "是否支持 虚拟-描述不符包退"
+								},
+								{
+									"name": "support_fd24hs_policy",
+									"type": "Boolean",
+									"description": "是否支持 极速发货-24小时"
+								},
+								{
+									"name": "support_fd10ms_policy",
+									"type": "Boolean",
+									"description": "是否支持 极速发货-10分钟"
 								}
 							],
 							"name": "after_sales_data",
 							"type": "IdleItemApiAfterSalesDo",
 							"description": "售后服务信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "template_code",
+									"type": "String",
+									"description": "直充模板code"
+								},
+								{
+									"name": "template_extra_info",
+									"type": "String",
+									"description": "模版的额外参数"
+								},
+								{
+									"name": "owner",
+									"type": "Boolean",
+									"description": "当前服务商是否拥有直充编辑权限"
+								}
+							],
+							"name": "idle_item_api_auto_recharge_do",
+							"type": "IdleItemApiAutoRechargeDO",
+							"description": "商品直充相关信息"
 						}
 					],
 					"name": "item_list",

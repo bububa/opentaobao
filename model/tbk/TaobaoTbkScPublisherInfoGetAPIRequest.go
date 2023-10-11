@@ -20,7 +20,7 @@ type TaobaoTbkScPublisherInfoGetAPIRequest struct {
 	_externalId string
 	// 渠道独占 - 渠道关系ID
 	_relationId int64
-	// 第几页
+	// 第几页，下标从0开始
 	_pageNo int64
 	// 每页大小
 	_pageSize int64
@@ -107,7 +107,7 @@ func (r TaobaoTbkScPublisherInfoGetAPIRequest) GetRelationId() int64 {
 }
 
 // SetPageNo is PageNo Setter
-// 第几页
+// 第几页，下标从0开始
 func (r *TaobaoTbkScPublisherInfoGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
 	r.Set("page_no", _pageNo)

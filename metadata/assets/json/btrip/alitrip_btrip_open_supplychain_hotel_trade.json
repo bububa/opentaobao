@@ -281,6 +281,11 @@
 							"description": "订单类型：1：全额支付、5：到店支付、6：信用住',"
 						},
 						{
+							"name": "voucher_type",
+							"type": "Number",
+							"description": "发票类型。-1 不可开票，1 大发票，2 行程单+航意险发票，5 商旅火车票凭证，11 增值税普通发票，12 增值税专用发票"
+						},
+						{
 							"name": "check_in_date",
 							"type": "String",
 							"description": "入住时间"

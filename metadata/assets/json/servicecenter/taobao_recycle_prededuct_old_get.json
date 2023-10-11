@@ -1,0 +1,57 @@
+{
+	"requestParams": [
+		{
+			"name": "old_order_id",
+			"type": "Number",
+			"description": "旧机单 ID"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "pre_deduct_total_fee",
+					"type": "Number",
+					"description": "前置抵扣红包发放总金额，单位 分"
+				},
+				{
+					"name": "pre_deduct_used_fee",
+					"type": "Number",
+					"description": "前置抵扣红包使用金额，单位 分"
+				},
+				{
+					"name": "pre_deduct_refund_fee",
+					"type": "Number",
+					"description": "前置抵扣红包退回金额，单位 分"
+				},
+				{
+					"name": "pre_deduct_fund_id",
+					"type": "Number",
+					"description": "前置抵扣红包 ID"
+				},
+				{
+					"name": "offline_settle_fee",
+					"type": "Number",
+					"description": "线下已结算金额，单位 分【正数表示服务商已给用户的钱，为负表示用户已给服务商的钱】"
+				},
+				{
+					"name": "qa_amount",
+					"type": "Number",
+					"description": "质检价，单位 分"
+				},
+				{
+					"name": "update_time",
+					"type": "String",
+					"description": "数据更新时间"
+				}
+			],
+			"name": "data",
+			"type": "OfnRecycleOrderPreDeductDetailDTO",
+			"description": "回收单前置抵扣详情"
+		}
+	],
+	"name": "taobao.recycle.prededuct.old.get",
+	"apiChineseName": "查询回收单前置抵扣详情",
+	"description": "查询回收单前置抵扣详情",
+	"id": 66447
+}

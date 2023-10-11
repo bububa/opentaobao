@@ -1,0 +1,78 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "clearance_result_code",
+					"type": "String",
+					"description": "清关结果编码放行/000开头 清关失败/100开头"
+				},
+				{
+					"name": "clearance_port_no",
+					"type": "String",
+					"description": "清关口岸代码"
+				},
+				{
+					"name": "clearance_status",
+					"type": "Number",
+					"description": "清关状态 1清关发起中回调  2 清关结果回调"
+				},
+				{
+					"name": "clearance_time",
+					"type": "Date",
+					"description": "业务清关触发时间"
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单ID"
+				},
+				{
+					"name": "customs_pass_no",
+					"type": "String",
+					"description": "海关放行的清单编号"
+				},
+				{
+					"name": "customs_return_receipt",
+					"type": "String",
+					"description": "海关回执"
+				},
+				{
+					"name": "idempotent",
+					"type": "String",
+					"description": "实名信息幂等健，来源于清关材料接口",
+					"required": true
+				}
+			],
+			"name": "order_clearance_info_request",
+			"type": "OrderClearanceInfoRequest",
+			"description": "清关信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误原因"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误编码"
+		},
+		{
+			"name": "msg_success",
+			"type": "Boolean",
+			"description": "操作是否成功"
+		},
+		{
+			"name": "msg_obj",
+			"type": "Boolean",
+			"description": "接口调用是否成功"
+		}
+	],
+	"name": "tmall.hk.clearance.info.send",
+	"apiChineseName": "清关信息回调通知",
+	"description": "清关信息回调通知",
+	"id": 67524
+}

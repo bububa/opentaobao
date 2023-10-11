@@ -16,6 +16,8 @@ type AlibabaServicecenterWorkcardRelatedskuQueryAPIRequest struct {
 	_realTpNick string
 	// 工单id
 	_workcardId int64
+	// 是否根据类目过滤维修项
+	_isFilterByCategory bool
 }
 
 // NewAlibabaServicecenterWorkcardRelatedskuQueryRequest 初始化AlibabaServicecenterWorkcardRelatedskuQueryAPIRequest对象
@@ -66,4 +68,17 @@ func (r *AlibabaServicecenterWorkcardRelatedskuQueryAPIRequest) SetWorkcardId(_w
 // GetWorkcardId WorkcardId Getter
 func (r AlibabaServicecenterWorkcardRelatedskuQueryAPIRequest) GetWorkcardId() int64 {
 	return r._workcardId
+}
+
+// SetIsFilterByCategory is IsFilterByCategory Setter
+// 是否根据类目过滤维修项
+func (r *AlibabaServicecenterWorkcardRelatedskuQueryAPIRequest) SetIsFilterByCategory(_isFilterByCategory bool) error {
+	r._isFilterByCategory = _isFilterByCategory
+	r.Set("is_filter_by_category", _isFilterByCategory)
+	return nil
+}
+
+// GetIsFilterByCategory IsFilterByCategory Getter
+func (r AlibabaServicecenterWorkcardRelatedskuQueryAPIRequest) GetIsFilterByCategory() bool {
+	return r._isFilterByCategory
 }

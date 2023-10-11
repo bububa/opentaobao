@@ -90,10 +90,42 @@
 					"name": "total_price",
 					"type": "Number",
 					"description": "总价格"
+				},
+				{
+					"subParams": [
+						{
+							"name": "driver_name",
+							"type": "String",
+							"description": "司机姓名"
+						},
+						{
+							"name": "driver_phone",
+							"type": "String",
+							"description": "司机联系电话"
+						},
+						{
+							"name": "license_plate_number",
+							"type": "String",
+							"description": "车牌号"
+						},
+						{
+							"name": "motorcycle_type",
+							"type": "String",
+							"description": "车型"
+						},
+						{
+							"name": "vehicle_brands",
+							"type": "String",
+							"description": "车辆品牌"
+						}
+					],
+					"name": "agent_confirm_book_schedule_info",
+					"type": "AgentConfirmBookScheduleInfo",
+					"description": "车辆\u0026司机电话等信息"
 				}
 			],
 			"name": "param_agent_confirm_book_r_q",
-			"type": "AgentConfirmBookRq",
+			"type": "AgentConfirmBookRQ",
 			"description": "请求对象",
 			"required": true
 		}

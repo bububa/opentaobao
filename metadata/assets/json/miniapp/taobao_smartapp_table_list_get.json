@@ -1,0 +1,52 @@
+{
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "返回结果数量"
+				},
+				{
+					"subParams": [
+						{
+							"name": "table_id",
+							"type": "String",
+							"description": "工作表id"
+						},
+						{
+							"name": "table_name",
+							"type": "String",
+							"description": "工作表名称"
+						},
+						{
+							"name": "create_time",
+							"type": "Date",
+							"description": "工作表创建时间"
+						}
+					],
+					"name": "record",
+					"type": "AfterSaleGetWorkTableListRecord[]",
+					"description": "调用结果"
+				}
+			],
+			"name": "result",
+			"type": "AfterSaleGetWorkTableListResponse",
+			"description": "调用结果"
+		},
+		{
+			"name": "business_success",
+			"type": "Boolean",
+			"description": "调用结果"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "taobao.smartapp.table.list.get",
+	"apiChineseName": "智能应用服务登记工作表列表查询",
+	"description": "智能应用服务登记工作表列表查询",
+	"id": 67460
+}

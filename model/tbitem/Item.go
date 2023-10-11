@@ -12,12 +12,12 @@ type Item struct {
 	Videos []Video `json:"videos,omitempty" xml:"videos>video,omitempty"`
 	// 3:4主图
 	ItemRectangleImgs []ItemImg `json:"item_rectangle_imgs,omitempty" xml:"item_rectangle_imgs>item_img,omitempty"`
-	// 商品iid
+	// 商品修改时间（格式：yyyy-MM-dd HH:mm:ss）
+	Modified string `json:"modified,omitempty" xml:"modified,omitempty"`
+	// 商品id(注意：iid近期即将废弃，请用num_iid参数)
 	Iid string `json:"iid,omitempty" xml:"iid,omitempty"`
 	// Item的发布时间，目前仅供taobao.item.add和taobao.item.get可用
 	Created string `json:"created,omitempty" xml:"created,omitempty"`
-	// 商品修改时间（格式：yyyy-MM-dd HH:mm:ss）
-	Modified string `json:"modified,omitempty" xml:"modified,omitempty"`
 	// 商品上传后的状态。onsale出售中，instock库中
 	ApproveStatus string `json:"approve_status,omitempty" xml:"approve_status,omitempty"`
 	// 代充商品类型。在代充商品的类目下，不传表示不标记商品类型（交易搜索中就不能通过标记搜到相关的交易了）。可选类型： no_mark(不做类型标记) time_card(点卡软件代充) fee_card(话费软件代充)
@@ -102,6 +102,8 @@ type Item struct {
 	LargeScreenImageUrl string `json:"large_screen_image_url,omitempty" xml:"large_screen_image_url,omitempty"`
 	// 属性值的备注.格式:pid:vid:备注信息1;pid2:vid2:备注信息2;
 	CpvMemo string `json:"cpv_memo,omitempty" xml:"cpv_memo,omitempty"`
+	// 商品首次上架时间
+	FirstStartsTime string `json:"first_starts_time,omitempty" xml:"first_starts_time,omitempty"`
 	// 发货时间信息
 	DeliveryTime string `json:"delivery_time,omitempty" xml:"delivery_time,omitempty"`
 	// 商品资质的信息，用URLEncoder做过转换，使用时，需要URLDecoder转换回来，默认字符集为：UTF-8

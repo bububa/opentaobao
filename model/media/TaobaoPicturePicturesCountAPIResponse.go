@@ -9,7 +9,7 @@ import (
 // TaobaoPicturePicturesCountAPIResponse 图片总数查询 API返回值
 // taobao.picture.pictures.count
 //
-// 图片总数查询
+// 图片总数查询，目前出于对数据库的保护暂不支持此功能
 type TaobaoPicturePicturesCountAPIResponse struct {
 	model.CommonResponse
 	TaobaoPicturePicturesCountAPIResponseModel

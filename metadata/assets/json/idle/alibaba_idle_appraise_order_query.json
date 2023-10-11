@@ -233,19 +233,59 @@
 							"description": "验货宝订单流程版本"
 						},
 						{
-							"name": "yhb3_bill_state",
-							"type": "String",
-							"description": "验货宝 3.0 支付订单状态"
+							"name": "buyer_inspection_fee",
+							"type": "Number",
+							"description": "确定买家验货费金额，单位：分"
 						},
 						{
-							"name": "yhb3_fee_state",
-							"type": "String",
-							"description": "验货宝 3.0 验货费增值服务订单状态"
+							"name": "seller_inspection_fee",
+							"type": "Number",
+							"description": "确定买家验货费金额，单位：分"
 						},
 						{
-							"name": "yhb3_dispute_state",
+							"name": "buyer_inspection_zfb_id",
 							"type": "String",
-							"description": "验货宝 3.0 纠纷单状态"
+							"description": "买家验货费支付宝流水单号（仅在买家需要承担时有效）"
+						},
+						{
+							"name": "buyer_inspection_order_id",
+							"type": "String",
+							"description": "买家验货费支付单号"
+						},
+						{
+							"name": "seller_inspection_zfb_id",
+							"type": "String",
+							"description": "卖家验货费支付宝流水单号（仅在卖家需要承担时有效）"
+						},
+						{
+							"name": "seller_inspection_order_id",
+							"type": "String",
+							"description": "卖家验货费支付单号"
+						},
+						{
+							"name": "dispute_conclusion",
+							"type": "String",
+							"description": "纠纷单判责结论，只在产生纠纷单并在判责结论出具后有效"
+						},
+						{
+							"name": "seller_alipay_pid",
+							"type": "String",
+							"description": "卖家支付宝 pid"
+						},
+						{
+							"name": "ac_storage_id",
+							"type": "String",
+							"description": "仓库 id"
+						},
+						{
+							"name": "inspection_coupon_fee",
+							"type": "String",
+							"description": "有值代表使用了验货费券，表示金额"
+						},
+						{
+							"name": "trade_success_seller_assume",
+							"type": "Boolean",
+							"description": "true 表示交易成功卖家包验货费模式"
 						}
 					],
 					"name": "module",
@@ -264,7 +304,7 @@
 		}
 	],
 	"name": "alibaba.idle.appraise.order.query",
-	"apiChineseName": "闲鱼验货担保订单详情查询V1",
+	"apiChineseName": "闲鱼验货宝订单详情查询",
 	"description": "鉴定商调用该接口获取订单状态",
 	"id": 50520
 }

@@ -1,0 +1,45 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "encrypt_content",
+					"type": "String",
+					"description": "待解密密文",
+					"required": true
+				},
+				{
+					"name": "external_applet_biz_code",
+					"type": "String",
+					"description": "业务代码",
+					"required": true
+				}
+			],
+			"name": "alipay_decrypt_req",
+			"type": "AlipayDecryptReq",
+			"description": "入参结构体",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "解密后的明文"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否请求成功"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "请求失败描述"
+		}
+	],
+	"name": "alitrip.flight.external.alipay.decrypt",
+	"apiChineseName": "支付宝小程序密文解密",
+	"description": "支付宝小程序密文解密",
+	"id": 65909
+}

@@ -1,0 +1,66 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "refund_order_id",
+					"type": "String",
+					"description": "退款单ID",
+					"required": true
+				},
+				{
+					"name": "audit_pass",
+					"type": "Number",
+					"description": "审核结果，1：通过，0：不通过",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "订单ID",
+					"required": true
+				}
+			],
+			"name": "audit_refund_order_dto",
+			"type": "AuditRefundOrderDTO",
+			"description": "入参object",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "返回值"
+		},
+		{
+			"name": "sub_code_type",
+			"type": "String",
+			"description": "子集错误码，提供与业务细节使用"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "调用结果"
+		},
+		{
+			"name": "sub_extra_err_msg",
+			"type": "String",
+			"description": "子集错误描述，提供与业务细节使用"
+		},
+		{
+			"name": "state_code",
+			"type": "String",
+			"description": "错误码枚举"
+		},
+		{
+			"name": "extra_err_msg",
+			"type": "String",
+			"description": "错误详细描述"
+		}
+	],
+	"name": "alibaba.jym.steam.refund.audit",
+	"apiChineseName": "交易猫steam逆向单审核",
+	"description": "交易猫steam逆向单审核",
+	"id": 67678
+}

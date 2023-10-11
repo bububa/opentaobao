@@ -14,6 +14,11 @@
 			"name": "order_id",
 			"type": "String",
 			"description": "预约单id"
+		},
+		{
+			"name": "isv_not_inoculate_reason",
+			"type": "String",
+			"description": "未接种原因"
 		}
 	],
 	"responseParams": [

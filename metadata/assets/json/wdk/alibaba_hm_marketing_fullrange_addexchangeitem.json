@@ -1,0 +1,101 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品skucode",
+					"required": true
+				},
+				{
+					"name": "exchange_price",
+					"type": "Number",
+					"description": "单位为分",
+					"required": true
+				},
+				{
+					"name": "exchange_total_limit",
+					"type": "Number",
+					"description": "换购商品总数限制"
+				},
+				{
+					"name": "exchange_order_limit",
+					"type": "Number",
+					"description": "换购商品每单可换购数量限制"
+				}
+			],
+			"name": "param0",
+			"type": "ItemStairSku",
+			"description": "系统自动生成"
+		},
+		{
+			"subParams": [
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "商家活动id"
+				},
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "报名活动Id",
+					"required": true
+				}
+			],
+			"name": "param1",
+			"type": "CommonActivityParam",
+			"description": "系统自动生成"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "结果信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "skuCode"
+						},
+						{
+							"name": "exchange_price",
+							"type": "Number",
+							"description": "换购价（分）"
+						},
+						{
+							"name": "exchange_total_limit",
+							"type": "Number",
+							"description": "换购商品总数限制"
+						}
+					],
+					"name": "data",
+					"type": "ItemStairSku",
+					"description": "data"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				}
+			],
+			"name": "result",
+			"type": "MarketResult",
+			"description": "添加商品返回结果"
+		}
+	],
+	"name": "alibaba.hm.marketing.fullrange.addexchangeitem",
+	"apiChineseName": "全场增加换购品",
+	"description": "全场增加换购品",
+	"id": 67200
+}

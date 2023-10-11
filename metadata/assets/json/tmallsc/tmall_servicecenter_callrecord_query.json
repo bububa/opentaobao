@@ -1,0 +1,91 @@
+{
+	"requestParams": [
+		{
+			"name": "biz_identify_type",
+			"type": "String",
+			"description": "类型",
+			"required": true
+		},
+		{
+			"name": "biz_identify",
+			"type": "String",
+			"description": "工单id",
+			"required": true
+		},
+		{
+			"name": "page_num",
+			"type": "Number",
+			"description": "当前页数"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页查询数量"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改日期"
+						},
+						{
+							"name": "record_link",
+							"type": "String",
+							"description": "录音文件链接"
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间"
+						},
+						{
+							"name": "call_id",
+							"type": "String",
+							"description": "呼叫记录的call_id"
+						},
+						{
+							"name": "call_time",
+							"type": "String",
+							"description": "主叫拨打时间"
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "唯一标识"
+						}
+					],
+					"name": "value",
+					"type": "ServiceCallRecordCO[]",
+					"description": "通话记录信息"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "tmall.servicecenter.callrecord.query",
+	"apiChineseName": "天猫服务平台服务商查询通话记录接口",
+	"description": "天猫服务平台服务商查询通话记录接口",
+	"id": 67108
+}

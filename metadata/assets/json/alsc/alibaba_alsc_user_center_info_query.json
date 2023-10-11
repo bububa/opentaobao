@@ -1,0 +1,69 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "access_token",
+					"type": "String",
+					"description": "用户的授权令牌，通过请求授权令牌的接口获取。一个令牌对应一个用户的信息",
+					"required": true
+				}
+			],
+			"name": "alsc_user_query_open_request",
+			"type": "AlscUserQueryOpenRequest",
+			"description": "请求模型",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "encrypt_nick_name",
+			"type": "String",
+			"description": "脱敏昵称"
+		},
+		{
+			"name": "nick_name",
+			"type": "String",
+			"description": "昵称"
+		},
+		{
+			"name": "intro",
+			"type": "String",
+			"description": "简介"
+		},
+		{
+			"name": "mobile",
+			"type": "String",
+			"description": "手机号"
+		},
+		{
+			"name": "access_avatar_url",
+			"type": "String",
+			"description": "头像链接"
+		},
+		{
+			"name": "user_name",
+			"type": "String",
+			"description": "用户名"
+		},
+		{
+			"name": "encrypt_mobile",
+			"type": "String",
+			"description": "脱敏手机号"
+		},
+		{
+			"name": "encrypt_username",
+			"type": "String",
+			"description": "脱敏用户名"
+		},
+		{
+			"name": "open_id",
+			"type": "String",
+			"description": "不同appkey下同一用户的openId不同"
+		}
+	],
+	"name": "alibaba.alsc.user.center.info.query",
+	"apiChineseName": "查询授权的用户信息",
+	"description": "获取授权的饿了么用户信息",
+	"id": 67943
+}

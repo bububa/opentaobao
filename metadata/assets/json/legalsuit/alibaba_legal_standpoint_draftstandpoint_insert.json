@@ -1,0 +1,107 @@
+{
+	"requestParams": [
+		{
+			"name": "input_system_code",
+			"type": "String",
+			"description": "系统标识"
+		},
+		{
+			"subParams": [
+				{
+					"name": "bus_id",
+					"type": "String",
+					"description": "业务id"
+				},
+				{
+					"name": "draft_source",
+					"type": "String",
+					"description": "来源"
+				},
+				{
+					"name": "extend_json",
+					"type": "String",
+					"description": "拓展字段json"
+				},
+				{
+					"name": "scene_name",
+					"type": "String",
+					"description": "场景名称"
+				},
+				{
+					"name": "bus_name",
+					"type": "String",
+					"description": "业务名称"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "input_system_code",
+					"type": "String",
+					"description": "系统标识"
+				},
+				{
+					"name": "case_no",
+					"type": "String",
+					"description": "编号"
+				},
+				{
+					"name": "case_type",
+					"type": "String",
+					"description": "类型"
+				},
+				{
+					"name": "submit_people",
+					"type": "String",
+					"description": "提交人"
+				},
+				{
+					"name": "defense_caliber",
+					"type": "String",
+					"description": "口径"
+				},
+				{
+					"name": "source_standpoint_ids",
+					"type": "String",
+					"description": "来源口径id"
+				},
+				{
+					"name": "standpoint_desc",
+					"type": "String",
+					"description": "口径描述"
+				}
+			],
+			"name": "standpoint_derive_draft_epaas_dto",
+			"type": "StandpointDeriveDraftEpaasDto",
+			"description": "口径"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "success_res",
+			"type": "Boolean",
+			"description": "成功"
+		},
+		{
+			"name": "error_code_res",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "content",
+			"type": "Number",
+			"description": "草稿口径id"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误描述"
+		}
+	],
+	"name": "alibaba.legal.standpoint.draftstandpoint.insert",
+	"apiChineseName": "编辑后新增草稿口径",
+	"description": "编辑后新增草稿口径",
+	"id": 66886
+}

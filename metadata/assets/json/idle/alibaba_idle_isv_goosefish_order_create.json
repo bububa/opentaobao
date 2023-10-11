@@ -1,0 +1,85 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "virtual_item_order",
+					"type": "Boolean",
+					"description": "是否为虚拟商品下单，默认为false"
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品id，virtual_item_order为false时必传"
+				},
+				{
+					"name": "amount",
+					"type": "Number",
+					"description": "商品单价，单位分。"
+				},
+				{
+					"name": "extra_data",
+					"type": "String",
+					"description": "额外信息"
+				},
+				{
+					"name": "virtual_item_code",
+					"type": "String",
+					"description": "虚拟商品code，virtual_item_order为true时必传"
+				},
+				{
+					"name": "x_global_biz_code",
+					"type": "String",
+					"description": "业务产品标识",
+					"required": true
+				},
+				{
+					"name": "buy_quantity",
+					"type": "Number",
+					"description": "购买数量，默认1个"
+				},
+				{
+					"name": "deliver_id",
+					"type": "String",
+					"description": "邮寄地址的ID。不传入表示不需要邮寄"
+				}
+			],
+			"name": "order_create_request",
+			"type": "OrderCreateRequest",
+			"description": "创单请求参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_order_id",
+					"type": "Number",
+					"description": "订单编号"
+				}
+			],
+			"name": "data",
+			"type": "OrderCreateResult",
+			"description": "创单结果"
+		},
+		{
+			"name": "api_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "api_error_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "api_error_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.idle.isv.goosefish.order.create",
+	"apiChineseName": "闲鱼三方安康容器订单创建",
+	"description": "闲鱼三方安康容器订单创建",
+	"id": 67467
+}

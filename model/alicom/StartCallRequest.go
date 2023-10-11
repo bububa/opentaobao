@@ -16,4 +16,10 @@ type StartCallRequest struct {
 	RecordType string `json:"record_type,omitempty" xml:"record_type,omitempty"`
 	// 供应商KEY
 	VendorKey string `json:"vendor_key,omitempty" xml:"vendor_key,omitempty"`
+	// 呼叫能力阶段，默认填0
+	CallPhase string `json:"call_phase,omitempty" xml:"call_phase,omitempty"`
+	// 如果有原始被叫号码信息填1
+	BCallHistory string `json:"b_call_history,omitempty" xml:"b_call_history,omitempty"`
+	// 当响应指令为“短信解析”时，供应商平台完成短信内容解析，在重新发起查询请求时会携带；短信解析结果，0：成功，1：失败
+	ParseResult string `json:"parse_result,omitempty" xml:"parse_result,omitempty"`
 }

@@ -1,0 +1,54 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "out_season_id",
+					"type": "String",
+					"description": "商家档期号"
+				},
+				{
+					"name": "shop_ids",
+					"type": "String[]",
+					"description": "参与换挡的门店列表"
+				}
+			],
+			"name": "param",
+			"type": "SeasonVersionParam",
+			"description": "档期版本号参数信息"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "data"
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "errorCode"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "success"
+				}
+			],
+			"name": "result",
+			"type": "MarketResult",
+			"description": "result"
+		}
+	],
+	"name": "alibaba.hm.marketing.version.generate",
+	"apiChineseName": "生成发布使用的版本号",
+	"description": "生成发布使用的版本号",
+	"id": 67244
+}

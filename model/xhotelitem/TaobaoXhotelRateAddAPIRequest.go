@@ -34,6 +34,8 @@ type TaobaoXhotelRateAddAPIRequest struct {
 	_operator string
 	// 在线预约关联关系推送，priceRuleNumber：加价规则序号
 	_onlineBookingBindingInfo string
+	//  是一个JSONArray 字符串 actionType  操作类型 BOUND: 绑定，UNBOUND：解绑; outXcode  元素编码 ; subTypeCode x 元素子类型， 参考：https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.9MjTPx&docType=1&articleId=121402&previewCode=787DFB0895F05C90D167579A04BD32E3; status: 状态是否生效0 失效, 1生效; shortName x元素标题; time 服务时间段(18:00-21:00); value 商品价值(100 - 999900 单位分); itemDesc 商品使用说明; dimensionType 附加产品使用维度   1:每间房维度 2:每间夜维度; picList 图片格式化信息 [{"url":"https://xxxxx/","isMain":true}]; adultCount 成人数量 (1-99); childCount 儿童数量 (0-99); itemLimit 使用限制, 文字描述,200 字内; checkInStart 入住生效开始时间; checkInEnd 入住生效结束时间; bookStartTime 预定生效开始时间; bookStartEnd 预定生效截止时间; featureDetail 详细信息json字符串 [{"detailName":"免费寄存","detailValue":[""],"type":"single","priority":1}]
+	_hotelXitemInfos string
 	// gid酒店商品id
 	_gid int64
 	// 酒店RPID
@@ -219,6 +221,20 @@ func (r *TaobaoXhotelRateAddAPIRequest) SetOnlineBookingBindingInfo(_onlineBooki
 // GetOnlineBookingBindingInfo OnlineBookingBindingInfo Getter
 func (r TaobaoXhotelRateAddAPIRequest) GetOnlineBookingBindingInfo() string {
 	return r._onlineBookingBindingInfo
+}
+
+// SetHotelXitemInfos is HotelXitemInfos Setter
+//
+//	是一个JSONArray 字符串 actionType  操作类型 BOUND: 绑定，UNBOUND：解绑; outXcode  元素编码 ; subTypeCode x 元素子类型， 参考：https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.9MjTPx&amp;docType=1&amp;articleId=121402&amp;previewCode=787DFB0895F05C90D167579A04BD32E3; status: 状态是否生效0 失效, 1生效; shortName x元素标题; time 服务时间段(18:00-21:00); value 商品价值(100 - 999900 单位分); itemDesc 商品使用说明; dimensionType 附加产品使用维度   1:每间房维度 2:每间夜维度; picList 图片格式化信息 [{&#34;url&#34;:&#34;https://xxxxx/&#34;,&#34;isMain&#34;:true}]; adultCount 成人数量 (1-99); childCount 儿童数量 (0-99); itemLimit 使用限制, 文字描述,200 字内; checkInStart 入住生效开始时间; checkInEnd 入住生效结束时间; bookStartTime 预定生效开始时间; bookStartEnd 预定生效截止时间; featureDetail 详细信息json字符串 [{&#34;detailName&#34;:&#34;免费寄存&#34;,&#34;detailValue&#34;:[&#34;&#34;],&#34;type&#34;:&#34;single&#34;,&#34;priority&#34;:1}]
+func (r *TaobaoXhotelRateAddAPIRequest) SetHotelXitemInfos(_hotelXitemInfos string) error {
+	r._hotelXitemInfos = _hotelXitemInfos
+	r.Set("hotel_xitem_infos", _hotelXitemInfos)
+	return nil
+}
+
+// GetHotelXitemInfos HotelXitemInfos Getter
+func (r TaobaoXhotelRateAddAPIRequest) GetHotelXitemInfos() string {
+	return r._hotelXitemInfos
 }
 
 // SetGid is Gid Setter

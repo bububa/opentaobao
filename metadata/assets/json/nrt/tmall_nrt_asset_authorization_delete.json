@@ -1,0 +1,59 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "phone_list",
+					"type": "String[]",
+					"description": "员工手机号列表",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "Number",
+					"description": "同城站ID",
+					"required": true
+				}
+			],
+			"name": "top_asset_data_auth_req_dto",
+			"type": "TopAssetDataAuthReqDTO",
+			"description": "请求对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "succ",
+			"type": "Boolean",
+			"description": "请求是否成功"
+		},
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "入参中的手机号"
+						},
+						{
+							"name": "msg",
+							"type": "String",
+							"description": "失败原因"
+						}
+					],
+					"name": "failed",
+					"type": "AuthFailedMsg[]",
+					"description": "失败原因"
+				}
+			],
+			"name": "data",
+			"type": "TopAssetDataAuthResultDTO",
+			"description": "请求结果"
+		}
+	],
+	"name": "tmall.nrt.asset.authorization.delete",
+	"apiChineseName": "移除资产数据权限授权关系",
+	"description": "移除资产数据权限授权关系",
+	"id": 65291
+}

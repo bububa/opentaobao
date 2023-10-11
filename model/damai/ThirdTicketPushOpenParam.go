@@ -24,6 +24,14 @@ type ThirdTicketPushOpenParam struct {
 	Ext string `json:"ext,omitempty" xml:"ext,omitempty"`
 	// rfid值
 	Rfid string `json:"rfid,omitempty" xml:"rfid,omitempty"`
+	// 座位号
+	SeatNo string `json:"seat_no,omitempty" xml:"seat_no,omitempty"`
+	// 座位名称
+	SeatName string `json:"seat_name,omitempty" xml:"seat_name,omitempty"`
+	// 排（文本）
+	SeatRow string `json:"seat_row,omitempty" xml:"seat_row,omitempty"`
+	// 列（文本）
+	SeatCol string `json:"seat_col,omitempty" xml:"seat_col,omitempty"`
 	// 证件内容
 	CertificateType int64 `json:"certificate_type,omitempty" xml:"certificate_type,omitempty"`
 	// 票面id

@@ -1,0 +1,289 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间戳（毫秒）",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID（服务商发起请求的ID）",
+					"required": true
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "淘天物流服务商ID",
+					"required": true
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "服务商仓编码",
+					"required": true
+				},
+				{
+					"name": "rule_type",
+					"type": "Number",
+					"description": "1-通用规则；2-个性化规则 ",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "province",
+							"type": "String",
+							"description": "收货地：省",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "收货地：城市"
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "收货地：区"
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "收货地：街道"
+						},
+						{
+							"name": "timing_type",
+							"type": "Number",
+							"description": "承诺到达时效类型（不区分快递公司）： 0=不承诺 1=承诺当日达 2=承诺次日达 3=承诺隔日达 业务身份为时效代运营时，必填",
+							"required": true
+						},
+						{
+							"name": "platform_delivery_codes",
+							"type": "String[]",
+							"description": "线路发货快递公司编码列表",
+							"required": true
+						},
+						{
+							"name": "outer_wave_id",
+							"type": "String",
+							"description": "外部波次id"
+						},
+						{
+							"name": "receive_cut_time",
+							"type": "String",
+							"description": "波次接单截单时间（HH:mm）"
+						},
+						{
+							"name": "plan_delivery_time",
+							"type": "String",
+							"description": "仓计划出库时间（HH:mm）"
+						},
+						{
+							"name": "plan_collection_time",
+							"type": "String",
+							"description": "计划揽收时间（HH:mm）"
+						},
+						{
+							"name": "first_allocation_time",
+							"type": "String",
+							"description": "计划入首分拨时间（HH:mm）"
+						},
+						{
+							"name": "delivery_time",
+							"type": "Number",
+							"description": "配揽收-签收时长（小于等于）（h）"
+						},
+						{
+							"name": "express_time",
+							"type": "Number",
+							"description": "仓接单-签收时长（小于等于）（h）"
+						},
+						{
+							"name": "waveability",
+							"type": "String[]",
+							"description": "波次能力"
+						}
+					],
+					"name": "normal_sign_line_rules",
+					"type": "NormalSignLineRule[]",
+					"description": "通用到货线路规则（组）"
+				},
+				{
+					"subParams": [
+						{
+							"name": "wms_owner_code",
+							"type": "String",
+							"description": "wms货主id",
+							"required": true
+						},
+						{
+							"subParams": [
+								{
+									"name": "province",
+									"type": "String",
+									"description": "收货地：省",
+									"required": true
+								},
+								{
+									"name": "city",
+									"type": "String",
+									"description": "收货地：城市"
+								},
+								{
+									"name": "area",
+									"type": "String",
+									"description": "收货地：区"
+								},
+								{
+									"name": "town",
+									"type": "String",
+									"description": "收货地：街道"
+								},
+								{
+									"name": "timing_type",
+									"type": "Number",
+									"description": "承诺到达时效类型（不区分快递公司）： 0=不表达 1=承诺当日达 2=承诺次日达 3=承诺隔日达 业务身份为时效代运营时，必填",
+									"required": true
+								},
+								{
+									"name": "platform_delivery_codes",
+									"type": "String[]",
+									"description": "线路发货快递公司编码列表"
+								},
+								{
+									"name": "outer_wave_id",
+									"type": "String",
+									"description": "外部波次id"
+								},
+								{
+									"name": "receive_cut_time",
+									"type": "String",
+									"description": "波次接单截单时间（HH:mm）"
+								},
+								{
+									"name": "plan_delivery_time",
+									"type": "String",
+									"description": "仓计划出库时间（HH:mm）"
+								},
+								{
+									"name": "plan_collection_time",
+									"type": "String",
+									"description": "计划揽收时间（HH:mm）"
+								},
+								{
+									"name": "first_allocation_time",
+									"type": "String",
+									"description": "计划入首分拨时间（HH:mm）"
+								},
+								{
+									"name": "delivery_time",
+									"type": "Number",
+									"description": "配揽收-签收时长（小于等于）（h）"
+								},
+								{
+									"name": "express_time",
+									"type": "Number",
+									"description": "仓接单-签收时长（小于等于）（h）"
+								},
+								{
+									"name": "waveability",
+									"type": "String[]",
+									"description": "波次能力"
+								}
+							],
+							"name": "promise_des_rules",
+							"type": "PromiseDesRule[]",
+							"description": "到货线路表达规则（组）"
+						}
+					],
+					"name": "special_sign_line_rules",
+					"type": "SpecialSignLineRules",
+					"description": "个性化到货线路规则（组）；"
+				}
+			],
+			"name": "delivery_line_batch_update_request",
+			"type": "DeliveryLineBatchUpdateRequest",
+			"description": "线路能力创建/更新入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true|false"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息"
+				},
+				{
+					"name": "result",
+					"type": "String",
+					"description": "0=全部失败，1=全部成功，2=部分成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "错误码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "收货地：省"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "收货地：城市"
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "收货地：区"
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "收货地：街道"
+						},
+						{
+							"name": "wms_owner_code",
+							"type": "String",
+							"description": "wms货主id"
+						}
+					],
+					"name": "data",
+					"type": "SignRuleResultDetail[]",
+					"description": "处理失败的到货线路规则（组）"
+				}
+			],
+			"name": "delivery_line_batch_update_response",
+			"type": "DeliveryLineBatchUpdateResponse",
+			"description": "线路能力创建/更新出参"
+		}
+	],
+	"name": "taobao.logistics.delivery.line.batch.update",
+	"apiChineseName": "线路能力创建/更新",
+	"description": "线路能力创建/更新",
+	"id": 67429
+}

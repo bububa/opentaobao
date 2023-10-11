@@ -16,6 +16,8 @@ type CodeStatusTypeDto struct {
 	CodeStatusNum string `json:"code_status_num,omitempty" xml:"code_status_num,omitempty"`
 	// 码状态（A:已激活;I:已核注;O:已核注;C:已注销;E:码不存在）
 	CodeStatus string `json:"code_status,omitempty" xml:"code_status,omitempty"`
+	// 码状态描述
+	CodeStatusDesc string `json:"code_status_desc,omitempty" xml:"code_status_desc,omitempty"`
 	// 当前码的父码
 	ParentCode string `json:"parent_code,omitempty" xml:"parent_code,omitempty"`
 	// 最小包装数量

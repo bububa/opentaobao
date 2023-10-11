@@ -12,4 +12,6 @@ type HotelListDto struct {
 	LowPrice int64 `json:"low_price,omitempty" xml:"low_price,omitempty"`
 	// 酒店标准ID
 	Shid int64 `json:"shid,omitempty" xml:"shid,omitempty"`
+	// 协议价标识
+	IsProtocol bool `json:"is_protocol,omitempty" xml:"is_protocol,omitempty"`
 }

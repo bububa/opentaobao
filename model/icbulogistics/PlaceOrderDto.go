@@ -18,8 +18,10 @@ type PlaceOrderDto struct {
 	DestinationZipCode string `json:"destination_zip_code,omitempty" xml:"destination_zip_code,omitempty"`
 	// 发货批次ID
 	SupplyChainBizId string `json:"supply_chain_biz_id,omitempty" xml:"supply_chain_biz_id,omitempty"`
-	// 信保单ID
+	// 交易单号（例如阿里国际站的信保单ID），注意此字段不为空时，trade_platform字段必填（默认为ICBU）
 	TradeBizId string `json:"trade_biz_id,omitempty" xml:"trade_biz_id,omitempty"`
+	// 跨境电商平台代码：ICBU（阿里巴巴国际站）、ALIEXPRESS（速卖通）、AMAZON（亚马逊）等
+	TradePlatform string `json:"trade_platform,omitempty" xml:"trade_platform,omitempty"`
 	// 交货到仓快递信息
 	DeliverWarehouseExpress *DeliverWarehouseExpressDto `json:"deliver_warehouse_express,omitempty" xml:"deliver_warehouse_express,omitempty"`
 	// 发货人地址

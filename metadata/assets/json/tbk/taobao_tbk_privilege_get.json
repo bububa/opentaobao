@@ -66,6 +66,16 @@
 			"name": "biz_scene_id",
 			"type": "String",
 			"description": "1-动态ID转链场景，2-消费者比价场景，3-商品库导购场景（不填默认为1）"
+		},
+		{
+			"name": "manage_item_pub_id",
+			"type": "Number",
+			"description": "商品库服务账户(场景id3权限对应的memberid）"
+		},
+		{
+			"name": "sku_id",
+			"type": "Number",
+			"description": "入参商品id下的skuid，传入时会透传至转链结果url中"
 		}
 	],
 	"responseParams": [
@@ -216,6 +226,11 @@
 							"name": "item_id",
 							"type": "String",
 							"description": "商品ID"
+						},
+						{
+							"name": "extra_info",
+							"type": "String",
+							"description": "转链成功的场景下，需要补充说明的信息"
 						}
 					],
 					"name": "data",

@@ -1,0 +1,94 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "card_infos",
+					"type": "String",
+					"description": "卡密组（注意：卡密是密文）"
+				},
+				{
+					"name": "failed_code",
+					"type": "String",
+					"description": "失败错误码"
+				},
+				{
+					"name": "failed_reason",
+					"type": "String",
+					"description": "失败原因"
+				},
+				{
+					"name": "jym_order_no",
+					"type": "String",
+					"description": "交易猫订单号",
+					"required": true
+				},
+				{
+					"name": "jym_order_type",
+					"type": "String",
+					"description": "订单类型，回填",
+					"required": true
+				},
+				{
+					"name": "vendor_id",
+					"type": "String",
+					"description": "商家id",
+					"required": true
+				},
+				{
+					"name": "vendor_order_no",
+					"type": "String",
+					"description": "商家订单号",
+					"required": true
+				},
+				{
+					"name": "vendor_order_snap",
+					"type": "String",
+					"description": "商家商品快照"
+				},
+				{
+					"name": "vendor_order_status",
+					"type": "String",
+					"description": "商家订单状态",
+					"required": true
+				},
+				{
+					"name": "vendor_order_success_time",
+					"type": "String",
+					"description": "商家订单充值成功时间"
+				},
+				{
+					"name": "version",
+					"type": "String",
+					"description": "版本号",
+					"required": true
+				}
+			],
+			"name": "card_charge_callback_request_dto",
+			"type": "CardChargeCallbackRequestDTO",
+			"description": "卡密类结果回调请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "failed_code",
+			"type": "String",
+			"description": "失败错误码"
+		},
+		{
+			"name": "failed_reason",
+			"type": "String",
+			"description": "失败原因描述"
+		},
+		{
+			"name": "jym_order_success",
+			"type": "String",
+			"description": "交易猫订单是否成功，true-成功，false-失败"
+		}
+	],
+	"name": "alibaba.jym.fulfillment.card.callback",
+	"apiChineseName": "外部商家卡密结果回调",
+	"description": "外部商家卡密结果回调",
+	"id": 66028
+}

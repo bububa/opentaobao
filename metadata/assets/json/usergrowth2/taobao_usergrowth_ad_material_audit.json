@@ -3,13 +3,13 @@
 		{
 			"name": "biz_type",
 			"type": "Number",
-			"description": "淘宝频道",
+			"description": "投放场景",
 			"required": true
 		},
 		{
 			"name": "scenario_type",
 			"type": "Number",
-			"description": "标的类型",
+			"description": "素材卖点",
 			"required": true
 		},
 		{
@@ -36,7 +36,7 @@
 		{
 			"name": "ad_type",
 			"type": "Number",
-			"description": "广告类型",
+			"description": "广告类型1 线上硬广；2 达人私域；3 线下；4 厂商生态",
 			"required": true
 		},
 		{
@@ -52,7 +52,7 @@
 		{
 			"name": "creative_type",
 			"type": "Number",
-			"description": "创意类型",
+			"description": "创意类型,1 图片；2 视频",
 			"required": true
 		},
 		{
@@ -63,7 +63,7 @@
 		{
 			"name": "app_id",
 			"type": "Number",
-			"description": "应用id",
+			"description": "应用id 1 手淘",
 			"required": true
 		},
 		{
@@ -83,6 +83,11 @@
 			"type": "Number",
 			"description": "热点事件",
 			"required": true
+		},
+		{
+			"name": "specific_file_name",
+			"type": "String",
+			"description": "格式为：自定义名称-序号-商品id"
 		}
 	],
 	"responseParams": [

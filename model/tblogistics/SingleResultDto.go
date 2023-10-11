@@ -22,6 +22,10 @@ type SingleResultDto struct {
 	ItemTitle string `json:"item_title,omitempty" xml:"item_title,omitempty"`
 	// 收件人姓名
 	ReceiverName string `json:"receiver_name,omitempty" xml:"receiver_name,omitempty"`
+	// 收件人电话
+	ReceiverPhone string `json:"receiver_phone,omitempty" xml:"receiver_phone,omitempty"`
+	// 收件人手机号码
+	ReceiverMobile string `json:"receiver_mobile,omitempty" xml:"receiver_mobile,omitempty"`
 	// 运单创建时间
 	Created string `json:"created,omitempty" xml:"created,omitempty"`
 	// 运单修改时间
@@ -38,14 +42,14 @@ type SingleResultDto struct {
 	SellerConfirm string `json:"seller_confirm,omitempty" xml:"seller_confirm,omitempty"`
 	// ouid
 	Ouid string `json:"ouid,omitempty" xml:"ouid,omitempty"`
+	// 脱敏收件人电话
+	ReceiverPhoneNew string `json:"receiver_phone_new,omitempty" xml:"receiver_phone_new,omitempty"`
+	// 脱敏收件人手机号码
+	ReceiverMobileNew string `json:"receiver_mobile_new,omitempty" xml:"receiver_mobile_new,omitempty"`
 	// 买家的openuid
 	Openuid string `json:"openuid,omitempty" xml:"openuid,omitempty"`
 	// 交易ID
 	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
-	// 收件人电话
-	ReceiverPhone int64 `json:"receiver_phone,omitempty" xml:"receiver_phone,omitempty"`
-	// 收件人手机号码
-	ReceiverMobile int64 `json:"receiver_mobile,omitempty" xml:"receiver_mobile,omitempty"`
 	// 收件人地址信息(在传输请求参数Fields字段时，必须使用“receiver_location”才能返回此字段)
 	Location *Location `json:"location,omitempty" xml:"location,omitempty"`
 	// 表明是否是拆单，默认值0，1表示拆单

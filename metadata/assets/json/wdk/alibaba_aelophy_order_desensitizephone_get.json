@@ -1,0 +1,87 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_order_id",
+					"type": "String",
+					"description": "业务单号",
+					"required": true
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "经营店编码",
+					"required": true
+				}
+			],
+			"name": "order_desensitize_phone_request",
+			"type": "OrderDesensitizePhoneRequest",
+			"description": "请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_success",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		},
+		{
+			"name": "api_err_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "api_err_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"subParams": [
+				{
+					"name": "merchant_code",
+					"type": "String",
+					"description": "商家编码"
+				},
+				{
+					"name": "biz_order_id",
+					"type": "String",
+					"description": "业务单号"
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "经营店编码"
+				},
+				{
+					"name": "receiver_privacy_phone",
+					"type": "String",
+					"description": "脱敏的手机号"
+				},
+				{
+					"name": "virtual_number",
+					"type": "String",
+					"description": "虚拟号"
+				},
+				{
+					"name": "buyer_virtual_number",
+					"type": "String",
+					"description": "买家虚拟号（仅鲜花行业订单有值）"
+				},
+				{
+					"name": "expiration_time",
+					"type": "Number",
+					"description": "预计过期时间"
+				}
+			],
+			"name": "model",
+			"type": "OrderDesensitizePhoneResult",
+			"description": "订单隐私号信息"
+		}
+	],
+	"name": "alibaba.aelophy.order.desensitizephone.get",
+	"apiChineseName": "获取订单隐私号",
+	"description": "获取订单隐私号",
+	"id": 67786
+}

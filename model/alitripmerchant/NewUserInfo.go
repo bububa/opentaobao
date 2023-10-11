@@ -14,6 +14,8 @@ type NewUserInfo struct {
 	NickName string `json:"nick_name,omitempty" xml:"nick_name,omitempty"`
 	// 语言
 	Language string `json:"language,omitempty" xml:"language,omitempty"`
+	// 昵称
+	NkName string `json:"nk_name,omitempty" xml:"nk_name,omitempty"`
 	// 性别
 	Gender int64 `json:"gender,omitempty" xml:"gender,omitempty"`
 }

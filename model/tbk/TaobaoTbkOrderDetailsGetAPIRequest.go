@@ -9,7 +9,7 @@ import (
 // TaobaoTbkOrderDetailsGetAPIRequest 淘宝客-推广者-所有订单查询 API请求
 // taobao.tbk.order.details.get
 //
-// 淘宝客订单查询
+// 淘宝客推广带来的所有拍下付款的正向订单明细报表。
 type TaobaoTbkOrderDetailsGetAPIRequest struct {
 	model.Params
 	// 位点，除第一页之外，都需要传递；前端原样返回。
@@ -30,7 +30,7 @@ type TaobaoTbkOrderDetailsGetAPIRequest struct {
 	_jumpType int64
 	// 第几页，默认1，1~100
 	_pageNo int64
-	// 场景订单场景类型，1:常规订单，2:渠道订单，3:会员运营订单，默认为1
+	// 筛选订单类型，1:所有订单，2:渠道订单，3:会员运营订单，默认为1
 	_orderScene int64
 }
 
@@ -176,7 +176,7 @@ func (r TaobaoTbkOrderDetailsGetAPIRequest) GetPageNo() int64 {
 }
 
 // SetOrderScene is OrderScene Setter
-// 场景订单场景类型，1:常规订单，2:渠道订单，3:会员运营订单，默认为1
+// 筛选订单类型，1:所有订单，2:渠道订单，3:会员运营订单，默认为1
 func (r *TaobaoTbkOrderDetailsGetAPIRequest) SetOrderScene(_orderScene int64) error {
 	r._orderScene = _orderScene
 	r.Set("order_scene", _orderScene)

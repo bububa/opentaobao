@@ -47,6 +47,16 @@
 			"name": "extra",
 			"type": "String",
 			"description": "扩展信息"
+		},
+		{
+			"name": "relation_id",
+			"type": "String",
+			"description": "音频id"
+		},
+		{
+			"name": "relation_type",
+			"type": "String",
+			"description": "关联类型（如音频）"
 		}
 	],
 	"responseParams": [

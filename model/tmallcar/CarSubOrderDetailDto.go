@@ -18,6 +18,8 @@ type CarSubOrderDetailDto struct {
 	ConsumeShopId string `json:"consume_shop_id,omitempty" xml:"consume_shop_id,omitempty"`
 	// 核销时间
 	ConsumeTime string `json:"consume_time,omitempty" xml:"consume_time,omitempty"`
+	// 选装选配json
+	OptionList string `json:"option_list,omitempty" xml:"option_list,omitempty"`
 	// 订单id
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 实付金额，单位分

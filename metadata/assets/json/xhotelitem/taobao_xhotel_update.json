@@ -152,7 +152,7 @@
 		{
 			"name": "pics",
 			"type": "String",
-			"description": "酒店图片只支持远程图片，格式如下：[{\"url\":\"http://123.jpg\",\"ismain\":\"false\",\"type\":\"大堂\",\"attribute\":\"普通图\"},{\"url\":\"http://456.jpg\",\"ismain\":\"true\",\"type\":\"公共区域\",\"attribute\":\"全景图\"},{\"url\":\"http://789.jpg\",\"ismain\":\"false\",\"type\":\"大堂\",\"attribute\":\"普通图\"}] 其中url是远程图片的访问地址，main是否为主图（主图只能有一个）,attribute表示图片属性，取值范围只能是：[普通图, 平面图, 全景图] ,type表示图片类型，取值范围只能是：[周边, 外观, 商务中心, 健身房, 其他, 会议室, 餐厅, 浴室, 客房, 公共区域, 娱乐设施, 大堂, 泳池]，图片数量最多10张。要求：无logo、水印、边框、人物，不模糊、重复、歪斜，房间图清晰，图片尺寸不小于300*225，不小于5M"
+			"description": "酒店图片只支持远程图片，格式如下：[{\"url\":\"http://123.jpg\",\"ismain\":\"false\",\"type\":\"大堂\",\"attribute\":\"普通图\"},{\"url\":\"http://456.jpg\",\"ismain\":\"true\",\"type\":\"公共区域\",\"attribute\":\"全景图\"},{\"url\":\"http://789.jpg\",\"ismain\":\"false\",\"type\":\"大堂\",\"attribute\":\"普通图\"}] 其中url是远程图片的访问地址，main是否为主图（主图只能有一个）,attribute表示图片属性，取值范围只能是：[普通图, 平面图, 全景图] ,type表示图片类型，取值范围只能是：[周边, 外观, 商务中心, 其他, 餐厅, 浴室, 客房, 公共区域, 娱乐设施, 大堂]，图片数量最多10张。要求：无logo、水印、边框、人物，不模糊、重复、歪斜，房间图清晰，图片尺寸不小于300*225，不小于5M"
 		},
 		{
 			"name": "brand",
@@ -255,6 +255,16 @@
 			"name": "coordinate_system",
 			"type": "String",
 			"description": "标识坐标系类型。WGS84，表示地球坐标系 ；GCJ02，表示火星坐标系"
+		},
+		{
+			"name": "address_en",
+			"type": "String",
+			"description": "酒店英文地址"
+		},
+		{
+			"name": "description_en",
+			"type": "String",
+			"description": "酒店英文描述"
 		}
 	],
 	"responseParams": [

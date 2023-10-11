@@ -1,0 +1,64 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "用户id",
+					"required": true
+				},
+				{
+					"name": "pic_urls",
+					"type": "String[]",
+					"description": "图片链接列表",
+					"required": true
+				}
+			],
+			"name": "param",
+			"type": "PicAuditParam",
+			"description": "图片审核请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "audited_urls",
+							"type": "String[]",
+							"description": "经审核的图片链接列表"
+						},
+						{
+							"name": "illegal_index",
+							"type": "String[]",
+							"description": "不合法的图片链接序号"
+						}
+					],
+					"name": "result",
+					"type": "PicAuditResult",
+					"description": "审核结果"
+				}
+			],
+			"name": "qn_copilot_result_do",
+			"type": "QnCopilotResultDO",
+			"description": "审核结果"
+		}
+	],
+	"name": "taobao.qncopilot.picture.audit",
+	"apiChineseName": "AIGC创作图片审核",
+	"description": "AIGC创作图片审核",
+	"id": 67792
+}

@@ -1,0 +1,139 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "division_type",
+					"type": "String",
+					"description": "行政区划类型（DOMAIN:境内，ABROAD:出境）"
+				},
+				{
+					"name": "keyword",
+					"type": "String",
+					"description": "关键字"
+				},
+				{
+					"name": "country_id",
+					"type": "Number",
+					"description": "国家ID"
+				},
+				{
+					"name": "level",
+					"type": "Number",
+					"description": "行政区划级别（2-国家; 4-城市）"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小（最大100）"
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "页码"
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "供应商id"
+				}
+			],
+			"name": "fsc_division_query_request",
+			"type": "FscDivisionQueryRequest",
+			"description": "fscDivisionQueryRequest",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "total",
+							"type": "Number",
+							"description": "数据总条数"
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "分页大小（最大100）"
+						},
+						{
+							"name": "page_index",
+							"type": "Number",
+							"description": "页码"
+						},
+						{
+							"subParams": [
+								{
+									"name": "division_id",
+									"type": "Number",
+									"description": "目的地ID"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "行政区划名称"
+								},
+								{
+									"name": "name_en",
+									"type": "String",
+									"description": "行政区划英文名"
+								},
+								{
+									"name": "level",
+									"type": "Number",
+									"description": "行政区划级别"
+								},
+								{
+									"name": "parent_id",
+									"type": "Number",
+									"description": "行政区划父级ID"
+								},
+								{
+									"name": "country_name",
+									"type": "String",
+									"description": "国家名称"
+								},
+								{
+									"name": "abroad",
+									"type": "Boolean",
+									"description": "是否境外"
+								}
+							],
+							"name": "data",
+							"type": "FscTripDivisionApiDto[]",
+							"description": "返回数据"
+						}
+					],
+					"name": "fsc_trip_division_api_response",
+					"type": "FscTripDivisionApiResponse",
+					"description": "业务数据"
+				}
+			],
+			"name": "top_result",
+			"type": "TopResult",
+			"description": "通用返回结果"
+		}
+	],
+	"name": "taobao.alitrip.travel.fsc.route.api.division.get",
+	"apiChineseName": "获取国家城市信息",
+	"description": "获取国家城市信息",
+	"id": 66879
+}

@@ -1,0 +1,70 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码",
+					"required": true
+				}
+			],
+			"name": "top_service_context",
+			"type": "TopServiceContext",
+			"description": "topServiceContext",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "ok",
+							"type": "Boolean",
+							"description": "是否成功"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误编码"
+						}
+					],
+					"name": "info",
+					"type": "TopInfo",
+					"description": "请求系统信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "shop_id",
+							"type": "Number",
+							"description": "店铺id"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "店铺名称"
+						}
+					],
+					"name": "shop_info_v_o",
+					"type": "ShopInfoVo",
+					"description": "结果集"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.universalbp.material.shop.get",
+	"apiChineseName": "获取店铺信息",
+	"description": "获取店铺信息",
+	"id": 67285
+}

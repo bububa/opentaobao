@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"os"
 	"os/exec"
@@ -22,7 +21,7 @@ import (
 // patchPath: patch 文件路径
 // pkg: 指定API类目包名
 func Gen(metaPath string, patchPath string, pkg string) error {
-	rd, err := ioutil.ReadDir(metaPath)
+	rd, err := os.ReadDir(metaPath)
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -100,7 +99,7 @@ func catelogHandler(catelogPath string, catelogPatchPath string) ApiPkg {
 	var models []metadata.TplModel // 包内结构体
 	var files []string
 	filesMp := make(map[string]struct{})
-	catelogRd, err := ioutil.ReadDir(catelogPath)
+	catelogRd, err := os.ReadDir(catelogPath)
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -117,7 +116,7 @@ func catelogHandler(catelogPath string, catelogPatchPath string) ApiPkg {
 	}
 
 	// 遍历patch目录文件, 用于弥补某些API metadata无法下载的情况
-	if catelogPatchRd, err := ioutil.ReadDir(catelogPatchPath); err == nil {
+	if catelogPatchRd, err := os.ReadDir(catelogPatchPath); err == nil {
 		for _, fi := range catelogPatchRd {
 			if fi.IsDir() {
 				continue
@@ -130,6 +129,9 @@ func catelogHandler(catelogPath string, catelogPatchPath string) ApiPkg {
 			}
 			files = append(files, fi.Name())
 		}
+		log.Printf("[INFO] Patch files: %d\n", len(catelogPatchRd))
+	} else {
+		log.Printf("[ERR] Patch path: %s, %s\n", catelogPatchPath, err.Error())
 	}
 
 	for _, fi := range files {
@@ -199,7 +201,7 @@ func catelogHandler(catelogPath string, catelogPatchPath string) ApiPkg {
 func getPkgConfig(catelogPath string) (metadata.PkgConfig, error) {
 	var cfg metadata.PkgConfig
 	fPath := filepath.Join(catelogPath, "catelog.json")
-	pkgBytes, err := ioutil.ReadFile(fPath)
+	pkgBytes, err := os.ReadFile(fPath)
 	if err != nil {
 		return cfg, err
 	}
@@ -224,7 +226,7 @@ func getDoc(catelogPath string, catelogPatchPath string, filename string) (metad
 	} else {
 		log.Printf("[WRN] doc:%s, use patch\n", fPath)
 	}
-	docBytes, err := ioutil.ReadFile(fPath)
+	docBytes, err := os.ReadFile(fPath)
 	if err != nil {
 		return doc, err
 	}

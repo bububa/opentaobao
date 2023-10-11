@@ -1,0 +1,77 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "channel",
+					"type": "String",
+					"description": "渠道id"
+				}
+			],
+			"name": "req",
+			"type": "SellerChannelQueryRequest",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "successful",
+					"type": "Boolean",
+					"description": "true or false"
+				},
+				{
+					"name": "err_type",
+					"type": "Number",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "miniapp_id",
+							"type": "Number",
+							"description": "小程序id"
+						},
+						{
+							"name": "ext_properties",
+							"type": "String",
+							"description": "扩展参数"
+						},
+						{
+							"name": "add_status",
+							"type": "Number",
+							"description": "是否添加到私域工作。0表示未添加，1表示添加"
+						},
+						{
+							"name": "config_status",
+							"type": "Number",
+							"description": "是否已配置，1表示已配置，0表示未配置"
+						},
+						{
+							"name": "channel",
+							"type": "String",
+							"description": "渠道id"
+						}
+					],
+					"name": "model",
+					"type": "SellerChannelConfigDTO[]",
+					"description": "body"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "MiniappResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "taobao.miniapp.ext.delivery.sell.channel.configs.query",
+	"apiChineseName": "查询商家配置的信息",
+	"description": "查询商家配置的信息",
+	"id": 67557
+}

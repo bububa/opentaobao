@@ -20,6 +20,8 @@ type AlibabaAscpLogisticsConsignResendAPIRequest struct {
 	_tid string
 	// 拆单子订单列表，对应的数据是：子订单号列表。可以不传，但是如果传了则必须符合传递的规则。子订单必须是操作的物流订单的子订单的真子集
 	_subTids string
+	// feature参数格式，KV之间用“=”分隔，多个key之间用”;”分隔 ，范例: instantMobilePhoneNumber=12345678910表示同城配送物流公司的物流订单收货人手机号，支持11位真实号和15位隐私号"12345678910-1234"
+	_feature string
 }
 
 // NewAlibabaAscpLogisticsConsignResendRequest 初始化AlibabaAscpLogisticsConsignResendAPIRequest对象
@@ -83,4 +85,17 @@ func (r *AlibabaAscpLogisticsConsignResendAPIRequest) SetSubTids(_subTids string
 // GetSubTids SubTids Getter
 func (r AlibabaAscpLogisticsConsignResendAPIRequest) GetSubTids() string {
 	return r._subTids
+}
+
+// SetFeature is Feature Setter
+// feature参数格式，KV之间用“=”分隔，多个key之间用”;”分隔 ，范例: instantMobilePhoneNumber=12345678910表示同城配送物流公司的物流订单收货人手机号，支持11位真实号和15位隐私号&#34;12345678910-1234&#34;
+func (r *AlibabaAscpLogisticsConsignResendAPIRequest) SetFeature(_feature string) error {
+	r._feature = _feature
+	r.Set("feature", _feature)
+	return nil
+}
+
+// GetFeature Feature Getter
+func (r AlibabaAscpLogisticsConsignResendAPIRequest) GetFeature() string {
+	return r._feature
 }

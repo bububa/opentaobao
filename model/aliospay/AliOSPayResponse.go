@@ -9,5 +9,5 @@ type AliOSPayResponse struct {
 	// 错误码
 	Code int64 `json:"code,omitempty" xml:"code,omitempty"`
 	// 业务数据
-	Data *SearchRecordResponse `json:"data,omitempty" xml:"data,omitempty"`
+	Data *PeriodAgreementPayResponse `json:"data,omitempty" xml:"data,omitempty"`
 }

@@ -1,0 +1,102 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "worker_id",
+							"type": "String",
+							"description": "师傅id"
+						},
+						{
+							"name": "worker_name",
+							"type": "String",
+							"description": "师傅姓名"
+						},
+						{
+							"name": "worker_mobile",
+							"type": "String",
+							"description": "师傅电话"
+						},
+						{
+							"name": "completion_quantity",
+							"type": "Number",
+							"description": "平台完工量"
+						},
+						{
+							"name": "score",
+							"type": "String",
+							"description": "评分"
+						},
+						{
+							"name": "price_amount",
+							"type": "String",
+							"description": "保价金额：单位：分",
+							"required": true
+						}
+					],
+					"name": "worker_price_info",
+					"type": "WorkerPriceInfo",
+					"description": "询价结果明细",
+					"required": true
+				},
+				{
+					"name": "wds_coordination_order_id",
+					"type": "String",
+					"description": "BFC单号",
+					"required": true
+				},
+				{
+					"name": "tp_id",
+					"type": "String",
+					"description": "服务商id",
+					"required": true
+				},
+				{
+					"name": "seller_id",
+					"type": "String",
+					"description": "商家id",
+					"required": true
+				}
+			],
+			"name": "inquiry_result",
+			"type": "InquiryResult",
+			"description": "询价结果",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功"
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "返回结果"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "ResultWrapper",
+			"description": "返回对象"
+		}
+	],
+	"name": "alibaba.ascp.industry.inquiry.result.callback",
+	"apiChineseName": "送货入户并安装服务商询价结果返回",
+	"description": "送货入户并安装服务商询价结果返回",
+	"id": 65875
+}

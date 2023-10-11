@@ -1,0 +1,74 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "complaint_workcard_id",
+					"type": "String",
+					"description": "投诉工单id",
+					"required": true
+				},
+				{
+					"name": "wds_coordination_order_id",
+					"type": "String",
+					"description": "BFC履行单号"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态0 - 待收款   1 - 待补充举证    2 - 处理中  3 - 已完结",
+					"required": true
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "工单回复(处理中需要填写)      * 完结内容(已完结需要填写)",
+					"required": true
+				},
+				{
+					"name": "seller_id",
+					"type": "String",
+					"description": "商家id",
+					"required": true
+				}
+			],
+			"name": "oms_complaint_workcard_status_modify_parameter",
+			"type": "OmsComplaintWorkCardStatusModifyParameter",
+			"description": "请求对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回信息"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "ResultWrapper",
+			"description": "返回对象"
+		}
+	],
+	"name": "alibaba.ascp.industry.anomaly.recourse.status.modify",
+	"apiChineseName": "送货入户并安装投诉工单状态变更",
+	"description": "送货入户并安装投诉工单状态变更",
+	"id": 65940
+}

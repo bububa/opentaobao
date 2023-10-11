@@ -1,0 +1,130 @@
+{
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业id",
+			"required": true
+		},
+		{
+			"name": "source_parent_code",
+			"type": "String",
+			"description": "替换父码",
+			"required": true
+		},
+		{
+			"name": "source_child_codes",
+			"type": "String",
+			"description": "替换子码",
+			"required": true
+		},
+		{
+			"name": "target_parent_code",
+			"type": "String",
+			"description": "被替换父码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "source_parent_code",
+							"type": "String",
+							"description": "替换父码"
+						},
+						{
+							"name": "source_child_codes",
+							"type": "String",
+							"description": "替换子码"
+						},
+						{
+							"name": "target_parent_code",
+							"type": "String",
+							"description": "被替换父码"
+						},
+						{
+							"name": "target_child_codes",
+							"type": "String",
+							"description": "被替换子码"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "码拼箱状态"
+						},
+						{
+							"name": "info",
+							"type": "String",
+							"description": "码拼箱信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "source_parent_code",
+									"type": "String",
+									"description": "替换父码"
+								},
+								{
+									"name": "source_child_code",
+									"type": "String",
+									"description": "替换子码"
+								},
+								{
+									"name": "target_parent_code",
+									"type": "String",
+									"description": "被替换父码"
+								},
+								{
+									"name": "target_child_code",
+									"type": "String",
+									"description": "被替换子码"
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "码拼箱状态"
+								},
+								{
+									"name": "info",
+									"type": "String",
+									"description": "码拼箱信息"
+								}
+							],
+							"name": "recover_code_move_packaging_result_dtos",
+							"type": "RecoverCodeMovePackagingResultDTO[]",
+							"description": "内层小对象"
+						}
+					],
+					"name": "model",
+					"type": "CodeMovePackagingSecondDTO",
+					"description": "内层大对象"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "消息码"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "消息提示内容"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "查询成功失败标记"
+				}
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "最外层结果"
+		}
+	],
+	"name": "alibaba.alihealth.drug.kyt.scqy.putpackagebind",
+	"apiChineseName": "码拼箱建立父子关系接口",
+	"description": "码拼箱建立父子关系接口",
+	"id": 65606
+}

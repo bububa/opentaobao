@@ -1,0 +1,91 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户ID",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户标识",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "ticket_code",
+					"type": "String",
+					"description": "兑换号",
+					"required": true
+				},
+				{
+					"name": "user_agreement",
+					"type": "Boolean",
+					"description": "用户协议",
+					"required": true
+				},
+				{
+					"name": "exchange_agreement",
+					"type": "Boolean",
+					"description": "兑换协议",
+					"required": true
+				}
+			],
+			"name": "derby_voucher_card_redeem_d_t_o",
+			"type": "DerbyVoucherCardRedeemDTO",
+			"description": "兑换臻享卡入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "redeem_success",
+							"type": "Boolean",
+							"description": "兑换成功"
+						},
+						{
+							"name": "member_voucher_card_i_d",
+							"type": "String",
+							"description": "臻享卡卡号"
+						},
+						{
+							"name": "voucher_card_category",
+							"type": "String",
+							"description": "臻享卡卡类型"
+						}
+					],
+					"name": "content",
+					"type": "DerbyVoucherCardRedeemVO",
+					"description": "兑换结果"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "response"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.derby.member.voucher.card.redeem",
+	"apiChineseName": "根据兑换码兑换臻享卡接口",
+	"description": "根据兑换码兑换臻享卡接口",
+	"id": 65821
+}

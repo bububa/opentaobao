@@ -1,0 +1,159 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "order_type",
+					"type": "String",
+					"description": "业务类型，取值：JYPKZXCK(集运包裹正向出库)、JYPKNXCK(集运包裹逆向出库)",
+					"required": true
+				},
+				{
+					"name": "logistics_owner",
+					"type": "String",
+					"description": "物流主体，例如：TaoTian(淘天)",
+					"required": true
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "服务商仓code",
+					"required": true
+				},
+				{
+					"name": "package_owner_code",
+					"type": "String",
+					"description": "包裹货主"
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "服务提供商",
+					"required": true
+				},
+				{
+					"name": "mail_no",
+					"type": "String",
+					"description": "快递单号",
+					"required": true
+				}
+			],
+			"name": "pull_package_delivery_order_request",
+			"type": "PullPackageOrderRequest",
+			"description": "请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "delivery_order_code",
+							"type": "String",
+							"description": "包裹出库单号"
+						},
+						{
+							"name": "mail_no",
+							"type": "String",
+							"description": "物流服务商ID"
+						},
+						{
+							"name": "oaid_order_source_code",
+							"type": "String",
+							"description": "主订单id，正向出库时下发"
+						},
+						{
+							"name": "extend_props",
+							"type": "String",
+							"description": "拓展字段"
+						},
+						{
+							"subParams": [
+								{
+									"name": "name",
+									"type": "String",
+									"description": "姓名"
+								},
+								{
+									"name": "tel",
+									"type": "String",
+									"description": "固定电话"
+								},
+								{
+									"name": "mobile",
+									"type": "String",
+									"description": "移动电话"
+								},
+								{
+									"name": "province",
+									"type": "String",
+									"description": "省份"
+								},
+								{
+									"name": "city",
+									"type": "String",
+									"description": "城市"
+								},
+								{
+									"name": "area",
+									"type": "String",
+									"description": "区域"
+								},
+								{
+									"name": "town",
+									"type": "String",
+									"description": "城镇"
+								},
+								{
+									"name": "detail_address",
+									"type": "String",
+									"description": "详细地址"
+								},
+								{
+									"name": "oaid",
+									"type": "String",
+									"description": "订单oaid，正向出库时下发"
+								}
+							],
+							"name": "receiver_info",
+							"type": "ContactInfo",
+							"description": "收件人信息，逆向出库时下发"
+						},
+						{
+							"name": "tms_cp_code",
+							"type": "String",
+							"description": "配送公司"
+						}
+					],
+					"name": "data",
+					"type": "PullPackageOrderResponse",
+					"description": "业务数据"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "ResultWrapper",
+			"description": "结果"
+		}
+	],
+	"name": "taobao.logistics.wms.packagedeliveryorder.pull",
+	"apiChineseName": "包裹出库单拉单",
+	"description": "包裹出库单拉单",
+	"id": 67202
+}

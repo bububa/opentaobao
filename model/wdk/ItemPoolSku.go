@@ -20,6 +20,8 @@ type ItemPoolSku struct {
 	DiscountRate int64 `json:"discount_rate,omitempty" xml:"discount_rate,omitempty"`
 	// 减钱【元】
 	DecreaseMoney int64 `json:"decrease_money,omitempty" xml:"decrease_money,omitempty"`
+	// 该商品每单可换购最大数
+	ExchangeOrderLimit int64 `json:"exchange_order_limit,omitempty" xml:"exchange_order_limit,omitempty"`
 	// 是否为一口价
 	IsFixPrice bool `json:"is_fix_price,omitempty" xml:"is_fix_price,omitempty"`
 	// 是否为商品折扣

@@ -1,0 +1,513 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "user_daily_limit_cnt",
+							"type": "Number",
+							"description": "每人每日限购"
+						},
+						{
+							"name": "user_limit_cnt",
+							"type": "Number",
+							"description": "每人活动期间总限购"
+						},
+						{
+							"name": "total_limit_cnt",
+							"type": "Number",
+							"description": "活动期间总限购"
+						},
+						{
+							"name": "daily_limit_cnt",
+							"type": "Number",
+							"description": "活动每日总限购"
+						}
+					],
+					"name": "limit_info",
+					"type": "LimitInfo",
+					"description": "通用限购信息，-1为不限制，默认为不限制"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "cap_count_each_fix_price",
+									"type": "Number",
+									"description": "指定件数每件一口价【分】"
+								},
+								{
+									"name": "cap_count_discount_rate",
+									"type": "Number",
+									"description": "指定件数整体打几折【600=6折】"
+								},
+								{
+									"name": "cap_count_decrease_money",
+									"type": "Number",
+									"description": "指定件数整体减钱【分】"
+								},
+								{
+									"name": "cap_count_fix_price",
+									"type": "Number",
+									"description": "指定件数整体一口价【分】"
+								},
+								{
+									"name": "is_cap_count_fix_price",
+									"type": "Boolean",
+									"description": "是否指定件数整体一口价"
+								},
+								{
+									"name": "is_cap_count_decrease_money",
+									"type": "Boolean",
+									"description": "是否指定件数整体减钱"
+								},
+								{
+									"name": "is_cap_count_discount_rate",
+									"type": "Boolean",
+									"description": "是否指定件数整体打折"
+								},
+								{
+									"name": "is_cap_count_each_fix_price",
+									"type": "Boolean",
+									"description": "是否指定件数每件一口价"
+								}
+							],
+							"name": "cap_count_discount_rule",
+							"type": "CapCountDiscountRule",
+							"description": "指定件数优惠规则"
+						},
+						{
+							"subParams": [
+								{
+									"name": "each_fix_price",
+									"type": "Number",
+									"description": "每件商品一口价【分】"
+								},
+								{
+									"name": "cover_all_discount_rate",
+									"type": "Number",
+									"description": "整体打折【600=6折】"
+								},
+								{
+									"name": "cover_all_decrease_money",
+									"type": "Number",
+									"description": "整体减钱【分】"
+								},
+								{
+									"name": "cover_all_fix_price",
+									"type": "Number",
+									"description": "整体一口价【分】"
+								},
+								{
+									"name": "is_cover_all_fix_price",
+									"type": "Boolean",
+									"description": "是否整体一口价"
+								},
+								{
+									"name": "is_cover_all_decrease_money",
+									"type": "Boolean",
+									"description": "是否整体减钱"
+								},
+								{
+									"name": "is_cover_all_discount_rate",
+									"type": "Boolean",
+									"description": "是否整体打折"
+								},
+								{
+									"name": "is_each_fix_price",
+									"type": "Boolean",
+									"description": "是否每件一口价"
+								}
+							],
+							"name": "cover_all_discount_rule",
+							"type": "CoverAllDiscountRule",
+							"description": "阶梯整体优惠规则"
+						},
+						{
+							"subParams": [
+								{
+									"name": "count_at_discount_rate",
+									"type": "Number",
+									"description": "第N件折扣率【600=6折】"
+								},
+								{
+									"name": "count_at_decrease_money",
+									"type": "Number",
+									"description": "第N件减钱【分】"
+								},
+								{
+									"name": "count_at_fix_price",
+									"type": "Number",
+									"description": "第N件一口价【分】"
+								},
+								{
+									"name": "is_count_at_fix_price",
+									"type": "Boolean",
+									"description": "是否第N建一口价"
+								},
+								{
+									"name": "is_count_at_decrease_money",
+									"type": "Boolean",
+									"description": "是否第N件减钱"
+								},
+								{
+									"name": "is_count_at_discount_rate",
+									"type": "Boolean",
+									"description": "是否第N件打折"
+								}
+							],
+							"name": "count_at_discount_rule",
+							"type": "CountAtDiscountRule",
+							"description": "第N件优惠规则"
+						},
+						{
+							"name": "login_group_express",
+							"type": "String",
+							"description": "分组表达式【暂时不使用】"
+						},
+						{
+							"name": "is_amount",
+							"type": "Boolean",
+							"description": "是否满元"
+						},
+						{
+							"name": "is_count",
+							"type": "Boolean",
+							"description": "是否满件"
+						},
+						{
+							"name": "number",
+							"type": "Number",
+							"description": "阶梯序号，代表商家的阶梯ID，同时代表阶梯优先级的顺序",
+							"required": true
+						},
+						{
+							"name": "amount",
+							"type": "Number",
+							"description": "满x元【单位为分】"
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "满x件"
+						},
+						{
+							"name": "is_overlay_logic_group_condition",
+							"type": "Boolean",
+							"description": "是否叠加逻辑分组的条件"
+						},
+						{
+							"subParams": [
+								{
+									"name": "is_discount_rate",
+									"type": "Boolean",
+									"description": "是否为打折类型"
+								},
+								{
+									"name": "is_decrease",
+									"type": "Boolean",
+									"description": "是否为减钱类型"
+								},
+								{
+									"name": "is_fix_price",
+									"type": "Boolean",
+									"description": "是否为一口价类型"
+								}
+							],
+							"name": "separate_pricing_discount_rule",
+							"type": "SeparatePricingDiscountRule",
+							"description": "单独定价优惠规则"
+						}
+					],
+					"name": "rule_stairs",
+					"type": "OpenPromotionRuleStair[]",
+					"description": "商品池活动的梯度列表",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "ceiling_amount",
+							"type": "Number",
+							"description": "封顶金额"
+						},
+						{
+							"name": "is_multi_mix",
+							"type": "Boolean",
+							"description": "多阶梯是否可叠加"
+						},
+						{
+							"name": "item_overlay",
+							"type": "Boolean",
+							"description": "单商品是否累计"
+						},
+						{
+							"name": "is_alone",
+							"type": "Boolean",
+							"description": "是否单商品计数【NY使用】【废弃】"
+						},
+						{
+							"name": "enable_multiple",
+							"type": "Boolean",
+							"description": "是否上不封顶"
+						},
+						{
+							"name": "is_check_all_cond",
+							"type": "Boolean",
+							"description": "是否叠加计算逻辑分组与阶梯满元【件】条件"
+						},
+						{
+							"name": "discount_fee_mode",
+							"type": "Number",
+							"description": "1-可贬值，0-不可贬值"
+						}
+					],
+					"name": "activity_rule",
+					"type": "ActivityRule",
+					"description": "活动优惠规则"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "each_fix_price",
+									"type": "Number",
+									"description": "每件一口价【分】"
+								},
+								{
+									"name": "cover_all_discount_rate",
+									"type": "Number",
+									"description": "整体打折【分】"
+								},
+								{
+									"name": "cover_all_decrease_money",
+									"type": "Number",
+									"description": "整体减钱【分】"
+								},
+								{
+									"name": "cover_all_fix_price",
+									"type": "Number",
+									"description": "整体一口价【分】"
+								},
+								{
+									"name": "is_cover_all_fix_price",
+									"type": "Boolean",
+									"description": "是否整体一口价"
+								},
+								{
+									"name": "is_cover_all_decrease_money",
+									"type": "Boolean",
+									"description": "是否整体减钱"
+								},
+								{
+									"name": "is_cover_all_discount_rate",
+									"type": "Boolean",
+									"description": "是否整体打折"
+								},
+								{
+									"name": "is_each_fix_price",
+									"type": "Boolean",
+									"description": "是否整体每件一口价"
+								}
+							],
+							"name": "cover_all_discount_rule",
+							"type": "CoverAllDiscountRule",
+							"description": "整体优惠"
+						},
+						{
+							"name": "is_effective_group",
+							"type": "Boolean",
+							"description": "是否为优惠作用分组"
+						},
+						{
+							"name": "amount",
+							"type": "Number",
+							"description": "逻辑分组上满N元条件，当阶梯的is_amount=true时生效，逻辑分组条件的优先级大于阶梯条件的优先级"
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "逻辑分组上满N件条件，当阶梯的is_count=true时生效，逻辑分组条件的优先级大于阶梯条件的优先级"
+						},
+						{
+							"name": "can_extra_item_num",
+							"type": "Number",
+							"description": "换购N件"
+						},
+						{
+							"name": "logic_group_type",
+							"type": "Number",
+							"description": "1-普通分组，2-换购分组，3-买赠分组"
+						},
+						{
+							"name": "number",
+							"type": "Number",
+							"description": "商家逻辑分组Id（单个活动不能重复）"
+						},
+						{
+							"name": "exchange_group_order",
+							"type": "Number",
+							"description": "换购分组排序，用于在app上展示的顺序"
+						},
+						{
+							"name": "exchange_group_name",
+							"type": "String",
+							"description": "换购分组名称"
+						},
+						{
+							"name": "ratio",
+							"type": "Number",
+							"description": "分摊比例"
+						}
+					],
+					"name": "logic_group_rules",
+					"type": "OpenLogicGroupRule[]",
+					"description": "逻辑分组规则"
+				},
+				{
+					"name": "shop_ids",
+					"type": "String[]",
+					"description": "参加活动的渠道店ids",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "Number",
+					"description": "活动结束时间",
+					"required": true
+				},
+				{
+					"name": "start_time",
+					"type": "Number",
+					"description": "活动开始时间",
+					"required": true
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "活动描述",
+					"required": true
+				},
+				{
+					"name": "activity_name",
+					"type": "String",
+					"description": "活动标题",
+					"required": true
+				},
+				{
+					"name": "merchant_crowd_code",
+					"type": "String",
+					"description": "商家人群编码"
+				},
+				{
+					"name": "txd_crowd_code",
+					"type": "String",
+					"description": "淘鲜达人群编码"
+				},
+				{
+					"name": "member_limit",
+					"type": "Number",
+					"description": "会员维度活动参与人群限制：-1:不限制 1:会员专享 2:非会员专享"
+				},
+				{
+					"name": "terminals",
+					"type": "String[]",
+					"description": "优惠适用场景[APP|POS|POS+APP分别对应的值为1|2|1,2]",
+					"required": true
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "商家活动id"
+				},
+				{
+					"subParams": [
+						{
+							"name": "every_day_periods",
+							"type": "String[]",
+							"description": "每天的什么时间阶段搞活动,精确到秒单位 例如:03:00:00_05:00:00"
+						},
+						{
+							"name": "weekdays",
+							"type": "String[]",
+							"description": "星期几搞活动 [1:Mon;2:Tues;3:Wed;4:Thur;5:Fri;6:Sat;7:Sun]"
+						}
+					],
+					"name": "period_config",
+					"type": "PeriodConfig",
+					"description": "周期优惠信息"
+				},
+				{
+					"name": "is_comb",
+					"type": "Boolean",
+					"description": "是否是组合优惠"
+				},
+				{
+					"name": "priority_value",
+					"type": "Number",
+					"description": "活动优先级，值越大表示优先级越高，必须大于0"
+				},
+				{
+					"name": "exclude_single",
+					"type": "Boolean",
+					"description": "商品池是否排除特价"
+				},
+				{
+					"name": "is_category",
+					"type": "Boolean",
+					"description": "是否是类目优惠"
+				},
+				{
+					"name": "by_channel",
+					"type": "Boolean",
+					"description": "是否自定义渠道同步"
+				},
+				{
+					"subParams": [
+						{
+							"name": "channel",
+							"type": "String",
+							"description": "淘鲜达:\"31\",饿了么:\"3\",京东到家:\"26\",美团外卖:\"2\""
+						}
+					],
+					"name": "channel_config_list",
+					"type": "ChannelConfig[]",
+					"description": "自定义同步渠道配置"
+				}
+			],
+			"name": "param",
+			"type": "ItemPoolActivity",
+			"description": "创建活动请求入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		},
+		{
+			"name": "fail_code",
+			"type": "String",
+			"description": "errorCode"
+		},
+		{
+			"name": "data",
+			"type": "Number",
+			"description": "data"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	],
+	"name": "alibaba.hm.marketing.itempool.activity.create",
+	"apiChineseName": "创建活动新接口",
+	"description": "创建活动新接口，支持新工具玩法",
+	"id": 67192
+}

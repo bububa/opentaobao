@@ -1,0 +1,44 @@
+{
+	"requestParams": [
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "系统商，一般不填写，使用须申请"
+		},
+		{
+			"name": "out_hid",
+			"type": "String",
+			"description": "商家酒店ID，指明该 x 元素属于哪家酒店",
+			"required": true
+		},
+		{
+			"name": "out_x_codes",
+			"type": "String",
+			"description": "需要删除的 x_code 编码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "返回结果"
+		}
+	],
+	"name": "taobao.xhotel.xitem.delete",
+	"apiChineseName": "删除 x 元素",
+	"description": "删除 x 元素",
+	"id": 67477
+}

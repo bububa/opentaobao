@@ -1,0 +1,109 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间戳（毫秒）",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID（服务商发起请求的ID）",
+					"required": true
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "淘天物流服务商ID",
+					"required": true
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "服务商自定义的仓编码",
+					"required": true
+				},
+				{
+					"name": "wms_owner_code",
+					"type": "String",
+					"description": "wms货主id",
+					"required": true
+				},
+				{
+					"name": "is_auto_sync",
+					"type": "Number",
+					"description": "是否自动同步货主关联的所有店铺（仅菜鸟开放） 0：否（默认） 1：是",
+					"required": true
+				},
+				{
+					"name": "seller_ids",
+					"type": "String[]",
+					"description": "是否自动同步货主关联的所有店铺（仅菜鸟开放），为否，必填；最多50条"
+				},
+				{
+					"name": "cooperation_status",
+					"type": "Number",
+					"description": "合作关系状态： 1：解除合作 2：建立合作",
+					"required": true
+				},
+				{
+					"name": "customer_id",
+					"type": "String",
+					"description": "wms奇门货主id，官方物流对接必填"
+				},
+				{
+					"name": "business_code",
+					"type": "String",
+					"description": "合作业务： OFFICIAL_LOGISTICS（官方物流）， TIMES_AGENCY（时效代运营）， MAOCHAO_YUNCANG（猫超云仓）"
+				}
+			],
+			"name": "warehouse_cooperation_update_request",
+			"type": "WarehouseCooperationUpdateRequest",
+			"description": "合作商家信息同步入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true|false"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "wms_owner_code",
+							"type": "String",
+							"description": "wms货主id"
+						}
+					],
+					"name": "data",
+					"type": "WarehouseCooperationResultDetail",
+					"description": "返回内容"
+				}
+			],
+			"name": "warehouse_cooperation_update_response",
+			"type": "WarehouseCooperationUpdateResponse",
+			"description": "合作商家信息同步出参"
+		}
+	],
+	"name": "taobao.logistics.warehouse.cooperation.update",
+	"apiChineseName": "合作商家信息同步",
+	"description": "合作商家信息同步",
+	"id": 67426
+}

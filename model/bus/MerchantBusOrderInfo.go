@@ -4,6 +4,8 @@ package bus
 type MerchantBusOrderInfo struct {
 	// 票信息列表
 	BusTicketInfoList []MerchantBusTicketInfo `json:"bus_ticket_info_list,omitempty" xml:"bus_ticket_info_list>merchant_bus_ticket_info,omitempty"`
+	// 退票信息
+	RefundApplyInfoList []MerchantBusRefundApplyInfo `json:"refund_apply_info_list,omitempty" xml:"refund_apply_info_list>merchant_bus_refund_apply_info,omitempty"`
 	// 到达站点
 	EndStation string `json:"end_station,omitempty" xml:"end_station,omitempty"`
 	// 出票时间

@@ -1,0 +1,43 @@
+{
+	"requestParams": [
+		{
+			"name": "code",
+			"type": "String",
+			"description": "追溯码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "query_date",
+					"type": "String",
+					"description": "扫码时间"
+				},
+				{
+					"name": "query_app_name_format",
+					"type": "String",
+					"description": "扫码来源：支付宝，淘宝，天猫，未知"
+				}
+			],
+			"name": "model",
+			"type": "CodeScanDTO []",
+			"description": "返回对象"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "结果信息"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "结果编码"
+		}
+	],
+	"name": "alibaba.alihealth.drugcode.scan.his",
+	"apiChineseName": "企业查询扫码历史",
+	"description": "企业查询扫码历史",
+	"id": 66301
+}

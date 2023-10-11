@@ -1,0 +1,101 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "wms_owner_code",
+					"type": "String",
+					"description": "货主code",
+					"required": true
+				},
+				{
+					"name": "wms_warehouse_code",
+					"type": "String",
+					"description": "仓code",
+					"required": true
+				},
+				{
+					"name": "item_code",
+					"type": "String",
+					"description": "货品code",
+					"required": true
+				},
+				{
+					"name": "length",
+					"type": "String",
+					"description": "长 (厘米)"
+				},
+				{
+					"name": "width",
+					"type": "String",
+					"description": " 宽 (厘米)"
+				},
+				{
+					"name": "height",
+					"type": "String",
+					"description": "高 (厘米)"
+				},
+				{
+					"name": "volume",
+					"type": "String",
+					"description": "体积 (升)"
+				},
+				{
+					"name": "gross_weight",
+					"type": "String",
+					"description": "毛重 (千克)"
+				},
+				{
+					"name": "net_weight",
+					"type": "String",
+					"description": "净重 (千克)"
+				},
+				{
+					"name": "pic",
+					"type": "String",
+					"description": "图片链接"
+				},
+				{
+					"name": "feature",
+					"type": "String",
+					"description": "扩展字段"
+				},
+				{
+					"name": "item_id",
+					"type": "String",
+					"description": "货品id"
+				}
+			],
+			"name": "wms_goods_info_sync_request",
+			"type": "WmsGoodsInfoSyncRequest",
+			"description": "请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "suc",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "biz_error_message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "biz_error_code",
+			"type": "String",
+			"description": "错误编码"
+		},
+		{
+			"name": "retry",
+			"type": "Boolean",
+			"description": "是否支持重试"
+		}
+	],
+	"name": "taobao.logistics.wms.goods.info.sync",
+	"apiChineseName": "WMS回传货品长宽高图片等信息",
+	"description": "WMS回传货品长宽高图片等信息",
+	"id": 66655
+}

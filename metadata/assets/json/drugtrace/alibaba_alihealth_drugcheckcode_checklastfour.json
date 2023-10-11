@@ -1,0 +1,36 @@
+{
+	"requestParams": [
+		{
+			"name": "code",
+			"type": "String",
+			"description": "追溯码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "success_i",
+			"type": "Boolean",
+			"description": "对象"
+		},
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "是否正确"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "调用成功"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "调用失败"
+		}
+	],
+	"name": "alibaba.alihealth.drugcheckcode.checklastfour",
+	"apiChineseName": "校验追溯码的后4位是否正确",
+	"description": "校验追溯码的后4位是否正确",
+	"id": 66679
+}

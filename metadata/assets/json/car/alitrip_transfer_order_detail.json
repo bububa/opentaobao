@@ -1,0 +1,327 @@
+{
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "飞猪平台订单id",
+			"required": true
+		},
+		{
+			"name": "provider_id",
+			"type": "String",
+			"description": "分配的服务商Id"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "flight_no",
+							"type": "String",
+							"description": "航班号"
+						},
+						{
+							"name": "airport_terminal",
+							"type": "String",
+							"description": "接机到达/送机出发航站楼"
+						},
+						{
+							"name": "dep_air_port_code",
+							"type": "String",
+							"description": "出发 机场三字码"
+						},
+						{
+							"name": "flight_arrived_date",
+							"type": "String",
+							"description": "航班到达时间"
+						},
+						{
+							"name": "des_air_port_code",
+							"type": "String",
+							"description": "到达 机场三字码"
+						},
+						{
+							"name": "flight_fly_date",
+							"type": "String",
+							"description": "航班起飞日期"
+						}
+					],
+					"name": "transfer_flight_info",
+					"type": "TransferFlightInfo",
+					"description": "订单航班信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "traveller_secret_phone",
+							"type": "String",
+							"description": "飞猪虚拟号"
+						},
+						{
+							"name": "passenger_real_phone_last",
+							"type": "String",
+							"description": "乘客真实号(后四位)"
+						},
+						{
+							"name": "secret_phone_end_time",
+							"type": "String",
+							"description": "虚拟号失效时间"
+						},
+						{
+							"name": "passenger_real_phone",
+							"type": "String",
+							"description": "乘客真实号（可能为空）"
+						}
+					],
+					"name": "transfer_buyer_info",
+					"type": "TransferBuyerInfo",
+					"description": "买家信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "modified_time",
+							"type": "Date",
+							"description": "订单修改时间"
+						},
+						{
+							"name": "distance",
+							"type": "Number",
+							"description": "出发地至目的地之间距离 单位(米)"
+						},
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "订单id"
+						},
+						{
+							"name": "out_order_id",
+							"type": "String",
+							"description": "外部商家订单号"
+						},
+						{
+							"name": "created_time",
+							"type": "Date",
+							"description": "订单创建时间"
+						},
+						{
+							"name": "order_status",
+							"type": "Number",
+							"description": "订单状态   21-等待商家确认接单，22-商家已确认接单（未派司机），23-商家已确认接单（已派司机），24-司机服务已完成，25-司机已出发，26-司机已到达目的地，27-司机开始服务 ，60-订单已关闭，70-订单已完成"
+						},
+						{
+							"name": "payment_time",
+							"type": "Date",
+							"description": "打款时间"
+						},
+						{
+							"name": "cancel_reason",
+							"type": "String",
+							"description": "关单/取消 原因(没有时为空)"
+						},
+						{
+							"name": "refund_time",
+							"type": "String",
+							"description": "退款时间"
+						},
+						{
+							"name": "close_duty",
+							"type": "Boolean",
+							"description": "是否有责取消（可能为空）"
+						}
+					],
+					"name": "transfer_order_info",
+					"type": "TransferOrderInfo",
+					"description": "订单基础信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "e_invoice_send_email",
+							"type": "String",
+							"description": "发票寄送邮箱（用于电子发票）"
+						},
+						{
+							"name": "invoice_type",
+							"type": "Number",
+							"description": "发票类型 1企业 2个人"
+						},
+						{
+							"name": "tax_no",
+							"type": "String",
+							"description": "企业（公司）税号"
+						},
+						{
+							"name": "invoice_title",
+							"type": "String",
+							"description": "发票抬头"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "-1:未开具1:开具中;2:开具完成;3:已发送"
+						},
+						{
+							"name": "amount",
+							"type": "String",
+							"description": "开票金额(元)"
+						}
+					],
+					"name": "transfer_invoice_info",
+					"type": "TransferInvoiceInfo",
+					"description": "订单发票信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "total_fee",
+							"type": "String",
+							"description": "总价(单位 元)"
+						},
+						{
+							"name": "user_real_pay",
+							"type": "String",
+							"description": "实际线上支付金额(单位 元)"
+						},
+						{
+							"name": "payment",
+							"type": "String",
+							"description": "实际付给商家的钱(单位 元)"
+						},
+						{
+							"name": "refund_fee",
+							"type": "String",
+							"description": "退款金额(单位 元)"
+						}
+					],
+					"name": "transfer_order_amount_info",
+					"type": "TransferOrderAmountInfo",
+					"description": "订单金额信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "license",
+							"type": "String",
+							"description": "车牌号"
+						},
+						{
+							"name": "driver_name",
+							"type": "String",
+							"description": "司机姓名"
+						},
+						{
+							"name": "driver_phone",
+							"type": "String",
+							"description": "司机联系方式 真实号"
+						},
+						{
+							"name": "push_time",
+							"type": "String",
+							"description": "司机推送时间"
+						},
+						{
+							"name": "luggage",
+							"type": "String",
+							"description": "行李信息"
+						}
+					],
+					"name": "transfer_drive_info",
+					"type": "TransferDriveInfo",
+					"description": "司机信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "car_use_time",
+							"type": "String",
+							"description": "用车时间"
+						},
+						{
+							"name": "abroad_customer_service_phone",
+							"type": "String",
+							"description": "商家境外客服电话"
+						},
+						{
+							"name": "origin_address",
+							"type": "String",
+							"description": "出发地点"
+						},
+						{
+							"name": "cancel_rule",
+							"type": "String",
+							"description": "退改规则"
+						},
+						{
+							"name": "car_type_id",
+							"type": "String",
+							"description": "车型id"
+						},
+						{
+							"name": "domestic_customer_service_phone",
+							"type": "String",
+							"description": "商家境内客服电话"
+						},
+						{
+							"name": "to_location",
+							"type": "String",
+							"description": "到达地经纬度"
+						},
+						{
+							"name": "arrive_city",
+							"type": "String",
+							"description": "到达城市"
+						},
+						{
+							"name": "arrive_city_code",
+							"type": "String",
+							"description": "到达城市三字码"
+						},
+						{
+							"name": "arrive_address",
+							"type": "String",
+							"description": "到达地点"
+						},
+						{
+							"name": "origin_city",
+							"type": "String",
+							"description": "出发城市"
+						},
+						{
+							"name": "from_location",
+							"type": "String",
+							"description": "出发地经纬度"
+						},
+						{
+							"name": "origin_city_code",
+							"type": "String",
+							"description": "出发城市三字码"
+						}
+					],
+					"name": "transfer_use_car_info",
+					"type": "TransferUseCarInfo",
+					"description": "用车信息"
+				}
+			],
+			"name": "data",
+			"type": "TransferOrderDetailCallbackRsp",
+			"description": "返回数据"
+		},
+		{
+			"name": "message_code",
+			"type": "Number",
+			"description": "信息code"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "返回信息"
+		}
+	],
+	"name": "alitrip.transfer.order.detail",
+	"apiChineseName": "接送订单详情接口",
+	"description": "接送订单详情接口",
+	"id": 67380
+}

@@ -10,8 +10,12 @@ type HsfResult struct {
 	InternalErrorCode string `json:"internal_error_code,omitempty" xml:"internal_error_code,omitempty"`
 	// 异常提示
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
+	// 错误扩展信息
+	ExtErrorMap string `json:"ext_error_map,omitempty" xml:"ext_error_map,omitempty"`
 	// 响应业务对象
 	AppointmentCancleReponse *AppointmentCancleReponse `json:"appointment_cancle_reponse,omitempty" xml:"appointment_cancle_reponse,omitempty"`
+	// 响应体
+	AppointmentOrderDifferenceDetailsResponse *AppointmentOrderDifferenceDetailsResponse `json:"appointment_order_difference_details_response,omitempty" xml:"appointment_order_difference_details_response,omitempty"`
 	// data
 	AppointmentCreateResponse *AppointmentCreateResponse `json:"appointment_create_response,omitempty" xml:"appointment_create_response,omitempty"`
 	// 响应体

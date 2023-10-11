@@ -1,0 +1,39 @@
+{
+	"requestParams": [
+		{
+			"name": "biz_type",
+			"type": "String",
+			"description": "类型",
+			"required": true
+		},
+		{
+			"name": "out_order_id",
+			"type": "String",
+			"description": "ERP单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果"
+				},
+				{
+					"name": "canceled",
+					"type": "Boolean",
+					"description": "是否已取消"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "返回值"
+		}
+	],
+	"name": "alibaba.ascp.logistics.instantsonline.canceldelivery",
+	"apiChineseName": "同城配送在线下单取消下单取消呼叫的运力",
+	"description": "同城配送在线下单取消下单取消呼叫的运力",
+	"id": 66599
+}

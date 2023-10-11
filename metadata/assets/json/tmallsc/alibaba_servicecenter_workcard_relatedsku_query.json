@@ -10,6 +10,11 @@
 			"name": "real_tp_nick",
 			"type": "String",
 			"description": "真实履约服务商nick(非erp系统不要填写)"
+		},
+		{
+			"name": "is_filter_by_category",
+			"type": "Boolean",
+			"description": "是否根据类目过滤维修项"
 		}
 	],
 	"responseParams": [

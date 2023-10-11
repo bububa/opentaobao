@@ -1,0 +1,100 @@
+{
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "wechat_live_q_r",
+					"type": "String",
+					"description": "微信直播二维码"
+				},
+				{
+					"name": "to_wechat_live",
+					"type": "String",
+					"description": "去微信直播"
+				},
+				{
+					"name": "wechat_live_link",
+					"type": "String",
+					"description": "微信直播链接"
+				},
+				{
+					"name": "wechat_live_background",
+					"type": "String",
+					"description": "微信直播背景"
+				},
+				{
+					"name": "is_to_wechat_live",
+					"type": "String",
+					"description": "去微信直播"
+				},
+				{
+					"name": "to_t_b_background",
+					"type": "String",
+					"description": "去淘宝背景"
+				},
+				{
+					"name": "to_t_b_avatar",
+					"type": "String",
+					"description": "去淘宝头像"
+				},
+				{
+					"name": "qr_float",
+					"type": "String",
+					"description": "二维码浮标"
+				},
+				{
+					"name": "is_show_qr_float",
+					"type": "String",
+					"description": "是否展示浮标"
+				},
+				{
+					"name": "qr_code",
+					"type": "String",
+					"description": "二维码图片"
+				},
+				{
+					"name": "to_t_b",
+					"type": "String",
+					"description": "去淘宝"
+				},
+				{
+					"name": "no_tao_token_tip",
+					"type": "String",
+					"description": "淘口令"
+				},
+				{
+					"name": "qr_code_tip",
+					"type": "String",
+					"description": "提示语"
+				},
+				{
+					"name": "qr_code_title",
+					"type": "String",
+					"description": "提示语标题"
+				},
+				{
+					"name": "operation_status",
+					"type": "String",
+					"description": "链接已复制"
+				},
+				{
+					"name": "operation_hint",
+					"type": "String",
+					"description": "就可以抢购啦"
+				}
+			],
+			"name": "data",
+			"type": "Data",
+			"description": "数据结果"
+		},
+		{
+			"name": "error",
+			"type": "String",
+			"description": "error"
+		}
+	],
+	"name": "alibaba.jhs.community.submitting.text",
+	"apiChineseName": "聚划算社群动态文案下发接口",
+	"description": "聚划算社群动态文案下发接口",
+	"id": 65902
+}

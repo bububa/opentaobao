@@ -1,0 +1,35 @@
+{
+	"requestParams": [
+		{
+			"name": "hid",
+			"type": "Number",
+			"description": "飞猪酒店id"
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "对接系统商，不填默认taobao"
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "外部酒店id"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "（0在线，-1删除， -2停售）"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "是否出错"
+		}
+	],
+	"name": "taobao.xhotel.status.update",
+	"apiChineseName": "酒店状态更新",
+	"description": "酒店状态更新",
+	"id": 67807
+}

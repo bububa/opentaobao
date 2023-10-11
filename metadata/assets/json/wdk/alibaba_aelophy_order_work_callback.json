@@ -1,0 +1,110 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "经营店编码",
+					"required": true
+				},
+				{
+					"name": "biz_order_id",
+					"type": "Number",
+					"description": "业务订单编码",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "回传通知状态 ACCEPTED = 商户接单 REJECTED = 商户取消订单 PICKED = 拣货完成 PACKAGED = 打包出库 SHIPPING = 开始配送 SIGN = 用户签收 REFUSED = 用户拒收",
+					"required": true
+				},
+				{
+					"name": "status_remark",
+					"type": "String",
+					"description": "状态备注, 如商户拒单原因备注"
+				},
+				{
+					"name": "deliverer_name",
+					"type": "String",
+					"description": "配送人员名称 SHIPPING/SIGN状态必填"
+				},
+				{
+					"name": "deliverer_phone",
+					"type": "String",
+					"description": "配送人员联系方式 SHIPPING/SIGN状态必填"
+				},
+				{
+					"subParams": [
+						{
+							"name": "biz_sub_order_id",
+							"type": "Number",
+							"description": "业务子订单编码"
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品编码"
+						},
+						{
+							"name": "pick_sale_quantity",
+							"type": "BigDecimal",
+							"description": "销售单位拣货数量 PICKED/PACKAGED状态必填"
+						},
+						{
+							"name": "pick_stock_quantity",
+							"type": "BigDecimal",
+							"description": "库存单位拣货数量 PICKED/PACKAGED状态必填"
+						}
+					],
+					"name": "work_callback_sub_order_info_list",
+					"type": "WorkCallbackSubOrderInfo[]",
+					"description": "子单列表"
+				},
+				{
+					"name": "deliverer_company",
+					"type": "String",
+					"description": "配送公司编码 FENGNIAO = 蜂鸟 MEITUAN = 美团 DADA = 达达 SHUNFENG = 顺丰 ELEZB = 饿了么众包 BINGEX = 闪送 SELF = 商家自送 OTHER = 其他运力"
+				},
+				{
+					"name": "logistics_no",
+					"type": "String",
+					"description": "配送物流单号"
+				}
+			],
+			"name": "work_callback_request",
+			"type": "WorkCallbackRequest",
+			"description": "仓配作业结果回传请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误码备注说明"
+				}
+			],
+			"name": "api_result",
+			"type": "TopBaseResult",
+			"description": "回传响应"
+		}
+	],
+	"name": "alibaba.aelophy.order.work.callback",
+	"apiChineseName": "仓配作业结果回传接口",
+	"description": "仓配作业结果回传接口",
+	"id": 66187
+}

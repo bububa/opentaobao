@@ -58,6 +58,8 @@ type ProjectAdviserDto struct {
 	AgentEmployNumberUrl string `json:"agent_employ_number_url,omitempty" xml:"agent_employ_number_url,omitempty"`
 	// 身份标识
 	Identity string `json:"identity,omitempty" xml:"identity,omitempty"`
+	// eCode
+	ECode string `json:"e_code,omitempty" xml:"e_code,omitempty"`
 	// 外部门店ID
 	OuterStoreId string `json:"outer_store_id,omitempty" xml:"outer_store_id,omitempty"`
 	// 门店名称
@@ -96,6 +98,12 @@ type ProjectAdviserDto struct {
 	AgentEmployStatus int64 `json:"agent_employ_status,omitempty" xml:"agent_employ_status,omitempty"`
 	// 是否测试 0-否 1-是
 	IsTest int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
+	// 版本号
+	EtcVersion int64 `json:"etc_version,omitempty" xml:"etc_version,omitempty"`
+	// 是否可接待客户，1 - 是，0 - 否，接待模式3.0时，此字段必填。
+	IsReceiveCustomer int64 `json:"is_receive_customer,omitempty" xml:"is_receive_customer,omitempty"`
+	// 区域接待状态0-不可接待 1-可接待
+	RegionReceptiveStatus int64 `json:"region_receptive_status,omitempty" xml:"region_receptive_status,omitempty"`
 	// 排序
 	Sort int64 `json:"sort,omitempty" xml:"sort,omitempty"`
 	// 状态：0无效，1有效
@@ -106,14 +114,10 @@ type ProjectAdviserDto struct {
 	ReceiveModel int64 `json:"receive_model,omitempty" xml:"receive_model,omitempty"`
 	// 审批状态
 	AuditStatus int64 `json:"audit_status,omitempty" xml:"audit_status,omitempty"`
-	// 是否可接待客户，1 - 是，0 - 否，接待模式3.0时，此字段必填。
-	IsReceiveCustomer int64 `json:"is_receive_customer,omitempty" xml:"is_receive_customer,omitempty"`
 	// 请求时间戳，精确到毫秒
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
 	// 金牌顾问编辑的审核状态
 	EditAuditStatus int64 `json:"edit_audit_status,omitempty" xml:"edit_audit_status,omitempty"`
-	// 区域接待状态0-不可接待 1-可接待
-	RegionReceptiveStatus int64 `json:"region_receptive_status,omitempty" xml:"region_receptive_status,omitempty"`
 	// 是否拥有淘宝账号
 	HasTbAccount bool `json:"has_tb_account,omitempty" xml:"has_tb_account,omitempty"`
 }

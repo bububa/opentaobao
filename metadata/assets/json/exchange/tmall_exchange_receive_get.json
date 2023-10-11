@@ -212,6 +212,11 @@
 					"name": "buyer_open_uid",
 					"type": "String",
 					"description": "买家openId"
+				},
+				{
+					"name": "attributes",
+					"type": "String",
+					"description": "扩展属性"
 				}
 			],
 			"name": "results",
@@ -227,11 +232,6 @@
 			"name": "has_next",
 			"type": "Boolean",
 			"description": "是否还有下一页"
-		},
-		{
-			"name": "exception",
-			"type": "Json",
-			"description": "所抛出异常"
 		},
 		{
 			"name": "error_codes",

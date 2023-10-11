@@ -1,0 +1,134 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "service_type",
+					"type": "String",
+					"description": "服务类型",
+					"required": true
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "淘天物流服务商ID",
+					"required": true
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "唯一标识单号",
+					"required": true
+				},
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "取消上门订单原因，枚举",
+					"required": true
+				},
+				{
+					"name": "deliver_code",
+					"type": "String",
+					"description": "配资源编码",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "connect_time_length",
+							"type": "Number",
+							"description": "接通时长,  单位s"
+						},
+						{
+							"name": "phone_call_type",
+							"type": "String",
+							"description": "电联属性，SMART 智能云呼；NORMAL, 普通"
+						},
+						{
+							"name": "hang_up_type",
+							"type": "String",
+							"description": "挂断状态，CUSTOMER_HAND_UP,消费者挂断；SENDER_HANG_UP,小件员挂断"
+						},
+						{
+							"name": "phone_chat_url",
+							"type": "String",
+							"description": "电联语音文件，用于客诉场景定责使用。"
+						},
+						{
+							"name": "connect_time",
+							"type": "String",
+							"description": "接通时间，操作时间（YYYY-MM-DD HH:MM:SS）"
+						},
+						{
+							"name": "phone_call_result_remark",
+							"type": "String",
+							"description": "消费者电联需求描述"
+						},
+						{
+							"name": "connection_status",
+							"type": "String",
+							"description": "通话状态（枚举）"
+						},
+						{
+							"name": "phone_call_operator_phone",
+							"type": "String",
+							"description": "电联人员联系方式（小件员/官方号码）"
+						},
+						{
+							"name": "phone_call_consumer_phone",
+							"type": "String",
+							"description": "消费者联系方式（消费者）"
+						},
+						{
+							"name": "call_time",
+							"type": "String",
+							"description": "拨打时间，操作时间（YYYY-MM-DD HH:MM:SS）"
+						},
+						{
+							"name": "phone_call_operator_name",
+							"type": "String",
+							"description": "电联人员名称（小件员）"
+						},
+						{
+							"name": "hang_up_time",
+							"type": "String",
+							"description": "挂断时间，操作时间（YYYY-MM-DD HH:MM:SS）"
+						}
+					],
+					"name": "phone_call_infos",
+					"type": "TmsPhoneCallInfoDTO[]",
+					"description": "电联信息（组）"
+				}
+			],
+			"name": "tms_to_msc_cancel_order_request",
+			"type": "Tms2MscCancelOrderRequest",
+			"description": "tms取消参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "suc",
+			"type": "Boolean",
+			"description": "系统成功失败"
+		},
+		{
+			"name": "biz_error_message",
+			"type": "String",
+			"description": "响应信息"
+		},
+		{
+			"name": "biz_error_code",
+			"type": "String",
+			"description": "响应码"
+		},
+		{
+			"name": "retry",
+			"type": "Boolean",
+			"description": "是否可重试"
+		}
+	],
+	"name": "taobao.logistics.express.order.tms.cancel",
+	"apiChineseName": "服务商上门取退时间取消接口",
+	"description": "服务商上门取退时间取消接口",
+	"id": 67362
+}

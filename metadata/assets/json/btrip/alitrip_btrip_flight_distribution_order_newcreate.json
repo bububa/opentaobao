@@ -112,7 +112,17 @@
 						{
 							"name": "sex",
 							"type": "byte",
-							"description": "性别"
+							"description": "性别0:男，1:女"
+						},
+						{
+							"name": "nationality",
+							"type": "String",
+							"description": "国籍"
+						},
+						{
+							"name": "nationality_code",
+							"type": "String",
+							"description": "国籍二字码"
 						}
 					],
 					"name": "traveler_info_list",

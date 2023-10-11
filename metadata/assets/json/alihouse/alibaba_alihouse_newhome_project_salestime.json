@@ -208,12 +208,32 @@
 					"description": "冻资银行"
 				},
 				{
-					"name": "public_plan",
+					"name": "opening_layout_range",
 					"type": "String",
-					"description": "公示方案"
+					"description": "开盘户型范围"
+				},
+				{
+					"name": "layout_area_range",
+					"type": "String",
+					"description": "户型面积区间"
+				},
+				{
+					"name": "outer_tid_list",
+					"type": "String[]",
+					"description": "外部楼栋id列表"
+				},
+				{
+					"name": "opening_building_range",
+					"type": "String",
+					"description": "开盘楼栋范围"
 				},
 				{
 					"subParams": [
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "摇号比例类型 1-廊内 2-廊外"
+						},
 						{
 							"name": "has_existence_talent",
 							"type": "Number",
@@ -300,29 +320,9 @@
 							"description": "有房入围人数"
 						}
 					],
-					"name": "lottery_ratio_d_t_o",
-					"type": "LotteryRatioDTO",
-					"description": "摇号比例信息"
-				},
-				{
-					"name": "opening_layout_range",
-					"type": "String",
-					"description": "开盘户型范围"
-				},
-				{
-					"name": "layout_area_range",
-					"type": "String",
-					"description": "户型面积区间"
-				},
-				{
-					"name": "outer_tid_list",
-					"type": "String[]",
-					"description": "外部楼栋id列表"
-				},
-				{
-					"name": "opening_building_range",
-					"type": "String",
-					"description": "开盘楼栋范围"
+					"name": "ratio_d_t_o_list",
+					"type": "LotteryRatioDTO[]",
+					"description": "摇号比例列表"
 				}
 			],
 			"name": "project_sales_time_dto",

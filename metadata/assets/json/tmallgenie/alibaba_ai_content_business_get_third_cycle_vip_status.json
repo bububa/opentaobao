@@ -1,0 +1,56 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "third_user_id",
+					"type": "String",
+					"description": "三方用户id",
+					"required": true
+				},
+				{
+					"name": "perform_type",
+					"type": "Number",
+					"description": "合约类型：1-包月 2-包季 3-包年",
+					"required": true
+				},
+				{
+					"name": "source",
+					"type": "String",
+					"description": "三方源",
+					"required": true
+				}
+			],
+			"name": "get_third_vip_status_request",
+			"type": "VipCycleThirdVipStatusRequest",
+			"description": "获取三方连续包会员状态请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_value",
+			"type": "Boolean",
+			"description": "三方小会员连续包状态：true-连续包中  false-非连续包"
+		},
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "结果码"
+		},
+		{
+			"name": "ret_msg",
+			"type": "String",
+			"description": "结果信息"
+		},
+		{
+			"name": "error_level",
+			"type": "String",
+			"description": "错误等级"
+		}
+	],
+	"name": "alibaba.ai.content.business.get.third.cycle.vip.status",
+	"apiChineseName": "天猫精灵商业化获取三方连续包会员状态",
+	"description": "天猫精灵商业化获取三方连续包会员状态",
+	"id": 66106
+}

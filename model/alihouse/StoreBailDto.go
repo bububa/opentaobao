@@ -12,4 +12,6 @@ type StoreBailDto struct {
 	Bail int64 `json:"bail,omitempty" xml:"bail,omitempty"`
 	// 行业类型
 	BusinessType int64 `json:"business_type,omitempty" xml:"business_type,omitempty"`
+	// 类目编码
+	CategoryCode int64 `json:"category_code,omitempty" xml:"category_code,omitempty"`
 }

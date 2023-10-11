@@ -1,0 +1,96 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "worker_id",
+					"type": "String",
+					"description": "师傅id",
+					"required": true
+				},
+				{
+					"name": "worker_name",
+					"type": "String",
+					"description": "师傅姓名",
+					"required": true
+				},
+				{
+					"name": "worker_mobile",
+					"type": "String",
+					"description": "师傅电话",
+					"required": true
+				},
+				{
+					"name": "wds_coordination_order_id",
+					"type": "String",
+					"description": "BFC单号",
+					"required": true
+				},
+				{
+					"name": "workcard_id",
+					"type": "String",
+					"description": "服务工单di"
+				},
+				{
+					"name": "tp_id",
+					"type": "String",
+					"description": "服务商id",
+					"required": true
+				},
+				{
+					"name": "seller_id",
+					"type": "String",
+					"description": "商家id",
+					"required": true
+				},
+				{
+					"name": "completion_quantity",
+					"type": "Number",
+					"description": "完工数量"
+				},
+				{
+					"name": "score",
+					"type": "String",
+					"description": "评分"
+				}
+			],
+			"name": "oms_service_modify_worker_parameter",
+			"type": "OmsServiceModifyWorkerParameter",
+			"description": "请求对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回信息"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "ResultWrapper",
+			"description": "返回对象"
+		}
+	],
+	"name": "alibaba.ascp.industry.worker.modify",
+	"apiChineseName": "送货入户并安装修改师傅信息",
+	"description": "送货入户并安装修改师傅信息",
+	"id": 65874
+}

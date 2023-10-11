@@ -22,6 +22,8 @@ type ModifyDetailDto struct {
 	ApplyTime string `json:"apply_time,omitempty" xml:"apply_time,omitempty"`
 	// 拒绝原因
 	RefuseReason string `json:"refuse_reason,omitempty" xml:"refuse_reason,omitempty"`
+	// xxxx
+	CorrelationOrderId string `json:"correlation_order_id,omitempty" xml:"correlation_order_id,omitempty"`
 	// 是否自愿:0:非自愿，1:自愿
 	Voluntary int64 `json:"voluntary,omitempty" xml:"voluntary,omitempty"`
 	// 国际国内标识:1:国内,2:国际

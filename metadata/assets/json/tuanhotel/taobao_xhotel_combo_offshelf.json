@@ -1,0 +1,21 @@
+{
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "宝贝id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "String",
+			"description": "下架状态"
+		}
+	],
+	"name": "taobao.xhotel.combo.offshelf",
+	"apiChineseName": "酒店套餐下架",
+	"description": "酒店套餐下架",
+	"id": 66641
+}

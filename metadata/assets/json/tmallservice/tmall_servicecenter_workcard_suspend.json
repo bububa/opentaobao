@@ -3,12 +3,12 @@
 		{
 			"name": "reserve_service_date",
 			"type": "Date",
-			"description": "预约时间"
+			"description": "预约时间（与下次联系时间二选一填入）"
 		},
 		{
 			"name": "gmt_next_contact",
 			"type": "Date",
-			"description": "下次联系时间"
+			"description": "下次联系时间（与预约时间二选一填入）"
 		},
 		{
 			"name": "workcard_id",

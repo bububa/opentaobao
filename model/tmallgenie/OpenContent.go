@@ -54,6 +54,8 @@ type OpenContent struct {
 	SuggestMinPrice int64 `json:"suggest_min_price,omitempty" xml:"suggest_min_price,omitempty"`
 	// 最大建议零售价(单位分)，没有明确区分就成本最高最低传一样的值
 	SuggestMaxPrice int64 `json:"suggest_max_price,omitempty" xml:"suggest_max_price,omitempty"`
+	// 专辑评分
+	Score int64 `json:"score,omitempty" xml:"score,omitempty"`
 	// 是否vip付费
 	VipFree bool `json:"vip_free,omitempty" xml:"vip_free,omitempty"`
 	// 专辑是否支持试听,默认为false

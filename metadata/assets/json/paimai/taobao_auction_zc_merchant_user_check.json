@@ -1,0 +1,38 @@
+{
+	"requestParams": [
+		{
+			"name": "mobile",
+			"type": "String",
+			"description": "手机号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "value",
+					"type": "Boolean",
+					"description": "处理结果"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Result4Top",
+			"description": "服务返回结果"
+		}
+	],
+	"name": "taobao.auction.zc.merchant.user.check",
+	"apiChineseName": "通过手机号确认阿里资产商家",
+	"description": "通过手机号确认阿里资产商家",
+	"id": 66787
+}

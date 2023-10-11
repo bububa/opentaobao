@@ -1,0 +1,205 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "project_amount",
+							"type": "Number",
+							"description": "项目金额"
+						},
+						{
+							"name": "project_name",
+							"type": "String",
+							"description": "项目名称"
+						}
+					],
+					"name": "project_list",
+					"type": "CsrInvoiceApplyProjectDTO[]",
+					"description": "项目金额集合"
+				},
+				{
+					"name": "unified_credit_code",
+					"type": "String",
+					"description": "社会统一信用代码"
+				},
+				{
+					"name": "invoice_org_id",
+					"type": "String",
+					"description": "机构id"
+				},
+				{
+					"subParams": [
+						{
+							"name": "bill_file",
+							"type": "String",
+							"description": "文件名称"
+						},
+						{
+							"name": "bill_cycle",
+							"type": "String",
+							"description": "账期"
+						},
+						{
+							"name": "bill_detail_standard_file",
+							"type": "String",
+							"description": "标准文件名称"
+						}
+					],
+					"name": "bill_list",
+					"type": "CsrInvoiceBillDTO[]",
+					"description": "账单集合"
+				},
+				{
+					"name": "invoice_state",
+					"type": "Number",
+					"description": "发票状态"
+				},
+				{
+					"name": "merchant_tel",
+					"type": "String",
+					"description": "联系人电话"
+				},
+				{
+					"name": "invoice_amount",
+					"type": "Number",
+					"description": "发票金额，分"
+				},
+				{
+					"name": "account_number",
+					"type": "String",
+					"description": "开户行账号"
+				},
+				{
+					"name": "merchant_contact",
+					"type": "String",
+					"description": "联系人"
+				},
+				{
+					"name": "account_bank",
+					"type": "String",
+					"description": "开户行"
+				},
+				{
+					"name": "merchant_nick_name",
+					"type": "String",
+					"description": "商家昵称"
+				},
+				{
+					"name": "application_time",
+					"type": "Number",
+					"description": "申请开票时间，ms"
+				},
+				{
+					"name": "merchant_id",
+					"type": "Number",
+					"description": "商家id"
+				},
+				{
+					"name": "merchant_address",
+					"type": "String",
+					"description": "联系人地址"
+				},
+				{
+					"name": "invoice_id",
+					"type": "String",
+					"description": "发票id"
+				},
+				{
+					"name": "shop_id",
+					"type": "Number",
+					"description": "店铺id"
+				},
+				{
+					"name": "invoice_title",
+					"type": "String",
+					"description": "发票抬头"
+				},
+				{
+					"subParams": [
+						{
+							"name": "file_name",
+							"type": "String",
+							"description": "线上开票-文件名称"
+						},
+						{
+							"name": "express_no",
+							"type": "String",
+							"description": "线下开票-快递单号"
+						},
+						{
+							"name": "express_type",
+							"type": "String",
+							"description": "线下开票-快递商名称"
+						},
+						{
+							"name": "file_url",
+							"type": "String",
+							"description": "线上开票-文件地址"
+						}
+					],
+					"name": "file_list",
+					"type": "CsrInvoiceFileDTO[]",
+					"description": "发票开票文件"
+				},
+				{
+					"name": "invoice_remark",
+					"type": "String",
+					"description": "备注-拒绝原因"
+				},
+				{
+					"subParams": [
+						{
+							"name": "bill_id",
+							"type": "String",
+							"description": "账单编号"
+						},
+						{
+							"name": "bill_time",
+							"type": "Number",
+							"description": "账单时间"
+						}
+					],
+					"name": "bill_no_list",
+					"type": "CsrInvoiceBillNoDTO[]",
+					"description": "list"
+				}
+			],
+			"name": "csr_invoice_ant_chain_sync_dto",
+			"type": "CsrInvoiceAntChainSyncDTO",
+			"description": "请求request"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "res_msg",
+			"type": "String",
+			"description": "响应描述信息"
+		},
+		{
+			"name": "res_code",
+			"type": "Number",
+			"description": "响应码"
+		},
+		{
+			"name": "res_data",
+			"type": "String",
+			"description": "响应数据"
+		},
+		{
+			"name": "res_success",
+			"type": "Boolean",
+			"description": "是否处理成功"
+		},
+		{
+			"name": "res_localized_msg",
+			"type": "String",
+			"description": "忽略"
+		}
+	],
+	"name": "alibaba.csr.donate.seller.invoice.syncinfo",
+	"apiChineseName": "链上同步商家票据信息",
+	"description": "链上同步商家票据信息",
+	"id": 66827
+}

@@ -10,4 +10,6 @@ type PromoInfo struct {
 	EarlyBookingInfo *EarlyBookingInfo `json:"early_booking_info,omitempty" xml:"early_booking_info,omitempty"`
 	// 天天特惠
 	DailyBookingInfo *DailyBookingInfo `json:"daily_booking_info,omitempty" xml:"daily_booking_info,omitempty"`
+	// 民宿优惠
+	GeneralBookingInfo *GeneralBookingInfo `json:"general_booking_info,omitempty" xml:"general_booking_info,omitempty"`
 }

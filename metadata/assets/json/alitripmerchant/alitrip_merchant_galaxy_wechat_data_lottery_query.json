@@ -1,0 +1,131 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户标识"
+		},
+		{
+			"subParams": [
+				{
+					"name": "operation_start_time",
+					"type": "String",
+					"description": "查询开始时间"
+				},
+				{
+					"name": "operation_end_time",
+					"type": "String",
+					"description": "查询结束时间"
+				},
+				{
+					"name": "operation_type",
+					"type": "String",
+					"description": "操作类型"
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页数"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "单页数量"
+				}
+			],
+			"name": "query_lottery_data_d_t_o",
+			"type": "QueryLotteryDataDTO",
+			"description": "查询抽奖用户数据入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误内容描述"
+				},
+				{
+					"subParams": [
+						{
+							"name": "open_id",
+							"type": "String",
+							"description": "用户微信Open_ID"
+						},
+						{
+							"name": "union_id",
+							"type": "String",
+							"description": "用户微信Union_ID"
+						},
+						{
+							"name": "pm_id",
+							"type": "String",
+							"description": "雅高会员Pmid"
+						},
+						{
+							"name": "card_number",
+							"type": "String",
+							"description": "会员卡号"
+						},
+						{
+							"name": "operate_time",
+							"type": "String",
+							"description": "注册时间"
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "用户注册信息(注册渠道)"
+						}
+					],
+					"name": "content",
+					"type": "LotteryDataVO[]",
+					"description": "查询抽奖用户数据集合"
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页数"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页数量"
+				},
+				{
+					"name": "has_next_page",
+					"type": "Boolean",
+					"description": "是否有下一页"
+				},
+				{
+					"name": "total_page_num",
+					"type": "Number",
+					"description": "总页数"
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总数"
+				}
+			],
+			"name": "result",
+			"type": "PageableResponse",
+			"description": "返回结果"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.wechat.data.lottery.query",
+	"apiChineseName": "抽奖用户名单查询接口",
+	"description": "抽奖用户名单查询接口",
+	"id": 67659
+}

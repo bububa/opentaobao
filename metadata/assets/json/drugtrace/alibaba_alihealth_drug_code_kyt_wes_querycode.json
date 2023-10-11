@@ -110,6 +110,26 @@
 									"name": "pkg_num",
 									"type": "String",
 									"description": "小包下的制剂数量"
+								},
+								{
+									"name": "approval_licence_no_old",
+									"type": "String",
+									"description": "药品原批准文号"
+								},
+								{
+									"name": "approval_licence_expiry_old",
+									"type": "Date",
+									"description": "原药品批准文号有效期"
+								},
+								{
+									"name": "approval_licence_date",
+									"type": "Date",
+									"description": "批准日期"
+								},
+								{
+									"name": "approval_licence_expiry",
+									"type": "Date",
+									"description": "批准文号有效期"
 								}
 							],
 							"name": "drug_ent_base_d_t_o",
@@ -149,6 +169,11 @@
 							"name": "code_produce_info_d_t_o",
 							"type": "CodeProduceInfoDto",
 							"description": "码生产信息对象"
+						},
+						{
+							"name": "pkg_ratio",
+							"type": "String",
+							"description": "包装比例"
 						}
 					],
 					"name": "models",

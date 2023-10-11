@@ -20,6 +20,6 @@ type TaobaoQimenReturnorderConfirmAPIResponseModel struct {
 	XMLName xml.Name `xml:"qimen_returnorder_confirm_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 响应内容
+	//
 	Response *TaobaoQimenReturnorderConfirmResponse `json:"response,omitempty" xml:"response,omitempty"`
 }

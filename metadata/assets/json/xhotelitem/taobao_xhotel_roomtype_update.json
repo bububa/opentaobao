@@ -8,8 +8,8 @@
 		{
 			"name": "name",
 			"type": "String",
-			"description": "房型名称。不能超过30字(30个汉字或者60个英文字符)；添加房型时为必须",
-			"maxLength": 60
+			"description": "房型名称。不能超过200字；添加房型时为必须",
+			"maxLength": 200
 		},
 		{
 			"name": "max_occupancy",
@@ -31,7 +31,7 @@
 		{
 			"name": "bed_type",
 			"type": "String",
-			"description": "床型。必填，按链接中床型列表定义值存储 http://open.taobao.com/docs/doc.htm?\u0026docType=1\u0026articleId=105610",
+			"description": "床型。按链接中床型列表定义值存储 http://open.taobao.com/docs/doc.htm?\u0026docType=1\u0026articleId=105610",
 			"maxLength": 100
 		},
 		{
@@ -104,7 +104,7 @@
 			"name": "name_e",
 			"type": "String",
 			"description": "卖家房型英文名称",
-			"maxLength": 60
+			"maxLength": 200
 		},
 		{
 			"name": "operator",
@@ -130,6 +130,21 @@
 			"name": "standard_room_facilities",
 			"type": "String",
 			"description": "房间设施"
+		},
+		{
+			"name": "window_desc",
+			"type": "String",
+			"description": "窗型，窗型（windowType）： 0=无窗 1=有窗 2=部分有窗  窗型缺陷（windowTypeDefect）： 0=窗户不可打开通风 1=窗外有遮挡 2=窗外为酒店内景观  特殊窗（windowTypeSpecial）： 0=落地窗 1=飘窗 2=天窗 3=小窗。  当为有窗或部分有窗时，窗型缺陷可多选，特殊窗型需单选"
+		},
+		{
+			"name": "add_bed",
+			"type": "String",
+			"description": "房型加床政策。 费用(fee) 说明(desc)"
+		},
+		{
+			"name": "children_policy",
+			"type": "String",
+			"description": "儿童政策"
 		}
 	],
 	"responseParams": [

@@ -135,6 +135,11 @@
 									"name": "voucher_id",
 									"type": "String",
 									"description": "套餐卷Id"
+								},
+								{
+									"name": "area_code",
+									"type": "String",
+									"description": "区号"
 								}
 							],
 							"name": "voucher_order",

@@ -26,15 +26,17 @@ type TaobaoUsergrowthAdMaterialAuditAPIRequest struct {
 	_subTitle string
 	// dp链接
 	_dpUrl string
-	// 淘宝频道
+	// 格式为：自定义名称-序号-商品id
+	_specificFileName string
+	// 投放场景
 	_bizType int64
-	// 标的类型
+	// 素材卖点
 	_scenarioType int64
-	// 广告类型
+	// 广告类型1 线上硬广；2 达人私域；3 线下；4 厂商生态
 	_adType int64
-	// 创意类型
+	// 创意类型,1 图片；2 视频
 	_creativeType int64
-	// 应用id
+	// 应用id 1 手淘
 	_appId int64
 	// 渠道id
 	_channelId int64
@@ -159,8 +161,21 @@ func (r TaobaoUsergrowthAdMaterialAuditAPIRequest) GetDpUrl() string {
 	return r._dpUrl
 }
 
+// SetSpecificFileName is SpecificFileName Setter
+// 格式为：自定义名称-序号-商品id
+func (r *TaobaoUsergrowthAdMaterialAuditAPIRequest) SetSpecificFileName(_specificFileName string) error {
+	r._specificFileName = _specificFileName
+	r.Set("specific_file_name", _specificFileName)
+	return nil
+}
+
+// GetSpecificFileName SpecificFileName Getter
+func (r TaobaoUsergrowthAdMaterialAuditAPIRequest) GetSpecificFileName() string {
+	return r._specificFileName
+}
+
 // SetBizType is BizType Setter
-// 淘宝频道
+// 投放场景
 func (r *TaobaoUsergrowthAdMaterialAuditAPIRequest) SetBizType(_bizType int64) error {
 	r._bizType = _bizType
 	r.Set("biz_type", _bizType)
@@ -173,7 +188,7 @@ func (r TaobaoUsergrowthAdMaterialAuditAPIRequest) GetBizType() int64 {
 }
 
 // SetScenarioType is ScenarioType Setter
-// 标的类型
+// 素材卖点
 func (r *TaobaoUsergrowthAdMaterialAuditAPIRequest) SetScenarioType(_scenarioType int64) error {
 	r._scenarioType = _scenarioType
 	r.Set("scenario_type", _scenarioType)
@@ -186,7 +201,7 @@ func (r TaobaoUsergrowthAdMaterialAuditAPIRequest) GetScenarioType() int64 {
 }
 
 // SetAdType is AdType Setter
-// 广告类型
+// 广告类型1 线上硬广；2 达人私域；3 线下；4 厂商生态
 func (r *TaobaoUsergrowthAdMaterialAuditAPIRequest) SetAdType(_adType int64) error {
 	r._adType = _adType
 	r.Set("ad_type", _adType)
@@ -199,7 +214,7 @@ func (r TaobaoUsergrowthAdMaterialAuditAPIRequest) GetAdType() int64 {
 }
 
 // SetCreativeType is CreativeType Setter
-// 创意类型
+// 创意类型,1 图片；2 视频
 func (r *TaobaoUsergrowthAdMaterialAuditAPIRequest) SetCreativeType(_creativeType int64) error {
 	r._creativeType = _creativeType
 	r.Set("creative_type", _creativeType)
@@ -212,7 +227,7 @@ func (r TaobaoUsergrowthAdMaterialAuditAPIRequest) GetCreativeType() int64 {
 }
 
 // SetAppId is AppId Setter
-// 应用id
+// 应用id 1 手淘
 func (r *TaobaoUsergrowthAdMaterialAuditAPIRequest) SetAppId(_appId int64) error {
 	r._appId = _appId
 	r.Set("app_id", _appId)

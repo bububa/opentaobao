@@ -42,4 +42,6 @@ type OrderDeliverer struct {
 	ConsigneePhone string `json:"consignee_phone,omitempty" xml:"consignee_phone,omitempty"`
 	// 运费
 	DeliveryFee int64 `json:"delivery_fee,omitempty" xml:"delivery_fee,omitempty"`
+	// 是否隐私号 0：非隐私号  1：隐私号
+	PrivacyPhoneFlag int64 `json:"privacy_phone_flag,omitempty" xml:"privacy_phone_flag,omitempty"`
 }

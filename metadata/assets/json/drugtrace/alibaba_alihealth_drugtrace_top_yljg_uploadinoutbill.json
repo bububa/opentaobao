@@ -21,7 +21,7 @@
 		{
 			"name": "physic_type",
 			"type": "Number",
-			"description": "药品类型【3普药2特药】",
+			"description": "药品类型[2,特药，3,普药]【可以随便填写，单据上传后会以实际为准】",
 			"required": true
 		},
 		{

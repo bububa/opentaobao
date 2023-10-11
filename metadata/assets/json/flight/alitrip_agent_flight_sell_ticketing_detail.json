@@ -56,7 +56,7 @@
 								{
 									"name": "cert_type",
 									"type": "Number",
-									"description": "证件类型"
+									"description": "0 身份证 1 护照 2 学生证 3 军官证 4 回乡证 5 台胞证 6 港澳通行证 7 国际海员 8 外国人永久居留证 9 其他证件 10 警官证 11 士兵证件 12 台湾通行证 13 入台证 14 户口簿 15 出生证 16 驾驶证 17 港澳居民居住证 18 台湾居民居住证"
 								},
 								{
 									"name": "tickets",
@@ -66,7 +66,7 @@
 								{
 									"name": "passenger_type",
 									"type": "Number",
-									"description": "乘客类型"
+									"description": "乘客类型: 1:成人, 2:儿童, 3:婴儿, 4:留学生"
 								},
 								{
 									"name": "ticket_price",
@@ -233,6 +233,36 @@
 									"name": "big_pnr",
 									"type": "String",
 									"description": "大编码"
+								},
+								{
+									"name": "sur_name",
+									"type": "String",
+									"description": "姓氏"
+								},
+								{
+									"name": "given_name",
+									"type": "String",
+									"description": "名字"
+								},
+								{
+									"name": "cert_period",
+									"type": "String",
+									"description": "乘机人证件有效期"
+								},
+								{
+									"name": "nationality",
+									"type": "String",
+									"description": "乘机人国籍"
+								},
+								{
+									"name": "cert_issue_country",
+									"type": "String",
+									"description": "乘机人证件颁发国家"
+								},
+								{
+									"name": "gender",
+									"type": "Number",
+									"description": "乘机人性别:1表示男性，2表示女性"
 								}
 							],
 							"name": "issue_list",
@@ -310,6 +340,21 @@
 							"name": "trip_type",
 							"type": "Number",
 							"description": "   1:\"单程\",     2:\"往返\",     3:\"多程\""
+						},
+						{
+							"name": "correlation_out_id",
+							"type": "String",
+							"description": "xxx"
+						},
+						{
+							"name": "urge_sla",
+							"type": "Date",
+							"description": "催出后服务时效"
+						},
+						{
+							"name": "urge_sla_desc",
+							"type": "String",
+							"description": "2023-05-26 20:13:08后存在订单被取消的风险"
 						}
 					],
 					"name": "data",

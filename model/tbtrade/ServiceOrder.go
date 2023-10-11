@@ -42,6 +42,8 @@ type ServiceOrder struct {
 	ServiceOrderType string `json:"service_order_type,omitempty" xml:"service_order_type,omitempty"`
 	// 服务订单与实物订单关联关系
 	ExtServiceBizId string `json:"ext_service_biz_id,omitempty" xml:"ext_service_biz_id,omitempty"`
+	// 套餐购服务原价� (单位分)
+	CommAmountUnit string `json:"comm_amount_unit,omitempty" xml:"comm_amount_unit,omitempty"`
 	// 虚拟服务子订单订单号
 	Oid int64 `json:"oid,omitempty" xml:"oid,omitempty"`
 	// 服务所属的交易订单号。如果服务为一年包换，则item_oid这笔订单享受改服务的保护
@@ -50,4 +52,8 @@ type ServiceOrder struct {
 	ServiceId int64 `json:"service_id,omitempty" xml:"service_id,omitempty"`
 	// 购买数量，取值范围为大于0的整数
 	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
+	// 套餐购对应的成分品id
+	CombineSubItemId int64 `json:"combine_sub_item_id,omitempty" xml:"combine_sub_item_id,omitempty"`
+	// 套餐购对应的成分品的skuId
+	CombineSubItemSkuId int64 `json:"combine_sub_item_sku_id,omitempty" xml:"combine_sub_item_sku_id,omitempty"`
 }

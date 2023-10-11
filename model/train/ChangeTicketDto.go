@@ -16,11 +16,11 @@ type ChangeTicketDto struct {
 	ChangeCoachName string `json:"change_coach_name,omitempty" xml:"change_coach_name,omitempty"`
 	// 票类型名称
 	TicketTypeName string `json:"ticket_type_name,omitempty" xml:"ticket_type_name,omitempty"`
-	// 改签票票价
+	// 改签票票价，单位分
 	ChangeTicketPrice string `json:"change_ticket_price,omitempty" xml:"change_ticket_price,omitempty"`
 	// 改签申请单id
 	ChangeApplyId int64 `json:"change_apply_id,omitempty" xml:"change_apply_id,omitempty"`
-	// 改签手续费
+	// 改签手续费，单位分
 	HandingFee int64 `json:"handing_fee,omitempty" xml:"handing_fee,omitempty"`
 	// 子单单号
 	SubOrderId int64 `json:"sub_order_id,omitempty" xml:"sub_order_id,omitempty"`

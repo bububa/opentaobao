@@ -12,13 +12,13 @@ import (
 // 酒店房型更新或添加
 type TaobaoXhotelRoomtypeUpdateAPIRequest struct {
 	model.Params
-	// 房型名称。不能超过30字(30个汉字或者60个英文字符)；添加房型时为必须
+	// 房型名称。不能超过200字；添加房型时为必须
 	_name string
 	// 具体面积大小，请按照正确格式填写。两种格式，例如：40 或者 10-20
 	_area string
 	// 客房在建筑的第几层，隔层为1-2层，4-5层，7-8层
 	_floor string
-	// 床型。必填，按链接中床型列表定义值存储 http://open.taobao.com/docs/doc.htm?&docType=1&articleId=105610
+	// 床型。按链接中床型列表定义值存储 http://open.taobao.com/docs/doc.htm?&docType=1&articleId=105610
 	_bedType string
 	// 床宽。按自己定义存储，比如：2.1米
 	_bedSize string
@@ -46,6 +46,12 @@ type TaobaoXhotelRoomtypeUpdateAPIRequest struct {
 	_newOuterId string
 	// 房间设施
 	_standardRoomFacilities string
+	// 窗型，窗型（windowType）： 0=无窗 1=有窗 2=部分有窗  窗型缺陷（windowTypeDefect）： 0=窗户不可打开通风 1=窗外有遮挡 2=窗外为酒店内景观  特殊窗（windowTypeSpecial）： 0=落地窗 1=飘窗 2=天窗 3=小窗。  当为有窗或部分有窗时，窗型缺陷可多选，特殊窗型需单选
+	_windowDesc string
+	// 房型加床政策。 费用(fee) 说明(desc)
+	_addBed string
+	// 儿童政策
+	_childrenPolicy string
 	// （已废弃）
 	_rid int64
 	// 最大入住人数，默认2（1-99）
@@ -87,7 +93,7 @@ func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetRawParams() model.Params {
 }
 
 // SetName is Name Setter
-// 房型名称。不能超过30字(30个汉字或者60个英文字符)；添加房型时为必须
+// 房型名称。不能超过200字；添加房型时为必须
 func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetName(_name string) error {
 	r._name = _name
 	r.Set("name", _name)
@@ -126,7 +132,7 @@ func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetFloor() string {
 }
 
 // SetBedType is BedType Setter
-// 床型。必填，按链接中床型列表定义值存储 http://open.taobao.com/docs/doc.htm?&amp;docType=1&amp;articleId=105610
+// 床型。按链接中床型列表定义值存储 http://open.taobao.com/docs/doc.htm?&amp;docType=1&amp;articleId=105610
 func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetBedType(_bedType string) error {
 	r._bedType = _bedType
 	r.Set("bed_type", _bedType)
@@ -305,6 +311,45 @@ func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetStandardRoomFacilities(_standa
 // GetStandardRoomFacilities StandardRoomFacilities Getter
 func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetStandardRoomFacilities() string {
 	return r._standardRoomFacilities
+}
+
+// SetWindowDesc is WindowDesc Setter
+// 窗型，窗型（windowType）： 0=无窗 1=有窗 2=部分有窗  窗型缺陷（windowTypeDefect）： 0=窗户不可打开通风 1=窗外有遮挡 2=窗外为酒店内景观  特殊窗（windowTypeSpecial）： 0=落地窗 1=飘窗 2=天窗 3=小窗。  当为有窗或部分有窗时，窗型缺陷可多选，特殊窗型需单选
+func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetWindowDesc(_windowDesc string) error {
+	r._windowDesc = _windowDesc
+	r.Set("window_desc", _windowDesc)
+	return nil
+}
+
+// GetWindowDesc WindowDesc Getter
+func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetWindowDesc() string {
+	return r._windowDesc
+}
+
+// SetAddBed is AddBed Setter
+// 房型加床政策。 费用(fee) 说明(desc)
+func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetAddBed(_addBed string) error {
+	r._addBed = _addBed
+	r.Set("add_bed", _addBed)
+	return nil
+}
+
+// GetAddBed AddBed Getter
+func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetAddBed() string {
+	return r._addBed
+}
+
+// SetChildrenPolicy is ChildrenPolicy Setter
+// 儿童政策
+func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetChildrenPolicy(_childrenPolicy string) error {
+	r._childrenPolicy = _childrenPolicy
+	r.Set("children_policy", _childrenPolicy)
+	return nil
+}
+
+// GetChildrenPolicy ChildrenPolicy Getter
+func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetChildrenPolicy() string {
+	return r._childrenPolicy
 }
 
 // SetRid is Rid Setter

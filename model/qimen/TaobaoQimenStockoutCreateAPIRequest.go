@@ -9,7 +9,7 @@ import (
 // TaobaoQimenStockoutCreateAPIRequest 出库单创建接口 API请求
 // taobao.qimen.stockout.create
 //
-// ERP调用奇门接口，创建出库单信息
+// taobao.qimen.returnorder.create
 type TaobaoQimenStockoutCreateAPIRequest struct {
 	model.Params
 	//

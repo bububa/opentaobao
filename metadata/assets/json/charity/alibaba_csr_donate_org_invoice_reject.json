@@ -1,0 +1,60 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "reject_reason",
+					"type": "String",
+					"description": "拒绝原因",
+					"required": true
+				},
+				{
+					"name": "invoice_id",
+					"type": "String",
+					"description": "发票id",
+					"required": true
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "操作人",
+					"required": true
+				}
+			],
+			"name": "csr_invoice_external_org_reject_dto",
+			"type": "CsrInvoiceExternalOrgRejectDTO",
+			"description": "参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "res_msg",
+			"type": "String",
+			"description": "响应描述"
+		},
+		{
+			"name": "res_code",
+			"type": "Number",
+			"description": "响应码"
+		},
+		{
+			"name": "res_data",
+			"type": "String",
+			"description": "无"
+		},
+		{
+			"name": "res_success",
+			"type": "Boolean",
+			"description": "成功"
+		},
+		{
+			"name": "res_localized_msg",
+			"type": "String",
+			"description": "无"
+		}
+	],
+	"name": "alibaba.csr.donate.org.invoice.reject",
+	"apiChineseName": "机构驳回商家票据信息",
+	"description": "机构驳回商家票据信息",
+	"id": 67037
+}

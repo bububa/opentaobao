@@ -47,7 +47,7 @@
 						{
 							"name": "inspect_report",
 							"type": "String",
-							"description": "[废弃中]验货报告, 此字段后续会废弃；如需使用参见: inspected_data.inspect_report"
+							"description": "[已废弃]验货报告, 此字段后续会废弃；如需使用参见: inspected_data.inspect_report"
 						},
 						{
 							"name": "item_id",
@@ -102,12 +102,12 @@
 						{
 							"name": "ware_house_city",
 							"type": "String",
-							"description": "[废弃中]已验货入仓城市(此字段后续会废弃；如需使用参见: inspected_data.ware_house_city)"
+							"description": "[已废弃]已验货入仓城市(此字段后续会废弃；如需使用参见: inspected_data.ware_house_city)"
 						},
 						{
 							"name": "ware_house_time",
 							"type": "Number",
-							"description": "[废弃中]已验货入仓时间(此字段后续会废弃；如需使用参见: inspected_data.ware_house_time)"
+							"description": "[已废弃]已验货入仓时间(此字段后续会废弃；如需使用参见: inspected_data.ware_house_time)"
 						},
 						{
 							"name": "item_tags",
@@ -309,7 +309,7 @@
 						{
 							"name": "sp_guarantee",
 							"type": "String",
-							"description": "[废弃中]商品服务标签，用逗号分隔  ||  1：100%验货；2：正品鉴别；3：七天包退；4：一年质保；5：48小时发货；7：质量问题包退；8：一物一证"
+							"description": "[已废弃]商品服务标签，用逗号分隔  ||  1：100%验货；2：正品鉴别；3：七天包退；4：一年质保；5：48小时发货；7：质量问题包退；8：一物一证"
 						},
 						{
 							"subParams": [
@@ -344,11 +344,48 @@
 									"name": "support_nfr_policy",
 									"type": "Boolean",
 									"description": "是否支持描述不符包邮退"
+								},
+								{
+									"name": "support_vnr_policy",
+									"type": "Boolean",
+									"description": "是否支持 虚拟-描述不符包退"
+								},
+								{
+									"name": "support_fd24hs_policy",
+									"type": "Boolean",
+									"description": "是否支持 极速发货-24小时"
+								},
+								{
+									"name": "support_fd10ms_policy",
+									"type": "Boolean",
+									"description": "是否支持 极速发货-10分钟"
 								}
 							],
 							"name": "after_sales_data",
 							"type": "IdleItemApiAfterSalesDO",
-							"description": "售后服务信息"
+							"description": "卖家服务信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "template_code",
+									"type": "String",
+									"description": "直充模板code"
+								},
+								{
+									"name": "template_extra_info",
+									"type": "String",
+									"description": "模版的额外参数"
+								},
+								{
+									"name": "owner",
+									"type": "Boolean",
+									"description": "当前服务商是否拥有直充编辑权限"
+								}
+							],
+							"name": "idle_item_api_auto_recharge_do",
+							"type": "IdleItemApiAutoRechargeDO",
+							"description": "商品直充相关信息"
 						}
 					],
 					"name": "data",

@@ -1,0 +1,79 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "pre_max_id",
+					"type": "Number",
+					"description": "上一页最大id"
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "当前页数"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页条数"
+				},
+				{
+					"name": "business_time",
+					"type": "Date",
+					"description": "业务时间",
+					"required": true
+				}
+			],
+			"name": "brand_co_product_group_user_query_param",
+			"type": "BrandCoProductGroupUserQueryParam",
+			"description": "查询条件",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "调用链id"
+		},
+		{
+			"name": "async_result",
+			"type": "String",
+			"description": "异步结果"
+		},
+		{
+			"name": "data",
+			"type": "Number",
+			"description": "统计数量"
+		},
+		{
+			"name": "issuccess",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		},
+		{
+			"name": "errcode",
+			"type": "String",
+			"description": "错误code"
+		},
+		{
+			"name": "is_async",
+			"type": "Boolean",
+			"description": "是否同步"
+		},
+		{
+			"name": "attributes",
+			"type": "Json",
+			"description": "扩展字段"
+		},
+		{
+			"name": "err_message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.mos.brand.coproduct.group.user.count",
+	"apiChineseName": "按照查询条件统计总数",
+	"description": "按照查询条件统计总数",
+	"id": 67434
+}

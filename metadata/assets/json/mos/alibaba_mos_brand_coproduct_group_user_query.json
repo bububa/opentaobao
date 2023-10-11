@@ -1,0 +1,134 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "pre_max_id",
+					"type": "Number",
+					"description": "上一页最大id"
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "当前页数"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页条数"
+				},
+				{
+					"name": "business_time",
+					"type": "Date",
+					"description": "业务时间"
+				}
+			],
+			"name": "brand_co_product_group_user_query_param",
+			"type": "BrandCoProductGroupUserQueryParam",
+			"description": "查询条件"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "调用链id"
+		},
+		{
+			"name": "async_result",
+			"type": "String",
+			"description": "异步结果"
+		},
+		{
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "组员数据id"
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "数据创建时间"
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "数据修改时间"
+				},
+				{
+					"name": "gz_name_cn",
+					"type": "String",
+					"description": "品牌名称"
+				},
+				{
+					"name": "main_work_no",
+					"type": "String",
+					"description": "主责任工号"
+				},
+				{
+					"name": "main_name",
+					"type": "String",
+					"description": "主责任姓名"
+				},
+				{
+					"name": "member_name",
+					"type": "String",
+					"description": "组员姓名"
+				},
+				{
+					"name": "member_work_no",
+					"type": "String",
+					"description": "组员工号"
+				},
+				{
+					"name": "contract_type",
+					"type": "String",
+					"description": "承包方式"
+				},
+				{
+					"name": "start_date",
+					"type": "Date",
+					"description": "开始时间"
+				},
+				{
+					"name": "end_date",
+					"type": "Date",
+					"description": "结束时间"
+				}
+			],
+			"name": "data",
+			"type": "BrandCoProductGroupUserDTO []",
+			"description": "组员列表信息"
+		},
+		{
+			"name": "issuccess",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		},
+		{
+			"name": "errcode",
+			"type": "String",
+			"description": "错误code"
+		},
+		{
+			"name": "is_async",
+			"type": "Boolean",
+			"description": "是否同步"
+		},
+		{
+			"name": "attributes",
+			"type": "Json",
+			"description": "扩展字段"
+		},
+		{
+			"name": "err_message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.mos.brand.coproduct.group.user.query",
+	"apiChineseName": "按照条件查询分页数据",
+	"description": "按照条件查询分页数据",
+	"id": 67433
+}

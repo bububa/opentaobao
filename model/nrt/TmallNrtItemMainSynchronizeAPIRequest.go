@@ -9,7 +9,7 @@ import (
 // TmallNrtItemMainSynchronizeAPIRequest 家装新零售主商品同步至阿里 API请求
 // tmall.nrt.item.main.synchronize
 //
-// 同步红星美凯龙存量商品到阿里
+// 同步卖场存量线下商品到阿里
 type TmallNrtItemMainSynchronizeAPIRequest struct {
 	model.Params
 	// 类目属性

@@ -1,0 +1,40 @@
+{
+	"requestParams": [
+		{
+			"name": "input_system_code",
+			"type": "String",
+			"description": "系统标识"
+		},
+		{
+			"name": "scene_id",
+			"type": "Number",
+			"description": "场景id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "success_res",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "error_code_res",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "content",
+			"type": "String",
+			"description": "口径树目录"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误描述"
+		}
+	],
+	"name": "alibaba.legal.standpoint.standpointtree.query",
+	"apiChineseName": "查询口径树目录",
+	"description": "查询口径树目录",
+	"id": 66889
+}

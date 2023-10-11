@@ -127,7 +127,7 @@
 								}
 							],
 							"name": "callback_contents",
-							"type": "DrfHalfDayCcCallBackContent[]",
+							"type": "DrfHalfDayCcCallbackContent[]",
 							"description": "作业内容"
 						},
 						{
@@ -142,7 +142,7 @@
 						}
 					],
 					"name": "callback_units",
-					"type": "DrfHalfDayCcCallBackUnit[]",
+					"type": "DrfHalfDayCcCallbackUnit[]",
 					"description": "作业单元"
 				},
 				{

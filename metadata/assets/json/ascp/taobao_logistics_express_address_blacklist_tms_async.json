@@ -1,0 +1,178 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于做幂等",
+					"required": true
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "时间戳（毫秒）",
+					"required": true
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "服务商ID",
+					"required": true
+				},
+				{
+					"name": "delivery_code",
+					"type": "String",
+					"description": "配资源编码",
+					"required": true
+				},
+				{
+					"name": "site_code",
+					"type": "String",
+					"description": "网点编码（仅一个）"
+				},
+				{
+					"name": "site_name",
+					"type": "String",
+					"description": "网点名称（仅一个）"
+				},
+				{
+					"name": "service_type",
+					"type": "String",
+					"description": "服务类型：1-上门取退",
+					"required": true
+				},
+				{
+					"name": "ability_type",
+					"type": "String",
+					"description": "能力：1-上门取退",
+					"required": true
+				},
+				{
+					"name": "service_scope_type",
+					"type": "String",
+					"description": "服务范围地址类型：1-行政地址；2-电子围栏",
+					"required": true
+				},
+				{
+					"name": "address_type",
+					"type": "String",
+					"description": "如果传入为行政地址，行政地址传入类型 1- 菜鸟地址库ID 传入 2- 中文地址传入"
+				},
+				{
+					"name": "address_ids",
+					"type": "String[]",
+					"description": "行政地址id（菜鸟地址库id）"
+				},
+				{
+					"subParams": [
+						{
+							"name": "province",
+							"type": "String",
+							"description": "浙江省"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "市"
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "区"
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "街道"
+						}
+					],
+					"name": "address_names",
+					"type": "AddressNames[]",
+					"description": "中文地址信息"
+				},
+				{
+					"name": "region_code",
+					"type": "String",
+					"description": "电子围栏外部ID（服务商配资源下必须全局唯一）"
+				},
+				{
+					"name": "region_address_id",
+					"type": "String",
+					"description": "电子围栏内包含的三级地址id（菜鸟地址库ID），电子围栏内包含多个三级地址时，需传多个，以英文逗号分隔"
+				},
+				{
+					"subParams": [
+						{
+							"name": "longitude",
+							"type": "String",
+							"description": "经度（高德）"
+						},
+						{
+							"name": "latitude",
+							"type": "String",
+							"description": "纬度（高德）"
+						}
+					],
+					"name": "region_ids",
+					"type": "RegionIds[]",
+					"description": "电子围栏（经纬度），电子围栏最多5000个点（数组）"
+				},
+				{
+					"subParams": [
+						{
+							"name": "reason",
+							"type": "String",
+							"description": "地址黑名单原因枚举，仅允许传一种： NEED_SWIPE_CARD  有门禁（刷卡、刷脸、梯控等） SECURITY_REFUSE 保安/门卫不允许进入 UNIT 特殊地址-部队 FACTORY 特殊地址-厂区 URBAN_VILLAGE 特殊地址-城中村 VILLAGE 特殊地址-村镇/村庄 TRANSIT_ WAREHOUSE 特殊地址-转运仓 COLLECTION_POINT 特殊地址-代收点 SCHOOL 特殊地址-学校 OTHER  其他原因"
+						},
+						{
+							"name": "detail_reason",
+							"type": "String",
+							"description": "详细原因 条件必填，reason=OTHER时，需要填写eg：都是放到门卫处"
+						}
+					],
+					"name": "extend_message",
+					"type": "ExtendMessage",
+					"description": "扩展信息"
+				}
+			],
+			"name": "address_blacklist_request",
+			"type": "AddressBlacklistRequest",
+			"description": "上门取退可揽范围黑名",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "系统成功失败   true|false"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息"
+				},
+				{
+					"name": "is_retry",
+					"type": "Boolean",
+					"description": "是否可重试"
+				}
+			],
+			"name": "address_blacklist_response",
+			"type": "AddressBlacklistResponse",
+			"description": "返回值"
+		}
+	],
+	"name": "taobao.logistics.express.address.blacklist.tms.async",
+	"apiChineseName": "上门取退可揽范围黑名单同步/更新",
+	"description": "上门取退可揽范围黑名单同步/更新",
+	"id": 67451
+}

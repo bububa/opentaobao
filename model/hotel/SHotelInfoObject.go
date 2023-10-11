@@ -12,7 +12,7 @@ type SHotelInfoObject struct {
 	Address string `json:"address,omitempty" xml:"address,omitempty"`
 	// 纬度
 	Lat string `json:"lat,omitempty" xml:"lat,omitempty"`
-	// 纬度
+	// 经度
 	Lng string `json:"lng,omitempty" xml:"lng,omitempty"`
 	// 酒店星级，1-5星，0是客栈
 	Star string `json:"star,omitempty" xml:"star,omitempty"`
@@ -20,7 +20,7 @@ type SHotelInfoObject struct {
 	OpeningTime string `json:"opening_time,omitempty" xml:"opening_time,omitempty"`
 	// 酒店装修时间
 	DecorateTime string `json:"decorate_time,omitempty" xml:"decorate_time,omitempty"`
-	// 电话，包括三种类型：&lt;br/&gt;1.固定电话，例如：0086-010-85322688&lt;br/&gt;2.移动电话，例如：13869696363&lt;br/&gt;3.400或800电话，例如：0086-4006123928
+	// 电话，包括三种类型：1.固定电话，例如：0086-010-853226882.移动电话，例如：138696963633.400或800电话，例如：0086-4006123928
 	Tel string `json:"tel,omitempty" xml:"tel,omitempty"`
 	// 评分
 	RateScore string `json:"rate_score,omitempty" xml:"rate_score,omitempty"`
@@ -48,11 +48,11 @@ type SHotelInfoObject struct {
 	ForeignDesc string `json:"foreign_desc,omitempty" xml:"foreign_desc,omitempty"`
 	// 标准酒店ID
 	Shid int64 `json:"shid,omitempty" xml:"shid,omitempty"`
-	// 省的code
+	// 省份code
 	Province int64 `json:"province,omitempty" xml:"province,omitempty"`
-	// 市的code
+	// 城市code
 	City int64 `json:"city,omitempty" xml:"city,omitempty"`
-	// 地区的值
+	// 地区code
 	District int64 `json:"district,omitempty" xml:"district,omitempty"`
 	// 评论数
 	RateNumber int64 `json:"rate_number,omitempty" xml:"rate_number,omitempty"`

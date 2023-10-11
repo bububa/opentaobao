@@ -44,6 +44,16 @@ type LogisticsInfo struct {
 	BlackDeliveryCps string `json:"black_delivery_cps,omitempty" xml:"black_delivery_cps,omitempty"`
 	// 服务决策的快递白名单列表
 	WhiteDeliveryCps string `json:"white_delivery_cps,omitempty" xml:"white_delivery_cps,omitempty"`
+	// 未使用仓建议报错
+	UnusedWarehouseErrorMsg string `json:"unused_warehouse_error_msg,omitempty" xml:"unused_warehouse_error_msg,omitempty"`
+	// 未使用配建议报错
+	UnusedDeliveryErrorMsg string `json:"unused_delivery_error_msg,omitempty" xml:"unused_delivery_error_msg,omitempty"`
+	// 使用禁止配报错
+	UsedBlackDeliveryErrorMsg string `json:"used_black_delivery_error_msg,omitempty" xml:"used_black_delivery_error_msg,omitempty"`
+	// 承诺/最晚出库时间
+	PromiseOutboundTime string `json:"promise_outbound_time,omitempty" xml:"promise_outbound_time,omitempty"`
+	// 承诺/最晚揽收时间
+	PromiseCollectTime string `json:"promise_collect_time,omitempty" xml:"promise_collect_time,omitempty"`
 	// 主交易号
 	TradeId int64 `json:"trade_id,omitempty" xml:"trade_id,omitempty"`
 	// 子交易号
@@ -54,4 +64,6 @@ type LogisticsInfo struct {
 	NumIid int64 `json:"num_iid,omitempty" xml:"num_iid,omitempty"`
 	// 组合货品比例
 	ItemRatio int64 `json:"item_ratio,omitempty" xml:"item_ratio,omitempty"`
+	// 订单推荐配送类型      * 0：子单无配建议；ERP按照自己的逻辑进行择配。      * 1：子单有推荐配list，erp可按需参考。      * 2：子单有推荐配list，erp必须在推荐配list中选择配品牌。      * 3：子单有禁用配list，erp需要过滤配品牌。
+	BizDeliveryType int64 `json:"biz_delivery_type,omitempty" xml:"biz_delivery_type,omitempty"`
 }

@@ -112,6 +112,11 @@
 					"type": "String",
 					"description": "计价单位",
 					"required": true
+				},
+				{
+					"name": "lead_pur_org",
+					"type": "String[]",
+					"description": "主导采购组织"
 				}
 			],
 			"name": "access_product_dto",

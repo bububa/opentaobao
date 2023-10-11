@@ -14,6 +14,11 @@
 			"name": "fulfil_task_id",
 			"type": "Number",
 			"description": "核销单id"
+		},
+		{
+			"name": "pic_urls",
+			"type": "String",
+			"description": "图片地址回传集合"
 		}
 	],
 	"responseParams": [

@@ -15,7 +15,7 @@
 		{
 			"name": "bill_type",
 			"type": "Number",
-			"description": "单据类型[321,零售出库][322,疫苗接种]",
+			"description": "单据类型[323,零售出库][322,疫苗接种][116,消费者退货入库]",
 			"required": true
 		},
 		{

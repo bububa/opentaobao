@@ -8,7 +8,7 @@ import (
 // TaobaoQimenStockoutCreate 出库单创建接口
 // taobao.qimen.stockout.create
 //
-// ERP调用奇门接口，创建出库单信息
+// taobao.qimen.returnorder.create
 func TaobaoQimenStockoutCreate(clt *core.SDKClient, req *qimen.TaobaoQimenStockoutCreateAPIRequest, session string) (*qimen.TaobaoQimenStockoutCreateAPIResponse, error) {
 	var resp qimen.TaobaoQimenStockoutCreateAPIResponse
 	err := clt.Post(req, &resp, session)

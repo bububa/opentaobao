@@ -58,4 +58,6 @@ type InvoiceMainExt struct {
 	WaybillNo string `json:"waybill_no,omitempty" xml:"waybill_no,omitempty"`
 	// 关联单据号
 	DocNo string `json:"doc_no,omitempty" xml:"doc_no,omitempty"`
+	// 发票类型（支持全票种）
+	DocumentType string `json:"document_type,omitempty" xml:"document_type,omitempty"`
 }

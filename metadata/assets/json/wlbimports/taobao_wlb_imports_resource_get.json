@@ -42,7 +42,7 @@
 				}
 			],
 			"name": "to_address",
-			"type": "ReciverAddressDo",
+			"type": "ReciverAddressDO",
 			"description": "买家收货地信息",
 			"required": true
 		}
@@ -94,7 +94,7 @@
 						}
 					],
 					"name": "delivery_price",
-					"type": "DeliveryPrice",
+					"type": "BSWeightPrice",
 					"description": "服务报价。首重（1磅) CNY￥3元 续重（1磅) CNY￥6元"
 				}
 			],

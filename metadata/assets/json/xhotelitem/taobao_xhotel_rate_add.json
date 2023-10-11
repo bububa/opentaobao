@@ -104,6 +104,11 @@
 			"name": "online_booking_binding_info",
 			"type": "String",
 			"description": "在线预约关联关系推送，priceRuleNumber：加价规则序号"
+		},
+		{
+			"name": "hotel_xitem_infos",
+			"type": "String",
+			"description": " 是一个JSONArray 字符串 actionType  操作类型 BOUND: 绑定，UNBOUND：解绑; outXcode  元素编码 ; subTypeCode x 元素子类型， 参考：https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.9MjTPx\u0026docType=1\u0026articleId=121402\u0026previewCode=787DFB0895F05C90D167579A04BD32E3; status: 状态是否生效0 失效, 1生效; shortName x元素标题; time 服务时间段(18:00-21:00); value 商品价值(100 - 999900 单位分); itemDesc 商品使用说明; dimensionType 附加产品使用维度   1:每间房维度 2:每间夜维度; picList 图片格式化信息 [{\"url\":\"https://xxxxx/\",\"isMain\":true}]; adultCount 成人数量 (1-99); childCount 儿童数量 (0-99); itemLimit 使用限制, 文字描述,200 字内; checkInStart 入住生效开始时间; checkInEnd 入住生效结束时间; bookStartTime 预定生效开始时间; bookStartEnd 预定生效截止时间; featureDetail 详细信息json字符串 [{\"detailName\":\"免费寄存\",\"detailValue\":[\"\"],\"type\":\"single\",\"priority\":1}]"
 		}
 	],
 	"responseParams": [

@@ -32,7 +32,7 @@ type TaobaoXhotelRateplanAddAPIRequest struct {
 	_guaranteeStartTime string
 	// 双方映射后的会员等级。如需开通，需要申请权限，取值范围为：1,2,3,4,5,none。比如飞猪F3对应商家V4,则传4.（如果有疑问请联系对接技术支持）
 	_memberLevel string
-	// 销售渠道。如需开通，需要申请权限。目前支持的渠道有 H:飞猪 O:钉钉商旅 A:集团内部商旅 M:无线专享价 V:度假。如果只投放飞猪，改字段不用填写或者只填H；如果有多个用","分开。如果需要投放其他渠道，请联系飞猪运营或者技术支持。
+	// 销售渠道。如需开通，需要申请权限。目前支持的渠道有 H:飞猪全渠道（选择H，可实现飞猪、高德、支付宝、手淘均可售卖） O:钉钉商旅 。如果有多个用","分开，比如H,O。如果需要投放其他渠道，请联系飞猪运营或者技术支持。
 	_channel string
 	// 系统商，一般不填写，使用须申请
 	_vendor string
@@ -311,7 +311,7 @@ func (r TaobaoXhotelRateplanAddAPIRequest) GetMemberLevel() string {
 }
 
 // SetChannel is Channel Setter
-// 销售渠道。如需开通，需要申请权限。目前支持的渠道有 H:飞猪 O:钉钉商旅 A:集团内部商旅 M:无线专享价 V:度假。如果只投放飞猪，改字段不用填写或者只填H；如果有多个用&#34;,&#34;分开。如果需要投放其他渠道，请联系飞猪运营或者技术支持。
+// 销售渠道。如需开通，需要申请权限。目前支持的渠道有 H:飞猪全渠道（选择H，可实现飞猪、高德、支付宝、手淘均可售卖） O:钉钉商旅 。如果有多个用&#34;,&#34;分开，比如H,O。如果需要投放其他渠道，请联系飞猪运营或者技术支持。
 func (r *TaobaoXhotelRateplanAddAPIRequest) SetChannel(_channel string) error {
 	r._channel = _channel
 	r.Set("channel", _channel)

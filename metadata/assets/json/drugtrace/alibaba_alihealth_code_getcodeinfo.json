@@ -239,12 +239,12 @@
 		{
 			"name": "msg_info",
 			"type": "String",
-			"description": "接口调用状态"
+			"description": "接口调用状态，FAIL_BIZ_CODE_FORMAT_ERROR:追溯码格式错误,FAIL_BIZ_CODE_NO_AUTH:权限不足,FAIL_BIZ_CODE_NOT_EXIST:不是追溯码,FAIL_BIZ_CODE_NOT_ACTIVE:追溯码未激活,FAIL_BIZ_REMOTE_REQ_ERROR:调用远程服务失败,1000:调用成功"
 		},
 		{
 			"name": "msg_code",
 			"type": "String",
-			"description": "接口调用状态码"
+			"description": "接口调用状态码，FAIL_BIZ_CODE_FORMAT_ERROR:追溯码格式错误,FAIL_BIZ_CODE_NO_AUTH:权限不足,FAIL_BIZ_CODE_NOT_EXIST:不是追溯码,FAIL_BIZ_CODE_NOT_ACTIVE:追溯码未激活,FAIL_BIZ_REMOTE_REQ_ERROR:调用远程服务失败,1000:调用成功"
 		}
 	],
 	"name": "alibaba.alihealth.code.getcodeinfo",

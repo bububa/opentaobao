@@ -4,6 +4,8 @@ package tbtrade
 type Order struct {
 	// 发货信息，目前只记录了发货方式
 	ShipInfo []ShipInfo `json:"ship_info,omitempty" xml:"ship_info>ship_info,omitempty"`
+	// 组合品信息
+	CombineItemInfo []CombineSubItemDo `json:"combine_item_info,omitempty" xml:"combine_item_info>combine_sub_item_do,omitempty"`
 	// 发货信息，目前只记录了发货方式
 	ShpInfo []ShipInfo `json:"shp_info,omitempty" xml:"shp_info>ship_info,omitempty"`
 	// 商品标题
@@ -254,6 +256,14 @@ type Order struct {
 	PromiseCollectTime string `json:"promise_collect_time,omitempty" xml:"promise_collect_time,omitempty"`
 	// 订单是否属于b2b代销
 	B2bDaixiao string `json:"b2b_daixiao,omitempty" xml:"b2b_daixiao,omitempty"`
+	// 套餐购套餐ID
+	BundleId string `json:"bundle_id,omitempty" xml:"bundle_id,omitempty"`
+	// 套餐购套餐名称
+	BundleOutName string `json:"bundle_out_name,omitempty" xml:"bundle_out_name,omitempty"`
+	// 主品关联的1元商品订单号
+	OneYuanReservationOrders string `json:"one_yuan_reservation_orders,omitempty" xml:"one_yuan_reservation_orders,omitempty"`
+	// 鉴定编码
+	JewccNo string `json:"jewcc_no,omitempty" xml:"jewcc_no,omitempty"`
 	// 订单修改时间，目前只有taobao.trade.ordersku.update会返回此字段。
 	Modified string `json:"modified,omitempty" xml:"modified,omitempty"`
 	// 商品数字ID
@@ -274,6 +284,8 @@ type Order struct {
 	SortInfo *SortInfo `json:"sort_info,omitempty" xml:"sort_info,omitempty"`
 	// 订单履约类型
 	TradeFulfillmentType int64 `json:"trade_fulfillment_type,omitempty" xml:"trade_fulfillment_type,omitempty"`
+	// 套餐购套餐类型标识 1营销套餐-PromoBundle 2人群套餐-CrowdBundle
+	BundleType int64 `json:"bundle_type,omitempty" xml:"bundle_type,omitempty"`
 	// 买家是否已评价。可选值：true(已评价)，false(未评价)
 	BuyerRate bool `json:"buyer_rate,omitempty" xml:"buyer_rate,omitempty"`
 	// 卖家是否已评价。可选值：true(已评价)，false(未评价)
@@ -302,4 +314,8 @@ type Order struct {
 	HasGift bool `json:"has_gift,omitempty" xml:"has_gift,omitempty"`
 	// 表示该子订单会ascp会自动流转到菜鸟仓发货
 	IsForceDc bool `json:"is_force_dc,omitempty" xml:"is_force_dc,omitempty"`
+	// 仅对赠品子单生效，退货时赠品是否需要随主品一起退回，字段缺失/true-需要退回，false-无需退回
+	NeedReturn bool `json:"need_return,omitempty" xml:"need_return,omitempty"`
+	// 是否家装分销订单，入参fields中传入orders.is_jzfx时返回
+	IsJzfx bool `json:"is_jzfx,omitempty" xml:"is_jzfx,omitempty"`
 }

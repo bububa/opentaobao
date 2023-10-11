@@ -278,6 +278,51 @@
 							"name": "cash_fee",
 							"type": "String",
 							"description": "返现金额，单位：分"
+						},
+						{
+							"name": "buyer_fee",
+							"type": "Number",
+							"description": "买家服务费，分"
+						},
+						{
+							"name": "buyout_price",
+							"type": "Number",
+							"description": "一口价金额，分"
+						},
+						{
+							"name": "recycle_price",
+							"type": "Number",
+							"description": "回收金额，分"
+						},
+						{
+							"name": "quote_version",
+							"type": "String",
+							"description": "估价版本，第几次估价"
+						},
+						{
+							"name": "pre_pay_amount",
+							"type": "Number",
+							"description": "应付预付款金额，分"
+						},
+						{
+							"name": "pre_pay_no",
+							"type": "String",
+							"description": "服务商预付款打款支付宝流水号"
+						},
+						{
+							"name": "pre_pay_status",
+							"type": "Number",
+							"description": "预付款状态：1-未付款；2-已付款；"
+						},
+						{
+							"name": "station_info",
+							"type": "String",
+							"description": "门店信息"
+						},
+						{
+							"name": "pre_final_amount",
+							"type": "Number",
+							"description": "尾款，分"
 						}
 					],
 					"name": "module",

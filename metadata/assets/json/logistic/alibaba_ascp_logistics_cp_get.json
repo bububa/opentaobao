@@ -1,0 +1,72 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "order_mode",
+					"type": "String",
+					"description": "可选值:offline(自己联系发货),online(在线下单),all(自己联系+在线下单)instant(同城配送). ",
+					"required": true
+				}
+			],
+			"name": "logistics_resource_request",
+			"type": "LogisticsResourceRequest",
+			"description": "请求体"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "reg_mail_no",
+							"type": "String",
+							"description": "运单号校验正则表达式"
+						},
+						{
+							"name": "resource_code",
+							"type": "String",
+							"description": "快递资源编码"
+						},
+						{
+							"name": "resource_name",
+							"type": "String",
+							"description": "快递资源名称"
+						},
+						{
+							"name": "company_id",
+							"type": "Number",
+							"description": "快递公司id"
+						}
+					],
+					"name": "resource_list",
+					"type": "LogisticsResourceDTO[]",
+					"description": "快递公司资源列表"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功"
+				},
+				{
+					"name": "error_desc",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "ResultDTO",
+			"description": "返回值"
+		}
+	],
+	"name": "alibaba.ascp.logistics.cp.get",
+	"apiChineseName": "快递公司资源列表查询接口",
+	"description": "快递公司资源列表查询接口",
+	"id": 66343
+}

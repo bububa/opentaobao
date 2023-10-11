@@ -1,0 +1,50 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "门店外部id",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "门店状态 1-正常 2-暂停 3-关闭",
+					"required": true
+				}
+			],
+			"name": "store_status_dto",
+			"type": "StoreStatusDTO",
+			"description": "dto",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "return_code",
+			"type": "String",
+			"description": "aaa"
+		},
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "aaa"
+		},
+		{
+			"name": "return_success",
+			"type": "Boolean",
+			"description": "aaa"
+		},
+		{
+			"name": "return_message",
+			"type": "String",
+			"description": "aaa"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.store.status.change.sync",
+	"apiChineseName": "门店状态变更",
+	"description": "门店状态变更",
+	"id": 66635
+}

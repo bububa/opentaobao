@@ -22,6 +22,16 @@
 					"name": "charge_item_name",
 					"type": "String",
 					"description": "费用项名称"
+				},
+				{
+					"name": "pic_urls",
+					"type": "String[]",
+					"description": "图片地址回传集合"
+				},
+				{
+					"name": "attributes",
+					"type": "String",
+					"description": "扩展字段"
 				}
 			],
 			"name": "extra_charge_item_list",

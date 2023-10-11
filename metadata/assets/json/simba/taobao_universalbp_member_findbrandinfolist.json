@@ -1,0 +1,82 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码",
+					"required": true
+				}
+			],
+			"name": "top_service_context",
+			"type": "TopServiceContext",
+			"description": "topServiceContext",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "ok",
+							"type": "Boolean",
+							"description": "是否成功"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误编码"
+						}
+					],
+					"name": "info",
+					"type": "TopInfo",
+					"description": "请求系统信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "brand_id",
+									"type": "String",
+									"description": "品牌ID"
+								},
+								{
+									"name": "brand_name",
+									"type": "String",
+									"description": "品牌名称"
+								}
+							],
+							"name": "brand_info_v_o_list",
+							"type": "BrandInfoVo[]",
+							"description": "批量结果集"
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "数量"
+						}
+					],
+					"name": "brand_info_v_o_top_bulk_data",
+					"type": "TopBulkData",
+					"description": "结果集"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.universalbp.member.findbrandinfolist",
+	"apiChineseName": "查询可用品牌列表",
+	"description": "查询账号对应的品牌，用于品牌人群屏蔽等",
+	"id": 67284
+}

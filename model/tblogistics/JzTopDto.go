@@ -3,11 +3,11 @@ package tblogistics
 // JzTopDto 结构体
 type JzTopDto struct {
 	// 快递公司列表
-	Expresses []Expresses `json:"expresses,omitempty" xml:"expresses>expresses,omitempty"`
+	Expresses []TPDto `json:"expresses,omitempty" xml:"expresses>tp_dto,omitempty"`
 	// 安装公司列表
-	InsTps []Instps `json:"ins_tps,omitempty" xml:"ins_tps>instps,omitempty"`
+	InsTps []TPDto `json:"ins_tps,omitempty" xml:"ins_tps>tp_dto,omitempty"`
 	// 物流公司列表
-	LgCps []Lgcps `json:"lg_cps,omitempty" xml:"lg_cps>lgcps,omitempty"`
+	LgCps []TPDto `json:"lg_cps,omitempty" xml:"lg_cps>tp_dto,omitempty"`
 	// 商品对应的服务信息
 	GoodsRelations string `json:"goods_relations,omitempty" xml:"goods_relations,omitempty"`
 	// 是否支持快递

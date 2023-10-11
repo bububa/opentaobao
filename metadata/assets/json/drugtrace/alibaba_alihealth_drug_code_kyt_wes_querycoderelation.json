@@ -1,0 +1,375 @@
+{
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "接口调用企业的唯一标识（接口调用者）",
+			"required": true
+		},
+		{
+			"name": "license_token",
+			"type": "String",
+			"description": "license_token",
+			"required": true
+		},
+		{
+			"name": "code",
+			"type": "String",
+			"description": "追溯码",
+			"required": true
+		},
+		{
+			"name": "des_ref_ent_id",
+			"type": "String",
+			"description": "目标企业唯一标识（为哪个企业查询，一般与入参ref_ent_id一样）",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "process_flag",
+									"type": "String",
+									"description": "处理标志"
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "状态"
+								},
+								{
+									"name": "relation_type",
+									"type": "String",
+									"description": "关联关系类型"
+								},
+								{
+									"name": "user_cert",
+									"type": "String",
+									"description": "紧急人"
+								},
+								{
+									"name": "prod_code",
+									"type": "String",
+									"description": "生产编号"
+								},
+								{
+									"name": "oper_ic_name",
+									"type": "String",
+									"description": "操作人姓名"
+								},
+								{
+									"name": "upload_file_name",
+									"type": "String",
+									"description": "上传文件名"
+								},
+								{
+									"name": "upload_file_path",
+									"type": "String",
+									"description": "上传文件路径"
+								},
+								{
+									"name": "active_date",
+									"type": "Date",
+									"description": "激活时间"
+								},
+								{
+									"name": "ref_ent_id",
+									"type": "String",
+									"description": "企业ID"
+								},
+								{
+									"name": "ent_id",
+									"type": "String",
+									"description": "旧企业ID"
+								},
+								{
+									"name": "process_date",
+									"type": "Date",
+									"description": "处理日期"
+								},
+								{
+									"name": "process_end_date",
+									"type": "Date",
+									"description": "处理结束时间"
+								},
+								{
+									"name": "oper_ic_code",
+									"type": "String",
+									"description": "操作人编码"
+								},
+								{
+									"name": "upload_flag",
+									"type": "String",
+									"description": "上传标识"
+								},
+								{
+									"name": "crt_date",
+									"type": "Date",
+									"description": "激活时间"
+								},
+								{
+									"name": "process_count",
+									"type": "String",
+									"description": "处理数量"
+								},
+								{
+									"name": "active_count",
+									"type": "Number",
+									"description": "总激活数量"
+								},
+								{
+									"name": "other_num",
+									"type": "Number",
+									"description": "最大包装数量"
+								},
+								{
+									"name": "small_num",
+									"type": "Number",
+									"description": "小码数量"
+								},
+								{
+									"name": "crt_date_string",
+									"type": "String",
+									"description": "关联关系文件上传日期"
+								},
+								{
+									"name": "bill_in_id",
+									"type": "String",
+									"description": "单据id"
+								},
+								{
+									"name": "code_active_info_id",
+									"type": "String",
+									"description": "激活信息id"
+								}
+							],
+							"name": "code_active_info_d_t_o",
+							"type": "CodeActiveInfoDto",
+							"description": "激活信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "status",
+									"type": "String",
+									"description": "码状态（I核注O核销A激活C注销E错误码）"
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "追溯码"
+								},
+								{
+									"name": "code_level",
+									"type": "String",
+									"description": "码等级--展示等级 【相当于包装等级，1代表最大展示等级, 如：申请的包装比例是1:5:10, 对应的码展示等级就是 1、2、3, 代表大码、中码、小码】  "
+								},
+								{
+									"name": "parent_code",
+									"type": "String",
+									"description": "父码"
+								},
+								{
+									"name": "code_pack_level",
+									"type": "String",
+									"description": "码等级【1代表最小码   如：申请的包装比例是1:5:10, 对应的码等级就是3、2、1, 代表大码、中码、小码】"
+								}
+							],
+							"name": "code_relation_list",
+							"type": "CodeInfo[]",
+							"description": "码关联关系"
+						},
+						{
+							"name": "is_smallest",
+							"type": "String",
+							"description": "是否是最小包装"
+						},
+						{
+							"subParams": [
+								{
+									"name": "code_list",
+									"type": "String[]",
+									"description": "码信息"
+								}
+							],
+							"name": "pkg_info_d_t_o",
+							"type": "PkgInfoDto",
+							"description": "药品包装信息"
+						},
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "physic_info",
+											"type": "String",
+											"description": "药品信息"
+										},
+										{
+											"name": "ref_ent_id",
+											"type": "String",
+											"description": "企业id"
+										},
+										{
+											"name": "pkg_spec",
+											"type": "String",
+											"description": "药品包装规格"
+										},
+										{
+											"name": "prepn_spec",
+											"type": "String",
+											"description": "药品制剂规格"
+										},
+										{
+											"name": "prepn_type",
+											"type": "String",
+											"description": "药品制剂类型"
+										},
+										{
+											"name": "physic_name",
+											"type": "String",
+											"description": "药品通用名称"
+										},
+										{
+											"name": "pkg_ratio",
+											"type": "String",
+											"description": "药品包装比例"
+										},
+										{
+											"name": "exprie_date",
+											"type": "String",
+											"description": "药品有效期至"
+										},
+										{
+											"name": "produce_batch_no",
+											"type": "String",
+											"description": "药品生产批次号"
+										},
+										{
+											"name": "produce_date",
+											"type": "String",
+											"description": "药品生产日期"
+										},
+										{
+											"name": "sub_type_no",
+											"type": "String",
+											"description": "药品自类编码"
+										},
+										{
+											"name": "product_code",
+											"type": "String",
+											"description": "药品编号"
+										},
+										{
+											"name": "prod_id",
+											"type": "String",
+											"description": "药品ID"
+										},
+										{
+											"name": "approve_no",
+											"type": "String",
+											"description": "批准文号"
+										},
+										{
+											"name": "physic_type",
+											"type": "String",
+											"description": "药品类型"
+										},
+										{
+											"name": "approval_licence_expiry_old",
+											"type": "Date",
+											"description": "原批准文号有效期"
+										},
+										{
+											"name": "approval_licence_date",
+											"type": "Date",
+											"description": "批准文号批准日期"
+										},
+										{
+											"name": "approval_licence_expiry",
+											"type": "Date",
+											"description": "批准文号有效期至"
+										},
+										{
+											"name": "approval_licence_no_old",
+											"type": "String",
+											"description": "原批准文号"
+										}
+									],
+									"name": "base_info_list",
+									"type": "BaseInfoDto[]",
+									"description": "药品基础信息"
+								}
+							],
+							"name": "base_infos_d_t_o",
+							"type": "BaseInfosDto",
+							"description": "药品基础信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "produce_date",
+									"type": "Date",
+									"description": "生产日期"
+								},
+								{
+									"name": "expire_date",
+									"type": "String",
+									"description": "有效期"
+								},
+								{
+									"name": "batch_no",
+									"type": "String",
+									"description": "批次号"
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "码"
+								},
+								{
+									"name": "pkg_amount",
+									"type": "String",
+									"description": "最小包装数量"
+								}
+							],
+							"name": "produce_info_list",
+							"type": "ProduceInfoDto[]",
+							"description": "生产信息"
+						}
+					],
+					"name": "model_list",
+					"type": "CodeRelationDto[]",
+					"description": "model"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo"
+				},
+				{
+					"name": "response_success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihealth.drug.code.kyt.wes.querycoderelation",
+	"apiChineseName": "wes码关联关系查询",
+	"description": "单码关联关系查询，通过一个码查询这个码下的所有子码。（只有做过入库的码，才能能进行查询）",
+	"id": 65670
+}

@@ -1,0 +1,63 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "box_code_type",
+					"type": "String",
+					"description": "箱号类型",
+					"required": true
+				},
+				{
+					"name": "container_code",
+					"type": "String",
+					"description": "容器号",
+					"required": true
+				},
+				{
+					"name": "biz_type",
+					"type": "String",
+					"description": "业务类型",
+					"required": true
+				}
+			],
+			"name": "box_code_request",
+			"type": "BoxCodeRequest",
+			"description": "入口参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "1"
+				},
+				{
+					"name": "box_code",
+					"type": "String",
+					"description": "箱号"
+				}
+			],
+			"name": "result",
+			"type": "BoxCodeResponse",
+			"description": "result"
+		}
+	],
+	"name": "alibaba.tcwms.outbound.load.boxcode.create",
+	"apiChineseName": "创建箱号",
+	"description": "创建箱号",
+	"id": 66091
+}

@@ -16,6 +16,8 @@ type AlibabaServicecenterWorkcardServiceskuSuggestAPIRequest struct {
 	_tpSuggestServiceSkuInfos []TpSuggestServiceSkuInfoDto
 	// 真实履约服务商nick(非erp系统不要调用)
 	_realTpNick string
+	// 拓展信息
+	_extendInfo string
 	// 工单id
 	_workcardId int64
 }
@@ -68,6 +70,19 @@ func (r *AlibabaServicecenterWorkcardServiceskuSuggestAPIRequest) SetRealTpNick(
 // GetRealTpNick RealTpNick Getter
 func (r AlibabaServicecenterWorkcardServiceskuSuggestAPIRequest) GetRealTpNick() string {
 	return r._realTpNick
+}
+
+// SetExtendInfo is ExtendInfo Setter
+// 拓展信息
+func (r *AlibabaServicecenterWorkcardServiceskuSuggestAPIRequest) SetExtendInfo(_extendInfo string) error {
+	r._extendInfo = _extendInfo
+	r.Set("extend_info", _extendInfo)
+	return nil
+}
+
+// GetExtendInfo ExtendInfo Getter
+func (r AlibabaServicecenterWorkcardServiceskuSuggestAPIRequest) GetExtendInfo() string {
+	return r._extendInfo
 }
 
 // SetWorkcardId is WorkcardId Setter

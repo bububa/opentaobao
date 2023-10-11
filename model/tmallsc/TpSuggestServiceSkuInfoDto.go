@@ -6,4 +6,6 @@ type TpSuggestServiceSkuInfoDto struct {
 	ServiceSkuCode string `json:"service_sku_code,omitempty" xml:"service_sku_code,omitempty"`
 	// 问题图片链接
 	PicUrl string `json:"pic_url,omitempty" xml:"pic_url,omitempty"`
+	// 服务商调整后的价格
+	ServiceSkuPrice string `json:"service_sku_price,omitempty" xml:"service_sku_price,omitempty"`
 }

@@ -1,0 +1,85 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "wds_coordination_order_id",
+					"type": "String",
+					"description": "BFC单号",
+					"required": true
+				},
+				{
+					"name": "price",
+					"type": "Number",
+					"description": "发起调整金额 单位：分",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "原因类型\u0000: 1为服务费用\u0000 2为二次上门费用\u0000 3为代付费用\u0000 4为配件费用\u0000 5为拆旧费用\u0000 6为维修费用\u0000 7为空跑费用\u0000 8为其它费用\u0000",
+					"required": true
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "描述"
+				},
+				{
+					"name": "feature",
+					"type": "String",
+					"description": "扩展字段"
+				}
+			],
+			"name": "oms_launch_extra_charge_parameter",
+			"type": "OmsLaunchExtraChargeParameter",
+			"description": "请求对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "extra_charge_service_order_id",
+							"type": "String",
+							"description": "增加费用服务调整单ID"
+						},
+						{
+							"name": "feature",
+							"type": "String",
+							"description": "扩展字段"
+						}
+					],
+					"name": "data",
+					"type": "Data",
+					"description": "返回对象"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "ResultWrapper",
+			"description": "返回对象"
+		}
+	],
+	"name": "alibaba.ascp.industry.launch.extra.charge",
+	"apiChineseName": "阿里巴巴.行业.增加费用.服务商发起",
+	"description": "阿里巴巴.行业.增加费用.服务商发起",
+	"id": 66690
+}

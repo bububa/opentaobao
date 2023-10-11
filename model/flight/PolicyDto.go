@@ -28,6 +28,12 @@ type PolicyDto struct {
 	FareBasis string `json:"fare_basis,omitempty" xml:"fare_basis,omitempty"`
 	// 中转点
 	TransitAirport string `json:"transit_airport,omitempty" xml:"transit_airport,omitempty"`
+	// 前段可衔接航司
+	BeforeCombineAirline string `json:"before_combine_airline,omitempty" xml:"before_combine_airline,omitempty"`
+	// 后段可衔接航司
+	NextCombineAirline string `json:"next_combine_airline,omitempty" xml:"next_combine_airline,omitempty"`
+	// 后段可衔接城市(&#34;,&#34;拼接)
+	NextCombineCity string `json:"next_combine_city,omitempty" xml:"next_combine_city,omitempty"`
 	// 是否订位：1，平台订位；0，平台不订位；2，紧张订位
 	CreatePnr int64 `json:"create_pnr,omitempty" xml:"create_pnr,omitempty"`
 	// 政策来源：0，手工政策；1，excel政策；2，api政策
@@ -36,9 +42,9 @@ type PolicyDto struct {
 	Price *PriceDto `json:"price,omitempty" xml:"price,omitempty"`
 	// 销售信息
 	Sale *SaleDto `json:"sale,omitempty" xml:"sale,omitempty"`
-	// 政策状态：1，有效；2，挂起；0，删除
+	// 政策状态：1，有效；2，挂起；0，删除 3，停用
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
-	// 舱位条件:0,白名单；1，黑名单
+	// 0-白名单，航班舱位命中填写的去程/回程舱位，则可以使用本条政策；1-黑名单，航班舱位命中填写的去程/回程舱位，则不可以使用本条政策；默认为0-白名单。
 	IsWhite int64 `json:"is_white,omitempty" xml:"is_white,omitempty"`
 	// 是否验价：0，不验价；1，验价
 	Pata int64 `json:"pata,omitempty" xml:"pata,omitempty"`
@@ -52,4 +58,10 @@ type PolicyDto struct {
 	CreatePnrLimit int64 `json:"create_pnr_limit,omitempty" xml:"create_pnr_limit,omitempty"`
 	// 指定票面价，单位为元
 	FarePrice int64 `json:"fare_price,omitempty" xml:"fare_price,omitempty"`
+	// 0-往返两程总价， 1-去回程分别定价， 默认为0
+	PriceType int64 `json:"price_type,omitempty" xml:"price_type,omitempty"`
+	// 是否支持共享出主飞;是:true，否:false
+	OutMainFlight bool `json:"out_main_flight,omitempty" xml:"out_main_flight,omitempty"`
+	// 是否中转运价.true:是，false:否
+	IsOwEoe bool `json:"is_ow_eoe,omitempty" xml:"is_ow_eoe,omitempty"`
 }

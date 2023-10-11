@@ -1,0 +1,75 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "经营店编码",
+					"required": true
+				},
+				{
+					"name": "biz_order_id",
+					"type": "Number",
+					"description": "订单编码",
+					"required": true
+				},
+				{
+					"name": "deliverer_name",
+					"type": "String",
+					"description": "配送人员名称",
+					"required": true
+				},
+				{
+					"name": "deliverer_phone",
+					"type": "String",
+					"description": "配送人员联系方式",
+					"required": true
+				},
+				{
+					"name": "deliverer_company",
+					"type": "String",
+					"description": "配送公司编码",
+					"required": true
+				},
+				{
+					"name": "logistics_no",
+					"type": "String",
+					"description": "配送物流单号"
+				}
+			],
+			"name": "deliverer_change_request",
+			"type": "DelivererChangeRequest",
+			"description": "配送员信息变更请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误码备注说明"
+				}
+			],
+			"name": "api_result",
+			"type": "TopBaseResult",
+			"description": "配送员信息变更响应"
+		}
+	],
+	"name": "alibaba.aelophy.order.deliverer.change",
+	"apiChineseName": "配送员信息变更接口",
+	"description": "配送员信息变更接口",
+	"id": 66186
+}

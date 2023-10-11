@@ -27,8 +27,7 @@
 			"name": "offer_list",
 			"type": "OfferList[]",
 			"description": "活动列表",
-			"maxListSize": 100,
-			"required": true
+			"maxListSize": 100
 		},
 		{
 			"name": "special_id",
@@ -44,6 +43,11 @@
 			"name": "device_type",
 			"type": "String",
 			"description": "设备信息，入参类型(该模式下返回的结果为模糊匹配结果，和实际情况可能存在误差)：IMEI, 或者IDFA, 或者OAID, 或者MOBILE, 或者ALIPAY_ID"
+		},
+		{
+			"name": "strategy_id_list",
+			"type": "String",
+			"description": "策略ID，与活动列表二选一传入"
 		}
 	],
 	"responseParams": [
@@ -80,6 +84,23 @@
 					"name": "result_list",
 					"type": "Resultlist[]",
 					"description": "返回结果列表"
+				},
+				{
+					"subParams": [
+						{
+							"name": "strategy_id",
+							"type": "String",
+							"description": "策略ID"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态：1-符合活动要求 ，3-用户不匹配活动，4-系统异常，6-策略ID不存在，7-策略ID无效"
+						}
+					],
+					"name": "strategy_result_list",
+					"type": "StrategyResultList[]",
+					"description": "策略ID的匹配结果，仅在入参strategy_id_list字段非空时返回"
 				}
 			],
 			"name": "data",

@@ -224,6 +224,11 @@
 					"name": "is_cspu",
 					"type": "Boolean",
 					"description": "是否为达尔文挂接成功了的商品"
+				},
+				{
+					"name": "first_starts_time",
+					"type": "Date",
+					"description": "商品首次上架时间"
 				}
 			],
 			"name": "items",

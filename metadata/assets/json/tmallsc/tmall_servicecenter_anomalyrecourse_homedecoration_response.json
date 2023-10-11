@@ -1,0 +1,55 @@
+{
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "投诉单id",
+			"required": true
+		},
+		{
+			"name": "contact_seller",
+			"type": "Number",
+			"description": "是否已联系商家；0：未联系；1：已联系",
+			"required": true
+		},
+		{
+			"name": "remark",
+			"type": "String",
+			"description": "响应方案",
+			"required": true
+		},
+		{
+			"name": "images",
+			"type": "String",
+			"description": "图片凭证"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
+		}
+	],
+	"name": "tmall.servicecenter.anomalyrecourse.homedecoration.response",
+	"apiChineseName": "天猫服务平台商家投诉单服务商响应接口",
+	"description": "天猫服务平台商家投诉单服务商响应接口",
+	"id": 66061
+}

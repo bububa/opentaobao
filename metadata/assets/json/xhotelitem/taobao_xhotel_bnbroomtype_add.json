@@ -397,8 +397,7 @@
 				{
 					"name": "city",
 					"type": "Number",
-					"description": "城市编码。参见：http://hotel.alitrip.com/area.htm，domestic为false时，输入对应国家的海外城市编码，可调用海外城市查询接口获取；（更新酒店时为可选）",
-					"required": true
+					"description": "城市编码。参见：http://hotel.alitrip.com/area.htm，domestic为false时，输入对应国家的海外城市编码，可调用海外城市查询接口获取；（更新酒店时为可选）"
 				},
 				{
 					"name": "latitude",
@@ -421,8 +420,7 @@
 				{
 					"name": "province",
 					"type": "Number",
-					"description": "省份编码http://hotel.alitrip.com/area.htm",
-					"required": true
+					"description": "省份编码http://hotel.alitrip.com/area.htm"
 				},
 				{
 					"name": "en_address",

@@ -26,8 +26,10 @@ type PolicyQueryParamDto struct {
 	AccountCode string `json:"account_code,omitempty" xml:"account_code,omitempty"`
 	// 政策来源：0，手工政策；1，excel政策；2，api政策
 	PolicySource int64 `json:"policy_source,omitempty" xml:"policy_source,omitempty"`
-	// 政策状态：1，有效；2，挂起；0，删除
+	// 政策状态：1，有效；2，挂起；0，删除 3，停用
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 根据政策编码模糊查询，模糊查询执行like，暂不支持前缀索引
 	FuzzyQuery bool `json:"fuzzy_query,omitempty" xml:"fuzzy_query,omitempty"`
+	// 中转运价标识
+	IsOwEoe bool `json:"is_ow_eoe,omitempty" xml:"is_ow_eoe,omitempty"`
 }

@@ -1,0 +1,70 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "经营店编码",
+					"required": true
+				},
+				{
+					"name": "biz_order_id",
+					"type": "Number",
+					"description": "订单编码",
+					"required": true
+				},
+				{
+					"name": "longitude",
+					"type": "String",
+					"description": "经度",
+					"required": true
+				},
+				{
+					"name": "latitude",
+					"type": "String",
+					"description": "维度",
+					"required": true
+				},
+				{
+					"name": "update_time",
+					"type": "Date",
+					"description": "更新时间",
+					"required": true
+				}
+			],
+			"name": "logistics_trace_callback_request",
+			"type": "LogisticsTraceCallbackRequest",
+			"description": "配送轨迹回传请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误码备注说明"
+				}
+			],
+			"name": "api_result",
+			"type": "TopBaseResult",
+			"description": "配送轨迹回传响应"
+		}
+	],
+	"name": "alibaba.aelophy.order.logistics.trace.callback",
+	"apiChineseName": "配送轨迹回传",
+	"description": "配送轨迹回传",
+	"id": 66189
+}

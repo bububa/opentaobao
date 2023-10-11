@@ -1,0 +1,168 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "market",
+					"type": "String",
+					"description": "市场"
+				},
+				{
+					"name": "cat_id",
+					"type": "Number",
+					"description": "类目id"
+				},
+				{
+					"name": "series_name",
+					"type": "String",
+					"description": "系列名称"
+				},
+				{
+					"name": "series_desc",
+					"type": "String",
+					"description": "系列描述"
+				},
+				{
+					"name": "series_id",
+					"type": "Number",
+					"description": "系列id"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "系列状态"
+				},
+				{
+					"name": "brand_name",
+					"type": "String",
+					"description": "品牌值,当品牌作为聚合属性时生效"
+				}
+			],
+			"name": "item_series_request",
+			"type": "ItemSeriesRequest",
+			"description": "商品系列创建或修改请求入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "mes_code",
+							"type": "String",
+							"description": "错误码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						}
+					],
+					"name": "error_codes",
+					"type": "ErrorCode[]",
+					"description": "错误码集合"
+				},
+				{
+					"subParams": [
+						{
+							"name": "market",
+							"type": "String",
+							"description": "市场"
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间"
+						},
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "用户id"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "系列名称"
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "系列id"
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间"
+						},
+						{
+							"subParams": [
+								{
+									"name": "mode",
+									"type": "String",
+									"description": "系列玩法"
+								},
+								{
+									"name": "cat_id",
+									"type": "Number",
+									"description": "类目id"
+								},
+								{
+									"subParams": [
+										{
+											"name": "text",
+											"type": "String",
+											"description": "分组名称"
+										},
+										{
+											"name": "value",
+											"type": "Number",
+											"description": "分组id"
+										}
+									],
+									"name": "group_item_list",
+									"type": "GroupItem[]",
+									"description": "分组信息"
+								},
+								{
+									"name": "series_name",
+									"type": "String",
+									"description": "系列名称"
+								},
+								{
+									"name": "series_desc",
+									"type": "String",
+									"description": "系列描述"
+								}
+							],
+							"name": "item_series_extend",
+							"type": "ItemSeriesExtendDO",
+							"description": "系列扩展信息"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态"
+						}
+					],
+					"name": "model",
+					"type": "ErrorCode",
+					"description": "实际返回值"
+				}
+			],
+			"name": "result",
+			"type": "ResultDO",
+			"description": "返回值"
+		}
+	],
+	"name": "tmall.item.series.itemseries.insertorupdate",
+	"apiChineseName": "商品系列增删改接口",
+	"description": "商品系列增删改接口",
+	"id": 66477
+}

@@ -26,6 +26,10 @@ type XiamiContentResourceActionReportAPIRequest struct {
 	_utdid string
 	// 扩展信息
 	_extra string
+	// 音频id
+	_relationId string
+	// 关联类型（如音频）
+	_relationType string
 	// 行为数量
 	_num int64
 	// 1推荐2歌单3标签
@@ -145,6 +149,32 @@ func (r *XiamiContentResourceActionReportAPIRequest) SetExtra(_extra string) err
 // GetExtra Extra Getter
 func (r XiamiContentResourceActionReportAPIRequest) GetExtra() string {
 	return r._extra
+}
+
+// SetRelationId is RelationId Setter
+// 音频id
+func (r *XiamiContentResourceActionReportAPIRequest) SetRelationId(_relationId string) error {
+	r._relationId = _relationId
+	r.Set("relation_id", _relationId)
+	return nil
+}
+
+// GetRelationId RelationId Getter
+func (r XiamiContentResourceActionReportAPIRequest) GetRelationId() string {
+	return r._relationId
+}
+
+// SetRelationType is RelationType Setter
+// 关联类型（如音频）
+func (r *XiamiContentResourceActionReportAPIRequest) SetRelationType(_relationType string) error {
+	r._relationType = _relationType
+	r.Set("relation_type", _relationType)
+	return nil
+}
+
+// GetRelationType RelationType Getter
+func (r XiamiContentResourceActionReportAPIRequest) GetRelationType() string {
+	return r._relationType
 }
 
 // SetNum is Num Setter

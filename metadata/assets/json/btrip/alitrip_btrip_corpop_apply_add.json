@@ -39,8 +39,7 @@
 						{
 							"name": "arr_city",
 							"type": "String",
-							"description": "到达城市",
-							"required": true
+							"description": "到达城市"
 						},
 						{
 							"name": "arr_city_code",
@@ -50,8 +49,7 @@
 						{
 							"name": "arr_date",
 							"type": "Date",
-							"description": "到达日期",
-							"required": true
+							"description": "到达日期"
 						},
 						{
 							"name": "cost_center_id",
@@ -61,8 +59,7 @@
 						{
 							"name": "dep_city",
 							"type": "String",
-							"description": "出发城市",
-							"required": true
+							"description": "出发城市"
 						},
 						{
 							"name": "dep_city_code",
@@ -72,8 +69,7 @@
 						{
 							"name": "dep_date",
 							"type": "Date",
-							"description": "出发日期",
-							"required": true
+							"description": "出发日期"
 						},
 						{
 							"name": "invoice_id",
@@ -83,8 +79,7 @@
 						{
 							"name": "itinerary_id",
 							"type": "String",
-							"description": "行程id",
-							"required": true
+							"description": "行程id"
 						},
 						{
 							"name": "project_code",
@@ -104,14 +99,12 @@
 						{
 							"name": "traffic_type",
 							"type": "Number",
-							"description": "交通方式：0飞机 1火车 2汽车 3其他 4用车 5不限 6仅飞机 7仅火车 8仅汽车，当酒店时，arr_city可能为空。如果行程既想订交通又想订酒店，传0/1/2， 如果行程只想定交通，传6/7/8 只想定酒店，传3。needTraffic，needHotel可以不传",
-							"required": true
+							"description": "交通方式： 0 飞机、酒店、用车, 1 火车、酒店、用车, 2 用车、酒店, 3 用车、酒店，4 用车、酒店，6 飞机、用车，7 火车、用车，9 飞机、火车、酒店、用车，10 飞机、火车、用车，11 仅用车，21 飞机、酒店，22 火车、酒店，24 酒店，25 飞机，26 火车，27 飞机、火车、酒店，28 飞机、火车"
 						},
 						{
 							"name": "trip_way",
 							"type": "Number",
-							"description": "行程类型：0单程，1往返",
-							"required": true
+							"description": "行程类型：0单程，1往返"
 						},
 						{
 							"name": "third_part_invoice_id",
@@ -131,8 +124,7 @@
 					],
 					"name": "itinerary_list",
 					"type": "OpenItineraryInfo[]",
-					"description": "行程列表",
-					"required": true
+					"description": "行程列表"
 				},
 				{
 					"name": "status",
@@ -410,6 +402,78 @@
 					"name": "traveler_standard",
 					"type": "InternalUserStandard[]",
 					"description": "内部人员差标列表"
+				},
+				{
+					"name": "itinerary_rule",
+					"type": "Number",
+					"description": "申请单城市规则： 0出发\u0026目的地一对一，按列表传行程  1多选N个地点，城市集行程 不传默认为0 会根据商旅管理后台-通用差旅设置-行程城市规则中的设置，校验申请单本字段的值是否正确 当行程城市规则中设置的是“1对1行程”时，必须传0 当行程城市规则中设置的是“多对多城市集行程”时，必须传1 会根据此字段传入的值，校验行程传参是否正确 当申请单城市规则为0，itinerary_list行程列表必填 当申请单城市规则为1，城市集行程必填"
+				},
+				{
+					"subParams": [
+						{
+							"name": "itinerary_id",
+							"type": "String",
+							"description": "行程id"
+						},
+						{
+							"name": "traffic_type",
+							"type": "Number",
+							"description": "交通方式： 0 飞机、酒店、用车, 1 火车、酒店、用车, 2 用车、酒店, 3 用车、酒店，4 用车、酒店，6 飞机、用车，7 火车、用车，9 飞机、火车、酒店、用车，10 飞机、火车、用车，11 仅用车，21 飞机、酒店，22 火车、酒店，24 酒店，25 飞机，26 火车，27 飞机、火车、酒店，28 飞机、火车"
+						},
+						{
+							"name": "city_set",
+							"type": "String",
+							"description": "离抵城市名称，多个城市请用中文“，”隔开"
+						},
+						{
+							"name": "city_code_set",
+							"type": "String",
+							"description": "离抵城市code，多个城市请用中文“，”隔开 当允许预订的类目为1/3/7/9时，仅传行政区划citycode允许通过 当允许预订的类目为0/6时，仅传城市三字码允许通过 city_set和city_code_set必须一对一"
+						},
+						{
+							"name": "dep_date",
+							"type": "String",
+							"description": "出发日期"
+						},
+						{
+							"name": "arr_date",
+							"type": "String",
+							"description": "到达日期"
+						},
+						{
+							"name": "cost_center_id",
+							"type": "Number",
+							"description": "商旅成本中心id，和第三方成本中心id二者选择其一即可"
+						},
+						{
+							"name": "thirdpart_cost_center_id",
+							"type": "String",
+							"description": "第三方成本中心id，和商旅成本中心id二者选择其一即可"
+						},
+						{
+							"name": "invoice_id",
+							"type": "Number",
+							"description": "商旅发票id，和第三方发票Id二者选择其一即可"
+						},
+						{
+							"name": "third_part_invoice_id",
+							"type": "String",
+							"description": "第三方发票id，和商旅发票id二者选择其一即可"
+						},
+						{
+							"name": "project_code",
+							"type": "String",
+							"description": "项目编号"
+						},
+						{
+							"name": "project_title",
+							"type": "String",
+							"description": "项目名称"
+						}
+					],
+					"name": "itinerary_set_list",
+					"type": "OpenItineraryInfo[]",
+					"description": "城市集行程列表"
 				}
 			],
 			"name": "rq",

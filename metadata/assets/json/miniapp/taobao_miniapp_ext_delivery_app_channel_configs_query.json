@@ -1,0 +1,101 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "miniapp_id",
+					"type": "Number",
+					"description": "小程序id"
+				},
+				{
+					"name": "channel",
+					"type": "String",
+					"description": "渠道id"
+				}
+			],
+			"name": "req",
+			"type": "AppChannelQueryRequest",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "successful",
+					"type": "Boolean",
+					"description": "true or false"
+				},
+				{
+					"name": "error_type",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "config_url",
+							"type": "String",
+							"description": "配置url"
+						},
+						{
+							"name": "miniapp_id",
+							"type": "Number",
+							"description": "小程序id"
+						},
+						{
+							"name": "ext_properties",
+							"type": "String",
+							"description": "扩展参数"
+						},
+						{
+							"name": "channel",
+							"type": "String",
+							"description": "渠道id"
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "卡片描述"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "卡片标题"
+						},
+						{
+							"name": "isv_simple_name",
+							"type": "String",
+							"description": "服务商简称"
+						},
+						{
+							"name": "article_code",
+							"type": "String",
+							"description": "对应服务市场code"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态是否有效"
+						}
+					],
+					"name": "model",
+					"type": "AppChannelConfigDTO[]",
+					"description": "model"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "MiniappResult",
+			"description": "body"
+		}
+	],
+	"name": "taobao.miniapp.ext.delivery.app.channel.configs.query",
+	"apiChineseName": "ISV查询应用的渠道信息",
+	"description": "ISV查询应用的渠道信息",
+	"id": 67556
+}

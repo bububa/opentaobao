@@ -12,7 +12,7 @@ import (
 // 房型添加或更新
 type TaobaoXhotelRoomtypeAddAPIRequest struct {
 	model.Params
-	// 房型名称。不能超过30字
+	// 房型名称。不能超过200个字符
 	_name string
 	// 具体面积大小，请按照正确格式填写。两种格式，例如：40或者 10-20
 	_area string
@@ -44,6 +44,12 @@ type TaobaoXhotelRoomtypeAddAPIRequest struct {
 	_bedInfo string
 	// 酒店房型设施
 	_standardRoomFacilities string
+	// 窗型，窗型（windowType）： 0=无窗 1=有窗 2=部分有窗  窗型缺陷（windowTypeDefect）： 0=窗户不可打开通风 1=窗外有遮挡 2=窗外为酒店内景观  特殊窗（windowTypeSpecial）： 0=落地窗 1=飘窗 2=天窗 3=小窗。  当为有窗或部分有窗时，窗型缺陷可多选，特殊窗型需单选
+	_windowDesc string
+	// 房型加床政策。 费用(fee) 说明(desc)
+	_addBed string
+	// 儿童政策
+	_childrenPolicy string
 	// （已废弃）请使用outHid
 	_hid int64
 	// 最大入住人数，默认2（1-99）
@@ -81,7 +87,7 @@ func (r TaobaoXhotelRoomtypeAddAPIRequest) GetRawParams() model.Params {
 }
 
 // SetName is Name Setter
-// 房型名称。不能超过30字
+// 房型名称。不能超过200个字符
 func (r *TaobaoXhotelRoomtypeAddAPIRequest) SetName(_name string) error {
 	r._name = _name
 	r.Set("name", _name)
@@ -286,6 +292,45 @@ func (r *TaobaoXhotelRoomtypeAddAPIRequest) SetStandardRoomFacilities(_standardR
 // GetStandardRoomFacilities StandardRoomFacilities Getter
 func (r TaobaoXhotelRoomtypeAddAPIRequest) GetStandardRoomFacilities() string {
 	return r._standardRoomFacilities
+}
+
+// SetWindowDesc is WindowDesc Setter
+// 窗型，窗型（windowType）： 0=无窗 1=有窗 2=部分有窗  窗型缺陷（windowTypeDefect）： 0=窗户不可打开通风 1=窗外有遮挡 2=窗外为酒店内景观  特殊窗（windowTypeSpecial）： 0=落地窗 1=飘窗 2=天窗 3=小窗。  当为有窗或部分有窗时，窗型缺陷可多选，特殊窗型需单选
+func (r *TaobaoXhotelRoomtypeAddAPIRequest) SetWindowDesc(_windowDesc string) error {
+	r._windowDesc = _windowDesc
+	r.Set("window_desc", _windowDesc)
+	return nil
+}
+
+// GetWindowDesc WindowDesc Getter
+func (r TaobaoXhotelRoomtypeAddAPIRequest) GetWindowDesc() string {
+	return r._windowDesc
+}
+
+// SetAddBed is AddBed Setter
+// 房型加床政策。 费用(fee) 说明(desc)
+func (r *TaobaoXhotelRoomtypeAddAPIRequest) SetAddBed(_addBed string) error {
+	r._addBed = _addBed
+	r.Set("add_bed", _addBed)
+	return nil
+}
+
+// GetAddBed AddBed Getter
+func (r TaobaoXhotelRoomtypeAddAPIRequest) GetAddBed() string {
+	return r._addBed
+}
+
+// SetChildrenPolicy is ChildrenPolicy Setter
+// 儿童政策
+func (r *TaobaoXhotelRoomtypeAddAPIRequest) SetChildrenPolicy(_childrenPolicy string) error {
+	r._childrenPolicy = _childrenPolicy
+	r.Set("children_policy", _childrenPolicy)
+	return nil
+}
+
+// GetChildrenPolicy ChildrenPolicy Getter
+func (r TaobaoXhotelRoomtypeAddAPIRequest) GetChildrenPolicy() string {
+	return r._childrenPolicy
 }
 
 // SetHid is Hid Setter

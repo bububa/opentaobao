@@ -1,0 +1,55 @@
+{
+	"requestParams": [
+		{
+			"name": "input_system_code",
+			"type": "String",
+			"description": "系统标识"
+		},
+		{
+			"name": "standpoint_id",
+			"type": "Number",
+			"description": "口径id"
+		},
+		{
+			"name": "operate_work_no",
+			"type": "String",
+			"description": "操作人"
+		},
+		{
+			"name": "operate_name",
+			"type": "String",
+			"description": "操作人名称"
+		},
+		{
+			"name": "collection_flag",
+			"type": "String",
+			"description": "收藏"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "success_res",
+			"type": "Boolean",
+			"description": "true"
+		},
+		{
+			"name": "error_code_res",
+			"type": "Number",
+			"description": "500"
+		},
+		{
+			"name": "content",
+			"type": "Boolean",
+			"description": "true"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "描述"
+		}
+	],
+	"name": "alibaba.legal.standpoint.standpoint.collection",
+	"apiChineseName": "收藏|取消收藏",
+	"description": "收藏|取消收藏",
+	"id": 66884
+}

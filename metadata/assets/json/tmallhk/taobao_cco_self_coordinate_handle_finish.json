@@ -1,0 +1,48 @@
+{
+	"requestParams": [
+		{
+			"name": "case_id",
+			"type": "Number",
+			"description": "工单编号",
+			"required": true
+		},
+		{
+			"name": "operator",
+			"type": "String",
+			"description": "处理人",
+			"required": true
+		},
+		{
+			"name": "reply_data",
+			"type": "Json",
+			"description": "回复模板,其中key/value均为字符串",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_code",
+			"type": "String",
+			"description": "错误码信息"
+		},
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "处理结果"
+		},
+		{
+			"name": "api_success",
+			"type": "Boolean",
+			"description": "接口是否调用成功"
+		},
+		{
+			"name": "api_message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "taobao.cco.self.coordinate.handle.finish",
+	"apiChineseName": "天猫国际直购供应商处理完结回复通知",
+	"description": "天猫国际直购供应商处理完结回复通知",
+	"id": 66806
+}

@@ -85,6 +85,11 @@
 					"name": "outer_store_id",
 					"type": "String",
 					"description": "1111"
+				},
+				{
+					"name": "outer_sales_time_id",
+					"type": "String",
+					"description": "1111"
 				}
 			],
 			"name": "project_picture_data",

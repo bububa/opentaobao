@@ -2,6 +2,8 @@ package wdk
 
 // Suborders 结构体
 type Suborders struct {
+	// 组合品列表
+	CombineItemList []CombineItem `json:"combine_item_list,omitempty" xml:"combine_item_list>combine_item,omitempty"`
 	// 外部子订单id
 	OutSubOrderId string `json:"out_sub_order_id,omitempty" xml:"out_sub_order_id,omitempty"`
 	// 商品code
@@ -32,4 +34,6 @@ type Suborders struct {
 	DiscountPlatformFee int64 `json:"discount_platform_fee,omitempty" xml:"discount_platform_fee,omitempty"`
 	// 子单价格
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
+	// 是否为组合品
+	CombineItem bool `json:"combine_item,omitempty" xml:"combine_item,omitempty"`
 }

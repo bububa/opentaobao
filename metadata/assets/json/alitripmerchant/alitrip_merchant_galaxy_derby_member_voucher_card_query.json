@@ -154,6 +154,11 @@
 									"name": "status",
 									"type": "String",
 									"description": "1"
+								},
+								{
+									"name": "use_times",
+									"type": "String",
+									"description": "单次或无限次"
 								}
 							],
 							"name": "derby_voucher_polymerization_v_os",
@@ -236,6 +241,11 @@
 									"name": "voucher_code",
 									"type": "String",
 									"description": "1"
+								},
+								{
+									"name": "use_times",
+									"type": "String",
+									"description": "单次/无限次"
 								}
 							],
 							"name": "vouchers",

@@ -1,0 +1,137 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "brand_licensor_open_id",
+							"type": "String",
+							"description": "品牌授权商openid"
+						},
+						{
+							"name": "spare_parts_application_id",
+							"type": "Number",
+							"description": "备件申请单id"
+						},
+						{
+							"name": "supplier_open_id",
+							"type": "String",
+							"description": "服务商openid"
+						},
+						{
+							"name": "spare_parts_out_time",
+							"type": "Date",
+							"description": "备件出库时间"
+						}
+					],
+					"name": "application_info_dto",
+					"type": "ApplicationInfoDTO",
+					"description": "备件申请单信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "spare_parts_code",
+							"type": "String",
+							"description": "备件编码"
+						},
+						{
+							"name": "need_return",
+							"type": "Boolean",
+							"description": "是否需要返件"
+						},
+						{
+							"name": "first_level_category_id",
+							"type": "Number",
+							"description": "备件一级类目"
+						},
+						{
+							"name": "selling_price",
+							"type": "Number",
+							"description": "备件销售价"
+						},
+						{
+							"name": "spare_parts_name",
+							"type": "String",
+							"description": "备件名称"
+						},
+						{
+							"name": "second_level_category_id",
+							"type": "Number",
+							"description": "备件二级类目"
+						},
+						{
+							"name": "spare_parts_source",
+							"type": "Number",
+							"description": "备件来源"
+						},
+						{
+							"name": "model",
+							"type": "String",
+							"description": "备件型号"
+						},
+						{
+							"name": "purchase_price",
+							"type": "Number",
+							"description": "备件进价"
+						},
+						{
+							"name": "spare_parts_type",
+							"type": "String",
+							"description": "备件类型"
+						},
+						{
+							"name": "spare_parts_count",
+							"type": "Number",
+							"description": "备件数量",
+							"required": true
+						}
+					],
+					"name": "spare_parts_info_dto",
+					"type": "SparePartsInfoDTO",
+					"description": "备件明细"
+				},
+				{
+					"name": "work_card_id",
+					"type": "Number",
+					"description": "天猫服务工单号"
+				}
+			],
+			"name": "spare_parts_details_save_request",
+			"type": "SparePartsDetailsSaveRequest",
+			"description": "请求入参"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "display_message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "返回数据"
+		},
+		{
+			"name": "app_name",
+			"type": "String",
+			"description": "app名称"
+		},
+		{
+			"name": "error_message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "error_params",
+			"type": "String",
+			"description": "错误参数"
+		}
+	],
+	"name": "alibaba.tmall.spareparts.details.create",
+	"apiChineseName": "天猫蚁巢同步工单申请备件明细",
+	"description": "天猫蚁巢同步工单申请备件明细",
+	"id": 66689
+}

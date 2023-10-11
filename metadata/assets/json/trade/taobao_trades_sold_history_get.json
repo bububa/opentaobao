@@ -54,7 +54,7 @@
 		{
 			"name": "page_size",
 			"type": "Number",
-			"description": "每页条数。 默认值:40;最大值:100，可填整数。通过page_no和page_size组合多次调用实现翻页获取全量数据。"
+			"description": "每页条数。 默认值:40;最大值:50，可填整数。通过page_no和page_size组合多次调用实现翻页获取全量数据。"
 		},
 		{
 			"name": "use_has_next",

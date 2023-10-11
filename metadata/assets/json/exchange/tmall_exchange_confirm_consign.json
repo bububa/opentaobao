@@ -1,0 +1,90 @@
+{
+	"requestParams": [
+		{
+			"name": "dispute_id",
+			"type": "Number",
+			"description": "换货单号ID",
+			"required": true
+		},
+		{
+			"name": "logistics_no",
+			"type": "String",
+			"description": "卖家发货的物流单号",
+			"required": true
+		},
+		{
+			"name": "logistics_type",
+			"type": "Number",
+			"description": "卖家发货的物流类型，100表示平邮，200表示快递",
+			"required": true
+		},
+		{
+			"name": "logistics_company_name",
+			"type": "String",
+			"description": "卖家发货的快递公司",
+			"required": true
+		},
+		{
+			"name": "fields",
+			"type": "String[]",
+			"description": "返回字段",
+			"maxListSize": 100,
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				},
+				{
+					"subParams": [
+						{
+							"name": "modified",
+							"type": "Date",
+							"description": "modified"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "status"
+						},
+						{
+							"name": "biz_order_id",
+							"type": "String",
+							"description": "bizOrderId"
+						},
+						{
+							"name": "dispute_id",
+							"type": "String",
+							"description": "disputeId"
+						}
+					],
+					"name": "exchange",
+					"type": "Exchange",
+					"description": "exchange"
+				}
+			],
+			"name": "result",
+			"type": "RefundBaseResponse",
+			"description": "result"
+		}
+	],
+	"name": "tmall.exchange.confirm.consign",
+	"apiChineseName": "换货商家确认收货并发货",
+	"description": "卖家确认收货并发货",
+	"id": 66761
+}

@@ -7,7 +7,7 @@
 			"required": true
 		},
 		{
-			"name": "token",
+			"name": "license_token",
 			"type": "String",
 			"description": "服务校验的token",
 			"required": true

@@ -1,0 +1,156 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间戳（毫秒）",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID（服务商发起请求的ID）",
+					"required": true
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "淘天物流服务商ID",
+					"required": true
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "服务商仓编码",
+					"required": true
+				},
+				{
+					"name": "delete_type",
+					"type": "Number",
+					"description": "删除类型： 1-by仓删除所有到货规则 2-by仓+收货地删除到货规则",
+					"required": true
+				},
+				{
+					"name": "rule_type",
+					"type": "Number",
+					"description": "线路规则类型： 1-通用规则； 2-个性化规则",
+					"required": true
+				},
+				{
+					"name": "wms_owner_code",
+					"type": "String",
+					"description": "wms货主id"
+				},
+				{
+					"subParams": [
+						{
+							"name": "province",
+							"type": "String",
+							"description": "收货地：省",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "收货地：城市"
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "收货地：区"
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "收货地：街道"
+						}
+					],
+					"name": "addresses",
+					"type": "Addresse[]",
+					"description": "删除规则的收货地（组）；当删除类型为2时必填"
+				}
+			],
+			"name": "delivery_line_batch_delete_request",
+			"type": "DeliveryLineBatchDeleteRequest",
+			"description": "线路能力删除入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true|false"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息"
+				},
+				{
+					"name": "result",
+					"type": "String",
+					"description": "0=全部失败，1=全部成功，2=部分成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "wms_owner_code",
+							"type": "String",
+							"description": "wms货主id"
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "错误码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "收货地：省"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "收货地：城市"
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "收货地：区"
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "收货地：街道"
+						}
+					],
+					"name": "data",
+					"type": "SignRuleDeleteResultDetail[]",
+					"description": "线路删除失败信息"
+				}
+			],
+			"name": "delivery_line_batch_delete_response",
+			"type": "DeliveryLineBatchDeleteResponse",
+			"description": "线路能力删除出参"
+		}
+	],
+	"name": "taobao.logistics.delivery.line.batch.delete",
+	"apiChineseName": "线路能力删除",
+	"description": "线路能力删除",
+	"id": 67430
+}

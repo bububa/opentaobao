@@ -74,6 +74,8 @@ type RecycleOrderTo struct {
 	MakeupPayTime string `json:"makeup_pay_time,omitempty" xml:"makeup_pay_time,omitempty"`
 	// 主订单支付流水Id
 	MainPayId string `json:"main_pay_id,omitempty" xml:"main_pay_id,omitempty"`
+	// 估价版本，第几次估价
+	QuoteVersion string `json:"quote_version,omitempty" xml:"quote_version,omitempty"`
 	// 估价金额,单位分
 	ApprizeAmount int64 `json:"apprize_amount,omitempty" xml:"apprize_amount,omitempty"`
 	// 信用预付金额,单位分

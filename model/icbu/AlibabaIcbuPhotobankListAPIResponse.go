@@ -20,4 +20,12 @@ type AlibabaIcbuPhotobankListAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_icbu_photobank_list_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// traceId
+	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
+	// error code
+	Errorcode string `json:"errorcode,omitempty" xml:"errorcode,omitempty"`
+	// error message
+	Errormsg string `json:"errormsg,omitempty" xml:"errormsg,omitempty"`
+	// PaginationQueryList
+	PaginationQueryList *PaginationQueryList `json:"pagination_query_list,omitempty" xml:"pagination_query_list,omitempty"`
 }

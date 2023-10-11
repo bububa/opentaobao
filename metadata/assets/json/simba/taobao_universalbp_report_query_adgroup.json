@@ -1,0 +1,675 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码",
+					"required": true
+				}
+			],
+			"name": "top_service_context",
+			"type": "TopServiceContext",
+			"description": "topServiceContext",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "by_page",
+					"type": "Boolean",
+					"description": "是否分页",
+					"required": true
+				},
+				{
+					"name": "split_type",
+					"type": "String",
+					"description": "汇总类型 sum-汇总,hour-分时,day-分天,week-分周,month-分月",
+					"required": true
+				},
+				{
+					"name": "unify_type",
+					"type": "String",
+					"description": "归因口径，zhai-末次点击归因， mta-mta归因",
+					"required": true
+				},
+				{
+					"name": "start_time",
+					"type": "String",
+					"description": "开始时间",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "String",
+					"description": "结束时间",
+					"required": true
+				},
+				{
+					"name": "effect_equal",
+					"type": "Number",
+					"description": "归因周期，1、3、7、15、30",
+					"required": true
+				},
+				{
+					"name": "query_domains",
+					"type": "String[]",
+					"description": "聚合维度，adgroup-单元，date-时间，campaign-营销场景",
+					"required": true
+				},
+				{
+					"name": "query_field_in_list",
+					"type": "String[]",
+					"description": "查询指标必填，与bp页面一致，具体可用值，看返回字段中reportIndex字段，下划线改为驼峰形式",
+					"required": true
+				},
+				{
+					"name": "province_id_in_list",
+					"type": "Number[]",
+					"description": "省份筛选"
+				},
+				{
+					"name": "strategy_optimize_target_in_list",
+					"type": "Number[]",
+					"description": "优化目标筛选"
+				},
+				{
+					"name": "strategy_campaign_id_in_list",
+					"type": "Number[]",
+					"description": "计划id筛选"
+				},
+				{
+					"name": "strategy_adgroup_id_in_list",
+					"type": "Number[]",
+					"description": "单元id筛选"
+				},
+				{
+					"name": "adzone_pkg_id_in_list",
+					"type": "Number[]",
+					"description": "流量来源资源包id筛选"
+				},
+				{
+					"name": "strategy_campaign_id_or_name",
+					"type": "String",
+					"description": "计划id和名称筛选项"
+				},
+				{
+					"name": "item_id_or_name",
+					"type": "String",
+					"description": "宝贝id或者名称筛选"
+				},
+				{
+					"name": "strategy_adgroup_id_or_name",
+					"type": "String",
+					"description": "单元id或者名称筛选"
+				},
+				{
+					"name": "offset",
+					"type": "Number",
+					"description": "偏移量"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页面大小"
+				}
+			],
+			"name": "top_adgroup_report_query_v_o",
+			"type": "TopAdgroupReportQueryVo",
+			"description": "topAdgroupReportQueryVO",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "ok",
+							"type": "Boolean",
+							"description": "是否成功"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误编码"
+						}
+					],
+					"name": "info",
+					"type": "TopInfo",
+					"description": "请求系统信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "biz_code",
+									"type": "String",
+									"description": "场景code"
+								},
+								{
+									"name": "scene1_name",
+									"type": "String",
+									"description": "场景名称"
+								},
+								{
+									"name": "thedate",
+									"type": "String",
+									"description": "日期"
+								},
+								{
+									"name": "campaign_id",
+									"type": "String",
+									"description": "计划id"
+								},
+								{
+									"name": "campaign_name",
+									"type": "String",
+									"description": "计划名称"
+								},
+								{
+									"name": "adgroup_id",
+									"type": "String",
+									"description": "单元id"
+								},
+								{
+									"name": "adgroup_name",
+									"type": "String",
+									"description": "单元名称"
+								},
+								{
+									"name": "bidword_id",
+									"type": "String",
+									"description": "关键词id"
+								},
+								{
+									"name": "original_word",
+									"type": "String",
+									"description": "关键词/词包名称"
+								},
+								{
+									"name": "bidword_pkg_id",
+									"type": "String",
+									"description": "关键词包id"
+								},
+								{
+									"name": "bid_word_type",
+									"type": "String",
+									"description": "词的类型"
+								},
+								{
+									"name": "promotion_id",
+									"type": "String",
+									"description": "推广宝贝id"
+								},
+								{
+									"name": "promotion_name",
+									"type": "String",
+									"description": "推广宝贝名称"
+								},
+								{
+									"name": "img_url",
+									"type": "String",
+									"description": "推广宝贝图片地址"
+								},
+								{
+									"name": "link_url",
+									"type": "String",
+									"description": "推广宝贝跳转地址"
+								},
+								{
+									"name": "crowd_name",
+									"type": "String",
+									"description": "人群名称"
+								},
+								{
+									"name": "creative_id",
+									"type": "String",
+									"description": "创意id"
+								},
+								{
+									"name": "creative_name",
+									"type": "String",
+									"description": "创意名称"
+								},
+								{
+									"name": "creative_image_path",
+									"type": "String",
+									"description": "创意图片地址"
+								},
+								{
+									"name": "creative_vedio_path",
+									"type": "String",
+									"description": "创意视频地址"
+								},
+								{
+									"name": "creative_size",
+									"type": "String",
+									"description": "创意尺寸"
+								},
+								{
+									"name": "black_creative_promotion_id",
+									"type": "String",
+									"description": "黑盒创意的 宝贝id，当创意id为 -1 时使用"
+								},
+								{
+									"name": "black_creative_promotion_type",
+									"type": "String",
+									"description": "黑盒创意 宝贝主体类型，当创意id为 -1 时使用"
+								},
+								{
+									"name": "province_id",
+									"type": "String",
+									"description": "省份id"
+								},
+								{
+									"name": "province_name",
+									"type": "String",
+									"description": "省份名称"
+								},
+								{
+									"name": "city_id",
+									"type": "String",
+									"description": "城市id"
+								},
+								{
+									"name": "city_name",
+									"type": "String",
+									"description": "城市名称"
+								},
+								{
+									"subParams": [
+										{
+											"name": "total_charge",
+											"type": "String",
+											"description": "总花费"
+										},
+										{
+											"name": "crowd_scene_charge",
+											"type": "String",
+											"description": "消费者运营花费"
+										},
+										{
+											"name": "item_scene_charge",
+											"type": "String",
+											"description": "货品运营花费"
+										},
+										{
+											"name": "activity_scene_charge",
+											"type": "String",
+											"description": "活动运营花费"
+										},
+										{
+											"name": "display_charge",
+											"type": "String",
+											"description": "人群场景花费"
+										},
+										{
+											"name": "search_charge",
+											"type": "String",
+											"description": "关键词花费"
+										},
+										{
+											"name": "content_scene_charge",
+											"type": "String",
+											"description": "内容场景花费"
+										},
+										{
+											"name": "shop_scene_charge",
+											"type": "String",
+											"description": "店铺运营场景花费"
+										},
+										{
+											"name": "ad_pv",
+											"type": "String",
+											"description": "展现量"
+										},
+										{
+											"name": "click",
+											"type": "String",
+											"description": "点击量"
+										},
+										{
+											"name": "charge",
+											"type": "String",
+											"description": "花费"
+										},
+										{
+											"name": "ctr",
+											"type": "String",
+											"description": "点击率"
+										},
+										{
+											"name": "ecpc",
+											"type": "String",
+											"description": "平均点击花费"
+										},
+										{
+											"name": "ecpm",
+											"type": "String",
+											"description": "千次展现花费"
+										},
+										{
+											"name": "prepay_inshop_amt",
+											"type": "String",
+											"description": "总预售成交金额"
+										},
+										{
+											"name": "prepay_inshop_num",
+											"type": "String",
+											"description": "总预售成交笔数"
+										},
+										{
+											"name": "prepay_dir_amt",
+											"type": "String",
+											"description": "直接预售成交金额"
+										},
+										{
+											"name": "prepay_dir_num",
+											"type": "String",
+											"description": "直接预售成交笔数"
+										},
+										{
+											"name": "prepay_indir_amt",
+											"type": "String",
+											"description": "间接预售成交金额"
+										},
+										{
+											"name": "prepay_indir_num",
+											"type": "String",
+											"description": "间接预售成交笔数"
+										},
+										{
+											"name": "alipay_dir_amt",
+											"type": "String",
+											"description": "直接成交金额"
+										},
+										{
+											"name": "alipay_indir_amt",
+											"type": "String",
+											"description": "间接成交金额"
+										},
+										{
+											"name": "alipay_inshop_amt",
+											"type": "String",
+											"description": "总成交金额"
+										},
+										{
+											"name": "alipay_inshop_num",
+											"type": "String",
+											"description": "总成交笔数"
+										},
+										{
+											"name": "alipay_dir_num",
+											"type": "String",
+											"description": "直接成交笔数"
+										},
+										{
+											"name": "alipay_indir_num",
+											"type": "String",
+											"description": "间接成交笔数"
+										},
+										{
+											"name": "cvr",
+											"type": "String",
+											"description": "成交转化率"
+										},
+										{
+											"name": "roi",
+											"type": "String",
+											"description": "投入产出比"
+										},
+										{
+											"name": "alipay_inshop_cost",
+											"type": "String",
+											"description": "总成交成本"
+										},
+										{
+											"name": "cart_inshop_num",
+											"type": "String",
+											"description": "总购物车数"
+										},
+										{
+											"name": "cart_dir_num",
+											"type": "String",
+											"description": "直接购物车数"
+										},
+										{
+											"name": "cart_indir_num",
+											"type": "String",
+											"description": "间接购物车数"
+										},
+										{
+											"name": "cart_rate",
+											"type": "String",
+											"description": "加购率"
+										},
+										{
+											"name": "item_col_inshop_num",
+											"type": "String",
+											"description": "收藏宝贝数"
+										},
+										{
+											"name": "shop_col_dir_num",
+											"type": "String",
+											"description": "收藏店铺数"
+										},
+										{
+											"name": "shop_col_inshop_cost",
+											"type": "String",
+											"description": "店铺收藏成本"
+										},
+										{
+											"name": "col_cart_num",
+											"type": "String",
+											"description": "总收藏加购数"
+										},
+										{
+											"name": "col_cart_cost",
+											"type": "String",
+											"description": "总收藏加购成本"
+										},
+										{
+											"name": "item_col_cart",
+											"type": "String",
+											"description": "宝贝收藏加购数"
+										},
+										{
+											"name": "item_col_cart_cost",
+											"type": "String",
+											"description": "宝贝收藏加购成本"
+										},
+										{
+											"name": "col_num",
+											"type": "String",
+											"description": "总收藏数"
+										},
+										{
+											"name": "item_col_inshop_cost",
+											"type": "String",
+											"description": "宝贝收藏成本"
+										},
+										{
+											"name": "item_col_inshop_rate",
+											"type": "String",
+											"description": "宝贝收藏率"
+										},
+										{
+											"name": "cart_cost",
+											"type": "String",
+											"description": "加购成本"
+										},
+										{
+											"name": "gmv_inshop_num",
+											"type": "String",
+											"description": "拍下订单笔数"
+										},
+										{
+											"name": "gmv_inshop_amt",
+											"type": "String",
+											"description": "拍下订单金额"
+										},
+										{
+											"name": "item_col_dir_num",
+											"type": "String",
+											"description": "直接收藏宝贝数"
+										},
+										{
+											"name": "item_col_indir_num",
+											"type": "String",
+											"description": "间接收藏宝贝数"
+										},
+										{
+											"name": "coupon_shop_num",
+											"type": "String",
+											"description": "优惠券领取量"
+										},
+										{
+											"name": "shopping_num",
+											"type": "String",
+											"description": "购物金充值笔数"
+										},
+										{
+											"name": "shopping_amt",
+											"type": "String",
+											"description": "购物金充值金额"
+										},
+										{
+											"name": "ww_num",
+											"type": "String",
+											"description": "旺旺咨询量"
+										},
+										{
+											"name": "inshop_pv",
+											"type": "String",
+											"description": "引导访问量"
+										},
+										{
+											"name": "inshop_uv",
+											"type": "String",
+											"description": "引导访问人数"
+										},
+										{
+											"name": "inshop_potential_uv",
+											"type": "String",
+											"description": "引导访问潜客数"
+										},
+										{
+											"name": "inshop_potential_uv_rate",
+											"type": "String",
+											"description": "引导访问潜客占比"
+										},
+										{
+											"name": "rh_rate",
+											"type": "String",
+											"description": "入会率"
+										},
+										{
+											"name": "rh_num",
+											"type": "String",
+											"description": "入会量"
+										},
+										{
+											"name": "inshop_pv_rate",
+											"type": "String",
+											"description": "引导访问率"
+										},
+										{
+											"name": "deep_inshop_pv",
+											"type": "String",
+											"description": "深度访问量"
+										},
+										{
+											"name": "avg_access_page_num",
+											"type": "String",
+											"description": "平均访问页面数"
+										},
+										{
+											"name": "new_alipay_inshop_uv",
+											"type": "String",
+											"description": "成交新客数"
+										},
+										{
+											"name": "new_alipay_inshop_uv_rate",
+											"type": "String",
+											"description": "成交新客占比"
+										},
+										{
+											"name": "hy_sg_uv",
+											"type": "String",
+											"description": "会员首购人数"
+										},
+										{
+											"name": "hy_pay_amt",
+											"type": "String",
+											"description": "会员成交金额"
+										},
+										{
+											"name": "hy_pay_num",
+											"type": "String",
+											"description": "会员成交笔数"
+										},
+										{
+											"name": "natural_pay_amt",
+											"type": "String",
+											"description": "自然流量转化金额"
+										},
+										{
+											"name": "org_natural_pv",
+											"type": "String",
+											"description": "自然流量曝光量"
+										},
+										{
+											"name": "alipay_inshop_uv",
+											"type": "String",
+											"description": "成交人数"
+										},
+										{
+											"name": "alipay_inshop_num_avg",
+											"type": "String",
+											"description": "人均成交笔数"
+										},
+										{
+											"name": "alipay_inshop_amt_avg",
+											"type": "String",
+											"description": "人均成交金额"
+										}
+									],
+									"name": "report_index",
+									"type": "TopReportIndexVo",
+									"description": "报表指标集合对象"
+								}
+							],
+							"name": "top_report_v_o_list",
+							"type": "TopReportVo[]",
+							"description": "批量结果集"
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "数量"
+						}
+					],
+					"name": "top_report_v_o_top_bulk_data",
+					"type": "TopBulkData",
+					"description": "结果集"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.universalbp.report.query.adgroup",
+	"apiChineseName": "单元报表查询",
+	"description": "单元报表查询",
+	"id": 67078
+}

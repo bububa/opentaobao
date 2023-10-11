@@ -36,4 +36,6 @@ type ExistingHomeBankCardDto struct {
 	CardType int64 `json:"card_type,omitempty" xml:"card_type,omitempty"`
 	// 是否开网商子户
 	IsOpenNetBusiness int64 `json:"is_open_net_business,omitempty" xml:"is_open_net_business,omitempty"`
+	// 场景 5-融合店
+	SceneType int64 `json:"scene_type,omitempty" xml:"scene_type,omitempty"`
 }

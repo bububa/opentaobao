@@ -1,0 +1,52 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "funds_type",
+					"type": "Number",
+					"description": "分账类型（0卖场，1摊位）",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "Number",
+					"description": "阿里摊位id",
+					"required": true
+				}
+			],
+			"name": "modify_funds_type_req_dto",
+			"type": "ModifyFundsTypeReqDTO",
+			"description": "请求参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "系统自动生成"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "系统自动生成"
+				}
+			],
+			"name": "result",
+			"type": "ResultDO",
+			"description": "系统参数"
+		}
+	],
+	"name": "tmall.nrt.pay.merchant.fundstype.modify",
+	"apiChineseName": "修改摊位分账类型",
+	"description": "修改摊位分账类型",
+	"id": 67189
+}

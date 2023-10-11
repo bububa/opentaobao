@@ -20,6 +20,8 @@ type TaobaoTbkRtaConsumerMatchAPIRequest struct {
 	_deviceValue string
 	// 设备信息，入参类型(该模式下返回的结果为模糊匹配结果，和实际情况可能存在误差)：IMEI, 或者IDFA, 或者OAID, 或者MOBILE, 或者ALIPAY_ID
 	_deviceType string
+	// 策略ID，与活动列表二选一传入
+	_strategyIdList string
 	// mm_xxx_xxx_xxx的第3段数字
 	_adzoneId int64
 }
@@ -98,6 +100,19 @@ func (r *TaobaoTbkRtaConsumerMatchAPIRequest) SetDeviceType(_deviceType string) 
 // GetDeviceType DeviceType Getter
 func (r TaobaoTbkRtaConsumerMatchAPIRequest) GetDeviceType() string {
 	return r._deviceType
+}
+
+// SetStrategyIdList is StrategyIdList Setter
+// 策略ID，与活动列表二选一传入
+func (r *TaobaoTbkRtaConsumerMatchAPIRequest) SetStrategyIdList(_strategyIdList string) error {
+	r._strategyIdList = _strategyIdList
+	r.Set("strategy_id_list", _strategyIdList)
+	return nil
+}
+
+// GetStrategyIdList StrategyIdList Getter
+func (r TaobaoTbkRtaConsumerMatchAPIRequest) GetStrategyIdList() string {
+	return r._strategyIdList
 }
 
 // SetAdzoneId is AdzoneId Setter

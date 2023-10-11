@@ -28,6 +28,8 @@ type DerbyVoucherPolymerizationVo struct {
 	EndDate string `json:"end_date,omitempty" xml:"end_date,omitempty"`
 	// 1
 	VoucherCode string `json:"voucher_code,omitempty" xml:"voucher_code,omitempty"`
+	// 单次/无限次
+	UseTimes string `json:"use_times,omitempty" xml:"use_times,omitempty"`
 	// 1
 	DiscountOff int64 `json:"discount_off,omitempty" xml:"discount_off,omitempty"`
 	// 1

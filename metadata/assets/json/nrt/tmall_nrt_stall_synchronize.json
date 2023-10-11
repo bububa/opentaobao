@@ -156,6 +156,11 @@
 					"name": "mall_depid",
 					"type": "String",
 					"description": "卖场部门Id"
+				},
+				{
+					"name": "relate_code",
+					"type": "String",
+					"description": "关联的编码"
 				}
 			],
 			"name": "stall",

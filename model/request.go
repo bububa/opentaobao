@@ -2,6 +2,7 @@ package model
 
 import (
 	"net/url"
+	"sync"
 	"time"
 )
 
@@ -41,6 +42,30 @@ const (
 	DEFAULT_API_FORMAT = JSON
 )
 
+var commonRequestPool = sync.Pool{
+	New: func() any {
+		return new(CommonRequest)
+	},
+}
+
+func GetCommonRequestInPool() *CommonRequest {
+	return commonRequestPool.Get().(*CommonRequest)
+}
+
+func ReleaseCommonRequest(v *CommonRequest) {
+	v.Method = ""
+	v.AppKey = ""
+	v.TargetAppKey = ""
+	v.SignMethod = ""
+	v.Session = ""
+	v.Timestamp = ""
+	v.Format = ""
+	v.V = ""
+	v.PartnerId = ""
+	v.Simplify = false
+	commonRequestPool.Put(v)
+}
+
 // CommonRequest API请求通用参数
 type CommonRequest struct {
 	Method       string    `json:"method,omitempty"`         // API接口名称
@@ -57,14 +82,14 @@ type CommonRequest struct {
 
 // NewCommonRequest 新建API请求通用参数
 func NewCommonRequest(method string, appKey string) *CommonRequest {
-	return &CommonRequest{
-		Method:     method,
-		AppKey:     appKey,
-		SignMethod: DEFAULT_SIGN_METHOD,
-		Timestamp:  time.Now().Format("2006-01-02 15:04:05"),
-		Format:     DEFAULT_API_FORMAT,
-		V:          DEFAULT_API_VERSION,
-	}
+	ret := GetCommonRequestInPool()
+	ret.Method = method
+	ret.AppKey = appKey
+	ret.SignMethod = DEFAULT_SIGN_METHOD
+	ret.Timestamp = time.Now().Format("2006-01-02 15:04:05")
+	ret.Format = DEFAULT_API_FORMAT
+	ret.V = DEFAULT_API_VERSION
+	return ret
 }
 
 // SetSession 设置access_session

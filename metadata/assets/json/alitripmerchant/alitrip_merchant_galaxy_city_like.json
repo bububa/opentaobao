@@ -34,41 +34,6 @@
 				{
 					"subParams": [
 						{
-							"name": "domestic",
-							"type": "Number",
-							"description": "0国内1国外"
-						},
-						{
-							"name": "city_url",
-							"type": "String",
-							"description": "城市图片url"
-						},
-						{
-							"name": "city_py_head",
-							"type": "String",
-							"description": "城市拼音首字母"
-						},
-						{
-							"name": "country_code",
-							"type": "Number",
-							"description": "国家编码"
-						},
-						{
-							"name": "city_code",
-							"type": "Number",
-							"description": "城市编码"
-						},
-						{
-							"name": "city_cn",
-							"type": "String",
-							"description": "城市"
-						},
-						{
-							"name": "country_cn",
-							"type": "String",
-							"description": "国家"
-						},
-						{
 							"subParams": [
 								{
 									"name": "shid",
@@ -96,13 +61,65 @@
 									"description": "酒店中文名称"
 								}
 							],
-							"name": "hotel_details",
-							"type": "HotelDetails",
+							"name": "hotel_list",
+							"type": "HotelAddressDetail[]",
 							"description": "酒店详情"
+						},
+						{
+							"subParams": [
+								{
+									"name": "domestic",
+									"type": "Number",
+									"description": "0国内1国外"
+								},
+								{
+									"name": "country_code",
+									"type": "Number",
+									"description": "国家编码"
+								},
+								{
+									"name": "country_cn",
+									"type": "String",
+									"description": "国家(汉字)"
+								},
+								{
+									"name": "city_code",
+									"type": "Number",
+									"description": "城市编码"
+								},
+								{
+									"name": "city_cn",
+									"type": "String",
+									"description": "城市(汉字)"
+								},
+								{
+									"name": "province_code",
+									"type": "Number",
+									"description": "省份代码"
+								},
+								{
+									"name": "province_cn",
+									"type": "String",
+									"description": "省份(汉字)"
+								},
+								{
+									"name": "city_py_head",
+									"type": "String",
+									"description": "城市拼音首字母"
+								},
+								{
+									"name": "city_url",
+									"type": "String",
+									"description": "城市图片URL"
+								}
+							],
+							"name": "city_list",
+							"type": "CityAddressDetail[]",
+							"description": "城市列表"
 						}
 					],
-					"name": "contents",
-					"type": "AddressSearchDto[]",
+					"name": "content",
+					"type": "AddressSearchVO",
 					"description": "返回结果"
 				},
 				{

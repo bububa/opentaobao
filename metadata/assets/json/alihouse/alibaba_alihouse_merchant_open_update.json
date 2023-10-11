@@ -1,0 +1,53 @@
+{
+	"requestParams": [
+		{
+			"name": "merchant_open_id",
+			"type": "Number",
+			"description": "经营主体ID",
+			"required": true
+		},
+		{
+			"name": "legal_cert_status",
+			"type": "Number",
+			"description": "法人证件有效期类型"
+		},
+		{
+			"name": "legal_cert_expire_time",
+			"type": "String",
+			"description": "法人证件有效期时间"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "true或false"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "操作结果"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.merchant.open.update",
+	"apiChineseName": "非融合店进件升级成融合店",
+	"description": "非融合店进件升级成融合店",
+	"id": 67612
+}

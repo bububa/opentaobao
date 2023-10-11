@@ -1,0 +1,32 @@
+{
+	"requestParams": [
+		{
+			"name": "activity_id",
+			"type": "Number",
+			"description": "活动id",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "会话token",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "是否预约成功"
+		},
+		{
+			"name": "error",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.jhs.community.activity.reservation",
+	"apiChineseName": "社群活动预约",
+	"description": "社群活动预约",
+	"id": 65918
+}

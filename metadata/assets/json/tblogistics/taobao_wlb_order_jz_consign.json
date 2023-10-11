@@ -25,7 +25,7 @@
 				}
 			],
 			"name": "lg_tp_dto",
-			"type": "Tpdto",
+			"type": "TPDTO",
 			"description": "物流公司信息",
 			"required": true
 		},
@@ -43,7 +43,7 @@
 				}
 			],
 			"name": "ins_tp_dto",
-			"type": "Tpdto",
+			"type": "TPDTO",
 			"description": "安装公司信息,需要安装时,才填写"
 		},
 		{
@@ -100,7 +100,7 @@
 				}
 			],
 			"name": "jz_receiver_to",
-			"type": "JzReceiverTo",
+			"type": "JzReceiverTO",
 			"description": "家装收货人信息,如果为空,则取默认收货信息"
 		},
 		{
@@ -157,7 +157,7 @@
 				}
 			],
 			"name": "ins_receiver_to",
-			"type": "JzReceiverTo",
+			"type": "JzReceiverTO",
 			"description": "安装收货人信息,如果为空,则取默认收货人信息"
 		},
 		{

@@ -64,7 +64,7 @@
 				}
 			],
 			"name": "jz_receiver_to",
-			"type": "JzReceiverTo",
+			"type": "JzReceiverTO",
 			"description": "家装收货人信息"
 		},
 		{
@@ -121,7 +121,7 @@
 				}
 			],
 			"name": "ins_jz_receiver_t_o",
-			"type": "JzReceiverTo",
+			"type": "JzReceiverTO",
 			"description": "家装安装服务收货人信息"
 		}
 	],
@@ -152,7 +152,7 @@
 						}
 					],
 					"name": "expresses",
-					"type": "Expresses[]",
+					"type": "TPDTO[]",
 					"description": "快递公司列表"
 				},
 				{
@@ -174,7 +174,7 @@
 						}
 					],
 					"name": "ins_tps",
-					"type": "Instps[]",
+					"type": "TPDTO[]",
 					"description": "安装公司列表"
 				},
 				{
@@ -191,7 +191,7 @@
 						}
 					],
 					"name": "lg_cps",
-					"type": "Lgcps[]",
+					"type": "TPDTO[]",
 					"description": "物流公司列表"
 				},
 				{
@@ -216,7 +216,7 @@
 				}
 			],
 			"name": "result",
-			"type": "JzTopDto",
+			"type": "JzTopDTO",
 			"description": "结果信息"
 		},
 		{

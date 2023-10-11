@@ -67,7 +67,7 @@
 								{
 									"name": "total_amount",
 									"type": "Number",
-									"description": "凭证金额，单位分。如果是团购，为单份凭证的金额；如果是N次次卡，则为N次卡的总金额，N 对应quantity值"
+									"description": "凭证金额，单位分。如果是团购，为单份凭证的金额（对应商品售价,不是商品原价,不能作为代金券抵扣金额）；如果是N次次卡，则为N次卡的总金额，N 对应quantity值"
 								},
 								{
 									"name": "real_amount",
@@ -83,6 +83,11 @@
 									"name": "ticket_code",
 									"type": "String",
 									"description": "凭证券码。仅入参券码对应的凭证会返回该值，其余凭证此属性无返回值"
+								},
+								{
+									"name": "original_price",
+									"type": "Number",
+									"description": "购买时商品的原价（次卡是多次的总原价），单位分"
 								}
 							],
 							"name": "ticket_info_list",

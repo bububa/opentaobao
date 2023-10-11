@@ -45,7 +45,7 @@
 		{
 			"name": "page_size",
 			"type": "Number",
-			"description": "页大小",
+			"description": "页大小（最大每页查询条数100）",
 			"required": true
 		},
 		{

@@ -28,4 +28,6 @@ type SubTypeList struct {
 	PrepnUnitName string `json:"prepn_unit_name,omitempty" xml:"prepn_unit_name,omitempty"`
 	// 子类型
 	SubTypeNo string `json:"sub_type_no,omitempty" xml:"sub_type_no,omitempty"`
+	// 旧批准文号
+	ApproveNoOld string `json:"approve_no_old,omitempty" xml:"approve_no_old,omitempty"`
 }

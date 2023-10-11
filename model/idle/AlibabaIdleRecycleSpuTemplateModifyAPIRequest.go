@@ -12,7 +12,7 @@ import (
 // 闲鱼接收回收商spu模板挂载信息
 type AlibabaIdleRecycleSpuTemplateModifyAPIRequest struct {
 	model.Params
-	// 回收商挂载模版信息
+	// 服务商支持的SPU挂载
 	_recycleSpuTemplate *RecycleSpuTemplate
 }
 
@@ -41,7 +41,7 @@ func (r AlibabaIdleRecycleSpuTemplateModifyAPIRequest) GetRawParams() model.Para
 }
 
 // SetRecycleSpuTemplate is RecycleSpuTemplate Setter
-// 回收商挂载模版信息
+// 服务商支持的SPU挂载
 func (r *AlibabaIdleRecycleSpuTemplateModifyAPIRequest) SetRecycleSpuTemplate(_recycleSpuTemplate *RecycleSpuTemplate) error {
 	r._recycleSpuTemplate = _recycleSpuTemplate
 	r.Set("recycle_spu_template", _recycleSpuTemplate)

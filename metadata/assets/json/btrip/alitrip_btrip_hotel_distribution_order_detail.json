@@ -154,6 +154,16 @@
 									"name": "supplier_order_id",
 									"type": "String",
 									"description": "供应商订单id"
+								},
+								{
+									"name": "real_checkin_time",
+									"type": "Date",
+									"description": "实际入住时间"
+								},
+								{
+									"name": "real_checkout_time",
+									"type": "Date",
+									"description": "实际离店时间"
 								}
 							],
 							"name": "btrip_hotel_order_main_info",

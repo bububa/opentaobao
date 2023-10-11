@@ -151,6 +151,6 @@
 	],
 	"name": "taobao.qimen.inventory.query",
 	"apiChineseName": "库存查询接口（多商品）",
-	"description": "ERP调用奇门的接口,查询商品的库存量",
+	"description": "taobao.qimen.inventory.query",
 	"id": 25999
 }

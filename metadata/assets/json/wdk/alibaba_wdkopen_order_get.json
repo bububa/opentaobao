@@ -188,6 +188,58 @@
 									"name": "price",
 									"type": "Number",
 									"description": "子单价格"
+								},
+								{
+									"name": "combine_item",
+									"type": "Boolean",
+									"description": "是否为组合品"
+								},
+								{
+									"subParams": [
+										{
+											"name": "sku_code",
+											"type": "String",
+											"description": "商品编码"
+										},
+										{
+											"name": "auction_title",
+											"type": "String",
+											"description": "商品名称"
+										},
+										{
+											"name": "bar_code",
+											"type": "String",
+											"description": "商品条码"
+										},
+										{
+											"name": "buy_amount_sale",
+											"type": "Number",
+											"description": "销售单位购买数量"
+										},
+										{
+											"name": "buy_amount_stock",
+											"type": "String",
+											"description": "库存单位购买数量"
+										},
+										{
+											"name": "sale_unit",
+											"type": "String",
+											"description": "销售单位"
+										},
+										{
+											"name": "stock_unit",
+											"type": "String",
+											"description": "库存单位"
+										},
+										{
+											"name": "auction_price",
+											"type": "Number",
+											"description": "商品价格"
+										}
+									],
+									"name": "combine_item_list",
+									"type": "CombineItem[]",
+									"description": "组合品列表"
 								}
 							],
 							"name": "sub_orders",

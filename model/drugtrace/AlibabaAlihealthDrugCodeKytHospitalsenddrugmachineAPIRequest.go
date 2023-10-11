@@ -18,6 +18,8 @@ type AlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIRequest struct {
 	_codes []string
 	// 企业唯一标识
 	_refEntId string
+	// 69码
+	_barcode69 string
 }
 
 // NewAlibabaAlihealthDrugCodeKytHospitalsenddrugmachineRequest 初始化AlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIRequest对象
@@ -68,4 +70,17 @@ func (r *AlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIRequest) SetRefEnt
 // GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIRequest) GetRefEntId() string {
 	return r._refEntId
+}
+
+// SetBarcode69 is Barcode69 Setter
+// 69码
+func (r *AlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIRequest) SetBarcode69(_barcode69 string) error {
+	r._barcode69 = _barcode69
+	r.Set("barcode69", _barcode69)
+	return nil
+}
+
+// GetBarcode69 Barcode69 Getter
+func (r AlibabaAlihealthDrugCodeKytHospitalsenddrugmachineAPIRequest) GetBarcode69() string {
+	return r._barcode69
 }

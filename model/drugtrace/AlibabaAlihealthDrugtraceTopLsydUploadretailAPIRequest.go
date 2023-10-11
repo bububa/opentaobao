@@ -30,17 +30,17 @@ type AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest struct {
 	_customerIdType string
 	// 购买人证件编号
 	_customerId string
-	// 购买人电话
+	// 购买人电话(最大长度11)
 	_userTel string
 	// 互联网订单标识 0非互联网 1互联网
 	_networkBillFlag string
-	// 开药医师
+	// 开药医师(最大长度20)
 	_medicDoctor string
-	// 药品发药人
+	// 药品发药人(最大长度20)
 	_medicDispenser string
-	// 药品使用者姓名
+	// 药品使用者姓名(最大长度20)
 	_userName string
-	// 药品代理人
+	// 药品代理人(最大长度20)
 	_userAgent string
 	// 单据类型[321,零售出库][322,疫苗接种][116,消费者退货入库]
 	_billType int64
@@ -190,7 +190,7 @@ func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetCustomerId() 
 }
 
 // SetUserTel is UserTel Setter
-// 购买人电话
+// 购买人电话(最大长度11)
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetUserTel(_userTel string) error {
 	r._userTel = _userTel
 	r.Set("user_tel", _userTel)
@@ -216,7 +216,7 @@ func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetNetworkBillFl
 }
 
 // SetMedicDoctor is MedicDoctor Setter
-// 开药医师
+// 开药医师(最大长度20)
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetMedicDoctor(_medicDoctor string) error {
 	r._medicDoctor = _medicDoctor
 	r.Set("medic_doctor", _medicDoctor)
@@ -229,7 +229,7 @@ func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetMedicDoctor()
 }
 
 // SetMedicDispenser is MedicDispenser Setter
-// 药品发药人
+// 药品发药人(最大长度20)
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetMedicDispenser(_medicDispenser string) error {
 	r._medicDispenser = _medicDispenser
 	r.Set("medic_dispenser", _medicDispenser)
@@ -242,7 +242,7 @@ func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetMedicDispense
 }
 
 // SetUserName is UserName Setter
-// 药品使用者姓名
+// 药品使用者姓名(最大长度20)
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetUserName(_userName string) error {
 	r._userName = _userName
 	r.Set("user_name", _userName)
@@ -255,7 +255,7 @@ func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetUserName() st
 }
 
 // SetUserAgent is UserAgent Setter
-// 药品代理人
+// 药品代理人(最大长度20)
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetUserAgent(_userAgent string) error {
 	r._userAgent = _userAgent
 	r.Set("user_agent", _userAgent)

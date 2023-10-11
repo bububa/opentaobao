@@ -1,0 +1,72 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "执行结果code",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "详细信息"
+				},
+				{
+					"name": "secret_key",
+					"type": "String",
+					"description": "访问业务secretKey",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "描述"
+				},
+				{
+					"name": "uuid",
+					"type": "String",
+					"description": "uuid",
+					"required": true
+				}
+			],
+			"name": "rpa_exe_result_by_uuid_req",
+			"type": "RpaExeResultByUuidReq",
+			"description": "请求参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "请求trace_id"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求结果"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误code"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "结果"
+		}
+	],
+	"name": "cainiao.cntec.compass.rpa.exe.resultsave",
+	"apiChineseName": "rpa执行结果回传",
+	"description": "rpa执行结果回传",
+	"id": 68008
+}

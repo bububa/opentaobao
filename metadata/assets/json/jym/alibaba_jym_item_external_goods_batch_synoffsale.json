@@ -1,0 +1,68 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "goods_id",
+					"type": "Number",
+					"description": "交易猫商品ID",
+					"required": true
+				}
+			],
+			"name": "param_sync_off_sale_command_d_t_o",
+			"type": "SyncOffSaleCommandDTO",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "extra_err_msg",
+					"type": "String",
+					"description": "调用错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "Number",
+							"description": "状态码"
+						},
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "描述"
+						},
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "是否下架成功"
+						}
+					],
+					"name": "result",
+					"type": "GoodsResultDTO",
+					"description": "业务对象"
+				},
+				{
+					"name": "state_code",
+					"type": "String",
+					"description": "调用错误码"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否调用成功"
+				}
+			],
+			"name": "result",
+			"type": "ResultDTO",
+			"description": "出参"
+		}
+	],
+	"name": "alibaba.jym.item.external.goods.batch.synoffsale",
+	"apiChineseName": "同步下架接口",
+	"description": "同步下架接口",
+	"id": 67486
+}

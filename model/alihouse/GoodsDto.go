@@ -6,6 +6,8 @@ type GoodsDto struct {
 	OuterConsultantIds []string `json:"outer_consultant_ids,omitempty" xml:"outer_consultant_ids>string,omitempty"`
 	// 外部委托房源列表
 	OuterHouses []GoodsHouseDto `json:"outer_houses,omitempty" xml:"outer_houses>goods_house_dto,omitempty"`
+	// 外部户型列表
+	OuterLayouts []GoodsLayoutDto `json:"outer_layouts,omitempty" xml:"outer_layouts>goods_layout_dto,omitempty"`
 	// 外部私域楼盘id
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// 品外部唯一码
@@ -52,4 +54,10 @@ type GoodsDto struct {
 	BusinessType int64 `json:"business_type,omitempty" xml:"business_type,omitempty"`
 	// 是否房源 -1无关联 0部分关联 1全部
 	IsAllHouse int64 `json:"is_all_house,omitempty" xml:"is_all_house,omitempty"`
+	// 是否可视化 0-否 1-是
+	IsVisible int64 `json:"is_visible,omitempty" xml:"is_visible,omitempty"`
+	// 模板id
+	TemplateId int64 `json:"template_id,omitempty" xml:"template_id,omitempty"`
+	// 是否支持银行服务 0-否 1-是
+	IsBank int64 `json:"is_bank,omitempty" xml:"is_bank,omitempty"`
 }

@@ -1,0 +1,213 @@
+{
+	"requestParams": [
+		{
+			"name": "input_system_code",
+			"type": "String",
+			"description": "系统标识"
+		},
+		{
+			"subParams": [
+				{
+					"name": "roll_flag",
+					"type": "String",
+					"description": "滑动标识（up:上滑  down：下滑）"
+				},
+				{
+					"name": "busi_id",
+					"type": "String",
+					"description": "业务id"
+				},
+				{
+					"name": "scene_id",
+					"type": "Number",
+					"description": "场景id"
+				},
+				{
+					"name": "standpoint_id",
+					"type": "Number",
+					"description": "口径id"
+				},
+				{
+					"name": "keyword",
+					"type": "String",
+					"description": "关键字"
+				},
+				{
+					"name": "operate_work_no",
+					"type": "String",
+					"description": "操作人工号"
+				},
+				{
+					"name": "input_system_code",
+					"type": "String",
+					"description": "系统标识"
+				}
+			],
+			"name": "query_param",
+			"type": "QueryParam",
+			"description": "滑动查询参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "success_res",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "error_code_res",
+			"type": "Number",
+			"description": "错误编码"
+		},
+		{
+			"subParams": [
+				{
+					"name": "scenes_struct",
+					"type": "String",
+					"description": "场景结构"
+				},
+				{
+					"name": "table_str",
+					"type": "String[]",
+					"description": "表格"
+				},
+				{
+					"name": "scenes_id",
+					"type": "Number",
+					"description": "场景id"
+				},
+				{
+					"name": "is_collection",
+					"type": "Boolean",
+					"description": "是否收藏"
+				},
+				{
+					"name": "derive_count",
+					"type": "Number",
+					"description": "衍生数量"
+				},
+				{
+					"name": "label",
+					"type": "String",
+					"description": "标签"
+				},
+				{
+					"name": "gmt_create",
+					"type": "String",
+					"description": "创建时间"
+				},
+				{
+					"name": "table_schema",
+					"type": "String",
+					"description": "表格"
+				},
+				{
+					"name": "defense_caliber",
+					"type": "String",
+					"description": "口径"
+				},
+				{
+					"name": "standpoint_desc",
+					"type": "String",
+					"description": "口径描述"
+				},
+				{
+					"name": "standpoint_labels",
+					"type": "String[]",
+					"description": "口径标签"
+				},
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "标识"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "标题"
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "类型(String/File)"
+						},
+						{
+							"name": "value",
+							"type": "String",
+							"description": "值"
+						},
+						{
+							"subParams": [
+								{
+									"name": "file_name",
+									"type": "String",
+									"description": "名称"
+								},
+								{
+									"name": "preview_url",
+									"type": "String",
+									"description": "预览地址"
+								},
+								{
+									"name": "download_url",
+									"type": "String",
+									"description": "下载地址"
+								},
+								{
+									"name": "file_type",
+									"type": "String",
+									"description": "文件类型"
+								},
+								{
+									"name": "file_id",
+									"type": "Number",
+									"description": "文件id"
+								}
+							],
+							"name": "file_values",
+							"type": "FileValues[]",
+							"description": "文件"
+						}
+					],
+					"name": "options",
+					"type": "Options[]",
+					"description": "拓展字段"
+				},
+				{
+					"name": "scenes_name",
+					"type": "String",
+					"description": "场景名称"
+				},
+				{
+					"name": "referenced_count",
+					"type": "Number",
+					"description": "引用数量"
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "口径id"
+				},
+				{
+					"name": "creater_worker_no",
+					"type": "String",
+					"description": "创建人工号"
+				}
+			],
+			"name": "content",
+			"type": "StandpointOutPutDto []",
+			"description": "口径"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误描述"
+		}
+	],
+	"name": "alibaba.legal.standpoint.standpoint.queryall",
+	"apiChineseName": "滑动查询口径",
+	"description": "滑动查询口径",
+	"id": 67051
+}

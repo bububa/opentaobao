@@ -16,4 +16,6 @@ type HotelOrderValidateRes struct {
 	RatePlanId int64 `json:"rate_plan_id,omitempty" xml:"rate_plan_id,omitempty"`
 	// 优惠总金额，单位为分
 	PromotionTotalPrice int64 `json:"promotion_total_price,omitempty" xml:"promotion_total_price,omitempty"`
+	// 1-订单金额酒店开票，分销商开返佣发票 2-订单金额阿信开票，分销商不开票 3-订单金额无票，分销商开返佣发票
+	InvoicingMode int64 `json:"invoicing_mode,omitempty" xml:"invoicing_mode,omitempty"`
 }

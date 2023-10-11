@@ -33,6 +33,14 @@ type TaobaoXhotelMultiplerateUpdateAPIRequest struct {
 	_lockStartTime string
 	// 在线预约关联关系推送，priceRuleNumber：加价规则序号
 	_onlineBookingBindingInfo string
+	// 退订政策字段，是个json串，参考示例值设置改字段的值。允许变更/取消：在XX年XX月XX日XX时前取消收取Y%的手续费，100>Y>=0允许变更/取消：在入住前X小时前取消收取Y%的手续费，100>Y>=0（不超过10条）。1.表示任意退{"cancelPolicyType":1};2.表示不能退{"cancelPolicyType":2};4.从入住当天24点往前推X小时前取消收取Y%手续费，否则不可取消{"cancelPolicyType":4,"policyInfo":{"48":10,"24":20}}表示，从入住日24点往前推提前至少48小时取消，收取10%的手续费，从入住日24点往前推提前至少24小时取消，收取20%的手续费;5.从24点往前推多少小时可退{"cancelPolicyType":5,"policyInfo":{"timeBefore":6}}表示从入住日24点往前推至少6个小时即入住日18点前可免费取消;6.从入住日24点往前推，至少提前小时数扣取首晚房费{"cancelPolicyType":6,"policyInfo":{"14":1}}表示入住日24点往前推14小时，即入住日10点前取消收取首晚房费。 注意：支付类型为预付，那么可以使用所有的退订类型,但是必须是非担保；支付类型为面付或者信任住并且是无担保，那么只能使用1类型的退订；支付类型为面付或者信任住并且为担保，那么只能使用2,5类型的退订；支付类型为在线预约，那么只能使用1,2,5类型的退改。如果支付类型是面付或者信任住并且为担保，那么如果传了4或者6的退订，那么会强制转成类型5。支持多段时间、多间夜扣款
+	_cancelPolicy string
+	// 在更新rateplan时，同时新增或更新早餐日历。 date：早餐政策属于具体哪一天 breakfast_count：这一天早餐的数量。>=0,<=99 如果date为空，那么会去读取startDate和endDate（格式都为"yyyy-MM-dd"），即早餐正常属于一个时间段。-1为状态早餐，和最终绑定的几人价有关，如果是一人价那么就是我一份早餐，二人价就是两份早餐。请注意，该字段仅能维护从当前时间开始，10年以内的数据，如果超过10年，会报错。
+	_breakfastCal string
+	// 在新增rateplan的同时新增取消政策日历。 json格式。 date：日历的某一天，格式为"yyyy-MM-dd" cancel_policy：日历某一天的价格政策。格式和限制同cancel_policy。 如果date为空，那么会读取startDate和endDate（格式都为"yyyy-MM-dd"），即取消政策属于某一个时间段。 注意：支付类型为预付，那么可以使用所有的退订类型，但是必须是非担保；支付类型为面付或者信任住并且是无担保，那么只能使用1类型的退订；支付类型为面付或者信任住并且为担保，那么只能使用2,5类型的退订；支付类型为在线预约，那么只能使用1,2,5类型的退改。如果支付类型是面付或者信任住并且为担保，那么如果传了4或者6的退订，那么会强制转成类型5。请注意，该字段仅能维护从当前时间开始，10年以内的数据，如果超过10年，会报错。
+	_cancelPolicyCal string
+	//  是一个JSONArray 字符串 actionType  操作类型 BOUND: 绑定，UNBOUND：解绑; outXcode  元素编码 ; subTypeCode x 元素子类型， 参考：https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.9MjTPx&docType=1&articleId=121402&previewCode=787DFB0895F05C90D167579A04BD32E3; status: 状态是否生效0 失效, 1生效; shortName x元素标题; time 服务时间段(18:00-21:00); value 商品价值(100 - 999900 单位分); itemDesc 商品使用说明; dimensionType 附加产品使用维度   1:每间房维度 2:每间夜维度; picList 图片格式化信息 [{"url":"https://xxxxx/","isMain":true}]; adultCount 成人数量 (1-99); childCount 儿童数量 (0-99); itemLimit 使用限制, 文字描述,200 字内; checkInStart 入住生效开始时间; checkInEnd 入住生效结束时间; bookStartTime 预定生效开始时间; bookStartEnd 预定生效截止时间; featureDetail 详细信息json字符串 [{"detailName":"免费寄存","detailValue":[""],"type":"single","priority":1}]
+	_hotelXitemInfos string
 	// 废弃，使用rate_plan_code
 	_rpid int64
 	// 价格状态。0为不可售；1为可售，默认可售
@@ -47,6 +55,8 @@ type TaobaoXhotelMultiplerateUpdateAPIRequest struct {
 	_childnum int64
 	// 婴儿人数
 	_infantnum int64
+	// -1,状态早餐，和入住人数有关系，几人价就是几份早餐；0：不含早1：含单早2：含双早N：含N早（1-99可选）；（添加RP时为必须）
+	_breakfast int64
 }
 
 // NewTaobaoXhotelMultiplerateUpdateRequest 初始化TaobaoXhotelMultiplerateUpdateAPIRequest对象
@@ -203,6 +213,59 @@ func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetOnlineBookingBindingInfo() 
 	return r._onlineBookingBindingInfo
 }
 
+// SetCancelPolicy is CancelPolicy Setter
+// 退订政策字段，是个json串，参考示例值设置改字段的值。允许变更/取消：在XX年XX月XX日XX时前取消收取Y%的手续费，100&gt;Y&gt;=0允许变更/取消：在入住前X小时前取消收取Y%的手续费，100&gt;Y&gt;=0（不超过10条）。1.表示任意退{&#34;cancelPolicyType&#34;:1};2.表示不能退{&#34;cancelPolicyType&#34;:2};4.从入住当天24点往前推X小时前取消收取Y%手续费，否则不可取消{&#34;cancelPolicyType&#34;:4,&#34;policyInfo&#34;:{&#34;48&#34;:10,&#34;24&#34;:20}}表示，从入住日24点往前推提前至少48小时取消，收取10%的手续费，从入住日24点往前推提前至少24小时取消，收取20%的手续费;5.从24点往前推多少小时可退{&#34;cancelPolicyType&#34;:5,&#34;policyInfo&#34;:{&#34;timeBefore&#34;:6}}表示从入住日24点往前推至少6个小时即入住日18点前可免费取消;6.从入住日24点往前推，至少提前小时数扣取首晚房费{&#34;cancelPolicyType&#34;:6,&#34;policyInfo&#34;:{&#34;14&#34;:1}}表示入住日24点往前推14小时，即入住日10点前取消收取首晚房费。 注意：支付类型为预付，那么可以使用所有的退订类型,但是必须是非担保；支付类型为面付或者信任住并且是无担保，那么只能使用1类型的退订；支付类型为面付或者信任住并且为担保，那么只能使用2,5类型的退订；支付类型为在线预约，那么只能使用1,2,5类型的退改。如果支付类型是面付或者信任住并且为担保，那么如果传了4或者6的退订，那么会强制转成类型5。支持多段时间、多间夜扣款
+func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetCancelPolicy(_cancelPolicy string) error {
+	r._cancelPolicy = _cancelPolicy
+	r.Set("cancel_policy", _cancelPolicy)
+	return nil
+}
+
+// GetCancelPolicy CancelPolicy Getter
+func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetCancelPolicy() string {
+	return r._cancelPolicy
+}
+
+// SetBreakfastCal is BreakfastCal Setter
+// 在更新rateplan时，同时新增或更新早餐日历。 date：早餐政策属于具体哪一天 breakfast_count：这一天早餐的数量。&gt;=0,&lt;=99 如果date为空，那么会去读取startDate和endDate（格式都为&#34;yyyy-MM-dd&#34;），即早餐正常属于一个时间段。-1为状态早餐，和最终绑定的几人价有关，如果是一人价那么就是我一份早餐，二人价就是两份早餐。请注意，该字段仅能维护从当前时间开始，10年以内的数据，如果超过10年，会报错。
+func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetBreakfastCal(_breakfastCal string) error {
+	r._breakfastCal = _breakfastCal
+	r.Set("breakfast_cal", _breakfastCal)
+	return nil
+}
+
+// GetBreakfastCal BreakfastCal Getter
+func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetBreakfastCal() string {
+	return r._breakfastCal
+}
+
+// SetCancelPolicyCal is CancelPolicyCal Setter
+// 在新增rateplan的同时新增取消政策日历。 json格式。 date：日历的某一天，格式为&#34;yyyy-MM-dd&#34; cancel_policy：日历某一天的价格政策。格式和限制同cancel_policy。 如果date为空，那么会读取startDate和endDate（格式都为&#34;yyyy-MM-dd&#34;），即取消政策属于某一个时间段。 注意：支付类型为预付，那么可以使用所有的退订类型，但是必须是非担保；支付类型为面付或者信任住并且是无担保，那么只能使用1类型的退订；支付类型为面付或者信任住并且为担保，那么只能使用2,5类型的退订；支付类型为在线预约，那么只能使用1,2,5类型的退改。如果支付类型是面付或者信任住并且为担保，那么如果传了4或者6的退订，那么会强制转成类型5。请注意，该字段仅能维护从当前时间开始，10年以内的数据，如果超过10年，会报错。
+func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetCancelPolicyCal(_cancelPolicyCal string) error {
+	r._cancelPolicyCal = _cancelPolicyCal
+	r.Set("cancel_policy_cal", _cancelPolicyCal)
+	return nil
+}
+
+// GetCancelPolicyCal CancelPolicyCal Getter
+func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetCancelPolicyCal() string {
+	return r._cancelPolicyCal
+}
+
+// SetHotelXitemInfos is HotelXitemInfos Setter
+//
+//	是一个JSONArray 字符串 actionType  操作类型 BOUND: 绑定，UNBOUND：解绑; outXcode  元素编码 ; subTypeCode x 元素子类型， 参考：https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.9MjTPx&amp;docType=1&amp;articleId=121402&amp;previewCode=787DFB0895F05C90D167579A04BD32E3; status: 状态是否生效0 失效, 1生效; shortName x元素标题; time 服务时间段(18:00-21:00); value 商品价值(100 - 999900 单位分); itemDesc 商品使用说明; dimensionType 附加产品使用维度   1:每间房维度 2:每间夜维度; picList 图片格式化信息 [{&#34;url&#34;:&#34;https://xxxxx/&#34;,&#34;isMain&#34;:true}]; adultCount 成人数量 (1-99); childCount 儿童数量 (0-99); itemLimit 使用限制, 文字描述,200 字内; checkInStart 入住生效开始时间; checkInEnd 入住生效结束时间; bookStartTime 预定生效开始时间; bookStartEnd 预定生效截止时间; featureDetail 详细信息json字符串 [{&#34;detailName&#34;:&#34;免费寄存&#34;,&#34;detailValue&#34;:[&#34;&#34;],&#34;type&#34;:&#34;single&#34;,&#34;priority&#34;:1}]
+func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetHotelXitemInfos(_hotelXitemInfos string) error {
+	r._hotelXitemInfos = _hotelXitemInfos
+	r.Set("hotel_xitem_infos", _hotelXitemInfos)
+	return nil
+}
+
+// GetHotelXitemInfos HotelXitemInfos Getter
+func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetHotelXitemInfos() string {
+	return r._hotelXitemInfos
+}
+
 // SetRpid is Rpid Setter
 // 废弃，使用rate_plan_code
 func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetRpid(_rpid int64) error {
@@ -292,4 +355,17 @@ func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetInfantnum(_infantnum int64
 // GetInfantnum Infantnum Getter
 func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetInfantnum() int64 {
 	return r._infantnum
+}
+
+// SetBreakfast is Breakfast Setter
+// -1,状态早餐，和入住人数有关系，几人价就是几份早餐；0：不含早1：含单早2：含双早N：含N早（1-99可选）；（添加RP时为必须）
+func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetBreakfast(_breakfast int64) error {
+	r._breakfast = _breakfast
+	r.Set("breakfast", _breakfast)
+	return nil
+}
+
+// GetBreakfast Breakfast Getter
+func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetBreakfast() int64 {
+	return r._breakfast
 }

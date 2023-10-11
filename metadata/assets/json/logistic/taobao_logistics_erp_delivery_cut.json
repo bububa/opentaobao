@@ -1,0 +1,67 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "mail_no",
+					"type": "String",
+					"description": "面单号",
+					"required": true
+				},
+				{
+					"name": "outer_order_id",
+					"type": "String",
+					"description": "业务单号"
+				},
+				{
+					"name": "intercept_time",
+					"type": "String",
+					"description": "配拦截发起时间",
+					"required": true
+				},
+				{
+					"name": "intercept_reason",
+					"type": "String",
+					"description": "配拦截发起原因",
+					"required": true
+				},
+				{
+					"name": "tms_cp_code",
+					"type": "String",
+					"description": "快递公司编码",
+					"required": true
+				}
+			],
+			"name": "cut_off_delivery_process_request",
+			"type": "CutOffDeliveryProcessRequest",
+			"description": "请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "suc",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "biz_error_message",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "biz_error_code",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "retry",
+			"type": "Boolean",
+			"description": "是否需要重试"
+		}
+	],
+	"name": "taobao.logistics.erp.delivery.cut",
+	"apiChineseName": "ERP发起配拦截",
+	"description": "ERP发起配拦截",
+	"id": 66686
+}

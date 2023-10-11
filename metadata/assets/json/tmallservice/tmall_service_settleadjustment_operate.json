@@ -1,0 +1,55 @@
+{
+	"requestParams": [
+		{
+			"name": "settlement_adjustment_order_id",
+			"type": "Number",
+			"description": "调整单ID（也即退款单ID）",
+			"required": true
+		},
+		{
+			"name": "memo",
+			"type": "String",
+			"description": "审批备注",
+			"required": true
+		},
+		{
+			"name": "operate_code",
+			"type": "String",
+			"description": "操作动作",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "display_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误提示"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "响应结果"
+		}
+	],
+	"name": "tmall.service.settleadjustment.operate",
+	"apiChineseName": "天猫服务调整单操作",
+	"description": "提供给服务商在对结算有异议时，发起结算调整单。\n通过说明调整单ID，调整费用值，调整原因进行结算调整单修改。",
+	"id": 65803
+}

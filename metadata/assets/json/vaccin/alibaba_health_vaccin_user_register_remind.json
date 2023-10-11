@@ -1,0 +1,61 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "vaccine_id",
+					"type": "String",
+					"description": "阿里健康的疫苗id",
+					"required": true
+				},
+				{
+					"name": "pov_id",
+					"type": "String",
+					"description": "阿里健康的pov id",
+					"required": true
+				}
+			],
+			"name": "isv_vc_available_remind_request",
+			"type": "IsvVcAvailableRemindRequest",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "登记单总数"
+				},
+				{
+					"name": "outer_register_id_list",
+					"type": "String[]",
+					"description": "登记单主键id。total如果大于200，则只显示200个id"
+				}
+			],
+			"name": "model",
+			"type": "IsvVcAvailableRemindResponse",
+			"description": "出参"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "info"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "code"
+		}
+	],
+	"name": "alibaba.health.vaccin.user.register.remind",
+	"apiChineseName": "isv到苗提醒",
+	"description": "isv到苗提醒",
+	"id": 67724
+}

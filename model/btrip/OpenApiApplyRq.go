@@ -10,6 +10,8 @@ type OpenApiApplyRq struct {
 	ExternalTravelerList []OpenUserInfo `json:"external_traveler_list,omitempty" xml:"external_traveler_list>open_user_info,omitempty"`
 	// 内部人员差标列表
 	TravelerStandard []InternalUserStandard `json:"traveler_standard,omitempty" xml:"traveler_standard>internal_user_standard,omitempty"`
+	// 城市集行程列表
+	ItinerarySetList []OpenItineraryInfo `json:"itinerary_set_list,omitempty" xml:"itinerary_set_list>open_itinerary_info,omitempty"`
 	// 外部申请单id
 	ThirdpartApplyId string `json:"thirdpart_apply_id,omitempty" xml:"thirdpart_apply_id,omitempty"`
 	// 用户展示的外部审批单id信息
@@ -60,4 +62,6 @@ type OpenApiApplyRq struct {
 	HotelShare *HotelShareInfo `json:"hotel_share,omitempty" xml:"hotel_share,omitempty"`
 	// 外部出行人差标
 	ExternalTravelerStandard *ExternalUserStandard `json:"external_traveler_standard,omitempty" xml:"external_traveler_standard,omitempty"`
+	// 申请单城市规则： 0出发&amp;目的地一对一，按列表传行程  1多选N个地点，城市集行程 不传默认为0 会根据商旅管理后台-通用差旅设置-行程城市规则中的设置，校验申请单本字段的值是否正确 当行程城市规则中设置的是“1对1行程”时，必须传0 当行程城市规则中设置的是“多对多城市集行程”时，必须传1 会根据此字段传入的值，校验行程传参是否正确 当申请单城市规则为0，itinerary_list行程列表必填 当申请单城市规则为1，城市集行程必填
+	ItineraryRule int64 `json:"itinerary_rule,omitempty" xml:"itinerary_rule,omitempty"`
 }

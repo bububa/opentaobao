@@ -1,0 +1,110 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码",
+					"required": true
+				}
+			],
+			"name": "top_service_context",
+			"type": "TopServiceContext",
+			"description": "topServiceContext",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "material_id_list",
+					"type": "Number[]",
+					"description": "宝贝id集合"
+				},
+				{
+					"name": "promotion_type",
+					"type": "String",
+					"description": "推广主体类型,item:商品,item_private_mini:独享橱窗,shop:店铺,content:内容,short_video:短视频,user_define:自定义;"
+				},
+				{
+					"name": "parent_cat_level",
+					"type": "Number",
+					"description": "父级类目级别"
+				}
+			],
+			"name": "std_category_query_v_o",
+			"type": "StdCategoryQueryVo",
+			"description": "stdCategoryQueryVO",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "ok",
+							"type": "Boolean",
+							"description": "是否成功"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误编码"
+						}
+					],
+					"name": "info",
+					"type": "TopInfo",
+					"description": "请求系统信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "cat_id",
+									"type": "Number",
+									"description": "类目id"
+								},
+								{
+									"name": "cat_name",
+									"type": "String",
+									"description": "类目名称"
+								},
+								{
+									"name": "cat_level",
+									"type": "Number",
+									"description": "类目级别，一级类目、二级目录"
+								}
+							],
+							"name": "std_category_v_o_list",
+							"type": "StdCategoryVo[]",
+							"description": "批量结果集"
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "数量"
+						}
+					],
+					"name": "std_category_v_o_top_bulk_data",
+					"type": "TopBulkData",
+					"description": "结果集"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.universalbp.stdcategory.findlist",
+	"apiChineseName": "人群相关类目查询",
+	"description": "入参商品信息，出参商品所属类别",
+	"id": 67041
+}

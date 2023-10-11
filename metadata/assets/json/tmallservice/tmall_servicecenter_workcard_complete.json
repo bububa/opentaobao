@@ -30,6 +30,11 @@
 			"name": "longitude",
 			"type": "String",
 			"description": "核销地经度"
+		},
+		{
+			"name": "pic_urls",
+			"type": "String",
+			"description": "图片地址回传集合"
 		}
 	],
 	"responseParams": [

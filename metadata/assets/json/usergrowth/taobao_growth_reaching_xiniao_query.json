@@ -1,0 +1,83 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "open_id",
+					"required": true
+				},
+				{
+					"name": "package_num",
+					"type": "Number",
+					"description": "包裹数量"
+				},
+				{
+					"name": "open_id2",
+					"type": "String",
+					"description": "open_id",
+					"required": true
+				},
+				{
+					"name": "union_code",
+					"type": "String",
+					"description": "站点id"
+				}
+			],
+			"name": "suggestion_context",
+			"type": "XiNiaoSuggestionContextParam",
+			"description": "请求参数",
+			"required": true
+		},
+		{
+			"name": "wanted_size",
+			"type": "Number",
+			"description": "需要的数据量",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "image_url",
+					"type": "String",
+					"description": "图片URL"
+				},
+				{
+					"name": "landing_url",
+					"type": "String",
+					"description": "落地页URL"
+				},
+				{
+					"name": "exposure_url",
+					"type": "String",
+					"description": "曝光上报链接"
+				},
+				{
+					"name": "click_url",
+					"type": "String",
+					"description": "点击上报链接"
+				}
+			],
+			"name": "suggestions",
+			"type": "XiNiaoSuggestionDTO []",
+			"description": "推荐信息列表"
+		},
+		{
+			"name": "is_offering",
+			"type": "Boolean",
+			"description": "是否展现"
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "用户类型"
+		}
+	],
+	"name": "taobao.growth.reaching.xiniao.query",
+	"apiChineseName": "查询溪鸟推荐信息数据",
+	"description": "查询溪鸟推荐信息数据",
+	"id": 67370
+}

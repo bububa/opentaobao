@@ -12,10 +12,8 @@ type AddressSearchDto struct {
 	CountryCn string `json:"country_cn,omitempty" xml:"country_cn,omitempty"`
 	// 0国内1国外
 	Domestic int64 `json:"domestic,omitempty" xml:"domestic,omitempty"`
-	// 国家编码
-	CountryCode int64 `json:"country_code,omitempty" xml:"country_code,omitempty"`
 	// 城市编码
 	CityCode int64 `json:"city_code,omitempty" xml:"city_code,omitempty"`
-	// 酒店详情
-	HotelDetails *HotelDetails `json:"hotel_details,omitempty" xml:"hotel_details,omitempty"`
+	// 国家编码
+	CountryCode int64 `json:"country_code,omitempty" xml:"country_code,omitempty"`
 }

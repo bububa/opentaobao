@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihouseNewhomeProjectTradeitemAPIResponse 新二品同步 API返回值
+// AlibabaAlihouseNewhomeProjectTradeitemAPIResponse 新二租品同步 API返回值
 // alibaba.alihouse.newhome.project.tradeitem
 //
 // 新二品同步
@@ -15,7 +15,7 @@ type AlibabaAlihouseNewhomeProjectTradeitemAPIResponse struct {
 	AlibabaAlihouseNewhomeProjectTradeitemAPIResponseModel
 }
 
-// AlibabaAlihouseNewhomeProjectTradeitemAPIResponseModel is 新二品同步 成功返回结果
+// AlibabaAlihouseNewhomeProjectTradeitemAPIResponseModel is 新二租品同步 成功返回结果
 type AlibabaAlihouseNewhomeProjectTradeitemAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihouse_newhome_project_tradeitem_response"`
 	// 平台颁发的每次请求访问的唯一标识

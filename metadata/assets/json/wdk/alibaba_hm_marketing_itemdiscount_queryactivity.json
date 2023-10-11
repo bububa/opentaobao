@@ -1,0 +1,167 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "五道口活动id",
+					"required": true
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "商家活动id"
+				},
+				{
+					"name": "by_channel",
+					"type": "Boolean",
+					"description": "是否自定义渠道同步"
+				},
+				{
+					"subParams": [
+						{
+							"name": "channel",
+							"type": "String",
+							"description": "淘鲜达:\"31\",饿了么:\"3\",京东到家:\"26\",美团外卖:\"2\""
+						}
+					],
+					"name": "channel_config_list",
+					"type": "ChannelConfig[]",
+					"description": "自定义同步的渠道配置"
+				}
+			],
+			"name": "param0",
+			"type": "CommonActivityParam",
+			"description": "商品对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "discount_type",
+							"type": "String",
+							"description": "商品特价优惠方式[itemDecreaseMoney:商品特价减钱;itemFixPrice:商品特价一口价;itemDiscount:商品特价打折]"
+						},
+						{
+							"name": "activity_name",
+							"type": "String",
+							"description": "活动名称,不超过10个英文字符"
+						},
+						{
+							"name": "end_time",
+							"type": "Number",
+							"description": "活动结束时间,时间戳"
+						},
+						{
+							"name": "shop_ids",
+							"type": "String[]",
+							"description": "参加活动的渠道店ids"
+						},
+						{
+							"name": "out_act_id",
+							"type": "String",
+							"description": "商家活动id"
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "活动详情描述,不超过30个英文字符"
+						},
+						{
+							"name": "terminals",
+							"type": "Number[]",
+							"description": "优惠适用场景[APP|POS|POS+APP分别对应的值为1|2|1,2]"
+						},
+						{
+							"name": "start_time",
+							"type": "Number",
+							"description": "活动开始时间,时间戳"
+						},
+						{
+							"name": "activity_id",
+							"type": "Number",
+							"description": "五道口活动id"
+						},
+						{
+							"name": "member_limit",
+							"type": "Number",
+							"description": "会员维度活动参与人群限制[-1:不限制;1:会员专享;2:非会员专享]"
+						},
+						{
+							"name": "merchant_crowd_code",
+							"type": "String",
+							"description": "商家人群编码"
+						},
+						{
+							"name": "txd_crowd_code",
+							"type": "String",
+							"description": "淘鲜达人群编码"
+						},
+						{
+							"name": "activity_channel",
+							"type": "String",
+							"description": "渠道key"
+						},
+						{
+							"subParams": [
+								{
+									"name": "every_day_periods",
+									"type": "String[]",
+									"description": "每天的那些时间段生效"
+								},
+								{
+									"name": "weekdays",
+									"type": "Number[]",
+									"description": "一周的哪几天生效"
+								}
+							],
+							"name": "period_config",
+							"type": "PeriodConfig",
+							"description": "周期优惠信息"
+						},
+						{
+							"name": "priority_value",
+							"type": "Number",
+							"description": "活动优先级，值越大表示优先级越高，必须大于0"
+						},
+						{
+							"name": "cover_before",
+							"type": "Boolean",
+							"description": "coverBefore"
+						}
+					],
+					"name": "data",
+					"type": "ItemDiscountActivity",
+					"description": "特价活动信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否参加后单压前单，默认不参加"
+				}
+			],
+			"name": "result",
+			"type": "MarketResult",
+			"description": "查询特价活动返回结果"
+		}
+	],
+	"name": "alibaba.hm.marketing.itemdiscount.queryactivity",
+	"apiChineseName": "查找特价活动",
+	"description": "查找特价活动",
+	"id": 67219
+}

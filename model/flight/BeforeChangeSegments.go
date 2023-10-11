@@ -24,4 +24,6 @@ type BeforeChangeSegments struct {
 	SegmentIndex int64 `json:"segment_index,omitempty" xml:"segment_index,omitempty"`
 	// 航程序号
 	OdIndex int64 `json:"od_index,omitempty" xml:"od_index,omitempty"`
+	// 是否需要修改的航段,1:是,0:否
+	IsModify int64 `json:"is_modify,omitempty" xml:"is_modify,omitempty"`
 }

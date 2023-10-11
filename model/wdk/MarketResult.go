@@ -10,8 +10,8 @@ type MarketResult struct {
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误编码
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
-	// 报名活动成功的商品详情
-	Data *ItemCouponSku `json:"data,omitempty" xml:"data,omitempty"`
+	// 创建成功时会返回五道口优惠券活动id
+	Data int64 `json:"data,omitempty" xml:"data,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// success

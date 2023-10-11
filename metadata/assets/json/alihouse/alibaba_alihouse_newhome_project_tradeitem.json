@@ -149,11 +149,58 @@
 							"name": "outer_house_id",
 							"type": "String",
 							"description": "房源外部id"
+						},
+						{
+							"name": "business_type",
+							"type": "Number",
+							"description": "房源业务类型 2-分散房源 3 -集中式房源"
 						}
 					],
 					"name": "outer_houses",
 					"type": "GoodsHouseDTO[]",
 					"description": "外部委托房源列表"
+				},
+				{
+					"name": "is_visible",
+					"type": "Number",
+					"description": "是否可视化 0-否 1-是"
+				},
+				{
+					"name": "template_id",
+					"type": "Number",
+					"description": "模板id"
+				},
+				{
+					"name": "is_bank",
+					"type": "Number",
+					"description": "是否支持银行服务 0-否 1-是"
+				},
+				{
+					"subParams": [
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "户型所属公寓外部id"
+						},
+						{
+							"name": "outer_layout_id",
+							"type": "String",
+							"description": "户型外部id"
+						},
+						{
+							"name": "business_type",
+							"type": "Number",
+							"description": "户型业务类型"
+						},
+						{
+							"name": "outer_tid",
+							"type": "String",
+							"description": "户型货外部id"
+						}
+					],
+					"name": "outer_layouts",
+					"type": "GoodsLayoutDTO[]",
+					"description": "外部户型列表"
 				}
 			],
 			"name": "goods_dto",
@@ -192,7 +239,7 @@
 		}
 	],
 	"name": "alibaba.alihouse.newhome.project.tradeitem",
-	"apiChineseName": "新二品同步",
+	"apiChineseName": "新二租品同步",
 	"description": "新二品同步",
 	"id": 60938
 }

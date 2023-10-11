@@ -1,0 +1,170 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "os",
+							"type": "String",
+							"description": "操作系统： Android/iOS/Windows/macOS",
+							"required": true
+						},
+						{
+							"name": "is_md5",
+							"type": "Boolean",
+							"description": "是否 md5 hash 值",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "设备标识类型： oaid/idfa/imei/caid1/caid2",
+							"required": true
+						},
+						{
+							"name": "value",
+							"type": "String",
+							"description": "设备标识内容",
+							"required": true
+						}
+					],
+					"name": "device_id",
+					"type": "DeviceIdParam",
+					"description": "设备信息",
+					"required": true
+				},
+				{
+					"name": "site_id",
+					"type": "String",
+					"description": "不同媒体资源位"
+				},
+				{
+					"name": "weather",
+					"type": "String",
+					"description": "天气代码，可空。1：晴, 2：晴（夜）, 3：多云, 4：多云（夜）, 5：阴, 6：阴（夜）, 7：雾, 8：雾（夜）, 9：霾, 10：霾（夜）, 11：雨, 12：雨（夜）, 13：雪, 14：雪（夜）"
+				},
+				{
+					"name": "region",
+					"type": "String",
+					"description": "地域"
+				},
+				{
+					"name": "sex",
+					"type": "String",
+					"description": "性别：m/f"
+				},
+				{
+					"name": "age",
+					"type": "Number",
+					"description": "年龄"
+				},
+				{
+					"subParams": [
+						{
+							"name": "highest",
+							"type": "String",
+							"description": "当日最高温度"
+						},
+						{
+							"name": "lowest",
+							"type": "String",
+							"description": "当日最低温度"
+						}
+					],
+					"name": "temperature",
+					"type": "Temperature",
+					"description": "温度，包括最高和最低"
+				},
+				{
+					"name": "extra",
+					"type": "String",
+					"description": "附加参数，可用于传递一些非业务参数，如是否压测流量(\"isStressTest\":true)等。格式为：key1:value1,key2:value2"
+				}
+			],
+			"name": "suggestion_context",
+			"type": "SuggestionContextParam",
+			"description": "请求参数",
+			"required": true
+		},
+		{
+			"name": "wanted_size",
+			"type": "Number",
+			"description": "需要的数据量",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "title",
+					"type": "String",
+					"description": "标题"
+				},
+				{
+					"name": "sub_title",
+					"type": "String",
+					"description": "副标题"
+				},
+				{
+					"name": "icon_url",
+					"type": "String",
+					"description": "图标链接"
+				},
+				{
+					"name": "deeplink_url",
+					"type": "String",
+					"description": "唤端链接"
+				},
+				{
+					"name": "exposure_url",
+					"type": "String",
+					"description": "曝光上报链接"
+				},
+				{
+					"name": "click_url",
+					"type": "String",
+					"description": "点击上报链接"
+				},
+				{
+					"name": "text",
+					"type": "String",
+					"description": "文案内容"
+				},
+				{
+					"name": "material_id",
+					"type": "String",
+					"description": "素材id"
+				},
+				{
+					"name": "h5_url",
+					"type": "String",
+					"description": "未装端时备用的h5url"
+				},
+				{
+					"name": "image_url",
+					"type": "String",
+					"description": "主图url"
+				}
+			],
+			"name": "suggestions",
+			"type": "SuggestionDTO []",
+			"description": "推荐信息列表"
+		},
+		{
+			"name": "is_offering",
+			"type": "Boolean",
+			"description": "是否参竞"
+		},
+		{
+			"name": "exposure_url",
+			"type": "String",
+			"description": "列表维度曝光上报链接"
+		}
+	],
+	"name": "taobao.growth.reaching.suggestion.query",
+	"apiChineseName": "厂商生态推荐信息查询",
+	"description": "厂商生态推荐信息查询",
+	"id": 66794
+}

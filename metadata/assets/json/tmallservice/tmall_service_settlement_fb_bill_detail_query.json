@@ -1,0 +1,156 @@
+{
+	"requestParams": [
+		{
+			"name": "pay_time_start",
+			"type": "Date",
+			"description": "提现开始时间（如果设置了开始时间，需要同时设置截止时间）"
+		},
+		{
+			"name": "pay_time_end",
+			"type": "Date",
+			"description": "提现截止时间"
+		},
+		{
+			"name": "bill_time_end",
+			"type": "Date",
+			"description": "流水截止时间"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页大小",
+			"required": true
+		},
+		{
+			"name": "bill_time_start",
+			"type": "Date",
+			"description": "流水开始时间（如果设置了开始时间，需要同时设置截止时间）"
+		},
+		{
+			"name": "page_num",
+			"type": "Number",
+			"description": "分页页码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_msg",
+			"type": "String",
+			"description": "错误提示"
+		},
+		{
+			"name": "ret_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"subParams": [
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "页码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "workcard_id",
+							"type": "Number",
+							"description": "工单ID"
+						},
+						{
+							"name": "fee_amount",
+							"type": "String",
+							"description": "费用金额"
+						},
+						{
+							"name": "fee_notice",
+							"type": "String",
+							"description": "费用备注"
+						},
+						{
+							"name": "src_order_id",
+							"type": "String",
+							"description": "费用来源单号，仅退款和增加费用有值"
+						},
+						{
+							"name": "pay_time",
+							"type": "String",
+							"description": "提现时间"
+						},
+						{
+							"name": "platform_commission_rate",
+							"type": "String",
+							"description": "抽佣比例"
+						},
+						{
+							"name": "fee_name",
+							"type": "String",
+							"description": "费用名称"
+						},
+						{
+							"name": "pay_trade_no",
+							"type": "String",
+							"description": "提现支付宝流水号"
+						},
+						{
+							"name": "gmt_create",
+							"type": "String",
+							"description": "费用产生时间"
+						},
+						{
+							"name": "fee_type",
+							"type": "String",
+							"description": "费用类型"
+						},
+						{
+							"name": "pay_trade_notice",
+							"type": "String",
+							"description": "提现支付宝备注"
+						}
+					],
+					"name": "data_list",
+					"type": "BillList[]",
+					"description": "分页数据"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小"
+				},
+				{
+					"name": "total_page_count",
+					"type": "Number",
+					"description": "总页数"
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总条数"
+				},
+				{
+					"name": "data_count",
+					"type": "Number",
+					"description": "当前页条数"
+				},
+				{
+					"name": "empty",
+					"type": "Boolean",
+					"description": "是否空页"
+				}
+			],
+			"name": "obj",
+			"type": "PagedResult",
+			"description": "分页数据"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	],
+	"name": "tmall.service.settlement.fb.bill.detail.query",
+	"apiChineseName": "服务商工单结算对账查询-流水查询",
+	"description": "服务商工单结算对账查询-流水查询，用于查询服务工单费用流水，含服务费、退款、分成、提现等。",
+	"id": 66776
+}

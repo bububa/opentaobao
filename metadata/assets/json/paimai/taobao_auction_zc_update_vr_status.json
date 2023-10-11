@@ -1,0 +1,33 @@
+{
+	"requestParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "VR信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Result4Top",
+			"description": "服务返回结果"
+		}
+	],
+	"name": "taobao.auction.zc.update.vr.status",
+	"apiChineseName": "如视VR更新活跃状态",
+	"description": "如视VR更新活跃状态",
+	"id": 66824
+}

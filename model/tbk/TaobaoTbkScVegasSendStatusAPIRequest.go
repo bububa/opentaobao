@@ -16,10 +16,12 @@ type TaobaoTbkScVegasSendStatusAPIRequest struct {
 	_specialId string
 	// 渠道管理id
 	_relationId string
-	// 加密后的值(ALIPAY_ID除外)，需用MD5加密，32位小写
+	// 加密后的值，需用MD5加密，32位小写
 	_deviceValue string
-	// 入参类型(该模式下返回的结果为模糊匹配结果，和实际情况可能存在误差)： 1. IMEI 2. IDFA 3. OAID 4. MOBILE 5. ALIPAY_ID
+	// 入参类型(该模式下返回的结果为模糊匹配结果，和实际情况可能存在误差)： 1. IMEI 2. IDFA 3. OAID 4. MOBILE
 	_deviceType string
+	// 查询红包类型，1-超级红包，2-福利购，3-签到红包，4-福利直降，不传时默认查询超级红包数据
+	_activityCategory int64
 }
 
 // NewTaobaoTbkScVegasSendStatusRequest 初始化TaobaoTbkScVegasSendStatusAPIRequest对象
@@ -73,7 +75,7 @@ func (r TaobaoTbkScVegasSendStatusAPIRequest) GetRelationId() string {
 }
 
 // SetDeviceValue is DeviceValue Setter
-// 加密后的值(ALIPAY_ID除外)，需用MD5加密，32位小写
+// 加密后的值，需用MD5加密，32位小写
 func (r *TaobaoTbkScVegasSendStatusAPIRequest) SetDeviceValue(_deviceValue string) error {
 	r._deviceValue = _deviceValue
 	r.Set("device_value", _deviceValue)
@@ -86,7 +88,7 @@ func (r TaobaoTbkScVegasSendStatusAPIRequest) GetDeviceValue() string {
 }
 
 // SetDeviceType is DeviceType Setter
-// 入参类型(该模式下返回的结果为模糊匹配结果，和实际情况可能存在误差)： 1. IMEI 2. IDFA 3. OAID 4. MOBILE 5. ALIPAY_ID
+// 入参类型(该模式下返回的结果为模糊匹配结果，和实际情况可能存在误差)： 1. IMEI 2. IDFA 3. OAID 4. MOBILE
 func (r *TaobaoTbkScVegasSendStatusAPIRequest) SetDeviceType(_deviceType string) error {
 	r._deviceType = _deviceType
 	r.Set("device_type", _deviceType)
@@ -96,4 +98,17 @@ func (r *TaobaoTbkScVegasSendStatusAPIRequest) SetDeviceType(_deviceType string)
 // GetDeviceType DeviceType Getter
 func (r TaobaoTbkScVegasSendStatusAPIRequest) GetDeviceType() string {
 	return r._deviceType
+}
+
+// SetActivityCategory is ActivityCategory Setter
+// 查询红包类型，1-超级红包，2-福利购，3-签到红包，4-福利直降，不传时默认查询超级红包数据
+func (r *TaobaoTbkScVegasSendStatusAPIRequest) SetActivityCategory(_activityCategory int64) error {
+	r._activityCategory = _activityCategory
+	r.Set("activity_category", _activityCategory)
+	return nil
+}
+
+// GetActivityCategory ActivityCategory Getter
+func (r TaobaoTbkScVegasSendStatusAPIRequest) GetActivityCategory() int64 {
+	return r._activityCategory
 }

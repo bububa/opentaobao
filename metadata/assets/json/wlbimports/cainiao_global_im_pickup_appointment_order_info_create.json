@@ -143,7 +143,7 @@
 					],
 					"name": "receiver_info",
 					"type": "ContactInfoRequest",
-					"description": "收件人",
+					"description": "预约大包信息列表（自送快递和自送卡车非必填）",
 					"required": true
 				},
 				{
@@ -151,26 +151,49 @@
 						{
 							"name": "count",
 							"type": "Number",
-							"description": " 数量",
-							"required": true
+							"description": "数量（非自寄模式必填）"
 						},
 						{
 							"name": "content_type",
 							"type": "String",
-							"description": "预约大包类型：TRAY：托，SACK：麻袋",
-							"required": true
+							"description": "预约大包类型：TRAY：托，SACK：麻袋（非自寄模式必填）"
 						},
 						{
 							"name": "content_type_name",
 							"type": "String",
-							"description": "预约大包类型名称：托、麻袋",
-							"required": true
+							"description": "预约大包类型名称：托、麻袋（非自寄模式必填）"
 						}
 					],
 					"name": "handover_content_synopsis_list",
 					"type": "OrderHandoverContentSynopsisDTO[]",
-					"description": "预约大包信息列表",
-					"required": true
+					"description": "预约大包信息列表（（非自寄模式必填）"
+				},
+				{
+					"subParams": [
+						{
+							"name": "express_number",
+							"type": "String",
+							"description": "快递运单号（自寄快递模式必填）"
+						},
+						{
+							"name": "express_company",
+							"type": "String",
+							"description": "快递公司（自寄快递模式必填）"
+						},
+						{
+							"name": "expected_arrive_time",
+							"type": "Number",
+							"description": "预计送达时间（自寄快递模式必填）"
+						},
+						{
+							"name": "expected_pickup_time",
+							"type": "Number",
+							"description": "预计揽收时间（自寄快递模式必填）"
+						}
+					],
+					"name": "self_send_express_info_request",
+					"type": "SelfSendExpressInfoRequest",
+					"description": "自寄快递请求参数（自寄快递模式必填）"
 				},
 				{
 					"name": "store_name",
@@ -197,8 +220,7 @@
 						{
 							"name": "company_name",
 							"type": "String",
-							"description": "公司",
-							"required": true
+							"description": "公司（非自寄模式必填）"
 						},
 						{
 							"name": "resource_name",
@@ -208,20 +230,17 @@
 						{
 							"name": "country_id",
 							"type": "Number",
-							"description": "国家id",
-							"required": true
+							"description": "国家id（非自寄模式必填）"
 						},
 						{
 							"name": "area_id",
 							"type": "Number",
-							"description": "菜鸟地址id",
-							"required": true
+							"description": "菜鸟地址id（非自寄模式必填）"
 						},
 						{
 							"name": "resource_code",
 							"type": "String",
-							"description": "资源code",
-							"required": true
+							"description": "资源code（非自寄模式必填）"
 						},
 						{
 							"name": "province",
@@ -231,37 +250,64 @@
 						{
 							"name": "phone",
 							"type": "String",
-							"description": "电话",
-							"required": true
+							"description": "电话（非自寄模式必填）"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "名称",
-							"required": true
+							"description": "名称（非自寄模式必填）"
 						},
 						{
 							"name": "detail_address",
 							"type": "String",
-							"description": "详细地址（最大135个字符）",
-							"required": true
+							"description": "详细地址（最大135个字符）（非自寄模式必填）"
 						},
 						{
 							"name": "email",
 							"type": "String",
-							"description": "邮箱",
-							"required": true
+							"description": "邮箱（非自寄模式必填）"
 						}
 					],
 					"name": "pickup_info",
 					"type": "PickupInfo",
-					"description": "揽收信息",
-					"required": true
+					"description": "揽收信息（（非自寄模式必填）"
+				},
+				{
+					"subParams": [
+						{
+							"name": "driver_name",
+							"type": "String",
+							"description": "司机姓名"
+						},
+						{
+							"name": "expected_arrive_time",
+							"type": "Number",
+							"description": "预计送达时间（自寄卡车模式必填）"
+						},
+						{
+							"name": "driver_mobile_phone",
+							"type": "String",
+							"description": "司机手机号"
+						},
+						{
+							"name": "expected_pickup_time",
+							"type": "Number",
+							"description": "预计揽收时间（自寄卡车模式必填）"
+						},
+						{
+							"name": "truck_num",
+							"type": "String",
+							"description": "车牌（自寄卡车模式必填）"
+						}
+					],
+					"name": "self_send_truck_info_request",
+					"type": "SelfMailTruckInfoRequest",
+					"description": "自寄卡车参数（自寄卡车模式必填）"
 				},
 				{
 					"name": "pickup_type",
 					"type": "String",
-					"description": "揽收方式：TRUCK（卡车）",
+					"description": "揽收方式：TRUCK（卡车）OFFLINE_EXPRESS(自寄快递) OFFLINE_TRUCK(自派卡车)",
 					"required": true
 				},
 				{
@@ -269,6 +315,11 @@
 					"type": "String",
 					"description": "接收仓资源编码",
 					"required": true
+				},
+				{
+					"name": "lg_order_list",
+					"type": "String[]",
+					"description": "小包信息（自寄模式必填）"
 				}
 			],
 			"name": "appointment_create_request",
@@ -315,6 +366,11 @@
 					"name": "error_msg",
 					"type": "String",
 					"description": "errorMsg"
+				},
+				{
+					"name": "ext_error_map",
+					"type": "String",
+					"description": "错误扩展信息"
 				}
 			],
 			"name": "hsf_result",

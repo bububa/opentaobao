@@ -30,6 +30,14 @@ type DrugEntBaseDto struct {
 	ProdCode string `json:"prod_code,omitempty" xml:"prod_code,omitempty"`
 	// 药品编码
 	PhysicCode string `json:"physic_code,omitempty" xml:"physic_code,omitempty"`
+	// 药品原批准文号
+	ApprovalLicenceNoOld string `json:"approval_licence_no_old,omitempty" xml:"approval_licence_no_old,omitempty"`
+	// 原药品批准文号有效期
+	ApprovalLicenceExpiryOld string `json:"approval_licence_expiry_old,omitempty" xml:"approval_licence_expiry_old,omitempty"`
+	// 批准日期
+	ApprovalLicenceDate string `json:"approval_licence_date,omitempty" xml:"approval_licence_date,omitempty"`
+	// 批准文号有效期
+	ApprovalLicenceExpiry string `json:"approval_licence_expiry,omitempty" xml:"approval_licence_expiry,omitempty"`
 	// 是否混批
 	CodeActiveProductFlagStr string `json:"code_active_product_flag_str,omitempty" xml:"code_active_product_flag_str,omitempty"`
 	// 企业名称
@@ -50,10 +58,6 @@ type DrugEntBaseDto struct {
 	PkgSpec string `json:"pkg_spec,omitempty" xml:"pkg_spec,omitempty"`
 	// 状态 1正常,0停用
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
-	// 批准文号有效期至
-	ApprovalLicenceExpiry string `json:"approval_licence_expiry,omitempty" xml:"approval_licence_expiry,omitempty"`
-	// 批准文号发放日期
-	ApprovalLicenceDate string `json:"approval_licence_date,omitempty" xml:"approval_licence_date,omitempty"`
 	// 药品批准文号ID(药品目录)
 	DrugApprovalInfoId string `json:"drug_approval_info_id,omitempty" xml:"drug_approval_info_id,omitempty"`
 	// 药品基本信息ID
@@ -62,6 +66,8 @@ type DrugEntBaseDto struct {
 	RefEntId string `json:"ref_ent_id,omitempty" xml:"ref_ent_id,omitempty"`
 	// 企业主键id
 	EntId string `json:"ent_id,omitempty" xml:"ent_id,omitempty"`
+	// 产品有效期
+	MdStorageCon string `json:"md_storage_con,omitempty" xml:"md_storage_con,omitempty"`
 	// 包装数量
 	PkgNum int64 `json:"pkg_num,omitempty" xml:"pkg_num,omitempty"`
 	// 药品详细类型

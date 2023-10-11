@@ -85,7 +85,7 @@ type AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest struct {
 	_assEntId string
 	// 单据类型【102代表采购入库】
 	_billType int64
-	// 药品类型【3普药2特药】
+	// 药品类型[2,特药，3,普药]【可以随便填写，单据上传后会以实际为准】
 	_physicType int64
 	// （协同平台数据合规）应收货总数量【必选】
 	_quReceivable int64
@@ -584,7 +584,7 @@ func (r AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest) GetBillType()
 }
 
 // SetPhysicType is PhysicType Setter
-// 药品类型【3普药2特药】
+// 药品类型[2,特药，3,普药]【可以随便填写，单据上传后会以实际为准】
 func (r *AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest) SetPhysicType(_physicType int64) error {
 	r._physicType = _physicType
 	r.Set("physic_type", _physicType)

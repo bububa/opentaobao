@@ -35,6 +35,23 @@
 							"name": "outer_id",
 							"type": "String",
 							"description": "外部id"
+						},
+						{
+							"subParams": [
+								{
+									"name": "outer_broker_id",
+									"type": "String",
+									"description": "外部服务者ID"
+								},
+								{
+									"name": "new_outer_broker_id",
+									"type": "String",
+									"description": "新外部服务者ID"
+								}
+							],
+							"name": "broker_list",
+							"type": "CommunityAgentRelationDTO[]",
+							"description": "服务者列表"
 						}
 					],
 					"name": "data",

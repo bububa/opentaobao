@@ -1,0 +1,91 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间(毫秒数)",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID",
+					"required": true
+				},
+				{
+					"name": "owner_code",
+					"type": "String",
+					"description": "货主编码；优仓分配，长度不会超过32位，不含特殊字符",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "String",
+					"description": "商品id",
+					"required": true
+				},
+				{
+					"name": "sku_id",
+					"type": "String",
+					"description": "skuId"
+				}
+			],
+			"name": "unbundle_itemmapping_request",
+			"type": "UnbundleItemmappingRequest",
+			"description": "商货关联解绑入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "成功或者失败"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "返回信息"
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "返回信息码"
+						}
+					],
+					"name": "data",
+					"type": "UnbundleItemmappingResult",
+					"description": "业务处理结果"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功或者失败"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回信息码"
+				}
+			],
+			"name": "unbundle_itemmapping_response",
+			"type": "UnbundleItemmappingResponse",
+			"description": "返回结构体"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.itemmapping.unbundle",
+	"apiChineseName": "商货关联解绑",
+	"description": "商货关联解绑",
+	"id": 64348
+}

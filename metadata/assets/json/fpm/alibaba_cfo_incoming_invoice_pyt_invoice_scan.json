@@ -145,6 +145,11 @@
 									"name": "doc_no",
 									"type": "String",
 									"description": "关联单据号"
+								},
+								{
+									"name": "document_type",
+									"type": "String",
+									"description": "发票类型（支持全票种）"
 								}
 							],
 							"name": "head",

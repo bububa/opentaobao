@@ -1,0 +1,72 @@
+{
+	"requestParams": [
+		{
+			"name": "business_id",
+			"type": "String",
+			"description": "业务Id,不同场景不同业务id,淘宝同学提供,",
+			"required": true
+		},
+		{
+			"name": "command",
+			"type": "String",
+			"description": "执行命令,不同场景不同业务id,淘宝同学提供",
+			"required": true
+		},
+		{
+			"name": "extra",
+			"type": "Json",
+			"description": "扩展参数,可空,Map\u003cString,String\u003e结构"
+		},
+		{
+			"name": "open_id",
+			"type": "String",
+			"description": "用户加密后的openid",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "level",
+							"type": "String",
+							"description": "任务等级，可空"
+						},
+						{
+							"name": "pass_safe_check",
+							"type": "Boolean",
+							"description": "通过安全校验，可空"
+						}
+					],
+					"name": "data",
+					"type": "TaskConfig",
+					"description": "任务配置"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否执行成功"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "taobao.usergrowth.task.config.get",
+	"apiChineseName": "用户增长营销玩法配置查询",
+	"description": "用户增长营销玩法配置查询",
+	"id": 67766
+}

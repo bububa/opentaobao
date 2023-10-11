@@ -1,0 +1,21 @@
+{
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "宝贝id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "String",
+			"description": "审核状态"
+		}
+	],
+	"name": "taobao.xhotel.combo.review",
+	"apiChineseName": "套餐审核接口",
+	"description": "套餐审核接口",
+	"id": 66640
+}

@@ -1,0 +1,83 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "ext_properties",
+					"type": "String",
+					"description": "扩展参数"
+				},
+				{
+					"name": "channel",
+					"type": "String",
+					"description": "渠道id",
+					"required": true
+				},
+				{
+					"name": "source",
+					"type": "String",
+					"description": "创建渠道。创建渠道。\"PRIVATE_DOMAIN\", \"私域工作台\"；\"ISV_SCRM\", \"服务商SCRM\"；\"OTHER\", \"其他\"",
+					"required": true
+				},
+				{
+					"name": "sub_channel",
+					"type": "String",
+					"description": "子渠道场景，比如新品发布、自定义种草"
+				},
+				{
+					"name": "task_name",
+					"type": "String",
+					"description": "任务名称",
+					"required": true
+				},
+				{
+					"name": "strategy_id",
+					"type": "Number",
+					"description": "策略id",
+					"required": true
+				},
+				{
+					"name": "out_id",
+					"type": "String",
+					"description": "服务商的out id",
+					"required": true
+				},
+				{
+					"name": "task_status",
+					"type": "String",
+					"description": "任务状态。\"INIT\", \"未执行\"; \"TEMP\", \"草稿态\"; \"SENDING\", \"执行中\"; \"DONE\", \"已执行\"; \"CANCEL\", \"已终止\"",
+					"required": true
+				}
+			],
+			"name": "seller_delivery_task",
+			"type": "SellerDeliveryTaskDTO",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "successful",
+			"type": "Boolean",
+			"description": "true or false"
+		},
+		{
+			"name": "error_type",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "model",
+			"type": "Number",
+			"description": "任务id"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "taobao.miniapp.ext.delivery.seller.task.sync",
+	"apiChineseName": "同步外投任务",
+	"description": "同步外投任务",
+	"id": 67559
+}

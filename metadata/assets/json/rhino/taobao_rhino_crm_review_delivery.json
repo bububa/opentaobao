@@ -1,0 +1,74 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "修改时间"
+				},
+				{
+					"name": "creator",
+					"type": "String",
+					"description": "创建人"
+				},
+				{
+					"name": "instance_id",
+					"type": "String",
+					"description": "crm实体实例id",
+					"required": true
+				},
+				{
+					"name": "creator_ding_user_id",
+					"type": "String",
+					"description": "创建人dingId"
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "数据json"
+				},
+				{
+					"name": "modifier_ding_user_id",
+					"type": "String",
+					"description": "修改人dingId"
+				},
+				{
+					"name": "modifier",
+					"type": "String",
+					"description": "修改人"
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建时间"
+				}
+			],
+			"name": "crm_entity",
+			"type": "CrmEntity",
+			"description": "crm实体数据",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "返回码，成功200/失败500"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息，错误时展示"
+		},
+		{
+			"name": "content",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	],
+	"name": "taobao.rhino.crm.review.delivery",
+	"apiChineseName": "crm实体预询期",
+	"description": "crm实体预询期",
+	"id": 65276
+}

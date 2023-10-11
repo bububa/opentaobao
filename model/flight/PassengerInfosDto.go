@@ -2,6 +2,8 @@ package flight
 
 // PassengerInfosDto 结构体
 type PassengerInfosDto struct {
+	// 乘机人基础信息
+	PassengerBaseInfos []PassengerBaseInfo `json:"passenger_base_infos,omitempty" xml:"passenger_base_infos>passenger_base_info,omitempty"`
 	// 机建（分）
 	BuildPrice int64 `json:"build_price,omitempty" xml:"build_price,omitempty"`
 	// 数量

@@ -219,6 +219,11 @@
 					"name": "qa_amount",
 					"type": "Number",
 					"description": "质检金额,单位分"
+				},
+				{
+					"name": "quote_version",
+					"type": "String",
+					"description": "估价版本，第几次估价"
 				}
 			],
 			"name": "module",

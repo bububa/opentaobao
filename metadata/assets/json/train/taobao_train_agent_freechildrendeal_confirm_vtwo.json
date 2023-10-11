@@ -1,0 +1,62 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "apply_no",
+					"type": "Number",
+					"description": "唯一id",
+					"required": true
+				},
+				{
+					"name": "fail_code",
+					"type": "Number",
+					"description": "失败code"
+				},
+				{
+					"name": "fail_msg",
+					"type": "String",
+					"description": "失败文案"
+				}
+			],
+			"name": "free_children_ticket_deal_rq",
+			"type": "FreeChildrenTicketDealRQ",
+			"description": "免费儿童处理信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "失败code"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "失败msg"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "处理结果"
+				}
+			],
+			"name": "result",
+			"type": "TapResult",
+			"description": "rs"
+		}
+	],
+	"name": "taobao.train.agent.freechildrendeal.confirm.vtwo",
+	"apiChineseName": "免费儿童处理",
+	"description": "免费儿童列表查询",
+	"id": 65965
+}

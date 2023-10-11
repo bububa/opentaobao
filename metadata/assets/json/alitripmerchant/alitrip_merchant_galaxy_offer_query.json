@@ -274,6 +274,21 @@
 							"name": "pop_up_info",
 							"type": "PopUpInfo",
 							"description": "弹屏信息"
+						},
+						{
+							"name": "need_activity_page",
+							"type": "Boolean",
+							"description": "是否配置了活动详情页"
+						},
+						{
+							"name": "need_pop_up_screen",
+							"type": "Boolean",
+							"description": "是否配置了弹屏"
+						},
+						{
+							"name": "button_content",
+							"type": "String",
+							"description": "活动底部点击按钮文案"
 						}
 					],
 					"name": "offers",

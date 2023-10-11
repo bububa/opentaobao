@@ -1,0 +1,484 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码",
+					"required": true
+				}
+			],
+			"name": "top_service_context",
+			"type": "TopServiceContext",
+			"description": "topServiceContext",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "rec_scene_list",
+					"type": "String[]",
+					"description": "推荐场景,bd_sys:系统推荐人群,bd_ctr:行业榜单-点击率,bd_col_cart_rate:行业榜单-收藏加购,bd_cvr:行业榜单-转化率,bd_assist:行业榜单-助攻率,recSceneNew:关键词推广-新建流程,recSceneEffect:效果榜单,recSceneHeat:热度榜单,recSceneActivity:大促人群推荐,recSceneHomePage:首页榜单,recSceneAdgroupQualityOptions:单元列表智能拉新人群-优质组合推荐"
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "计划id"
+				},
+				{
+					"name": "item_selected_mode",
+					"type": "String",
+					"description": "选品方式,shop:全店优选,user_define:用户自定义选品,scope:范围圈选,trend:趋势选品"
+				},
+				{
+					"name": "shop_item_type",
+					"type": "String",
+					"description": "优选集合,effect:效果优选,growing:全店成长,activity:活动选品,industry:行业尖货,scope:定义选品"
+				},
+				{
+					"name": "material_id_list",
+					"type": "Number[]",
+					"description": "宝贝id集合"
+				},
+				{
+					"name": "promotion_type",
+					"type": "String",
+					"description": "推广主体类型"
+				},
+				{
+					"name": "sub_promotion_type",
+					"type": "String",
+					"description": "主体类型，支持一个计划下存在多种类型"
+				},
+				{
+					"name": "optimize_target",
+					"type": "String",
+					"description": "优化目标，conv:促进成交,coll_cart:促进加购,click:促进点击,deal_count:促进成交笔数,exposure_pv:促进曝光,mini_view:促进橱窗宝贝浏览个数,mini_interactive:促进橱窗宝贝互动,ad_strategy_wangwang:策略中心旺旺咨询,shop_potential:提升潜客人数,shop_interest_new:提升兴趣新客人数,shop_purchase_new:提升首购新客人数,shop_visit_new:提升访问新客人数,shop_repurchase:提升复购人数,high_cvr:提升高转换人群成交人数,deeplink_d:提升品牌发现人数-D,deeplink_e1:提升品牌种草人数-E,deeplink_e2:提升品牌互动人数-E,deeplink_p:提升品牌行动人数-P,deeplink_i:提升品牌首购人数-I,deeplink_n:提升品牌复购人数-N,deeplink_k:提升品牌挚爱人数-K,hf_grass_plant:预热种草,hf_impoundment:预售蓄水,hf_harvest:爆发收割,nd_click:提高互动量,nd_cart:提高加购量,nd_deal:提高成交量,ad_strategy_ruhui_count:策略中心入会快新会员场景入会量目标,ad_strategy_lzl:策略中心留资快留资量目标,ad_strategy_try:策略中心派样量,ad_strategy_view:策略中心优化展现,ad_strategy_auto_trans:策略中心自动流转,ad_strategy_trial_order:策略中心表单获客成本,ad_strategy_liuzi_cost:策略中心广义留资目标,ad_strategy_cool_start:策略中心自动冷启动,ad_strategy_cool_start_mini_aim:策略中心冷启动分阶段目标流转,wxt_agency_ai:A转I人群流转,wxt_agency_smart:自定义场景,form_submit:表单提交,trial_order:试用下单,wangwang_liuzi:旺旺留资"
+				},
+				{
+					"subParams": [
+						{
+							"name": "cat_id",
+							"type": "Number",
+							"description": "类目id"
+						},
+						{
+							"name": "cat_name",
+							"type": "String",
+							"description": "类目名称"
+						},
+						{
+							"name": "cat_level",
+							"type": "Number",
+							"description": "类目级别，一级类目、二级目录"
+						}
+					],
+					"name": "category",
+					"type": "CategoryQueryVo",
+					"description": "类目查询"
+				},
+				{
+					"name": "promotion_scene",
+					"type": "String",
+					"description": "推广场景,promotion_scene_crowd:人群方舟,promotion_scene_item:店铺宝贝运营,promotion_scene_traffic:宝藏场景,AD_STRATEGY_LAXIN:策略中心拉新场景,AD_STRATEGY_SHANGXINLI:策略中心上新礼场景,AD_STRATEGY_FRESH_BOX:策略中心小黑盒场景,AD_STRATEGY_LAXIN_XINXIANG:策略中心拉新新享一笔钱场景,AD_STRATEGY_RUHUI_NEW:策略中心入会快新会员场景,AD_STRATEGY_RUHUI_OLD:策略中心入会快老会员场景,AD_STRATEGY_LIUZI:策略中心留资快场景,AD_STRATEGY_YURE:策略中心活动加速场景,AD_STRATEGY_HUODONG_ESCORT:活动全周期护航计划,AD_STRATEGY_CROWD_INDUSTRY:策略中心行业人群通,AD_STRATEGY_WHOLE_SHOP_SMART:策略中心全店放心推-智能托管,AD_STRATEGY_WHOLE_SHOP_CUSTOM:策略中心全店放心推-自定义,AD_STRATEGY_EVEN_BUDGET:策略中心均匀曝光场景,AD_STRATEGY_SXK_GUARANTEE:万相台上新快确定性保障,AD_STRATEGY_HPJS_GUARANTEE:万相台货品加速确定性保障,AD_STRATEGY_HPJS_TIME_LIMIT:万相台货品加速限时加速,AD_STRATEGY_FANS_HEADLINES:万相台粉丝头条,WXT_AGENCY_XST_CPC:服务商版一键起量（CPC）,WXT_AGENCY_XST_CPA:服务商版客源多（CPA）,WXT_AGENCY_SHEQUN:服务商版社群（CPA+CPS）"
+				}
+			],
+			"name": "crowd_rec_query_v_o",
+			"type": "CrowdRecQueryVo",
+			"description": "crowdRecQueryVO",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "ok",
+							"type": "Boolean",
+							"description": "是否成功"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误编码"
+						}
+					],
+					"name": "info",
+					"type": "TopInfo",
+					"description": "请求系统信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "campaign_id",
+									"type": "Number",
+									"description": "计划id"
+								},
+								{
+									"name": "adgroup_id",
+									"type": "Number",
+									"description": "单元id"
+								},
+								{
+									"name": "crowd_id",
+									"type": "Number",
+									"description": "人群主键id"
+								},
+								{
+									"name": "online_status",
+									"type": "Number",
+									"description": "定向状态,0:下线 1:上线"
+								},
+								{
+									"subParams": [
+										{
+											"name": "crowd_id",
+											"type": "Number",
+											"description": "人群主键id"
+										},
+										{
+											"name": "crowd_name",
+											"type": "String",
+											"description": "人群名称"
+										},
+										{
+											"name": "crowd_value",
+											"type": "String",
+											"description": "人群值"
+										},
+										{
+											"name": "target_type",
+											"type": "Number",
+											"description": "定向类型"
+										},
+										{
+											"subParams": [
+												{
+													"name": "target_type",
+													"type": "Number",
+													"description": "定向标签类型"
+												},
+												{
+													"name": "label_id",
+													"type": "Number",
+													"description": "定向标签id"
+												},
+												{
+													"name": "label_name",
+													"type": "String",
+													"description": "定向标签名称"
+												},
+												{
+													"name": "label_desc",
+													"type": "String",
+													"description": "定向标签描述"
+												},
+												{
+													"name": "label_value",
+													"type": "String",
+													"description": "定向标签值"
+												},
+												{
+													"name": "price_dimension",
+													"type": "String",
+													"description": "出价维度，OPTION:标签出价，多个子人群同时出价、LABEL:选项出价，以子人群为出价最小单位"
+												},
+												{
+													"subParams": [
+														{
+															"name": "option_group_name",
+															"type": "String",
+															"description": "标签分组名称"
+														},
+														{
+															"name": "option_list",
+															"type": "OptionVo[]",
+															"description": "标签选项"
+														}
+													],
+													"name": "option_group_list",
+													"type": "OptionGroupVo[]",
+													"description": "标签选项分组"
+												},
+												{
+													"subParams": [
+														{
+															"name": "option_name",
+															"type": "String",
+															"description": "选项名称"
+														},
+														{
+															"name": "option_value",
+															"type": "String",
+															"description": "选项值"
+														},
+														{
+															"name": "option_desc",
+															"type": "String",
+															"description": "选项描述"
+														},
+														{
+															"name": "tag_id",
+															"type": "Number",
+															"description": "选项id，(用于关键词推广静态标签生成人群)如基础属性人群标签组合"
+														},
+														{
+															"name": "option_group_name",
+															"type": "String",
+															"description": "标签分组名称"
+														},
+														{
+															"name": "label_option_properties",
+															"type": "LabelOptionProperties",
+															"description": "透传属性"
+														},
+														{
+															"name": "properties",
+															"type": "String",
+															"description": "额外的属性参数"
+														}
+													],
+													"name": "option_list",
+													"type": "OptionVo[]",
+													"description": "标签选项"
+												},
+												{
+													"name": "is_multi",
+													"type": "Boolean",
+													"description": "是否可以绑定多个定向,获取不到 默认为否,true:是 false:否"
+												},
+												{
+													"subParams": [
+														{
+															"name": "dmp_option_group_id",
+															"type": "String",
+															"description": "dmp选项分组id"
+														},
+														{
+															"name": "cate_name",
+															"type": "String",
+															"description": "物料id"
+														},
+														{
+															"name": "cate_id",
+															"type": "String",
+															"description": "物料id"
+														}
+													],
+													"name": "label_option_properties",
+													"type": "LabelOptionProperties",
+													"description": "透传属性"
+												},
+												{
+													"name": "label_group_name",
+													"type": "String",
+													"description": "人群类型，所属类型"
+												},
+												{
+													"subParams": [
+														{
+															"name": "code",
+															"type": "String",
+															"description": "标签code"
+														},
+														{
+															"name": "name",
+															"type": "String",
+															"description": "展示文案，不为空则展示"
+														},
+														{
+															"name": "tips",
+															"type": "String",
+															"description": "悬浮描述"
+														},
+														{
+															"name": "icon",
+															"type": "String",
+															"description": "标签左侧图标地址，不为空则展示"
+														},
+														{
+															"name": "color",
+															"type": "String",
+															"description": "背景颜色"
+														},
+														{
+															"name": "type",
+															"type": "String",
+															"description": "标签类型"
+														},
+														{
+															"name": "properties",
+															"type": "String",
+															"description": "扩展属性"
+														}
+													],
+													"name": "show_tag_list",
+													"type": "ShowTagVO[]",
+													"description": "标签tag"
+												}
+											],
+											"name": "label",
+											"type": "LabelVo",
+											"description": "定向标签"
+										},
+										{
+											"name": "lookalike_multiple",
+											"type": "String",
+											"description": "扩展倍数。低中高对应不同的倍数，由产品定义具体值，未来业务可支持滑动条。注意：倍数是指最终人数/种子人数，比如种子人群100万，扩展比种子多了50万，也就是总共150万，这时候扩展倍数是1.5而不是0.5"
+										},
+										{
+											"subParams": [
+												{
+													"subParams": [
+														{
+															"name": "crowd_id",
+															"type": "Number",
+															"description": "人群主键id"
+														},
+														{
+															"name": "crowd_name",
+															"type": "String",
+															"description": "人群名称"
+														},
+														{
+															"name": "label",
+															"type": "ExtendSeedLabelVo",
+															"description": "种子人群label信息"
+														}
+													],
+													"name": "crowd",
+													"type": "ExtendSeedCrowdVo",
+													"description": "种子人群信息"
+												}
+											],
+											"name": "extend_seed_crowd_list",
+											"type": "ExtendSeedCrowdRefVo[]",
+											"description": "种子人群关联信息"
+										},
+										{
+											"subParams": [
+												{
+													"name": "subcrowd_name",
+													"type": "String",
+													"description": "子定向名称"
+												},
+												{
+													"name": "subcrowd_value",
+													"type": "String",
+													"description": "子定向值"
+												}
+											],
+											"name": "sub_crowd_list",
+											"type": "SubCrowdVo[]",
+											"description": "子人群信息"
+										}
+									],
+									"name": "crowd",
+									"type": "CrowdVo",
+									"description": "人群"
+								},
+								{
+									"subParams": [
+										{
+											"name": "bid_price",
+											"type": "String",
+											"description": "出价"
+										},
+										{
+											"name": "fit_bid_price",
+											"type": "String",
+											"description": "建议出价"
+										},
+										{
+											"name": "discount",
+											"type": "String",
+											"description": "溢价"
+										},
+										{
+											"name": "fit_discount",
+											"type": "String",
+											"description": "建议溢价"
+										}
+									],
+									"name": "price",
+									"type": "PriceVo",
+									"description": "出价"
+								},
+								{
+									"subParams": [
+										{
+											"name": "code",
+											"type": "String",
+											"description": "标签code"
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "展示文案，不为空则展示"
+										},
+										{
+											"name": "tips",
+											"type": "String",
+											"description": "悬浮描述"
+										},
+										{
+											"name": "icon",
+											"type": "String",
+											"description": "标签左侧图标地址"
+										},
+										{
+											"name": "color",
+											"type": "String",
+											"description": "背景颜色"
+										},
+										{
+											"name": "type",
+											"type": "String",
+											"description": "标签类型"
+										},
+										{
+											"name": "properties",
+											"type": "String",
+											"description": "扩展属性"
+										}
+									],
+									"name": "show_tag_list",
+									"type": "ShowTagVO[]",
+									"description": "横向管理"
+								}
+							],
+							"name": "crowd_ref_v_o_list",
+							"type": "CrowdRefVo[]",
+							"description": "批量结果集"
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "数量"
+						}
+					],
+					"name": "crowd_ref_v_o_top_bulk_data",
+					"type": "TopBulkData",
+					"description": "结果集"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.universalbp.crowd.findrecommendcrowd",
+	"apiChineseName": "查询推荐人群",
+	"description": "入参推广信息，查询推荐人群，查出的推荐人群列表，不需转换，直接可用于入参其他计划创编类接口",
+	"id": 67270
+}

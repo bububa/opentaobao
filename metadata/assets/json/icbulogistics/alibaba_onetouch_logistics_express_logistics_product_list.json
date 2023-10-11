@@ -33,6 +33,11 @@
 							"name": "pickup",
 							"type": "Boolean",
 							"description": "是否上门揽收"
+						},
+						{
+							"name": "delivery_type",
+							"type": "String",
+							"description": "时效类型"
 						}
 					],
 					"name": "values",

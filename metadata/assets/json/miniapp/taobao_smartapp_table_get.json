@@ -1,0 +1,78 @@
+{
+	"requestParams": [
+		{
+			"name": "start_created_date",
+			"type": "Date",
+			"description": "查询创建日期的起始时间，若“创建 起始时间与结束时间”与“修改 起始时间与结束时间”两组数据均传入，仅筛选创建时间"
+		},
+		{
+			"name": "end_created_date",
+			"type": "Date",
+			"description": "查询创建日期的终止时间"
+		},
+		{
+			"name": "start_modified_date",
+			"type": "Date",
+			"description": "查询修改日期的起始时间，仅当“创建 起始时间与结束时间”均未传入时，筛选修改时间，并按修改时间倒叙排序"
+		},
+		{
+			"name": "end_modified_date",
+			"type": "Date",
+			"description": "查询修改日期的终止时间"
+		},
+		{
+			"name": "page_index",
+			"type": "Number",
+			"description": "页面索引，若不传入默认为1"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页面容量，若不传入默认为200"
+		},
+		{
+			"name": "table_id",
+			"type": "String",
+			"description": "数据空间表名",
+			"required": true
+		},
+		{
+			"name": "record_id",
+			"type": "String",
+			"description": "数据主键ID"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "json_record",
+					"type": "String[]",
+					"description": "查询结果"
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "查询结果条数"
+				}
+			],
+			"name": "result",
+			"type": "AfterSaleTableSelectResponse",
+			"description": "查询结果"
+		},
+		{
+			"name": "business_success",
+			"type": "Boolean",
+			"description": "调用结果"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误提示"
+		}
+	],
+	"name": "taobao.smartapp.table.get",
+	"apiChineseName": "智能应用服务登记工作表数据查询",
+	"description": "智能应用服务登记工作表数据查询",
+	"id": 67464
+}

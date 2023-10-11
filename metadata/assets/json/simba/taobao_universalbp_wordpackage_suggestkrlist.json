@@ -1,0 +1,145 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码",
+					"required": true
+				}
+			],
+			"name": "top_service_context",
+			"type": "TopServiceContext",
+			"description": "topServiceContext",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "material_id",
+					"type": "Number",
+					"description": "宝贝id"
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "类型,overall:综合推荐,trendtheme:趋势词包,automatch:流量智选,extend:流量扩展,highquality:优质卖点词包推荐(用于卖点词包报告),new_default:新建流程默认推荐词包;"
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "计划id"
+				},
+				{
+					"name": "adgroup_id",
+					"type": "Number",
+					"description": "单元id"
+				}
+			],
+			"name": "word_package_suggest_query_v_o",
+			"type": "WordPackageSuggestQueryVo",
+			"description": "wordPackageSuggestQueryVO",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "ok",
+							"type": "Boolean",
+							"description": "是否成功"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误编码"
+						}
+					],
+					"name": "info",
+					"type": "TopInfo",
+					"description": "请求系统信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "word_package_id",
+									"type": "Number",
+									"description": "词包id"
+								},
+								{
+									"name": "word_package_type",
+									"type": "Number",
+									"description": "词包类型,0:流量智选,20:卖点词包"
+								},
+								{
+									"name": "word_package_name",
+									"type": "String",
+									"description": "词包名称"
+								},
+								{
+									"name": "bid_price",
+									"type": "String",
+									"description": "建议出价"
+								},
+								{
+									"name": "impression",
+									"type": "String",
+									"description": "预估展现"
+								},
+								{
+									"name": "multi_factor",
+									"type": "String",
+									"description": "流量放大系数"
+								},
+								{
+									"name": "theme_word_list",
+									"type": "String[]",
+									"description": "主题词"
+								},
+								{
+									"name": "simple_word_list",
+									"type": "String[]",
+									"description": "关键词举例"
+								},
+								{
+									"name": "relevance_type",
+									"type": "Number",
+									"description": "相关性,1:差,2:中,3:好"
+								}
+							],
+							"name": "suggest_word_package_v_o_list",
+							"type": "SuggestWordPackageVo[]",
+							"description": "批量结果集"
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "数量"
+						}
+					],
+					"name": "suggest_word_package_v_o_top_bulk_data",
+					"type": "TopBulkData",
+					"description": "结果集"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.universalbp.wordpackage.suggestkrlist",
+	"apiChineseName": "关键词包建议",
+	"description": "入参推广信息，出参建议的全部关键词包",
+	"id": 67205
+}

@@ -26,6 +26,82 @@
 			"description": "每页显示数"
 		}
 	],
+	"responseParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "traceId"
+		},
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "url",
+							"type": "String",
+							"description": "图片url"
+						},
+						{
+							"name": "id",
+							"type": "String",
+							"description": "图片id"
+						},
+						{
+							"name": "file_name",
+							"type": "String",
+							"description": "文件名字"
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间"
+						},
+						{
+							"name": "owner_member_display_name",
+							"type": "String",
+							"description": "归属人"
+						},
+						{
+							"name": "file_size",
+							"type": "Number",
+							"description": "文件大小"
+						},
+						{
+							"name": "reference_count",
+							"type": "Number",
+							"description": "图片引用数量"
+						},
+						{
+							"name": "group_id",
+							"type": "Number",
+							"description": "分组id"
+						},
+						{
+							"name": "display_name",
+							"type": "String",
+							"description": "展示名字"
+						}
+					],
+					"name": "list",
+					"type": "PhotobankImageDo[]",
+					"description": "image_list"
+				}
+			],
+			"name": "pagination_query_list",
+			"type": "PaginationQueryList",
+			"description": "PaginationQueryList"
+		},
+		{
+			"name": "errorcode",
+			"type": "String",
+			"description": "error code"
+		},
+		{
+			"name": "errormsg",
+			"type": "String",
+			"description": "error message"
+		}
+	],
 	"name": "alibaba.icbu.photobank.list",
 	"apiChineseName": "国际站图片银行查询接口",
 	"description": "国际站图片银行查询接口",

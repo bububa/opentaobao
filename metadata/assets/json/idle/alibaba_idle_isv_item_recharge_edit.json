@@ -1,0 +1,62 @@
+{
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品id",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "action",
+					"type": "String",
+					"description": "add：增加；remove：移除。",
+					"required": true
+				},
+				{
+					"name": "template_extra_info",
+					"type": "String",
+					"description": "直充附加信息"
+				},
+				{
+					"name": "template_code",
+					"type": "String",
+					"description": "直充模板标识"
+				}
+			],
+			"name": "idle_item_api_auto_recharge_do",
+			"type": "IdleItemApiAutoRechargeDO",
+			"description": "直充信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.idle.isv.item.recharge.edit",
+	"apiChineseName": "闲鱼商品直充功能编辑",
+	"description": "闲鱼商品直充功能编辑",
+	"id": 66800
+}

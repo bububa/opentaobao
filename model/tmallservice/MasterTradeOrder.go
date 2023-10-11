@@ -40,6 +40,6 @@ type MasterTradeOrder struct {
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 购买数量
 	BuyAmount int64 `json:"buy_amount,omitempty" xml:"buy_amount,omitempty"`
-	// 主订单号
+	// 实物主订单号
 	ParentOrderId int64 `json:"parent_order_id,omitempty" xml:"parent_order_id,omitempty"`
 }

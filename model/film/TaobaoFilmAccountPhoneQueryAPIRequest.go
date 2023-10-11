@@ -12,7 +12,7 @@ import (
 // 根据手机号查询匹配的账号列表
 type TaobaoFilmAccountPhoneQueryAPIRequest struct {
 	model.Params
-	// 11位手机号码
+	// 手机号
 	_phone string
 }
 
@@ -41,7 +41,7 @@ func (r TaobaoFilmAccountPhoneQueryAPIRequest) GetRawParams() model.Params {
 }
 
 // SetPhone is Phone Setter
-// 11位手机号码
+// 手机号
 func (r *TaobaoFilmAccountPhoneQueryAPIRequest) SetPhone(_phone string) error {
 	r._phone = _phone
 	r.Set("phone", _phone)

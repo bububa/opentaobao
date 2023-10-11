@@ -69,6 +69,28 @@
 					"name": "daily_booking_info",
 					"type": "DailyBookingInfo",
 					"description": "天天特惠"
+				},
+				{
+					"subParams": [
+						{
+							"name": "investment_number",
+							"type": "Number",
+							"description": "活动折扣"
+						},
+						{
+							"name": "check_in_from",
+							"type": "Date",
+							"description": "活动入住开始时间"
+						},
+						{
+							"name": "check_out_to",
+							"type": "Date",
+							"description": "活动离店结束时间"
+						}
+					],
+					"name": "general_booking_info",
+					"type": "GeneralBookingInfo",
+					"description": "民宿优惠"
 				}
 			],
 			"name": "promo_info",

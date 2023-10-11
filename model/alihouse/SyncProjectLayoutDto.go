@@ -6,6 +6,8 @@ type SyncProjectLayoutDto struct {
 	Extend []GoodsRelationDto `json:"extend,omitempty" xml:"extend>goods_relation_dto,omitempty"`
 	// 绑定的货
 	RelationCargos []GoodsRelationDto `json:"relation_cargos,omitempty" xml:"relation_cargos>goods_relation_dto,omitempty"`
+	// 1,2
+	OuterConsultantIds []string `json:"outer_consultant_ids,omitempty" xml:"outer_consultant_ids>string,omitempty"`
 	// 朝向
 	Orientation string `json:"orientation,omitempty" xml:"orientation,omitempty"`
 	// 户型名称
@@ -54,6 +56,18 @@ type SyncProjectLayoutDto struct {
 	ECode string `json:"e_code,omitempty" xml:"e_code,omitempty"`
 	// 外部经纪人ID
 	OuterBrokerId string `json:"outer_broker_id,omitempty" xml:"outer_broker_id,omitempty"`
+	// 1栋
+	BuildingDescribe string `json:"building_describe,omitempty" xml:"building_describe,omitempty"`
+	// 1
+	Balcony string `json:"balcony,omitempty" xml:"balcony,omitempty"`
+	// 1,2
+	BelongBuildings string `json:"belong_buildings,omitempty" xml:"belong_buildings,omitempty"`
+	// 1,2
+	BelongUnits string `json:"belong_units,omitempty" xml:"belong_units,omitempty"`
+	// 1,2
+	BelongRooms string `json:"belong_rooms,omitempty" xml:"belong_rooms,omitempty"`
+	// 1,2
+	RoomNumber string `json:"room_number,omitempty" xml:"room_number,omitempty"`
 	// 是否是主力户型
 	IsMainLayout int64 `json:"is_main_layout,omitempty" xml:"is_main_layout,omitempty"`
 	// 是否有开放厨房 1-是 0-否

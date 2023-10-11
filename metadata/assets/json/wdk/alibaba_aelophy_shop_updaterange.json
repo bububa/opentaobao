@@ -1,0 +1,80 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "lng",
+									"type": "String",
+									"description": "经度(高德坐标)",
+									"required": true
+								},
+								{
+									"name": "lat",
+									"type": "String",
+									"description": "纬度(高德坐标)",
+									"required": true
+								}
+							],
+							"name": "points",
+							"type": "Point[]",
+							"description": "经纬度点",
+							"required": true
+						}
+					],
+					"name": "shop_ranges",
+					"type": "ShopRange[]",
+					"description": "销售范围",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "经营店ID",
+					"required": true
+				},
+				{
+					"name": "channel_source_type",
+					"type": "Number",
+					"description": "渠道",
+					"required": true
+				}
+			],
+			"name": "shop_range_update_request",
+			"type": "ShopRangeUpdateRequest",
+			"description": "请求对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用结果"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "api调用结果"
+		}
+	],
+	"name": "alibaba.aelophy.shop.updaterange",
+	"apiChineseName": "更新渠道店销售范围",
+	"description": "更新渠道店销售范围",
+	"id": 66728
+}

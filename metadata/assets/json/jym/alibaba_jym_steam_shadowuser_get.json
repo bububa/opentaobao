@@ -1,0 +1,53 @@
+{
+	"requestParams": [
+		{
+			"name": "token",
+			"type": "String",
+			"description": "shadowToken",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "shadow_uid",
+					"type": "String",
+					"description": "影子ID"
+				}
+			],
+			"name": "result",
+			"type": "SteamShadowDTO",
+			"description": "影子DTO"
+		},
+		{
+			"name": "sub_code_type",
+			"type": "String",
+			"description": "子集错误码，提供与业务细节使用"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "调用结果"
+		},
+		{
+			"name": "sub_extra_err_msg",
+			"type": "String",
+			"description": "子集错误描述，提供与业务细节使用"
+		},
+		{
+			"name": "state_code",
+			"type": "String",
+			"description": "错误码枚举"
+		},
+		{
+			"name": "extra_err_msg",
+			"type": "String",
+			"description": "错误详细描述"
+		}
+	],
+	"name": "alibaba.jym.steam.shadowuser.get",
+	"apiChineseName": "获取影子标识",
+	"description": "交易猫Steam类目获取影子ID",
+	"id": 67708
+}

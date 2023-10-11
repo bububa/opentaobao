@@ -44,4 +44,6 @@ type DrfTxdActivitySkuBo struct {
 	ActivityType int64 `json:"activity_type,omitempty" xml:"activity_type,omitempty"`
 	// 淘鲜达活动Id
 	TxdActivityId int64 `json:"txd_activity_id,omitempty" xml:"txd_activity_id,omitempty"`
+	// 对应单品积分活动。对应需要扣除的积分数
+	DeductPoint int64 `json:"deduct_point,omitempty" xml:"deduct_point,omitempty"`
 }

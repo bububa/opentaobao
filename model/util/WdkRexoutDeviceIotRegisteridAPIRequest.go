@@ -16,7 +16,7 @@ type WdkRexoutDeviceIotRegisteridAPIRequest struct {
 	_accessKey string
 	// 平台签名
 	_accessSign string
-	// 签名时间戳
+	// 签名时间戳,毫秒,加密时使用时间加密则必传
 	_accessTime string
 	// 设备ID
 	_uuid string
@@ -73,7 +73,7 @@ func (r WdkRexoutDeviceIotRegisteridAPIRequest) GetAccessSign() string {
 }
 
 // SetAccessTime is AccessTime Setter
-// 签名时间戳
+// 签名时间戳,毫秒,加密时使用时间加密则必传
 func (r *WdkRexoutDeviceIotRegisteridAPIRequest) SetAccessTime(_accessTime string) error {
 	r._accessTime = _accessTime
 	r.Set("access_time", _accessTime)

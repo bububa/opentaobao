@@ -12,9 +12,9 @@ import (
 // 工单挂起
 type TmallServicecenterWorkcardSuspendAPIRequest struct {
 	model.Params
-	// 预约时间
+	// 预约时间（与下次联系时间二选一填入）
 	_reserveServiceDate string
-	// 下次联系时间
+	// 下次联系时间（与预约时间二选一填入）
 	_gmtNextContact string
 	// 挂起原因描述
 	_failDesc string
@@ -49,7 +49,7 @@ func (r TmallServicecenterWorkcardSuspendAPIRequest) GetRawParams() model.Params
 }
 
 // SetReserveServiceDate is ReserveServiceDate Setter
-// 预约时间
+// 预约时间（与下次联系时间二选一填入）
 func (r *TmallServicecenterWorkcardSuspendAPIRequest) SetReserveServiceDate(_reserveServiceDate string) error {
 	r._reserveServiceDate = _reserveServiceDate
 	r.Set("reserve_service_date", _reserveServiceDate)
@@ -62,7 +62,7 @@ func (r TmallServicecenterWorkcardSuspendAPIRequest) GetReserveServiceDate() str
 }
 
 // SetGmtNextContact is GmtNextContact Setter
-// 下次联系时间
+// 下次联系时间（与预约时间二选一填入）
 func (r *TmallServicecenterWorkcardSuspendAPIRequest) SetGmtNextContact(_gmtNextContact string) error {
 	r._gmtNextContact = _gmtNextContact
 	r.Set("gmt_next_contact", _gmtNextContact)
