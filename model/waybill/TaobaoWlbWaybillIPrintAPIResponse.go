@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowlbwaybilliprintAPIResponse 打印确认接口v1.0 API返回值
+// TaobaoWlbWaybillIPrintAPIResponse 打印确认接口v1.0 API返回值
 // taobao.wlb.waybill.i.print
 //
 // 打印面单前的校验接口，判断面单号信息与订单信息是否匹配。
-type TaobaowlbwaybilliprintAPIResponse struct {
+type TaobaoWlbWaybillIPrintAPIResponse struct {
 	model.CommonResponse
-	TaobaowlbwaybilliprintAPIResponseModel
+	TaobaoWlbWaybillIPrintAPIResponseModel
 }
 
-// TaobaowlbwaybilliprintAPIResponseModel is 打印确认接口v1.0 成功返回结果
-type TaobaowlbwaybilliprintAPIResponseModel struct {
+// TaobaoWlbWaybillIPrintAPIResponseModel is 打印确认接口v1.0 成功返回结果
+type TaobaoWlbWaybillIPrintAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_waybill_i_print_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

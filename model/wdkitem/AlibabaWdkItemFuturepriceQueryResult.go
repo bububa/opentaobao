@@ -1,9 +1,9 @@
 package wdkitem
 
-// AlibabawdkitemfuturepricequeryResult 结构体
-type AlibabawdkitemfuturepricequeryResult struct {
+// AlibabaWdkItemFuturepriceQueryResult 结构体
+type AlibabaWdkItemFuturepriceQueryResult struct {
 	// 商品未来价
-	Models []AlibabawdkitemfuturepricequeryModel `json:"models,omitempty" xml:"models>alibabawdkitemfuturepricequery_model,omitempty"`
+	Models []AlibabaWdkItemFuturepriceQueryModel `json:"models,omitempty" xml:"models>alibaba_wdk_item_futureprice_query_model,omitempty"`
 	// 返回码
 	ReturnCode string `json:"return_code,omitempty" xml:"return_code,omitempty"`
 	// 异常信息

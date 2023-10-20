@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoalitripitfaregetAPIResponse 【国际机票自有政策】单条查询 API返回值
+// TaobaoAlitripItFareGetAPIResponse 【国际机票自有政策】单条查询 API返回值
 // taobao.alitrip.it.fare.get
 //
 // 通过此接口可以查询单条政策的详情，可以根据fareId或outId查询，用户outId查询时，如果outId不唯一，只返回最新添加的一条数据
-type TaobaoalitripitfaregetAPIResponse struct {
+type TaobaoAlitripItFareGetAPIResponse struct {
 	model.CommonResponse
-	TaobaoalitripitfaregetAPIResponseModel
+	TaobaoAlitripItFareGetAPIResponseModel
 }
 
-// TaobaoalitripitfaregetAPIResponseModel is 【国际机票自有政策】单条查询 成功返回结果
-type TaobaoalitripitfaregetAPIResponseModel struct {
+// TaobaoAlitripItFareGetAPIResponseModel is 【国际机票自有政策】单条查询 成功返回结果
+type TaobaoAlitripItFareGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_it_fare_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

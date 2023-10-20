@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoalitriptravelaxinhotellistgetAPIResponse 标准酒店信息查询-阿信 API返回值
+// TaobaoAlitripTravelAxinHotelListGetAPIResponse 标准酒店信息查询-阿信 API返回值
 // taobao.alitrip.travel.axin.hotel.list.get
 //
 // 阿信酒店分销基础数据查询
-type TaobaoalitriptravelaxinhotellistgetAPIResponse struct {
+type TaobaoAlitripTravelAxinHotelListGetAPIResponse struct {
 	model.CommonResponse
-	TaobaoalitriptravelaxinhotellistgetAPIResponseModel
+	TaobaoAlitripTravelAxinHotelListGetAPIResponseModel
 }
 
-// TaobaoalitriptravelaxinhotellistgetAPIResponseModel is 标准酒店信息查询-阿信 成功返回结果
-type TaobaoalitriptravelaxinhotellistgetAPIResponseModel struct {
+// TaobaoAlitripTravelAxinHotelListGetAPIResponseModel is 标准酒店信息查询-阿信 成功返回结果
+type TaobaoAlitripTravelAxinHotelListGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_travel_axin_hotel_list_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
-	Result *TaobaoalitriptravelaxinhotellistgetResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *TaobaoAlitripTravelAxinHotelListGetResult `json:"result,omitempty" xml:"result,omitempty"`
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripticketscenicqueryAPIResponse 【门票API2.0】卖家已发布门票商品列表查询接口（根据景点维度查询） API返回值
+// AlitripTicketScenicQueryAPIResponse 【门票API2.0】卖家已发布门票商品列表查询接口（根据景点维度查询） API返回值
 // alitrip.ticket.scenic.query
 //
 // 查询卖家已发布过的门票商品列表，根据景点维度聚合查询。如果卖家在该景点下未发布过任何商品，则查询不到数据！
-type AlitripticketscenicqueryAPIResponse struct {
+type AlitripTicketScenicQueryAPIResponse struct {
 	model.CommonResponse
-	AlitripticketscenicqueryAPIResponseModel
+	AlitripTicketScenicQueryAPIResponseModel
 }
 
-// AlitripticketscenicqueryAPIResponseModel is 【门票API2.0】卖家已发布门票商品列表查询接口（根据景点维度查询） 成功返回结果
-type AlitripticketscenicqueryAPIResponseModel struct {
+// AlitripTicketScenicQueryAPIResponseModel is 【门票API2.0】卖家已发布门票商品列表查询接口（根据景点维度查询） 成功返回结果
+type AlitripTicketScenicQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_ticket_scenic_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package simba
 
-// TaobaouniversalbpaccountgetbalanceTopResult 结构体
-type TaobaouniversalbpaccountgetbalanceTopResult struct {
+// TaobaoUniversalbpAccountGetBalanceTopResult 结构体
+type TaobaoUniversalbpAccountGetBalanceTopResult struct {
 	// 请求系统信息
 	Info *TopInfo `json:"info,omitempty" xml:"info,omitempty"`
 	// 结果集

@@ -1,7 +1,7 @@
 package tvupadmin
 
-// YunostvscreenadmincommonoperationTopResult 结构体
-type YunostvscreenadmincommonoperationTopResult struct {
+// YunosTvscreenAdminCommonOperationTopResult 结构体
+type YunosTvscreenAdminCommonOperationTopResult struct {
 	// result
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
 	// message

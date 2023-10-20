@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowdkequipmentconveyorbatchconfirmAPIResponse 五道口悬挂链信息批量确认 API返回值
+// TaobaoWdkEquipmentConveyorBatchconfirmAPIResponse 五道口悬挂链信息批量确认 API返回值
 // taobao.wdk.equipment.conveyor.batchconfirm
 //
 // 批量消息确认
-type TaobaowdkequipmentconveyorbatchconfirmAPIResponse struct {
+type TaobaoWdkEquipmentConveyorBatchconfirmAPIResponse struct {
 	model.CommonResponse
-	TaobaowdkequipmentconveyorbatchconfirmAPIResponseModel
+	TaobaoWdkEquipmentConveyorBatchconfirmAPIResponseModel
 }
 
-// TaobaowdkequipmentconveyorbatchconfirmAPIResponseModel is 五道口悬挂链信息批量确认 成功返回结果
-type TaobaowdkequipmentconveyorbatchconfirmAPIResponseModel struct {
+// TaobaoWdkEquipmentConveyorBatchconfirmAPIResponseModel is 五道口悬挂链信息批量确认 成功返回结果
+type TaobaoWdkEquipmentConveyorBatchconfirmAPIResponseModel struct {
 	XMLName xml.Name `xml:"wdk_equipment_conveyor_batchconfirm_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

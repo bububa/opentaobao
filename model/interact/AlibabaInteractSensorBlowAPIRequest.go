@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabainteractsensorblowAPIRequest 吹气 API请求
+// AlibabaInteractSensorBlowAPIRequest 吹气 API请求
 // alibaba.interact.sensor.blow
 //
 // 客户端吹气
-type AlibabainteractsensorblowAPIRequest struct {
+type AlibabaInteractSensorBlowAPIRequest struct {
 	model.Params
 }
 
-// NewAlibabainteractsensorblowRequest 初始化AlibabainteractsensorblowAPIRequest对象
-func NewAlibabainteractsensorblowRequest() *AlibabainteractsensorblowAPIRequest {
-	return &AlibabainteractsensorblowAPIRequest{
+// NewAlibabaInteractSensorBlowRequest 初始化AlibabaInteractSensorBlowAPIRequest对象
+func NewAlibabaInteractSensorBlowRequest() *AlibabaInteractSensorBlowAPIRequest {
+	return &AlibabaInteractSensorBlowAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabainteractsensorblowAPIRequest) GetApiMethodName() string {
+func (r AlibabaInteractSensorBlowAPIRequest) GetApiMethodName() string {
 	return "alibaba.interact.sensor.blow"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabainteractsensorblowAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaInteractSensorBlowAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabainteractsensorblowAPIRequest) GetRawParams() model.Params {
+func (r AlibabaInteractSensorBlowAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

@@ -1,7 +1,7 @@
 package tmallservice
 
-// AlibabasscsupplyplatformserviceworkercancelleaveResult 结构体
-type AlibabasscsupplyplatformserviceworkercancelleaveResult struct {
+// AlibabaSscSupplyplatformServiceworkerCancelleaveResult 结构体
+type AlibabaSscSupplyplatformServiceworkerCancelleaveResult struct {
 	// 错误码
 	DisplayCode string `json:"display_code,omitempty" xml:"display_code,omitempty"`
 	// 对外展示的错误信息

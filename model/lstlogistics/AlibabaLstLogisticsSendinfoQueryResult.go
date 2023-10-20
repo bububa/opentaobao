@@ -1,7 +1,7 @@
 package lstlogistics
 
-// AlibabalstlogisticssendinfoqueryResult 结构体
-type AlibabalstlogisticssendinfoqueryResult struct {
+// AlibabaLstLogisticsSendinfoQueryResult 结构体
+type AlibabaLstLogisticsSendinfoQueryResult struct {
 	// 返回内容
 	ContentList []Content `json:"content_list,omitempty" xml:"content_list>content,omitempty"`
 	// 错误描述

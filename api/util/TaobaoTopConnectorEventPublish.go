@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/util"
 )
 
-// Taobaotopconnectoreventpublish 连接器事件发布
+// TaobaoTopConnectorEventPublish 连接器事件发布
 // taobao.top.connector.event.publish
 //
 // 连接器事件发布
-func Taobaotopconnectoreventpublish(clt *core.SDKClient, req *util.TaobaotopconnectoreventpublishAPIRequest, session string) (*util.TaobaotopconnectoreventpublishAPIResponse, error) {
-	var resp util.TaobaotopconnectoreventpublishAPIResponse
+func TaobaoTopConnectorEventPublish(clt *core.SDKClient, req *util.TaobaoTopConnectorEventPublishAPIRequest, session string) (*util.TaobaoTopConnectorEventPublishAPIResponse, error) {
+	var resp util.TaobaoTopConnectorEventPublishAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

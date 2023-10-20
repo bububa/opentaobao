@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/campus"
 )
 
-// Alibabacampusaclnewlistuserroles 查询并标记用户选择的角色
+// AlibabaCampusAclNewListuserroles 查询并标记用户选择的角色
 // alibaba.campus.acl.new.listuserroles
 //
 // 查询并标记用户选择的角色
-func Alibabacampusaclnewlistuserroles(clt *core.SDKClient, req *campus.AlibabacampusaclnewlistuserrolesAPIRequest, session string) (*campus.AlibabacampusaclnewlistuserrolesAPIResponse, error) {
-	var resp campus.AlibabacampusaclnewlistuserrolesAPIResponse
+func AlibabaCampusAclNewListuserroles(clt *core.SDKClient, req *campus.AlibabaCampusAclNewListuserrolesAPIRequest, session string) (*campus.AlibabaCampusAclNewListuserrolesAPIResponse, error) {
+	var resp campus.AlibabaCampusAclNewListuserrolesAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

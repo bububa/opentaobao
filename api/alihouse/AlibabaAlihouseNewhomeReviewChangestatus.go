@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// Alibabaalihousenewhomereviewchangestatus 楼盘测评草稿状态同步
+// AlibabaAlihouseNewhomeReviewChangestatus 楼盘测评草稿状态同步
 // alibaba.alihouse.newhome.review.changestatus
 //
 // 楼盘测评草稿状态更新
-func Alibabaalihousenewhomereviewchangestatus(clt *core.SDKClient, req *alihouse.AlibabaalihousenewhomereviewchangestatusAPIRequest, session string) (*alihouse.AlibabaalihousenewhomereviewchangestatusAPIResponse, error) {
-	var resp alihouse.AlibabaalihousenewhomereviewchangestatusAPIResponse
+func AlibabaAlihouseNewhomeReviewChangestatus(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeReviewChangestatusAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeReviewChangestatusAPIResponse, error) {
+	var resp alihouse.AlibabaAlihouseNewhomeReviewChangestatusAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallcar"
 )
 
-// Tmallaliautoeticketstoreget 查询电子凭证对应门店信息
+// TmallAliautoEticketStoreGet 查询电子凭证对应门店信息
 // tmall.aliauto.eticket.store.get
 //
 // 查询电子凭证对应门店信息
-func Tmallaliautoeticketstoreget(clt *core.SDKClient, req *tmallcar.TmallaliautoeticketstoregetAPIRequest, session string) (*tmallcar.TmallaliautoeticketstoregetAPIResponse, error) {
-	var resp tmallcar.TmallaliautoeticketstoregetAPIResponse
+func TmallAliautoEticketStoreGet(clt *core.SDKClient, req *tmallcar.TmallAliautoEticketStoreGetAPIRequest, session string) (*tmallcar.TmallAliautoEticketStoreGetAPIResponse, error) {
+	var resp tmallcar.TmallAliautoEticketStoreGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

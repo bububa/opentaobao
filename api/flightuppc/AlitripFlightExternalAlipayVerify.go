@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/flightuppc"
 )
 
-// Alitripflightexternalalipayverify 支付宝小程序验签
+// AlitripFlightExternalAlipayVerify 支付宝小程序验签
 // alitrip.flight.external.alipay.verify
 //
 // 支付宝小程序验签
-func Alitripflightexternalalipayverify(clt *core.SDKClient, req *flightuppc.AlitripflightexternalalipayverifyAPIRequest, session string) (*flightuppc.AlitripflightexternalalipayverifyAPIResponse, error) {
-	var resp flightuppc.AlitripflightexternalalipayverifyAPIResponse
+func AlitripFlightExternalAlipayVerify(clt *core.SDKClient, req *flightuppc.AlitripFlightExternalAlipayVerifyAPIRequest, session string) (*flightuppc.AlitripFlightExternalAlipayVerifyAPIResponse, error) {
+	var resp flightuppc.AlitripFlightExternalAlipayVerifyAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

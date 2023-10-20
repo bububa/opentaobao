@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosadauditcreativeaddAPIResponse 单个创意预审接口 API返回值
+// YunosAdAuditCreativeAddAPIResponse 单个创意预审接口 API返回值
 // yunos.ad.audit.creative.add
 //
 // YunOS广告业务第三方DSP单个创意预审接口
-type YunosadauditcreativeaddAPIResponse struct {
+type YunosAdAuditCreativeAddAPIResponse struct {
 	model.CommonResponse
-	YunosadauditcreativeaddAPIResponseModel
+	YunosAdAuditCreativeAddAPIResponseModel
 }
 
-// YunosadauditcreativeaddAPIResponseModel is 单个创意预审接口 成功返回结果
-type YunosadauditcreativeaddAPIResponseModel struct {
+// YunosAdAuditCreativeAddAPIResponseModel is 单个创意预审接口 成功返回结果
+type YunosAdAuditCreativeAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_ad_audit_creative_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

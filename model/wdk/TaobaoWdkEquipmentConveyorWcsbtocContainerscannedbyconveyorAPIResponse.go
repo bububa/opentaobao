@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowdkequipmentconveyorwcsbtoccontainerscannedbyconveyorAPIResponse 容器被悬挂链扫描 API返回值
+// TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse 容器被悬挂链扫描 API返回值
 // taobao.wdk.equipment.conveyor.wcsbtoc.containerscannedbyconveyor
 //
 // 容器被悬挂链扫描
-type TaobaowdkequipmentconveyorwcsbtoccontainerscannedbyconveyorAPIResponse struct {
+type TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse struct {
 	model.CommonResponse
-	TaobaowdkequipmentconveyorwcsbtoccontainerscannedbyconveyorAPIResponseModel
+	TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponseModel
 }
 
-// TaobaowdkequipmentconveyorwcsbtoccontainerscannedbyconveyorAPIResponseModel is 容器被悬挂链扫描 成功返回结果
-type TaobaowdkequipmentconveyorwcsbtoccontainerscannedbyconveyorAPIResponseModel struct {
+// TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponseModel is 容器被悬挂链扫描 成功返回结果
+type TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponseModel struct {
 	XMLName xml.Name `xml:"wdk_equipment_conveyor_wcsbtoc_containerscannedbyconveyor_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

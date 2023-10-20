@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabainteractsensortoastAPIResponse toast API返回值
+// AlibabaInteractSensorToastAPIResponse toast API返回值
 // alibaba.interact.sensor.toast
 //
 // toast提示
-type AlibabainteractsensortoastAPIResponse struct {
+type AlibabaInteractSensorToastAPIResponse struct {
 	model.CommonResponse
-	AlibabainteractsensortoastAPIResponseModel
+	AlibabaInteractSensorToastAPIResponseModel
 }
 
-// AlibabainteractsensortoastAPIResponseModel is toast 成功返回结果
-type AlibabainteractsensortoastAPIResponseModel struct {
+// AlibabaInteractSensorToastAPIResponseModel is toast 成功返回结果
+type AlibabaInteractSensorToastAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_sensor_toast_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

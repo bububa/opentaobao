@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabatclsaelophymerchantchannelordercancelApiResult 结构体
-type AlibabatclsaelophymerchantchannelordercancelApiResult struct {
+// AlibabaTclsAelophyMerchantChannelOrderCancelApiResult 结构体
+type AlibabaTclsAelophyMerchantChannelOrderCancelApiResult struct {
 	// 错误信息
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// 错误编码

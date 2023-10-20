@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoglobalcommithandovercontentupdateAPIRequest 修改已经提交的交接单 API请求
+// CainiaoGlobalCommithandovercontentUpdateAPIRequest 修改已经提交的交接单 API请求
 // cainiao.global.commithandovercontent.update
 //
 // 修改已经提交的交接单
-type CainiaoglobalcommithandovercontentupdateAPIRequest struct {
+type CainiaoGlobalCommithandovercontentUpdateAPIRequest struct {
 	model.Params
 	// 修改参数对象
 	_openHandoverContentUpdateCommitRequest *OpenHandoverContentUpdateCommitRequest
 }
 
-// NewCainiaoglobalcommithandovercontentupdateRequest 初始化CainiaoglobalcommithandovercontentupdateAPIRequest对象
-func NewCainiaoglobalcommithandovercontentupdateRequest() *CainiaoglobalcommithandovercontentupdateAPIRequest {
-	return &CainiaoglobalcommithandovercontentupdateAPIRequest{
+// NewCainiaoGlobalCommithandovercontentUpdateRequest 初始化CainiaoGlobalCommithandovercontentUpdateAPIRequest对象
+func NewCainiaoGlobalCommithandovercontentUpdateRequest() *CainiaoGlobalCommithandovercontentUpdateAPIRequest {
+	return &CainiaoGlobalCommithandovercontentUpdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r CainiaoglobalcommithandovercontentupdateAPIRequest) GetApiMethodName() string {
+func (r CainiaoGlobalCommithandovercontentUpdateAPIRequest) GetApiMethodName() string {
 	return "cainiao.global.commithandovercontent.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r CainiaoglobalcommithandovercontentupdateAPIRequest) GetApiParams(params url.Values) {
+func (r CainiaoGlobalCommithandovercontentUpdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r CainiaoglobalcommithandovercontentupdateAPIRequest) GetRawParams() model.Params {
+func (r CainiaoGlobalCommithandovercontentUpdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOpenHandoverContentUpdateCommitRequest is OpenHandoverContentUpdateCommitRequest Setter
 // 修改参数对象
-func (r *CainiaoglobalcommithandovercontentupdateAPIRequest) SetOpenHandoverContentUpdateCommitRequest(_openHandoverContentUpdateCommitRequest *OpenHandoverContentUpdateCommitRequest) error {
+func (r *CainiaoGlobalCommithandovercontentUpdateAPIRequest) SetOpenHandoverContentUpdateCommitRequest(_openHandoverContentUpdateCommitRequest *OpenHandoverContentUpdateCommitRequest) error {
 	r._openHandoverContentUpdateCommitRequest = _openHandoverContentUpdateCommitRequest
 	r.Set("open_handover_content_update_commit_request", _openHandoverContentUpdateCommitRequest)
 	return nil
 }
 
 // GetOpenHandoverContentUpdateCommitRequest OpenHandoverContentUpdateCommitRequest Getter
-func (r CainiaoglobalcommithandovercontentupdateAPIRequest) GetOpenHandoverContentUpdateCommitRequest() *OpenHandoverContentUpdateCommitRequest {
+func (r CainiaoGlobalCommithandovercontentUpdateAPIRequest) GetOpenHandoverContentUpdateCommitRequest() *OpenHandoverContentUpdateCommitRequest {
 	return r._openHandoverContentUpdateCommitRequest
 }

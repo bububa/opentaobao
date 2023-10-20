@@ -1,7 +1,7 @@
 package yunosappstore
 
-// YunosappstorepadhpapplistResult 结构体
-type YunosappstorepadhpapplistResult struct {
+// YunosAppstorePadHpApplistResult 结构体
+type YunosAppstorePadHpApplistResult struct {
 	// icon
 	Icon string `json:"icon,omitempty" xml:"icon,omitempty"`
 	// gmtCreate

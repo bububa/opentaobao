@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowlbwaybillshengxiangetAPIResponse 商家获取生鲜电子面单号 API返回值
+// TaobaoWlbWaybillShengxianGetAPIResponse 商家获取生鲜电子面单号 API返回值
 // taobao.wlb.waybill.shengxian.get
 //
 // 商家通过交易订单号获取电子面单接口
-type TaobaowlbwaybillshengxiangetAPIResponse struct {
+type TaobaoWlbWaybillShengxianGetAPIResponse struct {
 	model.CommonResponse
-	TaobaowlbwaybillshengxiangetAPIResponseModel
+	TaobaoWlbWaybillShengxianGetAPIResponseModel
 }
 
-// TaobaowlbwaybillshengxiangetAPIResponseModel is 商家获取生鲜电子面单号 成功返回结果
-type TaobaowlbwaybillshengxiangetAPIResponseModel struct {
+// TaobaoWlbWaybillShengxianGetAPIResponseModel is 商家获取生鲜电子面单号 成功返回结果
+type TaobaoWlbWaybillShengxianGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_waybill_shengxian_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

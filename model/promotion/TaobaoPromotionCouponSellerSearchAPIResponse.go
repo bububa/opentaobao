@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaopromotioncouponsellersearchAPIResponse 查询绑定卖家优惠券相关信息 API返回值
+// TaobaoPromotionCouponSellerSearchAPIResponse 查询绑定卖家优惠券相关信息 API返回值
 // taobao.promotion.coupon.seller.search
 //
 // 查询绑定卖家相关优惠券信息  如isv  百川 等外部业务方
-type TaobaopromotioncouponsellersearchAPIResponse struct {
+type TaobaoPromotionCouponSellerSearchAPIResponse struct {
 	model.CommonResponse
-	TaobaopromotioncouponsellersearchAPIResponseModel
+	TaobaoPromotionCouponSellerSearchAPIResponseModel
 }
 
-// TaobaopromotioncouponsellersearchAPIResponseModel is 查询绑定卖家优惠券相关信息 成功返回结果
-type TaobaopromotioncouponsellersearchAPIResponseModel struct {
+// TaobaoPromotionCouponSellerSearchAPIResponseModel is 查询绑定卖家优惠券相关信息 成功返回结果
+type TaobaoPromotionCouponSellerSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"promotion_coupon_seller_search_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

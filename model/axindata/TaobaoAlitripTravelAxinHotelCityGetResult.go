@@ -1,7 +1,7 @@
 package axindata
 
-// TaobaoalitriptravelaxinhotelcitygetResult 结构体
-type TaobaoalitriptravelaxinhotelcitygetResult struct {
+// TaobaoAlitripTravelAxinHotelCityGetResult 结构体
+type TaobaoAlitripTravelAxinHotelCityGetResult struct {
 	// 城市信息
 	DataList []HotelCityVo `json:"data_list,omitempty" xml:"data_list>hotel_city_vo,omitempty"`
 	// 错误信息

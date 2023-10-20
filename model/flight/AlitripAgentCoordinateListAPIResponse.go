@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripagentcoordinatelistAPIResponse 慧飞商家协同单列表查询接口 API返回值
+// AlitripAgentCoordinateListAPIResponse 慧飞商家协同单列表查询接口 API返回值
 // alitrip.agent.coordinate.list
 //
 // 慧飞商家协同单列表查询接口
-type AlitripagentcoordinatelistAPIResponse struct {
+type AlitripAgentCoordinateListAPIResponse struct {
 	model.CommonResponse
-	AlitripagentcoordinatelistAPIResponseModel
+	AlitripAgentCoordinateListAPIResponseModel
 }
 
-// AlitripagentcoordinatelistAPIResponseModel is 慧飞商家协同单列表查询接口 成功返回结果
-type AlitripagentcoordinatelistAPIResponseModel struct {
+// AlitripAgentCoordinateListAPIResponseModel is 慧飞商家协同单列表查询接口 成功返回结果
+type AlitripAgentCoordinateListAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_agent_coordinate_list_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ottpay"
 )
 
-// Youkuottpayordercreateorder 创建订单
+// YoukuOttPayOrderCreateorder 创建订单
 // youku.ott.pay.order.createorder
 //
 // ottpay创建订单
-func Youkuottpayordercreateorder(clt *core.SDKClient, req *ottpay.YoukuottpayordercreateorderAPIRequest, session string) (*ottpay.YoukuottpayordercreateorderAPIResponse, error) {
-	var resp ottpay.YoukuottpayordercreateorderAPIResponse
+func YoukuOttPayOrderCreateorder(clt *core.SDKClient, req *ottpay.YoukuOttPayOrderCreateorderAPIRequest, session string) (*ottpay.YoukuOttPayOrderCreateorderAPIResponse, error) {
+	var resp ottpay.YoukuOttPayOrderCreateorderAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

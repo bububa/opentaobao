@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaaliqinflowwalletchargeruleAPIResponse 流量钱包直充（根据号码归属地省份路由） API返回值
+// AlibabaAliqinFlowWalletChargeRuleAPIResponse 流量钱包直充（根据号码归属地省份路由） API返回值
 // alibaba.aliqin.flow.wallet.charge.rule
 //
 // 流量钱包直充（根据号码归属地省份路由）
-type AlibabaaliqinflowwalletchargeruleAPIResponse struct {
+type AlibabaAliqinFlowWalletChargeRuleAPIResponse struct {
 	model.CommonResponse
-	AlibabaaliqinflowwalletchargeruleAPIResponseModel
+	AlibabaAliqinFlowWalletChargeRuleAPIResponseModel
 }
 
-// AlibabaaliqinflowwalletchargeruleAPIResponseModel is 流量钱包直充（根据号码归属地省份路由） 成功返回结果
-type AlibabaaliqinflowwalletchargeruleAPIResponseModel struct {
+// AlibabaAliqinFlowWalletChargeRuleAPIResponseModel is 流量钱包直充（根据号码归属地省份路由） 成功返回结果
+type AlibabaAliqinFlowWalletChargeRuleAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_aliqin_flow_wallet_charge_rule_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

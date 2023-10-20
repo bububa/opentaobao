@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/einvoice"
 )
 
-// Alibabaeinvoicetaxoptbilldownloadurlquery 税筹业务账单文件下载URL查询
+// AlibabaEinvoiceTaxOptBilldownloadurlQuery 税筹业务账单文件下载URL查询
 // alibaba.einvoice.tax.opt.billdownloadurl.query
 //
 // 税筹业务账单文件下载的URL查询
-func Alibabaeinvoicetaxoptbilldownloadurlquery(clt *core.SDKClient, req *einvoice.AlibabaeinvoicetaxoptbilldownloadurlqueryAPIRequest, session string) (*einvoice.AlibabaeinvoicetaxoptbilldownloadurlqueryAPIResponse, error) {
-	var resp einvoice.AlibabaeinvoicetaxoptbilldownloadurlqueryAPIResponse
+func AlibabaEinvoiceTaxOptBilldownloadurlQuery(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceTaxOptBilldownloadurlQueryAPIRequest, session string) (*einvoice.AlibabaEinvoiceTaxOptBilldownloadurlQueryAPIResponse, error) {
+	var resp einvoice.AlibabaEinvoiceTaxOptBilldownloadurlQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

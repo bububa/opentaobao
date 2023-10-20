@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaalihousenewhomeprojectupdateiteminfoResult 结构体
-type AlibabaalihousenewhomeprojectupdateiteminfoResult struct {
+// AlibabaAlihouseNewhomeProjectUpdateItemInfoResult 结构体
+type AlibabaAlihouseNewhomeProjectUpdateItemInfoResult struct {
 	// 成功描述
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 成功code

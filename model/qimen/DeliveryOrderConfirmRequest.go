@@ -9,5 +9,5 @@ type DeliveryOrderConfirmRequest struct {
 	// 发货单信息
 	DeliveryOrder *DeliveryOrder `json:"deliveryOrder,omitempty" xml:"deliveryOrder,omitempty"`
 	// 扩展属性
-	ExtendProps *TaobaoqimendeliveryorderconfirmMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+	ExtendProps *TaobaoQimenDeliveryorderConfirmMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

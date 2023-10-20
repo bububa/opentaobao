@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/pur"
 )
 
-// Alibabapurprcreate 下pr单
+// AlibabaPurPrCreate 下pr单
 // alibaba.pur.pr.create
 //
 // 下pr单
-func Alibabapurprcreate(clt *core.SDKClient, req *pur.AlibabapurprcreateAPIRequest, session string) (*pur.AlibabapurprcreateAPIResponse, error) {
-	var resp pur.AlibabapurprcreateAPIResponse
+func AlibabaPurPrCreate(clt *core.SDKClient, req *pur.AlibabaPurPrCreateAPIRequest, session string) (*pur.AlibabaPurPrCreateAPIResponse, error) {
+	var resp pur.AlibabaPurPrCreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabawdkcoupontemplatequeryumpactidApiResult 结构体
-type AlibabawdkcoupontemplatequeryumpactidApiResult struct {
+// AlibabaWdkCouponTemplateQueryumpactidApiResult 结构体
+type AlibabaWdkCouponTemplateQueryumpactidApiResult struct {
 	// 数据
 	Models []CouponRelatedResponse `json:"models,omitempty" xml:"models>coupon_related_response,omitempty"`
 	// 错误码

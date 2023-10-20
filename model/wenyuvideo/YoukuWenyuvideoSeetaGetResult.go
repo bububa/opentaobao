@@ -1,9 +1,9 @@
 package wenyuvideo
 
-// YoukuwenyuvideoseetagetResult 结构体
-type YoukuwenyuvideoseetagetResult struct {
+// YoukuWenyuvideoSeetaGetResult 结构体
+type YoukuWenyuvideoSeetaGetResult struct {
 	// 返回数据
-	Values []YoukuwenyuvideoseetagetModel `json:"values,omitempty" xml:"values>youkuwenyuvideoseetaget_model,omitempty"`
+	Values []YoukuWenyuvideoSeetaGetModel `json:"values,omitempty" xml:"values>youku_wenyuvideo_seeta_get_model,omitempty"`
 	// msgCode
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// msgInfo

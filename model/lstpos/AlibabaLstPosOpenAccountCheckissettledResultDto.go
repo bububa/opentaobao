@@ -1,7 +1,7 @@
 package lstpos
 
-// AlibabalstposopenaccountcheckissettledResultDto 结构体
-type AlibabalstposopenaccountcheckissettledResultDto struct {
+// AlibabaLstPosOpenAccountCheckissettledResultDto 结构体
+type AlibabaLstPosOpenAccountCheckissettledResultDto struct {
 	// 错误信息描述
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 接口具体返回的业务数据对象

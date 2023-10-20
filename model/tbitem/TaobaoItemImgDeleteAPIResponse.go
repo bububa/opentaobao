@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoitemimgdeleteAPIResponse 删除商品图片 API返回值
+// TaobaoItemImgDeleteAPIResponse 删除商品图片 API返回值
 // taobao.item.img.delete
 //
 // 删除商品图片
-type TaobaoitemimgdeleteAPIResponse struct {
+type TaobaoItemImgDeleteAPIResponse struct {
 	model.CommonResponse
-	TaobaoitemimgdeleteAPIResponseModel
+	TaobaoItemImgDeleteAPIResponseModel
 }
 
-// TaobaoitemimgdeleteAPIResponseModel is 删除商品图片 成功返回结果
-type TaobaoitemimgdeleteAPIResponseModel struct {
+// TaobaoItemImgDeleteAPIResponseModel is 删除商品图片 成功返回结果
+type TaobaoItemImgDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"item_img_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

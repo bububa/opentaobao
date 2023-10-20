@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/xhotel"
 )
 
-// Taobaoxhotelcitydistributionget 酒店城市数据获取接口-分销场景使用
+// TaobaoXhotelCityDistributionGet 酒店城市数据获取接口-分销场景使用
 // taobao.xhotel.city.distribution.get
 //
 // 引流API，对外提供酒店城市数据
-func Taobaoxhotelcitydistributionget(clt *core.SDKClient, req *xhotel.TaobaoxhotelcitydistributiongetAPIRequest, session string) (*xhotel.TaobaoxhotelcitydistributiongetAPIResponse, error) {
-	var resp xhotel.TaobaoxhotelcitydistributiongetAPIResponse
+func TaobaoXhotelCityDistributionGet(clt *core.SDKClient, req *xhotel.TaobaoXhotelCityDistributionGetAPIRequest, session string) (*xhotel.TaobaoXhotelCityDistributionGetAPIResponse, error) {
+	var resp xhotel.TaobaoXhotelCityDistributionGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

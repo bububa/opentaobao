@@ -1,9 +1,9 @@
 package wdk
 
-// AlibabawdkskuchannelskuupdateApiResults 结构体
-type AlibabawdkskuchannelskuupdateApiResults struct {
+// AlibabaWdkSkuChannelskuUpdateApiResults 结构体
+type AlibabaWdkSkuChannelskuUpdateApiResults struct {
 	// 单个商品返回结果集合
-	Models []AlibabawdkskuchannelskuupdateApiResult `json:"models,omitempty" xml:"models>alibabawdkskuchannelskuupdate_api_result,omitempty"`
+	Models []AlibabaWdkSkuChannelskuUpdateApiResult `json:"models,omitempty" xml:"models>alibaba_wdk_sku_channelsku_update_api_result,omitempty"`
 	// errCode
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// errMsg

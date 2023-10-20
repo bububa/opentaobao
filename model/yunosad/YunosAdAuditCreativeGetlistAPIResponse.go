@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosadauditcreativegetlistAPIResponse 批量获取创意审核状态 API返回值
+// YunosAdAuditCreativeGetlistAPIResponse 批量获取创意审核状态 API返回值
 // yunos.ad.audit.creative.getlist
 //
 // 批量获取创意审核状态
-type YunosadauditcreativegetlistAPIResponse struct {
+type YunosAdAuditCreativeGetlistAPIResponse struct {
 	model.CommonResponse
-	YunosadauditcreativegetlistAPIResponseModel
+	YunosAdAuditCreativeGetlistAPIResponseModel
 }
 
-// YunosadauditcreativegetlistAPIResponseModel is 批量获取创意审核状态 成功返回结果
-type YunosadauditcreativegetlistAPIResponseModel struct {
+// YunosAdAuditCreativeGetlistAPIResponseModel is 批量获取创意审核状态 成功返回结果
+type YunosAdAuditCreativeGetlistAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_ad_audit_creative_getlist_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoomniorderguidedatagetAPIResponse 获取全渠道导购产品数据 API返回值
+// TaobaoOmniorderGuideDataGetAPIResponse 获取全渠道导购产品数据 API返回值
 // taobao.omniorder.guide.data.get
 //
 // 获取全渠道导购产品，目前包括随心购、随身购扫码、加购和交易数据。
-type TaobaoomniorderguidedatagetAPIResponse struct {
+type TaobaoOmniorderGuideDataGetAPIResponse struct {
 	model.CommonResponse
-	TaobaoomniorderguidedatagetAPIResponseModel
+	TaobaoOmniorderGuideDataGetAPIResponseModel
 }
 
-// TaobaoomniorderguidedatagetAPIResponseModel is 获取全渠道导购产品数据 成功返回结果
-type TaobaoomniorderguidedatagetAPIResponseModel struct {
+// TaobaoOmniorderGuideDataGetAPIResponseModel is 获取全渠道导购产品数据 成功返回结果
+type TaobaoOmniorderGuideDataGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"omniorder_guide_data_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

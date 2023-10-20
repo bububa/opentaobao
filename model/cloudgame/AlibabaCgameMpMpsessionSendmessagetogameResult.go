@@ -1,7 +1,7 @@
 package cloudgame
 
-// AlibabacgamempmpsessionsendmessagetogameResult 结构体
-type AlibabacgamempmpsessionsendmessagetogameResult struct {
+// AlibabaCgameMpMpsessionSendmessagetogameResult 结构体
+type AlibabaCgameMpMpsessionSendmessagetogameResult struct {
 	// 0
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// sucess

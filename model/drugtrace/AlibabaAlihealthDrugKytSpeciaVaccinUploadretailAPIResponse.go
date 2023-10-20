@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthdrugkytspeciavaccinuploadretailAPIResponse 零售单据上传接口（疫苗） API返回值
+// AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponse 零售单据上传接口（疫苗） API返回值
 // alibaba.alihealth.drug.kyt.specia.vaccin.uploadretail
 //
 // 零售上传单据信息接口
-type AlibabaalihealthdrugkytspeciavaccinuploadretailAPIResponse struct {
+type AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthdrugkytspeciavaccinuploadretailAPIResponseModel
+	AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponseModel
 }
 
-// AlibabaalihealthdrugkytspeciavaccinuploadretailAPIResponseModel is 零售单据上传接口（疫苗） 成功返回结果
-type AlibabaalihealthdrugkytspeciavaccinuploadretailAPIResponseModel struct {
+// AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponseModel is 零售单据上传接口（疫苗） 成功返回结果
+type AlibabaAlihealthDrugKytSpeciaVaccinUploadretailAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drug_kyt_specia_vaccin_uploadretail_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

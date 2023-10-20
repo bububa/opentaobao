@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoqimeninventorybatchqueryRequest 结构体
-type TaobaoqimeninventorybatchqueryRequest struct {
+// TaobaoQimenInventorybatchQueryRequest 结构体
+type TaobaoQimenInventorybatchQueryRequest struct {
 	// 货主编码，string(50)，必填
 	OwnerCode string `json:"ownerCode,omitempty" xml:"ownerCode,omitempty"`
 	// 仓库编码，string(50)，必填

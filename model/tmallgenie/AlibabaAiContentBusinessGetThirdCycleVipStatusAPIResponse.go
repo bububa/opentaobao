@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaaicontentbusinessgetthirdcyclevipstatusAPIResponse 天猫精灵商业化获取三方连续包会员状态 API返回值
+// AlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponse 天猫精灵商业化获取三方连续包会员状态 API返回值
 // alibaba.ai.content.business.get.third.cycle.vip.status
 //
 // 天猫精灵商业化获取三方连续包会员状态
-type AlibabaaicontentbusinessgetthirdcyclevipstatusAPIResponse struct {
+type AlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponse struct {
 	model.CommonResponse
-	AlibabaaicontentbusinessgetthirdcyclevipstatusAPIResponseModel
+	AlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponseModel
 }
 
-// AlibabaaicontentbusinessgetthirdcyclevipstatusAPIResponseModel is 天猫精灵商业化获取三方连续包会员状态 成功返回结果
-type AlibabaaicontentbusinessgetthirdcyclevipstatusAPIResponseModel struct {
+// AlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponseModel is 天猫精灵商业化获取三方连续包会员状态 成功返回结果
+type AlibabaAiContentBusinessGetThirdCycleVipStatusAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ai_content_business_get_third_cycle_vip_status_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

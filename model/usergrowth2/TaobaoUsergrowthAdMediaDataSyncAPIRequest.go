@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaousergrowthadmediadatasyncAPIRequest 媒体资源位投放效果数据回传 API请求
+// TaobaoUsergrowthAdMediaDataSyncAPIRequest 媒体资源位投放效果数据回传 API请求
 // taobao.usergrowth.ad.media.data.sync
 //
 // 创意维度广告效果数据回传
-type TaobaousergrowthadmediadatasyncAPIRequest struct {
+type TaobaoUsergrowthAdMediaDataSyncAPIRequest struct {
 	model.Params
 	// 统计日期
 	_statDate string
@@ -36,169 +36,169 @@ type TaobaousergrowthadmediadatasyncAPIRequest struct {
 	_channelId int64
 }
 
-// NewTaobaousergrowthadmediadatasyncRequest 初始化TaobaousergrowthadmediadatasyncAPIRequest对象
-func NewTaobaousergrowthadmediadatasyncRequest() *TaobaousergrowthadmediadatasyncAPIRequest {
-	return &TaobaousergrowthadmediadatasyncAPIRequest{
+// NewTaobaoUsergrowthAdMediaDataSyncRequest 初始化TaobaoUsergrowthAdMediaDataSyncAPIRequest对象
+func NewTaobaoUsergrowthAdMediaDataSyncRequest() *TaobaoUsergrowthAdMediaDataSyncAPIRequest {
+	return &TaobaoUsergrowthAdMediaDataSyncAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaousergrowthadmediadatasyncAPIRequest) GetApiMethodName() string {
+func (r TaobaoUsergrowthAdMediaDataSyncAPIRequest) GetApiMethodName() string {
 	return "taobao.usergrowth.ad.media.data.sync"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaousergrowthadmediadatasyncAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoUsergrowthAdMediaDataSyncAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaousergrowthadmediadatasyncAPIRequest) GetRawParams() model.Params {
+func (r TaobaoUsergrowthAdMediaDataSyncAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetStatDate is StatDate Setter
 // 统计日期
-func (r *TaobaousergrowthadmediadatasyncAPIRequest) SetStatDate(_statDate string) error {
+func (r *TaobaoUsergrowthAdMediaDataSyncAPIRequest) SetStatDate(_statDate string) error {
 	r._statDate = _statDate
 	r.Set("stat_date", _statDate)
 	return nil
 }
 
 // GetStatDate StatDate Getter
-func (r TaobaousergrowthadmediadatasyncAPIRequest) GetStatDate() string {
+func (r TaobaoUsergrowthAdMediaDataSyncAPIRequest) GetStatDate() string {
 	return r._statDate
 }
 
 // SetOtherMedia is OtherMedia Setter
 // 其他媒体
-func (r *TaobaousergrowthadmediadatasyncAPIRequest) SetOtherMedia(_otherMedia string) error {
+func (r *TaobaoUsergrowthAdMediaDataSyncAPIRequest) SetOtherMedia(_otherMedia string) error {
 	r._otherMedia = _otherMedia
 	r.Set("other_media", _otherMedia)
 	return nil
 }
 
 // GetOtherMedia OtherMedia Getter
-func (r TaobaousergrowthadmediadatasyncAPIRequest) GetOtherMedia() string {
+func (r TaobaoUsergrowthAdMediaDataSyncAPIRequest) GetOtherMedia() string {
 	return r._otherMedia
 }
 
 // SetAdPlacement is AdPlacement Setter
 // 资源位
-func (r *TaobaousergrowthadmediadatasyncAPIRequest) SetAdPlacement(_adPlacement string) error {
+func (r *TaobaoUsergrowthAdMediaDataSyncAPIRequest) SetAdPlacement(_adPlacement string) error {
 	r._adPlacement = _adPlacement
 	r.Set("ad_placement", _adPlacement)
 	return nil
 }
 
 // GetAdPlacement AdPlacement Getter
-func (r TaobaousergrowthadmediadatasyncAPIRequest) GetAdPlacement() string {
+func (r TaobaoUsergrowthAdMediaDataSyncAPIRequest) GetAdPlacement() string {
 	return r._adPlacement
 }
 
 // SetMediaCode is MediaCode Setter
 // 媒体
-func (r *TaobaousergrowthadmediadatasyncAPIRequest) SetMediaCode(_mediaCode string) error {
+func (r *TaobaoUsergrowthAdMediaDataSyncAPIRequest) SetMediaCode(_mediaCode string) error {
 	r._mediaCode = _mediaCode
 	r.Set("media_code", _mediaCode)
 	return nil
 }
 
 // GetMediaCode MediaCode Getter
-func (r TaobaousergrowthadmediadatasyncAPIRequest) GetMediaCode() string {
+func (r TaobaoUsergrowthAdMediaDataSyncAPIRequest) GetMediaCode() string {
 	return r._mediaCode
 }
 
 // SetTransform is Transform Setter
 // 转化
-func (r *TaobaousergrowthadmediadatasyncAPIRequest) SetTransform(_transform int64) error {
+func (r *TaobaoUsergrowthAdMediaDataSyncAPIRequest) SetTransform(_transform int64) error {
 	r._transform = _transform
 	r.Set("transform", _transform)
 	return nil
 }
 
 // GetTransform Transform Getter
-func (r TaobaousergrowthadmediadatasyncAPIRequest) GetTransform() int64 {
+func (r TaobaoUsergrowthAdMediaDataSyncAPIRequest) GetTransform() int64 {
 	return r._transform
 }
 
 // SetCost is Cost Setter
 // 消耗
-func (r *TaobaousergrowthadmediadatasyncAPIRequest) SetCost(_cost int64) error {
+func (r *TaobaoUsergrowthAdMediaDataSyncAPIRequest) SetCost(_cost int64) error {
 	r._cost = _cost
 	r.Set("cost", _cost)
 	return nil
 }
 
 // GetCost Cost Getter
-func (r TaobaousergrowthadmediadatasyncAPIRequest) GetCost() int64 {
+func (r TaobaoUsergrowthAdMediaDataSyncAPIRequest) GetCost() int64 {
 	return r._cost
 }
 
 // SetExposure is Exposure Setter
 // 曝光
-func (r *TaobaousergrowthadmediadatasyncAPIRequest) SetExposure(_exposure int64) error {
+func (r *TaobaoUsergrowthAdMediaDataSyncAPIRequest) SetExposure(_exposure int64) error {
 	r._exposure = _exposure
 	r.Set("exposure", _exposure)
 	return nil
 }
 
 // GetExposure Exposure Getter
-func (r TaobaousergrowthadmediadatasyncAPIRequest) GetExposure() int64 {
+func (r TaobaoUsergrowthAdMediaDataSyncAPIRequest) GetExposure() int64 {
 	return r._exposure
 }
 
 // SetDeviceOs is DeviceOs Setter
 // 操作系统
-func (r *TaobaousergrowthadmediadatasyncAPIRequest) SetDeviceOs(_deviceOs int64) error {
+func (r *TaobaoUsergrowthAdMediaDataSyncAPIRequest) SetDeviceOs(_deviceOs int64) error {
 	r._deviceOs = _deviceOs
 	r.Set("device_os", _deviceOs)
 	return nil
 }
 
 // GetDeviceOs DeviceOs Getter
-func (r TaobaousergrowthadmediadatasyncAPIRequest) GetDeviceOs() int64 {
+func (r TaobaoUsergrowthAdMediaDataSyncAPIRequest) GetDeviceOs() int64 {
 	return r._deviceOs
 }
 
 // SetClick is Click Setter
 // 点击
-func (r *TaobaousergrowthadmediadatasyncAPIRequest) SetClick(_click int64) error {
+func (r *TaobaoUsergrowthAdMediaDataSyncAPIRequest) SetClick(_click int64) error {
 	r._click = _click
 	r.Set("click", _click)
 	return nil
 }
 
 // GetClick Click Getter
-func (r TaobaousergrowthadmediadatasyncAPIRequest) GetClick() int64 {
+func (r TaobaoUsergrowthAdMediaDataSyncAPIRequest) GetClick() int64 {
 	return r._click
 }
 
 // SetTaskId is TaskId Setter
 // 任务id
-func (r *TaobaousergrowthadmediadatasyncAPIRequest) SetTaskId(_taskId int64) error {
+func (r *TaobaoUsergrowthAdMediaDataSyncAPIRequest) SetTaskId(_taskId int64) error {
 	r._taskId = _taskId
 	r.Set("task_id", _taskId)
 	return nil
 }
 
 // GetTaskId TaskId Getter
-func (r TaobaousergrowthadmediadatasyncAPIRequest) GetTaskId() int64 {
+func (r TaobaoUsergrowthAdMediaDataSyncAPIRequest) GetTaskId() int64 {
 	return r._taskId
 }
 
 // SetChannelId is ChannelId Setter
 // 渠道id
-func (r *TaobaousergrowthadmediadatasyncAPIRequest) SetChannelId(_channelId int64) error {
+func (r *TaobaoUsergrowthAdMediaDataSyncAPIRequest) SetChannelId(_channelId int64) error {
 	r._channelId = _channelId
 	r.Set("channel_id", _channelId)
 	return nil
 }
 
 // GetChannelId ChannelId Getter
-func (r TaobaousergrowthadmediadatasyncAPIRequest) GetChannelId() int64 {
+func (r TaobaoUsergrowthAdMediaDataSyncAPIRequest) GetChannelId() int64 {
 	return r._channelId
 }

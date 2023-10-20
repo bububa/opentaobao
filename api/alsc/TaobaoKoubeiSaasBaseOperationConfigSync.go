@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-// Taobaokoubeisaasbaseoperationconfigsync 商家基础经营设置信息同步
+// TaobaoKoubeiSaasBaseOperationConfigSync 商家基础经营设置信息同步
 // taobao.koubei.saas.base.operation.config.sync
 //
 // ISV接入口碑SAAS后, 经营设置数据同步到口碑SAAS
-func Taobaokoubeisaasbaseoperationconfigsync(clt *core.SDKClient, req *alsc.TaobaokoubeisaasbaseoperationconfigsyncAPIRequest, session string) (*alsc.TaobaokoubeisaasbaseoperationconfigsyncAPIResponse, error) {
-	var resp alsc.TaobaokoubeisaasbaseoperationconfigsyncAPIResponse
+func TaobaoKoubeiSaasBaseOperationConfigSync(clt *core.SDKClient, req *alsc.TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest, session string) (*alsc.TaobaoKoubeiSaasBaseOperationConfigSyncAPIResponse, error) {
+	var resp alsc.TaobaoKoubeiSaasBaseOperationConfigSyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

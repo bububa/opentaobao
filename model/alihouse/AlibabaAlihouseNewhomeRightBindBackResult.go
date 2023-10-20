@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaalihousenewhomerightbindbackResult 结构体
-type AlibabaalihousenewhomerightbindbackResult struct {
+// AlibabaAlihouseNewhomeRightBindBackResult 结构体
+type AlibabaAlihouseNewhomeRightBindBackResult struct {
 	// 1
 	Data []AstoreSceneRespInfoDto `json:"data,omitempty" xml:"data>astore_scene_resp_info_dto,omitempty"`
 	// 1

@@ -1,7 +1,7 @@
 package alihouse
 
-// TmallalihousetradecouponordercontractkeyqueryResult 结构体
-type TmallalihousetradecouponordercontractkeyqueryResult struct {
+// TmallAlihouseTradeCouponOrderContractKeyQueryResult 结构体
+type TmallAlihouseTradeCouponOrderContractKeyQueryResult struct {
 	// ossKey
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// code

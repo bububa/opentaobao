@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihousenewhomerightbindbackAPIResponse 权限回流 API返回值
+// AlibabaAlihouseNewhomeRightBindBackAPIResponse 权限回流 API返回值
 // alibaba.alihouse.newhome.right.bind.back
 //
 // 权限回流
-type AlibabaalihousenewhomerightbindbackAPIResponse struct {
+type AlibabaAlihouseNewhomeRightBindBackAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihousenewhomerightbindbackAPIResponseModel
+	AlibabaAlihouseNewhomeRightBindBackAPIResponseModel
 }
 
-// AlibabaalihousenewhomerightbindbackAPIResponseModel is 权限回流 成功返回结果
-type AlibabaalihousenewhomerightbindbackAPIResponseModel struct {
+// AlibabaAlihouseNewhomeRightBindBackAPIResponseModel is 权限回流 成功返回结果
+type AlibabaAlihouseNewhomeRightBindBackAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihouse_newhome_right_bind_back_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 1
-	Result *AlibabaalihousenewhomerightbindbackResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaAlihouseNewhomeRightBindBackResult `json:"result,omitempty" xml:"result,omitempty"`
 }

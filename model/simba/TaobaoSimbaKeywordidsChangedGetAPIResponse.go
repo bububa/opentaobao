@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosimbakeywordidschangedgetAPIResponse 获取修改的词ID API返回值
+// TaobaoSimbaKeywordidsChangedGetAPIResponse 获取修改的词ID API返回值
 // taobao.simba.keywordids.changed.get
 //
 // 获取修改的词ID
-type TaobaosimbakeywordidschangedgetAPIResponse struct {
+type TaobaoSimbaKeywordidsChangedGetAPIResponse struct {
 	model.CommonResponse
-	TaobaosimbakeywordidschangedgetAPIResponseModel
+	TaobaoSimbaKeywordidsChangedGetAPIResponseModel
 }
 
-// TaobaosimbakeywordidschangedgetAPIResponseModel is 获取修改的词ID 成功返回结果
-type TaobaosimbakeywordidschangedgetAPIResponseModel struct {
+// TaobaoSimbaKeywordidsChangedGetAPIResponseModel is 获取修改的词ID 成功返回结果
+type TaobaoSimbaKeywordidsChangedGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_keywordids_changed_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

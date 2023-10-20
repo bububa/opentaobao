@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoxhotelbnbroomtypedeleteAPIResponse 民宿房源删除接口 API返回值
+// TaobaoXhotelBnbroomtypeDeleteAPIResponse 民宿房源删除接口 API返回值
 // taobao.xhotel.bnbroomtype.delete
 //
 // 增加民宿房源删除接口
-type TaobaoxhotelbnbroomtypedeleteAPIResponse struct {
+type TaobaoXhotelBnbroomtypeDeleteAPIResponse struct {
 	model.CommonResponse
-	TaobaoxhotelbnbroomtypedeleteAPIResponseModel
+	TaobaoXhotelBnbroomtypeDeleteAPIResponseModel
 }
 
-// TaobaoxhotelbnbroomtypedeleteAPIResponseModel is 民宿房源删除接口 成功返回结果
-type TaobaoxhotelbnbroomtypedeleteAPIResponseModel struct {
+// TaobaoXhotelBnbroomtypeDeleteAPIResponseModel is 民宿房源删除接口 成功返回结果
+type TaobaoXhotelBnbroomtypeDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_bnbroomtype_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package axintrade
 
-// TaobaoalitriptravelaxinhotelorderdetailResult 结构体
-type TaobaoalitriptravelaxinhotelorderdetailResult struct {
+// TaobaoAlitripTravelAxinHotelOrderDetailResult 结构体
+type TaobaoAlitripTravelAxinHotelOrderDetailResult struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息

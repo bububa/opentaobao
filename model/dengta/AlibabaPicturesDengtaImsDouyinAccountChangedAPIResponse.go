@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabapicturesdengtaimsdouyinaccountchangedAPIResponse 接收发生变化的抖音帐号 API返回值
+// AlibabaPicturesDengtaImsDouyinAccountChangedAPIResponse 接收发生变化的抖音帐号 API返回值
 // alibaba.pictures.dengta.ims.douyin.account.changed
 //
 // 接收发生变化的抖音帐号
-type AlibabapicturesdengtaimsdouyinaccountchangedAPIResponse struct {
+type AlibabaPicturesDengtaImsDouyinAccountChangedAPIResponse struct {
 	model.CommonResponse
-	AlibabapicturesdengtaimsdouyinaccountchangedAPIResponseModel
+	AlibabaPicturesDengtaImsDouyinAccountChangedAPIResponseModel
 }
 
-// AlibabapicturesdengtaimsdouyinaccountchangedAPIResponseModel is 接收发生变化的抖音帐号 成功返回结果
-type AlibabapicturesdengtaimsdouyinaccountchangedAPIResponseModel struct {
+// AlibabaPicturesDengtaImsDouyinAccountChangedAPIResponseModel is 接收发生变化的抖音帐号 成功返回结果
+type AlibabaPicturesDengtaImsDouyinAccountChangedAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_pictures_dengta_ims_douyin_account_changed_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

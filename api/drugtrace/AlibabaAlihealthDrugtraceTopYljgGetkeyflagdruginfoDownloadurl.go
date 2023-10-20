@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// Alibabaalihealthdrugtracetopyljggetkeyflagdruginfodownloadurl 获取重点追溯品种明细下载URL
+// AlibabaAlihealthDrugtraceTopYljgGetkeyflagdruginfoDownloadurl 获取重点追溯品种明细下载URL
 // alibaba.alihealth.drugtrace.top.yljg.getkeyflagdruginfo.downloadurl
 //
 // 获取重点追溯品种明细下载URL
-func Alibabaalihealthdrugtracetopyljggetkeyflagdruginfodownloadurl(clt *core.SDKClient, req *drugtrace.AlibabaalihealthdrugtracetopyljggetkeyflagdruginfodownloadurlAPIRequest, session string) (*drugtrace.AlibabaalihealthdrugtracetopyljggetkeyflagdruginfodownloadurlAPIResponse, error) {
-	var resp drugtrace.AlibabaalihealthdrugtracetopyljggetkeyflagdruginfodownloadurlAPIResponse
+func AlibabaAlihealthDrugtraceTopYljgGetkeyflagdruginfoDownloadurl(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugtraceTopYljgGetkeyflagdruginfoDownloadurlAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugtraceTopYljgGetkeyflagdruginfoDownloadurlAPIResponse, error) {
+	var resp drugtrace.AlibabaAlihealthDrugtraceTopYljgGetkeyflagdruginfoDownloadurlAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

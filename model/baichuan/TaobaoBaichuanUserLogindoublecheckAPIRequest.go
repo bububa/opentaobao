@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaobaichuanuserlogindoublecheckAPIRequest 百川H5登录二次验证 API请求
+// TaobaoBaichuanUserLogindoublecheckAPIRequest 百川H5登录二次验证 API请求
 // taobao.baichuan.user.logindoublecheck
 //
 // 百川H5登录二次验证
-type TaobaobaichuanuserlogindoublecheckAPIRequest struct {
+type TaobaoBaichuanUserLogindoublecheckAPIRequest struct {
 	model.Params
 	// name
 	_name string
 }
 
-// NewTaobaobaichuanuserlogindoublecheckRequest 初始化TaobaobaichuanuserlogindoublecheckAPIRequest对象
-func NewTaobaobaichuanuserlogindoublecheckRequest() *TaobaobaichuanuserlogindoublecheckAPIRequest {
-	return &TaobaobaichuanuserlogindoublecheckAPIRequest{
+// NewTaobaoBaichuanUserLogindoublecheckRequest 初始化TaobaoBaichuanUserLogindoublecheckAPIRequest对象
+func NewTaobaoBaichuanUserLogindoublecheckRequest() *TaobaoBaichuanUserLogindoublecheckAPIRequest {
+	return &TaobaoBaichuanUserLogindoublecheckAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaobaichuanuserlogindoublecheckAPIRequest) GetApiMethodName() string {
+func (r TaobaoBaichuanUserLogindoublecheckAPIRequest) GetApiMethodName() string {
 	return "taobao.baichuan.user.logindoublecheck"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaobaichuanuserlogindoublecheckAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoBaichuanUserLogindoublecheckAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaobaichuanuserlogindoublecheckAPIRequest) GetRawParams() model.Params {
+func (r TaobaoBaichuanUserLogindoublecheckAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetName is Name Setter
 // name
-func (r *TaobaobaichuanuserlogindoublecheckAPIRequest) SetName(_name string) error {
+func (r *TaobaoBaichuanUserLogindoublecheckAPIRequest) SetName(_name string) error {
 	r._name = _name
 	r.Set("name", _name)
 	return nil
 }
 
 // GetName Name Getter
-func (r TaobaobaichuanuserlogindoublecheckAPIRequest) GetName() string {
+func (r TaobaoBaichuanUserLogindoublecheckAPIRequest) GetName() string {
 	return r._name
 }

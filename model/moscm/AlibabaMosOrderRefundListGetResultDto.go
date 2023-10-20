@@ -1,7 +1,7 @@
 package moscm
 
-// AlibabamosorderrefundlistgetResultDto 结构体
-type AlibabamosorderrefundlistgetResultDto struct {
+// AlibabaMosOrderRefundListGetResultDto 结构体
+type AlibabaMosOrderRefundListGetResultDto struct {
 	// 状态码
 	SubCode string `json:"sub_code,omitempty" xml:"sub_code,omitempty"`
 	// 信息

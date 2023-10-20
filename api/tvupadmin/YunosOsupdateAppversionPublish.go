@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
 
-// Yunososupdateappversionpublish 发布应用升级
+// YunosOsupdateAppversionPublish 发布应用升级
 // yunos.osupdate.appversion.publish
 //
 // 发布应用升级任务
-func Yunososupdateappversionpublish(clt *core.SDKClient, req *tvupadmin.YunososupdateappversionpublishAPIRequest, session string) (*tvupadmin.YunososupdateappversionpublishAPIResponse, error) {
-	var resp tvupadmin.YunososupdateappversionpublishAPIResponse
+func YunosOsupdateAppversionPublish(clt *core.SDKClient, req *tvupadmin.YunosOsupdateAppversionPublishAPIRequest, session string) (*tvupadmin.YunosOsupdateAppversionPublishAPIResponse, error) {
+	var resp tvupadmin.YunosOsupdateAppversionPublishAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabagpuschemacatsearchAPIResponse 按类目查询spu接口 API返回值
+// AlibabaGpuSchemaCatsearchAPIResponse 按类目查询spu接口 API返回值
 // alibaba.gpu.schema.catsearch
 //
 // 按类目查询spu的schema接口
-type AlibabagpuschemacatsearchAPIResponse struct {
+type AlibabaGpuSchemaCatsearchAPIResponse struct {
 	model.CommonResponse
-	AlibabagpuschemacatsearchAPIResponseModel
+	AlibabaGpuSchemaCatsearchAPIResponseModel
 }
 
-// AlibabagpuschemacatsearchAPIResponseModel is 按类目查询spu接口 成功返回结果
-type AlibabagpuschemacatsearchAPIResponseModel struct {
+// AlibabaGpuSchemaCatsearchAPIResponseModel is 按类目查询spu接口 成功返回结果
+type AlibabaGpuSchemaCatsearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_gpu_schema_catsearch_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

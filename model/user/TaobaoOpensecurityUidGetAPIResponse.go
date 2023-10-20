@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoopensecurityuidgetAPIResponse 淘宝open security uid 获取接口 API返回值
+// TaobaoOpensecurityUidGetAPIResponse 淘宝open security uid 获取接口 API返回值
 // taobao.opensecurity.uid.get
 //
 // 根据明文 taobao user id 换取 app的 open_uid
-type TaobaoopensecurityuidgetAPIResponse struct {
+type TaobaoOpensecurityUidGetAPIResponse struct {
 	model.CommonResponse
-	TaobaoopensecurityuidgetAPIResponseModel
+	TaobaoOpensecurityUidGetAPIResponseModel
 }
 
-// TaobaoopensecurityuidgetAPIResponseModel is 淘宝open security uid 获取接口 成功返回结果
-type TaobaoopensecurityuidgetAPIResponseModel struct {
+// TaobaoOpensecurityUidGetAPIResponseModel is 淘宝open security uid 获取接口 成功返回结果
+type TaobaoOpensecurityUidGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"opensecurity_uid_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

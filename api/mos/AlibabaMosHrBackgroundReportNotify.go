@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/mos"
 )
 
-// Alibabamoshrbackgroundreportnotify 背调公司背调结果通知
+// AlibabaMosHrBackgroundReportNotify 背调公司背调结果通知
 // alibaba.mos.hr.background.report.notify
 //
 // 背调公司背调结果通知
-func Alibabamoshrbackgroundreportnotify(clt *core.SDKClient, req *mos.AlibabamoshrbackgroundreportnotifyAPIRequest, session string) (*mos.AlibabamoshrbackgroundreportnotifyAPIResponse, error) {
-	var resp mos.AlibabamoshrbackgroundreportnotifyAPIResponse
+func AlibabaMosHrBackgroundReportNotify(clt *core.SDKClient, req *mos.AlibabaMosHrBackgroundReportNotifyAPIRequest, session string) (*mos.AlibabaMosHrBackgroundReportNotifyAPIResponse, error) {
+	var resp mos.AlibabaMosHrBackgroundReportNotifyAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

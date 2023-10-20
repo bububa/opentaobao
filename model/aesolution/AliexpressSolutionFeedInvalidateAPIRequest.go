@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpresssolutionfeedinvalidateAPIRequest aliexpress.solution.feed.invalidate API请求
+// AliexpressSolutionFeedInvalidateAPIRequest aliexpress.solution.feed.invalidate API请求
 // aliexpress.solution.feed.invalidate
 //
 // Api for invalidating specific feeds based on job Ids. Please use aliexpress.solution.feed.list.get to determine which job Ids needs to be sent for invalidation.
-type AliexpresssolutionfeedinvalidateAPIRequest struct {
+type AliexpressSolutionFeedInvalidateAPIRequest struct {
 	model.Params
 	// job id separated by ;  No more than 100 job Ids could be passed in one request.
 	_jobIdList string
 }
 
-// NewAliexpresssolutionfeedinvalidateRequest 初始化AliexpresssolutionfeedinvalidateAPIRequest对象
-func NewAliexpresssolutionfeedinvalidateRequest() *AliexpresssolutionfeedinvalidateAPIRequest {
-	return &AliexpresssolutionfeedinvalidateAPIRequest{
+// NewAliexpressSolutionFeedInvalidateRequest 初始化AliexpressSolutionFeedInvalidateAPIRequest对象
+func NewAliexpressSolutionFeedInvalidateRequest() *AliexpressSolutionFeedInvalidateAPIRequest {
+	return &AliexpressSolutionFeedInvalidateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AliexpresssolutionfeedinvalidateAPIRequest) GetApiMethodName() string {
+func (r AliexpressSolutionFeedInvalidateAPIRequest) GetApiMethodName() string {
 	return "aliexpress.solution.feed.invalidate"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AliexpresssolutionfeedinvalidateAPIRequest) GetApiParams(params url.Values) {
+func (r AliexpressSolutionFeedInvalidateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AliexpresssolutionfeedinvalidateAPIRequest) GetRawParams() model.Params {
+func (r AliexpressSolutionFeedInvalidateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetJobIdList is JobIdList Setter
 // job id separated by ;  No more than 100 job Ids could be passed in one request.
-func (r *AliexpresssolutionfeedinvalidateAPIRequest) SetJobIdList(_jobIdList string) error {
+func (r *AliexpressSolutionFeedInvalidateAPIRequest) SetJobIdList(_jobIdList string) error {
 	r._jobIdList = _jobIdList
 	r.Set("job_id_list", _jobIdList)
 	return nil
 }
 
 // GetJobIdList JobIdList Getter
-func (r AliexpresssolutionfeedinvalidateAPIRequest) GetJobIdList() string {
+func (r AliexpressSolutionFeedInvalidateAPIRequest) GetJobIdList() string {
 	return r._jobIdList
 }

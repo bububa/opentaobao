@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabadchainaoxiangconsignordergiftbindingAPIResponse 赠品绑赠计算占用 API返回值
+// AlibabaDchainAoxiangConsignorderGiftBindingAPIResponse 赠品绑赠计算占用 API返回值
 // alibaba.dchain.aoxiang.consignorder.gift.binding
 //
 // 赠品绑赠计算占用
-type AlibabadchainaoxiangconsignordergiftbindingAPIResponse struct {
+type AlibabaDchainAoxiangConsignorderGiftBindingAPIResponse struct {
 	model.CommonResponse
-	AlibabadchainaoxiangconsignordergiftbindingAPIResponseModel
+	AlibabaDchainAoxiangConsignorderGiftBindingAPIResponseModel
 }
 
-// AlibabadchainaoxiangconsignordergiftbindingAPIResponseModel is 赠品绑赠计算占用 成功返回结果
-type AlibabadchainaoxiangconsignordergiftbindingAPIResponseModel struct {
+// AlibabaDchainAoxiangConsignorderGiftBindingAPIResponseModel is 赠品绑赠计算占用 成功返回结果
+type AlibabaDchainAoxiangConsignorderGiftBindingAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_dchain_aoxiang_consignorder_gift_binding_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

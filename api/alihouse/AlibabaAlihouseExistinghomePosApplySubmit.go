@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// Alibabaalihouseexistinghomeposapplysubmit pos申请接口
+// AlibabaAlihouseExistinghomePosApplySubmit pos申请接口
 // alibaba.alihouse.existinghome.pos.apply.submit
 //
 // pos申请接口
-func Alibabaalihouseexistinghomeposapplysubmit(clt *core.SDKClient, req *alihouse.AlibabaalihouseexistinghomeposapplysubmitAPIRequest, session string) (*alihouse.AlibabaalihouseexistinghomeposapplysubmitAPIResponse, error) {
-	var resp alihouse.AlibabaalihouseexistinghomeposapplysubmitAPIResponse
+func AlibabaAlihouseExistinghomePosApplySubmit(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomePosApplySubmitAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomePosApplySubmitAPIResponse, error) {
+	var resp alihouse.AlibabaAlihouseExistinghomePosApplySubmitAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

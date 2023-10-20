@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihouseexistinghomehousedeletehouseAPIRequest 删除房源 API请求
+// AlibabaAlihouseExistinghomeHouseDeleteHouseAPIRequest 删除房源 API请求
 // alibaba.alihouse.existinghome.house.delete.house
 //
 // 删除房源
-type AlibabaalihouseexistinghomehousedeletehouseAPIRequest struct {
+type AlibabaAlihouseExistinghomeHouseDeleteHouseAPIRequest struct {
 	model.Params
 	// 房源信息
 	_house *DeleteHouseDto
 }
 
-// NewAlibabaalihouseexistinghomehousedeletehouseRequest 初始化AlibabaalihouseexistinghomehousedeletehouseAPIRequest对象
-func NewAlibabaalihouseexistinghomehousedeletehouseRequest() *AlibabaalihouseexistinghomehousedeletehouseAPIRequest {
-	return &AlibabaalihouseexistinghomehousedeletehouseAPIRequest{
+// NewAlibabaAlihouseExistinghomeHouseDeleteHouseRequest 初始化AlibabaAlihouseExistinghomeHouseDeleteHouseAPIRequest对象
+func NewAlibabaAlihouseExistinghomeHouseDeleteHouseRequest() *AlibabaAlihouseExistinghomeHouseDeleteHouseAPIRequest {
+	return &AlibabaAlihouseExistinghomeHouseDeleteHouseAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalihouseexistinghomehousedeletehouseAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlihouseExistinghomeHouseDeleteHouseAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihouse.existinghome.house.delete.house"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalihouseexistinghomehousedeletehouseAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlihouseExistinghomeHouseDeleteHouseAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalihouseexistinghomehousedeletehouseAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlihouseExistinghomeHouseDeleteHouseAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetHouse is House Setter
 // 房源信息
-func (r *AlibabaalihouseexistinghomehousedeletehouseAPIRequest) SetHouse(_house *DeleteHouseDto) error {
+func (r *AlibabaAlihouseExistinghomeHouseDeleteHouseAPIRequest) SetHouse(_house *DeleteHouseDto) error {
 	r._house = _house
 	r.Set("house", _house)
 	return nil
 }
 
 // GetHouse House Getter
-func (r AlibabaalihouseexistinghomehousedeletehouseAPIRequest) GetHouse() *DeleteHouseDto {
+func (r AlibabaAlihouseExistinghomeHouseDeleteHouseAPIRequest) GetHouse() *DeleteHouseDto {
 	return r._house
 }

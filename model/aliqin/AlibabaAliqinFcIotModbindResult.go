@@ -1,7 +1,7 @@
 package aliqin
 
-// AlibabaaliqinfciotmodbindResult 结构体
-type AlibabaaliqinfciotmodbindResult struct {
+// AlibabaAliqinFcIotModbindResult 结构体
+type AlibabaAliqinFcIotModbindResult struct {
 	// model
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// code

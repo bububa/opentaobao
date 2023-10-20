@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YoukutvdesktoptoyourecommendAPIResponse TV桌面为你推荐接口 API返回值
+// YoukuTvDesktopToyouRecommendAPIResponse TV桌面为你推荐接口 API返回值
 // youku.tv.desktop.toyou.recommend
 //
 // 提供为你推荐数据
-type YoukutvdesktoptoyourecommendAPIResponse struct {
+type YoukuTvDesktopToyouRecommendAPIResponse struct {
 	model.CommonResponse
-	YoukutvdesktoptoyourecommendAPIResponseModel
+	YoukuTvDesktopToyouRecommendAPIResponseModel
 }
 
-// YoukutvdesktoptoyourecommendAPIResponseModel is TV桌面为你推荐接口 成功返回结果
-type YoukutvdesktoptoyourecommendAPIResponseModel struct {
+// YoukuTvDesktopToyouRecommendAPIResponseModel is TV桌面为你推荐接口 成功返回结果
+type YoukuTvDesktopToyouRecommendAPIResponseModel struct {
 	XMLName xml.Name `xml:"youku_tv_desktop_toyou_recommend_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

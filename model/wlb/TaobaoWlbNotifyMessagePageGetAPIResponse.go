@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowlbnotifymessagepagegetAPIResponse 物流宝通知消息查询接口 API返回值
+// TaobaoWlbNotifyMessagePageGetAPIResponse 物流宝通知消息查询接口 API返回值
 // taobao.wlb.notify.message.page.get
 //
 // 物流宝提供的消息通知查询接口，消息内容包括;出入库单不一致消息，取消订单成功消息，盘点单消息
-type TaobaowlbnotifymessagepagegetAPIResponse struct {
+type TaobaoWlbNotifyMessagePageGetAPIResponse struct {
 	model.CommonResponse
-	TaobaowlbnotifymessagepagegetAPIResponseModel
+	TaobaoWlbNotifyMessagePageGetAPIResponseModel
 }
 
-// TaobaowlbnotifymessagepagegetAPIResponseModel is 物流宝通知消息查询接口 成功返回结果
-type TaobaowlbnotifymessagepagegetAPIResponseModel struct {
+// TaobaoWlbNotifyMessagePageGetAPIResponseModel is 物流宝通知消息查询接口 成功返回结果
+type TaobaoWlbNotifyMessagePageGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_notify_message_page_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

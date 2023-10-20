@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaofenxiaoproductquantityupdateAPIResponse 产品库存修改 API返回值
+// TaobaoFenxiaoProductQuantityUpdateAPIResponse 产品库存修改 API返回值
 // taobao.fenxiao.product.quantity.update
 //
 // 修改产品库存信息，支持全量修改以及增量修改两种方式
-type TaobaofenxiaoproductquantityupdateAPIResponse struct {
+type TaobaoFenxiaoProductQuantityUpdateAPIResponse struct {
 	model.CommonResponse
-	TaobaofenxiaoproductquantityupdateAPIResponseModel
+	TaobaoFenxiaoProductQuantityUpdateAPIResponseModel
 }
 
-// TaobaofenxiaoproductquantityupdateAPIResponseModel is 产品库存修改 成功返回结果
-type TaobaofenxiaoproductquantityupdateAPIResponseModel struct {
+// TaobaoFenxiaoProductQuantityUpdateAPIResponseModel is 产品库存修改 成功返回结果
+type TaobaoFenxiaoProductQuantityUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_product_quantity_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/shop"
 )
 
-// Alibabainteractsensorclipbroad Weex页面设置或读取剪切板
+// AlibabaInteractSensorClipbroad Weex页面设置或读取剪切板
 // alibaba.interact.sensor.clipbroad
 //
 // Weex页面设置或读取剪切板
-func Alibabainteractsensorclipbroad(clt *core.SDKClient, req *shop.AlibabainteractsensorclipbroadAPIRequest, session string) (*shop.AlibabainteractsensorclipbroadAPIResponse, error) {
-	var resp shop.AlibabainteractsensorclipbroadAPIResponse
+func AlibabaInteractSensorClipbroad(clt *core.SDKClient, req *shop.AlibabaInteractSensorClipbroadAPIRequest, session string) (*shop.AlibabaInteractSensorClipbroadAPIResponse, error) {
+	var resp shop.AlibabaInteractSensorClipbroadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

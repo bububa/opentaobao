@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabawdkmerchantroutingregisterApiResult 结构体
-type AlibabawdkmerchantroutingregisterApiResult struct {
+// AlibabaWdkMerchantRoutingRegisterApiResult 结构体
+type AlibabaWdkMerchantRoutingRegisterApiResult struct {
 	// 调用接口错误信息
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// 调用接口错误码

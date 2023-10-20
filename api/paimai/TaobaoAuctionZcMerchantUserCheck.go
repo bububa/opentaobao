@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/paimai"
 )
 
-// Taobaoauctionzcmerchantusercheck 通过手机号确认阿里资产商家
+// TaobaoAuctionZcMerchantUserCheck 通过手机号确认阿里资产商家
 // taobao.auction.zc.merchant.user.check
 //
 // 通过手机号确认阿里资产商家
-func Taobaoauctionzcmerchantusercheck(clt *core.SDKClient, req *paimai.TaobaoauctionzcmerchantusercheckAPIRequest, session string) (*paimai.TaobaoauctionzcmerchantusercheckAPIResponse, error) {
-	var resp paimai.TaobaoauctionzcmerchantusercheckAPIResponse
+func TaobaoAuctionZcMerchantUserCheck(clt *core.SDKClient, req *paimai.TaobaoAuctionZcMerchantUserCheckAPIRequest, session string) (*paimai.TaobaoAuctionZcMerchantUserCheckAPIResponse, error) {
+	var resp paimai.TaobaoAuctionZcMerchantUserCheckAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

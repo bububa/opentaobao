@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-// Taobaoplacestorecategoryget 获取门店类目信息
+// TaobaoPlaceStorecategoryGet 获取门店类目信息
 // taobao.place.storecategory.get
 //
 // 获取门店类目信息
-func Taobaoplacestorecategoryget(clt *core.SDKClient, req *alsc.TaobaoplacestorecategorygetAPIRequest, session string) (*alsc.TaobaoplacestorecategorygetAPIResponse, error) {
-	var resp alsc.TaobaoplacestorecategorygetAPIResponse
+func TaobaoPlaceStorecategoryGet(clt *core.SDKClient, req *alsc.TaobaoPlaceStorecategoryGetAPIRequest, session string) (*alsc.TaobaoPlaceStorecategoryGetAPIResponse, error) {
+	var resp alsc.TaobaoPlaceStorecategoryGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

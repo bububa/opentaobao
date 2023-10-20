@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaomobilepromotioncouponapplyAPIResponse 优惠券领取(手淘专用) API返回值
+// TaobaoMobilePromotionCouponApplyAPIResponse 优惠券领取(手淘专用) API返回值
 // taobao.mobile.promotion.coupon.apply
 //
 // 优惠券领取
-type TaobaomobilepromotioncouponapplyAPIResponse struct {
+type TaobaoMobilePromotionCouponApplyAPIResponse struct {
 	model.CommonResponse
-	TaobaomobilepromotioncouponapplyAPIResponseModel
+	TaobaoMobilePromotionCouponApplyAPIResponseModel
 }
 
-// TaobaomobilepromotioncouponapplyAPIResponseModel is 优惠券领取(手淘专用) 成功返回结果
-type TaobaomobilepromotioncouponapplyAPIResponseModel struct {
+// TaobaoMobilePromotionCouponApplyAPIResponseModel is 优惠券领取(手淘专用) 成功返回结果
+type TaobaoMobilePromotionCouponApplyAPIResponseModel struct {
 	XMLName xml.Name `xml:"mobile_promotion_coupon_apply_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

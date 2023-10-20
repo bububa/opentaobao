@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaretailmarketingbuygiftskuqueryAPIRequest 查询买赠活动商品【同城零售】 API请求
+// AlibabaRetailMarketingBuygiftSkuQueryAPIRequest 查询买赠活动商品【同城零售】 API请求
 // alibaba.retail.marketing.buygift.sku.query
 //
 // 查询买赠活动商品【同城零售】
-type AlibabaretailmarketingbuygiftskuqueryAPIRequest struct {
+type AlibabaRetailMarketingBuygiftSkuQueryAPIRequest struct {
 	model.Params
 	// 买赠商品查询入参
 	_param0 *BuyGiftActivitySkuQueryRequest
 }
 
-// NewAlibabaretailmarketingbuygiftskuqueryRequest 初始化AlibabaretailmarketingbuygiftskuqueryAPIRequest对象
-func NewAlibabaretailmarketingbuygiftskuqueryRequest() *AlibabaretailmarketingbuygiftskuqueryAPIRequest {
-	return &AlibabaretailmarketingbuygiftskuqueryAPIRequest{
+// NewAlibabaRetailMarketingBuygiftSkuQueryRequest 初始化AlibabaRetailMarketingBuygiftSkuQueryAPIRequest对象
+func NewAlibabaRetailMarketingBuygiftSkuQueryRequest() *AlibabaRetailMarketingBuygiftSkuQueryAPIRequest {
+	return &AlibabaRetailMarketingBuygiftSkuQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaretailmarketingbuygiftskuqueryAPIRequest) GetApiMethodName() string {
+func (r AlibabaRetailMarketingBuygiftSkuQueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.retail.marketing.buygift.sku.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaretailmarketingbuygiftskuqueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaRetailMarketingBuygiftSkuQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaretailmarketingbuygiftskuqueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabaRetailMarketingBuygiftSkuQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam0 is Param0 Setter
 // 买赠商品查询入参
-func (r *AlibabaretailmarketingbuygiftskuqueryAPIRequest) SetParam0(_param0 *BuyGiftActivitySkuQueryRequest) error {
+func (r *AlibabaRetailMarketingBuygiftSkuQueryAPIRequest) SetParam0(_param0 *BuyGiftActivitySkuQueryRequest) error {
 	r._param0 = _param0
 	r.Set("param0", _param0)
 	return nil
 }
 
 // GetParam0 Param0 Getter
-func (r AlibabaretailmarketingbuygiftskuqueryAPIRequest) GetParam0() *BuyGiftActivitySkuQueryRequest {
+func (r AlibabaRetailMarketingBuygiftSkuQueryAPIRequest) GetParam0() *BuyGiftActivitySkuQueryRequest {
 	return r._param0
 }

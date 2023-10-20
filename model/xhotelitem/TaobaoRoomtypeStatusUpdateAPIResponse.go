@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoroomtypestatusupdateAPIResponse top房型状态修改 API返回值
+// TaobaoRoomtypeStatusUpdateAPIResponse top房型状态修改 API返回值
 // taobao.roomtype.status.update
 //
 // top房型状态修改
-type TaobaoroomtypestatusupdateAPIResponse struct {
+type TaobaoRoomtypeStatusUpdateAPIResponse struct {
 	model.CommonResponse
-	TaobaoroomtypestatusupdateAPIResponseModel
+	TaobaoRoomtypeStatusUpdateAPIResponseModel
 }
 
-// TaobaoroomtypestatusupdateAPIResponseModel is top房型状态修改 成功返回结果
-type TaobaoroomtypestatusupdateAPIResponseModel struct {
+// TaobaoRoomtypeStatusUpdateAPIResponseModel is top房型状态修改 成功返回结果
+type TaobaoRoomtypeStatusUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"roomtype_status_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

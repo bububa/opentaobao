@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-// Alibabaalsccrmpointconsumepoint 积分抵现
+// AlibabaAlscCrmPointConsumepoint 积分抵现
 // alibaba.alsc.crm.point.consumepoint
 //
 // 积分抵现
-func Alibabaalsccrmpointconsumepoint(clt *core.SDKClient, req *alsc.AlibabaalsccrmpointconsumepointAPIRequest, session string) (*alsc.AlibabaalsccrmpointconsumepointAPIResponse, error) {
-	var resp alsc.AlibabaalsccrmpointconsumepointAPIResponse
+func AlibabaAlscCrmPointConsumepoint(clt *core.SDKClient, req *alsc.AlibabaAlscCrmPointConsumepointAPIRequest, session string) (*alsc.AlibabaAlscCrmPointConsumepointAPIResponse, error) {
+	var resp alsc.AlibabaAlscCrmPointConsumepointAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

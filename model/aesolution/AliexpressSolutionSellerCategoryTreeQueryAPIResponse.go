@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpresssolutionsellercategorytreequeryAPIResponse aliexpress.solution.seller.category.tree.query API返回值
+// AliexpressSolutionSellerCategoryTreeQueryAPIResponse aliexpress.solution.seller.category.tree.query API返回值
 // aliexpress.solution.seller.category.tree.query
 //
 // API for seller to query the category tree. Support only displaying the categories which seller have permissions to publish products.
-type AliexpresssolutionsellercategorytreequeryAPIResponse struct {
+type AliexpressSolutionSellerCategoryTreeQueryAPIResponse struct {
 	model.CommonResponse
-	AliexpresssolutionsellercategorytreequeryAPIResponseModel
+	AliexpressSolutionSellerCategoryTreeQueryAPIResponseModel
 }
 
-// AliexpresssolutionsellercategorytreequeryAPIResponseModel is aliexpress.solution.seller.category.tree.query 成功返回结果
-type AliexpresssolutionsellercategorytreequeryAPIResponseModel struct {
+// AliexpressSolutionSellerCategoryTreeQueryAPIResponseModel is aliexpress.solution.seller.category.tree.query 成功返回结果
+type AliexpressSolutionSellerCategoryTreeQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_solution_seller_category_tree_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

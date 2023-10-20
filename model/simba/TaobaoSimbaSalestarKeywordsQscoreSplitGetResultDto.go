@@ -1,7 +1,7 @@
 package simba
 
-// TaobaosimbasalestarkeywordsqscoresplitgetResultDto 结构体
-type TaobaosimbasalestarkeywordsqscoresplitgetResultDto struct {
+// TaobaoSimbaSalestarKeywordsQscoreSplitGetResultDto 结构体
+type TaobaoSimbaSalestarKeywordsQscoreSplitGetResultDto struct {
 	// 返回成功/错误码
 	Key string `json:"key,omitempty" xml:"key,omitempty"`
 	// 返回信息

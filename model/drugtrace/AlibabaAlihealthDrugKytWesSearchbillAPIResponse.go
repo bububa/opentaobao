@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthdrugkytwessearchbillAPIResponse 通过时间段批量查询入出库单信息 API返回值
+// AlibabaAlihealthDrugKytWesSearchbillAPIResponse 通过时间段批量查询入出库单信息 API返回值
 // alibaba.alihealth.drug.kyt.wes.searchbill
 //
 // 通过时间段批量查询入出库单信息
-type AlibabaalihealthdrugkytwessearchbillAPIResponse struct {
+type AlibabaAlihealthDrugKytWesSearchbillAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthdrugkytwessearchbillAPIResponseModel
+	AlibabaAlihealthDrugKytWesSearchbillAPIResponseModel
 }
 
-// AlibabaalihealthdrugkytwessearchbillAPIResponseModel is 通过时间段批量查询入出库单信息 成功返回结果
-type AlibabaalihealthdrugkytwessearchbillAPIResponseModel struct {
+// AlibabaAlihealthDrugKytWesSearchbillAPIResponseModel is 通过时间段批量查询入出库单信息 成功返回结果
+type AlibabaAlihealthDrugKytWesSearchbillAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drug_kyt_wes_searchbill_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 监控宝推送网站监控信息，返回结果
-	Result *AlibabaalihealthdrugkytwessearchbillResultModel `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaAlihealthDrugKytWesSearchbillResultModel `json:"result,omitempty" xml:"result,omitempty"`
 }

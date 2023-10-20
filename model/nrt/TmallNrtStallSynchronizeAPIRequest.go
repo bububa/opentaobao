@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallnrtstallsynchronizeAPIRequest 摊位信息同步 API请求
+// TmallNrtStallSynchronizeAPIRequest 摊位信息同步 API请求
 // tmall.nrt.stall.synchronize
 //
 // 摊位信息同步
-type TmallnrtstallsynchronizeAPIRequest struct {
+type TmallNrtStallSynchronizeAPIRequest struct {
 	model.Params
 	// 参数对象
 	_stall *NrtStoreDto
 }
 
-// NewTmallnrtstallsynchronizeRequest 初始化TmallnrtstallsynchronizeAPIRequest对象
-func NewTmallnrtstallsynchronizeRequest() *TmallnrtstallsynchronizeAPIRequest {
-	return &TmallnrtstallsynchronizeAPIRequest{
+// NewTmallNrtStallSynchronizeRequest 初始化TmallNrtStallSynchronizeAPIRequest对象
+func NewTmallNrtStallSynchronizeRequest() *TmallNrtStallSynchronizeAPIRequest {
+	return &TmallNrtStallSynchronizeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallnrtstallsynchronizeAPIRequest) GetApiMethodName() string {
+func (r TmallNrtStallSynchronizeAPIRequest) GetApiMethodName() string {
 	return "tmall.nrt.stall.synchronize"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallnrtstallsynchronizeAPIRequest) GetApiParams(params url.Values) {
+func (r TmallNrtStallSynchronizeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallnrtstallsynchronizeAPIRequest) GetRawParams() model.Params {
+func (r TmallNrtStallSynchronizeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetStall is Stall Setter
 // 参数对象
-func (r *TmallnrtstallsynchronizeAPIRequest) SetStall(_stall *NrtStoreDto) error {
+func (r *TmallNrtStallSynchronizeAPIRequest) SetStall(_stall *NrtStoreDto) error {
 	r._stall = _stall
 	r.Set("stall", _stall)
 	return nil
 }
 
 // GetStall Stall Getter
-func (r TmallnrtstallsynchronizeAPIRequest) GetStall() *NrtStoreDto {
+func (r TmallNrtStallSynchronizeAPIRequest) GetStall() *NrtStoreDto {
 	return r._stall
 }

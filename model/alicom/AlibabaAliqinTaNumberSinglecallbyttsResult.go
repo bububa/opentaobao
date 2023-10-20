@@ -1,7 +1,7 @@
 package alicom
 
-// AlibabaaliqintanumbersinglecallbyttsResult 结构体
-type AlibabaaliqintanumbersinglecallbyttsResult struct {
+// AlibabaAliqinTaNumberSinglecallbyttsResult 结构体
+type AlibabaAliqinTaNumberSinglecallbyttsResult struct {
 	// 返回值
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// 信息

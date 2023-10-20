@@ -1,7 +1,7 @@
 package simba
 
-// TaobaouniversalbpcampaignfindsubcampaignidTopResult 结构体
-type TaobaouniversalbpcampaignfindsubcampaignidTopResult struct {
+// TaobaoUniversalbpCampaignFindsubcampaignidTopResult 结构体
+type TaobaoUniversalbpCampaignFindsubcampaignidTopResult struct {
 	// 请求系统信息
 	Info *TopInfo `json:"info,omitempty" xml:"info,omitempty"`
 	// 结果集

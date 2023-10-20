@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabalstlogisticsthirdpartsendAPIRequest 供应商-异云-使用第三方物流发货 API请求
+// AlibabaLstLogisticsThirdpartSendAPIRequest 供应商-异云-使用第三方物流发货 API请求
 // alibaba.lst.logistics.thirdpart.send
 //
 // 异地云仓的订单，使用第三方物流的发货方式来变更订单发货状态
-type AlibabalstlogisticsthirdpartsendAPIRequest struct {
+type AlibabaLstLogisticsThirdpartSendAPIRequest struct {
 	model.Params
 	// 入参
 	_param *SendOfflineOrderParam
 }
 
-// NewAlibabalstlogisticsthirdpartsendRequest 初始化AlibabalstlogisticsthirdpartsendAPIRequest对象
-func NewAlibabalstlogisticsthirdpartsendRequest() *AlibabalstlogisticsthirdpartsendAPIRequest {
-	return &AlibabalstlogisticsthirdpartsendAPIRequest{
+// NewAlibabaLstLogisticsThirdpartSendRequest 初始化AlibabaLstLogisticsThirdpartSendAPIRequest对象
+func NewAlibabaLstLogisticsThirdpartSendRequest() *AlibabaLstLogisticsThirdpartSendAPIRequest {
+	return &AlibabaLstLogisticsThirdpartSendAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabalstlogisticsthirdpartsendAPIRequest) GetApiMethodName() string {
+func (r AlibabaLstLogisticsThirdpartSendAPIRequest) GetApiMethodName() string {
 	return "alibaba.lst.logistics.thirdpart.send"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabalstlogisticsthirdpartsendAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaLstLogisticsThirdpartSendAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabalstlogisticsthirdpartsendAPIRequest) GetRawParams() model.Params {
+func (r AlibabaLstLogisticsThirdpartSendAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 入参
-func (r *AlibabalstlogisticsthirdpartsendAPIRequest) SetParam(_param *SendOfflineOrderParam) error {
+func (r *AlibabaLstLogisticsThirdpartSendAPIRequest) SetParam(_param *SendOfflineOrderParam) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r AlibabalstlogisticsthirdpartsendAPIRequest) GetParam() *SendOfflineOrderParam {
+func (r AlibabaLstLogisticsThirdpartSendAPIRequest) GetParam() *SendOfflineOrderParam {
 	return r._param
 }

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/einvoice"
 )
 
-// Alibabaeinvoicetaxoptsalaryrequestsingleaccept 单明细发薪受理
+// AlibabaEinvoiceTaxOptSalaryrequestSingleaccept 单明细发薪受理
 // alibaba.einvoice.tax.opt.salaryrequest.singleaccept
 //
 // 单明细发薪受理
-func Alibabaeinvoicetaxoptsalaryrequestsingleaccept(clt *core.SDKClient, req *einvoice.AlibabaeinvoicetaxoptsalaryrequestsingleacceptAPIRequest, session string) (*einvoice.AlibabaeinvoicetaxoptsalaryrequestsingleacceptAPIResponse, error) {
-	var resp einvoice.AlibabaeinvoicetaxoptsalaryrequestsingleacceptAPIResponse
+func AlibabaEinvoiceTaxOptSalaryrequestSingleaccept(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIRequest, session string) (*einvoice.AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse, error) {
+	var resp einvoice.AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

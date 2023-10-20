@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoalitriptravelaxinhotelpricebatchgetAPIRequest 阿信酒店批量报价查询接口 API请求
+// TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest 阿信酒店批量报价查询接口 API请求
 // taobao.alitrip.travel.axin.hotel.price.batch.get
 //
 // 阿信酒店批量报价查询接口
-type TaobaoalitriptravelaxinhotelpricebatchgetAPIRequest struct {
+type TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest struct {
 	model.Params
 	// 结束时间，不包含
 	_endDate string
@@ -24,91 +24,91 @@ type TaobaoalitriptravelaxinhotelpricebatchgetAPIRequest struct {
 	_distributorTid int64
 }
 
-// NewTaobaoalitriptravelaxinhotelpricebatchgetRequest 初始化TaobaoalitriptravelaxinhotelpricebatchgetAPIRequest对象
-func NewTaobaoalitriptravelaxinhotelpricebatchgetRequest() *TaobaoalitriptravelaxinhotelpricebatchgetAPIRequest {
-	return &TaobaoalitriptravelaxinhotelpricebatchgetAPIRequest{
+// NewTaobaoAlitripTravelAxinHotelPriceBatchGetRequest 初始化TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest对象
+func NewTaobaoAlitripTravelAxinHotelPriceBatchGetRequest() *TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest {
+	return &TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoalitriptravelaxinhotelpricebatchgetAPIRequest) GetApiMethodName() string {
+func (r TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest) GetApiMethodName() string {
 	return "taobao.alitrip.travel.axin.hotel.price.batch.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoalitriptravelaxinhotelpricebatchgetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoalitriptravelaxinhotelpricebatchgetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetEndDate is EndDate Setter
 // 结束时间，不包含
-func (r *TaobaoalitriptravelaxinhotelpricebatchgetAPIRequest) SetEndDate(_endDate string) error {
+func (r *TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
 	r.Set("end_date", _endDate)
 	return nil
 }
 
 // GetEndDate EndDate Getter
-func (r TaobaoalitriptravelaxinhotelpricebatchgetAPIRequest) GetEndDate() string {
+func (r TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
 // SetStartDate is StartDate Setter
 // 开始时间，包含
-func (r *TaobaoalitriptravelaxinhotelpricebatchgetAPIRequest) SetStartDate(_startDate string) error {
+func (r *TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
 	r.Set("start_date", _startDate)
 	return nil
 }
 
 // GetStartDate StartDate Getter
-func (r TaobaoalitriptravelaxinhotelpricebatchgetAPIRequest) GetStartDate() string {
+func (r TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
 // SetResourceChannel is ResourceChannel Setter
 // 资源渠道
-func (r *TaobaoalitriptravelaxinhotelpricebatchgetAPIRequest) SetResourceChannel(_resourceChannel string) error {
+func (r *TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest) SetResourceChannel(_resourceChannel string) error {
 	r._resourceChannel = _resourceChannel
 	r.Set("resource_channel", _resourceChannel)
 	return nil
 }
 
 // GetResourceChannel ResourceChannel Getter
-func (r TaobaoalitriptravelaxinhotelpricebatchgetAPIRequest) GetResourceChannel() string {
+func (r TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest) GetResourceChannel() string {
 	return r._resourceChannel
 }
 
 // SetHotelList is HotelList Setter
 // 酒店列表
-func (r *TaobaoalitriptravelaxinhotelpricebatchgetAPIRequest) SetHotelList(_hotelList *HotelDto) error {
+func (r *TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest) SetHotelList(_hotelList *HotelDto) error {
 	r._hotelList = _hotelList
 	r.Set("hotel_list", _hotelList)
 	return nil
 }
 
 // GetHotelList HotelList Getter
-func (r TaobaoalitriptravelaxinhotelpricebatchgetAPIRequest) GetHotelList() *HotelDto {
+func (r TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest) GetHotelList() *HotelDto {
 	return r._hotelList
 }
 
 // SetDistributorTid is DistributorTid Setter
 // 分销商id
-func (r *TaobaoalitriptravelaxinhotelpricebatchgetAPIRequest) SetDistributorTid(_distributorTid int64) error {
+func (r *TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest) SetDistributorTid(_distributorTid int64) error {
 	r._distributorTid = _distributorTid
 	r.Set("distributor_tid", _distributorTid)
 	return nil
 }
 
 // GetDistributorTid DistributorTid Getter
-func (r TaobaoalitriptravelaxinhotelpricebatchgetAPIRequest) GetDistributorTid() int64 {
+func (r TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest) GetDistributorTid() int64 {
 	return r._distributorTid
 }

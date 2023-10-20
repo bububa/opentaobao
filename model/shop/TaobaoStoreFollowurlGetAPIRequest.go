@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaostorefollowurlgetAPIRequest 获取店铺关注URL API请求
+// TaobaoStoreFollowurlGetAPIRequest 获取店铺关注URL API请求
 // taobao.store.followurl.get
 //
 // 获取关注店铺的URL
-type TaobaostorefollowurlgetAPIRequest struct {
+type TaobaoStoreFollowurlGetAPIRequest struct {
 	model.Params
 	// 关注完成后的回调地址,需要是EWS地址。如果不设置，会跳转到店铺首页
 	_callbackUrl string
@@ -20,65 +20,65 @@ type TaobaostorefollowurlgetAPIRequest struct {
 	_userId int64
 }
 
-// NewTaobaostorefollowurlgetRequest 初始化TaobaostorefollowurlgetAPIRequest对象
-func NewTaobaostorefollowurlgetRequest() *TaobaostorefollowurlgetAPIRequest {
-	return &TaobaostorefollowurlgetAPIRequest{
+// NewTaobaoStoreFollowurlGetRequest 初始化TaobaoStoreFollowurlGetAPIRequest对象
+func NewTaobaoStoreFollowurlGetRequest() *TaobaoStoreFollowurlGetAPIRequest {
+	return &TaobaoStoreFollowurlGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaostorefollowurlgetAPIRequest) GetApiMethodName() string {
+func (r TaobaoStoreFollowurlGetAPIRequest) GetApiMethodName() string {
 	return "taobao.store.followurl.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaostorefollowurlgetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoStoreFollowurlGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaostorefollowurlgetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoStoreFollowurlGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCallbackUrl is CallbackUrl Setter
 // 关注完成后的回调地址,需要是EWS地址。如果不设置，会跳转到店铺首页
-func (r *TaobaostorefollowurlgetAPIRequest) SetCallbackUrl(_callbackUrl string) error {
+func (r *TaobaoStoreFollowurlGetAPIRequest) SetCallbackUrl(_callbackUrl string) error {
 	r._callbackUrl = _callbackUrl
 	r.Set("callback_url", _callbackUrl)
 	return nil
 }
 
 // GetCallbackUrl CallbackUrl Getter
-func (r TaobaostorefollowurlgetAPIRequest) GetCallbackUrl() string {
+func (r TaobaoStoreFollowurlGetAPIRequest) GetCallbackUrl() string {
 	return r._callbackUrl
 }
 
 // SetUserNick is UserNick Setter
 // 商家nick
-func (r *TaobaostorefollowurlgetAPIRequest) SetUserNick(_userNick string) error {
+func (r *TaobaoStoreFollowurlGetAPIRequest) SetUserNick(_userNick string) error {
 	r._userNick = _userNick
 	r.Set("user_nick", _userNick)
 	return nil
 }
 
 // GetUserNick UserNick Getter
-func (r TaobaostorefollowurlgetAPIRequest) GetUserNick() string {
+func (r TaobaoStoreFollowurlGetAPIRequest) GetUserNick() string {
 	return r._userNick
 }
 
 // SetUserId is UserId Setter
 // 商家ID
-func (r *TaobaostorefollowurlgetAPIRequest) SetUserId(_userId int64) error {
+func (r *TaobaoStoreFollowurlGetAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
 	r.Set("user_id", _userId)
 	return nil
 }
 
 // GetUserId UserId Getter
-func (r TaobaostorefollowurlgetAPIRequest) GetUserId() int64 {
+func (r TaobaoStoreFollowurlGetAPIRequest) GetUserId() int64 {
 	return r._userId
 }

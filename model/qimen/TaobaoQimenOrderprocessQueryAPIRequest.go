@@ -6,48 +6,48 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoqimenorderprocessqueryAPIRequest 订单流水查询接口 API请求
+// TaobaoQimenOrderprocessQueryAPIRequest 订单流水查询接口 API请求
 // taobao.qimen.orderprocess.query
 //
 // ERP调用订单流水查询接口
-type TaobaoqimenorderprocessqueryAPIRequest struct {
+type TaobaoQimenOrderprocessQueryAPIRequest struct {
 	model.Params
 	//
 	_request *OrderProcessQueryRequest
 }
 
-// NewTaobaoqimenorderprocessqueryRequest 初始化TaobaoqimenorderprocessqueryAPIRequest对象
-func NewTaobaoqimenorderprocessqueryRequest() *TaobaoqimenorderprocessqueryAPIRequest {
-	return &TaobaoqimenorderprocessqueryAPIRequest{
+// NewTaobaoQimenOrderprocessQueryRequest 初始化TaobaoQimenOrderprocessQueryAPIRequest对象
+func NewTaobaoQimenOrderprocessQueryRequest() *TaobaoQimenOrderprocessQueryAPIRequest {
+	return &TaobaoQimenOrderprocessQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoqimenorderprocessqueryAPIRequest) GetApiMethodName() string {
+func (r TaobaoQimenOrderprocessQueryAPIRequest) GetApiMethodName() string {
 	return "taobao.qimen.orderprocess.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoqimenorderprocessqueryAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoQimenOrderprocessQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoqimenorderprocessqueryAPIRequest) GetRawParams() model.Params {
+func (r TaobaoQimenOrderprocessQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRequest is Request Setter
-func (r *TaobaoqimenorderprocessqueryAPIRequest) SetRequest(_request *OrderProcessQueryRequest) error {
+func (r *TaobaoQimenOrderprocessQueryAPIRequest) SetRequest(_request *OrderProcessQueryRequest) error {
 	r._request = _request
 	r.Set("request", _request)
 	return nil
 }
 
 // GetRequest Request Getter
-func (r TaobaoqimenorderprocessqueryAPIRequest) GetRequest() *OrderProcessQueryRequest {
+func (r TaobaoQimenOrderprocessQueryAPIRequest) GetRequest() *OrderProcessQueryRequest {
 	return r._request
 }

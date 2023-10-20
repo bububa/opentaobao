@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoweikeperformanceputAPIResponse 提交客服绩效接口 API返回值
+// TaobaoWeikePerformancePutAPIResponse 提交客服绩效接口 API返回值
 // taobao.weike.performance.put
 //
 // 提交客服绩效接口
-type TaobaoweikeperformanceputAPIResponse struct {
+type TaobaoWeikePerformancePutAPIResponse struct {
 	model.CommonResponse
-	TaobaoweikeperformanceputAPIResponseModel
+	TaobaoWeikePerformancePutAPIResponseModel
 }
 
-// TaobaoweikeperformanceputAPIResponseModel is 提交客服绩效接口 成功返回结果
-type TaobaoweikeperformanceputAPIResponseModel struct {
+// TaobaoWeikePerformancePutAPIResponseModel is 提交客服绩效接口 成功返回结果
+type TaobaoWeikePerformancePutAPIResponseModel struct {
 	XMLName xml.Name `xml:"weike_performance_put_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,21 +6,21 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthdrugcodekytsmyxquerycodeAPIResponse 扫码营销码查询 API返回值
+// AlibabaAlihealthDrugCodeKytSmyxQuerycodeAPIResponse 扫码营销码查询 API返回值
 // alibaba.alihealth.drug.code.kyt.smyx.querycode
 //
 // 此接口针对有码药品，提供可通过追溯码获取该药品的基础信息和生产信息；
 // 核查平台优先过滤非8开头的，长度非20位数字的码信息。
-type AlibabaalihealthdrugcodekytsmyxquerycodeAPIResponse struct {
+type AlibabaAlihealthDrugCodeKytSmyxQuerycodeAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthdrugcodekytsmyxquerycodeAPIResponseModel
+	AlibabaAlihealthDrugCodeKytSmyxQuerycodeAPIResponseModel
 }
 
-// AlibabaalihealthdrugcodekytsmyxquerycodeAPIResponseModel is 扫码营销码查询 成功返回结果
-type AlibabaalihealthdrugcodekytsmyxquerycodeAPIResponseModel struct {
+// AlibabaAlihealthDrugCodeKytSmyxQuerycodeAPIResponseModel is 扫码营销码查询 成功返回结果
+type AlibabaAlihealthDrugCodeKytSmyxQuerycodeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drug_code_kyt_smyx_querycode_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 最外层结果
-	Result *AlibabaalihealthdrugcodekytsmyxquerycodeResultModel `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaAlihealthDrugCodeKytSmyxQuerycodeResultModel `json:"result,omitempty" xml:"result,omitempty"`
 }

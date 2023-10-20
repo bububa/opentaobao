@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihousenewhomesystemsellerAPIResponse 商品发布授权 API返回值
+// AlibabaAlihouseNewhomeSystemSellerAPIResponse 商品发布授权 API返回值
 // alibaba.alihouse.newhome.system.seller
 //
 // 商品发布授权
-type AlibabaalihousenewhomesystemsellerAPIResponse struct {
+type AlibabaAlihouseNewhomeSystemSellerAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihousenewhomesystemsellerAPIResponseModel
+	AlibabaAlihouseNewhomeSystemSellerAPIResponseModel
 }
 
-// AlibabaalihousenewhomesystemsellerAPIResponseModel is 商品发布授权 成功返回结果
-type AlibabaalihousenewhomesystemsellerAPIResponseModel struct {
+// AlibabaAlihouseNewhomeSystemSellerAPIResponseModel is 商品发布授权 成功返回结果
+type AlibabaAlihouseNewhomeSystemSellerAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihouse_newhome_system_seller_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
-	Result *AlibabaalihousenewhomesystemsellerResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaAlihouseNewhomeSystemSellerResult `json:"result,omitempty" xml:"result,omitempty"`
 }

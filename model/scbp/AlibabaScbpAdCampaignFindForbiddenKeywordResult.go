@@ -1,7 +1,7 @@
 package scbp
 
-// AlibabascbpadcampaignfindforbiddenkeywordResult 结构体
-type AlibabascbpadcampaignfindforbiddenkeywordResult struct {
+// AlibabaScbpAdCampaignFindForbiddenKeywordResult 结构体
+type AlibabaScbpAdCampaignFindForbiddenKeywordResult struct {
 	// 关键词
 	Keyword string `json:"keyword,omitempty" xml:"keyword,omitempty"`
 	// 普通词

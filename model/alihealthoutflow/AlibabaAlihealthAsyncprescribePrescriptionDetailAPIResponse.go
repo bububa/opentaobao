@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthasyncprescribeprescriptiondetailAPIResponse 异步开方处方详情 API返回值
+// AlibabaAlihealthAsyncprescribePrescriptionDetailAPIResponse 异步开方处方详情 API返回值
 // alibaba.alihealth.asyncprescribe.prescription.detail
 //
 // 异步开方处方查询
-type AlibabaalihealthasyncprescribeprescriptiondetailAPIResponse struct {
+type AlibabaAlihealthAsyncprescribePrescriptionDetailAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthasyncprescribeprescriptiondetailAPIResponseModel
+	AlibabaAlihealthAsyncprescribePrescriptionDetailAPIResponseModel
 }
 
-// AlibabaalihealthasyncprescribeprescriptiondetailAPIResponseModel is 异步开方处方详情 成功返回结果
-type AlibabaalihealthasyncprescribeprescriptiondetailAPIResponseModel struct {
+// AlibabaAlihealthAsyncprescribePrescriptionDetailAPIResponseModel is 异步开方处方详情 成功返回结果
+type AlibabaAlihealthAsyncprescribePrescriptionDetailAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_asyncprescribe_prescription_detail_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

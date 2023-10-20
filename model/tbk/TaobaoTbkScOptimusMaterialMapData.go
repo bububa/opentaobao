@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaotbkscoptimusmaterialMapData 结构体
-type TaobaotbkscoptimusmaterialMapData struct {
+// TaobaoTbkScOptimusMaterialMapData 结构体
+type TaobaoTbkScOptimusMaterialMapData struct {
 	// 商品信息-商品小图列表
 	SmallImages []string `json:"small_images,omitempty" xml:"small_images>string,omitempty"`
 	// 商品信息-商品关联词

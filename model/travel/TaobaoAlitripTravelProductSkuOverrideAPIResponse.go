@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoalitriptravelproductskuoverrideAPIResponse （供销）产品级别日历价格库存修改，全量覆盖 API返回值
+// TaobaoAlitripTravelProductSkuOverrideAPIResponse （供销）产品级别日历价格库存修改，全量覆盖 API返回值
 // taobao.alitrip.travel.product.sku.override
 //
 // （供销）产品级别日历价格库存修改，全量覆盖
-type TaobaoalitriptravelproductskuoverrideAPIResponse struct {
+type TaobaoAlitripTravelProductSkuOverrideAPIResponse struct {
 	model.CommonResponse
-	TaobaoalitriptravelproductskuoverrideAPIResponseModel
+	TaobaoAlitripTravelProductSkuOverrideAPIResponseModel
 }
 
-// TaobaoalitriptravelproductskuoverrideAPIResponseModel is （供销）产品级别日历价格库存修改，全量覆盖 成功返回结果
-type TaobaoalitriptravelproductskuoverrideAPIResponseModel struct {
+// TaobaoAlitripTravelProductSkuOverrideAPIResponseModel is （供销）产品级别日历价格库存修改，全量覆盖 成功返回结果
+type TaobaoAlitripTravelProductSkuOverrideAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_travel_product_sku_override_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

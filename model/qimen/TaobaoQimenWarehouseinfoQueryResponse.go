@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoqimenwarehouseinfoqueryResponse 结构体
-type TaobaoqimenwarehouseinfoqueryResponse struct {
+// TaobaoQimenWarehouseinfoQueryResponse 结构体
+type TaobaoQimenWarehouseinfoQueryResponse struct {
 	// 奇门仓储字段
 	WarehouseInfos []WarehouseInfo `json:"warehouseInfos,omitempty" xml:"warehouseInfos>warehouse_info,omitempty"`
 	// 响应结果:success|failure

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpresssocialitemrankingAPIResponse 社交排行榜 API返回值
+// AliexpressSocialItemRankingAPIResponse 社交排行榜 API返回值
 // aliexpress.social.item.ranking
 //
 // 社交商品成交排行榜
-type AliexpresssocialitemrankingAPIResponse struct {
+type AliexpressSocialItemRankingAPIResponse struct {
 	model.CommonResponse
-	AliexpresssocialitemrankingAPIResponseModel
+	AliexpressSocialItemRankingAPIResponseModel
 }
 
-// AliexpresssocialitemrankingAPIResponseModel is 社交排行榜 成功返回结果
-type AliexpresssocialitemrankingAPIResponseModel struct {
+// AliexpressSocialItemRankingAPIResponseModel is 社交排行榜 成功返回结果
+type AliexpressSocialItemRankingAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_social_item_ranking_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package ascpchannel
 
-// AlibabaascpchannelsupplierproductdetailResultDto 结构体
-type AlibabaascpchannelsupplierproductdetailResultDto struct {
+// AlibabaAscpChannelSupplierProductDetailResultDto 结构体
+type AlibabaAscpChannelSupplierProductDetailResultDto struct {
 	// 错误码
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 错误码

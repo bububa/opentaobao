@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabahtorderhotelsyncconfigAPIRequest 同步配置信息 API请求
+// AlibabaHtorderHotelSyncConfigAPIRequest 同步配置信息 API请求
 // alibaba.htorder.hotel.sync.config
 //
 // 同步配置信息
-type AlibabahtorderhotelsyncconfigAPIRequest struct {
+type AlibabaHtorderHotelSyncConfigAPIRequest struct {
 	model.Params
 	// 配置信息
 	_dataEntity *HotelMessageConfigDto
 }
 
-// NewAlibabahtorderhotelsyncconfigRequest 初始化AlibabahtorderhotelsyncconfigAPIRequest对象
-func NewAlibabahtorderhotelsyncconfigRequest() *AlibabahtorderhotelsyncconfigAPIRequest {
-	return &AlibabahtorderhotelsyncconfigAPIRequest{
+// NewAlibabaHtorderHotelSyncConfigRequest 初始化AlibabaHtorderHotelSyncConfigAPIRequest对象
+func NewAlibabaHtorderHotelSyncConfigRequest() *AlibabaHtorderHotelSyncConfigAPIRequest {
+	return &AlibabaHtorderHotelSyncConfigAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabahtorderhotelsyncconfigAPIRequest) GetApiMethodName() string {
+func (r AlibabaHtorderHotelSyncConfigAPIRequest) GetApiMethodName() string {
 	return "alibaba.htorder.hotel.sync.config"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabahtorderhotelsyncconfigAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaHtorderHotelSyncConfigAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabahtorderhotelsyncconfigAPIRequest) GetRawParams() model.Params {
+func (r AlibabaHtorderHotelSyncConfigAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDataEntity is DataEntity Setter
 // 配置信息
-func (r *AlibabahtorderhotelsyncconfigAPIRequest) SetDataEntity(_dataEntity *HotelMessageConfigDto) error {
+func (r *AlibabaHtorderHotelSyncConfigAPIRequest) SetDataEntity(_dataEntity *HotelMessageConfigDto) error {
 	r._dataEntity = _dataEntity
 	r.Set("data_entity", _dataEntity)
 	return nil
 }
 
 // GetDataEntity DataEntity Getter
-func (r AlibabahtorderhotelsyncconfigAPIRequest) GetDataEntity() *HotelMessageConfigDto {
+func (r AlibabaHtorderHotelSyncConfigAPIRequest) GetDataEntity() *HotelMessageConfigDto {
 	return r._dataEntity
 }

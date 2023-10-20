@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoopenmallrefundcloseAPIRequest 关闭OpenMall退款单 API请求
+// TaobaoOpenmallRefundCloseAPIRequest 关闭OpenMall退款单 API请求
 // taobao.openmall.refund.close
 //
 // 关闭OpenMall退款单
-type TaobaoopenmallrefundcloseAPIRequest struct {
+type TaobaoOpenmallRefundCloseAPIRequest struct {
 	model.Params
 	// 渠道
 	_distributor string
@@ -18,52 +18,52 @@ type TaobaoopenmallrefundcloseAPIRequest struct {
 	_refundId int64
 }
 
-// NewTaobaoopenmallrefundcloseRequest 初始化TaobaoopenmallrefundcloseAPIRequest对象
-func NewTaobaoopenmallrefundcloseRequest() *TaobaoopenmallrefundcloseAPIRequest {
-	return &TaobaoopenmallrefundcloseAPIRequest{
+// NewTaobaoOpenmallRefundCloseRequest 初始化TaobaoOpenmallRefundCloseAPIRequest对象
+func NewTaobaoOpenmallRefundCloseRequest() *TaobaoOpenmallRefundCloseAPIRequest {
+	return &TaobaoOpenmallRefundCloseAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoopenmallrefundcloseAPIRequest) GetApiMethodName() string {
+func (r TaobaoOpenmallRefundCloseAPIRequest) GetApiMethodName() string {
 	return "taobao.openmall.refund.close"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoopenmallrefundcloseAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoOpenmallRefundCloseAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoopenmallrefundcloseAPIRequest) GetRawParams() model.Params {
+func (r TaobaoOpenmallRefundCloseAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDistributor is Distributor Setter
 // 渠道
-func (r *TaobaoopenmallrefundcloseAPIRequest) SetDistributor(_distributor string) error {
+func (r *TaobaoOpenmallRefundCloseAPIRequest) SetDistributor(_distributor string) error {
 	r._distributor = _distributor
 	r.Set("distributor", _distributor)
 	return nil
 }
 
 // GetDistributor Distributor Getter
-func (r TaobaoopenmallrefundcloseAPIRequest) GetDistributor() string {
+func (r TaobaoOpenmallRefundCloseAPIRequest) GetDistributor() string {
 	return r._distributor
 }
 
 // SetRefundId is RefundId Setter
 // 退款ID
-func (r *TaobaoopenmallrefundcloseAPIRequest) SetRefundId(_refundId int64) error {
+func (r *TaobaoOpenmallRefundCloseAPIRequest) SetRefundId(_refundId int64) error {
 	r._refundId = _refundId
 	r.Set("refund_id", _refundId)
 	return nil
 }
 
 // GetRefundId RefundId Getter
-func (r TaobaoopenmallrefundcloseAPIRequest) GetRefundId() int64 {
+func (r TaobaoOpenmallRefundCloseAPIRequest) GetRefundId() int64 {
 	return r._refundId
 }

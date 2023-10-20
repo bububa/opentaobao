@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaailabsiotbusinessrecipestepinsertorupdateAPIResponse 插入或更新食谱步骤 API返回值
+// AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponse 插入或更新食谱步骤 API返回值
 // alibaba.ailabs.iot.business.recipestep.insertorupdate
 //
 // 插入或更新食谱步骤
-type AlibabaailabsiotbusinessrecipestepinsertorupdateAPIResponse struct {
+type AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponse struct {
 	model.CommonResponse
-	AlibabaailabsiotbusinessrecipestepinsertorupdateAPIResponseModel
+	AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponseModel
 }
 
-// AlibabaailabsiotbusinessrecipestepinsertorupdateAPIResponseModel is 插入或更新食谱步骤 成功返回结果
-type AlibabaailabsiotbusinessrecipestepinsertorupdateAPIResponseModel struct {
+// AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponseModel is 插入或更新食谱步骤 成功返回结果
+type AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailabs_iot_business_recipestep_insertorupdate_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

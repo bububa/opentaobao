@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoumpmbbgetbyidAPIRequest 获取营销积木块 API请求
+// TaobaoUmpMbbGetbyidAPIRequest 获取营销积木块 API请求
 // taobao.ump.mbb.getbyid
 //
 // 根据积木块id获取营销积木块。
-type TaobaoumpmbbgetbyidAPIRequest struct {
+type TaobaoUmpMbbGetbyidAPIRequest struct {
 	model.Params
 	// 积木块的id
 	_id int64
 }
 
-// NewTaobaoumpmbbgetbyidRequest 初始化TaobaoumpmbbgetbyidAPIRequest对象
-func NewTaobaoumpmbbgetbyidRequest() *TaobaoumpmbbgetbyidAPIRequest {
-	return &TaobaoumpmbbgetbyidAPIRequest{
+// NewTaobaoUmpMbbGetbyidRequest 初始化TaobaoUmpMbbGetbyidAPIRequest对象
+func NewTaobaoUmpMbbGetbyidRequest() *TaobaoUmpMbbGetbyidAPIRequest {
+	return &TaobaoUmpMbbGetbyidAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoumpmbbgetbyidAPIRequest) GetApiMethodName() string {
+func (r TaobaoUmpMbbGetbyidAPIRequest) GetApiMethodName() string {
 	return "taobao.ump.mbb.getbyid"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoumpmbbgetbyidAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoUmpMbbGetbyidAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoumpmbbgetbyidAPIRequest) GetRawParams() model.Params {
+func (r TaobaoUmpMbbGetbyidAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetId is Id Setter
 // 积木块的id
-func (r *TaobaoumpmbbgetbyidAPIRequest) SetId(_id int64) error {
+func (r *TaobaoUmpMbbGetbyidAPIRequest) SetId(_id int64) error {
 	r._id = _id
 	r.Set("id", _id)
 	return nil
 }
 
 // GetId Id Getter
-func (r TaobaoumpmbbgetbyidAPIRequest) GetId() int64 {
+func (r TaobaoUmpMbbGetbyidAPIRequest) GetId() int64 {
 	return r._id
 }

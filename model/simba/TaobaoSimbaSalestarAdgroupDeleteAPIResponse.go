@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosimbasalestaradgroupdeleteAPIResponse (新)销量明星删除推广单元接口 API返回值
+// TaobaoSimbaSalestarAdgroupDeleteAPIResponse (新)销量明星删除推广单元接口 API返回值
 // taobao.simba.salestar.adgroup.delete
 //
 // 删除一个推广组
-type TaobaosimbasalestaradgroupdeleteAPIResponse struct {
+type TaobaoSimbaSalestarAdgroupDeleteAPIResponse struct {
 	model.CommonResponse
-	TaobaosimbasalestaradgroupdeleteAPIResponseModel
+	TaobaoSimbaSalestarAdgroupDeleteAPIResponseModel
 }
 
-// TaobaosimbasalestaradgroupdeleteAPIResponseModel is (新)销量明星删除推广单元接口 成功返回结果
-type TaobaosimbasalestaradgroupdeleteAPIResponseModel struct {
+// TaobaoSimbaSalestarAdgroupDeleteAPIResponseModel is (新)销量明星删除推广单元接口 成功返回结果
+type TaobaoSimbaSalestarAdgroupDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_salestar_adgroup_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallaliautoautofinanceloanreceiveAPIResponse 接收放款结果通知 API返回值
+// TmallAliautoAutofinanceLoanReceiveAPIResponse 接收放款结果通知 API返回值
 // tmall.aliauto.autofinance.loan.receive
 //
 // 天猫汽车的金融业务场景中，需要接收外部ISV对用户支用放款的通知结果
-type TmallaliautoautofinanceloanreceiveAPIResponse struct {
+type TmallAliautoAutofinanceLoanReceiveAPIResponse struct {
 	model.CommonResponse
-	TmallaliautoautofinanceloanreceiveAPIResponseModel
+	TmallAliautoAutofinanceLoanReceiveAPIResponseModel
 }
 
-// TmallaliautoautofinanceloanreceiveAPIResponseModel is 接收放款结果通知 成功返回结果
-type TmallaliautoautofinanceloanreceiveAPIResponseModel struct {
+// TmallAliautoAutofinanceLoanReceiveAPIResponseModel is 接收放款结果通知 成功返回结果
+type TmallAliautoAutofinanceLoanReceiveAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_aliauto_autofinance_loan_receive_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

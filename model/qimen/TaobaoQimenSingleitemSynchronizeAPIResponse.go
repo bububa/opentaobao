@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoqimensingleitemsynchronizeAPIResponse 商品同步接口 API返回值
+// TaobaoQimenSingleitemSynchronizeAPIResponse 商品同步接口 API返回值
 // taobao.qimen.singleitem.synchronize
 //
 // taobao.qimen.singleitem.synchronize
-type TaobaoqimensingleitemsynchronizeAPIResponse struct {
+type TaobaoQimenSingleitemSynchronizeAPIResponse struct {
 	model.CommonResponse
-	TaobaoqimensingleitemsynchronizeAPIResponseModel
+	TaobaoQimenSingleitemSynchronizeAPIResponseModel
 }
 
-// TaobaoqimensingleitemsynchronizeAPIResponseModel is 商品同步接口 成功返回结果
-type TaobaoqimensingleitemsynchronizeAPIResponseModel struct {
+// TaobaoQimenSingleitemSynchronizeAPIResponseModel is 商品同步接口 成功返回结果
+type TaobaoQimenSingleitemSynchronizeAPIResponseModel struct {
 	XMLName xml.Name `xml:"qimen_singleitem_synchronize_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	//
-	Response *TaobaoqimensingleitemsynchronizeResponse `json:"response,omitempty" xml:"response,omitempty"`
+	Response *TaobaoQimenSingleitemSynchronizeResponse `json:"response,omitempty" xml:"response,omitempty"`
 }

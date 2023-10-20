@@ -1,7 +1,7 @@
 package tmallsc
 
-// AlibabamsfserviceauditsupdateResult 结构体
-type AlibabamsfserviceauditsupdateResult struct {
+// AlibabaMsfserviceAuditsUpdateResult 结构体
+type AlibabaMsfserviceAuditsUpdateResult struct {
 	// 失败原因
 	SystemError string `json:"system_error,omitempty" xml:"system_error,omitempty"`
 	// 失败原因

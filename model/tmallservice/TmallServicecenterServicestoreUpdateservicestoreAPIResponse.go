@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallservicecenterservicestoreupdateservicestoreAPIResponse 修改网点信息 API返回值
+// TmallServicecenterServicestoreUpdateservicestoreAPIResponse 修改网点信息 API返回值
 // tmall.servicecenter.servicestore.updateservicestore
 //
 // 修改网点信息。对于同一个服务商，通过 service_store_code 保证网点唯一性。需要保证网点存在才能修改。
@@ -23,13 +23,13 @@ import (
 // 10, 网点已存在
 // 11, 网点不存在
 // 12, 系统错误
-type TmallservicecenterservicestoreupdateservicestoreAPIResponse struct {
+type TmallServicecenterServicestoreUpdateservicestoreAPIResponse struct {
 	model.CommonResponse
-	TmallservicecenterservicestoreupdateservicestoreAPIResponseModel
+	TmallServicecenterServicestoreUpdateservicestoreAPIResponseModel
 }
 
-// TmallservicecenterservicestoreupdateservicestoreAPIResponseModel is 修改网点信息 成功返回结果
-type TmallservicecenterservicestoreupdateservicestoreAPIResponseModel struct {
+// TmallServicecenterServicestoreUpdateservicestoreAPIResponseModel is 修改网点信息 成功返回结果
+type TmallServicecenterServicestoreUpdateservicestoreAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_servicestore_updateservicestore_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

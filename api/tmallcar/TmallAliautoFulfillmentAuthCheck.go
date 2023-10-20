@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallcar"
 )
 
-// Tmallaliautofulfillmentauthcheck 商家鉴权
+// TmallAliautoFulfillmentAuthCheck 商家鉴权
 // tmall.aliauto.fulfillment.auth.check
 //
 // 商家鉴权
-func Tmallaliautofulfillmentauthcheck(clt *core.SDKClient, req *tmallcar.TmallaliautofulfillmentauthcheckAPIRequest, session string) (*tmallcar.TmallaliautofulfillmentauthcheckAPIResponse, error) {
-	var resp tmallcar.TmallaliautofulfillmentauthcheckAPIResponse
+func TmallAliautoFulfillmentAuthCheck(clt *core.SDKClient, req *tmallcar.TmallAliautoFulfillmentAuthCheckAPIRequest, session string) (*tmallcar.TmallAliautoFulfillmentAuthCheckAPIResponse, error) {
+	var resp tmallcar.TmallAliautoFulfillmentAuthCheckAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

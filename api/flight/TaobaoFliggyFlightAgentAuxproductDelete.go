@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/flight"
 )
 
-// Taobaofliggyflightagentauxproductdelete 飞猪机票辅营商品删除
+// TaobaoFliggyFlightAgentAuxproductDelete 飞猪机票辅营商品删除
 // taobao.fliggy.flight.agent.auxproduct.delete
 //
 // 廉航辅营产品删除接口
-func Taobaofliggyflightagentauxproductdelete(clt *core.SDKClient, req *flight.TaobaofliggyflightagentauxproductdeleteAPIRequest, session string) (*flight.TaobaofliggyflightagentauxproductdeleteAPIResponse, error) {
-	var resp flight.TaobaofliggyflightagentauxproductdeleteAPIResponse
+func TaobaoFliggyFlightAgentAuxproductDelete(clt *core.SDKClient, req *flight.TaobaoFliggyFlightAgentAuxproductDeleteAPIRequest, session string) (*flight.TaobaoFliggyFlightAgentAuxproductDeleteAPIResponse, error) {
+	var resp flight.TaobaoFliggyFlightAgentAuxproductDeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

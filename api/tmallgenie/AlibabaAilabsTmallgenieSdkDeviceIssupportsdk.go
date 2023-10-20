@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallgenie"
 )
 
-// Alibabaailabstmallgeniesdkdeviceissupportsdk 是否支持云回看新SDK
+// AlibabaAilabsTmallgenieSdkDeviceIssupportsdk 是否支持云回看新SDK
 // alibaba.ailabs.tmallgenie.sdk.device.issupportsdk
 //
 // 是否支持云回看新SDK
-func Alibabaailabstmallgeniesdkdeviceissupportsdk(clt *core.SDKClient, req *tmallgenie.AlibabaailabstmallgeniesdkdeviceissupportsdkAPIRequest, session string) (*tmallgenie.AlibabaailabstmallgeniesdkdeviceissupportsdkAPIResponse, error) {
-	var resp tmallgenie.AlibabaailabstmallgeniesdkdeviceissupportsdkAPIResponse
+func AlibabaAilabsTmallgenieSdkDeviceIssupportsdk(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIRequest, session string) (*tmallgenie.AlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIResponse, error) {
+	var resp tmallgenie.AlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabajymsteamshadowusergetAPIResponse 获取影子标识 API返回值
+// AlibabaJymSteamShadowuserGetAPIResponse 获取影子标识 API返回值
 // alibaba.jym.steam.shadowuser.get
 //
 // 交易猫Steam类目获取影子ID
-type AlibabajymsteamshadowusergetAPIResponse struct {
+type AlibabaJymSteamShadowuserGetAPIResponse struct {
 	model.CommonResponse
-	AlibabajymsteamshadowusergetAPIResponseModel
+	AlibabaJymSteamShadowuserGetAPIResponseModel
 }
 
-// AlibabajymsteamshadowusergetAPIResponseModel is 获取影子标识 成功返回结果
-type AlibabajymsteamshadowusergetAPIResponseModel struct {
+// AlibabaJymSteamShadowuserGetAPIResponseModel is 获取影子标识 成功返回结果
+type AlibabaJymSteamShadowuserGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_jym_steam_shadowuser_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

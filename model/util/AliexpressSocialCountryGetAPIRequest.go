@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpresssocialcountrygetAPIRequest 获取国家列表 API请求
+// AliexpressSocialCountryGetAPIRequest 获取国家列表 API请求
 // aliexpress.social.country.get
 //
 // 获取目前AE支持的国家列表
-type AliexpresssocialcountrygetAPIRequest struct {
+type AliexpressSocialCountryGetAPIRequest struct {
 	model.Params
 	// 语言
 	_language string
 }
 
-// NewAliexpresssocialcountrygetRequest 初始化AliexpresssocialcountrygetAPIRequest对象
-func NewAliexpresssocialcountrygetRequest() *AliexpresssocialcountrygetAPIRequest {
-	return &AliexpresssocialcountrygetAPIRequest{
+// NewAliexpressSocialCountryGetRequest 初始化AliexpressSocialCountryGetAPIRequest对象
+func NewAliexpressSocialCountryGetRequest() *AliexpressSocialCountryGetAPIRequest {
+	return &AliexpressSocialCountryGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AliexpresssocialcountrygetAPIRequest) GetApiMethodName() string {
+func (r AliexpressSocialCountryGetAPIRequest) GetApiMethodName() string {
 	return "aliexpress.social.country.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AliexpresssocialcountrygetAPIRequest) GetApiParams(params url.Values) {
+func (r AliexpressSocialCountryGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AliexpresssocialcountrygetAPIRequest) GetRawParams() model.Params {
+func (r AliexpressSocialCountryGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetLanguage is Language Setter
 // 语言
-func (r *AliexpresssocialcountrygetAPIRequest) SetLanguage(_language string) error {
+func (r *AliexpressSocialCountryGetAPIRequest) SetLanguage(_language string) error {
 	r._language = _language
 	r.Set("language", _language)
 	return nil
 }
 
 // GetLanguage Language Getter
-func (r AliexpresssocialcountrygetAPIRequest) GetLanguage() string {
+func (r AliexpressSocialCountryGetAPIRequest) GetLanguage() string {
 	return r._language
 }

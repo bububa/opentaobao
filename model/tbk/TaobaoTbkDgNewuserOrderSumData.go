@@ -1,9 +1,9 @@
 package tbk
 
-// TaobaotbkdgnewuserordersumData 结构体
-type TaobaotbkdgnewuserordersumData struct {
+// TaobaoTbkDgNewuserOrderSumData 结构体
+type TaobaoTbkDgNewuserOrderSumData struct {
 	// resultList
-	Results []TaobaotbkdgnewuserordersumData `json:"results,omitempty" xml:"results>taobaotbkdgnewuserordersum_data,omitempty"`
+	Results []TaobaoTbkDgNewuserOrderSumData `json:"results,omitempty" xml:"results>taobao_tbk_dg_newuser_order_sum_data,omitempty"`
 	// 活动ID
 	ActivityId string `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
 	// 日期
@@ -15,7 +15,7 @@ type TaobaotbkdgnewuserordersumData struct {
 	// 渠道关系id
 	RelationId string `json:"relation_id,omitempty" xml:"relation_id,omitempty"`
 	// data
-	Data *TaobaotbkdgnewuserordersumData `json:"data,omitempty" xml:"data,omitempty"`
+	Data *TaobaoTbkDgNewuserOrderSumData `json:"data,omitempty" xml:"data,omitempty"`
 	// 页码
 	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
 	// 每页大小

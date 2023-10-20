@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabacampusdeviceopenapigetdevicerealtimelogAPIRequest 根据设备uuid获取设备采集信息 API请求
+// AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest 根据设备uuid获取设备采集信息 API请求
 // alibaba.campus.device.openapi.getdevicerealtimelog
 //
 // 根据设备uuid获取设备采集信息
-type AlibabacampusdeviceopenapigetdevicerealtimelogAPIRequest struct {
+type AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest struct {
 	model.Params
 	// 设备uuid
 	_uuid string
@@ -18,52 +18,52 @@ type AlibabacampusdeviceopenapigetdevicerealtimelogAPIRequest struct {
 	_workBenchContext *WorkBenchContext
 }
 
-// NewAlibabacampusdeviceopenapigetdevicerealtimelogRequest 初始化AlibabacampusdeviceopenapigetdevicerealtimelogAPIRequest对象
-func NewAlibabacampusdeviceopenapigetdevicerealtimelogRequest() *AlibabacampusdeviceopenapigetdevicerealtimelogAPIRequest {
-	return &AlibabacampusdeviceopenapigetdevicerealtimelogAPIRequest{
+// NewAlibabaCampusDeviceOpenapiGetdevicerealtimelogRequest 初始化AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest对象
+func NewAlibabaCampusDeviceOpenapiGetdevicerealtimelogRequest() *AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest {
+	return &AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabacampusdeviceopenapigetdevicerealtimelogAPIRequest) GetApiMethodName() string {
+func (r AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest) GetApiMethodName() string {
 	return "alibaba.campus.device.openapi.getdevicerealtimelog"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabacampusdeviceopenapigetdevicerealtimelogAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabacampusdeviceopenapigetdevicerealtimelogAPIRequest) GetRawParams() model.Params {
+func (r AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetUuid is Uuid Setter
 // 设备uuid
-func (r *AlibabacampusdeviceopenapigetdevicerealtimelogAPIRequest) SetUuid(_uuid string) error {
+func (r *AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
 	r.Set("uuid", _uuid)
 	return nil
 }
 
 // GetUuid Uuid Getter
-func (r AlibabacampusdeviceopenapigetdevicerealtimelogAPIRequest) GetUuid() string {
+func (r AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest) GetUuid() string {
 	return r._uuid
 }
 
 // SetWorkBenchContext is WorkBenchContext Setter
 // 请求发送端信息
-func (r *AlibabacampusdeviceopenapigetdevicerealtimelogAPIRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
+func (r *AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
 	r._workBenchContext = _workBenchContext
 	r.Set("work_bench_context", _workBenchContext)
 	return nil
 }
 
 // GetWorkBenchContext WorkBenchContext Getter
-func (r AlibabacampusdeviceopenapigetdevicerealtimelogAPIRequest) GetWorkBenchContext() *WorkBenchContext {
+func (r AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest) GetWorkBenchContext() *WorkBenchContext {
 	return r._workBenchContext
 }

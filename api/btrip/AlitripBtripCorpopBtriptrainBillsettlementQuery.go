@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/btrip"
 )
 
-// Alitripbtripcorpopbtriptrainbillsettlementquery 商旅火车票结算记账查询接口
+// AlitripBtripCorpopBtriptrainBillsettlementQuery 商旅火车票结算记账查询接口
 // alitrip.btrip.corpop.btriptrain.billsettlement.query
 //
 // 商旅火车票结算记账查询接口
-func Alitripbtripcorpopbtriptrainbillsettlementquery(clt *core.SDKClient, req *btrip.AlitripbtripcorpopbtriptrainbillsettlementqueryAPIRequest, session string) (*btrip.AlitripbtripcorpopbtriptrainbillsettlementqueryAPIResponse, error) {
-	var resp btrip.AlitripbtripcorpopbtriptrainbillsettlementqueryAPIResponse
+func AlitripBtripCorpopBtriptrainBillsettlementQuery(clt *core.SDKClient, req *btrip.AlitripBtripCorpopBtriptrainBillsettlementQueryAPIRequest, session string) (*btrip.AlitripBtripCorpopBtriptrainBillsettlementQueryAPIResponse, error) {
+	var resp btrip.AlitripBtripCorpopBtriptrainBillsettlementQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

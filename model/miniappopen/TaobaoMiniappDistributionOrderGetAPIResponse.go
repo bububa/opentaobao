@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaominiappdistributionordergetAPIResponse 小程序投放-查询小程序投放计划信息 API返回值
+// TaobaoMiniappDistributionOrderGetAPIResponse 小程序投放-查询小程序投放计划信息 API返回值
 // taobao.miniapp.distribution.order.get
 //
 // 服务商可通过该API，读取自己开发的小程序对应的投放计划的相关信息
-type TaobaominiappdistributionordergetAPIResponse struct {
+type TaobaoMiniappDistributionOrderGetAPIResponse struct {
 	model.CommonResponse
-	TaobaominiappdistributionordergetAPIResponseModel
+	TaobaoMiniappDistributionOrderGetAPIResponseModel
 }
 
-// TaobaominiappdistributionordergetAPIResponseModel is 小程序投放-查询小程序投放计划信息 成功返回结果
-type TaobaominiappdistributionordergetAPIResponseModel struct {
+// TaobaoMiniappDistributionOrderGetAPIResponseModel is 小程序投放-查询小程序投放计划信息 成功返回结果
+type TaobaoMiniappDistributionOrderGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"miniapp_distribution_order_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

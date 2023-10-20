@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaascpaicsupplieraicinventorynegativesaleinvalidateAPIRequest 负卖库存失效接口 API请求
+// AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateAPIRequest 负卖库存失效接口 API请求
 // alibaba.ascp.aic.supplier.aicinventory.negative.sale.invalidate
 //
 // 失效负卖库存数据
-type AlibabaascpaicsupplieraicinventorynegativesaleinvalidateAPIRequest struct {
+type AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateAPIRequest struct {
 	model.Params
 	// 入参
 	_futureInventoryMainOperationQuest *Futureinventorymainoperationquest
 }
 
-// NewAlibabaascpaicsupplieraicinventorynegativesaleinvalidateRequest 初始化AlibabaascpaicsupplieraicinventorynegativesaleinvalidateAPIRequest对象
-func NewAlibabaascpaicsupplieraicinventorynegativesaleinvalidateRequest() *AlibabaascpaicsupplieraicinventorynegativesaleinvalidateAPIRequest {
-	return &AlibabaascpaicsupplieraicinventorynegativesaleinvalidateAPIRequest{
+// NewAlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateRequest 初始化AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateAPIRequest对象
+func NewAlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateRequest() *AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateAPIRequest {
+	return &AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaascpaicsupplieraicinventorynegativesaleinvalidateAPIRequest) GetApiMethodName() string {
+func (r AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateAPIRequest) GetApiMethodName() string {
 	return "alibaba.ascp.aic.supplier.aicinventory.negative.sale.invalidate"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaascpaicsupplieraicinventorynegativesaleinvalidateAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaascpaicsupplieraicinventorynegativesaleinvalidateAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetFutureInventoryMainOperationQuest is FutureInventoryMainOperationQuest Setter
 // 入参
-func (r *AlibabaascpaicsupplieraicinventorynegativesaleinvalidateAPIRequest) SetFutureInventoryMainOperationQuest(_futureInventoryMainOperationQuest *Futureinventorymainoperationquest) error {
+func (r *AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateAPIRequest) SetFutureInventoryMainOperationQuest(_futureInventoryMainOperationQuest *Futureinventorymainoperationquest) error {
 	r._futureInventoryMainOperationQuest = _futureInventoryMainOperationQuest
 	r.Set("future_inventory_main_operation_quest", _futureInventoryMainOperationQuest)
 	return nil
 }
 
 // GetFutureInventoryMainOperationQuest FutureInventoryMainOperationQuest Getter
-func (r AlibabaascpaicsupplieraicinventorynegativesaleinvalidateAPIRequest) GetFutureInventoryMainOperationQuest() *Futureinventorymainoperationquest {
+func (r AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateAPIRequest) GetFutureInventoryMainOperationQuest() *Futureinventorymainoperationquest {
 	return r._futureInventoryMainOperationQuest
 }

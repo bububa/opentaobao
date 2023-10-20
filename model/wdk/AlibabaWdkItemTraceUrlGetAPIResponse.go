@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdkitemtraceurlgetAPIResponse 根据shopId和skuCode返回商品静态溯源url API返回值
+// AlibabaWdkItemTraceUrlGetAPIResponse 根据shopId和skuCode返回商品静态溯源url API返回值
 // alibaba.wdk.item.trace.url.get
 //
 // 根据shopId和skuCode返回商品静态溯源url
-type AlibabawdkitemtraceurlgetAPIResponse struct {
+type AlibabaWdkItemTraceUrlGetAPIResponse struct {
 	model.CommonResponse
-	AlibabawdkitemtraceurlgetAPIResponseModel
+	AlibabaWdkItemTraceUrlGetAPIResponseModel
 }
 
-// AlibabawdkitemtraceurlgetAPIResponseModel is 根据shopId和skuCode返回商品静态溯源url 成功返回结果
-type AlibabawdkitemtraceurlgetAPIResponseModel struct {
+// AlibabaWdkItemTraceUrlGetAPIResponseModel is 根据shopId和skuCode返回商品静态溯源url 成功返回结果
+type AlibabaWdkItemTraceUrlGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_item_trace_url_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

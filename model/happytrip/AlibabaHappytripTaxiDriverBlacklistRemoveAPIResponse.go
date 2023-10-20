@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabahappytriptaxidriverblacklistremoveAPIResponse 移除司机黑名单 API返回值
+// AlibabaHappytripTaxiDriverBlacklistRemoveAPIResponse 移除司机黑名单 API返回值
 // alibaba.happytrip.taxi.driver.blacklist.remove
 //
 // 移除司机黑名单
-type AlibabahappytriptaxidriverblacklistremoveAPIResponse struct {
+type AlibabaHappytripTaxiDriverBlacklistRemoveAPIResponse struct {
 	model.CommonResponse
-	AlibabahappytriptaxidriverblacklistremoveAPIResponseModel
+	AlibabaHappytripTaxiDriverBlacklistRemoveAPIResponseModel
 }
 
-// AlibabahappytriptaxidriverblacklistremoveAPIResponseModel is 移除司机黑名单 成功返回结果
-type AlibabahappytriptaxidriverblacklistremoveAPIResponseModel struct {
+// AlibabaHappytripTaxiDriverBlacklistRemoveAPIResponseModel is 移除司机黑名单 成功返回结果
+type AlibabaHappytripTaxiDriverBlacklistRemoveAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_happytrip_taxi_driver_blacklist_remove_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

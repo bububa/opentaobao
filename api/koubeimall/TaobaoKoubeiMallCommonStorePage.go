@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/koubeimall"
 )
 
-// Taobaokoubeimallcommonstorepage 分页查询综合体内的门店列表信息
+// TaobaoKoubeiMallCommonStorePage 分页查询综合体内的门店列表信息
 // taobao.koubei.mall.common.store.page
 //
 // 分页查询综合体内的门店列表信息
-func Taobaokoubeimallcommonstorepage(clt *core.SDKClient, req *koubeimall.TaobaokoubeimallcommonstorepageAPIRequest, session string) (*koubeimall.TaobaokoubeimallcommonstorepageAPIResponse, error) {
-	var resp koubeimall.TaobaokoubeimallcommonstorepageAPIResponse
+func TaobaoKoubeiMallCommonStorePage(clt *core.SDKClient, req *koubeimall.TaobaoKoubeiMallCommonStorePageAPIRequest, session string) (*koubeimall.TaobaoKoubeiMallCommonStorePageAPIResponse, error) {
+	var resp koubeimall.TaobaoKoubeiMallCommonStorePageAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

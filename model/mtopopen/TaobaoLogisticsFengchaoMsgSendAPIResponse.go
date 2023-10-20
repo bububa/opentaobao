@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaologisticsfengchaomsgsendAPIResponse 丰巢走淘宝发包裹状态通知接口 API返回值
+// TaobaoLogisticsFengchaoMsgSendAPIResponse 丰巢走淘宝发包裹状态通知接口 API返回值
 // taobao.logistics.fengchao.msg.send
 //
 // 丰巢走淘宝发包裹状态通知接口
-type TaobaologisticsfengchaomsgsendAPIResponse struct {
+type TaobaoLogisticsFengchaoMsgSendAPIResponse struct {
 	model.CommonResponse
-	TaobaologisticsfengchaomsgsendAPIResponseModel
+	TaobaoLogisticsFengchaoMsgSendAPIResponseModel
 }
 
-// TaobaologisticsfengchaomsgsendAPIResponseModel is 丰巢走淘宝发包裹状态通知接口 成功返回结果
-type TaobaologisticsfengchaomsgsendAPIResponseModel struct {
+// TaobaoLogisticsFengchaoMsgSendAPIResponseModel is 丰巢走淘宝发包裹状态通知接口 成功返回结果
+type TaobaoLogisticsFengchaoMsgSendAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_fengchao_msg_send_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

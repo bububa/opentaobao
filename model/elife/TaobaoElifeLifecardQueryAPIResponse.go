@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoelifelifecardqueryAPIResponse 查询交易结果 API返回值
+// TaobaoElifeLifecardQueryAPIResponse 查询交易结果 API返回值
 // taobao.elife.lifecard.query
 //
 // 卖家在交易状态不明的情况下, 查询交易结果.
-type TaobaoelifelifecardqueryAPIResponse struct {
+type TaobaoElifeLifecardQueryAPIResponse struct {
 	model.CommonResponse
-	TaobaoelifelifecardqueryAPIResponseModel
+	TaobaoElifeLifecardQueryAPIResponseModel
 }
 
-// TaobaoelifelifecardqueryAPIResponseModel is 查询交易结果 成功返回结果
-type TaobaoelifelifecardqueryAPIResponseModel struct {
+// TaobaoElifeLifecardQueryAPIResponseModel is 查询交易结果 成功返回结果
+type TaobaoElifeLifecardQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"elife_lifecard_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

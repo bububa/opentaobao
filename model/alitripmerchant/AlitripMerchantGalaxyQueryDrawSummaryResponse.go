@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripmerchantgalaxyquerydrawsummaryResponse 结构体
-type AlitripmerchantgalaxyquerydrawsummaryResponse struct {
+// AlitripMerchantGalaxyQueryDrawSummaryResponse 结构体
+type AlitripMerchantGalaxyQueryDrawSummaryResponse struct {
 	// 返回类型
 	Contents []DrawOfferSummaryVo `json:"contents,omitempty" xml:"contents>draw_offer_summary_vo,omitempty"`
 	// 错误编码

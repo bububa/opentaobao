@@ -6,12 +6,12 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest 药店出入库信息上传 API请求
+// AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest 药店出入库信息上传 API请求
 // alibaba.alihealth.drug.kyt.smyx.uploadinoutbill
 //
 // 药店上传出入库信息，包括采购入库（102），退货入库（103），供应入库（107）,退货出库（202），销毁出库（205），抽检出库（206）， 供应出库（209）,
 // 不包括对个人的零售出库，疫苗接种，领药出库。
-type AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest struct {
+type AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest struct {
 	model.Params
 	// 追溯码[多个时用逗号分开]
 	_traceCodes []string
@@ -61,325 +61,325 @@ type AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest struct {
 	_physicType int64
 }
 
-// NewAlibabaalihealthdrugkytsmyxuploadinoutbillRequest 初始化AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest对象
-func NewAlibabaalihealthdrugkytsmyxuploadinoutbillRequest() *AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest {
-	return &AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest{
+// NewAlibabaAlihealthDrugKytSmyxUploadinoutbillRequest 初始化AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest对象
+func NewAlibabaAlihealthDrugKytSmyxUploadinoutbillRequest() *AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest {
+	return &AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.drug.kyt.smyx.uploadinoutbill"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTraceCodes is TraceCodes Setter
 // 追溯码[多个时用逗号分开]
-func (r *AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) SetTraceCodes(_traceCodes []string) error {
+func (r *AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) SetTraceCodes(_traceCodes []string) error {
 	r._traceCodes = _traceCodes
 	r.Set("trace_codes", _traceCodes)
 	return nil
 }
 
 // GetTraceCodes TraceCodes Getter
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetTraceCodes() []string {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetTraceCodes() []string {
 	return r._traceCodes
 }
 
 // SetBillCode is BillCode Setter
 // 单据编码
-func (r *AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) SetBillCode(_billCode string) error {
+func (r *AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) SetBillCode(_billCode string) error {
 	r._billCode = _billCode
 	r.Set("bill_code", _billCode)
 	return nil
 }
 
 // GetBillCode BillCode Getter
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetBillCode() string {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetBillCode() string {
 	return r._billCode
 }
 
 // SetBillTime is BillTime Setter
 // 单据时间
-func (r *AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) SetBillTime(_billTime string) error {
+func (r *AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) SetBillTime(_billTime string) error {
 	r._billTime = _billTime
 	r.Set("bill_time", _billTime)
 	return nil
 }
 
 // GetBillTime BillTime Getter
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetBillTime() string {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetBillTime() string {
 	return r._billTime
 }
 
 // SetRefUserId is RefUserId Setter
 // 上传企业的单位编码
-func (r *AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) SetRefUserId(_refUserId string) error {
+func (r *AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) SetRefUserId(_refUserId string) error {
 	r._refUserId = _refUserId
 	r.Set("ref_user_id", _refUserId)
 	return nil
 }
 
 // GetRefUserId RefUserId Getter
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetRefUserId() string {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetRefUserId() string {
 	return r._refUserId
 }
 
 // SetAgentRefUserId is AgentRefUserId Setter
 // 代理企业REF标识
-func (r *AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) SetAgentRefUserId(_agentRefUserId string) error {
+func (r *AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) SetAgentRefUserId(_agentRefUserId string) error {
 	r._agentRefUserId = _agentRefUserId
 	r.Set("agent_ref_user_id", _agentRefUserId)
 	return nil
 }
 
 // GetAgentRefUserId AgentRefUserId Getter
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetAgentRefUserId() string {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetAgentRefUserId() string {
 	return r._agentRefUserId
 }
 
 // SetFromUserId is FromUserId Setter
 // 发货企业entId
-func (r *AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) SetFromUserId(_fromUserId string) error {
+func (r *AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) SetFromUserId(_fromUserId string) error {
 	r._fromUserId = _fromUserId
 	r.Set("from_user_id", _fromUserId)
 	return nil
 }
 
 // GetFromUserId FromUserId Getter
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetFromUserId() string {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetFromUserId() string {
 	return r._fromUserId
 }
 
 // SetToUserId is ToUserId Setter
 // 收货企业entId
-func (r *AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) SetToUserId(_toUserId string) error {
+func (r *AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) SetToUserId(_toUserId string) error {
 	r._toUserId = _toUserId
 	r.Set("to_user_id", _toUserId)
 	return nil
 }
 
 // GetToUserId ToUserId Getter
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetToUserId() string {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetToUserId() string {
 	return r._toUserId
 }
 
 // SetDestUserId is DestUserId Setter
 // 直调企业标识
-func (r *AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) SetDestUserId(_destUserId string) error {
+func (r *AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) SetDestUserId(_destUserId string) error {
 	r._destUserId = _destUserId
 	r.Set("dest_user_id", _destUserId)
 	return nil
 }
 
 // GetDestUserId DestUserId Getter
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetDestUserId() string {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetDestUserId() string {
 	return r._destUserId
 }
 
 // SetOperIcCode is OperIcCode Setter
 // 单据提交者（appkey编号）
-func (r *AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) SetOperIcCode(_operIcCode string) error {
+func (r *AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) SetOperIcCode(_operIcCode string) error {
 	r._operIcCode = _operIcCode
 	r.Set("oper_ic_code", _operIcCode)
 	return nil
 }
 
 // GetOperIcCode OperIcCode Getter
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetOperIcCode() string {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetOperIcCode() string {
 	return r._operIcCode
 }
 
 // SetOperIcName is OperIcName Setter
 // 单据提交者姓名
-func (r *AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) SetOperIcName(_operIcName string) error {
+func (r *AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) SetOperIcName(_operIcName string) error {
 	r._operIcName = _operIcName
 	r.Set("oper_ic_name", _operIcName)
 	return nil
 }
 
 // GetOperIcName OperIcName Getter
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetOperIcName() string {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetOperIcName() string {
 	return r._operIcName
 }
 
 // SetWarehouseId is WarehouseId Setter
 // 仓号
-func (r *AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) SetWarehouseId(_warehouseId string) error {
+func (r *AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) SetWarehouseId(_warehouseId string) error {
 	r._warehouseId = _warehouseId
 	r.Set("warehouse_id", _warehouseId)
 	return nil
 }
 
 // GetWarehouseId WarehouseId Getter
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetWarehouseId() string {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetWarehouseId() string {
 	return r._warehouseId
 }
 
 // SetDrugId is DrugId Setter
 // 药品ID[企业自已系统的药品ID]
-func (r *AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) SetDrugId(_drugId string) error {
+func (r *AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) SetDrugId(_drugId string) error {
 	r._drugId = _drugId
 	r.Set("drug_id", _drugId)
 	return nil
 }
 
 // GetDrugId DrugId Getter
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetDrugId() string {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetDrugId() string {
 	return r._drugId
 }
 
 // SetClientType is ClientType Setter
 // 客户端类型[必须填2]
-func (r *AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) SetClientType(_clientType string) error {
+func (r *AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) SetClientType(_clientType string) error {
 	r._clientType = _clientType
 	r.Set("client_type", _clientType)
 	return nil
 }
 
 // GetClientType ClientType Getter
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetClientType() string {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetClientType() string {
 	return r._clientType
 }
 
 // SetReturnReasonCode is ReturnReasonCode Setter
 // 退货原因代码[退货入出库时填写]
-func (r *AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) SetReturnReasonCode(_returnReasonCode string) error {
+func (r *AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) SetReturnReasonCode(_returnReasonCode string) error {
 	r._returnReasonCode = _returnReasonCode
 	r.Set("return_reason_code", _returnReasonCode)
 	return nil
 }
 
 // GetReturnReasonCode ReturnReasonCode Getter
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetReturnReasonCode() string {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetReturnReasonCode() string {
 	return r._returnReasonCode
 }
 
 // SetReturnReasonDes is ReturnReasonDes Setter
 // 退货原因描述[退货入出库时填写]
-func (r *AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) SetReturnReasonDes(_returnReasonDes string) error {
+func (r *AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) SetReturnReasonDes(_returnReasonDes string) error {
 	r._returnReasonDes = _returnReasonDes
 	r.Set("return_reason_des", _returnReasonDes)
 	return nil
 }
 
 // GetReturnReasonDes ReturnReasonDes Getter
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetReturnReasonDes() string {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetReturnReasonDes() string {
 	return r._returnReasonDes
 }
 
 // SetCancelReasonCode is CancelReasonCode Setter
 // 注销原因代码【销毁出库时填写】
-func (r *AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) SetCancelReasonCode(_cancelReasonCode string) error {
+func (r *AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) SetCancelReasonCode(_cancelReasonCode string) error {
 	r._cancelReasonCode = _cancelReasonCode
 	r.Set("cancel_reason_code", _cancelReasonCode)
 	return nil
 }
 
 // GetCancelReasonCode CancelReasonCode Getter
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetCancelReasonCode() string {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetCancelReasonCode() string {
 	return r._cancelReasonCode
 }
 
 // SetCancelReasonDes is CancelReasonDes Setter
 // 注销原因描述【销毁出库时填写】
-func (r *AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) SetCancelReasonDes(_cancelReasonDes string) error {
+func (r *AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) SetCancelReasonDes(_cancelReasonDes string) error {
 	r._cancelReasonDes = _cancelReasonDes
 	r.Set("cancel_reason_des", _cancelReasonDes)
 	return nil
 }
 
 // GetCancelReasonDes CancelReasonDes Getter
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetCancelReasonDes() string {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetCancelReasonDes() string {
 	return r._cancelReasonDes
 }
 
 // SetExecuterName is ExecuterName Setter
 // 执行人姓名【销毁出库时填写】
-func (r *AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) SetExecuterName(_executerName string) error {
+func (r *AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) SetExecuterName(_executerName string) error {
 	r._executerName = _executerName
 	r.Set("executer_name", _executerName)
 	return nil
 }
 
 // GetExecuterName ExecuterName Getter
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetExecuterName() string {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetExecuterName() string {
 	return r._executerName
 }
 
 // SetExecuterCode is ExecuterCode Setter
 // 执行人证件号【销毁出库时填写】
-func (r *AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) SetExecuterCode(_executerCode string) error {
+func (r *AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) SetExecuterCode(_executerCode string) error {
 	r._executerCode = _executerCode
 	r.Set("executer_code", _executerCode)
 	return nil
 }
 
 // GetExecuterCode ExecuterCode Getter
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetExecuterCode() string {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetExecuterCode() string {
 	return r._executerCode
 }
 
 // SetSuperviserName is SuperviserName Setter
 // 监督人姓名【销毁出库时填写】
-func (r *AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) SetSuperviserName(_superviserName string) error {
+func (r *AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) SetSuperviserName(_superviserName string) error {
 	r._superviserName = _superviserName
 	r.Set("superviser_name", _superviserName)
 	return nil
 }
 
 // GetSuperviserName SuperviserName Getter
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetSuperviserName() string {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetSuperviserName() string {
 	return r._superviserName
 }
 
 // SetSuperviserCode is SuperviserCode Setter
 // 监督人证件号【销毁出库时填写】
-func (r *AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) SetSuperviserCode(_superviserCode string) error {
+func (r *AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) SetSuperviserCode(_superviserCode string) error {
 	r._superviserCode = _superviserCode
 	r.Set("superviser_code", _superviserCode)
 	return nil
 }
 
 // GetSuperviserCode SuperviserCode Getter
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetSuperviserCode() string {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetSuperviserCode() string {
 	return r._superviserCode
 }
 
 // SetBillType is BillType Setter
 // 单据类型【102代表采购入库】
-func (r *AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) SetBillType(_billType int64) error {
+func (r *AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) SetBillType(_billType int64) error {
 	r._billType = _billType
 	r.Set("bill_type", _billType)
 	return nil
 }
 
 // GetBillType BillType Getter
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetBillType() int64 {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetBillType() int64 {
 	return r._billType
 }
 
 // SetPhysicType is PhysicType Setter
 // 药品类型【3普药2特药】
-func (r *AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) SetPhysicType(_physicType int64) error {
+func (r *AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) SetPhysicType(_physicType int64) error {
 	r._physicType = _physicType
 	r.Set("physic_type", _physicType)
 	return nil
 }
 
 // GetPhysicType PhysicType Getter
-func (r AlibabaalihealthdrugkytsmyxuploadinoutbillAPIRequest) GetPhysicType() int64 {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetPhysicType() int64 {
 	return r._physicType
 }

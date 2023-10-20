@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alimember"
 )
 
-// Alibabamembercheckmerchant 校验商家身份
+// AlibabaMemberCheckmerchant 校验商家身份
 // alibaba.member.checkmerchant
 //
 // 校验商家身份
-func Alibabamembercheckmerchant(clt *core.SDKClient, req *alimember.AlibabamembercheckmerchantAPIRequest, session string) (*alimember.AlibabamembercheckmerchantAPIResponse, error) {
-	var resp alimember.AlibabamembercheckmerchantAPIResponse
+func AlibabaMemberCheckmerchant(clt *core.SDKClient, req *alimember.AlibabaMemberCheckmerchantAPIRequest, session string) (*alimember.AlibabaMemberCheckmerchantAPIResponse, error) {
+	var resp alimember.AlibabaMemberCheckmerchantAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

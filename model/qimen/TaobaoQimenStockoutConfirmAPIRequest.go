@@ -6,48 +6,48 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoqimenstockoutconfirmAPIRequest 出库单确认接口 API请求
+// TaobaoQimenStockoutConfirmAPIRequest 出库单确认接口 API请求
 // taobao.qimen.stockout.confirm
 //
 // 货品出库后，WMS将状态回传给ERP
-type TaobaoqimenstockoutconfirmAPIRequest struct {
+type TaobaoQimenStockoutConfirmAPIRequest struct {
 	model.Params
 	//
-	_request *TaobaoqimenstockoutconfirmStruct
+	_request *TaobaoQimenStockoutConfirmStruct
 }
 
-// NewTaobaoqimenstockoutconfirmRequest 初始化TaobaoqimenstockoutconfirmAPIRequest对象
-func NewTaobaoqimenstockoutconfirmRequest() *TaobaoqimenstockoutconfirmAPIRequest {
-	return &TaobaoqimenstockoutconfirmAPIRequest{
+// NewTaobaoQimenStockoutConfirmRequest 初始化TaobaoQimenStockoutConfirmAPIRequest对象
+func NewTaobaoQimenStockoutConfirmRequest() *TaobaoQimenStockoutConfirmAPIRequest {
+	return &TaobaoQimenStockoutConfirmAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoqimenstockoutconfirmAPIRequest) GetApiMethodName() string {
+func (r TaobaoQimenStockoutConfirmAPIRequest) GetApiMethodName() string {
 	return "taobao.qimen.stockout.confirm"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoqimenstockoutconfirmAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoQimenStockoutConfirmAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoqimenstockoutconfirmAPIRequest) GetRawParams() model.Params {
+func (r TaobaoQimenStockoutConfirmAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRequest is Request Setter
-func (r *TaobaoqimenstockoutconfirmAPIRequest) SetRequest(_request *TaobaoqimenstockoutconfirmStruct) error {
+func (r *TaobaoQimenStockoutConfirmAPIRequest) SetRequest(_request *TaobaoQimenStockoutConfirmStruct) error {
 	r._request = _request
 	r.Set("request", _request)
 	return nil
 }
 
 // GetRequest Request Getter
-func (r TaobaoqimenstockoutconfirmAPIRequest) GetRequest() *TaobaoqimenstockoutconfirmStruct {
+func (r TaobaoQimenStockoutConfirmAPIRequest) GetRequest() *TaobaoQimenStockoutConfirmStruct {
 	return r._request
 }

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/xhotelcrm"
 )
 
-// Taobaoxhotelpotentialmemberbind 飞猪酒店商家会员绑定
+// TaobaoXhotelPotentialMemberBind 飞猪酒店商家会员绑定
 // taobao.xhotel.potential.member.bind
 //
 // 支持互通商家发起会员绑定
-func Taobaoxhotelpotentialmemberbind(clt *core.SDKClient, req *xhotelcrm.TaobaoxhotelpotentialmemberbindAPIRequest, session string) (*xhotelcrm.TaobaoxhotelpotentialmemberbindAPIResponse, error) {
-	var resp xhotelcrm.TaobaoxhotelpotentialmemberbindAPIResponse
+func TaobaoXhotelPotentialMemberBind(clt *core.SDKClient, req *xhotelcrm.TaobaoXhotelPotentialMemberBindAPIRequest, session string) (*xhotelcrm.TaobaoXhotelPotentialMemberBindAPIResponse, error) {
+	var resp xhotelcrm.TaobaoXhotelPotentialMemberBindAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

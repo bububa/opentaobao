@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascp"
 )
 
-// Alibabadchainaoxiangindustrywaybilllogisticstatusremarkadd 客服增加备注
+// AlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAdd 客服增加备注
 // alibaba.dchain.aoxiang.industry.waybill.logisticstatus.remark.add
 //
 // 客服增加备注
-func Alibabadchainaoxiangindustrywaybilllogisticstatusremarkadd(clt *core.SDKClient, req *ascp.AlibabadchainaoxiangindustrywaybilllogisticstatusremarkaddAPIRequest, session string) (*ascp.AlibabadchainaoxiangindustrywaybilllogisticstatusremarkaddAPIResponse, error) {
-	var resp ascp.AlibabadchainaoxiangindustrywaybilllogisticstatusremarkaddAPIResponse
+func AlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAdd(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIRequest, session string) (*ascp.AlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIResponse, error) {
+	var resp ascp.AlibabaDchainAoxiangIndustryWaybillLogisticstatusRemarkAddAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

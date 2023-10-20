@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/interact"
 )
 
-// Alibabainteractsensortoast toast
+// AlibabaInteractSensorToast toast
 // alibaba.interact.sensor.toast
 //
 // toast提示
-func Alibabainteractsensortoast(clt *core.SDKClient, req *interact.AlibabainteractsensortoastAPIRequest, session string) (*interact.AlibabainteractsensortoastAPIResponse, error) {
-	var resp interact.AlibabainteractsensortoastAPIResponse
+func AlibabaInteractSensorToast(clt *core.SDKClient, req *interact.AlibabaInteractSensorToastAPIRequest, session string) (*interact.AlibabaInteractSensorToastAPIResponse, error) {
+	var resp interact.AlibabaInteractSensorToastAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

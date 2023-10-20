@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaalihousenewhomevideosyncResult 结构体
-type AlibabaalihousenewhomevideosyncResult struct {
+// AlibabaAlihouseNewhomeVideoSyncResult 结构体
+type AlibabaAlihouseNewhomeVideoSyncResult struct {
 	// code
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 失败信息

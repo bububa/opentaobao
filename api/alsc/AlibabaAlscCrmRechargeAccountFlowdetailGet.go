@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-// Alibabaalsccrmrechargeaccountflowdetailget 储值流水详细
+// AlibabaAlscCrmRechargeAccountFlowdetailGet 储值流水详细
 // alibaba.alsc.crm.recharge.account.flowdetail.get
 //
 // 查询储值流水详细接口
-func Alibabaalsccrmrechargeaccountflowdetailget(clt *core.SDKClient, req *alsc.AlibabaalsccrmrechargeaccountflowdetailgetAPIRequest, session string) (*alsc.AlibabaalsccrmrechargeaccountflowdetailgetAPIResponse, error) {
-	var resp alsc.AlibabaalsccrmrechargeaccountflowdetailgetAPIResponse
+func AlibabaAlscCrmRechargeAccountFlowdetailGet(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRechargeAccountFlowdetailGetAPIRequest, session string) (*alsc.AlibabaAlscCrmRechargeAccountFlowdetailGetAPIResponse, error) {
+	var resp alsc.AlibabaAlscCrmRechargeAccountFlowdetailGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

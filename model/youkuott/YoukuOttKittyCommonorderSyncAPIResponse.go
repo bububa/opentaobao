@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YoukuottkittycommonordersyncAPIResponse 运营商一般订单同步 API返回值
+// YoukuOttKittyCommonorderSyncAPIResponse 运营商一般订单同步 API返回值
 // youku.ott.kitty.commonorder.sync
 //
 // 运营商一般订单同步
-type YoukuottkittycommonordersyncAPIResponse struct {
+type YoukuOttKittyCommonorderSyncAPIResponse struct {
 	model.CommonResponse
-	YoukuottkittycommonordersyncAPIResponseModel
+	YoukuOttKittyCommonorderSyncAPIResponseModel
 }
 
-// YoukuottkittycommonordersyncAPIResponseModel is 运营商一般订单同步 成功返回结果
-type YoukuottkittycommonordersyncAPIResponseModel struct {
+// YoukuOttKittyCommonorderSyncAPIResponseModel is 运营商一般订单同步 成功返回结果
+type YoukuOttKittyCommonorderSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"youku_ott_kitty_commonorder_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

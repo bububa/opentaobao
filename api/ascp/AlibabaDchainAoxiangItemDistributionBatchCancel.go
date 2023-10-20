@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascp"
 )
 
-// Alibabadchainaoxiangitemdistributionbatchcancel 取消商品分销
+// AlibabaDchainAoxiangItemDistributionBatchCancel 取消商品分销
 // alibaba.dchain.aoxiang.item.distribution.batch.cancel
 //
 // 取消商品分销
-func Alibabadchainaoxiangitemdistributionbatchcancel(clt *core.SDKClient, req *ascp.AlibabadchainaoxiangitemdistributionbatchcancelAPIRequest, session string) (*ascp.AlibabadchainaoxiangitemdistributionbatchcancelAPIResponse, error) {
-	var resp ascp.AlibabadchainaoxiangitemdistributionbatchcancelAPIResponse
+func AlibabaDchainAoxiangItemDistributionBatchCancel(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangItemDistributionBatchCancelAPIRequest, session string) (*ascp.AlibabaDchainAoxiangItemDistributionBatchCancelAPIResponse, error) {
+	var resp ascp.AlibabaDchainAoxiangItemDistributionBatchCancelAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

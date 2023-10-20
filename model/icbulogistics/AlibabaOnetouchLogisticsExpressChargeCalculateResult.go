@@ -1,7 +1,7 @@
 package icbulogistics
 
-// AlibabaonetouchlogisticsexpresschargecalculateResult 结构体
-type AlibabaonetouchlogisticsexpresschargecalculateResult struct {
+// AlibabaOnetouchLogisticsExpressChargeCalculateResult 结构体
+type AlibabaOnetouchLogisticsExpressChargeCalculateResult struct {
 	// 返回结果描述
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 结果对象

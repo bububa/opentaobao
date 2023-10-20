@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabacgameliteplayavatarrecordreportAPIRequest Avatar形象保存地址回调 API请求
+// AlibabaCgameLiteplayAvatarRecordReportAPIRequest Avatar形象保存地址回调 API请求
 // alibaba.cgame.liteplay.avatar.record.report
 //
 // 新氢玩, 围观互动Avatar捏脸, 形象地址保存回调
-type AlibabacgameliteplayavatarrecordreportAPIRequest struct {
+type AlibabaCgameLiteplayAvatarRecordReportAPIRequest struct {
 	model.Params
 	// 请求消息体
 	_requestDto *TopRecordCallbackRequest
 }
 
-// NewAlibabacgameliteplayavatarrecordreportRequest 初始化AlibabacgameliteplayavatarrecordreportAPIRequest对象
-func NewAlibabacgameliteplayavatarrecordreportRequest() *AlibabacgameliteplayavatarrecordreportAPIRequest {
-	return &AlibabacgameliteplayavatarrecordreportAPIRequest{
+// NewAlibabaCgameLiteplayAvatarRecordReportRequest 初始化AlibabaCgameLiteplayAvatarRecordReportAPIRequest对象
+func NewAlibabaCgameLiteplayAvatarRecordReportRequest() *AlibabaCgameLiteplayAvatarRecordReportAPIRequest {
+	return &AlibabaCgameLiteplayAvatarRecordReportAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabacgameliteplayavatarrecordreportAPIRequest) GetApiMethodName() string {
+func (r AlibabaCgameLiteplayAvatarRecordReportAPIRequest) GetApiMethodName() string {
 	return "alibaba.cgame.liteplay.avatar.record.report"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabacgameliteplayavatarrecordreportAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaCgameLiteplayAvatarRecordReportAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabacgameliteplayavatarrecordreportAPIRequest) GetRawParams() model.Params {
+func (r AlibabaCgameLiteplayAvatarRecordReportAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRequestDto is RequestDto Setter
 // 请求消息体
-func (r *AlibabacgameliteplayavatarrecordreportAPIRequest) SetRequestDto(_requestDto *TopRecordCallbackRequest) error {
+func (r *AlibabaCgameLiteplayAvatarRecordReportAPIRequest) SetRequestDto(_requestDto *TopRecordCallbackRequest) error {
 	r._requestDto = _requestDto
 	r.Set("request_dto", _requestDto)
 	return nil
 }
 
 // GetRequestDto RequestDto Getter
-func (r AlibabacgameliteplayavatarrecordreportAPIRequest) GetRequestDto() *TopRecordCallbackRequest {
+func (r AlibabaCgameLiteplayAvatarRecordReportAPIRequest) GetRequestDto() *TopRecordCallbackRequest {
 	return r._requestDto
 }

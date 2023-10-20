@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaologisticswarehousecooperationqueryAPIResponse 仓合作关系查询 API返回值
+// TaobaoLogisticsWarehouseCooperationQueryAPIResponse 仓合作关系查询 API返回值
 // taobao.logistics.warehouse.cooperation.query
 //
 // 仓合作关系查询
-type TaobaologisticswarehousecooperationqueryAPIResponse struct {
+type TaobaoLogisticsWarehouseCooperationQueryAPIResponse struct {
 	model.CommonResponse
-	TaobaologisticswarehousecooperationqueryAPIResponseModel
+	TaobaoLogisticsWarehouseCooperationQueryAPIResponseModel
 }
 
-// TaobaologisticswarehousecooperationqueryAPIResponseModel is 仓合作关系查询 成功返回结果
-type TaobaologisticswarehousecooperationqueryAPIResponseModel struct {
+// TaobaoLogisticsWarehouseCooperationQueryAPIResponseModel is 仓合作关系查询 成功返回结果
+type TaobaoLogisticsWarehouseCooperationQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_warehouse_cooperation_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

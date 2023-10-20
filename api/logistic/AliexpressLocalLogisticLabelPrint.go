@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/logistic"
 )
 
-// Aliexpresslocallogisticlabelprint 物流打印面单
+// AliexpressLocalLogisticLabelPrint 物流打印面单
 // aliexpress.local.logistic.label.print
 //
 // 物流打印面单
-func Aliexpresslocallogisticlabelprint(clt *core.SDKClient, req *logistic.AliexpresslocallogisticlabelprintAPIRequest, session string) (*logistic.AliexpresslocallogisticlabelprintAPIResponse, error) {
-	var resp logistic.AliexpresslocallogisticlabelprintAPIResponse
+func AliexpressLocalLogisticLabelPrint(clt *core.SDKClient, req *logistic.AliexpressLocalLogisticLabelPrintAPIRequest, session string) (*logistic.AliexpressLocalLogisticLabelPrintAPIResponse, error) {
+	var resp logistic.AliexpressLocalLogisticLabelPrintAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

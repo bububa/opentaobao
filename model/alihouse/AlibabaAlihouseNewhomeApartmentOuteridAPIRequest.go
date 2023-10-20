@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihousenewhomeapartmentouteridAPIRequest 公寓更新outerid API请求
+// AlibabaAlihouseNewhomeApartmentOuteridAPIRequest 公寓更新outerid API请求
 // alibaba.alihouse.newhome.apartment.outerid
 //
 // 公寓更新outerid
-type AlibabaalihousenewhomeapartmentouteridAPIRequest struct {
+type AlibabaAlihouseNewhomeApartmentOuteridAPIRequest struct {
 	model.Params
 	// 公寓outerid
 	_outerId string
@@ -18,52 +18,52 @@ type AlibabaalihousenewhomeapartmentouteridAPIRequest struct {
 	_eCode string
 }
 
-// NewAlibabaalihousenewhomeapartmentouteridRequest 初始化AlibabaalihousenewhomeapartmentouteridAPIRequest对象
-func NewAlibabaalihousenewhomeapartmentouteridRequest() *AlibabaalihousenewhomeapartmentouteridAPIRequest {
-	return &AlibabaalihousenewhomeapartmentouteridAPIRequest{
+// NewAlibabaAlihouseNewhomeApartmentOuteridRequest 初始化AlibabaAlihouseNewhomeApartmentOuteridAPIRequest对象
+func NewAlibabaAlihouseNewhomeApartmentOuteridRequest() *AlibabaAlihouseNewhomeApartmentOuteridAPIRequest {
+	return &AlibabaAlihouseNewhomeApartmentOuteridAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalihousenewhomeapartmentouteridAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlihouseNewhomeApartmentOuteridAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihouse.newhome.apartment.outerid"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalihousenewhomeapartmentouteridAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlihouseNewhomeApartmentOuteridAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalihousenewhomeapartmentouteridAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlihouseNewhomeApartmentOuteridAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOuterId is OuterId Setter
 // 公寓outerid
-func (r *AlibabaalihousenewhomeapartmentouteridAPIRequest) SetOuterId(_outerId string) error {
+func (r *AlibabaAlihouseNewhomeApartmentOuteridAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
 	r.Set("outer_id", _outerId)
 	return nil
 }
 
 // GetOuterId OuterId Getter
-func (r AlibabaalihousenewhomeapartmentouteridAPIRequest) GetOuterId() string {
+func (r AlibabaAlihouseNewhomeApartmentOuteridAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
 // SetECode is ECode Setter
 // 公寓ecode
-func (r *AlibabaalihousenewhomeapartmentouteridAPIRequest) SetECode(_eCode string) error {
+func (r *AlibabaAlihouseNewhomeApartmentOuteridAPIRequest) SetECode(_eCode string) error {
 	r._eCode = _eCode
 	r.Set("e_code", _eCode)
 	return nil
 }
 
 // GetECode ECode Getter
-func (r AlibabaalihousenewhomeapartmentouteridAPIRequest) GetECode() string {
+func (r AlibabaAlihouseNewhomeApartmentOuteridAPIRequest) GetECode() string {
 	return r._eCode
 }

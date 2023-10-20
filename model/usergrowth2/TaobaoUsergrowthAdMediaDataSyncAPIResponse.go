@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaousergrowthadmediadatasyncAPIResponse 媒体资源位投放效果数据回传 API返回值
+// TaobaoUsergrowthAdMediaDataSyncAPIResponse 媒体资源位投放效果数据回传 API返回值
 // taobao.usergrowth.ad.media.data.sync
 //
 // 创意维度广告效果数据回传
-type TaobaousergrowthadmediadatasyncAPIResponse struct {
+type TaobaoUsergrowthAdMediaDataSyncAPIResponse struct {
 	model.CommonResponse
-	TaobaousergrowthadmediadatasyncAPIResponseModel
+	TaobaoUsergrowthAdMediaDataSyncAPIResponseModel
 }
 
-// TaobaousergrowthadmediadatasyncAPIResponseModel is 媒体资源位投放效果数据回传 成功返回结果
-type TaobaousergrowthadmediadatasyncAPIResponseModel struct {
+// TaobaoUsergrowthAdMediaDataSyncAPIResponseModel is 媒体资源位投放效果数据回传 成功返回结果
+type TaobaoUsergrowthAdMediaDataSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"usergrowth_ad_media_data_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

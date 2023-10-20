@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunostvpubadmincontenttableauditquerylauncherAPIResponse 运营位管控-查询联盟一体机运营位元数据列表 API返回值
+// YunosTvpubadminContentTableauditQuerylauncherAPIResponse 运营位管控-查询联盟一体机运营位元数据列表 API返回值
 // yunos.tvpubadmin.content.tableaudit.querylauncher
 //
 // 运营位管控-查询联盟一体机运营位元数据列表
-type YunostvpubadmincontenttableauditquerylauncherAPIResponse struct {
+type YunosTvpubadminContentTableauditQuerylauncherAPIResponse struct {
 	model.CommonResponse
-	YunostvpubadmincontenttableauditquerylauncherAPIResponseModel
+	YunosTvpubadminContentTableauditQuerylauncherAPIResponseModel
 }
 
-// YunostvpubadmincontenttableauditquerylauncherAPIResponseModel is 运营位管控-查询联盟一体机运营位元数据列表 成功返回结果
-type YunostvpubadmincontenttableauditquerylauncherAPIResponseModel struct {
+// YunosTvpubadminContentTableauditQuerylauncherAPIResponseModel is 运营位管控-查询联盟一体机运营位元数据列表 成功返回结果
+type YunosTvpubadminContentTableauditQuerylauncherAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_tvpubadmin_content_tableaudit_querylauncher_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

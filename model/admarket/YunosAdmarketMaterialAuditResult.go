@@ -1,7 +1,7 @@
 package admarket
 
-// YunosadmarketmaterialauditResult 结构体
-type YunosadmarketmaterialauditResult struct {
+// YunosAdmarketMaterialAuditResult 结构体
+type YunosAdmarketMaterialAuditResult struct {
 	// 返回信息
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 	// 结果

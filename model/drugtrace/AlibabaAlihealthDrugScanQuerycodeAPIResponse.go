@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthdrugscanquerycodeAPIResponse 查询药监码对应的有效期和包装规格 API返回值
+// AlibabaAlihealthDrugScanQuerycodeAPIResponse 查询药监码对应的有效期和包装规格 API返回值
 // alibaba.alihealth.drug.scan.querycode
 //
 // 查询药监码对应的有效期和包装规格
-type AlibabaalihealthdrugscanquerycodeAPIResponse struct {
+type AlibabaAlihealthDrugScanQuerycodeAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthdrugscanquerycodeAPIResponseModel
+	AlibabaAlihealthDrugScanQuerycodeAPIResponseModel
 }
 
-// AlibabaalihealthdrugscanquerycodeAPIResponseModel is 查询药监码对应的有效期和包装规格 成功返回结果
-type AlibabaalihealthdrugscanquerycodeAPIResponseModel struct {
+// AlibabaAlihealthDrugScanQuerycodeAPIResponseModel is 查询药监码对应的有效期和包装规格 成功返回结果
+type AlibabaAlihealthDrugScanQuerycodeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drug_scan_querycode_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaalihouseexistinghomebankcardsyncResult 结构体
-type AlibabaalihouseexistinghomebankcardsyncResult struct {
+// AlibabaAlihouseExistinghomeBankcardSyncResult 结构体
+type AlibabaAlihouseExistinghomeBankcardSyncResult struct {
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// code

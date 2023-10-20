@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotrainstopagentcallbackAPIRequest 火车票车次停运信息商家回调 API请求
+// TaobaoTrainStopAgentCallbackAPIRequest 火车票车次停运信息商家回调 API请求
 // taobao.train.stop.agent.callback
 //
 // 火车票车次停运信息商家回调接口
-type TaobaotrainstopagentcallbackAPIRequest struct {
+type TaobaoTrainStopAgentCallbackAPIRequest struct {
 	model.Params
 	// 代理商车次停运信息
 	_trainAgentStopInfo *TrainAgentStopInfo
 }
 
-// NewTaobaotrainstopagentcallbackRequest 初始化TaobaotrainstopagentcallbackAPIRequest对象
-func NewTaobaotrainstopagentcallbackRequest() *TaobaotrainstopagentcallbackAPIRequest {
-	return &TaobaotrainstopagentcallbackAPIRequest{
+// NewTaobaoTrainStopAgentCallbackRequest 初始化TaobaoTrainStopAgentCallbackAPIRequest对象
+func NewTaobaoTrainStopAgentCallbackRequest() *TaobaoTrainStopAgentCallbackAPIRequest {
+	return &TaobaoTrainStopAgentCallbackAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaotrainstopagentcallbackAPIRequest) GetApiMethodName() string {
+func (r TaobaoTrainStopAgentCallbackAPIRequest) GetApiMethodName() string {
 	return "taobao.train.stop.agent.callback"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaotrainstopagentcallbackAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoTrainStopAgentCallbackAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaotrainstopagentcallbackAPIRequest) GetRawParams() model.Params {
+func (r TaobaoTrainStopAgentCallbackAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTrainAgentStopInfo is TrainAgentStopInfo Setter
 // 代理商车次停运信息
-func (r *TaobaotrainstopagentcallbackAPIRequest) SetTrainAgentStopInfo(_trainAgentStopInfo *TrainAgentStopInfo) error {
+func (r *TaobaoTrainStopAgentCallbackAPIRequest) SetTrainAgentStopInfo(_trainAgentStopInfo *TrainAgentStopInfo) error {
 	r._trainAgentStopInfo = _trainAgentStopInfo
 	r.Set("train_agent_stop_info", _trainAgentStopInfo)
 	return nil
 }
 
 // GetTrainAgentStopInfo TrainAgentStopInfo Getter
-func (r TaobaotrainstopagentcallbackAPIRequest) GetTrainAgentStopInfo() *TrainAgentStopInfo {
+func (r TaobaoTrainStopAgentCallbackAPIRequest) GetTrainAgentStopInfo() *TrainAgentStopInfo {
 	return r._trainAgentStopInfo
 }

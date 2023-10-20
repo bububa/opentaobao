@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
 
-// Taobaofenxiaodealerrequisitionordercreate 创建经销采购申请
+// TaobaoFenxiaoDealerRequisitionorderCreate 创建经销采购申请
 // taobao.fenxiao.dealer.requisitionorder.create
 //
 // 创建经销采购申请
-func Taobaofenxiaodealerrequisitionordercreate(clt *core.SDKClient, req *fenxiao.TaobaofenxiaodealerrequisitionordercreateAPIRequest, session string) (*fenxiao.TaobaofenxiaodealerrequisitionordercreateAPIResponse, error) {
-	var resp fenxiao.TaobaofenxiaodealerrequisitionordercreateAPIResponse
+func TaobaoFenxiaoDealerRequisitionorderCreate(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest, session string) (*fenxiao.TaobaoFenxiaoDealerRequisitionorderCreateAPIResponse, error) {
+	var resp fenxiao.TaobaoFenxiaoDealerRequisitionorderCreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

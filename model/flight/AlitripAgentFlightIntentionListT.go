@@ -1,7 +1,7 @@
 package flight
 
-// AlitripagentflightintentionlistT 结构体
-type AlitripagentflightintentionlistT struct {
+// AlitripAgentFlightIntentionListT 结构体
+type AlitripAgentFlightIntentionListT struct {
 	// 乘机人信息
 	PassengerItemInfos []PassengerInfosDto `json:"passenger_item_infos,omitempty" xml:"passenger_item_infos>passenger_infos_dto,omitempty"`
 	// 行李

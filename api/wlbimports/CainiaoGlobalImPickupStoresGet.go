@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wlbimports"
 )
 
-// Cainiaoglobalimpickupstoresget 首公里揽收-集货仓列表查询
+// CainiaoGlobalImPickupStoresGet 首公里揽收-集货仓列表查询
 // cainiao.global.im.pickup.stores.get
 //
 // 首公里揽收-集货仓列表查询
-func Cainiaoglobalimpickupstoresget(clt *core.SDKClient, req *wlbimports.CainiaoglobalimpickupstoresgetAPIRequest, session string) (*wlbimports.CainiaoglobalimpickupstoresgetAPIResponse, error) {
-	var resp wlbimports.CainiaoglobalimpickupstoresgetAPIResponse
+func CainiaoGlobalImPickupStoresGet(clt *core.SDKClient, req *wlbimports.CainiaoGlobalImPickupStoresGetAPIRequest, session string) (*wlbimports.CainiaoGlobalImPickupStoresGetAPIResponse, error) {
+	var resp wlbimports.CainiaoGlobalImPickupStoresGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

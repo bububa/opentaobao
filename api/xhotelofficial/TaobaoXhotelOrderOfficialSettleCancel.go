@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/xhotelofficial"
 )
 
-// Taobaoxhotelorderofficialsettlecancel 官网信用住取消结账
+// TaobaoXhotelOrderOfficialSettleCancel 官网信用住取消结账
 // taobao.xhotel.order.official.settle.cancel
 //
 // 用于官网信用住取消结账
-func Taobaoxhotelorderofficialsettlecancel(clt *core.SDKClient, req *xhotelofficial.TaobaoxhotelorderofficialsettlecancelAPIRequest, session string) (*xhotelofficial.TaobaoxhotelorderofficialsettlecancelAPIResponse, error) {
-	var resp xhotelofficial.TaobaoxhotelorderofficialsettlecancelAPIResponse
+func TaobaoXhotelOrderOfficialSettleCancel(clt *core.SDKClient, req *xhotelofficial.TaobaoXhotelOrderOfficialSettleCancelAPIRequest, session string) (*xhotelofficial.TaobaoXhotelOrderOfficialSettleCancelAPIResponse, error) {
+	var resp xhotelofficial.TaobaoXhotelOrderOfficialSettleCancelAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

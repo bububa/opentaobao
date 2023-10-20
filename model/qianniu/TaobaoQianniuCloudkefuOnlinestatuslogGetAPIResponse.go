@@ -6,18 +6,18 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoqianniucloudkefuonlinestatusloggetAPIResponse 查询客服在线状态 API返回值
+// TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponse 查询客服在线状态 API返回值
 // taobao.qianniu.cloudkefu.onlinestatuslog.get
 //
 // 按天查询客服账号的在线状态记录。如：登录，下线，挂起等
 // 有别于taobao.qianniu.cloudkefu.statuslog.get接口，这个接口可以查询30天内的流水，不需要分页查询
-type TaobaoqianniucloudkefuonlinestatusloggetAPIResponse struct {
+type TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponse struct {
 	model.CommonResponse
-	TaobaoqianniucloudkefuonlinestatusloggetAPIResponseModel
+	TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponseModel
 }
 
-// TaobaoqianniucloudkefuonlinestatusloggetAPIResponseModel is 查询客服在线状态 成功返回结果
-type TaobaoqianniucloudkefuonlinestatusloggetAPIResponseModel struct {
+// TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponseModel is 查询客服在线状态 成功返回结果
+type TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"qianniu_cloudkefu_onlinestatuslog_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

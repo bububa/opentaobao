@@ -1,7 +1,7 @@
 package alihealth2
 
-// AlibabaalihealthtracecodeplatformcodeactiveResult 结构体
-type AlibabaalihealthtracecodeplatformcodeactiveResult struct {
+// AlibabaAlihealthTracecodeplatformCodeActiveResult 结构体
+type AlibabaAlihealthTracecodeplatformCodeActiveResult struct {
 	// 状态代码
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 状态信息

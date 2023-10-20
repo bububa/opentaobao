@@ -1,7 +1,7 @@
 package ascpchannel
 
-// AlibabaascpchanneldistributorproductlistData 结构体
-type AlibabaascpchanneldistributorproductlistData struct {
+// AlibabaAscpChannelDistributorProductListData 结构体
+type AlibabaAscpChannelDistributorProductListData struct {
 	// 产品列表
 	Products []Products `json:"products,omitempty" xml:"products>products,omitempty"`
 	// 返回值总数

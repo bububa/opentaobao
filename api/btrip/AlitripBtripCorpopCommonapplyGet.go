@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/btrip"
 )
 
-// Alitripbtripcorpopcommonapplyget 商旅审批单通用查询接口
+// AlitripBtripCorpopCommonapplyGet 商旅审批单通用查询接口
 // alitrip.btrip.corpop.commonapply.get
 //
 // 商旅审批单通用查询接口
-func Alitripbtripcorpopcommonapplyget(clt *core.SDKClient, req *btrip.AlitripbtripcorpopcommonapplygetAPIRequest, session string) (*btrip.AlitripbtripcorpopcommonapplygetAPIResponse, error) {
-	var resp btrip.AlitripbtripcorpopcommonapplygetAPIResponse
+func AlitripBtripCorpopCommonapplyGet(clt *core.SDKClient, req *btrip.AlitripBtripCorpopCommonapplyGetAPIRequest, session string) (*btrip.AlitripBtripCorpopCommonapplyGetAPIResponse, error) {
+	var resp btrip.AlitripBtripCorpopCommonapplyGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

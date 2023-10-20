@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoitemcatsgetAPIResponse 获取后台供卖家发布商品的标准商品类目 API返回值
+// TaobaoItemcatsGetAPIResponse 获取后台供卖家发布商品的标准商品类目 API返回值
 // taobao.itemcats.get
 //
 // 获取后台供卖家发布商品的标准商品类目。
-type TaobaoitemcatsgetAPIResponse struct {
+type TaobaoItemcatsGetAPIResponse struct {
 	model.CommonResponse
-	TaobaoitemcatsgetAPIResponseModel
+	TaobaoItemcatsGetAPIResponseModel
 }
 
-// TaobaoitemcatsgetAPIResponseModel is 获取后台供卖家发布商品的标准商品类目 成功返回结果
-type TaobaoitemcatsgetAPIResponseModel struct {
+// TaobaoItemcatsGetAPIResponseModel is 获取后台供卖家发布商品的标准商品类目 成功返回结果
+type TaobaoItemcatsGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"itemcats_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

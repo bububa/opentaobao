@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdkelemebillgetAPIResponse 饿了么日维度对账单查询 API返回值
+// AlibabaWdkElemeBillGetAPIResponse 饿了么日维度对账单查询 API返回值
 // alibaba.wdk.eleme.bill.get
 //
 // 查询饿了么日维度对账单信息
-type AlibabawdkelemebillgetAPIResponse struct {
+type AlibabaWdkElemeBillGetAPIResponse struct {
 	model.CommonResponse
-	AlibabawdkelemebillgetAPIResponseModel
+	AlibabaWdkElemeBillGetAPIResponseModel
 }
 
-// AlibabawdkelemebillgetAPIResponseModel is 饿了么日维度对账单查询 成功返回结果
-type AlibabawdkelemebillgetAPIResponseModel struct {
+// AlibabaWdkElemeBillGetAPIResponseModel is 饿了么日维度对账单查询 成功返回结果
+type AlibabaWdkElemeBillGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_eleme_bill_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
-	Result *AlibabawdkelemebillgetApiResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaWdkElemeBillGetApiResult `json:"result,omitempty" xml:"result,omitempty"`
 }

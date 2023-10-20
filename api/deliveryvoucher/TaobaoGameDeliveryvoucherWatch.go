@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/deliveryvoucher"
 )
 
-// Taobaogamedeliveryvoucherwatch 监控预约数据
+// TaobaoGameDeliveryvoucherWatch 监控预约数据
 // taobao.game.deliveryvoucher.watch
 //
 // 监控预约数据
-func Taobaogamedeliveryvoucherwatch(clt *core.SDKClient, req *deliveryvoucher.TaobaogamedeliveryvoucherwatchAPIRequest, session string) (*deliveryvoucher.TaobaogamedeliveryvoucherwatchAPIResponse, error) {
-	var resp deliveryvoucher.TaobaogamedeliveryvoucherwatchAPIResponse
+func TaobaoGameDeliveryvoucherWatch(clt *core.SDKClient, req *deliveryvoucher.TaobaoGameDeliveryvoucherWatchAPIRequest, session string) (*deliveryvoucher.TaobaoGameDeliveryvoucherWatchAPIResponse, error) {
+	var resp deliveryvoucher.TaobaoGameDeliveryvoucherWatchAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

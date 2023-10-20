@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoglobalimpickupbigbagcontentcancelAPIResponse 进口大包取消 API返回值
+// CainiaoGlobalImPickupBigbagContentCancelAPIResponse 进口大包取消 API返回值
 // cainiao.global.im.pickup.bigbag.content.cancel
 //
 // 进口大包取消
-type CainiaoglobalimpickupbigbagcontentcancelAPIResponse struct {
+type CainiaoGlobalImPickupBigbagContentCancelAPIResponse struct {
 	model.CommonResponse
-	CainiaoglobalimpickupbigbagcontentcancelAPIResponseModel
+	CainiaoGlobalImPickupBigbagContentCancelAPIResponseModel
 }
 
-// CainiaoglobalimpickupbigbagcontentcancelAPIResponseModel is 进口大包取消 成功返回结果
-type CainiaoglobalimpickupbigbagcontentcancelAPIResponseModel struct {
+// CainiaoGlobalImPickupBigbagContentCancelAPIResponseModel is 进口大包取消 成功返回结果
+type CainiaoGlobalImPickupBigbagContentCancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_global_im_pickup_bigbag_content_cancel_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

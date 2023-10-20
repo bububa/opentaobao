@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaaliqinflowwalletchargeruleAPIRequest 流量钱包直充（根据号码归属地省份路由） API请求
+// AlibabaAliqinFlowWalletChargeRuleAPIRequest 流量钱包直充（根据号码归属地省份路由） API请求
 // alibaba.aliqin.flow.wallet.charge.rule
 //
 // 流量钱包直充（根据号码归属地省份路由）
-type AlibabaaliqinflowwalletchargeruleAPIRequest struct {
+type AlibabaAliqinFlowWalletChargeRuleAPIRequest struct {
 	model.Params
 	// 号码
 	_phoneNum string
@@ -24,91 +24,91 @@ type AlibabaaliqinflowwalletchargeruleAPIRequest struct {
 	_channelId string
 }
 
-// NewAlibabaaliqinflowwalletchargeruleRequest 初始化AlibabaaliqinflowwalletchargeruleAPIRequest对象
-func NewAlibabaaliqinflowwalletchargeruleRequest() *AlibabaaliqinflowwalletchargeruleAPIRequest {
-	return &AlibabaaliqinflowwalletchargeruleAPIRequest{
+// NewAlibabaAliqinFlowWalletChargeRuleRequest 初始化AlibabaAliqinFlowWalletChargeRuleAPIRequest对象
+func NewAlibabaAliqinFlowWalletChargeRuleRequest() *AlibabaAliqinFlowWalletChargeRuleAPIRequest {
+	return &AlibabaAliqinFlowWalletChargeRuleAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaaliqinflowwalletchargeruleAPIRequest) GetApiMethodName() string {
+func (r AlibabaAliqinFlowWalletChargeRuleAPIRequest) GetApiMethodName() string {
 	return "alibaba.aliqin.flow.wallet.charge.rule"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaaliqinflowwalletchargeruleAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAliqinFlowWalletChargeRuleAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaaliqinflowwalletchargeruleAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAliqinFlowWalletChargeRuleAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetPhoneNum is PhoneNum Setter
 // 号码
-func (r *AlibabaaliqinflowwalletchargeruleAPIRequest) SetPhoneNum(_phoneNum string) error {
+func (r *AlibabaAliqinFlowWalletChargeRuleAPIRequest) SetPhoneNum(_phoneNum string) error {
 	r._phoneNum = _phoneNum
 	r.Set("phone_num", _phoneNum)
 	return nil
 }
 
 // GetPhoneNum PhoneNum Getter
-func (r AlibabaaliqinflowwalletchargeruleAPIRequest) GetPhoneNum() string {
+func (r AlibabaAliqinFlowWalletChargeRuleAPIRequest) GetPhoneNum() string {
 	return r._phoneNum
 }
 
 // SetReason is Reason Setter
 // 原因
-func (r *AlibabaaliqinflowwalletchargeruleAPIRequest) SetReason(_reason string) error {
+func (r *AlibabaAliqinFlowWalletChargeRuleAPIRequest) SetReason(_reason string) error {
 	r._reason = _reason
 	r.Set("reason", _reason)
 	return nil
 }
 
 // GetReason Reason Getter
-func (r AlibabaaliqinflowwalletchargeruleAPIRequest) GetReason() string {
+func (r AlibabaAliqinFlowWalletChargeRuleAPIRequest) GetReason() string {
 	return r._reason
 }
 
 // SetGradeId is GradeId Setter
 // 档位id
-func (r *AlibabaaliqinflowwalletchargeruleAPIRequest) SetGradeId(_gradeId string) error {
+func (r *AlibabaAliqinFlowWalletChargeRuleAPIRequest) SetGradeId(_gradeId string) error {
 	r._gradeId = _gradeId
 	r.Set("grade_id", _gradeId)
 	return nil
 }
 
 // GetGradeId GradeId Getter
-func (r AlibabaaliqinflowwalletchargeruleAPIRequest) GetGradeId() string {
+func (r AlibabaAliqinFlowWalletChargeRuleAPIRequest) GetGradeId() string {
 	return r._gradeId
 }
 
 // SetOutRechargeId is OutRechargeId Setter
 // 唯一流水号
-func (r *AlibabaaliqinflowwalletchargeruleAPIRequest) SetOutRechargeId(_outRechargeId string) error {
+func (r *AlibabaAliqinFlowWalletChargeRuleAPIRequest) SetOutRechargeId(_outRechargeId string) error {
 	r._outRechargeId = _outRechargeId
 	r.Set("out_recharge_id", _outRechargeId)
 	return nil
 }
 
 // GetOutRechargeId OutRechargeId Getter
-func (r AlibabaaliqinflowwalletchargeruleAPIRequest) GetOutRechargeId() string {
+func (r AlibabaAliqinFlowWalletChargeRuleAPIRequest) GetOutRechargeId() string {
 	return r._outRechargeId
 }
 
 // SetChannelId is ChannelId Setter
 // 渠道id（运营分配）
-func (r *AlibabaaliqinflowwalletchargeruleAPIRequest) SetChannelId(_channelId string) error {
+func (r *AlibabaAliqinFlowWalletChargeRuleAPIRequest) SetChannelId(_channelId string) error {
 	r._channelId = _channelId
 	r.Set("channel_id", _channelId)
 	return nil
 }
 
 // GetChannelId ChannelId Getter
-func (r AlibabaaliqinflowwalletchargeruleAPIRequest) GetChannelId() string {
+func (r AlibabaAliqinFlowWalletChargeRuleAPIRequest) GetChannelId() string {
 	return r._channelId
 }

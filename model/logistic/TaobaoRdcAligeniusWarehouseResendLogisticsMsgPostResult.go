@@ -1,7 +1,7 @@
 package logistic
 
-// TaobaordcaligeniuswarehouseresendlogisticsmsgpostResult 结构体
-type TaobaordcaligeniuswarehouseresendlogisticsmsgpostResult struct {
+// TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostResult 结构体
+type TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostResult struct {
 	// 错误信息
 	FailInfo string `json:"fail_info,omitempty" xml:"fail_info,omitempty"`
 	// 错误code

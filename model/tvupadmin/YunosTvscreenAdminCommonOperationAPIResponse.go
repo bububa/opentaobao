@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunostvscreenadmincommonoperationAPIResponse 一体机桌面通用接口 API返回值
+// YunosTvscreenAdminCommonOperationAPIResponse 一体机桌面通用接口 API返回值
 // yunos.tvscreen.admin.common.operation
 //
 // 一体机桌面通用接口
-type YunostvscreenadmincommonoperationAPIResponse struct {
+type YunosTvscreenAdminCommonOperationAPIResponse struct {
 	model.CommonResponse
-	YunostvscreenadmincommonoperationAPIResponseModel
+	YunosTvscreenAdminCommonOperationAPIResponseModel
 }
 
-// YunostvscreenadmincommonoperationAPIResponseModel is 一体机桌面通用接口 成功返回结果
-type YunostvscreenadmincommonoperationAPIResponseModel struct {
+// YunosTvscreenAdminCommonOperationAPIResponseModel is 一体机桌面通用接口 成功返回结果
+type YunosTvscreenAdminCommonOperationAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_tvscreen_admin_common_operation_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
-	Result *YunostvscreenadmincommonoperationTopResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *YunosTvscreenAdminCommonOperationTopResult `json:"result,omitempty" xml:"result,omitempty"`
 }

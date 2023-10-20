@@ -1,7 +1,7 @@
 package user
 
-// TaobaoalitripflightchangeaddResultDo 结构体
-type TaobaoalitripflightchangeaddResultDo struct {
+// TaobaoAlitripFlightchangeAddResultDo 结构体
+type TaobaoAlitripFlightchangeAddResultDo struct {
 	// 错误信息
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// 错误码

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabainteractsensorgyroAPIResponse 陀螺仪 API返回值
+// AlibabaInteractSensorGyroAPIResponse 陀螺仪 API返回值
 // alibaba.interact.sensor.gyro
 //
 // 客户端陀螺仪
-type AlibabainteractsensorgyroAPIResponse struct {
+type AlibabaInteractSensorGyroAPIResponse struct {
 	model.CommonResponse
-	AlibabainteractsensorgyroAPIResponseModel
+	AlibabaInteractSensorGyroAPIResponseModel
 }
 
-// AlibabainteractsensorgyroAPIResponseModel is 陀螺仪 成功返回结果
-type AlibabainteractsensorgyroAPIResponseModel struct {
+// AlibabaInteractSensorGyroAPIResponseModel is 陀螺仪 成功返回结果
+type AlibabaInteractSensorGyroAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_sensor_gyro_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

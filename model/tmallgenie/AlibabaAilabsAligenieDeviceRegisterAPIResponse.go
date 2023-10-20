@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaailabsaligeniedeviceregisterAPIResponse 天猫精灵开放平台获取设备秘钥 API返回值
+// AlibabaAilabsAligenieDeviceRegisterAPIResponse 天猫精灵开放平台获取设备秘钥 API返回值
 // alibaba.ailabs.aligenie.device.register
 //
 // 向天猫精灵inside平台注册设备mac地址，并获取设备的唯一密钥
-type AlibabaailabsaligeniedeviceregisterAPIResponse struct {
+type AlibabaAilabsAligenieDeviceRegisterAPIResponse struct {
 	model.CommonResponse
-	AlibabaailabsaligeniedeviceregisterAPIResponseModel
+	AlibabaAilabsAligenieDeviceRegisterAPIResponseModel
 }
 
-// AlibabaailabsaligeniedeviceregisterAPIResponseModel is 天猫精灵开放平台获取设备秘钥 成功返回结果
-type AlibabaailabsaligeniedeviceregisterAPIResponseModel struct {
+// AlibabaAilabsAligenieDeviceRegisterAPIResponseModel is 天猫精灵开放平台获取设备秘钥 成功返回结果
+type AlibabaAilabsAligenieDeviceRegisterAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailabs_aligenie_device_register_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

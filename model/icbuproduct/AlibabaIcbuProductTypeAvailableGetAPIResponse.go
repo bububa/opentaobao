@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaicbuproducttypeavailablegetAPIResponse 商家发品类型查询 API返回值
+// AlibabaIcbuProductTypeAvailableGetAPIResponse 商家发品类型查询 API返回值
 // alibaba.icbu.product.type.available.get
 //
 // 查询商家发品权限
-type AlibabaicbuproducttypeavailablegetAPIResponse struct {
+type AlibabaIcbuProductTypeAvailableGetAPIResponse struct {
 	model.CommonResponse
-	AlibabaicbuproducttypeavailablegetAPIResponseModel
+	AlibabaIcbuProductTypeAvailableGetAPIResponseModel
 }
 
-// AlibabaicbuproducttypeavailablegetAPIResponseModel is 商家发品类型查询 成功返回结果
-type AlibabaicbuproducttypeavailablegetAPIResponseModel struct {
+// AlibabaIcbuProductTypeAvailableGetAPIResponseModel is 商家发品类型查询 成功返回结果
+type AlibabaIcbuProductTypeAvailableGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_icbu_product_type_available_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

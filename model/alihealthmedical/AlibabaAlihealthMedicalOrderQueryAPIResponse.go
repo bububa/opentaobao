@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthmedicalorderqueryAPIResponse 三方机构查询订单详情接口 API返回值
+// AlibabaAlihealthMedicalOrderQueryAPIResponse 三方机构查询订单详情接口 API返回值
 // alibaba.alihealth.medical.order.query
 //
 // 查询订单详情，包括评价
-type AlibabaalihealthmedicalorderqueryAPIResponse struct {
+type AlibabaAlihealthMedicalOrderQueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthmedicalorderqueryAPIResponseModel
+	AlibabaAlihealthMedicalOrderQueryAPIResponseModel
 }
 
-// AlibabaalihealthmedicalorderqueryAPIResponseModel is 三方机构查询订单详情接口 成功返回结果
-type AlibabaalihealthmedicalorderqueryAPIResponseModel struct {
+// AlibabaAlihealthMedicalOrderQueryAPIResponseModel is 三方机构查询订单详情接口 成功返回结果
+type AlibabaAlihealthMedicalOrderQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_medical_order_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

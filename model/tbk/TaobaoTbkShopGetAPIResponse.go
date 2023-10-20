@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotbkshopgetAPIResponse 淘宝客-推广者-店铺搜索 API返回值
+// TaobaoTbkShopGetAPIResponse 淘宝客-推广者-店铺搜索 API返回值
 // taobao.tbk.shop.get
 //
 // 淘宝客店铺查询
-type TaobaotbkshopgetAPIResponse struct {
+type TaobaoTbkShopGetAPIResponse struct {
 	model.CommonResponse
-	TaobaotbkshopgetAPIResponseModel
+	TaobaoTbkShopGetAPIResponseModel
 }
 
-// TaobaotbkshopgetAPIResponseModel is 淘宝客-推广者-店铺搜索 成功返回结果
-type TaobaotbkshopgetAPIResponseModel struct {
+// TaobaoTbkShopGetAPIResponseModel is 淘宝客-推广者-店铺搜索 成功返回结果
+type TaobaoTbkShopGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tbk_shop_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

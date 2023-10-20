@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosimbabidwordpricetoolsAPIResponse 关键词出价指导工具（新） API返回值
+// TaobaoSimbaBidwordPricetoolsAPIResponse 关键词出价指导工具（新） API返回值
 // taobao.simba.bidword.pricetools
 //
 // 关键词出价指导工具（新）
-type TaobaosimbabidwordpricetoolsAPIResponse struct {
+type TaobaoSimbaBidwordPricetoolsAPIResponse struct {
 	model.CommonResponse
-	TaobaosimbabidwordpricetoolsAPIResponseModel
+	TaobaoSimbaBidwordPricetoolsAPIResponseModel
 }
 
-// TaobaosimbabidwordpricetoolsAPIResponseModel is 关键词出价指导工具（新） 成功返回结果
-type TaobaosimbabidwordpricetoolsAPIResponseModel struct {
+// TaobaoSimbaBidwordPricetoolsAPIResponseModel is 关键词出价指导工具（新） 成功返回结果
+type TaobaoSimbaBidwordPricetoolsAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_bidword_pricetools_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

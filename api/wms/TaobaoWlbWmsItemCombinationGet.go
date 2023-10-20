@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wms"
 )
 
-// Taobaowlbwmsitemcombinationget 查询组合商品的组合关系
+// TaobaoWlbWmsItemCombinationGet 查询组合商品的组合关系
 // taobao.wlb.wms.item.combination.get
 //
 // 查询组合商品的组合关系
-func Taobaowlbwmsitemcombinationget(clt *core.SDKClient, req *wms.TaobaowlbwmsitemcombinationgetAPIRequest, session string) (*wms.TaobaowlbwmsitemcombinationgetAPIResponse, error) {
-	var resp wms.TaobaowlbwmsitemcombinationgetAPIResponse
+func TaobaoWlbWmsItemCombinationGet(clt *core.SDKClient, req *wms.TaobaoWlbWmsItemCombinationGetAPIRequest, session string) (*wms.TaobaoWlbWmsItemCombinationGetAPIResponse, error) {
+	var resp wms.TaobaoWlbWmsItemCombinationGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

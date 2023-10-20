@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallhkclearanceordergetAPIResponse 天猫国际订单清关信息 API返回值
+// TmallHkClearanceOrderGetAPIResponse 天猫国际订单清关信息 API返回值
 // tmall.hk.clearance.order.get
 //
 // 天猫国际订单清关信息
-type TmallhkclearanceordergetAPIResponse struct {
+type TmallHkClearanceOrderGetAPIResponse struct {
 	model.CommonResponse
-	TmallhkclearanceordergetAPIResponseModel
+	TmallHkClearanceOrderGetAPIResponseModel
 }
 
-// TmallhkclearanceordergetAPIResponseModel is 天猫国际订单清关信息 成功返回结果
-type TmallhkclearanceordergetAPIResponseModel struct {
+// TmallHkClearanceOrderGetAPIResponseModel is 天猫国际订单清关信息 成功返回结果
+type TmallHkClearanceOrderGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_hk_clearance_order_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

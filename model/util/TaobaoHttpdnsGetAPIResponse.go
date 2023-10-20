@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaohttpdnsgetAPIResponse TOPDNS配置 API返回值
+// TaobaoHttpdnsGetAPIResponse TOPDNS配置 API返回值
 // taobao.httpdns.get
 //
 // 获取TOP DNS配置
-type TaobaohttpdnsgetAPIResponse struct {
+type TaobaoHttpdnsGetAPIResponse struct {
 	model.CommonResponse
-	TaobaohttpdnsgetAPIResponseModel
+	TaobaoHttpdnsGetAPIResponseModel
 }
 
-// TaobaohttpdnsgetAPIResponseModel is TOPDNS配置 成功返回结果
-type TaobaohttpdnsgetAPIResponseModel struct {
+// TaobaoHttpdnsGetAPIResponseModel is TOPDNS配置 成功返回结果
+type TaobaoHttpdnsGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"httpdns_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

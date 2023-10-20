@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaservicecenteridentifytaskcreateAPIResponse 创建核销单 API返回值
+// AlibabaServicecenterIdentifytaskCreateAPIResponse 创建核销单 API返回值
 // alibaba.servicecenter.identifytask.create
 //
 // 创建核销单
-type AlibabaservicecenteridentifytaskcreateAPIResponse struct {
+type AlibabaServicecenterIdentifytaskCreateAPIResponse struct {
 	model.CommonResponse
-	AlibabaservicecenteridentifytaskcreateAPIResponseModel
+	AlibabaServicecenterIdentifytaskCreateAPIResponseModel
 }
 
-// AlibabaservicecenteridentifytaskcreateAPIResponseModel is 创建核销单 成功返回结果
-type AlibabaservicecenteridentifytaskcreateAPIResponseModel struct {
+// AlibabaServicecenterIdentifytaskCreateAPIResponseModel is 创建核销单 成功返回结果
+type AlibabaServicecenterIdentifytaskCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_servicecenter_identifytask_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

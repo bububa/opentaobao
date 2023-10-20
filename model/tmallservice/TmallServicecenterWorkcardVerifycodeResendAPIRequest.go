@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallservicecenterworkcardverifycoderesendAPIRequest 重发核销码 API请求
+// TmallServicecenterWorkcardVerifycodeResendAPIRequest 重发核销码 API请求
 // tmall.servicecenter.workcard.verifycode.resend
 //
 // 重发核销码
-type TmallservicecenterworkcardverifycoderesendAPIRequest struct {
+type TmallServicecenterWorkcardVerifycodeResendAPIRequest struct {
 	model.Params
 	// 工单id
 	_workcardId int64
@@ -18,52 +18,52 @@ type TmallservicecenterworkcardverifycoderesendAPIRequest struct {
 	_serviceStoreId int64
 }
 
-// NewTmallservicecenterworkcardverifycoderesendRequest 初始化TmallservicecenterworkcardverifycoderesendAPIRequest对象
-func NewTmallservicecenterworkcardverifycoderesendRequest() *TmallservicecenterworkcardverifycoderesendAPIRequest {
-	return &TmallservicecenterworkcardverifycoderesendAPIRequest{
+// NewTmallServicecenterWorkcardVerifycodeResendRequest 初始化TmallServicecenterWorkcardVerifycodeResendAPIRequest对象
+func NewTmallServicecenterWorkcardVerifycodeResendRequest() *TmallServicecenterWorkcardVerifycodeResendAPIRequest {
+	return &TmallServicecenterWorkcardVerifycodeResendAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallservicecenterworkcardverifycoderesendAPIRequest) GetApiMethodName() string {
+func (r TmallServicecenterWorkcardVerifycodeResendAPIRequest) GetApiMethodName() string {
 	return "tmall.servicecenter.workcard.verifycode.resend"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallservicecenterworkcardverifycoderesendAPIRequest) GetApiParams(params url.Values) {
+func (r TmallServicecenterWorkcardVerifycodeResendAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallservicecenterworkcardverifycoderesendAPIRequest) GetRawParams() model.Params {
+func (r TmallServicecenterWorkcardVerifycodeResendAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetWorkcardId is WorkcardId Setter
 // 工单id
-func (r *TmallservicecenterworkcardverifycoderesendAPIRequest) SetWorkcardId(_workcardId int64) error {
+func (r *TmallServicecenterWorkcardVerifycodeResendAPIRequest) SetWorkcardId(_workcardId int64) error {
 	r._workcardId = _workcardId
 	r.Set("workcard_id", _workcardId)
 	return nil
 }
 
 // GetWorkcardId WorkcardId Getter
-func (r TmallservicecenterworkcardverifycoderesendAPIRequest) GetWorkcardId() int64 {
+func (r TmallServicecenterWorkcardVerifycodeResendAPIRequest) GetWorkcardId() int64 {
 	return r._workcardId
 }
 
 // SetServiceStoreId is ServiceStoreId Setter
 // 门店/网点id
-func (r *TmallservicecenterworkcardverifycoderesendAPIRequest) SetServiceStoreId(_serviceStoreId int64) error {
+func (r *TmallServicecenterWorkcardVerifycodeResendAPIRequest) SetServiceStoreId(_serviceStoreId int64) error {
 	r._serviceStoreId = _serviceStoreId
 	r.Set("service_store_id", _serviceStoreId)
 	return nil
 }
 
 // GetServiceStoreId ServiceStoreId Getter
-func (r TmallservicecenterworkcardverifycoderesendAPIRequest) GetServiceStoreId() int64 {
+func (r TmallServicecenterWorkcardVerifycodeResendAPIRequest) GetServiceStoreId() int64 {
 	return r._serviceStoreId
 }

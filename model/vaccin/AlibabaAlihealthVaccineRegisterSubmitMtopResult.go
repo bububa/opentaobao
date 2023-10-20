@@ -1,7 +1,7 @@
 package vaccin
 
-// AlibabaalihealthvaccineregistersubmitMtopResult 结构体
-type AlibabaalihealthvaccineregistersubmitMtopResult struct {
+// AlibabaAlihealthVaccineRegisterSubmitMtopResult 结构体
+type AlibabaAlihealthVaccineRegisterSubmitMtopResult struct {
 	// 错误码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 错误提示

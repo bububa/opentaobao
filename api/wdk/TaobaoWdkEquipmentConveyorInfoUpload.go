@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// Taobaowdkequipmentconveyorinfoupload 五道口仓库悬挂链信息上报
+// TaobaoWdkEquipmentConveyorInfoUpload 五道口仓库悬挂链信息上报
 // taobao.wdk.equipment.conveyor.info.upload
 //
 // 五道口仓库悬挂链信息上传
-func Taobaowdkequipmentconveyorinfoupload(clt *core.SDKClient, req *wdk.TaobaowdkequipmentconveyorinfouploadAPIRequest, session string) (*wdk.TaobaowdkequipmentconveyorinfouploadAPIResponse, error) {
-	var resp wdk.TaobaowdkequipmentconveyorinfouploadAPIResponse
+func TaobaoWdkEquipmentConveyorInfoUpload(clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentConveyorInfoUploadAPIRequest, session string) (*wdk.TaobaoWdkEquipmentConveyorInfoUploadAPIResponse, error) {
+	var resp wdk.TaobaoWdkEquipmentConveyorInfoUploadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

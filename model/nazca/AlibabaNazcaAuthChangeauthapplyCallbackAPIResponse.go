@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabanazcaauthchangeauthapplycallbackAPIResponse 变更认证回调 API返回值
+// AlibabaNazcaAuthChangeauthapplyCallbackAPIResponse 变更认证回调 API返回值
 // alibaba.nazca.auth.changeauthapply.callback
 //
 // 变更认证回调
-type AlibabanazcaauthchangeauthapplycallbackAPIResponse struct {
+type AlibabaNazcaAuthChangeauthapplyCallbackAPIResponse struct {
 	model.CommonResponse
-	AlibabanazcaauthchangeauthapplycallbackAPIResponseModel
+	AlibabaNazcaAuthChangeauthapplyCallbackAPIResponseModel
 }
 
-// AlibabanazcaauthchangeauthapplycallbackAPIResponseModel is 变更认证回调 成功返回结果
-type AlibabanazcaauthchangeauthapplycallbackAPIResponseModel struct {
+// AlibabaNazcaAuthChangeauthapplyCallbackAPIResponseModel is 变更认证回调 成功返回结果
+type AlibabaNazcaAuthChangeauthapplyCallbackAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_nazca_auth_changeauthapply_callback_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

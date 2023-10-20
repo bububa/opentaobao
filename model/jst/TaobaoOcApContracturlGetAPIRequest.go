@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoocapcontracturlgetAPIRequest 按用户获取支付宝代扣协议链接地址 API请求
+// TaobaoOcApContracturlGetAPIRequest 按用户获取支付宝代扣协议链接地址 API请求
 // taobao.oc.ap.contracturl.get
 //
 // 按用户获取支付宝代扣协议链接地址
-type TaobaoocapcontracturlgetAPIRequest struct {
+type TaobaoOcApContracturlGetAPIRequest struct {
 	model.Params
 }
 
-// NewTaobaoocapcontracturlgetRequest 初始化TaobaoocapcontracturlgetAPIRequest对象
-func NewTaobaoocapcontracturlgetRequest() *TaobaoocapcontracturlgetAPIRequest {
-	return &TaobaoocapcontracturlgetAPIRequest{
+// NewTaobaoOcApContracturlGetRequest 初始化TaobaoOcApContracturlGetAPIRequest对象
+func NewTaobaoOcApContracturlGetRequest() *TaobaoOcApContracturlGetAPIRequest {
+	return &TaobaoOcApContracturlGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoocapcontracturlgetAPIRequest) GetApiMethodName() string {
+func (r TaobaoOcApContracturlGetAPIRequest) GetApiMethodName() string {
 	return "taobao.oc.ap.contracturl.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoocapcontracturlgetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoOcApContracturlGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoocapcontracturlgetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoOcApContracturlGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaominiappeleuserinfogetAPIRequest 获取饿了么用户信息 API请求
+// TaobaoMiniappEleuserinfoGetAPIRequest 获取饿了么用户信息 API请求
 // taobao.miniapp.eleuserinfo.get
 //
 // 获取饿了么用户信息
-type TaobaominiappeleuserinfogetAPIRequest struct {
+type TaobaoMiniappEleuserinfoGetAPIRequest struct {
 	model.Params
 	// 怪兽业务方
 	_bizScence string
 }
 
-// NewTaobaominiappeleuserinfogetRequest 初始化TaobaominiappeleuserinfogetAPIRequest对象
-func NewTaobaominiappeleuserinfogetRequest() *TaobaominiappeleuserinfogetAPIRequest {
-	return &TaobaominiappeleuserinfogetAPIRequest{
+// NewTaobaoMiniappEleuserinfoGetRequest 初始化TaobaoMiniappEleuserinfoGetAPIRequest对象
+func NewTaobaoMiniappEleuserinfoGetRequest() *TaobaoMiniappEleuserinfoGetAPIRequest {
+	return &TaobaoMiniappEleuserinfoGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaominiappeleuserinfogetAPIRequest) GetApiMethodName() string {
+func (r TaobaoMiniappEleuserinfoGetAPIRequest) GetApiMethodName() string {
 	return "taobao.miniapp.eleuserinfo.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaominiappeleuserinfogetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoMiniappEleuserinfoGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaominiappeleuserinfogetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoMiniappEleuserinfoGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetBizScence is BizScence Setter
 // 怪兽业务方
-func (r *TaobaominiappeleuserinfogetAPIRequest) SetBizScence(_bizScence string) error {
+func (r *TaobaoMiniappEleuserinfoGetAPIRequest) SetBizScence(_bizScence string) error {
 	r._bizScence = _bizScence
 	r.Set("biz_scence", _bizScence)
 	return nil
 }
 
 // GetBizScence BizScence Getter
-func (r TaobaominiappeleuserinfogetAPIRequest) GetBizScence() string {
+func (r TaobaoMiniappEleuserinfoGetAPIRequest) GetBizScence() string {
 	return r._bizScence
 }

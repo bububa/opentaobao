@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripbtripinvoicesettingaddAPIRequest 发票设置 API请求
+// AlitripBtripInvoiceSettingAddAPIRequest 发票设置 API请求
 // alitrip.btrip.invoice.setting.add
 //
 // 发票设置
-type AlitripbtripinvoicesettingaddAPIRequest struct {
+type AlitripBtripInvoiceSettingAddAPIRequest struct {
 	model.Params
 	// 请求对象
 	_rq *OpenInvoiceModifyAndNewRq
 }
 
-// NewAlitripbtripinvoicesettingaddRequest 初始化AlitripbtripinvoicesettingaddAPIRequest对象
-func NewAlitripbtripinvoicesettingaddRequest() *AlitripbtripinvoicesettingaddAPIRequest {
-	return &AlitripbtripinvoicesettingaddAPIRequest{
+// NewAlitripBtripInvoiceSettingAddRequest 初始化AlitripBtripInvoiceSettingAddAPIRequest对象
+func NewAlitripBtripInvoiceSettingAddRequest() *AlitripBtripInvoiceSettingAddAPIRequest {
+	return &AlitripBtripInvoiceSettingAddAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripbtripinvoicesettingaddAPIRequest) GetApiMethodName() string {
+func (r AlitripBtripInvoiceSettingAddAPIRequest) GetApiMethodName() string {
 	return "alitrip.btrip.invoice.setting.add"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripbtripinvoicesettingaddAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripBtripInvoiceSettingAddAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripbtripinvoicesettingaddAPIRequest) GetRawParams() model.Params {
+func (r AlitripBtripInvoiceSettingAddAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRq is Rq Setter
 // 请求对象
-func (r *AlitripbtripinvoicesettingaddAPIRequest) SetRq(_rq *OpenInvoiceModifyAndNewRq) error {
+func (r *AlitripBtripInvoiceSettingAddAPIRequest) SetRq(_rq *OpenInvoiceModifyAndNewRq) error {
 	r._rq = _rq
 	r.Set("rq", _rq)
 	return nil
 }
 
 // GetRq Rq Getter
-func (r AlitripbtripinvoicesettingaddAPIRequest) GetRq() *OpenInvoiceModifyAndNewRq {
+func (r AlitripBtripInvoiceSettingAddAPIRequest) GetRq() *OpenInvoiceModifyAndNewRq {
 	return r._rq
 }

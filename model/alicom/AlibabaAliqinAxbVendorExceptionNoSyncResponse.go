@@ -1,7 +1,7 @@
 package alicom
 
-// AlibabaaliqinaxbvendorexceptionnosyncResponse 结构体
-type AlibabaaliqinaxbvendorexceptionnosyncResponse struct {
+// AlibabaAliqinAxbVendorExceptionNoSyncResponse 结构体
+type AlibabaAliqinAxbVendorExceptionNoSyncResponse struct {
 	// 错误信息,OK代表受理成功
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 错误码,OK代表受理成功

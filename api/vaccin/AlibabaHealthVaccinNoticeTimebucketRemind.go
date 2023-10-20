@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/vaccin"
 )
 
-// Alibabahealthvaccinnoticetimebucketremind 疫苗预约时间段提醒
+// AlibabaHealthVaccinNoticeTimebucketRemind 疫苗预约时间段提醒
 // alibaba.health.vaccin.notice.timebucket.remind
 //
 // 疫苗预约时间段提醒
-func Alibabahealthvaccinnoticetimebucketremind(clt *core.SDKClient, req *vaccin.AlibabahealthvaccinnoticetimebucketremindAPIRequest, session string) (*vaccin.AlibabahealthvaccinnoticetimebucketremindAPIResponse, error) {
-	var resp vaccin.AlibabahealthvaccinnoticetimebucketremindAPIResponse
+func AlibabaHealthVaccinNoticeTimebucketRemind(clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest, session string) (*vaccin.AlibabaHealthVaccinNoticeTimebucketRemindAPIResponse, error) {
+	var resp vaccin.AlibabaHealthVaccinNoticeTimebucketRemindAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

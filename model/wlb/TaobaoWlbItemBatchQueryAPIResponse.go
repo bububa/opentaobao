@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowlbitembatchqueryAPIResponse 批次库存查询接口 API返回值
+// TaobaoWlbItemBatchQueryAPIResponse 批次库存查询接口 API返回值
 // taobao.wlb.item.batch.query
 //
 // 根据用户id，item id list和store code来查询商品库存信息和批次信息
-type TaobaowlbitembatchqueryAPIResponse struct {
+type TaobaoWlbItemBatchQueryAPIResponse struct {
 	model.CommonResponse
-	TaobaowlbitembatchqueryAPIResponseModel
+	TaobaoWlbItemBatchQueryAPIResponseModel
 }
 
-// TaobaowlbitembatchqueryAPIResponseModel is 批次库存查询接口 成功返回结果
-type TaobaowlbitembatchqueryAPIResponseModel struct {
+// TaobaoWlbItemBatchQueryAPIResponseModel is 批次库存查询接口 成功返回结果
+type TaobaoWlbItemBatchQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_item_batch_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

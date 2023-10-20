@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaicburfqmyequityAPIResponse 我的权益 API返回值
+// AlibabaIcbuRfqMyequityAPIResponse 我的权益 API返回值
 // alibaba.icbu.rfq.myequity
 //
 // 查询供应商权益接口
-type AlibabaicburfqmyequityAPIResponse struct {
+type AlibabaIcbuRfqMyequityAPIResponse struct {
 	model.CommonResponse
-	AlibabaicburfqmyequityAPIResponseModel
+	AlibabaIcbuRfqMyequityAPIResponseModel
 }
 
-// AlibabaicburfqmyequityAPIResponseModel is 我的权益 成功返回结果
-type AlibabaicburfqmyequityAPIResponseModel struct {
+// AlibabaIcbuRfqMyequityAPIResponseModel is 我的权益 成功返回结果
+type AlibabaIcbuRfqMyequityAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_icbu_rfq_myequity_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

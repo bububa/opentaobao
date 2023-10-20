@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoguoguocpnborderfrontrupdateuserAPIResponse 小件员信息变更 API返回值
+// CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse 小件员信息变更 API返回值
 // cainiao.guoguo.cp.nborderfrontr.updateuser
 //
 // 小件员信息变更
-type CainiaoguoguocpnborderfrontrupdateuserAPIResponse struct {
+type CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse struct {
 	model.CommonResponse
-	CainiaoguoguocpnborderfrontrupdateuserAPIResponseModel
+	CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponseModel
 }
 
-// CainiaoguoguocpnborderfrontrupdateuserAPIResponseModel is 小件员信息变更 成功返回结果
-type CainiaoguoguocpnborderfrontrupdateuserAPIResponseModel struct {
+// CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponseModel is 小件员信息变更 成功返回结果
+type CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_guoguo_cp_nborderfrontr_updateuser_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

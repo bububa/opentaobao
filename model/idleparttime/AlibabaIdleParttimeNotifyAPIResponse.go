@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaidleparttimenotifyAPIResponse 兼职通知接口 API返回值
+// AlibabaIdleParttimeNotifyAPIResponse 兼职通知接口 API返回值
 // alibaba.idle.parttime.notify
 //
 // 服务商侧有岗位状态变更对我们进行通知(岗位关闭, 录取状态)
-type AlibabaidleparttimenotifyAPIResponse struct {
+type AlibabaIdleParttimeNotifyAPIResponse struct {
 	model.CommonResponse
-	AlibabaidleparttimenotifyAPIResponseModel
+	AlibabaIdleParttimeNotifyAPIResponseModel
 }
 
-// AlibabaidleparttimenotifyAPIResponseModel is 兼职通知接口 成功返回结果
-type AlibabaidleparttimenotifyAPIResponseModel struct {
+// AlibabaIdleParttimeNotifyAPIResponseModel is 兼职通知接口 成功返回结果
+type AlibabaIdleParttimeNotifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_idle_parttime_notify_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

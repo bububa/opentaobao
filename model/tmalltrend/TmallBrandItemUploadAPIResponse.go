@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallbranditemuploadAPIResponse 天猫品牌新品同步API API返回值
+// TmallBrandItemUploadAPIResponse 天猫品牌新品同步API API返回值
 // tmall.brand.item.upload
 //
 // 支撑天猫品牌将各渠道新品信息同步至平台
-type TmallbranditemuploadAPIResponse struct {
+type TmallBrandItemUploadAPIResponse struct {
 	model.CommonResponse
-	TmallbranditemuploadAPIResponseModel
+	TmallBrandItemUploadAPIResponseModel
 }
 
-// TmallbranditemuploadAPIResponseModel is 天猫品牌新品同步API 成功返回结果
-type TmallbranditemuploadAPIResponseModel struct {
+// TmallBrandItemUploadAPIResponseModel is 天猫品牌新品同步API 成功返回结果
+type TmallBrandItemUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_brand_item_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

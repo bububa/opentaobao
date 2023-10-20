@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabascbpadtargettaglistrecommendtagAPIResponse 给计划推荐标签 API返回值
+// AlibabaScbpAdTargetTagListRecommendTagAPIResponse 给计划推荐标签 API返回值
 // alibaba.scbp.ad.target.tag.list.recommend.tag
 //
 // 给计划推荐标签
-type AlibabascbpadtargettaglistrecommendtagAPIResponse struct {
+type AlibabaScbpAdTargetTagListRecommendTagAPIResponse struct {
 	model.CommonResponse
-	AlibabascbpadtargettaglistrecommendtagAPIResponseModel
+	AlibabaScbpAdTargetTagListRecommendTagAPIResponseModel
 }
 
-// AlibabascbpadtargettaglistrecommendtagAPIResponseModel is 给计划推荐标签 成功返回结果
-type AlibabascbpadtargettaglistrecommendtagAPIResponseModel struct {
+// AlibabaScbpAdTargetTagListRecommendTagAPIResponseModel is 给计划推荐标签 成功返回结果
+type AlibabaScbpAdTargetTagListRecommendTagAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_ad_target_tag_list_recommend_tag_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

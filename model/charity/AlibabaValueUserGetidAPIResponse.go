@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabavalueusergetidAPIResponse 获取用户userId API返回值
+// AlibabaValueUserGetidAPIResponse 获取用户userId API返回值
 // alibaba.value.user.getid
 //
 // 获取用户userId
-type AlibabavalueusergetidAPIResponse struct {
+type AlibabaValueUserGetidAPIResponse struct {
 	model.CommonResponse
-	AlibabavalueusergetidAPIResponseModel
+	AlibabaValueUserGetidAPIResponseModel
 }
 
-// AlibabavalueusergetidAPIResponseModel is 获取用户userId 成功返回结果
-type AlibabavalueusergetidAPIResponseModel struct {
+// AlibabaValueUserGetidAPIResponseModel is 获取用户userId 成功返回结果
+type AlibabaValueUserGetidAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_value_user_getid_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

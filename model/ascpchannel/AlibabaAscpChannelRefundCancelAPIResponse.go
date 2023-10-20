@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaascpchannelrefundcancelAPIResponse 渠道退款单撤销 API返回值
+// AlibabaAscpChannelRefundCancelAPIResponse 渠道退款单撤销 API返回值
 // alibaba.ascp.channel.refund.cancel
 //
 // 售后申请的撤回接口
-type AlibabaascpchannelrefundcancelAPIResponse struct {
+type AlibabaAscpChannelRefundCancelAPIResponse struct {
 	model.CommonResponse
-	AlibabaascpchannelrefundcancelAPIResponseModel
+	AlibabaAscpChannelRefundCancelAPIResponseModel
 }
 
-// AlibabaascpchannelrefundcancelAPIResponseModel is 渠道退款单撤销 成功返回结果
-type AlibabaascpchannelrefundcancelAPIResponseModel struct {
+// AlibabaAscpChannelRefundCancelAPIResponseModel is 渠道退款单撤销 成功返回结果
+type AlibabaAscpChannelRefundCancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ascp_channel_refund_cancel_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

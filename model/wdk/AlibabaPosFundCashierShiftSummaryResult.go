@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaposfundcashiershiftsummaryResult 结构体
-type AlibabaposfundcashiershiftsummaryResult struct {
+// AlibabaPosFundCashierShiftSummaryResult 结构体
+type AlibabaPosFundCashierShiftSummaryResult struct {
 	// 模型
 	Model []CashierShiftFundSummaryDto `json:"model,omitempty" xml:"model>cashier_shift_fund_summary_dto,omitempty"`
 	// msgCode

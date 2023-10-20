@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/eticket"
 )
 
-// Taobaovmarketetickettimeexpand 订单延时接口
+// TaobaoVmarketEticketTimeExpand 订单延时接口
 // taobao.vmarket.eticket.time.expand
 //
 // 提供码商操作订单延期接口
-func Taobaovmarketetickettimeexpand(clt *core.SDKClient, req *eticket.TaobaovmarketetickettimeexpandAPIRequest, session string) (*eticket.TaobaovmarketetickettimeexpandAPIResponse, error) {
-	var resp eticket.TaobaovmarketetickettimeexpandAPIResponse
+func TaobaoVmarketEticketTimeExpand(clt *core.SDKClient, req *eticket.TaobaoVmarketEticketTimeExpandAPIRequest, session string) (*eticket.TaobaoVmarketEticketTimeExpandAPIResponse, error) {
+	var resp eticket.TaobaoVmarketEticketTimeExpandAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

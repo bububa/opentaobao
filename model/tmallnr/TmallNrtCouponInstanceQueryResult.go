@@ -1,7 +1,7 @@
 package tmallnr
 
-// TmallnrtcouponinstancequeryResult 结构体
-type TmallnrtcouponinstancequeryResult struct {
+// TmallNrtCouponInstanceQueryResult 结构体
+type TmallNrtCouponInstanceQueryResult struct {
 	// 券实例实体
 	Models []string `json:"models,omitempty" xml:"models>string,omitempty"`
 	// code

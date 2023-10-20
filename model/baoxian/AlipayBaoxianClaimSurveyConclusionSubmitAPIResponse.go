@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlipaybaoxianclaimsurveyconclusionsubmitAPIResponse 保险退货服务商勘察结论提交接口 API返回值
+// AlipayBaoxianClaimSurveyConclusionSubmitAPIResponse 保险退货服务商勘察结论提交接口 API返回值
 // alipay.baoxian.claim.survey.conclusion.submit
 //
 // 保险退货服务商提交勘察结论
-type AlipaybaoxianclaimsurveyconclusionsubmitAPIResponse struct {
+type AlipayBaoxianClaimSurveyConclusionSubmitAPIResponse struct {
 	model.CommonResponse
-	AlipaybaoxianclaimsurveyconclusionsubmitAPIResponseModel
+	AlipayBaoxianClaimSurveyConclusionSubmitAPIResponseModel
 }
 
-// AlipaybaoxianclaimsurveyconclusionsubmitAPIResponseModel is 保险退货服务商勘察结论提交接口 成功返回结果
-type AlipaybaoxianclaimsurveyconclusionsubmitAPIResponseModel struct {
+// AlipayBaoxianClaimSurveyConclusionSubmitAPIResponseModel is 保险退货服务商勘察结论提交接口 成功返回结果
+type AlipayBaoxianClaimSurveyConclusionSubmitAPIResponseModel struct {
 	XMLName xml.Name `xml:"alipay_baoxian_claim_survey_conclusion_submit_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

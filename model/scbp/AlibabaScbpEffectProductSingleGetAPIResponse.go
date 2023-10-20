@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabascbpeffectproductsinglegetAPIResponse 单个产品的报表 API返回值
+// AlibabaScbpEffectProductSingleGetAPIResponse 单个产品的报表 API返回值
 // alibaba.scbp.effect.product.single.get
 //
 // 单个产品的报表
-type AlibabascbpeffectproductsinglegetAPIResponse struct {
+type AlibabaScbpEffectProductSingleGetAPIResponse struct {
 	model.CommonResponse
-	AlibabascbpeffectproductsinglegetAPIResponseModel
+	AlibabaScbpEffectProductSingleGetAPIResponseModel
 }
 
-// AlibabascbpeffectproductsinglegetAPIResponseModel is 单个产品的报表 成功返回结果
-type AlibabascbpeffectproductsinglegetAPIResponseModel struct {
+// AlibabaScbpEffectProductSingleGetAPIResponseModel is 单个产品的报表 成功返回结果
+type AlibabaScbpEffectProductSingleGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_effect_product_single_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

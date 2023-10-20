@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaobillaccountsgetAPIResponse 查询费用科目信息(限自研商家) API返回值
+// TaobaoBillAccountsGetAPIResponse 查询费用科目信息(限自研商家) API返回值
 // taobao.bill.accounts.get
 //
 // 查询费用账户信息
-type TaobaobillaccountsgetAPIResponse struct {
+type TaobaoBillAccountsGetAPIResponse struct {
 	model.CommonResponse
-	TaobaobillaccountsgetAPIResponseModel
+	TaobaoBillAccountsGetAPIResponseModel
 }
 
-// TaobaobillaccountsgetAPIResponseModel is 查询费用科目信息(限自研商家) 成功返回结果
-type TaobaobillaccountsgetAPIResponseModel struct {
+// TaobaoBillAccountsGetAPIResponseModel is 查询费用科目信息(限自研商家) 成功返回结果
+type TaobaoBillAccountsGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"bill_accounts_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

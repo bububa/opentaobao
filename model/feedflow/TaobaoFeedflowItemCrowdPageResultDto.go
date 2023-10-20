@@ -1,7 +1,7 @@
 package feedflow
 
-// TaobaofeedflowitemcrowdpageResultDto 结构体
-type TaobaofeedflowitemcrowdpageResultDto struct {
+// TaobaoFeedflowItemCrowdPageResultDto 结构体
+type TaobaoFeedflowItemCrowdPageResultDto struct {
 	// 人群列表
 	Crowds []CrowdDto `json:"crowds,omitempty" xml:"crowds>crowd_dto,omitempty"`
 	// 成功

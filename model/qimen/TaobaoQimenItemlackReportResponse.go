@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoqimenitemlackreportResponse 结构体
-type TaobaoqimenitemlackreportResponse struct {
+// TaobaoQimenItemlackReportResponse 结构体
+type TaobaoQimenItemlackReportResponse struct {
 	// 响应结果:success|failure
 	Flag string `json:"flag,omitempty" xml:"flag,omitempty"`
 	// 响应码

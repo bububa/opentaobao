@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaofiveeimportproductpublishAPIResponse 进口商品发布 API返回值
+// TaobaoFiveeImportproductPublishAPIResponse 进口商品发布 API返回值
 // taobao.fivee.importproduct.publish
 //
 // 直营业务商家入住发布商品时，上传商品及商家证照信息
-type TaobaofiveeimportproductpublishAPIResponse struct {
+type TaobaoFiveeImportproductPublishAPIResponse struct {
 	model.CommonResponse
-	TaobaofiveeimportproductpublishAPIResponseModel
+	TaobaoFiveeImportproductPublishAPIResponseModel
 }
 
-// TaobaofiveeimportproductpublishAPIResponseModel is 进口商品发布 成功返回结果
-type TaobaofiveeimportproductpublishAPIResponseModel struct {
+// TaobaoFiveeImportproductPublishAPIResponseModel is 进口商品发布 成功返回结果
+type TaobaoFiveeImportproductPublishAPIResponseModel struct {
 	XMLName xml.Name `xml:"fivee_importproduct_publish_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

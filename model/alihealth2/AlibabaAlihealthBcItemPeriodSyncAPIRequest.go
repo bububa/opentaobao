@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthbcitemperiodsyncAPIRequest 代销品效期同步 API请求
+// AlibabaAlihealthBcItemPeriodSyncAPIRequest 代销品效期同步 API请求
 // alibaba.alihealth.bc.item.period.sync
 //
 // 代销品效期同步
-type AlibabaalihealthbcitemperiodsyncAPIRequest struct {
+type AlibabaAlihealthBcItemPeriodSyncAPIRequest struct {
 	model.Params
 	// 请求体
 	_validityPeriodSyncReqDto *ValidityPeriodSyncReqDto
 }
 
-// NewAlibabaalihealthbcitemperiodsyncRequest 初始化AlibabaalihealthbcitemperiodsyncAPIRequest对象
-func NewAlibabaalihealthbcitemperiodsyncRequest() *AlibabaalihealthbcitemperiodsyncAPIRequest {
-	return &AlibabaalihealthbcitemperiodsyncAPIRequest{
+// NewAlibabaAlihealthBcItemPeriodSyncRequest 初始化AlibabaAlihealthBcItemPeriodSyncAPIRequest对象
+func NewAlibabaAlihealthBcItemPeriodSyncRequest() *AlibabaAlihealthBcItemPeriodSyncAPIRequest {
+	return &AlibabaAlihealthBcItemPeriodSyncAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalihealthbcitemperiodsyncAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthBcItemPeriodSyncAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.bc.item.period.sync"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalihealthbcitemperiodsyncAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlihealthBcItemPeriodSyncAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalihealthbcitemperiodsyncAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlihealthBcItemPeriodSyncAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetValidityPeriodSyncReqDto is ValidityPeriodSyncReqDto Setter
 // 请求体
-func (r *AlibabaalihealthbcitemperiodsyncAPIRequest) SetValidityPeriodSyncReqDto(_validityPeriodSyncReqDto *ValidityPeriodSyncReqDto) error {
+func (r *AlibabaAlihealthBcItemPeriodSyncAPIRequest) SetValidityPeriodSyncReqDto(_validityPeriodSyncReqDto *ValidityPeriodSyncReqDto) error {
 	r._validityPeriodSyncReqDto = _validityPeriodSyncReqDto
 	r.Set("validity_period_sync_req_dto", _validityPeriodSyncReqDto)
 	return nil
 }
 
 // GetValidityPeriodSyncReqDto ValidityPeriodSyncReqDto Getter
-func (r AlibabaalihealthbcitemperiodsyncAPIRequest) GetValidityPeriodSyncReqDto() *ValidityPeriodSyncReqDto {
+func (r AlibabaAlihealthBcItemPeriodSyncAPIRequest) GetValidityPeriodSyncReqDto() *ValidityPeriodSyncReqDto {
 	return r._validityPeriodSyncReqDto
 }

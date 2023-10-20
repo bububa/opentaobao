@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabadchainaoxiangdeliverytemplatequeryAPIResponse 商家运费模板查询 API返回值
+// AlibabaDchainAoxiangDeliverytemplateQueryAPIResponse 商家运费模板查询 API返回值
 // alibaba.dchain.aoxiang.deliverytemplate.query
 //
 // 商家运费模板查询
-type AlibabadchainaoxiangdeliverytemplatequeryAPIResponse struct {
+type AlibabaDchainAoxiangDeliverytemplateQueryAPIResponse struct {
 	model.CommonResponse
-	AlibabadchainaoxiangdeliverytemplatequeryAPIResponseModel
+	AlibabaDchainAoxiangDeliverytemplateQueryAPIResponseModel
 }
 
-// AlibabadchainaoxiangdeliverytemplatequeryAPIResponseModel is 商家运费模板查询 成功返回结果
-type AlibabadchainaoxiangdeliverytemplatequeryAPIResponseModel struct {
+// AlibabaDchainAoxiangDeliverytemplateQueryAPIResponseModel is 商家运费模板查询 成功返回结果
+type AlibabaDchainAoxiangDeliverytemplateQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_dchain_aoxiang_deliverytemplate_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

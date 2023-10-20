@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabavideotokengetAPIResponse 获取上传token API返回值
+// AlibabaVideoTokenGetAPIResponse 获取上传token API返回值
 // alibaba.video.token.get
 //
 // 获取上传token
-type AlibabavideotokengetAPIResponse struct {
+type AlibabaVideoTokenGetAPIResponse struct {
 	model.CommonResponse
-	AlibabavideotokengetAPIResponseModel
+	AlibabaVideoTokenGetAPIResponseModel
 }
 
-// AlibabavideotokengetAPIResponseModel is 获取上传token 成功返回结果
-type AlibabavideotokengetAPIResponseModel struct {
+// AlibabaVideoTokenGetAPIResponseModel is 获取上传token 成功返回结果
+type AlibabaVideoTokenGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_video_token_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

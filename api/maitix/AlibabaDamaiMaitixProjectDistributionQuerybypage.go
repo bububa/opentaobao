@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/maitix"
 )
 
-// Alibabadamaimaitixprojectdistributionquerybypage 分销项目分页查询项目列表服务
+// AlibabaDamaiMaitixProjectDistributionQuerybypage 分销项目分页查询项目列表服务
 // alibaba.damai.maitix.project.distribution.querybypage
 //
 // 分销项目分页查询项目列表服务
-func Alibabadamaimaitixprojectdistributionquerybypage(clt *core.SDKClient, req *maitix.AlibabadamaimaitixprojectdistributionquerybypageAPIRequest, session string) (*maitix.AlibabadamaimaitixprojectdistributionquerybypageAPIResponse, error) {
-	var resp maitix.AlibabadamaimaitixprojectdistributionquerybypageAPIResponse
+func AlibabaDamaiMaitixProjectDistributionQuerybypage(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixProjectDistributionQuerybypageAPIRequest, session string) (*maitix.AlibabaDamaiMaitixProjectDistributionQuerybypageAPIResponse, error) {
+	var resp maitix.AlibabaDamaiMaitixProjectDistributionQuerybypageAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

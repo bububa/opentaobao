@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallcrmmemberpointchangeAPIResponse 会员积分变更 API返回值
+// TmallCrmMemberPointChangeAPIResponse 会员积分变更 API返回值
 // tmall.crm.member.point.change
 //
 // 品牌CRM项目中，会员积分变更接口。
-type TmallcrmmemberpointchangeAPIResponse struct {
+type TmallCrmMemberPointChangeAPIResponse struct {
 	model.CommonResponse
-	TmallcrmmemberpointchangeAPIResponseModel
+	TmallCrmMemberPointChangeAPIResponseModel
 }
 
-// TmallcrmmemberpointchangeAPIResponseModel is 会员积分变更 成功返回结果
-type TmallcrmmemberpointchangeAPIResponseModel struct {
+// TmallCrmMemberPointChangeAPIResponseModel is 会员积分变更 成功返回结果
+type TmallCrmMemberPointChangeAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_crm_member_point_change_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabajymindustrytrademaxpricegetAPIResponse 获取交易猫单个游戏渠道帐号交易成功最高价 API返回值
+// AlibabaJymIndustryTradeMaxPriceGetAPIResponse 获取交易猫单个游戏渠道帐号交易成功最高价 API返回值
 // alibaba.jym.industry.trade.max.price.get
 //
 // 获取交易猫单个游戏渠道帐号交易成功最高价
-type AlibabajymindustrytrademaxpricegetAPIResponse struct {
+type AlibabaJymIndustryTradeMaxPriceGetAPIResponse struct {
 	model.CommonResponse
-	AlibabajymindustrytrademaxpricegetAPIResponseModel
+	AlibabaJymIndustryTradeMaxPriceGetAPIResponseModel
 }
 
-// AlibabajymindustrytrademaxpricegetAPIResponseModel is 获取交易猫单个游戏渠道帐号交易成功最高价 成功返回结果
-type AlibabajymindustrytrademaxpricegetAPIResponseModel struct {
+// AlibabaJymIndustryTradeMaxPriceGetAPIResponseModel is 获取交易猫单个游戏渠道帐号交易成功最高价 成功返回结果
+type AlibabaJymIndustryTradeMaxPriceGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_jym_industry_trade_max_price_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

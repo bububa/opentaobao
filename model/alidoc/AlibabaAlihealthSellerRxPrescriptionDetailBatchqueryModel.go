@@ -1,7 +1,7 @@
 package alidoc
 
-// AlibabaalihealthsellerrxprescriptiondetailbatchqueryModel 结构体
-type AlibabaalihealthsellerrxprescriptiondetailbatchqueryModel struct {
+// AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryModel 结构体
+type AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryModel struct {
 	// 未匹配到的订单请求列表
 	FailedList []FailedList `json:"failed_list,omitempty" xml:"failed_list>failed_list,omitempty"`
 	// 匹配到的订单处方详情列表

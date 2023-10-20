@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoalitriptravelaxinpoisearchAPIRequest 景点poi搜索-阿信 API请求
+// TaobaoAlitripTravelAxinPoiSearchAPIRequest 景点poi搜索-阿信 API请求
 // taobao.alitrip.travel.axin.poi.search
 //
 // 给阿信提供景点poi搜索
-type TaobaoalitriptravelaxinpoisearchAPIRequest struct {
+type TaobaoAlitripTravelAxinPoiSearchAPIRequest struct {
 	model.Params
 	// 搜索关键词
 	_keyWord string
 }
 
-// NewTaobaoalitriptravelaxinpoisearchRequest 初始化TaobaoalitriptravelaxinpoisearchAPIRequest对象
-func NewTaobaoalitriptravelaxinpoisearchRequest() *TaobaoalitriptravelaxinpoisearchAPIRequest {
-	return &TaobaoalitriptravelaxinpoisearchAPIRequest{
+// NewTaobaoAlitripTravelAxinPoiSearchRequest 初始化TaobaoAlitripTravelAxinPoiSearchAPIRequest对象
+func NewTaobaoAlitripTravelAxinPoiSearchRequest() *TaobaoAlitripTravelAxinPoiSearchAPIRequest {
+	return &TaobaoAlitripTravelAxinPoiSearchAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoalitriptravelaxinpoisearchAPIRequest) GetApiMethodName() string {
+func (r TaobaoAlitripTravelAxinPoiSearchAPIRequest) GetApiMethodName() string {
 	return "taobao.alitrip.travel.axin.poi.search"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoalitriptravelaxinpoisearchAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoAlitripTravelAxinPoiSearchAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoalitriptravelaxinpoisearchAPIRequest) GetRawParams() model.Params {
+func (r TaobaoAlitripTravelAxinPoiSearchAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetKeyWord is KeyWord Setter
 // 搜索关键词
-func (r *TaobaoalitriptravelaxinpoisearchAPIRequest) SetKeyWord(_keyWord string) error {
+func (r *TaobaoAlitripTravelAxinPoiSearchAPIRequest) SetKeyWord(_keyWord string) error {
 	r._keyWord = _keyWord
 	r.Set("key_word", _keyWord)
 	return nil
 }
 
 // GetKeyWord KeyWord Getter
-func (r TaobaoalitriptravelaxinpoisearchAPIRequest) GetKeyWord() string {
+func (r TaobaoAlitripTravelAxinPoiSearchAPIRequest) GetKeyWord() string {
 	return r._keyWord
 }

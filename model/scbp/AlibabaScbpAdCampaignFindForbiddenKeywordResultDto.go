@@ -1,9 +1,9 @@
 package scbp
 
-// AlibabascbpadcampaignfindforbiddenkeywordResultDto 结构体
-type AlibabascbpadcampaignfindforbiddenkeywordResultDto struct {
+// AlibabaScbpAdCampaignFindForbiddenKeywordResultDto 结构体
+type AlibabaScbpAdCampaignFindForbiddenKeywordResultDto struct {
 	// 服务出参
-	ResultList []AlibabascbpadcampaignfindforbiddenkeywordResult `json:"result_list,omitempty" xml:"result_list>alibabascbpadcampaignfindforbiddenkeyword_result,omitempty"`
+	ResultList []AlibabaScbpAdCampaignFindForbiddenKeywordResult `json:"result_list,omitempty" xml:"result_list>alibaba_scbp_ad_campaign_find_forbidden_keyword_result,omitempty"`
 	// 信息
 	Msg string `json:"msg,omitempty" xml:"msg,omitempty"`
 	// 返回code

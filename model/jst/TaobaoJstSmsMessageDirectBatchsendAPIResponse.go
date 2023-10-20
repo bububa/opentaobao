@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaojstsmsmessagedirectbatchsendAPIResponse OAID批量发送，支持明文手机号发送 API返回值
+// TaobaoJstSmsMessageDirectBatchsendAPIResponse OAID批量发送，支持明文手机号发送 API返回值
 // taobao.jst.sms.message.direct.batchsend
 //
 // OAID批量发送，支持明文手机号发送
-type TaobaojstsmsmessagedirectbatchsendAPIResponse struct {
+type TaobaoJstSmsMessageDirectBatchsendAPIResponse struct {
 	model.CommonResponse
-	TaobaojstsmsmessagedirectbatchsendAPIResponseModel
+	TaobaoJstSmsMessageDirectBatchsendAPIResponseModel
 }
 
-// TaobaojstsmsmessagedirectbatchsendAPIResponseModel is OAID批量发送，支持明文手机号发送 成功返回结果
-type TaobaojstsmsmessagedirectbatchsendAPIResponseModel struct {
+// TaobaoJstSmsMessageDirectBatchsendAPIResponseModel is OAID批量发送，支持明文手机号发送 成功返回结果
+type TaobaoJstSmsMessageDirectBatchsendAPIResponseModel struct {
 	XMLName xml.Name `xml:"jst_sms_message_direct_batchsend_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

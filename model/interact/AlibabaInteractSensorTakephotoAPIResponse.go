@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabainteractsensortakephotoAPIResponse takePhoto API返回值
+// AlibabaInteractSensorTakephotoAPIResponse takePhoto API返回值
 // alibaba.interact.sensor.takephoto
 //
 // 客户端takePhoto
-type AlibabainteractsensortakephotoAPIResponse struct {
+type AlibabaInteractSensorTakephotoAPIResponse struct {
 	model.CommonResponse
-	AlibabainteractsensortakephotoAPIResponseModel
+	AlibabaInteractSensorTakephotoAPIResponseModel
 }
 
-// AlibabainteractsensortakephotoAPIResponseModel is takePhoto 成功返回结果
-type AlibabainteractsensortakephotoAPIResponseModel struct {
+// AlibabaInteractSensorTakephotoAPIResponseModel is takePhoto 成功返回结果
+type AlibabaInteractSensorTakephotoAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_sensor_takephoto_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

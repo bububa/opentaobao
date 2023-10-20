@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliyununimkttaskchargelaunchAPIResponse 云码权益查询 API返回值
+// AliyunUnimktTaskChargeLaunchAPIResponse 云码权益查询 API返回值
 // aliyun.unimkt.task.charge.launch
 //
 // 云码线上流量投放链路，用于判断用户是否有匹配的投放计划
-type AliyununimkttaskchargelaunchAPIResponse struct {
+type AliyunUnimktTaskChargeLaunchAPIResponse struct {
 	model.CommonResponse
-	AliyununimkttaskchargelaunchAPIResponseModel
+	AliyunUnimktTaskChargeLaunchAPIResponseModel
 }
 
-// AliyununimkttaskchargelaunchAPIResponseModel is 云码权益查询 成功返回结果
-type AliyununimkttaskchargelaunchAPIResponseModel struct {
+// AliyunUnimktTaskChargeLaunchAPIResponseModel is 云码权益查询 成功返回结果
+type AliyunUnimktTaskChargeLaunchAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliyun_unimkt_task_charge_launch_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

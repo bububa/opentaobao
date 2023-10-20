@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripmerchantgalaxyorderqueryAPIRequest 星河-单个订单详细信息查询 API请求
+// AlitripMerchantGalaxyOrderQueryAPIRequest 星河-单个订单详细信息查询 API请求
 // alitrip.merchant.galaxy.order.query
 //
 // 为用户提供酒店订单的详细信息查询能力
-type AlitripmerchantgalaxyorderqueryAPIRequest struct {
+type AlitripMerchantGalaxyOrderQueryAPIRequest struct {
 	model.Params
 	// 租户标识
 	_tenantKey string
@@ -20,65 +20,65 @@ type AlitripmerchantgalaxyorderqueryAPIRequest struct {
 	_orderId string
 }
 
-// NewAlitripmerchantgalaxyorderqueryRequest 初始化AlitripmerchantgalaxyorderqueryAPIRequest对象
-func NewAlitripmerchantgalaxyorderqueryRequest() *AlitripmerchantgalaxyorderqueryAPIRequest {
-	return &AlitripmerchantgalaxyorderqueryAPIRequest{
+// NewAlitripMerchantGalaxyOrderQueryRequest 初始化AlitripMerchantGalaxyOrderQueryAPIRequest对象
+func NewAlitripMerchantGalaxyOrderQueryRequest() *AlitripMerchantGalaxyOrderQueryAPIRequest {
+	return &AlitripMerchantGalaxyOrderQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripmerchantgalaxyorderqueryAPIRequest) GetApiMethodName() string {
+func (r AlitripMerchantGalaxyOrderQueryAPIRequest) GetApiMethodName() string {
 	return "alitrip.merchant.galaxy.order.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripmerchantgalaxyorderqueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripMerchantGalaxyOrderQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripmerchantgalaxyorderqueryAPIRequest) GetRawParams() model.Params {
+func (r AlitripMerchantGalaxyOrderQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTenantKey is TenantKey Setter
 // 租户标识
-func (r *AlitripmerchantgalaxyorderqueryAPIRequest) SetTenantKey(_tenantKey string) error {
+func (r *AlitripMerchantGalaxyOrderQueryAPIRequest) SetTenantKey(_tenantKey string) error {
 	r._tenantKey = _tenantKey
 	r.Set("tenant_key", _tenantKey)
 	return nil
 }
 
 // GetTenantKey TenantKey Getter
-func (r AlitripmerchantgalaxyorderqueryAPIRequest) GetTenantKey() string {
+func (r AlitripMerchantGalaxyOrderQueryAPIRequest) GetTenantKey() string {
 	return r._tenantKey
 }
 
 // SetToken is Token Setter
 // 用户登录标识
-func (r *AlitripmerchantgalaxyorderqueryAPIRequest) SetToken(_token string) error {
+func (r *AlitripMerchantGalaxyOrderQueryAPIRequest) SetToken(_token string) error {
 	r._token = _token
 	r.Set("token", _token)
 	return nil
 }
 
 // GetToken Token Getter
-func (r AlitripmerchantgalaxyorderqueryAPIRequest) GetToken() string {
+func (r AlitripMerchantGalaxyOrderQueryAPIRequest) GetToken() string {
 	return r._token
 }
 
 // SetOrderId is OrderId Setter
 // 订单号
-func (r *AlitripmerchantgalaxyorderqueryAPIRequest) SetOrderId(_orderId string) error {
+func (r *AlitripMerchantGalaxyOrderQueryAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
 	r.Set("order_id", _orderId)
 	return nil
 }
 
 // GetOrderId OrderId Getter
-func (r AlitripmerchantgalaxyorderqueryAPIRequest) GetOrderId() string {
+func (r AlitripMerchantGalaxyOrderQueryAPIRequest) GetOrderId() string {
 	return r._orderId
 }

@@ -1,7 +1,7 @@
 package icbuseller
 
-// AlibabasellervendortradepurchaseResultDto 结构体
-type AlibabasellervendortradepurchaseResultDto struct {
+// AlibabaSellerVendorTradePurchaseResultDto 结构体
+type AlibabaSellerVendorTradePurchaseResultDto struct {
 	// 授权订单集合
 	Dtos []TradePurchaseDto `json:"dtos,omitempty" xml:"dtos>trade_purchase_dto,omitempty"`
 	// 描述

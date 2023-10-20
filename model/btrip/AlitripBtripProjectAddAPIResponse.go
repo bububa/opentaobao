@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripbtripprojectaddAPIResponse 添加项目 API返回值
+// AlitripBtripProjectAddAPIResponse 添加项目 API返回值
 // alitrip.btrip.project.add
 //
 // 添加项目
-type AlitripbtripprojectaddAPIResponse struct {
+type AlitripBtripProjectAddAPIResponse struct {
 	model.CommonResponse
-	AlitripbtripprojectaddAPIResponseModel
+	AlitripBtripProjectAddAPIResponseModel
 }
 
-// AlitripbtripprojectaddAPIResponseModel is 添加项目 成功返回结果
-type AlitripbtripprojectaddAPIResponseModel struct {
+// AlitripBtripProjectAddAPIResponseModel is 添加项目 成功返回结果
+type AlitripBtripProjectAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_project_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

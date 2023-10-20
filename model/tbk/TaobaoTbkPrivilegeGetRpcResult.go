@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaotbkprivilegegetRpcResult 结构体
-type TaobaotbkprivilegegetRpcResult struct {
+// TaobaoTbkPrivilegeGetRpcResult 结构体
+type TaobaoTbkPrivilegeGetRpcResult struct {
 	// data
 	Data *MaterialDto `json:"data,omitempty" xml:"data,omitempty"`
 }

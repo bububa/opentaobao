@@ -1,7 +1,7 @@
 package alicom
 
-// AlibabaaliqinaxbvendorheartbeatResponse 结构体
-type AlibabaaliqinaxbvendorheartbeatResponse struct {
+// AlibabaAliqinAxbVendorHeartBeatResponse 结构体
+type AlibabaAliqinAxbVendorHeartBeatResponse struct {
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// code

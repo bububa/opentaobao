@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoopenaccountindexfindAPIResponse Open Account索引查询 API返回值
+// TaobaoOpenAccountIndexFindAPIResponse Open Account索引查询 API返回值
 // taobao.open.account.index.find
 //
 // Open Account索引查询
-type TaobaoopenaccountindexfindAPIResponse struct {
+type TaobaoOpenAccountIndexFindAPIResponse struct {
 	model.CommonResponse
-	TaobaoopenaccountindexfindAPIResponseModel
+	TaobaoOpenAccountIndexFindAPIResponseModel
 }
 
-// TaobaoopenaccountindexfindAPIResponseModel is Open Account索引查询 成功返回结果
-type TaobaoopenaccountindexfindAPIResponseModel struct {
+// TaobaoOpenAccountIndexFindAPIResponseModel is Open Account索引查询 成功返回结果
+type TaobaoOpenAccountIndexFindAPIResponseModel struct {
 	XMLName xml.Name `xml:"open_account_index_find_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

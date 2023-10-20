@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/baichuan"
 )
 
-// Alibababaichuanasoactivate 设备安装活动激活
+// AlibabaBaichuanAsoActivate 设备安装活动激活
 // alibaba.baichuan.aso.activate
 //
 // 设备安装活动激活
-func Alibababaichuanasoactivate(clt *core.SDKClient, req *baichuan.AlibababaichuanasoactivateAPIRequest, session string) (*baichuan.AlibababaichuanasoactivateAPIResponse, error) {
-	var resp baichuan.AlibababaichuanasoactivateAPIResponse
+func AlibabaBaichuanAsoActivate(clt *core.SDKClient, req *baichuan.AlibabaBaichuanAsoActivateAPIRequest, session string) (*baichuan.AlibabaBaichuanAsoActivateAPIResponse, error) {
+	var resp baichuan.AlibabaBaichuanAsoActivateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

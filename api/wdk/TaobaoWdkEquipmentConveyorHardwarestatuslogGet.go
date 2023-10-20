@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// Taobaowdkequipmentconveyorhardwarestatuslogget 硬件状态变化日志查询
+// TaobaoWdkEquipmentConveyorHardwarestatuslogGet 硬件状态变化日志查询
 // taobao.wdk.equipment.conveyor.hardwarestatuslog.get
 //
 // 硬件状态变化日志查询
-func Taobaowdkequipmentconveyorhardwarestatuslogget(clt *core.SDKClient, req *wdk.TaobaowdkequipmentconveyorhardwarestatusloggetAPIRequest, session string) (*wdk.TaobaowdkequipmentconveyorhardwarestatusloggetAPIResponse, error) {
-	var resp wdk.TaobaowdkequipmentconveyorhardwarestatusloggetAPIResponse
+func TaobaoWdkEquipmentConveyorHardwarestatuslogGet(clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIRequest, session string) (*wdk.TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIResponse, error) {
+	var resp wdk.TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

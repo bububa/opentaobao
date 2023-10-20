@@ -1,7 +1,7 @@
 package aliqin
 
-// AlibabaaliqinfciotcardofferModel 结构体
-type AlibabaaliqinfciotcardofferModel struct {
+// AlibabaAliqinFcIotCardofferModel 结构体
+type AlibabaAliqinFcIotCardofferModel struct {
 	// 失效时间
 	ExpireTime string `json:"expire_time,omitempty" xml:"expire_time,omitempty"`
 	// 生效时间

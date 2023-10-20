@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthmedicalbasehossyncnewAPIResponse 直连医院上传接口 API返回值
+// AlibabaAlihealthMedicalbaseHosSyncnewAPIResponse 直连医院上传接口 API返回值
 // alibaba.alihealth.medicalbase.hos.syncnew
 //
 // 直连医院上传接口
-type AlibabaalihealthmedicalbasehossyncnewAPIResponse struct {
+type AlibabaAlihealthMedicalbaseHosSyncnewAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthmedicalbasehossyncnewAPIResponseModel
+	AlibabaAlihealthMedicalbaseHosSyncnewAPIResponseModel
 }
 
-// AlibabaalihealthmedicalbasehossyncnewAPIResponseModel is 直连医院上传接口 成功返回结果
-type AlibabaalihealthmedicalbasehossyncnewAPIResponseModel struct {
+// AlibabaAlihealthMedicalbaseHosSyncnewAPIResponseModel is 直连医院上传接口 成功返回结果
+type AlibabaAlihealthMedicalbaseHosSyncnewAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_medicalbase_hos_syncnew_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

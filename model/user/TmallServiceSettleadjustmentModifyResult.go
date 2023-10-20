@@ -1,7 +1,7 @@
 package user
 
-// TmallservicesettleadjustmentmodifyResult 结构体
-type TmallservicesettleadjustmentmodifyResult struct {
+// TmallServiceSettleadjustmentModifyResult 结构体
+type TmallServiceSettleadjustmentModifyResult struct {
 	// errorMessage
 	ErrorMessage *ErrorMessage `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// success

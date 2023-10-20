@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabasecurityjaqappofficialapplyAPIResponse 聚安全官方应用申请 API返回值
+// AlibabaSecurityJaqAppOfficialApplyAPIResponse 聚安全官方应用申请 API返回值
 // alibaba.security.jaq.app.official.apply
 //
 // 官方应用申请接口
-type AlibabasecurityjaqappofficialapplyAPIResponse struct {
+type AlibabaSecurityJaqAppOfficialApplyAPIResponse struct {
 	model.CommonResponse
-	AlibabasecurityjaqappofficialapplyAPIResponseModel
+	AlibabaSecurityJaqAppOfficialApplyAPIResponseModel
 }
 
-// AlibabasecurityjaqappofficialapplyAPIResponseModel is 聚安全官方应用申请 成功返回结果
-type AlibabasecurityjaqappofficialapplyAPIResponseModel struct {
+// AlibabaSecurityJaqAppOfficialApplyAPIResponseModel is 聚安全官方应用申请 成功返回结果
+type AlibabaSecurityJaqAppOfficialApplyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_security_jaq_app_official_apply_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

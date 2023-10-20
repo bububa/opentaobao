@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabalafiteselleractivitylistAPIRequest 商家自运营活动列表 API请求
+// AlibabaLafiteSellerActivityListAPIRequest 商家自运营活动列表 API请求
 // alibaba.lafite.seller.activity.list
 //
 // 商家查询自己配置的活动列表
-type AlibabalafiteselleractivitylistAPIRequest struct {
+type AlibabaLafiteSellerActivityListAPIRequest struct {
 	model.Params
 	// 请求入参
 	_query *ActivityReadTopQuery
 }
 
-// NewAlibabalafiteselleractivitylistRequest 初始化AlibabalafiteselleractivitylistAPIRequest对象
-func NewAlibabalafiteselleractivitylistRequest() *AlibabalafiteselleractivitylistAPIRequest {
-	return &AlibabalafiteselleractivitylistAPIRequest{
+// NewAlibabaLafiteSellerActivityListRequest 初始化AlibabaLafiteSellerActivityListAPIRequest对象
+func NewAlibabaLafiteSellerActivityListRequest() *AlibabaLafiteSellerActivityListAPIRequest {
+	return &AlibabaLafiteSellerActivityListAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabalafiteselleractivitylistAPIRequest) GetApiMethodName() string {
+func (r AlibabaLafiteSellerActivityListAPIRequest) GetApiMethodName() string {
 	return "alibaba.lafite.seller.activity.list"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabalafiteselleractivitylistAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaLafiteSellerActivityListAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabalafiteselleractivitylistAPIRequest) GetRawParams() model.Params {
+func (r AlibabaLafiteSellerActivityListAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetQuery is Query Setter
 // 请求入参
-func (r *AlibabalafiteselleractivitylistAPIRequest) SetQuery(_query *ActivityReadTopQuery) error {
+func (r *AlibabaLafiteSellerActivityListAPIRequest) SetQuery(_query *ActivityReadTopQuery) error {
 	r._query = _query
 	r.Set("query", _query)
 	return nil
 }
 
 // GetQuery Query Getter
-func (r AlibabalafiteselleractivitylistAPIRequest) GetQuery() *ActivityReadTopQuery {
+func (r AlibabaLafiteSellerActivityListAPIRequest) GetQuery() *ActivityReadTopQuery {
 	return r._query
 }

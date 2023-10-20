@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaocrmgroupaddAPIResponse 卖家创建一个分组 API返回值
+// TaobaoCrmGroupAddAPIResponse 卖家创建一个分组 API返回值
 // taobao.crm.group.add
 //
 // 卖家创建一个新的分组，接口返回一个创建成功的分组的id
-type TaobaocrmgroupaddAPIResponse struct {
+type TaobaoCrmGroupAddAPIResponse struct {
 	model.CommonResponse
-	TaobaocrmgroupaddAPIResponseModel
+	TaobaoCrmGroupAddAPIResponseModel
 }
 
-// TaobaocrmgroupaddAPIResponseModel is 卖家创建一个分组 成功返回结果
-type TaobaocrmgroupaddAPIResponseModel struct {
+// TaobaoCrmGroupAddAPIResponseModel is 卖家创建一个分组 成功返回结果
+type TaobaoCrmGroupAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"crm_group_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

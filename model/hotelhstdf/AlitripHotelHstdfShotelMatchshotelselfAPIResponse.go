@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitriphotelhstdfshotelmatchshotelselfAPIResponse 自主匹配标准酒店以及卖家酒店 API返回值
+// AlitripHotelHstdfShotelMatchshotelselfAPIResponse 自主匹配标准酒店以及卖家酒店 API返回值
 // alitrip.hotel.hstdf.shotel.matchshotelself
 //
 // 商家通过指定的标准酒店id和卖家酒店id进行匹配
-type AlitriphotelhstdfshotelmatchshotelselfAPIResponse struct {
+type AlitripHotelHstdfShotelMatchshotelselfAPIResponse struct {
 	model.CommonResponse
-	AlitriphotelhstdfshotelmatchshotelselfAPIResponseModel
+	AlitripHotelHstdfShotelMatchshotelselfAPIResponseModel
 }
 
-// AlitriphotelhstdfshotelmatchshotelselfAPIResponseModel is 自主匹配标准酒店以及卖家酒店 成功返回结果
-type AlitriphotelhstdfshotelmatchshotelselfAPIResponseModel struct {
+// AlitripHotelHstdfShotelMatchshotelselfAPIResponseModel is 自主匹配标准酒店以及卖家酒店 成功返回结果
+type AlitripHotelHstdfShotelMatchshotelselfAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_hotel_hstdf_shotel_matchshotelself_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

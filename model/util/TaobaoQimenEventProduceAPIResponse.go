@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoqimeneventproduceAPIResponse 发出奇门事件 API返回值
+// TaobaoQimenEventProduceAPIResponse 发出奇门事件 API返回值
 // taobao.qimen.event.produce
 //
 // 当订单被处理时，用于通知奇门系统。
-type TaobaoqimeneventproduceAPIResponse struct {
+type TaobaoQimenEventProduceAPIResponse struct {
 	model.CommonResponse
-	TaobaoqimeneventproduceAPIResponseModel
+	TaobaoQimenEventProduceAPIResponseModel
 }
 
-// TaobaoqimeneventproduceAPIResponseModel is 发出奇门事件 成功返回结果
-type TaobaoqimeneventproduceAPIResponseModel struct {
+// TaobaoQimenEventProduceAPIResponseModel is 发出奇门事件 成功返回结果
+type TaobaoQimenEventProduceAPIResponseModel struct {
 	XMLName xml.Name `xml:"qimen_event_produce_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

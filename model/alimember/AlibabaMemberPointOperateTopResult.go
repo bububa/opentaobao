@@ -1,7 +1,7 @@
 package alimember
 
-// AlibabamemberpointoperateTopResult 结构体
-type AlibabamemberpointoperateTopResult struct {
+// AlibabaMemberPointOperateTopResult 结构体
+type AlibabaMemberPointOperateTopResult struct {
 	// 返回码
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 返回信息

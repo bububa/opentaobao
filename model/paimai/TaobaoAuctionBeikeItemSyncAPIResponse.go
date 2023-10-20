@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoauctionbeikeitemsyncAPIResponse 贝壳商品同步接口 API返回值
+// TaobaoAuctionBeikeItemSyncAPIResponse 贝壳商品同步接口 API返回值
 // taobao.auction.beike.item.sync
 //
 // 贝壳商品同步接口
-type TaobaoauctionbeikeitemsyncAPIResponse struct {
+type TaobaoAuctionBeikeItemSyncAPIResponse struct {
 	model.CommonResponse
-	TaobaoauctionbeikeitemsyncAPIResponseModel
+	TaobaoAuctionBeikeItemSyncAPIResponseModel
 }
 
-// TaobaoauctionbeikeitemsyncAPIResponseModel is 贝壳商品同步接口 成功返回结果
-type TaobaoauctionbeikeitemsyncAPIResponseModel struct {
+// TaobaoAuctionBeikeItemSyncAPIResponseModel is 贝壳商品同步接口 成功返回结果
+type TaobaoAuctionBeikeItemSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"auction_beike_item_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

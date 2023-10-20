@@ -1,7 +1,7 @@
 package wms
 
-// TaobaowlbwmssninfoqueryResult 结构体
-type TaobaowlbwmssninfoqueryResult struct {
+// TaobaoWlbWmsSnInfoQueryResult 结构体
+type TaobaoWlbWmsSnInfoQueryResult struct {
 	// SN信息列表
 	SnInfoList []Sninfolist `json:"sn_info_list,omitempty" xml:"sn_info_list>sninfolist,omitempty"`
 	// 错误码

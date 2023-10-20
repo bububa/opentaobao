@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaovmarketeticketreverseAPIResponse 电子凭证冲正接口 API返回值
+// TaobaoVmarketEticketReverseAPIResponse 电子凭证冲正接口 API返回值
 // taobao.vmarket.eticket.reverse
 //
 // 电子凭证平台冲正接口
-type TaobaovmarketeticketreverseAPIResponse struct {
+type TaobaoVmarketEticketReverseAPIResponse struct {
 	model.CommonResponse
-	TaobaovmarketeticketreverseAPIResponseModel
+	TaobaoVmarketEticketReverseAPIResponseModel
 }
 
-// TaobaovmarketeticketreverseAPIResponseModel is 电子凭证冲正接口 成功返回结果
-type TaobaovmarketeticketreverseAPIResponseModel struct {
+// TaobaoVmarketEticketReverseAPIResponseModel is 电子凭证冲正接口 成功返回结果
+type TaobaoVmarketEticketReverseAPIResponseModel struct {
 	XMLName xml.Name `xml:"vmarket_eticket_reverse_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

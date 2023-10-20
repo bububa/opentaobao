@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoweitaofollowisrelationAPIResponse 微淘是否关注 API返回值
+// TaobaoWeitaoFollowIsrelationAPIResponse 微淘是否关注 API返回值
 // taobao.weitao.follow.isrelation
 //
 // 判断用户是否关注对应的公共账号
-type TaobaoweitaofollowisrelationAPIResponse struct {
+type TaobaoWeitaoFollowIsrelationAPIResponse struct {
 	model.CommonResponse
-	TaobaoweitaofollowisrelationAPIResponseModel
+	TaobaoWeitaoFollowIsrelationAPIResponseModel
 }
 
-// TaobaoweitaofollowisrelationAPIResponseModel is 微淘是否关注 成功返回结果
-type TaobaoweitaofollowisrelationAPIResponseModel struct {
+// TaobaoWeitaoFollowIsrelationAPIResponseModel is 微淘是否关注 成功返回结果
+type TaobaoWeitaoFollowIsrelationAPIResponseModel struct {
 	XMLName xml.Name `xml:"weitao_follow_isrelation_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

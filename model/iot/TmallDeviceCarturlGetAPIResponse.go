@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmalldevicecarturlgetAPIResponse 添加商品到购物车 API返回值
+// TmallDeviceCarturlGetAPIResponse 添加商品到购物车 API返回值
 // tmall.device.carturl.get
 //
 // 获取二维码，支持添加商品到购物车
-type TmalldevicecarturlgetAPIResponse struct {
+type TmallDeviceCarturlGetAPIResponse struct {
 	model.CommonResponse
-	TmalldevicecarturlgetAPIResponseModel
+	TmallDeviceCarturlGetAPIResponseModel
 }
 
-// TmalldevicecarturlgetAPIResponseModel is 添加商品到购物车 成功返回结果
-type TmalldevicecarturlgetAPIResponseModel struct {
+// TmallDeviceCarturlGetAPIResponseModel is 添加商品到购物车 成功返回结果
+type TmallDeviceCarturlGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_device_carturl_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

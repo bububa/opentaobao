@@ -1,7 +1,7 @@
 package trade
 
-// AlibabatradealiancecreateResultModel 结构体
-type AlibabatradealiancecreateResultModel struct {
+// AlibabaTradeAlianceCreateResultModel 结构体
+type AlibabaTradeAlianceCreateResultModel struct {
 	// errorCode
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// errorMsg

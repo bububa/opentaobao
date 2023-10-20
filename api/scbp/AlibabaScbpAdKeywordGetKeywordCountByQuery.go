@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// Alibabascbpadkeywordgetkeywordcountbyquery 计划关键词数目
+// AlibabaScbpAdKeywordGetKeywordCountByQuery 计划关键词数目
 // alibaba.scbp.ad.keyword.get.keyword.count.by.query
 //
 // 计划关键词数目
-func Alibabascbpadkeywordgetkeywordcountbyquery(clt *core.SDKClient, req *scbp.AlibabascbpadkeywordgetkeywordcountbyqueryAPIRequest, session string) (*scbp.AlibabascbpadkeywordgetkeywordcountbyqueryAPIResponse, error) {
-	var resp scbp.AlibabascbpadkeywordgetkeywordcountbyqueryAPIResponse
+func AlibabaScbpAdKeywordGetKeywordCountByQuery(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest, session string) (*scbp.AlibabaScbpAdKeywordGetKeywordCountByQueryAPIResponse, error) {
+	var resp scbp.AlibabaScbpAdKeywordGetKeywordCountByQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

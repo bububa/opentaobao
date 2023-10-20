@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// Tmallalihousetradecouponrefundorderquery 查询电商券履约退款单
+// TmallAlihouseTradeCouponRefundOrderQuery 查询电商券履约退款单
 // tmall.alihouse.trade.coupon.refund.order.query
 //
 // 查询电商券履约退款单
-func Tmallalihousetradecouponrefundorderquery(clt *core.SDKClient, req *alihouse.TmallalihousetradecouponrefundorderqueryAPIRequest, session string) (*alihouse.TmallalihousetradecouponrefundorderqueryAPIResponse, error) {
-	var resp alihouse.TmallalihousetradecouponrefundorderqueryAPIResponse
+func TmallAlihouseTradeCouponRefundOrderQuery(clt *core.SDKClient, req *alihouse.TmallAlihouseTradeCouponRefundOrderQueryAPIRequest, session string) (*alihouse.TmallAlihouseTradeCouponRefundOrderQueryAPIResponse, error) {
+	var resp alihouse.TmallAlihouseTradeCouponRefundOrderQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

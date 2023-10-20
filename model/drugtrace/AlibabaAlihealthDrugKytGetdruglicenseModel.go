@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaalihealthdrugkytgetdruglicenseModel 结构体
-type AlibabaalihealthdrugkytgetdruglicenseModel struct {
+// AlibabaAlihealthDrugKytGetdruglicenseModel 结构体
+type AlibabaAlihealthDrugKytGetdruglicenseModel struct {
 	// 资质名称
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 资质描述

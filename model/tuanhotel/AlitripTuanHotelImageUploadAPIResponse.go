@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitriptuanhotelimageuploadAPIResponse 图片上传接口 API返回值
+// AlitripTuanHotelImageUploadAPIResponse 图片上传接口 API返回值
 // alitrip.tuan.hotel.image.upload
 //
 // 用户调用此接口完成外网图片上传至卖家图片中心，此接口返回图片中心的图片地址
-type AlitriptuanhotelimageuploadAPIResponse struct {
+type AlitripTuanHotelImageUploadAPIResponse struct {
 	model.CommonResponse
-	AlitriptuanhotelimageuploadAPIResponseModel
+	AlitripTuanHotelImageUploadAPIResponseModel
 }
 
-// AlitriptuanhotelimageuploadAPIResponseModel is 图片上传接口 成功返回结果
-type AlitriptuanhotelimageuploadAPIResponseModel struct {
+// AlitripTuanHotelImageUploadAPIResponseModel is 图片上传接口 成功返回结果
+type AlitripTuanHotelImageUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_tuan_hotel_image_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

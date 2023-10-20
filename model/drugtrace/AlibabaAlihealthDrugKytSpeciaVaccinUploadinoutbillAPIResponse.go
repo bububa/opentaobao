@@ -6,18 +6,18 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthdrugkytspeciavaccinuploadinoutbillAPIResponse 疫苗企业出入库上传 API返回值
+// AlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponse 疫苗企业出入库上传 API返回值
 // alibaba.alihealth.drug.kyt.specia.vaccin.uploadinoutbill
 //
 // 零售企业上传出入库信息，包括采购入库（102），退货入库（103），供应入库（107）,退货出库（202），销毁出库（205），抽检出库（206）， 供应出库（209）,
 // 不包括对个人的零售出库，疫苗接种，领药出库。
-type AlibabaalihealthdrugkytspeciavaccinuploadinoutbillAPIResponse struct {
+type AlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthdrugkytspeciavaccinuploadinoutbillAPIResponseModel
+	AlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponseModel
 }
 
-// AlibabaalihealthdrugkytspeciavaccinuploadinoutbillAPIResponseModel is 疫苗企业出入库上传 成功返回结果
-type AlibabaalihealthdrugkytspeciavaccinuploadinoutbillAPIResponseModel struct {
+// AlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponseModel is 疫苗企业出入库上传 成功返回结果
+type AlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drug_kyt_specia_vaccin_uploadinoutbill_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

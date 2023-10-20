@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaeinvoicepaperreturnAPIResponse 纸质发票结果回传 API返回值
+// AlibabaEinvoicePaperReturnAPIResponse 纸质发票结果回传 API返回值
 // alibaba.einvoice.paper.return
 //
 // 纸质发票结果回传
-type AlibabaeinvoicepaperreturnAPIResponse struct {
+type AlibabaEinvoicePaperReturnAPIResponse struct {
 	model.CommonResponse
-	AlibabaeinvoicepaperreturnAPIResponseModel
+	AlibabaEinvoicePaperReturnAPIResponseModel
 }
 
-// AlibabaeinvoicepaperreturnAPIResponseModel is 纸质发票结果回传 成功返回结果
-type AlibabaeinvoicepaperreturnAPIResponseModel struct {
+// AlibabaEinvoicePaperReturnAPIResponseModel is 纸质发票结果回传 成功返回结果
+type AlibabaEinvoicePaperReturnAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_einvoice_paper_return_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

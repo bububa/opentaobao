@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabamemberidentitysignfinishAPIResponse 签约确认 API返回值
+// AlibabaMemberIdentitySignfinishAPIResponse 签约确认 API返回值
 // alibaba.member.identity.signfinish
 //
 // 签约确认
-type AlibabamemberidentitysignfinishAPIResponse struct {
+type AlibabaMemberIdentitySignfinishAPIResponse struct {
 	model.CommonResponse
-	AlibabamemberidentitysignfinishAPIResponseModel
+	AlibabaMemberIdentitySignfinishAPIResponseModel
 }
 
-// AlibabamemberidentitysignfinishAPIResponseModel is 签约确认 成功返回结果
-type AlibabamemberidentitysignfinishAPIResponseModel struct {
+// AlibabaMemberIdentitySignfinishAPIResponseModel is 签约确认 成功返回结果
+type AlibabaMemberIdentitySignfinishAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_member_identity_signfinish_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
-	Result *AlibabamemberidentitysignfinishTopResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaMemberIdentitySignfinishTopResult `json:"result,omitempty" xml:"result,omitempty"`
 }

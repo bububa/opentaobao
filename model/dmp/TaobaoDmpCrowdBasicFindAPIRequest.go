@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaodmpcrowdbasicfindAPIRequest DMP_BP版人群列表查询 API请求
+// TaobaoDmpCrowdBasicFindAPIRequest DMP_BP版人群列表查询 API请求
 // taobao.dmp.crowd.basic.find
 //
 // DMP_BP版人群列表查询
-type TaobaodmpcrowdbasicfindAPIRequest struct {
+type TaobaoDmpCrowdBasicFindAPIRequest struct {
 	model.Params
 	// 请求体
 	_apiContext *ApiContextDto
@@ -20,65 +20,65 @@ type TaobaodmpcrowdbasicfindAPIRequest struct {
 	_pager *Pager
 }
 
-// NewTaobaodmpcrowdbasicfindRequest 初始化TaobaodmpcrowdbasicfindAPIRequest对象
-func NewTaobaodmpcrowdbasicfindRequest() *TaobaodmpcrowdbasicfindAPIRequest {
-	return &TaobaodmpcrowdbasicfindAPIRequest{
+// NewTaobaoDmpCrowdBasicFindRequest 初始化TaobaoDmpCrowdBasicFindAPIRequest对象
+func NewTaobaoDmpCrowdBasicFindRequest() *TaobaoDmpCrowdBasicFindAPIRequest {
+	return &TaobaoDmpCrowdBasicFindAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaodmpcrowdbasicfindAPIRequest) GetApiMethodName() string {
+func (r TaobaoDmpCrowdBasicFindAPIRequest) GetApiMethodName() string {
 	return "taobao.dmp.crowd.basic.find"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaodmpcrowdbasicfindAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoDmpCrowdBasicFindAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaodmpcrowdbasicfindAPIRequest) GetRawParams() model.Params {
+func (r TaobaoDmpCrowdBasicFindAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetApiContext is ApiContext Setter
 // 请求体
-func (r *TaobaodmpcrowdbasicfindAPIRequest) SetApiContext(_apiContext *ApiContextDto) error {
+func (r *TaobaoDmpCrowdBasicFindAPIRequest) SetApiContext(_apiContext *ApiContextDto) error {
 	r._apiContext = _apiContext
 	r.Set("api_context", _apiContext)
 	return nil
 }
 
 // GetApiContext ApiContext Getter
-func (r TaobaodmpcrowdbasicfindAPIRequest) GetApiContext() *ApiContextDto {
+func (r TaobaoDmpCrowdBasicFindAPIRequest) GetApiContext() *ApiContextDto {
 	return r._apiContext
 }
 
 // SetCrowdQuery is CrowdQuery Setter
 // 人群查询条件
-func (r *TaobaodmpcrowdbasicfindAPIRequest) SetCrowdQuery(_crowdQuery *CrowdQueryDto) error {
+func (r *TaobaoDmpCrowdBasicFindAPIRequest) SetCrowdQuery(_crowdQuery *CrowdQueryDto) error {
 	r._crowdQuery = _crowdQuery
 	r.Set("crowd_query", _crowdQuery)
 	return nil
 }
 
 // GetCrowdQuery CrowdQuery Getter
-func (r TaobaodmpcrowdbasicfindAPIRequest) GetCrowdQuery() *CrowdQueryDto {
+func (r TaobaoDmpCrowdBasicFindAPIRequest) GetCrowdQuery() *CrowdQueryDto {
 	return r._crowdQuery
 }
 
 // SetPager is Pager Setter
 // 分页参数
-func (r *TaobaodmpcrowdbasicfindAPIRequest) SetPager(_pager *Pager) error {
+func (r *TaobaoDmpCrowdBasicFindAPIRequest) SetPager(_pager *Pager) error {
 	r._pager = _pager
 	r.Set("pager", _pager)
 	return nil
 }
 
 // GetPager Pager Getter
-func (r TaobaodmpcrowdbasicfindAPIRequest) GetPager() *Pager {
+func (r TaobaoDmpCrowdBasicFindAPIRequest) GetPager() *Pager {
 	return r._pager
 }

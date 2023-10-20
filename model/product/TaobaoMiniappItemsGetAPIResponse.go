@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaominiappitemsgetAPIResponse 批量获取商品信息 API返回值
+// TaobaoMiniappItemsGetAPIResponse 批量获取商品信息 API返回值
 // taobao.miniapp.items.get
 //
 // 获取商品公开属性，只允许在商家应用环境中使用
-type TaobaominiappitemsgetAPIResponse struct {
+type TaobaoMiniappItemsGetAPIResponse struct {
 	model.CommonResponse
-	TaobaominiappitemsgetAPIResponseModel
+	TaobaoMiniappItemsGetAPIResponseModel
 }
 
-// TaobaominiappitemsgetAPIResponseModel is 批量获取商品信息 成功返回结果
-type TaobaominiappitemsgetAPIResponseModel struct {
+// TaobaoMiniappItemsGetAPIResponseModel is 批量获取商品信息 成功返回结果
+type TaobaoMiniappItemsGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"miniapp_items_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

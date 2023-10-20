@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/cainiaocntec"
 )
 
-// Cainiaocnteclocallifecommunitylifeverifyservicecode 验证码验证
+// CainiaoCntecLocallifeCommunitylifeVerifyservicecode 验证码验证
 // cainiao.cntec.locallife.communitylife.verifyservicecode
 //
 // 验证码验证
-func Cainiaocnteclocallifecommunitylifeverifyservicecode(clt *core.SDKClient, req *cainiaocntec.CainiaocnteclocallifecommunitylifeverifyservicecodeAPIRequest, session string) (*cainiaocntec.CainiaocnteclocallifecommunitylifeverifyservicecodeAPIResponse, error) {
-	var resp cainiaocntec.CainiaocnteclocallifecommunitylifeverifyservicecodeAPIResponse
+func CainiaoCntecLocallifeCommunitylifeVerifyservicecode(clt *core.SDKClient, req *cainiaocntec.CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest, session string) (*cainiaocntec.CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIResponse, error) {
+	var resp cainiaocntec.CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,7 +1,7 @@
 package examination
 
-// AlibabaalihealthexaminationtodoorserviceinfosyncData 结构体
-type AlibabaalihealthexaminationtodoorserviceinfosyncData struct {
+// AlibabaAlihealthExaminationTodoorServiceinfoSyncData 结构体
+type AlibabaAlihealthExaminationTodoorServiceinfoSyncData struct {
 	// 结果
 	ResponseCode string `json:"response_code,omitempty" xml:"response_code,omitempty"`
 	// 结果

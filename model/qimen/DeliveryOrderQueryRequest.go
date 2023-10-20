@@ -19,5 +19,5 @@ type DeliveryOrderQueryRequest struct {
 	// 每页orderLine条数(最多100条)
 	PageSize int64 `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
 	// 扩展属性
-	ExtendProps *TaobaoqimendeliveryorderqueryMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+	ExtendProps *TaobaoQimenDeliveryorderQueryMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

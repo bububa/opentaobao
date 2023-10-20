@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotanxcreativegetAPIResponse 获取单个审核创意状态 API返回值
+// TaobaoTanxCreativeGetAPIResponse 获取单个审核创意状态 API返回值
 // taobao.tanx.creative.get
 //
 // 获取单个审核创意状态
-type TaobaotanxcreativegetAPIResponse struct {
+type TaobaoTanxCreativeGetAPIResponse struct {
 	model.CommonResponse
-	TaobaotanxcreativegetAPIResponseModel
+	TaobaoTanxCreativeGetAPIResponseModel
 }
 
-// TaobaotanxcreativegetAPIResponseModel is 获取单个审核创意状态 成功返回结果
-type TaobaotanxcreativegetAPIResponseModel struct {
+// TaobaoTanxCreativeGetAPIResponseModel is 获取单个审核创意状态 成功返回结果
+type TaobaoTanxCreativeGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tanx_creative_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

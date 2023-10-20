@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/eleenterpriseordernew"
 )
 
-// Alibabaeleenterpriseordernewpaymentstatus 设置订单支付
+// AlibabaEleEnterpriseOrdernewPaymentstatus 设置订单支付
 // alibaba.ele.enterprise.ordernew.paymentstatus
 //
 // 设置订单支付成功
-func Alibabaeleenterpriseordernewpaymentstatus(clt *core.SDKClient, req *eleenterpriseordernew.AlibabaeleenterpriseordernewpaymentstatusAPIRequest, session string) (*eleenterpriseordernew.AlibabaeleenterpriseordernewpaymentstatusAPIResponse, error) {
-	var resp eleenterpriseordernew.AlibabaeleenterpriseordernewpaymentstatusAPIResponse
+func AlibabaEleEnterpriseOrdernewPaymentstatus(clt *core.SDKClient, req *eleenterpriseordernew.AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest, session string) (*eleenterpriseordernew.AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse, error) {
+	var resp eleenterpriseordernew.AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

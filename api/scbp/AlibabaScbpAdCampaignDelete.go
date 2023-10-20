@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// Alibabascbpadcampaigndelete 删除计划
+// AlibabaScbpAdCampaignDelete 删除计划
 // alibaba.scbp.ad.campaign.delete
 //
 // 删除计划
-func Alibabascbpadcampaigndelete(clt *core.SDKClient, req *scbp.AlibabascbpadcampaigndeleteAPIRequest, session string) (*scbp.AlibabascbpadcampaigndeleteAPIResponse, error) {
-	var resp scbp.AlibabascbpadcampaigndeleteAPIResponse
+func AlibabaScbpAdCampaignDelete(clt *core.SDKClient, req *scbp.AlibabaScbpAdCampaignDeleteAPIRequest, session string) (*scbp.AlibabaScbpAdCampaignDeleteAPIResponse, error) {
+	var resp scbp.AlibabaScbpAdCampaignDeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

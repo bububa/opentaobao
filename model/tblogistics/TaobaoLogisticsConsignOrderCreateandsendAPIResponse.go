@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaologisticsconsignordercreateandsendAPIResponse 创建订单并发货 API返回值
+// TaobaoLogisticsConsignOrderCreateandsendAPIResponse 创建订单并发货 API返回值
 // taobao.logistics.consign.order.createandsend
 //
 // 创建物流订单，并发货。
-type TaobaologisticsconsignordercreateandsendAPIResponse struct {
+type TaobaoLogisticsConsignOrderCreateandsendAPIResponse struct {
 	model.CommonResponse
-	TaobaologisticsconsignordercreateandsendAPIResponseModel
+	TaobaoLogisticsConsignOrderCreateandsendAPIResponseModel
 }
 
-// TaobaologisticsconsignordercreateandsendAPIResponseModel is 创建订单并发货 成功返回结果
-type TaobaologisticsconsignordercreateandsendAPIResponseModel struct {
+// TaobaoLogisticsConsignOrderCreateandsendAPIResponseModel is 创建订单并发货 成功返回结果
+type TaobaoLogisticsConsignOrderCreateandsendAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_consign_order_createandsend_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

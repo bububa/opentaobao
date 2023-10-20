@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaalihealthdrugkytlistauthsResult 结构体
-type AlibabaalihealthdrugkytlistauthsResult struct {
+// AlibabaAlihealthDrugKytListauthsResult 结构体
+type AlibabaAlihealthDrugKytListauthsResult struct {
 	// 企业ID
 	EntId string `json:"ent_id,omitempty" xml:"ent_id,omitempty"`
 	// 企业名称

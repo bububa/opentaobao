@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alisports"
 )
 
-// Alibabaalisportspassportaccountssotokenrefresh sso_token刷新
+// AlibabaAlisportsPassportAccountSsotokenrefresh sso_token刷新
 // alibaba.alisports.passport.account.ssotokenrefresh
 //
 // sso_token刷新
-func Alibabaalisportspassportaccountssotokenrefresh(clt *core.SDKClient, req *alisports.AlibabaalisportspassportaccountssotokenrefreshAPIRequest, session string) (*alisports.AlibabaalisportspassportaccountssotokenrefreshAPIResponse, error) {
-	var resp alisports.AlibabaalisportspassportaccountssotokenrefreshAPIResponse
+func AlibabaAlisportsPassportAccountSsotokenrefresh(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest, session string) (*alisports.AlibabaAlisportsPassportAccountSsotokenrefreshAPIResponse, error) {
+	var resp alisports.AlibabaAlisportsPassportAccountSsotokenrefreshAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

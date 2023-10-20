@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaominiappdistributionmaterialupdateAPIResponse 小程序投放 --- 更新投放素材 API返回值
+// TaobaoMiniappDistributionMaterialUpdateAPIResponse 小程序投放 --- 更新投放素材 API返回值
 // taobao.miniapp.distribution.material.update
 //
 // 修改已录入的投放素材信息。
-type TaobaominiappdistributionmaterialupdateAPIResponse struct {
+type TaobaoMiniappDistributionMaterialUpdateAPIResponse struct {
 	model.CommonResponse
-	TaobaominiappdistributionmaterialupdateAPIResponseModel
+	TaobaoMiniappDistributionMaterialUpdateAPIResponseModel
 }
 
-// TaobaominiappdistributionmaterialupdateAPIResponseModel is 小程序投放 --- 更新投放素材 成功返回结果
-type TaobaominiappdistributionmaterialupdateAPIResponseModel struct {
+// TaobaoMiniappDistributionMaterialUpdateAPIResponseModel is 小程序投放 --- 更新投放素材 成功返回结果
+type TaobaoMiniappDistributionMaterialUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"miniapp_distribution_material_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

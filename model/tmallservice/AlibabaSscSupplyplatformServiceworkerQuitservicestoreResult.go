@@ -1,7 +1,7 @@
 package tmallservice
 
-// AlibabasscsupplyplatformserviceworkerquitservicestoreResult 结构体
-type AlibabasscsupplyplatformserviceworkerquitservicestoreResult struct {
+// AlibabaSscSupplyplatformServiceworkerQuitservicestoreResult 结构体
+type AlibabaSscSupplyplatformServiceworkerQuitservicestoreResult struct {
 	// 错误信息
 	DisplayMsg string `json:"display_msg,omitempty" xml:"display_msg,omitempty"`
 	// 错误码

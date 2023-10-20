@@ -1,7 +1,7 @@
 package servicecenter
 
-// TmallcarleasetailpaymentbackResult 结构体
-type TmallcarleasetailpaymentbackResult struct {
+// TmallCarLeaseTailpaymentbackResult 结构体
+type TmallCarLeaseTailpaymentbackResult struct {
 	// errorCode
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// errorMessage

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallcityretailtxdfulfillordervirtualnumberAPIResponse 淘鲜达虚拟号服务接口 API返回值
+// TmallCityretailTxdFulfillOrderVirtualnumberAPIResponse 淘鲜达虚拟号服务接口 API返回值
 // tmall.cityretail.txd.fulfill.order.virtualnumber
 //
 // 虚拟小号绑定接口，只有开通了虚拟号服务的淘鲜达商家能绑定。
-type TmallcityretailtxdfulfillordervirtualnumberAPIResponse struct {
+type TmallCityretailTxdFulfillOrderVirtualnumberAPIResponse struct {
 	model.CommonResponse
-	TmallcityretailtxdfulfillordervirtualnumberAPIResponseModel
+	TmallCityretailTxdFulfillOrderVirtualnumberAPIResponseModel
 }
 
-// TmallcityretailtxdfulfillordervirtualnumberAPIResponseModel is 淘鲜达虚拟号服务接口 成功返回结果
-type TmallcityretailtxdfulfillordervirtualnumberAPIResponseModel struct {
+// TmallCityretailTxdFulfillOrderVirtualnumberAPIResponseModel is 淘鲜达虚拟号服务接口 成功返回结果
+type TmallCityretailTxdFulfillOrderVirtualnumberAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_cityretail_txd_fulfill_order_virtualnumber_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

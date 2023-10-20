@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabacampuscorecompanycampusgetcombycamidAPIResponse 根据园区ID获取运营公司信息 API返回值
+// AlibabaCampusCoreCompanycampusGetcombycamidAPIResponse 根据园区ID获取运营公司信息 API返回值
 // alibaba.campus.core.companycampus.getcombycamid
 //
 // 根据园区ID获取运营公司信息
-type AlibabacampuscorecompanycampusgetcombycamidAPIResponse struct {
+type AlibabaCampusCoreCompanycampusGetcombycamidAPIResponse struct {
 	model.CommonResponse
-	AlibabacampuscorecompanycampusgetcombycamidAPIResponseModel
+	AlibabaCampusCoreCompanycampusGetcombycamidAPIResponseModel
 }
 
-// AlibabacampuscorecompanycampusgetcombycamidAPIResponseModel is 根据园区ID获取运营公司信息 成功返回结果
-type AlibabacampuscorecompanycampusgetcombycamidAPIResponseModel struct {
+// AlibabaCampusCoreCompanycampusGetcombycamidAPIResponseModel is 根据园区ID获取运营公司信息 成功返回结果
+type AlibabaCampusCoreCompanycampusGetcombycamidAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_campus_core_companycampus_getcombycamid_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

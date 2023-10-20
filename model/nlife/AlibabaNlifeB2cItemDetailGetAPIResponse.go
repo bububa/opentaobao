@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// Alibabanlifeb2citemdetailgetAPIResponse b2c码详情查询 API返回值
+// AlibabaNlifeB2cItemDetailGetAPIResponse b2c码详情查询 API返回值
 // alibaba.nlife.b2c.item.detail.get
 //
 // 根据零售+平台生成的唯一码获取对应详情
-type Alibabanlifeb2citemdetailgetAPIResponse struct {
+type AlibabaNlifeB2cItemDetailGetAPIResponse struct {
 	model.CommonResponse
-	Alibabanlifeb2citemdetailgetAPIResponseModel
+	AlibabaNlifeB2cItemDetailGetAPIResponseModel
 }
 
-// Alibabanlifeb2citemdetailgetAPIResponseModel is b2c码详情查询 成功返回结果
-type Alibabanlifeb2citemdetailgetAPIResponseModel struct {
+// AlibabaNlifeB2cItemDetailGetAPIResponseModel is b2c码详情查询 成功返回结果
+type AlibabaNlifeB2cItemDetailGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_nlife_b2c_item_detail_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

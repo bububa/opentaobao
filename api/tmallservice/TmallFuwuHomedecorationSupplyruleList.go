@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-// Tmallfuwuhomedecorationsupplyrulelist 查询供给规则接口
+// TmallFuwuHomedecorationSupplyruleList 查询供给规则接口
 // tmall.fuwu.homedecoration.supplyrule.list
 //
 // 查询供给规则接口
-func Tmallfuwuhomedecorationsupplyrulelist(clt *core.SDKClient, req *tmallservice.TmallfuwuhomedecorationsupplyrulelistAPIRequest, session string) (*tmallservice.TmallfuwuhomedecorationsupplyrulelistAPIResponse, error) {
-	var resp tmallservice.TmallfuwuhomedecorationsupplyrulelistAPIResponse
+func TmallFuwuHomedecorationSupplyruleList(clt *core.SDKClient, req *tmallservice.TmallFuwuHomedecorationSupplyruleListAPIRequest, session string) (*tmallservice.TmallFuwuHomedecorationSupplyruleListAPIResponse, error) {
+	var resp tmallservice.TmallFuwuHomedecorationSupplyruleListAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

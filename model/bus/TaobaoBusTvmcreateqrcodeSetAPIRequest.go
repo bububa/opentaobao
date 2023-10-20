@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaobustvmcreateqrcodesetAPIRequest 自助机生成支付宝支付二维码 API请求
+// TaobaoBusTvmcreateqrcodeSetAPIRequest 自助机生成支付宝支付二维码 API请求
 // taobao.bus.tvmcreateqrcode.set
 //
 // 用于汽车票线下自助机调用获取支付宝的二维码
-type TaobaobustvmcreateqrcodesetAPIRequest struct {
+type TaobaoBusTvmcreateqrcodeSetAPIRequest struct {
 	model.Params
 	// 飞猪订单号
 	_alitripOrderId string
@@ -18,52 +18,52 @@ type TaobaobustvmcreateqrcodesetAPIRequest struct {
 	_timeoutExpress int64
 }
 
-// NewTaobaobustvmcreateqrcodesetRequest 初始化TaobaobustvmcreateqrcodesetAPIRequest对象
-func NewTaobaobustvmcreateqrcodesetRequest() *TaobaobustvmcreateqrcodesetAPIRequest {
-	return &TaobaobustvmcreateqrcodesetAPIRequest{
+// NewTaobaoBusTvmcreateqrcodeSetRequest 初始化TaobaoBusTvmcreateqrcodeSetAPIRequest对象
+func NewTaobaoBusTvmcreateqrcodeSetRequest() *TaobaoBusTvmcreateqrcodeSetAPIRequest {
+	return &TaobaoBusTvmcreateqrcodeSetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaobustvmcreateqrcodesetAPIRequest) GetApiMethodName() string {
+func (r TaobaoBusTvmcreateqrcodeSetAPIRequest) GetApiMethodName() string {
 	return "taobao.bus.tvmcreateqrcode.set"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaobustvmcreateqrcodesetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoBusTvmcreateqrcodeSetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaobustvmcreateqrcodesetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoBusTvmcreateqrcodeSetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetAlitripOrderId is AlitripOrderId Setter
 // 飞猪订单号
-func (r *TaobaobustvmcreateqrcodesetAPIRequest) SetAlitripOrderId(_alitripOrderId string) error {
+func (r *TaobaoBusTvmcreateqrcodeSetAPIRequest) SetAlitripOrderId(_alitripOrderId string) error {
 	r._alitripOrderId = _alitripOrderId
 	r.Set("alitrip_order_id", _alitripOrderId)
 	return nil
 }
 
 // GetAlitripOrderId AlitripOrderId Getter
-func (r TaobaobustvmcreateqrcodesetAPIRequest) GetAlitripOrderId() string {
+func (r TaobaoBusTvmcreateqrcodeSetAPIRequest) GetAlitripOrderId() string {
 	return r._alitripOrderId
 }
 
 // SetTimeoutExpress is TimeoutExpress Setter
 // 超时时间（分钟）
-func (r *TaobaobustvmcreateqrcodesetAPIRequest) SetTimeoutExpress(_timeoutExpress int64) error {
+func (r *TaobaoBusTvmcreateqrcodeSetAPIRequest) SetTimeoutExpress(_timeoutExpress int64) error {
 	r._timeoutExpress = _timeoutExpress
 	r.Set("timeout_express", _timeoutExpress)
 	return nil
 }
 
 // GetTimeoutExpress TimeoutExpress Getter
-func (r TaobaobustvmcreateqrcodesetAPIRequest) GetTimeoutExpress() int64 {
+func (r TaobaoBusTvmcreateqrcodeSetAPIRequest) GetTimeoutExpress() int64 {
 	return r._timeoutExpress
 }

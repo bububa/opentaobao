@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdktimegetAPIResponse 获得当前系统时间 API返回值
+// AlibabaWdkTimeGetAPIResponse 获得当前系统时间 API返回值
 // alibaba.wdk.time.get
 //
 // 获得当前系统时间
-type AlibabawdktimegetAPIResponse struct {
+type AlibabaWdkTimeGetAPIResponse struct {
 	model.CommonResponse
-	AlibabawdktimegetAPIResponseModel
+	AlibabaWdkTimeGetAPIResponseModel
 }
 
-// AlibabawdktimegetAPIResponseModel is 获得当前系统时间 成功返回结果
-type AlibabawdktimegetAPIResponseModel struct {
+// AlibabaWdkTimeGetAPIResponseModel is 获得当前系统时间 成功返回结果
+type AlibabaWdkTimeGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_time_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

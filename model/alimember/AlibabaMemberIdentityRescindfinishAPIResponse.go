@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabamemberidentityrescindfinishAPIResponse 取消确认 API返回值
+// AlibabaMemberIdentityRescindfinishAPIResponse 取消确认 API返回值
 // alibaba.member.identity.rescindfinish
 //
 // 取消确认
-type AlibabamemberidentityrescindfinishAPIResponse struct {
+type AlibabaMemberIdentityRescindfinishAPIResponse struct {
 	model.CommonResponse
-	AlibabamemberidentityrescindfinishAPIResponseModel
+	AlibabaMemberIdentityRescindfinishAPIResponseModel
 }
 
-// AlibabamemberidentityrescindfinishAPIResponseModel is 取消确认 成功返回结果
-type AlibabamemberidentityrescindfinishAPIResponseModel struct {
+// AlibabaMemberIdentityRescindfinishAPIResponseModel is 取消确认 成功返回结果
+type AlibabaMemberIdentityRescindfinishAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_member_identity_rescindfinish_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
-	Result *AlibabamemberidentityrescindfinishTopResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaMemberIdentityRescindfinishTopResult `json:"result,omitempty" xml:"result,omitempty"`
 }

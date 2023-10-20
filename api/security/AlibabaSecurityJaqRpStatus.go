@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/security"
 )
 
-// Alibabasecurityjaqrpstatus 聚安全实人认证查询状态接口
+// AlibabaSecurityJaqRpStatus 聚安全实人认证查询状态接口
 // alibaba.security.jaq.rp.status
 //
 // 聚安全实人认证查询状态接口
-func Alibabasecurityjaqrpstatus(clt *core.SDKClient, req *security.AlibabasecurityjaqrpstatusAPIRequest, session string) (*security.AlibabasecurityjaqrpstatusAPIResponse, error) {
-	var resp security.AlibabasecurityjaqrpstatusAPIResponse
+func AlibabaSecurityJaqRpStatus(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpStatusAPIRequest, session string) (*security.AlibabaSecurityJaqRpStatusAPIResponse, error) {
+	var resp security.AlibabaSecurityJaqRpStatusAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabainteractsensorcalendarAPIResponse 天猫互动游戏开放平台需要授权的传感器类接口(日历提醒) API返回值
+// AlibabaInteractSensorCalendarAPIResponse 天猫互动游戏开放平台需要授权的传感器类接口(日历提醒) API返回值
 // alibaba.interact.sensor.calendar
 //
 // 天猫互动游戏开放平台需要授权的传感器类接口(日历提醒)
-type AlibabainteractsensorcalendarAPIResponse struct {
+type AlibabaInteractSensorCalendarAPIResponse struct {
 	model.CommonResponse
-	AlibabainteractsensorcalendarAPIResponseModel
+	AlibabaInteractSensorCalendarAPIResponseModel
 }
 
-// AlibabainteractsensorcalendarAPIResponseModel is 天猫互动游戏开放平台需要授权的传感器类接口(日历提醒) 成功返回结果
-type AlibabainteractsensorcalendarAPIResponseModel struct {
+// AlibabaInteractSensorCalendarAPIResponseModel is 天猫互动游戏开放平台需要授权的传感器类接口(日历提醒) 成功返回结果
+type AlibabaInteractSensorCalendarAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_sensor_calendar_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

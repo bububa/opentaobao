@@ -1,9 +1,9 @@
 package tbk
 
-// TaobaotbkdgnewuserordergetData 结构体
-type TaobaotbkdgnewuserordergetData struct {
+// TaobaoTbkDgNewuserOrderGetData 结构体
+type TaobaoTbkDgNewuserOrderGetData struct {
 	// resultList
-	Results []TaobaotbkdgnewuserordergetMapData `json:"results,omitempty" xml:"results>taobaotbkdgnewuserorderget_map_data,omitempty"`
+	Results []TaobaoTbkDgNewuserOrderGetMapData `json:"results,omitempty" xml:"results>taobao_tbk_dg_newuser_order_get_map_data,omitempty"`
 	// 页码
 	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
 	// 每页大小

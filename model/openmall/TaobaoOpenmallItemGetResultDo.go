@@ -1,7 +1,7 @@
 package openmall
 
-// TaobaoopenmallitemgetResultDo 结构体
-type TaobaoopenmallitemgetResultDo struct {
+// TaobaoOpenmallItemGetResultDo 结构体
+type TaobaoOpenmallItemGetResultDo struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息

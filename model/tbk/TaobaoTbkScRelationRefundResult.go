@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaotbkscrelationrefundResult 结构体
-type TaobaotbkscrelationrefundResult struct {
+// TaobaoTbkScRelationRefundResult 结构体
+type TaobaoTbkScRelationRefundResult struct {
 	// 第三方应该返还的补贴
 	TkSubsidyFeeRefund3rdPub string `json:"tk_subsidy_fee_refund3rd_pub,omitempty" xml:"tk_subsidy_fee_refund3rd_pub,omitempty"`
 	// 第三方应该返还的佣金

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowirelesssharetpwdqueryAPIResponse 查询解析淘口令 API返回值
+// TaobaoWirelessShareTpwdQueryAPIResponse 查询解析淘口令 API返回值
 // taobao.wireless.share.tpwd.query
 //
 // 查询解析淘口令
-type TaobaowirelesssharetpwdqueryAPIResponse struct {
+type TaobaoWirelessShareTpwdQueryAPIResponse struct {
 	model.CommonResponse
-	TaobaowirelesssharetpwdqueryAPIResponseModel
+	TaobaoWirelessShareTpwdQueryAPIResponseModel
 }
 
-// TaobaowirelesssharetpwdqueryAPIResponseModel is 查询解析淘口令 成功返回结果
-type TaobaowirelesssharetpwdqueryAPIResponseModel struct {
+// TaobaoWirelessShareTpwdQueryAPIResponseModel is 查询解析淘口令 成功返回结果
+type TaobaoWirelessShareTpwdQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"wireless_share_tpwd_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoiotticketspmaintainupdateAPIRequest IoT售后服务商维修方案更新 API请求
+// CainiaoIotTicketSpMaintainUpdateAPIRequest IoT售后服务商维修方案更新 API请求
 // cainiao.iot.ticket.sp.maintain.update
 //
 // IoT售后服务商维修方案更新
-type CainiaoiotticketspmaintainupdateAPIRequest struct {
+type CainiaoIotTicketSpMaintainUpdateAPIRequest struct {
 	model.Params
 	// 请求参数
 	_param *UpdateMaintainPlanTopRequest
 }
 
-// NewCainiaoiotticketspmaintainupdateRequest 初始化CainiaoiotticketspmaintainupdateAPIRequest对象
-func NewCainiaoiotticketspmaintainupdateRequest() *CainiaoiotticketspmaintainupdateAPIRequest {
-	return &CainiaoiotticketspmaintainupdateAPIRequest{
+// NewCainiaoIotTicketSpMaintainUpdateRequest 初始化CainiaoIotTicketSpMaintainUpdateAPIRequest对象
+func NewCainiaoIotTicketSpMaintainUpdateRequest() *CainiaoIotTicketSpMaintainUpdateAPIRequest {
+	return &CainiaoIotTicketSpMaintainUpdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r CainiaoiotticketspmaintainupdateAPIRequest) GetApiMethodName() string {
+func (r CainiaoIotTicketSpMaintainUpdateAPIRequest) GetApiMethodName() string {
 	return "cainiao.iot.ticket.sp.maintain.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r CainiaoiotticketspmaintainupdateAPIRequest) GetApiParams(params url.Values) {
+func (r CainiaoIotTicketSpMaintainUpdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r CainiaoiotticketspmaintainupdateAPIRequest) GetRawParams() model.Params {
+func (r CainiaoIotTicketSpMaintainUpdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 请求参数
-func (r *CainiaoiotticketspmaintainupdateAPIRequest) SetParam(_param *UpdateMaintainPlanTopRequest) error {
+func (r *CainiaoIotTicketSpMaintainUpdateAPIRequest) SetParam(_param *UpdateMaintainPlanTopRequest) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r CainiaoiotticketspmaintainupdateAPIRequest) GetParam() *UpdateMaintainPlanTopRequest {
+func (r CainiaoIotTicketSpMaintainUpdateAPIRequest) GetParam() *UpdateMaintainPlanTopRequest {
 	return r._param
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaopromotionmiscitemactivitygetAPIResponse 查询无条件单品优惠活动 API返回值
+// TaobaoPromotionmiscItemActivityGetAPIResponse 查询无条件单品优惠活动 API返回值
 // taobao.promotionmisc.item.activity.get
 //
 // 查询无条件单品优惠活动
-type TaobaopromotionmiscitemactivitygetAPIResponse struct {
+type TaobaoPromotionmiscItemActivityGetAPIResponse struct {
 	model.CommonResponse
-	TaobaopromotionmiscitemactivitygetAPIResponseModel
+	TaobaoPromotionmiscItemActivityGetAPIResponseModel
 }
 
-// TaobaopromotionmiscitemactivitygetAPIResponseModel is 查询无条件单品优惠活动 成功返回结果
-type TaobaopromotionmiscitemactivitygetAPIResponseModel struct {
+// TaobaoPromotionmiscItemActivityGetAPIResponseModel is 查询无条件单品优惠活动 成功返回结果
+type TaobaoPromotionmiscItemActivityGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"promotionmisc_item_activity_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

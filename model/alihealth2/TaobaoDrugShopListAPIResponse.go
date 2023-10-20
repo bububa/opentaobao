@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaodrugshoplistAPIResponse 查询卖家外卖店列表 API返回值
+// TaobaoDrugShopListAPIResponse 查询卖家外卖店列表 API返回值
 // taobao.drug.shop.list
 //
 // 查询卖家外卖店列表
-type TaobaodrugshoplistAPIResponse struct {
+type TaobaoDrugShopListAPIResponse struct {
 	model.CommonResponse
-	TaobaodrugshoplistAPIResponseModel
+	TaobaoDrugShopListAPIResponseModel
 }
 
-// TaobaodrugshoplistAPIResponseModel is 查询卖家外卖店列表 成功返回结果
-type TaobaodrugshoplistAPIResponseModel struct {
+// TaobaoDrugShopListAPIResponseModel is 查询卖家外卖店列表 成功返回结果
+type TaobaoDrugShopListAPIResponseModel struct {
 	XMLName xml.Name `xml:"drug_shop_list_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

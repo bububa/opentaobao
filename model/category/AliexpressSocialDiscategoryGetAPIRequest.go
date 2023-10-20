@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpresssocialdiscategorygetAPIRequest 展示类目获取接口 API请求
+// AliexpressSocialDiscategoryGetAPIRequest 展示类目获取接口 API请求
 // aliexpress.social.discategory.get
 //
 // AE展示类目获取接口
-type AliexpresssocialdiscategorygetAPIRequest struct {
+type AliexpressSocialDiscategoryGetAPIRequest struct {
 	model.Params
 	// Locale值，格式为language+"_"+country
 	_locale string
 }
 
-// NewAliexpresssocialdiscategorygetRequest 初始化AliexpresssocialdiscategorygetAPIRequest对象
-func NewAliexpresssocialdiscategorygetRequest() *AliexpresssocialdiscategorygetAPIRequest {
-	return &AliexpresssocialdiscategorygetAPIRequest{
+// NewAliexpressSocialDiscategoryGetRequest 初始化AliexpressSocialDiscategoryGetAPIRequest对象
+func NewAliexpressSocialDiscategoryGetRequest() *AliexpressSocialDiscategoryGetAPIRequest {
+	return &AliexpressSocialDiscategoryGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AliexpresssocialdiscategorygetAPIRequest) GetApiMethodName() string {
+func (r AliexpressSocialDiscategoryGetAPIRequest) GetApiMethodName() string {
 	return "aliexpress.social.discategory.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AliexpresssocialdiscategorygetAPIRequest) GetApiParams(params url.Values) {
+func (r AliexpressSocialDiscategoryGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AliexpresssocialdiscategorygetAPIRequest) GetRawParams() model.Params {
+func (r AliexpressSocialDiscategoryGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetLocale is Locale Setter
 // Locale值，格式为language+&#34;_&#34;+country
-func (r *AliexpresssocialdiscategorygetAPIRequest) SetLocale(_locale string) error {
+func (r *AliexpressSocialDiscategoryGetAPIRequest) SetLocale(_locale string) error {
 	r._locale = _locale
 	r.Set("locale", _locale)
 	return nil
 }
 
 // GetLocale Locale Getter
-func (r AliexpresssocialdiscategorygetAPIRequest) GetLocale() string {
+func (r AliexpressSocialDiscategoryGetAPIRequest) GetLocale() string {
 	return r._locale
 }

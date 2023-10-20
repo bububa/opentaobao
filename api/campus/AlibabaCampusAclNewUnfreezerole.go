@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/campus"
 )
 
-// Alibabacampusaclnewunfreezerole 解冻角色
+// AlibabaCampusAclNewUnfreezerole 解冻角色
 // alibaba.campus.acl.new.unfreezerole
 //
 // 解冻角色
-func Alibabacampusaclnewunfreezerole(clt *core.SDKClient, req *campus.AlibabacampusaclnewunfreezeroleAPIRequest, session string) (*campus.AlibabacampusaclnewunfreezeroleAPIResponse, error) {
-	var resp campus.AlibabacampusaclnewunfreezeroleAPIResponse
+func AlibabaCampusAclNewUnfreezerole(clt *core.SDKClient, req *campus.AlibabaCampusAclNewUnfreezeroleAPIRequest, session string) (*campus.AlibabaCampusAclNewUnfreezeroleAPIResponse, error) {
+	var resp campus.AlibabaCampusAclNewUnfreezeroleAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

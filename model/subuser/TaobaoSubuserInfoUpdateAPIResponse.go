@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosubuserinfoupdateAPIResponse 修改指定账户子账号的基本信息 API返回值
+// TaobaoSubuserInfoUpdateAPIResponse 修改指定账户子账号的基本信息 API返回值
 // taobao.subuser.info.update
 //
 // 修改指定账户子账号的基本信息（通过主账号登陆只能修改属于该主账号的子账号基本信息）
-type TaobaosubuserinfoupdateAPIResponse struct {
+type TaobaoSubuserInfoUpdateAPIResponse struct {
 	model.CommonResponse
-	TaobaosubuserinfoupdateAPIResponseModel
+	TaobaoSubuserInfoUpdateAPIResponseModel
 }
 
-// TaobaosubuserinfoupdateAPIResponseModel is 修改指定账户子账号的基本信息 成功返回结果
-type TaobaosubuserinfoupdateAPIResponseModel struct {
+// TaobaoSubuserInfoUpdateAPIResponseModel is 修改指定账户子账号的基本信息 成功返回结果
+type TaobaoSubuserInfoUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"subuser_info_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

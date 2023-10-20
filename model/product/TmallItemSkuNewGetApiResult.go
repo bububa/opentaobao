@@ -1,7 +1,7 @@
 package product
 
-// TmallitemskunewgetApiResult 结构体
-type TmallitemskunewgetApiResult struct {
+// TmallItemSkuNewGetApiResult 结构体
+type TmallItemSkuNewGetApiResult struct {
 	// 错误码集合
 	ErrorCodes []ErrorCode `json:"error_codes,omitempty" xml:"error_codes>error_code,omitempty"`
 	// sku标新信息集合

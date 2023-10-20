@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosadmarketadbidAPIResponse 广告竞价服务 API返回值
+// YunosAdmarketAdBidAPIResponse 广告竞价服务 API返回值
 // yunos.admarket.ad.bid
 //
 // 广告竞价服务
-type YunosadmarketadbidAPIResponse struct {
+type YunosAdmarketAdBidAPIResponse struct {
 	model.CommonResponse
-	YunosadmarketadbidAPIResponseModel
+	YunosAdmarketAdBidAPIResponseModel
 }
 
-// YunosadmarketadbidAPIResponseModel is 广告竞价服务 成功返回结果
-type YunosadmarketadbidAPIResponseModel struct {
+// YunosAdmarketAdBidAPIResponseModel is 广告竞价服务 成功返回结果
+type YunosAdmarketAdBidAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_admarket_ad_bid_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

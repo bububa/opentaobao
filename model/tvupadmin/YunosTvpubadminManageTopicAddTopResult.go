@@ -1,7 +1,7 @@
 package tvupadmin
 
-// YunostvpubadminmanagetopicaddTopResult 结构体
-type YunostvpubadminmanagetopicaddTopResult struct {
+// YunosTvpubadminManageTopicAddTopResult 结构体
+type YunosTvpubadminManageTopicAddTopResult struct {
 	// errorCode
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// errorMsg

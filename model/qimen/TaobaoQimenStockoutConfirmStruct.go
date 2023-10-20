@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoqimenstockoutconfirmStruct 结构体
-type TaobaoqimenstockoutconfirmStruct struct {
+// TaobaoQimenStockoutConfirmStruct 结构体
+type TaobaoQimenStockoutConfirmStruct struct {
 	// packages
 	Packages []Package `json:"packages,omitempty" xml:"packages>package,omitempty"`
 	// orderLines
@@ -15,5 +15,5 @@ type TaobaoqimenstockoutconfirmStruct struct {
 	// deliveryOrder
 	DeliveryOrder *DeliveryOrder `json:"deliveryOrder,omitempty" xml:"deliveryOrder,omitempty"`
 	// 扩展属性
-	ExtendProps *TaobaoqimenstockoutconfirmMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+	ExtendProps *TaobaoQimenStockoutConfirmMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

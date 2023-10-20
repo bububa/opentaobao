@@ -1,7 +1,7 @@
 package cloudgame
 
-// AlibabacloudgameopenidqueryResult 结构体
-type AlibabacloudgameopenidqueryResult struct {
+// AlibabaCloudgameOpenidQueryResult 结构体
+type AlibabaCloudgameOpenidQueryResult struct {
 	// 结果码
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 结果码描述

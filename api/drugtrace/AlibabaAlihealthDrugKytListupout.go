@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// Alibabaalihealthdrugkytlistupout 查询货主/本企业上游企业出库单据信息
+// AlibabaAlihealthDrugKytListupout 查询货主/本企业上游企业出库单据信息
 // alibaba.alihealth.drug.kyt.listupout
 //
 // 查询货主/本企业上游企业出库单据信息
-func Alibabaalihealthdrugkytlistupout(clt *core.SDKClient, req *drugtrace.AlibabaalihealthdrugkytlistupoutAPIRequest, session string) (*drugtrace.AlibabaalihealthdrugkytlistupoutAPIResponse, error) {
-	var resp drugtrace.AlibabaalihealthdrugkytlistupoutAPIResponse
+func AlibabaAlihealthDrugKytListupout(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytListupoutAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytListupoutAPIResponse, error) {
+	var resp drugtrace.AlibabaAlihealthDrugKytListupoutAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

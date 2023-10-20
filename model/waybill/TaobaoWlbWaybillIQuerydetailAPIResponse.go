@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowlbwaybilliquerydetailAPIResponse 查面单号状态v1.0 API返回值
+// TaobaoWlbWaybillIQuerydetailAPIResponse 查面单号状态v1.0 API返回值
 // taobao.wlb.waybill.i.querydetail
 //
 // 查看面单号的当前状态，如签收、发货、失效等。
-type TaobaowlbwaybilliquerydetailAPIResponse struct {
+type TaobaoWlbWaybillIQuerydetailAPIResponse struct {
 	model.CommonResponse
-	TaobaowlbwaybilliquerydetailAPIResponseModel
+	TaobaoWlbWaybillIQuerydetailAPIResponseModel
 }
 
-// TaobaowlbwaybilliquerydetailAPIResponseModel is 查面单号状态v1.0 成功返回结果
-type TaobaowlbwaybilliquerydetailAPIResponseModel struct {
+// TaobaoWlbWaybillIQuerydetailAPIResponseModel is 查面单号状态v1.0 成功返回结果
+type TaobaoWlbWaybillIQuerydetailAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_waybill_i_querydetail_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

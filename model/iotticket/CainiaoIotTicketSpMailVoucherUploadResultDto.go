@@ -1,7 +1,7 @@
 package iotticket
 
-// CainiaoiotticketspmailvoucheruploadResultDto 结构体
-type CainiaoiotticketspmailvoucheruploadResultDto struct {
+// CainiaoIotTicketSpMailVoucherUploadResultDto 结构体
+type CainiaoIotTicketSpMailVoucherUploadResultDto struct {
 	// 异常描述
 	ErrorDesc string `json:"error_desc,omitempty" xml:"error_desc,omitempty"`
 	// 异常编码

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// Alibabaalihousenewhomeprojectlotteryresultsubmit 楼盘摇号结果提交
+// AlibabaAlihouseNewhomeProjectLotteryResultSubmit 楼盘摇号结果提交
 // alibaba.alihouse.newhome.project.lottery.result.submit
 //
 // 楼盘摇号结果提交
-func Alibabaalihousenewhomeprojectlotteryresultsubmit(clt *core.SDKClient, req *alihouse.AlibabaalihousenewhomeprojectlotteryresultsubmitAPIRequest, session string) (*alihouse.AlibabaalihousenewhomeprojectlotteryresultsubmitAPIResponse, error) {
-	var resp alihouse.AlibabaalihousenewhomeprojectlotteryresultsubmitAPIResponse
+func AlibabaAlihouseNewhomeProjectLotteryResultSubmit(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeProjectLotteryResultSubmitAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeProjectLotteryResultSubmitAPIResponse, error) {
+	var resp alihouse.AlibabaAlihouseNewhomeProjectLotteryResultSubmitAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

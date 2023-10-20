@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoalitriptravelaxinhotellistgetAPIRequest 标准酒店信息查询-阿信 API请求
+// TaobaoAlitripTravelAxinHotelListGetAPIRequest 标准酒店信息查询-阿信 API请求
 // taobao.alitrip.travel.axin.hotel.list.get
 //
 // 阿信酒店分销基础数据查询
-type TaobaoalitriptravelaxinhotellistgetAPIRequest struct {
+type TaobaoAlitripTravelAxinHotelListGetAPIRequest struct {
 	model.Params
 	// 城市编码
 	_cityCode int64
@@ -22,78 +22,78 @@ type TaobaoalitriptravelaxinhotellistgetAPIRequest struct {
 	_pageNo int64
 }
 
-// NewTaobaoalitriptravelaxinhotellistgetRequest 初始化TaobaoalitriptravelaxinhotellistgetAPIRequest对象
-func NewTaobaoalitriptravelaxinhotellistgetRequest() *TaobaoalitriptravelaxinhotellistgetAPIRequest {
-	return &TaobaoalitriptravelaxinhotellistgetAPIRequest{
+// NewTaobaoAlitripTravelAxinHotelListGetRequest 初始化TaobaoAlitripTravelAxinHotelListGetAPIRequest对象
+func NewTaobaoAlitripTravelAxinHotelListGetRequest() *TaobaoAlitripTravelAxinHotelListGetAPIRequest {
+	return &TaobaoAlitripTravelAxinHotelListGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoalitriptravelaxinhotellistgetAPIRequest) GetApiMethodName() string {
+func (r TaobaoAlitripTravelAxinHotelListGetAPIRequest) GetApiMethodName() string {
 	return "taobao.alitrip.travel.axin.hotel.list.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoalitriptravelaxinhotellistgetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoAlitripTravelAxinHotelListGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoalitriptravelaxinhotellistgetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoAlitripTravelAxinHotelListGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCityCode is CityCode Setter
 // 城市编码
-func (r *TaobaoalitriptravelaxinhotellistgetAPIRequest) SetCityCode(_cityCode int64) error {
+func (r *TaobaoAlitripTravelAxinHotelListGetAPIRequest) SetCityCode(_cityCode int64) error {
 	r._cityCode = _cityCode
 	r.Set("city_code", _cityCode)
 	return nil
 }
 
 // GetCityCode CityCode Getter
-func (r TaobaoalitriptravelaxinhotellistgetAPIRequest) GetCityCode() int64 {
+func (r TaobaoAlitripTravelAxinHotelListGetAPIRequest) GetCityCode() int64 {
 	return r._cityCode
 }
 
 // SetDistributorTid is DistributorTid Setter
 // 分销商id(由阿信分配)
-func (r *TaobaoalitriptravelaxinhotellistgetAPIRequest) SetDistributorTid(_distributorTid int64) error {
+func (r *TaobaoAlitripTravelAxinHotelListGetAPIRequest) SetDistributorTid(_distributorTid int64) error {
 	r._distributorTid = _distributorTid
 	r.Set("distributor_tid", _distributorTid)
 	return nil
 }
 
 // GetDistributorTid DistributorTid Getter
-func (r TaobaoalitriptravelaxinhotellistgetAPIRequest) GetDistributorTid() int64 {
+func (r TaobaoAlitripTravelAxinHotelListGetAPIRequest) GetDistributorTid() int64 {
 	return r._distributorTid
 }
 
 // SetPageSize is PageSize Setter
 // 页大小
-func (r *TaobaoalitriptravelaxinhotellistgetAPIRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaoAlitripTravelAxinHotelListGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
 	r.Set("page_size", _pageSize)
 	return nil
 }
 
 // GetPageSize PageSize Getter
-func (r TaobaoalitriptravelaxinhotellistgetAPIRequest) GetPageSize() int64 {
+func (r TaobaoAlitripTravelAxinHotelListGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
 // SetPageNo is PageNo Setter
 // 页码
-func (r *TaobaoalitriptravelaxinhotellistgetAPIRequest) SetPageNo(_pageNo int64) error {
+func (r *TaobaoAlitripTravelAxinHotelListGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
 	r.Set("page_no", _pageNo)
 	return nil
 }
 
 // GetPageNo PageNo Getter
-func (r TaobaoalitriptravelaxinhotellistgetAPIRequest) GetPageNo() int64 {
+func (r TaobaoAlitripTravelAxinHotelListGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }

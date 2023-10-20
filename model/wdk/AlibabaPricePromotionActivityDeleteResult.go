@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabapricepromotionactivitydeleteResult 结构体
-type AlibabapricepromotionactivitydeleteResult struct {
+// AlibabaPricePromotionActivityDeleteResult 结构体
+type AlibabaPricePromotionActivityDeleteResult struct {
 	// data
 	DataList []string `json:"data_list,omitempty" xml:"data_list>string,omitempty"`
 	// msg

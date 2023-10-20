@@ -1,9 +1,9 @@
 package smartstore
 
-// TmallpopupstoreactivityqueryResultDto 结构体
-type TmallpopupstoreactivityqueryResultDto struct {
+// TmallPopupstoreActivityQueryResultDto 结构体
+type TmallPopupstoreActivityQueryResultDto struct {
 	// 返回结果
-	ResultList []TmallpopupstoreactivityqueryResult `json:"result_list,omitempty" xml:"result_list>tmallpopupstoreactivityquery_result,omitempty"`
+	ResultList []TmallPopupstoreActivityQueryResult `json:"result_list,omitempty" xml:"result_list>tmall_popupstore_activity_query_result,omitempty"`
 	// 返回code
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 错误msg

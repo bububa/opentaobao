@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabawdktraderefundsuccesscreateApiResult 结构体
-type AlibabawdktraderefundsuccesscreateApiResult struct {
+// AlibabaWdkTradeRefundSuccessCreateApiResult 结构体
+type AlibabaWdkTradeRefundSuccessCreateApiResult struct {
 	// 错误码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 错误信息

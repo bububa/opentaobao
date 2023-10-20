@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihealthoutflow"
 )
 
-// Alibabaalihealthasyncprescribeprescriptionsearch 异步开方处方查询
+// AlibabaAlihealthAsyncprescribePrescriptionSearch 异步开方处方查询
 // alibaba.alihealth.asyncprescribe.prescription.search
 //
 // 异步开方处方查询
-func Alibabaalihealthasyncprescribeprescriptionsearch(clt *core.SDKClient, req *alihealthoutflow.AlibabaalihealthasyncprescribeprescriptionsearchAPIRequest, session string) (*alihealthoutflow.AlibabaalihealthasyncprescribeprescriptionsearchAPIResponse, error) {
-	var resp alihealthoutflow.AlibabaalihealthasyncprescribeprescriptionsearchAPIResponse
+func AlibabaAlihealthAsyncprescribePrescriptionSearch(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthAsyncprescribePrescriptionSearchAPIRequest, session string) (*alihealthoutflow.AlibabaAlihealthAsyncprescribePrescriptionSearchAPIResponse, error) {
+	var resp alihealthoutflow.AlibabaAlihealthAsyncprescribePrescriptionSearchAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

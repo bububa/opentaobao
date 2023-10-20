@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/jstinteractive"
 )
 
-// Taobaojstinteractivetaskregister 互动任务开通接口
+// TaobaoJstInteractiveTaskRegister 互动任务开通接口
 // taobao.jst.interactive.task.register
 //
 // 调用互动任务开通接口为小程序开通互动任务
-func Taobaojstinteractivetaskregister(clt *core.SDKClient, req *jstinteractive.TaobaojstinteractivetaskregisterAPIRequest, session string) (*jstinteractive.TaobaojstinteractivetaskregisterAPIResponse, error) {
-	var resp jstinteractive.TaobaojstinteractivetaskregisterAPIResponse
+func TaobaoJstInteractiveTaskRegister(clt *core.SDKClient, req *jstinteractive.TaobaoJstInteractiveTaskRegisterAPIRequest, session string) (*jstinteractive.TaobaoJstInteractiveTaskRegisterAPIResponse, error) {
+	var resp jstinteractive.TaobaoJstInteractiveTaskRegisterAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

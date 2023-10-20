@@ -1,7 +1,7 @@
 package icbuseller
 
-// AlibabasellervendororderlistResult 结构体
-type AlibabasellervendororderlistResult struct {
+// AlibabaSellerVendorOrderListResult 结构体
+type AlibabaSellerVendorOrderListResult struct {
 	// 返回对象集合
 	Dtos []Dto `json:"dtos,omitempty" xml:"dtos>dto,omitempty"`
 	// 接口返回

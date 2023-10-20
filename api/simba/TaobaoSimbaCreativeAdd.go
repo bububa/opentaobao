@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// Taobaosimbacreativeadd 增加创意
+// TaobaoSimbaCreativeAdd 增加创意
 // taobao.simba.creative.add
 //
 // 创建一个创意
-func Taobaosimbacreativeadd(clt *core.SDKClient, req *simba.TaobaosimbacreativeaddAPIRequest, session string) (*simba.TaobaosimbacreativeaddAPIResponse, error) {
-	var resp simba.TaobaosimbacreativeaddAPIResponse
+func TaobaoSimbaCreativeAdd(clt *core.SDKClient, req *simba.TaobaoSimbaCreativeAddAPIRequest, session string) (*simba.TaobaoSimbaCreativeAddAPIResponse, error) {
+	var resp simba.TaobaoSimbaCreativeAddAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

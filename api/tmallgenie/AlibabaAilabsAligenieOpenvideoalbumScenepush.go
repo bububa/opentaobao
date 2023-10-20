@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallgenie"
 )
 
-// Alibabaailabsaligenieopenvideoalbumscenepush 视频专辑场景接入接口
+// AlibabaAilabsAligenieOpenvideoalbumScenepush 视频专辑场景接入接口
 // alibaba.ailabs.aligenie.openvideoalbum.scenepush
 //
 // 视频专辑场景接入接口
-func Alibabaailabsaligenieopenvideoalbumscenepush(clt *core.SDKClient, req *tmallgenie.AlibabaailabsaligenieopenvideoalbumscenepushAPIRequest, session string) (*tmallgenie.AlibabaailabsaligenieopenvideoalbumscenepushAPIResponse, error) {
-	var resp tmallgenie.AlibabaailabsaligenieopenvideoalbumscenepushAPIResponse
+func AlibabaAilabsAligenieOpenvideoalbumScenepush(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest, session string) (*tmallgenie.AlibabaAilabsAligenieOpenvideoalbumScenepushAPIResponse, error) {
+	var resp tmallgenie.AlibabaAilabsAligenieOpenvideoalbumScenepushAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

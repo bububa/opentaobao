@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosimbasalestarcreativeaddAPIResponse （新）新建创意 API返回值
+// TaobaoSimbaSalestarCreativeAddAPIResponse （新）新建创意 API返回值
 // taobao.simba.salestar.creative.add
 //
 // 创建一个创意
-type TaobaosimbasalestarcreativeaddAPIResponse struct {
+type TaobaoSimbaSalestarCreativeAddAPIResponse struct {
 	model.CommonResponse
-	TaobaosimbasalestarcreativeaddAPIResponseModel
+	TaobaoSimbaSalestarCreativeAddAPIResponseModel
 }
 
-// TaobaosimbasalestarcreativeaddAPIResponseModel is （新）新建创意 成功返回结果
-type TaobaosimbasalestarcreativeaddAPIResponseModel struct {
+// TaobaoSimbaSalestarCreativeAddAPIResponseModel is （新）新建创意 成功返回结果
+type TaobaoSimbaSalestarCreativeAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_salestar_creative_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

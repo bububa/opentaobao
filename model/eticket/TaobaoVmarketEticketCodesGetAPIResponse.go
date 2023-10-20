@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaovmarketeticketcodesgetAPIResponse 电子凭证码列表查询 API返回值
+// TaobaoVmarketEticketCodesGetAPIResponse 电子凭证码列表查询 API返回值
 // taobao.vmarket.eticket.codes.get
 //
 // 查询某个订单的所有码的列表
-type TaobaovmarketeticketcodesgetAPIResponse struct {
+type TaobaoVmarketEticketCodesGetAPIResponse struct {
 	model.CommonResponse
-	TaobaovmarketeticketcodesgetAPIResponseModel
+	TaobaoVmarketEticketCodesGetAPIResponseModel
 }
 
-// TaobaovmarketeticketcodesgetAPIResponseModel is 电子凭证码列表查询 成功返回结果
-type TaobaovmarketeticketcodesgetAPIResponseModel struct {
+// TaobaoVmarketEticketCodesGetAPIResponseModel is 电子凭证码列表查询 成功返回结果
+type TaobaoVmarketEticketCodesGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"vmarket_eticket_codes_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

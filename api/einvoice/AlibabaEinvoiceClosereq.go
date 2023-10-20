@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/einvoice"
 )
 
-// Alibabaeinvoiceclosereq 关闭开票失败请求（失败列表可重试）
+// AlibabaEinvoiceClosereq 关闭开票失败请求（失败列表可重试）
 // alibaba.einvoice.closereq
 //
 // 关闭失败开票请求，避免造成重复开票
-func Alibabaeinvoiceclosereq(clt *core.SDKClient, req *einvoice.AlibabaeinvoiceclosereqAPIRequest, session string) (*einvoice.AlibabaeinvoiceclosereqAPIResponse, error) {
-	var resp einvoice.AlibabaeinvoiceclosereqAPIResponse
+func AlibabaEinvoiceClosereq(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceClosereqAPIRequest, session string) (*einvoice.AlibabaEinvoiceClosereqAPIResponse, error) {
+	var resp einvoice.AlibabaEinvoiceClosereqAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

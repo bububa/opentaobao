@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/mos"
 )
 
-// Alibabamosstoregetcloudshelfversion 获取云货架版本信息
+// AlibabaMosStoreGetcloudshelfversion 获取云货架版本信息
 // alibaba.mos.store.getcloudshelfversion
 //
 // 根据屏编号获取云货架版本信息
-func Alibabamosstoregetcloudshelfversion(clt *core.SDKClient, req *mos.AlibabamosstoregetcloudshelfversionAPIRequest, session string) (*mos.AlibabamosstoregetcloudshelfversionAPIResponse, error) {
-	var resp mos.AlibabamosstoregetcloudshelfversionAPIResponse
+func AlibabaMosStoreGetcloudshelfversion(clt *core.SDKClient, req *mos.AlibabaMosStoreGetcloudshelfversionAPIRequest, session string) (*mos.AlibabaMosStoreGetcloudshelfversionAPIResponse, error) {
+	var resp mos.AlibabaMosStoreGetcloudshelfversionAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

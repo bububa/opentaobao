@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabascbpadcampaigncreateAPIResponse 创建计划 API返回值
+// AlibabaScbpAdCampaignCreateAPIResponse 创建计划 API返回值
 // alibaba.scbp.ad.campaign.create
 //
 // 创建计划
-type AlibabascbpadcampaigncreateAPIResponse struct {
+type AlibabaScbpAdCampaignCreateAPIResponse struct {
 	model.CommonResponse
-	AlibabascbpadcampaigncreateAPIResponseModel
+	AlibabaScbpAdCampaignCreateAPIResponseModel
 }
 
-// AlibabascbpadcampaigncreateAPIResponseModel is 创建计划 成功返回结果
-type AlibabascbpadcampaigncreateAPIResponseModel struct {
+// AlibabaScbpAdCampaignCreateAPIResponseModel is 创建计划 成功返回结果
+type AlibabaScbpAdCampaignCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_ad_campaign_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

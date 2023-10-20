@@ -1,7 +1,7 @@
 package aliqin
 
-// AlibabaaliqinfcvoicenumsinglecallBizResult 结构体
-type AlibabaaliqinfcvoicenumsinglecallBizResult struct {
+// AlibabaAliqinFcVoiceNumSinglecallBizResult 结构体
+type AlibabaAliqinFcVoiceNumSinglecallBizResult struct {
 	// 返回结果
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// 返回信息描述

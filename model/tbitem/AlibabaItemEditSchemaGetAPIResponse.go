@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaitemeditschemagetAPIResponse 商品编辑获取schema信息 API返回值
+// AlibabaItemEditSchemaGetAPIResponse 商品编辑获取schema信息 API返回值
 // alibaba.item.edit.schema.get
 //
 // 商品编辑时，获取商品规则信息
-type AlibabaitemeditschemagetAPIResponse struct {
+type AlibabaItemEditSchemaGetAPIResponse struct {
 	model.CommonResponse
-	AlibabaitemeditschemagetAPIResponseModel
+	AlibabaItemEditSchemaGetAPIResponseModel
 }
 
-// AlibabaitemeditschemagetAPIResponseModel is 商品编辑获取schema信息 成功返回结果
-type AlibabaitemeditschemagetAPIResponseModel struct {
+// AlibabaItemEditSchemaGetAPIResponseModel is 商品编辑获取schema信息 成功返回结果
+type AlibabaItemEditSchemaGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_item_edit_schema_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

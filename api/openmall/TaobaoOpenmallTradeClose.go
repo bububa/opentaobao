@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/openmall"
 )
 
-// Taobaoopenmalltradeclose 关闭订单
+// TaobaoOpenmallTradeClose 关闭订单
 // taobao.openmall.trade.close
 //
 // 关闭订单
-func Taobaoopenmalltradeclose(clt *core.SDKClient, req *openmall.TaobaoopenmalltradecloseAPIRequest, session string) (*openmall.TaobaoopenmalltradecloseAPIResponse, error) {
-	var resp openmall.TaobaoopenmalltradecloseAPIResponse
+func TaobaoOpenmallTradeClose(clt *core.SDKClient, req *openmall.TaobaoOpenmallTradeCloseAPIRequest, session string) (*openmall.TaobaoOpenmallTradeCloseAPIResponse, error) {
+	var resp openmall.TaobaoOpenmallTradeCloseAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

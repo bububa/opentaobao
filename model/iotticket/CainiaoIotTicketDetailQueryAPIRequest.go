@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoiotticketdetailqueryAPIRequest IoT售后工单详情查询 API请求
+// CainiaoIotTicketDetailQueryAPIRequest IoT售后工单详情查询 API请求
 // cainiao.iot.ticket.detail.query
 //
 // Iot售后工单详情信息查询
-type CainiaoiotticketdetailqueryAPIRequest struct {
+type CainiaoIotTicketDetailQueryAPIRequest struct {
 	model.Params
 	// 服务商唯一编码
 	_spCode string
@@ -18,52 +18,52 @@ type CainiaoiotticketdetailqueryAPIRequest struct {
 	_ticketId int64
 }
 
-// NewCainiaoiotticketdetailqueryRequest 初始化CainiaoiotticketdetailqueryAPIRequest对象
-func NewCainiaoiotticketdetailqueryRequest() *CainiaoiotticketdetailqueryAPIRequest {
-	return &CainiaoiotticketdetailqueryAPIRequest{
+// NewCainiaoIotTicketDetailQueryRequest 初始化CainiaoIotTicketDetailQueryAPIRequest对象
+func NewCainiaoIotTicketDetailQueryRequest() *CainiaoIotTicketDetailQueryAPIRequest {
+	return &CainiaoIotTicketDetailQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r CainiaoiotticketdetailqueryAPIRequest) GetApiMethodName() string {
+func (r CainiaoIotTicketDetailQueryAPIRequest) GetApiMethodName() string {
 	return "cainiao.iot.ticket.detail.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r CainiaoiotticketdetailqueryAPIRequest) GetApiParams(params url.Values) {
+func (r CainiaoIotTicketDetailQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r CainiaoiotticketdetailqueryAPIRequest) GetRawParams() model.Params {
+func (r CainiaoIotTicketDetailQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSpCode is SpCode Setter
 // 服务商唯一编码
-func (r *CainiaoiotticketdetailqueryAPIRequest) SetSpCode(_spCode string) error {
+func (r *CainiaoIotTicketDetailQueryAPIRequest) SetSpCode(_spCode string) error {
 	r._spCode = _spCode
 	r.Set("sp_code", _spCode)
 	return nil
 }
 
 // GetSpCode SpCode Getter
-func (r CainiaoiotticketdetailqueryAPIRequest) GetSpCode() string {
+func (r CainiaoIotTicketDetailQueryAPIRequest) GetSpCode() string {
 	return r._spCode
 }
 
 // SetTicketId is TicketId Setter
 // 工单Id
-func (r *CainiaoiotticketdetailqueryAPIRequest) SetTicketId(_ticketId int64) error {
+func (r *CainiaoIotTicketDetailQueryAPIRequest) SetTicketId(_ticketId int64) error {
 	r._ticketId = _ticketId
 	r.Set("ticket_id", _ticketId)
 	return nil
 }
 
 // GetTicketId TicketId Getter
-func (r CainiaoiotticketdetailqueryAPIRequest) GetTicketId() int64 {
+func (r CainiaoIotTicketDetailQueryAPIRequest) GetTicketId() int64 {
 	return r._ticketId
 }

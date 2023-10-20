@@ -1,7 +1,7 @@
 package user
 
-// TaobaomessageaccountmesssagereplyResult 结构体
-type TaobaomessageaccountmesssagereplyResult struct {
+// TaobaoMessageaccountMesssageReplyResult 结构体
+type TaobaoMessageaccountMesssageReplyResult struct {
 	// model
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// errMessage

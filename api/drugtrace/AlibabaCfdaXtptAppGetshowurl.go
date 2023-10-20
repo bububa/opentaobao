@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// Alibabacfdaxtptappgetshowurl 协同平台码查询页面url
+// AlibabaCfdaXtptAppGetshowurl 协同平台码查询页面url
 // alibaba.cfda.xtpt.app.getshowurl
 //
 // 协同平台码查询页面url
-func Alibabacfdaxtptappgetshowurl(clt *core.SDKClient, req *drugtrace.AlibabacfdaxtptappgetshowurlAPIRequest, session string) (*drugtrace.AlibabacfdaxtptappgetshowurlAPIResponse, error) {
-	var resp drugtrace.AlibabacfdaxtptappgetshowurlAPIResponse
+func AlibabaCfdaXtptAppGetshowurl(clt *core.SDKClient, req *drugtrace.AlibabaCfdaXtptAppGetshowurlAPIRequest, session string) (*drugtrace.AlibabaCfdaXtptAppGetshowurlAPIResponse, error) {
+	var resp drugtrace.AlibabaCfdaXtptAppGetshowurlAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/logistic"
 )
 
-// Taobaologisticsexpressordertmsupdate 服务商修改上门取退时间接口
+// TaobaoLogisticsExpressOrderTmsUpdate 服务商修改上门取退时间接口
 // taobao.logistics.express.order.tms.update
 //
 // 服务商修改上门取退时间接口
-func Taobaologisticsexpressordertmsupdate(clt *core.SDKClient, req *logistic.TaobaologisticsexpressordertmsupdateAPIRequest, session string) (*logistic.TaobaologisticsexpressordertmsupdateAPIResponse, error) {
-	var resp logistic.TaobaologisticsexpressordertmsupdateAPIResponse
+func TaobaoLogisticsExpressOrderTmsUpdate(clt *core.SDKClient, req *logistic.TaobaoLogisticsExpressOrderTmsUpdateAPIRequest, session string) (*logistic.TaobaoLogisticsExpressOrderTmsUpdateAPIResponse, error) {
+	var resp logistic.TaobaoLogisticsExpressOrderTmsUpdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

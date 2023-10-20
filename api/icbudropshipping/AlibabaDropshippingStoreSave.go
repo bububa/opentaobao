@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/icbudropshipping"
 )
 
-// Alibabadropshippingstoresave 阿里巴巴dropshipping店铺数据保存接口
+// AlibabaDropshippingStoreSave 阿里巴巴dropshipping店铺数据保存接口
 // alibaba.dropshipping.store.save
 //
 // 阿里巴巴dropshipping店铺数据保存
-func Alibabadropshippingstoresave(clt *core.SDKClient, req *icbudropshipping.AlibabadropshippingstoresaveAPIRequest, session string) (*icbudropshipping.AlibabadropshippingstoresaveAPIResponse, error) {
-	var resp icbudropshipping.AlibabadropshippingstoresaveAPIResponse
+func AlibabaDropshippingStoreSave(clt *core.SDKClient, req *icbudropshipping.AlibabaDropshippingStoreSaveAPIRequest, session string) (*icbudropshipping.AlibabaDropshippingStoreSaveAPIResponse, error) {
+	var resp icbudropshipping.AlibabaDropshippingStoreSaveAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

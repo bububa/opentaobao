@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// Alibabawdkorderaggregate 淘鲜达订单按门店机台号聚合查询
+// AlibabaWdkOrderAggregate 淘鲜达订单按门店机台号聚合查询
 // alibaba.wdk.order.aggregate
 //
 // 淘鲜达订单按门店机台号聚合查询
-func Alibabawdkorderaggregate(clt *core.SDKClient, req *wdk.AlibabawdkorderaggregateAPIRequest, session string) (*wdk.AlibabawdkorderaggregateAPIResponse, error) {
-	var resp wdk.AlibabawdkorderaggregateAPIResponse
+func AlibabaWdkOrderAggregate(clt *core.SDKClient, req *wdk.AlibabaWdkOrderAggregateAPIRequest, session string) (*wdk.AlibabaWdkOrderAggregateAPIResponse, error) {
+	var resp wdk.AlibabaWdkOrderAggregateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

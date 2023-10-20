@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/axindata"
 )
 
-// Taobaoalitriptravelfscrouteapiproductlabelget 获取线路主题
+// TaobaoAlitripTravelFscRouteApiProductLabelGet 获取线路主题
 // taobao.alitrip.travel.fsc.route.api.product.label.get
 //
 // 获取线路主题
-func Taobaoalitriptravelfscrouteapiproductlabelget(clt *core.SDKClient, req *axindata.TaobaoalitriptravelfscrouteapiproductlabelgetAPIRequest, session string) (*axindata.TaobaoalitriptravelfscrouteapiproductlabelgetAPIResponse, error) {
-	var resp axindata.TaobaoalitriptravelfscrouteapiproductlabelgetAPIResponse
+func TaobaoAlitripTravelFscRouteApiProductLabelGet(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest, session string) (*axindata.TaobaoAlitripTravelFscRouteApiProductLabelGetAPIResponse, error) {
+	var resp axindata.TaobaoAlitripTravelFscRouteApiProductLabelGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

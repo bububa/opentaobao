@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaogrowthreachingbuzzwordqueryAPIResponse 淘宝热词榜单数据查询接口 API返回值
+// TaobaoGrowthReachingBuzzwordQueryAPIResponse 淘宝热词榜单数据查询接口 API返回值
 // taobao.growth.reaching.buzzword.query
 //
 // 查询淘宝热词榜单数据
-type TaobaogrowthreachingbuzzwordqueryAPIResponse struct {
+type TaobaoGrowthReachingBuzzwordQueryAPIResponse struct {
 	model.CommonResponse
-	TaobaogrowthreachingbuzzwordqueryAPIResponseModel
+	TaobaoGrowthReachingBuzzwordQueryAPIResponseModel
 }
 
-// TaobaogrowthreachingbuzzwordqueryAPIResponseModel is 淘宝热词榜单数据查询接口 成功返回结果
-type TaobaogrowthreachingbuzzwordqueryAPIResponseModel struct {
+// TaobaoGrowthReachingBuzzwordQueryAPIResponseModel is 淘宝热词榜单数据查询接口 成功返回结果
+type TaobaoGrowthReachingBuzzwordQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"growth_reaching_buzzword_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabacfdaxtptappgetshowurlAPIResponse 协同平台码查询页面url API返回值
+// AlibabaCfdaXtptAppGetshowurlAPIResponse 协同平台码查询页面url API返回值
 // alibaba.cfda.xtpt.app.getshowurl
 //
 // 协同平台码查询页面url
-type AlibabacfdaxtptappgetshowurlAPIResponse struct {
+type AlibabaCfdaXtptAppGetshowurlAPIResponse struct {
 	model.CommonResponse
-	AlibabacfdaxtptappgetshowurlAPIResponseModel
+	AlibabaCfdaXtptAppGetshowurlAPIResponseModel
 }
 
-// AlibabacfdaxtptappgetshowurlAPIResponseModel is 协同平台码查询页面url 成功返回结果
-type AlibabacfdaxtptappgetshowurlAPIResponseModel struct {
+// AlibabaCfdaXtptAppGetshowurlAPIResponseModel is 协同平台码查询页面url 成功返回结果
+type AlibabaCfdaXtptAppGetshowurlAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_cfda_xtpt_app_getshowurl_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

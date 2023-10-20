@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoqimenitemmappingqueryResponse 结构体
-type TaobaoqimenitemmappingqueryResponse struct {
+// TaobaoQimenItemmappingQueryResponse 结构体
+type TaobaoQimenItemmappingQueryResponse struct {
 	// 商品映射关系
 	ItemMappings []ItemMapping `json:"itemMappings,omitempty" xml:"itemMappings>item_mapping,omitempty"`
 	// 响应结果:success|failure,success,string(10),必填

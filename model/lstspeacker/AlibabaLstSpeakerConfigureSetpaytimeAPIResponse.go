@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabalstspeakerconfiguresetpaytimeAPIResponse 音箱播放配置 API返回值
+// AlibabaLstSpeakerConfigureSetpaytimeAPIResponse 音箱播放配置 API返回值
 // alibaba.lst.speaker.configure.setpaytime
 //
 // 音箱播放配置
-type AlibabalstspeakerconfiguresetpaytimeAPIResponse struct {
+type AlibabaLstSpeakerConfigureSetpaytimeAPIResponse struct {
 	model.CommonResponse
-	AlibabalstspeakerconfiguresetpaytimeAPIResponseModel
+	AlibabaLstSpeakerConfigureSetpaytimeAPIResponseModel
 }
 
-// AlibabalstspeakerconfiguresetpaytimeAPIResponseModel is 音箱播放配置 成功返回结果
-type AlibabalstspeakerconfiguresetpaytimeAPIResponseModel struct {
+// AlibabaLstSpeakerConfigureSetpaytimeAPIResponseModel is 音箱播放配置 成功返回结果
+type AlibabaLstSpeakerConfigureSetpaytimeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_lst_speaker_configure_setpaytime_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

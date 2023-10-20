@@ -1,7 +1,7 @@
 package xhotelitem
 
-// TaobaoxhotelbnbownerdeleteResultSet 结构体
-type TaobaoxhotelbnbownerdeleteResultSet struct {
+// TaobaoXhotelBnbownerDeleteResultSet 结构体
+type TaobaoXhotelBnbownerDeleteResultSet struct {
 	// 系统自动生成
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 系统自动生成

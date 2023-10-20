@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// Taobaosimbartrpttargetingtagget 搜索人群实时报表
+// TaobaoSimbaRtrptTargetingtagGet 搜索人群实时报表
 // taobao.simba.rtrpt.targetingtag.get
 //
 // 获取搜搜人群实时报表
-func Taobaosimbartrpttargetingtagget(clt *core.SDKClient, req *simba.TaobaosimbartrpttargetingtaggetAPIRequest, session string) (*simba.TaobaosimbartrpttargetingtaggetAPIResponse, error) {
-	var resp simba.TaobaosimbartrpttargetingtaggetAPIResponse
+func TaobaoSimbaRtrptTargetingtagGet(clt *core.SDKClient, req *simba.TaobaoSimbaRtrptTargetingtagGetAPIRequest, session string) (*simba.TaobaoSimbaRtrptTargetingtagGetAPIResponse, error) {
+	var resp simba.TaobaoSimbaRtrptTargetingtagGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

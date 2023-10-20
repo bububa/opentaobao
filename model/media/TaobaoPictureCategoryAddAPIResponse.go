@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaopicturecategoryaddAPIResponse 新增图片分类信息 API返回值
+// TaobaoPictureCategoryAddAPIResponse 新增图片分类信息 API返回值
 // taobao.picture.category.add
 //
 // 同一卖家最多添加500个图片分类，图片分类名称长度最大为20个字符
-type TaobaopicturecategoryaddAPIResponse struct {
+type TaobaoPictureCategoryAddAPIResponse struct {
 	model.CommonResponse
-	TaobaopicturecategoryaddAPIResponseModel
+	TaobaoPictureCategoryAddAPIResponseModel
 }
 
-// TaobaopicturecategoryaddAPIResponseModel is 新增图片分类信息 成功返回结果
-type TaobaopicturecategoryaddAPIResponseModel struct {
+// TaobaoPictureCategoryAddAPIResponseModel is 新增图片分类信息 成功返回结果
+type TaobaoPictureCategoryAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"picture_category_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

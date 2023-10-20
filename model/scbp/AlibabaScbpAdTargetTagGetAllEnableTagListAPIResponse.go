@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabascbpadtargettaggetallenabletaglistAPIResponse 查询所有可添加标签信息 API返回值
+// AlibabaScbpAdTargetTagGetAllEnableTagListAPIResponse 查询所有可添加标签信息 API返回值
 // alibaba.scbp.ad.target.tag.get.all.enable.tag.list
 //
 // 查询标签数据
-type AlibabascbpadtargettaggetallenabletaglistAPIResponse struct {
+type AlibabaScbpAdTargetTagGetAllEnableTagListAPIResponse struct {
 	model.CommonResponse
-	AlibabascbpadtargettaggetallenabletaglistAPIResponseModel
+	AlibabaScbpAdTargetTagGetAllEnableTagListAPIResponseModel
 }
 
-// AlibabascbpadtargettaggetallenabletaglistAPIResponseModel is 查询所有可添加标签信息 成功返回结果
-type AlibabascbpadtargettaggetallenabletaglistAPIResponseModel struct {
+// AlibabaScbpAdTargetTagGetAllEnableTagListAPIResponseModel is 查询所有可添加标签信息 成功返回结果
+type AlibabaScbpAdTargetTagGetAllEnableTagListAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_ad_target_tag_get_all_enable_tag_list_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

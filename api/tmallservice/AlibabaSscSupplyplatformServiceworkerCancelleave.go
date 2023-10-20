@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-// Alibabasscsupplyplatformserviceworkercancelleave 工人取消请假
+// AlibabaSscSupplyplatformServiceworkerCancelleave 工人取消请假
 // alibaba.ssc.supplyplatform.serviceworker.cancelleave
 //
 // 工人取消请假
-func Alibabasscsupplyplatformserviceworkercancelleave(clt *core.SDKClient, req *tmallservice.AlibabasscsupplyplatformserviceworkercancelleaveAPIRequest, session string) (*tmallservice.AlibabasscsupplyplatformserviceworkercancelleaveAPIResponse, error) {
-	var resp tmallservice.AlibabasscsupplyplatformserviceworkercancelleaveAPIResponse
+func AlibabaSscSupplyplatformServiceworkerCancelleave(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServiceworkerCancelleaveAPIResponse, error) {
+	var resp tmallservice.AlibabaSscSupplyplatformServiceworkerCancelleaveAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

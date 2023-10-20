@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/b2bcert"
 )
 
-// Alibabaauthcertget 获取证书数据
+// AlibabaAuthCertGet 获取证书数据
 // alibaba.auth.cert.get
 //
 // 获取证书数据
-func Alibabaauthcertget(clt *core.SDKClient, req *b2bcert.AlibabaauthcertgetAPIRequest, session string) (*b2bcert.AlibabaauthcertgetAPIResponse, error) {
-	var resp b2bcert.AlibabaauthcertgetAPIResponse
+func AlibabaAuthCertGet(clt *core.SDKClient, req *b2bcert.AlibabaAuthCertGetAPIRequest, session string) (*b2bcert.AlibabaAuthCertGetAPIResponse, error) {
+	var resp b2bcert.AlibabaAuthCertGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

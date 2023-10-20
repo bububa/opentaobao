@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/omniorder"
 )
 
-// Taobaoomniorderstoreconsigned Pos端门店发货
+// TaobaoOmniorderStoreConsigned Pos端门店发货
 // taobao.omniorder.store.consigned
 //
 // ISV Pos端门店发货，通知星盘
-func Taobaoomniorderstoreconsigned(clt *core.SDKClient, req *omniorder.TaobaoomniorderstoreconsignedAPIRequest, session string) (*omniorder.TaobaoomniorderstoreconsignedAPIResponse, error) {
-	var resp omniorder.TaobaoomniorderstoreconsignedAPIResponse
+func TaobaoOmniorderStoreConsigned(clt *core.SDKClient, req *omniorder.TaobaoOmniorderStoreConsignedAPIRequest, session string) (*omniorder.TaobaoOmniorderStoreConsignedAPIResponse, error) {
+	var resp omniorder.TaobaoOmniorderStoreConsignedAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

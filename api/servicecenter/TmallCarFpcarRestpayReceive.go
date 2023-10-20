@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/servicecenter"
 )
 
-// Tmallcarfpcarrestpayreceive 门店线下已收尾款
+// TmallCarFpcarRestpayReceive 门店线下已收尾款
 // tmall.car.fpcar.restpay.receive
 //
 // 提供给外部(大搜或其它合作方)的接口-门店线下已收尾款(不执行分佣)
-func Tmallcarfpcarrestpayreceive(clt *core.SDKClient, req *servicecenter.TmallcarfpcarrestpayreceiveAPIRequest, session string) (*servicecenter.TmallcarfpcarrestpayreceiveAPIResponse, error) {
-	var resp servicecenter.TmallcarfpcarrestpayreceiveAPIResponse
+func TmallCarFpcarRestpayReceive(clt *core.SDKClient, req *servicecenter.TmallCarFpcarRestpayReceiveAPIRequest, session string) (*servicecenter.TmallCarFpcarRestpayReceiveAPIResponse, error) {
+	var resp servicecenter.TmallCarFpcarRestpayReceiveAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

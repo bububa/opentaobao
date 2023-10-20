@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// Taobaouniversalbpreportqueryadgroup 单元报表查询
+// TaobaoUniversalbpReportQueryAdgroup 单元报表查询
 // taobao.universalbp.report.query.adgroup
 //
 // 单元报表查询
-func Taobaouniversalbpreportqueryadgroup(clt *core.SDKClient, req *simba.TaobaouniversalbpreportqueryadgroupAPIRequest, session string) (*simba.TaobaouniversalbpreportqueryadgroupAPIResponse, error) {
-	var resp simba.TaobaouniversalbpreportqueryadgroupAPIResponse
+func TaobaoUniversalbpReportQueryAdgroup(clt *core.SDKClient, req *simba.TaobaoUniversalbpReportQueryAdgroupAPIRequest, session string) (*simba.TaobaoUniversalbpReportQueryAdgroupAPIResponse, error) {
+	var resp simba.TaobaoUniversalbpReportQueryAdgroupAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

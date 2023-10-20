@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabahealthvaccinnoticetimebucketremindAPIResponse 疫苗预约时间段提醒 API返回值
+// AlibabaHealthVaccinNoticeTimebucketRemindAPIResponse 疫苗预约时间段提醒 API返回值
 // alibaba.health.vaccin.notice.timebucket.remind
 //
 // 疫苗预约时间段提醒
-type AlibabahealthvaccinnoticetimebucketremindAPIResponse struct {
+type AlibabaHealthVaccinNoticeTimebucketRemindAPIResponse struct {
 	model.CommonResponse
-	AlibabahealthvaccinnoticetimebucketremindAPIResponseModel
+	AlibabaHealthVaccinNoticeTimebucketRemindAPIResponseModel
 }
 
-// AlibabahealthvaccinnoticetimebucketremindAPIResponseModel is 疫苗预约时间段提醒 成功返回结果
-type AlibabahealthvaccinnoticetimebucketremindAPIResponseModel struct {
+// AlibabaHealthVaccinNoticeTimebucketRemindAPIResponseModel is 疫苗预约时间段提醒 成功返回结果
+type AlibabaHealthVaccinNoticeTimebucketRemindAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_health_vaccin_notice_timebucket_remind_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

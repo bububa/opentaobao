@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// Alibabaalihousenewhomevideochangestatus 视频草稿状态更新
+// AlibabaAlihouseNewhomeVideoChangestatus 视频草稿状态更新
 // alibaba.alihouse.newhome.video.changestatus
 //
 // 视频草稿状态更新
-func Alibabaalihousenewhomevideochangestatus(clt *core.SDKClient, req *alihouse.AlibabaalihousenewhomevideochangestatusAPIRequest, session string) (*alihouse.AlibabaalihousenewhomevideochangestatusAPIResponse, error) {
-	var resp alihouse.AlibabaalihousenewhomevideochangestatusAPIResponse
+func AlibabaAlihouseNewhomeVideoChangestatus(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeVideoChangestatusAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeVideoChangestatusAPIResponse, error) {
+	var resp alihouse.AlibabaAlihouseNewhomeVideoChangestatusAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

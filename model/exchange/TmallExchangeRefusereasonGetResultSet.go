@@ -1,7 +1,7 @@
 package exchange
 
-// TmallexchangerefusereasongetResultSet 结构体
-type TmallexchangerefusereasongetResultSet struct {
+// TmallExchangeRefusereasonGetResultSet 结构体
+type TmallExchangeRefusereasonGetResultSet struct {
 	// 拒绝原因列表
 	Results []Reason `json:"results,omitempty" xml:"results>reason,omitempty"`
 	// 异常信息

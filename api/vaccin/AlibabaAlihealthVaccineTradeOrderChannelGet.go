@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/vaccin"
 )
 
-// Alibabaalihealthvaccinetradeorderchannelget 通过订单ID与卖家ID获取订单渠道
+// AlibabaAlihealthVaccineTradeOrderChannelGet 通过订单ID与卖家ID获取订单渠道
 // alibaba.alihealth.vaccine.trade.order.channel.get
 //
 // 通过订单ID与卖家ID获取订单渠道
-func Alibabaalihealthvaccinetradeorderchannelget(clt *core.SDKClient, req *vaccin.AlibabaalihealthvaccinetradeorderchannelgetAPIRequest, session string) (*vaccin.AlibabaalihealthvaccinetradeorderchannelgetAPIResponse, error) {
-	var resp vaccin.AlibabaalihealthvaccinetradeorderchannelgetAPIResponse
+func AlibabaAlihealthVaccineTradeOrderChannelGet(clt *core.SDKClient, req *vaccin.AlibabaAlihealthVaccineTradeOrderChannelGetAPIRequest, session string) (*vaccin.AlibabaAlihealthVaccineTradeOrderChannelGetAPIResponse, error) {
+	var resp vaccin.AlibabaAlihealthVaccineTradeOrderChannelGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

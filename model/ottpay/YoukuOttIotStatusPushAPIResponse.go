@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YoukuottiotstatuspushAPIResponse iot设备状态变化通知接口 API返回值
+// YoukuOttIotStatusPushAPIResponse iot设备状态变化通知接口 API返回值
 // youku.ott.iot.status.push
 //
 // ott iot设备状态通知
-type YoukuottiotstatuspushAPIResponse struct {
+type YoukuOttIotStatusPushAPIResponse struct {
 	model.CommonResponse
-	YoukuottiotstatuspushAPIResponseModel
+	YoukuOttIotStatusPushAPIResponseModel
 }
 
-// YoukuottiotstatuspushAPIResponseModel is iot设备状态变化通知接口 成功返回结果
-type YoukuottiotstatuspushAPIResponseModel struct {
+// YoukuOttIotStatusPushAPIResponseModel is iot设备状态变化通知接口 成功返回结果
+type YoukuOttIotStatusPushAPIResponseModel struct {
 	XMLName xml.Name `xml:"youku_ott_iot_status_push_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

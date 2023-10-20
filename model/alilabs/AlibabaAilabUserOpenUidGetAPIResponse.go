@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaailabuseropenuidgetAPIResponse access token 获取精灵用户 id API返回值
+// AlibabaAilabUserOpenUidGetAPIResponse access token 获取精灵用户 id API返回值
 // alibaba.ailab.user.open.uid.get
 //
 // access token 获取精灵用户 id
-type AlibabaailabuseropenuidgetAPIResponse struct {
+type AlibabaAilabUserOpenUidGetAPIResponse struct {
 	model.CommonResponse
-	AlibabaailabuseropenuidgetAPIResponseModel
+	AlibabaAilabUserOpenUidGetAPIResponseModel
 }
 
-// AlibabaailabuseropenuidgetAPIResponseModel is access token 获取精灵用户 id 成功返回结果
-type AlibabaailabuseropenuidgetAPIResponseModel struct {
+// AlibabaAilabUserOpenUidGetAPIResponseModel is access token 获取精灵用户 id 成功返回结果
+type AlibabaAilabUserOpenUidGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailab_user_open_uid_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

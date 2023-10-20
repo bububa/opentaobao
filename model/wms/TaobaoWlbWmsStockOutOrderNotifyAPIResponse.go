@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowlbwmsstockoutordernotifyAPIResponse 出库单通知 API返回值
+// TaobaoWlbWmsStockOutOrderNotifyAPIResponse 出库单通知 API返回值
 // taobao.wlb.wms.stock.out.order.notify
 //
 // 出库单通知
-type TaobaowlbwmsstockoutordernotifyAPIResponse struct {
+type TaobaoWlbWmsStockOutOrderNotifyAPIResponse struct {
 	model.CommonResponse
-	TaobaowlbwmsstockoutordernotifyAPIResponseModel
+	TaobaoWlbWmsStockOutOrderNotifyAPIResponseModel
 }
 
-// TaobaowlbwmsstockoutordernotifyAPIResponseModel is 出库单通知 成功返回结果
-type TaobaowlbwmsstockoutordernotifyAPIResponseModel struct {
+// TaobaoWlbWmsStockOutOrderNotifyAPIResponseModel is 出库单通知 成功返回结果
+type TaobaoWlbWmsStockOutOrderNotifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_wms_stock_out_order_notify_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaofenxiaoordersgetAPIResponse 查询采购单信息 API返回值
+// TaobaoFenxiaoOrdersGetAPIResponse 查询采购单信息 API返回值
 // taobao.fenxiao.orders.get
 //
 // 查询代销采购单单据。
@@ -15,13 +15,13 @@ import (
 // 2. 同时此接口还可以查询除供销经销外的其他经营模式的数据。如果需要查询供销经销单据请参考接口：taobao.fenxiao.dealer.requisitionorder.query
 //
 // 3. 发货请调用物流API中的发货接口taobao.logistics.offline.send 进行发货，需要注意的是这里是供应商发货，因此调发货接口时需要传人供应商账号对应的sessionkey，tid 需传入供销平台的采购单（即fenxiao_id  分销流水号）)。
-type TaobaofenxiaoordersgetAPIResponse struct {
+type TaobaoFenxiaoOrdersGetAPIResponse struct {
 	model.CommonResponse
-	TaobaofenxiaoordersgetAPIResponseModel
+	TaobaoFenxiaoOrdersGetAPIResponseModel
 }
 
-// TaobaofenxiaoordersgetAPIResponseModel is 查询采购单信息 成功返回结果
-type TaobaofenxiaoordersgetAPIResponseModel struct {
+// TaobaoFenxiaoOrdersGetAPIResponseModel is 查询采购单信息 成功返回结果
+type TaobaoFenxiaoOrdersGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_orders_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

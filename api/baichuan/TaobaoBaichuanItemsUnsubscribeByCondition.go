@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/baichuan"
 )
 
-// Taobaobaichuanitemsunsubscribebycondition 根据条件删除订阅关系
+// TaobaoBaichuanItemsUnsubscribeByCondition 根据条件删除订阅关系
 // taobao.baichuan.items.unsubscribe.by.condition
 //
 // 根据条件删除订阅关系
-func Taobaobaichuanitemsunsubscribebycondition(clt *core.SDKClient, req *baichuan.TaobaobaichuanitemsunsubscribebyconditionAPIRequest, session string) (*baichuan.TaobaobaichuanitemsunsubscribebyconditionAPIResponse, error) {
-	var resp baichuan.TaobaobaichuanitemsunsubscribebyconditionAPIResponse
+func TaobaoBaichuanItemsUnsubscribeByCondition(clt *core.SDKClient, req *baichuan.TaobaoBaichuanItemsUnsubscribeByConditionAPIRequest, session string) (*baichuan.TaobaoBaichuanItemsUnsubscribeByConditionAPIResponse, error) {
+	var resp baichuan.TaobaoBaichuanItemsUnsubscribeByConditionAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

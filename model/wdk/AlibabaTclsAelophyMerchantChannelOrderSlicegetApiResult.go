@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabatclsaelophymerchantchannelorderslicegetApiResult 结构体
-type AlibabatclsaelophymerchantchannelorderslicegetApiResult struct {
+// AlibabaTclsAelophyMerchantChannelOrderSlicegetApiResult 结构体
+type AlibabaTclsAelophyMerchantChannelOrderSlicegetApiResult struct {
 	// 返回码说明
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// 返回码

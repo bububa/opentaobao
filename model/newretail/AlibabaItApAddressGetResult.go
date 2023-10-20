@@ -1,7 +1,7 @@
 package newretail
 
-// AlibabaitapaddressgetResult 结构体
-type AlibabaitapaddressgetResult struct {
+// AlibabaItApAddressGetResult 结构体
+type AlibabaItApAddressGetResult struct {
 	// 返回的错误message
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 返回的位置结构体

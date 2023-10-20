@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripbtripinvoicesettingaddAPIResponse 发票设置 API返回值
+// AlitripBtripInvoiceSettingAddAPIResponse 发票设置 API返回值
 // alitrip.btrip.invoice.setting.add
 //
 // 发票设置
-type AlitripbtripinvoicesettingaddAPIResponse struct {
+type AlitripBtripInvoiceSettingAddAPIResponse struct {
 	model.CommonResponse
-	AlitripbtripinvoicesettingaddAPIResponseModel
+	AlitripBtripInvoiceSettingAddAPIResponseModel
 }
 
-// AlitripbtripinvoicesettingaddAPIResponseModel is 发票设置 成功返回结果
-type AlitripbtripinvoicesettingaddAPIResponseModel struct {
+// AlitripBtripInvoiceSettingAddAPIResponseModel is 发票设置 成功返回结果
+type AlitripBtripInvoiceSettingAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_invoice_setting_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

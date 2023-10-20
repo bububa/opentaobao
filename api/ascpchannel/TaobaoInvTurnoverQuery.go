@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascpchannel"
 )
 
-// Taobaoinvturnoverquery 业务库存流水查询
+// TaobaoInvTurnoverQuery 业务库存流水查询
 // taobao.inv.turnover.query
 //
 // 业务库存流水
-func Taobaoinvturnoverquery(clt *core.SDKClient, req *ascpchannel.TaobaoinvturnoverqueryAPIRequest, session string) (*ascpchannel.TaobaoinvturnoverqueryAPIResponse, error) {
-	var resp ascpchannel.TaobaoinvturnoverqueryAPIResponse
+func TaobaoInvTurnoverQuery(clt *core.SDKClient, req *ascpchannel.TaobaoInvTurnoverQueryAPIRequest, session string) (*ascpchannel.TaobaoInvTurnoverQueryAPIResponse, error) {
+	var resp ascpchannel.TaobaoInvTurnoverQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

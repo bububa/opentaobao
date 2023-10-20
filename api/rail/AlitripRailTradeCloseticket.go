@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/rail"
 )
 
-// Alitriprailtradecloseticket 出票失败关单接口
+// AlitripRailTradeCloseticket 出票失败关单接口
 // alitrip.rail.trade.closeticket
 //
 // 出票成功回调接口
-func Alitriprailtradecloseticket(clt *core.SDKClient, req *rail.AlitriprailtradecloseticketAPIRequest, session string) (*rail.AlitriprailtradecloseticketAPIResponse, error) {
-	var resp rail.AlitriprailtradecloseticketAPIResponse
+func AlitripRailTradeCloseticket(clt *core.SDKClient, req *rail.AlitripRailTradeCloseticketAPIRequest, session string) (*rail.AlitripRailTradeCloseticketAPIResponse, error) {
+	var resp rail.AlitripRailTradeCloseticketAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

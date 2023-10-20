@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// Alibabaalihousenewhomeprojectsortno 新房排序值同步
+// AlibabaAlihouseNewhomeProjectSortno 新房排序值同步
 // alibaba.alihouse.newhome.project.sortno
 //
 // 新房排序值同步
-func Alibabaalihousenewhomeprojectsortno(clt *core.SDKClient, req *alihouse.AlibabaalihousenewhomeprojectsortnoAPIRequest, session string) (*alihouse.AlibabaalihousenewhomeprojectsortnoAPIResponse, error) {
-	var resp alihouse.AlibabaalihousenewhomeprojectsortnoAPIResponse
+func AlibabaAlihouseNewhomeProjectSortno(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeProjectSortnoAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeProjectSortnoAPIResponse, error) {
+	var resp alihouse.AlibabaAlihouseNewhomeProjectSortnoAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

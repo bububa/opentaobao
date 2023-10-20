@@ -1,7 +1,7 @@
 package wdklogistics
 
-// AlibabawdklogisticspuspickupcararrivedData 结构体
-type AlibabawdklogisticspuspickupcararrivedData struct {
+// AlibabaWdkLogisticsPusPickupCararrivedData 结构体
+type AlibabaWdkLogisticsPusPickupCararrivedData struct {
 	// 自提点code
 	StationCode string `json:"station_code,omitempty" xml:"station_code,omitempty"`
 	// 脱敏订单号

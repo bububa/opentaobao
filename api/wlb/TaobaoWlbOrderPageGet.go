@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wlb"
 )
 
-// Taobaowlborderpageget 分页查询物流宝订单
+// TaobaoWlbOrderPageGet 分页查询物流宝订单
 // taobao.wlb.order.page.get
 //
 // 分页查询物流宝订单
-func Taobaowlborderpageget(clt *core.SDKClient, req *wlb.TaobaowlborderpagegetAPIRequest, session string) (*wlb.TaobaowlborderpagegetAPIResponse, error) {
-	var resp wlb.TaobaowlborderpagegetAPIResponse
+func TaobaoWlbOrderPageGet(clt *core.SDKClient, req *wlb.TaobaoWlbOrderPageGetAPIRequest, session string) (*wlb.TaobaoWlbOrderPageGetAPIResponse, error) {
+	var resp wlb.TaobaoWlbOrderPageGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

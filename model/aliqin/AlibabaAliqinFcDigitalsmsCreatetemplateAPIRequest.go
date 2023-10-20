@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaaliqinfcdigitalsmscreatetemplateAPIRequest 数字短信模板创建 API请求
+// AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest 数字短信模板创建 API请求
 // alibaba.aliqin.fc.digitalsms.createtemplate
 //
 // 数字短信模板创建
-type AlibabaaliqinfcdigitalsmscreatetemplateAPIRequest struct {
+type AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest struct {
 	model.Params
 	// 系统自动生成
 	_templateContents []DigitalSmsTemplateContentDto
@@ -20,65 +20,65 @@ type AlibabaaliqinfcdigitalsmscreatetemplateAPIRequest struct {
 	_applyRemark string
 }
 
-// NewAlibabaaliqinfcdigitalsmscreatetemplateRequest 初始化AlibabaaliqinfcdigitalsmscreatetemplateAPIRequest对象
-func NewAlibabaaliqinfcdigitalsmscreatetemplateRequest() *AlibabaaliqinfcdigitalsmscreatetemplateAPIRequest {
-	return &AlibabaaliqinfcdigitalsmscreatetemplateAPIRequest{
+// NewAlibabaAliqinFcDigitalsmsCreatetemplateRequest 初始化AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest对象
+func NewAlibabaAliqinFcDigitalsmsCreatetemplateRequest() *AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest {
+	return &AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaaliqinfcdigitalsmscreatetemplateAPIRequest) GetApiMethodName() string {
+func (r AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest) GetApiMethodName() string {
 	return "alibaba.aliqin.fc.digitalsms.createtemplate"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaaliqinfcdigitalsmscreatetemplateAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaaliqinfcdigitalsmscreatetemplateAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTemplateContents is TemplateContents Setter
 // 系统自动生成
-func (r *AlibabaaliqinfcdigitalsmscreatetemplateAPIRequest) SetTemplateContents(_templateContents []DigitalSmsTemplateContentDto) error {
+func (r *AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest) SetTemplateContents(_templateContents []DigitalSmsTemplateContentDto) error {
 	r._templateContents = _templateContents
 	r.Set("template_contents", _templateContents)
 	return nil
 }
 
 // GetTemplateContents TemplateContents Getter
-func (r AlibabaaliqinfcdigitalsmscreatetemplateAPIRequest) GetTemplateContents() []DigitalSmsTemplateContentDto {
+func (r AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest) GetTemplateContents() []DigitalSmsTemplateContentDto {
 	return r._templateContents
 }
 
 // SetTemplateName is TemplateName Setter
 // 模板名称
-func (r *AlibabaaliqinfcdigitalsmscreatetemplateAPIRequest) SetTemplateName(_templateName string) error {
+func (r *AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest) SetTemplateName(_templateName string) error {
 	r._templateName = _templateName
 	r.Set("template_name", _templateName)
 	return nil
 }
 
 // GetTemplateName TemplateName Getter
-func (r AlibabaaliqinfcdigitalsmscreatetemplateAPIRequest) GetTemplateName() string {
+func (r AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest) GetTemplateName() string {
 	return r._templateName
 }
 
 // SetApplyRemark is ApplyRemark Setter
 // 申请说明
-func (r *AlibabaaliqinfcdigitalsmscreatetemplateAPIRequest) SetApplyRemark(_applyRemark string) error {
+func (r *AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest) SetApplyRemark(_applyRemark string) error {
 	r._applyRemark = _applyRemark
 	r.Set("apply_remark", _applyRemark)
 	return nil
 }
 
 // GetApplyRemark ApplyRemark Getter
-func (r AlibabaaliqinfcdigitalsmscreatetemplateAPIRequest) GetApplyRemark() string {
+func (r AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest) GetApplyRemark() string {
 	return r._applyRemark
 }

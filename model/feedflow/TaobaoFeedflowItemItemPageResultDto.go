@@ -1,7 +1,7 @@
 package feedflow
 
-// TaobaofeedflowitemitempageResultDto 结构体
-type TaobaofeedflowitemitempageResultDto struct {
+// TaobaoFeedflowItemItemPageResultDto 结构体
+type TaobaoFeedflowItemItemPageResultDto struct {
 	// 商品列表
 	ItemList []ItemDto `json:"item_list,omitempty" xml:"item_list>item_dto,omitempty"`
 	// 返回信息

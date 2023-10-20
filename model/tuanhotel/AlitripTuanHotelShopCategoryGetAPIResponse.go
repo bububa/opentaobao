@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitriptuanhotelshopcategorygetAPIResponse 商家店铺类目查询 API返回值
+// AlitripTuanHotelShopCategoryGetAPIResponse 商家店铺类目查询 API返回值
 // alitrip.tuan.hotel.shop.category.get
 //
 // 查询商家店铺类目信息
-type AlitriptuanhotelshopcategorygetAPIResponse struct {
+type AlitripTuanHotelShopCategoryGetAPIResponse struct {
 	model.CommonResponse
-	AlitriptuanhotelshopcategorygetAPIResponseModel
+	AlitripTuanHotelShopCategoryGetAPIResponseModel
 }
 
-// AlitriptuanhotelshopcategorygetAPIResponseModel is 商家店铺类目查询 成功返回结果
-type AlitriptuanhotelshopcategorygetAPIResponseModel struct {
+// AlitripTuanHotelShopCategoryGetAPIResponseModel is 商家店铺类目查询 成功返回结果
+type AlitripTuanHotelShopCategoryGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_tuan_hotel_shop_category_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// Alibabawdkorderfinancebillquery 资金合规商家账单
+// AlibabaWdkOrderFinanceBillQuery 资金合规商家账单
 // alibaba.wdk.order.finance.bill.query
 //
 // 拉取资金合规商家账单
-func Alibabawdkorderfinancebillquery(clt *core.SDKClient, req *wdk.AlibabawdkorderfinancebillqueryAPIRequest, session string) (*wdk.AlibabawdkorderfinancebillqueryAPIResponse, error) {
-	var resp wdk.AlibabawdkorderfinancebillqueryAPIResponse
+func AlibabaWdkOrderFinanceBillQuery(clt *core.SDKClient, req *wdk.AlibabaWdkOrderFinanceBillQueryAPIRequest, session string) (*wdk.AlibabaWdkOrderFinanceBillQueryAPIResponse, error) {
+	var resp wdk.AlibabaWdkOrderFinanceBillQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

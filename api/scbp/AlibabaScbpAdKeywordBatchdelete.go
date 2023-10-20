@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// Alibabascbpadkeywordbatchdelete 外贸直通车批量删除关键词
+// AlibabaScbpAdKeywordBatchdelete 外贸直通车批量删除关键词
 // alibaba.scbp.ad.keyword.batchdelete
 //
 // 外贸直通车批量删除关键词
-func Alibabascbpadkeywordbatchdelete(clt *core.SDKClient, req *scbp.AlibabascbpadkeywordbatchdeleteAPIRequest, session string) (*scbp.AlibabascbpadkeywordbatchdeleteAPIResponse, error) {
-	var resp scbp.AlibabascbpadkeywordbatchdeleteAPIResponse
+func AlibabaScbpAdKeywordBatchdelete(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordBatchdeleteAPIRequest, session string) (*scbp.AlibabaScbpAdKeywordBatchdeleteAPIResponse, error) {
+	var resp scbp.AlibabaScbpAdKeywordBatchdeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

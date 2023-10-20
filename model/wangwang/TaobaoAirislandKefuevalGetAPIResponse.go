@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoairislandkefuevalgetAPIResponse 客服评价详情接口_V2 API返回值
+// TaobaoAirislandKefuevalGetAPIResponse 客服评价详情接口_V2 API返回值
 // taobao.airisland.kefueval.get
 //
 // 获取买家对客服的服务评价
@@ -20,13 +20,13 @@ import (
 // 3. 变更eval_recer：可空，返回脱敏的买家nick，如：摩天轮 -&gt; 摩**
 //
 // 4. 新增labelName：可空
-type TaobaoairislandkefuevalgetAPIResponse struct {
+type TaobaoAirislandKefuevalGetAPIResponse struct {
 	model.CommonResponse
-	TaobaoairislandkefuevalgetAPIResponseModel
+	TaobaoAirislandKefuevalGetAPIResponseModel
 }
 
-// TaobaoairislandkefuevalgetAPIResponseModel is 客服评价详情接口_V2 成功返回结果
-type TaobaoairislandkefuevalgetAPIResponseModel struct {
+// TaobaoAirislandKefuevalGetAPIResponseModel is 客服评价详情接口_V2 成功返回结果
+type TaobaoAirislandKefuevalGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"airisland_kefueval_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

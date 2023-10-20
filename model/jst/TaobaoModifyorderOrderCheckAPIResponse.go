@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaomodifyorderordercheckAPIResponse 自助改单服务发货订单校验 API返回值
+// TaobaoModifyorderOrderCheckAPIResponse 自助改单服务发货订单校验 API返回值
 // taobao.modifyorder.order.check
 //
 // 自助改单服务发货后订单回传接口
-type TaobaomodifyorderordercheckAPIResponse struct {
+type TaobaoModifyorderOrderCheckAPIResponse struct {
 	model.CommonResponse
-	TaobaomodifyorderordercheckAPIResponseModel
+	TaobaoModifyorderOrderCheckAPIResponseModel
 }
 
-// TaobaomodifyorderordercheckAPIResponseModel is 自助改单服务发货订单校验 成功返回结果
-type TaobaomodifyorderordercheckAPIResponseModel struct {
+// TaobaoModifyorderOrderCheckAPIResponseModel is 自助改单服务发货订单校验 成功返回结果
+type TaobaoModifyorderOrderCheckAPIResponseModel struct {
 	XMLName xml.Name `xml:"modifyorder_order_check_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

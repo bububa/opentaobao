@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawestcrmgradegetAPIResponse 获取等级列表 API返回值
+// AlibabaWestcrmGradeGetAPIResponse 获取等级列表 API返回值
 // alibaba.westcrm.grade.get
 //
 // 获取会员卡等级列表
-type AlibabawestcrmgradegetAPIResponse struct {
+type AlibabaWestcrmGradeGetAPIResponse struct {
 	model.CommonResponse
-	AlibabawestcrmgradegetAPIResponseModel
+	AlibabaWestcrmGradeGetAPIResponseModel
 }
 
-// AlibabawestcrmgradegetAPIResponseModel is 获取等级列表 成功返回结果
-type AlibabawestcrmgradegetAPIResponseModel struct {
+// AlibabaWestcrmGradeGetAPIResponseModel is 获取等级列表 成功返回结果
+type AlibabaWestcrmGradeGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_westcrm_grade_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

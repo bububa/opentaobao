@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoplacestorerelationaddAPIResponse 门店关系新增 API返回值
+// TaobaoPlaceStoreRelationAddAPIResponse 门店关系新增 API返回值
 // taobao.place.store.relation.add
 //
 // 新增授权用户的门店关系信息
-type TaobaoplacestorerelationaddAPIResponse struct {
+type TaobaoPlaceStoreRelationAddAPIResponse struct {
 	model.CommonResponse
-	TaobaoplacestorerelationaddAPIResponseModel
+	TaobaoPlaceStoreRelationAddAPIResponseModel
 }
 
-// TaobaoplacestorerelationaddAPIResponseModel is 门店关系新增 成功返回结果
-type TaobaoplacestorerelationaddAPIResponseModel struct {
+// TaobaoPlaceStoreRelationAddAPIResponseModel is 门店关系新增 成功返回结果
+type TaobaoPlaceStoreRelationAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"place_store_relation_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoailabaicloudtopfeedlistdeleteAPIResponse 删除单条对话流信息 API返回值
+// TaobaoAilabAicloudTopFeedlistDeleteAPIResponse 删除单条对话流信息 API返回值
 // taobao.ailab.aicloud.top.feedlist.delete
 //
 // 删除指定的某一条对话流信息
-type TaobaoailabaicloudtopfeedlistdeleteAPIResponse struct {
+type TaobaoAilabAicloudTopFeedlistDeleteAPIResponse struct {
 	model.CommonResponse
-	TaobaoailabaicloudtopfeedlistdeleteAPIResponseModel
+	TaobaoAilabAicloudTopFeedlistDeleteAPIResponseModel
 }
 
-// TaobaoailabaicloudtopfeedlistdeleteAPIResponseModel is 删除单条对话流信息 成功返回结果
-type TaobaoailabaicloudtopfeedlistdeleteAPIResponseModel struct {
+// TaobaoAilabAicloudTopFeedlistDeleteAPIResponseModel is 删除单条对话流信息 成功返回结果
+type TaobaoAilabAicloudTopFeedlistDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"ailab_aicloud_top_feedlist_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

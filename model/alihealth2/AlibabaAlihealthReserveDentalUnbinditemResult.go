@@ -1,7 +1,7 @@
 package alihealth2
 
-// AlibabaalihealthreservedentalunbinditemResult 结构体
-type AlibabaalihealthreservedentalunbinditemResult struct {
+// AlibabaAlihealthReserveDentalUnbinditemResult 结构体
+type AlibabaAlihealthReserveDentalUnbinditemResult struct {
 	// errMessage
 	ErrMessage string `json:"err_message,omitempty" xml:"err_message,omitempty"`
 	// errCode

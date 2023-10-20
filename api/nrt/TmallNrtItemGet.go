@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/nrt"
 )
 
-// Tmallnrtitemget 家装新零售商品信息查询
+// TmallNrtItemGet 家装新零售商品信息查询
 // tmall.nrt.item.get
 //
 // 查询新零售商品信息
-func Tmallnrtitemget(clt *core.SDKClient, req *nrt.TmallnrtitemgetAPIRequest, session string) (*nrt.TmallnrtitemgetAPIResponse, error) {
-	var resp nrt.TmallnrtitemgetAPIResponse
+func TmallNrtItemGet(clt *core.SDKClient, req *nrt.TmallNrtItemGetAPIRequest, session string) (*nrt.TmallNrtItemGetAPIResponse, error) {
+	var resp nrt.TmallNrtItemGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

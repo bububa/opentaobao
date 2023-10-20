@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoauctionzcupdatevrstatusAPIResponse 如视VR更新活跃状态 API返回值
+// TaobaoAuctionZcUpdateVrStatusAPIResponse 如视VR更新活跃状态 API返回值
 // taobao.auction.zc.update.vr.status
 //
 // 如视VR更新活跃状态
-type TaobaoauctionzcupdatevrstatusAPIResponse struct {
+type TaobaoAuctionZcUpdateVrStatusAPIResponse struct {
 	model.CommonResponse
-	TaobaoauctionzcupdatevrstatusAPIResponseModel
+	TaobaoAuctionZcUpdateVrStatusAPIResponseModel
 }
 
-// TaobaoauctionzcupdatevrstatusAPIResponseModel is 如视VR更新活跃状态 成功返回结果
-type TaobaoauctionzcupdatevrstatusAPIResponseModel struct {
+// TaobaoAuctionZcUpdateVrStatusAPIResponseModel is 如视VR更新活跃状态 成功返回结果
+type TaobaoAuctionZcUpdateVrStatusAPIResponseModel struct {
 	XMLName xml.Name `xml:"auction_zc_update_vr_status_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

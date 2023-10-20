@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabascbpadkeywordpricebatchupdateAPIResponse 关键词批量改价 API返回值
+// AlibabaScbpAdKeywordPriceBatchupdateAPIResponse 关键词批量改价 API返回值
 // alibaba.scbp.ad.keyword.price.batchupdate
 //
 // 关键词批量改价
-type AlibabascbpadkeywordpricebatchupdateAPIResponse struct {
+type AlibabaScbpAdKeywordPriceBatchupdateAPIResponse struct {
 	model.CommonResponse
-	AlibabascbpadkeywordpricebatchupdateAPIResponseModel
+	AlibabaScbpAdKeywordPriceBatchupdateAPIResponseModel
 }
 
-// AlibabascbpadkeywordpricebatchupdateAPIResponseModel is 关键词批量改价 成功返回结果
-type AlibabascbpadkeywordpricebatchupdateAPIResponseModel struct {
+// AlibabaScbpAdKeywordPriceBatchupdateAPIResponseModel is 关键词批量改价 成功返回结果
+type AlibabaScbpAdKeywordPriceBatchupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_ad_keyword_price_batchupdate_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabamoscommdyposmerchandisegetmerchandiseAPIRequest 去前置机商品在线查询 API请求
+// AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest 去前置机商品在线查询 API请求
 // alibaba.mos.commdy.posmerchandise.getmerchandise
 //
 // 去前置机商品在线查询接口
-type AlibabamoscommdyposmerchandisegetmerchandiseAPIRequest struct {
+type AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest struct {
 	model.Params
 	// 查询参数列表
 	_posMerchandiseList []QueryMerchandiseDto
 }
 
-// NewAlibabamoscommdyposmerchandisegetmerchandiseRequest 初始化AlibabamoscommdyposmerchandisegetmerchandiseAPIRequest对象
-func NewAlibabamoscommdyposmerchandisegetmerchandiseRequest() *AlibabamoscommdyposmerchandisegetmerchandiseAPIRequest {
-	return &AlibabamoscommdyposmerchandisegetmerchandiseAPIRequest{
+// NewAlibabaMosCommdyPosmerchandiseGetmerchandiseRequest 初始化AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest对象
+func NewAlibabaMosCommdyPosmerchandiseGetmerchandiseRequest() *AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest {
+	return &AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabamoscommdyposmerchandisegetmerchandiseAPIRequest) GetApiMethodName() string {
+func (r AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest) GetApiMethodName() string {
 	return "alibaba.mos.commdy.posmerchandise.getmerchandise"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabamoscommdyposmerchandisegetmerchandiseAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabamoscommdyposmerchandisegetmerchandiseAPIRequest) GetRawParams() model.Params {
+func (r AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetPosMerchandiseList is PosMerchandiseList Setter
 // 查询参数列表
-func (r *AlibabamoscommdyposmerchandisegetmerchandiseAPIRequest) SetPosMerchandiseList(_posMerchandiseList []QueryMerchandiseDto) error {
+func (r *AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest) SetPosMerchandiseList(_posMerchandiseList []QueryMerchandiseDto) error {
 	r._posMerchandiseList = _posMerchandiseList
 	r.Set("pos_merchandise_list", _posMerchandiseList)
 	return nil
 }
 
 // GetPosMerchandiseList PosMerchandiseList Getter
-func (r AlibabamoscommdyposmerchandisegetmerchandiseAPIRequest) GetPosMerchandiseList() []QueryMerchandiseDto {
+func (r AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest) GetPosMerchandiseList() []QueryMerchandiseDto {
 	return r._posMerchandiseList
 }

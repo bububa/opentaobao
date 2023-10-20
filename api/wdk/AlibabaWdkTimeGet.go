@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// Alibabawdktimeget 获得当前系统时间
+// AlibabaWdkTimeGet 获得当前系统时间
 // alibaba.wdk.time.get
 //
 // 获得当前系统时间
-func Alibabawdktimeget(clt *core.SDKClient, req *wdk.AlibabawdktimegetAPIRequest, session string) (*wdk.AlibabawdktimegetAPIResponse, error) {
-	var resp wdk.AlibabawdktimegetAPIResponse
+func AlibabaWdkTimeGet(clt *core.SDKClient, req *wdk.AlibabaWdkTimeGetAPIRequest, session string) (*wdk.AlibabaWdkTimeGetAPIResponse, error) {
+	var resp wdk.AlibabaWdkTimeGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

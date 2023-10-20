@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabahtcouponfuluphonechargecallbackAPIResponse 话费充值回调 API返回值
+// AlibabaHtcouponFuluPhonechargeCallbackAPIResponse 话费充值回调 API返回值
 // alibaba.htcoupon.fulu.phonecharge.callback
 //
 // 话费充值为异步操作，此接口用于充值成功后，供应商回调。
-type AlibabahtcouponfuluphonechargecallbackAPIResponse struct {
+type AlibabaHtcouponFuluPhonechargeCallbackAPIResponse struct {
 	model.CommonResponse
-	AlibabahtcouponfuluphonechargecallbackAPIResponseModel
+	AlibabaHtcouponFuluPhonechargeCallbackAPIResponseModel
 }
 
-// AlibabahtcouponfuluphonechargecallbackAPIResponseModel is 话费充值回调 成功返回结果
-type AlibabahtcouponfuluphonechargecallbackAPIResponseModel struct {
+// AlibabaHtcouponFuluPhonechargeCallbackAPIResponseModel is 话费充值回调 成功返回结果
+type AlibabaHtcouponFuluPhonechargeCallbackAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_htcoupon_fulu_phonecharge_callback_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalscchudatemplatesendAPIResponse 本地生活触达模板消息发送接口 API返回值
+// AlibabaAlscChudaTemplateSendAPIResponse 本地生活触达模板消息发送接口 API返回值
 // alibaba.alsc.chuda.template.send
 //
 // 允许三方小程序通过该api发送本地生活触达消息
-type AlibabaalscchudatemplatesendAPIResponse struct {
+type AlibabaAlscChudaTemplateSendAPIResponse struct {
 	model.CommonResponse
-	AlibabaalscchudatemplatesendAPIResponseModel
+	AlibabaAlscChudaTemplateSendAPIResponseModel
 }
 
-// AlibabaalscchudatemplatesendAPIResponseModel is 本地生活触达模板消息发送接口 成功返回结果
-type AlibabaalscchudatemplatesendAPIResponseModel struct {
+// AlibabaAlscChudaTemplateSendAPIResponseModel is 本地生活触达模板消息发送接口 成功返回结果
+type AlibabaAlscChudaTemplateSendAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_chuda_template_send_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

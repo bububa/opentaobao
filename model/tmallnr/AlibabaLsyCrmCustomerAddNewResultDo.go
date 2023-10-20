@@ -1,7 +1,7 @@
 package tmallnr
 
-// AlibabalsycrmcustomeraddnewResultDo 结构体
-type AlibabalsycrmcustomeraddnewResultDo struct {
+// AlibabaLsyCrmCustomerAddNewResultDo 结构体
+type AlibabaLsyCrmCustomerAddNewResultDo struct {
 	// 错误信息
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// 错误码

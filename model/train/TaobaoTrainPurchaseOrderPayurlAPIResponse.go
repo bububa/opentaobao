@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotrainpurchaseorderpayurlAPIResponse 火车票采购商接口-获取支付链接 API返回值
+// TaobaoTrainPurchaseOrderPayurlAPIResponse 火车票采购商接口-获取支付链接 API返回值
 // taobao.train.purchase.order.payurl
 //
 // 火车票采购商接口-获取支付链接
-type TaobaotrainpurchaseorderpayurlAPIResponse struct {
+type TaobaoTrainPurchaseOrderPayurlAPIResponse struct {
 	model.CommonResponse
-	TaobaotrainpurchaseorderpayurlAPIResponseModel
+	TaobaoTrainPurchaseOrderPayurlAPIResponseModel
 }
 
-// TaobaotrainpurchaseorderpayurlAPIResponseModel is 火车票采购商接口-获取支付链接 成功返回结果
-type TaobaotrainpurchaseorderpayurlAPIResponseModel struct {
+// TaobaoTrainPurchaseOrderPayurlAPIResponseModel is 火车票采购商接口-获取支付链接 成功返回结果
+type TaobaoTrainPurchaseOrderPayurlAPIResponseModel struct {
 	XMLName xml.Name `xml:"train_purchase_order_payurl_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

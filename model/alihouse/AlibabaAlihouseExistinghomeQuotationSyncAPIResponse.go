@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihouseexistinghomequotationsyncAPIResponse 二手房行情数据同步 API返回值
+// AlibabaAlihouseExistinghomeQuotationSyncAPIResponse 二手房行情数据同步 API返回值
 // alibaba.alihouse.existinghome.quotation.sync
 //
 // 二手房行情数据同步
-type AlibabaalihouseexistinghomequotationsyncAPIResponse struct {
+type AlibabaAlihouseExistinghomeQuotationSyncAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihouseexistinghomequotationsyncAPIResponseModel
+	AlibabaAlihouseExistinghomeQuotationSyncAPIResponseModel
 }
 
-// AlibabaalihouseexistinghomequotationsyncAPIResponseModel is 二手房行情数据同步 成功返回结果
-type AlibabaalihouseexistinghomequotationsyncAPIResponseModel struct {
+// AlibabaAlihouseExistinghomeQuotationSyncAPIResponseModel is 二手房行情数据同步 成功返回结果
+type AlibabaAlihouseExistinghomeQuotationSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihouse_existinghome_quotation_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
-	Result *AlibabaalihouseexistinghomequotationsyncResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaAlihouseExistinghomeQuotationSyncResult `json:"result,omitempty" xml:"result,omitempty"`
 }

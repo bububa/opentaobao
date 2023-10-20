@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotopoaiddecryptAPIResponse OAID解密 API返回值
+// TaobaoTopOaidDecryptAPIResponse OAID解密 API返回值
 // taobao.top.oaid.decrypt
 //
 // 解码OAID(Open Addressee ID)，返回收件人信息。
-type TaobaotopoaiddecryptAPIResponse struct {
+type TaobaoTopOaidDecryptAPIResponse struct {
 	model.CommonResponse
-	TaobaotopoaiddecryptAPIResponseModel
+	TaobaoTopOaidDecryptAPIResponseModel
 }
 
-// TaobaotopoaiddecryptAPIResponseModel is OAID解密 成功返回结果
-type TaobaotopoaiddecryptAPIResponseModel struct {
+// TaobaoTopOaidDecryptAPIResponseModel is OAID解密 成功返回结果
+type TaobaoTopOaidDecryptAPIResponseModel struct {
 	XMLName xml.Name `xml:"top_oaid_decrypt_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

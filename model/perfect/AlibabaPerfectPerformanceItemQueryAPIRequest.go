@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaperfectperformanceitemqueryAPIRequest 商品完美履约信息查询 API请求
+// AlibabaPerfectPerformanceItemQueryAPIRequest 商品完美履约信息查询 API请求
 // alibaba.perfect.performance.item.query
 //
 // 同城零售商品完美履约信息查询
-type AlibabaperfectperformanceitemqueryAPIRequest struct {
+type AlibabaPerfectPerformanceItemQueryAPIRequest struct {
 	model.Params
 	// 查询入参
 	_itemPerfectPerformanceQueryReq *ItemPerfectPerformanceQueryReq
 }
 
-// NewAlibabaperfectperformanceitemqueryRequest 初始化AlibabaperfectperformanceitemqueryAPIRequest对象
-func NewAlibabaperfectperformanceitemqueryRequest() *AlibabaperfectperformanceitemqueryAPIRequest {
-	return &AlibabaperfectperformanceitemqueryAPIRequest{
+// NewAlibabaPerfectPerformanceItemQueryRequest 初始化AlibabaPerfectPerformanceItemQueryAPIRequest对象
+func NewAlibabaPerfectPerformanceItemQueryRequest() *AlibabaPerfectPerformanceItemQueryAPIRequest {
+	return &AlibabaPerfectPerformanceItemQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaperfectperformanceitemqueryAPIRequest) GetApiMethodName() string {
+func (r AlibabaPerfectPerformanceItemQueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.perfect.performance.item.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaperfectperformanceitemqueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaPerfectPerformanceItemQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaperfectperformanceitemqueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabaPerfectPerformanceItemQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetItemPerfectPerformanceQueryReq is ItemPerfectPerformanceQueryReq Setter
 // 查询入参
-func (r *AlibabaperfectperformanceitemqueryAPIRequest) SetItemPerfectPerformanceQueryReq(_itemPerfectPerformanceQueryReq *ItemPerfectPerformanceQueryReq) error {
+func (r *AlibabaPerfectPerformanceItemQueryAPIRequest) SetItemPerfectPerformanceQueryReq(_itemPerfectPerformanceQueryReq *ItemPerfectPerformanceQueryReq) error {
 	r._itemPerfectPerformanceQueryReq = _itemPerfectPerformanceQueryReq
 	r.Set("item_perfect_performance_query_req", _itemPerfectPerformanceQueryReq)
 	return nil
 }
 
 // GetItemPerfectPerformanceQueryReq ItemPerfectPerformanceQueryReq Getter
-func (r AlibabaperfectperformanceitemqueryAPIRequest) GetItemPerfectPerformanceQueryReq() *ItemPerfectPerformanceQueryReq {
+func (r AlibabaPerfectPerformanceItemQueryAPIRequest) GetItemPerfectPerformanceQueryReq() *ItemPerfectPerformanceQueryReq {
 	return r._itemPerfectPerformanceQueryReq
 }

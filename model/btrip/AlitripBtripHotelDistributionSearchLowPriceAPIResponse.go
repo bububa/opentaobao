@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripbtriphoteldistributionsearchlowpriceAPIResponse 商旅酒店api分销-酒店最低价 API返回值
+// AlitripBtripHotelDistributionSearchLowPriceAPIResponse 商旅酒店api分销-酒店最低价 API返回值
 // alitrip.btrip.hotel.distribution.search.low.price
 //
 // 商旅酒店api分销-酒店最低价
-type AlitripbtriphoteldistributionsearchlowpriceAPIResponse struct {
+type AlitripBtripHotelDistributionSearchLowPriceAPIResponse struct {
 	model.CommonResponse
-	AlitripbtriphoteldistributionsearchlowpriceAPIResponseModel
+	AlitripBtripHotelDistributionSearchLowPriceAPIResponseModel
 }
 
-// AlitripbtriphoteldistributionsearchlowpriceAPIResponseModel is 商旅酒店api分销-酒店最低价 成功返回结果
-type AlitripbtriphoteldistributionsearchlowpriceAPIResponseModel struct {
+// AlitripBtripHotelDistributionSearchLowPriceAPIResponseModel is 商旅酒店api分销-酒店最低价 成功返回结果
+type AlitripBtripHotelDistributionSearchLowPriceAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_hotel_distribution_search_low_price_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

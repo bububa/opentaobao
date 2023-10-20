@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/charity"
 )
 
-// Alibabavaluecoinissue 爱豆发放
+// AlibabaValueCoinIssue 爱豆发放
 // alibaba.value.coin.issue
 //
 // 爱豆发放
-func Alibabavaluecoinissue(clt *core.SDKClient, req *charity.AlibabavaluecoinissueAPIRequest, session string) (*charity.AlibabavaluecoinissueAPIResponse, error) {
-	var resp charity.AlibabavaluecoinissueAPIResponse
+func AlibabaValueCoinIssue(clt *core.SDKClient, req *charity.AlibabaValueCoinIssueAPIRequest, session string) (*charity.AlibabaValueCoinIssueAPIResponse, error) {
+	var resp charity.AlibabaValueCoinIssueAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

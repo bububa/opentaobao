@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaotbkscmaterialoptionalMapData 结构体
-type TaobaotbkscmaterialoptionalMapData struct {
+// TaobaoTbkScMaterialOptionalMapData 结构体
+type TaobaoTbkScMaterialOptionalMapData struct {
 	// 商品信息-商品小图列表
 	SmallImages []string `json:"small_images,omitempty" xml:"small_images>string,omitempty"`
 	// 定向计划集合

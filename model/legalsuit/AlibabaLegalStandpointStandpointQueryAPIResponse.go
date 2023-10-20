@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabalegalstandpointstandpointqueryAPIResponse 查询具体口径 API返回值
+// AlibabaLegalStandpointStandpointQueryAPIResponse 查询具体口径 API返回值
 // alibaba.legal.standpoint.standpoint.query
 //
 // 查询具体口径
-type AlibabalegalstandpointstandpointqueryAPIResponse struct {
+type AlibabaLegalStandpointStandpointQueryAPIResponse struct {
 	model.CommonResponse
-	AlibabalegalstandpointstandpointqueryAPIResponseModel
+	AlibabaLegalStandpointStandpointQueryAPIResponseModel
 }
 
-// AlibabalegalstandpointstandpointqueryAPIResponseModel is 查询具体口径 成功返回结果
-type AlibabalegalstandpointstandpointqueryAPIResponseModel struct {
+// AlibabaLegalStandpointStandpointQueryAPIResponseModel is 查询具体口径 成功返回结果
+type AlibabaLegalStandpointStandpointQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_legal_standpoint_standpoint_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

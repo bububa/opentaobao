@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripbtripcorpopdepartsyncAPIResponse 外部部门同步 API返回值
+// AlitripBtripCorpopDepartSyncAPIResponse 外部部门同步 API返回值
 // alitrip.btrip.corpop.depart.sync
 //
 // 同步外部平台部门信息至商旅内部
-type AlitripbtripcorpopdepartsyncAPIResponse struct {
+type AlitripBtripCorpopDepartSyncAPIResponse struct {
 	model.CommonResponse
-	AlitripbtripcorpopdepartsyncAPIResponseModel
+	AlitripBtripCorpopDepartSyncAPIResponseModel
 }
 
-// AlitripbtripcorpopdepartsyncAPIResponseModel is 外部部门同步 成功返回结果
-type AlitripbtripcorpopdepartsyncAPIResponseModel struct {
+// AlitripBtripCorpopDepartSyncAPIResponseModel is 外部部门同步 成功返回结果
+type AlitripBtripCorpopDepartSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_corpop_depart_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

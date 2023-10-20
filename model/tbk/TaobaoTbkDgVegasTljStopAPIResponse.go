@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotbkdgvegastljstopAPIResponse 淘宝客-推广者-淘礼金暂停发放 API返回值
+// TaobaoTbkDgVegasTljStopAPIResponse 淘宝客-推广者-淘礼金暂停发放 API返回值
 // taobao.tbk.dg.vegas.tlj.stop
 //
 // 淘宝客推广者可对已经创建的淘礼金暂停发放
-type TaobaotbkdgvegastljstopAPIResponse struct {
+type TaobaoTbkDgVegasTljStopAPIResponse struct {
 	model.CommonResponse
-	TaobaotbkdgvegastljstopAPIResponseModel
+	TaobaoTbkDgVegasTljStopAPIResponseModel
 }
 
-// TaobaotbkdgvegastljstopAPIResponseModel is 淘宝客-推广者-淘礼金暂停发放 成功返回结果
-type TaobaotbkdgvegastljstopAPIResponseModel struct {
+// TaobaoTbkDgVegasTljStopAPIResponseModel is 淘宝客-推广者-淘礼金暂停发放 成功返回结果
+type TaobaoTbkDgVegasTljStopAPIResponseModel struct {
 	XMLName xml.Name `xml:"tbk_dg_vegas_tlj_stop_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

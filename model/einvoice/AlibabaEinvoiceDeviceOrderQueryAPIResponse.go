@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaeinvoicedeviceorderqueryAPIResponse 查询税控设备加盘订购单详情 API返回值
+// AlibabaEinvoiceDeviceOrderQueryAPIResponse 查询税控设备加盘订购单详情 API返回值
 // alibaba.einvoice.device.order.query
 //
 // 查询税控设备订购单详情
-type AlibabaeinvoicedeviceorderqueryAPIResponse struct {
+type AlibabaEinvoiceDeviceOrderQueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaeinvoicedeviceorderqueryAPIResponseModel
+	AlibabaEinvoiceDeviceOrderQueryAPIResponseModel
 }
 
-// AlibabaeinvoicedeviceorderqueryAPIResponseModel is 查询税控设备加盘订购单详情 成功返回结果
-type AlibabaeinvoicedeviceorderqueryAPIResponseModel struct {
+// AlibabaEinvoiceDeviceOrderQueryAPIResponseModel is 查询税控设备加盘订购单详情 成功返回结果
+type AlibabaEinvoiceDeviceOrderQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_einvoice_device_order_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

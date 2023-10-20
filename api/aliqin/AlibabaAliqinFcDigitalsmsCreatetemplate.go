@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/aliqin"
 )
 
-// Alibabaaliqinfcdigitalsmscreatetemplate 数字短信模板创建
+// AlibabaAliqinFcDigitalsmsCreatetemplate 数字短信模板创建
 // alibaba.aliqin.fc.digitalsms.createtemplate
 //
 // 数字短信模板创建
-func Alibabaaliqinfcdigitalsmscreatetemplate(clt *core.SDKClient, req *aliqin.AlibabaaliqinfcdigitalsmscreatetemplateAPIRequest, session string) (*aliqin.AlibabaaliqinfcdigitalsmscreatetemplateAPIResponse, error) {
-	var resp aliqin.AlibabaaliqinfcdigitalsmscreatetemplateAPIResponse
+func AlibabaAliqinFcDigitalsmsCreatetemplate(clt *core.SDKClient, req *aliqin.AlibabaAliqinFcDigitalsmsCreatetemplateAPIRequest, session string) (*aliqin.AlibabaAliqinFcDigitalsmsCreatetemplateAPIResponse, error) {
+	var resp aliqin.AlibabaAliqinFcDigitalsmsCreatetemplateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

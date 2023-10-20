@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabatianmaolanpeilogisticsmailnoAPIResponse 阿里巴巴.天猫家装.揽配.物流.获取运单号 API返回值
+// AlibabaTianmaoLanpeiLogisticsMailnoAPIResponse 阿里巴巴.天猫家装.揽配.物流.获取运单号 API返回值
 // alibaba.tianmao.lanpei.logistics.mailno
 //
 // 阿里巴巴.天猫家装.揽配.物流.获取运单号
-type AlibabatianmaolanpeilogisticsmailnoAPIResponse struct {
+type AlibabaTianmaoLanpeiLogisticsMailnoAPIResponse struct {
 	model.CommonResponse
-	AlibabatianmaolanpeilogisticsmailnoAPIResponseModel
+	AlibabaTianmaoLanpeiLogisticsMailnoAPIResponseModel
 }
 
-// AlibabatianmaolanpeilogisticsmailnoAPIResponseModel is 阿里巴巴.天猫家装.揽配.物流.获取运单号 成功返回结果
-type AlibabatianmaolanpeilogisticsmailnoAPIResponseModel struct {
+// AlibabaTianmaoLanpeiLogisticsMailnoAPIResponseModel is 阿里巴巴.天猫家装.揽配.物流.获取运单号 成功返回结果
+type AlibabaTianmaoLanpeiLogisticsMailnoAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_tianmao_lanpei_logistics_mailno_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalsccrmpointchkpntbypayAPIResponse 校验支付链路中的积分抵扣是否合法 API返回值
+// AlibabaAlscCrmPointChkpntbypayAPIResponse 校验支付链路中的积分抵扣是否合法 API返回值
 // alibaba.alsc.crm.point.chkpntbypay
 //
 // 校验支付链路中的积分抵扣是否合法
-type AlibabaalsccrmpointchkpntbypayAPIResponse struct {
+type AlibabaAlscCrmPointChkpntbypayAPIResponse struct {
 	model.CommonResponse
-	AlibabaalsccrmpointchkpntbypayAPIResponseModel
+	AlibabaAlscCrmPointChkpntbypayAPIResponseModel
 }
 
-// AlibabaalsccrmpointchkpntbypayAPIResponseModel is 校验支付链路中的积分抵扣是否合法 成功返回结果
-type AlibabaalsccrmpointchkpntbypayAPIResponseModel struct {
+// AlibabaAlscCrmPointChkpntbypayAPIResponseModel is 校验支付链路中的积分抵扣是否合法 成功返回结果
+type AlibabaAlscCrmPointChkpntbypayAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_crm_point_chkpntbypay_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

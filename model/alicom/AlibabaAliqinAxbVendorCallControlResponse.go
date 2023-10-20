@@ -1,7 +1,7 @@
 package alicom
 
-// AlibabaaliqinaxbvendorcallcontrolResponse 结构体
-type AlibabaaliqinaxbvendorcallcontrolResponse struct {
+// AlibabaAliqinAxbVendorCallControlResponse 结构体
+type AlibabaAliqinAxbVendorCallControlResponse struct {
 	// 转呼控制msg
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// code

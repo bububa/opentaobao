@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosimbakeywordsvonaddAPIResponse 创建一批关键词 API返回值
+// TaobaoSimbaKeywordsvonAddAPIResponse 创建一批关键词 API返回值
 // taobao.simba.keywordsvon.add
 //
 // 创建一批关键词
-type TaobaosimbakeywordsvonaddAPIResponse struct {
+type TaobaoSimbaKeywordsvonAddAPIResponse struct {
 	model.CommonResponse
-	TaobaosimbakeywordsvonaddAPIResponseModel
+	TaobaoSimbaKeywordsvonAddAPIResponseModel
 }
 
-// TaobaosimbakeywordsvonaddAPIResponseModel is 创建一批关键词 成功返回结果
-type TaobaosimbakeywordsvonaddAPIResponseModel struct {
+// TaobaoSimbaKeywordsvonAddAPIResponseModel is 创建一批关键词 成功返回结果
+type TaobaoSimbaKeywordsvonAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_keywordsvon_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

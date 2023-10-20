@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthlabitemsyncAPIResponse 阿里健康检验检测商品发布 API返回值
+// AlibabaAlihealthLabItemSyncAPIResponse 阿里健康检验检测商品发布 API返回值
 // alibaba.alihealth.lab.item.sync
 //
 // iSV发布检验检测商品基本信息给健康，内部关联一个淘宝商品或SKU
-type AlibabaalihealthlabitemsyncAPIResponse struct {
+type AlibabaAlihealthLabItemSyncAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthlabitemsyncAPIResponseModel
+	AlibabaAlihealthLabItemSyncAPIResponseModel
 }
 
-// AlibabaalihealthlabitemsyncAPIResponseModel is 阿里健康检验检测商品发布 成功返回结果
-type AlibabaalihealthlabitemsyncAPIResponseModel struct {
+// AlibabaAlihealthLabItemSyncAPIResponseModel is 阿里健康检验检测商品发布 成功返回结果
+type AlibabaAlihealthLabItemSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_lab_item_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

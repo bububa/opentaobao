@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabamembercheckmerchantAPIResponse 校验商家身份 API返回值
+// AlibabaMemberCheckmerchantAPIResponse 校验商家身份 API返回值
 // alibaba.member.checkmerchant
 //
 // 校验商家身份
-type AlibabamembercheckmerchantAPIResponse struct {
+type AlibabaMemberCheckmerchantAPIResponse struct {
 	model.CommonResponse
-	AlibabamembercheckmerchantAPIResponseModel
+	AlibabaMemberCheckmerchantAPIResponseModel
 }
 
-// AlibabamembercheckmerchantAPIResponseModel is 校验商家身份 成功返回结果
-type AlibabamembercheckmerchantAPIResponseModel struct {
+// AlibabaMemberCheckmerchantAPIResponseModel is 校验商家身份 成功返回结果
+type AlibabaMemberCheckmerchantAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_member_checkmerchant_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallchanneltraderefundordergetsAPIResponse 供应商查询退款单 API返回值
+// TmallChannelTradeRefundorderGetsAPIResponse 供应商查询退款单 API返回值
 // tmall.channel.trade.refundorder.gets
 //
 // 供应商分页查询退款单
-type TmallchanneltraderefundordergetsAPIResponse struct {
+type TmallChannelTradeRefundorderGetsAPIResponse struct {
 	model.CommonResponse
-	TmallchanneltraderefundordergetsAPIResponseModel
+	TmallChannelTradeRefundorderGetsAPIResponseModel
 }
 
-// TmallchanneltraderefundordergetsAPIResponseModel is 供应商查询退款单 成功返回结果
-type TmallchanneltraderefundordergetsAPIResponseModel struct {
+// TmallChannelTradeRefundorderGetsAPIResponseModel is 供应商查询退款单 成功返回结果
+type TmallChannelTradeRefundorderGetsAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_channel_trade_refundorder_gets_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

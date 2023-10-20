@@ -1,7 +1,7 @@
 package flight
 
-// AlitripagentflightsellticketingdetailResultDto 结构体
-type AlitripagentflightsellticketingdetailResultDto struct {
+// AlitripAgentFlightSellTicketingDetailResultDto 结构体
+type AlitripAgentFlightSellTicketingDetailResultDto struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息

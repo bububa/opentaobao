@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/product"
 )
 
-// Tmallitemskusortget sku销售属性顺序获取
+// TmallItemSkuSortGet sku销售属性顺序获取
 // tmall.item.sku.sort.get
 //
 // sku销售属性顺序获取
-func Tmallitemskusortget(clt *core.SDKClient, req *product.TmallitemskusortgetAPIRequest, session string) (*product.TmallitemskusortgetAPIResponse, error) {
-	var resp product.TmallitemskusortgetAPIResponse
+func TmallItemSkuSortGet(clt *core.SDKClient, req *product.TmallItemSkuSortGetAPIRequest, session string) (*product.TmallItemSkuSortGetAPIResponse, error) {
+	var resp product.TmallItemSkuSortGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

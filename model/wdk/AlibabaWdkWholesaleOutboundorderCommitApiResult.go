@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabawdkwholesaleoutboundordercommitApiResult 结构体
-type AlibabawdkwholesaleoutboundordercommitApiResult struct {
+// AlibabaWdkWholesaleOutboundorderCommitApiResult 结构体
+type AlibabaWdkWholesaleOutboundorderCommitApiResult struct {
 	// errCode
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// errMsg

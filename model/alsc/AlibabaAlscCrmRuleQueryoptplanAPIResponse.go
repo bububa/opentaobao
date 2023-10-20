@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalsccrmrulequeryoptplanAPIResponse 查询运营计划 API返回值
+// AlibabaAlscCrmRuleQueryoptplanAPIResponse 查询运营计划 API返回值
 // alibaba.alsc.crm.rule.queryoptplan
 //
 // 查询运营计划
-type AlibabaalsccrmrulequeryoptplanAPIResponse struct {
+type AlibabaAlscCrmRuleQueryoptplanAPIResponse struct {
 	model.CommonResponse
-	AlibabaalsccrmrulequeryoptplanAPIResponseModel
+	AlibabaAlscCrmRuleQueryoptplanAPIResponseModel
 }
 
-// AlibabaalsccrmrulequeryoptplanAPIResponseModel is 查询运营计划 成功返回结果
-type AlibabaalsccrmrulequeryoptplanAPIResponseModel struct {
+// AlibabaAlscCrmRuleQueryoptplanAPIResponseModel is 查询运营计划 成功返回结果
+type AlibabaAlscCrmRuleQueryoptplanAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_crm_rule_queryoptplan_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

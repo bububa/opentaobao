@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallfuwuserviceitemlistAPIRequest 获取服务商品扩展信息 API请求
+// TmallFuwuServiceitemListAPIRequest 获取服务商品扩展信息 API请求
 // tmall.fuwu.serviceitem.list
 //
 // 获取服务商品扩展信息
-type TmallfuwuserviceitemlistAPIRequest struct {
+type TmallFuwuServiceitemListAPIRequest struct {
 	model.Params
 	// 商品id列表，有数量限制
 	_itemids []string
@@ -18,52 +18,52 @@ type TmallfuwuserviceitemlistAPIRequest struct {
 	_sellerId int64
 }
 
-// NewTmallfuwuserviceitemlistRequest 初始化TmallfuwuserviceitemlistAPIRequest对象
-func NewTmallfuwuserviceitemlistRequest() *TmallfuwuserviceitemlistAPIRequest {
-	return &TmallfuwuserviceitemlistAPIRequest{
+// NewTmallFuwuServiceitemListRequest 初始化TmallFuwuServiceitemListAPIRequest对象
+func NewTmallFuwuServiceitemListRequest() *TmallFuwuServiceitemListAPIRequest {
+	return &TmallFuwuServiceitemListAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallfuwuserviceitemlistAPIRequest) GetApiMethodName() string {
+func (r TmallFuwuServiceitemListAPIRequest) GetApiMethodName() string {
 	return "tmall.fuwu.serviceitem.list"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallfuwuserviceitemlistAPIRequest) GetApiParams(params url.Values) {
+func (r TmallFuwuServiceitemListAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallfuwuserviceitemlistAPIRequest) GetRawParams() model.Params {
+func (r TmallFuwuServiceitemListAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetItemids is Itemids Setter
 // 商品id列表，有数量限制
-func (r *TmallfuwuserviceitemlistAPIRequest) SetItemids(_itemids []string) error {
+func (r *TmallFuwuServiceitemListAPIRequest) SetItemids(_itemids []string) error {
 	r._itemids = _itemids
 	r.Set("itemids", _itemids)
 	return nil
 }
 
 // GetItemids Itemids Getter
-func (r TmallfuwuserviceitemlistAPIRequest) GetItemids() []string {
+func (r TmallFuwuServiceitemListAPIRequest) GetItemids() []string {
 	return r._itemids
 }
 
 // SetSellerId is SellerId Setter
 // 商品所属卖家账号id
-func (r *TmallfuwuserviceitemlistAPIRequest) SetSellerId(_sellerId int64) error {
+func (r *TmallFuwuServiceitemListAPIRequest) SetSellerId(_sellerId int64) error {
 	r._sellerId = _sellerId
 	r.Set("seller_id", _sellerId)
 	return nil
 }
 
 // GetSellerId SellerId Getter
-func (r TmallfuwuserviceitemlistAPIRequest) GetSellerId() int64 {
+func (r TmallFuwuServiceitemListAPIRequest) GetSellerId() int64 {
 	return r._sellerId
 }

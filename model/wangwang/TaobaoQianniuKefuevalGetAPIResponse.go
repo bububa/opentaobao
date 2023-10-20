@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoqianniukefuevalgetAPIResponse 客服评价详情接口 API返回值
+// TaobaoQianniuKefuevalGetAPIResponse 客服评价详情接口 API返回值
 // taobao.qianniu.kefueval.get
 //
 // 获取买家对客服的服务评价
-type TaobaoqianniukefuevalgetAPIResponse struct {
+type TaobaoQianniuKefuevalGetAPIResponse struct {
 	model.CommonResponse
-	TaobaoqianniukefuevalgetAPIResponseModel
+	TaobaoQianniuKefuevalGetAPIResponseModel
 }
 
-// TaobaoqianniukefuevalgetAPIResponseModel is 客服评价详情接口 成功返回结果
-type TaobaoqianniukefuevalgetAPIResponseModel struct {
+// TaobaoQianniuKefuevalGetAPIResponseModel is 客服评价详情接口 成功返回结果
+type TaobaoQianniuKefuevalGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"qianniu_kefueval_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

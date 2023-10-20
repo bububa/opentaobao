@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoailabaicloudtoplikeaddAPIResponse 增加收藏 API返回值
+// TaobaoAilabAicloudTopLikeAddAPIResponse 增加收藏 API返回值
 // taobao.ailab.aicloud.top.like.add
 //
 // 将制定内容加入收藏
-type TaobaoailabaicloudtoplikeaddAPIResponse struct {
+type TaobaoAilabAicloudTopLikeAddAPIResponse struct {
 	model.CommonResponse
-	TaobaoailabaicloudtoplikeaddAPIResponseModel
+	TaobaoAilabAicloudTopLikeAddAPIResponseModel
 }
 
-// TaobaoailabaicloudtoplikeaddAPIResponseModel is 增加收藏 成功返回结果
-type TaobaoailabaicloudtoplikeaddAPIResponseModel struct {
+// TaobaoAilabAicloudTopLikeAddAPIResponseModel is 增加收藏 成功返回结果
+type TaobaoAilabAicloudTopLikeAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"ailab_aicloud_top_like_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripbtripflightdistributionrefundprecalAPIResponse 商旅机票分销-退票费预计算 API返回值
+// AlitripBtripFlightDistributionRefundPrecalAPIResponse 商旅机票分销-退票费预计算 API返回值
 // alitrip.btrip.flight.distribution.refund.precal
 //
 // 商旅机票分销-退票费预计算
-type AlitripbtripflightdistributionrefundprecalAPIResponse struct {
+type AlitripBtripFlightDistributionRefundPrecalAPIResponse struct {
 	model.CommonResponse
-	AlitripbtripflightdistributionrefundprecalAPIResponseModel
+	AlitripBtripFlightDistributionRefundPrecalAPIResponseModel
 }
 
-// AlitripbtripflightdistributionrefundprecalAPIResponseModel is 商旅机票分销-退票费预计算 成功返回结果
-type AlitripbtripflightdistributionrefundprecalAPIResponseModel struct {
+// AlitripBtripFlightDistributionRefundPrecalAPIResponseModel is 商旅机票分销-退票费预计算 成功返回结果
+type AlitripBtripFlightDistributionRefundPrecalAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_flight_distribution_refund_precal_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

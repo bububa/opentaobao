@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaonetouchlogisticsexpresslogisticsordercreateAPIResponse 快递下单 API返回值
+// AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIResponse 快递下单 API返回值
 // alibaba.onetouch.logistics.express.logistics.order.create
 //
 // 快递下单
-type AlibabaonetouchlogisticsexpresslogisticsordercreateAPIResponse struct {
+type AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIResponse struct {
 	model.CommonResponse
-	AlibabaonetouchlogisticsexpresslogisticsordercreateAPIResponseModel
+	AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIResponseModel
 }
 
-// AlibabaonetouchlogisticsexpresslogisticsordercreateAPIResponseModel is 快递下单 成功返回结果
-type AlibabaonetouchlogisticsexpresslogisticsordercreateAPIResponseModel struct {
+// AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIResponseModel is 快递下单 成功返回结果
+type AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_onetouch_logistics_express_logistics_order_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
-	Result *AlibabaonetouchlogisticsexpresslogisticsordercreateResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaOnetouchLogisticsExpressLogisticsOrderCreateResult `json:"result,omitempty" xml:"result,omitempty"`
 }

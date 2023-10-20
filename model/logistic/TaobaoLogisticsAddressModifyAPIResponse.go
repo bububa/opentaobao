@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaologisticsaddressmodifyAPIResponse 卖家地址库修改 API返回值
+// TaobaoLogisticsAddressModifyAPIResponse 卖家地址库修改 API返回值
 // taobao.logistics.address.modify
 //
 // 卖家地址库修改
-type TaobaologisticsaddressmodifyAPIResponse struct {
+type TaobaoLogisticsAddressModifyAPIResponse struct {
 	model.CommonResponse
-	TaobaologisticsaddressmodifyAPIResponseModel
+	TaobaoLogisticsAddressModifyAPIResponseModel
 }
 
-// TaobaologisticsaddressmodifyAPIResponseModel is 卖家地址库修改 成功返回结果
-type TaobaologisticsaddressmodifyAPIResponseModel struct {
+// TaobaoLogisticsAddressModifyAPIResponseModel is 卖家地址库修改 成功返回结果
+type TaobaoLogisticsAddressModifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_address_modify_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

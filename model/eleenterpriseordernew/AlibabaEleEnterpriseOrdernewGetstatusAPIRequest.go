@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaeleenterpriseordernewgetstatusAPIRequest 订单状态查询接口 API请求
+// AlibabaEleEnterpriseOrdernewGetstatusAPIRequest 订单状态查询接口 API请求
 // alibaba.ele.enterprise.ordernew.getstatus
 //
 // 订单状态查询接口
-type AlibabaeleenterpriseordernewgetstatusAPIRequest struct {
+type AlibabaEleEnterpriseOrdernewGetstatusAPIRequest struct {
 	model.Params
 	// 订单号
 	_elemeOrderId string
 }
 
-// NewAlibabaeleenterpriseordernewgetstatusRequest 初始化AlibabaeleenterpriseordernewgetstatusAPIRequest对象
-func NewAlibabaeleenterpriseordernewgetstatusRequest() *AlibabaeleenterpriseordernewgetstatusAPIRequest {
-	return &AlibabaeleenterpriseordernewgetstatusAPIRequest{
+// NewAlibabaEleEnterpriseOrdernewGetstatusRequest 初始化AlibabaEleEnterpriseOrdernewGetstatusAPIRequest对象
+func NewAlibabaEleEnterpriseOrdernewGetstatusRequest() *AlibabaEleEnterpriseOrdernewGetstatusAPIRequest {
+	return &AlibabaEleEnterpriseOrdernewGetstatusAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaeleenterpriseordernewgetstatusAPIRequest) GetApiMethodName() string {
+func (r AlibabaEleEnterpriseOrdernewGetstatusAPIRequest) GetApiMethodName() string {
 	return "alibaba.ele.enterprise.ordernew.getstatus"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaeleenterpriseordernewgetstatusAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaEleEnterpriseOrdernewGetstatusAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaeleenterpriseordernewgetstatusAPIRequest) GetRawParams() model.Params {
+func (r AlibabaEleEnterpriseOrdernewGetstatusAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetElemeOrderId is ElemeOrderId Setter
 // 订单号
-func (r *AlibabaeleenterpriseordernewgetstatusAPIRequest) SetElemeOrderId(_elemeOrderId string) error {
+func (r *AlibabaEleEnterpriseOrdernewGetstatusAPIRequest) SetElemeOrderId(_elemeOrderId string) error {
 	r._elemeOrderId = _elemeOrderId
 	r.Set("eleme_order_id", _elemeOrderId)
 	return nil
 }
 
 // GetElemeOrderId ElemeOrderId Getter
-func (r AlibabaeleenterpriseordernewgetstatusAPIRequest) GetElemeOrderId() string {
+func (r AlibabaEleEnterpriseOrdernewGetstatusAPIRequest) GetElemeOrderId() string {
 	return r._elemeOrderId
 }

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallitemvipschemaupdateAPIRequest 大商家商品编辑接口 API请求
+// TmallItemVipSchemaUpdateAPIRequest 大商家商品编辑接口 API请求
 // tmall.item.vip.schema.update
 //
 // 大商家编辑商品
-type TmallitemvipschemaupdateAPIRequest struct {
+type TmallItemVipSchemaUpdateAPIRequest struct {
 	model.Params
 	// 商品编辑的schema参数
 	_schemaXmlFields string
@@ -18,52 +18,52 @@ type TmallitemvipschemaupdateAPIRequest struct {
 	_itemId int64
 }
 
-// NewTmallitemvipschemaupdateRequest 初始化TmallitemvipschemaupdateAPIRequest对象
-func NewTmallitemvipschemaupdateRequest() *TmallitemvipschemaupdateAPIRequest {
-	return &TmallitemvipschemaupdateAPIRequest{
+// NewTmallItemVipSchemaUpdateRequest 初始化TmallItemVipSchemaUpdateAPIRequest对象
+func NewTmallItemVipSchemaUpdateRequest() *TmallItemVipSchemaUpdateAPIRequest {
+	return &TmallItemVipSchemaUpdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallitemvipschemaupdateAPIRequest) GetApiMethodName() string {
+func (r TmallItemVipSchemaUpdateAPIRequest) GetApiMethodName() string {
 	return "tmall.item.vip.schema.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallitemvipschemaupdateAPIRequest) GetApiParams(params url.Values) {
+func (r TmallItemVipSchemaUpdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallitemvipschemaupdateAPIRequest) GetRawParams() model.Params {
+func (r TmallItemVipSchemaUpdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSchemaXmlFields is SchemaXmlFields Setter
 // 商品编辑的schema参数
-func (r *TmallitemvipschemaupdateAPIRequest) SetSchemaXmlFields(_schemaXmlFields string) error {
+func (r *TmallItemVipSchemaUpdateAPIRequest) SetSchemaXmlFields(_schemaXmlFields string) error {
 	r._schemaXmlFields = _schemaXmlFields
 	r.Set("schema_xml_fields", _schemaXmlFields)
 	return nil
 }
 
 // GetSchemaXmlFields SchemaXmlFields Getter
-func (r TmallitemvipschemaupdateAPIRequest) GetSchemaXmlFields() string {
+func (r TmallItemVipSchemaUpdateAPIRequest) GetSchemaXmlFields() string {
 	return r._schemaXmlFields
 }
 
 // SetItemId is ItemId Setter
 // 商品id
-func (r *TmallitemvipschemaupdateAPIRequest) SetItemId(_itemId int64) error {
+func (r *TmallItemVipSchemaUpdateAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
 	r.Set("item_id", _itemId)
 	return nil
 }
 
 // GetItemId ItemId Getter
-func (r TmallitemvipschemaupdateAPIRequest) GetItemId() int64 {
+func (r TmallItemVipSchemaUpdateAPIRequest) GetItemId() int64 {
 	return r._itemId
 }

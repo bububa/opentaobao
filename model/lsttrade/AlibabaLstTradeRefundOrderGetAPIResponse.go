@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabalsttraderefundordergetAPIResponse 零售通退款订单查询 API返回值
+// AlibabaLstTradeRefundOrderGetAPIResponse 零售通退款订单查询 API返回值
 // alibaba.lst.trade.refund.order.get
 //
 // 零售通退款订单查询
-type AlibabalsttraderefundordergetAPIResponse struct {
+type AlibabaLstTradeRefundOrderGetAPIResponse struct {
 	model.CommonResponse
-	AlibabalsttraderefundordergetAPIResponseModel
+	AlibabaLstTradeRefundOrderGetAPIResponseModel
 }
 
-// AlibabalsttraderefundordergetAPIResponseModel is 零售通退款订单查询 成功返回结果
-type AlibabalsttraderefundordergetAPIResponseModel struct {
+// AlibabaLstTradeRefundOrderGetAPIResponseModel is 零售通退款订单查询 成功返回结果
+type AlibabaLstTradeRefundOrderGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_lst_trade_refund_order_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

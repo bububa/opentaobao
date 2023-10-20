@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosimbartrptcustgetAPIRequest 获取账户实时报表数据 API请求
+// TaobaoSimbaRtrptCustGetAPIRequest 获取账户实时报表数据 API请求
 // taobao.simba.rtrpt.cust.get
 //
 // 获取账户实时报表数据
-type TaobaosimbartrptcustgetAPIRequest struct {
+type TaobaoSimbaRtrptCustGetAPIRequest struct {
 	model.Params
 	// 昵称
 	_nick string
@@ -18,52 +18,52 @@ type TaobaosimbartrptcustgetAPIRequest struct {
 	_theDate string
 }
 
-// NewTaobaosimbartrptcustgetRequest 初始化TaobaosimbartrptcustgetAPIRequest对象
-func NewTaobaosimbartrptcustgetRequest() *TaobaosimbartrptcustgetAPIRequest {
-	return &TaobaosimbartrptcustgetAPIRequest{
+// NewTaobaoSimbaRtrptCustGetRequest 初始化TaobaoSimbaRtrptCustGetAPIRequest对象
+func NewTaobaoSimbaRtrptCustGetRequest() *TaobaoSimbaRtrptCustGetAPIRequest {
+	return &TaobaoSimbaRtrptCustGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaosimbartrptcustgetAPIRequest) GetApiMethodName() string {
+func (r TaobaoSimbaRtrptCustGetAPIRequest) GetApiMethodName() string {
 	return "taobao.simba.rtrpt.cust.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaosimbartrptcustgetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoSimbaRtrptCustGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaosimbartrptcustgetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoSimbaRtrptCustGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetNick is Nick Setter
 // 昵称
-func (r *TaobaosimbartrptcustgetAPIRequest) SetNick(_nick string) error {
+func (r *TaobaoSimbaRtrptCustGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
 	r.Set("nick", _nick)
 	return nil
 }
 
 // GetNick Nick Getter
-func (r TaobaosimbartrptcustgetAPIRequest) GetNick() string {
+func (r TaobaoSimbaRtrptCustGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
 // SetTheDate is TheDate Setter
 // 日期，格式yyyy-mm-dd
-func (r *TaobaosimbartrptcustgetAPIRequest) SetTheDate(_theDate string) error {
+func (r *TaobaoSimbaRtrptCustGetAPIRequest) SetTheDate(_theDate string) error {
 	r._theDate = _theDate
 	r.Set("the_date", _theDate)
 	return nil
 }
 
 // GetTheDate TheDate Getter
-func (r TaobaosimbartrptcustgetAPIRequest) GetTheDate() string {
+func (r TaobaoSimbaRtrptCustGetAPIRequest) GetTheDate() string {
 	return r._theDate
 }

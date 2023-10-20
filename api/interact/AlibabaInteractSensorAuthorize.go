@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/interact"
 )
 
-// Alibabainteractsensorauthorize 客户端授权页
+// AlibabaInteractSensorAuthorize 客户端授权页
 // alibaba.interact.sensor.authorize
 //
 // 客户端授权页
-func Alibabainteractsensorauthorize(clt *core.SDKClient, req *interact.AlibabainteractsensorauthorizeAPIRequest, session string) (*interact.AlibabainteractsensorauthorizeAPIResponse, error) {
-	var resp interact.AlibabainteractsensorauthorizeAPIResponse
+func AlibabaInteractSensorAuthorize(clt *core.SDKClient, req *interact.AlibabaInteractSensorAuthorizeAPIRequest, session string) (*interact.AlibabaInteractSensorAuthorizeAPIResponse, error) {
+	var resp interact.AlibabaInteractSensorAuthorizeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

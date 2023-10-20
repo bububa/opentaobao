@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripbtripsupplychaintraincityAPIResponse 火车站数据查询 API返回值
+// AlitripBtripSupplychainTrainCityAPIResponse 火车站数据查询 API返回值
 // alitrip.btrip.supplychain.train.city
 //
 // 火车站数据查询
-type AlitripbtripsupplychaintraincityAPIResponse struct {
+type AlitripBtripSupplychainTrainCityAPIResponse struct {
 	model.CommonResponse
-	AlitripbtripsupplychaintraincityAPIResponseModel
+	AlitripBtripSupplychainTrainCityAPIResponseModel
 }
 
-// AlitripbtripsupplychaintraincityAPIResponseModel is 火车站数据查询 成功返回结果
-type AlitripbtripsupplychaintraincityAPIResponseModel struct {
+// AlitripBtripSupplychainTrainCityAPIResponseModel is 火车站数据查询 成功返回结果
+type AlitripBtripSupplychainTrainCityAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_supplychain_train_city_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

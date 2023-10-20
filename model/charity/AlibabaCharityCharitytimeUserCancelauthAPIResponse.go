@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabacharitycharitytimeusercancelauthAPIResponse 取消用户授权 API返回值
+// AlibabaCharityCharitytimeUserCancelauthAPIResponse 取消用户授权 API返回值
 // alibaba.charity.charitytime.user.cancelauth
 //
 // 取消用户授权
-type AlibabacharitycharitytimeusercancelauthAPIResponse struct {
+type AlibabaCharityCharitytimeUserCancelauthAPIResponse struct {
 	model.CommonResponse
-	AlibabacharitycharitytimeusercancelauthAPIResponseModel
+	AlibabaCharityCharitytimeUserCancelauthAPIResponseModel
 }
 
-// AlibabacharitycharitytimeusercancelauthAPIResponseModel is 取消用户授权 成功返回结果
-type AlibabacharitycharitytimeusercancelauthAPIResponseModel struct {
+// AlibabaCharityCharitytimeUserCancelauthAPIResponseModel is 取消用户授权 成功返回结果
+type AlibabaCharityCharitytimeUserCancelauthAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_charity_charitytime_user_cancelauth_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripmerchantgalaxyactivitycouponlistResponse 结构体
-type AlitripmerchantgalaxyactivitycouponlistResponse struct {
+// AlitripMerchantGalaxyActivityCouponListResponse 结构体
+type AlitripMerchantGalaxyActivityCouponListResponse struct {
 	// 活动详情
 	Contents []CouponActivity `json:"contents,omitempty" xml:"contents>coupon_activity,omitempty"`
 	// 错误信息

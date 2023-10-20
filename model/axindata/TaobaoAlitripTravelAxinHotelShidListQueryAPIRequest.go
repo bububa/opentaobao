@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoalitriptravelaxinhotelshidlistqueryAPIRequest 阿信酒店分销-标准酒店id列表查询 API请求
+// TaobaoAlitripTravelAxinHotelShidListQueryAPIRequest 阿信酒店分销-标准酒店id列表查询 API请求
 // taobao.alitrip.travel.axin.hotel.shid.list.query
 //
 // 标准酒店id列表查询
-type TaobaoalitriptravelaxinhotelshidlistqueryAPIRequest struct {
+type TaobaoAlitripTravelAxinHotelShidListQueryAPIRequest struct {
 	model.Params
 	// 资源渠道
 	_resourceChannel string
@@ -22,78 +22,78 @@ type TaobaoalitriptravelaxinhotelshidlistqueryAPIRequest struct {
 	_distributorTid int64
 }
 
-// NewTaobaoalitriptravelaxinhotelshidlistqueryRequest 初始化TaobaoalitriptravelaxinhotelshidlistqueryAPIRequest对象
-func NewTaobaoalitriptravelaxinhotelshidlistqueryRequest() *TaobaoalitriptravelaxinhotelshidlistqueryAPIRequest {
-	return &TaobaoalitriptravelaxinhotelshidlistqueryAPIRequest{
+// NewTaobaoAlitripTravelAxinHotelShidListQueryRequest 初始化TaobaoAlitripTravelAxinHotelShidListQueryAPIRequest对象
+func NewTaobaoAlitripTravelAxinHotelShidListQueryRequest() *TaobaoAlitripTravelAxinHotelShidListQueryAPIRequest {
+	return &TaobaoAlitripTravelAxinHotelShidListQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoalitriptravelaxinhotelshidlistqueryAPIRequest) GetApiMethodName() string {
+func (r TaobaoAlitripTravelAxinHotelShidListQueryAPIRequest) GetApiMethodName() string {
 	return "taobao.alitrip.travel.axin.hotel.shid.list.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoalitriptravelaxinhotelshidlistqueryAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoAlitripTravelAxinHotelShidListQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoalitriptravelaxinhotelshidlistqueryAPIRequest) GetRawParams() model.Params {
+func (r TaobaoAlitripTravelAxinHotelShidListQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetResourceChannel is ResourceChannel Setter
 // 资源渠道
-func (r *TaobaoalitriptravelaxinhotelshidlistqueryAPIRequest) SetResourceChannel(_resourceChannel string) error {
+func (r *TaobaoAlitripTravelAxinHotelShidListQueryAPIRequest) SetResourceChannel(_resourceChannel string) error {
 	r._resourceChannel = _resourceChannel
 	r.Set("resource_channel", _resourceChannel)
 	return nil
 }
 
 // GetResourceChannel ResourceChannel Getter
-func (r TaobaoalitriptravelaxinhotelshidlistqueryAPIRequest) GetResourceChannel() string {
+func (r TaobaoAlitripTravelAxinHotelShidListQueryAPIRequest) GetResourceChannel() string {
 	return r._resourceChannel
 }
 
 // SetPageNo is PageNo Setter
 // 页码
-func (r *TaobaoalitriptravelaxinhotelshidlistqueryAPIRequest) SetPageNo(_pageNo int64) error {
+func (r *TaobaoAlitripTravelAxinHotelShidListQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
 	r.Set("page_no", _pageNo)
 	return nil
 }
 
 // GetPageNo PageNo Getter
-func (r TaobaoalitriptravelaxinhotelshidlistqueryAPIRequest) GetPageNo() int64 {
+func (r TaobaoAlitripTravelAxinHotelShidListQueryAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
 // SetPageSize is PageSize Setter
 // 页大小
-func (r *TaobaoalitriptravelaxinhotelshidlistqueryAPIRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaoAlitripTravelAxinHotelShidListQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
 	r.Set("page_size", _pageSize)
 	return nil
 }
 
 // GetPageSize PageSize Getter
-func (r TaobaoalitriptravelaxinhotelshidlistqueryAPIRequest) GetPageSize() int64 {
+func (r TaobaoAlitripTravelAxinHotelShidListQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
 // SetDistributorTid is DistributorTid Setter
 // 分销商id
-func (r *TaobaoalitriptravelaxinhotelshidlistqueryAPIRequest) SetDistributorTid(_distributorTid int64) error {
+func (r *TaobaoAlitripTravelAxinHotelShidListQueryAPIRequest) SetDistributorTid(_distributorTid int64) error {
 	r._distributorTid = _distributorTid
 	r.Set("distributor_tid", _distributorTid)
 	return nil
 }
 
 // GetDistributorTid DistributorTid Getter
-func (r TaobaoalitriptravelaxinhotelshidlistqueryAPIRequest) GetDistributorTid() int64 {
+func (r TaobaoAlitripTravelAxinHotelShidListQueryAPIRequest) GetDistributorTid() int64 {
 	return r._distributorTid
 }

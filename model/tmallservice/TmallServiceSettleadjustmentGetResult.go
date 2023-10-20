@@ -1,7 +1,7 @@
 package tmallservice
 
-// TmallservicesettleadjustmentgetResult 结构体
-type TmallservicesettleadjustmentgetResult struct {
+// TmallServiceSettleadjustmentGetResult 结构体
+type TmallServiceSettleadjustmentGetResult struct {
 	// dataModule
 	DataModule *SettleAdjustmentResponse `json:"data_module,omitempty" xml:"data_module,omitempty"`
 	// errorMessage

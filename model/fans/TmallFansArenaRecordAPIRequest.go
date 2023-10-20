@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallfansarenarecordAPIRequest 记录完成擂台的用户 API请求
+// TmallFansArenaRecordAPIRequest 记录完成擂台的用户 API请求
 // tmall.fans.arena.record
 //
 // 记录完成擂台的用户和完成分数
-type TmallfansarenarecordAPIRequest struct {
+type TmallFansArenaRecordAPIRequest struct {
 	model.Params
 	// mixnick
 	_mixNick string
@@ -20,65 +20,65 @@ type TmallfansarenarecordAPIRequest struct {
 	_score int64
 }
 
-// NewTmallfansarenarecordRequest 初始化TmallfansarenarecordAPIRequest对象
-func NewTmallfansarenarecordRequest() *TmallfansarenarecordAPIRequest {
-	return &TmallfansarenarecordAPIRequest{
+// NewTmallFansArenaRecordRequest 初始化TmallFansArenaRecordAPIRequest对象
+func NewTmallFansArenaRecordRequest() *TmallFansArenaRecordAPIRequest {
+	return &TmallFansArenaRecordAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallfansarenarecordAPIRequest) GetApiMethodName() string {
+func (r TmallFansArenaRecordAPIRequest) GetApiMethodName() string {
 	return "tmall.fans.arena.record"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallfansarenarecordAPIRequest) GetApiParams(params url.Values) {
+func (r TmallFansArenaRecordAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallfansarenarecordAPIRequest) GetRawParams() model.Params {
+func (r TmallFansArenaRecordAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetMixNick is MixNick Setter
 // mixnick
-func (r *TmallfansarenarecordAPIRequest) SetMixNick(_mixNick string) error {
+func (r *TmallFansArenaRecordAPIRequest) SetMixNick(_mixNick string) error {
 	r._mixNick = _mixNick
 	r.Set("mix_nick", _mixNick)
 	return nil
 }
 
 // GetMixNick MixNick Getter
-func (r TmallfansarenarecordAPIRequest) GetMixNick() string {
+func (r TmallFansArenaRecordAPIRequest) GetMixNick() string {
 	return r._mixNick
 }
 
 // SetCashPoolId is CashPoolId Setter
 // 资金池id
-func (r *TmallfansarenarecordAPIRequest) SetCashPoolId(_cashPoolId int64) error {
+func (r *TmallFansArenaRecordAPIRequest) SetCashPoolId(_cashPoolId int64) error {
 	r._cashPoolId = _cashPoolId
 	r.Set("cash_pool_id", _cashPoolId)
 	return nil
 }
 
 // GetCashPoolId CashPoolId Getter
-func (r TmallfansarenarecordAPIRequest) GetCashPoolId() int64 {
+func (r TmallFansArenaRecordAPIRequest) GetCashPoolId() int64 {
 	return r._cashPoolId
 }
 
 // SetScore is Score Setter
 // 用户得分
-func (r *TmallfansarenarecordAPIRequest) SetScore(_score int64) error {
+func (r *TmallFansArenaRecordAPIRequest) SetScore(_score int64) error {
 	r._score = _score
 	r.Set("score", _score)
 	return nil
 }
 
 // GetScore Score Getter
-func (r TmallfansarenarecordAPIRequest) GetScore() int64 {
+func (r TmallFansArenaRecordAPIRequest) GetScore() int64 {
 	return r._score
 }

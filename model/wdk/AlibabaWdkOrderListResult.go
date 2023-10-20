@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabawdkorderlistResult 结构体
-type AlibabawdkorderlistResult struct {
+// AlibabaWdkOrderListResult 结构体
+type AlibabaWdkOrderListResult struct {
 	// 订单列表
 	Orders []Order `json:"orders,omitempty" xml:"orders>order,omitempty"`
 	// 接口返回码。如果返回 HM02008888888001 代表成功，其他值代表失败。调用方需要根据返回码判断，失败重试

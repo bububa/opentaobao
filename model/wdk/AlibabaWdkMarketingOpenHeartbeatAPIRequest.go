@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdkmarketingopenheartbeatAPIRequest 心跳服务【10s一次】 API请求
+// AlibabaWdkMarketingOpenHeartbeatAPIRequest 心跳服务【10s一次】 API请求
 // alibaba.wdk.marketing.open.heartbeat
 //
 // 商家数据同步心跳服务
-type AlibabawdkmarketingopenheartbeatAPIRequest struct {
+type AlibabaWdkMarketingOpenHeartbeatAPIRequest struct {
 	model.Params
 	// 心跳信息
 	_heartBeat *HeartBeatBo
 }
 
-// NewAlibabawdkmarketingopenheartbeatRequest 初始化AlibabawdkmarketingopenheartbeatAPIRequest对象
-func NewAlibabawdkmarketingopenheartbeatRequest() *AlibabawdkmarketingopenheartbeatAPIRequest {
-	return &AlibabawdkmarketingopenheartbeatAPIRequest{
+// NewAlibabaWdkMarketingOpenHeartbeatRequest 初始化AlibabaWdkMarketingOpenHeartbeatAPIRequest对象
+func NewAlibabaWdkMarketingOpenHeartbeatRequest() *AlibabaWdkMarketingOpenHeartbeatAPIRequest {
+	return &AlibabaWdkMarketingOpenHeartbeatAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabawdkmarketingopenheartbeatAPIRequest) GetApiMethodName() string {
+func (r AlibabaWdkMarketingOpenHeartbeatAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.marketing.open.heartbeat"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabawdkmarketingopenheartbeatAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaWdkMarketingOpenHeartbeatAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabawdkmarketingopenheartbeatAPIRequest) GetRawParams() model.Params {
+func (r AlibabaWdkMarketingOpenHeartbeatAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetHeartBeat is HeartBeat Setter
 // 心跳信息
-func (r *AlibabawdkmarketingopenheartbeatAPIRequest) SetHeartBeat(_heartBeat *HeartBeatBo) error {
+func (r *AlibabaWdkMarketingOpenHeartbeatAPIRequest) SetHeartBeat(_heartBeat *HeartBeatBo) error {
 	r._heartBeat = _heartBeat
 	r.Set("heart_beat", _heartBeat)
 	return nil
 }
 
 // GetHeartBeat HeartBeat Getter
-func (r AlibabawdkmarketingopenheartbeatAPIRequest) GetHeartBeat() *HeartBeatBo {
+func (r AlibabaWdkMarketingOpenHeartbeatAPIRequest) GetHeartBeat() *HeartBeatBo {
 	return r._heartBeat
 }

@@ -1,7 +1,7 @@
 package idle
 
-// AlibabaidlerentorderlogisticsdeliverTopResult 结构体
-type AlibabaidlerentorderlogisticsdeliverTopResult struct {
+// AlibabaIdleRentOrderLogisticsDeliverTopResult 结构体
+type AlibabaIdleRentOrderLogisticsDeliverTopResult struct {
 	// 错误信息
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 错误码

@@ -1,7 +1,7 @@
 package uscesl
 
-// TaobaousceslbizitemlightupResult 结构体
-type TaobaousceslbizitemlightupResult struct {
+// TaobaoUsceslBizItemLightUpResult 结构体
+type TaobaoUsceslBizItemLightUpResult struct {
 	// 返回码
 	ReturnCode string `json:"return_code,omitempty" xml:"return_code,omitempty"`
 	// message

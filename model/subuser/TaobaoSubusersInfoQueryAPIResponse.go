@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosubusersinfoqueryAPIResponse 根据当前子账号登陆态，获取该子账号基本信息 API返回值
+// TaobaoSubusersInfoQueryAPIResponse 根据当前子账号登陆态，获取该子账号基本信息 API返回值
 // taobao.subusers.info.query
 //
 // 根据当前子账号登陆态，获取该子账号基本信息
-type TaobaosubusersinfoqueryAPIResponse struct {
+type TaobaoSubusersInfoQueryAPIResponse struct {
 	model.CommonResponse
-	TaobaosubusersinfoqueryAPIResponseModel
+	TaobaoSubusersInfoQueryAPIResponseModel
 }
 
-// TaobaosubusersinfoqueryAPIResponseModel is 根据当前子账号登陆态，获取该子账号基本信息 成功返回结果
-type TaobaosubusersinfoqueryAPIResponseModel struct {
+// TaobaoSubusersInfoQueryAPIResponseModel is 根据当前子账号登陆态，获取该子账号基本信息 成功返回结果
+type TaobaoSubusersInfoQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"subusers_info_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

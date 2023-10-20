@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// Alibabaalihealthdrugkytgetdruginfodownloadurl 药品全量数据下载
+// AlibabaAlihealthDrugKytGetdruginfoDownloadurl 药品全量数据下载
 // alibaba.alihealth.drug.kyt.getdruginfo.downloadurl
 //
 // 药品全量数据下载
-func Alibabaalihealthdrugkytgetdruginfodownloadurl(clt *core.SDKClient, req *drugtrace.AlibabaalihealthdrugkytgetdruginfodownloadurlAPIRequest, session string) (*drugtrace.AlibabaalihealthdrugkytgetdruginfodownloadurlAPIResponse, error) {
-	var resp drugtrace.AlibabaalihealthdrugkytgetdruginfodownloadurlAPIResponse
+func AlibabaAlihealthDrugKytGetdruginfoDownloadurl(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytGetdruginfoDownloadurlAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytGetdruginfoDownloadurlAPIResponse, error) {
+	var resp drugtrace.AlibabaAlihealthDrugKytGetdruginfoDownloadurlAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

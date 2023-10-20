@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmalltmicquestionnaireanswersubmitAPIResponse 提交问卷答案 API返回值
+// TmallTmicQuestionnaireAnswerSubmitAPIResponse 提交问卷答案 API返回值
 // tmall.tmic.questionnaire.answer.submit
 //
 // 天猫新品创新中心对外开放问卷，提交问卷答案
-type TmalltmicquestionnaireanswersubmitAPIResponse struct {
+type TmallTmicQuestionnaireAnswerSubmitAPIResponse struct {
 	model.CommonResponse
-	TmalltmicquestionnaireanswersubmitAPIResponseModel
+	TmallTmicQuestionnaireAnswerSubmitAPIResponseModel
 }
 
-// TmalltmicquestionnaireanswersubmitAPIResponseModel is 提交问卷答案 成功返回结果
-type TmalltmicquestionnaireanswersubmitAPIResponseModel struct {
+// TmallTmicQuestionnaireAnswerSubmitAPIResponseModel is 提交问卷答案 成功返回结果
+type TmallTmicQuestionnaireAnswerSubmitAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_tmic_questionnaire_answer_submit_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

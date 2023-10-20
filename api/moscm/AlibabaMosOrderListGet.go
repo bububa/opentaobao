@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/moscm"
 )
 
-// Alibabamosorderlistget 批量查询订单交易
+// AlibabaMosOrderListGet 批量查询订单交易
 // alibaba.mos.order.list.get
 //
 // 批量查询交易信息
-func Alibabamosorderlistget(clt *core.SDKClient, req *moscm.AlibabamosorderlistgetAPIRequest, session string) (*moscm.AlibabamosorderlistgetAPIResponse, error) {
-	var resp moscm.AlibabamosorderlistgetAPIResponse
+func AlibabaMosOrderListGet(clt *core.SDKClient, req *moscm.AlibabaMosOrderListGetAPIRequest, session string) (*moscm.AlibabaMosOrderListGetAPIResponse, error) {
+	var resp moscm.AlibabaMosOrderListGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

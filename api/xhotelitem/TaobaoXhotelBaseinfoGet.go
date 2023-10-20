@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/xhotelitem"
 )
 
-// Taobaoxhotelbaseinfoget 酒店基础信息查询接口
+// TaobaoXhotelBaseinfoGet 酒店基础信息查询接口
 // taobao.xhotel.baseinfo.get
 //
 // 酒店基础信息(酒店/房型/房价定义)查询接口， 包括 酒店房型可售, 以及 hid 下 的标准房型列表
-func Taobaoxhotelbaseinfoget(clt *core.SDKClient, req *xhotelitem.TaobaoxhotelbaseinfogetAPIRequest, session string) (*xhotelitem.TaobaoxhotelbaseinfogetAPIResponse, error) {
-	var resp xhotelitem.TaobaoxhotelbaseinfogetAPIResponse
+func TaobaoXhotelBaseinfoGet(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBaseinfoGetAPIRequest, session string) (*xhotelitem.TaobaoXhotelBaseinfoGetAPIResponse, error) {
+	var resp xhotelitem.TaobaoXhotelBaseinfoGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

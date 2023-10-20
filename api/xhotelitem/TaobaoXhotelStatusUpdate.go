@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/xhotelitem"
 )
 
-// Taobaoxhotelstatusupdate 酒店状态更新
+// TaobaoXhotelStatusUpdate 酒店状态更新
 // taobao.xhotel.status.update
 //
 // 酒店状态更新
-func Taobaoxhotelstatusupdate(clt *core.SDKClient, req *xhotelitem.TaobaoxhotelstatusupdateAPIRequest, session string) (*xhotelitem.TaobaoxhotelstatusupdateAPIResponse, error) {
-	var resp xhotelitem.TaobaoxhotelstatusupdateAPIResponse
+func TaobaoXhotelStatusUpdate(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelStatusUpdateAPIRequest, session string) (*xhotelitem.TaobaoXhotelStatusUpdateAPIResponse, error) {
+	var resp xhotelitem.TaobaoXhotelStatusUpdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

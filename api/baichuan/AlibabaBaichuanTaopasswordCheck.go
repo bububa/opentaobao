@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/baichuan"
 )
 
-// Alibababaichuantaopasswordcheck 淘口令检查
+// AlibabaBaichuanTaopasswordCheck 淘口令检查
 // alibaba.baichuan.taopassword.check
 //
 // 检查当前文本是否为淘口令
-func Alibababaichuantaopasswordcheck(clt *core.SDKClient, req *baichuan.AlibababaichuantaopasswordcheckAPIRequest, session string) (*baichuan.AlibababaichuantaopasswordcheckAPIResponse, error) {
-	var resp baichuan.AlibababaichuantaopasswordcheckAPIResponse
+func AlibabaBaichuanTaopasswordCheck(clt *core.SDKClient, req *baichuan.AlibabaBaichuanTaopasswordCheckAPIRequest, session string) (*baichuan.AlibabaBaichuanTaopasswordCheckAPIResponse, error) {
+	var resp baichuan.AlibabaBaichuanTaopasswordCheckAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

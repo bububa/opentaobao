@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaojstminiappopenidmessagesendAPIRequest 单个openId用户短信发送 API请求
+// TaobaoJstMiniappOpenidMessageSendAPIRequest 单个openId用户短信发送 API请求
 // taobao.jst.miniapp.openid.message.send
 //
 // 单个openId用户短信发送
-type TaobaojstminiappopenidmessagesendAPIRequest struct {
+type TaobaoJstMiniappOpenidMessageSendAPIRequest struct {
 	model.Params
 	// 短信签名
 	_signName string
@@ -30,130 +30,130 @@ type TaobaojstminiappopenidmessagesendAPIRequest struct {
 	_extendNum string
 }
 
-// NewTaobaojstminiappopenidmessagesendRequest 初始化TaobaojstminiappopenidmessagesendAPIRequest对象
-func NewTaobaojstminiappopenidmessagesendRequest() *TaobaojstminiappopenidmessagesendAPIRequest {
-	return &TaobaojstminiappopenidmessagesendAPIRequest{
+// NewTaobaoJstMiniappOpenidMessageSendRequest 初始化TaobaoJstMiniappOpenidMessageSendAPIRequest对象
+func NewTaobaoJstMiniappOpenidMessageSendRequest() *TaobaoJstMiniappOpenidMessageSendAPIRequest {
+	return &TaobaoJstMiniappOpenidMessageSendAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaojstminiappopenidmessagesendAPIRequest) GetApiMethodName() string {
+func (r TaobaoJstMiniappOpenidMessageSendAPIRequest) GetApiMethodName() string {
 	return "taobao.jst.miniapp.openid.message.send"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaojstminiappopenidmessagesendAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoJstMiniappOpenidMessageSendAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaojstminiappopenidmessagesendAPIRequest) GetRawParams() model.Params {
+func (r TaobaoJstMiniappOpenidMessageSendAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSignName is SignName Setter
 // 短信签名
-func (r *TaobaojstminiappopenidmessagesendAPIRequest) SetSignName(_signName string) error {
+func (r *TaobaoJstMiniappOpenidMessageSendAPIRequest) SetSignName(_signName string) error {
 	r._signName = _signName
 	r.Set("sign_name", _signName)
 	return nil
 }
 
 // GetSignName SignName Getter
-func (r TaobaojstminiappopenidmessagesendAPIRequest) GetSignName() string {
+func (r TaobaoJstMiniappOpenidMessageSendAPIRequest) GetSignName() string {
 	return r._signName
 }
 
 // SetOpenId is OpenId Setter
 // 用户openId
-func (r *TaobaojstminiappopenidmessagesendAPIRequest) SetOpenId(_openId string) error {
+func (r *TaobaoJstMiniappOpenidMessageSendAPIRequest) SetOpenId(_openId string) error {
 	r._openId = _openId
 	r.Set("open_id", _openId)
 	return nil
 }
 
 // GetOpenId OpenId Getter
-func (r TaobaojstminiappopenidmessagesendAPIRequest) GetOpenId() string {
+func (r TaobaoJstMiniappOpenidMessageSendAPIRequest) GetOpenId() string {
 	return r._openId
 }
 
 // SetTemplateCode is TemplateCode Setter
 // 短信模板
-func (r *TaobaojstminiappopenidmessagesendAPIRequest) SetTemplateCode(_templateCode string) error {
+func (r *TaobaoJstMiniappOpenidMessageSendAPIRequest) SetTemplateCode(_templateCode string) error {
 	r._templateCode = _templateCode
 	r.Set("template_code", _templateCode)
 	return nil
 }
 
 // GetTemplateCode TemplateCode Getter
-func (r TaobaojstminiappopenidmessagesendAPIRequest) GetTemplateCode() string {
+func (r TaobaoJstMiniappOpenidMessageSendAPIRequest) GetTemplateCode() string {
 	return r._templateCode
 }
 
 // SetContent is Content Setter
 // 短信内容
-func (r *TaobaojstminiappopenidmessagesendAPIRequest) SetContent(_content string) error {
+func (r *TaobaoJstMiniappOpenidMessageSendAPIRequest) SetContent(_content string) error {
 	r._content = _content
 	r.Set("content", _content)
 	return nil
 }
 
 // GetContent Content Getter
-func (r TaobaojstminiappopenidmessagesendAPIRequest) GetContent() string {
+func (r TaobaoJstMiniappOpenidMessageSendAPIRequest) GetContent() string {
 	return r._content
 }
 
 // SetUrl is Url Setter
 // 短链，替换短信内容中的${url}
-func (r *TaobaojstminiappopenidmessagesendAPIRequest) SetUrl(_url string) error {
+func (r *TaobaoJstMiniappOpenidMessageSendAPIRequest) SetUrl(_url string) error {
 	r._url = _url
 	r.Set("url", _url)
 	return nil
 }
 
 // GetUrl Url Getter
-func (r TaobaojstminiappopenidmessagesendAPIRequest) GetUrl() string {
+func (r TaobaoJstMiniappOpenidMessageSendAPIRequest) GetUrl() string {
 	return r._url
 }
 
 // SetSellerAppKey is SellerAppKey Setter
 // 商家的APPKEY，如果openId是用商家的appKey生成的则需要传递
-func (r *TaobaojstminiappopenidmessagesendAPIRequest) SetSellerAppKey(_sellerAppKey string) error {
+func (r *TaobaoJstMiniappOpenidMessageSendAPIRequest) SetSellerAppKey(_sellerAppKey string) error {
 	r._sellerAppKey = _sellerAppKey
 	r.Set("seller_app_key", _sellerAppKey)
 	return nil
 }
 
 // GetSellerAppKey SellerAppKey Getter
-func (r TaobaojstminiappopenidmessagesendAPIRequest) GetSellerAppKey() string {
+func (r TaobaoJstMiniappOpenidMessageSendAPIRequest) GetSellerAppKey() string {
 	return r._sellerAppKey
 }
 
 // SetCrowdCode is CrowdCode Setter
 // 活动或人群code
-func (r *TaobaojstminiappopenidmessagesendAPIRequest) SetCrowdCode(_crowdCode string) error {
+func (r *TaobaoJstMiniappOpenidMessageSendAPIRequest) SetCrowdCode(_crowdCode string) error {
 	r._crowdCode = _crowdCode
 	r.Set("crowd_code", _crowdCode)
 	return nil
 }
 
 // GetCrowdCode CrowdCode Getter
-func (r TaobaojstminiappopenidmessagesendAPIRequest) GetCrowdCode() string {
+func (r TaobaoJstMiniappOpenidMessageSendAPIRequest) GetCrowdCode() string {
 	return r._crowdCode
 }
 
 // SetExtendNum is ExtendNum Setter
 // 短信拓展码
-func (r *TaobaojstminiappopenidmessagesendAPIRequest) SetExtendNum(_extendNum string) error {
+func (r *TaobaoJstMiniappOpenidMessageSendAPIRequest) SetExtendNum(_extendNum string) error {
 	r._extendNum = _extendNum
 	r.Set("extend_num", _extendNum)
 	return nil
 }
 
 // GetExtendNum ExtendNum Getter
-func (r TaobaojstminiappopenidmessagesendAPIRequest) GetExtendNum() string {
+func (r TaobaoJstMiniappOpenidMessageSendAPIRequest) GetExtendNum() string {
 	return r._extendNum
 }

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaitesleslimagesendimageAPIRequest 下发厂测初始化图片 API请求
+// AlibabaItEslEslimageSendimageAPIRequest 下发厂测初始化图片 API请求
 // alibaba.it.esl.eslimage.sendimage
 //
 // 工厂对生产出的电子价签进行全流程功能测试，能将出场图片通过ESL系统初始化到电子价签中
-type AlibabaitesleslimagesendimageAPIRequest struct {
+type AlibabaItEslEslimageSendimageAPIRequest struct {
 	model.Params
 	// 价签地址
 	_mac string
 }
 
-// NewAlibabaitesleslimagesendimageRequest 初始化AlibabaitesleslimagesendimageAPIRequest对象
-func NewAlibabaitesleslimagesendimageRequest() *AlibabaitesleslimagesendimageAPIRequest {
-	return &AlibabaitesleslimagesendimageAPIRequest{
+// NewAlibabaItEslEslimageSendimageRequest 初始化AlibabaItEslEslimageSendimageAPIRequest对象
+func NewAlibabaItEslEslimageSendimageRequest() *AlibabaItEslEslimageSendimageAPIRequest {
+	return &AlibabaItEslEslimageSendimageAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaitesleslimagesendimageAPIRequest) GetApiMethodName() string {
+func (r AlibabaItEslEslimageSendimageAPIRequest) GetApiMethodName() string {
 	return "alibaba.it.esl.eslimage.sendimage"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaitesleslimagesendimageAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaItEslEslimageSendimageAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaitesleslimagesendimageAPIRequest) GetRawParams() model.Params {
+func (r AlibabaItEslEslimageSendimageAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetMac is Mac Setter
 // 价签地址
-func (r *AlibabaitesleslimagesendimageAPIRequest) SetMac(_mac string) error {
+func (r *AlibabaItEslEslimageSendimageAPIRequest) SetMac(_mac string) error {
 	r._mac = _mac
 	r.Set("mac", _mac)
 	return nil
 }
 
 // GetMac Mac Getter
-func (r AlibabaitesleslimagesendimageAPIRequest) GetMac() string {
+func (r AlibabaItEslEslimageSendimageAPIRequest) GetMac() string {
 	return r._mac
 }

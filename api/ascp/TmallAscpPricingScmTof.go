@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascp"
 )
 
-// Tmallascppricingscmtof TOF&SCM营销域对接-成本录入设置
+// TmallAscpPricingScmTof TOF&SCM营销域对接-成本录入设置
 // tmall.ascp.pricing.scm.tof
 //
 // TOF&amp;SCM营销域对接-成本录入设置
-func Tmallascppricingscmtof(clt *core.SDKClient, req *ascp.TmallascppricingscmtofAPIRequest, session string) (*ascp.TmallascppricingscmtofAPIResponse, error) {
-	var resp ascp.TmallascppricingscmtofAPIResponse
+func TmallAscpPricingScmTof(clt *core.SDKClient, req *ascp.TmallAscpPricingScmTofAPIRequest, session string) (*ascp.TmallAscpPricingScmTofAPIResponse, error) {
+	var resp ascp.TmallAscpPricingScmTofAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

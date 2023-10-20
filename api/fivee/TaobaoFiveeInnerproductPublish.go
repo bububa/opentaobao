@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/fivee"
 )
 
-// Taobaofiveeinnerproductpublish 国产商品发布
+// TaobaoFiveeInnerproductPublish 国产商品发布
 // taobao.fivee.innerproduct.publish
 //
 // 资质共享平台国产商品发布
-func Taobaofiveeinnerproductpublish(clt *core.SDKClient, req *fivee.TaobaofiveeinnerproductpublishAPIRequest, session string) (*fivee.TaobaofiveeinnerproductpublishAPIResponse, error) {
-	var resp fivee.TaobaofiveeinnerproductpublishAPIResponse
+func TaobaoFiveeInnerproductPublish(clt *core.SDKClient, req *fivee.TaobaoFiveeInnerproductPublishAPIRequest, session string) (*fivee.TaobaoFiveeInnerproductPublishAPIResponse, error) {
+	var resp fivee.TaobaoFiveeInnerproductPublishAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaobaichuanitemsunsubscribeAPIRequest 批量删除商品订阅 API请求
+// TaobaoBaichuanItemsUnsubscribeAPIRequest 批量删除商品订阅 API请求
 // taobao.baichuan.items.unsubscribe
 //
 // 批量删除商品订阅
-type TaobaobaichuanitemsunsubscribeAPIRequest struct {
+type TaobaoBaichuanItemsUnsubscribeAPIRequest struct {
 	model.Params
 	// 删除的商品id
 	_itemIds []string
 }
 
-// NewTaobaobaichuanitemsunsubscribeRequest 初始化TaobaobaichuanitemsunsubscribeAPIRequest对象
-func NewTaobaobaichuanitemsunsubscribeRequest() *TaobaobaichuanitemsunsubscribeAPIRequest {
-	return &TaobaobaichuanitemsunsubscribeAPIRequest{
+// NewTaobaoBaichuanItemsUnsubscribeRequest 初始化TaobaoBaichuanItemsUnsubscribeAPIRequest对象
+func NewTaobaoBaichuanItemsUnsubscribeRequest() *TaobaoBaichuanItemsUnsubscribeAPIRequest {
+	return &TaobaoBaichuanItemsUnsubscribeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaobaichuanitemsunsubscribeAPIRequest) GetApiMethodName() string {
+func (r TaobaoBaichuanItemsUnsubscribeAPIRequest) GetApiMethodName() string {
 	return "taobao.baichuan.items.unsubscribe"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaobaichuanitemsunsubscribeAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoBaichuanItemsUnsubscribeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaobaichuanitemsunsubscribeAPIRequest) GetRawParams() model.Params {
+func (r TaobaoBaichuanItemsUnsubscribeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetItemIds is ItemIds Setter
 // 删除的商品id
-func (r *TaobaobaichuanitemsunsubscribeAPIRequest) SetItemIds(_itemIds []string) error {
+func (r *TaobaoBaichuanItemsUnsubscribeAPIRequest) SetItemIds(_itemIds []string) error {
 	r._itemIds = _itemIds
 	r.Set("item_ids", _itemIds)
 	return nil
 }
 
 // GetItemIds ItemIds Getter
-func (r TaobaobaichuanitemsunsubscribeAPIRequest) GetItemIds() []string {
+func (r TaobaoBaichuanItemsUnsubscribeAPIRequest) GetItemIds() []string {
 	return r._itemIds
 }

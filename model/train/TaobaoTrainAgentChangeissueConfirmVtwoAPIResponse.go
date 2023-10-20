@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotrainagentchangeissueconfirmvtwoAPIResponse 火车票代理商接口-跑腿改签出票回填-含鉴权校验 API返回值
+// TaobaoTrainAgentChangeissueConfirmVtwoAPIResponse 火车票代理商接口-跑腿改签出票回填-含鉴权校验 API返回值
 // taobao.train.agent.changeissue.confirm.vtwo
 //
 // 火车票代理商接口-跑腿改签出票回填-含鉴权校验
-type TaobaotrainagentchangeissueconfirmvtwoAPIResponse struct {
+type TaobaoTrainAgentChangeissueConfirmVtwoAPIResponse struct {
 	model.CommonResponse
-	TaobaotrainagentchangeissueconfirmvtwoAPIResponseModel
+	TaobaoTrainAgentChangeissueConfirmVtwoAPIResponseModel
 }
 
-// TaobaotrainagentchangeissueconfirmvtwoAPIResponseModel is 火车票代理商接口-跑腿改签出票回填-含鉴权校验 成功返回结果
-type TaobaotrainagentchangeissueconfirmvtwoAPIResponseModel struct {
+// TaobaoTrainAgentChangeissueConfirmVtwoAPIResponseModel is 火车票代理商接口-跑腿改签出票回填-含鉴权校验 成功返回结果
+type TaobaoTrainAgentChangeissueConfirmVtwoAPIResponseModel struct {
 	XMLName xml.Name `xml:"train_agent_changeissue_confirm_vtwo_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

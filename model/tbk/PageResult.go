@@ -3,7 +3,7 @@ package tbk
 // PageResult 结构体
 type PageResult struct {
 	// 数据结果
-	Results []TaobaotbkdgcpaactivitydetailResults `json:"results,omitempty" xml:"results>taobaotbkdgcpaactivitydetail_results,omitempty"`
+	Results []TaobaoTbkDgCpaActivityDetailResults `json:"results,omitempty" xml:"results>taobao_tbk_dg_cpa_activity_detail_results,omitempty"`
 	// 数据批次号(时间戳)
 	Runtime string `json:"runtime,omitempty" xml:"runtime,omitempty"`
 	// 上一页页码

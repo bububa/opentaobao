@@ -1,7 +1,7 @@
 package tmallsc
 
-// TmallservicecentercallrecordqueryResult 结构体
-type TmallservicecentercallrecordqueryResult struct {
+// TmallServicecenterCallrecordQueryResult 结构体
+type TmallServicecenterCallrecordQueryResult struct {
 	// 通话记录信息
 	Value []ServiceCallRecordCo `json:"value,omitempty" xml:"value>service_call_record_co,omitempty"`
 	// 错误码

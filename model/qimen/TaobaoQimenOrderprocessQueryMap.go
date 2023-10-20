@@ -1,5 +1,5 @@
 package qimen
 
-// TaobaoqimenorderprocessqueryMap 结构体
-type TaobaoqimenorderprocessqueryMap struct {
+// TaobaoQimenOrderprocessQueryMap 结构体
+type TaobaoQimenOrderprocessQueryMap struct {
 }

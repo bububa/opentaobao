@@ -1,7 +1,7 @@
 package ascp
 
-// AlibabadchainaoxiangwmsdeliveryorderconfirmBatch 结构体
-type AlibabadchainaoxiangwmsdeliveryorderconfirmBatch struct {
+// AlibabaDchainAoxiangWmsDeliveryorderConfirmBatch 结构体
+type AlibabaDchainAoxiangWmsDeliveryorderConfirmBatch struct {
 	// 批次编号
 	BatchCode string `json:"batch_code,omitempty" xml:"batch_code,omitempty"`
 	// 生产日期(YYYY-MM-DD)

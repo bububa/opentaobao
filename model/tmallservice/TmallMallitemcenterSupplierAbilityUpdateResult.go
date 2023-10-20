@@ -1,7 +1,7 @@
 package tmallservice
 
-// TmallmallitemcentersupplierabilityupdateResult 结构体
-type TmallmallitemcentersupplierabilityupdateResult struct {
+// TmallMallitemcenterSupplierAbilityUpdateResult 结构体
+type TmallMallitemcenterSupplierAbilityUpdateResult struct {
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 错误码

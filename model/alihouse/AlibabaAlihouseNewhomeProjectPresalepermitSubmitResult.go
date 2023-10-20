@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaalihousenewhomeprojectpresalepermitsubmitResult 结构体
-type AlibabaalihousenewhomeprojectpresalepermitsubmitResult struct {
+// AlibabaAlihouseNewhomeProjectPresalepermitSubmitResult 结构体
+type AlibabaAlihouseNewhomeProjectPresalepermitSubmitResult struct {
 	// 返回信息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 返回码

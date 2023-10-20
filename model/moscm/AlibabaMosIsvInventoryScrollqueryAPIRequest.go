@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabamosisvinventoryscrollqueryAPIRequest 滚动查询库存数据 API请求
+// AlibabaMosIsvInventoryScrollqueryAPIRequest 滚动查询库存数据 API请求
 // alibaba.mos.isv.inventory.scrollquery
 //
 // 按专柜滚动查询有库存商品
-type AlibabamosisvinventoryscrollqueryAPIRequest struct {
+type AlibabaMosIsvInventoryScrollqueryAPIRequest struct {
 	model.Params
 	// 专柜ID
 	_counterId string
@@ -18,52 +18,52 @@ type AlibabamosisvinventoryscrollqueryAPIRequest struct {
 	_scrollId string
 }
 
-// NewAlibabamosisvinventoryscrollqueryRequest 初始化AlibabamosisvinventoryscrollqueryAPIRequest对象
-func NewAlibabamosisvinventoryscrollqueryRequest() *AlibabamosisvinventoryscrollqueryAPIRequest {
-	return &AlibabamosisvinventoryscrollqueryAPIRequest{
+// NewAlibabaMosIsvInventoryScrollqueryRequest 初始化AlibabaMosIsvInventoryScrollqueryAPIRequest对象
+func NewAlibabaMosIsvInventoryScrollqueryRequest() *AlibabaMosIsvInventoryScrollqueryAPIRequest {
+	return &AlibabaMosIsvInventoryScrollqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabamosisvinventoryscrollqueryAPIRequest) GetApiMethodName() string {
+func (r AlibabaMosIsvInventoryScrollqueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.mos.isv.inventory.scrollquery"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabamosisvinventoryscrollqueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaMosIsvInventoryScrollqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabamosisvinventoryscrollqueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabaMosIsvInventoryScrollqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCounterId is CounterId Setter
 // 专柜ID
-func (r *AlibabamosisvinventoryscrollqueryAPIRequest) SetCounterId(_counterId string) error {
+func (r *AlibabaMosIsvInventoryScrollqueryAPIRequest) SetCounterId(_counterId string) error {
 	r._counterId = _counterId
 	r.Set("counter_id", _counterId)
 	return nil
 }
 
 // GetCounterId CounterId Getter
-func (r AlibabamosisvinventoryscrollqueryAPIRequest) GetCounterId() string {
+func (r AlibabaMosIsvInventoryScrollqueryAPIRequest) GetCounterId() string {
 	return r._counterId
 }
 
 // SetScrollId is ScrollId Setter
 // 滚动查询ID号
-func (r *AlibabamosisvinventoryscrollqueryAPIRequest) SetScrollId(_scrollId string) error {
+func (r *AlibabaMosIsvInventoryScrollqueryAPIRequest) SetScrollId(_scrollId string) error {
 	r._scrollId = _scrollId
 	r.Set("scroll_id", _scrollId)
 	return nil
 }
 
 // GetScrollId ScrollId Getter
-func (r AlibabamosisvinventoryscrollqueryAPIRequest) GetScrollId() string {
+func (r AlibabaMosIsvInventoryScrollqueryAPIRequest) GetScrollId() string {
 	return r._scrollId
 }

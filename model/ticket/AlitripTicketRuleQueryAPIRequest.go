@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripticketrulequeryAPIRequest 【门票API2.0】门票规则信息查询接口 API请求
+// AlitripTicketRuleQueryAPIRequest 【门票API2.0】门票规则信息查询接口 API请求
 // alitrip.ticket.rule.query
 //
 // 门票规则信息查询接口：返回商家上传的门票规则信息
-type AlitripticketrulequeryAPIRequest struct {
+type AlitripTicketRuleQueryAPIRequest struct {
 	model.Params
 	// 卖家景点规则编码
 	_outRuleId string
 }
 
-// NewAlitripticketrulequeryRequest 初始化AlitripticketrulequeryAPIRequest对象
-func NewAlitripticketrulequeryRequest() *AlitripticketrulequeryAPIRequest {
-	return &AlitripticketrulequeryAPIRequest{
+// NewAlitripTicketRuleQueryRequest 初始化AlitripTicketRuleQueryAPIRequest对象
+func NewAlitripTicketRuleQueryRequest() *AlitripTicketRuleQueryAPIRequest {
+	return &AlitripTicketRuleQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripticketrulequeryAPIRequest) GetApiMethodName() string {
+func (r AlitripTicketRuleQueryAPIRequest) GetApiMethodName() string {
 	return "alitrip.ticket.rule.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripticketrulequeryAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripTicketRuleQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripticketrulequeryAPIRequest) GetRawParams() model.Params {
+func (r AlitripTicketRuleQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOutRuleId is OutRuleId Setter
 // 卖家景点规则编码
-func (r *AlitripticketrulequeryAPIRequest) SetOutRuleId(_outRuleId string) error {
+func (r *AlitripTicketRuleQueryAPIRequest) SetOutRuleId(_outRuleId string) error {
 	r._outRuleId = _outRuleId
 	r.Set("out_rule_id", _outRuleId)
 	return nil
 }
 
 // GetOutRuleId OutRuleId Getter
-func (r AlitripticketrulequeryAPIRequest) GetOutRuleId() string {
+func (r AlitripTicketRuleQueryAPIRequest) GetOutRuleId() string {
 	return r._outRuleId
 }

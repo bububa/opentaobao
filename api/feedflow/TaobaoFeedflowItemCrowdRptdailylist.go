@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/feedflow"
 )
 
-// Taobaofeedflowitemcrowdrptdailylist 定向分日数据查询
+// TaobaoFeedflowItemCrowdRptdailylist 定向分日数据查询
 // taobao.feedflow.item.crowd.rptdailylist
 //
 // 定向分日数据查询
-func Taobaofeedflowitemcrowdrptdailylist(clt *core.SDKClient, req *feedflow.TaobaofeedflowitemcrowdrptdailylistAPIRequest, session string) (*feedflow.TaobaofeedflowitemcrowdrptdailylistAPIResponse, error) {
-	var resp feedflow.TaobaofeedflowitemcrowdrptdailylistAPIResponse
+func TaobaoFeedflowItemCrowdRptdailylist(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCrowdRptdailylistAPIRequest, session string) (*feedflow.TaobaoFeedflowItemCrowdRptdailylistAPIResponse, error) {
+	var resp feedflow.TaobaoFeedflowItemCrowdRptdailylistAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// Alibabaalihealthdrugkytstorebilldelete 零售端单据删除
+// AlibabaAlihealthDrugKytStorebilldelete 零售端单据删除
 // alibaba.alihealth.drug.kyt.storebilldelete
 //
 // 零售端单据删除
-func Alibabaalihealthdrugkytstorebilldelete(clt *core.SDKClient, req *drugtrace.AlibabaalihealthdrugkytstorebilldeleteAPIRequest, session string) (*drugtrace.AlibabaalihealthdrugkytstorebilldeleteAPIResponse, error) {
-	var resp drugtrace.AlibabaalihealthdrugkytstorebilldeleteAPIResponse
+func AlibabaAlihealthDrugKytStorebilldelete(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytStorebilldeleteAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytStorebilldeleteAPIResponse, error) {
+	var resp drugtrace.AlibabaAlihealthDrugKytStorebilldeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

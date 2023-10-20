@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotrainagentfreechildrenlistqueryvtwoAPIRequest 免费儿童列表查询 API请求
+// TaobaoTrainAgentFreechildrenlistQueryVtwoAPIRequest 免费儿童列表查询 API请求
 // taobao.train.agent.freechildrenlist.query.vtwo
 //
 // 免费儿童列表查询
-type TaobaotrainagentfreechildrenlistqueryvtwoAPIRequest struct {
+type TaobaoTrainAgentFreechildrenlistQueryVtwoAPIRequest struct {
 	model.Params
 }
 
-// NewTaobaotrainagentfreechildrenlistqueryvtwoRequest 初始化TaobaotrainagentfreechildrenlistqueryvtwoAPIRequest对象
-func NewTaobaotrainagentfreechildrenlistqueryvtwoRequest() *TaobaotrainagentfreechildrenlistqueryvtwoAPIRequest {
-	return &TaobaotrainagentfreechildrenlistqueryvtwoAPIRequest{
+// NewTaobaoTrainAgentFreechildrenlistQueryVtwoRequest 初始化TaobaoTrainAgentFreechildrenlistQueryVtwoAPIRequest对象
+func NewTaobaoTrainAgentFreechildrenlistQueryVtwoRequest() *TaobaoTrainAgentFreechildrenlistQueryVtwoAPIRequest {
+	return &TaobaoTrainAgentFreechildrenlistQueryVtwoAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaotrainagentfreechildrenlistqueryvtwoAPIRequest) GetApiMethodName() string {
+func (r TaobaoTrainAgentFreechildrenlistQueryVtwoAPIRequest) GetApiMethodName() string {
 	return "taobao.train.agent.freechildrenlist.query.vtwo"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaotrainagentfreechildrenlistqueryvtwoAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoTrainAgentFreechildrenlistQueryVtwoAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaotrainagentfreechildrenlistqueryvtwoAPIRequest) GetRawParams() model.Params {
+func (r TaobaoTrainAgentFreechildrenlistQueryVtwoAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

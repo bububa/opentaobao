@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpressaffiliateimagesearchAPIResponse 图搜 API返回值
+// AliexpressAffiliateImageSearchAPIResponse 图搜 API返回值
 // aliexpress.affiliate.image.search
 //
 // 图片搜索接口
-type AliexpressaffiliateimagesearchAPIResponse struct {
+type AliexpressAffiliateImageSearchAPIResponse struct {
 	model.CommonResponse
-	AliexpressaffiliateimagesearchAPIResponseModel
+	AliexpressAffiliateImageSearchAPIResponseModel
 }
 
-// AliexpressaffiliateimagesearchAPIResponseModel is 图搜 成功返回结果
-type AliexpressaffiliateimagesearchAPIResponseModel struct {
+// AliexpressAffiliateImageSearchAPIResponseModel is 图搜 成功返回结果
+type AliexpressAffiliateImageSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_affiliate_image_search_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 默认描述
-	Result *AliexpressaffiliateimagesearchResponse `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AliexpressAffiliateImageSearchResponse `json:"result,omitempty" xml:"result,omitempty"`
 }

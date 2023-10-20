@@ -72,6 +72,7 @@ func main() {
 | ----------- | -----------|
 | Number | int64 |
 | Price | float64 |
+| BigDecimal | float64 |
 | Boolean | bool |
 | String | string |
 | Date | string |

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaobusagentreturnticketconfirmAPIResponse 商家回调退票 API返回值
+// TaobaoBusAgentReturnticketConfirmAPIResponse 商家回调退票 API返回值
 // taobao.bus.agent.returnticket.confirm
 //
 // 商家通过TOP接口调用来回传退票状态
-type TaobaobusagentreturnticketconfirmAPIResponse struct {
+type TaobaoBusAgentReturnticketConfirmAPIResponse struct {
 	model.CommonResponse
-	TaobaobusagentreturnticketconfirmAPIResponseModel
+	TaobaoBusAgentReturnticketConfirmAPIResponseModel
 }
 
-// TaobaobusagentreturnticketconfirmAPIResponseModel is 商家回调退票 成功返回结果
-type TaobaobusagentreturnticketconfirmAPIResponseModel struct {
+// TaobaoBusAgentReturnticketConfirmAPIResponseModel is 商家回调退票 成功返回结果
+type TaobaoBusAgentReturnticketConfirmAPIResponseModel struct {
 	XMLName xml.Name `xml:"bus_agent_returnticket_confirm_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

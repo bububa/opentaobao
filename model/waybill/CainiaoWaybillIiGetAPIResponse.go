@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaowaybilliigetAPIResponse 电子面单云打印接口 API返回值
+// CainiaoWaybillIiGetAPIResponse 电子面单云打印接口 API返回值
 // cainiao.waybill.ii.get
 //
 // 菜鸟电子面单的云打印申请电子面单号的方法
-type CainiaowaybilliigetAPIResponse struct {
+type CainiaoWaybillIiGetAPIResponse struct {
 	model.CommonResponse
-	CainiaowaybilliigetAPIResponseModel
+	CainiaoWaybillIiGetAPIResponseModel
 }
 
-// CainiaowaybilliigetAPIResponseModel is 电子面单云打印接口 成功返回结果
-type CainiaowaybilliigetAPIResponseModel struct {
+// CainiaoWaybillIiGetAPIResponseModel is 电子面单云打印接口 成功返回结果
+type CainiaoWaybillIiGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_waybill_ii_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

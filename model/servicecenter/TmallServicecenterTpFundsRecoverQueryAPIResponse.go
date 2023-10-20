@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallservicecentertpfundsrecoverqueryAPIResponse 服务商资金权益逆向扣回的查询接口 API返回值
+// TmallServicecenterTpFundsRecoverQueryAPIResponse 服务商资金权益逆向扣回的查询接口 API返回值
 // tmall.servicecenter.tp.funds.recover.query
 //
 // 服务商资金权益逆向扣回的查询接口
-type TmallservicecentertpfundsrecoverqueryAPIResponse struct {
+type TmallServicecenterTpFundsRecoverQueryAPIResponse struct {
 	model.CommonResponse
-	TmallservicecentertpfundsrecoverqueryAPIResponseModel
+	TmallServicecenterTpFundsRecoverQueryAPIResponseModel
 }
 
-// TmallservicecentertpfundsrecoverqueryAPIResponseModel is 服务商资金权益逆向扣回的查询接口 成功返回结果
-type TmallservicecentertpfundsrecoverqueryAPIResponseModel struct {
+// TmallServicecenterTpFundsRecoverQueryAPIResponseModel is 服务商资金权益逆向扣回的查询接口 成功返回结果
+type TmallServicecenterTpFundsRecoverQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_tp_funds_recover_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package aliqin
 
-// AlibabaaliqinfciotrechargeCardResult 结构体
-type AlibabaaliqinfciotrechargeCardResult struct {
+// AlibabaAliqinFcIotRechargeCardResult 结构体
+type AlibabaAliqinFcIotRechargeCardResult struct {
 	// code
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// msg

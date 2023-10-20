@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaalihealthdrugcodekytyyapplycodeModel 结构体
-type AlibabaalihealthdrugcodekytyyapplycodeModel struct {
+// AlibabaAlihealthDrugCodeKytYyApplycodeModel 结构体
+type AlibabaAlihealthDrugCodeKytYyApplycodeModel struct {
 	// 子码
 	ChildrenCodeList []string `json:"children_code_list,omitempty" xml:"children_code_list>string,omitempty"`
 	// 父码

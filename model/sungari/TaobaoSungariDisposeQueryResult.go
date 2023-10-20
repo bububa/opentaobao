@@ -1,7 +1,7 @@
 package sungari
 
-// TaobaosungaridisposequeryResult 结构体
-type TaobaosungaridisposequeryResult struct {
+// TaobaoSungariDisposeQueryResult 结构体
+type TaobaoSungariDisposeQueryResult struct {
 	// data
 	List []DisposeResultVo `json:"list,omitempty" xml:"list>dispose_result_vo,omitempty"`
 	// 提示信息

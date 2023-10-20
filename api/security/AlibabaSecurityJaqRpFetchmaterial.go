@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/security"
 )
 
-// Alibabasecurityjaqrpfetchmaterial 聚安全实人认证获取结果接口
+// AlibabaSecurityJaqRpFetchmaterial 聚安全实人认证获取结果接口
 // alibaba.security.jaq.rp.fetchmaterial
 //
 // 聚安全实人认证获取结果接口
-func Alibabasecurityjaqrpfetchmaterial(clt *core.SDKClient, req *security.AlibabasecurityjaqrpfetchmaterialAPIRequest, session string) (*security.AlibabasecurityjaqrpfetchmaterialAPIResponse, error) {
-	var resp security.AlibabasecurityjaqrpfetchmaterialAPIResponse
+func AlibabaSecurityJaqRpFetchmaterial(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpFetchmaterialAPIRequest, session string) (*security.AlibabaSecurityJaqRpFetchmaterialAPIResponse, error) {
+	var resp security.AlibabaSecurityJaqRpFetchmaterialAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

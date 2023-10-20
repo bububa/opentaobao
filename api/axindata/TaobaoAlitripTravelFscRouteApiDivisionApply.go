@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/axindata"
 )
 
-// Taobaoalitriptravelfscrouteapidivisionapply 线路供应商提交新增城市申请
+// TaobaoAlitripTravelFscRouteApiDivisionApply 线路供应商提交新增城市申请
 // taobao.alitrip.travel.fsc.route.api.division.apply
 //
 // 线路供应商提交新增城市申请
-func Taobaoalitriptravelfscrouteapidivisionapply(clt *core.SDKClient, req *axindata.TaobaoalitriptravelfscrouteapidivisionapplyAPIRequest, session string) (*axindata.TaobaoalitriptravelfscrouteapidivisionapplyAPIResponse, error) {
-	var resp axindata.TaobaoalitriptravelfscrouteapidivisionapplyAPIResponse
+func TaobaoAlitripTravelFscRouteApiDivisionApply(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelFscRouteApiDivisionApplyAPIRequest, session string) (*axindata.TaobaoAlitripTravelFscRouteApiDivisionApplyAPIResponse, error) {
+	var resp axindata.TaobaoAlitripTravelFscRouteApiDivisionApplyAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

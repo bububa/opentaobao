@@ -1,7 +1,7 @@
 package bus
 
-// TaobaobusbusnumbergetResultSet 结构体
-type TaobaobusbusnumbergetResultSet struct {
+// TaobaoBusBusnumberGetResultSet 结构体
+type TaobaoBusBusnumberGetResultSet struct {
 	// errCode BUSNUMBER_SEARCH_NOBUS 找不到班次		POWER_D权限问题
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// errMsg

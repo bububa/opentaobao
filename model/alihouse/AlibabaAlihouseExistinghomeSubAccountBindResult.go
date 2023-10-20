@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaalihouseexistinghomesubaccountbindResult 结构体
-type AlibabaalihouseexistinghomesubaccountbindResult struct {
+// AlibabaAlihouseExistinghomeSubAccountBindResult 结构体
+type AlibabaAlihouseExistinghomeSubAccountBindResult struct {
 	// code
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// message

@@ -1,7 +1,7 @@
 package alicom
 
-// AlibabaaliqinaxbvendorpushcallreleaseResponse 结构体
-type AlibabaaliqinaxbvendorpushcallreleaseResponse struct {
+// AlibabaAliqinAxbVendorPushCallReleaseResponse 结构体
+type AlibabaAliqinAxbVendorPushCallReleaseResponse struct {
 	// 错误信息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 业务响应码code为OK时代表请求成功,其他CODE建议做重试机制

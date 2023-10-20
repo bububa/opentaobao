@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthasyncprescribeprescriptionsearchAPIRequest 异步开方处方查询 API请求
+// AlibabaAlihealthAsyncprescribePrescriptionSearchAPIRequest 异步开方处方查询 API请求
 // alibaba.alihealth.asyncprescribe.prescription.search
 //
 // 异步开方处方查询
-type AlibabaalihealthasyncprescribeprescriptionsearchAPIRequest struct {
+type AlibabaAlihealthAsyncprescribePrescriptionSearchAPIRequest struct {
 	model.Params
 	// 查询入参
 	_searchRequest *AsyncPrescribeSearchRequest
 }
 
-// NewAlibabaalihealthasyncprescribeprescriptionsearchRequest 初始化AlibabaalihealthasyncprescribeprescriptionsearchAPIRequest对象
-func NewAlibabaalihealthasyncprescribeprescriptionsearchRequest() *AlibabaalihealthasyncprescribeprescriptionsearchAPIRequest {
-	return &AlibabaalihealthasyncprescribeprescriptionsearchAPIRequest{
+// NewAlibabaAlihealthAsyncprescribePrescriptionSearchRequest 初始化AlibabaAlihealthAsyncprescribePrescriptionSearchAPIRequest对象
+func NewAlibabaAlihealthAsyncprescribePrescriptionSearchRequest() *AlibabaAlihealthAsyncprescribePrescriptionSearchAPIRequest {
+	return &AlibabaAlihealthAsyncprescribePrescriptionSearchAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalihealthasyncprescribeprescriptionsearchAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthAsyncprescribePrescriptionSearchAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.asyncprescribe.prescription.search"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalihealthasyncprescribeprescriptionsearchAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlihealthAsyncprescribePrescriptionSearchAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalihealthasyncprescribeprescriptionsearchAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlihealthAsyncprescribePrescriptionSearchAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSearchRequest is SearchRequest Setter
 // 查询入参
-func (r *AlibabaalihealthasyncprescribeprescriptionsearchAPIRequest) SetSearchRequest(_searchRequest *AsyncPrescribeSearchRequest) error {
+func (r *AlibabaAlihealthAsyncprescribePrescriptionSearchAPIRequest) SetSearchRequest(_searchRequest *AsyncPrescribeSearchRequest) error {
 	r._searchRequest = _searchRequest
 	r.Set("search_request", _searchRequest)
 	return nil
 }
 
 // GetSearchRequest SearchRequest Getter
-func (r AlibabaalihealthasyncprescribeprescriptionsearchAPIRequest) GetSearchRequest() *AsyncPrescribeSearchRequest {
+func (r AlibabaAlihealthAsyncprescribePrescriptionSearchAPIRequest) GetSearchRequest() *AsyncPrescribeSearchRequest {
 	return r._searchRequest
 }

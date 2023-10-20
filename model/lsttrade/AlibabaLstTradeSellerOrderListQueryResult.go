@@ -1,7 +1,7 @@
 package lsttrade
 
-// AlibabalsttradesellerorderlistqueryResult 结构体
-type AlibabalsttradesellerorderlistqueryResult struct {
+// AlibabaLstTradeSellerOrderListQueryResult 结构体
+type AlibabaLstTradeSellerOrderListQueryResult struct {
 	// 信息
 	ContentList []Content `json:"content_list,omitempty" xml:"content_list>content,omitempty"`
 	// 失败信息

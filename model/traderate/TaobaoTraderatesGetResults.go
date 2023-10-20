@@ -1,7 +1,7 @@
 package traderate
 
-// TaobaotraderatesgetResults 结构体
-type TaobaotraderatesgetResults struct {
+// TaobaoTraderatesGetResults 结构体
+type TaobaoTraderatesGetResults struct {
 	// 评价者角色.可选值:seller(卖家),buyer(买家)
 	Role string `json:"role,omitempty" xml:"role,omitempty"`
 	// 评价者昵称

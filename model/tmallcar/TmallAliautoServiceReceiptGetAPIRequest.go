@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallaliautoservicereceiptgetAPIRequest isv查询服务工单详情 API请求
+// TmallAliautoServiceReceiptGetAPIRequest isv查询服务工单详情 API请求
 // tmall.aliauto.service.receipt.get
 //
 // isv查询服务工单详情
-type TmallaliautoservicereceiptgetAPIRequest struct {
+type TmallAliautoServiceReceiptGetAPIRequest struct {
 	model.Params
 	// 工单号
 	_receiptId int64
 }
 
-// NewTmallaliautoservicereceiptgetRequest 初始化TmallaliautoservicereceiptgetAPIRequest对象
-func NewTmallaliautoservicereceiptgetRequest() *TmallaliautoservicereceiptgetAPIRequest {
-	return &TmallaliautoservicereceiptgetAPIRequest{
+// NewTmallAliautoServiceReceiptGetRequest 初始化TmallAliautoServiceReceiptGetAPIRequest对象
+func NewTmallAliautoServiceReceiptGetRequest() *TmallAliautoServiceReceiptGetAPIRequest {
+	return &TmallAliautoServiceReceiptGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallaliautoservicereceiptgetAPIRequest) GetApiMethodName() string {
+func (r TmallAliautoServiceReceiptGetAPIRequest) GetApiMethodName() string {
 	return "tmall.aliauto.service.receipt.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallaliautoservicereceiptgetAPIRequest) GetApiParams(params url.Values) {
+func (r TmallAliautoServiceReceiptGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallaliautoservicereceiptgetAPIRequest) GetRawParams() model.Params {
+func (r TmallAliautoServiceReceiptGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetReceiptId is ReceiptId Setter
 // 工单号
-func (r *TmallaliautoservicereceiptgetAPIRequest) SetReceiptId(_receiptId int64) error {
+func (r *TmallAliautoServiceReceiptGetAPIRequest) SetReceiptId(_receiptId int64) error {
 	r._receiptId = _receiptId
 	r.Set("receipt_id", _receiptId)
 	return nil
 }
 
 // GetReceiptId ReceiptId Getter
-func (r TmallaliautoservicereceiptgetAPIRequest) GetReceiptId() int64 {
+func (r TmallAliautoServiceReceiptGetAPIRequest) GetReceiptId() int64 {
 	return r._receiptId
 }

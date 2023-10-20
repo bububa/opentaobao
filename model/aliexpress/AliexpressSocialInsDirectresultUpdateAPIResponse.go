@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpresssocialinsdirectresultupdateAPIResponse ISV更新INS私信发送的结果 API返回值
+// AliexpressSocialInsDirectresultUpdateAPIResponse ISV更新INS私信发送的结果 API返回值
 // aliexpress.social.ins.directresult.update
 //
 // ISV更新INS私信发送的结果
-type AliexpresssocialinsdirectresultupdateAPIResponse struct {
+type AliexpressSocialInsDirectresultUpdateAPIResponse struct {
 	model.CommonResponse
-	AliexpresssocialinsdirectresultupdateAPIResponseModel
+	AliexpressSocialInsDirectresultUpdateAPIResponseModel
 }
 
-// AliexpresssocialinsdirectresultupdateAPIResponseModel is ISV更新INS私信发送的结果 成功返回结果
-type AliexpresssocialinsdirectresultupdateAPIResponseModel struct {
+// AliexpressSocialInsDirectresultUpdateAPIResponseModel is ISV更新INS私信发送的结果 成功返回结果
+type AliexpressSocialInsDirectresultUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_social_ins_directresult_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

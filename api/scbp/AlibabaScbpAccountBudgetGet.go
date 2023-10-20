@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// Alibabascbpaccountbudgetget 查询日消耗预算
+// AlibabaScbpAccountBudgetGet 查询日消耗预算
 // alibaba.scbp.account.budget.get
 //
 // 查询日消耗预算
-func Alibabascbpaccountbudgetget(clt *core.SDKClient, req *scbp.AlibabascbpaccountbudgetgetAPIRequest, session string) (*scbp.AlibabascbpaccountbudgetgetAPIResponse, error) {
-	var resp scbp.AlibabascbpaccountbudgetgetAPIResponse
+func AlibabaScbpAccountBudgetGet(clt *core.SDKClient, req *scbp.AlibabaScbpAccountBudgetGetAPIRequest, session string) (*scbp.AlibabaScbpAccountBudgetGetAPIResponse, error) {
+	var resp scbp.AlibabaScbpAccountBudgetGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

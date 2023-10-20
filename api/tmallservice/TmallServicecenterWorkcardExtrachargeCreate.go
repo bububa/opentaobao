@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-// Tmallservicecenterworkcardextrachargecreate 创建工单额外收费项
+// TmallServicecenterWorkcardExtrachargeCreate 创建工单额外收费项
 // tmall.servicecenter.workcard.extracharge.create
 //
 // 创建额外收费项
-func Tmallservicecenterworkcardextrachargecreate(clt *core.SDKClient, req *tmallservice.TmallservicecenterworkcardextrachargecreateAPIRequest, session string) (*tmallservice.TmallservicecenterworkcardextrachargecreateAPIResponse, error) {
-	var resp tmallservice.TmallservicecenterworkcardextrachargecreateAPIResponse
+func TmallServicecenterWorkcardExtrachargeCreate(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardExtrachargeCreateAPIRequest, session string) (*tmallservice.TmallServicecenterWorkcardExtrachargeCreateAPIResponse, error) {
+	var resp tmallservice.TmallServicecenterWorkcardExtrachargeCreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

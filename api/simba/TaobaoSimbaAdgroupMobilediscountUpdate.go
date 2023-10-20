@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// Taobaosimbaadgroupmobilediscountupdate 对推广组进行单独移动溢价
+// TaobaoSimbaAdgroupMobilediscountUpdate 对推广组进行单独移动溢价
 // taobao.simba.adgroup.mobilediscount.update
 //
 // 对推广组进行单独移动溢价
-func Taobaosimbaadgroupmobilediscountupdate(clt *core.SDKClient, req *simba.TaobaosimbaadgroupmobilediscountupdateAPIRequest, session string) (*simba.TaobaosimbaadgroupmobilediscountupdateAPIResponse, error) {
-	var resp simba.TaobaosimbaadgroupmobilediscountupdateAPIResponse
+func TaobaoSimbaAdgroupMobilediscountUpdate(clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest, session string) (*simba.TaobaoSimbaAdgroupMobilediscountUpdateAPIResponse, error) {
+	var resp simba.TaobaoSimbaAdgroupMobilediscountUpdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

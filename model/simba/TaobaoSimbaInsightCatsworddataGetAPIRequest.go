@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosimbainsightcatsworddatagetAPIRequest 获取类目下关键词的数据 API请求
+// TaobaoSimbaInsightCatsworddataGetAPIRequest 获取类目下关键词的数据 API请求
 // taobao.simba.insight.catsworddata.get
 //
 // 获取给定词在给定类目下的详细数据
-type TaobaosimbainsightcatsworddatagetAPIRequest struct {
+type TaobaoSimbaInsightCatsworddataGetAPIRequest struct {
 	model.Params
 	// 需要查询的关键词列表，最大长度100。
 	_bidwordList []string
@@ -22,78 +22,78 @@ type TaobaosimbainsightcatsworddatagetAPIRequest struct {
 	_endDate string
 }
 
-// NewTaobaosimbainsightcatsworddatagetRequest 初始化TaobaosimbainsightcatsworddatagetAPIRequest对象
-func NewTaobaosimbainsightcatsworddatagetRequest() *TaobaosimbainsightcatsworddatagetAPIRequest {
-	return &TaobaosimbainsightcatsworddatagetAPIRequest{
+// NewTaobaoSimbaInsightCatsworddataGetRequest 初始化TaobaoSimbaInsightCatsworddataGetAPIRequest对象
+func NewTaobaoSimbaInsightCatsworddataGetRequest() *TaobaoSimbaInsightCatsworddataGetAPIRequest {
+	return &TaobaoSimbaInsightCatsworddataGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaosimbainsightcatsworddatagetAPIRequest) GetApiMethodName() string {
+func (r TaobaoSimbaInsightCatsworddataGetAPIRequest) GetApiMethodName() string {
 	return "taobao.simba.insight.catsworddata.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaosimbainsightcatsworddatagetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoSimbaInsightCatsworddataGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaosimbainsightcatsworddatagetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoSimbaInsightCatsworddataGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetBidwordList is BidwordList Setter
 // 需要查询的关键词列表，最大长度100。
-func (r *TaobaosimbainsightcatsworddatagetAPIRequest) SetBidwordList(_bidwordList []string) error {
+func (r *TaobaoSimbaInsightCatsworddataGetAPIRequest) SetBidwordList(_bidwordList []string) error {
 	r._bidwordList = _bidwordList
 	r.Set("bidword_list", _bidwordList)
 	return nil
 }
 
 // GetBidwordList BidwordList Getter
-func (r TaobaosimbainsightcatsworddatagetAPIRequest) GetBidwordList() []string {
+func (r TaobaoSimbaInsightCatsworddataGetAPIRequest) GetBidwordList() []string {
 	return r._bidwordList
 }
 
 // SetCatId is CatId Setter
 // 类目id
-func (r *TaobaosimbainsightcatsworddatagetAPIRequest) SetCatId(_catId string) error {
+func (r *TaobaoSimbaInsightCatsworddataGetAPIRequest) SetCatId(_catId string) error {
 	r._catId = _catId
 	r.Set("cat_id", _catId)
 	return nil
 }
 
 // GetCatId CatId Getter
-func (r TaobaosimbainsightcatsworddatagetAPIRequest) GetCatId() string {
+func (r TaobaoSimbaInsightCatsworddataGetAPIRequest) GetCatId() string {
 	return r._catId
 }
 
 // SetStartDate is StartDate Setter
 // 开始时间，格式只能为：yyyy-MM-dd
-func (r *TaobaosimbainsightcatsworddatagetAPIRequest) SetStartDate(_startDate string) error {
+func (r *TaobaoSimbaInsightCatsworddataGetAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
 	r.Set("start_date", _startDate)
 	return nil
 }
 
 // GetStartDate StartDate Getter
-func (r TaobaosimbainsightcatsworddatagetAPIRequest) GetStartDate() string {
+func (r TaobaoSimbaInsightCatsworddataGetAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
 // SetEndDate is EndDate Setter
 // 结束时间，格式只能为：yyyy-MM-dd
-func (r *TaobaosimbainsightcatsworddatagetAPIRequest) SetEndDate(_endDate string) error {
+func (r *TaobaoSimbaInsightCatsworddataGetAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
 	r.Set("end_date", _endDate)
 	return nil
 }
 
 // GetEndDate EndDate Getter
-func (r TaobaosimbainsightcatsworddatagetAPIRequest) GetEndDate() string {
+func (r TaobaoSimbaInsightCatsworddataGetAPIRequest) GetEndDate() string {
 	return r._endDate
 }

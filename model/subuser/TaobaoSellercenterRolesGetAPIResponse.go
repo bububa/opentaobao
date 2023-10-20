@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosellercenterrolesgetAPIResponse 获取指定卖家的角色列表 API返回值
+// TaobaoSellercenterRolesGetAPIResponse 获取指定卖家的角色列表 API返回值
 // taobao.sellercenter.roles.get
 //
 // 获取指定卖家的角色列表，只能获取属于登陆者自己的信息。
-type TaobaosellercenterrolesgetAPIResponse struct {
+type TaobaoSellercenterRolesGetAPIResponse struct {
 	model.CommonResponse
-	TaobaosellercenterrolesgetAPIResponseModel
+	TaobaoSellercenterRolesGetAPIResponseModel
 }
 
-// TaobaosellercenterrolesgetAPIResponseModel is 获取指定卖家的角色列表 成功返回结果
-type TaobaosellercenterrolesgetAPIResponseModel struct {
+// TaobaoSellercenterRolesGetAPIResponseModel is 获取指定卖家的角色列表 成功返回结果
+type TaobaoSellercenterRolesGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"sellercenter_roles_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

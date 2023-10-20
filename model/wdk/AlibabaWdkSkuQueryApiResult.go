@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabawdkskuqueryApiResult 结构体
-type AlibabawdkskuqueryApiResult struct {
+// AlibabaWdkSkuQueryApiResult 结构体
+type AlibabaWdkSkuQueryApiResult struct {
 	// 请求参数不能为空
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 单条错误信息

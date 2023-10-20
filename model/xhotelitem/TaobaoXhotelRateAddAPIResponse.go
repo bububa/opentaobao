@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoxhotelrateaddAPIResponse 新增专享房价 API返回值
+// TaobaoXhotelRateAddAPIResponse 新增专享房价 API返回值
 // taobao.xhotel.rate.add
 //
 // 酒店产品库rate添加
-type TaobaoxhotelrateaddAPIResponse struct {
+type TaobaoXhotelRateAddAPIResponse struct {
 	model.CommonResponse
-	TaobaoxhotelrateaddAPIResponseModel
+	TaobaoXhotelRateAddAPIResponseModel
 }
 
-// TaobaoxhotelrateaddAPIResponseModel is 新增专享房价 成功返回结果
-type TaobaoxhotelrateaddAPIResponseModel struct {
+// TaobaoXhotelRateAddAPIResponseModel is 新增专享房价 成功返回结果
+type TaobaoXhotelRateAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_rate_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

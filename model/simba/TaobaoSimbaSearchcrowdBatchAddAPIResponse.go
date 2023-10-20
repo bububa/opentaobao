@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosimbasearchcrowdbatchaddAPIResponse 推广单元增加搜索人群 API返回值
+// TaobaoSimbaSearchcrowdBatchAddAPIResponse 推广单元增加搜索人群 API返回值
 // taobao.simba.searchcrowd.batch.add
 //
 // 推广单元新增搜索人群
-type TaobaosimbasearchcrowdbatchaddAPIResponse struct {
+type TaobaoSimbaSearchcrowdBatchAddAPIResponse struct {
 	model.CommonResponse
-	TaobaosimbasearchcrowdbatchaddAPIResponseModel
+	TaobaoSimbaSearchcrowdBatchAddAPIResponseModel
 }
 
-// TaobaosimbasearchcrowdbatchaddAPIResponseModel is 推广单元增加搜索人群 成功返回结果
-type TaobaosimbasearchcrowdbatchaddAPIResponseModel struct {
+// TaobaoSimbaSearchcrowdBatchAddAPIResponseModel is 推广单元增加搜索人群 成功返回结果
+type TaobaoSimbaSearchcrowdBatchAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_searchcrowd_batch_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaaliqinaxbvendorsmsinterceptAPIRequest AXB短信托收推送接口 API请求
+// AlibabaAliqinAxbVendorSmsInterceptAPIRequest AXB短信托收推送接口 API请求
 // alibaba.aliqin.axb.vendor.sms.intercept
 //
 // 用于给供应商推送需要托收的短信
-type AlibabaaliqinaxbvendorsmsinterceptAPIRequest struct {
+type AlibabaAliqinAxbVendorSmsInterceptAPIRequest struct {
 	model.Params
 	// 短信托收结构体
 	_smsInterceptRequest *SmsInterceptRequest
 }
 
-// NewAlibabaaliqinaxbvendorsmsinterceptRequest 初始化AlibabaaliqinaxbvendorsmsinterceptAPIRequest对象
-func NewAlibabaaliqinaxbvendorsmsinterceptRequest() *AlibabaaliqinaxbvendorsmsinterceptAPIRequest {
-	return &AlibabaaliqinaxbvendorsmsinterceptAPIRequest{
+// NewAlibabaAliqinAxbVendorSmsInterceptRequest 初始化AlibabaAliqinAxbVendorSmsInterceptAPIRequest对象
+func NewAlibabaAliqinAxbVendorSmsInterceptRequest() *AlibabaAliqinAxbVendorSmsInterceptAPIRequest {
+	return &AlibabaAliqinAxbVendorSmsInterceptAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaaliqinaxbvendorsmsinterceptAPIRequest) GetApiMethodName() string {
+func (r AlibabaAliqinAxbVendorSmsInterceptAPIRequest) GetApiMethodName() string {
 	return "alibaba.aliqin.axb.vendor.sms.intercept"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaaliqinaxbvendorsmsinterceptAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAliqinAxbVendorSmsInterceptAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaaliqinaxbvendorsmsinterceptAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAliqinAxbVendorSmsInterceptAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSmsInterceptRequest is SmsInterceptRequest Setter
 // 短信托收结构体
-func (r *AlibabaaliqinaxbvendorsmsinterceptAPIRequest) SetSmsInterceptRequest(_smsInterceptRequest *SmsInterceptRequest) error {
+func (r *AlibabaAliqinAxbVendorSmsInterceptAPIRequest) SetSmsInterceptRequest(_smsInterceptRequest *SmsInterceptRequest) error {
 	r._smsInterceptRequest = _smsInterceptRequest
 	r.Set("sms_intercept_request", _smsInterceptRequest)
 	return nil
 }
 
 // GetSmsInterceptRequest SmsInterceptRequest Getter
-func (r AlibabaaliqinaxbvendorsmsinterceptAPIRequest) GetSmsInterceptRequest() *SmsInterceptRequest {
+func (r AlibabaAliqinAxbVendorSmsInterceptAPIRequest) GetSmsInterceptRequest() *SmsInterceptRequest {
 	return r._smsInterceptRequest
 }

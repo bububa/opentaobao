@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabacfdaxtptappacceptinfoResult 结构体
-type AlibabacfdaxtptappacceptinfoResult struct {
+// AlibabaCfdaXtptAppAcceptInfoResult 结构体
+type AlibabaCfdaXtptAppAcceptInfoResult struct {
 	// 消息编码
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 结果信息

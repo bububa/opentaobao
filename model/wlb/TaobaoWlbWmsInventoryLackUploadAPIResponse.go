@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowlbwmsinventorylackuploadAPIResponse 缺货通知 API返回值
+// TaobaoWlbWmsInventoryLackUploadAPIResponse 缺货通知 API返回值
 // taobao.wlb.wms.inventory.lack.upload
 //
 // 缺货通知
-type TaobaowlbwmsinventorylackuploadAPIResponse struct {
+type TaobaoWlbWmsInventoryLackUploadAPIResponse struct {
 	model.CommonResponse
-	TaobaowlbwmsinventorylackuploadAPIResponseModel
+	TaobaoWlbWmsInventoryLackUploadAPIResponseModel
 }
 
-// TaobaowlbwmsinventorylackuploadAPIResponseModel is 缺货通知 成功返回结果
-type TaobaowlbwmsinventorylackuploadAPIResponseModel struct {
+// TaobaoWlbWmsInventoryLackUploadAPIResponseModel is 缺货通知 成功返回结果
+type TaobaoWlbWmsInventoryLackUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_wms_inventory_lack_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

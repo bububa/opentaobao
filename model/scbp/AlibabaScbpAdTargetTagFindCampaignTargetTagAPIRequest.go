@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabascbpadtargettagfindcampaigntargettagAPIRequest 查询标签数据 API请求
+// AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest 查询标签数据 API请求
 // alibaba.scbp.ad.target.tag.find.campaign.target.tag
 //
 // 查询标签数据
-type AlibabascbpadtargettagfindcampaigntargettagAPIRequest struct {
+type AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest struct {
 	model.Params
 	// 用户信息
 	_topContext *TopContextDto
@@ -20,65 +20,65 @@ type AlibabascbpadtargettagfindcampaigntargettagAPIRequest struct {
 	_targetTagOperation *TargetTagOperationDto
 }
 
-// NewAlibabascbpadtargettagfindcampaigntargettagRequest 初始化AlibabascbpadtargettagfindcampaigntargettagAPIRequest对象
-func NewAlibabascbpadtargettagfindcampaigntargettagRequest() *AlibabascbpadtargettagfindcampaigntargettagAPIRequest {
-	return &AlibabascbpadtargettagfindcampaigntargettagAPIRequest{
+// NewAlibabaScbpAdTargetTagFindCampaignTargetTagRequest 初始化AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest对象
+func NewAlibabaScbpAdTargetTagFindCampaignTargetTagRequest() *AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest {
+	return &AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabascbpadtargettagfindcampaigntargettagAPIRequest) GetApiMethodName() string {
+func (r AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) GetApiMethodName() string {
 	return "alibaba.scbp.ad.target.tag.find.campaign.target.tag"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabascbpadtargettagfindcampaigntargettagAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabascbpadtargettagfindcampaigntargettagAPIRequest) GetRawParams() model.Params {
+func (r AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTopContext is TopContext Setter
 // 用户信息
-func (r *AlibabascbpadtargettagfindcampaigntargettagAPIRequest) SetTopContext(_topContext *TopContextDto) error {
+func (r *AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) SetTopContext(_topContext *TopContextDto) error {
 	r._topContext = _topContext
 	r.Set("top_context", _topContext)
 	return nil
 }
 
 // GetTopContext TopContext Getter
-func (r AlibabascbpadtargettagfindcampaigntargettagAPIRequest) GetTopContext() *TopContextDto {
+func (r AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
 }
 
 // SetCampaignId is CampaignId Setter
 // 计划id
-func (r *AlibabascbpadtargettagfindcampaigntargettagAPIRequest) SetCampaignId(_campaignId int64) error {
+func (r *AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
 	r.Set("campaign_id", _campaignId)
 	return nil
 }
 
 // GetCampaignId CampaignId Getter
-func (r AlibabascbpadtargettagfindcampaigntargettagAPIRequest) GetCampaignId() int64 {
+func (r AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
 // SetTargetTagOperation is TargetTagOperation Setter
 // 请求参数
-func (r *AlibabascbpadtargettagfindcampaigntargettagAPIRequest) SetTargetTagOperation(_targetTagOperation *TargetTagOperationDto) error {
+func (r *AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) SetTargetTagOperation(_targetTagOperation *TargetTagOperationDto) error {
 	r._targetTagOperation = _targetTagOperation
 	r.Set("target_tag_operation", _targetTagOperation)
 	return nil
 }
 
 // GetTargetTagOperation TargetTagOperation Getter
-func (r AlibabascbpadtargettagfindcampaigntargettagAPIRequest) GetTargetTagOperation() *TargetTagOperationDto {
+func (r AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) GetTargetTagOperation() *TargetTagOperationDto {
 	return r._targetTagOperation
 }

@@ -1,7 +1,7 @@
 package maitix
 
-// AlibabadamaimaitixprojectdistributiondetailqueryResult 结构体
-type AlibabadamaimaitixprojectdistributiondetailqueryResult struct {
+// AlibabaDamaiMaitixProjectDistributionDetailQueryResult 结构体
+type AlibabaDamaiMaitixProjectDistributionDetailQueryResult struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息

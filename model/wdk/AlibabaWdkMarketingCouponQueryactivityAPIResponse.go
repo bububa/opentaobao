@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdkmarketingcouponqueryactivityAPIResponse 查询优惠券活动 API返回值
+// AlibabaWdkMarketingCouponQueryactivityAPIResponse 查询优惠券活动 API返回值
 // alibaba.wdk.marketing.coupon.queryactivity
 //
 // 查询优惠券活动
-type AlibabawdkmarketingcouponqueryactivityAPIResponse struct {
+type AlibabaWdkMarketingCouponQueryactivityAPIResponse struct {
 	model.CommonResponse
-	AlibabawdkmarketingcouponqueryactivityAPIResponseModel
+	AlibabaWdkMarketingCouponQueryactivityAPIResponseModel
 }
 
-// AlibabawdkmarketingcouponqueryactivityAPIResponseModel is 查询优惠券活动 成功返回结果
-type AlibabawdkmarketingcouponqueryactivityAPIResponseModel struct {
+// AlibabaWdkMarketingCouponQueryactivityAPIResponseModel is 查询优惠券活动 成功返回结果
+type AlibabaWdkMarketingCouponQueryactivityAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_marketing_coupon_queryactivity_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

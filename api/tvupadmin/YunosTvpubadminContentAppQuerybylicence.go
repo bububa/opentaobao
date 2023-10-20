@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
 
-// Yunostvpubadmincontentappquerybylicence 按牌照查询应用
+// YunosTvpubadminContentAppQuerybylicence 按牌照查询应用
 // yunos.tvpubadmin.content.app.querybylicence
 //
 // 按牌照查询应用
-func Yunostvpubadmincontentappquerybylicence(clt *core.SDKClient, req *tvupadmin.YunostvpubadmincontentappquerybylicenceAPIRequest, session string) (*tvupadmin.YunostvpubadmincontentappquerybylicenceAPIResponse, error) {
-	var resp tvupadmin.YunostvpubadmincontentappquerybylicenceAPIResponse
+func YunosTvpubadminContentAppQuerybylicence(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentAppQuerybylicenceAPIRequest, session string) (*tvupadmin.YunosTvpubadminContentAppQuerybylicenceAPIResponse, error) {
+	var resp tvupadmin.YunosTvpubadminContentAppQuerybylicenceAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

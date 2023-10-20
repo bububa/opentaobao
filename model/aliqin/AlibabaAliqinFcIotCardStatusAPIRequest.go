@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaaliqinfciotcardStatusAPIRequest 物联卡状态查询 API请求
+// AlibabaAliqinFcIotCardStatusAPIRequest 物联卡状态查询 API请求
 // alibaba.aliqin.fc.iot.cardStatus
 //
 // 物联卡状态查询
-type AlibabaaliqinfciotcardStatusAPIRequest struct {
+type AlibabaAliqinFcIotCardStatusAPIRequest struct {
 	model.Params
 	// SIM卡号
 	_iccid string
 }
 
-// NewAlibabaaliqinfciotcardStatusRequest 初始化AlibabaaliqinfciotcardStatusAPIRequest对象
-func NewAlibabaaliqinfciotcardStatusRequest() *AlibabaaliqinfciotcardStatusAPIRequest {
-	return &AlibabaaliqinfciotcardStatusAPIRequest{
+// NewAlibabaAliqinFcIotCardStatusRequest 初始化AlibabaAliqinFcIotCardStatusAPIRequest对象
+func NewAlibabaAliqinFcIotCardStatusRequest() *AlibabaAliqinFcIotCardStatusAPIRequest {
+	return &AlibabaAliqinFcIotCardStatusAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaaliqinfciotcardStatusAPIRequest) GetApiMethodName() string {
+func (r AlibabaAliqinFcIotCardStatusAPIRequest) GetApiMethodName() string {
 	return "alibaba.aliqin.fc.iot.cardStatus"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaaliqinfciotcardStatusAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAliqinFcIotCardStatusAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaaliqinfciotcardStatusAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAliqinFcIotCardStatusAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetIccid is Iccid Setter
 // SIM卡号
-func (r *AlibabaaliqinfciotcardStatusAPIRequest) SetIccid(_iccid string) error {
+func (r *AlibabaAliqinFcIotCardStatusAPIRequest) SetIccid(_iccid string) error {
 	r._iccid = _iccid
 	r.Set("iccid", _iccid)
 	return nil
 }
 
 // GetIccid Iccid Getter
-func (r AlibabaaliqinfciotcardStatusAPIRequest) GetIccid() string {
+func (r AlibabaAliqinFcIotCardStatusAPIRequest) GetIccid() string {
 	return r._iccid
 }

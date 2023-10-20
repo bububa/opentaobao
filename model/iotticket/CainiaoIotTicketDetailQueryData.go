@@ -1,7 +1,7 @@
 package iotticket
 
-// CainiaoiotticketdetailqueryData 结构体
-type CainiaoiotticketdetailqueryData struct {
+// CainiaoIotTicketDetailQueryData 结构体
+type CainiaoIotTicketDetailQueryData struct {
 	// 图片列表
 	Images []Images `json:"images,omitempty" xml:"images>images,omitempty"`
 	// 操作记录

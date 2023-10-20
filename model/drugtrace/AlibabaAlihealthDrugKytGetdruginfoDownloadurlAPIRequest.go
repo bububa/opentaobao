@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthdrugkytgetdruginfodownloadurlAPIRequest 药品全量数据下载 API请求
+// AlibabaAlihealthDrugKytGetdruginfoDownloadurlAPIRequest 药品全量数据下载 API请求
 // alibaba.alihealth.drug.kyt.getdruginfo.downloadurl
 //
 // 药品全量数据下载
-type AlibabaalihealthdrugkytgetdruginfodownloadurlAPIRequest struct {
+type AlibabaAlihealthDrugKytGetdruginfoDownloadurlAPIRequest struct {
 	model.Params
 	// 调用接口的企业ID
 	_refEntId string
 }
 
-// NewAlibabaalihealthdrugkytgetdruginfodownloadurlRequest 初始化AlibabaalihealthdrugkytgetdruginfodownloadurlAPIRequest对象
-func NewAlibabaalihealthdrugkytgetdruginfodownloadurlRequest() *AlibabaalihealthdrugkytgetdruginfodownloadurlAPIRequest {
-	return &AlibabaalihealthdrugkytgetdruginfodownloadurlAPIRequest{
+// NewAlibabaAlihealthDrugKytGetdruginfoDownloadurlRequest 初始化AlibabaAlihealthDrugKytGetdruginfoDownloadurlAPIRequest对象
+func NewAlibabaAlihealthDrugKytGetdruginfoDownloadurlRequest() *AlibabaAlihealthDrugKytGetdruginfoDownloadurlAPIRequest {
+	return &AlibabaAlihealthDrugKytGetdruginfoDownloadurlAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalihealthdrugkytgetdruginfodownloadurlAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthDrugKytGetdruginfoDownloadurlAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.drug.kyt.getdruginfo.downloadurl"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalihealthdrugkytgetdruginfodownloadurlAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlihealthDrugKytGetdruginfoDownloadurlAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalihealthdrugkytgetdruginfodownloadurlAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlihealthDrugKytGetdruginfoDownloadurlAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRefEntId is RefEntId Setter
 // 调用接口的企业ID
-func (r *AlibabaalihealthdrugkytgetdruginfodownloadurlAPIRequest) SetRefEntId(_refEntId string) error {
+func (r *AlibabaAlihealthDrugKytGetdruginfoDownloadurlAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
 	r.Set("ref_ent_id", _refEntId)
 	return nil
 }
 
 // GetRefEntId RefEntId Getter
-func (r AlibabaalihealthdrugkytgetdruginfodownloadurlAPIRequest) GetRefEntId() string {
+func (r AlibabaAlihealthDrugKytGetdruginfoDownloadurlAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }

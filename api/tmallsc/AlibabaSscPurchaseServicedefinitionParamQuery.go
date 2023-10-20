@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallsc"
 )
 
-// Alibabasscpurchaseservicedefinitionparamquery 查询采购服务定义参数信息
+// AlibabaSscPurchaseServicedefinitionParamQuery 查询采购服务定义参数信息
 // alibaba.ssc.purchase.servicedefinition.param.query
 //
 // 查询采购服务定义参数信息
-func Alibabasscpurchaseservicedefinitionparamquery(clt *core.SDKClient, req *tmallsc.AlibabasscpurchaseservicedefinitionparamqueryAPIRequest, session string) (*tmallsc.AlibabasscpurchaseservicedefinitionparamqueryAPIResponse, error) {
-	var resp tmallsc.AlibabasscpurchaseservicedefinitionparamqueryAPIResponse
+func AlibabaSscPurchaseServicedefinitionParamQuery(clt *core.SDKClient, req *tmallsc.AlibabaSscPurchaseServicedefinitionParamQueryAPIRequest, session string) (*tmallsc.AlibabaSscPurchaseServicedefinitionParamQueryAPIResponse, error) {
+	var resp tmallsc.AlibabaSscPurchaseServicedefinitionParamQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

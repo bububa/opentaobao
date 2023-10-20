@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaalihousenewhometradetoolbindResult 结构体
-type AlibabaalihousenewhometradetoolbindResult struct {
+// AlibabaAlihouseNewhomeTradeToolBindResult 结构体
+type AlibabaAlihouseNewhomeTradeToolBindResult struct {
 	// data
 	Data []TradeToolBindResultDto `json:"data,omitempty" xml:"data>trade_tool_bind_result_dto,omitempty"`
 	// code

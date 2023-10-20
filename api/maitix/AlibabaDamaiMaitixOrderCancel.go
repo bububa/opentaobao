@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/maitix"
 )
 
-// Alibabadamaimaitixordercancel 大麦-库存释放
+// AlibabaDamaiMaitixOrderCancel 大麦-库存释放
 // alibaba.damai.maitix.order.cancel
 //
 // 库存释放
-func Alibabadamaimaitixordercancel(clt *core.SDKClient, req *maitix.AlibabadamaimaitixordercancelAPIRequest, session string) (*maitix.AlibabadamaimaitixordercancelAPIResponse, error) {
-	var resp maitix.AlibabadamaimaitixordercancelAPIResponse
+func AlibabaDamaiMaitixOrderCancel(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOrderCancelAPIRequest, session string) (*maitix.AlibabaDamaiMaitixOrderCancelAPIResponse, error) {
+	var resp maitix.AlibabaDamaiMaitixOrderCancelAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

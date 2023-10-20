@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// Alibabaalihealthdrugcodedrugfactoryblindfilegetbatchinfo 获取盲底文件中的批次信息
+// AlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfo 获取盲底文件中的批次信息
 // alibaba.alihealth.drugcode.drugfactory.blindfile.getbatchinfo
 //
 // 获取盲底文件中的批次信息
-func Alibabaalihealthdrugcodedrugfactoryblindfilegetbatchinfo(clt *core.SDKClient, req *drugtrace.AlibabaalihealthdrugcodedrugfactoryblindfilegetbatchinfoAPIRequest, session string) (*drugtrace.AlibabaalihealthdrugcodedrugfactoryblindfilegetbatchinfoAPIResponse, error) {
-	var resp drugtrace.AlibabaalihealthdrugcodedrugfactoryblindfilegetbatchinfoAPIResponse
+func AlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfo(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoAPIResponse, error) {
+	var resp drugtrace.AlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

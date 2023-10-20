@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaojushitajmstopicsgetAPIResponse 根据用户nick获取开通的消息列表 API返回值
+// TaobaoJushitaJmsTopicsGetAPIResponse 根据用户nick获取开通的消息列表 API返回值
 // taobao.jushita.jms.topics.get
 //
 // 根据用户nick获取开通的消息列表
-type TaobaojushitajmstopicsgetAPIResponse struct {
+type TaobaoJushitaJmsTopicsGetAPIResponse struct {
 	model.CommonResponse
-	TaobaojushitajmstopicsgetAPIResponseModel
+	TaobaoJushitaJmsTopicsGetAPIResponseModel
 }
 
-// TaobaojushitajmstopicsgetAPIResponseModel is 根据用户nick获取开通的消息列表 成功返回结果
-type TaobaojushitajmstopicsgetAPIResponseModel struct {
+// TaobaoJushitaJmsTopicsGetAPIResponseModel is 根据用户nick获取开通的消息列表 成功返回结果
+type TaobaoJushitaJmsTopicsGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"jushita_jms_topics_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

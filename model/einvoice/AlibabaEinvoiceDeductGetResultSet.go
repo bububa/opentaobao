@@ -1,7 +1,7 @@
 package einvoice
 
-// AlibabaeinvoicedeductgetResultSet 结构体
-type AlibabaeinvoicedeductgetResultSet struct {
+// AlibabaEinvoiceDeductGetResultSet 结构体
+type AlibabaEinvoiceDeductGetResultSet struct {
 	// errorMessage
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// errorCode
@@ -11,7 +11,7 @@ type AlibabaeinvoicedeductgetResultSet struct {
 	// 税号
 	PackageRegisterNo string `json:"package_register_no,omitempty" xml:"package_register_no,omitempty"`
 	// result
-	Result *AlibabaeinvoicedeductgetResultSet `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaEinvoiceDeductGetResultSet `json:"result,omitempty" xml:"result,omitempty"`
 	// totalCount
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// 实际扣减

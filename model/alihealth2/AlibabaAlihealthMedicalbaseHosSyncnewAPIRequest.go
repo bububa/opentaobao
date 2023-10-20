@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthmedicalbasehossyncnewAPIRequest 直连医院上传接口 API请求
+// AlibabaAlihealthMedicalbaseHosSyncnewAPIRequest 直连医院上传接口 API请求
 // alibaba.alihealth.medicalbase.hos.syncnew
 //
 // 直连医院上传接口
-type AlibabaalihealthmedicalbasehossyncnewAPIRequest struct {
+type AlibabaAlihealthMedicalbaseHosSyncnewAPIRequest struct {
 	model.Params
 	// 212
 	_bizContent string
 }
 
-// NewAlibabaalihealthmedicalbasehossyncnewRequest 初始化AlibabaalihealthmedicalbasehossyncnewAPIRequest对象
-func NewAlibabaalihealthmedicalbasehossyncnewRequest() *AlibabaalihealthmedicalbasehossyncnewAPIRequest {
-	return &AlibabaalihealthmedicalbasehossyncnewAPIRequest{
+// NewAlibabaAlihealthMedicalbaseHosSyncnewRequest 初始化AlibabaAlihealthMedicalbaseHosSyncnewAPIRequest对象
+func NewAlibabaAlihealthMedicalbaseHosSyncnewRequest() *AlibabaAlihealthMedicalbaseHosSyncnewAPIRequest {
+	return &AlibabaAlihealthMedicalbaseHosSyncnewAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalihealthmedicalbasehossyncnewAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthMedicalbaseHosSyncnewAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.medicalbase.hos.syncnew"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalihealthmedicalbasehossyncnewAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlihealthMedicalbaseHosSyncnewAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalihealthmedicalbasehossyncnewAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlihealthMedicalbaseHosSyncnewAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetBizContent is BizContent Setter
 // 212
-func (r *AlibabaalihealthmedicalbasehossyncnewAPIRequest) SetBizContent(_bizContent string) error {
+func (r *AlibabaAlihealthMedicalbaseHosSyncnewAPIRequest) SetBizContent(_bizContent string) error {
 	r._bizContent = _bizContent
 	r.Set("biz_content", _bizContent)
 	return nil
 }
 
 // GetBizContent BizContent Getter
-func (r AlibabaalihealthmedicalbasehossyncnewAPIRequest) GetBizContent() string {
+func (r AlibabaAlihealthMedicalbaseHosSyncnewAPIRequest) GetBizContent() string {
 	return r._bizContent
 }

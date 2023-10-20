@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoopentradespecialitemsunbindAPIResponse 专属下单场景商品解绑 API返回值
+// TaobaoOpentradeSpecialItemsUnbindAPIResponse 专属下单场景商品解绑 API返回值
 // taobao.opentrade.special.items.unbind
 //
 // 专属下单场景商品解绑
-type TaobaoopentradespecialitemsunbindAPIResponse struct {
+type TaobaoOpentradeSpecialItemsUnbindAPIResponse struct {
 	model.CommonResponse
-	TaobaoopentradespecialitemsunbindAPIResponseModel
+	TaobaoOpentradeSpecialItemsUnbindAPIResponseModel
 }
 
-// TaobaoopentradespecialitemsunbindAPIResponseModel is 专属下单场景商品解绑 成功返回结果
-type TaobaoopentradespecialitemsunbindAPIResponseModel struct {
+// TaobaoOpentradeSpecialItemsUnbindAPIResponseModel is 专属下单场景商品解绑 成功返回结果
+type TaobaoOpentradeSpecialItemsUnbindAPIResponseModel struct {
 	XMLName xml.Name `xml:"opentrade_special_items_unbind_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

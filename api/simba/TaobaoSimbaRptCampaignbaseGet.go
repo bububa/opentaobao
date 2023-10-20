@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// Taobaosimbarptcampaignbaseget 推广计划报表基础数据对象
+// TaobaoSimbaRptCampaignbaseGet 推广计划报表基础数据对象
 // taobao.simba.rpt.campaignbase.get
 //
 // 推广计划报表基础数据对象
-func Taobaosimbarptcampaignbaseget(clt *core.SDKClient, req *simba.TaobaosimbarptcampaignbasegetAPIRequest, session string) (*simba.TaobaosimbarptcampaignbasegetAPIResponse, error) {
-	var resp simba.TaobaosimbarptcampaignbasegetAPIResponse
+func TaobaoSimbaRptCampaignbaseGet(clt *core.SDKClient, req *simba.TaobaoSimbaRptCampaignbaseGetAPIRequest, session string) (*simba.TaobaoSimbaRptCampaignbaseGetAPIResponse, error) {
+	var resp simba.TaobaoSimbaRptCampaignbaseGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tbrefund"
 )
 
-// Taobaorefundnegotiatereturnrender 协商退货退款渲染
+// TaobaoRefundNegotiatereturnRender 协商退货退款渲染
 // taobao.refund.negotiatereturn.render
 //
 // 协商退货退款渲染
-func Taobaorefundnegotiatereturnrender(clt *core.SDKClient, req *tbrefund.TaobaorefundnegotiatereturnrenderAPIRequest, session string) (*tbrefund.TaobaorefundnegotiatereturnrenderAPIResponse, error) {
-	var resp tbrefund.TaobaorefundnegotiatereturnrenderAPIResponse
+func TaobaoRefundNegotiatereturnRender(clt *core.SDKClient, req *tbrefund.TaobaoRefundNegotiatereturnRenderAPIRequest, session string) (*tbrefund.TaobaoRefundNegotiatereturnRenderAPIResponse, error) {
+	var resp tbrefund.TaobaoRefundNegotiatereturnRenderAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,7 +1,7 @@
 package retail
 
-// AlibabaretailelectroniccertificateconfirmResult 结构体
-type AlibabaretailelectroniccertificateconfirmResult struct {
+// AlibabaRetailElectronicCertificateConfirmResult 结构体
+type AlibabaRetailElectronicCertificateConfirmResult struct {
 	// warningInfos
 	WarningInfos []string `json:"warning_infos,omitempty" xml:"warning_infos>string,omitempty"`
 	// errorInfos

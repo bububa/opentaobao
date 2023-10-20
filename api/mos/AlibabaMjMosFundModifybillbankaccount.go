@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/mos"
 )
 
-// Alibabamjmosfundmodifybillbankaccount 修改付款单的银行账户信息
+// AlibabaMjMosFundModifybillbankaccount 修改付款单的银行账户信息
 // alibaba.mj.mos.fund.modifybillbankaccount
 //
 // 修改付款单的银行账户信息
-func Alibabamjmosfundmodifybillbankaccount(clt *core.SDKClient, req *mos.AlibabamjmosfundmodifybillbankaccountAPIRequest, session string) (*mos.AlibabamjmosfundmodifybillbankaccountAPIResponse, error) {
-	var resp mos.AlibabamjmosfundmodifybillbankaccountAPIResponse
+func AlibabaMjMosFundModifybillbankaccount(clt *core.SDKClient, req *mos.AlibabaMjMosFundModifybillbankaccountAPIRequest, session string) (*mos.AlibabaMjMosFundModifybillbankaccountAPIResponse, error) {
+	var resp mos.AlibabaMjMosFundModifybillbankaccountAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

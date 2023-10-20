@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/mos"
 )
 
-// Alibabamjoccalldispatcher 呼叫运力
+// AlibabaMjOcCalldispatcher 呼叫运力
 // alibaba.mj.oc.calldispatcher
 //
 // 定时达呼叫运力接口
-func Alibabamjoccalldispatcher(clt *core.SDKClient, req *mos.AlibabamjoccalldispatcherAPIRequest, session string) (*mos.AlibabamjoccalldispatcherAPIResponse, error) {
-	var resp mos.AlibabamjoccalldispatcherAPIResponse
+func AlibabaMjOcCalldispatcher(clt *core.SDKClient, req *mos.AlibabaMjOcCalldispatcherAPIRequest, session string) (*mos.AlibabaMjOcCalldispatcherAPIResponse, error) {
+	var resp mos.AlibabaMjOcCalldispatcherAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

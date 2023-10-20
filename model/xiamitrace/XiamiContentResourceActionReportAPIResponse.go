@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// XiamicontentresourceactionreportAPIResponse 曲库开放平台内容行为上报接口 API返回值
+// XiamiContentResourceActionReportAPIResponse 曲库开放平台内容行为上报接口 API返回值
 // xiami.content.resource.action.report
 //
 // 合作方对接入的曲库开放内容上报行为日志
-type XiamicontentresourceactionreportAPIResponse struct {
+type XiamiContentResourceActionReportAPIResponse struct {
 	model.CommonResponse
-	XiamicontentresourceactionreportAPIResponseModel
+	XiamiContentResourceActionReportAPIResponseModel
 }
 
-// XiamicontentresourceactionreportAPIResponseModel is 曲库开放平台内容行为上报接口 成功返回结果
-type XiamicontentresourceactionreportAPIResponseModel struct {
+// XiamiContentResourceActionReportAPIResponseModel is 曲库开放平台内容行为上报接口 成功返回结果
+type XiamiContentResourceActionReportAPIResponseModel struct {
 	XMLName xml.Name `xml:"xiami_content_resource_action_report_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

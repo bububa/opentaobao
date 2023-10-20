@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotmcgroupdeleteAPIRequest 删除指定的分组或分组下的用户 API请求
+// TaobaoTmcGroupDeleteAPIRequest 删除指定的分组或分组下的用户 API请求
 // taobao.tmc.group.delete
 //
 // 删除指定的分组或分组下的用户，授权消息使用
-type TaobaotmcgroupdeleteAPIRequest struct {
+type TaobaoTmcGroupDeleteAPIRequest struct {
 	model.Params
 	// 用户列表，不传表示删除整个分组，如果用户全部删除后，也会自动删除整个分组
 	_nicks []string
@@ -20,65 +20,65 @@ type TaobaotmcgroupdeleteAPIRequest struct {
 	_userPlatform string
 }
 
-// NewTaobaotmcgroupdeleteRequest 初始化TaobaotmcgroupdeleteAPIRequest对象
-func NewTaobaotmcgroupdeleteRequest() *TaobaotmcgroupdeleteAPIRequest {
-	return &TaobaotmcgroupdeleteAPIRequest{
+// NewTaobaoTmcGroupDeleteRequest 初始化TaobaoTmcGroupDeleteAPIRequest对象
+func NewTaobaoTmcGroupDeleteRequest() *TaobaoTmcGroupDeleteAPIRequest {
+	return &TaobaoTmcGroupDeleteAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaotmcgroupdeleteAPIRequest) GetApiMethodName() string {
+func (r TaobaoTmcGroupDeleteAPIRequest) GetApiMethodName() string {
 	return "taobao.tmc.group.delete"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaotmcgroupdeleteAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoTmcGroupDeleteAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaotmcgroupdeleteAPIRequest) GetRawParams() model.Params {
+func (r TaobaoTmcGroupDeleteAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetNicks is Nicks Setter
 // 用户列表，不传表示删除整个分组，如果用户全部删除后，也会自动删除整个分组
-func (r *TaobaotmcgroupdeleteAPIRequest) SetNicks(_nicks []string) error {
+func (r *TaobaoTmcGroupDeleteAPIRequest) SetNicks(_nicks []string) error {
 	r._nicks = _nicks
 	r.Set("nicks", _nicks)
 	return nil
 }
 
 // GetNicks Nicks Getter
-func (r TaobaotmcgroupdeleteAPIRequest) GetNicks() []string {
+func (r TaobaoTmcGroupDeleteAPIRequest) GetNicks() []string {
 	return r._nicks
 }
 
 // SetGroupName is GroupName Setter
 // 分组名称，分组删除后，用户的消息将会存储于默认分组中。警告：由于分组已经删除，用户之前未消费的消息将无法再获取。不能以default开头，default开头为系统默认组。
-func (r *TaobaotmcgroupdeleteAPIRequest) SetGroupName(_groupName string) error {
+func (r *TaobaoTmcGroupDeleteAPIRequest) SetGroupName(_groupName string) error {
 	r._groupName = _groupName
 	r.Set("group_name", _groupName)
 	return nil
 }
 
 // GetGroupName GroupName Getter
-func (r TaobaotmcgroupdeleteAPIRequest) GetGroupName() string {
+func (r TaobaoTmcGroupDeleteAPIRequest) GetGroupName() string {
 	return r._groupName
 }
 
 // SetUserPlatform is UserPlatform Setter
 // 用户所属于的平台类型，tbUIC:淘宝用户; icbu: icbu用户;ae:ae用户
-func (r *TaobaotmcgroupdeleteAPIRequest) SetUserPlatform(_userPlatform string) error {
+func (r *TaobaoTmcGroupDeleteAPIRequest) SetUserPlatform(_userPlatform string) error {
 	r._userPlatform = _userPlatform
 	r.Set("user_platform", _userPlatform)
 	return nil
 }
 
 // GetUserPlatform UserPlatform Getter
-func (r TaobaotmcgroupdeleteAPIRequest) GetUserPlatform() string {
+func (r TaobaoTmcGroupDeleteAPIRequest) GetUserPlatform() string {
 	return r._userPlatform
 }

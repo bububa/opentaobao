@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabamjocwritesaleslipAPIResponse 开票占库 API返回值
+// AlibabaMjOcWritesaleslipAPIResponse 开票占库 API返回值
 // alibaba.mj.oc.writesaleslip
 //
 // 开票占库
-type AlibabamjocwritesaleslipAPIResponse struct {
+type AlibabaMjOcWritesaleslipAPIResponse struct {
 	model.CommonResponse
-	AlibabamjocwritesaleslipAPIResponseModel
+	AlibabaMjOcWritesaleslipAPIResponseModel
 }
 
-// AlibabamjocwritesaleslipAPIResponseModel is 开票占库 成功返回结果
-type AlibabamjocwritesaleslipAPIResponseModel struct {
+// AlibabaMjOcWritesaleslipAPIResponseModel is 开票占库 成功返回结果
+type AlibabaMjOcWritesaleslipAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mj_oc_writesaleslip_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

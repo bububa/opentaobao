@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/exchange"
 )
 
-// Tmallexchangerefuse 卖家拒绝换货申请
+// TmallExchangeRefuse 卖家拒绝换货申请
 // tmall.exchange.refuse
 //
 // 卖家拒绝换货申请
-func Tmallexchangerefuse(clt *core.SDKClient, req *exchange.TmallexchangerefuseAPIRequest, session string) (*exchange.TmallexchangerefuseAPIResponse, error) {
-	var resp exchange.TmallexchangerefuseAPIResponse
+func TmallExchangeRefuse(clt *core.SDKClient, req *exchange.TmallExchangeRefuseAPIRequest, session string) (*exchange.TmallExchangeRefuseAPIResponse, error) {
+	var resp exchange.TmallExchangeRefuseAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

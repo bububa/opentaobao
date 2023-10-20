@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/cainiaohandover"
 )
 
-// Cainiaoglobalhandovercommit 提交发布交接单
+// CainiaoGlobalHandoverCommit 提交发布交接单
 // cainiao.global.handover.commit
 //
 // 提供给ISV通过该接口提交发布交接单
-func Cainiaoglobalhandovercommit(clt *core.SDKClient, req *cainiaohandover.CainiaoglobalhandovercommitAPIRequest, session string) (*cainiaohandover.CainiaoglobalhandovercommitAPIResponse, error) {
-	var resp cainiaohandover.CainiaoglobalhandovercommitAPIResponse
+func CainiaoGlobalHandoverCommit(clt *core.SDKClient, req *cainiaohandover.CainiaoGlobalHandoverCommitAPIRequest, session string) (*cainiaohandover.CainiaoGlobalHandoverCommitAPIResponse, error) {
+	var resp cainiaohandover.CainiaoGlobalHandoverCommitAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

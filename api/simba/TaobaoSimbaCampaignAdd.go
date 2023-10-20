@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// Taobaosimbacampaignadd 创建一个推广计划
+// TaobaoSimbaCampaignAdd 创建一个推广计划
 // taobao.simba.campaign.add
 //
 // 创建一个推广计划
-func Taobaosimbacampaignadd(clt *core.SDKClient, req *simba.TaobaosimbacampaignaddAPIRequest, session string) (*simba.TaobaosimbacampaignaddAPIResponse, error) {
-	var resp simba.TaobaosimbacampaignaddAPIResponse
+func TaobaoSimbaCampaignAdd(clt *core.SDKClient, req *simba.TaobaoSimbaCampaignAddAPIRequest, session string) (*simba.TaobaoSimbaCampaignAddAPIResponse, error) {
+	var resp simba.TaobaoSimbaCampaignAddAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

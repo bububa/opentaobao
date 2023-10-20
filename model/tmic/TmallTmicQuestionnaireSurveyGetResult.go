@@ -1,7 +1,7 @@
 package tmic
 
-// TmalltmicquestionnairesurveygetResult 结构体
-type TmalltmicquestionnairesurveygetResult struct {
+// TmallTmicQuestionnaireSurveyGetResult 结构体
+type TmallTmicQuestionnaireSurveyGetResult struct {
 	// 问题列表
 	QuestionList []QuestionBo `json:"question_list,omitempty" xml:"question_list>question_bo,omitempty"`
 	// 问卷相关的logo地址

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaascpcnskumappingdeleteAPIRequest 货品关系解绑 API请求
+// AlibabaAscpCnskuMappingDeleteAPIRequest 货品关系解绑 API请求
 // alibaba.ascp.cnsku.mapping.delete
 //
 // 货品关系解绑
-type AlibabaascpcnskumappingdeleteAPIRequest struct {
+type AlibabaAscpCnskuMappingDeleteAPIRequest struct {
 	model.Params
 	// 待解绑的货品关系
 	_cnskuRelationDto *CnskuRelationDto
@@ -18,52 +18,52 @@ type AlibabaascpcnskumappingdeleteAPIRequest struct {
 	_cnskuRelationOperateOption *CnskuRelationOperateOption
 }
 
-// NewAlibabaascpcnskumappingdeleteRequest 初始化AlibabaascpcnskumappingdeleteAPIRequest对象
-func NewAlibabaascpcnskumappingdeleteRequest() *AlibabaascpcnskumappingdeleteAPIRequest {
-	return &AlibabaascpcnskumappingdeleteAPIRequest{
+// NewAlibabaAscpCnskuMappingDeleteRequest 初始化AlibabaAscpCnskuMappingDeleteAPIRequest对象
+func NewAlibabaAscpCnskuMappingDeleteRequest() *AlibabaAscpCnskuMappingDeleteAPIRequest {
+	return &AlibabaAscpCnskuMappingDeleteAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaascpcnskumappingdeleteAPIRequest) GetApiMethodName() string {
+func (r AlibabaAscpCnskuMappingDeleteAPIRequest) GetApiMethodName() string {
 	return "alibaba.ascp.cnsku.mapping.delete"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaascpcnskumappingdeleteAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAscpCnskuMappingDeleteAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaascpcnskumappingdeleteAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAscpCnskuMappingDeleteAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCnskuRelationDto is CnskuRelationDto Setter
 // 待解绑的货品关系
-func (r *AlibabaascpcnskumappingdeleteAPIRequest) SetCnskuRelationDto(_cnskuRelationDto *CnskuRelationDto) error {
+func (r *AlibabaAscpCnskuMappingDeleteAPIRequest) SetCnskuRelationDto(_cnskuRelationDto *CnskuRelationDto) error {
 	r._cnskuRelationDto = _cnskuRelationDto
 	r.Set("cnsku_relation_dto", _cnskuRelationDto)
 	return nil
 }
 
 // GetCnskuRelationDto CnskuRelationDto Getter
-func (r AlibabaascpcnskumappingdeleteAPIRequest) GetCnskuRelationDto() *CnskuRelationDto {
+func (r AlibabaAscpCnskuMappingDeleteAPIRequest) GetCnskuRelationDto() *CnskuRelationDto {
 	return r._cnskuRelationDto
 }
 
 // SetCnskuRelationOperateOption is CnskuRelationOperateOption Setter
 // 操作信息(不要传null)
-func (r *AlibabaascpcnskumappingdeleteAPIRequest) SetCnskuRelationOperateOption(_cnskuRelationOperateOption *CnskuRelationOperateOption) error {
+func (r *AlibabaAscpCnskuMappingDeleteAPIRequest) SetCnskuRelationOperateOption(_cnskuRelationOperateOption *CnskuRelationOperateOption) error {
 	r._cnskuRelationOperateOption = _cnskuRelationOperateOption
 	r.Set("cnsku_relation_operate_option", _cnskuRelationOperateOption)
 	return nil
 }
 
 // GetCnskuRelationOperateOption CnskuRelationOperateOption Getter
-func (r AlibabaascpcnskumappingdeleteAPIRequest) GetCnskuRelationOperateOption() *CnskuRelationOperateOption {
+func (r AlibabaAscpCnskuMappingDeleteAPIRequest) GetCnskuRelationOperateOption() *CnskuRelationOperateOption {
 	return r._cnskuRelationOperateOption
 }

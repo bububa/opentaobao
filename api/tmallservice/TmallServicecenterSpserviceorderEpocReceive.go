@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-// Tmallservicecenterspserviceorderepocreceive 电子保单数据接口
+// TmallServicecenterSpserviceorderEpocReceive 电子保单数据接口
 // tmall.servicecenter.spserviceorder.epoc.receive
 //
 // 电子保单数据回传接口
-func Tmallservicecenterspserviceorderepocreceive(clt *core.SDKClient, req *tmallservice.TmallservicecenterspserviceorderepocreceiveAPIRequest, session string) (*tmallservice.TmallservicecenterspserviceorderepocreceiveAPIResponse, error) {
-	var resp tmallservice.TmallservicecenterspserviceorderepocreceiveAPIResponse
+func TmallServicecenterSpserviceorderEpocReceive(clt *core.SDKClient, req *tmallservice.TmallServicecenterSpserviceorderEpocReceiveAPIRequest, session string) (*tmallservice.TmallServicecenterSpserviceorderEpocReceiveAPIResponse, error) {
+	var resp tmallservice.TmallServicecenterSpserviceorderEpocReceiveAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

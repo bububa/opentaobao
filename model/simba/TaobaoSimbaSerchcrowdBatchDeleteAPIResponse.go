@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosimbaserchcrowdbatchdeleteAPIResponse 单品搜索人群批量取消溢价 API返回值
+// TaobaoSimbaSerchcrowdBatchDeleteAPIResponse 单品搜索人群批量取消溢价 API返回值
 // taobao.simba.serchcrowd.batch.delete
 //
 // 删除单品搜索人群溢价功能
-type TaobaosimbaserchcrowdbatchdeleteAPIResponse struct {
+type TaobaoSimbaSerchcrowdBatchDeleteAPIResponse struct {
 	model.CommonResponse
-	TaobaosimbaserchcrowdbatchdeleteAPIResponseModel
+	TaobaoSimbaSerchcrowdBatchDeleteAPIResponseModel
 }
 
-// TaobaosimbaserchcrowdbatchdeleteAPIResponseModel is 单品搜索人群批量取消溢价 成功返回结果
-type TaobaosimbaserchcrowdbatchdeleteAPIResponseModel struct {
+// TaobaoSimbaSerchcrowdBatchDeleteAPIResponseModel is 单品搜索人群批量取消溢价 成功返回结果
+type TaobaoSimbaSerchcrowdBatchDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_serchcrowd_batch_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

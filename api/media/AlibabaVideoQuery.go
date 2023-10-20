@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/media"
 )
 
-// Alibabavideoquery 查询视频信息
+// AlibabaVideoQuery 查询视频信息
 // alibaba.video.query
 //
 // 查询视频信息
-func Alibabavideoquery(clt *core.SDKClient, req *media.AlibabavideoqueryAPIRequest, session string) (*media.AlibabavideoqueryAPIResponse, error) {
-	var resp media.AlibabavideoqueryAPIResponse
+func AlibabaVideoQuery(clt *core.SDKClient, req *media.AlibabaVideoQueryAPIRequest, session string) (*media.AlibabaVideoQueryAPIResponse, error) {
+	var resp media.AlibabaVideoQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

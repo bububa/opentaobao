@@ -5,7 +5,7 @@ import (
 	"github.com/bububa/opentaobao/model/media"
 )
 
-// Taobaominiappcloudpicturetoken 云存储上传token获取
+// TaobaoMiniappCloudPictureToken 云存储上传token获取
 // taobao.miniapp.cloud.picture.token
 //
 // 获取图片上传token，作为http://upload.cloud.tmall.com/api/proxy/upload接口上传的凭证。
@@ -18,8 +18,8 @@ import (
 //	&amp;lt;input type=&amp;quot;submit&amp;quot; value=&amp;quot;Submit &amp;quot;/&amp;gt;
 //
 // &amp;lt;/form&amp;gt;
-func Taobaominiappcloudpicturetoken(clt *core.SDKClient, req *media.TaobaominiappcloudpicturetokenAPIRequest, session string) (*media.TaobaominiappcloudpicturetokenAPIResponse, error) {
-	var resp media.TaobaominiappcloudpicturetokenAPIResponse
+func TaobaoMiniappCloudPictureToken(clt *core.SDKClient, req *media.TaobaoMiniappCloudPictureTokenAPIRequest, session string) (*media.TaobaoMiniappCloudPictureTokenAPIResponse, error) {
+	var resp media.TaobaoMiniappCloudPictureTokenAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

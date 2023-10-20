@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
 
-// Taobaoinventorywarehousequery 分页查询商家仓信息
+// TaobaoInventoryWarehouseQuery 分页查询商家仓信息
 // taobao.inventory.warehouse.query
 //
 // 分页查询商家仓信息
-func Taobaoinventorywarehousequery(clt *core.SDKClient, req *fenxiao.TaobaoinventorywarehousequeryAPIRequest, session string) (*fenxiao.TaobaoinventorywarehousequeryAPIResponse, error) {
-	var resp fenxiao.TaobaoinventorywarehousequeryAPIResponse
+func TaobaoInventoryWarehouseQuery(clt *core.SDKClient, req *fenxiao.TaobaoInventoryWarehouseQueryAPIRequest, session string) (*fenxiao.TaobaoInventoryWarehouseQueryAPIResponse, error) {
+	var resp fenxiao.TaobaoInventoryWarehouseQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

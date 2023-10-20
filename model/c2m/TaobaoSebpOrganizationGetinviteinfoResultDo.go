@@ -1,7 +1,7 @@
 package c2m
 
-// TaobaosebporganizationgetinviteinfoResultDo 结构体
-type TaobaosebporganizationgetinviteinfoResultDo struct {
+// TaobaoSebpOrganizationGetinviteinfoResultDo 结构体
+type TaobaoSebpOrganizationGetinviteinfoResultDo struct {
 	// 错误信息
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 错误码

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoailabaicloudtopdevicecontrolchildlockAPIResponse 设备儿童锁 API返回值
+// TaobaoAilabAicloudTopDeviceControlChildlockAPIResponse 设备儿童锁 API返回值
 // taobao.ailab.aicloud.top.device.control.childlock
 //
 // 设备儿童锁
-type TaobaoailabaicloudtopdevicecontrolchildlockAPIResponse struct {
+type TaobaoAilabAicloudTopDeviceControlChildlockAPIResponse struct {
 	model.CommonResponse
-	TaobaoailabaicloudtopdevicecontrolchildlockAPIResponseModel
+	TaobaoAilabAicloudTopDeviceControlChildlockAPIResponseModel
 }
 
-// TaobaoailabaicloudtopdevicecontrolchildlockAPIResponseModel is 设备儿童锁 成功返回结果
-type TaobaoailabaicloudtopdevicecontrolchildlockAPIResponseModel struct {
+// TaobaoAilabAicloudTopDeviceControlChildlockAPIResponseModel is 设备儿童锁 成功返回结果
+type TaobaoAilabAicloudTopDeviceControlChildlockAPIResponseModel struct {
 	XMLName xml.Name `xml:"ailab_aicloud_top_device_control_childlock_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

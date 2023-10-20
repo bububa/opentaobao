@@ -1,7 +1,7 @@
 package lstwarehouse
 
-// AlibabalsticstockitemsupdateResult 结构体
-type AlibabalsticstockitemsupdateResult struct {
+// AlibabaLstIcStockItemsUpdateResult 结构体
+type AlibabaLstIcStockItemsUpdateResult struct {
 	// 列表
 	ContentList []Content `json:"content_list,omitempty" xml:"content_list>content,omitempty"`
 	// errorMsg

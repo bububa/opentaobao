@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
 
-// Taobaofenxiaoproductskusget SKU查询接口
+// TaobaoFenxiaoProductSkusGet SKU查询接口
 // taobao.fenxiao.product.skus.get
 //
 // 产品sku查询
-func Taobaofenxiaoproductskusget(clt *core.SDKClient, req *fenxiao.TaobaofenxiaoproductskusgetAPIRequest, session string) (*fenxiao.TaobaofenxiaoproductskusgetAPIResponse, error) {
-	var resp fenxiao.TaobaofenxiaoproductskusgetAPIResponse
+func TaobaoFenxiaoProductSkusGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductSkusGetAPIRequest, session string) (*fenxiao.TaobaoFenxiaoProductSkusGetAPIResponse, error) {
+	var resp fenxiao.TaobaoFenxiaoProductSkusGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

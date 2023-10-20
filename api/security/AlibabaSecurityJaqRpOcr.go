@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/security"
 )
 
-// Alibabasecurityjaqrpocr 聚安全实人认证证件OCR识别功能接口
+// AlibabaSecurityJaqRpOcr 聚安全实人认证证件OCR识别功能接口
 // alibaba.security.jaq.rp.ocr
 //
 // 聚安全实人认证证件OCR识别功能接口
-func Alibabasecurityjaqrpocr(clt *core.SDKClient, req *security.AlibabasecurityjaqrpocrAPIRequest, session string) (*security.AlibabasecurityjaqrpocrAPIResponse, error) {
-	var resp security.AlibabasecurityjaqrpocrAPIResponse
+func AlibabaSecurityJaqRpOcr(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpOcrAPIRequest, session string) (*security.AlibabaSecurityJaqRpOcrAPIResponse, error) {
+	var resp security.AlibabaSecurityJaqRpOcrAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

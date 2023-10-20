@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabacfoincominginvoiceregisterAPIResponse 发票登记接口 API返回值
+// AlibabaCfoIncomingInvoiceRegisterAPIResponse 发票登记接口 API返回值
 // alibaba.cfo.incoming.invoice.register
 //
 // 发票登记接口
-type AlibabacfoincominginvoiceregisterAPIResponse struct {
+type AlibabaCfoIncomingInvoiceRegisterAPIResponse struct {
 	model.CommonResponse
-	AlibabacfoincominginvoiceregisterAPIResponseModel
+	AlibabaCfoIncomingInvoiceRegisterAPIResponseModel
 }
 
-// AlibabacfoincominginvoiceregisterAPIResponseModel is 发票登记接口 成功返回结果
-type AlibabacfoincominginvoiceregisterAPIResponseModel struct {
+// AlibabaCfoIncomingInvoiceRegisterAPIResponseModel is 发票登记接口 成功返回结果
+type AlibabaCfoIncomingInvoiceRegisterAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_cfo_incoming_invoice_register_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

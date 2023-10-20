@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallmarketingliuliangbaospreadlinkcreateAPIResponse 创建流量宝活动链接 API返回值
+// TmallMarketingLiuliangbaoSpreadlinkCreateAPIResponse 创建流量宝活动链接 API返回值
 // tmall.marketing.liuliangbao.spreadlink.create
 //
 // 通过源活动链接和商家ID，创建流量宝活动链接
-type TmallmarketingliuliangbaospreadlinkcreateAPIResponse struct {
+type TmallMarketingLiuliangbaoSpreadlinkCreateAPIResponse struct {
 	model.CommonResponse
-	TmallmarketingliuliangbaospreadlinkcreateAPIResponseModel
+	TmallMarketingLiuliangbaoSpreadlinkCreateAPIResponseModel
 }
 
-// TmallmarketingliuliangbaospreadlinkcreateAPIResponseModel is 创建流量宝活动链接 成功返回结果
-type TmallmarketingliuliangbaospreadlinkcreateAPIResponseModel struct {
+// TmallMarketingLiuliangbaoSpreadlinkCreateAPIResponseModel is 创建流量宝活动链接 成功返回结果
+type TmallMarketingLiuliangbaoSpreadlinkCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_marketing_liuliangbao_spreadlink_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

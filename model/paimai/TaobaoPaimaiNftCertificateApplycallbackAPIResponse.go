@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaopaimainftcertificateapplycallbackAPIResponse 数字藏品版权证书申请结果回调 API返回值
+// TaobaoPaimaiNftCertificateApplycallbackAPIResponse 数字藏品版权证书申请结果回调 API返回值
 // taobao.paimai.nft.certificate.applycallback
 //
 // 数字藏品版权证书申请结果回调
-type TaobaopaimainftcertificateapplycallbackAPIResponse struct {
+type TaobaoPaimaiNftCertificateApplycallbackAPIResponse struct {
 	model.CommonResponse
-	TaobaopaimainftcertificateapplycallbackAPIResponseModel
+	TaobaoPaimaiNftCertificateApplycallbackAPIResponseModel
 }
 
-// TaobaopaimainftcertificateapplycallbackAPIResponseModel is 数字藏品版权证书申请结果回调 成功返回结果
-type TaobaopaimainftcertificateapplycallbackAPIResponseModel struct {
+// TaobaoPaimaiNftCertificateApplycallbackAPIResponseModel is 数字藏品版权证书申请结果回调 成功返回结果
+type TaobaoPaimaiNftCertificateApplycallbackAPIResponseModel struct {
 	XMLName xml.Name `xml:"paimai_nft_certificate_applycallback_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

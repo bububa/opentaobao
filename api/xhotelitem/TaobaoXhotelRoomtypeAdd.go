@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/xhotelitem"
 )
 
-// Taobaoxhotelroomtypeadd 房型新增接口（ID重复变更新）
+// TaobaoXhotelRoomtypeAdd 房型新增接口（ID重复变更新）
 // taobao.xhotel.roomtype.add
 //
 // 房型添加或更新
-func Taobaoxhotelroomtypeadd(clt *core.SDKClient, req *xhotelitem.TaobaoxhotelroomtypeaddAPIRequest, session string) (*xhotelitem.TaobaoxhotelroomtypeaddAPIResponse, error) {
-	var resp xhotelitem.TaobaoxhotelroomtypeaddAPIResponse
+func TaobaoXhotelRoomtypeAdd(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRoomtypeAddAPIRequest, session string) (*xhotelitem.TaobaoXhotelRoomtypeAddAPIResponse, error) {
+	var resp xhotelitem.TaobaoXhotelRoomtypeAddAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

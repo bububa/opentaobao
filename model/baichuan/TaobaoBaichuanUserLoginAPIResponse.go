@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaobaichuanuserloginAPIResponse 百川H5登录 API返回值
+// TaobaoBaichuanUserLoginAPIResponse 百川H5登录 API返回值
 // taobao.baichuan.user.login
 //
 // 百川H5登录
-type TaobaobaichuanuserloginAPIResponse struct {
+type TaobaoBaichuanUserLoginAPIResponse struct {
 	model.CommonResponse
-	TaobaobaichuanuserloginAPIResponseModel
+	TaobaoBaichuanUserLoginAPIResponseModel
 }
 
-// TaobaobaichuanuserloginAPIResponseModel is 百川H5登录 成功返回结果
-type TaobaobaichuanuserloginAPIResponseModel struct {
+// TaobaoBaichuanUserLoginAPIResponseModel is 百川H5登录 成功返回结果
+type TaobaoBaichuanUserLoginAPIResponseModel struct {
 	XMLName xml.Name `xml:"baichuan_user_login_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

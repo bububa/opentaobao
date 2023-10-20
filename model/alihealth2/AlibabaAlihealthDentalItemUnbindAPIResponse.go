@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthdentalitemunbindAPIResponse ISV解绑商品 API返回值
+// AlibabaAlihealthDentalItemUnbindAPIResponse ISV解绑商品 API返回值
 // alibaba.alihealth.dental.item.unbind
 //
 // ISV解绑商品
-type AlibabaalihealthdentalitemunbindAPIResponse struct {
+type AlibabaAlihealthDentalItemUnbindAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthdentalitemunbindAPIResponseModel
+	AlibabaAlihealthDentalItemUnbindAPIResponseModel
 }
 
-// AlibabaalihealthdentalitemunbindAPIResponseModel is ISV解绑商品 成功返回结果
-type AlibabaalihealthdentalitemunbindAPIResponseModel struct {
+// AlibabaAlihealthDentalItemUnbindAPIResponseModel is ISV解绑商品 成功返回结果
+type AlibabaAlihealthDentalItemUnbindAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_dental_item_unbind_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
-	Result *AlibabaalihealthdentalitemunbindMtopResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaAlihealthDentalItemUnbindMtopResult `json:"result,omitempty" xml:"result,omitempty"`
 }

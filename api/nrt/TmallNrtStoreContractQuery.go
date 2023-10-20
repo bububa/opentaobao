@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/nrt"
 )
 
-// Tmallnrtstorecontractquery 摊位合同查询接口
+// TmallNrtStoreContractQuery 摊位合同查询接口
 // tmall.nrt.store.contract.query
 //
 // 摊位合同查询接口
-func Tmallnrtstorecontractquery(clt *core.SDKClient, req *nrt.TmallnrtstorecontractqueryAPIRequest, session string) (*nrt.TmallnrtstorecontractqueryAPIResponse, error) {
-	var resp nrt.TmallnrtstorecontractqueryAPIResponse
+func TmallNrtStoreContractQuery(clt *core.SDKClient, req *nrt.TmallNrtStoreContractQueryAPIRequest, session string) (*nrt.TmallNrtStoreContractQueryAPIResponse, error) {
+	var resp nrt.TmallNrtStoreContractQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

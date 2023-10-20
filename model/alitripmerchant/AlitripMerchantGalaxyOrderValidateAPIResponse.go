@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripmerchantgalaxyordervalidateAPIResponse 星河-订单试单接口 API返回值
+// AlitripMerchantGalaxyOrderValidateAPIResponse 星河-订单试单接口 API返回值
 // alitrip.merchant.galaxy.order.validate
 //
 // 根据用户选择酒店房型、入住人数、预订时间参数，获取是否可预订及价格变化信息
-type AlitripmerchantgalaxyordervalidateAPIResponse struct {
+type AlitripMerchantGalaxyOrderValidateAPIResponse struct {
 	model.CommonResponse
-	AlitripmerchantgalaxyordervalidateAPIResponseModel
+	AlitripMerchantGalaxyOrderValidateAPIResponseModel
 }
 
-// AlitripmerchantgalaxyordervalidateAPIResponseModel is 星河-订单试单接口 成功返回结果
-type AlitripmerchantgalaxyordervalidateAPIResponseModel struct {
+// AlitripMerchantGalaxyOrderValidateAPIResponseModel is 星河-订单试单接口 成功返回结果
+type AlitripMerchantGalaxyOrderValidateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_merchant_galaxy_order_validate_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 默认描述
-	Result *AlitripmerchantgalaxyordervalidateResponse `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlitripMerchantGalaxyOrderValidateResponse `json:"result,omitempty" xml:"result,omitempty"`
 }

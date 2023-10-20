@@ -23,5 +23,5 @@ type StoreProcessCreateRequest struct {
 	// 成品计划数量
 	PlanQty int64 `json:"planQty,omitempty" xml:"planQty,omitempty"`
 	// 扩展属性
-	ExtendProps *TaobaoqimenstoreprocesscreateMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+	ExtendProps *TaobaoQimenStoreprocessCreateMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

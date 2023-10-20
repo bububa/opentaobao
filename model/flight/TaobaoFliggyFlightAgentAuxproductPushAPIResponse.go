@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaofliggyflightagentauxproductpushAPIResponse 飞猪机票辅营商品投放 API返回值
+// TaobaoFliggyFlightAgentAuxproductPushAPIResponse 飞猪机票辅营商品投放 API返回值
 // taobao.fliggy.flight.agent.auxproduct.push
 //
 // 廉航辅营产品投放接口
-type TaobaofliggyflightagentauxproductpushAPIResponse struct {
+type TaobaoFliggyFlightAgentAuxproductPushAPIResponse struct {
 	model.CommonResponse
-	TaobaofliggyflightagentauxproductpushAPIResponseModel
+	TaobaoFliggyFlightAgentAuxproductPushAPIResponseModel
 }
 
-// TaobaofliggyflightagentauxproductpushAPIResponseModel is 飞猪机票辅营商品投放 成功返回结果
-type TaobaofliggyflightagentauxproductpushAPIResponseModel struct {
+// TaobaoFliggyFlightAgentAuxproductPushAPIResponseModel is 飞猪机票辅营商品投放 成功返回结果
+type TaobaoFliggyFlightAgentAuxproductPushAPIResponseModel struct {
 	XMLName xml.Name `xml:"fliggy_flight_agent_auxproduct_push_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

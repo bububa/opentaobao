@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowlbwmsskugetAPIResponse 商品信息查询 API返回值
+// TaobaoWlbWmsSkuGetAPIResponse 商品信息查询 API返回值
 // taobao.wlb.wms.sku.get
 //
 // 商品信息查询
-type TaobaowlbwmsskugetAPIResponse struct {
+type TaobaoWlbWmsSkuGetAPIResponse struct {
 	model.CommonResponse
-	TaobaowlbwmsskugetAPIResponseModel
+	TaobaoWlbWmsSkuGetAPIResponseModel
 }
 
-// TaobaowlbwmsskugetAPIResponseModel is 商品信息查询 成功返回结果
-type TaobaowlbwmsskugetAPIResponseModel struct {
+// TaobaoWlbWmsSkuGetAPIResponseModel is 商品信息查询 成功返回结果
+type TaobaoWlbWmsSkuGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_wms_sku_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

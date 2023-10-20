@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripagentflightsellmodifybackfillAPIRequest 销售改签回填 API请求
+// AlitripAgentFlightSellModifyBackfillAPIRequest 销售改签回填 API请求
 // alitrip.agent.flight.sell.modify.backfill
 //
 // 销售改签回填
-type AlitripagentflightsellmodifybackfillAPIRequest struct {
+type AlitripAgentFlightSellModifyBackfillAPIRequest struct {
 	model.Params
 	// 入参
 	_param *ModifyBackFillRequestDto
 }
 
-// NewAlitripagentflightsellmodifybackfillRequest 初始化AlitripagentflightsellmodifybackfillAPIRequest对象
-func NewAlitripagentflightsellmodifybackfillRequest() *AlitripagentflightsellmodifybackfillAPIRequest {
-	return &AlitripagentflightsellmodifybackfillAPIRequest{
+// NewAlitripAgentFlightSellModifyBackfillRequest 初始化AlitripAgentFlightSellModifyBackfillAPIRequest对象
+func NewAlitripAgentFlightSellModifyBackfillRequest() *AlitripAgentFlightSellModifyBackfillAPIRequest {
+	return &AlitripAgentFlightSellModifyBackfillAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripagentflightsellmodifybackfillAPIRequest) GetApiMethodName() string {
+func (r AlitripAgentFlightSellModifyBackfillAPIRequest) GetApiMethodName() string {
 	return "alitrip.agent.flight.sell.modify.backfill"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripagentflightsellmodifybackfillAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripAgentFlightSellModifyBackfillAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripagentflightsellmodifybackfillAPIRequest) GetRawParams() model.Params {
+func (r AlitripAgentFlightSellModifyBackfillAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 入参
-func (r *AlitripagentflightsellmodifybackfillAPIRequest) SetParam(_param *ModifyBackFillRequestDto) error {
+func (r *AlitripAgentFlightSellModifyBackfillAPIRequest) SetParam(_param *ModifyBackFillRequestDto) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r AlitripagentflightsellmodifybackfillAPIRequest) GetParam() *ModifyBackFillRequestDto {
+func (r AlitripAgentFlightSellModifyBackfillAPIRequest) GetParam() *ModifyBackFillRequestDto {
 	return r._param
 }

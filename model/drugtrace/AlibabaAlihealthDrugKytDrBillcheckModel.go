@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaalihealthdrugkytdrbillcheckModel 结构体
-type AlibabaalihealthdrugkytdrbillcheckModel struct {
+// AlibabaAlihealthDrugKytDrBillcheckModel 结构体
+type AlibabaAlihealthDrugKytDrBillcheckModel struct {
 	// 码验证信息
 	DetailInfoList []DetailInfoList `json:"detail_info_list,omitempty" xml:"detail_info_list>detail_info_list,omitempty"`
 	// 单据日期

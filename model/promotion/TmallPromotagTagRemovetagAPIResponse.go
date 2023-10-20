@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallpromotagtagremovetagAPIResponse 删除标签定义 API返回值
+// TmallPromotagTagRemovetagAPIResponse 删除标签定义 API返回值
 // tmall.promotag.tag.removetag
 //
 // 用于删除标签定义，但是要确保目前该标签没有人群在使用。
-type TmallpromotagtagremovetagAPIResponse struct {
+type TmallPromotagTagRemovetagAPIResponse struct {
 	model.CommonResponse
-	TmallpromotagtagremovetagAPIResponseModel
+	TmallPromotagTagRemovetagAPIResponseModel
 }
 
-// TmallpromotagtagremovetagAPIResponseModel is 删除标签定义 成功返回结果
-type TmallpromotagtagremovetagAPIResponseModel struct {
+// TmallPromotagTagRemovetagAPIResponseModel is 删除标签定义 成功返回结果
+type TmallPromotagTagRemovetagAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_promotag_tag_removetag_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

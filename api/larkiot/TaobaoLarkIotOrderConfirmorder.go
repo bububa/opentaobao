@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/larkiot"
 )
 
-// Taobaolarkiotorderconfirmorder iot渠道卖品落单
+// TaobaoLarkIotOrderConfirmorder iot渠道卖品落单
 // taobao.lark.iot.order.confirmorder
 //
 // 云智对接无人超市，接收无人超市订单信息
-func Taobaolarkiotorderconfirmorder(clt *core.SDKClient, req *larkiot.TaobaolarkiotorderconfirmorderAPIRequest, session string) (*larkiot.TaobaolarkiotorderconfirmorderAPIResponse, error) {
-	var resp larkiot.TaobaolarkiotorderconfirmorderAPIResponse
+func TaobaoLarkIotOrderConfirmorder(clt *core.SDKClient, req *larkiot.TaobaoLarkIotOrderConfirmorderAPIRequest, session string) (*larkiot.TaobaoLarkIotOrderConfirmorderAPIResponse, error) {
+	var resp larkiot.TaobaoLarkIotOrderConfirmorderAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

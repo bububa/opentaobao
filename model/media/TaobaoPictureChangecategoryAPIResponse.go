@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaopicturechangecategoryAPIResponse 修改图片的分类 API返回值
+// TaobaoPictureChangecategoryAPIResponse 修改图片的分类 API返回值
 // taobao.picture.changecategory
 //
 // 把批量的图片移动到某个分类下
-type TaobaopicturechangecategoryAPIResponse struct {
+type TaobaoPictureChangecategoryAPIResponse struct {
 	model.CommonResponse
-	TaobaopicturechangecategoryAPIResponseModel
+	TaobaoPictureChangecategoryAPIResponseModel
 }
 
-// TaobaopicturechangecategoryAPIResponseModel is 修改图片的分类 成功返回结果
-type TaobaopicturechangecategoryAPIResponseModel struct {
+// TaobaoPictureChangecategoryAPIResponseModel is 修改图片的分类 成功返回结果
+type TaobaoPictureChangecategoryAPIResponseModel struct {
 	XMLName xml.Name `xml:"picture_changecategory_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

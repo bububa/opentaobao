@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabasecurityjaqresourcefetchAPIResponse 获取资源文件 API返回值
+// AlibabaSecurityJaqResourceFetchAPIResponse 获取资源文件 API返回值
 // alibaba.security.jaq.resource.fetch
 //
 // 在前向化验证流程中提供资源文件服务
-type AlibabasecurityjaqresourcefetchAPIResponse struct {
+type AlibabaSecurityJaqResourceFetchAPIResponse struct {
 	model.CommonResponse
-	AlibabasecurityjaqresourcefetchAPIResponseModel
+	AlibabaSecurityJaqResourceFetchAPIResponseModel
 }
 
-// AlibabasecurityjaqresourcefetchAPIResponseModel is 获取资源文件 成功返回结果
-type AlibabasecurityjaqresourcefetchAPIResponseModel struct {
+// AlibabaSecurityJaqResourceFetchAPIResponseModel is 获取资源文件 成功返回结果
+type AlibabaSecurityJaqResourceFetchAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_security_jaq_resource_fetch_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

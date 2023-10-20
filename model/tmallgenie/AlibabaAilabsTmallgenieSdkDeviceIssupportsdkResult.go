@@ -1,7 +1,7 @@
 package tmallgenie
 
-// AlibabaailabstmallgeniesdkdeviceissupportsdkResult 结构体
-type AlibabaailabstmallgeniesdkdeviceissupportsdkResult struct {
+// AlibabaAilabsTmallgenieSdkDeviceIssupportsdkResult 结构体
+type AlibabaAilabsTmallgenieSdkDeviceIssupportsdkResult struct {
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// code

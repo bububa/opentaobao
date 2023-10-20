@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosadauditcreativegetAPIRequest 获取单个创意审核状态 API请求
+// YunosAdAuditCreativeGetAPIRequest 获取单个创意审核状态 API请求
 // yunos.ad.audit.creative.get
 //
 // 获取单个创意审核状态
-type YunosadauditcreativegetAPIRequest struct {
+type YunosAdAuditCreativeGetAPIRequest struct {
 	model.Params
 	// 第三方广告创意id
 	_creativeId string
@@ -18,52 +18,52 @@ type YunosadauditcreativegetAPIRequest struct {
 	_memberId int64
 }
 
-// NewYunosadauditcreativegetRequest 初始化YunosadauditcreativegetAPIRequest对象
-func NewYunosadauditcreativegetRequest() *YunosadauditcreativegetAPIRequest {
-	return &YunosadauditcreativegetAPIRequest{
+// NewYunosAdAuditCreativeGetRequest 初始化YunosAdAuditCreativeGetAPIRequest对象
+func NewYunosAdAuditCreativeGetRequest() *YunosAdAuditCreativeGetAPIRequest {
+	return &YunosAdAuditCreativeGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r YunosadauditcreativegetAPIRequest) GetApiMethodName() string {
+func (r YunosAdAuditCreativeGetAPIRequest) GetApiMethodName() string {
 	return "yunos.ad.audit.creative.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YunosadauditcreativegetAPIRequest) GetApiParams(params url.Values) {
+func (r YunosAdAuditCreativeGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r YunosadauditcreativegetAPIRequest) GetRawParams() model.Params {
+func (r YunosAdAuditCreativeGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCreativeId is CreativeId Setter
 // 第三方广告创意id
-func (r *YunosadauditcreativegetAPIRequest) SetCreativeId(_creativeId string) error {
+func (r *YunosAdAuditCreativeGetAPIRequest) SetCreativeId(_creativeId string) error {
 	r._creativeId = _creativeId
 	r.Set("creative_id", _creativeId)
 	return nil
 }
 
 // GetCreativeId CreativeId Getter
-func (r YunosadauditcreativegetAPIRequest) GetCreativeId() string {
+func (r YunosAdAuditCreativeGetAPIRequest) GetCreativeId() string {
 	return r._creativeId
 }
 
 // SetMemberId is MemberId Setter
 // 第三方的dspId
-func (r *YunosadauditcreativegetAPIRequest) SetMemberId(_memberId int64) error {
+func (r *YunosAdAuditCreativeGetAPIRequest) SetMemberId(_memberId int64) error {
 	r._memberId = _memberId
 	r.Set("member_id", _memberId)
 	return nil
 }
 
 // GetMemberId MemberId Getter
-func (r YunosadauditcreativegetAPIRequest) GetMemberId() int64 {
+func (r YunosAdAuditCreativeGetAPIRequest) GetMemberId() int64 {
 	return r._memberId
 }

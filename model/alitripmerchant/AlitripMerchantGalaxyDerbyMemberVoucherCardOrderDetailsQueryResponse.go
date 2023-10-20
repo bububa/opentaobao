@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripmerchantgalaxyderbymembervouchercardorderdetailsqueryResponse 结构体
-type AlitripmerchantgalaxyderbymembervouchercardorderdetailsqueryResponse struct {
+// AlitripMerchantGalaxyDerbyMemberVoucherCardOrderDetailsQueryResponse 结构体
+type AlitripMerchantGalaxyDerbyMemberVoucherCardOrderDetailsQueryResponse struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息

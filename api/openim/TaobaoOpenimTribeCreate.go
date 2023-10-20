@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/openim"
 )
 
-// Taobaoopenimtribecreate 创建群
+// TaobaoOpenimTribeCreate 创建群
 // taobao.openim.tribe.create
 //
 // 创建一个openim的群
-func Taobaoopenimtribecreate(clt *core.SDKClient, req *openim.TaobaoopenimtribecreateAPIRequest, session string) (*openim.TaobaoopenimtribecreateAPIResponse, error) {
-	var resp openim.TaobaoopenimtribecreateAPIResponse
+func TaobaoOpenimTribeCreate(clt *core.SDKClient, req *openim.TaobaoOpenimTribeCreateAPIRequest, session string) (*openim.TaobaoOpenimTribeCreateAPIResponse, error) {
+	var resp openim.TaobaoOpenimTribeCreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

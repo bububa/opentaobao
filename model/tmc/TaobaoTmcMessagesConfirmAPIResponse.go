@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotmcmessagesconfirmAPIResponse 确认消费消息的状态 API返回值
+// TaobaoTmcMessagesConfirmAPIResponse 确认消费消息的状态 API返回值
 // taobao.tmc.messages.confirm
 //
 // 确认消费消息的状态
-type TaobaotmcmessagesconfirmAPIResponse struct {
+type TaobaoTmcMessagesConfirmAPIResponse struct {
 	model.CommonResponse
-	TaobaotmcmessagesconfirmAPIResponseModel
+	TaobaoTmcMessagesConfirmAPIResponseModel
 }
 
-// TaobaotmcmessagesconfirmAPIResponseModel is 确认消费消息的状态 成功返回结果
-type TaobaotmcmessagesconfirmAPIResponseModel struct {
+// TaobaoTmcMessagesConfirmAPIResponseModel is 确认消费消息的状态 成功返回结果
+type TaobaoTmcMessagesConfirmAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmc_messages_confirm_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

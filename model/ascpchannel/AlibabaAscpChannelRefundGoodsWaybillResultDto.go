@@ -1,7 +1,7 @@
 package ascpchannel
 
-// AlibabaascpchannelrefundgoodswaybillResultDto 结构体
-type AlibabaascpchannelrefundgoodswaybillResultDto struct {
+// AlibabaAscpChannelRefundGoodsWaybillResultDto 结构体
+type AlibabaAscpChannelRefundGoodsWaybillResultDto struct {
 	// 错误码
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 错误码

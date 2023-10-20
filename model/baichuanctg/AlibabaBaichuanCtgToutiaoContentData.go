@@ -1,7 +1,7 @@
 package baichuanctg
 
-// AlibababaichuanctgtoutiaocontentData 结构体
-type AlibababaichuanctgtoutiaocontentData struct {
+// AlibabaBaichuanCtgToutiaoContentData 结构体
+type AlibabaBaichuanCtgToutiaoContentData struct {
 	// 内容标题
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 内容发布时间

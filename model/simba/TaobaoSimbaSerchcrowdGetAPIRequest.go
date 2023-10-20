@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosimbaserchcrowdgetAPIRequest 根据推广单元id获取搜索溢价人群 API请求
+// TaobaoSimbaSerchcrowdGetAPIRequest 根据推广单元id获取搜索溢价人群 API请求
 // taobao.simba.serchcrowd.get
 //
 // 根据推广单元id获取搜索溢价人群
-type TaobaosimbaserchcrowdgetAPIRequest struct {
+type TaobaoSimbaSerchcrowdGetAPIRequest struct {
 	model.Params
 	// 被操作者的淘宝昵称
 	_nick string
@@ -18,52 +18,52 @@ type TaobaosimbaserchcrowdgetAPIRequest struct {
 	_adgroupId int64
 }
 
-// NewTaobaosimbaserchcrowdgetRequest 初始化TaobaosimbaserchcrowdgetAPIRequest对象
-func NewTaobaosimbaserchcrowdgetRequest() *TaobaosimbaserchcrowdgetAPIRequest {
-	return &TaobaosimbaserchcrowdgetAPIRequest{
+// NewTaobaoSimbaSerchcrowdGetRequest 初始化TaobaoSimbaSerchcrowdGetAPIRequest对象
+func NewTaobaoSimbaSerchcrowdGetRequest() *TaobaoSimbaSerchcrowdGetAPIRequest {
+	return &TaobaoSimbaSerchcrowdGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaosimbaserchcrowdgetAPIRequest) GetApiMethodName() string {
+func (r TaobaoSimbaSerchcrowdGetAPIRequest) GetApiMethodName() string {
 	return "taobao.simba.serchcrowd.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaosimbaserchcrowdgetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoSimbaSerchcrowdGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaosimbaserchcrowdgetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoSimbaSerchcrowdGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetNick is Nick Setter
 // 被操作者的淘宝昵称
-func (r *TaobaosimbaserchcrowdgetAPIRequest) SetNick(_nick string) error {
+func (r *TaobaoSimbaSerchcrowdGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
 	r.Set("nick", _nick)
 	return nil
 }
 
 // GetNick Nick Getter
-func (r TaobaosimbaserchcrowdgetAPIRequest) GetNick() string {
+func (r TaobaoSimbaSerchcrowdGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
 // SetAdgroupId is AdgroupId Setter
 // 推广单元id
-func (r *TaobaosimbaserchcrowdgetAPIRequest) SetAdgroupId(_adgroupId int64) error {
+func (r *TaobaoSimbaSerchcrowdGetAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
 	r.Set("adgroup_id", _adgroupId)
 	return nil
 }
 
 // GetAdgroupId AdgroupId Getter
-func (r TaobaosimbaserchcrowdgetAPIRequest) GetAdgroupId() int64 {
+func (r TaobaoSimbaSerchcrowdGetAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }

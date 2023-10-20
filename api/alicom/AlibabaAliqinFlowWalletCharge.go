@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alicom"
 )
 
-// Alibabaaliqinflowwalletcharge 流量直充
+// AlibabaAliqinFlowWalletCharge 流量直充
 // alibaba.aliqin.flow.wallet.charge
 //
 // 流量直充
-func Alibabaaliqinflowwalletcharge(clt *core.SDKClient, req *alicom.AlibabaaliqinflowwalletchargeAPIRequest, session string) (*alicom.AlibabaaliqinflowwalletchargeAPIResponse, error) {
-	var resp alicom.AlibabaaliqinflowwalletchargeAPIResponse
+func AlibabaAliqinFlowWalletCharge(clt *core.SDKClient, req *alicom.AlibabaAliqinFlowWalletChargeAPIRequest, session string) (*alicom.AlibabaAliqinFlowWalletChargeAPIResponse, error) {
+	var resp alicom.AlibabaAliqinFlowWalletChargeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

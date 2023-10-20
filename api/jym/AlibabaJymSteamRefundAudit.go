@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/jym"
 )
 
-// Alibabajymsteamrefundaudit 交易猫steam逆向单审核
+// AlibabaJymSteamRefundAudit 交易猫steam逆向单审核
 // alibaba.jym.steam.refund.audit
 //
 // 交易猫steam逆向单审核
-func Alibabajymsteamrefundaudit(clt *core.SDKClient, req *jym.AlibabajymsteamrefundauditAPIRequest, session string) (*jym.AlibabajymsteamrefundauditAPIResponse, error) {
-	var resp jym.AlibabajymsteamrefundauditAPIResponse
+func AlibabaJymSteamRefundAudit(clt *core.SDKClient, req *jym.AlibabaJymSteamRefundAuditAPIRequest, session string) (*jym.AlibabaJymSteamRefundAuditAPIResponse, error) {
+	var resp jym.AlibabaJymSteamRefundAuditAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaailabstmallgenieauthdevicegetcodeAPIRequest 获取authcode API请求
+// AlibabaAilabsTmallgenieAuthDeviceGetcodeAPIRequest 获取authcode API请求
 // alibaba.ailabs.tmallgenie.auth.device.getcode
 //
 // 获取绑定的authcode
-type AlibabaailabstmallgenieauthdevicegetcodeAPIRequest struct {
+type AlibabaAilabsTmallgenieAuthDeviceGetcodeAPIRequest struct {
 	model.Params
 }
 
-// NewAlibabaailabstmallgenieauthdevicegetcodeRequest 初始化AlibabaailabstmallgenieauthdevicegetcodeAPIRequest对象
-func NewAlibabaailabstmallgenieauthdevicegetcodeRequest() *AlibabaailabstmallgenieauthdevicegetcodeAPIRequest {
-	return &AlibabaailabstmallgenieauthdevicegetcodeAPIRequest{
+// NewAlibabaAilabsTmallgenieAuthDeviceGetcodeRequest 初始化AlibabaAilabsTmallgenieAuthDeviceGetcodeAPIRequest对象
+func NewAlibabaAilabsTmallgenieAuthDeviceGetcodeRequest() *AlibabaAilabsTmallgenieAuthDeviceGetcodeAPIRequest {
+	return &AlibabaAilabsTmallgenieAuthDeviceGetcodeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaailabstmallgenieauthdevicegetcodeAPIRequest) GetApiMethodName() string {
+func (r AlibabaAilabsTmallgenieAuthDeviceGetcodeAPIRequest) GetApiMethodName() string {
 	return "alibaba.ailabs.tmallgenie.auth.device.getcode"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaailabstmallgenieauthdevicegetcodeAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAilabsTmallgenieAuthDeviceGetcodeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaailabstmallgenieauthdevicegetcodeAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAilabsTmallgenieAuthDeviceGetcodeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaailabsbotsskilslistAPIRequest 对外设备获取技能列表 API请求
+// AlibabaAilabsBotsSkilsListAPIRequest 对外设备获取技能列表 API请求
 // alibaba.ailabs.bots.skils.list
 //
 // 获取ai开放平台技能列表
-type AlibabaailabsbotsskilslistAPIRequest struct {
+type AlibabaAilabsBotsSkilsListAPIRequest struct {
 	model.Params
 	// 当前页
 	_pageIndex int64
@@ -18,52 +18,52 @@ type AlibabaailabsbotsskilslistAPIRequest struct {
 	_pageSize int64
 }
 
-// NewAlibabaailabsbotsskilslistRequest 初始化AlibabaailabsbotsskilslistAPIRequest对象
-func NewAlibabaailabsbotsskilslistRequest() *AlibabaailabsbotsskilslistAPIRequest {
-	return &AlibabaailabsbotsskilslistAPIRequest{
+// NewAlibabaAilabsBotsSkilsListRequest 初始化AlibabaAilabsBotsSkilsListAPIRequest对象
+func NewAlibabaAilabsBotsSkilsListRequest() *AlibabaAilabsBotsSkilsListAPIRequest {
+	return &AlibabaAilabsBotsSkilsListAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaailabsbotsskilslistAPIRequest) GetApiMethodName() string {
+func (r AlibabaAilabsBotsSkilsListAPIRequest) GetApiMethodName() string {
 	return "alibaba.ailabs.bots.skils.list"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaailabsbotsskilslistAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAilabsBotsSkilsListAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaailabsbotsskilslistAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAilabsBotsSkilsListAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetPageIndex is PageIndex Setter
 // 当前页
-func (r *AlibabaailabsbotsskilslistAPIRequest) SetPageIndex(_pageIndex int64) error {
+func (r *AlibabaAilabsBotsSkilsListAPIRequest) SetPageIndex(_pageIndex int64) error {
 	r._pageIndex = _pageIndex
 	r.Set("page_index", _pageIndex)
 	return nil
 }
 
 // GetPageIndex PageIndex Getter
-func (r AlibabaailabsbotsskilslistAPIRequest) GetPageIndex() int64 {
+func (r AlibabaAilabsBotsSkilsListAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }
 
 // SetPageSize is PageSize Setter
 // 分页单位
-func (r *AlibabaailabsbotsskilslistAPIRequest) SetPageSize(_pageSize int64) error {
+func (r *AlibabaAilabsBotsSkilsListAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
 	r.Set("page_size", _pageSize)
 	return nil
 }
 
 // GetPageSize PageSize Getter
-func (r AlibabaailabsbotsskilslistAPIRequest) GetPageSize() int64 {
+func (r AlibabaAilabsBotsSkilsListAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

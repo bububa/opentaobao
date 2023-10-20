@@ -1,7 +1,7 @@
 package alitrippoi
 
-// AlitripplatformpoirawpoioutData 结构体
-type AlitripplatformpoirawpoioutData struct {
+// AlitripPlatformPoiRawPoioutData 结构体
+type AlitripPlatformPoiRawPoioutData struct {
 	// poi名字
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// poi英文名

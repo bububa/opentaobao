@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/fivee"
 )
 
-// Taobaofiveecompanyupload 上传商信息接口
+// TaobaoFiveeCompanyUpload 上传商信息接口
 // taobao.fivee.company.upload
 //
 // 资质共享平台上传资质证照
-func Taobaofiveecompanyupload(clt *core.SDKClient, req *fivee.TaobaofiveecompanyuploadAPIRequest, session string) (*fivee.TaobaofiveecompanyuploadAPIResponse, error) {
-	var resp fivee.TaobaofiveecompanyuploadAPIResponse
+func TaobaoFiveeCompanyUpload(clt *core.SDKClient, req *fivee.TaobaoFiveeCompanyUploadAPIRequest, session string) (*fivee.TaobaoFiveeCompanyUploadAPIResponse, error) {
+	var resp fivee.TaobaoFiveeCompanyUploadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

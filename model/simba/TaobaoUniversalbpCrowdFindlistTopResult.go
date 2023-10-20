@@ -1,7 +1,7 @@
 package simba
 
-// TaobaouniversalbpcrowdfindlistTopResult 结构体
-type TaobaouniversalbpcrowdfindlistTopResult struct {
+// TaobaoUniversalbpCrowdFindlistTopResult 结构体
+type TaobaoUniversalbpCrowdFindlistTopResult struct {
 	// 请求系统信息
 	Info *TopInfo `json:"info,omitempty" xml:"info,omitempty"`
 	// 结果集

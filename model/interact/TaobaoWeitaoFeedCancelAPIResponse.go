@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoweitaofeedcancelAPIResponse 取消广播在timeline、广场中展示 API返回值
+// TaobaoWeitaoFeedCancelAPIResponse 取消广播在timeline、广场中展示 API返回值
 // taobao.weitao.feed.cancel
 //
 // 取消广播在timeline和广场中的展示。
-type TaobaoweitaofeedcancelAPIResponse struct {
+type TaobaoWeitaoFeedCancelAPIResponse struct {
 	model.CommonResponse
-	TaobaoweitaofeedcancelAPIResponseModel
+	TaobaoWeitaoFeedCancelAPIResponseModel
 }
 
-// TaobaoweitaofeedcancelAPIResponseModel is 取消广播在timeline、广场中展示 成功返回结果
-type TaobaoweitaofeedcancelAPIResponseModel struct {
+// TaobaoWeitaoFeedCancelAPIResponseModel is 取消广播在timeline、广场中展示 成功返回结果
+type TaobaoWeitaoFeedCancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"weitao_feed_cancel_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

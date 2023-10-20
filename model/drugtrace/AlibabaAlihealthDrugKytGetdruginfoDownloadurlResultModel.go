@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaalihealthdrugkytgetdruginfodownloadurlResultModel 结构体
-type AlibabaalihealthdrugkytgetdruginfodownloadurlResultModel struct {
+// AlibabaAlihealthDrugKytGetdruginfoDownloadurlResultModel 结构体
+type AlibabaAlihealthDrugKytGetdruginfoDownloadurlResultModel struct {
 	// 接口调用失败具体信息
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// 接口调用失败具体code

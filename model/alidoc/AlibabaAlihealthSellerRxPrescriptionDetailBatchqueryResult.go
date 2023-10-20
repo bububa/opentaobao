@@ -1,7 +1,7 @@
 package alidoc
 
-// AlibabaalihealthsellerrxprescriptiondetailbatchqueryResult 结构体
-type AlibabaalihealthsellerrxprescriptiondetailbatchqueryResult struct {
+// AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryResult 结构体
+type AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryResult struct {
 	// 订单处方详情列表
-	DataList *AlibabaalihealthsellerrxprescriptiondetailbatchqueryModel `json:"data_list,omitempty" xml:"data_list,omitempty"`
+	DataList *AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryModel `json:"data_list,omitempty" xml:"data_list,omitempty"`
 }

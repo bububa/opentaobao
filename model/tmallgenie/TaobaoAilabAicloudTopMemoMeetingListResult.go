@@ -1,7 +1,7 @@
 package tmallgenie
 
-// TaobaoailabaicloudtopmemomeetinglistResult 结构体
-type TaobaoailabaicloudtopmemomeetinglistResult struct {
+// TaobaoAilabAicloudTopMemoMeetingListResult 结构体
+type TaobaoAilabAicloudTopMemoMeetingListResult struct {
 	// 服务的实际返回结果
 	Meetings []Meeting `json:"meetings,omitempty" xml:"meetings>meeting,omitempty"`
 	// 附加信息，典型应用场景是对失败调用进行简述，方便调用方定位问题

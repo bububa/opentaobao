@@ -1,7 +1,7 @@
 package filmtfavatar
 
-// TaobaofilmtfavatarbillsalepaymentqueryResult 结构体
-type TaobaofilmtfavatarbillsalepaymentqueryResult struct {
+// TaobaoFilmTfavatarBillSalePaymentQueryResult 结构体
+type TaobaoFilmTfavatarBillSalePaymentQueryResult struct {
 	// 返回码
 	ReturnCode string `json:"return_code,omitempty" xml:"return_code,omitempty"`
 	// 请求id

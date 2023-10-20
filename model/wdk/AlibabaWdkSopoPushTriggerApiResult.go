@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabawdksopopushtriggerApiResult 结构体
-type AlibabawdksopopushtriggerApiResult struct {
+// AlibabaWdkSopoPushTriggerApiResult 结构体
+type AlibabaWdkSopoPushTriggerApiResult struct {
 	// 错误码
 	ReturnCode string `json:"return_code,omitempty" xml:"return_code,omitempty"`
 	// 错误信息

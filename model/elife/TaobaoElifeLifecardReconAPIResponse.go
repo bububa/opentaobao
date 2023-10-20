@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoelifelifecardreconAPIResponse 查询对账文件地址接口 API返回值
+// TaobaoElifeLifecardReconAPIResponse 查询对账文件地址接口 API返回值
 // taobao.elife.lifecard.recon
 //
 // 查询对账文件地址接口
-type TaobaoelifelifecardreconAPIResponse struct {
+type TaobaoElifeLifecardReconAPIResponse struct {
 	model.CommonResponse
-	TaobaoelifelifecardreconAPIResponseModel
+	TaobaoElifeLifecardReconAPIResponseModel
 }
 
-// TaobaoelifelifecardreconAPIResponseModel is 查询对账文件地址接口 成功返回结果
-type TaobaoelifelifecardreconAPIResponseModel struct {
+// TaobaoElifeLifecardReconAPIResponseModel is 查询对账文件地址接口 成功返回结果
+type TaobaoElifeLifecardReconAPIResponseModel struct {
 	XMLName xml.Name `xml:"elife_lifecard_recon_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowlbwmsskuupdateAPIResponse 商品信息的更新 API返回值
+// TaobaoWlbWmsSkuUpdateAPIResponse 商品信息的更新 API返回值
 // taobao.wlb.wms.sku.update
 //
 // 商品信息的更新
-type TaobaowlbwmsskuupdateAPIResponse struct {
+type TaobaoWlbWmsSkuUpdateAPIResponse struct {
 	model.CommonResponse
-	TaobaowlbwmsskuupdateAPIResponseModel
+	TaobaoWlbWmsSkuUpdateAPIResponseModel
 }
 
-// TaobaowlbwmsskuupdateAPIResponseModel is 商品信息的更新 成功返回结果
-type TaobaowlbwmsskuupdateAPIResponseModel struct {
+// TaobaoWlbWmsSkuUpdateAPIResponseModel is 商品信息的更新 成功返回结果
+type TaobaoWlbWmsSkuUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_wms_sku_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

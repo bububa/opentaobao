@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoailabaicloudtopmessageaddtextAPIResponse 精灵代说 API返回值
+// TaobaoAilabAicloudTopMessageAddtextAPIResponse 精灵代说 API返回值
 // taobao.ailab.aicloud.top.message.addtext
 //
 // 精灵代说
-type TaobaoailabaicloudtopmessageaddtextAPIResponse struct {
+type TaobaoAilabAicloudTopMessageAddtextAPIResponse struct {
 	model.CommonResponse
-	TaobaoailabaicloudtopmessageaddtextAPIResponseModel
+	TaobaoAilabAicloudTopMessageAddtextAPIResponseModel
 }
 
-// TaobaoailabaicloudtopmessageaddtextAPIResponseModel is 精灵代说 成功返回结果
-type TaobaoailabaicloudtopmessageaddtextAPIResponseModel struct {
+// TaobaoAilabAicloudTopMessageAddtextAPIResponseModel is 精灵代说 成功返回结果
+type TaobaoAilabAicloudTopMessageAddtextAPIResponseModel struct {
 	XMLName xml.Name `xml:"ailab_aicloud_top_message_addtext_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

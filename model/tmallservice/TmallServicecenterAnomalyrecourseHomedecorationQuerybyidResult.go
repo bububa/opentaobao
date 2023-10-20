@@ -1,7 +1,7 @@
 package tmallservice
 
-// TmallservicecenteranomalyrecoursehomedecorationquerybyidResult 结构体
-type TmallservicecenteranomalyrecoursehomedecorationquerybyidResult struct {
+// TmallServicecenterAnomalyrecourseHomedecorationQuerybyidResult 结构体
+type TmallServicecenterAnomalyrecourseHomedecorationQuerybyidResult struct {
 	// 投诉单对象的json字符串
 	Value string `json:"value,omitempty" xml:"value,omitempty"`
 	// 错误码

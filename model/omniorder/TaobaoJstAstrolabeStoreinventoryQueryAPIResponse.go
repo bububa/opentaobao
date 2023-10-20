@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaojstastrolabestoreinventoryqueryAPIResponse 后端商品库存查询接口 API返回值
+// TaobaoJstAstrolabeStoreinventoryQueryAPIResponse 后端商品库存查询接口 API返回值
 // taobao.jst.astrolabe.storeinventory.query
 //
 // 查询门店或电商仓库存，该接口一次可以同时查询多个门店或电商仓的多个商品的多种类型的库存
-type TaobaojstastrolabestoreinventoryqueryAPIResponse struct {
+type TaobaoJstAstrolabeStoreinventoryQueryAPIResponse struct {
 	model.CommonResponse
-	TaobaojstastrolabestoreinventoryqueryAPIResponseModel
+	TaobaoJstAstrolabeStoreinventoryQueryAPIResponseModel
 }
 
-// TaobaojstastrolabestoreinventoryqueryAPIResponseModel is 后端商品库存查询接口 成功返回结果
-type TaobaojstastrolabestoreinventoryqueryAPIResponseModel struct {
+// TaobaoJstAstrolabeStoreinventoryQueryAPIResponseModel is 后端商品库存查询接口 成功返回结果
+type TaobaoJstAstrolabeStoreinventoryQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"jst_astrolabe_storeinventory_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

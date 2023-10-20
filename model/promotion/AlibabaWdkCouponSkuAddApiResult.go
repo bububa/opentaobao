@@ -1,7 +1,7 @@
 package promotion
 
-// AlibabawdkcouponskuaddApiResult 结构体
-type AlibabawdkcouponskuaddApiResult struct {
+// AlibabaWdkCouponSkuAddApiResult 结构体
+type AlibabaWdkCouponSkuAddApiResult struct {
 	// 错误码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 错误信息

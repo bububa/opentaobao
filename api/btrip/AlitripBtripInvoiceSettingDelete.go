@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/btrip"
 )
 
-// Alitripbtripinvoicesettingdelete 发票删除
+// AlitripBtripInvoiceSettingDelete 发票删除
 // alitrip.btrip.invoice.setting.delete
 //
 // 发票删除
-func Alitripbtripinvoicesettingdelete(clt *core.SDKClient, req *btrip.AlitripbtripinvoicesettingdeleteAPIRequest, session string) (*btrip.AlitripbtripinvoicesettingdeleteAPIResponse, error) {
-	var resp btrip.AlitripbtripinvoicesettingdeleteAPIResponse
+func AlitripBtripInvoiceSettingDelete(clt *core.SDKClient, req *btrip.AlitripBtripInvoiceSettingDeleteAPIRequest, session string) (*btrip.AlitripBtripInvoiceSettingDeleteAPIResponse, error) {
+	var resp btrip.AlitripBtripInvoiceSettingDeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

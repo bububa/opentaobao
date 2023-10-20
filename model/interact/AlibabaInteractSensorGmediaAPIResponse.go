@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabainteractsensorgmediaAPIResponse gmedia API返回值
+// AlibabaInteractSensorGmediaAPIResponse gmedia API返回值
 // alibaba.interact.sensor.gmedia
 //
 // 媒体功能
-type AlibabainteractsensorgmediaAPIResponse struct {
+type AlibabaInteractSensorGmediaAPIResponse struct {
 	model.CommonResponse
-	AlibabainteractsensorgmediaAPIResponseModel
+	AlibabaInteractSensorGmediaAPIResponseModel
 }
 
-// AlibabainteractsensorgmediaAPIResponseModel is gmedia 成功返回结果
-type AlibabainteractsensorgmediaAPIResponseModel struct {
+// AlibabaInteractSensorGmediaAPIResponseModel is gmedia 成功返回结果
+type AlibabaInteractSensorGmediaAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_sensor_gmedia_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

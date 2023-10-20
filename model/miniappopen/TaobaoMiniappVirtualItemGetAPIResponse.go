@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaominiappvirtualitemgetAPIResponse 小程序关联虚拟商品查询 API返回值
+// TaobaoMiniappVirtualItemGetAPIResponse 小程序关联虚拟商品查询 API返回值
 // taobao.miniapp.virtual.item.get
 //
 // 小程序关联虚拟商品查询
-type TaobaominiappvirtualitemgetAPIResponse struct {
+type TaobaoMiniappVirtualItemGetAPIResponse struct {
 	model.CommonResponse
-	TaobaominiappvirtualitemgetAPIResponseModel
+	TaobaoMiniappVirtualItemGetAPIResponseModel
 }
 
-// TaobaominiappvirtualitemgetAPIResponseModel is 小程序关联虚拟商品查询 成功返回结果
-type TaobaominiappvirtualitemgetAPIResponseModel struct {
+// TaobaoMiniappVirtualItemGetAPIResponseModel is 小程序关联虚拟商品查询 成功返回结果
+type TaobaoMiniappVirtualItemGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"miniapp_virtual_item_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

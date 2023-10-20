@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaotbkscpublisherinfogetMapData 结构体
-type TaobaotbkscpublisherinfogetMapData struct {
+// TaobaoTbkScPublisherInfoGetMapData 结构体
+type TaobaoTbkScPublisherInfoGetMapData struct {
 	// 共享字段 - 备案场景：common（通用备案），etao（一淘备案），minietao（一淘小程序备案），offlineShop（线下门店备案），offlinePerson（线下个人备案）
 	RelationApp string `json:"relation_app,omitempty" xml:"relation_app,omitempty"`
 	// 共享字段 - 备案日期

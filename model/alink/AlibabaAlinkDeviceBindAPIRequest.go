@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalinkdevicebindAPIRequest 绑定设备 API请求
+// AlibabaAlinkDeviceBindAPIRequest 绑定设备 API请求
 // alibaba.alink.device.bind
 //
 // 阿里智能解绑设备
-type AlibabaalinkdevicebindAPIRequest struct {
+type AlibabaAlinkDeviceBindAPIRequest struct {
 	model.Params
 	// 设备id
 	_uuid string
 }
 
-// NewAlibabaalinkdevicebindRequest 初始化AlibabaalinkdevicebindAPIRequest对象
-func NewAlibabaalinkdevicebindRequest() *AlibabaalinkdevicebindAPIRequest {
-	return &AlibabaalinkdevicebindAPIRequest{
+// NewAlibabaAlinkDeviceBindRequest 初始化AlibabaAlinkDeviceBindAPIRequest对象
+func NewAlibabaAlinkDeviceBindRequest() *AlibabaAlinkDeviceBindAPIRequest {
+	return &AlibabaAlinkDeviceBindAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalinkdevicebindAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlinkDeviceBindAPIRequest) GetApiMethodName() string {
 	return "alibaba.alink.device.bind"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalinkdevicebindAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlinkDeviceBindAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalinkdevicebindAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlinkDeviceBindAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetUuid is Uuid Setter
 // 设备id
-func (r *AlibabaalinkdevicebindAPIRequest) SetUuid(_uuid string) error {
+func (r *AlibabaAlinkDeviceBindAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
 	r.Set("uuid", _uuid)
 	return nil
 }
 
 // GetUuid Uuid Getter
-func (r AlibabaalinkdevicebindAPIRequest) GetUuid() string {
+func (r AlibabaAlinkDeviceBindAPIRequest) GetUuid() string {
 	return r._uuid
 }

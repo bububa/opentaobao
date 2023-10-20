@@ -1,7 +1,7 @@
 package scs
 
-// TaobaoonebpdkxcrowdcrowdfindcrowdgroupsResultDto 结构体
-type TaobaoonebpdkxcrowdcrowdfindcrowdgroupsResultDto struct {
+// TaobaoOnebpDkxCrowdCrowdFindcrowdgroupsResultDto 结构体
+type TaobaoOnebpDkxCrowdCrowdFindcrowdgroupsResultDto struct {
 	// 返回结果
 	TemplateGroupTopDTOList []TemplateGroupTopDto `json:"template_group_top_d_t_o_list,omitempty" xml:"template_group_top_d_t_o_list>template_group_top_dto,omitempty"`
 	// 返回消息

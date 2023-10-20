@@ -1,7 +1,7 @@
 package trade
 
-// CainiaorefundrefundactionsdisplayBizResult 结构体
-type CainiaorefundrefundactionsdisplayBizResult struct {
+// CainiaoRefundRefundactionsDisplayBizResult 结构体
+type CainiaoRefundRefundactionsDisplayBizResult struct {
 	// 调用时错误码
 	StatusCode string `json:"status_code,omitempty" xml:"status_code,omitempty"`
 	// 买家操作时需要的展示信息

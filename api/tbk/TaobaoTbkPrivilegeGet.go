@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tbk"
 )
 
-// Taobaotbkprivilegeget 淘宝客-服务商-单品券高效转链
+// TaobaoTbkPrivilegeGet 淘宝客-服务商-单品券高效转链
 // taobao.tbk.privilege.get
 //
 // 单品券高效转链API
-func Taobaotbkprivilegeget(clt *core.SDKClient, req *tbk.TaobaotbkprivilegegetAPIRequest, session string) (*tbk.TaobaotbkprivilegegetAPIResponse, error) {
-	var resp tbk.TaobaotbkprivilegegetAPIResponse
+func TaobaoTbkPrivilegeGet(clt *core.SDKClient, req *tbk.TaobaoTbkPrivilegeGetAPIRequest, session string) (*tbk.TaobaoTbkPrivilegeGetAPIResponse, error) {
+	var resp tbk.TaobaoTbkPrivilegeGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

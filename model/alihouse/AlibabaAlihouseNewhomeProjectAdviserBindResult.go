@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaalihousenewhomeprojectadviserbindResult 结构体
-type AlibabaalihousenewhomeprojectadviserbindResult struct {
+// AlibabaAlihouseNewhomeProjectAdviserBindResult 结构体
+type AlibabaAlihouseNewhomeProjectAdviserBindResult struct {
 	// 操作结果
 	Data []ProjectAdviserBindResultDto `json:"data,omitempty" xml:"data>project_adviser_bind_result_dto,omitempty"`
 	// code

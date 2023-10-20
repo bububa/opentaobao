@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascp"
 )
 
-// Alibabadchainaoxiangitemmappingupdateasync 创建/更新商货品关联关系
+// AlibabaDchainAoxiangItemmappingUpdateAsync 创建/更新商货品关联关系
 // alibaba.dchain.aoxiang.itemmapping.update.async
 //
 // 创建/更新商货品关联关系
-func Alibabadchainaoxiangitemmappingupdateasync(clt *core.SDKClient, req *ascp.AlibabadchainaoxiangitemmappingupdateasyncAPIRequest, session string) (*ascp.AlibabadchainaoxiangitemmappingupdateasyncAPIResponse, error) {
-	var resp ascp.AlibabadchainaoxiangitemmappingupdateasyncAPIResponse
+func AlibabaDchainAoxiangItemmappingUpdateAsync(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangItemmappingUpdateAsyncAPIRequest, session string) (*ascp.AlibabaDchainAoxiangItemmappingUpdateAsyncAPIResponse, error) {
+	var resp ascp.AlibabaDchainAoxiangItemmappingUpdateAsyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

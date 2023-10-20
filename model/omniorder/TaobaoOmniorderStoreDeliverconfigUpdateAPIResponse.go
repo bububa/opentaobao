@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoomniorderstoredeliverconfigupdateAPIResponse 修改门店发货配置内容 API返回值
+// TaobaoOmniorderStoreDeliverconfigUpdateAPIResponse 修改门店发货配置内容 API返回值
 // taobao.omniorder.store.deliverconfig.update
 //
 // 修改门店发货配置内容
-type TaobaoomniorderstoredeliverconfigupdateAPIResponse struct {
+type TaobaoOmniorderStoreDeliverconfigUpdateAPIResponse struct {
 	model.CommonResponse
-	TaobaoomniorderstoredeliverconfigupdateAPIResponseModel
+	TaobaoOmniorderStoreDeliverconfigUpdateAPIResponseModel
 }
 
-// TaobaoomniorderstoredeliverconfigupdateAPIResponseModel is 修改门店发货配置内容 成功返回结果
-type TaobaoomniorderstoredeliverconfigupdateAPIResponseModel struct {
+// TaobaoOmniorderStoreDeliverconfigUpdateAPIResponseModel is 修改门店发货配置内容 成功返回结果
+type TaobaoOmniorderStoreDeliverconfigUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"omniorder_store_deliverconfig_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
-	Result *TaobaoomniorderstoredeliverconfigupdateResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *TaobaoOmniorderStoreDeliverconfigUpdateResult `json:"result,omitempty" xml:"result,omitempty"`
 }

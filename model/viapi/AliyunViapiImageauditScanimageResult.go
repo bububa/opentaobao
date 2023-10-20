@@ -1,7 +1,7 @@
 package viapi
 
-// AliyunviapiimageauditscanimageResult 结构体
-type AliyunviapiimageauditscanimageResult struct {
+// AliyunViapiImageauditScanimageResult 结构体
+type AliyunViapiImageauditScanimageResult struct {
 	// 单张图片的检测结果
 	SubResults []SubResult `json:"sub_results,omitempty" xml:"sub_results>sub_result,omitempty"`
 	// 数据ID

@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabainteractisvgatewayAPIRequest isv调用gateway API请求
+// AlibabaInteractIsvGatewayAPIRequest isv调用gateway API请求
 // alibaba.interact.isv.gateway
 //
 // isv能够调用jae本身的server
-type AlibabainteractisvgatewayAPIRequest struct {
+type AlibabaInteractIsvGatewayAPIRequest struct {
 	model.Params
 }
 
-// NewAlibabainteractisvgatewayRequest 初始化AlibabainteractisvgatewayAPIRequest对象
-func NewAlibabainteractisvgatewayRequest() *AlibabainteractisvgatewayAPIRequest {
-	return &AlibabainteractisvgatewayAPIRequest{
+// NewAlibabaInteractIsvGatewayRequest 初始化AlibabaInteractIsvGatewayAPIRequest对象
+func NewAlibabaInteractIsvGatewayRequest() *AlibabaInteractIsvGatewayAPIRequest {
+	return &AlibabaInteractIsvGatewayAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabainteractisvgatewayAPIRequest) GetApiMethodName() string {
+func (r AlibabaInteractIsvGatewayAPIRequest) GetApiMethodName() string {
 	return "alibaba.interact.isv.gateway"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabainteractisvgatewayAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaInteractIsvGatewayAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabainteractisvgatewayAPIRequest) GetRawParams() model.Params {
+func (r AlibabaInteractIsvGatewayAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

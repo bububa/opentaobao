@@ -1,7 +1,7 @@
 package traderate
 
-// TmalltraderatefeedsgetModel 结构体
-type TmalltraderatefeedsgetModel struct {
+// TmallTraderateFeedsGetModel 结构体
+type TmallTraderateFeedsGetModel struct {
 	// 原始评价对应的标签列表
 	Tags []Tags `json:"tags,omitempty" xml:"tags>tags,omitempty"`
 	// 追加评价中带有的语义标签列表

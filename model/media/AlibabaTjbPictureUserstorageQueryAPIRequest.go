@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabatjbpictureuserstoragequeryAPIRequest 淘特图片空间用户容量查询 API请求
+// AlibabaTjbPictureUserstorageQueryAPIRequest 淘特图片空间用户容量查询 API请求
 // alibaba.tjb.picture.userstorage.query
 //
 // 淘特图片空间用户容量查询
-type AlibabatjbpictureuserstoragequeryAPIRequest struct {
+type AlibabaTjbPictureUserstorageQueryAPIRequest struct {
 	model.Params
 }
 
-// NewAlibabatjbpictureuserstoragequeryRequest 初始化AlibabatjbpictureuserstoragequeryAPIRequest对象
-func NewAlibabatjbpictureuserstoragequeryRequest() *AlibabatjbpictureuserstoragequeryAPIRequest {
-	return &AlibabatjbpictureuserstoragequeryAPIRequest{
+// NewAlibabaTjbPictureUserstorageQueryRequest 初始化AlibabaTjbPictureUserstorageQueryAPIRequest对象
+func NewAlibabaTjbPictureUserstorageQueryRequest() *AlibabaTjbPictureUserstorageQueryAPIRequest {
+	return &AlibabaTjbPictureUserstorageQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabatjbpictureuserstoragequeryAPIRequest) GetApiMethodName() string {
+func (r AlibabaTjbPictureUserstorageQueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.tjb.picture.userstorage.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabatjbpictureuserstoragequeryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaTjbPictureUserstorageQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabatjbpictureuserstoragequeryAPIRequest) GetRawParams() model.Params {
+func (r AlibabaTjbPictureUserstorageQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaogloballogisticordercreateAPIResponse 创建物流订单 API返回值
+// CainiaoGlobalLogisticOrderCreateAPIResponse 创建物流订单 API返回值
 // cainiao.global.logistic.order.create
 //
 // 创建物流订单
-type CainiaogloballogisticordercreateAPIResponse struct {
+type CainiaoGlobalLogisticOrderCreateAPIResponse struct {
 	model.CommonResponse
-	CainiaogloballogisticordercreateAPIResponseModel
+	CainiaoGlobalLogisticOrderCreateAPIResponseModel
 }
 
-// CainiaogloballogisticordercreateAPIResponseModel is 创建物流订单 成功返回结果
-type CainiaogloballogisticordercreateAPIResponseModel struct {
+// CainiaoGlobalLogisticOrderCreateAPIResponseModel is 创建物流订单 成功返回结果
+type CainiaoGlobalLogisticOrderCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_global_logistic_order_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

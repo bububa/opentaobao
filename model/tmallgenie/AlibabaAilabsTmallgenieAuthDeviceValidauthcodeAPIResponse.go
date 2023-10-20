@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaailabstmallgenieauthdevicevalidauthcodeAPIResponse 根据authcode查询绑定结果 API返回值
+// AlibabaAilabsTmallgenieAuthDeviceValidauthcodeAPIResponse 根据authcode查询绑定结果 API返回值
 // alibaba.ailabs.tmallgenie.auth.device.validauthcode
 //
 // 根据authcode查询绑定结果
-type AlibabaailabstmallgenieauthdevicevalidauthcodeAPIResponse struct {
+type AlibabaAilabsTmallgenieAuthDeviceValidauthcodeAPIResponse struct {
 	model.CommonResponse
-	AlibabaailabstmallgenieauthdevicevalidauthcodeAPIResponseModel
+	AlibabaAilabsTmallgenieAuthDeviceValidauthcodeAPIResponseModel
 }
 
-// AlibabaailabstmallgenieauthdevicevalidauthcodeAPIResponseModel is 根据authcode查询绑定结果 成功返回结果
-type AlibabaailabstmallgenieauthdevicevalidauthcodeAPIResponseModel struct {
+// AlibabaAilabsTmallgenieAuthDeviceValidauthcodeAPIResponseModel is 根据authcode查询绑定结果 成功返回结果
+type AlibabaAilabsTmallgenieAuthDeviceValidauthcodeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailabs_tmallgenie_auth_device_validauthcode_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
-	Result *AlibabaailabstmallgenieauthdevicevalidauthcodeResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaAilabsTmallgenieAuthDeviceValidauthcodeResult `json:"result,omitempty" xml:"result,omitempty"`
 }

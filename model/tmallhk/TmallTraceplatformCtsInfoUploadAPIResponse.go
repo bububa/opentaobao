@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmalltraceplatformctsinfouploadAPIResponse CTS提交溯源信息 API返回值
+// TmallTraceplatformCtsInfoUploadAPIResponse CTS提交溯源信息 API返回值
 // tmall.traceplatform.cts.info.upload
 //
 // cts上传溯源信息
-type TmalltraceplatformctsinfouploadAPIResponse struct {
+type TmallTraceplatformCtsInfoUploadAPIResponse struct {
 	model.CommonResponse
-	TmalltraceplatformctsinfouploadAPIResponseModel
+	TmallTraceplatformCtsInfoUploadAPIResponseModel
 }
 
-// TmalltraceplatformctsinfouploadAPIResponseModel is CTS提交溯源信息 成功返回结果
-type TmalltraceplatformctsinfouploadAPIResponseModel struct {
+// TmallTraceplatformCtsInfoUploadAPIResponseModel is CTS提交溯源信息 成功返回结果
+type TmallTraceplatformCtsInfoUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_traceplatform_cts_info_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package alihealth2
 
-// TaobaodrugquantitybatchupdateResult 结构体
-type TaobaodrugquantitybatchupdateResult struct {
+// TaobaoDrugQuantityBatchUpdateResult 结构体
+type TaobaoDrugQuantityBatchUpdateResult struct {
 	// 错误编号
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 错误信息

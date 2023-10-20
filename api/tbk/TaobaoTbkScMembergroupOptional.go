@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tbk"
 )
 
-// Taobaotbkscmembergroupoptional 工具服务商member组查询、新增接口
+// TaobaoTbkScMembergroupOptional 工具服务商member组查询、新增接口
 // taobao.tbk.sc.membergroup.optional
 //
 // 工具服务商member组查询、新增接口
-func Taobaotbkscmembergroupoptional(clt *core.SDKClient, req *tbk.TaobaotbkscmembergroupoptionalAPIRequest, session string) (*tbk.TaobaotbkscmembergroupoptionalAPIResponse, error) {
-	var resp tbk.TaobaotbkscmembergroupoptionalAPIResponse
+func TaobaoTbkScMembergroupOptional(clt *core.SDKClient, req *tbk.TaobaoTbkScMembergroupOptionalAPIRequest, session string) (*tbk.TaobaoTbkScMembergroupOptionalAPIResponse, error) {
+	var resp tbk.TaobaoTbkScMembergroupOptionalAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

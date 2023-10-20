@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabalegalsuitdominationpushAPIResponse 更新或者保存管辖信息 API返回值
+// AlibabaLegalSuitDominationPushAPIResponse 更新或者保存管辖信息 API返回值
 // alibaba.legal.suit.domination.push
 //
 // ISV推送管辖信息到诉讼平台
-type AlibabalegalsuitdominationpushAPIResponse struct {
+type AlibabaLegalSuitDominationPushAPIResponse struct {
 	model.CommonResponse
-	AlibabalegalsuitdominationpushAPIResponseModel
+	AlibabaLegalSuitDominationPushAPIResponseModel
 }
 
-// AlibabalegalsuitdominationpushAPIResponseModel is 更新或者保存管辖信息 成功返回结果
-type AlibabalegalsuitdominationpushAPIResponseModel struct {
+// AlibabaLegalSuitDominationPushAPIResponseModel is 更新或者保存管辖信息 成功返回结果
+type AlibabaLegalSuitDominationPushAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_legal_suit_domination_push_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

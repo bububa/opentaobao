@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunososupdatemodelsearchAPIResponse 机型检索 API返回值
+// YunosOsupdateModelSearchAPIResponse 机型检索 API返回值
 // yunos.osupdate.model.search
 //
 // 机型检索
-type YunososupdatemodelsearchAPIResponse struct {
+type YunosOsupdateModelSearchAPIResponse struct {
 	model.CommonResponse
-	YunososupdatemodelsearchAPIResponseModel
+	YunosOsupdateModelSearchAPIResponseModel
 }
 
-// YunososupdatemodelsearchAPIResponseModel is 机型检索 成功返回结果
-type YunososupdatemodelsearchAPIResponseModel struct {
+// YunosOsupdateModelSearchAPIResponseModel is 机型检索 成功返回结果
+type YunosOsupdateModelSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_osupdate_model_search_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

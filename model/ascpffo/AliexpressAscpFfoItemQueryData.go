@@ -1,7 +1,7 @@
 package ascpffo
 
-// AliexpressascpffoitemqueryData 结构体
-type AliexpressascpffoitemqueryData struct {
+// AliexpressAscpFfoItemQueryData 结构体
+type AliexpressAscpFfoItemQueryData struct {
 	// 库存数量
 	AicInventory string `json:"aic_inventory,omitempty" xml:"aic_inventory,omitempty"`
 	// 货品实际支付金额

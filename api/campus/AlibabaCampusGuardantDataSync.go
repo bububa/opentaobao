@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/campus"
 )
 
-// Alibabacampusguardantdatasync 刷卡数据同步
+// AlibabaCampusGuardantDataSync 刷卡数据同步
 // alibaba.campus.guardant.data.sync
 //
 // 数据同步门禁系统
-func Alibabacampusguardantdatasync(clt *core.SDKClient, req *campus.AlibabacampusguardantdatasyncAPIRequest, session string) (*campus.AlibabacampusguardantdatasyncAPIResponse, error) {
-	var resp campus.AlibabacampusguardantdatasyncAPIResponse
+func AlibabaCampusGuardantDataSync(clt *core.SDKClient, req *campus.AlibabaCampusGuardantDataSyncAPIRequest, session string) (*campus.AlibabaCampusGuardantDataSyncAPIResponse, error) {
+	var resp campus.AlibabaCampusGuardantDataSyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

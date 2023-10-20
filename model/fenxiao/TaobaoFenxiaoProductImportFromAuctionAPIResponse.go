@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaofenxiaoproductimportfromauctionAPIResponse 导入商品生成产品 API返回值
+// TaobaoFenxiaoProductImportFromAuctionAPIResponse 导入商品生成产品 API返回值
 // taobao.fenxiao.product.import.from.auction
 //
 // 供应商选择关联店铺的前台宝贝，导入生成产品
-type TaobaofenxiaoproductimportfromauctionAPIResponse struct {
+type TaobaoFenxiaoProductImportFromAuctionAPIResponse struct {
 	model.CommonResponse
-	TaobaofenxiaoproductimportfromauctionAPIResponseModel
+	TaobaoFenxiaoProductImportFromAuctionAPIResponseModel
 }
 
-// TaobaofenxiaoproductimportfromauctionAPIResponseModel is 导入商品生成产品 成功返回结果
-type TaobaofenxiaoproductimportfromauctionAPIResponseModel struct {
+// TaobaoFenxiaoProductImportFromAuctionAPIResponseModel is 导入商品生成产品 成功返回结果
+type TaobaoFenxiaoProductImportFromAuctionAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_product_import_from_auction_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

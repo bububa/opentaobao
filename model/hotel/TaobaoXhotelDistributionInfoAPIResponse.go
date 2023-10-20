@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoxhoteldistributioninfoAPIResponse 飞猪分销通用酒店标准信息接口 API返回值
+// TaobaoXhotelDistributionInfoAPIResponse 飞猪分销通用酒店标准信息接口 API返回值
 // taobao.xhotel.distribution.info
 //
 // 飞猪分销通用酒店标准信息接口
-type TaobaoxhoteldistributioninfoAPIResponse struct {
+type TaobaoXhotelDistributionInfoAPIResponse struct {
 	model.CommonResponse
-	TaobaoxhoteldistributioninfoAPIResponseModel
+	TaobaoXhotelDistributionInfoAPIResponseModel
 }
 
-// TaobaoxhoteldistributioninfoAPIResponseModel is 飞猪分销通用酒店标准信息接口 成功返回结果
-type TaobaoxhoteldistributioninfoAPIResponseModel struct {
+// TaobaoXhotelDistributionInfoAPIResponseModel is 飞猪分销通用酒店标准信息接口 成功返回结果
+type TaobaoXhotelDistributionInfoAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_distribution_info_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

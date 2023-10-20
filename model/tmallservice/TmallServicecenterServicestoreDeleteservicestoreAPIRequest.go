@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallservicecenterservicestoredeleteservicestoreAPIRequest 删除网点 API请求
+// TmallServicecenterServicestoreDeleteservicestoreAPIRequest 删除网点 API请求
 // tmall.servicecenter.servicestore.deleteservicestore
 //
 // 删除网点信息。对于同一个服务商，通过 service_store_code 删除网点。
@@ -23,45 +23,45 @@ import (
 // 10, 网点已存在
 // 11, 网点不存在
 // 12, 系统错误
-type TmallservicecenterservicestoredeleteservicestoreAPIRequest struct {
+type TmallServicecenterServicestoreDeleteservicestoreAPIRequest struct {
 	model.Params
 	// 网点名称
 	_serviceStoreCode string
 }
 
-// NewTmallservicecenterservicestoredeleteservicestoreRequest 初始化TmallservicecenterservicestoredeleteservicestoreAPIRequest对象
-func NewTmallservicecenterservicestoredeleteservicestoreRequest() *TmallservicecenterservicestoredeleteservicestoreAPIRequest {
-	return &TmallservicecenterservicestoredeleteservicestoreAPIRequest{
+// NewTmallServicecenterServicestoreDeleteservicestoreRequest 初始化TmallServicecenterServicestoreDeleteservicestoreAPIRequest对象
+func NewTmallServicecenterServicestoreDeleteservicestoreRequest() *TmallServicecenterServicestoreDeleteservicestoreAPIRequest {
+	return &TmallServicecenterServicestoreDeleteservicestoreAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallservicecenterservicestoredeleteservicestoreAPIRequest) GetApiMethodName() string {
+func (r TmallServicecenterServicestoreDeleteservicestoreAPIRequest) GetApiMethodName() string {
 	return "tmall.servicecenter.servicestore.deleteservicestore"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallservicecenterservicestoredeleteservicestoreAPIRequest) GetApiParams(params url.Values) {
+func (r TmallServicecenterServicestoreDeleteservicestoreAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallservicecenterservicestoredeleteservicestoreAPIRequest) GetRawParams() model.Params {
+func (r TmallServicecenterServicestoreDeleteservicestoreAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetServiceStoreCode is ServiceStoreCode Setter
 // 网点名称
-func (r *TmallservicecenterservicestoredeleteservicestoreAPIRequest) SetServiceStoreCode(_serviceStoreCode string) error {
+func (r *TmallServicecenterServicestoreDeleteservicestoreAPIRequest) SetServiceStoreCode(_serviceStoreCode string) error {
 	r._serviceStoreCode = _serviceStoreCode
 	r.Set("service_store_code", _serviceStoreCode)
 	return nil
 }
 
 // GetServiceStoreCode ServiceStoreCode Getter
-func (r TmallservicecenterservicestoredeleteservicestoreAPIRequest) GetServiceStoreCode() string {
+func (r TmallServicecenterServicestoreDeleteservicestoreAPIRequest) GetServiceStoreCode() string {
 	return r._serviceStoreCode
 }

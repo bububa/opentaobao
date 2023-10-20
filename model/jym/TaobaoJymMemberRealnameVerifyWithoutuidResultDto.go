@@ -1,7 +1,7 @@
 package jym
 
-// TaobaojymmemberrealnameverifywithoutuidResultDto 结构体
-type TaobaojymmemberrealnameverifywithoutuidResultDto struct {
+// TaobaoJymMemberRealnameVerifyWithoutuidResultDto 结构体
+type TaobaoJymMemberRealnameVerifyWithoutuidResultDto struct {
 	// 调用接口结果编码
 	StateCode string `json:"state_code,omitempty" xml:"state_code,omitempty"`
 	// 调用接口异常信息明细

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripmerchantgalaxyvouchergenerateschemelinkAPIRequest 生成短信链接 API请求
+// AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest 生成短信链接 API请求
 // alitrip.merchant.galaxy.voucher.generate.scheme.link
 //
 // 生成微信跳转链接scheme_link
-type AlitripmerchantgalaxyvouchergenerateschemelinkAPIRequest struct {
+type AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest struct {
 	model.Params
 	// tenant_key
 	_tenantKey string
@@ -20,65 +20,65 @@ type AlitripmerchantgalaxyvouchergenerateschemelinkAPIRequest struct {
 	_encryptionMerchantId string
 }
 
-// NewAlitripmerchantgalaxyvouchergenerateschemelinkRequest 初始化AlitripmerchantgalaxyvouchergenerateschemelinkAPIRequest对象
-func NewAlitripmerchantgalaxyvouchergenerateschemelinkRequest() *AlitripmerchantgalaxyvouchergenerateschemelinkAPIRequest {
-	return &AlitripmerchantgalaxyvouchergenerateschemelinkAPIRequest{
+// NewAlitripMerchantGalaxyVoucherGenerateSchemeLinkRequest 初始化AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest对象
+func NewAlitripMerchantGalaxyVoucherGenerateSchemeLinkRequest() *AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest {
+	return &AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripmerchantgalaxyvouchergenerateschemelinkAPIRequest) GetApiMethodName() string {
+func (r AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest) GetApiMethodName() string {
 	return "alitrip.merchant.galaxy.voucher.generate.scheme.link"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripmerchantgalaxyvouchergenerateschemelinkAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripmerchantgalaxyvouchergenerateschemelinkAPIRequest) GetRawParams() model.Params {
+func (r AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTenantKey is TenantKey Setter
 // tenant_key
-func (r *AlitripmerchantgalaxyvouchergenerateschemelinkAPIRequest) SetTenantKey(_tenantKey string) error {
+func (r *AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest) SetTenantKey(_tenantKey string) error {
 	r._tenantKey = _tenantKey
 	r.Set("tenant_key", _tenantKey)
 	return nil
 }
 
 // GetTenantKey TenantKey Getter
-func (r AlitripmerchantgalaxyvouchergenerateschemelinkAPIRequest) GetTenantKey() string {
+func (r AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest) GetTenantKey() string {
 	return r._tenantKey
 }
 
 // SetToken is Token Setter
 // 1111
-func (r *AlitripmerchantgalaxyvouchergenerateschemelinkAPIRequest) SetToken(_token string) error {
+func (r *AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest) SetToken(_token string) error {
 	r._token = _token
 	r.Set("token", _token)
 	return nil
 }
 
 // GetToken Token Getter
-func (r AlitripmerchantgalaxyvouchergenerateschemelinkAPIRequest) GetToken() string {
+func (r AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest) GetToken() string {
 	return r._token
 }
 
 // SetEncryptionMerchantId is EncryptionMerchantId Setter
 // 加密merchantId
-func (r *AlitripmerchantgalaxyvouchergenerateschemelinkAPIRequest) SetEncryptionMerchantId(_encryptionMerchantId string) error {
+func (r *AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest) SetEncryptionMerchantId(_encryptionMerchantId string) error {
 	r._encryptionMerchantId = _encryptionMerchantId
 	r.Set("encryption_merchant_id", _encryptionMerchantId)
 	return nil
 }
 
 // GetEncryptionMerchantId EncryptionMerchantId Getter
-func (r AlitripmerchantgalaxyvouchergenerateschemelinkAPIRequest) GetEncryptionMerchantId() string {
+func (r AlitripMerchantGalaxyVoucherGenerateSchemeLinkAPIRequest) GetEncryptionMerchantId() string {
 	return r._encryptionMerchantId
 }

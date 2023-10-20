@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/fundplatform"
 )
 
-// Alibabacfoincominginvoiceledgerfullysync 票易通全量底账数据同步
+// AlibabaCfoIncomingInvoiceLedgerFullysync 票易通全量底账数据同步
 // alibaba.cfo.incoming.invoice.ledger.fullysync
 //
 // 票易通全量底账数据同步
-func Alibabacfoincominginvoiceledgerfullysync(clt *core.SDKClient, req *fundplatform.AlibabacfoincominginvoiceledgerfullysyncAPIRequest, session string) (*fundplatform.AlibabacfoincominginvoiceledgerfullysyncAPIResponse, error) {
-	var resp fundplatform.AlibabacfoincominginvoiceledgerfullysyncAPIResponse
+func AlibabaCfoIncomingInvoiceLedgerFullysync(clt *core.SDKClient, req *fundplatform.AlibabaCfoIncomingInvoiceLedgerFullysyncAPIRequest, session string) (*fundplatform.AlibabaCfoIncomingInvoiceLedgerFullysyncAPIResponse, error) {
+	var resp fundplatform.AlibabaCfoIncomingInvoiceLedgerFullysyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

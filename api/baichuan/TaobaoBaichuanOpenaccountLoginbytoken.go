@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/baichuan"
 )
 
-// Taobaobaichuanopenaccountloginbytoken 百川TOKEN 登录
+// TaobaoBaichuanOpenaccountLoginbytoken 百川TOKEN 登录
 // taobao.baichuan.openaccount.loginbytoken
 //
 // 百川TOKEN 登录
-func Taobaobaichuanopenaccountloginbytoken(clt *core.SDKClient, req *baichuan.TaobaobaichuanopenaccountloginbytokenAPIRequest, session string) (*baichuan.TaobaobaichuanopenaccountloginbytokenAPIResponse, error) {
-	var resp baichuan.TaobaobaichuanopenaccountloginbytokenAPIResponse
+func TaobaoBaichuanOpenaccountLoginbytoken(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountLoginbytokenAPIRequest, session string) (*baichuan.TaobaoBaichuanOpenaccountLoginbytokenAPIResponse, error) {
+	var resp baichuan.TaobaoBaichuanOpenaccountLoginbytokenAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

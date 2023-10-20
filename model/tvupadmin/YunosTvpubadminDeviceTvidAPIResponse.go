@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunostvpubadmindevicetvidAPIResponse 查询终端信息 API返回值
+// YunosTvpubadminDeviceTvidAPIResponse 查询终端信息 API返回值
 // yunos.tvpubadmin.device.tvid
 //
 // 通过UUID查询终端信息
-type YunostvpubadmindevicetvidAPIResponse struct {
+type YunosTvpubadminDeviceTvidAPIResponse struct {
 	model.CommonResponse
-	YunostvpubadmindevicetvidAPIResponseModel
+	YunosTvpubadminDeviceTvidAPIResponseModel
 }
 
-// YunostvpubadmindevicetvidAPIResponseModel is 查询终端信息 成功返回结果
-type YunostvpubadmindevicetvidAPIResponseModel struct {
+// YunosTvpubadminDeviceTvidAPIResponseModel is 查询终端信息 成功返回结果
+type YunosTvpubadminDeviceTvidAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_tvpubadmin_device_tvid_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

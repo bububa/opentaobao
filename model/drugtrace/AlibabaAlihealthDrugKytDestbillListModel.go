@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaalihealthdrugkytdestbilllistModel 结构体
-type AlibabaalihealthdrugkytdestbilllistModel struct {
+// AlibabaAlihealthDrugKytDestbillListModel 结构体
+type AlibabaAlihealthDrugKytDestbillListModel struct {
 	// 药品类型
 	DrugType string `json:"drug_type,omitempty" xml:"drug_type,omitempty"`
 	// 发货单位

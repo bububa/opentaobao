@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabatjbpicturefoldercreateAPIResponse 淘特图片空间创建文件夹 API返回值
+// AlibabaTjbPictureFolderCreateAPIResponse 淘特图片空间创建文件夹 API返回值
 // alibaba.tjb.picture.folder.create
 //
 // 淘特图片空间创建文件夹
-type AlibabatjbpicturefoldercreateAPIResponse struct {
+type AlibabaTjbPictureFolderCreateAPIResponse struct {
 	model.CommonResponse
-	AlibabatjbpicturefoldercreateAPIResponseModel
+	AlibabaTjbPictureFolderCreateAPIResponseModel
 }
 
-// AlibabatjbpicturefoldercreateAPIResponseModel is 淘特图片空间创建文件夹 成功返回结果
-type AlibabatjbpicturefoldercreateAPIResponseModel struct {
+// AlibabaTjbPictureFolderCreateAPIResponseModel is 淘特图片空间创建文件夹 成功返回结果
+type AlibabaTjbPictureFolderCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_tjb_picture_folder_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

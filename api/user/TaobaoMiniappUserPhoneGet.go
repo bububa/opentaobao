@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/user"
 )
 
-// Taobaominiappuserphoneget 获取当前授权用户手机号码
+// TaobaoMiniappUserPhoneGet 获取当前授权用户手机号码
 // taobao.miniapp.user.phone.get
 //
 // 在商家应用中，获取当前授权用户手机号码
-func Taobaominiappuserphoneget(clt *core.SDKClient, req *user.TaobaominiappuserphonegetAPIRequest, session string) (*user.TaobaominiappuserphonegetAPIResponse, error) {
-	var resp user.TaobaominiappuserphonegetAPIResponse
+func TaobaoMiniappUserPhoneGet(clt *core.SDKClient, req *user.TaobaoMiniappUserPhoneGetAPIRequest, session string) (*user.TaobaoMiniappUserPhoneGetAPIResponse, error) {
+	var resp user.TaobaoMiniappUserPhoneGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

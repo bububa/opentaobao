@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabamemberisvpagequeryAPIResponse isv离线会员数据分页查询 API返回值
+// AlibabaMemberIsvPageQueryAPIResponse isv离线会员数据分页查询 API返回值
 // alibaba.member.isv.page.query
 //
 // isv离线会员数据分页查询
-type AlibabamemberisvpagequeryAPIResponse struct {
+type AlibabaMemberIsvPageQueryAPIResponse struct {
 	model.CommonResponse
-	AlibabamemberisvpagequeryAPIResponseModel
+	AlibabaMemberIsvPageQueryAPIResponseModel
 }
 
-// AlibabamemberisvpagequeryAPIResponseModel is isv离线会员数据分页查询 成功返回结果
-type AlibabamemberisvpagequeryAPIResponseModel struct {
+// AlibabaMemberIsvPageQueryAPIResponseModel is isv离线会员数据分页查询 成功返回结果
+type AlibabaMemberIsvPageQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_member_isv_page_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

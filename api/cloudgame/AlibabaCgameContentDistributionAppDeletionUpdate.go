@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/cloudgame"
 )
 
-// Alibabacgamecontentdistributionappdeletionupdate 游戏删除回调
+// AlibabaCgameContentDistributionAppDeletionUpdate 游戏删除回调
 // alibaba.cgame.content.distribution.app.deletion.update
 //
 // 游戏删除回调
-func Alibabacgamecontentdistributionappdeletionupdate(clt *core.SDKClient, req *cloudgame.AlibabacgamecontentdistributionappdeletionupdateAPIRequest, session string) (*cloudgame.AlibabacgamecontentdistributionappdeletionupdateAPIResponse, error) {
-	var resp cloudgame.AlibabacgamecontentdistributionappdeletionupdateAPIResponse
+func AlibabaCgameContentDistributionAppDeletionUpdate(clt *core.SDKClient, req *cloudgame.AlibabaCgameContentDistributionAppDeletionUpdateAPIRequest, session string) (*cloudgame.AlibabaCgameContentDistributionAppDeletionUpdateAPIResponse, error) {
+	var resp cloudgame.AlibabaCgameContentDistributionAppDeletionUpdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

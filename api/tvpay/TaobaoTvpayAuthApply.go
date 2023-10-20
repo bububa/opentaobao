@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tvpay"
 )
 
-// Taobaotvpayauthapply tv支付申请设备授权
+// TaobaoTvpayAuthApply tv支付申请设备授权
 // taobao.tvpay.auth.apply
 //
 // 为用户在指定设备上申请支付授权
-func Taobaotvpayauthapply(clt *core.SDKClient, req *tvpay.TaobaotvpayauthapplyAPIRequest, session string) (*tvpay.TaobaotvpayauthapplyAPIResponse, error) {
-	var resp tvpay.TaobaotvpayauthapplyAPIResponse
+func TaobaoTvpayAuthApply(clt *core.SDKClient, req *tvpay.TaobaoTvpayAuthApplyAPIRequest, session string) (*tvpay.TaobaoTvpayAuthApplyAPIResponse, error) {
+	var resp tvpay.TaobaoTvpayAuthApplyAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

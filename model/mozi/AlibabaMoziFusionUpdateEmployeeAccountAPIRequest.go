@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabamozifusionupdateemployeeaccountAPIRequest 更新人员和账号属性 API请求
+// AlibabaMoziFusionUpdateEmployeeAccountAPIRequest 更新人员和账号属性 API请求
 // alibaba.mozi.fusion.update.employee.account
 //
 // 更新人员和账号基本属性
-type AlibabamozifusionupdateemployeeaccountAPIRequest struct {
+type AlibabaMoziFusionUpdateEmployeeAccountAPIRequest struct {
 	model.Params
 	// 入参
 	_employeeAccount *UpdateTenantEmployeeAndAccountRequest
 }
 
-// NewAlibabamozifusionupdateemployeeaccountRequest 初始化AlibabamozifusionupdateemployeeaccountAPIRequest对象
-func NewAlibabamozifusionupdateemployeeaccountRequest() *AlibabamozifusionupdateemployeeaccountAPIRequest {
-	return &AlibabamozifusionupdateemployeeaccountAPIRequest{
+// NewAlibabaMoziFusionUpdateEmployeeAccountRequest 初始化AlibabaMoziFusionUpdateEmployeeAccountAPIRequest对象
+func NewAlibabaMoziFusionUpdateEmployeeAccountRequest() *AlibabaMoziFusionUpdateEmployeeAccountAPIRequest {
+	return &AlibabaMoziFusionUpdateEmployeeAccountAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabamozifusionupdateemployeeaccountAPIRequest) GetApiMethodName() string {
+func (r AlibabaMoziFusionUpdateEmployeeAccountAPIRequest) GetApiMethodName() string {
 	return "alibaba.mozi.fusion.update.employee.account"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabamozifusionupdateemployeeaccountAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaMoziFusionUpdateEmployeeAccountAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabamozifusionupdateemployeeaccountAPIRequest) GetRawParams() model.Params {
+func (r AlibabaMoziFusionUpdateEmployeeAccountAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetEmployeeAccount is EmployeeAccount Setter
 // 入参
-func (r *AlibabamozifusionupdateemployeeaccountAPIRequest) SetEmployeeAccount(_employeeAccount *UpdateTenantEmployeeAndAccountRequest) error {
+func (r *AlibabaMoziFusionUpdateEmployeeAccountAPIRequest) SetEmployeeAccount(_employeeAccount *UpdateTenantEmployeeAndAccountRequest) error {
 	r._employeeAccount = _employeeAccount
 	r.Set("employee_account", _employeeAccount)
 	return nil
 }
 
 // GetEmployeeAccount EmployeeAccount Getter
-func (r AlibabamozifusionupdateemployeeaccountAPIRequest) GetEmployeeAccount() *UpdateTenantEmployeeAndAccountRequest {
+func (r AlibabaMoziFusionUpdateEmployeeAccountAPIRequest) GetEmployeeAccount() *UpdateTenantEmployeeAndAccountRequest {
 	return r._employeeAccount
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdksupplierordergetAPIResponse 五道口按订单号批量查询供应商正向订单 API返回值
+// AlibabaWdkSupplierOrderGetAPIResponse 五道口按订单号批量查询供应商正向订单 API返回值
 // alibaba.wdk.supplier.order.get
 //
 // 五道口按订单号批量查询供应商正向订单
-type AlibabawdksupplierordergetAPIResponse struct {
+type AlibabaWdkSupplierOrderGetAPIResponse struct {
 	model.CommonResponse
-	AlibabawdksupplierordergetAPIResponseModel
+	AlibabaWdkSupplierOrderGetAPIResponseModel
 }
 
-// AlibabawdksupplierordergetAPIResponseModel is 五道口按订单号批量查询供应商正向订单 成功返回结果
-type AlibabawdksupplierordergetAPIResponseModel struct {
+// AlibabaWdkSupplierOrderGetAPIResponseModel is 五道口按订单号批量查询供应商正向订单 成功返回结果
+type AlibabaWdkSupplierOrderGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_supplier_order_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

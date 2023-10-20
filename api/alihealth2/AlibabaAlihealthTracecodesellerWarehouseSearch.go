@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihealth2"
 )
 
-// Alibabaalihealthtracecodesellerwarehousesearch 查询仓库api
+// AlibabaAlihealthTracecodesellerWarehouseSearch 查询仓库api
 // alibaba.alihealth.tracecodeseller.warehouse.search
 //
 // 查询仓库api
-func Alibabaalihealthtracecodesellerwarehousesearch(clt *core.SDKClient, req *alihealth2.AlibabaalihealthtracecodesellerwarehousesearchAPIRequest, session string) (*alihealth2.AlibabaalihealthtracecodesellerwarehousesearchAPIResponse, error) {
-	var resp alihealth2.AlibabaalihealthtracecodesellerwarehousesearchAPIResponse
+func AlibabaAlihealthTracecodesellerWarehouseSearch(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest, session string) (*alihealth2.AlibabaAlihealthTracecodesellerWarehouseSearchAPIResponse, error) {
+	var resp alihealth2.AlibabaAlihealthTracecodesellerWarehouseSearchAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaalihealthdrugkytdrstorageuploadResult 结构体
-type AlibabaalihealthdrugkytdrstorageuploadResult struct {
+// AlibabaAlihealthDrugKytDrStorageuploadResult 结构体
+type AlibabaAlihealthDrugKytDrStorageuploadResult struct {
 	// msgCode
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// msgInfo

@@ -1,7 +1,7 @@
 package tbrefund
 
-// TaobaorefundstatusgetResultSet 结构体
-type TaobaorefundstatusgetResultSet struct {
+// TaobaoRefundStatusGetResultSet 结构体
+type TaobaoRefundStatusGetResultSet struct {
 	// 数组对象
 	ResultList []QueryRefundStatusResponse `json:"result_list,omitempty" xml:"result_list>query_refund_status_response,omitempty"`
 	// 错误码，没有表示无异常

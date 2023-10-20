@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// Alibabaalihealthdrugcodedrugfactorygetblindresult 获取盲底文件处理结果
+// AlibabaAlihealthDrugcodeDrugfactoryGetblindresult 获取盲底文件处理结果
 // alibaba.alihealth.drugcode.drugfactory.getblindresult
 //
 // 获取盲底文件处理结果
-func Alibabaalihealthdrugcodedrugfactorygetblindresult(clt *core.SDKClient, req *drugtrace.AlibabaalihealthdrugcodedrugfactorygetblindresultAPIRequest, session string) (*drugtrace.AlibabaalihealthdrugcodedrugfactorygetblindresultAPIResponse, error) {
-	var resp drugtrace.AlibabaalihealthdrugcodedrugfactorygetblindresultAPIResponse
+func AlibabaAlihealthDrugcodeDrugfactoryGetblindresult(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIResponse, error) {
+	var resp drugtrace.AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

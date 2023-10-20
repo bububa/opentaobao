@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/einvoice"
 )
 
-// Alibabaeinvoiceincometokenreturn 服务商回传税号token
+// AlibabaEinvoiceIncomeTokenReturn 服务商回传税号token
 // alibaba.einvoice.income.token.return
 //
 // 服务商回传税号token，用来勾选抵扣认证
-func Alibabaeinvoiceincometokenreturn(clt *core.SDKClient, req *einvoice.AlibabaeinvoiceincometokenreturnAPIRequest, session string) (*einvoice.AlibabaeinvoiceincometokenreturnAPIResponse, error) {
-	var resp einvoice.AlibabaeinvoiceincometokenreturnAPIResponse
+func AlibabaEinvoiceIncomeTokenReturn(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceIncomeTokenReturnAPIRequest, session string) (*einvoice.AlibabaEinvoiceIncomeTokenReturnAPIResponse, error) {
+	var resp einvoice.AlibabaEinvoiceIncomeTokenReturnAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

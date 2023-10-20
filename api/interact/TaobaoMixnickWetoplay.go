@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/interact"
 )
 
-// Taobaomixnickwetoplay 微淘混淆nick转互动混淆nick
+// TaobaoMixnickWetoplay 微淘混淆nick转互动混淆nick
 // taobao.mixnick.wetoplay
 //
 // 微淘应用的混淆nick转为互动类型混淆nick
-func Taobaomixnickwetoplay(clt *core.SDKClient, req *interact.TaobaomixnickwetoplayAPIRequest, session string) (*interact.TaobaomixnickwetoplayAPIResponse, error) {
-	var resp interact.TaobaomixnickwetoplayAPIResponse
+func TaobaoMixnickWetoplay(clt *core.SDKClient, req *interact.TaobaoMixnickWetoplayAPIRequest, session string) (*interact.TaobaoMixnickWetoplayAPIResponse, error) {
+	var resp interact.TaobaoMixnickWetoplayAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

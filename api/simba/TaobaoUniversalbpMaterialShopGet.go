@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// Taobaouniversalbpmaterialshopget 获取店铺信息
+// TaobaoUniversalbpMaterialShopGet 获取店铺信息
 // taobao.universalbp.material.shop.get
 //
 // 获取店铺信息
-func Taobaouniversalbpmaterialshopget(clt *core.SDKClient, req *simba.TaobaouniversalbpmaterialshopgetAPIRequest, session string) (*simba.TaobaouniversalbpmaterialshopgetAPIResponse, error) {
-	var resp simba.TaobaouniversalbpmaterialshopgetAPIResponse
+func TaobaoUniversalbpMaterialShopGet(clt *core.SDKClient, req *simba.TaobaoUniversalbpMaterialShopGetAPIRequest, session string) (*simba.TaobaoUniversalbpMaterialShopGetAPIResponse, error) {
+	var resp simba.TaobaoUniversalbpMaterialShopGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

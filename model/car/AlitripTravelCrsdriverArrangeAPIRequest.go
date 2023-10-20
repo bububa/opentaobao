@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitriptravelcrsdriverarrangeAPIRequest CRS接送机商家派司机接口 API请求
+// AlitripTravelCrsdriverArrangeAPIRequest CRS接送机商家派司机接口 API请求
 // alitrip.travel.crsdriver.arrange
 //
 // 提供给CRS接送机商家派司机的API
-type AlitriptravelcrsdriverarrangeAPIRequest struct {
+type AlitripTravelCrsdriverArrangeAPIRequest struct {
 	model.Params
 	// 请求对象
 	_crsDriverArrangeParam *CrsDriverArrangeParam
 }
 
-// NewAlitriptravelcrsdriverarrangeRequest 初始化AlitriptravelcrsdriverarrangeAPIRequest对象
-func NewAlitriptravelcrsdriverarrangeRequest() *AlitriptravelcrsdriverarrangeAPIRequest {
-	return &AlitriptravelcrsdriverarrangeAPIRequest{
+// NewAlitripTravelCrsdriverArrangeRequest 初始化AlitripTravelCrsdriverArrangeAPIRequest对象
+func NewAlitripTravelCrsdriverArrangeRequest() *AlitripTravelCrsdriverArrangeAPIRequest {
+	return &AlitripTravelCrsdriverArrangeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitriptravelcrsdriverarrangeAPIRequest) GetApiMethodName() string {
+func (r AlitripTravelCrsdriverArrangeAPIRequest) GetApiMethodName() string {
 	return "alitrip.travel.crsdriver.arrange"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitriptravelcrsdriverarrangeAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripTravelCrsdriverArrangeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitriptravelcrsdriverarrangeAPIRequest) GetRawParams() model.Params {
+func (r AlitripTravelCrsdriverArrangeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCrsDriverArrangeParam is CrsDriverArrangeParam Setter
 // 请求对象
-func (r *AlitriptravelcrsdriverarrangeAPIRequest) SetCrsDriverArrangeParam(_crsDriverArrangeParam *CrsDriverArrangeParam) error {
+func (r *AlitripTravelCrsdriverArrangeAPIRequest) SetCrsDriverArrangeParam(_crsDriverArrangeParam *CrsDriverArrangeParam) error {
 	r._crsDriverArrangeParam = _crsDriverArrangeParam
 	r.Set("crs_driver_arrange_param", _crsDriverArrangeParam)
 	return nil
 }
 
 // GetCrsDriverArrangeParam CrsDriverArrangeParam Getter
-func (r AlitriptravelcrsdriverarrangeAPIRequest) GetCrsDriverArrangeParam() *CrsDriverArrangeParam {
+func (r AlitripTravelCrsdriverArrangeAPIRequest) GetCrsDriverArrangeParam() *CrsDriverArrangeParam {
 	return r._crsDriverArrangeParam
 }

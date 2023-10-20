@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaominiappvirtualitemgetAPIRequest 小程序关联虚拟商品查询 API请求
+// TaobaoMiniappVirtualItemGetAPIRequest 小程序关联虚拟商品查询 API请求
 // taobao.miniapp.virtual.item.get
 //
 // 小程序关联虚拟商品查询
-type TaobaominiappvirtualitemgetAPIRequest struct {
+type TaobaoMiniappVirtualItemGetAPIRequest struct {
 	model.Params
 	// 请求
 	_itemRequest *MiniappItemRequest
 }
 
-// NewTaobaominiappvirtualitemgetRequest 初始化TaobaominiappvirtualitemgetAPIRequest对象
-func NewTaobaominiappvirtualitemgetRequest() *TaobaominiappvirtualitemgetAPIRequest {
-	return &TaobaominiappvirtualitemgetAPIRequest{
+// NewTaobaoMiniappVirtualItemGetRequest 初始化TaobaoMiniappVirtualItemGetAPIRequest对象
+func NewTaobaoMiniappVirtualItemGetRequest() *TaobaoMiniappVirtualItemGetAPIRequest {
+	return &TaobaoMiniappVirtualItemGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaominiappvirtualitemgetAPIRequest) GetApiMethodName() string {
+func (r TaobaoMiniappVirtualItemGetAPIRequest) GetApiMethodName() string {
 	return "taobao.miniapp.virtual.item.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaominiappvirtualitemgetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoMiniappVirtualItemGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaominiappvirtualitemgetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoMiniappVirtualItemGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetItemRequest is ItemRequest Setter
 // 请求
-func (r *TaobaominiappvirtualitemgetAPIRequest) SetItemRequest(_itemRequest *MiniappItemRequest) error {
+func (r *TaobaoMiniappVirtualItemGetAPIRequest) SetItemRequest(_itemRequest *MiniappItemRequest) error {
 	r._itemRequest = _itemRequest
 	r.Set("item_request", _itemRequest)
 	return nil
 }
 
 // GetItemRequest ItemRequest Getter
-func (r TaobaominiappvirtualitemgetAPIRequest) GetItemRequest() *MiniappItemRequest {
+func (r TaobaoMiniappVirtualItemGetAPIRequest) GetItemRequest() *MiniappItemRequest {
 	return r._itemRequest
 }

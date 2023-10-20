@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/icbushowcase"
 )
 
-// Alibabascbpshowcaseupdateproduct 替换橱窗商品
+// AlibabaScbpShowcaseUpdateproduct 替换橱窗商品
 // alibaba.scbp.showcase.updateproduct
 //
 // 替换橱窗商品
-func Alibabascbpshowcaseupdateproduct(clt *core.SDKClient, req *icbushowcase.AlibabascbpshowcaseupdateproductAPIRequest, session string) (*icbushowcase.AlibabascbpshowcaseupdateproductAPIResponse, error) {
-	var resp icbushowcase.AlibabascbpshowcaseupdateproductAPIResponse
+func AlibabaScbpShowcaseUpdateproduct(clt *core.SDKClient, req *icbushowcase.AlibabaScbpShowcaseUpdateproductAPIRequest, session string) (*icbushowcase.AlibabaScbpShowcaseUpdateproductAPIResponse, error) {
+	var resp icbushowcase.AlibabaScbpShowcaseUpdateproductAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

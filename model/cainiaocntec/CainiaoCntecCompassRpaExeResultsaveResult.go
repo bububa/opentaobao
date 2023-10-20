@@ -1,7 +1,7 @@
 package cainiaocntec
 
-// CainiaocnteccompassrpaexeresultsaveResult 结构体
-type CainiaocnteccompassrpaexeresultsaveResult struct {
+// CainiaoCntecCompassRpaExeResultsaveResult 结构体
+type CainiaoCntecCompassRpaExeResultsaveResult struct {
 	// 请求trace_id
 	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
 	// 错误code

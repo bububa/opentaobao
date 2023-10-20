@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaofenxiaodealerrequisitionordercloseAPIResponse 供应商/分销商关闭采购申请/经销采购单 API返回值
+// TaobaoFenxiaoDealerRequisitionorderCloseAPIResponse 供应商/分销商关闭采购申请/经销采购单 API返回值
 // taobao.fenxiao.dealer.requisitionorder.close
 //
 // 供应商或分销商关闭采购申请/经销采购单
-type TaobaofenxiaodealerrequisitionordercloseAPIResponse struct {
+type TaobaoFenxiaoDealerRequisitionorderCloseAPIResponse struct {
 	model.CommonResponse
-	TaobaofenxiaodealerrequisitionordercloseAPIResponseModel
+	TaobaoFenxiaoDealerRequisitionorderCloseAPIResponseModel
 }
 
-// TaobaofenxiaodealerrequisitionordercloseAPIResponseModel is 供应商/分销商关闭采购申请/经销采购单 成功返回结果
-type TaobaofenxiaodealerrequisitionordercloseAPIResponseModel struct {
+// TaobaoFenxiaoDealerRequisitionorderCloseAPIResponseModel is 供应商/分销商关闭采购申请/经销采购单 成功返回结果
+type TaobaoFenxiaoDealerRequisitionorderCloseAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_dealer_requisitionorder_close_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

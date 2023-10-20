@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpressascproqueryAPIRequest AliExpress退供单查询API API请求
+// AliexpressAscpRoQueryAPIRequest AliExpress退供单查询API API请求
 // aliexpress.ascp.ro.query
 //
 // AE仓发商家单个退供单查询接口
-type AliexpressascproqueryAPIRequest struct {
+type AliexpressAscpRoQueryAPIRequest struct {
 	model.Params
 	// dto
 	_returnOrderQuery *ReturnOrderQueryDto
 }
 
-// NewAliexpressascproqueryRequest 初始化AliexpressascproqueryAPIRequest对象
-func NewAliexpressascproqueryRequest() *AliexpressascproqueryAPIRequest {
-	return &AliexpressascproqueryAPIRequest{
+// NewAliexpressAscpRoQueryRequest 初始化AliexpressAscpRoQueryAPIRequest对象
+func NewAliexpressAscpRoQueryRequest() *AliexpressAscpRoQueryAPIRequest {
+	return &AliexpressAscpRoQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AliexpressascproqueryAPIRequest) GetApiMethodName() string {
+func (r AliexpressAscpRoQueryAPIRequest) GetApiMethodName() string {
 	return "aliexpress.ascp.ro.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AliexpressascproqueryAPIRequest) GetApiParams(params url.Values) {
+func (r AliexpressAscpRoQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AliexpressascproqueryAPIRequest) GetRawParams() model.Params {
+func (r AliexpressAscpRoQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetReturnOrderQuery is ReturnOrderQuery Setter
 // dto
-func (r *AliexpressascproqueryAPIRequest) SetReturnOrderQuery(_returnOrderQuery *ReturnOrderQueryDto) error {
+func (r *AliexpressAscpRoQueryAPIRequest) SetReturnOrderQuery(_returnOrderQuery *ReturnOrderQueryDto) error {
 	r._returnOrderQuery = _returnOrderQuery
 	r.Set("return_order_query", _returnOrderQuery)
 	return nil
 }
 
 // GetReturnOrderQuery ReturnOrderQuery Getter
-func (r AliexpressascproqueryAPIRequest) GetReturnOrderQuery() *ReturnOrderQueryDto {
+func (r AliexpressAscpRoQueryAPIRequest) GetReturnOrderQuery() *ReturnOrderQueryDto {
 	return r._returnOrderQuery
 }

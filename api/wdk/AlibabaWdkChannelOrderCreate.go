@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// Alibabawdkchannelordercreate 创建订单
+// AlibabaWdkChannelOrderCreate 创建订单
 // alibaba.wdk.channel.order.create
 //
 // 外部商家创建订单
-func Alibabawdkchannelordercreate(clt *core.SDKClient, req *wdk.AlibabawdkchannelordercreateAPIRequest, session string) (*wdk.AlibabawdkchannelordercreateAPIResponse, error) {
-	var resp wdk.AlibabawdkchannelordercreateAPIResponse
+func AlibabaWdkChannelOrderCreate(clt *core.SDKClient, req *wdk.AlibabaWdkChannelOrderCreateAPIRequest, session string) (*wdk.AlibabaWdkChannelOrderCreateAPIResponse, error) {
+	var resp wdk.AlibabaWdkChannelOrderCreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

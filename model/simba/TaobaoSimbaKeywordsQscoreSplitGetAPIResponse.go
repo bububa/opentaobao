@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosimbakeywordsqscoresplitgetAPIResponse 新质量分服务 API返回值
+// TaobaoSimbaKeywordsQscoreSplitGetAPIResponse 新质量分服务 API返回值
 // taobao.simba.keywords.qscore.split.get
 //
 // 获取关键词新的质量分
-type TaobaosimbakeywordsqscoresplitgetAPIResponse struct {
+type TaobaoSimbaKeywordsQscoreSplitGetAPIResponse struct {
 	model.CommonResponse
-	TaobaosimbakeywordsqscoresplitgetAPIResponseModel
+	TaobaoSimbaKeywordsQscoreSplitGetAPIResponseModel
 }
 
-// TaobaosimbakeywordsqscoresplitgetAPIResponseModel is 新质量分服务 成功返回结果
-type TaobaosimbakeywordsqscoresplitgetAPIResponseModel struct {
+// TaobaoSimbaKeywordsQscoreSplitGetAPIResponseModel is 新质量分服务 成功返回结果
+type TaobaoSimbaKeywordsQscoreSplitGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_keywords_qscore_split_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
-	Result *TaobaosimbakeywordsqscoresplitgetResultDto `json:"result,omitempty" xml:"result,omitempty"`
+	Result *TaobaoSimbaKeywordsQscoreSplitGetResultDto `json:"result,omitempty" xml:"result,omitempty"`
 }

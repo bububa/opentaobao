@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthexaminationreportdiagnoseorderverifyAPIRequest 报告解读令牌校验 API请求
+// AlibabaAlihealthExaminationReportDiagnoseOrderVerifyAPIRequest 报告解读令牌校验 API请求
 // alibaba.alihealth.examination.report.diagnose.order.verify
 //
 // 报告解读令牌校验
-type AlibabaalihealthexaminationreportdiagnoseorderverifyAPIRequest struct {
+type AlibabaAlihealthExaminationReportDiagnoseOrderVerifyAPIRequest struct {
 	model.Params
 	// 请求对象
 	_reportImTokenStatusRequest *ReportImTokenStatusRequest
 }
 
-// NewAlibabaalihealthexaminationreportdiagnoseorderverifyRequest 初始化AlibabaalihealthexaminationreportdiagnoseorderverifyAPIRequest对象
-func NewAlibabaalihealthexaminationreportdiagnoseorderverifyRequest() *AlibabaalihealthexaminationreportdiagnoseorderverifyAPIRequest {
-	return &AlibabaalihealthexaminationreportdiagnoseorderverifyAPIRequest{
+// NewAlibabaAlihealthExaminationReportDiagnoseOrderVerifyRequest 初始化AlibabaAlihealthExaminationReportDiagnoseOrderVerifyAPIRequest对象
+func NewAlibabaAlihealthExaminationReportDiagnoseOrderVerifyRequest() *AlibabaAlihealthExaminationReportDiagnoseOrderVerifyAPIRequest {
+	return &AlibabaAlihealthExaminationReportDiagnoseOrderVerifyAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalihealthexaminationreportdiagnoseorderverifyAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthExaminationReportDiagnoseOrderVerifyAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.examination.report.diagnose.order.verify"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalihealthexaminationreportdiagnoseorderverifyAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlihealthExaminationReportDiagnoseOrderVerifyAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalihealthexaminationreportdiagnoseorderverifyAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlihealthExaminationReportDiagnoseOrderVerifyAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetReportImTokenStatusRequest is ReportImTokenStatusRequest Setter
 // 请求对象
-func (r *AlibabaalihealthexaminationreportdiagnoseorderverifyAPIRequest) SetReportImTokenStatusRequest(_reportImTokenStatusRequest *ReportImTokenStatusRequest) error {
+func (r *AlibabaAlihealthExaminationReportDiagnoseOrderVerifyAPIRequest) SetReportImTokenStatusRequest(_reportImTokenStatusRequest *ReportImTokenStatusRequest) error {
 	r._reportImTokenStatusRequest = _reportImTokenStatusRequest
 	r.Set("report_im_token_status_request", _reportImTokenStatusRequest)
 	return nil
 }
 
 // GetReportImTokenStatusRequest ReportImTokenStatusRequest Getter
-func (r AlibabaalihealthexaminationreportdiagnoseorderverifyAPIRequest) GetReportImTokenStatusRequest() *ReportImTokenStatusRequest {
+func (r AlibabaAlihealthExaminationReportDiagnoseOrderVerifyAPIRequest) GetReportImTokenStatusRequest() *ReportImTokenStatusRequest {
 	return r._reportImTokenStatusRequest
 }

@@ -1,7 +1,7 @@
 package product
 
-// TmallitemskustatusgetApiResult 结构体
-type TmallitemskustatusgetApiResult struct {
+// TmallItemSkuStatusGetApiResult 结构体
+type TmallItemSkuStatusGetApiResult struct {
 	// 错误信息
 	ErrorCodes []ErrorCode `json:"error_codes,omitempty" xml:"error_codes>error_code,omitempty"`
 	// 执行结果

@@ -1,7 +1,7 @@
 package brandhub
 
-// TaobaobrandstartshoprptwordpackagegetResult 结构体
-type TaobaobrandstartshoprptwordpackagegetResult struct {
+// TaobaoBrandStartshopRptWordpackageGetResult 结构体
+type TaobaoBrandStartshopRptWordpackageGetResult struct {
 	// 日期
 	Thedate string `json:"thedate,omitempty" xml:"thedate,omitempty"`
 	// 点击率

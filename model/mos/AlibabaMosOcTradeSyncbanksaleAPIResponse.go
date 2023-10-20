@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabamosoctradesyncbanksaleAPIResponse 云闪付、银行卡销售数据回传接口 API返回值
+// AlibabaMosOcTradeSyncbanksaleAPIResponse 云闪付、银行卡销售数据回传接口 API返回值
 // alibaba.mos.oc.trade.syncbanksale
 //
 // 云闪付、银行卡销售数据回传
-type AlibabamosoctradesyncbanksaleAPIResponse struct {
+type AlibabaMosOcTradeSyncbanksaleAPIResponse struct {
 	model.CommonResponse
-	AlibabamosoctradesyncbanksaleAPIResponseModel
+	AlibabaMosOcTradeSyncbanksaleAPIResponseModel
 }
 
-// AlibabamosoctradesyncbanksaleAPIResponseModel is 云闪付、银行卡销售数据回传接口 成功返回结果
-type AlibabamosoctradesyncbanksaleAPIResponseModel struct {
+// AlibabaMosOcTradeSyncbanksaleAPIResponseModel is 云闪付、银行卡销售数据回传接口 成功返回结果
+type AlibabaMosOcTradeSyncbanksaleAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mos_oc_trade_syncbanksale_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// resultDTO
-	Result *AlibabamosoctradesyncbanksaleResultDo `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaMosOcTradeSyncbanksaleResultDo `json:"result,omitempty" xml:"result,omitempty"`
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdkhrworkbenchmokaentryreceiptwriteAPIResponse 摩卡确认入职后往入职单据表写数据接口 API返回值
+// AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponse 摩卡确认入职后往入职单据表写数据接口 API返回值
 // alibaba.wdk.hrworkbench.moka.entry.receipt.write
 //
 // 摩卡确认入职后往入职单据表写数据接口
-type AlibabawdkhrworkbenchmokaentryreceiptwriteAPIResponse struct {
+type AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponse struct {
 	model.CommonResponse
-	AlibabawdkhrworkbenchmokaentryreceiptwriteAPIResponseModel
+	AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponseModel
 }
 
-// AlibabawdkhrworkbenchmokaentryreceiptwriteAPIResponseModel is 摩卡确认入职后往入职单据表写数据接口 成功返回结果
-type AlibabawdkhrworkbenchmokaentryreceiptwriteAPIResponseModel struct {
+// AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponseModel is 摩卡确认入职后往入职单据表写数据接口 成功返回结果
+type AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_hrworkbench_moka_entry_receipt_write_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

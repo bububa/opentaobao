@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallservicecenterworkcardtpconfirmAPIResponse 确认服务完成 API返回值
+// TmallServicecenterWorkcardTpconfirmAPIResponse 确认服务完成 API返回值
 // tmall.servicecenter.workcard.tpconfirm
 //
 // 服务商确认服务完成
-type TmallservicecenterworkcardtpconfirmAPIResponse struct {
+type TmallServicecenterWorkcardTpconfirmAPIResponse struct {
 	model.CommonResponse
-	TmallservicecenterworkcardtpconfirmAPIResponseModel
+	TmallServicecenterWorkcardTpconfirmAPIResponseModel
 }
 
-// TmallservicecenterworkcardtpconfirmAPIResponseModel is 确认服务完成 成功返回结果
-type TmallservicecenterworkcardtpconfirmAPIResponseModel struct {
+// TmallServicecenterWorkcardTpconfirmAPIResponseModel is 确认服务完成 成功返回结果
+type TmallServicecenterWorkcardTpconfirmAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_workcard_tpconfirm_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/jipiao"
 )
 
-// Taobaoalitripsellerrefundconfirmreturn 【机票代理商】确认退票
+// TaobaoAlitripSellerRefundConfirmreturn 【机票代理商】确认退票
 // taobao.alitrip.seller.refund.confirmreturn
 //
 // 确认退票
-func Taobaoalitripsellerrefundconfirmreturn(clt *core.SDKClient, req *jipiao.TaobaoalitripsellerrefundconfirmreturnAPIRequest, session string) (*jipiao.TaobaoalitripsellerrefundconfirmreturnAPIResponse, error) {
-	var resp jipiao.TaobaoalitripsellerrefundconfirmreturnAPIResponse
+func TaobaoAlitripSellerRefundConfirmreturn(clt *core.SDKClient, req *jipiao.TaobaoAlitripSellerRefundConfirmreturnAPIRequest, session string) (*jipiao.TaobaoAlitripSellerRefundConfirmreturnAPIResponse, error) {
+	var resp jipiao.TaobaoAlitripSellerRefundConfirmreturnAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

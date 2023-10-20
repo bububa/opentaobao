@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabatmallgeniescpplanrawpogapreturnAPIResponse 二级物料-LT内的POGAP数据回传 API返回值
+// AlibabaTmallgenieScpPlanRawpoGapReturnAPIResponse 二级物料-LT内的POGAP数据回传 API返回值
 // alibaba.tmallgenie.scp.plan.rawpo.gap.return
 //
 // 二级物料-LT内的POGAP数据回传
-type AlibabatmallgeniescpplanrawpogapreturnAPIResponse struct {
+type AlibabaTmallgenieScpPlanRawpoGapReturnAPIResponse struct {
 	model.CommonResponse
-	AlibabatmallgeniescpplanrawpogapreturnAPIResponseModel
+	AlibabaTmallgenieScpPlanRawpoGapReturnAPIResponseModel
 }
 
-// AlibabatmallgeniescpplanrawpogapreturnAPIResponseModel is 二级物料-LT内的POGAP数据回传 成功返回结果
-type AlibabatmallgeniescpplanrawpogapreturnAPIResponseModel struct {
+// AlibabaTmallgenieScpPlanRawpoGapReturnAPIResponseModel is 二级物料-LT内的POGAP数据回传 成功返回结果
+type AlibabaTmallgenieScpPlanRawpoGapReturnAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_tmallgenie_scp_plan_rawpo_gap_return_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

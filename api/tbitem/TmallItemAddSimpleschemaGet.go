@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tbitem"
 )
 
-// Tmallitemaddsimpleschemaget 天猫发布商品规则获取
+// TmallItemAddSimpleschemaGet 天猫发布商品规则获取
 // tmall.item.add.simpleschema.get
 //
 // 通过商家信息获取商品发布字段和规则。
-func Tmallitemaddsimpleschemaget(clt *core.SDKClient, req *tbitem.TmallitemaddsimpleschemagetAPIRequest, session string) (*tbitem.TmallitemaddsimpleschemagetAPIResponse, error) {
-	var resp tbitem.TmallitemaddsimpleschemagetAPIResponse
+func TmallItemAddSimpleschemaGet(clt *core.SDKClient, req *tbitem.TmallItemAddSimpleschemaGetAPIRequest, session string) (*tbitem.TmallItemAddSimpleschemaGetAPIResponse, error) {
+	var resp tbitem.TmallItemAddSimpleschemaGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

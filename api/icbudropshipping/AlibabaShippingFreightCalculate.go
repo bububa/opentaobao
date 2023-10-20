@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/icbudropshipping"
 )
 
-// Alibabashippingfreightcalculate 阿里巴巴商品运费计算查询接口
+// AlibabaShippingFreightCalculate 阿里巴巴商品运费计算查询接口
 // alibaba.shipping.freight.calculate
 //
 // 阿里巴巴商品运费计算查询接口
-func Alibabashippingfreightcalculate(clt *core.SDKClient, req *icbudropshipping.AlibabashippingfreightcalculateAPIRequest, session string) (*icbudropshipping.AlibabashippingfreightcalculateAPIResponse, error) {
-	var resp icbudropshipping.AlibabashippingfreightcalculateAPIResponse
+func AlibabaShippingFreightCalculate(clt *core.SDKClient, req *icbudropshipping.AlibabaShippingFreightCalculateAPIRequest, session string) (*icbudropshipping.AlibabaShippingFreightCalculateAPIResponse, error) {
+	var resp icbudropshipping.AlibabaShippingFreightCalculateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

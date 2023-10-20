@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/cainiaocntec"
 )
 
-// Cainiaocnteclocallifecommunitylifesyncorderstatus 订单状态推送
+// CainiaoCntecLocallifeCommunitylifeSyncorderstatus 订单状态推送
 // cainiao.cntec.locallife.communitylife.syncorderstatus
 //
 // 订单状态推送
-func Cainiaocnteclocallifecommunitylifesyncorderstatus(clt *core.SDKClient, req *cainiaocntec.CainiaocnteclocallifecommunitylifesyncorderstatusAPIRequest, session string) (*cainiaocntec.CainiaocnteclocallifecommunitylifesyncorderstatusAPIResponse, error) {
-	var resp cainiaocntec.CainiaocnteclocallifecommunitylifesyncorderstatusAPIResponse
+func CainiaoCntecLocallifeCommunitylifeSyncorderstatus(clt *core.SDKClient, req *cainiaocntec.CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIRequest, session string) (*cainiaocntec.CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponse, error) {
+	var resp cainiaocntec.CainiaoCntecLocallifeCommunitylifeSyncorderstatusAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

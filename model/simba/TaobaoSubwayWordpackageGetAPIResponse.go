@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosubwaywordpackagegetAPIResponse 获取词包列表 API返回值
+// TaobaoSubwayWordpackageGetAPIResponse 获取词包列表 API返回值
 // taobao.subway.wordpackage.get
 //
 // 获取流量智选、捡漏词包等词包列表
-type TaobaosubwaywordpackagegetAPIResponse struct {
+type TaobaoSubwayWordpackageGetAPIResponse struct {
 	model.CommonResponse
-	TaobaosubwaywordpackagegetAPIResponseModel
+	TaobaoSubwayWordpackageGetAPIResponseModel
 }
 
-// TaobaosubwaywordpackagegetAPIResponseModel is 获取词包列表 成功返回结果
-type TaobaosubwaywordpackagegetAPIResponseModel struct {
+// TaobaoSubwayWordpackageGetAPIResponseModel is 获取词包列表 成功返回结果
+type TaobaoSubwayWordpackageGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"subway_wordpackage_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

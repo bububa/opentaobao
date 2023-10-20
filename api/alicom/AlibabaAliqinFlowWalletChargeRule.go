@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alicom"
 )
 
-// Alibabaaliqinflowwalletchargerule 流量钱包直充（根据号码归属地省份路由）
+// AlibabaAliqinFlowWalletChargeRule 流量钱包直充（根据号码归属地省份路由）
 // alibaba.aliqin.flow.wallet.charge.rule
 //
 // 流量钱包直充（根据号码归属地省份路由）
-func Alibabaaliqinflowwalletchargerule(clt *core.SDKClient, req *alicom.AlibabaaliqinflowwalletchargeruleAPIRequest, session string) (*alicom.AlibabaaliqinflowwalletchargeruleAPIResponse, error) {
-	var resp alicom.AlibabaaliqinflowwalletchargeruleAPIResponse
+func AlibabaAliqinFlowWalletChargeRule(clt *core.SDKClient, req *alicom.AlibabaAliqinFlowWalletChargeRuleAPIRequest, session string) (*alicom.AlibabaAliqinFlowWalletChargeRuleAPIResponse, error) {
+	var resp alicom.AlibabaAliqinFlowWalletChargeRuleAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

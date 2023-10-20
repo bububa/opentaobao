@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotmcusercancelAPIResponse 取消用户的消息服务 API返回值
+// TaobaoTmcUserCancelAPIResponse 取消用户的消息服务 API返回值
 // taobao.tmc.user.cancel
 //
 // 取消用户的消息服务
-type TaobaotmcusercancelAPIResponse struct {
+type TaobaoTmcUserCancelAPIResponse struct {
 	model.CommonResponse
-	TaobaotmcusercancelAPIResponseModel
+	TaobaoTmcUserCancelAPIResponseModel
 }
 
-// TaobaotmcusercancelAPIResponseModel is 取消用户的消息服务 成功返回结果
-type TaobaotmcusercancelAPIResponseModel struct {
+// TaobaoTmcUserCancelAPIResponseModel is 取消用户的消息服务 成功返回结果
+type TaobaoTmcUserCancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmc_user_cancel_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaobustvmcreateqrcodesetAPIResponse 自助机生成支付宝支付二维码 API返回值
+// TaobaoBusTvmcreateqrcodeSetAPIResponse 自助机生成支付宝支付二维码 API返回值
 // taobao.bus.tvmcreateqrcode.set
 //
 // 用于汽车票线下自助机调用获取支付宝的二维码
-type TaobaobustvmcreateqrcodesetAPIResponse struct {
+type TaobaoBusTvmcreateqrcodeSetAPIResponse struct {
 	model.CommonResponse
-	TaobaobustvmcreateqrcodesetAPIResponseModel
+	TaobaoBusTvmcreateqrcodeSetAPIResponseModel
 }
 
-// TaobaobustvmcreateqrcodesetAPIResponseModel is 自助机生成支付宝支付二维码 成功返回结果
-type TaobaobustvmcreateqrcodesetAPIResponseModel struct {
+// TaobaoBusTvmcreateqrcodeSetAPIResponseModel is 自助机生成支付宝支付二维码 成功返回结果
+type TaobaoBusTvmcreateqrcodeSetAPIResponseModel struct {
 	XMLName xml.Name `xml:"bus_tvmcreateqrcode_set_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

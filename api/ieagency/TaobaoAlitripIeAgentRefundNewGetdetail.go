@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ieagency"
 )
 
-// Taobaoalitripieagentrefundnewgetdetail 查询申请单详情(新版)
+// TaobaoAlitripIeAgentRefundNewGetdetail 查询申请单详情(新版)
 // taobao.alitrip.ie.agent.refund.new.getdetail
 //
 // 查询申请单详情
-func Taobaoalitripieagentrefundnewgetdetail(clt *core.SDKClient, req *ieagency.TaobaoalitripieagentrefundnewgetdetailAPIRequest, session string) (*ieagency.TaobaoalitripieagentrefundnewgetdetailAPIResponse, error) {
-	var resp ieagency.TaobaoalitripieagentrefundnewgetdetailAPIResponse
+func TaobaoAlitripIeAgentRefundNewGetdetail(clt *core.SDKClient, req *ieagency.TaobaoAlitripIeAgentRefundNewGetdetailAPIRequest, session string) (*ieagency.TaobaoAlitripIeAgentRefundNewGetdetailAPIResponse, error) {
+	var resp ieagency.TaobaoAlitripIeAgentRefundNewGetdetailAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

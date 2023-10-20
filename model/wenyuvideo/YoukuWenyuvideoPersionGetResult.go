@@ -1,7 +1,7 @@
 package wenyuvideo
 
-// YoukuwenyuvideopersiongetResult 结构体
-type YoukuwenyuvideopersiongetResult struct {
+// YoukuWenyuvideoPersionGetResult 结构体
+type YoukuWenyuvideoPersionGetResult struct {
 	// 业务扩展数据
 	BizExtMap string `json:"biz_ext_map,omitempty" xml:"biz_ext_map,omitempty"`
 	// 错误码，业务错误码

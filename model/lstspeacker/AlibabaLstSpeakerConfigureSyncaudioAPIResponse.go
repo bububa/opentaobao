@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabalstspeakerconfiguresyncaudioAPIResponse 音频同步 API返回值
+// AlibabaLstSpeakerConfigureSyncaudioAPIResponse 音频同步 API返回值
 // alibaba.lst.speaker.configure.syncaudio
 //
 // 音频同步
-type AlibabalstspeakerconfiguresyncaudioAPIResponse struct {
+type AlibabaLstSpeakerConfigureSyncaudioAPIResponse struct {
 	model.CommonResponse
-	AlibabalstspeakerconfiguresyncaudioAPIResponseModel
+	AlibabaLstSpeakerConfigureSyncaudioAPIResponseModel
 }
 
-// AlibabalstspeakerconfiguresyncaudioAPIResponseModel is 音频同步 成功返回结果
-type AlibabalstspeakerconfiguresyncaudioAPIResponseModel struct {
+// AlibabaLstSpeakerConfigureSyncaudioAPIResponseModel is 音频同步 成功返回结果
+type AlibabaLstSpeakerConfigureSyncaudioAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_lst_speaker_configure_syncaudio_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

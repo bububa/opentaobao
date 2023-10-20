@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabatclsaelophyorderreceiptqueryApiResult 结构体
-type AlibabatclsaelophyorderreceiptqueryApiResult struct {
+// AlibabaTclsAelophyOrderReceiptQueryApiResult 结构体
+type AlibabaTclsAelophyOrderReceiptQueryApiResult struct {
 	// 打印商家/顾客联小票数据列表
 	OrderList []ReceiptDto `json:"order_list,omitempty" xml:"order_list>receipt_dto,omitempty"`
 	// 错误码

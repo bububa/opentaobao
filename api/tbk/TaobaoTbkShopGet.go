@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tbk"
 )
 
-// Taobaotbkshopget 淘宝客-推广者-店铺搜索
+// TaobaoTbkShopGet 淘宝客-推广者-店铺搜索
 // taobao.tbk.shop.get
 //
 // 淘宝客店铺查询
-func Taobaotbkshopget(clt *core.SDKClient, req *tbk.TaobaotbkshopgetAPIRequest, session string) (*tbk.TaobaotbkshopgetAPIResponse, error) {
-	var resp tbk.TaobaotbkshopgetAPIResponse
+func TaobaoTbkShopGet(clt *core.SDKClient, req *tbk.TaobaoTbkShopGetAPIRequest, session string) (*tbk.TaobaoTbkShopGetAPIResponse, error) {
+	var resp tbk.TaobaoTbkShopGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

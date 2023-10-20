@@ -5,7 +5,7 @@ import (
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-// Tmallservicecenterworkerupdate 修改工人信息
+// TmallServicecenterWorkerUpdate 修改工人信息
 // tmall.servicecenter.worker.update
 //
 // 修改工人信息。该接口为多个业务公用，部分字段可忽略。对于电器预约安装业务，同一个服务商，通过工人姓名+手机号+biz_type 保证唯一性。工人已存在才可以修改。
@@ -24,8 +24,8 @@ import (
 // 11000, category_id 无效
 // 11001, biz_type 无效
 // 20001,已查询到最后一页
-func Tmallservicecenterworkerupdate(clt *core.SDKClient, req *tmallservice.TmallservicecenterworkerupdateAPIRequest, session string) (*tmallservice.TmallservicecenterworkerupdateAPIResponse, error) {
-	var resp tmallservice.TmallservicecenterworkerupdateAPIResponse
+func TmallServicecenterWorkerUpdate(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerUpdateAPIRequest, session string) (*tmallservice.TmallServicecenterWorkerUpdateAPIResponse, error) {
+	var resp tmallservice.TmallServicecenterWorkerUpdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,7 +1,7 @@
 package koubeimall
 
-// TaobaokoubeimallcommonitemshelfpageResult 结构体
-type TaobaokoubeimallcommonitemshelfpageResult struct {
+// TaobaoKoubeiMallCommonItemShelfPageResult 结构体
+type TaobaoKoubeiMallCommonItemShelfPageResult struct {
 	// API请求全链路追踪ID
 	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
 	// 门店货架商品列表信息

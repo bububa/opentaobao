@@ -1,7 +1,7 @@
 package trade
 
-// TaobaokoubeitribeopenorderpageResult 结构体
-type TaobaokoubeitribeopenorderpageResult struct {
+// TaobaoKoubeiTribeOpenOrderPageResult 结构体
+type TaobaoKoubeiTribeOpenOrderPageResult struct {
 	// request唯一ID
 	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
 	// 错误提示

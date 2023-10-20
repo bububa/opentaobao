@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AccountaliyuncscomgetPubKey20130701APIResponse 获取用户公钥 API返回值
+// AccountAliyuncsComGetPubKey20130701APIResponse 获取用户公钥 API返回值
 // account.aliyuncs.com.GetPubKey.2013-07-01
 //
 // 根据用户的appkey查询用户的pubkey
-type AccountaliyuncscomgetPubKey20130701APIResponse struct {
+type AccountAliyuncsComGetPubKey20130701APIResponse struct {
 	model.CommonResponse
-	AccountaliyuncscomgetPubKey20130701APIResponseModel
+	AccountAliyuncsComGetPubKey20130701APIResponseModel
 }
 
-// AccountaliyuncscomgetPubKey20130701APIResponseModel is 获取用户公钥 成功返回结果
-type AccountaliyuncscomgetPubKey20130701APIResponseModel struct {
+// AccountAliyuncsComGetPubKey20130701APIResponseModel is 获取用户公钥 成功返回结果
+type AccountAliyuncsComGetPubKey20130701APIResponseModel struct {
 	XMLName xml.Name `xml:"account_aliyuncs_com_GetPubKey_2013-07-01_response"`
 	// 用户的公钥
 	PubKey string `json:"PubKey,omitempty" xml:"PubKey,omitempty"`

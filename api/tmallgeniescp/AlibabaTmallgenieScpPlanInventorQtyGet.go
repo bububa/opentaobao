@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallgeniescp"
 )
 
-// Alibabatmallgeniescpplaninventorqtyget 10-同步库存现有量
+// AlibabaTmallgenieScpPlanInventorQtyGet 10-同步库存现有量
 // alibaba.tmallgenie.scp.plan.inventor.qty.get
 //
 // 同步库存现有量
-func Alibabatmallgeniescpplaninventorqtyget(clt *core.SDKClient, req *tmallgeniescp.AlibabatmallgeniescpplaninventorqtygetAPIRequest, session string) (*tmallgeniescp.AlibabatmallgeniescpplaninventorqtygetAPIResponse, error) {
-	var resp tmallgeniescp.AlibabatmallgeniescpplaninventorqtygetAPIResponse
+func AlibabaTmallgenieScpPlanInventorQtyGet(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanInventorQtyGetAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanInventorQtyGetAPIResponse, error) {
+	var resp tmallgeniescp.AlibabaTmallgenieScpPlanInventorQtyGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

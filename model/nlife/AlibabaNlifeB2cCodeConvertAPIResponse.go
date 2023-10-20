@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// Alibabanlifeb2ccodeconvertAPIResponse b2c转码 API返回值
+// AlibabaNlifeB2cCodeConvertAPIResponse b2c转码 API返回值
 // alibaba.nlife.b2c.code.convert
 //
 // 将商品的URL转码，ISV将该码写入RFID
-type Alibabanlifeb2ccodeconvertAPIResponse struct {
+type AlibabaNlifeB2cCodeConvertAPIResponse struct {
 	model.CommonResponse
-	Alibabanlifeb2ccodeconvertAPIResponseModel
+	AlibabaNlifeB2cCodeConvertAPIResponseModel
 }
 
-// Alibabanlifeb2ccodeconvertAPIResponseModel is b2c转码 成功返回结果
-type Alibabanlifeb2ccodeconvertAPIResponseModel struct {
+// AlibabaNlifeB2cCodeConvertAPIResponseModel is b2c转码 成功返回结果
+type AlibabaNlifeB2cCodeConvertAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_nlife_b2c_code_convert_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

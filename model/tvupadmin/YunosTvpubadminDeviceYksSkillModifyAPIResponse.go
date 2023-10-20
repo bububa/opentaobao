@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunostvpubadmindeviceyksskillmodifyAPIResponse 修改技能 API返回值
+// YunosTvpubadminDeviceYksSkillModifyAPIResponse 修改技能 API返回值
 // yunos.tvpubadmin.device.yks.skill.modify
 //
 // 修改技能
-type YunostvpubadmindeviceyksskillmodifyAPIResponse struct {
+type YunosTvpubadminDeviceYksSkillModifyAPIResponse struct {
 	model.CommonResponse
-	YunostvpubadmindeviceyksskillmodifyAPIResponseModel
+	YunosTvpubadminDeviceYksSkillModifyAPIResponseModel
 }
 
-// YunostvpubadmindeviceyksskillmodifyAPIResponseModel is 修改技能 成功返回结果
-type YunostvpubadmindeviceyksskillmodifyAPIResponseModel struct {
+// YunosTvpubadminDeviceYksSkillModifyAPIResponseModel is 修改技能 成功返回结果
+type YunosTvpubadminDeviceYksSkillModifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_tvpubadmin_device_yks_skill_modify_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

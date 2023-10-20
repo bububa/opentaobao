@@ -6,48 +6,48 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoqimensingleitemsynchronizeAPIRequest 商品同步接口 API请求
+// TaobaoQimenSingleitemSynchronizeAPIRequest 商品同步接口 API请求
 // taobao.qimen.singleitem.synchronize
 //
 // taobao.qimen.singleitem.synchronize
-type TaobaoqimensingleitemsynchronizeAPIRequest struct {
+type TaobaoQimenSingleitemSynchronizeAPIRequest struct {
 	model.Params
 	//
 	_request *ItemSynRequest
 }
 
-// NewTaobaoqimensingleitemsynchronizeRequest 初始化TaobaoqimensingleitemsynchronizeAPIRequest对象
-func NewTaobaoqimensingleitemsynchronizeRequest() *TaobaoqimensingleitemsynchronizeAPIRequest {
-	return &TaobaoqimensingleitemsynchronizeAPIRequest{
+// NewTaobaoQimenSingleitemSynchronizeRequest 初始化TaobaoQimenSingleitemSynchronizeAPIRequest对象
+func NewTaobaoQimenSingleitemSynchronizeRequest() *TaobaoQimenSingleitemSynchronizeAPIRequest {
+	return &TaobaoQimenSingleitemSynchronizeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoqimensingleitemsynchronizeAPIRequest) GetApiMethodName() string {
+func (r TaobaoQimenSingleitemSynchronizeAPIRequest) GetApiMethodName() string {
 	return "taobao.qimen.singleitem.synchronize"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoqimensingleitemsynchronizeAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoQimenSingleitemSynchronizeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoqimensingleitemsynchronizeAPIRequest) GetRawParams() model.Params {
+func (r TaobaoQimenSingleitemSynchronizeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRequest is Request Setter
-func (r *TaobaoqimensingleitemsynchronizeAPIRequest) SetRequest(_request *ItemSynRequest) error {
+func (r *TaobaoQimenSingleitemSynchronizeAPIRequest) SetRequest(_request *ItemSynRequest) error {
 	r._request = _request
 	r.Set("request", _request)
 	return nil
 }
 
 // GetRequest Request Getter
-func (r TaobaoqimensingleitemsynchronizeAPIRequest) GetRequest() *ItemSynRequest {
+func (r TaobaoQimenSingleitemSynchronizeAPIRequest) GetRequest() *ItemSynRequest {
 	return r._request
 }

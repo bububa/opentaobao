@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabadchainmiaoshifucustomercomplaintsputAPIResponse 服务商工人客诉数据上传 API返回值
+// AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponse 服务商工人客诉数据上传 API返回值
 // alibaba.dchain.miaoshifu.customer.complaints.put
 //
 // 数字服务供应链平台提供给服务商上传工人客诉数据
-type AlibabadchainmiaoshifucustomercomplaintsputAPIResponse struct {
+type AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponse struct {
 	model.CommonResponse
-	AlibabadchainmiaoshifucustomercomplaintsputAPIResponseModel
+	AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponseModel
 }
 
-// AlibabadchainmiaoshifucustomercomplaintsputAPIResponseModel is 服务商工人客诉数据上传 成功返回结果
-type AlibabadchainmiaoshifucustomercomplaintsputAPIResponseModel struct {
+// AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponseModel is 服务商工人客诉数据上传 成功返回结果
+type AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_dchain_miaoshifu_customer_complaints_put_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

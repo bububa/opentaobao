@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowlborderjzqueryAPIResponse 家装业务查询物流公司api API返回值
+// TaobaoWlbOrderJzQueryAPIResponse 家装业务查询物流公司api API返回值
 // taobao.wlb.order.jz.query
 //
 // 家装业务查询物流公司api
-type TaobaowlborderjzqueryAPIResponse struct {
+type TaobaoWlbOrderJzQueryAPIResponse struct {
 	model.CommonResponse
-	TaobaowlborderjzqueryAPIResponseModel
+	TaobaoWlbOrderJzQueryAPIResponseModel
 }
 
-// TaobaowlborderjzqueryAPIResponseModel is 家装业务查询物流公司api 成功返回结果
-type TaobaowlborderjzqueryAPIResponseModel struct {
+// TaobaoWlbOrderJzQueryAPIResponseModel is 家装业务查询物流公司api 成功返回结果
+type TaobaoWlbOrderJzQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_order_jz_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package tmallcampus
 
-// TmallcampusauthstatusqueryResult 结构体
-type TmallcampusauthstatusqueryResult struct {
+// TmallCampusAuthstatusQueryResult 结构体
+type TmallCampusAuthstatusQueryResult struct {
 	// 错误信息
 	Msg string `json:"msg,omitempty" xml:"msg,omitempty"`
 	// 错误编码

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// Taobaosubwayautomatchrptget 查询流量智选天级报告
+// TaobaoSubwayAutomatchRptGet 查询流量智选天级报告
 // taobao.subway.automatch.rpt.get
 //
 // 查询流量智选天级报告
-func Taobaosubwayautomatchrptget(clt *core.SDKClient, req *simba.TaobaosubwayautomatchrptgetAPIRequest, session string) (*simba.TaobaosubwayautomatchrptgetAPIResponse, error) {
-	var resp simba.TaobaosubwayautomatchrptgetAPIResponse
+func TaobaoSubwayAutomatchRptGet(clt *core.SDKClient, req *simba.TaobaoSubwayAutomatchRptGetAPIRequest, session string) (*simba.TaobaoSubwayAutomatchRptGetAPIResponse, error) {
+	var resp simba.TaobaoSubwayAutomatchRptGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

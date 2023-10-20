@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/lstspeacker"
 )
 
-// Alibabalstspeakerfileupload 如意音箱音频文件长传
+// AlibabaLstSpeakerFileUpload 如意音箱音频文件长传
 // alibaba.lst.speaker.file.upload
 //
 // 如意音箱音频文件长传
-func Alibabalstspeakerfileupload(clt *core.SDKClient, req *lstspeacker.AlibabalstspeakerfileuploadAPIRequest, session string) (*lstspeacker.AlibabalstspeakerfileuploadAPIResponse, error) {
-	var resp lstspeacker.AlibabalstspeakerfileuploadAPIResponse
+func AlibabaLstSpeakerFileUpload(clt *core.SDKClient, req *lstspeacker.AlibabaLstSpeakerFileUploadAPIRequest, session string) (*lstspeacker.AlibabaLstSpeakerFileUploadAPIResponse, error) {
+	var resp lstspeacker.AlibabaLstSpeakerFileUploadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

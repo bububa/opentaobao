@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoglobalsolutioninquiryAPIResponse 解决方案询盘 API返回值
+// CainiaoGlobalSolutionInquiryAPIResponse 解决方案询盘 API返回值
 // cainiao.global.solution.inquiry
 //
 // 根据交易单号查询可用的解决方案
-type CainiaoglobalsolutioninquiryAPIResponse struct {
+type CainiaoGlobalSolutionInquiryAPIResponse struct {
 	model.CommonResponse
-	CainiaoglobalsolutioninquiryAPIResponseModel
+	CainiaoGlobalSolutionInquiryAPIResponseModel
 }
 
-// CainiaoglobalsolutioninquiryAPIResponseModel is 解决方案询盘 成功返回结果
-type CainiaoglobalsolutioninquiryAPIResponseModel struct {
+// CainiaoGlobalSolutionInquiryAPIResponseModel is 解决方案询盘 成功返回结果
+type CainiaoGlobalSolutionInquiryAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_global_solution_inquiry_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

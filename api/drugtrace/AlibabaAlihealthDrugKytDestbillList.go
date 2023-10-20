@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// Alibabaalihealthdrugkytdestbilllist 直调单据查询
+// AlibabaAlihealthDrugKytDestbillList 直调单据查询
 // alibaba.alihealth.drug.kyt.destbill.list
 //
 // 为药企提供直调单据查询功能
-func Alibabaalihealthdrugkytdestbilllist(clt *core.SDKClient, req *drugtrace.AlibabaalihealthdrugkytdestbilllistAPIRequest, session string) (*drugtrace.AlibabaalihealthdrugkytdestbilllistAPIResponse, error) {
-	var resp drugtrace.AlibabaalihealthdrugkytdestbilllistAPIResponse
+func AlibabaAlihealthDrugKytDestbillList(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytDestbillListAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytDestbillListAPIResponse, error) {
+	var resp drugtrace.AlibabaAlihealthDrugKytDestbillListAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

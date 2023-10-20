@@ -1,7 +1,7 @@
 package ascpchannel
 
-// AlibabaascpaicsupplieraicinventorynegativesalequeryData 结构体
-type AlibabaascpaicsupplieraicinventorynegativesalequeryData struct {
+// AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryData 结构体
+type AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryData struct {
 	// 仓库编码
 	StoreCode string `json:"store_code,omitempty" xml:"store_code,omitempty"`
 	// 库存总量(前台)

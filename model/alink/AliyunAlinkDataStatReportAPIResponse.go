@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliyunalinkdatastatreportAPIResponse 外部离线统计数据上报 API返回值
+// AliyunAlinkDataStatReportAPIResponse 外部离线统计数据上报 API返回值
 // aliyun.alink.data.stat.report
 //
 // 外部合作厂商上报设备的明细数据，或者离线统计数据。
-type AliyunalinkdatastatreportAPIResponse struct {
+type AliyunAlinkDataStatReportAPIResponse struct {
 	model.CommonResponse
-	AliyunalinkdatastatreportAPIResponseModel
+	AliyunAlinkDataStatReportAPIResponseModel
 }
 
-// AliyunalinkdatastatreportAPIResponseModel is 外部离线统计数据上报 成功返回结果
-type AliyunalinkdatastatreportAPIResponseModel struct {
+// AliyunAlinkDataStatReportAPIResponseModel is 外部离线统计数据上报 成功返回结果
+type AliyunAlinkDataStatReportAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliyun_alink_data_stat_report_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

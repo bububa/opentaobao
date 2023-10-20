@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosimbaadgrouponlineitemsvongetAPIResponse 获取用户上架在线销售的全部宝贝 API返回值
+// TaobaoSimbaAdgroupOnlineitemsvonGetAPIResponse 获取用户上架在线销售的全部宝贝 API返回值
 // taobao.simba.adgroup.onlineitemsvon.get
 //
 // 获取用户上架在线销售的全部宝贝
-type TaobaosimbaadgrouponlineitemsvongetAPIResponse struct {
+type TaobaoSimbaAdgroupOnlineitemsvonGetAPIResponse struct {
 	model.CommonResponse
-	TaobaosimbaadgrouponlineitemsvongetAPIResponseModel
+	TaobaoSimbaAdgroupOnlineitemsvonGetAPIResponseModel
 }
 
-// TaobaosimbaadgrouponlineitemsvongetAPIResponseModel is 获取用户上架在线销售的全部宝贝 成功返回结果
-type TaobaosimbaadgrouponlineitemsvongetAPIResponseModel struct {
+// TaobaoSimbaAdgroupOnlineitemsvonGetAPIResponseModel is 获取用户上架在线销售的全部宝贝 成功返回结果
+type TaobaoSimbaAdgroupOnlineitemsvonGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_adgroup_onlineitemsvon_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alink"
 )
 
-// Aliyunalinkopendataurlquery 开放数据授权访问URL查询
+// AliyunAlinkOpendataUrlQuery 开放数据授权访问URL查询
 // aliyun.alink.opendata.url.query
 //
 // 厂商数据授权访问URL查询
-func Aliyunalinkopendataurlquery(clt *core.SDKClient, req *alink.AliyunalinkopendataurlqueryAPIRequest, session string) (*alink.AliyunalinkopendataurlqueryAPIResponse, error) {
-	var resp alink.AliyunalinkopendataurlqueryAPIResponse
+func AliyunAlinkOpendataUrlQuery(clt *core.SDKClient, req *alink.AliyunAlinkOpendataUrlQueryAPIRequest, session string) (*alink.AliyunAlinkOpendataUrlQueryAPIResponse, error) {
+	var resp alink.AliyunAlinkOpendataUrlQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

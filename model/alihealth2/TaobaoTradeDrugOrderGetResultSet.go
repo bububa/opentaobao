@@ -1,7 +1,7 @@
 package alihealth2
 
-// TaobaotradedrugordergetResultSet 结构体
-type TaobaotradedrugordergetResultSet struct {
+// TaobaoTradeDrugOrderGetResultSet 结构体
+type TaobaoTradeDrugOrderGetResultSet struct {
 	// 异常信息
 	Exception string `json:"exception,omitempty" xml:"exception,omitempty"`
 	// errorCode

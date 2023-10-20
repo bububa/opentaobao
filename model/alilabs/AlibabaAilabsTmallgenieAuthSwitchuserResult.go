@@ -1,7 +1,7 @@
 package alilabs
 
-// AlibabaailabstmallgenieauthswitchuserResult 结构体
-type AlibabaailabstmallgenieauthswitchuserResult struct {
+// AlibabaAilabsTmallgenieAuthSwitchuserResult 结构体
+type AlibabaAilabsTmallgenieAuthSwitchuserResult struct {
 	// 扩展信息
 	Extension string `json:"extension,omitempty" xml:"extension,omitempty"`
 	// 注册结果

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallnrtsceneactivityqueryAPIResponse 喵零场景活动查询 API返回值
+// TmallNrtSceneActivityQueryAPIResponse 喵零场景活动查询 API返回值
 // tmall.nrt.scene.activity.query
 //
 // 喵零场景活动查询
-type TmallnrtsceneactivityqueryAPIResponse struct {
+type TmallNrtSceneActivityQueryAPIResponse struct {
 	model.CommonResponse
-	TmallnrtsceneactivityqueryAPIResponseModel
+	TmallNrtSceneActivityQueryAPIResponseModel
 }
 
-// TmallnrtsceneactivityqueryAPIResponseModel is 喵零场景活动查询 成功返回结果
-type TmallnrtsceneactivityqueryAPIResponseModel struct {
+// TmallNrtSceneActivityQueryAPIResponseModel is 喵零场景活动查询 成功返回结果
+type TmallNrtSceneActivityQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_nrt_scene_activity_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

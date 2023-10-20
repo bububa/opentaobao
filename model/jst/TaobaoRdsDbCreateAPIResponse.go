@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaordsdbcreateAPIResponse rds创建数据库 API返回值
+// TaobaoRdsDbCreateAPIResponse rds创建数据库 API返回值
 // taobao.rds.db.create
 //
 // 在rds实例里创建数据库
-type TaobaordsdbcreateAPIResponse struct {
+type TaobaoRdsDbCreateAPIResponse struct {
 	model.CommonResponse
-	TaobaordsdbcreateAPIResponseModel
+	TaobaoRdsDbCreateAPIResponseModel
 }
 
-// TaobaordsdbcreateAPIResponseModel is rds创建数据库 成功返回结果
-type TaobaordsdbcreateAPIResponseModel struct {
+// TaobaoRdsDbCreateAPIResponseModel is rds创建数据库 成功返回结果
+type TaobaoRdsDbCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"rds_db_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

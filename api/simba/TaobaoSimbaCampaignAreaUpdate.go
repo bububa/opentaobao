@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// Taobaosimbacampaignareaupdate 更新一个推广计划的投放地域
+// TaobaoSimbaCampaignAreaUpdate 更新一个推广计划的投放地域
 // taobao.simba.campaign.area.update
 //
 // 更新一个推广计划的投放地域
-func Taobaosimbacampaignareaupdate(clt *core.SDKClient, req *simba.TaobaosimbacampaignareaupdateAPIRequest, session string) (*simba.TaobaosimbacampaignareaupdateAPIResponse, error) {
-	var resp simba.TaobaosimbacampaignareaupdateAPIResponse
+func TaobaoSimbaCampaignAreaUpdate(clt *core.SDKClient, req *simba.TaobaoSimbaCampaignAreaUpdateAPIRequest, session string) (*simba.TaobaoSimbaCampaignAreaUpdateAPIResponse, error) {
+	var resp simba.TaobaoSimbaCampaignAreaUpdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

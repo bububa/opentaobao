@@ -1,7 +1,7 @@
 package flight
 
-// AlitripagentcoordinatelistT 结构体
-type AlitripagentcoordinatelistT struct {
+// AlitripAgentCoordinateListT 结构体
+type AlitripAgentCoordinateListT struct {
 	// 创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 修改时间

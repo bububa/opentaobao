@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/crm"
 )
 
-// Taobaocrmmembergroupget 获取买家身上的标签
+// TaobaoCrmMemberGroupGet 获取买家身上的标签
 // taobao.crm.member.group.get
 //
 // 获取买家身上的标签，不返回标签的总人数
-func Taobaocrmmembergroupget(clt *core.SDKClient, req *crm.TaobaocrmmembergroupgetAPIRequest, session string) (*crm.TaobaocrmmembergroupgetAPIResponse, error) {
-	var resp crm.TaobaocrmmembergroupgetAPIResponse
+func TaobaoCrmMemberGroupGet(clt *core.SDKClient, req *crm.TaobaoCrmMemberGroupGetAPIRequest, session string) (*crm.TaobaoCrmMemberGroupGetAPIResponse, error) {
+	var resp crm.TaobaoCrmMemberGroupGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

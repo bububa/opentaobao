@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaologisticsexpressdeliveryresourcecreateAPIResponse 新建/更新配资源 API返回值
+// TaobaoLogisticsExpressDeliveryResourceCreateAPIResponse 新建/更新配资源 API返回值
 // taobao.logistics.express.delivery.resource.create
 //
 // 新建/更新配资源
-type TaobaologisticsexpressdeliveryresourcecreateAPIResponse struct {
+type TaobaoLogisticsExpressDeliveryResourceCreateAPIResponse struct {
 	model.CommonResponse
-	TaobaologisticsexpressdeliveryresourcecreateAPIResponseModel
+	TaobaoLogisticsExpressDeliveryResourceCreateAPIResponseModel
 }
 
-// TaobaologisticsexpressdeliveryresourcecreateAPIResponseModel is 新建/更新配资源 成功返回结果
-type TaobaologisticsexpressdeliveryresourcecreateAPIResponseModel struct {
+// TaobaoLogisticsExpressDeliveryResourceCreateAPIResponseModel is 新建/更新配资源 成功返回结果
+type TaobaoLogisticsExpressDeliveryResourceCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_express_delivery_resource_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package kclub
 
-// AlibabakclubkcqasearchResult 结构体
-type AlibabakclubkcqasearchResult struct {
+// AlibabaKclubKcQaSearchResult 结构体
+type AlibabaKclubKcQaSearchResult struct {
 	// 返回数据列表
 	DataList []KcSearchQuestion `json:"data_list,omitempty" xml:"data_list>kc_search_question,omitempty"`
 	// 错误信息

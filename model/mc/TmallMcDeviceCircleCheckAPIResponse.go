@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallmcdevicecirclecheckAPIResponse 云码设备圈选情况查询 API返回值
+// TmallMcDeviceCircleCheckAPIResponse 云码设备圈选情况查询 API返回值
 // tmall.mc.device.circle.check
 //
 // 云码设备圈选情况查询
-type TmallmcdevicecirclecheckAPIResponse struct {
+type TmallMcDeviceCircleCheckAPIResponse struct {
 	model.CommonResponse
-	TmallmcdevicecirclecheckAPIResponseModel
+	TmallMcDeviceCircleCheckAPIResponseModel
 }
 
-// TmallmcdevicecirclecheckAPIResponseModel is 云码设备圈选情况查询 成功返回结果
-type TmallmcdevicecirclecheckAPIResponseModel struct {
+// TmallMcDeviceCircleCheckAPIResponseModel is 云码设备圈选情况查询 成功返回结果
+type TmallMcDeviceCircleCheckAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_mc_device_circle_check_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalsccrmopenassertverifyAPIRequest 资产核销接口 API请求
+// AlibabaAlscCrmOpenAssertVerifyAPIRequest 资产核销接口 API请求
 // alibaba.alsc.crm.open.assert.verify
 //
 // 核销储值，积分，券资产
-type AlibabaalsccrmopenassertverifyAPIRequest struct {
+type AlibabaAlscCrmOpenAssertVerifyAPIRequest struct {
 	model.Params
 	// 入参
 	_paramPropertyVerifyOpenReq *PropertyVerifyOpenReq
 }
 
-// NewAlibabaalsccrmopenassertverifyRequest 初始化AlibabaalsccrmopenassertverifyAPIRequest对象
-func NewAlibabaalsccrmopenassertverifyRequest() *AlibabaalsccrmopenassertverifyAPIRequest {
-	return &AlibabaalsccrmopenassertverifyAPIRequest{
+// NewAlibabaAlscCrmOpenAssertVerifyRequest 初始化AlibabaAlscCrmOpenAssertVerifyAPIRequest对象
+func NewAlibabaAlscCrmOpenAssertVerifyRequest() *AlibabaAlscCrmOpenAssertVerifyAPIRequest {
+	return &AlibabaAlscCrmOpenAssertVerifyAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalsccrmopenassertverifyAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlscCrmOpenAssertVerifyAPIRequest) GetApiMethodName() string {
 	return "alibaba.alsc.crm.open.assert.verify"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalsccrmopenassertverifyAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlscCrmOpenAssertVerifyAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalsccrmopenassertverifyAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlscCrmOpenAssertVerifyAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamPropertyVerifyOpenReq is ParamPropertyVerifyOpenReq Setter
 // 入参
-func (r *AlibabaalsccrmopenassertverifyAPIRequest) SetParamPropertyVerifyOpenReq(_paramPropertyVerifyOpenReq *PropertyVerifyOpenReq) error {
+func (r *AlibabaAlscCrmOpenAssertVerifyAPIRequest) SetParamPropertyVerifyOpenReq(_paramPropertyVerifyOpenReq *PropertyVerifyOpenReq) error {
 	r._paramPropertyVerifyOpenReq = _paramPropertyVerifyOpenReq
 	r.Set("param_property_verify_open_req", _paramPropertyVerifyOpenReq)
 	return nil
 }
 
 // GetParamPropertyVerifyOpenReq ParamPropertyVerifyOpenReq Getter
-func (r AlibabaalsccrmopenassertverifyAPIRequest) GetParamPropertyVerifyOpenReq() *PropertyVerifyOpenReq {
+func (r AlibabaAlscCrmOpenAssertVerifyAPIRequest) GetParamPropertyVerifyOpenReq() *PropertyVerifyOpenReq {
 	return r._paramPropertyVerifyOpenReq
 }

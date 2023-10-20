@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaogamedeliveryvouchersendvoucherAPIResponse 提货券发券接口 API返回值
+// TaobaoGameDeliveryvoucherSendvoucherAPIResponse 提货券发券接口 API返回值
 // taobao.game.deliveryvoucher.sendvoucher
 //
 // 提货券发券接口：同步券和订单的关联信息
-type TaobaogamedeliveryvouchersendvoucherAPIResponse struct {
+type TaobaoGameDeliveryvoucherSendvoucherAPIResponse struct {
 	model.CommonResponse
-	TaobaogamedeliveryvouchersendvoucherAPIResponseModel
+	TaobaoGameDeliveryvoucherSendvoucherAPIResponseModel
 }
 
-// TaobaogamedeliveryvouchersendvoucherAPIResponseModel is 提货券发券接口 成功返回结果
-type TaobaogamedeliveryvouchersendvoucherAPIResponseModel struct {
+// TaobaoGameDeliveryvoucherSendvoucherAPIResponseModel is 提货券发券接口 成功返回结果
+type TaobaoGameDeliveryvoucherSendvoucherAPIResponseModel struct {
 	XMLName xml.Name `xml:"game_deliveryvoucher_sendvoucher_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

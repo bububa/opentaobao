@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpressaffiliateproductsmartmatchAPIResponse 联盟物料智能推荐api API返回值
+// AliexpressAffiliateProductSmartmatchAPIResponse 联盟物料智能推荐api API返回值
 // aliexpress.affiliate.product.smartmatch
 //
 // 联盟物料算法智能推荐
-type AliexpressaffiliateproductsmartmatchAPIResponse struct {
+type AliexpressAffiliateProductSmartmatchAPIResponse struct {
 	model.CommonResponse
-	AliexpressaffiliateproductsmartmatchAPIResponseModel
+	AliexpressAffiliateProductSmartmatchAPIResponseModel
 }
 
-// AliexpressaffiliateproductsmartmatchAPIResponseModel is 联盟物料智能推荐api 成功返回结果
-type AliexpressaffiliateproductsmartmatchAPIResponseModel struct {
+// AliexpressAffiliateProductSmartmatchAPIResponseModel is 联盟物料智能推荐api 成功返回结果
+type AliexpressAffiliateProductSmartmatchAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_affiliate_product_smartmatch_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaobushistoryordergetAPIResponse 历史订单查询（对账） API返回值
+// TaobaoBusHistoryorderGetAPIResponse 历史订单查询（对账） API返回值
 // taobao.bus.historyorder.get
 //
 // 历史订单查询，对账接口
-type TaobaobushistoryordergetAPIResponse struct {
+type TaobaoBusHistoryorderGetAPIResponse struct {
 	model.CommonResponse
-	TaobaobushistoryordergetAPIResponseModel
+	TaobaoBusHistoryorderGetAPIResponseModel
 }
 
-// TaobaobushistoryordergetAPIResponseModel is 历史订单查询（对账） 成功返回结果
-type TaobaobushistoryordergetAPIResponseModel struct {
+// TaobaoBusHistoryorderGetAPIResponseModel is 历史订单查询（对账） 成功返回结果
+type TaobaoBusHistoryorderGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"bus_historyorder_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

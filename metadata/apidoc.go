@@ -85,7 +85,7 @@ func (d ApiDoc) Filename() string {
 
 // Title 获取淘宝API文档对应golang API名
 func (d ApiDoc) Title() string {
-	name := util.UpperCamelCase(strings.ReplaceAll(d.Name, "-", "_"))
+	name := util.UpperCamelCase(strings.ReplaceAll(d.Name, ".", "_"))
 	return strings.TrimSpace(strings.ReplaceAll(name, ".", ""))
 }
 

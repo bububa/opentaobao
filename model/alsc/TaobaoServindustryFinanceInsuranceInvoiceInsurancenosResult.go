@@ -1,7 +1,7 @@
 package alsc
 
-// TaobaoservindustryfinanceinsuranceinvoiceinsurancenosResult 结构体
-type TaobaoservindustryfinanceinsuranceinvoiceinsurancenosResult struct {
+// TaobaoServindustryFinanceInsuranceInvoiceInsurancenosResult 结构体
+type TaobaoServindustryFinanceInsuranceInvoiceInsurancenosResult struct {
 	// 鹰眼id
 	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
 	// 返回结果数据

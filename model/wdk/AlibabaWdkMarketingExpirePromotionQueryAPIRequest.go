@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdkmarketingexpirepromotionqueryAPIRequest 短保优惠查询 API请求
+// AlibabaWdkMarketingExpirePromotionQueryAPIRequest 短保优惠查询 API请求
 // alibaba.wdk.marketing.expire.promotion.query
 //
 // 短保优惠查询
-type AlibabawdkmarketingexpirepromotionqueryAPIRequest struct {
+type AlibabaWdkMarketingExpirePromotionQueryAPIRequest struct {
 	model.Params
 	// 店铺id
 	_shopId string
@@ -18,52 +18,52 @@ type AlibabawdkmarketingexpirepromotionqueryAPIRequest struct {
 	_skuCode string
 }
 
-// NewAlibabawdkmarketingexpirepromotionqueryRequest 初始化AlibabawdkmarketingexpirepromotionqueryAPIRequest对象
-func NewAlibabawdkmarketingexpirepromotionqueryRequest() *AlibabawdkmarketingexpirepromotionqueryAPIRequest {
-	return &AlibabawdkmarketingexpirepromotionqueryAPIRequest{
+// NewAlibabaWdkMarketingExpirePromotionQueryRequest 初始化AlibabaWdkMarketingExpirePromotionQueryAPIRequest对象
+func NewAlibabaWdkMarketingExpirePromotionQueryRequest() *AlibabaWdkMarketingExpirePromotionQueryAPIRequest {
+	return &AlibabaWdkMarketingExpirePromotionQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabawdkmarketingexpirepromotionqueryAPIRequest) GetApiMethodName() string {
+func (r AlibabaWdkMarketingExpirePromotionQueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.marketing.expire.promotion.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabawdkmarketingexpirepromotionqueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaWdkMarketingExpirePromotionQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabawdkmarketingexpirepromotionqueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabaWdkMarketingExpirePromotionQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetShopId is ShopId Setter
 // 店铺id
-func (r *AlibabawdkmarketingexpirepromotionqueryAPIRequest) SetShopId(_shopId string) error {
+func (r *AlibabaWdkMarketingExpirePromotionQueryAPIRequest) SetShopId(_shopId string) error {
 	r._shopId = _shopId
 	r.Set("shop_id", _shopId)
 	return nil
 }
 
 // GetShopId ShopId Getter
-func (r AlibabawdkmarketingexpirepromotionqueryAPIRequest) GetShopId() string {
+func (r AlibabaWdkMarketingExpirePromotionQueryAPIRequest) GetShopId() string {
 	return r._shopId
 }
 
 // SetSkuCode is SkuCode Setter
 // 商品skucode
-func (r *AlibabawdkmarketingexpirepromotionqueryAPIRequest) SetSkuCode(_skuCode string) error {
+func (r *AlibabaWdkMarketingExpirePromotionQueryAPIRequest) SetSkuCode(_skuCode string) error {
 	r._skuCode = _skuCode
 	r.Set("sku_code", _skuCode)
 	return nil
 }
 
 // GetSkuCode SkuCode Getter
-func (r AlibabawdkmarketingexpirepromotionqueryAPIRequest) GetSkuCode() string {
+func (r AlibabaWdkMarketingExpirePromotionQueryAPIRequest) GetSkuCode() string {
 	return r._skuCode
 }

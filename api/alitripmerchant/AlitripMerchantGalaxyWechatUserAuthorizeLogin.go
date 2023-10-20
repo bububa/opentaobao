@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
 
-// Alitripmerchantgalaxywechatuserauthorizelogin DFC-ID用户手机号授权登录
+// AlitripMerchantGalaxyWechatUserAuthorizeLogin DFC-ID用户手机号授权登录
 // alitrip.merchant.galaxy.wechat.user.authorize.login
 //
 // DFC-ID用户手机号授权登录
-func Alitripmerchantgalaxywechatuserauthorizelogin(clt *core.SDKClient, req *alitripmerchant.AlitripmerchantgalaxywechatuserauthorizeloginAPIRequest, session string) (*alitripmerchant.AlitripmerchantgalaxywechatuserauthorizeloginAPIResponse, error) {
-	var resp alitripmerchant.AlitripmerchantgalaxywechatuserauthorizeloginAPIResponse
+func AlitripMerchantGalaxyWechatUserAuthorizeLogin(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyWechatUserAuthorizeLoginAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyWechatUserAuthorizeLoginAPIResponse, error) {
+	var resp alitripmerchant.AlitripMerchantGalaxyWechatUserAuthorizeLoginAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripmerchantgalaxyderbymembervoucherreceiptdetailsautoResponse 结构体
-type AlitripmerchantgalaxyderbymembervoucherreceiptdetailsautoResponse struct {
+// AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoResponse 结构体
+type AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoResponse struct {
 	// 返回类型
 	Content []DerbyVoucherReceiptAutoVo `json:"content,omitempty" xml:"content>derby_voucher_receipt_auto_vo,omitempty"`
 	// 错误码

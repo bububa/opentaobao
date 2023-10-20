@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoqtreportupdateAPIResponse 更新质检报告 API返回值
+// TaobaoQtReportUpdateAPIResponse 更新质检报告 API返回值
 // taobao.qt.report.update
 //
 // 更新质检报告
-type TaobaoqtreportupdateAPIResponse struct {
+type TaobaoQtReportUpdateAPIResponse struct {
 	model.CommonResponse
-	TaobaoqtreportupdateAPIResponseModel
+	TaobaoQtReportUpdateAPIResponseModel
 }
 
-// TaobaoqtreportupdateAPIResponseModel is 更新质检报告 成功返回结果
-type TaobaoqtreportupdateAPIResponseModel struct {
+// TaobaoQtReportUpdateAPIResponseModel is 更新质检报告 成功返回结果
+type TaobaoQtReportUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"qt_report_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

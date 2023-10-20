@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/damai"
 )
 
-// Alibabadamaimevopenwithdrawticket 大麦换验平台-第三方对外开放-票单接口withdrawTicket
+// AlibabaDamaiMevOpenWithdrawticket 大麦换验平台-第三方对外开放-票单接口withdrawTicket
 // alibaba.damai.mev.open.withdrawticket
 //
 // 开放接口退票
-func Alibabadamaimevopenwithdrawticket(clt *core.SDKClient, req *damai.AlibabadamaimevopenwithdrawticketAPIRequest, session string) (*damai.AlibabadamaimevopenwithdrawticketAPIResponse, error) {
-	var resp damai.AlibabadamaimevopenwithdrawticketAPIResponse
+func AlibabaDamaiMevOpenWithdrawticket(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenWithdrawticketAPIRequest, session string) (*damai.AlibabaDamaiMevOpenWithdrawticketAPIResponse, error) {
+	var resp damai.AlibabaDamaiMevOpenWithdrawticketAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tbitem"
 )
 
-// Taobaoitemskupriceupdate 更新商品SKU的价格
+// TaobaoItemSkuPriceUpdate 更新商品SKU的价格
 // taobao.item.sku.price.update
 //
 // 更新商品SKU的价格
-func Taobaoitemskupriceupdate(clt *core.SDKClient, req *tbitem.TaobaoitemskupriceupdateAPIRequest, session string) (*tbitem.TaobaoitemskupriceupdateAPIResponse, error) {
-	var resp tbitem.TaobaoitemskupriceupdateAPIResponse
+func TaobaoItemSkuPriceUpdate(clt *core.SDKClient, req *tbitem.TaobaoItemSkuPriceUpdateAPIRequest, session string) (*tbitem.TaobaoItemSkuPriceUpdateAPIResponse, error) {
+	var resp tbitem.TaobaoItemSkuPriceUpdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

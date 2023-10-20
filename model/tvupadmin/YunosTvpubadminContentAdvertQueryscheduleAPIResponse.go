@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunostvpubadmincontentadvertqueryscheduleAPIResponse 广告牌照管控查询 API返回值
+// YunosTvpubadminContentAdvertQueryscheduleAPIResponse 广告牌照管控查询 API返回值
 // yunos.tvpubadmin.content.advert.queryschedule
 //
 // 广告牌照管控查询
-type YunostvpubadmincontentadvertqueryscheduleAPIResponse struct {
+type YunosTvpubadminContentAdvertQueryscheduleAPIResponse struct {
 	model.CommonResponse
-	YunostvpubadmincontentadvertqueryscheduleAPIResponseModel
+	YunosTvpubadminContentAdvertQueryscheduleAPIResponseModel
 }
 
-// YunostvpubadmincontentadvertqueryscheduleAPIResponseModel is 广告牌照管控查询 成功返回结果
-type YunostvpubadmincontentadvertqueryscheduleAPIResponseModel struct {
+// YunosTvpubadminContentAdvertQueryscheduleAPIResponseModel is 广告牌照管控查询 成功返回结果
+type YunosTvpubadminContentAdvertQueryscheduleAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_tvpubadmin_content_advert_queryschedule_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

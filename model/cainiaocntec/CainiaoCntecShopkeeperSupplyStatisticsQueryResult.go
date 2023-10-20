@@ -1,7 +1,7 @@
 package cainiaocntec
 
-// CainiaocntecshopkeepersupplystatisticsqueryResult 结构体
-type CainiaocntecshopkeepersupplystatisticsqueryResult struct {
+// CainiaoCntecShopkeeperSupplyStatisticsQueryResult 结构体
+type CainiaoCntecShopkeeperSupplyStatisticsQueryResult struct {
 	// 门店统计结果
 	ModelList []ActivityStatisticsDto `json:"model_list,omitempty" xml:"model_list>activity_statistics_dto,omitempty"`
 	// trace_id

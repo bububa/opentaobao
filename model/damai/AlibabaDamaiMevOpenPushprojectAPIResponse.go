@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabadamaimevopenpushprojectAPIResponse 大麦换验平台-第三方对外开放-项目接口pushProject API返回值
+// AlibabaDamaiMevOpenPushprojectAPIResponse 大麦换验平台-第三方对外开放-项目接口pushProject API返回值
 // alibaba.damai.mev.open.pushproject
 //
 // pushProject
-type AlibabadamaimevopenpushprojectAPIResponse struct {
+type AlibabaDamaiMevOpenPushprojectAPIResponse struct {
 	model.CommonResponse
-	AlibabadamaimevopenpushprojectAPIResponseModel
+	AlibabaDamaiMevOpenPushprojectAPIResponseModel
 }
 
-// AlibabadamaimevopenpushprojectAPIResponseModel is 大麦换验平台-第三方对外开放-项目接口pushProject 成功返回结果
-type AlibabadamaimevopenpushprojectAPIResponseModel struct {
+// AlibabaDamaiMevOpenPushprojectAPIResponseModel is 大麦换验平台-第三方对外开放-项目接口pushProject 成功返回结果
+type AlibabaDamaiMevOpenPushprojectAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_damai_mev_open_pushproject_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
-	Result *AlibabadamaimevopenpushprojectResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaDamaiMevOpenPushprojectResult `json:"result,omitempty" xml:"result,omitempty"`
 }

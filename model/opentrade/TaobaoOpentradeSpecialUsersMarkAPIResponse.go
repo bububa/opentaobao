@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoopentradespecialusersmarkAPIResponse 专属下单可购买用户标记 API返回值
+// TaobaoOpentradeSpecialUsersMarkAPIResponse 专属下单可购买用户标记 API返回值
 // taobao.opentrade.special.users.mark
 //
 // 对于专属下单的交易场景，根据openid标记用户可购买商品
-type TaobaoopentradespecialusersmarkAPIResponse struct {
+type TaobaoOpentradeSpecialUsersMarkAPIResponse struct {
 	model.CommonResponse
-	TaobaoopentradespecialusersmarkAPIResponseModel
+	TaobaoOpentradeSpecialUsersMarkAPIResponseModel
 }
 
-// TaobaoopentradespecialusersmarkAPIResponseModel is 专属下单可购买用户标记 成功返回结果
-type TaobaoopentradespecialusersmarkAPIResponseModel struct {
+// TaobaoOpentradeSpecialUsersMarkAPIResponseModel is 专属下单可购买用户标记 成功返回结果
+type TaobaoOpentradeSpecialUsersMarkAPIResponseModel struct {
 	XMLName xml.Name `xml:"opentrade_special_users_mark_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alink"
 )
 
-// Alibabaalinkmessagehistorylist 查询消息列表
+// AlibabaAlinkMessageHistoryList 查询消息列表
 // alibaba.alink.message.history.list
 //
 // 查询消息列表
-func Alibabaalinkmessagehistorylist(clt *core.SDKClient, req *alink.AlibabaalinkmessagehistorylistAPIRequest, session string) (*alink.AlibabaalinkmessagehistorylistAPIResponse, error) {
-	var resp alink.AlibabaalinkmessagehistorylistAPIResponse
+func AlibabaAlinkMessageHistoryList(clt *core.SDKClient, req *alink.AlibabaAlinkMessageHistoryListAPIRequest, session string) (*alink.AlibabaAlinkMessageHistoryListAPIResponse, error) {
+	var resp alink.AlibabaAlinkMessageHistoryListAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/category"
 )
 
-// Taobaoitemcatpropsmodificationget 查询商品类目属性变更
+// TaobaoItemCatpropsModificationGet 查询商品类目属性变更
 // taobao.item.catprops.modification.get
 //
 // 查询商品类目属性变更信息
-func Taobaoitemcatpropsmodificationget(clt *core.SDKClient, req *category.TaobaoitemcatpropsmodificationgetAPIRequest, session string) (*category.TaobaoitemcatpropsmodificationgetAPIResponse, error) {
-	var resp category.TaobaoitemcatpropsmodificationgetAPIResponse
+func TaobaoItemCatpropsModificationGet(clt *core.SDKClient, req *category.TaobaoItemCatpropsModificationGetAPIRequest, session string) (*category.TaobaoItemCatpropsModificationGetAPIResponse, error) {
+	var resp category.TaobaoItemCatpropsModificationGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

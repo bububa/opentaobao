@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotrainagentordergetAPIResponse 代理商获取订单信息回调API API返回值
+// TaobaoTrainAgentOrderGetAPIResponse 代理商获取订单信息回调API API返回值
 // taobao.train.agent.order.get
 //
 // 代理商获取订单信息回调API
-type TaobaotrainagentordergetAPIResponse struct {
+type TaobaoTrainAgentOrderGetAPIResponse struct {
 	model.CommonResponse
-	TaobaotrainagentordergetAPIResponseModel
+	TaobaoTrainAgentOrderGetAPIResponseModel
 }
 
-// TaobaotrainagentordergetAPIResponseModel is 代理商获取订单信息回调API 成功返回结果
-type TaobaotrainagentordergetAPIResponseModel struct {
+// TaobaoTrainAgentOrderGetAPIResponseModel is 代理商获取订单信息回调API 成功返回结果
+type TaobaoTrainAgentOrderGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"train_agent_order_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabapicturesdengtaimsorderstatuschangeAPIResponse 天下秀回传订单执行状态变动 API返回值
+// AlibabaPicturesDengtaImsOrderStatusChangeAPIResponse 天下秀回传订单执行状态变动 API返回值
 // alibaba.pictures.dengta.ims.order.status.change
 //
 // 天下秀回传订单执行状态变动
-type AlibabapicturesdengtaimsorderstatuschangeAPIResponse struct {
+type AlibabaPicturesDengtaImsOrderStatusChangeAPIResponse struct {
 	model.CommonResponse
-	AlibabapicturesdengtaimsorderstatuschangeAPIResponseModel
+	AlibabaPicturesDengtaImsOrderStatusChangeAPIResponseModel
 }
 
-// AlibabapicturesdengtaimsorderstatuschangeAPIResponseModel is 天下秀回传订单执行状态变动 成功返回结果
-type AlibabapicturesdengtaimsorderstatuschangeAPIResponseModel struct {
+// AlibabaPicturesDengtaImsOrderStatusChangeAPIResponseModel is 天下秀回传订单执行状态变动 成功返回结果
+type AlibabaPicturesDengtaImsOrderStatusChangeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_pictures_dengta_ims_order_status_change_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

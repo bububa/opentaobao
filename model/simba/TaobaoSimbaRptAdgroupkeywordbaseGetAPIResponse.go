@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosimbarptadgroupkeywordbasegetAPIResponse 推广组下的词基础报表数据查询(明细数据不分类型查询) API返回值
+// TaobaoSimbaRptAdgroupkeywordbaseGetAPIResponse 推广组下的词基础报表数据查询(明细数据不分类型查询) API返回值
 // taobao.simba.rpt.adgroupkeywordbase.get
 //
 // 推广组下的词基础报表数据查询(明细数据不分类型查询)
-type TaobaosimbarptadgroupkeywordbasegetAPIResponse struct {
+type TaobaoSimbaRptAdgroupkeywordbaseGetAPIResponse struct {
 	model.CommonResponse
-	TaobaosimbarptadgroupkeywordbasegetAPIResponseModel
+	TaobaoSimbaRptAdgroupkeywordbaseGetAPIResponseModel
 }
 
-// TaobaosimbarptadgroupkeywordbasegetAPIResponseModel is 推广组下的词基础报表数据查询(明细数据不分类型查询) 成功返回结果
-type TaobaosimbarptadgroupkeywordbasegetAPIResponseModel struct {
+// TaobaoSimbaRptAdgroupkeywordbaseGetAPIResponseModel is 推广组下的词基础报表数据查询(明细数据不分类型查询) 成功返回结果
+type TaobaoSimbaRptAdgroupkeywordbaseGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_rpt_adgroupkeywordbase_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

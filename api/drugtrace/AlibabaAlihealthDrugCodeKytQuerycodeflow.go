@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// Alibabaalihealthdrugcodekytquerycodeflow 码流向查询
+// AlibabaAlihealthDrugCodeKytQuerycodeflow 码流向查询
 // alibaba.alihealth.drug.code.kyt.querycodeflow
 //
 // 追溯码流向查询
-func Alibabaalihealthdrugcodekytquerycodeflow(clt *core.SDKClient, req *drugtrace.AlibabaalihealthdrugcodekytquerycodeflowAPIRequest, session string) (*drugtrace.AlibabaalihealthdrugcodekytquerycodeflowAPIResponse, error) {
-	var resp drugtrace.AlibabaalihealthdrugcodekytquerycodeflowAPIResponse
+func AlibabaAlihealthDrugCodeKytQuerycodeflow(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugCodeKytQuerycodeflowAPIResponse, error) {
+	var resp drugtrace.AlibabaAlihealthDrugCodeKytQuerycodeflowAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

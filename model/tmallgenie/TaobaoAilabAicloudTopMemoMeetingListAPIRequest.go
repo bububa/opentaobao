@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoailabaicloudtopmemomeetinglistAPIRequest 天猫精灵会议查询 API请求
+// TaobaoAilabAicloudTopMemoMeetingListAPIRequest 天猫精灵会议查询 API请求
 // taobao.ailab.aicloud.top.memo.meeting.list
 //
 // 查询天猫精灵用户设置的所有会议
-type TaobaoailabaicloudtopmemomeetinglistAPIRequest struct {
+type TaobaoAilabAicloudTopMemoMeetingListAPIRequest struct {
 	model.Params
 	// schema
 	_schema string
@@ -24,91 +24,91 @@ type TaobaoailabaicloudtopmemomeetinglistAPIRequest struct {
 	_memoId int64
 }
 
-// NewTaobaoailabaicloudtopmemomeetinglistRequest 初始化TaobaoailabaicloudtopmemomeetinglistAPIRequest对象
-func NewTaobaoailabaicloudtopmemomeetinglistRequest() *TaobaoailabaicloudtopmemomeetinglistAPIRequest {
-	return &TaobaoailabaicloudtopmemomeetinglistAPIRequest{
+// NewTaobaoAilabAicloudTopMemoMeetingListRequest 初始化TaobaoAilabAicloudTopMemoMeetingListAPIRequest对象
+func NewTaobaoAilabAicloudTopMemoMeetingListRequest() *TaobaoAilabAicloudTopMemoMeetingListAPIRequest {
+	return &TaobaoAilabAicloudTopMemoMeetingListAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoailabaicloudtopmemomeetinglistAPIRequest) GetApiMethodName() string {
+func (r TaobaoAilabAicloudTopMemoMeetingListAPIRequest) GetApiMethodName() string {
 	return "taobao.ailab.aicloud.top.memo.meeting.list"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoailabaicloudtopmemomeetinglistAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoAilabAicloudTopMemoMeetingListAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoailabaicloudtopmemomeetinglistAPIRequest) GetRawParams() model.Params {
+func (r TaobaoAilabAicloudTopMemoMeetingListAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSchema is Schema Setter
 // schema
-func (r *TaobaoailabaicloudtopmemomeetinglistAPIRequest) SetSchema(_schema string) error {
+func (r *TaobaoAilabAicloudTopMemoMeetingListAPIRequest) SetSchema(_schema string) error {
 	r._schema = _schema
 	r.Set("schema", _schema)
 	return nil
 }
 
 // GetSchema Schema Getter
-func (r TaobaoailabaicloudtopmemomeetinglistAPIRequest) GetSchema() string {
+func (r TaobaoAilabAicloudTopMemoMeetingListAPIRequest) GetSchema() string {
 	return r._schema
 }
 
 // SetUserId is UserId Setter
 // 企业用户ID
-func (r *TaobaoailabaicloudtopmemomeetinglistAPIRequest) SetUserId(_userId string) error {
+func (r *TaobaoAilabAicloudTopMemoMeetingListAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
 	r.Set("user_id", _userId)
 	return nil
 }
 
 // GetUserId UserId Getter
-func (r TaobaoailabaicloudtopmemomeetinglistAPIRequest) GetUserId() string {
+func (r TaobaoAilabAicloudTopMemoMeetingListAPIRequest) GetUserId() string {
 	return r._userId
 }
 
 // SetUtdId is UtdId Setter
 // 手持设备ID
-func (r *TaobaoailabaicloudtopmemomeetinglistAPIRequest) SetUtdId(_utdId string) error {
+func (r *TaobaoAilabAicloudTopMemoMeetingListAPIRequest) SetUtdId(_utdId string) error {
 	r._utdId = _utdId
 	r.Set("utd_id", _utdId)
 	return nil
 }
 
 // GetUtdId UtdId Getter
-func (r TaobaoailabaicloudtopmemomeetinglistAPIRequest) GetUtdId() string {
+func (r TaobaoAilabAicloudTopMemoMeetingListAPIRequest) GetUtdId() string {
 	return r._utdId
 }
 
 // SetExt is Ext Setter
 // 扩展信息json段，用于存放APP类型，APP版本等等信息。
-func (r *TaobaoailabaicloudtopmemomeetinglistAPIRequest) SetExt(_ext string) error {
+func (r *TaobaoAilabAicloudTopMemoMeetingListAPIRequest) SetExt(_ext string) error {
 	r._ext = _ext
 	r.Set("ext", _ext)
 	return nil
 }
 
 // GetExt Ext Getter
-func (r TaobaoailabaicloudtopmemomeetinglistAPIRequest) GetExt() string {
+func (r TaobaoAilabAicloudTopMemoMeetingListAPIRequest) GetExt() string {
 	return r._ext
 }
 
 // SetMemoId is MemoId Setter
 // 闹钟ID
-func (r *TaobaoailabaicloudtopmemomeetinglistAPIRequest) SetMemoId(_memoId int64) error {
+func (r *TaobaoAilabAicloudTopMemoMeetingListAPIRequest) SetMemoId(_memoId int64) error {
 	r._memoId = _memoId
 	r.Set("memo_id", _memoId)
 	return nil
 }
 
 // GetMemoId MemoId Getter
-func (r TaobaoailabaicloudtopmemomeetinglistAPIRequest) GetMemoId() int64 {
+func (r TaobaoAilabAicloudTopMemoMeetingListAPIRequest) GetMemoId() int64 {
 	return r._memoId
 }

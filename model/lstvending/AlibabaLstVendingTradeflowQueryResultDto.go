@@ -1,7 +1,7 @@
 package lstvending
 
-// AlibabalstvendingtradeflowqueryResultDto 结构体
-type AlibabalstvendingtradeflowqueryResultDto struct {
+// AlibabaLstVendingTradeflowQueryResultDto 结构体
+type AlibabaLstVendingTradeflowQueryResultDto struct {
 	// 交易流水记录
 	ModuleList []VendingTradeFlowDto `json:"module_list,omitempty" xml:"module_list>vending_trade_flow_dto,omitempty"`
 	// 错误信息

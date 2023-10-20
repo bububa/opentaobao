@@ -1,7 +1,7 @@
 package youkuott
 
-// YoukumediaapivideosnapshotgetStruct 结构体
-type YoukumediaapivideosnapshotgetStruct struct {
+// YoukuMediaapiVideoSnapshotGetStruct 结构体
+type YoukuMediaapiVideoSnapshotGetStruct struct {
 	// 图片url列表
 	ThumbIdList []string `json:"thumb_id_list,omitempty" xml:"thumb_id_list>string,omitempty"`
 	// 图片域名

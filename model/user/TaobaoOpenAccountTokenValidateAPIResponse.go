@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoopenaccounttokenvalidateAPIResponse open account token验证 API返回值
+// TaobaoOpenAccountTokenValidateAPIResponse open account token验证 API返回值
 // taobao.open.account.token.validate
 //
 // open account token验证
-type TaobaoopenaccounttokenvalidateAPIResponse struct {
+type TaobaoOpenAccountTokenValidateAPIResponse struct {
 	model.CommonResponse
-	TaobaoopenaccounttokenvalidateAPIResponseModel
+	TaobaoOpenAccountTokenValidateAPIResponseModel
 }
 
-// TaobaoopenaccounttokenvalidateAPIResponseModel is open account token验证 成功返回结果
-type TaobaoopenaccounttokenvalidateAPIResponseModel struct {
+// TaobaoOpenAccountTokenValidateAPIResponseModel is open account token验证 成功返回结果
+type TaobaoOpenAccountTokenValidateAPIResponseModel struct {
 	XMLName xml.Name `xml:"open_account_token_validate_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdkposafterbuybenefitsendAPIResponse 生态pos购后发放权益 API返回值
+// AlibabaWdkPosAfterbuyBenefitSendAPIResponse 生态pos购后发放权益 API返回值
 // alibaba.wdk.pos.afterbuy.benefit.send
 //
 // 生态pos购后发放权益接口开放
-type AlibabawdkposafterbuybenefitsendAPIResponse struct {
+type AlibabaWdkPosAfterbuyBenefitSendAPIResponse struct {
 	model.CommonResponse
-	AlibabawdkposafterbuybenefitsendAPIResponseModel
+	AlibabaWdkPosAfterbuyBenefitSendAPIResponseModel
 }
 
-// AlibabawdkposafterbuybenefitsendAPIResponseModel is 生态pos购后发放权益 成功返回结果
-type AlibabawdkposafterbuybenefitsendAPIResponseModel struct {
+// AlibabaWdkPosAfterbuyBenefitSendAPIResponseModel is 生态pos购后发放权益 成功返回结果
+type AlibabaWdkPosAfterbuyBenefitSendAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_pos_afterbuy_benefit_send_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

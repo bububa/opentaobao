@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoalitriptravelfscrouteapibusinessareagetAPIRequest 获取业务区域 API请求
+// TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest 获取业务区域 API请求
 // taobao.alitrip.travel.fsc.route.api.business.area.get
 //
 // 获取业务区域
-type TaobaoalitriptravelfscrouteapibusinessareagetAPIRequest struct {
+type TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest struct {
 	model.Params
 	// fscBusinessAreaQueryRequest
 	_fscBusinessAreaQueryRequest *FscBusinessAreaQueryRequest
 }
 
-// NewTaobaoalitriptravelfscrouteapibusinessareagetRequest 初始化TaobaoalitriptravelfscrouteapibusinessareagetAPIRequest对象
-func NewTaobaoalitriptravelfscrouteapibusinessareagetRequest() *TaobaoalitriptravelfscrouteapibusinessareagetAPIRequest {
-	return &TaobaoalitriptravelfscrouteapibusinessareagetAPIRequest{
+// NewTaobaoAlitripTravelFscRouteApiBusinessAreaGetRequest 初始化TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest对象
+func NewTaobaoAlitripTravelFscRouteApiBusinessAreaGetRequest() *TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest {
+	return &TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoalitriptravelfscrouteapibusinessareagetAPIRequest) GetApiMethodName() string {
+func (r TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest) GetApiMethodName() string {
 	return "taobao.alitrip.travel.fsc.route.api.business.area.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoalitriptravelfscrouteapibusinessareagetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoalitriptravelfscrouteapibusinessareagetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetFscBusinessAreaQueryRequest is FscBusinessAreaQueryRequest Setter
 // fscBusinessAreaQueryRequest
-func (r *TaobaoalitriptravelfscrouteapibusinessareagetAPIRequest) SetFscBusinessAreaQueryRequest(_fscBusinessAreaQueryRequest *FscBusinessAreaQueryRequest) error {
+func (r *TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest) SetFscBusinessAreaQueryRequest(_fscBusinessAreaQueryRequest *FscBusinessAreaQueryRequest) error {
 	r._fscBusinessAreaQueryRequest = _fscBusinessAreaQueryRequest
 	r.Set("fsc_business_area_query_request", _fscBusinessAreaQueryRequest)
 	return nil
 }
 
 // GetFscBusinessAreaQueryRequest FscBusinessAreaQueryRequest Getter
-func (r TaobaoalitriptravelfscrouteapibusinessareagetAPIRequest) GetFscBusinessAreaQueryRequest() *FscBusinessAreaQueryRequest {
+func (r TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest) GetFscBusinessAreaQueryRequest() *FscBusinessAreaQueryRequest {
 	return r._fscBusinessAreaQueryRequest
 }

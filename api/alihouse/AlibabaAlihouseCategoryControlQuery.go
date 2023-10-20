@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// Alibabaalihousecategorycontrolquery 类目权限查询
+// AlibabaAlihouseCategoryControlQuery 类目权限查询
 // alibaba.alihouse.category.control.query
 //
 // 类目权限查询
-func Alibabaalihousecategorycontrolquery(clt *core.SDKClient, req *alihouse.AlibabaalihousecategorycontrolqueryAPIRequest, session string) (*alihouse.AlibabaalihousecategorycontrolqueryAPIResponse, error) {
-	var resp alihouse.AlibabaalihousecategorycontrolqueryAPIResponse
+func AlibabaAlihouseCategoryControlQuery(clt *core.SDKClient, req *alihouse.AlibabaAlihouseCategoryControlQueryAPIRequest, session string) (*alihouse.AlibabaAlihouseCategoryControlQueryAPIResponse, error) {
+	var resp alihouse.AlibabaAlihouseCategoryControlQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoalitripsellermodifylistAPIResponse 【机票代理商订单】改签订单列表 API返回值
+// TaobaoAlitripSellerModifyListAPIResponse 【机票代理商订单】改签订单列表 API返回值
 // taobao.alitrip.seller.modify.list
 //
 // 提供机票代理商查询改签订单列表
-type TaobaoalitripsellermodifylistAPIResponse struct {
+type TaobaoAlitripSellerModifyListAPIResponse struct {
 	model.CommonResponse
-	TaobaoalitripsellermodifylistAPIResponseModel
+	TaobaoAlitripSellerModifyListAPIResponseModel
 }
 
-// TaobaoalitripsellermodifylistAPIResponseModel is 【机票代理商订单】改签订单列表 成功返回结果
-type TaobaoalitripsellermodifylistAPIResponseModel struct {
+// TaobaoAlitripSellerModifyListAPIResponseModel is 【机票代理商订单】改签订单列表 成功返回结果
+type TaobaoAlitripSellerModifyListAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_seller_modify_list_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

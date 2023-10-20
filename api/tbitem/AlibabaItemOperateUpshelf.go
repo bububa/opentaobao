@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tbitem"
 )
 
-// Alibabaitemoperateupshelf 商品上架
+// AlibabaItemOperateUpshelf 商品上架
 // alibaba.item.operate.upshelf
 //
 // 商品上架
-func Alibabaitemoperateupshelf(clt *core.SDKClient, req *tbitem.AlibabaitemoperateupshelfAPIRequest, session string) (*tbitem.AlibabaitemoperateupshelfAPIResponse, error) {
-	var resp tbitem.AlibabaitemoperateupshelfAPIResponse
+func AlibabaItemOperateUpshelf(clt *core.SDKClient, req *tbitem.AlibabaItemOperateUpshelfAPIRequest, session string) (*tbitem.AlibabaItemOperateUpshelfAPIResponse, error) {
+	var resp tbitem.AlibabaItemOperateUpshelfAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

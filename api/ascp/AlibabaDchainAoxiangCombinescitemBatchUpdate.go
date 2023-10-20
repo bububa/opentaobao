@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascp"
 )
 
-// Alibabadchainaoxiangcombinescitembatchupdate 更新组合货品
+// AlibabaDchainAoxiangCombinescitemBatchUpdate 更新组合货品
 // alibaba.dchain.aoxiang.combinescitem.batch.update
 //
 // 更新组合货品
-func Alibabadchainaoxiangcombinescitembatchupdate(clt *core.SDKClient, req *ascp.AlibabadchainaoxiangcombinescitembatchupdateAPIRequest, session string) (*ascp.AlibabadchainaoxiangcombinescitembatchupdateAPIResponse, error) {
-	var resp ascp.AlibabadchainaoxiangcombinescitembatchupdateAPIResponse
+func AlibabaDchainAoxiangCombinescitemBatchUpdate(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangCombinescitemBatchUpdateAPIRequest, session string) (*ascp.AlibabaDchainAoxiangCombinescitemBatchUpdateAPIResponse, error) {
+	var resp ascp.AlibabaDchainAoxiangCombinescitemBatchUpdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/product"
 )
 
-// Tmallitemdapeitemplatequery 搭配查询接口
+// TmallItemDapeiTemplateQuery 搭配查询接口
 // tmall.item.dapei.template.query
 //
 // 根据条件获取搭配内容
-func Tmallitemdapeitemplatequery(clt *core.SDKClient, req *product.TmallitemdapeitemplatequeryAPIRequest, session string) (*product.TmallitemdapeitemplatequeryAPIResponse, error) {
-	var resp product.TmallitemdapeitemplatequeryAPIResponse
+func TmallItemDapeiTemplateQuery(clt *core.SDKClient, req *product.TmallItemDapeiTemplateQueryAPIRequest, session string) (*product.TmallItemDapeiTemplateQueryAPIResponse, error) {
+	var resp product.TmallItemDapeiTemplateQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

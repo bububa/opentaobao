@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-// Alibabaalsccrmpromotionlist 获取促销规则列表
+// AlibabaAlscCrmPromotionList 获取促销规则列表
 // alibaba.alsc.crm.promotion.list
 //
 // 获取品牌的促销规则列表
-func Alibabaalsccrmpromotionlist(clt *core.SDKClient, req *alsc.AlibabaalsccrmpromotionlistAPIRequest, session string) (*alsc.AlibabaalsccrmpromotionlistAPIResponse, error) {
-	var resp alsc.AlibabaalsccrmpromotionlistAPIResponse
+func AlibabaAlscCrmPromotionList(clt *core.SDKClient, req *alsc.AlibabaAlscCrmPromotionListAPIRequest, session string) (*alsc.AlibabaAlscCrmPromotionListAPIResponse, error) {
+	var resp alsc.AlibabaAlscCrmPromotionListAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

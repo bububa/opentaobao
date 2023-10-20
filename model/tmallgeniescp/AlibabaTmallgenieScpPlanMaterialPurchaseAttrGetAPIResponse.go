@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabatmallgeniescpplanmaterialpurchaseattrgetAPIResponse 物料的采购属性查询 API返回值
+// AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetAPIResponse 物料的采购属性查询 API返回值
 // alibaba.tmallgenie.scp.plan.material.purchase.attr.get
 //
 // 物料的采购属性查询
-type AlibabatmallgeniescpplanmaterialpurchaseattrgetAPIResponse struct {
+type AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetAPIResponse struct {
 	model.CommonResponse
-	AlibabatmallgeniescpplanmaterialpurchaseattrgetAPIResponseModel
+	AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetAPIResponseModel
 }
 
-// AlibabatmallgeniescpplanmaterialpurchaseattrgetAPIResponseModel is 物料的采购属性查询 成功返回结果
-type AlibabatmallgeniescpplanmaterialpurchaseattrgetAPIResponseModel struct {
+// AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetAPIResponseModel is 物料的采购属性查询 成功返回结果
+type AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_tmallgenie_scp_plan_material_purchase_attr_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

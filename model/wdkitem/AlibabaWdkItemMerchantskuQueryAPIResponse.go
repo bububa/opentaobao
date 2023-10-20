@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdkitemmerchantskuqueryAPIResponse 商家商品信息查询 API返回值
+// AlibabaWdkItemMerchantskuQueryAPIResponse 商家商品信息查询 API返回值
 // alibaba.wdk.item.merchantsku.query
 //
 // 商家商品信息查询
-type AlibabawdkitemmerchantskuqueryAPIResponse struct {
+type AlibabaWdkItemMerchantskuQueryAPIResponse struct {
 	model.CommonResponse
-	AlibabawdkitemmerchantskuqueryAPIResponseModel
+	AlibabaWdkItemMerchantskuQueryAPIResponseModel
 }
 
-// AlibabawdkitemmerchantskuqueryAPIResponseModel is 商家商品信息查询 成功返回结果
-type AlibabawdkitemmerchantskuqueryAPIResponseModel struct {
+// AlibabaWdkItemMerchantskuQueryAPIResponseModel is 商家商品信息查询 成功返回结果
+type AlibabaWdkItemMerchantskuQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_item_merchantsku_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
-	Result *AlibabawdkitemmerchantskuqueryResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaWdkItemMerchantskuQueryResult `json:"result,omitempty" xml:"result,omitempty"`
 }

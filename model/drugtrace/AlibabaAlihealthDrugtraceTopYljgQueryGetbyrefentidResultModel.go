@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaalihealthdrugtracetopyljgquerygetbyrefentidResultModel 结构体
-type AlibabaalihealthdrugtracetopyljgquerygetbyrefentidResultModel struct {
+// AlibabaAlihealthDrugtraceTopYljgQueryGetbyrefentidResultModel 结构体
+type AlibabaAlihealthDrugtraceTopYljgQueryGetbyrefentidResultModel struct {
 	// 返回码
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 返回值

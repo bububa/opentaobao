@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// Alibabaalihouseadminthemecreate 创建云主题
+// AlibabaAlihouseAdminThemeCreate 创建云主题
 // alibaba.alihouse.admin.theme.create
 //
 // 创建云主题
-func Alibabaalihouseadminthemecreate(clt *core.SDKClient, req *alihouse.AlibabaalihouseadminthemecreateAPIRequest, session string) (*alihouse.AlibabaalihouseadminthemecreateAPIResponse, error) {
-	var resp alihouse.AlibabaalihouseadminthemecreateAPIResponse
+func AlibabaAlihouseAdminThemeCreate(clt *core.SDKClient, req *alihouse.AlibabaAlihouseAdminThemeCreateAPIRequest, session string) (*alihouse.AlibabaAlihouseAdminThemeCreateAPIResponse, error) {
+	var resp alihouse.AlibabaAlihouseAdminThemeCreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalsccrmpointextraconsumeAPIResponse 积分补扣 API返回值
+// AlibabaAlscCrmPointExtraConsumeAPIResponse 积分补扣 API返回值
 // alibaba.alsc.crm.point.extra.consume
 //
 // 积分补扣
-type AlibabaalsccrmpointextraconsumeAPIResponse struct {
+type AlibabaAlscCrmPointExtraConsumeAPIResponse struct {
 	model.CommonResponse
-	AlibabaalsccrmpointextraconsumeAPIResponseModel
+	AlibabaAlscCrmPointExtraConsumeAPIResponseModel
 }
 
-// AlibabaalsccrmpointextraconsumeAPIResponseModel is 积分补扣 成功返回结果
-type AlibabaalsccrmpointextraconsumeAPIResponseModel struct {
+// AlibabaAlscCrmPointExtraConsumeAPIResponseModel is 积分补扣 成功返回结果
+type AlibabaAlscCrmPointExtraConsumeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_crm_point_extra_consume_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabamoscommonauthoperatorinfoAPIResponse 获取当前人员信息 API返回值
+// AlibabaMosCommonAuthOperatorInfoAPIResponse 获取当前人员信息 API返回值
 // alibaba.mos.common.auth.operator.info
 //
 // 获取当前人员信息
-type AlibabamoscommonauthoperatorinfoAPIResponse struct {
+type AlibabaMosCommonAuthOperatorInfoAPIResponse struct {
 	model.CommonResponse
-	AlibabamoscommonauthoperatorinfoAPIResponseModel
+	AlibabaMosCommonAuthOperatorInfoAPIResponseModel
 }
 
-// AlibabamoscommonauthoperatorinfoAPIResponseModel is 获取当前人员信息 成功返回结果
-type AlibabamoscommonauthoperatorinfoAPIResponseModel struct {
+// AlibabaMosCommonAuthOperatorInfoAPIResponseModel is 获取当前人员信息 成功返回结果
+type AlibabaMosCommonAuthOperatorInfoAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mos_common_auth_operator_info_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

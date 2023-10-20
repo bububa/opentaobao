@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpressaffiliateproductsmartmatchAPIRequest 联盟物料智能推荐api API请求
+// AliexpressAffiliateProductSmartmatchAPIRequest 联盟物料智能推荐api API请求
 // aliexpress.affiliate.product.smartmatch
 //
 // 联盟物料算法智能推荐
-type AliexpressaffiliateproductsmartmatchAPIRequest struct {
+type AliexpressAffiliateProductSmartmatchAPIRequest struct {
 	model.Params
 	// 接入APP信息
 	_app string
@@ -42,208 +42,208 @@ type AliexpressaffiliateproductsmartmatchAPIRequest struct {
 	_pageNo int64
 }
 
-// NewAliexpressaffiliateproductsmartmatchRequest 初始化AliexpressaffiliateproductsmartmatchAPIRequest对象
-func NewAliexpressaffiliateproductsmartmatchRequest() *AliexpressaffiliateproductsmartmatchAPIRequest {
-	return &AliexpressaffiliateproductsmartmatchAPIRequest{
+// NewAliexpressAffiliateProductSmartmatchRequest 初始化AliexpressAffiliateProductSmartmatchAPIRequest对象
+func NewAliexpressAffiliateProductSmartmatchRequest() *AliexpressAffiliateProductSmartmatchAPIRequest {
+	return &AliexpressAffiliateProductSmartmatchAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AliexpressaffiliateproductsmartmatchAPIRequest) GetApiMethodName() string {
+func (r AliexpressAffiliateProductSmartmatchAPIRequest) GetApiMethodName() string {
 	return "aliexpress.affiliate.product.smartmatch"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AliexpressaffiliateproductsmartmatchAPIRequest) GetApiParams(params url.Values) {
+func (r AliexpressAffiliateProductSmartmatchAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AliexpressaffiliateproductsmartmatchAPIRequest) GetRawParams() model.Params {
+func (r AliexpressAffiliateProductSmartmatchAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetApp is App Setter
 // 接入APP信息
-func (r *AliexpressaffiliateproductsmartmatchAPIRequest) SetApp(_app string) error {
+func (r *AliexpressAffiliateProductSmartmatchAPIRequest) SetApp(_app string) error {
 	r._app = _app
 	r.Set("app", _app)
 	return nil
 }
 
 // GetApp App Getter
-func (r AliexpressaffiliateproductsmartmatchAPIRequest) GetApp() string {
+func (r AliexpressAffiliateProductSmartmatchAPIRequest) GetApp() string {
 	return r._app
 }
 
 // SetAppSignature is AppSignature Setter
 // 请求签名
-func (r *AliexpressaffiliateproductsmartmatchAPIRequest) SetAppSignature(_appSignature string) error {
+func (r *AliexpressAffiliateProductSmartmatchAPIRequest) SetAppSignature(_appSignature string) error {
 	r._appSignature = _appSignature
 	r.Set("app_signature", _appSignature)
 	return nil
 }
 
 // GetAppSignature AppSignature Getter
-func (r AliexpressaffiliateproductsmartmatchAPIRequest) GetAppSignature() string {
+func (r AliexpressAffiliateProductSmartmatchAPIRequest) GetAppSignature() string {
 	return r._appSignature
 }
 
 // SetDevice is Device Setter
 // 设备信息
-func (r *AliexpressaffiliateproductsmartmatchAPIRequest) SetDevice(_device string) error {
+func (r *AliexpressAffiliateProductSmartmatchAPIRequest) SetDevice(_device string) error {
 	r._device = _device
 	r.Set("device", _device)
 	return nil
 }
 
 // GetDevice Device Getter
-func (r AliexpressaffiliateproductsmartmatchAPIRequest) GetDevice() string {
+func (r AliexpressAffiliateProductSmartmatchAPIRequest) GetDevice() string {
 	return r._device
 }
 
 // SetDeviceId is DeviceId Setter
 // adid或者idfa
-func (r *AliexpressaffiliateproductsmartmatchAPIRequest) SetDeviceId(_deviceId string) error {
+func (r *AliexpressAffiliateProductSmartmatchAPIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
 	r.Set("device_id", _deviceId)
 	return nil
 }
 
 // GetDeviceId DeviceId Getter
-func (r AliexpressaffiliateproductsmartmatchAPIRequest) GetDeviceId() string {
+func (r AliexpressAffiliateProductSmartmatchAPIRequest) GetDeviceId() string {
 	return r._deviceId
 }
 
 // SetFields is Fields Setter
 // 返回字段列表
-func (r *AliexpressaffiliateproductsmartmatchAPIRequest) SetFields(_fields string) error {
+func (r *AliexpressAffiliateProductSmartmatchAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
 	r.Set("fields", _fields)
 	return nil
 }
 
 // GetFields Fields Getter
-func (r AliexpressaffiliateproductsmartmatchAPIRequest) GetFields() string {
+func (r AliexpressAffiliateProductSmartmatchAPIRequest) GetFields() string {
 	return r._fields
 }
 
 // SetKeywords is Keywords Setter
 // 关键词
-func (r *AliexpressaffiliateproductsmartmatchAPIRequest) SetKeywords(_keywords string) error {
+func (r *AliexpressAffiliateProductSmartmatchAPIRequest) SetKeywords(_keywords string) error {
 	r._keywords = _keywords
 	r.Set("keywords", _keywords)
 	return nil
 }
 
 // GetKeywords Keywords Getter
-func (r AliexpressaffiliateproductsmartmatchAPIRequest) GetKeywords() string {
+func (r AliexpressAffiliateProductSmartmatchAPIRequest) GetKeywords() string {
 	return r._keywords
 }
 
 // SetProductId is ProductId Setter
 // 商品ID
-func (r *AliexpressaffiliateproductsmartmatchAPIRequest) SetProductId(_productId string) error {
+func (r *AliexpressAffiliateProductSmartmatchAPIRequest) SetProductId(_productId string) error {
 	r._productId = _productId
 	r.Set("product_id", _productId)
 	return nil
 }
 
 // GetProductId ProductId Getter
-func (r AliexpressaffiliateproductsmartmatchAPIRequest) GetProductId() string {
+func (r AliexpressAffiliateProductSmartmatchAPIRequest) GetProductId() string {
 	return r._productId
 }
 
 // SetSite is Site Setter
 // 站点信息
-func (r *AliexpressaffiliateproductsmartmatchAPIRequest) SetSite(_site string) error {
+func (r *AliexpressAffiliateProductSmartmatchAPIRequest) SetSite(_site string) error {
 	r._site = _site
 	r.Set("site", _site)
 	return nil
 }
 
 // GetSite Site Getter
-func (r AliexpressaffiliateproductsmartmatchAPIRequest) GetSite() string {
+func (r AliexpressAffiliateProductSmartmatchAPIRequest) GetSite() string {
 	return r._site
 }
 
 // SetTargetCurrency is TargetCurrency Setter
 // 目标币种:USD, GBP, CAD, EUR, UAH, MXN, TRY, RUB, BRL, AUD, INR, JPY, IDR, SEK,KRW
-func (r *AliexpressaffiliateproductsmartmatchAPIRequest) SetTargetCurrency(_targetCurrency string) error {
+func (r *AliexpressAffiliateProductSmartmatchAPIRequest) SetTargetCurrency(_targetCurrency string) error {
 	r._targetCurrency = _targetCurrency
 	r.Set("target_currency", _targetCurrency)
 	return nil
 }
 
 // GetTargetCurrency TargetCurrency Getter
-func (r AliexpressaffiliateproductsmartmatchAPIRequest) GetTargetCurrency() string {
+func (r AliexpressAffiliateProductSmartmatchAPIRequest) GetTargetCurrency() string {
 	return r._targetCurrency
 }
 
 // SetTargetLanguage is TargetLanguage Setter
 // 目标语言:EN,RU,PT,ES,FR,ID,IT,TH,JA,AR,VI,TR,DE,HE,KO,NL,PL,MX,CL,IW,IN
-func (r *AliexpressaffiliateproductsmartmatchAPIRequest) SetTargetLanguage(_targetLanguage string) error {
+func (r *AliexpressAffiliateProductSmartmatchAPIRequest) SetTargetLanguage(_targetLanguage string) error {
 	r._targetLanguage = _targetLanguage
 	r.Set("target_language", _targetLanguage)
 	return nil
 }
 
 // GetTargetLanguage TargetLanguage Getter
-func (r AliexpressaffiliateproductsmartmatchAPIRequest) GetTargetLanguage() string {
+func (r AliexpressAffiliateProductSmartmatchAPIRequest) GetTargetLanguage() string {
 	return r._targetLanguage
 }
 
 // SetTrackingId is TrackingId Setter
 // trackingId
-func (r *AliexpressaffiliateproductsmartmatchAPIRequest) SetTrackingId(_trackingId string) error {
+func (r *AliexpressAffiliateProductSmartmatchAPIRequest) SetTrackingId(_trackingId string) error {
 	r._trackingId = _trackingId
 	r.Set("tracking_id", _trackingId)
 	return nil
 }
 
 // GetTrackingId TrackingId Getter
-func (r AliexpressaffiliateproductsmartmatchAPIRequest) GetTrackingId() string {
+func (r AliexpressAffiliateProductSmartmatchAPIRequest) GetTrackingId() string {
 	return r._trackingId
 }
 
 // SetUser is User Setter
 // 用户信息
-func (r *AliexpressaffiliateproductsmartmatchAPIRequest) SetUser(_user string) error {
+func (r *AliexpressAffiliateProductSmartmatchAPIRequest) SetUser(_user string) error {
 	r._user = _user
 	r.Set("user", _user)
 	return nil
 }
 
 // GetUser User Getter
-func (r AliexpressaffiliateproductsmartmatchAPIRequest) GetUser() string {
+func (r AliexpressAffiliateProductSmartmatchAPIRequest) GetUser() string {
 	return r._user
 }
 
 // SetCountry is Country Setter
 // 商品收货国家，可筛选能销售至该国家的商品，并根据该国家税率政策返回对应商品价格
-func (r *AliexpressaffiliateproductsmartmatchAPIRequest) SetCountry(_country string) error {
+func (r *AliexpressAffiliateProductSmartmatchAPIRequest) SetCountry(_country string) error {
 	r._country = _country
 	r.Set("country", _country)
 	return nil
 }
 
 // GetCountry Country Getter
-func (r AliexpressaffiliateproductsmartmatchAPIRequest) GetCountry() string {
+func (r AliexpressAffiliateProductSmartmatchAPIRequest) GetCountry() string {
 	return r._country
 }
 
 // SetPageNo is PageNo Setter
 // 请求页数
-func (r *AliexpressaffiliateproductsmartmatchAPIRequest) SetPageNo(_pageNo int64) error {
+func (r *AliexpressAffiliateProductSmartmatchAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
 	r.Set("page_no", _pageNo)
 	return nil
 }
 
 // GetPageNo PageNo Getter
-func (r AliexpressaffiliateproductsmartmatchAPIRequest) GetPageNo() int64 {
+func (r AliexpressAffiliateProductSmartmatchAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }

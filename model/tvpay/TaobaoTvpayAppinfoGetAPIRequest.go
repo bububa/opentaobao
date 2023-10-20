@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotvpayappinfogetAPIRequest tv支付获取应用信息 API请求
+// TaobaoTvpayAppinfoGetAPIRequest tv支付获取应用信息 API请求
 // taobao.tvpay.appinfo.get
 //
 // tv支付获取应用信息
-type TaobaotvpayappinfogetAPIRequest struct {
+type TaobaoTvpayAppinfoGetAPIRequest struct {
 	model.Params
 	// 设备id
 	_deviceId string
@@ -20,65 +20,65 @@ type TaobaotvpayappinfogetAPIRequest struct {
 	_clientVersion string
 }
 
-// NewTaobaotvpayappinfogetRequest 初始化TaobaotvpayappinfogetAPIRequest对象
-func NewTaobaotvpayappinfogetRequest() *TaobaotvpayappinfogetAPIRequest {
-	return &TaobaotvpayappinfogetAPIRequest{
+// NewTaobaoTvpayAppinfoGetRequest 初始化TaobaoTvpayAppinfoGetAPIRequest对象
+func NewTaobaoTvpayAppinfoGetRequest() *TaobaoTvpayAppinfoGetAPIRequest {
+	return &TaobaoTvpayAppinfoGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaotvpayappinfogetAPIRequest) GetApiMethodName() string {
+func (r TaobaoTvpayAppinfoGetAPIRequest) GetApiMethodName() string {
 	return "taobao.tvpay.appinfo.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaotvpayappinfogetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoTvpayAppinfoGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaotvpayappinfogetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoTvpayAppinfoGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDeviceId is DeviceId Setter
 // 设备id
-func (r *TaobaotvpayappinfogetAPIRequest) SetDeviceId(_deviceId string) error {
+func (r *TaobaoTvpayAppinfoGetAPIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
 	r.Set("device_id", _deviceId)
 	return nil
 }
 
 // GetDeviceId DeviceId Getter
-func (r TaobaotvpayappinfogetAPIRequest) GetDeviceId() string {
+func (r TaobaoTvpayAppinfoGetAPIRequest) GetDeviceId() string {
 	return r._deviceId
 }
 
 // SetFrom is From Setter
 // 来源
-func (r *TaobaotvpayappinfogetAPIRequest) SetFrom(_from string) error {
+func (r *TaobaoTvpayAppinfoGetAPIRequest) SetFrom(_from string) error {
 	r._from = _from
 	r.Set("from", _from)
 	return nil
 }
 
 // GetFrom From Getter
-func (r TaobaotvpayappinfogetAPIRequest) GetFrom() string {
+func (r TaobaoTvpayAppinfoGetAPIRequest) GetFrom() string {
 	return r._from
 }
 
 // SetClientVersion is ClientVersion Setter
 // 客户端版本号
-func (r *TaobaotvpayappinfogetAPIRequest) SetClientVersion(_clientVersion string) error {
+func (r *TaobaoTvpayAppinfoGetAPIRequest) SetClientVersion(_clientVersion string) error {
 	r._clientVersion = _clientVersion
 	r.Set("client_version", _clientVersion)
 	return nil
 }
 
 // GetClientVersion ClientVersion Getter
-func (r TaobaotvpayappinfogetAPIRequest) GetClientVersion() string {
+func (r TaobaoTvpayAppinfoGetAPIRequest) GetClientVersion() string {
 	return r._clientVersion
 }

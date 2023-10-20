@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// Taobaosimbacreativeidsdeletedget 获取删除的创意ID
+// TaobaoSimbaCreativeidsDeletedGet 获取删除的创意ID
 // taobao.simba.creativeids.deleted.get
 //
 // 获取删除的创意ID
-func Taobaosimbacreativeidsdeletedget(clt *core.SDKClient, req *simba.TaobaosimbacreativeidsdeletedgetAPIRequest, session string) (*simba.TaobaosimbacreativeidsdeletedgetAPIResponse, error) {
-	var resp simba.TaobaosimbacreativeidsdeletedgetAPIResponse
+func TaobaoSimbaCreativeidsDeletedGet(clt *core.SDKClient, req *simba.TaobaoSimbaCreativeidsDeletedGetAPIRequest, session string) (*simba.TaobaoSimbaCreativeidsDeletedGetAPIResponse, error) {
+	var resp simba.TaobaoSimbaCreativeidsDeletedGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

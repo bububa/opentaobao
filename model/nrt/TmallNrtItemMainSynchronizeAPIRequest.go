@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallnrtitemmainsynchronizeAPIRequest 家装新零售主商品同步至阿里 API请求
+// TmallNrtItemMainSynchronizeAPIRequest 家装新零售主商品同步至阿里 API请求
 // tmall.nrt.item.main.synchronize
 //
 // 同步卖场存量线下商品到阿里
-type TmallnrtitemmainsynchronizeAPIRequest struct {
+type TmallNrtItemMainSynchronizeAPIRequest struct {
 	model.Params
 	// 类目属性
 	_props []CategoryPropDto
@@ -32,143 +32,143 @@ type TmallnrtitemmainsynchronizeAPIRequest struct {
 	_outerProps *MacallineItemExtDto
 }
 
-// NewTmallnrtitemmainsynchronizeRequest 初始化TmallnrtitemmainsynchronizeAPIRequest对象
-func NewTmallnrtitemmainsynchronizeRequest() *TmallnrtitemmainsynchronizeAPIRequest {
-	return &TmallnrtitemmainsynchronizeAPIRequest{
+// NewTmallNrtItemMainSynchronizeRequest 初始化TmallNrtItemMainSynchronizeAPIRequest对象
+func NewTmallNrtItemMainSynchronizeRequest() *TmallNrtItemMainSynchronizeAPIRequest {
+	return &TmallNrtItemMainSynchronizeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallnrtitemmainsynchronizeAPIRequest) GetApiMethodName() string {
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetApiMethodName() string {
 	return "tmall.nrt.item.main.synchronize"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallnrtitemmainsynchronizeAPIRequest) GetApiParams(params url.Values) {
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallnrtitemmainsynchronizeAPIRequest) GetRawParams() model.Params {
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetProps is Props Setter
 // 类目属性
-func (r *TmallnrtitemmainsynchronizeAPIRequest) SetProps(_props []CategoryPropDto) error {
+func (r *TmallNrtItemMainSynchronizeAPIRequest) SetProps(_props []CategoryPropDto) error {
 	r._props = _props
 	r.Set("props", _props)
 	return nil
 }
 
 // GetProps Props Getter
-func (r TmallnrtitemmainsynchronizeAPIRequest) GetProps() []CategoryPropDto {
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetProps() []CategoryPropDto {
 	return r._props
 }
 
 // SetBoothId is BoothId Setter
 // 摊位id
-func (r *TmallnrtitemmainsynchronizeAPIRequest) SetBoothId(_boothId string) error {
+func (r *TmallNrtItemMainSynchronizeAPIRequest) SetBoothId(_boothId string) error {
 	r._boothId = _boothId
 	r.Set("booth_id", _boothId)
 	return nil
 }
 
 // GetBoothId BoothId Getter
-func (r TmallnrtitemmainsynchronizeAPIRequest) GetBoothId() string {
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetBoothId() string {
 	return r._boothId
 }
 
 // SetDealerCode is DealerCode Setter
 // 经销商编码
-func (r *TmallnrtitemmainsynchronizeAPIRequest) SetDealerCode(_dealerCode string) error {
+func (r *TmallNrtItemMainSynchronizeAPIRequest) SetDealerCode(_dealerCode string) error {
 	r._dealerCode = _dealerCode
 	r.Set("dealer_code", _dealerCode)
 	return nil
 }
 
 // GetDealerCode DealerCode Getter
-func (r TmallnrtitemmainsynchronizeAPIRequest) GetDealerCode() string {
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetDealerCode() string {
 	return r._dealerCode
 }
 
 // SetMallId is MallId Setter
 // 卖场id
-func (r *TmallnrtitemmainsynchronizeAPIRequest) SetMallId(_mallId string) error {
+func (r *TmallNrtItemMainSynchronizeAPIRequest) SetMallId(_mallId string) error {
 	r._mallId = _mallId
 	r.Set("mall_id", _mallId)
 	return nil
 }
 
 // GetMallId MallId Getter
-func (r TmallnrtitemmainsynchronizeAPIRequest) GetMallId() string {
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetMallId() string {
 	return r._mallId
 }
 
 // SetOuterId is OuterId Setter
 // 商家编码
-func (r *TmallnrtitemmainsynchronizeAPIRequest) SetOuterId(_outerId string) error {
+func (r *TmallNrtItemMainSynchronizeAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
 	r.Set("outer_id", _outerId)
 	return nil
 }
 
 // GetOuterId OuterId Getter
-func (r TmallnrtitemmainsynchronizeAPIRequest) GetOuterId() string {
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
 // SetPrice is Price Setter
 // 价格
-func (r *TmallnrtitemmainsynchronizeAPIRequest) SetPrice(_price string) error {
+func (r *TmallNrtItemMainSynchronizeAPIRequest) SetPrice(_price string) error {
 	r._price = _price
 	r.Set("price", _price)
 	return nil
 }
 
 // GetPrice Price Getter
-func (r TmallnrtitemmainsynchronizeAPIRequest) GetPrice() string {
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetPrice() string {
 	return r._price
 }
 
 // SetTitle is Title Setter
 // 商品名
-func (r *TmallnrtitemmainsynchronizeAPIRequest) SetTitle(_title string) error {
+func (r *TmallNrtItemMainSynchronizeAPIRequest) SetTitle(_title string) error {
 	r._title = _title
 	r.Set("title", _title)
 	return nil
 }
 
 // GetTitle Title Getter
-func (r TmallnrtitemmainsynchronizeAPIRequest) GetTitle() string {
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetTitle() string {
 	return r._title
 }
 
 // SetCid is Cid Setter
 // 叶子类目id
-func (r *TmallnrtitemmainsynchronizeAPIRequest) SetCid(_cid int64) error {
+func (r *TmallNrtItemMainSynchronizeAPIRequest) SetCid(_cid int64) error {
 	r._cid = _cid
 	r.Set("cid", _cid)
 	return nil
 }
 
 // GetCid Cid Getter
-func (r TmallnrtitemmainsynchronizeAPIRequest) GetCid() int64 {
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetCid() int64 {
 	return r._cid
 }
 
 // SetOuterProps is OuterProps Setter
 // 系统自动生成
-func (r *TmallnrtitemmainsynchronizeAPIRequest) SetOuterProps(_outerProps *MacallineItemExtDto) error {
+func (r *TmallNrtItemMainSynchronizeAPIRequest) SetOuterProps(_outerProps *MacallineItemExtDto) error {
 	r._outerProps = _outerProps
 	r.Set("outer_props", _outerProps)
 	return nil
 }
 
 // GetOuterProps OuterProps Getter
-func (r TmallnrtitemmainsynchronizeAPIRequest) GetOuterProps() *MacallineItemExtDto {
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetOuterProps() *MacallineItemExtDto {
 	return r._outerProps
 }

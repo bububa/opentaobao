@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaojushitajmsuseraddAPIResponse 添加ONS消息同步用户 API返回值
+// TaobaoJushitaJmsUserAddAPIResponse 添加ONS消息同步用户 API返回值
 // taobao.jushita.jms.user.add
 //
 // 添加ONS消息同步用户
-type TaobaojushitajmsuseraddAPIResponse struct {
+type TaobaoJushitaJmsUserAddAPIResponse struct {
 	model.CommonResponse
-	TaobaojushitajmsuseraddAPIResponseModel
+	TaobaoJushitaJmsUserAddAPIResponseModel
 }
 
-// TaobaojushitajmsuseraddAPIResponseModel is 添加ONS消息同步用户 成功返回结果
-type TaobaojushitajmsuseraddAPIResponseModel struct {
+// TaobaoJushitaJmsUserAddAPIResponseModel is 添加ONS消息同步用户 成功返回结果
+type TaobaoJushitaJmsUserAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"jushita_jms_user_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

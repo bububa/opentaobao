@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tbitem"
 )
 
-// Alibabaitemeditsubmit 商品编辑提交schema信息
+// AlibabaItemEditSubmit 商品编辑提交schema信息
 // alibaba.item.edit.submit
 //
 // 商品编辑提交schema信息
-func Alibabaitemeditsubmit(clt *core.SDKClient, req *tbitem.AlibabaitemeditsubmitAPIRequest, session string) (*tbitem.AlibabaitemeditsubmitAPIResponse, error) {
-	var resp tbitem.AlibabaitemeditsubmitAPIResponse
+func AlibabaItemEditSubmit(clt *core.SDKClient, req *tbitem.AlibabaItemEditSubmitAPIRequest, session string) (*tbitem.AlibabaItemEditSubmitAPIResponse, error) {
+	var resp tbitem.AlibabaItemEditSubmitAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

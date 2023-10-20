@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/paimai"
 )
 
-// Taobaopaimainftorderinfoquery 查询订单类型
+// TaobaoPaimaiNftOrderinfoQuery 查询订单类型
 // taobao.paimai.nft.orderinfo.query
 //
 // 查询订单类型
-func Taobaopaimainftorderinfoquery(clt *core.SDKClient, req *paimai.TaobaopaimainftorderinfoqueryAPIRequest, session string) (*paimai.TaobaopaimainftorderinfoqueryAPIResponse, error) {
-	var resp paimai.TaobaopaimainftorderinfoqueryAPIResponse
+func TaobaoPaimaiNftOrderinfoQuery(clt *core.SDKClient, req *paimai.TaobaoPaimaiNftOrderinfoQueryAPIRequest, session string) (*paimai.TaobaoPaimaiNftOrderinfoQueryAPIResponse, error) {
+	var resp paimai.TaobaoPaimaiNftOrderinfoQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

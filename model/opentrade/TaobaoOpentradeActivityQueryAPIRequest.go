@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoopentradeactivityqueryAPIRequest 查询尖货活动信息 API请求
+// TaobaoOpentradeActivityQueryAPIRequest 查询尖货活动信息 API请求
 // taobao.opentrade.activity.query
 //
 // 尖货交易活动信息配置，查询尖货活动信息
-type TaobaoopentradeactivityqueryAPIRequest struct {
+type TaobaoOpentradeActivityQueryAPIRequest struct {
 	model.Params
 	// 活动结束时间
 	_endTime string
@@ -22,78 +22,78 @@ type TaobaoopentradeactivityqueryAPIRequest struct {
 	_pageIndex int64
 }
 
-// NewTaobaoopentradeactivityqueryRequest 初始化TaobaoopentradeactivityqueryAPIRequest对象
-func NewTaobaoopentradeactivityqueryRequest() *TaobaoopentradeactivityqueryAPIRequest {
-	return &TaobaoopentradeactivityqueryAPIRequest{
+// NewTaobaoOpentradeActivityQueryRequest 初始化TaobaoOpentradeActivityQueryAPIRequest对象
+func NewTaobaoOpentradeActivityQueryRequest() *TaobaoOpentradeActivityQueryAPIRequest {
+	return &TaobaoOpentradeActivityQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoopentradeactivityqueryAPIRequest) GetApiMethodName() string {
+func (r TaobaoOpentradeActivityQueryAPIRequest) GetApiMethodName() string {
 	return "taobao.opentrade.activity.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoopentradeactivityqueryAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoOpentradeActivityQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoopentradeactivityqueryAPIRequest) GetRawParams() model.Params {
+func (r TaobaoOpentradeActivityQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetEndTime is EndTime Setter
 // 活动结束时间
-func (r *TaobaoopentradeactivityqueryAPIRequest) SetEndTime(_endTime string) error {
+func (r *TaobaoOpentradeActivityQueryAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
 	r.Set("end_time", _endTime)
 	return nil
 }
 
 // GetEndTime EndTime Getter
-func (r TaobaoopentradeactivityqueryAPIRequest) GetEndTime() string {
+func (r TaobaoOpentradeActivityQueryAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
 // SetActivityName is ActivityName Setter
 // 活动名称
-func (r *TaobaoopentradeactivityqueryAPIRequest) SetActivityName(_activityName string) error {
+func (r *TaobaoOpentradeActivityQueryAPIRequest) SetActivityName(_activityName string) error {
 	r._activityName = _activityName
 	r.Set("activity_name", _activityName)
 	return nil
 }
 
 // GetActivityName ActivityName Getter
-func (r TaobaoopentradeactivityqueryAPIRequest) GetActivityName() string {
+func (r TaobaoOpentradeActivityQueryAPIRequest) GetActivityName() string {
 	return r._activityName
 }
 
 // SetPageSize is PageSize Setter
 // 分页大小
-func (r *TaobaoopentradeactivityqueryAPIRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaoOpentradeActivityQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
 	r.Set("page_size", _pageSize)
 	return nil
 }
 
 // GetPageSize PageSize Getter
-func (r TaobaoopentradeactivityqueryAPIRequest) GetPageSize() int64 {
+func (r TaobaoOpentradeActivityQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
 // SetPageIndex is PageIndex Setter
 // 分页序号
-func (r *TaobaoopentradeactivityqueryAPIRequest) SetPageIndex(_pageIndex int64) error {
+func (r *TaobaoOpentradeActivityQueryAPIRequest) SetPageIndex(_pageIndex int64) error {
 	r._pageIndex = _pageIndex
 	r.Set("page_index", _pageIndex)
 	return nil
 }
 
 // GetPageIndex PageIndex Getter
-func (r TaobaoopentradeactivityqueryAPIRequest) GetPageIndex() int64 {
+func (r TaobaoOpentradeActivityQueryAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }

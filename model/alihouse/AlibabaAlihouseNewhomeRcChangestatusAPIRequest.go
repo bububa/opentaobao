@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihousenewhomercchangestatusAPIRequest 图文草稿状态更新 API请求
+// AlibabaAlihouseNewhomeRcChangestatusAPIRequest 图文草稿状态更新 API请求
 // alibaba.alihouse.newhome.rc.changestatus
 //
 // 图文草稿状态更新
-type AlibabaalihousenewhomercchangestatusAPIRequest struct {
+type AlibabaAlihouseNewhomeRcChangestatusAPIRequest struct {
 	model.Params
 	// 外部图文id
 	_outerId string
@@ -22,78 +22,78 @@ type AlibabaalihousenewhomercchangestatusAPIRequest struct {
 	_status int64
 }
 
-// NewAlibabaalihousenewhomercchangestatusRequest 初始化AlibabaalihousenewhomercchangestatusAPIRequest对象
-func NewAlibabaalihousenewhomercchangestatusRequest() *AlibabaalihousenewhomercchangestatusAPIRequest {
-	return &AlibabaalihousenewhomercchangestatusAPIRequest{
+// NewAlibabaAlihouseNewhomeRcChangestatusRequest 初始化AlibabaAlihouseNewhomeRcChangestatusAPIRequest对象
+func NewAlibabaAlihouseNewhomeRcChangestatusRequest() *AlibabaAlihouseNewhomeRcChangestatusAPIRequest {
+	return &AlibabaAlihouseNewhomeRcChangestatusAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalihousenewhomercchangestatusAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlihouseNewhomeRcChangestatusAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihouse.newhome.rc.changestatus"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalihousenewhomercchangestatusAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlihouseNewhomeRcChangestatusAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalihousenewhomercchangestatusAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlihouseNewhomeRcChangestatusAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOuterId is OuterId Setter
 // 外部图文id
-func (r *AlibabaalihousenewhomercchangestatusAPIRequest) SetOuterId(_outerId string) error {
+func (r *AlibabaAlihouseNewhomeRcChangestatusAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
 	r.Set("outer_id", _outerId)
 	return nil
 }
 
 // GetOuterId OuterId Getter
-func (r AlibabaalihousenewhomercchangestatusAPIRequest) GetOuterId() string {
+func (r AlibabaAlihouseNewhomeRcChangestatusAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
 // SetOuterProjectId is OuterProjectId Setter
 // 外部楼盘id
-func (r *AlibabaalihousenewhomercchangestatusAPIRequest) SetOuterProjectId(_outerProjectId string) error {
+func (r *AlibabaAlihouseNewhomeRcChangestatusAPIRequest) SetOuterProjectId(_outerProjectId string) error {
 	r._outerProjectId = _outerProjectId
 	r.Set("outer_project_id", _outerProjectId)
 	return nil
 }
 
 // GetOuterProjectId OuterProjectId Getter
-func (r AlibabaalihousenewhomercchangestatusAPIRequest) GetOuterProjectId() string {
+func (r AlibabaAlihouseNewhomeRcChangestatusAPIRequest) GetOuterProjectId() string {
 	return r._outerProjectId
 }
 
 // SetOuterStoreId is OuterStoreId Setter
 // 外部门店id
-func (r *AlibabaalihousenewhomercchangestatusAPIRequest) SetOuterStoreId(_outerStoreId string) error {
+func (r *AlibabaAlihouseNewhomeRcChangestatusAPIRequest) SetOuterStoreId(_outerStoreId string) error {
 	r._outerStoreId = _outerStoreId
 	r.Set("outer_store_id", _outerStoreId)
 	return nil
 }
 
 // GetOuterStoreId OuterStoreId Getter
-func (r AlibabaalihousenewhomercchangestatusAPIRequest) GetOuterStoreId() string {
+func (r AlibabaAlihouseNewhomeRcChangestatusAPIRequest) GetOuterStoreId() string {
 	return r._outerStoreId
 }
 
 // SetStatus is Status Setter
 // 0 失效 1 有效
-func (r *AlibabaalihousenewhomercchangestatusAPIRequest) SetStatus(_status int64) error {
+func (r *AlibabaAlihouseNewhomeRcChangestatusAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
 	r.Set("status", _status)
 	return nil
 }
 
 // GetStatus Status Getter
-func (r AlibabaalihousenewhomercchangestatusAPIRequest) GetStatus() int64 {
+func (r AlibabaAlihouseNewhomeRcChangestatusAPIRequest) GetStatus() int64 {
 	return r._status
 }

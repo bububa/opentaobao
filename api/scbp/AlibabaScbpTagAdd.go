@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// Alibabascbptagadd 创建关键词分组
+// AlibabaScbpTagAdd 创建关键词分组
 // alibaba.scbp.tag.add
 //
 // 创建关键词分组
-func Alibabascbptagadd(clt *core.SDKClient, req *scbp.AlibabascbptagaddAPIRequest, session string) (*scbp.AlibabascbptagaddAPIResponse, error) {
-	var resp scbp.AlibabascbptagaddAPIResponse
+func AlibabaScbpTagAdd(clt *core.SDKClient, req *scbp.AlibabaScbpTagAddAPIRequest, session string) (*scbp.AlibabaScbpTagAddAPIResponse, error) {
+	var resp scbp.AlibabaScbpTagAddAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

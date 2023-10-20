@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaophoneitemexternalrecommendAPIResponse 话费选品能力外放 API返回值
+// TaobaoPhoneItemExternalRecommendAPIResponse 话费选品能力外放 API返回值
 // taobao.phone.item.external.recommend
 //
 // 话费选品能力外放
-type TaobaophoneitemexternalrecommendAPIResponse struct {
+type TaobaoPhoneItemExternalRecommendAPIResponse struct {
 	model.CommonResponse
-	TaobaophoneitemexternalrecommendAPIResponseModel
+	TaobaoPhoneItemExternalRecommendAPIResponseModel
 }
 
-// TaobaophoneitemexternalrecommendAPIResponseModel is 话费选品能力外放 成功返回结果
-type TaobaophoneitemexternalrecommendAPIResponseModel struct {
+// TaobaoPhoneItemExternalRecommendAPIResponseModel is 话费选品能力外放 成功返回结果
+type TaobaoPhoneItemExternalRecommendAPIResponseModel struct {
 	XMLName xml.Name `xml:"phone_item_external_recommend_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

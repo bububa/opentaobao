@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabawdkchannelusersyncApiResult 结构体
-type AlibabawdkchannelusersyncApiResult struct {
+// AlibabaWdkChannelUserSyncApiResult 结构体
+type AlibabaWdkChannelUserSyncApiResult struct {
 	// 是否成功
 	Success string `json:"success,omitempty" xml:"success,omitempty"`
 	// 错误信息

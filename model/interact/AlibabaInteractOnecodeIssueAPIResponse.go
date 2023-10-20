@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabainteractonecodeissueAPIResponse onecode代码通用鉴权 API返回值
+// AlibabaInteractOnecodeIssueAPIResponse onecode代码通用鉴权 API返回值
 // alibaba.interact.onecode.issue
 //
 // 手淘开放鉴权接口，仅用于tida接口鉴权，无输入输出。
-type AlibabainteractonecodeissueAPIResponse struct {
+type AlibabaInteractOnecodeIssueAPIResponse struct {
 	model.CommonResponse
-	AlibabainteractonecodeissueAPIResponseModel
+	AlibabaInteractOnecodeIssueAPIResponseModel
 }
 
-// AlibabainteractonecodeissueAPIResponseModel is onecode代码通用鉴权 成功返回结果
-type AlibabainteractonecodeissueAPIResponseModel struct {
+// AlibabaInteractOnecodeIssueAPIResponseModel is onecode代码通用鉴权 成功返回结果
+type AlibabaInteractOnecodeIssueAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_onecode_issue_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

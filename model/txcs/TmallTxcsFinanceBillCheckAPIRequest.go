@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmalltxcsfinancebillcheckAPIRequest 天猫超市外部商家财务账单对账 API请求
+// TmallTxcsFinanceBillCheckAPIRequest 天猫超市外部商家财务账单对账 API请求
 // tmall.txcs.finance.bill.check
 //
 // 提供天猫超市外部合作商家财务账单对账
-type TmalltxcsfinancebillcheckAPIRequest struct {
+type TmallTxcsFinanceBillCheckAPIRequest struct {
 	model.Params
 	// 门店编码
 	_ouCode string
@@ -18,52 +18,52 @@ type TmalltxcsfinancebillcheckAPIRequest struct {
 	_statementBillFeeDetailQuery *StatementBillFeeDetailQuery
 }
 
-// NewTmalltxcsfinancebillcheckRequest 初始化TmalltxcsfinancebillcheckAPIRequest对象
-func NewTmalltxcsfinancebillcheckRequest() *TmalltxcsfinancebillcheckAPIRequest {
-	return &TmalltxcsfinancebillcheckAPIRequest{
+// NewTmallTxcsFinanceBillCheckRequest 初始化TmallTxcsFinanceBillCheckAPIRequest对象
+func NewTmallTxcsFinanceBillCheckRequest() *TmallTxcsFinanceBillCheckAPIRequest {
+	return &TmallTxcsFinanceBillCheckAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmalltxcsfinancebillcheckAPIRequest) GetApiMethodName() string {
+func (r TmallTxcsFinanceBillCheckAPIRequest) GetApiMethodName() string {
 	return "tmall.txcs.finance.bill.check"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmalltxcsfinancebillcheckAPIRequest) GetApiParams(params url.Values) {
+func (r TmallTxcsFinanceBillCheckAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmalltxcsfinancebillcheckAPIRequest) GetRawParams() model.Params {
+func (r TmallTxcsFinanceBillCheckAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOuCode is OuCode Setter
 // 门店编码
-func (r *TmalltxcsfinancebillcheckAPIRequest) SetOuCode(_ouCode string) error {
+func (r *TmallTxcsFinanceBillCheckAPIRequest) SetOuCode(_ouCode string) error {
 	r._ouCode = _ouCode
 	r.Set("ou_code", _ouCode)
 	return nil
 }
 
 // GetOuCode OuCode Getter
-func (r TmalltxcsfinancebillcheckAPIRequest) GetOuCode() string {
+func (r TmallTxcsFinanceBillCheckAPIRequest) GetOuCode() string {
 	return r._ouCode
 }
 
 // SetStatementBillFeeDetailQuery is StatementBillFeeDetailQuery Setter
 // 查询参数
-func (r *TmalltxcsfinancebillcheckAPIRequest) SetStatementBillFeeDetailQuery(_statementBillFeeDetailQuery *StatementBillFeeDetailQuery) error {
+func (r *TmallTxcsFinanceBillCheckAPIRequest) SetStatementBillFeeDetailQuery(_statementBillFeeDetailQuery *StatementBillFeeDetailQuery) error {
 	r._statementBillFeeDetailQuery = _statementBillFeeDetailQuery
 	r.Set("statement_bill_fee_detail_query", _statementBillFeeDetailQuery)
 	return nil
 }
 
 // GetStatementBillFeeDetailQuery StatementBillFeeDetailQuery Getter
-func (r TmalltxcsfinancebillcheckAPIRequest) GetStatementBillFeeDetailQuery() *StatementBillFeeDetailQuery {
+func (r TmallTxcsFinanceBillCheckAPIRequest) GetStatementBillFeeDetailQuery() *StatementBillFeeDetailQuery {
 	return r._statementBillFeeDetailQuery
 }

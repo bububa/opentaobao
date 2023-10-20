@@ -1,7 +1,7 @@
 package idle
 
-// AlibabaidlespuregistermodifyResult 结构体
-type AlibabaidlespuregistermodifyResult struct {
+// AlibabaIdleSpuRegisterModifyResult 结构体
+type AlibabaIdleSpuRegisterModifyResult struct {
 	// errCode
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// errMsg

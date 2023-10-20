@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoomniitemitemdeleteAPIResponse 全渠道商品删除 API返回值
+// TaobaoOmniitemItemDeleteAPIResponse 全渠道商品删除 API返回值
 // taobao.omniitem.item.delete
 //
 // 全渠道商品删除，能够对门店商品库商品进行删除动作
-type TaobaoomniitemitemdeleteAPIResponse struct {
+type TaobaoOmniitemItemDeleteAPIResponse struct {
 	model.CommonResponse
-	TaobaoomniitemitemdeleteAPIResponseModel
+	TaobaoOmniitemItemDeleteAPIResponseModel
 }
 
-// TaobaoomniitemitemdeleteAPIResponseModel is 全渠道商品删除 成功返回结果
-type TaobaoomniitemitemdeleteAPIResponseModel struct {
+// TaobaoOmniitemItemDeleteAPIResponseModel is 全渠道商品删除 成功返回结果
+type TaobaoOmniitemItemDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"omniitem_item_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoplacestorerelatesubaddAPIRequest 门店和子门店关系新增 API请求
+// TaobaoPlaceStorerelatesubAddAPIRequest 门店和子门店关系新增 API请求
 // taobao.place.storerelatesub.add
 //
 // 门店和子门店关系新增
-type TaobaoplacestorerelatesubaddAPIRequest struct {
+type TaobaoPlaceStorerelatesubAddAPIRequest struct {
 	model.Params
 	// 子门店Id
 	_subStoreIds []string
@@ -18,52 +18,52 @@ type TaobaoplacestorerelatesubaddAPIRequest struct {
 	_storeId int64
 }
 
-// NewTaobaoplacestorerelatesubaddRequest 初始化TaobaoplacestorerelatesubaddAPIRequest对象
-func NewTaobaoplacestorerelatesubaddRequest() *TaobaoplacestorerelatesubaddAPIRequest {
-	return &TaobaoplacestorerelatesubaddAPIRequest{
+// NewTaobaoPlaceStorerelatesubAddRequest 初始化TaobaoPlaceStorerelatesubAddAPIRequest对象
+func NewTaobaoPlaceStorerelatesubAddRequest() *TaobaoPlaceStorerelatesubAddAPIRequest {
+	return &TaobaoPlaceStorerelatesubAddAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoplacestorerelatesubaddAPIRequest) GetApiMethodName() string {
+func (r TaobaoPlaceStorerelatesubAddAPIRequest) GetApiMethodName() string {
 	return "taobao.place.storerelatesub.add"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoplacestorerelatesubaddAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoPlaceStorerelatesubAddAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoplacestorerelatesubaddAPIRequest) GetRawParams() model.Params {
+func (r TaobaoPlaceStorerelatesubAddAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSubStoreIds is SubStoreIds Setter
 // 子门店Id
-func (r *TaobaoplacestorerelatesubaddAPIRequest) SetSubStoreIds(_subStoreIds []string) error {
+func (r *TaobaoPlaceStorerelatesubAddAPIRequest) SetSubStoreIds(_subStoreIds []string) error {
 	r._subStoreIds = _subStoreIds
 	r.Set("sub_store_ids", _subStoreIds)
 	return nil
 }
 
 // GetSubStoreIds SubStoreIds Getter
-func (r TaobaoplacestorerelatesubaddAPIRequest) GetSubStoreIds() []string {
+func (r TaobaoPlaceStorerelatesubAddAPIRequest) GetSubStoreIds() []string {
 	return r._subStoreIds
 }
 
 // SetStoreId is StoreId Setter
 // 门店Id
-func (r *TaobaoplacestorerelatesubaddAPIRequest) SetStoreId(_storeId int64) error {
+func (r *TaobaoPlaceStorerelatesubAddAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
 	r.Set("store_id", _storeId)
 	return nil
 }
 
 // GetStoreId StoreId Getter
-func (r TaobaoplacestorerelatesubaddAPIRequest) GetStoreId() int64 {
+func (r TaobaoPlaceStorerelatesubAddAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }

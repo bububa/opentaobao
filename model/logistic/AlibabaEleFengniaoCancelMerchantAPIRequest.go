@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaelefengniaocancelmerchantAPIRequest 商户取消 API请求
+// AlibabaEleFengniaoCancelMerchantAPIRequest 商户取消 API请求
 // alibaba.ele.fengniao.cancel.merchant
 //
 // 商户取消配送
-type AlibabaelefengniaocancelmerchantAPIRequest struct {
+type AlibabaEleFengniaoCancelMerchantAPIRequest struct {
 	model.Params
 	// 参数param
 	_param *Param
 }
 
-// NewAlibabaelefengniaocancelmerchantRequest 初始化AlibabaelefengniaocancelmerchantAPIRequest对象
-func NewAlibabaelefengniaocancelmerchantRequest() *AlibabaelefengniaocancelmerchantAPIRequest {
-	return &AlibabaelefengniaocancelmerchantAPIRequest{
+// NewAlibabaEleFengniaoCancelMerchantRequest 初始化AlibabaEleFengniaoCancelMerchantAPIRequest对象
+func NewAlibabaEleFengniaoCancelMerchantRequest() *AlibabaEleFengniaoCancelMerchantAPIRequest {
+	return &AlibabaEleFengniaoCancelMerchantAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaelefengniaocancelmerchantAPIRequest) GetApiMethodName() string {
+func (r AlibabaEleFengniaoCancelMerchantAPIRequest) GetApiMethodName() string {
 	return "alibaba.ele.fengniao.cancel.merchant"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaelefengniaocancelmerchantAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaEleFengniaoCancelMerchantAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaelefengniaocancelmerchantAPIRequest) GetRawParams() model.Params {
+func (r AlibabaEleFengniaoCancelMerchantAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 参数param
-func (r *AlibabaelefengniaocancelmerchantAPIRequest) SetParam(_param *Param) error {
+func (r *AlibabaEleFengniaoCancelMerchantAPIRequest) SetParam(_param *Param) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r AlibabaelefengniaocancelmerchantAPIRequest) GetParam() *Param {
+func (r AlibabaEleFengniaoCancelMerchantAPIRequest) GetParam() *Param {
 	return r._param
 }

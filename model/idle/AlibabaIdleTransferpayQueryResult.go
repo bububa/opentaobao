@@ -1,7 +1,7 @@
 package idle
 
-// AlibabaidletransferpayqueryResult 结构体
-type AlibabaidletransferpayqueryResult struct {
+// AlibabaIdleTransferpayQueryResult 结构体
+type AlibabaIdleTransferpayQueryResult struct {
 	// 错误码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 错误信息

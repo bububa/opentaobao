@@ -1,7 +1,7 @@
 package logistic
 
-// TaobaowlbimportthreeplresourcegetTopResult 结构体
-type TaobaowlbimportthreeplresourcegetTopResult struct {
+// TaobaoWlbImportThreeplResourceGetTopResult 结构体
+type TaobaoWlbImportThreeplResourceGetTopResult struct {
 	// 资源列表
 	Resources []ThreePlConsignResourceDto `json:"resources,omitempty" xml:"resources>three_pl_consign_resource_dto,omitempty"`
 	// 错误信息

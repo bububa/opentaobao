@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabatmallgeniescpplannetdemanduploadAPIRequest 23-Net Demand净需求回传 API请求
+// AlibabaTmallgenieScpPlanNetdemandUploadAPIRequest 23-Net Demand净需求回传 API请求
 // alibaba.tmallgenie.scp.plan.netdemand.upload
 //
 // Net Demand净需求回传
-type AlibabatmallgeniescpplannetdemanduploadAPIRequest struct {
+type AlibabaTmallgenieScpPlanNetdemandUploadAPIRequest struct {
 	model.Params
 	// 对象
 	_netDemandRequest *NetDemandRequest
 }
 
-// NewAlibabatmallgeniescpplannetdemanduploadRequest 初始化AlibabatmallgeniescpplannetdemanduploadAPIRequest对象
-func NewAlibabatmallgeniescpplannetdemanduploadRequest() *AlibabatmallgeniescpplannetdemanduploadAPIRequest {
-	return &AlibabatmallgeniescpplannetdemanduploadAPIRequest{
+// NewAlibabaTmallgenieScpPlanNetdemandUploadRequest 初始化AlibabaTmallgenieScpPlanNetdemandUploadAPIRequest对象
+func NewAlibabaTmallgenieScpPlanNetdemandUploadRequest() *AlibabaTmallgenieScpPlanNetdemandUploadAPIRequest {
+	return &AlibabaTmallgenieScpPlanNetdemandUploadAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabatmallgeniescpplannetdemanduploadAPIRequest) GetApiMethodName() string {
+func (r AlibabaTmallgenieScpPlanNetdemandUploadAPIRequest) GetApiMethodName() string {
 	return "alibaba.tmallgenie.scp.plan.netdemand.upload"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabatmallgeniescpplannetdemanduploadAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaTmallgenieScpPlanNetdemandUploadAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabatmallgeniescpplannetdemanduploadAPIRequest) GetRawParams() model.Params {
+func (r AlibabaTmallgenieScpPlanNetdemandUploadAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetNetDemandRequest is NetDemandRequest Setter
 // 对象
-func (r *AlibabatmallgeniescpplannetdemanduploadAPIRequest) SetNetDemandRequest(_netDemandRequest *NetDemandRequest) error {
+func (r *AlibabaTmallgenieScpPlanNetdemandUploadAPIRequest) SetNetDemandRequest(_netDemandRequest *NetDemandRequest) error {
 	r._netDemandRequest = _netDemandRequest
 	r.Set("net_demand_request", _netDemandRequest)
 	return nil
 }
 
 // GetNetDemandRequest NetDemandRequest Getter
-func (r AlibabatmallgeniescpplannetdemanduploadAPIRequest) GetNetDemandRequest() *NetDemandRequest {
+func (r AlibabaTmallgenieScpPlanNetdemandUploadAPIRequest) GetNetDemandRequest() *NetDemandRequest {
 	return r._netDemandRequest
 }

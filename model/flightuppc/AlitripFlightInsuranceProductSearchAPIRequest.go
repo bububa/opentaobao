@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripflightinsuranceproductsearchAPIRequest 搜索保险产品 API请求
+// AlitripFlightInsuranceProductSearchAPIRequest 搜索保险产品 API请求
 // alitrip.flight.insurance.product.search
 //
 // 搜索保险产品
-type AlitripflightinsuranceproductsearchAPIRequest struct {
+type AlitripFlightInsuranceProductSearchAPIRequest struct {
 	model.Params
 	// 保险产品id
 	_insurancePremiumId int64
 }
 
-// NewAlitripflightinsuranceproductsearchRequest 初始化AlitripflightinsuranceproductsearchAPIRequest对象
-func NewAlitripflightinsuranceproductsearchRequest() *AlitripflightinsuranceproductsearchAPIRequest {
-	return &AlitripflightinsuranceproductsearchAPIRequest{
+// NewAlitripFlightInsuranceProductSearchRequest 初始化AlitripFlightInsuranceProductSearchAPIRequest对象
+func NewAlitripFlightInsuranceProductSearchRequest() *AlitripFlightInsuranceProductSearchAPIRequest {
+	return &AlitripFlightInsuranceProductSearchAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripflightinsuranceproductsearchAPIRequest) GetApiMethodName() string {
+func (r AlitripFlightInsuranceProductSearchAPIRequest) GetApiMethodName() string {
 	return "alitrip.flight.insurance.product.search"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripflightinsuranceproductsearchAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripFlightInsuranceProductSearchAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripflightinsuranceproductsearchAPIRequest) GetRawParams() model.Params {
+func (r AlitripFlightInsuranceProductSearchAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetInsurancePremiumId is InsurancePremiumId Setter
 // 保险产品id
-func (r *AlitripflightinsuranceproductsearchAPIRequest) SetInsurancePremiumId(_insurancePremiumId int64) error {
+func (r *AlitripFlightInsuranceProductSearchAPIRequest) SetInsurancePremiumId(_insurancePremiumId int64) error {
 	r._insurancePremiumId = _insurancePremiumId
 	r.Set("insurance_premium_id", _insurancePremiumId)
 	return nil
 }
 
 // GetInsurancePremiumId InsurancePremiumId Getter
-func (r AlitripflightinsuranceproductsearchAPIRequest) GetInsurancePremiumId() int64 {
+func (r AlitripFlightInsuranceProductSearchAPIRequest) GetInsurancePremiumId() int64 {
 	return r._insurancePremiumId
 }

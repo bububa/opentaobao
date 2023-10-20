@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabalstlogisticstracequeryAPIRequest 供应商-异云-查询运单物流追踪信息 API请求
+// AlibabaLstLogisticsTraceQueryAPIRequest 供应商-异云-查询运单物流追踪信息 API请求
 // alibaba.lst.logistics.trace.query
 //
 // 查询LP单物流追踪信息
-type AlibabalstlogisticstracequeryAPIRequest struct {
+type AlibabaLstLogisticsTraceQueryAPIRequest struct {
 	model.Params
 	// 入参
 	_query *LstLogisticsTraceQuery
 }
 
-// NewAlibabalstlogisticstracequeryRequest 初始化AlibabalstlogisticstracequeryAPIRequest对象
-func NewAlibabalstlogisticstracequeryRequest() *AlibabalstlogisticstracequeryAPIRequest {
-	return &AlibabalstlogisticstracequeryAPIRequest{
+// NewAlibabaLstLogisticsTraceQueryRequest 初始化AlibabaLstLogisticsTraceQueryAPIRequest对象
+func NewAlibabaLstLogisticsTraceQueryRequest() *AlibabaLstLogisticsTraceQueryAPIRequest {
+	return &AlibabaLstLogisticsTraceQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabalstlogisticstracequeryAPIRequest) GetApiMethodName() string {
+func (r AlibabaLstLogisticsTraceQueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.lst.logistics.trace.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabalstlogisticstracequeryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaLstLogisticsTraceQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabalstlogisticstracequeryAPIRequest) GetRawParams() model.Params {
+func (r AlibabaLstLogisticsTraceQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetQuery is Query Setter
 // 入参
-func (r *AlibabalstlogisticstracequeryAPIRequest) SetQuery(_query *LstLogisticsTraceQuery) error {
+func (r *AlibabaLstLogisticsTraceQueryAPIRequest) SetQuery(_query *LstLogisticsTraceQuery) error {
 	r._query = _query
 	r.Set("query", _query)
 	return nil
 }
 
 // GetQuery Query Getter
-func (r AlibabalstlogisticstracequeryAPIRequest) GetQuery() *LstLogisticsTraceQuery {
+func (r AlibabaLstLogisticsTraceQueryAPIRequest) GetQuery() *LstLogisticsTraceQuery {
 	return r._query
 }

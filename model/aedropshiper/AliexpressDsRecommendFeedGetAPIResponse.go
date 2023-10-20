@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpressdsrecommendfeedgetAPIResponse 获取推荐商品信息流接口 API返回值
+// AliexpressDsRecommendFeedGetAPIResponse 获取推荐商品信息流接口 API返回值
 // aliexpress.ds.recommend.feed.get
 //
 // 获取推荐商品信息流
-type AliexpressdsrecommendfeedgetAPIResponse struct {
+type AliexpressDsRecommendFeedGetAPIResponse struct {
 	model.CommonResponse
-	AliexpressdsrecommendfeedgetAPIResponseModel
+	AliexpressDsRecommendFeedGetAPIResponseModel
 }
 
-// AliexpressdsrecommendfeedgetAPIResponseModel is 获取推荐商品信息流接口 成功返回结果
-type AliexpressdsrecommendfeedgetAPIResponseModel struct {
+// AliexpressDsRecommendFeedGetAPIResponseModel is 获取推荐商品信息流接口 成功返回结果
+type AliexpressDsRecommendFeedGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_ds_recommend_feed_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

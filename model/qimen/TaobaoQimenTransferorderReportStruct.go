@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoqimentransferorderreportStruct 结构体
-type TaobaoqimentransferorderreportStruct struct {
+// TaobaoQimenTransferorderReportStruct 结构体
+type TaobaoQimenTransferorderReportStruct struct {
 	// 项目集
 	Items []Items `json:"items,omitempty" xml:"items>items,omitempty"`
 	// 调拨单号,0,string(50),必填,

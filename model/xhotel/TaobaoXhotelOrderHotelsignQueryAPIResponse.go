@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoxhotelorderhotelsignqueryAPIResponse 获取直连酒店（客栈）签约上线进度信息 API返回值
+// TaobaoXhotelOrderHotelsignQueryAPIResponse 获取直连酒店（客栈）签约上线进度信息 API返回值
 // taobao.xhotel.order.hotelsign.query
 //
 // 获取直连酒店（客栈）签约上线进度信息
-type TaobaoxhotelorderhotelsignqueryAPIResponse struct {
+type TaobaoXhotelOrderHotelsignQueryAPIResponse struct {
 	model.CommonResponse
-	TaobaoxhotelorderhotelsignqueryAPIResponseModel
+	TaobaoXhotelOrderHotelsignQueryAPIResponseModel
 }
 
-// TaobaoxhotelorderhotelsignqueryAPIResponseModel is 获取直连酒店（客栈）签约上线进度信息 成功返回结果
-type TaobaoxhotelorderhotelsignqueryAPIResponseModel struct {
+// TaobaoXhotelOrderHotelsignQueryAPIResponseModel is 获取直连酒店（客栈）签约上线进度信息 成功返回结果
+type TaobaoXhotelOrderHotelsignQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_order_hotelsign_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

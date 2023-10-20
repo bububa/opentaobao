@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaocloudpushpushAPIResponse 百川用户使用云推送高级推送接口 API返回值
+// TaobaoCloudpushPushAPIResponse 百川用户使用云推送高级推送接口 API返回值
 // taobao.cloudpush.push
 //
 // 百川用户使用云推送高级推送接口
-type TaobaocloudpushpushAPIResponse struct {
+type TaobaoCloudpushPushAPIResponse struct {
 	model.CommonResponse
-	TaobaocloudpushpushAPIResponseModel
+	TaobaoCloudpushPushAPIResponseModel
 }
 
-// TaobaocloudpushpushAPIResponseModel is 百川用户使用云推送高级推送接口 成功返回结果
-type TaobaocloudpushpushAPIResponseModel struct {
+// TaobaoCloudpushPushAPIResponseModel is 百川用户使用云推送高级推送接口 成功返回结果
+type TaobaoCloudpushPushAPIResponseModel struct {
 	XMLName xml.Name `xml:"cloudpush_push_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

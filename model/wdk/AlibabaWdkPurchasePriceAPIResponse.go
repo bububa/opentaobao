@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdkpurchasepriceAPIResponse rt回传采购价 API返回值
+// AlibabaWdkPurchasePriceAPIResponse rt回传采购价 API返回值
 // alibaba.wdk.purchase.price
 //
 // 猫超共享库存项目-rt回传采购价
-type AlibabawdkpurchasepriceAPIResponse struct {
+type AlibabaWdkPurchasePriceAPIResponse struct {
 	model.CommonResponse
-	AlibabawdkpurchasepriceAPIResponseModel
+	AlibabaWdkPurchasePriceAPIResponseModel
 }
 
-// AlibabawdkpurchasepriceAPIResponseModel is rt回传采购价 成功返回结果
-type AlibabawdkpurchasepriceAPIResponseModel struct {
+// AlibabaWdkPurchasePriceAPIResponseModel is rt回传采购价 成功返回结果
+type AlibabaWdkPurchasePriceAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_purchase_price_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

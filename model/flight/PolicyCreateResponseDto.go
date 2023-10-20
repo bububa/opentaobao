@@ -15,9 +15,9 @@ type PolicyCreateResponseDto struct {
 	// 属性信息
 	Attributes string `json:"attributes,omitempty" xml:"attributes,omitempty"`
 	// 创建结果
-	CreateResult *AlitrippolicynormalcompressionuploadResultDto `json:"create_result,omitempty" xml:"create_result,omitempty"`
+	CreateResult *AlitripPolicyNormalCompressionUploadResultDto `json:"create_result,omitempty" xml:"create_result,omitempty"`
 	// 删除结果
-	DeleteResult *AlitrippolicynormalcompressionuploadResultDto `json:"delete_result,omitempty" xml:"delete_result,omitempty"`
+	DeleteResult *AlitripPolicyNormalCompressionUploadResultDto `json:"delete_result,omitempty" xml:"delete_result,omitempty"`
 	// 政策进度类型
 	PolicyProcessType int64 `json:"policy_process_type,omitempty" xml:"policy_process_type,omitempty"`
 	// 店铺id

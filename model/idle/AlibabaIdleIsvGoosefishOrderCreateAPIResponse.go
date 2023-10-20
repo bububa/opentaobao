@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaidleisvgoosefishordercreateAPIResponse 闲鱼三方安康容器订单创建 API返回值
+// AlibabaIdleIsvGoosefishOrderCreateAPIResponse 闲鱼三方安康容器订单创建 API返回值
 // alibaba.idle.isv.goosefish.order.create
 //
 // 闲鱼三方安康容器订单创建
-type AlibabaidleisvgoosefishordercreateAPIResponse struct {
+type AlibabaIdleIsvGoosefishOrderCreateAPIResponse struct {
 	model.CommonResponse
-	AlibabaidleisvgoosefishordercreateAPIResponseModel
+	AlibabaIdleIsvGoosefishOrderCreateAPIResponseModel
 }
 
-// AlibabaidleisvgoosefishordercreateAPIResponseModel is 闲鱼三方安康容器订单创建 成功返回结果
-type AlibabaidleisvgoosefishordercreateAPIResponseModel struct {
+// AlibabaIdleIsvGoosefishOrderCreateAPIResponseModel is 闲鱼三方安康容器订单创建 成功返回结果
+type AlibabaIdleIsvGoosefishOrderCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_idle_isv_goosefish_order_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

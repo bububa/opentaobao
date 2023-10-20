@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunostvpubadmindiccontroltaskgetinfoAPIRequest 获取停开服任务详情 API请求
+// YunosTvpubadminDiccontroltaskGetinfoAPIRequest 获取停开服任务详情 API请求
 // yunos.tvpubadmin.diccontroltask.getinfo
 //
 // 获取停开服任务详情
-type YunostvpubadmindiccontroltaskgetinfoAPIRequest struct {
+type YunosTvpubadminDiccontroltaskGetinfoAPIRequest struct {
 	model.Params
 	// 任务ID
 	_id int64
@@ -18,52 +18,52 @@ type YunostvpubadmindiccontroltaskgetinfoAPIRequest struct {
 	_license int64
 }
 
-// NewYunostvpubadmindiccontroltaskgetinfoRequest 初始化YunostvpubadmindiccontroltaskgetinfoAPIRequest对象
-func NewYunostvpubadmindiccontroltaskgetinfoRequest() *YunostvpubadmindiccontroltaskgetinfoAPIRequest {
-	return &YunostvpubadmindiccontroltaskgetinfoAPIRequest{
+// NewYunosTvpubadminDiccontroltaskGetinfoRequest 初始化YunosTvpubadminDiccontroltaskGetinfoAPIRequest对象
+func NewYunosTvpubadminDiccontroltaskGetinfoRequest() *YunosTvpubadminDiccontroltaskGetinfoAPIRequest {
+	return &YunosTvpubadminDiccontroltaskGetinfoAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r YunostvpubadmindiccontroltaskgetinfoAPIRequest) GetApiMethodName() string {
+func (r YunosTvpubadminDiccontroltaskGetinfoAPIRequest) GetApiMethodName() string {
 	return "yunos.tvpubadmin.diccontroltask.getinfo"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YunostvpubadmindiccontroltaskgetinfoAPIRequest) GetApiParams(params url.Values) {
+func (r YunosTvpubadminDiccontroltaskGetinfoAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r YunostvpubadmindiccontroltaskgetinfoAPIRequest) GetRawParams() model.Params {
+func (r YunosTvpubadminDiccontroltaskGetinfoAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetId is Id Setter
 // 任务ID
-func (r *YunostvpubadmindiccontroltaskgetinfoAPIRequest) SetId(_id int64) error {
+func (r *YunosTvpubadminDiccontroltaskGetinfoAPIRequest) SetId(_id int64) error {
 	r._id = _id
 	r.Set("id", _id)
 	return nil
 }
 
 // GetId Id Getter
-func (r YunostvpubadmindiccontroltaskgetinfoAPIRequest) GetId() int64 {
+func (r YunosTvpubadminDiccontroltaskGetinfoAPIRequest) GetId() int64 {
 	return r._id
 }
 
 // SetLicense is License Setter
 // 牌照方
-func (r *YunostvpubadmindiccontroltaskgetinfoAPIRequest) SetLicense(_license int64) error {
+func (r *YunosTvpubadminDiccontroltaskGetinfoAPIRequest) SetLicense(_license int64) error {
 	r._license = _license
 	r.Set("license", _license)
 	return nil
 }
 
 // GetLicense License Getter
-func (r YunostvpubadmindiccontroltaskgetinfoAPIRequest) GetLicense() int64 {
+func (r YunosTvpubadminDiccontroltaskGetinfoAPIRequest) GetLicense() int64 {
 	return r._license
 }

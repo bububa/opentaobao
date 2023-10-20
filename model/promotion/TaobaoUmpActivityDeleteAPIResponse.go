@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoumpactivitydeleteAPIResponse 删除营销活动 API返回值
+// TaobaoUmpActivityDeleteAPIResponse 删除营销活动 API返回值
 // taobao.ump.activity.delete
 //
 // 删除营销活动。对应的活动详情等将会被全部删除。
-type TaobaoumpactivitydeleteAPIResponse struct {
+type TaobaoUmpActivityDeleteAPIResponse struct {
 	model.CommonResponse
-	TaobaoumpactivitydeleteAPIResponseModel
+	TaobaoUmpActivityDeleteAPIResponseModel
 }
 
-// TaobaoumpactivitydeleteAPIResponseModel is 删除营销活动 成功返回结果
-type TaobaoumpactivitydeleteAPIResponseModel struct {
+// TaobaoUmpActivityDeleteAPIResponseModel is 删除营销活动 成功返回结果
+type TaobaoUmpActivityDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"ump_activity_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

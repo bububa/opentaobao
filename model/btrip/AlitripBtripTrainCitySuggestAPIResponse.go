@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripbtriptraincitysuggestAPIResponse 火车票城市搜索 API返回值
+// AlitripBtripTrainCitySuggestAPIResponse 火车票城市搜索 API返回值
 // alitrip.btrip.train.city.suggest
 //
 // 阿里商旅提供火车票搜索接口，方便OA厂商更精准的对接
-type AlitripbtriptraincitysuggestAPIResponse struct {
+type AlitripBtripTrainCitySuggestAPIResponse struct {
 	model.CommonResponse
-	AlitripbtriptraincitysuggestAPIResponseModel
+	AlitripBtripTrainCitySuggestAPIResponseModel
 }
 
-// AlitripbtriptraincitysuggestAPIResponseModel is 火车票城市搜索 成功返回结果
-type AlitripbtriptraincitysuggestAPIResponseModel struct {
+// AlitripBtripTrainCitySuggestAPIResponseModel is 火车票城市搜索 成功返回结果
+type AlitripBtripTrainCitySuggestAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_train_city_suggest_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

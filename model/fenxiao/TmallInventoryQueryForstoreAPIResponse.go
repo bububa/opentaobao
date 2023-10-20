@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallinventoryqueryforstoreAPIResponse 查询后端商品仓库库存 API返回值
+// TmallInventoryQueryForstoreAPIResponse 查询后端商品仓库库存 API返回值
 // tmall.inventory.query.forstore
 //
 // 商家查询后端商品仓库库存
-type TmallinventoryqueryforstoreAPIResponse struct {
+type TmallInventoryQueryForstoreAPIResponse struct {
 	model.CommonResponse
-	TmallinventoryqueryforstoreAPIResponseModel
+	TmallInventoryQueryForstoreAPIResponseModel
 }
 
-// TmallinventoryqueryforstoreAPIResponseModel is 查询后端商品仓库库存 成功返回结果
-type TmallinventoryqueryforstoreAPIResponseModel struct {
+// TmallInventoryQueryForstoreAPIResponseModel is 查询后端商品仓库库存 成功返回结果
+type TmallInventoryQueryForstoreAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_inventory_query_forstore_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosservicecmnscoamessagepushAPIResponse 消息推送接口 API返回值
+// YunosServiceCmnsCoaMessagePushAPIResponse 消息推送接口 API返回值
 // yunos.service.cmns.coa.message.push
 //
 // 调用CMNS系统的pushMessage接口实现消息通知到YUNOS设备的第三方应用软件。
-type YunosservicecmnscoamessagepushAPIResponse struct {
+type YunosServiceCmnsCoaMessagePushAPIResponse struct {
 	model.CommonResponse
-	YunosservicecmnscoamessagepushAPIResponseModel
+	YunosServiceCmnsCoaMessagePushAPIResponseModel
 }
 
-// YunosservicecmnscoamessagepushAPIResponseModel is 消息推送接口 成功返回结果
-type YunosservicecmnscoamessagepushAPIResponseModel struct {
+// YunosServiceCmnsCoaMessagePushAPIResponseModel is 消息推送接口 成功返回结果
+type YunosServiceCmnsCoaMessagePushAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_service_cmns_coa_message_push_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

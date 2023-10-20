@@ -1,7 +1,7 @@
 package alicom
 
-// AlibabaaliqinfcvoicerecordgeturlResult 结构体
-type AlibabaaliqinfcvoicerecordgeturlResult struct {
+// AlibabaAliqinFcVoiceRecordGeturlResult 结构体
+type AlibabaAliqinFcVoiceRecordGeturlResult struct {
 	// model
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// code

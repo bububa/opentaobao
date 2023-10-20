@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosimbainsightcatstopwordnewgetAPIResponse 获取类目下最热门的词 API返回值
+// TaobaoSimbaInsightCatstopwordnewGetAPIResponse 获取类目下最热门的词 API返回值
 // taobao.simba.insight.catstopwordnew.get
 //
 // 按照某个维度，查询某个类目下最热门的词，维度有点击，展现，花费，点击率等，具体可以按哪些字段进行排序，参考参数说明，比如选择了impression，则返回该类目下展现量最高那几个词。
-type TaobaosimbainsightcatstopwordnewgetAPIResponse struct {
+type TaobaoSimbaInsightCatstopwordnewGetAPIResponse struct {
 	model.CommonResponse
-	TaobaosimbainsightcatstopwordnewgetAPIResponseModel
+	TaobaoSimbaInsightCatstopwordnewGetAPIResponseModel
 }
 
-// TaobaosimbainsightcatstopwordnewgetAPIResponseModel is 获取类目下最热门的词 成功返回结果
-type TaobaosimbainsightcatstopwordnewgetAPIResponseModel struct {
+// TaobaoSimbaInsightCatstopwordnewGetAPIResponseModel is 获取类目下最热门的词 成功返回结果
+type TaobaoSimbaInsightCatstopwordnewGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_insight_catstopwordnew_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

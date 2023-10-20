@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/store"
 )
 
-// Taobaoplacestorerelatesubget 门店和子门店关系查找
+// TaobaoPlaceStorerelatesubGet 门店和子门店关系查找
 // taobao.place.storerelatesub.get
 //
 // 门店和子门店关系查找
-func Taobaoplacestorerelatesubget(clt *core.SDKClient, req *store.TaobaoplacestorerelatesubgetAPIRequest, session string) (*store.TaobaoplacestorerelatesubgetAPIResponse, error) {
-	var resp store.TaobaoplacestorerelatesubgetAPIResponse
+func TaobaoPlaceStorerelatesubGet(clt *core.SDKClient, req *store.TaobaoPlaceStorerelatesubGetAPIRequest, session string) (*store.TaobaoPlaceStorerelatesubGetAPIResponse, error) {
+	var resp store.TaobaoPlaceStorerelatesubGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaalihouseexistinghomestorelevelqueryResult 结构体
-type AlibabaalihouseexistinghomestorelevelqueryResult struct {
+// AlibabaAlihouseExistinghomeStoreLevelQueryResult 结构体
+type AlibabaAlihouseExistinghomeStoreLevelQueryResult struct {
 	// 等级结构体
 	Data []LevelDtolist `json:"data,omitempty" xml:"data>level_dtolist,omitempty"`
 	// 错误消息

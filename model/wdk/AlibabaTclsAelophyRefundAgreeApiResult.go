@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabatclsaelophyrefundagreeApiResult 结构体
-type AlibabatclsaelophyrefundagreeApiResult struct {
+// AlibabaTclsAelophyRefundAgreeApiResult 结构体
+type AlibabaTclsAelophyRefundAgreeApiResult struct {
 	// 返回码
 	ReturnCode string `json:"return_code,omitempty" xml:"return_code,omitempty"`
 	// 返回码说明

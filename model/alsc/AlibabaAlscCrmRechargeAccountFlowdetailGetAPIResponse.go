@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalsccrmrechargeaccountflowdetailgetAPIResponse 储值流水详细 API返回值
+// AlibabaAlscCrmRechargeAccountFlowdetailGetAPIResponse 储值流水详细 API返回值
 // alibaba.alsc.crm.recharge.account.flowdetail.get
 //
 // 查询储值流水详细接口
-type AlibabaalsccrmrechargeaccountflowdetailgetAPIResponse struct {
+type AlibabaAlscCrmRechargeAccountFlowdetailGetAPIResponse struct {
 	model.CommonResponse
-	AlibabaalsccrmrechargeaccountflowdetailgetAPIResponseModel
+	AlibabaAlscCrmRechargeAccountFlowdetailGetAPIResponseModel
 }
 
-// AlibabaalsccrmrechargeaccountflowdetailgetAPIResponseModel is 储值流水详细 成功返回结果
-type AlibabaalsccrmrechargeaccountflowdetailgetAPIResponseModel struct {
+// AlibabaAlscCrmRechargeAccountFlowdetailGetAPIResponseModel is 储值流水详细 成功返回结果
+type AlibabaAlscCrmRechargeAccountFlowdetailGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_crm_recharge_account_flowdetail_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

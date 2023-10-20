@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripmerchantgalaxyderbymembergeneratesellerqrcodeResponse 结构体
-type AlitripmerchantgalaxyderbymembergeneratesellerqrcodeResponse struct {
+// AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeResponse 结构体
+type AlitripMerchantGalaxyDerbyMemberGenerateSellerQrcodeResponse struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息

@@ -1,7 +1,7 @@
 package category
 
-// AlibabaimapfixedmappingqueryResult 结构体
-type AlibabaimapfixedmappingqueryResult struct {
+// AlibabaImapFixedmappingQueryResult 结构体
+type AlibabaImapFixedmappingQueryResult struct {
 	// list参数
 	TopImapUnionCategoryPathDoList []TopImapUnionCategoryPathDo `json:"top_imap_union_category_path_do_list,omitempty" xml:"top_imap_union_category_path_do_list>top_imap_union_category_path_do,omitempty"`
 	// 错误信息

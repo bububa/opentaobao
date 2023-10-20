@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaeleenterprisecoupongetAPIRequest 获取用户优惠券 API请求
+// AlibabaEleEnterpriseCouponGetAPIRequest 获取用户优惠券 API请求
 // alibaba.ele.enterprise.coupon.get
 //
 // 获取用户优惠券
-type AlibabaeleenterprisecoupongetAPIRequest struct {
+type AlibabaEleEnterpriseCouponGetAPIRequest struct {
 	model.Params
 	// 手机号
 	_phone string
 }
 
-// NewAlibabaeleenterprisecoupongetRequest 初始化AlibabaeleenterprisecoupongetAPIRequest对象
-func NewAlibabaeleenterprisecoupongetRequest() *AlibabaeleenterprisecoupongetAPIRequest {
-	return &AlibabaeleenterprisecoupongetAPIRequest{
+// NewAlibabaEleEnterpriseCouponGetRequest 初始化AlibabaEleEnterpriseCouponGetAPIRequest对象
+func NewAlibabaEleEnterpriseCouponGetRequest() *AlibabaEleEnterpriseCouponGetAPIRequest {
+	return &AlibabaEleEnterpriseCouponGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaeleenterprisecoupongetAPIRequest) GetApiMethodName() string {
+func (r AlibabaEleEnterpriseCouponGetAPIRequest) GetApiMethodName() string {
 	return "alibaba.ele.enterprise.coupon.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaeleenterprisecoupongetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaEleEnterpriseCouponGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaeleenterprisecoupongetAPIRequest) GetRawParams() model.Params {
+func (r AlibabaEleEnterpriseCouponGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetPhone is Phone Setter
 // 手机号
-func (r *AlibabaeleenterprisecoupongetAPIRequest) SetPhone(_phone string) error {
+func (r *AlibabaEleEnterpriseCouponGetAPIRequest) SetPhone(_phone string) error {
 	r._phone = _phone
 	r.Set("phone", _phone)
 	return nil
 }
 
 // GetPhone Phone Getter
-func (r AlibabaeleenterprisecoupongetAPIRequest) GetPhone() string {
+func (r AlibabaEleEnterpriseCouponGetAPIRequest) GetPhone() string {
 	return r._phone
 }

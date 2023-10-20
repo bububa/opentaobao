@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/product"
 )
 
-// Alibabagpuaddschemaget 获取产品发布规则接口
+// AlibabaGpuAddSchemaGet 获取产品发布规则接口
 // alibaba.gpu.add.schema.get
 //
 // 获取产品发布规则接口
-func Alibabagpuaddschemaget(clt *core.SDKClient, req *product.AlibabagpuaddschemagetAPIRequest, session string) (*product.AlibabagpuaddschemagetAPIResponse, error) {
-	var resp product.AlibabagpuaddschemagetAPIResponse
+func AlibabaGpuAddSchemaGet(clt *core.SDKClient, req *product.AlibabaGpuAddSchemaGetAPIRequest, session string) (*product.AlibabaGpuAddSchemaGetAPIResponse, error) {
+	var resp product.AlibabaGpuAddSchemaGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,7 +1,7 @@
 package iot
 
-// TaobaoailabaicloudtopmessagelistModel 结构体
-type TaobaoailabaicloudtopmessagelistModel struct {
+// TaobaoAilabAicloudTopMessageListModel 结构体
+type TaobaoAilabAicloudTopMessageListModel struct {
 	// source
 	Source string `json:"source,omitempty" xml:"source,omitempty"`
 	// type

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/aliexpress"
 )
 
-// Aliexpresslogisticsabnormalorderquery 异常订单查询
+// AliexpressLogisticsAbnormalorderQuery 异常订单查询
 // aliexpress.logistics.abnormalorder.query
 //
 // 异常订单查询
-func Aliexpresslogisticsabnormalorderquery(clt *core.SDKClient, req *aliexpress.AliexpresslogisticsabnormalorderqueryAPIRequest, session string) (*aliexpress.AliexpresslogisticsabnormalorderqueryAPIResponse, error) {
-	var resp aliexpress.AliexpresslogisticsabnormalorderqueryAPIResponse
+func AliexpressLogisticsAbnormalorderQuery(clt *core.SDKClient, req *aliexpress.AliexpressLogisticsAbnormalorderQueryAPIRequest, session string) (*aliexpress.AliexpressLogisticsAbnormalorderQueryAPIResponse, error) {
+	var resp aliexpress.AliexpressLogisticsAbnormalorderQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/interact"
 )
 
-// Alibabainteractsensorgmedia gmedia
+// AlibabaInteractSensorGmedia gmedia
 // alibaba.interact.sensor.gmedia
 //
 // 媒体功能
-func Alibabainteractsensorgmedia(clt *core.SDKClient, req *interact.AlibabainteractsensorgmediaAPIRequest, session string) (*interact.AlibabainteractsensorgmediaAPIResponse, error) {
-	var resp interact.AlibabainteractsensorgmediaAPIResponse
+func AlibabaInteractSensorGmedia(clt *core.SDKClient, req *interact.AlibabaInteractSensorGmediaAPIRequest, session string) (*interact.AlibabaInteractSensorGmediaAPIResponse, error) {
+	var resp interact.AlibabaInteractSensorGmediaAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

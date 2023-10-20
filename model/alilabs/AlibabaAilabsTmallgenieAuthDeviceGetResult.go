@@ -1,7 +1,7 @@
 package alilabs
 
-// AlibabaailabstmallgenieauthdevicegetResult 结构体
-type AlibabaailabstmallgenieauthdevicegetResult struct {
+// AlibabaAilabsTmallgenieAuthDeviceGetResult 结构体
+type AlibabaAilabsTmallgenieAuthDeviceGetResult struct {
 	// 拓展信息
 	Extensions string `json:"extensions,omitempty" xml:"extensions,omitempty"`
 	// 设备名

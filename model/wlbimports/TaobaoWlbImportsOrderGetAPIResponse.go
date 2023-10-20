@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaowlbimportsordergetAPIResponse 物流订单获取 API返回值
+// TaobaoWlbImportsOrderGetAPIResponse 物流订单获取 API返回值
 // taobao.wlb.imports.order.get
 //
 // 一般进口物流订单获取
-type TaobaowlbimportsordergetAPIResponse struct {
+type TaobaoWlbImportsOrderGetAPIResponse struct {
 	model.CommonResponse
-	TaobaowlbimportsordergetAPIResponseModel
+	TaobaoWlbImportsOrderGetAPIResponseModel
 }
 
-// TaobaowlbimportsordergetAPIResponseModel is 物流订单获取 成功返回结果
-type TaobaowlbimportsordergetAPIResponseModel struct {
+// TaobaoWlbImportsOrderGetAPIResponseModel is 物流订单获取 成功返回结果
+type TaobaoWlbImportsOrderGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_imports_order_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

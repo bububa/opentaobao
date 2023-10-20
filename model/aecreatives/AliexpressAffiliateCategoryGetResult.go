@@ -1,7 +1,7 @@
 package aecreatives
 
-// AliexpressaffiliatecategorygetResult 结构体
-type AliexpressaffiliatecategorygetResult struct {
+// AliexpressAffiliateCategoryGetResult 结构体
+type AliexpressAffiliateCategoryGetResult struct {
 	// 类目信息
 	Categories []Category `json:"categories,omitempty" xml:"categories>category,omitempty"`
 	// 返回结果数量

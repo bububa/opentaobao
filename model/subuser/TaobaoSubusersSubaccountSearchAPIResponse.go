@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosubuserssubaccountsearchAPIResponse 根据子账号登录名后缀模糊搜索子账号列表 API返回值
+// TaobaoSubusersSubaccountSearchAPIResponse 根据子账号登录名后缀模糊搜索子账号列表 API返回值
 // taobao.subusers.subaccount.search
 //
 // 根据子账号冒号后缀搜索子账号列表，支持中文单字、英文单词（不支持英文单字母） 分词规则搜索，该搜索词必传。模糊搜索使用阿里云搜索引擎所以该接口增值收费，如果不需要模糊搜索仅需要分页获取子账号列表，请使用taobao.sellercenter.subusers.page接口
-type TaobaosubuserssubaccountsearchAPIResponse struct {
+type TaobaoSubusersSubaccountSearchAPIResponse struct {
 	model.CommonResponse
-	TaobaosubuserssubaccountsearchAPIResponseModel
+	TaobaoSubusersSubaccountSearchAPIResponseModel
 }
 
-// TaobaosubuserssubaccountsearchAPIResponseModel is 根据子账号登录名后缀模糊搜索子账号列表 成功返回结果
-type TaobaosubuserssubaccountsearchAPIResponseModel struct {
+// TaobaoSubusersSubaccountSearchAPIResponseModel is 根据子账号登录名后缀模糊搜索子账号列表 成功返回结果
+type TaobaoSubusersSubaccountSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"subusers_subaccount_search_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

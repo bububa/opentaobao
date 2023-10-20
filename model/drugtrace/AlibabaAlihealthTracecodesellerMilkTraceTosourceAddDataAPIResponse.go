@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthtracecodesellermilktracetosourceadddataAPIResponse 奶粉溯源-同步数据 API返回值
+// AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse 奶粉溯源-同步数据 API返回值
 // alibaba.alihealth.tracecodeseller.milk.trace.tosource.add.data
 //
 // 奶粉溯源-同步数据
-type AlibabaalihealthtracecodesellermilktracetosourceadddataAPIResponse struct {
+type AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthtracecodesellermilktracetosourceadddataAPIResponseModel
+	AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponseModel
 }
 
-// AlibabaalihealthtracecodesellermilktracetosourceadddataAPIResponseModel is 奶粉溯源-同步数据 成功返回结果
-type AlibabaalihealthtracecodesellermilktracetosourceadddataAPIResponseModel struct {
+// AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponseModel is 奶粉溯源-同步数据 成功返回结果
+type AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_tracecodeseller_milk_trace_tosource_add_data_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

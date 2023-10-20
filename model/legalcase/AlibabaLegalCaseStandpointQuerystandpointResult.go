@@ -1,7 +1,7 @@
 package legalcase
 
-// AlibabalegalcasestandpointquerystandpointResult 结构体
-type AlibabalegalcasestandpointquerystandpointResult struct {
+// AlibabaLegalCaseStandpointQuerystandpointResult 结构体
+type AlibabaLegalCaseStandpointQuerystandpointResult struct {
 	// 错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 错误码

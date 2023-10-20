@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/campus"
 )
 
-// Alibabacampusaclcancelpermiitemfromrole 取消角色和权限之间的关系
+// AlibabaCampusAclCancelpermiitemfromrole 取消角色和权限之间的关系
 // alibaba.campus.acl.cancelpermiitemfromrole
 //
 // 取消角色和权限之间的关系
-func Alibabacampusaclcancelpermiitemfromrole(clt *core.SDKClient, req *campus.AlibabacampusaclcancelpermiitemfromroleAPIRequest, session string) (*campus.AlibabacampusaclcancelpermiitemfromroleAPIResponse, error) {
-	var resp campus.AlibabacampusaclcancelpermiitemfromroleAPIResponse
+func AlibabaCampusAclCancelpermiitemfromrole(clt *core.SDKClient, req *campus.AlibabaCampusAclCancelpermiitemfromroleAPIRequest, session string) (*campus.AlibabaCampusAclCancelpermiitemfromroleAPIResponse, error) {
+	var resp campus.AlibabaCampusAclCancelpermiitemfromroleAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

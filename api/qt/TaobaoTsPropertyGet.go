@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/qt"
 )
 
-// Taobaotspropertyget 淘宝服务属性查询
+// TaobaoTsPropertyGet 淘宝服务属性查询
 // taobao.ts.property.get
 //
 // 淘宝服务属性查询
-func Taobaotspropertyget(clt *core.SDKClient, req *qt.TaobaotspropertygetAPIRequest, session string) (*qt.TaobaotspropertygetAPIResponse, error) {
-	var resp qt.TaobaotspropertygetAPIResponse
+func TaobaoTsPropertyGet(clt *core.SDKClient, req *qt.TaobaoTsPropertyGetAPIRequest, session string) (*qt.TaobaoTsPropertyGetAPIResponse, error) {
+	var resp qt.TaobaoTsPropertyGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

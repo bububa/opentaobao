@@ -1,7 +1,7 @@
 package simba
 
-// TaobaouniversalbpadzonefindconfiglistTopResult 结构体
-type TaobaouniversalbpadzonefindconfiglistTopResult struct {
+// TaobaoUniversalbpAdzoneFindconfiglistTopResult 结构体
+type TaobaoUniversalbpAdzoneFindconfiglistTopResult struct {
 	// 请求系统信息
 	Info *TopInfo `json:"info,omitempty" xml:"info,omitempty"`
 	// 结果集

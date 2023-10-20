@@ -1,7 +1,7 @@
 package promotion
 
-// AlibabalatourstrategyshowResult 结构体
-type AlibabalatourstrategyshowResult struct {
+// AlibabaLatourStrategyShowResult 结构体
+type AlibabaLatourStrategyShowResult struct {
 	// 错误描述
 	Msg string `json:"msg,omitempty" xml:"msg,omitempty"`
 	// 错误码

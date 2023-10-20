@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalsccrmvoucherstatuschangeAPIResponse 优惠券状态更改 API返回值
+// AlibabaAlscCrmVoucherStatusChangeAPIResponse 优惠券状态更改 API返回值
 // alibaba.alsc.crm.voucher.status.change
 //
 // 核销优惠券
-type AlibabaalsccrmvoucherstatuschangeAPIResponse struct {
+type AlibabaAlscCrmVoucherStatusChangeAPIResponse struct {
 	model.CommonResponse
-	AlibabaalsccrmvoucherstatuschangeAPIResponseModel
+	AlibabaAlscCrmVoucherStatusChangeAPIResponseModel
 }
 
-// AlibabaalsccrmvoucherstatuschangeAPIResponseModel is 优惠券状态更改 成功返回结果
-type AlibabaalsccrmvoucherstatuschangeAPIResponseModel struct {
+// AlibabaAlscCrmVoucherStatusChangeAPIResponseModel is 优惠券状态更改 成功返回结果
+type AlibabaAlscCrmVoucherStatusChangeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_crm_voucher_status_change_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

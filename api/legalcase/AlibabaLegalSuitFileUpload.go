@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/legalcase"
 )
 
-// Alibabalegalsuitfileupload 诉讼文件上传接口
+// AlibabaLegalSuitFileUpload 诉讼文件上传接口
 // alibaba.legal.suit.file.upload
 //
 // 上传文件接口
-func Alibabalegalsuitfileupload(clt *core.SDKClient, req *legalcase.AlibabalegalsuitfileuploadAPIRequest, session string) (*legalcase.AlibabalegalsuitfileuploadAPIResponse, error) {
-	var resp legalcase.AlibabalegalsuitfileuploadAPIResponse
+func AlibabaLegalSuitFileUpload(clt *core.SDKClient, req *legalcase.AlibabaLegalSuitFileUploadAPIRequest, session string) (*legalcase.AlibabaLegalSuitFileUploadAPIResponse, error) {
+	var resp legalcase.AlibabaLegalSuitFileUploadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,7 +1,7 @@
 package tmallnr
 
-// TmallnrtcertificatesendResult 结构体
-type TmallnrtcertificatesendResult struct {
+// TmallNrtCertificateSendResult 结构体
+type TmallNrtCertificateSendResult struct {
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// code

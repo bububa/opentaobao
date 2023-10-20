@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripmerchantgalaxyactivitymarketingpopupResponse 结构体
-type AlitripmerchantgalaxyactivitymarketingpopupResponse struct {
+// AlitripMerchantGalaxyActivityMarketingPopupResponse 结构体
+type AlitripMerchantGalaxyActivityMarketingPopupResponse struct {
 	// 错误代码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息

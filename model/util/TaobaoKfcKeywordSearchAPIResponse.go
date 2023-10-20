@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaokfckeywordsearchAPIResponse 关键词过滤匹配 API返回值
+// TaobaoKfcKeywordSearchAPIResponse 关键词过滤匹配 API返回值
 // taobao.kfc.keyword.search
 //
 // 对输入的文本信息进行禁忌关键词匹配，返回匹配的结果
-type TaobaokfckeywordsearchAPIResponse struct {
+type TaobaoKfcKeywordSearchAPIResponse struct {
 	model.CommonResponse
-	TaobaokfckeywordsearchAPIResponseModel
+	TaobaoKfcKeywordSearchAPIResponseModel
 }
 
-// TaobaokfckeywordsearchAPIResponseModel is 关键词过滤匹配 成功返回结果
-type TaobaokfckeywordsearchAPIResponseModel struct {
+// TaobaoKfcKeywordSearchAPIResponseModel is 关键词过滤匹配 成功返回结果
+type TaobaoKfcKeywordSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"kfc_keyword_search_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

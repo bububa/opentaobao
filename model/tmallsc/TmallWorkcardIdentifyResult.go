@@ -1,7 +1,7 @@
 package tmallsc
 
-// TmallworkcardidentifyResult 结构体
-type TmallworkcardidentifyResult struct {
+// TmallWorkcardIdentifyResult 结构体
+type TmallWorkcardIdentifyResult struct {
 	// gmtModified
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
 	// gmtCreate

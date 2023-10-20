@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotmallgeniehotelwelcomeAPIRequest 酒店欢迎词推送 API请求
+// TaobaoTmallgenieHotelwelcomeAPIRequest 酒店欢迎词推送 API请求
 // taobao.tmallgenie.hotelwelcome
 //
 // 推送欢迎词，让天猫精灵播放
-type TaobaotmallgeniehotelwelcomeAPIRequest struct {
+type TaobaoTmallgenieHotelwelcomeAPIRequest struct {
 	model.Params
 	// 房间号
 	_roomNo string
@@ -22,78 +22,78 @@ type TaobaotmallgeniehotelwelcomeAPIRequest struct {
 	_hotelId int64
 }
 
-// NewTaobaotmallgeniehotelwelcomeRequest 初始化TaobaotmallgeniehotelwelcomeAPIRequest对象
-func NewTaobaotmallgeniehotelwelcomeRequest() *TaobaotmallgeniehotelwelcomeAPIRequest {
-	return &TaobaotmallgeniehotelwelcomeAPIRequest{
+// NewTaobaoTmallgenieHotelwelcomeRequest 初始化TaobaoTmallgenieHotelwelcomeAPIRequest对象
+func NewTaobaoTmallgenieHotelwelcomeRequest() *TaobaoTmallgenieHotelwelcomeAPIRequest {
+	return &TaobaoTmallgenieHotelwelcomeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaotmallgeniehotelwelcomeAPIRequest) GetApiMethodName() string {
+func (r TaobaoTmallgenieHotelwelcomeAPIRequest) GetApiMethodName() string {
 	return "taobao.tmallgenie.hotelwelcome"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaotmallgeniehotelwelcomeAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoTmallgenieHotelwelcomeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaotmallgeniehotelwelcomeAPIRequest) GetRawParams() model.Params {
+func (r TaobaoTmallgenieHotelwelcomeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRoomNo is RoomNo Setter
 // 房间号
-func (r *TaobaotmallgeniehotelwelcomeAPIRequest) SetRoomNo(_roomNo string) error {
+func (r *TaobaoTmallgenieHotelwelcomeAPIRequest) SetRoomNo(_roomNo string) error {
 	r._roomNo = _roomNo
 	r.Set("room_no", _roomNo)
 	return nil
 }
 
 // GetRoomNo RoomNo Getter
-func (r TaobaotmallgeniehotelwelcomeAPIRequest) GetRoomNo() string {
+func (r TaobaoTmallgenieHotelwelcomeAPIRequest) GetRoomNo() string {
 	return r._roomNo
 }
 
 // SetTemplateVariable is TemplateVariable Setter
 // 模板变量
-func (r *TaobaotmallgeniehotelwelcomeAPIRequest) SetTemplateVariable(_templateVariable string) error {
+func (r *TaobaoTmallgenieHotelwelcomeAPIRequest) SetTemplateVariable(_templateVariable string) error {
 	r._templateVariable = _templateVariable
 	r.Set("template_variable", _templateVariable)
 	return nil
 }
 
 // GetTemplateVariable TemplateVariable Getter
-func (r TaobaotmallgeniehotelwelcomeAPIRequest) GetTemplateVariable() string {
+func (r TaobaoTmallgenieHotelwelcomeAPIRequest) GetTemplateVariable() string {
 	return r._templateVariable
 }
 
 // SetTemplateId is TemplateId Setter
 // 模板ID
-func (r *TaobaotmallgeniehotelwelcomeAPIRequest) SetTemplateId(_templateId string) error {
+func (r *TaobaoTmallgenieHotelwelcomeAPIRequest) SetTemplateId(_templateId string) error {
 	r._templateId = _templateId
 	r.Set("template_id", _templateId)
 	return nil
 }
 
 // GetTemplateId TemplateId Getter
-func (r TaobaotmallgeniehotelwelcomeAPIRequest) GetTemplateId() string {
+func (r TaobaoTmallgenieHotelwelcomeAPIRequest) GetTemplateId() string {
 	return r._templateId
 }
 
 // SetHotelId is HotelId Setter
 // 酒店ID
-func (r *TaobaotmallgeniehotelwelcomeAPIRequest) SetHotelId(_hotelId int64) error {
+func (r *TaobaoTmallgenieHotelwelcomeAPIRequest) SetHotelId(_hotelId int64) error {
 	r._hotelId = _hotelId
 	r.Set("hotel_id", _hotelId)
 	return nil
 }
 
 // GetHotelId HotelId Getter
-func (r TaobaotmallgeniehotelwelcomeAPIRequest) GetHotelId() int64 {
+func (r TaobaoTmallgenieHotelwelcomeAPIRequest) GetHotelId() int64 {
 	return r._hotelId
 }

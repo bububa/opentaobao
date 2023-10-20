@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascpchannel"
 )
 
-// Alibabaascpindustrylaunchextracharge 阿里巴巴.行业.增加费用.服务商发起
+// AlibabaAscpIndustryLaunchExtraCharge 阿里巴巴.行业.增加费用.服务商发起
 // alibaba.ascp.industry.launch.extra.charge
 //
 // 阿里巴巴.行业.增加费用.服务商发起
-func Alibabaascpindustrylaunchextracharge(clt *core.SDKClient, req *ascpchannel.AlibabaascpindustrylaunchextrachargeAPIRequest, session string) (*ascpchannel.AlibabaascpindustrylaunchextrachargeAPIResponse, error) {
-	var resp ascpchannel.AlibabaascpindustrylaunchextrachargeAPIResponse
+func AlibabaAscpIndustryLaunchExtraCharge(clt *core.SDKClient, req *ascpchannel.AlibabaAscpIndustryLaunchExtraChargeAPIRequest, session string) (*ascpchannel.AlibabaAscpIndustryLaunchExtraChargeAPIResponse, error) {
+	var resp ascpchannel.AlibabaAscpIndustryLaunchExtraChargeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

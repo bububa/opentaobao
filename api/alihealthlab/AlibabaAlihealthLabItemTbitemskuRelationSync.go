@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihealthlab"
 )
 
-// Alibabaalihealthlabitemtbitemskurelationsync 阿里健康检验检测业务，检验检测项目淘宝商品SKU关系同步
+// AlibabaAlihealthLabItemTbitemskuRelationSync 阿里健康检验检测业务，检验检测项目淘宝商品SKU关系同步
 // alibaba.alihealth.lab.item.tbitemsku.relation.sync
 //
 // 阿里健康检验检测业务，检验检测项目淘宝商品SKU关系同步
-func Alibabaalihealthlabitemtbitemskurelationsync(clt *core.SDKClient, req *alihealthlab.AlibabaalihealthlabitemtbitemskurelationsyncAPIRequest, session string) (*alihealthlab.AlibabaalihealthlabitemtbitemskurelationsyncAPIResponse, error) {
-	var resp alihealthlab.AlibabaalihealthlabitemtbitemskurelationsyncAPIResponse
+func AlibabaAlihealthLabItemTbitemskuRelationSync(clt *core.SDKClient, req *alihealthlab.AlibabaAlihealthLabItemTbitemskuRelationSyncAPIRequest, session string) (*alihealthlab.AlibabaAlihealthLabItemTbitemskuRelationSyncAPIResponse, error) {
+	var resp alihealthlab.AlibabaAlihealthLabItemTbitemskuRelationSyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaosimbainsightcatsdatagetAPIResponse 获取类目的大盘数据 API返回值
+// TaobaoSimbaInsightCatsdataGetAPIResponse 获取类目的大盘数据 API返回值
 // taobao.simba.insight.catsdata.get
 //
 // 根据类目id获取类目的大盘数据，包括展现指数，点击指数，点击率，本次提供的insight相关的其它接口的都是这种情况。
-type TaobaosimbainsightcatsdatagetAPIResponse struct {
+type TaobaoSimbaInsightCatsdataGetAPIResponse struct {
 	model.CommonResponse
-	TaobaosimbainsightcatsdatagetAPIResponseModel
+	TaobaoSimbaInsightCatsdataGetAPIResponseModel
 }
 
-// TaobaosimbainsightcatsdatagetAPIResponseModel is 获取类目的大盘数据 成功返回结果
-type TaobaosimbainsightcatsdatagetAPIResponseModel struct {
+// TaobaoSimbaInsightCatsdataGetAPIResponseModel is 获取类目的大盘数据 成功返回结果
+type TaobaoSimbaInsightCatsdataGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_insight_catsdata_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

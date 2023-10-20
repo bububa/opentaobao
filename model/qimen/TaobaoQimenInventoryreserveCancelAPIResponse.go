@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoqimeninventoryreservecancelAPIResponse 库存预占取消接口 API返回值
+// TaobaoQimenInventoryreserveCancelAPIResponse 库存预占取消接口 API返回值
 // taobao.qimen.inventoryreserve.cancel
 //
 // 库存预占取消
-type TaobaoqimeninventoryreservecancelAPIResponse struct {
+type TaobaoQimenInventoryreserveCancelAPIResponse struct {
 	model.CommonResponse
-	TaobaoqimeninventoryreservecancelAPIResponseModel
+	TaobaoQimenInventoryreserveCancelAPIResponseModel
 }
 
-// TaobaoqimeninventoryreservecancelAPIResponseModel is 库存预占取消接口 成功返回结果
-type TaobaoqimeninventoryreservecancelAPIResponseModel struct {
+// TaobaoQimenInventoryreserveCancelAPIResponseModel is 库存预占取消接口 成功返回结果
+type TaobaoQimenInventoryreserveCancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"qimen_inventoryreserve_cancel_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	//
-	Response *TaobaoqimeninventoryreservecancelResponse `json:"response,omitempty" xml:"response,omitempty"`
+	Response *TaobaoQimenInventoryreserveCancelResponse `json:"response,omitempty" xml:"response,omitempty"`
 }

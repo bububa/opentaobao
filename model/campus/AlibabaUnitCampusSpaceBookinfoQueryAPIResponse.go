@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaunitcampusspacebookinfoqueryAPIResponse 环路资源信息查询单元环境 API返回值
+// AlibabaUnitCampusSpaceBookinfoQueryAPIResponse 环路资源信息查询单元环境 API返回值
 // alibaba.unit.campus.space.bookinfo.query
 //
 // 环路资源信息查询单元环境
-type AlibabaunitcampusspacebookinfoqueryAPIResponse struct {
+type AlibabaUnitCampusSpaceBookinfoQueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaunitcampusspacebookinfoqueryAPIResponseModel
+	AlibabaUnitCampusSpaceBookinfoQueryAPIResponseModel
 }
 
-// AlibabaunitcampusspacebookinfoqueryAPIResponseModel is 环路资源信息查询单元环境 成功返回结果
-type AlibabaunitcampusspacebookinfoqueryAPIResponseModel struct {
+// AlibabaUnitCampusSpaceBookinfoQueryAPIResponseModel is 环路资源信息查询单元环境 成功返回结果
+type AlibabaUnitCampusSpaceBookinfoQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_unit_campus_space_bookinfo_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

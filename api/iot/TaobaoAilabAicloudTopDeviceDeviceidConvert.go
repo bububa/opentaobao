@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/iot"
 )
 
-// Taobaoailabaicloudtopdevicedeviceidconvert 开放设备id转换内部设备id
+// TaobaoAilabAicloudTopDeviceDeviceidConvert 开放设备id转换内部设备id
 // taobao.ailab.aicloud.top.device.deviceid.convert
 //
 // 将开放设备id转换为内部设备id
-func Taobaoailabaicloudtopdevicedeviceidconvert(clt *core.SDKClient, req *iot.TaobaoailabaicloudtopdevicedeviceidconvertAPIRequest, session string) (*iot.TaobaoailabaicloudtopdevicedeviceidconvertAPIResponse, error) {
-	var resp iot.TaobaoailabaicloudtopdevicedeviceidconvertAPIResponse
+func TaobaoAilabAicloudTopDeviceDeviceidConvert(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceDeviceidConvertAPIRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceDeviceidConvertAPIResponse, error) {
+	var resp iot.TaobaoAilabAicloudTopDeviceDeviceidConvertAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

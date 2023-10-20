@@ -1,7 +1,7 @@
 package fundplatform
 
-// AlibabafundplatformcardordermakeStruct 结构体
-type AlibabafundplatformcardordermakeStruct struct {
+// AlibabaFundplatformCardorderMakeStruct 结构体
+type AlibabaFundplatformCardorderMakeStruct struct {
 	// 卡模板编号
 	TemplateNo string `json:"template_no,omitempty" xml:"template_no,omitempty"`
 	// 卡外观图片地址

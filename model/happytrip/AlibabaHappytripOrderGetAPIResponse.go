@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabahappytripordergetAPIResponse 获取欢行统一订单模型 API返回值
+// AlibabaHappytripOrderGetAPIResponse 获取欢行统一订单模型 API返回值
 // alibaba.happytrip.order.get
 //
 // 通过订单id获取欢行统一订单模型数据
-type AlibabahappytripordergetAPIResponse struct {
+type AlibabaHappytripOrderGetAPIResponse struct {
 	model.CommonResponse
-	AlibabahappytripordergetAPIResponseModel
+	AlibabaHappytripOrderGetAPIResponseModel
 }
 
-// AlibabahappytripordergetAPIResponseModel is 获取欢行统一订单模型 成功返回结果
-type AlibabahappytripordergetAPIResponseModel struct {
+// AlibabaHappytripOrderGetAPIResponseModel is 获取欢行统一订单模型 成功返回结果
+type AlibabaHappytripOrderGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_happytrip_order_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

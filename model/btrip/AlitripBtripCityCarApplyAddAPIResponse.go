@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripbtripcitycarapplyaddAPIResponse 三方市内用车申请单同步 API返回值
+// AlitripBtripCityCarApplyAddAPIResponse 三方市内用车申请单同步 API返回值
 // alitrip.btrip.city.car.apply.add
 //
 // 三方市内用车申请单同步
-type AlitripbtripcitycarapplyaddAPIResponse struct {
+type AlitripBtripCityCarApplyAddAPIResponse struct {
 	model.CommonResponse
-	AlitripbtripcitycarapplyaddAPIResponseModel
+	AlitripBtripCityCarApplyAddAPIResponseModel
 }
 
-// AlitripbtripcitycarapplyaddAPIResponseModel is 三方市内用车申请单同步 成功返回结果
-type AlitripbtripcitycarapplyaddAPIResponseModel struct {
+// AlitripBtripCityCarApplyAddAPIResponseModel is 三方市内用车申请单同步 成功返回结果
+type AlitripBtripCityCarApplyAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_city_car_apply_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tuanhotel"
 )
 
-// Alitriptuanhotelshopcategoryget 商家店铺类目查询
+// AlitripTuanHotelShopCategoryGet 商家店铺类目查询
 // alitrip.tuan.hotel.shop.category.get
 //
 // 查询商家店铺类目信息
-func Alitriptuanhotelshopcategoryget(clt *core.SDKClient, req *tuanhotel.AlitriptuanhotelshopcategorygetAPIRequest, session string) (*tuanhotel.AlitriptuanhotelshopcategorygetAPIResponse, error) {
-	var resp tuanhotel.AlitriptuanhotelshopcategorygetAPIResponse
+func AlitripTuanHotelShopCategoryGet(clt *core.SDKClient, req *tuanhotel.AlitripTuanHotelShopCategoryGetAPIRequest, session string) (*tuanhotel.AlitripTuanHotelShopCategoryGetAPIResponse, error) {
+	var resp tuanhotel.AlitripTuanHotelShopCategoryGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

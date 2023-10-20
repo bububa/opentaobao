@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotbkorderrefundgetAPIResponse 淘宝客-推广者-全量维权退款订单查询 API返回值
+// TaobaoTbkOrderRefundGetAPIResponse 淘宝客-推广者-全量维权退款订单查询 API返回值
 // taobao.tbk.order.refund.get
 //
 // 淘宝客账户下全量维权退款订单查询
-type TaobaotbkorderrefundgetAPIResponse struct {
+type TaobaoTbkOrderRefundGetAPIResponse struct {
 	model.CommonResponse
-	TaobaotbkorderrefundgetAPIResponseModel
+	TaobaoTbkOrderRefundGetAPIResponseModel
 }
 
-// TaobaotbkorderrefundgetAPIResponseModel is 淘宝客-推广者-全量维权退款订单查询 成功返回结果
-type TaobaotbkorderrefundgetAPIResponseModel struct {
+// TaobaoTbkOrderRefundGetAPIResponseModel is 淘宝客-推广者-全量维权退款订单查询 成功返回结果
+type TaobaoTbkOrderRefundGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tbk_order_refund_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

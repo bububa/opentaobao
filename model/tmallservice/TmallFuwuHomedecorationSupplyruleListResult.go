@@ -1,7 +1,7 @@
 package tmallservice
 
-// TmallfuwuhomedecorationsupplyrulelistResult 结构体
-type TmallfuwuhomedecorationsupplyrulelistResult struct {
+// TmallFuwuHomedecorationSupplyruleListResult 结构体
+type TmallFuwuHomedecorationSupplyruleListResult struct {
 	// 规则数据
 	DataList []SupplyConfigRuleDto `json:"data_list,omitempty" xml:"data_list>supply_config_rule_dto,omitempty"`
 	// 错误码

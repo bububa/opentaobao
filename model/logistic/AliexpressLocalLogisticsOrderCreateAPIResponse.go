@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpresslocallogisticsordercreateAPIResponse create logistics order API返回值
+// AliexpressLocalLogisticsOrderCreateAPIResponse create logistics order API返回值
 // aliexpress.local.logistics.order.create
 //
 // create logistics order
-type AliexpresslocallogisticsordercreateAPIResponse struct {
+type AliexpressLocalLogisticsOrderCreateAPIResponse struct {
 	model.CommonResponse
-	AliexpresslocallogisticsordercreateAPIResponseModel
+	AliexpressLocalLogisticsOrderCreateAPIResponseModel
 }
 
-// AliexpresslocallogisticsordercreateAPIResponseModel is create logistics order 成功返回结果
-type AliexpresslocallogisticsordercreateAPIResponseModel struct {
+// AliexpressLocalLogisticsOrderCreateAPIResponseModel is create logistics order 成功返回结果
+type AliexpressLocalLogisticsOrderCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_local_logistics_order_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

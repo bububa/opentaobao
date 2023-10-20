@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihouseexistinghomestorebailsyncAPIResponse 门店保证金余额同步 API返回值
+// AlibabaAlihouseExistinghomeStoreBailSyncAPIResponse 门店保证金余额同步 API返回值
 // alibaba.alihouse.existinghome.store.bail.sync
 //
 // 门店保证金余额同步
-type AlibabaalihouseexistinghomestorebailsyncAPIResponse struct {
+type AlibabaAlihouseExistinghomeStoreBailSyncAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihouseexistinghomestorebailsyncAPIResponseModel
+	AlibabaAlihouseExistinghomeStoreBailSyncAPIResponseModel
 }
 
-// AlibabaalihouseexistinghomestorebailsyncAPIResponseModel is 门店保证金余额同步 成功返回结果
-type AlibabaalihouseexistinghomestorebailsyncAPIResponseModel struct {
+// AlibabaAlihouseExistinghomeStoreBailSyncAPIResponseModel is 门店保证金余额同步 成功返回结果
+type AlibabaAlihouseExistinghomeStoreBailSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihouse_existinghome_store_bail_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

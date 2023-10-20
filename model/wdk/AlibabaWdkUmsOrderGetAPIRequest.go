@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabawdkumsordergetAPIRequest 查询店仓作业单据清单 （库存对账辅助）-回流单 API请求
+// AlibabaWdkUmsOrderGetAPIRequest 查询店仓作业单据清单 （库存对账辅助）-回流单 API请求
 // alibaba.wdk.ums.order.get
 //
 // 查询店仓作业单据清单 （库存对账辅助）-回流单
-type AlibabawdkumsordergetAPIRequest struct {
+type AlibabaWdkUmsOrderGetAPIRequest struct {
 	model.Params
 	// 查询单据的dto
 	_queryErpbillDto *QueryErpBillDto
 }
 
-// NewAlibabawdkumsordergetRequest 初始化AlibabawdkumsordergetAPIRequest对象
-func NewAlibabawdkumsordergetRequest() *AlibabawdkumsordergetAPIRequest {
-	return &AlibabawdkumsordergetAPIRequest{
+// NewAlibabaWdkUmsOrderGetRequest 初始化AlibabaWdkUmsOrderGetAPIRequest对象
+func NewAlibabaWdkUmsOrderGetRequest() *AlibabaWdkUmsOrderGetAPIRequest {
+	return &AlibabaWdkUmsOrderGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabawdkumsordergetAPIRequest) GetApiMethodName() string {
+func (r AlibabaWdkUmsOrderGetAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.ums.order.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabawdkumsordergetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaWdkUmsOrderGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabawdkumsordergetAPIRequest) GetRawParams() model.Params {
+func (r AlibabaWdkUmsOrderGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetQueryErpbillDto is QueryErpbillDto Setter
 // 查询单据的dto
-func (r *AlibabawdkumsordergetAPIRequest) SetQueryErpbillDto(_queryErpbillDto *QueryErpBillDto) error {
+func (r *AlibabaWdkUmsOrderGetAPIRequest) SetQueryErpbillDto(_queryErpbillDto *QueryErpBillDto) error {
 	r._queryErpbillDto = _queryErpbillDto
 	r.Set("query_erpbill_dto", _queryErpbillDto)
 	return nil
 }
 
 // GetQueryErpbillDto QueryErpbillDto Getter
-func (r AlibabawdkumsordergetAPIRequest) GetQueryErpbillDto() *QueryErpBillDto {
+func (r AlibabaWdkUmsOrderGetAPIRequest) GetQueryErpbillDto() *QueryErpBillDto {
 	return r._queryErpbillDto
 }

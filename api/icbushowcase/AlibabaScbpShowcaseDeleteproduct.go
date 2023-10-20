@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/icbushowcase"
 )
 
-// Alibabascbpshowcasedeleteproduct 批量删除橱窗商品
+// AlibabaScbpShowcaseDeleteproduct 批量删除橱窗商品
 // alibaba.scbp.showcase.deleteproduct
 //
 // 批量删除橱窗商品
-func Alibabascbpshowcasedeleteproduct(clt *core.SDKClient, req *icbushowcase.AlibabascbpshowcasedeleteproductAPIRequest, session string) (*icbushowcase.AlibabascbpshowcasedeleteproductAPIResponse, error) {
-	var resp icbushowcase.AlibabascbpshowcasedeleteproductAPIResponse
+func AlibabaScbpShowcaseDeleteproduct(clt *core.SDKClient, req *icbushowcase.AlibabaScbpShowcaseDeleteproductAPIRequest, session string) (*icbushowcase.AlibabaScbpShowcaseDeleteproductAPIResponse, error) {
+	var resp icbushowcase.AlibabaScbpShowcaseDeleteproductAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

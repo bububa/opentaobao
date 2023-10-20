@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabascbpadgroupupdateadgroupbatchAPIResponse 修改推广单元 API返回值
+// AlibabaScbpAdGroupUpdateAdGroupBatchAPIResponse 修改推广单元 API返回值
 // alibaba.scbp.ad.group.update.ad.group.batch
 //
 // 修改推广单元
-type AlibabascbpadgroupupdateadgroupbatchAPIResponse struct {
+type AlibabaScbpAdGroupUpdateAdGroupBatchAPIResponse struct {
 	model.CommonResponse
-	AlibabascbpadgroupupdateadgroupbatchAPIResponseModel
+	AlibabaScbpAdGroupUpdateAdGroupBatchAPIResponseModel
 }
 
-// AlibabascbpadgroupupdateadgroupbatchAPIResponseModel is 修改推广单元 成功返回结果
-type AlibabascbpadgroupupdateadgroupbatchAPIResponseModel struct {
+// AlibabaScbpAdGroupUpdateAdGroupBatchAPIResponseModel is 修改推广单元 成功返回结果
+type AlibabaScbpAdGroupUpdateAdGroupBatchAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_ad_group_update_ad_group_batch_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

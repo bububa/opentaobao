@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaalihealthdrugkytdrdrugrecalModel 结构体
-type AlibabaalihealthdrugkytdrdrugrecalModel struct {
+// AlibabaAlihealthDrugKytDrDrugrecalModel 结构体
+type AlibabaAlihealthDrugKytDrDrugrecalModel struct {
 	// 药品剂型
 	PrepnTypeDesc string `json:"prepn_type_desc,omitempty" xml:"prepn_type_desc,omitempty"`
 	// 召回结束时间

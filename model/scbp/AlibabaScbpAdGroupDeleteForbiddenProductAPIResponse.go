@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabascbpadgroupdeleteforbiddenproductAPIResponse 删除屏蔽品 API返回值
+// AlibabaScbpAdGroupDeleteForbiddenProductAPIResponse 删除屏蔽品 API返回值
 // alibaba.scbp.ad.group.delete.forbidden.product
 //
 // 删除屏蔽品
-type AlibabascbpadgroupdeleteforbiddenproductAPIResponse struct {
+type AlibabaScbpAdGroupDeleteForbiddenProductAPIResponse struct {
 	model.CommonResponse
-	AlibabascbpadgroupdeleteforbiddenproductAPIResponseModel
+	AlibabaScbpAdGroupDeleteForbiddenProductAPIResponseModel
 }
 
-// AlibabascbpadgroupdeleteforbiddenproductAPIResponseModel is 删除屏蔽品 成功返回结果
-type AlibabascbpadgroupdeleteforbiddenproductAPIResponseModel struct {
+// AlibabaScbpAdGroupDeleteForbiddenProductAPIResponseModel is 删除屏蔽品 成功返回结果
+type AlibabaScbpAdGroupDeleteForbiddenProductAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_ad_group_delete_forbidden_product_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

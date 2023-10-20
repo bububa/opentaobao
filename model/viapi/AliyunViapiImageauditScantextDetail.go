@@ -1,7 +1,7 @@
 package viapi
 
-// AliyunviapiimageauditscantextDetail 结构体
-type AliyunviapiimageauditscantextDetail struct {
+// AliyunViapiImageauditScantextDetail 结构体
+type AliyunViapiImageauditScantextDetail struct {
 	// 命中该风险的上下文信息
 	Contexts []Context `json:"contexts,omitempty" xml:"contexts>context,omitempty"`
 	// 文本命中风险的分类

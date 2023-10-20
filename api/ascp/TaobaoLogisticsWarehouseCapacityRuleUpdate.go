@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascp"
 )
 
-// Taobaologisticswarehousecapacityruleupdate 仓产能创建/更新
+// TaobaoLogisticsWarehouseCapacityRuleUpdate 仓产能创建/更新
 // taobao.logistics.warehouse.capacity.rule.update
 //
 // 仓产能创建/更新
-func Taobaologisticswarehousecapacityruleupdate(clt *core.SDKClient, req *ascp.TaobaologisticswarehousecapacityruleupdateAPIRequest, session string) (*ascp.TaobaologisticswarehousecapacityruleupdateAPIResponse, error) {
-	var resp ascp.TaobaologisticswarehousecapacityruleupdateAPIResponse
+func TaobaoLogisticsWarehouseCapacityRuleUpdate(clt *core.SDKClient, req *ascp.TaobaoLogisticsWarehouseCapacityRuleUpdateAPIRequest, session string) (*ascp.TaobaoLogisticsWarehouseCapacityRuleUpdateAPIResponse, error) {
+	var resp ascp.TaobaoLogisticsWarehouseCapacityRuleUpdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/mtopopen"
 )
 
-// Alibabainteractmediaaudio 音频相关鉴权接口
+// AlibabaInteractMediaAudio 音频相关鉴权接口
 // alibaba.interact.media.audio
 //
 // 新音频包的鉴权接口
-func Alibabainteractmediaaudio(clt *core.SDKClient, req *mtopopen.AlibabainteractmediaaudioAPIRequest, session string) (*mtopopen.AlibabainteractmediaaudioAPIResponse, error) {
-	var resp mtopopen.AlibabainteractmediaaudioAPIResponse
+func AlibabaInteractMediaAudio(clt *core.SDKClient, req *mtopopen.AlibabaInteractMediaAudioAPIRequest, session string) (*mtopopen.AlibabaInteractMediaAudioAPIResponse, error) {
+	var resp mtopopen.AlibabaInteractMediaAudioAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

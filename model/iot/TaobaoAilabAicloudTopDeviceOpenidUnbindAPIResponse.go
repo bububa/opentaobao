@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoailabaicloudtopdeviceopenidunbindAPIResponse openTaoBaoId解绑设备 API返回值
+// TaobaoAilabAicloudTopDeviceOpenidUnbindAPIResponse openTaoBaoId解绑设备 API返回值
 // taobao.ailab.aicloud.top.device.openid.unbind
 //
 // openTaoBaoId解绑设备
-type TaobaoailabaicloudtopdeviceopenidunbindAPIResponse struct {
+type TaobaoAilabAicloudTopDeviceOpenidUnbindAPIResponse struct {
 	model.CommonResponse
-	TaobaoailabaicloudtopdeviceopenidunbindAPIResponseModel
+	TaobaoAilabAicloudTopDeviceOpenidUnbindAPIResponseModel
 }
 
-// TaobaoailabaicloudtopdeviceopenidunbindAPIResponseModel is openTaoBaoId解绑设备 成功返回结果
-type TaobaoailabaicloudtopdeviceopenidunbindAPIResponseModel struct {
+// TaobaoAilabAicloudTopDeviceOpenidUnbindAPIResponseModel is openTaoBaoId解绑设备 成功返回结果
+type TaobaoAilabAicloudTopDeviceOpenidUnbindAPIResponseModel struct {
 	XMLName xml.Name `xml:"ailab_aicloud_top_device_openid_unbind_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

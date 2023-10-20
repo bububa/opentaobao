@@ -17,5 +17,5 @@ type ItemLackReportRequest struct {
 	// 备注
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
 	// 扩展属性
-	ExtendProps *TaobaoqimenitemlackreportMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+	ExtendProps *TaobaoQimenItemlackReportMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

@@ -1,7 +1,7 @@
 package taotv
 
-// TaobaotaotvvideoplaylistottnavgetResult 结构体
-type TaobaotaotvvideoplaylistottnavgetResult struct {
+// TaobaoTaotvVideoPlaylistOttnavGetResult 结构体
+type TaobaoTaotvVideoPlaylistOttnavGetResult struct {
 	// msgCode
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// msgInfo

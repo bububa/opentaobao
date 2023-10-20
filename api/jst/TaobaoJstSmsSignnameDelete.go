@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/jst"
 )
 
-// Taobaojstsmssignnamedelete 淘宝短信签名删除
+// TaobaoJstSmsSignnameDelete 淘宝短信签名删除
 // taobao.jst.sms.signname.delete
 //
 // 淘宝短信签名删除
-func Taobaojstsmssignnamedelete(clt *core.SDKClient, req *jst.TaobaojstsmssignnamedeleteAPIRequest, session string) (*jst.TaobaojstsmssignnamedeleteAPIResponse, error) {
-	var resp jst.TaobaojstsmssignnamedeleteAPIResponse
+func TaobaoJstSmsSignnameDelete(clt *core.SDKClient, req *jst.TaobaoJstSmsSignnameDeleteAPIRequest, session string) (*jst.TaobaoJstSmsSignnameDeleteAPIResponse, error) {
+	var resp jst.TaobaoJstSmsSignnameDeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

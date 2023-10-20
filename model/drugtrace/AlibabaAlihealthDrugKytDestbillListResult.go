@@ -1,9 +1,9 @@
 package drugtrace
 
-// AlibabaalihealthdrugkytdestbilllistResult 结构体
-type AlibabaalihealthdrugkytdestbilllistResult struct {
+// AlibabaAlihealthDrugKytDestbillListResult 结构体
+type AlibabaAlihealthDrugKytDestbillListResult struct {
 	// 接口返回model
-	ModelList []AlibabaalihealthdrugkytdestbilllistModel `json:"model_list,omitempty" xml:"model_list>alibabaalihealthdrugkytdestbilllist_model,omitempty"`
+	ModelList []AlibabaAlihealthDrugKytDestbillListModel `json:"model_list,omitempty" xml:"model_list>alibaba_alihealth_drug_kyt_destbill_list_model,omitempty"`
 	// msgInfo
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// msgCode

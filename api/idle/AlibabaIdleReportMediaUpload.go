@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/idle"
 )
 
-// Alibabaidlereportmediaupload 验货报告上传文件
+// AlibabaIdleReportMediaUpload 验货报告上传文件
 // alibaba.idle.report.media.upload
 //
 // 服务商上传文件、图片
-func Alibabaidlereportmediaupload(clt *core.SDKClient, req *idle.AlibabaidlereportmediauploadAPIRequest, session string) (*idle.AlibabaidlereportmediauploadAPIResponse, error) {
-	var resp idle.AlibabaidlereportmediauploadAPIResponse
+func AlibabaIdleReportMediaUpload(clt *core.SDKClient, req *idle.AlibabaIdleReportMediaUploadAPIRequest, session string) (*idle.AlibabaIdleReportMediaUploadAPIResponse, error) {
+	var resp idle.AlibabaIdleReportMediaUploadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

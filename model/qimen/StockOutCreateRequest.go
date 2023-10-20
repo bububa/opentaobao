@@ -7,5 +7,5 @@ type StockOutCreateRequest struct {
 	// 出库单信息
 	DeliveryOrder *DeliveryOrder `json:"deliveryOrder,omitempty" xml:"deliveryOrder,omitempty"`
 	// 扩展属性
-	ExtendProps *TaobaoqimenstockoutcreateMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+	ExtendProps *TaobaoQimenStockoutCreateMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

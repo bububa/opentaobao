@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/interact"
 )
 
-// Alibabainteractsensorgutil canvas工具包
+// AlibabaInteractSensorGutil canvas工具包
 // alibaba.interact.sensor.gutil
 //
 // canvas工具包
-func Alibabainteractsensorgutil(clt *core.SDKClient, req *interact.AlibabainteractsensorgutilAPIRequest, session string) (*interact.AlibabainteractsensorgutilAPIResponse, error) {
-	var resp interact.AlibabainteractsensorgutilAPIResponse
+func AlibabaInteractSensorGutil(clt *core.SDKClient, req *interact.AlibabaInteractSensorGutilAPIRequest, session string) (*interact.AlibabaInteractSensorGutilAPIResponse, error) {
+	var resp interact.AlibabaInteractSensorGutilAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

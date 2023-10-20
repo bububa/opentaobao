@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaofenxiaologinusergetAPIRequest 获取分销用户登录信息 API请求
+// TaobaoFenxiaoLoginUserGetAPIRequest 获取分销用户登录信息 API请求
 // taobao.fenxiao.login.user.get
 //
 // 获取用户登录信息
-type TaobaofenxiaologinusergetAPIRequest struct {
+type TaobaoFenxiaoLoginUserGetAPIRequest struct {
 	model.Params
 }
 
-// NewTaobaofenxiaologinusergetRequest 初始化TaobaofenxiaologinusergetAPIRequest对象
-func NewTaobaofenxiaologinusergetRequest() *TaobaofenxiaologinusergetAPIRequest {
-	return &TaobaofenxiaologinusergetAPIRequest{
+// NewTaobaoFenxiaoLoginUserGetRequest 初始化TaobaoFenxiaoLoginUserGetAPIRequest对象
+func NewTaobaoFenxiaoLoginUserGetRequest() *TaobaoFenxiaoLoginUserGetAPIRequest {
+	return &TaobaoFenxiaoLoginUserGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaofenxiaologinusergetAPIRequest) GetApiMethodName() string {
+func (r TaobaoFenxiaoLoginUserGetAPIRequest) GetApiMethodName() string {
 	return "taobao.fenxiao.login.user.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaofenxiaologinusergetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoFenxiaoLoginUserGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaofenxiaologinusergetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoFenxiaoLoginUserGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

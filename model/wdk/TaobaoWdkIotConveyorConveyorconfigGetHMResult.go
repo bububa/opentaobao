@@ -1,7 +1,7 @@
 package wdk
 
-// TaobaowdkiotconveyorconveyorconfiggetHmresult 结构体
-type TaobaowdkiotconveyorconveyorconfiggetHmresult struct {
+// TaobaoWdkIotConveyorConveyorconfigGetHmresult 结构体
+type TaobaoWdkIotConveyorConveyorconfigGetHmresult struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息

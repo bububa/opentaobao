@@ -6,18 +6,18 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoxhotelmultipleratesupdateAPIResponse 复杂价格推送接口（批量全量） API返回值
+// TaobaoXhotelMultipleratesUpdateAPIResponse 复杂价格推送接口（批量全量） API返回值
 // taobao.xhotel.multiplerates.update
 //
 // 批量更新复杂价格
 // 涵盖了taobao.xhotel.rates.update的功能
-type TaobaoxhotelmultipleratesupdateAPIResponse struct {
+type TaobaoXhotelMultipleratesUpdateAPIResponse struct {
 	model.CommonResponse
-	TaobaoxhotelmultipleratesupdateAPIResponseModel
+	TaobaoXhotelMultipleratesUpdateAPIResponseModel
 }
 
-// TaobaoxhotelmultipleratesupdateAPIResponseModel is 复杂价格推送接口（批量全量） 成功返回结果
-type TaobaoxhotelmultipleratesupdateAPIResponseModel struct {
+// TaobaoXhotelMultipleratesUpdateAPIResponseModel is 复杂价格推送接口（批量全量） 成功返回结果
+type TaobaoXhotelMultipleratesUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_multiplerates_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

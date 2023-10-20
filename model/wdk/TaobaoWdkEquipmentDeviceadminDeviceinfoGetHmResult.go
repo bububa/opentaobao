@@ -1,7 +1,7 @@
 package wdk
 
-// TaobaowdkequipmentdeviceadmindeviceinfogetHmResult 结构体
-type TaobaowdkequipmentdeviceadmindeviceinfogetHmResult struct {
+// TaobaoWdkEquipmentDeviceadminDeviceinfoGetHmResult 结构体
+type TaobaoWdkEquipmentDeviceadminDeviceinfoGetHmResult struct {
 	// 设备列表
 	Models []DeviceInfoDto `json:"models,omitempty" xml:"models>device_info_dto,omitempty"`
 	// 错误码

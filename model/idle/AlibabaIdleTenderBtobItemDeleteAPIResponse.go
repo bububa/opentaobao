@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaidletenderbtobitemdeleteAPIResponse 暗拍b2b商品下架/删除 API返回值
+// AlibabaIdleTenderBtobItemDeleteAPIResponse 暗拍b2b商品下架/删除 API返回值
 // alibaba.idle.tender.btob.item.delete
 //
 // 暗拍b2b商品下架/删除
-type AlibabaidletenderbtobitemdeleteAPIResponse struct {
+type AlibabaIdleTenderBtobItemDeleteAPIResponse struct {
 	model.CommonResponse
-	AlibabaidletenderbtobitemdeleteAPIResponseModel
+	AlibabaIdleTenderBtobItemDeleteAPIResponseModel
 }
 
-// AlibabaidletenderbtobitemdeleteAPIResponseModel is 暗拍b2b商品下架/删除 成功返回结果
-type AlibabaidletenderbtobitemdeleteAPIResponseModel struct {
+// AlibabaIdleTenderBtobItemDeleteAPIResponseModel is 暗拍b2b商品下架/删除 成功返回结果
+type AlibabaIdleTenderBtobItemDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_idle_tender_btob_item_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

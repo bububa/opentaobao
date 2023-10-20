@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaotbkcouponconvertRpcResult 结构体
-type TaobaotbkcouponconvertRpcResult struct {
+// TaobaoTbkCouponConvertRpcResult 结构体
+type TaobaoTbkCouponConvertRpcResult struct {
 	// 见错误描述
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 	// data

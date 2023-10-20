@@ -6,13 +6,13 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabacampusadminmapuserlocationinfoinsertactualuserlocationinfoAPIRequest 上传用户实时位置 API请求
+// AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest 上传用户实时位置 API请求
 // alibaba.campus.adminmap.userlocationinfo.insertactualuserlocationinfo
 //
 // 上传用户实时位置
 // HSF接口名称：com.alibaba.campus.api.adminmap.service.top.UserLocationQueryApiTopService
 // HSF方法名称：insertActualUserLocationInfo
-type AlibabacampusadminmapuserlocationinfoinsertactualuserlocationinfoAPIRequest struct {
+type AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest struct {
 	model.Params
 	// 环境参数
 	_param0 *WorkBenchContext
@@ -20,52 +20,52 @@ type AlibabacampusadminmapuserlocationinfoinsertactualuserlocationinfoAPIRequest
 	_param1 *UserLocationInfo
 }
 
-// NewAlibabacampusadminmapuserlocationinfoinsertactualuserlocationinfoRequest 初始化AlibabacampusadminmapuserlocationinfoinsertactualuserlocationinfoAPIRequest对象
-func NewAlibabacampusadminmapuserlocationinfoinsertactualuserlocationinfoRequest() *AlibabacampusadminmapuserlocationinfoinsertactualuserlocationinfoAPIRequest {
-	return &AlibabacampusadminmapuserlocationinfoinsertactualuserlocationinfoAPIRequest{
+// NewAlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest 初始化AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest对象
+func NewAlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest() *AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest {
+	return &AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabacampusadminmapuserlocationinfoinsertactualuserlocationinfoAPIRequest) GetApiMethodName() string {
+func (r AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest) GetApiMethodName() string {
 	return "alibaba.campus.adminmap.userlocationinfo.insertactualuserlocationinfo"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabacampusadminmapuserlocationinfoinsertactualuserlocationinfoAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabacampusadminmapuserlocationinfoinsertactualuserlocationinfoAPIRequest) GetRawParams() model.Params {
+func (r AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam0 is Param0 Setter
 // 环境参数
-func (r *AlibabacampusadminmapuserlocationinfoinsertactualuserlocationinfoAPIRequest) SetParam0(_param0 *WorkBenchContext) error {
+func (r *AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest) SetParam0(_param0 *WorkBenchContext) error {
 	r._param0 = _param0
 	r.Set("param0", _param0)
 	return nil
 }
 
 // GetParam0 Param0 Getter
-func (r AlibabacampusadminmapuserlocationinfoinsertactualuserlocationinfoAPIRequest) GetParam0() *WorkBenchContext {
+func (r AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest) GetParam0() *WorkBenchContext {
 	return r._param0
 }
 
 // SetParam1 is Param1 Setter
 // 查询参数
-func (r *AlibabacampusadminmapuserlocationinfoinsertactualuserlocationinfoAPIRequest) SetParam1(_param1 *UserLocationInfo) error {
+func (r *AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest) SetParam1(_param1 *UserLocationInfo) error {
 	r._param1 = _param1
 	r.Set("param1", _param1)
 	return nil
 }
 
 // GetParam1 Param1 Getter
-func (r AlibabacampusadminmapuserlocationinfoinsertactualuserlocationinfoAPIRequest) GetParam1() *UserLocationInfo {
+func (r AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoAPIRequest) GetParam1() *UserLocationInfo {
 	return r._param1
 }

@@ -1,7 +1,7 @@
 package singletreasure
 
-// TaobaosingletreasureactivityqueryResultDto 结构体
-type TaobaosingletreasureactivityqueryResultDto struct {
+// TaobaoSingletreasureActivityQueryResultDto 结构体
+type TaobaoSingletreasureActivityQueryResultDto struct {
 	// 查询结果
 	DataList []ActivityInfo `json:"data_list,omitempty" xml:"data_list>activity_info,omitempty"`
 	// 错误信息

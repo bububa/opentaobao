@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaotbkdgtpwdreportgetMapData 结构体
-type TaobaotbkdgtpwdreportgetMapData struct {
+// TaobaoTbkDgTpwdReportGetMapData 结构体
+type TaobaoTbkDgTpwdReportGetMapData struct {
 	// 截止查询时刻近1小时回流pv
 	HourPv int64 `json:"hour_pv,omitempty" xml:"hour_pv,omitempty"`
 	// 截止查询时刻近1小时回流uv

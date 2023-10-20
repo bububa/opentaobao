@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoalitriptravelnormalvisauploadfileAPIResponse 上传电子签证 API返回值
+// TaobaoAlitripTravelNormalvisaUploadfileAPIResponse 上传电子签证 API返回值
 // taobao.alitrip.travel.normalvisa.uploadfile
 //
 // 上传电子签证
-type TaobaoalitriptravelnormalvisauploadfileAPIResponse struct {
+type TaobaoAlitripTravelNormalvisaUploadfileAPIResponse struct {
 	model.CommonResponse
-	TaobaoalitriptravelnormalvisauploadfileAPIResponseModel
+	TaobaoAlitripTravelNormalvisaUploadfileAPIResponseModel
 }
 
-// TaobaoalitriptravelnormalvisauploadfileAPIResponseModel is 上传电子签证 成功返回结果
-type TaobaoalitriptravelnormalvisauploadfileAPIResponseModel struct {
+// TaobaoAlitripTravelNormalvisaUploadfileAPIResponseModel is 上传电子签证 成功返回结果
+type TaobaoAlitripTravelNormalvisaUploadfileAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_travel_normalvisa_uploadfile_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果：包含results则代表成功保存
-	Result *TaobaoalitriptravelnormalvisauploadfileResultSet `json:"result,omitempty" xml:"result,omitempty"`
+	Result *TaobaoAlitripTravelNormalvisaUploadfileResultSet `json:"result,omitempty" xml:"result,omitempty"`
 }

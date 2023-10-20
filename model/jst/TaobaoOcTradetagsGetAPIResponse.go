@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaooctradetagsgetAPIResponse 根据订单查询订单标签 API返回值
+// TaobaoOcTradetagsGetAPIResponse 根据订单查询订单标签 API返回值
 // taobao.oc.tradetags.get
 //
 // 根据订单查询订单标签。&lt;br/&gt;
 // 返回的tag说明:1为官方标，2为自定义标，3为主站只读标签。&lt;br/&gt;
 // 官方标签和自定义标签请看taobao.oc.tradetag.attach 接口说明&lt;br/&gt;
 // 主站只读标签请看:http://open.taobao.com/doc/detail.htm?id=102865&lt;br/&gt;
-type TaobaooctradetagsgetAPIResponse struct {
+type TaobaoOcTradetagsGetAPIResponse struct {
 	model.CommonResponse
-	TaobaooctradetagsgetAPIResponseModel
+	TaobaoOcTradetagsGetAPIResponseModel
 }
 
-// TaobaooctradetagsgetAPIResponseModel is 根据订单查询订单标签 成功返回结果
-type TaobaooctradetagsgetAPIResponseModel struct {
+// TaobaoOcTradetagsGetAPIResponseModel is 根据订单查询订单标签 成功返回结果
+type TaobaoOcTradetagsGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"oc_tradetags_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

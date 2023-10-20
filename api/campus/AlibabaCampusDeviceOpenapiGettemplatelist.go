@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/campus"
 )
 
-// Alibabacampusdeviceopenapigettemplatelist 查询设备模板
+// AlibabaCampusDeviceOpenapiGettemplatelist 查询设备模板
 // alibaba.campus.device.openapi.gettemplatelist
 //
 // 查询设备模板信息
-func Alibabacampusdeviceopenapigettemplatelist(clt *core.SDKClient, req *campus.AlibabacampusdeviceopenapigettemplatelistAPIRequest, session string) (*campus.AlibabacampusdeviceopenapigettemplatelistAPIResponse, error) {
-	var resp campus.AlibabacampusdeviceopenapigettemplatelistAPIResponse
+func AlibabaCampusDeviceOpenapiGettemplatelist(clt *core.SDKClient, req *campus.AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest, session string) (*campus.AlibabaCampusDeviceOpenapiGettemplatelistAPIResponse, error) {
+	var resp campus.AlibabaCampusDeviceOpenapiGettemplatelistAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

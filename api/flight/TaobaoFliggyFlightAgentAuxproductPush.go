@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/flight"
 )
 
-// Taobaofliggyflightagentauxproductpush 飞猪机票辅营商品投放
+// TaobaoFliggyFlightAgentAuxproductPush 飞猪机票辅营商品投放
 // taobao.fliggy.flight.agent.auxproduct.push
 //
 // 廉航辅营产品投放接口
-func Taobaofliggyflightagentauxproductpush(clt *core.SDKClient, req *flight.TaobaofliggyflightagentauxproductpushAPIRequest, session string) (*flight.TaobaofliggyflightagentauxproductpushAPIResponse, error) {
-	var resp flight.TaobaofliggyflightagentauxproductpushAPIResponse
+func TaobaoFliggyFlightAgentAuxproductPush(clt *core.SDKClient, req *flight.TaobaoFliggyFlightAgentAuxproductPushAPIRequest, session string) (*flight.TaobaoFliggyFlightAgentAuxproductPushAPIResponse, error) {
+	var resp flight.TaobaoFliggyFlightAgentAuxproductPushAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

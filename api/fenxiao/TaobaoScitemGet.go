@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
 
-// Taobaoscitemget 根据id查询商品
+// TaobaoScitemGet 根据id查询商品
 // taobao.scitem.get
 //
 // 根据id查询商品
-func Taobaoscitemget(clt *core.SDKClient, req *fenxiao.TaobaoscitemgetAPIRequest, session string) (*fenxiao.TaobaoscitemgetAPIResponse, error) {
-	var resp fenxiao.TaobaoscitemgetAPIResponse
+func TaobaoScitemGet(clt *core.SDKClient, req *fenxiao.TaobaoScitemGetAPIRequest, session string) (*fenxiao.TaobaoScitemGetAPIResponse, error) {
+	var resp fenxiao.TaobaoScitemGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

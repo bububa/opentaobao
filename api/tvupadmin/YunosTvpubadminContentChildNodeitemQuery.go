@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
 
-// Yunostvpubadmincontentchildnodeitemquery 查询少儿大厅类目内容
+// YunosTvpubadminContentChildNodeitemQuery 查询少儿大厅类目内容
 // yunos.tvpubadmin.content.child.nodeitem.query
 //
 // 查询少儿大厅类目内容信息
-func Yunostvpubadmincontentchildnodeitemquery(clt *core.SDKClient, req *tvupadmin.YunostvpubadmincontentchildnodeitemqueryAPIRequest, session string) (*tvupadmin.YunostvpubadmincontentchildnodeitemqueryAPIResponse, error) {
-	var resp tvupadmin.YunostvpubadmincontentchildnodeitemqueryAPIResponse
+func YunosTvpubadminContentChildNodeitemQuery(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentChildNodeitemQueryAPIRequest, session string) (*tvupadmin.YunosTvpubadminContentChildNodeitemQueryAPIResponse, error) {
+	var resp tvupadmin.YunosTvpubadminContentChildNodeitemQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabalegalsuitcourtbeforepushAPIRequest 更新或保存庭前信息 API请求
+// AlibabaLegalSuitCourtBeforePushAPIRequest 更新或保存庭前信息 API请求
 // alibaba.legal.suit.court.before.push
 //
 // 更新或者保存庭前信息
-type AlibabalegalsuitcourtbeforepushAPIRequest struct {
+type AlibabaLegalSuitCourtBeforePushAPIRequest struct {
 	model.Params
 	// 庭前信息
 	_beforeCourtModel *BeforeCourtModel
 }
 
-// NewAlibabalegalsuitcourtbeforepushRequest 初始化AlibabalegalsuitcourtbeforepushAPIRequest对象
-func NewAlibabalegalsuitcourtbeforepushRequest() *AlibabalegalsuitcourtbeforepushAPIRequest {
-	return &AlibabalegalsuitcourtbeforepushAPIRequest{
+// NewAlibabaLegalSuitCourtBeforePushRequest 初始化AlibabaLegalSuitCourtBeforePushAPIRequest对象
+func NewAlibabaLegalSuitCourtBeforePushRequest() *AlibabaLegalSuitCourtBeforePushAPIRequest {
+	return &AlibabaLegalSuitCourtBeforePushAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabalegalsuitcourtbeforepushAPIRequest) GetApiMethodName() string {
+func (r AlibabaLegalSuitCourtBeforePushAPIRequest) GetApiMethodName() string {
 	return "alibaba.legal.suit.court.before.push"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabalegalsuitcourtbeforepushAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaLegalSuitCourtBeforePushAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabalegalsuitcourtbeforepushAPIRequest) GetRawParams() model.Params {
+func (r AlibabaLegalSuitCourtBeforePushAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetBeforeCourtModel is BeforeCourtModel Setter
 // 庭前信息
-func (r *AlibabalegalsuitcourtbeforepushAPIRequest) SetBeforeCourtModel(_beforeCourtModel *BeforeCourtModel) error {
+func (r *AlibabaLegalSuitCourtBeforePushAPIRequest) SetBeforeCourtModel(_beforeCourtModel *BeforeCourtModel) error {
 	r._beforeCourtModel = _beforeCourtModel
 	r.Set("before_court_model", _beforeCourtModel)
 	return nil
 }
 
 // GetBeforeCourtModel BeforeCourtModel Getter
-func (r AlibabalegalsuitcourtbeforepushAPIRequest) GetBeforeCourtModel() *BeforeCourtModel {
+func (r AlibabaLegalSuitCourtBeforePushAPIRequest) GetBeforeCourtModel() *BeforeCourtModel {
 	return r._beforeCourtModel
 }

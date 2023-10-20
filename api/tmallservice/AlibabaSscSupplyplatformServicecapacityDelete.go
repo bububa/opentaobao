@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-// Alibabasscsupplyplatformservicecapacitydelete 服务容量删除
+// AlibabaSscSupplyplatformServicecapacityDelete 服务容量删除
 // alibaba.ssc.supplyplatform.servicecapacity.delete
 //
 // 服务容量删除
-func Alibabasscsupplyplatformservicecapacitydelete(clt *core.SDKClient, req *tmallservice.AlibabasscsupplyplatformservicecapacitydeleteAPIRequest, session string) (*tmallservice.AlibabasscsupplyplatformservicecapacitydeleteAPIResponse, error) {
-	var resp tmallservice.AlibabasscsupplyplatformservicecapacitydeleteAPIResponse
+func AlibabaSscSupplyplatformServicecapacityDelete(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServicecapacityDeleteAPIRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServicecapacityDeleteAPIResponse, error) {
+	var resp tmallservice.AlibabaSscSupplyplatformServicecapacityDeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

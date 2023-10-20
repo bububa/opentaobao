@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabascbpadreportquerykeywordeffectAPIRequest 关键词报告 API请求
+// AlibabaScbpAdReportQueryKeywordEffectAPIRequest 关键词报告 API请求
 // alibaba.scbp.ad.report.query.keyword.effect
 //
 // 关键词报告
-type AlibabascbpadreportquerykeywordeffectAPIRequest struct {
+type AlibabaScbpAdReportQueryKeywordEffectAPIRequest struct {
 	model.Params
 	// 用户信息
 	_topContext *TopContextDto
@@ -18,52 +18,52 @@ type AlibabascbpadreportquerykeywordeffectAPIRequest struct {
 	_keywordReportOperation *KeywordReportOperationDto
 }
 
-// NewAlibabascbpadreportquerykeywordeffectRequest 初始化AlibabascbpadreportquerykeywordeffectAPIRequest对象
-func NewAlibabascbpadreportquerykeywordeffectRequest() *AlibabascbpadreportquerykeywordeffectAPIRequest {
-	return &AlibabascbpadreportquerykeywordeffectAPIRequest{
+// NewAlibabaScbpAdReportQueryKeywordEffectRequest 初始化AlibabaScbpAdReportQueryKeywordEffectAPIRequest对象
+func NewAlibabaScbpAdReportQueryKeywordEffectRequest() *AlibabaScbpAdReportQueryKeywordEffectAPIRequest {
+	return &AlibabaScbpAdReportQueryKeywordEffectAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabascbpadreportquerykeywordeffectAPIRequest) GetApiMethodName() string {
+func (r AlibabaScbpAdReportQueryKeywordEffectAPIRequest) GetApiMethodName() string {
 	return "alibaba.scbp.ad.report.query.keyword.effect"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabascbpadreportquerykeywordeffectAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaScbpAdReportQueryKeywordEffectAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabascbpadreportquerykeywordeffectAPIRequest) GetRawParams() model.Params {
+func (r AlibabaScbpAdReportQueryKeywordEffectAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTopContext is TopContext Setter
 // 用户信息
-func (r *AlibabascbpadreportquerykeywordeffectAPIRequest) SetTopContext(_topContext *TopContextDto) error {
+func (r *AlibabaScbpAdReportQueryKeywordEffectAPIRequest) SetTopContext(_topContext *TopContextDto) error {
 	r._topContext = _topContext
 	r.Set("top_context", _topContext)
 	return nil
 }
 
 // GetTopContext TopContext Getter
-func (r AlibabascbpadreportquerykeywordeffectAPIRequest) GetTopContext() *TopContextDto {
+func (r AlibabaScbpAdReportQueryKeywordEffectAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
 }
 
 // SetKeywordReportOperation is KeywordReportOperation Setter
 // 请求参数
-func (r *AlibabascbpadreportquerykeywordeffectAPIRequest) SetKeywordReportOperation(_keywordReportOperation *KeywordReportOperationDto) error {
+func (r *AlibabaScbpAdReportQueryKeywordEffectAPIRequest) SetKeywordReportOperation(_keywordReportOperation *KeywordReportOperationDto) error {
 	r._keywordReportOperation = _keywordReportOperation
 	r.Set("keyword_report_operation", _keywordReportOperation)
 	return nil
 }
 
 // GetKeywordReportOperation KeywordReportOperation Getter
-func (r AlibabascbpadreportquerykeywordeffectAPIRequest) GetKeywordReportOperation() *KeywordReportOperationDto {
+func (r AlibabaScbpAdReportQueryKeywordEffectAPIRequest) GetKeywordReportOperation() *KeywordReportOperationDto {
 	return r._keywordReportOperation
 }

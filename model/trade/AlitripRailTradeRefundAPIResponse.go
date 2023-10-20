@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitriprailtraderefundAPIResponse 退票接口 API返回值
+// AlitripRailTradeRefundAPIResponse 退票接口 API返回值
 // alitrip.rail.trade.refund
 //
 // 退票接口
-type AlitriprailtraderefundAPIResponse struct {
+type AlitripRailTradeRefundAPIResponse struct {
 	model.CommonResponse
-	AlitriprailtraderefundAPIResponseModel
+	AlitripRailTradeRefundAPIResponseModel
 }
 
-// AlitriprailtraderefundAPIResponseModel is 退票接口 成功返回结果
-type AlitriprailtraderefundAPIResponseModel struct {
+// AlitripRailTradeRefundAPIResponseModel is 退票接口 成功返回结果
+type AlitripRailTradeRefundAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_rail_trade_refund_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回对象
-	Result *AlitriprailtraderefundResultSet `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlitripRailTradeRefundResultSet `json:"result,omitempty" xml:"result,omitempty"`
 }

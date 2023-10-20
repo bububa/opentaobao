@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripbtripcorpopcarbillsettlementqueryAPIRequest 用车结算记账查询接口 API请求
+// AlitripBtripCorpopCarBillsettlementQueryAPIRequest 用车结算记账查询接口 API请求
 // alitrip.btrip.corpop.car.billsettlement.query
 //
 // 用车结算记账查询接口
-type AlitripbtripcorpopcarbillsettlementqueryAPIRequest struct {
+type AlitripBtripCorpopCarBillsettlementQueryAPIRequest struct {
 	model.Params
 	// 入参
 	_rq *OpenIsvBillSettlementSearchRq
 }
 
-// NewAlitripbtripcorpopcarbillsettlementqueryRequest 初始化AlitripbtripcorpopcarbillsettlementqueryAPIRequest对象
-func NewAlitripbtripcorpopcarbillsettlementqueryRequest() *AlitripbtripcorpopcarbillsettlementqueryAPIRequest {
-	return &AlitripbtripcorpopcarbillsettlementqueryAPIRequest{
+// NewAlitripBtripCorpopCarBillsettlementQueryRequest 初始化AlitripBtripCorpopCarBillsettlementQueryAPIRequest对象
+func NewAlitripBtripCorpopCarBillsettlementQueryRequest() *AlitripBtripCorpopCarBillsettlementQueryAPIRequest {
+	return &AlitripBtripCorpopCarBillsettlementQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripbtripcorpopcarbillsettlementqueryAPIRequest) GetApiMethodName() string {
+func (r AlitripBtripCorpopCarBillsettlementQueryAPIRequest) GetApiMethodName() string {
 	return "alitrip.btrip.corpop.car.billsettlement.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripbtripcorpopcarbillsettlementqueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripBtripCorpopCarBillsettlementQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripbtripcorpopcarbillsettlementqueryAPIRequest) GetRawParams() model.Params {
+func (r AlitripBtripCorpopCarBillsettlementQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRq is Rq Setter
 // 入参
-func (r *AlitripbtripcorpopcarbillsettlementqueryAPIRequest) SetRq(_rq *OpenIsvBillSettlementSearchRq) error {
+func (r *AlitripBtripCorpopCarBillsettlementQueryAPIRequest) SetRq(_rq *OpenIsvBillSettlementSearchRq) error {
 	r._rq = _rq
 	r.Set("rq", _rq)
 	return nil
 }
 
 // GetRq Rq Getter
-func (r AlitripbtripcorpopcarbillsettlementqueryAPIRequest) GetRq() *OpenIsvBillSettlementSearchRq {
+func (r AlitripBtripCorpopCarBillsettlementQueryAPIRequest) GetRq() *OpenIsvBillSettlementSearchRq {
 	return r._rq
 }

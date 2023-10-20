@@ -1,7 +1,7 @@
 package openmall
 
-// TaobaoopenmallitemsaleareagetResultDo 结构体
-type TaobaoopenmallitemsaleareagetResultDo struct {
+// TaobaoOpenmallItemSaleareaGetResultDo 结构体
+type TaobaoOpenmallItemSaleareaGetResultDo struct {
 	// 可售区域结果
 	SaleAreaList []TopSaleAreaVo `json:"sale_area_list,omitempty" xml:"sale_area_list>top_sale_area_vo,omitempty"`
 	// 错误码

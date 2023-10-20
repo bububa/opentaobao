@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/idle"
 )
 
-// Alibabaidletenderprepayaction 服务商预付款完成接口
+// AlibabaIdleTenderPrePayAction 服务商预付款完成接口
 // alibaba.idle.tender.pre.pay.action
 //
 // 服务商预付款完成接口
-func Alibabaidletenderprepayaction(clt *core.SDKClient, req *idle.AlibabaidletenderprepayactionAPIRequest, session string) (*idle.AlibabaidletenderprepayactionAPIResponse, error) {
-	var resp idle.AlibabaidletenderprepayactionAPIResponse
+func AlibabaIdleTenderPrePayAction(clt *core.SDKClient, req *idle.AlibabaIdleTenderPrePayActionAPIRequest, session string) (*idle.AlibabaIdleTenderPrePayActionAPIResponse, error) {
+	var resp idle.AlibabaIdleTenderPrePayActionAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

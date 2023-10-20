@@ -1,9 +1,9 @@
 package drugtrace
 
-// AlibabaalihealthdrugkytdrvaequipmentlistModel 结构体
-type AlibabaalihealthdrugkytdrvaequipmentlistModel struct {
+// AlibabaAlihealthDrugKytDrVaequipmentListModel 结构体
+type AlibabaAlihealthDrugKytDrVaequipmentListModel struct {
 	// 查询列表
-	List []AlibabaalihealthdrugkytdrvaequipmentlistResult `json:"list,omitempty" xml:"list>alibabaalihealthdrugkytdrvaequipmentlist_result,omitempty"`
+	List []AlibabaAlihealthDrugKytDrVaequipmentListResult `json:"list,omitempty" xml:"list>alibaba_alihealth_drug_kyt_dr_vaequipment_list_result,omitempty"`
 	// 页数
 	Pages int64 `json:"pages,omitempty" xml:"pages,omitempty"`
 	// 总数

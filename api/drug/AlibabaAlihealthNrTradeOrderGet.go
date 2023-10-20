@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drug"
 )
 
-// Alibabaalihealthnrtradeorderget 获取订单详情
+// AlibabaAlihealthNrTradeOrderGet 获取订单详情
 // alibaba.alihealth.nr.trade.order.get
 //
 // 阿里健康O2O，获取订单详情
-func Alibabaalihealthnrtradeorderget(clt *core.SDKClient, req *drug.AlibabaalihealthnrtradeordergetAPIRequest, session string) (*drug.AlibabaalihealthnrtradeordergetAPIResponse, error) {
-	var resp drug.AlibabaalihealthnrtradeordergetAPIResponse
+func AlibabaAlihealthNrTradeOrderGet(clt *core.SDKClient, req *drug.AlibabaAlihealthNrTradeOrderGetAPIRequest, session string) (*drug.AlibabaAlihealthNrTradeOrderGetAPIResponse, error) {
+	var resp drug.AlibabaAlihealthNrTradeOrderGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

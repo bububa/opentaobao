@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihousenewhomeprojectbuildingecodeupdateAPIRequest 新房楼栋修改e码 API请求
+// AlibabaAlihouseNewhomeProjectBuildingEcodeUpdateAPIRequest 新房楼栋修改e码 API请求
 // alibaba.alihouse.newhome.project.building.ecode.update
 //
 // 新房楼栋修改e码
-type AlibabaalihousenewhomeprojectbuildingecodeupdateAPIRequest struct {
+type AlibabaAlihouseNewhomeProjectBuildingEcodeUpdateAPIRequest struct {
 	model.Params
 	// 楼栋请求实体
 	_updateBuilding *UpdateEcodeBuildingDto
 }
 
-// NewAlibabaalihousenewhomeprojectbuildingecodeupdateRequest 初始化AlibabaalihousenewhomeprojectbuildingecodeupdateAPIRequest对象
-func NewAlibabaalihousenewhomeprojectbuildingecodeupdateRequest() *AlibabaalihousenewhomeprojectbuildingecodeupdateAPIRequest {
-	return &AlibabaalihousenewhomeprojectbuildingecodeupdateAPIRequest{
+// NewAlibabaAlihouseNewhomeProjectBuildingEcodeUpdateRequest 初始化AlibabaAlihouseNewhomeProjectBuildingEcodeUpdateAPIRequest对象
+func NewAlibabaAlihouseNewhomeProjectBuildingEcodeUpdateRequest() *AlibabaAlihouseNewhomeProjectBuildingEcodeUpdateAPIRequest {
+	return &AlibabaAlihouseNewhomeProjectBuildingEcodeUpdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalihousenewhomeprojectbuildingecodeupdateAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlihouseNewhomeProjectBuildingEcodeUpdateAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihouse.newhome.project.building.ecode.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalihousenewhomeprojectbuildingecodeupdateAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlihouseNewhomeProjectBuildingEcodeUpdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalihousenewhomeprojectbuildingecodeupdateAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlihouseNewhomeProjectBuildingEcodeUpdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetUpdateBuilding is UpdateBuilding Setter
 // 楼栋请求实体
-func (r *AlibabaalihousenewhomeprojectbuildingecodeupdateAPIRequest) SetUpdateBuilding(_updateBuilding *UpdateEcodeBuildingDto) error {
+func (r *AlibabaAlihouseNewhomeProjectBuildingEcodeUpdateAPIRequest) SetUpdateBuilding(_updateBuilding *UpdateEcodeBuildingDto) error {
 	r._updateBuilding = _updateBuilding
 	r.Set("update_building", _updateBuilding)
 	return nil
 }
 
 // GetUpdateBuilding UpdateBuilding Getter
-func (r AlibabaalihousenewhomeprojectbuildingecodeupdateAPIRequest) GetUpdateBuilding() *UpdateEcodeBuildingDto {
+func (r AlibabaAlihouseNewhomeProjectBuildingEcodeUpdateAPIRequest) GetUpdateBuilding() *UpdateEcodeBuildingDto {
 	return r._updateBuilding
 }

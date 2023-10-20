@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallitemsizemappingtemplateupdateAPIResponse 更新天猫商品尺码表模板 API返回值
+// TmallItemSizemappingTemplateUpdateAPIResponse 更新天猫商品尺码表模板 API返回值
 // tmall.item.sizemapping.template.update
 //
 // 更新天猫商品尺码表模板
-type TmallitemsizemappingtemplateupdateAPIResponse struct {
+type TmallItemSizemappingTemplateUpdateAPIResponse struct {
 	model.CommonResponse
-	TmallitemsizemappingtemplateupdateAPIResponseModel
+	TmallItemSizemappingTemplateUpdateAPIResponseModel
 }
 
-// TmallitemsizemappingtemplateupdateAPIResponseModel is 更新天猫商品尺码表模板 成功返回结果
-type TmallitemsizemappingtemplateupdateAPIResponseModel struct {
+// TmallItemSizemappingTemplateUpdateAPIResponseModel is 更新天猫商品尺码表模板 成功返回结果
+type TmallItemSizemappingTemplateUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_item_sizemapping_template_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

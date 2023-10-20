@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripmerchantgalaxyactivitygoodsqueryResponse 结构体
-type AlitripmerchantgalaxyactivitygoodsqueryResponse struct {
+// AlitripMerchantGalaxyActivityGoodsQueryResponse 结构体
+type AlitripMerchantGalaxyActivityGoodsQueryResponse struct {
 	// 奖品信息数据
 	Contents []ActivityDrawUserGoodsVo `json:"contents,omitempty" xml:"contents>activity_draw_user_goods_vo,omitempty"`
 	// 错误描述

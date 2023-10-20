@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaargusupdateredriskAPIResponse 更新红线价格 API返回值
+// AlibabaArgusUpdateredriskAPIResponse 更新红线价格 API返回值
 // alibaba.argus.updateredrisk
 //
 // 商品健康中心新增红线价格规则
-type AlibabaargusupdateredriskAPIResponse struct {
+type AlibabaArgusUpdateredriskAPIResponse struct {
 	model.CommonResponse
-	AlibabaargusupdateredriskAPIResponseModel
+	AlibabaArgusUpdateredriskAPIResponseModel
 }
 
-// AlibabaargusupdateredriskAPIResponseModel is 更新红线价格 成功返回结果
-type AlibabaargusupdateredriskAPIResponseModel struct {
+// AlibabaArgusUpdateredriskAPIResponseModel is 更新红线价格 成功返回结果
+type AlibabaArgusUpdateredriskAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_argus_updateredrisk_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

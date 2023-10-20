@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// Alibabatclsaelophymerchantchannelrefundcomplete 翱象商家自有渠道 逆向单完成
+// AlibabaTclsAelophyMerchantChannelRefundComplete 翱象商家自有渠道 逆向单完成
 // alibaba.tcls.aelophy.merchant.channel.refund.complete
 //
 // 翱象小程序 退款完成
-func Alibabatclsaelophymerchantchannelrefundcomplete(clt *core.SDKClient, req *wdk.AlibabatclsaelophymerchantchannelrefundcompleteAPIRequest, session string) (*wdk.AlibabatclsaelophymerchantchannelrefundcompleteAPIResponse, error) {
-	var resp wdk.AlibabatclsaelophymerchantchannelrefundcompleteAPIResponse
+func AlibabaTclsAelophyMerchantChannelRefundComplete(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest, session string) (*wdk.AlibabaTclsAelophyMerchantChannelRefundCompleteAPIResponse, error) {
+	var resp wdk.AlibabaTclsAelophyMerchantChannelRefundCompleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

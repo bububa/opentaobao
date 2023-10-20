@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthexaminationagreementlistAPIResponse isv协议获取 API返回值
+// AlibabaAlihealthExaminationAgreementListAPIResponse isv协议获取 API返回值
 // alibaba.alihealth.examination.agreement.list
 //
 // isv协议获取
-type AlibabaalihealthexaminationagreementlistAPIResponse struct {
+type AlibabaAlihealthExaminationAgreementListAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthexaminationagreementlistAPIResponseModel
+	AlibabaAlihealthExaminationAgreementListAPIResponseModel
 }
 
-// AlibabaalihealthexaminationagreementlistAPIResponseModel is isv协议获取 成功返回结果
-type AlibabaalihealthexaminationagreementlistAPIResponseModel struct {
+// AlibabaAlihealthExaminationAgreementListAPIResponseModel is isv协议获取 成功返回结果
+type AlibabaAlihealthExaminationAgreementListAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_examination_agreement_list_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
 
-// Taobaoscitemoutercodeget 根据outerCode查询商品
+// TaobaoScitemOutercodeGet 根据outerCode查询商品
 // taobao.scitem.outercode.get
 //
 // 根据outerCode查询商品
-func Taobaoscitemoutercodeget(clt *core.SDKClient, req *fenxiao.TaobaoscitemoutercodegetAPIRequest, session string) (*fenxiao.TaobaoscitemoutercodegetAPIResponse, error) {
-	var resp fenxiao.TaobaoscitemoutercodegetAPIResponse
+func TaobaoScitemOutercodeGet(clt *core.SDKClient, req *fenxiao.TaobaoScitemOutercodeGetAPIRequest, session string) (*fenxiao.TaobaoScitemOutercodeGetAPIResponse, error) {
+	var resp fenxiao.TaobaoScitemOutercodeGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpresstradebuyplaceorderAPIResponse AE下单API API返回值
+// AliexpressTradeBuyPlaceorderAPIResponse AE下单API API返回值
 // aliexpress.trade.buy.placeorder
 //
 // 150欧欧盟税改
-type AliexpresstradebuyplaceorderAPIResponse struct {
+type AliexpressTradeBuyPlaceorderAPIResponse struct {
 	model.CommonResponse
-	AliexpresstradebuyplaceorderAPIResponseModel
+	AliexpressTradeBuyPlaceorderAPIResponseModel
 }
 
-// AliexpresstradebuyplaceorderAPIResponseModel is AE下单API 成功返回结果
-type AliexpresstradebuyplaceorderAPIResponseModel struct {
+// AliexpressTradeBuyPlaceorderAPIResponseModel is AE下单API 成功返回结果
+type AliexpressTradeBuyPlaceorderAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_trade_buy_placeorder_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

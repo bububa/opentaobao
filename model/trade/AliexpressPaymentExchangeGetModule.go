@@ -1,7 +1,7 @@
 package trade
 
-// AliexpresspaymentexchangegetModule 结构体
-type AliexpresspaymentexchangegetModule struct {
+// AliexpressPaymentExchangeGetModule 结构体
+type AliexpressPaymentExchangeGetModule struct {
 	// 报价币种
 	QuoteCurrency string `json:"quote_currency,omitempty" xml:"quote_currency,omitempty"`
 	// 外部机构汇率号

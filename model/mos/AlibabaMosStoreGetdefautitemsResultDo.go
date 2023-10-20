@@ -1,7 +1,7 @@
 package mos
 
-// AlibabamosstoregetdefautitemsResultDo 结构体
-type AlibabamosstoregetdefautitemsResultDo struct {
+// AlibabaMosStoreGetdefautitemsResultDo 结构体
+type AlibabaMosStoreGetdefautitemsResultDo struct {
 	// errMsg
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// data

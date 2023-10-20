@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallalihousetradecouponordercontractcredentialsqueryAPIResponse 查询用于电商券履约单合同下载的临时访问凭证 API返回值
+// TmallAlihouseTradeCouponOrderContractCredentialsQueryAPIResponse 查询用于电商券履约单合同下载的临时访问凭证 API返回值
 // tmall.alihouse.trade.coupon.order.contract.credentials.query
 //
 // 获取用于下载合同的临时aksk和安全token
-type TmallalihousetradecouponordercontractcredentialsqueryAPIResponse struct {
+type TmallAlihouseTradeCouponOrderContractCredentialsQueryAPIResponse struct {
 	model.CommonResponse
-	TmallalihousetradecouponordercontractcredentialsqueryAPIResponseModel
+	TmallAlihouseTradeCouponOrderContractCredentialsQueryAPIResponseModel
 }
 
-// TmallalihousetradecouponordercontractcredentialsqueryAPIResponseModel is 查询用于电商券履约单合同下载的临时访问凭证 成功返回结果
-type TmallalihousetradecouponordercontractcredentialsqueryAPIResponseModel struct {
+// TmallAlihouseTradeCouponOrderContractCredentialsQueryAPIResponseModel is 查询用于电商券履约单合同下载的临时访问凭证 成功返回结果
+type TmallAlihouseTradeCouponOrderContractCredentialsQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_alihouse_trade_coupon_order_contract_credentials_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果
-	Result *TmallalihousetradecouponordercontractcredentialsqueryResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *TmallAlihouseTradeCouponOrderContractCredentialsQueryResult `json:"result,omitempty" xml:"result,omitempty"`
 }

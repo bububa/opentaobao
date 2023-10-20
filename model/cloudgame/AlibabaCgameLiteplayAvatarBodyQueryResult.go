@@ -1,7 +1,7 @@
 package cloudgame
 
-// AlibabacgameliteplayavatarbodyqueryResult 结构体
-type AlibabacgameliteplayavatarbodyqueryResult struct {
+// AlibabaCgameLiteplayAvatarBodyQueryResult 结构体
+type AlibabaCgameLiteplayAvatarBodyQueryResult struct {
 	// code
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// message

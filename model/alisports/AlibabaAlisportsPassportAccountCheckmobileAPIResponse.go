@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalisportspassportaccountcheckmobileAPIResponse 阿里体育会员系统--手机号验证接口 API返回值
+// AlibabaAlisportsPassportAccountCheckmobileAPIResponse 阿里体育会员系统--手机号验证接口 API返回值
 // alibaba.alisports.passport.account.checkmobile
 //
 // 验证三方用户的手机号，获取对应的阿里体育会员id
-type AlibabaalisportspassportaccountcheckmobileAPIResponse struct {
+type AlibabaAlisportsPassportAccountCheckmobileAPIResponse struct {
 	model.CommonResponse
-	AlibabaalisportspassportaccountcheckmobileAPIResponseModel
+	AlibabaAlisportsPassportAccountCheckmobileAPIResponseModel
 }
 
-// AlibabaalisportspassportaccountcheckmobileAPIResponseModel is 阿里体育会员系统--手机号验证接口 成功返回结果
-type AlibabaalisportspassportaccountcheckmobileAPIResponseModel struct {
+// AlibabaAlisportsPassportAccountCheckmobileAPIResponseModel is 阿里体育会员系统--手机号验证接口 成功返回结果
+type AlibabaAlisportsPassportAccountCheckmobileAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alisports_passport_account_checkmobile_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

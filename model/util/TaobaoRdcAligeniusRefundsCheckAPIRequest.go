@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaordcaligeniusrefundscheckAPIRequest 退款信息审核 API请求
+// TaobaoRdcAligeniusRefundsCheckAPIRequest 退款信息审核 API请求
 // taobao.rdc.aligenius.refunds.check
 //
 // 根据退款信息，对退款单进行审核
-type TaobaordcaligeniusrefundscheckAPIRequest struct {
+type TaobaoRdcAligeniusRefundsCheckAPIRequest struct {
 	model.Params
 	// 入参
 	_param *RefundCheckDto
 }
 
-// NewTaobaordcaligeniusrefundscheckRequest 初始化TaobaordcaligeniusrefundscheckAPIRequest对象
-func NewTaobaordcaligeniusrefundscheckRequest() *TaobaordcaligeniusrefundscheckAPIRequest {
-	return &TaobaordcaligeniusrefundscheckAPIRequest{
+// NewTaobaoRdcAligeniusRefundsCheckRequest 初始化TaobaoRdcAligeniusRefundsCheckAPIRequest对象
+func NewTaobaoRdcAligeniusRefundsCheckRequest() *TaobaoRdcAligeniusRefundsCheckAPIRequest {
+	return &TaobaoRdcAligeniusRefundsCheckAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaordcaligeniusrefundscheckAPIRequest) GetApiMethodName() string {
+func (r TaobaoRdcAligeniusRefundsCheckAPIRequest) GetApiMethodName() string {
 	return "taobao.rdc.aligenius.refunds.check"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaordcaligeniusrefundscheckAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoRdcAligeniusRefundsCheckAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaordcaligeniusrefundscheckAPIRequest) GetRawParams() model.Params {
+func (r TaobaoRdcAligeniusRefundsCheckAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 入参
-func (r *TaobaordcaligeniusrefundscheckAPIRequest) SetParam(_param *RefundCheckDto) error {
+func (r *TaobaoRdcAligeniusRefundsCheckAPIRequest) SetParam(_param *RefundCheckDto) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r TaobaordcaligeniusrefundscheckAPIRequest) GetParam() *RefundCheckDto {
+func (r TaobaoRdcAligeniusRefundsCheckAPIRequest) GetParam() *RefundCheckDto {
 	return r._param
 }

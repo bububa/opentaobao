@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpresssocialcurrencygetAPIRequest 币种获取接口 API请求
+// AliexpressSocialCurrencyGetAPIRequest 币种获取接口 API请求
 // aliexpress.social.currency.get
 //
 // 获取目前AE社交支持的币种
-type AliexpresssocialcurrencygetAPIRequest struct {
+type AliexpressSocialCurrencyGetAPIRequest struct {
 	model.Params
 }
 
-// NewAliexpresssocialcurrencygetRequest 初始化AliexpresssocialcurrencygetAPIRequest对象
-func NewAliexpresssocialcurrencygetRequest() *AliexpresssocialcurrencygetAPIRequest {
-	return &AliexpresssocialcurrencygetAPIRequest{
+// NewAliexpressSocialCurrencyGetRequest 初始化AliexpressSocialCurrencyGetAPIRequest对象
+func NewAliexpressSocialCurrencyGetRequest() *AliexpressSocialCurrencyGetAPIRequest {
+	return &AliexpressSocialCurrencyGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AliexpresssocialcurrencygetAPIRequest) GetApiMethodName() string {
+func (r AliexpressSocialCurrencyGetAPIRequest) GetApiMethodName() string {
 	return "aliexpress.social.currency.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AliexpresssocialcurrencygetAPIRequest) GetApiParams(params url.Values) {
+func (r AliexpressSocialCurrencyGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AliexpresssocialcurrencygetAPIRequest) GetRawParams() model.Params {
+func (r AliexpressSocialCurrencyGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// Alibabascbptargetadplanproductlistget 定向推广-获取推广计划产品列表
+// AlibabaScbpTargetAdPlanProductListGet 定向推广-获取推广计划产品列表
 // alibaba.scbp.target.ad.plan.product.list.get
 //
 // 定向推广-获取推广计划产品列表
-func Alibabascbptargetadplanproductlistget(clt *core.SDKClient, req *scbp.AlibabascbptargetadplanproductlistgetAPIRequest, session string) (*scbp.AlibabascbptargetadplanproductlistgetAPIResponse, error) {
-	var resp scbp.AlibabascbptargetadplanproductlistgetAPIResponse
+func AlibabaScbpTargetAdPlanProductListGet(clt *core.SDKClient, req *scbp.AlibabaScbpTargetAdPlanProductListGetAPIRequest, session string) (*scbp.AlibabaScbpTargetAdPlanProductListGetAPIResponse, error) {
+	var resp scbp.AlibabaScbpTargetAdPlanProductListGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

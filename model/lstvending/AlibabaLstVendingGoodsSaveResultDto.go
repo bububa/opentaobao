@@ -1,7 +1,7 @@
 package lstvending
 
-// AlibabalstvendinggoodssaveResultDto 结构体
-type AlibabalstvendinggoodssaveResultDto struct {
+// AlibabaLstVendingGoodsSaveResultDto 结构体
+type AlibabaLstVendingGoodsSaveResultDto struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息

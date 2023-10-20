@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/logistic"
 )
 
-// Alibabaelefengniaoservicepackagequery 预采购服务包查询接口
+// AlibabaEleFengniaoServicePackageQuery 预采购服务包查询接口
 // alibaba.ele.fengniao.service.package.query
 //
 // 查询门店所在经纬度可用服务包的接口
-func Alibabaelefengniaoservicepackagequery(clt *core.SDKClient, req *logistic.AlibabaelefengniaoservicepackagequeryAPIRequest, session string) (*logistic.AlibabaelefengniaoservicepackagequeryAPIResponse, error) {
-	var resp logistic.AlibabaelefengniaoservicepackagequeryAPIResponse
+func AlibabaEleFengniaoServicePackageQuery(clt *core.SDKClient, req *logistic.AlibabaEleFengniaoServicePackageQueryAPIRequest, session string) (*logistic.AlibabaEleFengniaoServicePackageQueryAPIResponse, error) {
+	var resp logistic.AlibabaEleFengniaoServicePackageQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

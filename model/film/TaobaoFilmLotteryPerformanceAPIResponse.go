@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaofilmlotteryperformanceAPIResponse 淘票票履约发放权益 API返回值
+// TaobaoFilmLotteryPerformanceAPIResponse 淘票票履约发放权益 API返回值
 // taobao.film.lottery.performance
 //
 // 对外第三方合作渠道通过抽奖形式发放权益
-type TaobaofilmlotteryperformanceAPIResponse struct {
+type TaobaoFilmLotteryPerformanceAPIResponse struct {
 	model.CommonResponse
-	TaobaofilmlotteryperformanceAPIResponseModel
+	TaobaoFilmLotteryPerformanceAPIResponseModel
 }
 
-// TaobaofilmlotteryperformanceAPIResponseModel is 淘票票履约发放权益 成功返回结果
-type TaobaofilmlotteryperformanceAPIResponseModel struct {
+// TaobaoFilmLotteryPerformanceAPIResponseModel is 淘票票履约发放权益 成功返回结果
+type TaobaoFilmLotteryPerformanceAPIResponseModel struct {
 	XMLName xml.Name `xml:"film_lottery_performance_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

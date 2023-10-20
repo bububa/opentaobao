@@ -1,5 +1,5 @@
 package qimen
 
-// TaobaoqimenstoreprocesscreateMap 结构体
-type TaobaoqimenstoreprocesscreateMap struct {
+// TaobaoQimenStoreprocessCreateMap 结构体
+type TaobaoQimenStoreprocessCreateMap struct {
 }

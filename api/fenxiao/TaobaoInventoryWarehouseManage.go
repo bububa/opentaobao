@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
 
-// Taobaoinventorywarehousemanage 创建商家仓或者更新商家仓信息
+// TaobaoInventoryWarehouseManage 创建商家仓或者更新商家仓信息
 // taobao.inventory.warehouse.manage
 //
 // 创建商家仓或者更新商家仓信息
-func Taobaoinventorywarehousemanage(clt *core.SDKClient, req *fenxiao.TaobaoinventorywarehousemanageAPIRequest, session string) (*fenxiao.TaobaoinventorywarehousemanageAPIResponse, error) {
-	var resp fenxiao.TaobaoinventorywarehousemanageAPIResponse
+func TaobaoInventoryWarehouseManage(clt *core.SDKClient, req *fenxiao.TaobaoInventoryWarehouseManageAPIRequest, session string) (*fenxiao.TaobaoInventoryWarehouseManageAPIResponse, error) {
+	var resp fenxiao.TaobaoInventoryWarehouseManageAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

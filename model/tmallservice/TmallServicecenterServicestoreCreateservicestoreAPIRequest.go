@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallservicecenterservicestorecreateservicestoreAPIRequest 服务网点创建 API请求
+// TmallServicecenterServicestoreCreateservicestoreAPIRequest 服务网点创建 API请求
 // tmall.servicecenter.servicestore.createservicestore
 //
 // 创建网点信息。对于同一个服务商，通过 service_store_code 保证网点唯一性。需要保证网点不存在才能创建。地址信息：中文和编码二选一，都填则以编码address_code为准。
@@ -23,45 +23,45 @@ import (
 // 10, 网点已存在
 // 11, 网点不存在
 // 12, 系统错误
-type TmallservicecenterservicestorecreateservicestoreAPIRequest struct {
+type TmallServicecenterServicestoreCreateservicestoreAPIRequest struct {
 	model.Params
 	// 网点
 	_serviceStore *ServiceStoreDto
 }
 
-// NewTmallservicecenterservicestorecreateservicestoreRequest 初始化TmallservicecenterservicestorecreateservicestoreAPIRequest对象
-func NewTmallservicecenterservicestorecreateservicestoreRequest() *TmallservicecenterservicestorecreateservicestoreAPIRequest {
-	return &TmallservicecenterservicestorecreateservicestoreAPIRequest{
+// NewTmallServicecenterServicestoreCreateservicestoreRequest 初始化TmallServicecenterServicestoreCreateservicestoreAPIRequest对象
+func NewTmallServicecenterServicestoreCreateservicestoreRequest() *TmallServicecenterServicestoreCreateservicestoreAPIRequest {
+	return &TmallServicecenterServicestoreCreateservicestoreAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallservicecenterservicestorecreateservicestoreAPIRequest) GetApiMethodName() string {
+func (r TmallServicecenterServicestoreCreateservicestoreAPIRequest) GetApiMethodName() string {
 	return "tmall.servicecenter.servicestore.createservicestore"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallservicecenterservicestorecreateservicestoreAPIRequest) GetApiParams(params url.Values) {
+func (r TmallServicecenterServicestoreCreateservicestoreAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallservicecenterservicestorecreateservicestoreAPIRequest) GetRawParams() model.Params {
+func (r TmallServicecenterServicestoreCreateservicestoreAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetServiceStore is ServiceStore Setter
 // 网点
-func (r *TmallservicecenterservicestorecreateservicestoreAPIRequest) SetServiceStore(_serviceStore *ServiceStoreDto) error {
+func (r *TmallServicecenterServicestoreCreateservicestoreAPIRequest) SetServiceStore(_serviceStore *ServiceStoreDto) error {
 	r._serviceStore = _serviceStore
 	r.Set("service_store", _serviceStore)
 	return nil
 }
 
 // GetServiceStore ServiceStore Getter
-func (r TmallservicecenterservicestorecreateservicestoreAPIRequest) GetServiceStore() *ServiceStoreDto {
+func (r TmallServicecenterServicestoreCreateservicestoreAPIRequest) GetServiceStore() *ServiceStoreDto {
 	return r._serviceStore
 }

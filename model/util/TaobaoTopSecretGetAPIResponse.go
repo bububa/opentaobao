@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotopsecretgetAPIResponse 获取TOP通道解密秘钥 API返回值
+// TaobaoTopSecretGetAPIResponse 获取TOP通道解密秘钥 API返回值
 // taobao.top.secret.get
 //
 // top sdk通过api获取对应解密秘钥
-type TaobaotopsecretgetAPIResponse struct {
+type TaobaoTopSecretGetAPIResponse struct {
 	model.CommonResponse
-	TaobaotopsecretgetAPIResponseModel
+	TaobaoTopSecretGetAPIResponseModel
 }
 
-// TaobaotopsecretgetAPIResponseModel is 获取TOP通道解密秘钥 成功返回结果
-type TaobaotopsecretgetAPIResponseModel struct {
+// TaobaoTopSecretGetAPIResponseModel is 获取TOP通道解密秘钥 成功返回结果
+type TaobaoTopSecretGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"top_secret_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

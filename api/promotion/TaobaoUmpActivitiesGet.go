@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/promotion"
 )
 
-// Taobaoumpactivitiesget 查询活动列表
+// TaobaoUmpActivitiesGet 查询活动列表
 // taobao.ump.activities.get
 //
 // 查询活动列表
-func Taobaoumpactivitiesget(clt *core.SDKClient, req *promotion.TaobaoumpactivitiesgetAPIRequest, session string) (*promotion.TaobaoumpactivitiesgetAPIResponse, error) {
-	var resp promotion.TaobaoumpactivitiesgetAPIResponse
+func TaobaoUmpActivitiesGet(clt *core.SDKClient, req *promotion.TaobaoUmpActivitiesGetAPIRequest, session string) (*promotion.TaobaoUmpActivitiesGetAPIResponse, error) {
+	var resp promotion.TaobaoUmpActivitiesGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-// Alibabaalsccrmcustomerupdateppw 修改支付密码
+// AlibabaAlscCrmCustomerUpdateppw 修改支付密码
 // alibaba.alsc.crm.customer.updateppw
 //
 // 修改支付密码
-func Alibabaalsccrmcustomerupdateppw(clt *core.SDKClient, req *alsc.AlibabaalsccrmcustomerupdateppwAPIRequest, session string) (*alsc.AlibabaalsccrmcustomerupdateppwAPIResponse, error) {
-	var resp alsc.AlibabaalsccrmcustomerupdateppwAPIResponse
+func AlibabaAlscCrmCustomerUpdateppw(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCustomerUpdateppwAPIRequest, session string) (*alsc.AlibabaAlscCrmCustomerUpdateppwAPIResponse, error) {
+	var resp alsc.AlibabaAlscCrmCustomerUpdateppwAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

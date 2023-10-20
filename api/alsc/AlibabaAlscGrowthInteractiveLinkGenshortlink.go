@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-// Alibabaalscgrowthinteractivelinkgenshortlink 短链接口
+// AlibabaAlscGrowthInteractiveLinkGenshortlink 短链接口
 // alibaba.alsc.growth.interactive.link.genshortlink
 //
 // 短链接口
-func Alibabaalscgrowthinteractivelinkgenshortlink(clt *core.SDKClient, req *alsc.AlibabaalscgrowthinteractivelinkgenshortlinkAPIRequest, session string) (*alsc.AlibabaalscgrowthinteractivelinkgenshortlinkAPIResponse, error) {
-	var resp alsc.AlibabaalscgrowthinteractivelinkgenshortlinkAPIResponse
+func AlibabaAlscGrowthInteractiveLinkGenshortlink(clt *core.SDKClient, req *alsc.AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIRequest, session string) (*alsc.AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIResponse, error) {
+	var resp alsc.AlibabaAlscGrowthInteractiveLinkGenshortlinkAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,7 +1,7 @@
 package guoguo
 
-// CainiaoguoguobackupgrabordertakepackageResult 结构体
-type CainiaoguoguobackupgrabordertakepackageResult struct {
+// CainiaoGuoguoBackupGraborderTakepackageResult 结构体
+type CainiaoGuoguoBackupGraborderTakepackageResult struct {
 	// 调用状态
 	StatusCode string `json:"status_code,omitempty" xml:"status_code,omitempty"`
 	// 调用状态码

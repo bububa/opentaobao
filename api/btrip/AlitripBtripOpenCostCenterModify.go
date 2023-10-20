@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/btrip"
 )
 
-// Alitripbtripopencostcentermodify 修改成本中心
+// AlitripBtripOpenCostCenterModify 修改成本中心
 // alitrip.btrip.open.cost.center.modify
 //
 // 修改成本中心
-func Alitripbtripopencostcentermodify(clt *core.SDKClient, req *btrip.AlitripbtripopencostcentermodifyAPIRequest, session string) (*btrip.AlitripbtripopencostcentermodifyAPIResponse, error) {
-	var resp btrip.AlitripbtripopencostcentermodifyAPIResponse
+func AlitripBtripOpenCostCenterModify(clt *core.SDKClient, req *btrip.AlitripBtripOpenCostCenterModifyAPIRequest, session string) (*btrip.AlitripBtripOpenCostCenterModifyAPIResponse, error) {
+	var resp btrip.AlitripBtripOpenCostCenterModifyAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

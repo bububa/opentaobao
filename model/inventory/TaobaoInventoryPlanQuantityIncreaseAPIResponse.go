@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoinventoryplanquantityincreaseAPIResponse 计划库存的增量编辑 API返回值
+// TaobaoInventoryPlanQuantityIncreaseAPIResponse 计划库存的增量编辑 API返回值
 // taobao.inventory.plan.quantity.increase
 //
 // 计划库存的增量编辑
-type TaobaoinventoryplanquantityincreaseAPIResponse struct {
+type TaobaoInventoryPlanQuantityIncreaseAPIResponse struct {
 	model.CommonResponse
-	TaobaoinventoryplanquantityincreaseAPIResponseModel
+	TaobaoInventoryPlanQuantityIncreaseAPIResponseModel
 }
 
-// TaobaoinventoryplanquantityincreaseAPIResponseModel is 计划库存的增量编辑 成功返回结果
-type TaobaoinventoryplanquantityincreaseAPIResponseModel struct {
+// TaobaoInventoryPlanQuantityIncreaseAPIResponseModel is 计划库存的增量编辑 成功返回结果
+type TaobaoInventoryPlanQuantityIncreaseAPIResponseModel struct {
 	XMLName xml.Name `xml:"inventory_plan_quantity_increase_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

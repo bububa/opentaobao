@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoailabaicloudtopearthquakesendAPIResponse 地震局发送地震消息 API返回值
+// TaobaoAilabAicloudTopEarthquakeSendAPIResponse 地震局发送地震消息 API返回值
 // taobao.ailab.aicloud.top.earthquake.send
 //
 // 地震局发送地震消息给天猫精灵，天猫精灵根据地震消息判断发送地震消息给危险区域用户
-type TaobaoailabaicloudtopearthquakesendAPIResponse struct {
+type TaobaoAilabAicloudTopEarthquakeSendAPIResponse struct {
 	model.CommonResponse
-	TaobaoailabaicloudtopearthquakesendAPIResponseModel
+	TaobaoAilabAicloudTopEarthquakeSendAPIResponseModel
 }
 
-// TaobaoailabaicloudtopearthquakesendAPIResponseModel is 地震局发送地震消息 成功返回结果
-type TaobaoailabaicloudtopearthquakesendAPIResponseModel struct {
+// TaobaoAilabAicloudTopEarthquakeSendAPIResponseModel is 地震局发送地震消息 成功返回结果
+type TaobaoAilabAicloudTopEarthquakeSendAPIResponseModel struct {
 	XMLName xml.Name `xml:"ailab_aicloud_top_earthquake_send_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

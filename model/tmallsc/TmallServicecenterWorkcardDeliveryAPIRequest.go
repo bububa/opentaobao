@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallservicecenterworkcarddeliveryAPIRequest 开始配送工单 API请求
+// TmallServicecenterWorkcardDeliveryAPIRequest 开始配送工单 API请求
 // tmall.servicecenter.workcard.delivery
 //
 // 服务商调用该接口通知天猫服务平台服务商工人已开始配送工单
-type TmallservicecenterworkcarddeliveryAPIRequest struct {
+type TmallServicecenterWorkcardDeliveryAPIRequest struct {
 	model.Params
 	// 工单配送请求参数
 	_identifyTaskDeliveryRequest *IdentifyTaskDeliveryRequest
 }
 
-// NewTmallservicecenterworkcarddeliveryRequest 初始化TmallservicecenterworkcarddeliveryAPIRequest对象
-func NewTmallservicecenterworkcarddeliveryRequest() *TmallservicecenterworkcarddeliveryAPIRequest {
-	return &TmallservicecenterworkcarddeliveryAPIRequest{
+// NewTmallServicecenterWorkcardDeliveryRequest 初始化TmallServicecenterWorkcardDeliveryAPIRequest对象
+func NewTmallServicecenterWorkcardDeliveryRequest() *TmallServicecenterWorkcardDeliveryAPIRequest {
+	return &TmallServicecenterWorkcardDeliveryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallservicecenterworkcarddeliveryAPIRequest) GetApiMethodName() string {
+func (r TmallServicecenterWorkcardDeliveryAPIRequest) GetApiMethodName() string {
 	return "tmall.servicecenter.workcard.delivery"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallservicecenterworkcarddeliveryAPIRequest) GetApiParams(params url.Values) {
+func (r TmallServicecenterWorkcardDeliveryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallservicecenterworkcarddeliveryAPIRequest) GetRawParams() model.Params {
+func (r TmallServicecenterWorkcardDeliveryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetIdentifyTaskDeliveryRequest is IdentifyTaskDeliveryRequest Setter
 // 工单配送请求参数
-func (r *TmallservicecenterworkcarddeliveryAPIRequest) SetIdentifyTaskDeliveryRequest(_identifyTaskDeliveryRequest *IdentifyTaskDeliveryRequest) error {
+func (r *TmallServicecenterWorkcardDeliveryAPIRequest) SetIdentifyTaskDeliveryRequest(_identifyTaskDeliveryRequest *IdentifyTaskDeliveryRequest) error {
 	r._identifyTaskDeliveryRequest = _identifyTaskDeliveryRequest
 	r.Set("identify_task_delivery_request", _identifyTaskDeliveryRequest)
 	return nil
 }
 
 // GetIdentifyTaskDeliveryRequest IdentifyTaskDeliveryRequest Getter
-func (r TmallservicecenterworkcarddeliveryAPIRequest) GetIdentifyTaskDeliveryRequest() *IdentifyTaskDeliveryRequest {
+func (r TmallServicecenterWorkcardDeliveryAPIRequest) GetIdentifyTaskDeliveryRequest() *IdentifyTaskDeliveryRequest {
 	return r._identifyTaskDeliveryRequest
 }

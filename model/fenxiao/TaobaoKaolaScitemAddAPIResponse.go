@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaokaolascitemaddAPIResponse 考拉货品新增接口 API返回值
+// TaobaoKaolaScitemAddAPIResponse 考拉货品新增接口 API返回值
 // taobao.kaola.scitem.add
 //
 // 考拉货品新增接口
-type TaobaokaolascitemaddAPIResponse struct {
+type TaobaoKaolaScitemAddAPIResponse struct {
 	model.CommonResponse
-	TaobaokaolascitemaddAPIResponseModel
+	TaobaoKaolaScitemAddAPIResponseModel
 }
 
-// TaobaokaolascitemaddAPIResponseModel is 考拉货品新增接口 成功返回结果
-type TaobaokaolascitemaddAPIResponseModel struct {
+// TaobaoKaolaScitemAddAPIResponseModel is 考拉货品新增接口 成功返回结果
+type TaobaoKaolaScitemAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"kaola_scitem_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

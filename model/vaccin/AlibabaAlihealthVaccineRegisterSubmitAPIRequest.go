@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthvaccineregistersubmitAPIRequest cdc回传疫苗登记数据 API请求
+// AlibabaAlihealthVaccineRegisterSubmitAPIRequest cdc回传疫苗登记数据 API请求
 // alibaba.alihealth.vaccine.register.submit
 //
 // cdc回传疫苗登记信息
-type AlibabaalihealthvaccineregistersubmitAPIRequest struct {
+type AlibabaAlihealthVaccineRegisterSubmitAPIRequest struct {
 	model.Params
 	// 无
 	_topRequest *SubmitVcRegisterRequest
 }
 
-// NewAlibabaalihealthvaccineregistersubmitRequest 初始化AlibabaalihealthvaccineregistersubmitAPIRequest对象
-func NewAlibabaalihealthvaccineregistersubmitRequest() *AlibabaalihealthvaccineregistersubmitAPIRequest {
-	return &AlibabaalihealthvaccineregistersubmitAPIRequest{
+// NewAlibabaAlihealthVaccineRegisterSubmitRequest 初始化AlibabaAlihealthVaccineRegisterSubmitAPIRequest对象
+func NewAlibabaAlihealthVaccineRegisterSubmitRequest() *AlibabaAlihealthVaccineRegisterSubmitAPIRequest {
+	return &AlibabaAlihealthVaccineRegisterSubmitAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalihealthvaccineregistersubmitAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlihealthVaccineRegisterSubmitAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.vaccine.register.submit"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalihealthvaccineregistersubmitAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlihealthVaccineRegisterSubmitAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalihealthvaccineregistersubmitAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlihealthVaccineRegisterSubmitAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTopRequest is TopRequest Setter
 // 无
-func (r *AlibabaalihealthvaccineregistersubmitAPIRequest) SetTopRequest(_topRequest *SubmitVcRegisterRequest) error {
+func (r *AlibabaAlihealthVaccineRegisterSubmitAPIRequest) SetTopRequest(_topRequest *SubmitVcRegisterRequest) error {
 	r._topRequest = _topRequest
 	r.Set("top_request", _topRequest)
 	return nil
 }
 
 // GetTopRequest TopRequest Getter
-func (r AlibabaalihealthvaccineregistersubmitAPIRequest) GetTopRequest() *SubmitVcRegisterRequest {
+func (r AlibabaAlihealthVaccineRegisterSubmitAPIRequest) GetTopRequest() *SubmitVcRegisterRequest {
 	return r._topRequest
 }

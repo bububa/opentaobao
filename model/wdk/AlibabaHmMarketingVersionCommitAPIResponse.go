@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabahmmarketingversioncommitAPIResponse 提交版本号 API返回值
+// AlibabaHmMarketingVersionCommitAPIResponse 提交版本号 API返回值
 // alibaba.hm.marketing.version.commit
 //
 // 提交版本号，标识结束此版本操作
-type AlibabahmmarketingversioncommitAPIResponse struct {
+type AlibabaHmMarketingVersionCommitAPIResponse struct {
 	model.CommonResponse
-	AlibabahmmarketingversioncommitAPIResponseModel
+	AlibabaHmMarketingVersionCommitAPIResponseModel
 }
 
-// AlibabahmmarketingversioncommitAPIResponseModel is 提交版本号 成功返回结果
-type AlibabahmmarketingversioncommitAPIResponseModel struct {
+// AlibabaHmMarketingVersionCommitAPIResponseModel is 提交版本号 成功返回结果
+type AlibabaHmMarketingVersionCommitAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_hm_marketing_version_commit_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

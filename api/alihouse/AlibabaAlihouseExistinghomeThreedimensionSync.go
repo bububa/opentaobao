@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// Alibabaalihouseexistinghomethreedimensionsync 二手房3D户型信息同步
+// AlibabaAlihouseExistinghomeThreedimensionSync 二手房3D户型信息同步
 // alibaba.alihouse.existinghome.threedimension.sync
 //
 // 二手房3D户型信息同步
-func Alibabaalihouseexistinghomethreedimensionsync(clt *core.SDKClient, req *alihouse.AlibabaalihouseexistinghomethreedimensionsyncAPIRequest, session string) (*alihouse.AlibabaalihouseexistinghomethreedimensionsyncAPIResponse, error) {
-	var resp alihouse.AlibabaalihouseexistinghomethreedimensionsyncAPIResponse
+func AlibabaAlihouseExistinghomeThreedimensionSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeThreedimensionSyncAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomeThreedimensionSyncAPIResponse, error) {
+	var resp alihouse.AlibabaAlihouseExistinghomeThreedimensionSyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoocapcontracturlgetAPIResponse 按用户获取支付宝代扣协议链接地址 API返回值
+// TaobaoOcApContracturlGetAPIResponse 按用户获取支付宝代扣协议链接地址 API返回值
 // taobao.oc.ap.contracturl.get
 //
 // 按用户获取支付宝代扣协议链接地址
-type TaobaoocapcontracturlgetAPIResponse struct {
+type TaobaoOcApContracturlGetAPIResponse struct {
 	model.CommonResponse
-	TaobaoocapcontracturlgetAPIResponseModel
+	TaobaoOcApContracturlGetAPIResponseModel
 }
 
-// TaobaoocapcontracturlgetAPIResponseModel is 按用户获取支付宝代扣协议链接地址 成功返回结果
-type TaobaoocapcontracturlgetAPIResponseModel struct {
+// TaobaoOcApContracturlGetAPIResponseModel is 按用户获取支付宝代扣协议链接地址 成功返回结果
+type TaobaoOcApContracturlGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"oc_ap_contracturl_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

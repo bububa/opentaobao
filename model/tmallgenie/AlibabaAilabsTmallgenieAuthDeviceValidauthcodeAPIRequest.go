@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaailabstmallgenieauthdevicevalidauthcodeAPIRequest 根据authcode查询绑定结果 API请求
+// AlibabaAilabsTmallgenieAuthDeviceValidauthcodeAPIRequest 根据authcode查询绑定结果 API请求
 // alibaba.ailabs.tmallgenie.auth.device.validauthcode
 //
 // 根据authcode查询绑定结果
-type AlibabaailabstmallgenieauthdevicevalidauthcodeAPIRequest struct {
+type AlibabaAilabsTmallgenieAuthDeviceValidauthcodeAPIRequest struct {
 	model.Params
 	// authcode
 	_authcode string
 }
 
-// NewAlibabaailabstmallgenieauthdevicevalidauthcodeRequest 初始化AlibabaailabstmallgenieauthdevicevalidauthcodeAPIRequest对象
-func NewAlibabaailabstmallgenieauthdevicevalidauthcodeRequest() *AlibabaailabstmallgenieauthdevicevalidauthcodeAPIRequest {
-	return &AlibabaailabstmallgenieauthdevicevalidauthcodeAPIRequest{
+// NewAlibabaAilabsTmallgenieAuthDeviceValidauthcodeRequest 初始化AlibabaAilabsTmallgenieAuthDeviceValidauthcodeAPIRequest对象
+func NewAlibabaAilabsTmallgenieAuthDeviceValidauthcodeRequest() *AlibabaAilabsTmallgenieAuthDeviceValidauthcodeAPIRequest {
+	return &AlibabaAilabsTmallgenieAuthDeviceValidauthcodeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaailabstmallgenieauthdevicevalidauthcodeAPIRequest) GetApiMethodName() string {
+func (r AlibabaAilabsTmallgenieAuthDeviceValidauthcodeAPIRequest) GetApiMethodName() string {
 	return "alibaba.ailabs.tmallgenie.auth.device.validauthcode"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaailabstmallgenieauthdevicevalidauthcodeAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAilabsTmallgenieAuthDeviceValidauthcodeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaailabstmallgenieauthdevicevalidauthcodeAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAilabsTmallgenieAuthDeviceValidauthcodeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetAuthcode is Authcode Setter
 // authcode
-func (r *AlibabaailabstmallgenieauthdevicevalidauthcodeAPIRequest) SetAuthcode(_authcode string) error {
+func (r *AlibabaAilabsTmallgenieAuthDeviceValidauthcodeAPIRequest) SetAuthcode(_authcode string) error {
 	r._authcode = _authcode
 	r.Set("authcode", _authcode)
 	return nil
 }
 
 // GetAuthcode Authcode Getter
-func (r AlibabaailabstmallgenieauthdevicevalidauthcodeAPIRequest) GetAuthcode() string {
+func (r AlibabaAilabsTmallgenieAuthDeviceValidauthcodeAPIRequest) GetAuthcode() string {
 	return r._authcode
 }

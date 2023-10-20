@@ -1,7 +1,7 @@
 package fivee
 
-// TaobaofiveeimportproductgetResult 结构体
-type TaobaofiveeimportproductgetResult struct {
+// TaobaoFiveeImportproductGetResult 结构体
+type TaobaoFiveeImportproductGetResult struct {
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// code

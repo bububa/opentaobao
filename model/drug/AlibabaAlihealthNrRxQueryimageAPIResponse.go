@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthnrrxqueryimageAPIResponse o2o查看处方图片 API返回值
+// AlibabaAlihealthNrRxQueryimageAPIResponse o2o查看处方图片 API返回值
 // alibaba.alihealth.nr.rx.queryimage
 //
 // o2o商家查看处方图片，包括电子图片与纸质图片
-type AlibabaalihealthnrrxqueryimageAPIResponse struct {
+type AlibabaAlihealthNrRxQueryimageAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthnrrxqueryimageAPIResponseModel
+	AlibabaAlihealthNrRxQueryimageAPIResponseModel
 }
 
-// AlibabaalihealthnrrxqueryimageAPIResponseModel is o2o查看处方图片 成功返回结果
-type AlibabaalihealthnrrxqueryimageAPIResponseModel struct {
+// AlibabaAlihealthNrRxQueryimageAPIResponseModel is o2o查看处方图片 成功返回结果
+type AlibabaAlihealthNrRxQueryimageAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_nr_rx_queryimage_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabacharitycharitytimeusercancelauthAPIRequest 取消用户授权 API请求
+// AlibabaCharityCharitytimeUserCancelauthAPIRequest 取消用户授权 API请求
 // alibaba.charity.charitytime.user.cancelauth
 //
 // 取消用户授权
-type AlibabacharitycharitytimeusercancelauthAPIRequest struct {
+type AlibabaCharityCharitytimeUserCancelauthAPIRequest struct {
 	model.Params
 	// 参数对象
 	_cancelAuthHsfRequest *CancelAuthHsfRequest
 }
 
-// NewAlibabacharitycharitytimeusercancelauthRequest 初始化AlibabacharitycharitytimeusercancelauthAPIRequest对象
-func NewAlibabacharitycharitytimeusercancelauthRequest() *AlibabacharitycharitytimeusercancelauthAPIRequest {
-	return &AlibabacharitycharitytimeusercancelauthAPIRequest{
+// NewAlibabaCharityCharitytimeUserCancelauthRequest 初始化AlibabaCharityCharitytimeUserCancelauthAPIRequest对象
+func NewAlibabaCharityCharitytimeUserCancelauthRequest() *AlibabaCharityCharitytimeUserCancelauthAPIRequest {
+	return &AlibabaCharityCharitytimeUserCancelauthAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabacharitycharitytimeusercancelauthAPIRequest) GetApiMethodName() string {
+func (r AlibabaCharityCharitytimeUserCancelauthAPIRequest) GetApiMethodName() string {
 	return "alibaba.charity.charitytime.user.cancelauth"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabacharitycharitytimeusercancelauthAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaCharityCharitytimeUserCancelauthAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabacharitycharitytimeusercancelauthAPIRequest) GetRawParams() model.Params {
+func (r AlibabaCharityCharitytimeUserCancelauthAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCancelAuthHsfRequest is CancelAuthHsfRequest Setter
 // 参数对象
-func (r *AlibabacharitycharitytimeusercancelauthAPIRequest) SetCancelAuthHsfRequest(_cancelAuthHsfRequest *CancelAuthHsfRequest) error {
+func (r *AlibabaCharityCharitytimeUserCancelauthAPIRequest) SetCancelAuthHsfRequest(_cancelAuthHsfRequest *CancelAuthHsfRequest) error {
 	r._cancelAuthHsfRequest = _cancelAuthHsfRequest
 	r.Set("cancel_auth_hsf_request", _cancelAuthHsfRequest)
 	return nil
 }
 
 // GetCancelAuthHsfRequest CancelAuthHsfRequest Getter
-func (r AlibabacharitycharitytimeusercancelauthAPIRequest) GetCancelAuthHsfRequest() *CancelAuthHsfRequest {
+func (r AlibabaCharityCharitytimeUserCancelauthAPIRequest) GetCancelAuthHsfRequest() *CancelAuthHsfRequest {
 	return r._cancelAuthHsfRequest
 }

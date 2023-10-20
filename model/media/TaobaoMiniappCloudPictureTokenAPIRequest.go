@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaominiappcloudpicturetokenAPIRequest 云存储上传token获取 API请求
+// TaobaoMiniappCloudPictureTokenAPIRequest 云存储上传token获取 API请求
 // taobao.miniapp.cloud.picture.token
 //
 // 获取图片上传token，作为http://upload.cloud.tmall.com/api/proxy/upload接口上传的凭证。
@@ -19,45 +19,45 @@ import (
 //	&amp;lt;input type=&amp;quot;submit&amp;quot; value=&amp;quot;Submit &amp;quot;/&amp;gt;
 //
 // &amp;lt;/form&amp;gt;
-type TaobaominiappcloudpicturetokenAPIRequest struct {
+type TaobaoMiniappCloudPictureTokenAPIRequest struct {
 	model.Params
 	// 请求参数
 	_generateTokenRequest *GenerateTokenRequest
 }
 
-// NewTaobaominiappcloudpicturetokenRequest 初始化TaobaominiappcloudpicturetokenAPIRequest对象
-func NewTaobaominiappcloudpicturetokenRequest() *TaobaominiappcloudpicturetokenAPIRequest {
-	return &TaobaominiappcloudpicturetokenAPIRequest{
+// NewTaobaoMiniappCloudPictureTokenRequest 初始化TaobaoMiniappCloudPictureTokenAPIRequest对象
+func NewTaobaoMiniappCloudPictureTokenRequest() *TaobaoMiniappCloudPictureTokenAPIRequest {
+	return &TaobaoMiniappCloudPictureTokenAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaominiappcloudpicturetokenAPIRequest) GetApiMethodName() string {
+func (r TaobaoMiniappCloudPictureTokenAPIRequest) GetApiMethodName() string {
 	return "taobao.miniapp.cloud.picture.token"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaominiappcloudpicturetokenAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoMiniappCloudPictureTokenAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaominiappcloudpicturetokenAPIRequest) GetRawParams() model.Params {
+func (r TaobaoMiniappCloudPictureTokenAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetGenerateTokenRequest is GenerateTokenRequest Setter
 // 请求参数
-func (r *TaobaominiappcloudpicturetokenAPIRequest) SetGenerateTokenRequest(_generateTokenRequest *GenerateTokenRequest) error {
+func (r *TaobaoMiniappCloudPictureTokenAPIRequest) SetGenerateTokenRequest(_generateTokenRequest *GenerateTokenRequest) error {
 	r._generateTokenRequest = _generateTokenRequest
 	r.Set("generate_token_request", _generateTokenRequest)
 	return nil
 }
 
 // GetGenerateTokenRequest GenerateTokenRequest Getter
-func (r TaobaominiappcloudpicturetokenAPIRequest) GetGenerateTokenRequest() *GenerateTokenRequest {
+func (r TaobaoMiniappCloudPictureTokenAPIRequest) GetGenerateTokenRequest() *GenerateTokenRequest {
 	return r._generateTokenRequest
 }

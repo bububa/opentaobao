@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaotaeaccountsgetAPIResponse tae查询费用科目信息 API返回值
+// TaobaoTaeAccountsGetAPIResponse tae查询费用科目信息 API返回值
 // taobao.tae.accounts.get
 //
 // tae查询费用科目信息
-type TaobaotaeaccountsgetAPIResponse struct {
+type TaobaoTaeAccountsGetAPIResponse struct {
 	model.CommonResponse
-	TaobaotaeaccountsgetAPIResponseModel
+	TaobaoTaeAccountsGetAPIResponseModel
 }
 
-// TaobaotaeaccountsgetAPIResponseModel is tae查询费用科目信息 成功返回结果
-type TaobaotaeaccountsgetAPIResponseModel struct {
+// TaobaoTaeAccountsGetAPIResponseModel is tae查询费用科目信息 成功返回结果
+type TaobaoTaeAccountsGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tae_accounts_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalihealthpwapplynodeupdatenameAPIResponse 回调变更患者姓名 API返回值
+// AlibabaAlihealthPwApplynodeUpdatenameAPIResponse 回调变更患者姓名 API返回值
 // alibaba.alihealth.pw.applynode.updatename
 //
 // 回调变更患者姓名
-type AlibabaalihealthpwapplynodeupdatenameAPIResponse struct {
+type AlibabaAlihealthPwApplynodeUpdatenameAPIResponse struct {
 	model.CommonResponse
-	AlibabaalihealthpwapplynodeupdatenameAPIResponseModel
+	AlibabaAlihealthPwApplynodeUpdatenameAPIResponseModel
 }
 
-// AlibabaalihealthpwapplynodeupdatenameAPIResponseModel is 回调变更患者姓名 成功返回结果
-type AlibabaalihealthpwapplynodeupdatenameAPIResponseModel struct {
+// AlibabaAlihealthPwApplynodeUpdatenameAPIResponseModel is 回调变更患者姓名 成功返回结果
+type AlibabaAlihealthPwApplynodeUpdatenameAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_pw_applynode_updatename_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

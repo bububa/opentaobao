@@ -1,5 +1,5 @@
 package qimen
 
-// TaobaoqimenitemssynchronizeMap 结构体
-type TaobaoqimenitemssynchronizeMap struct {
+// TaobaoQimenItemsSynchronizeMap 结构体
+type TaobaoQimenItemsSynchronizeMap struct {
 }

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/charity"
 )
 
-// Alibabacharitycharitytimequerytime 外部查询公益时
+// AlibabaCharityCharitytimeQuerytime 外部查询公益时
 // alibaba.charity.charitytime.querytime
 //
 // 外部查询公益时
-func Alibabacharitycharitytimequerytime(clt *core.SDKClient, req *charity.AlibabacharitycharitytimequerytimeAPIRequest, session string) (*charity.AlibabacharitycharitytimequerytimeAPIResponse, error) {
-	var resp charity.AlibabacharitycharitytimequerytimeAPIResponse
+func AlibabaCharityCharitytimeQuerytime(clt *core.SDKClient, req *charity.AlibabaCharityCharitytimeQuerytimeAPIRequest, session string) (*charity.AlibabaCharityCharitytimeQuerytimeAPIResponse, error) {
+	var resp charity.AlibabaCharityCharitytimeQuerytimeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

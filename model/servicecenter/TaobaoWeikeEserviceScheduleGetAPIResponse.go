@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoweikeeserviceschedulegetAPIResponse 客服排班信息查询接口 API返回值
+// TaobaoWeikeEserviceScheduleGetAPIResponse 客服排班信息查询接口 API返回值
 // taobao.weike.eservice.schedule.get
 //
 // 客服排班信息查询接口
-type TaobaoweikeeserviceschedulegetAPIResponse struct {
+type TaobaoWeikeEserviceScheduleGetAPIResponse struct {
 	model.CommonResponse
-	TaobaoweikeeserviceschedulegetAPIResponseModel
+	TaobaoWeikeEserviceScheduleGetAPIResponseModel
 }
 
-// TaobaoweikeeserviceschedulegetAPIResponseModel is 客服排班信息查询接口 成功返回结果
-type TaobaoweikeeserviceschedulegetAPIResponseModel struct {
+// TaobaoWeikeEserviceScheduleGetAPIResponseModel is 客服排班信息查询接口 成功返回结果
+type TaobaoWeikeEserviceScheduleGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"weike_eservice_schedule_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallcampusauthstatusqueryAPIRequest 学生认证状态查询 API请求
+// TmallCampusAuthstatusQueryAPIRequest 学生认证状态查询 API请求
 // tmall.campus.authstatus.query
 //
 // 学生认证状态查询
-type TmallcampusauthstatusqueryAPIRequest struct {
+type TmallCampusAuthstatusQueryAPIRequest struct {
 	model.Params
 }
 
-// NewTmallcampusauthstatusqueryRequest 初始化TmallcampusauthstatusqueryAPIRequest对象
-func NewTmallcampusauthstatusqueryRequest() *TmallcampusauthstatusqueryAPIRequest {
-	return &TmallcampusauthstatusqueryAPIRequest{
+// NewTmallCampusAuthstatusQueryRequest 初始化TmallCampusAuthstatusQueryAPIRequest对象
+func NewTmallCampusAuthstatusQueryRequest() *TmallCampusAuthstatusQueryAPIRequest {
+	return &TmallCampusAuthstatusQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallcampusauthstatusqueryAPIRequest) GetApiMethodName() string {
+func (r TmallCampusAuthstatusQueryAPIRequest) GetApiMethodName() string {
 	return "tmall.campus.authstatus.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallcampusauthstatusqueryAPIRequest) GetApiParams(params url.Values) {
+func (r TmallCampusAuthstatusQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallcampusauthstatusqueryAPIRequest) GetRawParams() model.Params {
+func (r TmallCampusAuthstatusQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

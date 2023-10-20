@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabawdkitemstoreskuupdateResult 结构体
-type AlibabawdkitemstoreskuupdateResult struct {
+// AlibabaWdkItemStoreskuUpdateResult 结构体
+type AlibabaWdkItemStoreskuUpdateResult struct {
 	// errorCode
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// errorDesc

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/iotticket"
 )
 
-// Cainiaoiotticketspmaintainupdate IoT售后服务商维修方案更新
+// CainiaoIotTicketSpMaintainUpdate IoT售后服务商维修方案更新
 // cainiao.iot.ticket.sp.maintain.update
 //
 // IoT售后服务商维修方案更新
-func Cainiaoiotticketspmaintainupdate(clt *core.SDKClient, req *iotticket.CainiaoiotticketspmaintainupdateAPIRequest, session string) (*iotticket.CainiaoiotticketspmaintainupdateAPIResponse, error) {
-	var resp iotticket.CainiaoiotticketspmaintainupdateAPIResponse
+func CainiaoIotTicketSpMaintainUpdate(clt *core.SDKClient, req *iotticket.CainiaoIotTicketSpMaintainUpdateAPIRequest, session string) (*iotticket.CainiaoIotTicketSpMaintainUpdateAPIResponse, error) {
+	var resp iotticket.CainiaoIotTicketSpMaintainUpdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

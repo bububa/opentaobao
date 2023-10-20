@@ -1,7 +1,7 @@
 package brandhub
 
-// TaobaobrandhubspecialshowrptadgroupgetResult 结构体
-type TaobaobrandhubspecialshowrptadgroupgetResult struct {
+// TaobaoBrandhubSpecialshowRptAdgroupGetResult 结构体
+type TaobaoBrandhubSpecialshowRptAdgroupGetResult struct {
 	// 日期
 	Thedate string `json:"thedate,omitempty" xml:"thedate,omitempty"`
 	// 计划名称

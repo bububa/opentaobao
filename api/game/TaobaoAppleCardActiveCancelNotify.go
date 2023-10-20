@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/game"
 )
 
-// Taobaoapplecardactivecancelnotify 苹果卡密取消激活回调接口
+// TaobaoAppleCardActiveCancelNotify 苹果卡密取消激活回调接口
 // taobao.apple.card.active.cancel.notify
 //
 // 苹果卡密取消激活回调接口
-func Taobaoapplecardactivecancelnotify(clt *core.SDKClient, req *game.TaobaoapplecardactivecancelnotifyAPIRequest, session string) (*game.TaobaoapplecardactivecancelnotifyAPIResponse, error) {
-	var resp game.TaobaoapplecardactivecancelnotifyAPIResponse
+func TaobaoAppleCardActiveCancelNotify(clt *core.SDKClient, req *game.TaobaoAppleCardActiveCancelNotifyAPIRequest, session string) (*game.TaobaoAppleCardActiveCancelNotifyAPIResponse, error) {
+	var resp game.TaobaoAppleCardActiveCancelNotifyAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

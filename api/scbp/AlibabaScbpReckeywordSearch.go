@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// Alibabascbpreckeywordsearch 推荐词-词推词
+// AlibabaScbpReckeywordSearch 推荐词-词推词
 // alibaba.scbp.reckeyword.search
 //
 // 推荐词-词推词
-func Alibabascbpreckeywordsearch(clt *core.SDKClient, req *scbp.AlibabascbpreckeywordsearchAPIRequest, session string) (*scbp.AlibabascbpreckeywordsearchAPIResponse, error) {
-	var resp scbp.AlibabascbpreckeywordsearchAPIResponse
+func AlibabaScbpReckeywordSearch(clt *core.SDKClient, req *scbp.AlibabaScbpReckeywordSearchAPIRequest, session string) (*scbp.AlibabaScbpReckeywordSearchAPIResponse, error) {
+	var resp scbp.AlibabaScbpReckeywordSearchAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

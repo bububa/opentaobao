@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// Alibabawdkordersharestockcpsorderlist cps正向分销订单批量回流
+// AlibabaWdkorderSharestockCpsorderList cps正向分销订单批量回流
 // alibaba.wdkorder.sharestock.cpsorder.list
 //
 // cps正向分销订单批量回流
-func Alibabawdkordersharestockcpsorderlist(clt *core.SDKClient, req *wdk.AlibabawdkordersharestockcpsorderlistAPIRequest, session string) (*wdk.AlibabawdkordersharestockcpsorderlistAPIResponse, error) {
-	var resp wdk.AlibabawdkordersharestockcpsorderlistAPIResponse
+func AlibabaWdkorderSharestockCpsorderList(clt *core.SDKClient, req *wdk.AlibabaWdkorderSharestockCpsorderListAPIRequest, session string) (*wdk.AlibabaWdkorderSharestockCpsorderListAPIResponse, error) {
+	var resp wdk.AlibabaWdkorderSharestockCpsorderListAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

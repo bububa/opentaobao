@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoocapcontractsignedgetAPIRequest 用户是否签署支付宝代扣协议 API请求
+// TaobaoOcApContractsignedGetAPIRequest 用户是否签署支付宝代扣协议 API请求
 // taobao.oc.ap.contractsigned.get
 //
 // 用户是否签署支付宝代扣协议
-type TaobaoocapcontractsignedgetAPIRequest struct {
+type TaobaoOcApContractsignedGetAPIRequest struct {
 	model.Params
 }
 
-// NewTaobaoocapcontractsignedgetRequest 初始化TaobaoocapcontractsignedgetAPIRequest对象
-func NewTaobaoocapcontractsignedgetRequest() *TaobaoocapcontractsignedgetAPIRequest {
-	return &TaobaoocapcontractsignedgetAPIRequest{
+// NewTaobaoOcApContractsignedGetRequest 初始化TaobaoOcApContractsignedGetAPIRequest对象
+func NewTaobaoOcApContractsignedGetRequest() *TaobaoOcApContractsignedGetAPIRequest {
+	return &TaobaoOcApContractsignedGetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoocapcontractsignedgetAPIRequest) GetApiMethodName() string {
+func (r TaobaoOcApContractsignedGetAPIRequest) GetApiMethodName() string {
 	return "taobao.oc.ap.contractsigned.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoocapcontractsignedgetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoOcApContractsignedGetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoocapcontractsignedgetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoOcApContractsignedGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

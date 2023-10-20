@@ -1,7 +1,7 @@
 package ascpchannel
 
-// AlibabaascpchanneldistributorinventorylistgetResultDto 结构体
-type AlibabaascpchanneldistributorinventorylistgetResultDto struct {
+// AlibabaAscpChannelDistributorInventoryListGetResultDto 结构体
+type AlibabaAscpChannelDistributorInventoryListGetResultDto struct {
 	// 结果
 	Datas []ChannelInventoryDto `json:"datas,omitempty" xml:"datas>channel_inventory_dto,omitempty"`
 	// 调用链路ID

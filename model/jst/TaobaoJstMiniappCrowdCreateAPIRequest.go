@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaojstminiappcrowdcreateAPIRequest 小程序活动创建 API请求
+// TaobaoJstMiniappCrowdCreateAPIRequest 小程序活动创建 API请求
 // taobao.jst.miniapp.crowd.create
 //
 // 小程序活动创建
-type TaobaojstminiappcrowdcreateAPIRequest struct {
+type TaobaoJstMiniappCrowdCreateAPIRequest struct {
 	model.Params
 	// 活动开始时间，开始时间和结束时间不能超过1个月
 	_endDate string
@@ -22,78 +22,78 @@ type TaobaojstminiappcrowdcreateAPIRequest struct {
 	_crowdName string
 }
 
-// NewTaobaojstminiappcrowdcreateRequest 初始化TaobaojstminiappcrowdcreateAPIRequest对象
-func NewTaobaojstminiappcrowdcreateRequest() *TaobaojstminiappcrowdcreateAPIRequest {
-	return &TaobaojstminiappcrowdcreateAPIRequest{
+// NewTaobaoJstMiniappCrowdCreateRequest 初始化TaobaoJstMiniappCrowdCreateAPIRequest对象
+func NewTaobaoJstMiniappCrowdCreateRequest() *TaobaoJstMiniappCrowdCreateAPIRequest {
+	return &TaobaoJstMiniappCrowdCreateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaojstminiappcrowdcreateAPIRequest) GetApiMethodName() string {
+func (r TaobaoJstMiniappCrowdCreateAPIRequest) GetApiMethodName() string {
 	return "taobao.jst.miniapp.crowd.create"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaojstminiappcrowdcreateAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoJstMiniappCrowdCreateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaojstminiappcrowdcreateAPIRequest) GetRawParams() model.Params {
+func (r TaobaoJstMiniappCrowdCreateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetEndDate is EndDate Setter
 // 活动开始时间，开始时间和结束时间不能超过1个月
-func (r *TaobaojstminiappcrowdcreateAPIRequest) SetEndDate(_endDate string) error {
+func (r *TaobaoJstMiniappCrowdCreateAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
 	r.Set("end_date", _endDate)
 	return nil
 }
 
 // GetEndDate EndDate Getter
-func (r TaobaojstminiappcrowdcreateAPIRequest) GetEndDate() string {
+func (r TaobaoJstMiniappCrowdCreateAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
 // SetDescription is Description Setter
 // 活动描述
-func (r *TaobaojstminiappcrowdcreateAPIRequest) SetDescription(_description string) error {
+func (r *TaobaoJstMiniappCrowdCreateAPIRequest) SetDescription(_description string) error {
 	r._description = _description
 	r.Set("description", _description)
 	return nil
 }
 
 // GetDescription Description Getter
-func (r TaobaojstminiappcrowdcreateAPIRequest) GetDescription() string {
+func (r TaobaoJstMiniappCrowdCreateAPIRequest) GetDescription() string {
 	return r._description
 }
 
 // SetStartDate is StartDate Setter
 // 活动开始时间
-func (r *TaobaojstminiappcrowdcreateAPIRequest) SetStartDate(_startDate string) error {
+func (r *TaobaoJstMiniappCrowdCreateAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
 	r.Set("start_date", _startDate)
 	return nil
 }
 
 // GetStartDate StartDate Getter
-func (r TaobaojstminiappcrowdcreateAPIRequest) GetStartDate() string {
+func (r TaobaoJstMiniappCrowdCreateAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
 // SetCrowdName is CrowdName Setter
 // 活动名称
-func (r *TaobaojstminiappcrowdcreateAPIRequest) SetCrowdName(_crowdName string) error {
+func (r *TaobaoJstMiniappCrowdCreateAPIRequest) SetCrowdName(_crowdName string) error {
 	r._crowdName = _crowdName
 	r.Set("crowd_name", _crowdName)
 	return nil
 }
 
 // GetCrowdName CrowdName Getter
-func (r TaobaojstminiappcrowdcreateAPIRequest) GetCrowdName() string {
+func (r TaobaoJstMiniappCrowdCreateAPIRequest) GetCrowdName() string {
 	return r._crowdName
 }

@@ -1,7 +1,7 @@
 package alitrippoi
 
-// AlitripplatformpoirawsaverawpoiResult 结构体
-type AlitripplatformpoirawsaverawpoiResult struct {
+// AlitripPlatformPoiRawSaverawpoiResult 结构体
+type AlitripPlatformPoiRawSaverawpoiResult struct {
 	// 返回素材id
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// 错误码

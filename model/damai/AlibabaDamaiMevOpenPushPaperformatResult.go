@@ -1,7 +1,7 @@
 package damai
 
-// AlibabadamaimevopenpushpaperformatResult 结构体
-type AlibabadamaimevopenpushpaperformatResult struct {
+// AlibabaDamaiMevOpenPushPaperformatResult 结构体
+type AlibabaDamaiMevOpenPushPaperformatResult struct {
 	// 错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 错误码

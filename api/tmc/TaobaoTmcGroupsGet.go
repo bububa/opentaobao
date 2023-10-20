@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmc"
 )
 
-// Taobaotmcgroupsget 获取自定义用户分组列表
+// TaobaoTmcGroupsGet 获取自定义用户分组列表
 // taobao.tmc.groups.get
 //
 // 获取自定义用户分组列表
-func Taobaotmcgroupsget(clt *core.SDKClient, req *tmc.TaobaotmcgroupsgetAPIRequest, session string) (*tmc.TaobaotmcgroupsgetAPIResponse, error) {
-	var resp tmc.TaobaotmcgroupsgetAPIResponse
+func TaobaoTmcGroupsGet(clt *core.SDKClient, req *tmc.TaobaoTmcGroupsGetAPIRequest, session string) (*tmc.TaobaoTmcGroupsGetAPIResponse, error) {
+	var resp tmc.TaobaoTmcGroupsGetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaopromotionmiscactivityrangeremoveAPIResponse 去除活动参与的商品 API返回值
+// TaobaoPromotionmiscActivityRangeRemoveAPIResponse 去除活动参与的商品 API返回值
 // taobao.promotionmisc.activity.range.remove
 //
 // 去除活动参与的商品
-type TaobaopromotionmiscactivityrangeremoveAPIResponse struct {
+type TaobaoPromotionmiscActivityRangeRemoveAPIResponse struct {
 	model.CommonResponse
-	TaobaopromotionmiscactivityrangeremoveAPIResponseModel
+	TaobaoPromotionmiscActivityRangeRemoveAPIResponseModel
 }
 
-// TaobaopromotionmiscactivityrangeremoveAPIResponseModel is 去除活动参与的商品 成功返回结果
-type TaobaopromotionmiscactivityrangeremoveAPIResponseModel struct {
+// TaobaoPromotionmiscActivityRangeRemoveAPIResponseModel is 去除活动参与的商品 成功返回结果
+type TaobaoPromotionmiscActivityRangeRemoveAPIResponseModel struct {
 	XMLName xml.Name `xml:"promotionmisc_activity_range_remove_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/security"
 )
 
-// Alibabasecurityjaqurlscan 恶意网址检测接口
+// AlibabaSecurityJaqUrlScan 恶意网址检测接口
 // alibaba.security.jaq.url.scan
 //
 // url扫描接口
-func Alibabasecurityjaqurlscan(clt *core.SDKClient, req *security.AlibabasecurityjaqurlscanAPIRequest, session string) (*security.AlibabasecurityjaqurlscanAPIResponse, error) {
-	var resp security.AlibabasecurityjaqurlscanAPIResponse
+func AlibabaSecurityJaqUrlScan(clt *core.SDKClient, req *security.AlibabaSecurityJaqUrlScanAPIRequest, session string) (*security.AlibabaSecurityJaqUrlScanAPIResponse, error) {
+	var resp security.AlibabaSecurityJaqUrlScanAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

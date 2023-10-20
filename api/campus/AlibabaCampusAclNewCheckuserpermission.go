@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/campus"
 )
 
-// Alibabacampusaclnewcheckuserpermission 校验用户是否有权限
+// AlibabaCampusAclNewCheckuserpermission 校验用户是否有权限
 // alibaba.campus.acl.new.checkuserpermission
 //
 // 校验用户是否有权限
-func Alibabacampusaclnewcheckuserpermission(clt *core.SDKClient, req *campus.AlibabacampusaclnewcheckuserpermissionAPIRequest, session string) (*campus.AlibabacampusaclnewcheckuserpermissionAPIResponse, error) {
-	var resp campus.AlibabacampusaclnewcheckuserpermissionAPIResponse
+func AlibabaCampusAclNewCheckuserpermission(clt *core.SDKClient, req *campus.AlibabaCampusAclNewCheckuserpermissionAPIRequest, session string) (*campus.AlibabaCampusAclNewCheckuserpermissionAPIResponse, error) {
+	var resp campus.AlibabaCampusAclNewCheckuserpermissionAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

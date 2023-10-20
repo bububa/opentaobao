@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaeinvoicebillforwordcreateAPIResponse 扫码开票结算单同步前开发票 API返回值
+// AlibabaEinvoiceBillForwordCreateAPIResponse 扫码开票结算单同步前开发票 API返回值
 // alibaba.einvoice.bill.forword.create
 //
 // 扫码开票结算单同步前开发票，会将数据同步到结算单中
-type AlibabaeinvoicebillforwordcreateAPIResponse struct {
+type AlibabaEinvoiceBillForwordCreateAPIResponse struct {
 	model.CommonResponse
-	AlibabaeinvoicebillforwordcreateAPIResponseModel
+	AlibabaEinvoiceBillForwordCreateAPIResponseModel
 }
 
-// AlibabaeinvoicebillforwordcreateAPIResponseModel is 扫码开票结算单同步前开发票 成功返回结果
-type AlibabaeinvoicebillforwordcreateAPIResponseModel struct {
+// AlibabaEinvoiceBillForwordCreateAPIResponseModel is 扫码开票结算单同步前开发票 成功返回结果
+type AlibabaEinvoiceBillForwordCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_einvoice_bill_forword_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

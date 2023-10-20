@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabadchainaoxianginventorybatchqueryAPIRequest 批量查询库存 API请求
+// AlibabaDchainAoxiangInventoryBatchQueryAPIRequest 批量查询库存 API请求
 // alibaba.dchain.aoxiang.inventory.batch.query
 //
 // 批量查询库存
-type AlibabadchainaoxianginventorybatchqueryAPIRequest struct {
+type AlibabaDchainAoxiangInventoryBatchQueryAPIRequest struct {
 	model.Params
 	// 批量查询库存入参
 	_batchQueryInventoryRequest *BatchQueryInventoryRequest
 }
 
-// NewAlibabadchainaoxianginventorybatchqueryRequest 初始化AlibabadchainaoxianginventorybatchqueryAPIRequest对象
-func NewAlibabadchainaoxianginventorybatchqueryRequest() *AlibabadchainaoxianginventorybatchqueryAPIRequest {
-	return &AlibabadchainaoxianginventorybatchqueryAPIRequest{
+// NewAlibabaDchainAoxiangInventoryBatchQueryRequest 初始化AlibabaDchainAoxiangInventoryBatchQueryAPIRequest对象
+func NewAlibabaDchainAoxiangInventoryBatchQueryRequest() *AlibabaDchainAoxiangInventoryBatchQueryAPIRequest {
+	return &AlibabaDchainAoxiangInventoryBatchQueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabadchainaoxianginventorybatchqueryAPIRequest) GetApiMethodName() string {
+func (r AlibabaDchainAoxiangInventoryBatchQueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.dchain.aoxiang.inventory.batch.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabadchainaoxianginventorybatchqueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaDchainAoxiangInventoryBatchQueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabadchainaoxianginventorybatchqueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabaDchainAoxiangInventoryBatchQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetBatchQueryInventoryRequest is BatchQueryInventoryRequest Setter
 // 批量查询库存入参
-func (r *AlibabadchainaoxianginventorybatchqueryAPIRequest) SetBatchQueryInventoryRequest(_batchQueryInventoryRequest *BatchQueryInventoryRequest) error {
+func (r *AlibabaDchainAoxiangInventoryBatchQueryAPIRequest) SetBatchQueryInventoryRequest(_batchQueryInventoryRequest *BatchQueryInventoryRequest) error {
 	r._batchQueryInventoryRequest = _batchQueryInventoryRequest
 	r.Set("batch_query_inventory_request", _batchQueryInventoryRequest)
 	return nil
 }
 
 // GetBatchQueryInventoryRequest BatchQueryInventoryRequest Getter
-func (r AlibabadchainaoxianginventorybatchqueryAPIRequest) GetBatchQueryInventoryRequest() *BatchQueryInventoryRequest {
+func (r AlibabaDchainAoxiangInventoryBatchQueryAPIRequest) GetBatchQueryInventoryRequest() *BatchQueryInventoryRequest {
 	return r._batchQueryInventoryRequest
 }

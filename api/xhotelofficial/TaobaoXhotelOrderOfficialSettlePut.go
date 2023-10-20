@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/xhotelofficial"
 )
 
-// Taobaoxhotelorderofficialsettleput 官网信用住结账接口
+// TaobaoXhotelOrderOfficialSettlePut 官网信用住结账接口
 // taobao.xhotel.order.official.settle.put
 //
 // 用于酒店官网信用住商家结账调用
-func Taobaoxhotelorderofficialsettleput(clt *core.SDKClient, req *xhotelofficial.TaobaoxhotelorderofficialsettleputAPIRequest, session string) (*xhotelofficial.TaobaoxhotelorderofficialsettleputAPIResponse, error) {
-	var resp xhotelofficial.TaobaoxhotelorderofficialsettleputAPIResponse
+func TaobaoXhotelOrderOfficialSettlePut(clt *core.SDKClient, req *xhotelofficial.TaobaoXhotelOrderOfficialSettlePutAPIRequest, session string) (*xhotelofficial.TaobaoXhotelOrderOfficialSettlePutAPIResponse, error) {
+	var resp xhotelofficial.TaobaoXhotelOrderOfficialSettlePutAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

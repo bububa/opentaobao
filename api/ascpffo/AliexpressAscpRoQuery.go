@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascpffo"
 )
 
-// Aliexpressascproquery AliExpress退供单查询API
+// AliexpressAscpRoQuery AliExpress退供单查询API
 // aliexpress.ascp.ro.query
 //
 // AE仓发商家单个退供单查询接口
-func Aliexpressascproquery(clt *core.SDKClient, req *ascpffo.AliexpressascproqueryAPIRequest, session string) (*ascpffo.AliexpressascproqueryAPIResponse, error) {
-	var resp ascpffo.AliexpressascproqueryAPIResponse
+func AliexpressAscpRoQuery(clt *core.SDKClient, req *ascpffo.AliexpressAscpRoQueryAPIRequest, session string) (*ascpffo.AliexpressAscpRoQueryAPIResponse, error) {
+	var resp ascpffo.AliexpressAscpRoQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

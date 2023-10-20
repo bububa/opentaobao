@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabalegalstandpointgetrefAPIRequest 查询业务实体关联口径2 API请求
+// AlibabaLegalStandpointGetrefAPIRequest 查询业务实体关联口径2 API请求
 // alibaba.legal.standpoint.getref
 //
 // 口径查询
-type AlibabalegalstandpointgetrefAPIRequest struct {
+type AlibabaLegalStandpointGetrefAPIRequest struct {
 	model.Params
 	// 业务系统实体id
 	_busiId string
@@ -22,78 +22,78 @@ type AlibabalegalstandpointgetrefAPIRequest struct {
 	_pageSize int64
 }
 
-// NewAlibabalegalstandpointgetrefRequest 初始化AlibabalegalstandpointgetrefAPIRequest对象
-func NewAlibabalegalstandpointgetrefRequest() *AlibabalegalstandpointgetrefAPIRequest {
-	return &AlibabalegalstandpointgetrefAPIRequest{
+// NewAlibabaLegalStandpointGetrefRequest 初始化AlibabaLegalStandpointGetrefAPIRequest对象
+func NewAlibabaLegalStandpointGetrefRequest() *AlibabaLegalStandpointGetrefAPIRequest {
+	return &AlibabaLegalStandpointGetrefAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabalegalstandpointgetrefAPIRequest) GetApiMethodName() string {
+func (r AlibabaLegalStandpointGetrefAPIRequest) GetApiMethodName() string {
 	return "alibaba.legal.standpoint.getref"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabalegalstandpointgetrefAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaLegalStandpointGetrefAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabalegalstandpointgetrefAPIRequest) GetRawParams() model.Params {
+func (r AlibabaLegalStandpointGetrefAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetBusiId is BusiId Setter
 // 业务系统实体id
-func (r *AlibabalegalstandpointgetrefAPIRequest) SetBusiId(_busiId string) error {
+func (r *AlibabaLegalStandpointGetrefAPIRequest) SetBusiId(_busiId string) error {
 	r._busiId = _busiId
 	r.Set("busi_id", _busiId)
 	return nil
 }
 
 // GetBusiId BusiId Getter
-func (r AlibabalegalstandpointgetrefAPIRequest) GetBusiId() string {
+func (r AlibabaLegalStandpointGetrefAPIRequest) GetBusiId() string {
 	return r._busiId
 }
 
 // SetInputSystemCode is InputSystemCode Setter
 // 系统标识
-func (r *AlibabalegalstandpointgetrefAPIRequest) SetInputSystemCode(_inputSystemCode string) error {
+func (r *AlibabaLegalStandpointGetrefAPIRequest) SetInputSystemCode(_inputSystemCode string) error {
 	r._inputSystemCode = _inputSystemCode
 	r.Set("input_system_code", _inputSystemCode)
 	return nil
 }
 
 // GetInputSystemCode InputSystemCode Getter
-func (r AlibabalegalstandpointgetrefAPIRequest) GetInputSystemCode() string {
+func (r AlibabaLegalStandpointGetrefAPIRequest) GetInputSystemCode() string {
 	return r._inputSystemCode
 }
 
 // SetPageNum is PageNum Setter
 // 页号
-func (r *AlibabalegalstandpointgetrefAPIRequest) SetPageNum(_pageNum int64) error {
+func (r *AlibabaLegalStandpointGetrefAPIRequest) SetPageNum(_pageNum int64) error {
 	r._pageNum = _pageNum
 	r.Set("page_num", _pageNum)
 	return nil
 }
 
 // GetPageNum PageNum Getter
-func (r AlibabalegalstandpointgetrefAPIRequest) GetPageNum() int64 {
+func (r AlibabaLegalStandpointGetrefAPIRequest) GetPageNum() int64 {
 	return r._pageNum
 }
 
 // SetPageSize is PageSize Setter
 // 页面大小
-func (r *AlibabalegalstandpointgetrefAPIRequest) SetPageSize(_pageSize int64) error {
+func (r *AlibabaLegalStandpointGetrefAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
 	r.Set("page_size", _pageSize)
 	return nil
 }
 
 // GetPageSize PageSize Getter
-func (r AlibabalegalstandpointgetrefAPIRequest) GetPageSize() int64 {
+func (r AlibabaLegalStandpointGetrefAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

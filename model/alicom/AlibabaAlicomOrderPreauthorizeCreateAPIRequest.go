@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaalicomorderpreauthorizecreateAPIRequest 业务办理结果 API请求
+// AlibabaAlicomOrderPreauthorizeCreateAPIRequest 业务办理结果 API请求
 // alibaba.alicom.order.preauthorize.create
 //
 // 授授权:签约结果通知
-type AlibabaalicomorderpreauthorizecreateAPIRequest struct {
+type AlibabaAlicomOrderPreauthorizeCreateAPIRequest struct {
 	model.Params
 	// 入参
 	_preAuthorizeModel *PreAuthorizeModel
 }
 
-// NewAlibabaalicomorderpreauthorizecreateRequest 初始化AlibabaalicomorderpreauthorizecreateAPIRequest对象
-func NewAlibabaalicomorderpreauthorizecreateRequest() *AlibabaalicomorderpreauthorizecreateAPIRequest {
-	return &AlibabaalicomorderpreauthorizecreateAPIRequest{
+// NewAlibabaAlicomOrderPreauthorizeCreateRequest 初始化AlibabaAlicomOrderPreauthorizeCreateAPIRequest对象
+func NewAlibabaAlicomOrderPreauthorizeCreateRequest() *AlibabaAlicomOrderPreauthorizeCreateAPIRequest {
+	return &AlibabaAlicomOrderPreauthorizeCreateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaalicomorderpreauthorizecreateAPIRequest) GetApiMethodName() string {
+func (r AlibabaAlicomOrderPreauthorizeCreateAPIRequest) GetApiMethodName() string {
 	return "alibaba.alicom.order.preauthorize.create"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaalicomorderpreauthorizecreateAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaAlicomOrderPreauthorizeCreateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaalicomorderpreauthorizecreateAPIRequest) GetRawParams() model.Params {
+func (r AlibabaAlicomOrderPreauthorizeCreateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetPreAuthorizeModel is PreAuthorizeModel Setter
 // 入参
-func (r *AlibabaalicomorderpreauthorizecreateAPIRequest) SetPreAuthorizeModel(_preAuthorizeModel *PreAuthorizeModel) error {
+func (r *AlibabaAlicomOrderPreauthorizeCreateAPIRequest) SetPreAuthorizeModel(_preAuthorizeModel *PreAuthorizeModel) error {
 	r._preAuthorizeModel = _preAuthorizeModel
 	r.Set("pre_authorize_model", _preAuthorizeModel)
 	return nil
 }
 
 // GetPreAuthorizeModel PreAuthorizeModel Getter
-func (r AlibabaalicomorderpreauthorizecreateAPIRequest) GetPreAuthorizeModel() *PreAuthorizeModel {
+func (r AlibabaAlicomOrderPreauthorizeCreateAPIRequest) GetPreAuthorizeModel() *PreAuthorizeModel {
 	return r._preAuthorizeModel
 }

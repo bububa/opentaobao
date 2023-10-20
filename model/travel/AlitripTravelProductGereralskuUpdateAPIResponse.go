@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitriptravelproductgereralskuupdateAPIResponse (供销)船票通用类目sku新增&编辑API API返回值
+// AlitripTravelProductGereralskuUpdateAPIResponse (供销)船票通用类目sku新增&编辑API API返回值
 // alitrip.travel.product.gereralsku.update
 //
 // 发布SKU信息（如果properties重复 则更新）
-type AlitriptravelproductgereralskuupdateAPIResponse struct {
+type AlitripTravelProductGereralskuUpdateAPIResponse struct {
 	model.CommonResponse
-	AlitriptravelproductgereralskuupdateAPIResponseModel
+	AlitripTravelProductGereralskuUpdateAPIResponseModel
 }
 
-// AlitriptravelproductgereralskuupdateAPIResponseModel is (供销)船票通用类目sku新增&编辑API 成功返回结果
-type AlitriptravelproductgereralskuupdateAPIResponseModel struct {
+// AlitripTravelProductGereralskuUpdateAPIResponseModel is (供销)船票通用类目sku新增&编辑API 成功返回结果
+type AlitripTravelProductGereralskuUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_travel_product_gereralsku_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

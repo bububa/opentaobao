@@ -1,7 +1,7 @@
 package mos
 
-// AlibabamjpresalesettlementstatisticsData 结构体
-type AlibabamjpresalesettlementstatisticsData struct {
+// AlibabaMjPresaleSettlementStatisticsData 结构体
+type AlibabaMjPresaleSettlementStatisticsData struct {
 	// onLineNum
 	OnLineNum string `json:"on_line_num,omitempty" xml:"on_line_num,omitempty"`
 	// aliPayNum

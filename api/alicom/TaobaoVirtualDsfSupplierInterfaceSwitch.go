@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alicom"
 )
 
-// Taobaovirtualdsfsupplierinterfaceswitch 虚拟供应商履约接口切换
+// TaobaoVirtualDsfSupplierInterfaceSwitch 虚拟供应商履约接口切换
 // taobao.virtual.dsf.supplier.interface.switch
 //
 // 虚拟供应商履约接口切换
-func Taobaovirtualdsfsupplierinterfaceswitch(clt *core.SDKClient, req *alicom.TaobaovirtualdsfsupplierinterfaceswitchAPIRequest, session string) (*alicom.TaobaovirtualdsfsupplierinterfaceswitchAPIResponse, error) {
-	var resp alicom.TaobaovirtualdsfsupplierinterfaceswitchAPIResponse
+func TaobaoVirtualDsfSupplierInterfaceSwitch(clt *core.SDKClient, req *alicom.TaobaoVirtualDsfSupplierInterfaceSwitchAPIRequest, session string) (*alicom.TaobaoVirtualDsfSupplierInterfaceSwitchAPIResponse, error) {
+	var resp alicom.TaobaoVirtualDsfSupplierInterfaceSwitchAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

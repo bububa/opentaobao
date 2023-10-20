@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaophoneorderexternalstatusAPIResponse 话费外放订单状态接口 API返回值
+// TaobaoPhoneOrderExternalStatusAPIResponse 话费外放订单状态接口 API返回值
 // taobao.phone.order.external.status
 //
 // 话费外放订单状态接口
-type TaobaophoneorderexternalstatusAPIResponse struct {
+type TaobaoPhoneOrderExternalStatusAPIResponse struct {
 	model.CommonResponse
-	TaobaophoneorderexternalstatusAPIResponseModel
+	TaobaoPhoneOrderExternalStatusAPIResponseModel
 }
 
-// TaobaophoneorderexternalstatusAPIResponseModel is 话费外放订单状态接口 成功返回结果
-type TaobaophoneorderexternalstatusAPIResponseModel struct {
+// TaobaoPhoneOrderExternalStatusAPIResponseModel is 话费外放订单状态接口 成功返回结果
+type TaobaoPhoneOrderExternalStatusAPIResponseModel struct {
 	XMLName xml.Name `xml:"phone_order_external_status_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

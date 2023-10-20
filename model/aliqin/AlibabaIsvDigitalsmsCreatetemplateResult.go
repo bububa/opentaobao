@@ -1,7 +1,7 @@
 package aliqin
 
-// AlibabaisvdigitalsmscreatetemplateResult 结构体
-type AlibabaisvdigitalsmscreatetemplateResult struct {
+// AlibabaIsvDigitalsmsCreatetemplateResult 结构体
+type AlibabaIsvDigitalsmsCreatetemplateResult struct {
 	// 模板code
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// 返回信息描述

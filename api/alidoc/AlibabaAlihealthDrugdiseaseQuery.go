@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alidoc"
 )
 
-// Alibabaalihealthdrugdiseasequery 药品诊断查询
+// AlibabaAlihealthDrugdiseaseQuery 药品诊断查询
 // alibaba.alihealth.drugdisease.query
 //
 // 药品诊断查询
-func Alibabaalihealthdrugdiseasequery(clt *core.SDKClient, req *alidoc.AlibabaalihealthdrugdiseasequeryAPIRequest, session string) (*alidoc.AlibabaalihealthdrugdiseasequeryAPIResponse, error) {
-	var resp alidoc.AlibabaalihealthdrugdiseasequeryAPIResponse
+func AlibabaAlihealthDrugdiseaseQuery(clt *core.SDKClient, req *alidoc.AlibabaAlihealthDrugdiseaseQueryAPIRequest, session string) (*alidoc.AlibabaAlihealthDrugdiseaseQueryAPIResponse, error) {
+	var resp alidoc.AlibabaAlihealthDrugdiseaseQueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

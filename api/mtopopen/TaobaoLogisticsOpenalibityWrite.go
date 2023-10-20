@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/mtopopen"
 )
 
-// Taobaologisticsopenalibitywrite 为快递公司提供的物流信息通用写入接口
+// TaobaoLogisticsOpenalibityWrite 为快递公司提供的物流信息通用写入接口
 // taobao.logistics.openalibity.write
 //
 // 为快递公司提供的物流信息通用写入接口
-func Taobaologisticsopenalibitywrite(clt *core.SDKClient, req *mtopopen.TaobaologisticsopenalibitywriteAPIRequest, session string) (*mtopopen.TaobaologisticsopenalibitywriteAPIResponse, error) {
-	var resp mtopopen.TaobaologisticsopenalibitywriteAPIResponse
+func TaobaoLogisticsOpenalibityWrite(clt *core.SDKClient, req *mtopopen.TaobaoLogisticsOpenalibityWriteAPIRequest, session string) (*mtopopen.TaobaoLogisticsOpenalibityWriteAPIResponse, error) {
+	var resp mtopopen.TaobaoLogisticsOpenalibityWriteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

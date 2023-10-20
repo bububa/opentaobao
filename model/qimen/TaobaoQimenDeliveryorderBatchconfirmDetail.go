@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoqimendeliveryorderbatchconfirmDetail 结构体
-type TaobaoqimendeliveryorderbatchconfirmDetail struct {
+// TaobaoQimenDeliveryorderBatchconfirmDetail 结构体
+type TaobaoQimenDeliveryorderBatchconfirmDetail struct {
 	// 订单商品列表
 	Items []Item `json:"items,omitempty" xml:"items>item,omitempty"`
 }

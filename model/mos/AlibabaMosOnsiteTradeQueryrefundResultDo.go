@@ -1,7 +1,7 @@
 package mos
 
-// AlibabamosonsitetradequeryrefundResultDo 结构体
-type AlibabamosonsitetradequeryrefundResultDo struct {
+// AlibabaMosOnsiteTradeQueryrefundResultDo 结构体
+type AlibabaMosOnsiteTradeQueryrefundResultDo struct {
 	// errMsg
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// data

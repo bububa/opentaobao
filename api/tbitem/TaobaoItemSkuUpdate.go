@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tbitem"
 )
 
-// Taobaoitemskuupdate 更新SKU信息
+// TaobaoItemSkuUpdate 更新SKU信息
 // taobao.item.sku.update
 //
 // *更新一个sku的数据 &lt;br/&gt;*需要更新的sku通过属性properties进行匹配查找 &lt;br/&gt;*商品的数量和价格必须大于等于0 &lt;br/&gt;*sku记录会更新到指定的num_iid对应的商品中 &lt;br/&gt;*num_iid对应的商品必须属于当前的会话用户
-func Taobaoitemskuupdate(clt *core.SDKClient, req *tbitem.TaobaoitemskuupdateAPIRequest, session string) (*tbitem.TaobaoitemskuupdateAPIResponse, error) {
-	var resp tbitem.TaobaoitemskuupdateAPIResponse
+func TaobaoItemSkuUpdate(clt *core.SDKClient, req *tbitem.TaobaoItemSkuUpdateAPIRequest, session string) (*tbitem.TaobaoItemSkuUpdateAPIResponse, error) {
+	var resp tbitem.TaobaoItemSkuUpdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err
