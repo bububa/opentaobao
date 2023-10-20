@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTbkScMembergroupOptionalAPIResponse 工具服务商member组查询、新增接口 API返回值
+// TaobaotbkscmembergroupoptionalAPIResponse 工具服务商member组查询、新增接口 API返回值
 // taobao.tbk.sc.membergroup.optional
 //
 // 工具服务商member组查询、新增接口
-type TaobaoTbkScMembergroupOptionalAPIResponse struct {
+type TaobaotbkscmembergroupoptionalAPIResponse struct {
 	model.CommonResponse
-	TaobaoTbkScMembergroupOptionalAPIResponseModel
+	TaobaotbkscmembergroupoptionalAPIResponseModel
 }
 
-// TaobaoTbkScMembergroupOptionalAPIResponseModel is 工具服务商member组查询、新增接口 成功返回结果
-type TaobaoTbkScMembergroupOptionalAPIResponseModel struct {
+// TaobaotbkscmembergroupoptionalAPIResponseModel is 工具服务商member组查询、新增接口 成功返回结果
+type TaobaotbkscmembergroupoptionalAPIResponseModel struct {
 	XMLName xml.Name `xml:"tbk_sc_membergroup_optional_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
-	Data *TaobaoTbkScMembergroupOptionalMapData `json:"data,omitempty" xml:"data,omitempty"`
+	Data *TaobaotbkscmembergroupoptionalMapData `json:"data,omitempty" xml:"data,omitempty"`
 }

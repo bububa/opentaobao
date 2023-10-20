@@ -6,109 +6,109 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTbkScVegasSendStatusAPIRequest 淘宝客-服务商-红包领取状态查询 API请求
+// TaobaotbkscvegassendstatusAPIRequest 淘宝客-服务商-红包领取状态查询 API请求
 // taobao.tbk.sc.vegas.send.status
 //
 // 服务商使用。支持淘宝客传入用户标识的信息，查询该用户是否有当前阶段待核销的红包。接入前需签署协议：https://pub.alimama.com/fourth/protocol/common.htm?key=hangye_laxin
-type TaobaoTbkScVegasSendStatusAPIRequest struct {
+type TaobaotbkscvegassendstatusAPIRequest struct {
 	model.Params
 	// 会员运营id
-	_specialId string
+	_specialid string
 	// 渠道管理id
-	_relationId string
+	_relationid string
 	// 加密后的值，需用MD5加密，32位小写
-	_deviceValue string
+	_devicevalue string
 	// 入参类型(该模式下返回的结果为模糊匹配结果，和实际情况可能存在误差)： 1. IMEI 2. IDFA 3. OAID 4. MOBILE
-	_deviceType string
+	_devicetype string
 	// 查询红包类型，1-超级红包，2-福利购，3-签到红包，4-福利直降，不传时默认查询超级红包数据
-	_activityCategory int64
+	_activitycategory int64
 }
 
-// NewTaobaoTbkScVegasSendStatusRequest 初始化TaobaoTbkScVegasSendStatusAPIRequest对象
-func NewTaobaoTbkScVegasSendStatusRequest() *TaobaoTbkScVegasSendStatusAPIRequest {
-	return &TaobaoTbkScVegasSendStatusAPIRequest{
+// NewTaobaotbkscvegassendstatusRequest 初始化TaobaotbkscvegassendstatusAPIRequest对象
+func NewTaobaotbkscvegassendstatusRequest() *TaobaotbkscvegassendstatusAPIRequest {
+	return &TaobaotbkscvegassendstatusAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoTbkScVegasSendStatusAPIRequest) GetApiMethodName() string {
+func (r TaobaotbkscvegassendstatusAPIRequest) GetApiMethodName() string {
 	return "taobao.tbk.sc.vegas.send.status"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTbkScVegasSendStatusAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaotbkscvegassendstatusAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoTbkScVegasSendStatusAPIRequest) GetRawParams() model.Params {
+func (r TaobaotbkscvegassendstatusAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetSpecialId is SpecialId Setter
+// SetSpecialid is Specialid Setter
 // 会员运营id
-func (r *TaobaoTbkScVegasSendStatusAPIRequest) SetSpecialId(_specialId string) error {
-	r._specialId = _specialId
-	r.Set("special_id", _specialId)
+func (r *TaobaotbkscvegassendstatusAPIRequest) SetSpecialid(_specialid string) error {
+	r._specialid = _specialid
+	r.Set("special_id", _specialid)
 	return nil
 }
 
-// GetSpecialId SpecialId Getter
-func (r TaobaoTbkScVegasSendStatusAPIRequest) GetSpecialId() string {
-	return r._specialId
+// GetSpecialid Specialid Getter
+func (r TaobaotbkscvegassendstatusAPIRequest) GetSpecialid() string {
+	return r._specialid
 }
 
-// SetRelationId is RelationId Setter
+// SetRelationid is Relationid Setter
 // 渠道管理id
-func (r *TaobaoTbkScVegasSendStatusAPIRequest) SetRelationId(_relationId string) error {
-	r._relationId = _relationId
-	r.Set("relation_id", _relationId)
+func (r *TaobaotbkscvegassendstatusAPIRequest) SetRelationid(_relationid string) error {
+	r._relationid = _relationid
+	r.Set("relation_id", _relationid)
 	return nil
 }
 
-// GetRelationId RelationId Getter
-func (r TaobaoTbkScVegasSendStatusAPIRequest) GetRelationId() string {
-	return r._relationId
+// GetRelationid Relationid Getter
+func (r TaobaotbkscvegassendstatusAPIRequest) GetRelationid() string {
+	return r._relationid
 }
 
-// SetDeviceValue is DeviceValue Setter
+// SetDevicevalue is Devicevalue Setter
 // 加密后的值，需用MD5加密，32位小写
-func (r *TaobaoTbkScVegasSendStatusAPIRequest) SetDeviceValue(_deviceValue string) error {
-	r._deviceValue = _deviceValue
-	r.Set("device_value", _deviceValue)
+func (r *TaobaotbkscvegassendstatusAPIRequest) SetDevicevalue(_devicevalue string) error {
+	r._devicevalue = _devicevalue
+	r.Set("device_value", _devicevalue)
 	return nil
 }
 
-// GetDeviceValue DeviceValue Getter
-func (r TaobaoTbkScVegasSendStatusAPIRequest) GetDeviceValue() string {
-	return r._deviceValue
+// GetDevicevalue Devicevalue Getter
+func (r TaobaotbkscvegassendstatusAPIRequest) GetDevicevalue() string {
+	return r._devicevalue
 }
 
-// SetDeviceType is DeviceType Setter
+// SetDevicetype is Devicetype Setter
 // 入参类型(该模式下返回的结果为模糊匹配结果，和实际情况可能存在误差)： 1. IMEI 2. IDFA 3. OAID 4. MOBILE
-func (r *TaobaoTbkScVegasSendStatusAPIRequest) SetDeviceType(_deviceType string) error {
-	r._deviceType = _deviceType
-	r.Set("device_type", _deviceType)
+func (r *TaobaotbkscvegassendstatusAPIRequest) SetDevicetype(_devicetype string) error {
+	r._devicetype = _devicetype
+	r.Set("device_type", _devicetype)
 	return nil
 }
 
-// GetDeviceType DeviceType Getter
-func (r TaobaoTbkScVegasSendStatusAPIRequest) GetDeviceType() string {
-	return r._deviceType
+// GetDevicetype Devicetype Getter
+func (r TaobaotbkscvegassendstatusAPIRequest) GetDevicetype() string {
+	return r._devicetype
 }
 
-// SetActivityCategory is ActivityCategory Setter
+// SetActivitycategory is Activitycategory Setter
 // 查询红包类型，1-超级红包，2-福利购，3-签到红包，4-福利直降，不传时默认查询超级红包数据
-func (r *TaobaoTbkScVegasSendStatusAPIRequest) SetActivityCategory(_activityCategory int64) error {
-	r._activityCategory = _activityCategory
-	r.Set("activity_category", _activityCategory)
+func (r *TaobaotbkscvegassendstatusAPIRequest) SetActivitycategory(_activitycategory int64) error {
+	r._activitycategory = _activitycategory
+	r.Set("activity_category", _activitycategory)
 	return nil
 }
 
-// GetActivityCategory ActivityCategory Getter
-func (r TaobaoTbkScVegasSendStatusAPIRequest) GetActivityCategory() int64 {
-	return r._activityCategory
+// GetActivitycategory Activitycategory Getter
+func (r TaobaotbkscvegassendstatusAPIRequest) GetActivitycategory() int64 {
+	return r._activitycategory
 }

@@ -6,124 +6,124 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTbkDgNewuserOrderGetAPIRequest 淘宝客-推广者-新用户订单明细查询 API请求
+// TaobaotbkdgnewuserordergetAPIRequest 淘宝客-推广者-新用户订单明细查询 API请求
 // taobao.tbk.dg.newuser.order.get
 //
 // 拉新API
-type TaobaoTbkDgNewuserOrderGetAPIRequest struct {
+type TaobaotbkdgnewuserordergetAPIRequest struct {
 	model.Params
 	// 开始时间，当活动为淘宝活动，表示最早注册时间；当活动为支付宝活动，表示最早绑定时间；当活动为天猫活动，表示最早领取红包时间
-	_startTime string
+	_starttime string
 	// 结束时间，当活动为淘宝活动，表示最晚结束时间；当活动为支付宝活动，表示最晚绑定时间；当活动为天猫活动，表示最晚领取红包的时间
-	_endTime string
+	_endtime string
 	// 活动id， 活动名称与活动ID列表（该字段已废弃）
-	_activityId string
+	_activityid string
 	// 页大小，默认20，1~100
-	_pageSize int64
+	_pagesize int64
 	// 页码，默认1
-	_pageNo int64
+	_pageno int64
 	// mm_xxx_xxx_xxx的第三位
-	_adzoneId int64
+	_adzoneid int64
 }
 
-// NewTaobaoTbkDgNewuserOrderGetRequest 初始化TaobaoTbkDgNewuserOrderGetAPIRequest对象
-func NewTaobaoTbkDgNewuserOrderGetRequest() *TaobaoTbkDgNewuserOrderGetAPIRequest {
-	return &TaobaoTbkDgNewuserOrderGetAPIRequest{
+// NewTaobaotbkdgnewuserordergetRequest 初始化TaobaotbkdgnewuserordergetAPIRequest对象
+func NewTaobaotbkdgnewuserordergetRequest() *TaobaotbkdgnewuserordergetAPIRequest {
+	return &TaobaotbkdgnewuserordergetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoTbkDgNewuserOrderGetAPIRequest) GetApiMethodName() string {
+func (r TaobaotbkdgnewuserordergetAPIRequest) GetApiMethodName() string {
 	return "taobao.tbk.dg.newuser.order.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTbkDgNewuserOrderGetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaotbkdgnewuserordergetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoTbkDgNewuserOrderGetAPIRequest) GetRawParams() model.Params {
+func (r TaobaotbkdgnewuserordergetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetStartTime is StartTime Setter
+// SetStarttime is Starttime Setter
 // 开始时间，当活动为淘宝活动，表示最早注册时间；当活动为支付宝活动，表示最早绑定时间；当活动为天猫活动，表示最早领取红包时间
-func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) SetStartTime(_startTime string) error {
-	r._startTime = _startTime
-	r.Set("start_time", _startTime)
+func (r *TaobaotbkdgnewuserordergetAPIRequest) SetStarttime(_starttime string) error {
+	r._starttime = _starttime
+	r.Set("start_time", _starttime)
 	return nil
 }
 
-// GetStartTime StartTime Getter
-func (r TaobaoTbkDgNewuserOrderGetAPIRequest) GetStartTime() string {
-	return r._startTime
+// GetStarttime Starttime Getter
+func (r TaobaotbkdgnewuserordergetAPIRequest) GetStarttime() string {
+	return r._starttime
 }
 
-// SetEndTime is EndTime Setter
+// SetEndtime is Endtime Setter
 // 结束时间，当活动为淘宝活动，表示最晚结束时间；当活动为支付宝活动，表示最晚绑定时间；当活动为天猫活动，表示最晚领取红包的时间
-func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) SetEndTime(_endTime string) error {
-	r._endTime = _endTime
-	r.Set("end_time", _endTime)
+func (r *TaobaotbkdgnewuserordergetAPIRequest) SetEndtime(_endtime string) error {
+	r._endtime = _endtime
+	r.Set("end_time", _endtime)
 	return nil
 }
 
-// GetEndTime EndTime Getter
-func (r TaobaoTbkDgNewuserOrderGetAPIRequest) GetEndTime() string {
-	return r._endTime
+// GetEndtime Endtime Getter
+func (r TaobaotbkdgnewuserordergetAPIRequest) GetEndtime() string {
+	return r._endtime
 }
 
-// SetActivityId is ActivityId Setter
+// SetActivityid is Activityid Setter
 // 活动id， 活动名称与活动ID列表（该字段已废弃）
-func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) SetActivityId(_activityId string) error {
-	r._activityId = _activityId
-	r.Set("activity_id", _activityId)
+func (r *TaobaotbkdgnewuserordergetAPIRequest) SetActivityid(_activityid string) error {
+	r._activityid = _activityid
+	r.Set("activity_id", _activityid)
 	return nil
 }
 
-// GetActivityId ActivityId Getter
-func (r TaobaoTbkDgNewuserOrderGetAPIRequest) GetActivityId() string {
-	return r._activityId
+// GetActivityid Activityid Getter
+func (r TaobaotbkdgnewuserordergetAPIRequest) GetActivityid() string {
+	return r._activityid
 }
 
-// SetPageSize is PageSize Setter
+// SetPagesize is Pagesize Setter
 // 页大小，默认20，1~100
-func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
+func (r *TaobaotbkdgnewuserordergetAPIRequest) SetPagesize(_pagesize int64) error {
+	r._pagesize = _pagesize
+	r.Set("page_size", _pagesize)
 	return nil
 }
 
-// GetPageSize PageSize Getter
-func (r TaobaoTbkDgNewuserOrderGetAPIRequest) GetPageSize() int64 {
-	return r._pageSize
+// GetPagesize Pagesize Getter
+func (r TaobaotbkdgnewuserordergetAPIRequest) GetPagesize() int64 {
+	return r._pagesize
 }
 
-// SetPageNo is PageNo Setter
+// SetPageno is Pageno Setter
 // 页码，默认1
-func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) SetPageNo(_pageNo int64) error {
-	r._pageNo = _pageNo
-	r.Set("page_no", _pageNo)
+func (r *TaobaotbkdgnewuserordergetAPIRequest) SetPageno(_pageno int64) error {
+	r._pageno = _pageno
+	r.Set("page_no", _pageno)
 	return nil
 }
 
-// GetPageNo PageNo Getter
-func (r TaobaoTbkDgNewuserOrderGetAPIRequest) GetPageNo() int64 {
-	return r._pageNo
+// GetPageno Pageno Getter
+func (r TaobaotbkdgnewuserordergetAPIRequest) GetPageno() int64 {
+	return r._pageno
 }
 
-// SetAdzoneId is AdzoneId Setter
+// SetAdzoneid is Adzoneid Setter
 // mm_xxx_xxx_xxx的第三位
-func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) SetAdzoneId(_adzoneId int64) error {
-	r._adzoneId = _adzoneId
-	r.Set("adzone_id", _adzoneId)
+func (r *TaobaotbkdgnewuserordergetAPIRequest) SetAdzoneid(_adzoneid int64) error {
+	r._adzoneid = _adzoneid
+	r.Set("adzone_id", _adzoneid)
 	return nil
 }
 
-// GetAdzoneId AdzoneId Getter
-func (r TaobaoTbkDgNewuserOrderGetAPIRequest) GetAdzoneId() int64 {
-	return r._adzoneId
+// GetAdzoneid Adzoneid Getter
+func (r TaobaotbkdgnewuserordergetAPIRequest) GetAdzoneid() int64 {
+	return r._adzoneid
 }

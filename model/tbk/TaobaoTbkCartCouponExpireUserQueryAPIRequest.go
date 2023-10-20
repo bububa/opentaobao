@@ -6,79 +6,79 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTbkCartCouponExpireUserQueryAPIRequest 购物车催付优惠券到期查询用户信息 API请求
+// TaobaotbkcartcouponexpireuserqueryAPIRequest 购物车催付优惠券到期查询用户信息 API请求
 // taobao.tbk.cart.coupon.expire.user.query
 //
 // 购物车催付根据对应规则查询用户信息。
-type TaobaoTbkCartCouponExpireUserQueryAPIRequest struct {
+type TaobaotbkcartcouponexpireuserqueryAPIRequest struct {
 	model.Params
 	// 规则ID，由接口提供方分配
-	_ruleId string
+	_ruleid string
 	// 页码，从0开始
-	_pageNum int64
+	_pagenum int64
 	// 每页大小
-	_pageSize int64
+	_pagesize int64
 }
 
-// NewTaobaoTbkCartCouponExpireUserQueryRequest 初始化TaobaoTbkCartCouponExpireUserQueryAPIRequest对象
-func NewTaobaoTbkCartCouponExpireUserQueryRequest() *TaobaoTbkCartCouponExpireUserQueryAPIRequest {
-	return &TaobaoTbkCartCouponExpireUserQueryAPIRequest{
+// NewTaobaotbkcartcouponexpireuserqueryRequest 初始化TaobaotbkcartcouponexpireuserqueryAPIRequest对象
+func NewTaobaotbkcartcouponexpireuserqueryRequest() *TaobaotbkcartcouponexpireuserqueryAPIRequest {
+	return &TaobaotbkcartcouponexpireuserqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoTbkCartCouponExpireUserQueryAPIRequest) GetApiMethodName() string {
+func (r TaobaotbkcartcouponexpireuserqueryAPIRequest) GetApiMethodName() string {
 	return "taobao.tbk.cart.coupon.expire.user.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTbkCartCouponExpireUserQueryAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaotbkcartcouponexpireuserqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoTbkCartCouponExpireUserQueryAPIRequest) GetRawParams() model.Params {
+func (r TaobaotbkcartcouponexpireuserqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetRuleId is RuleId Setter
+// SetRuleid is Ruleid Setter
 // 规则ID，由接口提供方分配
-func (r *TaobaoTbkCartCouponExpireUserQueryAPIRequest) SetRuleId(_ruleId string) error {
-	r._ruleId = _ruleId
-	r.Set("rule_id", _ruleId)
+func (r *TaobaotbkcartcouponexpireuserqueryAPIRequest) SetRuleid(_ruleid string) error {
+	r._ruleid = _ruleid
+	r.Set("rule_id", _ruleid)
 	return nil
 }
 
-// GetRuleId RuleId Getter
-func (r TaobaoTbkCartCouponExpireUserQueryAPIRequest) GetRuleId() string {
-	return r._ruleId
+// GetRuleid Ruleid Getter
+func (r TaobaotbkcartcouponexpireuserqueryAPIRequest) GetRuleid() string {
+	return r._ruleid
 }
 
-// SetPageNum is PageNum Setter
+// SetPagenum is Pagenum Setter
 // 页码，从0开始
-func (r *TaobaoTbkCartCouponExpireUserQueryAPIRequest) SetPageNum(_pageNum int64) error {
-	r._pageNum = _pageNum
-	r.Set("page_num", _pageNum)
+func (r *TaobaotbkcartcouponexpireuserqueryAPIRequest) SetPagenum(_pagenum int64) error {
+	r._pagenum = _pagenum
+	r.Set("page_num", _pagenum)
 	return nil
 }
 
-// GetPageNum PageNum Getter
-func (r TaobaoTbkCartCouponExpireUserQueryAPIRequest) GetPageNum() int64 {
-	return r._pageNum
+// GetPagenum Pagenum Getter
+func (r TaobaotbkcartcouponexpireuserqueryAPIRequest) GetPagenum() int64 {
+	return r._pagenum
 }
 
-// SetPageSize is PageSize Setter
+// SetPagesize is Pagesize Setter
 // 每页大小
-func (r *TaobaoTbkCartCouponExpireUserQueryAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
+func (r *TaobaotbkcartcouponexpireuserqueryAPIRequest) SetPagesize(_pagesize int64) error {
+	r._pagesize = _pagesize
+	r.Set("page_size", _pagesize)
 	return nil
 }
 
-// GetPageSize PageSize Getter
-func (r TaobaoTbkCartCouponExpireUserQueryAPIRequest) GetPageSize() int64 {
-	return r._pageSize
+// GetPagesize Pagesize Getter
+func (r TaobaotbkcartcouponexpireuserqueryAPIRequest) GetPagesize() int64 {
+	return r._pagesize
 }

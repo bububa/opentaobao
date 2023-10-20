@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaoTbkDgVegasSendStatusData 结构体
-type TaobaoTbkDgVegasSendStatusData struct {
+// TaobaotbkdgvegassendstatusData 结构体
+type TaobaotbkdgvegassendstatusData struct {
 	// 返回结果封装对象
-	ResultList []TaobaoTbkDgVegasSendStatusMapData `json:"result_list,omitempty" xml:"result_list>taobao_tbk_dg_vegas_send_status_map_data,omitempty"`
+	Resultlist []TaobaotbkdgvegassendstatusMapData `json:"result_list,omitempty" xml:"result_list>taobaotbkdgvegassendstatus_map_data,omitempty"`
 }

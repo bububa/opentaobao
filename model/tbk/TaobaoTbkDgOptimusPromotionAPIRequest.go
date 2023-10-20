@@ -6,94 +6,94 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTbkDgOptimusPromotionAPIRequest 淘宝客-推广者-权益物料精选 API请求
+// TaobaotbkdgoptimuspromotionAPIRequest 淘宝客-推广者-权益物料精选 API请求
 // taobao.tbk.dg.optimus.promotion
 //
 // 推广者使用。支持入参推广者对应的“推广位”和官方提供的“权益物料id”，获取指定权益物料。
-type TaobaoTbkDgOptimusPromotionAPIRequest struct {
+type TaobaotbkdgoptimuspromotionAPIRequest struct {
 	model.Params
 	// 页大小，一次请求请限制在10以内
-	_pageSize int64
+	_pagesize int64
 	// 第几页，默认：1
-	_pageNum int64
+	_pagenum int64
 	// mm_xxx_xxx_xxx的第3段数字
-	_adzoneId int64
+	_adzoneid int64
 	// 官方提供的权益物料Id。有价券-37104、大额店铺券-37116、天猫店铺券-62191、券券补-61809 更多权益物料id敬请期待！
-	_promotionId int64
+	_promotionid int64
 }
 
-// NewTaobaoTbkDgOptimusPromotionRequest 初始化TaobaoTbkDgOptimusPromotionAPIRequest对象
-func NewTaobaoTbkDgOptimusPromotionRequest() *TaobaoTbkDgOptimusPromotionAPIRequest {
-	return &TaobaoTbkDgOptimusPromotionAPIRequest{
+// NewTaobaotbkdgoptimuspromotionRequest 初始化TaobaotbkdgoptimuspromotionAPIRequest对象
+func NewTaobaotbkdgoptimuspromotionRequest() *TaobaotbkdgoptimuspromotionAPIRequest {
+	return &TaobaotbkdgoptimuspromotionAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoTbkDgOptimusPromotionAPIRequest) GetApiMethodName() string {
+func (r TaobaotbkdgoptimuspromotionAPIRequest) GetApiMethodName() string {
 	return "taobao.tbk.dg.optimus.promotion"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTbkDgOptimusPromotionAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaotbkdgoptimuspromotionAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoTbkDgOptimusPromotionAPIRequest) GetRawParams() model.Params {
+func (r TaobaotbkdgoptimuspromotionAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetPageSize is PageSize Setter
+// SetPagesize is Pagesize Setter
 // 页大小，一次请求请限制在10以内
-func (r *TaobaoTbkDgOptimusPromotionAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
+func (r *TaobaotbkdgoptimuspromotionAPIRequest) SetPagesize(_pagesize int64) error {
+	r._pagesize = _pagesize
+	r.Set("page_size", _pagesize)
 	return nil
 }
 
-// GetPageSize PageSize Getter
-func (r TaobaoTbkDgOptimusPromotionAPIRequest) GetPageSize() int64 {
-	return r._pageSize
+// GetPagesize Pagesize Getter
+func (r TaobaotbkdgoptimuspromotionAPIRequest) GetPagesize() int64 {
+	return r._pagesize
 }
 
-// SetPageNum is PageNum Setter
+// SetPagenum is Pagenum Setter
 // 第几页，默认：1
-func (r *TaobaoTbkDgOptimusPromotionAPIRequest) SetPageNum(_pageNum int64) error {
-	r._pageNum = _pageNum
-	r.Set("page_num", _pageNum)
+func (r *TaobaotbkdgoptimuspromotionAPIRequest) SetPagenum(_pagenum int64) error {
+	r._pagenum = _pagenum
+	r.Set("page_num", _pagenum)
 	return nil
 }
 
-// GetPageNum PageNum Getter
-func (r TaobaoTbkDgOptimusPromotionAPIRequest) GetPageNum() int64 {
-	return r._pageNum
+// GetPagenum Pagenum Getter
+func (r TaobaotbkdgoptimuspromotionAPIRequest) GetPagenum() int64 {
+	return r._pagenum
 }
 
-// SetAdzoneId is AdzoneId Setter
+// SetAdzoneid is Adzoneid Setter
 // mm_xxx_xxx_xxx的第3段数字
-func (r *TaobaoTbkDgOptimusPromotionAPIRequest) SetAdzoneId(_adzoneId int64) error {
-	r._adzoneId = _adzoneId
-	r.Set("adzone_id", _adzoneId)
+func (r *TaobaotbkdgoptimuspromotionAPIRequest) SetAdzoneid(_adzoneid int64) error {
+	r._adzoneid = _adzoneid
+	r.Set("adzone_id", _adzoneid)
 	return nil
 }
 
-// GetAdzoneId AdzoneId Getter
-func (r TaobaoTbkDgOptimusPromotionAPIRequest) GetAdzoneId() int64 {
-	return r._adzoneId
+// GetAdzoneid Adzoneid Getter
+func (r TaobaotbkdgoptimuspromotionAPIRequest) GetAdzoneid() int64 {
+	return r._adzoneid
 }
 
-// SetPromotionId is PromotionId Setter
+// SetPromotionid is Promotionid Setter
 // 官方提供的权益物料Id。有价券-37104、大额店铺券-37116、天猫店铺券-62191、券券补-61809 更多权益物料id敬请期待！
-func (r *TaobaoTbkDgOptimusPromotionAPIRequest) SetPromotionId(_promotionId int64) error {
-	r._promotionId = _promotionId
-	r.Set("promotion_id", _promotionId)
+func (r *TaobaotbkdgoptimuspromotionAPIRequest) SetPromotionid(_promotionid int64) error {
+	r._promotionid = _promotionid
+	r.Set("promotion_id", _promotionid)
 	return nil
 }
 
-// GetPromotionId PromotionId Getter
-func (r TaobaoTbkDgOptimusPromotionAPIRequest) GetPromotionId() int64 {
-	return r._promotionId
+// GetPromotionid Promotionid Getter
+func (r TaobaotbkdgoptimuspromotionAPIRequest) GetPromotionid() int64 {
+	return r._promotionid
 }

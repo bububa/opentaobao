@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tbk"
 )
 
-// TaobaoTbkSkuBestCoupon sku维度最优优惠券信息
+// Taobaotbkskubestcoupon sku维度最优优惠券信息
 // taobao.tbk.sku.best.coupon
 //
 // 根据itemid和skuid查询最优优惠券信息
-func TaobaoTbkSkuBestCoupon(clt *core.SDKClient, req *tbk.TaobaoTbkSkuBestCouponAPIRequest, session string) (*tbk.TaobaoTbkSkuBestCouponAPIResponse, error) {
-	var resp tbk.TaobaoTbkSkuBestCouponAPIResponse
+func Taobaotbkskubestcoupon(clt *core.SDKClient, req *tbk.TaobaotbkskubestcouponAPIRequest, session string) (*tbk.TaobaotbkskubestcouponAPIResponse, error) {
+	var resp tbk.TaobaotbkskubestcouponAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

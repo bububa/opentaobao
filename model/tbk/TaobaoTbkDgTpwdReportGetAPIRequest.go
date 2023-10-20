@@ -6,64 +6,64 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTbkDgTpwdReportGetAPIRequest 淘宝客-推广者-淘口令回流数据查询 API请求
+// TaobaotbkdgtpwdreportgetAPIRequest 淘宝客-推广者-淘口令回流数据查询 API请求
 // taobao.tbk.dg.tpwd.report.get
 //
 // 淘宝客获取单个淘口令的回流PV、UV数据。
-type TaobaoTbkDgTpwdReportGetAPIRequest struct {
+type TaobaotbkdgtpwdreportgetAPIRequest struct {
 	model.Params
 	// 待查询的口令
-	_taoPassword string
+	_taopassword string
 	// mm_xxx_xxx_xxx的第3段数字
-	_adzoneId string
+	_adzoneid string
 }
 
-// NewTaobaoTbkDgTpwdReportGetRequest 初始化TaobaoTbkDgTpwdReportGetAPIRequest对象
-func NewTaobaoTbkDgTpwdReportGetRequest() *TaobaoTbkDgTpwdReportGetAPIRequest {
-	return &TaobaoTbkDgTpwdReportGetAPIRequest{
+// NewTaobaotbkdgtpwdreportgetRequest 初始化TaobaotbkdgtpwdreportgetAPIRequest对象
+func NewTaobaotbkdgtpwdreportgetRequest() *TaobaotbkdgtpwdreportgetAPIRequest {
+	return &TaobaotbkdgtpwdreportgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoTbkDgTpwdReportGetAPIRequest) GetApiMethodName() string {
+func (r TaobaotbkdgtpwdreportgetAPIRequest) GetApiMethodName() string {
 	return "taobao.tbk.dg.tpwd.report.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTbkDgTpwdReportGetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaotbkdgtpwdreportgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoTbkDgTpwdReportGetAPIRequest) GetRawParams() model.Params {
+func (r TaobaotbkdgtpwdreportgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetTaoPassword is TaoPassword Setter
+// SetTaopassword is Taopassword Setter
 // 待查询的口令
-func (r *TaobaoTbkDgTpwdReportGetAPIRequest) SetTaoPassword(_taoPassword string) error {
-	r._taoPassword = _taoPassword
-	r.Set("tao_password", _taoPassword)
+func (r *TaobaotbkdgtpwdreportgetAPIRequest) SetTaopassword(_taopassword string) error {
+	r._taopassword = _taopassword
+	r.Set("tao_password", _taopassword)
 	return nil
 }
 
-// GetTaoPassword TaoPassword Getter
-func (r TaobaoTbkDgTpwdReportGetAPIRequest) GetTaoPassword() string {
-	return r._taoPassword
+// GetTaopassword Taopassword Getter
+func (r TaobaotbkdgtpwdreportgetAPIRequest) GetTaopassword() string {
+	return r._taopassword
 }
 
-// SetAdzoneId is AdzoneId Setter
+// SetAdzoneid is Adzoneid Setter
 // mm_xxx_xxx_xxx的第3段数字
-func (r *TaobaoTbkDgTpwdReportGetAPIRequest) SetAdzoneId(_adzoneId string) error {
-	r._adzoneId = _adzoneId
-	r.Set("adzone_id", _adzoneId)
+func (r *TaobaotbkdgtpwdreportgetAPIRequest) SetAdzoneid(_adzoneid string) error {
+	r._adzoneid = _adzoneid
+	r.Set("adzone_id", _adzoneid)
 	return nil
 }
 
-// GetAdzoneId AdzoneId Getter
-func (r TaobaoTbkDgTpwdReportGetAPIRequest) GetAdzoneId() string {
-	return r._adzoneId
+// GetAdzoneid Adzoneid Getter
+func (r TaobaotbkdgtpwdreportgetAPIRequest) GetAdzoneid() string {
+	return r._adzoneid
 }

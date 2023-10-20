@@ -6,64 +6,64 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTbkSkuBestCouponAPIRequest sku维度最优优惠券信息 API请求
+// TaobaotbkskubestcouponAPIRequest sku维度最优优惠券信息 API请求
 // taobao.tbk.sku.best.coupon
 //
 // 根据itemid和skuid查询最优优惠券信息
-type TaobaoTbkSkuBestCouponAPIRequest struct {
+type TaobaotbkskubestcouponAPIRequest struct {
 	model.Params
 	// 商品对应的skuId
-	_skuId int64
+	_skuid int64
 	// 商品ID
-	_itemId int64
+	_itemid int64
 }
 
-// NewTaobaoTbkSkuBestCouponRequest 初始化TaobaoTbkSkuBestCouponAPIRequest对象
-func NewTaobaoTbkSkuBestCouponRequest() *TaobaoTbkSkuBestCouponAPIRequest {
-	return &TaobaoTbkSkuBestCouponAPIRequest{
+// NewTaobaotbkskubestcouponRequest 初始化TaobaotbkskubestcouponAPIRequest对象
+func NewTaobaotbkskubestcouponRequest() *TaobaotbkskubestcouponAPIRequest {
+	return &TaobaotbkskubestcouponAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoTbkSkuBestCouponAPIRequest) GetApiMethodName() string {
+func (r TaobaotbkskubestcouponAPIRequest) GetApiMethodName() string {
 	return "taobao.tbk.sku.best.coupon"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTbkSkuBestCouponAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaotbkskubestcouponAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoTbkSkuBestCouponAPIRequest) GetRawParams() model.Params {
+func (r TaobaotbkskubestcouponAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetSkuId is SkuId Setter
+// SetSkuid is Skuid Setter
 // 商品对应的skuId
-func (r *TaobaoTbkSkuBestCouponAPIRequest) SetSkuId(_skuId int64) error {
-	r._skuId = _skuId
-	r.Set("sku_id", _skuId)
+func (r *TaobaotbkskubestcouponAPIRequest) SetSkuid(_skuid int64) error {
+	r._skuid = _skuid
+	r.Set("sku_id", _skuid)
 	return nil
 }
 
-// GetSkuId SkuId Getter
-func (r TaobaoTbkSkuBestCouponAPIRequest) GetSkuId() int64 {
-	return r._skuId
+// GetSkuid Skuid Getter
+func (r TaobaotbkskubestcouponAPIRequest) GetSkuid() int64 {
+	return r._skuid
 }
 
-// SetItemId is ItemId Setter
+// SetItemid is Itemid Setter
 // 商品ID
-func (r *TaobaoTbkSkuBestCouponAPIRequest) SetItemId(_itemId int64) error {
-	r._itemId = _itemId
-	r.Set("item_id", _itemId)
+func (r *TaobaotbkskubestcouponAPIRequest) SetItemid(_itemid int64) error {
+	r._itemid = _itemid
+	r.Set("item_id", _itemid)
 	return nil
 }
 
-// GetItemId ItemId Getter
-func (r TaobaoTbkSkuBestCouponAPIRequest) GetItemId() int64 {
-	return r._itemId
+// GetItemid Itemid Getter
+func (r TaobaotbkskubestcouponAPIRequest) GetItemid() int64 {
+	return r._itemid
 }

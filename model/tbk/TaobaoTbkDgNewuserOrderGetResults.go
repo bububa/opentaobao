@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaoTbkDgNewuserOrderGetResults 结构体
-type TaobaoTbkDgNewuserOrderGetResults struct {
+// TaobaotbkdgnewuserordergetResults 结构体
+type TaobaotbkdgnewuserordergetResults struct {
 	// data
-	Data *TaobaoTbkDgNewuserOrderGetData `json:"data,omitempty" xml:"data,omitempty"`
+	Data *TaobaotbkdgnewuserordergetData `json:"data,omitempty" xml:"data,omitempty"`
 }

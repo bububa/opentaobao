@@ -6,244 +6,244 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTbkCouponConvertAPIRequest 淘宝客-推广者-单品券高效转链 API请求
+// TaobaotbkcouponconvertAPIRequest 淘宝客-推广者-单品券高效转链 API请求
 // taobao.tbk.coupon.convert
 //
 // 单品券高效转链API
-type TaobaoTbkCouponConvertAPIRequest struct {
+type TaobaotbkcouponconvertAPIRequest struct {
 	model.Params
 	// 淘客商品id
-	_itemId string
+	_itemid string
 	// 渠道管理ID（如是主站选品推广场景，必须入参该字段，且bizSceneId字段需入参2-消费者比价场景，否则二次转链失败）
-	_relationId string
+	_relationid string
 	// 会员运营ID
-	_specialId string
+	_specialid string
 	// 淘宝客外部用户标记，如自身系统账户ID；微信ID等
-	_externalId string
+	_externalid string
 	// 团长与下游渠道合作的特殊标识，用于统计渠道推广效果
 	_xid string
 	// 1-动态ID转链场景，2-消费者比价场景，3-商品库导购场景（不填默认为1）
-	_bizSceneId string
+	_bizsceneid string
 	// 1-自购省，2-推广赚（代理模式专属ID，代理模式必填，其它模式不用填写本字段）
-	_promotionType string
+	_promotiontype string
 	// 推广位id，mm_xx_xx_xx pid三段式中的第三段
-	_adzoneId int64
+	_adzoneid int64
 	// 1：PC，2：无线，默认：１
 	_platform int64
 	// 会员人群ID，用于统计人群推广效果
-	_ucrowdId int64
+	_ucrowdid int64
 	// 是否获取前N件佣金	,0-否，1-是,其他值-否
-	_getTopnRate int64
+	_gettopnrate int64
 	// 是否需要获取小程序链接，需要设置1。(暂未对外开放)
-	_miniProgramLink int64
+	_miniprogramlink int64
 	// 商品库服务账户(场景id3权限对应的memberid）
-	_manageItemPubId int64
+	_manageitempubid int64
 	// 入参商品id下的skuid，传入时会透传至转链结果url中
-	_skuId int64
+	_skuid int64
 }
 
-// NewTaobaoTbkCouponConvertRequest 初始化TaobaoTbkCouponConvertAPIRequest对象
-func NewTaobaoTbkCouponConvertRequest() *TaobaoTbkCouponConvertAPIRequest {
-	return &TaobaoTbkCouponConvertAPIRequest{
+// NewTaobaotbkcouponconvertRequest 初始化TaobaotbkcouponconvertAPIRequest对象
+func NewTaobaotbkcouponconvertRequest() *TaobaotbkcouponconvertAPIRequest {
+	return &TaobaotbkcouponconvertAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoTbkCouponConvertAPIRequest) GetApiMethodName() string {
+func (r TaobaotbkcouponconvertAPIRequest) GetApiMethodName() string {
 	return "taobao.tbk.coupon.convert"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTbkCouponConvertAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaotbkcouponconvertAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoTbkCouponConvertAPIRequest) GetRawParams() model.Params {
+func (r TaobaotbkcouponconvertAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetItemId is ItemId Setter
+// SetItemid is Itemid Setter
 // 淘客商品id
-func (r *TaobaoTbkCouponConvertAPIRequest) SetItemId(_itemId string) error {
-	r._itemId = _itemId
-	r.Set("item_id", _itemId)
+func (r *TaobaotbkcouponconvertAPIRequest) SetItemid(_itemid string) error {
+	r._itemid = _itemid
+	r.Set("item_id", _itemid)
 	return nil
 }
 
-// GetItemId ItemId Getter
-func (r TaobaoTbkCouponConvertAPIRequest) GetItemId() string {
-	return r._itemId
+// GetItemid Itemid Getter
+func (r TaobaotbkcouponconvertAPIRequest) GetItemid() string {
+	return r._itemid
 }
 
-// SetRelationId is RelationId Setter
+// SetRelationid is Relationid Setter
 // 渠道管理ID（如是主站选品推广场景，必须入参该字段，且bizSceneId字段需入参2-消费者比价场景，否则二次转链失败）
-func (r *TaobaoTbkCouponConvertAPIRequest) SetRelationId(_relationId string) error {
-	r._relationId = _relationId
-	r.Set("relation_id", _relationId)
+func (r *TaobaotbkcouponconvertAPIRequest) SetRelationid(_relationid string) error {
+	r._relationid = _relationid
+	r.Set("relation_id", _relationid)
 	return nil
 }
 
-// GetRelationId RelationId Getter
-func (r TaobaoTbkCouponConvertAPIRequest) GetRelationId() string {
-	return r._relationId
+// GetRelationid Relationid Getter
+func (r TaobaotbkcouponconvertAPIRequest) GetRelationid() string {
+	return r._relationid
 }
 
-// SetSpecialId is SpecialId Setter
+// SetSpecialid is Specialid Setter
 // 会员运营ID
-func (r *TaobaoTbkCouponConvertAPIRequest) SetSpecialId(_specialId string) error {
-	r._specialId = _specialId
-	r.Set("special_id", _specialId)
+func (r *TaobaotbkcouponconvertAPIRequest) SetSpecialid(_specialid string) error {
+	r._specialid = _specialid
+	r.Set("special_id", _specialid)
 	return nil
 }
 
-// GetSpecialId SpecialId Getter
-func (r TaobaoTbkCouponConvertAPIRequest) GetSpecialId() string {
-	return r._specialId
+// GetSpecialid Specialid Getter
+func (r TaobaotbkcouponconvertAPIRequest) GetSpecialid() string {
+	return r._specialid
 }
 
-// SetExternalId is ExternalId Setter
+// SetExternalid is Externalid Setter
 // 淘宝客外部用户标记，如自身系统账户ID；微信ID等
-func (r *TaobaoTbkCouponConvertAPIRequest) SetExternalId(_externalId string) error {
-	r._externalId = _externalId
-	r.Set("external_id", _externalId)
+func (r *TaobaotbkcouponconvertAPIRequest) SetExternalid(_externalid string) error {
+	r._externalid = _externalid
+	r.Set("external_id", _externalid)
 	return nil
 }
 
-// GetExternalId ExternalId Getter
-func (r TaobaoTbkCouponConvertAPIRequest) GetExternalId() string {
-	return r._externalId
+// GetExternalid Externalid Getter
+func (r TaobaotbkcouponconvertAPIRequest) GetExternalid() string {
+	return r._externalid
 }
 
 // SetXid is Xid Setter
 // 团长与下游渠道合作的特殊标识，用于统计渠道推广效果
-func (r *TaobaoTbkCouponConvertAPIRequest) SetXid(_xid string) error {
+func (r *TaobaotbkcouponconvertAPIRequest) SetXid(_xid string) error {
 	r._xid = _xid
 	r.Set("xid", _xid)
 	return nil
 }
 
 // GetXid Xid Getter
-func (r TaobaoTbkCouponConvertAPIRequest) GetXid() string {
+func (r TaobaotbkcouponconvertAPIRequest) GetXid() string {
 	return r._xid
 }
 
-// SetBizSceneId is BizSceneId Setter
+// SetBizsceneid is Bizsceneid Setter
 // 1-动态ID转链场景，2-消费者比价场景，3-商品库导购场景（不填默认为1）
-func (r *TaobaoTbkCouponConvertAPIRequest) SetBizSceneId(_bizSceneId string) error {
-	r._bizSceneId = _bizSceneId
-	r.Set("biz_scene_id", _bizSceneId)
+func (r *TaobaotbkcouponconvertAPIRequest) SetBizsceneid(_bizsceneid string) error {
+	r._bizsceneid = _bizsceneid
+	r.Set("biz_scene_id", _bizsceneid)
 	return nil
 }
 
-// GetBizSceneId BizSceneId Getter
-func (r TaobaoTbkCouponConvertAPIRequest) GetBizSceneId() string {
-	return r._bizSceneId
+// GetBizsceneid Bizsceneid Getter
+func (r TaobaotbkcouponconvertAPIRequest) GetBizsceneid() string {
+	return r._bizsceneid
 }
 
-// SetPromotionType is PromotionType Setter
+// SetPromotiontype is Promotiontype Setter
 // 1-自购省，2-推广赚（代理模式专属ID，代理模式必填，其它模式不用填写本字段）
-func (r *TaobaoTbkCouponConvertAPIRequest) SetPromotionType(_promotionType string) error {
-	r._promotionType = _promotionType
-	r.Set("promotion_type", _promotionType)
+func (r *TaobaotbkcouponconvertAPIRequest) SetPromotiontype(_promotiontype string) error {
+	r._promotiontype = _promotiontype
+	r.Set("promotion_type", _promotiontype)
 	return nil
 }
 
-// GetPromotionType PromotionType Getter
-func (r TaobaoTbkCouponConvertAPIRequest) GetPromotionType() string {
-	return r._promotionType
+// GetPromotiontype Promotiontype Getter
+func (r TaobaotbkcouponconvertAPIRequest) GetPromotiontype() string {
+	return r._promotiontype
 }
 
-// SetAdzoneId is AdzoneId Setter
+// SetAdzoneid is Adzoneid Setter
 // 推广位id，mm_xx_xx_xx pid三段式中的第三段
-func (r *TaobaoTbkCouponConvertAPIRequest) SetAdzoneId(_adzoneId int64) error {
-	r._adzoneId = _adzoneId
-	r.Set("adzone_id", _adzoneId)
+func (r *TaobaotbkcouponconvertAPIRequest) SetAdzoneid(_adzoneid int64) error {
+	r._adzoneid = _adzoneid
+	r.Set("adzone_id", _adzoneid)
 	return nil
 }
 
-// GetAdzoneId AdzoneId Getter
-func (r TaobaoTbkCouponConvertAPIRequest) GetAdzoneId() int64 {
-	return r._adzoneId
+// GetAdzoneid Adzoneid Getter
+func (r TaobaotbkcouponconvertAPIRequest) GetAdzoneid() int64 {
+	return r._adzoneid
 }
 
 // SetPlatform is Platform Setter
 // 1：PC，2：无线，默认：１
-func (r *TaobaoTbkCouponConvertAPIRequest) SetPlatform(_platform int64) error {
+func (r *TaobaotbkcouponconvertAPIRequest) SetPlatform(_platform int64) error {
 	r._platform = _platform
 	r.Set("platform", _platform)
 	return nil
 }
 
 // GetPlatform Platform Getter
-func (r TaobaoTbkCouponConvertAPIRequest) GetPlatform() int64 {
+func (r TaobaotbkcouponconvertAPIRequest) GetPlatform() int64 {
 	return r._platform
 }
 
-// SetUcrowdId is UcrowdId Setter
+// SetUcrowdid is Ucrowdid Setter
 // 会员人群ID，用于统计人群推广效果
-func (r *TaobaoTbkCouponConvertAPIRequest) SetUcrowdId(_ucrowdId int64) error {
-	r._ucrowdId = _ucrowdId
-	r.Set("ucrowd_id", _ucrowdId)
+func (r *TaobaotbkcouponconvertAPIRequest) SetUcrowdid(_ucrowdid int64) error {
+	r._ucrowdid = _ucrowdid
+	r.Set("ucrowd_id", _ucrowdid)
 	return nil
 }
 
-// GetUcrowdId UcrowdId Getter
-func (r TaobaoTbkCouponConvertAPIRequest) GetUcrowdId() int64 {
-	return r._ucrowdId
+// GetUcrowdid Ucrowdid Getter
+func (r TaobaotbkcouponconvertAPIRequest) GetUcrowdid() int64 {
+	return r._ucrowdid
 }
 
-// SetGetTopnRate is GetTopnRate Setter
+// SetGettopnrate is Gettopnrate Setter
 // 是否获取前N件佣金	,0-否，1-是,其他值-否
-func (r *TaobaoTbkCouponConvertAPIRequest) SetGetTopnRate(_getTopnRate int64) error {
-	r._getTopnRate = _getTopnRate
-	r.Set("get_topn_rate", _getTopnRate)
+func (r *TaobaotbkcouponconvertAPIRequest) SetGettopnrate(_gettopnrate int64) error {
+	r._gettopnrate = _gettopnrate
+	r.Set("get_topn_rate", _gettopnrate)
 	return nil
 }
 
-// GetGetTopnRate GetTopnRate Getter
-func (r TaobaoTbkCouponConvertAPIRequest) GetGetTopnRate() int64 {
-	return r._getTopnRate
+// GetGettopnrate Gettopnrate Getter
+func (r TaobaotbkcouponconvertAPIRequest) GetGettopnrate() int64 {
+	return r._gettopnrate
 }
 
-// SetMiniProgramLink is MiniProgramLink Setter
+// SetMiniprogramlink is Miniprogramlink Setter
 // 是否需要获取小程序链接，需要设置1。(暂未对外开放)
-func (r *TaobaoTbkCouponConvertAPIRequest) SetMiniProgramLink(_miniProgramLink int64) error {
-	r._miniProgramLink = _miniProgramLink
-	r.Set("mini_program_link", _miniProgramLink)
+func (r *TaobaotbkcouponconvertAPIRequest) SetMiniprogramlink(_miniprogramlink int64) error {
+	r._miniprogramlink = _miniprogramlink
+	r.Set("mini_program_link", _miniprogramlink)
 	return nil
 }
 
-// GetMiniProgramLink MiniProgramLink Getter
-func (r TaobaoTbkCouponConvertAPIRequest) GetMiniProgramLink() int64 {
-	return r._miniProgramLink
+// GetMiniprogramlink Miniprogramlink Getter
+func (r TaobaotbkcouponconvertAPIRequest) GetMiniprogramlink() int64 {
+	return r._miniprogramlink
 }
 
-// SetManageItemPubId is ManageItemPubId Setter
+// SetManageitempubid is Manageitempubid Setter
 // 商品库服务账户(场景id3权限对应的memberid）
-func (r *TaobaoTbkCouponConvertAPIRequest) SetManageItemPubId(_manageItemPubId int64) error {
-	r._manageItemPubId = _manageItemPubId
-	r.Set("manage_item_pub_id", _manageItemPubId)
+func (r *TaobaotbkcouponconvertAPIRequest) SetManageitempubid(_manageitempubid int64) error {
+	r._manageitempubid = _manageitempubid
+	r.Set("manage_item_pub_id", _manageitempubid)
 	return nil
 }
 
-// GetManageItemPubId ManageItemPubId Getter
-func (r TaobaoTbkCouponConvertAPIRequest) GetManageItemPubId() int64 {
-	return r._manageItemPubId
+// GetManageitempubid Manageitempubid Getter
+func (r TaobaotbkcouponconvertAPIRequest) GetManageitempubid() int64 {
+	return r._manageitempubid
 }
 
-// SetSkuId is SkuId Setter
+// SetSkuid is Skuid Setter
 // 入参商品id下的skuid，传入时会透传至转链结果url中
-func (r *TaobaoTbkCouponConvertAPIRequest) SetSkuId(_skuId int64) error {
-	r._skuId = _skuId
-	r.Set("sku_id", _skuId)
+func (r *TaobaotbkcouponconvertAPIRequest) SetSkuid(_skuid int64) error {
+	r._skuid = _skuid
+	r.Set("sku_id", _skuid)
 	return nil
 }
 
-// GetSkuId SkuId Getter
-func (r TaobaoTbkCouponConvertAPIRequest) GetSkuId() int64 {
-	return r._skuId
+// GetSkuid Skuid Getter
+func (r TaobaotbkcouponconvertAPIRequest) GetSkuid() int64 {
+	return r._skuid
 }

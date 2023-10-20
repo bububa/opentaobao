@@ -1,11 +1,11 @@
 package tbk
 
-// TaobaoTbkScVegasSendReportResult 结构体
-type TaobaoTbkScVegasSendReportResult struct {
+// TaobaotbkscvegassendreportResult 结构体
+type TaobaotbkscvegassendreportResult struct {
 	// msgInfo
-	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
+	Msginfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// msgCode
-	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
+	Msgcode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// model
 	Model *RightsSendRptDto `json:"model,omitempty" xml:"model,omitempty"`
 	// 是否成功

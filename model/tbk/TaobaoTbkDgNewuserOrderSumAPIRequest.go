@@ -6,124 +6,124 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTbkDgNewuserOrderSumAPIRequest 淘宝客-推广者-拉新活动对应数据查询 API请求
+// TaobaotbkdgnewuserordersumAPIRequest 淘宝客-推广者-拉新活动对应数据查询 API请求
 // taobao.tbk.dg.newuser.order.sum
 //
 // 拉新活动汇总API
-type TaobaoTbkDgNewuserOrderSumAPIRequest struct {
+type TaobaotbkdgnewuserordersumAPIRequest struct {
 	model.Params
 	// 活动id， 活动名称与活动ID列表，请参见https://tbk.bbs.taobao.com/detail.html?appId=45301&postId=8599277
-	_activityId string
+	_activityid string
 	// 结算月份
-	_settleMonth string
+	_settlemonth string
 	// 页大小，默认20，1~100
-	_pageSize int64
+	_pagesize int64
 	// mm_xxx_xxx_xxx的第三位
-	_adzoneId int64
+	_adzoneid int64
 	// 页码，默认1
-	_pageNo int64
+	_pageno int64
 	// mm_xxx_xxx_xxx的第二位
-	_siteId int64
+	_siteid int64
 }
 
-// NewTaobaoTbkDgNewuserOrderSumRequest 初始化TaobaoTbkDgNewuserOrderSumAPIRequest对象
-func NewTaobaoTbkDgNewuserOrderSumRequest() *TaobaoTbkDgNewuserOrderSumAPIRequest {
-	return &TaobaoTbkDgNewuserOrderSumAPIRequest{
+// NewTaobaotbkdgnewuserordersumRequest 初始化TaobaotbkdgnewuserordersumAPIRequest对象
+func NewTaobaotbkdgnewuserordersumRequest() *TaobaotbkdgnewuserordersumAPIRequest {
+	return &TaobaotbkdgnewuserordersumAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetApiMethodName() string {
+func (r TaobaotbkdgnewuserordersumAPIRequest) GetApiMethodName() string {
 	return "taobao.tbk.dg.newuser.order.sum"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaotbkdgnewuserordersumAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetRawParams() model.Params {
+func (r TaobaotbkdgnewuserordersumAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetActivityId is ActivityId Setter
+// SetActivityid is Activityid Setter
 // 活动id， 活动名称与活动ID列表，请参见https://tbk.bbs.taobao.com/detail.html?appId=45301&amp;postId=8599277
-func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetActivityId(_activityId string) error {
-	r._activityId = _activityId
-	r.Set("activity_id", _activityId)
+func (r *TaobaotbkdgnewuserordersumAPIRequest) SetActivityid(_activityid string) error {
+	r._activityid = _activityid
+	r.Set("activity_id", _activityid)
 	return nil
 }
 
-// GetActivityId ActivityId Getter
-func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetActivityId() string {
-	return r._activityId
+// GetActivityid Activityid Getter
+func (r TaobaotbkdgnewuserordersumAPIRequest) GetActivityid() string {
+	return r._activityid
 }
 
-// SetSettleMonth is SettleMonth Setter
+// SetSettlemonth is Settlemonth Setter
 // 结算月份
-func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetSettleMonth(_settleMonth string) error {
-	r._settleMonth = _settleMonth
-	r.Set("settle_month", _settleMonth)
+func (r *TaobaotbkdgnewuserordersumAPIRequest) SetSettlemonth(_settlemonth string) error {
+	r._settlemonth = _settlemonth
+	r.Set("settle_month", _settlemonth)
 	return nil
 }
 
-// GetSettleMonth SettleMonth Getter
-func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetSettleMonth() string {
-	return r._settleMonth
+// GetSettlemonth Settlemonth Getter
+func (r TaobaotbkdgnewuserordersumAPIRequest) GetSettlemonth() string {
+	return r._settlemonth
 }
 
-// SetPageSize is PageSize Setter
+// SetPagesize is Pagesize Setter
 // 页大小，默认20，1~100
-func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
+func (r *TaobaotbkdgnewuserordersumAPIRequest) SetPagesize(_pagesize int64) error {
+	r._pagesize = _pagesize
+	r.Set("page_size", _pagesize)
 	return nil
 }
 
-// GetPageSize PageSize Getter
-func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetPageSize() int64 {
-	return r._pageSize
+// GetPagesize Pagesize Getter
+func (r TaobaotbkdgnewuserordersumAPIRequest) GetPagesize() int64 {
+	return r._pagesize
 }
 
-// SetAdzoneId is AdzoneId Setter
+// SetAdzoneid is Adzoneid Setter
 // mm_xxx_xxx_xxx的第三位
-func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetAdzoneId(_adzoneId int64) error {
-	r._adzoneId = _adzoneId
-	r.Set("adzone_id", _adzoneId)
+func (r *TaobaotbkdgnewuserordersumAPIRequest) SetAdzoneid(_adzoneid int64) error {
+	r._adzoneid = _adzoneid
+	r.Set("adzone_id", _adzoneid)
 	return nil
 }
 
-// GetAdzoneId AdzoneId Getter
-func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetAdzoneId() int64 {
-	return r._adzoneId
+// GetAdzoneid Adzoneid Getter
+func (r TaobaotbkdgnewuserordersumAPIRequest) GetAdzoneid() int64 {
+	return r._adzoneid
 }
 
-// SetPageNo is PageNo Setter
+// SetPageno is Pageno Setter
 // 页码，默认1
-func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetPageNo(_pageNo int64) error {
-	r._pageNo = _pageNo
-	r.Set("page_no", _pageNo)
+func (r *TaobaotbkdgnewuserordersumAPIRequest) SetPageno(_pageno int64) error {
+	r._pageno = _pageno
+	r.Set("page_no", _pageno)
 	return nil
 }
 
-// GetPageNo PageNo Getter
-func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetPageNo() int64 {
-	return r._pageNo
+// GetPageno Pageno Getter
+func (r TaobaotbkdgnewuserordersumAPIRequest) GetPageno() int64 {
+	return r._pageno
 }
 
-// SetSiteId is SiteId Setter
+// SetSiteid is Siteid Setter
 // mm_xxx_xxx_xxx的第二位
-func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetSiteId(_siteId int64) error {
-	r._siteId = _siteId
-	r.Set("site_id", _siteId)
+func (r *TaobaotbkdgnewuserordersumAPIRequest) SetSiteid(_siteid int64) error {
+	r._siteid = _siteid
+	r.Set("site_id", _siteid)
 	return nil
 }
 
-// GetSiteId SiteId Getter
-func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetSiteId() int64 {
-	return r._siteId
+// GetSiteid Siteid Getter
+func (r TaobaotbkdgnewuserordersumAPIRequest) GetSiteid() int64 {
+	return r._siteid
 }

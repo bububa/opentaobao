@@ -6,94 +6,94 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTbkScUcrowdMemberAddAPIRequest 淘宝客-服务商-上传人群数据 API请求
+// TaobaotbkscucrowdmemberaddAPIRequest 淘宝客-服务商-上传人群数据 API请求
 // taobao.tbk.sc.ucrowd.member.add
 //
 // 服务商使用。支持淘宝客上传人群标签id对应的会员列表，支持全量和增量多种数据更新方式。
-type TaobaoTbkScUcrowdMemberAddAPIRequest struct {
+type TaobaotbkscucrowdmemberaddAPIRequest struct {
 	model.Params
 	// 成员列表
-	_accountList []string
+	_accountlist []string
 	// 成员账号类型，1:sid
-	_accountType int64
+	_accounttype int64
 	// 人群id
-	_ucrowdId int64
+	_ucrowdid int64
 	// 更新方式，1:增量更新，2:全量更新
-	_editType int64
+	_edittype int64
 }
 
-// NewTaobaoTbkScUcrowdMemberAddRequest 初始化TaobaoTbkScUcrowdMemberAddAPIRequest对象
-func NewTaobaoTbkScUcrowdMemberAddRequest() *TaobaoTbkScUcrowdMemberAddAPIRequest {
-	return &TaobaoTbkScUcrowdMemberAddAPIRequest{
+// NewTaobaotbkscucrowdmemberaddRequest 初始化TaobaotbkscucrowdmemberaddAPIRequest对象
+func NewTaobaotbkscucrowdmemberaddRequest() *TaobaotbkscucrowdmemberaddAPIRequest {
+	return &TaobaotbkscucrowdmemberaddAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoTbkScUcrowdMemberAddAPIRequest) GetApiMethodName() string {
+func (r TaobaotbkscucrowdmemberaddAPIRequest) GetApiMethodName() string {
 	return "taobao.tbk.sc.ucrowd.member.add"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTbkScUcrowdMemberAddAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaotbkscucrowdmemberaddAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoTbkScUcrowdMemberAddAPIRequest) GetRawParams() model.Params {
+func (r TaobaotbkscucrowdmemberaddAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetAccountList is AccountList Setter
+// SetAccountlist is Accountlist Setter
 // 成员列表
-func (r *TaobaoTbkScUcrowdMemberAddAPIRequest) SetAccountList(_accountList []string) error {
-	r._accountList = _accountList
-	r.Set("account_list", _accountList)
+func (r *TaobaotbkscucrowdmemberaddAPIRequest) SetAccountlist(_accountlist []string) error {
+	r._accountlist = _accountlist
+	r.Set("account_list", _accountlist)
 	return nil
 }
 
-// GetAccountList AccountList Getter
-func (r TaobaoTbkScUcrowdMemberAddAPIRequest) GetAccountList() []string {
-	return r._accountList
+// GetAccountlist Accountlist Getter
+func (r TaobaotbkscucrowdmemberaddAPIRequest) GetAccountlist() []string {
+	return r._accountlist
 }
 
-// SetAccountType is AccountType Setter
+// SetAccounttype is Accounttype Setter
 // 成员账号类型，1:sid
-func (r *TaobaoTbkScUcrowdMemberAddAPIRequest) SetAccountType(_accountType int64) error {
-	r._accountType = _accountType
-	r.Set("account_type", _accountType)
+func (r *TaobaotbkscucrowdmemberaddAPIRequest) SetAccounttype(_accounttype int64) error {
+	r._accounttype = _accounttype
+	r.Set("account_type", _accounttype)
 	return nil
 }
 
-// GetAccountType AccountType Getter
-func (r TaobaoTbkScUcrowdMemberAddAPIRequest) GetAccountType() int64 {
-	return r._accountType
+// GetAccounttype Accounttype Getter
+func (r TaobaotbkscucrowdmemberaddAPIRequest) GetAccounttype() int64 {
+	return r._accounttype
 }
 
-// SetUcrowdId is UcrowdId Setter
+// SetUcrowdid is Ucrowdid Setter
 // 人群id
-func (r *TaobaoTbkScUcrowdMemberAddAPIRequest) SetUcrowdId(_ucrowdId int64) error {
-	r._ucrowdId = _ucrowdId
-	r.Set("ucrowd_id", _ucrowdId)
+func (r *TaobaotbkscucrowdmemberaddAPIRequest) SetUcrowdid(_ucrowdid int64) error {
+	r._ucrowdid = _ucrowdid
+	r.Set("ucrowd_id", _ucrowdid)
 	return nil
 }
 
-// GetUcrowdId UcrowdId Getter
-func (r TaobaoTbkScUcrowdMemberAddAPIRequest) GetUcrowdId() int64 {
-	return r._ucrowdId
+// GetUcrowdid Ucrowdid Getter
+func (r TaobaotbkscucrowdmemberaddAPIRequest) GetUcrowdid() int64 {
+	return r._ucrowdid
 }
 
-// SetEditType is EditType Setter
+// SetEdittype is Edittype Setter
 // 更新方式，1:增量更新，2:全量更新
-func (r *TaobaoTbkScUcrowdMemberAddAPIRequest) SetEditType(_editType int64) error {
-	r._editType = _editType
-	r.Set("edit_type", _editType)
+func (r *TaobaotbkscucrowdmemberaddAPIRequest) SetEdittype(_edittype int64) error {
+	r._edittype = _edittype
+	r.Set("edit_type", _edittype)
 	return nil
 }
 
-// GetEditType EditType Getter
-func (r TaobaoTbkScUcrowdMemberAddAPIRequest) GetEditType() int64 {
-	return r._editType
+// GetEdittype Edittype Getter
+func (r TaobaotbkscucrowdmemberaddAPIRequest) GetEdittype() int64 {
+	return r._edittype
 }

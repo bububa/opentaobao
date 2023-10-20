@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTbkTpwdCreateAPIRequest 淘宝客-公用-淘口令生成 API请求
+// TaobaotbktpwdcreateAPIRequest 淘宝客-公用-淘口令生成 API请求
 // taobao.tbk.tpwd.create
 //
 // 提供淘口令生成接口。提交需要生成淘口令的内容、logo、url等参数，生成淘口令，其中关键信息为￥SADadW￥，后续可基于淘口令进行文案包装组装用于传播。
-type TaobaoTbkTpwdCreateAPIRequest struct {
+type TaobaotbktpwdcreateAPIRequest struct {
 	model.Params
 	// 联盟官方渠道获取的淘客推广链接，请注意，不要随意篡改官方生成的链接，否则可能无法生成淘口令
 	_url string
@@ -21,94 +21,94 @@ type TaobaoTbkTpwdCreateAPIRequest struct {
 	// 兼容旧版本api参数，无实际作用
 	_ext string
 	// 兼容旧版本api参数，无实际作用
-	_userId string
+	_userid string
 }
 
-// NewTaobaoTbkTpwdCreateRequest 初始化TaobaoTbkTpwdCreateAPIRequest对象
-func NewTaobaoTbkTpwdCreateRequest() *TaobaoTbkTpwdCreateAPIRequest {
-	return &TaobaoTbkTpwdCreateAPIRequest{
+// NewTaobaotbktpwdcreateRequest 初始化TaobaotbktpwdcreateAPIRequest对象
+func NewTaobaotbktpwdcreateRequest() *TaobaotbktpwdcreateAPIRequest {
+	return &TaobaotbktpwdcreateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoTbkTpwdCreateAPIRequest) GetApiMethodName() string {
+func (r TaobaotbktpwdcreateAPIRequest) GetApiMethodName() string {
 	return "taobao.tbk.tpwd.create"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTbkTpwdCreateAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaotbktpwdcreateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoTbkTpwdCreateAPIRequest) GetRawParams() model.Params {
+func (r TaobaotbktpwdcreateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetUrl is Url Setter
 // 联盟官方渠道获取的淘客推广链接，请注意，不要随意篡改官方生成的链接，否则可能无法生成淘口令
-func (r *TaobaoTbkTpwdCreateAPIRequest) SetUrl(_url string) error {
+func (r *TaobaotbktpwdcreateAPIRequest) SetUrl(_url string) error {
 	r._url = _url
 	r.Set("url", _url)
 	return nil
 }
 
 // GetUrl Url Getter
-func (r TaobaoTbkTpwdCreateAPIRequest) GetUrl() string {
+func (r TaobaotbktpwdcreateAPIRequest) GetUrl() string {
 	return r._url
 }
 
 // SetText is Text Setter
 // 兼容旧版本api参数，无实际作用
-func (r *TaobaoTbkTpwdCreateAPIRequest) SetText(_text string) error {
+func (r *TaobaotbktpwdcreateAPIRequest) SetText(_text string) error {
 	r._text = _text
 	r.Set("text", _text)
 	return nil
 }
 
 // GetText Text Getter
-func (r TaobaoTbkTpwdCreateAPIRequest) GetText() string {
+func (r TaobaotbktpwdcreateAPIRequest) GetText() string {
 	return r._text
 }
 
 // SetLogo is Logo Setter
 // 兼容旧版本api参数，无实际作用
-func (r *TaobaoTbkTpwdCreateAPIRequest) SetLogo(_logo string) error {
+func (r *TaobaotbktpwdcreateAPIRequest) SetLogo(_logo string) error {
 	r._logo = _logo
 	r.Set("logo", _logo)
 	return nil
 }
 
 // GetLogo Logo Getter
-func (r TaobaoTbkTpwdCreateAPIRequest) GetLogo() string {
+func (r TaobaotbktpwdcreateAPIRequest) GetLogo() string {
 	return r._logo
 }
 
 // SetExt is Ext Setter
 // 兼容旧版本api参数，无实际作用
-func (r *TaobaoTbkTpwdCreateAPIRequest) SetExt(_ext string) error {
+func (r *TaobaotbktpwdcreateAPIRequest) SetExt(_ext string) error {
 	r._ext = _ext
 	r.Set("ext", _ext)
 	return nil
 }
 
 // GetExt Ext Getter
-func (r TaobaoTbkTpwdCreateAPIRequest) GetExt() string {
+func (r TaobaotbktpwdcreateAPIRequest) GetExt() string {
 	return r._ext
 }
 
-// SetUserId is UserId Setter
+// SetUserid is Userid Setter
 // 兼容旧版本api参数，无实际作用
-func (r *TaobaoTbkTpwdCreateAPIRequest) SetUserId(_userId string) error {
-	r._userId = _userId
-	r.Set("user_id", _userId)
+func (r *TaobaotbktpwdcreateAPIRequest) SetUserid(_userid string) error {
+	r._userid = _userid
+	r.Set("user_id", _userid)
 	return nil
 }
 
-// GetUserId UserId Getter
-func (r TaobaoTbkTpwdCreateAPIRequest) GetUserId() string {
-	return r._userId
+// GetUserid Userid Getter
+func (r TaobaotbktpwdcreateAPIRequest) GetUserid() string {
+	return r._userid
 }

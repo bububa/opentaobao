@@ -6,109 +6,109 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTbkScRelationRecordAPIRequest 淘宝客-服务商-私域会员标记 API请求
+// TaobaotbkscrelationrecordAPIRequest 淘宝客-服务商-私域会员标记 API请求
 // taobao.tbk.sc.relation.record
 //
 // 服务商使用。支持淘宝客通过入参私域外部ID，获得待私域会员可标记的链接，会员打开该链接后，可帮助媒体自动生成会员运营id进行标记，同时自动跳转到推广落地页。
-type TaobaoTbkScRelationRecordAPIRequest struct {
+type TaobaotbkscrelationrecordAPIRequest struct {
 	model.Params
 	// 淘宝客自有私域用户自定义标记，如自有私域系统账号标记等
-	_externalId string
+	_externalid string
 	// 会员备案授权后，跳转的目标页地址
-	_redirectUrl string
+	_redirecturl string
 	// 淘宝客其他平台私域用户自定义标记，1-微信、2-微博、3-抖音、4-快手、5-QQ，0-其他
-	_externalType int64
+	_externaltype int64
 	// 授权类型，选2时可用于更新外部用户标记，默认1：1-新绑，2-更新
-	_opType int64
+	_optype int64
 	// 人群标签ID，用户备案授权后会自动添加到该人群
-	_ucrowdId int64
+	_ucrowdid int64
 }
 
-// NewTaobaoTbkScRelationRecordRequest 初始化TaobaoTbkScRelationRecordAPIRequest对象
-func NewTaobaoTbkScRelationRecordRequest() *TaobaoTbkScRelationRecordAPIRequest {
-	return &TaobaoTbkScRelationRecordAPIRequest{
+// NewTaobaotbkscrelationrecordRequest 初始化TaobaotbkscrelationrecordAPIRequest对象
+func NewTaobaotbkscrelationrecordRequest() *TaobaotbkscrelationrecordAPIRequest {
+	return &TaobaotbkscrelationrecordAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoTbkScRelationRecordAPIRequest) GetApiMethodName() string {
+func (r TaobaotbkscrelationrecordAPIRequest) GetApiMethodName() string {
 	return "taobao.tbk.sc.relation.record"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTbkScRelationRecordAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaotbkscrelationrecordAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoTbkScRelationRecordAPIRequest) GetRawParams() model.Params {
+func (r TaobaotbkscrelationrecordAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetExternalId is ExternalId Setter
+// SetExternalid is Externalid Setter
 // 淘宝客自有私域用户自定义标记，如自有私域系统账号标记等
-func (r *TaobaoTbkScRelationRecordAPIRequest) SetExternalId(_externalId string) error {
-	r._externalId = _externalId
-	r.Set("external_id", _externalId)
+func (r *TaobaotbkscrelationrecordAPIRequest) SetExternalid(_externalid string) error {
+	r._externalid = _externalid
+	r.Set("external_id", _externalid)
 	return nil
 }
 
-// GetExternalId ExternalId Getter
-func (r TaobaoTbkScRelationRecordAPIRequest) GetExternalId() string {
-	return r._externalId
+// GetExternalid Externalid Getter
+func (r TaobaotbkscrelationrecordAPIRequest) GetExternalid() string {
+	return r._externalid
 }
 
-// SetRedirectUrl is RedirectUrl Setter
+// SetRedirecturl is Redirecturl Setter
 // 会员备案授权后，跳转的目标页地址
-func (r *TaobaoTbkScRelationRecordAPIRequest) SetRedirectUrl(_redirectUrl string) error {
-	r._redirectUrl = _redirectUrl
-	r.Set("redirect_url", _redirectUrl)
+func (r *TaobaotbkscrelationrecordAPIRequest) SetRedirecturl(_redirecturl string) error {
+	r._redirecturl = _redirecturl
+	r.Set("redirect_url", _redirecturl)
 	return nil
 }
 
-// GetRedirectUrl RedirectUrl Getter
-func (r TaobaoTbkScRelationRecordAPIRequest) GetRedirectUrl() string {
-	return r._redirectUrl
+// GetRedirecturl Redirecturl Getter
+func (r TaobaotbkscrelationrecordAPIRequest) GetRedirecturl() string {
+	return r._redirecturl
 }
 
-// SetExternalType is ExternalType Setter
+// SetExternaltype is Externaltype Setter
 // 淘宝客其他平台私域用户自定义标记，1-微信、2-微博、3-抖音、4-快手、5-QQ，0-其他
-func (r *TaobaoTbkScRelationRecordAPIRequest) SetExternalType(_externalType int64) error {
-	r._externalType = _externalType
-	r.Set("external_type", _externalType)
+func (r *TaobaotbkscrelationrecordAPIRequest) SetExternaltype(_externaltype int64) error {
+	r._externaltype = _externaltype
+	r.Set("external_type", _externaltype)
 	return nil
 }
 
-// GetExternalType ExternalType Getter
-func (r TaobaoTbkScRelationRecordAPIRequest) GetExternalType() int64 {
-	return r._externalType
+// GetExternaltype Externaltype Getter
+func (r TaobaotbkscrelationrecordAPIRequest) GetExternaltype() int64 {
+	return r._externaltype
 }
 
-// SetOpType is OpType Setter
+// SetOptype is Optype Setter
 // 授权类型，选2时可用于更新外部用户标记，默认1：1-新绑，2-更新
-func (r *TaobaoTbkScRelationRecordAPIRequest) SetOpType(_opType int64) error {
-	r._opType = _opType
-	r.Set("op_type", _opType)
+func (r *TaobaotbkscrelationrecordAPIRequest) SetOptype(_optype int64) error {
+	r._optype = _optype
+	r.Set("op_type", _optype)
 	return nil
 }
 
-// GetOpType OpType Getter
-func (r TaobaoTbkScRelationRecordAPIRequest) GetOpType() int64 {
-	return r._opType
+// GetOptype Optype Getter
+func (r TaobaotbkscrelationrecordAPIRequest) GetOptype() int64 {
+	return r._optype
 }
 
-// SetUcrowdId is UcrowdId Setter
+// SetUcrowdid is Ucrowdid Setter
 // 人群标签ID，用户备案授权后会自动添加到该人群
-func (r *TaobaoTbkScRelationRecordAPIRequest) SetUcrowdId(_ucrowdId int64) error {
-	r._ucrowdId = _ucrowdId
-	r.Set("ucrowd_id", _ucrowdId)
+func (r *TaobaotbkscrelationrecordAPIRequest) SetUcrowdid(_ucrowdid int64) error {
+	r._ucrowdid = _ucrowdid
+	r.Set("ucrowd_id", _ucrowdid)
 	return nil
 }
 
-// GetUcrowdId UcrowdId Getter
-func (r TaobaoTbkScRelationRecordAPIRequest) GetUcrowdId() int64 {
-	return r._ucrowdId
+// GetUcrowdid Ucrowdid Getter
+func (r TaobaotbkscrelationrecordAPIRequest) GetUcrowdid() int64 {
+	return r._ucrowdid
 }

@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaoTbkScUcrowdGetRpcResult 结构体
-type TaobaoTbkScUcrowdGetRpcResult struct {
+// TaobaotbkscucrowdgetRpcResult 结构体
+type TaobaotbkscucrowdgetRpcResult struct {
 	// 人群
 	Ucrowd *CrowdDto `json:"ucrowd,omitempty" xml:"ucrowd,omitempty"`
 }

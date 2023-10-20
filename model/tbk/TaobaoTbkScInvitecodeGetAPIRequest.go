@@ -6,79 +6,79 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTbkScInvitecodeGetAPIRequest 淘宝客-公用-私域用户邀请码生成 API请求
+// TaobaotbkscinvitecodegetAPIRequest 淘宝客-公用-私域用户邀请码生成 API请求
 // taobao.tbk.sc.invitecode.get
 //
 // 私域用户管理(即渠道管理或会员运营管理)功能中，通过此API可生成淘宝客自身的邀请码。
-type TaobaoTbkScInvitecodeGetAPIRequest struct {
+type TaobaotbkscinvitecodegetAPIRequest struct {
 	model.Params
 	// 渠道推广的物料类型
-	_relationApp string
+	_relationapp string
 	// 渠道关系ID
-	_relationId int64
+	_relationid int64
 	// 邀请码类型，1 - 渠道邀请，2 - 渠道裂变，3 -会员邀请
-	_codeType int64
+	_codetype int64
 }
 
-// NewTaobaoTbkScInvitecodeGetRequest 初始化TaobaoTbkScInvitecodeGetAPIRequest对象
-func NewTaobaoTbkScInvitecodeGetRequest() *TaobaoTbkScInvitecodeGetAPIRequest {
-	return &TaobaoTbkScInvitecodeGetAPIRequest{
+// NewTaobaotbkscinvitecodegetRequest 初始化TaobaotbkscinvitecodegetAPIRequest对象
+func NewTaobaotbkscinvitecodegetRequest() *TaobaotbkscinvitecodegetAPIRequest {
+	return &TaobaotbkscinvitecodegetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoTbkScInvitecodeGetAPIRequest) GetApiMethodName() string {
+func (r TaobaotbkscinvitecodegetAPIRequest) GetApiMethodName() string {
 	return "taobao.tbk.sc.invitecode.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTbkScInvitecodeGetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaotbkscinvitecodegetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoTbkScInvitecodeGetAPIRequest) GetRawParams() model.Params {
+func (r TaobaotbkscinvitecodegetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetRelationApp is RelationApp Setter
+// SetRelationapp is Relationapp Setter
 // 渠道推广的物料类型
-func (r *TaobaoTbkScInvitecodeGetAPIRequest) SetRelationApp(_relationApp string) error {
-	r._relationApp = _relationApp
-	r.Set("relation_app", _relationApp)
+func (r *TaobaotbkscinvitecodegetAPIRequest) SetRelationapp(_relationapp string) error {
+	r._relationapp = _relationapp
+	r.Set("relation_app", _relationapp)
 	return nil
 }
 
-// GetRelationApp RelationApp Getter
-func (r TaobaoTbkScInvitecodeGetAPIRequest) GetRelationApp() string {
-	return r._relationApp
+// GetRelationapp Relationapp Getter
+func (r TaobaotbkscinvitecodegetAPIRequest) GetRelationapp() string {
+	return r._relationapp
 }
 
-// SetRelationId is RelationId Setter
+// SetRelationid is Relationid Setter
 // 渠道关系ID
-func (r *TaobaoTbkScInvitecodeGetAPIRequest) SetRelationId(_relationId int64) error {
-	r._relationId = _relationId
-	r.Set("relation_id", _relationId)
+func (r *TaobaotbkscinvitecodegetAPIRequest) SetRelationid(_relationid int64) error {
+	r._relationid = _relationid
+	r.Set("relation_id", _relationid)
 	return nil
 }
 
-// GetRelationId RelationId Getter
-func (r TaobaoTbkScInvitecodeGetAPIRequest) GetRelationId() int64 {
-	return r._relationId
+// GetRelationid Relationid Getter
+func (r TaobaotbkscinvitecodegetAPIRequest) GetRelationid() int64 {
+	return r._relationid
 }
 
-// SetCodeType is CodeType Setter
+// SetCodetype is Codetype Setter
 // 邀请码类型，1 - 渠道邀请，2 - 渠道裂变，3 -会员邀请
-func (r *TaobaoTbkScInvitecodeGetAPIRequest) SetCodeType(_codeType int64) error {
-	r._codeType = _codeType
-	r.Set("code_type", _codeType)
+func (r *TaobaotbkscinvitecodegetAPIRequest) SetCodetype(_codetype int64) error {
+	r._codetype = _codetype
+	r.Set("code_type", _codetype)
 	return nil
 }
 
-// GetCodeType CodeType Getter
-func (r TaobaoTbkScInvitecodeGetAPIRequest) GetCodeType() int64 {
-	return r._codeType
+// GetCodetype Codetype Getter
+func (r TaobaotbkscinvitecodegetAPIRequest) GetCodetype() int64 {
+	return r._codetype
 }

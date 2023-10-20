@@ -6,64 +6,64 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTbkDgVegasTljReportAPIRequest 淘宝客-推广者-淘礼金效果数据 API请求
+// TaobaotbkdgvegastljreportAPIRequest 淘宝客-推广者-淘礼金效果数据 API请求
 // taobao.tbk.dg.vegas.tlj.report
 //
 // 淘宝客推广者可查询淘礼金发放和使用等效果数据，只提供近150天的数据
-type TaobaoTbkDgVegasTljReportAPIRequest struct {
+type TaobaotbkdgvegastljreportAPIRequest struct {
 	model.Params
 	// 创建淘礼金时返回的rightsId
-	_rightsId string
+	_rightsid string
 	// adzoneId
-	_adzoneId int64
+	_adzoneid int64
 }
 
-// NewTaobaoTbkDgVegasTljReportRequest 初始化TaobaoTbkDgVegasTljReportAPIRequest对象
-func NewTaobaoTbkDgVegasTljReportRequest() *TaobaoTbkDgVegasTljReportAPIRequest {
-	return &TaobaoTbkDgVegasTljReportAPIRequest{
+// NewTaobaotbkdgvegastljreportRequest 初始化TaobaotbkdgvegastljreportAPIRequest对象
+func NewTaobaotbkdgvegastljreportRequest() *TaobaotbkdgvegastljreportAPIRequest {
+	return &TaobaotbkdgvegastljreportAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoTbkDgVegasTljReportAPIRequest) GetApiMethodName() string {
+func (r TaobaotbkdgvegastljreportAPIRequest) GetApiMethodName() string {
 	return "taobao.tbk.dg.vegas.tlj.report"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTbkDgVegasTljReportAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaotbkdgvegastljreportAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoTbkDgVegasTljReportAPIRequest) GetRawParams() model.Params {
+func (r TaobaotbkdgvegastljreportAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
-// SetRightsId is RightsId Setter
+// SetRightsid is Rightsid Setter
 // 创建淘礼金时返回的rightsId
-func (r *TaobaoTbkDgVegasTljReportAPIRequest) SetRightsId(_rightsId string) error {
-	r._rightsId = _rightsId
-	r.Set("rights_id", _rightsId)
+func (r *TaobaotbkdgvegastljreportAPIRequest) SetRightsid(_rightsid string) error {
+	r._rightsid = _rightsid
+	r.Set("rights_id", _rightsid)
 	return nil
 }
 
-// GetRightsId RightsId Getter
-func (r TaobaoTbkDgVegasTljReportAPIRequest) GetRightsId() string {
-	return r._rightsId
+// GetRightsid Rightsid Getter
+func (r TaobaotbkdgvegastljreportAPIRequest) GetRightsid() string {
+	return r._rightsid
 }
 
-// SetAdzoneId is AdzoneId Setter
+// SetAdzoneid is Adzoneid Setter
 // adzoneId
-func (r *TaobaoTbkDgVegasTljReportAPIRequest) SetAdzoneId(_adzoneId int64) error {
-	r._adzoneId = _adzoneId
-	r.Set("adzone_id", _adzoneId)
+func (r *TaobaotbkdgvegastljreportAPIRequest) SetAdzoneid(_adzoneid int64) error {
+	r._adzoneid = _adzoneid
+	r.Set("adzone_id", _adzoneid)
 	return nil
 }
 
-// GetAdzoneId AdzoneId Getter
-func (r TaobaoTbkDgVegasTljReportAPIRequest) GetAdzoneId() int64 {
-	return r._adzoneId
+// GetAdzoneid Adzoneid Getter
+func (r TaobaotbkdgvegastljreportAPIRequest) GetAdzoneid() int64 {
+	return r._adzoneid
 }

@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaoTbkDgTpwdRiskReportResult 结构体
-type TaobaoTbkDgTpwdRiskReportResult struct {
+// TaobaotbkdgtpwdriskreportResult 结构体
+type TaobaotbkdgtpwdriskreportResult struct {
 	// x
-	StatusList []DataMap `json:"status_list,omitempty" xml:"status_list>data_map,omitempty"`
+	Statuslist []DataMap `json:"status_list,omitempty" xml:"status_list>data_map,omitempty"`
 }

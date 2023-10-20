@@ -1,11 +1,11 @@
 package tbk
 
-// TaobaoTbkDgVegasTljCreateResult 结构体
-type TaobaoTbkDgVegasTljCreateResult struct {
+// TaobaotbkdgvegastljcreateResult 结构体
+type TaobaotbkdgvegastljcreateResult struct {
 	// msgCode
-	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
+	Msgcode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// msgInfo
-	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
+	Msginfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// model
 	Model *RightsInstanceCreateResult `json:"model,omitempty" xml:"model,omitempty"`
 	// success
