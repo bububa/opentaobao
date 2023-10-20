@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest struct {
 // NewAlibabaAlihealthNocovAlldiseaseinfoGetRequest 初始化AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest对象
 func NewAlibabaAlihealthNocovAlldiseaseinfoGetRequest() *AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest {
 	return &AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest) Reset() {
+	r._province = ""
+	r._city = ""
+	r._cityCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest) SetCityCode(_cityCode
 // GetCityCode CityCode Getter
 func (r AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest) GetCityCode() string {
 	return r._cityCode
+}
+
+var poolAlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthNocovAlldiseaseinfoGetRequest()
+	},
+}
+
+// GetAlibabaAlihealthNocovAlldiseaseinfoGetRequest 从 sync.Pool 获取 AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest
+func GetAlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest() *AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest {
+	return poolAlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest.Get().(*AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest 将 AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest(v *AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package user
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type TaobaoMiniappUserInfoGetAPIRequest struct {
 // NewTaobaoMiniappUserInfoGetRequest 初始化TaobaoMiniappUserInfoGetAPIRequest对象
 func NewTaobaoMiniappUserInfoGetRequest() *TaobaoMiniappUserInfoGetAPIRequest {
 	return &TaobaoMiniappUserInfoGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMiniappUserInfoGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r TaobaoMiniappUserInfoGetAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r TaobaoMiniappUserInfoGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolTaobaoMiniappUserInfoGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMiniappUserInfoGetRequest()
+	},
+}
+
+// GetTaobaoMiniappUserInfoGetRequest 从 sync.Pool 获取 TaobaoMiniappUserInfoGetAPIRequest
+func GetTaobaoMiniappUserInfoGetAPIRequest() *TaobaoMiniappUserInfoGetAPIRequest {
+	return poolTaobaoMiniappUserInfoGetAPIRequest.Get().(*TaobaoMiniappUserInfoGetAPIRequest)
+}
+
+// ReleaseTaobaoMiniappUserInfoGetAPIRequest 将 TaobaoMiniappUserInfoGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMiniappUserInfoGetAPIRequest(v *TaobaoMiniappUserInfoGetAPIRequest) {
+	v.Reset()
+	poolTaobaoMiniappUserInfoGetAPIRequest.Put(v)
 }

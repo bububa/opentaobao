@@ -1,5 +1,9 @@
 package wms
 
+import (
+	"sync"
+)
+
 // TaobaoWlbWmsSnInfoQueryResult 结构体
 type TaobaoWlbWmsSnInfoQueryResult struct {
 	// SN信息列表
@@ -12,4 +16,25 @@ type TaobaoWlbWmsSnInfoQueryResult struct {
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoWlbWmsSnInfoQueryResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoWlbWmsSnInfoQueryResult)
+	},
+}
+
+// GetTaobaoWlbWmsSnInfoQueryResult() 从对象池中获取TaobaoWlbWmsSnInfoQueryResult
+func GetTaobaoWlbWmsSnInfoQueryResult() *TaobaoWlbWmsSnInfoQueryResult {
+	return poolTaobaoWlbWmsSnInfoQueryResult.Get().(*TaobaoWlbWmsSnInfoQueryResult)
+}
+
+// ReleaseTaobaoWlbWmsSnInfoQueryResult 释放TaobaoWlbWmsSnInfoQueryResult
+func ReleaseTaobaoWlbWmsSnInfoQueryResult(v *TaobaoWlbWmsSnInfoQueryResult) {
+	v.SnInfoList = v.SnInfoList[:0]
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.TotalCount = 0
+	v.Success = false
+	poolTaobaoWlbWmsSnInfoQueryResult.Put(v)
 }

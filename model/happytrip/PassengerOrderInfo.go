@@ -1,5 +1,9 @@
 package happytrip
 
+import (
+	"sync"
+)
+
 // PassengerOrderInfo 结构体
 type PassengerOrderInfo struct {
 	// 订单id
@@ -18,4 +22,28 @@ type PassengerOrderInfo struct {
 	Tlat string `json:"tlat,omitempty" xml:"tlat,omitempty"`
 	// 乘客人数
 	PassengerNumber int64 `json:"passenger_number,omitempty" xml:"passenger_number,omitempty"`
+}
+
+var poolPassengerOrderInfo = sync.Pool{
+	New: func() any {
+		return new(PassengerOrderInfo)
+	},
+}
+
+// GetPassengerOrderInfo() 从对象池中获取PassengerOrderInfo
+func GetPassengerOrderInfo() *PassengerOrderInfo {
+	return poolPassengerOrderInfo.Get().(*PassengerOrderInfo)
+}
+
+// ReleasePassengerOrderInfo 释放PassengerOrderInfo
+func ReleasePassengerOrderInfo(v *PassengerOrderInfo) {
+	v.Id = ""
+	v.Status = ""
+	v.SubStatus = ""
+	v.Flng = ""
+	v.Flat = ""
+	v.Tlng = ""
+	v.Tlat = ""
+	v.PassengerNumber = 0
+	poolPassengerOrderInfo.Put(v)
 }

@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // AlitripMerchantGalaxyMessageSubscriptionStorageResponse 结构体
 type AlitripMerchantGalaxyMessageSubscriptionStorageResponse struct {
 	// 错误编码
@@ -10,4 +14,24 @@ type AlitripMerchantGalaxyMessageSubscriptionStorageResponse struct {
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlitripMerchantGalaxyMessageSubscriptionStorageResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyMessageSubscriptionStorageResponse)
+	},
+}
+
+// GetAlitripMerchantGalaxyMessageSubscriptionStorageResponse() 从对象池中获取AlitripMerchantGalaxyMessageSubscriptionStorageResponse
+func GetAlitripMerchantGalaxyMessageSubscriptionStorageResponse() *AlitripMerchantGalaxyMessageSubscriptionStorageResponse {
+	return poolAlitripMerchantGalaxyMessageSubscriptionStorageResponse.Get().(*AlitripMerchantGalaxyMessageSubscriptionStorageResponse)
+}
+
+// ReleaseAlitripMerchantGalaxyMessageSubscriptionStorageResponse 释放AlitripMerchantGalaxyMessageSubscriptionStorageResponse
+func ReleaseAlitripMerchantGalaxyMessageSubscriptionStorageResponse(v *AlitripMerchantGalaxyMessageSubscriptionStorageResponse) {
+	v.ErrorCode = ""
+	v.Content = ""
+	v.ErrorMsg = ""
+	v.Success = false
+	poolAlitripMerchantGalaxyMessageSubscriptionStorageResponse.Put(v)
 }

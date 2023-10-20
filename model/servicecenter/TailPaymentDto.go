@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // TailPaymentDto 结构体
 type TailPaymentDto struct {
 	// 处置名字，支持3种：归还车辆; 购买车辆，一次性支付尾款; 购买车辆，分期付尾款
@@ -14,4 +18,26 @@ type TailPaymentDto struct {
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 尾款金额，单位分，如果是购买车辆，一次性支付尾款必填
 	TailAmount int64 `json:"tail_amount,omitempty" xml:"tail_amount,omitempty"`
+}
+
+var poolTailPaymentDto = sync.Pool{
+	New: func() any {
+		return new(TailPaymentDto)
+	},
+}
+
+// GetTailPaymentDto() 从对象池中获取TailPaymentDto
+func GetTailPaymentDto() *TailPaymentDto {
+	return poolTailPaymentDto.Get().(*TailPaymentDto)
+}
+
+// ReleaseTailPaymentDto 释放TailPaymentDto
+func ReleaseTailPaymentDto(v *TailPaymentDto) {
+	v.Name = ""
+	v.BuyerId = 0
+	v.MonthlyPay = 0
+	v.Months = 0
+	v.OrderId = 0
+	v.TailAmount = 0
+	poolTailPaymentDto.Put(v)
 }

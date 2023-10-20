@@ -9,11 +9,6 @@ import (
 // alibaba.aelophy.order.logistics.trace.callback
 //
 // 配送轨迹回传
-func AlibabaAelophyOrderLogisticsTraceCallback(clt *core.SDKClient, req *wdk.AlibabaAelophyOrderLogisticsTraceCallbackAPIRequest, session string) (*wdk.AlibabaAelophyOrderLogisticsTraceCallbackAPIResponse, error) {
-	var resp wdk.AlibabaAelophyOrderLogisticsTraceCallbackAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAelophyOrderLogisticsTraceCallback(clt *core.SDKClient, req *wdk.AlibabaAelophyOrderLogisticsTraceCallbackAPIRequest, resp *wdk.AlibabaAelophyOrderLogisticsTraceCallbackAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

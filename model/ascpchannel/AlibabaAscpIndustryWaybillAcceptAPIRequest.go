@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpIndustryWaybillAcceptAPIRequest struct {
 // NewAlibabaAscpIndustryWaybillAcceptRequest 初始化AlibabaAscpIndustryWaybillAcceptAPIRequest对象
 func NewAlibabaAscpIndustryWaybillAcceptRequest() *AlibabaAscpIndustryWaybillAcceptAPIRequest {
 	return &AlibabaAscpIndustryWaybillAcceptAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpIndustryWaybillAcceptAPIRequest) Reset() {
+	r._waybillGenRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpIndustryWaybillAcceptAPIRequest) SetWaybillGenRequest(_waybi
 // GetWaybillGenRequest WaybillGenRequest Getter
 func (r AlibabaAscpIndustryWaybillAcceptAPIRequest) GetWaybillGenRequest() *WaybillGenRequest {
 	return r._waybillGenRequest
+}
+
+var poolAlibabaAscpIndustryWaybillAcceptAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpIndustryWaybillAcceptRequest()
+	},
+}
+
+// GetAlibabaAscpIndustryWaybillAcceptRequest 从 sync.Pool 获取 AlibabaAscpIndustryWaybillAcceptAPIRequest
+func GetAlibabaAscpIndustryWaybillAcceptAPIRequest() *AlibabaAscpIndustryWaybillAcceptAPIRequest {
+	return poolAlibabaAscpIndustryWaybillAcceptAPIRequest.Get().(*AlibabaAscpIndustryWaybillAcceptAPIRequest)
+}
+
+// ReleaseAlibabaAscpIndustryWaybillAcceptAPIRequest 将 AlibabaAscpIndustryWaybillAcceptAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpIndustryWaybillAcceptAPIRequest(v *AlibabaAscpIndustryWaybillAcceptAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpIndustryWaybillAcceptAPIRequest.Put(v)
 }

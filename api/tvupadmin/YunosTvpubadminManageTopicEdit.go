@@ -9,11 +9,6 @@ import (
 // yunos.tvpubadmin.manage.topic.edit
 //
 // 编辑专题
-func YunosTvpubadminManageTopicEdit(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminManageTopicEditAPIRequest, session string) (*tvupadmin.YunosTvpubadminManageTopicEditAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminManageTopicEditAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosTvpubadminManageTopicEdit(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminManageTopicEditAPIRequest, resp *tvupadmin.YunosTvpubadminManageTopicEditAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

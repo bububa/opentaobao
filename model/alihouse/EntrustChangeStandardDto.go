@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // EntrustChangeStandardDto 结构体
 type EntrustChangeStandardDto struct {
 	// 外部小区id
@@ -18,4 +22,28 @@ type EntrustChangeStandardDto struct {
 	HouseType int64 `json:"house_type,omitempty" xml:"house_type,omitempty"`
 	// 租房业务模式
 	HouseModel int64 `json:"house_model,omitempty" xml:"house_model,omitempty"`
+}
+
+var poolEntrustChangeStandardDto = sync.Pool{
+	New: func() any {
+		return new(EntrustChangeStandardDto)
+	},
+}
+
+// GetEntrustChangeStandardDto() 从对象池中获取EntrustChangeStandardDto
+func GetEntrustChangeStandardDto() *EntrustChangeStandardDto {
+	return poolEntrustChangeStandardDto.Get().(*EntrustChangeStandardDto)
+}
+
+// ReleaseEntrustChangeStandardDto 释放EntrustChangeStandardDto
+func ReleaseEntrustChangeStandardDto(v *EntrustChangeStandardDto) {
+	v.CommunityOuterId = ""
+	v.Ecode = ""
+	v.OuterId = ""
+	v.EntrustOuterId = ""
+	v.PublicCommunityOuterId = ""
+	v.BusinessType = 0
+	v.HouseType = 0
+	v.HouseModel = 0
+	poolEntrustChangeStandardDto.Put(v)
 }

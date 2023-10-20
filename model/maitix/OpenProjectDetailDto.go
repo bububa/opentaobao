@@ -1,5 +1,9 @@
 package maitix
 
+import (
+	"sync"
+)
+
 // OpenProjectDetailDto 结构体
 type OpenProjectDetailDto struct {
 	// 儿童购票说明
@@ -60,4 +64,49 @@ type OpenProjectDetailDto struct {
 	PurchaseLimitationOnce int64 `json:"purchase_limitation_once,omitempty" xml:"purchase_limitation_once,omitempty"`
 	// 大麦商品id
 	DamaiItemId int64 `json:"damai_item_id,omitempty" xml:"damai_item_id,omitempty"`
+}
+
+var poolOpenProjectDetailDto = sync.Pool{
+	New: func() any {
+		return new(OpenProjectDetailDto)
+	},
+}
+
+// GetOpenProjectDetailDto() 从对象池中获取OpenProjectDetailDto
+func GetOpenProjectDetailDto() *OpenProjectDetailDto {
+	return poolOpenProjectDetailDto.Get().(*OpenProjectDetailDto)
+}
+
+// ReleaseOpenProjectDetailDto 释放OpenProjectDetailDto
+func ReleaseOpenProjectDetailDto(v *OpenProjectDetailDto) {
+	v.ChildrenNotice = ""
+	v.SelfGetTicketNotice = ""
+	v.ShowStartTime = ""
+	v.LimitNotice = ""
+	v.DepositInfo = ""
+	v.ShowDetail = ""
+	v.RealNameNotice = ""
+	v.ProhibitedItems = ""
+	v.ShowPic = ""
+	v.PolicyOfReturn = ""
+	v.EntranceNotice = ""
+	v.ProjectName = ""
+	v.SubClassifyName = ""
+	v.ChoiceSeatNotice = ""
+	v.EticketNotice = ""
+	v.ShowEndTime = ""
+	v.ClassifyName = ""
+	v.Artists = ""
+	v.IpCard = ""
+	v.ShowTime = ""
+	v.DeliveryTypes = ""
+	v.PostCity = ""
+	v.PickupAddressList = ""
+	v.PerformTimeDetailList = ""
+	v.ClassifyCode = 0
+	v.ProjectId = 0
+	v.SubClassifyCode = 0
+	v.PurchaseLimitationOnce = 0
+	v.DamaiItemId = 0
+	poolOpenProjectDetailDto.Put(v)
 }

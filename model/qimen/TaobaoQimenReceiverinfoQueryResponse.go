@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // TaobaoQimenReceiverinfoQueryResponse 结构体
 type TaobaoQimenReceiverinfoQueryResponse struct {
 	// success|failure，必填
@@ -14,4 +18,26 @@ type TaobaoQimenReceiverinfoQueryResponse struct {
 	DeliveryOrderCode string `json:"deliveryOrderCode,omitempty" xml:"deliveryOrderCode,omitempty"`
 	// 收货人信息
 	ReceiverInfo *ReceiverInfo `json:"receiverInfo,omitempty" xml:"receiverInfo,omitempty"`
+}
+
+var poolTaobaoQimenReceiverinfoQueryResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoQimenReceiverinfoQueryResponse)
+	},
+}
+
+// GetTaobaoQimenReceiverinfoQueryResponse() 从对象池中获取TaobaoQimenReceiverinfoQueryResponse
+func GetTaobaoQimenReceiverinfoQueryResponse() *TaobaoQimenReceiverinfoQueryResponse {
+	return poolTaobaoQimenReceiverinfoQueryResponse.Get().(*TaobaoQimenReceiverinfoQueryResponse)
+}
+
+// ReleaseTaobaoQimenReceiverinfoQueryResponse 释放TaobaoQimenReceiverinfoQueryResponse
+func ReleaseTaobaoQimenReceiverinfoQueryResponse(v *TaobaoQimenReceiverinfoQueryResponse) {
+	v.Flag = ""
+	v.Code = ""
+	v.Message = ""
+	v.Oaid = ""
+	v.DeliveryOrderCode = ""
+	v.ReceiverInfo = nil
+	poolTaobaoQimenReceiverinfoQueryResponse.Put(v)
 }

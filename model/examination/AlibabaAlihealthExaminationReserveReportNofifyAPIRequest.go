@@ -2,6 +2,7 @@ package examination
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaAlihealthExaminationReserveReportNofifyAPIRequest struct {
 // NewAlibabaAlihealthExaminationReserveReportNofifyRequest 初始化AlibabaAlihealthExaminationReserveReportNofifyAPIRequest对象
 func NewAlibabaAlihealthExaminationReserveReportNofifyRequest() *AlibabaAlihealthExaminationReserveReportNofifyAPIRequest {
 	return &AlibabaAlihealthExaminationReserveReportNofifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthExaminationReserveReportNofifyAPIRequest) Reset() {
+	r._uniqReserveCode = ""
+	r._checkNo = ""
+	r._reserveNumber = ""
+	r._type = ""
+	r._content = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaAlihealthExaminationReserveReportNofifyAPIRequest) SetContent(_c
 // GetContent Content Getter
 func (r AlibabaAlihealthExaminationReserveReportNofifyAPIRequest) GetContent() string {
 	return r._content
+}
+
+var poolAlibabaAlihealthExaminationReserveReportNofifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthExaminationReserveReportNofifyRequest()
+	},
+}
+
+// GetAlibabaAlihealthExaminationReserveReportNofifyRequest 从 sync.Pool 获取 AlibabaAlihealthExaminationReserveReportNofifyAPIRequest
+func GetAlibabaAlihealthExaminationReserveReportNofifyAPIRequest() *AlibabaAlihealthExaminationReserveReportNofifyAPIRequest {
+	return poolAlibabaAlihealthExaminationReserveReportNofifyAPIRequest.Get().(*AlibabaAlihealthExaminationReserveReportNofifyAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthExaminationReserveReportNofifyAPIRequest 将 AlibabaAlihealthExaminationReserveReportNofifyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthExaminationReserveReportNofifyAPIRequest(v *AlibabaAlihealthExaminationReserveReportNofifyAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthExaminationReserveReportNofifyAPIRequest.Put(v)
 }

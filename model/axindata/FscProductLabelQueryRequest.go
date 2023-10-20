@@ -1,5 +1,9 @@
 package axindata
 
+import (
+	"sync"
+)
+
 // FscProductLabelQueryRequest 结构体
 type FscProductLabelQueryRequest struct {
 	// 主题类目 INTL_GROUP_TRAVEL：出境线路 DOM_GROUP_TRAVEL：国内线路
@@ -12,4 +16,25 @@ type FscProductLabelQueryRequest struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 页码
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
+}
+
+var poolFscProductLabelQueryRequest = sync.Pool{
+	New: func() any {
+		return new(FscProductLabelQueryRequest)
+	},
+}
+
+// GetFscProductLabelQueryRequest() 从对象池中获取FscProductLabelQueryRequest
+func GetFscProductLabelQueryRequest() *FscProductLabelQueryRequest {
+	return poolFscProductLabelQueryRequest.Get().(*FscProductLabelQueryRequest)
+}
+
+// ReleaseFscProductLabelQueryRequest 释放FscProductLabelQueryRequest
+func ReleaseFscProductLabelQueryRequest(v *FscProductLabelQueryRequest) {
+	v.CategoryId = ""
+	v.ParentLabelId = ""
+	v.SupplierId = ""
+	v.PageSize = 0
+	v.PageIndex = 0
+	poolFscProductLabelQueryRequest.Put(v)
 }

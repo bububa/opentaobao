@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleCarOrderQueryAPIRequest struct {
 // NewAlibabaIdleCarOrderQueryRequest 初始化AlibabaIdleCarOrderQueryAPIRequest对象
 func NewAlibabaIdleCarOrderQueryRequest() *AlibabaIdleCarOrderQueryAPIRequest {
 	return &AlibabaIdleCarOrderQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleCarOrderQueryAPIRequest) Reset() {
+	r._query = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleCarOrderQueryAPIRequest) SetQuery(_query *ConsignmentOrderQu
 // GetQuery Query Getter
 func (r AlibabaIdleCarOrderQueryAPIRequest) GetQuery() *ConsignmentOrderQuery {
 	return r._query
+}
+
+var poolAlibabaIdleCarOrderQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleCarOrderQueryRequest()
+	},
+}
+
+// GetAlibabaIdleCarOrderQueryRequest 从 sync.Pool 获取 AlibabaIdleCarOrderQueryAPIRequest
+func GetAlibabaIdleCarOrderQueryAPIRequest() *AlibabaIdleCarOrderQueryAPIRequest {
+	return poolAlibabaIdleCarOrderQueryAPIRequest.Get().(*AlibabaIdleCarOrderQueryAPIRequest)
+}
+
+// ReleaseAlibabaIdleCarOrderQueryAPIRequest 将 AlibabaIdleCarOrderQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleCarOrderQueryAPIRequest(v *AlibabaIdleCarOrderQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleCarOrderQueryAPIRequest.Put(v)
 }

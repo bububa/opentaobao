@@ -1,5 +1,9 @@
 package jst
 
+import (
+	"sync"
+)
+
 // TradeTrace 结构体
 type TradeTrace struct {
 	// 动作发生的时间
@@ -16,4 +20,27 @@ type TradeTrace struct {
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 交易tid
 	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
+}
+
+var poolTradeTrace = sync.Pool{
+	New: func() any {
+		return new(TradeTrace)
+	},
+}
+
+// GetTradeTrace() 从对象池中获取TradeTrace
+func GetTradeTrace() *TradeTrace {
+	return poolTradeTrace.Get().(*TradeTrace)
+}
+
+// ReleaseTradeTrace 释放TradeTrace
+func ReleaseTradeTrace(v *TradeTrace) {
+	v.ActionTime = ""
+	v.AppTitle = ""
+	v.OrderIds = ""
+	v.Remark = ""
+	v.SellerNick = ""
+	v.Status = ""
+	v.Tid = 0
+	poolTradeTrace.Put(v)
 }

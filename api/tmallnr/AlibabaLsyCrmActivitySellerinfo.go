@@ -9,11 +9,6 @@ import (
 // alibaba.lsy.crm.activity.sellerinfo
 //
 // 本地团商家信息推送
-func AlibabaLsyCrmActivitySellerinfo(clt *core.SDKClient, req *tmallnr.AlibabaLsyCrmActivitySellerinfoAPIRequest, session string) (*tmallnr.AlibabaLsyCrmActivitySellerinfoAPIResponse, error) {
-	var resp tmallnr.AlibabaLsyCrmActivitySellerinfoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLsyCrmActivitySellerinfo(clt *core.SDKClient, req *tmallnr.AlibabaLsyCrmActivitySellerinfoAPIRequest, resp *tmallnr.AlibabaLsyCrmActivitySellerinfoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

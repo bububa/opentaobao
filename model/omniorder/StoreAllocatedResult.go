@@ -1,5 +1,9 @@
 package omniorder
 
+import (
+	"sync"
+)
+
 // StoreAllocatedResult 结构体
 type StoreAllocatedResult struct {
 	// 0表示无系统异常
@@ -20,4 +24,29 @@ type StoreAllocatedResult struct {
 	SubOid int64 `json:"sub_oid,omitempty" xml:"sub_oid,omitempty"`
 	// 主订单Id
 	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
+}
+
+var poolStoreAllocatedResult = sync.Pool{
+	New: func() any {
+		return new(StoreAllocatedResult)
+	},
+}
+
+// GetStoreAllocatedResult() 从对象池中获取StoreAllocatedResult
+func GetStoreAllocatedResult() *StoreAllocatedResult {
+	return poolStoreAllocatedResult.Get().(*StoreAllocatedResult)
+}
+
+// ReleaseStoreAllocatedResult 释放StoreAllocatedResult
+func ReleaseStoreAllocatedResult(v *StoreAllocatedResult) {
+	v.Code = ""
+	v.Message = ""
+	v.StoreId = ""
+	v.StoreType = ""
+	v.StoreName = ""
+	v.Status = ""
+	v.Attributes = ""
+	v.SubOid = 0
+	v.Tid = 0
+	poolStoreAllocatedResult.Put(v)
 }

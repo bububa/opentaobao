@@ -1,5 +1,9 @@
 package wenyuvideo
 
+import (
+	"sync"
+)
+
 // YoukuWenyuvideoPersionGetResult 结构体
 type YoukuWenyuvideoPersionGetResult struct {
 	// 业务扩展数据
@@ -14,4 +18,26 @@ type YoukuWenyuvideoPersionGetResult struct {
 	HttpStatusCode int64 `json:"http_status_code,omitempty" xml:"http_status_code,omitempty"`
 	// 接口调用是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolYoukuWenyuvideoPersionGetResult = sync.Pool{
+	New: func() any {
+		return new(YoukuWenyuvideoPersionGetResult)
+	},
+}
+
+// GetYoukuWenyuvideoPersionGetResult() 从对象池中获取YoukuWenyuvideoPersionGetResult
+func GetYoukuWenyuvideoPersionGetResult() *YoukuWenyuvideoPersionGetResult {
+	return poolYoukuWenyuvideoPersionGetResult.Get().(*YoukuWenyuvideoPersionGetResult)
+}
+
+// ReleaseYoukuWenyuvideoPersionGetResult 释放YoukuWenyuvideoPersionGetResult
+func ReleaseYoukuWenyuvideoPersionGetResult(v *YoukuWenyuvideoPersionGetResult) {
+	v.BizExtMap = ""
+	v.MsgCode = ""
+	v.MsgInfo = ""
+	v.Model = nil
+	v.HttpStatusCode = 0
+	v.Success = false
+	poolYoukuWenyuvideoPersionGetResult.Put(v)
 }

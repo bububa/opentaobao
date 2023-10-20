@@ -2,6 +2,7 @@ package viapi
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AliyunViapiImagesegSegmentCommonimageAPIResponse struct {
 	AliyunViapiImagesegSegmentCommonimageAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AliyunViapiImagesegSegmentCommonimageAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliyunViapiImagesegSegmentCommonimageAPIResponseModel).Reset()
+}
+
 // AliyunViapiImagesegSegmentCommonimageAPIResponseModel is 通用分割 成功返回结果
 type AliyunViapiImagesegSegmentCommonimageAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliyun_viapi_imageseg_segment_commonimage_response"`
@@ -24,4 +31,28 @@ type AliyunViapiImagesegSegmentCommonimageAPIResponseModel struct {
 	TaobaoRequestId string `json:"taobao_request_id,omitempty" xml:"taobao_request_id,omitempty"`
 	// 系统自动生成
 	Data *AliyunViapiImagesegSegmentCommonimageData `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliyunViapiImagesegSegmentCommonimageAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TaobaoRequestId = ""
+	m.Data = nil
+}
+
+var poolAliyunViapiImagesegSegmentCommonimageAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliyunViapiImagesegSegmentCommonimageAPIResponse)
+	},
+}
+
+// GetAliyunViapiImagesegSegmentCommonimageAPIResponse 从 sync.Pool 获取 AliyunViapiImagesegSegmentCommonimageAPIResponse
+func GetAliyunViapiImagesegSegmentCommonimageAPIResponse() *AliyunViapiImagesegSegmentCommonimageAPIResponse {
+	return poolAliyunViapiImagesegSegmentCommonimageAPIResponse.Get().(*AliyunViapiImagesegSegmentCommonimageAPIResponse)
+}
+
+// ReleaseAliyunViapiImagesegSegmentCommonimageAPIResponse 将 AliyunViapiImagesegSegmentCommonimageAPIResponse 保存到 sync.Pool
+func ReleaseAliyunViapiImagesegSegmentCommonimageAPIResponse(v *AliyunViapiImagesegSegmentCommonimageAPIResponse) {
+	v.Reset()
+	poolAliyunViapiImagesegSegmentCommonimageAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkScmLrpOrderPredictAPIRequest struct {
 // NewAlibabaWdkScmLrpOrderPredictRequest 初始化AlibabaWdkScmLrpOrderPredictAPIRequest对象
 func NewAlibabaWdkScmLrpOrderPredictRequest() *AlibabaWdkScmLrpOrderPredictAPIRequest {
 	return &AlibabaWdkScmLrpOrderPredictAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkScmLrpOrderPredictAPIRequest) Reset() {
+	r._paramOrderPredictQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkScmLrpOrderPredictAPIRequest) SetParamOrderPredictQuery(_para
 // GetParamOrderPredictQuery ParamOrderPredictQuery Getter
 func (r AlibabaWdkScmLrpOrderPredictAPIRequest) GetParamOrderPredictQuery() *OrderPredictQuery {
 	return r._paramOrderPredictQuery
+}
+
+var poolAlibabaWdkScmLrpOrderPredictAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkScmLrpOrderPredictRequest()
+	},
+}
+
+// GetAlibabaWdkScmLrpOrderPredictRequest 从 sync.Pool 获取 AlibabaWdkScmLrpOrderPredictAPIRequest
+func GetAlibabaWdkScmLrpOrderPredictAPIRequest() *AlibabaWdkScmLrpOrderPredictAPIRequest {
+	return poolAlibabaWdkScmLrpOrderPredictAPIRequest.Get().(*AlibabaWdkScmLrpOrderPredictAPIRequest)
+}
+
+// ReleaseAlibabaWdkScmLrpOrderPredictAPIRequest 将 AlibabaWdkScmLrpOrderPredictAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkScmLrpOrderPredictAPIRequest(v *AlibabaWdkScmLrpOrderPredictAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkScmLrpOrderPredictAPIRequest.Put(v)
 }

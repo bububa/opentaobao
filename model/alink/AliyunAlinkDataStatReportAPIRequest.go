@@ -2,6 +2,7 @@ package alink
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliyunAlinkDataStatReportAPIRequest struct {
 // NewAliyunAlinkDataStatReportRequest 初始化AliyunAlinkDataStatReportAPIRequest对象
 func NewAliyunAlinkDataStatReportRequest() *AliyunAlinkDataStatReportAPIRequest {
 	return &AliyunAlinkDataStatReportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliyunAlinkDataStatReportAPIRequest) Reset() {
+	r._paramBean = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliyunAlinkDataStatReportAPIRequest) SetParamBean(_paramBean *OuterData
 // GetParamBean ParamBean Getter
 func (r AliyunAlinkDataStatReportAPIRequest) GetParamBean() *OuterDataBean {
 	return r._paramBean
+}
+
+var poolAliyunAlinkDataStatReportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliyunAlinkDataStatReportRequest()
+	},
+}
+
+// GetAliyunAlinkDataStatReportRequest 从 sync.Pool 获取 AliyunAlinkDataStatReportAPIRequest
+func GetAliyunAlinkDataStatReportAPIRequest() *AliyunAlinkDataStatReportAPIRequest {
+	return poolAliyunAlinkDataStatReportAPIRequest.Get().(*AliyunAlinkDataStatReportAPIRequest)
+}
+
+// ReleaseAliyunAlinkDataStatReportAPIRequest 将 AliyunAlinkDataStatReportAPIRequest 放入 sync.Pool
+func ReleaseAliyunAlinkDataStatReportAPIRequest(v *AliyunAlinkDataStatReportAPIRequest) {
+	v.Reset()
+	poolAliyunAlinkDataStatReportAPIRequest.Put(v)
 }

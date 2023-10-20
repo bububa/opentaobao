@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -117,8 +118,63 @@ type TaobaoXhotelUpdateAPIRequest struct {
 // NewTaobaoXhotelUpdateRequest 初始化TaobaoXhotelUpdateAPIRequest对象
 func NewTaobaoXhotelUpdateRequest() *TaobaoXhotelUpdateAPIRequest {
 	return &TaobaoXhotelUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(50),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelUpdateAPIRequest) Reset() {
+	r._name = ""
+	r._usedName = ""
+	r._country = ""
+	r._business = ""
+	r._address = ""
+	r._longitude = ""
+	r._latitude = ""
+	r._positionType = ""
+	r._tel = ""
+	r._extend = ""
+	r._outerId = ""
+	r._vendor = ""
+	r._star = ""
+	r._openingTime = ""
+	r._decorateTime = ""
+	r._floors = ""
+	r._description = ""
+	r._hotelFacilities = ""
+	r._service = ""
+	r._roomFacilities = ""
+	r._pics = ""
+	r._brand = ""
+	r._postalCode = ""
+	r._hotelPolicies = ""
+	r._bookingNotice = ""
+	r._creditCardTypes = ""
+	r._orbitTrack = ""
+	r._nameE = ""
+	r._tagJson = ""
+	r._aliNick = ""
+	r._supplier = ""
+	r._settlementCurrency = ""
+	r._standardBookingNotice = ""
+	r._standardHotelFacilities = ""
+	r._standardHotelService = ""
+	r._standardRoomFacilities = ""
+	r._standardAmuseFacilities = ""
+	r._coordinateSystem = ""
+	r._addressEn = ""
+	r._descriptionEn = ""
+	r._hid = 0
+	r._domestic = 0
+	r._province = 0
+	r._city = 0
+	r._district = 0
+	r._shid = 0
+	r._rooms = 0
+	r._status = nil
+	r._hotelType = 0
+	r._serviceType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -786,4 +842,21 @@ func (r *TaobaoXhotelUpdateAPIRequest) SetServiceType(_serviceType int64) error 
 // GetServiceType ServiceType Getter
 func (r TaobaoXhotelUpdateAPIRequest) GetServiceType() int64 {
 	return r._serviceType
+}
+
+var poolTaobaoXhotelUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelUpdateRequest()
+	},
+}
+
+// GetTaobaoXhotelUpdateRequest 从 sync.Pool 获取 TaobaoXhotelUpdateAPIRequest
+func GetTaobaoXhotelUpdateAPIRequest() *TaobaoXhotelUpdateAPIRequest {
+	return poolTaobaoXhotelUpdateAPIRequest.Get().(*TaobaoXhotelUpdateAPIRequest)
+}
+
+// ReleaseTaobaoXhotelUpdateAPIRequest 将 TaobaoXhotelUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelUpdateAPIRequest(v *TaobaoXhotelUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelUpdateAPIRequest.Put(v)
 }

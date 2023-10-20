@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // UserSyncRq 结构体
 type UserSyncRq struct {
 	// 部门列表，depart_id | third_depart_id | third_depart_id_list只传其一，优先级为third_depart_id_list &gt; third_depart_id &gt; depart_id
@@ -28,4 +32,33 @@ type UserSyncRq struct {
 	DepartId int64 `json:"depart_id,omitempty" xml:"depart_id,omitempty"`
 	// 是否离职（0 否 1是）
 	LeaveStatus int64 `json:"leave_status,omitempty" xml:"leave_status,omitempty"`
+}
+
+var poolUserSyncRq = sync.Pool{
+	New: func() any {
+		return new(UserSyncRq)
+	},
+}
+
+// GetUserSyncRq() 从对象池中获取UserSyncRq
+func GetUserSyncRq() *UserSyncRq {
+	return poolUserSyncRq.Get().(*UserSyncRq)
+}
+
+// ReleaseUserSyncRq 释放UserSyncRq
+func ReleaseUserSyncRq(v *UserSyncRq) {
+	v.ThirdDepartIdList = v.ThirdDepartIdList[:0]
+	v.Email = ""
+	v.Phone = ""
+	v.PositionLevel = ""
+	v.Position = ""
+	v.RealNameEn = ""
+	v.UserName = ""
+	v.UserId = ""
+	v.JobNo = ""
+	v.ThirdDepartId = ""
+	v.ManagerUserId = ""
+	v.DepartId = 0
+	v.LeaveStatus = 0
+	poolUserSyncRq.Put(v)
 }

@@ -1,5 +1,9 @@
 package scs
 
+import (
+	"sync"
+)
+
 // DmpCrowdResultTopDto 结构体
 type DmpCrowdResultTopDto struct {
 	// 人群名
@@ -24,4 +28,31 @@ type DmpCrowdResultTopDto struct {
 	GroupId int64 `json:"group_id,omitempty" xml:"group_id,omitempty"`
 	// storage
 	StorageType int64 `json:"storage_type,omitempty" xml:"storage_type,omitempty"`
+}
+
+var poolDmpCrowdResultTopDto = sync.Pool{
+	New: func() any {
+		return new(DmpCrowdResultTopDto)
+	},
+}
+
+// GetDmpCrowdResultTopDto() 从对象池中获取DmpCrowdResultTopDto
+func GetDmpCrowdResultTopDto() *DmpCrowdResultTopDto {
+	return poolDmpCrowdResultTopDto.Get().(*DmpCrowdResultTopDto)
+}
+
+// ReleaseDmpCrowdResultTopDto 释放DmpCrowdResultTopDto
+func ReleaseDmpCrowdResultTopDto(v *DmpCrowdResultTopDto) {
+	v.CrowdName = ""
+	v.ValidDate = ""
+	v.Createtime = ""
+	v.Updatetime = ""
+	v.CrowdId = 0
+	v.Lookalike = 0
+	v.Coverage = 0
+	v.Status = 0
+	v.FullStatus = 0
+	v.GroupId = 0
+	v.StorageType = 0
+	poolDmpCrowdResultTopDto.Put(v)
 }

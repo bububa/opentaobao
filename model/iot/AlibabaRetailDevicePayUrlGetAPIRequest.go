@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaRetailDevicePayUrlGetAPIRequest struct {
 // NewAlibabaRetailDevicePayUrlGetRequest 初始化AlibabaRetailDevicePayUrlGetAPIRequest对象
 func NewAlibabaRetailDevicePayUrlGetRequest() *AlibabaRetailDevicePayUrlGetAPIRequest {
 	return &AlibabaRetailDevicePayUrlGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaRetailDevicePayUrlGetAPIRequest) Reset() {
+	r._isvOrderId = ""
+	r._bizName = ""
+	r._deviceId = ""
+	r._itemId = 0
+	r._itemType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaRetailDevicePayUrlGetAPIRequest) SetItemType(_itemType int64) er
 // GetItemType ItemType Getter
 func (r AlibabaRetailDevicePayUrlGetAPIRequest) GetItemType() int64 {
 	return r._itemType
+}
+
+var poolAlibabaRetailDevicePayUrlGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaRetailDevicePayUrlGetRequest()
+	},
+}
+
+// GetAlibabaRetailDevicePayUrlGetRequest 从 sync.Pool 获取 AlibabaRetailDevicePayUrlGetAPIRequest
+func GetAlibabaRetailDevicePayUrlGetAPIRequest() *AlibabaRetailDevicePayUrlGetAPIRequest {
+	return poolAlibabaRetailDevicePayUrlGetAPIRequest.Get().(*AlibabaRetailDevicePayUrlGetAPIRequest)
+}
+
+// ReleaseAlibabaRetailDevicePayUrlGetAPIRequest 将 AlibabaRetailDevicePayUrlGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaRetailDevicePayUrlGetAPIRequest(v *AlibabaRetailDevicePayUrlGetAPIRequest) {
+	v.Reset()
+	poolAlibabaRetailDevicePayUrlGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponse struct {
 	AlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponseModel is 根据追溯码获取69码 成功返回结果
 type AlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drug_getbarcode_bytraccode_response"`
@@ -22,4 +29,27 @@ type AlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *TopResultModel `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponse 从 sync.Pool 获取 AlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponse
+func GetAlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponse() *AlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponse {
+	return poolAlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponse.Get().(*AlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponse 将 AlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponse(v *AlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthDrugGetbarcodeBytraccodeAPIResponse.Put(v)
 }

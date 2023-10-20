@@ -9,11 +9,6 @@ import (
 // alibaba.value.coin.issue
 //
 // 爱豆发放
-func AlibabaValueCoinIssue(clt *core.SDKClient, req *charity.AlibabaValueCoinIssueAPIRequest, session string) (*charity.AlibabaValueCoinIssueAPIResponse, error) {
-	var resp charity.AlibabaValueCoinIssueAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaValueCoinIssue(clt *core.SDKClient, req *charity.AlibabaValueCoinIssueAPIRequest, resp *charity.AlibabaValueCoinIssueAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package happytrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaHappytripTravelSyncAPIRequest struct {
 // NewAlibabaHappytripTravelSyncRequest 初始化AlibabaHappytripTravelSyncAPIRequest对象
 func NewAlibabaHappytripTravelSyncRequest() *AlibabaHappytripTravelSyncAPIRequest {
 	return &AlibabaHappytripTravelSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHappytripTravelSyncAPIRequest) Reset() {
+	r._travelHeadDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaHappytripTravelSyncAPIRequest) SetTravelHeadDto(_travelHeadDto *
 // GetTravelHeadDto TravelHeadDto Getter
 func (r AlibabaHappytripTravelSyncAPIRequest) GetTravelHeadDto() *TravelHeadDto {
 	return r._travelHeadDto
+}
+
+var poolAlibabaHappytripTravelSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHappytripTravelSyncRequest()
+	},
+}
+
+// GetAlibabaHappytripTravelSyncRequest 从 sync.Pool 获取 AlibabaHappytripTravelSyncAPIRequest
+func GetAlibabaHappytripTravelSyncAPIRequest() *AlibabaHappytripTravelSyncAPIRequest {
+	return poolAlibabaHappytripTravelSyncAPIRequest.Get().(*AlibabaHappytripTravelSyncAPIRequest)
+}
+
+// ReleaseAlibabaHappytripTravelSyncAPIRequest 将 AlibabaHappytripTravelSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHappytripTravelSyncAPIRequest(v *AlibabaHappytripTravelSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaHappytripTravelSyncAPIRequest.Put(v)
 }

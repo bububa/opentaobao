@@ -1,5 +1,9 @@
 package tmic
 
+import (
+	"sync"
+)
+
 // TmallTmicQuestionnaireSurveyGetResult 结构体
 type TmallTmicQuestionnaireSurveyGetResult struct {
 	// 问题列表
@@ -22,4 +26,30 @@ type TmallTmicQuestionnaireSurveyGetResult struct {
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
 	// 是否调用成功
 	BizSuccess bool `json:"biz_success,omitempty" xml:"biz_success,omitempty"`
+}
+
+var poolTmallTmicQuestionnaireSurveyGetResult = sync.Pool{
+	New: func() any {
+		return new(TmallTmicQuestionnaireSurveyGetResult)
+	},
+}
+
+// GetTmallTmicQuestionnaireSurveyGetResult() 从对象池中获取TmallTmicQuestionnaireSurveyGetResult
+func GetTmallTmicQuestionnaireSurveyGetResult() *TmallTmicQuestionnaireSurveyGetResult {
+	return poolTmallTmicQuestionnaireSurveyGetResult.Get().(*TmallTmicQuestionnaireSurveyGetResult)
+}
+
+// ReleaseTmallTmicQuestionnaireSurveyGetResult 释放TmallTmicQuestionnaireSurveyGetResult
+func ReleaseTmallTmicQuestionnaireSurveyGetResult(v *TmallTmicQuestionnaireSurveyGetResult) {
+	v.QuestionList = v.QuestionList[:0]
+	v.Logo = ""
+	v.Title = ""
+	v.BizErrorInfo = ""
+	v.Description = ""
+	v.BizErrorCode = ""
+	v.RecordId = 0
+	v.QuestionCount = 0
+	v.Version = 0
+	v.BizSuccess = false
+	poolTmallTmicQuestionnaireSurveyGetResult.Put(v)
 }

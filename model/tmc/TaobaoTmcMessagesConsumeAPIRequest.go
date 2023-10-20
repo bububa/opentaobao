@@ -2,6 +2,7 @@ package tmc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoTmcMessagesConsumeAPIRequest struct {
 // NewTaobaoTmcMessagesConsumeRequest 初始化TaobaoTmcMessagesConsumeAPIRequest对象
 func NewTaobaoTmcMessagesConsumeRequest() *TaobaoTmcMessagesConsumeAPIRequest {
 	return &TaobaoTmcMessagesConsumeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTmcMessagesConsumeAPIRequest) Reset() {
+	r._groupName = ""
+	r._quantity = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoTmcMessagesConsumeAPIRequest) SetQuantity(_quantity int64) error 
 // GetQuantity Quantity Getter
 func (r TaobaoTmcMessagesConsumeAPIRequest) GetQuantity() int64 {
 	return r._quantity
+}
+
+var poolTaobaoTmcMessagesConsumeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTmcMessagesConsumeRequest()
+	},
+}
+
+// GetTaobaoTmcMessagesConsumeRequest 从 sync.Pool 获取 TaobaoTmcMessagesConsumeAPIRequest
+func GetTaobaoTmcMessagesConsumeAPIRequest() *TaobaoTmcMessagesConsumeAPIRequest {
+	return poolTaobaoTmcMessagesConsumeAPIRequest.Get().(*TaobaoTmcMessagesConsumeAPIRequest)
+}
+
+// ReleaseTaobaoTmcMessagesConsumeAPIRequest 将 TaobaoTmcMessagesConsumeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTmcMessagesConsumeAPIRequest(v *TaobaoTmcMessagesConsumeAPIRequest) {
+	v.Reset()
+	poolTaobaoTmcMessagesConsumeAPIRequest.Put(v)
 }

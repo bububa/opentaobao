@@ -9,11 +9,6 @@ import (
 // alibaba.mozi.acl.userpermissions.revoke
 //
 // 调用此接口，会根据入参回收该账户下的该批权限点
-func AlibabaMoziAclUserpermissionsRevoke(clt *core.SDKClient, req *moziacl.AlibabaMoziAclUserpermissionsRevokeAPIRequest, session string) (*moziacl.AlibabaMoziAclUserpermissionsRevokeAPIResponse, error) {
-	var resp moziacl.AlibabaMoziAclUserpermissionsRevokeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMoziAclUserpermissionsRevoke(clt *core.SDKClient, req *moziacl.AlibabaMoziAclUserpermissionsRevokeAPIRequest, resp *moziacl.AlibabaMoziAclUserpermissionsRevokeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

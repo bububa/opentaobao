@@ -9,11 +9,6 @@ import (
 // alibaba.aliqin.axb.vendor.call.control
 //
 // 转呼控制接口，用于查询小号绑定关系，控制呼叫转接目标
-func AlibabaAliqinAxbVendorCallControl(clt *core.SDKClient, req *alicom.AlibabaAliqinAxbVendorCallControlAPIRequest, session string) (*alicom.AlibabaAliqinAxbVendorCallControlAPIResponse, error) {
-	var resp alicom.AlibabaAliqinAxbVendorCallControlAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAliqinAxbVendorCallControl(clt *core.SDKClient, req *alicom.AlibabaAliqinAxbVendorCallControlAPIRequest, resp *alicom.AlibabaAliqinAxbVendorCallControlAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

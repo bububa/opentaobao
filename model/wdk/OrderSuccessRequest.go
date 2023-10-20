@@ -1,9 +1,13 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OrderSuccessRequest 结构体
 type OrderSuccessRequest struct {
 	// 子单列表
-	SubInfoList []OrderDeliveryBo `json:"sub_info_list,omitempty" xml:"sub_info_list>order_delivery_bo,omitempty"`
+	SubInfoList []OrderDeliveryBO `json:"sub_info_list,omitempty" xml:"sub_info_list>order_delivery_bo,omitempty"`
 	// 外部订单号
 	OutOrderId string `json:"out_order_id,omitempty" xml:"out_order_id,omitempty"`
 	// 订单来源
@@ -59,11 +63,59 @@ type OrderSuccessRequest struct {
 	// 商家折扣费(分为单位)
 	MerchantDiscountFee int64 `json:"merchant_discount_fee,omitempty" xml:"merchant_discount_fee,omitempty"`
 	// 买家信息
-	BuyerInfo *OrderPayInfoBo `json:"buyer_info,omitempty" xml:"buyer_info,omitempty"`
+	BuyerInfo *OrderPayInfoBO `json:"buyer_info,omitempty" xml:"buyer_info,omitempty"`
 	// 订单配送信息
-	DeliveryInfo *OrderBuyerInfoBo `json:"delivery_info,omitempty" xml:"delivery_info,omitempty"`
+	DeliveryInfo *OrderBuyerInfoBO `json:"delivery_info,omitempty" xml:"delivery_info,omitempty"`
 	// 卖家id
 	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
 	// 订单来源
 	OrderFrom int64 `json:"order_from,omitempty" xml:"order_from,omitempty"`
+}
+
+var poolOrderSuccessRequest = sync.Pool{
+	New: func() any {
+		return new(OrderSuccessRequest)
+	},
+}
+
+// GetOrderSuccessRequest() 从对象池中获取OrderSuccessRequest
+func GetOrderSuccessRequest() *OrderSuccessRequest {
+	return poolOrderSuccessRequest.Get().(*OrderSuccessRequest)
+}
+
+// ReleaseOrderSuccessRequest 释放OrderSuccessRequest
+func ReleaseOrderSuccessRequest(v *OrderSuccessRequest) {
+	v.SubInfoList = v.SubInfoList[:0]
+	v.OutOrderId = ""
+	v.OrderSource = ""
+	v.OrderTerminal = ""
+	v.FirstChannel = ""
+	v.SecondChannel = ""
+	v.ShopId = ""
+	v.StoreId = ""
+	v.OrderCreateTime = ""
+	v.PayTime = ""
+	v.ExpectArriveTime = ""
+	v.PayInfos = ""
+	v.SellerNick = ""
+	v.IsMain = 0
+	v.IsDetail = 0
+	v.BusinessType = 0
+	v.SubBusinessType = 0
+	v.OrderChannel = 0
+	v.DeliverType = 0
+	v.ArriveType = 0
+	v.OrderStatus = 0
+	v.OriginFee = 0
+	v.PayFee = 0
+	v.DiscountFee = 0
+	v.PostFee = 0
+	v.PackageFee = 0
+	v.PlatformDiscountFee = 0
+	v.MerchantDiscountFee = 0
+	v.BuyerInfo = nil
+	v.DeliveryInfo = nil
+	v.SellerId = 0
+	v.OrderFrom = 0
+	poolOrderSuccessRequest.Put(v)
 }

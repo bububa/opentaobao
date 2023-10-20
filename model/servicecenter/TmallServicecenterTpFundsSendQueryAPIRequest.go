@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallServicecenterTpFundsSendQueryAPIRequest struct {
 // NewTmallServicecenterTpFundsSendQueryRequest 初始化TmallServicecenterTpFundsSendQueryAPIRequest对象
 func NewTmallServicecenterTpFundsSendQueryRequest() *TmallServicecenterTpFundsSendQueryAPIRequest {
 	return &TmallServicecenterTpFundsSendQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterTpFundsSendQueryAPIRequest) Reset() {
+	r._query = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallServicecenterTpFundsSendQueryAPIRequest) SetQuery(_query *TpFundsS
 // GetQuery Query Getter
 func (r TmallServicecenterTpFundsSendQueryAPIRequest) GetQuery() *TpFundsSendQuery {
 	return r._query
+}
+
+var poolTmallServicecenterTpFundsSendQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterTpFundsSendQueryRequest()
+	},
+}
+
+// GetTmallServicecenterTpFundsSendQueryRequest 从 sync.Pool 获取 TmallServicecenterTpFundsSendQueryAPIRequest
+func GetTmallServicecenterTpFundsSendQueryAPIRequest() *TmallServicecenterTpFundsSendQueryAPIRequest {
+	return poolTmallServicecenterTpFundsSendQueryAPIRequest.Get().(*TmallServicecenterTpFundsSendQueryAPIRequest)
+}
+
+// ReleaseTmallServicecenterTpFundsSendQueryAPIRequest 将 TmallServicecenterTpFundsSendQueryAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterTpFundsSendQueryAPIRequest(v *TmallServicecenterTpFundsSendQueryAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterTpFundsSendQueryAPIRequest.Put(v)
 }

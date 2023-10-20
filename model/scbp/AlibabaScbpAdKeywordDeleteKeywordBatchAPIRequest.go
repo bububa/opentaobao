@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaScbpAdKeywordDeleteKeywordBatchAPIRequest struct {
 // NewAlibabaScbpAdKeywordDeleteKeywordBatchRequest 初始化AlibabaScbpAdKeywordDeleteKeywordBatchAPIRequest对象
 func NewAlibabaScbpAdKeywordDeleteKeywordBatchRequest() *AlibabaScbpAdKeywordDeleteKeywordBatchAPIRequest {
 	return &AlibabaScbpAdKeywordDeleteKeywordBatchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdKeywordDeleteKeywordBatchAPIRequest) Reset() {
+	r._topContext = nil
+	r._campaignId = 0
+	r._keywordQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaScbpAdKeywordDeleteKeywordBatchAPIRequest) SetKeywordQuery(_keyw
 // GetKeywordQuery KeywordQuery Getter
 func (r AlibabaScbpAdKeywordDeleteKeywordBatchAPIRequest) GetKeywordQuery() *KeywordQuery {
 	return r._keywordQuery
+}
+
+var poolAlibabaScbpAdKeywordDeleteKeywordBatchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdKeywordDeleteKeywordBatchRequest()
+	},
+}
+
+// GetAlibabaScbpAdKeywordDeleteKeywordBatchRequest 从 sync.Pool 获取 AlibabaScbpAdKeywordDeleteKeywordBatchAPIRequest
+func GetAlibabaScbpAdKeywordDeleteKeywordBatchAPIRequest() *AlibabaScbpAdKeywordDeleteKeywordBatchAPIRequest {
+	return poolAlibabaScbpAdKeywordDeleteKeywordBatchAPIRequest.Get().(*AlibabaScbpAdKeywordDeleteKeywordBatchAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdKeywordDeleteKeywordBatchAPIRequest 将 AlibabaScbpAdKeywordDeleteKeywordBatchAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdKeywordDeleteKeywordBatchAPIRequest(v *AlibabaScbpAdKeywordDeleteKeywordBatchAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdKeywordDeleteKeywordBatchAPIRequest.Put(v)
 }

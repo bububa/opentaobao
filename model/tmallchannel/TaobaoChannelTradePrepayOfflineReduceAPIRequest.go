@@ -2,6 +2,7 @@ package tmallchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoChannelTradePrepayOfflineReduceAPIRequest struct {
 // NewTaobaoChannelTradePrepayOfflineReduceRequest 初始化TaobaoChannelTradePrepayOfflineReduceAPIRequest对象
 func NewTaobaoChannelTradePrepayOfflineReduceRequest() *TaobaoChannelTradePrepayOfflineReduceAPIRequest {
 	return &TaobaoChannelTradePrepayOfflineReduceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoChannelTradePrepayOfflineReduceAPIRequest) Reset() {
+	r._offlineReducePrepayParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoChannelTradePrepayOfflineReduceAPIRequest) SetOfflineReducePrepay
 // GetOfflineReducePrepayParam OfflineReducePrepayParam Getter
 func (r TaobaoChannelTradePrepayOfflineReduceAPIRequest) GetOfflineReducePrepayParam() *TopOfflineReducePrepayDto {
 	return r._offlineReducePrepayParam
+}
+
+var poolTaobaoChannelTradePrepayOfflineReduceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoChannelTradePrepayOfflineReduceRequest()
+	},
+}
+
+// GetTaobaoChannelTradePrepayOfflineReduceRequest 从 sync.Pool 获取 TaobaoChannelTradePrepayOfflineReduceAPIRequest
+func GetTaobaoChannelTradePrepayOfflineReduceAPIRequest() *TaobaoChannelTradePrepayOfflineReduceAPIRequest {
+	return poolTaobaoChannelTradePrepayOfflineReduceAPIRequest.Get().(*TaobaoChannelTradePrepayOfflineReduceAPIRequest)
+}
+
+// ReleaseTaobaoChannelTradePrepayOfflineReduceAPIRequest 将 TaobaoChannelTradePrepayOfflineReduceAPIRequest 放入 sync.Pool
+func ReleaseTaobaoChannelTradePrepayOfflineReduceAPIRequest(v *TaobaoChannelTradePrepayOfflineReduceAPIRequest) {
+	v.Reset()
+	poolTaobaoChannelTradePrepayOfflineReduceAPIRequest.Put(v)
 }

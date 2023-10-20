@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // WorkcardOperationDto 结构体
 type WorkcardOperationDto struct {
 	// 修改时间
@@ -14,4 +18,26 @@ type WorkcardOperationDto struct {
 	Action string `json:"action,omitempty" xml:"action,omitempty"`
 	// 操作人类型，1:买家,2:服务商,3:网点
 	OperatorType int64 `json:"operator_type,omitempty" xml:"operator_type,omitempty"`
+}
+
+var poolWorkcardOperationDto = sync.Pool{
+	New: func() any {
+		return new(WorkcardOperationDto)
+	},
+}
+
+// GetWorkcardOperationDto() 从对象池中获取WorkcardOperationDto
+func GetWorkcardOperationDto() *WorkcardOperationDto {
+	return poolWorkcardOperationDto.Get().(*WorkcardOperationDto)
+}
+
+// ReleaseWorkcardOperationDto 释放WorkcardOperationDto
+func ReleaseWorkcardOperationDto(v *WorkcardOperationDto) {
+	v.GmtModify = ""
+	v.AttributeMap = ""
+	v.GmtCreate = ""
+	v.Operator = ""
+	v.Action = ""
+	v.OperatorType = 0
+	poolWorkcardOperationDto.Put(v)
 }

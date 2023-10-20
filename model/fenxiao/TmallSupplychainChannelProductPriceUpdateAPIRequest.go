@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TmallSupplychainChannelProductPriceUpdateAPIRequest struct {
 // NewTmallSupplychainChannelProductPriceUpdateRequest 初始化TmallSupplychainChannelProductPriceUpdateAPIRequest对象
 func NewTmallSupplychainChannelProductPriceUpdateRequest() *TmallSupplychainChannelProductPriceUpdateAPIRequest {
 	return &TmallSupplychainChannelProductPriceUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallSupplychainChannelProductPriceUpdateAPIRequest) Reset() {
+	r._currencyType = ""
+	r._skuPrice = ""
+	r._productPrice = ""
+	r._productId = 0
+	r._priceType = 0
+	r._skuId = 0
+	r._channelCode = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TmallSupplychainChannelProductPriceUpdateAPIRequest) SetChannelCode(_ch
 // GetChannelCode ChannelCode Getter
 func (r TmallSupplychainChannelProductPriceUpdateAPIRequest) GetChannelCode() int64 {
 	return r._channelCode
+}
+
+var poolTmallSupplychainChannelProductPriceUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallSupplychainChannelProductPriceUpdateRequest()
+	},
+}
+
+// GetTmallSupplychainChannelProductPriceUpdateRequest 从 sync.Pool 获取 TmallSupplychainChannelProductPriceUpdateAPIRequest
+func GetTmallSupplychainChannelProductPriceUpdateAPIRequest() *TmallSupplychainChannelProductPriceUpdateAPIRequest {
+	return poolTmallSupplychainChannelProductPriceUpdateAPIRequest.Get().(*TmallSupplychainChannelProductPriceUpdateAPIRequest)
+}
+
+// ReleaseTmallSupplychainChannelProductPriceUpdateAPIRequest 将 TmallSupplychainChannelProductPriceUpdateAPIRequest 放入 sync.Pool
+func ReleaseTmallSupplychainChannelProductPriceUpdateAPIRequest(v *TmallSupplychainChannelProductPriceUpdateAPIRequest) {
+	v.Reset()
+	poolTmallSupplychainChannelProductPriceUpdateAPIRequest.Put(v)
 }

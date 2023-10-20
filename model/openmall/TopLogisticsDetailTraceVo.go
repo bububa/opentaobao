@@ -1,5 +1,9 @@
 package openmall
 
+import (
+	"sync"
+)
+
 // TopLogisticsDetailTraceVo 结构体
 type TopLogisticsDetailTraceVo struct {
 	// 流转信息列表
@@ -12,4 +16,25 @@ type TopLogisticsDetailTraceVo struct {
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 淘宝交易单ID
 	Tid string `json:"tid,omitempty" xml:"tid,omitempty"`
+}
+
+var poolTopLogisticsDetailTraceVo = sync.Pool{
+	New: func() any {
+		return new(TopLogisticsDetailTraceVo)
+	},
+}
+
+// GetTopLogisticsDetailTraceVo() 从对象池中获取TopLogisticsDetailTraceVo
+func GetTopLogisticsDetailTraceVo() *TopLogisticsDetailTraceVo {
+	return poolTopLogisticsDetailTraceVo.Get().(*TopLogisticsDetailTraceVo)
+}
+
+// ReleaseTopLogisticsDetailTraceVo 释放TopLogisticsDetailTraceVo
+func ReleaseTopLogisticsDetailTraceVo(v *TopLogisticsDetailTraceVo) {
+	v.TraceList = v.TraceList[:0]
+	v.CompanyName = ""
+	v.OutSid = ""
+	v.Status = ""
+	v.Tid = ""
+	poolTopLogisticsDetailTraceVo.Put(v)
 }

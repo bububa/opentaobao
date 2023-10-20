@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // Consignordercancelfeedbackrequest 结构体
 type Consignordercancelfeedbackrequest struct {
 	// 供应商id
@@ -14,4 +18,26 @@ type Consignordercancelfeedbackrequest struct {
 	BusinessModel string `json:"business_model,omitempty" xml:"business_model,omitempty"`
 	// 是否取消成功,true成功/false失败
 	CancelResult bool `json:"cancel_result,omitempty" xml:"cancel_result,omitempty"`
+}
+
+var poolConsignordercancelfeedbackrequest = sync.Pool{
+	New: func() any {
+		return new(Consignordercancelfeedbackrequest)
+	},
+}
+
+// GetConsignordercancelfeedbackrequest() 从对象池中获取Consignordercancelfeedbackrequest
+func GetConsignordercancelfeedbackrequest() *Consignordercancelfeedbackrequest {
+	return poolConsignordercancelfeedbackrequest.Get().(*Consignordercancelfeedbackrequest)
+}
+
+// ReleaseConsignordercancelfeedbackrequest 释放Consignordercancelfeedbackrequest
+func ReleaseConsignordercancelfeedbackrequest(v *Consignordercancelfeedbackrequest) {
+	v.SupplierId = ""
+	v.BizOrderCode = ""
+	v.BizTime = ""
+	v.CancelReason = ""
+	v.BusinessModel = ""
+	v.CancelResult = false
+	poolConsignordercancelfeedbackrequest.Put(v)
 }

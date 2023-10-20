@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // ProductReportOperationDto 结构体
 type ProductReportOperationDto struct {
 	// 产品名称或产品ID(模糊搜索)
@@ -24,4 +28,31 @@ type ProductReportOperationDto struct {
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
 	// 每页数量
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolProductReportOperationDto = sync.Pool{
+	New: func() any {
+		return new(ProductReportOperationDto)
+	},
+}
+
+// GetProductReportOperationDto() 从对象池中获取ProductReportOperationDto
+func GetProductReportOperationDto() *ProductReportOperationDto {
+	return poolProductReportOperationDto.Get().(*ProductReportOperationDto)
+}
+
+// ReleaseProductReportOperationDto 释放ProductReportOperationDto
+func ReleaseProductReportOperationDto(v *ProductReportOperationDto) {
+	v.Key = ""
+	v.GetDetailData = ""
+	v.DateBegin = ""
+	v.DateEnd = ""
+	v.OrderField = ""
+	v.OrderType = ""
+	v.DateRange = 0
+	v.CampaignType = 0
+	v.CampaignId = 0
+	v.PageIndex = 0
+	v.PageSize = 0
+	poolProductReportOperationDto.Put(v)
 }

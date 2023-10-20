@@ -9,11 +9,6 @@ import (
 // aliexpress.affiliate.product.smartmatch
 //
 // 联盟物料算法智能推荐
-func AliexpressAffiliateProductSmartmatch(clt *core.SDKClient, req *aecreatives.AliexpressAffiliateProductSmartmatchAPIRequest, session string) (*aecreatives.AliexpressAffiliateProductSmartmatchAPIResponse, error) {
-	var resp aecreatives.AliexpressAffiliateProductSmartmatchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressAffiliateProductSmartmatch(clt *core.SDKClient, req *aecreatives.AliexpressAffiliateProductSmartmatchAPIRequest, resp *aecreatives.AliexpressAffiliateProductSmartmatchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package security
 
+import (
+	"sync"
+)
+
 // RpClientInfo 结构体
 type RpClientInfo struct {
 	// appKey
@@ -52,4 +56,45 @@ type RpClientInfo struct {
 	Wua string `json:"wua,omitempty" xml:"wua,omitempty"`
 	// 无线端用于风控的token
 	WuaToken string `json:"wua_token,omitempty" xml:"wua_token,omitempty"`
+}
+
+var poolRpClientInfo = sync.Pool{
+	New: func() any {
+		return new(RpClientInfo)
+	},
+}
+
+// GetRpClientInfo() 从对象池中获取RpClientInfo
+func GetRpClientInfo() *RpClientInfo {
+	return poolRpClientInfo.Get().(*RpClientInfo)
+}
+
+// ReleaseRpClientInfo 释放RpClientInfo
+func ReleaseRpClientInfo(v *RpClientInfo) {
+	v.AppKeyInfo = ""
+	v.AppName = ""
+	v.AppVersion = ""
+	v.AvailableMemory = ""
+	v.ClientType = ""
+	v.CpuArch = ""
+	v.DeviceId = ""
+	v.ExtendMap = ""
+	v.Ip = ""
+	v.LivenessSdkName = ""
+	v.LivenessSdkVersion = ""
+	v.Manufacturer = ""
+	v.MobileModel = ""
+	v.OsName = ""
+	v.OsVersion = ""
+	v.RpSdkName = ""
+	v.RpSdkVersion = ""
+	v.SessionId = ""
+	v.SupportNeon = ""
+	v.TimestampInfo = ""
+	v.TotalMemory = ""
+	v.Umid = ""
+	v.UmidToken = ""
+	v.Wua = ""
+	v.WuaToken = ""
+	poolRpClientInfo.Put(v)
 }

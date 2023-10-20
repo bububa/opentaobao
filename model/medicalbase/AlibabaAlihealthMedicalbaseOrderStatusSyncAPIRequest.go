@@ -2,6 +2,7 @@ package medicalbase
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest struct {
 // NewAlibabaAlihealthMedicalbaseOrderStatusSyncRequest 初始化AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest对象
 func NewAlibabaAlihealthMedicalbaseOrderStatusSyncRequest() *AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest {
 	return &AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest) Reset() {
+	r._orderlSyncDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest) SetOrderlSyncDTO(
 // GetOrderlSyncDTO OrderlSyncDTO Getter
 func (r AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest) GetOrderlSyncDTO() *OrderlSyncDto {
 	return r._orderlSyncDTO
+}
+
+var poolAlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthMedicalbaseOrderStatusSyncRequest()
+	},
+}
+
+// GetAlibabaAlihealthMedicalbaseOrderStatusSyncRequest 从 sync.Pool 获取 AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest
+func GetAlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest() *AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest {
+	return poolAlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest.Get().(*AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest 将 AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest(v *AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest.Put(v)
 }

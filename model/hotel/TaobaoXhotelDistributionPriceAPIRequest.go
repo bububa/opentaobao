@@ -2,6 +2,7 @@ package hotel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoXhotelDistributionPriceAPIRequest struct {
 // NewTaobaoXhotelDistributionPriceRequest 初始化TaobaoXhotelDistributionPriceAPIRequest对象
 func NewTaobaoXhotelDistributionPriceRequest() *TaobaoXhotelDistributionPriceAPIRequest {
 	return &TaobaoXhotelDistributionPriceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelDistributionPriceAPIRequest) Reset() {
+	r._checkinDate = ""
+	r._checkoutDate = ""
+	r._calendarCheckinStartDate = ""
+	r._calendarCheckinEndDate = ""
+	r._shids = 0
+	r._isCalendar = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoXhotelDistributionPriceAPIRequest) SetIsCalendar(_isCalendar bool
 // GetIsCalendar IsCalendar Getter
 func (r TaobaoXhotelDistributionPriceAPIRequest) GetIsCalendar() bool {
 	return r._isCalendar
+}
+
+var poolTaobaoXhotelDistributionPriceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelDistributionPriceRequest()
+	},
+}
+
+// GetTaobaoXhotelDistributionPriceRequest 从 sync.Pool 获取 TaobaoXhotelDistributionPriceAPIRequest
+func GetTaobaoXhotelDistributionPriceAPIRequest() *TaobaoXhotelDistributionPriceAPIRequest {
+	return poolTaobaoXhotelDistributionPriceAPIRequest.Get().(*TaobaoXhotelDistributionPriceAPIRequest)
+}
+
+// ReleaseTaobaoXhotelDistributionPriceAPIRequest 将 TaobaoXhotelDistributionPriceAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelDistributionPriceAPIRequest(v *TaobaoXhotelDistributionPriceAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelDistributionPriceAPIRequest.Put(v)
 }

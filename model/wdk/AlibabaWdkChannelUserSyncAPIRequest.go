@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkChannelUserSyncAPIRequest struct {
 // NewAlibabaWdkChannelUserSyncRequest 初始化AlibabaWdkChannelUserSyncAPIRequest对象
 func NewAlibabaWdkChannelUserSyncRequest() *AlibabaWdkChannelUserSyncAPIRequest {
 	return &AlibabaWdkChannelUserSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkChannelUserSyncAPIRequest) Reset() {
+	r._userSyncInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkChannelUserSyncAPIRequest) SetUserSyncInfo(_userSyncInfo *Use
 // GetUserSyncInfo UserSyncInfo Getter
 func (r AlibabaWdkChannelUserSyncAPIRequest) GetUserSyncInfo() *UserSyncInfo {
 	return r._userSyncInfo
+}
+
+var poolAlibabaWdkChannelUserSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkChannelUserSyncRequest()
+	},
+}
+
+// GetAlibabaWdkChannelUserSyncRequest 从 sync.Pool 获取 AlibabaWdkChannelUserSyncAPIRequest
+func GetAlibabaWdkChannelUserSyncAPIRequest() *AlibabaWdkChannelUserSyncAPIRequest {
+	return poolAlibabaWdkChannelUserSyncAPIRequest.Get().(*AlibabaWdkChannelUserSyncAPIRequest)
+}
+
+// ReleaseAlibabaWdkChannelUserSyncAPIRequest 将 AlibabaWdkChannelUserSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkChannelUserSyncAPIRequest(v *AlibabaWdkChannelUserSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkChannelUserSyncAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // Coupon 结构体
 type Coupon struct {
 	// 优惠券创建时间
@@ -14,4 +18,26 @@ type Coupon struct {
 	Denominations int64 `json:"denominations,omitempty" xml:"denominations,omitempty"`
 	// 订单满多少分才能用这个优惠券，501就是满501分能使用。注意：返回的是“分”，不是“元”
 	Condition int64 `json:"condition,omitempty" xml:"condition,omitempty"`
+}
+
+var poolCoupon = sync.Pool{
+	New: func() any {
+		return new(Coupon)
+	},
+}
+
+// GetCoupon() 从对象池中获取Coupon
+func GetCoupon() *Coupon {
+	return poolCoupon.Get().(*Coupon)
+}
+
+// ReleaseCoupon 释放Coupon
+func ReleaseCoupon(v *Coupon) {
+	v.CreatTime = ""
+	v.EndTime = ""
+	v.CreateChannel = ""
+	v.CouponId = 0
+	v.Denominations = 0
+	v.Condition = 0
+	poolCoupon.Put(v)
 }

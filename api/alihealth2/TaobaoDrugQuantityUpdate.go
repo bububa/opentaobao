@@ -9,11 +9,6 @@ import (
 // taobao.drug.quantity.update
 //
 // 商家通过top接口可以直接修改商品库存
-func TaobaoDrugQuantityUpdate(clt *core.SDKClient, req *alihealth2.TaobaoDrugQuantityUpdateAPIRequest, session string) (*alihealth2.TaobaoDrugQuantityUpdateAPIResponse, error) {
-	var resp alihealth2.TaobaoDrugQuantityUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoDrugQuantityUpdate(clt *core.SDKClient, req *alihealth2.TaobaoDrugQuantityUpdateAPIRequest, resp *alihealth2.TaobaoDrugQuantityUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

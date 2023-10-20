@@ -2,6 +2,7 @@ package seaking
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaSeakingTaskReportAPIRequest struct {
 // NewAlibabaSeakingTaskReportRequest 初始化AlibabaSeakingTaskReportAPIRequest对象
 func NewAlibabaSeakingTaskReportRequest() *AlibabaSeakingTaskReportAPIRequest {
 	return &AlibabaSeakingTaskReportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSeakingTaskReportAPIRequest) Reset() {
+	r._reportDetail = r._reportDetail[:0]
+	r._taskType = ""
+	r._token = ""
+	r._tokenFrom = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaSeakingTaskReportAPIRequest) SetTokenFrom(_tokenFrom string) err
 // GetTokenFrom TokenFrom Getter
 func (r AlibabaSeakingTaskReportAPIRequest) GetTokenFrom() string {
 	return r._tokenFrom
+}
+
+var poolAlibabaSeakingTaskReportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSeakingTaskReportRequest()
+	},
+}
+
+// GetAlibabaSeakingTaskReportRequest 从 sync.Pool 获取 AlibabaSeakingTaskReportAPIRequest
+func GetAlibabaSeakingTaskReportAPIRequest() *AlibabaSeakingTaskReportAPIRequest {
+	return poolAlibabaSeakingTaskReportAPIRequest.Get().(*AlibabaSeakingTaskReportAPIRequest)
+}
+
+// ReleaseAlibabaSeakingTaskReportAPIRequest 将 AlibabaSeakingTaskReportAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSeakingTaskReportAPIRequest(v *AlibabaSeakingTaskReportAPIRequest) {
+	v.Reset()
+	poolAlibabaSeakingTaskReportAPIRequest.Put(v)
 }

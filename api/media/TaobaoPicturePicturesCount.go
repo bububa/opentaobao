@@ -9,11 +9,6 @@ import (
 // taobao.picture.pictures.count
 //
 // 图片总数查询，目前出于对数据库的保护暂不支持此功能
-func TaobaoPicturePicturesCount(clt *core.SDKClient, req *media.TaobaoPicturePicturesCountAPIRequest, session string) (*media.TaobaoPicturePicturesCountAPIResponse, error) {
-	var resp media.TaobaoPicturePicturesCountAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoPicturePicturesCount(clt *core.SDKClient, req *media.TaobaoPicturePicturesCountAPIRequest, resp *media.TaobaoPicturePicturesCountAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

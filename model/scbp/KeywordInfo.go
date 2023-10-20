@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // KeywordInfo 结构体
 type KeywordInfo struct {
 	// 关键词
@@ -10,4 +14,24 @@ type KeywordInfo struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 状态
 	OnlineStatus int64 `json:"online_status,omitempty" xml:"online_status,omitempty"`
+}
+
+var poolKeywordInfo = sync.Pool{
+	New: func() any {
+		return new(KeywordInfo)
+	},
+}
+
+// GetKeywordInfo() 从对象池中获取KeywordInfo
+func GetKeywordInfo() *KeywordInfo {
+	return poolKeywordInfo.Get().(*KeywordInfo)
+}
+
+// ReleaseKeywordInfo 释放KeywordInfo
+func ReleaseKeywordInfo(v *KeywordInfo) {
+	v.Word = ""
+	v.Price = ""
+	v.Id = 0
+	v.OnlineStatus = 0
+	poolKeywordInfo.Put(v)
 }

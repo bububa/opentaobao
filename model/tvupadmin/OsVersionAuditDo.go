@@ -1,5 +1,9 @@
 package tvupadmin
 
+import (
+	"sync"
+)
+
 // OsVersionAuditDo 结构体
 type OsVersionAuditDo struct {
 	// 升级包列表
@@ -24,4 +28,31 @@ type OsVersionAuditDo struct {
 	GmtAudit string `json:"gmt_audit,omitempty" xml:"gmt_audit,omitempty"`
 	// 主键ID
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolOsVersionAuditDo = sync.Pool{
+	New: func() any {
+		return new(OsVersionAuditDo)
+	},
+}
+
+// GetOsVersionAuditDo() 从对象池中获取OsVersionAuditDo
+func GetOsVersionAuditDo() *OsVersionAuditDo {
+	return poolOsVersionAuditDo.Get().(*OsVersionAuditDo)
+}
+
+// ReleaseOsVersionAuditDo 释放OsVersionAuditDo
+func ReleaseOsVersionAuditDo(v *OsVersionAuditDo) {
+	v.OsRomList = v.OsRomList[:0]
+	v.ModelName = ""
+	v.RealTypeName = ""
+	v.Version = ""
+	v.ReleaseNote = ""
+	v.AuditStatus = ""
+	v.StatusDesc = ""
+	v.GmtCreate = ""
+	v.GmtModify = ""
+	v.GmtAudit = ""
+	v.Id = 0
+	poolOsVersionAuditDo.Put(v)
 }

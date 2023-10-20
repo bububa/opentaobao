@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.tracecodeplatform.code.entscan
 //
 // 药品商家扫描药品监管码，只有该商家的药才返回
-func AlibabaAlihealthTracecodeplatformCodeEntscan(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest, session string) (*alihealth2.AlibabaAlihealthTracecodeplatformCodeEntscanAPIResponse, error) {
-	var resp alihealth2.AlibabaAlihealthTracecodeplatformCodeEntscanAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthTracecodeplatformCodeEntscan(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest, resp *alihealth2.AlibabaAlihealthTracecodeplatformCodeEntscanAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQimenReturnorderConfirmAPIRequest struct {
 // NewTaobaoQimenReturnorderConfirmRequest 初始化TaobaoQimenReturnorderConfirmAPIRequest对象
 func NewTaobaoQimenReturnorderConfirmRequest() *TaobaoQimenReturnorderConfirmAPIRequest {
 	return &TaobaoQimenReturnorderConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenReturnorderConfirmAPIRequest) Reset() {
+	r._request = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -50,4 +57,21 @@ func (r *TaobaoQimenReturnorderConfirmAPIRequest) SetRequest(_request *ReturnOrd
 // GetRequest Request Getter
 func (r TaobaoQimenReturnorderConfirmAPIRequest) GetRequest() *ReturnOrderConfirmRequest {
 	return r._request
+}
+
+var poolTaobaoQimenReturnorderConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenReturnorderConfirmRequest()
+	},
+}
+
+// GetTaobaoQimenReturnorderConfirmRequest 从 sync.Pool 获取 TaobaoQimenReturnorderConfirmAPIRequest
+func GetTaobaoQimenReturnorderConfirmAPIRequest() *TaobaoQimenReturnorderConfirmAPIRequest {
+	return poolTaobaoQimenReturnorderConfirmAPIRequest.Get().(*TaobaoQimenReturnorderConfirmAPIRequest)
+}
+
+// ReleaseTaobaoQimenReturnorderConfirmAPIRequest 将 TaobaoQimenReturnorderConfirmAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenReturnorderConfirmAPIRequest(v *TaobaoQimenReturnorderConfirmAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenReturnorderConfirmAPIRequest.Put(v)
 }

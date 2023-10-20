@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // EntDailyReportDto 结构体
 type EntDailyReportDto struct {
 	// 报告所有者名称
@@ -36,4 +40,37 @@ type EntDailyReportDto struct {
 	RelationTaskUnAcceptedCount int64 `json:"relation_task_un_accepted_count,omitempty" xml:"relation_task_un_accepted_count,omitempty"`
 	// 其中还没有接收回执的包数量是
 	BillTaskUnAcceptedCount int64 `json:"bill_task_un_accepted_count,omitempty" xml:"bill_task_un_accepted_count,omitempty"`
+}
+
+var poolEntDailyReportDto = sync.Pool{
+	New: func() any {
+		return new(EntDailyReportDto)
+	},
+}
+
+// GetEntDailyReportDto() 从对象池中获取EntDailyReportDto
+func GetEntDailyReportDto() *EntDailyReportDto {
+	return poolEntDailyReportDto.Get().(*EntDailyReportDto)
+}
+
+// ReleaseEntDailyReportDto 释放EntDailyReportDto
+func ReleaseEntDailyReportDto(v *EntDailyReportDto) {
+	v.EntName = ""
+	v.Remark = ""
+	v.RefEntId = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.BillFileCount = 0
+	v.RelationTaskCount = 0
+	v.RelationFileCount = 0
+	v.BillTaskAcceptedCount = 0
+	v.BillFileAcceptedCount = 0
+	v.BillTaskCount = 0
+	v.BillFileUnAcceptedCount = 0
+	v.RelationTaskAcceptedCount = 0
+	v.RelationFileUnAcceptedCount = 0
+	v.RelationFileAcceptedCount = 0
+	v.RelationTaskUnAcceptedCount = 0
+	v.BillTaskUnAcceptedCount = 0
+	poolEntDailyReportDto.Put(v)
 }

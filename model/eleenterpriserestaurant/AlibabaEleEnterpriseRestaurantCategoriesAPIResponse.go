@@ -2,6 +2,7 @@ package eleenterpriserestaurant
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaEleEnterpriseRestaurantCategoriesAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleEnterpriseRestaurantCategoriesAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaEleEnterpriseRestaurantCategoriesAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaEleEnterpriseRestaurantCategoriesAPIResponseModel).Reset()
 }
 
 // AlibabaEleEnterpriseRestaurantCategoriesAPIResponseModel is 餐厅分类 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaEleEnterpriseRestaurantCategoriesAPIResponseModel struct {
 	EnterpriseMsg string `json:"enterprise_msg,omitempty" xml:"enterprise_msg,omitempty"`
 	// 请求id
 	EnterpriseRequestid string `json:"enterprise_requestid,omitempty" xml:"enterprise_requestid,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaEleEnterpriseRestaurantCategoriesAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.EnterpriseDatas = m.EnterpriseDatas[:0]
+	m.EnterpriseCode = ""
+	m.EnterpriseMsg = ""
+	m.EnterpriseRequestid = ""
+}
+
+var poolAlibabaEleEnterpriseRestaurantCategoriesAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaEleEnterpriseRestaurantCategoriesAPIResponse)
+	},
+}
+
+// GetAlibabaEleEnterpriseRestaurantCategoriesAPIResponse 从 sync.Pool 获取 AlibabaEleEnterpriseRestaurantCategoriesAPIResponse
+func GetAlibabaEleEnterpriseRestaurantCategoriesAPIResponse() *AlibabaEleEnterpriseRestaurantCategoriesAPIResponse {
+	return poolAlibabaEleEnterpriseRestaurantCategoriesAPIResponse.Get().(*AlibabaEleEnterpriseRestaurantCategoriesAPIResponse)
+}
+
+// ReleaseAlibabaEleEnterpriseRestaurantCategoriesAPIResponse 将 AlibabaEleEnterpriseRestaurantCategoriesAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaEleEnterpriseRestaurantCategoriesAPIResponse(v *AlibabaEleEnterpriseRestaurantCategoriesAPIResponse) {
+	v.Reset()
+	poolAlibabaEleEnterpriseRestaurantCategoriesAPIResponse.Put(v)
 }

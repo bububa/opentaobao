@@ -2,6 +2,7 @@ package alink
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlinkMessageConfigSetAPIRequest struct {
 // NewAlibabaAlinkMessageConfigSetRequest 初始化AlibabaAlinkMessageConfigSetAPIRequest对象
 func NewAlibabaAlinkMessageConfigSetRequest() *AlibabaAlinkMessageConfigSetAPIRequest {
 	return &AlibabaAlinkMessageConfigSetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlinkMessageConfigSetAPIRequest) Reset() {
+	r._uuid = ""
+	r._pushDisabled = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlinkMessageConfigSetAPIRequest) SetPushDisabled(_pushDisabled s
 // GetPushDisabled PushDisabled Getter
 func (r AlibabaAlinkMessageConfigSetAPIRequest) GetPushDisabled() string {
 	return r._pushDisabled
+}
+
+var poolAlibabaAlinkMessageConfigSetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlinkMessageConfigSetRequest()
+	},
+}
+
+// GetAlibabaAlinkMessageConfigSetRequest 从 sync.Pool 获取 AlibabaAlinkMessageConfigSetAPIRequest
+func GetAlibabaAlinkMessageConfigSetAPIRequest() *AlibabaAlinkMessageConfigSetAPIRequest {
+	return poolAlibabaAlinkMessageConfigSetAPIRequest.Get().(*AlibabaAlinkMessageConfigSetAPIRequest)
+}
+
+// ReleaseAlibabaAlinkMessageConfigSetAPIRequest 将 AlibabaAlinkMessageConfigSetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlinkMessageConfigSetAPIRequest(v *AlibabaAlinkMessageConfigSetAPIRequest) {
+	v.Reset()
+	poolAlibabaAlinkMessageConfigSetAPIRequest.Put(v)
 }

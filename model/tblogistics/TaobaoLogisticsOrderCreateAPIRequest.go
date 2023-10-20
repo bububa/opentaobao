@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type TaobaoLogisticsOrderCreateAPIRequest struct {
 // NewTaobaoLogisticsOrderCreateRequest 初始化TaobaoLogisticsOrderCreateAPIRequest对象
 func NewTaobaoLogisticsOrderCreateRequest() *TaobaoLogisticsOrderCreateAPIRequest {
 	return &TaobaoLogisticsOrderCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsOrderCreateAPIRequest) Reset() {
+	r._itemValues = ""
+	r._goodsNames = ""
+	r._goodsQuantities = ""
+	r._mailNo = ""
+	r._sellerWangwangId = ""
+	r._logisCompanyCode = ""
+	r._logisType = ""
+	r._orderType = 0
+	r._tradeId = 0
+	r._shipping = 0
+	r._isConsign = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *TaobaoLogisticsOrderCreateAPIRequest) SetIsConsign(_isConsign bool) err
 // GetIsConsign IsConsign Getter
 func (r TaobaoLogisticsOrderCreateAPIRequest) GetIsConsign() bool {
 	return r._isConsign
+}
+
+var poolTaobaoLogisticsOrderCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsOrderCreateRequest()
+	},
+}
+
+// GetTaobaoLogisticsOrderCreateRequest 从 sync.Pool 获取 TaobaoLogisticsOrderCreateAPIRequest
+func GetTaobaoLogisticsOrderCreateAPIRequest() *TaobaoLogisticsOrderCreateAPIRequest {
+	return poolTaobaoLogisticsOrderCreateAPIRequest.Get().(*TaobaoLogisticsOrderCreateAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsOrderCreateAPIRequest 将 TaobaoLogisticsOrderCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsOrderCreateAPIRequest(v *TaobaoLogisticsOrderCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsOrderCreateAPIRequest.Put(v)
 }

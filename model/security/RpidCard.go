@@ -1,5 +1,9 @@
 package security
 
+import (
+	"sync"
+)
+
 // RpidCard 结构体
 type RpidCard struct {
 	// address
@@ -24,4 +28,31 @@ type RpidCard struct {
 	BizErrorCode *RpErrorCode `json:"biz_error_code,omitempty" xml:"biz_error_code,omitempty"`
 	// sex
 	Sex *RpSex `json:"sex,omitempty" xml:"sex,omitempty"`
+}
+
+var poolRpidCard = sync.Pool{
+	New: func() any {
+		return new(RpidCard)
+	},
+}
+
+// GetRpidCard() 从对象池中获取RpidCard
+func GetRpidCard() *RpidCard {
+	return poolRpidCard.Get().(*RpidCard)
+}
+
+// ReleaseRpidCard 释放RpidCard
+func ReleaseRpidCard(v *RpidCard) {
+	v.Address = ""
+	v.BirthDay = ""
+	v.CardType = ""
+	v.Code = ""
+	v.Expiry = ""
+	v.Name = ""
+	v.UrlBackImage = ""
+	v.UrlFrontImage = ""
+	v.RpIdcardImage = nil
+	v.BizErrorCode = nil
+	v.Sex = nil
+	poolRpidCard.Put(v)
 }

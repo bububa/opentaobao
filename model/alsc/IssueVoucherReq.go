@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // IssueVoucherReq 结构体
 type IssueVoucherReq struct {
 	// 活动id
@@ -26,4 +30,32 @@ type IssueVoucherReq struct {
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
 	// 进店领券订单来源
 	OrderSrc int64 `json:"order_src,omitempty" xml:"order_src,omitempty"`
+}
+
+var poolIssueVoucherReq = sync.Pool{
+	New: func() any {
+		return new(IssueVoucherReq)
+	},
+}
+
+// GetIssueVoucherReq() 从对象池中获取IssueVoucherReq
+func GetIssueVoucherReq() *IssueVoucherReq {
+	return poolIssueVoucherReq.Get().(*IssueVoucherReq)
+}
+
+// ReleaseIssueVoucherReq 释放IssueVoucherReq
+func ReleaseIssueVoucherReq(v *IssueVoucherReq) {
+	v.ActivityId = ""
+	v.BrandId = ""
+	v.CustomerId = ""
+	v.FromUserId = ""
+	v.OperatorId = ""
+	v.OperatorName = ""
+	v.OrderId = ""
+	v.OutBrandId = ""
+	v.OutShopId = ""
+	v.RequestId = ""
+	v.ShopId = ""
+	v.OrderSrc = 0
+	poolIssueVoucherReq.Put(v)
 }

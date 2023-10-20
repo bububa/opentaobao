@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripInvoiceSettingModifyAPIRequest struct {
 // NewAlitripBtripInvoiceSettingModifyRequest 初始化AlitripBtripInvoiceSettingModifyAPIRequest对象
 func NewAlitripBtripInvoiceSettingModifyRequest() *AlitripBtripInvoiceSettingModifyAPIRequest {
 	return &AlitripBtripInvoiceSettingModifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripInvoiceSettingModifyAPIRequest) Reset() {
+	r._rq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripInvoiceSettingModifyAPIRequest) SetRq(_rq *OpenInvoiceModif
 // GetRq Rq Getter
 func (r AlitripBtripInvoiceSettingModifyAPIRequest) GetRq() *OpenInvoiceModifyAndNewRq {
 	return r._rq
+}
+
+var poolAlitripBtripInvoiceSettingModifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripInvoiceSettingModifyRequest()
+	},
+}
+
+// GetAlitripBtripInvoiceSettingModifyRequest 从 sync.Pool 获取 AlitripBtripInvoiceSettingModifyAPIRequest
+func GetAlitripBtripInvoiceSettingModifyAPIRequest() *AlitripBtripInvoiceSettingModifyAPIRequest {
+	return poolAlitripBtripInvoiceSettingModifyAPIRequest.Get().(*AlitripBtripInvoiceSettingModifyAPIRequest)
+}
+
+// ReleaseAlitripBtripInvoiceSettingModifyAPIRequest 将 AlitripBtripInvoiceSettingModifyAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripInvoiceSettingModifyAPIRequest(v *AlitripBtripInvoiceSettingModifyAPIRequest) {
+	v.Reset()
+	poolAlitripBtripInvoiceSettingModifyAPIRequest.Put(v)
 }

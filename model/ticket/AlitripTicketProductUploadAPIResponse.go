@@ -2,6 +2,7 @@ package ticket
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type AlitripTicketProductUploadAPIResponse struct {
 	AlitripTicketProductUploadAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripTicketProductUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripTicketProductUploadAPIResponseModel).Reset()
+}
+
 // AlitripTicketProductUploadAPIResponseModel is 【门票API2.0】门票收费项目管理接口 成功返回结果
 type AlitripTicketProductUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_ticket_product_upload_response"`
@@ -23,4 +30,27 @@ type AlitripTicketProductUploadAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 门票商品发布、编辑结果
 	FirstResult *TicketItemResult `json:"first_result,omitempty" xml:"first_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripTicketProductUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.FirstResult = nil
+}
+
+var poolAlitripTicketProductUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripTicketProductUploadAPIResponse)
+	},
+}
+
+// GetAlitripTicketProductUploadAPIResponse 从 sync.Pool 获取 AlitripTicketProductUploadAPIResponse
+func GetAlitripTicketProductUploadAPIResponse() *AlitripTicketProductUploadAPIResponse {
+	return poolAlitripTicketProductUploadAPIResponse.Get().(*AlitripTicketProductUploadAPIResponse)
+}
+
+// ReleaseAlitripTicketProductUploadAPIResponse 将 AlitripTicketProductUploadAPIResponse 保存到 sync.Pool
+func ReleaseAlitripTicketProductUploadAPIResponse(v *AlitripTicketProductUploadAPIResponse) {
+	v.Reset()
+	poolAlitripTicketProductUploadAPIResponse.Put(v)
 }

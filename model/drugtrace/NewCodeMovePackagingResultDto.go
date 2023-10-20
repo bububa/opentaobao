@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // NewCodeMovePackagingResultDto 结构体
 type NewCodeMovePackagingResultDto struct {
 	// 内层小对象
@@ -12,4 +16,25 @@ type NewCodeMovePackagingResultDto struct {
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 码拼箱信息
 	Info string `json:"info,omitempty" xml:"info,omitempty"`
+}
+
+var poolNewCodeMovePackagingResultDto = sync.Pool{
+	New: func() any {
+		return new(NewCodeMovePackagingResultDto)
+	},
+}
+
+// GetNewCodeMovePackagingResultDto() 从对象池中获取NewCodeMovePackagingResultDto
+func GetNewCodeMovePackagingResultDto() *NewCodeMovePackagingResultDto {
+	return poolNewCodeMovePackagingResultDto.Get().(*NewCodeMovePackagingResultDto)
+}
+
+// ReleaseNewCodeMovePackagingResultDto 释放NewCodeMovePackagingResultDto
+func ReleaseNewCodeMovePackagingResultDto(v *NewCodeMovePackagingResultDto) {
+	v.NewCodeMovePackagingResultDTOs = v.NewCodeMovePackagingResultDTOs[:0]
+	v.SecondaryCode = ""
+	v.PrimaryCodes = ""
+	v.Status = ""
+	v.Info = ""
+	poolNewCodeMovePackagingResultDto.Put(v)
 }

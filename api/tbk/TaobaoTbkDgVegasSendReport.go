@@ -9,11 +9,6 @@ import (
 // taobao.tbk.dg.vegas.send.report
 //
 // 查询账号下的红包发放个数。
-func TaobaoTbkDgVegasSendReport(clt *core.SDKClient, req *tbk.TaobaoTbkDgVegasSendReportAPIRequest, session string) (*tbk.TaobaoTbkDgVegasSendReportAPIResponse, error) {
-	var resp tbk.TaobaoTbkDgVegasSendReportAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTbkDgVegasSendReport(clt *core.SDKClient, req *tbk.TaobaoTbkDgVegasSendReportAPIRequest, resp *tbk.TaobaoTbkDgVegasSendReportAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

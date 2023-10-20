@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliexpressPaymentExchangeGetAPIRequest struct {
 // NewAliexpressPaymentExchangeGetRequest 初始化AliexpressPaymentExchangeGetAPIRequest对象
 func NewAliexpressPaymentExchangeGetRequest() *AliexpressPaymentExchangeGetAPIRequest {
 	return &AliexpressPaymentExchangeGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressPaymentExchangeGetAPIRequest) Reset() {
+	r._checkoutExchangeRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliexpressPaymentExchangeGetAPIRequest) SetCheckoutExchangeRequest(_che
 // GetCheckoutExchangeRequest CheckoutExchangeRequest Getter
 func (r AliexpressPaymentExchangeGetAPIRequest) GetCheckoutExchangeRequest() *CheckoutExchangeRequest {
 	return r._checkoutExchangeRequest
+}
+
+var poolAliexpressPaymentExchangeGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressPaymentExchangeGetRequest()
+	},
+}
+
+// GetAliexpressPaymentExchangeGetRequest 从 sync.Pool 获取 AliexpressPaymentExchangeGetAPIRequest
+func GetAliexpressPaymentExchangeGetAPIRequest() *AliexpressPaymentExchangeGetAPIRequest {
+	return poolAliexpressPaymentExchangeGetAPIRequest.Get().(*AliexpressPaymentExchangeGetAPIRequest)
+}
+
+// ReleaseAliexpressPaymentExchangeGetAPIRequest 将 AliexpressPaymentExchangeGetAPIRequest 放入 sync.Pool
+func ReleaseAliexpressPaymentExchangeGetAPIRequest(v *AliexpressPaymentExchangeGetAPIRequest) {
+	v.Reset()
+	poolAliexpressPaymentExchangeGetAPIRequest.Put(v)
 }

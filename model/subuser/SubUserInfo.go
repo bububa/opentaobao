@@ -1,5 +1,9 @@
 package subuser
 
+import (
+	"sync"
+)
+
 // SubUserInfo 结构体
 type SubUserInfo struct {
 	// 子账号用户名
@@ -16,4 +20,27 @@ type SubUserInfo struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 子账号所属的主账号的唯一标识
 	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
+}
+
+var poolSubUserInfo = sync.Pool{
+	New: func() any {
+		return new(SubUserInfo)
+	},
+}
+
+// GetSubUserInfo() 从对象池中获取SubUserInfo
+func GetSubUserInfo() *SubUserInfo {
+	return poolSubUserInfo.Get().(*SubUserInfo)
+}
+
+// ReleaseSubUserInfo 释放SubUserInfo
+func ReleaseSubUserInfo(v *SubUserInfo) {
+	v.Nick = ""
+	v.SellerNick = ""
+	v.FullName = ""
+	v.IsOnline = 0
+	v.SubId = 0
+	v.Status = 0
+	v.SellerId = 0
+	poolSubUserInfo.Put(v)
 }

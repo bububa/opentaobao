@@ -9,11 +9,6 @@ import (
 // alibaba.alsc.crm.marketing.issue.voucher
 //
 // 提供发券功能
-func AlibabaAlscCrmMarketingIssueVoucher(clt *core.SDKClient, req *alsc.AlibabaAlscCrmMarketingIssueVoucherAPIRequest, session string) (*alsc.AlibabaAlscCrmMarketingIssueVoucherAPIResponse, error) {
-	var resp alsc.AlibabaAlscCrmMarketingIssueVoucherAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlscCrmMarketingIssueVoucher(clt *core.SDKClient, req *alsc.AlibabaAlscCrmMarketingIssueVoucherAPIRequest, resp *alsc.AlibabaAlscCrmMarketingIssueVoucherAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

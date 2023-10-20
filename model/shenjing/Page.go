@@ -1,5 +1,9 @@
 package shenjing
 
+import (
+	"sync"
+)
+
 // Page 结构体
 type Page struct {
 	// 活动列表
@@ -16,4 +20,27 @@ type Page struct {
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
 	// 总页数
 	TotalPage int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
+}
+
+var poolPage = sync.Pool{
+	New: func() any {
+		return new(Page)
+	},
+}
+
+// GetPage() 从对象池中获取Page
+func GetPage() *Page {
+	return poolPage.Get().(*Page)
+}
+
+// ReleasePage 释放Page
+func ReleasePage(v *Page) {
+	v.Items = v.Items[:0]
+	v.Total = 0
+	v.Limit = 0
+	v.TotalCount = 0
+	v.PageSize = 0
+	v.CurrentPage = 0
+	v.TotalPage = 0
+	poolPage.Put(v)
 }

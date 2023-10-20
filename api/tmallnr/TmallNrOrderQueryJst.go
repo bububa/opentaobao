@@ -9,11 +9,6 @@ import (
 // tmall.nr.order.query.jst
 //
 // 同城配送业务获取单笔订单
-func TmallNrOrderQueryJst(clt *core.SDKClient, req *tmallnr.TmallNrOrderQueryJstAPIRequest, session string) (*tmallnr.TmallNrOrderQueryJstAPIResponse, error) {
-	var resp tmallnr.TmallNrOrderQueryJstAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallNrOrderQueryJst(clt *core.SDKClient, req *tmallnr.TmallNrOrderQueryJstAPIRequest, resp *tmallnr.TmallNrOrderQueryJstAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

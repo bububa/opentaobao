@@ -2,6 +2,7 @@ package lstspeacker
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaLstSpeakerConfigureSetpaytimeAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstSpeakerConfigureSetpaytimeAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaLstSpeakerConfigureSetpaytimeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaLstSpeakerConfigureSetpaytimeAPIResponseModel).Reset()
 }
 
 // AlibabaLstSpeakerConfigureSetpaytimeAPIResponseModel is 音箱播放配置 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaLstSpeakerConfigureSetpaytimeAPIResponseModel struct {
 	Succ bool `json:"succ,omitempty" xml:"succ,omitempty"`
 	// 执行结果标识
 	Module bool `json:"module,omitempty" xml:"module,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaLstSpeakerConfigureSetpaytimeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErroMessage = ""
+	m.ErroCode = ""
+	m.Succ = false
+	m.Module = false
+}
+
+var poolAlibabaLstSpeakerConfigureSetpaytimeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaLstSpeakerConfigureSetpaytimeAPIResponse)
+	},
+}
+
+// GetAlibabaLstSpeakerConfigureSetpaytimeAPIResponse 从 sync.Pool 获取 AlibabaLstSpeakerConfigureSetpaytimeAPIResponse
+func GetAlibabaLstSpeakerConfigureSetpaytimeAPIResponse() *AlibabaLstSpeakerConfigureSetpaytimeAPIResponse {
+	return poolAlibabaLstSpeakerConfigureSetpaytimeAPIResponse.Get().(*AlibabaLstSpeakerConfigureSetpaytimeAPIResponse)
+}
+
+// ReleaseAlibabaLstSpeakerConfigureSetpaytimeAPIResponse 将 AlibabaLstSpeakerConfigureSetpaytimeAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaLstSpeakerConfigureSetpaytimeAPIResponse(v *AlibabaLstSpeakerConfigureSetpaytimeAPIResponse) {
+	v.Reset()
+	poolAlibabaLstSpeakerConfigureSetpaytimeAPIResponse.Put(v)
 }

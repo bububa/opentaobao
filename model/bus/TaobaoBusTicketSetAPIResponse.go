@@ -2,6 +2,7 @@ package bus
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoBusTicketSetAPIResponse struct {
 	TaobaoBusTicketSetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoBusTicketSetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoBusTicketSetAPIResponseModel).Reset()
+}
+
 // TaobaoBusTicketSetAPIResponseModel is 出票接口 成功返回结果
 type TaobaoBusTicketSetAPIResponseModel struct {
 	XMLName xml.Name `xml:"bus_ticket_set_response"`
@@ -26,4 +33,29 @@ type TaobaoBusTicketSetAPIResponseModel struct {
 	ErrorMsg1 string `json:"error_msg1,omitempty" xml:"error_msg1,omitempty"`
 	// success1
 	Success1 bool `json:"success1,omitempty" xml:"success1,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoBusTicketSetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorCode1 = ""
+	m.ErrorMsg1 = ""
+	m.Success1 = false
+}
+
+var poolTaobaoBusTicketSetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoBusTicketSetAPIResponse)
+	},
+}
+
+// GetTaobaoBusTicketSetAPIResponse 从 sync.Pool 获取 TaobaoBusTicketSetAPIResponse
+func GetTaobaoBusTicketSetAPIResponse() *TaobaoBusTicketSetAPIResponse {
+	return poolTaobaoBusTicketSetAPIResponse.Get().(*TaobaoBusTicketSetAPIResponse)
+}
+
+// ReleaseTaobaoBusTicketSetAPIResponse 将 TaobaoBusTicketSetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoBusTicketSetAPIResponse(v *TaobaoBusTicketSetAPIResponse) {
+	v.Reset()
+	poolTaobaoBusTicketSetAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpChannelDistributorProductDistributeAPIRequest struct {
 // NewAlibabaAscpChannelDistributorProductDistributeRequest 初始化AlibabaAscpChannelDistributorProductDistributeAPIRequest对象
 func NewAlibabaAscpChannelDistributorProductDistributeRequest() *AlibabaAscpChannelDistributorProductDistributeAPIRequest {
 	return &AlibabaAscpChannelDistributorProductDistributeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpChannelDistributorProductDistributeAPIRequest) Reset() {
+	r._itemDistributePublishRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpChannelDistributorProductDistributeAPIRequest) SetItemDistri
 // GetItemDistributePublishRequest ItemDistributePublishRequest Getter
 func (r AlibabaAscpChannelDistributorProductDistributeAPIRequest) GetItemDistributePublishRequest() *ItemDistributePublishRequest {
 	return r._itemDistributePublishRequest
+}
+
+var poolAlibabaAscpChannelDistributorProductDistributeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpChannelDistributorProductDistributeRequest()
+	},
+}
+
+// GetAlibabaAscpChannelDistributorProductDistributeRequest 从 sync.Pool 获取 AlibabaAscpChannelDistributorProductDistributeAPIRequest
+func GetAlibabaAscpChannelDistributorProductDistributeAPIRequest() *AlibabaAscpChannelDistributorProductDistributeAPIRequest {
+	return poolAlibabaAscpChannelDistributorProductDistributeAPIRequest.Get().(*AlibabaAscpChannelDistributorProductDistributeAPIRequest)
+}
+
+// ReleaseAlibabaAscpChannelDistributorProductDistributeAPIRequest 将 AlibabaAscpChannelDistributorProductDistributeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpChannelDistributorProductDistributeAPIRequest(v *AlibabaAscpChannelDistributorProductDistributeAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpChannelDistributorProductDistributeAPIRequest.Put(v)
 }

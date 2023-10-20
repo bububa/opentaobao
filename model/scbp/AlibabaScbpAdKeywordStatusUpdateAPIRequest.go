@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaScbpAdKeywordStatusUpdateAPIRequest struct {
 // NewAlibabaScbpAdKeywordStatusUpdateRequest 初始化AlibabaScbpAdKeywordStatusUpdateAPIRequest对象
 func NewAlibabaScbpAdKeywordStatusUpdateRequest() *AlibabaScbpAdKeywordStatusUpdateAPIRequest {
 	return &AlibabaScbpAdKeywordStatusUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdKeywordStatusUpdateAPIRequest) Reset() {
+	r._adKeyword = ""
+	r._status = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaScbpAdKeywordStatusUpdateAPIRequest) SetStatus(_status string) e
 // GetStatus Status Getter
 func (r AlibabaScbpAdKeywordStatusUpdateAPIRequest) GetStatus() string {
 	return r._status
+}
+
+var poolAlibabaScbpAdKeywordStatusUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdKeywordStatusUpdateRequest()
+	},
+}
+
+// GetAlibabaScbpAdKeywordStatusUpdateRequest 从 sync.Pool 获取 AlibabaScbpAdKeywordStatusUpdateAPIRequest
+func GetAlibabaScbpAdKeywordStatusUpdateAPIRequest() *AlibabaScbpAdKeywordStatusUpdateAPIRequest {
+	return poolAlibabaScbpAdKeywordStatusUpdateAPIRequest.Get().(*AlibabaScbpAdKeywordStatusUpdateAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdKeywordStatusUpdateAPIRequest 将 AlibabaScbpAdKeywordStatusUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdKeywordStatusUpdateAPIRequest(v *AlibabaScbpAdKeywordStatusUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdKeywordStatusUpdateAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package retail
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaRetailElectronicCertificatePreConfirmAPIRequest struct {
 // NewAlibabaRetailElectronicCertificatePreConfirmRequest 初始化AlibabaRetailElectronicCertificatePreConfirmAPIRequest对象
 func NewAlibabaRetailElectronicCertificatePreConfirmRequest() *AlibabaRetailElectronicCertificatePreConfirmAPIRequest {
 	return &AlibabaRetailElectronicCertificatePreConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaRetailElectronicCertificatePreConfirmAPIRequest) Reset() {
+	r._deviceId = ""
+	r._code = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaRetailElectronicCertificatePreConfirmAPIRequest) SetCode(_code i
 // GetCode Code Getter
 func (r AlibabaRetailElectronicCertificatePreConfirmAPIRequest) GetCode() int64 {
 	return r._code
+}
+
+var poolAlibabaRetailElectronicCertificatePreConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaRetailElectronicCertificatePreConfirmRequest()
+	},
+}
+
+// GetAlibabaRetailElectronicCertificatePreConfirmRequest 从 sync.Pool 获取 AlibabaRetailElectronicCertificatePreConfirmAPIRequest
+func GetAlibabaRetailElectronicCertificatePreConfirmAPIRequest() *AlibabaRetailElectronicCertificatePreConfirmAPIRequest {
+	return poolAlibabaRetailElectronicCertificatePreConfirmAPIRequest.Get().(*AlibabaRetailElectronicCertificatePreConfirmAPIRequest)
+}
+
+// ReleaseAlibabaRetailElectronicCertificatePreConfirmAPIRequest 将 AlibabaRetailElectronicCertificatePreConfirmAPIRequest 放入 sync.Pool
+func ReleaseAlibabaRetailElectronicCertificatePreConfirmAPIRequest(v *AlibabaRetailElectronicCertificatePreConfirmAPIRequest) {
+	v.Reset()
+	poolAlibabaRetailElectronicCertificatePreConfirmAPIRequest.Put(v)
 }

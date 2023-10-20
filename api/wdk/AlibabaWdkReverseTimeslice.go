@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.reverse.timeslice
 //
 // 逆向取货时间片查询
-func AlibabaWdkReverseTimeslice(clt *core.SDKClient, req *wdk.AlibabaWdkReverseTimesliceAPIRequest, session string) (*wdk.AlibabaWdkReverseTimesliceAPIResponse, error) {
-	var resp wdk.AlibabaWdkReverseTimesliceAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkReverseTimeslice(clt *core.SDKClient, req *wdk.AlibabaWdkReverseTimesliceAPIRequest, resp *wdk.AlibabaWdkReverseTimesliceAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package retail
 
+import (
+	"sync"
+)
+
 // Order 结构体
 type Order struct {
 	// 商品信息
@@ -20,4 +24,29 @@ type Order struct {
 	DeliveryAddress *DeliveryAddressDto `json:"delivery_address,omitempty" xml:"delivery_address,omitempty"`
 	// 订单实付价格
 	PayFee int64 `json:"pay_fee,omitempty" xml:"pay_fee,omitempty"`
+}
+
+var poolOrder = sync.Pool{
+	New: func() any {
+		return new(Order)
+	},
+}
+
+// GetOrder() 从对象池中获取Order
+func GetOrder() *Order {
+	return poolOrder.Get().(*Order)
+}
+
+// ReleaseOrder 释放Order
+func ReleaseOrder(v *Order) {
+	v.ItemList = v.ItemList[:0]
+	v.StoreId = ""
+	v.OutOrderId = ""
+	v.ShippingType = ""
+	v.BuyerId = 0
+	v.StoreOrderId = 0
+	v.OriginPrice = 0
+	v.DeliveryAddress = nil
+	v.PayFee = 0
+	poolOrder.Put(v)
 }

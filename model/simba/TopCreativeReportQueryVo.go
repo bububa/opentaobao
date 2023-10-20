@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // TopCreativeReportQueryVo 结构体
 type TopCreativeReportQueryVo struct {
 	// 聚合维度，creative-创意，date-时间
@@ -32,4 +36,35 @@ type TopCreativeReportQueryVo struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 是否分页
 	ByPage bool `json:"by_page,omitempty" xml:"by_page,omitempty"`
+}
+
+var poolTopCreativeReportQueryVo = sync.Pool{
+	New: func() any {
+		return new(TopCreativeReportQueryVo)
+	},
+}
+
+// GetTopCreativeReportQueryVo() 从对象池中获取TopCreativeReportQueryVo
+func GetTopCreativeReportQueryVo() *TopCreativeReportQueryVo {
+	return poolTopCreativeReportQueryVo.Get().(*TopCreativeReportQueryVo)
+}
+
+// ReleaseTopCreativeReportQueryVo 释放TopCreativeReportQueryVo
+func ReleaseTopCreativeReportQueryVo(v *TopCreativeReportQueryVo) {
+	v.QueryDomains = v.QueryDomains[:0]
+	v.QueryFieldInList = v.QueryFieldInList[:0]
+	v.BizCodeInList = v.BizCodeInList[:0]
+	v.ProvinceIdInList = v.ProvinceIdInList[:0]
+	v.StrategyOptimizeTargetInList = v.StrategyOptimizeTargetInList[:0]
+	v.StrategyCampaignIdInList = v.StrategyCampaignIdInList[:0]
+	v.SplitType = ""
+	v.UnifyType = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.StrategyCreativeIdOrName = ""
+	v.EffectEqual = 0
+	v.Offset = 0
+	v.PageSize = 0
+	v.ByPage = false
+	poolTopCreativeReportQueryVo.Put(v)
 }

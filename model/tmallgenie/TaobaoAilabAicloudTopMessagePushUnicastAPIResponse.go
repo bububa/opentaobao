@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoAilabAicloudTopMessagePushUnicastAPIResponse struct {
 	TaobaoAilabAicloudTopMessagePushUnicastAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopMessagePushUnicastAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAilabAicloudTopMessagePushUnicastAPIResponseModel).Reset()
+}
+
 // TaobaoAilabAicloudTopMessagePushUnicastAPIResponseModel is 天猫精灵消息中心单播推送消息接口 成功返回结果
 type TaobaoAilabAicloudTopMessagePushUnicastAPIResponseModel struct {
 	XMLName xml.Name `xml:"ailab_aicloud_top_message_push_unicast_response"`
@@ -26,4 +33,29 @@ type TaobaoAilabAicloudTopMessagePushUnicastAPIResponseModel struct {
 	RetMsg string `json:"ret_msg,omitempty" xml:"ret_msg,omitempty"`
 	// 调用结果code 0:成功 非0：失败
 	RetCode int64 `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopMessagePushUnicastAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TraceId = ""
+	m.RetMsg = ""
+	m.RetCode = 0
+}
+
+var poolTaobaoAilabAicloudTopMessagePushUnicastAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAilabAicloudTopMessagePushUnicastAPIResponse)
+	},
+}
+
+// GetTaobaoAilabAicloudTopMessagePushUnicastAPIResponse 从 sync.Pool 获取 TaobaoAilabAicloudTopMessagePushUnicastAPIResponse
+func GetTaobaoAilabAicloudTopMessagePushUnicastAPIResponse() *TaobaoAilabAicloudTopMessagePushUnicastAPIResponse {
+	return poolTaobaoAilabAicloudTopMessagePushUnicastAPIResponse.Get().(*TaobaoAilabAicloudTopMessagePushUnicastAPIResponse)
+}
+
+// ReleaseTaobaoAilabAicloudTopMessagePushUnicastAPIResponse 将 TaobaoAilabAicloudTopMessagePushUnicastAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAilabAicloudTopMessagePushUnicastAPIResponse(v *TaobaoAilabAicloudTopMessagePushUnicastAPIResponse) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopMessagePushUnicastAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkChannelCommentCreateAPIRequest struct {
 // NewAlibabaWdkChannelCommentCreateRequest 初始化AlibabaWdkChannelCommentCreateAPIRequest对象
 func NewAlibabaWdkChannelCommentCreateRequest() *AlibabaWdkChannelCommentCreateAPIRequest {
 	return &AlibabaWdkChannelCommentCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkChannelCommentCreateAPIRequest) Reset() {
+	r._commentCreateInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkChannelCommentCreateAPIRequest) SetCommentCreateInfo(_comment
 // GetCommentCreateInfo CommentCreateInfo Getter
 func (r AlibabaWdkChannelCommentCreateAPIRequest) GetCommentCreateInfo() *CommentCreateInfo {
 	return r._commentCreateInfo
+}
+
+var poolAlibabaWdkChannelCommentCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkChannelCommentCreateRequest()
+	},
+}
+
+// GetAlibabaWdkChannelCommentCreateRequest 从 sync.Pool 获取 AlibabaWdkChannelCommentCreateAPIRequest
+func GetAlibabaWdkChannelCommentCreateAPIRequest() *AlibabaWdkChannelCommentCreateAPIRequest {
+	return poolAlibabaWdkChannelCommentCreateAPIRequest.Get().(*AlibabaWdkChannelCommentCreateAPIRequest)
+}
+
+// ReleaseAlibabaWdkChannelCommentCreateAPIRequest 将 AlibabaWdkChannelCommentCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkChannelCommentCreateAPIRequest(v *AlibabaWdkChannelCommentCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkChannelCommentCreateAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OrderPredict 结构体
 type OrderPredict struct {
 	// 分渠道实际单量，JSON结构
@@ -26,4 +30,32 @@ type OrderPredict struct {
 	ActualOrderQuantity int64 `json:"actual_order_quantity,omitempty" xml:"actual_order_quantity,omitempty"`
 	// 预测总单量
 	PredictOrderQuantity int64 `json:"predict_order_quantity,omitempty" xml:"predict_order_quantity,omitempty"`
+}
+
+var poolOrderPredict = sync.Pool{
+	New: func() any {
+		return new(OrderPredict)
+	},
+}
+
+// GetOrderPredict() 从对象池中获取OrderPredict
+func GetOrderPredict() *OrderPredict {
+	return poolOrderPredict.Get().(*OrderPredict)
+}
+
+// ReleaseOrderPredict 释放OrderPredict
+func ReleaseOrderPredict(v *OrderPredict) {
+	v.ChannelActualQuantity = ""
+	v.ChannelPredictQuantity = ""
+	v.DeliveryStationCode = ""
+	v.DeliveryStationName = ""
+	v.PredictDate = ""
+	v.SubCompanyCode = ""
+	v.SubCompanyName = ""
+	v.TimeRange = ""
+	v.WarehouseCode = ""
+	v.WarehouseName = ""
+	v.ActualOrderQuantity = 0
+	v.PredictOrderQuantity = 0
+	poolOrderPredict.Put(v)
 }

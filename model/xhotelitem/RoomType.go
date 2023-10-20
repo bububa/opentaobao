@@ -1,6 +1,8 @@
 package xhotelitem
 
 import (
+	"sync"
+
 	"github.com/bububa/opentaobao/model"
 )
 
@@ -18,4 +20,26 @@ type RoomType struct {
 	Rid int64 `json:"rid,omitempty" xml:"rid,omitempty"`
 	// 房型状态。0:正常，-1:删除，-2:停售
 	Status *model.File `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolRoomType = sync.Pool{
+	New: func() any {
+		return new(RoomType)
+	},
+}
+
+// GetRoomType() 从对象池中获取RoomType
+func GetRoomType() *RoomType {
+	return poolRoomType.Get().(*RoomType)
+}
+
+// ReleaseRoomType 释放RoomType
+func ReleaseRoomType(v *RoomType) {
+	v.RatePlanList = v.RatePlanList[:0]
+	v.Name = ""
+	v.Vendor = ""
+	v.OuterId = ""
+	v.Rid = 0
+	v.Status = nil
+	poolRoomType.Put(v)
 }

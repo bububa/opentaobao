@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaWdkorderSharestockInsuranceCallbackAPIRequest struct {
 // NewAlibabaWdkorderSharestockInsuranceCallbackRequest 初始化AlibabaWdkorderSharestockInsuranceCallbackAPIRequest对象
 func NewAlibabaWdkorderSharestockInsuranceCallbackRequest() *AlibabaWdkorderSharestockInsuranceCallbackAPIRequest {
 	return &AlibabaWdkorderSharestockInsuranceCallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkorderSharestockInsuranceCallbackAPIRequest) Reset() {
+	r._insuranceId = ""
+	r._tbSubOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaWdkorderSharestockInsuranceCallbackAPIRequest) SetTbSubOrderId(_
 // GetTbSubOrderId TbSubOrderId Getter
 func (r AlibabaWdkorderSharestockInsuranceCallbackAPIRequest) GetTbSubOrderId() int64 {
 	return r._tbSubOrderId
+}
+
+var poolAlibabaWdkorderSharestockInsuranceCallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkorderSharestockInsuranceCallbackRequest()
+	},
+}
+
+// GetAlibabaWdkorderSharestockInsuranceCallbackRequest 从 sync.Pool 获取 AlibabaWdkorderSharestockInsuranceCallbackAPIRequest
+func GetAlibabaWdkorderSharestockInsuranceCallbackAPIRequest() *AlibabaWdkorderSharestockInsuranceCallbackAPIRequest {
+	return poolAlibabaWdkorderSharestockInsuranceCallbackAPIRequest.Get().(*AlibabaWdkorderSharestockInsuranceCallbackAPIRequest)
+}
+
+// ReleaseAlibabaWdkorderSharestockInsuranceCallbackAPIRequest 将 AlibabaWdkorderSharestockInsuranceCallbackAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkorderSharestockInsuranceCallbackAPIRequest(v *AlibabaWdkorderSharestockInsuranceCallbackAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkorderSharestockInsuranceCallbackAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.combo.status.get
 //
 // 酒店宝贝状态查询
-func TaobaoXhotelComboStatusGet(clt *core.SDKClient, req *tuanhotel.TaobaoXhotelComboStatusGetAPIRequest, session string) (*tuanhotel.TaobaoXhotelComboStatusGetAPIResponse, error) {
-	var resp tuanhotel.TaobaoXhotelComboStatusGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelComboStatusGet(clt *core.SDKClient, req *tuanhotel.TaobaoXhotelComboStatusGetAPIRequest, resp *tuanhotel.TaobaoXhotelComboStatusGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

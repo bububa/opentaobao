@@ -2,6 +2,7 @@ package hotel
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoXhotelCityGetAPIResponse struct {
 	TaobaoXhotelCityGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoXhotelCityGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoXhotelCityGetAPIResponseModel).Reset()
+}
+
 // TaobaoXhotelCityGetAPIResponseModel is 酒店城市数据获取接口 成功返回结果
 type TaobaoXhotelCityGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_city_get_response"`
@@ -26,4 +33,29 @@ type TaobaoXhotelCityGetAPIResponseModel struct {
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 	// 城市数据的版本。所有城市数据有一个统一的版本，与入参start和count无关。 ISV可通过版本判断城市数据是否有更新。判断方法如下：ISV在第一次拉取数据时请将version保存在本地；以后再调用接口时请比较本地version与接口返回的version。如果本地version小于于接口返回version，则说明城市数据有更新；如果本地version等于接口返回version，则说明城市数据无更新，不需要再继续拉取城市数据。
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelCityGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Divisions = m.Divisions[:0]
+	m.TotalResults = 0
+	m.Version = 0
+}
+
+var poolTaobaoXhotelCityGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelCityGetAPIResponse)
+	},
+}
+
+// GetTaobaoXhotelCityGetAPIResponse 从 sync.Pool 获取 TaobaoXhotelCityGetAPIResponse
+func GetTaobaoXhotelCityGetAPIResponse() *TaobaoXhotelCityGetAPIResponse {
+	return poolTaobaoXhotelCityGetAPIResponse.Get().(*TaobaoXhotelCityGetAPIResponse)
+}
+
+// ReleaseTaobaoXhotelCityGetAPIResponse 将 TaobaoXhotelCityGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoXhotelCityGetAPIResponse(v *TaobaoXhotelCityGetAPIResponse) {
+	v.Reset()
+	poolTaobaoXhotelCityGetAPIResponse.Put(v)
 }

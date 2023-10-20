@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaIworkCoreHrsGetpersonAPIRequest struct {
 // NewAlibabaIworkCoreHrsGetpersonRequest 初始化AlibabaIworkCoreHrsGetpersonAPIRequest对象
 func NewAlibabaIworkCoreHrsGetpersonRequest() *AlibabaIworkCoreHrsGetpersonAPIRequest {
 	return &AlibabaIworkCoreHrsGetpersonAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIworkCoreHrsGetpersonAPIRequest) Reset() {
+	r._accountId = ""
+	r._appId = ""
+	r._operatorId = ""
+	r._personId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaIworkCoreHrsGetpersonAPIRequest) SetPersonId(_personId int64) er
 // GetPersonId PersonId Getter
 func (r AlibabaIworkCoreHrsGetpersonAPIRequest) GetPersonId() int64 {
 	return r._personId
+}
+
+var poolAlibabaIworkCoreHrsGetpersonAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIworkCoreHrsGetpersonRequest()
+	},
+}
+
+// GetAlibabaIworkCoreHrsGetpersonRequest 从 sync.Pool 获取 AlibabaIworkCoreHrsGetpersonAPIRequest
+func GetAlibabaIworkCoreHrsGetpersonAPIRequest() *AlibabaIworkCoreHrsGetpersonAPIRequest {
+	return poolAlibabaIworkCoreHrsGetpersonAPIRequest.Get().(*AlibabaIworkCoreHrsGetpersonAPIRequest)
+}
+
+// ReleaseAlibabaIworkCoreHrsGetpersonAPIRequest 将 AlibabaIworkCoreHrsGetpersonAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIworkCoreHrsGetpersonAPIRequest(v *AlibabaIworkCoreHrsGetpersonAPIRequest) {
+	v.Reset()
+	poolAlibabaIworkCoreHrsGetpersonAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripBtripCorpopHotelExceedapplyGetAPIResponse struct {
 	AlitripBtripCorpopHotelExceedapplyGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripBtripCorpopHotelExceedapplyGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripBtripCorpopHotelExceedapplyGetAPIResponseModel).Reset()
+}
+
 // AlitripBtripCorpopHotelExceedapplyGetAPIResponseModel is 商旅酒店第三方超标审批单搜索接口 成功返回结果
 type AlitripBtripCorpopHotelExceedapplyGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_corpop_hotel_exceedapply_get_response"`
@@ -22,4 +29,27 @@ type AlitripBtripCorpopHotelExceedapplyGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 出参对象
 	Result *HisvResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripBtripCorpopHotelExceedapplyGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlitripBtripCorpopHotelExceedapplyGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripBtripCorpopHotelExceedapplyGetAPIResponse)
+	},
+}
+
+// GetAlitripBtripCorpopHotelExceedapplyGetAPIResponse 从 sync.Pool 获取 AlitripBtripCorpopHotelExceedapplyGetAPIResponse
+func GetAlitripBtripCorpopHotelExceedapplyGetAPIResponse() *AlitripBtripCorpopHotelExceedapplyGetAPIResponse {
+	return poolAlitripBtripCorpopHotelExceedapplyGetAPIResponse.Get().(*AlitripBtripCorpopHotelExceedapplyGetAPIResponse)
+}
+
+// ReleaseAlitripBtripCorpopHotelExceedapplyGetAPIResponse 将 AlitripBtripCorpopHotelExceedapplyGetAPIResponse 保存到 sync.Pool
+func ReleaseAlitripBtripCorpopHotelExceedapplyGetAPIResponse(v *AlitripBtripCorpopHotelExceedapplyGetAPIResponse) {
+	v.Reset()
+	poolAlitripBtripCorpopHotelExceedapplyGetAPIResponse.Put(v)
 }

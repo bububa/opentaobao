@@ -1,5 +1,9 @@
 package taotv
 
+import (
+	"sync"
+)
+
 // CarouselPlaylistVideoRbo 结构体
 type CarouselPlaylistVideoRbo struct {
 	// 视频ID信息
@@ -20,4 +24,29 @@ type CarouselPlaylistVideoRbo struct {
 	Duration int64 `json:"duration,omitempty" xml:"duration,omitempty"`
 	// 主键ID
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolCarouselPlaylistVideoRbo = sync.Pool{
+	New: func() any {
+		return new(CarouselPlaylistVideoRbo)
+	},
+}
+
+// GetCarouselPlaylistVideoRbo() 从对象池中获取CarouselPlaylistVideoRbo
+func GetCarouselPlaylistVideoRbo() *CarouselPlaylistVideoRbo {
+	return poolCarouselPlaylistVideoRbo.Get().(*CarouselPlaylistVideoRbo)
+}
+
+// ReleaseCarouselPlaylistVideoRbo 释放CarouselPlaylistVideoRbo
+func ReleaseCarouselPlaylistVideoRbo(v *CarouselPlaylistVideoRbo) {
+	v.VideoId = ""
+	v.Name = ""
+	v.Pic = ""
+	v.VideoExtType = 0
+	v.PlayListId = 0
+	v.ProgramId = 0
+	v.Sort = 0
+	v.Duration = 0
+	v.Id = 0
+	poolCarouselPlaylistVideoRbo.Put(v)
 }

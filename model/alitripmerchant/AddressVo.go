@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // AddressVo 结构体
 type AddressVo struct {
 	// 酒店详细地址
@@ -20,4 +24,29 @@ type AddressVo struct {
 	Domestic int64 `json:"domestic,omitempty" xml:"domestic,omitempty"`
 	// 国家编码
 	CountryCode int64 `json:"country_code,omitempty" xml:"country_code,omitempty"`
+}
+
+var poolAddressVo = sync.Pool{
+	New: func() any {
+		return new(AddressVo)
+	},
+}
+
+// GetAddressVo() 从对象池中获取AddressVo
+func GetAddressVo() *AddressVo {
+	return poolAddressVo.Get().(*AddressVo)
+}
+
+// ReleaseAddressVo 释放AddressVo
+func ReleaseAddressVo(v *AddressVo) {
+	v.Address = ""
+	v.Latitude = ""
+	v.CityCn = ""
+	v.CountryCn = ""
+	v.Longitude = ""
+	v.PositionType = 0
+	v.CityCode = 0
+	v.Domestic = 0
+	v.CountryCode = 0
+	poolAddressVo.Put(v)
 }

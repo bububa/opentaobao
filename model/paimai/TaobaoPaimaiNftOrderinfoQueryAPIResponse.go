@@ -2,6 +2,7 @@ package paimai
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoPaimaiNftOrderinfoQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoPaimaiNftOrderinfoQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoPaimaiNftOrderinfoQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoPaimaiNftOrderinfoQueryAPIResponseModel).Reset()
 }
 
 // TaobaoPaimaiNftOrderinfoQueryAPIResponseModel is 查询订单类型 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoPaimaiNftOrderinfoQueryAPIResponseModel struct {
 	FailMessage string `json:"fail_message,omitempty" xml:"fail_message,omitempty"`
 	// 是否成功
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoPaimaiNftOrderinfoQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.OrderInfoList = m.OrderInfoList[:0]
+	m.FailCode = ""
+	m.FailMessage = ""
+	m.Result = false
+}
+
+var poolTaobaoPaimaiNftOrderinfoQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoPaimaiNftOrderinfoQueryAPIResponse)
+	},
+}
+
+// GetTaobaoPaimaiNftOrderinfoQueryAPIResponse 从 sync.Pool 获取 TaobaoPaimaiNftOrderinfoQueryAPIResponse
+func GetTaobaoPaimaiNftOrderinfoQueryAPIResponse() *TaobaoPaimaiNftOrderinfoQueryAPIResponse {
+	return poolTaobaoPaimaiNftOrderinfoQueryAPIResponse.Get().(*TaobaoPaimaiNftOrderinfoQueryAPIResponse)
+}
+
+// ReleaseTaobaoPaimaiNftOrderinfoQueryAPIResponse 将 TaobaoPaimaiNftOrderinfoQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoPaimaiNftOrderinfoQueryAPIResponse(v *TaobaoPaimaiNftOrderinfoQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoPaimaiNftOrderinfoQueryAPIResponse.Put(v)
 }

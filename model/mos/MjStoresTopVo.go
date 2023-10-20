@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // MjStoresTopVo 结构体
 type MjStoresTopVo struct {
 	// storeInfoList
@@ -14,4 +18,26 @@ type MjStoresTopVo struct {
 	ScreenType int64 `json:"screen_type,omitempty" xml:"screen_type,omitempty"`
 	// 商场id
 	MallId int64 `json:"mall_id,omitempty" xml:"mall_id,omitempty"`
+}
+
+var poolMjStoresTopVo = sync.Pool{
+	New: func() any {
+		return new(MjStoresTopVo)
+	},
+}
+
+// GetMjStoresTopVo() 从对象池中获取MjStoresTopVo
+func GetMjStoresTopVo() *MjStoresTopVo {
+	return poolMjStoresTopVo.Get().(*MjStoresTopVo)
+}
+
+// ReleaseMjStoresTopVo 释放MjStoresTopVo
+func ReleaseMjStoresTopVo(v *MjStoresTopVo) {
+	v.StoreInfoList = v.StoreInfoList[:0]
+	v.OutMallId = ""
+	v.StoreDefault = 0
+	v.Version = 0
+	v.ScreenType = 0
+	v.MallId = 0
+	poolMjStoresTopVo.Put(v)
 }

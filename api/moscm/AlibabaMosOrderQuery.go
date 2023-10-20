@@ -9,11 +9,6 @@ import (
 // alibaba.mos.order.query
 //
 // 查询多笔交易信息
-func AlibabaMosOrderQuery(clt *core.SDKClient, req *moscm.AlibabaMosOrderQueryAPIRequest, session string) (*moscm.AlibabaMosOrderQueryAPIResponse, error) {
-	var resp moscm.AlibabaMosOrderQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMosOrderQuery(clt *core.SDKClient, req *moscm.AlibabaMosOrderQueryAPIRequest, resp *moscm.AlibabaMosOrderQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

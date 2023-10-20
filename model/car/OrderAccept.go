@@ -1,5 +1,9 @@
 package car
 
+import (
+	"sync"
+)
+
 // OrderAccept 结构体
 type OrderAccept struct {
 	// 拒单原因
@@ -22,4 +26,30 @@ type OrderAccept struct {
 	UseType int64 `json:"use_type,omitempty" xml:"use_type,omitempty"`
 	// 接单时间毫秒数
 	AcceptTime int64 `json:"accept_time,omitempty" xml:"accept_time,omitempty"`
+}
+
+var poolOrderAccept = sync.Pool{
+	New: func() any {
+		return new(OrderAccept)
+	},
+}
+
+// GetOrderAccept() 从对象池中获取OrderAccept
+func GetOrderAccept() *OrderAccept {
+	return poolOrderAccept.Get().(*OrderAccept)
+}
+
+// ReleaseOrderAccept 释放OrderAccept
+func ReleaseOrderAccept(v *OrderAccept) {
+	v.Message = ""
+	v.OrderId = ""
+	v.ProviderId = ""
+	v.ThirdOrderId = ""
+	v.SellerId = ""
+	v.Latitude = ""
+	v.Longitude = ""
+	v.ConfirmType = 0
+	v.UseType = 0
+	v.AcceptTime = 0
+	poolOrderAccept.Put(v)
 }

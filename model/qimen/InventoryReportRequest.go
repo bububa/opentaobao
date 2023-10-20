@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // InventoryReportRequest 结构体
 type InventoryReportRequest struct {
 	// 商品库存信息列表
@@ -28,4 +32,33 @@ type InventoryReportRequest struct {
 	PageSize int64 `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
 	// 扩展属性
 	ExtendProps *TaobaoQimenInventoryReportMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+}
+
+var poolInventoryReportRequest = sync.Pool{
+	New: func() any {
+		return new(InventoryReportRequest)
+	},
+}
+
+// GetInventoryReportRequest() 从对象池中获取InventoryReportRequest
+func GetInventoryReportRequest() *InventoryReportRequest {
+	return poolInventoryReportRequest.Get().(*InventoryReportRequest)
+}
+
+// ReleaseInventoryReportRequest 释放InventoryReportRequest
+func ReleaseInventoryReportRequest(v *InventoryReportRequest) {
+	v.Items = v.Items[:0]
+	v.WarehouseCode = ""
+	v.CheckOrderCode = ""
+	v.CheckOrderId = ""
+	v.OwnerCode = ""
+	v.CheckTime = ""
+	v.OutBizCode = ""
+	v.Remark = ""
+	v.AdjustType = ""
+	v.TotalPage = 0
+	v.CurrentPage = 0
+	v.PageSize = 0
+	v.ExtendProps = nil
+	poolInventoryReportRequest.Put(v)
 }

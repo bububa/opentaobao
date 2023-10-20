@@ -2,6 +2,7 @@ package lstlogistics2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLstTradeSellerOfflineOrderCancelAPIRequest struct {
 // NewAlibabaLstTradeSellerOfflineOrderCancelRequest 初始化AlibabaLstTradeSellerOfflineOrderCancelAPIRequest对象
 func NewAlibabaLstTradeSellerOfflineOrderCancelRequest() *AlibabaLstTradeSellerOfflineOrderCancelAPIRequest {
 	return &AlibabaLstTradeSellerOfflineOrderCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstTradeSellerOfflineOrderCancelAPIRequest) Reset() {
+	r._offlineOrderCancalParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLstTradeSellerOfflineOrderCancelAPIRequest) SetOfflineOrderCanca
 // GetOfflineOrderCancalParam OfflineOrderCancalParam Getter
 func (r AlibabaLstTradeSellerOfflineOrderCancelAPIRequest) GetOfflineOrderCancalParam() *LstOfflineOrderCancalParam {
 	return r._offlineOrderCancalParam
+}
+
+var poolAlibabaLstTradeSellerOfflineOrderCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstTradeSellerOfflineOrderCancelRequest()
+	},
+}
+
+// GetAlibabaLstTradeSellerOfflineOrderCancelRequest 从 sync.Pool 获取 AlibabaLstTradeSellerOfflineOrderCancelAPIRequest
+func GetAlibabaLstTradeSellerOfflineOrderCancelAPIRequest() *AlibabaLstTradeSellerOfflineOrderCancelAPIRequest {
+	return poolAlibabaLstTradeSellerOfflineOrderCancelAPIRequest.Get().(*AlibabaLstTradeSellerOfflineOrderCancelAPIRequest)
+}
+
+// ReleaseAlibabaLstTradeSellerOfflineOrderCancelAPIRequest 将 AlibabaLstTradeSellerOfflineOrderCancelAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstTradeSellerOfflineOrderCancelAPIRequest(v *AlibabaLstTradeSellerOfflineOrderCancelAPIRequest) {
+	v.Reset()
+	poolAlibabaLstTradeSellerOfflineOrderCancelAPIRequest.Put(v)
 }

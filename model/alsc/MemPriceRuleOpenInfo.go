@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // MemPriceRuleOpenInfo 结构体
 type MemPriceRuleOpenInfo struct {
 	// 会员等级和特价菜单的关系
@@ -14,4 +18,26 @@ type MemPriceRuleOpenInfo struct {
 	ExtInfo string `json:"ext_info,omitempty" xml:"ext_info,omitempty"`
 	// 是否已删除
 	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
+}
+
+var poolMemPriceRuleOpenInfo = sync.Pool{
+	New: func() any {
+		return new(MemPriceRuleOpenInfo)
+	},
+}
+
+// GetMemPriceRuleOpenInfo() 从对象池中获取MemPriceRuleOpenInfo
+func GetMemPriceRuleOpenInfo() *MemPriceRuleOpenInfo {
+	return poolMemPriceRuleOpenInfo.Get().(*MemPriceRuleOpenInfo)
+}
+
+// ReleaseMemPriceRuleOpenInfo 释放MemPriceRuleOpenInfo
+func ReleaseMemPriceRuleOpenInfo(v *MemPriceRuleOpenInfo) {
+	v.LevelMenuList = v.LevelMenuList[:0]
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.PayType = ""
+	v.ExtInfo = ""
+	v.Deleted = false
+	poolMemPriceRuleOpenInfo.Put(v)
 }

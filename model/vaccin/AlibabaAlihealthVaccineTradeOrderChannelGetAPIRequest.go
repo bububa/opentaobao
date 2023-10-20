@@ -2,6 +2,7 @@ package vaccin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthVaccineTradeOrderChannelGetAPIRequest struct {
 // NewAlibabaAlihealthVaccineTradeOrderChannelGetRequest 初始化AlibabaAlihealthVaccineTradeOrderChannelGetAPIRequest对象
 func NewAlibabaAlihealthVaccineTradeOrderChannelGetRequest() *AlibabaAlihealthVaccineTradeOrderChannelGetAPIRequest {
 	return &AlibabaAlihealthVaccineTradeOrderChannelGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthVaccineTradeOrderChannelGetAPIRequest) Reset() {
+	r._tradeVaccineOrderQueryTopRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthVaccineTradeOrderChannelGetAPIRequest) SetTradeVaccineO
 // GetTradeVaccineOrderQueryTopRequest TradeVaccineOrderQueryTopRequest Getter
 func (r AlibabaAlihealthVaccineTradeOrderChannelGetAPIRequest) GetTradeVaccineOrderQueryTopRequest() *TradeVaccineOrderQueryTopRequest {
 	return r._tradeVaccineOrderQueryTopRequest
+}
+
+var poolAlibabaAlihealthVaccineTradeOrderChannelGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthVaccineTradeOrderChannelGetRequest()
+	},
+}
+
+// GetAlibabaAlihealthVaccineTradeOrderChannelGetRequest 从 sync.Pool 获取 AlibabaAlihealthVaccineTradeOrderChannelGetAPIRequest
+func GetAlibabaAlihealthVaccineTradeOrderChannelGetAPIRequest() *AlibabaAlihealthVaccineTradeOrderChannelGetAPIRequest {
+	return poolAlibabaAlihealthVaccineTradeOrderChannelGetAPIRequest.Get().(*AlibabaAlihealthVaccineTradeOrderChannelGetAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthVaccineTradeOrderChannelGetAPIRequest 将 AlibabaAlihealthVaccineTradeOrderChannelGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthVaccineTradeOrderChannelGetAPIRequest(v *AlibabaAlihealthVaccineTradeOrderChannelGetAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthVaccineTradeOrderChannelGetAPIRequest.Put(v)
 }

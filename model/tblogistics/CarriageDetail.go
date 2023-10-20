@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // CarriageDetail 结构体
 type CarriageDetail struct {
 	// 破损赔付
@@ -18,4 +22,28 @@ type CarriageDetail struct {
 	InitialFee int64 `json:"initial_fee,omitempty" xml:"initial_fee,omitempty"`
 	// 首重（单位：千克）
 	InitialWeight int64 `json:"initial_weight,omitempty" xml:"initial_weight,omitempty"`
+}
+
+var poolCarriageDetail = sync.Pool{
+	New: func() any {
+		return new(CarriageDetail)
+	},
+}
+
+// GetCarriageDetail() 从对象池中获取CarriageDetail
+func GetCarriageDetail() *CarriageDetail {
+	return poolCarriageDetail.Get().(*CarriageDetail)
+}
+
+// ReleaseCarriageDetail 释放CarriageDetail
+func ReleaseCarriageDetail(v *CarriageDetail) {
+	v.DamagePayment = ""
+	v.GotTime = ""
+	v.LostPayment = ""
+	v.WayDay = ""
+	v.AddFee = 0
+	v.AddWeight = 0
+	v.InitialFee = 0
+	v.InitialWeight = 0
+	poolCarriageDetail.Put(v)
 }

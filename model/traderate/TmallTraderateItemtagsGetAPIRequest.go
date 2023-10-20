@@ -2,6 +2,7 @@ package traderate
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallTraderateItemtagsGetAPIRequest struct {
 // NewTmallTraderateItemtagsGetRequest 初始化TmallTraderateItemtagsGetAPIRequest对象
 func NewTmallTraderateItemtagsGetRequest() *TmallTraderateItemtagsGetAPIRequest {
 	return &TmallTraderateItemtagsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallTraderateItemtagsGetAPIRequest) Reset() {
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallTraderateItemtagsGetAPIRequest) SetItemId(_itemId int64) error {
 // GetItemId ItemId Getter
 func (r TmallTraderateItemtagsGetAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolTmallTraderateItemtagsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallTraderateItemtagsGetRequest()
+	},
+}
+
+// GetTmallTraderateItemtagsGetRequest 从 sync.Pool 获取 TmallTraderateItemtagsGetAPIRequest
+func GetTmallTraderateItemtagsGetAPIRequest() *TmallTraderateItemtagsGetAPIRequest {
+	return poolTmallTraderateItemtagsGetAPIRequest.Get().(*TmallTraderateItemtagsGetAPIRequest)
+}
+
+// ReleaseTmallTraderateItemtagsGetAPIRequest 将 TmallTraderateItemtagsGetAPIRequest 放入 sync.Pool
+func ReleaseTmallTraderateItemtagsGetAPIRequest(v *TmallTraderateItemtagsGetAPIRequest) {
+	v.Reset()
+	poolTmallTraderateItemtagsGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallgeniescp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest struct {
 // NewAlibabaTmallgenieScpPlanSaleforcastPmMonthUploadRequest 初始化AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest对象
 func NewAlibabaTmallgenieScpPlanSaleforcastPmMonthUploadRequest() *AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest {
 	return &AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest) Reset() {
+	r._salesForecastRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest) SetSalesFor
 // GetSalesForecastRequest SalesForecastRequest Getter
 func (r AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest) GetSalesForecastRequest() *SalesForecastRequest {
 	return r._salesForecastRequest
+}
+
+var poolAlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTmallgenieScpPlanSaleforcastPmMonthUploadRequest()
+	},
+}
+
+// GetAlibabaTmallgenieScpPlanSaleforcastPmMonthUploadRequest 从 sync.Pool 获取 AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest
+func GetAlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest() *AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest {
+	return poolAlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest.Get().(*AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest)
+}
+
+// ReleaseAlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest 将 AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest(v *AlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaTmallgenieScpPlanSaleforcastPmMonthUploadAPIRequest.Put(v)
 }

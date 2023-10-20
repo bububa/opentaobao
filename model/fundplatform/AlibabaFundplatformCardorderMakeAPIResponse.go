@@ -2,6 +2,7 @@ package fundplatform
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaFundplatformCardorderMakeAPIResponse struct {
 	AlibabaFundplatformCardorderMakeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaFundplatformCardorderMakeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaFundplatformCardorderMakeAPIResponseModel).Reset()
+}
+
 // AlibabaFundplatformCardorderMakeAPIResponseModel is 通知制卡商制卡 成功返回结果
 type AlibabaFundplatformCardorderMakeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_fundplatform_cardorder_make_response"`
@@ -22,4 +29,27 @@ type AlibabaFundplatformCardorderMakeAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结构体
 	Response *AlibabaFundplatformCardorderMakeStruct `json:"response,omitempty" xml:"response,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaFundplatformCardorderMakeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Response = nil
+}
+
+var poolAlibabaFundplatformCardorderMakeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaFundplatformCardorderMakeAPIResponse)
+	},
+}
+
+// GetAlibabaFundplatformCardorderMakeAPIResponse 从 sync.Pool 获取 AlibabaFundplatformCardorderMakeAPIResponse
+func GetAlibabaFundplatformCardorderMakeAPIResponse() *AlibabaFundplatformCardorderMakeAPIResponse {
+	return poolAlibabaFundplatformCardorderMakeAPIResponse.Get().(*AlibabaFundplatformCardorderMakeAPIResponse)
+}
+
+// ReleaseAlibabaFundplatformCardorderMakeAPIResponse 将 AlibabaFundplatformCardorderMakeAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaFundplatformCardorderMakeAPIResponse(v *AlibabaFundplatformCardorderMakeAPIResponse) {
+	v.Reset()
+	poolAlibabaFundplatformCardorderMakeAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package simba
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoUniversalbpCreativePreaddAPIResponse struct {
 	TaobaoUniversalbpCreativePreaddAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoUniversalbpCreativePreaddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoUniversalbpCreativePreaddAPIResponseModel).Reset()
+}
+
 // TaobaoUniversalbpCreativePreaddAPIResponseModel is 创建单品创意前置信息 成功返回结果
 type TaobaoUniversalbpCreativePreaddAPIResponseModel struct {
 	XMLName xml.Name `xml:"universalbp_creative_preadd_response"`
@@ -22,4 +29,27 @@ type TaobaoUniversalbpCreativePreaddAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果体
 	Result *TaobaoUniversalbpCreativePreaddTopResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoUniversalbpCreativePreaddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoUniversalbpCreativePreaddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoUniversalbpCreativePreaddAPIResponse)
+	},
+}
+
+// GetTaobaoUniversalbpCreativePreaddAPIResponse 从 sync.Pool 获取 TaobaoUniversalbpCreativePreaddAPIResponse
+func GetTaobaoUniversalbpCreativePreaddAPIResponse() *TaobaoUniversalbpCreativePreaddAPIResponse {
+	return poolTaobaoUniversalbpCreativePreaddAPIResponse.Get().(*TaobaoUniversalbpCreativePreaddAPIResponse)
+}
+
+// ReleaseTaobaoUniversalbpCreativePreaddAPIResponse 将 TaobaoUniversalbpCreativePreaddAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoUniversalbpCreativePreaddAPIResponse(v *TaobaoUniversalbpCreativePreaddAPIResponse) {
+	v.Reset()
+	poolTaobaoUniversalbpCreativePreaddAPIResponse.Put(v)
 }

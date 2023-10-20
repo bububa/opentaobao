@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.travel.fsc.route.api.project.update
 //
 // 更新团期
-func TaobaoAlitripTravelFscRouteApiProjectUpdate(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelFscRouteApiProjectUpdateAPIRequest, session string) (*axindata.TaobaoAlitripTravelFscRouteApiProjectUpdateAPIResponse, error) {
-	var resp axindata.TaobaoAlitripTravelFscRouteApiProjectUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripTravelFscRouteApiProjectUpdate(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelFscRouteApiProjectUpdateAPIRequest, resp *axindata.TaobaoAlitripTravelFscRouteApiProjectUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

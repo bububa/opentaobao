@@ -1,5 +1,9 @@
 package aedata
 
+import (
+	"sync"
+)
+
 // Order 结构体
 type Order struct {
 	// 佣金率
@@ -68,4 +72,53 @@ type Order struct {
 	EstimatedIncentiveFinishedCommission int64 `json:"estimated_incentive_finished_commission,omitempty" xml:"estimated_incentive_finished_commission,omitempty"`
 	// 激励订单支付时的预计佣金
 	EstimatedIncentivePaidCommission int64 `json:"estimated_incentive_paid_commission,omitempty" xml:"estimated_incentive_paid_commission,omitempty"`
+}
+
+var poolOrder = sync.Pool{
+	New: func() any {
+		return new(Order)
+	},
+}
+
+// GetOrder() 从对象池中获取Order
+func GetOrder() *Order {
+	return poolOrder.Get().(*Order)
+}
+
+// ReleaseOrder 释放Order
+func ReleaseOrder(v *Order) {
+	v.CommissionRate = ""
+	v.CreatedTime = ""
+	v.CustomerParameters = ""
+	v.OrderStatus = ""
+	v.FinishedTime = ""
+	v.IsNewBuyer = ""
+	v.ProductDetailUrl = ""
+	v.ProductMainImageUrl = ""
+	v.ProductTitle = ""
+	v.PaidTime = ""
+	v.SettledCurrency = ""
+	v.ShipToCountry = ""
+	v.TrackingId = ""
+	v.IsHotProduct = ""
+	v.EffectDetailStatus = ""
+	v.IncentiveCommissionRate = ""
+	v.IsAffiliateProduct = ""
+	v.OrderType = ""
+	v.CustomParameters = ""
+	v.EstimatedFinishedCommission = 0
+	v.EstimatedPaidCommission = 0
+	v.FinishedAmount = 0
+	v.ProductCount = 0
+	v.ProductId = 0
+	v.NewBuyerBonusCommission = 0
+	v.OrderId = 0
+	v.OrderNumber = 0
+	v.PaidAmount = 0
+	v.ParentOrderNumber = 0
+	v.SubOrderId = 0
+	v.CategoryId = 0
+	v.EstimatedIncentiveFinishedCommission = 0
+	v.EstimatedIncentivePaidCommission = 0
+	poolOrder.Put(v)
 }

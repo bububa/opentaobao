@@ -1,5 +1,9 @@
 package wms
 
+import (
+	"sync"
+)
+
 // Receiverwlbwmsstockoutordernotify 结构体
 type Receiverwlbwmsstockoutordernotify struct {
 	// 收件方城市
@@ -20,4 +24,29 @@ type Receiverwlbwmsstockoutordernotify struct {
 	ReceiverAddress string `json:"receiver_address,omitempty" xml:"receiver_address,omitempty"`
 	// 收件方电话
 	ReceiverPhone string `json:"receiver_phone,omitempty" xml:"receiver_phone,omitempty"`
+}
+
+var poolReceiverwlbwmsstockoutordernotify = sync.Pool{
+	New: func() any {
+		return new(Receiverwlbwmsstockoutordernotify)
+	},
+}
+
+// GetReceiverwlbwmsstockoutordernotify() 从对象池中获取Receiverwlbwmsstockoutordernotify
+func GetReceiverwlbwmsstockoutordernotify() *Receiverwlbwmsstockoutordernotify {
+	return poolReceiverwlbwmsstockoutordernotify.Get().(*Receiverwlbwmsstockoutordernotify)
+}
+
+// ReleaseReceiverwlbwmsstockoutordernotify 释放Receiverwlbwmsstockoutordernotify
+func ReleaseReceiverwlbwmsstockoutordernotify(v *Receiverwlbwmsstockoutordernotify) {
+	v.ReceiverCity = ""
+	v.ReceiverArea = ""
+	v.ReceiverMobile = ""
+	v.ReceiverProvince = ""
+	v.ReceiverName = ""
+	v.ReceiverCode = ""
+	v.ReceiverZipCode = ""
+	v.ReceiverAddress = ""
+	v.ReceiverPhone = ""
+	poolReceiverwlbwmsstockoutordernotify.Put(v)
 }

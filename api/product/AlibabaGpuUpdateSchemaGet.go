@@ -9,11 +9,6 @@ import (
 // alibaba.gpu.update.schema.get
 //
 // 获取产品编辑schema规则的接口
-func AlibabaGpuUpdateSchemaGet(clt *core.SDKClient, req *product.AlibabaGpuUpdateSchemaGetAPIRequest, session string) (*product.AlibabaGpuUpdateSchemaGetAPIResponse, error) {
-	var resp product.AlibabaGpuUpdateSchemaGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaGpuUpdateSchemaGet(clt *core.SDKClient, req *product.AlibabaGpuUpdateSchemaGetAPIRequest, resp *product.AlibabaGpuUpdateSchemaGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

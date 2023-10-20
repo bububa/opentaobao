@@ -2,6 +2,7 @@ package rhino
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoRhinoSupplychainInboundConfirmAPIRequest struct {
 // NewTaobaoRhinoSupplychainInboundConfirmRequest 初始化TaobaoRhinoSupplychainInboundConfirmAPIRequest对象
 func NewTaobaoRhinoSupplychainInboundConfirmRequest() *TaobaoRhinoSupplychainInboundConfirmAPIRequest {
 	return &TaobaoRhinoSupplychainInboundConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoRhinoSupplychainInboundConfirmAPIRequest) Reset() {
+	r._clothingInboundConfirm = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoRhinoSupplychainInboundConfirmAPIRequest) SetClothingInboundConfi
 // GetClothingInboundConfirm ClothingInboundConfirm Getter
 func (r TaobaoRhinoSupplychainInboundConfirmAPIRequest) GetClothingInboundConfirm() *ClothingInboundConfirmDto {
 	return r._clothingInboundConfirm
+}
+
+var poolTaobaoRhinoSupplychainInboundConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoRhinoSupplychainInboundConfirmRequest()
+	},
+}
+
+// GetTaobaoRhinoSupplychainInboundConfirmRequest 从 sync.Pool 获取 TaobaoRhinoSupplychainInboundConfirmAPIRequest
+func GetTaobaoRhinoSupplychainInboundConfirmAPIRequest() *TaobaoRhinoSupplychainInboundConfirmAPIRequest {
+	return poolTaobaoRhinoSupplychainInboundConfirmAPIRequest.Get().(*TaobaoRhinoSupplychainInboundConfirmAPIRequest)
+}
+
+// ReleaseTaobaoRhinoSupplychainInboundConfirmAPIRequest 将 TaobaoRhinoSupplychainInboundConfirmAPIRequest 放入 sync.Pool
+func ReleaseTaobaoRhinoSupplychainInboundConfirmAPIRequest(v *TaobaoRhinoSupplychainInboundConfirmAPIRequest) {
+	v.Reset()
+	poolTaobaoRhinoSupplychainInboundConfirmAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoSimbaInsightWordsdataGetAPIRequest struct {
 // NewTaobaoSimbaInsightWordsdataGetRequest 初始化TaobaoSimbaInsightWordsdataGetAPIRequest对象
 func NewTaobaoSimbaInsightWordsdataGetRequest() *TaobaoSimbaInsightWordsdataGetAPIRequest {
 	return &TaobaoSimbaInsightWordsdataGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaInsightWordsdataGetAPIRequest) Reset() {
+	r._bidwordList = r._bidwordList[:0]
+	r._startDate = ""
+	r._endDate = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoSimbaInsightWordsdataGetAPIRequest) SetEndDate(_endDate string) e
 // GetEndDate EndDate Getter
 func (r TaobaoSimbaInsightWordsdataGetAPIRequest) GetEndDate() string {
 	return r._endDate
+}
+
+var poolTaobaoSimbaInsightWordsdataGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaInsightWordsdataGetRequest()
+	},
+}
+
+// GetTaobaoSimbaInsightWordsdataGetRequest 从 sync.Pool 获取 TaobaoSimbaInsightWordsdataGetAPIRequest
+func GetTaobaoSimbaInsightWordsdataGetAPIRequest() *TaobaoSimbaInsightWordsdataGetAPIRequest {
+	return poolTaobaoSimbaInsightWordsdataGetAPIRequest.Get().(*TaobaoSimbaInsightWordsdataGetAPIRequest)
+}
+
+// ReleaseTaobaoSimbaInsightWordsdataGetAPIRequest 将 TaobaoSimbaInsightWordsdataGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaInsightWordsdataGetAPIRequest(v *TaobaoSimbaInsightWordsdataGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaInsightWordsdataGetAPIRequest.Put(v)
 }

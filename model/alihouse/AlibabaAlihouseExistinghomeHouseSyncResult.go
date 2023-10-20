@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // AlibabaAlihouseExistinghomeHouseSyncResult 结构体
 type AlibabaAlihouseExistinghomeHouseSyncResult struct {
 	// code
@@ -10,4 +14,24 @@ type AlibabaAlihouseExistinghomeHouseSyncResult struct {
 	Data *SyncHouseResultDto `json:"data,omitempty" xml:"data,omitempty"`
 	// true或false
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+var poolAlibabaAlihouseExistinghomeHouseSyncResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihouseExistinghomeHouseSyncResult)
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeHouseSyncResult() 从对象池中获取AlibabaAlihouseExistinghomeHouseSyncResult
+func GetAlibabaAlihouseExistinghomeHouseSyncResult() *AlibabaAlihouseExistinghomeHouseSyncResult {
+	return poolAlibabaAlihouseExistinghomeHouseSyncResult.Get().(*AlibabaAlihouseExistinghomeHouseSyncResult)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeHouseSyncResult 释放AlibabaAlihouseExistinghomeHouseSyncResult
+func ReleaseAlibabaAlihouseExistinghomeHouseSyncResult(v *AlibabaAlihouseExistinghomeHouseSyncResult) {
+	v.Code = ""
+	v.Message = ""
+	v.Data = nil
+	v.IsSuccess = false
+	poolAlibabaAlihouseExistinghomeHouseSyncResult.Put(v)
 }

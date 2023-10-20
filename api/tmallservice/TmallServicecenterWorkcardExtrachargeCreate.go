@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.workcard.extracharge.create
 //
 // 创建额外收费项
-func TmallServicecenterWorkcardExtrachargeCreate(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardExtrachargeCreateAPIRequest, session string) (*tmallservice.TmallServicecenterWorkcardExtrachargeCreateAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterWorkcardExtrachargeCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterWorkcardExtrachargeCreate(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardExtrachargeCreateAPIRequest, resp *tmallservice.TmallServicecenterWorkcardExtrachargeCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // tmall.fans.cashpool.create
 //
 // 商家创建资金池接口
-func TmallFansCashpoolCreate(clt *core.SDKClient, req *fans.TmallFansCashpoolCreateAPIRequest, session string) (*fans.TmallFansCashpoolCreateAPIResponse, error) {
-	var resp fans.TmallFansCashpoolCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallFansCashpoolCreate(clt *core.SDKClient, req *fans.TmallFansCashpoolCreateAPIRequest, resp *fans.TmallFansCashpoolCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

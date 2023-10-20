@@ -1,5 +1,9 @@
 package product
 
+import (
+	"sync"
+)
+
 // Product 结构体
 type Product struct {
 	// 产品的子图片.目前最多支持4张。fields中设置为product_imgs.id、product_imgs.url、product_imgs.position 等形式就会返回相应的字段
@@ -50,4 +54,44 @@ type Product struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 垂直市场,如：3（3C），4（鞋城）
 	VerticalMarket int64 `json:"vertical_market,omitempty" xml:"vertical_market,omitempty"`
+}
+
+var poolProduct = sync.Pool{
+	New: func() any {
+		return new(Product)
+	},
+}
+
+// GetProduct() 从对象池中获取Product
+func GetProduct() *Product {
+	return poolProduct.Get().(*Product)
+}
+
+// ReleaseProduct 释放Product
+func ReleaseProduct(v *Product) {
+	v.ProductImgs = v.ProductImgs[:0]
+	v.ProductPropImgs = v.ProductPropImgs[:0]
+	v.Created = ""
+	v.OuterId = ""
+	v.Tsc = ""
+	v.CatName = ""
+	v.Props = ""
+	v.PropsStr = ""
+	v.Name = ""
+	v.Binds = ""
+	v.BindsStr = ""
+	v.SaleProps = ""
+	v.SalePropsStr = ""
+	v.Price = ""
+	v.Desc = ""
+	v.PicUrl = ""
+	v.Modified = ""
+	v.PropertyAlias = ""
+	v.CustomerProps = ""
+	v.SellPt = ""
+	v.ProductId = 0
+	v.Cid = 0
+	v.Status = 0
+	v.VerticalMarket = 0
+	poolProduct.Put(v)
 }

@@ -1,5 +1,9 @@
 package util
 
+import (
+	"sync"
+)
+
 // Checkpoints 结构体
 type Checkpoints struct {
 	// 检查的场景。antispam为黄暴政
@@ -10,4 +14,24 @@ type Checkpoints struct {
 	Suggestion string `json:"suggestion,omitempty" xml:"suggestion,omitempty"`
 	// 结果准确度
 	Rate string `json:"rate,omitempty" xml:"rate,omitempty"`
+}
+
+var poolCheckpoints = sync.Pool{
+	New: func() any {
+		return new(Checkpoints)
+	},
+}
+
+// GetCheckpoints() 从对象池中获取Checkpoints
+func GetCheckpoints() *Checkpoints {
+	return poolCheckpoints.Get().(*Checkpoints)
+}
+
+// ReleaseCheckpoints 释放Checkpoints
+func ReleaseCheckpoints(v *Checkpoints) {
+	v.Scene = ""
+	v.Label = ""
+	v.Suggestion = ""
+	v.Rate = ""
+	poolCheckpoints.Put(v)
 }

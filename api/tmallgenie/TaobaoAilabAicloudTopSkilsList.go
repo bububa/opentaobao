@@ -9,11 +9,6 @@ import (
 // taobao.ailab.aicloud.top.skils.list
 //
 // 提供给在硬件平台接入设备的技能列表
-func TaobaoAilabAicloudTopSkilsList(clt *core.SDKClient, req *tmallgenie.TaobaoAilabAicloudTopSkilsListAPIRequest, session string) (*tmallgenie.TaobaoAilabAicloudTopSkilsListAPIResponse, error) {
-	var resp tmallgenie.TaobaoAilabAicloudTopSkilsListAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAilabAicloudTopSkilsList(clt *core.SDKClient, req *tmallgenie.TaobaoAilabAicloudTopSkilsListAPIRequest, resp *tmallgenie.TaobaoAilabAicloudTopSkilsListAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

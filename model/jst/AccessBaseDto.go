@@ -1,5 +1,9 @@
 package jst
 
+import (
+	"sync"
+)
+
 // AccessBaseDto 结构体
 type AccessBaseDto struct {
 	// 审核意见
@@ -16,4 +20,27 @@ type AccessBaseDto struct {
 	TemplateType int64 `json:"template_type,omitempty" xml:"template_type,omitempty"`
 	// 0--待审核  1--通过  2--拒绝
 	TemplateStatus int64 `json:"template_status,omitempty" xml:"template_status,omitempty"`
+}
+
+var poolAccessBaseDto = sync.Pool{
+	New: func() any {
+		return new(AccessBaseDto)
+	},
+}
+
+// GetAccessBaseDto() 从对象池中获取AccessBaseDto
+func GetAccessBaseDto() *AccessBaseDto {
+	return poolAccessBaseDto.Get().(*AccessBaseDto)
+}
+
+// ReleaseAccessBaseDto 释放AccessBaseDto
+func ReleaseAccessBaseDto(v *AccessBaseDto) {
+	v.Reason = ""
+	v.TemplateName = ""
+	v.TemplateContent = ""
+	v.TemplateCode = ""
+	v.CreateDate = ""
+	v.TemplateType = 0
+	v.TemplateStatus = 0
+	poolAccessBaseDto.Put(v)
 }

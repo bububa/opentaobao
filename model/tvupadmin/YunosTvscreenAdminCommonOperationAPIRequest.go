@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type YunosTvscreenAdminCommonOperationAPIRequest struct {
 // NewYunosTvscreenAdminCommonOperationRequest 初始化YunosTvscreenAdminCommonOperationAPIRequest对象
 func NewYunosTvscreenAdminCommonOperationRequest() *YunosTvscreenAdminCommonOperationAPIRequest {
 	return &YunosTvscreenAdminCommonOperationAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvscreenAdminCommonOperationAPIRequest) Reset() {
+	r._interfaceName = ""
+	r._parameters = ""
+	r._methodName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *YunosTvscreenAdminCommonOperationAPIRequest) SetMethodName(_methodName 
 // GetMethodName MethodName Getter
 func (r YunosTvscreenAdminCommonOperationAPIRequest) GetMethodName() string {
 	return r._methodName
+}
+
+var poolYunosTvscreenAdminCommonOperationAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvscreenAdminCommonOperationRequest()
+	},
+}
+
+// GetYunosTvscreenAdminCommonOperationRequest 从 sync.Pool 获取 YunosTvscreenAdminCommonOperationAPIRequest
+func GetYunosTvscreenAdminCommonOperationAPIRequest() *YunosTvscreenAdminCommonOperationAPIRequest {
+	return poolYunosTvscreenAdminCommonOperationAPIRequest.Get().(*YunosTvscreenAdminCommonOperationAPIRequest)
+}
+
+// ReleaseYunosTvscreenAdminCommonOperationAPIRequest 将 YunosTvscreenAdminCommonOperationAPIRequest 放入 sync.Pool
+func ReleaseYunosTvscreenAdminCommonOperationAPIRequest(v *YunosTvscreenAdminCommonOperationAPIRequest) {
+	v.Reset()
+	poolYunosTvscreenAdminCommonOperationAPIRequest.Put(v)
 }

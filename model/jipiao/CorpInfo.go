@@ -1,5 +1,9 @@
 package jipiao
 
+import (
+	"sync"
+)
+
 // CorpInfo 结构体
 type CorpInfo struct {
 	// 申请人姓名
@@ -30,4 +34,34 @@ type CorpInfo struct {
 	CorprationId string `json:"corpration_id,omitempty" xml:"corpration_id,omitempty"`
 	// 扩展字段
 	Extra string `json:"extra,omitempty" xml:"extra,omitempty"`
+}
+
+var poolCorpInfo = sync.Pool{
+	New: func() any {
+		return new(CorpInfo)
+	},
+}
+
+// GetCorpInfo() 从对象池中获取CorpInfo
+func GetCorpInfo() *CorpInfo {
+	return poolCorpInfo.Get().(*CorpInfo)
+}
+
+// ReleaseCorpInfo 释放CorpInfo
+func ReleaseCorpInfo(v *CorpInfo) {
+	v.ApplyName = ""
+	v.ApplyNo = ""
+	v.FormNo = ""
+	v.TripPersonNo = ""
+	v.TripPersonName = ""
+	v.WorkSpace = ""
+	v.CostCenterCode = ""
+	v.CostCenter = ""
+	v.FormStatus = ""
+	v.ReceiptsStatus = ""
+	v.CostOu = ""
+	v.ApplyTime = ""
+	v.CorprationId = ""
+	v.Extra = ""
+	poolCorpInfo.Put(v)
 }

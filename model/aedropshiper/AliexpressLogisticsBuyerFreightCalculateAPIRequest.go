@@ -2,6 +2,7 @@ package aedropshiper
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliexpressLogisticsBuyerFreightCalculateAPIRequest struct {
 // NewAliexpressLogisticsBuyerFreightCalculateRequest 初始化AliexpressLogisticsBuyerFreightCalculateAPIRequest对象
 func NewAliexpressLogisticsBuyerFreightCalculateRequest() *AliexpressLogisticsBuyerFreightCalculateAPIRequest {
 	return &AliexpressLogisticsBuyerFreightCalculateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressLogisticsBuyerFreightCalculateAPIRequest) Reset() {
+	r._paramAeopFreightCalculateForBuyerDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliexpressLogisticsBuyerFreightCalculateAPIRequest) SetParamAeopFreight
 // GetParamAeopFreightCalculateForBuyerDTO ParamAeopFreightCalculateForBuyerDTO Getter
 func (r AliexpressLogisticsBuyerFreightCalculateAPIRequest) GetParamAeopFreightCalculateForBuyerDTO() *AeopFreightCalculateForBuyerDto {
 	return r._paramAeopFreightCalculateForBuyerDTO
+}
+
+var poolAliexpressLogisticsBuyerFreightCalculateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressLogisticsBuyerFreightCalculateRequest()
+	},
+}
+
+// GetAliexpressLogisticsBuyerFreightCalculateRequest 从 sync.Pool 获取 AliexpressLogisticsBuyerFreightCalculateAPIRequest
+func GetAliexpressLogisticsBuyerFreightCalculateAPIRequest() *AliexpressLogisticsBuyerFreightCalculateAPIRequest {
+	return poolAliexpressLogisticsBuyerFreightCalculateAPIRequest.Get().(*AliexpressLogisticsBuyerFreightCalculateAPIRequest)
+}
+
+// ReleaseAliexpressLogisticsBuyerFreightCalculateAPIRequest 将 AliexpressLogisticsBuyerFreightCalculateAPIRequest 放入 sync.Pool
+func ReleaseAliexpressLogisticsBuyerFreightCalculateAPIRequest(v *AliexpressLogisticsBuyerFreightCalculateAPIRequest) {
+	v.Reset()
+	poolAliexpressLogisticsBuyerFreightCalculateAPIRequest.Put(v)
 }

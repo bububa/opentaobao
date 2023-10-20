@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // FenxiaoItemRecord 结构体
 type FenxiaoItemRecord struct {
 	// 下载时间
@@ -14,4 +18,26 @@ type FenxiaoItemRecord struct {
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 产品ID
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
+}
+
+var poolFenxiaoItemRecord = sync.Pool{
+	New: func() any {
+		return new(FenxiaoItemRecord)
+	},
+}
+
+// GetFenxiaoItemRecord() 从对象池中获取FenxiaoItemRecord
+func GetFenxiaoItemRecord() *FenxiaoItemRecord {
+	return poolFenxiaoItemRecord.Get().(*FenxiaoItemRecord)
+}
+
+// ReleaseFenxiaoItemRecord 释放FenxiaoItemRecord
+func ReleaseFenxiaoItemRecord(v *FenxiaoItemRecord) {
+	v.Created = ""
+	v.Modified = ""
+	v.TradeType = ""
+	v.DistributorId = 0
+	v.ItemId = 0
+	v.ProductId = 0
+	poolFenxiaoItemRecord.Put(v)
 }

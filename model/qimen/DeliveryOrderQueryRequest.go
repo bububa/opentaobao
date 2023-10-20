@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // DeliveryOrderQueryRequest 结构体
 type DeliveryOrderQueryRequest struct {
 	// 货主编码
@@ -20,4 +24,29 @@ type DeliveryOrderQueryRequest struct {
 	PageSize int64 `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
 	// 扩展属性
 	ExtendProps *TaobaoQimenDeliveryorderQueryMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+}
+
+var poolDeliveryOrderQueryRequest = sync.Pool{
+	New: func() any {
+		return new(DeliveryOrderQueryRequest)
+	},
+}
+
+// GetDeliveryOrderQueryRequest() 从对象池中获取DeliveryOrderQueryRequest
+func GetDeliveryOrderQueryRequest() *DeliveryOrderQueryRequest {
+	return poolDeliveryOrderQueryRequest.Get().(*DeliveryOrderQueryRequest)
+}
+
+// ReleaseDeliveryOrderQueryRequest 释放DeliveryOrderQueryRequest
+func ReleaseDeliveryOrderQueryRequest(v *DeliveryOrderQueryRequest) {
+	v.OwnerCode = ""
+	v.WarehouseCode = ""
+	v.OrderCode = ""
+	v.OrderId = ""
+	v.OrderSourceCode = ""
+	v.Remark = ""
+	v.Page = 0
+	v.PageSize = 0
+	v.ExtendProps = nil
+	poolDeliveryOrderQueryRequest.Put(v)
 }

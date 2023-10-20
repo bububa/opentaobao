@@ -1,5 +1,9 @@
 package legalsuit
 
+import (
+	"sync"
+)
+
 // DominationDissentModel 结构体
 type DominationDissentModel struct {
 	// 裁定书附件
@@ -50,4 +54,44 @@ type DominationDissentModel struct {
 	DominationId int64 `json:"domination_id,omitempty" xml:"domination_id,omitempty"`
 	// 管辖文书数量
 	ApplicationCount int64 `json:"application_count,omitempty" xml:"application_count,omitempty"`
+}
+
+var poolDominationDissentModel = sync.Pool{
+	New: func() any {
+		return new(DominationDissentModel)
+	},
+}
+
+// GetDominationDissentModel() 从对象池中获取DominationDissentModel
+func GetDominationDissentModel() *DominationDissentModel {
+	return poolDominationDissentModel.Get().(*DominationDissentModel)
+}
+
+// ReleaseDominationDissentModel 释放DominationDissentModel
+func ReleaseDominationDissentModel(v *DominationDissentModel) {
+	v.DominationDissentRulingList = v.DominationDissentRulingList[:0]
+	v.FeedbackAttachmentList = v.FeedbackAttachmentList[:0]
+	v.ApplicationAttachmentList = v.ApplicationAttachmentList[:0]
+	v.Description = ""
+	v.Result = ""
+	v.ExpressNum = ""
+	v.ExpressCompany = ""
+	v.Judge = ""
+	v.IsCourt = ""
+	v.FeedbackContent = ""
+	v.UpdateTime = ""
+	v.Updater = ""
+	v.CallingTime = ""
+	v.SupplierCode = ""
+	v.DominationProcess = ""
+	v.CourtTime = ""
+	v.OperationType = ""
+	v.DominationDissentRulingCount = 0
+	v.FeedbackAttachmentCount = 0
+	v.FeedbackId = 0
+	v.SuitId = 0
+	v.EntrustId = 0
+	v.DominationId = 0
+	v.ApplicationCount = 0
+	poolDominationDissentModel.Put(v)
 }

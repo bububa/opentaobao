@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // Distributor 结构体
 type Distributor struct {
 	// 分销商姓名
@@ -28,4 +32,33 @@ type Distributor struct {
 	Level int64 `json:"level,omitempty" xml:"level,omitempty"`
 	// 分销商的淘宝卖家评价
 	Appraise int64 `json:"appraise,omitempty" xml:"appraise,omitempty"`
+}
+
+var poolDistributor = sync.Pool{
+	New: func() any {
+		return new(Distributor)
+	},
+}
+
+// GetDistributor() 从对象池中获取Distributor
+func GetDistributor() *Distributor {
+	return poolDistributor.Get().(*Distributor)
+}
+
+// ReleaseDistributor 释放Distributor
+func ReleaseDistributor(v *Distributor) {
+	v.DistributorName = ""
+	v.ContactPerson = ""
+	v.MobilePhone = ""
+	v.Phone = ""
+	v.Email = ""
+	v.AlipayAccount = ""
+	v.ShopWebLink = ""
+	v.FullName = ""
+	v.Starts = ""
+	v.DistributorId = 0
+	v.CategoryId = 0
+	v.Level = 0
+	v.Appraise = 0
+	poolDistributor.Put(v)
 }

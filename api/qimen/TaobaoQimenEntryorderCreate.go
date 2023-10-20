@@ -9,11 +9,6 @@ import (
 // taobao.qimen.entryorder.create
 //
 // taobao.qimen.entryorder.create
-func TaobaoQimenEntryorderCreate(clt *core.SDKClient, req *qimen.TaobaoQimenEntryorderCreateAPIRequest, session string) (*qimen.TaobaoQimenEntryorderCreateAPIResponse, error) {
-	var resp qimen.TaobaoQimenEntryorderCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoQimenEntryorderCreate(clt *core.SDKClient, req *qimen.TaobaoQimenEntryorderCreateAPIRequest, resp *qimen.TaobaoQimenEntryorderCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

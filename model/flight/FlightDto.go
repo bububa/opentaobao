@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // FlightDto 结构体
 type FlightDto struct {
 	// 允许航班日期
@@ -30,4 +34,34 @@ type FlightDto struct {
 	RestrictFlightNum2 string `json:"restrict_flight_num2,omitempty" xml:"restrict_flight_num2,omitempty"`
 	// 行程类型标记：0，单程；1，往返
 	FlightIndex int64 `json:"flight_index,omitempty" xml:"flight_index,omitempty"`
+}
+
+var poolFlightDto = sync.Pool{
+	New: func() any {
+		return new(FlightDto)
+	},
+}
+
+// GetFlightDto() 从对象池中获取FlightDto
+func GetFlightDto() *FlightDto {
+	return poolFlightDto.Get().(*FlightDto)
+}
+
+// ReleaseFlightDto 释放FlightDto
+func ReleaseFlightDto(v *FlightDto) {
+	v.AllowTravelDate = v.AllowTravelDate[:0]
+	v.DayWeek = v.DayWeek[:0]
+	v.RestrictTravelDate = v.RestrictTravelDate[:0]
+	v.AllowTravelDates = v.AllowTravelDates[:0]
+	v.RestrictTravelDates = v.RestrictTravelDates[:0]
+	v.DayWeeks = v.DayWeeks[:0]
+	v.AllowFlightNum = ""
+	v.AllowTravelTime = ""
+	v.Cabin = ""
+	v.CabinClass = ""
+	v.RestrictFlightNum = ""
+	v.AllowFlightNum2 = ""
+	v.RestrictFlightNum2 = ""
+	v.FlightIndex = 0
+	poolFlightDto.Put(v)
 }

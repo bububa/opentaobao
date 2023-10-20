@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YunosTvpubadminContentChannelQueryAPIRequest struct {
 // NewYunosTvpubadminContentChannelQueryRequest 初始化YunosTvpubadminContentChannelQueryAPIRequest对象
 func NewYunosTvpubadminContentChannelQueryRequest() *YunosTvpubadminContentChannelQueryAPIRequest {
 	return &YunosTvpubadminContentChannelQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminContentChannelQueryAPIRequest) Reset() {
+	r._channelAuditQuery = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YunosTvpubadminContentChannelQueryAPIRequest) SetChannelAuditQuery(_cha
 // GetChannelAuditQuery ChannelAuditQuery Getter
 func (r YunosTvpubadminContentChannelQueryAPIRequest) GetChannelAuditQuery() string {
 	return r._channelAuditQuery
+}
+
+var poolYunosTvpubadminContentChannelQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminContentChannelQueryRequest()
+	},
+}
+
+// GetYunosTvpubadminContentChannelQueryRequest 从 sync.Pool 获取 YunosTvpubadminContentChannelQueryAPIRequest
+func GetYunosTvpubadminContentChannelQueryAPIRequest() *YunosTvpubadminContentChannelQueryAPIRequest {
+	return poolYunosTvpubadminContentChannelQueryAPIRequest.Get().(*YunosTvpubadminContentChannelQueryAPIRequest)
+}
+
+// ReleaseYunosTvpubadminContentChannelQueryAPIRequest 将 YunosTvpubadminContentChannelQueryAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminContentChannelQueryAPIRequest(v *YunosTvpubadminContentChannelQueryAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminContentChannelQueryAPIRequest.Put(v)
 }

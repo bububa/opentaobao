@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // AlibabaSscSupplyplatformServiceInventoryQueryResult 结构体
 type AlibabaSscSupplyplatformServiceInventoryQueryResult struct {
 	// json字符串。key是时间片，格式为yyyy-MM-dd或yyyy-MM-dd HH:mm-HH:mm，value是当前库存值
@@ -12,4 +16,25 @@ type AlibabaSscSupplyplatformServiceInventoryQueryResult struct {
 	DisplayMsg string `json:"display_msg,omitempty" xml:"display_msg,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaSscSupplyplatformServiceInventoryQueryResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaSscSupplyplatformServiceInventoryQueryResult)
+	},
+}
+
+// GetAlibabaSscSupplyplatformServiceInventoryQueryResult() 从对象池中获取AlibabaSscSupplyplatformServiceInventoryQueryResult
+func GetAlibabaSscSupplyplatformServiceInventoryQueryResult() *AlibabaSscSupplyplatformServiceInventoryQueryResult {
+	return poolAlibabaSscSupplyplatformServiceInventoryQueryResult.Get().(*AlibabaSscSupplyplatformServiceInventoryQueryResult)
+}
+
+// ReleaseAlibabaSscSupplyplatformServiceInventoryQueryResult 释放AlibabaSscSupplyplatformServiceInventoryQueryResult
+func ReleaseAlibabaSscSupplyplatformServiceInventoryQueryResult(v *AlibabaSscSupplyplatformServiceInventoryQueryResult) {
+	v.Value = ""
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.DisplayMsg = ""
+	v.Success = false
+	poolAlibabaSscSupplyplatformServiceInventoryQueryResult.Put(v)
 }

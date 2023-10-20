@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaScbpProductStatusUpdateAPIRequest struct {
 // NewAlibabaScbpProductStatusUpdateRequest 初始化AlibabaScbpProductStatusUpdateAPIRequest对象
 func NewAlibabaScbpProductStatusUpdateRequest() *AlibabaScbpProductStatusUpdateAPIRequest {
 	return &AlibabaScbpProductStatusUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpProductStatusUpdateAPIRequest) Reset() {
+	r._productIdList = r._productIdList[:0]
+	r._status = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaScbpProductStatusUpdateAPIRequest) SetStatus(_status string) err
 // GetStatus Status Getter
 func (r AlibabaScbpProductStatusUpdateAPIRequest) GetStatus() string {
 	return r._status
+}
+
+var poolAlibabaScbpProductStatusUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpProductStatusUpdateRequest()
+	},
+}
+
+// GetAlibabaScbpProductStatusUpdateRequest 从 sync.Pool 获取 AlibabaScbpProductStatusUpdateAPIRequest
+func GetAlibabaScbpProductStatusUpdateAPIRequest() *AlibabaScbpProductStatusUpdateAPIRequest {
+	return poolAlibabaScbpProductStatusUpdateAPIRequest.Get().(*AlibabaScbpProductStatusUpdateAPIRequest)
+}
+
+// ReleaseAlibabaScbpProductStatusUpdateAPIRequest 将 AlibabaScbpProductStatusUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpProductStatusUpdateAPIRequest(v *AlibabaScbpProductStatusUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpProductStatusUpdateAPIRequest.Put(v)
 }

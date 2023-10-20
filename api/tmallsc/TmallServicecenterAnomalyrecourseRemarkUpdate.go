@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.anomalyrecourse.remark.update
 //
 // 一键求助服务商可以回传备注
-func TmallServicecenterAnomalyrecourseRemarkUpdate(clt *core.SDKClient, req *tmallsc.TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest, session string) (*tmallsc.TmallServicecenterAnomalyrecourseRemarkUpdateAPIResponse, error) {
-	var resp tmallsc.TmallServicecenterAnomalyrecourseRemarkUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterAnomalyrecourseRemarkUpdate(clt *core.SDKClient, req *tmallsc.TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest, resp *tmallsc.TmallServicecenterAnomalyrecourseRemarkUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

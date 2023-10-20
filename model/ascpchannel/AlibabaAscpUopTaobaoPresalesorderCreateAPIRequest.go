@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest struct {
 // NewAlibabaAscpUopTaobaoPresalesorderCreateRequest 初始化AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest对象
 func NewAlibabaAscpUopTaobaoPresalesorderCreateRequest() *AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest {
 	return &AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest) Reset() {
+	r._presalesOrderCreateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest) SetPresalesOrderCrea
 // GetPresalesOrderCreateRequest PresalesOrderCreateRequest Getter
 func (r AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest) GetPresalesOrderCreateRequest() *PresalesordercreaterequestTest {
 	return r._presalesOrderCreateRequest
+}
+
+var poolAlibabaAscpUopTaobaoPresalesorderCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpUopTaobaoPresalesorderCreateRequest()
+	},
+}
+
+// GetAlibabaAscpUopTaobaoPresalesorderCreateRequest 从 sync.Pool 获取 AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest
+func GetAlibabaAscpUopTaobaoPresalesorderCreateAPIRequest() *AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest {
+	return poolAlibabaAscpUopTaobaoPresalesorderCreateAPIRequest.Get().(*AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest)
+}
+
+// ReleaseAlibabaAscpUopTaobaoPresalesorderCreateAPIRequest 将 AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpUopTaobaoPresalesorderCreateAPIRequest(v *AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpUopTaobaoPresalesorderCreateAPIRequest.Put(v)
 }

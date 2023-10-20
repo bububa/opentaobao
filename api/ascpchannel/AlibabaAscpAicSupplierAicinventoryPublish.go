@@ -9,11 +9,6 @@ import (
 // alibaba.ascp.aic.supplier.aicinventory.publish
 //
 // 商家调用这个接口来发布增加库存数据
-func AlibabaAscpAicSupplierAicinventoryPublish(clt *core.SDKClient, req *ascpchannel.AlibabaAscpAicSupplierAicinventoryPublishAPIRequest, session string) (*ascpchannel.AlibabaAscpAicSupplierAicinventoryPublishAPIResponse, error) {
-	var resp ascpchannel.AlibabaAscpAicSupplierAicinventoryPublishAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAscpAicSupplierAicinventoryPublish(clt *core.SDKClient, req *ascpchannel.AlibabaAscpAicSupplierAicinventoryPublishAPIRequest, resp *ascpchannel.AlibabaAscpAicSupplierAicinventoryPublishAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

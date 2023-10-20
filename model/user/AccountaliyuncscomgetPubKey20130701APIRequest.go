@@ -2,6 +2,7 @@ package user
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AccountAliyuncsComGetPubKey20130701APIRequest struct {
 // NewAccountAliyuncsComGetPubKey20130701Request 初始化AccountAliyuncsComGetPubKey20130701APIRequest对象
 func NewAccountAliyuncsComGetPubKey20130701Request() *AccountAliyuncsComGetPubKey20130701APIRequest {
 	return &AccountAliyuncsComGetPubKey20130701APIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AccountAliyuncsComGetPubKey20130701APIRequest) Reset() {
+	r._ownerAppkey = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AccountAliyuncsComGetPubKey20130701APIRequest) SetOwnerAppkey(_ownerApp
 // GetOwnerAppkey OwnerAppkey Getter
 func (r AccountAliyuncsComGetPubKey20130701APIRequest) GetOwnerAppkey() string {
 	return r._ownerAppkey
+}
+
+var poolAccountAliyuncsComGetPubKey20130701APIRequest = sync.Pool{
+	New: func() any {
+		return NewAccountAliyuncsComGetPubKey20130701Request()
+	},
+}
+
+// GetAccountAliyuncsComGetPubKey20130701Request 从 sync.Pool 获取 AccountAliyuncsComGetPubKey20130701APIRequest
+func GetAccountAliyuncsComGetPubKey20130701APIRequest() *AccountAliyuncsComGetPubKey20130701APIRequest {
+	return poolAccountAliyuncsComGetPubKey20130701APIRequest.Get().(*AccountAliyuncsComGetPubKey20130701APIRequest)
+}
+
+// ReleaseAccountAliyuncsComGetPubKey20130701APIRequest 将 AccountAliyuncsComGetPubKey20130701APIRequest 放入 sync.Pool
+func ReleaseAccountAliyuncsComGetPubKey20130701APIRequest(v *AccountAliyuncsComGetPubKey20130701APIRequest) {
+	v.Reset()
+	poolAccountAliyuncsComGetPubKey20130701APIRequest.Put(v)
 }

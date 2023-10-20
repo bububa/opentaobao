@@ -1,5 +1,9 @@
 package xiamicontent
 
+import (
+	"sync"
+)
+
 // LyricsDto 结构体
 type LyricsDto struct {
 	// 歌词文件地址
@@ -10,4 +14,24 @@ type LyricsDto struct {
 	SongId int64 `json:"song_id,omitempty" xml:"song_id,omitempty"`
 	// 歌词ID
 	LyricId int64 `json:"lyric_id,omitempty" xml:"lyric_id,omitempty"`
+}
+
+var poolLyricsDto = sync.Pool{
+	New: func() any {
+		return new(LyricsDto)
+	},
+}
+
+// GetLyricsDto() 从对象池中获取LyricsDto
+func GetLyricsDto() *LyricsDto {
+	return poolLyricsDto.Get().(*LyricsDto)
+}
+
+// ReleaseLyricsDto 释放LyricsDto
+func ReleaseLyricsDto(v *LyricsDto) {
+	v.LyricUrl = ""
+	v.LyricType = 0
+	v.SongId = 0
+	v.LyricId = 0
+	poolLyricsDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package koubeimall
 
+import (
+	"sync"
+)
+
 // ShopShelfDto 结构体
 type ShopShelfDto struct {
 	// 商品模型
@@ -12,4 +16,25 @@ type ShopShelfDto struct {
 	NextStart int64 `json:"next_start,omitempty" xml:"next_start,omitempty"`
 	// 是否有更多商品
 	HasMore bool `json:"has_more,omitempty" xml:"has_more,omitempty"`
+}
+
+var poolShopShelfDto = sync.Pool{
+	New: func() any {
+		return new(ShopShelfDto)
+	},
+}
+
+// GetShopShelfDto() 从对象池中获取ShopShelfDto
+func GetShopShelfDto() *ShopShelfDto {
+	return poolShopShelfDto.Get().(*ShopShelfDto)
+}
+
+// ReleaseShopShelfDto 释放ShopShelfDto
+func ReleaseShopShelfDto(v *ShopShelfDto) {
+	v.ItemInfoList = v.ItemInfoList[:0]
+	v.PageSize = 0
+	v.TotalItemSize = 0
+	v.NextStart = 0
+	v.HasMore = false
+	poolShopShelfDto.Put(v)
 }

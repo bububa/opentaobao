@@ -2,6 +2,7 @@ package jstsecret
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoJstSecretGetAPIRequest struct {
 // NewTaobaoJstSecretGetRequest 初始化TaobaoJstSecretGetAPIRequest对象
 func NewTaobaoJstSecretGetRequest() *TaobaoJstSecretGetAPIRequest {
 	return &TaobaoJstSecretGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJstSecretGetAPIRequest) Reset() {
+	r._tid = 0
+	r._type = 0
+	r._expireDays = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoJstSecretGetAPIRequest) SetExpireDays(_expireDays int64) error {
 // GetExpireDays ExpireDays Getter
 func (r TaobaoJstSecretGetAPIRequest) GetExpireDays() int64 {
 	return r._expireDays
+}
+
+var poolTaobaoJstSecretGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJstSecretGetRequest()
+	},
+}
+
+// GetTaobaoJstSecretGetRequest 从 sync.Pool 获取 TaobaoJstSecretGetAPIRequest
+func GetTaobaoJstSecretGetAPIRequest() *TaobaoJstSecretGetAPIRequest {
+	return poolTaobaoJstSecretGetAPIRequest.Get().(*TaobaoJstSecretGetAPIRequest)
+}
+
+// ReleaseTaobaoJstSecretGetAPIRequest 将 TaobaoJstSecretGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJstSecretGetAPIRequest(v *TaobaoJstSecretGetAPIRequest) {
+	v.Reset()
+	poolTaobaoJstSecretGetAPIRequest.Put(v)
 }

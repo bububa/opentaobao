@@ -2,6 +2,7 @@ package wlbimports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoGlobalImPickupBigbagContentCancelAPIRequest struct {
 // NewCainiaoGlobalImPickupBigbagContentCancelRequest 初始化CainiaoGlobalImPickupBigbagContentCancelAPIRequest对象
 func NewCainiaoGlobalImPickupBigbagContentCancelRequest() *CainiaoGlobalImPickupBigbagContentCancelAPIRequest {
 	return &CainiaoGlobalImPickupBigbagContentCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoGlobalImPickupBigbagContentCancelAPIRequest) Reset() {
+	r._bigbagCancelRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoGlobalImPickupBigbagContentCancelAPIRequest) SetBigbagCancelRequ
 // GetBigbagCancelRequest BigbagCancelRequest Getter
 func (r CainiaoGlobalImPickupBigbagContentCancelAPIRequest) GetBigbagCancelRequest() *BigbagCancelRequest {
 	return r._bigbagCancelRequest
+}
+
+var poolCainiaoGlobalImPickupBigbagContentCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoGlobalImPickupBigbagContentCancelRequest()
+	},
+}
+
+// GetCainiaoGlobalImPickupBigbagContentCancelRequest 从 sync.Pool 获取 CainiaoGlobalImPickupBigbagContentCancelAPIRequest
+func GetCainiaoGlobalImPickupBigbagContentCancelAPIRequest() *CainiaoGlobalImPickupBigbagContentCancelAPIRequest {
+	return poolCainiaoGlobalImPickupBigbagContentCancelAPIRequest.Get().(*CainiaoGlobalImPickupBigbagContentCancelAPIRequest)
+}
+
+// ReleaseCainiaoGlobalImPickupBigbagContentCancelAPIRequest 将 CainiaoGlobalImPickupBigbagContentCancelAPIRequest 放入 sync.Pool
+func ReleaseCainiaoGlobalImPickupBigbagContentCancelAPIRequest(v *CainiaoGlobalImPickupBigbagContentCancelAPIRequest) {
+	v.Reset()
+	poolCainiaoGlobalImPickupBigbagContentCancelAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package alidoc
 
+import (
+	"sync"
+)
+
 // RxPatientDiagnosticDto 结构体
 type RxPatientDiagnosticDto struct {
 	// 诊断list
@@ -14,4 +18,26 @@ type RxPatientDiagnosticDto struct {
 	Pregnancy string `json:"pregnancy,omitempty" xml:"pregnancy,omitempty"`
 	// 过敏史
 	AllergyHistory string `json:"allergy_history,omitempty" xml:"allergy_history,omitempty"`
+}
+
+var poolRxPatientDiagnosticDto = sync.Pool{
+	New: func() any {
+		return new(RxPatientDiagnosticDto)
+	},
+}
+
+// GetRxPatientDiagnosticDto() 从对象池中获取RxPatientDiagnosticDto
+func GetRxPatientDiagnosticDto() *RxPatientDiagnosticDto {
+	return poolRxPatientDiagnosticDto.Get().(*RxPatientDiagnosticDto)
+}
+
+// ReleaseRxPatientDiagnosticDto 释放RxPatientDiagnosticDto
+func ReleaseRxPatientDiagnosticDto(v *RxPatientDiagnosticDto) {
+	v.DiagnoseList = v.DiagnoseList[:0]
+	v.MedicalHistory = ""
+	v.LiverFunction = ""
+	v.RenalFunction = ""
+	v.Pregnancy = ""
+	v.AllergyHistory = ""
+	poolRxPatientDiagnosticDto.Put(v)
 }

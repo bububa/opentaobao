@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // PlatformSpecialShareInfoDto 结构体
 type PlatformSpecialShareInfoDto struct {
 	// 内容专项服务费比率
@@ -14,4 +18,26 @@ type PlatformSpecialShareInfoDto struct {
 	TrafficTechServicePreFee float64 `json:"traffic_tech_service_pre_fee,omitempty" xml:"traffic_tech_service_pre_fee,omitempty"`
 	// 结算流量专项服务费（默认无，限定开放）
 	TrafficTechServiceFee float64 `json:"traffic_tech_service_fee,omitempty" xml:"traffic_tech_service_fee,omitempty"`
+}
+
+var poolPlatformSpecialShareInfoDto = sync.Pool{
+	New: func() any {
+		return new(PlatformSpecialShareInfoDto)
+	},
+}
+
+// GetPlatformSpecialShareInfoDto() 从对象池中获取PlatformSpecialShareInfoDto
+func GetPlatformSpecialShareInfoDto() *PlatformSpecialShareInfoDto {
+	return poolPlatformSpecialShareInfoDto.Get().(*PlatformSpecialShareInfoDto)
+}
+
+// ReleasePlatformSpecialShareInfoDto 释放PlatformSpecialShareInfoDto
+func ReleasePlatformSpecialShareInfoDto(v *PlatformSpecialShareInfoDto) {
+	v.ContentTechServiceRate = 0
+	v.ContentTechServicePreFee = 0
+	v.ContentTechServiceFee = 0
+	v.TrafficTechServiceRate = 0
+	v.TrafficTechServicePreFee = 0
+	v.TrafficTechServiceFee = 0
+	poolPlatformSpecialShareInfoDto.Put(v)
 }

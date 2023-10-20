@@ -1,5 +1,9 @@
 package tanx
 
+import (
+	"sync"
+)
+
 // CreativeInfoDto 结构体
 type CreativeInfoDto struct {
 	// 创意的类目，多个值用逗号&amp;ldquo;，&amp;rdquo;分隔
@@ -28,4 +32,33 @@ type CreativeInfoDto struct {
 	CreativeFormat string `json:"creative_format,omitempty" xml:"creative_format,omitempty"`
 	// 创意时长，单位是毫秒
 	Duration int64 `json:"duration,omitempty" xml:"duration,omitempty"`
+}
+
+var poolCreativeInfoDto = sync.Pool{
+	New: func() any {
+		return new(CreativeInfoDto)
+	},
+}
+
+// GetCreativeInfoDto() 从对象池中获取CreativeInfoDto
+func GetCreativeInfoDto() *CreativeInfoDto {
+	return poolCreativeInfoDto.Get().(*CreativeInfoDto)
+}
+
+// ReleaseCreativeInfoDto 释放CreativeInfoDto
+func ReleaseCreativeInfoDto(v *CreativeInfoDto) {
+	v.CreativeCategoryId = ""
+	v.CreativeSize = ""
+	v.CreativeUrl = ""
+	v.AdvertiserIds = ""
+	v.ApiFramework = ""
+	v.ClickThroughUrl = ""
+	v.ClickTrackUrl = ""
+	v.ClickUrl = ""
+	v.CreativeId = ""
+	v.CreativeName = ""
+	v.FileType = ""
+	v.CreativeFormat = ""
+	v.Duration = 0
+	poolCreativeInfoDto.Put(v)
 }

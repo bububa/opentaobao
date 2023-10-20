@@ -2,6 +2,7 @@ package nrt
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaRetailDeviceVendingRegisterAPIResponse struct {
 	AlibabaRetailDeviceVendingRegisterAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaRetailDeviceVendingRegisterAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaRetailDeviceVendingRegisterAPIResponseModel).Reset()
+}
+
 // AlibabaRetailDeviceVendingRegisterAPIResponseModel is 贩卖机设备注册 成功返回结果
 type AlibabaRetailDeviceVendingRegisterAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_retail_device_vending_register_response"`
@@ -22,4 +29,27 @@ type AlibabaRetailDeviceVendingRegisterAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
 	Result *AlibabaRetailDeviceVendingRegisterResultDo `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaRetailDeviceVendingRegisterAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaRetailDeviceVendingRegisterAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaRetailDeviceVendingRegisterAPIResponse)
+	},
+}
+
+// GetAlibabaRetailDeviceVendingRegisterAPIResponse 从 sync.Pool 获取 AlibabaRetailDeviceVendingRegisterAPIResponse
+func GetAlibabaRetailDeviceVendingRegisterAPIResponse() *AlibabaRetailDeviceVendingRegisterAPIResponse {
+	return poolAlibabaRetailDeviceVendingRegisterAPIResponse.Get().(*AlibabaRetailDeviceVendingRegisterAPIResponse)
+}
+
+// ReleaseAlibabaRetailDeviceVendingRegisterAPIResponse 将 AlibabaRetailDeviceVendingRegisterAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaRetailDeviceVendingRegisterAPIResponse(v *AlibabaRetailDeviceVendingRegisterAPIResponse) {
+	v.Reset()
+	poolAlibabaRetailDeviceVendingRegisterAPIResponse.Put(v)
 }

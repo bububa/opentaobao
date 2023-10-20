@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // DeliveryLineBatchDeleteRequest 结构体
 type DeliveryLineBatchDeleteRequest struct {
 	// 删除规则的收货地（组）；当删除类型为2时必填
@@ -18,4 +22,28 @@ type DeliveryLineBatchDeleteRequest struct {
 	DeleteType int64 `json:"delete_type,omitempty" xml:"delete_type,omitempty"`
 	// 线路规则类型： 1-通用规则； 2-个性化规则
 	RuleType int64 `json:"rule_type,omitempty" xml:"rule_type,omitempty"`
+}
+
+var poolDeliveryLineBatchDeleteRequest = sync.Pool{
+	New: func() any {
+		return new(DeliveryLineBatchDeleteRequest)
+	},
+}
+
+// GetDeliveryLineBatchDeleteRequest() 从对象池中获取DeliveryLineBatchDeleteRequest
+func GetDeliveryLineBatchDeleteRequest() *DeliveryLineBatchDeleteRequest {
+	return poolDeliveryLineBatchDeleteRequest.Get().(*DeliveryLineBatchDeleteRequest)
+}
+
+// ReleaseDeliveryLineBatchDeleteRequest 释放DeliveryLineBatchDeleteRequest
+func ReleaseDeliveryLineBatchDeleteRequest(v *DeliveryLineBatchDeleteRequest) {
+	v.Addresses = v.Addresses[:0]
+	v.RequestId = ""
+	v.SupplierId = ""
+	v.WarehouseCode = ""
+	v.WmsOwnerCode = ""
+	v.RequestTime = 0
+	v.DeleteType = 0
+	v.RuleType = 0
+	poolDeliveryLineBatchDeleteRequest.Put(v)
 }

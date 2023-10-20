@@ -1,5 +1,9 @@
 package moscm
 
+import (
+	"sync"
+)
+
 // OrderCriteria 结构体
 type OrderCriteria struct {
 	// 订单号
@@ -18,4 +22,28 @@ type OrderCriteria struct {
 	ModifyEndDate string `json:"modify_end_date,omitempty" xml:"modify_end_date,omitempty"`
 	// 订单修改时间范围，结束时间
 	ModifyStartDate string `json:"modify_start_date,omitempty" xml:"modify_start_date,omitempty"`
+}
+
+var poolOrderCriteria = sync.Pool{
+	New: func() any {
+		return new(OrderCriteria)
+	},
+}
+
+// GetOrderCriteria() 从对象池中获取OrderCriteria
+func GetOrderCriteria() *OrderCriteria {
+	return poolOrderCriteria.Get().(*OrderCriteria)
+}
+
+// ReleaseOrderCriteria 释放OrderCriteria
+func ReleaseOrderCriteria(v *OrderCriteria) {
+	v.OrderNumbers = v.OrderNumbers[:0]
+	v.Status = v.Status[:0]
+	v.CounterId = ""
+	v.StartDate = ""
+	v.EndDate = ""
+	v.OutCounterId = ""
+	v.ModifyEndDate = ""
+	v.ModifyStartDate = ""
+	poolOrderCriteria.Put(v)
 }

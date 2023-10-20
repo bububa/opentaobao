@@ -2,6 +2,7 @@ package product
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallItemSizemappingTemplateCreateAPIResponse struct {
 	TmallItemSizemappingTemplateCreateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallItemSizemappingTemplateCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallItemSizemappingTemplateCreateAPIResponseModel).Reset()
+}
+
 // TmallItemSizemappingTemplateCreateAPIResponseModel is 新增天猫商品尺码表模板 成功返回结果
 type TmallItemSizemappingTemplateCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_item_sizemapping_template_create_response"`
@@ -22,4 +29,27 @@ type TmallItemSizemappingTemplateCreateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 尺码表模板
 	SizeMappingTemplate *SizeMappingTemplateDo `json:"size_mapping_template,omitempty" xml:"size_mapping_template,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallItemSizemappingTemplateCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.SizeMappingTemplate = nil
+}
+
+var poolTmallItemSizemappingTemplateCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallItemSizemappingTemplateCreateAPIResponse)
+	},
+}
+
+// GetTmallItemSizemappingTemplateCreateAPIResponse 从 sync.Pool 获取 TmallItemSizemappingTemplateCreateAPIResponse
+func GetTmallItemSizemappingTemplateCreateAPIResponse() *TmallItemSizemappingTemplateCreateAPIResponse {
+	return poolTmallItemSizemappingTemplateCreateAPIResponse.Get().(*TmallItemSizemappingTemplateCreateAPIResponse)
+}
+
+// ReleaseTmallItemSizemappingTemplateCreateAPIResponse 将 TmallItemSizemappingTemplateCreateAPIResponse 保存到 sync.Pool
+func ReleaseTmallItemSizemappingTemplateCreateAPIResponse(v *TmallItemSizemappingTemplateCreateAPIResponse) {
+	v.Reset()
+	poolTmallItemSizemappingTemplateCreateAPIResponse.Put(v)
 }

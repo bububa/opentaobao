@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.travel.axin.hotel.room.list.query
 //
 // 标准酒店房型列表查询
-func TaobaoAlitripTravelAxinHotelRoomListQuery(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelAxinHotelRoomListQueryAPIRequest, session string) (*axindata.TaobaoAlitripTravelAxinHotelRoomListQueryAPIResponse, error) {
-	var resp axindata.TaobaoAlitripTravelAxinHotelRoomListQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripTravelAxinHotelRoomListQuery(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelAxinHotelRoomListQueryAPIRequest, resp *axindata.TaobaoAlitripTravelAxinHotelRoomListQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

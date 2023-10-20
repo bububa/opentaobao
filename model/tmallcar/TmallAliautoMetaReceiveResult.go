@@ -1,5 +1,9 @@
 package tmallcar
 
+import (
+	"sync"
+)
+
 // TmallAliautoMetaReceiveResult 结构体
 type TmallAliautoMetaReceiveResult struct {
 	// data
@@ -10,4 +14,24 @@ type TmallAliautoMetaReceiveResult struct {
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTmallAliautoMetaReceiveResult = sync.Pool{
+	New: func() any {
+		return new(TmallAliautoMetaReceiveResult)
+	},
+}
+
+// GetTmallAliautoMetaReceiveResult() 从对象池中获取TmallAliautoMetaReceiveResult
+func GetTmallAliautoMetaReceiveResult() *TmallAliautoMetaReceiveResult {
+	return poolTmallAliautoMetaReceiveResult.Get().(*TmallAliautoMetaReceiveResult)
+}
+
+// ReleaseTmallAliautoMetaReceiveResult 释放TmallAliautoMetaReceiveResult
+func ReleaseTmallAliautoMetaReceiveResult(v *TmallAliautoMetaReceiveResult) {
+	v.Data = ""
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.Success = false
+	poolTmallAliautoMetaReceiveResult.Put(v)
 }

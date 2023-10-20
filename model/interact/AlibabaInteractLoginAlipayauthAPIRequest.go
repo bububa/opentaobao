@@ -2,6 +2,7 @@ package interact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaInteractLoginAlipayauthAPIRequest struct {
 // NewAlibabaInteractLoginAlipayauthRequest 初始化AlibabaInteractLoginAlipayauthAPIRequest对象
 func NewAlibabaInteractLoginAlipayauthRequest() *AlibabaInteractLoginAlipayauthAPIRequest {
 	return &AlibabaInteractLoginAlipayauthAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractLoginAlipayauthAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaInteractLoginAlipayauthAPIRequest) GetApiParams(params url.Values
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaInteractLoginAlipayauthAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaInteractLoginAlipayauthAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractLoginAlipayauthRequest()
+	},
+}
+
+// GetAlibabaInteractLoginAlipayauthRequest 从 sync.Pool 获取 AlibabaInteractLoginAlipayauthAPIRequest
+func GetAlibabaInteractLoginAlipayauthAPIRequest() *AlibabaInteractLoginAlipayauthAPIRequest {
+	return poolAlibabaInteractLoginAlipayauthAPIRequest.Get().(*AlibabaInteractLoginAlipayauthAPIRequest)
+}
+
+// ReleaseAlibabaInteractLoginAlipayauthAPIRequest 将 AlibabaInteractLoginAlipayauthAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractLoginAlipayauthAPIRequest(v *AlibabaInteractLoginAlipayauthAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractLoginAlipayauthAPIRequest.Put(v)
 }

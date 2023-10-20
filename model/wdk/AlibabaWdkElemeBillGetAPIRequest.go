@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkElemeBillGetAPIRequest struct {
 // NewAlibabaWdkElemeBillGetRequest 初始化AlibabaWdkElemeBillGetAPIRequest对象
 func NewAlibabaWdkElemeBillGetRequest() *AlibabaWdkElemeBillGetAPIRequest {
 	return &AlibabaWdkElemeBillGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkElemeBillGetAPIRequest) Reset() {
+	r._eleBillRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkElemeBillGetAPIRequest) SetEleBillRequest(_eleBillRequest *El
 // GetEleBillRequest EleBillRequest Getter
 func (r AlibabaWdkElemeBillGetAPIRequest) GetEleBillRequest() *EleBillRequest {
 	return r._eleBillRequest
+}
+
+var poolAlibabaWdkElemeBillGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkElemeBillGetRequest()
+	},
+}
+
+// GetAlibabaWdkElemeBillGetRequest 从 sync.Pool 获取 AlibabaWdkElemeBillGetAPIRequest
+func GetAlibabaWdkElemeBillGetAPIRequest() *AlibabaWdkElemeBillGetAPIRequest {
+	return poolAlibabaWdkElemeBillGetAPIRequest.Get().(*AlibabaWdkElemeBillGetAPIRequest)
+}
+
+// ReleaseAlibabaWdkElemeBillGetAPIRequest 将 AlibabaWdkElemeBillGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkElemeBillGetAPIRequest(v *AlibabaWdkElemeBillGetAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkElemeBillGetAPIRequest.Put(v)
 }

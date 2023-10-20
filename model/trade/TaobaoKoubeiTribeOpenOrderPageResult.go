@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // TaobaoKoubeiTribeOpenOrderPageResult 结构体
 type TaobaoKoubeiTribeOpenOrderPageResult struct {
 	// request唯一ID
@@ -10,4 +14,24 @@ type TaobaoKoubeiTribeOpenOrderPageResult struct {
 	Data *OrderInfoResultDto `json:"data,omitempty" xml:"data,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoKoubeiTribeOpenOrderPageResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoKoubeiTribeOpenOrderPageResult)
+	},
+}
+
+// GetTaobaoKoubeiTribeOpenOrderPageResult() 从对象池中获取TaobaoKoubeiTribeOpenOrderPageResult
+func GetTaobaoKoubeiTribeOpenOrderPageResult() *TaobaoKoubeiTribeOpenOrderPageResult {
+	return poolTaobaoKoubeiTribeOpenOrderPageResult.Get().(*TaobaoKoubeiTribeOpenOrderPageResult)
+}
+
+// ReleaseTaobaoKoubeiTribeOpenOrderPageResult 释放TaobaoKoubeiTribeOpenOrderPageResult
+func ReleaseTaobaoKoubeiTribeOpenOrderPageResult(v *TaobaoKoubeiTribeOpenOrderPageResult) {
+	v.TraceId = ""
+	v.Error = ""
+	v.Data = nil
+	v.Success = false
+	poolTaobaoKoubeiTribeOpenOrderPageResult.Put(v)
 }

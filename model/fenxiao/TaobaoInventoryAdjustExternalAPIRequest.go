@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type TaobaoInventoryAdjustExternalAPIRequest struct {
 // NewTaobaoInventoryAdjustExternalRequest 初始化TaobaoInventoryAdjustExternalAPIRequest对象
 func NewTaobaoInventoryAdjustExternalRequest() *TaobaoInventoryAdjustExternalAPIRequest {
 	return &TaobaoInventoryAdjustExternalAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoInventoryAdjustExternalAPIRequest) Reset() {
+	r._bizUniqueCode = ""
+	r._occupyOperateCode = ""
+	r._operateType = ""
+	r._bizType = ""
+	r._operateTime = ""
+	r._storeCode = ""
+	r._items = ""
+	r._reduceType = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *TaobaoInventoryAdjustExternalAPIRequest) SetReduceType(_reduceType stri
 // GetReduceType ReduceType Getter
 func (r TaobaoInventoryAdjustExternalAPIRequest) GetReduceType() string {
 	return r._reduceType
+}
+
+var poolTaobaoInventoryAdjustExternalAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoInventoryAdjustExternalRequest()
+	},
+}
+
+// GetTaobaoInventoryAdjustExternalRequest 从 sync.Pool 获取 TaobaoInventoryAdjustExternalAPIRequest
+func GetTaobaoInventoryAdjustExternalAPIRequest() *TaobaoInventoryAdjustExternalAPIRequest {
+	return poolTaobaoInventoryAdjustExternalAPIRequest.Get().(*TaobaoInventoryAdjustExternalAPIRequest)
+}
+
+// ReleaseTaobaoInventoryAdjustExternalAPIRequest 将 TaobaoInventoryAdjustExternalAPIRequest 放入 sync.Pool
+func ReleaseTaobaoInventoryAdjustExternalAPIRequest(v *TaobaoInventoryAdjustExternalAPIRequest) {
+	v.Reset()
+	poolTaobaoInventoryAdjustExternalAPIRequest.Put(v)
 }

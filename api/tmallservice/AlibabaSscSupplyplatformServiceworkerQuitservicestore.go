@@ -9,11 +9,6 @@ import (
 // alibaba.ssc.supplyplatform.serviceworker.quitservicestore
 //
 // 工人退出网点
-func AlibabaSscSupplyplatformServiceworkerQuitservicestore(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIResponse, error) {
-	var resp tmallservice.AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaSscSupplyplatformServiceworkerQuitservicestore(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest, resp *tmallservice.AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

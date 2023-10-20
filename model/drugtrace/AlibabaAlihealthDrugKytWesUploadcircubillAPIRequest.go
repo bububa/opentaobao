@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -78,8 +79,43 @@ type AlibabaAlihealthDrugKytWesUploadcircubillAPIRequest struct {
 // NewAlibabaAlihealthDrugKytWesUploadcircubillRequest 初始化AlibabaAlihealthDrugKytWesUploadcircubillAPIRequest对象
 func NewAlibabaAlihealthDrugKytWesUploadcircubillRequest() *AlibabaAlihealthDrugKytWesUploadcircubillAPIRequest {
 	return &AlibabaAlihealthDrugKytWesUploadcircubillAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(30),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugKytWesUploadcircubillAPIRequest) Reset() {
+	r._refEntId = ""
+	r._licenseToken = ""
+	r._billCode = ""
+	r._billTime = ""
+	r._agentRefUserId = ""
+	r._fromUserId = ""
+	r._toUserId = ""
+	r._destUserId = ""
+	r._operIcCode = ""
+	r._operIcName = ""
+	r._fileContent = ""
+	r._uploadFileName = ""
+	r._clientType = ""
+	r._fromAddress = ""
+	r._toAddress = ""
+	r._fromBillCode = ""
+	r._orderCode = ""
+	r._fromPerson = ""
+	r._toPerson = ""
+	r._disRefEntId = ""
+	r._disEntId = ""
+	r._xtIsCheck = ""
+	r._xtCheckCode = ""
+	r._xtCheckCodeDesc = ""
+	r._drugListJson = ""
+	r._assRefEntId = ""
+	r._assEntId = ""
+	r._billType = 0
+	r._physicType = 0
+	r._quReceivable = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -487,4 +523,21 @@ func (r *AlibabaAlihealthDrugKytWesUploadcircubillAPIRequest) SetQuReceivable(_q
 // GetQuReceivable QuReceivable Getter
 func (r AlibabaAlihealthDrugKytWesUploadcircubillAPIRequest) GetQuReceivable() int64 {
 	return r._quReceivable
+}
+
+var poolAlibabaAlihealthDrugKytWesUploadcircubillAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugKytWesUploadcircubillRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugKytWesUploadcircubillRequest 从 sync.Pool 获取 AlibabaAlihealthDrugKytWesUploadcircubillAPIRequest
+func GetAlibabaAlihealthDrugKytWesUploadcircubillAPIRequest() *AlibabaAlihealthDrugKytWesUploadcircubillAPIRequest {
+	return poolAlibabaAlihealthDrugKytWesUploadcircubillAPIRequest.Get().(*AlibabaAlihealthDrugKytWesUploadcircubillAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugKytWesUploadcircubillAPIRequest 将 AlibabaAlihealthDrugKytWesUploadcircubillAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytWesUploadcircubillAPIRequest(v *AlibabaAlihealthDrugKytWesUploadcircubillAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytWesUploadcircubillAPIRequest.Put(v)
 }

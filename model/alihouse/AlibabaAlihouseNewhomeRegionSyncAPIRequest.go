@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeRegionSyncAPIRequest struct {
 // NewAlibabaAlihouseNewhomeRegionSyncRequest 初始化AlibabaAlihouseNewhomeRegionSyncAPIRequest对象
 func NewAlibabaAlihouseNewhomeRegionSyncRequest() *AlibabaAlihouseNewhomeRegionSyncAPIRequest {
 	return &AlibabaAlihouseNewhomeRegionSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeRegionSyncAPIRequest) Reset() {
+	r._baseRegionDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomeRegionSyncAPIRequest) SetBaseRegionDto(_baseRegio
 // GetBaseRegionDto BaseRegionDto Getter
 func (r AlibabaAlihouseNewhomeRegionSyncAPIRequest) GetBaseRegionDto() *BaseRegionDto {
 	return r._baseRegionDto
+}
+
+var poolAlibabaAlihouseNewhomeRegionSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeRegionSyncRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeRegionSyncRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeRegionSyncAPIRequest
+func GetAlibabaAlihouseNewhomeRegionSyncAPIRequest() *AlibabaAlihouseNewhomeRegionSyncAPIRequest {
+	return poolAlibabaAlihouseNewhomeRegionSyncAPIRequest.Get().(*AlibabaAlihouseNewhomeRegionSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeRegionSyncAPIRequest 将 AlibabaAlihouseNewhomeRegionSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeRegionSyncAPIRequest(v *AlibabaAlihouseNewhomeRegionSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeRegionSyncAPIRequest.Put(v)
 }

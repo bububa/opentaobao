@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TmallDeviceStoreFollowurlGetAPIRequest struct {
 // NewTmallDeviceStoreFollowurlGetRequest 初始化TmallDeviceStoreFollowurlGetAPIRequest对象
 func NewTmallDeviceStoreFollowurlGetRequest() *TmallDeviceStoreFollowurlGetAPIRequest {
 	return &TmallDeviceStoreFollowurlGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallDeviceStoreFollowurlGetAPIRequest) Reset() {
+	r._deviceCode = ""
+	r._callbackUrl = ""
+	r._bannerImg = ""
+	r._followRetailAccount = false
+	r._longterm = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TmallDeviceStoreFollowurlGetAPIRequest) SetLongterm(_longterm bool) err
 // GetLongterm Longterm Getter
 func (r TmallDeviceStoreFollowurlGetAPIRequest) GetLongterm() bool {
 	return r._longterm
+}
+
+var poolTmallDeviceStoreFollowurlGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallDeviceStoreFollowurlGetRequest()
+	},
+}
+
+// GetTmallDeviceStoreFollowurlGetRequest 从 sync.Pool 获取 TmallDeviceStoreFollowurlGetAPIRequest
+func GetTmallDeviceStoreFollowurlGetAPIRequest() *TmallDeviceStoreFollowurlGetAPIRequest {
+	return poolTmallDeviceStoreFollowurlGetAPIRequest.Get().(*TmallDeviceStoreFollowurlGetAPIRequest)
+}
+
+// ReleaseTmallDeviceStoreFollowurlGetAPIRequest 将 TmallDeviceStoreFollowurlGetAPIRequest 放入 sync.Pool
+func ReleaseTmallDeviceStoreFollowurlGetAPIRequest(v *TmallDeviceStoreFollowurlGetAPIRequest) {
+	v.Reset()
+	poolTmallDeviceStoreFollowurlGetAPIRequest.Put(v)
 }

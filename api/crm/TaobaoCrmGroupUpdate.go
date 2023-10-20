@@ -9,11 +9,6 @@ import (
 // taobao.crm.group.update
 //
 // 修改一个已经存在的分组，接口返回分组的修改是否成功
-func TaobaoCrmGroupUpdate(clt *core.SDKClient, req *crm.TaobaoCrmGroupUpdateAPIRequest, session string) (*crm.TaobaoCrmGroupUpdateAPIResponse, error) {
-	var resp crm.TaobaoCrmGroupUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoCrmGroupUpdate(clt *core.SDKClient, req *crm.TaobaoCrmGroupUpdateAPIRequest, resp *crm.TaobaoCrmGroupUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

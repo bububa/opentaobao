@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseExistinghomeSubAccountBindAPIRequest struct {
 // NewAlibabaAlihouseExistinghomeSubAccountBindRequest 初始化AlibabaAlihouseExistinghomeSubAccountBindAPIRequest对象
 func NewAlibabaAlihouseExistinghomeSubAccountBindRequest() *AlibabaAlihouseExistinghomeSubAccountBindAPIRequest {
 	return &AlibabaAlihouseExistinghomeSubAccountBindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseExistinghomeSubAccountBindAPIRequest) Reset() {
+	r._subAccountReqDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseExistinghomeSubAccountBindAPIRequest) SetSubAccountReqDt
 // GetSubAccountReqDto SubAccountReqDto Getter
 func (r AlibabaAlihouseExistinghomeSubAccountBindAPIRequest) GetSubAccountReqDto() *SubAccountReqDto {
 	return r._subAccountReqDto
+}
+
+var poolAlibabaAlihouseExistinghomeSubAccountBindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseExistinghomeSubAccountBindRequest()
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeSubAccountBindRequest 从 sync.Pool 获取 AlibabaAlihouseExistinghomeSubAccountBindAPIRequest
+func GetAlibabaAlihouseExistinghomeSubAccountBindAPIRequest() *AlibabaAlihouseExistinghomeSubAccountBindAPIRequest {
+	return poolAlibabaAlihouseExistinghomeSubAccountBindAPIRequest.Get().(*AlibabaAlihouseExistinghomeSubAccountBindAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeSubAccountBindAPIRequest 将 AlibabaAlihouseExistinghomeSubAccountBindAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeSubAccountBindAPIRequest(v *AlibabaAlihouseExistinghomeSubAccountBindAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeSubAccountBindAPIRequest.Put(v)
 }

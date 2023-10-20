@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // AlibabaAlihealthDrugtraceTopYljgListupoutDetailResultModel 结构体
 type AlibabaAlihealthDrugtraceTopYljgListupoutDetailResultModel struct {
 	// 提示信息编码
@@ -10,4 +14,24 @@ type AlibabaAlihealthDrugtraceTopYljgListupoutDetailResultModel struct {
 	Model *BillUpOutDetailDto `json:"model,omitempty" xml:"model,omitempty"`
 	// 成功失败标记
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaAlihealthDrugtraceTopYljgListupoutDetailResultModel = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugtraceTopYljgListupoutDetailResultModel)
+	},
+}
+
+// GetAlibabaAlihealthDrugtraceTopYljgListupoutDetailResultModel() 从对象池中获取AlibabaAlihealthDrugtraceTopYljgListupoutDetailResultModel
+func GetAlibabaAlihealthDrugtraceTopYljgListupoutDetailResultModel() *AlibabaAlihealthDrugtraceTopYljgListupoutDetailResultModel {
+	return poolAlibabaAlihealthDrugtraceTopYljgListupoutDetailResultModel.Get().(*AlibabaAlihealthDrugtraceTopYljgListupoutDetailResultModel)
+}
+
+// ReleaseAlibabaAlihealthDrugtraceTopYljgListupoutDetailResultModel 释放AlibabaAlihealthDrugtraceTopYljgListupoutDetailResultModel
+func ReleaseAlibabaAlihealthDrugtraceTopYljgListupoutDetailResultModel(v *AlibabaAlihealthDrugtraceTopYljgListupoutDetailResultModel) {
+	v.MsgCode = ""
+	v.MsgInfo = ""
+	v.Model = nil
+	v.Success = false
+	poolAlibabaAlihealthDrugtraceTopYljgListupoutDetailResultModel.Put(v)
 }

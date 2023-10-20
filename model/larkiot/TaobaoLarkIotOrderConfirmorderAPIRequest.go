@@ -2,6 +2,7 @@ package larkiot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type TaobaoLarkIotOrderConfirmorderAPIRequest struct {
 // NewTaobaoLarkIotOrderConfirmorderRequest 初始化TaobaoLarkIotOrderConfirmorderAPIRequest对象
 func NewTaobaoLarkIotOrderConfirmorderRequest() *TaobaoLarkIotOrderConfirmorderAPIRequest {
 	return &TaobaoLarkIotOrderConfirmorderAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) Reset() {
+	r._channelCode = ""
+	r._cinemaLinkId = ""
+	r._outGoodsOrderId = ""
+	r._workstationId = ""
+	r._workstationName = ""
+	r._paymentList = ""
+	r._promotionList = ""
+	r._goodsList = ""
+	r._mobile = ""
+	r._operatorUserId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetOperatorUserId(_operatorUs
 // GetOperatorUserId OperatorUserId Getter
 func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetOperatorUserId() string {
 	return r._operatorUserId
+}
+
+var poolTaobaoLarkIotOrderConfirmorderAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLarkIotOrderConfirmorderRequest()
+	},
+}
+
+// GetTaobaoLarkIotOrderConfirmorderRequest 从 sync.Pool 获取 TaobaoLarkIotOrderConfirmorderAPIRequest
+func GetTaobaoLarkIotOrderConfirmorderAPIRequest() *TaobaoLarkIotOrderConfirmorderAPIRequest {
+	return poolTaobaoLarkIotOrderConfirmorderAPIRequest.Get().(*TaobaoLarkIotOrderConfirmorderAPIRequest)
+}
+
+// ReleaseTaobaoLarkIotOrderConfirmorderAPIRequest 将 TaobaoLarkIotOrderConfirmorderAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLarkIotOrderConfirmorderAPIRequest(v *TaobaoLarkIotOrderConfirmorderAPIRequest) {
+	v.Reset()
+	poolTaobaoLarkIotOrderConfirmorderAPIRequest.Put(v)
 }

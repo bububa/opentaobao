@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoUmpDetailDeleteAPIRequest struct {
 // NewTaobaoUmpDetailDeleteRequest 初始化TaobaoUmpDetailDeleteAPIRequest对象
 func NewTaobaoUmpDetailDeleteRequest() *TaobaoUmpDetailDeleteAPIRequest {
 	return &TaobaoUmpDetailDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUmpDetailDeleteAPIRequest) Reset() {
+	r._detailId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoUmpDetailDeleteAPIRequest) SetDetailId(_detailId int64) error {
 // GetDetailId DetailId Getter
 func (r TaobaoUmpDetailDeleteAPIRequest) GetDetailId() int64 {
 	return r._detailId
+}
+
+var poolTaobaoUmpDetailDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUmpDetailDeleteRequest()
+	},
+}
+
+// GetTaobaoUmpDetailDeleteRequest 从 sync.Pool 获取 TaobaoUmpDetailDeleteAPIRequest
+func GetTaobaoUmpDetailDeleteAPIRequest() *TaobaoUmpDetailDeleteAPIRequest {
+	return poolTaobaoUmpDetailDeleteAPIRequest.Get().(*TaobaoUmpDetailDeleteAPIRequest)
+}
+
+// ReleaseTaobaoUmpDetailDeleteAPIRequest 将 TaobaoUmpDetailDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUmpDetailDeleteAPIRequest(v *TaobaoUmpDetailDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoUmpDetailDeleteAPIRequest.Put(v)
 }

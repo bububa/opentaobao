@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ReturnWarehouseResult 结构体
 type ReturnWarehouseResult struct {
 	// 子订单信息列表
@@ -10,4 +14,24 @@ type ReturnWarehouseResult struct {
 	ReturnWarehouseBillId string `json:"return_warehouse_bill_id,omitempty" xml:"return_warehouse_bill_id,omitempty"`
 	// 0:包裹完整 1:包裹破损
 	PackageQuality string `json:"package_quality,omitempty" xml:"package_quality,omitempty"`
+}
+
+var poolReturnWarehouseResult = sync.Pool{
+	New: func() any {
+		return new(ReturnWarehouseResult)
+	},
+}
+
+// GetReturnWarehouseResult() 从对象池中获取ReturnWarehouseResult
+func GetReturnWarehouseResult() *ReturnWarehouseResult {
+	return poolReturnWarehouseResult.Get().(*ReturnWarehouseResult)
+}
+
+// ReleaseReturnWarehouseResult 释放ReturnWarehouseResult
+func ReleaseReturnWarehouseResult(v *ReturnWarehouseResult) {
+	v.SkuInfoList = v.SkuInfoList[:0]
+	v.WarehouseCode = ""
+	v.ReturnWarehouseBillId = ""
+	v.PackageQuality = ""
+	poolReturnWarehouseResult.Put(v)
 }

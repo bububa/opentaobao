@@ -1,5 +1,9 @@
 package ma
 
+import (
+	"sync"
+)
+
 // QrcodeDo 结构体
 type QrcodeDo struct {
 	// 二维码对应的渠道名
@@ -16,4 +20,27 @@ type QrcodeDo struct {
 	ChannelId int64 `json:"channel_id,omitempty" xml:"channel_id,omitempty"`
 	// 二维码id
 	QrcodeId int64 `json:"qrcode_id,omitempty" xml:"qrcode_id,omitempty"`
+}
+
+var poolQrcodeDo = sync.Pool{
+	New: func() any {
+		return new(QrcodeDo)
+	},
+}
+
+// GetQrcodeDo() 从对象池中获取QrcodeDo
+func GetQrcodeDo() *QrcodeDo {
+	return poolQrcodeDo.Get().(*QrcodeDo)
+}
+
+// ReleaseQrcodeDo 释放QrcodeDo
+func ReleaseQrcodeDo(v *QrcodeDo) {
+	v.ChannelName = ""
+	v.EpsUrl = ""
+	v.QrcodeUrl = ""
+	v.ShortUrl = ""
+	v.Url = ""
+	v.ChannelId = 0
+	v.QrcodeId = 0
+	poolQrcodeDo.Put(v)
 }

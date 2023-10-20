@@ -2,6 +2,7 @@ package legalcase
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaLegalSuitFileUploadAPIRequest struct {
 // NewAlibabaLegalSuitFileUploadRequest 初始化AlibabaLegalSuitFileUploadAPIRequest对象
 func NewAlibabaLegalSuitFileUploadRequest() *AlibabaLegalSuitFileUploadAPIRequest {
 	return &AlibabaLegalSuitFileUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLegalSuitFileUploadAPIRequest) Reset() {
+	r._fileName = ""
+	r._signature = ""
+	r._file = nil
+	r._timeStamp = 0
+	r._fileSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaLegalSuitFileUploadAPIRequest) SetFileSize(_fileSize int64) erro
 // GetFileSize FileSize Getter
 func (r AlibabaLegalSuitFileUploadAPIRequest) GetFileSize() int64 {
 	return r._fileSize
+}
+
+var poolAlibabaLegalSuitFileUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLegalSuitFileUploadRequest()
+	},
+}
+
+// GetAlibabaLegalSuitFileUploadRequest 从 sync.Pool 获取 AlibabaLegalSuitFileUploadAPIRequest
+func GetAlibabaLegalSuitFileUploadAPIRequest() *AlibabaLegalSuitFileUploadAPIRequest {
+	return poolAlibabaLegalSuitFileUploadAPIRequest.Get().(*AlibabaLegalSuitFileUploadAPIRequest)
+}
+
+// ReleaseAlibabaLegalSuitFileUploadAPIRequest 将 AlibabaLegalSuitFileUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLegalSuitFileUploadAPIRequest(v *AlibabaLegalSuitFileUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaLegalSuitFileUploadAPIRequest.Put(v)
 }

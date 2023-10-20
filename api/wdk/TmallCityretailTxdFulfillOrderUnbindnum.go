@@ -9,11 +9,6 @@ import (
 // tmall.cityretail.txd.fulfill.order.unbindnum
 //
 // 淘鲜达虚拟号解绑服务接口，通过订阅关系id进行解绑。
-func TmallCityretailTxdFulfillOrderUnbindnum(clt *core.SDKClient, req *wdk.TmallCityretailTxdFulfillOrderUnbindnumAPIRequest, session string) (*wdk.TmallCityretailTxdFulfillOrderUnbindnumAPIResponse, error) {
-	var resp wdk.TmallCityretailTxdFulfillOrderUnbindnumAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallCityretailTxdFulfillOrderUnbindnum(clt *core.SDKClient, req *wdk.TmallCityretailTxdFulfillOrderUnbindnumAPIRequest, resp *wdk.TmallCityretailTxdFulfillOrderUnbindnumAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

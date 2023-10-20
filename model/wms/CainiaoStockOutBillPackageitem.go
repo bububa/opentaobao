@@ -1,5 +1,9 @@
 package wms
 
+import (
+	"sync"
+)
+
 // CainiaoStockOutBillPackageitem 结构体
 type CainiaoStockOutBillPackageitem struct {
 	// ERP订单明细ID
@@ -12,4 +16,25 @@ type CainiaoStockOutBillPackageitem struct {
 	InventoryType int64 `json:"inventory_type,omitempty" xml:"inventory_type,omitempty"`
 	// 数量
 	ItemQty int64 `json:"item_qty,omitempty" xml:"item_qty,omitempty"`
+}
+
+var poolCainiaoStockOutBillPackageitem = sync.Pool{
+	New: func() any {
+		return new(CainiaoStockOutBillPackageitem)
+	},
+}
+
+// GetCainiaoStockOutBillPackageitem() 从对象池中获取CainiaoStockOutBillPackageitem
+func GetCainiaoStockOutBillPackageitem() *CainiaoStockOutBillPackageitem {
+	return poolCainiaoStockOutBillPackageitem.Get().(*CainiaoStockOutBillPackageitem)
+}
+
+// ReleaseCainiaoStockOutBillPackageitem 释放CainiaoStockOutBillPackageitem
+func ReleaseCainiaoStockOutBillPackageitem(v *CainiaoStockOutBillPackageitem) {
+	v.OrderItemId = ""
+	v.ItemId = ""
+	v.ItemCode = ""
+	v.InventoryType = 0
+	v.ItemQty = 0
+	poolCainiaoStockOutBillPackageitem.Put(v)
 }

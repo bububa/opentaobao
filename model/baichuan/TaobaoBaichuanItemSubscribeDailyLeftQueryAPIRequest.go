@@ -2,6 +2,7 @@ package baichuan
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest struct {
 // NewTaobaoBaichuanItemSubscribeDailyLeftQueryRequest 初始化TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest对象
 func NewTaobaoBaichuanItemSubscribeDailyLeftQueryRequest() *TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest {
 	return &TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest) GetApiParams(params
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolTaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBaichuanItemSubscribeDailyLeftQueryRequest()
+	},
+}
+
+// GetTaobaoBaichuanItemSubscribeDailyLeftQueryRequest 从 sync.Pool 获取 TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest
+func GetTaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest() *TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest {
+	return poolTaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest.Get().(*TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest)
+}
+
+// ReleaseTaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest 将 TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest(v *TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest.Put(v)
 }

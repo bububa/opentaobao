@@ -9,11 +9,6 @@ import (
 // cainiao.endpoint.locker.top.order.withhold
 //
 // 提供代扣，允许有一笔欠款。
-func CainiaoEndpointLockerTopOrderWithhold(clt *core.SDKClient, req *cainiaolocker.CainiaoEndpointLockerTopOrderWithholdAPIRequest, session string) (*cainiaolocker.CainiaoEndpointLockerTopOrderWithholdAPIResponse, error) {
-	var resp cainiaolocker.CainiaoEndpointLockerTopOrderWithholdAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func CainiaoEndpointLockerTopOrderWithhold(clt *core.SDKClient, req *cainiaolocker.CainiaoEndpointLockerTopOrderWithholdAPIRequest, resp *cainiaolocker.CainiaoEndpointLockerTopOrderWithholdAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

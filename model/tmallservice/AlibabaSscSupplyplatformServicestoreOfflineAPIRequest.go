@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaSscSupplyplatformServicestoreOfflineAPIRequest struct {
 // NewAlibabaSscSupplyplatformServicestoreOfflineRequest 初始化AlibabaSscSupplyplatformServicestoreOfflineAPIRequest对象
 func NewAlibabaSscSupplyplatformServicestoreOfflineRequest() *AlibabaSscSupplyplatformServicestoreOfflineAPIRequest {
 	return &AlibabaSscSupplyplatformServicestoreOfflineAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSscSupplyplatformServicestoreOfflineAPIRequest) Reset() {
+	r._serviceStoreCodeList = r._serviceStoreCodeList[:0]
+	r._serviceStoreIdList = r._serviceStoreIdList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaSscSupplyplatformServicestoreOfflineAPIRequest) SetServiceStoreI
 // GetServiceStoreIdList ServiceStoreIdList Getter
 func (r AlibabaSscSupplyplatformServicestoreOfflineAPIRequest) GetServiceStoreIdList() []int64 {
 	return r._serviceStoreIdList
+}
+
+var poolAlibabaSscSupplyplatformServicestoreOfflineAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSscSupplyplatformServicestoreOfflineRequest()
+	},
+}
+
+// GetAlibabaSscSupplyplatformServicestoreOfflineRequest 从 sync.Pool 获取 AlibabaSscSupplyplatformServicestoreOfflineAPIRequest
+func GetAlibabaSscSupplyplatformServicestoreOfflineAPIRequest() *AlibabaSscSupplyplatformServicestoreOfflineAPIRequest {
+	return poolAlibabaSscSupplyplatformServicestoreOfflineAPIRequest.Get().(*AlibabaSscSupplyplatformServicestoreOfflineAPIRequest)
+}
+
+// ReleaseAlibabaSscSupplyplatformServicestoreOfflineAPIRequest 将 AlibabaSscSupplyplatformServicestoreOfflineAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSscSupplyplatformServicestoreOfflineAPIRequest(v *AlibabaSscSupplyplatformServicestoreOfflineAPIRequest) {
+	v.Reset()
+	poolAlibabaSscSupplyplatformServicestoreOfflineAPIRequest.Put(v)
 }

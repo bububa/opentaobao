@@ -2,6 +2,7 @@ package mc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AliyunUnimktTaskChargeLaunchAPIRequest struct {
 // NewAliyunUnimktTaskChargeLaunchRequest 初始化AliyunUnimktTaskChargeLaunchAPIRequest对象
 func NewAliyunUnimktTaskChargeLaunchRequest() *AliyunUnimktTaskChargeLaunchAPIRequest {
 	return &AliyunUnimktTaskChargeLaunchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliyunUnimktTaskChargeLaunchAPIRequest) Reset() {
+	r._extra = ""
+	r._urlId = ""
+	r._alipayOpenId = ""
+	r._channelId = ""
+	r._userId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AliyunUnimktTaskChargeLaunchAPIRequest) SetUserId(_userId string) error
 // GetUserId UserId Getter
 func (r AliyunUnimktTaskChargeLaunchAPIRequest) GetUserId() string {
 	return r._userId
+}
+
+var poolAliyunUnimktTaskChargeLaunchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliyunUnimktTaskChargeLaunchRequest()
+	},
+}
+
+// GetAliyunUnimktTaskChargeLaunchRequest 从 sync.Pool 获取 AliyunUnimktTaskChargeLaunchAPIRequest
+func GetAliyunUnimktTaskChargeLaunchAPIRequest() *AliyunUnimktTaskChargeLaunchAPIRequest {
+	return poolAliyunUnimktTaskChargeLaunchAPIRequest.Get().(*AliyunUnimktTaskChargeLaunchAPIRequest)
+}
+
+// ReleaseAliyunUnimktTaskChargeLaunchAPIRequest 将 AliyunUnimktTaskChargeLaunchAPIRequest 放入 sync.Pool
+func ReleaseAliyunUnimktTaskChargeLaunchAPIRequest(v *AliyunUnimktTaskChargeLaunchAPIRequest) {
+	v.Reset()
+	poolAliyunUnimktTaskChargeLaunchAPIRequest.Put(v)
 }

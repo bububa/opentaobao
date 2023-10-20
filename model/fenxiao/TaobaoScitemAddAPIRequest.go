@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -61,8 +62,35 @@ type TaobaoScitemAddAPIRequest struct {
 // NewTaobaoScitemAddRequest 初始化TaobaoScitemAddAPIRequest对象
 func NewTaobaoScitemAddRequest() *TaobaoScitemAddAPIRequest {
 	return &TaobaoScitemAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(22),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoScitemAddAPIRequest) Reset() {
+	r._itemName = ""
+	r._outerCode = ""
+	r._properties = ""
+	r._barCode = ""
+	r._wmsCode = ""
+	r._remark = ""
+	r._brandName = ""
+	r._itemType = 0
+	r._isFriable = 0
+	r._isDangerous = 0
+	r._isCostly = 0
+	r._isWarranty = 0
+	r._weight = 0
+	r._length = 0
+	r._width = 0
+	r._height = 0
+	r._volume = 0
+	r._price = 0
+	r._matterStatus = 0
+	r._brandId = 0
+	r._spuId = 0
+	r._isAreaSale = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -366,4 +394,21 @@ func (r *TaobaoScitemAddAPIRequest) SetIsAreaSale(_isAreaSale int64) error {
 // GetIsAreaSale IsAreaSale Getter
 func (r TaobaoScitemAddAPIRequest) GetIsAreaSale() int64 {
 	return r._isAreaSale
+}
+
+var poolTaobaoScitemAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoScitemAddRequest()
+	},
+}
+
+// GetTaobaoScitemAddRequest 从 sync.Pool 获取 TaobaoScitemAddAPIRequest
+func GetTaobaoScitemAddAPIRequest() *TaobaoScitemAddAPIRequest {
+	return poolTaobaoScitemAddAPIRequest.Get().(*TaobaoScitemAddAPIRequest)
+}
+
+// ReleaseTaobaoScitemAddAPIRequest 将 TaobaoScitemAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoScitemAddAPIRequest(v *TaobaoScitemAddAPIRequest) {
+	v.Reset()
+	poolTaobaoScitemAddAPIRequest.Put(v)
 }

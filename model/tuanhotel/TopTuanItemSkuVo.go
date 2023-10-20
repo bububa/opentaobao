@@ -1,5 +1,9 @@
 package tuanhotel
 
+import (
+	"sync"
+)
+
 // TopTuanItemSkuVo 结构体
 type TopTuanItemSkuVo struct {
 	// 套餐原价，单位为元，仅支持精确到分（小数点后两位）
@@ -22,4 +26,30 @@ type TopTuanItemSkuVo struct {
 	PeopleCount int64 `json:"people_count,omitempty" xml:"people_count,omitempty"`
 	// 使用次数
 	UseCount int64 `json:"use_count,omitempty" xml:"use_count,omitempty"`
+}
+
+var poolTopTuanItemSkuVo = sync.Pool{
+	New: func() any {
+		return new(TopTuanItemSkuVo)
+	},
+}
+
+// GetTopTuanItemSkuVo() 从对象池中获取TopTuanItemSkuVo
+func GetTopTuanItemSkuVo() *TopTuanItemSkuVo {
+	return poolTopTuanItemSkuVo.Get().(*TopTuanItemSkuVo)
+}
+
+// ReleaseTopTuanItemSkuVo 释放TopTuanItemSkuVo
+func ReleaseTopTuanItemSkuVo(v *TopTuanItemSkuVo) {
+	v.OrigPrice = ""
+	v.Price = ""
+	v.Name = ""
+	v.OuterId = ""
+	v.CalendarInfo = nil
+	v.SkuId = 0
+	v.NightCount = 0
+	v.Quantity = 0
+	v.PeopleCount = 0
+	v.UseCount = 0
+	poolTopTuanItemSkuVo.Put(v)
 }

@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // AlibabaAlihealthDrugKytGetentlicenseModel 结构体
 type AlibabaAlihealthDrugKytGetentlicenseModel struct {
 	// 资质名称
@@ -24,4 +28,31 @@ type AlibabaAlihealthDrugKytGetentlicenseModel struct {
 	TruthUrl string `json:"truth_url,omitempty" xml:"truth_url,omitempty"`
 	// 是否必须
 	Requisite int64 `json:"requisite,omitempty" xml:"requisite,omitempty"`
+}
+
+var poolAlibabaAlihealthDrugKytGetentlicenseModel = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugKytGetentlicenseModel)
+	},
+}
+
+// GetAlibabaAlihealthDrugKytGetentlicenseModel() 从对象池中获取AlibabaAlihealthDrugKytGetentlicenseModel
+func GetAlibabaAlihealthDrugKytGetentlicenseModel() *AlibabaAlihealthDrugKytGetentlicenseModel {
+	return poolAlibabaAlihealthDrugKytGetentlicenseModel.Get().(*AlibabaAlihealthDrugKytGetentlicenseModel)
+}
+
+// ReleaseAlibabaAlihealthDrugKytGetentlicenseModel 释放AlibabaAlihealthDrugKytGetentlicenseModel
+func ReleaseAlibabaAlihealthDrugKytGetentlicenseModel(v *AlibabaAlihealthDrugKytGetentlicenseModel) {
+	v.Name = ""
+	v.DescInfo = ""
+	v.Id = ""
+	v.RefEntId = ""
+	v.ExpireDate = ""
+	v.Url = ""
+	v.GmtModified = ""
+	v.LicenseNo = ""
+	v.LicenseType = ""
+	v.TruthUrl = ""
+	v.Requisite = 0
+	poolAlibabaAlihealthDrugKytGetentlicenseModel.Put(v)
 }

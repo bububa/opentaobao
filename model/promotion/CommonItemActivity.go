@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // CommonItemActivity 结构体
 type CommonItemActivity struct {
 	// 活动描述，不能超过100字符
@@ -16,4 +20,27 @@ type CommonItemActivity struct {
 	ActivityId int64 `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
 	// 是否指定人群标签
 	IsUserTag bool `json:"is_user_tag,omitempty" xml:"is_user_tag,omitempty"`
+}
+
+var poolCommonItemActivity = sync.Pool{
+	New: func() any {
+		return new(CommonItemActivity)
+	},
+}
+
+// GetCommonItemActivity() 从对象池中获取CommonItemActivity
+func GetCommonItemActivity() *CommonItemActivity {
+	return poolCommonItemActivity.Get().(*CommonItemActivity)
+}
+
+// ReleaseCommonItemActivity 释放CommonItemActivity
+func ReleaseCommonItemActivity(v *CommonItemActivity) {
+	v.Description = ""
+	v.EndTime = ""
+	v.Name = ""
+	v.StartTime = ""
+	v.UserTag = ""
+	v.ActivityId = 0
+	v.IsUserTag = false
+	poolCommonItemActivity.Put(v)
 }

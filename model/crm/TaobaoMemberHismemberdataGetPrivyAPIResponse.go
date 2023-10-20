@@ -2,6 +2,7 @@ package crm
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoMemberHismemberdataGetPrivyAPIResponse struct {
 	TaobaoMemberHismemberdataGetPrivyAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoMemberHismemberdataGetPrivyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoMemberHismemberdataGetPrivyAPIResponseModel).Reset()
+}
+
 // TaobaoMemberHismemberdataGetPrivyAPIResponseModel is 会员历史备份数据查询 成功返回结果
 type TaobaoMemberHismemberdataGetPrivyAPIResponseModel struct {
 	XMLName xml.Name `xml:"member_hismemberdata_get_privy_response"`
@@ -22,4 +29,27 @@ type TaobaoMemberHismemberdataGetPrivyAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果对象
 	ResultDto *TaobaoMemberHismemberdataGetPrivyResultDto `json:"result_dto,omitempty" xml:"result_dto,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoMemberHismemberdataGetPrivyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultDto = nil
+}
+
+var poolTaobaoMemberHismemberdataGetPrivyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoMemberHismemberdataGetPrivyAPIResponse)
+	},
+}
+
+// GetTaobaoMemberHismemberdataGetPrivyAPIResponse 从 sync.Pool 获取 TaobaoMemberHismemberdataGetPrivyAPIResponse
+func GetTaobaoMemberHismemberdataGetPrivyAPIResponse() *TaobaoMemberHismemberdataGetPrivyAPIResponse {
+	return poolTaobaoMemberHismemberdataGetPrivyAPIResponse.Get().(*TaobaoMemberHismemberdataGetPrivyAPIResponse)
+}
+
+// ReleaseTaobaoMemberHismemberdataGetPrivyAPIResponse 将 TaobaoMemberHismemberdataGetPrivyAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoMemberHismemberdataGetPrivyAPIResponse(v *TaobaoMemberHismemberdataGetPrivyAPIResponse) {
+	v.Reset()
+	poolTaobaoMemberHismemberdataGetPrivyAPIResponse.Put(v)
 }

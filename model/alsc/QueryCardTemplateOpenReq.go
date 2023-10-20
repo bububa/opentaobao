@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // QueryCardTemplateOpenReq 结构体
 type QueryCardTemplateOpenReq struct {
 	// 品牌id
@@ -18,4 +22,28 @@ type QueryCardTemplateOpenReq struct {
 	PhysicalCardId string `json:"physical_card_id,omitempty" xml:"physical_card_id,omitempty"`
 	// 是否包含逻辑删除
 	IncludeLogicalDelete bool `json:"include_logical_delete,omitempty" xml:"include_logical_delete,omitempty"`
+}
+
+var poolQueryCardTemplateOpenReq = sync.Pool{
+	New: func() any {
+		return new(QueryCardTemplateOpenReq)
+	},
+}
+
+// GetQueryCardTemplateOpenReq() 从对象池中获取QueryCardTemplateOpenReq
+func GetQueryCardTemplateOpenReq() *QueryCardTemplateOpenReq {
+	return poolQueryCardTemplateOpenReq.Get().(*QueryCardTemplateOpenReq)
+}
+
+// ReleaseQueryCardTemplateOpenReq 释放QueryCardTemplateOpenReq
+func ReleaseQueryCardTemplateOpenReq(v *QueryCardTemplateOpenReq) {
+	v.BrandId = ""
+	v.CardTemplateId = ""
+	v.OutBrandId = ""
+	v.OutShopId = ""
+	v.ShopId = ""
+	v.MaxUpdateTime = ""
+	v.PhysicalCardId = ""
+	v.IncludeLogicalDelete = false
+	poolQueryCardTemplateOpenReq.Put(v)
 }

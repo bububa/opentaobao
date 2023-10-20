@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsExpressModifyAppointAPIRequest struct {
 // NewTaobaoLogisticsExpressModifyAppointRequest 初始化TaobaoLogisticsExpressModifyAppointAPIRequest对象
 func NewTaobaoLogisticsExpressModifyAppointRequest() *TaobaoLogisticsExpressModifyAppointAPIRequest {
 	return &TaobaoLogisticsExpressModifyAppointAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsExpressModifyAppointAPIRequest) Reset() {
+	r._expressModifyAppointTopRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsExpressModifyAppointAPIRequest) SetExpressModifyAppointT
 // GetExpressModifyAppointTopRequest ExpressModifyAppointTopRequest Getter
 func (r TaobaoLogisticsExpressModifyAppointAPIRequest) GetExpressModifyAppointTopRequest() *ExpressModifyAppointTopRequestDto {
 	return r._expressModifyAppointTopRequest
+}
+
+var poolTaobaoLogisticsExpressModifyAppointAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsExpressModifyAppointRequest()
+	},
+}
+
+// GetTaobaoLogisticsExpressModifyAppointRequest 从 sync.Pool 获取 TaobaoLogisticsExpressModifyAppointAPIRequest
+func GetTaobaoLogisticsExpressModifyAppointAPIRequest() *TaobaoLogisticsExpressModifyAppointAPIRequest {
+	return poolTaobaoLogisticsExpressModifyAppointAPIRequest.Get().(*TaobaoLogisticsExpressModifyAppointAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsExpressModifyAppointAPIRequest 将 TaobaoLogisticsExpressModifyAppointAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsExpressModifyAppointAPIRequest(v *TaobaoLogisticsExpressModifyAppointAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsExpressModifyAppointAPIRequest.Put(v)
 }

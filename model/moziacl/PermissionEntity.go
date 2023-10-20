@@ -1,5 +1,9 @@
 package moziacl
 
+import (
+	"sync"
+)
+
 // PermissionEntity 结构体
 type PermissionEntity struct {
 	// 权限归属人userId列表
@@ -30,4 +34,34 @@ type PermissionEntity struct {
 	Creator *BucUser `json:"creator,omitempty" xml:"creator,omitempty"`
 	// 是否可用
 	IsActive bool `json:"is_active,omitempty" xml:"is_active,omitempty"`
+}
+
+var poolPermissionEntity = sync.Pool{
+	New: func() any {
+		return new(PermissionEntity)
+	},
+}
+
+// GetPermissionEntity() 从对象池中获取PermissionEntity
+func GetPermissionEntity() *PermissionEntity {
+	return poolPermissionEntity.Get().(*PermissionEntity)
+}
+
+// ReleasePermissionEntity 释放PermissionEntity
+func ReleasePermissionEntity(v *PermissionEntity) {
+	v.PermissionOwnerIdList = v.PermissionOwnerIdList[:0]
+	v.PermissionDescription = ""
+	v.MaxExpireDate = ""
+	v.RiskLevel = ""
+	v.PermissionTitleEN = ""
+	v.PermissionTitle = ""
+	v.PermissionName = ""
+	v.Status = ""
+	v.PublicAttri = ""
+	v.CreatTime = ""
+	v.Description = ""
+	v.RevokeRule = ""
+	v.Creator = nil
+	v.IsActive = false
+	poolPermissionEntity.Put(v)
 }

@@ -1,5 +1,9 @@
 package car
 
+import (
+	"sync"
+)
+
 // OrderConfirm 结构体
 type OrderConfirm struct {
 	// 打标能力集合 核酸检测KEY
@@ -56,4 +60,47 @@ type OrderConfirm struct {
 	CarTypeId int64 `json:"car_type_id,omitempty" xml:"car_type_id,omitempty"`
 	// 本次用车是否支持 司机实时位置回传。若为true，则飞猪平台在用车实际开始时将从服务商处实时查询司机位置
 	SupportRealTimePoi bool `json:"support_real_time_poi,omitempty" xml:"support_real_time_poi,omitempty"`
+}
+
+var poolOrderConfirm = sync.Pool{
+	New: func() any {
+		return new(OrderConfirm)
+	},
+}
+
+// GetOrderConfirm() 从对象池中获取OrderConfirm
+func GetOrderConfirm() *OrderConfirm {
+	return poolOrderConfirm.Get().(*OrderConfirm)
+}
+
+// ReleaseOrderConfirm 释放OrderConfirm
+func ReleaseOrderConfirm(v *OrderConfirm) {
+	v.Feature = v.Feature[:0]
+	v.ConfirmTime = ""
+	v.DriverCarDesc = ""
+	v.DriverCarName = ""
+	v.DriverCarNo = ""
+	v.DriverName = ""
+	v.DriverTel = ""
+	v.OrderId = ""
+	v.ProviderId = ""
+	v.ThirdOrderId = ""
+	v.SellerId = ""
+	v.DriverPic = ""
+	v.CarPic = ""
+	v.DriverTrumpetPhone = ""
+	v.DriverIdNumber = ""
+	v.SubPic = ""
+	v.SubTitle = ""
+	v.SubKey = ""
+	v.DriverCarColor = ""
+	v.CarBrand = ""
+	v.CarModel = ""
+	v.CarAge = ""
+	v.DeriverGender = ""
+	v.ConfirmType = 0
+	v.UseType = 0
+	v.CarTypeId = 0
+	v.SupportRealTimePoi = false
+	poolOrderConfirm.Put(v)
 }

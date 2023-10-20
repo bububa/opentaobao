@@ -1,5 +1,9 @@
 package omniorder
 
+import (
+	"sync"
+)
+
 // StoreInventory 结构体
 type StoreInventory struct {
 	// 库存量详情列表
@@ -22,4 +26,30 @@ type StoreInventory struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 调整后库存数量
 	FinalQuantity int64 `json:"final_quantity,omitempty" xml:"final_quantity,omitempty"`
+}
+
+var poolStoreInventory = sync.Pool{
+	New: func() any {
+		return new(StoreInventory)
+	},
+}
+
+// GetStoreInventory() 从对象池中获取StoreInventory
+func GetStoreInventory() *StoreInventory {
+	return poolStoreInventory.Get().(*StoreInventory)
+}
+
+// ReleaseStoreInventory 释放StoreInventory
+func ReleaseStoreInventory(v *StoreInventory) {
+	v.QuantityDetails = v.QuantityDetails[:0]
+	v.BillNum = ""
+	v.OuterId = ""
+	v.InventoryType = ""
+	v.ItemId = ""
+	v.SkuId = ""
+	v.BillType = ""
+	v.ScItemId = 0
+	v.Quantity = 0
+	v.FinalQuantity = 0
+	poolStoreInventory.Put(v)
 }

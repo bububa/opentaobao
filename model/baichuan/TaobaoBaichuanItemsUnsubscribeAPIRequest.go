@@ -2,6 +2,7 @@ package baichuan
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoBaichuanItemsUnsubscribeAPIRequest struct {
 // NewTaobaoBaichuanItemsUnsubscribeRequest 初始化TaobaoBaichuanItemsUnsubscribeAPIRequest对象
 func NewTaobaoBaichuanItemsUnsubscribeRequest() *TaobaoBaichuanItemsUnsubscribeAPIRequest {
 	return &TaobaoBaichuanItemsUnsubscribeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBaichuanItemsUnsubscribeAPIRequest) Reset() {
+	r._itemIds = r._itemIds[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoBaichuanItemsUnsubscribeAPIRequest) SetItemIds(_itemIds []string)
 // GetItemIds ItemIds Getter
 func (r TaobaoBaichuanItemsUnsubscribeAPIRequest) GetItemIds() []string {
 	return r._itemIds
+}
+
+var poolTaobaoBaichuanItemsUnsubscribeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBaichuanItemsUnsubscribeRequest()
+	},
+}
+
+// GetTaobaoBaichuanItemsUnsubscribeRequest 从 sync.Pool 获取 TaobaoBaichuanItemsUnsubscribeAPIRequest
+func GetTaobaoBaichuanItemsUnsubscribeAPIRequest() *TaobaoBaichuanItemsUnsubscribeAPIRequest {
+	return poolTaobaoBaichuanItemsUnsubscribeAPIRequest.Get().(*TaobaoBaichuanItemsUnsubscribeAPIRequest)
+}
+
+// ReleaseTaobaoBaichuanItemsUnsubscribeAPIRequest 将 TaobaoBaichuanItemsUnsubscribeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBaichuanItemsUnsubscribeAPIRequest(v *TaobaoBaichuanItemsUnsubscribeAPIRequest) {
+	v.Reset()
+	poolTaobaoBaichuanItemsUnsubscribeAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package vaccin
 
+import (
+	"sync"
+)
+
 // TradeVaccineSubscribeDetailTopDto 结构体
 type TradeVaccineSubscribeDetailTopDto struct {
 	// 创建时间
@@ -44,4 +48,41 @@ type TradeVaccineSubscribeDetailTopDto struct {
 	PeriodTag int64 `json:"period_tag,omitempty" xml:"period_tag,omitempty"`
 	// 平台预约单状态
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolTradeVaccineSubscribeDetailTopDto = sync.Pool{
+	New: func() any {
+		return new(TradeVaccineSubscribeDetailTopDto)
+	},
+}
+
+// GetTradeVaccineSubscribeDetailTopDto() 从对象池中获取TradeVaccineSubscribeDetailTopDto
+func GetTradeVaccineSubscribeDetailTopDto() *TradeVaccineSubscribeDetailTopDto {
+	return poolTradeVaccineSubscribeDetailTopDto.Get().(*TradeVaccineSubscribeDetailTopDto)
+}
+
+// ReleaseTradeVaccineSubscribeDetailTopDto 释放TradeVaccineSubscribeDetailTopDto
+func ReleaseTradeVaccineSubscribeDetailTopDto(v *TradeVaccineSubscribeDetailTopDto) {
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.BizOrderId = ""
+	v.UserName = ""
+	v.Mobile = ""
+	v.IdentityNo = ""
+	v.SecondaryCardType = ""
+	v.SecondaryCardId = ""
+	v.ItemName = ""
+	v.ItemId = ""
+	v.Sku = ""
+	v.PovName = ""
+	v.PovAddress = ""
+	v.AppChannel = ""
+	v.SubscribeStartTime = ""
+	v.SubscribeEndTime = ""
+	v.ActualPayFee = ""
+	v.CancelRole = ""
+	v.SubscribeId = 0
+	v.PeriodTag = 0
+	v.Status = 0
+	poolTradeVaccineSubscribeDetailTopDto.Put(v)
 }

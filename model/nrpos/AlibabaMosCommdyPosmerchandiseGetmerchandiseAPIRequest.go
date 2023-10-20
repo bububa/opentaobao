@@ -2,6 +2,7 @@ package nrpos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest struct {
 // NewAlibabaMosCommdyPosmerchandiseGetmerchandiseRequest 初始化AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest对象
 func NewAlibabaMosCommdyPosmerchandiseGetmerchandiseRequest() *AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest {
 	return &AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest) Reset() {
+	r._posMerchandiseList = r._posMerchandiseList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest) SetPosMerchandi
 // GetPosMerchandiseList PosMerchandiseList Getter
 func (r AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest) GetPosMerchandiseList() []QueryMerchandiseDto {
 	return r._posMerchandiseList
+}
+
+var poolAlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosCommdyPosmerchandiseGetmerchandiseRequest()
+	},
+}
+
+// GetAlibabaMosCommdyPosmerchandiseGetmerchandiseRequest 从 sync.Pool 获取 AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest
+func GetAlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest() *AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest {
+	return poolAlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest.Get().(*AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest)
+}
+
+// ReleaseAlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest 将 AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest(v *AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest) {
+	v.Reset()
+	poolAlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.apple.newuser.activate.notify
 //
 // 资和信主动通知激活结果
-func TaobaoAppleNewuserActivateNotify(clt *core.SDKClient, req *game.TaobaoAppleNewuserActivateNotifyAPIRequest, session string) (*game.TaobaoAppleNewuserActivateNotifyAPIResponse, error) {
-	var resp game.TaobaoAppleNewuserActivateNotifyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAppleNewuserActivateNotify(clt *core.SDKClient, req *game.TaobaoAppleNewuserActivateNotifyAPIRequest, resp *game.TaobaoAppleNewuserActivateNotifyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

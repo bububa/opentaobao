@@ -9,11 +9,6 @@ import (
 // alibaba.ascp.channel.refund.cancel
 //
 // 售后申请的撤回接口
-func AlibabaAscpChannelRefundCancel(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelRefundCancelAPIRequest, session string) (*ascpchannel.AlibabaAscpChannelRefundCancelAPIResponse, error) {
-	var resp ascpchannel.AlibabaAscpChannelRefundCancelAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAscpChannelRefundCancel(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelRefundCancelAPIRequest, resp *ascpchannel.AlibabaAscpChannelRefundCancelAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

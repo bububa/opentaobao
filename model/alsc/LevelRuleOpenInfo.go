@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // LevelRuleOpenInfo 结构体
 type LevelRuleOpenInfo struct {
 	// 等级规则Id
@@ -24,4 +28,31 @@ type LevelRuleOpenInfo struct {
 	PresentPoint int64 `json:"present_point,omitempty" xml:"present_point,omitempty"`
 	// 逻辑删除标志
 	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
+}
+
+var poolLevelRuleOpenInfo = sync.Pool{
+	New: func() any {
+		return new(LevelRuleOpenInfo)
+	},
+}
+
+// GetLevelRuleOpenInfo() 从对象池中获取LevelRuleOpenInfo
+func GetLevelRuleOpenInfo() *LevelRuleOpenInfo {
+	return poolLevelRuleOpenInfo.Get().(*LevelRuleOpenInfo)
+}
+
+// ReleaseLevelRuleOpenInfo 释放LevelRuleOpenInfo
+func ReleaseLevelRuleOpenInfo(v *LevelRuleOpenInfo) {
+	v.LevelId = ""
+	v.LevelName = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.CreateBy = ""
+	v.UpdateBy = ""
+	v.ExtInfo = ""
+	v.LevelNo = 0
+	v.Threshold = 0
+	v.PresentPoint = 0
+	v.Deleted = false
+	poolLevelRuleOpenInfo.Put(v)
 }

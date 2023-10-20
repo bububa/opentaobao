@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangChannelInventoryBatchUploadAPIRequest struct {
 // NewAlibabaDchainAoxiangChannelInventoryBatchUploadRequest 初始化AlibabaDchainAoxiangChannelInventoryBatchUploadAPIRequest对象
 func NewAlibabaDchainAoxiangChannelInventoryBatchUploadRequest() *AlibabaDchainAoxiangChannelInventoryBatchUploadAPIRequest {
 	return &AlibabaDchainAoxiangChannelInventoryBatchUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangChannelInventoryBatchUploadAPIRequest) Reset() {
+	r._batchUploadChannelInventoryRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangChannelInventoryBatchUploadAPIRequest) SetBatchUplo
 // GetBatchUploadChannelInventoryRequest BatchUploadChannelInventoryRequest Getter
 func (r AlibabaDchainAoxiangChannelInventoryBatchUploadAPIRequest) GetBatchUploadChannelInventoryRequest() *BatchUploadChannelInventoryRequest {
 	return r._batchUploadChannelInventoryRequest
+}
+
+var poolAlibabaDchainAoxiangChannelInventoryBatchUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangChannelInventoryBatchUploadRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangChannelInventoryBatchUploadRequest 从 sync.Pool 获取 AlibabaDchainAoxiangChannelInventoryBatchUploadAPIRequest
+func GetAlibabaDchainAoxiangChannelInventoryBatchUploadAPIRequest() *AlibabaDchainAoxiangChannelInventoryBatchUploadAPIRequest {
+	return poolAlibabaDchainAoxiangChannelInventoryBatchUploadAPIRequest.Get().(*AlibabaDchainAoxiangChannelInventoryBatchUploadAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangChannelInventoryBatchUploadAPIRequest 将 AlibabaDchainAoxiangChannelInventoryBatchUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangChannelInventoryBatchUploadAPIRequest(v *AlibabaDchainAoxiangChannelInventoryBatchUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangChannelInventoryBatchUploadAPIRequest.Put(v)
 }

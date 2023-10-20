@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest struct {
 // NewTaobaoSimbaKeywordsRealtimeRankingBatchGetRequest 初始化TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest对象
 func NewTaobaoSimbaKeywordsRealtimeRankingBatchGetRequest() *TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest {
 	return &TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest) Reset() {
+	r._bidwordIds = r._bidwordIds[:0]
+	r._nick = ""
+	r._adGroupId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest) SetAdGroupId(_adG
 // GetAdGroupId AdGroupId Getter
 func (r TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest) GetAdGroupId() int64 {
 	return r._adGroupId
+}
+
+var poolTaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaKeywordsRealtimeRankingBatchGetRequest()
+	},
+}
+
+// GetTaobaoSimbaKeywordsRealtimeRankingBatchGetRequest 从 sync.Pool 获取 TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest
+func GetTaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest() *TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest {
+	return poolTaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest.Get().(*TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest)
+}
+
+// ReleaseTaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest 将 TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest(v *TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest.Put(v)
 }

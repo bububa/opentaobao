@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscCrmOpenOrderBackflowAPIRequest struct {
 // NewAlibabaAlscCrmOpenOrderBackflowRequest 初始化AlibabaAlscCrmOpenOrderBackflowAPIRequest对象
 func NewAlibabaAlscCrmOpenOrderBackflowRequest() *AlibabaAlscCrmOpenOrderBackflowAPIRequest {
 	return &AlibabaAlscCrmOpenOrderBackflowAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscCrmOpenOrderBackflowAPIRequest) Reset() {
+	r._paramOrderBackflowOpenReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscCrmOpenOrderBackflowAPIRequest) SetParamOrderBackflowOpenReq
 // GetParamOrderBackflowOpenReq ParamOrderBackflowOpenReq Getter
 func (r AlibabaAlscCrmOpenOrderBackflowAPIRequest) GetParamOrderBackflowOpenReq() *OrderBackflowOpenReq {
 	return r._paramOrderBackflowOpenReq
+}
+
+var poolAlibabaAlscCrmOpenOrderBackflowAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscCrmOpenOrderBackflowRequest()
+	},
+}
+
+// GetAlibabaAlscCrmOpenOrderBackflowRequest 从 sync.Pool 获取 AlibabaAlscCrmOpenOrderBackflowAPIRequest
+func GetAlibabaAlscCrmOpenOrderBackflowAPIRequest() *AlibabaAlscCrmOpenOrderBackflowAPIRequest {
+	return poolAlibabaAlscCrmOpenOrderBackflowAPIRequest.Get().(*AlibabaAlscCrmOpenOrderBackflowAPIRequest)
+}
+
+// ReleaseAlibabaAlscCrmOpenOrderBackflowAPIRequest 将 AlibabaAlscCrmOpenOrderBackflowAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscCrmOpenOrderBackflowAPIRequest(v *AlibabaAlscCrmOpenOrderBackflowAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscCrmOpenOrderBackflowAPIRequest.Put(v)
 }

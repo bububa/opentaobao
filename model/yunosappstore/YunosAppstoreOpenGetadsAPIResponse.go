@@ -2,6 +2,7 @@ package yunosappstore
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type YunosAppstoreOpenGetadsAPIResponse struct {
 	model.CommonResponse
 	YunosAppstoreOpenGetadsAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *YunosAppstoreOpenGetadsAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.YunosAppstoreOpenGetadsAPIResponseModel).Reset()
 }
 
 // YunosAppstoreOpenGetadsAPIResponseModel is 获取外投广告 成功返回结果
@@ -28,4 +35,30 @@ type YunosAppstoreOpenGetadsAPIResponseModel struct {
 	Rid string `json:"rid,omitempty" xml:"rid,omitempty"`
 	// 响应码
 	Rc int64 `json:"rc,omitempty" xml:"rc,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *YunosAppstoreOpenGetadsAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Ads = m.Ads[:0]
+	m.Rm = ""
+	m.Rid = ""
+	m.Rc = 0
+}
+
+var poolYunosAppstoreOpenGetadsAPIResponse = sync.Pool{
+	New: func() any {
+		return new(YunosAppstoreOpenGetadsAPIResponse)
+	},
+}
+
+// GetYunosAppstoreOpenGetadsAPIResponse 从 sync.Pool 获取 YunosAppstoreOpenGetadsAPIResponse
+func GetYunosAppstoreOpenGetadsAPIResponse() *YunosAppstoreOpenGetadsAPIResponse {
+	return poolYunosAppstoreOpenGetadsAPIResponse.Get().(*YunosAppstoreOpenGetadsAPIResponse)
+}
+
+// ReleaseYunosAppstoreOpenGetadsAPIResponse 将 YunosAppstoreOpenGetadsAPIResponse 保存到 sync.Pool
+func ReleaseYunosAppstoreOpenGetadsAPIResponse(v *YunosAppstoreOpenGetadsAPIResponse) {
+	v.Reset()
+	poolYunosAppstoreOpenGetadsAPIResponse.Put(v)
 }

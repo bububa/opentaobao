@@ -1,5 +1,9 @@
 package product
 
+import (
+	"sync"
+)
+
 // ProductSpec 结构体
 type ProductSpec struct {
 	// 认证图片列表
@@ -26,4 +30,32 @@ type ProductSpec struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 产品品牌id
 	BrandId int64 `json:"brand_id,omitempty" xml:"brand_id,omitempty"`
+}
+
+var poolProductSpec = sync.Pool{
+	New: func() any {
+		return new(ProductSpec)
+	},
+}
+
+// GetProductSpec() 从对象池中获取ProductSpec
+func GetProductSpec() *ProductSpec {
+	return poolProductSpec.Get().(*ProductSpec)
+}
+
+// ReleaseProductSpec 释放ProductSpec
+func ReleaseProductSpec(v *ProductSpec) {
+	v.CertifiedPics = v.CertifiedPics[:0]
+	v.SpecProps = ""
+	v.SpecPropsAlias = ""
+	v.CustomePropsName = ""
+	v.PicUrl = ""
+	v.Barcode = ""
+	v.ProductCode = ""
+	v.MarketTime = ""
+	v.SpecId = 0
+	v.ProductId = 0
+	v.Status = 0
+	v.BrandId = 0
+	poolProductSpec.Put(v)
 }

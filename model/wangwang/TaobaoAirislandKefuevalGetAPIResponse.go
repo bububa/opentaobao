@@ -2,6 +2,7 @@ package wangwang
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,6 +26,12 @@ type TaobaoAirislandKefuevalGetAPIResponse struct {
 	TaobaoAirislandKefuevalGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoAirislandKefuevalGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAirislandKefuevalGetAPIResponseModel).Reset()
+}
+
 // TaobaoAirislandKefuevalGetAPIResponseModel is 客服评价详情接口_V2 成功返回结果
 type TaobaoAirislandKefuevalGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"airisland_kefueval_get_response"`
@@ -34,4 +41,28 @@ type TaobaoAirislandKefuevalGetAPIResponseModel struct {
 	StaffEvalDetails []EvalDetail `json:"staff_eval_details,omitempty" xml:"staff_eval_details>eval_detail,omitempty"`
 	// 评价结果数
 	ResultCount int64 `json:"result_count,omitempty" xml:"result_count,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAirislandKefuevalGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.StaffEvalDetails = m.StaffEvalDetails[:0]
+	m.ResultCount = 0
+}
+
+var poolTaobaoAirislandKefuevalGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAirislandKefuevalGetAPIResponse)
+	},
+}
+
+// GetTaobaoAirislandKefuevalGetAPIResponse 从 sync.Pool 获取 TaobaoAirislandKefuevalGetAPIResponse
+func GetTaobaoAirislandKefuevalGetAPIResponse() *TaobaoAirislandKefuevalGetAPIResponse {
+	return poolTaobaoAirislandKefuevalGetAPIResponse.Get().(*TaobaoAirislandKefuevalGetAPIResponse)
+}
+
+// ReleaseTaobaoAirislandKefuevalGetAPIResponse 将 TaobaoAirislandKefuevalGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAirislandKefuevalGetAPIResponse(v *TaobaoAirislandKefuevalGetAPIResponse) {
+	v.Reset()
+	poolTaobaoAirislandKefuevalGetAPIResponse.Put(v)
 }

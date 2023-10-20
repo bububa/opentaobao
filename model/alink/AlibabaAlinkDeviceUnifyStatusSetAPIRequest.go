@@ -2,6 +2,7 @@ package alink
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlinkDeviceUnifyStatusSetAPIRequest struct {
 // NewAlibabaAlinkDeviceUnifyStatusSetRequest 初始化AlibabaAlinkDeviceUnifyStatusSetAPIRequest对象
 func NewAlibabaAlinkDeviceUnifyStatusSetRequest() *AlibabaAlinkDeviceUnifyStatusSetAPIRequest {
 	return &AlibabaAlinkDeviceUnifyStatusSetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlinkDeviceUnifyStatusSetAPIRequest) Reset() {
+	r._uuid = ""
+	r._instructions = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlinkDeviceUnifyStatusSetAPIRequest) SetInstructions(_instructio
 // GetInstructions Instructions Getter
 func (r AlibabaAlinkDeviceUnifyStatusSetAPIRequest) GetInstructions() string {
 	return r._instructions
+}
+
+var poolAlibabaAlinkDeviceUnifyStatusSetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlinkDeviceUnifyStatusSetRequest()
+	},
+}
+
+// GetAlibabaAlinkDeviceUnifyStatusSetRequest 从 sync.Pool 获取 AlibabaAlinkDeviceUnifyStatusSetAPIRequest
+func GetAlibabaAlinkDeviceUnifyStatusSetAPIRequest() *AlibabaAlinkDeviceUnifyStatusSetAPIRequest {
+	return poolAlibabaAlinkDeviceUnifyStatusSetAPIRequest.Get().(*AlibabaAlinkDeviceUnifyStatusSetAPIRequest)
+}
+
+// ReleaseAlibabaAlinkDeviceUnifyStatusSetAPIRequest 将 AlibabaAlinkDeviceUnifyStatusSetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlinkDeviceUnifyStatusSetAPIRequest(v *AlibabaAlinkDeviceUnifyStatusSetAPIRequest) {
+	v.Reset()
+	poolAlibabaAlinkDeviceUnifyStatusSetAPIRequest.Put(v)
 }

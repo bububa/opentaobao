@@ -1,5 +1,9 @@
 package store
 
+import (
+	"sync"
+)
+
 // StoreRelationSimpleDo 结构体
 type StoreRelationSimpleDo struct {
 	// 门店名称
@@ -14,4 +18,26 @@ type StoreRelationSimpleDo struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 门店id
 	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
+}
+
+var poolStoreRelationSimpleDo = sync.Pool{
+	New: func() any {
+		return new(StoreRelationSimpleDo)
+	},
+}
+
+// GetStoreRelationSimpleDo() 从对象池中获取StoreRelationSimpleDo
+func GetStoreRelationSimpleDo() *StoreRelationSimpleDo {
+	return poolStoreRelationSimpleDo.Get().(*StoreRelationSimpleDo)
+}
+
+// ReleaseStoreRelationSimpleDo 释放StoreRelationSimpleDo
+func ReleaseStoreRelationSimpleDo(v *StoreRelationSimpleDo) {
+	v.Name = ""
+	v.OuterId = ""
+	v.BizType = 0
+	v.RelationId = 0
+	v.Status = 0
+	v.StoreId = 0
+	poolStoreRelationSimpleDo.Put(v)
 }

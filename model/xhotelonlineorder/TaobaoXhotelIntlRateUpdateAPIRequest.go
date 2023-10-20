@@ -2,6 +2,7 @@ package xhotelonlineorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoXhotelIntlRateUpdateAPIRequest struct {
 // NewTaobaoXhotelIntlRateUpdateRequest 初始化TaobaoXhotelIntlRateUpdateAPIRequest对象
 func NewTaobaoXhotelIntlRateUpdateRequest() *TaobaoXhotelIntlRateUpdateAPIRequest {
 	return &TaobaoXhotelIntlRateUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelIntlRateUpdateAPIRequest) Reset() {
+	r._updateRateParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoXhotelIntlRateUpdateAPIRequest) SetUpdateRateParam(_updateRatePar
 // GetUpdateRateParam UpdateRateParam Getter
 func (r TaobaoXhotelIntlRateUpdateAPIRequest) GetUpdateRateParam() *UpdateRateParam {
 	return r._updateRateParam
+}
+
+var poolTaobaoXhotelIntlRateUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelIntlRateUpdateRequest()
+	},
+}
+
+// GetTaobaoXhotelIntlRateUpdateRequest 从 sync.Pool 获取 TaobaoXhotelIntlRateUpdateAPIRequest
+func GetTaobaoXhotelIntlRateUpdateAPIRequest() *TaobaoXhotelIntlRateUpdateAPIRequest {
+	return poolTaobaoXhotelIntlRateUpdateAPIRequest.Get().(*TaobaoXhotelIntlRateUpdateAPIRequest)
+}
+
+// ReleaseTaobaoXhotelIntlRateUpdateAPIRequest 将 TaobaoXhotelIntlRateUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelIntlRateUpdateAPIRequest(v *TaobaoXhotelIntlRateUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelIntlRateUpdateAPIRequest.Put(v)
 }

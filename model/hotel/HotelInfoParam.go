@@ -1,5 +1,9 @@
 package hotel
 
+import (
+	"sync"
+)
+
 // HotelInfoParam 结构体
 type HotelInfoParam struct {
 	// pid
@@ -14,4 +18,26 @@ type HotelInfoParam struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 单个请求的shid
 	Shid int64 `json:"shid,omitempty" xml:"shid,omitempty"`
+}
+
+var poolHotelInfoParam = sync.Pool{
+	New: func() any {
+		return new(HotelInfoParam)
+	},
+}
+
+// GetHotelInfoParam() 从对象池中获取HotelInfoParam
+func GetHotelInfoParam() *HotelInfoParam {
+	return poolHotelInfoParam.Get().(*HotelInfoParam)
+}
+
+// ReleaseHotelInfoParam 释放HotelInfoParam
+func ReleaseHotelInfoParam(v *HotelInfoParam) {
+	v.Pid = ""
+	v.OpenId = ""
+	v.CityCode = 0
+	v.LastShid = 0
+	v.PageSize = 0
+	v.Shid = 0
+	poolHotelInfoParam.Put(v)
 }

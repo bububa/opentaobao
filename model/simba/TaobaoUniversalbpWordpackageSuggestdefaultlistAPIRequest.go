@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest struct {
 // NewTaobaoUniversalbpWordpackageSuggestdefaultlistRequest 初始化TaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest对象
 func NewTaobaoUniversalbpWordpackageSuggestdefaultlistRequest() *TaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest {
 	return &TaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r._wordPackageDefaultQueryVO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest) SetWordPackag
 // GetWordPackageDefaultQueryVO WordPackageDefaultQueryVO Getter
 func (r TaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest) GetWordPackageDefaultQueryVO() *WordPackageDefaultQueryVo {
 	return r._wordPackageDefaultQueryVO
+}
+
+var poolTaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpWordpackageSuggestdefaultlistRequest()
+	},
+}
+
+// GetTaobaoUniversalbpWordpackageSuggestdefaultlistRequest 从 sync.Pool 获取 TaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest
+func GetTaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest() *TaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest {
+	return poolTaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest.Get().(*TaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest 将 TaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest(v *TaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpWordpackageSuggestdefaultlistAPIRequest.Put(v)
 }

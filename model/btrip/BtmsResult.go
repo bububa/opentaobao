@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BtmsResult 结构体
 type BtmsResult struct {
 	// 结果描述。
@@ -10,4 +14,24 @@ type BtmsResult struct {
 	ResultCode int64 `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 请求是否成功。
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolBtmsResult = sync.Pool{
+	New: func() any {
+		return new(BtmsResult)
+	},
+}
+
+// GetBtmsResult() 从对象池中获取BtmsResult
+func GetBtmsResult() *BtmsResult {
+	return poolBtmsResult.Get().(*BtmsResult)
+}
+
+// ReleaseBtmsResult 释放BtmsResult
+func ReleaseBtmsResult(v *BtmsResult) {
+	v.ResultMsg = ""
+	v.Module = nil
+	v.ResultCode = 0
+	v.Success = false
+	poolBtmsResult.Put(v)
 }

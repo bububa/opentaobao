@@ -1,5 +1,9 @@
 package iot
 
+import (
+	"sync"
+)
+
 // PromotionInItem 结构体
 type PromotionInItem struct {
 	// sku价格对应的id（保证二者顺序相同）
@@ -22,4 +26,30 @@ type PromotionInItem struct {
 	OtherNeed string `json:"other_need,omitempty" xml:"other_need,omitempty"`
 	// 赠送东西。如：送10商城积分
 	OtherSend string `json:"other_send,omitempty" xml:"other_send,omitempty"`
+}
+
+var poolPromotionInItem = sync.Pool{
+	New: func() any {
+		return new(PromotionInItem)
+	},
+}
+
+// GetPromotionInItem() 从对象池中获取PromotionInItem
+func GetPromotionInItem() *PromotionInItem {
+	return poolPromotionInItem.Get().(*PromotionInItem)
+}
+
+// ReleasePromotionInItem 释放PromotionInItem
+func ReleasePromotionInItem(v *PromotionInItem) {
+	v.SkuIdList = v.SkuIdList[:0]
+	v.PromotionId = ""
+	v.Name = ""
+	v.ItemPromoPrice = ""
+	v.SkuPriceList = ""
+	v.Desc = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.OtherNeed = ""
+	v.OtherSend = ""
+	poolPromotionInItem.Put(v)
 }

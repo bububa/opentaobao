@@ -2,6 +2,7 @@ package shenjing
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaIbShenjingVisitorPadOpendoorAPIResponse struct {
 	model.CommonResponse
 	AlibabaIbShenjingVisitorPadOpendoorAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaIbShenjingVisitorPadOpendoorAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaIbShenjingVisitorPadOpendoorAPIResponseModel).Reset()
 }
 
 // AlibabaIbShenjingVisitorPadOpendoorAPIResponseModel is 访客发起开门 成功返回结果
@@ -30,4 +37,31 @@ type AlibabaIbShenjingVisitorPadOpendoorAPIResponseModel struct {
 	Content bool `json:"content,omitempty" xml:"content,omitempty"`
 	// 是否成功
 	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaIbShenjingVisitorPadOpendoorAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultCode = ""
+	m.ResultRequestId = ""
+	m.ResultMsg = ""
+	m.Content = false
+	m.ResultSuccess = false
+}
+
+var poolAlibabaIbShenjingVisitorPadOpendoorAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaIbShenjingVisitorPadOpendoorAPIResponse)
+	},
+}
+
+// GetAlibabaIbShenjingVisitorPadOpendoorAPIResponse 从 sync.Pool 获取 AlibabaIbShenjingVisitorPadOpendoorAPIResponse
+func GetAlibabaIbShenjingVisitorPadOpendoorAPIResponse() *AlibabaIbShenjingVisitorPadOpendoorAPIResponse {
+	return poolAlibabaIbShenjingVisitorPadOpendoorAPIResponse.Get().(*AlibabaIbShenjingVisitorPadOpendoorAPIResponse)
+}
+
+// ReleaseAlibabaIbShenjingVisitorPadOpendoorAPIResponse 将 AlibabaIbShenjingVisitorPadOpendoorAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaIbShenjingVisitorPadOpendoorAPIResponse(v *AlibabaIbShenjingVisitorPadOpendoorAPIResponse) {
+	v.Reset()
+	poolAlibabaIbShenjingVisitorPadOpendoorAPIResponse.Put(v)
 }

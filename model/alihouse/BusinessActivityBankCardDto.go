@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // BusinessActivityBankCardDto 结构体
 type BusinessActivityBankCardDto struct {
 	// 子户
@@ -16,4 +20,27 @@ type BusinessActivityBankCardDto struct {
 	AccountType int64 `json:"account_type,omitempty" xml:"account_type,omitempty"`
 	// ID
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolBusinessActivityBankCardDto = sync.Pool{
+	New: func() any {
+		return new(BusinessActivityBankCardDto)
+	},
+}
+
+// GetBusinessActivityBankCardDto() 从对象池中获取BusinessActivityBankCardDto
+func GetBusinessActivityBankCardDto() *BusinessActivityBankCardDto {
+	return poolBusinessActivityBankCardDto.Get().(*BusinessActivityBankCardDto)
+}
+
+// ReleaseBusinessActivityBankCardDto 释放BusinessActivityBankCardDto
+func ReleaseBusinessActivityBankCardDto(v *BusinessActivityBankCardDto) {
+	v.SubBankCardNo = ""
+	v.BankContactLine = ""
+	v.BankCardNo = ""
+	v.BankAccountAlias = ""
+	v.BankAccountName = ""
+	v.AccountType = 0
+	v.Id = 0
+	poolBusinessActivityBankCardDto.Put(v)
 }

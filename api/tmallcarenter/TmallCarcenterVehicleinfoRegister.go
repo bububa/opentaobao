@@ -9,11 +9,6 @@ import (
 // tmall.carcenter.vehicleinfo.register
 //
 // 基本车型信息维护
-func TmallCarcenterVehicleinfoRegister(clt *core.SDKClient, req *tmallcarenter.TmallCarcenterVehicleinfoRegisterAPIRequest, session string) (*tmallcarenter.TmallCarcenterVehicleinfoRegisterAPIResponse, error) {
-	var resp tmallcarenter.TmallCarcenterVehicleinfoRegisterAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallCarcenterVehicleinfoRegister(clt *core.SDKClient, req *tmallcarenter.TmallCarcenterVehicleinfoRegisterAPIRequest, resp *tmallcarenter.TmallCarcenterVehicleinfoRegisterAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

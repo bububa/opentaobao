@@ -2,6 +2,7 @@ package nrt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallNrtStoreItemFromOnlineItemAPIRequest struct {
 // NewTmallNrtStoreItemFromOnlineItemRequest 初始化TmallNrtStoreItemFromOnlineItemAPIRequest对象
 func NewTmallNrtStoreItemFromOnlineItemRequest() *TmallNrtStoreItemFromOnlineItemAPIRequest {
 	return &TmallNrtStoreItemFromOnlineItemAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrtStoreItemFromOnlineItemAPIRequest) Reset() {
+	r._mainItemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallNrtStoreItemFromOnlineItemAPIRequest) SetMainItemId(_mainItemId in
 // GetMainItemId MainItemId Getter
 func (r TmallNrtStoreItemFromOnlineItemAPIRequest) GetMainItemId() int64 {
 	return r._mainItemId
+}
+
+var poolTmallNrtStoreItemFromOnlineItemAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrtStoreItemFromOnlineItemRequest()
+	},
+}
+
+// GetTmallNrtStoreItemFromOnlineItemRequest 从 sync.Pool 获取 TmallNrtStoreItemFromOnlineItemAPIRequest
+func GetTmallNrtStoreItemFromOnlineItemAPIRequest() *TmallNrtStoreItemFromOnlineItemAPIRequest {
+	return poolTmallNrtStoreItemFromOnlineItemAPIRequest.Get().(*TmallNrtStoreItemFromOnlineItemAPIRequest)
+}
+
+// ReleaseTmallNrtStoreItemFromOnlineItemAPIRequest 将 TmallNrtStoreItemFromOnlineItemAPIRequest 放入 sync.Pool
+func ReleaseTmallNrtStoreItemFromOnlineItemAPIRequest(v *TmallNrtStoreItemFromOnlineItemAPIRequest) {
+	v.Reset()
+	poolTmallNrtStoreItemFromOnlineItemAPIRequest.Put(v)
 }

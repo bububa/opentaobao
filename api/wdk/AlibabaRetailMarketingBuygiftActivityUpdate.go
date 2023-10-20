@@ -9,11 +9,6 @@ import (
 // alibaba.retail.marketing.buygift.activity.update
 //
 // 同城零售单品买赠活动更新
-func AlibabaRetailMarketingBuygiftActivityUpdate(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest, session string) (*wdk.AlibabaRetailMarketingBuygiftActivityUpdateAPIResponse, error) {
-	var resp wdk.AlibabaRetailMarketingBuygiftActivityUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaRetailMarketingBuygiftActivityUpdate(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingBuygiftActivityUpdateAPIRequest, resp *wdk.AlibabaRetailMarketingBuygiftActivityUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

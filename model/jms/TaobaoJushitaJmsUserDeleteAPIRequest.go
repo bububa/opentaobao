@@ -2,6 +2,7 @@ package jms
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoJushitaJmsUserDeleteAPIRequest struct {
 // NewTaobaoJushitaJmsUserDeleteRequest 初始化TaobaoJushitaJmsUserDeleteAPIRequest对象
 func NewTaobaoJushitaJmsUserDeleteRequest() *TaobaoJushitaJmsUserDeleteAPIRequest {
 	return &TaobaoJushitaJmsUserDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJushitaJmsUserDeleteAPIRequest) Reset() {
+	r._userNick = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoJushitaJmsUserDeleteAPIRequest) SetUserNick(_userNick string) err
 // GetUserNick UserNick Getter
 func (r TaobaoJushitaJmsUserDeleteAPIRequest) GetUserNick() string {
 	return r._userNick
+}
+
+var poolTaobaoJushitaJmsUserDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJushitaJmsUserDeleteRequest()
+	},
+}
+
+// GetTaobaoJushitaJmsUserDeleteRequest 从 sync.Pool 获取 TaobaoJushitaJmsUserDeleteAPIRequest
+func GetTaobaoJushitaJmsUserDeleteAPIRequest() *TaobaoJushitaJmsUserDeleteAPIRequest {
+	return poolTaobaoJushitaJmsUserDeleteAPIRequest.Get().(*TaobaoJushitaJmsUserDeleteAPIRequest)
+}
+
+// ReleaseTaobaoJushitaJmsUserDeleteAPIRequest 将 TaobaoJushitaJmsUserDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJushitaJmsUserDeleteAPIRequest(v *TaobaoJushitaJmsUserDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoJushitaJmsUserDeleteAPIRequest.Put(v)
 }

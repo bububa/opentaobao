@@ -2,6 +2,7 @@ package alilabs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoAilabAicloudTopHotwordsUpdateAPIRequest struct {
 // NewTaobaoAilabAicloudTopHotwordsUpdateRequest 初始化TaobaoAilabAicloudTopHotwordsUpdateAPIRequest对象
 func NewTaobaoAilabAicloudTopHotwordsUpdateRequest() *TaobaoAilabAicloudTopHotwordsUpdateAPIRequest {
 	return &TaobaoAilabAicloudTopHotwordsUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) Reset() {
+	r._schema = ""
+	r._userId = ""
+	r._bizClass = ""
+	r._opType = ""
+	r._content = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) SetContent(_content *Hot
 // GetContent Content Getter
 func (r TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) GetContent() *HotWordsContent {
 	return r._content
+}
+
+var poolTaobaoAilabAicloudTopHotwordsUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopHotwordsUpdateRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopHotwordsUpdateRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopHotwordsUpdateAPIRequest
+func GetTaobaoAilabAicloudTopHotwordsUpdateAPIRequest() *TaobaoAilabAicloudTopHotwordsUpdateAPIRequest {
+	return poolTaobaoAilabAicloudTopHotwordsUpdateAPIRequest.Get().(*TaobaoAilabAicloudTopHotwordsUpdateAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopHotwordsUpdateAPIRequest 将 TaobaoAilabAicloudTopHotwordsUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopHotwordsUpdateAPIRequest(v *TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopHotwordsUpdateAPIRequest.Put(v)
 }

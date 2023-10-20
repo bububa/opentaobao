@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.vrfactory.production.sync
 //
 // vr生产数据上翻
-func AlibabaAlihouseVrfactoryProductionSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseVrfactoryProductionSyncAPIRequest, session string) (*alihouse.AlibabaAlihouseVrfactoryProductionSyncAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseVrfactoryProductionSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseVrfactoryProductionSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseVrfactoryProductionSyncAPIRequest, resp *alihouse.AlibabaAlihouseVrfactoryProductionSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

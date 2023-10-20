@@ -2,6 +2,7 @@ package subuser
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoSubuserDutysGetAPIRequest struct {
 // NewTaobaoSubuserDutysGetRequest 初始化TaobaoSubuserDutysGetAPIRequest对象
 func NewTaobaoSubuserDutysGetRequest() *TaobaoSubuserDutysGetAPIRequest {
 	return &TaobaoSubuserDutysGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSubuserDutysGetAPIRequest) Reset() {
+	r._userNick = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoSubuserDutysGetAPIRequest) SetUserNick(_userNick string) error {
 // GetUserNick UserNick Getter
 func (r TaobaoSubuserDutysGetAPIRequest) GetUserNick() string {
 	return r._userNick
+}
+
+var poolTaobaoSubuserDutysGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSubuserDutysGetRequest()
+	},
+}
+
+// GetTaobaoSubuserDutysGetRequest 从 sync.Pool 获取 TaobaoSubuserDutysGetAPIRequest
+func GetTaobaoSubuserDutysGetAPIRequest() *TaobaoSubuserDutysGetAPIRequest {
+	return poolTaobaoSubuserDutysGetAPIRequest.Get().(*TaobaoSubuserDutysGetAPIRequest)
+}
+
+// ReleaseTaobaoSubuserDutysGetAPIRequest 将 TaobaoSubuserDutysGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSubuserDutysGetAPIRequest(v *TaobaoSubuserDutysGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSubuserDutysGetAPIRequest.Put(v)
 }

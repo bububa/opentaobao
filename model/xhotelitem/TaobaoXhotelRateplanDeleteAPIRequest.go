@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoXhotelRateplanDeleteAPIRequest struct {
 // NewTaobaoXhotelRateplanDeleteRequest 初始化TaobaoXhotelRateplanDeleteAPIRequest对象
 func NewTaobaoXhotelRateplanDeleteRequest() *TaobaoXhotelRateplanDeleteAPIRequest {
 	return &TaobaoXhotelRateplanDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelRateplanDeleteAPIRequest) Reset() {
+	r._vendor = ""
+	r._rateplanCode = ""
+	r._rpId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoXhotelRateplanDeleteAPIRequest) SetRpId(_rpId int64) error {
 // GetRpId RpId Getter
 func (r TaobaoXhotelRateplanDeleteAPIRequest) GetRpId() int64 {
 	return r._rpId
+}
+
+var poolTaobaoXhotelRateplanDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelRateplanDeleteRequest()
+	},
+}
+
+// GetTaobaoXhotelRateplanDeleteRequest 从 sync.Pool 获取 TaobaoXhotelRateplanDeleteAPIRequest
+func GetTaobaoXhotelRateplanDeleteAPIRequest() *TaobaoXhotelRateplanDeleteAPIRequest {
+	return poolTaobaoXhotelRateplanDeleteAPIRequest.Get().(*TaobaoXhotelRateplanDeleteAPIRequest)
+}
+
+// ReleaseTaobaoXhotelRateplanDeleteAPIRequest 将 TaobaoXhotelRateplanDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelRateplanDeleteAPIRequest(v *TaobaoXhotelRateplanDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelRateplanDeleteAPIRequest.Put(v)
 }

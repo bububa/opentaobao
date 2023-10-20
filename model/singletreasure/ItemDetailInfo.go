@@ -1,5 +1,9 @@
 package singletreasure
 
+import (
+	"sync"
+)
+
 // ItemDetailInfo 结构体
 type ItemDetailInfo struct {
 	// 活动结束时间
@@ -40,4 +44,39 @@ type ItemDetailInfo struct {
 	IsDiscardFen bool `json:"is_discard_fen,omitempty" xml:"is_discard_fen,omitempty"`
 	// 是否取整
 	IsMathFloor bool `json:"is_math_floor,omitempty" xml:"is_math_floor,omitempty"`
+}
+
+var poolItemDetailInfo = sync.Pool{
+	New: func() any {
+		return new(ItemDetailInfo)
+	},
+}
+
+// GetItemDetailInfo() 从对象池中获取ItemDetailInfo
+func GetItemDetailInfo() *ItemDetailInfo {
+	return poolItemDetailInfo.Get().(*ItemDetailInfo)
+}
+
+// ReleaseItemDetailInfo 释放ItemDetailInfo
+func ReleaseItemDetailInfo(v *ItemDetailInfo) {
+	v.EndTime = ""
+	v.ExcludeAreas = ""
+	v.StartTime = ""
+	v.Name = ""
+	v.CrowdId = ""
+	v.LimitCheck = 0
+	v.ActivityId = 0
+	v.DiscountType = 0
+	v.MkDiscount = 0
+	v.PromotionLevel = 0
+	v.Status = 0
+	v.ItemId = 0
+	v.Discount = 0
+	v.Price = 0
+	v.DetailId = 0
+	v.SkuId = 0
+	v.FreePost = false
+	v.IsDiscardFen = false
+	v.IsMathFloor = false
+	poolItemDetailInfo.Put(v)
 }

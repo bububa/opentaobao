@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // ProductList 结构体
 type ProductList struct {
 	// 经营模式
@@ -18,4 +22,28 @@ type ProductList struct {
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// 产品类型
 	ProductType int64 `json:"product_type,omitempty" xml:"product_type,omitempty"`
+}
+
+var poolProductList = sync.Pool{
+	New: func() any {
+		return new(ProductList)
+	},
+}
+
+// GetProductList() 从对象池中获取ProductList
+func GetProductList() *ProductList {
+	return poolProductList.Get().(*ProductList)
+}
+
+// ReleaseProductList 释放ProductList
+func ReleaseProductList(v *ProductList) {
+	v.SalesModeList = v.SalesModeList[:0]
+	v.PictureList = v.PictureList[:0]
+	v.ProductTitle = ""
+	v.OutNo = ""
+	v.SubChannelCode = ""
+	v.ChannelCode = ""
+	v.ProductId = 0
+	v.ProductType = 0
+	poolProductList.Put(v)
 }

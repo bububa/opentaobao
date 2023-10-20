@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.ie.agent.refund.new.receive
 //
 // 允许代理商通过top接口受理退票申请
-func TaobaoAlitripIeAgentRefundNewReceive(clt *core.SDKClient, req *ieagency.TaobaoAlitripIeAgentRefundNewReceiveAPIRequest, session string) (*ieagency.TaobaoAlitripIeAgentRefundNewReceiveAPIResponse, error) {
-	var resp ieagency.TaobaoAlitripIeAgentRefundNewReceiveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripIeAgentRefundNewReceive(clt *core.SDKClient, req *ieagency.TaobaoAlitripIeAgentRefundNewReceiveAPIRequest, resp *ieagency.TaobaoAlitripIeAgentRefundNewReceiveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

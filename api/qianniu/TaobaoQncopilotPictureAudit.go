@@ -9,11 +9,6 @@ import (
 // taobao.qncopilot.picture.audit
 //
 // AIGC创作图片审核
-func TaobaoQncopilotPictureAudit(clt *core.SDKClient, req *qianniu.TaobaoQncopilotPictureAuditAPIRequest, session string) (*qianniu.TaobaoQncopilotPictureAuditAPIResponse, error) {
-	var resp qianniu.TaobaoQncopilotPictureAuditAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoQncopilotPictureAudit(clt *core.SDKClient, req *qianniu.TaobaoQncopilotPictureAuditAPIRequest, resp *qianniu.TaobaoQncopilotPictureAuditAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

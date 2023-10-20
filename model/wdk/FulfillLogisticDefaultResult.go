@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // FulfillLogisticDefaultResult 结构体
 type FulfillLogisticDefaultResult struct {
 	// 返回码含义描述
@@ -8,4 +12,23 @@ type FulfillLogisticDefaultResult struct {
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// true 调用成功 false 调用失败
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolFulfillLogisticDefaultResult = sync.Pool{
+	New: func() any {
+		return new(FulfillLogisticDefaultResult)
+	},
+}
+
+// GetFulfillLogisticDefaultResult() 从对象池中获取FulfillLogisticDefaultResult
+func GetFulfillLogisticDefaultResult() *FulfillLogisticDefaultResult {
+	return poolFulfillLogisticDefaultResult.Get().(*FulfillLogisticDefaultResult)
+}
+
+// ReleaseFulfillLogisticDefaultResult 释放FulfillLogisticDefaultResult
+func ReleaseFulfillLogisticDefaultResult(v *FulfillLogisticDefaultResult) {
+	v.ErrDesc = ""
+	v.ErrCode = ""
+	v.Success = false
+	poolFulfillLogisticDefaultResult.Put(v)
 }

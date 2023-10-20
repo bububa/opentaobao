@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoFenxiaoRefundQueryAPIResponse struct {
 	TaobaoFenxiaoRefundQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoFenxiaoRefundQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoFenxiaoRefundQueryAPIResponseModel).Reset()
+}
+
 // TaobaoFenxiaoRefundQueryAPIResponseModel is 批量查询采购退款 成功返回结果
 type TaobaoFenxiaoRefundQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_refund_query_response"`
@@ -24,4 +31,28 @@ type TaobaoFenxiaoRefundQueryAPIResponseModel struct {
 	RefundList []RefundDetail `json:"refund_list,omitempty" xml:"refund_list>refund_detail,omitempty"`
 	// 按查询条件查到的记录总数
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoFenxiaoRefundQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RefundList = m.RefundList[:0]
+	m.TotalResults = 0
+}
+
+var poolTaobaoFenxiaoRefundQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoFenxiaoRefundQueryAPIResponse)
+	},
+}
+
+// GetTaobaoFenxiaoRefundQueryAPIResponse 从 sync.Pool 获取 TaobaoFenxiaoRefundQueryAPIResponse
+func GetTaobaoFenxiaoRefundQueryAPIResponse() *TaobaoFenxiaoRefundQueryAPIResponse {
+	return poolTaobaoFenxiaoRefundQueryAPIResponse.Get().(*TaobaoFenxiaoRefundQueryAPIResponse)
+}
+
+// ReleaseTaobaoFenxiaoRefundQueryAPIResponse 将 TaobaoFenxiaoRefundQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoFenxiaoRefundQueryAPIResponse(v *TaobaoFenxiaoRefundQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoFenxiaoRefundQueryAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package hotel
 
+import (
+	"sync"
+)
+
 // GetMixRateListParam 结构体
 type GetMixRateListParam struct {
 	// 酒店评论类型筛选
@@ -16,4 +20,27 @@ type GetMixRateListParam struct {
 	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
 	// 页面包含的记录数
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolGetMixRateListParam = sync.Pool{
+	New: func() any {
+		return new(GetMixRateListParam)
+	},
+}
+
+// GetGetMixRateListParam() 从对象池中获取GetMixRateListParam
+func GetGetMixRateListParam() *GetMixRateListParam {
+	return poolGetMixRateListParam.Get().(*GetMixRateListParam)
+}
+
+// ReleaseGetMixRateListParam 释放GetMixRateListParam
+func ReleaseGetMixRateListParam(v *GetMixRateListParam) {
+	v.TabFilter = ""
+	v.ItemId = 0
+	v.Limit = 0
+	v.LoadAttitude = 0
+	v.LoadReply = 0
+	v.PageNo = 0
+	v.PageSize = 0
+	poolGetMixRateListParam.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alitrip.flight.external.alipay.verify
 //
 // 支付宝小程序验签
-func AlitripFlightExternalAlipayVerify(clt *core.SDKClient, req *flightuppc.AlitripFlightExternalAlipayVerifyAPIRequest, session string) (*flightuppc.AlitripFlightExternalAlipayVerifyAPIResponse, error) {
-	var resp flightuppc.AlitripFlightExternalAlipayVerifyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripFlightExternalAlipayVerify(clt *core.SDKClient, req *flightuppc.AlitripFlightExternalAlipayVerifyAPIRequest, resp *flightuppc.AlitripFlightExternalAlipayVerifyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

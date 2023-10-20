@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.bnbroomtype.delete
 //
 // 增加民宿房源删除接口
-func TaobaoXhotelBnbroomtypeDelete(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBnbroomtypeDeleteAPIRequest, session string) (*xhotelitem.TaobaoXhotelBnbroomtypeDeleteAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelBnbroomtypeDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelBnbroomtypeDelete(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBnbroomtypeDeleteAPIRequest, resp *xhotelitem.TaobaoXhotelBnbroomtypeDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

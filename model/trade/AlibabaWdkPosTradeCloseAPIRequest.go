@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkPosTradeCloseAPIRequest struct {
 // NewAlibabaWdkPosTradeCloseRequest 初始化AlibabaWdkPosTradeCloseAPIRequest对象
 func NewAlibabaWdkPosTradeCloseRequest() *AlibabaWdkPosTradeCloseAPIRequest {
 	return &AlibabaWdkPosTradeCloseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkPosTradeCloseAPIRequest) Reset() {
+	r._closeRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkPosTradeCloseAPIRequest) SetCloseRequest(_closeRequest *FastB
 // GetCloseRequest CloseRequest Getter
 func (r AlibabaWdkPosTradeCloseAPIRequest) GetCloseRequest() *FastBuyPosCloseRequest {
 	return r._closeRequest
+}
+
+var poolAlibabaWdkPosTradeCloseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkPosTradeCloseRequest()
+	},
+}
+
+// GetAlibabaWdkPosTradeCloseRequest 从 sync.Pool 获取 AlibabaWdkPosTradeCloseAPIRequest
+func GetAlibabaWdkPosTradeCloseAPIRequest() *AlibabaWdkPosTradeCloseAPIRequest {
+	return poolAlibabaWdkPosTradeCloseAPIRequest.Get().(*AlibabaWdkPosTradeCloseAPIRequest)
+}
+
+// ReleaseAlibabaWdkPosTradeCloseAPIRequest 将 AlibabaWdkPosTradeCloseAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkPosTradeCloseAPIRequest(v *AlibabaWdkPosTradeCloseAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkPosTradeCloseAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package tmallcar
 
+import (
+	"sync"
+)
+
 // EticketStoreInfoDto 结构体
 type EticketStoreInfoDto struct {
 	// 街道名称
@@ -34,4 +38,36 @@ type EticketStoreInfoDto struct {
 	District int64 `json:"district,omitempty" xml:"district,omitempty"`
 	// 省编码
 	Prov int64 `json:"prov,omitempty" xml:"prov,omitempty"`
+}
+
+var poolEticketStoreInfoDto = sync.Pool{
+	New: func() any {
+		return new(EticketStoreInfoDto)
+	},
+}
+
+// GetEticketStoreInfoDto() 从对象池中获取EticketStoreInfoDto
+func GetEticketStoreInfoDto() *EticketStoreInfoDto {
+	return poolEticketStoreInfoDto.Get().(*EticketStoreInfoDto)
+}
+
+// ReleaseEticketStoreInfoDto 释放EticketStoreInfoDto
+func ReleaseEticketStoreInfoDto(v *EticketStoreInfoDto) {
+	v.TownName = ""
+	v.ProvName = ""
+	v.Address = ""
+	v.DistrictName = ""
+	v.Latitude = ""
+	v.CityName = ""
+	v.StorePhone = ""
+	v.OuterId = ""
+	v.StoreName = ""
+	v.Longitude = ""
+	v.Town = 0
+	v.OrderId = 0
+	v.City = 0
+	v.StoreId = 0
+	v.District = 0
+	v.Prov = 0
+	poolEticketStoreInfoDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // OrderBackflowOpenReq 结构体
 type OrderBackflowOpenReq struct {
 	// 支付信息
@@ -34,4 +38,36 @@ type OrderBackflowOpenReq struct {
 	LogisticalInfo *LogisticalInfo `json:"logistical_info,omitempty" xml:"logistical_info,omitempty"`
 	// 订单信息
 	OrderInfo *OrderInfo `json:"order_info,omitempty" xml:"order_info,omitempty"`
+}
+
+var poolOrderBackflowOpenReq = sync.Pool{
+	New: func() any {
+		return new(OrderBackflowOpenReq)
+	},
+}
+
+// GetOrderBackflowOpenReq() 从对象池中获取OrderBackflowOpenReq
+func GetOrderBackflowOpenReq() *OrderBackflowOpenReq {
+	return poolOrderBackflowOpenReq.Get().(*OrderBackflowOpenReq)
+}
+
+// ReleaseOrderBackflowOpenReq 释放OrderBackflowOpenReq
+func ReleaseOrderBackflowOpenReq(v *OrderBackflowOpenReq) {
+	v.PaymentInfoList = v.PaymentInfoList[:0]
+	v.RefundInfoList = v.RefundInfoList[:0]
+	v.Action = ""
+	v.BrandId = ""
+	v.ExtInfo = ""
+	v.OperatorId = ""
+	v.RequestId = ""
+	v.ShopId = ""
+	v.OperatorName = ""
+	v.ServicePersonCategory = ""
+	v.ServicePersonName = ""
+	v.ServicePersonId = ""
+	v.OrderChannel = ""
+	v.InvoiceInfo = nil
+	v.LogisticalInfo = nil
+	v.OrderInfo = nil
+	poolOrderBackflowOpenReq.Put(v)
 }

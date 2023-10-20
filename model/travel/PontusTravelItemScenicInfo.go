@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // PontusTravelItemScenicInfo 结构体
 type PontusTravelItemScenicInfo struct {
 	// 结构化景点信息 景点结构化信息和文本描述二选一
@@ -8,4 +12,23 @@ type PontusTravelItemScenicInfo struct {
 	ScenicDesc string `json:"scenic_desc,omitempty" xml:"scenic_desc,omitempty"`
 	// 门票套餐名称
 	TicketPackageName string `json:"ticket_package_name,omitempty" xml:"ticket_package_name,omitempty"`
+}
+
+var poolPontusTravelItemScenicInfo = sync.Pool{
+	New: func() any {
+		return new(PontusTravelItemScenicInfo)
+	},
+}
+
+// GetPontusTravelItemScenicInfo() 从对象池中获取PontusTravelItemScenicInfo
+func GetPontusTravelItemScenicInfo() *PontusTravelItemScenicInfo {
+	return poolPontusTravelItemScenicInfo.Get().(*PontusTravelItemScenicInfo)
+}
+
+// ReleasePontusTravelItemScenicInfo 释放PontusTravelItemScenicInfo
+func ReleasePontusTravelItemScenicInfo(v *PontusTravelItemScenicInfo) {
+	v.ScenicList = v.ScenicList[:0]
+	v.ScenicDesc = ""
+	v.TicketPackageName = ""
+	poolPontusTravelItemScenicInfo.Put(v)
 }

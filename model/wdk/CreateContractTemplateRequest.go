@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // CreateContractTemplateRequest 结构体
 type CreateContractTemplateRequest struct {
 	// 提货券配置列表
@@ -88,4 +92,63 @@ type CreateContractTemplateRequest struct {
 	FirstCompanyAddress string `json:"first_company_address,omitempty" xml:"first_company_address,omitempty"`
 	// 甲方公司名称
 	FirstCompanyName string `json:"first_company_name,omitempty" xml:"first_company_name,omitempty"`
+}
+
+var poolCreateContractTemplateRequest = sync.Pool{
+	New: func() any {
+		return new(CreateContractTemplateRequest)
+	},
+}
+
+// GetCreateContractTemplateRequest() 从对象池中获取CreateContractTemplateRequest
+func GetCreateContractTemplateRequest() *CreateContractTemplateRequest {
+	return poolCreateContractTemplateRequest.Get().(*CreateContractTemplateRequest)
+}
+
+// ReleaseCreateContractTemplateRequest 释放CreateContractTemplateRequest
+func ReleaseCreateContractTemplateRequest(v *CreateContractTemplateRequest) {
+	v.CouponConfigList = v.CouponConfigList[:0]
+	v.NotProviderItemInfos = v.NotProviderItemInfos[:0]
+	v.ProviderItemInfos = v.ProviderItemInfos[:0]
+	v.SecondSignDay = ""
+	v.SecondSignMonth = ""
+	v.SecondSignYear = ""
+	v.SecondLegalPerson = ""
+	v.FirstSignDay = ""
+	v.FirstSignMonth = ""
+	v.FirstSignYear = ""
+	v.FirstLegalPerson = ""
+	v.SecondAccountNo = ""
+	v.SecondBankName = ""
+	v.SecondAccountName = ""
+	v.FirstAccountNo = ""
+	v.FirstBankName = ""
+	v.FirstAccountName = ""
+	v.Discount = ""
+	v.PayTimeOutDay = ""
+	v.InvoiceTypeSimpleName = ""
+	v.Bond = ""
+	v.MaxCreditAmount = ""
+	v.ContractEndDay = ""
+	v.ContractEndMonth = ""
+	v.ContractEndYear = ""
+	v.ContractStartDay = ""
+	v.ContractStartMonth = ""
+	v.ContractStartYear = ""
+	v.CouponEndDay = ""
+	v.CouponEndMonth = ""
+	v.CouponEndYear = ""
+	v.CouponStartDay = ""
+	v.CouponStartMonth = ""
+	v.CouponStartYear = ""
+	v.PoiDetailAddress = ""
+	v.PoiStreet = ""
+	v.PoiArea = ""
+	v.PoiCity = ""
+	v.PoiName = ""
+	v.SecondCompanyAddress = ""
+	v.SecondCompanyName = ""
+	v.FirstCompanyAddress = ""
+	v.FirstCompanyName = ""
+	poolCreateContractTemplateRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package flight
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripAgentCoordinateListAPIResponse struct {
 	AlitripAgentCoordinateListAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripAgentCoordinateListAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripAgentCoordinateListAPIResponseModel).Reset()
+}
+
 // AlitripAgentCoordinateListAPIResponseModel is 慧飞商家协同单列表查询接口 成功返回结果
 type AlitripAgentCoordinateListAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_agent_coordinate_list_response"`
@@ -22,4 +29,27 @@ type AlitripAgentCoordinateListAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 协同单列表查询结果
 	Result *PageDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripAgentCoordinateListAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlitripAgentCoordinateListAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripAgentCoordinateListAPIResponse)
+	},
+}
+
+// GetAlitripAgentCoordinateListAPIResponse 从 sync.Pool 获取 AlitripAgentCoordinateListAPIResponse
+func GetAlitripAgentCoordinateListAPIResponse() *AlitripAgentCoordinateListAPIResponse {
+	return poolAlitripAgentCoordinateListAPIResponse.Get().(*AlitripAgentCoordinateListAPIResponse)
+}
+
+// ReleaseAlitripAgentCoordinateListAPIResponse 将 AlitripAgentCoordinateListAPIResponse 保存到 sync.Pool
+func ReleaseAlitripAgentCoordinateListAPIResponse(v *AlitripAgentCoordinateListAPIResponse) {
+	v.Reset()
+	poolAlitripAgentCoordinateListAPIResponse.Put(v)
 }

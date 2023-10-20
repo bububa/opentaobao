@@ -1,5 +1,9 @@
 package fundplatform
 
+import (
+	"sync"
+)
+
 // AlibabaFundplatformCardorderStatusQueryStruct 结构体
 type AlibabaFundplatformCardorderStatusQueryStruct struct {
 	// 环境变量值，该字段为枚举值：daily（日常），pre（预发），online（线上）
@@ -18,4 +22,28 @@ type AlibabaFundplatformCardorderStatusQueryStruct struct {
 	CardOrderId int64 `json:"card_order_id,omitempty" xml:"card_order_id,omitempty"`
 	// 是否调用成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaFundplatformCardorderStatusQueryStruct = sync.Pool{
+	New: func() any {
+		return new(AlibabaFundplatformCardorderStatusQueryStruct)
+	},
+}
+
+// GetAlibabaFundplatformCardorderStatusQueryStruct() 从对象池中获取AlibabaFundplatformCardorderStatusQueryStruct
+func GetAlibabaFundplatformCardorderStatusQueryStruct() *AlibabaFundplatformCardorderStatusQueryStruct {
+	return poolAlibabaFundplatformCardorderStatusQueryStruct.Get().(*AlibabaFundplatformCardorderStatusQueryStruct)
+}
+
+// ReleaseAlibabaFundplatformCardorderStatusQueryStruct 释放AlibabaFundplatformCardorderStatusQueryStruct
+func ReleaseAlibabaFundplatformCardorderStatusQueryStruct(v *AlibabaFundplatformCardorderStatusQueryStruct) {
+	v.OwnSign = ""
+	v.Status = ""
+	v.ResultMessage = ""
+	v.ResultCode = ""
+	v.LogisticsCompany = ""
+	v.LogisticsOrderId = ""
+	v.CardOrderId = 0
+	v.Success = false
+	poolAlibabaFundplatformCardorderStatusQueryStruct.Put(v)
 }

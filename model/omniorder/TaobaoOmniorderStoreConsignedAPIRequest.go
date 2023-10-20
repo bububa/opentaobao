@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type TaobaoOmniorderStoreConsignedAPIRequest struct {
 // NewTaobaoOmniorderStoreConsignedRequest 初始化TaobaoOmniorderStoreConsignedAPIRequest对象
 func NewTaobaoOmniorderStoreConsignedRequest() *TaobaoOmniorderStoreConsignedAPIRequest {
 	return &TaobaoOmniorderStoreConsignedAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOmniorderStoreConsignedAPIRequest) Reset() {
+	r._subOrderList = r._subOrderList[:0]
+	r._traceId = ""
+	r._senderId = 0
+	r._insReceiverTo = nil
+	r._jzTopArgs = nil
+	r._insTpDto = nil
+	r._jzReceiverTo = nil
+	r._tid = 0
+	r._reportTimestamp = 0
+	r._lgTpDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *TaobaoOmniorderStoreConsignedAPIRequest) SetLgTpDto(_lgTpDto *TpDto) er
 // GetLgTpDto LgTpDto Getter
 func (r TaobaoOmniorderStoreConsignedAPIRequest) GetLgTpDto() *TpDto {
 	return r._lgTpDto
+}
+
+var poolTaobaoOmniorderStoreConsignedAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOmniorderStoreConsignedRequest()
+	},
+}
+
+// GetTaobaoOmniorderStoreConsignedRequest 从 sync.Pool 获取 TaobaoOmniorderStoreConsignedAPIRequest
+func GetTaobaoOmniorderStoreConsignedAPIRequest() *TaobaoOmniorderStoreConsignedAPIRequest {
+	return poolTaobaoOmniorderStoreConsignedAPIRequest.Get().(*TaobaoOmniorderStoreConsignedAPIRequest)
+}
+
+// ReleaseTaobaoOmniorderStoreConsignedAPIRequest 将 TaobaoOmniorderStoreConsignedAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOmniorderStoreConsignedAPIRequest(v *TaobaoOmniorderStoreConsignedAPIRequest) {
+	v.Reset()
+	poolTaobaoOmniorderStoreConsignedAPIRequest.Put(v)
 }

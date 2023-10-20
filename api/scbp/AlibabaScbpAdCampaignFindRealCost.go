@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.ad.campaign.find.real.cost
 //
 // 批量查询计划消耗数据
-func AlibabaScbpAdCampaignFindRealCost(clt *core.SDKClient, req *scbp.AlibabaScbpAdCampaignFindRealCostAPIRequest, session string) (*scbp.AlibabaScbpAdCampaignFindRealCostAPIResponse, error) {
-	var resp scbp.AlibabaScbpAdCampaignFindRealCostAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpAdCampaignFindRealCost(clt *core.SDKClient, req *scbp.AlibabaScbpAdCampaignFindRealCostAPIRequest, resp *scbp.AlibabaScbpAdCampaignFindRealCostAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

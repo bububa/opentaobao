@@ -9,11 +9,6 @@ import (
 // alibaba.ailabs.tmallgenie.sdk.device.issupportsdk
 //
 // 是否支持云回看新SDK
-func AlibabaAilabsTmallgenieSdkDeviceIssupportsdk(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIRequest, session string) (*tmallgenie.AlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIResponse, error) {
-	var resp tmallgenie.AlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAilabsTmallgenieSdkDeviceIssupportsdk(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIRequest, resp *tmallgenie.AlibabaAilabsTmallgenieSdkDeviceIssupportsdkAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

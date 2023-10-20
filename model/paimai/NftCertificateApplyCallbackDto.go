@@ -1,5 +1,9 @@
 package paimai
 
+import (
+	"sync"
+)
+
 // NftCertificateApplyCallbackDto 结构体
 type NftCertificateApplyCallbackDto struct {
 	// 业务ID申请证书编号时记录 回调传入
@@ -16,4 +20,27 @@ type NftCertificateApplyCallbackDto struct {
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// 证书颁发时间
 	CertificateReleaseTime string `json:"certificate_release_time,omitempty" xml:"certificate_release_time,omitempty"`
+}
+
+var poolNftCertificateApplyCallbackDto = sync.Pool{
+	New: func() any {
+		return new(NftCertificateApplyCallbackDto)
+	},
+}
+
+// GetNftCertificateApplyCallbackDto() 从对象池中获取NftCertificateApplyCallbackDto
+func GetNftCertificateApplyCallbackDto() *NftCertificateApplyCallbackDto {
+	return poolNftCertificateApplyCallbackDto.Get().(*NftCertificateApplyCallbackDto)
+}
+
+// ReleaseNftCertificateApplyCallbackDto 释放NftCertificateApplyCallbackDto
+func ReleaseNftCertificateApplyCallbackDto(v *NftCertificateApplyCallbackDto) {
+	v.BizOuterId = ""
+	v.CopyrightOwnerNumber = ""
+	v.CertificatePic = ""
+	v.CertificateNumber = ""
+	v.CopyrightOwnerName = ""
+	v.OuterId = ""
+	v.CertificateReleaseTime = ""
+	poolNftCertificateApplyCallbackDto.Put(v)
 }

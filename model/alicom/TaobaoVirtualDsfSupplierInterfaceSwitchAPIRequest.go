@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoVirtualDsfSupplierInterfaceSwitchAPIRequest struct {
 // NewTaobaoVirtualDsfSupplierInterfaceSwitchRequest 初始化TaobaoVirtualDsfSupplierInterfaceSwitchAPIRequest对象
 func NewTaobaoVirtualDsfSupplierInterfaceSwitchRequest() *TaobaoVirtualDsfSupplierInterfaceSwitchAPIRequest {
 	return &TaobaoVirtualDsfSupplierInterfaceSwitchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoVirtualDsfSupplierInterfaceSwitchAPIRequest) Reset() {
+	r._dsfSupplierSpuRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoVirtualDsfSupplierInterfaceSwitchAPIRequest) SetDsfSupplierSpuReq
 // GetDsfSupplierSpuRequest DsfSupplierSpuRequest Getter
 func (r TaobaoVirtualDsfSupplierInterfaceSwitchAPIRequest) GetDsfSupplierSpuRequest() *DsfSupplierSpuRequest {
 	return r._dsfSupplierSpuRequest
+}
+
+var poolTaobaoVirtualDsfSupplierInterfaceSwitchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoVirtualDsfSupplierInterfaceSwitchRequest()
+	},
+}
+
+// GetTaobaoVirtualDsfSupplierInterfaceSwitchRequest 从 sync.Pool 获取 TaobaoVirtualDsfSupplierInterfaceSwitchAPIRequest
+func GetTaobaoVirtualDsfSupplierInterfaceSwitchAPIRequest() *TaobaoVirtualDsfSupplierInterfaceSwitchAPIRequest {
+	return poolTaobaoVirtualDsfSupplierInterfaceSwitchAPIRequest.Get().(*TaobaoVirtualDsfSupplierInterfaceSwitchAPIRequest)
+}
+
+// ReleaseTaobaoVirtualDsfSupplierInterfaceSwitchAPIRequest 将 TaobaoVirtualDsfSupplierInterfaceSwitchAPIRequest 放入 sync.Pool
+func ReleaseTaobaoVirtualDsfSupplierInterfaceSwitchAPIRequest(v *TaobaoVirtualDsfSupplierInterfaceSwitchAPIRequest) {
+	v.Reset()
+	poolTaobaoVirtualDsfSupplierInterfaceSwitchAPIRequest.Put(v)
 }

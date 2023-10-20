@@ -9,11 +9,6 @@ import (
 // taobao.fenxiao.productcats.get
 //
 // 查询供应商的所有产品线数据。根据登陆用户来查询，不需要其他入参
-func TaobaoFenxiaoProductcatsGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductcatsGetAPIRequest, session string) (*fenxiao.TaobaoFenxiaoProductcatsGetAPIResponse, error) {
-	var resp fenxiao.TaobaoFenxiaoProductcatsGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFenxiaoProductcatsGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductcatsGetAPIRequest, resp *fenxiao.TaobaoFenxiaoProductcatsGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

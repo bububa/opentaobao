@@ -9,11 +9,6 @@ import (
 // alibaba.ssc.business.serviceprice.query
 //
 // 苹果查询服务供给报价
-func AlibabaSscBusinessServicepriceQuery(clt *core.SDKClient, req *tmallsc.AlibabaSscBusinessServicepriceQueryAPIRequest, session string) (*tmallsc.AlibabaSscBusinessServicepriceQueryAPIResponse, error) {
-	var resp tmallsc.AlibabaSscBusinessServicepriceQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaSscBusinessServicepriceQuery(clt *core.SDKClient, req *tmallsc.AlibabaSscBusinessServicepriceQueryAPIRequest, resp *tmallsc.AlibabaSscBusinessServicepriceQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

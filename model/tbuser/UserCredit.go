@@ -1,5 +1,9 @@
 package tbuser
 
+import (
+	"sync"
+)
+
 // UserCredit 结构体
 type UserCredit struct {
 	// 信用等级（是根据score生成的），信用等级：淘宝会员在淘宝网上的信用度，分为20个级别，级别如：level = 1 时，表示一心；level = 2 时，表示二心
@@ -10,4 +14,24 @@ type UserCredit struct {
 	TotalNum int64 `json:"total_num,omitempty" xml:"total_num,omitempty"`
 	// 收到的好评总条数。取值范围:大于零的整数
 	GoodNum int64 `json:"good_num,omitempty" xml:"good_num,omitempty"`
+}
+
+var poolUserCredit = sync.Pool{
+	New: func() any {
+		return new(UserCredit)
+	},
+}
+
+// GetUserCredit() 从对象池中获取UserCredit
+func GetUserCredit() *UserCredit {
+	return poolUserCredit.Get().(*UserCredit)
+}
+
+// ReleaseUserCredit 释放UserCredit
+func ReleaseUserCredit(v *UserCredit) {
+	v.Level = 0
+	v.Score = 0
+	v.TotalNum = 0
+	v.GoodNum = 0
+	poolUserCredit.Put(v)
 }

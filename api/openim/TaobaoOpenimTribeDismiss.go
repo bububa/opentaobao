@@ -9,11 +9,6 @@ import (
 // taobao.openim.tribe.dismiss
 //
 // OPENIM群解散
-func TaobaoOpenimTribeDismiss(clt *core.SDKClient, req *openim.TaobaoOpenimTribeDismissAPIRequest, session string) (*openim.TaobaoOpenimTribeDismissAPIResponse, error) {
-	var resp openim.TaobaoOpenimTribeDismissAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpenimTribeDismiss(clt *core.SDKClient, req *openim.TaobaoOpenimTribeDismissAPIRequest, resp *openim.TaobaoOpenimTribeDismissAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

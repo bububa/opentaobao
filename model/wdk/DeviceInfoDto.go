@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // DeviceInfoDto 结构体
 type DeviceInfoDto struct {
 	// 设备id
@@ -24,4 +28,31 @@ type DeviceInfoDto struct {
 	GroupId int64 `json:"group_id,omitempty" xml:"group_id,omitempty"`
 	// 分组中设备索引号
 	GroupDeviceIndex int64 `json:"group_device_index,omitempty" xml:"group_device_index,omitempty"`
+}
+
+var poolDeviceInfoDto = sync.Pool{
+	New: func() any {
+		return new(DeviceInfoDto)
+	},
+}
+
+// GetDeviceInfoDto() 从对象池中获取DeviceInfoDto
+func GetDeviceInfoDto() *DeviceInfoDto {
+	return poolDeviceInfoDto.Get().(*DeviceInfoDto)
+}
+
+// ReleaseDeviceInfoDto 释放DeviceInfoDto
+func ReleaseDeviceInfoDto(v *DeviceInfoDto) {
+	v.DeviceId = ""
+	v.DisplayName = ""
+	v.VendorName = ""
+	v.WarehouseCode = ""
+	v.PlateNumber = ""
+	v.DeviceType = 0
+	v.IsOnVehicle = 0
+	v.BusinessCode = 0
+	v.AreaCode = 0
+	v.GroupId = 0
+	v.GroupDeviceIndex = 0
+	poolDeviceInfoDto.Put(v)
 }

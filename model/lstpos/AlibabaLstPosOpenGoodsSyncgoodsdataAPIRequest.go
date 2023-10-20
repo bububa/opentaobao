@@ -2,6 +2,7 @@ package lstpos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest struct {
 // NewAlibabaLstPosOpenGoodsSyncgoodsdataRequest 初始化AlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest对象
 func NewAlibabaLstPosOpenGoodsSyncgoodsdataRequest() *AlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest {
 	return &AlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest) Reset() {
+	r._goodsDTOList = r._goodsDTOList[:0]
+	r._userId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest) SetUserId(_userId int64)
 // GetUserId UserId Getter
 func (r AlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest) GetUserId() int64 {
 	return r._userId
+}
+
+var poolAlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstPosOpenGoodsSyncgoodsdataRequest()
+	},
+}
+
+// GetAlibabaLstPosOpenGoodsSyncgoodsdataRequest 从 sync.Pool 获取 AlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest
+func GetAlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest() *AlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest {
+	return poolAlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest.Get().(*AlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest)
+}
+
+// ReleaseAlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest 将 AlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest(v *AlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest) {
+	v.Reset()
+	poolAlibabaLstPosOpenGoodsSyncgoodsdataAPIRequest.Put(v)
 }

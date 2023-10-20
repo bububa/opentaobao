@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drug.wxinfo.upload
 //
 // 小程序数据回传
-func AlibabaAlihealthDrugWxinfoUpload(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugWxinfoUploadAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugWxinfoUploadAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugWxinfoUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugWxinfoUpload(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugWxinfoUploadAPIRequest, resp *drugtrace.AlibabaAlihealthDrugWxinfoUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

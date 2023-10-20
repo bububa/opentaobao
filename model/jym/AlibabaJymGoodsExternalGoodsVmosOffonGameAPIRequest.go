@@ -2,6 +2,7 @@ package jym
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaJymGoodsExternalGoodsVmosOffonGameAPIRequest struct {
 // NewAlibabaJymGoodsExternalGoodsVmosOffonGameRequest 初始化AlibabaJymGoodsExternalGoodsVmosOffonGameAPIRequest对象
 func NewAlibabaJymGoodsExternalGoodsVmosOffonGameRequest() *AlibabaJymGoodsExternalGoodsVmosOffonGameAPIRequest {
 	return &AlibabaJymGoodsExternalGoodsVmosOffonGameAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaJymGoodsExternalGoodsVmosOffonGameAPIRequest) Reset() {
+	r._gameId = 0
+	r._offGame = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaJymGoodsExternalGoodsVmosOffonGameAPIRequest) SetOffGame(_offGam
 // GetOffGame OffGame Getter
 func (r AlibabaJymGoodsExternalGoodsVmosOffonGameAPIRequest) GetOffGame() bool {
 	return r._offGame
+}
+
+var poolAlibabaJymGoodsExternalGoodsVmosOffonGameAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaJymGoodsExternalGoodsVmosOffonGameRequest()
+	},
+}
+
+// GetAlibabaJymGoodsExternalGoodsVmosOffonGameRequest 从 sync.Pool 获取 AlibabaJymGoodsExternalGoodsVmosOffonGameAPIRequest
+func GetAlibabaJymGoodsExternalGoodsVmosOffonGameAPIRequest() *AlibabaJymGoodsExternalGoodsVmosOffonGameAPIRequest {
+	return poolAlibabaJymGoodsExternalGoodsVmosOffonGameAPIRequest.Get().(*AlibabaJymGoodsExternalGoodsVmosOffonGameAPIRequest)
+}
+
+// ReleaseAlibabaJymGoodsExternalGoodsVmosOffonGameAPIRequest 将 AlibabaJymGoodsExternalGoodsVmosOffonGameAPIRequest 放入 sync.Pool
+func ReleaseAlibabaJymGoodsExternalGoodsVmosOffonGameAPIRequest(v *AlibabaJymGoodsExternalGoodsVmosOffonGameAPIRequest) {
+	v.Reset()
+	poolAlibabaJymGoodsExternalGoodsVmosOffonGameAPIRequest.Put(v)
 }

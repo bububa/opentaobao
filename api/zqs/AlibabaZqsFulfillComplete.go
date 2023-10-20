@@ -9,11 +9,6 @@ import (
 // alibaba.zqs.fulfill.complete
 //
 // 周期购履约完成接口
-func AlibabaZqsFulfillComplete(clt *core.SDKClient, req *zqs.AlibabaZqsFulfillCompleteAPIRequest, session string) (*zqs.AlibabaZqsFulfillCompleteAPIResponse, error) {
-	var resp zqs.AlibabaZqsFulfillCompleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaZqsFulfillComplete(clt *core.SDKClient, req *zqs.AlibabaZqsFulfillCompleteAPIRequest, resp *zqs.AlibabaZqsFulfillCompleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

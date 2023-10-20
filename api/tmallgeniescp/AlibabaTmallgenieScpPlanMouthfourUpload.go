@@ -9,11 +9,6 @@ import (
 // alibaba.tmallgenie.scp.plan.mouthfour.upload
 //
 // M+4 PR 回传接口
-func AlibabaTmallgenieScpPlanMouthfourUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanMouthfourUploadAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanMouthfourUploadAPIResponse, error) {
-	var resp tmallgeniescp.AlibabaTmallgenieScpPlanMouthfourUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTmallgenieScpPlanMouthfourUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanMouthfourUploadAPIRequest, resp *tmallgeniescp.AlibabaTmallgenieScpPlanMouthfourUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

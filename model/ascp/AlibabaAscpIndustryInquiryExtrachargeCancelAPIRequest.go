@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpIndustryInquiryExtrachargeCancelAPIRequest struct {
 // NewAlibabaAscpIndustryInquiryExtrachargeCancelRequest 初始化AlibabaAscpIndustryInquiryExtrachargeCancelAPIRequest对象
 func NewAlibabaAscpIndustryInquiryExtrachargeCancelRequest() *AlibabaAscpIndustryInquiryExtrachargeCancelAPIRequest {
 	return &AlibabaAscpIndustryInquiryExtrachargeCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpIndustryInquiryExtrachargeCancelAPIRequest) Reset() {
+	r._omsCancelExtraChargeParameter = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpIndustryInquiryExtrachargeCancelAPIRequest) SetOmsCancelExtr
 // GetOmsCancelExtraChargeParameter OmsCancelExtraChargeParameter Getter
 func (r AlibabaAscpIndustryInquiryExtrachargeCancelAPIRequest) GetOmsCancelExtraChargeParameter() *OmsCancelExtraChargeParameter {
 	return r._omsCancelExtraChargeParameter
+}
+
+var poolAlibabaAscpIndustryInquiryExtrachargeCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpIndustryInquiryExtrachargeCancelRequest()
+	},
+}
+
+// GetAlibabaAscpIndustryInquiryExtrachargeCancelRequest 从 sync.Pool 获取 AlibabaAscpIndustryInquiryExtrachargeCancelAPIRequest
+func GetAlibabaAscpIndustryInquiryExtrachargeCancelAPIRequest() *AlibabaAscpIndustryInquiryExtrachargeCancelAPIRequest {
+	return poolAlibabaAscpIndustryInquiryExtrachargeCancelAPIRequest.Get().(*AlibabaAscpIndustryInquiryExtrachargeCancelAPIRequest)
+}
+
+// ReleaseAlibabaAscpIndustryInquiryExtrachargeCancelAPIRequest 将 AlibabaAscpIndustryInquiryExtrachargeCancelAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpIndustryInquiryExtrachargeCancelAPIRequest(v *AlibabaAscpIndustryInquiryExtrachargeCancelAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpIndustryInquiryExtrachargeCancelAPIRequest.Put(v)
 }

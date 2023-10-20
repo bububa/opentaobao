@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAilabsTmallgenieThirdTelecomPushrenderAPIRequest struct {
 // NewAlibabaAilabsTmallgenieThirdTelecomPushrenderRequest 初始化AlibabaAilabsTmallgenieThirdTelecomPushrenderAPIRequest对象
 func NewAlibabaAilabsTmallgenieThirdTelecomPushrenderRequest() *AlibabaAilabsTmallgenieThirdTelecomPushrenderAPIRequest {
 	return &AlibabaAilabsTmallgenieThirdTelecomPushrenderAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsTmallgenieThirdTelecomPushrenderAPIRequest) Reset() {
+	r._ctei = ""
+	r._url = ""
+	r._params = ""
+	r._model = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAilabsTmallgenieThirdTelecomPushrenderAPIRequest) SetModel(_mode
 // GetModel Model Getter
 func (r AlibabaAilabsTmallgenieThirdTelecomPushrenderAPIRequest) GetModel() string {
 	return r._model
+}
+
+var poolAlibabaAilabsTmallgenieThirdTelecomPushrenderAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsTmallgenieThirdTelecomPushrenderRequest()
+	},
+}
+
+// GetAlibabaAilabsTmallgenieThirdTelecomPushrenderRequest 从 sync.Pool 获取 AlibabaAilabsTmallgenieThirdTelecomPushrenderAPIRequest
+func GetAlibabaAilabsTmallgenieThirdTelecomPushrenderAPIRequest() *AlibabaAilabsTmallgenieThirdTelecomPushrenderAPIRequest {
+	return poolAlibabaAilabsTmallgenieThirdTelecomPushrenderAPIRequest.Get().(*AlibabaAilabsTmallgenieThirdTelecomPushrenderAPIRequest)
+}
+
+// ReleaseAlibabaAilabsTmallgenieThirdTelecomPushrenderAPIRequest 将 AlibabaAilabsTmallgenieThirdTelecomPushrenderAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsTmallgenieThirdTelecomPushrenderAPIRequest(v *AlibabaAilabsTmallgenieThirdTelecomPushrenderAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsTmallgenieThirdTelecomPushrenderAPIRequest.Put(v)
 }

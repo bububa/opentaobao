@@ -2,6 +2,7 @@ package alilabs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAilabUserTokenGetAPIRequest struct {
 // NewAlibabaAilabUserTokenGetRequest 初始化AlibabaAilabUserTokenGetAPIRequest对象
 func NewAlibabaAilabUserTokenGetRequest() *AlibabaAilabUserTokenGetAPIRequest {
 	return &AlibabaAilabUserTokenGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabUserTokenGetAPIRequest) Reset() {
+	r._merchantUserId = ""
+	r._schemaKey = ""
+	r._callBackUrl = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAilabUserTokenGetAPIRequest) SetCallBackUrl(_callBackUrl string)
 // GetCallBackUrl CallBackUrl Getter
 func (r AlibabaAilabUserTokenGetAPIRequest) GetCallBackUrl() string {
 	return r._callBackUrl
+}
+
+var poolAlibabaAilabUserTokenGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabUserTokenGetRequest()
+	},
+}
+
+// GetAlibabaAilabUserTokenGetRequest 从 sync.Pool 获取 AlibabaAilabUserTokenGetAPIRequest
+func GetAlibabaAilabUserTokenGetAPIRequest() *AlibabaAilabUserTokenGetAPIRequest {
+	return poolAlibabaAilabUserTokenGetAPIRequest.Get().(*AlibabaAilabUserTokenGetAPIRequest)
+}
+
+// ReleaseAlibabaAilabUserTokenGetAPIRequest 将 AlibabaAilabUserTokenGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabUserTokenGetAPIRequest(v *AlibabaAilabUserTokenGetAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabUserTokenGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaEinvoiceFlowTaxCreateAPIResponse struct {
 	AlibabaEinvoiceFlowTaxCreateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaEinvoiceFlowTaxCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaEinvoiceFlowTaxCreateAPIResponseModel).Reset()
+}
+
 // AlibabaEinvoiceFlowTaxCreateAPIResponseModel is 创建税控开通工单 成功返回结果
 type AlibabaEinvoiceFlowTaxCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_einvoice_flow_tax_create_response"`
@@ -22,4 +29,27 @@ type AlibabaEinvoiceFlowTaxCreateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 工单ID，发票中台生成
 	FlowId string `json:"flow_id,omitempty" xml:"flow_id,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaEinvoiceFlowTaxCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.FlowId = ""
+}
+
+var poolAlibabaEinvoiceFlowTaxCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaEinvoiceFlowTaxCreateAPIResponse)
+	},
+}
+
+// GetAlibabaEinvoiceFlowTaxCreateAPIResponse 从 sync.Pool 获取 AlibabaEinvoiceFlowTaxCreateAPIResponse
+func GetAlibabaEinvoiceFlowTaxCreateAPIResponse() *AlibabaEinvoiceFlowTaxCreateAPIResponse {
+	return poolAlibabaEinvoiceFlowTaxCreateAPIResponse.Get().(*AlibabaEinvoiceFlowTaxCreateAPIResponse)
+}
+
+// ReleaseAlibabaEinvoiceFlowTaxCreateAPIResponse 将 AlibabaEinvoiceFlowTaxCreateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaEinvoiceFlowTaxCreateAPIResponse(v *AlibabaEinvoiceFlowTaxCreateAPIResponse) {
+	v.Reset()
+	poolAlibabaEinvoiceFlowTaxCreateAPIResponse.Put(v)
 }

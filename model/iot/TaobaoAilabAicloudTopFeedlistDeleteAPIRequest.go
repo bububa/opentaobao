@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoAilabAicloudTopFeedlistDeleteAPIRequest struct {
 // NewTaobaoAilabAicloudTopFeedlistDeleteRequest 初始化TaobaoAilabAicloudTopFeedlistDeleteAPIRequest对象
 func NewTaobaoAilabAicloudTopFeedlistDeleteRequest() *TaobaoAilabAicloudTopFeedlistDeleteAPIRequest {
 	return &TaobaoAilabAicloudTopFeedlistDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopFeedlistDeleteAPIRequest) Reset() {
+	r._ext = ""
+	r._schema = ""
+	r._userId = ""
+	r._utdId = ""
+	r._sentenceId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoAilabAicloudTopFeedlistDeleteAPIRequest) SetSentenceId(_sentenceI
 // GetSentenceId SentenceId Getter
 func (r TaobaoAilabAicloudTopFeedlistDeleteAPIRequest) GetSentenceId() string {
 	return r._sentenceId
+}
+
+var poolTaobaoAilabAicloudTopFeedlistDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopFeedlistDeleteRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopFeedlistDeleteRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopFeedlistDeleteAPIRequest
+func GetTaobaoAilabAicloudTopFeedlistDeleteAPIRequest() *TaobaoAilabAicloudTopFeedlistDeleteAPIRequest {
+	return poolTaobaoAilabAicloudTopFeedlistDeleteAPIRequest.Get().(*TaobaoAilabAicloudTopFeedlistDeleteAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopFeedlistDeleteAPIRequest 将 TaobaoAilabAicloudTopFeedlistDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopFeedlistDeleteAPIRequest(v *TaobaoAilabAicloudTopFeedlistDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopFeedlistDeleteAPIRequest.Put(v)
 }

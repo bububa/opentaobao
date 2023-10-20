@@ -1,5 +1,9 @@
 package icbuseller
 
+import (
+	"sync"
+)
+
 // QueryTradeDto 结构体
 type QueryTradeDto struct {
 	// 服务code列表
@@ -30,4 +34,34 @@ type QueryTradeDto struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 是否展示
 	IsDisplay bool `json:"is_display,omitempty" xml:"is_display,omitempty"`
+}
+
+var poolQueryTradeDto = sync.Pool{
+	New: func() any {
+		return new(QueryTradeDto)
+	},
+}
+
+// GetQueryTradeDto() 从对象池中获取QueryTradeDto
+func GetQueryTradeDto() *QueryTradeDto {
+	return poolQueryTradeDto.Get().(*QueryTradeDto)
+}
+
+// ReleaseQueryTradeDto 释放QueryTradeDto
+func ReleaseQueryTradeDto(v *QueryTradeDto) {
+	v.ServiceCode = v.ServiceCode[:0]
+	v.TradeIds = v.TradeIds[:0]
+	v.OrderNos = v.OrderNos[:0]
+	v.Status = v.Status[:0]
+	v.FireTimeStart = ""
+	v.CreateTimeEnd = ""
+	v.CreateTimeStart = ""
+	v.FireTimeEnd = ""
+	v.OffSet = 0
+	v.Length = 0
+	v.BuyerAliId = 0
+	v.Page = 0
+	v.PageSize = 0
+	v.IsDisplay = false
+	poolQueryTradeDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OrderDetailFee 结构体
 type OrderDetailFee struct {
 	// 众包呼单费
@@ -26,4 +30,32 @@ type OrderDetailFee struct {
 	PayChannelFee string `json:"pay_channel_fee,omitempty" xml:"pay_channel_fee,omitempty"`
 	// 渠道费率
 	PayChannelRate string `json:"pay_channel_rate,omitempty" xml:"pay_channel_rate,omitempty"`
+}
+
+var poolOrderDetailFee = sync.Pool{
+	New: func() any {
+		return new(OrderDetailFee)
+	},
+}
+
+// GetOrderDetailFee() 从对象池中获取OrderDetailFee
+func GetOrderDetailFee() *OrderDetailFee {
+	return poolOrderDetailFee.Get().(*OrderDetailFee)
+}
+
+// ReleaseOrderDetailFee 释放OrderDetailFee
+func ReleaseOrderDetailFee(v *OrderDetailFee) {
+	v.ZhongbaoCallFee = ""
+	v.ColdBoxFee = ""
+	v.UserFee = ""
+	v.Commission = ""
+	v.AgentRate = ""
+	v.PlatformRate = ""
+	v.ShopRate = ""
+	v.SendFee = ""
+	v.PackageFee = ""
+	v.ProductFee = ""
+	v.PayChannelFee = ""
+	v.PayChannelRate = ""
+	poolOrderDetailFee.Put(v)
 }

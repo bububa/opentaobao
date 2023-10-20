@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallItemHscodeDetailGetAPIRequest struct {
 // NewTmallItemHscodeDetailGetRequest 初始化TmallItemHscodeDetailGetAPIRequest对象
 func NewTmallItemHscodeDetailGetRequest() *TmallItemHscodeDetailGetAPIRequest {
 	return &TmallItemHscodeDetailGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallItemHscodeDetailGetAPIRequest) Reset() {
+	r._hscode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallItemHscodeDetailGetAPIRequest) SetHscode(_hscode string) error {
 // GetHscode Hscode Getter
 func (r TmallItemHscodeDetailGetAPIRequest) GetHscode() string {
 	return r._hscode
+}
+
+var poolTmallItemHscodeDetailGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallItemHscodeDetailGetRequest()
+	},
+}
+
+// GetTmallItemHscodeDetailGetRequest 从 sync.Pool 获取 TmallItemHscodeDetailGetAPIRequest
+func GetTmallItemHscodeDetailGetAPIRequest() *TmallItemHscodeDetailGetAPIRequest {
+	return poolTmallItemHscodeDetailGetAPIRequest.Get().(*TmallItemHscodeDetailGetAPIRequest)
+}
+
+// ReleaseTmallItemHscodeDetailGetAPIRequest 将 TmallItemHscodeDetailGetAPIRequest 放入 sync.Pool
+func ReleaseTmallItemHscodeDetailGetAPIRequest(v *TmallItemHscodeDetailGetAPIRequest) {
+	v.Reset()
+	poolTmallItemHscodeDetailGetAPIRequest.Put(v)
 }

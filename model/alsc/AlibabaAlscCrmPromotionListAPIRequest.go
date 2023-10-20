@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscCrmPromotionListAPIRequest struct {
 // NewAlibabaAlscCrmPromotionListRequest 初始化AlibabaAlscCrmPromotionListAPIRequest对象
 func NewAlibabaAlscCrmPromotionListRequest() *AlibabaAlscCrmPromotionListAPIRequest {
 	return &AlibabaAlscCrmPromotionListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscCrmPromotionListAPIRequest) Reset() {
+	r._promotionFacadeOpenReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscCrmPromotionListAPIRequest) SetPromotionFacadeOpenReq(_promo
 // GetPromotionFacadeOpenReq PromotionFacadeOpenReq Getter
 func (r AlibabaAlscCrmPromotionListAPIRequest) GetPromotionFacadeOpenReq() *PromotionFacadeOpenReq {
 	return r._promotionFacadeOpenReq
+}
+
+var poolAlibabaAlscCrmPromotionListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscCrmPromotionListRequest()
+	},
+}
+
+// GetAlibabaAlscCrmPromotionListRequest 从 sync.Pool 获取 AlibabaAlscCrmPromotionListAPIRequest
+func GetAlibabaAlscCrmPromotionListAPIRequest() *AlibabaAlscCrmPromotionListAPIRequest {
+	return poolAlibabaAlscCrmPromotionListAPIRequest.Get().(*AlibabaAlscCrmPromotionListAPIRequest)
+}
+
+// ReleaseAlibabaAlscCrmPromotionListAPIRequest 将 AlibabaAlscCrmPromotionListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscCrmPromotionListAPIRequest(v *AlibabaAlscCrmPromotionListAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscCrmPromotionListAPIRequest.Put(v)
 }

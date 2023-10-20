@@ -2,6 +2,7 @@ package aecreatives
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AliexpressAffiliateFeaturedpromoGetAPIRequest struct {
 // NewAliexpressAffiliateFeaturedpromoGetRequest 初始化AliexpressAffiliateFeaturedpromoGetAPIRequest对象
 func NewAliexpressAffiliateFeaturedpromoGetRequest() *AliexpressAffiliateFeaturedpromoGetAPIRequest {
 	return &AliexpressAffiliateFeaturedpromoGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressAffiliateFeaturedpromoGetAPIRequest) Reset() {
+	r._appSignature = ""
+	r._fields = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AliexpressAffiliateFeaturedpromoGetAPIRequest) SetFields(_fields string
 // GetFields Fields Getter
 func (r AliexpressAffiliateFeaturedpromoGetAPIRequest) GetFields() string {
 	return r._fields
+}
+
+var poolAliexpressAffiliateFeaturedpromoGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressAffiliateFeaturedpromoGetRequest()
+	},
+}
+
+// GetAliexpressAffiliateFeaturedpromoGetRequest 从 sync.Pool 获取 AliexpressAffiliateFeaturedpromoGetAPIRequest
+func GetAliexpressAffiliateFeaturedpromoGetAPIRequest() *AliexpressAffiliateFeaturedpromoGetAPIRequest {
+	return poolAliexpressAffiliateFeaturedpromoGetAPIRequest.Get().(*AliexpressAffiliateFeaturedpromoGetAPIRequest)
+}
+
+// ReleaseAliexpressAffiliateFeaturedpromoGetAPIRequest 将 AliexpressAffiliateFeaturedpromoGetAPIRequest 放入 sync.Pool
+func ReleaseAliexpressAffiliateFeaturedpromoGetAPIRequest(v *AliexpressAffiliateFeaturedpromoGetAPIRequest) {
+	v.Reset()
+	poolAliexpressAffiliateFeaturedpromoGetAPIRequest.Put(v)
 }

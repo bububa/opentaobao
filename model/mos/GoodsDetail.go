@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // GoodsDetail 结构体
 type GoodsDetail struct {
 	// 商户自有的专柜号
@@ -16,4 +20,27 @@ type GoodsDetail struct {
 	Price string `json:"price,omitempty" xml:"price,omitempty"`
 	// 商品数量，支持小数
 	Quantity string `json:"quantity,omitempty" xml:"quantity,omitempty"`
+}
+
+var poolGoodsDetail = sync.Pool{
+	New: func() any {
+		return new(GoodsDetail)
+	},
+}
+
+// GetGoodsDetail() 从对象池中获取GoodsDetail
+func GetGoodsDetail() *GoodsDetail {
+	return poolGoodsDetail.Get().(*GoodsDetail)
+}
+
+// ReleaseGoodsDetail 释放GoodsDetail
+func ReleaseGoodsDetail(v *GoodsDetail) {
+	v.ShopNo = ""
+	v.ShopName = ""
+	v.GoodsId = ""
+	v.GoodsName = ""
+	v.Amount = ""
+	v.Price = ""
+	v.Quantity = ""
+	poolGoodsDetail.Put(v)
 }

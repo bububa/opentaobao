@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripBtripApplySearchAPIResponse struct {
 	AlitripBtripApplySearchAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripBtripApplySearchAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripBtripApplySearchAPIResponseModel).Reset()
+}
+
 // AlitripBtripApplySearchAPIResponseModel is 搜索审批单 成功返回结果
 type AlitripBtripApplySearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_apply_search_response"`
@@ -22,4 +29,27 @@ type AlitripBtripApplySearchAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *BtriphomeResultSupport `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripBtripApplySearchAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlitripBtripApplySearchAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripBtripApplySearchAPIResponse)
+	},
+}
+
+// GetAlitripBtripApplySearchAPIResponse 从 sync.Pool 获取 AlitripBtripApplySearchAPIResponse
+func GetAlitripBtripApplySearchAPIResponse() *AlitripBtripApplySearchAPIResponse {
+	return poolAlitripBtripApplySearchAPIResponse.Get().(*AlitripBtripApplySearchAPIResponse)
+}
+
+// ReleaseAlitripBtripApplySearchAPIResponse 将 AlitripBtripApplySearchAPIResponse 保存到 sync.Pool
+func ReleaseAlitripBtripApplySearchAPIResponse(v *AlitripBtripApplySearchAPIResponse) {
+	v.Reset()
+	poolAlitripBtripApplySearchAPIResponse.Put(v)
 }

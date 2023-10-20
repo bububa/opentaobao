@@ -2,6 +2,7 @@ package brandhub
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoBrandStartshopRptCampaignGetAPIResponse struct {
 	TaobaoBrandStartshopRptCampaignGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoBrandStartshopRptCampaignGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoBrandStartshopRptCampaignGetAPIResponseModel).Reset()
+}
+
 // TaobaoBrandStartshopRptCampaignGetAPIResponseModel is 明星店铺推广计划报表数据查询 成功返回结果
 type TaobaoBrandStartshopRptCampaignGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"brand_startshop_rpt_campaign_get_response"`
@@ -24,4 +31,28 @@ type TaobaoBrandStartshopRptCampaignGetAPIResponseModel struct {
 	CampaignRptList []TaobaoBrandStartshopRptCampaignGetResult `json:"campaign_rpt_list,omitempty" xml:"campaign_rpt_list>taobao_brand_startshop_rpt_campaign_get_result,omitempty"`
 	// 错误信息
 	ErrorParam string `json:"error_param,omitempty" xml:"error_param,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoBrandStartshopRptCampaignGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.CampaignRptList = m.CampaignRptList[:0]
+	m.ErrorParam = ""
+}
+
+var poolTaobaoBrandStartshopRptCampaignGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoBrandStartshopRptCampaignGetAPIResponse)
+	},
+}
+
+// GetTaobaoBrandStartshopRptCampaignGetAPIResponse 从 sync.Pool 获取 TaobaoBrandStartshopRptCampaignGetAPIResponse
+func GetTaobaoBrandStartshopRptCampaignGetAPIResponse() *TaobaoBrandStartshopRptCampaignGetAPIResponse {
+	return poolTaobaoBrandStartshopRptCampaignGetAPIResponse.Get().(*TaobaoBrandStartshopRptCampaignGetAPIResponse)
+}
+
+// ReleaseTaobaoBrandStartshopRptCampaignGetAPIResponse 将 TaobaoBrandStartshopRptCampaignGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoBrandStartshopRptCampaignGetAPIResponse(v *TaobaoBrandStartshopRptCampaignGetAPIResponse) {
+	v.Reset()
+	poolTaobaoBrandStartshopRptCampaignGetAPIResponse.Put(v)
 }

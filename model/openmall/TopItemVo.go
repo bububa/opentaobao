@@ -1,5 +1,9 @@
 package openmall
 
+import (
+	"sync"
+)
+
 // TopItemVo 结构体
 type TopItemVo struct {
 	// 商品图片
@@ -52,4 +56,45 @@ type TopItemVo struct {
 	IsVirtual bool `json:"is_virtual,omitempty" xml:"is_virtual,omitempty"`
 	// 是否区域限购。值为true时，通过taobao.openmall.item.salearea.get获取商品可销售区域；值为false时，该商品所有区域都可销售。
 	AreaLimit bool `json:"area_limit,omitempty" xml:"area_limit,omitempty"`
+}
+
+var poolTopItemVo = sync.Pool{
+	New: func() any {
+		return new(TopItemVo)
+	},
+}
+
+// GetTopItemVo() 从对象池中获取TopItemVo
+func GetTopItemVo() *TopItemVo {
+	return poolTopItemVo.Get().(*TopItemVo)
+}
+
+// ReleaseTopItemVo 释放TopItemVo
+func ReleaseTopItemVo(v *TopItemVo) {
+	v.ItemImages = v.ItemImages[:0]
+	v.Postages = v.Postages[:0]
+	v.PropertyImages = v.PropertyImages[:0]
+	v.Skus = v.Skus[:0]
+	v.City = ""
+	v.CostPrice = ""
+	v.Description = ""
+	v.ItemVideos = ""
+	v.PicUrl = ""
+	v.ItemProperties = ""
+	v.Prov = ""
+	v.Size = ""
+	v.Title = ""
+	v.Weight = ""
+	v.PropertyAlias = ""
+	v.ShopName = ""
+	v.SupportErpHold = ""
+	v.CategoryId = 0
+	v.ItemId = 0
+	v.Quantity = 0
+	v.ItemStatus = 0
+	v.Popularity = 0
+	v.Status = 0
+	v.IsVirtual = false
+	v.AreaLimit = false
+	poolTopItemVo.Put(v)
 }

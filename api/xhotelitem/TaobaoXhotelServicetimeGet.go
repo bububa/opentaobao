@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.servicetime.get
 //
 // 通过实体来获取对应的服务时间数据
-func TaobaoXhotelServicetimeGet(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelServicetimeGetAPIRequest, session string) (*xhotelitem.TaobaoXhotelServicetimeGetAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelServicetimeGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelServicetimeGet(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelServicetimeGetAPIRequest, resp *xhotelitem.TaobaoXhotelServicetimeGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

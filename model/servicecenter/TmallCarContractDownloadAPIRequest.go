@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -22,8 +23,15 @@ type TmallCarContractDownloadAPIRequest struct {
 // NewTmallCarContractDownloadRequest 初始化TmallCarContractDownloadAPIRequest对象
 func NewTmallCarContractDownloadRequest() *TmallCarContractDownloadAPIRequest {
 	return &TmallCarContractDownloadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCarContractDownloadAPIRequest) Reset() {
+	r._orderId = 0
+	r._html = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -67,4 +75,21 @@ func (r *TmallCarContractDownloadAPIRequest) SetHtml(_html bool) error {
 // GetHtml Html Getter
 func (r TmallCarContractDownloadAPIRequest) GetHtml() bool {
 	return r._html
+}
+
+var poolTmallCarContractDownloadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCarContractDownloadRequest()
+	},
+}
+
+// GetTmallCarContractDownloadRequest 从 sync.Pool 获取 TmallCarContractDownloadAPIRequest
+func GetTmallCarContractDownloadAPIRequest() *TmallCarContractDownloadAPIRequest {
+	return poolTmallCarContractDownloadAPIRequest.Get().(*TmallCarContractDownloadAPIRequest)
+}
+
+// ReleaseTmallCarContractDownloadAPIRequest 将 TmallCarContractDownloadAPIRequest 放入 sync.Pool
+func ReleaseTmallCarContractDownloadAPIRequest(v *TmallCarContractDownloadAPIRequest) {
+	v.Reset()
+	poolTmallCarContractDownloadAPIRequest.Put(v)
 }

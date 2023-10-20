@@ -9,11 +9,6 @@ import (
 // taobao.jst.interactive.activity.query
 //
 // 互动任务活动查询接口
-func TaobaoJstInteractiveActivityQuery(clt *core.SDKClient, req *jstinteractive.TaobaoJstInteractiveActivityQueryAPIRequest, session string) (*jstinteractive.TaobaoJstInteractiveActivityQueryAPIResponse, error) {
-	var resp jstinteractive.TaobaoJstInteractiveActivityQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoJstInteractiveActivityQuery(clt *core.SDKClient, req *jstinteractive.TaobaoJstInteractiveActivityQueryAPIRequest, resp *jstinteractive.TaobaoJstInteractiveActivityQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

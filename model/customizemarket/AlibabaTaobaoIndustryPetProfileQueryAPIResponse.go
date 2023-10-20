@@ -2,6 +2,7 @@ package customizemarket
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaTaobaoIndustryPetProfileQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaTaobaoIndustryPetProfileQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaTaobaoIndustryPetProfileQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaTaobaoIndustryPetProfileQueryAPIResponseModel).Reset()
 }
 
 // AlibabaTaobaoIndustryPetProfileQueryAPIResponseModel is 用户宠物列表查询 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaTaobaoIndustryPetProfileQueryAPIResponseModel struct {
 	Object *BasePageBean `json:"object,omitempty" xml:"object,omitempty"`
 	// 是否成功
 	ResultStatus bool `json:"result_status,omitempty" xml:"result_status,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaTaobaoIndustryPetProfileQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgInfo = ""
+	m.MsgCode = ""
+	m.Object = nil
+	m.ResultStatus = false
+}
+
+var poolAlibabaTaobaoIndustryPetProfileQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaTaobaoIndustryPetProfileQueryAPIResponse)
+	},
+}
+
+// GetAlibabaTaobaoIndustryPetProfileQueryAPIResponse 从 sync.Pool 获取 AlibabaTaobaoIndustryPetProfileQueryAPIResponse
+func GetAlibabaTaobaoIndustryPetProfileQueryAPIResponse() *AlibabaTaobaoIndustryPetProfileQueryAPIResponse {
+	return poolAlibabaTaobaoIndustryPetProfileQueryAPIResponse.Get().(*AlibabaTaobaoIndustryPetProfileQueryAPIResponse)
+}
+
+// ReleaseAlibabaTaobaoIndustryPetProfileQueryAPIResponse 将 AlibabaTaobaoIndustryPetProfileQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaTaobaoIndustryPetProfileQueryAPIResponse(v *AlibabaTaobaoIndustryPetProfileQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaTaobaoIndustryPetProfileQueryAPIResponse.Put(v)
 }

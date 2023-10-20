@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoWlbWaybillICancelAPIResponse struct {
 	TaobaoWlbWaybillICancelAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoWlbWaybillICancelAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoWlbWaybillICancelAPIResponseModel).Reset()
+}
+
 // TaobaoWlbWaybillICancelAPIResponseModel is 商家取消获取的电子面单号v1.0 成功返回结果
 type TaobaoWlbWaybillICancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_waybill_i_cancel_response"`
@@ -22,4 +29,27 @@ type TaobaoWlbWaybillICancelAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 调用取消是否成功
 	CancelResult bool `json:"cancel_result,omitempty" xml:"cancel_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoWlbWaybillICancelAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.CancelResult = false
+}
+
+var poolTaobaoWlbWaybillICancelAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoWlbWaybillICancelAPIResponse)
+	},
+}
+
+// GetTaobaoWlbWaybillICancelAPIResponse 从 sync.Pool 获取 TaobaoWlbWaybillICancelAPIResponse
+func GetTaobaoWlbWaybillICancelAPIResponse() *TaobaoWlbWaybillICancelAPIResponse {
+	return poolTaobaoWlbWaybillICancelAPIResponse.Get().(*TaobaoWlbWaybillICancelAPIResponse)
+}
+
+// ReleaseTaobaoWlbWaybillICancelAPIResponse 将 TaobaoWlbWaybillICancelAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoWlbWaybillICancelAPIResponse(v *TaobaoWlbWaybillICancelAPIResponse) {
+	v.Reset()
+	poolTaobaoWlbWaybillICancelAPIResponse.Put(v)
 }

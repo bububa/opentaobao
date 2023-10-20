@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaGspSupplyImageUploadAPIRequest struct {
 // NewAlibabaGspSupplyImageUploadRequest 初始化AlibabaGspSupplyImageUploadAPIRequest对象
 func NewAlibabaGspSupplyImageUploadRequest() *AlibabaGspSupplyImageUploadAPIRequest {
 	return &AlibabaGspSupplyImageUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaGspSupplyImageUploadAPIRequest) Reset() {
+	r._fileName = ""
+	r._fileContent = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaGspSupplyImageUploadAPIRequest) SetFileContent(_fileContent *mod
 // GetFileContent FileContent Getter
 func (r AlibabaGspSupplyImageUploadAPIRequest) GetFileContent() *model.File {
 	return r._fileContent
+}
+
+var poolAlibabaGspSupplyImageUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaGspSupplyImageUploadRequest()
+	},
+}
+
+// GetAlibabaGspSupplyImageUploadRequest 从 sync.Pool 获取 AlibabaGspSupplyImageUploadAPIRequest
+func GetAlibabaGspSupplyImageUploadAPIRequest() *AlibabaGspSupplyImageUploadAPIRequest {
+	return poolAlibabaGspSupplyImageUploadAPIRequest.Get().(*AlibabaGspSupplyImageUploadAPIRequest)
+}
+
+// ReleaseAlibabaGspSupplyImageUploadAPIRequest 将 AlibabaGspSupplyImageUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaGspSupplyImageUploadAPIRequest(v *AlibabaGspSupplyImageUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaGspSupplyImageUploadAPIRequest.Put(v)
 }

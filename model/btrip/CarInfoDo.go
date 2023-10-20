@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // CarInfoDo 结构体
 type CarInfoDo struct {
 	// 预订出发地
@@ -36,4 +40,37 @@ type CarInfoDo struct {
 	TravelDistance string `json:"travel_distance,omitempty" xml:"travel_distance,omitempty"`
 	// 2:滴滴出行 8:滴滴出行 100087:滴滴出行 100000:滴滴出行 100003:曹操出行 3:曹操出行 100085:曹操出行 100007:阳光出行 5:阳光出行 0：其他
 	Provider int64 `json:"provider,omitempty" xml:"provider,omitempty"`
+}
+
+var poolCarInfoDo = sync.Pool{
+	New: func() any {
+		return new(CarInfoDo)
+	},
+}
+
+// GetCarInfoDo() 从对象池中获取CarInfoDo
+func GetCarInfoDo() *CarInfoDo {
+	return poolCarInfoDo.Get().(*CarInfoDo)
+}
+
+// ReleaseCarInfoDo 释放CarInfoDo
+func ReleaseCarInfoDo(v *CarInfoDo) {
+	v.FromAddr = ""
+	v.ToAddr = ""
+	v.FromCityName = ""
+	v.ToCityName = ""
+	v.RealFromAddr = ""
+	v.RealToAddr = ""
+	v.RealFromCityName = ""
+	v.RealToCityName = ""
+	v.ProviderName = ""
+	v.Memo = ""
+	v.CarLevel = ""
+	v.CarInfo = ""
+	v.PublishTime = ""
+	v.TakenTime = ""
+	v.DriverConfirmTime = ""
+	v.TravelDistance = ""
+	v.Provider = 0
+	poolCarInfoDo.Put(v)
 }

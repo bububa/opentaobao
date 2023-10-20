@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // TopDpOrderDo 结构体
 type TopDpOrderDo struct {
 	// ISV自定义key，通过taobao.fenxiao.order.customfield.update 写入。目前禁用
@@ -90,4 +94,64 @@ type TopDpOrderDo struct {
 	Receiver *TopReceiverDo `json:"receiver,omitempty" xml:"receiver,omitempty"`
 	// 渠道(市场)编码，例如消费电子的编码为200002
 	ChannelCode int64 `json:"channel_code,omitempty" xml:"channel_code,omitempty"`
+}
+
+var poolTopDpOrderDo = sync.Pool{
+	New: func() any {
+		return new(TopDpOrderDo)
+	},
+}
+
+// GetTopDpOrderDo() 从对象池中获取TopDpOrderDo
+func GetTopDpOrderDo() *TopDpOrderDo {
+	return poolTopDpOrderDo.Get().(*TopDpOrderDo)
+}
+
+// ReleaseTopDpOrderDo 释放TopDpOrderDo
+func ReleaseTopDpOrderDo(v *TopDpOrderDo) {
+	v.IsvCustomKey = v.IsvCustomKey[:0]
+	v.IsvCustomValue = v.IsvCustomValue[:0]
+	v.Features = v.Features[:0]
+	v.SubPurchaseOrders = v.SubPurchaseOrders[:0]
+	v.OrderMessages = v.OrderMessages[:0]
+	v.LogisticsInfos = v.LogisticsInfos[:0]
+	v.SupplierFrom = ""
+	v.SupplierUsername = ""
+	v.DistributorFrom = ""
+	v.DistributorUsername = ""
+	v.BuyerTaobaoId = ""
+	v.BuyerNick = ""
+	v.TradeType = ""
+	v.Created = ""
+	v.Memo = ""
+	v.SupplierMemo = ""
+	v.AlipayNo = ""
+	v.TotalFee = ""
+	v.PostFee = ""
+	v.DistributorPayment = ""
+	v.BuyerPayment = ""
+	v.SnapshotUrl = ""
+	v.Status = ""
+	v.PayTime = ""
+	v.EndTime = ""
+	v.ConsignTime = ""
+	v.Modified = ""
+	v.PayType = ""
+	v.Shipping = ""
+	v.LogisticsCompanyName = ""
+	v.LogisticsId = ""
+	v.AlipayOrderNo = ""
+	v.ConfirmPaidFeeYuan = ""
+	v.OpenBuyerUid = ""
+	v.DeliveryTime = ""
+	v.SignTime = ""
+	v.AsdpAds = ""
+	v.DeliveryCps = ""
+	v.TcOrderId = 0
+	v.Id = 0
+	v.FenxiaoId = 0
+	v.SupplierFlag = 0
+	v.Receiver = nil
+	v.ChannelCode = 0
+	poolTopDpOrderDo.Put(v)
 }

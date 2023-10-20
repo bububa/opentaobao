@@ -9,11 +9,6 @@ import (
 // alibaba.icbu.product.inventory.update
 //
 // 更新库存信息
-func AlibabaIcbuProductInventoryUpdate(clt *core.SDKClient, req *icbuproduct.AlibabaIcbuProductInventoryUpdateAPIRequest, session string) (*icbuproduct.AlibabaIcbuProductInventoryUpdateAPIResponse, error) {
-	var resp icbuproduct.AlibabaIcbuProductInventoryUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIcbuProductInventoryUpdate(clt *core.SDKClient, req *icbuproduct.AlibabaIcbuProductInventoryUpdateAPIRequest, resp *icbuproduct.AlibabaIcbuProductInventoryUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoDeliveryTemplateAddAPIResponse struct {
 	TaobaoDeliveryTemplateAddAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoDeliveryTemplateAddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoDeliveryTemplateAddAPIResponseModel).Reset()
+}
+
 // TaobaoDeliveryTemplateAddAPIResponseModel is 新增运费模板 成功返回结果
 type TaobaoDeliveryTemplateAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"delivery_template_add_response"`
@@ -22,4 +29,27 @@ type TaobaoDeliveryTemplateAddAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 模板对象
 	DeliveryTemplate *DeliveryTemplate `json:"delivery_template,omitempty" xml:"delivery_template,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoDeliveryTemplateAddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.DeliveryTemplate = nil
+}
+
+var poolTaobaoDeliveryTemplateAddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoDeliveryTemplateAddAPIResponse)
+	},
+}
+
+// GetTaobaoDeliveryTemplateAddAPIResponse 从 sync.Pool 获取 TaobaoDeliveryTemplateAddAPIResponse
+func GetTaobaoDeliveryTemplateAddAPIResponse() *TaobaoDeliveryTemplateAddAPIResponse {
+	return poolTaobaoDeliveryTemplateAddAPIResponse.Get().(*TaobaoDeliveryTemplateAddAPIResponse)
+}
+
+// ReleaseTaobaoDeliveryTemplateAddAPIResponse 将 TaobaoDeliveryTemplateAddAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoDeliveryTemplateAddAPIResponse(v *TaobaoDeliveryTemplateAddAPIResponse) {
+	v.Reset()
+	poolTaobaoDeliveryTemplateAddAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package caipiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoCaipiaoShopInfoInputAPIResponse struct {
 	TaobaoCaipiaoShopInfoInputAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoCaipiaoShopInfoInputAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoCaipiaoShopInfoInputAPIResponseModel).Reset()
+}
+
 // TaobaoCaipiaoShopInfoInputAPIResponseModel is 录入参加送彩票店铺信息 成功返回结果
 type TaobaoCaipiaoShopInfoInputAPIResponseModel struct {
 	XMLName xml.Name `xml:"caipiao_shop_info_input_response"`
@@ -22,4 +29,27 @@ type TaobaoCaipiaoShopInfoInputAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 录入操作是否成功
 	InputResult bool `json:"input_result,omitempty" xml:"input_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoCaipiaoShopInfoInputAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.InputResult = false
+}
+
+var poolTaobaoCaipiaoShopInfoInputAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoCaipiaoShopInfoInputAPIResponse)
+	},
+}
+
+// GetTaobaoCaipiaoShopInfoInputAPIResponse 从 sync.Pool 获取 TaobaoCaipiaoShopInfoInputAPIResponse
+func GetTaobaoCaipiaoShopInfoInputAPIResponse() *TaobaoCaipiaoShopInfoInputAPIResponse {
+	return poolTaobaoCaipiaoShopInfoInputAPIResponse.Get().(*TaobaoCaipiaoShopInfoInputAPIResponse)
+}
+
+// ReleaseTaobaoCaipiaoShopInfoInputAPIResponse 将 TaobaoCaipiaoShopInfoInputAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoCaipiaoShopInfoInputAPIResponse(v *TaobaoCaipiaoShopInfoInputAPIResponse) {
+	v.Reset()
+	poolTaobaoCaipiaoShopInfoInputAPIResponse.Put(v)
 }

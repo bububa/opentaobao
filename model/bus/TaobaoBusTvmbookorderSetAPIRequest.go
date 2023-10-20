@@ -2,6 +2,7 @@ package bus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type TaobaoBusTvmbookorderSetAPIRequest struct {
 // NewTaobaoBusTvmbookorderSetRequest 初始化TaobaoBusTvmbookorderSetAPIRequest对象
 func NewTaobaoBusTvmbookorderSetRequest() *TaobaoBusTvmbookorderSetAPIRequest {
 	return &TaobaoBusTvmbookorderSetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBusTvmbookorderSetAPIRequest) Reset() {
+	r._passengers = r._passengers[:0]
+	r._alitripOrderId = ""
+	r._bookTime = ""
+	r._fetchPhone = ""
+	r._payMode = ""
+	r._ticketGate = ""
+	r._success = false
+	r._supportEticket = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *TaobaoBusTvmbookorderSetAPIRequest) SetSupportEticket(_supportEticket b
 // GetSupportEticket SupportEticket Getter
 func (r TaobaoBusTvmbookorderSetAPIRequest) GetSupportEticket() bool {
 	return r._supportEticket
+}
+
+var poolTaobaoBusTvmbookorderSetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBusTvmbookorderSetRequest()
+	},
+}
+
+// GetTaobaoBusTvmbookorderSetRequest 从 sync.Pool 获取 TaobaoBusTvmbookorderSetAPIRequest
+func GetTaobaoBusTvmbookorderSetAPIRequest() *TaobaoBusTvmbookorderSetAPIRequest {
+	return poolTaobaoBusTvmbookorderSetAPIRequest.Get().(*TaobaoBusTvmbookorderSetAPIRequest)
+}
+
+// ReleaseTaobaoBusTvmbookorderSetAPIRequest 将 TaobaoBusTvmbookorderSetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBusTvmbookorderSetAPIRequest(v *TaobaoBusTvmbookorderSetAPIRequest) {
+	v.Reset()
+	poolTaobaoBusTvmbookorderSetAPIRequest.Put(v)
 }

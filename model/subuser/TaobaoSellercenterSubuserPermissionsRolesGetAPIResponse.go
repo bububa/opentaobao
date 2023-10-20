@@ -2,6 +2,7 @@ package subuser
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoSellercenterSubuserPermissionsRolesGetAPIResponse struct {
 	TaobaoSellercenterSubuserPermissionsRolesGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoSellercenterSubuserPermissionsRolesGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoSellercenterSubuserPermissionsRolesGetAPIResponseModel).Reset()
+}
+
 // TaobaoSellercenterSubuserPermissionsRolesGetAPIResponseModel is 查询指定的子账号的权限和角色信息 成功返回结果
 type TaobaoSellercenterSubuserPermissionsRolesGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"sellercenter_subuser_permissions_roles_get_response"`
@@ -22,4 +29,27 @@ type TaobaoSellercenterSubuserPermissionsRolesGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 子账号被所拥有的权限
 	SubuserPermission *SubUserPermission `json:"subuser_permission,omitempty" xml:"subuser_permission,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoSellercenterSubuserPermissionsRolesGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.SubuserPermission = nil
+}
+
+var poolTaobaoSellercenterSubuserPermissionsRolesGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoSellercenterSubuserPermissionsRolesGetAPIResponse)
+	},
+}
+
+// GetTaobaoSellercenterSubuserPermissionsRolesGetAPIResponse 从 sync.Pool 获取 TaobaoSellercenterSubuserPermissionsRolesGetAPIResponse
+func GetTaobaoSellercenterSubuserPermissionsRolesGetAPIResponse() *TaobaoSellercenterSubuserPermissionsRolesGetAPIResponse {
+	return poolTaobaoSellercenterSubuserPermissionsRolesGetAPIResponse.Get().(*TaobaoSellercenterSubuserPermissionsRolesGetAPIResponse)
+}
+
+// ReleaseTaobaoSellercenterSubuserPermissionsRolesGetAPIResponse 将 TaobaoSellercenterSubuserPermissionsRolesGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoSellercenterSubuserPermissionsRolesGetAPIResponse(v *TaobaoSellercenterSubuserPermissionsRolesGetAPIResponse) {
+	v.Reset()
+	poolTaobaoSellercenterSubuserPermissionsRolesGetAPIResponse.Put(v)
 }

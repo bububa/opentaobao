@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaHmMarketingExpirePromotionDeleteAPIRequest struct {
 // NewAlibabaHmMarketingExpirePromotionDeleteRequest 初始化AlibabaHmMarketingExpirePromotionDeleteAPIRequest对象
 func NewAlibabaHmMarketingExpirePromotionDeleteRequest() *AlibabaHmMarketingExpirePromotionDeleteAPIRequest {
 	return &AlibabaHmMarketingExpirePromotionDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHmMarketingExpirePromotionDeleteAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaHmMarketingExpirePromotionDeleteAPIRequest) SetParam0(_param0 *E
 // GetParam0 Param0 Getter
 func (r AlibabaHmMarketingExpirePromotionDeleteAPIRequest) GetParam0() *ExpirePromotionBo {
 	return r._param0
+}
+
+var poolAlibabaHmMarketingExpirePromotionDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHmMarketingExpirePromotionDeleteRequest()
+	},
+}
+
+// GetAlibabaHmMarketingExpirePromotionDeleteRequest 从 sync.Pool 获取 AlibabaHmMarketingExpirePromotionDeleteAPIRequest
+func GetAlibabaHmMarketingExpirePromotionDeleteAPIRequest() *AlibabaHmMarketingExpirePromotionDeleteAPIRequest {
+	return poolAlibabaHmMarketingExpirePromotionDeleteAPIRequest.Get().(*AlibabaHmMarketingExpirePromotionDeleteAPIRequest)
+}
+
+// ReleaseAlibabaHmMarketingExpirePromotionDeleteAPIRequest 将 AlibabaHmMarketingExpirePromotionDeleteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHmMarketingExpirePromotionDeleteAPIRequest(v *AlibabaHmMarketingExpirePromotionDeleteAPIRequest) {
+	v.Reset()
+	poolAlibabaHmMarketingExpirePromotionDeleteAPIRequest.Put(v)
 }

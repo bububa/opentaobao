@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest struct {
 // NewAlibabaWdkMarketingItempoolItemAddAsyncRequest 初始化AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest对象
 func NewAlibabaWdkMarketingItempoolItemAddAsyncRequest() *AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest {
 	return &AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest) Reset() {
+	r._param0 = r._param0[:0]
+	r._param1 = nil
+	r._version = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest) SetVersion(_version 
 // GetVersion Version Getter
 func (r AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest) GetVersion() int64 {
 	return r._version
+}
+
+var poolAlibabaWdkMarketingItempoolItemAddAsyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkMarketingItempoolItemAddAsyncRequest()
+	},
+}
+
+// GetAlibabaWdkMarketingItempoolItemAddAsyncRequest 从 sync.Pool 获取 AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest
+func GetAlibabaWdkMarketingItempoolItemAddAsyncAPIRequest() *AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest {
+	return poolAlibabaWdkMarketingItempoolItemAddAsyncAPIRequest.Get().(*AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest)
+}
+
+// ReleaseAlibabaWdkMarketingItempoolItemAddAsyncAPIRequest 将 AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkMarketingItempoolItemAddAsyncAPIRequest(v *AlibabaWdkMarketingItempoolItemAddAsyncAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkMarketingItempoolItemAddAsyncAPIRequest.Put(v)
 }

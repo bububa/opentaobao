@@ -9,11 +9,6 @@ import (
 // taobao.open.account.update
 //
 // Open Account数据更新
-func TaobaoOpenAccountUpdate(clt *core.SDKClient, req *user.TaobaoOpenAccountUpdateAPIRequest, session string) (*user.TaobaoOpenAccountUpdateAPIResponse, error) {
-	var resp user.TaobaoOpenAccountUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpenAccountUpdate(clt *core.SDKClient, req *user.TaobaoOpenAccountUpdateAPIRequest, resp *user.TaobaoOpenAccountUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

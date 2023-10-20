@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // UserInvoiceApplyDto 结构体
 type UserInvoiceApplyDto struct {
 	// 开票明细列表
@@ -40,4 +44,39 @@ type UserInvoiceApplyDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 发票类型：1:增值税普通发票，2:增值税专用发票
 	InvoiceType int64 `json:"invoice_type,omitempty" xml:"invoice_type,omitempty"`
+}
+
+var poolUserInvoiceApplyDto = sync.Pool{
+	New: func() any {
+		return new(UserInvoiceApplyDto)
+	},
+}
+
+// GetUserInvoiceApplyDto() 从对象池中获取UserInvoiceApplyDto
+func GetUserInvoiceApplyDto() *UserInvoiceApplyDto {
+	return poolUserInvoiceApplyDto.Get().(*UserInvoiceApplyDto)
+}
+
+// ReleaseUserInvoiceApplyDto 释放UserInvoiceApplyDto
+func ReleaseUserInvoiceApplyDto(v *UserInvoiceApplyDto) {
+	v.InvoiceItemList = v.InvoiceItemList[:0]
+	v.ApplyId = ""
+	v.InvoiceAmount = ""
+	v.PayeeRegisterNo = ""
+	v.CompanyName = ""
+	v.Bank = ""
+	v.BankAccount = ""
+	v.ReceiverAddress = ""
+	v.ReceiverName = ""
+	v.ReceiverPhone = ""
+	v.SenderName = ""
+	v.SenderPhone = ""
+	v.SenderLogisticsCompany = ""
+	v.SenderLogisticsNo = ""
+	v.InvoicePayeeRegisterNo = ""
+	v.InvoiceAddress = ""
+	v.InvoicePhone = ""
+	v.Status = 0
+	v.InvoiceType = 0
+	poolUserInvoiceApplyDto.Put(v)
 }

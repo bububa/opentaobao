@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.ad.customer.find.customer.info
 //
 // 查询客户信息
-func AlibabaScbpAdCustomerFindCustomerInfo(clt *core.SDKClient, req *scbp.AlibabaScbpAdCustomerFindCustomerInfoAPIRequest, session string) (*scbp.AlibabaScbpAdCustomerFindCustomerInfoAPIResponse, error) {
-	var resp scbp.AlibabaScbpAdCustomerFindCustomerInfoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpAdCustomerFindCustomerInfo(clt *core.SDKClient, req *scbp.AlibabaScbpAdCustomerFindCustomerInfoAPIRequest, resp *scbp.AlibabaScbpAdCustomerFindCustomerInfoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

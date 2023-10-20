@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaEleFengniaoChainstoreContractCancelAPIRequest struct {
 // NewAlibabaEleFengniaoChainstoreContractCancelRequest 初始化AlibabaEleFengniaoChainstoreContractCancelAPIRequest对象
 func NewAlibabaEleFengniaoChainstoreContractCancelRequest() *AlibabaEleFengniaoChainstoreContractCancelAPIRequest {
 	return &AlibabaEleFengniaoChainstoreContractCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEleFengniaoChainstoreContractCancelAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaEleFengniaoChainstoreContractCancelAPIRequest) SetParam(_param *
 // GetParam Param Getter
 func (r AlibabaEleFengniaoChainstoreContractCancelAPIRequest) GetParam() *AlibabaEleFengniaoChainstoreContractCancelData {
 	return r._param
+}
+
+var poolAlibabaEleFengniaoChainstoreContractCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEleFengniaoChainstoreContractCancelRequest()
+	},
+}
+
+// GetAlibabaEleFengniaoChainstoreContractCancelRequest 从 sync.Pool 获取 AlibabaEleFengniaoChainstoreContractCancelAPIRequest
+func GetAlibabaEleFengniaoChainstoreContractCancelAPIRequest() *AlibabaEleFengniaoChainstoreContractCancelAPIRequest {
+	return poolAlibabaEleFengniaoChainstoreContractCancelAPIRequest.Get().(*AlibabaEleFengniaoChainstoreContractCancelAPIRequest)
+}
+
+// ReleaseAlibabaEleFengniaoChainstoreContractCancelAPIRequest 将 AlibabaEleFengniaoChainstoreContractCancelAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEleFengniaoChainstoreContractCancelAPIRequest(v *AlibabaEleFengniaoChainstoreContractCancelAPIRequest) {
+	v.Reset()
+	poolAlibabaEleFengniaoChainstoreContractCancelAPIRequest.Put(v)
 }

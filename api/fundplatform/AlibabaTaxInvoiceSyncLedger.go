@@ -9,11 +9,6 @@ import (
 // alibaba.tax.invoice.sync.ledger
 //
 // 接收第三方服务（如：票易通）同步过来的底账发票数据
-func AlibabaTaxInvoiceSyncLedger(clt *core.SDKClient, req *fundplatform.AlibabaTaxInvoiceSyncLedgerAPIRequest, session string) (*fundplatform.AlibabaTaxInvoiceSyncLedgerAPIResponse, error) {
-	var resp fundplatform.AlibabaTaxInvoiceSyncLedgerAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTaxInvoiceSyncLedger(clt *core.SDKClient, req *fundplatform.AlibabaTaxInvoiceSyncLedgerAPIRequest, resp *fundplatform.AlibabaTaxInvoiceSyncLedgerAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

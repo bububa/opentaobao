@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoUniversalbpCreativePreaddAPIRequest struct {
 // NewTaobaoUniversalbpCreativePreaddRequest 初始化TaobaoUniversalbpCreativePreaddAPIRequest对象
 func NewTaobaoUniversalbpCreativePreaddRequest() *TaobaoUniversalbpCreativePreaddAPIRequest {
 	return &TaobaoUniversalbpCreativePreaddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpCreativePreaddAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r._tpLong = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoUniversalbpCreativePreaddAPIRequest) SetTpLong(_tpLong int64) err
 // GetTpLong TpLong Getter
 func (r TaobaoUniversalbpCreativePreaddAPIRequest) GetTpLong() int64 {
 	return r._tpLong
+}
+
+var poolTaobaoUniversalbpCreativePreaddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpCreativePreaddRequest()
+	},
+}
+
+// GetTaobaoUniversalbpCreativePreaddRequest 从 sync.Pool 获取 TaobaoUniversalbpCreativePreaddAPIRequest
+func GetTaobaoUniversalbpCreativePreaddAPIRequest() *TaobaoUniversalbpCreativePreaddAPIRequest {
+	return poolTaobaoUniversalbpCreativePreaddAPIRequest.Get().(*TaobaoUniversalbpCreativePreaddAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpCreativePreaddAPIRequest 将 TaobaoUniversalbpCreativePreaddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpCreativePreaddAPIRequest(v *TaobaoUniversalbpCreativePreaddAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpCreativePreaddAPIRequest.Put(v)
 }

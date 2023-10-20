@@ -9,11 +9,6 @@ import (
 // tmall.device.carturl.get
 //
 // 获取二维码，支持添加商品到购物车
-func TmallDeviceCarturlGet(clt *core.SDKClient, req *iot.TmallDeviceCarturlGetAPIRequest, session string) (*iot.TmallDeviceCarturlGetAPIResponse, error) {
-	var resp iot.TmallDeviceCarturlGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallDeviceCarturlGet(clt *core.SDKClient, req *iot.TmallDeviceCarturlGetAPIRequest, resp *iot.TmallDeviceCarturlGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

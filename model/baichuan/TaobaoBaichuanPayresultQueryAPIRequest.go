@@ -2,6 +2,7 @@ package baichuan
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoBaichuanPayresultQueryAPIRequest struct {
 // NewTaobaoBaichuanPayresultQueryRequest 初始化TaobaoBaichuanPayresultQueryAPIRequest对象
 func NewTaobaoBaichuanPayresultQueryRequest() *TaobaoBaichuanPayresultQueryAPIRequest {
 	return &TaobaoBaichuanPayresultQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBaichuanPayresultQueryAPIRequest) Reset() {
+	r._name = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoBaichuanPayresultQueryAPIRequest) SetName(_name string) error {
 // GetName Name Getter
 func (r TaobaoBaichuanPayresultQueryAPIRequest) GetName() string {
 	return r._name
+}
+
+var poolTaobaoBaichuanPayresultQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBaichuanPayresultQueryRequest()
+	},
+}
+
+// GetTaobaoBaichuanPayresultQueryRequest 从 sync.Pool 获取 TaobaoBaichuanPayresultQueryAPIRequest
+func GetTaobaoBaichuanPayresultQueryAPIRequest() *TaobaoBaichuanPayresultQueryAPIRequest {
+	return poolTaobaoBaichuanPayresultQueryAPIRequest.Get().(*TaobaoBaichuanPayresultQueryAPIRequest)
+}
+
+// ReleaseTaobaoBaichuanPayresultQueryAPIRequest 将 TaobaoBaichuanPayresultQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBaichuanPayresultQueryAPIRequest(v *TaobaoBaichuanPayresultQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoBaichuanPayresultQueryAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alihealthcrm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihealthBabyRemindBatchSendAPIRequest struct {
 // NewAlibabaAlihealthBabyRemindBatchSendRequest 初始化AlibabaAlihealthBabyRemindBatchSendAPIRequest对象
 func NewAlibabaAlihealthBabyRemindBatchSendRequest() *AlibabaAlihealthBabyRemindBatchSendAPIRequest {
 	return &AlibabaAlihealthBabyRemindBatchSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthBabyRemindBatchSendAPIRequest) Reset() {
+	r._batchRemindRequests = r._batchRemindRequests[:0]
+	r._remindType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihealthBabyRemindBatchSendAPIRequest) SetRemindType(_remindTyp
 // GetRemindType RemindType Getter
 func (r AlibabaAlihealthBabyRemindBatchSendAPIRequest) GetRemindType() int64 {
 	return r._remindType
+}
+
+var poolAlibabaAlihealthBabyRemindBatchSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthBabyRemindBatchSendRequest()
+	},
+}
+
+// GetAlibabaAlihealthBabyRemindBatchSendRequest 从 sync.Pool 获取 AlibabaAlihealthBabyRemindBatchSendAPIRequest
+func GetAlibabaAlihealthBabyRemindBatchSendAPIRequest() *AlibabaAlihealthBabyRemindBatchSendAPIRequest {
+	return poolAlibabaAlihealthBabyRemindBatchSendAPIRequest.Get().(*AlibabaAlihealthBabyRemindBatchSendAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthBabyRemindBatchSendAPIRequest 将 AlibabaAlihealthBabyRemindBatchSendAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthBabyRemindBatchSendAPIRequest(v *AlibabaAlihealthBabyRemindBatchSendAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthBabyRemindBatchSendAPIRequest.Put(v)
 }

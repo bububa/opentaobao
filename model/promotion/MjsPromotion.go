@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // MjsPromotion 结构体
 type MjsPromotion struct {
 	// 活动名称。
@@ -56,4 +60,47 @@ type MjsPromotion struct {
 	IsSendGift bool `json:"is_send_gift,omitempty" xml:"is_send_gift,omitempty"`
 	// 是否有免邮行为。
 	IsFreePost bool `json:"is_free_post,omitempty" xml:"is_free_post,omitempty"`
+}
+
+var poolMjsPromotion = sync.Pool{
+	New: func() any {
+		return new(MjsPromotion)
+	},
+}
+
+// GetMjsPromotion() 从对象池中获取MjsPromotion
+func GetMjsPromotion() *MjsPromotion {
+	return poolMjsPromotion.Get().(*MjsPromotion)
+}
+
+// ReleaseMjsPromotion 释放MjsPromotion
+func ReleaseMjsPromotion(v *MjsPromotion) {
+	v.Name = ""
+	v.Description = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.UserTag = ""
+	v.GiftName = ""
+	v.GiftUrl = ""
+	v.ExcludeArea = ""
+	v.ActivityId = 0
+	v.Type = 0
+	v.ParticipateRange = 0
+	v.TotalPrice = 0
+	v.ItemCount = 0
+	v.ShopMemberLevel = 0
+	v.DecreaseAmount = 0
+	v.DiscountRate = 0
+	v.GiftId = 0
+	v.IsAmountOver = false
+	v.IsAmountMultiple = false
+	v.IsItemCountOver = false
+	v.IsItemMultiple = false
+	v.IsShopMember = false
+	v.IsUserTag = false
+	v.IsDecreaseMoney = false
+	v.IsDiscount = false
+	v.IsSendGift = false
+	v.IsFreePost = false
+	poolMjsPromotion.Put(v)
 }

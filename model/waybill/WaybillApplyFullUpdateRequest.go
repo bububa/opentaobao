@@ -1,5 +1,9 @@
 package waybill
 
+import (
+	"sync"
+)
+
 // WaybillApplyFullUpdateRequest 结构体
 type WaybillApplyFullUpdateRequest struct {
 	// 物流服务能力集合
@@ -34,4 +38,36 @@ type WaybillApplyFullUpdateRequest struct {
 	ConsigneeAddress *WaybillAddress `json:"consignee_address,omitempty" xml:"consignee_address,omitempty"`
 	// 包裹体积 单位为ML(毫升)或立方厘米
 	Volume int64 `json:"volume,omitempty" xml:"volume,omitempty"`
+}
+
+var poolWaybillApplyFullUpdateRequest = sync.Pool{
+	New: func() any {
+		return new(WaybillApplyFullUpdateRequest)
+	},
+}
+
+// GetWaybillApplyFullUpdateRequest() 从对象池中获取WaybillApplyFullUpdateRequest
+func GetWaybillApplyFullUpdateRequest() *WaybillApplyFullUpdateRequest {
+	return poolWaybillApplyFullUpdateRequest.Get().(*WaybillApplyFullUpdateRequest)
+}
+
+// ReleaseWaybillApplyFullUpdateRequest 释放WaybillApplyFullUpdateRequest
+func ReleaseWaybillApplyFullUpdateRequest(v *WaybillApplyFullUpdateRequest) {
+	v.LogisticsServiceList = v.LogisticsServiceList[:0]
+	v.TradeOrderList = v.TradeOrderList[:0]
+	v.PackageItems = v.PackageItems[:0]
+	v.ConsigneeName = ""
+	v.ConsigneePhone = ""
+	v.CpCode = ""
+	v.ProductType = ""
+	v.SendName = ""
+	v.SendPhone = ""
+	v.OrderChannelsType = ""
+	v.WaybillCode = ""
+	v.PackageId = ""
+	v.RealUserId = 0
+	v.Weight = 0
+	v.ConsigneeAddress = nil
+	v.Volume = 0
+	poolWaybillApplyFullUpdateRequest.Put(v)
 }

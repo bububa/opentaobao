@@ -1,5 +1,9 @@
 package examination
 
+import (
+	"sync"
+)
+
 // OrderInfo 结构体
 type OrderInfo struct {
 	// 外部订单ID
@@ -12,4 +16,25 @@ type OrderInfo struct {
 	DoctorId string `json:"doctor_id,omitempty" xml:"doctor_id,omitempty"`
 	// 订单ID
 	OrderId string `json:"order_id,omitempty" xml:"order_id,omitempty"`
+}
+
+var poolOrderInfo = sync.Pool{
+	New: func() any {
+		return new(OrderInfo)
+	},
+}
+
+// GetOrderInfo() 从对象池中获取OrderInfo
+func GetOrderInfo() *OrderInfo {
+	return poolOrderInfo.Get().(*OrderInfo)
+}
+
+// ReleaseOrderInfo 释放OrderInfo
+func ReleaseOrderInfo(v *OrderInfo) {
+	v.OuterOrderId = ""
+	v.Status = ""
+	v.ImUrl = ""
+	v.DoctorId = ""
+	v.OrderId = ""
+	poolOrderInfo.Put(v)
 }

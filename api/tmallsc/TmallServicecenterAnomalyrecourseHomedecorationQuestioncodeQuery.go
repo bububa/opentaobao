@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.anomalyrecourse.homedecoration.questioncode.query
 //
 // 天猫服务平台商家投诉单问题列表查询
-func TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQuery(clt *core.SDKClient, req *tmallsc.TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryAPIRequest, session string) (*tmallsc.TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryAPIResponse, error) {
-	var resp tmallsc.TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQuery(clt *core.SDKClient, req *tmallsc.TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryAPIRequest, resp *tmallsc.TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // tmall.dispute.receive.get
 //
 // 展示商家所有退款信息
-func TmallDisputeReceiveGet(clt *core.SDKClient, req *tbrefund.TmallDisputeReceiveGetAPIRequest, session string) (*tbrefund.TmallDisputeReceiveGetAPIResponse, error) {
-	var resp tbrefund.TmallDisputeReceiveGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallDisputeReceiveGet(clt *core.SDKClient, req *tbrefund.TmallDisputeReceiveGetAPIRequest, resp *tbrefund.TmallDisputeReceiveGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

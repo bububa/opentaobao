@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // MemberCardDto 结构体
 type MemberCardDto struct {
 	// 会员权益
@@ -20,4 +24,29 @@ type MemberCardDto struct {
 	CardId string `json:"card_id,omitempty" xml:"card_id,omitempty"`
 	// 会员卡ID
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolMemberCardDto = sync.Pool{
+	New: func() any {
+		return new(MemberCardDto)
+	},
+}
+
+// GetMemberCardDto() 从对象池中获取MemberCardDto
+func GetMemberCardDto() *MemberCardDto {
+	return poolMemberCardDto.Get().(*MemberCardDto)
+}
+
+// ReleaseMemberCardDto 释放MemberCardDto
+func ReleaseMemberCardDto(v *MemberCardDto) {
+	v.MemberRights = v.MemberRights[:0]
+	v.HotelLevel = ""
+	v.FliggyLevel = ""
+	v.MemberCardPic = ""
+	v.CardName = ""
+	v.CardExt = ""
+	v.Code = ""
+	v.CardId = ""
+	v.Id = 0
+	poolMemberCardDto.Put(v)
 }

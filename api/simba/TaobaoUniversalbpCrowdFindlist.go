@@ -9,11 +9,6 @@ import (
 // taobao.universalbp.crowd.findlist
 //
 // 查询计划和单元上绑定的人群列表
-func TaobaoUniversalbpCrowdFindlist(clt *core.SDKClient, req *simba.TaobaoUniversalbpCrowdFindlistAPIRequest, session string) (*simba.TaobaoUniversalbpCrowdFindlistAPIResponse, error) {
-	var resp simba.TaobaoUniversalbpCrowdFindlistAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUniversalbpCrowdFindlist(clt *core.SDKClient, req *simba.TaobaoUniversalbpCrowdFindlistAPIRequest, resp *simba.TaobaoUniversalbpCrowdFindlistAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

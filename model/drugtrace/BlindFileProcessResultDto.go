@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // BlindFileProcessResultDto 结构体
 type BlindFileProcessResultDto struct {
 	// 企业名称
@@ -10,4 +14,24 @@ type BlindFileProcessResultDto struct {
 	ProcessStatus string `json:"process_status,omitempty" xml:"process_status,omitempty"`
 	// 失败原因
 	FailReason string `json:"fail_reason,omitempty" xml:"fail_reason,omitempty"`
+}
+
+var poolBlindFileProcessResultDto = sync.Pool{
+	New: func() any {
+		return new(BlindFileProcessResultDto)
+	},
+}
+
+// GetBlindFileProcessResultDto() 从对象池中获取BlindFileProcessResultDto
+func GetBlindFileProcessResultDto() *BlindFileProcessResultDto {
+	return poolBlindFileProcessResultDto.Get().(*BlindFileProcessResultDto)
+}
+
+// ReleaseBlindFileProcessResultDto 释放BlindFileProcessResultDto
+func ReleaseBlindFileProcessResultDto(v *BlindFileProcessResultDto) {
+	v.RefEntId = ""
+	v.BlindFileName = ""
+	v.ProcessStatus = ""
+	v.FailReason = ""
+	poolBlindFileProcessResultDto.Put(v)
 }

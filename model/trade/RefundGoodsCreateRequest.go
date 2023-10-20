@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // RefundGoodsCreateRequest 结构体
 type RefundGoodsCreateRequest struct {
 	// 退货商品列表
@@ -26,4 +30,32 @@ type RefundGoodsCreateRequest struct {
 	OperatorMemo string `json:"operator_memo,omitempty" xml:"operator_memo,omitempty"`
 	// 渠道来源，欧尚外卖默认是19
 	InitFrom int64 `json:"init_from,omitempty" xml:"init_from,omitempty"`
+}
+
+var poolRefundGoodsCreateRequest = sync.Pool{
+	New: func() any {
+		return new(RefundGoodsCreateRequest)
+	},
+}
+
+// GetRefundGoodsCreateRequest() 从对象池中获取RefundGoodsCreateRequest
+func GetRefundGoodsCreateRequest() *RefundGoodsCreateRequest {
+	return poolRefundGoodsCreateRequest.Get().(*RefundGoodsCreateRequest)
+}
+
+// ReleaseRefundGoodsCreateRequest 释放RefundGoodsCreateRequest
+func ReleaseRefundGoodsCreateRequest(v *RefundGoodsCreateRequest) {
+	v.RefundGoodsSubOrders = v.RefundGoodsSubOrders[:0]
+	v.SubBizOrderId = ""
+	v.ShopId = ""
+	v.RefundFetchType = ""
+	v.MainBizOrderId = ""
+	v.BuyerId = ""
+	v.BuyerName = ""
+	v.BuyerPhone = ""
+	v.BuyerAddress = ""
+	v.Operator = ""
+	v.OperatorMemo = ""
+	v.InitFrom = 0
+	poolRefundGoodsCreateRequest.Put(v)
 }

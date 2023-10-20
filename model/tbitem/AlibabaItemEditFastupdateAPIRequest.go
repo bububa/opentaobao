@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,17 @@ type AlibabaItemEditFastupdateAPIRequest struct {
 // NewAlibabaItemEditFastupdateRequest 初始化AlibabaItemEditFastupdateAPIRequest对象
 func NewAlibabaItemEditFastupdateRequest() *AlibabaItemEditFastupdateAPIRequest {
 	return &AlibabaItemEditFastupdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaItemEditFastupdateAPIRequest) Reset() {
+	r._schema = ""
+	r._itemId = 0
+	r._catId = 0
+	r._spuId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -98,4 +108,21 @@ func (r *AlibabaItemEditFastupdateAPIRequest) SetSpuId(_spuId int64) error {
 // GetSpuId SpuId Getter
 func (r AlibabaItemEditFastupdateAPIRequest) GetSpuId() int64 {
 	return r._spuId
+}
+
+var poolAlibabaItemEditFastupdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaItemEditFastupdateRequest()
+	},
+}
+
+// GetAlibabaItemEditFastupdateRequest 从 sync.Pool 获取 AlibabaItemEditFastupdateAPIRequest
+func GetAlibabaItemEditFastupdateAPIRequest() *AlibabaItemEditFastupdateAPIRequest {
+	return poolAlibabaItemEditFastupdateAPIRequest.Get().(*AlibabaItemEditFastupdateAPIRequest)
+}
+
+// ReleaseAlibabaItemEditFastupdateAPIRequest 将 AlibabaItemEditFastupdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaItemEditFastupdateAPIRequest(v *AlibabaItemEditFastupdateAPIRequest) {
+	v.Reset()
+	poolAlibabaItemEditFastupdateAPIRequest.Put(v)
 }

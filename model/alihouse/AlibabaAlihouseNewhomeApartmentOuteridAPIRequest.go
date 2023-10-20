@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihouseNewhomeApartmentOuteridAPIRequest struct {
 // NewAlibabaAlihouseNewhomeApartmentOuteridRequest 初始化AlibabaAlihouseNewhomeApartmentOuteridAPIRequest对象
 func NewAlibabaAlihouseNewhomeApartmentOuteridRequest() *AlibabaAlihouseNewhomeApartmentOuteridAPIRequest {
 	return &AlibabaAlihouseNewhomeApartmentOuteridAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeApartmentOuteridAPIRequest) Reset() {
+	r._outerId = ""
+	r._eCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihouseNewhomeApartmentOuteridAPIRequest) SetECode(_eCode strin
 // GetECode ECode Getter
 func (r AlibabaAlihouseNewhomeApartmentOuteridAPIRequest) GetECode() string {
 	return r._eCode
+}
+
+var poolAlibabaAlihouseNewhomeApartmentOuteridAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeApartmentOuteridRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeApartmentOuteridRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeApartmentOuteridAPIRequest
+func GetAlibabaAlihouseNewhomeApartmentOuteridAPIRequest() *AlibabaAlihouseNewhomeApartmentOuteridAPIRequest {
+	return poolAlibabaAlihouseNewhomeApartmentOuteridAPIRequest.Get().(*AlibabaAlihouseNewhomeApartmentOuteridAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeApartmentOuteridAPIRequest 将 AlibabaAlihouseNewhomeApartmentOuteridAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeApartmentOuteridAPIRequest(v *AlibabaAlihouseNewhomeApartmentOuteridAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeApartmentOuteridAPIRequest.Put(v)
 }

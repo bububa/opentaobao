@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // CouponTemplateItemRequest 结构体
 type CouponTemplateItemRequest struct {
 	// 券圈品设置
@@ -10,4 +14,24 @@ type CouponTemplateItemRequest struct {
 	SourceId int64 `json:"source_id,omitempty" xml:"source_id,omitempty"`
 	// 用户信息
 	UserInfo *UserInfo `json:"user_info,omitempty" xml:"user_info,omitempty"`
+}
+
+var poolCouponTemplateItemRequest = sync.Pool{
+	New: func() any {
+		return new(CouponTemplateItemRequest)
+	},
+}
+
+// GetCouponTemplateItemRequest() 从对象池中获取CouponTemplateItemRequest
+func GetCouponTemplateItemRequest() *CouponTemplateItemRequest {
+	return poolCouponTemplateItemRequest.Get().(*CouponTemplateItemRequest)
+}
+
+// ReleaseCouponTemplateItemRequest 释放CouponTemplateItemRequest
+func ReleaseCouponTemplateItemRequest(v *CouponTemplateItemRequest) {
+	v.PromActSkuList = v.PromActSkuList[:0]
+	v.Id = 0
+	v.SourceId = 0
+	v.UserInfo = nil
+	poolCouponTemplateItemRequest.Put(v)
 }

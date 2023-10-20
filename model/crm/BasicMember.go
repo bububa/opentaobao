@@ -1,5 +1,9 @@
 package crm
 
+import (
+	"sync"
+)
+
 // BasicMember 结构体
 type BasicMember struct {
 	// 会员昵称
@@ -30,4 +34,34 @@ type BasicMember struct {
 	TradeCount int64 `json:"trade_count,omitempty" xml:"trade_count,omitempty"`
 	// 最后一次交易的订单号.注:该字段从2014.4.23之后不再返回.
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
+}
+
+var poolBasicMember = sync.Pool{
+	New: func() any {
+		return new(BasicMember)
+	},
+}
+
+// GetBasicMember() 从对象池中获取BasicMember
+func GetBasicMember() *BasicMember {
+	return poolBasicMember.Get().(*BasicMember)
+}
+
+// ReleaseBasicMember 释放BasicMember
+func ReleaseBasicMember(v *BasicMember) {
+	v.BuyerNick = ""
+	v.Ouid = ""
+	v.CloseTradeAmount = ""
+	v.GroupIds = ""
+	v.Status = ""
+	v.TradeAmount = ""
+	v.LastTradeTime = ""
+	v.GradeName = ""
+	v.ItemNum = 0
+	v.RelationSource = 0
+	v.Grade = 0
+	v.CloseTradeCount = 0
+	v.TradeCount = 0
+	v.BizOrderId = 0
+	poolBasicMember.Put(v)
 }

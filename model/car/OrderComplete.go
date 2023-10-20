@@ -1,5 +1,9 @@
 package car
 
+import (
+	"sync"
+)
+
 // OrderComplete 结构体
 type OrderComplete struct {
 	// 服务完成时间
@@ -18,4 +22,28 @@ type OrderComplete struct {
 	UseType int64 `json:"use_type,omitempty" xml:"use_type,omitempty"`
 	// 价格详情
 	PriceInfo *PriceInfo `json:"price_info,omitempty" xml:"price_info,omitempty"`
+}
+
+var poolOrderComplete = sync.Pool{
+	New: func() any {
+		return new(OrderComplete)
+	},
+}
+
+// GetOrderComplete() 从对象池中获取OrderComplete
+func GetOrderComplete() *OrderComplete {
+	return poolOrderComplete.Get().(*OrderComplete)
+}
+
+// ReleaseOrderComplete 释放OrderComplete
+func ReleaseOrderComplete(v *OrderComplete) {
+	v.CompleteTime = ""
+	v.OrderId = ""
+	v.ProviderId = ""
+	v.ThirdOrderId = ""
+	v.SellerId = ""
+	v.Distance = ""
+	v.UseType = 0
+	v.PriceInfo = nil
+	poolOrderComplete.Put(v)
 }

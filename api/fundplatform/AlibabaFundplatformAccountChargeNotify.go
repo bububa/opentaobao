@@ -9,11 +9,6 @@ import (
 // alibaba.fundplatform.account.charge.notify
 //
 // 通知外部业务方充值成功
-func AlibabaFundplatformAccountChargeNotify(clt *core.SDKClient, req *fundplatform.AlibabaFundplatformAccountChargeNotifyAPIRequest, session string) (*fundplatform.AlibabaFundplatformAccountChargeNotifyAPIResponse, error) {
-	var resp fundplatform.AlibabaFundplatformAccountChargeNotifyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaFundplatformAccountChargeNotify(clt *core.SDKClient, req *fundplatform.AlibabaFundplatformAccountChargeNotifyAPIRequest, resp *fundplatform.AlibabaFundplatformAccountChargeNotifyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

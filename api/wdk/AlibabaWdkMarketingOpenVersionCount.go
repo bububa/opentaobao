@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.marketing.open.version.count
 //
 // 版本数量查询
-func AlibabaWdkMarketingOpenVersionCount(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingOpenVersionCountAPIRequest, session string) (*wdk.AlibabaWdkMarketingOpenVersionCountAPIResponse, error) {
-	var resp wdk.AlibabaWdkMarketingOpenVersionCountAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkMarketingOpenVersionCount(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingOpenVersionCountAPIRequest, resp *wdk.AlibabaWdkMarketingOpenVersionCountAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

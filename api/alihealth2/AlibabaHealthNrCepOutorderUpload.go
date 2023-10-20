@@ -9,11 +9,6 @@ import (
 // alibaba.health.nr.cep.outorder.upload
 //
 // 线上订单收货验收单、出入库单据生成接口
-func AlibabaHealthNrCepOutorderUpload(clt *core.SDKClient, req *alihealth2.AlibabaHealthNrCepOutorderUploadAPIRequest, session string) (*alihealth2.AlibabaHealthNrCepOutorderUploadAPIResponse, error) {
-	var resp alihealth2.AlibabaHealthNrCepOutorderUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHealthNrCepOutorderUpload(clt *core.SDKClient, req *alihealth2.AlibabaHealthNrCepOutorderUploadAPIRequest, resp *alihealth2.AlibabaHealthNrCepOutorderUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

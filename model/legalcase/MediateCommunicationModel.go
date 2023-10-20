@@ -1,5 +1,9 @@
 package legalcase
 
+import (
+	"sync"
+)
+
 // MediateCommunicationModel 结构体
 type MediateCommunicationModel struct {
 	// 附件
@@ -28,4 +32,33 @@ type MediateCommunicationModel struct {
 	MediateAmount float64 `json:"mediate_amount,omitempty" xml:"mediate_amount,omitempty"`
 	// 卖家是否要求积极应诉
 	SellerAskRespondent bool `json:"seller_ask_respondent,omitempty" xml:"seller_ask_respondent,omitempty"`
+}
+
+var poolMediateCommunicationModel = sync.Pool{
+	New: func() any {
+		return new(MediateCommunicationModel)
+	},
+}
+
+// GetMediateCommunicationModel() 从对象池中获取MediateCommunicationModel
+func GetMediateCommunicationModel() *MediateCommunicationModel {
+	return poolMediateCommunicationModel.Get().(*MediateCommunicationModel)
+}
+
+// ReleaseMediateCommunicationModel 释放MediateCommunicationModel
+func ReleaseMediateCommunicationModel(v *MediateCommunicationModel) {
+	v.AttachmentList = v.AttachmentList[:0]
+	v.CommunicateRecord = ""
+	v.ContactNumber = ""
+	v.ContactPeople = ""
+	v.ContactTime = ""
+	v.Phase = ""
+	v.Remark = ""
+	v.Result = ""
+	v.ResultReason = ""
+	v.Solution = ""
+	v.Id = 0
+	v.MediateAmount = 0
+	v.SellerAskRespondent = false
+	poolMediateCommunicationModel.Put(v)
 }

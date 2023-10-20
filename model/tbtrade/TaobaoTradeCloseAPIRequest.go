@@ -2,6 +2,7 @@ package tbtrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoTradeCloseAPIRequest struct {
 // NewTaobaoTradeCloseRequest 初始化TaobaoTradeCloseAPIRequest对象
 func NewTaobaoTradeCloseRequest() *TaobaoTradeCloseAPIRequest {
 	return &TaobaoTradeCloseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTradeCloseAPIRequest) Reset() {
+	r._closeReason = ""
+	r._tid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoTradeCloseAPIRequest) SetTid(_tid int64) error {
 // GetTid Tid Getter
 func (r TaobaoTradeCloseAPIRequest) GetTid() int64 {
 	return r._tid
+}
+
+var poolTaobaoTradeCloseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTradeCloseRequest()
+	},
+}
+
+// GetTaobaoTradeCloseRequest 从 sync.Pool 获取 TaobaoTradeCloseAPIRequest
+func GetTaobaoTradeCloseAPIRequest() *TaobaoTradeCloseAPIRequest {
+	return poolTaobaoTradeCloseAPIRequest.Get().(*TaobaoTradeCloseAPIRequest)
+}
+
+// ReleaseTaobaoTradeCloseAPIRequest 将 TaobaoTradeCloseAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTradeCloseAPIRequest(v *TaobaoTradeCloseAPIRequest) {
+	v.Reset()
+	poolTaobaoTradeCloseAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package aesolution
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest struc
 // NewAliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateRequest 初始化AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest对象
 func NewAliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateRequest() *AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest {
 	return &AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest) Reset() {
+	r._logisticOrderStateUpdateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest) 
 // GetLogisticOrderStateUpdateRequest LogisticOrderStateUpdateRequest Getter
 func (r AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest) GetLogisticOrderStateUpdateRequest() *LogisticOrderStateUpdateRequest {
 	return r._logisticOrderStateUpdateRequest
+}
+
+var poolAliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateRequest()
+	},
+}
+
+// GetAliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateRequest 从 sync.Pool 获取 AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest
+func GetAliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest() *AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest {
+	return poolAliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest.Get().(*AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest)
+}
+
+// ReleaseAliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest 将 AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest 放入 sync.Pool
+func ReleaseAliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest(v *AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest) {
+	v.Reset()
+	poolAliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package train
 
+import (
+	"sync"
+)
+
 // StudentInfo 结构体
 type StudentInfo struct {
 	// demo
@@ -22,4 +26,30 @@ type StudentInfo struct {
 	StudentNo string `json:"student_no,omitempty" xml:"student_no,omitempty"`
 	// demo
 	ToCity string `json:"to_city,omitempty" xml:"to_city,omitempty"`
+}
+
+var poolStudentInfo = sync.Pool{
+	New: func() any {
+		return new(StudentInfo)
+	},
+}
+
+// GetStudentInfo() 从对象池中获取StudentInfo
+func GetStudentInfo() *StudentInfo {
+	return poolStudentInfo.Get().(*StudentInfo)
+}
+
+// ReleaseStudentInfo 释放StudentInfo
+func ReleaseStudentInfo(v *StudentInfo) {
+	v.Card = ""
+	v.Classes = ""
+	v.DepartMent = ""
+	v.EductionalSystem = ""
+	v.EntranceYear = ""
+	v.FromCity = ""
+	v.SchoolName = ""
+	v.SchoolProvince = ""
+	v.StudentNo = ""
+	v.ToCity = ""
+	poolStudentInfo.Put(v)
 }

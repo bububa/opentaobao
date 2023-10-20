@@ -2,6 +2,7 @@ package aliexpress
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliexpressFeedPostPublishAPIRequest struct {
 // NewAliexpressFeedPostPublishRequest 初始化AliexpressFeedPostPublishAPIRequest对象
 func NewAliexpressFeedPostPublishRequest() *AliexpressFeedPostPublishAPIRequest {
 	return &AliexpressFeedPostPublishAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressFeedPostPublishAPIRequest) Reset() {
+	r._offsitePublishPostEntity = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliexpressFeedPostPublishAPIRequest) SetOffsitePublishPostEntity(_offsi
 // GetOffsitePublishPostEntity OffsitePublishPostEntity Getter
 func (r AliexpressFeedPostPublishAPIRequest) GetOffsitePublishPostEntity() *OffsitePublishPostEntity {
 	return r._offsitePublishPostEntity
+}
+
+var poolAliexpressFeedPostPublishAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressFeedPostPublishRequest()
+	},
+}
+
+// GetAliexpressFeedPostPublishRequest 从 sync.Pool 获取 AliexpressFeedPostPublishAPIRequest
+func GetAliexpressFeedPostPublishAPIRequest() *AliexpressFeedPostPublishAPIRequest {
+	return poolAliexpressFeedPostPublishAPIRequest.Get().(*AliexpressFeedPostPublishAPIRequest)
+}
+
+// ReleaseAliexpressFeedPostPublishAPIRequest 将 AliexpressFeedPostPublishAPIRequest 放入 sync.Pool
+func ReleaseAliexpressFeedPostPublishAPIRequest(v *AliexpressFeedPostPublishAPIRequest) {
+	v.Reset()
+	poolAliexpressFeedPostPublishAPIRequest.Put(v)
 }

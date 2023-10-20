@@ -9,11 +9,6 @@ import (
 // taobao.promotion.benefit.activity.detail.get
 //
 // 活动关联的权益详情获取
-func TaobaoPromotionBenefitActivityDetailGet(clt *core.SDKClient, req *promotion.TaobaoPromotionBenefitActivityDetailGetAPIRequest, session string) (*promotion.TaobaoPromotionBenefitActivityDetailGetAPIResponse, error) {
-	var resp promotion.TaobaoPromotionBenefitActivityDetailGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoPromotionBenefitActivityDetailGet(clt *core.SDKClient, req *promotion.TaobaoPromotionBenefitActivityDetailGetAPIRequest, resp *promotion.TaobaoPromotionBenefitActivityDetailGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package tanx
 
+import (
+	"sync"
+)
+
 // NativeTemplateCreativeDto 结构体
 type NativeTemplateCreativeDto struct {
 	// 必须属性集合，1:标题;2:广告语;3:图片;4:价格;5:折扣价;6:销量;7:click_url;8:landing_type;9描述;10打开方式;11下载方式;12deepLink;13下载
@@ -16,4 +20,27 @@ type NativeTemplateCreativeDto struct {
 	AdWordsMaxSafeLength int64 `json:"ad_words_max_safe_length,omitempty" xml:"ad_words_max_safe_length,omitempty"`
 	// 标题最大长度，如果超长有可能会被截断
 	TitleMaxSafeLength int64 `json:"title_max_safe_length,omitempty" xml:"title_max_safe_length,omitempty"`
+}
+
+var poolNativeTemplateCreativeDto = sync.Pool{
+	New: func() any {
+		return new(NativeTemplateCreativeDto)
+	},
+}
+
+// GetNativeTemplateCreativeDto() 从对象池中获取NativeTemplateCreativeDto
+func GetNativeTemplateCreativeDto() *NativeTemplateCreativeDto {
+	return poolNativeTemplateCreativeDto.Get().(*NativeTemplateCreativeDto)
+}
+
+// ReleaseNativeTemplateCreativeDto 释放NativeTemplateCreativeDto
+func ReleaseNativeTemplateCreativeDto(v *NativeTemplateCreativeDto) {
+	v.RequiredFields = v.RequiredFields[:0]
+	v.RecommendedFields = v.RecommendedFields[:0]
+	v.ActionFields = v.ActionFields[:0]
+	v.MutlichoiceFields = v.MutlichoiceFields[:0]
+	v.ImageSize = ""
+	v.AdWordsMaxSafeLength = 0
+	v.TitleMaxSafeLength = 0
+	poolNativeTemplateCreativeDto.Put(v)
 }

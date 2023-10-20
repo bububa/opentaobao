@@ -1,5 +1,9 @@
 package charity
 
+import (
+	"sync"
+)
+
 // CsrPage 结构体
 type CsrPage struct {
 	// 分页数据
@@ -12,4 +16,25 @@ type CsrPage struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 当前页码
 	PageNum int64 `json:"page_num,omitempty" xml:"page_num,omitempty"`
+}
+
+var poolCsrPage = sync.Pool{
+	New: func() any {
+		return new(CsrPage)
+	},
+}
+
+// GetCsrPage() 从对象池中获取CsrPage
+func GetCsrPage() *CsrPage {
+	return poolCsrPage.Get().(*CsrPage)
+}
+
+// ReleaseCsrPage 释放CsrPage
+func ReleaseCsrPage(v *CsrPage) {
+	v.List = v.List[:0]
+	v.Total = 0
+	v.Pages = 0
+	v.PageSize = 0
+	v.PageNum = 0
+	poolCsrPage.Put(v)
 }

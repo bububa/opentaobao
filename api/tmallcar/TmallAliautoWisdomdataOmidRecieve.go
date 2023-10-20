@@ -9,11 +9,6 @@ import (
 // tmall.aliauto.wisdomdata.omid.recieve
 //
 // 大搜车车型参配数据接入
-func TmallAliautoWisdomdataOmidRecieve(clt *core.SDKClient, req *tmallcar.TmallAliautoWisdomdataOmidRecieveAPIRequest, session string) (*tmallcar.TmallAliautoWisdomdataOmidRecieveAPIResponse, error) {
-	var resp tmallcar.TmallAliautoWisdomdataOmidRecieveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallAliautoWisdomdataOmidRecieve(clt *core.SDKClient, req *tmallcar.TmallAliautoWisdomdataOmidRecieveAPIRequest, resp *tmallcar.TmallAliautoWisdomdataOmidRecieveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

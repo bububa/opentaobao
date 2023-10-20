@@ -9,11 +9,6 @@ import (
 // alibaba.dchain.aoxiang.combinescitem.batch.update
 //
 // 更新组合货品
-func AlibabaDchainAoxiangCombinescitemBatchUpdate(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangCombinescitemBatchUpdateAPIRequest, session string) (*ascp.AlibabaDchainAoxiangCombinescitemBatchUpdateAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangCombinescitemBatchUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDchainAoxiangCombinescitemBatchUpdate(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangCombinescitemBatchUpdateAPIRequest, resp *ascp.AlibabaDchainAoxiangCombinescitemBatchUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.aelophy.order.desensitizephone.get
 //
 // 获取订单隐私号
-func AlibabaAelophyOrderDesensitizephoneGet(clt *core.SDKClient, req *wdk.AlibabaAelophyOrderDesensitizephoneGetAPIRequest, session string) (*wdk.AlibabaAelophyOrderDesensitizephoneGetAPIResponse, error) {
-	var resp wdk.AlibabaAelophyOrderDesensitizephoneGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAelophyOrderDesensitizephoneGet(clt *core.SDKClient, req *wdk.AlibabaAelophyOrderDesensitizephoneGetAPIRequest, resp *wdk.AlibabaAelophyOrderDesensitizephoneGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

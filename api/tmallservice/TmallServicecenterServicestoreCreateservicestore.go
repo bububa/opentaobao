@@ -22,11 +22,6 @@ import (
 // 10, 网点已存在
 // 11, 网点不存在
 // 12, 系统错误
-func TmallServicecenterServicestoreCreateservicestore(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreCreateservicestoreAPIRequest, session string) (*tmallservice.TmallServicecenterServicestoreCreateservicestoreAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterServicestoreCreateservicestoreAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterServicestoreCreateservicestore(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreCreateservicestoreAPIRequest, resp *tmallservice.TmallServicecenterServicestoreCreateservicestoreAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

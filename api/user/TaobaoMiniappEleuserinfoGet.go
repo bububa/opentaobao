@@ -9,11 +9,6 @@ import (
 // taobao.miniapp.eleuserinfo.get
 //
 // 获取饿了么用户信息
-func TaobaoMiniappEleuserinfoGet(clt *core.SDKClient, req *user.TaobaoMiniappEleuserinfoGetAPIRequest, session string) (*user.TaobaoMiniappEleuserinfoGetAPIResponse, error) {
-	var resp user.TaobaoMiniappEleuserinfoGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoMiniappEleuserinfoGet(clt *core.SDKClient, req *user.TaobaoMiniappEleuserinfoGetAPIRequest, resp *user.TaobaoMiniappEleuserinfoGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

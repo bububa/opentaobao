@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenCostCenterSaveRq 结构体
 type OpenCostCenterSaveRq struct {
 	// 绑定支付宝账号
@@ -16,4 +20,27 @@ type OpenCostCenterSaveRq struct {
 	Scope int64 `json:"scope,omitempty" xml:"scope,omitempty"`
 	// 商旅开放平台传2
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
+}
+
+var poolOpenCostCenterSaveRq = sync.Pool{
+	New: func() any {
+		return new(OpenCostCenterSaveRq)
+	},
+}
+
+// GetOpenCostCenterSaveRq() 从对象池中获取OpenCostCenterSaveRq
+func GetOpenCostCenterSaveRq() *OpenCostCenterSaveRq {
+	return poolOpenCostCenterSaveRq.Get().(*OpenCostCenterSaveRq)
+}
+
+// ReleaseOpenCostCenterSaveRq 释放OpenCostCenterSaveRq
+func ReleaseOpenCostCenterSaveRq(v *OpenCostCenterSaveRq) {
+	v.AlipayNo = ""
+	v.Title = ""
+	v.ThirdpartId = ""
+	v.Number = ""
+	v.CorpId = ""
+	v.Scope = 0
+	v.Version = 0
+	poolOpenCostCenterSaveRq.Put(v)
 }

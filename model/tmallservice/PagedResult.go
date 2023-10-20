@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // PagedResult 结构体
 type PagedResult struct {
 	// 核销单
@@ -24,4 +28,31 @@ type PagedResult struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 是否空页
 	Empty bool `json:"empty,omitempty" xml:"empty,omitempty"`
+}
+
+var poolPagedResult = sync.Pool{
+	New: func() any {
+		return new(PagedResult)
+	},
+}
+
+// GetPagedResult() 从对象池中获取PagedResult
+func GetPagedResult() *PagedResult {
+	return poolPagedResult.Get().(*PagedResult)
+}
+
+// ReleasePagedResult 释放PagedResult
+func ReleasePagedResult(v *PagedResult) {
+	v.Values = v.Values[:0]
+	v.DataList = v.DataList[:0]
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.TotalCount = 0
+	v.PageIndex = 0
+	v.PageSize = 0
+	v.TotalPageCount = 0
+	v.DataCount = 0
+	v.Success = false
+	v.Empty = false
+	poolPagedResult.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.jushita.jms.topics.get
 //
 // 根据用户nick获取开通的消息列表
-func TaobaoJushitaJmsTopicsGet(clt *core.SDKClient, req *jms.TaobaoJushitaJmsTopicsGetAPIRequest, session string) (*jms.TaobaoJushitaJmsTopicsGetAPIResponse, error) {
-	var resp jms.TaobaoJushitaJmsTopicsGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoJushitaJmsTopicsGet(clt *core.SDKClient, req *jms.TaobaoJushitaJmsTopicsGetAPIRequest, resp *jms.TaobaoJushitaJmsTopicsGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

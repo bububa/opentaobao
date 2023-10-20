@@ -9,11 +9,6 @@ import (
 // taobao.wireless.xcode.create
 //
 // 创建码平台的普通二维码或者长连接转短连接服务
-func TaobaoWirelessXcodeCreate(clt *core.SDKClient, req *ma.TaobaoWirelessXcodeCreateAPIRequest, session string) (*ma.TaobaoWirelessXcodeCreateAPIResponse, error) {
-	var resp ma.TaobaoWirelessXcodeCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWirelessXcodeCreate(clt *core.SDKClient, req *ma.TaobaoWirelessXcodeCreateAPIRequest, resp *ma.TaobaoWirelessXcodeCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // tmall.nrt.store.relation.query
 //
 // 喵零门店关系查询
-func TmallNrtStoreRelationQuery(clt *core.SDKClient, req *nrt.TmallNrtStoreRelationQueryAPIRequest, session string) (*nrt.TmallNrtStoreRelationQueryAPIResponse, error) {
-	var resp nrt.TmallNrtStoreRelationQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallNrtStoreRelationQuery(clt *core.SDKClient, req *nrt.TmallNrtStoreRelationQueryAPIRequest, resp *nrt.TmallNrtStoreRelationQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

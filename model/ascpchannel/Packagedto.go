@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // Packagedto 结构体
 type Packagedto struct {
 	// 发货仓code
@@ -16,4 +20,27 @@ type Packagedto struct {
 	PackageCode string `json:"package_code,omitempty" xml:"package_code,omitempty"`
 	// 包裹状态
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolPackagedto = sync.Pool{
+	New: func() any {
+		return new(Packagedto)
+	},
+}
+
+// GetPackagedto() 从对象池中获取Packagedto
+func GetPackagedto() *Packagedto {
+	return poolPackagedto.Get().(*Packagedto)
+}
+
+// ReleasePackagedto 释放Packagedto
+func ReleasePackagedto(v *Packagedto) {
+	v.StoreCode = ""
+	v.OutBizId = ""
+	v.OrderCode = ""
+	v.ConsignLgOrderCode = ""
+	v.TmsResCode = ""
+	v.PackageCode = ""
+	v.Status = ""
+	poolPackagedto.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallnr
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallNrSellerStorerangeSyncAPIResponse struct {
 	TmallNrSellerStorerangeSyncAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallNrSellerStorerangeSyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallNrSellerStorerangeSyncAPIResponseModel).Reset()
+}
+
 // TmallNrSellerStorerangeSyncAPIResponseModel is 同步商户中心服务范围 成功返回结果
 type TmallNrSellerStorerangeSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_nr_seller_storerange_sync_response"`
@@ -24,4 +31,28 @@ type TmallNrSellerStorerangeSyncAPIResponseModel struct {
 	ResultData bool `json:"result_data,omitempty" xml:"result_data,omitempty"`
 	// 请求是否成功
 	SuccessFlag bool `json:"success_flag,omitempty" xml:"success_flag,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallNrSellerStorerangeSyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultData = false
+	m.SuccessFlag = false
+}
+
+var poolTmallNrSellerStorerangeSyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallNrSellerStorerangeSyncAPIResponse)
+	},
+}
+
+// GetTmallNrSellerStorerangeSyncAPIResponse 从 sync.Pool 获取 TmallNrSellerStorerangeSyncAPIResponse
+func GetTmallNrSellerStorerangeSyncAPIResponse() *TmallNrSellerStorerangeSyncAPIResponse {
+	return poolTmallNrSellerStorerangeSyncAPIResponse.Get().(*TmallNrSellerStorerangeSyncAPIResponse)
+}
+
+// ReleaseTmallNrSellerStorerangeSyncAPIResponse 将 TmallNrSellerStorerangeSyncAPIResponse 保存到 sync.Pool
+func ReleaseTmallNrSellerStorerangeSyncAPIResponse(v *TmallNrSellerStorerangeSyncAPIResponse) {
+	v.Reset()
+	poolTmallNrSellerStorerangeSyncAPIResponse.Put(v)
 }

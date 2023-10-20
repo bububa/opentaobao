@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoQimenWavenumReportAPIResponse struct {
 	TaobaoQimenWavenumReportAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoQimenWavenumReportAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoQimenWavenumReportAPIResponseModel).Reset()
+}
+
 // TaobaoQimenWavenumReportAPIResponseModel is 发货单波次通知接口 成功返回结果
 type TaobaoQimenWavenumReportAPIResponseModel struct {
 	XMLName xml.Name `xml:"qimen_wavenum_report_response"`
@@ -22,4 +29,27 @@ type TaobaoQimenWavenumReportAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	//
 	Response *TaobaoQimenWavenumReportResponse `json:"response,omitempty" xml:"response,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoQimenWavenumReportAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Response = nil
+}
+
+var poolTaobaoQimenWavenumReportAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoQimenWavenumReportAPIResponse)
+	},
+}
+
+// GetTaobaoQimenWavenumReportAPIResponse 从 sync.Pool 获取 TaobaoQimenWavenumReportAPIResponse
+func GetTaobaoQimenWavenumReportAPIResponse() *TaobaoQimenWavenumReportAPIResponse {
+	return poolTaobaoQimenWavenumReportAPIResponse.Get().(*TaobaoQimenWavenumReportAPIResponse)
+}
+
+// ReleaseTaobaoQimenWavenumReportAPIResponse 将 TaobaoQimenWavenumReportAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoQimenWavenumReportAPIResponse(v *TaobaoQimenWavenumReportAPIResponse) {
+	v.Reset()
+	poolTaobaoQimenWavenumReportAPIResponse.Put(v)
 }

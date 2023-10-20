@@ -9,11 +9,6 @@ import (
 // taobao.open.account.index.find
 //
 // Open Account索引查询
-func TaobaoOpenAccountIndexFind(clt *core.SDKClient, req *user.TaobaoOpenAccountIndexFindAPIRequest, session string) (*user.TaobaoOpenAccountIndexFindAPIResponse, error) {
-	var resp user.TaobaoOpenAccountIndexFindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpenAccountIndexFind(clt *core.SDKClient, req *user.TaobaoOpenAccountIndexFindAPIRequest, resp *user.TaobaoOpenAccountIndexFindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package ascpffo
 
+import (
+	"sync"
+)
+
 // WarehouseInventoryQueryDto 结构体
 type WarehouseInventoryQueryDto struct {
 	// 货品列表，最多30个
@@ -14,4 +18,26 @@ type WarehouseInventoryQueryDto struct {
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
 	// 分页大小，最大30
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolWarehouseInventoryQueryDto = sync.Pool{
+	New: func() any {
+		return new(WarehouseInventoryQueryDto)
+	},
+}
+
+// GetWarehouseInventoryQueryDto() 从对象池中获取WarehouseInventoryQueryDto
+func GetWarehouseInventoryQueryDto() *WarehouseInventoryQueryDto {
+	return poolWarehouseInventoryQueryDto.Get().(*WarehouseInventoryQueryDto)
+}
+
+// ReleaseWarehouseInventoryQueryDto 释放WarehouseInventoryQueryDto
+func ReleaseWarehouseInventoryQueryDto(v *WarehouseInventoryQueryDto) {
+	v.ScItemIdList = v.ScItemIdList[:0]
+	v.StoreCode = ""
+	v.BizType = 0
+	v.InventoryType = 0
+	v.PageIndex = 0
+	v.PageSize = 0
+	poolWarehouseInventoryQueryDto.Put(v)
 }

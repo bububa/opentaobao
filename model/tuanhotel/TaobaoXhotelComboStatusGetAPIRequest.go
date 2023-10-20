@@ -2,6 +2,7 @@ package tuanhotel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoXhotelComboStatusGetAPIRequest struct {
 // NewTaobaoXhotelComboStatusGetRequest 初始化TaobaoXhotelComboStatusGetAPIRequest对象
 func NewTaobaoXhotelComboStatusGetRequest() *TaobaoXhotelComboStatusGetAPIRequest {
 	return &TaobaoXhotelComboStatusGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelComboStatusGetAPIRequest) Reset() {
+	r._itemTitle = ""
+	r._itemId = 0
+	r._pageSize = 0
+	r._currentPageNo = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoXhotelComboStatusGetAPIRequest) SetCurrentPageNo(_currentPageNo i
 // GetCurrentPageNo CurrentPageNo Getter
 func (r TaobaoXhotelComboStatusGetAPIRequest) GetCurrentPageNo() int64 {
 	return r._currentPageNo
+}
+
+var poolTaobaoXhotelComboStatusGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelComboStatusGetRequest()
+	},
+}
+
+// GetTaobaoXhotelComboStatusGetRequest 从 sync.Pool 获取 TaobaoXhotelComboStatusGetAPIRequest
+func GetTaobaoXhotelComboStatusGetAPIRequest() *TaobaoXhotelComboStatusGetAPIRequest {
+	return poolTaobaoXhotelComboStatusGetAPIRequest.Get().(*TaobaoXhotelComboStatusGetAPIRequest)
+}
+
+// ReleaseTaobaoXhotelComboStatusGetAPIRequest 将 TaobaoXhotelComboStatusGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelComboStatusGetAPIRequest(v *TaobaoXhotelComboStatusGetAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelComboStatusGetAPIRequest.Put(v)
 }

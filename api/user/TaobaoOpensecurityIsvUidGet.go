@@ -9,11 +9,6 @@ import (
 // taobao.opensecurity.isv.uid.get
 //
 // 根据 open_uid 获取 open_uid_isv 用于同一个 isv的多个app间数据关联
-func TaobaoOpensecurityIsvUidGet(clt *core.SDKClient, req *user.TaobaoOpensecurityIsvUidGetAPIRequest, session string) (*user.TaobaoOpensecurityIsvUidGetAPIResponse, error) {
-	var resp user.TaobaoOpensecurityIsvUidGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpensecurityIsvUidGet(clt *core.SDKClient, req *user.TaobaoOpensecurityIsvUidGetAPIRequest, resp *user.TaobaoOpensecurityIsvUidGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

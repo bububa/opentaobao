@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlicomVtOpentradeGetproductinfoAPIRequest struct {
 // NewAlibabaAlicomVtOpentradeGetproductinfoRequest 初始化AlibabaAlicomVtOpentradeGetproductinfoAPIRequest对象
 func NewAlibabaAlicomVtOpentradeGetproductinfoRequest() *AlibabaAlicomVtOpentradeGetproductinfoAPIRequest {
 	return &AlibabaAlicomVtOpentradeGetproductinfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlicomVtOpentradeGetproductinfoAPIRequest) Reset() {
+	r._productId = ""
+	r._bizType = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlicomVtOpentradeGetproductinfoAPIRequest) SetBizType(_bizType s
 // GetBizType BizType Getter
 func (r AlibabaAlicomVtOpentradeGetproductinfoAPIRequest) GetBizType() string {
 	return r._bizType
+}
+
+var poolAlibabaAlicomVtOpentradeGetproductinfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlicomVtOpentradeGetproductinfoRequest()
+	},
+}
+
+// GetAlibabaAlicomVtOpentradeGetproductinfoRequest 从 sync.Pool 获取 AlibabaAlicomVtOpentradeGetproductinfoAPIRequest
+func GetAlibabaAlicomVtOpentradeGetproductinfoAPIRequest() *AlibabaAlicomVtOpentradeGetproductinfoAPIRequest {
+	return poolAlibabaAlicomVtOpentradeGetproductinfoAPIRequest.Get().(*AlibabaAlicomVtOpentradeGetproductinfoAPIRequest)
+}
+
+// ReleaseAlibabaAlicomVtOpentradeGetproductinfoAPIRequest 将 AlibabaAlicomVtOpentradeGetproductinfoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlicomVtOpentradeGetproductinfoAPIRequest(v *AlibabaAlicomVtOpentradeGetproductinfoAPIRequest) {
+	v.Reset()
+	poolAlibabaAlicomVtOpentradeGetproductinfoAPIRequest.Put(v)
 }

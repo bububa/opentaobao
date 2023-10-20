@@ -2,6 +2,7 @@ package youkuott
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type YoukuMediaapiVideoSnapshotGetAPIResponse struct {
 	YoukuMediaapiVideoSnapshotGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *YoukuMediaapiVideoSnapshotGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.YoukuMediaapiVideoSnapshotGetAPIResponseModel).Reset()
+}
+
 // YoukuMediaapiVideoSnapshotGetAPIResponseModel is 根据视频ID查询视频缩微图 成功返回结果
 type YoukuMediaapiVideoSnapshotGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"youku_mediaapi_video_snapshot_get_response"`
@@ -26,4 +33,29 @@ type YoukuMediaapiVideoSnapshotGetAPIResponseModel struct {
 	IsSuccess string `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// 返回信息
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *YoukuMediaapiVideoSnapshotGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ModelList = m.ModelList[:0]
+	m.IsSuccess = ""
+	m.MsgInfo = ""
+}
+
+var poolYoukuMediaapiVideoSnapshotGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(YoukuMediaapiVideoSnapshotGetAPIResponse)
+	},
+}
+
+// GetYoukuMediaapiVideoSnapshotGetAPIResponse 从 sync.Pool 获取 YoukuMediaapiVideoSnapshotGetAPIResponse
+func GetYoukuMediaapiVideoSnapshotGetAPIResponse() *YoukuMediaapiVideoSnapshotGetAPIResponse {
+	return poolYoukuMediaapiVideoSnapshotGetAPIResponse.Get().(*YoukuMediaapiVideoSnapshotGetAPIResponse)
+}
+
+// ReleaseYoukuMediaapiVideoSnapshotGetAPIResponse 将 YoukuMediaapiVideoSnapshotGetAPIResponse 保存到 sync.Pool
+func ReleaseYoukuMediaapiVideoSnapshotGetAPIResponse(v *YoukuMediaapiVideoSnapshotGetAPIResponse) {
+	v.Reset()
+	poolYoukuMediaapiVideoSnapshotGetAPIResponse.Put(v)
 }

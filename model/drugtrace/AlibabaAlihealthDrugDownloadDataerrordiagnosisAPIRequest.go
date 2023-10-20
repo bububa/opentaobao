@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type AlibabaAlihealthDrugDownloadDataerrordiagnosisAPIRequest struct {
 // NewAlibabaAlihealthDrugDownloadDataerrordiagnosisRequest 初始化AlibabaAlihealthDrugDownloadDataerrordiagnosisAPIRequest对象
 func NewAlibabaAlihealthDrugDownloadDataerrordiagnosisRequest() *AlibabaAlihealthDrugDownloadDataerrordiagnosisAPIRequest {
 	return &AlibabaAlihealthDrugDownloadDataerrordiagnosisAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugDownloadDataerrordiagnosisAPIRequest) Reset() {
+	r._appKeyN = ""
+	r._baseEntName = ""
+	r._billEntName = ""
+	r._type = ""
+	r._billCode = ""
+	r._billTypeFlag = ""
+	r._reUpload = ""
+	r._code = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *AlibabaAlihealthDrugDownloadDataerrordiagnosisAPIRequest) SetCode(_code
 // GetCode Code Getter
 func (r AlibabaAlihealthDrugDownloadDataerrordiagnosisAPIRequest) GetCode() string {
 	return r._code
+}
+
+var poolAlibabaAlihealthDrugDownloadDataerrordiagnosisAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugDownloadDataerrordiagnosisRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugDownloadDataerrordiagnosisRequest 从 sync.Pool 获取 AlibabaAlihealthDrugDownloadDataerrordiagnosisAPIRequest
+func GetAlibabaAlihealthDrugDownloadDataerrordiagnosisAPIRequest() *AlibabaAlihealthDrugDownloadDataerrordiagnosisAPIRequest {
+	return poolAlibabaAlihealthDrugDownloadDataerrordiagnosisAPIRequest.Get().(*AlibabaAlihealthDrugDownloadDataerrordiagnosisAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugDownloadDataerrordiagnosisAPIRequest 将 AlibabaAlihealthDrugDownloadDataerrordiagnosisAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugDownloadDataerrordiagnosisAPIRequest(v *AlibabaAlihealthDrugDownloadDataerrordiagnosisAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugDownloadDataerrordiagnosisAPIRequest.Put(v)
 }

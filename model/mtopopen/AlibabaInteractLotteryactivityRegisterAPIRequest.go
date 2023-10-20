@@ -2,6 +2,7 @@ package mtopopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaInteractLotteryactivityRegisterAPIRequest struct {
 // NewAlibabaInteractLotteryactivityRegisterRequest 初始化AlibabaInteractLotteryactivityRegisterAPIRequest对象
 func NewAlibabaInteractLotteryactivityRegisterRequest() *AlibabaInteractLotteryactivityRegisterAPIRequest {
 	return &AlibabaInteractLotteryactivityRegisterAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractLotteryactivityRegisterAPIRequest) Reset() {
+	r._paramTopUpdateActivityLotteryInfoParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaInteractLotteryactivityRegisterAPIRequest) SetParamTopUpdateActi
 // GetParamTopUpdateActivityLotteryInfoParam ParamTopUpdateActivityLotteryInfoParam Getter
 func (r AlibabaInteractLotteryactivityRegisterAPIRequest) GetParamTopUpdateActivityLotteryInfoParam() *TopUpdateActivityLotteryInfoParam {
 	return r._paramTopUpdateActivityLotteryInfoParam
+}
+
+var poolAlibabaInteractLotteryactivityRegisterAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractLotteryactivityRegisterRequest()
+	},
+}
+
+// GetAlibabaInteractLotteryactivityRegisterRequest 从 sync.Pool 获取 AlibabaInteractLotteryactivityRegisterAPIRequest
+func GetAlibabaInteractLotteryactivityRegisterAPIRequest() *AlibabaInteractLotteryactivityRegisterAPIRequest {
+	return poolAlibabaInteractLotteryactivityRegisterAPIRequest.Get().(*AlibabaInteractLotteryactivityRegisterAPIRequest)
+}
+
+// ReleaseAlibabaInteractLotteryactivityRegisterAPIRequest 将 AlibabaInteractLotteryactivityRegisterAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractLotteryactivityRegisterAPIRequest(v *AlibabaInteractLotteryactivityRegisterAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractLotteryactivityRegisterAPIRequest.Put(v)
 }

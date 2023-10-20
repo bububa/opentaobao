@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest struct {
 // NewCainiaoCbossWorkplatformBiztypeQuerybyidRequest 初始化CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest对象
 func NewCainiaoCbossWorkplatformBiztypeQuerybyidRequest() *CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest {
 	return &CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest) Reset() {
+	r._bizTypeId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest) SetBizTypeId(_bizTy
 // GetBizTypeId BizTypeId Getter
 func (r CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest) GetBizTypeId() string {
 	return r._bizTypeId
+}
+
+var poolCainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoCbossWorkplatformBiztypeQuerybyidRequest()
+	},
+}
+
+// GetCainiaoCbossWorkplatformBiztypeQuerybyidRequest 从 sync.Pool 获取 CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest
+func GetCainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest() *CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest {
+	return poolCainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest.Get().(*CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest)
+}
+
+// ReleaseCainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest 将 CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest 放入 sync.Pool
+func ReleaseCainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest(v *CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest) {
+	v.Reset()
+	poolCainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest.Put(v)
 }

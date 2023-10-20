@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest struct {
 // NewAlibabaAlihealthDrugcodeDrugfactoryExportattributeRequest 初始化AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest对象
 func NewAlibabaAlihealthDrugcodeDrugfactoryExportattributeRequest() *AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest {
 	return &AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest) Reset() {
+	r._refEntId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest) SetRefEnt
 // GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest) GetRefEntId() string {
 	return r._refEntId
+}
+
+var poolAlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugcodeDrugfactoryExportattributeRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugcodeDrugfactoryExportattributeRequest 从 sync.Pool 获取 AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest
+func GetAlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest() *AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest {
+	return poolAlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest.Get().(*AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest 将 AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest(v *AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest.Put(v)
 }

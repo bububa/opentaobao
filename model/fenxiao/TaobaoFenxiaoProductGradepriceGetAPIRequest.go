@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoFenxiaoProductGradepriceGetAPIRequest struct {
 // NewTaobaoFenxiaoProductGradepriceGetRequest 初始化TaobaoFenxiaoProductGradepriceGetAPIRequest对象
 func NewTaobaoFenxiaoProductGradepriceGetRequest() *TaobaoFenxiaoProductGradepriceGetAPIRequest {
 	return &TaobaoFenxiaoProductGradepriceGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoProductGradepriceGetAPIRequest) Reset() {
+	r._productId = 0
+	r._skuId = 0
+	r._tradeType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoFenxiaoProductGradepriceGetAPIRequest) SetTradeType(_tradeType in
 // GetTradeType TradeType Getter
 func (r TaobaoFenxiaoProductGradepriceGetAPIRequest) GetTradeType() int64 {
 	return r._tradeType
+}
+
+var poolTaobaoFenxiaoProductGradepriceGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoProductGradepriceGetRequest()
+	},
+}
+
+// GetTaobaoFenxiaoProductGradepriceGetRequest 从 sync.Pool 获取 TaobaoFenxiaoProductGradepriceGetAPIRequest
+func GetTaobaoFenxiaoProductGradepriceGetAPIRequest() *TaobaoFenxiaoProductGradepriceGetAPIRequest {
+	return poolTaobaoFenxiaoProductGradepriceGetAPIRequest.Get().(*TaobaoFenxiaoProductGradepriceGetAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoProductGradepriceGetAPIRequest 将 TaobaoFenxiaoProductGradepriceGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoProductGradepriceGetAPIRequest(v *TaobaoFenxiaoProductGradepriceGetAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoProductGradepriceGetAPIRequest.Put(v)
 }

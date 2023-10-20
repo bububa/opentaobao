@@ -1,5 +1,9 @@
 package waybill
 
+import (
+	"sync"
+)
+
 // WaybillCloudPrintResponse 结构体
 type WaybillCloudPrintResponse struct {
 	// 请求id
@@ -16,4 +20,27 @@ type WaybillCloudPrintResponse struct {
 	CpCode string `json:"cp_code,omitempty" xml:"cp_code,omitempty"`
 	// 真实取号的cp_code，在淘特官方物流等虚拟cp的场景中real_cp_code和入参中的cp_code不一样，其他场景二者一样
 	RealCpCode string `json:"real_cp_code,omitempty" xml:"real_cp_code,omitempty"`
+}
+
+var poolWaybillCloudPrintResponse = sync.Pool{
+	New: func() any {
+		return new(WaybillCloudPrintResponse)
+	},
+}
+
+// GetWaybillCloudPrintResponse() 从对象池中获取WaybillCloudPrintResponse
+func GetWaybillCloudPrintResponse() *WaybillCloudPrintResponse {
+	return poolWaybillCloudPrintResponse.Get().(*WaybillCloudPrintResponse)
+}
+
+// ReleaseWaybillCloudPrintResponse 释放WaybillCloudPrintResponse
+func ReleaseWaybillCloudPrintResponse(v *WaybillCloudPrintResponse) {
+	v.ObjectId = ""
+	v.PrintData = ""
+	v.WaybillCode = ""
+	v.ParentWaybillCode = ""
+	v.ExtraInfo = ""
+	v.CpCode = ""
+	v.RealCpCode = ""
+	poolWaybillCloudPrintResponse.Put(v)
 }

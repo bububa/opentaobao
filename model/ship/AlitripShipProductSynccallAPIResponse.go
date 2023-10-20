@@ -2,6 +2,7 @@ package ship
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripShipProductSynccallAPIResponse struct {
 	AlitripShipProductSynccallAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripShipProductSynccallAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripShipProductSynccallAPIResponseModel).Reset()
+}
+
 // AlitripShipProductSynccallAPIResponseModel is 全量同步回调 成功返回结果
 type AlitripShipProductSynccallAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_ship_product_synccall_response"`
@@ -26,4 +33,29 @@ type AlitripShipProductSynccallAPIResponseModel struct {
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 	// 成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripShipProductSynccallAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultCode = ""
+	m.ResultMsg = ""
+	m.IsSuccess = false
+}
+
+var poolAlitripShipProductSynccallAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripShipProductSynccallAPIResponse)
+	},
+}
+
+// GetAlitripShipProductSynccallAPIResponse 从 sync.Pool 获取 AlitripShipProductSynccallAPIResponse
+func GetAlitripShipProductSynccallAPIResponse() *AlitripShipProductSynccallAPIResponse {
+	return poolAlitripShipProductSynccallAPIResponse.Get().(*AlitripShipProductSynccallAPIResponse)
+}
+
+// ReleaseAlitripShipProductSynccallAPIResponse 将 AlitripShipProductSynccallAPIResponse 保存到 sync.Pool
+func ReleaseAlitripShipProductSynccallAPIResponse(v *AlitripShipProductSynccallAPIResponse) {
+	v.Reset()
+	poolAlitripShipProductSynccallAPIResponse.Put(v)
 }

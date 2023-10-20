@@ -9,11 +9,6 @@ import (
 // taobao.eticket.merchant.ma.failsend
 //
 // 针对一次发码通知，码商无法完成发码，则可以通过此接口告知电子凭证
-func TaobaoEticketMerchantMaFailsend(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantMaFailsendAPIRequest, session string) (*eticket.TaobaoEticketMerchantMaFailsendAPIResponse, error) {
-	var resp eticket.TaobaoEticketMerchantMaFailsendAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoEticketMerchantMaFailsend(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantMaFailsendAPIRequest, resp *eticket.TaobaoEticketMerchantMaFailsendAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

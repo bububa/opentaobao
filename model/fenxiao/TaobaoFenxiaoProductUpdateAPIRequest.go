@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -91,8 +92,50 @@ type TaobaoFenxiaoProductUpdateAPIRequest struct {
 // NewTaobaoFenxiaoProductUpdateRequest 初始化TaobaoFenxiaoProductUpdateAPIRequest对象
 func NewTaobaoFenxiaoProductUpdateRequest() *TaobaoFenxiaoProductUpdateAPIRequest {
 	return &TaobaoFenxiaoProductUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(37),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoProductUpdateAPIRequest) Reset() {
+	r._name = ""
+	r._standardPrice = ""
+	r._standardRetailPrice = ""
+	r._retailPriceLow = ""
+	r._retailPriceHigh = ""
+	r._costPrice = ""
+	r._dealerCostPrice = ""
+	r._outerId = ""
+	r._desc = ""
+	r._properties = ""
+	r._propertyAlias = ""
+	r._inputProperties = ""
+	r._picPath = ""
+	r._prov = ""
+	r._city = ""
+	r._postageType = ""
+	r._postageOrdinary = ""
+	r._postageFast = ""
+	r._postageEms = ""
+	r._haveInvoice = ""
+	r._haveQuarantee = ""
+	r._status = ""
+	r._skuIds = ""
+	r._skuStandardPrices = ""
+	r._skuCostPrices = ""
+	r._skuDealerCostPrices = ""
+	r._skuQuantitys = ""
+	r._skuOuterIds = ""
+	r._skuProperties = ""
+	r._skuPropertiesDel = ""
+	r._isAuthz = ""
+	r._pid = 0
+	r._quantity = 0
+	r._categoryId = 0
+	r._image = nil
+	r._postageId = 0
+	r._discountId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -591,4 +634,21 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetDiscountId(_discountId int64) 
 // GetDiscountId DiscountId Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetDiscountId() int64 {
 	return r._discountId
+}
+
+var poolTaobaoFenxiaoProductUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoProductUpdateRequest()
+	},
+}
+
+// GetTaobaoFenxiaoProductUpdateRequest 从 sync.Pool 获取 TaobaoFenxiaoProductUpdateAPIRequest
+func GetTaobaoFenxiaoProductUpdateAPIRequest() *TaobaoFenxiaoProductUpdateAPIRequest {
+	return poolTaobaoFenxiaoProductUpdateAPIRequest.Get().(*TaobaoFenxiaoProductUpdateAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoProductUpdateAPIRequest 将 TaobaoFenxiaoProductUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoProductUpdateAPIRequest(v *TaobaoFenxiaoProductUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoProductUpdateAPIRequest.Put(v)
 }

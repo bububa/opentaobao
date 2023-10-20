@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BaggageTip 结构体
 type BaggageTip struct {
 	// 行李子内容可视化内容
@@ -16,4 +20,27 @@ type BaggageTip struct {
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 是否结构体
 	IsStruct bool `json:"is_struct,omitempty" xml:"is_struct,omitempty"`
+}
+
+var poolBaggageTip = sync.Pool{
+	New: func() any {
+		return new(BaggageTip)
+	},
+}
+
+// GetBaggageTip() 从对象池中获取BaggageTip
+func GetBaggageTip() *BaggageTip {
+	return poolBaggageTip.Get().(*BaggageTip)
+}
+
+// ReleaseBaggageTip 释放BaggageTip
+func ReleaseBaggageTip(v *BaggageTip) {
+	v.BaggageSubContentVisualizes = v.BaggageSubContentVisualizes[:0]
+	v.Logo = ""
+	v.TipsDesc = ""
+	v.TipsImage = ""
+	v.Ptc = ""
+	v.Title = ""
+	v.IsStruct = false
+	poolBaggageTip.Put(v)
 }

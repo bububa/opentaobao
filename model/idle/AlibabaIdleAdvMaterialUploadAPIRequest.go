@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleAdvMaterialUploadAPIRequest struct {
 // NewAlibabaIdleAdvMaterialUploadRequest 初始化AlibabaIdleAdvMaterialUploadAPIRequest对象
 func NewAlibabaIdleAdvMaterialUploadRequest() *AlibabaIdleAdvMaterialUploadAPIRequest {
 	return &AlibabaIdleAdvMaterialUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleAdvMaterialUploadAPIRequest) Reset() {
+	r._uploadTopParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleAdvMaterialUploadAPIRequest) SetUploadTopParam(_uploadTopPar
 // GetUploadTopParam UploadTopParam Getter
 func (r AlibabaIdleAdvMaterialUploadAPIRequest) GetUploadTopParam() *IdleAdvMaterialUploadTopParam {
 	return r._uploadTopParam
+}
+
+var poolAlibabaIdleAdvMaterialUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleAdvMaterialUploadRequest()
+	},
+}
+
+// GetAlibabaIdleAdvMaterialUploadRequest 从 sync.Pool 获取 AlibabaIdleAdvMaterialUploadAPIRequest
+func GetAlibabaIdleAdvMaterialUploadAPIRequest() *AlibabaIdleAdvMaterialUploadAPIRequest {
+	return poolAlibabaIdleAdvMaterialUploadAPIRequest.Get().(*AlibabaIdleAdvMaterialUploadAPIRequest)
+}
+
+// ReleaseAlibabaIdleAdvMaterialUploadAPIRequest 将 AlibabaIdleAdvMaterialUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleAdvMaterialUploadAPIRequest(v *AlibabaIdleAdvMaterialUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleAdvMaterialUploadAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest struct {
 // NewAlibabaScbpAdKeywordCreateKeywordBatchRequest 初始化AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest对象
 func NewAlibabaScbpAdKeywordCreateKeywordBatchRequest() *AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest {
 	return &AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest) Reset() {
+	r._topContext = nil
+	r._campaignId = 0
+	r._keywordQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest) SetKeywordQuery(_keyw
 // GetKeywordQuery KeywordQuery Getter
 func (r AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest) GetKeywordQuery() *KeywordQuery {
 	return r._keywordQuery
+}
+
+var poolAlibabaScbpAdKeywordCreateKeywordBatchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdKeywordCreateKeywordBatchRequest()
+	},
+}
+
+// GetAlibabaScbpAdKeywordCreateKeywordBatchRequest 从 sync.Pool 获取 AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest
+func GetAlibabaScbpAdKeywordCreateKeywordBatchAPIRequest() *AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest {
+	return poolAlibabaScbpAdKeywordCreateKeywordBatchAPIRequest.Get().(*AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdKeywordCreateKeywordBatchAPIRequest 将 AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdKeywordCreateKeywordBatchAPIRequest(v *AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdKeywordCreateKeywordBatchAPIRequest.Put(v)
 }

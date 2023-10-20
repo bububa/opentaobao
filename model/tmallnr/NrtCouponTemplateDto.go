@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // NrtCouponTemplateDto 结构体
 type NrtCouponTemplateDto struct {
 	// 券渠道
@@ -42,4 +46,40 @@ type NrtCouponTemplateDto struct {
 	CouponType int64 `json:"coupon_type,omitempty" xml:"coupon_type,omitempty"`
 	// 券模版id
 	CouponTemplateId int64 `json:"coupon_template_id,omitempty" xml:"coupon_template_id,omitempty"`
+}
+
+var poolNrtCouponTemplateDto = sync.Pool{
+	New: func() any {
+		return new(NrtCouponTemplateDto)
+	},
+}
+
+// GetNrtCouponTemplateDto() 从对象池中获取NrtCouponTemplateDto
+func GetNrtCouponTemplateDto() *NrtCouponTemplateDto {
+	return poolNrtCouponTemplateDto.Get().(*NrtCouponTemplateDto)
+}
+
+// ReleaseNrtCouponTemplateDto 释放NrtCouponTemplateDto
+func ReleaseNrtCouponTemplateDto(v *NrtCouponTemplateDto) {
+	v.Channel = ""
+	v.Creator = ""
+	v.ModifiedBy = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.CouponName = ""
+	v.SendStartTime = ""
+	v.SendEndTime = ""
+	v.Uuid = ""
+	v.Extra = ""
+	v.Version = 0
+	v.TotalCount = 0
+	v.ReserveCount = 0
+	v.StartFee = 0
+	v.Discount = 0
+	v.UseTimeType = 0
+	v.UseTime = 0
+	v.Status = 0
+	v.CouponType = 0
+	v.CouponTemplateId = 0
+	poolNrtCouponTemplateDto.Put(v)
 }

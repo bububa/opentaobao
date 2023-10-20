@@ -2,6 +2,7 @@ package itpolicy
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoAlitripItFareQuerytaskAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripItFareQuerytaskAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoAlitripItFareQuerytaskAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAlitripItFareQuerytaskAPIResponseModel).Reset()
 }
 
 // TaobaoAlitripItFareQuerytaskAPIResponseModel is 【国际机票自有政策】批量操作结果查询 成功返回结果
@@ -30,4 +37,31 @@ type TaobaoAlitripItFareQuerytaskAPIResponseModel struct {
 	ProcessAmount int64 `json:"process_amount,omitempty" xml:"process_amount,omitempty"`
 	// 任务状态，1 处理中，2 处理失败，3 处理完毕
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAlitripItFareQuerytaskAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Errors = m.Errors[:0]
+	m.ExtendAttributes = ""
+	m.GmtFinished = ""
+	m.ProcessAmount = 0
+	m.Status = 0
+}
+
+var poolTaobaoAlitripItFareQuerytaskAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAlitripItFareQuerytaskAPIResponse)
+	},
+}
+
+// GetTaobaoAlitripItFareQuerytaskAPIResponse 从 sync.Pool 获取 TaobaoAlitripItFareQuerytaskAPIResponse
+func GetTaobaoAlitripItFareQuerytaskAPIResponse() *TaobaoAlitripItFareQuerytaskAPIResponse {
+	return poolTaobaoAlitripItFareQuerytaskAPIResponse.Get().(*TaobaoAlitripItFareQuerytaskAPIResponse)
+}
+
+// ReleaseTaobaoAlitripItFareQuerytaskAPIResponse 将 TaobaoAlitripItFareQuerytaskAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAlitripItFareQuerytaskAPIResponse(v *TaobaoAlitripItFareQuerytaskAPIResponse) {
+	v.Reset()
+	poolTaobaoAlitripItFareQuerytaskAPIResponse.Put(v)
 }

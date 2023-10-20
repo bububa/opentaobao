@@ -9,11 +9,6 @@ import (
 // alibaba.cloudgame.interactive.game.heartbeat
 //
 // 游戏玩家心跳
-func AlibabaCloudgameInteractiveGameHeartbeat(clt *core.SDKClient, req *cloudgame.AlibabaCloudgameInteractiveGameHeartbeatAPIRequest, session string) (*cloudgame.AlibabaCloudgameInteractiveGameHeartbeatAPIResponse, error) {
-	var resp cloudgame.AlibabaCloudgameInteractiveGameHeartbeatAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCloudgameInteractiveGameHeartbeat(clt *core.SDKClient, req *cloudgame.AlibabaCloudgameInteractiveGameHeartbeatAPIRequest, resp *cloudgame.AlibabaCloudgameInteractiveGameHeartbeatAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

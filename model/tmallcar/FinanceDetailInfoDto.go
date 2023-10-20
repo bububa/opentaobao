@@ -1,5 +1,9 @@
 package tmallcar
 
+import (
+	"sync"
+)
+
 // FinanceDetailInfoDto 结构体
 type FinanceDetailInfoDto struct {
 	// 品牌名称
@@ -36,4 +40,37 @@ type FinanceDetailInfoDto struct {
 	EarnestPaid bool `json:"earnest_paid,omitempty" xml:"earnest_paid,omitempty"`
 	// 是否有效订单
 	Valid bool `json:"valid,omitempty" xml:"valid,omitempty"`
+}
+
+var poolFinanceDetailInfoDto = sync.Pool{
+	New: func() any {
+		return new(FinanceDetailInfoDto)
+	},
+}
+
+// GetFinanceDetailInfoDto() 从对象池中获取FinanceDetailInfoDto
+func GetFinanceDetailInfoDto() *FinanceDetailInfoDto {
+	return poolFinanceDetailInfoDto.Get().(*FinanceDetailInfoDto)
+}
+
+// ReleaseFinanceDetailInfoDto 释放FinanceDetailInfoDto
+func ReleaseFinanceDetailInfoDto(v *FinanceDetailInfoDto) {
+	v.BrandName = ""
+	v.SeriesName = ""
+	v.ModelName = ""
+	v.BizContent = ""
+	v.OuterFinanceOrderId = ""
+	v.ManufactureName = ""
+	v.ItemId = 0
+	v.Amount = 0
+	v.BrandId = 0
+	v.SeriesId = 0
+	v.ModelId = 0
+	v.BookingShopInfo = nil
+	v.PurchaseUserInfo = nil
+	v.DeliveryAddress = nil
+	v.FinanceInfo = nil
+	v.EarnestPaid = false
+	v.Valid = false
+	poolFinanceDetailInfoDto.Put(v)
 }

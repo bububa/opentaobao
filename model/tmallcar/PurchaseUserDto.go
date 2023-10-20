@@ -1,5 +1,9 @@
 package tmallcar
 
+import (
+	"sync"
+)
+
 // PurchaseUserDto 结构体
 type PurchaseUserDto struct {
 	// 购车人姓名
@@ -12,4 +16,25 @@ type PurchaseUserDto struct {
 	IdentityType string `json:"identity_type,omitempty" xml:"identity_type,omitempty"`
 	// 证件类型描述
 	IdentityTypeDesc string `json:"identity_type_desc,omitempty" xml:"identity_type_desc,omitempty"`
+}
+
+var poolPurchaseUserDto = sync.Pool{
+	New: func() any {
+		return new(PurchaseUserDto)
+	},
+}
+
+// GetPurchaseUserDto() 从对象池中获取PurchaseUserDto
+func GetPurchaseUserDto() *PurchaseUserDto {
+	return poolPurchaseUserDto.Get().(*PurchaseUserDto)
+}
+
+// ReleasePurchaseUserDto 释放PurchaseUserDto
+func ReleasePurchaseUserDto(v *PurchaseUserDto) {
+	v.UserName = ""
+	v.Mobile = ""
+	v.IdentityNo = ""
+	v.IdentityType = ""
+	v.IdentityTypeDesc = ""
+	poolPurchaseUserDto.Put(v)
 }

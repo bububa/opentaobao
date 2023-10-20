@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaSscSupplyplatformServiceabilitySaveAPIRequest struct {
 // NewAlibabaSscSupplyplatformServiceabilitySaveRequest 初始化AlibabaSscSupplyplatformServiceabilitySaveAPIRequest对象
 func NewAlibabaSscSupplyplatformServiceabilitySaveRequest() *AlibabaSscSupplyplatformServiceabilitySaveAPIRequest {
 	return &AlibabaSscSupplyplatformServiceabilitySaveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSscSupplyplatformServiceabilitySaveAPIRequest) Reset() {
+	r._fulfilTypeList = r._fulfilTypeList[:0]
+	r._serviceSkuCodeList = r._serviceSkuCodeList[:0]
+	r._areaCodeList = r._areaCodeList[:0]
+	r._providerType = ""
+	r._providerCode = ""
+	r._providerId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaSscSupplyplatformServiceabilitySaveAPIRequest) SetProviderId(_pr
 // GetProviderId ProviderId Getter
 func (r AlibabaSscSupplyplatformServiceabilitySaveAPIRequest) GetProviderId() int64 {
 	return r._providerId
+}
+
+var poolAlibabaSscSupplyplatformServiceabilitySaveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSscSupplyplatformServiceabilitySaveRequest()
+	},
+}
+
+// GetAlibabaSscSupplyplatformServiceabilitySaveRequest 从 sync.Pool 获取 AlibabaSscSupplyplatformServiceabilitySaveAPIRequest
+func GetAlibabaSscSupplyplatformServiceabilitySaveAPIRequest() *AlibabaSscSupplyplatformServiceabilitySaveAPIRequest {
+	return poolAlibabaSscSupplyplatformServiceabilitySaveAPIRequest.Get().(*AlibabaSscSupplyplatformServiceabilitySaveAPIRequest)
+}
+
+// ReleaseAlibabaSscSupplyplatformServiceabilitySaveAPIRequest 将 AlibabaSscSupplyplatformServiceabilitySaveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSscSupplyplatformServiceabilitySaveAPIRequest(v *AlibabaSscSupplyplatformServiceabilitySaveAPIRequest) {
+	v.Reset()
+	poolAlibabaSscSupplyplatformServiceabilitySaveAPIRequest.Put(v)
 }

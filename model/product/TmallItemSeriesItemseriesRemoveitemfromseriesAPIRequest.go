@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TmallItemSeriesItemseriesRemoveitemfromseriesAPIRequest struct {
 // NewTmallItemSeriesItemseriesRemoveitemfromseriesRequest 初始化TmallItemSeriesItemseriesRemoveitemfromseriesAPIRequest对象
 func NewTmallItemSeriesItemseriesRemoveitemfromseriesRequest() *TmallItemSeriesItemseriesRemoveitemfromseriesAPIRequest {
 	return &TmallItemSeriesItemseriesRemoveitemfromseriesAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallItemSeriesItemseriesRemoveitemfromseriesAPIRequest) Reset() {
+	r._market = ""
+	r._itemId = 0
+	r._seriesId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TmallItemSeriesItemseriesRemoveitemfromseriesAPIRequest) SetSeriesId(_s
 // GetSeriesId SeriesId Getter
 func (r TmallItemSeriesItemseriesRemoveitemfromseriesAPIRequest) GetSeriesId() int64 {
 	return r._seriesId
+}
+
+var poolTmallItemSeriesItemseriesRemoveitemfromseriesAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallItemSeriesItemseriesRemoveitemfromseriesRequest()
+	},
+}
+
+// GetTmallItemSeriesItemseriesRemoveitemfromseriesRequest 从 sync.Pool 获取 TmallItemSeriesItemseriesRemoveitemfromseriesAPIRequest
+func GetTmallItemSeriesItemseriesRemoveitemfromseriesAPIRequest() *TmallItemSeriesItemseriesRemoveitemfromseriesAPIRequest {
+	return poolTmallItemSeriesItemseriesRemoveitemfromseriesAPIRequest.Get().(*TmallItemSeriesItemseriesRemoveitemfromseriesAPIRequest)
+}
+
+// ReleaseTmallItemSeriesItemseriesRemoveitemfromseriesAPIRequest 将 TmallItemSeriesItemseriesRemoveitemfromseriesAPIRequest 放入 sync.Pool
+func ReleaseTmallItemSeriesItemseriesRemoveitemfromseriesAPIRequest(v *TmallItemSeriesItemseriesRemoveitemfromseriesAPIRequest) {
+	v.Reset()
+	poolTmallItemSeriesItemseriesRemoveitemfromseriesAPIRequest.Put(v)
 }

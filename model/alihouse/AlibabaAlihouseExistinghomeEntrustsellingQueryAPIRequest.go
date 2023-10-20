@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseExistinghomeEntrustsellingQueryAPIRequest struct {
 // NewAlibabaAlihouseExistinghomeEntrustsellingQueryRequest 初始化AlibabaAlihouseExistinghomeEntrustsellingQueryAPIRequest对象
 func NewAlibabaAlihouseExistinghomeEntrustsellingQueryRequest() *AlibabaAlihouseExistinghomeEntrustsellingQueryAPIRequest {
 	return &AlibabaAlihouseExistinghomeEntrustsellingQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseExistinghomeEntrustsellingQueryAPIRequest) Reset() {
+	r._entrustSellingQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseExistinghomeEntrustsellingQueryAPIRequest) SetEntrustSel
 // GetEntrustSellingQuery EntrustSellingQuery Getter
 func (r AlibabaAlihouseExistinghomeEntrustsellingQueryAPIRequest) GetEntrustSellingQuery() *EntrustSellingQuery {
 	return r._entrustSellingQuery
+}
+
+var poolAlibabaAlihouseExistinghomeEntrustsellingQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseExistinghomeEntrustsellingQueryRequest()
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeEntrustsellingQueryRequest 从 sync.Pool 获取 AlibabaAlihouseExistinghomeEntrustsellingQueryAPIRequest
+func GetAlibabaAlihouseExistinghomeEntrustsellingQueryAPIRequest() *AlibabaAlihouseExistinghomeEntrustsellingQueryAPIRequest {
+	return poolAlibabaAlihouseExistinghomeEntrustsellingQueryAPIRequest.Get().(*AlibabaAlihouseExistinghomeEntrustsellingQueryAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeEntrustsellingQueryAPIRequest 将 AlibabaAlihouseExistinghomeEntrustsellingQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeEntrustsellingQueryAPIRequest(v *AlibabaAlihouseExistinghomeEntrustsellingQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeEntrustsellingQueryAPIRequest.Put(v)
 }

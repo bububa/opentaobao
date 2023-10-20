@@ -2,6 +2,7 @@ package mydata
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaMydataOverviewDateGetAPIResponse struct {
 	AlibabaMydataOverviewDateGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaMydataOverviewDateGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaMydataOverviewDateGetAPIResponseModel).Reset()
+}
+
 // AlibabaMydataOverviewDateGetAPIResponseModel is 我的效果-获取数据周期 成功返回结果
 type AlibabaMydataOverviewDateGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mydata_overview_date_get_response"`
@@ -22,4 +29,27 @@ type AlibabaMydataOverviewDateGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 我的效果可选数据周期列表
 	ResultList []DateRange `json:"result_list,omitempty" xml:"result_list>date_range,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaMydataOverviewDateGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultList = m.ResultList[:0]
+}
+
+var poolAlibabaMydataOverviewDateGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaMydataOverviewDateGetAPIResponse)
+	},
+}
+
+// GetAlibabaMydataOverviewDateGetAPIResponse 从 sync.Pool 获取 AlibabaMydataOverviewDateGetAPIResponse
+func GetAlibabaMydataOverviewDateGetAPIResponse() *AlibabaMydataOverviewDateGetAPIResponse {
+	return poolAlibabaMydataOverviewDateGetAPIResponse.Get().(*AlibabaMydataOverviewDateGetAPIResponse)
+}
+
+// ReleaseAlibabaMydataOverviewDateGetAPIResponse 将 AlibabaMydataOverviewDateGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaMydataOverviewDateGetAPIResponse(v *AlibabaMydataOverviewDateGetAPIResponse) {
+	v.Reset()
+	poolAlibabaMydataOverviewDateGetAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package jae
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoAplatformWeakgetAPIResponse struct {
 	TaobaoAplatformWeakgetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoAplatformWeakgetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAplatformWeakgetAPIResponseModel).Reset()
+}
+
 // TaobaoAplatformWeakgetAPIResponseModel is 活动平台弱登录接口 成功返回结果
 type TaobaoAplatformWeakgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"aplatform_weakget_response"`
@@ -22,4 +29,27 @@ type TaobaoAplatformWeakgetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *TaobaoAplatformWeakgetResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAplatformWeakgetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoAplatformWeakgetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAplatformWeakgetAPIResponse)
+	},
+}
+
+// GetTaobaoAplatformWeakgetAPIResponse 从 sync.Pool 获取 TaobaoAplatformWeakgetAPIResponse
+func GetTaobaoAplatformWeakgetAPIResponse() *TaobaoAplatformWeakgetAPIResponse {
+	return poolTaobaoAplatformWeakgetAPIResponse.Get().(*TaobaoAplatformWeakgetAPIResponse)
+}
+
+// ReleaseTaobaoAplatformWeakgetAPIResponse 将 TaobaoAplatformWeakgetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAplatformWeakgetAPIResponse(v *TaobaoAplatformWeakgetAPIResponse) {
+	v.Reset()
+	poolTaobaoAplatformWeakgetAPIResponse.Put(v)
 }

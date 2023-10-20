@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // KeywordDto 结构体
 type KeywordDto struct {
 	// 创建时间
@@ -42,4 +46,40 @@ type KeywordDto struct {
 	BuyCount int64 `json:"buy_count,omitempty" xml:"buy_count,omitempty"`
 	// 战略数据
 	BidStrategy *BidStrategyDto `json:"bid_strategy,omitempty" xml:"bid_strategy,omitempty"`
+}
+
+var poolKeywordDto = sync.Pool{
+	New: func() any {
+		return new(KeywordDto)
+	},
+}
+
+// GetKeywordDto() 从对象池中获取KeywordDto
+func GetKeywordDto() *KeywordDto {
+	return poolKeywordDto.Get().(*KeywordDto)
+}
+
+// ReleaseKeywordDto 释放KeywordDto
+func ReleaseKeywordDto(v *KeywordDto) {
+	v.GmtCreate = ""
+	v.GmtModify = ""
+	v.Word = ""
+	v.NormWord = ""
+	v.BidPrice = ""
+	v.AvgPrice = ""
+	v.SugPrice = ""
+	v.BasePrice = ""
+	v.Properties = ""
+	v.Effect = nil
+	v.Id = 0
+	v.ProductId = 0
+	v.CampaignId = 0
+	v.OnlineStatus = 0
+	v.QsStar = 0
+	v.BestMatchProduct = 0
+	v.RelativeProductsCount = 0
+	v.SearchCount = 0
+	v.BuyCount = 0
+	v.BidStrategy = nil
+	poolKeywordDto.Put(v)
 }

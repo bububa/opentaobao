@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // DrugEntBaseDto 结构体
 type DrugEntBaseDto struct {
 	// 药品信息id
@@ -90,4 +94,64 @@ type DrugEntBaseDto struct {
 	AnnCodeAmt int64 `json:"ann_code_amt,omitempty" xml:"ann_code_amt,omitempty"`
 	// 批准文号类型
 	ApprovalLicenceType int64 `json:"approval_licence_type,omitempty" xml:"approval_licence_type,omitempty"`
+}
+
+var poolDrugEntBaseDto = sync.Pool{
+	New: func() any {
+		return new(DrugEntBaseDto)
+	},
+}
+
+// GetDrugEntBaseDto() 从对象池中获取DrugEntBaseDto
+func GetDrugEntBaseDto() *DrugEntBaseDto {
+	return poolDrugEntBaseDto.Get().(*DrugEntBaseDto)
+}
+
+// ReleaseDrugEntBaseDto 释放DrugEntBaseDto
+func ReleaseDrugEntBaseDto(v *DrugEntBaseDto) {
+	v.DrugEntBaseId = ""
+	v.DrugEntBaseInfoId = ""
+	v.ApprovalLicenceNo = ""
+	v.PhysicName = ""
+	v.PhysicTypeDesc = ""
+	v.PkgSpecCrit = ""
+	v.PrepnSpec = ""
+	v.PrepnTypeDesc = ""
+	v.Exprie = ""
+	v.ProdName = ""
+	v.SdcCode = ""
+	v.PrepnUnitDesc = ""
+	v.ProdCode = ""
+	v.PhysicCode = ""
+	v.ApprovalLicenceNoOld = ""
+	v.ApprovalLicenceExpiryOld = ""
+	v.ApprovalLicenceDate = ""
+	v.ApprovalLicenceExpiry = ""
+	v.CodeActiveProductFlagStr = ""
+	v.EntName = ""
+	v.ModDate = ""
+	v.CrtDate = ""
+	v.AuthorizerFlag = ""
+	v.ModIcCode = ""
+	v.PhysicInfo = ""
+	v.Ean13Code = ""
+	v.PkgSpec = ""
+	v.Status = ""
+	v.DrugApprovalInfoId = ""
+	v.DrugBaseInfoId = ""
+	v.RefEntId = ""
+	v.EntId = ""
+	v.MdStorageCon = ""
+	v.PkgNum = 0
+	v.PhysicDetailType = 0
+	v.PkgUnit = 0
+	v.PrepnUnit = 0
+	v.PhysicType = 0
+	v.PrepnType = 0
+	v.PhysicNatCode = 0
+	v.ExprieUnit = 0
+	v.ExprieLife = 0
+	v.AnnCodeAmt = 0
+	v.ApprovalLicenceType = 0
+	poolDrugEntBaseDto.Put(v)
 }

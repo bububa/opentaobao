@@ -2,6 +2,7 @@ package tmallcarenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TmallCarcenterVehicleCvmappingInsertAPIRequest struct {
 // NewTmallCarcenterVehicleCvmappingInsertRequest 初始化TmallCarcenterVehicleCvmappingInsertAPIRequest对象
 func NewTmallCarcenterVehicleCvmappingInsertRequest() *TmallCarcenterVehicleCvmappingInsertAPIRequest {
 	return &TmallCarcenterVehicleCvmappingInsertAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCarcenterVehicleCvmappingInsertAPIRequest) Reset() {
+	r._supplierVersionCid = ""
+	r._supplierChassisCid = ""
+	r._status = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TmallCarcenterVehicleCvmappingInsertAPIRequest) SetStatus(_status int64
 // GetStatus Status Getter
 func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetStatus() int64 {
 	return r._status
+}
+
+var poolTmallCarcenterVehicleCvmappingInsertAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCarcenterVehicleCvmappingInsertRequest()
+	},
+}
+
+// GetTmallCarcenterVehicleCvmappingInsertRequest 从 sync.Pool 获取 TmallCarcenterVehicleCvmappingInsertAPIRequest
+func GetTmallCarcenterVehicleCvmappingInsertAPIRequest() *TmallCarcenterVehicleCvmappingInsertAPIRequest {
+	return poolTmallCarcenterVehicleCvmappingInsertAPIRequest.Get().(*TmallCarcenterVehicleCvmappingInsertAPIRequest)
+}
+
+// ReleaseTmallCarcenterVehicleCvmappingInsertAPIRequest 将 TmallCarcenterVehicleCvmappingInsertAPIRequest 放入 sync.Pool
+func ReleaseTmallCarcenterVehicleCvmappingInsertAPIRequest(v *TmallCarcenterVehicleCvmappingInsertAPIRequest) {
+	v.Reset()
+	poolTmallCarcenterVehicleCvmappingInsertAPIRequest.Put(v)
 }

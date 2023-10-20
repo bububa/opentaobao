@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drug.download.getentauthent
 //
 // D2D数据落地获取授权企业列表
-func AlibabaAlihealthDrugDownloadGetentauthent(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugDownloadGetentauthentAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugDownloadGetentauthentAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugDownloadGetentauthentAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugDownloadGetentauthent(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugDownloadGetentauthentAPIRequest, resp *drugtrace.AlibabaAlihealthDrugDownloadGetentauthentAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

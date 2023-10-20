@@ -2,6 +2,7 @@ package antifraud
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoAntifraudRiskuserGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoAntifraudRiskuserGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoAntifraudRiskuserGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAntifraudRiskuserGetAPIResponseModel).Reset()
 }
 
 // TaobaoAntifraudRiskuserGetAPIResponseModel is 反欺诈用户风险查询 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoAntifraudRiskuserGetAPIResponseModel struct {
 	Score string `json:"score,omitempty" xml:"score,omitempty"`
 	// 风险结果, 为reject, review, pass三者之一
 	RiskLevel string `json:"risk_level,omitempty" xml:"risk_level,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAntifraudRiskuserGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.DetailList = m.DetailList[:0]
+	m.EventId = ""
+	m.Score = ""
+	m.RiskLevel = ""
+}
+
+var poolTaobaoAntifraudRiskuserGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAntifraudRiskuserGetAPIResponse)
+	},
+}
+
+// GetTaobaoAntifraudRiskuserGetAPIResponse 从 sync.Pool 获取 TaobaoAntifraudRiskuserGetAPIResponse
+func GetTaobaoAntifraudRiskuserGetAPIResponse() *TaobaoAntifraudRiskuserGetAPIResponse {
+	return poolTaobaoAntifraudRiskuserGetAPIResponse.Get().(*TaobaoAntifraudRiskuserGetAPIResponse)
+}
+
+// ReleaseTaobaoAntifraudRiskuserGetAPIResponse 将 TaobaoAntifraudRiskuserGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAntifraudRiskuserGetAPIResponse(v *TaobaoAntifraudRiskuserGetAPIResponse) {
+	v.Reset()
+	poolTaobaoAntifraudRiskuserGetAPIResponse.Put(v)
 }

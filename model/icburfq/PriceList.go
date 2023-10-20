@@ -1,5 +1,9 @@
 package icburfq
 
+import (
+	"sync"
+)
+
 // PriceList 结构体
 type PriceList struct {
 	// 目的港
@@ -22,4 +26,30 @@ type PriceList struct {
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
 	// 价格单位
 	FobPriceUnit string `json:"fob_price_unit,omitempty" xml:"fob_price_unit,omitempty"`
+}
+
+var poolPriceList = sync.Pool{
+	New: func() any {
+		return new(PriceList)
+	},
+}
+
+// GetPriceList() 从对象池中获取PriceList
+func GetPriceList() *PriceList {
+	return poolPriceList.Get().(*PriceList)
+}
+
+// ReleasePriceList 释放PriceList
+func ReleasePriceList(v *PriceList) {
+	v.Port = ""
+	v.ShippingTerms = ""
+	v.ImageStr = ""
+	v.ModelNum = ""
+	v.ItemName = ""
+	v.FobPrice = ""
+	v.Quantity = ""
+	v.QuantityUnit = ""
+	v.Remark = ""
+	v.FobPriceUnit = ""
+	poolPriceList.Put(v)
 }

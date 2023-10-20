@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -97,8 +98,53 @@ type TaobaoXhotelBnbhouseAddAPIRequest struct {
 // NewTaobaoXhotelBnbhouseAddRequest 初始化TaobaoXhotelBnbhouseAddAPIRequest对象
 func NewTaobaoXhotelBnbhouseAddRequest() *TaobaoXhotelBnbhouseAddAPIRequest {
 	return &TaobaoXhotelBnbhouseAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(40),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelBnbhouseAddAPIRequest) Reset() {
+	r._pictures = r._pictures[:0]
+	r._outOwnerId = ""
+	r._tel = ""
+	r._nameE = ""
+	r._decorateTime = ""
+	r._tags = ""
+	r._settlementCurrency = ""
+	r._name = ""
+	r._activitiesAllowed = ""
+	r._openingTime = ""
+	r._description = ""
+	r._floors = ""
+	r._videoUrl = ""
+	r._vendor = ""
+	r._checkInNotes = ""
+	r._realTel = ""
+	r._outerId = ""
+	r._brand = ""
+	r._facilities = ""
+	r._standardHotelFacilities = ""
+	r._bnbBookingTime = nil
+	r._decorateLevel = 0
+	r._receiveForeigners = 0
+	r._extraBedsNum = 0
+	r._hasFrontDesk = 0
+	r._guestAge = 0
+	r._isUseShootImage = 0
+	r._status = nil
+	r._guestGender = 0
+	r._hasLicense = 0
+	r._productType = 0
+	r._charge = nil
+	r._decorateStyle = 0
+	r._location = nil
+	r._attributes = 0
+	r._scenicFeature = 0
+	r._houseSize = 0
+	r._shid = 0
+	r._commissionRate = 0
+	r._isFeizhuHotel = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -636,4 +682,21 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetIsFeizhuHotel(_isFeizhuHotel bool
 // GetIsFeizhuHotel IsFeizhuHotel Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetIsFeizhuHotel() bool {
 	return r._isFeizhuHotel
+}
+
+var poolTaobaoXhotelBnbhouseAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelBnbhouseAddRequest()
+	},
+}
+
+// GetTaobaoXhotelBnbhouseAddRequest 从 sync.Pool 获取 TaobaoXhotelBnbhouseAddAPIRequest
+func GetTaobaoXhotelBnbhouseAddAPIRequest() *TaobaoXhotelBnbhouseAddAPIRequest {
+	return poolTaobaoXhotelBnbhouseAddAPIRequest.Get().(*TaobaoXhotelBnbhouseAddAPIRequest)
+}
+
+// ReleaseTaobaoXhotelBnbhouseAddAPIRequest 将 TaobaoXhotelBnbhouseAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelBnbhouseAddAPIRequest(v *TaobaoXhotelBnbhouseAddAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelBnbhouseAddAPIRequest.Put(v)
 }

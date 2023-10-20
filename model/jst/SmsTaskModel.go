@@ -1,5 +1,9 @@
 package jst
 
+import (
+	"sync"
+)
+
 // SmsTaskModel 结构体
 type SmsTaskModel struct {
 	// 短信文案
@@ -24,4 +28,31 @@ type SmsTaskModel struct {
 	TaskCode string `json:"task_code,omitempty" xml:"task_code,omitempty"`
 	// 商品或店铺详情页H5长链地址
 	Url string `json:"url,omitempty" xml:"url,omitempty"`
+}
+
+var poolSmsTaskModel = sync.Pool{
+	New: func() any {
+		return new(SmsTaskModel)
+	},
+}
+
+// GetSmsTaskModel() 从对象池中获取SmsTaskModel
+func GetSmsTaskModel() *SmsTaskModel {
+	return poolSmsTaskModel.Get().(*SmsTaskModel)
+}
+
+// ReleaseSmsTaskModel 释放SmsTaskModel
+func ReleaseSmsTaskModel(v *SmsTaskModel) {
+	v.Contents = v.Contents[:0]
+	v.SignNames = v.SignNames[:0]
+	v.TemplateCodes = v.TemplateCodes[:0]
+	v.AppKey = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.IsvNick = ""
+	v.SellerNick = ""
+	v.SmsType = ""
+	v.TaskCode = ""
+	v.Url = ""
+	poolSmsTaskModel.Put(v)
 }

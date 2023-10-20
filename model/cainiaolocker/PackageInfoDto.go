@@ -1,5 +1,9 @@
 package cainiaolocker
 
+import (
+	"sync"
+)
+
 // PackageInfoDto 结构体
 type PackageInfoDto struct {
 	// 商品信息,数量限制为100
@@ -24,4 +28,31 @@ type PackageInfoDto struct {
 	Width int64 `json:"width,omitempty" xml:"width,omitempty"`
 	// 包裹高，单位厘米
 	Height int64 `json:"height,omitempty" xml:"height,omitempty"`
+}
+
+var poolPackageInfoDto = sync.Pool{
+	New: func() any {
+		return new(PackageInfoDto)
+	},
+}
+
+// GetPackageInfoDto() 从对象池中获取PackageInfoDto
+func GetPackageInfoDto() *PackageInfoDto {
+	return poolPackageInfoDto.Get().(*PackageInfoDto)
+}
+
+// ReleasePackageInfoDto 释放PackageInfoDto
+func ReleasePackageInfoDto(v *PackageInfoDto) {
+	v.Items = v.Items[:0]
+	v.PackagingDescription = ""
+	v.Id = ""
+	v.GoodsDescription = ""
+	v.GoodValue = ""
+	v.Length = 0
+	v.Weight = 0
+	v.TotalPackagesCount = 0
+	v.Volume = 0
+	v.Width = 0
+	v.Height = 0
+	poolPackageInfoDto.Put(v)
 }

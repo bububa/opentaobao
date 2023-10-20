@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsErpDeliveryCutAPIRequest struct {
 // NewTaobaoLogisticsErpDeliveryCutRequest 初始化TaobaoLogisticsErpDeliveryCutAPIRequest对象
 func NewTaobaoLogisticsErpDeliveryCutRequest() *TaobaoLogisticsErpDeliveryCutAPIRequest {
 	return &TaobaoLogisticsErpDeliveryCutAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsErpDeliveryCutAPIRequest) Reset() {
+	r._cutOffDeliveryProcessRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsErpDeliveryCutAPIRequest) SetCutOffDeliveryProcessReques
 // GetCutOffDeliveryProcessRequest CutOffDeliveryProcessRequest Getter
 func (r TaobaoLogisticsErpDeliveryCutAPIRequest) GetCutOffDeliveryProcessRequest() *CutOffDeliveryProcessRequest {
 	return r._cutOffDeliveryProcessRequest
+}
+
+var poolTaobaoLogisticsErpDeliveryCutAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsErpDeliveryCutRequest()
+	},
+}
+
+// GetTaobaoLogisticsErpDeliveryCutRequest 从 sync.Pool 获取 TaobaoLogisticsErpDeliveryCutAPIRequest
+func GetTaobaoLogisticsErpDeliveryCutAPIRequest() *TaobaoLogisticsErpDeliveryCutAPIRequest {
+	return poolTaobaoLogisticsErpDeliveryCutAPIRequest.Get().(*TaobaoLogisticsErpDeliveryCutAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsErpDeliveryCutAPIRequest 将 TaobaoLogisticsErpDeliveryCutAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsErpDeliveryCutAPIRequest(v *TaobaoLogisticsErpDeliveryCutAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsErpDeliveryCutAPIRequest.Put(v)
 }

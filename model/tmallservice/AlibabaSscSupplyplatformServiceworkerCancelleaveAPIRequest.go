@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest struct {
 // NewAlibabaSscSupplyplatformServiceworkerCancelleaveRequest 初始化AlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest对象
 func NewAlibabaSscSupplyplatformServiceworkerCancelleaveRequest() *AlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest {
 	return &AlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest) Reset() {
+	r._leaveBeginAndEndList = r._leaveBeginAndEndList[:0]
+	r._identityNumber = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest) SetIdentity
 // GetIdentityNumber IdentityNumber Getter
 func (r AlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest) GetIdentityNumber() string {
 	return r._identityNumber
+}
+
+var poolAlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSscSupplyplatformServiceworkerCancelleaveRequest()
+	},
+}
+
+// GetAlibabaSscSupplyplatformServiceworkerCancelleaveRequest 从 sync.Pool 获取 AlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest
+func GetAlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest() *AlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest {
+	return poolAlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest.Get().(*AlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest)
+}
+
+// ReleaseAlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest 将 AlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest(v *AlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest) {
+	v.Reset()
+	poolAlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest.Put(v)
 }

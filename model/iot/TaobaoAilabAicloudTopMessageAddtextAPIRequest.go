@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoAilabAicloudTopMessageAddtextAPIRequest struct {
 // NewTaobaoAilabAicloudTopMessageAddtextRequest 初始化TaobaoAilabAicloudTopMessageAddtextAPIRequest对象
 func NewTaobaoAilabAicloudTopMessageAddtextRequest() *TaobaoAilabAicloudTopMessageAddtextAPIRequest {
 	return &TaobaoAilabAicloudTopMessageAddtextAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopMessageAddtextAPIRequest) Reset() {
+	r._param1 = ""
+	r._param2 = ""
+	r._param3 = ""
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoAilabAicloudTopMessageAddtextAPIRequest) SetParam0(_param0 *OpenB
 // GetParam0 Param0 Getter
 func (r TaobaoAilabAicloudTopMessageAddtextAPIRequest) GetParam0() *OpenBaseInfo {
 	return r._param0
+}
+
+var poolTaobaoAilabAicloudTopMessageAddtextAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopMessageAddtextRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopMessageAddtextRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopMessageAddtextAPIRequest
+func GetTaobaoAilabAicloudTopMessageAddtextAPIRequest() *TaobaoAilabAicloudTopMessageAddtextAPIRequest {
+	return poolTaobaoAilabAicloudTopMessageAddtextAPIRequest.Get().(*TaobaoAilabAicloudTopMessageAddtextAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopMessageAddtextAPIRequest 将 TaobaoAilabAicloudTopMessageAddtextAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopMessageAddtextAPIRequest(v *TaobaoAilabAicloudTopMessageAddtextAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopMessageAddtextAPIRequest.Put(v)
 }

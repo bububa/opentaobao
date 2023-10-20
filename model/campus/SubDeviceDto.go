@@ -1,6 +1,8 @@
 package campus
 
 import (
+	"sync"
+
 	"github.com/bububa/opentaobao/model"
 )
 
@@ -18,4 +20,26 @@ type SubDeviceDto struct {
 	SubDeviceId string `json:"sub_device_id,omitempty" xml:"sub_device_id,omitempty"`
 	// 端口号
 	Port *model.File `json:"port,omitempty" xml:"port,omitempty"`
+}
+
+var poolSubDeviceDto = sync.Pool{
+	New: func() any {
+		return new(SubDeviceDto)
+	},
+}
+
+// GetSubDeviceDto() 从对象池中获取SubDeviceDto
+func GetSubDeviceDto() *SubDeviceDto {
+	return poolSubDeviceDto.Get().(*SubDeviceDto)
+}
+
+// ReleaseSubDeviceDto 释放SubDeviceDto
+func ReleaseSubDeviceDto(v *SubDeviceDto) {
+	v.Kind = ""
+	v.PortType = ""
+	v.SubDeviceName = ""
+	v.Direction = ""
+	v.SubDeviceId = ""
+	v.Port = nil
+	poolSubDeviceDto.Put(v)
 }

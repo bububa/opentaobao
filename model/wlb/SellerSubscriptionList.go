@@ -1,5 +1,9 @@
 package wlb
 
+import (
+	"sync"
+)
+
 // SellerSubscriptionList 结构体
 type SellerSubscriptionList struct {
 	// 定购用户NICK
@@ -42,4 +46,40 @@ type SellerSubscriptionList struct {
 	WlbPartnerContact *ContactInfo `json:"wlb_partner_contact,omitempty" xml:"wlb_partner_contact,omitempty"`
 	// 判断该仓库是否是实体仓，还是虚拟仓，null是实体仓，10:代表虚拟仓
 	IsOwnService int64 `json:"is_own_service,omitempty" xml:"is_own_service,omitempty"`
+}
+
+var poolSellerSubscriptionList = sync.Pool{
+	New: func() any {
+		return new(SellerSubscriptionList)
+	},
+}
+
+// GetSellerSubscriptionList() 从对象池中获取SellerSubscriptionList
+func GetSellerSubscriptionList() *SellerSubscriptionList {
+	return poolSellerSubscriptionList.Get().(*SellerSubscriptionList)
+}
+
+// ReleaseSellerSubscriptionList 释放SellerSubscriptionList
+func ReleaseSellerSubscriptionList(v *SellerSubscriptionList) {
+	v.SubscriberUserNick = ""
+	v.StartDate = ""
+	v.EndDate = ""
+	v.ServiceCode = ""
+	v.ServiceName = ""
+	v.ServiceType = ""
+	v.Status = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.Remark = ""
+	v.ServiceAlias = ""
+	v.Openuid = ""
+	v.Id = 0
+	v.SubscriberUserId = 0
+	v.ProviderUserId = 0
+	v.ServiceId = 0
+	v.ParentId = 0
+	v.WlbPartnerAddress = nil
+	v.WlbPartnerContact = nil
+	v.IsOwnService = 0
+	poolSellerSubscriptionList.Put(v)
 }

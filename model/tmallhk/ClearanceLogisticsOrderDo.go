@@ -1,5 +1,9 @@
 package tmallhk
 
+import (
+	"sync"
+)
+
 // ClearanceLogisticsOrderDo 结构体
 type ClearanceLogisticsOrderDo struct {
 	// 子订单列表封装
@@ -16,4 +20,27 @@ type ClearanceLogisticsOrderDo struct {
 	Tf int64 `json:"tf,omitempty" xml:"tf,omitempty"`
 	// 订单id
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
+}
+
+var poolClearanceLogisticsOrderDo = sync.Pool{
+	New: func() any {
+		return new(ClearanceLogisticsOrderDo)
+	},
+}
+
+// GetClearanceLogisticsOrderDo() 从对象池中获取ClearanceLogisticsOrderDo
+func GetClearanceLogisticsOrderDo() *ClearanceLogisticsOrderDo {
+	return poolClearanceLogisticsOrderDo.Get().(*ClearanceLogisticsOrderDo)
+}
+
+// ReleaseClearanceLogisticsOrderDo 释放ClearanceLogisticsOrderDo
+func ReleaseClearanceLogisticsOrderDo(v *ClearanceLogisticsOrderDo) {
+	v.OrderLineList = v.OrderLineList[:0]
+	v.ClearanceOrderNo = ""
+	v.TaxDO = nil
+	v.PostFee = 0
+	v.BuyerId = 0
+	v.Tf = 0
+	v.BizOrderId = 0
+	poolClearanceLogisticsOrderDo.Put(v)
 }

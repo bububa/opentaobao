@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMjOcConfpickupgoodsAPIRequest struct {
 // NewAlibabaMjOcConfpickupgoodsRequest 初始化AlibabaMjOcConfpickupgoodsAPIRequest对象
 func NewAlibabaMjOcConfpickupgoodsRequest() *AlibabaMjOcConfpickupgoodsAPIRequest {
 	return &AlibabaMjOcConfpickupgoodsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMjOcConfpickupgoodsAPIRequest) Reset() {
+	r._confPickupGoodsRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMjOcConfpickupgoodsAPIRequest) SetConfPickupGoodsRequest(_confPi
 // GetConfPickupGoodsRequest ConfPickupGoodsRequest Getter
 func (r AlibabaMjOcConfpickupgoodsAPIRequest) GetConfPickupGoodsRequest() *ConfPickupGoodsReqDto {
 	return r._confPickupGoodsRequest
+}
+
+var poolAlibabaMjOcConfpickupgoodsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMjOcConfpickupgoodsRequest()
+	},
+}
+
+// GetAlibabaMjOcConfpickupgoodsRequest 从 sync.Pool 获取 AlibabaMjOcConfpickupgoodsAPIRequest
+func GetAlibabaMjOcConfpickupgoodsAPIRequest() *AlibabaMjOcConfpickupgoodsAPIRequest {
+	return poolAlibabaMjOcConfpickupgoodsAPIRequest.Get().(*AlibabaMjOcConfpickupgoodsAPIRequest)
+}
+
+// ReleaseAlibabaMjOcConfpickupgoodsAPIRequest 将 AlibabaMjOcConfpickupgoodsAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMjOcConfpickupgoodsAPIRequest(v *AlibabaMjOcConfpickupgoodsAPIRequest) {
+	v.Reset()
+	poolAlibabaMjOcConfpickupgoodsAPIRequest.Put(v)
 }

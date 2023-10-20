@@ -9,11 +9,6 @@ import (
 // yunos.osupdate.deviceservice.searchmodels
 //
 // 根据关键词检索设备型号
-func YunosOsupdateDeviceserviceSearchmodels(clt *core.SDKClient, req *tvupadmin.YunosOsupdateDeviceserviceSearchmodelsAPIRequest, session string) (*tvupadmin.YunosOsupdateDeviceserviceSearchmodelsAPIResponse, error) {
-	var resp tvupadmin.YunosOsupdateDeviceserviceSearchmodelsAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosOsupdateDeviceserviceSearchmodels(clt *core.SDKClient, req *tvupadmin.YunosOsupdateDeviceserviceSearchmodelsAPIRequest, resp *tvupadmin.YunosOsupdateDeviceserviceSearchmodelsAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

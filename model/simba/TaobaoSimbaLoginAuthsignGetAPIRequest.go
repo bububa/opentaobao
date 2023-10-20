@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoSimbaLoginAuthsignGetAPIRequest struct {
 // NewTaobaoSimbaLoginAuthsignGetRequest 初始化TaobaoSimbaLoginAuthsignGetAPIRequest对象
 func NewTaobaoSimbaLoginAuthsignGetRequest() *TaobaoSimbaLoginAuthsignGetAPIRequest {
 	return &TaobaoSimbaLoginAuthsignGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaLoginAuthsignGetAPIRequest) Reset() {
+	r._nick = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoSimbaLoginAuthsignGetAPIRequest) SetNick(_nick string) error {
 // GetNick Nick Getter
 func (r TaobaoSimbaLoginAuthsignGetAPIRequest) GetNick() string {
 	return r._nick
+}
+
+var poolTaobaoSimbaLoginAuthsignGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaLoginAuthsignGetRequest()
+	},
+}
+
+// GetTaobaoSimbaLoginAuthsignGetRequest 从 sync.Pool 获取 TaobaoSimbaLoginAuthsignGetAPIRequest
+func GetTaobaoSimbaLoginAuthsignGetAPIRequest() *TaobaoSimbaLoginAuthsignGetAPIRequest {
+	return poolTaobaoSimbaLoginAuthsignGetAPIRequest.Get().(*TaobaoSimbaLoginAuthsignGetAPIRequest)
+}
+
+// ReleaseTaobaoSimbaLoginAuthsignGetAPIRequest 将 TaobaoSimbaLoginAuthsignGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaLoginAuthsignGetAPIRequest(v *TaobaoSimbaLoginAuthsignGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaLoginAuthsignGetAPIRequest.Put(v)
 }

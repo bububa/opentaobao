@@ -9,11 +9,6 @@ import (
 // alibaba.alink.message.history.list
 //
 // 查询消息列表
-func AlibabaAlinkMessageHistoryList(clt *core.SDKClient, req *alink.AlibabaAlinkMessageHistoryListAPIRequest, session string) (*alink.AlibabaAlinkMessageHistoryListAPIResponse, error) {
-	var resp alink.AlibabaAlinkMessageHistoryListAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlinkMessageHistoryList(clt *core.SDKClient, req *alink.AlibabaAlinkMessageHistoryListAPIRequest, resp *alink.AlibabaAlinkMessageHistoryListAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

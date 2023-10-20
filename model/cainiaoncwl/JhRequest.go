@@ -1,5 +1,9 @@
 package cainiaoncwl
 
+import (
+	"sync"
+)
+
 // JhRequest 结构体
 type JhRequest struct {
 	// 集单完成时间，查询起点
@@ -20,4 +24,29 @@ type JhRequest struct {
 	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
 	// 一页查询多少数据，最大100
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolJhRequest = sync.Pool{
+	New: func() any {
+		return new(JhRequest)
+	},
+}
+
+// GetJhRequest() 从对象池中获取JhRequest
+func GetJhRequest() *JhRequest {
+	return poolJhRequest.Get().(*JhRequest)
+}
+
+// ReleaseJhRequest 释放JhRequest
+func ReleaseJhRequest(v *JhRequest) {
+	v.StartTime = ""
+	v.Status = ""
+	v.ItemId = ""
+	v.OrderCodeList = ""
+	v.EndTime = ""
+	v.SkuId = ""
+	v.AreaInfo = nil
+	v.PageNo = 0
+	v.PageSize = 0
+	poolJhRequest.Put(v)
 }

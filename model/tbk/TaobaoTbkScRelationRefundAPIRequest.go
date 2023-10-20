@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTbkScRelationRefundAPIRequest struct {
 // NewTaobaoTbkScRelationRefundRequest 初始化TaobaoTbkScRelationRefundAPIRequest对象
 func NewTaobaoTbkScRelationRefundRequest() *TaobaoTbkScRelationRefundAPIRequest {
 	return &TaobaoTbkScRelationRefundAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkScRelationRefundAPIRequest) Reset() {
+	r._searchOption = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTbkScRelationRefundAPIRequest) SetSearchOption(_searchOption *Top
 // GetSearchOption SearchOption Getter
 func (r TaobaoTbkScRelationRefundAPIRequest) GetSearchOption() *TopApiRefundRptOption {
 	return r._searchOption
+}
+
+var poolTaobaoTbkScRelationRefundAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkScRelationRefundRequest()
+	},
+}
+
+// GetTaobaoTbkScRelationRefundRequest 从 sync.Pool 获取 TaobaoTbkScRelationRefundAPIRequest
+func GetTaobaoTbkScRelationRefundAPIRequest() *TaobaoTbkScRelationRefundAPIRequest {
+	return poolTaobaoTbkScRelationRefundAPIRequest.Get().(*TaobaoTbkScRelationRefundAPIRequest)
+}
+
+// ReleaseTaobaoTbkScRelationRefundAPIRequest 将 TaobaoTbkScRelationRefundAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkScRelationRefundAPIRequest(v *TaobaoTbkScRelationRefundAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkScRelationRefundAPIRequest.Put(v)
 }

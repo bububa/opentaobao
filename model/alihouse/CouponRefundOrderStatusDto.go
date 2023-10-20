@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // CouponRefundOrderStatusDto 结构体
 type CouponRefundOrderStatusDto struct {
 	// 截止时间
@@ -22,4 +26,30 @@ type CouponRefundOrderStatusDto struct {
 	TbRefundOrderId int64 `json:"tb_refund_order_id,omitempty" xml:"tb_refund_order_id,omitempty"`
 	// 退款单id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolCouponRefundOrderStatusDto = sync.Pool{
+	New: func() any {
+		return new(CouponRefundOrderStatusDto)
+	},
+}
+
+// GetCouponRefundOrderStatusDto() 从对象池中获取CouponRefundOrderStatusDto
+func GetCouponRefundOrderStatusDto() *CouponRefundOrderStatusDto {
+	return poolCouponRefundOrderStatusDto.Get().(*CouponRefundOrderStatusDto)
+}
+
+// ReleaseCouponRefundOrderStatusDto 释放CouponRefundOrderStatusDto
+func ReleaseCouponRefundOrderStatusDto(v *CouponRefundOrderStatusDto) {
+	v.CancelDeadlineTime = ""
+	v.StartTime = ""
+	v.StatusDesc = ""
+	v.CancelRemark = ""
+	v.CancelFinishedTime = ""
+	v.CancelNode = 0
+	v.OperatorType = 0
+	v.Status = 0
+	v.TbRefundOrderId = 0
+	v.Id = 0
+	poolCouponRefundOrderStatusDto.Put(v)
 }

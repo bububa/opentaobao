@@ -1,5 +1,9 @@
 package brandhub
 
+import (
+	"sync"
+)
+
 // TaobaoBrandStarshopRptTargetGetResult 结构体
 type TaobaoBrandStarshopRptTargetGetResult struct {
 	// 日期
@@ -60,4 +64,49 @@ type TaobaoBrandStarshopRptTargetGetResult struct {
 	Creativeid int64 `json:"creativeid,omitempty" xml:"creativeid,omitempty"`
 	// 定向ID
 	Targetid int64 `json:"targetid,omitempty" xml:"targetid,omitempty"`
+}
+
+var poolTaobaoBrandStarshopRptTargetGetResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoBrandStarshopRptTargetGetResult)
+	},
+}
+
+// GetTaobaoBrandStarshopRptTargetGetResult() 从对象池中获取TaobaoBrandStarshopRptTargetGetResult
+func GetTaobaoBrandStarshopRptTargetGetResult() *TaobaoBrandStarshopRptTargetGetResult {
+	return poolTaobaoBrandStarshopRptTargetGetResult.Get().(*TaobaoBrandStarshopRptTargetGetResult)
+}
+
+// ReleaseTaobaoBrandStarshopRptTargetGetResult 释放TaobaoBrandStarshopRptTargetGetResult
+func ReleaseTaobaoBrandStarshopRptTargetGetResult(v *TaobaoBrandStarshopRptTargetGetResult) {
+	v.Thedate = ""
+	v.Ctr = ""
+	v.Cost = ""
+	v.Cpm = ""
+	v.Cpc = ""
+	v.Transactiontotal = ""
+	v.Roi = ""
+	v.Cvr = ""
+	v.ClickTransactiontotal = ""
+	v.ClickRoi = ""
+	v.ClickCvr = ""
+	v.Campaigntitle = ""
+	v.Adgrouptitle = ""
+	v.Creativetitle = ""
+	v.TargetName = ""
+	v.Impression = 0
+	v.Click = 0
+	v.Favitemtotal = 0
+	v.Transactionshippingtotal = 0
+	v.Favshoptotal = 0
+	v.Carttotal = 0
+	v.ClickTransactionshipping = 0
+	v.ClickUv = 0
+	v.Uv = 0
+	v.UvNew = 0
+	v.Campaignid = 0
+	v.Adgroupid = 0
+	v.Creativeid = 0
+	v.Targetid = 0
+	poolTaobaoBrandStarshopRptTargetGetResult.Put(v)
 }

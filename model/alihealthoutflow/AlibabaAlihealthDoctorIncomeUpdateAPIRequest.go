@@ -2,6 +2,7 @@ package alihealthoutflow
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthDoctorIncomeUpdateAPIRequest struct {
 // NewAlibabaAlihealthDoctorIncomeUpdateRequest 初始化AlibabaAlihealthDoctorIncomeUpdateAPIRequest对象
 func NewAlibabaAlihealthDoctorIncomeUpdateRequest() *AlibabaAlihealthDoctorIncomeUpdateAPIRequest {
 	return &AlibabaAlihealthDoctorIncomeUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDoctorIncomeUpdateAPIRequest) Reset() {
+	r._doctorIncomeStatusRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthDoctorIncomeUpdateAPIRequest) SetDoctorIncomeStatusRequ
 // GetDoctorIncomeStatusRequest DoctorIncomeStatusRequest Getter
 func (r AlibabaAlihealthDoctorIncomeUpdateAPIRequest) GetDoctorIncomeStatusRequest() *DoctorIncomeStatusRequest {
 	return r._doctorIncomeStatusRequest
+}
+
+var poolAlibabaAlihealthDoctorIncomeUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDoctorIncomeUpdateRequest()
+	},
+}
+
+// GetAlibabaAlihealthDoctorIncomeUpdateRequest 从 sync.Pool 获取 AlibabaAlihealthDoctorIncomeUpdateAPIRequest
+func GetAlibabaAlihealthDoctorIncomeUpdateAPIRequest() *AlibabaAlihealthDoctorIncomeUpdateAPIRequest {
+	return poolAlibabaAlihealthDoctorIncomeUpdateAPIRequest.Get().(*AlibabaAlihealthDoctorIncomeUpdateAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDoctorIncomeUpdateAPIRequest 将 AlibabaAlihealthDoctorIncomeUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDoctorIncomeUpdateAPIRequest(v *AlibabaAlihealthDoctorIncomeUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDoctorIncomeUpdateAPIRequest.Put(v)
 }

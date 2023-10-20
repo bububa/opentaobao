@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // SyncRichReviewDto 结构体
 type SyncRichReviewDto struct {
 	// 外部楼盘/小区id
@@ -22,4 +26,30 @@ type SyncRichReviewDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 标识评测是否测试数据，0不是，1是
 	IsTest int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
+}
+
+var poolSyncRichReviewDto = sync.Pool{
+	New: func() any {
+		return new(SyncRichReviewDto)
+	},
+}
+
+// GetSyncRichReviewDto() 从对象池中获取SyncRichReviewDto
+func GetSyncRichReviewDto() *SyncRichReviewDto {
+	return poolSyncRichReviewDto.Get().(*SyncRichReviewDto)
+}
+
+// ReleaseSyncRichReviewDto 释放SyncRichReviewDto
+func ReleaseSyncRichReviewDto(v *SyncRichReviewDto) {
+	v.OuterId = ""
+	v.OuterReviewId = ""
+	v.OuterVideoId = ""
+	v.ReviewJson = ""
+	v.PublishTime = ""
+	v.OuterStoreId = ""
+	v.CityId = 0
+	v.BizType = 0
+	v.Status = 0
+	v.IsTest = 0
+	poolSyncRichReviewDto.Put(v)
 }

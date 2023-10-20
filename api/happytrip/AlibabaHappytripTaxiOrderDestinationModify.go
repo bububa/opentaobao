@@ -9,11 +9,6 @@ import (
 // alibaba.happytrip.taxi.order.destination.modify
 //
 // 通知ISV修改订单信息
-func AlibabaHappytripTaxiOrderDestinationModify(clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiOrderDestinationModifyAPIRequest, session string) (*happytrip.AlibabaHappytripTaxiOrderDestinationModifyAPIResponse, error) {
-	var resp happytrip.AlibabaHappytripTaxiOrderDestinationModifyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHappytripTaxiOrderDestinationModify(clt *core.SDKClient, req *happytrip.AlibabaHappytripTaxiOrderDestinationModifyAPIRequest, resp *happytrip.AlibabaHappytripTaxiOrderDestinationModifyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

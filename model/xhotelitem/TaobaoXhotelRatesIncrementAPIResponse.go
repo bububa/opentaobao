@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoXhotelRatesIncrementAPIResponse struct {
 	TaobaoXhotelRatesIncrementAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoXhotelRatesIncrementAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoXhotelRatesIncrementAPIResponseModel).Reset()
+}
+
 // TaobaoXhotelRatesIncrementAPIResponseModel is 价格推送接口（批量增量） 成功返回结果
 type TaobaoXhotelRatesIncrementAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_rates_increment_response"`
@@ -22,4 +29,27 @@ type TaobaoXhotelRatesIncrementAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// gid和rpid组合数组&lt;br/&gt;gid_rpid
 	GidAndRpids []string `json:"gid_and_rpids,omitempty" xml:"gid_and_rpids>string,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelRatesIncrementAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.GidAndRpids = m.GidAndRpids[:0]
+}
+
+var poolTaobaoXhotelRatesIncrementAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelRatesIncrementAPIResponse)
+	},
+}
+
+// GetTaobaoXhotelRatesIncrementAPIResponse 从 sync.Pool 获取 TaobaoXhotelRatesIncrementAPIResponse
+func GetTaobaoXhotelRatesIncrementAPIResponse() *TaobaoXhotelRatesIncrementAPIResponse {
+	return poolTaobaoXhotelRatesIncrementAPIResponse.Get().(*TaobaoXhotelRatesIncrementAPIResponse)
+}
+
+// ReleaseTaobaoXhotelRatesIncrementAPIResponse 将 TaobaoXhotelRatesIncrementAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoXhotelRatesIncrementAPIResponse(v *TaobaoXhotelRatesIncrementAPIResponse) {
+	v.Reset()
+	poolTaobaoXhotelRatesIncrementAPIResponse.Put(v)
 }

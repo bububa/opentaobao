@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // VoucherInfoVo 结构体
 type VoucherInfoVo struct {
 	// 预约须知
@@ -40,4 +44,39 @@ type VoucherInfoVo struct {
 	VoucherNumber int64 `json:"voucher_number,omitempty" xml:"voucher_number,omitempty"`
 	// 可住几晚
 	NightAccount int64 `json:"night_account,omitempty" xml:"night_account,omitempty"`
+}
+
+var poolVoucherInfoVo = sync.Pool{
+	New: func() any {
+		return new(VoucherInfoVo)
+	},
+}
+
+// GetVoucherInfoVo() 从对象池中获取VoucherInfoVo
+func GetVoucherInfoVo() *VoucherInfoVo {
+	return poolVoucherInfoVo.Get().(*VoucherInfoVo)
+}
+
+// ReleaseVoucherInfoVo 释放VoucherInfoVo
+func ReleaseVoucherInfoVo(v *VoucherInfoVo) {
+	v.AppointmentNotice = v.AppointmentNotice[:0]
+	v.AvailableDateList = v.AvailableDateList[:0]
+	v.HotelList = v.HotelList[:0]
+	v.RateCodeList = v.RateCodeList[:0]
+	v.MarkupRuleList = v.MarkupRuleList[:0]
+	v.VoucherId = ""
+	v.VoucherStatus = ""
+	v.VoucherUsedDate = ""
+	v.OrderId = ""
+	v.VoucherName = ""
+	v.EffectiveDate = ""
+	v.ExpireDate = ""
+	v.Img = ""
+	v.MerchantId = ""
+	v.SkuId = ""
+	v.HotelNumber = 0
+	v.VoucherPrice = 0
+	v.VoucherNumber = 0
+	v.NightAccount = 0
+	poolVoucherInfoVo.Put(v)
 }

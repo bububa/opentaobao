@@ -1,5 +1,9 @@
 package scs
 
+import (
+	"sync"
+)
+
 // CampaignQueryTopDto 结构体
 type CampaignQueryTopDto struct {
 	// 投放状态
@@ -28,4 +32,33 @@ type CampaignQueryTopDto struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 效果归因周期，支持15，30
 	Effect int64 `json:"effect,omitempty" xml:"effect,omitempty"`
+}
+
+var poolCampaignQueryTopDto = sync.Pool{
+	New: func() any {
+		return new(CampaignQueryTopDto)
+	},
+}
+
+// GetCampaignQueryTopDto() 从对象池中获取CampaignQueryTopDto
+func GetCampaignQueryTopDto() *CampaignQueryTopDto {
+	return poolCampaignQueryTopDto.Get().(*CampaignQueryTopDto)
+}
+
+// ReleaseCampaignQueryTopDto 释放CampaignQueryTopDto
+func ReleaseCampaignQueryTopDto(v *CampaignQueryTopDto) {
+	v.StatusList = v.StatusList[:0]
+	v.NeedSceneList = v.NeedSceneList[:0]
+	v.CampaignIdList = v.CampaignIdList[:0]
+	v.BizCode = ""
+	v.CampaignName = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.CampaignId = 0
+	v.Status = 0
+	v.DayBudget = nil
+	v.Offset = 0
+	v.PageSize = 0
+	v.Effect = 0
+	poolCampaignQueryTopDto.Put(v)
 }

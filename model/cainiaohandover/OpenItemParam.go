@@ -1,5 +1,9 @@
 package cainiaohandover
 
+import (
+	"sync"
+)
+
 // OpenItemParam 结构体
 type OpenItemParam struct {
 	// 商品属性，cf_normal：普货、cf_has_battery：含电。
@@ -30,4 +34,34 @@ type OpenItemParam struct {
 	Width int64 `json:"width,omitempty" xml:"width,omitempty"`
 	// 商品高度
 	Height int64 `json:"height,omitempty" xml:"height,omitempty"`
+}
+
+var poolOpenItemParam = sync.Pool{
+	New: func() any {
+		return new(OpenItemParam)
+	},
+}
+
+// GetOpenItemParam() 从对象池中获取OpenItemParam
+func GetOpenItemParam() *OpenItemParam {
+	return poolOpenItemParam.Get().(*OpenItemParam)
+}
+
+// ReleaseOpenItemParam 释放OpenItemParam
+func ReleaseOpenItemParam(v *OpenItemParam) {
+	v.ItemFeatures = v.ItemFeatures[:0]
+	v.EnglishName = ""
+	v.LocalName = ""
+	v.Sku = ""
+	v.Currency = ""
+	v.ItemId = 0
+	v.Quantity = 0
+	v.UnitPrice = 0
+	v.ScItemId = 0
+	v.Weight = 0
+	v.TotalPrice = 0
+	v.Length = 0
+	v.Width = 0
+	v.Height = 0
+	poolOpenItemParam.Put(v)
 }

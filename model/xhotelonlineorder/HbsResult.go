@@ -1,5 +1,9 @@
 package xhotelonlineorder
 
+import (
+	"sync"
+)
+
 // HbsResult 结构体
 type HbsResult struct {
 	// 错误信息
@@ -14,4 +18,26 @@ type HbsResult struct {
 	Module *OutSourceOrderCreateRes `json:"module,omitempty" xml:"module,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolHbsResult = sync.Pool{
+	New: func() any {
+		return new(HbsResult)
+	},
+}
+
+// GetHbsResult() 从对象池中获取HbsResult
+func GetHbsResult() *HbsResult {
+	return poolHbsResult.Get().(*HbsResult)
+}
+
+// ReleaseHbsResult 释放HbsResult
+func ReleaseHbsResult(v *HbsResult) {
+	v.ResultMsg = ""
+	v.ResultCode = ""
+	v.ResultMsg4Dev = ""
+	v.ExtendInfo = ""
+	v.Module = nil
+	v.Success = false
+	poolHbsResult.Put(v)
 }

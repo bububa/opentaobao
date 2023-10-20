@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallCityretailTxdFulfillOrderVirtualnumberAPIRequest struct {
 // NewTmallCityretailTxdFulfillOrderVirtualnumberRequest 初始化TmallCityretailTxdFulfillOrderVirtualnumberAPIRequest对象
 func NewTmallCityretailTxdFulfillOrderVirtualnumberRequest() *TmallCityretailTxdFulfillOrderVirtualnumberAPIRequest {
 	return &TmallCityretailTxdFulfillOrderVirtualnumberAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCityretailTxdFulfillOrderVirtualnumberAPIRequest) Reset() {
+	r._sourceOrderId = ""
+	r._type = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallCityretailTxdFulfillOrderVirtualnumberAPIRequest) SetType(_type st
 // GetType Type Getter
 func (r TmallCityretailTxdFulfillOrderVirtualnumberAPIRequest) GetType() string {
 	return r._type
+}
+
+var poolTmallCityretailTxdFulfillOrderVirtualnumberAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCityretailTxdFulfillOrderVirtualnumberRequest()
+	},
+}
+
+// GetTmallCityretailTxdFulfillOrderVirtualnumberRequest 从 sync.Pool 获取 TmallCityretailTxdFulfillOrderVirtualnumberAPIRequest
+func GetTmallCityretailTxdFulfillOrderVirtualnumberAPIRequest() *TmallCityretailTxdFulfillOrderVirtualnumberAPIRequest {
+	return poolTmallCityretailTxdFulfillOrderVirtualnumberAPIRequest.Get().(*TmallCityretailTxdFulfillOrderVirtualnumberAPIRequest)
+}
+
+// ReleaseTmallCityretailTxdFulfillOrderVirtualnumberAPIRequest 将 TmallCityretailTxdFulfillOrderVirtualnumberAPIRequest 放入 sync.Pool
+func ReleaseTmallCityretailTxdFulfillOrderVirtualnumberAPIRequest(v *TmallCityretailTxdFulfillOrderVirtualnumberAPIRequest) {
+	v.Reset()
+	poolTmallCityretailTxdFulfillOrderVirtualnumberAPIRequest.Put(v)
 }

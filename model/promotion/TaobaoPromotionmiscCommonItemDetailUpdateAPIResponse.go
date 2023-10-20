@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -18,6 +19,12 @@ type TaobaoPromotionmiscCommonItemDetailUpdateAPIResponse struct {
 	TaobaoPromotionmiscCommonItemDetailUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoPromotionmiscCommonItemDetailUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoPromotionmiscCommonItemDetailUpdateAPIResponseModel).Reset()
+}
+
 // TaobaoPromotionmiscCommonItemDetailUpdateAPIResponseModel is 修改通用单品优惠详情 成功返回结果
 type TaobaoPromotionmiscCommonItemDetailUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"promotionmisc_common_item_detail_update_response"`
@@ -25,4 +32,27 @@ type TaobaoPromotionmiscCommonItemDetailUpdateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 是否修改成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoPromotionmiscCommonItemDetailUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoPromotionmiscCommonItemDetailUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoPromotionmiscCommonItemDetailUpdateAPIResponse)
+	},
+}
+
+// GetTaobaoPromotionmiscCommonItemDetailUpdateAPIResponse 从 sync.Pool 获取 TaobaoPromotionmiscCommonItemDetailUpdateAPIResponse
+func GetTaobaoPromotionmiscCommonItemDetailUpdateAPIResponse() *TaobaoPromotionmiscCommonItemDetailUpdateAPIResponse {
+	return poolTaobaoPromotionmiscCommonItemDetailUpdateAPIResponse.Get().(*TaobaoPromotionmiscCommonItemDetailUpdateAPIResponse)
+}
+
+// ReleaseTaobaoPromotionmiscCommonItemDetailUpdateAPIResponse 将 TaobaoPromotionmiscCommonItemDetailUpdateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoPromotionmiscCommonItemDetailUpdateAPIResponse(v *TaobaoPromotionmiscCommonItemDetailUpdateAPIResponse) {
+	v.Reset()
+	poolTaobaoPromotionmiscCommonItemDetailUpdateAPIResponse.Put(v)
 }

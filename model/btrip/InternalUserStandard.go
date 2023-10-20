@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // InternalUserStandard 结构体
 type InternalUserStandard struct {
 	// 酒店城市费用列表
@@ -22,4 +26,30 @@ type InternalUserStandard struct {
 	ReserveType int64 `json:"reserve_type,omitempty" xml:"reserve_type,omitempty"`
 	// 超级经济舱折扣。1到10的整数
 	PremiumEconomyDiscount int64 `json:"premium_economy_discount,omitempty" xml:"premium_economy_discount,omitempty"`
+}
+
+var poolInternalUserStandard = sync.Pool{
+	New: func() any {
+		return new(InternalUserStandard)
+	},
+}
+
+// GetInternalUserStandard() 从对象池中获取InternalUserStandard
+func GetInternalUserStandard() *InternalUserStandard {
+	return poolInternalUserStandard.Get().(*InternalUserStandard)
+}
+
+// ReleaseInternalUserStandard 释放InternalUserStandard
+func ReleaseInternalUserStandard(v *InternalUserStandard) {
+	v.HotelCitys = v.HotelCitys[:0]
+	v.FlightCabins = ""
+	v.TrainSeats = ""
+	v.UserId = ""
+	v.InternationalFlightCabins = ""
+	v.EconomyDiscount = 0
+	v.BusinessDiscount = 0
+	v.FirstDiscount = 0
+	v.ReserveType = 0
+	v.PremiumEconomyDiscount = 0
+	poolInternalUserStandard.Put(v)
 }

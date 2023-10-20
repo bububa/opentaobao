@@ -1,5 +1,9 @@
 package shenjing
 
+import (
+	"sync"
+)
+
 // PageResult 结构体
 type PageResult struct {
 	// 错误码
@@ -10,4 +14,24 @@ type PageResult struct {
 	Content *Page `json:"content,omitempty" xml:"content,omitempty"`
 	// 成功标示
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolPageResult = sync.Pool{
+	New: func() any {
+		return new(PageResult)
+	},
+}
+
+// GetPageResult() 从对象池中获取PageResult
+func GetPageResult() *PageResult {
+	return poolPageResult.Get().(*PageResult)
+}
+
+// ReleasePageResult 释放PageResult
+func ReleasePageResult(v *PageResult) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Content = nil
+	v.Success = false
+	poolPageResult.Put(v)
 }

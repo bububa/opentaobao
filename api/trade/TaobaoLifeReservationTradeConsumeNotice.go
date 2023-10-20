@@ -9,11 +9,6 @@ import (
 // taobao.life.reservation.trade.consume.notice
 //
 // 生服团购商品，购后预约。外部ISV进行核销
-func TaobaoLifeReservationTradeConsumeNotice(clt *core.SDKClient, req *trade.TaobaoLifeReservationTradeConsumeNoticeAPIRequest, session string) (*trade.TaobaoLifeReservationTradeConsumeNoticeAPIResponse, error) {
-	var resp trade.TaobaoLifeReservationTradeConsumeNoticeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoLifeReservationTradeConsumeNotice(clt *core.SDKClient, req *trade.TaobaoLifeReservationTradeConsumeNoticeAPIRequest, resp *trade.TaobaoLifeReservationTradeConsumeNoticeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

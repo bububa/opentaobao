@@ -2,6 +2,7 @@ package maitix
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDamaiMaitixOrderCancelAPIRequest struct {
 // NewAlibabaDamaiMaitixOrderCancelRequest 初始化AlibabaDamaiMaitixOrderCancelAPIRequest对象
 func NewAlibabaDamaiMaitixOrderCancelRequest() *AlibabaDamaiMaitixOrderCancelAPIRequest {
 	return &AlibabaDamaiMaitixOrderCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDamaiMaitixOrderCancelAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDamaiMaitixOrderCancelAPIRequest) SetParam(_param *MoaUnlockTick
 // GetParam Param Getter
 func (r AlibabaDamaiMaitixOrderCancelAPIRequest) GetParam() *MoaUnlockTicketParam {
 	return r._param
+}
+
+var poolAlibabaDamaiMaitixOrderCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDamaiMaitixOrderCancelRequest()
+	},
+}
+
+// GetAlibabaDamaiMaitixOrderCancelRequest 从 sync.Pool 获取 AlibabaDamaiMaitixOrderCancelAPIRequest
+func GetAlibabaDamaiMaitixOrderCancelAPIRequest() *AlibabaDamaiMaitixOrderCancelAPIRequest {
+	return poolAlibabaDamaiMaitixOrderCancelAPIRequest.Get().(*AlibabaDamaiMaitixOrderCancelAPIRequest)
+}
+
+// ReleaseAlibabaDamaiMaitixOrderCancelAPIRequest 将 AlibabaDamaiMaitixOrderCancelAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDamaiMaitixOrderCancelAPIRequest(v *AlibabaDamaiMaitixOrderCancelAPIRequest) {
+	v.Reset()
+	poolAlibabaDamaiMaitixOrderCancelAPIRequest.Put(v)
 }

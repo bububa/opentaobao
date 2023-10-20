@@ -9,11 +9,6 @@ import (
 // alibaba.ascp.channel.distributor.product.list
 //
 // 此api为淘外分销的品批量查询标准api，淘外分销商专用
-func AlibabaAscpChannelDistributorProductList(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelDistributorProductListAPIRequest, session string) (*ascpchannel.AlibabaAscpChannelDistributorProductListAPIResponse, error) {
-	var resp ascpchannel.AlibabaAscpChannelDistributorProductListAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAscpChannelDistributorProductList(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelDistributorProductListAPIRequest, resp *ascpchannel.AlibabaAscpChannelDistributorProductListAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

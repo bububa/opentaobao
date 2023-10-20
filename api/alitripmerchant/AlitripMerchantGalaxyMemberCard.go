@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.member.card
 //
 // 星河=根据会员等级获取会员的权益
-func AlitripMerchantGalaxyMemberCard(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyMemberCardAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyMemberCardAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyMemberCardAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyMemberCard(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyMemberCardAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyMemberCardAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

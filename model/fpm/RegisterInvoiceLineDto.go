@@ -1,5 +1,9 @@
 package fpm
 
+import (
+	"sync"
+)
+
 // RegisterInvoiceLineDto 结构体
 type RegisterInvoiceLineDto struct {
 	// 发票行类型
@@ -66,4 +70,52 @@ type RegisterInvoiceLineDto struct {
 	ExcludingTaxAmount string `json:"excluding_tax_amount,omitempty" xml:"excluding_tax_amount,omitempty"`
 	// 行号
 	RowNo int64 `json:"row_no,omitempty" xml:"row_no,omitempty"`
+}
+
+var poolRegisterInvoiceLineDto = sync.Pool{
+	New: func() any {
+		return new(RegisterInvoiceLineDto)
+	},
+}
+
+// GetRegisterInvoiceLineDto() 从对象池中获取RegisterInvoiceLineDto
+func GetRegisterInvoiceLineDto() *RegisterInvoiceLineDto {
+	return poolRegisterInvoiceLineDto.Get().(*RegisterInvoiceLineDto)
+}
+
+// ReleaseRegisterInvoiceLineDto 释放RegisterInvoiceLineDto
+func ReleaseRegisterInvoiceLineDto(v *RegisterInvoiceLineDto) {
+	v.InvoiceLineType = ""
+	v.QuantityUnit = ""
+	v.GoodsSourceCountry = ""
+	v.TaxCategory2 = ""
+	v.DutyFreeMemo = ""
+	v.ExchangeRate = ""
+	v.LocalCurrencyTaxAmount2 = ""
+	v.LocalCurrencyTaxAmount1 = ""
+	v.Model = ""
+	v.Currency = ""
+	v.TaxCategories = ""
+	v.TaxRate2 = ""
+	v.GoodsDesc = ""
+	v.PlaceOfSupply = ""
+	v.UnitPrice = ""
+	v.Amount = ""
+	v.LocalCurrencyTaxAmount = ""
+	v.Quantity = ""
+	v.LocalCurrencyExcludingTaxAmount = ""
+	v.LocalCurrencyAmount = ""
+	v.TaxAmount1 = ""
+	v.TaxAmount2 = ""
+	v.LocalCurrencyCode = ""
+	v.SupplyDate = ""
+	v.ServiceAccountingCode = ""
+	v.TaxRate = ""
+	v.ReverseCharge = ""
+	v.LocalCurrencyPrice = ""
+	v.ZeroRateFlag = ""
+	v.TaxAmount = ""
+	v.ExcludingTaxAmount = ""
+	v.RowNo = 0
+	poolRegisterInvoiceLineDto.Put(v)
 }

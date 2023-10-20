@@ -2,6 +2,7 @@ package user
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type TaobaoMiniappEleuserPhoneGetAPIRequest struct {
 // NewTaobaoMiniappEleuserPhoneGetRequest 初始化TaobaoMiniappEleuserPhoneGetAPIRequest对象
 func NewTaobaoMiniappEleuserPhoneGetRequest() *TaobaoMiniappEleuserPhoneGetAPIRequest {
 	return &TaobaoMiniappEleuserPhoneGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMiniappEleuserPhoneGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r TaobaoMiniappEleuserPhoneGetAPIRequest) GetApiParams(params url.Values) 
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r TaobaoMiniappEleuserPhoneGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolTaobaoMiniappEleuserPhoneGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMiniappEleuserPhoneGetRequest()
+	},
+}
+
+// GetTaobaoMiniappEleuserPhoneGetRequest 从 sync.Pool 获取 TaobaoMiniappEleuserPhoneGetAPIRequest
+func GetTaobaoMiniappEleuserPhoneGetAPIRequest() *TaobaoMiniappEleuserPhoneGetAPIRequest {
+	return poolTaobaoMiniappEleuserPhoneGetAPIRequest.Get().(*TaobaoMiniappEleuserPhoneGetAPIRequest)
+}
+
+// ReleaseTaobaoMiniappEleuserPhoneGetAPIRequest 将 TaobaoMiniappEleuserPhoneGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMiniappEleuserPhoneGetAPIRequest(v *TaobaoMiniappEleuserPhoneGetAPIRequest) {
+	v.Reset()
+	poolTaobaoMiniappEleuserPhoneGetAPIRequest.Put(v)
 }

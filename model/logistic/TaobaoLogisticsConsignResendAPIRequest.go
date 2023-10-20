@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,20 @@ type TaobaoLogisticsConsignResendAPIRequest struct {
 // NewTaobaoLogisticsConsignResendRequest 初始化TaobaoLogisticsConsignResendAPIRequest对象
 func NewTaobaoLogisticsConsignResendRequest() *TaobaoLogisticsConsignResendAPIRequest {
 	return &TaobaoLogisticsConsignResendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsConsignResendAPIRequest) Reset() {
+	r._subTid = r._subTid[:0]
+	r._outSid = ""
+	r._companyCode = ""
+	r._feature = ""
+	r._sellerIp = ""
+	r._tid = 0
+	r._isSplit = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -143,4 +156,21 @@ func (r *TaobaoLogisticsConsignResendAPIRequest) SetIsSplit(_isSplit int64) erro
 // GetIsSplit IsSplit Getter
 func (r TaobaoLogisticsConsignResendAPIRequest) GetIsSplit() int64 {
 	return r._isSplit
+}
+
+var poolTaobaoLogisticsConsignResendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsConsignResendRequest()
+	},
+}
+
+// GetTaobaoLogisticsConsignResendRequest 从 sync.Pool 获取 TaobaoLogisticsConsignResendAPIRequest
+func GetTaobaoLogisticsConsignResendAPIRequest() *TaobaoLogisticsConsignResendAPIRequest {
+	return poolTaobaoLogisticsConsignResendAPIRequest.Get().(*TaobaoLogisticsConsignResendAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsConsignResendAPIRequest 将 TaobaoLogisticsConsignResendAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsConsignResendAPIRequest(v *TaobaoLogisticsConsignResendAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsConsignResendAPIRequest.Put(v)
 }

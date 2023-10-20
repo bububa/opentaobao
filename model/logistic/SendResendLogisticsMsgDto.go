@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // SendResendLogisticsMsgDto 结构体
 type SendResendLogisticsMsgDto struct {
 	// 该运单所包含的货品列表
@@ -20,4 +24,29 @@ type SendResendLogisticsMsgDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 主订单
 	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
+}
+
+var poolSendResendLogisticsMsgDto = sync.Pool{
+	New: func() any {
+		return new(SendResendLogisticsMsgDto)
+	},
+}
+
+// GetSendResendLogisticsMsgDto() 从对象池中获取SendResendLogisticsMsgDto
+func GetSendResendLogisticsMsgDto() *SendResendLogisticsMsgDto {
+	return poolSendResendLogisticsMsgDto.Get().(*SendResendLogisticsMsgDto)
+}
+
+// ReleaseSendResendLogisticsMsgDto 释放SendResendLogisticsMsgDto
+func ReleaseSendResendLogisticsMsgDto(v *SendResendLogisticsMsgDto) {
+	v.GoodsItemList = v.GoodsItemList[:0]
+	v.MailNo = ""
+	v.Msg = ""
+	v.BizId = ""
+	v.CompanyName = ""
+	v.SourceId = ""
+	v.OrderCode = ""
+	v.Status = 0
+	v.Tid = 0
+	poolSendResendLogisticsMsgDto.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.logistics.wms.packageentryorder.pull
 //
 // 包裹入库单拉单
-func TaobaoLogisticsWmsPackageentryorderPull(clt *core.SDKClient, req *tblogistics.TaobaoLogisticsWmsPackageentryorderPullAPIRequest, session string) (*tblogistics.TaobaoLogisticsWmsPackageentryorderPullAPIResponse, error) {
-	var resp tblogistics.TaobaoLogisticsWmsPackageentryorderPullAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoLogisticsWmsPackageentryorderPull(clt *core.SDKClient, req *tblogistics.TaobaoLogisticsWmsPackageentryorderPullAPIRequest, resp *tblogistics.TaobaoLogisticsWmsPackageentryorderPullAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

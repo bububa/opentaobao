@@ -1,5 +1,9 @@
 package mei
 
+import (
+	"sync"
+)
+
 // MemberAccountDto 结构体
 type MemberAccountDto struct {
 	// mixMobile，只有有权限的才有值
@@ -8,4 +12,23 @@ type MemberAccountDto struct {
 	BuyerNick string `json:"buyer_nick,omitempty" xml:"buyer_nick,omitempty"`
 	// 明文手机号，只有有权限的才有值
 	ClearMobile string `json:"clear_mobile,omitempty" xml:"clear_mobile,omitempty"`
+}
+
+var poolMemberAccountDto = sync.Pool{
+	New: func() any {
+		return new(MemberAccountDto)
+	},
+}
+
+// GetMemberAccountDto() 从对象池中获取MemberAccountDto
+func GetMemberAccountDto() *MemberAccountDto {
+	return poolMemberAccountDto.Get().(*MemberAccountDto)
+}
+
+// ReleaseMemberAccountDto 释放MemberAccountDto
+func ReleaseMemberAccountDto(v *MemberAccountDto) {
+	v.MixMobile = ""
+	v.BuyerNick = ""
+	v.ClearMobile = ""
+	poolMemberAccountDto.Put(v)
 }

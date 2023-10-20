@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // TmallAlihouseTradeCouponOrderStatusQueryResult 结构体
 type TmallAlihouseTradeCouponOrderStatusQueryResult struct {
 	// code
@@ -8,4 +12,23 @@ type TmallAlihouseTradeCouponOrderStatusQueryResult struct {
 	Msg string `json:"msg,omitempty" xml:"msg,omitempty"`
 	// 返回素材id
 	Data *CouponOrderStatusDto `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+var poolTmallAlihouseTradeCouponOrderStatusQueryResult = sync.Pool{
+	New: func() any {
+		return new(TmallAlihouseTradeCouponOrderStatusQueryResult)
+	},
+}
+
+// GetTmallAlihouseTradeCouponOrderStatusQueryResult() 从对象池中获取TmallAlihouseTradeCouponOrderStatusQueryResult
+func GetTmallAlihouseTradeCouponOrderStatusQueryResult() *TmallAlihouseTradeCouponOrderStatusQueryResult {
+	return poolTmallAlihouseTradeCouponOrderStatusQueryResult.Get().(*TmallAlihouseTradeCouponOrderStatusQueryResult)
+}
+
+// ReleaseTmallAlihouseTradeCouponOrderStatusQueryResult 释放TmallAlihouseTradeCouponOrderStatusQueryResult
+func ReleaseTmallAlihouseTradeCouponOrderStatusQueryResult(v *TmallAlihouseTradeCouponOrderStatusQueryResult) {
+	v.Code = ""
+	v.Msg = ""
+	v.Data = nil
+	poolTmallAlihouseTradeCouponOrderStatusQueryResult.Put(v)
 }

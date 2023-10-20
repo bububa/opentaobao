@@ -1,5 +1,9 @@
 package lsttrade
 
+import (
+	"sync"
+)
+
 // LstTradeGetSellerOrderListParam 结构体
 type LstTradeGetSellerOrderListParam struct {
 	// 买家id
@@ -32,4 +36,35 @@ type LstTradeGetSellerOrderListParam struct {
 	MainOrderId int64 `json:"main_order_id,omitempty" xml:"main_order_id,omitempty"`
 	// 是否查询历史
 	IsHis bool `json:"is_his,omitempty" xml:"is_his,omitempty"`
+}
+
+var poolLstTradeGetSellerOrderListParam = sync.Pool{
+	New: func() any {
+		return new(LstTradeGetSellerOrderListParam)
+	},
+}
+
+// GetLstTradeGetSellerOrderListParam() 从对象池中获取LstTradeGetSellerOrderListParam
+func GetLstTradeGetSellerOrderListParam() *LstTradeGetSellerOrderListParam {
+	return poolLstTradeGetSellerOrderListParam.Get().(*LstTradeGetSellerOrderListParam)
+}
+
+// ReleaseLstTradeGetSellerOrderListParam 释放LstTradeGetSellerOrderListParam
+func ReleaseLstTradeGetSellerOrderListParam(v *LstTradeGetSellerOrderListParam) {
+	v.BuyerMemberId = ""
+	v.OrderStatus = ""
+	v.RefundStatus = ""
+	v.TradeEndTime = ""
+	v.ProductName = ""
+	v.CreateStartTime = ""
+	v.TradeStartTime = ""
+	v.CreateEndTime = ""
+	v.UpdateStartTime = ""
+	v.UpdateEndTime = ""
+	v.PageSize = 0
+	v.SubOrderId = 0
+	v.Page = 0
+	v.MainOrderId = 0
+	v.IsHis = false
+	poolLstTradeGetSellerOrderListParam.Put(v)
 }

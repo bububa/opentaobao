@@ -10,11 +10,6 @@ import (
 //
 // 批量更新复杂价格
 // 涵盖了taobao.xhotel.rates.update的功能
-func TaobaoXhotelMultipleratesUpdate(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelMultipleratesUpdateAPIRequest, session string) (*xhotelitem.TaobaoXhotelMultipleratesUpdateAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelMultipleratesUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelMultipleratesUpdate(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelMultipleratesUpdateAPIRequest, resp *xhotelitem.TaobaoXhotelMultipleratesUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

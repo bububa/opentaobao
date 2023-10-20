@@ -2,6 +2,7 @@ package nrt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallNrtStoreContractSynAPIRequest struct {
 // NewTmallNrtStoreContractSynRequest 初始化TmallNrtStoreContractSynAPIRequest对象
 func NewTmallNrtStoreContractSynRequest() *TmallNrtStoreContractSynAPIRequest {
 	return &TmallNrtStoreContractSynAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrtStoreContractSynAPIRequest) Reset() {
+	r._eaStoreContractDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallNrtStoreContractSynAPIRequest) SetEaStoreContractDto(_eaStoreContr
 // GetEaStoreContractDto EaStoreContractDto Getter
 func (r TmallNrtStoreContractSynAPIRequest) GetEaStoreContractDto() *NrtStoreContractDto {
 	return r._eaStoreContractDto
+}
+
+var poolTmallNrtStoreContractSynAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrtStoreContractSynRequest()
+	},
+}
+
+// GetTmallNrtStoreContractSynRequest 从 sync.Pool 获取 TmallNrtStoreContractSynAPIRequest
+func GetTmallNrtStoreContractSynAPIRequest() *TmallNrtStoreContractSynAPIRequest {
+	return poolTmallNrtStoreContractSynAPIRequest.Get().(*TmallNrtStoreContractSynAPIRequest)
+}
+
+// ReleaseTmallNrtStoreContractSynAPIRequest 将 TmallNrtStoreContractSynAPIRequest 放入 sync.Pool
+func ReleaseTmallNrtStoreContractSynAPIRequest(v *TmallNrtStoreContractSynAPIRequest) {
+	v.Reset()
+	poolTmallNrtStoreContractSynAPIRequest.Put(v)
 }

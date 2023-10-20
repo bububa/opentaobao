@@ -2,6 +2,7 @@ package icbu
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaIcbuPhotobankListAPIRequest struct {
 // NewAlibabaIcbuPhotobankListRequest 初始化AlibabaIcbuPhotobankListAPIRequest对象
 func NewAlibabaIcbuPhotobankListRequest() *AlibabaIcbuPhotobankListAPIRequest {
 	return &AlibabaIcbuPhotobankListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIcbuPhotobankListAPIRequest) Reset() {
+	r._extraContext = ""
+	r._groupId = ""
+	r._locationType = ""
+	r._currentPage = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaIcbuPhotobankListAPIRequest) SetPageSize(_pageSize int64) error 
 // GetPageSize PageSize Getter
 func (r AlibabaIcbuPhotobankListAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAlibabaIcbuPhotobankListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIcbuPhotobankListRequest()
+	},
+}
+
+// GetAlibabaIcbuPhotobankListRequest 从 sync.Pool 获取 AlibabaIcbuPhotobankListAPIRequest
+func GetAlibabaIcbuPhotobankListAPIRequest() *AlibabaIcbuPhotobankListAPIRequest {
+	return poolAlibabaIcbuPhotobankListAPIRequest.Get().(*AlibabaIcbuPhotobankListAPIRequest)
+}
+
+// ReleaseAlibabaIcbuPhotobankListAPIRequest 将 AlibabaIcbuPhotobankListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIcbuPhotobankListAPIRequest(v *AlibabaIcbuPhotobankListAPIRequest) {
+	v.Reset()
+	poolAlibabaIcbuPhotobankListAPIRequest.Put(v)
 }

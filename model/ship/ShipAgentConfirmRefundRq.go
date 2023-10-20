@@ -1,5 +1,9 @@
 package ship
 
+import (
+	"sync"
+)
+
 // ShipAgentConfirmRefundRq 结构体
 type ShipAgentConfirmRefundRq struct {
 	// 扩展属性
@@ -26,4 +30,32 @@ type ShipAgentConfirmRefundRq struct {
 	AgentReturnTicketType int64 `json:"agent_return_ticket_type,omitempty" xml:"agent_return_ticket_type,omitempty"`
 	// 飞猪订单号
 	AlitripOrderId int64 `json:"alitrip_order_id,omitempty" xml:"alitrip_order_id,omitempty"`
+}
+
+var poolShipAgentConfirmRefundRq = sync.Pool{
+	New: func() any {
+		return new(ShipAgentConfirmRefundRq)
+	},
+}
+
+// GetShipAgentConfirmRefundRq() 从对象池中获取ShipAgentConfirmRefundRq
+func GetShipAgentConfirmRefundRq() *ShipAgentConfirmRefundRq {
+	return poolShipAgentConfirmRefundRq.Get().(*ShipAgentConfirmRefundRq)
+}
+
+// ReleaseShipAgentConfirmRefundRq 释放ShipAgentConfirmRefundRq
+func ReleaseShipAgentConfirmRefundRq(v *ShipAgentConfirmRefundRq) {
+	v.AgentExtAttr = ""
+	v.AgentOrderId = ""
+	v.AgentRefundTransId = ""
+	v.AgentReturnMode = ""
+	v.AgentReturnTime = ""
+	v.AgentTicketId = ""
+	v.PassengerId = ""
+	v.AgentRefundAmount = 0
+	v.AgentReturnTicketCode = 0
+	v.AgentReturnTicketStatus = 0
+	v.AgentReturnTicketType = 0
+	v.AlitripOrderId = 0
+	poolShipAgentConfirmRefundRq.Put(v)
 }

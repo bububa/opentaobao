@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // VideoDraftDto 结构体
 type VideoDraftDto struct {
 	// 二级栏目名称
@@ -50,4 +54,44 @@ type VideoDraftDto struct {
 	Resolution int64 `json:"resolution,omitempty" xml:"resolution,omitempty"`
 	// 1测试数据 0正常数据
 	IsTest int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
+}
+
+var poolVideoDraftDto = sync.Pool{
+	New: func() any {
+		return new(VideoDraftDto)
+	},
+}
+
+// GetVideoDraftDto() 从对象池中获取VideoDraftDto
+func GetVideoDraftDto() *VideoDraftDto {
+	return poolVideoDraftDto.Get().(*VideoDraftDto)
+}
+
+// ReleaseVideoDraftDto 释放VideoDraftDto
+func ReleaseVideoDraftDto(v *VideoDraftDto) {
+	v.SubColumn = ""
+	v.TopColumn = ""
+	v.VideoSource = ""
+	v.Title = ""
+	v.OuterVideoId = ""
+	v.OuterId = ""
+	v.PublishTime = ""
+	v.CoverImage = ""
+	v.ImgInfo = ""
+	v.VideoUrl = ""
+	v.CompereName = ""
+	v.CompereHeadUrl = ""
+	v.Author = ""
+	v.Summary = ""
+	v.OuterSubId = ""
+	v.OuterStoreId = ""
+	v.VideoType = 0
+	v.Original = 0
+	v.CityId = 0
+	v.VideoFormat = 0
+	v.CompereId = 0
+	v.VideoLength = 0
+	v.Resolution = 0
+	v.IsTest = 0
+	poolVideoDraftDto.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.target.ad.campaign.effect
 //
 // 定向推广-获取计划维度推广效果
-func AlibabaScbpTargetAdCampaignEffect(clt *core.SDKClient, req *scbp.AlibabaScbpTargetAdCampaignEffectAPIRequest, session string) (*scbp.AlibabaScbpTargetAdCampaignEffectAPIResponse, error) {
-	var resp scbp.AlibabaScbpTargetAdCampaignEffectAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpTargetAdCampaignEffect(clt *core.SDKClient, req *scbp.AlibabaScbpTargetAdCampaignEffectAPIRequest, resp *scbp.AlibabaScbpTargetAdCampaignEffectAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drug.code.common.list.codeinfo
 //
 // 通用查询码接口
-func AlibabaAlihealthDrugCodeCommonListCodeinfo(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugCodeCommonListCodeinfoAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugCodeCommonListCodeinfoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugCodeCommonListCodeinfo(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest, resp *drugtrace.AlibabaAlihealthDrugCodeCommonListCodeinfoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

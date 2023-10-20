@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ReceiptSubOrderDo 结构体
 type ReceiptSubOrderDo struct {
 	// 商品条码
@@ -36,4 +40,37 @@ type ReceiptSubOrderDo struct {
 	SellingPrice int64 `json:"selling_price,omitempty" xml:"selling_price,omitempty"`
 	// 临时折扣
 	TemporaryDiscount int64 `json:"temporary_discount,omitempty" xml:"temporary_discount,omitempty"`
+}
+
+var poolReceiptSubOrderDo = sync.Pool{
+	New: func() any {
+		return new(ReceiptSubOrderDo)
+	},
+}
+
+// GetReceiptSubOrderDo() 从对象池中获取ReceiptSubOrderDo
+func GetReceiptSubOrderDo() *ReceiptSubOrderDo {
+	return poolReceiptSubOrderDo.Get().(*ReceiptSubOrderDo)
+}
+
+// ReleaseReceiptSubOrderDo 释放ReceiptSubOrderDo
+func ReleaseReceiptSubOrderDo(v *ReceiptSubOrderDo) {
+	v.ItemBarcode = ""
+	v.ItemCode = ""
+	v.ItemName = ""
+	v.PosNo = ""
+	v.Quantity = ""
+	v.ScanBarcode = ""
+	v.SerialNum = ""
+	v.StoreId = ""
+	v.Unit = ""
+	v.DealAmt = 0
+	v.DealPrice = 0
+	v.Index = 0
+	v.MemberDiscount = 0
+	v.OriginalPrice = 0
+	v.PromotionDiscount = 0
+	v.SellingPrice = 0
+	v.TemporaryDiscount = 0
+	poolReceiptSubOrderDo.Put(v)
 }

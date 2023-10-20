@@ -2,6 +2,7 @@ package alimember
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMemberCheckmerchantAPIRequest struct {
 // NewAlibabaMemberCheckmerchantRequest 初始化AlibabaMemberCheckmerchantAPIRequest对象
 func NewAlibabaMemberCheckmerchantRequest() *AlibabaMemberCheckmerchantAPIRequest {
 	return &AlibabaMemberCheckmerchantAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMemberCheckmerchantAPIRequest) Reset() {
+	r._openMerchantId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMemberCheckmerchantAPIRequest) SetOpenMerchantId(_openMerchantId
 // GetOpenMerchantId OpenMerchantId Getter
 func (r AlibabaMemberCheckmerchantAPIRequest) GetOpenMerchantId() string {
 	return r._openMerchantId
+}
+
+var poolAlibabaMemberCheckmerchantAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMemberCheckmerchantRequest()
+	},
+}
+
+// GetAlibabaMemberCheckmerchantRequest 从 sync.Pool 获取 AlibabaMemberCheckmerchantAPIRequest
+func GetAlibabaMemberCheckmerchantAPIRequest() *AlibabaMemberCheckmerchantAPIRequest {
+	return poolAlibabaMemberCheckmerchantAPIRequest.Get().(*AlibabaMemberCheckmerchantAPIRequest)
+}
+
+// ReleaseAlibabaMemberCheckmerchantAPIRequest 将 AlibabaMemberCheckmerchantAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMemberCheckmerchantAPIRequest(v *AlibabaMemberCheckmerchantAPIRequest) {
+	v.Reset()
+	poolAlibabaMemberCheckmerchantAPIRequest.Put(v)
 }

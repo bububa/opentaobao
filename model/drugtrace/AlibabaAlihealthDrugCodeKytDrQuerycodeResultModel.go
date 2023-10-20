@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // AlibabaAlihealthDrugCodeKytDrQuerycodeResultModel 结构体
 type AlibabaAlihealthDrugCodeKytDrQuerycodeResultModel struct {
 	// 内层大对象
@@ -10,4 +14,24 @@ type AlibabaAlihealthDrugCodeKytDrQuerycodeResultModel struct {
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// 查询成功失败标记
 	ResponseSuccess bool `json:"response_success,omitempty" xml:"response_success,omitempty"`
+}
+
+var poolAlibabaAlihealthDrugCodeKytDrQuerycodeResultModel = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugCodeKytDrQuerycodeResultModel)
+	},
+}
+
+// GetAlibabaAlihealthDrugCodeKytDrQuerycodeResultModel() 从对象池中获取AlibabaAlihealthDrugCodeKytDrQuerycodeResultModel
+func GetAlibabaAlihealthDrugCodeKytDrQuerycodeResultModel() *AlibabaAlihealthDrugCodeKytDrQuerycodeResultModel {
+	return poolAlibabaAlihealthDrugCodeKytDrQuerycodeResultModel.Get().(*AlibabaAlihealthDrugCodeKytDrQuerycodeResultModel)
+}
+
+// ReleaseAlibabaAlihealthDrugCodeKytDrQuerycodeResultModel 释放AlibabaAlihealthDrugCodeKytDrQuerycodeResultModel
+func ReleaseAlibabaAlihealthDrugCodeKytDrQuerycodeResultModel(v *AlibabaAlihealthDrugCodeKytDrQuerycodeResultModel) {
+	v.Models = v.Models[:0]
+	v.MsgCode = ""
+	v.MsgInfo = ""
+	v.ResponseSuccess = false
+	poolAlibabaAlihealthDrugCodeKytDrQuerycodeResultModel.Put(v)
 }

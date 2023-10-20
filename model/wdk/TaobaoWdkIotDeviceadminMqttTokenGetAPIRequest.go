@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest struct {
 // NewTaobaoWdkIotDeviceadminMqttTokenGetRequest 初始化TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest对象
 func NewTaobaoWdkIotDeviceadminMqttTokenGetRequest() *TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest {
 	return &TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest) Reset() {
+	r._accessKey = ""
+	r._applyTimestamp = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest) SetApplyTimestamp(_apply
 // GetApplyTimestamp ApplyTimestamp Getter
 func (r TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest) GetApplyTimestamp() int64 {
 	return r._applyTimestamp
+}
+
+var poolTaobaoWdkIotDeviceadminMqttTokenGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWdkIotDeviceadminMqttTokenGetRequest()
+	},
+}
+
+// GetTaobaoWdkIotDeviceadminMqttTokenGetRequest 从 sync.Pool 获取 TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest
+func GetTaobaoWdkIotDeviceadminMqttTokenGetAPIRequest() *TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest {
+	return poolTaobaoWdkIotDeviceadminMqttTokenGetAPIRequest.Get().(*TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest)
+}
+
+// ReleaseTaobaoWdkIotDeviceadminMqttTokenGetAPIRequest 将 TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWdkIotDeviceadminMqttTokenGetAPIRequest(v *TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest) {
+	v.Reset()
+	poolTaobaoWdkIotDeviceadminMqttTokenGetAPIRequest.Put(v)
 }

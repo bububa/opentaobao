@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // RecommendWordPage 结构体
 type RecommendWordPage struct {
 	// 推荐词分页对象列表
@@ -10,4 +14,24 @@ type RecommendWordPage struct {
 	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
 	// 所查询的数据总数
 	TotalItem int64 `json:"total_item,omitempty" xml:"total_item,omitempty"`
+}
+
+var poolRecommendWordPage = sync.Pool{
+	New: func() any {
+		return new(RecommendWordPage)
+	},
+}
+
+// GetRecommendWordPage() 从对象池中获取RecommendWordPage
+func GetRecommendWordPage() *RecommendWordPage {
+	return poolRecommendWordPage.Get().(*RecommendWordPage)
+}
+
+// ReleaseRecommendWordPage 释放RecommendWordPage
+func ReleaseRecommendWordPage(v *RecommendWordPage) {
+	v.RecommendWordList = v.RecommendWordList[:0]
+	v.PageSize = 0
+	v.PageNo = 0
+	v.TotalItem = 0
+	poolRecommendWordPage.Put(v)
 }

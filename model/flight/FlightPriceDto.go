@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // FlightPriceDto 结构体
 type FlightPriceDto struct {
 	// 指定舱位
@@ -14,4 +18,26 @@ type FlightPriceDto struct {
 	DownPercent int64 `json:"down_percent,omitempty" xml:"down_percent,omitempty"`
 	// 验舱
 	ValidateCabin int64 `json:"validate_cabin,omitempty" xml:"validate_cabin,omitempty"`
+}
+
+var poolFlightPriceDto = sync.Pool{
+	New: func() any {
+		return new(FlightPriceDto)
+	},
+}
+
+// GetFlightPriceDto() 从对象池中获取FlightPriceDto
+func GetFlightPriceDto() *FlightPriceDto {
+	return poolFlightPriceDto.Get().(*FlightPriceDto)
+}
+
+// ReleaseFlightPriceDto 释放FlightPriceDto
+func ReleaseFlightPriceDto(v *FlightPriceDto) {
+	v.FareCabin = ""
+	v.FlightIndex = ""
+	v.MatchFareBasis = ""
+	v.DownFare = 0
+	v.DownPercent = 0
+	v.ValidateCabin = 0
+	poolFlightPriceDto.Put(v)
 }

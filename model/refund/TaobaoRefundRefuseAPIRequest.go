@@ -2,6 +2,7 @@ package refund
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoRefundRefuseAPIRequest struct {
 // NewTaobaoRefundRefuseRequest 初始化TaobaoRefundRefuseAPIRequest对象
 func NewTaobaoRefundRefuseRequest() *TaobaoRefundRefuseAPIRequest {
 	return &TaobaoRefundRefuseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoRefundRefuseAPIRequest) Reset() {
+	r._refuseMessage = ""
+	r._refundPhase = ""
+	r._refundId = 0
+	r._refuseProof = nil
+	r._refundVersion = 0
+	r._refuseReasonId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoRefundRefuseAPIRequest) SetRefuseReasonId(_refuseReasonId int64) 
 // GetRefuseReasonId RefuseReasonId Getter
 func (r TaobaoRefundRefuseAPIRequest) GetRefuseReasonId() int64 {
 	return r._refuseReasonId
+}
+
+var poolTaobaoRefundRefuseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoRefundRefuseRequest()
+	},
+}
+
+// GetTaobaoRefundRefuseRequest 从 sync.Pool 获取 TaobaoRefundRefuseAPIRequest
+func GetTaobaoRefundRefuseAPIRequest() *TaobaoRefundRefuseAPIRequest {
+	return poolTaobaoRefundRefuseAPIRequest.Get().(*TaobaoRefundRefuseAPIRequest)
+}
+
+// ReleaseTaobaoRefundRefuseAPIRequest 将 TaobaoRefundRefuseAPIRequest 放入 sync.Pool
+func ReleaseTaobaoRefundRefuseAPIRequest(v *TaobaoRefundRefuseAPIRequest) {
+	v.Reset()
+	poolTaobaoRefundRefuseAPIRequest.Put(v)
 }

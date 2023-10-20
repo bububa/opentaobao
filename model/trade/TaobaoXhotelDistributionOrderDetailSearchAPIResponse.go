@@ -2,6 +2,7 @@ package trade
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoXhotelDistributionOrderDetailSearchAPIResponse struct {
 	TaobaoXhotelDistributionOrderDetailSearchAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoXhotelDistributionOrderDetailSearchAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoXhotelDistributionOrderDetailSearchAPIResponseModel).Reset()
+}
+
 // TaobaoXhotelDistributionOrderDetailSearchAPIResponseModel is 分销渠道订单详情查询 成功返回结果
 type TaobaoXhotelDistributionOrderDetailSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_distribution_order_detail_search_response"`
@@ -26,4 +33,29 @@ type TaobaoXhotelDistributionOrderDetailSearchAPIResponseModel struct {
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 订单详情对象
 	TopDistributionOrderDetail *TopDistributionOrderDetail `json:"top_distribution_order_detail,omitempty" xml:"top_distribution_order_detail,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelDistributionOrderDetailSearchAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Error = ""
+	m.ErrorMsg = ""
+	m.TopDistributionOrderDetail = nil
+}
+
+var poolTaobaoXhotelDistributionOrderDetailSearchAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelDistributionOrderDetailSearchAPIResponse)
+	},
+}
+
+// GetTaobaoXhotelDistributionOrderDetailSearchAPIResponse 从 sync.Pool 获取 TaobaoXhotelDistributionOrderDetailSearchAPIResponse
+func GetTaobaoXhotelDistributionOrderDetailSearchAPIResponse() *TaobaoXhotelDistributionOrderDetailSearchAPIResponse {
+	return poolTaobaoXhotelDistributionOrderDetailSearchAPIResponse.Get().(*TaobaoXhotelDistributionOrderDetailSearchAPIResponse)
+}
+
+// ReleaseTaobaoXhotelDistributionOrderDetailSearchAPIResponse 将 TaobaoXhotelDistributionOrderDetailSearchAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoXhotelDistributionOrderDetailSearchAPIResponse(v *TaobaoXhotelDistributionOrderDetailSearchAPIResponse) {
+	v.Reset()
+	poolTaobaoXhotelDistributionOrderDetailSearchAPIResponse.Put(v)
 }

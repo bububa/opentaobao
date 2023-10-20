@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // AlscConsumeRecordOpenInfo 结构体
 type AlscConsumeRecordOpenInfo struct {
 	// 支付单模型
@@ -44,4 +48,41 @@ type AlscConsumeRecordOpenInfo struct {
 	ShopOpenInfo *ShopOpenInfo `json:"shop_open_info,omitempty" xml:"shop_open_info,omitempty"`
 	// 订单是否可见
 	Visibility bool `json:"visibility,omitempty" xml:"visibility,omitempty"`
+}
+
+var poolAlscConsumeRecordOpenInfo = sync.Pool{
+	New: func() any {
+		return new(AlscConsumeRecordOpenInfo)
+	},
+}
+
+// GetAlscConsumeRecordOpenInfo() 从对象池中获取AlscConsumeRecordOpenInfo
+func GetAlscConsumeRecordOpenInfo() *AlscConsumeRecordOpenInfo {
+	return poolAlscConsumeRecordOpenInfo.Get().(*AlscConsumeRecordOpenInfo)
+}
+
+// ReleaseAlscConsumeRecordOpenInfo 释放AlscConsumeRecordOpenInfo
+func ReleaseAlscConsumeRecordOpenInfo(v *AlscConsumeRecordOpenInfo) {
+	v.PaymentOpenInfos = v.PaymentOpenInfos[:0]
+	v.RefundOpenInfos = v.RefundOpenInfos[:0]
+	v.SubOrderOpenInfos = v.SubOrderOpenInfos[:0]
+	v.BizContent = ""
+	v.BizNo = ""
+	v.BizNoType = ""
+	v.BizSource = ""
+	v.BizStatus = ""
+	v.BizSubType = ""
+	v.BizType = ""
+	v.ExtInfo = ""
+	v.GmtBizCreate = ""
+	v.GmtBizModified = ""
+	v.OppositeId = ""
+	v.OppositeIdType = ""
+	v.RateStatus = ""
+	v.RecordType = ""
+	v.DeliveryOpenInfo = nil
+	v.OrderOpenInfo = nil
+	v.ShopOpenInfo = nil
+	v.Visibility = false
+	poolAlscConsumeRecordOpenInfo.Put(v)
 }

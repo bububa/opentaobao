@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // AlitripMerchantGalaxyActivityGoodsQueryResponse 结构体
 type AlitripMerchantGalaxyActivityGoodsQueryResponse struct {
 	// 奖品信息数据
@@ -10,4 +14,24 @@ type AlitripMerchantGalaxyActivityGoodsQueryResponse struct {
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlitripMerchantGalaxyActivityGoodsQueryResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyActivityGoodsQueryResponse)
+	},
+}
+
+// GetAlitripMerchantGalaxyActivityGoodsQueryResponse() 从对象池中获取AlitripMerchantGalaxyActivityGoodsQueryResponse
+func GetAlitripMerchantGalaxyActivityGoodsQueryResponse() *AlitripMerchantGalaxyActivityGoodsQueryResponse {
+	return poolAlitripMerchantGalaxyActivityGoodsQueryResponse.Get().(*AlitripMerchantGalaxyActivityGoodsQueryResponse)
+}
+
+// ReleaseAlitripMerchantGalaxyActivityGoodsQueryResponse 释放AlitripMerchantGalaxyActivityGoodsQueryResponse
+func ReleaseAlitripMerchantGalaxyActivityGoodsQueryResponse(v *AlitripMerchantGalaxyActivityGoodsQueryResponse) {
+	v.Contents = v.Contents[:0]
+	v.ErrorMsg = ""
+	v.ErrorCode = ""
+	v.Success = false
+	poolAlitripMerchantGalaxyActivityGoodsQueryResponse.Put(v)
 }

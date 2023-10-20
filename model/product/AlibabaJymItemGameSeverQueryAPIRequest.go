@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaJymItemGameSeverQueryAPIRequest struct {
 // NewAlibabaJymItemGameSeverQueryRequest 初始化AlibabaJymItemGameSeverQueryAPIRequest对象
 func NewAlibabaJymItemGameSeverQueryRequest() *AlibabaJymItemGameSeverQueryAPIRequest {
 	return &AlibabaJymItemGameSeverQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaJymItemGameSeverQueryAPIRequest) Reset() {
+	r._gameId = 0
+	r._clientId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaJymItemGameSeverQueryAPIRequest) SetClientId(_clientId int64) er
 // GetClientId ClientId Getter
 func (r AlibabaJymItemGameSeverQueryAPIRequest) GetClientId() int64 {
 	return r._clientId
+}
+
+var poolAlibabaJymItemGameSeverQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaJymItemGameSeverQueryRequest()
+	},
+}
+
+// GetAlibabaJymItemGameSeverQueryRequest 从 sync.Pool 获取 AlibabaJymItemGameSeverQueryAPIRequest
+func GetAlibabaJymItemGameSeverQueryAPIRequest() *AlibabaJymItemGameSeverQueryAPIRequest {
+	return poolAlibabaJymItemGameSeverQueryAPIRequest.Get().(*AlibabaJymItemGameSeverQueryAPIRequest)
+}
+
+// ReleaseAlibabaJymItemGameSeverQueryAPIRequest 将 AlibabaJymItemGameSeverQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaJymItemGameSeverQueryAPIRequest(v *AlibabaJymItemGameSeverQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaJymItemGameSeverQueryAPIRequest.Put(v)
 }

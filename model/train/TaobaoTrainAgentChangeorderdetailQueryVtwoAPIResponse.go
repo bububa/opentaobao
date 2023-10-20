@@ -2,6 +2,7 @@ package train
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTrainAgentChangeorderdetailQueryVtwoAPIResponse struct {
 	TaobaoTrainAgentChangeorderdetailQueryVtwoAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTrainAgentChangeorderdetailQueryVtwoAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTrainAgentChangeorderdetailQueryVtwoAPIResponseModel).Reset()
+}
+
 // TaobaoTrainAgentChangeorderdetailQueryVtwoAPIResponseModel is 火车票代理商接口-查询跑腿改签订单详情-含鉴权校验 成功返回结果
 type TaobaoTrainAgentChangeorderdetailQueryVtwoAPIResponseModel struct {
 	XMLName xml.Name `xml:"train_agent_changeorderdetail_query_vtwo_response"`
@@ -26,4 +33,29 @@ type TaobaoTrainAgentChangeorderdetailQueryVtwoAPIResponseModel struct {
 	CustomMadeList []CustomMadeItemDto `json:"custom_made_list,omitempty" xml:"custom_made_list>custom_made_item_dto,omitempty"`
 	// 改签申请单主单
 	ChangeApplyOrder *ChangeApplyOrderDto `json:"change_apply_order,omitempty" xml:"change_apply_order,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTrainAgentChangeorderdetailQueryVtwoAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ChangeApplySubOrders = m.ChangeApplySubOrders[:0]
+	m.CustomMadeList = m.CustomMadeList[:0]
+	m.ChangeApplyOrder = nil
+}
+
+var poolTaobaoTrainAgentChangeorderdetailQueryVtwoAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTrainAgentChangeorderdetailQueryVtwoAPIResponse)
+	},
+}
+
+// GetTaobaoTrainAgentChangeorderdetailQueryVtwoAPIResponse 从 sync.Pool 获取 TaobaoTrainAgentChangeorderdetailQueryVtwoAPIResponse
+func GetTaobaoTrainAgentChangeorderdetailQueryVtwoAPIResponse() *TaobaoTrainAgentChangeorderdetailQueryVtwoAPIResponse {
+	return poolTaobaoTrainAgentChangeorderdetailQueryVtwoAPIResponse.Get().(*TaobaoTrainAgentChangeorderdetailQueryVtwoAPIResponse)
+}
+
+// ReleaseTaobaoTrainAgentChangeorderdetailQueryVtwoAPIResponse 将 TaobaoTrainAgentChangeorderdetailQueryVtwoAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTrainAgentChangeorderdetailQueryVtwoAPIResponse(v *TaobaoTrainAgentChangeorderdetailQueryVtwoAPIResponse) {
+	v.Reset()
+	poolTaobaoTrainAgentChangeorderdetailQueryVtwoAPIResponse.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // aliyun.unimkt.task.charge.launch
 //
 // 云码线上流量投放链路，用于判断用户是否有匹配的投放计划
-func AliyunUnimktTaskChargeLaunch(clt *core.SDKClient, req *mc.AliyunUnimktTaskChargeLaunchAPIRequest, session string) (*mc.AliyunUnimktTaskChargeLaunchAPIResponse, error) {
-	var resp mc.AliyunUnimktTaskChargeLaunchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliyunUnimktTaskChargeLaunch(clt *core.SDKClient, req *mc.AliyunUnimktTaskChargeLaunchAPIRequest, resp *mc.AliyunUnimktTaskChargeLaunchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

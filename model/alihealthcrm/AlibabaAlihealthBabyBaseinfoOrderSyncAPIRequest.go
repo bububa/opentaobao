@@ -2,6 +2,7 @@ package alihealthcrm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest struct {
 // NewAlibabaAlihealthBabyBaseinfoOrderSyncRequest 初始化AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest对象
 func NewAlibabaAlihealthBabyBaseinfoOrderSyncRequest() *AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest {
 	return &AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest) Reset() {
+	r._commodityId = ""
+	r._commodityName = ""
+	r._orderTime = ""
+	r._orderId = ""
+	r._tpUserId = 0
+	r._amount = 0
+	r._status = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest) SetStatus(_status int6
 // GetStatus Status Getter
 func (r AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest) GetStatus() int64 {
 	return r._status
+}
+
+var poolAlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthBabyBaseinfoOrderSyncRequest()
+	},
+}
+
+// GetAlibabaAlihealthBabyBaseinfoOrderSyncRequest 从 sync.Pool 获取 AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest
+func GetAlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest() *AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest {
+	return poolAlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest.Get().(*AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest 将 AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest(v *AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest.Put(v)
 }

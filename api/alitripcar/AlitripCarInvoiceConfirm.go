@@ -9,11 +9,6 @@ import (
 // alitrip.car.invoice.confirm
 //
 // 飞猪发票回调接口
-func AlitripCarInvoiceConfirm(clt *core.SDKClient, req *alitripcar.AlitripCarInvoiceConfirmAPIRequest, session string) (*alitripcar.AlitripCarInvoiceConfirmAPIResponse, error) {
-	var resp alitripcar.AlitripCarInvoiceConfirmAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripCarInvoiceConfirm(clt *core.SDKClient, req *alitripcar.AlitripCarInvoiceConfirmAPIRequest, resp *alitripcar.AlitripCarInvoiceConfirmAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // JoinMemRuleOpenInfo 结构体
 type JoinMemRuleOpenInfo struct {
 	// 创建时间
@@ -18,4 +22,28 @@ type JoinMemRuleOpenInfo struct {
 	PayJoinSupport bool `json:"pay_join_support,omitempty" xml:"pay_join_support,omitempty"`
 	// 扫码点餐成为会员
 	ScanOrderSupport bool `json:"scan_order_support,omitempty" xml:"scan_order_support,omitempty"`
+}
+
+var poolJoinMemRuleOpenInfo = sync.Pool{
+	New: func() any {
+		return new(JoinMemRuleOpenInfo)
+	},
+}
+
+// GetJoinMemRuleOpenInfo() 从对象池中获取JoinMemRuleOpenInfo
+func GetJoinMemRuleOpenInfo() *JoinMemRuleOpenInfo {
+	return poolJoinMemRuleOpenInfo.Get().(*JoinMemRuleOpenInfo)
+}
+
+// ReleaseJoinMemRuleOpenInfo 释放JoinMemRuleOpenInfo
+func ReleaseJoinMemRuleOpenInfo(v *JoinMemRuleOpenInfo) {
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.Deleted = false
+	v.FollowWechatSupport = false
+	v.JoinMemberDishSupport = false
+	v.MobileRegisterSupport = false
+	v.PayJoinSupport = false
+	v.ScanOrderSupport = false
+	poolJoinMemRuleOpenInfo.Put(v)
 }

@@ -1,5 +1,9 @@
 package kbalgo
 
+import (
+	"sync"
+)
+
 // CouponInfo 结构体
 type CouponInfo struct {
 	// ext
@@ -24,4 +28,31 @@ type CouponInfo struct {
 	ProductId string `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// schema
 	Schema *Schema `json:"schema,omitempty" xml:"schema,omitempty"`
+}
+
+var poolCouponInfo = sync.Pool{
+	New: func() any {
+		return new(CouponInfo)
+	},
+}
+
+// GetCouponInfo() 从对象池中获取CouponInfo
+func GetCouponInfo() *CouponInfo {
+	return poolCouponInfo.Get().(*CouponInfo)
+}
+
+// ReleaseCouponInfo 释放CouponInfo
+func ReleaseCouponInfo(v *CouponInfo) {
+	v.Ext = ""
+	v.GmtStart = ""
+	v.ImageUrl = ""
+	v.Price = ""
+	v.SalesNum = ""
+	v.Description = ""
+	v.OriginPrice = ""
+	v.GmtEnd = ""
+	v.Title = ""
+	v.ProductId = ""
+	v.Schema = nil
+	poolCouponInfo.Put(v)
 }

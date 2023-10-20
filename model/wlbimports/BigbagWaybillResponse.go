@@ -1,5 +1,9 @@
 package wlbimports
 
+import (
+	"sync"
+)
+
 // BigbagWaybillResponse 结构体
 type BigbagWaybillResponse struct {
 	// 大包Code
@@ -16,4 +20,27 @@ type BigbagWaybillResponse struct {
 	ImageFormat string `json:"image_format,omitempty" xml:"image_format,omitempty"`
 	// 大包id
 	BigbagId int64 `json:"bigbag_id,omitempty" xml:"bigbag_id,omitempty"`
+}
+
+var poolBigbagWaybillResponse = sync.Pool{
+	New: func() any {
+		return new(BigbagWaybillResponse)
+	},
+}
+
+// GetBigbagWaybillResponse() 从对象池中获取BigbagWaybillResponse
+func GetBigbagWaybillResponse() *BigbagWaybillResponse {
+	return poolBigbagWaybillResponse.Get().(*BigbagWaybillResponse)
+}
+
+// ReleaseBigbagWaybillResponse 释放BigbagWaybillResponse
+func ReleaseBigbagWaybillResponse(v *BigbagWaybillResponse) {
+	v.BigbagCode = ""
+	v.TrackingNumber = ""
+	v.SubWaybillNos = ""
+	v.FileContext = ""
+	v.FileName = ""
+	v.ImageFormat = ""
+	v.BigbagId = 0
+	poolBigbagWaybillResponse.Put(v)
 }

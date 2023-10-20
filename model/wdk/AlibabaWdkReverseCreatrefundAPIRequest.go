@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkReverseCreatrefundAPIRequest struct {
 // NewAlibabaWdkReverseCreatrefundRequest 初始化AlibabaWdkReverseCreatrefundAPIRequest对象
 func NewAlibabaWdkReverseCreatrefundRequest() *AlibabaWdkReverseCreatrefundAPIRequest {
 	return &AlibabaWdkReverseCreatrefundAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkReverseCreatrefundAPIRequest) Reset() {
+	r._paramCreateReverseReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkReverseCreatrefundAPIRequest) SetParamCreateReverseReq(_param
 // GetParamCreateReverseReq ParamCreateReverseReq Getter
 func (r AlibabaWdkReverseCreatrefundAPIRequest) GetParamCreateReverseReq() *CreateReverseReq {
 	return r._paramCreateReverseReq
+}
+
+var poolAlibabaWdkReverseCreatrefundAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkReverseCreatrefundRequest()
+	},
+}
+
+// GetAlibabaWdkReverseCreatrefundRequest 从 sync.Pool 获取 AlibabaWdkReverseCreatrefundAPIRequest
+func GetAlibabaWdkReverseCreatrefundAPIRequest() *AlibabaWdkReverseCreatrefundAPIRequest {
+	return poolAlibabaWdkReverseCreatrefundAPIRequest.Get().(*AlibabaWdkReverseCreatrefundAPIRequest)
+}
+
+// ReleaseAlibabaWdkReverseCreatrefundAPIRequest 将 AlibabaWdkReverseCreatrefundAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkReverseCreatrefundAPIRequest(v *AlibabaWdkReverseCreatrefundAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkReverseCreatrefundAPIRequest.Put(v)
 }

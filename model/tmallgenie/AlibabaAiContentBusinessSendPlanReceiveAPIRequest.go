@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAiContentBusinessSendPlanReceiveAPIRequest struct {
 // NewAlibabaAiContentBusinessSendPlanReceiveRequest 初始化AlibabaAiContentBusinessSendPlanReceiveAPIRequest对象
 func NewAlibabaAiContentBusinessSendPlanReceiveRequest() *AlibabaAiContentBusinessSendPlanReceiveAPIRequest {
 	return &AlibabaAiContentBusinessSendPlanReceiveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAiContentBusinessSendPlanReceiveAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAiContentBusinessSendPlanReceiveAPIRequest) SetParam0(_param0 *P
 // GetParam0 Param0 Getter
 func (r AlibabaAiContentBusinessSendPlanReceiveAPIRequest) GetParam0() *PurchaseForOuterDto {
 	return r._param0
+}
+
+var poolAlibabaAiContentBusinessSendPlanReceiveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAiContentBusinessSendPlanReceiveRequest()
+	},
+}
+
+// GetAlibabaAiContentBusinessSendPlanReceiveRequest 从 sync.Pool 获取 AlibabaAiContentBusinessSendPlanReceiveAPIRequest
+func GetAlibabaAiContentBusinessSendPlanReceiveAPIRequest() *AlibabaAiContentBusinessSendPlanReceiveAPIRequest {
+	return poolAlibabaAiContentBusinessSendPlanReceiveAPIRequest.Get().(*AlibabaAiContentBusinessSendPlanReceiveAPIRequest)
+}
+
+// ReleaseAlibabaAiContentBusinessSendPlanReceiveAPIRequest 将 AlibabaAiContentBusinessSendPlanReceiveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAiContentBusinessSendPlanReceiveAPIRequest(v *AlibabaAiContentBusinessSendPlanReceiveAPIRequest) {
+	v.Reset()
+	poolAlibabaAiContentBusinessSendPlanReceiveAPIRequest.Put(v)
 }

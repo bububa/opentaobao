@@ -2,6 +2,7 @@ package aesolution
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AliexpressSolutionProductCategorySuggestAPIRequest struct {
 // NewAliexpressSolutionProductCategorySuggestRequest 初始化AliexpressSolutionProductCategorySuggestAPIRequest对象
 func NewAliexpressSolutionProductCategorySuggestRequest() *AliexpressSolutionProductCategorySuggestAPIRequest {
 	return &AliexpressSolutionProductCategorySuggestAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressSolutionProductCategorySuggestAPIRequest) Reset() {
+	r._title = ""
+	r._language = ""
+	r._imageUrl = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AliexpressSolutionProductCategorySuggestAPIRequest) SetImageUrl(_imageU
 // GetImageUrl ImageUrl Getter
 func (r AliexpressSolutionProductCategorySuggestAPIRequest) GetImageUrl() string {
 	return r._imageUrl
+}
+
+var poolAliexpressSolutionProductCategorySuggestAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressSolutionProductCategorySuggestRequest()
+	},
+}
+
+// GetAliexpressSolutionProductCategorySuggestRequest 从 sync.Pool 获取 AliexpressSolutionProductCategorySuggestAPIRequest
+func GetAliexpressSolutionProductCategorySuggestAPIRequest() *AliexpressSolutionProductCategorySuggestAPIRequest {
+	return poolAliexpressSolutionProductCategorySuggestAPIRequest.Get().(*AliexpressSolutionProductCategorySuggestAPIRequest)
+}
+
+// ReleaseAliexpressSolutionProductCategorySuggestAPIRequest 将 AliexpressSolutionProductCategorySuggestAPIRequest 放入 sync.Pool
+func ReleaseAliexpressSolutionProductCategorySuggestAPIRequest(v *AliexpressSolutionProductCategorySuggestAPIRequest) {
+	v.Reset()
+	poolAliexpressSolutionProductCategorySuggestAPIRequest.Put(v)
 }

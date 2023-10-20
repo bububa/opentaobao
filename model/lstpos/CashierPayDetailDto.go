@@ -1,5 +1,9 @@
 package lstpos
 
+import (
+	"sync"
+)
+
 // CashierPayDetailDto 结构体
 type CashierPayDetailDto struct {
 	// 备注信息
@@ -18,4 +22,28 @@ type CashierPayDetailDto struct {
 	PayAmount int64 `json:"pay_amount,omitempty" xml:"pay_amount,omitempty"`
 	// 业务类型  正向支付(支付)：0  缺省为：0   逆向支付(退款)：1
 	BizType int64 `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
+}
+
+var poolCashierPayDetailDto = sync.Pool{
+	New: func() any {
+		return new(CashierPayDetailDto)
+	},
+}
+
+// GetCashierPayDetailDto() 从对象池中获取CashierPayDetailDto
+func GetCashierPayDetailDto() *CashierPayDetailDto {
+	return poolCashierPayDetailDto.Get().(*CashierPayDetailDto)
+}
+
+// ReleaseCashierPayDetailDto 释放CashierPayDetailDto
+func ReleaseCashierPayDetailDto(v *CashierPayDetailDto) {
+	v.DescInfo = ""
+	v.PayAccount = ""
+	v.PayStatus = ""
+	v.PayType = ""
+	v.PayFlowNum = ""
+	v.GmtCreate = 0
+	v.PayAmount = 0
+	v.BizType = 0
+	poolCashierPayDetailDto.Put(v)
 }

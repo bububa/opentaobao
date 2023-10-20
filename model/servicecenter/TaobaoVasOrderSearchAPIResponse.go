@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoVasOrderSearchAPIResponse struct {
 	TaobaoVasOrderSearchAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoVasOrderSearchAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoVasOrderSearchAPIResponseModel).Reset()
+}
+
 // TaobaoVasOrderSearchAPIResponseModel is 订单记录导出 成功返回结果
 type TaobaoVasOrderSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"vas_order_search_response"`
@@ -24,4 +31,28 @@ type TaobaoVasOrderSearchAPIResponseModel struct {
 	ArticleBizOrders []ArticleBizOrder `json:"article_biz_orders,omitempty" xml:"article_biz_orders>article_biz_order,omitempty"`
 	// 总记录数
 	TotalItem int64 `json:"total_item,omitempty" xml:"total_item,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoVasOrderSearchAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ArticleBizOrders = m.ArticleBizOrders[:0]
+	m.TotalItem = 0
+}
+
+var poolTaobaoVasOrderSearchAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoVasOrderSearchAPIResponse)
+	},
+}
+
+// GetTaobaoVasOrderSearchAPIResponse 从 sync.Pool 获取 TaobaoVasOrderSearchAPIResponse
+func GetTaobaoVasOrderSearchAPIResponse() *TaobaoVasOrderSearchAPIResponse {
+	return poolTaobaoVasOrderSearchAPIResponse.Get().(*TaobaoVasOrderSearchAPIResponse)
+}
+
+// ReleaseTaobaoVasOrderSearchAPIResponse 将 TaobaoVasOrderSearchAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoVasOrderSearchAPIResponse(v *TaobaoVasOrderSearchAPIResponse) {
+	v.Reset()
+	poolTaobaoVasOrderSearchAPIResponse.Put(v)
 }

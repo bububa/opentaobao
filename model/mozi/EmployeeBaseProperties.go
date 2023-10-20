@@ -1,5 +1,9 @@
 package mozi
 
+import (
+	"sync"
+)
+
 // EmployeeBaseProperties 结构体
 type EmployeeBaseProperties struct {
 	// 手机区号
@@ -14,4 +18,26 @@ type EmployeeBaseProperties struct {
 	CellPhone string `json:"cell_phone,omitempty" xml:"cell_phone,omitempty"`
 	// 工号
 	EmployeeNumber string `json:"employee_number,omitempty" xml:"employee_number,omitempty"`
+}
+
+var poolEmployeeBaseProperties = sync.Pool{
+	New: func() any {
+		return new(EmployeeBaseProperties)
+	},
+}
+
+// GetEmployeeBaseProperties() 从对象池中获取EmployeeBaseProperties
+func GetEmployeeBaseProperties() *EmployeeBaseProperties {
+	return poolEmployeeBaseProperties.Get().(*EmployeeBaseProperties)
+}
+
+// ReleaseEmployeeBaseProperties 释放EmployeeBaseProperties
+func ReleaseEmployeeBaseProperties(v *EmployeeBaseProperties) {
+	v.CellPhoneAreaCode = ""
+	v.NickName = ""
+	v.Avatar = ""
+	v.Email = ""
+	v.CellPhone = ""
+	v.EmployeeNumber = ""
+	poolEmployeeBaseProperties.Put(v)
 }

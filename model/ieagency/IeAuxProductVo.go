@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // IeAuxProductVo 结构体
 type IeAuxProductVo struct {
 	// 产品外部ID
@@ -16,4 +20,27 @@ type IeAuxProductVo struct {
 	BaggageVo *IeBaggageVo `json:"baggage_vo,omitempty" xml:"baggage_vo,omitempty"`
 	// 选座产品信息(仅当productType=3或8有效）
 	SeatVo *IeSeatVo `json:"seat_vo,omitempty" xml:"seat_vo,omitempty"`
+}
+
+var poolIeAuxProductVo = sync.Pool{
+	New: func() any {
+		return new(IeAuxProductVo)
+	},
+}
+
+// GetIeAuxProductVo() 从对象池中获取IeAuxProductVo
+func GetIeAuxProductVo() *IeAuxProductVo {
+	return poolIeAuxProductVo.Get().(*IeAuxProductVo)
+}
+
+// ReleaseIeAuxProductVo 释放IeAuxProductVo
+func ReleaseIeAuxProductVo(v *IeAuxProductVo) {
+	v.OuterId = ""
+	v.ProductName = ""
+	v.ProductType = 0
+	v.SaleType = 0
+	v.OnlinePrice = 0
+	v.BaggageVo = nil
+	v.SeatVo = nil
+	poolIeAuxProductVo.Put(v)
 }

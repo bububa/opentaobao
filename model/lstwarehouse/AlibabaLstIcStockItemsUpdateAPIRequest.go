@@ -2,6 +2,7 @@ package lstwarehouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLstIcStockItemsUpdateAPIRequest struct {
 // NewAlibabaLstIcStockItemsUpdateRequest 初始化AlibabaLstIcStockItemsUpdateAPIRequest对象
 func NewAlibabaLstIcStockItemsUpdateRequest() *AlibabaLstIcStockItemsUpdateAPIRequest {
 	return &AlibabaLstIcStockItemsUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstIcStockItemsUpdateAPIRequest) Reset() {
+	r._query = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLstIcStockItemsUpdateAPIRequest) SetQuery(_query *LstItemStockPa
 // GetQuery Query Getter
 func (r AlibabaLstIcStockItemsUpdateAPIRequest) GetQuery() *LstItemStockParam {
 	return r._query
+}
+
+var poolAlibabaLstIcStockItemsUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstIcStockItemsUpdateRequest()
+	},
+}
+
+// GetAlibabaLstIcStockItemsUpdateRequest 从 sync.Pool 获取 AlibabaLstIcStockItemsUpdateAPIRequest
+func GetAlibabaLstIcStockItemsUpdateAPIRequest() *AlibabaLstIcStockItemsUpdateAPIRequest {
+	return poolAlibabaLstIcStockItemsUpdateAPIRequest.Get().(*AlibabaLstIcStockItemsUpdateAPIRequest)
+}
+
+// ReleaseAlibabaLstIcStockItemsUpdateAPIRequest 将 AlibabaLstIcStockItemsUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstIcStockItemsUpdateAPIRequest(v *AlibabaLstIcStockItemsUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaLstIcStockItemsUpdateAPIRequest.Put(v)
 }

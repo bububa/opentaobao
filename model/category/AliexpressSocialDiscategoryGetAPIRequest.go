@@ -2,6 +2,7 @@ package category
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliexpressSocialDiscategoryGetAPIRequest struct {
 // NewAliexpressSocialDiscategoryGetRequest 初始化AliexpressSocialDiscategoryGetAPIRequest对象
 func NewAliexpressSocialDiscategoryGetRequest() *AliexpressSocialDiscategoryGetAPIRequest {
 	return &AliexpressSocialDiscategoryGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressSocialDiscategoryGetAPIRequest) Reset() {
+	r._locale = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliexpressSocialDiscategoryGetAPIRequest) SetLocale(_locale string) err
 // GetLocale Locale Getter
 func (r AliexpressSocialDiscategoryGetAPIRequest) GetLocale() string {
 	return r._locale
+}
+
+var poolAliexpressSocialDiscategoryGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressSocialDiscategoryGetRequest()
+	},
+}
+
+// GetAliexpressSocialDiscategoryGetRequest 从 sync.Pool 获取 AliexpressSocialDiscategoryGetAPIRequest
+func GetAliexpressSocialDiscategoryGetAPIRequest() *AliexpressSocialDiscategoryGetAPIRequest {
+	return poolAliexpressSocialDiscategoryGetAPIRequest.Get().(*AliexpressSocialDiscategoryGetAPIRequest)
+}
+
+// ReleaseAliexpressSocialDiscategoryGetAPIRequest 将 AliexpressSocialDiscategoryGetAPIRequest 放入 sync.Pool
+func ReleaseAliexpressSocialDiscategoryGetAPIRequest(v *AliexpressSocialDiscategoryGetAPIRequest) {
+	v.Reset()
+	poolAliexpressSocialDiscategoryGetAPIRequest.Put(v)
 }

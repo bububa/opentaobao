@@ -2,6 +2,7 @@ package icburfq
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaIcbuQuotationPostAPIRequest struct {
 // NewAlibabaIcbuQuotationPostRequest 初始化AlibabaIcbuQuotationPostAPIRequest对象
 func NewAlibabaIcbuQuotationPostRequest() *AlibabaIcbuQuotationPostAPIRequest {
 	return &AlibabaIcbuQuotationPostAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIcbuQuotationPostAPIRequest) Reset() {
+	r._md5key = ""
+	r._dto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaIcbuQuotationPostAPIRequest) SetDto(_dto *RfqQuotationRemoteDto)
 // GetDto Dto Getter
 func (r AlibabaIcbuQuotationPostAPIRequest) GetDto() *RfqQuotationRemoteDto {
 	return r._dto
+}
+
+var poolAlibabaIcbuQuotationPostAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIcbuQuotationPostRequest()
+	},
+}
+
+// GetAlibabaIcbuQuotationPostRequest 从 sync.Pool 获取 AlibabaIcbuQuotationPostAPIRequest
+func GetAlibabaIcbuQuotationPostAPIRequest() *AlibabaIcbuQuotationPostAPIRequest {
+	return poolAlibabaIcbuQuotationPostAPIRequest.Get().(*AlibabaIcbuQuotationPostAPIRequest)
+}
+
+// ReleaseAlibabaIcbuQuotationPostAPIRequest 将 AlibabaIcbuQuotationPostAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIcbuQuotationPostAPIRequest(v *AlibabaIcbuQuotationPostAPIRequest) {
+	v.Reset()
+	poolAlibabaIcbuQuotationPostAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package topoaid
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTopPackageAuthInfoGetAPIRequest struct {
 // NewTaobaoTopPackageAuthInfoGetRequest 初始化TaobaoTopPackageAuthInfoGetAPIRequest对象
 func NewTaobaoTopPackageAuthInfoGetRequest() *TaobaoTopPackageAuthInfoGetAPIRequest {
 	return &TaobaoTopPackageAuthInfoGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTopPackageAuthInfoGetAPIRequest) Reset() {
+	r._isPrivacyPackageRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTopPackageAuthInfoGetAPIRequest) SetIsPrivacyPackageRequest(_isPr
 // GetIsPrivacyPackageRequest IsPrivacyPackageRequest Getter
 func (r TaobaoTopPackageAuthInfoGetAPIRequest) GetIsPrivacyPackageRequest() *IsPrivacyPackageRequest {
 	return r._isPrivacyPackageRequest
+}
+
+var poolTaobaoTopPackageAuthInfoGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTopPackageAuthInfoGetRequest()
+	},
+}
+
+// GetTaobaoTopPackageAuthInfoGetRequest 从 sync.Pool 获取 TaobaoTopPackageAuthInfoGetAPIRequest
+func GetTaobaoTopPackageAuthInfoGetAPIRequest() *TaobaoTopPackageAuthInfoGetAPIRequest {
+	return poolTaobaoTopPackageAuthInfoGetAPIRequest.Get().(*TaobaoTopPackageAuthInfoGetAPIRequest)
+}
+
+// ReleaseTaobaoTopPackageAuthInfoGetAPIRequest 将 TaobaoTopPackageAuthInfoGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTopPackageAuthInfoGetAPIRequest(v *TaobaoTopPackageAuthInfoGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTopPackageAuthInfoGetAPIRequest.Put(v)
 }

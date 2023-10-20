@@ -2,6 +2,7 @@ package wlb
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoWlbSubscriptionQueryAPIRequest struct {
 // NewTaobaoWlbSubscriptionQueryRequest 初始化TaobaoWlbSubscriptionQueryAPIRequest对象
 func NewTaobaoWlbSubscriptionQueryRequest() *TaobaoWlbSubscriptionQueryAPIRequest {
 	return &TaobaoWlbSubscriptionQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbSubscriptionQueryAPIRequest) Reset() {
+	r._status = ""
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoWlbSubscriptionQueryAPIRequest) SetPageSize(_pageSize int64) erro
 // GetPageSize PageSize Getter
 func (r TaobaoWlbSubscriptionQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoWlbSubscriptionQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbSubscriptionQueryRequest()
+	},
+}
+
+// GetTaobaoWlbSubscriptionQueryRequest 从 sync.Pool 获取 TaobaoWlbSubscriptionQueryAPIRequest
+func GetTaobaoWlbSubscriptionQueryAPIRequest() *TaobaoWlbSubscriptionQueryAPIRequest {
+	return poolTaobaoWlbSubscriptionQueryAPIRequest.Get().(*TaobaoWlbSubscriptionQueryAPIRequest)
+}
+
+// ReleaseTaobaoWlbSubscriptionQueryAPIRequest 将 TaobaoWlbSubscriptionQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbSubscriptionQueryAPIRequest(v *TaobaoWlbSubscriptionQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbSubscriptionQueryAPIRequest.Put(v)
 }

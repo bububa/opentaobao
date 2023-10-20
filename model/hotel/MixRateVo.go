@@ -1,5 +1,9 @@
 package hotel
 
+import (
+	"sync"
+)
+
 // MixRateVo 结构体
 type MixRateVo struct {
 	// 所有顶过的所有用户id
@@ -78,4 +82,58 @@ type MixRateVo struct {
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// 用户星级
 	UserStar int64 `json:"user_star,omitempty" xml:"user_star,omitempty"`
+}
+
+var poolMixRateVo = sync.Pool{
+	New: func() any {
+		return new(MixRateVo)
+	},
+}
+
+// GetMixRateVo() 从对象池中获取MixRateVo
+func GetMixRateVo() *MixRateVo {
+	return poolMixRateVo.Get().(*MixRateVo)
+}
+
+// ReleaseMixRateVo 释放MixRateVo
+func ReleaseMixRateVo(v *MixRateVo) {
+	v.AgreeUserIds = v.AgreeUserIds[:0]
+	v.DisagreeUserIds = v.DisagreeUserIds[:0]
+	v.ItemReplies = v.ItemReplies[:0]
+	v.PictureUrls = v.PictureUrls[:0]
+	v.Content = ""
+	v.GmtCreate = ""
+	v.ItemInfo = ""
+	v.MediaInfo = ""
+	v.OrderInfo = ""
+	v.PoiStr = ""
+	v.RedirectUrl = ""
+	v.ScoreDetail = ""
+	v.Sku = ""
+	v.SourceTypeName = ""
+	v.SplitLineContent = ""
+	v.TagInfo = ""
+	v.Title = ""
+	v.TravelName = ""
+	v.TravelSubItemInfo = ""
+	v.Ttid = ""
+	v.UserIcon = ""
+	v.UserNick = ""
+	v.AgreeCount = 0
+	v.BizType = 0
+	v.DisagreeCount = 0
+	v.Id = 0
+	v.ItemId = 0
+	v.ItemRateId = 0
+	v.Like = nil
+	v.OrderId = 0
+	v.ReplyCount = 0
+	v.Source = 0
+	v.Status = 0
+	v.TotalScore = 0
+	v.TravelSubItemId = 0
+	v.TripGuidId = 0
+	v.UserId = 0
+	v.UserStar = 0
+	poolMixRateVo.Put(v)
 }

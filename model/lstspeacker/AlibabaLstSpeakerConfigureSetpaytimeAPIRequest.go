@@ -2,6 +2,7 @@ package lstspeacker
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaLstSpeakerConfigureSetpaytimeAPIRequest struct {
 // NewAlibabaLstSpeakerConfigureSetpaytimeRequest 初始化AlibabaLstSpeakerConfigureSetpaytimeAPIRequest对象
 func NewAlibabaLstSpeakerConfigureSetpaytimeRequest() *AlibabaLstSpeakerConfigureSetpaytimeAPIRequest {
 	return &AlibabaLstSpeakerConfigureSetpaytimeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstSpeakerConfigureSetpaytimeAPIRequest) Reset() {
+	r._deviceCode = ""
+	r._playStartTime = ""
+	r._playEndTime = ""
+	r._isOnlyPlayAdvert = false
+	r._isSetPlayTime = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaLstSpeakerConfigureSetpaytimeAPIRequest) SetIsSetPlayTime(_isSet
 // GetIsSetPlayTime IsSetPlayTime Getter
 func (r AlibabaLstSpeakerConfigureSetpaytimeAPIRequest) GetIsSetPlayTime() bool {
 	return r._isSetPlayTime
+}
+
+var poolAlibabaLstSpeakerConfigureSetpaytimeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstSpeakerConfigureSetpaytimeRequest()
+	},
+}
+
+// GetAlibabaLstSpeakerConfigureSetpaytimeRequest 从 sync.Pool 获取 AlibabaLstSpeakerConfigureSetpaytimeAPIRequest
+func GetAlibabaLstSpeakerConfigureSetpaytimeAPIRequest() *AlibabaLstSpeakerConfigureSetpaytimeAPIRequest {
+	return poolAlibabaLstSpeakerConfigureSetpaytimeAPIRequest.Get().(*AlibabaLstSpeakerConfigureSetpaytimeAPIRequest)
+}
+
+// ReleaseAlibabaLstSpeakerConfigureSetpaytimeAPIRequest 将 AlibabaLstSpeakerConfigureSetpaytimeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstSpeakerConfigureSetpaytimeAPIRequest(v *AlibabaLstSpeakerConfigureSetpaytimeAPIRequest) {
+	v.Reset()
+	poolAlibabaLstSpeakerConfigureSetpaytimeAPIRequest.Put(v)
 }

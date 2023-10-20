@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaCampusAclNewCheckuserpermissionAPIRequest struct {
 // NewAlibabaCampusAclNewCheckuserpermissionRequest 初始化AlibabaCampusAclNewCheckuserpermissionAPIRequest对象
 func NewAlibabaCampusAclNewCheckuserpermissionRequest() *AlibabaCampusAclNewCheckuserpermissionAPIRequest {
 	return &AlibabaCampusAclNewCheckuserpermissionAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusAclNewCheckuserpermissionAPIRequest) Reset() {
+	r._workbenchcontext = nil
+	r._checkUserPermissionParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaCampusAclNewCheckuserpermissionAPIRequest) SetCheckUserPermissio
 // GetCheckUserPermissionParam CheckUserPermissionParam Getter
 func (r AlibabaCampusAclNewCheckuserpermissionAPIRequest) GetCheckUserPermissionParam() *CheckUserPermissionParam {
 	return r._checkUserPermissionParam
+}
+
+var poolAlibabaCampusAclNewCheckuserpermissionAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusAclNewCheckuserpermissionRequest()
+	},
+}
+
+// GetAlibabaCampusAclNewCheckuserpermissionRequest 从 sync.Pool 获取 AlibabaCampusAclNewCheckuserpermissionAPIRequest
+func GetAlibabaCampusAclNewCheckuserpermissionAPIRequest() *AlibabaCampusAclNewCheckuserpermissionAPIRequest {
+	return poolAlibabaCampusAclNewCheckuserpermissionAPIRequest.Get().(*AlibabaCampusAclNewCheckuserpermissionAPIRequest)
+}
+
+// ReleaseAlibabaCampusAclNewCheckuserpermissionAPIRequest 将 AlibabaCampusAclNewCheckuserpermissionAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusAclNewCheckuserpermissionAPIRequest(v *AlibabaCampusAclNewCheckuserpermissionAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusAclNewCheckuserpermissionAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package fpm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaFpmFileUploadAPIRequest struct {
 // NewAlibabaFpmFileUploadRequest 初始化AlibabaFpmFileUploadAPIRequest对象
 func NewAlibabaFpmFileUploadRequest() *AlibabaFpmFileUploadAPIRequest {
 	return &AlibabaFpmFileUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaFpmFileUploadAPIRequest) Reset() {
+	r._bizDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaFpmFileUploadAPIRequest) SetBizDto(_bizDto *FileUploadRequestDto
 // GetBizDto BizDto Getter
 func (r AlibabaFpmFileUploadAPIRequest) GetBizDto() *FileUploadRequestDto {
 	return r._bizDto
+}
+
+var poolAlibabaFpmFileUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaFpmFileUploadRequest()
+	},
+}
+
+// GetAlibabaFpmFileUploadRequest 从 sync.Pool 获取 AlibabaFpmFileUploadAPIRequest
+func GetAlibabaFpmFileUploadAPIRequest() *AlibabaFpmFileUploadAPIRequest {
+	return poolAlibabaFpmFileUploadAPIRequest.Get().(*AlibabaFpmFileUploadAPIRequest)
+}
+
+// ReleaseAlibabaFpmFileUploadAPIRequest 将 AlibabaFpmFileUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaFpmFileUploadAPIRequest(v *AlibabaFpmFileUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaFpmFileUploadAPIRequest.Put(v)
 }

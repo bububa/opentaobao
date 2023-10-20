@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // RechargeOpenReq 结构体
 type RechargeOpenReq struct {
 	// 时间，选填，不填就以平台为准
@@ -38,4 +42,38 @@ type RechargeOpenReq struct {
 	RealValue int64 `json:"real_value,omitempty" xml:"real_value,omitempty"`
 	// 是否触发储值赠送，必填    1. true：触发赠送，realValue必填      2. false：不触发赠送，realValue和giftValue必填
 	TriggerGift bool `json:"trigger_gift,omitempty" xml:"trigger_gift,omitempty"`
+}
+
+var poolRechargeOpenReq = sync.Pool{
+	New: func() any {
+		return new(RechargeOpenReq)
+	},
+}
+
+// GetRechargeOpenReq() 从对象池中获取RechargeOpenReq
+func GetRechargeOpenReq() *RechargeOpenReq {
+	return poolRechargeOpenReq.Get().(*RechargeOpenReq)
+}
+
+// ReleaseRechargeOpenReq 释放RechargeOpenReq
+func ReleaseRechargeOpenReq(v *RechargeOpenReq) {
+	v.BizDate = ""
+	v.CardId = ""
+	v.ChargeType = ""
+	v.BrandId = ""
+	v.OperatorId = ""
+	v.ShopId = ""
+	v.OuterOrderId = ""
+	v.Remark = ""
+	v.RequestId = ""
+	v.OutPayId = ""
+	v.OutShopId = ""
+	v.OutBrandId = ""
+	v.BizChannel = ""
+	v.ExtInfo = ""
+	v.GiftValue = 0
+	v.PreValue = 0
+	v.RealValue = 0
+	v.TriggerGift = false
+	poolRechargeOpenReq.Put(v)
 }

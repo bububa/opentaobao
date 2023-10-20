@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BtripFlightModifyApplyRq 结构体
 type BtripFlightModifyApplyRq struct {
 	// 改签航班信息
@@ -22,4 +26,30 @@ type BtripFlightModifyApplyRq struct {
 	IsVoluntary int64 `json:"is_voluntary,omitempty" xml:"is_voluntary,omitempty"`
 	// 默认为false
 	WhetherRetry bool `json:"whether_retry,omitempty" xml:"whether_retry,omitempty"`
+}
+
+var poolBtripFlightModifyApplyRq = sync.Pool{
+	New: func() any {
+		return new(BtripFlightModifyApplyRq)
+	},
+}
+
+// GetBtripFlightModifyApplyRq() 从对象池中获取BtripFlightModifyApplyRq
+func GetBtripFlightModifyApplyRq() *BtripFlightModifyApplyRq {
+	return poolBtripFlightModifyApplyRq.Get().(*BtripFlightModifyApplyRq)
+}
+
+// ReleaseBtripFlightModifyApplyRq 释放BtripFlightModifyApplyRq
+func ReleaseBtripFlightModifyApplyRq(v *BtripFlightModifyApplyRq) {
+	v.ModifyFlightInfoList = v.ModifyFlightInfoList[:0]
+	v.DisOrderId = ""
+	v.Reason = ""
+	v.SubChannel = ""
+	v.DisSubOrderId = ""
+	v.ContactPhone = ""
+	v.OtaItemId = ""
+	v.SessionId = ""
+	v.IsVoluntary = 0
+	v.WhetherRetry = false
+	poolBtripFlightModifyApplyRq.Put(v)
 }

@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // PosBankSaleInfoDto 结构体
 type PosBankSaleInfoDto struct {
 	// 订单号，唯一幂等字段
@@ -56,4 +60,47 @@ type PosBankSaleInfoDto struct {
 	TradeAmount int64 `json:"trade_amount,omitempty" xml:"trade_amount,omitempty"`
 	// 支付类型行号
 	PayTypeNo int64 `json:"pay_type_no,omitempty" xml:"pay_type_no,omitempty"`
+}
+
+var poolPosBankSaleInfoDto = sync.Pool{
+	New: func() any {
+		return new(PosBankSaleInfoDto)
+	},
+}
+
+// GetPosBankSaleInfoDto() 从对象池中获取PosBankSaleInfoDto
+func GetPosBankSaleInfoDto() *PosBankSaleInfoDto {
+	return poolPosBankSaleInfoDto.Get().(*PosBankSaleInfoDto)
+}
+
+// ReleasePosBankSaleInfoDto 释放PosBankSaleInfoDto
+func ReleasePosBankSaleInfoDto(v *PosBankSaleInfoDto) {
+	v.OrderId = ""
+	v.OriginalOrderId = ""
+	v.SequenceNo = ""
+	v.PaymentChannel = ""
+	v.CardNo = ""
+	v.TradeTime = ""
+	v.SaleType = ""
+	v.SubSaleType = ""
+	v.BankCode = ""
+	v.BankName = ""
+	v.TerminalNo = ""
+	v.BankShopNo = ""
+	v.PosTraceNo = ""
+	v.BatchNo = ""
+	v.TradeRefNo = ""
+	v.StoreNo = ""
+	v.EncrypteSummary = ""
+	v.CommunicateType = ""
+	v.OperateTime = ""
+	v.Rback = ""
+	v.Remark = ""
+	v.ExtendParam = ""
+	v.Cashier = ""
+	v.Ip = ""
+	v.Mac = ""
+	v.TradeAmount = 0
+	v.PayTypeNo = 0
+	poolPosBankSaleInfoDto.Put(v)
 }

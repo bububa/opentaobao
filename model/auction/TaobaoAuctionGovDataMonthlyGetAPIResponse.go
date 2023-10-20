@@ -2,6 +2,7 @@ package auction
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,6 +22,12 @@ type TaobaoAuctionGovDataMonthlyGetAPIResponse struct {
 	TaobaoAuctionGovDataMonthlyGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoAuctionGovDataMonthlyGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAuctionGovDataMonthlyGetAPIResponseModel).Reset()
+}
+
 // TaobaoAuctionGovDataMonthlyGetAPIResponseModel is 按月统计法院拍卖数据 成功返回结果
 type TaobaoAuctionGovDataMonthlyGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"auction_gov_data_monthly_get_response"`
@@ -28,4 +35,27 @@ type TaobaoAuctionGovDataMonthlyGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 按月统计结果列表
 	Results []CourtsBidStatMonthlyList `json:"results,omitempty" xml:"results>courts_bid_stat_monthly_list,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAuctionGovDataMonthlyGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Results = m.Results[:0]
+}
+
+var poolTaobaoAuctionGovDataMonthlyGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAuctionGovDataMonthlyGetAPIResponse)
+	},
+}
+
+// GetTaobaoAuctionGovDataMonthlyGetAPIResponse 从 sync.Pool 获取 TaobaoAuctionGovDataMonthlyGetAPIResponse
+func GetTaobaoAuctionGovDataMonthlyGetAPIResponse() *TaobaoAuctionGovDataMonthlyGetAPIResponse {
+	return poolTaobaoAuctionGovDataMonthlyGetAPIResponse.Get().(*TaobaoAuctionGovDataMonthlyGetAPIResponse)
+}
+
+// ReleaseTaobaoAuctionGovDataMonthlyGetAPIResponse 将 TaobaoAuctionGovDataMonthlyGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAuctionGovDataMonthlyGetAPIResponse(v *TaobaoAuctionGovDataMonthlyGetAPIResponse) {
+	v.Reset()
+	poolTaobaoAuctionGovDataMonthlyGetAPIResponse.Put(v)
 }

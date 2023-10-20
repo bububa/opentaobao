@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkMemberQrcodeIdentifyAPIRequest struct {
 // NewAlibabaWdkMemberQrcodeIdentifyRequest 初始化AlibabaWdkMemberQrcodeIdentifyAPIRequest对象
 func NewAlibabaWdkMemberQrcodeIdentifyRequest() *AlibabaWdkMemberQrcodeIdentifyAPIRequest {
 	return &AlibabaWdkMemberQrcodeIdentifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkMemberQrcodeIdentifyAPIRequest) Reset() {
+	r._qrCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkMemberQrcodeIdentifyAPIRequest) SetQrCode(_qrCode string) err
 // GetQrCode QrCode Getter
 func (r AlibabaWdkMemberQrcodeIdentifyAPIRequest) GetQrCode() string {
 	return r._qrCode
+}
+
+var poolAlibabaWdkMemberQrcodeIdentifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkMemberQrcodeIdentifyRequest()
+	},
+}
+
+// GetAlibabaWdkMemberQrcodeIdentifyRequest 从 sync.Pool 获取 AlibabaWdkMemberQrcodeIdentifyAPIRequest
+func GetAlibabaWdkMemberQrcodeIdentifyAPIRequest() *AlibabaWdkMemberQrcodeIdentifyAPIRequest {
+	return poolAlibabaWdkMemberQrcodeIdentifyAPIRequest.Get().(*AlibabaWdkMemberQrcodeIdentifyAPIRequest)
+}
+
+// ReleaseAlibabaWdkMemberQrcodeIdentifyAPIRequest 将 AlibabaWdkMemberQrcodeIdentifyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkMemberQrcodeIdentifyAPIRequest(v *AlibabaWdkMemberQrcodeIdentifyAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkMemberQrcodeIdentifyAPIRequest.Put(v)
 }

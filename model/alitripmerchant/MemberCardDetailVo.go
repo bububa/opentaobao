@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // MemberCardDetailVo 结构体
 type MemberCardDetailVo struct {
 	// 会员权益集合
@@ -20,4 +24,29 @@ type MemberCardDetailVo struct {
 	HotelLevelZh string `json:"hotel_level_zh,omitempty" xml:"hotel_level_zh,omitempty"`
 	// 个人中心背景图片
 	PersonalCenterPic string `json:"personal_center_pic,omitempty" xml:"personal_center_pic,omitempty"`
+}
+
+var poolMemberCardDetailVo = sync.Pool{
+	New: func() any {
+		return new(MemberCardDetailVo)
+	},
+}
+
+// GetMemberCardDetailVo() 从对象池中获取MemberCardDetailVo
+func GetMemberCardDetailVo() *MemberCardDetailVo {
+	return poolMemberCardDetailVo.Get().(*MemberCardDetailVo)
+}
+
+// ReleaseMemberCardDetailVo 释放MemberCardDetailVo
+func ReleaseMemberCardDetailVo(v *MemberCardDetailVo) {
+	v.MemberRightList = v.MemberRightList[:0]
+	v.MemberCardPic = ""
+	v.HotelLevelEn = ""
+	v.ReachCondition = ""
+	v.IconColor = ""
+	v.CardDesc = ""
+	v.BackGroundPic = ""
+	v.HotelLevelZh = ""
+	v.PersonalCenterPic = ""
+	poolMemberCardDetailVo.Put(v)
 }

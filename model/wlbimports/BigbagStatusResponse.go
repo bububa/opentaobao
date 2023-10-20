@@ -1,5 +1,9 @@
 package wlbimports
 
+import (
+	"sync"
+)
+
 // BigbagStatusResponse 结构体
 type BigbagStatusResponse struct {
 	// parcelOrderList
@@ -12,4 +16,25 @@ type BigbagStatusResponse struct {
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
 	// handoverContentId
 	BigbagId int64 `json:"bigbag_id,omitempty" xml:"bigbag_id,omitempty"`
+}
+
+var poolBigbagStatusResponse = sync.Pool{
+	New: func() any {
+		return new(BigbagStatusResponse)
+	},
+}
+
+// GetBigbagStatusResponse() 从对象池中获取BigbagStatusResponse
+func GetBigbagStatusResponse() *BigbagStatusResponse {
+	return poolBigbagStatusResponse.Get().(*BigbagStatusResponse)
+}
+
+// ReleaseBigbagStatusResponse 释放BigbagStatusResponse
+func ReleaseBigbagStatusResponse(v *BigbagStatusResponse) {
+	v.ParcelOrderList = v.ParcelOrderList[:0]
+	v.BigbagCode = ""
+	v.Status = ""
+	v.GmtModified = ""
+	v.BigbagId = 0
+	poolBigbagStatusResponse.Put(v)
 }

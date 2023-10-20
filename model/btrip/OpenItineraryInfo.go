@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenItineraryInfo 结构体
 type OpenItineraryInfo struct {
 	// 到达日期
@@ -44,4 +48,41 @@ type OpenItineraryInfo struct {
 	NeedHotel bool `json:"need_hotel,omitempty" xml:"need_hotel,omitempty"`
 	// 行程是否需要预定交通工具，不传默认需要
 	NeedTraffic bool `json:"need_traffic,omitempty" xml:"need_traffic,omitempty"`
+}
+
+var poolOpenItineraryInfo = sync.Pool{
+	New: func() any {
+		return new(OpenItineraryInfo)
+	},
+}
+
+// GetOpenItineraryInfo() 从对象池中获取OpenItineraryInfo
+func GetOpenItineraryInfo() *OpenItineraryInfo {
+	return poolOpenItineraryInfo.Get().(*OpenItineraryInfo)
+}
+
+// ReleaseOpenItineraryInfo 释放OpenItineraryInfo
+func ReleaseOpenItineraryInfo(v *OpenItineraryInfo) {
+	v.ArrDate = ""
+	v.DepDate = ""
+	v.InvoiceName = ""
+	v.CostCenterName = ""
+	v.ArrCity = ""
+	v.DepCity = ""
+	v.ItineraryId = ""
+	v.DepCityCode = ""
+	v.ArrCityCode = ""
+	v.ThirdpartCostCenterId = ""
+	v.ProjectCode = ""
+	v.ProjectTitle = ""
+	v.ThirdPartInvoiceId = ""
+	v.CitySet = ""
+	v.CityCodeSet = ""
+	v.TrafficType = 0
+	v.TripWay = 0
+	v.InvoiceId = 0
+	v.CostCenterId = 0
+	v.NeedHotel = false
+	v.NeedTraffic = false
+	poolOpenItineraryInfo.Put(v)
 }

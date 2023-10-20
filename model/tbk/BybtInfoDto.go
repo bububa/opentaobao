@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // BybtInfoDto 结构体
 type BybtInfoDto struct {
 	// 百亿补贴商品特征标签，eg.今日发货、晚发补偿、限购一件等
@@ -18,4 +22,28 @@ type BybtInfoDto struct {
 	BybtEndTime string `json:"bybt_end_time,omitempty" xml:"bybt_end_time,omitempty"`
 	// 商品的百亿补贴结束时间
 	BybtStartTime string `json:"bybt_start_time,omitempty" xml:"bybt_start_time,omitempty"`
+}
+
+var poolBybtInfoDto = sync.Pool{
+	New: func() any {
+		return new(BybtInfoDto)
+	},
+}
+
+// GetBybtInfoDto() 从对象池中获取BybtInfoDto
+func GetBybtInfoDto() *BybtInfoDto {
+	return poolBybtInfoDto.Get().(*BybtInfoDto)
+}
+
+// ReleaseBybtInfoDto 释放BybtInfoDto
+func ReleaseBybtInfoDto(v *BybtInfoDto) {
+	v.BybtItemTags = v.BybtItemTags[:0]
+	v.BybtBrandLogo = ""
+	v.BybtPicUrl = ""
+	v.BybtCouponAmount = ""
+	v.BybtShowPrice = ""
+	v.BybtLowestPrice = ""
+	v.BybtEndTime = ""
+	v.BybtStartTime = ""
+	poolBybtInfoDto.Put(v)
 }

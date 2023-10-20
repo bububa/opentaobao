@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // BenefitReadTopQuery 结构体
 type BenefitReadTopQuery struct {
 	// 状态,online,offline,invalid
@@ -20,4 +24,29 @@ type BenefitReadTopQuery struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 当前页
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
+}
+
+var poolBenefitReadTopQuery = sync.Pool{
+	New: func() any {
+		return new(BenefitReadTopQuery)
+	},
+}
+
+// GetBenefitReadTopQuery() 从对象池中获取BenefitReadTopQuery
+func GetBenefitReadTopQuery() *BenefitReadTopQuery {
+	return poolBenefitReadTopQuery.Get().(*BenefitReadTopQuery)
+}
+
+// ReleaseBenefitReadTopQuery 释放BenefitReadTopQuery
+func ReleaseBenefitReadTopQuery(v *BenefitReadTopQuery) {
+	v.Statuses = v.Statuses[:0]
+	v.Source = ""
+	v.StartTimeBegin = ""
+	v.StartTimeEnd = ""
+	v.EndTimeEnd = ""
+	v.EndTimeBegin = ""
+	v.BenefitType = ""
+	v.PageSize = 0
+	v.CurrentPage = 0
+	poolBenefitReadTopQuery.Put(v)
 }

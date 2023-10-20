@@ -1,5 +1,9 @@
 package moscm
 
+import (
+	"sync"
+)
+
 // SalesOrderDto 结构体
 type SalesOrderDto struct {
 	// 订单商品明细
@@ -62,4 +66,50 @@ type SalesOrderDto struct {
 	Tag string `json:"tag,omitempty" xml:"tag,omitempty"`
 	// 发票信息（已废弃）
 	Invoice *InvoiceDto `json:"invoice,omitempty" xml:"invoice,omitempty"`
+}
+
+var poolSalesOrderDto = sync.Pool{
+	New: func() any {
+		return new(SalesOrderDto)
+	},
+}
+
+// GetSalesOrderDto() 从对象池中获取SalesOrderDto
+func GetSalesOrderDto() *SalesOrderDto {
+	return poolSalesOrderDto.Get().(*SalesOrderDto)
+}
+
+// ReleaseSalesOrderDto 释放SalesOrderDto
+func ReleaseSalesOrderDto(v *SalesOrderDto) {
+	v.OrderItems = v.OrderItems[:0]
+	v.StoreName = ""
+	v.SaleType = ""
+	v.LastUpdated = ""
+	v.DateCreated = ""
+	v.PaidTime = ""
+	v.Freight = ""
+	v.Amount = ""
+	v.OrderNumber = ""
+	v.CounterId = ""
+	v.CounterName = ""
+	v.Status = ""
+	v.BuyerMemo = ""
+	v.Payments = ""
+	v.OutCounterId = ""
+	v.Shipper = ""
+	v.DeliveryType = ""
+	v.ReceiverName = ""
+	v.ReceiverAddress = ""
+	v.ReceiverState = ""
+	v.ReceiverZip = ""
+	v.ReceiverMobile = ""
+	v.ReceiverPhone = ""
+	v.AppointmentStartTime = ""
+	v.ReceiverArea = ""
+	v.ReceiverCity = ""
+	v.AppointmentEndTime = ""
+	v.LatestDeliveryTime = ""
+	v.Tag = ""
+	v.Invoice = nil
+	poolSalesOrderDto.Put(v)
 }

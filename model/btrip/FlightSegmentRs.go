@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // FlightSegmentRs 结构体
 type FlightSegmentRs struct {
 	// 航班到达机场三字码
@@ -54,4 +58,46 @@ type FlightSegmentRs struct {
 	TransferTime int64 `json:"transfer_time,omitempty" xml:"transfer_time,omitempty"`
 	// 是否换机场
 	TransferChangeAirport bool `json:"transfer_change_airport,omitempty" xml:"transfer_change_airport,omitempty"`
+}
+
+var poolFlightSegmentRs = sync.Pool{
+	New: func() any {
+		return new(FlightSegmentRs)
+	},
+}
+
+// GetFlightSegmentRs() 从对象池中获取FlightSegmentRs
+func GetFlightSegmentRs() *FlightSegmentRs {
+	return poolFlightSegmentRs.Get().(*FlightSegmentRs)
+}
+
+// ReleaseFlightSegmentRs 释放FlightSegmentRs
+func ReleaseFlightSegmentRs(v *FlightSegmentRs) {
+	v.ArrAirport = ""
+	v.ArrCity = ""
+	v.ArrCountry = ""
+	v.ArrTerm = ""
+	v.ArrTime = ""
+	v.DepAirport = ""
+	v.DepCity = ""
+	v.DepCountry = ""
+	v.DepTerm = ""
+	v.DepTime = ""
+	v.EquipType = ""
+	v.Id = ""
+	v.MarketingAirline = ""
+	v.MarketingFlightNo = ""
+	v.StopCity = ""
+	v.ArrDateInt = 0
+	v.DepDateInt = 0
+	v.Duration = 0
+	v.MarketingFlightNoInt = 0
+	v.Meal = 0
+	v.Miles = 0
+	v.SegmentShowInfo = nil
+	v.SeqId = 0
+	v.StopQuantity = 0
+	v.TransferTime = 0
+	v.TransferChangeAirport = false
+	poolFlightSegmentRs.Put(v)
 }

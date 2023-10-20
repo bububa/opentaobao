@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type AlibabaServiceSettlementQueryAPIRequest struct {
 // NewAlibabaServiceSettlementQueryRequest 初始化AlibabaServiceSettlementQueryAPIRequest对象
 func NewAlibabaServiceSettlementQueryRequest() *AlibabaServiceSettlementQueryAPIRequest {
 	return &AlibabaServiceSettlementQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaServiceSettlementQueryAPIRequest) Reset() {
+	r._gmtCreateStart = ""
+	r._gmtCreateEnd = ""
+	r._gmtModifiedEnd = ""
+	r._gmtModifiedStart = ""
+	r._currentPage = 0
+	r._pageSize = 0
+	r._workcardId = 0
+	r._parentTradeOrderId = 0
+	r._serviceOrderId = 0
+	r._masterTradeOrderId = 0
+	r._serviceTradeOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *AlibabaServiceSettlementQueryAPIRequest) SetServiceTradeOrderId(_servic
 // GetServiceTradeOrderId ServiceTradeOrderId Getter
 func (r AlibabaServiceSettlementQueryAPIRequest) GetServiceTradeOrderId() int64 {
 	return r._serviceTradeOrderId
+}
+
+var poolAlibabaServiceSettlementQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaServiceSettlementQueryRequest()
+	},
+}
+
+// GetAlibabaServiceSettlementQueryRequest 从 sync.Pool 获取 AlibabaServiceSettlementQueryAPIRequest
+func GetAlibabaServiceSettlementQueryAPIRequest() *AlibabaServiceSettlementQueryAPIRequest {
+	return poolAlibabaServiceSettlementQueryAPIRequest.Get().(*AlibabaServiceSettlementQueryAPIRequest)
+}
+
+// ReleaseAlibabaServiceSettlementQueryAPIRequest 将 AlibabaServiceSettlementQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaServiceSettlementQueryAPIRequest(v *AlibabaServiceSettlementQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaServiceSettlementQueryAPIRequest.Put(v)
 }

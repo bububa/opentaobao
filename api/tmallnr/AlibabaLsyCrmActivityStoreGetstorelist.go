@@ -9,11 +9,6 @@ import (
 // alibaba.lsy.crm.activity.store.getstorelist
 //
 // ISV查询门店
-func AlibabaLsyCrmActivityStoreGetstorelist(clt *core.SDKClient, req *tmallnr.AlibabaLsyCrmActivityStoreGetstorelistAPIRequest, session string) (*tmallnr.AlibabaLsyCrmActivityStoreGetstorelistAPIResponse, error) {
-	var resp tmallnr.AlibabaLsyCrmActivityStoreGetstorelistAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLsyCrmActivityStoreGetstorelist(clt *core.SDKClient, req *tmallnr.AlibabaLsyCrmActivityStoreGetstorelistAPIRequest, resp *tmallnr.AlibabaLsyCrmActivityStoreGetstorelistAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

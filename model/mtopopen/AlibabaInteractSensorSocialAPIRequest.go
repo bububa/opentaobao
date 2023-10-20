@@ -2,6 +2,7 @@ package mtopopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaInteractSensorSocialAPIRequest struct {
 // NewAlibabaInteractSensorSocialRequest 初始化AlibabaInteractSensorSocialAPIRequest对象
 func NewAlibabaInteractSensorSocialRequest() *AlibabaInteractSensorSocialAPIRequest {
 	return &AlibabaInteractSensorSocialAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractSensorSocialAPIRequest) Reset() {
+	r._id = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaInteractSensorSocialAPIRequest) SetId(_id string) error {
 // GetId Id Getter
 func (r AlibabaInteractSensorSocialAPIRequest) GetId() string {
 	return r._id
+}
+
+var poolAlibabaInteractSensorSocialAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractSensorSocialRequest()
+	},
+}
+
+// GetAlibabaInteractSensorSocialRequest 从 sync.Pool 获取 AlibabaInteractSensorSocialAPIRequest
+func GetAlibabaInteractSensorSocialAPIRequest() *AlibabaInteractSensorSocialAPIRequest {
+	return poolAlibabaInteractSensorSocialAPIRequest.Get().(*AlibabaInteractSensorSocialAPIRequest)
+}
+
+// ReleaseAlibabaInteractSensorSocialAPIRequest 将 AlibabaInteractSensorSocialAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractSensorSocialAPIRequest(v *AlibabaInteractSensorSocialAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractSensorSocialAPIRequest.Put(v)
 }

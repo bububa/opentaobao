@@ -9,11 +9,6 @@ import (
 // taobao.subway.adgroup.offline.layeredfind
 //
 // 查询单元离线列表
-func TaobaoSubwayAdgroupOfflineLayeredfind(clt *core.SDKClient, req *simba.TaobaoSubwayAdgroupOfflineLayeredfindAPIRequest, session string) (*simba.TaobaoSubwayAdgroupOfflineLayeredfindAPIResponse, error) {
-	var resp simba.TaobaoSubwayAdgroupOfflineLayeredfindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSubwayAdgroupOfflineLayeredfind(clt *core.SDKClient, req *simba.TaobaoSubwayAdgroupOfflineLayeredfindAPIRequest, resp *simba.TaobaoSubwayAdgroupOfflineLayeredfindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

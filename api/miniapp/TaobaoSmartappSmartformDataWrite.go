@@ -9,11 +9,6 @@ import (
 // taobao.smartapp.smartform.data.write
 //
 // 智能表单外部更新数据
-func TaobaoSmartappSmartformDataWrite(clt *core.SDKClient, req *miniapp.TaobaoSmartappSmartformDataWriteAPIRequest, session string) (*miniapp.TaobaoSmartappSmartformDataWriteAPIResponse, error) {
-	var resp miniapp.TaobaoSmartappSmartformDataWriteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSmartappSmartformDataWrite(clt *core.SDKClient, req *miniapp.TaobaoSmartappSmartformDataWriteAPIRequest, resp *miniapp.TaobaoSmartappSmartformDataWriteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

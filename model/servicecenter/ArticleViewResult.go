@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // ArticleViewResult 结构体
 type ArticleViewResult struct {
 	// sku详情列表
@@ -18,4 +22,28 @@ type ArticleViewResult struct {
 	Nick string `json:"nick,omitempty" xml:"nick,omitempty"`
 	// 服务图片地址
 	PictUrl string `json:"pict_url,omitempty" xml:"pict_url,omitempty"`
+}
+
+var poolArticleViewResult = sync.Pool{
+	New: func() any {
+		return new(ArticleViewResult)
+	},
+}
+
+// GetArticleViewResult() 从对象池中获取ArticleViewResult
+func GetArticleViewResult() *ArticleViewResult {
+	return poolArticleViewResult.Get().(*ArticleViewResult)
+}
+
+// ReleaseArticleViewResult 释放ArticleViewResult
+func ReleaseArticleViewResult(v *ArticleViewResult) {
+	v.ArticleItemViewUnits = v.ArticleItemViewUnits[:0]
+	v.ArticleCode = ""
+	v.ArticleCommment = ""
+	v.ArticleName = ""
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Nick = ""
+	v.PictUrl = ""
+	poolArticleViewResult.Put(v)
 }

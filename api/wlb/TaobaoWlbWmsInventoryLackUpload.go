@@ -9,11 +9,6 @@ import (
 // taobao.wlb.wms.inventory.lack.upload
 //
 // 缺货通知
-func TaobaoWlbWmsInventoryLackUpload(clt *core.SDKClient, req *wlb.TaobaoWlbWmsInventoryLackUploadAPIRequest, session string) (*wlb.TaobaoWlbWmsInventoryLackUploadAPIResponse, error) {
-	var resp wlb.TaobaoWlbWmsInventoryLackUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWlbWmsInventoryLackUpload(clt *core.SDKClient, req *wlb.TaobaoWlbWmsInventoryLackUploadAPIRequest, resp *wlb.TaobaoWlbWmsInventoryLackUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

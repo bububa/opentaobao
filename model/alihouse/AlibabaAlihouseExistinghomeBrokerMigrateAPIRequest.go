@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseExistinghomeBrokerMigrateAPIRequest struct {
 // NewAlibabaAlihouseExistinghomeBrokerMigrateRequest 初始化AlibabaAlihouseExistinghomeBrokerMigrateAPIRequest对象
 func NewAlibabaAlihouseExistinghomeBrokerMigrateRequest() *AlibabaAlihouseExistinghomeBrokerMigrateAPIRequest {
 	return &AlibabaAlihouseExistinghomeBrokerMigrateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseExistinghomeBrokerMigrateAPIRequest) Reset() {
+	r._brokerMigrateDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseExistinghomeBrokerMigrateAPIRequest) SetBrokerMigrateDto
 // GetBrokerMigrateDto BrokerMigrateDto Getter
 func (r AlibabaAlihouseExistinghomeBrokerMigrateAPIRequest) GetBrokerMigrateDto() *BrokerMigrateDto {
 	return r._brokerMigrateDto
+}
+
+var poolAlibabaAlihouseExistinghomeBrokerMigrateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseExistinghomeBrokerMigrateRequest()
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeBrokerMigrateRequest 从 sync.Pool 获取 AlibabaAlihouseExistinghomeBrokerMigrateAPIRequest
+func GetAlibabaAlihouseExistinghomeBrokerMigrateAPIRequest() *AlibabaAlihouseExistinghomeBrokerMigrateAPIRequest {
+	return poolAlibabaAlihouseExistinghomeBrokerMigrateAPIRequest.Get().(*AlibabaAlihouseExistinghomeBrokerMigrateAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeBrokerMigrateAPIRequest 将 AlibabaAlihouseExistinghomeBrokerMigrateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeBrokerMigrateAPIRequest(v *AlibabaAlihouseExistinghomeBrokerMigrateAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeBrokerMigrateAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.ailabs.tmallgenie.third.telecom.pushrender
 //
 // 电信-推送拉起设备应用
-func AlibabaAilabsTmallgenieThirdTelecomPushrender(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsTmallgenieThirdTelecomPushrenderAPIRequest, session string) (*tmallgenie.AlibabaAilabsTmallgenieThirdTelecomPushrenderAPIResponse, error) {
-	var resp tmallgenie.AlibabaAilabsTmallgenieThirdTelecomPushrenderAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAilabsTmallgenieThirdTelecomPushrender(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsTmallgenieThirdTelecomPushrenderAPIRequest, resp *tmallgenie.AlibabaAilabsTmallgenieThirdTelecomPushrenderAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package cainiaohandover
 
+import (
+	"sync"
+)
+
 // OpenParcelOrderQueryResponse 结构体
 type OpenParcelOrderQueryResponse struct {
 	// 交接仓编码，快递揽收场景,大包交接目的地国际分拨
@@ -16,4 +20,27 @@ type OpenParcelOrderQueryResponse struct {
 	HasBeenHandover bool `json:"has_been_handover,omitempty" xml:"has_been_handover,omitempty"`
 	// 是否能组包
 	CanCreateHandover bool `json:"can_create_handover,omitempty" xml:"can_create_handover,omitempty"`
+}
+
+var poolOpenParcelOrderQueryResponse = sync.Pool{
+	New: func() any {
+		return new(OpenParcelOrderQueryResponse)
+	},
+}
+
+// GetOpenParcelOrderQueryResponse() 从对象池中获取OpenParcelOrderQueryResponse
+func GetOpenParcelOrderQueryResponse() *OpenParcelOrderQueryResponse {
+	return poolOpenParcelOrderQueryResponse.Get().(*OpenParcelOrderQueryResponse)
+}
+
+// ReleaseOpenParcelOrderQueryResponse 释放OpenParcelOrderQueryResponse
+func ReleaseOpenParcelOrderQueryResponse(v *OpenParcelOrderQueryResponse) {
+	v.HandoverWarehouseCode = ""
+	v.HandoverWarehouseName = ""
+	v.HandoverContentCode = ""
+	v.HandoverOrderId = 0
+	v.HandoverContentId = 0
+	v.HasBeenHandover = false
+	v.CanCreateHandover = false
+	poolOpenParcelOrderQueryResponse.Put(v)
 }

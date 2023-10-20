@@ -1,5 +1,9 @@
 package omniorder
 
+import (
+	"sync"
+)
+
 // JzReceiverDto 结构体
 type JzReceiverDto struct {
 	// 国家
@@ -22,4 +26,30 @@ type JzReceiverDto struct {
 	District string `json:"district,omitempty" xml:"district,omitempty"`
 	// 座机号
 	TelePhone string `json:"tele_phone,omitempty" xml:"tele_phone,omitempty"`
+}
+
+var poolJzReceiverDto = sync.Pool{
+	New: func() any {
+		return new(JzReceiverDto)
+	},
+}
+
+// GetJzReceiverDto() 从对象池中获取JzReceiverDto
+func GetJzReceiverDto() *JzReceiverDto {
+	return poolJzReceiverDto.Get().(*JzReceiverDto)
+}
+
+// ReleaseJzReceiverDto 释放JzReceiverDto
+func ReleaseJzReceiverDto(v *JzReceiverDto) {
+	v.Country = ""
+	v.ZipCode = ""
+	v.Address = ""
+	v.MobilePhone = ""
+	v.Province = ""
+	v.City = ""
+	v.ContactName = ""
+	v.Street = ""
+	v.District = ""
+	v.TelePhone = ""
+	poolJzReceiverDto.Put(v)
 }

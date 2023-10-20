@@ -9,11 +9,6 @@ import (
 // taobao.universalbp.report.query.adgroup
 //
 // 单元报表查询
-func TaobaoUniversalbpReportQueryAdgroup(clt *core.SDKClient, req *simba.TaobaoUniversalbpReportQueryAdgroupAPIRequest, session string) (*simba.TaobaoUniversalbpReportQueryAdgroupAPIResponse, error) {
-	var resp simba.TaobaoUniversalbpReportQueryAdgroupAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUniversalbpReportQueryAdgroup(clt *core.SDKClient, req *simba.TaobaoUniversalbpReportQueryAdgroupAPIRequest, resp *simba.TaobaoUniversalbpReportQueryAdgroupAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

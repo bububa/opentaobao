@@ -2,6 +2,7 @@ package ihome
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoIhomeAdvancepicUploadAPIRequest struct {
 // NewTaobaoIhomeAdvancepicUploadRequest 初始化TaobaoIhomeAdvancepicUploadAPIRequest对象
 func NewTaobaoIhomeAdvancepicUploadRequest() *TaobaoIhomeAdvancepicUploadAPIRequest {
 	return &TaobaoIhomeAdvancepicUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoIhomeAdvancepicUploadAPIRequest) Reset() {
+	r._materials = r._materials[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoIhomeAdvancepicUploadAPIRequest) SetMaterials(_materials []Advanc
 // GetMaterials Materials Getter
 func (r TaobaoIhomeAdvancepicUploadAPIRequest) GetMaterials() []AdvancePicMaterialDto {
 	return r._materials
+}
+
+var poolTaobaoIhomeAdvancepicUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoIhomeAdvancepicUploadRequest()
+	},
+}
+
+// GetTaobaoIhomeAdvancepicUploadRequest 从 sync.Pool 获取 TaobaoIhomeAdvancepicUploadAPIRequest
+func GetTaobaoIhomeAdvancepicUploadAPIRequest() *TaobaoIhomeAdvancepicUploadAPIRequest {
+	return poolTaobaoIhomeAdvancepicUploadAPIRequest.Get().(*TaobaoIhomeAdvancepicUploadAPIRequest)
+}
+
+// ReleaseTaobaoIhomeAdvancepicUploadAPIRequest 将 TaobaoIhomeAdvancepicUploadAPIRequest 放入 sync.Pool
+func ReleaseTaobaoIhomeAdvancepicUploadAPIRequest(v *TaobaoIhomeAdvancepicUploadAPIRequest) {
+	v.Reset()
+	poolTaobaoIhomeAdvancepicUploadAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package subuser
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoSellercenterSubusersPageAPIRequest struct {
 // NewTaobaoSellercenterSubusersPageRequest 初始化TaobaoSellercenterSubusersPageAPIRequest对象
 func NewTaobaoSellercenterSubusersPageRequest() *TaobaoSellercenterSubusersPageAPIRequest {
 	return &TaobaoSellercenterSubusersPageAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSellercenterSubusersPageAPIRequest) Reset() {
+	r._nick = ""
+	r._accountStatus = 0
+	r._pageSize = 0
+	r._pageNum = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoSellercenterSubusersPageAPIRequest) SetPageNum(_pageNum int64) er
 // GetPageNum PageNum Getter
 func (r TaobaoSellercenterSubusersPageAPIRequest) GetPageNum() int64 {
 	return r._pageNum
+}
+
+var poolTaobaoSellercenterSubusersPageAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSellercenterSubusersPageRequest()
+	},
+}
+
+// GetTaobaoSellercenterSubusersPageRequest 从 sync.Pool 获取 TaobaoSellercenterSubusersPageAPIRequest
+func GetTaobaoSellercenterSubusersPageAPIRequest() *TaobaoSellercenterSubusersPageAPIRequest {
+	return poolTaobaoSellercenterSubusersPageAPIRequest.Get().(*TaobaoSellercenterSubusersPageAPIRequest)
+}
+
+// ReleaseTaobaoSellercenterSubusersPageAPIRequest 将 TaobaoSellercenterSubusersPageAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSellercenterSubusersPageAPIRequest(v *TaobaoSellercenterSubusersPageAPIRequest) {
+	v.Reset()
+	poolTaobaoSellercenterSubusersPageAPIRequest.Put(v)
 }

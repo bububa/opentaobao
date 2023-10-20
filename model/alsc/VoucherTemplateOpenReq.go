@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // VoucherTemplateOpenReq 结构体
 type VoucherTemplateOpenReq struct {
 	// UNUSED,USED,NO_INVENTORY,INVALID,  未使用,使用中,无库存,已失效
@@ -24,4 +28,31 @@ type VoucherTemplateOpenReq struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 已删除数据
 	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
+}
+
+var poolVoucherTemplateOpenReq = sync.Pool{
+	New: func() any {
+		return new(VoucherTemplateOpenReq)
+	},
+}
+
+// GetVoucherTemplateOpenReq() 从对象池中获取VoucherTemplateOpenReq
+func GetVoucherTemplateOpenReq() *VoucherTemplateOpenReq {
+	return poolVoucherTemplateOpenReq.Get().(*VoucherTemplateOpenReq)
+}
+
+// ReleaseVoucherTemplateOpenReq 释放VoucherTemplateOpenReq
+func ReleaseVoucherTemplateOpenReq(v *VoucherTemplateOpenReq) {
+	v.StatusList = v.StatusList[:0]
+	v.BrandId = ""
+	v.GmtModified = ""
+	v.OutBrandId = ""
+	v.OutShopId = ""
+	v.ShopId = ""
+	v.LastId = ""
+	v.VoucherTemplateId = ""
+	v.PageNo = 0
+	v.PageSize = 0
+	v.Deleted = false
+	poolVoucherTemplateOpenReq.Put(v)
 }

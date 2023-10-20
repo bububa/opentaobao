@@ -2,6 +2,7 @@ package interact
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaInteractSensorNetworkstatusAPIResponse struct {
 	AlibabaInteractSensorNetworkstatusAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaInteractSensorNetworkstatusAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaInteractSensorNetworkstatusAPIResponseModel).Reset()
+}
+
 // AlibabaInteractSensorNetworkstatusAPIResponseModel is 网络状态 成功返回结果
 type AlibabaInteractSensorNetworkstatusAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_sensor_networkstatus_response"`
@@ -22,4 +29,27 @@ type AlibabaInteractSensorNetworkstatusAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// return=0表示成功
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaInteractSensorNetworkstatusAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = ""
+}
+
+var poolAlibabaInteractSensorNetworkstatusAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaInteractSensorNetworkstatusAPIResponse)
+	},
+}
+
+// GetAlibabaInteractSensorNetworkstatusAPIResponse 从 sync.Pool 获取 AlibabaInteractSensorNetworkstatusAPIResponse
+func GetAlibabaInteractSensorNetworkstatusAPIResponse() *AlibabaInteractSensorNetworkstatusAPIResponse {
+	return poolAlibabaInteractSensorNetworkstatusAPIResponse.Get().(*AlibabaInteractSensorNetworkstatusAPIResponse)
+}
+
+// ReleaseAlibabaInteractSensorNetworkstatusAPIResponse 将 AlibabaInteractSensorNetworkstatusAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaInteractSensorNetworkstatusAPIResponse(v *AlibabaInteractSensorNetworkstatusAPIResponse) {
+	v.Reset()
+	poolAlibabaInteractSensorNetworkstatusAPIResponse.Put(v)
 }

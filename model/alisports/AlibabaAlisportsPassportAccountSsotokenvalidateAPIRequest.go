@@ -2,6 +2,7 @@ package alisports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest struct {
 // NewAlibabaAlisportsPassportAccountSsotokenvalidateRequest 初始化AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest对象
 func NewAlibabaAlisportsPassportAccountSsotokenvalidateRequest() *AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest {
 	return &AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest) Reset() {
+	r._ssoToken = ""
+	r._alispAppKey = ""
+	r._alispTime = ""
+	r._alispSign = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest) SetAlispSign
 // GetAlispSign AlispSign Getter
 func (r AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest) GetAlispSign() string {
 	return r._alispSign
+}
+
+var poolAlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlisportsPassportAccountSsotokenvalidateRequest()
+	},
+}
+
+// GetAlibabaAlisportsPassportAccountSsotokenvalidateRequest 从 sync.Pool 获取 AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest
+func GetAlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest() *AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest {
+	return poolAlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest.Get().(*AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest)
+}
+
+// ReleaseAlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest 将 AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest(v *AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest) {
+	v.Reset()
+	poolAlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest.Put(v)
 }

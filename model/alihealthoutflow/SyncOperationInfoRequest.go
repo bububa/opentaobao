@@ -1,5 +1,9 @@
 package alihealthoutflow
 
+import (
+	"sync"
+)
+
 // SyncOperationInfoRequest 结构体
 type SyncOperationInfoRequest struct {
 	// 操作时间(非空)
@@ -16,4 +20,27 @@ type SyncOperationInfoRequest struct {
 	OperateType string `json:"operate_type,omitempty" xml:"operate_type,omitempty"`
 	// 患者姓名(非空)
 	PatientName string `json:"patient_name,omitempty" xml:"patient_name,omitempty"`
+}
+
+var poolSyncOperationInfoRequest = sync.Pool{
+	New: func() any {
+		return new(SyncOperationInfoRequest)
+	},
+}
+
+// GetSyncOperationInfoRequest() 从对象池中获取SyncOperationInfoRequest
+func GetSyncOperationInfoRequest() *SyncOperationInfoRequest {
+	return poolSyncOperationInfoRequest.Get().(*SyncOperationInfoRequest)
+}
+
+// ReleaseSyncOperationInfoRequest 释放SyncOperationInfoRequest
+func ReleaseSyncOperationInfoRequest(v *SyncOperationInfoRequest) {
+	v.OperateTime = ""
+	v.AuthorizationId = ""
+	v.HospitalId = ""
+	v.Channel = ""
+	v.PatientId = ""
+	v.OperateType = ""
+	v.PatientName = ""
+	poolSyncOperationInfoRequest.Put(v)
 }

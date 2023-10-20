@@ -9,11 +9,6 @@ import (
 // taobao.top.package.query
 //
 // 淘系包裹查询
-func TaobaoTopPackageQuery(clt *core.SDKClient, req *topoaid.TaobaoTopPackageQueryAPIRequest, session string) (*topoaid.TaobaoTopPackageQueryAPIResponse, error) {
-	var resp topoaid.TaobaoTopPackageQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTopPackageQuery(clt *core.SDKClient, req *topoaid.TaobaoTopPackageQueryAPIRequest, resp *topoaid.TaobaoTopPackageQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

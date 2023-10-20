@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // ProjectAdviserDto 结构体
 type ProjectAdviserDto struct {
 	// 中文标签
@@ -120,4 +124,79 @@ type ProjectAdviserDto struct {
 	EditAuditStatus int64 `json:"edit_audit_status,omitempty" xml:"edit_audit_status,omitempty"`
 	// 是否拥有淘宝账号
 	HasTbAccount bool `json:"has_tb_account,omitempty" xml:"has_tb_account,omitempty"`
+}
+
+var poolProjectAdviserDto = sync.Pool{
+	New: func() any {
+		return new(ProjectAdviserDto)
+	},
+}
+
+// GetProjectAdviserDto() 从对象池中获取ProjectAdviserDto
+func GetProjectAdviserDto() *ProjectAdviserDto {
+	return poolProjectAdviserDto.Get().(*ProjectAdviserDto)
+}
+
+// ReleaseProjectAdviserDto 释放ProjectAdviserDto
+func ReleaseProjectAdviserDto(v *ProjectAdviserDto) {
+	v.Tags = v.Tags[:0]
+	v.CertificationServices = v.CertificationServices[:0]
+	v.OuterCompanyId = ""
+	v.AdviserUserName = ""
+	v.MobilePhone = ""
+	v.OuterShopId = ""
+	v.MainPhone = ""
+	v.SubPhone = ""
+	v.Introduction = ""
+	v.ServiceEvaluation = ""
+	v.IdNumber = ""
+	v.HeadUrl = ""
+	v.CardFrontUrl = ""
+	v.CardBackUrl = ""
+	v.BusinessCard = ""
+	v.AgentLicenseUrl = ""
+	v.AgentLicenseNumber = ""
+	v.AgentEmployUrl = ""
+	v.AgentEmployNumber = ""
+	v.VerificationInfo = ""
+	v.SubUserNick = ""
+	v.PartakeBusiness = ""
+	v.OutStoreId = ""
+	v.UserName = ""
+	v.OuterConsultantId = ""
+	v.Profession = ""
+	v.AgentEmployNumberUrl = ""
+	v.Identity = ""
+	v.ECode = ""
+	v.OuterStoreId = ""
+	v.ShopName = ""
+	v.CompanyShortName = ""
+	v.Company = ""
+	v.OuterId = ""
+	v.AuditReason = ""
+	v.StoreId = 0
+	v.BrokerId = 0
+	v.Gender = 0
+	v.WorkYear = 0
+	v.JobStatus = 0
+	v.VerificationStatus = 0
+	v.RealNameStatus = 0
+	v.BrokerAttach = nil
+	v.Education = 0
+	v.Type = 0
+	v.SincerityStatus = 0
+	v.AgentEmployStatus = 0
+	v.IsTest = 0
+	v.EtcVersion = 0
+	v.IsReceiveCustomer = 0
+	v.RegionReceptiveStatus = 0
+	v.Sort = 0
+	v.Status = 0
+	v.Role = 0
+	v.ReceiveModel = 0
+	v.AuditStatus = 0
+	v.Version = 0
+	v.EditAuditStatus = 0
+	v.HasTbAccount = false
+	poolProjectAdviserDto.Put(v)
 }

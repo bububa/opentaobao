@@ -2,6 +2,7 @@ package aecreatives
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -47,8 +48,28 @@ type AliexpressAffiliateHotproductQueryAPIRequest struct {
 // NewAliexpressAffiliateHotproductQueryRequest 初始化AliexpressAffiliateHotproductQueryAPIRequest对象
 func NewAliexpressAffiliateHotproductQueryRequest() *AliexpressAffiliateHotproductQueryAPIRequest {
 	return &AliexpressAffiliateHotproductQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(15),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressAffiliateHotproductQueryAPIRequest) Reset() {
+	r._appSignature = ""
+	r._categoryIds = ""
+	r._fields = ""
+	r._keywords = ""
+	r._platformProductType = ""
+	r._sort = ""
+	r._targetCurrency = ""
+	r._targetLanguage = ""
+	r._trackingId = ""
+	r._deliveryDays = ""
+	r._shipToCountry = ""
+	r._maxSalePrice = 0
+	r._minSalePrice = 0
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -261,4 +282,21 @@ func (r *AliexpressAffiliateHotproductQueryAPIRequest) SetPageSize(_pageSize int
 // GetPageSize PageSize Getter
 func (r AliexpressAffiliateHotproductQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAliexpressAffiliateHotproductQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressAffiliateHotproductQueryRequest()
+	},
+}
+
+// GetAliexpressAffiliateHotproductQueryRequest 从 sync.Pool 获取 AliexpressAffiliateHotproductQueryAPIRequest
+func GetAliexpressAffiliateHotproductQueryAPIRequest() *AliexpressAffiliateHotproductQueryAPIRequest {
+	return poolAliexpressAffiliateHotproductQueryAPIRequest.Get().(*AliexpressAffiliateHotproductQueryAPIRequest)
+}
+
+// ReleaseAliexpressAffiliateHotproductQueryAPIRequest 将 AliexpressAffiliateHotproductQueryAPIRequest 放入 sync.Pool
+func ReleaseAliexpressAffiliateHotproductQueryAPIRequest(v *AliexpressAffiliateHotproductQueryAPIRequest) {
+	v.Reset()
+	poolAliexpressAffiliateHotproductQueryAPIRequest.Put(v)
 }

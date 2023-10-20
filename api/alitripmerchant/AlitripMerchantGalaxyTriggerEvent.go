@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.trigger.event
 //
 // 自定义事件触发
-func AlitripMerchantGalaxyTriggerEvent(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyTriggerEventAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyTriggerEventAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyTriggerEventAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyTriggerEvent(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyTriggerEventAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyTriggerEventAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallServicecenterAnomalyrecourseHomedecorationQuerybyidAPIRequest struct {
 // NewTmallServicecenterAnomalyrecourseHomedecorationQuerybyidRequest 初始化TmallServicecenterAnomalyrecourseHomedecorationQuerybyidAPIRequest对象
 func NewTmallServicecenterAnomalyrecourseHomedecorationQuerybyidRequest() *TmallServicecenterAnomalyrecourseHomedecorationQuerybyidAPIRequest {
 	return &TmallServicecenterAnomalyrecourseHomedecorationQuerybyidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterAnomalyrecourseHomedecorationQuerybyidAPIRequest) Reset() {
+	r._anomalyRecourseId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallServicecenterAnomalyrecourseHomedecorationQuerybyidAPIRequest) Set
 // GetAnomalyRecourseId AnomalyRecourseId Getter
 func (r TmallServicecenterAnomalyrecourseHomedecorationQuerybyidAPIRequest) GetAnomalyRecourseId() int64 {
 	return r._anomalyRecourseId
+}
+
+var poolTmallServicecenterAnomalyrecourseHomedecorationQuerybyidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterAnomalyrecourseHomedecorationQuerybyidRequest()
+	},
+}
+
+// GetTmallServicecenterAnomalyrecourseHomedecorationQuerybyidRequest 从 sync.Pool 获取 TmallServicecenterAnomalyrecourseHomedecorationQuerybyidAPIRequest
+func GetTmallServicecenterAnomalyrecourseHomedecorationQuerybyidAPIRequest() *TmallServicecenterAnomalyrecourseHomedecorationQuerybyidAPIRequest {
+	return poolTmallServicecenterAnomalyrecourseHomedecorationQuerybyidAPIRequest.Get().(*TmallServicecenterAnomalyrecourseHomedecorationQuerybyidAPIRequest)
+}
+
+// ReleaseTmallServicecenterAnomalyrecourseHomedecorationQuerybyidAPIRequest 将 TmallServicecenterAnomalyrecourseHomedecorationQuerybyidAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterAnomalyrecourseHomedecorationQuerybyidAPIRequest(v *TmallServicecenterAnomalyrecourseHomedecorationQuerybyidAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterAnomalyrecourseHomedecorationQuerybyidAPIRequest.Put(v)
 }

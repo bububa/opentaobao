@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihealthDrugKytQuerySpeciaVaccinBillcodeAPIRequest struct {
 // NewAlibabaAlihealthDrugKytQuerySpeciaVaccinBillcodeRequest 初始化AlibabaAlihealthDrugKytQuerySpeciaVaccinBillcodeAPIRequest对象
 func NewAlibabaAlihealthDrugKytQuerySpeciaVaccinBillcodeRequest() *AlibabaAlihealthDrugKytQuerySpeciaVaccinBillcodeAPIRequest {
 	return &AlibabaAlihealthDrugKytQuerySpeciaVaccinBillcodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugKytQuerySpeciaVaccinBillcodeAPIRequest) Reset() {
+	r._billCode = ""
+	r._refEntId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihealthDrugKytQuerySpeciaVaccinBillcodeAPIRequest) SetRefEntId
 // GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugKytQuerySpeciaVaccinBillcodeAPIRequest) GetRefEntId() string {
 	return r._refEntId
+}
+
+var poolAlibabaAlihealthDrugKytQuerySpeciaVaccinBillcodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugKytQuerySpeciaVaccinBillcodeRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugKytQuerySpeciaVaccinBillcodeRequest 从 sync.Pool 获取 AlibabaAlihealthDrugKytQuerySpeciaVaccinBillcodeAPIRequest
+func GetAlibabaAlihealthDrugKytQuerySpeciaVaccinBillcodeAPIRequest() *AlibabaAlihealthDrugKytQuerySpeciaVaccinBillcodeAPIRequest {
+	return poolAlibabaAlihealthDrugKytQuerySpeciaVaccinBillcodeAPIRequest.Get().(*AlibabaAlihealthDrugKytQuerySpeciaVaccinBillcodeAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugKytQuerySpeciaVaccinBillcodeAPIRequest 将 AlibabaAlihealthDrugKytQuerySpeciaVaccinBillcodeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytQuerySpeciaVaccinBillcodeAPIRequest(v *AlibabaAlihealthDrugKytQuerySpeciaVaccinBillcodeAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytQuerySpeciaVaccinBillcodeAPIRequest.Put(v)
 }

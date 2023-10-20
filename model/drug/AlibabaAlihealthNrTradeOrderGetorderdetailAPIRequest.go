@@ -2,6 +2,7 @@ package drug
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest struct {
 // NewAlibabaAlihealthNrTradeOrderGetorderdetailRequest 初始化AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest对象
 func NewAlibabaAlihealthNrTradeOrderGetorderdetailRequest() *AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest {
 	return &AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest) Reset() {
+	r._orderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest) SetOrderId(_order
 // GetOrderId OrderId Getter
 func (r AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest) GetOrderId() int64 {
 	return r._orderId
+}
+
+var poolAlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthNrTradeOrderGetorderdetailRequest()
+	},
+}
+
+// GetAlibabaAlihealthNrTradeOrderGetorderdetailRequest 从 sync.Pool 获取 AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest
+func GetAlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest() *AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest {
+	return poolAlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest.Get().(*AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest 将 AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest(v *AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest.Put(v)
 }

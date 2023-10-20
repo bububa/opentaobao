@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlitripMerchantGalaxyActivityDrawParticipateAPIRequest struct {
 // NewAlitripMerchantGalaxyActivityDrawParticipateRequest 初始化AlitripMerchantGalaxyActivityDrawParticipateAPIRequest对象
 func NewAlitripMerchantGalaxyActivityDrawParticipateRequest() *AlitripMerchantGalaxyActivityDrawParticipateAPIRequest {
 	return &AlitripMerchantGalaxyActivityDrawParticipateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyActivityDrawParticipateAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._token = ""
+	r._offerId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlitripMerchantGalaxyActivityDrawParticipateAPIRequest) SetOfferId(_off
 // GetOfferId OfferId Getter
 func (r AlitripMerchantGalaxyActivityDrawParticipateAPIRequest) GetOfferId() int64 {
 	return r._offerId
+}
+
+var poolAlitripMerchantGalaxyActivityDrawParticipateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyActivityDrawParticipateRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyActivityDrawParticipateRequest 从 sync.Pool 获取 AlitripMerchantGalaxyActivityDrawParticipateAPIRequest
+func GetAlitripMerchantGalaxyActivityDrawParticipateAPIRequest() *AlitripMerchantGalaxyActivityDrawParticipateAPIRequest {
+	return poolAlitripMerchantGalaxyActivityDrawParticipateAPIRequest.Get().(*AlitripMerchantGalaxyActivityDrawParticipateAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyActivityDrawParticipateAPIRequest 将 AlitripMerchantGalaxyActivityDrawParticipateAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyActivityDrawParticipateAPIRequest(v *AlitripMerchantGalaxyActivityDrawParticipateAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyActivityDrawParticipateAPIRequest.Put(v)
 }

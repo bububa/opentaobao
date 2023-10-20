@@ -1,5 +1,9 @@
 package tmallchannel
 
+import (
+	"sync"
+)
+
 // TopChannelPurchaseOrderDto 结构体
 type TopChannelPurchaseOrderDto struct {
 	// 子采购单列表
@@ -36,4 +40,37 @@ type TopChannelPurchaseOrderDto struct {
 	OrderStatus int64 `json:"order_status,omitempty" xml:"order_status,omitempty"`
 	// 物流单信息
 	ChannelLogisticsOrder *TopChannelLogisticsOrderDto `json:"channel_logistics_order,omitempty" xml:"channel_logistics_order,omitempty"`
+}
+
+var poolTopChannelPurchaseOrderDto = sync.Pool{
+	New: func() any {
+		return new(TopChannelPurchaseOrderDto)
+	},
+}
+
+// GetTopChannelPurchaseOrderDto() 从对象池中获取TopChannelPurchaseOrderDto
+func GetTopChannelPurchaseOrderDto() *TopChannelPurchaseOrderDto {
+	return poolTopChannelPurchaseOrderDto.Get().(*TopChannelPurchaseOrderDto)
+}
+
+// ReleaseTopChannelPurchaseOrderDto 释放TopChannelPurchaseOrderDto
+func ReleaseTopChannelPurchaseOrderDto(v *TopChannelPurchaseOrderDto) {
+	v.SubOrderList = v.SubOrderList[:0]
+	v.ChannelPurchaseApplyOrderNo = ""
+	v.DistributorNick = ""
+	v.BuyerTaobaoNick = ""
+	v.CreateTime = ""
+	v.ModifiedTime = ""
+	v.PayTime = ""
+	v.Schema = ""
+	v.MainPurchaseOrderNo = 0
+	v.TradeType = 0
+	v.PayType = 0
+	v.Channel = 0
+	v.PostFee = 0
+	v.PayStatus = 0
+	v.LogisticsStatus = 0
+	v.OrderStatus = 0
+	v.ChannelLogisticsOrder = nil
+	poolTopChannelPurchaseOrderDto.Put(v)
 }

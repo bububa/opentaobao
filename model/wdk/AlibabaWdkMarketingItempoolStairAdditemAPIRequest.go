@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaWdkMarketingItempoolStairAdditemAPIRequest struct {
 // NewAlibabaWdkMarketingItempoolStairAdditemRequest 初始化AlibabaWdkMarketingItempoolStairAdditemAPIRequest对象
 func NewAlibabaWdkMarketingItempoolStairAdditemRequest() *AlibabaWdkMarketingItempoolStairAdditemAPIRequest {
 	return &AlibabaWdkMarketingItempoolStairAdditemAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkMarketingItempoolStairAdditemAPIRequest) Reset() {
+	r._param0 = nil
+	r._param1 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaWdkMarketingItempoolStairAdditemAPIRequest) SetParam1(_param1 *C
 // GetParam1 Param1 Getter
 func (r AlibabaWdkMarketingItempoolStairAdditemAPIRequest) GetParam1() *CommonActivityParam {
 	return r._param1
+}
+
+var poolAlibabaWdkMarketingItempoolStairAdditemAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkMarketingItempoolStairAdditemRequest()
+	},
+}
+
+// GetAlibabaWdkMarketingItempoolStairAdditemRequest 从 sync.Pool 获取 AlibabaWdkMarketingItempoolStairAdditemAPIRequest
+func GetAlibabaWdkMarketingItempoolStairAdditemAPIRequest() *AlibabaWdkMarketingItempoolStairAdditemAPIRequest {
+	return poolAlibabaWdkMarketingItempoolStairAdditemAPIRequest.Get().(*AlibabaWdkMarketingItempoolStairAdditemAPIRequest)
+}
+
+// ReleaseAlibabaWdkMarketingItempoolStairAdditemAPIRequest 将 AlibabaWdkMarketingItempoolStairAdditemAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkMarketingItempoolStairAdditemAPIRequest(v *AlibabaWdkMarketingItempoolStairAdditemAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkMarketingItempoolStairAdditemAPIRequest.Put(v)
 }

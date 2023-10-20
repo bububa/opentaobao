@@ -1,5 +1,9 @@
 package mozi
 
+import (
+	"sync"
+)
+
 // MatchWithEmployeeResult 结构体
 type MatchWithEmployeeResult struct {
 	// 未匹配上的人员code
@@ -14,4 +18,26 @@ type MatchWithEmployeeResult struct {
 	ResponseCode string `json:"response_code,omitempty" xml:"response_code,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolMatchWithEmployeeResult = sync.Pool{
+	New: func() any {
+		return new(MatchWithEmployeeResult)
+	},
+}
+
+// GetMatchWithEmployeeResult() 从对象池中获取MatchWithEmployeeResult
+func GetMatchWithEmployeeResult() *MatchWithEmployeeResult {
+	return poolMatchWithEmployeeResult.Get().(*MatchWithEmployeeResult)
+}
+
+// ReleaseMatchWithEmployeeResult 释放MatchWithEmployeeResult
+func ReleaseMatchWithEmployeeResult(v *MatchWithEmployeeResult) {
+	v.UnmatchedEmployeeCodes = v.UnmatchedEmployeeCodes[:0]
+	v.MatchedEmployeeCodes = v.MatchedEmployeeCodes[:0]
+	v.RequestId = ""
+	v.ResponseMessage = ""
+	v.ResponseCode = ""
+	v.Success = false
+	poolMatchWithEmployeeResult.Put(v)
 }

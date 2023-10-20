@@ -9,11 +9,6 @@ import (
 // alibaba.security.jaq.rp.getverifytoken
 //
 // 聚安全实人认证获取认证会话token
-func AlibabaSecurityJaqRpGetverifytoken(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpGetverifytokenAPIRequest, session string) (*security.AlibabaSecurityJaqRpGetverifytokenAPIResponse, error) {
-	var resp security.AlibabaSecurityJaqRpGetverifytokenAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaSecurityJaqRpGetverifytoken(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpGetverifytokenAPIRequest, resp *security.AlibabaSecurityJaqRpGetverifytokenAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

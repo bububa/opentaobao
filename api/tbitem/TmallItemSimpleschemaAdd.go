@@ -9,11 +9,6 @@ import (
 // tmall.item.simpleschema.add
 //
 // 天猫简化版schema发布商品。
-func TmallItemSimpleschemaAdd(clt *core.SDKClient, req *tbitem.TmallItemSimpleschemaAddAPIRequest, session string) (*tbitem.TmallItemSimpleschemaAddAPIResponse, error) {
-	var resp tbitem.TmallItemSimpleschemaAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallItemSimpleschemaAdd(clt *core.SDKClient, req *tbitem.TmallItemSimpleschemaAddAPIRequest, resp *tbitem.TmallItemSimpleschemaAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

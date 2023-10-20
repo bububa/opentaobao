@@ -1,5 +1,9 @@
 package axintrade
 
+import (
+	"sync"
+)
+
 // AxinFundCreateDto 结构体
 type AxinFundCreateDto struct {
 	// 支付方支付宝账号id
@@ -42,4 +46,40 @@ type AxinFundCreateDto struct {
 	ExtUserInfo *ExtUserInfoDto `json:"ext_user_info,omitempty" xml:"ext_user_info,omitempty"`
 	// 交易渠道,1-借记,2-贷记
 	TradeChannel int64 `json:"trade_channel,omitempty" xml:"trade_channel,omitempty"`
+}
+
+var poolAxinFundCreateDto = sync.Pool{
+	New: func() any {
+		return new(AxinFundCreateDto)
+	},
+}
+
+// GetAxinFundCreateDto() 从对象池中获取AxinFundCreateDto
+func GetAxinFundCreateDto() *AxinFundCreateDto {
+	return poolAxinFundCreateDto.Get().(*AxinFundCreateDto)
+}
+
+// ReleaseAxinFundCreateDto 释放AxinFundCreateDto
+func ReleaseAxinFundCreateDto(v *AxinFundCreateDto) {
+	v.PayerAlipayId = ""
+	v.PayerAccount = ""
+	v.PayerNick = ""
+	v.OuterOrderId = ""
+	v.ReceiverAlipayId = ""
+	v.ReceiverAccount = ""
+	v.ReceiverNick = ""
+	v.Smid = ""
+	v.TradeType = ""
+	v.ReqVersion = ""
+	v.Attributes = ""
+	v.NotifyUrl = ""
+	v.Subject = ""
+	v.PayType = 0
+	v.AccountType = 0
+	v.PayFundId = 0
+	v.TradeSource = 0
+	v.PayFee = 0
+	v.ExtUserInfo = nil
+	v.TradeChannel = 0
+	poolAxinFundCreateDto.Put(v)
 }

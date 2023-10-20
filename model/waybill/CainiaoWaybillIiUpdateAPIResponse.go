@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type CainiaoWaybillIiUpdateAPIResponse struct {
 	CainiaoWaybillIiUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *CainiaoWaybillIiUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.CainiaoWaybillIiUpdateAPIResponseModel).Reset()
+}
+
 // CainiaoWaybillIiUpdateAPIResponseModel is 电子面单云打印更新接口 成功返回结果
 type CainiaoWaybillIiUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_waybill_ii_update_response"`
@@ -24,4 +31,28 @@ type CainiaoWaybillIiUpdateAPIResponseModel struct {
 	PrintData string `json:"print_data,omitempty" xml:"print_data,omitempty"`
 	// 面单号
 	WaybillCode string `json:"waybill_code,omitempty" xml:"waybill_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *CainiaoWaybillIiUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.PrintData = ""
+	m.WaybillCode = ""
+}
+
+var poolCainiaoWaybillIiUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(CainiaoWaybillIiUpdateAPIResponse)
+	},
+}
+
+// GetCainiaoWaybillIiUpdateAPIResponse 从 sync.Pool 获取 CainiaoWaybillIiUpdateAPIResponse
+func GetCainiaoWaybillIiUpdateAPIResponse() *CainiaoWaybillIiUpdateAPIResponse {
+	return poolCainiaoWaybillIiUpdateAPIResponse.Get().(*CainiaoWaybillIiUpdateAPIResponse)
+}
+
+// ReleaseCainiaoWaybillIiUpdateAPIResponse 将 CainiaoWaybillIiUpdateAPIResponse 保存到 sync.Pool
+func ReleaseCainiaoWaybillIiUpdateAPIResponse(v *CainiaoWaybillIiUpdateAPIResponse) {
+	v.Reset()
+	poolCainiaoWaybillIiUpdateAPIResponse.Put(v)
 }

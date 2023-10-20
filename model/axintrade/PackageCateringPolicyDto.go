@@ -1,5 +1,9 @@
 package axintrade
 
+import (
+	"sync"
+)
+
 // PackageCateringPolicyDto 结构体
 type PackageCateringPolicyDto struct {
 	// 餐饮使用规则名称
@@ -16,4 +20,27 @@ type PackageCateringPolicyDto struct {
 	OtherRuleName string `json:"other_rule_name,omitempty" xml:"other_rule_name,omitempty"`
 	// 其他产品非结构化描述
 	OtherDescription string `json:"other_description,omitempty" xml:"other_description,omitempty"`
+}
+
+var poolPackageCateringPolicyDto = sync.Pool{
+	New: func() any {
+		return new(PackageCateringPolicyDto)
+	},
+}
+
+// GetPackageCateringPolicyDto() 从对象池中获取PackageCateringPolicyDto
+func GetPackageCateringPolicyDto() *PackageCateringPolicyDto {
+	return poolPackageCateringPolicyDto.Get().(*PackageCateringPolicyDto)
+}
+
+// ReleasePackageCateringPolicyDto 释放PackageCateringPolicyDto
+func ReleasePackageCateringPolicyDto(v *PackageCateringPolicyDto) {
+	v.CateringRuleName = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.CateringWay = ""
+	v.CateringDescription = ""
+	v.OtherRuleName = ""
+	v.OtherDescription = ""
+	poolPackageCateringPolicyDto.Put(v)
 }

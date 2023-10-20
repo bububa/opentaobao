@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaScbpAdGroupCreateForbiddenProductAPIRequest struct {
 // NewAlibabaScbpAdGroupCreateForbiddenProductRequest 初始化AlibabaScbpAdGroupCreateForbiddenProductAPIRequest对象
 func NewAlibabaScbpAdGroupCreateForbiddenProductRequest() *AlibabaScbpAdGroupCreateForbiddenProductAPIRequest {
 	return &AlibabaScbpAdGroupCreateForbiddenProductAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) Reset() {
+	r._topContext = nil
+	r._campaignId = 0
+	r._forbiddenProductBatchOperation = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) SetForbiddenProduct
 // GetForbiddenProductBatchOperation ForbiddenProductBatchOperation Getter
 func (r AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) GetForbiddenProductBatchOperation() *ForbiddenProductBatchOperationDto {
 	return r._forbiddenProductBatchOperation
+}
+
+var poolAlibabaScbpAdGroupCreateForbiddenProductAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdGroupCreateForbiddenProductRequest()
+	},
+}
+
+// GetAlibabaScbpAdGroupCreateForbiddenProductRequest 从 sync.Pool 获取 AlibabaScbpAdGroupCreateForbiddenProductAPIRequest
+func GetAlibabaScbpAdGroupCreateForbiddenProductAPIRequest() *AlibabaScbpAdGroupCreateForbiddenProductAPIRequest {
+	return poolAlibabaScbpAdGroupCreateForbiddenProductAPIRequest.Get().(*AlibabaScbpAdGroupCreateForbiddenProductAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdGroupCreateForbiddenProductAPIRequest 将 AlibabaScbpAdGroupCreateForbiddenProductAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdGroupCreateForbiddenProductAPIRequest(v *AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdGroupCreateForbiddenProductAPIRequest.Put(v)
 }

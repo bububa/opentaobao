@@ -1,5 +1,9 @@
 package tmallsc
 
+import (
+	"sync"
+)
+
 // ReserveAuditRequest 结构体
 type ReserveAuditRequest struct {
 	// 变更时间（日期）
@@ -16,4 +20,27 @@ type ReserveAuditRequest struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 审核状态
 	State int64 `json:"state,omitempty" xml:"state,omitempty"`
+}
+
+var poolReserveAuditRequest = sync.Pool{
+	New: func() any {
+		return new(ReserveAuditRequest)
+	},
+}
+
+// GetReserveAuditRequest() 从对象池中获取ReserveAuditRequest
+func GetReserveAuditRequest() *ReserveAuditRequest {
+	return poolReserveAuditRequest.Get().(*ReserveAuditRequest)
+}
+
+// ReleaseReserveAuditRequest 释放ReserveAuditRequest
+func ReleaseReserveAuditRequest(v *ReserveAuditRequest) {
+	v.UpdateTime = ""
+	v.UpdateTimeRange = ""
+	v.Operator = ""
+	v.RejectReason = ""
+	v.NewWorkerMobile = ""
+	v.Id = 0
+	v.State = 0
+	poolReserveAuditRequest.Put(v)
 }

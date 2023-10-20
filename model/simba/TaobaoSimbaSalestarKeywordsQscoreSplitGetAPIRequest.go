@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest struct {
 // NewTaobaoSimbaSalestarKeywordsQscoreSplitGetRequest 初始化TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest对象
 func NewTaobaoSimbaSalestarKeywordsQscoreSplitGetRequest() *TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest {
 	return &TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) Reset() {
+	r._bidwordIds = r._bidwordIds[:0]
+	r._nick = ""
+	r._adGroupId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) SetAdGroupId(_adGr
 // GetAdGroupId AdGroupId Getter
 func (r TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) GetAdGroupId() int64 {
 	return r._adGroupId
+}
+
+var poolTaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaSalestarKeywordsQscoreSplitGetRequest()
+	},
+}
+
+// GetTaobaoSimbaSalestarKeywordsQscoreSplitGetRequest 从 sync.Pool 获取 TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest
+func GetTaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest() *TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest {
+	return poolTaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest.Get().(*TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest)
+}
+
+// ReleaseTaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest 将 TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest(v *TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest.Put(v)
 }

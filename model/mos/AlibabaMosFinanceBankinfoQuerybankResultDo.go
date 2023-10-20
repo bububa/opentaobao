@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // AlibabaMosFinanceBankinfoQuerybankResultDo 结构体
 type AlibabaMosFinanceBankinfoQuerybankResultDo struct {
 	// 扩展
@@ -18,4 +22,28 @@ type AlibabaMosFinanceBankinfoQuerybankResultDo struct {
 	ErrCode int64 `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 调用是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaMosFinanceBankinfoQuerybankResultDo = sync.Pool{
+	New: func() any {
+		return new(AlibabaMosFinanceBankinfoQuerybankResultDo)
+	},
+}
+
+// GetAlibabaMosFinanceBankinfoQuerybankResultDo() 从对象池中获取AlibabaMosFinanceBankinfoQuerybankResultDo
+func GetAlibabaMosFinanceBankinfoQuerybankResultDo() *AlibabaMosFinanceBankinfoQuerybankResultDo {
+	return poolAlibabaMosFinanceBankinfoQuerybankResultDo.Get().(*AlibabaMosFinanceBankinfoQuerybankResultDo)
+}
+
+// ReleaseAlibabaMosFinanceBankinfoQuerybankResultDo 释放AlibabaMosFinanceBankinfoQuerybankResultDo
+func ReleaseAlibabaMosFinanceBankinfoQuerybankResultDo(v *AlibabaMosFinanceBankinfoQuerybankResultDo) {
+	v.Extra = ""
+	v.TraceId = ""
+	v.ErrMsg = ""
+	v.ResultCode = ""
+	v.Total = 0
+	v.Data = nil
+	v.ErrCode = 0
+	v.Success = false
+	poolAlibabaMosFinanceBankinfoQuerybankResultDo.Put(v)
 }

@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoFuwuPurchaseOrderConfirmAPIRequest struct {
 // NewTaobaoFuwuPurchaseOrderConfirmRequest 初始化TaobaoFuwuPurchaseOrderConfirmAPIRequest对象
 func NewTaobaoFuwuPurchaseOrderConfirmRequest() *TaobaoFuwuPurchaseOrderConfirmAPIRequest {
 	return &TaobaoFuwuPurchaseOrderConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFuwuPurchaseOrderConfirmAPIRequest) Reset() {
+	r._paramOrderConfirmQueryDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoFuwuPurchaseOrderConfirmAPIRequest) SetParamOrderConfirmQueryDTO(
 // GetParamOrderConfirmQueryDTO ParamOrderConfirmQueryDTO Getter
 func (r TaobaoFuwuPurchaseOrderConfirmAPIRequest) GetParamOrderConfirmQueryDTO() *OrderConfirmQueryDto {
 	return r._paramOrderConfirmQueryDTO
+}
+
+var poolTaobaoFuwuPurchaseOrderConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFuwuPurchaseOrderConfirmRequest()
+	},
+}
+
+// GetTaobaoFuwuPurchaseOrderConfirmRequest 从 sync.Pool 获取 TaobaoFuwuPurchaseOrderConfirmAPIRequest
+func GetTaobaoFuwuPurchaseOrderConfirmAPIRequest() *TaobaoFuwuPurchaseOrderConfirmAPIRequest {
+	return poolTaobaoFuwuPurchaseOrderConfirmAPIRequest.Get().(*TaobaoFuwuPurchaseOrderConfirmAPIRequest)
+}
+
+// ReleaseTaobaoFuwuPurchaseOrderConfirmAPIRequest 将 TaobaoFuwuPurchaseOrderConfirmAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFuwuPurchaseOrderConfirmAPIRequest(v *TaobaoFuwuPurchaseOrderConfirmAPIRequest) {
+	v.Reset()
+	poolTaobaoFuwuPurchaseOrderConfirmAPIRequest.Put(v)
 }

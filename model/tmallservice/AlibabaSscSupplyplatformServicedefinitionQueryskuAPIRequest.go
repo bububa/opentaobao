@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaSscSupplyplatformServicedefinitionQueryskuAPIRequest struct {
 // NewAlibabaSscSupplyplatformServicedefinitionQueryskuRequest 初始化AlibabaSscSupplyplatformServicedefinitionQueryskuAPIRequest对象
 func NewAlibabaSscSupplyplatformServicedefinitionQueryskuRequest() *AlibabaSscSupplyplatformServicedefinitionQueryskuAPIRequest {
 	return &AlibabaSscSupplyplatformServicedefinitionQueryskuAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSscSupplyplatformServicedefinitionQueryskuAPIRequest) Reset() {
+	r._serviceCategoryId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaSscSupplyplatformServicedefinitionQueryskuAPIRequest) SetService
 // GetServiceCategoryId ServiceCategoryId Getter
 func (r AlibabaSscSupplyplatformServicedefinitionQueryskuAPIRequest) GetServiceCategoryId() string {
 	return r._serviceCategoryId
+}
+
+var poolAlibabaSscSupplyplatformServicedefinitionQueryskuAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSscSupplyplatformServicedefinitionQueryskuRequest()
+	},
+}
+
+// GetAlibabaSscSupplyplatformServicedefinitionQueryskuRequest 从 sync.Pool 获取 AlibabaSscSupplyplatformServicedefinitionQueryskuAPIRequest
+func GetAlibabaSscSupplyplatformServicedefinitionQueryskuAPIRequest() *AlibabaSscSupplyplatformServicedefinitionQueryskuAPIRequest {
+	return poolAlibabaSscSupplyplatformServicedefinitionQueryskuAPIRequest.Get().(*AlibabaSscSupplyplatformServicedefinitionQueryskuAPIRequest)
+}
+
+// ReleaseAlibabaSscSupplyplatformServicedefinitionQueryskuAPIRequest 将 AlibabaSscSupplyplatformServicedefinitionQueryskuAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSscSupplyplatformServicedefinitionQueryskuAPIRequest(v *AlibabaSscSupplyplatformServicedefinitionQueryskuAPIRequest) {
+	v.Reset()
+	poolAlibabaSscSupplyplatformServicedefinitionQueryskuAPIRequest.Put(v)
 }

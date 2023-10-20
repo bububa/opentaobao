@@ -1,5 +1,9 @@
 package txcs
 
+import (
+	"sync"
+)
+
 // WebPageDataList 结构体
 type WebPageDataList struct {
 	// 对账单号
@@ -50,4 +54,44 @@ type WebPageDataList struct {
 	Currency *Currency `json:"currency,omitempty" xml:"currency,omitempty"`
 	// 结算方式描述
 	SettleWay int64 `json:"settle_way,omitempty" xml:"settle_way,omitempty"`
+}
+
+var poolWebPageDataList = sync.Pool{
+	New: func() any {
+		return new(WebPageDataList)
+	},
+}
+
+// GetWebPageDataList() 从对象池中获取WebPageDataList
+func GetWebPageDataList() *WebPageDataList {
+	return poolWebPageDataList.Get().(*WebPageDataList)
+}
+
+// ReleaseWebPageDataList 释放WebPageDataList
+func ReleaseWebPageDataList(v *WebPageDataList) {
+	v.StatementBillCode = ""
+	v.ShopCode = ""
+	v.ItemQuantity = ""
+	v.SourceTypeDesc = ""
+	v.BizBillCode = ""
+	v.SettleWayDesc = ""
+	v.ShopName = ""
+	v.BizOrderCode = ""
+	v.ContractVersion = ""
+	v.TaxRate = ""
+	v.Unit = ""
+	v.SourceType = ""
+	v.FeeCode = ""
+	v.FeeName = ""
+	v.UntaxAmount = ""
+	v.SettlementAmount = ""
+	v.TaxAmount = ""
+	v.ContractCode = ""
+	v.BizCode = ""
+	v.BizExtAttr = nil
+	v.LeafCatId = 0
+	v.BizTime = 0
+	v.Currency = nil
+	v.SettleWay = 0
+	poolWebPageDataList.Put(v)
 }

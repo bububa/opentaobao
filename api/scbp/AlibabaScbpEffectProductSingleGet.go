@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.effect.product.single.get
 //
 // 单个产品的报表
-func AlibabaScbpEffectProductSingleGet(clt *core.SDKClient, req *scbp.AlibabaScbpEffectProductSingleGetAPIRequest, session string) (*scbp.AlibabaScbpEffectProductSingleGetAPIResponse, error) {
-	var resp scbp.AlibabaScbpEffectProductSingleGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpEffectProductSingleGet(clt *core.SDKClient, req *scbp.AlibabaScbpEffectProductSingleGetAPIRequest, resp *scbp.AlibabaScbpEffectProductSingleGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

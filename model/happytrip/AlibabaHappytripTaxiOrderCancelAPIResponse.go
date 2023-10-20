@@ -2,6 +2,7 @@ package happytrip
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaHappytripTaxiOrderCancelAPIResponse struct {
 	AlibabaHappytripTaxiOrderCancelAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaHappytripTaxiOrderCancelAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaHappytripTaxiOrderCancelAPIResponseModel).Reset()
+}
+
 // AlibabaHappytripTaxiOrderCancelAPIResponseModel is 取消叫车 成功返回结果
 type AlibabaHappytripTaxiOrderCancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_happytrip_taxi_order_cancel_response"`
@@ -26,4 +33,29 @@ type AlibabaHappytripTaxiOrderCancelAPIResponseModel struct {
 	Errno int64 `json:"errno,omitempty" xml:"errno,omitempty"`
 	// 订单取消结果
 	Data *OrderCancelResult `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaHappytripTaxiOrderCancelAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Errmsg = ""
+	m.Errno = 0
+	m.Data = nil
+}
+
+var poolAlibabaHappytripTaxiOrderCancelAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaHappytripTaxiOrderCancelAPIResponse)
+	},
+}
+
+// GetAlibabaHappytripTaxiOrderCancelAPIResponse 从 sync.Pool 获取 AlibabaHappytripTaxiOrderCancelAPIResponse
+func GetAlibabaHappytripTaxiOrderCancelAPIResponse() *AlibabaHappytripTaxiOrderCancelAPIResponse {
+	return poolAlibabaHappytripTaxiOrderCancelAPIResponse.Get().(*AlibabaHappytripTaxiOrderCancelAPIResponse)
+}
+
+// ReleaseAlibabaHappytripTaxiOrderCancelAPIResponse 将 AlibabaHappytripTaxiOrderCancelAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaHappytripTaxiOrderCancelAPIResponse(v *AlibabaHappytripTaxiOrderCancelAPIResponse) {
+	v.Reset()
+	poolAlibabaHappytripTaxiOrderCancelAPIResponse.Put(v)
 }

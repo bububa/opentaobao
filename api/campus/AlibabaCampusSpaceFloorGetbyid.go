@@ -9,11 +9,6 @@ import (
 // alibaba.campus.space.floor.getbyid
 //
 // 根据id获取楼层
-func AlibabaCampusSpaceFloorGetbyid(clt *core.SDKClient, req *campus.AlibabaCampusSpaceFloorGetbyidAPIRequest, session string) (*campus.AlibabaCampusSpaceFloorGetbyidAPIResponse, error) {
-	var resp campus.AlibabaCampusSpaceFloorGetbyidAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusSpaceFloorGetbyid(clt *core.SDKClient, req *campus.AlibabaCampusSpaceFloorGetbyidAPIRequest, resp *campus.AlibabaCampusSpaceFloorGetbyidAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

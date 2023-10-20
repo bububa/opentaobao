@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // CodeRelationDto 结构体
 type CodeRelationDto struct {
 	// 码关联关系
@@ -36,4 +40,37 @@ type CodeRelationDto struct {
 	BoxAmount int64 `json:"box_amount,omitempty" xml:"box_amount,omitempty"`
 	// 大箱或中包状态；若扫描的是小盒码，直接返回正常； 0-正常；1-拼箱；2-零箱；3-即拼箱又零箱
 	BoxStatus int64 `json:"box_status,omitempty" xml:"box_status,omitempty"`
+}
+
+var poolCodeRelationDto = sync.Pool{
+	New: func() any {
+		return new(CodeRelationDto)
+	},
+}
+
+// GetCodeRelationDto() 从对象池中获取CodeRelationDto
+func GetCodeRelationDto() *CodeRelationDto {
+	return poolCodeRelationDto.Get().(*CodeRelationDto)
+}
+
+// ReleaseCodeRelationDto 释放CodeRelationDto
+func ReleaseCodeRelationDto(v *CodeRelationDto) {
+	v.CodeRelationList = v.CodeRelationList[:0]
+	v.ProduceInfoList = v.ProduceInfoList[:0]
+	v.IsSmallest = ""
+	v.Code = ""
+	v.ParentCode = ""
+	v.CodeLevel = ""
+	v.CodePackLevel = ""
+	v.Status = ""
+	v.ErrorCodeContent = ""
+	v.CodeActiveInfoDTO = nil
+	v.PkgInfoDTO = nil
+	v.BaseInfosDTO = nil
+	v.CodeActiveInfoDto = nil
+	v.PkgInfoDto = nil
+	v.BaseInfosDto = nil
+	v.BoxAmount = 0
+	v.BoxStatus = 0
+	poolCodeRelationDto.Put(v)
 }

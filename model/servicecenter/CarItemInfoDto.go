@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // CarItemInfoDto 结构体
 type CarItemInfoDto struct {
 	// 品牌
@@ -18,4 +22,28 @@ type CarItemInfoDto struct {
 	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
 	// skuId不会返回
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
+}
+
+var poolCarItemInfoDto = sync.Pool{
+	New: func() any {
+		return new(CarItemInfoDto)
+	},
+}
+
+// GetCarItemInfoDto() 从对象池中获取CarItemInfoDto
+func GetCarItemInfoDto() *CarItemInfoDto {
+	return poolCarItemInfoDto.Get().(*CarItemInfoDto)
+}
+
+// ReleaseCarItemInfoDto 释放CarItemInfoDto
+func ReleaseCarItemInfoDto(v *CarItemInfoDto) {
+	v.Brand = ""
+	v.Line = ""
+	v.Model = ""
+	v.SellerNick = ""
+	v.Year = ""
+	v.ItemId = 0
+	v.SellerId = 0
+	v.SkuId = 0
+	poolCarItemInfoDto.Put(v)
 }

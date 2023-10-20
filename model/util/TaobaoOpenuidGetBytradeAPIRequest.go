@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoOpenuidGetBytradeAPIRequest struct {
 // NewTaobaoOpenuidGetBytradeRequest 初始化TaobaoOpenuidGetBytradeAPIRequest对象
 func NewTaobaoOpenuidGetBytradeRequest() *TaobaoOpenuidGetBytradeAPIRequest {
 	return &TaobaoOpenuidGetBytradeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpenuidGetBytradeAPIRequest) Reset() {
+	r._tid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoOpenuidGetBytradeAPIRequest) SetTid(_tid int64) error {
 // GetTid Tid Getter
 func (r TaobaoOpenuidGetBytradeAPIRequest) GetTid() int64 {
 	return r._tid
+}
+
+var poolTaobaoOpenuidGetBytradeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpenuidGetBytradeRequest()
+	},
+}
+
+// GetTaobaoOpenuidGetBytradeRequest 从 sync.Pool 获取 TaobaoOpenuidGetBytradeAPIRequest
+func GetTaobaoOpenuidGetBytradeAPIRequest() *TaobaoOpenuidGetBytradeAPIRequest {
+	return poolTaobaoOpenuidGetBytradeAPIRequest.Get().(*TaobaoOpenuidGetBytradeAPIRequest)
+}
+
+// ReleaseTaobaoOpenuidGetBytradeAPIRequest 将 TaobaoOpenuidGetBytradeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpenuidGetBytradeAPIRequest(v *TaobaoOpenuidGetBytradeAPIRequest) {
+	v.Reset()
+	poolTaobaoOpenuidGetBytradeAPIRequest.Put(v)
 }

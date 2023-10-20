@@ -2,6 +2,7 @@ package yunosappstore
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type YunosAppstoreOpenReportadAPIRequest struct {
 // NewYunosAppstoreOpenReportadRequest 初始化YunosAppstoreOpenReportadAPIRequest对象
 func NewYunosAppstoreOpenReportadRequest() *YunosAppstoreOpenReportadAPIRequest {
 	return &YunosAppstoreOpenReportadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosAppstoreOpenReportadAPIRequest) Reset() {
+	r._traceIds = r._traceIds[:0]
+	r._deviceId = ""
+	r._time = 0
+	r._action = 0
+	r._clientVerCode = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *YunosAppstoreOpenReportadAPIRequest) SetClientVerCode(_clientVerCode in
 // GetClientVerCode ClientVerCode Getter
 func (r YunosAppstoreOpenReportadAPIRequest) GetClientVerCode() int64 {
 	return r._clientVerCode
+}
+
+var poolYunosAppstoreOpenReportadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosAppstoreOpenReportadRequest()
+	},
+}
+
+// GetYunosAppstoreOpenReportadRequest 从 sync.Pool 获取 YunosAppstoreOpenReportadAPIRequest
+func GetYunosAppstoreOpenReportadAPIRequest() *YunosAppstoreOpenReportadAPIRequest {
+	return poolYunosAppstoreOpenReportadAPIRequest.Get().(*YunosAppstoreOpenReportadAPIRequest)
+}
+
+// ReleaseYunosAppstoreOpenReportadAPIRequest 将 YunosAppstoreOpenReportadAPIRequest 放入 sync.Pool
+func ReleaseYunosAppstoreOpenReportadAPIRequest(v *YunosAppstoreOpenReportadAPIRequest) {
+	v.Reset()
+	poolYunosAppstoreOpenReportadAPIRequest.Put(v)
 }

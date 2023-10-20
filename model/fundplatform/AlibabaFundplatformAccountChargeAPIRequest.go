@@ -2,6 +2,7 @@ package fundplatform
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaFundplatformAccountChargeAPIRequest struct {
 // NewAlibabaFundplatformAccountChargeRequest 初始化AlibabaFundplatformAccountChargeAPIRequest对象
 func NewAlibabaFundplatformAccountChargeRequest() *AlibabaFundplatformAccountChargeAPIRequest {
 	return &AlibabaFundplatformAccountChargeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaFundplatformAccountChargeAPIRequest) Reset() {
+	r._paramLong = 0
+	r._paramChargeRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaFundplatformAccountChargeAPIRequest) SetParamChargeRequest(_para
 // GetParamChargeRequest ParamChargeRequest Getter
 func (r AlibabaFundplatformAccountChargeAPIRequest) GetParamChargeRequest() *ChargeRequest {
 	return r._paramChargeRequest
+}
+
+var poolAlibabaFundplatformAccountChargeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaFundplatformAccountChargeRequest()
+	},
+}
+
+// GetAlibabaFundplatformAccountChargeRequest 从 sync.Pool 获取 AlibabaFundplatformAccountChargeAPIRequest
+func GetAlibabaFundplatformAccountChargeAPIRequest() *AlibabaFundplatformAccountChargeAPIRequest {
+	return poolAlibabaFundplatformAccountChargeAPIRequest.Get().(*AlibabaFundplatformAccountChargeAPIRequest)
+}
+
+// ReleaseAlibabaFundplatformAccountChargeAPIRequest 将 AlibabaFundplatformAccountChargeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaFundplatformAccountChargeAPIRequest(v *AlibabaFundplatformAccountChargeAPIRequest) {
+	v.Reset()
+	poolAlibabaFundplatformAccountChargeAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // KeywordEffectDto 结构体
 type KeywordEffectDto struct {
 	// 关键词
@@ -14,4 +18,26 @@ type KeywordEffectDto struct {
 	Cost int64 `json:"cost,omitempty" xml:"cost,omitempty"`
 	// 推广时长
 	OnlineMin int64 `json:"online_min,omitempty" xml:"online_min,omitempty"`
+}
+
+var poolKeywordEffectDto = sync.Pool{
+	New: func() any {
+		return new(KeywordEffectDto)
+	},
+}
+
+// GetKeywordEffectDto() 从对象池中获取KeywordEffectDto
+func GetKeywordEffectDto() *KeywordEffectDto {
+	return poolKeywordEffectDto.Get().(*KeywordEffectDto)
+}
+
+// ReleaseKeywordEffectDto 释放KeywordEffectDto
+func ReleaseKeywordEffectDto(v *KeywordEffectDto) {
+	v.Keyword = ""
+	v.StatDate = ""
+	v.Impr = 0
+	v.Click = 0
+	v.Cost = 0
+	v.OnlineMin = 0
+	poolKeywordEffectDto.Put(v)
 }

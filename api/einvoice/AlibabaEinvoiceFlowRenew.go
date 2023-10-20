@@ -9,11 +9,6 @@ import (
 // alibaba.einvoice.flow.renew
 //
 // 工单(含入驻、加盘、续约工单)续约能力开放
-func AlibabaEinvoiceFlowRenew(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceFlowRenewAPIRequest, session string) (*einvoice.AlibabaEinvoiceFlowRenewAPIResponse, error) {
-	var resp einvoice.AlibabaEinvoiceFlowRenewAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaEinvoiceFlowRenew(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceFlowRenewAPIRequest, resp *einvoice.AlibabaEinvoiceFlowRenewAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

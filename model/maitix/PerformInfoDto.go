@@ -1,5 +1,9 @@
 package maitix
 
+import (
+	"sync"
+)
+
 // PerformInfoDto 结构体
 type PerformInfoDto struct {
 	// 子场次列表-暂时没用
@@ -30,4 +34,34 @@ type PerformInfoDto struct {
 	ReserveSeat int64 `json:"reserve_seat,omitempty" xml:"reserve_seat,omitempty"`
 	// 场次设置
 	PerformSetting *PerformSettingDto `json:"perform_setting,omitempty" xml:"perform_setting,omitempty"`
+}
+
+var poolPerformInfoDto = sync.Pool{
+	New: func() any {
+		return new(PerformInfoDto)
+	},
+}
+
+// GetPerformInfoDto() 从对象池中获取PerformInfoDto
+func GetPerformInfoDto() *PerformInfoDto {
+	return poolPerformInfoDto.Get().(*PerformInfoDto)
+}
+
+// ReleasePerformInfoDto 释放PerformInfoDto
+func ReleasePerformInfoDto(v *PerformInfoDto) {
+	v.SubPerformList = v.SubPerformList[:0]
+	v.WeeklyList = v.WeeklyList[:0]
+	v.PriceInfoList = v.PriceInfoList[:0]
+	v.PerformName = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.ChangeReason = ""
+	v.Remark = ""
+	v.PerformId = 0
+	v.PerformStatus = 0
+	v.PerformType = 0
+	v.IsChangePerformTime = 0
+	v.ReserveSeat = 0
+	v.PerformSetting = nil
+	poolPerformInfoDto.Put(v)
 }

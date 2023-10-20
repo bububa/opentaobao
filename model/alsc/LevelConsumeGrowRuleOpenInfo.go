@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // LevelConsumeGrowRuleOpenInfo 结构体
 type LevelConsumeGrowRuleOpenInfo struct {
 	// 创建人
@@ -24,4 +28,31 @@ type LevelConsumeGrowRuleOpenInfo struct {
 	PerGrowth int64 `json:"per_growth,omitempty" xml:"per_growth,omitempty"`
 	// 是否已经删除
 	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
+}
+
+var poolLevelConsumeGrowRuleOpenInfo = sync.Pool{
+	New: func() any {
+		return new(LevelConsumeGrowRuleOpenInfo)
+	},
+}
+
+// GetLevelConsumeGrowRuleOpenInfo() 从对象池中获取LevelConsumeGrowRuleOpenInfo
+func GetLevelConsumeGrowRuleOpenInfo() *LevelConsumeGrowRuleOpenInfo {
+	return poolLevelConsumeGrowRuleOpenInfo.Get().(*LevelConsumeGrowRuleOpenInfo)
+}
+
+// ReleaseLevelConsumeGrowRuleOpenInfo 释放LevelConsumeGrowRuleOpenInfo
+func ReleaseLevelConsumeGrowRuleOpenInfo(v *LevelConsumeGrowRuleOpenInfo) {
+	v.CreateBy = ""
+	v.ExtInfo = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.LevelId = ""
+	v.LevelName = ""
+	v.LevelNo = ""
+	v.UpdateBy = ""
+	v.PerConsume = 0
+	v.PerGrowth = 0
+	v.Deleted = false
+	poolLevelConsumeGrowRuleOpenInfo.Put(v)
 }

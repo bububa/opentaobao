@@ -9,11 +9,6 @@ import (
 // cainiao.iot.ticket.sp.vtwo.accept
 //
 // IoT售后服务商确认接单
-func CainiaoIotTicketSpVtwoAccept(clt *core.SDKClient, req *iotticket.CainiaoIotTicketSpVtwoAcceptAPIRequest, session string) (*iotticket.CainiaoIotTicketSpVtwoAcceptAPIResponse, error) {
-	var resp iotticket.CainiaoIotTicketSpVtwoAcceptAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func CainiaoIotTicketSpVtwoAccept(clt *core.SDKClient, req *iotticket.CainiaoIotTicketSpVtwoAcceptAPIRequest, resp *iotticket.CainiaoIotTicketSpVtwoAcceptAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

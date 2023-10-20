@@ -2,6 +2,7 @@ package wms
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -93,8 +94,51 @@ type TaobaoWlbWmsSkuUpdateAPIRequest struct {
 // NewTaobaoWlbWmsSkuUpdateRequest 初始化TaobaoWlbWmsSkuUpdateAPIRequest对象
 func NewTaobaoWlbWmsSkuUpdateRequest() *TaobaoWlbWmsSkuUpdateAPIRequest {
 	return &TaobaoWlbWmsSkuUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(38),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbWmsSkuUpdateAPIRequest) Reset() {
+	r._itemId = ""
+	r._storeCode = ""
+	r._name = ""
+	r._title = ""
+	r._category = ""
+	r._categoryName = ""
+	r._brand = ""
+	r._brandName = ""
+	r._specification = ""
+	r._color = ""
+	r._size = ""
+	r._approvalNumber = ""
+	r._extendFields = ""
+	r._barCode = ""
+	r._attribute = ""
+	r._type = ""
+	r._grossWeight = 0
+	r._netWeight = 0
+	r._length = 0
+	r._width = 0
+	r._height = 0
+	r._volume = 0
+	r._pcs = 0
+	r._originAddress = 0
+	r._lifecycle = 0
+	r._rejectLifecycle = 0
+	r._lockupLifecycle = 0
+	r._adventLifecycle = 0
+	r._tagPrice = 0
+	r._itemPrice = 0
+	r._costPrice = 0
+	r._isShelflife = false
+	r._isSnMgt = false
+	r._isHygroscopic = false
+	r._isDanger = false
+	r._isBatchMgt = false
+	r._useYn = false
+	r._isAreaSale = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -606,4 +650,21 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetIsAreaSale(_isAreaSale bool) error 
 // GetIsAreaSale IsAreaSale Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetIsAreaSale() bool {
 	return r._isAreaSale
+}
+
+var poolTaobaoWlbWmsSkuUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbWmsSkuUpdateRequest()
+	},
+}
+
+// GetTaobaoWlbWmsSkuUpdateRequest 从 sync.Pool 获取 TaobaoWlbWmsSkuUpdateAPIRequest
+func GetTaobaoWlbWmsSkuUpdateAPIRequest() *TaobaoWlbWmsSkuUpdateAPIRequest {
+	return poolTaobaoWlbWmsSkuUpdateAPIRequest.Get().(*TaobaoWlbWmsSkuUpdateAPIRequest)
+}
+
+// ReleaseTaobaoWlbWmsSkuUpdateAPIRequest 将 TaobaoWlbWmsSkuUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbWmsSkuUpdateAPIRequest(v *TaobaoWlbWmsSkuUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbWmsSkuUpdateAPIRequest.Put(v)
 }

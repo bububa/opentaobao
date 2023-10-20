@@ -9,11 +9,6 @@ import (
 // alibaba.aliqin.flow.wallet.check.balance
 //
 // 检查商家CRM预存余额是否足够进行活动
-func AlibabaAliqinFlowWalletCheckBalance(clt *core.SDKClient, req *user.AlibabaAliqinFlowWalletCheckBalanceAPIRequest, session string) (*user.AlibabaAliqinFlowWalletCheckBalanceAPIResponse, error) {
-	var resp user.AlibabaAliqinFlowWalletCheckBalanceAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAliqinFlowWalletCheckBalance(clt *core.SDKClient, req *user.AlibabaAliqinFlowWalletCheckBalanceAPIRequest, resp *user.AlibabaAliqinFlowWalletCheckBalanceAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.mozi.acl.role.add
 //
 // 新增一个角色
-func AlibabaMoziAclRoleAdd(clt *core.SDKClient, req *moziacl.AlibabaMoziAclRoleAddAPIRequest, session string) (*moziacl.AlibabaMoziAclRoleAddAPIResponse, error) {
-	var resp moziacl.AlibabaMoziAclRoleAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMoziAclRoleAdd(clt *core.SDKClient, req *moziacl.AlibabaMoziAclRoleAddAPIRequest, resp *moziacl.AlibabaMoziAclRoleAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

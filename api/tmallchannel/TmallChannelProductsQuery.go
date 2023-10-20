@@ -9,11 +9,6 @@ import (
 // tmall.channel.products.query
 //
 // 渠道中心，供应商查询其产品数据，返回同时符合所有查询条件的产品信息
-func TmallChannelProductsQuery(clt *core.SDKClient, req *tmallchannel.TmallChannelProductsQueryAPIRequest, session string) (*tmallchannel.TmallChannelProductsQueryAPIResponse, error) {
-	var resp tmallchannel.TmallChannelProductsQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallChannelProductsQuery(clt *core.SDKClient, req *tmallchannel.TmallChannelProductsQueryAPIRequest, resp *tmallchannel.TmallChannelProductsQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

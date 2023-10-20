@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // Invoice 结构体
 type Invoice struct {
 	// 发票抬头
@@ -18,4 +22,28 @@ type Invoice struct {
 	TaxNumber string `json:"tax_number,omitempty" xml:"tax_number,omitempty"`
 	// 发货详情
 	Detail *AlibabaDchainAoxiangWmsDeliveryorderConfirmDetail `json:"detail,omitempty" xml:"detail,omitempty"`
+}
+
+var poolInvoice = sync.Pool{
+	New: func() any {
+		return new(Invoice)
+	},
+}
+
+// GetInvoice() 从对象池中获取Invoice
+func GetInvoice() *Invoice {
+	return poolInvoice.Get().(*Invoice)
+}
+
+// ReleaseInvoice 释放Invoice
+func ReleaseInvoice(v *Invoice) {
+	v.Header = ""
+	v.Amount = ""
+	v.Content = ""
+	v.Code = ""
+	v.Number = ""
+	v.Type = ""
+	v.TaxNumber = ""
+	v.Detail = nil
+	poolInvoice.Put(v)
 }

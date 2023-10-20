@@ -1,5 +1,9 @@
 package subuser
 
+import (
+	"sync"
+)
+
 // SubAccountInfo 结构体
 type SubAccountInfo struct {
 	// zhangsan:no1
@@ -22,4 +26,30 @@ type SubAccountInfo struct {
 	SubDispatchStatus bool `json:"sub_dispatch_status,omitempty" xml:"sub_dispatch_status,omitempty"`
 	// true
 	SubOwedStatus bool `json:"sub_owed_status,omitempty" xml:"sub_owed_status,omitempty"`
+}
+
+var poolSubAccountInfo = sync.Pool{
+	New: func() any {
+		return new(SubAccountInfo)
+	},
+}
+
+// GetSubAccountInfo() 从对象池中获取SubAccountInfo
+func GetSubAccountInfo() *SubAccountInfo {
+	return poolSubAccountInfo.Get().(*SubAccountInfo)
+}
+
+// ReleaseSubAccountInfo 释放SubAccountInfo
+func ReleaseSubAccountInfo(v *SubAccountInfo) {
+	v.SubNick = ""
+	v.UserNick = ""
+	v.SubName = ""
+	v.SellerId = ""
+	v.SubId = 0
+	v.SubStatus = 0
+	v.UserId = 0
+	v.Status = 0
+	v.SubDispatchStatus = false
+	v.SubOwedStatus = false
+	poolSubAccountInfo.Put(v)
 }

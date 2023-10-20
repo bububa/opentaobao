@@ -2,6 +2,7 @@ package larkiot
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoLarkIotOrderGetgoodslistAPIResponse struct {
 	TaobaoLarkIotOrderGetgoodslistAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoLarkIotOrderGetgoodslistAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoLarkIotOrderGetgoodslistAPIResponseModel).Reset()
+}
+
 // TaobaoLarkIotOrderGetgoodslistAPIResponseModel is iot渠道获取卖品信息 成功返回结果
 type TaobaoLarkIotOrderGetgoodslistAPIResponseModel struct {
 	XMLName xml.Name `xml:"lark_iot_order_getgoodslist_response"`
@@ -22,4 +29,27 @@ type TaobaoLarkIotOrderGetgoodslistAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 卖品信息列表
 	Data *BizSingleResult `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoLarkIotOrderGetgoodslistAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = nil
+}
+
+var poolTaobaoLarkIotOrderGetgoodslistAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoLarkIotOrderGetgoodslistAPIResponse)
+	},
+}
+
+// GetTaobaoLarkIotOrderGetgoodslistAPIResponse 从 sync.Pool 获取 TaobaoLarkIotOrderGetgoodslistAPIResponse
+func GetTaobaoLarkIotOrderGetgoodslistAPIResponse() *TaobaoLarkIotOrderGetgoodslistAPIResponse {
+	return poolTaobaoLarkIotOrderGetgoodslistAPIResponse.Get().(*TaobaoLarkIotOrderGetgoodslistAPIResponse)
+}
+
+// ReleaseTaobaoLarkIotOrderGetgoodslistAPIResponse 将 TaobaoLarkIotOrderGetgoodslistAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoLarkIotOrderGetgoodslistAPIResponse(v *TaobaoLarkIotOrderGetgoodslistAPIResponse) {
+	v.Reset()
+	poolTaobaoLarkIotOrderGetgoodslistAPIResponse.Put(v)
 }

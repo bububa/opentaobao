@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // AfterRefundOrderInfo 结构体
 type AfterRefundOrderInfo struct {
 	// 退款审核人
@@ -18,4 +22,28 @@ type AfterRefundOrderInfo struct {
 	Wdkfra string `json:"wdkfra,omitempty" xml:"wdkfra,omitempty"`
 	// 实际退款金额
 	Wdkrf string `json:"wdkrf,omitempty" xml:"wdkrf,omitempty"`
+}
+
+var poolAfterRefundOrderInfo = sync.Pool{
+	New: func() any {
+		return new(AfterRefundOrderInfo)
+	},
+}
+
+// GetAfterRefundOrderInfo() 从对象池中获取AfterRefundOrderInfo
+func GetAfterRefundOrderInfo() *AfterRefundOrderInfo {
+	return poolAfterRefundOrderInfo.Get().(*AfterRefundOrderInfo)
+}
+
+// ReleaseAfterRefundOrderInfo 释放AfterRefundOrderInfo
+func ReleaseAfterRefundOrderInfo(v *AfterRefundOrderInfo) {
+	v.Wdkrc = ""
+	v.Wdkrcm = ""
+	v.Wdkrfqr = ""
+	v.Wdkdfqrrr = ""
+	v.Wdkrfqrmemo = ""
+	v.Rprid = ""
+	v.Wdkfra = ""
+	v.Wdkrf = ""
+	poolAfterRefundOrderInfo.Put(v)
 }

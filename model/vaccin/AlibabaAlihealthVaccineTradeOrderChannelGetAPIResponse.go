@@ -2,6 +2,7 @@ package vaccin
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAlihealthVaccineTradeOrderChannelGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthVaccineTradeOrderChannelGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthVaccineTradeOrderChannelGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthVaccineTradeOrderChannelGetAPIResponseModel).Reset()
 }
 
 // AlibabaAlihealthVaccineTradeOrderChannelGetAPIResponseModel is 通过订单ID与卖家ID获取订单渠道 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAlihealthVaccineTradeOrderChannelGetAPIResponseModel struct {
 	BizMessage string `json:"biz_message,omitempty" xml:"biz_message,omitempty"`
 	// 业务成功状态
 	BizSuccess bool `json:"biz_success,omitempty" xml:"biz_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthVaccineTradeOrderChannelGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.BizCode = ""
+	m.Data = ""
+	m.BizMessage = ""
+	m.BizSuccess = false
+}
+
+var poolAlibabaAlihealthVaccineTradeOrderChannelGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthVaccineTradeOrderChannelGetAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthVaccineTradeOrderChannelGetAPIResponse 从 sync.Pool 获取 AlibabaAlihealthVaccineTradeOrderChannelGetAPIResponse
+func GetAlibabaAlihealthVaccineTradeOrderChannelGetAPIResponse() *AlibabaAlihealthVaccineTradeOrderChannelGetAPIResponse {
+	return poolAlibabaAlihealthVaccineTradeOrderChannelGetAPIResponse.Get().(*AlibabaAlihealthVaccineTradeOrderChannelGetAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthVaccineTradeOrderChannelGetAPIResponse 将 AlibabaAlihealthVaccineTradeOrderChannelGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthVaccineTradeOrderChannelGetAPIResponse(v *AlibabaAlihealthVaccineTradeOrderChannelGetAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthVaccineTradeOrderChannelGetAPIResponse.Put(v)
 }

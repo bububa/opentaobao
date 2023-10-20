@@ -1,5 +1,9 @@
 package maitix
 
+import (
+	"sync"
+)
+
 // LockTicketSubOrderDto 结构体
 type LockTicketSubOrderDto struct {
 	// 外部子订单号，透传返回
@@ -14,4 +18,26 @@ type LockTicketSubOrderDto struct {
 	SubOrderSeatDto *LockTicketSubOrderSeatDto `json:"sub_order_seat_dto,omitempty" xml:"sub_order_seat_dto,omitempty"`
 	// 票单ID
 	VoucherId int64 `json:"voucher_id,omitempty" xml:"voucher_id,omitempty"`
+}
+
+var poolLockTicketSubOrderDto = sync.Pool{
+	New: func() any {
+		return new(LockTicketSubOrderDto)
+	},
+}
+
+// GetLockTicketSubOrderDto() 从对象池中获取LockTicketSubOrderDto
+func GetLockTicketSubOrderDto() *LockTicketSubOrderDto {
+	return poolLockTicketSubOrderDto.Get().(*LockTicketSubOrderDto)
+}
+
+// ReleaseLockTicketSubOrderDto 释放LockTicketSubOrderDto
+func ReleaseLockTicketSubOrderDto(v *LockTicketSubOrderDto) {
+	v.ExternalSubOrderNo = ""
+	v.OriginPrice = 0
+	v.RealPrice = 0
+	v.SubOrderId = 0
+	v.SubOrderSeatDto = nil
+	v.VoucherId = 0
+	poolLockTicketSubOrderDto.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.channel.comment.create
 //
 // 差评导入
-func AlibabaWdkChannelCommentCreate(clt *core.SDKClient, req *wdk.AlibabaWdkChannelCommentCreateAPIRequest, session string) (*wdk.AlibabaWdkChannelCommentCreateAPIResponse, error) {
-	var resp wdk.AlibabaWdkChannelCommentCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkChannelCommentCreate(clt *core.SDKClient, req *wdk.AlibabaWdkChannelCommentCreateAPIRequest, resp *wdk.AlibabaWdkChannelCommentCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

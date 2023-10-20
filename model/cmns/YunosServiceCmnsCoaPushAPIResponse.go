@@ -2,6 +2,7 @@ package cmns
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type YunosServiceCmnsCoaPushAPIResponse struct {
 	YunosServiceCmnsCoaPushAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *YunosServiceCmnsCoaPushAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.YunosServiceCmnsCoaPushAPIResponseModel).Reset()
+}
+
 // YunosServiceCmnsCoaPushAPIResponseModel is 消息推送接口 成功返回结果
 type YunosServiceCmnsCoaPushAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_service_cmns_coa_push_response"`
@@ -26,4 +33,29 @@ type YunosServiceCmnsCoaPushAPIResponseModel struct {
 	Mid int64 `json:"mid,omitempty" xml:"mid,omitempty"`
 	// 200:消息发送成功
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *YunosServiceCmnsCoaPushAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.Mid = 0
+	m.Status = 0
+}
+
+var poolYunosServiceCmnsCoaPushAPIResponse = sync.Pool{
+	New: func() any {
+		return new(YunosServiceCmnsCoaPushAPIResponse)
+	},
+}
+
+// GetYunosServiceCmnsCoaPushAPIResponse 从 sync.Pool 获取 YunosServiceCmnsCoaPushAPIResponse
+func GetYunosServiceCmnsCoaPushAPIResponse() *YunosServiceCmnsCoaPushAPIResponse {
+	return poolYunosServiceCmnsCoaPushAPIResponse.Get().(*YunosServiceCmnsCoaPushAPIResponse)
+}
+
+// ReleaseYunosServiceCmnsCoaPushAPIResponse 将 YunosServiceCmnsCoaPushAPIResponse 保存到 sync.Pool
+func ReleaseYunosServiceCmnsCoaPushAPIResponse(v *YunosServiceCmnsCoaPushAPIResponse) {
+	v.Reset()
+	poolYunosServiceCmnsCoaPushAPIResponse.Put(v)
 }

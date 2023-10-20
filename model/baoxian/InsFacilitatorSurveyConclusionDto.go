@@ -1,5 +1,9 @@
 package baoxian
 
+import (
+	"sync"
+)
+
 // InsFacilitatorSurveyConclusionDto 结构体
 type InsFacilitatorSurveyConclusionDto struct {
 	// 业务单号
@@ -14,4 +18,26 @@ type InsFacilitatorSurveyConclusionDto struct {
 	SurveyConclusionDesc string `json:"survey_conclusion_desc,omitempty" xml:"survey_conclusion_desc,omitempty"`
 	// 扩展参数
 	ExtendInfo string `json:"extend_info,omitempty" xml:"extend_info,omitempty"`
+}
+
+var poolInsFacilitatorSurveyConclusionDto = sync.Pool{
+	New: func() any {
+		return new(InsFacilitatorSurveyConclusionDto)
+	},
+}
+
+// GetInsFacilitatorSurveyConclusionDto() 从对象池中获取InsFacilitatorSurveyConclusionDto
+func GetInsFacilitatorSurveyConclusionDto() *InsFacilitatorSurveyConclusionDto {
+	return poolInsFacilitatorSurveyConclusionDto.Get().(*InsFacilitatorSurveyConclusionDto)
+}
+
+// ReleaseInsFacilitatorSurveyConclusionDto 释放InsFacilitatorSurveyConclusionDto
+func ReleaseInsFacilitatorSurveyConclusionDto(v *InsFacilitatorSurveyConclusionDto) {
+	v.BizNo = ""
+	v.LogisticsNo = ""
+	v.SurveyAttachments = ""
+	v.SurveyConclusion = ""
+	v.SurveyConclusionDesc = ""
+	v.ExtendInfo = ""
+	poolInsFacilitatorSurveyConclusionDto.Put(v)
 }

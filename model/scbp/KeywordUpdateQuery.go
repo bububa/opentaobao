@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // KeywordUpdateQuery 结构体
 type KeywordUpdateQuery struct {
 	// 关键词集合
@@ -8,4 +12,23 @@ type KeywordUpdateQuery struct {
 	UpdateType string `json:"update_type,omitempty" xml:"update_type,omitempty"`
 	// 更新信息
 	UpdateInfo *KeywordInfo `json:"update_info,omitempty" xml:"update_info,omitempty"`
+}
+
+var poolKeywordUpdateQuery = sync.Pool{
+	New: func() any {
+		return new(KeywordUpdateQuery)
+	},
+}
+
+// GetKeywordUpdateQuery() 从对象池中获取KeywordUpdateQuery
+func GetKeywordUpdateQuery() *KeywordUpdateQuery {
+	return poolKeywordUpdateQuery.Get().(*KeywordUpdateQuery)
+}
+
+// ReleaseKeywordUpdateQuery 释放KeywordUpdateQuery
+func ReleaseKeywordUpdateQuery(v *KeywordUpdateQuery) {
+	v.KeywordList = v.KeywordList[:0]
+	v.UpdateType = ""
+	v.UpdateInfo = nil
+	poolKeywordUpdateQuery.Put(v)
 }

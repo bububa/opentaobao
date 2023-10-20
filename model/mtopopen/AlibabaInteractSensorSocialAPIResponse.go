@@ -2,6 +2,7 @@ package mtopopen
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaInteractSensorSocialAPIResponse struct {
 	AlibabaInteractSensorSocialAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaInteractSensorSocialAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaInteractSensorSocialAPIResponseModel).Reset()
+}
+
 // AlibabaInteractSensorSocialAPIResponseModel is 社交组件 成功返回结果
 type AlibabaInteractSensorSocialAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_sensor_social_response"`
@@ -22,4 +29,27 @@ type AlibabaInteractSensorSocialAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result=1
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaInteractSensorSocialAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = ""
+}
+
+var poolAlibabaInteractSensorSocialAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaInteractSensorSocialAPIResponse)
+	},
+}
+
+// GetAlibabaInteractSensorSocialAPIResponse 从 sync.Pool 获取 AlibabaInteractSensorSocialAPIResponse
+func GetAlibabaInteractSensorSocialAPIResponse() *AlibabaInteractSensorSocialAPIResponse {
+	return poolAlibabaInteractSensorSocialAPIResponse.Get().(*AlibabaInteractSensorSocialAPIResponse)
+}
+
+// ReleaseAlibabaInteractSensorSocialAPIResponse 将 AlibabaInteractSensorSocialAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaInteractSensorSocialAPIResponse(v *AlibabaInteractSensorSocialAPIResponse) {
+	v.Reset()
+	poolAlibabaInteractSensorSocialAPIResponse.Put(v)
 }

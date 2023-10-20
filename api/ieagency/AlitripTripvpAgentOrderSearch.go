@@ -9,11 +9,6 @@ import (
 // alitrip.tripvp.agent.order.search
 //
 // 【国际机票】查询辅营订单列表
-func AlitripTripvpAgentOrderSearch(clt *core.SDKClient, req *ieagency.AlitripTripvpAgentOrderSearchAPIRequest, session string) (*ieagency.AlitripTripvpAgentOrderSearchAPIResponse, error) {
-	var resp ieagency.AlitripTripvpAgentOrderSearchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripTripvpAgentOrderSearch(clt *core.SDKClient, req *ieagency.AlitripTripvpAgentOrderSearchAPIRequest, resp *ieagency.AlitripTripvpAgentOrderSearchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

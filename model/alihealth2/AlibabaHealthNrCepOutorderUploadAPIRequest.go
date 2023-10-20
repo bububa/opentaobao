@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaHealthNrCepOutorderUploadAPIRequest struct {
 // NewAlibabaHealthNrCepOutorderUploadRequest 初始化AlibabaHealthNrCepOutorderUploadAPIRequest对象
 func NewAlibabaHealthNrCepOutorderUploadRequest() *AlibabaHealthNrCepOutorderUploadAPIRequest {
 	return &AlibabaHealthNrCepOutorderUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHealthNrCepOutorderUploadAPIRequest) Reset() {
+	r._topWarOutDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaHealthNrCepOutorderUploadAPIRequest) SetTopWarOutDto(_topWarOutD
 // GetTopWarOutDto TopWarOutDto Getter
 func (r AlibabaHealthNrCepOutorderUploadAPIRequest) GetTopWarOutDto() *TopWarOutDto {
 	return r._topWarOutDto
+}
+
+var poolAlibabaHealthNrCepOutorderUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHealthNrCepOutorderUploadRequest()
+	},
+}
+
+// GetAlibabaHealthNrCepOutorderUploadRequest 从 sync.Pool 获取 AlibabaHealthNrCepOutorderUploadAPIRequest
+func GetAlibabaHealthNrCepOutorderUploadAPIRequest() *AlibabaHealthNrCepOutorderUploadAPIRequest {
+	return poolAlibabaHealthNrCepOutorderUploadAPIRequest.Get().(*AlibabaHealthNrCepOutorderUploadAPIRequest)
+}
+
+// ReleaseAlibabaHealthNrCepOutorderUploadAPIRequest 将 AlibabaHealthNrCepOutorderUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHealthNrCepOutorderUploadAPIRequest(v *AlibabaHealthNrCepOutorderUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaHealthNrCepOutorderUploadAPIRequest.Put(v)
 }

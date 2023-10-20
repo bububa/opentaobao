@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest struct {
 // NewAlibabaAlihouseNewhomeAdviserMessageNoticeRequest 初始化AlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest对象
 func NewAlibabaAlihouseNewhomeAdviserMessageNoticeRequest() *AlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest {
 	return &AlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest) Reset() {
+	r._projectAdviserDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest) SetProjectAdviser
 // GetProjectAdviserDto ProjectAdviserDto Getter
 func (r AlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest) GetProjectAdviserDto() *ProjectAdviserDto {
 	return r._projectAdviserDto
+}
+
+var poolAlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeAdviserMessageNoticeRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeAdviserMessageNoticeRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest
+func GetAlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest() *AlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest {
+	return poolAlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest.Get().(*AlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest 将 AlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest(v *AlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest.Put(v)
 }

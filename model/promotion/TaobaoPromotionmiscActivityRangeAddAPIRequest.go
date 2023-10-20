@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoPromotionmiscActivityRangeAddAPIRequest struct {
 // NewTaobaoPromotionmiscActivityRangeAddRequest 初始化TaobaoPromotionmiscActivityRangeAddAPIRequest对象
 func NewTaobaoPromotionmiscActivityRangeAddRequest() *TaobaoPromotionmiscActivityRangeAddAPIRequest {
 	return &TaobaoPromotionmiscActivityRangeAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPromotionmiscActivityRangeAddAPIRequest) Reset() {
+	r._ids = ""
+	r._activityId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoPromotionmiscActivityRangeAddAPIRequest) SetActivityId(_activityI
 // GetActivityId ActivityId Getter
 func (r TaobaoPromotionmiscActivityRangeAddAPIRequest) GetActivityId() int64 {
 	return r._activityId
+}
+
+var poolTaobaoPromotionmiscActivityRangeAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPromotionmiscActivityRangeAddRequest()
+	},
+}
+
+// GetTaobaoPromotionmiscActivityRangeAddRequest 从 sync.Pool 获取 TaobaoPromotionmiscActivityRangeAddAPIRequest
+func GetTaobaoPromotionmiscActivityRangeAddAPIRequest() *TaobaoPromotionmiscActivityRangeAddAPIRequest {
+	return poolTaobaoPromotionmiscActivityRangeAddAPIRequest.Get().(*TaobaoPromotionmiscActivityRangeAddAPIRequest)
+}
+
+// ReleaseTaobaoPromotionmiscActivityRangeAddAPIRequest 将 TaobaoPromotionmiscActivityRangeAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPromotionmiscActivityRangeAddAPIRequest(v *TaobaoPromotionmiscActivityRangeAddAPIRequest) {
+	v.Reset()
+	poolTaobaoPromotionmiscActivityRangeAddAPIRequest.Put(v)
 }

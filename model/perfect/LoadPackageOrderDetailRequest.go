@@ -1,5 +1,9 @@
 package perfect
 
+import (
+	"sync"
+)
+
 // LoadPackageOrderDetailRequest 结构体
 type LoadPackageOrderDetailRequest struct {
 	// 销量数量
@@ -16,4 +20,27 @@ type LoadPackageOrderDetailRequest struct {
 	OutboundOrderDetailCode string `json:"outbound_order_detail_code,omitempty" xml:"outbound_order_detail_code,omitempty"`
 	// 库存单位
 	StockUnit string `json:"stock_unit,omitempty" xml:"stock_unit,omitempty"`
+}
+
+var poolLoadPackageOrderDetailRequest = sync.Pool{
+	New: func() any {
+		return new(LoadPackageOrderDetailRequest)
+	},
+}
+
+// GetLoadPackageOrderDetailRequest() 从对象池中获取LoadPackageOrderDetailRequest
+func GetLoadPackageOrderDetailRequest() *LoadPackageOrderDetailRequest {
+	return poolLoadPackageOrderDetailRequest.Get().(*LoadPackageOrderDetailRequest)
+}
+
+// ReleaseLoadPackageOrderDetailRequest 释放LoadPackageOrderDetailRequest
+func ReleaseLoadPackageOrderDetailRequest(v *LoadPackageOrderDetailRequest) {
+	v.SalesQuantity = ""
+	v.ItemCode = ""
+	v.SalesUnit = ""
+	v.StockQuantity = ""
+	v.Attributes = ""
+	v.OutboundOrderDetailCode = ""
+	v.StockUnit = ""
+	poolLoadPackageOrderDetailRequest.Put(v)
 }

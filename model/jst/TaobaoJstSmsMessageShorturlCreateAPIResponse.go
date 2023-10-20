@@ -2,6 +2,7 @@ package jst
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoJstSmsMessageShorturlCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstSmsMessageShorturlCreateAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoJstSmsMessageShorturlCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoJstSmsMessageShorturlCreateAPIResponseModel).Reset()
 }
 
 // TaobaoJstSmsMessageShorturlCreateAPIResponseModel is 聚石塔营销效果短链生成 成功返回结果
@@ -30,4 +37,31 @@ type TaobaoJstSmsMessageShorturlCreateAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 成功
 	RSuccess bool `json:"r_success,omitempty" xml:"r_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoJstSmsMessageShorturlCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RCode = ""
+	m.RRequestId = ""
+	m.Module = ""
+	m.Message = ""
+	m.RSuccess = false
+}
+
+var poolTaobaoJstSmsMessageShorturlCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoJstSmsMessageShorturlCreateAPIResponse)
+	},
+}
+
+// GetTaobaoJstSmsMessageShorturlCreateAPIResponse 从 sync.Pool 获取 TaobaoJstSmsMessageShorturlCreateAPIResponse
+func GetTaobaoJstSmsMessageShorturlCreateAPIResponse() *TaobaoJstSmsMessageShorturlCreateAPIResponse {
+	return poolTaobaoJstSmsMessageShorturlCreateAPIResponse.Get().(*TaobaoJstSmsMessageShorturlCreateAPIResponse)
+}
+
+// ReleaseTaobaoJstSmsMessageShorturlCreateAPIResponse 将 TaobaoJstSmsMessageShorturlCreateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoJstSmsMessageShorturlCreateAPIResponse(v *TaobaoJstSmsMessageShorturlCreateAPIResponse) {
+	v.Reset()
+	poolTaobaoJstSmsMessageShorturlCreateAPIResponse.Put(v)
 }

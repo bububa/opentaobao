@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaEinvoiceDeviceOrderQueryAPIRequest struct {
 // NewAlibabaEinvoiceDeviceOrderQueryRequest 初始化AlibabaEinvoiceDeviceOrderQueryAPIRequest对象
 func NewAlibabaEinvoiceDeviceOrderQueryRequest() *AlibabaEinvoiceDeviceOrderQueryAPIRequest {
 	return &AlibabaEinvoiceDeviceOrderQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceDeviceOrderQueryAPIRequest) Reset() {
+	r._flowId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaEinvoiceDeviceOrderQueryAPIRequest) SetFlowId(_flowId string) er
 // GetFlowId FlowId Getter
 func (r AlibabaEinvoiceDeviceOrderQueryAPIRequest) GetFlowId() string {
 	return r._flowId
+}
+
+var poolAlibabaEinvoiceDeviceOrderQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceDeviceOrderQueryRequest()
+	},
+}
+
+// GetAlibabaEinvoiceDeviceOrderQueryRequest 从 sync.Pool 获取 AlibabaEinvoiceDeviceOrderQueryAPIRequest
+func GetAlibabaEinvoiceDeviceOrderQueryAPIRequest() *AlibabaEinvoiceDeviceOrderQueryAPIRequest {
+	return poolAlibabaEinvoiceDeviceOrderQueryAPIRequest.Get().(*AlibabaEinvoiceDeviceOrderQueryAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceDeviceOrderQueryAPIRequest 将 AlibabaEinvoiceDeviceOrderQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceDeviceOrderQueryAPIRequest(v *AlibabaEinvoiceDeviceOrderQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceDeviceOrderQueryAPIRequest.Put(v)
 }

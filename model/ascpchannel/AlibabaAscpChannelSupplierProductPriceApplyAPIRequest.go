@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpChannelSupplierProductPriceApplyAPIRequest struct {
 // NewAlibabaAscpChannelSupplierProductPriceApplyRequest 初始化AlibabaAscpChannelSupplierProductPriceApplyAPIRequest对象
 func NewAlibabaAscpChannelSupplierProductPriceApplyRequest() *AlibabaAscpChannelSupplierProductPriceApplyAPIRequest {
 	return &AlibabaAscpChannelSupplierProductPriceApplyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpChannelSupplierProductPriceApplyAPIRequest) Reset() {
+	r._topPriceApplyCreateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpChannelSupplierProductPriceApplyAPIRequest) SetTopPriceApply
 // GetTopPriceApplyCreateRequest TopPriceApplyCreateRequest Getter
 func (r AlibabaAscpChannelSupplierProductPriceApplyAPIRequest) GetTopPriceApplyCreateRequest() *TopPriceApplyCreateRequest {
 	return r._topPriceApplyCreateRequest
+}
+
+var poolAlibabaAscpChannelSupplierProductPriceApplyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpChannelSupplierProductPriceApplyRequest()
+	},
+}
+
+// GetAlibabaAscpChannelSupplierProductPriceApplyRequest 从 sync.Pool 获取 AlibabaAscpChannelSupplierProductPriceApplyAPIRequest
+func GetAlibabaAscpChannelSupplierProductPriceApplyAPIRequest() *AlibabaAscpChannelSupplierProductPriceApplyAPIRequest {
+	return poolAlibabaAscpChannelSupplierProductPriceApplyAPIRequest.Get().(*AlibabaAscpChannelSupplierProductPriceApplyAPIRequest)
+}
+
+// ReleaseAlibabaAscpChannelSupplierProductPriceApplyAPIRequest 将 AlibabaAscpChannelSupplierProductPriceApplyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpChannelSupplierProductPriceApplyAPIRequest(v *AlibabaAscpChannelSupplierProductPriceApplyAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpChannelSupplierProductPriceApplyAPIRequest.Put(v)
 }

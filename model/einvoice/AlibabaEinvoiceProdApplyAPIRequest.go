@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaEinvoiceProdApplyAPIRequest struct {
 // NewAlibabaEinvoiceProdApplyRequest 初始化AlibabaEinvoiceProdApplyAPIRequest对象
 func NewAlibabaEinvoiceProdApplyRequest() *AlibabaEinvoiceProdApplyAPIRequest {
 	return &AlibabaEinvoiceProdApplyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceProdApplyAPIRequest) Reset() {
+	r._paramInvoiceApplyDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaEinvoiceProdApplyAPIRequest) SetParamInvoiceApplyDto(_paramInvoi
 // GetParamInvoiceApplyDto ParamInvoiceApplyDto Getter
 func (r AlibabaEinvoiceProdApplyAPIRequest) GetParamInvoiceApplyDto() *InvoiceApplyDto {
 	return r._paramInvoiceApplyDto
+}
+
+var poolAlibabaEinvoiceProdApplyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceProdApplyRequest()
+	},
+}
+
+// GetAlibabaEinvoiceProdApplyRequest 从 sync.Pool 获取 AlibabaEinvoiceProdApplyAPIRequest
+func GetAlibabaEinvoiceProdApplyAPIRequest() *AlibabaEinvoiceProdApplyAPIRequest {
+	return poolAlibabaEinvoiceProdApplyAPIRequest.Get().(*AlibabaEinvoiceProdApplyAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceProdApplyAPIRequest 将 AlibabaEinvoiceProdApplyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceProdApplyAPIRequest(v *AlibabaEinvoiceProdApplyAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceProdApplyAPIRequest.Put(v)
 }

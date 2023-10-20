@@ -2,6 +2,7 @@ package nrt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TmallNrtCoupontemplateQueryAPIRequest struct {
 // NewTmallNrtCoupontemplateQueryRequest 初始化TmallNrtCoupontemplateQueryAPIRequest对象
 func NewTmallNrtCoupontemplateQueryRequest() *TmallNrtCoupontemplateQueryAPIRequest {
 	return &TmallNrtCoupontemplateQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrtCoupontemplateQueryAPIRequest) Reset() {
+	r._couponTypeList = r._couponTypeList[:0]
+	r._bizCode = ""
+	r._currentPage = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TmallNrtCoupontemplateQueryAPIRequest) SetPageSize(_pageSize int64) err
 // GetPageSize PageSize Getter
 func (r TmallNrtCoupontemplateQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTmallNrtCoupontemplateQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrtCoupontemplateQueryRequest()
+	},
+}
+
+// GetTmallNrtCoupontemplateQueryRequest 从 sync.Pool 获取 TmallNrtCoupontemplateQueryAPIRequest
+func GetTmallNrtCoupontemplateQueryAPIRequest() *TmallNrtCoupontemplateQueryAPIRequest {
+	return poolTmallNrtCoupontemplateQueryAPIRequest.Get().(*TmallNrtCoupontemplateQueryAPIRequest)
+}
+
+// ReleaseTmallNrtCoupontemplateQueryAPIRequest 将 TmallNrtCoupontemplateQueryAPIRequest 放入 sync.Pool
+func ReleaseTmallNrtCoupontemplateQueryAPIRequest(v *TmallNrtCoupontemplateQueryAPIRequest) {
+	v.Reset()
+	poolTmallNrtCoupontemplateQueryAPIRequest.Put(v)
 }

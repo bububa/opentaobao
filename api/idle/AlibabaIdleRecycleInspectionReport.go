@@ -9,11 +9,6 @@ import (
 // alibaba.idle.recycle.inspection.report
 //
 // 回收商鉴定报告
-func AlibabaIdleRecycleInspectionReport(clt *core.SDKClient, req *idle.AlibabaIdleRecycleInspectionReportAPIRequest, session string) (*idle.AlibabaIdleRecycleInspectionReportAPIResponse, error) {
-	var resp idle.AlibabaIdleRecycleInspectionReportAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleRecycleInspectionReport(clt *core.SDKClient, req *idle.AlibabaIdleRecycleInspectionReportAPIRequest, resp *idle.AlibabaIdleRecycleInspectionReportAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

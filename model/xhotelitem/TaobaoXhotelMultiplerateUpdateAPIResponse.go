@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type TaobaoXhotelMultiplerateUpdateAPIResponse struct {
 	TaobaoXhotelMultiplerateUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoXhotelMultiplerateUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoXhotelMultiplerateUpdateAPIResponseModel).Reset()
+}
+
 // TaobaoXhotelMultiplerateUpdateAPIResponseModel is 复杂价格推送接口（全量更新） 成功返回结果
 type TaobaoXhotelMultiplerateUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_multiplerate_update_response"`
@@ -23,4 +30,27 @@ type TaobaoXhotelMultiplerateUpdateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// gid-rpid-occupancy-lengthofstay&lt;br/&gt;商品ID-房价ID-入住人数-连住天数
 	GidAndRpidOccupancyLengthofstay string `json:"gid_and_rpid_occupancy_lengthofstay,omitempty" xml:"gid_and_rpid_occupancy_lengthofstay,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelMultiplerateUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.GidAndRpidOccupancyLengthofstay = ""
+}
+
+var poolTaobaoXhotelMultiplerateUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelMultiplerateUpdateAPIResponse)
+	},
+}
+
+// GetTaobaoXhotelMultiplerateUpdateAPIResponse 从 sync.Pool 获取 TaobaoXhotelMultiplerateUpdateAPIResponse
+func GetTaobaoXhotelMultiplerateUpdateAPIResponse() *TaobaoXhotelMultiplerateUpdateAPIResponse {
+	return poolTaobaoXhotelMultiplerateUpdateAPIResponse.Get().(*TaobaoXhotelMultiplerateUpdateAPIResponse)
+}
+
+// ReleaseTaobaoXhotelMultiplerateUpdateAPIResponse 将 TaobaoXhotelMultiplerateUpdateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoXhotelMultiplerateUpdateAPIResponse(v *TaobaoXhotelMultiplerateUpdateAPIResponse) {
+	v.Reset()
+	poolTaobaoXhotelMultiplerateUpdateAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // RechargeRuleDetailOpenInfo 结构体
 type RechargeRuleDetailOpenInfo struct {
 	// 备注
@@ -10,4 +14,24 @@ type RechargeRuleDetailOpenInfo struct {
 	GiftValue int64 `json:"gift_value,omitempty" xml:"gift_value,omitempty"`
 	// 储值金额
 	RealValue int64 `json:"real_value,omitempty" xml:"real_value,omitempty"`
+}
+
+var poolRechargeRuleDetailOpenInfo = sync.Pool{
+	New: func() any {
+		return new(RechargeRuleDetailOpenInfo)
+	},
+}
+
+// GetRechargeRuleDetailOpenInfo() 从对象池中获取RechargeRuleDetailOpenInfo
+func GetRechargeRuleDetailOpenInfo() *RechargeRuleDetailOpenInfo {
+	return poolRechargeRuleDetailOpenInfo.Get().(*RechargeRuleDetailOpenInfo)
+}
+
+// ReleaseRechargeRuleDetailOpenInfo 释放RechargeRuleDetailOpenInfo
+func ReleaseRechargeRuleDetailOpenInfo(v *RechargeRuleDetailOpenInfo) {
+	v.Remark = ""
+	v.GiftPoint = 0
+	v.GiftValue = 0
+	v.RealValue = 0
+	poolRechargeRuleDetailOpenInfo.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.openuid.get
 //
 // 获取授权账号对应的OpenUid
-func TaobaoOpenuidGet(clt *core.SDKClient, req *util.TaobaoOpenuidGetAPIRequest, session string) (*util.TaobaoOpenuidGetAPIResponse, error) {
-	var resp util.TaobaoOpenuidGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpenuidGet(clt *core.SDKClient, req *util.TaobaoOpenuidGetAPIRequest, resp *util.TaobaoOpenuidGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

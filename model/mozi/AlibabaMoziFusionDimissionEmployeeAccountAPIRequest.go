@@ -2,6 +2,7 @@ package mozi
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMoziFusionDimissionEmployeeAccountAPIRequest struct {
 // NewAlibabaMoziFusionDimissionEmployeeAccountRequest 初始化AlibabaMoziFusionDimissionEmployeeAccountAPIRequest对象
 func NewAlibabaMoziFusionDimissionEmployeeAccountRequest() *AlibabaMoziFusionDimissionEmployeeAccountAPIRequest {
 	return &AlibabaMoziFusionDimissionEmployeeAccountAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMoziFusionDimissionEmployeeAccountAPIRequest) Reset() {
+	r._dimissionEmployee = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMoziFusionDimissionEmployeeAccountAPIRequest) SetDimissionEmploy
 // GetDimissionEmployee DimissionEmployee Getter
 func (r AlibabaMoziFusionDimissionEmployeeAccountAPIRequest) GetDimissionEmployee() *RemoveTenantEmployeeAndAccountRequest {
 	return r._dimissionEmployee
+}
+
+var poolAlibabaMoziFusionDimissionEmployeeAccountAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMoziFusionDimissionEmployeeAccountRequest()
+	},
+}
+
+// GetAlibabaMoziFusionDimissionEmployeeAccountRequest 从 sync.Pool 获取 AlibabaMoziFusionDimissionEmployeeAccountAPIRequest
+func GetAlibabaMoziFusionDimissionEmployeeAccountAPIRequest() *AlibabaMoziFusionDimissionEmployeeAccountAPIRequest {
+	return poolAlibabaMoziFusionDimissionEmployeeAccountAPIRequest.Get().(*AlibabaMoziFusionDimissionEmployeeAccountAPIRequest)
+}
+
+// ReleaseAlibabaMoziFusionDimissionEmployeeAccountAPIRequest 将 AlibabaMoziFusionDimissionEmployeeAccountAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMoziFusionDimissionEmployeeAccountAPIRequest(v *AlibabaMoziFusionDimissionEmployeeAccountAPIRequest) {
+	v.Reset()
+	poolAlibabaMoziFusionDimissionEmployeeAccountAPIRequest.Put(v)
 }

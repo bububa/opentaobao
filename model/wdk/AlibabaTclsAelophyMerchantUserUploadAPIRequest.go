@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTclsAelophyMerchantUserUploadAPIRequest struct {
 // NewAlibabaTclsAelophyMerchantUserUploadRequest 初始化AlibabaTclsAelophyMerchantUserUploadAPIRequest对象
 func NewAlibabaTclsAelophyMerchantUserUploadRequest() *AlibabaTclsAelophyMerchantUserUploadAPIRequest {
 	return &AlibabaTclsAelophyMerchantUserUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTclsAelophyMerchantUserUploadAPIRequest) Reset() {
+	r._userInfoList = r._userInfoList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTclsAelophyMerchantUserUploadAPIRequest) SetUserInfoList(_userIn
 // GetUserInfoList UserInfoList Getter
 func (r AlibabaTclsAelophyMerchantUserUploadAPIRequest) GetUserInfoList() []MerchantUserInfo {
 	return r._userInfoList
+}
+
+var poolAlibabaTclsAelophyMerchantUserUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTclsAelophyMerchantUserUploadRequest()
+	},
+}
+
+// GetAlibabaTclsAelophyMerchantUserUploadRequest 从 sync.Pool 获取 AlibabaTclsAelophyMerchantUserUploadAPIRequest
+func GetAlibabaTclsAelophyMerchantUserUploadAPIRequest() *AlibabaTclsAelophyMerchantUserUploadAPIRequest {
+	return poolAlibabaTclsAelophyMerchantUserUploadAPIRequest.Get().(*AlibabaTclsAelophyMerchantUserUploadAPIRequest)
+}
+
+// ReleaseAlibabaTclsAelophyMerchantUserUploadAPIRequest 将 AlibabaTclsAelophyMerchantUserUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTclsAelophyMerchantUserUploadAPIRequest(v *AlibabaTclsAelophyMerchantUserUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaTclsAelophyMerchantUserUploadAPIRequest.Put(v)
 }

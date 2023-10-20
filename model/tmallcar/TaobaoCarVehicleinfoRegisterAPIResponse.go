@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoCarVehicleinfoRegisterAPIResponse struct {
 	model.CommonResponse
 	TaobaoCarVehicleinfoRegisterAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoCarVehicleinfoRegisterAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoCarVehicleinfoRegisterAPIResponseModel).Reset()
 }
 
 // TaobaoCarVehicleinfoRegisterAPIResponseModel is 全量车型导入 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoCarVehicleinfoRegisterAPIResponseModel struct {
 	Data bool `json:"data,omitempty" xml:"data,omitempty"`
 	// 是否成功
 	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoCarVehicleinfoRegisterAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultMsg = ""
+	m.ResultCode = 0
+	m.Data = false
+	m.ResultSuccess = false
+}
+
+var poolTaobaoCarVehicleinfoRegisterAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoCarVehicleinfoRegisterAPIResponse)
+	},
+}
+
+// GetTaobaoCarVehicleinfoRegisterAPIResponse 从 sync.Pool 获取 TaobaoCarVehicleinfoRegisterAPIResponse
+func GetTaobaoCarVehicleinfoRegisterAPIResponse() *TaobaoCarVehicleinfoRegisterAPIResponse {
+	return poolTaobaoCarVehicleinfoRegisterAPIResponse.Get().(*TaobaoCarVehicleinfoRegisterAPIResponse)
+}
+
+// ReleaseTaobaoCarVehicleinfoRegisterAPIResponse 将 TaobaoCarVehicleinfoRegisterAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoCarVehicleinfoRegisterAPIResponse(v *TaobaoCarVehicleinfoRegisterAPIResponse) {
+	v.Reset()
+	poolTaobaoCarVehicleinfoRegisterAPIResponse.Put(v)
 }

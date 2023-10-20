@@ -9,11 +9,6 @@ import (
 // alibaba.ssc.supplyplatform.serviceworker.register
 //
 // 工人注册
-func AlibabaSscSupplyplatformServiceworkerRegister(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServiceworkerRegisterAPIRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServiceworkerRegisterAPIResponse, error) {
-	var resp tmallservice.AlibabaSscSupplyplatformServiceworkerRegisterAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaSscSupplyplatformServiceworkerRegister(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServiceworkerRegisterAPIRequest, resp *tmallservice.AlibabaSscSupplyplatformServiceworkerRegisterAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

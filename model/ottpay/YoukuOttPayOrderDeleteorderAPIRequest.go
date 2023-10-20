@@ -2,6 +2,7 @@ package ottpay
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type YoukuOttPayOrderDeleteorderAPIRequest struct {
 // NewYoukuOttPayOrderDeleteorderRequest 初始化YoukuOttPayOrderDeleteorderAPIRequest对象
 func NewYoukuOttPayOrderDeleteorderRequest() *YoukuOttPayOrderDeleteorderAPIRequest {
 	return &YoukuOttPayOrderDeleteorderAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YoukuOttPayOrderDeleteorderAPIRequest) Reset() {
+	r._buyer = ""
+	r._productId = ""
+	r._productName = ""
+	r._orderNo = ""
+	r._callbackUrl = ""
+	r._extra = ""
+	r._originalOrderNo = ""
+	r._orderType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *YoukuOttPayOrderDeleteorderAPIRequest) SetOrderType(_orderType int64) e
 // GetOrderType OrderType Getter
 func (r YoukuOttPayOrderDeleteorderAPIRequest) GetOrderType() int64 {
 	return r._orderType
+}
+
+var poolYoukuOttPayOrderDeleteorderAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYoukuOttPayOrderDeleteorderRequest()
+	},
+}
+
+// GetYoukuOttPayOrderDeleteorderRequest 从 sync.Pool 获取 YoukuOttPayOrderDeleteorderAPIRequest
+func GetYoukuOttPayOrderDeleteorderAPIRequest() *YoukuOttPayOrderDeleteorderAPIRequest {
+	return poolYoukuOttPayOrderDeleteorderAPIRequest.Get().(*YoukuOttPayOrderDeleteorderAPIRequest)
+}
+
+// ReleaseYoukuOttPayOrderDeleteorderAPIRequest 将 YoukuOttPayOrderDeleteorderAPIRequest 放入 sync.Pool
+func ReleaseYoukuOttPayOrderDeleteorderAPIRequest(v *YoukuOttPayOrderDeleteorderAPIRequest) {
+	v.Reset()
+	poolYoukuOttPayOrderDeleteorderAPIRequest.Put(v)
 }

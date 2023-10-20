@@ -2,6 +2,7 @@ package crm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type TaobaoCrmGradeGetAPIRequest struct {
 // NewTaobaoCrmGradeGetRequest 初始化TaobaoCrmGradeGetAPIRequest对象
 func NewTaobaoCrmGradeGetRequest() *TaobaoCrmGradeGetAPIRequest {
 	return &TaobaoCrmGradeGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCrmGradeGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r TaobaoCrmGradeGetAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r TaobaoCrmGradeGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolTaobaoCrmGradeGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCrmGradeGetRequest()
+	},
+}
+
+// GetTaobaoCrmGradeGetRequest 从 sync.Pool 获取 TaobaoCrmGradeGetAPIRequest
+func GetTaobaoCrmGradeGetAPIRequest() *TaobaoCrmGradeGetAPIRequest {
+	return poolTaobaoCrmGradeGetAPIRequest.Get().(*TaobaoCrmGradeGetAPIRequest)
+}
+
+// ReleaseTaobaoCrmGradeGetAPIRequest 将 TaobaoCrmGradeGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCrmGradeGetAPIRequest(v *TaobaoCrmGradeGetAPIRequest) {
+	v.Reset()
+	poolTaobaoCrmGradeGetAPIRequest.Put(v)
 }

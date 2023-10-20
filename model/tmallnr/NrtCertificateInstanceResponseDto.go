@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // NrtCertificateInstanceResponseDto 结构体
 type NrtCertificateInstanceResponseDto struct {
 	// 创建时间
@@ -20,4 +24,29 @@ type NrtCertificateInstanceResponseDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 投放渠道
 	Channel int64 `json:"channel,omitempty" xml:"channel,omitempty"`
+}
+
+var poolNrtCertificateInstanceResponseDto = sync.Pool{
+	New: func() any {
+		return new(NrtCertificateInstanceResponseDto)
+	},
+}
+
+// GetNrtCertificateInstanceResponseDto() 从对象池中获取NrtCertificateInstanceResponseDto
+func GetNrtCertificateInstanceResponseDto() *NrtCertificateInstanceResponseDto {
+	return poolNrtCertificateInstanceResponseDto.Get().(*NrtCertificateInstanceResponseDto)
+}
+
+// ReleaseNrtCertificateInstanceResponseDto 释放NrtCertificateInstanceResponseDto
+func ReleaseNrtCertificateInstanceResponseDto(v *NrtCertificateInstanceResponseDto) {
+	v.CreateTime = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.CertificateCode = ""
+	v.ModifiedTime = ""
+	v.OpenId = ""
+	v.OutId = ""
+	v.Status = 0
+	v.Channel = 0
+	poolNrtCertificateInstanceResponseDto.Put(v)
 }

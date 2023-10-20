@@ -2,6 +2,7 @@ package ott
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type YunosTvscreenLgeLauncherGetAPIRequest struct {
 // NewYunosTvscreenLgeLauncherGetRequest 初始化YunosTvscreenLgeLauncherGetAPIRequest对象
 func NewYunosTvscreenLgeLauncherGetRequest() *YunosTvscreenLgeLauncherGetAPIRequest {
 	return &YunosTvscreenLgeLauncherGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvscreenLgeLauncherGetAPIRequest) Reset() {
+	r._property = ""
+	r._ip = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *YunosTvscreenLgeLauncherGetAPIRequest) SetIp(_ip string) error {
 // GetIp Ip Getter
 func (r YunosTvscreenLgeLauncherGetAPIRequest) GetIp() string {
 	return r._ip
+}
+
+var poolYunosTvscreenLgeLauncherGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvscreenLgeLauncherGetRequest()
+	},
+}
+
+// GetYunosTvscreenLgeLauncherGetRequest 从 sync.Pool 获取 YunosTvscreenLgeLauncherGetAPIRequest
+func GetYunosTvscreenLgeLauncherGetAPIRequest() *YunosTvscreenLgeLauncherGetAPIRequest {
+	return poolYunosTvscreenLgeLauncherGetAPIRequest.Get().(*YunosTvscreenLgeLauncherGetAPIRequest)
+}
+
+// ReleaseYunosTvscreenLgeLauncherGetAPIRequest 将 YunosTvscreenLgeLauncherGetAPIRequest 放入 sync.Pool
+func ReleaseYunosTvscreenLgeLauncherGetAPIRequest(v *YunosTvscreenLgeLauncherGetAPIRequest) {
+	v.Reset()
+	poolYunosTvscreenLgeLauncherGetAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // CodeStatusTypeDto 结构体
 type CodeStatusTypeDto struct {
 	// 当前码的所有父码和packageLevel
@@ -30,4 +34,34 @@ type CodeStatusTypeDto struct {
 	CheckCount int64 `json:"check_count,omitempty" xml:"check_count,omitempty"`
 	// 父码下子码的数量
 	IncludeProduceCodeCount int64 `json:"include_produce_code_count,omitempty" xml:"include_produce_code_count,omitempty"`
+}
+
+var poolCodeStatusTypeDto = sync.Pool{
+	New: func() any {
+		return new(CodeStatusTypeDto)
+	},
+}
+
+// GetCodeStatusTypeDto() 从对象池中获取CodeStatusTypeDto
+func GetCodeStatusTypeDto() *CodeStatusTypeDto {
+	return poolCodeStatusTypeDto.Get().(*CodeStatusTypeDto)
+}
+
+// ReleaseCodeStatusTypeDto 释放CodeStatusTypeDto
+func ReleaseCodeStatusTypeDto(v *CodeStatusTypeDto) {
+	v.ParentCodeInfoList = v.ParentCodeInfoList[:0]
+	v.ChildCodes = v.ChildCodes[:0]
+	v.VerificationType = ""
+	v.LastBizDate = ""
+	v.Code = ""
+	v.CodeStatusNum = ""
+	v.CodeStatus = ""
+	v.CodeStatusDesc = ""
+	v.ParentCode = ""
+	v.CodeCount = ""
+	v.CurrEntStr = ""
+	v.VerificationTypeStr = ""
+	v.CheckCount = 0
+	v.IncludeProduceCodeCount = 0
+	poolCodeStatusTypeDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package legalsuit
 
+import (
+	"sync"
+)
+
 // CommunicateModel 结构体
 type CommunicateModel struct {
 	// 沟通背景、沟通目的
@@ -20,4 +24,29 @@ type CommunicateModel struct {
 	CommunicateContent string `json:"communicate_content,omitempty" xml:"communicate_content,omitempty"`
 	// 下一步动作
 	Next string `json:"next,omitempty" xml:"next,omitempty"`
+}
+
+var poolCommunicateModel = sync.Pool{
+	New: func() any {
+		return new(CommunicateModel)
+	},
+}
+
+// GetCommunicateModel() 从对象池中获取CommunicateModel
+func GetCommunicateModel() *CommunicateModel {
+	return poolCommunicateModel.Get().(*CommunicateModel)
+}
+
+// ReleaseCommunicateModel 释放CommunicateModel
+func ReleaseCommunicateModel(v *CommunicateModel) {
+	v.CommunicateAim = ""
+	v.Contact = ""
+	v.UserName = ""
+	v.CommunicateType = ""
+	v.UnitName = ""
+	v.Department = ""
+	v.CommunicateTime = ""
+	v.CommunicateContent = ""
+	v.Next = ""
+	poolCommunicateModel.Put(v)
 }

@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscCrmCustomerCreateAPIRequest struct {
 // NewAlibabaAlscCrmCustomerCreateRequest 初始化AlibabaAlscCrmCustomerCreateAPIRequest对象
 func NewAlibabaAlscCrmCustomerCreateRequest() *AlibabaAlscCrmCustomerCreateAPIRequest {
 	return &AlibabaAlscCrmCustomerCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscCrmCustomerCreateAPIRequest) Reset() {
+	r._paramCustomerCreateOpenReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscCrmCustomerCreateAPIRequest) SetParamCustomerCreateOpenReq(_
 // GetParamCustomerCreateOpenReq ParamCustomerCreateOpenReq Getter
 func (r AlibabaAlscCrmCustomerCreateAPIRequest) GetParamCustomerCreateOpenReq() *CustomerCreateOpenReq {
 	return r._paramCustomerCreateOpenReq
+}
+
+var poolAlibabaAlscCrmCustomerCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscCrmCustomerCreateRequest()
+	},
+}
+
+// GetAlibabaAlscCrmCustomerCreateRequest 从 sync.Pool 获取 AlibabaAlscCrmCustomerCreateAPIRequest
+func GetAlibabaAlscCrmCustomerCreateAPIRequest() *AlibabaAlscCrmCustomerCreateAPIRequest {
+	return poolAlibabaAlscCrmCustomerCreateAPIRequest.Get().(*AlibabaAlscCrmCustomerCreateAPIRequest)
+}
+
+// ReleaseAlibabaAlscCrmCustomerCreateAPIRequest 将 AlibabaAlscCrmCustomerCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscCrmCustomerCreateAPIRequest(v *AlibabaAlscCrmCustomerCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscCrmCustomerCreateAPIRequest.Put(v)
 }

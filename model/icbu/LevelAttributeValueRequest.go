@@ -1,5 +1,9 @@
 package icbu
 
+import (
+	"sync"
+)
+
 // LevelAttributeValueRequest 结构体
 type LevelAttributeValueRequest struct {
 	// 类目属性id，放到数组第一个位置
@@ -8,4 +12,23 @@ type LevelAttributeValueRequest struct {
 	ValueId int64 `json:"value_id,omitempty" xml:"value_id,omitempty"`
 	// 必填；要查询的属性值所属发布类目
 	CatId int64 `json:"cat_id,omitempty" xml:"cat_id,omitempty"`
+}
+
+var poolLevelAttributeValueRequest = sync.Pool{
+	New: func() any {
+		return new(LevelAttributeValueRequest)
+	},
+}
+
+// GetLevelAttributeValueRequest() 从对象池中获取LevelAttributeValueRequest
+func GetLevelAttributeValueRequest() *LevelAttributeValueRequest {
+	return poolLevelAttributeValueRequest.Get().(*LevelAttributeValueRequest)
+}
+
+// ReleaseLevelAttributeValueRequest 释放LevelAttributeValueRequest
+func ReleaseLevelAttributeValueRequest(v *LevelAttributeValueRequest) {
+	v.AttrId = v.AttrId[:0]
+	v.ValueId = 0
+	v.CatId = 0
+	poolLevelAttributeValueRequest.Put(v)
 }

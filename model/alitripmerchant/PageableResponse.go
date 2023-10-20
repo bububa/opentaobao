@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // PageableResponse 结构体
 type PageableResponse struct {
 	// 返回类型
@@ -24,4 +28,31 @@ type PageableResponse struct {
 	HasNextPage bool `json:"has_next_page,omitempty" xml:"has_next_page,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolPageableResponse = sync.Pool{
+	New: func() any {
+		return new(PageableResponse)
+	},
+}
+
+// GetPageableResponse() 从对象池中获取PageableResponse
+func GetPageableResponse() *PageableResponse {
+	return poolPageableResponse.Get().(*PageableResponse)
+}
+
+// ReleasePageableResponse 释放PageableResponse
+func ReleasePageableResponse(v *PageableResponse) {
+	v.Contents = v.Contents[:0]
+	v.Content = v.Content[:0]
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Size = 0
+	v.PageNo = 0
+	v.PageSize = 0
+	v.TotalPageNum = 0
+	v.TotalCount = 0
+	v.HasNextPage = false
+	v.Success = false
+	poolPageableResponse.Put(v)
 }

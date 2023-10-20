@@ -9,11 +9,6 @@ import (
 // alibaba.diafi.token.check
 //
 // 天朗token校验
-func AlibabaDiafiTokenCheck(clt *core.SDKClient, req *security.AlibabaDiafiTokenCheckAPIRequest, session string) (*security.AlibabaDiafiTokenCheckAPIResponse, error) {
-	var resp security.AlibabaDiafiTokenCheckAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDiafiTokenCheck(clt *core.SDKClient, req *security.AlibabaDiafiTokenCheckAPIRequest, resp *security.AlibabaDiafiTokenCheckAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

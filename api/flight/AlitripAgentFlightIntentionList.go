@@ -9,11 +9,6 @@ import (
 // alitrip.agent.flight.intention.list
 //
 // 意向单列表
-func AlitripAgentFlightIntentionList(clt *core.SDKClient, req *flight.AlitripAgentFlightIntentionListAPIRequest, session string) (*flight.AlitripAgentFlightIntentionListAPIResponse, error) {
-	var resp flight.AlitripAgentFlightIntentionListAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripAgentFlightIntentionList(clt *core.SDKClient, req *flight.AlitripAgentFlightIntentionListAPIRequest, resp *flight.AlitripAgentFlightIntentionListAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

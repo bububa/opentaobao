@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoJstAstrolabeOrderstatusSyncAPIRequest struct {
 // NewTaobaoJstAstrolabeOrderstatusSyncRequest 初始化TaobaoJstAstrolabeOrderstatusSyncAPIRequest对象
 func NewTaobaoJstAstrolabeOrderstatusSyncRequest() *TaobaoJstAstrolabeOrderstatusSyncAPIRequest {
 	return &TaobaoJstAstrolabeOrderstatusSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJstAstrolabeOrderstatusSyncAPIRequest) Reset() {
+	r._subOrderIds = r._subOrderIds[:0]
+	r._actionTime = ""
+	r._operator = ""
+	r._type = ""
+	r._status = ""
+	r._storeId = 0
+	r._parentOrderCode = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoJstAstrolabeOrderstatusSyncAPIRequest) SetParentOrderCode(_parent
 // GetParentOrderCode ParentOrderCode Getter
 func (r TaobaoJstAstrolabeOrderstatusSyncAPIRequest) GetParentOrderCode() int64 {
 	return r._parentOrderCode
+}
+
+var poolTaobaoJstAstrolabeOrderstatusSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJstAstrolabeOrderstatusSyncRequest()
+	},
+}
+
+// GetTaobaoJstAstrolabeOrderstatusSyncRequest 从 sync.Pool 获取 TaobaoJstAstrolabeOrderstatusSyncAPIRequest
+func GetTaobaoJstAstrolabeOrderstatusSyncAPIRequest() *TaobaoJstAstrolabeOrderstatusSyncAPIRequest {
+	return poolTaobaoJstAstrolabeOrderstatusSyncAPIRequest.Get().(*TaobaoJstAstrolabeOrderstatusSyncAPIRequest)
+}
+
+// ReleaseTaobaoJstAstrolabeOrderstatusSyncAPIRequest 将 TaobaoJstAstrolabeOrderstatusSyncAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJstAstrolabeOrderstatusSyncAPIRequest(v *TaobaoJstAstrolabeOrderstatusSyncAPIRequest) {
+	v.Reset()
+	poolTaobaoJstAstrolabeOrderstatusSyncAPIRequest.Put(v)
 }

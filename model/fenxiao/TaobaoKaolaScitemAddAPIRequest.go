@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoKaolaScitemAddAPIRequest struct {
 // NewTaobaoKaolaScitemAddRequest 初始化TaobaoKaolaScitemAddAPIRequest对象
 func NewTaobaoKaolaScitemAddRequest() *TaobaoKaolaScitemAddAPIRequest {
 	return &TaobaoKaolaScitemAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoKaolaScitemAddAPIRequest) Reset() {
+	r._cnsku = nil
+	r._option = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoKaolaScitemAddAPIRequest) SetOption(_option *AddCnskuOption) erro
 // GetOption Option Getter
 func (r TaobaoKaolaScitemAddAPIRequest) GetOption() *AddCnskuOption {
 	return r._option
+}
+
+var poolTaobaoKaolaScitemAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoKaolaScitemAddRequest()
+	},
+}
+
+// GetTaobaoKaolaScitemAddRequest 从 sync.Pool 获取 TaobaoKaolaScitemAddAPIRequest
+func GetTaobaoKaolaScitemAddAPIRequest() *TaobaoKaolaScitemAddAPIRequest {
+	return poolTaobaoKaolaScitemAddAPIRequest.Get().(*TaobaoKaolaScitemAddAPIRequest)
+}
+
+// ReleaseTaobaoKaolaScitemAddAPIRequest 将 TaobaoKaolaScitemAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoKaolaScitemAddAPIRequest(v *TaobaoKaolaScitemAddAPIRequest) {
+	v.Reset()
+	poolTaobaoKaolaScitemAddAPIRequest.Put(v)
 }

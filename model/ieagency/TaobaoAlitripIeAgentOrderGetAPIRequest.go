@@ -2,6 +2,7 @@ package ieagency
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoAlitripIeAgentOrderGetAPIRequest struct {
 // NewTaobaoAlitripIeAgentOrderGetRequest 初始化TaobaoAlitripIeAgentOrderGetAPIRequest对象
 func NewTaobaoAlitripIeAgentOrderGetRequest() *TaobaoAlitripIeAgentOrderGetAPIRequest {
 	return &TaobaoAlitripIeAgentOrderGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripIeAgentOrderGetAPIRequest) Reset() {
+	r._agentId = 0
+	r._tradeOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoAlitripIeAgentOrderGetAPIRequest) SetTradeOrderId(_tradeOrderId i
 // GetTradeOrderId TradeOrderId Getter
 func (r TaobaoAlitripIeAgentOrderGetAPIRequest) GetTradeOrderId() int64 {
 	return r._tradeOrderId
+}
+
+var poolTaobaoAlitripIeAgentOrderGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripIeAgentOrderGetRequest()
+	},
+}
+
+// GetTaobaoAlitripIeAgentOrderGetRequest 从 sync.Pool 获取 TaobaoAlitripIeAgentOrderGetAPIRequest
+func GetTaobaoAlitripIeAgentOrderGetAPIRequest() *TaobaoAlitripIeAgentOrderGetAPIRequest {
+	return poolTaobaoAlitripIeAgentOrderGetAPIRequest.Get().(*TaobaoAlitripIeAgentOrderGetAPIRequest)
+}
+
+// ReleaseTaobaoAlitripIeAgentOrderGetAPIRequest 将 TaobaoAlitripIeAgentOrderGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripIeAgentOrderGetAPIRequest(v *TaobaoAlitripIeAgentOrderGetAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripIeAgentOrderGetAPIRequest.Put(v)
 }

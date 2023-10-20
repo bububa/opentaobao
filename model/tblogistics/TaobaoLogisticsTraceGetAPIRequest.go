@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsTraceGetAPIRequest struct {
 // NewTaobaoLogisticsTraceGetRequest 初始化TaobaoLogisticsTraceGetAPIRequest对象
 func NewTaobaoLogisticsTraceGetRequest() *TaobaoLogisticsTraceGetAPIRequest {
 	return &TaobaoLogisticsTraceGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsTraceGetAPIRequest) Reset() {
+	r._tid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsTraceGetAPIRequest) SetTid(_tid int64) error {
 // GetTid Tid Getter
 func (r TaobaoLogisticsTraceGetAPIRequest) GetTid() int64 {
 	return r._tid
+}
+
+var poolTaobaoLogisticsTraceGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsTraceGetRequest()
+	},
+}
+
+// GetTaobaoLogisticsTraceGetRequest 从 sync.Pool 获取 TaobaoLogisticsTraceGetAPIRequest
+func GetTaobaoLogisticsTraceGetAPIRequest() *TaobaoLogisticsTraceGetAPIRequest {
+	return poolTaobaoLogisticsTraceGetAPIRequest.Get().(*TaobaoLogisticsTraceGetAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsTraceGetAPIRequest 将 TaobaoLogisticsTraceGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsTraceGetAPIRequest(v *TaobaoLogisticsTraceGetAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsTraceGetAPIRequest.Put(v)
 }

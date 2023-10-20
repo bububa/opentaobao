@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YunosOsupdateAppversionInfoAPIRequest struct {
 // NewYunosOsupdateAppversionInfoRequest 初始化YunosOsupdateAppversionInfoAPIRequest对象
 func NewYunosOsupdateAppversionInfoRequest() *YunosOsupdateAppversionInfoAPIRequest {
 	return &YunosOsupdateAppversionInfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosOsupdateAppversionInfoAPIRequest) Reset() {
+	r._id = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YunosOsupdateAppversionInfoAPIRequest) SetId(_id int64) error {
 // GetId Id Getter
 func (r YunosOsupdateAppversionInfoAPIRequest) GetId() int64 {
 	return r._id
+}
+
+var poolYunosOsupdateAppversionInfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosOsupdateAppversionInfoRequest()
+	},
+}
+
+// GetYunosOsupdateAppversionInfoRequest 从 sync.Pool 获取 YunosOsupdateAppversionInfoAPIRequest
+func GetYunosOsupdateAppversionInfoAPIRequest() *YunosOsupdateAppversionInfoAPIRequest {
+	return poolYunosOsupdateAppversionInfoAPIRequest.Get().(*YunosOsupdateAppversionInfoAPIRequest)
+}
+
+// ReleaseYunosOsupdateAppversionInfoAPIRequest 将 YunosOsupdateAppversionInfoAPIRequest 放入 sync.Pool
+func ReleaseYunosOsupdateAppversionInfoAPIRequest(v *YunosOsupdateAppversionInfoAPIRequest) {
+	v.Reset()
+	poolYunosOsupdateAppversionInfoAPIRequest.Put(v)
 }

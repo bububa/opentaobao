@@ -2,6 +2,7 @@ package flight
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripAgentFlightSellRefundApproveAPIRequest struct {
 // NewAlitripAgentFlightSellRefundApproveRequest 初始化AlitripAgentFlightSellRefundApproveAPIRequest对象
 func NewAlitripAgentFlightSellRefundApproveRequest() *AlitripAgentFlightSellRefundApproveAPIRequest {
 	return &AlitripAgentFlightSellRefundApproveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripAgentFlightSellRefundApproveAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripAgentFlightSellRefundApproveAPIRequest) SetParam(_param *RefundA
 // GetParam Param Getter
 func (r AlitripAgentFlightSellRefundApproveAPIRequest) GetParam() *RefundApproveRequestDto {
 	return r._param
+}
+
+var poolAlitripAgentFlightSellRefundApproveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripAgentFlightSellRefundApproveRequest()
+	},
+}
+
+// GetAlitripAgentFlightSellRefundApproveRequest 从 sync.Pool 获取 AlitripAgentFlightSellRefundApproveAPIRequest
+func GetAlitripAgentFlightSellRefundApproveAPIRequest() *AlitripAgentFlightSellRefundApproveAPIRequest {
+	return poolAlitripAgentFlightSellRefundApproveAPIRequest.Get().(*AlitripAgentFlightSellRefundApproveAPIRequest)
+}
+
+// ReleaseAlitripAgentFlightSellRefundApproveAPIRequest 将 AlitripAgentFlightSellRefundApproveAPIRequest 放入 sync.Pool
+func ReleaseAlitripAgentFlightSellRefundApproveAPIRequest(v *AlitripAgentFlightSellRefundApproveAPIRequest) {
+	v.Reset()
+	poolAlitripAgentFlightSellRefundApproveAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAliqinFcVoiceGetdetailAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinFcVoiceGetdetailAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAliqinFcVoiceGetdetailAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAliqinFcVoiceGetdetailAPIResponseModel).Reset()
 }
 
 // AlibabaAliqinFcVoiceGetdetailAPIResponseModel is 获取呼叫详情 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAliqinFcVoiceGetdetailAPIResponseModel struct {
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// 请求是否成功
 	AlicomSuccess bool `json:"alicom_success,omitempty" xml:"alicom_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAliqinFcVoiceGetdetailAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.AlicomCode = ""
+	m.AlicomMsg = ""
+	m.Model = ""
+	m.AlicomSuccess = false
+}
+
+var poolAlibabaAliqinFcVoiceGetdetailAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAliqinFcVoiceGetdetailAPIResponse)
+	},
+}
+
+// GetAlibabaAliqinFcVoiceGetdetailAPIResponse 从 sync.Pool 获取 AlibabaAliqinFcVoiceGetdetailAPIResponse
+func GetAlibabaAliqinFcVoiceGetdetailAPIResponse() *AlibabaAliqinFcVoiceGetdetailAPIResponse {
+	return poolAlibabaAliqinFcVoiceGetdetailAPIResponse.Get().(*AlibabaAliqinFcVoiceGetdetailAPIResponse)
+}
+
+// ReleaseAlibabaAliqinFcVoiceGetdetailAPIResponse 将 AlibabaAliqinFcVoiceGetdetailAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAliqinFcVoiceGetdetailAPIResponse(v *AlibabaAliqinFcVoiceGetdetailAPIResponse) {
+	v.Reset()
+	poolAlibabaAliqinFcVoiceGetdetailAPIResponse.Put(v)
 }

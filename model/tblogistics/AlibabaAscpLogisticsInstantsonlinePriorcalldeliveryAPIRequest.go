@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type AlibabaAscpLogisticsInstantsonlinePriorcalldeliveryAPIRequest struct {
 // NewAlibabaAscpLogisticsInstantsonlinePriorcalldeliveryRequest 初始化AlibabaAscpLogisticsInstantsonlinePriorcalldeliveryAPIRequest对象
 func NewAlibabaAscpLogisticsInstantsonlinePriorcalldeliveryRequest() *AlibabaAscpLogisticsInstantsonlinePriorcalldeliveryAPIRequest {
 	return &AlibabaAscpLogisticsInstantsonlinePriorcalldeliveryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpLogisticsInstantsonlinePriorcalldeliveryAPIRequest) Reset() {
+	r._itemList = r._itemList[:0]
+	r._outOrderId = ""
+	r._bizType = ""
+	r._tid = 0
+	r._sender = nil
+	r._receiver = nil
+	r._totalItemValue = 0
+	r._totalItemActualValue = 0
+	r._totalWeight = 0
+	r._defaultTradeReceiver = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *AlibabaAscpLogisticsInstantsonlinePriorcalldeliveryAPIRequest) SetDefau
 // GetDefaultTradeReceiver DefaultTradeReceiver Getter
 func (r AlibabaAscpLogisticsInstantsonlinePriorcalldeliveryAPIRequest) GetDefaultTradeReceiver() bool {
 	return r._defaultTradeReceiver
+}
+
+var poolAlibabaAscpLogisticsInstantsonlinePriorcalldeliveryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpLogisticsInstantsonlinePriorcalldeliveryRequest()
+	},
+}
+
+// GetAlibabaAscpLogisticsInstantsonlinePriorcalldeliveryRequest 从 sync.Pool 获取 AlibabaAscpLogisticsInstantsonlinePriorcalldeliveryAPIRequest
+func GetAlibabaAscpLogisticsInstantsonlinePriorcalldeliveryAPIRequest() *AlibabaAscpLogisticsInstantsonlinePriorcalldeliveryAPIRequest {
+	return poolAlibabaAscpLogisticsInstantsonlinePriorcalldeliveryAPIRequest.Get().(*AlibabaAscpLogisticsInstantsonlinePriorcalldeliveryAPIRequest)
+}
+
+// ReleaseAlibabaAscpLogisticsInstantsonlinePriorcalldeliveryAPIRequest 将 AlibabaAscpLogisticsInstantsonlinePriorcalldeliveryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpLogisticsInstantsonlinePriorcalldeliveryAPIRequest(v *AlibabaAscpLogisticsInstantsonlinePriorcalldeliveryAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpLogisticsInstantsonlinePriorcalldeliveryAPIRequest.Put(v)
 }

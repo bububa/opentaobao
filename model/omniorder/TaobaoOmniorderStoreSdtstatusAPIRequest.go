@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoOmniorderStoreSdtstatusAPIRequest struct {
 // NewTaobaoOmniorderStoreSdtstatusRequest 初始化TaobaoOmniorderStoreSdtstatusAPIRequest对象
 func NewTaobaoOmniorderStoreSdtstatusRequest() *TaobaoOmniorderStoreSdtstatusAPIRequest {
 	return &TaobaoOmniorderStoreSdtstatusAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOmniorderStoreSdtstatusAPIRequest) Reset() {
+	r._packageId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoOmniorderStoreSdtstatusAPIRequest) SetPackageId(_packageId int64)
 // GetPackageId PackageId Getter
 func (r TaobaoOmniorderStoreSdtstatusAPIRequest) GetPackageId() int64 {
 	return r._packageId
+}
+
+var poolTaobaoOmniorderStoreSdtstatusAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOmniorderStoreSdtstatusRequest()
+	},
+}
+
+// GetTaobaoOmniorderStoreSdtstatusRequest 从 sync.Pool 获取 TaobaoOmniorderStoreSdtstatusAPIRequest
+func GetTaobaoOmniorderStoreSdtstatusAPIRequest() *TaobaoOmniorderStoreSdtstatusAPIRequest {
+	return poolTaobaoOmniorderStoreSdtstatusAPIRequest.Get().(*TaobaoOmniorderStoreSdtstatusAPIRequest)
+}
+
+// ReleaseTaobaoOmniorderStoreSdtstatusAPIRequest 将 TaobaoOmniorderStoreSdtstatusAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOmniorderStoreSdtstatusAPIRequest(v *TaobaoOmniorderStoreSdtstatusAPIRequest) {
+	v.Reset()
+	poolTaobaoOmniorderStoreSdtstatusAPIRequest.Put(v)
 }

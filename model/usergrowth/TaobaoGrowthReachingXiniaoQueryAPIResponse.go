@@ -2,6 +2,7 @@ package usergrowth
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoGrowthReachingXiniaoQueryAPIResponse struct {
 	TaobaoGrowthReachingXiniaoQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoGrowthReachingXiniaoQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoGrowthReachingXiniaoQueryAPIResponseModel).Reset()
+}
+
 // TaobaoGrowthReachingXiniaoQueryAPIResponseModel is 查询溪鸟推荐信息数据 成功返回结果
 type TaobaoGrowthReachingXiniaoQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"growth_reaching_xiniao_query_response"`
@@ -26,4 +33,29 @@ type TaobaoGrowthReachingXiniaoQueryAPIResponseModel struct {
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
 	// 是否展现
 	IsOffering bool `json:"is_offering,omitempty" xml:"is_offering,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoGrowthReachingXiniaoQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Suggestions = m.Suggestions[:0]
+	m.Type = ""
+	m.IsOffering = false
+}
+
+var poolTaobaoGrowthReachingXiniaoQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoGrowthReachingXiniaoQueryAPIResponse)
+	},
+}
+
+// GetTaobaoGrowthReachingXiniaoQueryAPIResponse 从 sync.Pool 获取 TaobaoGrowthReachingXiniaoQueryAPIResponse
+func GetTaobaoGrowthReachingXiniaoQueryAPIResponse() *TaobaoGrowthReachingXiniaoQueryAPIResponse {
+	return poolTaobaoGrowthReachingXiniaoQueryAPIResponse.Get().(*TaobaoGrowthReachingXiniaoQueryAPIResponse)
+}
+
+// ReleaseTaobaoGrowthReachingXiniaoQueryAPIResponse 将 TaobaoGrowthReachingXiniaoQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoGrowthReachingXiniaoQueryAPIResponse(v *TaobaoGrowthReachingXiniaoQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoGrowthReachingXiniaoQueryAPIResponse.Put(v)
 }

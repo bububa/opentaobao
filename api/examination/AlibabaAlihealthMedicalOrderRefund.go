@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.medical.order.refund
 //
 // 退款接口
-func AlibabaAlihealthMedicalOrderRefund(clt *core.SDKClient, req *examination.AlibabaAlihealthMedicalOrderRefundAPIRequest, session string) (*examination.AlibabaAlihealthMedicalOrderRefundAPIResponse, error) {
-	var resp examination.AlibabaAlihealthMedicalOrderRefundAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthMedicalOrderRefund(clt *core.SDKClient, req *examination.AlibabaAlihealthMedicalOrderRefundAPIRequest, resp *examination.AlibabaAlihealthMedicalOrderRefundAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

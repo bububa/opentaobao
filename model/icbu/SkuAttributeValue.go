@@ -1,5 +1,9 @@
 package icbu
 
+import (
+	"sync"
+)
+
 // SkuAttributeValue 结构体
 type SkuAttributeValue struct {
 	// 自定义的属性值名称
@@ -12,4 +16,25 @@ type SkuAttributeValue struct {
 	SystemValueName string `json:"system_value_name,omitempty" xml:"system_value_name,omitempty"`
 	// 属性值ID
 	ValueId int64 `json:"value_id,omitempty" xml:"value_id,omitempty"`
+}
+
+var poolSkuAttributeValue = sync.Pool{
+	New: func() any {
+		return new(SkuAttributeValue)
+	},
+}
+
+// GetSkuAttributeValue() 从对象池中获取SkuAttributeValue
+func GetSkuAttributeValue() *SkuAttributeValue {
+	return poolSkuAttributeValue.Get().(*SkuAttributeValue)
+}
+
+// ReleaseSkuAttributeValue 释放SkuAttributeValue
+func ReleaseSkuAttributeValue(v *SkuAttributeValue) {
+	v.CustomValueName = ""
+	v.ImageUrl = ""
+	v.MarkInfo = ""
+	v.SystemValueName = ""
+	v.ValueId = 0
+	poolSkuAttributeValue.Put(v)
 }

@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // AlibabaAscpSuborderEstcontimeModifyResult 结构体
 type AlibabaAscpSuborderEstcontimeModifyResult struct {
 	// 对用户展示的错误信息
@@ -12,4 +16,25 @@ type AlibabaAscpSuborderEstcontimeModifyResult struct {
 	Value *EstConTimeModifyDto `json:"value,omitempty" xml:"value,omitempty"`
 	// 调用是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaAscpSuborderEstcontimeModifyResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaAscpSuborderEstcontimeModifyResult)
+	},
+}
+
+// GetAlibabaAscpSuborderEstcontimeModifyResult() 从对象池中获取AlibabaAscpSuborderEstcontimeModifyResult
+func GetAlibabaAscpSuborderEstcontimeModifyResult() *AlibabaAscpSuborderEstcontimeModifyResult {
+	return poolAlibabaAscpSuborderEstcontimeModifyResult.Get().(*AlibabaAscpSuborderEstcontimeModifyResult)
+}
+
+// ReleaseAlibabaAscpSuborderEstcontimeModifyResult 释放AlibabaAscpSuborderEstcontimeModifyResult
+func ReleaseAlibabaAscpSuborderEstcontimeModifyResult(v *AlibabaAscpSuborderEstcontimeModifyResult) {
+	v.DisplayMsg = ""
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Value = nil
+	v.Success = false
+	poolAlibabaAscpSuborderEstcontimeModifyResult.Put(v)
 }

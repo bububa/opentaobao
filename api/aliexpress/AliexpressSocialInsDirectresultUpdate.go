@@ -9,11 +9,6 @@ import (
 // aliexpress.social.ins.directresult.update
 //
 // ISV更新INS私信发送的结果
-func AliexpressSocialInsDirectresultUpdate(clt *core.SDKClient, req *aliexpress.AliexpressSocialInsDirectresultUpdateAPIRequest, session string) (*aliexpress.AliexpressSocialInsDirectresultUpdateAPIResponse, error) {
-	var resp aliexpress.AliexpressSocialInsDirectresultUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressSocialInsDirectresultUpdate(clt *core.SDKClient, req *aliexpress.AliexpressSocialInsDirectresultUpdateAPIRequest, resp *aliexpress.AliexpressSocialInsDirectresultUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

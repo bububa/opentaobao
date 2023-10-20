@@ -2,6 +2,7 @@ package examination
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthExaminationAgreementListAPIRequest struct {
 // NewAlibabaAlihealthExaminationAgreementListRequest 初始化AlibabaAlihealthExaminationAgreementListAPIRequest对象
 func NewAlibabaAlihealthExaminationAgreementListRequest() *AlibabaAlihealthExaminationAgreementListAPIRequest {
 	return &AlibabaAlihealthExaminationAgreementListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthExaminationAgreementListAPIRequest) Reset() {
+	r._storeCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthExaminationAgreementListAPIRequest) SetStoreCode(_store
 // GetStoreCode StoreCode Getter
 func (r AlibabaAlihealthExaminationAgreementListAPIRequest) GetStoreCode() string {
 	return r._storeCode
+}
+
+var poolAlibabaAlihealthExaminationAgreementListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthExaminationAgreementListRequest()
+	},
+}
+
+// GetAlibabaAlihealthExaminationAgreementListRequest 从 sync.Pool 获取 AlibabaAlihealthExaminationAgreementListAPIRequest
+func GetAlibabaAlihealthExaminationAgreementListAPIRequest() *AlibabaAlihealthExaminationAgreementListAPIRequest {
+	return poolAlibabaAlihealthExaminationAgreementListAPIRequest.Get().(*AlibabaAlihealthExaminationAgreementListAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthExaminationAgreementListAPIRequest 将 AlibabaAlihealthExaminationAgreementListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthExaminationAgreementListAPIRequest(v *AlibabaAlihealthExaminationAgreementListAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthExaminationAgreementListAPIRequest.Put(v)
 }

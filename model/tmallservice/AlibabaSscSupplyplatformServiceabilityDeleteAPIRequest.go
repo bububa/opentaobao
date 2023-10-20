@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaSscSupplyplatformServiceabilityDeleteAPIRequest struct {
 // NewAlibabaSscSupplyplatformServiceabilityDeleteRequest 初始化AlibabaSscSupplyplatformServiceabilityDeleteAPIRequest对象
 func NewAlibabaSscSupplyplatformServiceabilityDeleteRequest() *AlibabaSscSupplyplatformServiceabilityDeleteAPIRequest {
 	return &AlibabaSscSupplyplatformServiceabilityDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSscSupplyplatformServiceabilityDeleteAPIRequest) Reset() {
+	r._providerType = ""
+	r._providerId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaSscSupplyplatformServiceabilityDeleteAPIRequest) SetProviderId(_
 // GetProviderId ProviderId Getter
 func (r AlibabaSscSupplyplatformServiceabilityDeleteAPIRequest) GetProviderId() int64 {
 	return r._providerId
+}
+
+var poolAlibabaSscSupplyplatformServiceabilityDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSscSupplyplatformServiceabilityDeleteRequest()
+	},
+}
+
+// GetAlibabaSscSupplyplatformServiceabilityDeleteRequest 从 sync.Pool 获取 AlibabaSscSupplyplatformServiceabilityDeleteAPIRequest
+func GetAlibabaSscSupplyplatformServiceabilityDeleteAPIRequest() *AlibabaSscSupplyplatformServiceabilityDeleteAPIRequest {
+	return poolAlibabaSscSupplyplatformServiceabilityDeleteAPIRequest.Get().(*AlibabaSscSupplyplatformServiceabilityDeleteAPIRequest)
+}
+
+// ReleaseAlibabaSscSupplyplatformServiceabilityDeleteAPIRequest 将 AlibabaSscSupplyplatformServiceabilityDeleteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSscSupplyplatformServiceabilityDeleteAPIRequest(v *AlibabaSscSupplyplatformServiceabilityDeleteAPIRequest) {
+	v.Reset()
+	poolAlibabaSscSupplyplatformServiceabilityDeleteAPIRequest.Put(v)
 }

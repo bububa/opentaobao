@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // OnsiteTradeQueryResponse 结构体
 type OnsiteTradeQueryResponse struct {
 	// 商户的实收资金渠道明细信息列表。
@@ -28,4 +32,33 @@ type OnsiteTradeQueryResponse struct {
 	StoreTotalReceivedFee int64 `json:"store_total_received_fee,omitempty" xml:"store_total_received_fee,omitempty"`
 	// 本次交易支付的订单金额，单位为人民币（分）。必然返回
 	TotalAmount int64 `json:"total_amount,omitempty" xml:"total_amount,omitempty"`
+}
+
+var poolOnsiteTradeQueryResponse = sync.Pool{
+	New: func() any {
+		return new(OnsiteTradeQueryResponse)
+	},
+}
+
+// GetOnsiteTradeQueryResponse() 从对象池中获取OnsiteTradeQueryResponse
+func GetOnsiteTradeQueryResponse() *OnsiteTradeQueryResponse {
+	return poolOnsiteTradeQueryResponse.Get().(*OnsiteTradeQueryResponse)
+}
+
+// ReleaseOnsiteTradeQueryResponse 释放OnsiteTradeQueryResponse
+func ReleaseOnsiteTradeQueryResponse(v *OnsiteTradeQueryResponse) {
+	v.FundBillList = v.FundBillList[:0]
+	v.BuyerNick = ""
+	v.GmtPayment = ""
+	v.OutTradeNo = ""
+	v.TradeNo = ""
+	v.TradeStatus = ""
+	v.ExtendParams = ""
+	v.AuthCodeSource = ""
+	v.BuyerTotalFundFee = 0
+	v.BuyerTotalPromotionFee = 0
+	v.StoreTotalMarketingFee = 0
+	v.StoreTotalReceivedFee = 0
+	v.TotalAmount = 0
+	poolOnsiteTradeQueryResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package foodscan
 
+import (
+	"sync"
+)
+
 // AlibabaFootscanMiniQueryMobilereportData 结构体
 type AlibabaFootscanMiniQueryMobilereportData struct {
 	// 右脚趾围
@@ -18,4 +22,28 @@ type AlibabaFootscanMiniQueryMobilereportData struct {
 	LeftWidth string `json:"left_width,omitempty" xml:"left_width,omitempty"`
 	// 左脚长
 	LeftLength string `json:"left_length,omitempty" xml:"left_length,omitempty"`
+}
+
+var poolAlibabaFootscanMiniQueryMobilereportData = sync.Pool{
+	New: func() any {
+		return new(AlibabaFootscanMiniQueryMobilereportData)
+	},
+}
+
+// GetAlibabaFootscanMiniQueryMobilereportData() 从对象池中获取AlibabaFootscanMiniQueryMobilereportData
+func GetAlibabaFootscanMiniQueryMobilereportData() *AlibabaFootscanMiniQueryMobilereportData {
+	return poolAlibabaFootscanMiniQueryMobilereportData.Get().(*AlibabaFootscanMiniQueryMobilereportData)
+}
+
+// ReleaseAlibabaFootscanMiniQueryMobilereportData 释放AlibabaFootscanMiniQueryMobilereportData
+func ReleaseAlibabaFootscanMiniQueryMobilereportData(v *AlibabaFootscanMiniQueryMobilereportData) {
+	v.RightZhiwei = ""
+	v.RightFuwei = ""
+	v.RightWidth = ""
+	v.RightLength = ""
+	v.LeftZhiwei = ""
+	v.LeftFuwei = ""
+	v.LeftWidth = ""
+	v.LeftLength = ""
+	poolAlibabaFootscanMiniQueryMobilereportData.Put(v)
 }

@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaAliqinTaVoiceNumDoublecallAPIRequest struct {
 // NewAlibabaAliqinTaVoiceNumDoublecallRequest 初始化AlibabaAliqinTaVoiceNumDoublecallAPIRequest对象
 func NewAlibabaAliqinTaVoiceNumDoublecallRequest() *AlibabaAliqinTaVoiceNumDoublecallAPIRequest {
 	return &AlibabaAliqinTaVoiceNumDoublecallAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinTaVoiceNumDoublecallAPIRequest) Reset() {
+	r._callerNum = ""
+	r._callerShowNum = ""
+	r._calledNum = ""
+	r._calledShowNum = ""
+	r._extend = ""
+	r._sessionTimeOut = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaAliqinTaVoiceNumDoublecallAPIRequest) SetSessionTimeOut(_session
 // GetSessionTimeOut SessionTimeOut Getter
 func (r AlibabaAliqinTaVoiceNumDoublecallAPIRequest) GetSessionTimeOut() string {
 	return r._sessionTimeOut
+}
+
+var poolAlibabaAliqinTaVoiceNumDoublecallAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinTaVoiceNumDoublecallRequest()
+	},
+}
+
+// GetAlibabaAliqinTaVoiceNumDoublecallRequest 从 sync.Pool 获取 AlibabaAliqinTaVoiceNumDoublecallAPIRequest
+func GetAlibabaAliqinTaVoiceNumDoublecallAPIRequest() *AlibabaAliqinTaVoiceNumDoublecallAPIRequest {
+	return poolAlibabaAliqinTaVoiceNumDoublecallAPIRequest.Get().(*AlibabaAliqinTaVoiceNumDoublecallAPIRequest)
+}
+
+// ReleaseAlibabaAliqinTaVoiceNumDoublecallAPIRequest 将 AlibabaAliqinTaVoiceNumDoublecallAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinTaVoiceNumDoublecallAPIRequest(v *AlibabaAliqinTaVoiceNumDoublecallAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinTaVoiceNumDoublecallAPIRequest.Put(v)
 }

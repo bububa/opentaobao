@@ -2,6 +2,7 @@ package cloudgame
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest struct {
 // NewAlibabaCloudgameInteractiveGamePlayerStatusGetRequest 初始化AlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest对象
 func NewAlibabaCloudgameInteractiveGamePlayerStatusGetRequest() *AlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest {
 	return &AlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest) Reset() {
+	r._userGameStatusGetRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest) SetUserGameSt
 // GetUserGameStatusGetRequest UserGameStatusGetRequest Getter
 func (r AlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest) GetUserGameStatusGetRequest() *UserGameStatusGetRequest {
 	return r._userGameStatusGetRequest
+}
+
+var poolAlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCloudgameInteractiveGamePlayerStatusGetRequest()
+	},
+}
+
+// GetAlibabaCloudgameInteractiveGamePlayerStatusGetRequest 从 sync.Pool 获取 AlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest
+func GetAlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest() *AlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest {
+	return poolAlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest.Get().(*AlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest)
+}
+
+// ReleaseAlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest 将 AlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest(v *AlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest) {
+	v.Reset()
+	poolAlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest.Put(v)
 }

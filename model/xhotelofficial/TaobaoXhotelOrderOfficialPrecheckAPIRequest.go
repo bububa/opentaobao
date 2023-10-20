@@ -2,6 +2,7 @@ package xhotelofficial
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,22 @@ type TaobaoXhotelOrderOfficialPrecheckAPIRequest struct {
 // NewTaobaoXhotelOrderOfficialPrecheckRequest 初始化TaobaoXhotelOrderOfficialPrecheckAPIRequest对象
 func NewTaobaoXhotelOrderOfficialPrecheckRequest() *TaobaoXhotelOrderOfficialPrecheckAPIRequest {
 	return &TaobaoXhotelOrderOfficialPrecheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelOrderOfficialPrecheckAPIRequest) Reset() {
+	r._idNumber = ""
+	r._hotelCode = ""
+	r._vendor = ""
+	r._guestName = ""
+	r._mobileNo = ""
+	r._totalFee = 0
+	r._encryptType = 0
+	r._idType = 0
+	r._type = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -175,4 +190,21 @@ func (r *TaobaoXhotelOrderOfficialPrecheckAPIRequest) SetType(_type int64) error
 // GetType Type Getter
 func (r TaobaoXhotelOrderOfficialPrecheckAPIRequest) GetType() int64 {
 	return r._type
+}
+
+var poolTaobaoXhotelOrderOfficialPrecheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelOrderOfficialPrecheckRequest()
+	},
+}
+
+// GetTaobaoXhotelOrderOfficialPrecheckRequest 从 sync.Pool 获取 TaobaoXhotelOrderOfficialPrecheckAPIRequest
+func GetTaobaoXhotelOrderOfficialPrecheckAPIRequest() *TaobaoXhotelOrderOfficialPrecheckAPIRequest {
+	return poolTaobaoXhotelOrderOfficialPrecheckAPIRequest.Get().(*TaobaoXhotelOrderOfficialPrecheckAPIRequest)
+}
+
+// ReleaseTaobaoXhotelOrderOfficialPrecheckAPIRequest 将 TaobaoXhotelOrderOfficialPrecheckAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelOrderOfficialPrecheckAPIRequest(v *TaobaoXhotelOrderOfficialPrecheckAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelOrderOfficialPrecheckAPIRequest.Put(v)
 }

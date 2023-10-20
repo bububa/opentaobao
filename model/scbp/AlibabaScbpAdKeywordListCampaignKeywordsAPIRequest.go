@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest struct {
 // NewAlibabaScbpAdKeywordListCampaignKeywordsRequest 初始化AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest对象
 func NewAlibabaScbpAdKeywordListCampaignKeywordsRequest() *AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest {
 	return &AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest) Reset() {
+	r._topContext = nil
+	r._campaignId = 0
+	r._campaignKeywordQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest) SetCampaignKeywordQ
 // GetCampaignKeywordQuery CampaignKeywordQuery Getter
 func (r AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest) GetCampaignKeywordQuery() *CampaignKeywordQuery {
 	return r._campaignKeywordQuery
+}
+
+var poolAlibabaScbpAdKeywordListCampaignKeywordsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdKeywordListCampaignKeywordsRequest()
+	},
+}
+
+// GetAlibabaScbpAdKeywordListCampaignKeywordsRequest 从 sync.Pool 获取 AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest
+func GetAlibabaScbpAdKeywordListCampaignKeywordsAPIRequest() *AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest {
+	return poolAlibabaScbpAdKeywordListCampaignKeywordsAPIRequest.Get().(*AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdKeywordListCampaignKeywordsAPIRequest 将 AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdKeywordListCampaignKeywordsAPIRequest(v *AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdKeywordListCampaignKeywordsAPIRequest.Put(v)
 }

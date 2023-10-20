@@ -9,11 +9,6 @@ import (
 // taobao.logistics.express.collect.sync
 //
 // 服饰逆向揽收信息同步
-func TaobaoLogisticsExpressCollectSync(clt *core.SDKClient, req *logistic.TaobaoLogisticsExpressCollectSyncAPIRequest, session string) (*logistic.TaobaoLogisticsExpressCollectSyncAPIResponse, error) {
-	var resp logistic.TaobaoLogisticsExpressCollectSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoLogisticsExpressCollectSync(clt *core.SDKClient, req *logistic.TaobaoLogisticsExpressCollectSyncAPIRequest, resp *logistic.TaobaoLogisticsExpressCollectSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

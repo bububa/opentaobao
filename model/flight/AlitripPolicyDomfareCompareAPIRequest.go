@@ -2,6 +2,7 @@ package flight
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripPolicyDomfareCompareAPIRequest struct {
 // NewAlitripPolicyDomfareCompareRequest 初始化AlitripPolicyDomfareCompareAPIRequest对象
 func NewAlitripPolicyDomfareCompareRequest() *AlitripPolicyDomfareCompareAPIRequest {
 	return &AlitripPolicyDomfareCompareAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripPolicyDomfareCompareAPIRequest) Reset() {
+	r._compareDomFareRequestDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripPolicyDomfareCompareAPIRequest) SetCompareDomFareRequestDTO(_com
 // GetCompareDomFareRequestDTO CompareDomFareRequestDTO Getter
 func (r AlitripPolicyDomfareCompareAPIRequest) GetCompareDomFareRequestDTO() *CompareDomFareRequestDto {
 	return r._compareDomFareRequestDTO
+}
+
+var poolAlitripPolicyDomfareCompareAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripPolicyDomfareCompareRequest()
+	},
+}
+
+// GetAlitripPolicyDomfareCompareRequest 从 sync.Pool 获取 AlitripPolicyDomfareCompareAPIRequest
+func GetAlitripPolicyDomfareCompareAPIRequest() *AlitripPolicyDomfareCompareAPIRequest {
+	return poolAlitripPolicyDomfareCompareAPIRequest.Get().(*AlitripPolicyDomfareCompareAPIRequest)
+}
+
+// ReleaseAlitripPolicyDomfareCompareAPIRequest 将 AlitripPolicyDomfareCompareAPIRequest 放入 sync.Pool
+func ReleaseAlitripPolicyDomfareCompareAPIRequest(v *AlitripPolicyDomfareCompareAPIRequest) {
+	v.Reset()
+	poolAlitripPolicyDomfareCompareAPIRequest.Put(v)
 }

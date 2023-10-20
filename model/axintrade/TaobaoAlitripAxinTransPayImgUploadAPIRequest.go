@@ -2,6 +2,7 @@ package axintrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoAlitripAxinTransPayImgUploadAPIRequest struct {
 // NewTaobaoAlitripAxinTransPayImgUploadRequest 初始化TaobaoAlitripAxinTransPayImgUploadAPIRequest对象
 func NewTaobaoAlitripAxinTransPayImgUploadRequest() *TaobaoAlitripAxinTransPayImgUploadAPIRequest {
 	return &TaobaoAlitripAxinTransPayImgUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripAxinTransPayImgUploadAPIRequest) Reset() {
+	r._axinPayImgUploadDTO = nil
+	r._imgContents = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoAlitripAxinTransPayImgUploadAPIRequest) SetImgContents(_imgConten
 // GetImgContents ImgContents Getter
 func (r TaobaoAlitripAxinTransPayImgUploadAPIRequest) GetImgContents() *model.File {
 	return r._imgContents
+}
+
+var poolTaobaoAlitripAxinTransPayImgUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripAxinTransPayImgUploadRequest()
+	},
+}
+
+// GetTaobaoAlitripAxinTransPayImgUploadRequest 从 sync.Pool 获取 TaobaoAlitripAxinTransPayImgUploadAPIRequest
+func GetTaobaoAlitripAxinTransPayImgUploadAPIRequest() *TaobaoAlitripAxinTransPayImgUploadAPIRequest {
+	return poolTaobaoAlitripAxinTransPayImgUploadAPIRequest.Get().(*TaobaoAlitripAxinTransPayImgUploadAPIRequest)
+}
+
+// ReleaseTaobaoAlitripAxinTransPayImgUploadAPIRequest 将 TaobaoAlitripAxinTransPayImgUploadAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripAxinTransPayImgUploadAPIRequest(v *TaobaoAlitripAxinTransPayImgUploadAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripAxinTransPayImgUploadAPIRequest.Put(v)
 }

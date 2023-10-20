@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // ExternalCreateRefundOrderRequest 结构体
 type ExternalCreateRefundOrderRequest struct {
 	// 退款举证图片列表
@@ -16,4 +20,27 @@ type ExternalCreateRefundOrderRequest struct {
 	OutOrderNo string `json:"out_order_no,omitempty" xml:"out_order_no,omitempty"`
 	// 退款原因
 	RefundReason string `json:"refund_reason,omitempty" xml:"refund_reason,omitempty"`
+}
+
+var poolExternalCreateRefundOrderRequest = sync.Pool{
+	New: func() any {
+		return new(ExternalCreateRefundOrderRequest)
+	},
+}
+
+// GetExternalCreateRefundOrderRequest() 从对象池中获取ExternalCreateRefundOrderRequest
+func GetExternalCreateRefundOrderRequest() *ExternalCreateRefundOrderRequest {
+	return poolExternalCreateRefundOrderRequest.Get().(*ExternalCreateRefundOrderRequest)
+}
+
+// ReleaseExternalCreateRefundOrderRequest 释放ExternalCreateRefundOrderRequest
+func ReleaseExternalCreateRefundOrderRequest(v *ExternalCreateRefundOrderRequest) {
+	v.ProofPicUrls = v.ProofPicUrls[:0]
+	v.CurrencyType = ""
+	v.SaleOrderNo = ""
+	v.OutRefundNo = ""
+	v.Remark = ""
+	v.OutOrderNo = ""
+	v.RefundReason = ""
+	poolExternalCreateRefundOrderRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ShopDo 结构体
 type ShopDo struct {
 	// 门店编码(所属的OU的编码)
@@ -28,4 +32,33 @@ type ShopDo struct {
 	CityCode string `json:"city_code,omitempty" xml:"city_code,omitempty"`
 	// 地区编码
 	AreaCode string `json:"area_code,omitempty" xml:"area_code,omitempty"`
+}
+
+var poolShopDo = sync.Pool{
+	New: func() any {
+		return new(ShopDo)
+	},
+}
+
+// GetShopDo() 从对象池中获取ShopDo
+func GetShopDo() *ShopDo {
+	return poolShopDo.Get().(*ShopDo)
+}
+
+// ReleaseShopDo 释放ShopDo
+func ReleaseShopDo(v *ShopDo) {
+	v.ShopName = ""
+	v.OuCode = ""
+	v.Status = ""
+	v.Type = ""
+	v.ProvName = ""
+	v.CityName = ""
+	v.AreaName = ""
+	v.Address = ""
+	v.MerchantCode = ""
+	v.Flag = ""
+	v.ProvCode = ""
+	v.CityCode = ""
+	v.AreaCode = ""
+	poolShopDo.Put(v)
 }

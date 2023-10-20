@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // RoomDetailDto 结构体
 type RoomDetailDto struct {
 	// 价格信息
@@ -52,4 +56,45 @@ type RoomDetailDto struct {
 	MaxCheckInNumber int64 `json:"max_check_in_number,omitempty" xml:"max_check_in_number,omitempty"`
 	// 是否满房
 	Full bool `json:"full,omitempty" xml:"full,omitempty"`
+}
+
+var poolRoomDetailDto = sync.Pool{
+	New: func() any {
+		return new(RoomDetailDto)
+	},
+}
+
+// GetRoomDetailDto() 从对象池中获取RoomDetailDto
+func GetRoomDetailDto() *RoomDetailDto {
+	return poolRoomDetailDto.Get().(*RoomDetailDto)
+}
+
+// ReleaseRoomDetailDto 释放RoomDetailDto
+func ReleaseRoomDetailDto(v *RoomDetailDto) {
+	v.PriceInfos = v.PriceInfos[:0]
+	v.Pics = v.Pics[:0]
+	v.Facilitys = v.Facilitys[:0]
+	v.RoomFacilities = v.RoomFacilities[:0]
+	v.PictureList = v.PictureList[:0]
+	v.Area = ""
+	v.LowestPriceToString = ""
+	v.MaxOccupancyIcon = ""
+	v.PriceType = ""
+	v.AreaIcon = ""
+	v.RoomName = ""
+	v.NetworkService = ""
+	v.BedTypeIcon = ""
+	v.Floor = ""
+	v.WindowType = ""
+	v.BedTypeDesc = ""
+	v.RoomArea = ""
+	v.HotelName = ""
+	v.LowestPrice = 0
+	v.RoomTypeBedInfo = nil
+	v.RoomId = 0
+	v.AddBed = 0
+	v.MaxOccupancy = 0
+	v.MaxCheckInNumber = 0
+	v.Full = false
+	poolRoomDetailDto.Put(v)
 }

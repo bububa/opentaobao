@@ -9,11 +9,6 @@ import (
 // alibaba.alisports.passport.account.delrelation
 //
 // 阿里体育会员系统--取消三方关联接口
-func AlibabaAlisportsPassportAccountDelrelation(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportAccountDelrelationAPIRequest, session string) (*alisports.AlibabaAlisportsPassportAccountDelrelationAPIResponse, error) {
-	var resp alisports.AlibabaAlisportsPassportAccountDelrelationAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlisportsPassportAccountDelrelation(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportAccountDelrelationAPIRequest, resp *alisports.AlibabaAlisportsPassportAccountDelrelationAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

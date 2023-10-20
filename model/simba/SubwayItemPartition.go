@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // SubwayItemPartition 结构体
 type SubwayItemPartition struct {
 	// 商品列表
@@ -14,4 +18,26 @@ type SubwayItemPartition struct {
 	TotalItem int64 `json:"total_item,omitempty" xml:"total_item,omitempty"`
 	// 排序，&lt;br/&gt;True:升级False:降序
 	OrderBy bool `json:"order_by,omitempty" xml:"order_by,omitempty"`
+}
+
+var poolSubwayItemPartition = sync.Pool{
+	New: func() any {
+		return new(SubwayItemPartition)
+	},
+}
+
+// GetSubwayItemPartition() 从对象池中获取SubwayItemPartition
+func GetSubwayItemPartition() *SubwayItemPartition {
+	return poolSubwayItemPartition.Get().(*SubwayItemPartition)
+}
+
+// ReleaseSubwayItemPartition 释放SubwayItemPartition
+func ReleaseSubwayItemPartition(v *SubwayItemPartition) {
+	v.ItemList = v.ItemList[:0]
+	v.OrderField = ""
+	v.PageSize = 0
+	v.PageNo = 0
+	v.TotalItem = 0
+	v.OrderBy = false
+	poolSubwayItemPartition.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.fenxiao.trade.prepay.offline.add
 //
 // 渠道分销供应商上传线下流水预存款（增加）
-func TaobaoFenxiaoTradePrepayOfflineAdd(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoTradePrepayOfflineAddAPIRequest, session string) (*fenxiao.TaobaoFenxiaoTradePrepayOfflineAddAPIResponse, error) {
-	var resp fenxiao.TaobaoFenxiaoTradePrepayOfflineAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFenxiaoTradePrepayOfflineAdd(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoTradePrepayOfflineAddAPIRequest, resp *fenxiao.TaobaoFenxiaoTradePrepayOfflineAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package charity
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaCharityCharitytimeCommonauthAPIResponse struct {
 	AlibabaCharityCharitytimeCommonauthAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaCharityCharitytimeCommonauthAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaCharityCharitytimeCommonauthAPIResponseModel).Reset()
+}
+
 // AlibabaCharityCharitytimeCommonauthAPIResponseModel is 通用授权 成功返回结果
 type AlibabaCharityCharitytimeCommonauthAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_charity_charitytime_commonauth_response"`
@@ -22,4 +29,27 @@ type AlibabaCharityCharitytimeCommonauthAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果
 	Result *CsrResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaCharityCharitytimeCommonauthAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaCharityCharitytimeCommonauthAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaCharityCharitytimeCommonauthAPIResponse)
+	},
+}
+
+// GetAlibabaCharityCharitytimeCommonauthAPIResponse 从 sync.Pool 获取 AlibabaCharityCharitytimeCommonauthAPIResponse
+func GetAlibabaCharityCharitytimeCommonauthAPIResponse() *AlibabaCharityCharitytimeCommonauthAPIResponse {
+	return poolAlibabaCharityCharitytimeCommonauthAPIResponse.Get().(*AlibabaCharityCharitytimeCommonauthAPIResponse)
+}
+
+// ReleaseAlibabaCharityCharitytimeCommonauthAPIResponse 将 AlibabaCharityCharitytimeCommonauthAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaCharityCharitytimeCommonauthAPIResponse(v *AlibabaCharityCharitytimeCommonauthAPIResponse) {
+	v.Reset()
+	poolAlibabaCharityCharitytimeCommonauthAPIResponse.Put(v)
 }

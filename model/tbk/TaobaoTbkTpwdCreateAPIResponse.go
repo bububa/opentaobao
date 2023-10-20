@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTbkTpwdCreateAPIResponse struct {
 	TaobaoTbkTpwdCreateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTbkTpwdCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTbkTpwdCreateAPIResponseModel).Reset()
+}
+
 // TaobaoTbkTpwdCreateAPIResponseModel is 淘宝客-公用-淘口令生成 成功返回结果
 type TaobaoTbkTpwdCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"tbk_tpwd_create_response"`
@@ -22,4 +29,27 @@ type TaobaoTbkTpwdCreateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果对象
 	Data *TaobaoTbkTpwdCreateMapData `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTbkTpwdCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = nil
+}
+
+var poolTaobaoTbkTpwdCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkTpwdCreateAPIResponse)
+	},
+}
+
+// GetTaobaoTbkTpwdCreateAPIResponse 从 sync.Pool 获取 TaobaoTbkTpwdCreateAPIResponse
+func GetTaobaoTbkTpwdCreateAPIResponse() *TaobaoTbkTpwdCreateAPIResponse {
+	return poolTaobaoTbkTpwdCreateAPIResponse.Get().(*TaobaoTbkTpwdCreateAPIResponse)
+}
+
+// ReleaseTaobaoTbkTpwdCreateAPIResponse 将 TaobaoTbkTpwdCreateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTbkTpwdCreateAPIResponse(v *TaobaoTbkTpwdCreateAPIResponse) {
+	v.Reset()
+	poolTaobaoTbkTpwdCreateAPIResponse.Put(v)
 }

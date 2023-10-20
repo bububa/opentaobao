@@ -1,5 +1,9 @@
 package dt
 
+import (
+	"sync"
+)
+
 // RecongnizeItemInfo 结构体
 type RecongnizeItemInfo struct {
 	// 原产地
@@ -32,4 +36,35 @@ type RecongnizeItemInfo struct {
 	SalePrice int64 `json:"sale_price,omitempty" xml:"sale_price,omitempty"`
 	// 是否促销中
 	InPromotion bool `json:"in_promotion,omitempty" xml:"in_promotion,omitempty"`
+}
+
+var poolRecongnizeItemInfo = sync.Pool{
+	New: func() any {
+		return new(RecongnizeItemInfo)
+	},
+}
+
+// GetRecongnizeItemInfo() 从对象池中获取RecongnizeItemInfo
+func GetRecongnizeItemInfo() *RecongnizeItemInfo {
+	return poolRecongnizeItemInfo.Get().(*RecongnizeItemInfo)
+}
+
+// ReleaseRecongnizeItemInfo 释放RecongnizeItemInfo
+func ReleaseRecongnizeItemInfo(v *RecongnizeItemInfo) {
+	v.OriginPlace = ""
+	v.ExtMap = ""
+	v.PromotionEndTime = ""
+	v.PromotionStartTime = ""
+	v.SpecDesc = ""
+	v.RtItemNo = ""
+	v.PromotionDesc = ""
+	v.BrandName = ""
+	v.Title = ""
+	v.BarCode = ""
+	v.SerialNo = ""
+	v.PromotionType = 0
+	v.PromotionPrice = 0
+	v.SalePrice = 0
+	v.InPromotion = false
+	poolRecongnizeItemInfo.Put(v)
 }

@@ -1,5 +1,9 @@
 package jipiao
 
+import (
+	"sync"
+)
+
 // ReturnTicketDetail 结构体
 type ReturnTicketDetail struct {
 	// 人的费用信息
@@ -26,4 +30,32 @@ type ReturnTicketDetail struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// creditMoney
 	CreditMoney int64 `json:"credit_money,omitempty" xml:"credit_money,omitempty"`
+}
+
+var poolReturnTicketDetail = sync.Pool{
+	New: func() any {
+		return new(ReturnTicketDetail)
+	},
+}
+
+// GetReturnTicketDetail() 从对象池中获取ReturnTicketDetail
+func GetReturnTicketDetail() *ReturnTicketDetail {
+	return poolReturnTicketDetail.Get().(*ReturnTicketDetail)
+}
+
+// ReleaseReturnTicketDetail 释放ReturnTicketDetail
+func ReleaseReturnTicketDetail(v *ReturnTicketDetail) {
+	v.ReturnApplyPassenge = v.ReturnApplyPassenge[:0]
+	v.ApplyTime = ""
+	v.FirstProcessTime = ""
+	v.PaySuccessTime = ""
+	v.Reason = ""
+	v.ApplyId = 0
+	v.ApplyReasonType = 0
+	v.OrderId = 0
+	v.RefundFee = 0
+	v.RefundMoney = 0
+	v.Status = 0
+	v.CreditMoney = 0
+	poolReturnTicketDetail.Put(v)
 }

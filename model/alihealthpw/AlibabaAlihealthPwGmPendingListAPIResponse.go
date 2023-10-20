@@ -2,6 +2,7 @@ package alihealthpw
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihealthPwGmPendingListAPIResponse struct {
 	AlibabaAlihealthPwGmPendingListAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthPwGmPendingListAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthPwGmPendingListAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthPwGmPendingListAPIResponseModel is 同情用药待审核工单查询接口 成功返回结果
 type AlibabaAlihealthPwGmPendingListAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_pw_gm_pending_list_response"`
@@ -22,4 +29,27 @@ type AlibabaAlihealthPwGmPendingListAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回值
 	Result *ResponseMessage `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthPwGmPendingListAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihealthPwGmPendingListAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthPwGmPendingListAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthPwGmPendingListAPIResponse 从 sync.Pool 获取 AlibabaAlihealthPwGmPendingListAPIResponse
+func GetAlibabaAlihealthPwGmPendingListAPIResponse() *AlibabaAlihealthPwGmPendingListAPIResponse {
+	return poolAlibabaAlihealthPwGmPendingListAPIResponse.Get().(*AlibabaAlihealthPwGmPendingListAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthPwGmPendingListAPIResponse 将 AlibabaAlihealthPwGmPendingListAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthPwGmPendingListAPIResponse(v *AlibabaAlihealthPwGmPendingListAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthPwGmPendingListAPIResponse.Put(v)
 }

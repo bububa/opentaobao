@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // CampaignQueryDto 结构体
 type CampaignQueryDto struct {
 	// 计划类型列表
@@ -20,4 +24,29 @@ type CampaignQueryDto struct {
 	Size int64 `json:"size,omitempty" xml:"size,omitempty"`
 	// 标题是否精确匹配
 	ExactMatch bool `json:"exact_match,omitempty" xml:"exact_match,omitempty"`
+}
+
+var poolCampaignQueryDto = sync.Pool{
+	New: func() any {
+		return new(CampaignQueryDto)
+	},
+}
+
+// GetCampaignQueryDto() 从对象池中获取CampaignQueryDto
+func GetCampaignQueryDto() *CampaignQueryDto {
+	return poolCampaignQueryDto.Get().(*CampaignQueryDto)
+}
+
+// ReleaseCampaignQueryDto 释放CampaignQueryDto
+func ReleaseCampaignQueryDto(v *CampaignQueryDto) {
+	v.TypeList = v.TypeList[:0]
+	v.CampaignIdList = v.CampaignIdList[:0]
+	v.Title = ""
+	v.SubType = ""
+	v.OnlineStatus = 0
+	v.CateId = 0
+	v.Page = 0
+	v.Size = 0
+	v.ExactMatch = false
+	poolCampaignQueryDto.Put(v)
 }

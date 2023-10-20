@@ -2,6 +2,7 @@ package scs
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoOnebpDkxCrowdCrowdTemplateAPIResponse struct {
 	TaobaoOnebpDkxCrowdCrowdTemplateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoOnebpDkxCrowdCrowdTemplateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOnebpDkxCrowdCrowdTemplateAPIResponseModel).Reset()
+}
+
 // TaobaoOnebpDkxCrowdCrowdTemplateAPIResponseModel is 获取人群模版 成功返回结果
 type TaobaoOnebpDkxCrowdCrowdTemplateAPIResponseModel struct {
 	XMLName xml.Name `xml:"onebp_dkx_crowd_crowd_template_response"`
@@ -22,4 +29,27 @@ type TaobaoOnebpDkxCrowdCrowdTemplateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果体
 	Result *TaobaoOnebpDkxCrowdCrowdTemplateResultDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOnebpDkxCrowdCrowdTemplateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoOnebpDkxCrowdCrowdTemplateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOnebpDkxCrowdCrowdTemplateAPIResponse)
+	},
+}
+
+// GetTaobaoOnebpDkxCrowdCrowdTemplateAPIResponse 从 sync.Pool 获取 TaobaoOnebpDkxCrowdCrowdTemplateAPIResponse
+func GetTaobaoOnebpDkxCrowdCrowdTemplateAPIResponse() *TaobaoOnebpDkxCrowdCrowdTemplateAPIResponse {
+	return poolTaobaoOnebpDkxCrowdCrowdTemplateAPIResponse.Get().(*TaobaoOnebpDkxCrowdCrowdTemplateAPIResponse)
+}
+
+// ReleaseTaobaoOnebpDkxCrowdCrowdTemplateAPIResponse 将 TaobaoOnebpDkxCrowdCrowdTemplateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOnebpDkxCrowdCrowdTemplateAPIResponse(v *TaobaoOnebpDkxCrowdCrowdTemplateAPIResponse) {
+	v.Reset()
+	poolTaobaoOnebpDkxCrowdCrowdTemplateAPIResponse.Put(v)
 }

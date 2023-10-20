@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.newhome.right.bind.back
 //
 // 权限回流
-func AlibabaAlihouseNewhomeRightBindBack(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeRightBindBackAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeRightBindBackAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeRightBindBackAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseNewhomeRightBindBack(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeRightBindBackAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeRightBindBackAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

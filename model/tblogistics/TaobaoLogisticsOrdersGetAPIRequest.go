@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -43,8 +44,26 @@ type TaobaoLogisticsOrdersGetAPIRequest struct {
 // NewTaobaoLogisticsOrdersGetRequest 初始化TaobaoLogisticsOrdersGetAPIRequest对象
 func NewTaobaoLogisticsOrdersGetRequest() *TaobaoLogisticsOrdersGetAPIRequest {
 	return &TaobaoLogisticsOrdersGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(13),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsOrdersGetAPIRequest) Reset() {
+	r._fields = ""
+	r._buyerNick = ""
+	r._status = ""
+	r._sellerConfirm = ""
+	r._receiverName = ""
+	r._startCreated = ""
+	r._endCreated = ""
+	r._freightPayer = ""
+	r._type = ""
+	r._ouid = ""
+	r._tid = 0
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -231,4 +250,21 @@ func (r *TaobaoLogisticsOrdersGetAPIRequest) SetPageSize(_pageSize int64) error 
 // GetPageSize PageSize Getter
 func (r TaobaoLogisticsOrdersGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoLogisticsOrdersGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsOrdersGetRequest()
+	},
+}
+
+// GetTaobaoLogisticsOrdersGetRequest 从 sync.Pool 获取 TaobaoLogisticsOrdersGetAPIRequest
+func GetTaobaoLogisticsOrdersGetAPIRequest() *TaobaoLogisticsOrdersGetAPIRequest {
+	return poolTaobaoLogisticsOrdersGetAPIRequest.Get().(*TaobaoLogisticsOrdersGetAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsOrdersGetAPIRequest 将 TaobaoLogisticsOrdersGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsOrdersGetAPIRequest(v *TaobaoLogisticsOrdersGetAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsOrdersGetAPIRequest.Put(v)
 }

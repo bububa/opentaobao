@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoInventoryWarehouseQueryAPIRequest struct {
 // NewTaobaoInventoryWarehouseQueryRequest 初始化TaobaoInventoryWarehouseQueryAPIRequest对象
 func NewTaobaoInventoryWarehouseQueryRequest() *TaobaoInventoryWarehouseQueryAPIRequest {
 	return &TaobaoInventoryWarehouseQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoInventoryWarehouseQueryAPIRequest) Reset() {
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoInventoryWarehouseQueryAPIRequest) SetPageSize(_pageSize int64) e
 // GetPageSize PageSize Getter
 func (r TaobaoInventoryWarehouseQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoInventoryWarehouseQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoInventoryWarehouseQueryRequest()
+	},
+}
+
+// GetTaobaoInventoryWarehouseQueryRequest 从 sync.Pool 获取 TaobaoInventoryWarehouseQueryAPIRequest
+func GetTaobaoInventoryWarehouseQueryAPIRequest() *TaobaoInventoryWarehouseQueryAPIRequest {
+	return poolTaobaoInventoryWarehouseQueryAPIRequest.Get().(*TaobaoInventoryWarehouseQueryAPIRequest)
+}
+
+// ReleaseTaobaoInventoryWarehouseQueryAPIRequest 将 TaobaoInventoryWarehouseQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoInventoryWarehouseQueryAPIRequest(v *TaobaoInventoryWarehouseQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoInventoryWarehouseQueryAPIRequest.Put(v)
 }

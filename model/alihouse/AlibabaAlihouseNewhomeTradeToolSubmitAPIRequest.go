@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeTradeToolSubmitAPIRequest struct {
 // NewAlibabaAlihouseNewhomeTradeToolSubmitRequest 初始化AlibabaAlihouseNewhomeTradeToolSubmitAPIRequest对象
 func NewAlibabaAlihouseNewhomeTradeToolSubmitRequest() *AlibabaAlihouseNewhomeTradeToolSubmitAPIRequest {
 	return &AlibabaAlihouseNewhomeTradeToolSubmitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeTradeToolSubmitAPIRequest) Reset() {
+	r._tradeToolDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomeTradeToolSubmitAPIRequest) SetTradeToolDto(_trade
 // GetTradeToolDto TradeToolDto Getter
 func (r AlibabaAlihouseNewhomeTradeToolSubmitAPIRequest) GetTradeToolDto() *TradeToolDto {
 	return r._tradeToolDto
+}
+
+var poolAlibabaAlihouseNewhomeTradeToolSubmitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeTradeToolSubmitRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeTradeToolSubmitRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeTradeToolSubmitAPIRequest
+func GetAlibabaAlihouseNewhomeTradeToolSubmitAPIRequest() *AlibabaAlihouseNewhomeTradeToolSubmitAPIRequest {
+	return poolAlibabaAlihouseNewhomeTradeToolSubmitAPIRequest.Get().(*AlibabaAlihouseNewhomeTradeToolSubmitAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeTradeToolSubmitAPIRequest 将 AlibabaAlihouseNewhomeTradeToolSubmitAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeTradeToolSubmitAPIRequest(v *AlibabaAlihouseNewhomeTradeToolSubmitAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeTradeToolSubmitAPIRequest.Put(v)
 }

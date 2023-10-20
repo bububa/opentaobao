@@ -9,11 +9,6 @@ import (
 // alibaba.campus.space.attr.setattr
 //
 // 新增业务属性实例接口
-func AlibabaCampusSpaceAttrSetattr(clt *core.SDKClient, req *campus.AlibabaCampusSpaceAttrSetattrAPIRequest, session string) (*campus.AlibabaCampusSpaceAttrSetattrAPIResponse, error) {
-	var resp campus.AlibabaCampusSpaceAttrSetattrAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusSpaceAttrSetattr(clt *core.SDKClient, req *campus.AlibabaCampusSpaceAttrSetattrAPIRequest, resp *campus.AlibabaCampusSpaceAttrSetattrAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

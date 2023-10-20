@@ -1,5 +1,9 @@
 package examination
 
+import (
+	"sync"
+)
+
 // ReportOrderSummaryRequest 结构体
 type ReportOrderSummaryRequest struct {
 	// 咨询聊天记录
@@ -16,4 +20,27 @@ type ReportOrderSummaryRequest struct {
 	OuterOrderId string `json:"outer_order_id,omitempty" xml:"outer_order_id,omitempty"`
 	// 报告解读ID
 	OrderId string `json:"order_id,omitempty" xml:"order_id,omitempty"`
+}
+
+var poolReportOrderSummaryRequest = sync.Pool{
+	New: func() any {
+		return new(ReportOrderSummaryRequest)
+	},
+}
+
+// GetReportOrderSummaryRequest() 从对象池中获取ReportOrderSummaryRequest
+func GetReportOrderSummaryRequest() *ReportOrderSummaryRequest {
+	return poolReportOrderSummaryRequest.Get().(*ReportOrderSummaryRequest)
+}
+
+// ReleaseReportOrderSummaryRequest 释放ReportOrderSummaryRequest
+func ReleaseReportOrderSummaryRequest(v *ReportOrderSummaryRequest) {
+	v.ReportDiagnoseMessageList = v.ReportDiagnoseMessageList[:0]
+	v.AbnormalItemList = v.AbnormalItemList[:0]
+	v.ReInspectItem = ""
+	v.ReInspectDepartment = ""
+	v.ReInspectDiseases = ""
+	v.OuterOrderId = ""
+	v.OrderId = ""
+	poolReportOrderSummaryRequest.Put(v)
 }

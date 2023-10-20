@@ -2,6 +2,7 @@ package xhotelonlineorder
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoXhotelOrderFutureInfoGetAPIResponse struct {
 	TaobaoXhotelOrderFutureInfoGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoXhotelOrderFutureInfoGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoXhotelOrderFutureInfoGetAPIResponseModel).Reset()
+}
+
 // TaobaoXhotelOrderFutureInfoGetAPIResponseModel is 获取(查询)订单变更信息 成功返回结果
 type TaobaoXhotelOrderFutureInfoGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_order_future_info_get_response"`
@@ -26,4 +33,29 @@ type TaobaoXhotelOrderFutureInfoGetAPIResponseModel struct {
 	OutUuid string `json:"out_uuid,omitempty" xml:"out_uuid,omitempty"`
 	// 是否成功标记
 	Issuccess bool `json:"issuccess,omitempty" xml:"issuccess,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelOrderFutureInfoGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Results = m.Results[:0]
+	m.OutUuid = ""
+	m.Issuccess = false
+}
+
+var poolTaobaoXhotelOrderFutureInfoGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelOrderFutureInfoGetAPIResponse)
+	},
+}
+
+// GetTaobaoXhotelOrderFutureInfoGetAPIResponse 从 sync.Pool 获取 TaobaoXhotelOrderFutureInfoGetAPIResponse
+func GetTaobaoXhotelOrderFutureInfoGetAPIResponse() *TaobaoXhotelOrderFutureInfoGetAPIResponse {
+	return poolTaobaoXhotelOrderFutureInfoGetAPIResponse.Get().(*TaobaoXhotelOrderFutureInfoGetAPIResponse)
+}
+
+// ReleaseTaobaoXhotelOrderFutureInfoGetAPIResponse 将 TaobaoXhotelOrderFutureInfoGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoXhotelOrderFutureInfoGetAPIResponse(v *TaobaoXhotelOrderFutureInfoGetAPIResponse) {
+	v.Reset()
+	poolTaobaoXhotelOrderFutureInfoGetAPIResponse.Put(v)
 }

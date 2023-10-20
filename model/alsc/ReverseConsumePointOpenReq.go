@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // ReverseConsumePointOpenReq 结构体
 type ReverseConsumePointOpenReq struct {
 	// 业务场景
@@ -30,4 +34,34 @@ type ReverseConsumePointOpenReq struct {
 	BizChannel string `json:"biz_channel,omitempty" xml:"biz_channel,omitempty"`
 	// 变更积分数
 	ChangePoint int64 `json:"change_point,omitempty" xml:"change_point,omitempty"`
+}
+
+var poolReverseConsumePointOpenReq = sync.Pool{
+	New: func() any {
+		return new(ReverseConsumePointOpenReq)
+	},
+}
+
+// GetReverseConsumePointOpenReq() 从对象池中获取ReverseConsumePointOpenReq
+func GetReverseConsumePointOpenReq() *ReverseConsumePointOpenReq {
+	return poolReverseConsumePointOpenReq.Get().(*ReverseConsumePointOpenReq)
+}
+
+// ReleaseReverseConsumePointOpenReq 释放ReverseConsumePointOpenReq
+func ReleaseReverseConsumePointOpenReq(v *ReverseConsumePointOpenReq) {
+	v.BizType = ""
+	v.BrandId = ""
+	v.CustomerId = ""
+	v.OperatorId = ""
+	v.OperatorName = ""
+	v.OutBizId = ""
+	v.Reason = ""
+	v.RequestId = ""
+	v.ReverseOrderId = ""
+	v.ShopId = ""
+	v.OutShopId = ""
+	v.OutBrandId = ""
+	v.BizChannel = ""
+	v.ChangePoint = 0
+	poolReverseConsumePointOpenReq.Put(v)
 }

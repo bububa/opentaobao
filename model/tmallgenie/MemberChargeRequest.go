@@ -1,5 +1,9 @@
 package tmallgenie
 
+import (
+	"sync"
+)
+
 // MemberChargeRequest 结构体
 type MemberChargeRequest struct {
 	// 加密的手机号，采用RSA加密，由猫精提供加密方法
@@ -12,4 +16,25 @@ type MemberChargeRequest struct {
 	Sign string `json:"sign,omitempty" xml:"sign,omitempty"`
 	// 当前请求的时间戳，例如：1641468394035
 	Timestamp int64 `json:"timestamp,omitempty" xml:"timestamp,omitempty"`
+}
+
+var poolMemberChargeRequest = sync.Pool{
+	New: func() any {
+		return new(MemberChargeRequest)
+	},
+}
+
+// GetMemberChargeRequest() 从对象池中获取MemberChargeRequest
+func GetMemberChargeRequest() *MemberChargeRequest {
+	return poolMemberChargeRequest.Get().(*MemberChargeRequest)
+}
+
+// ReleaseMemberChargeRequest 释放MemberChargeRequest
+func ReleaseMemberChargeRequest(v *MemberChargeRequest) {
+	v.EncryptedMobile = ""
+	v.OrderNo = ""
+	v.BizCode = ""
+	v.Sign = ""
+	v.Timestamp = 0
+	poolMemberChargeRequest.Put(v)
 }

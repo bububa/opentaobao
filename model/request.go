@@ -135,4 +135,5 @@ type IRequest interface {
 	GetApiParams(url.Values)
 	NeedMultipart() bool
 	GetRawParams() Params
+	Reset()
 }

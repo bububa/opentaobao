@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // TenderOrderInfoDto 结构体
 type TenderOrderInfoDto struct {
 	// 扩展信息
@@ -122,4 +126,80 @@ type TenderOrderInfoDto struct {
 	PreFinalAmount int64 `json:"pre_final_amount,omitempty" xml:"pre_final_amount,omitempty"`
 	// 是否为返现订单
 	CashOrder bool `json:"cash_order,omitempty" xml:"cash_order,omitempty"`
+}
+
+var poolTenderOrderInfoDto = sync.Pool{
+	New: func() any {
+		return new(TenderOrderInfoDto)
+	},
+}
+
+// GetTenderOrderInfoDto() 从对象池中获取TenderOrderInfoDto
+func GetTenderOrderInfoDto() *TenderOrderInfoDto {
+	return poolTenderOrderInfoDto.Get().(*TenderOrderInfoDto)
+}
+
+// ReleaseTenderOrderInfoDto 释放TenderOrderInfoDto
+func ReleaseTenderOrderInfoDto(v *TenderOrderInfoDto) {
+	v.ChannelData = ""
+	v.BuyerNick = ""
+	v.ServiceRefundReason = ""
+	v.ShipTime = ""
+	v.Channel = ""
+	v.OrderStatus = ""
+	v.SellerAddress = ""
+	v.DealPrice = ""
+	v.BuyerArea = ""
+	v.AppraisePrice = ""
+	v.BuyerAddress = ""
+	v.BuyerCity = ""
+	v.SellerAlipayUserId = ""
+	v.SellerCity = ""
+	v.AppKey = ""
+	v.Attribute = ""
+	v.ServiceId = ""
+	v.SellerNick = ""
+	v.StartPrice = ""
+	v.BuyerProvince = ""
+	v.OrderSubStatus = ""
+	v.SellerPhone = ""
+	v.SellerCountry = ""
+	v.SellerAlipayAccount = ""
+	v.SellerCloseReason = ""
+	v.EndPrice = ""
+	v.BuyerRealName = ""
+	v.GmtCreate = ""
+	v.Env = ""
+	v.SellerRealName = ""
+	v.ServiceCloseReason = ""
+	v.SellerArea = ""
+	v.BuyerCountry = ""
+	v.IdlePayType = ""
+	v.BuyerPhone = ""
+	v.ServiceNick = ""
+	v.SceneType = ""
+	v.BizOrderId = ""
+	v.AppraiseId = ""
+	v.ServiceDealPrice = ""
+	v.ShipType = ""
+	v.SpuId = ""
+	v.SellerRefundReason = ""
+	v.SellerProvince = ""
+	v.BuyerOutPayId = ""
+	v.BuyerPayTime = ""
+	v.ItemId = ""
+	v.CashFee = ""
+	v.QuoteVersion = ""
+	v.PrePayNo = ""
+	v.StationInfo = ""
+	v.TenderOrderId = 0
+	v.ServiceFee = 0
+	v.BuyerFee = 0
+	v.BuyoutPrice = 0
+	v.RecyclePrice = 0
+	v.PrePayAmount = 0
+	v.PrePayStatus = 0
+	v.PreFinalAmount = 0
+	v.CashOrder = false
+	poolTenderOrderInfoDto.Put(v)
 }

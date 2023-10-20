@@ -1,5 +1,9 @@
 package consignplatform
 
+import (
+	"sync"
+)
+
 // AddressDtoForTop 结构体
 type AddressDtoForTop struct {
 	// 国家
@@ -14,4 +18,26 @@ type AddressDtoForTop struct {
 	TownName string `json:"town_name,omitempty" xml:"town_name,omitempty"`
 	// 详细地址
 	AddressDetail string `json:"address_detail,omitempty" xml:"address_detail,omitempty"`
+}
+
+var poolAddressDtoForTop = sync.Pool{
+	New: func() any {
+		return new(AddressDtoForTop)
+	},
+}
+
+// GetAddressDtoForTop() 从对象池中获取AddressDtoForTop
+func GetAddressDtoForTop() *AddressDtoForTop {
+	return poolAddressDtoForTop.Get().(*AddressDtoForTop)
+}
+
+// ReleaseAddressDtoForTop 释放AddressDtoForTop
+func ReleaseAddressDtoForTop(v *AddressDtoForTop) {
+	v.CountryName = ""
+	v.ProvName = ""
+	v.CityName = ""
+	v.AreaName = ""
+	v.TownName = ""
+	v.AddressDetail = ""
+	poolAddressDtoForTop.Put(v)
 }

@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // AlibabaMjMoscarnivalReceivecouponResultDo 结构体
 type AlibabaMjMoscarnivalReceivecouponResultDo struct {
 	// 标题
@@ -18,4 +22,28 @@ type AlibabaMjMoscarnivalReceivecouponResultDo struct {
 	ErrCode int64 `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 调用是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaMjMoscarnivalReceivecouponResultDo = sync.Pool{
+	New: func() any {
+		return new(AlibabaMjMoscarnivalReceivecouponResultDo)
+	},
+}
+
+// GetAlibabaMjMoscarnivalReceivecouponResultDo() 从对象池中获取AlibabaMjMoscarnivalReceivecouponResultDo
+func GetAlibabaMjMoscarnivalReceivecouponResultDo() *AlibabaMjMoscarnivalReceivecouponResultDo {
+	return poolAlibabaMjMoscarnivalReceivecouponResultDo.Get().(*AlibabaMjMoscarnivalReceivecouponResultDo)
+}
+
+// ReleaseAlibabaMjMoscarnivalReceivecouponResultDo 释放AlibabaMjMoscarnivalReceivecouponResultDo
+func ReleaseAlibabaMjMoscarnivalReceivecouponResultDo(v *AlibabaMjMoscarnivalReceivecouponResultDo) {
+	v.Titles = v.Titles[:0]
+	v.TraceId = ""
+	v.Data = ""
+	v.ErrMsg = ""
+	v.ResultCode = ""
+	v.Total = 0
+	v.ErrCode = 0
+	v.Success = false
+	poolAlibabaMjMoscarnivalReceivecouponResultDo.Put(v)
 }

@@ -2,6 +2,7 @@ package inventory
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoInventoryPlanInvalidAPIRequest struct {
 // NewTaobaoInventoryPlanInvalidRequest 初始化TaobaoInventoryPlanInvalidAPIRequest对象
 func NewTaobaoInventoryPlanInvalidRequest() *TaobaoInventoryPlanInvalidAPIRequest {
 	return &TaobaoInventoryPlanInvalidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoInventoryPlanInvalidAPIRequest) Reset() {
+	r._planStopTop = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoInventoryPlanInvalidAPIRequest) SetPlanStopTop(_planStopTop *Plan
 // GetPlanStopTop PlanStopTop Getter
 func (r TaobaoInventoryPlanInvalidAPIRequest) GetPlanStopTop() *PlanStopTopDto {
 	return r._planStopTop
+}
+
+var poolTaobaoInventoryPlanInvalidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoInventoryPlanInvalidRequest()
+	},
+}
+
+// GetTaobaoInventoryPlanInvalidRequest 从 sync.Pool 获取 TaobaoInventoryPlanInvalidAPIRequest
+func GetTaobaoInventoryPlanInvalidAPIRequest() *TaobaoInventoryPlanInvalidAPIRequest {
+	return poolTaobaoInventoryPlanInvalidAPIRequest.Get().(*TaobaoInventoryPlanInvalidAPIRequest)
+}
+
+// ReleaseTaobaoInventoryPlanInvalidAPIRequest 将 TaobaoInventoryPlanInvalidAPIRequest 放入 sync.Pool
+func ReleaseTaobaoInventoryPlanInvalidAPIRequest(v *TaobaoInventoryPlanInvalidAPIRequest) {
+	v.Reset()
+	poolTaobaoInventoryPlanInvalidAPIRequest.Put(v)
 }

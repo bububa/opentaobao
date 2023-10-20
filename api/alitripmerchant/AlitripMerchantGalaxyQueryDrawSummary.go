@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.query.draw.summary
 //
 // 雅高小程序抽奖活动列表概要查询
-func AlitripMerchantGalaxyQueryDrawSummary(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyQueryDrawSummaryAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyQueryDrawSummaryAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyQueryDrawSummaryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyQueryDrawSummary(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyQueryDrawSummaryAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyQueryDrawSummaryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

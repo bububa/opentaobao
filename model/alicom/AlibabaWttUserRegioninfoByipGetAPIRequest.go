@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWttUserRegioninfoByipGetAPIRequest struct {
 // NewAlibabaWttUserRegioninfoByipGetRequest 初始化AlibabaWttUserRegioninfoByipGetAPIRequest对象
 func NewAlibabaWttUserRegioninfoByipGetRequest() *AlibabaWttUserRegioninfoByipGetAPIRequest {
 	return &AlibabaWttUserRegioninfoByipGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWttUserRegioninfoByipGetAPIRequest) Reset() {
+	r._ip = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWttUserRegioninfoByipGetAPIRequest) SetIp(_ip string) error {
 // GetIp Ip Getter
 func (r AlibabaWttUserRegioninfoByipGetAPIRequest) GetIp() string {
 	return r._ip
+}
+
+var poolAlibabaWttUserRegioninfoByipGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWttUserRegioninfoByipGetRequest()
+	},
+}
+
+// GetAlibabaWttUserRegioninfoByipGetRequest 从 sync.Pool 获取 AlibabaWttUserRegioninfoByipGetAPIRequest
+func GetAlibabaWttUserRegioninfoByipGetAPIRequest() *AlibabaWttUserRegioninfoByipGetAPIRequest {
+	return poolAlibabaWttUserRegioninfoByipGetAPIRequest.Get().(*AlibabaWttUserRegioninfoByipGetAPIRequest)
+}
+
+// ReleaseAlibabaWttUserRegioninfoByipGetAPIRequest 将 AlibabaWttUserRegioninfoByipGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWttUserRegioninfoByipGetAPIRequest(v *AlibabaWttUserRegioninfoByipGetAPIRequest) {
+	v.Reset()
+	poolAlibabaWttUserRegioninfoByipGetAPIRequest.Put(v)
 }

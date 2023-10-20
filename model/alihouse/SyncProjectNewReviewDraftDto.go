@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // SyncProjectNewReviewDraftDto 结构体
 type SyncProjectNewReviewDraftDto struct {
 	// 头像
@@ -78,4 +82,58 @@ type SyncProjectNewReviewDraftDto struct {
 	PriceTrend int64 `json:"price_trend,omitempty" xml:"price_trend,omitempty"`
 	// 唯一id
 	UniqueId int64 `json:"unique_id,omitempty" xml:"unique_id,omitempty"`
+}
+
+var poolSyncProjectNewReviewDraftDto = sync.Pool{
+	New: func() any {
+		return new(SyncProjectNewReviewDraftDto)
+	},
+}
+
+// GetSyncProjectNewReviewDraftDto() 从对象池中获取SyncProjectNewReviewDraftDto
+func GetSyncProjectNewReviewDraftDto() *SyncProjectNewReviewDraftDto {
+	return poolSyncProjectNewReviewDraftDto.Get().(*SyncProjectNewReviewDraftDto)
+}
+
+// ReleaseSyncProjectNewReviewDraftDto 释放SyncProjectNewReviewDraftDto
+func ReleaseSyncProjectNewReviewDraftDto(v *SyncProjectNewReviewDraftDto) {
+	v.Head = ""
+	v.OuterReviewId = ""
+	v.PublishTime = ""
+	v.Defect = ""
+	v.Lights = ""
+	v.PublicTraffic = ""
+	v.ModelHouse = ""
+	v.HouseTypeAnalysis = ""
+	v.PotentialPrice = ""
+	v.NowPrice = ""
+	v.OtherSource = ""
+	v.MedicalSource = ""
+	v.EduSource = ""
+	v.MainRoad = ""
+	v.SubwayDesc = ""
+	v.BlockDesc = ""
+	v.DistrictDesc = ""
+	v.OuterId = ""
+	v.CustomSource = ""
+	v.LiveSourceDesc = ""
+	v.TrafficTravelDesc = ""
+	v.ProductFeature = ""
+	v.ProductFeatureDesc = ""
+	v.DistrictBlockDesc = ""
+	v.SuitablePeople = ""
+	v.ProjectDesc = ""
+	v.NickName = ""
+	v.Describe = ""
+	v.Name = ""
+	v.HouseMultiple = ""
+	v.PriceDesc = ""
+	v.ParkSource = ""
+	v.IsTest = 0
+	v.Status = 0
+	v.CityId = 0
+	v.OuterVideoId = 0
+	v.PriceTrend = 0
+	v.UniqueId = 0
+	poolSyncProjectNewReviewDraftDto.Put(v)
 }

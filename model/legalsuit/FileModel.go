@@ -1,5 +1,9 @@
 package legalsuit
 
+import (
+	"sync"
+)
+
 // FileModel 结构体
 type FileModel struct {
 	// 附件名称
@@ -16,4 +20,27 @@ type FileModel struct {
 	Intro string `json:"intro,omitempty" xml:"intro,omitempty"`
 	// 上传时间
 	CreateTime string `json:"create_time,omitempty" xml:"create_time,omitempty"`
+}
+
+var poolFileModel = sync.Pool{
+	New: func() any {
+		return new(FileModel)
+	},
+}
+
+// GetFileModel() 从对象池中获取FileModel
+func GetFileModel() *FileModel {
+	return poolFileModel.Get().(*FileModel)
+}
+
+// ReleaseFileModel 释放FileModel
+func ReleaseFileModel(v *FileModel) {
+	v.Name = ""
+	v.Key = ""
+	v.SubmitDate = ""
+	v.Description = ""
+	v.Content = ""
+	v.Intro = ""
+	v.CreateTime = ""
+	poolFileModel.Put(v)
 }

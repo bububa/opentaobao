@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // SuspendServiceDo 结构体
 type SuspendServiceDo struct {
 	// api调用者
@@ -16,4 +20,27 @@ type SuspendServiceDo struct {
 	UpdateDate int64 `json:"update_date,omitempty" xml:"update_date,omitempty"`
 	// 工单id
 	WorkcardId int64 `json:"workcard_id,omitempty" xml:"workcard_id,omitempty"`
+}
+
+var poolSuspendServiceDo = sync.Pool{
+	New: func() any {
+		return new(SuspendServiceDo)
+	},
+}
+
+// GetSuspendServiceDo() 从对象池中获取SuspendServiceDo
+func GetSuspendServiceDo() *SuspendServiceDo {
+	return poolSuspendServiceDo.Get().(*SuspendServiceDo)
+}
+
+// ReleaseSuspendServiceDo 释放SuspendServiceDo
+func ReleaseSuspendServiceDo(v *SuspendServiceDo) {
+	v.Updater = ""
+	v.Extension = ""
+	v.Comments = ""
+	v.Type = 0
+	v.BuyerId = 0
+	v.UpdateDate = 0
+	v.WorkcardId = 0
+	poolSuspendServiceDo.Put(v)
 }

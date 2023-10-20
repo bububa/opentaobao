@@ -2,6 +2,7 @@ package lstwarehouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLstTradeSellerWarehouseQueryAPIRequest struct {
 // NewAlibabaLstTradeSellerWarehouseQueryRequest 初始化AlibabaLstTradeSellerWarehouseQueryAPIRequest对象
 func NewAlibabaLstTradeSellerWarehouseQueryRequest() *AlibabaLstTradeSellerWarehouseQueryAPIRequest {
 	return &AlibabaLstTradeSellerWarehouseQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstTradeSellerWarehouseQueryAPIRequest) Reset() {
+	r._warehouseQueryParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLstTradeSellerWarehouseQueryAPIRequest) SetWarehouseQueryParam(_
 // GetWarehouseQueryParam WarehouseQueryParam Getter
 func (r AlibabaLstTradeSellerWarehouseQueryAPIRequest) GetWarehouseQueryParam() *WarehouseQueryParam {
 	return r._warehouseQueryParam
+}
+
+var poolAlibabaLstTradeSellerWarehouseQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstTradeSellerWarehouseQueryRequest()
+	},
+}
+
+// GetAlibabaLstTradeSellerWarehouseQueryRequest 从 sync.Pool 获取 AlibabaLstTradeSellerWarehouseQueryAPIRequest
+func GetAlibabaLstTradeSellerWarehouseQueryAPIRequest() *AlibabaLstTradeSellerWarehouseQueryAPIRequest {
+	return poolAlibabaLstTradeSellerWarehouseQueryAPIRequest.Get().(*AlibabaLstTradeSellerWarehouseQueryAPIRequest)
+}
+
+// ReleaseAlibabaLstTradeSellerWarehouseQueryAPIRequest 将 AlibabaLstTradeSellerWarehouseQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstTradeSellerWarehouseQueryAPIRequest(v *AlibabaLstTradeSellerWarehouseQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaLstTradeSellerWarehouseQueryAPIRequest.Put(v)
 }

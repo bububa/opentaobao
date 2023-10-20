@@ -1,5 +1,9 @@
 package aesolution
 
+import (
+	"sync"
+)
+
 // RmaState 结构体
 type RmaState struct {
 	// Order data. PST time
@@ -8,4 +12,23 @@ type RmaState struct {
 	State string `json:"state,omitempty" xml:"state,omitempty"`
 	// Detail of the state changed
 	StateDetail string `json:"state_detail,omitempty" xml:"state_detail,omitempty"`
+}
+
+var poolRmaState = sync.Pool{
+	New: func() any {
+		return new(RmaState)
+	},
+}
+
+// GetRmaState() 从对象池中获取RmaState
+func GetRmaState() *RmaState {
+	return poolRmaState.Get().(*RmaState)
+}
+
+// ReleaseRmaState 释放RmaState
+func ReleaseRmaState(v *RmaState) {
+	v.StateDate = ""
+	v.State = ""
+	v.StateDetail = ""
+	poolRmaState.Put(v)
 }

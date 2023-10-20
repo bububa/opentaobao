@@ -1,5 +1,9 @@
 package eleenterpriserestaurant
 
+import (
+	"sync"
+)
+
 // Activities 结构体
 type Activities struct {
 	// 活动名称
@@ -10,4 +14,24 @@ type Activities struct {
 	DetailType int64 `json:"detail_type,omitempty" xml:"detail_type,omitempty"`
 	// 活动id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolActivities = sync.Pool{
+	New: func() any {
+		return new(Activities)
+	},
+}
+
+// GetActivities() 从对象池中获取Activities
+func GetActivities() *Activities {
+	return poolActivities.Get().(*Activities)
+}
+
+// ReleaseActivities 释放Activities
+func ReleaseActivities(v *Activities) {
+	v.Name = ""
+	v.Description = ""
+	v.DetailType = 0
+	v.Id = 0
+	poolActivities.Put(v)
 }

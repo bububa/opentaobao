@@ -1,6 +1,8 @@
 package btrip
 
 import (
+	"sync"
+
 	"github.com/bububa/opentaobao/model"
 )
 
@@ -50,4 +52,42 @@ type BtripFlightCreateOrderRq struct {
 	TripType int64 `json:"trip_type,omitempty" xml:"trip_type,omitempty"`
 	// 是否异步创单
 	AsyncCreateOrderMode bool `json:"async_create_order_mode,omitempty" xml:"async_create_order_mode,omitempty"`
+}
+
+var poolBtripFlightCreateOrderRq = sync.Pool{
+	New: func() any {
+		return new(BtripFlightCreateOrderRq)
+	},
+}
+
+// GetBtripFlightCreateOrderRq() 从对象池中获取BtripFlightCreateOrderRq
+func GetBtripFlightCreateOrderRq() *BtripFlightCreateOrderRq {
+	return poolBtripFlightCreateOrderRq.Get().(*BtripFlightCreateOrderRq)
+}
+
+// ReleaseBtripFlightCreateOrderRq 释放BtripFlightCreateOrderRq
+func ReleaseBtripFlightCreateOrderRq(v *BtripFlightCreateOrderRq) {
+	v.FlightSegmentList = v.FlightSegmentList[:0]
+	v.TravelerInfoList = v.TravelerInfoList[:0]
+	v.ArrCityCode = ""
+	v.BuyerName = ""
+	v.BuyerUniqueKey = ""
+	v.DepCityCode = ""
+	v.DepDate = ""
+	v.OrderAttr = ""
+	v.ReceiptAddress = ""
+	v.ReceiptTitle = ""
+	v.OrderParams = ""
+	v.SubChannel = ""
+	v.DisOrderId = ""
+	v.DepAirportCode = ""
+	v.ArrAirportCode = ""
+	v.OtaItemId = ""
+	v.AutoPay = nil
+	v.ContactInfo = nil
+	v.Price = 0
+	v.ReceiptTarget = 0
+	v.TripType = 0
+	v.AsyncCreateOrderMode = false
+	poolBtripFlightCreateOrderRq.Put(v)
 }

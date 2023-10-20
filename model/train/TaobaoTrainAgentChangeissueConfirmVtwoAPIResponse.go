@@ -2,6 +2,7 @@ package train
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTrainAgentChangeissueConfirmVtwoAPIResponse struct {
 	TaobaoTrainAgentChangeissueConfirmVtwoAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTrainAgentChangeissueConfirmVtwoAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTrainAgentChangeissueConfirmVtwoAPIResponseModel).Reset()
+}
+
 // TaobaoTrainAgentChangeissueConfirmVtwoAPIResponseModel is 火车票代理商接口-跑腿改签出票回填-含鉴权校验 成功返回结果
 type TaobaoTrainAgentChangeissueConfirmVtwoAPIResponseModel struct {
 	XMLName xml.Name `xml:"train_agent_changeissue_confirm_vtwo_response"`
@@ -26,4 +33,29 @@ type TaobaoTrainAgentChangeissueConfirmVtwoAPIResponseModel struct {
 	FailCode string `json:"fail_code,omitempty" xml:"fail_code,omitempty"`
 	// 出票回填结果
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTrainAgentChangeissueConfirmVtwoAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.FailMessage = ""
+	m.FailCode = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoTrainAgentChangeissueConfirmVtwoAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTrainAgentChangeissueConfirmVtwoAPIResponse)
+	},
+}
+
+// GetTaobaoTrainAgentChangeissueConfirmVtwoAPIResponse 从 sync.Pool 获取 TaobaoTrainAgentChangeissueConfirmVtwoAPIResponse
+func GetTaobaoTrainAgentChangeissueConfirmVtwoAPIResponse() *TaobaoTrainAgentChangeissueConfirmVtwoAPIResponse {
+	return poolTaobaoTrainAgentChangeissueConfirmVtwoAPIResponse.Get().(*TaobaoTrainAgentChangeissueConfirmVtwoAPIResponse)
+}
+
+// ReleaseTaobaoTrainAgentChangeissueConfirmVtwoAPIResponse 将 TaobaoTrainAgentChangeissueConfirmVtwoAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTrainAgentChangeissueConfirmVtwoAPIResponse(v *TaobaoTrainAgentChangeissueConfirmVtwoAPIResponse) {
+	v.Reset()
+	poolTaobaoTrainAgentChangeissueConfirmVtwoAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // DrugInfo 结构体
 type DrugInfo struct {
 	// 有效期
@@ -24,4 +28,31 @@ type DrugInfo struct {
 	Specifications string `json:"specifications,omitempty" xml:"specifications,omitempty"`
 	// 生产企业
 	Manufacturer string `json:"manufacturer,omitempty" xml:"manufacturer,omitempty"`
+}
+
+var poolDrugInfo = sync.Pool{
+	New: func() any {
+		return new(DrugInfo)
+	},
+}
+
+// GetDrugInfo() 从对象池中获取DrugInfo
+func GetDrugInfo() *DrugInfo {
+	return poolDrugInfo.Get().(*DrugInfo)
+}
+
+// ReleaseDrugInfo 释放DrugInfo
+func ReleaseDrugInfo(v *DrugInfo) {
+	v.ExpiryDate = ""
+	v.DrugBaseInfoId = ""
+	v.ProductionDate = ""
+	v.PkgSpec = ""
+	v.DrugEntBaseInfoId = ""
+	v.ProductionBatch = ""
+	v.DrugName = ""
+	v.LicenseNumber = ""
+	v.PrepnType = ""
+	v.Specifications = ""
+	v.Manufacturer = ""
+	poolDrugInfo.Put(v)
 }

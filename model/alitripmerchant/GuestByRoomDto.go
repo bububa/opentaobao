@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // GuestByRoomDto 结构体
 type GuestByRoomDto struct {
 	// 儿童年龄数组
@@ -14,4 +18,26 @@ type GuestByRoomDto struct {
 	AdultRoomerNumber int64 `json:"adult_roomer_number,omitempty" xml:"adult_roomer_number,omitempty"`
 	// 儿童数
 	ChildRoomerNumber int64 `json:"child_roomer_number,omitempty" xml:"child_roomer_number,omitempty"`
+}
+
+var poolGuestByRoomDto = sync.Pool{
+	New: func() any {
+		return new(GuestByRoomDto)
+	},
+}
+
+// GetGuestByRoomDto() 从对象池中获取GuestByRoomDto
+func GetGuestByRoomDto() *GuestByRoomDto {
+	return poolGuestByRoomDto.Get().(*GuestByRoomDto)
+}
+
+// ReleaseGuestByRoomDto 释放GuestByRoomDto
+func ReleaseGuestByRoomDto(v *GuestByRoomDto) {
+	v.ChildAges = v.ChildAges[:0]
+	v.ContactFirstName = ""
+	v.ContactLastName = ""
+	v.RoomerNumber = 0
+	v.AdultRoomerNumber = 0
+	v.ChildRoomerNumber = 0
+	poolGuestByRoomDto.Put(v)
 }

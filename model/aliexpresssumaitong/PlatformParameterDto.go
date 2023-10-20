@@ -1,5 +1,9 @@
 package aliexpresssumaitong
 
+import (
+	"sync"
+)
+
 // PlatformParameterDto 结构体
 type PlatformParameterDto struct {
 	// 发货人/平台公司名称
@@ -20,4 +24,29 @@ type PlatformParameterDto struct {
 	EmailAddress string `json:"email_address,omitempty" xml:"email_address,omitempty"`
 	// IOSS 平台税号
 	IossNumber string `json:"ioss_number,omitempty" xml:"ioss_number,omitempty"`
+}
+
+var poolPlatformParameterDto = sync.Pool{
+	New: func() any {
+		return new(PlatformParameterDto)
+	},
+}
+
+// GetPlatformParameterDto() 从对象池中获取PlatformParameterDto
+func GetPlatformParameterDto() *PlatformParameterDto {
+	return poolPlatformParameterDto.Get().(*PlatformParameterDto)
+}
+
+// ReleasePlatformParameterDto 释放PlatformParameterDto
+func ReleasePlatformParameterDto(v *PlatformParameterDto) {
+	v.CompanyName = ""
+	v.ContactorName = ""
+	v.Country = ""
+	v.Address = ""
+	v.City = ""
+	v.CountryCode = ""
+	v.ContactNumber = ""
+	v.EmailAddress = ""
+	v.IossNumber = ""
+	poolPlatformParameterDto.Put(v)
 }

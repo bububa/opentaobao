@@ -1,5 +1,9 @@
 package koubeimall
 
+import (
+	"sync"
+)
+
 // MallDto 结构体
 type MallDto struct {
 	// 商圈LOGO
@@ -24,4 +28,31 @@ type MallDto struct {
 	Distance string `json:"distance,omitempty" xml:"distance,omitempty"`
 	// 地理位置信息模型
 	DistrictInfo *DistrictInfo `json:"district_info,omitempty" xml:"district_info,omitempty"`
+}
+
+var poolMallDto = sync.Pool{
+	New: func() any {
+		return new(MallDto)
+	},
+}
+
+// GetMallDto() 从对象池中获取MallDto
+func GetMallDto() *MallDto {
+	return poolMallDto.Get().(*MallDto)
+}
+
+// ReleaseMallDto 释放MallDto
+func ReleaseMallDto(v *MallDto) {
+	v.MallLogo = ""
+	v.MallName = ""
+	v.ContactInfo = ""
+	v.MallCover = ""
+	v.MallId = ""
+	v.MallHomePageUrl = ""
+	v.BusinessTime = ""
+	v.CategoryName = ""
+	v.MallLabel = ""
+	v.Distance = ""
+	v.DistrictInfo = nil
+	poolMallDto.Put(v)
 }

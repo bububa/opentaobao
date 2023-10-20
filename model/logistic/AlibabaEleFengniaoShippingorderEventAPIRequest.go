@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaEleFengniaoShippingorderEventAPIRequest struct {
 // NewAlibabaEleFengniaoShippingorderEventRequest 初始化AlibabaEleFengniaoShippingorderEventAPIRequest对象
 func NewAlibabaEleFengniaoShippingorderEventRequest() *AlibabaEleFengniaoShippingorderEventAPIRequest {
 	return &AlibabaEleFengniaoShippingorderEventAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEleFengniaoShippingorderEventAPIRequest) Reset() {
+	r._appId = ""
+	r._partnerOrderCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaEleFengniaoShippingorderEventAPIRequest) SetPartnerOrderCode(_pa
 // GetPartnerOrderCode PartnerOrderCode Getter
 func (r AlibabaEleFengniaoShippingorderEventAPIRequest) GetPartnerOrderCode() string {
 	return r._partnerOrderCode
+}
+
+var poolAlibabaEleFengniaoShippingorderEventAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEleFengniaoShippingorderEventRequest()
+	},
+}
+
+// GetAlibabaEleFengniaoShippingorderEventRequest 从 sync.Pool 获取 AlibabaEleFengniaoShippingorderEventAPIRequest
+func GetAlibabaEleFengniaoShippingorderEventAPIRequest() *AlibabaEleFengniaoShippingorderEventAPIRequest {
+	return poolAlibabaEleFengniaoShippingorderEventAPIRequest.Get().(*AlibabaEleFengniaoShippingorderEventAPIRequest)
+}
+
+// ReleaseAlibabaEleFengniaoShippingorderEventAPIRequest 将 AlibabaEleFengniaoShippingorderEventAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEleFengniaoShippingorderEventAPIRequest(v *AlibabaEleFengniaoShippingorderEventAPIRequest) {
+	v.Reset()
+	poolAlibabaEleFengniaoShippingorderEventAPIRequest.Put(v)
 }

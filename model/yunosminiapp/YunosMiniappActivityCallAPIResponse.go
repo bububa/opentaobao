@@ -2,6 +2,7 @@ package yunosminiapp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type YunosMiniappActivityCallAPIResponse struct {
 	YunosMiniappActivityCallAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *YunosMiniappActivityCallAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.YunosMiniappActivityCallAPIResponseModel).Reset()
+}
+
 // YunosMiniappActivityCallAPIResponseModel is 调用活动接口 成功返回结果
 type YunosMiniappActivityCallAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_miniapp_activity_call_response"`
@@ -22,4 +29,27 @@ type YunosMiniappActivityCallAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *YunosMiniappActivityCallResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *YunosMiniappActivityCallAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolYunosMiniappActivityCallAPIResponse = sync.Pool{
+	New: func() any {
+		return new(YunosMiniappActivityCallAPIResponse)
+	},
+}
+
+// GetYunosMiniappActivityCallAPIResponse 从 sync.Pool 获取 YunosMiniappActivityCallAPIResponse
+func GetYunosMiniappActivityCallAPIResponse() *YunosMiniappActivityCallAPIResponse {
+	return poolYunosMiniappActivityCallAPIResponse.Get().(*YunosMiniappActivityCallAPIResponse)
+}
+
+// ReleaseYunosMiniappActivityCallAPIResponse 将 YunosMiniappActivityCallAPIResponse 保存到 sync.Pool
+func ReleaseYunosMiniappActivityCallAPIResponse(v *YunosMiniappActivityCallAPIResponse) {
+	v.Reset()
+	poolYunosMiniappActivityCallAPIResponse.Put(v)
 }

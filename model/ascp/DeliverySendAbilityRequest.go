@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // DeliverySendAbilityRequest 结构体
 type DeliverySendAbilityRequest struct {
 	// 当地址传入方式为菜鸟地址库ID传入时，则必须填写 地址id（数组）；四级/三级/二级
@@ -36,4 +40,37 @@ type DeliverySendAbilityRequest struct {
 	RegionCode string `json:"region_code,omitempty" xml:"region_code,omitempty"`
 	// 时间戳（毫秒）
 	RequestTime int64 `json:"request_time,omitempty" xml:"request_time,omitempty"`
+}
+
+var poolDeliverySendAbilityRequest = sync.Pool{
+	New: func() any {
+		return new(DeliverySendAbilityRequest)
+	},
+}
+
+// GetDeliverySendAbilityRequest() 从对象池中获取DeliverySendAbilityRequest
+func GetDeliverySendAbilityRequest() *DeliverySendAbilityRequest {
+	return poolDeliverySendAbilityRequest.Get().(*DeliverySendAbilityRequest)
+}
+
+// ReleaseDeliverySendAbilityRequest 释放DeliverySendAbilityRequest
+func ReleaseDeliverySendAbilityRequest(v *DeliverySendAbilityRequest) {
+	v.AddressId = v.AddressId[:0]
+	v.AddressName = v.AddressName[:0]
+	v.RegionId = v.RegionId[:0]
+	v.RequestId = ""
+	v.SupplierId = ""
+	v.DeliveryCode = ""
+	v.SiteId = ""
+	v.SiteAddress = ""
+	v.AbilityType = ""
+	v.ServiceClass = ""
+	v.Category = ""
+	v.ServiceTime = ""
+	v.ServiceCap = ""
+	v.ServiceScopeType = ""
+	v.AddressType = ""
+	v.RegionCode = ""
+	v.RequestTime = 0
+	poolDeliverySendAbilityRequest.Put(v)
 }

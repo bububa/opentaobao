@@ -2,6 +2,7 @@ package eticket
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoEticketMerchantMaResendAPIResponse struct {
 	TaobaoEticketMerchantMaResendAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoEticketMerchantMaResendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoEticketMerchantMaResendAPIResponseModel).Reset()
+}
+
 // TaobaoEticketMerchantMaResendAPIResponseModel is 电子凭证重发回调接口 成功返回结果
 type TaobaoEticketMerchantMaResendAPIResponseModel struct {
 	XMLName xml.Name `xml:"eticket_merchant_ma_resend_response"`
@@ -26,4 +33,29 @@ type TaobaoEticketMerchantMaResendAPIResponseModel struct {
 	RetMsg string `json:"ret_msg,omitempty" xml:"ret_msg,omitempty"`
 	// 回复参数
 	RespBody *SendMaCallbackResp `json:"resp_body,omitempty" xml:"resp_body,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoEticketMerchantMaResendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RetCode = ""
+	m.RetMsg = ""
+	m.RespBody = nil
+}
+
+var poolTaobaoEticketMerchantMaResendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoEticketMerchantMaResendAPIResponse)
+	},
+}
+
+// GetTaobaoEticketMerchantMaResendAPIResponse 从 sync.Pool 获取 TaobaoEticketMerchantMaResendAPIResponse
+func GetTaobaoEticketMerchantMaResendAPIResponse() *TaobaoEticketMerchantMaResendAPIResponse {
+	return poolTaobaoEticketMerchantMaResendAPIResponse.Get().(*TaobaoEticketMerchantMaResendAPIResponse)
+}
+
+// ReleaseTaobaoEticketMerchantMaResendAPIResponse 将 TaobaoEticketMerchantMaResendAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoEticketMerchantMaResendAPIResponse(v *TaobaoEticketMerchantMaResendAPIResponse) {
+	v.Reset()
+	poolTaobaoEticketMerchantMaResendAPIResponse.Put(v)
 }

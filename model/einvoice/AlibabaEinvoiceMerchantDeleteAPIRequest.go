@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaEinvoiceMerchantDeleteAPIRequest struct {
 // NewAlibabaEinvoiceMerchantDeleteRequest 初始化AlibabaEinvoiceMerchantDeleteAPIRequest对象
 func NewAlibabaEinvoiceMerchantDeleteRequest() *AlibabaEinvoiceMerchantDeleteAPIRequest {
 	return &AlibabaEinvoiceMerchantDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceMerchantDeleteAPIRequest) Reset() {
+	r._taxToken = ""
+	r._outerId = ""
+	r._merchantUserId = ""
+	r._platformCode = ""
+	r._payeeRegisterNo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaEinvoiceMerchantDeleteAPIRequest) SetPayeeRegisterNo(_payeeRegis
 // GetPayeeRegisterNo PayeeRegisterNo Getter
 func (r AlibabaEinvoiceMerchantDeleteAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
+}
+
+var poolAlibabaEinvoiceMerchantDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceMerchantDeleteRequest()
+	},
+}
+
+// GetAlibabaEinvoiceMerchantDeleteRequest 从 sync.Pool 获取 AlibabaEinvoiceMerchantDeleteAPIRequest
+func GetAlibabaEinvoiceMerchantDeleteAPIRequest() *AlibabaEinvoiceMerchantDeleteAPIRequest {
+	return poolAlibabaEinvoiceMerchantDeleteAPIRequest.Get().(*AlibabaEinvoiceMerchantDeleteAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceMerchantDeleteAPIRequest 将 AlibabaEinvoiceMerchantDeleteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceMerchantDeleteAPIRequest(v *AlibabaEinvoiceMerchantDeleteAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceMerchantDeleteAPIRequest.Put(v)
 }

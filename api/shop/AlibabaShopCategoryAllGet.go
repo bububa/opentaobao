@@ -9,11 +9,6 @@ import (
 // alibaba.shop.category.all.get
 //
 // 按照卖家身份查询全部分类信息
-func AlibabaShopCategoryAllGet(clt *core.SDKClient, req *shop.AlibabaShopCategoryAllGetAPIRequest, session string) (*shop.AlibabaShopCategoryAllGetAPIResponse, error) {
-	var resp shop.AlibabaShopCategoryAllGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaShopCategoryAllGet(clt *core.SDKClient, req *shop.AlibabaShopCategoryAllGetAPIRequest, resp *shop.AlibabaShopCategoryAllGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

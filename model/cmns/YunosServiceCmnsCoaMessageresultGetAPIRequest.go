@@ -2,6 +2,7 @@ package cmns
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YunosServiceCmnsCoaMessageresultGetAPIRequest struct {
 // NewYunosServiceCmnsCoaMessageresultGetRequest 初始化YunosServiceCmnsCoaMessageresultGetAPIRequest对象
 func NewYunosServiceCmnsCoaMessageresultGetRequest() *YunosServiceCmnsCoaMessageresultGetAPIRequest {
 	return &YunosServiceCmnsCoaMessageresultGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosServiceCmnsCoaMessageresultGetAPIRequest) Reset() {
+	r._mid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YunosServiceCmnsCoaMessageresultGetAPIRequest) SetMid(_mid int64) error
 // GetMid Mid Getter
 func (r YunosServiceCmnsCoaMessageresultGetAPIRequest) GetMid() int64 {
 	return r._mid
+}
+
+var poolYunosServiceCmnsCoaMessageresultGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosServiceCmnsCoaMessageresultGetRequest()
+	},
+}
+
+// GetYunosServiceCmnsCoaMessageresultGetRequest 从 sync.Pool 获取 YunosServiceCmnsCoaMessageresultGetAPIRequest
+func GetYunosServiceCmnsCoaMessageresultGetAPIRequest() *YunosServiceCmnsCoaMessageresultGetAPIRequest {
+	return poolYunosServiceCmnsCoaMessageresultGetAPIRequest.Get().(*YunosServiceCmnsCoaMessageresultGetAPIRequest)
+}
+
+// ReleaseYunosServiceCmnsCoaMessageresultGetAPIRequest 将 YunosServiceCmnsCoaMessageresultGetAPIRequest 放入 sync.Pool
+func ReleaseYunosServiceCmnsCoaMessageresultGetAPIRequest(v *YunosServiceCmnsCoaMessageresultGetAPIRequest) {
+	v.Reset()
+	poolYunosServiceCmnsCoaMessageresultGetAPIRequest.Put(v)
 }

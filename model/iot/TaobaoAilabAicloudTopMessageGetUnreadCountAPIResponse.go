@@ -2,6 +2,7 @@ package iot
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoAilabAicloudTopMessageGetUnreadCountAPIResponse struct {
 	TaobaoAilabAicloudTopMessageGetUnreadCountAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopMessageGetUnreadCountAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAilabAicloudTopMessageGetUnreadCountAPIResponseModel).Reset()
+}
+
 // TaobaoAilabAicloudTopMessageGetUnreadCountAPIResponseModel is 获取未读的消息数量 成功返回结果
 type TaobaoAilabAicloudTopMessageGetUnreadCountAPIResponseModel struct {
 	XMLName xml.Name `xml:"ailab_aicloud_top_message_get_unread_count_response"`
@@ -26,4 +33,29 @@ type TaobaoAilabAicloudTopMessageGetUnreadCountAPIResponseModel struct {
 	Model int64 `json:"model,omitempty" xml:"model,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopMessageGetUnreadCountAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgInfo = ""
+	m.Model = 0
+	m.IsSuccess = false
+}
+
+var poolTaobaoAilabAicloudTopMessageGetUnreadCountAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAilabAicloudTopMessageGetUnreadCountAPIResponse)
+	},
+}
+
+// GetTaobaoAilabAicloudTopMessageGetUnreadCountAPIResponse 从 sync.Pool 获取 TaobaoAilabAicloudTopMessageGetUnreadCountAPIResponse
+func GetTaobaoAilabAicloudTopMessageGetUnreadCountAPIResponse() *TaobaoAilabAicloudTopMessageGetUnreadCountAPIResponse {
+	return poolTaobaoAilabAicloudTopMessageGetUnreadCountAPIResponse.Get().(*TaobaoAilabAicloudTopMessageGetUnreadCountAPIResponse)
+}
+
+// ReleaseTaobaoAilabAicloudTopMessageGetUnreadCountAPIResponse 将 TaobaoAilabAicloudTopMessageGetUnreadCountAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAilabAicloudTopMessageGetUnreadCountAPIResponse(v *TaobaoAilabAicloudTopMessageGetUnreadCountAPIResponse) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopMessageGetUnreadCountAPIResponse.Put(v)
 }

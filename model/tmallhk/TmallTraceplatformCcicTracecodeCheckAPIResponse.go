@@ -2,6 +2,7 @@ package tmallhk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallTraceplatformCcicTracecodeCheckAPIResponse struct {
 	TmallTraceplatformCcicTracecodeCheckAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallTraceplatformCcicTracecodeCheckAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallTraceplatformCcicTracecodeCheckAPIResponseModel).Reset()
+}
+
 // TmallTraceplatformCcicTracecodeCheckAPIResponseModel is ccic校验溯源码 成功返回结果
 type TmallTraceplatformCcicTracecodeCheckAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_traceplatform_ccic_tracecode_check_response"`
@@ -22,4 +29,27 @@ type TmallTraceplatformCcicTracecodeCheckAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *DataResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallTraceplatformCcicTracecodeCheckAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTmallTraceplatformCcicTracecodeCheckAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallTraceplatformCcicTracecodeCheckAPIResponse)
+	},
+}
+
+// GetTmallTraceplatformCcicTracecodeCheckAPIResponse 从 sync.Pool 获取 TmallTraceplatformCcicTracecodeCheckAPIResponse
+func GetTmallTraceplatformCcicTracecodeCheckAPIResponse() *TmallTraceplatformCcicTracecodeCheckAPIResponse {
+	return poolTmallTraceplatformCcicTracecodeCheckAPIResponse.Get().(*TmallTraceplatformCcicTracecodeCheckAPIResponse)
+}
+
+// ReleaseTmallTraceplatformCcicTracecodeCheckAPIResponse 将 TmallTraceplatformCcicTracecodeCheckAPIResponse 保存到 sync.Pool
+func ReleaseTmallTraceplatformCcicTracecodeCheckAPIResponse(v *TmallTraceplatformCcicTracecodeCheckAPIResponse) {
+	v.Reset()
+	poolTmallTraceplatformCcicTracecodeCheckAPIResponse.Put(v)
 }

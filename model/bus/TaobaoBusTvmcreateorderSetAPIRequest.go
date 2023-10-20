@@ -2,6 +2,7 @@ package bus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoBusTvmcreateorderSetAPIRequest struct {
 // NewTaobaoBusTvmcreateorderSetRequest 初始化TaobaoBusTvmcreateorderSetAPIRequest对象
 func NewTaobaoBusTvmcreateorderSetRequest() *TaobaoBusTvmcreateorderSetAPIRequest {
 	return &TaobaoBusTvmcreateorderSetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBusTvmcreateorderSetAPIRequest) Reset() {
+	r._paramTVMCreateOrderRQ = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoBusTvmcreateorderSetAPIRequest) SetParamTVMCreateOrderRQ(_paramTV
 // GetParamTVMCreateOrderRQ ParamTVMCreateOrderRQ Getter
 func (r TaobaoBusTvmcreateorderSetAPIRequest) GetParamTVMCreateOrderRQ() *TvmCreateOrderRq {
 	return r._paramTVMCreateOrderRQ
+}
+
+var poolTaobaoBusTvmcreateorderSetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBusTvmcreateorderSetRequest()
+	},
+}
+
+// GetTaobaoBusTvmcreateorderSetRequest 从 sync.Pool 获取 TaobaoBusTvmcreateorderSetAPIRequest
+func GetTaobaoBusTvmcreateorderSetAPIRequest() *TaobaoBusTvmcreateorderSetAPIRequest {
+	return poolTaobaoBusTvmcreateorderSetAPIRequest.Get().(*TaobaoBusTvmcreateorderSetAPIRequest)
+}
+
+// ReleaseTaobaoBusTvmcreateorderSetAPIRequest 将 TaobaoBusTvmcreateorderSetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBusTvmcreateorderSetAPIRequest(v *TaobaoBusTvmcreateorderSetAPIRequest) {
+	v.Reset()
+	poolTaobaoBusTvmcreateorderSetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaPricePromotionItemDeleteAPIResponse struct {
 	AlibabaPricePromotionItemDeleteAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaPricePromotionItemDeleteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaPricePromotionItemDeleteAPIResponseModel).Reset()
+}
+
 // AlibabaPricePromotionItemDeleteAPIResponseModel is 批量删除档期 成功返回结果
 type AlibabaPricePromotionItemDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_price_promotion_item_delete_response"`
@@ -22,4 +29,27 @@ type AlibabaPricePromotionItemDeleteAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *AlibabaPricePromotionItemDeleteResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaPricePromotionItemDeleteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaPricePromotionItemDeleteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaPricePromotionItemDeleteAPIResponse)
+	},
+}
+
+// GetAlibabaPricePromotionItemDeleteAPIResponse 从 sync.Pool 获取 AlibabaPricePromotionItemDeleteAPIResponse
+func GetAlibabaPricePromotionItemDeleteAPIResponse() *AlibabaPricePromotionItemDeleteAPIResponse {
+	return poolAlibabaPricePromotionItemDeleteAPIResponse.Get().(*AlibabaPricePromotionItemDeleteAPIResponse)
+}
+
+// ReleaseAlibabaPricePromotionItemDeleteAPIResponse 将 AlibabaPricePromotionItemDeleteAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaPricePromotionItemDeleteAPIResponse(v *AlibabaPricePromotionItemDeleteAPIResponse) {
+	v.Reset()
+	poolAlibabaPricePromotionItemDeleteAPIResponse.Put(v)
 }

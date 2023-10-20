@@ -1,5 +1,9 @@
 package lstlogistics
 
+import (
+	"sync"
+)
+
 // LstThirdPartMainShipOrderCreateDto 结构体
 type LstThirdPartMainShipOrderCreateDto struct {
 	// 货品明细
@@ -32,4 +36,35 @@ type LstThirdPartMainShipOrderCreateDto struct {
 	ReceiverMobile int64 `json:"receiver_mobile,omitempty" xml:"receiver_mobile,omitempty"`
 	// 订单实付金额，单位为分
 	PayFee int64 `json:"pay_fee,omitempty" xml:"pay_fee,omitempty"`
+}
+
+var poolLstThirdPartMainShipOrderCreateDto = sync.Pool{
+	New: func() any {
+		return new(LstThirdPartMainShipOrderCreateDto)
+	},
+}
+
+// GetLstThirdPartMainShipOrderCreateDto() 从对象池中获取LstThirdPartMainShipOrderCreateDto
+func GetLstThirdPartMainShipOrderCreateDto() *LstThirdPartMainShipOrderCreateDto {
+	return poolLstThirdPartMainShipOrderCreateDto.Get().(*LstThirdPartMainShipOrderCreateDto)
+}
+
+// ReleaseLstThirdPartMainShipOrderCreateDto 释放LstThirdPartMainShipOrderCreateDto
+func ReleaseLstThirdPartMainShipOrderCreateDto(v *LstThirdPartMainShipOrderCreateDto) {
+	v.Details = v.Details[:0]
+	v.ReceiverDistrict = ""
+	v.ReceiverProvince = ""
+	v.BuyerMessage = ""
+	v.ReceiverAddress = ""
+	v.BuyerName = ""
+	v.OrderCreateTime = ""
+	v.ReceiverCity = ""
+	v.ReceiverTown = ""
+	v.ReceiverName = ""
+	v.ReceiverZip = ""
+	v.OutOrderId = ""
+	v.ReceiverPhone = ""
+	v.ReceiverMobile = 0
+	v.PayFee = 0
+	poolLstThirdPartMainShipOrderCreateDto.Put(v)
 }

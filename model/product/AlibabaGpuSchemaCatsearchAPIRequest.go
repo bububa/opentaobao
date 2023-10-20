@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaGpuSchemaCatsearchAPIRequest struct {
 // NewAlibabaGpuSchemaCatsearchRequest 初始化AlibabaGpuSchemaCatsearchAPIRequest对象
 func NewAlibabaGpuSchemaCatsearchRequest() *AlibabaGpuSchemaCatsearchAPIRequest {
 	return &AlibabaGpuSchemaCatsearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaGpuSchemaCatsearchAPIRequest) Reset() {
+	r._leafCatId = 0
+	r._currentPage = 0
+	r._pageSize = 0
+	r._providerId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaGpuSchemaCatsearchAPIRequest) SetProviderId(_providerId int64) e
 // GetProviderId ProviderId Getter
 func (r AlibabaGpuSchemaCatsearchAPIRequest) GetProviderId() int64 {
 	return r._providerId
+}
+
+var poolAlibabaGpuSchemaCatsearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaGpuSchemaCatsearchRequest()
+	},
+}
+
+// GetAlibabaGpuSchemaCatsearchRequest 从 sync.Pool 获取 AlibabaGpuSchemaCatsearchAPIRequest
+func GetAlibabaGpuSchemaCatsearchAPIRequest() *AlibabaGpuSchemaCatsearchAPIRequest {
+	return poolAlibabaGpuSchemaCatsearchAPIRequest.Get().(*AlibabaGpuSchemaCatsearchAPIRequest)
+}
+
+// ReleaseAlibabaGpuSchemaCatsearchAPIRequest 将 AlibabaGpuSchemaCatsearchAPIRequest 放入 sync.Pool
+func ReleaseAlibabaGpuSchemaCatsearchAPIRequest(v *AlibabaGpuSchemaCatsearchAPIRequest) {
+	v.Reset()
+	poolAlibabaGpuSchemaCatsearchAPIRequest.Put(v)
 }

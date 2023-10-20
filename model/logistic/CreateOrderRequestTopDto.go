@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // CreateOrderRequestTopDto 结构体
 type CreateOrderRequestTopDto struct {
 	// products info
@@ -22,4 +26,30 @@ type CreateOrderRequestTopDto struct {
 	ReceiptAddress *AddressTopDto `json:"receipt_address,omitempty" xml:"receipt_address,omitempty"`
 	// invoice info
 	Invoice *InvoiceTopDto `json:"invoice,omitempty" xml:"invoice,omitempty"`
+}
+
+var poolCreateOrderRequestTopDto = sync.Pool{
+	New: func() any {
+		return new(CreateOrderRequestTopDto)
+	},
+}
+
+// GetCreateOrderRequestTopDto() 从对象池中获取CreateOrderRequestTopDto
+func GetCreateOrderRequestTopDto() *CreateOrderRequestTopDto {
+	return poolCreateOrderRequestTopDto.Get().(*CreateOrderRequestTopDto)
+}
+
+// ReleaseCreateOrderRequestTopDto 释放CreateOrderRequestTopDto
+func ReleaseCreateOrderRequestTopDto(v *CreateOrderRequestTopDto) {
+	v.Products = v.Products[:0]
+	v.LogisticsChannelId = ""
+	v.ProviderShippingCosts = ""
+	v.QueryId = ""
+	v.SenderAddress = nil
+	v.Parcel = nil
+	v.DeliveryMethodId = 0
+	v.TradeOrderId = 0
+	v.ReceiptAddress = nil
+	v.Invoice = nil
+	poolCreateOrderRequestTopDto.Put(v)
 }

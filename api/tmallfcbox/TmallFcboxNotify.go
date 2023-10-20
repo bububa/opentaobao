@@ -9,11 +9,6 @@ import (
 // tmall.fcbox.notify
 //
 // tmax接收丰巢快递通知
-func TmallFcboxNotify(clt *core.SDKClient, req *tmallfcbox.TmallFcboxNotifyAPIRequest, session string) (*tmallfcbox.TmallFcboxNotifyAPIResponse, error) {
-	var resp tmallfcbox.TmallFcboxNotifyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallFcboxNotify(clt *core.SDKClient, req *tmallfcbox.TmallFcboxNotifyAPIRequest, resp *tmallfcbox.TmallFcboxNotifyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

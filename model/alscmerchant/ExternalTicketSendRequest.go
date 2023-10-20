@@ -1,5 +1,9 @@
 package alscmerchant
 
+import (
+	"sync"
+)
+
 // ExternalTicketSendRequest 结构体
 type ExternalTicketSendRequest struct {
 	// 需要发送的码列表，其中code表示串码码值，num表示码的可核销份数
@@ -18,4 +22,28 @@ type ExternalTicketSendRequest struct {
 	SendOrderNo string `json:"send_order_no,omitempty" xml:"send_order_no,omitempty"`
 	// 三方异步发码是否成功,值为success 代表发码成功,external_ticket_codes 不能为空,fail代表三方发码失败,本地侧凭证发放状态推进到发码失败
 	DeliverCodeSuccess string `json:"deliver_code_success,omitempty" xml:"deliver_code_success,omitempty"`
+}
+
+var poolExternalTicketSendRequest = sync.Pool{
+	New: func() any {
+		return new(ExternalTicketSendRequest)
+	},
+}
+
+// GetExternalTicketSendRequest() 从对象池中获取ExternalTicketSendRequest
+func GetExternalTicketSendRequest() *ExternalTicketSendRequest {
+	return poolExternalTicketSendRequest.Get().(*ExternalTicketSendRequest)
+}
+
+// ReleaseExternalTicketSendRequest 释放ExternalTicketSendRequest
+func ReleaseExternalTicketSendRequest(v *ExternalTicketSendRequest) {
+	v.ExternalTicketCodes = v.ExternalTicketCodes[:0]
+	v.OrderNo = ""
+	v.TicketRequestId = ""
+	v.ValidStart = ""
+	v.ValidEnd = ""
+	v.SendToken = ""
+	v.SendOrderNo = ""
+	v.DeliverCodeSuccess = ""
+	poolExternalTicketSendRequest.Put(v)
 }

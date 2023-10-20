@@ -1,5 +1,9 @@
 package flightuppc
 
+import (
+	"sync"
+)
+
 // InsOrderAirTicketSegmentDto 结构体
 type InsOrderAirTicketSegmentDto struct {
 	// 票价
@@ -20,4 +24,29 @@ type InsOrderAirTicketSegmentDto struct {
 	StartTime string `json:"start_time,omitempty" xml:"start_time,omitempty"`
 	// 到达时间
 	EndTime string `json:"end_time,omitempty" xml:"end_time,omitempty"`
+}
+
+var poolInsOrderAirTicketSegmentDto = sync.Pool{
+	New: func() any {
+		return new(InsOrderAirTicketSegmentDto)
+	},
+}
+
+// GetInsOrderAirTicketSegmentDto() 从对象池中获取InsOrderAirTicketSegmentDto
+func GetInsOrderAirTicketSegmentDto() *InsOrderAirTicketSegmentDto {
+	return poolInsOrderAirTicketSegmentDto.Get().(*InsOrderAirTicketSegmentDto)
+}
+
+// ReleaseInsOrderAirTicketSegmentDto 释放InsOrderAirTicketSegmentDto
+func ReleaseInsOrderAirTicketSegmentDto(v *InsOrderAirTicketSegmentDto) {
+	v.TicketPrice = ""
+	v.CompanyName = ""
+	v.ArrCity = ""
+	v.DepCity = ""
+	v.PolicyNo = ""
+	v.FlightNo = ""
+	v.TicketNo = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	poolInsOrderAirTicketSegmentDto.Put(v)
 }

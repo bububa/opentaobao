@@ -2,6 +2,7 @@ package gameact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoDeActivityInfoGetAPIRequest struct {
 // NewTaobaoDeActivityInfoGetRequest 初始化TaobaoDeActivityInfoGetAPIRequest对象
 func NewTaobaoDeActivityInfoGetRequest() *TaobaoDeActivityInfoGetAPIRequest {
 	return &TaobaoDeActivityInfoGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoDeActivityInfoGetAPIRequest) Reset() {
+	r._eventKey = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoDeActivityInfoGetAPIRequest) SetEventKey(_eventKey string) error 
 // GetEventKey EventKey Getter
 func (r TaobaoDeActivityInfoGetAPIRequest) GetEventKey() string {
 	return r._eventKey
+}
+
+var poolTaobaoDeActivityInfoGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoDeActivityInfoGetRequest()
+	},
+}
+
+// GetTaobaoDeActivityInfoGetRequest 从 sync.Pool 获取 TaobaoDeActivityInfoGetAPIRequest
+func GetTaobaoDeActivityInfoGetAPIRequest() *TaobaoDeActivityInfoGetAPIRequest {
+	return poolTaobaoDeActivityInfoGetAPIRequest.Get().(*TaobaoDeActivityInfoGetAPIRequest)
+}
+
+// ReleaseTaobaoDeActivityInfoGetAPIRequest 将 TaobaoDeActivityInfoGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoDeActivityInfoGetAPIRequest(v *TaobaoDeActivityInfoGetAPIRequest) {
+	v.Reset()
+	poolTaobaoDeActivityInfoGetAPIRequest.Put(v)
 }

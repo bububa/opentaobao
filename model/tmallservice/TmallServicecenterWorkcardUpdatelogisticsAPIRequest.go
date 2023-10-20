@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TmallServicecenterWorkcardUpdatelogisticsAPIRequest struct {
 // NewTmallServicecenterWorkcardUpdatelogisticsRequest 初始化TmallServicecenterWorkcardUpdatelogisticsAPIRequest对象
 func NewTmallServicecenterWorkcardUpdatelogisticsRequest() *TmallServicecenterWorkcardUpdatelogisticsAPIRequest {
 	return &TmallServicecenterWorkcardUpdatelogisticsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterWorkcardUpdatelogisticsAPIRequest) Reset() {
+	r._action = ""
+	r._expressCompany = ""
+	r._expressCode = ""
+	r._workcardId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TmallServicecenterWorkcardUpdatelogisticsAPIRequest) SetWorkcardId(_wor
 // GetWorkcardId WorkcardId Getter
 func (r TmallServicecenterWorkcardUpdatelogisticsAPIRequest) GetWorkcardId() int64 {
 	return r._workcardId
+}
+
+var poolTmallServicecenterWorkcardUpdatelogisticsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterWorkcardUpdatelogisticsRequest()
+	},
+}
+
+// GetTmallServicecenterWorkcardUpdatelogisticsRequest 从 sync.Pool 获取 TmallServicecenterWorkcardUpdatelogisticsAPIRequest
+func GetTmallServicecenterWorkcardUpdatelogisticsAPIRequest() *TmallServicecenterWorkcardUpdatelogisticsAPIRequest {
+	return poolTmallServicecenterWorkcardUpdatelogisticsAPIRequest.Get().(*TmallServicecenterWorkcardUpdatelogisticsAPIRequest)
+}
+
+// ReleaseTmallServicecenterWorkcardUpdatelogisticsAPIRequest 将 TmallServicecenterWorkcardUpdatelogisticsAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterWorkcardUpdatelogisticsAPIRequest(v *TmallServicecenterWorkcardUpdatelogisticsAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterWorkcardUpdatelogisticsAPIRequest.Put(v)
 }

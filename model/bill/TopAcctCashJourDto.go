@@ -1,5 +1,9 @@
 package bill
 
+import (
+	"sync"
+)
+
 // TopAcctCashJourDto 结构体
 type TopAcctCashJourDto struct {
 	// 创建时间
@@ -20,4 +24,29 @@ type TopAcctCashJourDto struct {
 	AccountId int64 `json:"account_id,omitempty" xml:"account_id,omitempty"`
 	// 虚拟账户流水编号
 	Bid int64 `json:"bid,omitempty" xml:"bid,omitempty"`
+}
+
+var poolTopAcctCashJourDto = sync.Pool{
+	New: func() any {
+		return new(TopAcctCashJourDto)
+	},
+}
+
+// GetTopAcctCashJourDto() 从对象池中获取TopAcctCashJourDto
+func GetTopAcctCashJourDto() *TopAcctCashJourDto {
+	return poolTopAcctCashJourDto.Get().(*TopAcctCashJourDto)
+}
+
+// ReleaseTopAcctCashJourDto 释放TopAcctCashJourDto
+func ReleaseTopAcctCashJourDto(v *TopAcctCashJourDto) {
+	v.GmtCreate = ""
+	v.Description = ""
+	v.TaobaoAlipayId = ""
+	v.OtherAlipayId = ""
+	v.BookTime = ""
+	v.Amount = 0
+	v.JournalType = 0
+	v.AccountId = 0
+	v.Bid = 0
+	poolTopAcctCashJourDto.Put(v)
 }

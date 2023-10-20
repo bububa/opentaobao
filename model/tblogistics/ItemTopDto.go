@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // ItemTopDto 结构体
 type ItemTopDto struct {
 	// 商品名称
@@ -12,4 +16,25 @@ type ItemTopDto struct {
 	ItemQuantity int64 `json:"item_quantity,omitempty" xml:"item_quantity,omitempty"`
 	// 商品ID
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
+}
+
+var poolItemTopDto = sync.Pool{
+	New: func() any {
+		return new(ItemTopDto)
+	},
+}
+
+// GetItemTopDto() 从对象池中获取ItemTopDto
+func GetItemTopDto() *ItemTopDto {
+	return poolItemTopDto.Get().(*ItemTopDto)
+}
+
+// ReleaseItemTopDto 释放ItemTopDto
+func ReleaseItemTopDto(v *ItemTopDto) {
+	v.ItemName = ""
+	v.ItemCate = ""
+	v.ItemValue = 0
+	v.ItemQuantity = 0
+	v.ItemId = 0
+	poolItemTopDto.Put(v)
 }

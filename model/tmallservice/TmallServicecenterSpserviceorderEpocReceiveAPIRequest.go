@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TmallServicecenterSpserviceorderEpocReceiveAPIRequest struct {
 // NewTmallServicecenterSpserviceorderEpocReceiveRequest 初始化TmallServicecenterSpserviceorderEpocReceiveAPIRequest对象
 func NewTmallServicecenterSpserviceorderEpocReceiveRequest() *TmallServicecenterSpserviceorderEpocReceiveAPIRequest {
 	return &TmallServicecenterSpserviceorderEpocReceiveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterSpserviceorderEpocReceiveAPIRequest) Reset() {
+	r._agreementNumber = ""
+	r._expirationTime = ""
+	r._deviceSerialNumber = ""
+	r._productModel = ""
+	r._bizOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TmallServicecenterSpserviceorderEpocReceiveAPIRequest) SetBizOrderId(_b
 // GetBizOrderId BizOrderId Getter
 func (r TmallServicecenterSpserviceorderEpocReceiveAPIRequest) GetBizOrderId() int64 {
 	return r._bizOrderId
+}
+
+var poolTmallServicecenterSpserviceorderEpocReceiveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterSpserviceorderEpocReceiveRequest()
+	},
+}
+
+// GetTmallServicecenterSpserviceorderEpocReceiveRequest 从 sync.Pool 获取 TmallServicecenterSpserviceorderEpocReceiveAPIRequest
+func GetTmallServicecenterSpserviceorderEpocReceiveAPIRequest() *TmallServicecenterSpserviceorderEpocReceiveAPIRequest {
+	return poolTmallServicecenterSpserviceorderEpocReceiveAPIRequest.Get().(*TmallServicecenterSpserviceorderEpocReceiveAPIRequest)
+}
+
+// ReleaseTmallServicecenterSpserviceorderEpocReceiveAPIRequest 将 TmallServicecenterSpserviceorderEpocReceiveAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterSpserviceorderEpocReceiveAPIRequest(v *TmallServicecenterSpserviceorderEpocReceiveAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterSpserviceorderEpocReceiveAPIRequest.Put(v)
 }

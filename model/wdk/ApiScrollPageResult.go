@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ApiScrollPageResult 结构体
 type ApiScrollPageResult struct {
 	// 商品主档对象
@@ -22,4 +26,30 @@ type ApiScrollPageResult struct {
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolApiScrollPageResult = sync.Pool{
+	New: func() any {
+		return new(ApiScrollPageResult)
+	},
+}
+
+// GetApiScrollPageResult() 从对象池中获取ApiScrollPageResult
+func GetApiScrollPageResult() *ApiScrollPageResult {
+	return poolApiScrollPageResult.Get().(*ApiScrollPageResult)
+}
+
+// ReleaseApiScrollPageResult 释放ApiScrollPageResult
+func ReleaseApiScrollPageResult(v *ApiScrollPageResult) {
+	v.ModelList = v.ModelList[:0]
+	v.Models = v.Models[:0]
+	v.ScrollId = ""
+	v.ErrMsg = ""
+	v.ErrCode = ""
+	v.Total = 0
+	v.PageCount = 0
+	v.PageSize = 0
+	v.PageIndex = 0
+	v.Success = false
+	poolApiScrollPageResult.Put(v)
 }

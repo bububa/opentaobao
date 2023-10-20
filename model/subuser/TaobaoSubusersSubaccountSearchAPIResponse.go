@@ -2,6 +2,7 @@ package subuser
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoSubusersSubaccountSearchAPIResponse struct {
 	model.CommonResponse
 	TaobaoSubusersSubaccountSearchAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoSubusersSubaccountSearchAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoSubusersSubaccountSearchAPIResponseModel).Reset()
 }
 
 // TaobaoSubusersSubaccountSearchAPIResponseModel is 根据子账号登录名后缀模糊搜索子账号列表 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoSubusersSubaccountSearchAPIResponseModel struct {
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// isv本次调用传入的页码
 	PageNum int64 `json:"page_num,omitempty" xml:"page_num,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoSubusersSubaccountSearchAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Subaccounts = m.Subaccounts[:0]
+	m.PageSize = 0
+	m.TotalCount = 0
+	m.PageNum = 0
+}
+
+var poolTaobaoSubusersSubaccountSearchAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoSubusersSubaccountSearchAPIResponse)
+	},
+}
+
+// GetTaobaoSubusersSubaccountSearchAPIResponse 从 sync.Pool 获取 TaobaoSubusersSubaccountSearchAPIResponse
+func GetTaobaoSubusersSubaccountSearchAPIResponse() *TaobaoSubusersSubaccountSearchAPIResponse {
+	return poolTaobaoSubusersSubaccountSearchAPIResponse.Get().(*TaobaoSubusersSubaccountSearchAPIResponse)
+}
+
+// ReleaseTaobaoSubusersSubaccountSearchAPIResponse 将 TaobaoSubusersSubaccountSearchAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoSubusersSubaccountSearchAPIResponse(v *TaobaoSubusersSubaccountSearchAPIResponse) {
+	v.Reset()
+	poolTaobaoSubusersSubaccountSearchAPIResponse.Put(v)
 }

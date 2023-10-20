@@ -9,11 +9,6 @@ import (
 // yunos.tvpubadmin.content.child.nodeitem.query
 //
 // 查询少儿大厅类目内容信息
-func YunosTvpubadminContentChildNodeitemQuery(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentChildNodeitemQueryAPIRequest, session string) (*tvupadmin.YunosTvpubadminContentChildNodeitemQueryAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminContentChildNodeitemQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosTvpubadminContentChildNodeitemQuery(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentChildNodeitemQueryAPIRequest, resp *tvupadmin.YunosTvpubadminContentChildNodeitemQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

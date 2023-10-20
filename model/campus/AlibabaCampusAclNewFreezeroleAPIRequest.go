@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaCampusAclNewFreezeroleAPIRequest struct {
 // NewAlibabaCampusAclNewFreezeroleRequest 初始化AlibabaCampusAclNewFreezeroleAPIRequest对象
 func NewAlibabaCampusAclNewFreezeroleRequest() *AlibabaCampusAclNewFreezeroleAPIRequest {
 	return &AlibabaCampusAclNewFreezeroleAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusAclNewFreezeroleAPIRequest) Reset() {
+	r._workbenchcontext = nil
+	r._roleId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaCampusAclNewFreezeroleAPIRequest) SetRoleId(_roleId int64) error
 // GetRoleId RoleId Getter
 func (r AlibabaCampusAclNewFreezeroleAPIRequest) GetRoleId() int64 {
 	return r._roleId
+}
+
+var poolAlibabaCampusAclNewFreezeroleAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusAclNewFreezeroleRequest()
+	},
+}
+
+// GetAlibabaCampusAclNewFreezeroleRequest 从 sync.Pool 获取 AlibabaCampusAclNewFreezeroleAPIRequest
+func GetAlibabaCampusAclNewFreezeroleAPIRequest() *AlibabaCampusAclNewFreezeroleAPIRequest {
+	return poolAlibabaCampusAclNewFreezeroleAPIRequest.Get().(*AlibabaCampusAclNewFreezeroleAPIRequest)
+}
+
+// ReleaseAlibabaCampusAclNewFreezeroleAPIRequest 将 AlibabaCampusAclNewFreezeroleAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusAclNewFreezeroleAPIRequest(v *AlibabaCampusAclNewFreezeroleAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusAclNewFreezeroleAPIRequest.Put(v)
 }

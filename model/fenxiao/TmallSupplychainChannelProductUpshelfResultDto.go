@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // TmallSupplychainChannelProductUpshelfResultDto 结构体
 type TmallSupplychainChannelProductUpshelfResultDto struct {
 	// 错误码
@@ -10,4 +14,24 @@ type TmallSupplychainChannelProductUpshelfResultDto struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 上架结果
 	Module bool `json:"module,omitempty" xml:"module,omitempty"`
+}
+
+var poolTmallSupplychainChannelProductUpshelfResultDto = sync.Pool{
+	New: func() any {
+		return new(TmallSupplychainChannelProductUpshelfResultDto)
+	},
+}
+
+// GetTmallSupplychainChannelProductUpshelfResultDto() 从对象池中获取TmallSupplychainChannelProductUpshelfResultDto
+func GetTmallSupplychainChannelProductUpshelfResultDto() *TmallSupplychainChannelProductUpshelfResultDto {
+	return poolTmallSupplychainChannelProductUpshelfResultDto.Get().(*TmallSupplychainChannelProductUpshelfResultDto)
+}
+
+// ReleaseTmallSupplychainChannelProductUpshelfResultDto 释放TmallSupplychainChannelProductUpshelfResultDto
+func ReleaseTmallSupplychainChannelProductUpshelfResultDto(v *TmallSupplychainChannelProductUpshelfResultDto) {
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.Success = false
+	v.Module = false
+	poolTmallSupplychainChannelProductUpshelfResultDto.Put(v)
 }

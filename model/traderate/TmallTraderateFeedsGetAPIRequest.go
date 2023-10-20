@@ -2,6 +2,7 @@ package traderate
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallTraderateFeedsGetAPIRequest struct {
 // NewTmallTraderateFeedsGetRequest 初始化TmallTraderateFeedsGetAPIRequest对象
 func NewTmallTraderateFeedsGetRequest() *TmallTraderateFeedsGetAPIRequest {
 	return &TmallTraderateFeedsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallTraderateFeedsGetAPIRequest) Reset() {
+	r._childTradeId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallTraderateFeedsGetAPIRequest) SetChildTradeId(_childTradeId int64) 
 // GetChildTradeId ChildTradeId Getter
 func (r TmallTraderateFeedsGetAPIRequest) GetChildTradeId() int64 {
 	return r._childTradeId
+}
+
+var poolTmallTraderateFeedsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallTraderateFeedsGetRequest()
+	},
+}
+
+// GetTmallTraderateFeedsGetRequest 从 sync.Pool 获取 TmallTraderateFeedsGetAPIRequest
+func GetTmallTraderateFeedsGetAPIRequest() *TmallTraderateFeedsGetAPIRequest {
+	return poolTmallTraderateFeedsGetAPIRequest.Get().(*TmallTraderateFeedsGetAPIRequest)
+}
+
+// ReleaseTmallTraderateFeedsGetAPIRequest 将 TmallTraderateFeedsGetAPIRequest 放入 sync.Pool
+func ReleaseTmallTraderateFeedsGetAPIRequest(v *TmallTraderateFeedsGetAPIRequest) {
+	v.Reset()
+	poolTmallTraderateFeedsGetAPIRequest.Put(v)
 }

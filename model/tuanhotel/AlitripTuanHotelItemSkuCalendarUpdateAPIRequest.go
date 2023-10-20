@@ -2,6 +2,7 @@ package tuanhotel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlitripTuanHotelItemSkuCalendarUpdateAPIRequest struct {
 // NewAlitripTuanHotelItemSkuCalendarUpdateRequest 初始化AlitripTuanHotelItemSkuCalendarUpdateAPIRequest对象
 func NewAlitripTuanHotelItemSkuCalendarUpdateRequest() *AlitripTuanHotelItemSkuCalendarUpdateAPIRequest {
 	return &AlitripTuanHotelItemSkuCalendarUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) Reset() {
+	r._itemSkuList = r._itemSkuList[:0]
+	r._itemId = 0
+	r._catId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) SetCatId(_catId int64)
 // GetCatId CatId Getter
 func (r AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) GetCatId() int64 {
 	return r._catId
+}
+
+var poolAlitripTuanHotelItemSkuCalendarUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTuanHotelItemSkuCalendarUpdateRequest()
+	},
+}
+
+// GetAlitripTuanHotelItemSkuCalendarUpdateRequest 从 sync.Pool 获取 AlitripTuanHotelItemSkuCalendarUpdateAPIRequest
+func GetAlitripTuanHotelItemSkuCalendarUpdateAPIRequest() *AlitripTuanHotelItemSkuCalendarUpdateAPIRequest {
+	return poolAlitripTuanHotelItemSkuCalendarUpdateAPIRequest.Get().(*AlitripTuanHotelItemSkuCalendarUpdateAPIRequest)
+}
+
+// ReleaseAlitripTuanHotelItemSkuCalendarUpdateAPIRequest 将 AlitripTuanHotelItemSkuCalendarUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlitripTuanHotelItemSkuCalendarUpdateAPIRequest(v *AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) {
+	v.Reset()
+	poolAlitripTuanHotelItemSkuCalendarUpdateAPIRequest.Put(v)
 }

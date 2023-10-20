@@ -1,5 +1,9 @@
 package mirage
 
+import (
+	"sync"
+)
+
 // PermissionResponseDto 结构体
 type PermissionResponseDto struct {
 	// 错误内容
@@ -8,4 +12,23 @@ type PermissionResponseDto struct {
 	Permissions string `json:"permissions,omitempty" xml:"permissions,omitempty"`
 	// 成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolPermissionResponseDto = sync.Pool{
+	New: func() any {
+		return new(PermissionResponseDto)
+	},
+}
+
+// GetPermissionResponseDto() 从对象池中获取PermissionResponseDto
+func GetPermissionResponseDto() *PermissionResponseDto {
+	return poolPermissionResponseDto.Get().(*PermissionResponseDto)
+}
+
+// ReleasePermissionResponseDto 释放PermissionResponseDto
+func ReleasePermissionResponseDto(v *PermissionResponseDto) {
+	v.Message = ""
+	v.Permissions = ""
+	v.Success = false
+	poolPermissionResponseDto.Put(v)
 }

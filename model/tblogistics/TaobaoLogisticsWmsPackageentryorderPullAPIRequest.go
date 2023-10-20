@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsWmsPackageentryorderPullAPIRequest struct {
 // NewTaobaoLogisticsWmsPackageentryorderPullRequest 初始化TaobaoLogisticsWmsPackageentryorderPullAPIRequest对象
 func NewTaobaoLogisticsWmsPackageentryorderPullRequest() *TaobaoLogisticsWmsPackageentryorderPullAPIRequest {
 	return &TaobaoLogisticsWmsPackageentryorderPullAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsWmsPackageentryorderPullAPIRequest) Reset() {
+	r._pullPackageEntryOrderRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsWmsPackageentryorderPullAPIRequest) SetPullPackageEntryO
 // GetPullPackageEntryOrderRequest PullPackageEntryOrderRequest Getter
 func (r TaobaoLogisticsWmsPackageentryorderPullAPIRequest) GetPullPackageEntryOrderRequest() *PullPackageOrderRequest {
 	return r._pullPackageEntryOrderRequest
+}
+
+var poolTaobaoLogisticsWmsPackageentryorderPullAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsWmsPackageentryorderPullRequest()
+	},
+}
+
+// GetTaobaoLogisticsWmsPackageentryorderPullRequest 从 sync.Pool 获取 TaobaoLogisticsWmsPackageentryorderPullAPIRequest
+func GetTaobaoLogisticsWmsPackageentryorderPullAPIRequest() *TaobaoLogisticsWmsPackageentryorderPullAPIRequest {
+	return poolTaobaoLogisticsWmsPackageentryorderPullAPIRequest.Get().(*TaobaoLogisticsWmsPackageentryorderPullAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsWmsPackageentryorderPullAPIRequest 将 TaobaoLogisticsWmsPackageentryorderPullAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsWmsPackageentryorderPullAPIRequest(v *TaobaoLogisticsWmsPackageentryorderPullAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsWmsPackageentryorderPullAPIRequest.Put(v)
 }

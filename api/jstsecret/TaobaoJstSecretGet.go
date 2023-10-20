@@ -9,11 +9,6 @@ import (
 // taobao.jst.secret.get
 //
 // 根据订单号获取消费者的隐私号
-func TaobaoJstSecretGet(clt *core.SDKClient, req *jstsecret.TaobaoJstSecretGetAPIRequest, session string) (*jstsecret.TaobaoJstSecretGetAPIResponse, error) {
-	var resp jstsecret.TaobaoJstSecretGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoJstSecretGet(clt *core.SDKClient, req *jstsecret.TaobaoJstSecretGetAPIRequest, resp *jstsecret.TaobaoJstSecretGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

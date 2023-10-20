@@ -1,5 +1,9 @@
 package baodian
 
+import (
+	"sync"
+)
+
 // UserCoinDeposit 结构体
 type UserCoinDeposit struct {
 	// 用户AuthCode
@@ -26,4 +30,32 @@ type UserCoinDeposit struct {
 	EnablePay bool `json:"enable_pay,omitempty" xml:"enable_pay,omitempty"`
 	// 是否新注册用户
 	NewUser bool `json:"new_user,omitempty" xml:"new_user,omitempty"`
+}
+
+var poolUserCoinDeposit = sync.Pool{
+	New: func() any {
+		return new(UserCoinDeposit)
+	},
+}
+
+// GetUserCoinDeposit() 从对象池中获取UserCoinDeposit
+func GetUserCoinDeposit() *UserCoinDeposit {
+	return poolUserCoinDeposit.Get().(*UserCoinDeposit)
+}
+
+// ReleaseUserCoinDeposit 释放UserCoinDeposit
+func ReleaseUserCoinDeposit(v *UserCoinDeposit) {
+	v.UserAuthCode = ""
+	v.UserStrId = ""
+	v.UserNick = ""
+	v.CreditPeriod = ""
+	v.Deposit = 0
+	v.Credit = 0
+	v.CreditLimit = 0
+	v.Price = 0
+	v.Gamepoints = 0
+	v.IsExpired = false
+	v.EnablePay = false
+	v.NewUser = false
+	poolUserCoinDeposit.Put(v)
 }

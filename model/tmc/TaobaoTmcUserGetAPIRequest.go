@@ -2,6 +2,7 @@ package tmc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoTmcUserGetAPIRequest struct {
 // NewTaobaoTmcUserGetRequest 初始化TaobaoTmcUserGetAPIRequest对象
 func NewTaobaoTmcUserGetRequest() *TaobaoTmcUserGetAPIRequest {
 	return &TaobaoTmcUserGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTmcUserGetAPIRequest) Reset() {
+	r._fields = ""
+	r._nick = ""
+	r._userPlatform = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoTmcUserGetAPIRequest) SetUserPlatform(_userPlatform string) error
 // GetUserPlatform UserPlatform Getter
 func (r TaobaoTmcUserGetAPIRequest) GetUserPlatform() string {
 	return r._userPlatform
+}
+
+var poolTaobaoTmcUserGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTmcUserGetRequest()
+	},
+}
+
+// GetTaobaoTmcUserGetRequest 从 sync.Pool 获取 TaobaoTmcUserGetAPIRequest
+func GetTaobaoTmcUserGetAPIRequest() *TaobaoTmcUserGetAPIRequest {
+	return poolTaobaoTmcUserGetAPIRequest.Get().(*TaobaoTmcUserGetAPIRequest)
+}
+
+// ReleaseTaobaoTmcUserGetAPIRequest 将 TaobaoTmcUserGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTmcUserGetAPIRequest(v *TaobaoTmcUserGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTmcUserGetAPIRequest.Put(v)
 }

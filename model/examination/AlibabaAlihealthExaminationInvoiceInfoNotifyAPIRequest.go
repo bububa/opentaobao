@@ -2,6 +2,7 @@ package examination
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest struct {
 // NewAlibabaAlihealthExaminationInvoiceInfoNotifyRequest 初始化AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest对象
 func NewAlibabaAlihealthExaminationInvoiceInfoNotifyRequest() *AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest {
 	return &AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest) Reset() {
+	r._reserveNumber = ""
+	r._invoiceStatus = ""
+	r._invoiceUrl = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest) SetInvoiceUrl(_
 // GetInvoiceUrl InvoiceUrl Getter
 func (r AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest) GetInvoiceUrl() string {
 	return r._invoiceUrl
+}
+
+var poolAlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthExaminationInvoiceInfoNotifyRequest()
+	},
+}
+
+// GetAlibabaAlihealthExaminationInvoiceInfoNotifyRequest 从 sync.Pool 获取 AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest
+func GetAlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest() *AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest {
+	return poolAlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest.Get().(*AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest 将 AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest(v *AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest.Put(v)
 }

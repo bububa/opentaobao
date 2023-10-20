@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallCarLeasePostsynchronizeAPIRequest struct {
 // NewTmallCarLeasePostsynchronizeRequest 初始化TmallCarLeasePostsynchronizeAPIRequest对象
 func NewTmallCarLeasePostsynchronizeRequest() *TmallCarLeasePostsynchronizeAPIRequest {
 	return &TmallCarLeasePostsynchronizeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCarLeasePostsynchronizeAPIRequest) Reset() {
+	r._schemeDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallCarLeasePostsynchronizeAPIRequest) SetSchemeDto(_schemeDto *CarLea
 // GetSchemeDto SchemeDto Getter
 func (r TmallCarLeasePostsynchronizeAPIRequest) GetSchemeDto() *CarLeasePostSchemeSynchronizeDto {
 	return r._schemeDto
+}
+
+var poolTmallCarLeasePostsynchronizeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCarLeasePostsynchronizeRequest()
+	},
+}
+
+// GetTmallCarLeasePostsynchronizeRequest 从 sync.Pool 获取 TmallCarLeasePostsynchronizeAPIRequest
+func GetTmallCarLeasePostsynchronizeAPIRequest() *TmallCarLeasePostsynchronizeAPIRequest {
+	return poolTmallCarLeasePostsynchronizeAPIRequest.Get().(*TmallCarLeasePostsynchronizeAPIRequest)
+}
+
+// ReleaseTmallCarLeasePostsynchronizeAPIRequest 将 TmallCarLeasePostsynchronizeAPIRequest 放入 sync.Pool
+func ReleaseTmallCarLeasePostsynchronizeAPIRequest(v *TmallCarLeasePostsynchronizeAPIRequest) {
+	v.Reset()
+	poolTmallCarLeasePostsynchronizeAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // BillUpOutDetailDo 结构体
 type BillUpOutDetailDo struct {
 	// 发货单位
@@ -56,4 +60,47 @@ type BillUpOutDetailDo struct {
 	BillOutId int64 `json:"bill_out_id,omitempty" xml:"bill_out_id,omitempty"`
 	// 制剂单位
 	PrepnUnit int64 `json:"prepn_unit,omitempty" xml:"prepn_unit,omitempty"`
+}
+
+var poolBillUpOutDetailDo = sync.Pool{
+	New: func() any {
+		return new(BillUpOutDetailDo)
+	},
+}
+
+// GetBillUpOutDetailDo() 从对象池中获取BillUpOutDetailDo
+func GetBillUpOutDetailDo() *BillUpOutDetailDo {
+	return poolBillUpOutDetailDo.Get().(*BillUpOutDetailDo)
+}
+
+// ReleaseBillUpOutDetailDo 释放BillUpOutDetailDo
+func ReleaseBillUpOutDetailDo(v *BillUpOutDetailDo) {
+	v.FromEntName = ""
+	v.ExprieDate = ""
+	v.ProduceEntName = ""
+	v.ProduceDate = ""
+	v.ProduceBatchNo = ""
+	v.PkgSpec = ""
+	v.PhysicInfo = ""
+	v.PhysicName = ""
+	v.FromRefUserId = ""
+	v.ToRefUserId = ""
+	v.BillTime = ""
+	v.BillCode = ""
+	v.BillType = ""
+	v.ToUserName = ""
+	v.FromUserName = ""
+	v.ExprieDateFormat = ""
+	v.BillTimeFormat = ""
+	v.PrepnSpec = ""
+	v.DrugEntBaseInfoId = ""
+	v.ProduceDateFormat = ""
+	v.Status = ""
+	v.ToUserId = ""
+	v.FromUserId = ""
+	v.CodeCount = 0
+	v.PrepnCount = 0
+	v.BillOutId = 0
+	v.PrepnUnit = 0
+	poolBillUpOutDetailDo.Put(v)
 }

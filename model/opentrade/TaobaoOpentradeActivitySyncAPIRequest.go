@@ -2,6 +2,7 @@ package opentrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -30,8 +31,18 @@ type TaobaoOpentradeActivitySyncAPIRequest struct {
 // NewTaobaoOpentradeActivitySyncRequest 初始化TaobaoOpentradeActivitySyncAPIRequest对象
 func NewTaobaoOpentradeActivitySyncRequest() *TaobaoOpentradeActivitySyncAPIRequest {
 	return &TaobaoOpentradeActivitySyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpentradeActivitySyncAPIRequest) Reset() {
+	r._itemIdList = r._itemIdList[:0]
+	r._activityId = ""
+	r._startTime = ""
+	r._endTime = ""
+	r._activityName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -114,4 +125,21 @@ func (r *TaobaoOpentradeActivitySyncAPIRequest) SetActivityName(_activityName st
 // GetActivityName ActivityName Getter
 func (r TaobaoOpentradeActivitySyncAPIRequest) GetActivityName() string {
 	return r._activityName
+}
+
+var poolTaobaoOpentradeActivitySyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpentradeActivitySyncRequest()
+	},
+}
+
+// GetTaobaoOpentradeActivitySyncRequest 从 sync.Pool 获取 TaobaoOpentradeActivitySyncAPIRequest
+func GetTaobaoOpentradeActivitySyncAPIRequest() *TaobaoOpentradeActivitySyncAPIRequest {
+	return poolTaobaoOpentradeActivitySyncAPIRequest.Get().(*TaobaoOpentradeActivitySyncAPIRequest)
+}
+
+// ReleaseTaobaoOpentradeActivitySyncAPIRequest 将 TaobaoOpentradeActivitySyncAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpentradeActivitySyncAPIRequest(v *TaobaoOpentradeActivitySyncAPIRequest) {
+	v.Reset()
+	poolTaobaoOpentradeActivitySyncAPIRequest.Put(v)
 }

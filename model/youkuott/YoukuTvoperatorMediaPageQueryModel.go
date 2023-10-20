@@ -1,5 +1,9 @@
 package youkuott
 
+import (
+	"sync"
+)
+
 // YoukuTvoperatorMediaPageQueryModel 结构体
 type YoukuTvoperatorMediaPageQueryModel struct {
 	// 数据列表
@@ -14,4 +18,26 @@ type YoukuTvoperatorMediaPageQueryModel struct {
 	TotalPage int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
 	// 是否有下一页
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
+}
+
+var poolYoukuTvoperatorMediaPageQueryModel = sync.Pool{
+	New: func() any {
+		return new(YoukuTvoperatorMediaPageQueryModel)
+	},
+}
+
+// GetYoukuTvoperatorMediaPageQueryModel() 从对象池中获取YoukuTvoperatorMediaPageQueryModel
+func GetYoukuTvoperatorMediaPageQueryModel() *YoukuTvoperatorMediaPageQueryModel {
+	return poolYoukuTvoperatorMediaPageQueryModel.Get().(*YoukuTvoperatorMediaPageQueryModel)
+}
+
+// ReleaseYoukuTvoperatorMediaPageQueryModel 释放YoukuTvoperatorMediaPageQueryModel
+func ReleaseYoukuTvoperatorMediaPageQueryModel(v *YoukuTvoperatorMediaPageQueryModel) {
+	v.DataList = v.DataList[:0]
+	v.TotalCount = 0
+	v.PageNo = 0
+	v.PageSize = 0
+	v.TotalPage = 0
+	v.HasNext = false
+	poolYoukuTvoperatorMediaPageQueryModel.Put(v)
 }

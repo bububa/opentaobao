@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // DrugInfoDto 结构体
 type DrugInfoDto struct {
 	// 20位码
@@ -38,4 +42,38 @@ type DrugInfoDto struct {
 	CodeStatus string `json:"code_status,omitempty" xml:"code_status,omitempty"`
 	// 查询次数(用户维度)
 	QueryTotalCount int64 `json:"query_total_count,omitempty" xml:"query_total_count,omitempty"`
+}
+
+var poolDrugInfoDto = sync.Pool{
+	New: func() any {
+		return new(DrugInfoDto)
+	},
+}
+
+// GetDrugInfoDto() 从对象池中获取DrugInfoDto
+func GetDrugInfoDto() *DrugInfoDto {
+	return poolDrugInfoDto.Get().(*DrugInfoDto)
+}
+
+// ReleaseDrugInfoDto 释放DrugInfoDto
+func ReleaseDrugInfoDto(v *DrugInfoDto) {
+	v.Code = ""
+	v.DrugName = ""
+	v.Specifications = ""
+	v.SubRetCode = ""
+	v.RetCode = ""
+	v.PrepnType = ""
+	v.PkgSpec = ""
+	v.ProductionBatch = ""
+	v.QueryCount = ""
+	v.IsSale = ""
+	v.SaleTime = ""
+	v.EntName = ""
+	v.ExpiryDate = ""
+	v.FirstQuery = ""
+	v.ProductionDate = ""
+	v.SaleEnt = ""
+	v.CodeStatus = ""
+	v.QueryTotalCount = 0
+	poolDrugInfoDto.Put(v)
 }

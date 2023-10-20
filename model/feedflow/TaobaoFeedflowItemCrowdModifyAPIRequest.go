@@ -2,6 +2,7 @@ package feedflow
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoFeedflowItemCrowdModifyAPIRequest struct {
 // NewTaobaoFeedflowItemCrowdModifyRequest 初始化TaobaoFeedflowItemCrowdModifyAPIRequest对象
 func NewTaobaoFeedflowItemCrowdModifyRequest() *TaobaoFeedflowItemCrowdModifyAPIRequest {
 	return &TaobaoFeedflowItemCrowdModifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFeedflowItemCrowdModifyAPIRequest) Reset() {
+	r._crowds = r._crowds[:0]
+	r._adgroupId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoFeedflowItemCrowdModifyAPIRequest) SetAdgroupId(_adgroupId int64)
 // GetAdgroupId AdgroupId Getter
 func (r TaobaoFeedflowItemCrowdModifyAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
+}
+
+var poolTaobaoFeedflowItemCrowdModifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFeedflowItemCrowdModifyRequest()
+	},
+}
+
+// GetTaobaoFeedflowItemCrowdModifyRequest 从 sync.Pool 获取 TaobaoFeedflowItemCrowdModifyAPIRequest
+func GetTaobaoFeedflowItemCrowdModifyAPIRequest() *TaobaoFeedflowItemCrowdModifyAPIRequest {
+	return poolTaobaoFeedflowItemCrowdModifyAPIRequest.Get().(*TaobaoFeedflowItemCrowdModifyAPIRequest)
+}
+
+// ReleaseTaobaoFeedflowItemCrowdModifyAPIRequest 将 TaobaoFeedflowItemCrowdModifyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFeedflowItemCrowdModifyAPIRequest(v *TaobaoFeedflowItemCrowdModifyAPIRequest) {
+	v.Reset()
+	poolTaobaoFeedflowItemCrowdModifyAPIRequest.Put(v)
 }

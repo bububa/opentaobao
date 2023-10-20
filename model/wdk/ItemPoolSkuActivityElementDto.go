@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ItemPoolSkuActivityElementDto 结构体
 type ItemPoolSkuActivityElementDto struct {
 	// 商品渠道配置信息
@@ -20,4 +24,29 @@ type ItemPoolSkuActivityElementDto struct {
 	ActId int64 `json:"act_id,omitempty" xml:"act_id,omitempty"`
 	// 商品限购
 	Limit *LimitDto `json:"limit,omitempty" xml:"limit,omitempty"`
+}
+
+var poolItemPoolSkuActivityElementDto = sync.Pool{
+	New: func() any {
+		return new(ItemPoolSkuActivityElementDto)
+	},
+}
+
+// GetItemPoolSkuActivityElementDto() 从对象池中获取ItemPoolSkuActivityElementDto
+func GetItemPoolSkuActivityElementDto() *ItemPoolSkuActivityElementDto {
+	return poolItemPoolSkuActivityElementDto.Get().(*ItemPoolSkuActivityElementDto)
+}
+
+// ReleaseItemPoolSkuActivityElementDto 释放ItemPoolSkuActivityElementDto
+func ReleaseItemPoolSkuActivityElementDto(v *ItemPoolSkuActivityElementDto) {
+	v.SkuChannelConfigs = v.SkuChannelConfigs[:0]
+	v.SkuCode = ""
+	v.Barcode = ""
+	v.CreatorId = ""
+	v.CreatorName = ""
+	v.BarCode = ""
+	v.ExchangePrice = 0
+	v.ActId = 0
+	v.Limit = nil
+	poolItemPoolSkuActivityElementDto.Put(v)
 }

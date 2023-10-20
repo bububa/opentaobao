@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // OfnPreRedPacketActionDto 结构体
 type OfnPreRedPacketActionDto struct {
 	// 资金池的记录
@@ -14,4 +18,26 @@ type OfnPreRedPacketActionDto struct {
 	ActionType int64 `json:"action_type,omitempty" xml:"action_type,omitempty"`
 	// 状态。初始化=1，重试中=2，失败=3，成功=4
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolOfnPreRedPacketActionDto = sync.Pool{
+	New: func() any {
+		return new(OfnPreRedPacketActionDto)
+	},
+}
+
+// GetOfnPreRedPacketActionDto() 从对象池中获取OfnPreRedPacketActionDto
+func GetOfnPreRedPacketActionDto() *OfnPreRedPacketActionDto {
+	return poolOfnPreRedPacketActionDto.Get().(*OfnPreRedPacketActionDto)
+}
+
+// ReleaseOfnPreRedPacketActionDto 释放OfnPreRedPacketActionDto
+func ReleaseOfnPreRedPacketActionDto(v *OfnPreRedPacketActionDto) {
+	v.AfterFundRecordList = v.AfterFundRecordList[:0]
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.Id = 0
+	v.ActionType = 0
+	v.Status = 0
+	poolOfnPreRedPacketActionDto.Put(v)
 }

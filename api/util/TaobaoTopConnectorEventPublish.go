@@ -9,11 +9,6 @@ import (
 // taobao.top.connector.event.publish
 //
 // 连接器事件发布
-func TaobaoTopConnectorEventPublish(clt *core.SDKClient, req *util.TaobaoTopConnectorEventPublishAPIRequest, session string) (*util.TaobaoTopConnectorEventPublishAPIResponse, error) {
-	var resp util.TaobaoTopConnectorEventPublishAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTopConnectorEventPublish(clt *core.SDKClient, req *util.TaobaoTopConnectorEventPublishAPIRequest, resp *util.TaobaoTopConnectorEventPublishAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

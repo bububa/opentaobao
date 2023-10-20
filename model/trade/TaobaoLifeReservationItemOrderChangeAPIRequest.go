@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoLifeReservationItemOrderChangeAPIRequest struct {
 // NewTaobaoLifeReservationItemOrderChangeRequest 初始化TaobaoLifeReservationItemOrderChangeAPIRequest对象
 func NewTaobaoLifeReservationItemOrderChangeRequest() *TaobaoLifeReservationItemOrderChangeAPIRequest {
 	return &TaobaoLifeReservationItemOrderChangeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLifeReservationItemOrderChangeAPIRequest) Reset() {
+	r._ticketId = ""
+	r._action = ""
+	r._reserveStartTime = ""
+	r._reserveEndTime = ""
+	r._targetFulfillmentStatus = ""
+	r._reservationOrderId = ""
+	r._extInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoLifeReservationItemOrderChangeAPIRequest) SetExtInfo(_extInfo *Co
 // GetExtInfo ExtInfo Getter
 func (r TaobaoLifeReservationItemOrderChangeAPIRequest) GetExtInfo() *CommonKeyValue {
 	return r._extInfo
+}
+
+var poolTaobaoLifeReservationItemOrderChangeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLifeReservationItemOrderChangeRequest()
+	},
+}
+
+// GetTaobaoLifeReservationItemOrderChangeRequest 从 sync.Pool 获取 TaobaoLifeReservationItemOrderChangeAPIRequest
+func GetTaobaoLifeReservationItemOrderChangeAPIRequest() *TaobaoLifeReservationItemOrderChangeAPIRequest {
+	return poolTaobaoLifeReservationItemOrderChangeAPIRequest.Get().(*TaobaoLifeReservationItemOrderChangeAPIRequest)
+}
+
+// ReleaseTaobaoLifeReservationItemOrderChangeAPIRequest 将 TaobaoLifeReservationItemOrderChangeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLifeReservationItemOrderChangeAPIRequest(v *TaobaoLifeReservationItemOrderChangeAPIRequest) {
+	v.Reset()
+	poolTaobaoLifeReservationItemOrderChangeAPIRequest.Put(v)
 }

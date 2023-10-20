@@ -1,5 +1,9 @@
 package ship
 
+import (
+	"sync"
+)
+
 // ShipAgentConfirmBookTicketInfo 结构体
 type ShipAgentConfirmBookTicketInfo struct {
 	// 电子票号
@@ -28,4 +32,33 @@ type ShipAgentConfirmBookTicketInfo struct {
 	ExpireTime string `json:"expire_time,omitempty" xml:"expire_time,omitempty"`
 	// 票价格(分)
 	TicketPrice int64 `json:"ticket_price,omitempty" xml:"ticket_price,omitempty"`
+}
+
+var poolShipAgentConfirmBookTicketInfo = sync.Pool{
+	New: func() any {
+		return new(ShipAgentConfirmBookTicketInfo)
+	},
+}
+
+// GetShipAgentConfirmBookTicketInfo() 从对象池中获取ShipAgentConfirmBookTicketInfo
+func GetShipAgentConfirmBookTicketInfo() *ShipAgentConfirmBookTicketInfo {
+	return poolShipAgentConfirmBookTicketInfo.Get().(*ShipAgentConfirmBookTicketInfo)
+}
+
+// ReleaseShipAgentConfirmBookTicketInfo 释放ShipAgentConfirmBookTicketInfo
+func ReleaseShipAgentConfirmBookTicketInfo(v *ShipAgentConfirmBookTicketInfo) {
+	v.ETicketNo = ""
+	v.TicketDesc = ""
+	v.TicketId = ""
+	v.TicketNo = ""
+	v.TicketPwd = ""
+	v.TicketSeatNo = ""
+	v.TicketStatus = ""
+	v.TicketSubType = ""
+	v.TicketTitle = ""
+	v.TicketType = ""
+	v.ExtAttr = ""
+	v.ExpireTime = ""
+	v.TicketPrice = 0
+	poolShipAgentConfirmBookTicketInfo.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.mos.common.auth.operator.info
 //
 // 获取当前人员信息
-func AlibabaMosCommonAuthOperatorInfo(clt *core.SDKClient, req *mos.AlibabaMosCommonAuthOperatorInfoAPIRequest, session string) (*mos.AlibabaMosCommonAuthOperatorInfoAPIResponse, error) {
-	var resp mos.AlibabaMosCommonAuthOperatorInfoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMosCommonAuthOperatorInfo(clt *core.SDKClient, req *mos.AlibabaMosCommonAuthOperatorInfoAPIRequest, resp *mos.AlibabaMosCommonAuthOperatorInfoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

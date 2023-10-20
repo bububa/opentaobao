@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // IeItineraryVo 结构体
 type IeItineraryVo struct {
 	// 收货地址
@@ -44,4 +48,41 @@ type IeItineraryVo struct {
 	RefundMoney int64 `json:"refund_money,omitempty" xml:"refund_money,omitempty"`
 	// 是否已经邮寄
 	IsPost bool `json:"is_post,omitempty" xml:"is_post,omitempty"`
+}
+
+var poolIeItineraryVo = sync.Pool{
+	New: func() any {
+		return new(IeItineraryVo)
+	},
+}
+
+// GetIeItineraryVo() 从对象池中获取IeItineraryVo
+func GetIeItineraryVo() *IeItineraryVo {
+	return poolIeItineraryVo.Get().(*IeItineraryVo)
+}
+
+// ReleaseIeItineraryVo 释放IeItineraryVo
+func ReleaseIeItineraryVo(v *IeItineraryVo) {
+	v.Address = ""
+	v.CityName = ""
+	v.Consignee = ""
+	v.DistrictName = ""
+	v.ExpressCompanyCode = ""
+	v.ExpressCompanyName = ""
+	v.ExpressNo = ""
+	v.ItineraryNo = ""
+	v.Mobile = ""
+	v.PayStatus = ""
+	v.Postcode = ""
+	v.ProvinceName = ""
+	v.Remark = ""
+	v.SendTime = ""
+	v.SendType = ""
+	v.Status = ""
+	v.Telephone = ""
+	v.Id = 0
+	v.Price = 0
+	v.RefundMoney = 0
+	v.IsPost = false
+	poolIeItineraryVo.Put(v)
 }

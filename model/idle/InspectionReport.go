@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // InspectionReport 结构体
 type InspectionReport struct {
 	// 错误信息
@@ -28,4 +32,33 @@ type InspectionReport struct {
 	AppraiseType int64 `json:"appraise_type,omitempty" xml:"appraise_type,omitempty"`
 	// 成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolInspectionReport = sync.Pool{
+	New: func() any {
+		return new(InspectionReport)
+	},
+}
+
+// GetInspectionReport() 从对象池中获取InspectionReport
+func GetInspectionReport() *InspectionReport {
+	return poolInspectionReport.Get().(*InspectionReport)
+}
+
+// ReleaseInspectionReport 释放InspectionReport
+func ReleaseInspectionReport(v *InspectionReport) {
+	v.ErrMsg = ""
+	v.Report = ""
+	v.ErrCode = ""
+	v.Degree = ""
+	v.QuoteId = ""
+	v.Summary = ""
+	v.Explanation = ""
+	v.Imei = ""
+	v.Price = 0
+	v.OrderId = 0
+	v.RecycleSupplierId = 0
+	v.AppraiseType = 0
+	v.Success = false
+	poolInspectionReport.Put(v)
 }

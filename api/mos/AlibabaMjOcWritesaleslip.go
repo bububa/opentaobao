@@ -9,11 +9,6 @@ import (
 // alibaba.mj.oc.writesaleslip
 //
 // 开票占库
-func AlibabaMjOcWritesaleslip(clt *core.SDKClient, req *mos.AlibabaMjOcWritesaleslipAPIRequest, session string) (*mos.AlibabaMjOcWritesaleslipAPIResponse, error) {
-	var resp mos.AlibabaMjOcWritesaleslipAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMjOcWritesaleslip(clt *core.SDKClient, req *mos.AlibabaMjOcWritesaleslipAPIRequest, resp *mos.AlibabaMjOcWritesaleslipAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

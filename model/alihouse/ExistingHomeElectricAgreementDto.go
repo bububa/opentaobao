@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // ExistingHomeElectricAgreementDto 结构体
 type ExistingHomeElectricAgreementDto struct {
 	// 协议内容
@@ -16,4 +20,27 @@ type ExistingHomeElectricAgreementDto struct {
 	AgreementType int64 `json:"agreement_type,omitempty" xml:"agreement_type,omitempty"`
 	// 公司进件ID
 	MerchantOpenId int64 `json:"merchant_open_id,omitempty" xml:"merchant_open_id,omitempty"`
+}
+
+var poolExistingHomeElectricAgreementDto = sync.Pool{
+	New: func() any {
+		return new(ExistingHomeElectricAgreementDto)
+	},
+}
+
+// GetExistingHomeElectricAgreementDto() 从对象池中获取ExistingHomeElectricAgreementDto
+func GetExistingHomeElectricAgreementDto() *ExistingHomeElectricAgreementDto {
+	return poolExistingHomeElectricAgreementDto.Get().(*ExistingHomeElectricAgreementDto)
+}
+
+// ReleaseExistingHomeElectricAgreementDto 释放ExistingHomeElectricAgreementDto
+func ReleaseExistingHomeElectricAgreementDto(v *ExistingHomeElectricAgreementDto) {
+	v.AgreementContent = ""
+	v.AgreementName = ""
+	v.OuterAgreementId = ""
+	v.IsValid = 0
+	v.IsTemplate = 0
+	v.AgreementType = 0
+	v.MerchantOpenId = 0
+	poolExistingHomeElectricAgreementDto.Put(v)
 }

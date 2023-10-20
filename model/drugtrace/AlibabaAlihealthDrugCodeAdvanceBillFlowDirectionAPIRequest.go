@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest struct {
 // NewAlibabaAlihealthDrugCodeAdvanceBillFlowDirectionRequest 初始化AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest对象
 func NewAlibabaAlihealthDrugCodeAdvanceBillFlowDirectionRequest() *AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest {
 	return &AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest) Reset() {
+	r._code = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest) SetCode(_co
 // GetCode Code Getter
 func (r AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest) GetCode() string {
 	return r._code
+}
+
+var poolAlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugCodeAdvanceBillFlowDirectionRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugCodeAdvanceBillFlowDirectionRequest 从 sync.Pool 获取 AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest
+func GetAlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest() *AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest {
+	return poolAlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest.Get().(*AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest 将 AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest(v *AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugCodeAdvanceBillFlowDirectionAPIRequest.Put(v)
 }

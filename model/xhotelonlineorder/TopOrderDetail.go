@@ -1,5 +1,9 @@
 package xhotelonlineorder
 
+import (
+	"sync"
+)
+
 // TopOrderDetail 结构体
 type TopOrderDetail struct {
 	// 关联子订单对象
@@ -168,4 +172,103 @@ type TopOrderDetail struct {
 	BlockRoomOrder bool `json:"block_room_order,omitempty" xml:"block_room_order,omitempty"`
 	// 是否即时确认
 	TagJsqr bool `json:"tag_jsqr,omitempty" xml:"tag_jsqr,omitempty"`
+}
+
+var poolTopOrderDetail = sync.Pool{
+	New: func() any {
+		return new(TopOrderDetail)
+	},
+}
+
+// GetTopOrderDetail() 从对象池中获取TopOrderDetail
+func GetTopOrderDetail() *TopOrderDetail {
+	return poolTopOrderDetail.Get().(*TopOrderDetail)
+}
+
+// ReleaseTopOrderDetail 释放TopOrderDetail
+func ReleaseTopOrderDetail(v *TopOrderDetail) {
+	v.TopRelationOrders = v.TopRelationOrders[:0]
+	v.TopDailyInfos = v.TopDailyInfos[:0]
+	v.TopOrderGuests = v.TopOrderGuests[:0]
+	v.RpName = ""
+	v.EndTime = ""
+	v.PayTime = ""
+	v.OutOid = ""
+	v.Created = ""
+	v.HotelName = ""
+	v.OutConfirmCode = ""
+	v.TradeStatus = ""
+	v.AlipayTradeNo = ""
+	v.HotelCode = ""
+	v.RpCode = ""
+	v.ContactName = ""
+	v.OutSourceCorpName = ""
+	v.OutOrderId = ""
+	v.RoomTypeCode = ""
+	v.RelatedCode = ""
+	v.UnionStatusText = ""
+	v.CheckinDate = ""
+	v.LogisticsStatusText = ""
+	v.CheckoutDate = ""
+	v.ArriveLate = ""
+	v.ContactPhone = ""
+	v.RefundReason = ""
+	v.ArriveEarly = ""
+	v.OutSource = ""
+	v.RoomTypeName = ""
+	v.InvoiceTitle = ""
+	v.Memo = ""
+	v.CancelPolicyDesc = ""
+	v.RateId = ""
+	v.GmtModified = ""
+	v.Vendor = ""
+	v.RefundStatus = ""
+	v.Channel = ""
+	v.PaymentType = ""
+	v.InvoiceStatus = ""
+	v.OrderSourceType = ""
+	v.RpOriName = ""
+	v.CloseOrderRestSecond = 0
+	v.Hid = 0
+	v.Rpid = 0
+	v.Type = 0
+	v.TopOrderPackage = nil
+	v.Nights = 0
+	v.Tid = 0
+	v.TopInfoMap = nil
+	v.HotelOrderSeller = nil
+	v.BookingStatus = 0
+	v.RoomNumber = 0
+	v.ConfirmDuration = 0
+	v.TopOverseasPriceInfo = nil
+	v.Payment = 0
+	v.TopPromotion = nil
+	v.Rid = 0
+	v.SubType = 0
+	v.TotalRoomPrice = 0
+	v.UnionStatusValue = 0
+	v.OtherFee = 0
+	v.LogisticsStatusValue = 0
+	v.PayStatus = 0
+	v.GuaranteeType = 0
+	v.FundId = 0
+	v.TaxAndFee = 0
+	v.TopDomesticPriceInfo = nil
+	v.UserRealPayment = 0
+	v.CreditCard = nil
+	v.RefundAmout = 0
+	v.PostTradeRefund = nil
+	v.City = 0
+	v.TopInvoice = nil
+	v.RefundReasonType = 0
+	v.MaxOccupancy = 0
+	v.TopOrderCouponDO = nil
+	v.Promotion = nil
+	v.ReservedRoomOrder = false
+	v.SplitOrder = false
+	v.NeedConfirmNo = false
+	v.ShowSellerDelayConfirmButton = false
+	v.BlockRoomOrder = false
+	v.TagJsqr = false
+	poolTopOrderDetail.Put(v)
 }

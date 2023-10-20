@@ -9,11 +9,6 @@ import (
 // taobao.ads.data.import
 //
 // 数据导入
-func TaobaoAdsDataImport(clt *core.SDKClient, req *dt.TaobaoAdsDataImportAPIRequest, session string) (*dt.TaobaoAdsDataImportAPIResponse, error) {
-	var resp dt.TaobaoAdsDataImportAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAdsDataImport(clt *core.SDKClient, req *dt.TaobaoAdsDataImportAPIRequest, resp *dt.TaobaoAdsDataImportAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

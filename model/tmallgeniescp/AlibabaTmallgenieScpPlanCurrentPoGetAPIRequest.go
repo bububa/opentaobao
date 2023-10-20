@@ -2,6 +2,7 @@ package tmallgeniescp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTmallgenieScpPlanCurrentPoGetAPIRequest struct {
 // NewAlibabaTmallgenieScpPlanCurrentPoGetRequest 初始化AlibabaTmallgenieScpPlanCurrentPoGetAPIRequest对象
 func NewAlibabaTmallgenieScpPlanCurrentPoGetRequest() *AlibabaTmallgenieScpPlanCurrentPoGetAPIRequest {
 	return &AlibabaTmallgenieScpPlanCurrentPoGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTmallgenieScpPlanCurrentPoGetAPIRequest) Reset() {
+	r._requestExtendJson = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTmallgenieScpPlanCurrentPoGetAPIRequest) SetRequestExtendJson(_r
 // GetRequestExtendJson RequestExtendJson Getter
 func (r AlibabaTmallgenieScpPlanCurrentPoGetAPIRequest) GetRequestExtendJson() string {
 	return r._requestExtendJson
+}
+
+var poolAlibabaTmallgenieScpPlanCurrentPoGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTmallgenieScpPlanCurrentPoGetRequest()
+	},
+}
+
+// GetAlibabaTmallgenieScpPlanCurrentPoGetRequest 从 sync.Pool 获取 AlibabaTmallgenieScpPlanCurrentPoGetAPIRequest
+func GetAlibabaTmallgenieScpPlanCurrentPoGetAPIRequest() *AlibabaTmallgenieScpPlanCurrentPoGetAPIRequest {
+	return poolAlibabaTmallgenieScpPlanCurrentPoGetAPIRequest.Get().(*AlibabaTmallgenieScpPlanCurrentPoGetAPIRequest)
+}
+
+// ReleaseAlibabaTmallgenieScpPlanCurrentPoGetAPIRequest 将 AlibabaTmallgenieScpPlanCurrentPoGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTmallgenieScpPlanCurrentPoGetAPIRequest(v *AlibabaTmallgenieScpPlanCurrentPoGetAPIRequest) {
+	v.Reset()
+	poolAlibabaTmallgenieScpPlanCurrentPoGetAPIRequest.Put(v)
 }

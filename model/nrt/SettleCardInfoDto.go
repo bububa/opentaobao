@@ -1,5 +1,9 @@
 package nrt
 
+import (
+	"sync"
+)
+
 // SettleCardInfoDto 结构体
 type SettleCardInfoDto struct {
 	// 开户支行名
@@ -20,4 +24,29 @@ type SettleCardInfoDto struct {
 	AccountHolderName string `json:"account_holder_name,omitempty" xml:"account_holder_name,omitempty"`
 	// 账号使用类型
 	UsageType string `json:"usage_type,omitempty" xml:"usage_type,omitempty"`
+}
+
+var poolSettleCardInfoDto = sync.Pool{
+	New: func() any {
+		return new(SettleCardInfoDto)
+	},
+}
+
+// GetSettleCardInfoDto() 从对象池中获取SettleCardInfoDto
+func GetSettleCardInfoDto() *SettleCardInfoDto {
+	return poolSettleCardInfoDto.Get().(*SettleCardInfoDto)
+}
+
+// ReleaseSettleCardInfoDto 释放SettleCardInfoDto
+func ReleaseSettleCardInfoDto(v *SettleCardInfoDto) {
+	v.AccountBranchName = ""
+	v.AccountNo = ""
+	v.AccountType = ""
+	v.AccountInstName = ""
+	v.AccountInstCity = ""
+	v.AccountInstProvince = ""
+	v.AccountInstId = ""
+	v.AccountHolderName = ""
+	v.UsageType = ""
+	poolSettleCardInfoDto.Put(v)
 }

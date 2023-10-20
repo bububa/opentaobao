@@ -9,11 +9,6 @@ import (
 // alibaba.interact.sensor.gmedia
 //
 // 媒体功能
-func AlibabaInteractSensorGmedia(clt *core.SDKClient, req *interact.AlibabaInteractSensorGmediaAPIRequest, session string) (*interact.AlibabaInteractSensorGmediaAPIResponse, error) {
-	var resp interact.AlibabaInteractSensorGmediaAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaInteractSensorGmedia(clt *core.SDKClient, req *interact.AlibabaInteractSensorGmediaAPIRequest, resp *interact.AlibabaInteractSensorGmediaAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

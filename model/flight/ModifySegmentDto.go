@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // ModifySegmentDto 结构体
 type ModifySegmentDto struct {
 	// 舱等: F:头等舱, C:商务舱, Y:经济舱, S:超级经济舱, P:超值经济舱, M:标准经济舱, W:超级经济舱
@@ -26,4 +30,32 @@ type ModifySegmentDto struct {
 	SegmentIndex int64 `json:"segment_index,omitempty" xml:"segment_index,omitempty"`
 	// 航程序号
 	OdIndex int64 `json:"od_index,omitempty" xml:"od_index,omitempty"`
+}
+
+var poolModifySegmentDto = sync.Pool{
+	New: func() any {
+		return new(ModifySegmentDto)
+	},
+}
+
+// GetModifySegmentDto() 从对象池中获取ModifySegmentDto
+func GetModifySegmentDto() *ModifySegmentDto {
+	return poolModifySegmentDto.Get().(*ModifySegmentDto)
+}
+
+// ReleaseModifySegmentDto 释放ModifySegmentDto
+func ReleaseModifySegmentDto(v *ModifySegmentDto) {
+	v.CabinClass = ""
+	v.FlightNo = ""
+	v.DepTime = ""
+	v.ArrCity = ""
+	v.DepCity = ""
+	v.Cabin = ""
+	v.ArrAirport = ""
+	v.DepAirport = ""
+	v.ArrTime = ""
+	v.TicketNo = ""
+	v.SegmentIndex = 0
+	v.OdIndex = 0
+	poolModifySegmentDto.Put(v)
 }

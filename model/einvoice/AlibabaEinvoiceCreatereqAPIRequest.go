@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -85,8 +86,47 @@ type AlibabaEinvoiceCreatereqAPIRequest struct {
 // NewAlibabaEinvoiceCreatereqRequest 初始化AlibabaEinvoiceCreatereqAPIRequest对象
 func NewAlibabaEinvoiceCreatereqRequest() *AlibabaEinvoiceCreatereqAPIRequest {
 	return &AlibabaEinvoiceCreatereqAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(34),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceCreatereqAPIRequest) Reset() {
+	r._invoiceItems = r._invoiceItems[:0]
+	r._platformCode = ""
+	r._payeeBankaccount = ""
+	r._payeeReceiver = ""
+	r._payeeOperator = ""
+	r._invoiceAmount = ""
+	r._payeeChecker = ""
+	r._payerPhone = ""
+	r._payerRegisterNo = ""
+	r._invoiceTime = ""
+	r._payeePhone = ""
+	r._payerEmail = ""
+	r._payeeName = ""
+	r._payerAddress = ""
+	r._invoiceMemo = ""
+	r._payerBankaccount = ""
+	r._sumPrice = ""
+	r._normalInvoiceNo = ""
+	r._invoiceType = ""
+	r._payeeRegisterNo = ""
+	r._normalInvoiceCode = ""
+	r._erpTid = ""
+	r._serialNo = ""
+	r._platformTid = ""
+	r._payeeAddress = ""
+	r._sumTax = ""
+	r._payerName = ""
+	r._applyId = ""
+	r._outShopName = ""
+	r._redNoticeNo = ""
+	r._requestRole = ""
+	r._distributionTid = ""
+	r._businessType = 0
+	r._invoiceKind = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -546,4 +586,21 @@ func (r *AlibabaEinvoiceCreatereqAPIRequest) SetInvoiceKind(_invoiceKind int64) 
 // GetInvoiceKind InvoiceKind Getter
 func (r AlibabaEinvoiceCreatereqAPIRequest) GetInvoiceKind() int64 {
 	return r._invoiceKind
+}
+
+var poolAlibabaEinvoiceCreatereqAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceCreatereqRequest()
+	},
+}
+
+// GetAlibabaEinvoiceCreatereqRequest 从 sync.Pool 获取 AlibabaEinvoiceCreatereqAPIRequest
+func GetAlibabaEinvoiceCreatereqAPIRequest() *AlibabaEinvoiceCreatereqAPIRequest {
+	return poolAlibabaEinvoiceCreatereqAPIRequest.Get().(*AlibabaEinvoiceCreatereqAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceCreatereqAPIRequest 将 AlibabaEinvoiceCreatereqAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceCreatereqAPIRequest(v *AlibabaEinvoiceCreatereqAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceCreatereqAPIRequest.Put(v)
 }

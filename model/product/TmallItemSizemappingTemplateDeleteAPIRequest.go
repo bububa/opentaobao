@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallItemSizemappingTemplateDeleteAPIRequest struct {
 // NewTmallItemSizemappingTemplateDeleteRequest 初始化TmallItemSizemappingTemplateDeleteAPIRequest对象
 func NewTmallItemSizemappingTemplateDeleteRequest() *TmallItemSizemappingTemplateDeleteAPIRequest {
 	return &TmallItemSizemappingTemplateDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallItemSizemappingTemplateDeleteAPIRequest) Reset() {
+	r._templateId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallItemSizemappingTemplateDeleteAPIRequest) SetTemplateId(_templateId
 // GetTemplateId TemplateId Getter
 func (r TmallItemSizemappingTemplateDeleteAPIRequest) GetTemplateId() int64 {
 	return r._templateId
+}
+
+var poolTmallItemSizemappingTemplateDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallItemSizemappingTemplateDeleteRequest()
+	},
+}
+
+// GetTmallItemSizemappingTemplateDeleteRequest 从 sync.Pool 获取 TmallItemSizemappingTemplateDeleteAPIRequest
+func GetTmallItemSizemappingTemplateDeleteAPIRequest() *TmallItemSizemappingTemplateDeleteAPIRequest {
+	return poolTmallItemSizemappingTemplateDeleteAPIRequest.Get().(*TmallItemSizemappingTemplateDeleteAPIRequest)
+}
+
+// ReleaseTmallItemSizemappingTemplateDeleteAPIRequest 将 TmallItemSizemappingTemplateDeleteAPIRequest 放入 sync.Pool
+func ReleaseTmallItemSizemappingTemplateDeleteAPIRequest(v *TmallItemSizemappingTemplateDeleteAPIRequest) {
+	v.Reset()
+	poolTmallItemSizemappingTemplateDeleteAPIRequest.Put(v)
 }

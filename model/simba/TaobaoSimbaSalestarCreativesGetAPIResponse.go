@@ -2,6 +2,7 @@ package simba
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoSimbaSalestarCreativesGetAPIResponse struct {
 	TaobaoSimbaSalestarCreativesGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoSimbaSalestarCreativesGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoSimbaSalestarCreativesGetAPIResponseModel).Reset()
+}
+
 // TaobaoSimbaSalestarCreativesGetAPIResponseModel is （新）批量获取创意 成功返回结果
 type TaobaoSimbaSalestarCreativesGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_salestar_creatives_get_response"`
@@ -22,4 +29,27 @@ type TaobaoSimbaSalestarCreativesGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 创意对象列表
 	Creatives []Creative `json:"creatives,omitempty" xml:"creatives>creative,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoSimbaSalestarCreativesGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Creatives = m.Creatives[:0]
+}
+
+var poolTaobaoSimbaSalestarCreativesGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoSimbaSalestarCreativesGetAPIResponse)
+	},
+}
+
+// GetTaobaoSimbaSalestarCreativesGetAPIResponse 从 sync.Pool 获取 TaobaoSimbaSalestarCreativesGetAPIResponse
+func GetTaobaoSimbaSalestarCreativesGetAPIResponse() *TaobaoSimbaSalestarCreativesGetAPIResponse {
+	return poolTaobaoSimbaSalestarCreativesGetAPIResponse.Get().(*TaobaoSimbaSalestarCreativesGetAPIResponse)
+}
+
+// ReleaseTaobaoSimbaSalestarCreativesGetAPIResponse 将 TaobaoSimbaSalestarCreativesGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoSimbaSalestarCreativesGetAPIResponse(v *TaobaoSimbaSalestarCreativesGetAPIResponse) {
+	v.Reset()
+	poolTaobaoSimbaSalestarCreativesGetAPIResponse.Put(v)
 }

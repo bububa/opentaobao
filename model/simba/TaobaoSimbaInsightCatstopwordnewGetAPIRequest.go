@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoSimbaInsightCatstopwordnewGetAPIRequest struct {
 // NewTaobaoSimbaInsightCatstopwordnewGetRequest 初始化TaobaoSimbaInsightCatstopwordnewGetAPIRequest对象
 func NewTaobaoSimbaInsightCatstopwordnewGetRequest() *TaobaoSimbaInsightCatstopwordnewGetAPIRequest {
 	return &TaobaoSimbaInsightCatstopwordnewGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaInsightCatstopwordnewGetAPIRequest) Reset() {
+	r._catId = ""
+	r._startDate = ""
+	r._endDate = ""
+	r._dimension = ""
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoSimbaInsightCatstopwordnewGetAPIRequest) SetPageSize(_pageSize in
 // GetPageSize PageSize Getter
 func (r TaobaoSimbaInsightCatstopwordnewGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoSimbaInsightCatstopwordnewGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaInsightCatstopwordnewGetRequest()
+	},
+}
+
+// GetTaobaoSimbaInsightCatstopwordnewGetRequest 从 sync.Pool 获取 TaobaoSimbaInsightCatstopwordnewGetAPIRequest
+func GetTaobaoSimbaInsightCatstopwordnewGetAPIRequest() *TaobaoSimbaInsightCatstopwordnewGetAPIRequest {
+	return poolTaobaoSimbaInsightCatstopwordnewGetAPIRequest.Get().(*TaobaoSimbaInsightCatstopwordnewGetAPIRequest)
+}
+
+// ReleaseTaobaoSimbaInsightCatstopwordnewGetAPIRequest 将 TaobaoSimbaInsightCatstopwordnewGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaInsightCatstopwordnewGetAPIRequest(v *TaobaoSimbaInsightCatstopwordnewGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaInsightCatstopwordnewGetAPIRequest.Put(v)
 }

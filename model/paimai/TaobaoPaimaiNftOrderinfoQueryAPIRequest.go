@@ -2,6 +2,7 @@ package paimai
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoPaimaiNftOrderinfoQueryAPIRequest struct {
 // NewTaobaoPaimaiNftOrderinfoQueryRequest 初始化TaobaoPaimaiNftOrderinfoQueryAPIRequest对象
 func NewTaobaoPaimaiNftOrderinfoQueryRequest() *TaobaoPaimaiNftOrderinfoQueryAPIRequest {
 	return &TaobaoPaimaiNftOrderinfoQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPaimaiNftOrderinfoQueryAPIRequest) Reset() {
+	r._nftTradeOrderReqDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoPaimaiNftOrderinfoQueryAPIRequest) SetNftTradeOrderReqDto(_nftTra
 // GetNftTradeOrderReqDto NftTradeOrderReqDto Getter
 func (r TaobaoPaimaiNftOrderinfoQueryAPIRequest) GetNftTradeOrderReqDto() *NftTradeOrderReqDto {
 	return r._nftTradeOrderReqDto
+}
+
+var poolTaobaoPaimaiNftOrderinfoQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPaimaiNftOrderinfoQueryRequest()
+	},
+}
+
+// GetTaobaoPaimaiNftOrderinfoQueryRequest 从 sync.Pool 获取 TaobaoPaimaiNftOrderinfoQueryAPIRequest
+func GetTaobaoPaimaiNftOrderinfoQueryAPIRequest() *TaobaoPaimaiNftOrderinfoQueryAPIRequest {
+	return poolTaobaoPaimaiNftOrderinfoQueryAPIRequest.Get().(*TaobaoPaimaiNftOrderinfoQueryAPIRequest)
+}
+
+// ReleaseTaobaoPaimaiNftOrderinfoQueryAPIRequest 将 TaobaoPaimaiNftOrderinfoQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPaimaiNftOrderinfoQueryAPIRequest(v *TaobaoPaimaiNftOrderinfoQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoPaimaiNftOrderinfoQueryAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package nrt
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallNrtCoupontemplateQueryAPIResponse struct {
 	TmallNrtCoupontemplateQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallNrtCoupontemplateQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallNrtCoupontemplateQueryAPIResponseModel).Reset()
+}
+
 // TmallNrtCoupontemplateQueryAPIResponseModel is 券模板查询 成功返回结果
 type TmallNrtCoupontemplateQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_nrt_coupontemplate_query_response"`
@@ -24,4 +31,28 @@ type TmallNrtCoupontemplateQueryAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// model
 	Model *PageData `json:"model,omitempty" xml:"model,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallNrtCoupontemplateQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.Model = nil
+}
+
+var poolTmallNrtCoupontemplateQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallNrtCoupontemplateQueryAPIResponse)
+	},
+}
+
+// GetTmallNrtCoupontemplateQueryAPIResponse 从 sync.Pool 获取 TmallNrtCoupontemplateQueryAPIResponse
+func GetTmallNrtCoupontemplateQueryAPIResponse() *TmallNrtCoupontemplateQueryAPIResponse {
+	return poolTmallNrtCoupontemplateQueryAPIResponse.Get().(*TmallNrtCoupontemplateQueryAPIResponse)
+}
+
+// ReleaseTmallNrtCoupontemplateQueryAPIResponse 将 TmallNrtCoupontemplateQueryAPIResponse 保存到 sync.Pool
+func ReleaseTmallNrtCoupontemplateQueryAPIResponse(v *TmallNrtCoupontemplateQueryAPIResponse) {
+	v.Reset()
+	poolTmallNrtCoupontemplateQueryAPIResponse.Put(v)
 }

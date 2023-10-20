@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // AlibabaIdleTenderAftersaleOrderGetModule 结构体
 type AlibabaIdleTenderAftersaleOrderGetModule struct {
 	// 申请服务类型
@@ -24,4 +28,31 @@ type AlibabaIdleTenderAftersaleOrderGetModule struct {
 	Attributes *Attributes `json:"attributes,omitempty" xml:"attributes,omitempty"`
 	// 售后申请单子状态
 	SubStatus int64 `json:"sub_status,omitempty" xml:"sub_status,omitempty"`
+}
+
+var poolAlibabaIdleTenderAftersaleOrderGetModule = sync.Pool{
+	New: func() any {
+		return new(AlibabaIdleTenderAftersaleOrderGetModule)
+	},
+}
+
+// GetAlibabaIdleTenderAftersaleOrderGetModule() 从对象池中获取AlibabaIdleTenderAftersaleOrderGetModule
+func GetAlibabaIdleTenderAftersaleOrderGetModule() *AlibabaIdleTenderAftersaleOrderGetModule {
+	return poolAlibabaIdleTenderAftersaleOrderGetModule.Get().(*AlibabaIdleTenderAftersaleOrderGetModule)
+}
+
+// ReleaseAlibabaIdleTenderAftersaleOrderGetModule 释放AlibabaIdleTenderAftersaleOrderGetModule
+func ReleaseAlibabaIdleTenderAftersaleOrderGetModule(v *AlibabaIdleTenderAftersaleOrderGetModule) {
+	v.ApplyType = ""
+	v.ServicePlanType = ""
+	v.ServicePlanInfo = ""
+	v.MainOrderId = ""
+	v.ApplyInfo = ""
+	v.ServiceBizCode = ""
+	v.ServiceSceneType = ""
+	v.MainOrderSettleType = ""
+	v.MainStatus = 0
+	v.Attributes = nil
+	v.SubStatus = 0
+	poolAlibabaIdleTenderAftersaleOrderGetModule.Put(v)
 }

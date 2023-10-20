@@ -9,11 +9,6 @@ import (
 // yunos.tvpubadmin.device.updateosstatus
 //
 // 更新系统版本审核状态
-func YunosTvpubadminDeviceUpdateosstatus(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceUpdateosstatusAPIRequest, session string) (*tvupadmin.YunosTvpubadminDeviceUpdateosstatusAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminDeviceUpdateosstatusAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosTvpubadminDeviceUpdateosstatus(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceUpdateosstatusAPIRequest, resp *tvupadmin.YunosTvpubadminDeviceUpdateosstatusAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

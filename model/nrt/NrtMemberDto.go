@@ -1,5 +1,9 @@
 package nrt
 
+import (
+	"sync"
+)
+
 // NrtMemberDto 结构体
 type NrtMemberDto struct {
 	// 手机号
@@ -32,4 +36,35 @@ type NrtMemberDto struct {
 	GmtModified int64 `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
 	// 版本号
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
+}
+
+var poolNrtMemberDto = sync.Pool{
+	New: func() any {
+		return new(NrtMemberDto)
+	},
+}
+
+// GetNrtMemberDto() 从对象池中获取NrtMemberDto
+func GetNrtMemberDto() *NrtMemberDto {
+	return poolNrtMemberDto.Get().(*NrtMemberDto)
+}
+
+// ReleaseNrtMemberDto 释放NrtMemberDto
+func ReleaseNrtMemberDto(v *NrtMemberDto) {
+	v.Phone = ""
+	v.BizCode = ""
+	v.SmsCode = ""
+	v.OutMemberId = ""
+	v.OpenId = ""
+	v.OpType = ""
+	v.LevelName = ""
+	v.RealName = ""
+	v.OutId = ""
+	v.Addr = ""
+	v.Status = ""
+	v.TaoNick = ""
+	v.MemberType = 0
+	v.GmtModified = 0
+	v.Version = 0
+	poolNrtMemberDto.Put(v)
 }

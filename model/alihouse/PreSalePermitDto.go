@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // PreSalePermitDto 结构体
 type PreSalePermitDto struct {
 	// 预售楼幢外部id列表
@@ -40,4 +44,39 @@ type PreSalePermitDto struct {
 	SalesArea int64 `json:"sales_area,omitempty" xml:"sales_area,omitempty"`
 	// 销售套数
 	SalesSets int64 `json:"sales_sets,omitempty" xml:"sales_sets,omitempty"`
+}
+
+var poolPreSalePermitDto = sync.Pool{
+	New: func() any {
+		return new(PreSalePermitDto)
+	},
+}
+
+// GetPreSalePermitDto() 从对象池中获取PreSalePermitDto
+func GetPreSalePermitDto() *PreSalePermitDto {
+	return poolPreSalePermitDto.Get().(*PreSalePermitDto)
+}
+
+// ReleasePreSalePermitDto 释放PreSalePermitDto
+func ReleasePreSalePermitDto(v *PreSalePermitDto) {
+	v.OuterBuildingIds = v.OuterBuildingIds[:0]
+	v.PublicityTime = ""
+	v.TotalPriceRange = ""
+	v.UnitPriceRange = ""
+	v.AveragePrice = ""
+	v.RegistrationEndTime = ""
+	v.RegistrationStartTime = ""
+	v.ProposedSalePrice = ""
+	v.ServiceLife = ""
+	v.PreSalePosition = ""
+	v.LandHousingUse = ""
+	v.PermittedSalesArea = ""
+	v.CertificationDate = ""
+	v.PreSaleLicenseNumber = ""
+	v.OuterPermitId = ""
+	v.OuterId = ""
+	v.OuterStoreId = ""
+	v.SalesArea = 0
+	v.SalesSets = 0
+	poolPreSalePermitDto.Put(v)
 }

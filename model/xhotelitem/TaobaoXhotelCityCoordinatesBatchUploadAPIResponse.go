@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type TaobaoXhotelCityCoordinatesBatchUploadAPIResponse struct {
 	TaobaoXhotelCityCoordinatesBatchUploadAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoXhotelCityCoordinatesBatchUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoXhotelCityCoordinatesBatchUploadAPIResponseModel).Reset()
+}
+
 // TaobaoXhotelCityCoordinatesBatchUploadAPIResponseModel is 上传信息计算飞猪国际城市 成功返回结果
 type TaobaoXhotelCityCoordinatesBatchUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_city_coordinates_batch_upload_response"`
@@ -23,4 +30,27 @@ type TaobaoXhotelCityCoordinatesBatchUploadAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 上传成功后的批次号
 	BatchId int64 `json:"batch_id,omitempty" xml:"batch_id,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelCityCoordinatesBatchUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.BatchId = 0
+}
+
+var poolTaobaoXhotelCityCoordinatesBatchUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelCityCoordinatesBatchUploadAPIResponse)
+	},
+}
+
+// GetTaobaoXhotelCityCoordinatesBatchUploadAPIResponse 从 sync.Pool 获取 TaobaoXhotelCityCoordinatesBatchUploadAPIResponse
+func GetTaobaoXhotelCityCoordinatesBatchUploadAPIResponse() *TaobaoXhotelCityCoordinatesBatchUploadAPIResponse {
+	return poolTaobaoXhotelCityCoordinatesBatchUploadAPIResponse.Get().(*TaobaoXhotelCityCoordinatesBatchUploadAPIResponse)
+}
+
+// ReleaseTaobaoXhotelCityCoordinatesBatchUploadAPIResponse 将 TaobaoXhotelCityCoordinatesBatchUploadAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoXhotelCityCoordinatesBatchUploadAPIResponse(v *TaobaoXhotelCityCoordinatesBatchUploadAPIResponse) {
+	v.Reset()
+	poolTaobaoXhotelCityCoordinatesBatchUploadAPIResponse.Put(v)
 }

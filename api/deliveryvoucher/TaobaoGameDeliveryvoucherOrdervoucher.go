@@ -9,11 +9,6 @@ import (
 // taobao.game.deliveryvoucher.ordervoucher
 //
 // 提货券发券接口：同步券和订单的关联信息
-func TaobaoGameDeliveryvoucherOrdervoucher(clt *core.SDKClient, req *deliveryvoucher.TaobaoGameDeliveryvoucherOrdervoucherAPIRequest, session string) (*deliveryvoucher.TaobaoGameDeliveryvoucherOrdervoucherAPIResponse, error) {
-	var resp deliveryvoucher.TaobaoGameDeliveryvoucherOrdervoucherAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoGameDeliveryvoucherOrdervoucher(clt *core.SDKClient, req *deliveryvoucher.TaobaoGameDeliveryvoucherOrdervoucherAPIRequest, resp *deliveryvoucher.TaobaoGameDeliveryvoucherOrdervoucherAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

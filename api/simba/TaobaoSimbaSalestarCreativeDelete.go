@@ -9,11 +9,6 @@ import (
 // taobao.simba.salestar.creative.delete
 //
 // 删除一个创意
-func TaobaoSimbaSalestarCreativeDelete(clt *core.SDKClient, req *simba.TaobaoSimbaSalestarCreativeDeleteAPIRequest, session string) (*simba.TaobaoSimbaSalestarCreativeDeleteAPIResponse, error) {
-	var resp simba.TaobaoSimbaSalestarCreativeDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaSalestarCreativeDelete(clt *core.SDKClient, req *simba.TaobaoSimbaSalestarCreativeDeleteAPIRequest, resp *simba.TaobaoSimbaSalestarCreativeDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

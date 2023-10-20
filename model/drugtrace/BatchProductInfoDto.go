@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // BatchProductInfoDto 结构体
 type BatchProductInfoDto struct {
 	// 生产企业名称
@@ -28,4 +32,33 @@ type BatchProductInfoDto struct {
 	PrepnSpec string `json:"prepn_spec,omitempty" xml:"prepn_spec,omitempty"`
 	// 批准文号
 	ApprovalLicenceNo string `json:"approval_licence_no,omitempty" xml:"approval_licence_no,omitempty"`
+}
+
+var poolBatchProductInfoDto = sync.Pool{
+	New: func() any {
+		return new(BatchProductInfoDto)
+	},
+}
+
+// GetBatchProductInfoDto() 从对象池中获取BatchProductInfoDto
+func GetBatchProductInfoDto() *BatchProductInfoDto {
+	return poolBatchProductInfoDto.Get().(*BatchProductInfoDto)
+}
+
+// ReleaseBatchProductInfoDto 释放BatchProductInfoDto
+func ReleaseBatchProductInfoDto(v *BatchProductInfoDto) {
+	v.EntName = ""
+	v.PkgSpec = ""
+	v.ProductDate = ""
+	v.ProduceBatchNo = ""
+	v.DrugEntBaseId = ""
+	v.PhysicName = ""
+	v.ExpireDate = ""
+	v.RefEntId = ""
+	v.CurrEntId = ""
+	v.PrepnType = ""
+	v.SdcCode = ""
+	v.PrepnSpec = ""
+	v.ApprovalLicenceNo = ""
+	poolBatchProductInfoDto.Put(v)
 }

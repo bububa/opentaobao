@@ -2,6 +2,7 @@ package train
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoTrainPurchaseOrderPayurlAPIResponse struct {
 	model.CommonResponse
 	TaobaoTrainPurchaseOrderPayurlAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoTrainPurchaseOrderPayurlAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTrainPurchaseOrderPayurlAPIResponseModel).Reset()
 }
 
 // TaobaoTrainPurchaseOrderPayurlAPIResponseModel is 火车票采购商接口-获取支付链接 成功返回结果
@@ -30,4 +37,31 @@ type TaobaoTrainPurchaseOrderPayurlAPIResponseModel struct {
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTrainPurchaseOrderPayurlAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultCode = ""
+	m.InnerMsg = ""
+	m.Url = ""
+	m.ResultMsg = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoTrainPurchaseOrderPayurlAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTrainPurchaseOrderPayurlAPIResponse)
+	},
+}
+
+// GetTaobaoTrainPurchaseOrderPayurlAPIResponse 从 sync.Pool 获取 TaobaoTrainPurchaseOrderPayurlAPIResponse
+func GetTaobaoTrainPurchaseOrderPayurlAPIResponse() *TaobaoTrainPurchaseOrderPayurlAPIResponse {
+	return poolTaobaoTrainPurchaseOrderPayurlAPIResponse.Get().(*TaobaoTrainPurchaseOrderPayurlAPIResponse)
+}
+
+// ReleaseTaobaoTrainPurchaseOrderPayurlAPIResponse 将 TaobaoTrainPurchaseOrderPayurlAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTrainPurchaseOrderPayurlAPIResponse(v *TaobaoTrainPurchaseOrderPayurlAPIResponse) {
+	v.Reset()
+	poolTaobaoTrainPurchaseOrderPayurlAPIResponse.Put(v)
 }

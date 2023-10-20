@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest struct {
 // NewAlibabaScbpAdCampaignFindForbiddenKeywordRequest 初始化AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest对象
 func NewAlibabaScbpAdCampaignFindForbiddenKeywordRequest() *AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest {
 	return &AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest) Reset() {
+	r._topContext = nil
+	r._campaignId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest) SetCampaignId(_cam
 // GetCampaignId CampaignId Getter
 func (r AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
+}
+
+var poolAlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdCampaignFindForbiddenKeywordRequest()
+	},
+}
+
+// GetAlibabaScbpAdCampaignFindForbiddenKeywordRequest 从 sync.Pool 获取 AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest
+func GetAlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest() *AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest {
+	return poolAlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest.Get().(*AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest 将 AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest(v *AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest.Put(v)
 }

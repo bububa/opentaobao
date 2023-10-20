@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.workcard.querybyseller
 //
 // 查询工单
-func TmallServicecenterWorkcardQuerybyseller(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardQuerybysellerAPIRequest, session string) (*tmallservice.TmallServicecenterWorkcardQuerybysellerAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterWorkcardQuerybysellerAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterWorkcardQuerybyseller(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardQuerybysellerAPIRequest, resp *tmallservice.TmallServicecenterWorkcardQuerybysellerAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

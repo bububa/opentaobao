@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpChannelDistributorInventoryGetAPIRequest struct {
 // NewAlibabaAscpChannelDistributorInventoryGetRequest 初始化AlibabaAscpChannelDistributorInventoryGetAPIRequest对象
 func NewAlibabaAscpChannelDistributorInventoryGetRequest() *AlibabaAscpChannelDistributorInventoryGetAPIRequest {
 	return &AlibabaAscpChannelDistributorInventoryGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpChannelDistributorInventoryGetAPIRequest) Reset() {
+	r._inventoryRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpChannelDistributorInventoryGetAPIRequest) SetInventoryReques
 // GetInventoryRequest InventoryRequest Getter
 func (r AlibabaAscpChannelDistributorInventoryGetAPIRequest) GetInventoryRequest() *ChannelInventoryQuery {
 	return r._inventoryRequest
+}
+
+var poolAlibabaAscpChannelDistributorInventoryGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpChannelDistributorInventoryGetRequest()
+	},
+}
+
+// GetAlibabaAscpChannelDistributorInventoryGetRequest 从 sync.Pool 获取 AlibabaAscpChannelDistributorInventoryGetAPIRequest
+func GetAlibabaAscpChannelDistributorInventoryGetAPIRequest() *AlibabaAscpChannelDistributorInventoryGetAPIRequest {
+	return poolAlibabaAscpChannelDistributorInventoryGetAPIRequest.Get().(*AlibabaAscpChannelDistributorInventoryGetAPIRequest)
+}
+
+// ReleaseAlibabaAscpChannelDistributorInventoryGetAPIRequest 将 AlibabaAscpChannelDistributorInventoryGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpChannelDistributorInventoryGetAPIRequest(v *AlibabaAscpChannelDistributorInventoryGetAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpChannelDistributorInventoryGetAPIRequest.Put(v)
 }

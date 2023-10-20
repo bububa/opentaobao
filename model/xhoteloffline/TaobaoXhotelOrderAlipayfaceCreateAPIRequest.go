@@ -2,6 +2,7 @@ package xhoteloffline
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -45,8 +46,27 @@ type TaobaoXhotelOrderAlipayfaceCreateAPIRequest struct {
 // NewTaobaoXhotelOrderAlipayfaceCreateRequest 初始化TaobaoXhotelOrderAlipayfaceCreateAPIRequest对象
 func NewTaobaoXhotelOrderAlipayfaceCreateRequest() *TaobaoXhotelOrderAlipayfaceCreateAPIRequest {
 	return &TaobaoXhotelOrderAlipayfaceCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(14),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) Reset() {
+	r._guests = r._guests[:0]
+	r._outOrderId = ""
+	r._hotelCode = ""
+	r._checkIn = ""
+	r._checkOut = ""
+	r._dailyPriceInfo = ""
+	r._roomtypeName = ""
+	r._rateplanName = ""
+	r._alipayNumber = ""
+	r._channel = ""
+	r._vendor = ""
+	r._roomQuantity = 0
+	r._totalFee = 0
+	r._selfCheckin = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -246,4 +266,21 @@ func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetSelfCheckin(_selfChecki
 // GetSelfCheckin SelfCheckin Getter
 func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetSelfCheckin() bool {
 	return r._selfCheckin
+}
+
+var poolTaobaoXhotelOrderAlipayfaceCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelOrderAlipayfaceCreateRequest()
+	},
+}
+
+// GetTaobaoXhotelOrderAlipayfaceCreateRequest 从 sync.Pool 获取 TaobaoXhotelOrderAlipayfaceCreateAPIRequest
+func GetTaobaoXhotelOrderAlipayfaceCreateAPIRequest() *TaobaoXhotelOrderAlipayfaceCreateAPIRequest {
+	return poolTaobaoXhotelOrderAlipayfaceCreateAPIRequest.Get().(*TaobaoXhotelOrderAlipayfaceCreateAPIRequest)
+}
+
+// ReleaseTaobaoXhotelOrderAlipayfaceCreateAPIRequest 将 TaobaoXhotelOrderAlipayfaceCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelOrderAlipayfaceCreateAPIRequest(v *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelOrderAlipayfaceCreateAPIRequest.Put(v)
 }

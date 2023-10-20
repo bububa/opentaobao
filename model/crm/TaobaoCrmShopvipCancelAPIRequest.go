@@ -2,6 +2,7 @@ package crm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type TaobaoCrmShopvipCancelAPIRequest struct {
 // NewTaobaoCrmShopvipCancelRequest 初始化TaobaoCrmShopvipCancelAPIRequest对象
 func NewTaobaoCrmShopvipCancelRequest() *TaobaoCrmShopvipCancelAPIRequest {
 	return &TaobaoCrmShopvipCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCrmShopvipCancelAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r TaobaoCrmShopvipCancelAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r TaobaoCrmShopvipCancelAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolTaobaoCrmShopvipCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCrmShopvipCancelRequest()
+	},
+}
+
+// GetTaobaoCrmShopvipCancelRequest 从 sync.Pool 获取 TaobaoCrmShopvipCancelAPIRequest
+func GetTaobaoCrmShopvipCancelAPIRequest() *TaobaoCrmShopvipCancelAPIRequest {
+	return poolTaobaoCrmShopvipCancelAPIRequest.Get().(*TaobaoCrmShopvipCancelAPIRequest)
+}
+
+// ReleaseTaobaoCrmShopvipCancelAPIRequest 将 TaobaoCrmShopvipCancelAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCrmShopvipCancelAPIRequest(v *TaobaoCrmShopvipCancelAPIRequest) {
+	v.Reset()
+	poolTaobaoCrmShopvipCancelAPIRequest.Put(v)
 }

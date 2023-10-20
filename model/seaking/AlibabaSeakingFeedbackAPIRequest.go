@@ -2,6 +2,7 @@ package seaking
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AlibabaSeakingFeedbackAPIRequest struct {
 // NewAlibabaSeakingFeedbackRequest 初始化AlibabaSeakingFeedbackAPIRequest对象
 func NewAlibabaSeakingFeedbackRequest() *AlibabaSeakingFeedbackAPIRequest {
 	return &AlibabaSeakingFeedbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSeakingFeedbackAPIRequest) Reset() {
+	r._invokeApiName = ""
+	r._platform = ""
+	r._productId = ""
+	r._subIdentifier = ""
+	r._subIdentifierType = ""
+	r._identifier = ""
+	r._identifierType = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AlibabaSeakingFeedbackAPIRequest) SetIdentifierType(_identifierType str
 // GetIdentifierType IdentifierType Getter
 func (r AlibabaSeakingFeedbackAPIRequest) GetIdentifierType() string {
 	return r._identifierType
+}
+
+var poolAlibabaSeakingFeedbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSeakingFeedbackRequest()
+	},
+}
+
+// GetAlibabaSeakingFeedbackRequest 从 sync.Pool 获取 AlibabaSeakingFeedbackAPIRequest
+func GetAlibabaSeakingFeedbackAPIRequest() *AlibabaSeakingFeedbackAPIRequest {
+	return poolAlibabaSeakingFeedbackAPIRequest.Get().(*AlibabaSeakingFeedbackAPIRequest)
+}
+
+// ReleaseAlibabaSeakingFeedbackAPIRequest 将 AlibabaSeakingFeedbackAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSeakingFeedbackAPIRequest(v *AlibabaSeakingFeedbackAPIRequest) {
+	v.Reset()
+	poolAlibabaSeakingFeedbackAPIRequest.Put(v)
 }

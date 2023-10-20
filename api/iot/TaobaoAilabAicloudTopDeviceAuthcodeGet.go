@@ -9,11 +9,6 @@ import (
 // taobao.ailab.aicloud.top.device.authcode.get
 //
 // 获取设备授权码
-func TaobaoAilabAicloudTopDeviceAuthcodeGet(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceAuthcodeGetAPIRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceAuthcodeGetAPIResponse, error) {
-	var resp iot.TaobaoAilabAicloudTopDeviceAuthcodeGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAilabAicloudTopDeviceAuthcodeGet(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceAuthcodeGetAPIRequest, resp *iot.TaobaoAilabAicloudTopDeviceAuthcodeGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

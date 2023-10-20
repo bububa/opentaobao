@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // ChannelInventoryDto 结构体
 type ChannelInventoryDto struct {
 	// 库存数量
@@ -12,4 +16,25 @@ type ChannelInventoryDto struct {
 	SkuId string `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 	// 市场
 	ChannelCode string `json:"channel_code,omitempty" xml:"channel_code,omitempty"`
+}
+
+var poolChannelInventoryDto = sync.Pool{
+	New: func() any {
+		return new(ChannelInventoryDto)
+	},
+}
+
+// GetChannelInventoryDto() 从对象池中获取ChannelInventoryDto
+func GetChannelInventoryDto() *ChannelInventoryDto {
+	return poolChannelInventoryDto.Get().(*ChannelInventoryDto)
+}
+
+// ReleaseChannelInventoryDto 释放ChannelInventoryDto
+func ReleaseChannelInventoryDto(v *ChannelInventoryDto) {
+	v.Quantity = ""
+	v.ProductId = ""
+	v.SubChannelCode = ""
+	v.SkuId = ""
+	v.ChannelCode = ""
+	poolChannelInventoryDto.Put(v)
 }

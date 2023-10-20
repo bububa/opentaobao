@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTianjiSupplierOrderResultAPIRequest struct {
 // NewAlibabaTianjiSupplierOrderResultRequest 初始化AlibabaTianjiSupplierOrderResultAPIRequest对象
 func NewAlibabaTianjiSupplierOrderResultRequest() *AlibabaTianjiSupplierOrderResultAPIRequest {
 	return &AlibabaTianjiSupplierOrderResultAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTianjiSupplierOrderResultAPIRequest) Reset() {
+	r._supplierOrderResultModel = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTianjiSupplierOrderResultAPIRequest) SetSupplierOrderResultModel
 // GetSupplierOrderResultModel SupplierOrderResultModel Getter
 func (r AlibabaTianjiSupplierOrderResultAPIRequest) GetSupplierOrderResultModel() *SupplierOrderResultModel {
 	return r._supplierOrderResultModel
+}
+
+var poolAlibabaTianjiSupplierOrderResultAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTianjiSupplierOrderResultRequest()
+	},
+}
+
+// GetAlibabaTianjiSupplierOrderResultRequest 从 sync.Pool 获取 AlibabaTianjiSupplierOrderResultAPIRequest
+func GetAlibabaTianjiSupplierOrderResultAPIRequest() *AlibabaTianjiSupplierOrderResultAPIRequest {
+	return poolAlibabaTianjiSupplierOrderResultAPIRequest.Get().(*AlibabaTianjiSupplierOrderResultAPIRequest)
+}
+
+// ReleaseAlibabaTianjiSupplierOrderResultAPIRequest 将 AlibabaTianjiSupplierOrderResultAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTianjiSupplierOrderResultAPIRequest(v *AlibabaTianjiSupplierOrderResultAPIRequest) {
+	v.Reset()
+	poolAlibabaTianjiSupplierOrderResultAPIRequest.Put(v)
 }

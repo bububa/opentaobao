@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoQimenStoreCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoQimenStoreCreateAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoQimenStoreCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoQimenStoreCreateAPIResponseModel).Reset()
 }
 
 // TaobaoQimenStoreCreateAPIResponseModel is 门店新增接口 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoQimenStoreCreateAPIResponseModel struct {
 	QimenCode string `json:"qimen_code,omitempty" xml:"qimen_code,omitempty"`
 	// 返回的门店id
 	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoQimenStoreCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.Flag = ""
+	m.QimenCode = ""
+	m.StoreId = 0
+}
+
+var poolTaobaoQimenStoreCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoQimenStoreCreateAPIResponse)
+	},
+}
+
+// GetTaobaoQimenStoreCreateAPIResponse 从 sync.Pool 获取 TaobaoQimenStoreCreateAPIResponse
+func GetTaobaoQimenStoreCreateAPIResponse() *TaobaoQimenStoreCreateAPIResponse {
+	return poolTaobaoQimenStoreCreateAPIResponse.Get().(*TaobaoQimenStoreCreateAPIResponse)
+}
+
+// ReleaseTaobaoQimenStoreCreateAPIResponse 将 TaobaoQimenStoreCreateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoQimenStoreCreateAPIResponse(v *TaobaoQimenStoreCreateAPIResponse) {
+	v.Reset()
+	poolTaobaoQimenStoreCreateAPIResponse.Put(v)
 }

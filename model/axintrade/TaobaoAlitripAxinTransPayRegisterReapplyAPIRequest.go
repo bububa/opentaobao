@@ -2,6 +2,7 @@ package axintrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -20,8 +21,14 @@ type TaobaoAlitripAxinTransPayRegisterReapplyAPIRequest struct {
 // NewTaobaoAlitripAxinTransPayRegisterReapplyRequest 初始化TaobaoAlitripAxinTransPayRegisterReapplyAPIRequest对象
 func NewTaobaoAlitripAxinTransPayRegisterReapplyRequest() *TaobaoAlitripAxinTransPayRegisterReapplyAPIRequest {
 	return &TaobaoAlitripAxinTransPayRegisterReapplyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripAxinTransPayRegisterReapplyAPIRequest) Reset() {
+	r._axinPayRegisterCreateDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -52,4 +59,21 @@ func (r *TaobaoAlitripAxinTransPayRegisterReapplyAPIRequest) SetAxinPayRegisterC
 // GetAxinPayRegisterCreateDTO AxinPayRegisterCreateDTO Getter
 func (r TaobaoAlitripAxinTransPayRegisterReapplyAPIRequest) GetAxinPayRegisterCreateDTO() *AxinPayRegisterCreateDto {
 	return r._axinPayRegisterCreateDTO
+}
+
+var poolTaobaoAlitripAxinTransPayRegisterReapplyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripAxinTransPayRegisterReapplyRequest()
+	},
+}
+
+// GetTaobaoAlitripAxinTransPayRegisterReapplyRequest 从 sync.Pool 获取 TaobaoAlitripAxinTransPayRegisterReapplyAPIRequest
+func GetTaobaoAlitripAxinTransPayRegisterReapplyAPIRequest() *TaobaoAlitripAxinTransPayRegisterReapplyAPIRequest {
+	return poolTaobaoAlitripAxinTransPayRegisterReapplyAPIRequest.Get().(*TaobaoAlitripAxinTransPayRegisterReapplyAPIRequest)
+}
+
+// ReleaseTaobaoAlitripAxinTransPayRegisterReapplyAPIRequest 将 TaobaoAlitripAxinTransPayRegisterReapplyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripAxinTransPayRegisterReapplyAPIRequest(v *TaobaoAlitripAxinTransPayRegisterReapplyAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripAxinTransPayRegisterReapplyAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package lstlogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaLstShiporderCancelAPIRequest struct {
 // NewAlibabaLstShiporderCancelRequest 初始化AlibabaLstShiporderCancelAPIRequest对象
 func NewAlibabaLstShiporderCancelRequest() *AlibabaLstShiporderCancelAPIRequest {
 	return &AlibabaLstShiporderCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstShiporderCancelAPIRequest) Reset() {
+	r._detailOrderIds = r._detailOrderIds[:0]
+	r._reason = ""
+	r._outOrderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaLstShiporderCancelAPIRequest) SetOutOrderId(_outOrderId string) 
 // GetOutOrderId OutOrderId Getter
 func (r AlibabaLstShiporderCancelAPIRequest) GetOutOrderId() string {
 	return r._outOrderId
+}
+
+var poolAlibabaLstShiporderCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstShiporderCancelRequest()
+	},
+}
+
+// GetAlibabaLstShiporderCancelRequest 从 sync.Pool 获取 AlibabaLstShiporderCancelAPIRequest
+func GetAlibabaLstShiporderCancelAPIRequest() *AlibabaLstShiporderCancelAPIRequest {
+	return poolAlibabaLstShiporderCancelAPIRequest.Get().(*AlibabaLstShiporderCancelAPIRequest)
+}
+
+// ReleaseAlibabaLstShiporderCancelAPIRequest 将 AlibabaLstShiporderCancelAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstShiporderCancelAPIRequest(v *AlibabaLstShiporderCancelAPIRequest) {
+	v.Reset()
+	poolAlibabaLstShiporderCancelAPIRequest.Put(v)
 }

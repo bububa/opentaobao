@@ -9,11 +9,6 @@ import (
 // alibaba.campus.space.unit.getspaceunitwithattr
 //
 // 空间单元id查业务属性实例
-func AlibabaCampusSpaceUnitGetspaceunitwithattr(clt *core.SDKClient, req *campus.AlibabaCampusSpaceUnitGetspaceunitwithattrAPIRequest, session string) (*campus.AlibabaCampusSpaceUnitGetspaceunitwithattrAPIResponse, error) {
-	var resp campus.AlibabaCampusSpaceUnitGetspaceunitwithattrAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusSpaceUnitGetspaceunitwithattr(clt *core.SDKClient, req *campus.AlibabaCampusSpaceUnitGetspaceunitwithattrAPIRequest, resp *campus.AlibabaCampusSpaceUnitGetspaceunitwithattrAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

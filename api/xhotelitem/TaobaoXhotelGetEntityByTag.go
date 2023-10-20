@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.get.entity.by.tag
 //
 // 根据标签查询实体
-func TaobaoXhotelGetEntityByTag(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelGetEntityByTagAPIRequest, session string) (*xhotelitem.TaobaoXhotelGetEntityByTagAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelGetEntityByTagAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelGetEntityByTag(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelGetEntityByTagAPIRequest, resp *xhotelitem.TaobaoXhotelGetEntityByTagAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

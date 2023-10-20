@@ -1,5 +1,9 @@
 package koubeimall
 
+import (
+	"sync"
+)
+
 // PageResult 结构体
 type PageResult struct {
 	// 已授权商圈列表data模型
@@ -14,4 +18,26 @@ type PageResult struct {
 	CommentInfo *CommentInfoDto `json:"comment_info,omitempty" xml:"comment_info,omitempty"`
 	// 是否有更多信息
 	HasMore bool `json:"has_more,omitempty" xml:"has_more,omitempty"`
+}
+
+var poolPageResult = sync.Pool{
+	New: func() any {
+		return new(PageResult)
+	},
+}
+
+// GetPageResult() 从对象池中获取PageResult
+func GetPageResult() *PageResult {
+	return poolPageResult.Get().(*PageResult)
+}
+
+// ReleasePageResult 释放PageResult
+func ReleasePageResult(v *PageResult) {
+	v.MallInfoList = v.MallInfoList[:0]
+	v.StoreList = v.StoreList[:0]
+	v.NextStart = 0
+	v.PageSize = 0
+	v.CommentInfo = nil
+	v.HasMore = false
+	poolPageResult.Put(v)
 }

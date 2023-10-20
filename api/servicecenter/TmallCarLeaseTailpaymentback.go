@@ -9,11 +9,6 @@ import (
 // tmall.car.lease.tailpaymentback
 //
 // 尾款处置方案回传
-func TmallCarLeaseTailpaymentback(clt *core.SDKClient, req *servicecenter.TmallCarLeaseTailpaymentbackAPIRequest, session string) (*servicecenter.TmallCarLeaseTailpaymentbackAPIResponse, error) {
-	var resp servicecenter.TmallCarLeaseTailpaymentbackAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallCarLeaseTailpaymentback(clt *core.SDKClient, req *servicecenter.TmallCarLeaseTailpaymentbackAPIRequest, resp *servicecenter.TmallCarLeaseTailpaymentbackAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

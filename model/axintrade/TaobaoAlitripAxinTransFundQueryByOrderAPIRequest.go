@@ -2,6 +2,7 @@ package axintrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAlitripAxinTransFundQueryByOrderAPIRequest struct {
 // NewTaobaoAlitripAxinTransFundQueryByOrderRequest 初始化TaobaoAlitripAxinTransFundQueryByOrderAPIRequest对象
 func NewTaobaoAlitripAxinTransFundQueryByOrderRequest() *TaobaoAlitripAxinTransFundQueryByOrderAPIRequest {
 	return &TaobaoAlitripAxinTransFundQueryByOrderAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripAxinTransFundQueryByOrderAPIRequest) Reset() {
+	r._paramAxinFundListQueryDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAlitripAxinTransFundQueryByOrderAPIRequest) SetParamAxinFundListQ
 // GetParamAxinFundListQueryDTO ParamAxinFundListQueryDTO Getter
 func (r TaobaoAlitripAxinTransFundQueryByOrderAPIRequest) GetParamAxinFundListQueryDTO() *AxinFundListQueryDto {
 	return r._paramAxinFundListQueryDTO
+}
+
+var poolTaobaoAlitripAxinTransFundQueryByOrderAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripAxinTransFundQueryByOrderRequest()
+	},
+}
+
+// GetTaobaoAlitripAxinTransFundQueryByOrderRequest 从 sync.Pool 获取 TaobaoAlitripAxinTransFundQueryByOrderAPIRequest
+func GetTaobaoAlitripAxinTransFundQueryByOrderAPIRequest() *TaobaoAlitripAxinTransFundQueryByOrderAPIRequest {
+	return poolTaobaoAlitripAxinTransFundQueryByOrderAPIRequest.Get().(*TaobaoAlitripAxinTransFundQueryByOrderAPIRequest)
+}
+
+// ReleaseTaobaoAlitripAxinTransFundQueryByOrderAPIRequest 将 TaobaoAlitripAxinTransFundQueryByOrderAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripAxinTransFundQueryByOrderAPIRequest(v *TaobaoAlitripAxinTransFundQueryByOrderAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripAxinTransFundQueryByOrderAPIRequest.Put(v)
 }

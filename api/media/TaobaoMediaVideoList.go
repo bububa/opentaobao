@@ -9,11 +9,6 @@ import (
 // taobao.media.video.list
 //
 // 用于获取授权商家的视频列表
-func TaobaoMediaVideoList(clt *core.SDKClient, req *media.TaobaoMediaVideoListAPIRequest, session string) (*media.TaobaoMediaVideoListAPIResponse, error) {
-	var resp media.TaobaoMediaVideoListAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoMediaVideoList(clt *core.SDKClient, req *media.TaobaoMediaVideoListAPIRequest, resp *media.TaobaoMediaVideoListAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

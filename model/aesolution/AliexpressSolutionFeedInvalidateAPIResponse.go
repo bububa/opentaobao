@@ -2,6 +2,7 @@ package aesolution
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AliexpressSolutionFeedInvalidateAPIResponse struct {
 	AliexpressSolutionFeedInvalidateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AliexpressSolutionFeedInvalidateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliexpressSolutionFeedInvalidateAPIResponseModel).Reset()
+}
+
 // AliexpressSolutionFeedInvalidateAPIResponseModel is aliexpress.solution.feed.invalidate 成功返回结果
 type AliexpressSolutionFeedInvalidateAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_solution_feed_invalidate_response"`
@@ -26,4 +33,29 @@ type AliexpressSolutionFeedInvalidateAPIResponseModel struct {
 	NoNeedInvalidationList []int64 `json:"no_need_invalidation_list,omitempty" xml:"no_need_invalidation_list>int64,omitempty"`
 	// failed list
 	FailedList []int64 `json:"failed_list,omitempty" xml:"failed_list>int64,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliexpressSolutionFeedInvalidateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.SuccessfulList = m.SuccessfulList[:0]
+	m.NoNeedInvalidationList = m.NoNeedInvalidationList[:0]
+	m.FailedList = m.FailedList[:0]
+}
+
+var poolAliexpressSolutionFeedInvalidateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliexpressSolutionFeedInvalidateAPIResponse)
+	},
+}
+
+// GetAliexpressSolutionFeedInvalidateAPIResponse 从 sync.Pool 获取 AliexpressSolutionFeedInvalidateAPIResponse
+func GetAliexpressSolutionFeedInvalidateAPIResponse() *AliexpressSolutionFeedInvalidateAPIResponse {
+	return poolAliexpressSolutionFeedInvalidateAPIResponse.Get().(*AliexpressSolutionFeedInvalidateAPIResponse)
+}
+
+// ReleaseAliexpressSolutionFeedInvalidateAPIResponse 将 AliexpressSolutionFeedInvalidateAPIResponse 保存到 sync.Pool
+func ReleaseAliexpressSolutionFeedInvalidateAPIResponse(v *AliexpressSolutionFeedInvalidateAPIResponse) {
+	v.Reset()
+	poolAliexpressSolutionFeedInvalidateAPIResponse.Put(v)
 }

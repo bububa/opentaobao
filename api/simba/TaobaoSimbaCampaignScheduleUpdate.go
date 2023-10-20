@@ -9,11 +9,6 @@ import (
 // taobao.simba.campaign.schedule.update
 //
 // 更新一个推广计划的分时折扣设置
-func TaobaoSimbaCampaignScheduleUpdate(clt *core.SDKClient, req *simba.TaobaoSimbaCampaignScheduleUpdateAPIRequest, session string) (*simba.TaobaoSimbaCampaignScheduleUpdateAPIResponse, error) {
-	var resp simba.TaobaoSimbaCampaignScheduleUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaCampaignScheduleUpdate(clt *core.SDKClient, req *simba.TaobaoSimbaCampaignScheduleUpdateAPIRequest, resp *simba.TaobaoSimbaCampaignScheduleUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

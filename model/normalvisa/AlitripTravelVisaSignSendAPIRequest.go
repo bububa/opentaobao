@@ -2,6 +2,7 @@ package normalvisa
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlitripTravelVisaSignSendAPIRequest struct {
 // NewAlitripTravelVisaSignSendRequest 初始化AlitripTravelVisaSignSendAPIRequest对象
 func NewAlitripTravelVisaSignSendRequest() *AlitripTravelVisaSignSendAPIRequest {
 	return &AlitripTravelVisaSignSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTravelVisaSignSendAPIRequest) Reset() {
+	r._applyIds = r._applyIds[:0]
+	r._nationId = 0
+	r._signType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlitripTravelVisaSignSendAPIRequest) SetSignType(_signType int64) error
 // GetSignType SignType Getter
 func (r AlitripTravelVisaSignSendAPIRequest) GetSignType() int64 {
 	return r._signType
+}
+
+var poolAlitripTravelVisaSignSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTravelVisaSignSendRequest()
+	},
+}
+
+// GetAlitripTravelVisaSignSendRequest 从 sync.Pool 获取 AlitripTravelVisaSignSendAPIRequest
+func GetAlitripTravelVisaSignSendAPIRequest() *AlitripTravelVisaSignSendAPIRequest {
+	return poolAlitripTravelVisaSignSendAPIRequest.Get().(*AlitripTravelVisaSignSendAPIRequest)
+}
+
+// ReleaseAlitripTravelVisaSignSendAPIRequest 将 AlitripTravelVisaSignSendAPIRequest 放入 sync.Pool
+func ReleaseAlitripTravelVisaSignSendAPIRequest(v *AlitripTravelVisaSignSendAPIRequest) {
+	v.Reset()
+	poolAlitripTravelVisaSignSendAPIRequest.Put(v)
 }

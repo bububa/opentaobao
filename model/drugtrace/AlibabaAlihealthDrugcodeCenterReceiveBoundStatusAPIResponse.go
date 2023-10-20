@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponse struct {
 	AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponseModel is 接收中央随机化系统和临床研究机构的绑定确认状态 成功返回结果
 type AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drugcode_center_receive_bound_status_response"`
@@ -26,4 +33,29 @@ type AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponseModel struct {
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// 返回结果
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgCode = ""
+	m.MsgInfo = ""
+	m.Model = false
+}
+
+var poolAlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponse 从 sync.Pool 获取 AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponse
+func GetAlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponse() *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponse {
+	return poolAlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponse.Get().(*AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponse 将 AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponse(v *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package train
 
+import (
+	"sync"
+)
+
 // ChangeApplyOrderDto 结构体
 type ChangeApplyOrderDto struct {
 	// 原票到达站三字码
@@ -58,4 +62,48 @@ type ChangeApplyOrderDto struct {
 	TicketTotalNum int64 `json:"ticket_total_num,omitempty" xml:"ticket_total_num,omitempty"`
 	// 改签申请单状态
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolChangeApplyOrderDto = sync.Pool{
+	New: func() any {
+		return new(ChangeApplyOrderDto)
+	},
+}
+
+// GetChangeApplyOrderDto() 从对象池中获取ChangeApplyOrderDto
+func GetChangeApplyOrderDto() *ChangeApplyOrderDto {
+	return poolChangeApplyOrderDto.Get().(*ChangeApplyOrderDto)
+}
+
+// ReleaseChangeApplyOrderDto 释放ChangeApplyOrderDto
+func ReleaseChangeApplyOrderDto(v *ChangeApplyOrderDto) {
+	v.OriginalToStationCode = ""
+	v.ChangeFromStation = ""
+	v.OriginalSequenceNo = ""
+	v.ChangeFromStationCode = ""
+	v.ChangeToStation = ""
+	v.ChangeIssueTimeout = ""
+	v.OriginalFromDateTime = ""
+	v.ChangeToDateTime = ""
+	v.OriginalTrainCode = ""
+	v.OriginalTrainDate = ""
+	v.OriginalFromStation = ""
+	v.ChangeToStationCode = ""
+	v.OriginalToStation = ""
+	v.OriginalFromStationCode = ""
+	v.OriginalToDateTime = ""
+	v.ChangeFromDateTime = ""
+	v.ChangeTrainDate = ""
+	v.ChangeTrainCode = ""
+	v.TpId = 0
+	v.AgentId = 0
+	v.ChangeTicketType = 0
+	v.ChangeApplyId = 0
+	v.SettlementMode = 0
+	v.ChangeType = 0
+	v.TicketPriceAll = 0
+	v.TtpId = 0
+	v.TicketTotalNum = 0
+	v.Status = 0
+	poolChangeApplyOrderDto.Put(v)
 }

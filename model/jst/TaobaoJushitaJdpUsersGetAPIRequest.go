@@ -2,6 +2,7 @@ package jst
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoJushitaJdpUsersGetAPIRequest struct {
 // NewTaobaoJushitaJdpUsersGetRequest 初始化TaobaoJushitaJdpUsersGetAPIRequest对象
 func NewTaobaoJushitaJdpUsersGetRequest() *TaobaoJushitaJdpUsersGetAPIRequest {
 	return &TaobaoJushitaJdpUsersGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJushitaJdpUsersGetAPIRequest) Reset() {
+	r._startModified = ""
+	r._endModified = ""
+	r._pageSize = 0
+	r._pageNo = 0
+	r._userId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoJushitaJdpUsersGetAPIRequest) SetUserId(_userId int64) error {
 // GetUserId UserId Getter
 func (r TaobaoJushitaJdpUsersGetAPIRequest) GetUserId() int64 {
 	return r._userId
+}
+
+var poolTaobaoJushitaJdpUsersGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJushitaJdpUsersGetRequest()
+	},
+}
+
+// GetTaobaoJushitaJdpUsersGetRequest 从 sync.Pool 获取 TaobaoJushitaJdpUsersGetAPIRequest
+func GetTaobaoJushitaJdpUsersGetAPIRequest() *TaobaoJushitaJdpUsersGetAPIRequest {
+	return poolTaobaoJushitaJdpUsersGetAPIRequest.Get().(*TaobaoJushitaJdpUsersGetAPIRequest)
+}
+
+// ReleaseTaobaoJushitaJdpUsersGetAPIRequest 将 TaobaoJushitaJdpUsersGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJushitaJdpUsersGetAPIRequest(v *TaobaoJushitaJdpUsersGetAPIRequest) {
+	v.Reset()
+	poolTaobaoJushitaJdpUsersGetAPIRequest.Put(v)
 }

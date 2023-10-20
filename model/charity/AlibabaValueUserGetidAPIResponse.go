@@ -2,6 +2,7 @@ package charity
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaValueUserGetidAPIResponse struct {
 	model.CommonResponse
 	AlibabaValueUserGetidAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaValueUserGetidAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaValueUserGetidAPIResponseModel).Reset()
 }
 
 // AlibabaValueUserGetidAPIResponseModel is 获取用户userId 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaValueUserGetidAPIResponseModel struct {
 	Data *UserChannelOpenDto `json:"data,omitempty" xml:"data,omitempty"`
 	// 成功状态
 	SuccessStatus bool `json:"success_status,omitempty" xml:"success_status,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaValueUserGetidAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RespMsg = ""
+	m.RespCode = 0
+	m.Data = nil
+	m.SuccessStatus = false
+}
+
+var poolAlibabaValueUserGetidAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaValueUserGetidAPIResponse)
+	},
+}
+
+// GetAlibabaValueUserGetidAPIResponse 从 sync.Pool 获取 AlibabaValueUserGetidAPIResponse
+func GetAlibabaValueUserGetidAPIResponse() *AlibabaValueUserGetidAPIResponse {
+	return poolAlibabaValueUserGetidAPIResponse.Get().(*AlibabaValueUserGetidAPIResponse)
+}
+
+// ReleaseAlibabaValueUserGetidAPIResponse 将 AlibabaValueUserGetidAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaValueUserGetidAPIResponse(v *AlibabaValueUserGetidAPIResponse) {
+	v.Reset()
+	poolAlibabaValueUserGetidAPIResponse.Put(v)
 }

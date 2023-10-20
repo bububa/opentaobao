@@ -2,6 +2,7 @@ package jst
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoTopBizSellerSignAPIRequest struct {
 // NewTaobaoTopBizSellerSignRequest 初始化TaobaoTopBizSellerSignAPIRequest对象
 func NewTaobaoTopBizSellerSignRequest() *TaobaoTopBizSellerSignAPIRequest {
 	return &TaobaoTopBizSellerSignAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTopBizSellerSignAPIRequest) Reset() {
+	r._sellerNick = ""
+	r._appkeyTitle = ""
+	r._sellerId = 0
+	r._type = 0
+	r._status = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoTopBizSellerSignAPIRequest) SetStatus(_status int64) error {
 // GetStatus Status Getter
 func (r TaobaoTopBizSellerSignAPIRequest) GetStatus() int64 {
 	return r._status
+}
+
+var poolTaobaoTopBizSellerSignAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTopBizSellerSignRequest()
+	},
+}
+
+// GetTaobaoTopBizSellerSignRequest 从 sync.Pool 获取 TaobaoTopBizSellerSignAPIRequest
+func GetTaobaoTopBizSellerSignAPIRequest() *TaobaoTopBizSellerSignAPIRequest {
+	return poolTaobaoTopBizSellerSignAPIRequest.Get().(*TaobaoTopBizSellerSignAPIRequest)
+}
+
+// ReleaseTaobaoTopBizSellerSignAPIRequest 将 TaobaoTopBizSellerSignAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTopBizSellerSignAPIRequest(v *TaobaoTopBizSellerSignAPIRequest) {
+	v.Reset()
+	poolTaobaoTopBizSellerSignAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package tbitem
 
+import (
+	"sync"
+)
+
 // UpdateSkuQuantity 结构体
 type UpdateSkuQuantity struct {
 	// Sku的商家外部id，用于指定被修改库存的SKU
@@ -10,4 +14,24 @@ type UpdateSkuQuantity struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// SkuID，用于指定被修改库存的
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
+}
+
+var poolUpdateSkuQuantity = sync.Pool{
+	New: func() any {
+		return new(UpdateSkuQuantity)
+	},
+}
+
+// GetUpdateSkuQuantity() 从对象池中获取UpdateSkuQuantity
+func GetUpdateSkuQuantity() *UpdateSkuQuantity {
+	return poolUpdateSkuQuantity.Get().(*UpdateSkuQuantity)
+}
+
+// ReleaseUpdateSkuQuantity 释放UpdateSkuQuantity
+func ReleaseUpdateSkuQuantity(v *UpdateSkuQuantity) {
+	v.OuterId = ""
+	v.Properties = ""
+	v.Quantity = 0
+	v.SkuId = 0
+	poolUpdateSkuQuantity.Put(v)
 }

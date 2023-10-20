@@ -1,5 +1,9 @@
 package pur
 
+import (
+	"sync"
+)
+
 // SupplierPreInvoiceItem 结构体
 type SupplierPreInvoiceItem struct {
 	// 关闭原因
@@ -40,4 +44,39 @@ type SupplierPreInvoiceItem struct {
 	SourcePoNo string `json:"source_po_no,omitempty" xml:"source_po_no,omitempty"`
 	// 应付发票行编号
 	LineNo string `json:"line_no,omitempty" xml:"line_no,omitempty"`
+}
+
+var poolSupplierPreInvoiceItem = sync.Pool{
+	New: func() any {
+		return new(SupplierPreInvoiceItem)
+	},
+}
+
+// GetSupplierPreInvoiceItem() 从对象池中获取SupplierPreInvoiceItem
+func GetSupplierPreInvoiceItem() *SupplierPreInvoiceItem {
+	return poolSupplierPreInvoiceItem.Get().(*SupplierPreInvoiceItem)
+}
+
+// ReleaseSupplierPreInvoiceItem 释放SupplierPreInvoiceItem
+func ReleaseSupplierPreInvoiceItem(v *SupplierPreInvoiceItem) {
+	v.LineCloseReason = ""
+	v.LineStatus = ""
+	v.SourceKpLineNo = ""
+	v.SourceKpNo = ""
+	v.LineRemark = ""
+	v.TaxRate = ""
+	v.TaxCode = ""
+	v.TaxAmount = ""
+	v.Amount = ""
+	v.InvoiceLineQuantity = ""
+	v.Spec = ""
+	v.GoodsName = ""
+	v.ItemCode = ""
+	v.SourceInventory = ""
+	v.SourceRtLineNo = ""
+	v.SourceRtNo = ""
+	v.SourcePoLineNo = ""
+	v.SourcePoNo = ""
+	v.LineNo = ""
+	poolSupplierPreInvoiceItem.Put(v)
 }

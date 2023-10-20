@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoFenxiaoProductcatDeleteAPIRequest struct {
 // NewTaobaoFenxiaoProductcatDeleteRequest 初始化TaobaoFenxiaoProductcatDeleteAPIRequest对象
 func NewTaobaoFenxiaoProductcatDeleteRequest() *TaobaoFenxiaoProductcatDeleteAPIRequest {
 	return &TaobaoFenxiaoProductcatDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoProductcatDeleteAPIRequest) Reset() {
+	r._productLineId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoFenxiaoProductcatDeleteAPIRequest) SetProductLineId(_productLineI
 // GetProductLineId ProductLineId Getter
 func (r TaobaoFenxiaoProductcatDeleteAPIRequest) GetProductLineId() int64 {
 	return r._productLineId
+}
+
+var poolTaobaoFenxiaoProductcatDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoProductcatDeleteRequest()
+	},
+}
+
+// GetTaobaoFenxiaoProductcatDeleteRequest 从 sync.Pool 获取 TaobaoFenxiaoProductcatDeleteAPIRequest
+func GetTaobaoFenxiaoProductcatDeleteAPIRequest() *TaobaoFenxiaoProductcatDeleteAPIRequest {
+	return poolTaobaoFenxiaoProductcatDeleteAPIRequest.Get().(*TaobaoFenxiaoProductcatDeleteAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoProductcatDeleteAPIRequest 将 TaobaoFenxiaoProductcatDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoProductcatDeleteAPIRequest(v *TaobaoFenxiaoProductcatDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoProductcatDeleteAPIRequest.Put(v)
 }

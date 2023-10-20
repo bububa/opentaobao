@@ -2,6 +2,7 @@ package vaccin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaHealthVaccinAppointmentResultNotifyAPIRequest struct {
 // NewAlibabaHealthVaccinAppointmentResultNotifyRequest 初始化AlibabaHealthVaccinAppointmentResultNotifyAPIRequest对象
 func NewAlibabaHealthVaccinAppointmentResultNotifyRequest() *AlibabaHealthVaccinAppointmentResultNotifyAPIRequest {
 	return &AlibabaHealthVaccinAppointmentResultNotifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHealthVaccinAppointmentResultNotifyAPIRequest) Reset() {
+	r._orderId = ""
+	r._outId = ""
+	r._failReason = ""
+	r._successCode = ""
+	r._periodSeqNo = 0
+	r._appointResult = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaHealthVaccinAppointmentResultNotifyAPIRequest) SetAppointResult(
 // GetAppointResult AppointResult Getter
 func (r AlibabaHealthVaccinAppointmentResultNotifyAPIRequest) GetAppointResult() bool {
 	return r._appointResult
+}
+
+var poolAlibabaHealthVaccinAppointmentResultNotifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHealthVaccinAppointmentResultNotifyRequest()
+	},
+}
+
+// GetAlibabaHealthVaccinAppointmentResultNotifyRequest 从 sync.Pool 获取 AlibabaHealthVaccinAppointmentResultNotifyAPIRequest
+func GetAlibabaHealthVaccinAppointmentResultNotifyAPIRequest() *AlibabaHealthVaccinAppointmentResultNotifyAPIRequest {
+	return poolAlibabaHealthVaccinAppointmentResultNotifyAPIRequest.Get().(*AlibabaHealthVaccinAppointmentResultNotifyAPIRequest)
+}
+
+// ReleaseAlibabaHealthVaccinAppointmentResultNotifyAPIRequest 将 AlibabaHealthVaccinAppointmentResultNotifyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHealthVaccinAppointmentResultNotifyAPIRequest(v *AlibabaHealthVaccinAppointmentResultNotifyAPIRequest) {
+	v.Reset()
+	poolAlibabaHealthVaccinAppointmentResultNotifyAPIRequest.Put(v)
 }

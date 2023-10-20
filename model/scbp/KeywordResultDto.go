@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // KeywordResultDto 结构体
 type KeywordResultDto struct {
 	// 关键词所属分组名称列表
@@ -34,4 +38,36 @@ type KeywordResultDto struct {
 	QsStar int64 `json:"qs_star,omitempty" xml:"qs_star,omitempty"`
 	// 关键词id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolKeywordResultDto = sync.Pool{
+	New: func() any {
+		return new(KeywordResultDto)
+	},
+}
+
+// GetKeywordResultDto() 从对象池中获取KeywordResultDto
+func GetKeywordResultDto() *KeywordResultDto {
+	return poolKeywordResultDto.Get().(*KeywordResultDto)
+}
+
+// ReleaseKeywordResultDto 释放KeywordResultDto
+func ReleaseKeywordResultDto(v *KeywordResultDto) {
+	v.TagList = v.TagList[:0]
+	v.BasePrice = ""
+	v.BuyCount = ""
+	v.ClickCnt = ""
+	v.ClickCostAvg = ""
+	v.Cost = ""
+	v.Ctr = ""
+	v.ImpressionCnt = ""
+	v.OnlineTime = ""
+	v.Price = ""
+	v.SearchCount = ""
+	v.Status = ""
+	v.Word = ""
+	v.MatchCount = 0
+	v.QsStar = 0
+	v.Id = 0
+	poolKeywordResultDto.Put(v)
 }

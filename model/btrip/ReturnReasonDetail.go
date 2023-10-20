@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // ReturnReasonDetail 结构体
 type ReturnReasonDetail struct {
 	// 原因的文案展示
@@ -14,4 +18,26 @@ type ReturnReasonDetail struct {
 	Volunteer int64 `json:"volunteer,omitempty" xml:"volunteer,omitempty"`
 	// 个人原因或航司原因  0-航司、1-个人
 	Person int64 `json:"person,omitempty" xml:"person,omitempty"`
+}
+
+var poolReturnReasonDetail = sync.Pool{
+	New: func() any {
+		return new(ReturnReasonDetail)
+	},
+}
+
+// GetReturnReasonDetail() 从对象池中获取ReturnReasonDetail
+func GetReturnReasonDetail() *ReturnReasonDetail {
+	return poolReturnReasonDetail.Get().(*ReturnReasonDetail)
+}
+
+// ReleaseReturnReasonDetail 释放ReturnReasonDetail
+func ReleaseReturnReasonDetail(v *ReturnReasonDetail) {
+	v.ReasonShow = ""
+	v.ExtendDesc = ""
+	v.ReasonType = 0
+	v.ReasonCode = 0
+	v.Volunteer = 0
+	v.Person = 0
+	poolReturnReasonDetail.Put(v)
 }

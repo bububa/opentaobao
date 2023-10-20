@@ -1,5 +1,9 @@
 package alscmerchant
 
+import (
+	"sync"
+)
+
 // AlibabaAlscDaodianTicketReserveResult 结构体
 type AlibabaAlscDaodianTicketReserveResult struct {
 	// 错误码，success=false时有效
@@ -10,4 +14,24 @@ type AlibabaAlscDaodianTicketReserveResult struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 是否可重试，success=false时有效
 	Retry bool `json:"retry,omitempty" xml:"retry,omitempty"`
+}
+
+var poolAlibabaAlscDaodianTicketReserveResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlscDaodianTicketReserveResult)
+	},
+}
+
+// GetAlibabaAlscDaodianTicketReserveResult() 从对象池中获取AlibabaAlscDaodianTicketReserveResult
+func GetAlibabaAlscDaodianTicketReserveResult() *AlibabaAlscDaodianTicketReserveResult {
+	return poolAlibabaAlscDaodianTicketReserveResult.Get().(*AlibabaAlscDaodianTicketReserveResult)
+}
+
+// ReleaseAlibabaAlscDaodianTicketReserveResult 释放AlibabaAlscDaodianTicketReserveResult
+func ReleaseAlibabaAlscDaodianTicketReserveResult(v *AlibabaAlscDaodianTicketReserveResult) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Success = false
+	v.Retry = false
+	poolAlibabaAlscDaodianTicketReserveResult.Put(v)
 }

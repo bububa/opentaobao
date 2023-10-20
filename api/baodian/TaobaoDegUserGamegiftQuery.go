@@ -9,11 +9,6 @@ import (
 // taobao.deg.user.gamegift.query
 //
 // 查询用户数娱礼包列表
-func TaobaoDegUserGamegiftQuery(clt *core.SDKClient, req *baodian.TaobaoDegUserGamegiftQueryAPIRequest, session string) (*baodian.TaobaoDegUserGamegiftQueryAPIResponse, error) {
-	var resp baodian.TaobaoDegUserGamegiftQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoDegUserGamegiftQuery(clt *core.SDKClient, req *baodian.TaobaoDegUserGamegiftQueryAPIRequest, resp *baodian.TaobaoDegUserGamegiftQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

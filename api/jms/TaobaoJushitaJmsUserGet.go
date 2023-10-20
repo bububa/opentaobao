@@ -9,11 +9,6 @@ import (
 // taobao.jushita.jms.user.get
 //
 // 查询某个用户是否同步消息，只支持单个查询
-func TaobaoJushitaJmsUserGet(clt *core.SDKClient, req *jms.TaobaoJushitaJmsUserGetAPIRequest, session string) (*jms.TaobaoJushitaJmsUserGetAPIResponse, error) {
-	var resp jms.TaobaoJushitaJmsUserGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoJushitaJmsUserGet(clt *core.SDKClient, req *jms.TaobaoJushitaJmsUserGetAPIRequest, resp *jms.TaobaoJushitaJmsUserGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

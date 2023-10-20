@@ -9,11 +9,6 @@ import (
 // alitrip.agent.coordinate.process
 //
 // 慧飞商家协同单处理完成接口
-func AlitripAgentCoordinateProcess(clt *core.SDKClient, req *flight.AlitripAgentCoordinateProcessAPIRequest, session string) (*flight.AlitripAgentCoordinateProcessAPIResponse, error) {
-	var resp flight.AlitripAgentCoordinateProcessAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripAgentCoordinateProcess(clt *core.SDKClient, req *flight.AlitripAgentCoordinateProcessAPIRequest, resp *flight.AlitripAgentCoordinateProcessAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

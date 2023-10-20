@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest struct {
 // NewAlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogRequest 初始化AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest对象
 func NewAlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogRequest() *AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest {
 	return &AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest) Reset() {
+	r._refEntId = ""
+	r._blindFileNames = ""
+	r._operator = ""
+	r._blindFileDeleteTime = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest) SetBlindF
 // GetBlindFileDeleteTime BlindFileDeleteTime Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest) GetBlindFileDeleteTime() string {
 	return r._blindFileDeleteTime
+}
+
+var poolAlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogRequest 从 sync.Pool 获取 AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest
+func GetAlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest() *AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest {
+	return poolAlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest.Get().(*AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest 将 AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest(v *AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package flightuppc
 
+import (
+	"sync"
+)
+
 // InsProductBaseParam 结构体
 type InsProductBaseParam struct {
 	// 干系人，用于保险团队联系
@@ -12,4 +16,25 @@ type InsProductBaseParam struct {
 	OutOrderId int64 `json:"out_order_id,omitempty" xml:"out_order_id,omitempty"`
 	// 保险产品id
 	PremiumId int64 `json:"premium_id,omitempty" xml:"premium_id,omitempty"`
+}
+
+var poolInsProductBaseParam = sync.Pool{
+	New: func() any {
+		return new(InsProductBaseParam)
+	},
+}
+
+// GetInsProductBaseParam() 从对象池中获取InsProductBaseParam
+func GetInsProductBaseParam() *InsProductBaseParam {
+	return poolInsProductBaseParam.Get().(*InsProductBaseParam)
+}
+
+// ReleaseInsProductBaseParam 释放InsProductBaseParam
+func ReleaseInsProductBaseParam(v *InsProductBaseParam) {
+	v.StakeHolders = v.StakeHolders[:0]
+	v.Insureds = v.Insureds[:0]
+	v.AirTicketSegmentList = v.AirTicketSegmentList[:0]
+	v.OutOrderId = 0
+	v.PremiumId = 0
+	poolInsProductBaseParam.Put(v)
 }

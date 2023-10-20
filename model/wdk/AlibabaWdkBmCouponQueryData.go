@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // AlibabaWdkBmCouponQueryData 结构体
 type AlibabaWdkBmCouponQueryData struct {
 	// 补差商品列表
@@ -24,4 +28,31 @@ type AlibabaWdkBmCouponQueryData struct {
 	PaymentType int64 `json:"payment_type,omitempty" xml:"payment_type,omitempty"`
 	// 补差渠道，值为1表示与淘鲜达结算、值为2表示与零售商结算
 	PaymentChannel int64 `json:"payment_channel,omitempty" xml:"payment_channel,omitempty"`
+}
+
+var poolAlibabaWdkBmCouponQueryData = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkBmCouponQueryData)
+	},
+}
+
+// GetAlibabaWdkBmCouponQueryData() 从对象池中获取AlibabaWdkBmCouponQueryData
+func GetAlibabaWdkBmCouponQueryData() *AlibabaWdkBmCouponQueryData {
+	return poolAlibabaWdkBmCouponQueryData.Get().(*AlibabaWdkBmCouponQueryData)
+}
+
+// ReleaseAlibabaWdkBmCouponQueryData 释放AlibabaWdkBmCouponQueryData
+func ReleaseAlibabaWdkBmCouponQueryData(v *AlibabaWdkBmCouponQueryData) {
+	v.PaymentItemDOList = v.PaymentItemDOList[:0]
+	v.CouponName = ""
+	v.ApplyStartTime = ""
+	v.ApplyEndTime = ""
+	v.GmtCreate = ""
+	v.PaymentRate = ""
+	v.CouponId = 0
+	v.StartFee = 0
+	v.Amount = 0
+	v.PaymentType = 0
+	v.PaymentChannel = 0
+	poolAlibabaWdkBmCouponQueryData.Put(v)
 }

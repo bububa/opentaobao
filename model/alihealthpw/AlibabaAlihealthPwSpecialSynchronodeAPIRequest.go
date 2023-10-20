@@ -2,6 +2,7 @@ package alihealthpw
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,14 +14,20 @@ import (
 type AlibabaAlihealthPwSpecialSynchronodeAPIRequest struct {
 	model.Params
 	// 状态信息入参
-	_body *SnodeDto
+	_body *SNodeDto
 }
 
 // NewAlibabaAlihealthPwSpecialSynchronodeRequest 初始化AlibabaAlihealthPwSpecialSynchronodeAPIRequest对象
 func NewAlibabaAlihealthPwSpecialSynchronodeRequest() *AlibabaAlihealthPwSpecialSynchronodeAPIRequest {
 	return &AlibabaAlihealthPwSpecialSynchronodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthPwSpecialSynchronodeAPIRequest) Reset() {
+	r._body = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -42,13 +49,30 @@ func (r AlibabaAlihealthPwSpecialSynchronodeAPIRequest) GetRawParams() model.Par
 
 // SetBody is Body Setter
 // 状态信息入参
-func (r *AlibabaAlihealthPwSpecialSynchronodeAPIRequest) SetBody(_body *SnodeDto) error {
+func (r *AlibabaAlihealthPwSpecialSynchronodeAPIRequest) SetBody(_body *SNodeDto) error {
 	r._body = _body
 	r.Set("body", _body)
 	return nil
 }
 
 // GetBody Body Getter
-func (r AlibabaAlihealthPwSpecialSynchronodeAPIRequest) GetBody() *SnodeDto {
+func (r AlibabaAlihealthPwSpecialSynchronodeAPIRequest) GetBody() *SNodeDto {
 	return r._body
+}
+
+var poolAlibabaAlihealthPwSpecialSynchronodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthPwSpecialSynchronodeRequest()
+	},
+}
+
+// GetAlibabaAlihealthPwSpecialSynchronodeRequest 从 sync.Pool 获取 AlibabaAlihealthPwSpecialSynchronodeAPIRequest
+func GetAlibabaAlihealthPwSpecialSynchronodeAPIRequest() *AlibabaAlihealthPwSpecialSynchronodeAPIRequest {
+	return poolAlibabaAlihealthPwSpecialSynchronodeAPIRequest.Get().(*AlibabaAlihealthPwSpecialSynchronodeAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthPwSpecialSynchronodeAPIRequest 将 AlibabaAlihealthPwSpecialSynchronodeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthPwSpecialSynchronodeAPIRequest(v *AlibabaAlihealthPwSpecialSynchronodeAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthPwSpecialSynchronodeAPIRequest.Put(v)
 }

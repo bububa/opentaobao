@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoWlbWaybillICancelAPIRequest struct {
 // NewTaobaoWlbWaybillICancelRequest 初始化TaobaoWlbWaybillICancelAPIRequest对象
 func NewTaobaoWlbWaybillICancelRequest() *TaobaoWlbWaybillICancelAPIRequest {
 	return &TaobaoWlbWaybillICancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbWaybillICancelAPIRequest) Reset() {
+	r._waybillApplyCancelRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoWlbWaybillICancelAPIRequest) SetWaybillApplyCancelRequest(_waybil
 // GetWaybillApplyCancelRequest WaybillApplyCancelRequest Getter
 func (r TaobaoWlbWaybillICancelAPIRequest) GetWaybillApplyCancelRequest() *WaybillApplyCancelRequest {
 	return r._waybillApplyCancelRequest
+}
+
+var poolTaobaoWlbWaybillICancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbWaybillICancelRequest()
+	},
+}
+
+// GetTaobaoWlbWaybillICancelRequest 从 sync.Pool 获取 TaobaoWlbWaybillICancelAPIRequest
+func GetTaobaoWlbWaybillICancelAPIRequest() *TaobaoWlbWaybillICancelAPIRequest {
+	return poolTaobaoWlbWaybillICancelAPIRequest.Get().(*TaobaoWlbWaybillICancelAPIRequest)
+}
+
+// ReleaseTaobaoWlbWaybillICancelAPIRequest 将 TaobaoWlbWaybillICancelAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbWaybillICancelAPIRequest(v *TaobaoWlbWaybillICancelAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbWaybillICancelAPIRequest.Put(v)
 }

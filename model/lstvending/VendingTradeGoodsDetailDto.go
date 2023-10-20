@@ -1,5 +1,9 @@
 package lstvending
 
+import (
+	"sync"
+)
+
 // VendingTradeGoodsDetailDto 结构体
 type VendingTradeGoodsDetailDto struct {
 	// 外部系统交易流水号
@@ -40,4 +44,39 @@ type VendingTradeGoodsDetailDto struct {
 	CargoSpaceId int64 `json:"cargo_space_id,omitempty" xml:"cargo_space_id,omitempty"`
 	// 商品清单记录ID
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolVendingTradeGoodsDetailDto = sync.Pool{
+	New: func() any {
+		return new(VendingTradeGoodsDetailDto)
+	},
+}
+
+// GetVendingTradeGoodsDetailDto() 从对象池中获取VendingTradeGoodsDetailDto
+func GetVendingTradeGoodsDetailDto() *VendingTradeGoodsDetailDto {
+	return poolVendingTradeGoodsDetailDto.Get().(*VendingTradeGoodsDetailDto)
+}
+
+// ReleaseVendingTradeGoodsDetailDto 释放VendingTradeGoodsDetailDto
+func ReleaseVendingTradeGoodsDetailDto(v *VendingTradeGoodsDetailDto) {
+	v.TradeFlowNo = ""
+	v.Category = ""
+	v.GoodsTitle = ""
+	v.Barcode = ""
+	v.ExternalGoodsId = ""
+	v.Unit = ""
+	v.GmtModified = 0
+	v.Count = 0
+	v.GmtCreate = 0
+	v.CargoRoadNo = 0
+	v.TotalAmount = 0
+	v.ActualAmount = 0
+	v.ShelfNo = 0
+	v.Price = 0
+	v.BizType = 0
+	v.RemainingQuantity = 0
+	v.GoodsId = 0
+	v.CargoSpaceId = 0
+	v.Id = 0
+	poolVendingTradeGoodsDetailDto.Put(v)
 }

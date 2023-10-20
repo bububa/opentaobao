@@ -2,6 +2,7 @@ package ticket
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AlitripTicketScenicBindAPIRequest struct {
 // NewAlitripTicketScenicBindRequest 初始化AlitripTicketScenicBindAPIRequest对象
 func NewAlitripTicketScenicBindRequest() *AlitripTicketScenicBindAPIRequest {
 	return &AlitripTicketScenicBindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTicketScenicBindAPIRequest) Reset() {
+	r._city = ""
+	r._address = ""
+	r._outScenicName = ""
+	r._province = ""
+	r._outScenicId = ""
+	r._updateOutScenicId = ""
+	r._aliScenicId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AlitripTicketScenicBindAPIRequest) SetAliScenicId(_aliScenicId int64) e
 // GetAliScenicId AliScenicId Getter
 func (r AlitripTicketScenicBindAPIRequest) GetAliScenicId() int64 {
 	return r._aliScenicId
+}
+
+var poolAlitripTicketScenicBindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTicketScenicBindRequest()
+	},
+}
+
+// GetAlitripTicketScenicBindRequest 从 sync.Pool 获取 AlitripTicketScenicBindAPIRequest
+func GetAlitripTicketScenicBindAPIRequest() *AlitripTicketScenicBindAPIRequest {
+	return poolAlitripTicketScenicBindAPIRequest.Get().(*AlitripTicketScenicBindAPIRequest)
+}
+
+// ReleaseAlitripTicketScenicBindAPIRequest 将 AlitripTicketScenicBindAPIRequest 放入 sync.Pool
+func ReleaseAlitripTicketScenicBindAPIRequest(v *AlitripTicketScenicBindAPIRequest) {
+	v.Reset()
+	poolAlitripTicketScenicBindAPIRequest.Put(v)
 }

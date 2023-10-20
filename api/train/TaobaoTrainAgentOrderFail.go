@@ -9,11 +9,6 @@ import (
 // taobao.train.agent.order.fail
 //
 // 出票失败
-func TaobaoTrainAgentOrderFail(clt *core.SDKClient, req *train.TaobaoTrainAgentOrderFailAPIRequest, session string) (*train.TaobaoTrainAgentOrderFailAPIResponse, error) {
-	var resp train.TaobaoTrainAgentOrderFailAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTrainAgentOrderFail(clt *core.SDKClient, req *train.TaobaoTrainAgentOrderFailAPIRequest, resp *train.TaobaoTrainAgentOrderFailAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

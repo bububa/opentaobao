@@ -2,6 +2,7 @@ package openim
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoOpenimTribeDismissAPIRequest struct {
 // NewTaobaoOpenimTribeDismissRequest 初始化TaobaoOpenimTribeDismissAPIRequest对象
 func NewTaobaoOpenimTribeDismissRequest() *TaobaoOpenimTribeDismissAPIRequest {
 	return &TaobaoOpenimTribeDismissAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpenimTribeDismissAPIRequest) Reset() {
+	r._user = nil
+	r._tribeId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoOpenimTribeDismissAPIRequest) SetTribeId(_tribeId int64) error {
 // GetTribeId TribeId Getter
 func (r TaobaoOpenimTribeDismissAPIRequest) GetTribeId() int64 {
 	return r._tribeId
+}
+
+var poolTaobaoOpenimTribeDismissAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpenimTribeDismissRequest()
+	},
+}
+
+// GetTaobaoOpenimTribeDismissRequest 从 sync.Pool 获取 TaobaoOpenimTribeDismissAPIRequest
+func GetTaobaoOpenimTribeDismissAPIRequest() *TaobaoOpenimTribeDismissAPIRequest {
+	return poolTaobaoOpenimTribeDismissAPIRequest.Get().(*TaobaoOpenimTribeDismissAPIRequest)
+}
+
+// ReleaseTaobaoOpenimTribeDismissAPIRequest 将 TaobaoOpenimTribeDismissAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpenimTribeDismissAPIRequest(v *TaobaoOpenimTribeDismissAPIRequest) {
+	v.Reset()
+	poolTaobaoOpenimTribeDismissAPIRequest.Put(v)
 }

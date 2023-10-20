@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // RichContentDraftDto 结构体
 type RichContentDraftDto struct {
 	// 标签
@@ -38,4 +42,38 @@ type RichContentDraftDto struct {
 	Original int64 `json:"original,omitempty" xml:"original,omitempty"`
 	// 1 测试数据 0 正常数据
 	IsTest int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
+}
+
+var poolRichContentDraftDto = sync.Pool{
+	New: func() any {
+		return new(RichContentDraftDto)
+	},
+}
+
+// GetRichContentDraftDto() 从对象池中获取RichContentDraftDto
+func GetRichContentDraftDto() *RichContentDraftDto {
+	return poolRichContentDraftDto.Get().(*RichContentDraftDto)
+}
+
+// ReleaseRichContentDraftDto 释放RichContentDraftDto
+func ReleaseRichContentDraftDto(v *RichContentDraftDto) {
+	v.Tags = v.Tags[:0]
+	v.Keywords = v.Keywords[:0]
+	v.ProjectCards = v.ProjectCards[:0]
+	v.VideoMappings = v.VideoMappings[:0]
+	v.OuterRichContentId = ""
+	v.CityId = ""
+	v.OuterIds = ""
+	v.Title = ""
+	v.ShortTitle = ""
+	v.ColumnName = ""
+	v.Author = ""
+	v.PublishTime = ""
+	v.CoverImages = ""
+	v.Summary = ""
+	v.SourceRichContent = ""
+	v.OuterStoreId = ""
+	v.Original = 0
+	v.IsTest = 0
+	poolRichContentDraftDto.Put(v)
 }

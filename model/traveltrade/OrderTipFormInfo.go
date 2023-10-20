@@ -1,5 +1,9 @@
 package traveltrade
 
+import (
+	"sync"
+)
+
 // OrderTipFormInfo 结构体
 type OrderTipFormInfo struct {
 	// 字段可接收数据类型
@@ -20,4 +24,29 @@ type OrderTipFormInfo struct {
 	MaxNum int64 `json:"max_num,omitempty" xml:"max_num,omitempty"`
 	// 字段匹配规则
 	Rule *OrderTipRuleInfo `json:"rule,omitempty" xml:"rule,omitempty"`
+}
+
+var poolOrderTipFormInfo = sync.Pool{
+	New: func() any {
+		return new(OrderTipFormInfo)
+	},
+}
+
+// GetOrderTipFormInfo() 从对象池中获取OrderTipFormInfo
+func GetOrderTipFormInfo() *OrderTipFormInfo {
+	return poolOrderTipFormInfo.Get().(*OrderTipFormInfo)
+}
+
+// ReleaseOrderTipFormInfo 释放OrderTipFormInfo
+func ReleaseOrderTipFormInfo(v *OrderTipFormInfo) {
+	v.AcceptTypes = v.AcceptTypes[:0]
+	v.Options = v.Options[:0]
+	v.Values = v.Values[:0]
+	v.Desc = ""
+	v.Title = ""
+	v.Name = ""
+	v.Value = ""
+	v.MaxNum = 0
+	v.Rule = nil
+	poolOrderTipFormInfo.Put(v)
 }

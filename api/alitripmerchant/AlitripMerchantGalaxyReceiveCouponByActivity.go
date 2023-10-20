@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.receive.coupon.by.activity
 //
 // 雅高小程序按活动Id领取优惠券
-func AlitripMerchantGalaxyReceiveCouponByActivity(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyReceiveCouponByActivityAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyReceiveCouponByActivityAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyReceiveCouponByActivityAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyReceiveCouponByActivity(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyReceiveCouponByActivityAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyReceiveCouponByActivityAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

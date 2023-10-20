@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponse struct {
 	model.CommonResponse
 	AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponseModel).Reset()
 }
 
 // AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponseModel is 服务商工人客诉数据上传 成功返回结果
@@ -30,4 +37,31 @@ type AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponseModel struct {
 	ResultValue int64 `json:"result_value,omitempty" xml:"result_value,omitempty"`
 	// 是否成功，true：成功，false失败，当未false时，result_value为null
 	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.DisplayMsg = ""
+	m.ResultErrorCode = ""
+	m.ResultErrorMsg = ""
+	m.ResultValue = 0
+	m.ResultSuccess = false
+}
+
+var poolAlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponse)
+	},
+}
+
+// GetAlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponse 从 sync.Pool 获取 AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponse
+func GetAlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponse() *AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponse {
+	return poolAlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponse.Get().(*AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponse)
+}
+
+// ReleaseAlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponse 将 AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponse(v *AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponse) {
+	v.Reset()
+	poolAlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponse.Put(v)
 }

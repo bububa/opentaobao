@@ -2,6 +2,7 @@ package wlbimports
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoWlbImportsResourceGetAPIResponse struct {
 	TaobaoWlbImportsResourceGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoWlbImportsResourceGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoWlbImportsResourceGetAPIResponseModel).Reset()
+}
+
 // TaobaoWlbImportsResourceGetAPIResponseModel is 获取所有服务列表 成功返回结果
 type TaobaoWlbImportsResourceGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_imports_resource_get_response"`
@@ -22,4 +29,27 @@ type TaobaoWlbImportsResourceGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 一般进口所有服务商列表
 	Resources []ResourceResult `json:"resources,omitempty" xml:"resources>resource_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoWlbImportsResourceGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Resources = m.Resources[:0]
+}
+
+var poolTaobaoWlbImportsResourceGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoWlbImportsResourceGetAPIResponse)
+	},
+}
+
+// GetTaobaoWlbImportsResourceGetAPIResponse 从 sync.Pool 获取 TaobaoWlbImportsResourceGetAPIResponse
+func GetTaobaoWlbImportsResourceGetAPIResponse() *TaobaoWlbImportsResourceGetAPIResponse {
+	return poolTaobaoWlbImportsResourceGetAPIResponse.Get().(*TaobaoWlbImportsResourceGetAPIResponse)
+}
+
+// ReleaseTaobaoWlbImportsResourceGetAPIResponse 将 TaobaoWlbImportsResourceGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoWlbImportsResourceGetAPIResponse(v *TaobaoWlbImportsResourceGetAPIResponse) {
+	v.Reset()
+	poolTaobaoWlbImportsResourceGetAPIResponse.Put(v)
 }

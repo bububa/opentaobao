@@ -1,5 +1,9 @@
 package iot
 
+import (
+	"sync"
+)
+
 // BusinessRecipeOpenDto 结构体
 type BusinessRecipeOpenDto struct {
 	// 食谱食材参数列表
@@ -26,4 +30,32 @@ type BusinessRecipeOpenDto struct {
 	RecipeTime int64 `json:"recipe_time,omitempty" xml:"recipe_time,omitempty"`
 	// 食谱视频
 	RecipeVideo *VideoUrlDto `json:"recipe_video,omitempty" xml:"recipe_video,omitempty"`
+}
+
+var poolBusinessRecipeOpenDto = sync.Pool{
+	New: func() any {
+		return new(BusinessRecipeOpenDto)
+	},
+}
+
+// GetBusinessRecipeOpenDto() 从对象池中获取BusinessRecipeOpenDto
+func GetBusinessRecipeOpenDto() *BusinessRecipeOpenDto {
+	return poolBusinessRecipeOpenDto.Get().(*BusinessRecipeOpenDto)
+}
+
+// ReleaseBusinessRecipeOpenDto 释放BusinessRecipeOpenDto
+func ReleaseBusinessRecipeOpenDto(v *BusinessRecipeOpenDto) {
+	v.RecipeIngredientList = v.RecipeIngredientList[:0]
+	v.RecipeStepList = v.RecipeStepList[:0]
+	v.TagList = v.TagList[:0]
+	v.Description = ""
+	v.RecipeNameCn = ""
+	v.Tips = ""
+	v.RecipeType = ""
+	v.BusinessRecipeId = 0
+	v.FunctionType = 0
+	v.RecipeImage = nil
+	v.RecipeTime = 0
+	v.RecipeVideo = nil
+	poolBusinessRecipeOpenDto.Put(v)
 }

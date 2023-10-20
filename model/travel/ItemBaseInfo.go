@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // ItemBaseInfo 结构体
 type ItemBaseInfo struct {
 	// 商品亮点
@@ -36,4 +40,37 @@ type ItemBaseInfo struct {
 	CategoryId int64 `json:"category_id,omitempty" xml:"category_id,omitempty"`
 	// 行程晚数
 	AccomNights int64 `json:"accom_nights,omitempty" xml:"accom_nights,omitempty"`
+}
+
+var poolItemBaseInfo = sync.Pool{
+	New: func() any {
+		return new(ItemBaseInfo)
+	},
+}
+
+// GetItemBaseInfo() 从对象池中获取ItemBaseInfo
+func GetItemBaseInfo() *ItemBaseInfo {
+	return poolItemBaseInfo.Get().(*ItemBaseInfo)
+}
+
+// ReleaseItemBaseInfo 释放ItemBaseInfo
+func ReleaseItemBaseInfo(v *ItemBaseInfo) {
+	v.SubTitles = v.SubTitles[:0]
+	v.PicUrls = v.PicUrls[:0]
+	v.ItemTagContent = ""
+	v.WapDesc = ""
+	v.ToLocations = ""
+	v.Title = ""
+	v.Prov = ""
+	v.OuterTitle = ""
+	v.OutId = ""
+	v.FromLocations = ""
+	v.Desc = ""
+	v.City = ""
+	v.TripMinDays = 0
+	v.TripMaxDays = 0
+	v.ItemType = 0
+	v.CategoryId = 0
+	v.AccomNights = 0
+	poolItemBaseInfo.Put(v)
 }

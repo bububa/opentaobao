@@ -2,6 +2,7 @@ package train
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoTrainAgentReturnordersGetVtwoAPIResponse struct {
 	model.CommonResponse
 	TaobaoTrainAgentReturnordersGetVtwoAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoTrainAgentReturnordersGetVtwoAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTrainAgentReturnordersGetVtwoAPIResponseModel).Reset()
 }
 
 // TaobaoTrainAgentReturnordersGetVtwoAPIResponseModel is 获取待退票的订单v2--增加鉴权校验 成功返回结果
@@ -30,4 +37,31 @@ type TaobaoTrainAgentReturnordersGetVtwoAPIResponseModel struct {
 	RefundApplyTimes string `json:"refund_apply_times,omitempty" xml:"refund_apply_times,omitempty"`
 	// 待退票的订单数
 	OrderCount int64 `json:"order_count,omitempty" xml:"order_count,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTrainAgentReturnordersGetVtwoAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.OrderIds = ""
+	m.ErrorMsg = ""
+	m.MainOrderIds = ""
+	m.RefundApplyTimes = ""
+	m.OrderCount = 0
+}
+
+var poolTaobaoTrainAgentReturnordersGetVtwoAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTrainAgentReturnordersGetVtwoAPIResponse)
+	},
+}
+
+// GetTaobaoTrainAgentReturnordersGetVtwoAPIResponse 从 sync.Pool 获取 TaobaoTrainAgentReturnordersGetVtwoAPIResponse
+func GetTaobaoTrainAgentReturnordersGetVtwoAPIResponse() *TaobaoTrainAgentReturnordersGetVtwoAPIResponse {
+	return poolTaobaoTrainAgentReturnordersGetVtwoAPIResponse.Get().(*TaobaoTrainAgentReturnordersGetVtwoAPIResponse)
+}
+
+// ReleaseTaobaoTrainAgentReturnordersGetVtwoAPIResponse 将 TaobaoTrainAgentReturnordersGetVtwoAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTrainAgentReturnordersGetVtwoAPIResponse(v *TaobaoTrainAgentReturnordersGetVtwoAPIResponse) {
+	v.Reset()
+	poolTaobaoTrainAgentReturnordersGetVtwoAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // PriceDto 结构体
 type PriceDto struct {
 	// 按航段调运价
@@ -36,4 +40,37 @@ type PriceDto struct {
 	OutPrice int64 `json:"out_price,omitempty" xml:"out_price,omitempty"`
 	// 回程票面价	单位：分
 	BackPrice int64 `json:"back_price,omitempty" xml:"back_price,omitempty"`
+}
+
+var poolPriceDto = sync.Pool{
+	New: func() any {
+		return new(PriceDto)
+	},
+}
+
+// GetPriceDto() 从对象池中获取PriceDto
+func GetPriceDto() *PriceDto {
+	return poolPriceDto.Get().(*PriceDto)
+}
+
+// ReleasePriceDto 释放PriceDto
+func ReleasePriceDto(v *PriceDto) {
+	v.FlightPriceValues = v.FlightPriceValues[:0]
+	v.Commission = 0
+	v.ReturnPrice = 0
+	v.MinPriceLimit = 0
+	v.MaxPriceLimit = 0
+	v.BiddFee = 0
+	v.BiddFeePercent = 0
+	v.CarryRule = 0
+	v.LowestPrice = 0
+	v.CalFareMethod = 0
+	v.BidFee = 0
+	v.BidMethod = 0
+	v.ChildSaleType = 0
+	v.ChildFixedPrice = 0
+	v.Baggage = 0
+	v.OutPrice = 0
+	v.BackPrice = 0
+	poolPriceDto.Put(v)
 }

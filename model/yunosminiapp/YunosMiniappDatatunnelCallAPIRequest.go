@@ -2,6 +2,7 @@ package yunosminiapp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YunosMiniappDatatunnelCallAPIRequest struct {
 // NewYunosMiniappDatatunnelCallRequest 初始化YunosMiniappDatatunnelCallAPIRequest对象
 func NewYunosMiniappDatatunnelCallRequest() *YunosMiniappDatatunnelCallAPIRequest {
 	return &YunosMiniappDatatunnelCallAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosMiniappDatatunnelCallAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YunosMiniappDatatunnelCallAPIRequest) SetParam(_param *YunosMiniappData
 // GetParam Param Getter
 func (r YunosMiniappDatatunnelCallAPIRequest) GetParam() *YunosMiniappDatatunnelCallBaseRequest {
 	return r._param
+}
+
+var poolYunosMiniappDatatunnelCallAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosMiniappDatatunnelCallRequest()
+	},
+}
+
+// GetYunosMiniappDatatunnelCallRequest 从 sync.Pool 获取 YunosMiniappDatatunnelCallAPIRequest
+func GetYunosMiniappDatatunnelCallAPIRequest() *YunosMiniappDatatunnelCallAPIRequest {
+	return poolYunosMiniappDatatunnelCallAPIRequest.Get().(*YunosMiniappDatatunnelCallAPIRequest)
+}
+
+// ReleaseYunosMiniappDatatunnelCallAPIRequest 将 YunosMiniappDatatunnelCallAPIRequest 放入 sync.Pool
+func ReleaseYunosMiniappDatatunnelCallAPIRequest(v *YunosMiniappDatatunnelCallAPIRequest) {
+	v.Reset()
+	poolYunosMiniappDatatunnelCallAPIRequest.Put(v)
 }

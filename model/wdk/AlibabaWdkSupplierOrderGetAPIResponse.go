@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaWdkSupplierOrderGetAPIResponse struct {
 	AlibabaWdkSupplierOrderGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaWdkSupplierOrderGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaWdkSupplierOrderGetAPIResponseModel).Reset()
+}
+
 // AlibabaWdkSupplierOrderGetAPIResponseModel is 五道口按订单号批量查询供应商正向订单 成功返回结果
 type AlibabaWdkSupplierOrderGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_supplier_order_get_response"`
@@ -22,4 +29,27 @@ type AlibabaWdkSupplierOrderGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *OrderListSyncPagedResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaWdkSupplierOrderGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaWdkSupplierOrderGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkSupplierOrderGetAPIResponse)
+	},
+}
+
+// GetAlibabaWdkSupplierOrderGetAPIResponse 从 sync.Pool 获取 AlibabaWdkSupplierOrderGetAPIResponse
+func GetAlibabaWdkSupplierOrderGetAPIResponse() *AlibabaWdkSupplierOrderGetAPIResponse {
+	return poolAlibabaWdkSupplierOrderGetAPIResponse.Get().(*AlibabaWdkSupplierOrderGetAPIResponse)
+}
+
+// ReleaseAlibabaWdkSupplierOrderGetAPIResponse 将 AlibabaWdkSupplierOrderGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaWdkSupplierOrderGetAPIResponse(v *AlibabaWdkSupplierOrderGetAPIResponse) {
+	v.Reset()
+	poolAlibabaWdkSupplierOrderGetAPIResponse.Put(v)
 }

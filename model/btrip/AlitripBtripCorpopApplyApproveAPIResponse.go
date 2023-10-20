@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlitripBtripCorpopApplyApproveAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripCorpopApplyApproveAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlitripBtripCorpopApplyApproveAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripBtripCorpopApplyApproveAPIResponseModel).Reset()
 }
 
 // AlitripBtripCorpopApplyApproveAPIResponseModel is 【商旅】更新审批单状态 成功返回结果
@@ -28,4 +35,30 @@ type AlitripBtripCorpopApplyApproveAPIResponseModel struct {
 	ResultCode int64 `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 成功标识
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripBtripCorpopApplyApproveAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Module = ""
+	m.ResultMsg = ""
+	m.ResultCode = 0
+	m.IsSuccess = false
+}
+
+var poolAlitripBtripCorpopApplyApproveAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripBtripCorpopApplyApproveAPIResponse)
+	},
+}
+
+// GetAlitripBtripCorpopApplyApproveAPIResponse 从 sync.Pool 获取 AlitripBtripCorpopApplyApproveAPIResponse
+func GetAlitripBtripCorpopApplyApproveAPIResponse() *AlitripBtripCorpopApplyApproveAPIResponse {
+	return poolAlitripBtripCorpopApplyApproveAPIResponse.Get().(*AlitripBtripCorpopApplyApproveAPIResponse)
+}
+
+// ReleaseAlitripBtripCorpopApplyApproveAPIResponse 将 AlitripBtripCorpopApplyApproveAPIResponse 保存到 sync.Pool
+func ReleaseAlitripBtripCorpopApplyApproveAPIResponse(v *AlitripBtripCorpopApplyApproveAPIResponse) {
+	v.Reset()
+	poolAlitripBtripCorpopApplyApproveAPIResponse.Put(v)
 }

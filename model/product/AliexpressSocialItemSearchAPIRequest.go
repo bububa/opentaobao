@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -53,8 +54,31 @@ type AliexpressSocialItemSearchAPIRequest struct {
 // NewAliexpressSocialItemSearchRequest 初始化AliexpressSocialItemSearchAPIRequest对象
 func NewAliexpressSocialItemSearchRequest() *AliexpressSocialItemSearchAPIRequest {
 	return &AliexpressSocialItemSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(18),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressSocialItemSearchAPIRequest) Reset() {
+	r._orderBy = ""
+	r._commissionRateMax = ""
+	r._commissionRateMin = ""
+	r._minPrice = ""
+	r._maxPrice = ""
+	r._keyword = ""
+	r._shipTo = ""
+	r._commentScore = ""
+	r._currency = ""
+	r._locale = ""
+	r._pageSize = 0
+	r._logisticsTime = 0
+	r._cateId = 0
+	r._pageNo = 0
+	r._hasVideo = false
+	r._desc = false
+	r._isShipFree = false
+	r._allianceItem = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -306,4 +330,21 @@ func (r *AliexpressSocialItemSearchAPIRequest) SetAllianceItem(_allianceItem boo
 // GetAllianceItem AllianceItem Getter
 func (r AliexpressSocialItemSearchAPIRequest) GetAllianceItem() bool {
 	return r._allianceItem
+}
+
+var poolAliexpressSocialItemSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressSocialItemSearchRequest()
+	},
+}
+
+// GetAliexpressSocialItemSearchRequest 从 sync.Pool 获取 AliexpressSocialItemSearchAPIRequest
+func GetAliexpressSocialItemSearchAPIRequest() *AliexpressSocialItemSearchAPIRequest {
+	return poolAliexpressSocialItemSearchAPIRequest.Get().(*AliexpressSocialItemSearchAPIRequest)
+}
+
+// ReleaseAliexpressSocialItemSearchAPIRequest 将 AliexpressSocialItemSearchAPIRequest 放入 sync.Pool
+func ReleaseAliexpressSocialItemSearchAPIRequest(v *AliexpressSocialItemSearchAPIRequest) {
+	v.Reset()
+	poolAliexpressSocialItemSearchAPIRequest.Put(v)
 }

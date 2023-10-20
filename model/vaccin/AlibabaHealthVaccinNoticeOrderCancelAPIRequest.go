@@ -2,6 +2,7 @@ package vaccin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaHealthVaccinNoticeOrderCancelAPIRequest struct {
 // NewAlibabaHealthVaccinNoticeOrderCancelRequest 初始化AlibabaHealthVaccinNoticeOrderCancelAPIRequest对象
 func NewAlibabaHealthVaccinNoticeOrderCancelRequest() *AlibabaHealthVaccinNoticeOrderCancelAPIRequest {
 	return &AlibabaHealthVaccinNoticeOrderCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHealthVaccinNoticeOrderCancelAPIRequest) Reset() {
+	r._alipayUserId = ""
+	r._orderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaHealthVaccinNoticeOrderCancelAPIRequest) SetOrderId(_orderId str
 // GetOrderId OrderId Getter
 func (r AlibabaHealthVaccinNoticeOrderCancelAPIRequest) GetOrderId() string {
 	return r._orderId
+}
+
+var poolAlibabaHealthVaccinNoticeOrderCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHealthVaccinNoticeOrderCancelRequest()
+	},
+}
+
+// GetAlibabaHealthVaccinNoticeOrderCancelRequest 从 sync.Pool 获取 AlibabaHealthVaccinNoticeOrderCancelAPIRequest
+func GetAlibabaHealthVaccinNoticeOrderCancelAPIRequest() *AlibabaHealthVaccinNoticeOrderCancelAPIRequest {
+	return poolAlibabaHealthVaccinNoticeOrderCancelAPIRequest.Get().(*AlibabaHealthVaccinNoticeOrderCancelAPIRequest)
+}
+
+// ReleaseAlibabaHealthVaccinNoticeOrderCancelAPIRequest 将 AlibabaHealthVaccinNoticeOrderCancelAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHealthVaccinNoticeOrderCancelAPIRequest(v *AlibabaHealthVaccinNoticeOrderCancelAPIRequest) {
+	v.Reset()
+	poolAlibabaHealthVaccinNoticeOrderCancelAPIRequest.Put(v)
 }

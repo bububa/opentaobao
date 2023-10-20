@@ -9,11 +9,6 @@ import (
 // alibaba.idle.tender.order.get
 //
 // 查询省心卖暗拍项目订单
-func AlibabaIdleTenderOrderGet(clt *core.SDKClient, req *idle.AlibabaIdleTenderOrderGetAPIRequest, session string) (*idle.AlibabaIdleTenderOrderGetAPIResponse, error) {
-	var resp idle.AlibabaIdleTenderOrderGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleTenderOrderGet(clt *core.SDKClient, req *idle.AlibabaIdleTenderOrderGetAPIRequest, resp *idle.AlibabaIdleTenderOrderGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.open.account.create
 //
 // Open Account导入数据
-func TaobaoOpenAccountCreate(clt *core.SDKClient, req *user.TaobaoOpenAccountCreateAPIRequest, session string) (*user.TaobaoOpenAccountCreateAPIResponse, error) {
-	var resp user.TaobaoOpenAccountCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpenAccountCreate(clt *core.SDKClient, req *user.TaobaoOpenAccountCreateAPIRequest, resp *user.TaobaoOpenAccountCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

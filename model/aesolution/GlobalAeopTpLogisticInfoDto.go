@@ -1,5 +1,9 @@
 package aesolution
 
+import (
+	"sync"
+)
+
 // GlobalAeopTpLogisticInfoDto 结构体
 type GlobalAeopTpLogisticInfoDto struct {
 	// logistics tracking number
@@ -20,4 +24,29 @@ type GlobalAeopTpLogisticInfoDto struct {
 	ShipOrderId int64 `json:"ship_order_id,omitempty" xml:"ship_order_id,omitempty"`
 	// to get logistics tracking information
 	HaveTrackingInfo bool `json:"have_tracking_info,omitempty" xml:"have_tracking_info,omitempty"`
+}
+
+var poolGlobalAeopTpLogisticInfoDto = sync.Pool{
+	New: func() any {
+		return new(GlobalAeopTpLogisticInfoDto)
+	},
+}
+
+// GetGlobalAeopTpLogisticInfoDto() 从对象池中获取GlobalAeopTpLogisticInfoDto
+func GetGlobalAeopTpLogisticInfoDto() *GlobalAeopTpLogisticInfoDto {
+	return poolGlobalAeopTpLogisticInfoDto.Get().(*GlobalAeopTpLogisticInfoDto)
+}
+
+// ReleaseGlobalAeopTpLogisticInfoDto 释放GlobalAeopTpLogisticInfoDto
+func ReleaseGlobalAeopTpLogisticInfoDto(v *GlobalAeopTpLogisticInfoDto) {
+	v.LogisticsNo = ""
+	v.RecvStatusDesc = ""
+	v.LogisticsServiceName = ""
+	v.GmtSend = ""
+	v.GmtReceived = ""
+	v.LogisticsTypeCode = ""
+	v.ReceiveStatus = ""
+	v.ShipOrderId = 0
+	v.HaveTrackingInfo = false
+	poolGlobalAeopTpLogisticInfoDto.Put(v)
 }

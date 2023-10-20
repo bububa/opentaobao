@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.reverse.load.featchorder
 //
 // 取货详情
-func AlibabaWdkReverseLoadFeatchorder(clt *core.SDKClient, req *wdk.AlibabaWdkReverseLoadFeatchorderAPIRequest, session string) (*wdk.AlibabaWdkReverseLoadFeatchorderAPIResponse, error) {
-	var resp wdk.AlibabaWdkReverseLoadFeatchorderAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkReverseLoadFeatchorder(clt *core.SDKClient, req *wdk.AlibabaWdkReverseLoadFeatchorderAPIRequest, resp *wdk.AlibabaWdkReverseLoadFeatchorderAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

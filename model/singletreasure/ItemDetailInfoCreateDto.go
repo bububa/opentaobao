@@ -1,5 +1,9 @@
 package singletreasure
 
+import (
+	"sync"
+)
+
 // ItemDetailInfoCreateDto 结构体
 type ItemDetailInfoCreateDto struct {
 	// sku对象列表
@@ -18,4 +22,28 @@ type ItemDetailInfoCreateDto struct {
 	IsMathFloor bool `json:"is_math_floor,omitempty" xml:"is_math_floor,omitempty"`
 	// 是否抹分
 	IsDiscardFen bool `json:"is_discard_fen,omitempty" xml:"is_discard_fen,omitempty"`
+}
+
+var poolItemDetailInfoCreateDto = sync.Pool{
+	New: func() any {
+		return new(ItemDetailInfoCreateDto)
+	},
+}
+
+// GetItemDetailInfoCreateDto() 从对象池中获取ItemDetailInfoCreateDto
+func GetItemDetailInfoCreateDto() *ItemDetailInfoCreateDto {
+	return poolItemDetailInfoCreateDto.Get().(*ItemDetailInfoCreateDto)
+}
+
+// ReleaseItemDetailInfoCreateDto 释放ItemDetailInfoCreateDto
+func ReleaseItemDetailInfoCreateDto(v *ItemDetailInfoCreateDto) {
+	v.SkuVOs = v.SkuVOs[:0]
+	v.LimitCheck = 0
+	v.MkDiscount = 0
+	v.ItemId = 0
+	v.Discount = 0
+	v.ActivityId = 0
+	v.IsMathFloor = false
+	v.IsDiscardFen = false
+	poolItemDetailInfoCreateDto.Put(v)
 }

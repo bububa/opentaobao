@@ -2,6 +2,7 @@ package fpm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCfoIncomingInvoiceRegisterAPIRequest struct {
 // NewAlibabaCfoIncomingInvoiceRegisterRequest 初始化AlibabaCfoIncomingInvoiceRegisterAPIRequest对象
 func NewAlibabaCfoIncomingInvoiceRegisterRequest() *AlibabaCfoIncomingInvoiceRegisterAPIRequest {
 	return &AlibabaCfoIncomingInvoiceRegisterAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCfoIncomingInvoiceRegisterAPIRequest) Reset() {
+	r._invoiceRegisterRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCfoIncomingInvoiceRegisterAPIRequest) SetInvoiceRegisterRequest(
 // GetInvoiceRegisterRequest InvoiceRegisterRequest Getter
 func (r AlibabaCfoIncomingInvoiceRegisterAPIRequest) GetInvoiceRegisterRequest() *InvoiceRegisterRequest {
 	return r._invoiceRegisterRequest
+}
+
+var poolAlibabaCfoIncomingInvoiceRegisterAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCfoIncomingInvoiceRegisterRequest()
+	},
+}
+
+// GetAlibabaCfoIncomingInvoiceRegisterRequest 从 sync.Pool 获取 AlibabaCfoIncomingInvoiceRegisterAPIRequest
+func GetAlibabaCfoIncomingInvoiceRegisterAPIRequest() *AlibabaCfoIncomingInvoiceRegisterAPIRequest {
+	return poolAlibabaCfoIncomingInvoiceRegisterAPIRequest.Get().(*AlibabaCfoIncomingInvoiceRegisterAPIRequest)
+}
+
+// ReleaseAlibabaCfoIncomingInvoiceRegisterAPIRequest 将 AlibabaCfoIncomingInvoiceRegisterAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCfoIncomingInvoiceRegisterAPIRequest(v *AlibabaCfoIncomingInvoiceRegisterAPIRequest) {
+	v.Reset()
+	poolAlibabaCfoIncomingInvoiceRegisterAPIRequest.Put(v)
 }

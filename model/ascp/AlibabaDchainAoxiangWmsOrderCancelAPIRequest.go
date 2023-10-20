@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangWmsOrderCancelAPIRequest struct {
 // NewAlibabaDchainAoxiangWmsOrderCancelRequest 初始化AlibabaDchainAoxiangWmsOrderCancelAPIRequest对象
 func NewAlibabaDchainAoxiangWmsOrderCancelRequest() *AlibabaDchainAoxiangWmsOrderCancelAPIRequest {
 	return &AlibabaDchainAoxiangWmsOrderCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangWmsOrderCancelAPIRequest) Reset() {
+	r._orderCancelReportRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangWmsOrderCancelAPIRequest) SetOrderCancelReportReque
 // GetOrderCancelReportRequest OrderCancelReportRequest Getter
 func (r AlibabaDchainAoxiangWmsOrderCancelAPIRequest) GetOrderCancelReportRequest() *OrderCancelReportRequest {
 	return r._orderCancelReportRequest
+}
+
+var poolAlibabaDchainAoxiangWmsOrderCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangWmsOrderCancelRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangWmsOrderCancelRequest 从 sync.Pool 获取 AlibabaDchainAoxiangWmsOrderCancelAPIRequest
+func GetAlibabaDchainAoxiangWmsOrderCancelAPIRequest() *AlibabaDchainAoxiangWmsOrderCancelAPIRequest {
+	return poolAlibabaDchainAoxiangWmsOrderCancelAPIRequest.Get().(*AlibabaDchainAoxiangWmsOrderCancelAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangWmsOrderCancelAPIRequest 将 AlibabaDchainAoxiangWmsOrderCancelAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangWmsOrderCancelAPIRequest(v *AlibabaDchainAoxiangWmsOrderCancelAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangWmsOrderCancelAPIRequest.Put(v)
 }

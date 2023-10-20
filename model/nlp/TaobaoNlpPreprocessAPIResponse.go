@@ -2,6 +2,7 @@ package nlp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoNlpPreprocessAPIResponse struct {
 	TaobaoNlpPreprocessAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoNlpPreprocessAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoNlpPreprocessAPIResponseModel).Reset()
+}
+
 // TaobaoNlpPreprocessAPIResponseModel is 文本语言预处理 成功返回结果
 type TaobaoNlpPreprocessAPIResponseModel struct {
 	XMLName xml.Name `xml:"nlp_preprocess_response"`
@@ -22,4 +29,27 @@ type TaobaoNlpPreprocessAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
 	Processresult *ProcessResult `json:"processresult,omitempty" xml:"processresult,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoNlpPreprocessAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Processresult = nil
+}
+
+var poolTaobaoNlpPreprocessAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoNlpPreprocessAPIResponse)
+	},
+}
+
+// GetTaobaoNlpPreprocessAPIResponse 从 sync.Pool 获取 TaobaoNlpPreprocessAPIResponse
+func GetTaobaoNlpPreprocessAPIResponse() *TaobaoNlpPreprocessAPIResponse {
+	return poolTaobaoNlpPreprocessAPIResponse.Get().(*TaobaoNlpPreprocessAPIResponse)
+}
+
+// ReleaseTaobaoNlpPreprocessAPIResponse 将 TaobaoNlpPreprocessAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoNlpPreprocessAPIResponse(v *TaobaoNlpPreprocessAPIResponse) {
+	v.Reset()
+	poolTaobaoNlpPreprocessAPIResponse.Put(v)
 }

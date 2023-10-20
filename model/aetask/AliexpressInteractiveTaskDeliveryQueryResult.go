@@ -1,5 +1,9 @@
 package aetask
 
+import (
+	"sync"
+)
+
 // AliexpressInteractiveTaskDeliveryQueryResult 结构体
 type AliexpressInteractiveTaskDeliveryQueryResult struct {
 	// 物料集合
@@ -16,4 +20,27 @@ type AliexpressInteractiveTaskDeliveryQueryResult struct {
 	DateEnd int64 `json:"date_end,omitempty" xml:"date_end,omitempty"`
 	// 预热展示标识
 	PreDisplay bool `json:"pre_display,omitempty" xml:"pre_display,omitempty"`
+}
+
+var poolAliexpressInteractiveTaskDeliveryQueryResult = sync.Pool{
+	New: func() any {
+		return new(AliexpressInteractiveTaskDeliveryQueryResult)
+	},
+}
+
+// GetAliexpressInteractiveTaskDeliveryQueryResult() 从对象池中获取AliexpressInteractiveTaskDeliveryQueryResult
+func GetAliexpressInteractiveTaskDeliveryQueryResult() *AliexpressInteractiveTaskDeliveryQueryResult {
+	return poolAliexpressInteractiveTaskDeliveryQueryResult.Get().(*AliexpressInteractiveTaskDeliveryQueryResult)
+}
+
+// ReleaseAliexpressInteractiveTaskDeliveryQueryResult 释放AliexpressInteractiveTaskDeliveryQueryResult
+func ReleaseAliexpressInteractiveTaskDeliveryQueryResult(v *AliexpressInteractiveTaskDeliveryQueryResult) {
+	v.Materials = v.Materials[:0]
+	v.DateBegin = ""
+	v.SecurityLevel = ""
+	v.OrderDelivery = 0
+	v.GroupId = 0
+	v.DateEnd = 0
+	v.PreDisplay = false
+	poolAliexpressInteractiveTaskDeliveryQueryResult.Put(v)
 }

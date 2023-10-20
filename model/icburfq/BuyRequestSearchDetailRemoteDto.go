@@ -1,5 +1,9 @@
 package icburfq
 
+import (
+	"sync"
+)
+
 // BuyRequestSearchDetailRemoteDto 结构体
 type BuyRequestSearchDetailRemoteDto struct {
 	// 语种
@@ -42,4 +46,40 @@ type BuyRequestSearchDetailRemoteDto struct {
 	ExpirateTime int64 `json:"expirate_time,omitempty" xml:"expirate_time,omitempty"`
 	// 数量
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
+}
+
+var poolBuyRequestSearchDetailRemoteDto = sync.Pool{
+	New: func() any {
+		return new(BuyRequestSearchDetailRemoteDto)
+	},
+}
+
+// GetBuyRequestSearchDetailRemoteDto() 从对象池中获取BuyRequestSearchDetailRemoteDto
+func GetBuyRequestSearchDetailRemoteDto() *BuyRequestSearchDetailRemoteDto {
+	return poolBuyRequestSearchDetailRemoteDto.Get().(*BuyRequestSearchDetailRemoteDto)
+}
+
+// ReleaseBuyRequestSearchDetailRemoteDto 释放BuyRequestSearchDetailRemoteDto
+func ReleaseBuyRequestSearchDetailRemoteDto(v *BuyRequestSearchDetailRemoteDto) {
+	v.LangSrc = ""
+	v.SupplierCountrys = ""
+	v.CategoryName = ""
+	v.AnnexNames = ""
+	v.PaymentTerms = ""
+	v.DestinationPort = ""
+	v.FobPriceUnit = ""
+	v.FobPrice = ""
+	v.ShippingTerms = ""
+	v.CountrySimple = ""
+	v.QuantityUnit = ""
+	v.Status = ""
+	v.Description = ""
+	v.Subject = ""
+	v.RfqId = ""
+	v.CategoryId = 0
+	v.LeftCount = 0
+	v.OpenTime = 0
+	v.ExpirateTime = 0
+	v.Quantity = 0
+	poolBuyRequestSearchDetailRemoteDto.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest struct {
 // NewAlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetRequest 初始化AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest对象
 func NewAlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetRequest() *AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest {
 	return &AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest) Reset() {
+	r._clientId = ""
+	r._authCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest) SetAuthC
 // GetAuthCode AuthCode Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest) GetAuthCode() string {
 	return r._authCode
+}
+
+var poolAlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetRequest()
+	},
+}
+
+// GetAlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetRequest 从 sync.Pool 获取 AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest
+func GetAlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest() *AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest {
+	return poolAlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest.Get().(*AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest)
+}
+
+// ReleaseAlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest 将 AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest(v *AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest.Put(v)
 }

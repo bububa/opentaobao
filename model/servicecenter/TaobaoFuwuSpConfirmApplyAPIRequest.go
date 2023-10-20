@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoFuwuSpConfirmApplyAPIRequest struct {
 // NewTaobaoFuwuSpConfirmApplyRequest 初始化TaobaoFuwuSpConfirmApplyAPIRequest对象
 func NewTaobaoFuwuSpConfirmApplyRequest() *TaobaoFuwuSpConfirmApplyAPIRequest {
 	return &TaobaoFuwuSpConfirmApplyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFuwuSpConfirmApplyAPIRequest) Reset() {
+	r._paramIncomeConfirmDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoFuwuSpConfirmApplyAPIRequest) SetParamIncomeConfirmDTO(_paramInco
 // GetParamIncomeConfirmDTO ParamIncomeConfirmDTO Getter
 func (r TaobaoFuwuSpConfirmApplyAPIRequest) GetParamIncomeConfirmDTO() *IncomeConfirmDto {
 	return r._paramIncomeConfirmDTO
+}
+
+var poolTaobaoFuwuSpConfirmApplyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFuwuSpConfirmApplyRequest()
+	},
+}
+
+// GetTaobaoFuwuSpConfirmApplyRequest 从 sync.Pool 获取 TaobaoFuwuSpConfirmApplyAPIRequest
+func GetTaobaoFuwuSpConfirmApplyAPIRequest() *TaobaoFuwuSpConfirmApplyAPIRequest {
+	return poolTaobaoFuwuSpConfirmApplyAPIRequest.Get().(*TaobaoFuwuSpConfirmApplyAPIRequest)
+}
+
+// ReleaseTaobaoFuwuSpConfirmApplyAPIRequest 将 TaobaoFuwuSpConfirmApplyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFuwuSpConfirmApplyAPIRequest(v *TaobaoFuwuSpConfirmApplyAPIRequest) {
+	v.Reset()
+	poolTaobaoFuwuSpConfirmApplyAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest struct {
 // NewAlibabaAlscCrmMarketingShareCustomerInfoRequest 初始化AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest对象
 func NewAlibabaAlscCrmMarketingShareCustomerInfoRequest() *AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest {
 	return &AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) Reset() {
+	r._activityId = ""
+	r._brandId = ""
+	r._customerId = ""
+	r._operatorId = ""
+	r._operatorName = ""
+	r._outBrandId = ""
+	r._outShopId = ""
+	r._requestId = ""
+	r._shopId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) SetShopId(_shopId s
 // GetShopId ShopId Getter
 func (r AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) GetShopId() string {
 	return r._shopId
+}
+
+var poolAlibabaAlscCrmMarketingShareCustomerInfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscCrmMarketingShareCustomerInfoRequest()
+	},
+}
+
+// GetAlibabaAlscCrmMarketingShareCustomerInfoRequest 从 sync.Pool 获取 AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest
+func GetAlibabaAlscCrmMarketingShareCustomerInfoAPIRequest() *AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest {
+	return poolAlibabaAlscCrmMarketingShareCustomerInfoAPIRequest.Get().(*AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest)
+}
+
+// ReleaseAlibabaAlscCrmMarketingShareCustomerInfoAPIRequest 将 AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscCrmMarketingShareCustomerInfoAPIRequest(v *AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscCrmMarketingShareCustomerInfoAPIRequest.Put(v)
 }

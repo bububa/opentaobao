@@ -2,6 +2,7 @@ package alihealthlab
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihealthLabItemSyncAPIResponse struct {
 	AlibabaAlihealthLabItemSyncAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthLabItemSyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthLabItemSyncAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthLabItemSyncAPIResponseModel is 阿里健康检验检测商品发布 成功返回结果
 type AlibabaAlihealthLabItemSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_lab_item_sync_response"`
@@ -26,4 +33,29 @@ type AlibabaAlihealthLabItemSyncAPIResponseModel struct {
 	ResultStatus string `json:"result_status,omitempty" xml:"result_status,omitempty"`
 	// 可读的结果码（错误码）
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthLabItemSyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultMsg = ""
+	m.ResultStatus = ""
+	m.ResultCode = ""
+}
+
+var poolAlibabaAlihealthLabItemSyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthLabItemSyncAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthLabItemSyncAPIResponse 从 sync.Pool 获取 AlibabaAlihealthLabItemSyncAPIResponse
+func GetAlibabaAlihealthLabItemSyncAPIResponse() *AlibabaAlihealthLabItemSyncAPIResponse {
+	return poolAlibabaAlihealthLabItemSyncAPIResponse.Get().(*AlibabaAlihealthLabItemSyncAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthLabItemSyncAPIResponse 将 AlibabaAlihealthLabItemSyncAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthLabItemSyncAPIResponse(v *AlibabaAlihealthLabItemSyncAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthLabItemSyncAPIResponse.Put(v)
 }

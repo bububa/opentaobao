@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // ActivityDto 结构体
 type ActivityDto struct {
 	// 权益列表
@@ -20,4 +24,29 @@ type ActivityDto struct {
 	ChannelCode string `json:"channel_code,omitempty" xml:"channel_code,omitempty"`
 	// 扩展字段
 	Feature string `json:"feature,omitempty" xml:"feature,omitempty"`
+}
+
+var poolActivityDto = sync.Pool{
+	New: func() any {
+		return new(ActivityDto)
+	},
+}
+
+// GetActivityDto() 从对象池中获取ActivityDto
+func GetActivityDto() *ActivityDto {
+	return poolActivityDto.Get().(*ActivityDto)
+}
+
+// ReleaseActivityDto 释放ActivityDto
+func ReleaseActivityDto(v *ActivityDto) {
+	v.BenefitList = v.BenefitList[:0]
+	v.Name = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.Source = ""
+	v.StrategyCode = ""
+	v.Status = ""
+	v.ChannelCode = ""
+	v.Feature = ""
+	poolActivityDto.Put(v)
 }

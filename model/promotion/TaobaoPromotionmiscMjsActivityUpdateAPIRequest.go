@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -67,8 +68,38 @@ type TaobaoPromotionmiscMjsActivityUpdateAPIRequest struct {
 // NewTaobaoPromotionmiscMjsActivityUpdateRequest 初始化TaobaoPromotionmiscMjsActivityUpdateAPIRequest对象
 func NewTaobaoPromotionmiscMjsActivityUpdateRequest() *TaobaoPromotionmiscMjsActivityUpdateAPIRequest {
 	return &TaobaoPromotionmiscMjsActivityUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(25),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) Reset() {
+	r._name = ""
+	r._startTime = ""
+	r._endTime = ""
+	r._userTag = ""
+	r._giftName = ""
+	r._giftUrl = ""
+	r._excludeArea = ""
+	r._activityId = 0
+	r._participateRange = 0
+	r._totalPrice = 0
+	r._itemCount = 0
+	r._shopMemberLevel = 0
+	r._decreaseAmount = 0
+	r._discountRate = 0
+	r._giftId = 0
+	r._isAmountOver = false
+	r._isAmountMultiple = false
+	r._isItemCountOver = false
+	r._isItemMultiple = false
+	r._isShopMember = false
+	r._isUserTag = false
+	r._isDecreaseMoney = false
+	r._isDiscount = false
+	r._isSendGift = false
+	r._isFreePost = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -411,4 +442,21 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetIsFreePost(_isFreePo
 // GetIsFreePost IsFreePost Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetIsFreePost() bool {
 	return r._isFreePost
+}
+
+var poolTaobaoPromotionmiscMjsActivityUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPromotionmiscMjsActivityUpdateRequest()
+	},
+}
+
+// GetTaobaoPromotionmiscMjsActivityUpdateRequest 从 sync.Pool 获取 TaobaoPromotionmiscMjsActivityUpdateAPIRequest
+func GetTaobaoPromotionmiscMjsActivityUpdateAPIRequest() *TaobaoPromotionmiscMjsActivityUpdateAPIRequest {
+	return poolTaobaoPromotionmiscMjsActivityUpdateAPIRequest.Get().(*TaobaoPromotionmiscMjsActivityUpdateAPIRequest)
+}
+
+// ReleaseTaobaoPromotionmiscMjsActivityUpdateAPIRequest 将 TaobaoPromotionmiscMjsActivityUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPromotionmiscMjsActivityUpdateAPIRequest(v *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoPromotionmiscMjsActivityUpdateAPIRequest.Put(v)
 }

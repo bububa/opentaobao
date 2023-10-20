@@ -1,5 +1,9 @@
 package axindata
 
+import (
+	"sync"
+)
+
 // PoiVo 结构体
 type PoiVo struct {
 	// poi英文名
@@ -20,4 +24,29 @@ type PoiVo struct {
 	ProvinceId string `json:"province_id,omitempty" xml:"province_id,omitempty"`
 	// poiId
 	PoiId int64 `json:"poi_id,omitempty" xml:"poi_id,omitempty"`
+}
+
+var poolPoiVo = sync.Pool{
+	New: func() any {
+		return new(PoiVo)
+	},
+}
+
+// GetPoiVo() 从对象池中获取PoiVo
+func GetPoiVo() *PoiVo {
+	return poolPoiVo.Get().(*PoiVo)
+}
+
+// ReleasePoiVo 释放PoiVo
+func ReleasePoiVo(v *PoiVo) {
+	v.PoiNameEn = ""
+	v.PoiName = ""
+	v.CityName = ""
+	v.CityId = ""
+	v.CountryName = ""
+	v.CountryId = ""
+	v.ProvinceName = ""
+	v.ProvinceId = ""
+	v.PoiId = 0
+	poolPoiVo.Put(v)
 }

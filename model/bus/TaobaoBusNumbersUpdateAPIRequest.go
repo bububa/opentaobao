@@ -2,6 +2,7 @@ package bus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoBusNumbersUpdateAPIRequest struct {
 // NewTaobaoBusNumbersUpdateRequest 初始化TaobaoBusNumbersUpdateAPIRequest对象
 func NewTaobaoBusNumbersUpdateRequest() *TaobaoBusNumbersUpdateAPIRequest {
 	return &TaobaoBusNumbersUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBusNumbersUpdateAPIRequest) Reset() {
+	r._paramTopBusNumberUpdateRQ = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoBusNumbersUpdateAPIRequest) SetParamTopBusNumberUpdateRQ(_paramTo
 // GetParamTopBusNumberUpdateRQ ParamTopBusNumberUpdateRQ Getter
 func (r TaobaoBusNumbersUpdateAPIRequest) GetParamTopBusNumberUpdateRQ() *TopBusNumberUpdateRq {
 	return r._paramTopBusNumberUpdateRQ
+}
+
+var poolTaobaoBusNumbersUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBusNumbersUpdateRequest()
+	},
+}
+
+// GetTaobaoBusNumbersUpdateRequest 从 sync.Pool 获取 TaobaoBusNumbersUpdateAPIRequest
+func GetTaobaoBusNumbersUpdateAPIRequest() *TaobaoBusNumbersUpdateAPIRequest {
+	return poolTaobaoBusNumbersUpdateAPIRequest.Get().(*TaobaoBusNumbersUpdateAPIRequest)
+}
+
+// ReleaseTaobaoBusNumbersUpdateAPIRequest 将 TaobaoBusNumbersUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBusNumbersUpdateAPIRequest(v *TaobaoBusNumbersUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoBusNumbersUpdateAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.it.fare.update
 //
 // 自有政策修改接口，可以根据fareId或outId修改，outId不唯一时，不能用outId修改。当外部政策id、出发城市、到达城市、出票航司任一有变化，或往返时是否允许混舱、文件编号、可混文件编号任一有变化，将删除老数据，产生一条新政策。
-func TaobaoAlitripItFareUpdate(clt *core.SDKClient, req *itpolicy.TaobaoAlitripItFareUpdateAPIRequest, session string) (*itpolicy.TaobaoAlitripItFareUpdateAPIResponse, error) {
-	var resp itpolicy.TaobaoAlitripItFareUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripItFareUpdate(clt *core.SDKClient, req *itpolicy.TaobaoAlitripItFareUpdateAPIRequest, resp *itpolicy.TaobaoAlitripItFareUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

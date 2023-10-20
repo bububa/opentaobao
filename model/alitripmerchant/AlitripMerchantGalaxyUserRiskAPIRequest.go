@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlitripMerchantGalaxyUserRiskAPIRequest struct {
 // NewAlitripMerchantGalaxyUserRiskRequest 初始化AlitripMerchantGalaxyUserRiskAPIRequest对象
 func NewAlitripMerchantGalaxyUserRiskRequest() *AlitripMerchantGalaxyUserRiskAPIRequest {
 	return &AlitripMerchantGalaxyUserRiskAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyUserRiskAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._token = ""
+	r._ip = ""
+	r._email = ""
+	r._scene = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlitripMerchantGalaxyUserRiskAPIRequest) SetScene(_scene int64) error {
 // GetScene Scene Getter
 func (r AlitripMerchantGalaxyUserRiskAPIRequest) GetScene() int64 {
 	return r._scene
+}
+
+var poolAlitripMerchantGalaxyUserRiskAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyUserRiskRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyUserRiskRequest 从 sync.Pool 获取 AlitripMerchantGalaxyUserRiskAPIRequest
+func GetAlitripMerchantGalaxyUserRiskAPIRequest() *AlitripMerchantGalaxyUserRiskAPIRequest {
+	return poolAlitripMerchantGalaxyUserRiskAPIRequest.Get().(*AlitripMerchantGalaxyUserRiskAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyUserRiskAPIRequest 将 AlitripMerchantGalaxyUserRiskAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyUserRiskAPIRequest(v *AlitripMerchantGalaxyUserRiskAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyUserRiskAPIRequest.Put(v)
 }

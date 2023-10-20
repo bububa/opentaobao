@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest struct {
 // NewAlibabaAilabsAligenieOpenvideoalbumScenepushRequest 初始化AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest对象
 func NewAlibabaAilabsAligenieOpenvideoalbumScenepushRequest() *AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest {
 	return &AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest) Reset() {
+	r._paramList = r._paramList[:0]
+	r._sceneValue = ""
+	r._sceneType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest) SetSceneType(_s
 // GetSceneType SceneType Getter
 func (r AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest) GetSceneType() int64 {
 	return r._sceneType
+}
+
+var poolAlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsAligenieOpenvideoalbumScenepushRequest()
+	},
+}
+
+// GetAlibabaAilabsAligenieOpenvideoalbumScenepushRequest 从 sync.Pool 获取 AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest
+func GetAlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest() *AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest {
+	return poolAlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest.Get().(*AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest)
+}
+
+// ReleaseAlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest 将 AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest(v *AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest.Put(v)
 }

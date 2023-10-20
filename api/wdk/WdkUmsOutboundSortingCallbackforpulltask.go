@@ -9,11 +9,6 @@ import (
 // wdk.ums.outbound.sorting.callbackforpulltask
 //
 // dps分货-任务拉取确定接口
-func WdkUmsOutboundSortingCallbackforpulltask(clt *core.SDKClient, req *wdk.WdkUmsOutboundSortingCallbackforpulltaskAPIRequest, session string) (*wdk.WdkUmsOutboundSortingCallbackforpulltaskAPIResponse, error) {
-	var resp wdk.WdkUmsOutboundSortingCallbackforpulltaskAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func WdkUmsOutboundSortingCallbackforpulltask(clt *core.SDKClient, req *wdk.WdkUmsOutboundSortingCallbackforpulltaskAPIRequest, resp *wdk.WdkUmsOutboundSortingCallbackforpulltaskAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

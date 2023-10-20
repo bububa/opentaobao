@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // OrderDiscountBillBo 结构体
 type OrderDiscountBillBo struct {
 	// 活动名称
@@ -44,4 +48,41 @@ type OrderDiscountBillBo struct {
 	OrderChannel int64 `json:"order_channel,omitempty" xml:"order_channel,omitempty"`
 	// 出资方 1表示平台出资  0表示品牌商出资
 	Investor int64 `json:"investor,omitempty" xml:"investor,omitempty"`
+}
+
+var poolOrderDiscountBillBo = sync.Pool{
+	New: func() any {
+		return new(OrderDiscountBillBo)
+	},
+}
+
+// GetOrderDiscountBillBo() 从对象池中获取OrderDiscountBillBo
+func GetOrderDiscountBillBo() *OrderDiscountBillBo {
+	return poolOrderDiscountBillBo.Get().(*OrderDiscountBillBo)
+}
+
+// ReleaseOrderDiscountBillBo 释放OrderDiscountBillBo
+func ReleaseOrderDiscountBillBo(v *OrderDiscountBillBo) {
+	v.ActivityName = ""
+	v.MainOrderId = ""
+	v.MerchantCode = ""
+	v.OutOrderId = ""
+	v.SkuCode = ""
+	v.SkuName = ""
+	v.StoreId = ""
+	v.SubOrderId = ""
+	v.BizTime = ""
+	v.ActivityId = 0
+	v.ActivityType = 0
+	v.BuyQuantity = 0
+	v.DiscountFee = 0
+	v.DiscountQuantity = 0
+	v.DiscountType = 0
+	v.Id = 0
+	v.MerchantDiscountFee = 0
+	v.OrderStatus = 0
+	v.TxdDiscountFee = 0
+	v.OrderChannel = 0
+	v.Investor = 0
+	poolOrderDiscountBillBo.Put(v)
 }

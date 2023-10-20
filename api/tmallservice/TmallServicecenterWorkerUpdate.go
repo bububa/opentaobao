@@ -24,11 +24,6 @@ import (
 // 11000, category_id 无效
 // 11001, biz_type 无效
 // 20001,已查询到最后一页
-func TmallServicecenterWorkerUpdate(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerUpdateAPIRequest, session string) (*tmallservice.TmallServicecenterWorkerUpdateAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterWorkerUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterWorkerUpdate(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerUpdateAPIRequest, resp *tmallservice.TmallServicecenterWorkerUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

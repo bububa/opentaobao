@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // OptPlanOpenInfo 结构体
 type OptPlanOpenInfo struct {
 	// 运营计划id
@@ -32,4 +36,35 @@ type OptPlanOpenInfo struct {
 	ShopGroupInfo *ShopGroupOpenInfo `json:"shop_group_info,omitempty" xml:"shop_group_info,omitempty"`
 	// 逻辑删除标志
 	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
+}
+
+var poolOptPlanOpenInfo = sync.Pool{
+	New: func() any {
+		return new(OptPlanOpenInfo)
+	},
+}
+
+// GetOptPlanOpenInfo() 从对象池中获取OptPlanOpenInfo
+func GetOptPlanOpenInfo() *OptPlanOpenInfo {
+	return poolOptPlanOpenInfo.Get().(*OptPlanOpenInfo)
+}
+
+// ReleaseOptPlanOpenInfo 释放OptPlanOpenInfo
+func ReleaseOptPlanOpenInfo(v *OptPlanOpenInfo) {
+	v.OptPlanId = ""
+	v.OptPlanName = ""
+	v.Remark = ""
+	v.RechargeRuleId = ""
+	v.RechargeRuleName = ""
+	v.PointRuleId = ""
+	v.PointRuleName = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.CreateBy = ""
+	v.UpdateBy = ""
+	v.OptPlanType = 0
+	v.ApplyShopCount = 0
+	v.ShopGroupInfo = nil
+	v.Deleted = false
+	poolOptPlanOpenInfo.Put(v)
 }

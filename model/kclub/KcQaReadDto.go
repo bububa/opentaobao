@@ -1,5 +1,9 @@
 package kclub
 
+import (
+	"sync"
+)
+
 // KcQaReadDto 结构体
 type KcQaReadDto struct {
 	// 子知识
@@ -32,4 +36,35 @@ type KcQaReadDto struct {
 	QuestionType int64 `json:"question_type,omitempty" xml:"question_type,omitempty"`
 	// qa的访问量
 	QaPv *QaPvDto `json:"qa_pv,omitempty" xml:"qa_pv,omitempty"`
+}
+
+var poolKcQaReadDto = sync.Pool{
+	New: func() any {
+		return new(KcQaReadDto)
+	},
+}
+
+// GetKcQaReadDto() 从对象池中获取KcQaReadDto
+func GetKcQaReadDto() *KcQaReadDto {
+	return poolKcQaReadDto.Get().(*KcQaReadDto)
+}
+
+// ReleaseKcQaReadDto 释放KcQaReadDto
+func ReleaseKcQaReadDto(v *KcQaReadDto) {
+	v.ChildQas = v.ChildQas[:0]
+	v.Solutions = v.Solutions[:0]
+	v.ParentCats = v.ParentCats[:0]
+	v.CatPath = ""
+	v.Title = ""
+	v.GmtModified = ""
+	v.GmtCreate = ""
+	v.EntityCode = ""
+	v.CatId = 0
+	v.TenantId = 0
+	v.Status = 0
+	v.Id = 0
+	v.Context = 0
+	v.QuestionType = 0
+	v.QaPv = nil
+	poolKcQaReadDto.Put(v)
 }

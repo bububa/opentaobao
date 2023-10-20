@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTbkScTpwdConvertAPIResponse struct {
 	TaobaoTbkScTpwdConvertAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTbkScTpwdConvertAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTbkScTpwdConvertAPIResponseModel).Reset()
+}
+
 // TaobaoTbkScTpwdConvertAPIResponseModel is 淘宝客-服务商-淘口令解析&转链 成功返回结果
 type TaobaoTbkScTpwdConvertAPIResponseModel struct {
 	XMLName xml.Name `xml:"tbk_sc_tpwd_convert_response"`
@@ -22,4 +29,27 @@ type TaobaoTbkScTpwdConvertAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// data
 	Data *TaobaoTbkScTpwdConvertMapData `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTbkScTpwdConvertAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = nil
+}
+
+var poolTaobaoTbkScTpwdConvertAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkScTpwdConvertAPIResponse)
+	},
+}
+
+// GetTaobaoTbkScTpwdConvertAPIResponse 从 sync.Pool 获取 TaobaoTbkScTpwdConvertAPIResponse
+func GetTaobaoTbkScTpwdConvertAPIResponse() *TaobaoTbkScTpwdConvertAPIResponse {
+	return poolTaobaoTbkScTpwdConvertAPIResponse.Get().(*TaobaoTbkScTpwdConvertAPIResponse)
+}
+
+// ReleaseTaobaoTbkScTpwdConvertAPIResponse 将 TaobaoTbkScTpwdConvertAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTbkScTpwdConvertAPIResponse(v *TaobaoTbkScTpwdConvertAPIResponse) {
+	v.Reset()
+	poolTaobaoTbkScTpwdConvertAPIResponse.Put(v)
 }

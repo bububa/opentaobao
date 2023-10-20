@@ -1,7 +1,11 @@
 package tmallcar
 
-// XcarSysLinePicsDto 结构体
-type XcarSysLinePicsDto struct {
+import (
+	"sync"
+)
+
+// XCarSysLinePicsDto 结构体
+type XCarSysLinePicsDto struct {
 	// 具体颜色名称，除整体外观外，其他不区分颜色，此值为空，比如 黑色
 	ColorName string `json:"color_name,omitempty" xml:"color_name,omitempty"`
 	// 具体颜色色值，除整体外观外，其他不区分颜色，所以没有色值 比如 FFFF000FFF
@@ -20,4 +24,29 @@ type XcarSysLinePicsDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// type(整体外观1、细节外观2、控件座椅3、中控区4、其他5)
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolXCarSysLinePicsDto = sync.Pool{
+	New: func() any {
+		return new(XCarSysLinePicsDto)
+	},
+}
+
+// GetXCarSysLinePicsDto() 从对象池中获取XCarSysLinePicsDto
+func GetXCarSysLinePicsDto() *XCarSysLinePicsDto {
+	return poolXCarSysLinePicsDto.Get().(*XCarSysLinePicsDto)
+}
+
+// ReleaseXCarSysLinePicsDto 释放XCarSysLinePicsDto
+func ReleaseXCarSysLinePicsDto(v *XCarSysLinePicsDto) {
+	v.ColorName = ""
+	v.ColorValue = ""
+	v.Pics = ""
+	v.BrandPid = 0
+	v.BrandVid = 0
+	v.LinePid = 0
+	v.LineVid = 0
+	v.Status = 0
+	v.Type = 0
+	poolXCarSysLinePicsDto.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.alsc.crm.marketing.encrypt
 //
 // 加密
-func AlibabaAlscCrmMarketingEncrypt(clt *core.SDKClient, req *alsc.AlibabaAlscCrmMarketingEncryptAPIRequest, session string) (*alsc.AlibabaAlscCrmMarketingEncryptAPIResponse, error) {
-	var resp alsc.AlibabaAlscCrmMarketingEncryptAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlscCrmMarketingEncrypt(clt *core.SDKClient, req *alsc.AlibabaAlscCrmMarketingEncryptAPIRequest, resp *alsc.AlibabaAlscCrmMarketingEncryptAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

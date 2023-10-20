@@ -2,6 +2,7 @@ package txcs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallTxcsFinanceVerifyStatementBillAPIRequest struct {
 // NewTmallTxcsFinanceVerifyStatementBillRequest 初始化TmallTxcsFinanceVerifyStatementBillAPIRequest对象
 func NewTmallTxcsFinanceVerifyStatementBillRequest() *TmallTxcsFinanceVerifyStatementBillAPIRequest {
 	return &TmallTxcsFinanceVerifyStatementBillAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallTxcsFinanceVerifyStatementBillAPIRequest) Reset() {
+	r._ouCode = ""
+	r._verificationBillDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallTxcsFinanceVerifyStatementBillAPIRequest) SetVerificationBillDTO(_
 // GetVerificationBillDTO VerificationBillDTO Getter
 func (r TmallTxcsFinanceVerifyStatementBillAPIRequest) GetVerificationBillDTO() *VerificationBillDto {
 	return r._verificationBillDTO
+}
+
+var poolTmallTxcsFinanceVerifyStatementBillAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallTxcsFinanceVerifyStatementBillRequest()
+	},
+}
+
+// GetTmallTxcsFinanceVerifyStatementBillRequest 从 sync.Pool 获取 TmallTxcsFinanceVerifyStatementBillAPIRequest
+func GetTmallTxcsFinanceVerifyStatementBillAPIRequest() *TmallTxcsFinanceVerifyStatementBillAPIRequest {
+	return poolTmallTxcsFinanceVerifyStatementBillAPIRequest.Get().(*TmallTxcsFinanceVerifyStatementBillAPIRequest)
+}
+
+// ReleaseTmallTxcsFinanceVerifyStatementBillAPIRequest 将 TmallTxcsFinanceVerifyStatementBillAPIRequest 放入 sync.Pool
+func ReleaseTmallTxcsFinanceVerifyStatementBillAPIRequest(v *TmallTxcsFinanceVerifyStatementBillAPIRequest) {
+	v.Reset()
+	poolTmallTxcsFinanceVerifyStatementBillAPIRequest.Put(v)
 }

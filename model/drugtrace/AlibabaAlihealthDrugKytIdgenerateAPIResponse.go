@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAlihealthDrugKytIdgenerateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugKytIdgenerateAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugKytIdgenerateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthDrugKytIdgenerateAPIResponseModel).Reset()
 }
 
 // AlibabaAlihealthDrugKytIdgenerateAPIResponseModel is 终端(医疗机构|零售药店)ID生成接口 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAlihealthDrugKytIdgenerateAPIResponseModel struct {
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// 返回的结果
 	ResponseSuccess bool `json:"response_success,omitempty" xml:"response_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugKytIdgenerateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Model = ""
+	m.MsgCode = ""
+	m.MsgInfo = ""
+	m.ResponseSuccess = false
+}
+
+var poolAlibabaAlihealthDrugKytIdgenerateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugKytIdgenerateAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthDrugKytIdgenerateAPIResponse 从 sync.Pool 获取 AlibabaAlihealthDrugKytIdgenerateAPIResponse
+func GetAlibabaAlihealthDrugKytIdgenerateAPIResponse() *AlibabaAlihealthDrugKytIdgenerateAPIResponse {
+	return poolAlibabaAlihealthDrugKytIdgenerateAPIResponse.Get().(*AlibabaAlihealthDrugKytIdgenerateAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthDrugKytIdgenerateAPIResponse 将 AlibabaAlihealthDrugKytIdgenerateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytIdgenerateAPIResponse(v *AlibabaAlihealthDrugKytIdgenerateAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytIdgenerateAPIResponse.Put(v)
 }

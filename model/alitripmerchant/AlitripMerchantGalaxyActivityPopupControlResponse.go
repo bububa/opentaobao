@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // AlitripMerchantGalaxyActivityPopupControlResponse 结构体
 type AlitripMerchantGalaxyActivityPopupControlResponse struct {
 	// 错误码
@@ -10,4 +14,24 @@ type AlitripMerchantGalaxyActivityPopupControlResponse struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 是否执行成功
 	Content bool `json:"content,omitempty" xml:"content,omitempty"`
+}
+
+var poolAlitripMerchantGalaxyActivityPopupControlResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyActivityPopupControlResponse)
+	},
+}
+
+// GetAlitripMerchantGalaxyActivityPopupControlResponse() 从对象池中获取AlitripMerchantGalaxyActivityPopupControlResponse
+func GetAlitripMerchantGalaxyActivityPopupControlResponse() *AlitripMerchantGalaxyActivityPopupControlResponse {
+	return poolAlitripMerchantGalaxyActivityPopupControlResponse.Get().(*AlitripMerchantGalaxyActivityPopupControlResponse)
+}
+
+// ReleaseAlitripMerchantGalaxyActivityPopupControlResponse 释放AlitripMerchantGalaxyActivityPopupControlResponse
+func ReleaseAlitripMerchantGalaxyActivityPopupControlResponse(v *AlitripMerchantGalaxyActivityPopupControlResponse) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Success = false
+	v.Content = false
+	poolAlitripMerchantGalaxyActivityPopupControlResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package legalsuit
 
+import (
+	"sync"
+)
+
 // QueryParam 结构体
 type QueryParam struct {
 	// 滑动标识（up:上滑  down：下滑）
@@ -16,4 +20,27 @@ type QueryParam struct {
 	SceneId int64 `json:"scene_id,omitempty" xml:"scene_id,omitempty"`
 	// 口径id
 	StandpointId int64 `json:"standpoint_id,omitempty" xml:"standpoint_id,omitempty"`
+}
+
+var poolQueryParam = sync.Pool{
+	New: func() any {
+		return new(QueryParam)
+	},
+}
+
+// GetQueryParam() 从对象池中获取QueryParam
+func GetQueryParam() *QueryParam {
+	return poolQueryParam.Get().(*QueryParam)
+}
+
+// ReleaseQueryParam 释放QueryParam
+func ReleaseQueryParam(v *QueryParam) {
+	v.RollFlag = ""
+	v.BusiId = ""
+	v.Keyword = ""
+	v.OperateWorkNo = ""
+	v.InputSystemCode = ""
+	v.SceneId = 0
+	v.StandpointId = 0
+	poolQueryParam.Put(v)
 }

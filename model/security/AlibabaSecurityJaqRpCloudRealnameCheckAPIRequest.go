@@ -2,6 +2,7 @@ package security
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest struct {
 // NewAlibabaSecurityJaqRpCloudRealnameCheckRequest 初始化AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest对象
 func NewAlibabaSecurityJaqRpCloudRealnameCheckRequest() *AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest {
 	return &AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) Reset() {
+	r._verifyToken = ""
+	r._name = ""
+	r._identityCode = ""
+	r._imageUrls = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) SetImageUrls(_imageUr
 // GetImageUrls ImageUrls Getter
 func (r AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) GetImageUrls() string {
 	return r._imageUrls
+}
+
+var poolAlibabaSecurityJaqRpCloudRealnameCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSecurityJaqRpCloudRealnameCheckRequest()
+	},
+}
+
+// GetAlibabaSecurityJaqRpCloudRealnameCheckRequest 从 sync.Pool 获取 AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest
+func GetAlibabaSecurityJaqRpCloudRealnameCheckAPIRequest() *AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest {
+	return poolAlibabaSecurityJaqRpCloudRealnameCheckAPIRequest.Get().(*AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest)
+}
+
+// ReleaseAlibabaSecurityJaqRpCloudRealnameCheckAPIRequest 将 AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSecurityJaqRpCloudRealnameCheckAPIRequest(v *AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) {
+	v.Reset()
+	poolAlibabaSecurityJaqRpCloudRealnameCheckAPIRequest.Put(v)
 }

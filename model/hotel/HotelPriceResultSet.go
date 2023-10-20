@@ -1,9 +1,13 @@
 package hotel
 
+import (
+	"sync"
+)
+
 // HotelPriceResultSet 结构体
 type HotelPriceResultSet struct {
 	// 每个标准酒店的库价集合
-	Results []ShotelPrice `json:"results,omitempty" xml:"results>shotel_price,omitempty"`
+	Results []SHotelPrice `json:"results,omitempty" xml:"results>s_hotel_price,omitempty"`
 	// 当前用户的会员信息
 	BindMemberInfos []SellerSupplierPartnerMemberInfoVo `json:"bind_member_infos,omitempty" xml:"bind_member_infos>seller_supplier_partner_member_info_vo,omitempty"`
 	// 渠道id，0--pc,1--无线
@@ -28,4 +32,33 @@ type HotelPriceResultSet struct {
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
 	// 服务调用是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolHotelPriceResultSet = sync.Pool{
+	New: func() any {
+		return new(HotelPriceResultSet)
+	},
+}
+
+// GetHotelPriceResultSet() 从对象池中获取HotelPriceResultSet
+func GetHotelPriceResultSet() *HotelPriceResultSet {
+	return poolHotelPriceResultSet.Get().(*HotelPriceResultSet)
+}
+
+// ReleaseHotelPriceResultSet 释放HotelPriceResultSet
+func ReleaseHotelPriceResultSet(v *HotelPriceResultSet) {
+	v.Results = v.Results[:0]
+	v.BindMemberInfos = v.BindMemberInfos[:0]
+	v.ChannelId = ""
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.H5ListUrl = ""
+	v.HotelListUrl = ""
+	v.RequestId = ""
+	v.TotalResults = 0
+	v.Version = 0
+	v.Error = false
+	v.HasNext = false
+	v.Success = false
+	poolHotelPriceResultSet.Put(v)
 }

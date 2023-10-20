@@ -1,5 +1,9 @@
 package xiamicontent
 
+import (
+	"sync"
+)
+
 // TagCatLink 结构体
 type TagCatLink struct {
 	// 直属类目code
@@ -16,4 +20,27 @@ type TagCatLink struct {
 	Pid int64 `json:"pid,omitempty" xml:"pid,omitempty"`
 	// 直属类目id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolTagCatLink = sync.Pool{
+	New: func() any {
+		return new(TagCatLink)
+	},
+}
+
+// GetTagCatLink() 从对象池中获取TagCatLink
+func GetTagCatLink() *TagCatLink {
+	return poolTagCatLink.Get().(*TagCatLink)
+}
+
+// ReleaseTagCatLink 释放TagCatLink
+func ReleaseTagCatLink(v *TagCatLink) {
+	v.Code = ""
+	v.NameCn = ""
+	v.Description = ""
+	v.NameEn = ""
+	v.Parent = nil
+	v.Pid = 0
+	v.Id = 0
+	poolTagCatLink.Put(v)
 }

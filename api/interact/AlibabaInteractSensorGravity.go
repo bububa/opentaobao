@@ -9,11 +9,6 @@ import (
 // alibaba.interact.sensor.gravity
 //
 // native获取重力感应
-func AlibabaInteractSensorGravity(clt *core.SDKClient, req *interact.AlibabaInteractSensorGravityAPIRequest, session string) (*interact.AlibabaInteractSensorGravityAPIResponse, error) {
-	var resp interact.AlibabaInteractSensorGravityAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaInteractSensorGravity(clt *core.SDKClient, req *interact.AlibabaInteractSensorGravityAPIRequest, resp *interact.AlibabaInteractSensorGravityAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

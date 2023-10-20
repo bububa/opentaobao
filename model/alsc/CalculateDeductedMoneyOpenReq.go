@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // CalculateDeductedMoneyOpenReq 结构体
 type CalculateDeductedMoneyOpenReq struct {
 	// 品牌id
@@ -14,4 +18,26 @@ type CalculateDeductedMoneyOpenReq struct {
 	OutBrandId string `json:"out_brand_id,omitempty" xml:"out_brand_id,omitempty"`
 	// 抵现积分数量
 	ConsumePoint int64 `json:"consume_point,omitempty" xml:"consume_point,omitempty"`
+}
+
+var poolCalculateDeductedMoneyOpenReq = sync.Pool{
+	New: func() any {
+		return new(CalculateDeductedMoneyOpenReq)
+	},
+}
+
+// GetCalculateDeductedMoneyOpenReq() 从对象池中获取CalculateDeductedMoneyOpenReq
+func GetCalculateDeductedMoneyOpenReq() *CalculateDeductedMoneyOpenReq {
+	return poolCalculateDeductedMoneyOpenReq.Get().(*CalculateDeductedMoneyOpenReq)
+}
+
+// ReleaseCalculateDeductedMoneyOpenReq 释放CalculateDeductedMoneyOpenReq
+func ReleaseCalculateDeductedMoneyOpenReq(v *CalculateDeductedMoneyOpenReq) {
+	v.BrandId = ""
+	v.CustomerId = ""
+	v.ShopId = ""
+	v.OutShopId = ""
+	v.OutBrandId = ""
+	v.ConsumePoint = 0
+	poolCalculateDeductedMoneyOpenReq.Put(v)
 }

@@ -2,6 +2,7 @@ package lstpos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLstPosOpenAccountCheckissettledAPIRequest struct {
 // NewAlibabaLstPosOpenAccountCheckissettledRequest 初始化AlibabaLstPosOpenAccountCheckissettledAPIRequest对象
 func NewAlibabaLstPosOpenAccountCheckissettledRequest() *AlibabaLstPosOpenAccountCheckissettledAPIRequest {
 	return &AlibabaLstPosOpenAccountCheckissettledAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstPosOpenAccountCheckissettledAPIRequest) Reset() {
+	r._userId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLstPosOpenAccountCheckissettledAPIRequest) SetUserId(_userId int
 // GetUserId UserId Getter
 func (r AlibabaLstPosOpenAccountCheckissettledAPIRequest) GetUserId() int64 {
 	return r._userId
+}
+
+var poolAlibabaLstPosOpenAccountCheckissettledAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstPosOpenAccountCheckissettledRequest()
+	},
+}
+
+// GetAlibabaLstPosOpenAccountCheckissettledRequest 从 sync.Pool 获取 AlibabaLstPosOpenAccountCheckissettledAPIRequest
+func GetAlibabaLstPosOpenAccountCheckissettledAPIRequest() *AlibabaLstPosOpenAccountCheckissettledAPIRequest {
+	return poolAlibabaLstPosOpenAccountCheckissettledAPIRequest.Get().(*AlibabaLstPosOpenAccountCheckissettledAPIRequest)
+}
+
+// ReleaseAlibabaLstPosOpenAccountCheckissettledAPIRequest 将 AlibabaLstPosOpenAccountCheckissettledAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstPosOpenAccountCheckissettledAPIRequest(v *AlibabaLstPosOpenAccountCheckissettledAPIRequest) {
+	v.Reset()
+	poolAlibabaLstPosOpenAccountCheckissettledAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alisports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest struct {
 // NewAlibabaAlisportsPassportAccountGetaccountinfoRequest 初始化AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest对象
 func NewAlibabaAlisportsPassportAccountGetaccountinfoRequest() *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest {
 	return &AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) Reset() {
+	r._alispTime = ""
+	r._alispAppKey = ""
+	r._alispSign = ""
+	r._value = ""
+	r._extInfoType = ""
+	r._needDetail = 0
+	r._type = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetType(_type 
 // GetType Type Getter
 func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetType() int64 {
 	return r._type
+}
+
+var poolAlibabaAlisportsPassportAccountGetaccountinfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlisportsPassportAccountGetaccountinfoRequest()
+	},
+}
+
+// GetAlibabaAlisportsPassportAccountGetaccountinfoRequest 从 sync.Pool 获取 AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest
+func GetAlibabaAlisportsPassportAccountGetaccountinfoAPIRequest() *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest {
+	return poolAlibabaAlisportsPassportAccountGetaccountinfoAPIRequest.Get().(*AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest)
+}
+
+// ReleaseAlibabaAlisportsPassportAccountGetaccountinfoAPIRequest 将 AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlisportsPassportAccountGetaccountinfoAPIRequest(v *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) {
+	v.Reset()
+	poolAlibabaAlisportsPassportAccountGetaccountinfoAPIRequest.Put(v)
 }

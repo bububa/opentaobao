@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkMarketingVersionCommitAPIRequest struct {
 // NewAlibabaWdkMarketingVersionCommitRequest 初始化AlibabaWdkMarketingVersionCommitAPIRequest对象
 func NewAlibabaWdkMarketingVersionCommitRequest() *AlibabaWdkMarketingVersionCommitAPIRequest {
 	return &AlibabaWdkMarketingVersionCommitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkMarketingVersionCommitAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkMarketingVersionCommitAPIRequest) SetParam(_param *SeasonVers
 // GetParam Param Getter
 func (r AlibabaWdkMarketingVersionCommitAPIRequest) GetParam() *SeasonVersionCommitParam {
 	return r._param
+}
+
+var poolAlibabaWdkMarketingVersionCommitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkMarketingVersionCommitRequest()
+	},
+}
+
+// GetAlibabaWdkMarketingVersionCommitRequest 从 sync.Pool 获取 AlibabaWdkMarketingVersionCommitAPIRequest
+func GetAlibabaWdkMarketingVersionCommitAPIRequest() *AlibabaWdkMarketingVersionCommitAPIRequest {
+	return poolAlibabaWdkMarketingVersionCommitAPIRequest.Get().(*AlibabaWdkMarketingVersionCommitAPIRequest)
+}
+
+// ReleaseAlibabaWdkMarketingVersionCommitAPIRequest 将 AlibabaWdkMarketingVersionCommitAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkMarketingVersionCommitAPIRequest(v *AlibabaWdkMarketingVersionCommitAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkMarketingVersionCommitAPIRequest.Put(v)
 }

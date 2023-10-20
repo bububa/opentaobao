@@ -2,6 +2,7 @@ package westcrm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWestcrmGradeGetAPIRequest struct {
 // NewAlibabaWestcrmGradeGetRequest 初始化AlibabaWestcrmGradeGetAPIRequest对象
 func NewAlibabaWestcrmGradeGetRequest() *AlibabaWestcrmGradeGetAPIRequest {
 	return &AlibabaWestcrmGradeGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWestcrmGradeGetAPIRequest) Reset() {
+	r._campusId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWestcrmGradeGetAPIRequest) SetCampusId(_campusId int64) error {
 // GetCampusId CampusId Getter
 func (r AlibabaWestcrmGradeGetAPIRequest) GetCampusId() int64 {
 	return r._campusId
+}
+
+var poolAlibabaWestcrmGradeGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWestcrmGradeGetRequest()
+	},
+}
+
+// GetAlibabaWestcrmGradeGetRequest 从 sync.Pool 获取 AlibabaWestcrmGradeGetAPIRequest
+func GetAlibabaWestcrmGradeGetAPIRequest() *AlibabaWestcrmGradeGetAPIRequest {
+	return poolAlibabaWestcrmGradeGetAPIRequest.Get().(*AlibabaWestcrmGradeGetAPIRequest)
+}
+
+// ReleaseAlibabaWestcrmGradeGetAPIRequest 将 AlibabaWestcrmGradeGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWestcrmGradeGetAPIRequest(v *AlibabaWestcrmGradeGetAPIRequest) {
+	v.Reset()
+	poolAlibabaWestcrmGradeGetAPIRequest.Put(v)
 }

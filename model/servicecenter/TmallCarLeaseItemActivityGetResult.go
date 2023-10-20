@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // TmallCarLeaseItemActivityGetResult 结构体
 type TmallCarLeaseItemActivityGetResult struct {
 	// 动态返回扩展参数：&lt;br/&gt;extInfo:扩展参数字符串
@@ -16,4 +20,27 @@ type TmallCarLeaseItemActivityGetResult struct {
 	CostTime int64 `json:"cost_time,omitempty" xml:"cost_time,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTmallCarLeaseItemActivityGetResult = sync.Pool{
+	New: func() any {
+		return new(TmallCarLeaseItemActivityGetResult)
+	},
+}
+
+// GetTmallCarLeaseItemActivityGetResult() 从对象池中获取TmallCarLeaseItemActivityGetResult
+func GetTmallCarLeaseItemActivityGetResult() *TmallCarLeaseItemActivityGetResult {
+	return poolTmallCarLeaseItemActivityGetResult.Get().(*TmallCarLeaseItemActivityGetResult)
+}
+
+// ReleaseTmallCarLeaseItemActivityGetResult 释放TmallCarLeaseItemActivityGetResult
+func ReleaseTmallCarLeaseItemActivityGetResult(v *TmallCarLeaseItemActivityGetResult) {
+	v.Piggyback = ""
+	v.MsgCode = ""
+	v.MsgInfo = ""
+	v.Object = ""
+	v.GmtCurrentTime = 0
+	v.CostTime = 0
+	v.Success = false
+	poolTmallCarLeaseItemActivityGetResult.Put(v)
 }

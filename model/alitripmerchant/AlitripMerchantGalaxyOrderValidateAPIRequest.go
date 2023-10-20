@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlitripMerchantGalaxyOrderValidateAPIRequest struct {
 // NewAlitripMerchantGalaxyOrderValidateRequest 初始化AlitripMerchantGalaxyOrderValidateAPIRequest对象
 func NewAlitripMerchantGalaxyOrderValidateRequest() *AlitripMerchantGalaxyOrderValidateAPIRequest {
 	return &AlitripMerchantGalaxyOrderValidateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyOrderValidateAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._token = ""
+	r._validateOrderParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlitripMerchantGalaxyOrderValidateAPIRequest) SetValidateOrderParam(_va
 // GetValidateOrderParam ValidateOrderParam Getter
 func (r AlitripMerchantGalaxyOrderValidateAPIRequest) GetValidateOrderParam() *ValidateOrderParam {
 	return r._validateOrderParam
+}
+
+var poolAlitripMerchantGalaxyOrderValidateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyOrderValidateRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyOrderValidateRequest 从 sync.Pool 获取 AlitripMerchantGalaxyOrderValidateAPIRequest
+func GetAlitripMerchantGalaxyOrderValidateAPIRequest() *AlitripMerchantGalaxyOrderValidateAPIRequest {
+	return poolAlitripMerchantGalaxyOrderValidateAPIRequest.Get().(*AlitripMerchantGalaxyOrderValidateAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyOrderValidateAPIRequest 将 AlitripMerchantGalaxyOrderValidateAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyOrderValidateAPIRequest(v *AlitripMerchantGalaxyOrderValidateAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyOrderValidateAPIRequest.Put(v)
 }

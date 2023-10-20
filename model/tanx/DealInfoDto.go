@@ -1,5 +1,9 @@
 package tanx
 
+import (
+	"sync"
+)
+
 // DealInfoDto 结构体
 type DealInfoDto struct {
 	// 11
@@ -26,4 +30,32 @@ type DealInfoDto struct {
 	DealType int64 `json:"deal_type,omitempty" xml:"deal_type,omitempty"`
 	// 100
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolDealInfoDto = sync.Pool{
+	New: func() any {
+		return new(DealInfoDto)
+	},
+}
+
+// GetDealInfoDto() 从对象池中获取DealInfoDto
+func GetDealInfoDto() *DealInfoDto {
+	return poolDealInfoDto.Get().(*DealInfoDto)
+}
+
+// ReleaseDealInfoDto 释放DealInfoDto
+func ReleaseDealInfoDto(v *DealInfoDto) {
+	v.Addresses = v.Addresses[:0]
+	v.SellerSiteNames = v.SellerSiteNames[:0]
+	v.DspIds = v.DspIds[:0]
+	v.AdvertiserIds = v.AdvertiserIds[:0]
+	v.IntervalIds = v.IntervalIds[:0]
+	v.Pids = v.Pids[:0]
+	v.BeginTime = ""
+	v.EndTime = ""
+	v.DealId = 0
+	v.Price = 0
+	v.DealType = 0
+	v.Status = 0
+	poolDealInfoDto.Put(v)
 }

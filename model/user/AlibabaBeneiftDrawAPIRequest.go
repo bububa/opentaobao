@@ -2,6 +2,7 @@ package user
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaBeneiftDrawAPIRequest struct {
 // NewAlibabaBeneiftDrawRequest 初始化AlibabaBeneiftDrawAPIRequest对象
 func NewAlibabaBeneiftDrawRequest() *AlibabaBeneiftDrawAPIRequest {
 	return &AlibabaBeneiftDrawAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaBeneiftDrawAPIRequest) Reset() {
+	r._ename = ""
+	r._appName = ""
+	r._ip = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaBeneiftDrawAPIRequest) SetIp(_ip string) error {
 // GetIp Ip Getter
 func (r AlibabaBeneiftDrawAPIRequest) GetIp() string {
 	return r._ip
+}
+
+var poolAlibabaBeneiftDrawAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaBeneiftDrawRequest()
+	},
+}
+
+// GetAlibabaBeneiftDrawRequest 从 sync.Pool 获取 AlibabaBeneiftDrawAPIRequest
+func GetAlibabaBeneiftDrawAPIRequest() *AlibabaBeneiftDrawAPIRequest {
+	return poolAlibabaBeneiftDrawAPIRequest.Get().(*AlibabaBeneiftDrawAPIRequest)
+}
+
+// ReleaseAlibabaBeneiftDrawAPIRequest 将 AlibabaBeneiftDrawAPIRequest 放入 sync.Pool
+func ReleaseAlibabaBeneiftDrawAPIRequest(v *AlibabaBeneiftDrawAPIRequest) {
+	v.Reset()
+	poolAlibabaBeneiftDrawAPIRequest.Put(v)
 }

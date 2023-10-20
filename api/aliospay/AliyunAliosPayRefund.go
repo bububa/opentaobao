@@ -9,11 +9,6 @@ import (
 // aliyun.alios.pay.refund
 //
 // 商户用来发起退款的接口
-func AliyunAliosPayRefund(clt *core.SDKClient, req *aliospay.AliyunAliosPayRefundAPIRequest, session string) (*aliospay.AliyunAliosPayRefundAPIResponse, error) {
-	var resp aliospay.AliyunAliosPayRefundAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliyunAliosPayRefund(clt *core.SDKClient, req *aliospay.AliyunAliosPayRefundAPIRequest, resp *aliospay.AliyunAliosPayRefundAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

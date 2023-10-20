@@ -2,6 +2,7 @@ package scs
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoOnebpDkxReportReportCampaignDaylistAPIResponse struct {
 	TaobaoOnebpDkxReportReportCampaignDaylistAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoOnebpDkxReportReportCampaignDaylistAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOnebpDkxReportReportCampaignDaylistAPIResponseModel).Reset()
+}
+
 // TaobaoOnebpDkxReportReportCampaignDaylistAPIResponseModel is 获取计划分日报表 成功返回结果
 type TaobaoOnebpDkxReportReportCampaignDaylistAPIResponseModel struct {
 	XMLName xml.Name `xml:"onebp_dkx_report_report_campaign_daylist_response"`
@@ -22,4 +29,27 @@ type TaobaoOnebpDkxReportReportCampaignDaylistAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果体
 	Result *TaobaoOnebpDkxReportReportCampaignDaylistResultDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOnebpDkxReportReportCampaignDaylistAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoOnebpDkxReportReportCampaignDaylistAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOnebpDkxReportReportCampaignDaylistAPIResponse)
+	},
+}
+
+// GetTaobaoOnebpDkxReportReportCampaignDaylistAPIResponse 从 sync.Pool 获取 TaobaoOnebpDkxReportReportCampaignDaylistAPIResponse
+func GetTaobaoOnebpDkxReportReportCampaignDaylistAPIResponse() *TaobaoOnebpDkxReportReportCampaignDaylistAPIResponse {
+	return poolTaobaoOnebpDkxReportReportCampaignDaylistAPIResponse.Get().(*TaobaoOnebpDkxReportReportCampaignDaylistAPIResponse)
+}
+
+// ReleaseTaobaoOnebpDkxReportReportCampaignDaylistAPIResponse 将 TaobaoOnebpDkxReportReportCampaignDaylistAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOnebpDkxReportReportCampaignDaylistAPIResponse(v *TaobaoOnebpDkxReportReportCampaignDaylistAPIResponse) {
+	v.Reset()
+	poolTaobaoOnebpDkxReportReportCampaignDaylistAPIResponse.Put(v)
 }

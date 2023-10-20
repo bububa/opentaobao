@@ -1,5 +1,9 @@
 package gameact
 
+import (
+	"sync"
+)
+
 // ActivityVo 结构体
 type ActivityVo struct {
 	// 奖项列表
@@ -26,4 +30,32 @@ type ActivityVo struct {
 	LuckyChannel int64 `json:"lucky_channel,omitempty" xml:"lucky_channel,omitempty"`
 	// 抽奖次数（免费）
 	AccessAmount int64 `json:"access_amount,omitempty" xml:"access_amount,omitempty"`
+}
+
+var poolActivityVo = sync.Pool{
+	New: func() any {
+		return new(ActivityVo)
+	},
+}
+
+// GetActivityVo() 从对象池中获取ActivityVo
+func GetActivityVo() *ActivityVo {
+	return poolActivityVo.Get().(*ActivityVo)
+}
+
+// ReleaseActivityVo 释放ActivityVo
+func ReleaseActivityVo(v *ActivityVo) {
+	v.Awards = v.Awards[:0]
+	v.ActivityUrl = ""
+	v.Name = ""
+	v.Description = ""
+	v.EventKey = ""
+	v.ActivityId = 0
+	v.StartTime = 0
+	v.EndTime = 0
+	v.ConsumeAmount = 0
+	v.LuckyType = 0
+	v.LuckyChannel = 0
+	v.AccessAmount = 0
+	poolActivityVo.Put(v)
 }

@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaCampusAclCancelpermiitemfromroleAPIRequest struct {
 // NewAlibabaCampusAclCancelpermiitemfromroleRequest 初始化AlibabaCampusAclCancelpermiitemfromroleAPIRequest对象
 func NewAlibabaCampusAclCancelpermiitemfromroleRequest() *AlibabaCampusAclCancelpermiitemfromroleAPIRequest {
 	return &AlibabaCampusAclCancelpermiitemfromroleAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusAclCancelpermiitemfromroleAPIRequest) Reset() {
+	r._param2 = r._param2[:0]
+	r._systemId = ""
+	r._userId = ""
+	r._companyId = 0
+	r._campusId = 0
+	r._param1 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaCampusAclCancelpermiitemfromroleAPIRequest) SetParam1(_param1 *R
 // GetParam1 Param1 Getter
 func (r AlibabaCampusAclCancelpermiitemfromroleAPIRequest) GetParam1() *RoleReq {
 	return r._param1
+}
+
+var poolAlibabaCampusAclCancelpermiitemfromroleAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusAclCancelpermiitemfromroleRequest()
+	},
+}
+
+// GetAlibabaCampusAclCancelpermiitemfromroleRequest 从 sync.Pool 获取 AlibabaCampusAclCancelpermiitemfromroleAPIRequest
+func GetAlibabaCampusAclCancelpermiitemfromroleAPIRequest() *AlibabaCampusAclCancelpermiitemfromroleAPIRequest {
+	return poolAlibabaCampusAclCancelpermiitemfromroleAPIRequest.Get().(*AlibabaCampusAclCancelpermiitemfromroleAPIRequest)
+}
+
+// ReleaseAlibabaCampusAclCancelpermiitemfromroleAPIRequest 将 AlibabaCampusAclCancelpermiitemfromroleAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusAclCancelpermiitemfromroleAPIRequest(v *AlibabaCampusAclCancelpermiitemfromroleAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusAclCancelpermiitemfromroleAPIRequest.Put(v)
 }

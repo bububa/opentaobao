@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // StockQueryResponse 结构体
 type StockQueryResponse struct {
 	// 商品的库存信息列表
@@ -12,4 +16,25 @@ type StockQueryResponse struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 总数
 	TotalCount int64 `json:"totalCount,omitempty" xml:"totalCount,omitempty"`
+}
+
+var poolStockQueryResponse = sync.Pool{
+	New: func() any {
+		return new(StockQueryResponse)
+	},
+}
+
+// GetStockQueryResponse() 从对象池中获取StockQueryResponse
+func GetStockQueryResponse() *StockQueryResponse {
+	return poolStockQueryResponse.Get().(*StockQueryResponse)
+}
+
+// ReleaseStockQueryResponse 释放StockQueryResponse
+func ReleaseStockQueryResponse(v *StockQueryResponse) {
+	v.Items = v.Items[:0]
+	v.Flag = ""
+	v.Code = ""
+	v.Message = ""
+	v.TotalCount = 0
+	poolStockQueryResponse.Put(v)
 }

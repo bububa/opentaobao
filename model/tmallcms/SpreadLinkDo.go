@@ -1,5 +1,9 @@
 package tmallcms
 
+import (
+	"sync"
+)
+
 // SpreadLinkDo 结构体
 type SpreadLinkDo struct {
 	// 修改时间
@@ -26,4 +30,32 @@ type SpreadLinkDo struct {
 	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
 	// 类型
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolSpreadLinkDo = sync.Pool{
+	New: func() any {
+		return new(SpreadLinkDo)
+	},
+}
+
+// GetSpreadLinkDo() 从对象池中获取SpreadLinkDo
+func GetSpreadLinkDo() *SpreadLinkDo {
+	return poolSpreadLinkDo.Get().(*SpreadLinkDo)
+}
+
+// ReleaseSpreadLinkDo 释放SpreadLinkDo
+func ReleaseSpreadLinkDo(v *SpreadLinkDo) {
+	v.GmtModified = ""
+	v.Adword = ""
+	v.Adinfo = ""
+	v.GmtCreate = ""
+	v.Adwxurl = ""
+	v.Qrcode = ""
+	v.Adurl = ""
+	v.Url = ""
+	v.Id = 0
+	v.Status = 0
+	v.SellerId = 0
+	v.Type = 0
+	poolSpreadLinkDo.Put(v)
 }

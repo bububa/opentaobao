@@ -2,6 +2,7 @@ package jstinteractive
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoJstInteractivePointIncreaseAPIRequest struct {
 // NewTaobaoJstInteractivePointIncreaseRequest 初始化TaobaoJstInteractivePointIncreaseAPIRequest对象
 func NewTaobaoJstInteractivePointIncreaseRequest() *TaobaoJstInteractivePointIncreaseAPIRequest {
 	return &TaobaoJstInteractivePointIncreaseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJstInteractivePointIncreaseAPIRequest) Reset() {
+	r._operateCode = ""
+	r._amount = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoJstInteractivePointIncreaseAPIRequest) SetAmount(_amount int64) e
 // GetAmount Amount Getter
 func (r TaobaoJstInteractivePointIncreaseAPIRequest) GetAmount() int64 {
 	return r._amount
+}
+
+var poolTaobaoJstInteractivePointIncreaseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJstInteractivePointIncreaseRequest()
+	},
+}
+
+// GetTaobaoJstInteractivePointIncreaseRequest 从 sync.Pool 获取 TaobaoJstInteractivePointIncreaseAPIRequest
+func GetTaobaoJstInteractivePointIncreaseAPIRequest() *TaobaoJstInteractivePointIncreaseAPIRequest {
+	return poolTaobaoJstInteractivePointIncreaseAPIRequest.Get().(*TaobaoJstInteractivePointIncreaseAPIRequest)
+}
+
+// ReleaseTaobaoJstInteractivePointIncreaseAPIRequest 将 TaobaoJstInteractivePointIncreaseAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJstInteractivePointIncreaseAPIRequest(v *TaobaoJstInteractivePointIncreaseAPIRequest) {
+	v.Reset()
+	poolTaobaoJstInteractivePointIncreaseAPIRequest.Put(v)
 }

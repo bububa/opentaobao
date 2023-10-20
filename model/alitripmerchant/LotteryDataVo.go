@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // LotteryDataVo 结构体
 type LotteryDataVo struct {
 	// 用户微信Open_ID
@@ -14,4 +18,26 @@ type LotteryDataVo struct {
 	OperateTime string `json:"operate_time,omitempty" xml:"operate_time,omitempty"`
 	// 用户注册信息(注册渠道)
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
+}
+
+var poolLotteryDataVo = sync.Pool{
+	New: func() any {
+		return new(LotteryDataVo)
+	},
+}
+
+// GetLotteryDataVo() 从对象池中获取LotteryDataVo
+func GetLotteryDataVo() *LotteryDataVo {
+	return poolLotteryDataVo.Get().(*LotteryDataVo)
+}
+
+// ReleaseLotteryDataVo 释放LotteryDataVo
+func ReleaseLotteryDataVo(v *LotteryDataVo) {
+	v.OpenId = ""
+	v.UnionId = ""
+	v.PmId = ""
+	v.CardNumber = ""
+	v.OperateTime = ""
+	v.Remark = ""
+	poolLotteryDataVo.Put(v)
 }

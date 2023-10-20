@@ -9,11 +9,6 @@ import (
 // alibaba.seaking.diagnosistitle
 //
 // 标题诊断
-func AlibabaSeakingDiagnosistitle(clt *core.SDKClient, req *seaking.AlibabaSeakingDiagnosistitleAPIRequest, session string) (*seaking.AlibabaSeakingDiagnosistitleAPIResponse, error) {
-	var resp seaking.AlibabaSeakingDiagnosistitleAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaSeakingDiagnosistitle(clt *core.SDKClient, req *seaking.AlibabaSeakingDiagnosistitleAPIRequest, resp *seaking.AlibabaSeakingDiagnosistitleAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

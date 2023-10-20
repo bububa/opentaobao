@@ -9,11 +9,6 @@ import (
 // alibaba.campus.acl.new.checkuserpermission
 //
 // 校验用户是否有权限
-func AlibabaCampusAclNewCheckuserpermission(clt *core.SDKClient, req *campus.AlibabaCampusAclNewCheckuserpermissionAPIRequest, session string) (*campus.AlibabaCampusAclNewCheckuserpermissionAPIResponse, error) {
-	var resp campus.AlibabaCampusAclNewCheckuserpermissionAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusAclNewCheckuserpermission(clt *core.SDKClient, req *campus.AlibabaCampusAclNewCheckuserpermissionAPIRequest, resp *campus.AlibabaCampusAclNewCheckuserpermissionAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

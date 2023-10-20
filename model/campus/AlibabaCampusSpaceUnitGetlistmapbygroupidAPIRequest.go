@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,15 @@ type AlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest struct {
 // NewAlibabaCampusSpaceUnitGetlistmapbygroupidRequest 初始化AlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest对象
 func NewAlibabaCampusSpaceUnitGetlistmapbygroupidRequest() *AlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest {
 	return &AlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest) Reset() {
+	r._param0 = nil
+	r._param1 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -68,4 +76,21 @@ func (r *AlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest) SetParam1(_param1 
 // GetParam1 Param1 Getter
 func (r AlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest) GetParam1() *SpaceUnitQuery {
 	return r._param1
+}
+
+var poolAlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusSpaceUnitGetlistmapbygroupidRequest()
+	},
+}
+
+// GetAlibabaCampusSpaceUnitGetlistmapbygroupidRequest 从 sync.Pool 获取 AlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest
+func GetAlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest() *AlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest {
+	return poolAlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest.Get().(*AlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest)
+}
+
+// ReleaseAlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest 将 AlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest(v *AlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusSpaceUnitGetlistmapbygroupidAPIRequest.Put(v)
 }

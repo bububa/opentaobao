@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTbkScOptimusMaterialAPIResponse struct {
 	TaobaoTbkScOptimusMaterialAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTbkScOptimusMaterialAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTbkScOptimusMaterialAPIResponseModel).Reset()
+}
+
 // TaobaoTbkScOptimusMaterialAPIResponseModel is 淘宝客-服务商-物料精选 成功返回结果
 type TaobaoTbkScOptimusMaterialAPIResponseModel struct {
 	XMLName xml.Name `xml:"tbk_sc_optimus_material_response"`
@@ -24,4 +31,28 @@ type TaobaoTbkScOptimusMaterialAPIResponseModel struct {
 	ResultList []TaobaoTbkScOptimusMaterialMapData `json:"result_list,omitempty" xml:"result_list>taobao_tbk_sc_optimus_material_map_data,omitempty"`
 	// 推荐信息-是否抄底
 	IsDefault string `json:"is_default,omitempty" xml:"is_default,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTbkScOptimusMaterialAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultList = m.ResultList[:0]
+	m.IsDefault = ""
+}
+
+var poolTaobaoTbkScOptimusMaterialAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkScOptimusMaterialAPIResponse)
+	},
+}
+
+// GetTaobaoTbkScOptimusMaterialAPIResponse 从 sync.Pool 获取 TaobaoTbkScOptimusMaterialAPIResponse
+func GetTaobaoTbkScOptimusMaterialAPIResponse() *TaobaoTbkScOptimusMaterialAPIResponse {
+	return poolTaobaoTbkScOptimusMaterialAPIResponse.Get().(*TaobaoTbkScOptimusMaterialAPIResponse)
+}
+
+// ReleaseTaobaoTbkScOptimusMaterialAPIResponse 将 TaobaoTbkScOptimusMaterialAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTbkScOptimusMaterialAPIResponse(v *TaobaoTbkScOptimusMaterialAPIResponse) {
+	v.Reset()
+	poolTaobaoTbkScOptimusMaterialAPIResponse.Put(v)
 }

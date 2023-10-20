@@ -1,5 +1,9 @@
 package cloudgame
 
+import (
+	"sync"
+)
+
 // TopRecordCallbackRequest 结构体
 type TopRecordCallbackRequest struct {
 	// 图片oss地址列表
@@ -12,4 +16,25 @@ type TopRecordCallbackRequest struct {
 	Version string `json:"version,omitempty" xml:"version,omitempty"`
 	// 扩展json字段
 	ExtInfo string `json:"ext_info,omitempty" xml:"ext_info,omitempty"`
+}
+
+var poolTopRecordCallbackRequest = sync.Pool{
+	New: func() any {
+		return new(TopRecordCallbackRequest)
+	},
+}
+
+// GetTopRecordCallbackRequest() 从对象池中获取TopRecordCallbackRequest
+func GetTopRecordCallbackRequest() *TopRecordCallbackRequest {
+	return poolTopRecordCallbackRequest.Get().(*TopRecordCallbackRequest)
+}
+
+// ReleaseTopRecordCallbackRequest 释放TopRecordCallbackRequest
+func ReleaseTopRecordCallbackRequest(v *TopRecordCallbackRequest) {
+	v.Images = v.Images[:0]
+	v.Videos = v.Videos[:0]
+	v.MixUserId = ""
+	v.Version = ""
+	v.ExtInfo = ""
+	poolTopRecordCallbackRequest.Put(v)
 }

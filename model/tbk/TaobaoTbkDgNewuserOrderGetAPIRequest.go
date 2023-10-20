@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoTbkDgNewuserOrderGetAPIRequest struct {
 // NewTaobaoTbkDgNewuserOrderGetRequest 初始化TaobaoTbkDgNewuserOrderGetAPIRequest对象
 func NewTaobaoTbkDgNewuserOrderGetRequest() *TaobaoTbkDgNewuserOrderGetAPIRequest {
 	return &TaobaoTbkDgNewuserOrderGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) Reset() {
+	r._startTime = ""
+	r._endTime = ""
+	r._activityId = ""
+	r._pageSize = 0
+	r._pageNo = 0
+	r._adzoneId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) SetAdzoneId(_adzoneId int64) erro
 // GetAdzoneId AdzoneId Getter
 func (r TaobaoTbkDgNewuserOrderGetAPIRequest) GetAdzoneId() int64 {
 	return r._adzoneId
+}
+
+var poolTaobaoTbkDgNewuserOrderGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkDgNewuserOrderGetRequest()
+	},
+}
+
+// GetTaobaoTbkDgNewuserOrderGetRequest 从 sync.Pool 获取 TaobaoTbkDgNewuserOrderGetAPIRequest
+func GetTaobaoTbkDgNewuserOrderGetAPIRequest() *TaobaoTbkDgNewuserOrderGetAPIRequest {
+	return poolTaobaoTbkDgNewuserOrderGetAPIRequest.Get().(*TaobaoTbkDgNewuserOrderGetAPIRequest)
+}
+
+// ReleaseTaobaoTbkDgNewuserOrderGetAPIRequest 将 TaobaoTbkDgNewuserOrderGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkDgNewuserOrderGetAPIRequest(v *TaobaoTbkDgNewuserOrderGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkDgNewuserOrderGetAPIRequest.Put(v)
 }

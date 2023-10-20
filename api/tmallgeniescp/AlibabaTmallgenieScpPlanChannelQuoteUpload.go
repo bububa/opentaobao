@@ -9,11 +9,6 @@ import (
 // alibaba.tmallgenie.scp.plan.channel.quote.upload
 //
 // 同步渠道配额
-func AlibabaTmallgenieScpPlanChannelQuoteUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanChannelQuoteUploadAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponse, error) {
-	var resp tmallgeniescp.AlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTmallgenieScpPlanChannelQuoteUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanChannelQuoteUploadAPIRequest, resp *tmallgeniescp.AlibabaTmallgenieScpPlanChannelQuoteUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQimenItemsSynchronizeAPIRequest struct {
 // NewTaobaoQimenItemsSynchronizeRequest 初始化TaobaoQimenItemsSynchronizeAPIRequest对象
 func NewTaobaoQimenItemsSynchronizeRequest() *TaobaoQimenItemsSynchronizeAPIRequest {
 	return &TaobaoQimenItemsSynchronizeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenItemsSynchronizeAPIRequest) Reset() {
+	r._request = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -50,4 +57,21 @@ func (r *TaobaoQimenItemsSynchronizeAPIRequest) SetRequest(_request *ItemsSynchr
 // GetRequest Request Getter
 func (r TaobaoQimenItemsSynchronizeAPIRequest) GetRequest() *ItemsSynchronizeRequest {
 	return r._request
+}
+
+var poolTaobaoQimenItemsSynchronizeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenItemsSynchronizeRequest()
+	},
+}
+
+// GetTaobaoQimenItemsSynchronizeRequest 从 sync.Pool 获取 TaobaoQimenItemsSynchronizeAPIRequest
+func GetTaobaoQimenItemsSynchronizeAPIRequest() *TaobaoQimenItemsSynchronizeAPIRequest {
+	return poolTaobaoQimenItemsSynchronizeAPIRequest.Get().(*TaobaoQimenItemsSynchronizeAPIRequest)
+}
+
+// ReleaseTaobaoQimenItemsSynchronizeAPIRequest 将 TaobaoQimenItemsSynchronizeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenItemsSynchronizeAPIRequest(v *TaobaoQimenItemsSynchronizeAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenItemsSynchronizeAPIRequest.Put(v)
 }

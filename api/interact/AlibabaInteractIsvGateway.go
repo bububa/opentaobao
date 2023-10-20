@@ -9,11 +9,6 @@ import (
 // alibaba.interact.isv.gateway
 //
 // isv能够调用jae本身的server
-func AlibabaInteractIsvGateway(clt *core.SDKClient, req *interact.AlibabaInteractIsvGatewayAPIRequest, session string) (*interact.AlibabaInteractIsvGatewayAPIResponse, error) {
-	var resp interact.AlibabaInteractIsvGatewayAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaInteractIsvGateway(clt *core.SDKClient, req *interact.AlibabaInteractIsvGatewayAPIRequest, resp *interact.AlibabaInteractIsvGatewayAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

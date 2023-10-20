@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseStorePunishInfoQueryAPIRequest struct {
 // NewAlibabaAlihouseStorePunishInfoQueryRequest 初始化AlibabaAlihouseStorePunishInfoQueryAPIRequest对象
 func NewAlibabaAlihouseStorePunishInfoQueryRequest() *AlibabaAlihouseStorePunishInfoQueryAPIRequest {
 	return &AlibabaAlihouseStorePunishInfoQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseStorePunishInfoQueryAPIRequest) Reset() {
+	r._queryStorePunishDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseStorePunishInfoQueryAPIRequest) SetQueryStorePunishDto(_
 // GetQueryStorePunishDto QueryStorePunishDto Getter
 func (r AlibabaAlihouseStorePunishInfoQueryAPIRequest) GetQueryStorePunishDto() *QueryStorePunishDto {
 	return r._queryStorePunishDto
+}
+
+var poolAlibabaAlihouseStorePunishInfoQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseStorePunishInfoQueryRequest()
+	},
+}
+
+// GetAlibabaAlihouseStorePunishInfoQueryRequest 从 sync.Pool 获取 AlibabaAlihouseStorePunishInfoQueryAPIRequest
+func GetAlibabaAlihouseStorePunishInfoQueryAPIRequest() *AlibabaAlihouseStorePunishInfoQueryAPIRequest {
+	return poolAlibabaAlihouseStorePunishInfoQueryAPIRequest.Get().(*AlibabaAlihouseStorePunishInfoQueryAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseStorePunishInfoQueryAPIRequest 将 AlibabaAlihouseStorePunishInfoQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseStorePunishInfoQueryAPIRequest(v *AlibabaAlihouseStorePunishInfoQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseStorePunishInfoQueryAPIRequest.Put(v)
 }

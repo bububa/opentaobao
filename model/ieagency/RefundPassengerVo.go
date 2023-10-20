@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // RefundPassengerVo 结构体
 type RefundPassengerVo struct {
 	// 乘机人姓名
@@ -8,4 +12,23 @@ type RefundPassengerVo struct {
 	PassenerId int64 `json:"passener_id,omitempty" xml:"passener_id,omitempty"`
 	// 乘机人类型(Adult(0, &#34;成人&#34;),     Child(1, &#34;儿童&#34;),     StudentAbroad(2, &#34;留学生&#34;),     Infant(3, &#34;婴儿&#34;)
 	PassengerType int64 `json:"passenger_type,omitempty" xml:"passenger_type,omitempty"`
+}
+
+var poolRefundPassengerVo = sync.Pool{
+	New: func() any {
+		return new(RefundPassengerVo)
+	},
+}
+
+// GetRefundPassengerVo() 从对象池中获取RefundPassengerVo
+func GetRefundPassengerVo() *RefundPassengerVo {
+	return poolRefundPassengerVo.Get().(*RefundPassengerVo)
+}
+
+// ReleaseRefundPassengerVo 释放RefundPassengerVo
+func ReleaseRefundPassengerVo(v *RefundPassengerVo) {
+	v.PassengerName = ""
+	v.PassenerId = 0
+	v.PassengerType = 0
+	poolRefundPassengerVo.Put(v)
 }

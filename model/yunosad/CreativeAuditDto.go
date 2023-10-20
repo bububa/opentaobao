@@ -1,5 +1,9 @@
 package yunosad
 
+import (
+	"sync"
+)
+
 // CreativeAuditDto 结构体
 type CreativeAuditDto struct {
 	// 广告创意id
@@ -10,4 +14,24 @@ type CreativeAuditDto struct {
 	RefuseCause string `json:"refuse_cause,omitempty" xml:"refuse_cause,omitempty"`
 	// 创意级别
 	Level int64 `json:"level,omitempty" xml:"level,omitempty"`
+}
+
+var poolCreativeAuditDto = sync.Pool{
+	New: func() any {
+		return new(CreativeAuditDto)
+	},
+}
+
+// GetCreativeAuditDto() 从对象池中获取CreativeAuditDto
+func GetCreativeAuditDto() *CreativeAuditDto {
+	return poolCreativeAuditDto.Get().(*CreativeAuditDto)
+}
+
+// ReleaseCreativeAuditDto 释放CreativeAuditDto
+func ReleaseCreativeAuditDto(v *CreativeAuditDto) {
+	v.CreativeId = ""
+	v.Status = ""
+	v.RefuseCause = ""
+	v.Level = 0
+	poolCreativeAuditDto.Put(v)
 }

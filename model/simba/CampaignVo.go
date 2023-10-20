@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // CampaignVo 结构体
 type CampaignVo struct {
 	// 主体类型，支持一个计划下存在多种类型
@@ -98,4 +102,68 @@ type CampaignVo struct {
 	MiniDetail *CampaignMiniDetailVo `json:"mini_detail,omitempty" xml:"mini_detail,omitempty"`
 	// 置顶状态,true:置顶，false:不置顶
 	TopStatus bool `json:"top_status,omitempty" xml:"top_status,omitempty"`
+}
+
+var poolCampaignVo = sync.Pool{
+	New: func() any {
+		return new(CampaignVo)
+	},
+}
+
+// GetCampaignVo() 从对象池中获取CampaignVo
+func GetCampaignVo() *CampaignVo {
+	return poolCampaignVo.Get().(*CampaignVo)
+}
+
+// ReleaseCampaignVo 释放CampaignVo
+func ReleaseCampaignVo(v *CampaignVo) {
+	v.PromotionTypeList = v.PromotionTypeList[:0]
+	v.SubPromotionTypeList = v.SubPromotionTypeList[:0]
+	v.LaunchAreaStrList = v.LaunchAreaStrList[:0]
+	v.LaunchPeriodList = v.LaunchPeriodList[:0]
+	v.CrowdFilterList = v.CrowdFilterList[:0]
+	v.BrandFilterList = v.BrandFilterList[:0]
+	v.DeeplinkBrandList = v.DeeplinkBrandList[:0]
+	v.GenderAgeFilterList = v.GenderAgeFilterList[:0]
+	v.ShieldItems = v.ShieldItems[:0]
+	v.ScopeItems = v.ScopeItems[:0]
+	v.AdgroupList = v.AdgroupList[:0]
+	v.BizCode = ""
+	v.CampaignGroupName = ""
+	v.CampaignName = ""
+	v.PromotionScene = ""
+	v.PromotionGoals = ""
+	v.PromotionModel = ""
+	v.PromotionType = ""
+	v.SubPromotionType = ""
+	v.OptimizeTarget = ""
+	v.DisplayStatus = ""
+	v.DmcType = ""
+	v.DayBudget = ""
+	v.SmoothOption = ""
+	v.TotalBudget = ""
+	v.PeriodSmooth = ""
+	v.BidType = ""
+	v.MaxPrice = ""
+	v.MinPrice = ""
+	v.BidUnit = ""
+	v.ConstraintType = ""
+	v.ConstraintValue = ""
+	v.ColdBootTime = ""
+	v.ColdBootStage = ""
+	v.LaunchPeriodDiscount = ""
+	v.LaunchPeriodDisplayTime = ""
+	v.ItemSelectedMode = ""
+	v.ShopItemType = ""
+	v.TopTime = ""
+	v.CampaignGroupId = 0
+	v.CampaignId = 0
+	v.OnlineStatus = 0
+	v.BudgetPeriod = 0
+	v.CampaignOcpc = nil
+	v.ColdBoot = 0
+	v.LaunchTime = nil
+	v.MiniDetail = nil
+	v.TopStatus = false
+	poolCampaignVo.Put(v)
 }

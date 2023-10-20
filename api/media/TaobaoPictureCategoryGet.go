@@ -9,11 +9,6 @@ import (
 // taobao.picture.category.get
 //
 // 获取图片分类信息
-func TaobaoPictureCategoryGet(clt *core.SDKClient, req *media.TaobaoPictureCategoryGetAPIRequest, session string) (*media.TaobaoPictureCategoryGetAPIResponse, error) {
-	var resp media.TaobaoPictureCategoryGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoPictureCategoryGet(clt *core.SDKClient, req *media.TaobaoPictureCategoryGetAPIRequest, resp *media.TaobaoPictureCategoryGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

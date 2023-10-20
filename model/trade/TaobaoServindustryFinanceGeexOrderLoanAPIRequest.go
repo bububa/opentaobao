@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoServindustryFinanceGeexOrderLoanAPIRequest struct {
 // NewTaobaoServindustryFinanceGeexOrderLoanRequest 初始化TaobaoServindustryFinanceGeexOrderLoanAPIRequest对象
 func NewTaobaoServindustryFinanceGeexOrderLoanRequest() *TaobaoServindustryFinanceGeexOrderLoanAPIRequest {
 	return &TaobaoServindustryFinanceGeexOrderLoanAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoServindustryFinanceGeexOrderLoanAPIRequest) Reset() {
+	r._priceUnit = ""
+	r._alscOrderId = ""
+	r._loanStatus = ""
+	r._loanFlowId = ""
+	r._updateTime = 0
+	r._loanTime = 0
+	r._loanPrice = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoServindustryFinanceGeexOrderLoanAPIRequest) SetLoanPrice(_loanPri
 // GetLoanPrice LoanPrice Getter
 func (r TaobaoServindustryFinanceGeexOrderLoanAPIRequest) GetLoanPrice() int64 {
 	return r._loanPrice
+}
+
+var poolTaobaoServindustryFinanceGeexOrderLoanAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoServindustryFinanceGeexOrderLoanRequest()
+	},
+}
+
+// GetTaobaoServindustryFinanceGeexOrderLoanRequest 从 sync.Pool 获取 TaobaoServindustryFinanceGeexOrderLoanAPIRequest
+func GetTaobaoServindustryFinanceGeexOrderLoanAPIRequest() *TaobaoServindustryFinanceGeexOrderLoanAPIRequest {
+	return poolTaobaoServindustryFinanceGeexOrderLoanAPIRequest.Get().(*TaobaoServindustryFinanceGeexOrderLoanAPIRequest)
+}
+
+// ReleaseTaobaoServindustryFinanceGeexOrderLoanAPIRequest 将 TaobaoServindustryFinanceGeexOrderLoanAPIRequest 放入 sync.Pool
+func ReleaseTaobaoServindustryFinanceGeexOrderLoanAPIRequest(v *TaobaoServindustryFinanceGeexOrderLoanAPIRequest) {
+	v.Reset()
+	poolTaobaoServindustryFinanceGeexOrderLoanAPIRequest.Put(v)
 }

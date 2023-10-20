@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // NrInventoryUpdateReqDto 结构体
 type NrInventoryUpdateReqDto struct {
 	// 更新库存的列表值
@@ -16,4 +20,27 @@ type NrInventoryUpdateReqDto struct {
 	OwnerId int64 `json:"owner_id,omitempty" xml:"owner_id,omitempty"`
 	// 默认为6：门店库存，2：电商库存
 	StoreType int64 `json:"store_type,omitempty" xml:"store_type,omitempty"`
+}
+
+var poolNrInventoryUpdateReqDto = sync.Pool{
+	New: func() any {
+		return new(NrInventoryUpdateReqDto)
+	},
+}
+
+// GetNrInventoryUpdateReqDto() 从对象池中获取NrInventoryUpdateReqDto
+func GetNrInventoryUpdateReqDto() *NrInventoryUpdateReqDto {
+	return poolNrInventoryUpdateReqDto.Get().(*NrInventoryUpdateReqDto)
+}
+
+// ReleaseNrInventoryUpdateReqDto 释放NrInventoryUpdateReqDto
+func ReleaseNrInventoryUpdateReqDto(v *NrInventoryUpdateReqDto) {
+	v.DetailList = v.DetailList[:0]
+	v.BizIdentity = ""
+	v.OrderId = ""
+	v.StoreCode = ""
+	v.CheckMode = 0
+	v.OwnerId = 0
+	v.StoreType = 0
+	poolNrInventoryUpdateReqDto.Put(v)
 }

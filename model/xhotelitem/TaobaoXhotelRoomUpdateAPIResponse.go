@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoXhotelRoomUpdateAPIResponse struct {
 	TaobaoXhotelRoomUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoXhotelRoomUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoXhotelRoomUpdateAPIResponseModel).Reset()
+}
+
 // TaobaoXhotelRoomUpdateAPIResponseModel is 房型库存推送接口（全量推送） 成功返回结果
 type TaobaoXhotelRoomUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_room_update_response"`
@@ -22,4 +29,27 @@ type TaobaoXhotelRoomUpdateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// gid酒店商品id
 	Gid int64 `json:"gid,omitempty" xml:"gid,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelRoomUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Gid = 0
+}
+
+var poolTaobaoXhotelRoomUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelRoomUpdateAPIResponse)
+	},
+}
+
+// GetTaobaoXhotelRoomUpdateAPIResponse 从 sync.Pool 获取 TaobaoXhotelRoomUpdateAPIResponse
+func GetTaobaoXhotelRoomUpdateAPIResponse() *TaobaoXhotelRoomUpdateAPIResponse {
+	return poolTaobaoXhotelRoomUpdateAPIResponse.Get().(*TaobaoXhotelRoomUpdateAPIResponse)
+}
+
+// ReleaseTaobaoXhotelRoomUpdateAPIResponse 将 TaobaoXhotelRoomUpdateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoXhotelRoomUpdateAPIResponse(v *TaobaoXhotelRoomUpdateAPIResponse) {
+	v.Reset()
+	poolTaobaoXhotelRoomUpdateAPIResponse.Put(v)
 }

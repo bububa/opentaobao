@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // ResetPayPasswdOpenReq 结构体
 type ResetPayPasswdOpenReq struct {
 	// 品牌ID / 外部品牌id  2选1
@@ -14,4 +18,26 @@ type ResetPayPasswdOpenReq struct {
 	CustomerId string `json:"customer_id,omitempty" xml:"customer_id,omitempty"`
 	// 外部品牌id
 	OutBrandId string `json:"out_brand_id,omitempty" xml:"out_brand_id,omitempty"`
+}
+
+var poolResetPayPasswdOpenReq = sync.Pool{
+	New: func() any {
+		return new(ResetPayPasswdOpenReq)
+	},
+}
+
+// GetResetPayPasswdOpenReq() 从对象池中获取ResetPayPasswdOpenReq
+func GetResetPayPasswdOpenReq() *ResetPayPasswdOpenReq {
+	return poolResetPayPasswdOpenReq.Get().(*ResetPayPasswdOpenReq)
+}
+
+// ReleaseResetPayPasswdOpenReq 释放ResetPayPasswdOpenReq
+func ReleaseResetPayPasswdOpenReq(v *ResetPayPasswdOpenReq) {
+	v.BrandId = ""
+	v.OperatorId = ""
+	v.OperatorName = ""
+	v.RequestId = ""
+	v.CustomerId = ""
+	v.OutBrandId = ""
+	poolResetPayPasswdOpenReq.Put(v)
 }

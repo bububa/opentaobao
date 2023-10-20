@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // FlightSegmentParam 结构体
 type FlightSegmentParam struct {
 	// 到达机场三字码
@@ -34,4 +38,36 @@ type FlightSegmentParam struct {
 	SegmentRph int64 `json:"segment_rph,omitempty" xml:"segment_rph,omitempty"`
 	// 主航段
 	MainSegment bool `json:"main_segment,omitempty" xml:"main_segment,omitempty"`
+}
+
+var poolFlightSegmentParam = sync.Pool{
+	New: func() any {
+		return new(FlightSegmentParam)
+	},
+}
+
+// GetFlightSegmentParam() 从对象池中获取FlightSegmentParam
+func GetFlightSegmentParam() *FlightSegmentParam {
+	return poolFlightSegmentParam.Get().(*FlightSegmentParam)
+}
+
+// ReleaseFlightSegmentParam 释放FlightSegmentParam
+func ReleaseFlightSegmentParam(v *FlightSegmentParam) {
+	v.ArrAirportCode = ""
+	v.ArrTerminal = ""
+	v.ArrTime = ""
+	v.CabinClassCode = ""
+	v.CabinCode = ""
+	v.DepAirportCode = ""
+	v.DepTerminal = ""
+	v.DepTime = ""
+	v.EquipType = ""
+	v.MarketingAirline = ""
+	v.MarketingFlightNumber = ""
+	v.OperatingAirLine = ""
+	v.OperatingFlightNumber = ""
+	v.ElapsedMinute = 0
+	v.SegmentRph = 0
+	v.MainSegment = false
+	poolFlightSegmentParam.Put(v)
 }

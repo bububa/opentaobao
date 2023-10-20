@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenOrgEntityDo 结构体
 type OpenOrgEntityDo struct {
 	// 用户/部门/角色名称
@@ -12,4 +16,25 @@ type OpenOrgEntityDo struct {
 	CorpId string `json:"corp_id,omitempty" xml:"corp_id,omitempty"`
 	// 角色/部门下面员工人数
 	UserNum int64 `json:"user_num,omitempty" xml:"user_num,omitempty"`
+}
+
+var poolOpenOrgEntityDo = sync.Pool{
+	New: func() any {
+		return new(OpenOrgEntityDo)
+	},
+}
+
+// GetOpenOrgEntityDo() 从对象池中获取OpenOrgEntityDo
+func GetOpenOrgEntityDo() *OpenOrgEntityDo {
+	return poolOpenOrgEntityDo.Get().(*OpenOrgEntityDo)
+}
+
+// ReleaseOpenOrgEntityDo 释放OpenOrgEntityDo
+func ReleaseOpenOrgEntityDo(v *OpenOrgEntityDo) {
+	v.Name = ""
+	v.EntityId = ""
+	v.EntityType = ""
+	v.CorpId = ""
+	v.UserNum = 0
+	poolOpenOrgEntityDo.Put(v)
 }

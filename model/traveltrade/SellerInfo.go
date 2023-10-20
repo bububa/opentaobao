@@ -1,5 +1,9 @@
 package traveltrade
 
+import (
+	"sync"
+)
+
 // SellerInfo 结构体
 type SellerInfo struct {
 	// 卖家邮件地址
@@ -20,4 +24,29 @@ type SellerInfo struct {
 	SellerCanRate bool `json:"seller_can_rate,omitempty" xml:"seller_can_rate,omitempty"`
 	// 卖家是否已评价。可选值:true(已评价),false(未评价)
 	SellerRate bool `json:"seller_rate,omitempty" xml:"seller_rate,omitempty"`
+}
+
+var poolSellerInfo = sync.Pool{
+	New: func() any {
+		return new(SellerInfo)
+	},
+}
+
+// GetSellerInfo() 从对象池中获取SellerInfo
+func GetSellerInfo() *SellerInfo {
+	return poolSellerInfo.Get().(*SellerInfo)
+}
+
+// ReleaseSellerInfo 释放SellerInfo
+func ReleaseSellerInfo(v *SellerInfo) {
+	v.SellerEmail = ""
+	v.SellerMemo = ""
+	v.SellerName = ""
+	v.SellerNick = ""
+	v.SellerPhone = ""
+	v.SellerShop = ""
+	v.SellerFlag = 0
+	v.SellerCanRate = false
+	v.SellerRate = false
+	poolSellerInfo.Put(v)
 }

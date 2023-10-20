@@ -2,6 +2,7 @@ package uscesl
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoUsceslBizApDeleteAPIRequest struct {
 // NewTaobaoUsceslBizApDeleteRequest 初始化TaobaoUsceslBizApDeleteAPIRequest对象
 func NewTaobaoUsceslBizApDeleteRequest() *TaobaoUsceslBizApDeleteAPIRequest {
 	return &TaobaoUsceslBizApDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUsceslBizApDeleteAPIRequest) Reset() {
+	r._apMac = ""
+	r._bizBrandKey = ""
+	r._storeId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoUsceslBizApDeleteAPIRequest) SetStoreId(_storeId int64) error {
 // GetStoreId StoreId Getter
 func (r TaobaoUsceslBizApDeleteAPIRequest) GetStoreId() int64 {
 	return r._storeId
+}
+
+var poolTaobaoUsceslBizApDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUsceslBizApDeleteRequest()
+	},
+}
+
+// GetTaobaoUsceslBizApDeleteRequest 从 sync.Pool 获取 TaobaoUsceslBizApDeleteAPIRequest
+func GetTaobaoUsceslBizApDeleteAPIRequest() *TaobaoUsceslBizApDeleteAPIRequest {
+	return poolTaobaoUsceslBizApDeleteAPIRequest.Get().(*TaobaoUsceslBizApDeleteAPIRequest)
+}
+
+// ReleaseTaobaoUsceslBizApDeleteAPIRequest 将 TaobaoUsceslBizApDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUsceslBizApDeleteAPIRequest(v *TaobaoUsceslBizApDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoUsceslBizApDeleteAPIRequest.Put(v)
 }

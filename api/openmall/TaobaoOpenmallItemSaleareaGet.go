@@ -9,11 +9,6 @@ import (
 // taobao.openmall.item.salearea.get
 //
 // 获取openmall商品的可售区域
-func TaobaoOpenmallItemSaleareaGet(clt *core.SDKClient, req *openmall.TaobaoOpenmallItemSaleareaGetAPIRequest, session string) (*openmall.TaobaoOpenmallItemSaleareaGetAPIResponse, error) {
-	var resp openmall.TaobaoOpenmallItemSaleareaGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpenmallItemSaleareaGet(clt *core.SDKClient, req *openmall.TaobaoOpenmallItemSaleareaGetAPIRequest, resp *openmall.TaobaoOpenmallItemSaleareaGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

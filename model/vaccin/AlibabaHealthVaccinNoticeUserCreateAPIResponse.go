@@ -2,6 +2,7 @@ package vaccin
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaHealthVaccinNoticeUserCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaHealthVaccinNoticeUserCreateAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaHealthVaccinNoticeUserCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaHealthVaccinNoticeUserCreateAPIResponseModel).Reset()
 }
 
 // AlibabaHealthVaccinNoticeUserCreateAPIResponseModel is 支付宝医疗健康疫苗用户创建 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaHealthVaccinNoticeUserCreateAPIResponseModel struct {
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaHealthVaccinNoticeUserCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgInfo = ""
+	m.MsgCode = ""
+	m.Model = false
+	m.IsSuccess = false
+}
+
+var poolAlibabaHealthVaccinNoticeUserCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaHealthVaccinNoticeUserCreateAPIResponse)
+	},
+}
+
+// GetAlibabaHealthVaccinNoticeUserCreateAPIResponse 从 sync.Pool 获取 AlibabaHealthVaccinNoticeUserCreateAPIResponse
+func GetAlibabaHealthVaccinNoticeUserCreateAPIResponse() *AlibabaHealthVaccinNoticeUserCreateAPIResponse {
+	return poolAlibabaHealthVaccinNoticeUserCreateAPIResponse.Get().(*AlibabaHealthVaccinNoticeUserCreateAPIResponse)
+}
+
+// ReleaseAlibabaHealthVaccinNoticeUserCreateAPIResponse 将 AlibabaHealthVaccinNoticeUserCreateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaHealthVaccinNoticeUserCreateAPIResponse(v *AlibabaHealthVaccinNoticeUserCreateAPIResponse) {
+	v.Reset()
+	poolAlibabaHealthVaccinNoticeUserCreateAPIResponse.Put(v)
 }

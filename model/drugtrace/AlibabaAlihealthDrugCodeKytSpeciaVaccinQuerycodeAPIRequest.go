@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,15 @@ type AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIRequest struct {
 // NewAlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeRequest 初始化AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIRequest对象
 func NewAlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeRequest() *AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIRequest {
 	return &AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIRequest) Reset() {
+	r._codes = r._codes[:0]
+	r._refEntId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -68,4 +76,21 @@ func (r *AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIRequest) SetRefEntId
 // GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIRequest) GetRefEntId() string {
 	return r._refEntId
+}
+
+var poolAlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeRequest 从 sync.Pool 获取 AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIRequest
+func GetAlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIRequest() *AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIRequest {
+	return poolAlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIRequest.Get().(*AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIRequest 将 AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIRequest(v *AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIRequest.Put(v)
 }

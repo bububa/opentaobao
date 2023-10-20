@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.effect.keyword.list
 //
 // 关键词报表
-func AlibabaScbpEffectKeywordList(clt *core.SDKClient, req *scbp.AlibabaScbpEffectKeywordListAPIRequest, session string) (*scbp.AlibabaScbpEffectKeywordListAPIResponse, error) {
-	var resp scbp.AlibabaScbpEffectKeywordListAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpEffectKeywordList(clt *core.SDKClient, req *scbp.AlibabaScbpEffectKeywordListAPIRequest, resp *scbp.AlibabaScbpEffectKeywordListAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

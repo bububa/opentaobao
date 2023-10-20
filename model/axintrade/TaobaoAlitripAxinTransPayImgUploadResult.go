@@ -1,5 +1,9 @@
 package axintrade
 
+import (
+	"sync"
+)
+
 // TaobaoAlitripAxinTransPayImgUploadResult 结构体
 type TaobaoAlitripAxinTransPayImgUploadResult struct {
 	// 错误信息
@@ -14,4 +18,26 @@ type TaobaoAlitripAxinTransPayImgUploadResult struct {
 	NeedRetry bool `json:"need_retry,omitempty" xml:"need_retry,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoAlitripAxinTransPayImgUploadResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoAlitripAxinTransPayImgUploadResult)
+	},
+}
+
+// GetTaobaoAlitripAxinTransPayImgUploadResult() 从对象池中获取TaobaoAlitripAxinTransPayImgUploadResult
+func GetTaobaoAlitripAxinTransPayImgUploadResult() *TaobaoAlitripAxinTransPayImgUploadResult {
+	return poolTaobaoAlitripAxinTransPayImgUploadResult.Get().(*TaobaoAlitripAxinTransPayImgUploadResult)
+}
+
+// ReleaseTaobaoAlitripAxinTransPayImgUploadResult 释放TaobaoAlitripAxinTransPayImgUploadResult
+func ReleaseTaobaoAlitripAxinTransPayImgUploadResult(v *TaobaoAlitripAxinTransPayImgUploadResult) {
+	v.ErrorMsg = ""
+	v.ErrorCode = ""
+	v.InfoMsg = ""
+	v.Data = nil
+	v.NeedRetry = false
+	v.Success = false
+	poolTaobaoAlitripAxinTransPayImgUploadResult.Put(v)
 }

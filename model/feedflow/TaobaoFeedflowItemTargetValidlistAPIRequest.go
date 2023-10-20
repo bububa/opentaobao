@@ -2,6 +2,7 @@ package feedflow
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoFeedflowItemTargetValidlistAPIRequest struct {
 // NewTaobaoFeedflowItemTargetValidlistRequest 初始化TaobaoFeedflowItemTargetValidlistAPIRequest对象
 func NewTaobaoFeedflowItemTargetValidlistRequest() *TaobaoFeedflowItemTargetValidlistAPIRequest {
 	return &TaobaoFeedflowItemTargetValidlistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFeedflowItemTargetValidlistAPIRequest) Reset() {
+	r._campaignId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoFeedflowItemTargetValidlistAPIRequest) SetCampaignId(_campaignId 
 // GetCampaignId CampaignId Getter
 func (r TaobaoFeedflowItemTargetValidlistAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
+}
+
+var poolTaobaoFeedflowItemTargetValidlistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFeedflowItemTargetValidlistRequest()
+	},
+}
+
+// GetTaobaoFeedflowItemTargetValidlistRequest 从 sync.Pool 获取 TaobaoFeedflowItemTargetValidlistAPIRequest
+func GetTaobaoFeedflowItemTargetValidlistAPIRequest() *TaobaoFeedflowItemTargetValidlistAPIRequest {
+	return poolTaobaoFeedflowItemTargetValidlistAPIRequest.Get().(*TaobaoFeedflowItemTargetValidlistAPIRequest)
+}
+
+// ReleaseTaobaoFeedflowItemTargetValidlistAPIRequest 将 TaobaoFeedflowItemTargetValidlistAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFeedflowItemTargetValidlistAPIRequest(v *TaobaoFeedflowItemTargetValidlistAPIRequest) {
+	v.Reset()
+	poolTaobaoFeedflowItemTargetValidlistAPIRequest.Put(v)
 }

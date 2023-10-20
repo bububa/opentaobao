@@ -1,5 +1,9 @@
 package util
 
+import (
+	"sync"
+)
+
 // AssetQrCodeDto 结构体
 type AssetQrCodeDto struct {
 	// 生产二维码信息字符串
@@ -24,4 +28,31 @@ type AssetQrCodeDto struct {
 	Manufacture string `json:"manufacture,omitempty" xml:"manufacture,omitempty"`
 	// 单批次请求唯一标识
 	Nonce string `json:"nonce,omitempty" xml:"nonce,omitempty"`
+}
+
+var poolAssetQrCodeDto = sync.Pool{
+	New: func() any {
+		return new(AssetQrCodeDto)
+	},
+}
+
+// GetAssetQrCodeDto() 从对象池中获取AssetQrCodeDto
+func GetAssetQrCodeDto() *AssetQrCodeDto {
+	return poolAssetQrCodeDto.Get().(*AssetQrCodeDto)
+}
+
+// ReleaseAssetQrCodeDto 释放AssetQrCodeDto
+func ReleaseAssetQrCodeDto(v *AssetQrCodeDto) {
+	v.QrCodeStringList = v.QrCodeStringList[:0]
+	v.AssetType = ""
+	v.EntitySource = ""
+	v.Quantity = ""
+	v.SpareBrandCode = ""
+	v.DeviceBrandCode = ""
+	v.Sn = ""
+	v.Mpn = ""
+	v.SpareCategoryCode = ""
+	v.Manufacture = ""
+	v.Nonce = ""
+	poolAssetQrCodeDto.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.newhome.project.tradeitem
 //
 // 新二品同步
-func AlibabaAlihouseNewhomeProjectTradeitem(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeProjectTradeitemAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeProjectTradeitemAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeProjectTradeitemAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseNewhomeProjectTradeitem(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeProjectTradeitemAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeProjectTradeitemAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

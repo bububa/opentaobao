@@ -2,6 +2,7 @@ package scs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,15 @@ type TaobaoOnebpDkxReportReportCrowdListAPIRequest struct {
 // NewTaobaoOnebpDkxReportReportCrowdListRequest 初始化TaobaoOnebpDkxReportReportCrowdListAPIRequest对象
 func NewTaobaoOnebpDkxReportReportCrowdListRequest() *TaobaoOnebpDkxReportReportCrowdListAPIRequest {
 	return &TaobaoOnebpDkxReportReportCrowdListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOnebpDkxReportReportCrowdListAPIRequest) Reset() {
+	r._apiServiceContext = nil
+	r._reportQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -68,4 +76,21 @@ func (r *TaobaoOnebpDkxReportReportCrowdListAPIRequest) SetReportQuery(_reportQu
 // GetReportQuery ReportQuery Getter
 func (r TaobaoOnebpDkxReportReportCrowdListAPIRequest) GetReportQuery() *ReportQueryTopDto {
 	return r._reportQuery
+}
+
+var poolTaobaoOnebpDkxReportReportCrowdListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOnebpDkxReportReportCrowdListRequest()
+	},
+}
+
+// GetTaobaoOnebpDkxReportReportCrowdListRequest 从 sync.Pool 获取 TaobaoOnebpDkxReportReportCrowdListAPIRequest
+func GetTaobaoOnebpDkxReportReportCrowdListAPIRequest() *TaobaoOnebpDkxReportReportCrowdListAPIRequest {
+	return poolTaobaoOnebpDkxReportReportCrowdListAPIRequest.Get().(*TaobaoOnebpDkxReportReportCrowdListAPIRequest)
+}
+
+// ReleaseTaobaoOnebpDkxReportReportCrowdListAPIRequest 将 TaobaoOnebpDkxReportReportCrowdListAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOnebpDkxReportReportCrowdListAPIRequest(v *TaobaoOnebpDkxReportReportCrowdListAPIRequest) {
+	v.Reset()
+	poolTaobaoOnebpDkxReportReportCrowdListAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -22,8 +23,15 @@ type TaobaoInventoryInitialItemAPIRequest struct {
 // NewTaobaoInventoryInitialItemRequest 初始化TaobaoInventoryInitialItemAPIRequest对象
 func NewTaobaoInventoryInitialItemRequest() *TaobaoInventoryInitialItemAPIRequest {
 	return &TaobaoInventoryInitialItemAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoInventoryInitialItemAPIRequest) Reset() {
+	r._storeInventorys = ""
+	r._scItemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -67,4 +75,21 @@ func (r *TaobaoInventoryInitialItemAPIRequest) SetScItemId(_scItemId int64) erro
 // GetScItemId ScItemId Getter
 func (r TaobaoInventoryInitialItemAPIRequest) GetScItemId() int64 {
 	return r._scItemId
+}
+
+var poolTaobaoInventoryInitialItemAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoInventoryInitialItemRequest()
+	},
+}
+
+// GetTaobaoInventoryInitialItemRequest 从 sync.Pool 获取 TaobaoInventoryInitialItemAPIRequest
+func GetTaobaoInventoryInitialItemAPIRequest() *TaobaoInventoryInitialItemAPIRequest {
+	return poolTaobaoInventoryInitialItemAPIRequest.Get().(*TaobaoInventoryInitialItemAPIRequest)
+}
+
+// ReleaseTaobaoInventoryInitialItemAPIRequest 将 TaobaoInventoryInitialItemAPIRequest 放入 sync.Pool
+func ReleaseTaobaoInventoryInitialItemAPIRequest(v *TaobaoInventoryInitialItemAPIRequest) {
+	v.Reset()
+	poolTaobaoInventoryInitialItemAPIRequest.Put(v)
 }

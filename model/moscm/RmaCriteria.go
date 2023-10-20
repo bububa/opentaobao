@@ -1,5 +1,9 @@
 package moscm
 
+import (
+	"sync"
+)
+
 // RmaCriteria 结构体
 type RmaCriteria struct {
 	// 退换货单据号
@@ -18,4 +22,28 @@ type RmaCriteria struct {
 	OutCounterId string `json:"out_counter_id,omitempty" xml:"out_counter_id,omitempty"`
 	// 银泰专柜Id
 	CounterId string `json:"counter_id,omitempty" xml:"counter_id,omitempty"`
+}
+
+var poolRmaCriteria = sync.Pool{
+	New: func() any {
+		return new(RmaCriteria)
+	},
+}
+
+// GetRmaCriteria() 从对象池中获取RmaCriteria
+func GetRmaCriteria() *RmaCriteria {
+	return poolRmaCriteria.Get().(*RmaCriteria)
+}
+
+// ReleaseRmaCriteria 释放RmaCriteria
+func ReleaseRmaCriteria(v *RmaCriteria) {
+	v.RmaNumbers = v.RmaNumbers[:0]
+	v.Status = v.Status[:0]
+	v.OrderNumber = ""
+	v.EndDate = ""
+	v.StartDate = ""
+	v.Type = ""
+	v.OutCounterId = ""
+	v.CounterId = ""
+	poolRmaCriteria.Put(v)
 }

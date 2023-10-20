@@ -1,5 +1,9 @@
 package aedropshiper
 
+import (
+	"sync"
+)
+
 // AeopStoreInfo 结构体
 type AeopStoreInfo struct {
 	// 卖家服务，1-5星
@@ -14,4 +18,26 @@ type AeopStoreInfo struct {
 	StoreUrl string `json:"store_url,omitempty" xml:"store_url,omitempty"`
 	// 店铺ID
 	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
+}
+
+var poolAeopStoreInfo = sync.Pool{
+	New: func() any {
+		return new(AeopStoreInfo)
+	},
+}
+
+// GetAeopStoreInfo() 从对象池中获取AeopStoreInfo
+func GetAeopStoreInfo() *AeopStoreInfo {
+	return poolAeopStoreInfo.Get().(*AeopStoreInfo)
+}
+
+// ReleaseAeopStoreInfo 释放AeopStoreInfo
+func ReleaseAeopStoreInfo(v *AeopStoreInfo) {
+	v.CommunicationRating = ""
+	v.ItemAsDescripedRating = ""
+	v.ShippingSpeedRating = ""
+	v.StoreName = ""
+	v.StoreUrl = ""
+	v.StoreId = 0
+	poolAeopStoreInfo.Put(v)
 }

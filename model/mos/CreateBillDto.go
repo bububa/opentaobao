@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // CreateBillDto 结构体
 type CreateBillDto struct {
 	// 结算单列表
@@ -42,4 +46,40 @@ type CreateBillDto struct {
 	PayTerm int64 `json:"pay_term,omitempty" xml:"pay_term,omitempty"`
 	// 是否自动提交审批
 	AutoSumbit bool `json:"auto_sumbit,omitempty" xml:"auto_sumbit,omitempty"`
+}
+
+var poolCreateBillDto = sync.Pool{
+	New: func() any {
+		return new(CreateBillDto)
+	},
+}
+
+// GetCreateBillDto() 从对象池中获取CreateBillDto
+func GetCreateBillDto() *CreateBillDto {
+	return poolCreateBillDto.Get().(*CreateBillDto)
+}
+
+// ReleaseCreateBillDto 释放CreateBillDto
+func ReleaseCreateBillDto(v *CreateBillDto) {
+	v.SettlementDTOList = v.SettlementDTOList[:0]
+	v.AttachmentIds = v.AttachmentIds[:0]
+	v.PayeeCountry = ""
+	v.CurrencyCode = ""
+	v.PayChannels = ""
+	v.Remark = ""
+	v.ExpenseOrgCode = ""
+	v.InvoiceRule = ""
+	v.ExpenseOrgId = ""
+	v.BizModuleCode = ""
+	v.ReqmentApplicant = ""
+	v.Amount = ""
+	v.BillNo = ""
+	v.FinancePreWorkNo = ""
+	v.Applicant = ""
+	v.ApproveDate = ""
+	v.ExtendParams = ""
+	v.Comments = ""
+	v.PayTerm = 0
+	v.AutoSumbit = false
+	poolCreateBillDto.Put(v)
 }

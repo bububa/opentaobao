@@ -2,6 +2,7 @@ package media
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaTjbPictureUploadAPIRequest struct {
 // NewAlibabaTjbPictureUploadRequest 初始化AlibabaTjbPictureUploadAPIRequest对象
 func NewAlibabaTjbPictureUploadRequest() *AlibabaTjbPictureUploadAPIRequest {
 	return &AlibabaTjbPictureUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTjbPictureUploadAPIRequest) Reset() {
+	r._fileName = ""
+	r._fileData = nil
+	r._folderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaTjbPictureUploadAPIRequest) SetFolderId(_folderId int64) error {
 // GetFolderId FolderId Getter
 func (r AlibabaTjbPictureUploadAPIRequest) GetFolderId() int64 {
 	return r._folderId
+}
+
+var poolAlibabaTjbPictureUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTjbPictureUploadRequest()
+	},
+}
+
+// GetAlibabaTjbPictureUploadRequest 从 sync.Pool 获取 AlibabaTjbPictureUploadAPIRequest
+func GetAlibabaTjbPictureUploadAPIRequest() *AlibabaTjbPictureUploadAPIRequest {
+	return poolAlibabaTjbPictureUploadAPIRequest.Get().(*AlibabaTjbPictureUploadAPIRequest)
+}
+
+// ReleaseAlibabaTjbPictureUploadAPIRequest 将 AlibabaTjbPictureUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTjbPictureUploadAPIRequest(v *AlibabaTjbPictureUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaTjbPictureUploadAPIRequest.Put(v)
 }

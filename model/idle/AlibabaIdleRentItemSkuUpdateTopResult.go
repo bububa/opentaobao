@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // AlibabaIdleRentItemSkuUpdateTopResult 结构体
 type AlibabaIdleRentItemSkuUpdateTopResult struct {
 	// 错误信息
@@ -10,4 +14,24 @@ type AlibabaIdleRentItemSkuUpdateTopResult struct {
 	Data bool `json:"data,omitempty" xml:"data,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaIdleRentItemSkuUpdateTopResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaIdleRentItemSkuUpdateTopResult)
+	},
+}
+
+// GetAlibabaIdleRentItemSkuUpdateTopResult() 从对象池中获取AlibabaIdleRentItemSkuUpdateTopResult
+func GetAlibabaIdleRentItemSkuUpdateTopResult() *AlibabaIdleRentItemSkuUpdateTopResult {
+	return poolAlibabaIdleRentItemSkuUpdateTopResult.Get().(*AlibabaIdleRentItemSkuUpdateTopResult)
+}
+
+// ReleaseAlibabaIdleRentItemSkuUpdateTopResult 释放AlibabaIdleRentItemSkuUpdateTopResult
+func ReleaseAlibabaIdleRentItemSkuUpdateTopResult(v *AlibabaIdleRentItemSkuUpdateTopResult) {
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.Data = false
+	v.Success = false
+	poolAlibabaIdleRentItemSkuUpdateTopResult.Put(v)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // BmResult 结构体
 type BmResult struct {
 	// 结果数据
@@ -16,4 +20,27 @@ type BmResult struct {
 	Data int64 `json:"data,omitempty" xml:"data,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolBmResult = sync.Pool{
+	New: func() any {
+		return new(BmResult)
+	},
+}
+
+// GetBmResult() 从对象池中获取BmResult
+func GetBmResult() *BmResult {
+	return poolBmResult.Get().(*BmResult)
+}
+
+// ReleaseBmResult 释放BmResult
+func ReleaseBmResult(v *BmResult) {
+	v.DataList = v.DataList[:0]
+	v.PublishResults = v.PublishResults[:0]
+	v.ErrorCode = ""
+	v.Message = ""
+	v.ExtData = ""
+	v.Data = 0
+	v.Success = false
+	poolBmResult.Put(v)
 }

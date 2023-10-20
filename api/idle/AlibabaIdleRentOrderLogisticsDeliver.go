@@ -10,11 +10,6 @@ import (
 //
 // 创建揽收物流
 // 商家去物流公司创建物流订单
-func AlibabaIdleRentOrderLogisticsDeliver(clt *core.SDKClient, req *idle.AlibabaIdleRentOrderLogisticsDeliverAPIRequest, session string) (*idle.AlibabaIdleRentOrderLogisticsDeliverAPIResponse, error) {
-	var resp idle.AlibabaIdleRentOrderLogisticsDeliverAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleRentOrderLogisticsDeliver(clt *core.SDKClient, req *idle.AlibabaIdleRentOrderLogisticsDeliverAPIRequest, resp *idle.AlibabaIdleRentOrderLogisticsDeliverAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

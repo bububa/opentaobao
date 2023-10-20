@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // PontusTravelItemScenic 结构体
 type PontusTravelItemScenic struct {
 	// 必填，景点所在城市
@@ -12,4 +16,25 @@ type PontusTravelItemScenic struct {
 	PoiResource string `json:"poi_resource,omitempty" xml:"poi_resource,omitempty"`
 	// 必填，门票类型
 	TicketType string `json:"ticket_type,omitempty" xml:"ticket_type,omitempty"`
+}
+
+var poolPontusTravelItemScenic = sync.Pool{
+	New: func() any {
+		return new(PontusTravelItemScenic)
+	},
+}
+
+// GetPontusTravelItemScenic() 从对象池中获取PontusTravelItemScenic
+func GetPontusTravelItemScenic() *PontusTravelItemScenic {
+	return poolPontusTravelItemScenic.Get().(*PontusTravelItemScenic)
+}
+
+// ReleasePontusTravelItemScenic 释放PontusTravelItemScenic
+func ReleasePontusTravelItemScenic(v *PontusTravelItemScenic) {
+	v.City = ""
+	v.CnName = ""
+	v.Poi = ""
+	v.PoiResource = ""
+	v.TicketType = ""
+	poolPontusTravelItemScenic.Put(v)
 }

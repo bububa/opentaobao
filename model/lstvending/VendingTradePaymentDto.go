@@ -1,5 +1,9 @@
 package lstvending
 
+import (
+	"sync"
+)
+
 // VendingTradePaymentDto 结构体
 type VendingTradePaymentDto struct {
 	// 外部系统交易流水号
@@ -24,4 +28,31 @@ type VendingTradePaymentDto struct {
 	PayChannel int64 `json:"pay_channel,omitempty" xml:"pay_channel,omitempty"`
 	// 支付记录ID
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolVendingTradePaymentDto = sync.Pool{
+	New: func() any {
+		return new(VendingTradePaymentDto)
+	},
+}
+
+// GetVendingTradePaymentDto() 从对象池中获取VendingTradePaymentDto
+func GetVendingTradePaymentDto() *VendingTradePaymentDto {
+	return poolVendingTradePaymentDto.Get().(*VendingTradePaymentDto)
+}
+
+// ReleaseVendingTradePaymentDto 释放VendingTradePaymentDto
+func ReleaseVendingTradePaymentDto(v *VendingTradePaymentDto) {
+	v.TradeFlowNo = ""
+	v.PaymentUserId = ""
+	v.PaymentFlowNo = ""
+	v.PayAmount = 0
+	v.GmtModified = 0
+	v.GmtCreate = 0
+	v.Status = 0
+	v.PayType = 0
+	v.Commission = 0
+	v.PayChannel = 0
+	v.Id = 0
+	poolVendingTradePaymentDto.Put(v)
 }

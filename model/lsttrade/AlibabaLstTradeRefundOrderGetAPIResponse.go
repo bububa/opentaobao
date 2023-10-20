@@ -2,6 +2,7 @@ package lsttrade
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaLstTradeRefundOrderGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstTradeRefundOrderGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaLstTradeRefundOrderGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaLstTradeRefundOrderGetAPIResponseModel).Reset()
 }
 
 // AlibabaLstTradeRefundOrderGetAPIResponseModel is 零售通退款订单查询 成功返回结果
@@ -30,4 +37,31 @@ type AlibabaLstTradeRefundOrderGetAPIResponseModel struct {
 	RefundStatus string `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
 	// 退款完成时间
 	GmtCompleted string `json:"gmt_completed,omitempty" xml:"gmt_completed,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaLstTradeRefundOrderGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.SubOrders = m.SubOrders[:0]
+	m.RefundId = ""
+	m.GmtCreate = ""
+	m.RefundStatus = ""
+	m.GmtCompleted = ""
+}
+
+var poolAlibabaLstTradeRefundOrderGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaLstTradeRefundOrderGetAPIResponse)
+	},
+}
+
+// GetAlibabaLstTradeRefundOrderGetAPIResponse 从 sync.Pool 获取 AlibabaLstTradeRefundOrderGetAPIResponse
+func GetAlibabaLstTradeRefundOrderGetAPIResponse() *AlibabaLstTradeRefundOrderGetAPIResponse {
+	return poolAlibabaLstTradeRefundOrderGetAPIResponse.Get().(*AlibabaLstTradeRefundOrderGetAPIResponse)
+}
+
+// ReleaseAlibabaLstTradeRefundOrderGetAPIResponse 将 AlibabaLstTradeRefundOrderGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaLstTradeRefundOrderGetAPIResponse(v *AlibabaLstTradeRefundOrderGetAPIResponse) {
+	v.Reset()
+	poolAlibabaLstTradeRefundOrderGetAPIResponse.Put(v)
 }

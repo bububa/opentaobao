@@ -1,5 +1,9 @@
 package tanx
 
+import (
+	"sync"
+)
+
 // QualificationDto 结构体
 type QualificationDto struct {
 	// 通过的url
@@ -42,4 +46,40 @@ type QualificationDto struct {
 	AuditStatus int64 `json:"audit_status,omitempty" xml:"audit_status,omitempty"`
 	// dspid,淘系内部产品也统一成dsp
 	DspId int64 `json:"dsp_id,omitempty" xml:"dsp_id,omitempty"`
+}
+
+var poolQualificationDto = sync.Pool{
+	New: func() any {
+		return new(QualificationDto)
+	},
+}
+
+// GetQualificationDto() 从对象池中获取QualificationDto
+func GetQualificationDto() *QualificationDto {
+	return poolQualificationDto.Get().(*QualificationDto)
+}
+
+// ReleaseQualificationDto 释放QualificationDto
+func ReleaseQualificationDto(v *QualificationDto) {
+	v.Urls = v.Urls[:0]
+	v.Specialindustrys = v.Specialindustrys[:0]
+	v.ContentList = v.ContentList[:0]
+	v.Name = ""
+	v.UserName = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.CreateTime = ""
+	v.UpdateTime = ""
+	v.AuditTime = ""
+	v.Reason = ""
+	v.Supplement = ""
+	v.CheckTime = ""
+	v.Id = 0
+	v.UserId = 0
+	v.UserType = 0
+	v.ElementId = 0
+	v.EffectiveStatus = 0
+	v.AuditStatus = 0
+	v.DspId = 0
+	poolQualificationDto.Put(v)
 }

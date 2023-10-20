@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // ItemTagRequestDto 结构体
 type ItemTagRequestDto struct {
 	// 外部主键ID
@@ -14,4 +18,26 @@ type ItemTagRequestDto struct {
 	EtcVersion int64 `json:"etc_version,omitempty" xml:"etc_version,omitempty"`
 	// 默认0  1添加标签 -1去除标签
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolItemTagRequestDto = sync.Pool{
+	New: func() any {
+		return new(ItemTagRequestDto)
+	},
+}
+
+// GetItemTagRequestDto() 从对象池中获取ItemTagRequestDto
+func GetItemTagRequestDto() *ItemTagRequestDto {
+	return poolItemTagRequestDto.Get().(*ItemTagRequestDto)
+}
+
+// ReleaseItemTagRequestDto 释放ItemTagRequestDto
+func ReleaseItemTagRequestDto(v *ItemTagRequestDto) {
+	v.OuterIds = v.OuterIds[:0]
+	v.ItemTagCodes = v.ItemTagCodes[:0]
+	v.OuterStoreId = ""
+	v.SourceType = 0
+	v.EtcVersion = 0
+	v.Type = 0
+	poolItemTagRequestDto.Put(v)
 }

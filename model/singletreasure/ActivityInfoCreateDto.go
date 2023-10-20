@@ -1,5 +1,9 @@
 package singletreasure
 
+import (
+	"sync"
+)
+
 // ActivityInfoCreateDto 结构体
 type ActivityInfoCreateDto struct {
 	// 开始时间：需要早于当天零点
@@ -24,4 +28,31 @@ type ActivityInfoCreateDto struct {
 	ActivityId int64 `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
 	// 是否包邮
 	FreePost bool `json:"free_post,omitempty" xml:"free_post,omitempty"`
+}
+
+var poolActivityInfoCreateDto = sync.Pool{
+	New: func() any {
+		return new(ActivityInfoCreateDto)
+	},
+}
+
+// GetActivityInfoCreateDto() 从对象池中获取ActivityInfoCreateDto
+func GetActivityInfoCreateDto() *ActivityInfoCreateDto {
+	return poolActivityInfoCreateDto.Get().(*ActivityInfoCreateDto)
+}
+
+// ReleaseActivityInfoCreateDto 释放ActivityInfoCreateDto
+func ReleaseActivityInfoCreateDto(v *ActivityInfoCreateDto) {
+	v.StartTime = ""
+	v.Description = ""
+	v.Name = ""
+	v.CrowdId = ""
+	v.EndTime = ""
+	v.ExcludeAreas = ""
+	v.DiscountType = 0
+	v.PromotionLevel = 0
+	v.ActivityType = 0
+	v.ActivityId = 0
+	v.FreePost = false
+	poolActivityInfoCreateDto.Put(v)
 }

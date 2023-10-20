@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.marketing.itempool.excludeskucode
 //
 // 品类优惠新增排除池
-func AlibabaWdkMarketingItempoolExcludeskucode(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolExcludeskucodeAPIRequest, session string) (*wdk.AlibabaWdkMarketingItempoolExcludeskucodeAPIResponse, error) {
-	var resp wdk.AlibabaWdkMarketingItempoolExcludeskucodeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkMarketingItempoolExcludeskucode(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolExcludeskucodeAPIRequest, resp *wdk.AlibabaWdkMarketingItempoolExcludeskucodeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

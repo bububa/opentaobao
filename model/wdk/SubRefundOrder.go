@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // SubRefundOrder 结构体
 type SubRefundOrder struct {
 	// 营销优惠明细
@@ -24,4 +28,31 @@ type SubRefundOrder struct {
 	PlatformDiscountFee int64 `json:"platform_discount_fee,omitempty" xml:"platform_discount_fee,omitempty"`
 	// 退款销售数量
 	RefundSaleQuantity int64 `json:"refund_sale_quantity,omitempty" xml:"refund_sale_quantity,omitempty"`
+}
+
+var poolSubRefundOrder = sync.Pool{
+	New: func() any {
+		return new(SubRefundOrder)
+	},
+}
+
+// GetSubRefundOrder() 从对象池中获取SubRefundOrder
+func GetSubRefundOrder() *SubRefundOrder {
+	return poolSubRefundOrder.Get().(*SubRefundOrder)
+}
+
+// ReleaseSubRefundOrder 释放SubRefundOrder
+func ReleaseSubRefundOrder(v *SubRefundOrder) {
+	v.DiscountInfos = v.DiscountInfos[:0]
+	v.SubOutOrderId = ""
+	v.SkuCode = ""
+	v.SubBizOrderId = ""
+	v.RefundQuantity = 0
+	v.RefundFee = 0
+	v.RefundWeight = 0
+	v.DiscountFee = 0
+	v.MerchantDiscountFee = 0
+	v.PlatformDiscountFee = 0
+	v.RefundSaleQuantity = 0
+	poolSubRefundOrder.Put(v)
 }

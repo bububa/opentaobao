@@ -9,11 +9,6 @@ import (
 // taobao.uscesl.biz.store.insert
 //
 // 新增电子价签商家门店接口
-func TaobaoUsceslBizStoreInsert(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizStoreInsertAPIRequest, session string) (*uscesl.TaobaoUsceslBizStoreInsertAPIResponse, error) {
-	var resp uscesl.TaobaoUsceslBizStoreInsertAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUsceslBizStoreInsert(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizStoreInsertAPIRequest, resp *uscesl.TaobaoUsceslBizStoreInsertAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

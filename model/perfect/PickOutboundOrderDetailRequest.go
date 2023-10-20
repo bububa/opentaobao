@@ -1,5 +1,9 @@
 package perfect
 
+import (
+	"sync"
+)
+
 // PickOutboundOrderDetailRequest 结构体
 type PickOutboundOrderDetailRequest struct {
 	// 1
@@ -30,4 +34,34 @@ type PickOutboundOrderDetailRequest struct {
 	Attributes string `json:"attributes,omitempty" xml:"attributes,omitempty"`
 	// 1
 	OutboundOrderDetailCode string `json:"outbound_order_detail_code,omitempty" xml:"outbound_order_detail_code,omitempty"`
+}
+
+var poolPickOutboundOrderDetailRequest = sync.Pool{
+	New: func() any {
+		return new(PickOutboundOrderDetailRequest)
+	},
+}
+
+// GetPickOutboundOrderDetailRequest() 从对象池中获取PickOutboundOrderDetailRequest
+func GetPickOutboundOrderDetailRequest() *PickOutboundOrderDetailRequest {
+	return poolPickOutboundOrderDetailRequest.Get().(*PickOutboundOrderDetailRequest)
+}
+
+// ReleasePickOutboundOrderDetailRequest 释放PickOutboundOrderDetailRequest
+func ReleasePickOutboundOrderDetailRequest(v *PickOutboundOrderDetailRequest) {
+	v.Barcodes = v.Barcodes[:0]
+	v.ItemPicUrl = ""
+	v.ItemType = ""
+	v.PlanSalesQuantity = ""
+	v.ItemCode = ""
+	v.PlanStockQuantity = ""
+	v.StockUnit = ""
+	v.InterceptStrategy = ""
+	v.ItemName = ""
+	v.SalesUnit = ""
+	v.Cancelled = ""
+	v.ChannelName = ""
+	v.Attributes = ""
+	v.OutboundOrderDetailCode = ""
+	poolPickOutboundOrderDetailRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package wlb
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoWlbOrderCreateAPIResponse struct {
 	TaobaoWlbOrderCreateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoWlbOrderCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoWlbOrderCreateAPIResponseModel).Reset()
+}
+
 // TaobaoWlbOrderCreateAPIResponseModel is 创建物流宝订单 成功返回结果
 type TaobaoWlbOrderCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_order_create_response"`
@@ -24,4 +31,28 @@ type TaobaoWlbOrderCreateAPIResponseModel struct {
 	OrderCode string `json:"order_code,omitempty" xml:"order_code,omitempty"`
 	// 订单创建时间
 	CreateTime string `json:"create_time,omitempty" xml:"create_time,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoWlbOrderCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.OrderCode = ""
+	m.CreateTime = ""
+}
+
+var poolTaobaoWlbOrderCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoWlbOrderCreateAPIResponse)
+	},
+}
+
+// GetTaobaoWlbOrderCreateAPIResponse 从 sync.Pool 获取 TaobaoWlbOrderCreateAPIResponse
+func GetTaobaoWlbOrderCreateAPIResponse() *TaobaoWlbOrderCreateAPIResponse {
+	return poolTaobaoWlbOrderCreateAPIResponse.Get().(*TaobaoWlbOrderCreateAPIResponse)
+}
+
+// ReleaseTaobaoWlbOrderCreateAPIResponse 将 TaobaoWlbOrderCreateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoWlbOrderCreateAPIResponse(v *TaobaoWlbOrderCreateAPIResponse) {
+	v.Reset()
+	poolTaobaoWlbOrderCreateAPIResponse.Put(v)
 }

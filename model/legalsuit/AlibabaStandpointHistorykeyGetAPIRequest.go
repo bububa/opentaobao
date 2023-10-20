@@ -2,6 +2,7 @@ package legalsuit
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaStandpointHistorykeyGetAPIRequest struct {
 // NewAlibabaStandpointHistorykeyGetRequest 初始化AlibabaStandpointHistorykeyGetAPIRequest对象
 func NewAlibabaStandpointHistorykeyGetRequest() *AlibabaStandpointHistorykeyGetAPIRequest {
 	return &AlibabaStandpointHistorykeyGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaStandpointHistorykeyGetAPIRequest) Reset() {
+	r._userId = ""
+	r._inputSystemCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaStandpointHistorykeyGetAPIRequest) SetInputSystemCode(_inputSyst
 // GetInputSystemCode InputSystemCode Getter
 func (r AlibabaStandpointHistorykeyGetAPIRequest) GetInputSystemCode() string {
 	return r._inputSystemCode
+}
+
+var poolAlibabaStandpointHistorykeyGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaStandpointHistorykeyGetRequest()
+	},
+}
+
+// GetAlibabaStandpointHistorykeyGetRequest 从 sync.Pool 获取 AlibabaStandpointHistorykeyGetAPIRequest
+func GetAlibabaStandpointHistorykeyGetAPIRequest() *AlibabaStandpointHistorykeyGetAPIRequest {
+	return poolAlibabaStandpointHistorykeyGetAPIRequest.Get().(*AlibabaStandpointHistorykeyGetAPIRequest)
+}
+
+// ReleaseAlibabaStandpointHistorykeyGetAPIRequest 将 AlibabaStandpointHistorykeyGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaStandpointHistorykeyGetAPIRequest(v *AlibabaStandpointHistorykeyGetAPIRequest) {
+	v.Reset()
+	poolAlibabaStandpointHistorykeyGetAPIRequest.Put(v)
 }

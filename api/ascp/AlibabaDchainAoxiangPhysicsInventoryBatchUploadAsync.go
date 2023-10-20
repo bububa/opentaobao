@@ -9,11 +9,6 @@ import (
 // alibaba.dchain.aoxiang.physics.inventory.batch.upload.async
 //
 // 实仓库存同步
-func AlibabaDchainAoxiangPhysicsInventoryBatchUploadAsync(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIRequest, session string) (*ascp.AlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDchainAoxiangPhysicsInventoryBatchUploadAsync(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIRequest, resp *ascp.AlibabaDchainAoxiangPhysicsInventoryBatchUploadAsyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

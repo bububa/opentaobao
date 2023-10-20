@@ -2,6 +2,7 @@ package opentrade
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoOpentradeQueueQueryAPIResponse struct {
 	TaobaoOpentradeQueueQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoOpentradeQueueQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOpentradeQueueQueryAPIResponseModel).Reset()
+}
+
 // TaobaoOpentradeQueueQueryAPIResponseModel is 尖货交易排队信息查询 成功返回结果
 type TaobaoOpentradeQueueQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"opentrade_queue_query_response"`
@@ -24,4 +31,28 @@ type TaobaoOpentradeQueueQueryAPIResponseModel struct {
 	Results []McUserDto `json:"results,omitempty" xml:"results>mc_user_dto,omitempty"`
 	// 总记录数
 	TotalCount string `json:"total_count,omitempty" xml:"total_count,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOpentradeQueueQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Results = m.Results[:0]
+	m.TotalCount = ""
+}
+
+var poolTaobaoOpentradeQueueQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOpentradeQueueQueryAPIResponse)
+	},
+}
+
+// GetTaobaoOpentradeQueueQueryAPIResponse 从 sync.Pool 获取 TaobaoOpentradeQueueQueryAPIResponse
+func GetTaobaoOpentradeQueueQueryAPIResponse() *TaobaoOpentradeQueueQueryAPIResponse {
+	return poolTaobaoOpentradeQueueQueryAPIResponse.Get().(*TaobaoOpentradeQueueQueryAPIResponse)
+}
+
+// ReleaseTaobaoOpentradeQueueQueryAPIResponse 将 TaobaoOpentradeQueueQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOpentradeQueueQueryAPIResponse(v *TaobaoOpentradeQueueQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoOpentradeQueueQueryAPIResponse.Put(v)
 }

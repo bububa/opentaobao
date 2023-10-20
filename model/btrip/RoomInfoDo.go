@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // RoomInfoDo 结构体
 type RoomInfoDo struct {
 	// 房间名称
@@ -12,4 +16,25 @@ type RoomInfoDo struct {
 	RoomNum int64 `json:"room_num,omitempty" xml:"room_num,omitempty"`
 	// 总间夜
 	NightNumber int64 `json:"night_number,omitempty" xml:"night_number,omitempty"`
+}
+
+var poolRoomInfoDo = sync.Pool{
+	New: func() any {
+		return new(RoomInfoDo)
+	},
+}
+
+// GetRoomInfoDo() 从对象池中获取RoomInfoDo
+func GetRoomInfoDo() *RoomInfoDo {
+	return poolRoomInfoDo.Get().(*RoomInfoDo)
+}
+
+// ReleaseRoomInfoDo 释放RoomInfoDo
+func ReleaseRoomInfoDo(v *RoomInfoDo) {
+	v.RoomName = ""
+	v.Currency = ""
+	v.RoomPrice = 0
+	v.RoomNum = 0
+	v.NightNumber = 0
+	poolRoomInfoDo.Put(v)
 }

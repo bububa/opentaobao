@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleTenderAftersaleOrderPerformAPIRequest struct {
 // NewAlibabaIdleTenderAftersaleOrderPerformRequest 初始化AlibabaIdleTenderAftersaleOrderPerformAPIRequest对象
 func NewAlibabaIdleTenderAftersaleOrderPerformRequest() *AlibabaIdleTenderAftersaleOrderPerformAPIRequest {
 	return &AlibabaIdleTenderAftersaleOrderPerformAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleTenderAftersaleOrderPerformAPIRequest) Reset() {
+	r._tenderAfterSaleParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleTenderAftersaleOrderPerformAPIRequest) SetTenderAfterSalePar
 // GetTenderAfterSaleParam TenderAfterSaleParam Getter
 func (r AlibabaIdleTenderAftersaleOrderPerformAPIRequest) GetTenderAfterSaleParam() *TenderAfterSaleParam {
 	return r._tenderAfterSaleParam
+}
+
+var poolAlibabaIdleTenderAftersaleOrderPerformAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleTenderAftersaleOrderPerformRequest()
+	},
+}
+
+// GetAlibabaIdleTenderAftersaleOrderPerformRequest 从 sync.Pool 获取 AlibabaIdleTenderAftersaleOrderPerformAPIRequest
+func GetAlibabaIdleTenderAftersaleOrderPerformAPIRequest() *AlibabaIdleTenderAftersaleOrderPerformAPIRequest {
+	return poolAlibabaIdleTenderAftersaleOrderPerformAPIRequest.Get().(*AlibabaIdleTenderAftersaleOrderPerformAPIRequest)
+}
+
+// ReleaseAlibabaIdleTenderAftersaleOrderPerformAPIRequest 将 AlibabaIdleTenderAftersaleOrderPerformAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleTenderAftersaleOrderPerformAPIRequest(v *AlibabaIdleTenderAftersaleOrderPerformAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleTenderAftersaleOrderPerformAPIRequest.Put(v)
 }

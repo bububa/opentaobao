@@ -1,5 +1,9 @@
 package axindata
 
+import (
+	"sync"
+)
+
 // MatchedRoomResultDto 结构体
 type MatchedRoomResultDto struct {
 	// 当前房型匹配最终结果列表，
@@ -14,4 +18,26 @@ type MatchedRoomResultDto struct {
 	Shid int64 `json:"shid,omitempty" xml:"shid,omitempty"`
 	// 当前房型的匹配是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolMatchedRoomResultDto = sync.Pool{
+	New: func() any {
+		return new(MatchedRoomResultDto)
+	},
+}
+
+// GetMatchedRoomResultDto() 从对象池中获取MatchedRoomResultDto
+func GetMatchedRoomResultDto() *MatchedRoomResultDto {
+	return poolMatchedRoomResultDto.Get().(*MatchedRoomResultDto)
+}
+
+// ReleaseMatchedRoomResultDto 释放MatchedRoomResultDto
+func ReleaseMatchedRoomResultDto(v *MatchedRoomResultDto) {
+	v.MatchedRoomDataList = v.MatchedRoomDataList[:0]
+	v.RoomName = ""
+	v.ErCode = ""
+	v.ErMsg = ""
+	v.Shid = 0
+	v.Success = false
+	poolMatchedRoomResultDto.Put(v)
 }

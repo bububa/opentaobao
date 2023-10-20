@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaWdkSkuScrollQueryAPIResponse struct {
 	AlibabaWdkSkuScrollQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaWdkSkuScrollQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaWdkSkuScrollQueryAPIResponseModel).Reset()
+}
+
 // AlibabaWdkSkuScrollQueryAPIResponseModel is 门店商品批量游标方式查询接口 成功返回结果
 type AlibabaWdkSkuScrollQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_sku_scroll_query_response"`
@@ -22,4 +29,27 @@ type AlibabaWdkSkuScrollQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
 	Result *ApiScrollPageResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaWdkSkuScrollQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaWdkSkuScrollQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkSkuScrollQueryAPIResponse)
+	},
+}
+
+// GetAlibabaWdkSkuScrollQueryAPIResponse 从 sync.Pool 获取 AlibabaWdkSkuScrollQueryAPIResponse
+func GetAlibabaWdkSkuScrollQueryAPIResponse() *AlibabaWdkSkuScrollQueryAPIResponse {
+	return poolAlibabaWdkSkuScrollQueryAPIResponse.Get().(*AlibabaWdkSkuScrollQueryAPIResponse)
+}
+
+// ReleaseAlibabaWdkSkuScrollQueryAPIResponse 将 AlibabaWdkSkuScrollQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaWdkSkuScrollQueryAPIResponse(v *AlibabaWdkSkuScrollQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaWdkSkuScrollQueryAPIResponse.Put(v)
 }

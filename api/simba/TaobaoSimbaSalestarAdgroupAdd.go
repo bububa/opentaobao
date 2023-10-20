@@ -9,11 +9,6 @@ import (
 // taobao.simba.salestar.adgroup.add
 //
 // 创建一个推广组
-func TaobaoSimbaSalestarAdgroupAdd(clt *core.SDKClient, req *simba.TaobaoSimbaSalestarAdgroupAddAPIRequest, session string) (*simba.TaobaoSimbaSalestarAdgroupAddAPIResponse, error) {
-	var resp simba.TaobaoSimbaSalestarAdgroupAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaSalestarAdgroupAdd(clt *core.SDKClient, req *simba.TaobaoSimbaSalestarAdgroupAddAPIRequest, resp *simba.TaobaoSimbaSalestarAdgroupAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest struct {
 // NewAlibabaScbpAdTargetTagFindCampaignTargetTagRequest 初始化AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest对象
 func NewAlibabaScbpAdTargetTagFindCampaignTargetTagRequest() *AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest {
 	return &AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) Reset() {
+	r._topContext = nil
+	r._campaignId = 0
+	r._targetTagOperation = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) SetTargetTagOper
 // GetTargetTagOperation TargetTagOperation Getter
 func (r AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) GetTargetTagOperation() *TargetTagOperationDto {
 	return r._targetTagOperation
+}
+
+var poolAlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdTargetTagFindCampaignTargetTagRequest()
+	},
+}
+
+// GetAlibabaScbpAdTargetTagFindCampaignTargetTagRequest 从 sync.Pool 获取 AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest
+func GetAlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest() *AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest {
+	return poolAlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest.Get().(*AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest 将 AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest(v *AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest.Put(v)
 }

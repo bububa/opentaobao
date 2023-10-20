@@ -2,6 +2,7 @@ package user
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoOpenAccountIndexFindAPIRequest struct {
 // NewTaobaoOpenAccountIndexFindRequest 初始化TaobaoOpenAccountIndexFindAPIRequest对象
 func NewTaobaoOpenAccountIndexFindRequest() *TaobaoOpenAccountIndexFindAPIRequest {
 	return &TaobaoOpenAccountIndexFindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpenAccountIndexFindAPIRequest) Reset() {
+	r._indexValue = ""
+	r._indexType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoOpenAccountIndexFindAPIRequest) SetIndexType(_indexType int64) er
 // GetIndexType IndexType Getter
 func (r TaobaoOpenAccountIndexFindAPIRequest) GetIndexType() int64 {
 	return r._indexType
+}
+
+var poolTaobaoOpenAccountIndexFindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpenAccountIndexFindRequest()
+	},
+}
+
+// GetTaobaoOpenAccountIndexFindRequest 从 sync.Pool 获取 TaobaoOpenAccountIndexFindAPIRequest
+func GetTaobaoOpenAccountIndexFindAPIRequest() *TaobaoOpenAccountIndexFindAPIRequest {
+	return poolTaobaoOpenAccountIndexFindAPIRequest.Get().(*TaobaoOpenAccountIndexFindAPIRequest)
+}
+
+// ReleaseTaobaoOpenAccountIndexFindAPIRequest 将 TaobaoOpenAccountIndexFindAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpenAccountIndexFindAPIRequest(v *TaobaoOpenAccountIndexFindAPIRequest) {
+	v.Reset()
+	poolTaobaoOpenAccountIndexFindAPIRequest.Put(v)
 }

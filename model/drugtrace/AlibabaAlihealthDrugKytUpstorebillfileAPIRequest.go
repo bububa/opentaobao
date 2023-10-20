@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type AlibabaAlihealthDrugKytUpstorebillfileAPIRequest struct {
 // NewAlibabaAlihealthDrugKytUpstorebillfileRequest 初始化AlibabaAlihealthDrugKytUpstorebillfileAPIRequest对象
 func NewAlibabaAlihealthDrugKytUpstorebillfileRequest() *AlibabaAlihealthDrugKytUpstorebillfileAPIRequest {
 	return &AlibabaAlihealthDrugKytUpstorebillfileAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugKytUpstorebillfileAPIRequest) Reset() {
+	r._billCode = ""
+	r._billTime = ""
+	r._refUserId = ""
+	r._fromUserId = ""
+	r._operIcCode = ""
+	r._operIcName = ""
+	r._fileContent = ""
+	r._uploadFileName = ""
+	r._clientType = ""
+	r._billType = 0
+	r._physicType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *AlibabaAlihealthDrugKytUpstorebillfileAPIRequest) SetPhysicType(_physic
 // GetPhysicType PhysicType Getter
 func (r AlibabaAlihealthDrugKytUpstorebillfileAPIRequest) GetPhysicType() int64 {
 	return r._physicType
+}
+
+var poolAlibabaAlihealthDrugKytUpstorebillfileAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugKytUpstorebillfileRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugKytUpstorebillfileRequest 从 sync.Pool 获取 AlibabaAlihealthDrugKytUpstorebillfileAPIRequest
+func GetAlibabaAlihealthDrugKytUpstorebillfileAPIRequest() *AlibabaAlihealthDrugKytUpstorebillfileAPIRequest {
+	return poolAlibabaAlihealthDrugKytUpstorebillfileAPIRequest.Get().(*AlibabaAlihealthDrugKytUpstorebillfileAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugKytUpstorebillfileAPIRequest 将 AlibabaAlihealthDrugKytUpstorebillfileAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytUpstorebillfileAPIRequest(v *AlibabaAlihealthDrugKytUpstorebillfileAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytUpstorebillfileAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallServiceSettlementBillinfoQueryAPIRequest struct {
 // NewTmallServiceSettlementBillinfoQueryRequest 初始化TmallServiceSettlementBillinfoQueryAPIRequest对象
 func NewTmallServiceSettlementBillinfoQueryRequest() *TmallServiceSettlementBillinfoQueryAPIRequest {
 	return &TmallServiceSettlementBillinfoQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServiceSettlementBillinfoQueryAPIRequest) Reset() {
+	r._workcardId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallServiceSettlementBillinfoQueryAPIRequest) SetWorkcardId(_workcardI
 // GetWorkcardId WorkcardId Getter
 func (r TmallServiceSettlementBillinfoQueryAPIRequest) GetWorkcardId() int64 {
 	return r._workcardId
+}
+
+var poolTmallServiceSettlementBillinfoQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServiceSettlementBillinfoQueryRequest()
+	},
+}
+
+// GetTmallServiceSettlementBillinfoQueryRequest 从 sync.Pool 获取 TmallServiceSettlementBillinfoQueryAPIRequest
+func GetTmallServiceSettlementBillinfoQueryAPIRequest() *TmallServiceSettlementBillinfoQueryAPIRequest {
+	return poolTmallServiceSettlementBillinfoQueryAPIRequest.Get().(*TmallServiceSettlementBillinfoQueryAPIRequest)
+}
+
+// ReleaseTmallServiceSettlementBillinfoQueryAPIRequest 将 TmallServiceSettlementBillinfoQueryAPIRequest 放入 sync.Pool
+func ReleaseTmallServiceSettlementBillinfoQueryAPIRequest(v *TmallServiceSettlementBillinfoQueryAPIRequest) {
+	v.Reset()
+	poolTmallServiceSettlementBillinfoQueryAPIRequest.Put(v)
 }

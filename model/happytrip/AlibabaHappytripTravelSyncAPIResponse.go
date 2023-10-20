@@ -2,6 +2,7 @@ package happytrip
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaHappytripTravelSyncAPIResponse struct {
 	AlibabaHappytripTravelSyncAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaHappytripTravelSyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaHappytripTravelSyncAPIResponseModel).Reset()
+}
+
 // AlibabaHappytripTravelSyncAPIResponseModel is 差旅申请单同步接口 成功返回结果
 type AlibabaHappytripTravelSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_happytrip_travel_sync_response"`
@@ -22,4 +29,27 @@ type AlibabaHappytripTravelSyncAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 差旅申请单在欢行内部产生的差旅单ID
 	TravelId int64 `json:"travel_id,omitempty" xml:"travel_id,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaHappytripTravelSyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TravelId = 0
+}
+
+var poolAlibabaHappytripTravelSyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaHappytripTravelSyncAPIResponse)
+	},
+}
+
+// GetAlibabaHappytripTravelSyncAPIResponse 从 sync.Pool 获取 AlibabaHappytripTravelSyncAPIResponse
+func GetAlibabaHappytripTravelSyncAPIResponse() *AlibabaHappytripTravelSyncAPIResponse {
+	return poolAlibabaHappytripTravelSyncAPIResponse.Get().(*AlibabaHappytripTravelSyncAPIResponse)
+}
+
+// ReleaseAlibabaHappytripTravelSyncAPIResponse 将 AlibabaHappytripTravelSyncAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaHappytripTravelSyncAPIResponse(v *AlibabaHappytripTravelSyncAPIResponse) {
+	v.Reset()
+	poolAlibabaHappytripTravelSyncAPIResponse.Put(v)
 }

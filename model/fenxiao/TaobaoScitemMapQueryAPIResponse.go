@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoScitemMapQueryAPIResponse struct {
 	TaobaoScitemMapQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoScitemMapQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoScitemMapQueryAPIResponseModel).Reset()
+}
+
 // TaobaoScitemMapQueryAPIResponseModel is 查找IC商品或分销商品与后端商品的关联信息 成功返回结果
 type TaobaoScitemMapQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"scitem_map_query_response"`
@@ -22,4 +29,27 @@ type TaobaoScitemMapQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 后端商品映射列表
 	ScItemMaps []ScItemMap `json:"sc_item_maps,omitempty" xml:"sc_item_maps>sc_item_map,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoScitemMapQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ScItemMaps = m.ScItemMaps[:0]
+}
+
+var poolTaobaoScitemMapQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoScitemMapQueryAPIResponse)
+	},
+}
+
+// GetTaobaoScitemMapQueryAPIResponse 从 sync.Pool 获取 TaobaoScitemMapQueryAPIResponse
+func GetTaobaoScitemMapQueryAPIResponse() *TaobaoScitemMapQueryAPIResponse {
+	return poolTaobaoScitemMapQueryAPIResponse.Get().(*TaobaoScitemMapQueryAPIResponse)
+}
+
+// ReleaseTaobaoScitemMapQueryAPIResponse 将 TaobaoScitemMapQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoScitemMapQueryAPIResponse(v *TaobaoScitemMapQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoScitemMapQueryAPIResponse.Put(v)
 }

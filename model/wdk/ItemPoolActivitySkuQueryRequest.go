@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ItemPoolActivitySkuQueryRequest 结构体
 type ItemPoolActivitySkuQueryRequest struct {
 	// 商品编码列表
@@ -14,4 +18,26 @@ type ItemPoolActivitySkuQueryRequest struct {
 	PageInfo *ActivitySkuQueryDto `json:"page_info,omitempty" xml:"page_info,omitempty"`
 	// 换购品标识
 	ExchangeSku bool `json:"exchange_sku,omitempty" xml:"exchange_sku,omitempty"`
+}
+
+var poolItemPoolActivitySkuQueryRequest = sync.Pool{
+	New: func() any {
+		return new(ItemPoolActivitySkuQueryRequest)
+	},
+}
+
+// GetItemPoolActivitySkuQueryRequest() 从对象池中获取ItemPoolActivitySkuQueryRequest
+func GetItemPoolActivitySkuQueryRequest() *ItemPoolActivitySkuQueryRequest {
+	return poolItemPoolActivitySkuQueryRequest.Get().(*ItemPoolActivitySkuQueryRequest)
+}
+
+// ReleaseItemPoolActivitySkuQueryRequest 释放ItemPoolActivitySkuQueryRequest
+func ReleaseItemPoolActivitySkuQueryRequest(v *ItemPoolActivitySkuQueryRequest) {
+	v.SkuCodes = v.SkuCodes[:0]
+	v.BarCodes = v.BarCodes[:0]
+	v.ActId = ""
+	v.OutActId = ""
+	v.PageInfo = nil
+	v.ExchangeSku = false
+	poolItemPoolActivitySkuQueryRequest.Put(v)
 }

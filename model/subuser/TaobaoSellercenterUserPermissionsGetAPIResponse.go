@@ -2,6 +2,7 @@ package subuser
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoSellercenterUserPermissionsGetAPIResponse struct {
 	TaobaoSellercenterUserPermissionsGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoSellercenterUserPermissionsGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoSellercenterUserPermissionsGetAPIResponseModel).Reset()
+}
+
 // TaobaoSellercenterUserPermissionsGetAPIResponseModel is 获取指定用户的权限集合 成功返回结果
 type TaobaoSellercenterUserPermissionsGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"sellercenter_user_permissions_get_response"`
@@ -22,4 +29,27 @@ type TaobaoSellercenterUserPermissionsGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 权限列表
 	Permissions []Permission `json:"permissions,omitempty" xml:"permissions>permission,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoSellercenterUserPermissionsGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Permissions = m.Permissions[:0]
+}
+
+var poolTaobaoSellercenterUserPermissionsGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoSellercenterUserPermissionsGetAPIResponse)
+	},
+}
+
+// GetTaobaoSellercenterUserPermissionsGetAPIResponse 从 sync.Pool 获取 TaobaoSellercenterUserPermissionsGetAPIResponse
+func GetTaobaoSellercenterUserPermissionsGetAPIResponse() *TaobaoSellercenterUserPermissionsGetAPIResponse {
+	return poolTaobaoSellercenterUserPermissionsGetAPIResponse.Get().(*TaobaoSellercenterUserPermissionsGetAPIResponse)
+}
+
+// ReleaseTaobaoSellercenterUserPermissionsGetAPIResponse 将 TaobaoSellercenterUserPermissionsGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoSellercenterUserPermissionsGetAPIResponse(v *TaobaoSellercenterUserPermissionsGetAPIResponse) {
+	v.Reset()
+	poolTaobaoSellercenterUserPermissionsGetAPIResponse.Put(v)
 }

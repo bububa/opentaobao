@@ -1,5 +1,9 @@
 package tmallchannel
 
+import (
+	"sync"
+)
+
 // TopOfflineReducePrepayDto 结构体
 type TopOfflineReducePrepayDto struct {
 	// 收款人账号
@@ -34,4 +38,36 @@ type TopOfflineReducePrepayDto struct {
 	OfflinePrepayDetailType int64 `json:"offline_prepay_detail_type,omitempty" xml:"offline_prepay_detail_type,omitempty"`
 	// 金额，单位分（必须为负数）
 	TicketMoney int64 `json:"ticket_money,omitempty" xml:"ticket_money,omitempty"`
+}
+
+var poolTopOfflineReducePrepayDto = sync.Pool{
+	New: func() any {
+		return new(TopOfflineReducePrepayDto)
+	},
+}
+
+// GetTopOfflineReducePrepayDto() 从对象池中获取TopOfflineReducePrepayDto
+func GetTopOfflineReducePrepayDto() *TopOfflineReducePrepayDto {
+	return poolTopOfflineReducePrepayDto.Get().(*TopOfflineReducePrepayDto)
+}
+
+// ReleaseTopOfflineReducePrepayDto 释放TopOfflineReducePrepayDto
+func ReleaseTopOfflineReducePrepayDto(v *TopOfflineReducePrepayDto) {
+	v.ReceiverAccountNum = ""
+	v.OuterPayId = ""
+	v.DistNick = ""
+	v.DrawerFullName = ""
+	v.PayBankNum = ""
+	v.DrawerAccountNum = ""
+	v.PayTime = ""
+	v.TicketIssueDate = ""
+	v.ReceiverBankFullName = ""
+	v.TicketId = ""
+	v.AcceptDate = ""
+	v.ReceiverFullName = ""
+	v.PayBankFullName = ""
+	v.FlowType = 0
+	v.OfflinePrepayDetailType = 0
+	v.TicketMoney = 0
+	poolTopOfflineReducePrepayDto.Put(v)
 }

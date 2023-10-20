@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // SeatVo 结构体
 type SeatVo struct {
 	// 名称
@@ -14,4 +18,26 @@ type SeatVo struct {
 	SleeperPrice int64 `json:"sleeper_price,omitempty" xml:"sleeper_price,omitempty"`
 	// 库存
 	Stock int64 `json:"stock,omitempty" xml:"stock,omitempty"`
+}
+
+var poolSeatVo = sync.Pool{
+	New: func() any {
+		return new(SeatVo)
+	},
+}
+
+// GetSeatVo() 从对象池中获取SeatVo
+func GetSeatVo() *SeatVo {
+	return poolSeatVo.Get().(*SeatVo)
+}
+
+// ReleaseSeatVo 释放SeatVo
+func ReleaseSeatVo(v *SeatVo) {
+	v.SeatName = ""
+	v.HoubuPrice = 0
+	v.Price = 0
+	v.SeatType = 0
+	v.SleeperPrice = 0
+	v.Stock = 0
+	poolSeatVo.Put(v)
 }

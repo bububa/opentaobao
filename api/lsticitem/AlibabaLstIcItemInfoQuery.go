@@ -9,11 +9,6 @@ import (
 // alibaba.lst.ic.item.info.query
 //
 // 查询商品信息
-func AlibabaLstIcItemInfoQuery(clt *core.SDKClient, req *lsticitem.AlibabaLstIcItemInfoQueryAPIRequest, session string) (*lsticitem.AlibabaLstIcItemInfoQueryAPIResponse, error) {
-	var resp lsticitem.AlibabaLstIcItemInfoQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLstIcItemInfoQuery(clt *core.SDKClient, req *lsticitem.AlibabaLstIcItemInfoQueryAPIRequest, resp *lsticitem.AlibabaLstIcItemInfoQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

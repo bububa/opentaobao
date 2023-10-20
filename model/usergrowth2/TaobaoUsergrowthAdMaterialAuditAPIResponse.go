@@ -2,6 +2,7 @@ package usergrowth2
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoUsergrowthAdMaterialAuditAPIResponse struct {
 	model.CommonResponse
 	TaobaoUsergrowthAdMaterialAuditAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoUsergrowthAdMaterialAuditAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoUsergrowthAdMaterialAuditAPIResponseModel).Reset()
 }
 
 // TaobaoUsergrowthAdMaterialAuditAPIResponseModel is 素材审核 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoUsergrowthAdMaterialAuditAPIResponseModel struct {
 	Data int64 `json:"data,omitempty" xml:"data,omitempty"`
 	// 请求是否成功
 	Successful bool `json:"successful,omitempty" xml:"successful,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoUsergrowthAdMaterialAuditAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.ResponseCode = 0
+	m.Data = 0
+	m.Successful = false
+}
+
+var poolTaobaoUsergrowthAdMaterialAuditAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoUsergrowthAdMaterialAuditAPIResponse)
+	},
+}
+
+// GetTaobaoUsergrowthAdMaterialAuditAPIResponse 从 sync.Pool 获取 TaobaoUsergrowthAdMaterialAuditAPIResponse
+func GetTaobaoUsergrowthAdMaterialAuditAPIResponse() *TaobaoUsergrowthAdMaterialAuditAPIResponse {
+	return poolTaobaoUsergrowthAdMaterialAuditAPIResponse.Get().(*TaobaoUsergrowthAdMaterialAuditAPIResponse)
+}
+
+// ReleaseTaobaoUsergrowthAdMaterialAuditAPIResponse 将 TaobaoUsergrowthAdMaterialAuditAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoUsergrowthAdMaterialAuditAPIResponse(v *TaobaoUsergrowthAdMaterialAuditAPIResponse) {
+	v.Reset()
+	poolTaobaoUsergrowthAdMaterialAuditAPIResponse.Put(v)
 }

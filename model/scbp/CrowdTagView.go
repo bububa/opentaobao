@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // CrowdTagView 结构体
 type CrowdTagView struct {
 	// 标签中文名
@@ -12,4 +16,25 @@ type CrowdTagView struct {
 	Discount int64 `json:"discount,omitempty" xml:"discount,omitempty"`
 	// 最近7天效果数据
 	Effect *Effect7d `json:"effect,omitempty" xml:"effect,omitempty"`
+}
+
+var poolCrowdTagView = sync.Pool{
+	New: func() any {
+		return new(CrowdTagView)
+	},
+}
+
+// GetCrowdTagView() 从对象池中获取CrowdTagView
+func GetCrowdTagView() *CrowdTagView {
+	return poolCrowdTagView.Get().(*CrowdTagView)
+}
+
+// ReleaseCrowdTagView 释放CrowdTagView
+func ReleaseCrowdTagView(v *CrowdTagView) {
+	v.TagName = ""
+	v.TagId = ""
+	v.CrowdType = ""
+	v.Discount = 0
+	v.Effect = nil
+	poolCrowdTagView.Put(v)
 }

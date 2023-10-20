@@ -2,6 +2,7 @@ package xiamitrace
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type XiamiContentResourceActionReportAPIResponse struct {
 	XiamiContentResourceActionReportAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *XiamiContentResourceActionReportAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.XiamiContentResourceActionReportAPIResponseModel).Reset()
+}
+
 // XiamiContentResourceActionReportAPIResponseModel is 曲库开放平台内容行为上报接口 成功返回结果
 type XiamiContentResourceActionReportAPIResponseModel struct {
 	XMLName xml.Name `xml:"xiami_content_resource_action_report_response"`
@@ -24,4 +31,28 @@ type XiamiContentResourceActionReportAPIResponseModel struct {
 	ResultCode *ResultCode `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 上报结果: true(成功), false(失败)
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *XiamiContentResourceActionReportAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultCode = nil
+	m.Result = false
+}
+
+var poolXiamiContentResourceActionReportAPIResponse = sync.Pool{
+	New: func() any {
+		return new(XiamiContentResourceActionReportAPIResponse)
+	},
+}
+
+// GetXiamiContentResourceActionReportAPIResponse 从 sync.Pool 获取 XiamiContentResourceActionReportAPIResponse
+func GetXiamiContentResourceActionReportAPIResponse() *XiamiContentResourceActionReportAPIResponse {
+	return poolXiamiContentResourceActionReportAPIResponse.Get().(*XiamiContentResourceActionReportAPIResponse)
+}
+
+// ReleaseXiamiContentResourceActionReportAPIResponse 将 XiamiContentResourceActionReportAPIResponse 保存到 sync.Pool
+func ReleaseXiamiContentResourceActionReportAPIResponse(v *XiamiContentResourceActionReportAPIResponse) {
+	v.Reset()
+	poolXiamiContentResourceActionReportAPIResponse.Put(v)
 }

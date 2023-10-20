@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // InventoryBatchUploadAsyncRequest 结构体
 type InventoryBatchUploadAsyncRequest struct {
 	// 库存信息
@@ -8,4 +12,23 @@ type InventoryBatchUploadAsyncRequest struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// ERP调翱象接口创建货品的时间戳
 	RequestTime int64 `json:"request_time,omitempty" xml:"request_time,omitempty"`
+}
+
+var poolInventoryBatchUploadAsyncRequest = sync.Pool{
+	New: func() any {
+		return new(InventoryBatchUploadAsyncRequest)
+	},
+}
+
+// GetInventoryBatchUploadAsyncRequest() 从对象池中获取InventoryBatchUploadAsyncRequest
+func GetInventoryBatchUploadAsyncRequest() *InventoryBatchUploadAsyncRequest {
+	return poolInventoryBatchUploadAsyncRequest.Get().(*InventoryBatchUploadAsyncRequest)
+}
+
+// ReleaseInventoryBatchUploadAsyncRequest 释放InventoryBatchUploadAsyncRequest
+func ReleaseInventoryBatchUploadAsyncRequest(v *InventoryBatchUploadAsyncRequest) {
+	v.PhysicsInventory = v.PhysicsInventory[:0]
+	v.RequestId = ""
+	v.RequestTime = 0
+	poolInventoryBatchUploadAsyncRequest.Put(v)
 }

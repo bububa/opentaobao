@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoLogisticsOnlineSendAPIResponse struct {
 	TaobaoLogisticsOnlineSendAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoLogisticsOnlineSendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoLogisticsOnlineSendAPIResponseModel).Reset()
+}
+
 // TaobaoLogisticsOnlineSendAPIResponseModel is 在线订单发货处理（支持货到付款） 成功返回结果
 type TaobaoLogisticsOnlineSendAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_online_send_response"`
@@ -22,4 +29,27 @@ type TaobaoLogisticsOnlineSendAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// de
 	Shipping *Shipping `json:"shipping,omitempty" xml:"shipping,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoLogisticsOnlineSendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Shipping = nil
+}
+
+var poolTaobaoLogisticsOnlineSendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoLogisticsOnlineSendAPIResponse)
+	},
+}
+
+// GetTaobaoLogisticsOnlineSendAPIResponse 从 sync.Pool 获取 TaobaoLogisticsOnlineSendAPIResponse
+func GetTaobaoLogisticsOnlineSendAPIResponse() *TaobaoLogisticsOnlineSendAPIResponse {
+	return poolTaobaoLogisticsOnlineSendAPIResponse.Get().(*TaobaoLogisticsOnlineSendAPIResponse)
+}
+
+// ReleaseTaobaoLogisticsOnlineSendAPIResponse 将 TaobaoLogisticsOnlineSendAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoLogisticsOnlineSendAPIResponse(v *TaobaoLogisticsOnlineSendAPIResponse) {
+	v.Reset()
+	poolTaobaoLogisticsOnlineSendAPIResponse.Put(v)
 }

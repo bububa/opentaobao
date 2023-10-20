@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // PropertyVerifyOpenReq 结构体
 type PropertyVerifyOpenReq struct {
 	// 券实例id
@@ -28,4 +32,33 @@ type PropertyVerifyOpenReq struct {
 	Point int64 `json:"point,omitempty" xml:"point,omitempty"`
 	// 需要核销的储值，单位为分
 	Value int64 `json:"value,omitempty" xml:"value,omitempty"`
+}
+
+var poolPropertyVerifyOpenReq = sync.Pool{
+	New: func() any {
+		return new(PropertyVerifyOpenReq)
+	},
+}
+
+// GetPropertyVerifyOpenReq() 从对象池中获取PropertyVerifyOpenReq
+func GetPropertyVerifyOpenReq() *PropertyVerifyOpenReq {
+	return poolPropertyVerifyOpenReq.Get().(*PropertyVerifyOpenReq)
+}
+
+// ReleasePropertyVerifyOpenReq 释放PropertyVerifyOpenReq
+func ReleasePropertyVerifyOpenReq(v *PropertyVerifyOpenReq) {
+	v.VoucherIdList = v.VoucherIdList[:0]
+	v.BrandId = ""
+	v.Mobile = ""
+	v.OperatorId = ""
+	v.OuterId = ""
+	v.OuterOrderId = ""
+	v.OuterType = ""
+	v.RequestId = ""
+	v.ShopId = ""
+	v.CardId = ""
+	v.CustomerId = ""
+	v.Point = 0
+	v.Value = 0
+	poolPropertyVerifyOpenReq.Put(v)
 }

@@ -1,5 +1,9 @@
 package tmallcarenter
 
+import (
+	"sync"
+)
+
 // VersionVehicleInfoOriginalDto 结构体
 type VersionVehicleInfoOriginalDto struct {
 	// 换代
@@ -42,4 +46,40 @@ type VersionVehicleInfoOriginalDto struct {
 	EndYear int64 `json:"end_year,omitempty" xml:"end_year,omitempty"`
 	// 生产年份
 	ProductiveYear int64 `json:"productive_year,omitempty" xml:"productive_year,omitempty"`
+}
+
+var poolVersionVehicleInfoOriginalDto = sync.Pool{
+	New: func() any {
+		return new(VersionVehicleInfoOriginalDto)
+	},
+}
+
+// GetVersionVehicleInfoOriginalDto() 从对象池中获取VersionVehicleInfoOriginalDto
+func GetVersionVehicleInfoOriginalDto() *VersionVehicleInfoOriginalDto {
+	return poolVersionVehicleInfoOriginalDto.Get().(*VersionVehicleInfoOriginalDto)
+}
+
+// ReleaseVersionVehicleInfoOriginalDto 释放VersionVehicleInfoOriginalDto
+func ReleaseVersionVehicleInfoOriginalDto(v *VersionVehicleInfoOriginalDto) {
+	v.Replacement = ""
+	v.SalesName = ""
+	v.Origin = ""
+	v.BrandName = ""
+	v.RearTyre = ""
+	v.MaxPower = ""
+	v.ManufactureName = ""
+	v.VersionCid = ""
+	v.SalesYear = ""
+	v.EngineNo = ""
+	v.ModelName = ""
+	v.FrontTyre = ""
+	v.Displacement = ""
+	v.DriveModel = ""
+	v.ChassisNum = ""
+	v.BodyModel = ""
+	v.LineName = ""
+	v.VehicleType = ""
+	v.EndYear = 0
+	v.ProductiveYear = 0
+	poolVersionVehicleInfoOriginalDto.Put(v)
 }

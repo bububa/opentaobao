@@ -1,5 +1,9 @@
 package mozivds
 
+import (
+	"sync"
+)
+
 // RemoveTenantAdminsRequest 结构体
 type RemoveTenantAdminsRequest struct {
 	// 人员Code列表
@@ -10,4 +14,24 @@ type RemoveTenantAdminsRequest struct {
 	RequestMetaData string `json:"request_meta_data,omitempty" xml:"request_meta_data,omitempty"`
 	// 租户Id
 	TenantId int64 `json:"tenant_id,omitempty" xml:"tenant_id,omitempty"`
+}
+
+var poolRemoveTenantAdminsRequest = sync.Pool{
+	New: func() any {
+		return new(RemoveTenantAdminsRequest)
+	},
+}
+
+// GetRemoveTenantAdminsRequest() 从对象池中获取RemoveTenantAdminsRequest
+func GetRemoveTenantAdminsRequest() *RemoveTenantAdminsRequest {
+	return poolRemoveTenantAdminsRequest.Get().(*RemoveTenantAdminsRequest)
+}
+
+// ReleaseRemoveTenantAdminsRequest 释放RemoveTenantAdminsRequest
+func ReleaseRemoveTenantAdminsRequest(v *RemoveTenantAdminsRequest) {
+	v.EmployeeCodes = v.EmployeeCodes[:0]
+	v.Operator = ""
+	v.RequestMetaData = ""
+	v.TenantId = 0
+	poolRemoveTenantAdminsRequest.Put(v)
 }

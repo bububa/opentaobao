@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // TopRealTimeReportQueryVo 结构体
 type TopRealTimeReportQueryVo struct {
 	// 聚合维度,campaign-计划, date-时间
@@ -26,4 +30,32 @@ type TopRealTimeReportQueryVo struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 是否分页
 	ByPage bool `json:"by_page,omitempty" xml:"by_page,omitempty"`
+}
+
+var poolTopRealTimeReportQueryVo = sync.Pool{
+	New: func() any {
+		return new(TopRealTimeReportQueryVo)
+	},
+}
+
+// GetTopRealTimeReportQueryVo() 从对象池中获取TopRealTimeReportQueryVo
+func GetTopRealTimeReportQueryVo() *TopRealTimeReportQueryVo {
+	return poolTopRealTimeReportQueryVo.Get().(*TopRealTimeReportQueryVo)
+}
+
+// ReleaseTopRealTimeReportQueryVo 释放TopRealTimeReportQueryVo
+func ReleaseTopRealTimeReportQueryVo(v *TopRealTimeReportQueryVo) {
+	v.QueryDomains = v.QueryDomains[:0]
+	v.QueryFieldInList = v.QueryFieldInList[:0]
+	v.BizCodeInList = v.BizCodeInList[:0]
+	v.StrategyCampaignIdInList = v.StrategyCampaignIdInList[:0]
+	v.SplitType = ""
+	v.UnifyType = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.EffectEqual = 0
+	v.Offset = 0
+	v.PageSize = 0
+	v.ByPage = false
+	poolTopRealTimeReportQueryVo.Put(v)
 }

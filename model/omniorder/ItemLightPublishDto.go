@@ -1,5 +1,9 @@
 package omniorder
 
+import (
+	"sync"
+)
+
 // ItemLightPublishDto 结构体
 type ItemLightPublishDto struct {
 	// images
@@ -30,4 +34,34 @@ type ItemLightPublishDto struct {
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 卖家ID
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
+}
+
+var poolItemLightPublishDto = sync.Pool{
+	New: func() any {
+		return new(ItemLightPublishDto)
+	},
+}
+
+// GetItemLightPublishDto() 从对象池中获取ItemLightPublishDto
+func GetItemLightPublishDto() *ItemLightPublishDto {
+	return poolItemLightPublishDto.Get().(*ItemLightPublishDto)
+}
+
+// ReleaseItemLightPublishDto 释放ItemLightPublishDto
+func ReleaseItemLightPublishDto(v *ItemLightPublishDto) {
+	v.Images = v.Images[:0]
+	v.Skus = v.Skus[:0]
+	v.Barcode = ""
+	v.Desc = ""
+	v.ExtendAttr = ""
+	v.OuterId = ""
+	v.Pretium = ""
+	v.Price = ""
+	v.Subtitle = ""
+	v.Title = ""
+	v.Operator = ""
+	v.CatId = 0
+	v.ItemId = 0
+	v.UserId = 0
+	poolItemLightPublishDto.Put(v)
 }

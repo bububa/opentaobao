@@ -2,6 +2,7 @@ package user
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AccountAliyuncsComGetPubKey20130701APIResponse struct {
 	model.CommonResponse
 	AccountAliyuncsComGetPubKey20130701APIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AccountAliyuncsComGetPubKey20130701APIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AccountAliyuncsComGetPubKey20130701APIResponseModel).Reset()
 }
 
 // AccountAliyuncsComGetPubKey20130701APIResponseModel is 获取用户公钥 成功返回结果
@@ -34,4 +41,34 @@ type AccountAliyuncsComGetPubKey20130701APIResponseModel struct {
 	Code string `json:"Code,omitempty" xml:"Code,omitempty"`
 	// 用户的appkey
 	AppKey string `json:"AppKey,omitempty" xml:"AppKey,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AccountAliyuncsComGetPubKey20130701APIResponseModel) Reset() {
+	m.RequestId = ""
+	m.PubKey = ""
+	m.OwnerId = ""
+	m.KeyType = ""
+	m.CreateTime = ""
+	m.RequestId = ""
+	m.Message = ""
+	m.Code = ""
+	m.AppKey = ""
+}
+
+var poolAccountAliyuncsComGetPubKey20130701APIResponse = sync.Pool{
+	New: func() any {
+		return new(AccountAliyuncsComGetPubKey20130701APIResponse)
+	},
+}
+
+// GetAccountAliyuncsComGetPubKey20130701APIResponse 从 sync.Pool 获取 AccountAliyuncsComGetPubKey20130701APIResponse
+func GetAccountAliyuncsComGetPubKey20130701APIResponse() *AccountAliyuncsComGetPubKey20130701APIResponse {
+	return poolAccountAliyuncsComGetPubKey20130701APIResponse.Get().(*AccountAliyuncsComGetPubKey20130701APIResponse)
+}
+
+// ReleaseAccountAliyuncsComGetPubKey20130701APIResponse 将 AccountAliyuncsComGetPubKey20130701APIResponse 保存到 sync.Pool
+func ReleaseAccountAliyuncsComGetPubKey20130701APIResponse(v *AccountAliyuncsComGetPubKey20130701APIResponse) {
+	v.Reset()
+	poolAccountAliyuncsComGetPubKey20130701APIResponse.Put(v)
 }

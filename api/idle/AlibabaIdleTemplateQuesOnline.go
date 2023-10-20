@@ -9,11 +9,6 @@ import (
 // alibaba.idle.template.ques.online
 //
 // 获取SPU最新版本问卷
-func AlibabaIdleTemplateQuesOnline(clt *core.SDKClient, req *idle.AlibabaIdleTemplateQuesOnlineAPIRequest, session string) (*idle.AlibabaIdleTemplateQuesOnlineAPIResponse, error) {
-	var resp idle.AlibabaIdleTemplateQuesOnlineAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleTemplateQuesOnline(clt *core.SDKClient, req *idle.AlibabaIdleTemplateQuesOnlineAPIRequest, resp *idle.AlibabaIdleTemplateQuesOnlineAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type TaobaoItemSkuUpdateAPIRequest struct {
 // NewTaobaoItemSkuUpdateRequest 初始化TaobaoItemSkuUpdateAPIRequest对象
 func NewTaobaoItemSkuUpdateRequest() *TaobaoItemSkuUpdateAPIRequest {
 	return &TaobaoItemSkuUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoItemSkuUpdateAPIRequest) Reset() {
+	r._properties = ""
+	r._outerId = ""
+	r._lang = ""
+	r._ignorewarning = ""
+	r._numIid = 0
+	r._quantity = 0
+	r._price = 0
+	r._itemPrice = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *TaobaoItemSkuUpdateAPIRequest) SetItemPrice(_itemPrice float64) error {
 // GetItemPrice ItemPrice Getter
 func (r TaobaoItemSkuUpdateAPIRequest) GetItemPrice() float64 {
 	return r._itemPrice
+}
+
+var poolTaobaoItemSkuUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoItemSkuUpdateRequest()
+	},
+}
+
+// GetTaobaoItemSkuUpdateRequest 从 sync.Pool 获取 TaobaoItemSkuUpdateAPIRequest
+func GetTaobaoItemSkuUpdateAPIRequest() *TaobaoItemSkuUpdateAPIRequest {
+	return poolTaobaoItemSkuUpdateAPIRequest.Get().(*TaobaoItemSkuUpdateAPIRequest)
+}
+
+// ReleaseTaobaoItemSkuUpdateAPIRequest 将 TaobaoItemSkuUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoItemSkuUpdateAPIRequest(v *TaobaoItemSkuUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoItemSkuUpdateAPIRequest.Put(v)
 }

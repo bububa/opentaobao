@@ -1,5 +1,9 @@
 package icbulogistics
 
+import (
+	"sync"
+)
+
 // AlibabaOnetouchLogisticsExpressSpecialProductTypeListResult 结构体
 type AlibabaOnetouchLogisticsExpressSpecialProductTypeListResult struct {
 	// 列表对象
@@ -10,4 +14,24 @@ type AlibabaOnetouchLogisticsExpressSpecialProductTypeListResult struct {
 	ErrorCode int64 `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaOnetouchLogisticsExpressSpecialProductTypeListResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaOnetouchLogisticsExpressSpecialProductTypeListResult)
+	},
+}
+
+// GetAlibabaOnetouchLogisticsExpressSpecialProductTypeListResult() 从对象池中获取AlibabaOnetouchLogisticsExpressSpecialProductTypeListResult
+func GetAlibabaOnetouchLogisticsExpressSpecialProductTypeListResult() *AlibabaOnetouchLogisticsExpressSpecialProductTypeListResult {
+	return poolAlibabaOnetouchLogisticsExpressSpecialProductTypeListResult.Get().(*AlibabaOnetouchLogisticsExpressSpecialProductTypeListResult)
+}
+
+// ReleaseAlibabaOnetouchLogisticsExpressSpecialProductTypeListResult 释放AlibabaOnetouchLogisticsExpressSpecialProductTypeListResult
+func ReleaseAlibabaOnetouchLogisticsExpressSpecialProductTypeListResult(v *AlibabaOnetouchLogisticsExpressSpecialProductTypeListResult) {
+	v.Values = v.Values[:0]
+	v.ErrorMessage = ""
+	v.ErrorCode = 0
+	v.Success = false
+	poolAlibabaOnetouchLogisticsExpressSpecialProductTypeListResult.Put(v)
 }

@@ -1,5 +1,9 @@
 package mtopopen
 
+import (
+	"sync"
+)
+
 // TaowaiMsgSendRequest 结构体
 type TaowaiMsgSendRequest struct {
 	// 快递公司编码
@@ -18,4 +22,28 @@ type TaowaiMsgSendRequest struct {
 	OccurTime int64 `json:"occur_time,omitempty" xml:"occur_time,omitempty"`
 	// 1-查件 2-寄件
 	Scene int64 `json:"scene,omitempty" xml:"scene,omitempty"`
+}
+
+var poolTaowaiMsgSendRequest = sync.Pool{
+	New: func() any {
+		return new(TaowaiMsgSendRequest)
+	},
+}
+
+// GetTaowaiMsgSendRequest() 从对象池中获取TaowaiMsgSendRequest
+func GetTaowaiMsgSendRequest() *TaowaiMsgSendRequest {
+	return poolTaowaiMsgSendRequest.Get().(*TaowaiMsgSendRequest)
+}
+
+// ReleaseTaowaiMsgSendRequest 释放TaowaiMsgSendRequest
+func ReleaseTaowaiMsgSendRequest(v *TaowaiMsgSendRequest) {
+	v.CpCode = ""
+	v.MailNo = ""
+	v.ExtParams = ""
+	v.Openid = ""
+	v.LogisticsStatus = ""
+	v.MobilePhone = ""
+	v.OccurTime = 0
+	v.Scene = 0
+	poolTaowaiMsgSendRequest.Put(v)
 }

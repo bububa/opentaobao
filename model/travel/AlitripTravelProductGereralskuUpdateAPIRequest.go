@@ -2,6 +2,7 @@ package travel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AlitripTravelProductGereralskuUpdateAPIRequest struct {
 // NewAlitripTravelProductGereralskuUpdateRequest 初始化AlitripTravelProductGereralskuUpdateAPIRequest对象
 func NewAlitripTravelProductGereralskuUpdateRequest() *AlitripTravelProductGereralskuUpdateAPIRequest {
 	return &AlitripTravelProductGereralskuUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTravelProductGereralskuUpdateAPIRequest) Reset() {
+	r._alias = r._alias[:0]
+	r._properties = r._properties[:0]
+	r._dateList = r._dateList[:0]
+	r._outerId = ""
+	r._itemId = 0
+	r._price = 0
+	r._quantity = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AlitripTravelProductGereralskuUpdateAPIRequest) SetQuantity(_quantity i
 // GetQuantity Quantity Getter
 func (r AlitripTravelProductGereralskuUpdateAPIRequest) GetQuantity() int64 {
 	return r._quantity
+}
+
+var poolAlitripTravelProductGereralskuUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTravelProductGereralskuUpdateRequest()
+	},
+}
+
+// GetAlitripTravelProductGereralskuUpdateRequest 从 sync.Pool 获取 AlitripTravelProductGereralskuUpdateAPIRequest
+func GetAlitripTravelProductGereralskuUpdateAPIRequest() *AlitripTravelProductGereralskuUpdateAPIRequest {
+	return poolAlitripTravelProductGereralskuUpdateAPIRequest.Get().(*AlitripTravelProductGereralskuUpdateAPIRequest)
+}
+
+// ReleaseAlitripTravelProductGereralskuUpdateAPIRequest 将 AlitripTravelProductGereralskuUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlitripTravelProductGereralskuUpdateAPIRequest(v *AlitripTravelProductGereralskuUpdateAPIRequest) {
+	v.Reset()
+	poolAlitripTravelProductGereralskuUpdateAPIRequest.Put(v)
 }

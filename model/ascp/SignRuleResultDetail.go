@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // SignRuleResultDetail 结构体
 type SignRuleResultDetail struct {
 	// 错误码
@@ -16,4 +20,27 @@ type SignRuleResultDetail struct {
 	Town string `json:"town,omitempty" xml:"town,omitempty"`
 	// wms货主id
 	WmsOwnerCode string `json:"wms_owner_code,omitempty" xml:"wms_owner_code,omitempty"`
+}
+
+var poolSignRuleResultDetail = sync.Pool{
+	New: func() any {
+		return new(SignRuleResultDetail)
+	},
+}
+
+// GetSignRuleResultDetail() 从对象池中获取SignRuleResultDetail
+func GetSignRuleResultDetail() *SignRuleResultDetail {
+	return poolSignRuleResultDetail.Get().(*SignRuleResultDetail)
+}
+
+// ReleaseSignRuleResultDetail 释放SignRuleResultDetail
+func ReleaseSignRuleResultDetail(v *SignRuleResultDetail) {
+	v.Code = ""
+	v.Message = ""
+	v.Province = ""
+	v.City = ""
+	v.Area = ""
+	v.Town = ""
+	v.WmsOwnerCode = ""
+	poolSignRuleResultDetail.Put(v)
 }

@@ -2,6 +2,7 @@ package alilabs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAilabsIotDeviceStatusUpdateAPIRequest struct {
 // NewAlibabaAilabsIotDeviceStatusUpdateRequest 初始化AlibabaAilabsIotDeviceStatusUpdateAPIRequest对象
 func NewAlibabaAilabsIotDeviceStatusUpdateRequest() *AlibabaAilabsIotDeviceStatusUpdateAPIRequest {
 	return &AlibabaAilabsIotDeviceStatusUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsIotDeviceStatusUpdateAPIRequest) Reset() {
+	r._deviceStatusDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAilabsIotDeviceStatusUpdateAPIRequest) SetDeviceStatusDTO(_devic
 // GetDeviceStatusDTO DeviceStatusDTO Getter
 func (r AlibabaAilabsIotDeviceStatusUpdateAPIRequest) GetDeviceStatusDTO() *DeviceStatusDto {
 	return r._deviceStatusDTO
+}
+
+var poolAlibabaAilabsIotDeviceStatusUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsIotDeviceStatusUpdateRequest()
+	},
+}
+
+// GetAlibabaAilabsIotDeviceStatusUpdateRequest 从 sync.Pool 获取 AlibabaAilabsIotDeviceStatusUpdateAPIRequest
+func GetAlibabaAilabsIotDeviceStatusUpdateAPIRequest() *AlibabaAilabsIotDeviceStatusUpdateAPIRequest {
+	return poolAlibabaAilabsIotDeviceStatusUpdateAPIRequest.Get().(*AlibabaAilabsIotDeviceStatusUpdateAPIRequest)
+}
+
+// ReleaseAlibabaAilabsIotDeviceStatusUpdateAPIRequest 将 AlibabaAilabsIotDeviceStatusUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsIotDeviceStatusUpdateAPIRequest(v *AlibabaAilabsIotDeviceStatusUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsIotDeviceStatusUpdateAPIRequest.Put(v)
 }

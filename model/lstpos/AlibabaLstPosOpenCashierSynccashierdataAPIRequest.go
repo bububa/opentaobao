@@ -2,6 +2,7 @@ package lstpos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaLstPosOpenCashierSynccashierdataAPIRequest struct {
 // NewAlibabaLstPosOpenCashierSynccashierdataRequest 初始化AlibabaLstPosOpenCashierSynccashierdataAPIRequest对象
 func NewAlibabaLstPosOpenCashierSynccashierdataRequest() *AlibabaLstPosOpenCashierSynccashierdataAPIRequest {
 	return &AlibabaLstPosOpenCashierSynccashierdataAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstPosOpenCashierSynccashierdataAPIRequest) Reset() {
+	r._cashierFlowDTOList = r._cashierFlowDTOList[:0]
+	r._userId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaLstPosOpenCashierSynccashierdataAPIRequest) SetUserId(_userId in
 // GetUserId UserId Getter
 func (r AlibabaLstPosOpenCashierSynccashierdataAPIRequest) GetUserId() int64 {
 	return r._userId
+}
+
+var poolAlibabaLstPosOpenCashierSynccashierdataAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstPosOpenCashierSynccashierdataRequest()
+	},
+}
+
+// GetAlibabaLstPosOpenCashierSynccashierdataRequest 从 sync.Pool 获取 AlibabaLstPosOpenCashierSynccashierdataAPIRequest
+func GetAlibabaLstPosOpenCashierSynccashierdataAPIRequest() *AlibabaLstPosOpenCashierSynccashierdataAPIRequest {
+	return poolAlibabaLstPosOpenCashierSynccashierdataAPIRequest.Get().(*AlibabaLstPosOpenCashierSynccashierdataAPIRequest)
+}
+
+// ReleaseAlibabaLstPosOpenCashierSynccashierdataAPIRequest 将 AlibabaLstPosOpenCashierSynccashierdataAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstPosOpenCashierSynccashierdataAPIRequest(v *AlibabaLstPosOpenCashierSynccashierdataAPIRequest) {
+	v.Reset()
+	poolAlibabaLstPosOpenCashierSynccashierdataAPIRequest.Put(v)
 }

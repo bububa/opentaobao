@@ -2,6 +2,7 @@ package aliqin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaIsvDigitalsmsCreatetemplateAPIRequest struct {
 // NewAlibabaIsvDigitalsmsCreatetemplateRequest 初始化AlibabaIsvDigitalsmsCreatetemplateAPIRequest对象
 func NewAlibabaIsvDigitalsmsCreatetemplateRequest() *AlibabaIsvDigitalsmsCreatetemplateAPIRequest {
 	return &AlibabaIsvDigitalsmsCreatetemplateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIsvDigitalsmsCreatetemplateAPIRequest) Reset() {
+	r._templateContents = r._templateContents[:0]
+	r._templateName = ""
+	r._applyRemark = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaIsvDigitalsmsCreatetemplateAPIRequest) SetApplyRemark(_applyRema
 // GetApplyRemark ApplyRemark Getter
 func (r AlibabaIsvDigitalsmsCreatetemplateAPIRequest) GetApplyRemark() string {
 	return r._applyRemark
+}
+
+var poolAlibabaIsvDigitalsmsCreatetemplateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIsvDigitalsmsCreatetemplateRequest()
+	},
+}
+
+// GetAlibabaIsvDigitalsmsCreatetemplateRequest 从 sync.Pool 获取 AlibabaIsvDigitalsmsCreatetemplateAPIRequest
+func GetAlibabaIsvDigitalsmsCreatetemplateAPIRequest() *AlibabaIsvDigitalsmsCreatetemplateAPIRequest {
+	return poolAlibabaIsvDigitalsmsCreatetemplateAPIRequest.Get().(*AlibabaIsvDigitalsmsCreatetemplateAPIRequest)
+}
+
+// ReleaseAlibabaIsvDigitalsmsCreatetemplateAPIRequest 将 AlibabaIsvDigitalsmsCreatetemplateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIsvDigitalsmsCreatetemplateAPIRequest(v *AlibabaIsvDigitalsmsCreatetemplateAPIRequest) {
+	v.Reset()
+	poolAlibabaIsvDigitalsmsCreatetemplateAPIRequest.Put(v)
 }

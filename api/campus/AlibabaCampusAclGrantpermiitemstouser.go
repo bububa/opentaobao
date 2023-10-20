@@ -9,11 +9,6 @@ import (
 // alibaba.campus.acl.grantpermiitemstouser
 //
 // 给人直接授权
-func AlibabaCampusAclGrantpermiitemstouser(clt *core.SDKClient, req *campus.AlibabaCampusAclGrantpermiitemstouserAPIRequest, session string) (*campus.AlibabaCampusAclGrantpermiitemstouserAPIResponse, error) {
-	var resp campus.AlibabaCampusAclGrantpermiitemstouserAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusAclGrantpermiitemstouser(clt *core.SDKClient, req *campus.AlibabaCampusAclGrantpermiitemstouserAPIRequest, resp *campus.AlibabaCampusAclGrantpermiitemstouserAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,14 +14,20 @@ import (
 type AlibabaAlihouseNewhomeEcodeUpdateAPIRequest struct {
 	model.Params
 	// 房源请求体
-	_house *UpdateNewHomeEcodeInfoDto
+	_house *UpdateNewHomeECodeInfoDto
 }
 
 // NewAlibabaAlihouseNewhomeEcodeUpdateRequest 初始化AlibabaAlihouseNewhomeEcodeUpdateAPIRequest对象
 func NewAlibabaAlihouseNewhomeEcodeUpdateRequest() *AlibabaAlihouseNewhomeEcodeUpdateAPIRequest {
 	return &AlibabaAlihouseNewhomeEcodeUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeEcodeUpdateAPIRequest) Reset() {
+	r._house = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -42,13 +49,30 @@ func (r AlibabaAlihouseNewhomeEcodeUpdateAPIRequest) GetRawParams() model.Params
 
 // SetHouse is House Setter
 // 房源请求体
-func (r *AlibabaAlihouseNewhomeEcodeUpdateAPIRequest) SetHouse(_house *UpdateNewHomeEcodeInfoDto) error {
+func (r *AlibabaAlihouseNewhomeEcodeUpdateAPIRequest) SetHouse(_house *UpdateNewHomeECodeInfoDto) error {
 	r._house = _house
 	r.Set("house", _house)
 	return nil
 }
 
 // GetHouse House Getter
-func (r AlibabaAlihouseNewhomeEcodeUpdateAPIRequest) GetHouse() *UpdateNewHomeEcodeInfoDto {
+func (r AlibabaAlihouseNewhomeEcodeUpdateAPIRequest) GetHouse() *UpdateNewHomeECodeInfoDto {
 	return r._house
+}
+
+var poolAlibabaAlihouseNewhomeEcodeUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeEcodeUpdateRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeEcodeUpdateRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeEcodeUpdateAPIRequest
+func GetAlibabaAlihouseNewhomeEcodeUpdateAPIRequest() *AlibabaAlihouseNewhomeEcodeUpdateAPIRequest {
+	return poolAlibabaAlihouseNewhomeEcodeUpdateAPIRequest.Get().(*AlibabaAlihouseNewhomeEcodeUpdateAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeEcodeUpdateAPIRequest 将 AlibabaAlihouseNewhomeEcodeUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeEcodeUpdateAPIRequest(v *AlibabaAlihouseNewhomeEcodeUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeEcodeUpdateAPIRequest.Put(v)
 }

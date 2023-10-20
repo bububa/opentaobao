@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drug.kyt.searchstatus
 //
 // 单据处理状态查询
-func AlibabaAlihealthDrugKytSearchstatus(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytSearchstatusAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytSearchstatusAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugKytSearchstatusAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugKytSearchstatus(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytSearchstatusAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytSearchstatusAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

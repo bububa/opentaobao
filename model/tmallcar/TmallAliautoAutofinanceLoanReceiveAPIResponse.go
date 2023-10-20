@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TmallAliautoAutofinanceLoanReceiveAPIResponse struct {
 	model.CommonResponse
 	TmallAliautoAutofinanceLoanReceiveAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TmallAliautoAutofinanceLoanReceiveAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallAliautoAutofinanceLoanReceiveAPIResponseModel).Reset()
 }
 
 // TmallAliautoAutofinanceLoanReceiveAPIResponseModel is 接收放款结果通知 成功返回结果
@@ -28,4 +35,30 @@ type TmallAliautoAutofinanceLoanReceiveAPIResponseModel struct {
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// 是否成功
 	Succes bool `json:"succes,omitempty" xml:"succes,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallAliautoAutofinanceLoanReceiveAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErorCode = ""
+	m.ErorMessage = ""
+	m.Data = ""
+	m.Succes = false
+}
+
+var poolTmallAliautoAutofinanceLoanReceiveAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallAliautoAutofinanceLoanReceiveAPIResponse)
+	},
+}
+
+// GetTmallAliautoAutofinanceLoanReceiveAPIResponse 从 sync.Pool 获取 TmallAliautoAutofinanceLoanReceiveAPIResponse
+func GetTmallAliautoAutofinanceLoanReceiveAPIResponse() *TmallAliautoAutofinanceLoanReceiveAPIResponse {
+	return poolTmallAliautoAutofinanceLoanReceiveAPIResponse.Get().(*TmallAliautoAutofinanceLoanReceiveAPIResponse)
+}
+
+// ReleaseTmallAliautoAutofinanceLoanReceiveAPIResponse 将 TmallAliautoAutofinanceLoanReceiveAPIResponse 保存到 sync.Pool
+func ReleaseTmallAliautoAutofinanceLoanReceiveAPIResponse(v *TmallAliautoAutofinanceLoanReceiveAPIResponse) {
+	v.Reset()
+	poolTmallAliautoAutofinanceLoanReceiveAPIResponse.Put(v)
 }

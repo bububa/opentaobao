@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpIndustryLaunchExtraChargeAPIRequest struct {
 // NewAlibabaAscpIndustryLaunchExtraChargeRequest 初始化AlibabaAscpIndustryLaunchExtraChargeAPIRequest对象
 func NewAlibabaAscpIndustryLaunchExtraChargeRequest() *AlibabaAscpIndustryLaunchExtraChargeAPIRequest {
 	return &AlibabaAscpIndustryLaunchExtraChargeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpIndustryLaunchExtraChargeAPIRequest) Reset() {
+	r._omsLaunchExtraChargeParameter = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpIndustryLaunchExtraChargeAPIRequest) SetOmsLaunchExtraCharge
 // GetOmsLaunchExtraChargeParameter OmsLaunchExtraChargeParameter Getter
 func (r AlibabaAscpIndustryLaunchExtraChargeAPIRequest) GetOmsLaunchExtraChargeParameter() *OmsLaunchExtraChargeParameter {
 	return r._omsLaunchExtraChargeParameter
+}
+
+var poolAlibabaAscpIndustryLaunchExtraChargeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpIndustryLaunchExtraChargeRequest()
+	},
+}
+
+// GetAlibabaAscpIndustryLaunchExtraChargeRequest 从 sync.Pool 获取 AlibabaAscpIndustryLaunchExtraChargeAPIRequest
+func GetAlibabaAscpIndustryLaunchExtraChargeAPIRequest() *AlibabaAscpIndustryLaunchExtraChargeAPIRequest {
+	return poolAlibabaAscpIndustryLaunchExtraChargeAPIRequest.Get().(*AlibabaAscpIndustryLaunchExtraChargeAPIRequest)
+}
+
+// ReleaseAlibabaAscpIndustryLaunchExtraChargeAPIRequest 将 AlibabaAscpIndustryLaunchExtraChargeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpIndustryLaunchExtraChargeAPIRequest(v *AlibabaAscpIndustryLaunchExtraChargeAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpIndustryLaunchExtraChargeAPIRequest.Put(v)
 }

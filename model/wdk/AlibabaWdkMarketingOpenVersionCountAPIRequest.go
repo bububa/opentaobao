@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaWdkMarketingOpenVersionCountAPIRequest struct {
 // NewAlibabaWdkMarketingOpenVersionCountRequest 初始化AlibabaWdkMarketingOpenVersionCountAPIRequest对象
 func NewAlibabaWdkMarketingOpenVersionCountRequest() *AlibabaWdkMarketingOpenVersionCountAPIRequest {
 	return &AlibabaWdkMarketingOpenVersionCountAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkMarketingOpenVersionCountAPIRequest) Reset() {
+	r._operateId = ""
+	r._versionId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaWdkMarketingOpenVersionCountAPIRequest) SetVersionId(_versionId 
 // GetVersionId VersionId Getter
 func (r AlibabaWdkMarketingOpenVersionCountAPIRequest) GetVersionId() int64 {
 	return r._versionId
+}
+
+var poolAlibabaWdkMarketingOpenVersionCountAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkMarketingOpenVersionCountRequest()
+	},
+}
+
+// GetAlibabaWdkMarketingOpenVersionCountRequest 从 sync.Pool 获取 AlibabaWdkMarketingOpenVersionCountAPIRequest
+func GetAlibabaWdkMarketingOpenVersionCountAPIRequest() *AlibabaWdkMarketingOpenVersionCountAPIRequest {
+	return poolAlibabaWdkMarketingOpenVersionCountAPIRequest.Get().(*AlibabaWdkMarketingOpenVersionCountAPIRequest)
+}
+
+// ReleaseAlibabaWdkMarketingOpenVersionCountAPIRequest 将 AlibabaWdkMarketingOpenVersionCountAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkMarketingOpenVersionCountAPIRequest(v *AlibabaWdkMarketingOpenVersionCountAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkMarketingOpenVersionCountAPIRequest.Put(v)
 }

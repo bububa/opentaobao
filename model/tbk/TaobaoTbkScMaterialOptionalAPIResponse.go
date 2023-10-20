@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTbkScMaterialOptionalAPIResponse struct {
 	TaobaoTbkScMaterialOptionalAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTbkScMaterialOptionalAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTbkScMaterialOptionalAPIResponseModel).Reset()
+}
+
 // TaobaoTbkScMaterialOptionalAPIResponseModel is 淘宝客-服务商-物料搜索 成功返回结果
 type TaobaoTbkScMaterialOptionalAPIResponseModel struct {
 	XMLName xml.Name `xml:"tbk_sc_material_optional_response"`
@@ -26,4 +33,29 @@ type TaobaoTbkScMaterialOptionalAPIResponseModel struct {
 	PageResultKey string `json:"page_result_key,omitempty" xml:"page_result_key,omitempty"`
 	// 搜索到符合条件的结果总数
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTbkScMaterialOptionalAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultList = m.ResultList[:0]
+	m.PageResultKey = ""
+	m.TotalResults = 0
+}
+
+var poolTaobaoTbkScMaterialOptionalAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkScMaterialOptionalAPIResponse)
+	},
+}
+
+// GetTaobaoTbkScMaterialOptionalAPIResponse 从 sync.Pool 获取 TaobaoTbkScMaterialOptionalAPIResponse
+func GetTaobaoTbkScMaterialOptionalAPIResponse() *TaobaoTbkScMaterialOptionalAPIResponse {
+	return poolTaobaoTbkScMaterialOptionalAPIResponse.Get().(*TaobaoTbkScMaterialOptionalAPIResponse)
+}
+
+// ReleaseTaobaoTbkScMaterialOptionalAPIResponse 将 TaobaoTbkScMaterialOptionalAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTbkScMaterialOptionalAPIResponse(v *TaobaoTbkScMaterialOptionalAPIResponse) {
+	v.Reset()
+	poolTaobaoTbkScMaterialOptionalAPIResponse.Put(v)
 }

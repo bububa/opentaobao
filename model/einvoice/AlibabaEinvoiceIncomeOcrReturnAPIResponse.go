@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaEinvoiceIncomeOcrReturnAPIResponse struct {
 	AlibabaEinvoiceIncomeOcrReturnAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaEinvoiceIncomeOcrReturnAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaEinvoiceIncomeOcrReturnAPIResponseModel).Reset()
+}
+
 // AlibabaEinvoiceIncomeOcrReturnAPIResponseModel is 服务商回传发票ocr的结果 成功返回结果
 type AlibabaEinvoiceIncomeOcrReturnAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_einvoice_income_ocr_return_response"`
@@ -22,4 +29,27 @@ type AlibabaEinvoiceIncomeOcrReturnAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口调用结果，true=成功，false=失败，subCode以isp开头时需要服务商重试
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaEinvoiceIncomeOcrReturnAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.IsSuccess = false
+}
+
+var poolAlibabaEinvoiceIncomeOcrReturnAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaEinvoiceIncomeOcrReturnAPIResponse)
+	},
+}
+
+// GetAlibabaEinvoiceIncomeOcrReturnAPIResponse 从 sync.Pool 获取 AlibabaEinvoiceIncomeOcrReturnAPIResponse
+func GetAlibabaEinvoiceIncomeOcrReturnAPIResponse() *AlibabaEinvoiceIncomeOcrReturnAPIResponse {
+	return poolAlibabaEinvoiceIncomeOcrReturnAPIResponse.Get().(*AlibabaEinvoiceIncomeOcrReturnAPIResponse)
+}
+
+// ReleaseAlibabaEinvoiceIncomeOcrReturnAPIResponse 将 AlibabaEinvoiceIncomeOcrReturnAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaEinvoiceIncomeOcrReturnAPIResponse(v *AlibabaEinvoiceIncomeOcrReturnAPIResponse) {
+	v.Reset()
+	poolAlibabaEinvoiceIncomeOcrReturnAPIResponse.Put(v)
 }

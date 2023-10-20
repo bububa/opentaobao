@@ -9,11 +9,6 @@ import (
 // alibaba.tmallgenie.scp.plan.netdemand.raw.upload
 //
 // 二级物料净需求回传(TL+1)
-func AlibabaTmallgenieScpPlanNetdemandRawUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanNetdemandRawUploadAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanNetdemandRawUploadAPIResponse, error) {
-	var resp tmallgeniescp.AlibabaTmallgenieScpPlanNetdemandRawUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTmallgenieScpPlanNetdemandRawUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanNetdemandRawUploadAPIRequest, resp *tmallgeniescp.AlibabaTmallgenieScpPlanNetdemandRawUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

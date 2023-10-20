@@ -9,11 +9,6 @@ import (
 // alibaba.hm.marketing.itempool.removeitem
 //
 // 移除商品池里面的商品
-func AlibabaHmMarketingItempoolRemoveitem(clt *core.SDKClient, req *wdk.AlibabaHmMarketingItempoolRemoveitemAPIRequest, session string) (*wdk.AlibabaHmMarketingItempoolRemoveitemAPIResponse, error) {
-	var resp wdk.AlibabaHmMarketingItempoolRemoveitemAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHmMarketingItempoolRemoveitem(clt *core.SDKClient, req *wdk.AlibabaHmMarketingItempoolRemoveitemAPIRequest, resp *wdk.AlibabaHmMarketingItempoolRemoveitemAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

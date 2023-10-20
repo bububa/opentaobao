@@ -2,6 +2,7 @@ package trade
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTradeVoucherUploadAPIResponse struct {
 	TaobaoTradeVoucherUploadAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTradeVoucherUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTradeVoucherUploadAPIResponseModel).Reset()
+}
+
 // TaobaoTradeVoucherUploadAPIResponseModel is 淘宝交易凭证上传 成功返回结果
 type TaobaoTradeVoucherUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"trade_voucher_upload_response"`
@@ -22,4 +29,27 @@ type TaobaoTradeVoucherUploadAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 上传到多媒体平台的文件
 	File *File `json:"file,omitempty" xml:"file,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTradeVoucherUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.File = nil
+}
+
+var poolTaobaoTradeVoucherUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTradeVoucherUploadAPIResponse)
+	},
+}
+
+// GetTaobaoTradeVoucherUploadAPIResponse 从 sync.Pool 获取 TaobaoTradeVoucherUploadAPIResponse
+func GetTaobaoTradeVoucherUploadAPIResponse() *TaobaoTradeVoucherUploadAPIResponse {
+	return poolTaobaoTradeVoucherUploadAPIResponse.Get().(*TaobaoTradeVoucherUploadAPIResponse)
+}
+
+// ReleaseTaobaoTradeVoucherUploadAPIResponse 将 TaobaoTradeVoucherUploadAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTradeVoucherUploadAPIResponse(v *TaobaoTradeVoucherUploadAPIResponse) {
+	v.Reset()
+	poolTaobaoTradeVoucherUploadAPIResponse.Put(v)
 }

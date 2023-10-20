@@ -2,6 +2,7 @@ package tmalltrend
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallTrendStyleBasicinfoUploadAPIRequest struct {
 // NewTmallTrendStyleBasicinfoUploadRequest 初始化TmallTrendStyleBasicinfoUploadAPIRequest对象
 func NewTmallTrendStyleBasicinfoUploadRequest() *TmallTrendStyleBasicinfoUploadAPIRequest {
 	return &TmallTrendStyleBasicinfoUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallTrendStyleBasicinfoUploadAPIRequest) Reset() {
+	r._styleBasicInfoBoList = r._styleBasicInfoBoList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallTrendStyleBasicinfoUploadAPIRequest) SetStyleBasicInfoBoList(_styl
 // GetStyleBasicInfoBoList StyleBasicInfoBoList Getter
 func (r TmallTrendStyleBasicinfoUploadAPIRequest) GetStyleBasicInfoBoList() []StyleBasicInfoBo {
 	return r._styleBasicInfoBoList
+}
+
+var poolTmallTrendStyleBasicinfoUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallTrendStyleBasicinfoUploadRequest()
+	},
+}
+
+// GetTmallTrendStyleBasicinfoUploadRequest 从 sync.Pool 获取 TmallTrendStyleBasicinfoUploadAPIRequest
+func GetTmallTrendStyleBasicinfoUploadAPIRequest() *TmallTrendStyleBasicinfoUploadAPIRequest {
+	return poolTmallTrendStyleBasicinfoUploadAPIRequest.Get().(*TmallTrendStyleBasicinfoUploadAPIRequest)
+}
+
+// ReleaseTmallTrendStyleBasicinfoUploadAPIRequest 将 TmallTrendStyleBasicinfoUploadAPIRequest 放入 sync.Pool
+func ReleaseTmallTrendStyleBasicinfoUploadAPIRequest(v *TmallTrendStyleBasicinfoUploadAPIRequest) {
+	v.Reset()
+	poolTmallTrendStyleBasicinfoUploadAPIRequest.Put(v)
 }

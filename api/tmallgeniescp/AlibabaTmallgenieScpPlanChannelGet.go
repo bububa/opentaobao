@@ -9,11 +9,6 @@ import (
 // alibaba.tmallgenie.scp.plan.channel.get
 //
 // IBP同步渠道接口
-func AlibabaTmallgenieScpPlanChannelGet(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanChannelGetAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanChannelGetAPIResponse, error) {
-	var resp tmallgeniescp.AlibabaTmallgenieScpPlanChannelGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTmallgenieScpPlanChannelGet(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanChannelGetAPIRequest, resp *tmallgeniescp.AlibabaTmallgenieScpPlanChannelGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

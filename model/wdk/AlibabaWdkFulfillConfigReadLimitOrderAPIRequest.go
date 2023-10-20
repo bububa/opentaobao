@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkFulfillConfigReadLimitOrderAPIRequest struct {
 // NewAlibabaWdkFulfillConfigReadLimitOrderRequest 初始化AlibabaWdkFulfillConfigReadLimitOrderAPIRequest对象
 func NewAlibabaWdkFulfillConfigReadLimitOrderRequest() *AlibabaWdkFulfillConfigReadLimitOrderAPIRequest {
 	return &AlibabaWdkFulfillConfigReadLimitOrderAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkFulfillConfigReadLimitOrderAPIRequest) Reset() {
+	r._warehouseCodeList = r._warehouseCodeList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkFulfillConfigReadLimitOrderAPIRequest) SetWarehouseCodeList(_
 // GetWarehouseCodeList WarehouseCodeList Getter
 func (r AlibabaWdkFulfillConfigReadLimitOrderAPIRequest) GetWarehouseCodeList() []string {
 	return r._warehouseCodeList
+}
+
+var poolAlibabaWdkFulfillConfigReadLimitOrderAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkFulfillConfigReadLimitOrderRequest()
+	},
+}
+
+// GetAlibabaWdkFulfillConfigReadLimitOrderRequest 从 sync.Pool 获取 AlibabaWdkFulfillConfigReadLimitOrderAPIRequest
+func GetAlibabaWdkFulfillConfigReadLimitOrderAPIRequest() *AlibabaWdkFulfillConfigReadLimitOrderAPIRequest {
+	return poolAlibabaWdkFulfillConfigReadLimitOrderAPIRequest.Get().(*AlibabaWdkFulfillConfigReadLimitOrderAPIRequest)
+}
+
+// ReleaseAlibabaWdkFulfillConfigReadLimitOrderAPIRequest 将 AlibabaWdkFulfillConfigReadLimitOrderAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkFulfillConfigReadLimitOrderAPIRequest(v *AlibabaWdkFulfillConfigReadLimitOrderAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkFulfillConfigReadLimitOrderAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.tmallgenie.scp.plan.consensus.demand.upload
 //
 // IBP共识需求回传接口
-func AlibabaTmallgenieScpPlanConsensusDemandUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanConsensusDemandUploadAPIResponse, error) {
-	var resp tmallgeniescp.AlibabaTmallgenieScpPlanConsensusDemandUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTmallgenieScpPlanConsensusDemandUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest, resp *tmallgeniescp.AlibabaTmallgenieScpPlanConsensusDemandUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

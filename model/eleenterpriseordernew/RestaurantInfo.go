@@ -1,5 +1,9 @@
 package eleenterpriseordernew
 
+import (
+	"sync"
+)
+
 // RestaurantInfo 结构体
 type RestaurantInfo struct {
 	// 餐厅电话
@@ -12,4 +16,25 @@ type RestaurantInfo struct {
 	OnlyRestaurantCode string `json:"only_restaurant_code,omitempty" xml:"only_restaurant_code,omitempty"`
 	// 餐厅ID
 	ErestaurantId string `json:"erestaurant_id,omitempty" xml:"erestaurant_id,omitempty"`
+}
+
+var poolRestaurantInfo = sync.Pool{
+	New: func() any {
+		return new(RestaurantInfo)
+	},
+}
+
+// GetRestaurantInfo() 从对象池中获取RestaurantInfo
+func GetRestaurantInfo() *RestaurantInfo {
+	return poolRestaurantInfo.Get().(*RestaurantInfo)
+}
+
+// ReleaseRestaurantInfo 释放RestaurantInfo
+func ReleaseRestaurantInfo(v *RestaurantInfo) {
+	v.RestaurantTel = ""
+	v.RestaurantAddress = ""
+	v.RestaurantName = ""
+	v.OnlyRestaurantCode = ""
+	v.ErestaurantId = ""
+	poolRestaurantInfo.Put(v)
 }

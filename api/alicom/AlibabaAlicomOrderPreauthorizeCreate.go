@@ -9,11 +9,6 @@ import (
 // alibaba.alicom.order.preauthorize.create
 //
 // 授授权:签约结果通知
-func AlibabaAlicomOrderPreauthorizeCreate(clt *core.SDKClient, req *alicom.AlibabaAlicomOrderPreauthorizeCreateAPIRequest, session string) (*alicom.AlibabaAlicomOrderPreauthorizeCreateAPIResponse, error) {
-	var resp alicom.AlibabaAlicomOrderPreauthorizeCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlicomOrderPreauthorizeCreate(clt *core.SDKClient, req *alicom.AlibabaAlicomOrderPreauthorizeCreateAPIRequest, resp *alicom.AlibabaAlicomOrderPreauthorizeCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

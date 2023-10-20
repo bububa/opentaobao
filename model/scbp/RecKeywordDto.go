@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // RecKeywordDto 结构体
 type RecKeywordDto struct {
 	// 同行平均出价，单位元，一位小数
@@ -18,4 +22,28 @@ type RecKeywordDto struct {
 	QsStar int64 `json:"qs_star,omitempty" xml:"qs_star,omitempty"`
 	// 与关键词匹配且处于推广中的产品的数量
 	MatchCount int64 `json:"match_count,omitempty" xml:"match_count,omitempty"`
+}
+
+var poolRecKeywordDto = sync.Pool{
+	New: func() any {
+		return new(RecKeywordDto)
+	},
+}
+
+// GetRecKeywordDto() 从对象池中获取RecKeywordDto
+func GetRecKeywordDto() *RecKeywordDto {
+	return poolRecKeywordDto.Get().(*RecKeywordDto)
+}
+
+// ReleaseRecKeywordDto 释放RecKeywordDto
+func ReleaseRecKeywordDto(v *RecKeywordDto) {
+	v.AvgPrice = ""
+	v.Word = ""
+	v.BuyCount = ""
+	v.SearchCount = ""
+	v.IsAdded = ""
+	v.BasePrice = ""
+	v.QsStar = 0
+	v.MatchCount = 0
+	poolRecKeywordDto.Put(v)
 }

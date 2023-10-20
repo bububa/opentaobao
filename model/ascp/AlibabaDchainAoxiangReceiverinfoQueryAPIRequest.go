@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangReceiverinfoQueryAPIRequest struct {
 // NewAlibabaDchainAoxiangReceiverinfoQueryRequest 初始化AlibabaDchainAoxiangReceiverinfoQueryAPIRequest对象
 func NewAlibabaDchainAoxiangReceiverinfoQueryRequest() *AlibabaDchainAoxiangReceiverinfoQueryAPIRequest {
 	return &AlibabaDchainAoxiangReceiverinfoQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangReceiverinfoQueryAPIRequest) Reset() {
+	r._orderPrivacyReceiverQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangReceiverinfoQueryAPIRequest) SetOrderPrivacyReceive
 // GetOrderPrivacyReceiverQuery OrderPrivacyReceiverQuery Getter
 func (r AlibabaDchainAoxiangReceiverinfoQueryAPIRequest) GetOrderPrivacyReceiverQuery() *OrderPrivacyReceiverQuery {
 	return r._orderPrivacyReceiverQuery
+}
+
+var poolAlibabaDchainAoxiangReceiverinfoQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangReceiverinfoQueryRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangReceiverinfoQueryRequest 从 sync.Pool 获取 AlibabaDchainAoxiangReceiverinfoQueryAPIRequest
+func GetAlibabaDchainAoxiangReceiverinfoQueryAPIRequest() *AlibabaDchainAoxiangReceiverinfoQueryAPIRequest {
+	return poolAlibabaDchainAoxiangReceiverinfoQueryAPIRequest.Get().(*AlibabaDchainAoxiangReceiverinfoQueryAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangReceiverinfoQueryAPIRequest 将 AlibabaDchainAoxiangReceiverinfoQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangReceiverinfoQueryAPIRequest(v *AlibabaDchainAoxiangReceiverinfoQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangReceiverinfoQueryAPIRequest.Put(v)
 }

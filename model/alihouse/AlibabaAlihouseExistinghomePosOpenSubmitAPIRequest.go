@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseExistinghomePosOpenSubmitAPIRequest struct {
 // NewAlibabaAlihouseExistinghomePosOpenSubmitRequest 初始化AlibabaAlihouseExistinghomePosOpenSubmitAPIRequest对象
 func NewAlibabaAlihouseExistinghomePosOpenSubmitRequest() *AlibabaAlihouseExistinghomePosOpenSubmitAPIRequest {
 	return &AlibabaAlihouseExistinghomePosOpenSubmitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseExistinghomePosOpenSubmitAPIRequest) Reset() {
+	r._syncTradePosOpenDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseExistinghomePosOpenSubmitAPIRequest) SetSyncTradePosOpen
 // GetSyncTradePosOpenDto SyncTradePosOpenDto Getter
 func (r AlibabaAlihouseExistinghomePosOpenSubmitAPIRequest) GetSyncTradePosOpenDto() *SyncTradePosOpenDto {
 	return r._syncTradePosOpenDto
+}
+
+var poolAlibabaAlihouseExistinghomePosOpenSubmitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseExistinghomePosOpenSubmitRequest()
+	},
+}
+
+// GetAlibabaAlihouseExistinghomePosOpenSubmitRequest 从 sync.Pool 获取 AlibabaAlihouseExistinghomePosOpenSubmitAPIRequest
+func GetAlibabaAlihouseExistinghomePosOpenSubmitAPIRequest() *AlibabaAlihouseExistinghomePosOpenSubmitAPIRequest {
+	return poolAlibabaAlihouseExistinghomePosOpenSubmitAPIRequest.Get().(*AlibabaAlihouseExistinghomePosOpenSubmitAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseExistinghomePosOpenSubmitAPIRequest 将 AlibabaAlihouseExistinghomePosOpenSubmitAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomePosOpenSubmitAPIRequest(v *AlibabaAlihouseExistinghomePosOpenSubmitAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomePosOpenSubmitAPIRequest.Put(v)
 }

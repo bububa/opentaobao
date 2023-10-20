@@ -1,5 +1,9 @@
 package scs
 
+import (
+	"sync"
+)
+
 // DmpJxCrowdTemplateViewDto 结构体
 type DmpJxCrowdTemplateViewDto struct {
 	// 模板名称
@@ -10,4 +14,24 @@ type DmpJxCrowdTemplateViewDto struct {
 	TemplateDesc string `json:"template_desc,omitempty" xml:"template_desc,omitempty"`
 	// 模板id:templateId
 	TemplateId int64 `json:"template_id,omitempty" xml:"template_id,omitempty"`
+}
+
+var poolDmpJxCrowdTemplateViewDto = sync.Pool{
+	New: func() any {
+		return new(DmpJxCrowdTemplateViewDto)
+	},
+}
+
+// GetDmpJxCrowdTemplateViewDto() 从对象池中获取DmpJxCrowdTemplateViewDto
+func GetDmpJxCrowdTemplateViewDto() *DmpJxCrowdTemplateViewDto {
+	return poolDmpJxCrowdTemplateViewDto.Get().(*DmpJxCrowdTemplateViewDto)
+}
+
+// ReleaseDmpJxCrowdTemplateViewDto 释放DmpJxCrowdTemplateViewDto
+func ReleaseDmpJxCrowdTemplateViewDto(v *DmpJxCrowdTemplateViewDto) {
+	v.TemplateName = ""
+	v.ValidDate = ""
+	v.TemplateDesc = ""
+	v.TemplateId = 0
+	poolDmpJxCrowdTemplateViewDto.Put(v)
 }

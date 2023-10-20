@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaEleFengniaoTradeUpdateAPIResponse struct {
 	AlibabaEleFengniaoTradeUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaEleFengniaoTradeUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaEleFengniaoTradeUpdateAPIResponseModel).Reset()
+}
+
 // AlibabaEleFengniaoTradeUpdateAPIResponseModel is 更新蜂鸟扣费状态 成功返回结果
 type AlibabaEleFengniaoTradeUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ele_fengniao_trade_update_response"`
@@ -24,4 +31,28 @@ type AlibabaEleFengniaoTradeUpdateAPIResponseModel struct {
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 1:成功 0：失败
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaEleFengniaoTradeUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorMsg = ""
+	m.Status = 0
+}
+
+var poolAlibabaEleFengniaoTradeUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaEleFengniaoTradeUpdateAPIResponse)
+	},
+}
+
+// GetAlibabaEleFengniaoTradeUpdateAPIResponse 从 sync.Pool 获取 AlibabaEleFengniaoTradeUpdateAPIResponse
+func GetAlibabaEleFengniaoTradeUpdateAPIResponse() *AlibabaEleFengniaoTradeUpdateAPIResponse {
+	return poolAlibabaEleFengniaoTradeUpdateAPIResponse.Get().(*AlibabaEleFengniaoTradeUpdateAPIResponse)
+}
+
+// ReleaseAlibabaEleFengniaoTradeUpdateAPIResponse 将 AlibabaEleFengniaoTradeUpdateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaEleFengniaoTradeUpdateAPIResponse(v *AlibabaEleFengniaoTradeUpdateAPIResponse) {
+	v.Reset()
+	poolAlibabaEleFengniaoTradeUpdateAPIResponse.Put(v)
 }

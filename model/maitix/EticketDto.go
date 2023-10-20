@@ -1,5 +1,9 @@
 package maitix
 
+import (
+	"sync"
+)
+
 // EticketDto 结构体
 type EticketDto struct {
 	// 证件号
@@ -82,4 +86,60 @@ type EticketDto struct {
 	VenueId int64 `json:"venue_id,omitempty" xml:"venue_id,omitempty"`
 	// 票单号
 	VoucherId int64 `json:"voucher_id,omitempty" xml:"voucher_id,omitempty"`
+}
+
+var poolEticketDto = sync.Pool{
+	New: func() any {
+		return new(EticketDto)
+	},
+}
+
+// GetEticketDto() 从对象池中获取EticketDto
+func GetEticketDto() *EticketDto {
+	return poolEticketDto.Get().(*EticketDto)
+}
+
+// ReleaseEticketDto 释放EticketDto
+func ReleaseEticketDto(v *EticketDto) {
+	v.CertificateNo = ""
+	v.CertificateType = ""
+	v.CustomerName = ""
+	v.EntryType = ""
+	v.ExchangeCode = ""
+	v.ExchangeTicketMethod = ""
+	v.FloorName = ""
+	v.FullSeatName = ""
+	v.PerformTime = ""
+	v.PhoneCountryCode = ""
+	v.PhoneNumber = ""
+	v.PrintStatus = ""
+	v.ProjectName = ""
+	v.QrCode = ""
+	v.QrCodeType = ""
+	v.ReserveSeat = ""
+	v.SeatCol = ""
+	v.SeatRow = ""
+	v.ServicePhone = ""
+	v.StandName = ""
+	v.StandPortal = ""
+	v.TicketItemName = ""
+	v.ValidateStatus = ""
+	v.VenueName = ""
+	v.BatchCode = 0
+	v.CombineId = 0
+	v.FloorId = 0
+	v.MainOrderId = 0
+	v.OrderId = 0
+	v.PerformId = 0
+	v.ProductSource = 0
+	v.ProjectId = 0
+	v.SeatId = 0
+	v.SourceSystem = 0
+	v.SourceTicketItemPrice = 0
+	v.SupplierId = 0
+	v.TicketItemPrice = 0
+	v.TicketItemid = 0
+	v.VenueId = 0
+	v.VoucherId = 0
+	poolEticketDto.Put(v)
 }

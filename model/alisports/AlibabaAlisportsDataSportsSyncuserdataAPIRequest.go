@@ -2,6 +2,7 @@ package alisports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -49,8 +50,29 @@ type AlibabaAlisportsDataSportsSyncuserdataAPIRequest struct {
 // NewAlibabaAlisportsDataSportsSyncuserdataRequest 初始化AlibabaAlisportsDataSportsSyncuserdataAPIRequest对象
 func NewAlibabaAlisportsDataSportsSyncuserdataRequest() *AlibabaAlisportsDataSportsSyncuserdataAPIRequest {
 	return &AlibabaAlisportsDataSportsSyncuserdataAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(16),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) Reset() {
+	r._alispAppKey = ""
+	r._metabolize = ""
+	r._protein = ""
+	r._bone = ""
+	r._water = ""
+	r._muscle = ""
+	r._fat = ""
+	r._weight = ""
+	r._height = ""
+	r._dataId = ""
+	r._aliuid = ""
+	r._alispSign = ""
+	r._alispTime = ""
+	r._time = ""
+	r._heartRate = 0
+	r._age = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -276,4 +298,21 @@ func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetAge(_age int64) er
 // GetAge Age Getter
 func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetAge() int64 {
 	return r._age
+}
+
+var poolAlibabaAlisportsDataSportsSyncuserdataAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlisportsDataSportsSyncuserdataRequest()
+	},
+}
+
+// GetAlibabaAlisportsDataSportsSyncuserdataRequest 从 sync.Pool 获取 AlibabaAlisportsDataSportsSyncuserdataAPIRequest
+func GetAlibabaAlisportsDataSportsSyncuserdataAPIRequest() *AlibabaAlisportsDataSportsSyncuserdataAPIRequest {
+	return poolAlibabaAlisportsDataSportsSyncuserdataAPIRequest.Get().(*AlibabaAlisportsDataSportsSyncuserdataAPIRequest)
+}
+
+// ReleaseAlibabaAlisportsDataSportsSyncuserdataAPIRequest 将 AlibabaAlisportsDataSportsSyncuserdataAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlisportsDataSportsSyncuserdataAPIRequest(v *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) {
+	v.Reset()
+	poolAlibabaAlisportsDataSportsSyncuserdataAPIRequest.Put(v)
 }

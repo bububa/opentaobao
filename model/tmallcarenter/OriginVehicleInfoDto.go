@@ -1,5 +1,9 @@
 package tmallcarenter
 
+import (
+	"sync"
+)
+
 // OriginVehicleInfoDto 结构体
 type OriginVehicleInfoDto struct {
 	// 销售名称
@@ -72,4 +76,55 @@ type OriginVehicleInfoDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 上市月份
 	ReleaseMonth int64 `json:"release_month,omitempty" xml:"release_month,omitempty"`
+}
+
+var poolOriginVehicleInfoDto = sync.Pool{
+	New: func() any {
+		return new(OriginVehicleInfoDto)
+	},
+}
+
+// GetOriginVehicleInfoDto() 从对象池中获取OriginVehicleInfoDto
+func GetOriginVehicleInfoDto() *OriginVehicleInfoDto {
+	return poolOriginVehicleInfoDto.Get().(*OriginVehicleInfoDto)
+}
+
+// ReleaseOriginVehicleInfoDto 释放OriginVehicleInfoDto
+func ReleaseOriginVehicleInfoDto(v *OriginVehicleInfoDto) {
+	v.SalesName = ""
+	v.ManufactureType = ""
+	v.RearTyre = ""
+	v.BrandName = ""
+	v.ChassisCid = ""
+	v.ManufactureName = ""
+	v.FrontTyre = ""
+	v.Displacement = ""
+	v.SalesStatus = ""
+	v.LineName = ""
+	v.Emmission = ""
+	v.ProductiveStatus = ""
+	v.EngineModel = ""
+	v.ExtendInfo = ""
+	v.MaxPower = ""
+	v.Country = ""
+	v.SalesEdition = ""
+	v.VersionCid = ""
+	v.VehicleInfoId = ""
+	v.VehicleLevel = ""
+	v.Price = ""
+	v.ModelName = ""
+	v.FuelType = ""
+	v.TransmissionType = ""
+	v.DriveModel = ""
+	v.ChassisNum = ""
+	v.BodyModel = ""
+	v.VehicleType = ""
+	v.GenerationNum = ""
+	v.ProductiveYear = 0
+	v.ReleaseYear = 0
+	v.SalesYear = 0
+	v.EndYear = 0
+	v.Status = 0
+	v.ReleaseMonth = 0
+	poolOriginVehicleInfoDto.Put(v)
 }

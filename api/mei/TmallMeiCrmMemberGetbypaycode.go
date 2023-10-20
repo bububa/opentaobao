@@ -9,11 +9,6 @@ import (
 // tmall.mei.crm.member.getbypaycode
 //
 // 通过支付码获取会员信息
-func TmallMeiCrmMemberGetbypaycode(clt *core.SDKClient, req *mei.TmallMeiCrmMemberGetbypaycodeAPIRequest, session string) (*mei.TmallMeiCrmMemberGetbypaycodeAPIResponse, error) {
-	var resp mei.TmallMeiCrmMemberGetbypaycodeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallMeiCrmMemberGetbypaycode(clt *core.SDKClient, req *mei.TmallMeiCrmMemberGetbypaycodeAPIRequest, resp *mei.TmallMeiCrmMemberGetbypaycodeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

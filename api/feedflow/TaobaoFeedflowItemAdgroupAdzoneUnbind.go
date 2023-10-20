@@ -9,11 +9,6 @@ import (
 // taobao.feedflow.item.adgroup.adzone.unbind
 //
 // 信息流单元内解绑资源位
-func TaobaoFeedflowItemAdgroupAdzoneUnbind(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdgroupAdzoneUnbindAPIRequest, session string) (*feedflow.TaobaoFeedflowItemAdgroupAdzoneUnbindAPIResponse, error) {
-	var resp feedflow.TaobaoFeedflowItemAdgroupAdzoneUnbindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFeedflowItemAdgroupAdzoneUnbind(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdgroupAdzoneUnbindAPIRequest, resp *feedflow.TaobaoFeedflowItemAdgroupAdzoneUnbindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.newhome.support.sync
 //
 // 周边配套数据同步
-func AlibabaAlihouseNewhomeSupportSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeSupportSyncAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeSupportSyncAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeSupportSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseNewhomeSupportSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeSupportSyncAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeSupportSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

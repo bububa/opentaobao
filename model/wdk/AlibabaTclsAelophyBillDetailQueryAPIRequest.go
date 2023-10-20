@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTclsAelophyBillDetailQueryAPIRequest struct {
 // NewAlibabaTclsAelophyBillDetailQueryRequest 初始化AlibabaTclsAelophyBillDetailQueryAPIRequest对象
 func NewAlibabaTclsAelophyBillDetailQueryRequest() *AlibabaTclsAelophyBillDetailQueryAPIRequest {
 	return &AlibabaTclsAelophyBillDetailQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTclsAelophyBillDetailQueryAPIRequest) Reset() {
+	r._detailRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTclsAelophyBillDetailQueryAPIRequest) SetDetailRequest(_detailRe
 // GetDetailRequest DetailRequest Getter
 func (r AlibabaTclsAelophyBillDetailQueryAPIRequest) GetDetailRequest() *BillDetailQueryRequest {
 	return r._detailRequest
+}
+
+var poolAlibabaTclsAelophyBillDetailQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTclsAelophyBillDetailQueryRequest()
+	},
+}
+
+// GetAlibabaTclsAelophyBillDetailQueryRequest 从 sync.Pool 获取 AlibabaTclsAelophyBillDetailQueryAPIRequest
+func GetAlibabaTclsAelophyBillDetailQueryAPIRequest() *AlibabaTclsAelophyBillDetailQueryAPIRequest {
+	return poolAlibabaTclsAelophyBillDetailQueryAPIRequest.Get().(*AlibabaTclsAelophyBillDetailQueryAPIRequest)
+}
+
+// ReleaseAlibabaTclsAelophyBillDetailQueryAPIRequest 将 AlibabaTclsAelophyBillDetailQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTclsAelophyBillDetailQueryAPIRequest(v *AlibabaTclsAelophyBillDetailQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaTclsAelophyBillDetailQueryAPIRequest.Put(v)
 }

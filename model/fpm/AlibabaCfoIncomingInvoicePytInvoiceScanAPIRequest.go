@@ -2,6 +2,7 @@ package fpm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCfoIncomingInvoicePytInvoiceScanAPIRequest struct {
 // NewAlibabaCfoIncomingInvoicePytInvoiceScanRequest 初始化AlibabaCfoIncomingInvoicePytInvoiceScanAPIRequest对象
 func NewAlibabaCfoIncomingInvoicePytInvoiceScanRequest() *AlibabaCfoIncomingInvoicePytInvoiceScanAPIRequest {
 	return &AlibabaCfoIncomingInvoicePytInvoiceScanAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCfoIncomingInvoicePytInvoiceScanAPIRequest) Reset() {
+	r._scanRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCfoIncomingInvoicePytInvoiceScanAPIRequest) SetScanRequest(_scan
 // GetScanRequest ScanRequest Getter
 func (r AlibabaCfoIncomingInvoicePytInvoiceScanAPIRequest) GetScanRequest() *InvoiceScanRequest {
 	return r._scanRequest
+}
+
+var poolAlibabaCfoIncomingInvoicePytInvoiceScanAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCfoIncomingInvoicePytInvoiceScanRequest()
+	},
+}
+
+// GetAlibabaCfoIncomingInvoicePytInvoiceScanRequest 从 sync.Pool 获取 AlibabaCfoIncomingInvoicePytInvoiceScanAPIRequest
+func GetAlibabaCfoIncomingInvoicePytInvoiceScanAPIRequest() *AlibabaCfoIncomingInvoicePytInvoiceScanAPIRequest {
+	return poolAlibabaCfoIncomingInvoicePytInvoiceScanAPIRequest.Get().(*AlibabaCfoIncomingInvoicePytInvoiceScanAPIRequest)
+}
+
+// ReleaseAlibabaCfoIncomingInvoicePytInvoiceScanAPIRequest 将 AlibabaCfoIncomingInvoicePytInvoiceScanAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCfoIncomingInvoicePytInvoiceScanAPIRequest(v *AlibabaCfoIncomingInvoicePytInvoiceScanAPIRequest) {
+	v.Reset()
+	poolAlibabaCfoIncomingInvoicePytInvoiceScanAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // cainiao.global.handover.content.query
 //
 // 查询大包详情
-func CainiaoGlobalHandoverContentQuery(clt *core.SDKClient, req *cainiaohandover.CainiaoGlobalHandoverContentQueryAPIRequest, session string) (*cainiaohandover.CainiaoGlobalHandoverContentQueryAPIResponse, error) {
-	var resp cainiaohandover.CainiaoGlobalHandoverContentQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func CainiaoGlobalHandoverContentQuery(clt *core.SDKClient, req *cainiaohandover.CainiaoGlobalHandoverContentQueryAPIRequest, resp *cainiaohandover.CainiaoGlobalHandoverContentQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

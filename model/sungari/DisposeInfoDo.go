@@ -1,5 +1,9 @@
 package sungari
 
+import (
+	"sync"
+)
+
 // DisposeInfoDo 结构体
 type DisposeInfoDo struct {
 	// 抽检报告编号
@@ -48,4 +52,43 @@ type DisposeInfoDo struct {
 	DisposeType int64 `json:"dispose_type,omitempty" xml:"dispose_type,omitempty"`
 	// 处置函件接收平台，1:淘宝  2：天猫  3:1688
 	PlatformType int64 `json:"platform_type,omitempty" xml:"platform_type,omitempty"`
+}
+
+var poolDisposeInfoDo = sync.Pool{
+	New: func() any {
+		return new(DisposeInfoDo)
+	},
+}
+
+// GetDisposeInfoDo() 从对象池中获取DisposeInfoDo
+func GetDisposeInfoDo() *DisposeInfoDo {
+	return poolDisposeInfoDo.Get().(*DisposeInfoDo)
+}
+
+// ReleaseDisposeInfoDo 释放DisposeInfoDo
+func ReleaseDisposeInfoDo(v *DisposeInfoDo) {
+	v.CheckNumber = ""
+	v.CompanyName = ""
+	v.CreateTime = ""
+	v.DisposeContent = ""
+	v.DocName = ""
+	v.LicenceNo = ""
+	v.LinkMan = ""
+	v.OssKey = ""
+	v.Phone = ""
+	v.Reason = ""
+	v.Remark = ""
+	v.SourceAddress = ""
+	v.SourceCompanyName = ""
+	v.SourceLinkMan = ""
+	v.SourceOssKey = ""
+	v.SourcePhone = ""
+	v.SourcePostCode = ""
+	v.SourceTime = ""
+	v.OssKeyUrl = ""
+	v.SourceOssKeyUrl = ""
+	v.ApiType = 0
+	v.DisposeType = 0
+	v.PlatformType = 0
+	poolDisposeInfoDo.Put(v)
 }

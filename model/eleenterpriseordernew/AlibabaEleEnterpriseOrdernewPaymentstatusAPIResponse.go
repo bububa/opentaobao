@@ -2,6 +2,7 @@ package eleenterpriseordernew
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse struct {
 	AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponseModel).Reset()
+}
+
 // AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponseModel is 设置订单支付 成功返回结果
 type AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ele_enterprise_ordernew_paymentstatus_response"`
@@ -26,4 +33,29 @@ type AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponseModel struct {
 	EnterpriseMsg string `json:"enterprise_msg,omitempty" xml:"enterprise_msg,omitempty"`
 	// 请求id
 	EnterpriseRequestid string `json:"enterprise_requestid,omitempty" xml:"enterprise_requestid,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.EnterpriseCode = ""
+	m.EnterpriseMsg = ""
+	m.EnterpriseRequestid = ""
+}
+
+var poolAlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse)
+	},
+}
+
+// GetAlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse 从 sync.Pool 获取 AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse
+func GetAlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse() *AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse {
+	return poolAlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse.Get().(*AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse)
+}
+
+// ReleaseAlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse 将 AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse(v *AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse) {
+	v.Reset()
+	poolAlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse.Put(v)
 }

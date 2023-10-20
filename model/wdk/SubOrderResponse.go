@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // SubOrderResponse 结构体
 type SubOrderResponse struct {
 	// 子单活动列表
@@ -42,4 +46,40 @@ type SubOrderResponse struct {
 	DiscountMerchantFee int64 `json:"discount_merchant_fee,omitempty" xml:"discount_merchant_fee,omitempty"`
 	// 平台优惠分摊
 	DiscountPlatformFee int64 `json:"discount_platform_fee,omitempty" xml:"discount_platform_fee,omitempty"`
+}
+
+var poolSubOrderResponse = sync.Pool{
+	New: func() any {
+		return new(SubOrderResponse)
+	},
+}
+
+// GetSubOrderResponse() 从对象池中获取SubOrderResponse
+func GetSubOrderResponse() *SubOrderResponse {
+	return poolSubOrderResponse.Get().(*SubOrderResponse)
+}
+
+// ReleaseSubOrderResponse 释放SubOrderResponse
+func ReleaseSubOrderResponse(v *SubOrderResponse) {
+	v.Activitys = v.Activitys[:0]
+	v.FundsDiscounts = v.FundsDiscounts[:0]
+	v.OutSubOrderId = ""
+	v.SkuCode = ""
+	v.SkuName = ""
+	v.SaleUnit = ""
+	v.StockUnit = ""
+	v.Barcode = ""
+	v.GiftFlag = ""
+	v.WeightFlag = ""
+	v.OrderStatus = ""
+	v.BizSubOrderId = 0
+	v.Price = 0
+	v.BuyStockQuantity = 0
+	v.BuySaleQuantity = 0
+	v.OriginalFee = 0
+	v.DiscountFee = 0
+	v.Weight = 0
+	v.DiscountMerchantFee = 0
+	v.DiscountPlatformFee = 0
+	poolSubOrderResponse.Put(v)
 }

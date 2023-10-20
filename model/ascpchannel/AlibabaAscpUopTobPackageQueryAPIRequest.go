@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpUopTobPackageQueryAPIRequest struct {
 // NewAlibabaAscpUopTobPackageQueryRequest 初始化AlibabaAscpUopTobPackageQueryAPIRequest对象
 func NewAlibabaAscpUopTobPackageQueryRequest() *AlibabaAscpUopTobPackageQueryAPIRequest {
 	return &AlibabaAscpUopTobPackageQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpUopTobPackageQueryAPIRequest) Reset() {
+	r._packageQueryRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpUopTobPackageQueryAPIRequest) SetPackageQueryRequest(_packag
 // GetPackageQueryRequest PackageQueryRequest Getter
 func (r AlibabaAscpUopTobPackageQueryAPIRequest) GetPackageQueryRequest() *Packagequeryrequest {
 	return r._packageQueryRequest
+}
+
+var poolAlibabaAscpUopTobPackageQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpUopTobPackageQueryRequest()
+	},
+}
+
+// GetAlibabaAscpUopTobPackageQueryRequest 从 sync.Pool 获取 AlibabaAscpUopTobPackageQueryAPIRequest
+func GetAlibabaAscpUopTobPackageQueryAPIRequest() *AlibabaAscpUopTobPackageQueryAPIRequest {
+	return poolAlibabaAscpUopTobPackageQueryAPIRequest.Get().(*AlibabaAscpUopTobPackageQueryAPIRequest)
+}
+
+// ReleaseAlibabaAscpUopTobPackageQueryAPIRequest 将 AlibabaAscpUopTobPackageQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpUopTobPackageQueryAPIRequest(v *AlibabaAscpUopTobPackageQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpUopTobPackageQueryAPIRequest.Put(v)
 }

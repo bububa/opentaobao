@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // DataDetails 结构体
 type DataDetails struct {
 	// 只会返回错误的地址id，如果淘天物流无法识别的地址则返回错误码
@@ -14,4 +18,26 @@ type DataDetails struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 记录行同步结果   true|false
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolDataDetails = sync.Pool{
+	New: func() any {
+		return new(DataDetails)
+	},
+}
+
+// GetDataDetails() 从对象池中获取DataDetails
+func GetDataDetails() *DataDetails {
+	return poolDataDetails.Get().(*DataDetails)
+}
+
+// ReleaseDataDetails 释放DataDetails
+func ReleaseDataDetails(v *DataDetails) {
+	v.AddressIdResults = v.AddressIdResults[:0]
+	v.AddressNameResults = v.AddressNameResults[:0]
+	v.RegionIdResults = v.RegionIdResults[:0]
+	v.OrderProcessReportId = ""
+	v.Message = ""
+	v.Success = false
+	poolDataDetails.Put(v)
 }

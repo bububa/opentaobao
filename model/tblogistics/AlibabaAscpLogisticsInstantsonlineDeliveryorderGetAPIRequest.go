@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpLogisticsInstantsonlineDeliveryorderGetAPIRequest struct {
 // NewAlibabaAscpLogisticsInstantsonlineDeliveryorderGetRequest 初始化AlibabaAscpLogisticsInstantsonlineDeliveryorderGetAPIRequest对象
 func NewAlibabaAscpLogisticsInstantsonlineDeliveryorderGetRequest() *AlibabaAscpLogisticsInstantsonlineDeliveryorderGetAPIRequest {
 	return &AlibabaAscpLogisticsInstantsonlineDeliveryorderGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpLogisticsInstantsonlineDeliveryorderGetAPIRequest) Reset() {
+	r._outOrderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpLogisticsInstantsonlineDeliveryorderGetAPIRequest) SetOutOrd
 // GetOutOrderId OutOrderId Getter
 func (r AlibabaAscpLogisticsInstantsonlineDeliveryorderGetAPIRequest) GetOutOrderId() string {
 	return r._outOrderId
+}
+
+var poolAlibabaAscpLogisticsInstantsonlineDeliveryorderGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpLogisticsInstantsonlineDeliveryorderGetRequest()
+	},
+}
+
+// GetAlibabaAscpLogisticsInstantsonlineDeliveryorderGetRequest 从 sync.Pool 获取 AlibabaAscpLogisticsInstantsonlineDeliveryorderGetAPIRequest
+func GetAlibabaAscpLogisticsInstantsonlineDeliveryorderGetAPIRequest() *AlibabaAscpLogisticsInstantsonlineDeliveryorderGetAPIRequest {
+	return poolAlibabaAscpLogisticsInstantsonlineDeliveryorderGetAPIRequest.Get().(*AlibabaAscpLogisticsInstantsonlineDeliveryorderGetAPIRequest)
+}
+
+// ReleaseAlibabaAscpLogisticsInstantsonlineDeliveryorderGetAPIRequest 将 AlibabaAscpLogisticsInstantsonlineDeliveryorderGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpLogisticsInstantsonlineDeliveryorderGetAPIRequest(v *AlibabaAscpLogisticsInstantsonlineDeliveryorderGetAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpLogisticsInstantsonlineDeliveryorderGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type YunosTvpubadminContentChildNodeitemQueryAPIRequest struct {
 // NewYunosTvpubadminContentChildNodeitemQueryRequest 初始化YunosTvpubadminContentChildNodeitemQueryAPIRequest对象
 func NewYunosTvpubadminContentChildNodeitemQueryRequest() *YunosTvpubadminContentChildNodeitemQueryAPIRequest {
 	return &YunosTvpubadminContentChildNodeitemQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminContentChildNodeitemQueryAPIRequest) Reset() {
+	r._name = ""
+	r._id = 0
+	r._nodeId = 0
+	r._status = 0
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *YunosTvpubadminContentChildNodeitemQueryAPIRequest) SetPageSize(_pageSi
 // GetPageSize PageSize Getter
 func (r YunosTvpubadminContentChildNodeitemQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolYunosTvpubadminContentChildNodeitemQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminContentChildNodeitemQueryRequest()
+	},
+}
+
+// GetYunosTvpubadminContentChildNodeitemQueryRequest 从 sync.Pool 获取 YunosTvpubadminContentChildNodeitemQueryAPIRequest
+func GetYunosTvpubadminContentChildNodeitemQueryAPIRequest() *YunosTvpubadminContentChildNodeitemQueryAPIRequest {
+	return poolYunosTvpubadminContentChildNodeitemQueryAPIRequest.Get().(*YunosTvpubadminContentChildNodeitemQueryAPIRequest)
+}
+
+// ReleaseYunosTvpubadminContentChildNodeitemQueryAPIRequest 将 YunosTvpubadminContentChildNodeitemQueryAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminContentChildNodeitemQueryAPIRequest(v *YunosTvpubadminContentChildNodeitemQueryAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminContentChildNodeitemQueryAPIRequest.Put(v)
 }

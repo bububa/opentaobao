@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,6 +18,12 @@ type TaobaoItemsOnsaleGetAPIResponse struct {
 	TaobaoItemsOnsaleGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoItemsOnsaleGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoItemsOnsaleGetAPIResponseModel).Reset()
+}
+
 // TaobaoItemsOnsaleGetAPIResponseModel is 获取当前会话用户出售中的商品列表 成功返回结果
 type TaobaoItemsOnsaleGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"items_onsale_get_response"`
@@ -26,4 +33,28 @@ type TaobaoItemsOnsaleGetAPIResponseModel struct {
 	Items []Item `json:"items,omitempty" xml:"items>item,omitempty"`
 	// 搜索到符合条件的结果总数
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoItemsOnsaleGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Items = m.Items[:0]
+	m.TotalResults = 0
+}
+
+var poolTaobaoItemsOnsaleGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoItemsOnsaleGetAPIResponse)
+	},
+}
+
+// GetTaobaoItemsOnsaleGetAPIResponse 从 sync.Pool 获取 TaobaoItemsOnsaleGetAPIResponse
+func GetTaobaoItemsOnsaleGetAPIResponse() *TaobaoItemsOnsaleGetAPIResponse {
+	return poolTaobaoItemsOnsaleGetAPIResponse.Get().(*TaobaoItemsOnsaleGetAPIResponse)
+}
+
+// ReleaseTaobaoItemsOnsaleGetAPIResponse 将 TaobaoItemsOnsaleGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoItemsOnsaleGetAPIResponse(v *TaobaoItemsOnsaleGetAPIResponse) {
+	v.Reset()
+	poolTaobaoItemsOnsaleGetAPIResponse.Put(v)
 }

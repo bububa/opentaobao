@@ -1,5 +1,9 @@
 package viapi
 
+import (
+	"sync"
+)
+
 // TextRectangle 结构体
 type TextRectangle struct {
 	// 文字区域左上角x坐标
@@ -12,4 +16,25 @@ type TextRectangle struct {
 	Height int64 `json:"height,omitempty" xml:"height,omitempty"`
 	// 文字区域宽度
 	Width int64 `json:"width,omitempty" xml:"width,omitempty"`
+}
+
+var poolTextRectangle = sync.Pool{
+	New: func() any {
+		return new(TextRectangle)
+	},
+}
+
+// GetTextRectangle() 从对象池中获取TextRectangle
+func GetTextRectangle() *TextRectangle {
+	return poolTextRectangle.Get().(*TextRectangle)
+}
+
+// ReleaseTextRectangle 释放TextRectangle
+func ReleaseTextRectangle(v *TextRectangle) {
+	v.Left = 0
+	v.Angle = 0
+	v.Top = 0
+	v.Height = 0
+	v.Width = 0
+	poolTextRectangle.Put(v)
 }

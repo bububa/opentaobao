@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // BookFlightVo 结构体
 type BookFlightVo struct {
 	// 到达机场三字码
@@ -12,4 +16,25 @@ type BookFlightVo struct {
 	FlightCabin string `json:"flight_cabin,omitempty" xml:"flight_cabin,omitempty"`
 	// 航班号
 	FlightNumber string `json:"flight_number,omitempty" xml:"flight_number,omitempty"`
+}
+
+var poolBookFlightVo = sync.Pool{
+	New: func() any {
+		return new(BookFlightVo)
+	},
+}
+
+// GetBookFlightVo() 从对象池中获取BookFlightVo
+func GetBookFlightVo() *BookFlightVo {
+	return poolBookFlightVo.Get().(*BookFlightVo)
+}
+
+// ReleaseBookFlightVo 释放BookFlightVo
+func ReleaseBookFlightVo(v *BookFlightVo) {
+	v.ArrAirport = ""
+	v.DepAirport = ""
+	v.DepTime = ""
+	v.FlightCabin = ""
+	v.FlightNumber = ""
+	poolBookFlightVo.Put(v)
 }

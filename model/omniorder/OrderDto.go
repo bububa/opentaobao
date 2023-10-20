@@ -1,5 +1,9 @@
 package omniorder
 
+import (
+	"sync"
+)
+
 // OrderDto 结构体
 type OrderDto struct {
 	// 子订单，属性与主订单相同
@@ -40,4 +44,39 @@ type OrderDto struct {
 	RefundFee int64 `json:"refund_fee,omitempty" xml:"refund_fee,omitempty"`
 	// 实付金额，单位是分
 	ActualPayFee int64 `json:"actual_pay_fee,omitempty" xml:"actual_pay_fee,omitempty"`
+}
+
+var poolOrderDto = sync.Pool{
+	New: func() any {
+		return new(OrderDto)
+	},
+}
+
+// GetOrderDto() 从对象池中获取OrderDto
+func GetOrderDto() *OrderDto {
+	return poolOrderDto.Get().(*OrderDto)
+}
+
+// ReleaseOrderDto 释放OrderDto
+func ReleaseOrderDto(v *OrderDto) {
+	v.DetailOrderList = v.DetailOrderList[:0]
+	v.BuyerNick = ""
+	v.PayTime = ""
+	v.EndTime = ""
+	v.SellerNick = ""
+	v.BizOrderId = 0
+	v.Main = 0
+	v.SellerId = 0
+	v.PayOrderId = 0
+	v.PayStatus = 0
+	v.LogisticsStatus = 0
+	v.AuctionId = 0
+	v.AuctionPrice = 0
+	v.BuyAmount = 0
+	v.AdjustFee = 0
+	v.DiscountFee = 0
+	v.RefundStatus = 0
+	v.RefundFee = 0
+	v.ActualPayFee = 0
+	poolOrderDto.Put(v)
 }

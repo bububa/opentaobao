@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // SyncExistingHouseDto 结构体
 type SyncExistingHouseDto struct {
 	// 户型图片
@@ -152,4 +156,95 @@ type SyncExistingHouseDto struct {
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// ms级时间戳
 	EtcVersion int64 `json:"etc_version,omitempty" xml:"etc_version,omitempty"`
+}
+
+var poolSyncExistingHouseDto = sync.Pool{
+	New: func() any {
+		return new(SyncExistingHouseDto)
+	},
+}
+
+// GetSyncExistingHouseDto() 从对象池中获取SyncExistingHouseDto
+func GetSyncExistingHouseDto() *SyncExistingHouseDto {
+	return poolSyncExistingHouseDto.Get().(*SyncExistingHouseDto)
+}
+
+// ReleaseSyncExistingHouseDto 释放SyncExistingHouseDto
+func ReleaseSyncExistingHouseDto(v *SyncExistingHouseDto) {
+	v.LayoutPictures = v.LayoutPictures[:0]
+	v.InnerPictures = v.InnerPictures[:0]
+	v.TagCodes = v.TagCodes[:0]
+	v.Pictures = v.Pictures[:0]
+	v.Extend = v.Extend[:0]
+	v.RelationCargos = v.RelationCargos[:0]
+	v.GatherTime = ""
+	v.VideoUrl = ""
+	v.ShowPrice = ""
+	v.ConstructionTime = ""
+	v.HouseReason = ""
+	v.LookTime = ""
+	v.FeeDesc = ""
+	v.ServiceDesc = ""
+	v.CommunityDesc = ""
+	v.LayoutDesc = ""
+	v.Mentality = ""
+	v.Description = ""
+	v.RoomNo = ""
+	v.UnitNo = ""
+	v.BuildingNo = ""
+	v.BuildingArea = ""
+	v.InsideArea = ""
+	v.Name = ""
+	v.Address = ""
+	v.OuterId = ""
+	v.Ecode = ""
+	v.CommunityOuterId = ""
+	v.VideoCoverImage = ""
+	v.CommunityName = ""
+	v.OuterLayoutsId = ""
+	v.ServiceFacilities = ""
+	v.RentPrice = ""
+	v.OuterHouseBaseId = ""
+	v.UnitPrice = ""
+	v.OuterStoreId = ""
+	v.FloorDesc = ""
+	v.Entrust = nil
+	v.IsShow = 0
+	v.PropertyAge = 0
+	v.IsOnlyHouse = 0
+	v.IsElevator = 0
+	v.Status = 0
+	v.PropertyType = 0
+	v.TotalFloor = 0
+	v.Floor = 0
+	v.Position = 0
+	v.Balcony = 0
+	v.Kitchen = 0
+	v.Toilet = 0
+	v.Hall = 0
+	v.Room = 0
+	v.Direction = 0
+	v.Fitment = 0
+	v.Situation = 0
+	v.LandUse = 0
+	v.PropertyRights = 0
+	v.Scene = 0
+	v.HouseType = 0
+	v.IsCover = 0
+	v.IsAsync = 0
+	v.RentStatus = 0
+	v.PartitionType = 0
+	v.WindowType = 0
+	v.HasIndependentBalcony = 0
+	v.HasIndependentToilet = 0
+	v.HouseModel = 0
+	v.HouseCategory = 0
+	v.RoomType = 0
+	v.BusinessType = 0
+	v.IsTest = 0
+	v.CargoType = 0
+	v.SalesStatus = 0
+	v.ItemId = 0
+	v.EtcVersion = 0
+	poolSyncExistingHouseDto.Put(v)
 }

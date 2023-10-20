@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsQueryAPIRequest struct
 // NewAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsQueryRequest 初始化AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsQueryAPIRequest对象
 func NewAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsQueryRequest() *AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsQueryAPIRequest {
 	return &AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsQueryAPIRequest) Reset() {
+	r._token = ""
+	r._tenantKey = ""
+	r._orderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsQueryAPIRequest) S
 // GetOrderId OrderId Getter
 func (r AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsQueryAPIRequest) GetOrderId() string {
 	return r._orderId
+}
+
+var poolAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsQueryRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsQueryRequest 从 sync.Pool 获取 AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsQueryAPIRequest
+func GetAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsQueryAPIRequest() *AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsQueryAPIRequest {
+	return poolAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsQueryAPIRequest.Get().(*AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsQueryAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsQueryAPIRequest 将 AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsQueryAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsQueryAPIRequest(v *AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsQueryAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsQueryAPIRequest.Put(v)
 }

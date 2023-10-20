@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleIsvGoosefishOrderCreateAPIRequest struct {
 // NewAlibabaIdleIsvGoosefishOrderCreateRequest 初始化AlibabaIdleIsvGoosefishOrderCreateAPIRequest对象
 func NewAlibabaIdleIsvGoosefishOrderCreateRequest() *AlibabaIdleIsvGoosefishOrderCreateAPIRequest {
 	return &AlibabaIdleIsvGoosefishOrderCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleIsvGoosefishOrderCreateAPIRequest) Reset() {
+	r._orderCreateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleIsvGoosefishOrderCreateAPIRequest) SetOrderCreateRequest(_or
 // GetOrderCreateRequest OrderCreateRequest Getter
 func (r AlibabaIdleIsvGoosefishOrderCreateAPIRequest) GetOrderCreateRequest() *OrderCreateRequest {
 	return r._orderCreateRequest
+}
+
+var poolAlibabaIdleIsvGoosefishOrderCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleIsvGoosefishOrderCreateRequest()
+	},
+}
+
+// GetAlibabaIdleIsvGoosefishOrderCreateRequest 从 sync.Pool 获取 AlibabaIdleIsvGoosefishOrderCreateAPIRequest
+func GetAlibabaIdleIsvGoosefishOrderCreateAPIRequest() *AlibabaIdleIsvGoosefishOrderCreateAPIRequest {
+	return poolAlibabaIdleIsvGoosefishOrderCreateAPIRequest.Get().(*AlibabaIdleIsvGoosefishOrderCreateAPIRequest)
+}
+
+// ReleaseAlibabaIdleIsvGoosefishOrderCreateAPIRequest 将 AlibabaIdleIsvGoosefishOrderCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleIsvGoosefishOrderCreateAPIRequest(v *AlibabaIdleIsvGoosefishOrderCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleIsvGoosefishOrderCreateAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.dchain.aoxiang.consignorder.batch.query
 //
 // 发货单批量查询
-func AlibabaDchainAoxiangConsignorderBatchQuery(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangConsignorderBatchQueryAPIRequest, session string) (*ascp.AlibabaDchainAoxiangConsignorderBatchQueryAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangConsignorderBatchQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDchainAoxiangConsignorderBatchQuery(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangConsignorderBatchQueryAPIRequest, resp *ascp.AlibabaDchainAoxiangConsignorderBatchQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package security
 
+import (
+	"sync"
+)
+
 // ObfuscateResult 结构体
 type ObfuscateResult struct {
 	// 总混淆率
@@ -16,4 +20,27 @@ type ObfuscateResult struct {
 	ObfuscatedFields int64 `json:"obfuscated_fields,omitempty" xml:"obfuscated_fields,omitempty"`
 	// 混淆方法的数量
 	ObfuscatedMethods int64 `json:"obfuscated_methods,omitempty" xml:"obfuscated_methods,omitempty"`
+}
+
+var poolObfuscateResult = sync.Pool{
+	New: func() any {
+		return new(ObfuscateResult)
+	},
+}
+
+// GetObfuscateResult() 从对象池中获取ObfuscateResult
+func GetObfuscateResult() *ObfuscateResult {
+	return poolObfuscateResult.Get().(*ObfuscateResult)
+}
+
+// ReleaseObfuscateResult 释放ObfuscateResult
+func ReleaseObfuscateResult(v *ObfuscateResult) {
+	v.ObfuscatedPercent = ""
+	v.TotalClasses = 0
+	v.TotalFields = 0
+	v.TotalMethods = 0
+	v.ObfuscatedClasses = 0
+	v.ObfuscatedFields = 0
+	v.ObfuscatedMethods = 0
+	poolObfuscateResult.Put(v)
 }

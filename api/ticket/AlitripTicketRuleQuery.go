@@ -9,11 +9,6 @@ import (
 // alitrip.ticket.rule.query
 //
 // 门票规则信息查询接口：返回商家上传的门票规则信息
-func AlitripTicketRuleQuery(clt *core.SDKClient, req *ticket.AlitripTicketRuleQueryAPIRequest, session string) (*ticket.AlitripTicketRuleQueryAPIResponse, error) {
-	var resp ticket.AlitripTicketRuleQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripTicketRuleQuery(clt *core.SDKClient, req *ticket.AlitripTicketRuleQueryAPIRequest, resp *ticket.AlitripTicketRuleQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

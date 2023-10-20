@@ -2,6 +2,7 @@ package wlb
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoWlbNotifyMessagePageGetAPIRequest struct {
 // NewTaobaoWlbNotifyMessagePageGetRequest 初始化TaobaoWlbNotifyMessagePageGetAPIRequest对象
 func NewTaobaoWlbNotifyMessagePageGetRequest() *TaobaoWlbNotifyMessagePageGetAPIRequest {
 	return &TaobaoWlbNotifyMessagePageGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbNotifyMessagePageGetAPIRequest) Reset() {
+	r._msgCode = ""
+	r._startDate = ""
+	r._endDate = ""
+	r._status = ""
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoWlbNotifyMessagePageGetAPIRequest) SetPageSize(_pageSize int64) e
 // GetPageSize PageSize Getter
 func (r TaobaoWlbNotifyMessagePageGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoWlbNotifyMessagePageGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbNotifyMessagePageGetRequest()
+	},
+}
+
+// GetTaobaoWlbNotifyMessagePageGetRequest 从 sync.Pool 获取 TaobaoWlbNotifyMessagePageGetAPIRequest
+func GetTaobaoWlbNotifyMessagePageGetAPIRequest() *TaobaoWlbNotifyMessagePageGetAPIRequest {
+	return poolTaobaoWlbNotifyMessagePageGetAPIRequest.Get().(*TaobaoWlbNotifyMessagePageGetAPIRequest)
+}
+
+// ReleaseTaobaoWlbNotifyMessagePageGetAPIRequest 将 TaobaoWlbNotifyMessagePageGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbNotifyMessagePageGetAPIRequest(v *TaobaoWlbNotifyMessagePageGetAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbNotifyMessagePageGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package tbtrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTopOaidDecryptAPIRequest struct {
 // NewTaobaoTopOaidDecryptRequest 初始化TaobaoTopOaidDecryptAPIRequest对象
 func NewTaobaoTopOaidDecryptRequest() *TaobaoTopOaidDecryptAPIRequest {
 	return &TaobaoTopOaidDecryptAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTopOaidDecryptAPIRequest) Reset() {
+	r._queryList = r._queryList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTopOaidDecryptAPIRequest) SetQueryList(_queryList []ReceiverQuery
 // GetQueryList QueryList Getter
 func (r TaobaoTopOaidDecryptAPIRequest) GetQueryList() []ReceiverQuery {
 	return r._queryList
+}
+
+var poolTaobaoTopOaidDecryptAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTopOaidDecryptRequest()
+	},
+}
+
+// GetTaobaoTopOaidDecryptRequest 从 sync.Pool 获取 TaobaoTopOaidDecryptAPIRequest
+func GetTaobaoTopOaidDecryptAPIRequest() *TaobaoTopOaidDecryptAPIRequest {
+	return poolTaobaoTopOaidDecryptAPIRequest.Get().(*TaobaoTopOaidDecryptAPIRequest)
+}
+
+// ReleaseTaobaoTopOaidDecryptAPIRequest 将 TaobaoTopOaidDecryptAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTopOaidDecryptAPIRequest(v *TaobaoTopOaidDecryptAPIRequest) {
+	v.Reset()
+	poolTaobaoTopOaidDecryptAPIRequest.Put(v)
 }

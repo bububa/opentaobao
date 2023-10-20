@@ -1,5 +1,9 @@
 package icbudropshipping
 
+import (
+	"sync"
+)
+
 // Address 结构体
 type Address struct {
 	// Specific address
@@ -30,4 +34,34 @@ type Address struct {
 	Fax *Phone `json:"fax,omitempty" xml:"fax,omitempty"`
 	// telephone
 	Telephone *Phone `json:"telephone,omitempty" xml:"telephone,omitempty"`
+}
+
+var poolAddress = sync.Pool{
+	New: func() any {
+		return new(Address)
+	},
+}
+
+// GetAddress() 从对象池中获取Address
+func GetAddress() *Address {
+	return poolAddress.Get().(*Address)
+}
+
+// ReleaseAddress 释放Address
+func ReleaseAddress(v *Address) {
+	v.Address = ""
+	v.AlternateAddress = ""
+	v.City = ""
+	v.CityCode = ""
+	v.ContactPerson = ""
+	v.Country = ""
+	v.CountryCode = ""
+	v.Port = ""
+	v.PortCode = ""
+	v.Province = ""
+	v.ProvinceCode = ""
+	v.Zip = ""
+	v.Fax = nil
+	v.Telephone = nil
+	poolAddress.Put(v)
 }

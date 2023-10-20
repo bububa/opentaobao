@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -28,8 +29,18 @@ type TaobaoLogisticsOnlineConfirmAPIRequest struct {
 // NewTaobaoLogisticsOnlineConfirmRequest 初始化TaobaoLogisticsOnlineConfirmAPIRequest对象
 func NewTaobaoLogisticsOnlineConfirmRequest() *TaobaoLogisticsOnlineConfirmAPIRequest {
 	return &TaobaoLogisticsOnlineConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsOnlineConfirmAPIRequest) Reset() {
+	r._subTid = r._subTid[:0]
+	r._outSid = ""
+	r._sellerIp = ""
+	r._tid = 0
+	r._isSplit = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -112,4 +123,21 @@ func (r *TaobaoLogisticsOnlineConfirmAPIRequest) SetIsSplit(_isSplit int64) erro
 // GetIsSplit IsSplit Getter
 func (r TaobaoLogisticsOnlineConfirmAPIRequest) GetIsSplit() int64 {
 	return r._isSplit
+}
+
+var poolTaobaoLogisticsOnlineConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsOnlineConfirmRequest()
+	},
+}
+
+// GetTaobaoLogisticsOnlineConfirmRequest 从 sync.Pool 获取 TaobaoLogisticsOnlineConfirmAPIRequest
+func GetTaobaoLogisticsOnlineConfirmAPIRequest() *TaobaoLogisticsOnlineConfirmAPIRequest {
+	return poolTaobaoLogisticsOnlineConfirmAPIRequest.Get().(*TaobaoLogisticsOnlineConfirmAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsOnlineConfirmAPIRequest 将 TaobaoLogisticsOnlineConfirmAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsOnlineConfirmAPIRequest(v *TaobaoLogisticsOnlineConfirmAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsOnlineConfirmAPIRequest.Put(v)
 }

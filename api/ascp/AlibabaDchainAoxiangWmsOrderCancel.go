@@ -9,11 +9,6 @@ import (
 // alibaba.dchain.aoxiang.wms.order.cancel
 //
 // 回传发货单取消通知
-func AlibabaDchainAoxiangWmsOrderCancel(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangWmsOrderCancelAPIRequest, session string) (*ascp.AlibabaDchainAoxiangWmsOrderCancelAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangWmsOrderCancelAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDchainAoxiangWmsOrderCancel(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangWmsOrderCancelAPIRequest, resp *ascp.AlibabaDchainAoxiangWmsOrderCancelAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

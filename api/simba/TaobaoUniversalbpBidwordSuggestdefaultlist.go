@@ -9,11 +9,6 @@ import (
 // taobao.universalbp.bidword.suggestdefaultlist
 //
 // 入参推广信息，出参建议的默认关键词
-func TaobaoUniversalbpBidwordSuggestdefaultlist(clt *core.SDKClient, req *simba.TaobaoUniversalbpBidwordSuggestdefaultlistAPIRequest, session string) (*simba.TaobaoUniversalbpBidwordSuggestdefaultlistAPIResponse, error) {
-	var resp simba.TaobaoUniversalbpBidwordSuggestdefaultlistAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUniversalbpBidwordSuggestdefaultlist(clt *core.SDKClient, req *simba.TaobaoUniversalbpBidwordSuggestdefaultlistAPIRequest, resp *simba.TaobaoUniversalbpBidwordSuggestdefaultlistAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

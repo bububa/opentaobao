@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // CommunityAgentRelationDto 结构体
 type CommunityAgentRelationDto struct {
 	// 外部经纪人ID
@@ -12,4 +16,25 @@ type CommunityAgentRelationDto struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 是否测试 0-否 1-是
 	IsTest int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
+}
+
+var poolCommunityAgentRelationDto = sync.Pool{
+	New: func() any {
+		return new(CommunityAgentRelationDto)
+	},
+}
+
+// GetCommunityAgentRelationDto() 从对象池中获取CommunityAgentRelationDto
+func GetCommunityAgentRelationDto() *CommunityAgentRelationDto {
+	return poolCommunityAgentRelationDto.Get().(*CommunityAgentRelationDto)
+}
+
+// ReleaseCommunityAgentRelationDto 释放CommunityAgentRelationDto
+func ReleaseCommunityAgentRelationDto(v *CommunityAgentRelationDto) {
+	v.OuterConsultantId = ""
+	v.OuterBrokerId = ""
+	v.NewOuterBrokerId = ""
+	v.Type = 0
+	v.IsTest = 0
+	poolCommunityAgentRelationDto.Put(v)
 }

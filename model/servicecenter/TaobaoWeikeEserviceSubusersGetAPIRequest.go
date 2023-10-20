@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoWeikeEserviceSubusersGetAPIRequest struct {
 // NewTaobaoWeikeEserviceSubusersGetRequest 初始化TaobaoWeikeEserviceSubusersGetAPIRequest对象
 func NewTaobaoWeikeEserviceSubusersGetRequest() *TaobaoWeikeEserviceSubusersGetAPIRequest {
 	return &TaobaoWeikeEserviceSubusersGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWeikeEserviceSubusersGetAPIRequest) Reset() {
+	r._orderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoWeikeEserviceSubusersGetAPIRequest) SetOrderId(_orderId int64) er
 // GetOrderId OrderId Getter
 func (r TaobaoWeikeEserviceSubusersGetAPIRequest) GetOrderId() int64 {
 	return r._orderId
+}
+
+var poolTaobaoWeikeEserviceSubusersGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWeikeEserviceSubusersGetRequest()
+	},
+}
+
+// GetTaobaoWeikeEserviceSubusersGetRequest 从 sync.Pool 获取 TaobaoWeikeEserviceSubusersGetAPIRequest
+func GetTaobaoWeikeEserviceSubusersGetAPIRequest() *TaobaoWeikeEserviceSubusersGetAPIRequest {
+	return poolTaobaoWeikeEserviceSubusersGetAPIRequest.Get().(*TaobaoWeikeEserviceSubusersGetAPIRequest)
+}
+
+// ReleaseTaobaoWeikeEserviceSubusersGetAPIRequest 将 TaobaoWeikeEserviceSubusersGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWeikeEserviceSubusersGetAPIRequest(v *TaobaoWeikeEserviceSubusersGetAPIRequest) {
+	v.Reset()
+	poolTaobaoWeikeEserviceSubusersGetAPIRequest.Put(v)
 }

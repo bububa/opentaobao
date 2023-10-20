@@ -2,6 +2,7 @@ package uscesl
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoUsceslIteminfoBatchPutAPIRequest struct {
 // NewTaobaoUsceslIteminfoBatchPutRequest 初始化TaobaoUsceslIteminfoBatchPutAPIRequest对象
 func NewTaobaoUsceslIteminfoBatchPutRequest() *TaobaoUsceslIteminfoBatchPutAPIRequest {
 	return &TaobaoUsceslIteminfoBatchPutAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUsceslIteminfoBatchPutAPIRequest) Reset() {
+	r._itemChangeBOList = r._itemChangeBOList[:0]
+	r._shopId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoUsceslIteminfoBatchPutAPIRequest) SetShopId(_shopId int64) error 
 // GetShopId ShopId Getter
 func (r TaobaoUsceslIteminfoBatchPutAPIRequest) GetShopId() int64 {
 	return r._shopId
+}
+
+var poolTaobaoUsceslIteminfoBatchPutAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUsceslIteminfoBatchPutRequest()
+	},
+}
+
+// GetTaobaoUsceslIteminfoBatchPutRequest 从 sync.Pool 获取 TaobaoUsceslIteminfoBatchPutAPIRequest
+func GetTaobaoUsceslIteminfoBatchPutAPIRequest() *TaobaoUsceslIteminfoBatchPutAPIRequest {
+	return poolTaobaoUsceslIteminfoBatchPutAPIRequest.Get().(*TaobaoUsceslIteminfoBatchPutAPIRequest)
+}
+
+// ReleaseTaobaoUsceslIteminfoBatchPutAPIRequest 将 TaobaoUsceslIteminfoBatchPutAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUsceslIteminfoBatchPutAPIRequest(v *TaobaoUsceslIteminfoBatchPutAPIRequest) {
+	v.Reset()
+	poolTaobaoUsceslIteminfoBatchPutAPIRequest.Put(v)
 }

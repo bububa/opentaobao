@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // VideoFeedDto 结构体
 type VideoFeedDto struct {
 	// 视频状态描述
@@ -18,4 +22,28 @@ type VideoFeedDto struct {
 	State int64 `json:"state,omitempty" xml:"state,omitempty"`
 	// 视频高度
 	Height int64 `json:"height,omitempty" xml:"height,omitempty"`
+}
+
+var poolVideoFeedDto = sync.Pool{
+	New: func() any {
+		return new(VideoFeedDto)
+	},
+}
+
+// GetVideoFeedDto() 从对象池中获取VideoFeedDto
+func GetVideoFeedDto() *VideoFeedDto {
+	return poolVideoFeedDto.Get().(*VideoFeedDto)
+}
+
+// ReleaseVideoFeedDto 释放VideoFeedDto
+func ReleaseVideoFeedDto(v *VideoFeedDto) {
+	v.StateDesc = ""
+	v.Ratio = ""
+	v.SizeType = 0
+	v.VideoId = 0
+	v.ItemId = 0
+	v.Width = 0
+	v.State = 0
+	v.Height = 0
+	poolVideoFeedDto.Put(v)
 }

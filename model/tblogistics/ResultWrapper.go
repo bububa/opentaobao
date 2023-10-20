@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // ResultWrapper 结构体
 type ResultWrapper struct {
 	// 响应错误码
@@ -12,4 +16,25 @@ type ResultWrapper struct {
 	Data *PullPackageOrderResponse `json:"data,omitempty" xml:"data,omitempty"`
 	// 相应结果
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolResultWrapper = sync.Pool{
+	New: func() any {
+		return new(ResultWrapper)
+	},
+}
+
+// GetResultWrapper() 从对象池中获取ResultWrapper
+func GetResultWrapper() *ResultWrapper {
+	return poolResultWrapper.Get().(*ResultWrapper)
+}
+
+// ReleaseResultWrapper 释放ResultWrapper
+func ReleaseResultWrapper(v *ResultWrapper) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.ErrorMessage = ""
+	v.Data = nil
+	v.Success = false
+	poolResultWrapper.Put(v)
 }

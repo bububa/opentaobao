@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoItemJointImgAPIRequest struct {
 // NewTaobaoItemJointImgRequest 初始化TaobaoItemJointImgAPIRequest对象
 func NewTaobaoItemJointImgRequest() *TaobaoItemJointImgAPIRequest {
 	return &TaobaoItemJointImgAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoItemJointImgAPIRequest) Reset() {
+	r._picPath = ""
+	r._numIid = 0
+	r._id = 0
+	r._position = 0
+	r._isMajor = false
+	r._isRectangle = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoItemJointImgAPIRequest) SetIsRectangle(_isRectangle bool) error {
 // GetIsRectangle IsRectangle Getter
 func (r TaobaoItemJointImgAPIRequest) GetIsRectangle() bool {
 	return r._isRectangle
+}
+
+var poolTaobaoItemJointImgAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoItemJointImgRequest()
+	},
+}
+
+// GetTaobaoItemJointImgRequest 从 sync.Pool 获取 TaobaoItemJointImgAPIRequest
+func GetTaobaoItemJointImgAPIRequest() *TaobaoItemJointImgAPIRequest {
+	return poolTaobaoItemJointImgAPIRequest.Get().(*TaobaoItemJointImgAPIRequest)
+}
+
+// ReleaseTaobaoItemJointImgAPIRequest 将 TaobaoItemJointImgAPIRequest 放入 sync.Pool
+func ReleaseTaobaoItemJointImgAPIRequest(v *TaobaoItemJointImgAPIRequest) {
+	v.Reset()
+	poolTaobaoItemJointImgAPIRequest.Put(v)
 }

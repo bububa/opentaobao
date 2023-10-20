@@ -2,6 +2,7 @@ package tbtrade
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTopOnceTokenGetAPIResponse struct {
 	TaobaoTopOnceTokenGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTopOnceTokenGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTopOnceTokenGetAPIResponseModel).Reset()
+}
+
 // TaobaoTopOnceTokenGetAPIResponseModel is 网关一次性token获取 成功返回结果
 type TaobaoTopOnceTokenGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"top_once_token_get_response"`
@@ -26,4 +33,29 @@ type TaobaoTopOnceTokenGetAPIResponseModel struct {
 	Token string `json:"token,omitempty" xml:"token,omitempty"`
 	// 失败详情
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTopOnceTokenGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultCode = ""
+	m.Token = ""
+	m.ResultMsg = ""
+}
+
+var poolTaobaoTopOnceTokenGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTopOnceTokenGetAPIResponse)
+	},
+}
+
+// GetTaobaoTopOnceTokenGetAPIResponse 从 sync.Pool 获取 TaobaoTopOnceTokenGetAPIResponse
+func GetTaobaoTopOnceTokenGetAPIResponse() *TaobaoTopOnceTokenGetAPIResponse {
+	return poolTaobaoTopOnceTokenGetAPIResponse.Get().(*TaobaoTopOnceTokenGetAPIResponse)
+}
+
+// ReleaseTaobaoTopOnceTokenGetAPIResponse 将 TaobaoTopOnceTokenGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTopOnceTokenGetAPIResponse(v *TaobaoTopOnceTokenGetAPIResponse) {
+	v.Reset()
+	poolTaobaoTopOnceTokenGetAPIResponse.Put(v)
 }

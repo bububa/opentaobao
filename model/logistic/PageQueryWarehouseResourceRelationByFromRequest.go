@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // PageQueryWarehouseResourceRelationByFromRequest 结构体
 type PageQueryWarehouseResourceRelationByFromRequest struct {
 	// from资源外部编码,与from_resource_code二选一
@@ -14,4 +18,26 @@ type PageQueryWarehouseResourceRelationByFromRequest struct {
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
 	// 分页，上限50
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolPageQueryWarehouseResourceRelationByFromRequest = sync.Pool{
+	New: func() any {
+		return new(PageQueryWarehouseResourceRelationByFromRequest)
+	},
+}
+
+// GetPageQueryWarehouseResourceRelationByFromRequest() 从对象池中获取PageQueryWarehouseResourceRelationByFromRequest
+func GetPageQueryWarehouseResourceRelationByFromRequest() *PageQueryWarehouseResourceRelationByFromRequest {
+	return poolPageQueryWarehouseResourceRelationByFromRequest.Get().(*PageQueryWarehouseResourceRelationByFromRequest)
+}
+
+// ReleasePageQueryWarehouseResourceRelationByFromRequest 释放PageQueryWarehouseResourceRelationByFromRequest
+func ReleasePageQueryWarehouseResourceRelationByFromRequest(v *PageQueryWarehouseResourceRelationByFromRequest) {
+	v.FromOrgResourceCode = ""
+	v.FromResourceCode = ""
+	v.FromResourceType = ""
+	v.NetworkCode = ""
+	v.PageIndex = 0
+	v.PageSize = 0
+	poolPageQueryWarehouseResourceRelationByFromRequest.Put(v)
 }

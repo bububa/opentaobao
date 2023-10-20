@@ -2,6 +2,7 @@ package legalsuit
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaLegalStandpointDeleteAPIRequest struct {
 // NewAlibabaLegalStandpointDeleteRequest 初始化AlibabaLegalStandpointDeleteAPIRequest对象
 func NewAlibabaLegalStandpointDeleteRequest() *AlibabaLegalStandpointDeleteAPIRequest {
 	return &AlibabaLegalStandpointDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLegalStandpointDeleteAPIRequest) Reset() {
+	r._userId = ""
+	r._inputSystemCode = ""
+	r._refrenceId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaLegalStandpointDeleteAPIRequest) SetRefrenceId(_refrenceId int64
 // GetRefrenceId RefrenceId Getter
 func (r AlibabaLegalStandpointDeleteAPIRequest) GetRefrenceId() int64 {
 	return r._refrenceId
+}
+
+var poolAlibabaLegalStandpointDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLegalStandpointDeleteRequest()
+	},
+}
+
+// GetAlibabaLegalStandpointDeleteRequest 从 sync.Pool 获取 AlibabaLegalStandpointDeleteAPIRequest
+func GetAlibabaLegalStandpointDeleteAPIRequest() *AlibabaLegalStandpointDeleteAPIRequest {
+	return poolAlibabaLegalStandpointDeleteAPIRequest.Get().(*AlibabaLegalStandpointDeleteAPIRequest)
+}
+
+// ReleaseAlibabaLegalStandpointDeleteAPIRequest 将 AlibabaLegalStandpointDeleteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLegalStandpointDeleteAPIRequest(v *AlibabaLegalStandpointDeleteAPIRequest) {
+	v.Reset()
+	poolAlibabaLegalStandpointDeleteAPIRequest.Put(v)
 }

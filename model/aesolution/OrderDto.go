@@ -1,5 +1,9 @@
 package aesolution
 
+import (
+	"sync"
+)
+
 // OrderDto 结构体
 type OrderDto struct {
 	// product list
@@ -66,4 +70,52 @@ type OrderDto struct {
 	Phone bool `json:"phone,omitempty" xml:"phone,omitempty"`
 	// Have you requested a loan?
 	HasRequestLoan bool `json:"has_request_loan,omitempty" xml:"has_request_loan,omitempty"`
+}
+
+var poolOrderDto = sync.Pool{
+	New: func() any {
+		return new(OrderDto)
+	},
+}
+
+// GetOrderDto() 从对象池中获取OrderDto
+func GetOrderDto() *OrderDto {
+	return poolOrderDto.Get().(*OrderDto)
+}
+
+// ReleaseOrderDto 释放OrderDto
+func ReleaseOrderDto(v *OrderDto) {
+	v.ProductList = v.ProductList[:0]
+	v.SellerSignerFullname = ""
+	v.SellerOperatorLoginId = ""
+	v.SellerLoginId = ""
+	v.PaymentType = ""
+	v.OrderStatus = ""
+	v.OrderDetailUrl = ""
+	v.LogisticsStatus = ""
+	v.LogisitcsEscrowFeeRate = ""
+	v.LeftSendGoodMin = ""
+	v.LeftSendGoodHour = ""
+	v.LeftSendGoodDay = ""
+	v.IssueStatus = ""
+	v.GmtUpdate = ""
+	v.GmtSendGoodsTime = ""
+	v.GmtPayTime = ""
+	v.GmtCreate = ""
+	v.FundStatus = ""
+	v.FrozenStatus = ""
+	v.EndReason = ""
+	v.BuyerSignerFullname = ""
+	v.BuyerLoginId = ""
+	v.BizType = ""
+	v.OfflinePickupType = ""
+	v.TimeoutLeftTime = 0
+	v.PayAmount = nil
+	v.OrderId = 0
+	v.LoanAmount = nil
+	v.EscrowFeeRate = 0
+	v.EscrowFee = nil
+	v.Phone = false
+	v.HasRequestLoan = false
+	poolOrderDto.Put(v)
 }

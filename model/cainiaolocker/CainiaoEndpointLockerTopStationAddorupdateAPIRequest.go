@@ -2,6 +2,7 @@ package cainiaolocker
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoEndpointLockerTopStationAddorupdateAPIRequest struct {
 // NewCainiaoEndpointLockerTopStationAddorupdateRequest 初始化CainiaoEndpointLockerTopStationAddorupdateAPIRequest对象
 func NewCainiaoEndpointLockerTopStationAddorupdateRequest() *CainiaoEndpointLockerTopStationAddorupdateAPIRequest {
 	return &CainiaoEndpointLockerTopStationAddorupdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoEndpointLockerTopStationAddorupdateAPIRequest) Reset() {
+	r._stationInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoEndpointLockerTopStationAddorupdateAPIRequest) SetStationInfo(_s
 // GetStationInfo StationInfo Getter
 func (r CainiaoEndpointLockerTopStationAddorupdateAPIRequest) GetStationInfo() *StationInfo {
 	return r._stationInfo
+}
+
+var poolCainiaoEndpointLockerTopStationAddorupdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoEndpointLockerTopStationAddorupdateRequest()
+	},
+}
+
+// GetCainiaoEndpointLockerTopStationAddorupdateRequest 从 sync.Pool 获取 CainiaoEndpointLockerTopStationAddorupdateAPIRequest
+func GetCainiaoEndpointLockerTopStationAddorupdateAPIRequest() *CainiaoEndpointLockerTopStationAddorupdateAPIRequest {
+	return poolCainiaoEndpointLockerTopStationAddorupdateAPIRequest.Get().(*CainiaoEndpointLockerTopStationAddorupdateAPIRequest)
+}
+
+// ReleaseCainiaoEndpointLockerTopStationAddorupdateAPIRequest 将 CainiaoEndpointLockerTopStationAddorupdateAPIRequest 放入 sync.Pool
+func ReleaseCainiaoEndpointLockerTopStationAddorupdateAPIRequest(v *CainiaoEndpointLockerTopStationAddorupdateAPIRequest) {
+	v.Reset()
+	poolCainiaoEndpointLockerTopStationAddorupdateAPIRequest.Put(v)
 }

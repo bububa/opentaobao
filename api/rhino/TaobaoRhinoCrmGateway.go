@@ -9,11 +9,6 @@ import (
 // taobao.rhino.crm.gateway
 //
 // crm实体变更回调接口
-func TaobaoRhinoCrmGateway(clt *core.SDKClient, req *rhino.TaobaoRhinoCrmGatewayAPIRequest, session string) (*rhino.TaobaoRhinoCrmGatewayAPIResponse, error) {
-	var resp rhino.TaobaoRhinoCrmGatewayAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoRhinoCrmGateway(clt *core.SDKClient, req *rhino.TaobaoRhinoCrmGatewayAPIRequest, resp *rhino.TaobaoRhinoCrmGatewayAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

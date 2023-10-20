@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest struct 
 // NewAlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveRequest 初始化AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest对象
 func NewAlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveRequest() *AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest {
 	return &AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest) Reset() {
+	r._topCode = ""
+	r._tbUserId = ""
+	r._entInfoId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest) Se
 // GetEntInfoId EntInfoId Getter
 func (r AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest) GetEntInfoId() int64 {
 	return r._entInfoId
+}
+
+var poolAlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveRequest()
+	},
+}
+
+// GetAlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveRequest 从 sync.Pool 获取 AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest
+func GetAlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest() *AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest {
+	return poolAlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest.Get().(*AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest 将 AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest(v *AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest.Put(v)
 }

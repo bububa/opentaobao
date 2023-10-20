@@ -9,11 +9,6 @@ import (
 // taobao.jst.sms.message.shorturl.query
 //
 // 聚石塔短链信息查询
-func TaobaoJstSmsMessageShorturlQuery(clt *core.SDKClient, req *jst.TaobaoJstSmsMessageShorturlQueryAPIRequest, session string) (*jst.TaobaoJstSmsMessageShorturlQueryAPIResponse, error) {
-	var resp jst.TaobaoJstSmsMessageShorturlQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoJstSmsMessageShorturlQuery(clt *core.SDKClient, req *jst.TaobaoJstSmsMessageShorturlQueryAPIRequest, resp *jst.TaobaoJstSmsMessageShorturlQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

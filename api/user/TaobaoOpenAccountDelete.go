@@ -9,11 +9,6 @@ import (
 // taobao.open.account.delete
 //
 // OpenAccount删除数据
-func TaobaoOpenAccountDelete(clt *core.SDKClient, req *user.TaobaoOpenAccountDeleteAPIRequest, session string) (*user.TaobaoOpenAccountDeleteAPIResponse, error) {
-	var resp user.TaobaoOpenAccountDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpenAccountDelete(clt *core.SDKClient, req *user.TaobaoOpenAccountDeleteAPIRequest, resp *user.TaobaoOpenAccountDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

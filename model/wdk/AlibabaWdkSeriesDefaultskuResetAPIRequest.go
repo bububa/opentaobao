@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkSeriesDefaultskuResetAPIRequest struct {
 // NewAlibabaWdkSeriesDefaultskuResetRequest 初始化AlibabaWdkSeriesDefaultskuResetAPIRequest对象
 func NewAlibabaWdkSeriesDefaultskuResetRequest() *AlibabaWdkSeriesDefaultskuResetAPIRequest {
 	return &AlibabaWdkSeriesDefaultskuResetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkSeriesDefaultskuResetAPIRequest) Reset() {
+	r._seriesSku = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkSeriesDefaultskuResetAPIRequest) SetSeriesSku(_seriesSku *Ser
 // GetSeriesSku SeriesSku Getter
 func (r AlibabaWdkSeriesDefaultskuResetAPIRequest) GetSeriesSku() *SeriesSkuRequest {
 	return r._seriesSku
+}
+
+var poolAlibabaWdkSeriesDefaultskuResetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkSeriesDefaultskuResetRequest()
+	},
+}
+
+// GetAlibabaWdkSeriesDefaultskuResetRequest 从 sync.Pool 获取 AlibabaWdkSeriesDefaultskuResetAPIRequest
+func GetAlibabaWdkSeriesDefaultskuResetAPIRequest() *AlibabaWdkSeriesDefaultskuResetAPIRequest {
+	return poolAlibabaWdkSeriesDefaultskuResetAPIRequest.Get().(*AlibabaWdkSeriesDefaultskuResetAPIRequest)
+}
+
+// ReleaseAlibabaWdkSeriesDefaultskuResetAPIRequest 将 AlibabaWdkSeriesDefaultskuResetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkSeriesDefaultskuResetAPIRequest(v *AlibabaWdkSeriesDefaultskuResetAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkSeriesDefaultskuResetAPIRequest.Put(v)
 }

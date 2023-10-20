@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -20,8 +21,14 @@ type TaobaoTbkSpreadGetAPIRequest struct {
 // NewTaobaoTbkSpreadGetRequest 初始化TaobaoTbkSpreadGetAPIRequest对象
 func NewTaobaoTbkSpreadGetRequest() *TaobaoTbkSpreadGetAPIRequest {
 	return &TaobaoTbkSpreadGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkSpreadGetAPIRequest) Reset() {
+	r._requests = r._requests[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -52,4 +59,21 @@ func (r *TaobaoTbkSpreadGetAPIRequest) SetRequests(_requests []TbkSpreadRequest)
 // GetRequests Requests Getter
 func (r TaobaoTbkSpreadGetAPIRequest) GetRequests() []TbkSpreadRequest {
 	return r._requests
+}
+
+var poolTaobaoTbkSpreadGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkSpreadGetRequest()
+	},
+}
+
+// GetTaobaoTbkSpreadGetRequest 从 sync.Pool 获取 TaobaoTbkSpreadGetAPIRequest
+func GetTaobaoTbkSpreadGetAPIRequest() *TaobaoTbkSpreadGetAPIRequest {
+	return poolTaobaoTbkSpreadGetAPIRequest.Get().(*TaobaoTbkSpreadGetAPIRequest)
+}
+
+// ReleaseTaobaoTbkSpreadGetAPIRequest 将 TaobaoTbkSpreadGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkSpreadGetAPIRequest(v *TaobaoTbkSpreadGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkSpreadGetAPIRequest.Put(v)
 }

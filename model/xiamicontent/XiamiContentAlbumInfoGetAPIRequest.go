@@ -2,6 +2,7 @@ package xiamicontent
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type XiamiContentAlbumInfoGetAPIRequest struct {
 // NewXiamiContentAlbumInfoGetRequest 初始化XiamiContentAlbumInfoGetAPIRequest对象
 func NewXiamiContentAlbumInfoGetRequest() *XiamiContentAlbumInfoGetAPIRequest {
 	return &XiamiContentAlbumInfoGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *XiamiContentAlbumInfoGetAPIRequest) Reset() {
+	r._albumIds = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *XiamiContentAlbumInfoGetAPIRequest) SetAlbumIds(_albumIds int64) error 
 // GetAlbumIds AlbumIds Getter
 func (r XiamiContentAlbumInfoGetAPIRequest) GetAlbumIds() int64 {
 	return r._albumIds
+}
+
+var poolXiamiContentAlbumInfoGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewXiamiContentAlbumInfoGetRequest()
+	},
+}
+
+// GetXiamiContentAlbumInfoGetRequest 从 sync.Pool 获取 XiamiContentAlbumInfoGetAPIRequest
+func GetXiamiContentAlbumInfoGetAPIRequest() *XiamiContentAlbumInfoGetAPIRequest {
+	return poolXiamiContentAlbumInfoGetAPIRequest.Get().(*XiamiContentAlbumInfoGetAPIRequest)
+}
+
+// ReleaseXiamiContentAlbumInfoGetAPIRequest 将 XiamiContentAlbumInfoGetAPIRequest 放入 sync.Pool
+func ReleaseXiamiContentAlbumInfoGetAPIRequest(v *XiamiContentAlbumInfoGetAPIRequest) {
+	v.Reset()
+	poolXiamiContentAlbumInfoGetAPIRequest.Put(v)
 }

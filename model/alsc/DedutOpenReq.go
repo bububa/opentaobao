@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // DedutOpenReq 结构体
 type DedutOpenReq struct {
 	// 时间
@@ -30,4 +34,34 @@ type DedutOpenReq struct {
 	ExtInfo string `json:"ext_info,omitempty" xml:"ext_info,omitempty"`
 	// 核销总资产
 	Value int64 `json:"value,omitempty" xml:"value,omitempty"`
+}
+
+var poolDedutOpenReq = sync.Pool{
+	New: func() any {
+		return new(DedutOpenReq)
+	},
+}
+
+// GetDedutOpenReq() 从对象池中获取DedutOpenReq
+func GetDedutOpenReq() *DedutOpenReq {
+	return poolDedutOpenReq.Get().(*DedutOpenReq)
+}
+
+// ReleaseDedutOpenReq 释放DedutOpenReq
+func ReleaseDedutOpenReq(v *DedutOpenReq) {
+	v.BizDate = ""
+	v.BrandId = ""
+	v.CardId = ""
+	v.CustomerId = ""
+	v.OperatorId = ""
+	v.OuterOrderId = ""
+	v.Remark = ""
+	v.RequestId = ""
+	v.ShopId = ""
+	v.BizChannel = ""
+	v.OutBrandId = ""
+	v.OutShopId = ""
+	v.ExtInfo = ""
+	v.Value = 0
+	poolDedutOpenReq.Put(v)
 }

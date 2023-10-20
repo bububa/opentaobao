@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.newhome.adviser.submit.account
 //
 // 顾问入职离职
-func AlibabaAlihouseNewhomeAdviserSubmitAccount(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeAdviserSubmitAccountAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeAdviserSubmitAccountAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseNewhomeAdviserSubmitAccount(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeAdviserSubmitAccountAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeAdviserSubmitAccountAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

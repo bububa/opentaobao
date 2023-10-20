@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoOmniorderPrintSaleJudgeAPIRequest struct {
 // NewTaobaoOmniorderPrintSaleJudgeRequest 初始化TaobaoOmniorderPrintSaleJudgeAPIRequest对象
 func NewTaobaoOmniorderPrintSaleJudgeRequest() *TaobaoOmniorderPrintSaleJudgeAPIRequest {
 	return &TaobaoOmniorderPrintSaleJudgeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOmniorderPrintSaleJudgeAPIRequest) Reset() {
+	r._subUid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoOmniorderPrintSaleJudgeAPIRequest) SetSubUid(_subUid int64) error
 // GetSubUid SubUid Getter
 func (r TaobaoOmniorderPrintSaleJudgeAPIRequest) GetSubUid() int64 {
 	return r._subUid
+}
+
+var poolTaobaoOmniorderPrintSaleJudgeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOmniorderPrintSaleJudgeRequest()
+	},
+}
+
+// GetTaobaoOmniorderPrintSaleJudgeRequest 从 sync.Pool 获取 TaobaoOmniorderPrintSaleJudgeAPIRequest
+func GetTaobaoOmniorderPrintSaleJudgeAPIRequest() *TaobaoOmniorderPrintSaleJudgeAPIRequest {
+	return poolTaobaoOmniorderPrintSaleJudgeAPIRequest.Get().(*TaobaoOmniorderPrintSaleJudgeAPIRequest)
+}
+
+// ReleaseTaobaoOmniorderPrintSaleJudgeAPIRequest 将 TaobaoOmniorderPrintSaleJudgeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOmniorderPrintSaleJudgeAPIRequest(v *TaobaoOmniorderPrintSaleJudgeAPIRequest) {
+	v.Reset()
+	poolTaobaoOmniorderPrintSaleJudgeAPIRequest.Put(v)
 }

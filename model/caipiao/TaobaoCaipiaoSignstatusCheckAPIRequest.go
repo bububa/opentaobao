@@ -2,6 +2,7 @@ package caipiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type TaobaoCaipiaoSignstatusCheckAPIRequest struct {
 // NewTaobaoCaipiaoSignstatusCheckRequest 初始化TaobaoCaipiaoSignstatusCheckAPIRequest对象
 func NewTaobaoCaipiaoSignstatusCheckRequest() *TaobaoCaipiaoSignstatusCheckAPIRequest {
 	return &TaobaoCaipiaoSignstatusCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCaipiaoSignstatusCheckAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r TaobaoCaipiaoSignstatusCheckAPIRequest) GetApiParams(params url.Values) 
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r TaobaoCaipiaoSignstatusCheckAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolTaobaoCaipiaoSignstatusCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCaipiaoSignstatusCheckRequest()
+	},
+}
+
+// GetTaobaoCaipiaoSignstatusCheckRequest 从 sync.Pool 获取 TaobaoCaipiaoSignstatusCheckAPIRequest
+func GetTaobaoCaipiaoSignstatusCheckAPIRequest() *TaobaoCaipiaoSignstatusCheckAPIRequest {
+	return poolTaobaoCaipiaoSignstatusCheckAPIRequest.Get().(*TaobaoCaipiaoSignstatusCheckAPIRequest)
+}
+
+// ReleaseTaobaoCaipiaoSignstatusCheckAPIRequest 将 TaobaoCaipiaoSignstatusCheckAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCaipiaoSignstatusCheckAPIRequest(v *TaobaoCaipiaoSignstatusCheckAPIRequest) {
+	v.Reset()
+	poolTaobaoCaipiaoSignstatusCheckAPIRequest.Put(v)
 }

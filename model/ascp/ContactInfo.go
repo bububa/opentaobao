@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // ContactInfo 结构体
 type ContactInfo struct {
 	// 联系人分组，string（50），mr=默认组，th=退货组，kf=客服组，rk=入库组，ck=出库组，kn=库内组
@@ -20,4 +24,29 @@ type ContactInfo struct {
 	Town string `json:"town,omitempty" xml:"town,omitempty"`
 	// 详细地址，string（50）
 	DetailAddress string `json:"detail_address,omitempty" xml:"detail_address,omitempty"`
+}
+
+var poolContactInfo = sync.Pool{
+	New: func() any {
+		return new(ContactInfo)
+	},
+}
+
+// GetContactInfo() 从对象池中获取ContactInfo
+func GetContactInfo() *ContactInfo {
+	return poolContactInfo.Get().(*ContactInfo)
+}
+
+// ReleaseContactInfo 释放ContactInfo
+func ReleaseContactInfo(v *ContactInfo) {
+	v.Type = ""
+	v.Name = ""
+	v.Mobile = ""
+	v.Tel = ""
+	v.Province = ""
+	v.City = ""
+	v.Area = ""
+	v.Town = ""
+	v.DetailAddress = ""
+	poolContactInfo.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -43,8 +44,26 @@ type TmallServicecenterSpserviceorderCreateAPIRequest struct {
 // NewTmallServicecenterSpserviceorderCreateRequest 初始化TmallServicecenterSpserviceorderCreateAPIRequest对象
 func NewTmallServicecenterSpserviceorderCreateRequest() *TmallServicecenterSpserviceorderCreateAPIRequest {
 	return &TmallServicecenterSpserviceorderCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(13),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterSpserviceorderCreateAPIRequest) Reset() {
+	r._serviceObjectType = ""
+	r._serviceObjectName = ""
+	r._serviceContent = ""
+	r._serviceProperties = ""
+	r._outOrderId = ""
+	r._source = ""
+	r._extJson = ""
+	r._memo = ""
+	r._serviceProductId = 0
+	r._brandId = 0
+	r._buyer = nil
+	r._reservation = nil
+	r._serviceCount = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -231,4 +250,21 @@ func (r *TmallServicecenterSpserviceorderCreateAPIRequest) SetServiceCount(_serv
 // GetServiceCount ServiceCount Getter
 func (r TmallServicecenterSpserviceorderCreateAPIRequest) GetServiceCount() int64 {
 	return r._serviceCount
+}
+
+var poolTmallServicecenterSpserviceorderCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterSpserviceorderCreateRequest()
+	},
+}
+
+// GetTmallServicecenterSpserviceorderCreateRequest 从 sync.Pool 获取 TmallServicecenterSpserviceorderCreateAPIRequest
+func GetTmallServicecenterSpserviceorderCreateAPIRequest() *TmallServicecenterSpserviceorderCreateAPIRequest {
+	return poolTmallServicecenterSpserviceorderCreateAPIRequest.Get().(*TmallServicecenterSpserviceorderCreateAPIRequest)
+}
+
+// ReleaseTmallServicecenterSpserviceorderCreateAPIRequest 将 TmallServicecenterSpserviceorderCreateAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterSpserviceorderCreateAPIRequest(v *TmallServicecenterSpserviceorderCreateAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterSpserviceorderCreateAPIRequest.Put(v)
 }

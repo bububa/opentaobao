@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drugcode.drugfactory.getencrptypk
 //
 // 获取服务端给药厂用来加密的公钥
-func AlibabaAlihealthDrugcodeDrugfactoryGetencrptypk(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugcodeDrugfactoryGetencrptypkAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugcodeDrugfactoryGetencrptypkAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugcodeDrugfactoryGetencrptypkAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugcodeDrugfactoryGetencrptypk(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugcodeDrugfactoryGetencrptypkAPIRequest, resp *drugtrace.AlibabaAlihealthDrugcodeDrugfactoryGetencrptypkAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

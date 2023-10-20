@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // SubPayBillDto 结构体
 type SubPayBillDto struct {
 	// 支付时间
@@ -20,4 +24,29 @@ type SubPayBillDto struct {
 	Amount string `json:"amount,omitempty" xml:"amount,omitempty"`
 	// 计划id
 	PlanId string `json:"plan_id,omitempty" xml:"plan_id,omitempty"`
+}
+
+var poolSubPayBillDto = sync.Pool{
+	New: func() any {
+		return new(SubPayBillDto)
+	},
+}
+
+// GetSubPayBillDto() 从对象池中获取SubPayBillDto
+func GetSubPayBillDto() *SubPayBillDto {
+	return poolSubPayBillDto.Get().(*SubPayBillDto)
+}
+
+// ReleaseSubPayBillDto 释放SubPayBillDto
+func ReleaseSubPayBillDto(v *SubPayBillDto) {
+	v.PayTime = ""
+	v.CreateTime = ""
+	v.PayStatusDesc = ""
+	v.PayStatus = ""
+	v.ErrMsg = ""
+	v.ErrCode = ""
+	v.AlipayTradeNo = ""
+	v.Amount = ""
+	v.PlanId = ""
+	poolSubPayBillDto.Put(v)
 }

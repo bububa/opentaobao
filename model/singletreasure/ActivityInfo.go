@@ -1,5 +1,9 @@
 package singletreasure
 
+import (
+	"sync"
+)
+
 // ActivityInfo 结构体
 type ActivityInfo struct {
 	// 创建时间
@@ -28,4 +32,33 @@ type ActivityInfo struct {
 	ActivityStatus int64 `json:"activity_status,omitempty" xml:"activity_status,omitempty"`
 	// 是否包邮
 	FreePost bool `json:"free_post,omitempty" xml:"free_post,omitempty"`
+}
+
+var poolActivityInfo = sync.Pool{
+	New: func() any {
+		return new(ActivityInfo)
+	},
+}
+
+// GetActivityInfo() 从对象池中获取ActivityInfo
+func GetActivityInfo() *ActivityInfo {
+	return poolActivityInfo.Get().(*ActivityInfo)
+}
+
+// ReleaseActivityInfo 释放ActivityInfo
+func ReleaseActivityInfo(v *ActivityInfo) {
+	v.CreatedTime = ""
+	v.EndTime = ""
+	v.ExcludeAreas = ""
+	v.StartTime = ""
+	v.Description = ""
+	v.Name = ""
+	v.CrowdId = ""
+	v.ActivityId = 0
+	v.DiscountType = 0
+	v.SellerId = 0
+	v.PromotionLevel = 0
+	v.ActivityStatus = 0
+	v.FreePost = false
+	poolActivityInfo.Put(v)
 }

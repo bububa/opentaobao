@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // AdsTargetingTagDto 结构体
 type AdsTargetingTagDto struct {
 	// 返回实体子级
@@ -36,4 +40,37 @@ type AdsTargetingTagDto struct {
 	RecommendDiscount int64 `json:"recommend_discount,omitempty" xml:"recommend_discount,omitempty"`
 	// 层级（0,1,2）
 	Level int64 `json:"level,omitempty" xml:"level,omitempty"`
+}
+
+var poolAdsTargetingTagDto = sync.Pool{
+	New: func() any {
+		return new(AdsTargetingTagDto)
+	},
+}
+
+// GetAdsTargetingTagDto() 从对象池中获取AdsTargetingTagDto
+func GetAdsTargetingTagDto() *AdsTargetingTagDto {
+	return poolAdsTargetingTagDto.Get().(*AdsTargetingTagDto)
+}
+
+// ReleaseAdsTargetingTagDto 释放AdsTargetingTagDto
+func ReleaseAdsTargetingTagDto(v *AdsTargetingTagDto) {
+	v.SubList = v.SubList[:0]
+	v.OptionValue = ""
+	v.CrowdName = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.HighImprPrice = ""
+	v.Name = ""
+	v.Desc = ""
+	v.TagId = 0
+	v.CampaignId = 0
+	v.Discount = 0
+	v.Effect = nil
+	v.PriceMode = 0
+	v.ProductLineId = 0
+	v.TagRefType = 0
+	v.RecommendDiscount = 0
+	v.Level = 0
+	poolAdsTargetingTagDto.Put(v)
 }

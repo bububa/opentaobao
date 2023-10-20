@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // DeliveryLineBatchUpdateRequest 结构体
 type DeliveryLineBatchUpdateRequest struct {
 	// 通用到货线路规则（组）
@@ -16,4 +20,27 @@ type DeliveryLineBatchUpdateRequest struct {
 	RuleType int64 `json:"rule_type,omitempty" xml:"rule_type,omitempty"`
 	// 个性化到货线路规则（组）；
 	SpecialSignLineRules *SpecialSignLineRules `json:"special_sign_line_rules,omitempty" xml:"special_sign_line_rules,omitempty"`
+}
+
+var poolDeliveryLineBatchUpdateRequest = sync.Pool{
+	New: func() any {
+		return new(DeliveryLineBatchUpdateRequest)
+	},
+}
+
+// GetDeliveryLineBatchUpdateRequest() 从对象池中获取DeliveryLineBatchUpdateRequest
+func GetDeliveryLineBatchUpdateRequest() *DeliveryLineBatchUpdateRequest {
+	return poolDeliveryLineBatchUpdateRequest.Get().(*DeliveryLineBatchUpdateRequest)
+}
+
+// ReleaseDeliveryLineBatchUpdateRequest 释放DeliveryLineBatchUpdateRequest
+func ReleaseDeliveryLineBatchUpdateRequest(v *DeliveryLineBatchUpdateRequest) {
+	v.NormalSignLineRules = v.NormalSignLineRules[:0]
+	v.RequestId = ""
+	v.SupplierId = ""
+	v.WarehouseCode = ""
+	v.RequestTime = 0
+	v.RuleType = 0
+	v.SpecialSignLineRules = nil
+	poolDeliveryLineBatchUpdateRequest.Put(v)
 }

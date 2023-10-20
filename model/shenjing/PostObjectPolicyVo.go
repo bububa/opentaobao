@@ -1,5 +1,9 @@
 package shenjing
 
+import (
+	"sync"
+)
+
 // PostObjectPolicyVo 结构体
 type PostObjectPolicyVo struct {
 	// 阿里云RAM账号的accessId
@@ -14,4 +18,26 @@ type PostObjectPolicyVo struct {
 	Expire string `json:"expire,omitempty" xml:"expire,omitempty"`
 	// oss的bucket访问路径
 	Host string `json:"host,omitempty" xml:"host,omitempty"`
+}
+
+var poolPostObjectPolicyVo = sync.Pool{
+	New: func() any {
+		return new(PostObjectPolicyVo)
+	},
+}
+
+// GetPostObjectPolicyVo() 从对象池中获取PostObjectPolicyVo
+func GetPostObjectPolicyVo() *PostObjectPolicyVo {
+	return poolPostObjectPolicyVo.Get().(*PostObjectPolicyVo)
+}
+
+// ReleasePostObjectPolicyVo 释放PostObjectPolicyVo
+func ReleasePostObjectPolicyVo(v *PostObjectPolicyVo) {
+	v.Accessid = ""
+	v.Policy = ""
+	v.Signature = ""
+	v.Dir = ""
+	v.Expire = ""
+	v.Host = ""
+	poolPostObjectPolicyVo.Put(v)
 }

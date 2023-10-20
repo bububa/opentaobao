@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // SiriusItemWordPackageDto 结构体
 type SiriusItemWordPackageDto struct {
 	// 修改时间
@@ -16,4 +20,27 @@ type SiriusItemWordPackageDto struct {
 	PackageType int64 `json:"package_type,omitempty" xml:"package_type,omitempty"`
 	// 无线端出价
 	WlBidPrice int64 `json:"wl_bid_price,omitempty" xml:"wl_bid_price,omitempty"`
+}
+
+var poolSiriusItemWordPackageDto = sync.Pool{
+	New: func() any {
+		return new(SiriusItemWordPackageDto)
+	},
+}
+
+// GetSiriusItemWordPackageDto() 从对象池中获取SiriusItemWordPackageDto
+func GetSiriusItemWordPackageDto() *SiriusItemWordPackageDto {
+	return poolSiriusItemWordPackageDto.Get().(*SiriusItemWordPackageDto)
+}
+
+// ReleaseSiriusItemWordPackageDto 释放SiriusItemWordPackageDto
+func ReleaseSiriusItemWordPackageDto(v *SiriusItemWordPackageDto) {
+	v.GmtModified = ""
+	v.WordPackageName = ""
+	v.WordPackageId = 0
+	v.OnlineStatus = 0
+	v.PcBidPrice = 0
+	v.PackageType = 0
+	v.WlBidPrice = 0
+	poolSiriusItemWordPackageDto.Put(v)
 }

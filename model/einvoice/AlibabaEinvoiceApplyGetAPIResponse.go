@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaEinvoiceApplyGetAPIResponse struct {
 	AlibabaEinvoiceApplyGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaEinvoiceApplyGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaEinvoiceApplyGetAPIResponseModel).Reset()
+}
+
 // AlibabaEinvoiceApplyGetAPIResponseModel is 开票申请数据获取接口 成功返回结果
 type AlibabaEinvoiceApplyGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_einvoice_apply_get_response"`
@@ -24,4 +31,28 @@ type AlibabaEinvoiceApplyGetAPIResponseModel struct {
 	ApplyList []Apply `json:"apply_list,omitempty" xml:"apply_list>apply,omitempty"`
 	// success
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaEinvoiceApplyGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ApplyList = m.ApplyList[:0]
+	m.IsSuccess = false
+}
+
+var poolAlibabaEinvoiceApplyGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaEinvoiceApplyGetAPIResponse)
+	},
+}
+
+// GetAlibabaEinvoiceApplyGetAPIResponse 从 sync.Pool 获取 AlibabaEinvoiceApplyGetAPIResponse
+func GetAlibabaEinvoiceApplyGetAPIResponse() *AlibabaEinvoiceApplyGetAPIResponse {
+	return poolAlibabaEinvoiceApplyGetAPIResponse.Get().(*AlibabaEinvoiceApplyGetAPIResponse)
+}
+
+// ReleaseAlibabaEinvoiceApplyGetAPIResponse 将 AlibabaEinvoiceApplyGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaEinvoiceApplyGetAPIResponse(v *AlibabaEinvoiceApplyGetAPIResponse) {
+	v.Reset()
+	poolAlibabaEinvoiceApplyGetAPIResponse.Put(v)
 }

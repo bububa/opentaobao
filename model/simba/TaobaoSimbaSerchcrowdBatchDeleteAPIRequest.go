@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoSimbaSerchcrowdBatchDeleteAPIRequest struct {
 // NewTaobaoSimbaSerchcrowdBatchDeleteRequest 初始化TaobaoSimbaSerchcrowdBatchDeleteAPIRequest对象
 func NewTaobaoSimbaSerchcrowdBatchDeleteRequest() *TaobaoSimbaSerchcrowdBatchDeleteAPIRequest {
 	return &TaobaoSimbaSerchcrowdBatchDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaSerchcrowdBatchDeleteAPIRequest) Reset() {
+	r._adgroupCrowdIds = r._adgroupCrowdIds[:0]
+	r._subNick = ""
+	r._nick = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoSimbaSerchcrowdBatchDeleteAPIRequest) SetNick(_nick string) error
 // GetNick Nick Getter
 func (r TaobaoSimbaSerchcrowdBatchDeleteAPIRequest) GetNick() string {
 	return r._nick
+}
+
+var poolTaobaoSimbaSerchcrowdBatchDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaSerchcrowdBatchDeleteRequest()
+	},
+}
+
+// GetTaobaoSimbaSerchcrowdBatchDeleteRequest 从 sync.Pool 获取 TaobaoSimbaSerchcrowdBatchDeleteAPIRequest
+func GetTaobaoSimbaSerchcrowdBatchDeleteAPIRequest() *TaobaoSimbaSerchcrowdBatchDeleteAPIRequest {
+	return poolTaobaoSimbaSerchcrowdBatchDeleteAPIRequest.Get().(*TaobaoSimbaSerchcrowdBatchDeleteAPIRequest)
+}
+
+// ReleaseTaobaoSimbaSerchcrowdBatchDeleteAPIRequest 将 TaobaoSimbaSerchcrowdBatchDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaSerchcrowdBatchDeleteAPIRequest(v *TaobaoSimbaSerchcrowdBatchDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaSerchcrowdBatchDeleteAPIRequest.Put(v)
 }

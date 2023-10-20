@@ -1,5 +1,9 @@
 package car
 
+import (
+	"sync"
+)
+
 // TransferDriveInfo 结构体
 type TransferDriveInfo struct {
 	// 车牌号
@@ -12,4 +16,25 @@ type TransferDriveInfo struct {
 	PushTime string `json:"push_time,omitempty" xml:"push_time,omitempty"`
 	// 行李信息
 	Luggage string `json:"luggage,omitempty" xml:"luggage,omitempty"`
+}
+
+var poolTransferDriveInfo = sync.Pool{
+	New: func() any {
+		return new(TransferDriveInfo)
+	},
+}
+
+// GetTransferDriveInfo() 从对象池中获取TransferDriveInfo
+func GetTransferDriveInfo() *TransferDriveInfo {
+	return poolTransferDriveInfo.Get().(*TransferDriveInfo)
+}
+
+// ReleaseTransferDriveInfo 释放TransferDriveInfo
+func ReleaseTransferDriveInfo(v *TransferDriveInfo) {
+	v.License = ""
+	v.DriverName = ""
+	v.DriverPhone = ""
+	v.PushTime = ""
+	v.Luggage = ""
+	poolTransferDriveInfo.Put(v)
 }

@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // MenuOpenReq 结构体
 type MenuOpenReq struct {
 	// 品牌ID
@@ -24,4 +28,31 @@ type MenuOpenReq struct {
 	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
 	// 是否需要总数
 	NeedCount bool `json:"need_count,omitempty" xml:"need_count,omitempty"`
+}
+
+var poolMenuOpenReq = sync.Pool{
+	New: func() any {
+		return new(MenuOpenReq)
+	},
+}
+
+// GetMenuOpenReq() 从对象池中获取MenuOpenReq
+func GetMenuOpenReq() *MenuOpenReq {
+	return poolMenuOpenReq.Get().(*MenuOpenReq)
+}
+
+// ReleaseMenuOpenReq 释放MenuOpenReq
+func ReleaseMenuOpenReq(v *MenuOpenReq) {
+	v.BrandId = ""
+	v.GmtModified = ""
+	v.OutBrandId = ""
+	v.OutShopId = ""
+	v.ShopId = ""
+	v.LastId = ""
+	v.MenuId = ""
+	v.PageNo = 0
+	v.PageSize = 0
+	v.Deleted = false
+	v.NeedCount = false
+	poolMenuOpenReq.Put(v)
 }

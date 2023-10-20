@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkReverseReversedetailAPIRequest struct {
 // NewAlibabaWdkReverseReversedetailRequest 初始化AlibabaWdkReverseReversedetailAPIRequest对象
 func NewAlibabaWdkReverseReversedetailRequest() *AlibabaWdkReverseReversedetailAPIRequest {
 	return &AlibabaWdkReverseReversedetailAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkReverseReversedetailAPIRequest) Reset() {
+	r._reverseId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkReverseReversedetailAPIRequest) SetReverseId(_reverseId strin
 // GetReverseId ReverseId Getter
 func (r AlibabaWdkReverseReversedetailAPIRequest) GetReverseId() string {
 	return r._reverseId
+}
+
+var poolAlibabaWdkReverseReversedetailAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkReverseReversedetailRequest()
+	},
+}
+
+// GetAlibabaWdkReverseReversedetailRequest 从 sync.Pool 获取 AlibabaWdkReverseReversedetailAPIRequest
+func GetAlibabaWdkReverseReversedetailAPIRequest() *AlibabaWdkReverseReversedetailAPIRequest {
+	return poolAlibabaWdkReverseReversedetailAPIRequest.Get().(*AlibabaWdkReverseReversedetailAPIRequest)
+}
+
+// ReleaseAlibabaWdkReverseReversedetailAPIRequest 将 AlibabaWdkReverseReversedetailAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkReverseReversedetailAPIRequest(v *AlibabaWdkReverseReversedetailAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkReverseReversedetailAPIRequest.Put(v)
 }

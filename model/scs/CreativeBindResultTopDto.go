@@ -1,5 +1,9 @@
 package scs
 
+import (
+	"sync"
+)
+
 // CreativeBindResultTopDto 结构体
 type CreativeBindResultTopDto struct {
 	// upgradeReportInfoList
@@ -66,4 +70,52 @@ type CreativeBindResultTopDto struct {
 	PackageType int64 `json:"package_type,omitempty" xml:"package_type,omitempty"`
 	// canEdit
 	CanEdit bool `json:"can_edit,omitempty" xml:"can_edit,omitempty"`
+}
+
+var poolCreativeBindResultTopDto = sync.Pool{
+	New: func() any {
+		return new(CreativeBindResultTopDto)
+	},
+}
+
+// GetCreativeBindResultTopDto() 从对象池中获取CreativeBindResultTopDto
+func GetCreativeBindResultTopDto() *CreativeBindResultTopDto {
+	return poolCreativeBindResultTopDto.Get().(*CreativeBindResultTopDto)
+}
+
+// ReleaseCreativeBindResultTopDto 释放CreativeBindResultTopDto
+func ReleaseCreativeBindResultTopDto(v *CreativeBindResultTopDto) {
+	v.UpgradeReportInfoList = v.UpgradeReportInfoList[:0]
+	v.AdgroupName = ""
+	v.CampaignName = ""
+	v.CreativeName = ""
+	v.ClickUrl = ""
+	v.Title = ""
+	v.TitleTag = ""
+	v.ImgUrl = ""
+	v.AuditReason = ""
+	v.CreativeSize = ""
+	v.Status = ""
+	v.CreativeType = ""
+	v.FormatName = ""
+	v.TemplateData = ""
+	v.JsContentsMap = ""
+	v.DisplayUrl = ""
+	v.ImgPath = ""
+	v.VideoCheckSum = ""
+	v.AdgroupId = 0
+	v.CampaignId = 0
+	v.CreativeId = 0
+	v.ImgType = 0
+	v.AuditStatus = 0
+	v.OuterId = 0
+	v.Format = 0
+	v.TemplateId = 0
+	v.TemplatePackageId = 0
+	v.Source = 0
+	v.CreativeLevel = 0
+	v.CatId = 0
+	v.PackageType = 0
+	v.CanEdit = false
+	poolCreativeBindResultTopDto.Put(v)
 }

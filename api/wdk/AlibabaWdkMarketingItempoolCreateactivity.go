@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.marketing.itempool.createactivity
 //
 // 添加商品池活动
-func AlibabaWdkMarketingItempoolCreateactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolCreateactivityAPIRequest, session string) (*wdk.AlibabaWdkMarketingItempoolCreateactivityAPIResponse, error) {
-	var resp wdk.AlibabaWdkMarketingItempoolCreateactivityAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkMarketingItempoolCreateactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolCreateactivityAPIRequest, resp *wdk.AlibabaWdkMarketingItempoolCreateactivityAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

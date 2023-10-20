@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.pw.special.synchrosms
 //
 // 同步短信信息至阿里健康
-func AlibabaAlihealthPwSpecialSynchrosms(clt *core.SDKClient, req *alihealthpw.AlibabaAlihealthPwSpecialSynchrosmsAPIRequest, session string) (*alihealthpw.AlibabaAlihealthPwSpecialSynchrosmsAPIResponse, error) {
-	var resp alihealthpw.AlibabaAlihealthPwSpecialSynchrosmsAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthPwSpecialSynchrosms(clt *core.SDKClient, req *alihealthpw.AlibabaAlihealthPwSpecialSynchrosmsAPIRequest, resp *alihealthpw.AlibabaAlihealthPwSpecialSynchrosmsAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

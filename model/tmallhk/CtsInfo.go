@@ -1,5 +1,9 @@
 package tmallhk
 
+import (
+	"sync"
+)
+
 // CtsInfo 结构体
 type CtsInfo struct {
 	// 货品ID
@@ -24,4 +28,31 @@ type CtsInfo struct {
 	Ring *CtsRing `json:"ring,omitempty" xml:"ring,omitempty"`
 	// 国内报关
 	Shipment *CtsShipment `json:"shipment,omitempty" xml:"shipment,omitempty"`
+}
+
+var poolCtsInfo = sync.Pool{
+	New: func() any {
+		return new(CtsInfo)
+	},
+}
+
+// GetCtsInfo() 从对象池中获取CtsInfo
+func GetCtsInfo() *CtsInfo {
+	return poolCtsInfo.Get().(*CtsInfo)
+}
+
+// ReleaseCtsInfo 释放CtsInfo
+func ReleaseCtsInfo(v *CtsInfo) {
+	v.ItemId = ""
+	v.OrderNo = ""
+	v.ProductId = ""
+	v.SubOrderNo = ""
+	v.TraceCode = ""
+	v.Carriage = nil
+	v.CompletedNgtc = nil
+	v.Delivery = nil
+	v.DiamondNgtc = nil
+	v.Ring = nil
+	v.Shipment = nil
+	poolCtsInfo.Put(v)
 }

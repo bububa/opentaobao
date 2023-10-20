@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoUniversalbpStdcategoryFindcategoryconditionAPIRequest struct {
 // NewTaobaoUniversalbpStdcategoryFindcategoryconditionRequest 初始化TaobaoUniversalbpStdcategoryFindcategoryconditionAPIRequest对象
 func NewTaobaoUniversalbpStdcategoryFindcategoryconditionRequest() *TaobaoUniversalbpStdcategoryFindcategoryconditionAPIRequest {
 	return &TaobaoUniversalbpStdcategoryFindcategoryconditionAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpStdcategoryFindcategoryconditionAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r._stdCategoryQueryVO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoUniversalbpStdcategoryFindcategoryconditionAPIRequest) SetStdCate
 // GetStdCategoryQueryVO StdCategoryQueryVO Getter
 func (r TaobaoUniversalbpStdcategoryFindcategoryconditionAPIRequest) GetStdCategoryQueryVO() *StdCategoryQueryVo {
 	return r._stdCategoryQueryVO
+}
+
+var poolTaobaoUniversalbpStdcategoryFindcategoryconditionAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpStdcategoryFindcategoryconditionRequest()
+	},
+}
+
+// GetTaobaoUniversalbpStdcategoryFindcategoryconditionRequest 从 sync.Pool 获取 TaobaoUniversalbpStdcategoryFindcategoryconditionAPIRequest
+func GetTaobaoUniversalbpStdcategoryFindcategoryconditionAPIRequest() *TaobaoUniversalbpStdcategoryFindcategoryconditionAPIRequest {
+	return poolTaobaoUniversalbpStdcategoryFindcategoryconditionAPIRequest.Get().(*TaobaoUniversalbpStdcategoryFindcategoryconditionAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpStdcategoryFindcategoryconditionAPIRequest 将 TaobaoUniversalbpStdcategoryFindcategoryconditionAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpStdcategoryFindcategoryconditionAPIRequest(v *TaobaoUniversalbpStdcategoryFindcategoryconditionAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpStdcategoryFindcategoryconditionAPIRequest.Put(v)
 }

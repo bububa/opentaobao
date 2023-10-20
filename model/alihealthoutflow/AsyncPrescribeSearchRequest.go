@@ -1,5 +1,9 @@
 package alihealthoutflow
 
+import (
+	"sync"
+)
+
 // AsyncPrescribeSearchRequest 结构体
 type AsyncPrescribeSearchRequest struct {
 	// 医院id
@@ -12,4 +16,25 @@ type AsyncPrescribeSearchRequest struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 第几页
 	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
+}
+
+var poolAsyncPrescribeSearchRequest = sync.Pool{
+	New: func() any {
+		return new(AsyncPrescribeSearchRequest)
+	},
+}
+
+// GetAsyncPrescribeSearchRequest() 从对象池中获取AsyncPrescribeSearchRequest
+func GetAsyncPrescribeSearchRequest() *AsyncPrescribeSearchRequest {
+	return poolAsyncPrescribeSearchRequest.Get().(*AsyncPrescribeSearchRequest)
+}
+
+// ReleaseAsyncPrescribeSearchRequest 释放AsyncPrescribeSearchRequest
+func ReleaseAsyncPrescribeSearchRequest(v *AsyncPrescribeSearchRequest) {
+	v.HospitalId = ""
+	v.EndTime = 0
+	v.StartTime = 0
+	v.PageSize = 0
+	v.PageNo = 0
+	poolAsyncPrescribeSearchRequest.Put(v)
 }

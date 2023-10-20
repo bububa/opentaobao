@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // AlibabaDchainAoxiangWmsDeliveryorderConfirmBatch 结构体
 type AlibabaDchainAoxiangWmsDeliveryorderConfirmBatch struct {
 	// 批次编号
@@ -16,4 +20,27 @@ type AlibabaDchainAoxiangWmsDeliveryorderConfirmBatch struct {
 	ActualQty string `json:"actual_qty,omitempty" xml:"actual_qty,omitempty"`
 	// 货品sn编码
 	SnCode string `json:"sn_code,omitempty" xml:"sn_code,omitempty"`
+}
+
+var poolAlibabaDchainAoxiangWmsDeliveryorderConfirmBatch = sync.Pool{
+	New: func() any {
+		return new(AlibabaDchainAoxiangWmsDeliveryorderConfirmBatch)
+	},
+}
+
+// GetAlibabaDchainAoxiangWmsDeliveryorderConfirmBatch() 从对象池中获取AlibabaDchainAoxiangWmsDeliveryorderConfirmBatch
+func GetAlibabaDchainAoxiangWmsDeliveryorderConfirmBatch() *AlibabaDchainAoxiangWmsDeliveryorderConfirmBatch {
+	return poolAlibabaDchainAoxiangWmsDeliveryorderConfirmBatch.Get().(*AlibabaDchainAoxiangWmsDeliveryorderConfirmBatch)
+}
+
+// ReleaseAlibabaDchainAoxiangWmsDeliveryorderConfirmBatch 释放AlibabaDchainAoxiangWmsDeliveryorderConfirmBatch
+func ReleaseAlibabaDchainAoxiangWmsDeliveryorderConfirmBatch(v *AlibabaDchainAoxiangWmsDeliveryorderConfirmBatch) {
+	v.BatchCode = ""
+	v.ProductDate = ""
+	v.ExpireDate = ""
+	v.ProduceCode = ""
+	v.InventoryType = ""
+	v.ActualQty = ""
+	v.SnCode = ""
+	poolAlibabaDchainAoxiangWmsDeliveryorderConfirmBatch.Put(v)
 }

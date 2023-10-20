@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponse struct {
 	CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponseModel).Reset()
+}
+
 // CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponseModel is 删除智能发货引擎仓策略 成功返回结果
 type CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_smartdelivery_strategy_warehouse_i_delete_response"`
@@ -22,4 +29,27 @@ type CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// data
 	IsDeleteSuccess bool `json:"is_delete_success,omitempty" xml:"is_delete_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.IsDeleteSuccess = false
+}
+
+var poolCainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponse)
+	},
+}
+
+// GetCainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponse 从 sync.Pool 获取 CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponse
+func GetCainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponse() *CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponse {
+	return poolCainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponse.Get().(*CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponse)
+}
+
+// ReleaseCainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponse 将 CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponse 保存到 sync.Pool
+func ReleaseCainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponse(v *CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponse) {
+	v.Reset()
+	poolCainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponse.Put(v)
 }

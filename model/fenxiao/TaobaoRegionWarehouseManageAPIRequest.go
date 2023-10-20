@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoRegionWarehouseManageAPIRequest struct {
 // NewTaobaoRegionWarehouseManageRequest 初始化TaobaoRegionWarehouseManageAPIRequest对象
 func NewTaobaoRegionWarehouseManageRequest() *TaobaoRegionWarehouseManageAPIRequest {
 	return &TaobaoRegionWarehouseManageAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoRegionWarehouseManageAPIRequest) Reset() {
+	r._regions = r._regions[:0]
+	r._storeCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoRegionWarehouseManageAPIRequest) SetStoreCode(_storeCode string) 
 // GetStoreCode StoreCode Getter
 func (r TaobaoRegionWarehouseManageAPIRequest) GetStoreCode() string {
 	return r._storeCode
+}
+
+var poolTaobaoRegionWarehouseManageAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoRegionWarehouseManageRequest()
+	},
+}
+
+// GetTaobaoRegionWarehouseManageRequest 从 sync.Pool 获取 TaobaoRegionWarehouseManageAPIRequest
+func GetTaobaoRegionWarehouseManageAPIRequest() *TaobaoRegionWarehouseManageAPIRequest {
+	return poolTaobaoRegionWarehouseManageAPIRequest.Get().(*TaobaoRegionWarehouseManageAPIRequest)
+}
+
+// ReleaseTaobaoRegionWarehouseManageAPIRequest 将 TaobaoRegionWarehouseManageAPIRequest 放入 sync.Pool
+func ReleaseTaobaoRegionWarehouseManageAPIRequest(v *TaobaoRegionWarehouseManageAPIRequest) {
+	v.Reset()
+	poolTaobaoRegionWarehouseManageAPIRequest.Put(v)
 }

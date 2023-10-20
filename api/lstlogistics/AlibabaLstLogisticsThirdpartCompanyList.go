@@ -9,11 +9,6 @@ import (
 // alibaba.lst.logistics.thirdpart.company.list
 //
 // 异地云仓发货时，需填写的第三方物流公司列表
-func AlibabaLstLogisticsThirdpartCompanyList(clt *core.SDKClient, req *lstlogistics.AlibabaLstLogisticsThirdpartCompanyListAPIRequest, session string) (*lstlogistics.AlibabaLstLogisticsThirdpartCompanyListAPIResponse, error) {
-	var resp lstlogistics.AlibabaLstLogisticsThirdpartCompanyListAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLstLogisticsThirdpartCompanyList(clt *core.SDKClient, req *lstlogistics.AlibabaLstLogisticsThirdpartCompanyListAPIRequest, resp *lstlogistics.AlibabaLstLogisticsThirdpartCompanyListAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

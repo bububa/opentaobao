@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // TopLogisticsMailDto 结构体
 type TopLogisticsMailDto struct {
 	// 物流节点列表
@@ -12,4 +16,25 @@ type TopLogisticsMailDto struct {
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 交易单号
 	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
+}
+
+var poolTopLogisticsMailDto = sync.Pool{
+	New: func() any {
+		return new(TopLogisticsMailDto)
+	},
+}
+
+// GetTopLogisticsMailDto() 从对象池中获取TopLogisticsMailDto
+func GetTopLogisticsMailDto() *TopLogisticsMailDto {
+	return poolTopLogisticsMailDto.Get().(*TopLogisticsMailDto)
+}
+
+// ReleaseTopLogisticsMailDto 释放TopLogisticsMailDto
+func ReleaseTopLogisticsMailDto(v *TopLogisticsMailDto) {
+	v.TraceList = v.TraceList[:0]
+	v.OutSid = ""
+	v.CompanyName = ""
+	v.Status = ""
+	v.Tid = 0
+	poolTopLogisticsMailDto.Put(v)
 }

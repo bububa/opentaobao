@@ -9,11 +9,6 @@ import (
 // taobao.baichuan.openaccount.register
 //
 // 百川账号注册
-func TaobaoBaichuanOpenaccountRegister(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountRegisterAPIRequest, session string) (*baichuan.TaobaoBaichuanOpenaccountRegisterAPIResponse, error) {
-	var resp baichuan.TaobaoBaichuanOpenaccountRegisterAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoBaichuanOpenaccountRegister(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountRegisterAPIRequest, resp *baichuan.TaobaoBaichuanOpenaccountRegisterAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // tmall.aliauto.receipt.state.update
 //
 // 二轮车服务工单状态更新
-func TmallAliautoReceiptStateUpdate(clt *core.SDKClient, req *tmallcar.TmallAliautoReceiptStateUpdateAPIRequest, session string) (*tmallcar.TmallAliautoReceiptStateUpdateAPIResponse, error) {
-	var resp tmallcar.TmallAliautoReceiptStateUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallAliautoReceiptStateUpdate(clt *core.SDKClient, req *tmallcar.TmallAliautoReceiptStateUpdateAPIRequest, resp *tmallcar.TmallAliautoReceiptStateUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

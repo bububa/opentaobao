@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // TrainSearchRq 结构体
 type TrainSearchRq struct {
 	// 目的地区域code
@@ -26,4 +30,32 @@ type TrainSearchRq struct {
 	PassengerType int64 `json:"passenger_type,omitempty" xml:"passenger_type,omitempty"`
 	// 排序规则，排序规则:0:最早出发,1:最晚出发,2:耗时最短
 	SortType int64 `json:"sort_type,omitempty" xml:"sort_type,omitempty"`
+}
+
+var poolTrainSearchRq = sync.Pool{
+	New: func() any {
+		return new(TrainSearchRq)
+	},
+}
+
+// GetTrainSearchRq() 从对象池中获取TrainSearchRq
+func GetTrainSearchRq() *TrainSearchRq {
+	return poolTrainSearchRq.Get().(*TrainSearchRq)
+}
+
+// ReleaseTrainSearchRq 释放TrainSearchRq
+func ReleaseTrainSearchRq(v *TrainSearchRq) {
+	v.ArrAreaCode = ""
+	v.ArrAreaName = ""
+	v.ArrLocation = ""
+	v.ArrLocationCode = ""
+	v.DepAreaCode = ""
+	v.DepAreaName = ""
+	v.DepDate = ""
+	v.DepLocation = ""
+	v.DepLocationCode = ""
+	v.CorpId = ""
+	v.PassengerType = 0
+	v.SortType = 0
+	poolTrainSearchRq.Put(v)
 }

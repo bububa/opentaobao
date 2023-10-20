@@ -2,6 +2,7 @@ package campus
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaUnitCampusSpaceBookinfoQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaUnitCampusSpaceBookinfoQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaUnitCampusSpaceBookinfoQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaUnitCampusSpaceBookinfoQueryAPIResponseModel).Reset()
 }
 
 // AlibabaUnitCampusSpaceBookinfoQueryAPIResponseModel is 环路资源信息查询单元环境 成功返回结果
@@ -32,4 +39,32 @@ type AlibabaUnitCampusSpaceBookinfoQueryAPIResponseModel struct {
 	Content *Page `json:"content,omitempty" xml:"content,omitempty"`
 	// 标识本次调用是否执行成功
 	SuccessStatus bool `json:"success_status,omitempty" xml:"success_status,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaUnitCampusSpaceBookinfoQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorCodeStatus = ""
+	m.ErrorExtInfo = ""
+	m.ErrorMsg = ""
+	m.ErrorLevel = ""
+	m.Content = nil
+	m.SuccessStatus = false
+}
+
+var poolAlibabaUnitCampusSpaceBookinfoQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaUnitCampusSpaceBookinfoQueryAPIResponse)
+	},
+}
+
+// GetAlibabaUnitCampusSpaceBookinfoQueryAPIResponse 从 sync.Pool 获取 AlibabaUnitCampusSpaceBookinfoQueryAPIResponse
+func GetAlibabaUnitCampusSpaceBookinfoQueryAPIResponse() *AlibabaUnitCampusSpaceBookinfoQueryAPIResponse {
+	return poolAlibabaUnitCampusSpaceBookinfoQueryAPIResponse.Get().(*AlibabaUnitCampusSpaceBookinfoQueryAPIResponse)
+}
+
+// ReleaseAlibabaUnitCampusSpaceBookinfoQueryAPIResponse 将 AlibabaUnitCampusSpaceBookinfoQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaUnitCampusSpaceBookinfoQueryAPIResponse(v *AlibabaUnitCampusSpaceBookinfoQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaUnitCampusSpaceBookinfoQueryAPIResponse.Put(v)
 }

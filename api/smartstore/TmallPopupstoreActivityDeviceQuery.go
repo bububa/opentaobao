@@ -9,11 +9,6 @@ import (
 // tmall.popupstore.activity.device.query
 //
 // 查询某一活动的deviceCode的部署情况
-func TmallPopupstoreActivityDeviceQuery(clt *core.SDKClient, req *smartstore.TmallPopupstoreActivityDeviceQueryAPIRequest, session string) (*smartstore.TmallPopupstoreActivityDeviceQueryAPIResponse, error) {
-	var resp smartstore.TmallPopupstoreActivityDeviceQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallPopupstoreActivityDeviceQuery(clt *core.SDKClient, req *smartstore.TmallPopupstoreActivityDeviceQueryAPIRequest, resp *smartstore.TmallPopupstoreActivityDeviceQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlitripMerchantGalaxyMemberTokenAPIRequest struct {
 // NewAlitripMerchantGalaxyMemberTokenRequest 初始化AlitripMerchantGalaxyMemberTokenAPIRequest对象
 func NewAlitripMerchantGalaxyMemberTokenRequest() *AlitripMerchantGalaxyMemberTokenAPIRequest {
 	return &AlitripMerchantGalaxyMemberTokenAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyMemberTokenAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._token = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlitripMerchantGalaxyMemberTokenAPIRequest) SetToken(_token string) err
 // GetToken Token Getter
 func (r AlitripMerchantGalaxyMemberTokenAPIRequest) GetToken() string {
 	return r._token
+}
+
+var poolAlitripMerchantGalaxyMemberTokenAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyMemberTokenRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyMemberTokenRequest 从 sync.Pool 获取 AlitripMerchantGalaxyMemberTokenAPIRequest
+func GetAlitripMerchantGalaxyMemberTokenAPIRequest() *AlitripMerchantGalaxyMemberTokenAPIRequest {
+	return poolAlitripMerchantGalaxyMemberTokenAPIRequest.Get().(*AlitripMerchantGalaxyMemberTokenAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyMemberTokenAPIRequest 将 AlitripMerchantGalaxyMemberTokenAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyMemberTokenAPIRequest(v *AlitripMerchantGalaxyMemberTokenAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyMemberTokenAPIRequest.Put(v)
 }

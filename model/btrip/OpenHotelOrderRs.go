@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenHotelOrderRs 结构体
 type OpenHotelOrderRs struct {
 	// 价目详情列表
@@ -60,4 +64,49 @@ type OpenHotelOrderRs struct {
 	OrderStatus int64 `json:"order_status,omitempty" xml:"order_status,omitempty"`
 	// 订单类型
 	OrderType int64 `json:"order_type,omitempty" xml:"order_type,omitempty"`
+}
+
+var poolOpenHotelOrderRs = sync.Pool{
+	New: func() any {
+		return new(OpenHotelOrderRs)
+	},
+}
+
+// GetOpenHotelOrderRs() 从对象池中获取OpenHotelOrderRs
+func GetOpenHotelOrderRs() *OpenHotelOrderRs {
+	return poolOpenHotelOrderRs.Get().(*OpenHotelOrderRs)
+}
+
+// ReleaseOpenHotelOrderRs 释放OpenHotelOrderRs
+func ReleaseOpenHotelOrderRs(v *OpenHotelOrderRs) {
+	v.PriceInfoList = v.PriceInfoList[:0]
+	v.UserAffiliateList = v.UserAffiliateList[:0]
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.CorpId = ""
+	v.CorpName = ""
+	v.UserId = ""
+	v.UserName = ""
+	v.DepartId = ""
+	v.DepartName = ""
+	v.ContactPhone = ""
+	v.ContactName = ""
+	v.City = ""
+	v.HotelName = ""
+	v.CheckIn = ""
+	v.CheckOut = ""
+	v.RoomType = ""
+	v.OrderStatusDesc = ""
+	v.OrderTypeDesc = ""
+	v.Guest = ""
+	v.ThirdpartItineraryId = ""
+	v.Id = 0
+	v.ApplyId = 0
+	v.RoomNum = 0
+	v.Night = 0
+	v.CostCenter = nil
+	v.Invoice = nil
+	v.OrderStatus = 0
+	v.OrderType = 0
+	poolOpenHotelOrderRs.Put(v)
 }

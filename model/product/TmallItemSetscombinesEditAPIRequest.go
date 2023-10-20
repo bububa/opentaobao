@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallItemSetscombinesEditAPIRequest struct {
 // NewTmallItemSetscombinesEditRequest 初始化TmallItemSetscombinesEditAPIRequest对象
 func NewTmallItemSetscombinesEditRequest() *TmallItemSetscombinesEditAPIRequest {
 	return &TmallItemSetscombinesEditAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallItemSetscombinesEditAPIRequest) Reset() {
+	r._itemId = 0
+	r._updateSkuScProduct = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallItemSetscombinesEditAPIRequest) SetUpdateSkuScProduct(_updateSkuSc
 // GetUpdateSkuScProduct UpdateSkuScProduct Getter
 func (r TmallItemSetscombinesEditAPIRequest) GetUpdateSkuScProduct() *UpdateSkuScProduct {
 	return r._updateSkuScProduct
+}
+
+var poolTmallItemSetscombinesEditAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallItemSetscombinesEditRequest()
+	},
+}
+
+// GetTmallItemSetscombinesEditRequest 从 sync.Pool 获取 TmallItemSetscombinesEditAPIRequest
+func GetTmallItemSetscombinesEditAPIRequest() *TmallItemSetscombinesEditAPIRequest {
+	return poolTmallItemSetscombinesEditAPIRequest.Get().(*TmallItemSetscombinesEditAPIRequest)
+}
+
+// ReleaseTmallItemSetscombinesEditAPIRequest 将 TmallItemSetscombinesEditAPIRequest 放入 sync.Pool
+func ReleaseTmallItemSetscombinesEditAPIRequest(v *TmallItemSetscombinesEditAPIRequest) {
+	v.Reset()
+	poolTmallItemSetscombinesEditAPIRequest.Put(v)
 }

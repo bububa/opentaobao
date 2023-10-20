@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // TrainSearchRs 结构体
 type TrainSearchRs struct {
 	// 直达车次列表
@@ -18,4 +22,28 @@ type TrainSearchRs struct {
 	HasMoreTrain bool `json:"has_more_train,omitempty" xml:"has_more_train,omitempty"`
 	// 是否展示中转引导
 	ShowTransGuide bool `json:"show_trans_guide,omitempty" xml:"show_trans_guide,omitempty"`
+}
+
+var poolTrainSearchRs = sync.Pool{
+	New: func() any {
+		return new(TrainSearchRs)
+	},
+}
+
+// GetTrainSearchRs() 从对象池中获取TrainSearchRs
+func GetTrainSearchRs() *TrainSearchRs {
+	return poolTrainSearchRs.Get().(*TrainSearchRs)
+}
+
+// ReleaseTrainSearchRs 释放TrainSearchRs
+func ReleaseTrainSearchRs(v *TrainSearchRs) {
+	v.Trains = v.Trains[:0]
+	v.ArrCity = ""
+	v.ArrLocation = ""
+	v.DepCity = ""
+	v.DepDate = ""
+	v.DepLocation = ""
+	v.HasMoreTrain = false
+	v.ShowTransGuide = false
+	poolTrainSearchRs.Put(v)
 }

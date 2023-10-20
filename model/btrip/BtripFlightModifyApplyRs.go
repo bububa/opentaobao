@@ -1,6 +1,8 @@
 package btrip
 
 import (
+	"sync"
+
 	"github.com/bububa/opentaobao/model"
 )
 
@@ -36,4 +38,35 @@ type BtripFlightModifyApplyRs struct {
 	Retry bool `json:"retry,omitempty" xml:"retry,omitempty"`
 	// 是否变价
 	BookingPriceChanged bool `json:"booking_price_changed,omitempty" xml:"booking_price_changed,omitempty"`
+}
+
+var poolBtripFlightModifyApplyRs = sync.Pool{
+	New: func() any {
+		return new(BtripFlightModifyApplyRs)
+	},
+}
+
+// GetBtripFlightModifyApplyRs() 从对象池中获取BtripFlightModifyApplyRs
+func GetBtripFlightModifyApplyRs() *BtripFlightModifyApplyRs {
+	return poolBtripFlightModifyApplyRs.Get().(*BtripFlightModifyApplyRs)
+}
+
+// ReleaseBtripFlightModifyApplyRs 释放BtripFlightModifyApplyRs
+func ReleaseBtripFlightModifyApplyRs(v *BtripFlightModifyApplyRs) {
+	v.DisOrderId = ""
+	v.DisSubOrderId = ""
+	v.DeadlineTime = ""
+	v.RetryClientTips = ""
+	v.ChangeFee = 0
+	v.Status = nil
+	v.UpgradeFee = 0
+	v.BtripSubOrderId = 0
+	v.MaxRetryTimes = 0
+	v.NextRetryInterval = 0
+	v.BookingChangedTotalFee = 0
+	v.BookingOriginTotalFee = 0
+	v.CanPay = false
+	v.Retry = false
+	v.BookingPriceChanged = false
+	poolBtripFlightModifyApplyRs.Put(v)
 }

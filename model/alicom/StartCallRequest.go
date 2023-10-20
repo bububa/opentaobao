@@ -1,5 +1,9 @@
 package alicom
 
+import (
+	"sync"
+)
+
 // StartCallRequest 结构体
 type StartCallRequest struct {
 	// AXN分机号产品中通过IVR放音收取上来的用户输入的分机字符
@@ -22,4 +26,30 @@ type StartCallRequest struct {
 	BCallHistory string `json:"b_call_history,omitempty" xml:"b_call_history,omitempty"`
 	// 当响应指令为“短信解析”时，供应商平台完成短信内容解析，在重新发起查询请求时会携带；短信解析结果，0：成功，1：失败
 	ParseResult string `json:"parse_result,omitempty" xml:"parse_result,omitempty"`
+}
+
+var poolStartCallRequest = sync.Pool{
+	New: func() any {
+		return new(StartCallRequest)
+	},
+}
+
+// GetStartCallRequest() 从对象池中获取StartCallRequest
+func GetStartCallRequest() *StartCallRequest {
+	return poolStartCallRequest.Get().(*StartCallRequest)
+}
+
+// ReleaseStartCallRequest 释放StartCallRequest
+func ReleaseStartCallRequest(v *StartCallRequest) {
+	v.Extension = ""
+	v.SecretNo = ""
+	v.CallNo = ""
+	v.CallTime = ""
+	v.CallId = ""
+	v.RecordType = ""
+	v.VendorKey = ""
+	v.CallPhase = ""
+	v.BCallHistory = ""
+	v.ParseResult = ""
+	poolStartCallRequest.Put(v)
 }

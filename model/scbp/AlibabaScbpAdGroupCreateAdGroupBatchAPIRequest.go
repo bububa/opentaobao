@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest struct {
 // NewAlibabaScbpAdGroupCreateAdGroupBatchRequest 初始化AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest对象
 func NewAlibabaScbpAdGroupCreateAdGroupBatchRequest() *AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest {
 	return &AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest) Reset() {
+	r._topContext = nil
+	r._campaignId = 0
+	r._adGroupBatchOperation = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest) SetAdGroupBatchOperatio
 // GetAdGroupBatchOperation AdGroupBatchOperation Getter
 func (r AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest) GetAdGroupBatchOperation() *AdGroupBatchOperationDto {
 	return r._adGroupBatchOperation
+}
+
+var poolAlibabaScbpAdGroupCreateAdGroupBatchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdGroupCreateAdGroupBatchRequest()
+	},
+}
+
+// GetAlibabaScbpAdGroupCreateAdGroupBatchRequest 从 sync.Pool 获取 AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest
+func GetAlibabaScbpAdGroupCreateAdGroupBatchAPIRequest() *AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest {
+	return poolAlibabaScbpAdGroupCreateAdGroupBatchAPIRequest.Get().(*AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdGroupCreateAdGroupBatchAPIRequest 将 AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdGroupCreateAdGroupBatchAPIRequest(v *AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdGroupCreateAdGroupBatchAPIRequest.Put(v)
 }

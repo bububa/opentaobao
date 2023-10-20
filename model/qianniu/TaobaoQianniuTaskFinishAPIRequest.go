@@ -2,6 +2,7 @@ package qianniu
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoQianniuTaskFinishAPIRequest struct {
 // NewTaobaoQianniuTaskFinishRequest 初始化TaobaoQianniuTaskFinishAPIRequest对象
 func NewTaobaoQianniuTaskFinishRequest() *TaobaoQianniuTaskFinishAPIRequest {
 	return &TaobaoQianniuTaskFinishAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQianniuTaskFinishAPIRequest) Reset() {
+	r._memo = ""
+	r._taskId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoQianniuTaskFinishAPIRequest) SetTaskId(_taskId int64) error {
 // GetTaskId TaskId Getter
 func (r TaobaoQianniuTaskFinishAPIRequest) GetTaskId() int64 {
 	return r._taskId
+}
+
+var poolTaobaoQianniuTaskFinishAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQianniuTaskFinishRequest()
+	},
+}
+
+// GetTaobaoQianniuTaskFinishRequest 从 sync.Pool 获取 TaobaoQianniuTaskFinishAPIRequest
+func GetTaobaoQianniuTaskFinishAPIRequest() *TaobaoQianniuTaskFinishAPIRequest {
+	return poolTaobaoQianniuTaskFinishAPIRequest.Get().(*TaobaoQianniuTaskFinishAPIRequest)
+}
+
+// ReleaseTaobaoQianniuTaskFinishAPIRequest 将 TaobaoQianniuTaskFinishAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQianniuTaskFinishAPIRequest(v *TaobaoQianniuTaskFinishAPIRequest) {
+	v.Reset()
+	poolTaobaoQianniuTaskFinishAPIRequest.Put(v)
 }

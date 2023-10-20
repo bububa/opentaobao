@@ -2,6 +2,7 @@ package tmallnr
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallNrtCertificateSendAPIRequest struct {
 // NewTmallNrtCertificateSendRequest 初始化TmallNrtCertificateSendAPIRequest对象
 func NewTmallNrtCertificateSendRequest() *TmallNrtCertificateSendAPIRequest {
 	return &TmallNrtCertificateSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrtCertificateSendAPIRequest) Reset() {
+	r._nrtCertificateSendDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallNrtCertificateSendAPIRequest) SetNrtCertificateSendDTO(_nrtCertifi
 // GetNrtCertificateSendDTO NrtCertificateSendDTO Getter
 func (r TmallNrtCertificateSendAPIRequest) GetNrtCertificateSendDTO() *NrtCertificateSendDto {
 	return r._nrtCertificateSendDTO
+}
+
+var poolTmallNrtCertificateSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrtCertificateSendRequest()
+	},
+}
+
+// GetTmallNrtCertificateSendRequest 从 sync.Pool 获取 TmallNrtCertificateSendAPIRequest
+func GetTmallNrtCertificateSendAPIRequest() *TmallNrtCertificateSendAPIRequest {
+	return poolTmallNrtCertificateSendAPIRequest.Get().(*TmallNrtCertificateSendAPIRequest)
+}
+
+// ReleaseTmallNrtCertificateSendAPIRequest 将 TmallNrtCertificateSendAPIRequest 放入 sync.Pool
+func ReleaseTmallNrtCertificateSendAPIRequest(v *TmallNrtCertificateSendAPIRequest) {
+	v.Reset()
+	poolTmallNrtCertificateSendAPIRequest.Put(v)
 }

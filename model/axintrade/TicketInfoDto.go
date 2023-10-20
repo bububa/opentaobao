@@ -1,5 +1,9 @@
 package axintrade
 
+import (
+	"sync"
+)
+
 // TicketInfoDto 结构体
 type TicketInfoDto struct {
 	// 景区名称
@@ -12,4 +16,25 @@ type TicketInfoDto struct {
 	SessionName string `json:"session_name,omitempty" xml:"session_name,omitempty"`
 	// 区域名称
 	RegionName string `json:"region_name,omitempty" xml:"region_name,omitempty"`
+}
+
+var poolTicketInfoDto = sync.Pool{
+	New: func() any {
+		return new(TicketInfoDto)
+	},
+}
+
+// GetTicketInfoDto() 从对象池中获取TicketInfoDto
+func GetTicketInfoDto() *TicketInfoDto {
+	return poolTicketInfoDto.Get().(*TicketInfoDto)
+}
+
+// ReleaseTicketInfoDto 释放TicketInfoDto
+func ReleaseTicketInfoDto(v *TicketInfoDto) {
+	v.ScenicName = ""
+	v.SpuName = ""
+	v.TicketKindName = ""
+	v.SessionName = ""
+	v.RegionName = ""
+	poolTicketInfoDto.Put(v)
 }

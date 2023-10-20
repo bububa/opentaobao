@@ -1,5 +1,9 @@
 package iot
 
+import (
+	"sync"
+)
+
 // AiCloudResult 结构体
 type AiCloudResult struct {
 	// uuid 32位
@@ -26,4 +30,32 @@ type AiCloudResult struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 是否操作成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+var poolAiCloudResult = sync.Pool{
+	New: func() any {
+		return new(AiCloudResult)
+	},
+}
+
+// GetAiCloudResult() 从对象池中获取AiCloudResult
+func GetAiCloudResult() *AiCloudResult {
+	return poolAiCloudResult.Get().(*AiCloudResult)
+}
+
+// ReleaseAiCloudResult 释放AiCloudResult
+func ReleaseAiCloudResult(v *AiCloudResult) {
+	v.Uuids = v.Uuids[:0]
+	v.Models = v.Models[:0]
+	v.ModelList = v.ModelList[:0]
+	v.Likes = v.Likes[:0]
+	v.Model = ""
+	v.MsgCode = ""
+	v.MsgInfo = ""
+	v.ExtendInfo = ""
+	v.AuthInfo = ""
+	v.RecordCount = 0
+	v.Success = false
+	v.IsSuccess = false
+	poolAiCloudResult.Put(v)
 }

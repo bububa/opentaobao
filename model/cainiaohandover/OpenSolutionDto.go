@@ -1,5 +1,9 @@
 package cainiaohandover
 
+import (
+	"sync"
+)
+
 // OpenSolutionDto 结构体
 type OpenSolutionDto struct {
 	// 时效信息
@@ -12,4 +16,25 @@ type OpenSolutionDto struct {
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 推荐指数
 	RecommendIndex int64 `json:"recommend_index,omitempty" xml:"recommend_index,omitempty"`
+}
+
+var poolOpenSolutionDto = sync.Pool{
+	New: func() any {
+		return new(OpenSolutionDto)
+	},
+}
+
+// GetOpenSolutionDto() 从对象池中获取OpenSolutionDto
+func GetOpenSolutionDto() *OpenSolutionDto {
+	return poolOpenSolutionDto.Get().(*OpenSolutionDto)
+}
+
+// ReleaseOpenSolutionDto 释放OpenSolutionDto
+func ReleaseOpenSolutionDto(v *OpenSolutionDto) {
+	v.TimingList = v.TimingList[:0]
+	v.FeeList = v.FeeList[:0]
+	v.Code = ""
+	v.Name = ""
+	v.RecommendIndex = 0
+	poolOpenSolutionDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // TaobaoTbkScOptimusPromotionMapData 结构体
 type TaobaoTbkScOptimusPromotionMapData struct {
 	// 权益信息
@@ -28,4 +32,33 @@ type TaobaoTbkScOptimusPromotionMapData struct {
 	RemainCount int64 `json:"remain_count,omitempty" xml:"remain_count,omitempty"`
 	// 权益扩展信息
 	PromotionExtend *PromotionExtend `json:"promotion_extend,omitempty" xml:"promotion_extend,omitempty"`
+}
+
+var poolTaobaoTbkScOptimusPromotionMapData = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkScOptimusPromotionMapData)
+	},
+}
+
+// GetTaobaoTbkScOptimusPromotionMapData() 从对象池中获取TaobaoTbkScOptimusPromotionMapData
+func GetTaobaoTbkScOptimusPromotionMapData() *TaobaoTbkScOptimusPromotionMapData {
+	return poolTaobaoTbkScOptimusPromotionMapData.Get().(*TaobaoTbkScOptimusPromotionMapData)
+}
+
+// ReleaseTaobaoTbkScOptimusPromotionMapData 释放TaobaoTbkScOptimusPromotionMapData
+func ReleaseTaobaoTbkScOptimusPromotionMapData(v *TaobaoTbkScOptimusPromotionMapData) {
+	v.PromotionList = v.PromotionList[:0]
+	v.PromotionType = ""
+	v.ConditionType = ""
+	v.DiscountType = ""
+	v.DisplayStartTime = ""
+	v.DisplayEndTime = ""
+	v.SellerId = ""
+	v.Nick = ""
+	v.ShopTitle = ""
+	v.ShopPictureUrl = ""
+	v.TotalCount = 0
+	v.RemainCount = 0
+	v.PromotionExtend = nil
+	poolTaobaoTbkScOptimusPromotionMapData.Put(v)
 }

@@ -1,5 +1,9 @@
 package jst
 
+import (
+	"sync"
+)
+
 // AddSmsTemplateForIsvRequest 结构体
 type AddSmsTemplateForIsvRequest struct {
 	// 上传文件
@@ -14,4 +18,26 @@ type AddSmsTemplateForIsvRequest struct {
 	TemplateContent string `json:"template_content,omitempty" xml:"template_content,omitempty"`
 	// 0--验证码 1--短信通知 2-- 推广短信 3--国际/港澳台消息
 	TemplateType int64 `json:"template_type,omitempty" xml:"template_type,omitempty"`
+}
+
+var poolAddSmsTemplateForIsvRequest = sync.Pool{
+	New: func() any {
+		return new(AddSmsTemplateForIsvRequest)
+	},
+}
+
+// GetAddSmsTemplateForIsvRequest() 从对象池中获取AddSmsTemplateForIsvRequest
+func GetAddSmsTemplateForIsvRequest() *AddSmsTemplateForIsvRequest {
+	return poolAddSmsTemplateForIsvRequest.Get().(*AddSmsTemplateForIsvRequest)
+}
+
+// ReleaseAddSmsTemplateForIsvRequest 释放AddSmsTemplateForIsvRequest
+func ReleaseAddSmsTemplateForIsvRequest(v *AddSmsTemplateForIsvRequest) {
+	v.TemplateInfos = v.TemplateInfos[:0]
+	v.TemplateTypeClass = ""
+	v.Remark = ""
+	v.TemplateName = ""
+	v.TemplateContent = ""
+	v.TemplateType = 0
+	poolAddSmsTemplateForIsvRequest.Put(v)
 }

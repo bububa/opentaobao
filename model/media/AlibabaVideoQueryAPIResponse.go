@@ -2,6 +2,7 @@ package media
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaVideoQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaVideoQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaVideoQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaVideoQueryAPIResponseModel).Reset()
 }
 
 // AlibabaVideoQueryAPIResponseModel is 查询视频信息 成功返回结果
@@ -46,4 +53,39 @@ type AlibabaVideoQueryAPIResponseModel struct {
 	Height int64 `json:"height,omitempty" xml:"height,omitempty"`
 	// 视频宽度
 	Width int64 `json:"width,omitempty" xml:"width,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaVideoQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Title = ""
+	m.UploaderId = ""
+	m.CoverUrl = ""
+	m.Description = ""
+	m.AspectRatio = ""
+	m.Tags = ""
+	m.PlayUrl = ""
+	m.AuditState = ""
+	m.VideoId = 0
+	m.UploadTime = 0
+	m.Duration = 0
+	m.Height = 0
+	m.Width = 0
+}
+
+var poolAlibabaVideoQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaVideoQueryAPIResponse)
+	},
+}
+
+// GetAlibabaVideoQueryAPIResponse 从 sync.Pool 获取 AlibabaVideoQueryAPIResponse
+func GetAlibabaVideoQueryAPIResponse() *AlibabaVideoQueryAPIResponse {
+	return poolAlibabaVideoQueryAPIResponse.Get().(*AlibabaVideoQueryAPIResponse)
+}
+
+// ReleaseAlibabaVideoQueryAPIResponse 将 AlibabaVideoQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaVideoQueryAPIResponse(v *AlibabaVideoQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaVideoQueryAPIResponse.Put(v)
 }

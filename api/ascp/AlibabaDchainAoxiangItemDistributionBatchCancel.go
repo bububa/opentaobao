@@ -9,11 +9,6 @@ import (
 // alibaba.dchain.aoxiang.item.distribution.batch.cancel
 //
 // 取消商品分销
-func AlibabaDchainAoxiangItemDistributionBatchCancel(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangItemDistributionBatchCancelAPIRequest, session string) (*ascp.AlibabaDchainAoxiangItemDistributionBatchCancelAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangItemDistributionBatchCancelAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDchainAoxiangItemDistributionBatchCancel(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangItemDistributionBatchCancelAPIRequest, resp *ascp.AlibabaDchainAoxiangItemDistributionBatchCancelAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // TaobaoInvTurnoverQueryResult 结构体
 type TaobaoInvTurnoverQueryResult struct {
 	// 流水信息&lt;明细&gt;
@@ -14,4 +18,26 @@ type TaobaoInvTurnoverQueryResult struct {
 	CurrentPageCount string `json:"current_page_count,omitempty" xml:"current_page_count,omitempty"`
 	// 总页数
 	TotalPage string `json:"total_page,omitempty" xml:"total_page,omitempty"`
+}
+
+var poolTaobaoInvTurnoverQueryResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoInvTurnoverQueryResult)
+	},
+}
+
+// GetTaobaoInvTurnoverQueryResult() 从对象池中获取TaobaoInvTurnoverQueryResult
+func GetTaobaoInvTurnoverQueryResult() *TaobaoInvTurnoverQueryResult {
+	return poolTaobaoInvTurnoverQueryResult.Get().(*TaobaoInvTurnoverQueryResult)
+}
+
+// ReleaseTaobaoInvTurnoverQueryResult 释放TaobaoInvTurnoverQueryResult
+func ReleaseTaobaoInvTurnoverQueryResult(v *TaobaoInvTurnoverQueryResult) {
+	v.DataList = v.DataList[:0]
+	v.PageIndex = ""
+	v.PageSize = ""
+	v.TotalCount = ""
+	v.CurrentPageCount = ""
+	v.TotalPage = ""
+	poolTaobaoInvTurnoverQueryResult.Put(v)
 }

@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthReserveDentalBindshopanditemAPIRequest struct {
 // NewAlibabaAlihealthReserveDentalBindshopanditemRequest 初始化AlibabaAlihealthReserveDentalBindshopanditemAPIRequest对象
 func NewAlibabaAlihealthReserveDentalBindshopanditemRequest() *AlibabaAlihealthReserveDentalBindshopanditemAPIRequest {
 	return &AlibabaAlihealthReserveDentalBindshopanditemAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthReserveDentalBindshopanditemAPIRequest) Reset() {
+	r._bindList = r._bindList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthReserveDentalBindshopanditemAPIRequest) SetBindList(_bi
 // GetBindList BindList Getter
 func (r AlibabaAlihealthReserveDentalBindshopanditemAPIRequest) GetBindList() []BindDto {
 	return r._bindList
+}
+
+var poolAlibabaAlihealthReserveDentalBindshopanditemAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthReserveDentalBindshopanditemRequest()
+	},
+}
+
+// GetAlibabaAlihealthReserveDentalBindshopanditemRequest 从 sync.Pool 获取 AlibabaAlihealthReserveDentalBindshopanditemAPIRequest
+func GetAlibabaAlihealthReserveDentalBindshopanditemAPIRequest() *AlibabaAlihealthReserveDentalBindshopanditemAPIRequest {
+	return poolAlibabaAlihealthReserveDentalBindshopanditemAPIRequest.Get().(*AlibabaAlihealthReserveDentalBindshopanditemAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthReserveDentalBindshopanditemAPIRequest 将 AlibabaAlihealthReserveDentalBindshopanditemAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthReserveDentalBindshopanditemAPIRequest(v *AlibabaAlihealthReserveDentalBindshopanditemAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthReserveDentalBindshopanditemAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package user
 
+import (
+	"sync"
+)
+
 // FlightChangeDataDo 结构体
 type FlightChangeDataDo struct {
 	// 航班最新到达机场三字码, 字符长度3；仅当flightChangeType=2，该参数必填
@@ -28,4 +32,33 @@ type FlightChangeDataDo struct {
 	BizType int64 `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
 	// 飞猪机票订单号，如果输入了该参数，平台只会给该指定订单发送航变，如果不输入该参数，则会处理代理商的所有订单；正常的延误航变该参数一般不需要，如果是航班保护，大部分情况该参数应该都是必填的，因为航班保护基本每个订单保护的新航班可能都不一样。
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+}
+
+var poolFlightChangeDataDo = sync.Pool{
+	New: func() any {
+		return new(FlightChangeDataDo)
+	},
+}
+
+// GetFlightChangeDataDo() 从对象池中获取FlightChangeDataDo
+func GetFlightChangeDataDo() *FlightChangeDataDo {
+	return poolFlightChangeDataDo.Get().(*FlightChangeDataDo)
+}
+
+// ReleaseFlightChangeDataDo 释放FlightChangeDataDo
+func ReleaseFlightChangeDataDo(v *FlightChangeDataDo) {
+	v.NewArrAirport = ""
+	v.OldArrAirport = ""
+	v.OldDepTimeStr = ""
+	v.OldFltNum = ""
+	v.NewDepTimeStr = ""
+	v.NewDepAirport = ""
+	v.OldDepAirport = ""
+	v.NewFltNum = ""
+	v.NewArrTimeStr = ""
+	v.OutOrderNo = ""
+	v.FlightChangeType = 0
+	v.BizType = 0
+	v.OrderId = 0
+	poolFlightChangeDataDo.Put(v)
 }

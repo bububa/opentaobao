@@ -9,11 +9,6 @@ import (
 // aliexpress.ds.recommend.feed.get
 //
 // 获取推荐商品信息流
-func AliexpressDsRecommendFeedGet(clt *core.SDKClient, req *aedropshiper.AliexpressDsRecommendFeedGetAPIRequest, session string) (*aedropshiper.AliexpressDsRecommendFeedGetAPIResponse, error) {
-	var resp aedropshiper.AliexpressDsRecommendFeedGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressDsRecommendFeedGet(clt *core.SDKClient, req *aedropshiper.AliexpressDsRecommendFeedGetAPIRequest, resp *aedropshiper.AliexpressDsRecommendFeedGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

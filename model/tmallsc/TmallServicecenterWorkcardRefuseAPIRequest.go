@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallServicecenterWorkcardRefuseAPIRequest struct {
 // NewTmallServicecenterWorkcardRefuseRequest 初始化TmallServicecenterWorkcardRefuseAPIRequest对象
 func NewTmallServicecenterWorkcardRefuseRequest() *TmallServicecenterWorkcardRefuseAPIRequest {
 	return &TmallServicecenterWorkcardRefuseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterWorkcardRefuseAPIRequest) Reset() {
+	r._buyerRefuseAcceptRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallServicecenterWorkcardRefuseAPIRequest) SetBuyerRefuseAcceptRequest
 // GetBuyerRefuseAcceptRequest BuyerRefuseAcceptRequest Getter
 func (r TmallServicecenterWorkcardRefuseAPIRequest) GetBuyerRefuseAcceptRequest() *BuyerRefuseAcceptRequest {
 	return r._buyerRefuseAcceptRequest
+}
+
+var poolTmallServicecenterWorkcardRefuseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterWorkcardRefuseRequest()
+	},
+}
+
+// GetTmallServicecenterWorkcardRefuseRequest 从 sync.Pool 获取 TmallServicecenterWorkcardRefuseAPIRequest
+func GetTmallServicecenterWorkcardRefuseAPIRequest() *TmallServicecenterWorkcardRefuseAPIRequest {
+	return poolTmallServicecenterWorkcardRefuseAPIRequest.Get().(*TmallServicecenterWorkcardRefuseAPIRequest)
+}
+
+// ReleaseTmallServicecenterWorkcardRefuseAPIRequest 将 TmallServicecenterWorkcardRefuseAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterWorkcardRefuseAPIRequest(v *TmallServicecenterWorkcardRefuseAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterWorkcardRefuseAPIRequest.Put(v)
 }

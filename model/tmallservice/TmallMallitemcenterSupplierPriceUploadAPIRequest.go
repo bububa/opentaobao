@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallMallitemcenterSupplierPriceUploadAPIRequest struct {
 // NewTmallMallitemcenterSupplierPriceUploadRequest 初始化TmallMallitemcenterSupplierPriceUploadAPIRequest对象
 func NewTmallMallitemcenterSupplierPriceUploadRequest() *TmallMallitemcenterSupplierPriceUploadAPIRequest {
 	return &TmallMallitemcenterSupplierPriceUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallMallitemcenterSupplierPriceUploadAPIRequest) Reset() {
+	r._providerPriceList = r._providerPriceList[:0]
+	r._serviceCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallMallitemcenterSupplierPriceUploadAPIRequest) SetServiceCode(_servi
 // GetServiceCode ServiceCode Getter
 func (r TmallMallitemcenterSupplierPriceUploadAPIRequest) GetServiceCode() string {
 	return r._serviceCode
+}
+
+var poolTmallMallitemcenterSupplierPriceUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallMallitemcenterSupplierPriceUploadRequest()
+	},
+}
+
+// GetTmallMallitemcenterSupplierPriceUploadRequest 从 sync.Pool 获取 TmallMallitemcenterSupplierPriceUploadAPIRequest
+func GetTmallMallitemcenterSupplierPriceUploadAPIRequest() *TmallMallitemcenterSupplierPriceUploadAPIRequest {
+	return poolTmallMallitemcenterSupplierPriceUploadAPIRequest.Get().(*TmallMallitemcenterSupplierPriceUploadAPIRequest)
+}
+
+// ReleaseTmallMallitemcenterSupplierPriceUploadAPIRequest 将 TmallMallitemcenterSupplierPriceUploadAPIRequest 放入 sync.Pool
+func ReleaseTmallMallitemcenterSupplierPriceUploadAPIRequest(v *TmallMallitemcenterSupplierPriceUploadAPIRequest) {
+	v.Reset()
+	poolTmallMallitemcenterSupplierPriceUploadAPIRequest.Put(v)
 }

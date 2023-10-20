@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoUmpPromotionSkuGetAPIRequest struct {
 // NewTaobaoUmpPromotionSkuGetRequest 初始化TaobaoUmpPromotionSkuGetAPIRequest对象
 func NewTaobaoUmpPromotionSkuGetRequest() *TaobaoUmpPromotionSkuGetAPIRequest {
 	return &TaobaoUmpPromotionSkuGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUmpPromotionSkuGetAPIRequest) Reset() {
+	r._skuList = ""
+	r._channelKey = ""
+	r._buyerId = ""
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoUmpPromotionSkuGetAPIRequest) SetItemId(_itemId int64) error {
 // GetItemId ItemId Getter
 func (r TaobaoUmpPromotionSkuGetAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolTaobaoUmpPromotionSkuGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUmpPromotionSkuGetRequest()
+	},
+}
+
+// GetTaobaoUmpPromotionSkuGetRequest 从 sync.Pool 获取 TaobaoUmpPromotionSkuGetAPIRequest
+func GetTaobaoUmpPromotionSkuGetAPIRequest() *TaobaoUmpPromotionSkuGetAPIRequest {
+	return poolTaobaoUmpPromotionSkuGetAPIRequest.Get().(*TaobaoUmpPromotionSkuGetAPIRequest)
+}
+
+// ReleaseTaobaoUmpPromotionSkuGetAPIRequest 将 TaobaoUmpPromotionSkuGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUmpPromotionSkuGetAPIRequest(v *TaobaoUmpPromotionSkuGetAPIRequest) {
+	v.Reset()
+	poolTaobaoUmpPromotionSkuGetAPIRequest.Put(v)
 }

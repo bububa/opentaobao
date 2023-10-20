@@ -1,5 +1,9 @@
 package legalsuit
 
+import (
+	"sync"
+)
+
 // AppelleeModel 结构体
 type AppelleeModel struct {
 	// 承办律师姓名
@@ -22,4 +26,30 @@ type AppelleeModel struct {
 	SerialNumber int64 `json:"serial_number,omitempty" xml:"serial_number,omitempty"`
 	// 是否为集团公司
 	IsAlibabaCompany bool `json:"is_alibaba_company,omitempty" xml:"is_alibaba_company,omitempty"`
+}
+
+var poolAppelleeModel = sync.Pool{
+	New: func() any {
+		return new(AppelleeModel)
+	},
+}
+
+// GetAppelleeModel() 从对象池中获取AppelleeModel
+func GetAppelleeModel() *AppelleeModel {
+	return poolAppelleeModel.Get().(*AppelleeModel)
+}
+
+// ReleaseAppelleeModel 释放AppelleeModel
+func ReleaseAppelleeModel(v *AppelleeModel) {
+	v.LawyerName = ""
+	v.LawFirmName = ""
+	v.Address = ""
+	v.CertifyNumber = ""
+	v.CertifyType = ""
+	v.Contact = ""
+	v.Name = ""
+	v.LawyerContact = ""
+	v.SerialNumber = 0
+	v.IsAlibabaCompany = false
+	poolAppelleeModel.Put(v)
 }

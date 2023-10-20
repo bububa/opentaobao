@@ -9,11 +9,6 @@ import (
 // alibaba.damai.mev.open.unlockticket
 //
 // 开放接口 解锁票单
-func AlibabaDamaiMevOpenUnlockticket(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenUnlockticketAPIRequest, session string) (*damai.AlibabaDamaiMevOpenUnlockticketAPIResponse, error) {
-	var resp damai.AlibabaDamaiMevOpenUnlockticketAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMevOpenUnlockticket(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenUnlockticketAPIRequest, resp *damai.AlibabaDamaiMevOpenUnlockticketAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

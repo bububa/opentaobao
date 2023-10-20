@@ -2,6 +2,7 @@ package flight
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripAgentCoordinateProcessAPIRequest struct {
 // NewAlitripAgentCoordinateProcessRequest 初始化AlitripAgentCoordinateProcessAPIRequest对象
 func NewAlitripAgentCoordinateProcessRequest() *AlitripAgentCoordinateProcessAPIRequest {
 	return &AlitripAgentCoordinateProcessAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripAgentCoordinateProcessAPIRequest) Reset() {
+	r._processingDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripAgentCoordinateProcessAPIRequest) SetProcessingDto(_processingDt
 // GetProcessingDto ProcessingDto Getter
 func (r AlitripAgentCoordinateProcessAPIRequest) GetProcessingDto() *ProcessingDto {
 	return r._processingDto
+}
+
+var poolAlitripAgentCoordinateProcessAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripAgentCoordinateProcessRequest()
+	},
+}
+
+// GetAlitripAgentCoordinateProcessRequest 从 sync.Pool 获取 AlitripAgentCoordinateProcessAPIRequest
+func GetAlitripAgentCoordinateProcessAPIRequest() *AlitripAgentCoordinateProcessAPIRequest {
+	return poolAlitripAgentCoordinateProcessAPIRequest.Get().(*AlitripAgentCoordinateProcessAPIRequest)
+}
+
+// ReleaseAlitripAgentCoordinateProcessAPIRequest 将 AlitripAgentCoordinateProcessAPIRequest 放入 sync.Pool
+func ReleaseAlitripAgentCoordinateProcessAPIRequest(v *AlitripAgentCoordinateProcessAPIRequest) {
+	v.Reset()
+	poolAlitripAgentCoordinateProcessAPIRequest.Put(v)
 }

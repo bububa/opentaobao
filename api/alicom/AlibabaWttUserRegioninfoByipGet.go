@@ -9,11 +9,6 @@ import (
 // alibaba.wtt.user.regioninfo.byip.get
 //
 // 通过ip获取省市信息
-func AlibabaWttUserRegioninfoByipGet(clt *core.SDKClient, req *alicom.AlibabaWttUserRegioninfoByipGetAPIRequest, session string) (*alicom.AlibabaWttUserRegioninfoByipGetAPIResponse, error) {
-	var resp alicom.AlibabaWttUserRegioninfoByipGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWttUserRegioninfoByipGet(clt *core.SDKClient, req *alicom.AlibabaWttUserRegioninfoByipGetAPIRequest, resp *alicom.AlibabaWttUserRegioninfoByipGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

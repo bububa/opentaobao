@@ -9,11 +9,6 @@ import (
 // alibaba.aliqin.fc.iot.rechargeCard
 //
 // 按终端号订购增值业务
-func AlibabaAliqinFcIotRechargeCard(clt *core.SDKClient, req *aliqin.AlibabaAliqinFcIotRechargeCardAPIRequest, session string) (*aliqin.AlibabaAliqinFcIotRechargeCardAPIResponse, error) {
-	var resp aliqin.AlibabaAliqinFcIotRechargeCardAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAliqinFcIotRechargeCard(clt *core.SDKClient, req *aliqin.AlibabaAliqinFcIotRechargeCardAPIRequest, resp *aliqin.AlibabaAliqinFcIotRechargeCardAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaSscPurchaseServicedefinitionParamQueryAPIResponse struct {
 	AlibabaSscPurchaseServicedefinitionParamQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaSscPurchaseServicedefinitionParamQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaSscPurchaseServicedefinitionParamQueryAPIResponseModel).Reset()
+}
+
 // AlibabaSscPurchaseServicedefinitionParamQueryAPIResponseModel is 查询采购服务定义参数信息 成功返回结果
 type AlibabaSscPurchaseServicedefinitionParamQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ssc_purchase_servicedefinition_param_query_response"`
@@ -26,4 +33,29 @@ type AlibabaSscPurchaseServicedefinitionParamQueryAPIResponseModel struct {
 	DisplayMsg string `json:"display_msg,omitempty" xml:"display_msg,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaSscPurchaseServicedefinitionParamQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ServiceDefinitions = m.ServiceDefinitions[:0]
+	m.DisplayMsg = ""
+	m.IsSuccess = false
+}
+
+var poolAlibabaSscPurchaseServicedefinitionParamQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaSscPurchaseServicedefinitionParamQueryAPIResponse)
+	},
+}
+
+// GetAlibabaSscPurchaseServicedefinitionParamQueryAPIResponse 从 sync.Pool 获取 AlibabaSscPurchaseServicedefinitionParamQueryAPIResponse
+func GetAlibabaSscPurchaseServicedefinitionParamQueryAPIResponse() *AlibabaSscPurchaseServicedefinitionParamQueryAPIResponse {
+	return poolAlibabaSscPurchaseServicedefinitionParamQueryAPIResponse.Get().(*AlibabaSscPurchaseServicedefinitionParamQueryAPIResponse)
+}
+
+// ReleaseAlibabaSscPurchaseServicedefinitionParamQueryAPIResponse 将 AlibabaSscPurchaseServicedefinitionParamQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaSscPurchaseServicedefinitionParamQueryAPIResponse(v *AlibabaSscPurchaseServicedefinitionParamQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaSscPurchaseServicedefinitionParamQueryAPIResponse.Put(v)
 }

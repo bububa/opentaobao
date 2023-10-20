@@ -9,11 +9,6 @@ import (
 // alibaba.global.virtual.sendcode
 //
 // global virtual send code service
-func AlibabaGlobalVirtualSendcode(clt *core.SDKClient, req *globalvirtual.AlibabaGlobalVirtualSendcodeAPIRequest, session string) (*globalvirtual.AlibabaGlobalVirtualSendcodeAPIResponse, error) {
-	var resp globalvirtual.AlibabaGlobalVirtualSendcodeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaGlobalVirtualSendcode(clt *core.SDKClient, req *globalvirtual.AlibabaGlobalVirtualSendcodeAPIRequest, resp *globalvirtual.AlibabaGlobalVirtualSendcodeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

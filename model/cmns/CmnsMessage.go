@@ -1,5 +1,9 @@
 package cmns
 
+import (
+	"sync"
+)
+
 // CmnsMessage 结构体
 type CmnsMessage struct {
 	// 去重码,1-6位整数,0将视为不填,如果填写则同一appKey相同的去重码消息将会被去重，只保留最新的一条，请谨慎使用
@@ -34,4 +38,36 @@ type CmnsMessage struct {
 	Text int64 `json:"text,omitempty" xml:"text,omitempty"`
 	// 仅IOS应用推送时使用，默认值为0，开发环境为1，生产环境为0
 	DeployStatus int64 `json:"deploy_status,omitempty" xml:"deploy_status,omitempty"`
+}
+
+var poolCmnsMessage = sync.Pool{
+	New: func() any {
+		return new(CmnsMessage)
+	},
+}
+
+// GetCmnsMessage() 从对象池中获取CmnsMessage
+func GetCmnsMessage() *CmnsMessage {
+	return poolCmnsMessage.Get().(*CmnsMessage)
+}
+
+// ReleaseCmnsMessage 释放CmnsMessage
+func ReleaseCmnsMessage(v *CmnsMessage) {
+	v.CollapseKey = ""
+	v.Data = ""
+	v.Ico = ""
+	v.Parameter = ""
+	v.Program = ""
+	v.Title = ""
+	v.Topic = ""
+	v.Uri = ""
+	v.Expiration = 0
+	v.Important = 0
+	v.Priority = 0
+	v.Receiver = nil
+	v.Responsetype = 0
+	v.Showtype = 0
+	v.Text = 0
+	v.DeployStatus = 0
+	poolCmnsMessage.Put(v)
 }

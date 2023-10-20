@@ -2,6 +2,7 @@ package fundplatform
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaFundplatformCardTemplateNewAPIRequest struct {
 // NewAlibabaFundplatformCardTemplateNewRequest 初始化AlibabaFundplatformCardTemplateNewAPIRequest对象
 func NewAlibabaFundplatformCardTemplateNewRequest() *AlibabaFundplatformCardTemplateNewAPIRequest {
 	return &AlibabaFundplatformCardTemplateNewAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaFundplatformCardTemplateNewAPIRequest) Reset() {
+	r._templateNo = ""
+	r._cardName = ""
+	r._parValue = ""
+	r._pictureUrl = ""
+	r._ownSign = ""
+	r._isTest = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaFundplatformCardTemplateNewAPIRequest) SetIsTest(_isTest bool) e
 // GetIsTest IsTest Getter
 func (r AlibabaFundplatformCardTemplateNewAPIRequest) GetIsTest() bool {
 	return r._isTest
+}
+
+var poolAlibabaFundplatformCardTemplateNewAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaFundplatformCardTemplateNewRequest()
+	},
+}
+
+// GetAlibabaFundplatformCardTemplateNewRequest 从 sync.Pool 获取 AlibabaFundplatformCardTemplateNewAPIRequest
+func GetAlibabaFundplatformCardTemplateNewAPIRequest() *AlibabaFundplatformCardTemplateNewAPIRequest {
+	return poolAlibabaFundplatformCardTemplateNewAPIRequest.Get().(*AlibabaFundplatformCardTemplateNewAPIRequest)
+}
+
+// ReleaseAlibabaFundplatformCardTemplateNewAPIRequest 将 AlibabaFundplatformCardTemplateNewAPIRequest 放入 sync.Pool
+func ReleaseAlibabaFundplatformCardTemplateNewAPIRequest(v *AlibabaFundplatformCardTemplateNewAPIRequest) {
+	v.Reset()
+	poolAlibabaFundplatformCardTemplateNewAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripMerchantGalaxyVerifySignatureAPIResponse struct {
 	AlitripMerchantGalaxyVerifySignatureAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripMerchantGalaxyVerifySignatureAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripMerchantGalaxyVerifySignatureAPIResponseModel).Reset()
+}
+
 // AlitripMerchantGalaxyVerifySignatureAPIResponseModel is 微信账号生物认证 成功返回结果
 type AlitripMerchantGalaxyVerifySignatureAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_merchant_galaxy_verify_signature_response"`
@@ -22,4 +29,27 @@ type AlitripMerchantGalaxyVerifySignatureAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 默认描述
 	Result *AlitripMerchantGalaxyVerifySignatureResponse `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripMerchantGalaxyVerifySignatureAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlitripMerchantGalaxyVerifySignatureAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyVerifySignatureAPIResponse)
+	},
+}
+
+// GetAlitripMerchantGalaxyVerifySignatureAPIResponse 从 sync.Pool 获取 AlitripMerchantGalaxyVerifySignatureAPIResponse
+func GetAlitripMerchantGalaxyVerifySignatureAPIResponse() *AlitripMerchantGalaxyVerifySignatureAPIResponse {
+	return poolAlitripMerchantGalaxyVerifySignatureAPIResponse.Get().(*AlitripMerchantGalaxyVerifySignatureAPIResponse)
+}
+
+// ReleaseAlitripMerchantGalaxyVerifySignatureAPIResponse 将 AlitripMerchantGalaxyVerifySignatureAPIResponse 保存到 sync.Pool
+func ReleaseAlitripMerchantGalaxyVerifySignatureAPIResponse(v *AlitripMerchantGalaxyVerifySignatureAPIResponse) {
+	v.Reset()
+	poolAlitripMerchantGalaxyVerifySignatureAPIResponse.Put(v)
 }

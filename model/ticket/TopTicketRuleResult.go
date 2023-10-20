@@ -1,5 +1,9 @@
 package ticket
 
+import (
+	"sync"
+)
+
 // TopTicketRuleResult 结构体
 type TopTicketRuleResult struct {
 	// 规则名称
@@ -12,4 +16,25 @@ type TopTicketRuleResult struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 阿里景点id
 	AliScenicId int64 `json:"ali_scenic_id,omitempty" xml:"ali_scenic_id,omitempty"`
+}
+
+var poolTopTicketRuleResult = sync.Pool{
+	New: func() any {
+		return new(TopTicketRuleResult)
+	},
+}
+
+// GetTopTicketRuleResult() 从对象池中获取TopTicketRuleResult
+func GetTopTicketRuleResult() *TopTicketRuleResult {
+	return poolTopTicketRuleResult.Get().(*TopTicketRuleResult)
+}
+
+// ReleaseTopTicketRuleResult 释放TopTicketRuleResult
+func ReleaseTopTicketRuleResult(v *TopTicketRuleResult) {
+	v.Name = ""
+	v.OutScenicId = ""
+	v.OutRuleId = ""
+	v.Id = 0
+	v.AliScenicId = 0
+	poolTopTicketRuleResult.Put(v)
 }

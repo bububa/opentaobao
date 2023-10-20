@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // ActivityQueryInfoDto 结构体
 type ActivityQueryInfoDto struct {
 	// 外部查询ID
@@ -10,4 +14,24 @@ type ActivityQueryInfoDto struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 查询的场景类型
 	SceneType int64 `json:"scene_type,omitempty" xml:"scene_type,omitempty"`
+}
+
+var poolActivityQueryInfoDto = sync.Pool{
+	New: func() any {
+		return new(ActivityQueryInfoDto)
+	},
+}
+
+// GetActivityQueryInfoDto() 从对象池中获取ActivityQueryInfoDto
+func GetActivityQueryInfoDto() *ActivityQueryInfoDto {
+	return poolActivityQueryInfoDto.Get().(*ActivityQueryInfoDto)
+}
+
+// ReleaseActivityQueryInfoDto 释放ActivityQueryInfoDto
+func ReleaseActivityQueryInfoDto(v *ActivityQueryInfoDto) {
+	v.OuterTargetIds = v.OuterTargetIds[:0]
+	v.BusinessType = 0
+	v.Type = 0
+	v.SceneType = 0
+	poolActivityQueryInfoDto.Put(v)
 }

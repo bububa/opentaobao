@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoKoubeiTribeOpenOrderPageAPIRequest struct {
 // NewTaobaoKoubeiTribeOpenOrderPageRequest 初始化TaobaoKoubeiTribeOpenOrderPageAPIRequest对象
 func NewTaobaoKoubeiTribeOpenOrderPageRequest() *TaobaoKoubeiTribeOpenOrderPageAPIRequest {
 	return &TaobaoKoubeiTribeOpenOrderPageAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoKoubeiTribeOpenOrderPageAPIRequest) Reset() {
+	r._openId = ""
+	r._orderStatus = ""
+	r._dataSetId = ""
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoKoubeiTribeOpenOrderPageAPIRequest) SetPageSize(_pageSize int64) 
 // GetPageSize PageSize Getter
 func (r TaobaoKoubeiTribeOpenOrderPageAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoKoubeiTribeOpenOrderPageAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoKoubeiTribeOpenOrderPageRequest()
+	},
+}
+
+// GetTaobaoKoubeiTribeOpenOrderPageRequest 从 sync.Pool 获取 TaobaoKoubeiTribeOpenOrderPageAPIRequest
+func GetTaobaoKoubeiTribeOpenOrderPageAPIRequest() *TaobaoKoubeiTribeOpenOrderPageAPIRequest {
+	return poolTaobaoKoubeiTribeOpenOrderPageAPIRequest.Get().(*TaobaoKoubeiTribeOpenOrderPageAPIRequest)
+}
+
+// ReleaseTaobaoKoubeiTribeOpenOrderPageAPIRequest 将 TaobaoKoubeiTribeOpenOrderPageAPIRequest 放入 sync.Pool
+func ReleaseTaobaoKoubeiTribeOpenOrderPageAPIRequest(v *TaobaoKoubeiTribeOpenOrderPageAPIRequest) {
+	v.Reset()
+	poolTaobaoKoubeiTribeOpenOrderPageAPIRequest.Put(v)
 }

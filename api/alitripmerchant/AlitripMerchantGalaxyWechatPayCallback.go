@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.wechat.pay.callback
 //
 // 微信支付回调
-func AlitripMerchantGalaxyWechatPayCallback(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyWechatPayCallbackAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyWechatPayCallbackAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyWechatPayCallbackAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyWechatPayCallback(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyWechatPayCallbackAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyWechatPayCallbackAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

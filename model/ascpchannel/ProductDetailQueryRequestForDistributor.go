@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // ProductDetailQueryRequestForDistributor 结构体
 type ProductDetailQueryRequestForDistributor struct {
 	// 产品 id
@@ -12,4 +16,25 @@ type ProductDetailQueryRequestForDistributor struct {
 	MerchantCode string `json:"merchant_code,omitempty" xml:"merchant_code,omitempty"`
 	// 是否查询sku信息
 	IncludeSku bool `json:"include_sku,omitempty" xml:"include_sku,omitempty"`
+}
+
+var poolProductDetailQueryRequestForDistributor = sync.Pool{
+	New: func() any {
+		return new(ProductDetailQueryRequestForDistributor)
+	},
+}
+
+// GetProductDetailQueryRequestForDistributor() 从对象池中获取ProductDetailQueryRequestForDistributor
+func GetProductDetailQueryRequestForDistributor() *ProductDetailQueryRequestForDistributor {
+	return poolProductDetailQueryRequestForDistributor.Get().(*ProductDetailQueryRequestForDistributor)
+}
+
+// ReleaseProductDetailQueryRequestForDistributor 释放ProductDetailQueryRequestForDistributor
+func ReleaseProductDetailQueryRequestForDistributor(v *ProductDetailQueryRequestForDistributor) {
+	v.ProductId = ""
+	v.SubChannelCode = ""
+	v.ChannelCode = ""
+	v.MerchantCode = ""
+	v.IncludeSku = false
+	poolProductDetailQueryRequestForDistributor.Put(v)
 }

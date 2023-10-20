@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaHmMarketingExpirePromotionCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaHmMarketingExpirePromotionCreateAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaHmMarketingExpirePromotionCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaHmMarketingExpirePromotionCreateAPIResponseModel).Reset()
 }
 
 // AlibabaHmMarketingExpirePromotionCreateAPIResponseModel is 短保优惠创建 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaHmMarketingExpirePromotionCreateAPIResponseModel struct {
 	FailCode string `json:"fail_code,omitempty" xml:"fail_code,omitempty"`
 	// success
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaHmMarketingExpirePromotionCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Datas = m.Datas[:0]
+	m.Message = ""
+	m.FailCode = ""
+	m.IsSuccess = false
+}
+
+var poolAlibabaHmMarketingExpirePromotionCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaHmMarketingExpirePromotionCreateAPIResponse)
+	},
+}
+
+// GetAlibabaHmMarketingExpirePromotionCreateAPIResponse 从 sync.Pool 获取 AlibabaHmMarketingExpirePromotionCreateAPIResponse
+func GetAlibabaHmMarketingExpirePromotionCreateAPIResponse() *AlibabaHmMarketingExpirePromotionCreateAPIResponse {
+	return poolAlibabaHmMarketingExpirePromotionCreateAPIResponse.Get().(*AlibabaHmMarketingExpirePromotionCreateAPIResponse)
+}
+
+// ReleaseAlibabaHmMarketingExpirePromotionCreateAPIResponse 将 AlibabaHmMarketingExpirePromotionCreateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaHmMarketingExpirePromotionCreateAPIResponse(v *AlibabaHmMarketingExpirePromotionCreateAPIResponse) {
+	v.Reset()
+	poolAlibabaHmMarketingExpirePromotionCreateAPIResponse.Put(v)
 }

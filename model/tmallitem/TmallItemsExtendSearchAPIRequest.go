@@ -2,6 +2,7 @@ package tmallitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -61,8 +62,35 @@ type TmallItemsExtendSearchAPIRequest struct {
 // NewTmallItemsExtendSearchRequest 初始化TmallItemsExtendSearchAPIRequest对象
 func NewTmallItemsExtendSearchRequest() *TmallItemsExtendSearchAPIRequest {
 	return &TmallItemsExtendSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(22),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallItemsExtendSearchAPIRequest) Reset() {
+	r._auctionTag = ""
+	r._brand = ""
+	r._cat = ""
+	r._category = ""
+	r._loc = ""
+	r._prop = ""
+	r._q = ""
+	r._sort = ""
+	r._combo = 0
+	r._endPrice = 0
+	r._manyPoints = 0
+	r._miaosha = 0
+	r._nspu = 0
+	r._pageNo = 0
+	r._pageSize = 0
+	r._postFee = 0
+	r._spuid = 0
+	r._startPrice = 0
+	r._supportCod = 0
+	r._userId = 0
+	r._vip = 0
+	r._wwonline = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -366,4 +394,21 @@ func (r *TmallItemsExtendSearchAPIRequest) SetWwonline(_wwonline int64) error {
 // GetWwonline Wwonline Getter
 func (r TmallItemsExtendSearchAPIRequest) GetWwonline() int64 {
 	return r._wwonline
+}
+
+var poolTmallItemsExtendSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallItemsExtendSearchRequest()
+	},
+}
+
+// GetTmallItemsExtendSearchRequest 从 sync.Pool 获取 TmallItemsExtendSearchAPIRequest
+func GetTmallItemsExtendSearchAPIRequest() *TmallItemsExtendSearchAPIRequest {
+	return poolTmallItemsExtendSearchAPIRequest.Get().(*TmallItemsExtendSearchAPIRequest)
+}
+
+// ReleaseTmallItemsExtendSearchAPIRequest 将 TmallItemsExtendSearchAPIRequest 放入 sync.Pool
+func ReleaseTmallItemsExtendSearchAPIRequest(v *TmallItemsExtendSearchAPIRequest) {
+	v.Reset()
+	poolTmallItemsExtendSearchAPIRequest.Put(v)
 }

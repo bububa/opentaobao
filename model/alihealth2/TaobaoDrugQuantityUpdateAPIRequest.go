@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoDrugQuantityUpdateAPIRequest struct {
 // NewTaobaoDrugQuantityUpdateRequest 初始化TaobaoDrugQuantityUpdateAPIRequest对象
 func NewTaobaoDrugQuantityUpdateRequest() *TaobaoDrugQuantityUpdateAPIRequest {
 	return &TaobaoDrugQuantityUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoDrugQuantityUpdateAPIRequest) Reset() {
+	r._outStoreId = ""
+	r._outItemId = ""
+	r._quantity = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoDrugQuantityUpdateAPIRequest) SetQuantity(_quantity int64) error 
 // GetQuantity Quantity Getter
 func (r TaobaoDrugQuantityUpdateAPIRequest) GetQuantity() int64 {
 	return r._quantity
+}
+
+var poolTaobaoDrugQuantityUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoDrugQuantityUpdateRequest()
+	},
+}
+
+// GetTaobaoDrugQuantityUpdateRequest 从 sync.Pool 获取 TaobaoDrugQuantityUpdateAPIRequest
+func GetTaobaoDrugQuantityUpdateAPIRequest() *TaobaoDrugQuantityUpdateAPIRequest {
+	return poolTaobaoDrugQuantityUpdateAPIRequest.Get().(*TaobaoDrugQuantityUpdateAPIRequest)
+}
+
+// ReleaseTaobaoDrugQuantityUpdateAPIRequest 将 TaobaoDrugQuantityUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoDrugQuantityUpdateAPIRequest(v *TaobaoDrugQuantityUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoDrugQuantityUpdateAPIRequest.Put(v)
 }

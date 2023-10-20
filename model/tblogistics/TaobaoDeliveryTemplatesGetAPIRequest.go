@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoDeliveryTemplatesGetAPIRequest struct {
 // NewTaobaoDeliveryTemplatesGetRequest 初始化TaobaoDeliveryTemplatesGetAPIRequest对象
 func NewTaobaoDeliveryTemplatesGetRequest() *TaobaoDeliveryTemplatesGetAPIRequest {
 	return &TaobaoDeliveryTemplatesGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoDeliveryTemplatesGetAPIRequest) Reset() {
+	r._fields = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoDeliveryTemplatesGetAPIRequest) SetFields(_fields string) error {
 // GetFields Fields Getter
 func (r TaobaoDeliveryTemplatesGetAPIRequest) GetFields() string {
 	return r._fields
+}
+
+var poolTaobaoDeliveryTemplatesGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoDeliveryTemplatesGetRequest()
+	},
+}
+
+// GetTaobaoDeliveryTemplatesGetRequest 从 sync.Pool 获取 TaobaoDeliveryTemplatesGetAPIRequest
+func GetTaobaoDeliveryTemplatesGetAPIRequest() *TaobaoDeliveryTemplatesGetAPIRequest {
+	return poolTaobaoDeliveryTemplatesGetAPIRequest.Get().(*TaobaoDeliveryTemplatesGetAPIRequest)
+}
+
+// ReleaseTaobaoDeliveryTemplatesGetAPIRequest 将 TaobaoDeliveryTemplatesGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoDeliveryTemplatesGetAPIRequest(v *TaobaoDeliveryTemplatesGetAPIRequest) {
+	v.Reset()
+	poolTaobaoDeliveryTemplatesGetAPIRequest.Put(v)
 }

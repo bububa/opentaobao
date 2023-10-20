@@ -1,5 +1,9 @@
 package mozi
 
+import (
+	"sync"
+)
+
 // GetTenantByIdResult 结构体
 type GetTenantByIdResult struct {
 	// requestId
@@ -12,4 +16,25 @@ type GetTenantByIdResult struct {
 	Data *Tenant `json:"data,omitempty" xml:"data,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolGetTenantByIdResult = sync.Pool{
+	New: func() any {
+		return new(GetTenantByIdResult)
+	},
+}
+
+// GetGetTenantByIdResult() 从对象池中获取GetTenantByIdResult
+func GetGetTenantByIdResult() *GetTenantByIdResult {
+	return poolGetTenantByIdResult.Get().(*GetTenantByIdResult)
+}
+
+// ReleaseGetTenantByIdResult 释放GetTenantByIdResult
+func ReleaseGetTenantByIdResult(v *GetTenantByIdResult) {
+	v.RequestId = ""
+	v.ResponseMessage = ""
+	v.ResponseCode = ""
+	v.Data = nil
+	v.Success = false
+	poolGetTenantByIdResult.Put(v)
 }

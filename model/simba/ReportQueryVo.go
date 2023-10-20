@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // ReportQueryVo 结构体
 type ReportQueryVo struct {
 	// 场景筛选code
@@ -54,4 +58,46 @@ type ReportQueryVo struct {
 	Offset int64 `json:"offset,omitempty" xml:"offset,omitempty"`
 	// 页面大小
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolReportQueryVo = sync.Pool{
+	New: func() any {
+		return new(ReportQueryVo)
+	},
+}
+
+// GetReportQueryVo() 从对象池中获取ReportQueryVo
+func GetReportQueryVo() *ReportQueryVo {
+	return poolReportQueryVo.Get().(*ReportQueryVo)
+}
+
+// ReleaseReportQueryVo 释放ReportQueryVo
+func ReleaseReportQueryVo(v *ReportQueryVo) {
+	v.BizCodeInList = v.BizCodeInList[:0]
+	v.StrategyOptimizeTargetInList = v.StrategyOptimizeTargetInList[:0]
+	v.StrategyCampaignIdInList = v.StrategyCampaignIdInList[:0]
+	v.StrategyAdgroupIdInList = v.StrategyAdgroupIdInList[:0]
+	v.SubPromotionTypes = v.SubPromotionTypes[:0]
+	v.ItemIds = v.ItemIds[:0]
+	v.AdzonePkgIdInList = v.AdzonePkgIdInList[:0]
+	v.BidWordTypeInList = v.BidWordTypeInList[:0]
+	v.ProvinceIdInList = v.ProvinceIdInList[:0]
+	v.QueryDomains = v.QueryDomains[:0]
+	v.QueryFieldInList = v.QueryFieldInList[:0]
+	v.SplitType = ""
+	v.UnifyType = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.StrategyAdgroupIdOrName = ""
+	v.StrategyTargetTitleLike = ""
+	v.StrategyCreativeIdOrName = ""
+	v.StrategyBidwordNameLike = ""
+	v.StrategyBidwordPkgNameLike = ""
+	v.ExcelName = ""
+	v.FieldType = ""
+	v.ParentAdcName = ""
+	v.EffectEqual = 0
+	v.Offset = 0
+	v.PageSize = 0
+	poolReportQueryVo.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.rdc.aligenius.identification.case.result.update
 //
 // 同步鉴定工单结果信息
-func TaobaoRdcAligeniusIdentificationCaseResultUpdate(clt *core.SDKClient, req *refund.TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest, session string) (*refund.TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIResponse, error) {
-	var resp refund.TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoRdcAligeniusIdentificationCaseResultUpdate(clt *core.SDKClient, req *refund.TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest, resp *refund.TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

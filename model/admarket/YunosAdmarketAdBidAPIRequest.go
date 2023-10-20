@@ -2,6 +2,7 @@ package admarket
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YunosAdmarketAdBidAPIRequest struct {
 // NewYunosAdmarketAdBidRequest 初始化YunosAdmarketAdBidAPIRequest对象
 func NewYunosAdmarketAdBidRequest() *YunosAdmarketAdBidAPIRequest {
 	return &YunosAdmarketAdBidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosAdmarketAdBidAPIRequest) Reset() {
+	r._bidRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YunosAdmarketAdBidAPIRequest) SetBidRequest(_bidRequest *BidRequest) er
 // GetBidRequest BidRequest Getter
 func (r YunosAdmarketAdBidAPIRequest) GetBidRequest() *BidRequest {
 	return r._bidRequest
+}
+
+var poolYunosAdmarketAdBidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosAdmarketAdBidRequest()
+	},
+}
+
+// GetYunosAdmarketAdBidRequest 从 sync.Pool 获取 YunosAdmarketAdBidAPIRequest
+func GetYunosAdmarketAdBidAPIRequest() *YunosAdmarketAdBidAPIRequest {
+	return poolYunosAdmarketAdBidAPIRequest.Get().(*YunosAdmarketAdBidAPIRequest)
+}
+
+// ReleaseYunosAdmarketAdBidAPIRequest 将 YunosAdmarketAdBidAPIRequest 放入 sync.Pool
+func ReleaseYunosAdmarketAdBidAPIRequest(v *YunosAdmarketAdBidAPIRequest) {
+	v.Reset()
+	poolYunosAdmarketAdBidAPIRequest.Put(v)
 }

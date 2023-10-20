@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaCampusAclNewPageuserroleAPIRequest struct {
 // NewAlibabaCampusAclNewPageuserroleRequest 初始化AlibabaCampusAclNewPageuserroleAPIRequest对象
 func NewAlibabaCampusAclNewPageuserroleRequest() *AlibabaCampusAclNewPageuserroleAPIRequest {
 	return &AlibabaCampusAclNewPageuserroleAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusAclNewPageuserroleAPIRequest) Reset() {
+	r._workbenchcontext = nil
+	r._usersRoleQueryParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaCampusAclNewPageuserroleAPIRequest) SetUsersRoleQueryParam(_user
 // GetUsersRoleQueryParam UsersRoleQueryParam Getter
 func (r AlibabaCampusAclNewPageuserroleAPIRequest) GetUsersRoleQueryParam() *UsersRoleQueryParam {
 	return r._usersRoleQueryParam
+}
+
+var poolAlibabaCampusAclNewPageuserroleAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusAclNewPageuserroleRequest()
+	},
+}
+
+// GetAlibabaCampusAclNewPageuserroleRequest 从 sync.Pool 获取 AlibabaCampusAclNewPageuserroleAPIRequest
+func GetAlibabaCampusAclNewPageuserroleAPIRequest() *AlibabaCampusAclNewPageuserroleAPIRequest {
+	return poolAlibabaCampusAclNewPageuserroleAPIRequest.Get().(*AlibabaCampusAclNewPageuserroleAPIRequest)
+}
+
+// ReleaseAlibabaCampusAclNewPageuserroleAPIRequest 将 AlibabaCampusAclNewPageuserroleAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusAclNewPageuserroleAPIRequest(v *AlibabaCampusAclNewPageuserroleAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusAclNewPageuserroleAPIRequest.Put(v)
 }

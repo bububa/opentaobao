@@ -9,11 +9,6 @@ import (
 // taobao.paimai.item.cooperation.sync
 //
 // 商品同步
-func TaobaoPaimaiItemCooperationSync(clt *core.SDKClient, req *paimai.TaobaoPaimaiItemCooperationSyncAPIRequest, session string) (*paimai.TaobaoPaimaiItemCooperationSyncAPIResponse, error) {
-	var resp paimai.TaobaoPaimaiItemCooperationSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoPaimaiItemCooperationSync(clt *core.SDKClient, req *paimai.TaobaoPaimaiItemCooperationSyncAPIRequest, resp *paimai.TaobaoPaimaiItemCooperationSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

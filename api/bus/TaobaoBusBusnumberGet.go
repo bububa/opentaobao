@@ -9,11 +9,6 @@ import (
 // taobao.bus.busnumber.get
 //
 // 提供汽车票车次查询服务
-func TaobaoBusBusnumberGet(clt *core.SDKClient, req *bus.TaobaoBusBusnumberGetAPIRequest, session string) (*bus.TaobaoBusBusnumberGetAPIResponse, error) {
-	var resp bus.TaobaoBusBusnumberGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoBusBusnumberGet(clt *core.SDKClient, req *bus.TaobaoBusBusnumberGetAPIRequest, resp *bus.TaobaoBusBusnumberGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

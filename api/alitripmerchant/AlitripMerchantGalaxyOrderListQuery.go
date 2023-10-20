@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.order.list.query
 //
 // 为C端用户提供酒店预订订单列表查询服务，包括订单支付状态、订单日期
-func AlitripMerchantGalaxyOrderListQuery(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyOrderListQueryAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyOrderListQueryAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyOrderListQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyOrderListQuery(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyOrderListQueryAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyOrderListQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

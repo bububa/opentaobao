@@ -9,11 +9,6 @@ import (
 // taobao.miniapp.messsage.reply
 //
 // 外部 isv 调用该进口来进行轻店铺消息的回复
-func TaobaoMiniappMesssageReply(clt *core.SDKClient, req *user.TaobaoMiniappMesssageReplyAPIRequest, session string) (*user.TaobaoMiniappMesssageReplyAPIResponse, error) {
-	var resp user.TaobaoMiniappMesssageReplyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoMiniappMesssageReply(clt *core.SDKClient, req *user.TaobaoMiniappMesssageReplyAPIRequest, resp *user.TaobaoMiniappMesssageReplyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

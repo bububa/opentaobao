@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlitripMerchantGalaxyDerbyMemberVoucherCardOrderCancelAPIRequest struct {
 // NewAlitripMerchantGalaxyDerbyMemberVoucherCardOrderCancelRequest 初始化AlitripMerchantGalaxyDerbyMemberVoucherCardOrderCancelAPIRequest对象
 func NewAlitripMerchantGalaxyDerbyMemberVoucherCardOrderCancelRequest() *AlitripMerchantGalaxyDerbyMemberVoucherCardOrderCancelAPIRequest {
 	return &AlitripMerchantGalaxyDerbyMemberVoucherCardOrderCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyDerbyMemberVoucherCardOrderCancelAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._token = ""
+	r._derbyVoucherCardCancelDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlitripMerchantGalaxyDerbyMemberVoucherCardOrderCancelAPIRequest) SetDe
 // GetDerbyVoucherCardCancelDTO DerbyVoucherCardCancelDTO Getter
 func (r AlitripMerchantGalaxyDerbyMemberVoucherCardOrderCancelAPIRequest) GetDerbyVoucherCardCancelDTO() *DerbyVoucherCardCancelDto {
 	return r._derbyVoucherCardCancelDTO
+}
+
+var poolAlitripMerchantGalaxyDerbyMemberVoucherCardOrderCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyDerbyMemberVoucherCardOrderCancelRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyDerbyMemberVoucherCardOrderCancelRequest 从 sync.Pool 获取 AlitripMerchantGalaxyDerbyMemberVoucherCardOrderCancelAPIRequest
+func GetAlitripMerchantGalaxyDerbyMemberVoucherCardOrderCancelAPIRequest() *AlitripMerchantGalaxyDerbyMemberVoucherCardOrderCancelAPIRequest {
+	return poolAlitripMerchantGalaxyDerbyMemberVoucherCardOrderCancelAPIRequest.Get().(*AlitripMerchantGalaxyDerbyMemberVoucherCardOrderCancelAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyDerbyMemberVoucherCardOrderCancelAPIRequest 将 AlitripMerchantGalaxyDerbyMemberVoucherCardOrderCancelAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyDerbyMemberVoucherCardOrderCancelAPIRequest(v *AlitripMerchantGalaxyDerbyMemberVoucherCardOrderCancelAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyDerbyMemberVoucherCardOrderCancelAPIRequest.Put(v)
 }

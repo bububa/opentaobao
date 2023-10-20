@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -14,6 +15,12 @@ import (
 type AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIResponseModel).Reset()
 }
 
 // AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIResponseModel is 出入库单据上传 成功返回结果
@@ -29,4 +36,30 @@ type AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIResponseModel struct {
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// 是否成功(true 成功 false 失败)
 	ResponseSuccess bool `json:"response_success,omitempty" xml:"response_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Model = ""
+	m.MsgCode = ""
+	m.MsgInfo = ""
+	m.ResponseSuccess = false
+}
+
+var poolAlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIResponse 从 sync.Pool 获取 AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIResponse
+func GetAlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIResponse() *AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIResponse {
+	return poolAlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIResponse.Get().(*AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIResponse 将 AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIResponse(v *AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIResponse.Put(v)
 }

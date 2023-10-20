@@ -2,6 +2,7 @@ package aliexpress
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AliexpressSocialInsDirectresultUpdateAPIRequest struct {
 // NewAliexpressSocialInsDirectresultUpdateRequest 初始化AliexpressSocialInsDirectresultUpdateAPIRequest对象
 func NewAliexpressSocialInsDirectresultUpdateRequest() *AliexpressSocialInsDirectresultUpdateAPIRequest {
 	return &AliexpressSocialInsDirectresultUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressSocialInsDirectresultUpdateAPIRequest) Reset() {
+	r._receiveInsId = ""
+	r._senderInsId = ""
+	r._id = 0
+	r._result = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AliexpressSocialInsDirectresultUpdateAPIRequest) SetResult(_result int6
 // GetResult Result Getter
 func (r AliexpressSocialInsDirectresultUpdateAPIRequest) GetResult() int64 {
 	return r._result
+}
+
+var poolAliexpressSocialInsDirectresultUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressSocialInsDirectresultUpdateRequest()
+	},
+}
+
+// GetAliexpressSocialInsDirectresultUpdateRequest 从 sync.Pool 获取 AliexpressSocialInsDirectresultUpdateAPIRequest
+func GetAliexpressSocialInsDirectresultUpdateAPIRequest() *AliexpressSocialInsDirectresultUpdateAPIRequest {
+	return poolAliexpressSocialInsDirectresultUpdateAPIRequest.Get().(*AliexpressSocialInsDirectresultUpdateAPIRequest)
+}
+
+// ReleaseAliexpressSocialInsDirectresultUpdateAPIRequest 将 AliexpressSocialInsDirectresultUpdateAPIRequest 放入 sync.Pool
+func ReleaseAliexpressSocialInsDirectresultUpdateAPIRequest(v *AliexpressSocialInsDirectresultUpdateAPIRequest) {
+	v.Reset()
+	poolAliexpressSocialInsDirectresultUpdateAPIRequest.Put(v)
 }

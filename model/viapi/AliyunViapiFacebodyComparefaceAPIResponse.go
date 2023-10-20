@@ -2,6 +2,7 @@ package viapi
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AliyunViapiFacebodyComparefaceAPIResponse struct {
 	AliyunViapiFacebodyComparefaceAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AliyunViapiFacebodyComparefaceAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliyunViapiFacebodyComparefaceAPIResponseModel).Reset()
+}
+
 // AliyunViapiFacebodyComparefaceAPIResponseModel is 人脸比对1：1 成功返回结果
 type AliyunViapiFacebodyComparefaceAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliyun_viapi_facebody_compareface_response"`
@@ -24,4 +31,28 @@ type AliyunViapiFacebodyComparefaceAPIResponseModel struct {
 	TaobaoRequestId string `json:"taobao_request_id,omitempty" xml:"taobao_request_id,omitempty"`
 	// 系统自动生成
 	Data *AliyunViapiFacebodyComparefaceData `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliyunViapiFacebodyComparefaceAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TaobaoRequestId = ""
+	m.Data = nil
+}
+
+var poolAliyunViapiFacebodyComparefaceAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliyunViapiFacebodyComparefaceAPIResponse)
+	},
+}
+
+// GetAliyunViapiFacebodyComparefaceAPIResponse 从 sync.Pool 获取 AliyunViapiFacebodyComparefaceAPIResponse
+func GetAliyunViapiFacebodyComparefaceAPIResponse() *AliyunViapiFacebodyComparefaceAPIResponse {
+	return poolAliyunViapiFacebodyComparefaceAPIResponse.Get().(*AliyunViapiFacebodyComparefaceAPIResponse)
+}
+
+// ReleaseAliyunViapiFacebodyComparefaceAPIResponse 将 AliyunViapiFacebodyComparefaceAPIResponse 保存到 sync.Pool
+func ReleaseAliyunViapiFacebodyComparefaceAPIResponse(v *AliyunViapiFacebodyComparefaceAPIResponse) {
+	v.Reset()
+	poolAliyunViapiFacebodyComparefaceAPIResponse.Put(v)
 }

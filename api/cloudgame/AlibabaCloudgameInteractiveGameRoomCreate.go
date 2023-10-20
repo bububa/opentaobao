@@ -9,11 +9,6 @@ import (
 // alibaba.cloudgame.interactive.game.room.create
 //
 // 建游戏房间
-func AlibabaCloudgameInteractiveGameRoomCreate(clt *core.SDKClient, req *cloudgame.AlibabaCloudgameInteractiveGameRoomCreateAPIRequest, session string) (*cloudgame.AlibabaCloudgameInteractiveGameRoomCreateAPIResponse, error) {
-	var resp cloudgame.AlibabaCloudgameInteractiveGameRoomCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCloudgameInteractiveGameRoomCreate(clt *core.SDKClient, req *cloudgame.AlibabaCloudgameInteractiveGameRoomCreateAPIRequest, resp *cloudgame.AlibabaCloudgameInteractiveGameRoomCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

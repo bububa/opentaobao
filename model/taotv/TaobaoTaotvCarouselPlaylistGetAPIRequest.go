@@ -2,6 +2,7 @@ package taotv
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoTaotvCarouselPlaylistGetAPIRequest struct {
 // NewTaobaoTaotvCarouselPlaylistGetRequest 初始化TaobaoTaotvCarouselPlaylistGetAPIRequest对象
 func NewTaobaoTaotvCarouselPlaylistGetRequest() *TaobaoTaotvCarouselPlaylistGetAPIRequest {
 	return &TaobaoTaotvCarouselPlaylistGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTaotvCarouselPlaylistGetAPIRequest) Reset() {
+	r._systemInfo = ""
+	r._channelId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoTaotvCarouselPlaylistGetAPIRequest) SetChannelId(_channelId int64
 // GetChannelId ChannelId Getter
 func (r TaobaoTaotvCarouselPlaylistGetAPIRequest) GetChannelId() int64 {
 	return r._channelId
+}
+
+var poolTaobaoTaotvCarouselPlaylistGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTaotvCarouselPlaylistGetRequest()
+	},
+}
+
+// GetTaobaoTaotvCarouselPlaylistGetRequest 从 sync.Pool 获取 TaobaoTaotvCarouselPlaylistGetAPIRequest
+func GetTaobaoTaotvCarouselPlaylistGetAPIRequest() *TaobaoTaotvCarouselPlaylistGetAPIRequest {
+	return poolTaobaoTaotvCarouselPlaylistGetAPIRequest.Get().(*TaobaoTaotvCarouselPlaylistGetAPIRequest)
+}
+
+// ReleaseTaobaoTaotvCarouselPlaylistGetAPIRequest 将 TaobaoTaotvCarouselPlaylistGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTaotvCarouselPlaylistGetAPIRequest(v *TaobaoTaotvCarouselPlaylistGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTaotvCarouselPlaylistGetAPIRequest.Put(v)
 }

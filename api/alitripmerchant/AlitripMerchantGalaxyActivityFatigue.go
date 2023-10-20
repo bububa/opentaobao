@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.activity.fatigue
 //
 // 星河产品-营销抽奖首页弹窗疲劳度控制服务
-func AlitripMerchantGalaxyActivityFatigue(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyActivityFatigueAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyActivityFatigueAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyActivityFatigueAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyActivityFatigue(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyActivityFatigueAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyActivityFatigueAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

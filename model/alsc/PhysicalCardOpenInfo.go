@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // PhysicalCardOpenInfo 结构体
 type PhysicalCardOpenInfo struct {
 	// 绑定操作人ID
@@ -38,4 +42,38 @@ type PhysicalCardOpenInfo struct {
 	ExtInfo *Extinfo `json:"ext_info,omitempty" xml:"ext_info,omitempty"`
 	// 逻辑删除
 	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
+}
+
+var poolPhysicalCardOpenInfo = sync.Pool{
+	New: func() any {
+		return new(PhysicalCardOpenInfo)
+	},
+}
+
+// GetPhysicalCardOpenInfo() 从对象池中获取PhysicalCardOpenInfo
+func GetPhysicalCardOpenInfo() *PhysicalCardOpenInfo {
+	return poolPhysicalCardOpenInfo.Get().(*PhysicalCardOpenInfo)
+}
+
+// ReleasePhysicalCardOpenInfo 释放PhysicalCardOpenInfo
+func ReleasePhysicalCardOpenInfo(v *PhysicalCardOpenInfo) {
+	v.BindOperatorId = ""
+	v.BindShopId = ""
+	v.BindTime = ""
+	v.CardId = ""
+	v.CardTemplateId = ""
+	v.CardType = ""
+	v.CreateBy = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.OperatorId = ""
+	v.PhysicalCardId = ""
+	v.PlanId = ""
+	v.PublishId = ""
+	v.Status = ""
+	v.UpdateBy = ""
+	v.CardTemplateName = ""
+	v.ExtInfo = nil
+	v.Deleted = false
+	poolPhysicalCardOpenInfo.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallServicecenterWorkcardDeliveryAPIResponse struct {
 	TmallServicecenterWorkcardDeliveryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallServicecenterWorkcardDeliveryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallServicecenterWorkcardDeliveryAPIResponseModel).Reset()
+}
+
 // TmallServicecenterWorkcardDeliveryAPIResponseModel is 开始配送工单 成功返回结果
 type TmallServicecenterWorkcardDeliveryAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_workcard_delivery_response"`
@@ -26,4 +33,29 @@ type TmallServicecenterWorkcardDeliveryAPIResponseModel struct {
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// 是否成功
 	MsgSuccess bool `json:"msg_success,omitempty" xml:"msg_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallServicecenterWorkcardDeliveryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgCode = ""
+	m.MsgInfo = ""
+	m.MsgSuccess = false
+}
+
+var poolTmallServicecenterWorkcardDeliveryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallServicecenterWorkcardDeliveryAPIResponse)
+	},
+}
+
+// GetTmallServicecenterWorkcardDeliveryAPIResponse 从 sync.Pool 获取 TmallServicecenterWorkcardDeliveryAPIResponse
+func GetTmallServicecenterWorkcardDeliveryAPIResponse() *TmallServicecenterWorkcardDeliveryAPIResponse {
+	return poolTmallServicecenterWorkcardDeliveryAPIResponse.Get().(*TmallServicecenterWorkcardDeliveryAPIResponse)
+}
+
+// ReleaseTmallServicecenterWorkcardDeliveryAPIResponse 将 TmallServicecenterWorkcardDeliveryAPIResponse 保存到 sync.Pool
+func ReleaseTmallServicecenterWorkcardDeliveryAPIResponse(v *TmallServicecenterWorkcardDeliveryAPIResponse) {
+	v.Reset()
+	poolTmallServicecenterWorkcardDeliveryAPIResponse.Put(v)
 }

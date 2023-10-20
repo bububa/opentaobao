@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // VoucherStatusChangeOpenReq 结构体
 type VoucherStatusChangeOpenReq struct {
 	// 优惠券集合
@@ -28,4 +32,33 @@ type VoucherStatusChangeOpenReq struct {
 	Source string `json:"source,omitempty" xml:"source,omitempty"`
 	// *      * 核销，正常到核销           NORMAL_ISUSED,     *      * 反核销，已使用到正常（补发一张新的优惠券）           ISUSED_NORMAL,
 	VoucherStatusAction string `json:"voucher_status_action,omitempty" xml:"voucher_status_action,omitempty"`
+}
+
+var poolVoucherStatusChangeOpenReq = sync.Pool{
+	New: func() any {
+		return new(VoucherStatusChangeOpenReq)
+	},
+}
+
+// GetVoucherStatusChangeOpenReq() 从对象池中获取VoucherStatusChangeOpenReq
+func GetVoucherStatusChangeOpenReq() *VoucherStatusChangeOpenReq {
+	return poolVoucherStatusChangeOpenReq.Get().(*VoucherStatusChangeOpenReq)
+}
+
+// ReleaseVoucherStatusChangeOpenReq 释放VoucherStatusChangeOpenReq
+func ReleaseVoucherStatusChangeOpenReq(v *VoucherStatusChangeOpenReq) {
+	v.VoucherIdList = v.VoucherIdList[:0]
+	v.VoucherPointList = v.VoucherPointList[:0]
+	v.BrandId = ""
+	v.CustomerId = ""
+	v.OperatorId = ""
+	v.OperatorName = ""
+	v.OutBrandId = ""
+	v.OutOrderId = ""
+	v.OutShopId = ""
+	v.RequestId = ""
+	v.ShopId = ""
+	v.Source = ""
+	v.VoucherStatusAction = ""
+	poolVoucherStatusChangeOpenReq.Put(v)
 }

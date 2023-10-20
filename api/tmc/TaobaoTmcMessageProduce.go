@@ -9,11 +9,6 @@ import (
 // taobao.tmc.message.produce
 //
 // 发布单条消息
-func TaobaoTmcMessageProduce(clt *core.SDKClient, req *tmc.TaobaoTmcMessageProduceAPIRequest, session string) (*tmc.TaobaoTmcMessageProduceAPIResponse, error) {
-	var resp tmc.TaobaoTmcMessageProduceAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTmcMessageProduce(clt *core.SDKClient, req *tmc.TaobaoTmcMessageProduceAPIRequest, resp *tmc.TaobaoTmcMessageProduceAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

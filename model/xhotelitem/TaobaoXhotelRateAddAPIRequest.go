@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -59,8 +60,34 @@ type TaobaoXhotelRateAddAPIRequest struct {
 // NewTaobaoXhotelRateAddRequest 初始化TaobaoXhotelRateAddAPIRequest对象
 func NewTaobaoXhotelRateAddRequest() *TaobaoXhotelRateAddAPIRequest {
 	return &TaobaoXhotelRateAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(21),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelRateAddAPIRequest) Reset() {
+	r._vendor = ""
+	r._rateplanCode = ""
+	r._outRid = ""
+	r._rateSwitchCal = ""
+	r._name = ""
+	r._inventoryPrice = ""
+	r._lockEndTime = ""
+	r._lockStartTime = ""
+	r._currencyCodeName = ""
+	r._operator = ""
+	r._onlineBookingBindingInfo = ""
+	r._hotelXitemInfos = ""
+	r._gid = 0
+	r._rpid = 0
+	r._addBed = 0
+	r._addBedPrice = 0
+	r._currencyCode = 0
+	r._shijiaTag = 0
+	r._jishiquerenTag = 0
+	r._source = 0
+	r._status = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -352,4 +379,21 @@ func (r *TaobaoXhotelRateAddAPIRequest) SetStatus(_status int64) error {
 // GetStatus Status Getter
 func (r TaobaoXhotelRateAddAPIRequest) GetStatus() int64 {
 	return r._status
+}
+
+var poolTaobaoXhotelRateAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelRateAddRequest()
+	},
+}
+
+// GetTaobaoXhotelRateAddRequest 从 sync.Pool 获取 TaobaoXhotelRateAddAPIRequest
+func GetTaobaoXhotelRateAddAPIRequest() *TaobaoXhotelRateAddAPIRequest {
+	return poolTaobaoXhotelRateAddAPIRequest.Get().(*TaobaoXhotelRateAddAPIRequest)
+}
+
+// ReleaseTaobaoXhotelRateAddAPIRequest 将 TaobaoXhotelRateAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelRateAddAPIRequest(v *TaobaoXhotelRateAddAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelRateAddAPIRequest.Put(v)
 }

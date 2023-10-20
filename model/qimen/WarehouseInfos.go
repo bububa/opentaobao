@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // WarehouseInfos 结构体
 type WarehouseInfos struct {
 	// 仓库编码，string（50）
@@ -24,4 +28,31 @@ type WarehouseInfos struct {
 	Mobile string `json:"mobile,omitempty" xml:"mobile,omitempty"`
 	// 仓库状态，string（20）
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolWarehouseInfos = sync.Pool{
+	New: func() any {
+		return new(WarehouseInfos)
+	},
+}
+
+// GetWarehouseInfos() 从对象池中获取WarehouseInfos
+func GetWarehouseInfos() *WarehouseInfos {
+	return poolWarehouseInfos.Get().(*WarehouseInfos)
+}
+
+// ReleaseWarehouseInfos 释放WarehouseInfos
+func ReleaseWarehouseInfos(v *WarehouseInfos) {
+	v.WarehouseCode = ""
+	v.WarehouseName = ""
+	v.Province = ""
+	v.City = ""
+	v.Area = ""
+	v.Town = ""
+	v.DetailAddress = ""
+	v.Name = ""
+	v.Tel = ""
+	v.Mobile = ""
+	v.Status = ""
+	poolWarehouseInfos.Put(v)
 }

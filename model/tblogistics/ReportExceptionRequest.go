@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // ReportExceptionRequest 结构体
 type ReportExceptionRequest struct {
 	// 异常包裹图片链接
@@ -36,4 +40,37 @@ type ReportExceptionRequest struct {
 	PackageOwnerCode string `json:"package_owner_code,omitempty" xml:"package_owner_code,omitempty"`
 	// 拓展属性
 	ExtendProps string `json:"extend_props,omitempty" xml:"extend_props,omitempty"`
+}
+
+var poolReportExceptionRequest = sync.Pool{
+	New: func() any {
+		return new(ReportExceptionRequest)
+	},
+}
+
+// GetReportExceptionRequest() 从对象池中获取ReportExceptionRequest
+func GetReportExceptionRequest() *ReportExceptionRequest {
+	return poolReportExceptionRequest.Get().(*ReportExceptionRequest)
+}
+
+// ReleaseReportExceptionRequest 释放ReportExceptionRequest
+func ReleaseReportExceptionRequest(v *ReportExceptionRequest) {
+	v.PackageImage = v.PackageImage[:0]
+	v.ErrorType = v.ErrorType[:0]
+	v.LogisticsOwner = ""
+	v.SupplierId = ""
+	v.WarehouseCode = ""
+	v.MailNo = ""
+	v.OrderCode = ""
+	v.OrderType = ""
+	v.OuterOrderCode = ""
+	v.TmsCpCode = ""
+	v.OperateTime = ""
+	v.SenderMobile = ""
+	v.WmsOperateNode = ""
+	v.ErrorOperateStatus = ""
+	v.ErrorMsg = ""
+	v.PackageOwnerCode = ""
+	v.ExtendProps = ""
+	poolReportExceptionRequest.Put(v)
 }

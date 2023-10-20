@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest struct {
 // NewTaobaoAilabAicloudTopMemoAlarmCreateRequest 初始化TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest对象
 func NewTaobaoAilabAicloudTopMemoAlarmCreateRequest() *TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest {
 	return &TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest) Reset() {
+	r._ext = ""
+	r._schema = ""
+	r._userId = ""
+	r._utdId = ""
+	r._paramCreateAlarmParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest) SetParamCreateAlarmPara
 // GetParamCreateAlarmParam ParamCreateAlarmParam Getter
 func (r TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest) GetParamCreateAlarmParam() *CreateAlarmParam {
 	return r._paramCreateAlarmParam
+}
+
+var poolTaobaoAilabAicloudTopMemoAlarmCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopMemoAlarmCreateRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopMemoAlarmCreateRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest
+func GetTaobaoAilabAicloudTopMemoAlarmCreateAPIRequest() *TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest {
+	return poolTaobaoAilabAicloudTopMemoAlarmCreateAPIRequest.Get().(*TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopMemoAlarmCreateAPIRequest 将 TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopMemoAlarmCreateAPIRequest(v *TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopMemoAlarmCreateAPIRequest.Put(v)
 }

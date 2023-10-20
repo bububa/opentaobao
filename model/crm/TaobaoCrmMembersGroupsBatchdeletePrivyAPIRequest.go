@@ -2,6 +2,7 @@ package crm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoCrmMembersGroupsBatchdeletePrivyAPIRequest struct {
 // NewTaobaoCrmMembersGroupsBatchdeletePrivyRequest 初始化TaobaoCrmMembersGroupsBatchdeletePrivyAPIRequest对象
 func NewTaobaoCrmMembersGroupsBatchdeletePrivyRequest() *TaobaoCrmMembersGroupsBatchdeletePrivyAPIRequest {
 	return &TaobaoCrmMembersGroupsBatchdeletePrivyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCrmMembersGroupsBatchdeletePrivyAPIRequest) Reset() {
+	r._groupIds = r._groupIds[:0]
+	r._ouids = r._ouids[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoCrmMembersGroupsBatchdeletePrivyAPIRequest) SetOuids(_ouids []str
 // GetOuids Ouids Getter
 func (r TaobaoCrmMembersGroupsBatchdeletePrivyAPIRequest) GetOuids() []string {
 	return r._ouids
+}
+
+var poolTaobaoCrmMembersGroupsBatchdeletePrivyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCrmMembersGroupsBatchdeletePrivyRequest()
+	},
+}
+
+// GetTaobaoCrmMembersGroupsBatchdeletePrivyRequest 从 sync.Pool 获取 TaobaoCrmMembersGroupsBatchdeletePrivyAPIRequest
+func GetTaobaoCrmMembersGroupsBatchdeletePrivyAPIRequest() *TaobaoCrmMembersGroupsBatchdeletePrivyAPIRequest {
+	return poolTaobaoCrmMembersGroupsBatchdeletePrivyAPIRequest.Get().(*TaobaoCrmMembersGroupsBatchdeletePrivyAPIRequest)
+}
+
+// ReleaseTaobaoCrmMembersGroupsBatchdeletePrivyAPIRequest 将 TaobaoCrmMembersGroupsBatchdeletePrivyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCrmMembersGroupsBatchdeletePrivyAPIRequest(v *TaobaoCrmMembersGroupsBatchdeletePrivyAPIRequest) {
+	v.Reset()
+	poolTaobaoCrmMembersGroupsBatchdeletePrivyAPIRequest.Put(v)
 }

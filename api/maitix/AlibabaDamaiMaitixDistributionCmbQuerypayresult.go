@@ -9,11 +9,6 @@ import (
 // alibaba.damai.maitix.distribution.cmb.querypayresult
 //
 // queryPayResult
-func AlibabaDamaiMaitixDistributionCmbQuerypayresult(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIRequest, session string) (*maitix.AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIResponse, error) {
-	var resp maitix.AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMaitixDistributionCmbQuerypayresult(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIRequest, resp *maitix.AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

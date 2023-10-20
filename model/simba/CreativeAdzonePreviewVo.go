@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // CreativeAdzonePreviewVo 结构体
 type CreativeAdzonePreviewVo struct {
 	// 创意预览返回前端展示对象
@@ -10,4 +14,24 @@ type CreativeAdzonePreviewVo struct {
 	AdzoneType int64 `json:"adzone_type,omitempty" xml:"adzone_type,omitempty"`
 	// 资源包id
 	AdzoneId int64 `json:"adzone_id,omitempty" xml:"adzone_id,omitempty"`
+}
+
+var poolCreativeAdzonePreviewVo = sync.Pool{
+	New: func() any {
+		return new(CreativeAdzonePreviewVo)
+	},
+}
+
+// GetCreativeAdzonePreviewVo() 从对象池中获取CreativeAdzonePreviewVo
+func GetCreativeAdzonePreviewVo() *CreativeAdzonePreviewVo {
+	return poolCreativeAdzonePreviewVo.Get().(*CreativeAdzonePreviewVo)
+}
+
+// ReleaseCreativeAdzonePreviewVo 释放CreativeAdzonePreviewVo
+func ReleaseCreativeAdzonePreviewVo(v *CreativeAdzonePreviewVo) {
+	v.PreviewDataList = v.PreviewDataList[:0]
+	v.AdzoneName = ""
+	v.AdzoneType = 0
+	v.AdzoneId = 0
+	poolCreativeAdzonePreviewVo.Put(v)
 }

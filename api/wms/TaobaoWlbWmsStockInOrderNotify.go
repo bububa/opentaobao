@@ -9,11 +9,6 @@ import (
 // taobao.wlb.wms.stock.in.order.notify
 //
 // 入库通知单
-func TaobaoWlbWmsStockInOrderNotify(clt *core.SDKClient, req *wms.TaobaoWlbWmsStockInOrderNotifyAPIRequest, session string) (*wms.TaobaoWlbWmsStockInOrderNotifyAPIResponse, error) {
-	var resp wms.TaobaoWlbWmsStockInOrderNotifyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWlbWmsStockInOrderNotify(clt *core.SDKClient, req *wms.TaobaoWlbWmsStockInOrderNotifyAPIRequest, resp *wms.TaobaoWlbWmsStockInOrderNotifyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // FeeInfo 结构体
 type FeeInfo struct {
 	// 金额单价(分)
@@ -14,4 +18,26 @@ type FeeInfo struct {
 	ToRoleId int64 `json:"to_role_id,omitempty" xml:"to_role_id,omitempty"`
 	// 出资方id
 	FromRoleId int64 `json:"from_role_id,omitempty" xml:"from_role_id,omitempty"`
+}
+
+var poolFeeInfo = sync.Pool{
+	New: func() any {
+		return new(FeeInfo)
+	},
+}
+
+// GetFeeInfo() 从对象池中获取FeeInfo
+func GetFeeInfo() *FeeInfo {
+	return poolFeeInfo.Get().(*FeeInfo)
+}
+
+// ReleaseFeeInfo 释放FeeInfo
+func ReleaseFeeInfo(v *FeeInfo) {
+	v.Amount = ""
+	v.FromRoleCode = ""
+	v.ItemCode = ""
+	v.ToRoleCode = ""
+	v.ToRoleId = 0
+	v.FromRoleId = 0
+	poolFeeInfo.Put(v)
 }

@@ -1,5 +1,9 @@
 package uscesl
 
+import (
+	"sync"
+)
+
 // TaobaoUsceslBizApSearchResult 结构体
 type TaobaoUsceslBizApSearchResult struct {
 	// 返回对象list
@@ -20,4 +24,29 @@ type TaobaoUsceslBizApSearchResult struct {
 	Limit int64 `json:"limit,omitempty" xml:"limit,omitempty"`
 	// 本次调用是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoUsceslBizApSearchResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoUsceslBizApSearchResult)
+	},
+}
+
+// GetTaobaoUsceslBizApSearchResult() 从对象池中获取TaobaoUsceslBizApSearchResult
+func GetTaobaoUsceslBizApSearchResult() *TaobaoUsceslBizApSearchResult {
+	return poolTaobaoUsceslBizApSearchResult.Get().(*TaobaoUsceslBizApSearchResult)
+}
+
+// ReleaseTaobaoUsceslBizApSearchResult 释放TaobaoUsceslBizApSearchResult
+func ReleaseTaobaoUsceslBizApSearchResult(v *TaobaoUsceslBizApSearchResult) {
+	v.TargetList = v.TargetList[:0]
+	v.ReturnCode = ""
+	v.BusinessCode = ""
+	v.Message = ""
+	v.CurrentPage = 0
+	v.TotalCount = 0
+	v.TotalPages = 0
+	v.Limit = 0
+	v.Success = false
+	poolTaobaoUsceslBizApSearchResult.Put(v)
 }

@@ -2,6 +2,7 @@ package mos
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaMosOnsiteTradeIsnewpayorderAPIResponse struct {
 	AlibabaMosOnsiteTradeIsnewpayorderAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaMosOnsiteTradeIsnewpayorderAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaMosOnsiteTradeIsnewpayorderAPIResponseModel).Reset()
+}
+
 // AlibabaMosOnsiteTradeIsnewpayorderAPIResponseModel is 是否为新支付订单 成功返回结果
 type AlibabaMosOnsiteTradeIsnewpayorderAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mos_onsite_trade_isnewpayorder_response"`
@@ -22,4 +29,27 @@ type AlibabaMosOnsiteTradeIsnewpayorderAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *AlibabaMosOnsiteTradeIsnewpayorderResultDo `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaMosOnsiteTradeIsnewpayorderAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaMosOnsiteTradeIsnewpayorderAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaMosOnsiteTradeIsnewpayorderAPIResponse)
+	},
+}
+
+// GetAlibabaMosOnsiteTradeIsnewpayorderAPIResponse 从 sync.Pool 获取 AlibabaMosOnsiteTradeIsnewpayorderAPIResponse
+func GetAlibabaMosOnsiteTradeIsnewpayorderAPIResponse() *AlibabaMosOnsiteTradeIsnewpayorderAPIResponse {
+	return poolAlibabaMosOnsiteTradeIsnewpayorderAPIResponse.Get().(*AlibabaMosOnsiteTradeIsnewpayorderAPIResponse)
+}
+
+// ReleaseAlibabaMosOnsiteTradeIsnewpayorderAPIResponse 将 AlibabaMosOnsiteTradeIsnewpayorderAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaMosOnsiteTradeIsnewpayorderAPIResponse(v *AlibabaMosOnsiteTradeIsnewpayorderAPIResponse) {
+	v.Reset()
+	poolAlibabaMosOnsiteTradeIsnewpayorderAPIResponse.Put(v)
 }

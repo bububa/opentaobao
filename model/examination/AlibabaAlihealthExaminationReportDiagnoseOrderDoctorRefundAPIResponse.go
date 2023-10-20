@@ -2,6 +2,7 @@ package examination
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIResponseModel).Reset()
 }
 
 // AlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIResponseModel is 报告解读订单-医生退款 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIResponseModel 
 	Data bool `json:"data,omitempty" xml:"data,omitempty"`
 	// 接口是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgCode = ""
+	m.MsgInfo = ""
+	m.Data = false
+	m.IsSuccess = false
+}
+
+var poolAlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIResponse 从 sync.Pool 获取 AlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIResponse
+func GetAlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIResponse() *AlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIResponse {
+	return poolAlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIResponse.Get().(*AlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIResponse 将 AlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIResponse(v *AlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthExaminationReportDiagnoseOrderDoctorRefundAPIResponse.Put(v)
 }

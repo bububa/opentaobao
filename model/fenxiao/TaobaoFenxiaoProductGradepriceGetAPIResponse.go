@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoFenxiaoProductGradepriceGetAPIResponse struct {
 	TaobaoFenxiaoProductGradepriceGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoFenxiaoProductGradepriceGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoFenxiaoProductGradepriceGetAPIResponseModel).Reset()
+}
+
 // TaobaoFenxiaoProductGradepriceGetAPIResponseModel is 等级折扣查询 成功返回结果
 type TaobaoFenxiaoProductGradepriceGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_product_gradeprice_get_response"`
@@ -24,4 +31,28 @@ type TaobaoFenxiaoProductGradepriceGetAPIResponseModel struct {
 	GradeDiscounts []GradeDiscount `json:"grade_discounts,omitempty" xml:"grade_discounts>grade_discount,omitempty"`
 	// 操作是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoFenxiaoProductGradepriceGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.GradeDiscounts = m.GradeDiscounts[:0]
+	m.IsSuccess = false
+}
+
+var poolTaobaoFenxiaoProductGradepriceGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoFenxiaoProductGradepriceGetAPIResponse)
+	},
+}
+
+// GetTaobaoFenxiaoProductGradepriceGetAPIResponse 从 sync.Pool 获取 TaobaoFenxiaoProductGradepriceGetAPIResponse
+func GetTaobaoFenxiaoProductGradepriceGetAPIResponse() *TaobaoFenxiaoProductGradepriceGetAPIResponse {
+	return poolTaobaoFenxiaoProductGradepriceGetAPIResponse.Get().(*TaobaoFenxiaoProductGradepriceGetAPIResponse)
+}
+
+// ReleaseTaobaoFenxiaoProductGradepriceGetAPIResponse 将 TaobaoFenxiaoProductGradepriceGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoFenxiaoProductGradepriceGetAPIResponse(v *TaobaoFenxiaoProductGradepriceGetAPIResponse) {
+	v.Reset()
+	poolTaobaoFenxiaoProductGradepriceGetAPIResponse.Put(v)
 }

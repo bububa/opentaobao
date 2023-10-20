@@ -1,5 +1,9 @@
 package axindata
 
+import (
+	"sync"
+)
+
 // FscRouteInfoApiDto 结构体
 type FscRouteInfoApiDto struct {
 	// 多媒体数据列表
@@ -66,4 +70,52 @@ type FscRouteInfoApiDto struct {
 	RouteNight int64 `json:"route_night,omitempty" xml:"route_night,omitempty"`
 	// 是否含保险
 	IncludeInsuranceFlag bool `json:"include_insurance_flag,omitempty" xml:"include_insurance_flag,omitempty"`
+}
+
+var poolFscRouteInfoApiDto = sync.Pool{
+	New: func() any {
+		return new(FscRouteInfoApiDto)
+	},
+}
+
+// GetFscRouteInfoApiDto() 从对象池中获取FscRouteInfoApiDto
+func GetFscRouteInfoApiDto() *FscRouteInfoApiDto {
+	return poolFscRouteInfoApiDto.Get().(*FscRouteInfoApiDto)
+}
+
+// ReleaseFscRouteInfoApiDto 释放FscRouteInfoApiDto
+func ReleaseFscRouteInfoApiDto(v *FscRouteInfoApiDto) {
+	v.MediaList = v.MediaList[:0]
+	v.RouteLabelIdList = v.RouteLabelIdList[:0]
+	v.TravellerDefineList = v.TravellerDefineList[:0]
+	v.PoiIdList = v.PoiIdList[:0]
+	v.SalesInfoList = v.SalesInfoList[:0]
+	v.Recommends = v.Recommends[:0]
+	v.JourneyList = v.JourneyList[:0]
+	v.ProductRules = v.ProductRules[:0]
+	v.CancelPolicyList = v.CancelPolicyList[:0]
+	v.RouteCode = ""
+	v.RouteName = ""
+	v.RouteSubName = ""
+	v.SubCategory = ""
+	v.BusinessAreaId = ""
+	v.StartCityId = ""
+	v.EndCityId = ""
+	v.StartCountryId = ""
+	v.EndCountryId = ""
+	v.RouteMainPic = ""
+	v.RouteFeature = ""
+	v.SupplierId = ""
+	v.RouteRemark = ""
+	v.ConfirmType = ""
+	v.RouteStatus = ""
+	v.VisaName = ""
+	v.ContactName = ""
+	v.ContactPhone = ""
+	v.SupplierRouteCode = ""
+	v.GroupType = 0
+	v.RouteDay = 0
+	v.RouteNight = 0
+	v.IncludeInsuranceFlag = false
+	poolFscRouteInfoApiDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // MzPromotionDto 结构体
 type MzPromotionDto struct {
 	// 活动名称
@@ -12,4 +16,25 @@ type MzPromotionDto struct {
 	EndTime string `json:"end_time,omitempty" xml:"end_time,omitempty"`
 	// 活动ID
 	ActId int64 `json:"act_id,omitempty" xml:"act_id,omitempty"`
+}
+
+var poolMzPromotionDto = sync.Pool{
+	New: func() any {
+		return new(MzPromotionDto)
+	},
+}
+
+// GetMzPromotionDto() 从对象池中获取MzPromotionDto
+func GetMzPromotionDto() *MzPromotionDto {
+	return poolMzPromotionDto.Get().(*MzPromotionDto)
+}
+
+// ReleaseMzPromotionDto 释放MzPromotionDto
+func ReleaseMzPromotionDto(v *MzPromotionDto) {
+	v.Name = ""
+	v.MzDisplayText = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.ActId = 0
+	poolMzPromotionDto.Put(v)
 }

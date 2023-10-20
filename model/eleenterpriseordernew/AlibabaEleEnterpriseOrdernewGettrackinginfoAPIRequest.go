@@ -2,6 +2,7 @@ package eleenterpriseordernew
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest struct {
 // NewAlibabaEleEnterpriseOrdernewGettrackinginfoRequest 初始化AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest对象
 func NewAlibabaEleEnterpriseOrdernewGettrackinginfoRequest() *AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest {
 	return &AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest) Reset() {
+	r._orderId = ""
+	r._phone = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest) SetPhone(_phone 
 // GetPhone Phone Getter
 func (r AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest) GetPhone() string {
 	return r._phone
+}
+
+var poolAlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEleEnterpriseOrdernewGettrackinginfoRequest()
+	},
+}
+
+// GetAlibabaEleEnterpriseOrdernewGettrackinginfoRequest 从 sync.Pool 获取 AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest
+func GetAlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest() *AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest {
+	return poolAlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest.Get().(*AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest)
+}
+
+// ReleaseAlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest 将 AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest(v *AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest) {
+	v.Reset()
+	poolAlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest.Put(v)
 }

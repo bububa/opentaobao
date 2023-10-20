@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // Paged 结构体
 type Paged struct {
 	// 工单列表
@@ -10,4 +14,24 @@ type Paged struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 总记录数
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
+}
+
+var poolPaged = sync.Pool{
+	New: func() any {
+		return new(Paged)
+	},
+}
+
+// GetPaged() 从对象池中获取Paged
+func GetPaged() *Paged {
+	return poolPaged.Get().(*Paged)
+}
+
+// ReleasePaged 释放Paged
+func ReleasePaged(v *Paged) {
+	v.DataList = v.DataList[:0]
+	v.TotalPageCount = 0
+	v.PageSize = 0
+	v.TotalCount = 0
+	poolPaged.Put(v)
 }

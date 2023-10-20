@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsDeliveryLineBatchDeleteAPIRequest struct {
 // NewTaobaoLogisticsDeliveryLineBatchDeleteRequest 初始化TaobaoLogisticsDeliveryLineBatchDeleteAPIRequest对象
 func NewTaobaoLogisticsDeliveryLineBatchDeleteRequest() *TaobaoLogisticsDeliveryLineBatchDeleteAPIRequest {
 	return &TaobaoLogisticsDeliveryLineBatchDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsDeliveryLineBatchDeleteAPIRequest) Reset() {
+	r._deliveryLineBatchDeleteRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsDeliveryLineBatchDeleteAPIRequest) SetDeliveryLineBatchD
 // GetDeliveryLineBatchDeleteRequest DeliveryLineBatchDeleteRequest Getter
 func (r TaobaoLogisticsDeliveryLineBatchDeleteAPIRequest) GetDeliveryLineBatchDeleteRequest() *DeliveryLineBatchDeleteRequest {
 	return r._deliveryLineBatchDeleteRequest
+}
+
+var poolTaobaoLogisticsDeliveryLineBatchDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsDeliveryLineBatchDeleteRequest()
+	},
+}
+
+// GetTaobaoLogisticsDeliveryLineBatchDeleteRequest 从 sync.Pool 获取 TaobaoLogisticsDeliveryLineBatchDeleteAPIRequest
+func GetTaobaoLogisticsDeliveryLineBatchDeleteAPIRequest() *TaobaoLogisticsDeliveryLineBatchDeleteAPIRequest {
+	return poolTaobaoLogisticsDeliveryLineBatchDeleteAPIRequest.Get().(*TaobaoLogisticsDeliveryLineBatchDeleteAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsDeliveryLineBatchDeleteAPIRequest 将 TaobaoLogisticsDeliveryLineBatchDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsDeliveryLineBatchDeleteAPIRequest(v *TaobaoLogisticsDeliveryLineBatchDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsDeliveryLineBatchDeleteAPIRequest.Put(v)
 }

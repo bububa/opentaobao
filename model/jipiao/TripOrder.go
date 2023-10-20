@@ -1,5 +1,9 @@
 package jipiao
 
+import (
+	"sync"
+)
+
 // TripOrder 结构体
 type TripOrder struct {
 	// 订单航班信息（包含航班乘机人）
@@ -12,4 +16,25 @@ type TripOrder struct {
 	Itinerary *Itinerary `json:"itinerary,omitempty" xml:"itinerary,omitempty"`
 	// 订单行政购票信息
 	CorpInfo *CorpInfo `json:"corp_info,omitempty" xml:"corp_info,omitempty"`
+}
+
+var poolTripOrder = sync.Pool{
+	New: func() any {
+		return new(TripOrder)
+	},
+}
+
+// GetTripOrder() 从对象池中获取TripOrder
+func GetTripOrder() *TripOrder {
+	return poolTripOrder.Get().(*TripOrder)
+}
+
+// ReleaseTripOrder 释放TripOrder
+func ReleaseTripOrder(v *TripOrder) {
+	v.FlightInfos = v.FlightInfos[:0]
+	v.Extra = ""
+	v.BaseInfo = nil
+	v.Itinerary = nil
+	v.CorpInfo = nil
+	poolTripOrder.Put(v)
 }

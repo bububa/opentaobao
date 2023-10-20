@@ -2,6 +2,7 @@ package charity
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaCsrGameDataSyncAPIResponse struct {
 	AlibabaCsrGameDataSyncAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaCsrGameDataSyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaCsrGameDataSyncAPIResponseModel).Reset()
+}
+
 // AlibabaCsrGameDataSyncAPIResponseModel is 公益互动 外部游戏数据同步 成功返回结果
 type AlibabaCsrGameDataSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_csr_game_data_sync_response"`
@@ -26,4 +33,29 @@ type AlibabaCsrGameDataSyncAPIResponseModel struct {
 	ResultCode int64 `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 是否成功
 	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaCsrGameDataSyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.ResultCode = 0
+	m.ResultSuccess = false
+}
+
+var poolAlibabaCsrGameDataSyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaCsrGameDataSyncAPIResponse)
+	},
+}
+
+// GetAlibabaCsrGameDataSyncAPIResponse 从 sync.Pool 获取 AlibabaCsrGameDataSyncAPIResponse
+func GetAlibabaCsrGameDataSyncAPIResponse() *AlibabaCsrGameDataSyncAPIResponse {
+	return poolAlibabaCsrGameDataSyncAPIResponse.Get().(*AlibabaCsrGameDataSyncAPIResponse)
+}
+
+// ReleaseAlibabaCsrGameDataSyncAPIResponse 将 AlibabaCsrGameDataSyncAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaCsrGameDataSyncAPIResponse(v *AlibabaCsrGameDataSyncAPIResponse) {
+	v.Reset()
+	poolAlibabaCsrGameDataSyncAPIResponse.Put(v)
 }

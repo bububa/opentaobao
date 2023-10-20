@@ -1,5 +1,9 @@
 package happytrip
 
+import (
+	"sync"
+)
+
 // AlibabaHtorderHotelSyncBookingResultDto 结构体
 type AlibabaHtorderHotelSyncBookingResultDto struct {
 	// 错误码
@@ -12,4 +16,25 @@ type AlibabaHtorderHotelSyncBookingResultDto struct {
 	Content *SyncHotelBookingDataResponseDto `json:"content,omitempty" xml:"content,omitempty"`
 	// 是否成功
 	Succ bool `json:"succ,omitempty" xml:"succ,omitempty"`
+}
+
+var poolAlibabaHtorderHotelSyncBookingResultDto = sync.Pool{
+	New: func() any {
+		return new(AlibabaHtorderHotelSyncBookingResultDto)
+	},
+}
+
+// GetAlibabaHtorderHotelSyncBookingResultDto() 从对象池中获取AlibabaHtorderHotelSyncBookingResultDto
+func GetAlibabaHtorderHotelSyncBookingResultDto() *AlibabaHtorderHotelSyncBookingResultDto {
+	return poolAlibabaHtorderHotelSyncBookingResultDto.Get().(*AlibabaHtorderHotelSyncBookingResultDto)
+}
+
+// ReleaseAlibabaHtorderHotelSyncBookingResultDto 释放AlibabaHtorderHotelSyncBookingResultDto
+func ReleaseAlibabaHtorderHotelSyncBookingResultDto(v *AlibabaHtorderHotelSyncBookingResultDto) {
+	v.ErrNo = ""
+	v.ErrInfo = ""
+	v.StackTrace = ""
+	v.Content = nil
+	v.Succ = false
+	poolAlibabaHtorderHotelSyncBookingResultDto.Put(v)
 }

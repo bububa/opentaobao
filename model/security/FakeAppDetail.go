@@ -1,5 +1,9 @@
 package security
 
+import (
+	"sync"
+)
+
 // FakeAppDetail 结构体
 type FakeAppDetail struct {
 	// 仿冒应用下载地址列表(混淆后的URL)
@@ -10,4 +14,24 @@ type FakeAppDetail struct {
 	PackageName string `json:"package_name,omitempty" xml:"package_name,omitempty"`
 	// 仿冒应用感染用户数
 	InfectedUsers int64 `json:"infected_users,omitempty" xml:"infected_users,omitempty"`
+}
+
+var poolFakeAppDetail = sync.Pool{
+	New: func() any {
+		return new(FakeAppDetail)
+	},
+}
+
+// GetFakeAppDetail() 从对象池中获取FakeAppDetail
+func GetFakeAppDetail() *FakeAppDetail {
+	return poolFakeAppDetail.Get().(*FakeAppDetail)
+}
+
+// ReleaseFakeAppDetail 释放FakeAppDetail
+func ReleaseFakeAppDetail(v *FakeAppDetail) {
+	v.DownloadUrls = v.DownloadUrls[:0]
+	v.AppName = ""
+	v.PackageName = ""
+	v.InfectedUsers = 0
+	poolFakeAppDetail.Put(v)
 }

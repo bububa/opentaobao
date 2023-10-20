@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallServicecenterWorkcardExpressorderConsignAPIResponse struct {
 	TmallServicecenterWorkcardExpressorderConsignAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallServicecenterWorkcardExpressorderConsignAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallServicecenterWorkcardExpressorderConsignAPIResponseModel).Reset()
+}
+
 // TmallServicecenterWorkcardExpressorderConsignAPIResponseModel is 物流订单呼叫运力 成功返回结果
 type TmallServicecenterWorkcardExpressorderConsignAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_workcard_expressorder_consign_response"`
@@ -22,4 +29,27 @@ type TmallServicecenterWorkcardExpressorderConsignAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
 	Result *FulfilplatformResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallServicecenterWorkcardExpressorderConsignAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTmallServicecenterWorkcardExpressorderConsignAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallServicecenterWorkcardExpressorderConsignAPIResponse)
+	},
+}
+
+// GetTmallServicecenterWorkcardExpressorderConsignAPIResponse 从 sync.Pool 获取 TmallServicecenterWorkcardExpressorderConsignAPIResponse
+func GetTmallServicecenterWorkcardExpressorderConsignAPIResponse() *TmallServicecenterWorkcardExpressorderConsignAPIResponse {
+	return poolTmallServicecenterWorkcardExpressorderConsignAPIResponse.Get().(*TmallServicecenterWorkcardExpressorderConsignAPIResponse)
+}
+
+// ReleaseTmallServicecenterWorkcardExpressorderConsignAPIResponse 将 TmallServicecenterWorkcardExpressorderConsignAPIResponse 保存到 sync.Pool
+func ReleaseTmallServicecenterWorkcardExpressorderConsignAPIResponse(v *TmallServicecenterWorkcardExpressorderConsignAPIResponse) {
+	v.Reset()
+	poolTmallServicecenterWorkcardExpressorderConsignAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package lstvending
 
+import (
+	"sync"
+)
+
 // OpenEquipmentDto 结构体
 type OpenEquipmentDto struct {
 	// 省份代码
@@ -32,4 +36,35 @@ type OpenEquipmentDto struct {
 	GmtCreate int64 `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 设备状态：1未激活，2已激活，3已回收（转租）
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolOpenEquipmentDto = sync.Pool{
+	New: func() any {
+		return new(OpenEquipmentDto)
+	},
+}
+
+// GetOpenEquipmentDto() 从对象池中获取OpenEquipmentDto
+func GetOpenEquipmentDto() *OpenEquipmentDto {
+	return poolOpenEquipmentDto.Get().(*OpenEquipmentDto)
+}
+
+// ReleaseOpenEquipmentDto 释放OpenEquipmentDto
+func ReleaseOpenEquipmentDto(v *OpenEquipmentDto) {
+	v.ProvinceCode = ""
+	v.Province = ""
+	v.CityCode = ""
+	v.City = ""
+	v.AreaCode = ""
+	v.Area = ""
+	v.SupplierCode = ""
+	v.ModelName = ""
+	v.EquipmentCode = ""
+	v.EnabledTime = ""
+	v.GmtModified = ""
+	v.RecoveredTime = ""
+	v.Id = 0
+	v.GmtCreate = 0
+	v.Status = 0
+	poolOpenEquipmentDto.Put(v)
 }

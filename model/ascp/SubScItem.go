@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // SubScItem 结构体
 type SubScItem struct {
 	// 子货品ERP货品id
@@ -14,4 +18,26 @@ type SubScItem struct {
 	RetailPrice int64 `json:"retail_price,omitempty" xml:"retail_price,omitempty"`
 	// 固定价格，1=是，0=否
 	FixedPrice int64 `json:"fixed_price,omitempty" xml:"fixed_price,omitempty"`
+}
+
+var poolSubScItem = sync.Pool{
+	New: func() any {
+		return new(SubScItem)
+	},
+}
+
+// GetSubScItem() 从对象池中获取SubScItem
+func GetSubScItem() *SubScItem {
+	return poolSubScItem.Get().(*SubScItem)
+}
+
+// ReleaseSubScItem 释放SubScItem
+func ReleaseSubScItem(v *SubScItem) {
+	v.ScItemId = ""
+	v.ScItemCode = ""
+	v.Currency = ""
+	v.Quantity = 0
+	v.RetailPrice = 0
+	v.FixedPrice = 0
+	poolSubScItem.Put(v)
 }

@@ -2,6 +2,7 @@ package flight
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlitripAgentFlightSellTicketingDetailAPIRequest struct {
 // NewAlitripAgentFlightSellTicketingDetailRequest 初始化AlitripAgentFlightSellTicketingDetailAPIRequest对象
 func NewAlitripAgentFlightSellTicketingDetailRequest() *AlitripAgentFlightSellTicketingDetailAPIRequest {
 	return &AlitripAgentFlightSellTicketingDetailAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripAgentFlightSellTicketingDetailAPIRequest) Reset() {
+	r._orderId = ""
+	r._domesticIntl = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlitripAgentFlightSellTicketingDetailAPIRequest) SetDomesticIntl(_domes
 // GetDomesticIntl DomesticIntl Getter
 func (r AlitripAgentFlightSellTicketingDetailAPIRequest) GetDomesticIntl() int64 {
 	return r._domesticIntl
+}
+
+var poolAlitripAgentFlightSellTicketingDetailAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripAgentFlightSellTicketingDetailRequest()
+	},
+}
+
+// GetAlitripAgentFlightSellTicketingDetailRequest 从 sync.Pool 获取 AlitripAgentFlightSellTicketingDetailAPIRequest
+func GetAlitripAgentFlightSellTicketingDetailAPIRequest() *AlitripAgentFlightSellTicketingDetailAPIRequest {
+	return poolAlitripAgentFlightSellTicketingDetailAPIRequest.Get().(*AlitripAgentFlightSellTicketingDetailAPIRequest)
+}
+
+// ReleaseAlitripAgentFlightSellTicketingDetailAPIRequest 将 AlitripAgentFlightSellTicketingDetailAPIRequest 放入 sync.Pool
+func ReleaseAlitripAgentFlightSellTicketingDetailAPIRequest(v *AlitripAgentFlightSellTicketingDetailAPIRequest) {
+	v.Reset()
+	poolAlitripAgentFlightSellTicketingDetailAPIRequest.Put(v)
 }

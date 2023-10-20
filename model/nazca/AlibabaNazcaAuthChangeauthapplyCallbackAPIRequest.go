@@ -2,6 +2,7 @@ package nazca
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest struct {
 // NewAlibabaNazcaAuthChangeauthapplyCallbackRequest 初始化AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest对象
 func NewAlibabaNazcaAuthChangeauthapplyCallbackRequest() *AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest {
 	return &AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest) Reset() {
+	r._paramChangeAuthCallBackDo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest) SetParamChangeAuthCa
 // GetParamChangeAuthCallBackDo ParamChangeAuthCallBackDo Getter
 func (r AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest) GetParamChangeAuthCallBackDo() *ChangeAuthCallBackDo {
 	return r._paramChangeAuthCallBackDo
+}
+
+var poolAlibabaNazcaAuthChangeauthapplyCallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaNazcaAuthChangeauthapplyCallbackRequest()
+	},
+}
+
+// GetAlibabaNazcaAuthChangeauthapplyCallbackRequest 从 sync.Pool 获取 AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest
+func GetAlibabaNazcaAuthChangeauthapplyCallbackAPIRequest() *AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest {
+	return poolAlibabaNazcaAuthChangeauthapplyCallbackAPIRequest.Get().(*AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest)
+}
+
+// ReleaseAlibabaNazcaAuthChangeauthapplyCallbackAPIRequest 将 AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest 放入 sync.Pool
+func ReleaseAlibabaNazcaAuthChangeauthapplyCallbackAPIRequest(v *AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest) {
+	v.Reset()
+	poolAlibabaNazcaAuthChangeauthapplyCallbackAPIRequest.Put(v)
 }

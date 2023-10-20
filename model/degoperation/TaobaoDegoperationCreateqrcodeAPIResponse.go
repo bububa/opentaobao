@@ -2,6 +2,7 @@ package degoperation
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoDegoperationCreateqrcodeAPIResponse struct {
 	model.CommonResponse
 	TaobaoDegoperationCreateqrcodeAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoDegoperationCreateqrcodeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoDegoperationCreateqrcodeAPIResponseModel).Reset()
 }
 
 // TaobaoDegoperationCreateqrcodeAPIResponseModel is 中奖生成二维码 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoDegoperationCreateqrcodeAPIResponseModel struct {
 	RealSubCode string `json:"real_sub_code,omitempty" xml:"real_sub_code,omitempty"`
 	// msgInfo
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoDegoperationCreateqrcodeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgCode = ""
+	m.Data = ""
+	m.RealSubCode = ""
+	m.MsgInfo = ""
+}
+
+var poolTaobaoDegoperationCreateqrcodeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoDegoperationCreateqrcodeAPIResponse)
+	},
+}
+
+// GetTaobaoDegoperationCreateqrcodeAPIResponse 从 sync.Pool 获取 TaobaoDegoperationCreateqrcodeAPIResponse
+func GetTaobaoDegoperationCreateqrcodeAPIResponse() *TaobaoDegoperationCreateqrcodeAPIResponse {
+	return poolTaobaoDegoperationCreateqrcodeAPIResponse.Get().(*TaobaoDegoperationCreateqrcodeAPIResponse)
+}
+
+// ReleaseTaobaoDegoperationCreateqrcodeAPIResponse 将 TaobaoDegoperationCreateqrcodeAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoDegoperationCreateqrcodeAPIResponse(v *TaobaoDegoperationCreateqrcodeAPIResponse) {
+	v.Reset()
+	poolTaobaoDegoperationCreateqrcodeAPIResponse.Put(v)
 }

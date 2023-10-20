@@ -9,11 +9,6 @@ import (
 // taobao.eticket.merchant.ma.resend
 //
 // 码商重发电子凭证回调接口
-func TaobaoEticketMerchantMaResend(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantMaResendAPIRequest, session string) (*eticket.TaobaoEticketMerchantMaResendAPIResponse, error) {
-	var resp eticket.TaobaoEticketMerchantMaResendAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoEticketMerchantMaResend(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantMaResendAPIRequest, resp *eticket.TaobaoEticketMerchantMaResendAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

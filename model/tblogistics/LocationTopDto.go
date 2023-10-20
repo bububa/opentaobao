@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // LocationTopDto 结构体
 type LocationTopDto struct {
 	// 省/直辖市
@@ -14,4 +18,26 @@ type LocationTopDto struct {
 	Lng string `json:"lng,omitempty" xml:"lng,omitempty"`
 	// 纬度，高德地图
 	Lat string `json:"lat,omitempty" xml:"lat,omitempty"`
+}
+
+var poolLocationTopDto = sync.Pool{
+	New: func() any {
+		return new(LocationTopDto)
+	},
+}
+
+// GetLocationTopDto() 从对象池中获取LocationTopDto
+func GetLocationTopDto() *LocationTopDto {
+	return poolLocationTopDto.Get().(*LocationTopDto)
+}
+
+// ReleaseLocationTopDto 释放LocationTopDto
+func ReleaseLocationTopDto(v *LocationTopDto) {
+	v.Province = ""
+	v.City = ""
+	v.District = ""
+	v.Town = ""
+	v.Lng = ""
+	v.Lat = ""
+	poolLocationTopDto.Put(v)
 }

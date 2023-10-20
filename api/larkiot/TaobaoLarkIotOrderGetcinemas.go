@@ -9,11 +9,6 @@ import (
 // taobao.lark.iot.order.getcinemas
 //
 // iot渠道拉取有权限访问的影院
-func TaobaoLarkIotOrderGetcinemas(clt *core.SDKClient, req *larkiot.TaobaoLarkIotOrderGetcinemasAPIRequest, session string) (*larkiot.TaobaoLarkIotOrderGetcinemasAPIResponse, error) {
-	var resp larkiot.TaobaoLarkIotOrderGetcinemasAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoLarkIotOrderGetcinemas(clt *core.SDKClient, req *larkiot.TaobaoLarkIotOrderGetcinemasAPIRequest, resp *larkiot.TaobaoLarkIotOrderGetcinemasAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

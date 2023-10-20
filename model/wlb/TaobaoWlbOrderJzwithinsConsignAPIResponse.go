@@ -2,6 +2,7 @@ package wlb
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoWlbOrderJzwithinsConsignAPIResponse struct {
 	TaobaoWlbOrderJzwithinsConsignAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoWlbOrderJzwithinsConsignAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoWlbOrderJzwithinsConsignAPIResponseModel).Reset()
+}
+
 // TaobaoWlbOrderJzwithinsConsignAPIResponseModel is 家装发货接口 成功返回结果
 type TaobaoWlbOrderJzwithinsConsignAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_order_jzwithins_consign_response"`
@@ -24,4 +31,28 @@ type TaobaoWlbOrderJzwithinsConsignAPIResponseModel struct {
 	ResultInfo string `json:"result_info,omitempty" xml:"result_info,omitempty"`
 	// 发货成功或者失败
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoWlbOrderJzwithinsConsignAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultInfo = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoWlbOrderJzwithinsConsignAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoWlbOrderJzwithinsConsignAPIResponse)
+	},
+}
+
+// GetTaobaoWlbOrderJzwithinsConsignAPIResponse 从 sync.Pool 获取 TaobaoWlbOrderJzwithinsConsignAPIResponse
+func GetTaobaoWlbOrderJzwithinsConsignAPIResponse() *TaobaoWlbOrderJzwithinsConsignAPIResponse {
+	return poolTaobaoWlbOrderJzwithinsConsignAPIResponse.Get().(*TaobaoWlbOrderJzwithinsConsignAPIResponse)
+}
+
+// ReleaseTaobaoWlbOrderJzwithinsConsignAPIResponse 将 TaobaoWlbOrderJzwithinsConsignAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoWlbOrderJzwithinsConsignAPIResponse(v *TaobaoWlbOrderJzwithinsConsignAPIResponse) {
+	v.Reset()
+	poolTaobaoWlbOrderJzwithinsConsignAPIResponse.Put(v)
 }

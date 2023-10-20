@@ -2,6 +2,7 @@ package seaking
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AlibabaSeakingDiagnosistitleAPIRequest struct {
 // NewAlibabaSeakingDiagnosistitleRequest 初始化AlibabaSeakingDiagnosistitleAPIRequest对象
 func NewAlibabaSeakingDiagnosistitleRequest() *AlibabaSeakingDiagnosistitleAPIRequest {
 	return &AlibabaSeakingDiagnosistitleAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSeakingDiagnosistitleAPIRequest) Reset() {
+	r._identifier = ""
+	r._identifierType = ""
+	r._language = ""
+	r._platform = ""
+	r._title = ""
+	r._categoryId = 0
+	r._extra = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AlibabaSeakingDiagnosistitleAPIRequest) SetExtra(_extra *Extra) error {
 // GetExtra Extra Getter
 func (r AlibabaSeakingDiagnosistitleAPIRequest) GetExtra() *Extra {
 	return r._extra
+}
+
+var poolAlibabaSeakingDiagnosistitleAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSeakingDiagnosistitleRequest()
+	},
+}
+
+// GetAlibabaSeakingDiagnosistitleRequest 从 sync.Pool 获取 AlibabaSeakingDiagnosistitleAPIRequest
+func GetAlibabaSeakingDiagnosistitleAPIRequest() *AlibabaSeakingDiagnosistitleAPIRequest {
+	return poolAlibabaSeakingDiagnosistitleAPIRequest.Get().(*AlibabaSeakingDiagnosistitleAPIRequest)
+}
+
+// ReleaseAlibabaSeakingDiagnosistitleAPIRequest 将 AlibabaSeakingDiagnosistitleAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSeakingDiagnosistitleAPIRequest(v *AlibabaSeakingDiagnosistitleAPIRequest) {
+	v.Reset()
+	poolAlibabaSeakingDiagnosistitleAPIRequest.Put(v)
 }

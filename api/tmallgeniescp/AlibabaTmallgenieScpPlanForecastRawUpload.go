@@ -9,11 +9,6 @@ import (
 // alibaba.tmallgenie.scp.plan.forecast.raw.upload
 //
 // 供应商预测（原料-二级物料）回传接口
-func AlibabaTmallgenieScpPlanForecastRawUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanForecastRawUploadAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanForecastRawUploadAPIResponse, error) {
-	var resp tmallgeniescp.AlibabaTmallgenieScpPlanForecastRawUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTmallgenieScpPlanForecastRawUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanForecastRawUploadAPIRequest, resp *tmallgeniescp.AlibabaTmallgenieScpPlanForecastRawUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.universalbp.report.query.account
 //
 // 账户报表查询
-func TaobaoUniversalbpReportQueryAccount(clt *core.SDKClient, req *simba.TaobaoUniversalbpReportQueryAccountAPIRequest, session string) (*simba.TaobaoUniversalbpReportQueryAccountAPIResponse, error) {
-	var resp simba.TaobaoUniversalbpReportQueryAccountAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUniversalbpReportQueryAccount(clt *core.SDKClient, req *simba.TaobaoUniversalbpReportQueryAccountAPIRequest, resp *simba.TaobaoUniversalbpReportQueryAccountAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

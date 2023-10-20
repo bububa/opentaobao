@@ -1,5 +1,9 @@
 package jst
 
+import (
+	"sync"
+)
+
 // SendMessageByOaidRequest 结构体
 type SendMessageByOaidRequest struct {
 	// 拓展Name
@@ -20,4 +24,29 @@ type SendMessageByOaidRequest struct {
 	Oaid string `json:"oaid,omitempty" xml:"oaid,omitempty"`
 	// 是否需要返回附加信息
 	AdditionalInfo bool `json:"additional_info,omitempty" xml:"additional_info,omitempty"`
+}
+
+var poolSendMessageByOaidRequest = sync.Pool{
+	New: func() any {
+		return new(SendMessageByOaidRequest)
+	},
+}
+
+// GetSendMessageByOaidRequest() 从对象池中获取SendMessageByOaidRequest
+func GetSendMessageByOaidRequest() *SendMessageByOaidRequest {
+	return poolSendMessageByOaidRequest.Get().(*SendMessageByOaidRequest)
+}
+
+// ReleaseSendMessageByOaidRequest 释放SendMessageByOaidRequest
+func ReleaseSendMessageByOaidRequest(v *SendMessageByOaidRequest) {
+	v.ExtendName = ""
+	v.OrderId = ""
+	v.ExtendCode = ""
+	v.SmsFreeSignName = ""
+	v.TemplateCode = ""
+	v.Params = ""
+	v.Extend = ""
+	v.Oaid = ""
+	v.AdditionalInfo = false
+	poolSendMessageByOaidRequest.Put(v)
 }

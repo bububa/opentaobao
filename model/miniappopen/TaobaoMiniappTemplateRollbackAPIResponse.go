@@ -2,6 +2,7 @@ package miniappopen
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoMiniappTemplateRollbackAPIResponse struct {
 	TaobaoMiniappTemplateRollbackAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoMiniappTemplateRollbackAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoMiniappTemplateRollbackAPIResponseModel).Reset()
+}
+
 // TaobaoMiniappTemplateRollbackAPIResponseModel is 回滚实例化应用 成功返回结果
 type TaobaoMiniappTemplateRollbackAPIResponseModel struct {
 	XMLName xml.Name `xml:"miniapp_template_rollback_response"`
@@ -24,4 +31,28 @@ type TaobaoMiniappTemplateRollbackAPIResponseModel struct {
 	OnlineResults []MiniappInstanceAppOnlineDto `json:"online_results,omitempty" xml:"online_results>miniapp_instance_app_online_dto,omitempty"`
 	// 基本信息
 	AppInfo *MiniAppEntityTemplateDto `json:"app_info,omitempty" xml:"app_info,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoMiniappTemplateRollbackAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.OnlineResults = m.OnlineResults[:0]
+	m.AppInfo = nil
+}
+
+var poolTaobaoMiniappTemplateRollbackAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoMiniappTemplateRollbackAPIResponse)
+	},
+}
+
+// GetTaobaoMiniappTemplateRollbackAPIResponse 从 sync.Pool 获取 TaobaoMiniappTemplateRollbackAPIResponse
+func GetTaobaoMiniappTemplateRollbackAPIResponse() *TaobaoMiniappTemplateRollbackAPIResponse {
+	return poolTaobaoMiniappTemplateRollbackAPIResponse.Get().(*TaobaoMiniappTemplateRollbackAPIResponse)
+}
+
+// ReleaseTaobaoMiniappTemplateRollbackAPIResponse 将 TaobaoMiniappTemplateRollbackAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoMiniappTemplateRollbackAPIResponse(v *TaobaoMiniappTemplateRollbackAPIResponse) {
+	v.Reset()
+	poolTaobaoMiniappTemplateRollbackAPIResponse.Put(v)
 }

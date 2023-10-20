@@ -2,6 +2,7 @@ package msgamp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoMessageSendAPIRequest struct {
 // NewTaobaoMessageSendRequest 初始化TaobaoMessageSendAPIRequest对象
 func NewTaobaoMessageSendRequest() *TaobaoMessageSendAPIRequest {
 	return &TaobaoMessageSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMessageSendAPIRequest) Reset() {
+	r._sendMessageReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoMessageSendAPIRequest) SetSendMessageReq(_sendMessageReq *SendMes
 // GetSendMessageReq SendMessageReq Getter
 func (r TaobaoMessageSendAPIRequest) GetSendMessageReq() *SendMessageReq {
 	return r._sendMessageReq
+}
+
+var poolTaobaoMessageSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMessageSendRequest()
+	},
+}
+
+// GetTaobaoMessageSendRequest 从 sync.Pool 获取 TaobaoMessageSendAPIRequest
+func GetTaobaoMessageSendAPIRequest() *TaobaoMessageSendAPIRequest {
+	return poolTaobaoMessageSendAPIRequest.Get().(*TaobaoMessageSendAPIRequest)
+}
+
+// ReleaseTaobaoMessageSendAPIRequest 将 TaobaoMessageSendAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMessageSendAPIRequest(v *TaobaoMessageSendAPIRequest) {
+	v.Reset()
+	poolTaobaoMessageSendAPIRequest.Put(v)
 }

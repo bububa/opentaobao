@@ -2,6 +2,7 @@ package crm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoCrmGroupDeleteAPIRequest struct {
 // NewTaobaoCrmGroupDeleteRequest 初始化TaobaoCrmGroupDeleteAPIRequest对象
 func NewTaobaoCrmGroupDeleteRequest() *TaobaoCrmGroupDeleteAPIRequest {
 	return &TaobaoCrmGroupDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCrmGroupDeleteAPIRequest) Reset() {
+	r._groupId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoCrmGroupDeleteAPIRequest) SetGroupId(_groupId int64) error {
 // GetGroupId GroupId Getter
 func (r TaobaoCrmGroupDeleteAPIRequest) GetGroupId() int64 {
 	return r._groupId
+}
+
+var poolTaobaoCrmGroupDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCrmGroupDeleteRequest()
+	},
+}
+
+// GetTaobaoCrmGroupDeleteRequest 从 sync.Pool 获取 TaobaoCrmGroupDeleteAPIRequest
+func GetTaobaoCrmGroupDeleteAPIRequest() *TaobaoCrmGroupDeleteAPIRequest {
+	return poolTaobaoCrmGroupDeleteAPIRequest.Get().(*TaobaoCrmGroupDeleteAPIRequest)
+}
+
+// ReleaseTaobaoCrmGroupDeleteAPIRequest 将 TaobaoCrmGroupDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCrmGroupDeleteAPIRequest(v *TaobaoCrmGroupDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoCrmGroupDeleteAPIRequest.Put(v)
 }

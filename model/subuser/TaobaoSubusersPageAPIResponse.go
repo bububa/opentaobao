@@ -2,6 +2,7 @@ package subuser
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -14,6 +15,12 @@ import (
 type TaobaoSubusersPageAPIResponse struct {
 	model.CommonResponse
 	TaobaoSubusersPageAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoSubusersPageAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoSubusersPageAPIResponseModel).Reset()
 }
 
 // TaobaoSubusersPageAPIResponseModel is 分页获取指定账户的子账号简易信息列表（新isv建议使用taobao.sellercenter.subusers.page接口） 成功返回结果
@@ -29,4 +36,30 @@ type TaobaoSubusersPageAPIResponseModel struct {
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// isv本次调用传入的页码
 	PageNum int64 `json:"page_num,omitempty" xml:"page_num,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoSubusersPageAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Subaccounts = m.Subaccounts[:0]
+	m.PageSize = 0
+	m.TotalCount = 0
+	m.PageNum = 0
+}
+
+var poolTaobaoSubusersPageAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoSubusersPageAPIResponse)
+	},
+}
+
+// GetTaobaoSubusersPageAPIResponse 从 sync.Pool 获取 TaobaoSubusersPageAPIResponse
+func GetTaobaoSubusersPageAPIResponse() *TaobaoSubusersPageAPIResponse {
+	return poolTaobaoSubusersPageAPIResponse.Get().(*TaobaoSubusersPageAPIResponse)
+}
+
+// ReleaseTaobaoSubusersPageAPIResponse 将 TaobaoSubusersPageAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoSubusersPageAPIResponse(v *TaobaoSubusersPageAPIResponse) {
+	v.Reset()
+	poolTaobaoSubusersPageAPIResponse.Put(v)
 }

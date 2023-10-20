@@ -1,5 +1,9 @@
 package mydata
 
+import (
+	"sync"
+)
+
 // EffectEntity 结构体
 type EffectEntity struct {
 	// 词来源
@@ -22,4 +26,30 @@ type EffectEntity struct {
 	Share int64 `json:"share,omitempty" xml:"share,omitempty"`
 	// 访客数
 	Visitor int64 `json:"visitor,omitempty" xml:"visitor,omitempty"`
+}
+
+var poolEffectEntity = sync.Pool{
+	New: func() any {
+		return new(EffectEntity)
+	},
+}
+
+// GetEffectEntity() 从对象池中获取EffectEntity
+func GetEffectEntity() *EffectEntity {
+	return poolEffectEntity.Get().(*EffectEntity)
+}
+
+// ReleaseEffectEntity 释放EffectEntity
+func ReleaseEffectEntity(v *EffectEntity) {
+	v.KeywordEffects = v.KeywordEffects[:0]
+	v.Bookmark = 0
+	v.Click = 0
+	v.Compare = 0
+	v.Fb = 0
+	v.Impression = 0
+	v.Order = 0
+	v.ProductId = 0
+	v.Share = 0
+	v.Visitor = 0
+	poolEffectEntity.Put(v)
 }

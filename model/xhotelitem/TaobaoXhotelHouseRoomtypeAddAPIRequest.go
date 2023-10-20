@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -65,8 +66,37 @@ type TaobaoXhotelHouseRoomtypeAddAPIRequest struct {
 // NewTaobaoXhotelHouseRoomtypeAddRequest 初始化TaobaoXhotelHouseRoomtypeAddAPIRequest对象
 func NewTaobaoXhotelHouseRoomtypeAddRequest() *TaobaoXhotelHouseRoomtypeAddAPIRequest {
 	return &TaobaoXhotelHouseRoomtypeAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(24),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelHouseRoomtypeAddAPIRequest) Reset() {
+	r._name = ""
+	r._area = ""
+	r._floor = ""
+	r._internet = ""
+	r._service = ""
+	r._extend = ""
+	r._outerId = ""
+	r._vendor = ""
+	r._outHid = ""
+	r._pics = ""
+	r._nameE = ""
+	r._operator = ""
+	r._houseModel = ""
+	r._bedInfo = ""
+	r._hid = 0
+	r._maxOccupancy = 0
+	r._windowType = 0
+	r._srid = 0
+	r._connectionType = 0
+	r._houseSize = 0
+	r._rentType = 0
+	r._rentSize = 0
+	r._hasLandlord = 0
+	r._status = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -396,4 +426,21 @@ func (r *TaobaoXhotelHouseRoomtypeAddAPIRequest) SetStatus(_status int64) error 
 // GetStatus Status Getter
 func (r TaobaoXhotelHouseRoomtypeAddAPIRequest) GetStatus() int64 {
 	return r._status
+}
+
+var poolTaobaoXhotelHouseRoomtypeAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelHouseRoomtypeAddRequest()
+	},
+}
+
+// GetTaobaoXhotelHouseRoomtypeAddRequest 从 sync.Pool 获取 TaobaoXhotelHouseRoomtypeAddAPIRequest
+func GetTaobaoXhotelHouseRoomtypeAddAPIRequest() *TaobaoXhotelHouseRoomtypeAddAPIRequest {
+	return poolTaobaoXhotelHouseRoomtypeAddAPIRequest.Get().(*TaobaoXhotelHouseRoomtypeAddAPIRequest)
+}
+
+// ReleaseTaobaoXhotelHouseRoomtypeAddAPIRequest 将 TaobaoXhotelHouseRoomtypeAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelHouseRoomtypeAddAPIRequest(v *TaobaoXhotelHouseRoomtypeAddAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelHouseRoomtypeAddAPIRequest.Put(v)
 }

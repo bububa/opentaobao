@@ -1,5 +1,9 @@
 package inventory
 
+import (
+	"sync"
+)
+
 // SingleResult 结构体
 type SingleResult struct {
 	// data
@@ -12,4 +16,25 @@ type SingleResult struct {
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 如果是失败，可能是部分失败。如果是成功，则全部成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolSingleResult = sync.Pool{
+	New: func() any {
+		return new(SingleResult)
+	},
+}
+
+// GetSingleResult() 从对象池中获取SingleResult
+func GetSingleResult() *SingleResult {
+	return poolSingleResult.Get().(*SingleResult)
+}
+
+// ReleaseSingleResult 释放SingleResult
+func ReleaseSingleResult(v *SingleResult) {
+	v.AdjustResults = v.AdjustResults[:0]
+	v.LocationRelationList = v.LocationRelationList[:0]
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.Success = false
+	poolSingleResult.Put(v)
 }

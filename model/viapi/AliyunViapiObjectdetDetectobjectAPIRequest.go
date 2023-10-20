@@ -2,6 +2,7 @@ package viapi
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -20,8 +21,14 @@ type AliyunViapiObjectdetDetectobjectAPIRequest struct {
 // NewAliyunViapiObjectdetDetectobjectRequest 初始化AliyunViapiObjectdetDetectobjectAPIRequest对象
 func NewAliyunViapiObjectdetDetectobjectRequest() *AliyunViapiObjectdetDetectobjectAPIRequest {
 	return &AliyunViapiObjectdetDetectobjectAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliyunViapiObjectdetDetectobjectAPIRequest) Reset() {
+	r._imageUrl = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -52,4 +59,21 @@ func (r *AliyunViapiObjectdetDetectobjectAPIRequest) SetImageUrl(_imageUrl strin
 // GetImageUrl ImageUrl Getter
 func (r AliyunViapiObjectdetDetectobjectAPIRequest) GetImageUrl() string {
 	return r._imageUrl
+}
+
+var poolAliyunViapiObjectdetDetectobjectAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliyunViapiObjectdetDetectobjectRequest()
+	},
+}
+
+// GetAliyunViapiObjectdetDetectobjectRequest 从 sync.Pool 获取 AliyunViapiObjectdetDetectobjectAPIRequest
+func GetAliyunViapiObjectdetDetectobjectAPIRequest() *AliyunViapiObjectdetDetectobjectAPIRequest {
+	return poolAliyunViapiObjectdetDetectobjectAPIRequest.Get().(*AliyunViapiObjectdetDetectobjectAPIRequest)
+}
+
+// ReleaseAliyunViapiObjectdetDetectobjectAPIRequest 将 AliyunViapiObjectdetDetectobjectAPIRequest 放入 sync.Pool
+func ReleaseAliyunViapiObjectdetDetectobjectAPIRequest(v *AliyunViapiObjectdetDetectobjectAPIRequest) {
+	v.Reset()
+	poolAliyunViapiObjectdetDetectobjectAPIRequest.Put(v)
 }

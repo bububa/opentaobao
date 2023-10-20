@@ -1,5 +1,9 @@
 package jipiao
 
+import (
+	"sync"
+)
+
 // Itinerary 结构体
 type Itinerary struct {
 	// 收件人姓名
@@ -30,4 +34,34 @@ type Itinerary struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 淘宝主键id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolItinerary = sync.Pool{
+	New: func() any {
+		return new(Itinerary)
+	},
+}
+
+// GetItinerary() 从对象池中获取Itinerary
+func GetItinerary() *Itinerary {
+	return poolItinerary.Get().(*Itinerary)
+}
+
+// ReleaseItinerary 释放Itinerary
+func ReleaseItinerary(v *Itinerary) {
+	v.Name = ""
+	v.Mobile = ""
+	v.MobileBak = ""
+	v.Address = ""
+	v.Price = ""
+	v.CompanyCode = ""
+	v.ExpressCode = ""
+	v.ItineraryNo = ""
+	v.SendDate = ""
+	v.Extra = ""
+	v.AlipayTradeNo = ""
+	v.Type = 0
+	v.Status = 0
+	v.Id = 0
+	poolItinerary.Put(v)
 }

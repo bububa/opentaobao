@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripCorpopCarBillsettlementQueryAPIRequest struct {
 // NewAlitripBtripCorpopCarBillsettlementQueryRequest 初始化AlitripBtripCorpopCarBillsettlementQueryAPIRequest对象
 func NewAlitripBtripCorpopCarBillsettlementQueryRequest() *AlitripBtripCorpopCarBillsettlementQueryAPIRequest {
 	return &AlitripBtripCorpopCarBillsettlementQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripCorpopCarBillsettlementQueryAPIRequest) Reset() {
+	r._rq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripCorpopCarBillsettlementQueryAPIRequest) SetRq(_rq *OpenIsvB
 // GetRq Rq Getter
 func (r AlitripBtripCorpopCarBillsettlementQueryAPIRequest) GetRq() *OpenIsvBillSettlementSearchRq {
 	return r._rq
+}
+
+var poolAlitripBtripCorpopCarBillsettlementQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripCorpopCarBillsettlementQueryRequest()
+	},
+}
+
+// GetAlitripBtripCorpopCarBillsettlementQueryRequest 从 sync.Pool 获取 AlitripBtripCorpopCarBillsettlementQueryAPIRequest
+func GetAlitripBtripCorpopCarBillsettlementQueryAPIRequest() *AlitripBtripCorpopCarBillsettlementQueryAPIRequest {
+	return poolAlitripBtripCorpopCarBillsettlementQueryAPIRequest.Get().(*AlitripBtripCorpopCarBillsettlementQueryAPIRequest)
+}
+
+// ReleaseAlitripBtripCorpopCarBillsettlementQueryAPIRequest 将 AlitripBtripCorpopCarBillsettlementQueryAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripCorpopCarBillsettlementQueryAPIRequest(v *AlitripBtripCorpopCarBillsettlementQueryAPIRequest) {
+	v.Reset()
+	poolAlitripBtripCorpopCarBillsettlementQueryAPIRequest.Put(v)
 }

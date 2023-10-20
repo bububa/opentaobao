@@ -9,11 +9,6 @@ import (
 // taobao.top.auth.token.create
 //
 // 用户通过code换获取access_token，https only
-func TaobaoTopAuthTokenCreate(clt *core.SDKClient, req *util.TaobaoTopAuthTokenCreateAPIRequest, session string) (*util.TaobaoTopAuthTokenCreateAPIResponse, error) {
-	var resp util.TaobaoTopAuthTokenCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTopAuthTokenCreate(clt *core.SDKClient, req *util.TaobaoTopAuthTokenCreateAPIRequest, resp *util.TaobaoTopAuthTokenCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallAliautoMetaReceiveAPIResponse struct {
 	TmallAliautoMetaReceiveAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallAliautoMetaReceiveAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallAliautoMetaReceiveAPIResponseModel).Reset()
+}
+
 // TmallAliautoMetaReceiveAPIResponseModel is 汽车说明书元数据上传 成功返回结果
 type TmallAliautoMetaReceiveAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_aliauto_meta_receive_response"`
@@ -22,4 +29,27 @@ type TmallAliautoMetaReceiveAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *TmallAliautoMetaReceiveResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallAliautoMetaReceiveAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTmallAliautoMetaReceiveAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallAliautoMetaReceiveAPIResponse)
+	},
+}
+
+// GetTmallAliautoMetaReceiveAPIResponse 从 sync.Pool 获取 TmallAliautoMetaReceiveAPIResponse
+func GetTmallAliautoMetaReceiveAPIResponse() *TmallAliautoMetaReceiveAPIResponse {
+	return poolTmallAliautoMetaReceiveAPIResponse.Get().(*TmallAliautoMetaReceiveAPIResponse)
+}
+
+// ReleaseTmallAliautoMetaReceiveAPIResponse 将 TmallAliautoMetaReceiveAPIResponse 保存到 sync.Pool
+func ReleaseTmallAliautoMetaReceiveAPIResponse(v *TmallAliautoMetaReceiveAPIResponse) {
+	v.Reset()
+	poolTmallAliautoMetaReceiveAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package dengta
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest struct {
 // NewAlibabaPicturesDengtaWxaccountPriceChangeRequest 初始化AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest对象
 func NewAlibabaPicturesDengtaWxaccountPriceChangeRequest() *AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest {
 	return &AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) Reset() {
+	r._accountId = ""
+	r._changeTime = ""
+	r._single = ""
+	r._other = ""
+	r._second = ""
+	r._first = ""
+	r._firstAli = ""
+	r._secondAli = ""
+	r._singleAli = ""
+	r._otherAli = ""
+	r._id = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) SetId(_id int64) e
 // GetId Id Getter
 func (r AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) GetId() int64 {
 	return r._id
+}
+
+var poolAlibabaPicturesDengtaWxaccountPriceChangeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaPicturesDengtaWxaccountPriceChangeRequest()
+	},
+}
+
+// GetAlibabaPicturesDengtaWxaccountPriceChangeRequest 从 sync.Pool 获取 AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest
+func GetAlibabaPicturesDengtaWxaccountPriceChangeAPIRequest() *AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest {
+	return poolAlibabaPicturesDengtaWxaccountPriceChangeAPIRequest.Get().(*AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest)
+}
+
+// ReleaseAlibabaPicturesDengtaWxaccountPriceChangeAPIRequest 将 AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaPicturesDengtaWxaccountPriceChangeAPIRequest(v *AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) {
+	v.Reset()
+	poolAlibabaPicturesDengtaWxaccountPriceChangeAPIRequest.Put(v)
 }

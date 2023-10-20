@@ -2,6 +2,7 @@ package mtopopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoWirelessBuntingShopShorturlCreateAPIRequest struct {
 // NewTaobaoWirelessBuntingShopShorturlCreateRequest 初始化TaobaoWirelessBuntingShopShorturlCreateAPIRequest对象
 func NewTaobaoWirelessBuntingShopShorturlCreateRequest() *TaobaoWirelessBuntingShopShorturlCreateAPIRequest {
 	return &TaobaoWirelessBuntingShopShorturlCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWirelessBuntingShopShorturlCreateAPIRequest) Reset() {
+	r._shopId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoWirelessBuntingShopShorturlCreateAPIRequest) SetShopId(_shopId st
 // GetShopId ShopId Getter
 func (r TaobaoWirelessBuntingShopShorturlCreateAPIRequest) GetShopId() string {
 	return r._shopId
+}
+
+var poolTaobaoWirelessBuntingShopShorturlCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWirelessBuntingShopShorturlCreateRequest()
+	},
+}
+
+// GetTaobaoWirelessBuntingShopShorturlCreateRequest 从 sync.Pool 获取 TaobaoWirelessBuntingShopShorturlCreateAPIRequest
+func GetTaobaoWirelessBuntingShopShorturlCreateAPIRequest() *TaobaoWirelessBuntingShopShorturlCreateAPIRequest {
+	return poolTaobaoWirelessBuntingShopShorturlCreateAPIRequest.Get().(*TaobaoWirelessBuntingShopShorturlCreateAPIRequest)
+}
+
+// ReleaseTaobaoWirelessBuntingShopShorturlCreateAPIRequest 将 TaobaoWirelessBuntingShopShorturlCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWirelessBuntingShopShorturlCreateAPIRequest(v *TaobaoWirelessBuntingShopShorturlCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoWirelessBuntingShopShorturlCreateAPIRequest.Put(v)
 }

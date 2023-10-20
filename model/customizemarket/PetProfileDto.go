@@ -1,5 +1,9 @@
 package customizemarket
 
+import (
+	"sync"
+)
+
 // PetProfileDto 结构体
 type PetProfileDto struct {
 	// 宠物nick
@@ -20,4 +24,29 @@ type PetProfileDto struct {
 	PetSex int64 `json:"pet_sex,omitempty" xml:"pet_sex,omitempty"`
 	// 是否绝育：0否，1 是 2 未知
 	PetNobaby int64 `json:"pet_nobaby,omitempty" xml:"pet_nobaby,omitempty"`
+}
+
+var poolPetProfileDto = sync.Pool{
+	New: func() any {
+		return new(PetProfileDto)
+	},
+}
+
+// GetPetProfileDto() 从对象池中获取PetProfileDto
+func GetPetProfileDto() *PetProfileDto {
+	return poolPetProfileDto.Get().(*PetProfileDto)
+}
+
+// ReleasePetProfileDto 释放PetProfileDto
+func ReleasePetProfileDto(v *PetProfileDto) {
+	v.PetNick = ""
+	v.PetType = ""
+	v.PetTypeName = ""
+	v.PetBirthday = ""
+	v.PetImage = ""
+	v.PetPics = ""
+	v.Id = 0
+	v.PetSex = 0
+	v.PetNobaby = 0
+	poolPetProfileDto.Put(v)
 }

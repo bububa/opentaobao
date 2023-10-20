@@ -9,11 +9,6 @@ import (
 // taobao.bus.order.set
 //
 // 提供给汽车票商家进行下单
-func TaobaoBusOrderSet(clt *core.SDKClient, req *bus.TaobaoBusOrderSetAPIRequest, session string) (*bus.TaobaoBusOrderSetAPIResponse, error) {
-	var resp bus.TaobaoBusOrderSetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoBusOrderSet(clt *core.SDKClient, req *bus.TaobaoBusOrderSetAPIRequest, resp *bus.TaobaoBusOrderSetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

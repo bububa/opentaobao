@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // BaggageDto 结构体
 type BaggageDto struct {
 	// 婴儿车描述
@@ -42,4 +46,40 @@ type BaggageDto struct {
 	BaggageAllWeight bool `json:"baggage_all_weight,omitempty" xml:"baggage_all_weight,omitempty"`
 	// 手提行李是否总重量
 	CarryBagAllWeight bool `json:"carry_bag_all_weight,omitempty" xml:"carry_bag_all_weight,omitempty"`
+}
+
+var poolBaggageDto = sync.Pool{
+	New: func() any {
+		return new(BaggageDto)
+	},
+}
+
+// GetBaggageDto() 从对象池中获取BaggageDto
+func GetBaggageDto() *BaggageDto {
+	return poolBaggageDto.Get().(*BaggageDto)
+}
+
+// ReleaseBaggageDto 释放BaggageDto
+func ReleaseBaggageDto(v *BaggageDto) {
+	v.BabyCar = ""
+	v.BaggageSize = ""
+	v.CarryBagSize = ""
+	v.ExcessInstruction = ""
+	v.WeightUnit = ""
+	v.DepArrDesc = ""
+	v.PassengerTypeDesc = ""
+	v.BaggageTypeDesc = ""
+	v.RuleDesc = ""
+	v.BaggageFreePcs = 0
+	v.BaggageWeight = 0
+	v.CarryBagFreePcs = 0
+	v.CarryBagWeight = 0
+	v.OdIndex = 0
+	v.PassengerType = 0
+	v.SegmentIndex = 0
+	v.TotalPcs = 0
+	v.TotalWeight = 0
+	v.BaggageAllWeight = false
+	v.CarryBagAllWeight = false
+	poolBaggageDto.Put(v)
 }

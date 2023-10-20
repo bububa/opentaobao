@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallCarLeaseQueryloanplansAPIRequest struct {
 // NewTmallCarLeaseQueryloanplansRequest 初始化TmallCarLeaseQueryloanplansAPIRequest对象
 func NewTmallCarLeaseQueryloanplansRequest() *TmallCarLeaseQueryloanplansAPIRequest {
 	return &TmallCarLeaseQueryloanplansAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCarLeaseQueryloanplansAPIRequest) Reset() {
+	r._loanarno = ""
+	r._iproleid = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallCarLeaseQueryloanplansAPIRequest) SetIproleid(_iproleid string) er
 // GetIproleid Iproleid Getter
 func (r TmallCarLeaseQueryloanplansAPIRequest) GetIproleid() string {
 	return r._iproleid
+}
+
+var poolTmallCarLeaseQueryloanplansAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCarLeaseQueryloanplansRequest()
+	},
+}
+
+// GetTmallCarLeaseQueryloanplansRequest 从 sync.Pool 获取 TmallCarLeaseQueryloanplansAPIRequest
+func GetTmallCarLeaseQueryloanplansAPIRequest() *TmallCarLeaseQueryloanplansAPIRequest {
+	return poolTmallCarLeaseQueryloanplansAPIRequest.Get().(*TmallCarLeaseQueryloanplansAPIRequest)
+}
+
+// ReleaseTmallCarLeaseQueryloanplansAPIRequest 将 TmallCarLeaseQueryloanplansAPIRequest 放入 sync.Pool
+func ReleaseTmallCarLeaseQueryloanplansAPIRequest(v *TmallCarLeaseQueryloanplansAPIRequest) {
+	v.Reset()
+	poolTmallCarLeaseQueryloanplansAPIRequest.Put(v)
 }

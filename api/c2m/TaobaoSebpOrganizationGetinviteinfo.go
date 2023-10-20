@@ -9,11 +9,6 @@ import (
 // taobao.sebp.organization.getinviteinfo
 //
 // 机构人员获取机构上下级关系信息
-func TaobaoSebpOrganizationGetinviteinfo(clt *core.SDKClient, req *c2m.TaobaoSebpOrganizationGetinviteinfoAPIRequest, session string) (*c2m.TaobaoSebpOrganizationGetinviteinfoAPIResponse, error) {
-	var resp c2m.TaobaoSebpOrganizationGetinviteinfoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSebpOrganizationGetinviteinfo(clt *core.SDKClient, req *c2m.TaobaoSebpOrganizationGetinviteinfoAPIRequest, resp *c2m.TaobaoSebpOrganizationGetinviteinfoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

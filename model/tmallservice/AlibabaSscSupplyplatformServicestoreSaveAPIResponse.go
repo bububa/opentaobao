@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaSscSupplyplatformServicestoreSaveAPIResponse struct {
 	AlibabaSscSupplyplatformServicestoreSaveAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaSscSupplyplatformServicestoreSaveAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaSscSupplyplatformServicestoreSaveAPIResponseModel).Reset()
+}
+
 // AlibabaSscSupplyplatformServicestoreSaveAPIResponseModel is 保存网点 成功返回结果
 type AlibabaSscSupplyplatformServicestoreSaveAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ssc_supplyplatform_servicestore_save_response"`
@@ -22,4 +29,27 @@ type AlibabaSscSupplyplatformServicestoreSaveAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *AlibabaSscSupplyplatformServicestoreSaveResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaSscSupplyplatformServicestoreSaveAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaSscSupplyplatformServicestoreSaveAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaSscSupplyplatformServicestoreSaveAPIResponse)
+	},
+}
+
+// GetAlibabaSscSupplyplatformServicestoreSaveAPIResponse 从 sync.Pool 获取 AlibabaSscSupplyplatformServicestoreSaveAPIResponse
+func GetAlibabaSscSupplyplatformServicestoreSaveAPIResponse() *AlibabaSscSupplyplatformServicestoreSaveAPIResponse {
+	return poolAlibabaSscSupplyplatformServicestoreSaveAPIResponse.Get().(*AlibabaSscSupplyplatformServicestoreSaveAPIResponse)
+}
+
+// ReleaseAlibabaSscSupplyplatformServicestoreSaveAPIResponse 将 AlibabaSscSupplyplatformServicestoreSaveAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaSscSupplyplatformServicestoreSaveAPIResponse(v *AlibabaSscSupplyplatformServicestoreSaveAPIResponse) {
+	v.Reset()
+	poolAlibabaSscSupplyplatformServicestoreSaveAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package idleisv
 
+import (
+	"sync"
+)
+
 // IdleUserApiDo 结构体
 type IdleUserApiDo struct {
 	// 具备准入权限的业务类型列表
@@ -14,4 +18,26 @@ type IdleUserApiDo struct {
 	EncryptionSellerId string `json:"encryption_seller_id,omitempty" xml:"encryption_seller_id,omitempty"`
 	// 是否是账号独立升级用户，是否有闲鱼独立账号升级标
 	HasUptag bool `json:"has_uptag,omitempty" xml:"has_uptag,omitempty"`
+}
+
+var poolIdleUserApiDo = sync.Pool{
+	New: func() any {
+		return new(IdleUserApiDo)
+	},
+}
+
+// GetIdleUserApiDo() 从对象池中获取IdleUserApiDo
+func GetIdleUserApiDo() *IdleUserApiDo {
+	return poolIdleUserApiDo.Get().(*IdleUserApiDo)
+}
+
+// ReleaseIdleUserApiDo 释放IdleUserApiDo
+func ReleaseIdleUserApiDo(v *IdleUserApiDo) {
+	v.SupportBizTypes = v.SupportBizTypes[:0]
+	v.SupportCatTypes = v.SupportCatTypes[:0]
+	v.UserNick = ""
+	v.Identity = ""
+	v.EncryptionSellerId = ""
+	v.HasUptag = false
+	poolIdleUserApiDo.Put(v)
 }

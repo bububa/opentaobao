@@ -2,6 +2,7 @@ package moscm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMosGoodsSetpriceAPIRequest struct {
 // NewAlibabaMosGoodsSetpriceRequest 初始化AlibabaMosGoodsSetpriceAPIRequest对象
 func NewAlibabaMosGoodsSetpriceRequest() *AlibabaMosGoodsSetpriceAPIRequest {
 	return &AlibabaMosGoodsSetpriceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosGoodsSetpriceAPIRequest) Reset() {
+	r._priceDtoList = r._priceDtoList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMosGoodsSetpriceAPIRequest) SetPriceDtoList(_priceDtoList []Pric
 // GetPriceDtoList PriceDtoList Getter
 func (r AlibabaMosGoodsSetpriceAPIRequest) GetPriceDtoList() []PriceDto {
 	return r._priceDtoList
+}
+
+var poolAlibabaMosGoodsSetpriceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosGoodsSetpriceRequest()
+	},
+}
+
+// GetAlibabaMosGoodsSetpriceRequest 从 sync.Pool 获取 AlibabaMosGoodsSetpriceAPIRequest
+func GetAlibabaMosGoodsSetpriceAPIRequest() *AlibabaMosGoodsSetpriceAPIRequest {
+	return poolAlibabaMosGoodsSetpriceAPIRequest.Get().(*AlibabaMosGoodsSetpriceAPIRequest)
+}
+
+// ReleaseAlibabaMosGoodsSetpriceAPIRequest 将 AlibabaMosGoodsSetpriceAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosGoodsSetpriceAPIRequest(v *AlibabaMosGoodsSetpriceAPIRequest) {
+	v.Reset()
+	poolAlibabaMosGoodsSetpriceAPIRequest.Put(v)
 }

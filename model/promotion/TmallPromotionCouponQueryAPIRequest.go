@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TmallPromotionCouponQueryAPIRequest struct {
 // NewTmallPromotionCouponQueryRequest 初始化TmallPromotionCouponQueryAPIRequest对象
 func NewTmallPromotionCouponQueryRequest() *TmallPromotionCouponQueryAPIRequest {
 	return &TmallPromotionCouponQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallPromotionCouponQueryAPIRequest) Reset() {
+	r._bizType = ""
+	r._buyerId = ""
+	r._buyerNick = ""
+	r._extra = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TmallPromotionCouponQueryAPIRequest) SetExtra(_extra string) error {
 // GetExtra Extra Getter
 func (r TmallPromotionCouponQueryAPIRequest) GetExtra() string {
 	return r._extra
+}
+
+var poolTmallPromotionCouponQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallPromotionCouponQueryRequest()
+	},
+}
+
+// GetTmallPromotionCouponQueryRequest 从 sync.Pool 获取 TmallPromotionCouponQueryAPIRequest
+func GetTmallPromotionCouponQueryAPIRequest() *TmallPromotionCouponQueryAPIRequest {
+	return poolTmallPromotionCouponQueryAPIRequest.Get().(*TmallPromotionCouponQueryAPIRequest)
+}
+
+// ReleaseTmallPromotionCouponQueryAPIRequest 将 TmallPromotionCouponQueryAPIRequest 放入 sync.Pool
+func ReleaseTmallPromotionCouponQueryAPIRequest(v *TmallPromotionCouponQueryAPIRequest) {
+	v.Reset()
+	poolTmallPromotionCouponQueryAPIRequest.Put(v)
 }

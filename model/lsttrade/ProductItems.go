@@ -1,5 +1,9 @@
 package lsttrade
 
+import (
+	"sync"
+)
+
 // ProductItems 结构体
 type ProductItems struct {
 	// cspuID
@@ -42,4 +46,40 @@ type ProductItems struct {
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 是否组合品
 	IsMixSet bool `json:"is_mix_set,omitempty" xml:"is_mix_set,omitempty"`
+}
+
+var poolProductItems = sync.Pool{
+	New: func() any {
+		return new(ProductItems)
+	},
+}
+
+// GetProductItems() 从对象池中获取ProductItems
+func GetProductItems() *ProductItems {
+	return poolProductItems.Get().(*ProductItems)
+}
+
+// ReleaseProductItems 释放ProductItems
+func ReleaseProductItems(v *ProductItems) {
+	v.CspuId = ""
+	v.CargoNumber = ""
+	v.ProductSnapshotUrl = ""
+	v.Unit = ""
+	v.Name = ""
+	v.Barcode = ""
+	v.ProductType = ""
+	v.Status = ""
+	v.WarehouseCode = ""
+	v.WarehouseName = ""
+	v.LstWarehouseType = ""
+	v.BrandName = ""
+	v.VirtualWarehouseType = ""
+	v.SubOrderId = 0
+	v.Quantity = 0
+	v.ItemAmount = 0
+	v.Price = 0
+	v.SkuId = 0
+	v.ItemId = 0
+	v.IsMixSet = false
+	poolProductItems.Put(v)
 }

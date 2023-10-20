@@ -2,6 +2,7 @@ package jym
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoJymMemberRealnameVerifyWithoutuidAPIRequest struct {
 // NewTaobaoJymMemberRealnameVerifyWithoutuidRequest 初始化TaobaoJymMemberRealnameVerifyWithoutuidAPIRequest对象
 func NewTaobaoJymMemberRealnameVerifyWithoutuidRequest() *TaobaoJymMemberRealnameVerifyWithoutuidAPIRequest {
 	return &TaobaoJymMemberRealnameVerifyWithoutuidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJymMemberRealnameVerifyWithoutuidAPIRequest) Reset() {
+	r._encryptName = ""
+	r._encryptIdNo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoJymMemberRealnameVerifyWithoutuidAPIRequest) SetEncryptIdNo(_encr
 // GetEncryptIdNo EncryptIdNo Getter
 func (r TaobaoJymMemberRealnameVerifyWithoutuidAPIRequest) GetEncryptIdNo() string {
 	return r._encryptIdNo
+}
+
+var poolTaobaoJymMemberRealnameVerifyWithoutuidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJymMemberRealnameVerifyWithoutuidRequest()
+	},
+}
+
+// GetTaobaoJymMemberRealnameVerifyWithoutuidRequest 从 sync.Pool 获取 TaobaoJymMemberRealnameVerifyWithoutuidAPIRequest
+func GetTaobaoJymMemberRealnameVerifyWithoutuidAPIRequest() *TaobaoJymMemberRealnameVerifyWithoutuidAPIRequest {
+	return poolTaobaoJymMemberRealnameVerifyWithoutuidAPIRequest.Get().(*TaobaoJymMemberRealnameVerifyWithoutuidAPIRequest)
+}
+
+// ReleaseTaobaoJymMemberRealnameVerifyWithoutuidAPIRequest 将 TaobaoJymMemberRealnameVerifyWithoutuidAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJymMemberRealnameVerifyWithoutuidAPIRequest(v *TaobaoJymMemberRealnameVerifyWithoutuidAPIRequest) {
+	v.Reset()
+	poolTaobaoJymMemberRealnameVerifyWithoutuidAPIRequest.Put(v)
 }

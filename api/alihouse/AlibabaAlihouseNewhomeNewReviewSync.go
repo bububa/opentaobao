@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.newhome.new.review.sync
 //
 // 新测评基础信息接口
-func AlibabaAlihouseNewhomeNewReviewSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeNewReviewSyncAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeNewReviewSyncAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeNewReviewSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseNewhomeNewReviewSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeNewReviewSyncAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeNewReviewSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.security.jaq.porn.image.sync.detect
 //
 // 同步黄图图像检测接口
-func AlibabaSecurityJaqPornImageSyncDetect(clt *core.SDKClient, req *security.AlibabaSecurityJaqPornImageSyncDetectAPIRequest, session string) (*security.AlibabaSecurityJaqPornImageSyncDetectAPIResponse, error) {
-	var resp security.AlibabaSecurityJaqPornImageSyncDetectAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaSecurityJaqPornImageSyncDetect(clt *core.SDKClient, req *security.AlibabaSecurityJaqPornImageSyncDetectAPIRequest, resp *security.AlibabaSecurityJaqPornImageSyncDetectAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

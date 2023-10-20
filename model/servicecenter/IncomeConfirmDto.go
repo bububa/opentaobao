@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // IncomeConfirmDto 结构体
 type IncomeConfirmDto struct {
 	// appkey
@@ -16,4 +20,27 @@ type IncomeConfirmDto struct {
 	Fee int64 `json:"fee,omitempty" xml:"fee,omitempty"`
 	// 服务市场有效订单ID
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+}
+
+var poolIncomeConfirmDto = sync.Pool{
+	New: func() any {
+		return new(IncomeConfirmDto)
+	},
+}
+
+// GetIncomeConfirmDto() 从对象池中获取IncomeConfirmDto
+func GetIncomeConfirmDto() *IncomeConfirmDto {
+	return poolIncomeConfirmDto.Get().(*IncomeConfirmDto)
+}
+
+// ReleaseIncomeConfirmDto 释放IncomeConfirmDto
+func ReleaseIncomeConfirmDto(v *IncomeConfirmDto) {
+	v.Appkey = ""
+	v.Extend = ""
+	v.Nick = ""
+	v.OutConfirmId = ""
+	v.OutOrderId = ""
+	v.Fee = 0
+	v.OrderId = 0
+	poolIncomeConfirmDto.Put(v)
 }

@@ -2,6 +2,7 @@ package degoperation
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoDegoperationDoLuckydrawAPIResponse struct {
 	TaobaoDegoperationDoLuckydrawAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoDegoperationDoLuckydrawAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoDegoperationDoLuckydrawAPIResponseModel).Reset()
+}
+
 // TaobaoDegoperationDoLuckydrawAPIResponseModel is 激励抽奖 成功返回结果
 type TaobaoDegoperationDoLuckydrawAPIResponseModel struct {
 	XMLName xml.Name `xml:"degoperation_do_luckydraw_response"`
@@ -22,4 +29,27 @@ type TaobaoDegoperationDoLuckydrawAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *BonusResultDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoDegoperationDoLuckydrawAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoDegoperationDoLuckydrawAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoDegoperationDoLuckydrawAPIResponse)
+	},
+}
+
+// GetTaobaoDegoperationDoLuckydrawAPIResponse 从 sync.Pool 获取 TaobaoDegoperationDoLuckydrawAPIResponse
+func GetTaobaoDegoperationDoLuckydrawAPIResponse() *TaobaoDegoperationDoLuckydrawAPIResponse {
+	return poolTaobaoDegoperationDoLuckydrawAPIResponse.Get().(*TaobaoDegoperationDoLuckydrawAPIResponse)
+}
+
+// ReleaseTaobaoDegoperationDoLuckydrawAPIResponse 将 TaobaoDegoperationDoLuckydrawAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoDegoperationDoLuckydrawAPIResponse(v *TaobaoDegoperationDoLuckydrawAPIResponse) {
+	v.Reset()
+	poolTaobaoDegoperationDoLuckydrawAPIResponse.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.omniorder.store.collectconfig.get
 //
 // 查询门店自提配置内容
-func TaobaoOmniorderStoreCollectconfigGet(clt *core.SDKClient, req *omniorder.TaobaoOmniorderStoreCollectconfigGetAPIRequest, session string) (*omniorder.TaobaoOmniorderStoreCollectconfigGetAPIResponse, error) {
-	var resp omniorder.TaobaoOmniorderStoreCollectconfigGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOmniorderStoreCollectconfigGet(clt *core.SDKClient, req *omniorder.TaobaoOmniorderStoreCollectconfigGetAPIRequest, resp *omniorder.TaobaoOmniorderStoreCollectconfigGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

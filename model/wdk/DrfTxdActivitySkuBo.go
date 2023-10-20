@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // DrfTxdActivitySkuBo 结构体
 type DrfTxdActivitySkuBo struct {
 	// 赠品skuCode
@@ -46,4 +50,42 @@ type DrfTxdActivitySkuBo struct {
 	TxdActivityId int64 `json:"txd_activity_id,omitempty" xml:"txd_activity_id,omitempty"`
 	// 对应单品积分活动。对应需要扣除的积分数
 	DeductPoint int64 `json:"deduct_point,omitempty" xml:"deduct_point,omitempty"`
+}
+
+var poolDrfTxdActivitySkuBo = sync.Pool{
+	New: func() any {
+		return new(DrfTxdActivitySkuBo)
+	},
+}
+
+// GetDrfTxdActivitySkuBo() 从对象池中获取DrfTxdActivitySkuBo
+func GetDrfTxdActivitySkuBo() *DrfTxdActivitySkuBo {
+	return poolDrfTxdActivitySkuBo.Get().(*DrfTxdActivitySkuBo)
+}
+
+// ReleaseDrfTxdActivitySkuBo 释放DrfTxdActivitySkuBo
+func ReleaseDrfTxdActivitySkuBo(v *DrfTxdActivitySkuBo) {
+	v.GiftSkuCode = ""
+	v.SkuCode = ""
+	v.PromotionId = ""
+	v.ActivityVersionId = 0
+	v.LimitWeight = 0
+	v.UpdateTime = 0
+	v.InsertTime = 0
+	v.Status = 0
+	v.ConditionNum = 0
+	v.ConditionType = 0
+	v.BuyNum = 0
+	v.TotalDayLimit = 0
+	v.UserDayLimit = 0
+	v.TotalLimit = 0
+	v.UserLimit = 0
+	v.DiscountRate = 0
+	v.DecreaseMoney = 0
+	v.FixPrice = 0
+	v.PoolId = 0
+	v.ActivityType = 0
+	v.TxdActivityId = 0
+	v.DeductPoint = 0
+	poolDrfTxdActivitySkuBo.Put(v)
 }

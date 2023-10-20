@@ -2,6 +2,7 @@ package wms
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoWlbWmsSkuGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbWmsSkuGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoWlbWmsSkuGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoWlbWmsSkuGetAPIResponseModel).Reset()
 }
 
 // TaobaoWlbWmsSkuGetAPIResponseModel is 商品信息查询 成功返回结果
@@ -100,4 +107,66 @@ type TaobaoWlbWmsSkuGetAPIResponseModel struct {
 	WlSuccess bool `json:"wl_success,omitempty" xml:"wl_success,omitempty"`
 	// 是否区域销售
 	IsAreaSale bool `json:"is_area_sale,omitempty" xml:"is_area_sale,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoWlbWmsSkuGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ExtendFields = ""
+	m.ApprovalNumber = ""
+	m.Size = ""
+	m.Color = ""
+	m.Specification = ""
+	m.BrandName = ""
+	m.Brand = ""
+	m.CategoryName = ""
+	m.Category = ""
+	m.Type = ""
+	m.Title = ""
+	m.Name = ""
+	m.BarCode = ""
+	m.IitemCode = ""
+	m.ItemId = ""
+	m.WlErrorMsg = ""
+	m.WlErrorCode = ""
+	m.CostPrice = 0
+	m.ItemPrice = 0
+	m.TagPrice = 0
+	m.AdventLifecycle = 0
+	m.LockupLifecycle = 0
+	m.RejectLifecycle = 0
+	m.Lifecycle = 0
+	m.OriginAddress = 0
+	m.Pcs = 0
+	m.Volume = 0
+	m.Height = 0
+	m.Width = 0
+	m.Length = 0
+	m.NetWeight = 0
+	m.GrossWeight = 0
+	m.IsBatchMgt = false
+	m.UseYn = false
+	m.IsDanger = false
+	m.IsHygroscopic = false
+	m.IsSnMgt = false
+	m.IsShelflife = false
+	m.WlSuccess = false
+	m.IsAreaSale = false
+}
+
+var poolTaobaoWlbWmsSkuGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoWlbWmsSkuGetAPIResponse)
+	},
+}
+
+// GetTaobaoWlbWmsSkuGetAPIResponse 从 sync.Pool 获取 TaobaoWlbWmsSkuGetAPIResponse
+func GetTaobaoWlbWmsSkuGetAPIResponse() *TaobaoWlbWmsSkuGetAPIResponse {
+	return poolTaobaoWlbWmsSkuGetAPIResponse.Get().(*TaobaoWlbWmsSkuGetAPIResponse)
+}
+
+// ReleaseTaobaoWlbWmsSkuGetAPIResponse 将 TaobaoWlbWmsSkuGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoWlbWmsSkuGetAPIResponse(v *TaobaoWlbWmsSkuGetAPIResponse) {
+	v.Reset()
+	poolTaobaoWlbWmsSkuGetAPIResponse.Put(v)
 }

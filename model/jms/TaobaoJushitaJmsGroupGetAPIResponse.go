@@ -2,6 +2,7 @@ package jms
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoJushitaJmsGroupGetAPIResponse struct {
 	TaobaoJushitaJmsGroupGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoJushitaJmsGroupGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoJushitaJmsGroupGetAPIResponseModel).Reset()
+}
+
 // TaobaoJushitaJmsGroupGetAPIResponseModel is 查询ONS分组 成功返回结果
 type TaobaoJushitaJmsGroupGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"jushita_jms_group_get_response"`
@@ -24,4 +31,28 @@ type TaobaoJushitaJmsGroupGetAPIResponseModel struct {
 	Groups []MsgGroupDo `json:"groups,omitempty" xml:"groups>msg_group_do,omitempty"`
 	// 返回的总数
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoJushitaJmsGroupGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Groups = m.Groups[:0]
+	m.TotalResults = 0
+}
+
+var poolTaobaoJushitaJmsGroupGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoJushitaJmsGroupGetAPIResponse)
+	},
+}
+
+// GetTaobaoJushitaJmsGroupGetAPIResponse 从 sync.Pool 获取 TaobaoJushitaJmsGroupGetAPIResponse
+func GetTaobaoJushitaJmsGroupGetAPIResponse() *TaobaoJushitaJmsGroupGetAPIResponse {
+	return poolTaobaoJushitaJmsGroupGetAPIResponse.Get().(*TaobaoJushitaJmsGroupGetAPIResponse)
+}
+
+// ReleaseTaobaoJushitaJmsGroupGetAPIResponse 将 TaobaoJushitaJmsGroupGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoJushitaJmsGroupGetAPIResponse(v *TaobaoJushitaJmsGroupGetAPIResponse) {
+	v.Reset()
+	poolTaobaoJushitaJmsGroupGetAPIResponse.Put(v)
 }

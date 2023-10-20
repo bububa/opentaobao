@@ -2,6 +2,7 @@ package simba
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoUniversalbpReportQueryCampaignAPIResponse struct {
 	TaobaoUniversalbpReportQueryCampaignAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoUniversalbpReportQueryCampaignAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoUniversalbpReportQueryCampaignAPIResponseModel).Reset()
+}
+
 // TaobaoUniversalbpReportQueryCampaignAPIResponseModel is 计划报表查询 成功返回结果
 type TaobaoUniversalbpReportQueryCampaignAPIResponseModel struct {
 	XMLName xml.Name `xml:"universalbp_report_query_campaign_response"`
@@ -22,4 +29,27 @@ type TaobaoUniversalbpReportQueryCampaignAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果体
 	Result *TaobaoUniversalbpReportQueryCampaignTopResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoUniversalbpReportQueryCampaignAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoUniversalbpReportQueryCampaignAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoUniversalbpReportQueryCampaignAPIResponse)
+	},
+}
+
+// GetTaobaoUniversalbpReportQueryCampaignAPIResponse 从 sync.Pool 获取 TaobaoUniversalbpReportQueryCampaignAPIResponse
+func GetTaobaoUniversalbpReportQueryCampaignAPIResponse() *TaobaoUniversalbpReportQueryCampaignAPIResponse {
+	return poolTaobaoUniversalbpReportQueryCampaignAPIResponse.Get().(*TaobaoUniversalbpReportQueryCampaignAPIResponse)
+}
+
+// ReleaseTaobaoUniversalbpReportQueryCampaignAPIResponse 将 TaobaoUniversalbpReportQueryCampaignAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoUniversalbpReportQueryCampaignAPIResponse(v *TaobaoUniversalbpReportQueryCampaignAPIResponse) {
+	v.Reset()
+	poolTaobaoUniversalbpReportQueryCampaignAPIResponse.Put(v)
 }

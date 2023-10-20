@@ -2,6 +2,7 @@ package train
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTrainAgentOrderQueryAPIResponse struct {
 	TaobaoTrainAgentOrderQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTrainAgentOrderQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTrainAgentOrderQueryAPIResponseModel).Reset()
+}
+
 // TaobaoTrainAgentOrderQueryAPIResponseModel is 订单详情查询 成功返回结果
 type TaobaoTrainAgentOrderQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"train_agent_order_query_response"`
@@ -22,4 +29,27 @@ type TaobaoTrainAgentOrderQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// rs
 	Result *TapResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTrainAgentOrderQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoTrainAgentOrderQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTrainAgentOrderQueryAPIResponse)
+	},
+}
+
+// GetTaobaoTrainAgentOrderQueryAPIResponse 从 sync.Pool 获取 TaobaoTrainAgentOrderQueryAPIResponse
+func GetTaobaoTrainAgentOrderQueryAPIResponse() *TaobaoTrainAgentOrderQueryAPIResponse {
+	return poolTaobaoTrainAgentOrderQueryAPIResponse.Get().(*TaobaoTrainAgentOrderQueryAPIResponse)
+}
+
+// ReleaseTaobaoTrainAgentOrderQueryAPIResponse 将 TaobaoTrainAgentOrderQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTrainAgentOrderQueryAPIResponse(v *TaobaoTrainAgentOrderQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoTrainAgentOrderQueryAPIResponse.Put(v)
 }

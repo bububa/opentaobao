@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // CouponTemplateDiscountConfig 结构体
 type CouponTemplateDiscountConfig struct {
 	// 减钱金额
@@ -14,4 +18,26 @@ type CouponTemplateDiscountConfig struct {
 	Discount bool `json:"discount,omitempty" xml:"discount,omitempty"`
 	// 是否固定价格
 	FixPrice bool `json:"fix_price,omitempty" xml:"fix_price,omitempty"`
+}
+
+var poolCouponTemplateDiscountConfig = sync.Pool{
+	New: func() any {
+		return new(CouponTemplateDiscountConfig)
+	},
+}
+
+// GetCouponTemplateDiscountConfig() 从对象池中获取CouponTemplateDiscountConfig
+func GetCouponTemplateDiscountConfig() *CouponTemplateDiscountConfig {
+	return poolCouponTemplateDiscountConfig.Get().(*CouponTemplateDiscountConfig)
+}
+
+// ReleaseCouponTemplateDiscountConfig 释放CouponTemplateDiscountConfig
+func ReleaseCouponTemplateDiscountConfig(v *CouponTemplateDiscountConfig) {
+	v.DecreaseMoney = 0
+	v.DiscountRate = 0
+	v.FixPriceAmount = 0
+	v.Decrease = false
+	v.Discount = false
+	v.FixPrice = false
+	poolCouponTemplateDiscountConfig.Put(v)
 }

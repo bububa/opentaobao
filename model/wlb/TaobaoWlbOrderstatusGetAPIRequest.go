@@ -2,6 +2,7 @@ package wlb
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoWlbOrderstatusGetAPIRequest struct {
 // NewTaobaoWlbOrderstatusGetRequest 初始化TaobaoWlbOrderstatusGetAPIRequest对象
 func NewTaobaoWlbOrderstatusGetRequest() *TaobaoWlbOrderstatusGetAPIRequest {
 	return &TaobaoWlbOrderstatusGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbOrderstatusGetAPIRequest) Reset() {
+	r._orderCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoWlbOrderstatusGetAPIRequest) SetOrderCode(_orderCode string) erro
 // GetOrderCode OrderCode Getter
 func (r TaobaoWlbOrderstatusGetAPIRequest) GetOrderCode() string {
 	return r._orderCode
+}
+
+var poolTaobaoWlbOrderstatusGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbOrderstatusGetRequest()
+	},
+}
+
+// GetTaobaoWlbOrderstatusGetRequest 从 sync.Pool 获取 TaobaoWlbOrderstatusGetAPIRequest
+func GetTaobaoWlbOrderstatusGetAPIRequest() *TaobaoWlbOrderstatusGetAPIRequest {
+	return poolTaobaoWlbOrderstatusGetAPIRequest.Get().(*TaobaoWlbOrderstatusGetAPIRequest)
+}
+
+// ReleaseTaobaoWlbOrderstatusGetAPIRequest 将 TaobaoWlbOrderstatusGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbOrderstatusGetAPIRequest(v *TaobaoWlbOrderstatusGetAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbOrderstatusGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type TaobaoXhotelBnbreviewAddAPIRequest struct {
 // NewTaobaoXhotelBnbreviewAddRequest 初始化TaobaoXhotelBnbreviewAddAPIRequest对象
 func NewTaobaoXhotelBnbreviewAddRequest() *TaobaoXhotelBnbreviewAddAPIRequest {
 	return &TaobaoXhotelBnbreviewAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelBnbreviewAddAPIRequest) Reset() {
+	r._checkInTime = ""
+	r._gmtCreate = ""
+	r._content = ""
+	r._userNick = ""
+	r._totalScore = ""
+	r._source = 0
+	r._picInfoList = nil
+	r._rid = 0
+	r._outerId = 0
+	r._scoreDetail = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *TaobaoXhotelBnbreviewAddAPIRequest) SetScoreDetail(_scoreDetail *Review
 // GetScoreDetail ScoreDetail Getter
 func (r TaobaoXhotelBnbreviewAddAPIRequest) GetScoreDetail() *ReviewDetailInfo {
 	return r._scoreDetail
+}
+
+var poolTaobaoXhotelBnbreviewAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelBnbreviewAddRequest()
+	},
+}
+
+// GetTaobaoXhotelBnbreviewAddRequest 从 sync.Pool 获取 TaobaoXhotelBnbreviewAddAPIRequest
+func GetTaobaoXhotelBnbreviewAddAPIRequest() *TaobaoXhotelBnbreviewAddAPIRequest {
+	return poolTaobaoXhotelBnbreviewAddAPIRequest.Get().(*TaobaoXhotelBnbreviewAddAPIRequest)
+}
+
+// ReleaseTaobaoXhotelBnbreviewAddAPIRequest 将 TaobaoXhotelBnbreviewAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelBnbreviewAddAPIRequest(v *TaobaoXhotelBnbreviewAddAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelBnbreviewAddAPIRequest.Put(v)
 }

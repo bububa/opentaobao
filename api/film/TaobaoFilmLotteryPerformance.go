@@ -9,11 +9,6 @@ import (
 // taobao.film.lottery.performance
 //
 // 对外第三方合作渠道通过抽奖形式发放权益
-func TaobaoFilmLotteryPerformance(clt *core.SDKClient, req *film.TaobaoFilmLotteryPerformanceAPIRequest, session string) (*film.TaobaoFilmLotteryPerformanceAPIResponse, error) {
-	var resp film.TaobaoFilmLotteryPerformanceAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFilmLotteryPerformance(clt *core.SDKClient, req *film.TaobaoFilmLotteryPerformanceAPIRequest, resp *film.TaobaoFilmLotteryPerformanceAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

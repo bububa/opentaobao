@@ -2,6 +2,7 @@ package user
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type TmallServiceSettleadjustmentModifyAPIResponse struct {
 	TmallServiceSettleadjustmentModifyAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallServiceSettleadjustmentModifyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallServiceSettleadjustmentModifyAPIResponseModel).Reset()
+}
+
 // TmallServiceSettleadjustmentModifyAPIResponseModel is 修改结算调整单 成功返回结果
 type TmallServiceSettleadjustmentModifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_service_settleadjustment_modify_response"`
@@ -23,4 +30,27 @@ type TmallServiceSettleadjustmentModifyAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *TmallServiceSettleadjustmentModifyResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallServiceSettleadjustmentModifyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTmallServiceSettleadjustmentModifyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallServiceSettleadjustmentModifyAPIResponse)
+	},
+}
+
+// GetTmallServiceSettleadjustmentModifyAPIResponse 从 sync.Pool 获取 TmallServiceSettleadjustmentModifyAPIResponse
+func GetTmallServiceSettleadjustmentModifyAPIResponse() *TmallServiceSettleadjustmentModifyAPIResponse {
+	return poolTmallServiceSettleadjustmentModifyAPIResponse.Get().(*TmallServiceSettleadjustmentModifyAPIResponse)
+}
+
+// ReleaseTmallServiceSettleadjustmentModifyAPIResponse 将 TmallServiceSettleadjustmentModifyAPIResponse 保存到 sync.Pool
+func ReleaseTmallServiceSettleadjustmentModifyAPIResponse(v *TmallServiceSettleadjustmentModifyAPIResponse) {
+	v.Reset()
+	poolTmallServiceSettleadjustmentModifyAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package cainiaocntec
 
+import (
+	"sync"
+)
+
 // CainiaoCntecShopkeeperSupplyStatisticsQueryResult 结构体
 type CainiaoCntecShopkeeperSupplyStatisticsQueryResult struct {
 	// 门店统计结果
@@ -18,4 +22,28 @@ type CainiaoCntecShopkeeperSupplyStatisticsQueryResult struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolCainiaoCntecShopkeeperSupplyStatisticsQueryResult = sync.Pool{
+	New: func() any {
+		return new(CainiaoCntecShopkeeperSupplyStatisticsQueryResult)
+	},
+}
+
+// GetCainiaoCntecShopkeeperSupplyStatisticsQueryResult() 从对象池中获取CainiaoCntecShopkeeperSupplyStatisticsQueryResult
+func GetCainiaoCntecShopkeeperSupplyStatisticsQueryResult() *CainiaoCntecShopkeeperSupplyStatisticsQueryResult {
+	return poolCainiaoCntecShopkeeperSupplyStatisticsQueryResult.Get().(*CainiaoCntecShopkeeperSupplyStatisticsQueryResult)
+}
+
+// ReleaseCainiaoCntecShopkeeperSupplyStatisticsQueryResult 释放CainiaoCntecShopkeeperSupplyStatisticsQueryResult
+func ReleaseCainiaoCntecShopkeeperSupplyStatisticsQueryResult(v *CainiaoCntecShopkeeperSupplyStatisticsQueryResult) {
+	v.ModelList = v.ModelList[:0]
+	v.TraceId = ""
+	v.ErrCode = ""
+	v.ErrorMsg = ""
+	v.TotalCount = 0
+	v.PageIndex = 0
+	v.PageSize = 0
+	v.Success = false
+	poolCainiaoCntecShopkeeperSupplyStatisticsQueryResult.Put(v)
 }

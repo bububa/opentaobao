@@ -2,6 +2,7 @@ package cainiaohandover
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type CainiaoGlobalSolutionInquiryAPIRequest struct {
 // NewCainiaoGlobalSolutionInquiryRequest 初始化CainiaoGlobalSolutionInquiryAPIRequest对象
 func NewCainiaoGlobalSolutionInquiryRequest() *CainiaoGlobalSolutionInquiryAPIRequest {
 	return &CainiaoGlobalSolutionInquiryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoGlobalSolutionInquiryAPIRequest) Reset() {
+	r._packageParams = r._packageParams[:0]
+	r._locale = ""
+	r._tradeOrderParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *CainiaoGlobalSolutionInquiryAPIRequest) SetTradeOrderParam(_tradeOrderP
 // GetTradeOrderParam TradeOrderParam Getter
 func (r CainiaoGlobalSolutionInquiryAPIRequest) GetTradeOrderParam() *OpenTradeOrderParam {
 	return r._tradeOrderParam
+}
+
+var poolCainiaoGlobalSolutionInquiryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoGlobalSolutionInquiryRequest()
+	},
+}
+
+// GetCainiaoGlobalSolutionInquiryRequest 从 sync.Pool 获取 CainiaoGlobalSolutionInquiryAPIRequest
+func GetCainiaoGlobalSolutionInquiryAPIRequest() *CainiaoGlobalSolutionInquiryAPIRequest {
+	return poolCainiaoGlobalSolutionInquiryAPIRequest.Get().(*CainiaoGlobalSolutionInquiryAPIRequest)
+}
+
+// ReleaseCainiaoGlobalSolutionInquiryAPIRequest 将 CainiaoGlobalSolutionInquiryAPIRequest 放入 sync.Pool
+func ReleaseCainiaoGlobalSolutionInquiryAPIRequest(v *CainiaoGlobalSolutionInquiryAPIRequest) {
+	v.Reset()
+	poolCainiaoGlobalSolutionInquiryAPIRequest.Put(v)
 }

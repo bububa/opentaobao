@@ -1,5 +1,9 @@
 package pentraprism
 
+import (
+	"sync"
+)
+
 // OpenTaskInfoVo 结构体
 type OpenTaskInfoVo struct {
 	// 任务奖励对象
@@ -30,4 +34,34 @@ type OpenTaskInfoVo struct {
 	IsCurrent bool `json:"is_current,omitempty" xml:"is_current,omitempty"`
 	// 是否今天完成的
 	IsToday bool `json:"is_today,omitempty" xml:"is_today,omitempty"`
+}
+
+var poolOpenTaskInfoVo = sync.Pool{
+	New: func() any {
+		return new(OpenTaskInfoVo)
+	},
+}
+
+// GetOpenTaskInfoVo() 从对象池中获取OpenTaskInfoVo
+func GetOpenTaskInfoVo() *OpenTaskInfoVo {
+	return poolOpenTaskInfoVo.Get().(*OpenTaskInfoVo)
+}
+
+// ReleaseOpenTaskInfoVo 释放OpenTaskInfoVo
+func ReleaseOpenTaskInfoVo(v *OpenTaskInfoVo) {
+	v.Rewards = v.Rewards[:0]
+	v.SubList = v.SubList[:0]
+	v.FromToken = ""
+	v.Status = ""
+	v.TaskSubType = ""
+	v.TaskType = ""
+	v.Time = ""
+	v.GroupId = 0
+	v.GroupIndex = 0
+	v.Id = 0
+	v.Index = 0
+	v.Progress = nil
+	v.IsCurrent = false
+	v.IsToday = false
+	poolOpenTaskInfoVo.Put(v)
 }

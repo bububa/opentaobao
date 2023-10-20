@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // TradeMerchantOpenDto 结构体
 type TradeMerchantOpenDto struct {
 	// 授权协议与证明列表
@@ -82,4 +86,60 @@ type TradeMerchantOpenDto struct {
 	SignType int64 `json:"sign_type,omitempty" xml:"sign_type,omitempty"`
 	// 代签主体ID
 	SigningMerchantOpenId int64 `json:"signing_merchant_open_id,omitempty" xml:"signing_merchant_open_id,omitempty"`
+}
+
+var poolTradeMerchantOpenDto = sync.Pool{
+	New: func() any {
+		return new(TradeMerchantOpenDto)
+	},
+}
+
+// GetTradeMerchantOpenDto() 从对象池中获取TradeMerchantOpenDto
+func GetTradeMerchantOpenDto() *TradeMerchantOpenDto {
+	return poolTradeMerchantOpenDto.Get().(*TradeMerchantOpenDto)
+}
+
+// ReleaseTradeMerchantOpenDto 释放TradeMerchantOpenDto
+func ReleaseTradeMerchantOpenDto(v *TradeMerchantOpenDto) {
+	v.ProofList = v.ProofList[:0]
+	v.LegalCertBackUrl = ""
+	v.LegalCertFrontUrl = ""
+	v.BusinessLicenseExpireTime = ""
+	v.BusinessLicenseUrl = ""
+	v.BusinessLicenseNo = ""
+	v.LegalCertNo = ""
+	v.LegalName = ""
+	v.BusinessContactPhone = ""
+	v.BusinessContactName = ""
+	v.AliasName = ""
+	v.Name = ""
+	v.MerchantType = ""
+	v.OuterCompanyId = ""
+	v.PersonalName = ""
+	v.PersonalPhone = ""
+	v.PersonalCertNo = ""
+	v.PersonalCertExpireTime = ""
+	v.PersonalCertFrontUrl = ""
+	v.PersonalCertBackUrl = ""
+	v.Address = ""
+	v.LegalCertExpireTime = ""
+	v.OuterId = ""
+	v.OuterStoreId = ""
+	v.ContractSnapshot = ""
+	v.LegalCertType = 0
+	v.BusinessLicenseStatus = 0
+	v.Type = 0
+	v.PersonalCertType = 0
+	v.PersonalCertExpireStatus = 0
+	v.SceneType = 0
+	v.ProvinceId = 0
+	v.CityId = 0
+	v.AreaId = 0
+	v.LegalCertStatus = 0
+	v.IsSupportCredit = 0
+	v.CollectionType = 0
+	v.InsteadMerchantOpenId = 0
+	v.SignType = 0
+	v.SigningMerchantOpenId = 0
+	poolTradeMerchantOpenDto.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.ad.keyword.tag.update
 //
 // 修改关键词所属分组
-func AlibabaScbpAdKeywordTagUpdate(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordTagUpdateAPIRequest, session string) (*scbp.AlibabaScbpAdKeywordTagUpdateAPIResponse, error) {
-	var resp scbp.AlibabaScbpAdKeywordTagUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpAdKeywordTagUpdate(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordTagUpdateAPIRequest, resp *scbp.AlibabaScbpAdKeywordTagUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package aliospay
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliyunAliosPayTradeQueryAPIRequest struct {
 // NewAliyunAliosPayTradeQueryRequest 初始化AliyunAliosPayTradeQueryAPIRequest对象
 func NewAliyunAliosPayTradeQueryRequest() *AliyunAliosPayTradeQueryAPIRequest {
 	return &AliyunAliosPayTradeQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliyunAliosPayTradeQueryAPIRequest) Reset() {
+	r._queryTradeRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliyunAliosPayTradeQueryAPIRequest) SetQueryTradeRequest(_queryTradeReq
 // GetQueryTradeRequest QueryTradeRequest Getter
 func (r AliyunAliosPayTradeQueryAPIRequest) GetQueryTradeRequest() *QueryTradeRequest {
 	return r._queryTradeRequest
+}
+
+var poolAliyunAliosPayTradeQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliyunAliosPayTradeQueryRequest()
+	},
+}
+
+// GetAliyunAliosPayTradeQueryRequest 从 sync.Pool 获取 AliyunAliosPayTradeQueryAPIRequest
+func GetAliyunAliosPayTradeQueryAPIRequest() *AliyunAliosPayTradeQueryAPIRequest {
+	return poolAliyunAliosPayTradeQueryAPIRequest.Get().(*AliyunAliosPayTradeQueryAPIRequest)
+}
+
+// ReleaseAliyunAliosPayTradeQueryAPIRequest 将 AliyunAliosPayTradeQueryAPIRequest 放入 sync.Pool
+func ReleaseAliyunAliosPayTradeQueryAPIRequest(v *AliyunAliosPayTradeQueryAPIRequest) {
+	v.Reset()
+	poolAliyunAliosPayTradeQueryAPIRequest.Put(v)
 }

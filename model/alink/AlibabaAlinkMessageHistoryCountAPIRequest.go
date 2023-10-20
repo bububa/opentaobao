@@ -2,6 +2,7 @@ package alink
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaAlinkMessageHistoryCountAPIRequest struct {
 // NewAlibabaAlinkMessageHistoryCountRequest 初始化AlibabaAlinkMessageHistoryCountAPIRequest对象
 func NewAlibabaAlinkMessageHistoryCountRequest() *AlibabaAlinkMessageHistoryCountAPIRequest {
 	return &AlibabaAlinkMessageHistoryCountAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlinkMessageHistoryCountAPIRequest) Reset() {
+	r._uuid = ""
+	r._type = ""
+	r._status = ""
+	r._level = ""
+	r._limit = ""
+	r._offset = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaAlinkMessageHistoryCountAPIRequest) SetOffset(_offset string) er
 // GetOffset Offset Getter
 func (r AlibabaAlinkMessageHistoryCountAPIRequest) GetOffset() string {
 	return r._offset
+}
+
+var poolAlibabaAlinkMessageHistoryCountAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlinkMessageHistoryCountRequest()
+	},
+}
+
+// GetAlibabaAlinkMessageHistoryCountRequest 从 sync.Pool 获取 AlibabaAlinkMessageHistoryCountAPIRequest
+func GetAlibabaAlinkMessageHistoryCountAPIRequest() *AlibabaAlinkMessageHistoryCountAPIRequest {
+	return poolAlibabaAlinkMessageHistoryCountAPIRequest.Get().(*AlibabaAlinkMessageHistoryCountAPIRequest)
+}
+
+// ReleaseAlibabaAlinkMessageHistoryCountAPIRequest 将 AlibabaAlinkMessageHistoryCountAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlinkMessageHistoryCountAPIRequest(v *AlibabaAlinkMessageHistoryCountAPIRequest) {
+	v.Reset()
+	poolAlibabaAlinkMessageHistoryCountAPIRequest.Put(v)
 }

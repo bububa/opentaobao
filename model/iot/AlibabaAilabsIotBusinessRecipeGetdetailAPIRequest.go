@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAilabsIotBusinessRecipeGetdetailAPIRequest struct {
 // NewAlibabaAilabsIotBusinessRecipeGetdetailRequest 初始化AlibabaAilabsIotBusinessRecipeGetdetailAPIRequest对象
 func NewAlibabaAilabsIotBusinessRecipeGetdetailRequest() *AlibabaAilabsIotBusinessRecipeGetdetailAPIRequest {
 	return &AlibabaAilabsIotBusinessRecipeGetdetailAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsIotBusinessRecipeGetdetailAPIRequest) Reset() {
+	r._openAccountId = ""
+	r._businessRecipeId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAilabsIotBusinessRecipeGetdetailAPIRequest) SetBusinessRecipeId(
 // GetBusinessRecipeId BusinessRecipeId Getter
 func (r AlibabaAilabsIotBusinessRecipeGetdetailAPIRequest) GetBusinessRecipeId() int64 {
 	return r._businessRecipeId
+}
+
+var poolAlibabaAilabsIotBusinessRecipeGetdetailAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsIotBusinessRecipeGetdetailRequest()
+	},
+}
+
+// GetAlibabaAilabsIotBusinessRecipeGetdetailRequest 从 sync.Pool 获取 AlibabaAilabsIotBusinessRecipeGetdetailAPIRequest
+func GetAlibabaAilabsIotBusinessRecipeGetdetailAPIRequest() *AlibabaAilabsIotBusinessRecipeGetdetailAPIRequest {
+	return poolAlibabaAilabsIotBusinessRecipeGetdetailAPIRequest.Get().(*AlibabaAilabsIotBusinessRecipeGetdetailAPIRequest)
+}
+
+// ReleaseAlibabaAilabsIotBusinessRecipeGetdetailAPIRequest 将 AlibabaAilabsIotBusinessRecipeGetdetailAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsIotBusinessRecipeGetdetailAPIRequest(v *AlibabaAilabsIotBusinessRecipeGetdetailAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsIotBusinessRecipeGetdetailAPIRequest.Put(v)
 }

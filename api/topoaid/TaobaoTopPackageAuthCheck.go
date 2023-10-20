@@ -9,11 +9,6 @@ import (
 // taobao.top.package.auth.check
 //
 // 校验用户授权关系
-func TaobaoTopPackageAuthCheck(clt *core.SDKClient, req *topoaid.TaobaoTopPackageAuthCheckAPIRequest, session string) (*topoaid.TaobaoTopPackageAuthCheckAPIResponse, error) {
-	var resp topoaid.TaobaoTopPackageAuthCheckAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTopPackageAuthCheck(clt *core.SDKClient, req *topoaid.TaobaoTopPackageAuthCheckAPIRequest, resp *topoaid.TaobaoTopPackageAuthCheckAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

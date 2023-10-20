@@ -2,6 +2,7 @@ package tmallnr
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TmallNrInventoryInitialAPIResponse struct {
 	model.CommonResponse
 	TmallNrInventoryInitialAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TmallNrInventoryInitialAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallNrInventoryInitialAPIResponseModel).Reset()
 }
 
 // TmallNrInventoryInitialAPIResponseModel is 门店库存初始化前后端商品绑定 成功返回结果
@@ -28,4 +35,30 @@ type TmallNrInventoryInitialAPIResponseModel struct {
 	ResultData bool `json:"result_data,omitempty" xml:"result_data,omitempty"`
 	// isSuccess
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallNrInventoryInitialAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorMessage = ""
+	m.ErrorCode2 = ""
+	m.ResultData = false
+	m.IsSuccess = false
+}
+
+var poolTmallNrInventoryInitialAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallNrInventoryInitialAPIResponse)
+	},
+}
+
+// GetTmallNrInventoryInitialAPIResponse 从 sync.Pool 获取 TmallNrInventoryInitialAPIResponse
+func GetTmallNrInventoryInitialAPIResponse() *TmallNrInventoryInitialAPIResponse {
+	return poolTmallNrInventoryInitialAPIResponse.Get().(*TmallNrInventoryInitialAPIResponse)
+}
+
+// ReleaseTmallNrInventoryInitialAPIResponse 将 TmallNrInventoryInitialAPIResponse 保存到 sync.Pool
+func ReleaseTmallNrInventoryInitialAPIResponse(v *TmallNrInventoryInitialAPIResponse) {
+	v.Reset()
+	poolTmallNrInventoryInitialAPIResponse.Put(v)
 }

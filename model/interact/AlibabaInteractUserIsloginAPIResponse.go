@@ -2,6 +2,7 @@ package interact
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaInteractUserIsloginAPIResponse struct {
 	AlibabaInteractUserIsloginAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaInteractUserIsloginAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaInteractUserIsloginAPIResponseModel).Reset()
+}
+
 // AlibabaInteractUserIsloginAPIResponseModel is 校验用户是否已经登录 成功返回结果
 type AlibabaInteractUserIsloginAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_user_islogin_response"`
@@ -22,4 +29,27 @@ type AlibabaInteractUserIsloginAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *AlibabaInteractUserIsloginMtopResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaInteractUserIsloginAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaInteractUserIsloginAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaInteractUserIsloginAPIResponse)
+	},
+}
+
+// GetAlibabaInteractUserIsloginAPIResponse 从 sync.Pool 获取 AlibabaInteractUserIsloginAPIResponse
+func GetAlibabaInteractUserIsloginAPIResponse() *AlibabaInteractUserIsloginAPIResponse {
+	return poolAlibabaInteractUserIsloginAPIResponse.Get().(*AlibabaInteractUserIsloginAPIResponse)
+}
+
+// ReleaseAlibabaInteractUserIsloginAPIResponse 将 AlibabaInteractUserIsloginAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaInteractUserIsloginAPIResponse(v *AlibabaInteractUserIsloginAPIResponse) {
+	v.Reset()
+	poolAlibabaInteractUserIsloginAPIResponse.Put(v)
 }

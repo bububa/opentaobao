@@ -9,11 +9,6 @@ import (
 // alitrip.tuan.hotel.image.upload
 //
 // 用户调用此接口完成外网图片上传至卖家图片中心，此接口返回图片中心的图片地址
-func AlitripTuanHotelImageUpload(clt *core.SDKClient, req *tuanhotel.AlitripTuanHotelImageUploadAPIRequest, session string) (*tuanhotel.AlitripTuanHotelImageUploadAPIResponse, error) {
-	var resp tuanhotel.AlitripTuanHotelImageUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripTuanHotelImageUpload(clt *core.SDKClient, req *tuanhotel.AlitripTuanHotelImageUploadAPIRequest, resp *tuanhotel.AlitripTuanHotelImageUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

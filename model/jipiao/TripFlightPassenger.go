@@ -1,5 +1,9 @@
 package jipiao
 
+import (
+	"sync"
+)
+
 // TripFlightPassenger 结构体
 type TripFlightPassenger struct {
 	// 乘机人姓名
@@ -44,4 +48,41 @@ type TripFlightPassenger struct {
 	InsurePromotionPrice int64 `json:"insure_promotion_price,omitempty" xml:"insure_promotion_price,omitempty"`
 	// 强制保险金额，单位：分
 	ForceInsurePrice int64 `json:"force_insure_price,omitempty" xml:"force_insure_price,omitempty"`
+}
+
+var poolTripFlightPassenger = sync.Pool{
+	New: func() any {
+		return new(TripFlightPassenger)
+	},
+}
+
+// GetTripFlightPassenger() 从对象池中获取TripFlightPassenger
+func GetTripFlightPassenger() *TripFlightPassenger {
+	return poolTripFlightPassenger.Get().(*TripFlightPassenger)
+}
+
+// ReleaseTripFlightPassenger 释放TripFlightPassenger
+func ReleaseTripFlightPassenger(v *TripFlightPassenger) {
+	v.Name = ""
+	v.CertNo = ""
+	v.Birthday = ""
+	v.TripCardNo = ""
+	v.Pnr = ""
+	v.TicketNo = ""
+	v.Extra = ""
+	v.Memo = ""
+	v.CabinCode = ""
+	v.Tuigaiqian = ""
+	v.Ei = ""
+	v.CertType = 0
+	v.PassengerType = 0
+	v.PolicyId = 0
+	v.PolicyType = 0
+	v.Price = 0
+	v.Fee = 0
+	v.Tax = 0
+	v.CabinClass = 0
+	v.InsurePromotionPrice = 0
+	v.ForceInsurePrice = 0
+	poolTripFlightPassenger.Put(v)
 }

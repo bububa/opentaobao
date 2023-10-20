@@ -1,5 +1,9 @@
 package caipiao
 
+import (
+	"sync"
+)
+
 // LotteryWangcaiPresentStat 结构体
 type LotteryWangcaiPresentStat struct {
 	// 当日赠送彩票的注数
@@ -12,4 +16,25 @@ type LotteryWangcaiPresentStat struct {
 	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
 	// 当日赠送用户数
 	PresentUser int64 `json:"present_user,omitempty" xml:"present_user,omitempty"`
+}
+
+var poolLotteryWangcaiPresentStat = sync.Pool{
+	New: func() any {
+		return new(LotteryWangcaiPresentStat)
+	},
+}
+
+// GetLotteryWangcaiPresentStat() 从对象池中获取LotteryWangcaiPresentStat
+func GetLotteryWangcaiPresentStat() *LotteryWangcaiPresentStat {
+	return poolLotteryWangcaiPresentStat.Get().(*LotteryWangcaiPresentStat)
+}
+
+// ReleaseLotteryWangcaiPresentStat 释放LotteryWangcaiPresentStat
+func ReleaseLotteryWangcaiPresentStat(v *LotteryWangcaiPresentStat) {
+	v.PresentStake = 0
+	v.DateId = 0
+	v.PresentFee = 0
+	v.SellerId = 0
+	v.PresentUser = 0
+	poolLotteryWangcaiPresentStat.Put(v)
 }

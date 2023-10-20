@@ -2,6 +2,7 @@ package eleenterpriseordernew
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaEleEnterpriseOrdernewCancelAPIRequest struct {
 // NewAlibabaEleEnterpriseOrdernewCancelRequest 初始化AlibabaEleEnterpriseOrdernewCancelAPIRequest对象
 func NewAlibabaEleEnterpriseOrdernewCancelRequest() *AlibabaEleEnterpriseOrdernewCancelAPIRequest {
 	return &AlibabaEleEnterpriseOrdernewCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEleEnterpriseOrdernewCancelAPIRequest) Reset() {
+	r._orderId = ""
+	r._phone = ""
+	r._reason = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaEleEnterpriseOrdernewCancelAPIRequest) SetReason(_reason string)
 // GetReason Reason Getter
 func (r AlibabaEleEnterpriseOrdernewCancelAPIRequest) GetReason() string {
 	return r._reason
+}
+
+var poolAlibabaEleEnterpriseOrdernewCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEleEnterpriseOrdernewCancelRequest()
+	},
+}
+
+// GetAlibabaEleEnterpriseOrdernewCancelRequest 从 sync.Pool 获取 AlibabaEleEnterpriseOrdernewCancelAPIRequest
+func GetAlibabaEleEnterpriseOrdernewCancelAPIRequest() *AlibabaEleEnterpriseOrdernewCancelAPIRequest {
+	return poolAlibabaEleEnterpriseOrdernewCancelAPIRequest.Get().(*AlibabaEleEnterpriseOrdernewCancelAPIRequest)
+}
+
+// ReleaseAlibabaEleEnterpriseOrdernewCancelAPIRequest 将 AlibabaEleEnterpriseOrdernewCancelAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEleEnterpriseOrdernewCancelAPIRequest(v *AlibabaEleEnterpriseOrdernewCancelAPIRequest) {
+	v.Reset()
+	poolAlibabaEleEnterpriseOrdernewCancelAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.qimen.warehouseinfo.synchronize
 //
 // 仓库同步接口
-func TaobaoQimenWarehouseinfoSynchronize(clt *core.SDKClient, req *qimen.TaobaoQimenWarehouseinfoSynchronizeAPIRequest, session string) (*qimen.TaobaoQimenWarehouseinfoSynchronizeAPIResponse, error) {
-	var resp qimen.TaobaoQimenWarehouseinfoSynchronizeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoQimenWarehouseinfoSynchronize(clt *core.SDKClient, req *qimen.TaobaoQimenWarehouseinfoSynchronizeAPIRequest, resp *qimen.TaobaoQimenWarehouseinfoSynchronizeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

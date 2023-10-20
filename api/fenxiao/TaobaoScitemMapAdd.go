@@ -9,11 +9,6 @@ import (
 // taobao.scitem.map.add
 //
 // 创建IC商品或分销商品与后端商品的映射关系
-func TaobaoScitemMapAdd(clt *core.SDKClient, req *fenxiao.TaobaoScitemMapAddAPIRequest, session string) (*fenxiao.TaobaoScitemMapAddAPIResponse, error) {
-	var resp fenxiao.TaobaoScitemMapAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoScitemMapAdd(clt *core.SDKClient, req *fenxiao.TaobaoScitemMapAddAPIRequest, resp *fenxiao.TaobaoScitemMapAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

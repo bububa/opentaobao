@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleTenderOrderGetAPIRequest struct {
 // NewAlibabaIdleTenderOrderGetRequest 初始化AlibabaIdleTenderOrderGetAPIRequest对象
 func NewAlibabaIdleTenderOrderGetRequest() *AlibabaIdleTenderOrderGetAPIRequest {
 	return &AlibabaIdleTenderOrderGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleTenderOrderGetAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleTenderOrderGetAPIRequest) SetParam0(_param0 *TenderOrderQuer
 // GetParam0 Param0 Getter
 func (r AlibabaIdleTenderOrderGetAPIRequest) GetParam0() *TenderOrderQuery {
 	return r._param0
+}
+
+var poolAlibabaIdleTenderOrderGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleTenderOrderGetRequest()
+	},
+}
+
+// GetAlibabaIdleTenderOrderGetRequest 从 sync.Pool 获取 AlibabaIdleTenderOrderGetAPIRequest
+func GetAlibabaIdleTenderOrderGetAPIRequest() *AlibabaIdleTenderOrderGetAPIRequest {
+	return poolAlibabaIdleTenderOrderGetAPIRequest.Get().(*AlibabaIdleTenderOrderGetAPIRequest)
+}
+
+// ReleaseAlibabaIdleTenderOrderGetAPIRequest 将 AlibabaIdleTenderOrderGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleTenderOrderGetAPIRequest(v *AlibabaIdleTenderOrderGetAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleTenderOrderGetAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package cainiaohandover
 
+import (
+	"sync"
+)
+
 // OpenOrderParam 结构体
 type OpenOrderParam struct {
 	// 包裹参数
@@ -18,4 +22,28 @@ type OpenOrderParam struct {
 	ReceiverParam *ReceiverParam `json:"receiver_param,omitempty" xml:"receiver_param,omitempty"`
 	// 揽收信息参数
 	PickupInfoParam *OpenPickupInfoParam `json:"pickup_info_param,omitempty" xml:"pickup_info_param,omitempty"`
+}
+
+var poolOpenOrderParam = sync.Pool{
+	New: func() any {
+		return new(OpenOrderParam)
+	},
+}
+
+// GetOpenOrderParam() 从对象池中获取OpenOrderParam
+func GetOpenOrderParam() *OpenOrderParam {
+	return poolOpenOrderParam.Get().(*OpenOrderParam)
+}
+
+// ReleaseOpenOrderParam 释放OpenOrderParam
+func ReleaseOpenOrderParam(v *OpenOrderParam) {
+	v.PackageParams = v.PackageParams[:0]
+	v.TradeOrderParam = nil
+	v.SolutionParam = nil
+	v.SellerInfoParam = nil
+	v.SenderParam = nil
+	v.ReturnerParam = nil
+	v.ReceiverParam = nil
+	v.PickupInfoParam = nil
+	poolOpenOrderParam.Put(v)
 }

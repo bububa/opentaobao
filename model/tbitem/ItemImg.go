@@ -1,5 +1,9 @@
 package tbitem
 
+import (
+	"sync"
+)
+
 // ItemImg 结构体
 type ItemImg struct {
 	// 图片创建时间 时间格式：yyyy-MM-dd HH:mm:ss
@@ -10,4 +14,24 @@ type ItemImg struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 图片放在第几张（多图时可设置）
 	Position int64 `json:"position,omitempty" xml:"position,omitempty"`
+}
+
+var poolItemImg = sync.Pool{
+	New: func() any {
+		return new(ItemImg)
+	},
+}
+
+// GetItemImg() 从对象池中获取ItemImg
+func GetItemImg() *ItemImg {
+	return poolItemImg.Get().(*ItemImg)
+}
+
+// ReleaseItemImg 释放ItemImg
+func ReleaseItemImg(v *ItemImg) {
+	v.Created = ""
+	v.Url = ""
+	v.Id = 0
+	v.Position = 0
+	poolItemImg.Put(v)
 }

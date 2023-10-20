@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BusSearchRq 结构体
 type BusSearchRq struct {
 	// 到达城市
@@ -34,4 +38,36 @@ type BusSearchRq struct {
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
 	// 每页大小
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolBusSearchRq = sync.Pool{
+	New: func() any {
+		return new(BusSearchRq)
+	},
+}
+
+// GetBusSearchRq() 从对象池中获取BusSearchRq
+func GetBusSearchRq() *BusSearchRq {
+	return poolBusSearchRq.Get().(*BusSearchRq)
+}
+
+// ReleaseBusSearchRq 释放BusSearchRq
+func ReleaseBusSearchRq(v *BusSearchRq) {
+	v.ArrCity = ""
+	v.ArriveCityName = ""
+	v.DepCity = ""
+	v.DepDate = ""
+	v.FromStationName = ""
+	v.PeriodTime = ""
+	v.Scene = ""
+	v.StandardFromAreaCode = ""
+	v.StandardFromStationName = ""
+	v.StandardToAreaCode = ""
+	v.ToStationName = ""
+	v.CorpId = ""
+	v.ShowNoSell = 0
+	v.StandardFromStationId = 0
+	v.PageIndex = 0
+	v.PageSize = 0
+	poolBusSearchRq.Put(v)
 }

@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // FuturePlanResponse 结构体
 type FuturePlanResponse struct {
 	// 负卖设置结果
@@ -10,4 +14,24 @@ type FuturePlanResponse struct {
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 调用系统链路是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolFuturePlanResponse = sync.Pool{
+	New: func() any {
+		return new(FuturePlanResponse)
+	},
+}
+
+// GetFuturePlanResponse() 从对象池中获取FuturePlanResponse
+func GetFuturePlanResponse() *FuturePlanResponse {
+	return poolFuturePlanResponse.Get().(*FuturePlanResponse)
+}
+
+// ReleaseFuturePlanResponse 释放FuturePlanResponse
+func ReleaseFuturePlanResponse(v *FuturePlanResponse) {
+	v.FuturePlanItemResultList = v.FuturePlanItemResultList[:0]
+	v.ErrorCode = ""
+	v.ErrorMessage = ""
+	v.Success = false
+	poolFuturePlanResponse.Put(v)
 }

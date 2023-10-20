@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallAliautoFulfillmentAuthCheckAPIRequest struct {
 // NewTmallAliautoFulfillmentAuthCheckRequest 初始化TmallAliautoFulfillmentAuthCheckAPIRequest对象
 func NewTmallAliautoFulfillmentAuthCheckRequest() *TmallAliautoFulfillmentAuthCheckAPIRequest {
 	return &TmallAliautoFulfillmentAuthCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallAliautoFulfillmentAuthCheckAPIRequest) Reset() {
+	r._req = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallAliautoFulfillmentAuthCheckAPIRequest) SetReq(_req *AuthCheckReq) 
 // GetReq Req Getter
 func (r TmallAliautoFulfillmentAuthCheckAPIRequest) GetReq() *AuthCheckReq {
 	return r._req
+}
+
+var poolTmallAliautoFulfillmentAuthCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallAliautoFulfillmentAuthCheckRequest()
+	},
+}
+
+// GetTmallAliautoFulfillmentAuthCheckRequest 从 sync.Pool 获取 TmallAliautoFulfillmentAuthCheckAPIRequest
+func GetTmallAliautoFulfillmentAuthCheckAPIRequest() *TmallAliautoFulfillmentAuthCheckAPIRequest {
+	return poolTmallAliautoFulfillmentAuthCheckAPIRequest.Get().(*TmallAliautoFulfillmentAuthCheckAPIRequest)
+}
+
+// ReleaseTmallAliautoFulfillmentAuthCheckAPIRequest 将 TmallAliautoFulfillmentAuthCheckAPIRequest 放入 sync.Pool
+func ReleaseTmallAliautoFulfillmentAuthCheckAPIRequest(v *TmallAliautoFulfillmentAuthCheckAPIRequest) {
+	v.Reset()
+	poolTmallAliautoFulfillmentAuthCheckAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.tmallgenie.scp.plan.materiel.get
 //
 // IBP同步物料接口
-func AlibabaTmallgenieScpPlanMaterielGet(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanMaterielGetAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanMaterielGetAPIResponse, error) {
-	var resp tmallgeniescp.AlibabaTmallgenieScpPlanMaterielGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTmallgenieScpPlanMaterielGet(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanMaterielGetAPIRequest, resp *tmallgeniescp.AlibabaTmallgenieScpPlanMaterielGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

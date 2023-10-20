@@ -1,5 +1,9 @@
 package taotv
 
+import (
+	"sync"
+)
+
 // CarouselChannelRbo 结构体
 type CarouselChannelRbo struct {
 	// 频道所有的视频列表
@@ -18,4 +22,28 @@ type CarouselChannelRbo struct {
 	Bcp int64 `json:"bcp,omitempty" xml:"bcp,omitempty"`
 	// 频道ID
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolCarouselChannelRbo = sync.Pool{
+	New: func() any {
+		return new(CarouselChannelRbo)
+	},
+}
+
+// GetCarouselChannelRbo() 从对象池中获取CarouselChannelRbo
+func GetCarouselChannelRbo() *CarouselChannelRbo {
+	return poolCarouselChannelRbo.Get().(*CarouselChannelRbo)
+}
+
+// ReleaseCarouselChannelRbo 释放CarouselChannelRbo
+func ReleaseCarouselChannelRbo(v *CarouselChannelRbo) {
+	v.VideoList = v.VideoList[:0]
+	v.Description = ""
+	v.Pic = ""
+	v.Name = ""
+	v.SerialNumber = 0
+	v.CurrentVideo = nil
+	v.Bcp = 0
+	v.Id = 0
+	poolCarouselChannelRbo.Put(v)
 }

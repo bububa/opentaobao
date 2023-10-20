@@ -2,6 +2,7 @@ package iot
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoAilabAicloudTopMessageAddtextAPIResponse struct {
 	TaobaoAilabAicloudTopMessageAddtextAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopMessageAddtextAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAilabAicloudTopMessageAddtextAPIResponseModel).Reset()
+}
+
 // TaobaoAilabAicloudTopMessageAddtextAPIResponseModel is 精灵代说 成功返回结果
 type TaobaoAilabAicloudTopMessageAddtextAPIResponseModel struct {
 	XMLName xml.Name `xml:"ailab_aicloud_top_message_addtext_response"`
@@ -22,4 +29,27 @@ type TaobaoAilabAicloudTopMessageAddtextAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *AiCloudResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopMessageAddtextAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoAilabAicloudTopMessageAddtextAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAilabAicloudTopMessageAddtextAPIResponse)
+	},
+}
+
+// GetTaobaoAilabAicloudTopMessageAddtextAPIResponse 从 sync.Pool 获取 TaobaoAilabAicloudTopMessageAddtextAPIResponse
+func GetTaobaoAilabAicloudTopMessageAddtextAPIResponse() *TaobaoAilabAicloudTopMessageAddtextAPIResponse {
+	return poolTaobaoAilabAicloudTopMessageAddtextAPIResponse.Get().(*TaobaoAilabAicloudTopMessageAddtextAPIResponse)
+}
+
+// ReleaseTaobaoAilabAicloudTopMessageAddtextAPIResponse 将 TaobaoAilabAicloudTopMessageAddtextAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAilabAicloudTopMessageAddtextAPIResponse(v *TaobaoAilabAicloudTopMessageAddtextAPIResponse) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopMessageAddtextAPIResponse.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.promotionmisc.common.item.activity.delete
 //
 // 删除通用单品优惠活动。
-func TaobaoPromotionmiscCommonItemActivityDelete(clt *core.SDKClient, req *promotion.TaobaoPromotionmiscCommonItemActivityDeleteAPIRequest, session string) (*promotion.TaobaoPromotionmiscCommonItemActivityDeleteAPIResponse, error) {
-	var resp promotion.TaobaoPromotionmiscCommonItemActivityDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoPromotionmiscCommonItemActivityDelete(clt *core.SDKClient, req *promotion.TaobaoPromotionmiscCommonItemActivityDeleteAPIRequest, resp *promotion.TaobaoPromotionmiscCommonItemActivityDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

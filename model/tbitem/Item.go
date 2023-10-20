@@ -1,5 +1,9 @@
 package tbitem
 
+import (
+	"sync"
+)
+
 // Item 结构体
 type Item struct {
 	// Sku列表。fields中只设置sku可以返回Sku结构体中所有字段，如果设置为sku.sku_id、sku.properties、sku.quantity等形式就只会返回相应的字段
@@ -173,7 +177,7 @@ type Item struct {
 	// 是否有保修,true/false
 	HasWarranty bool `json:"has_warranty,omitempty" xml:"has_warranty,omitempty"`
 	// 是否是3D淘宝的商品
-	Is3d bool `json:"is_3D,omitempty" xml:"is_3D,omitempty"`
+	Is3D bool `json:"is_3D,omitempty" xml:"is_3D,omitempty"`
 	// 是否在外部网店显示
 	IsEx bool `json:"is_ex,omitempty" xml:"is_ex,omitempty"`
 	// 是否24小时闪电发货
@@ -202,4 +206,120 @@ type Item struct {
 	IsCspu bool `json:"is_cspu,omitempty" xml:"is_cspu,omitempty"`
 	// 全球购商品卖家包税承诺，当值为true时，代表卖家承诺包税。
 	GlobalStockTaxFreePromise bool `json:"global_stock_tax_free_promise,omitempty" xml:"global_stock_tax_free_promise,omitempty"`
+}
+
+var poolItem = sync.Pool{
+	New: func() any {
+		return new(Item)
+	},
+}
+
+// GetItem() 从对象池中获取Item
+func GetItem() *Item {
+	return poolItem.Get().(*Item)
+}
+
+// ReleaseItem 释放Item
+func ReleaseItem(v *Item) {
+	v.Skus = v.Skus[:0]
+	v.ItemImgs = v.ItemImgs[:0]
+	v.PropImgs = v.PropImgs[:0]
+	v.Videos = v.Videos[:0]
+	v.ItemRectangleImgs = v.ItemRectangleImgs[:0]
+	v.Modified = ""
+	v.Iid = ""
+	v.Created = ""
+	v.ApproveStatus = ""
+	v.AutoFill = ""
+	v.Barcode = ""
+	v.CustomMadeTypeId = ""
+	v.DelistTime = ""
+	v.Desc = ""
+	v.DetailUrl = ""
+	v.EmsFee = ""
+	v.ExpressFee = ""
+	v.Features = ""
+	v.FreightPayer = ""
+	v.GlobalStockCountry = ""
+	v.GlobalStockType = ""
+	v.Increment = ""
+	v.InputPids = ""
+	v.InputStr = ""
+	v.ItemSize = ""
+	v.ItemWeight = ""
+	v.ListTime = ""
+	v.Newprepay = ""
+	v.Nick = ""
+	v.OuterId = ""
+	v.PicUrl = ""
+	v.PostFee = ""
+	v.Price = ""
+	v.PromotedService = ""
+	v.PropertyAlias = ""
+	v.Props = ""
+	v.PropsName = ""
+	v.SecondKill = ""
+	v.SellPoint = ""
+	v.SellerCids = ""
+	v.StuffStatus = ""
+	v.TemplateId = ""
+	v.Title = ""
+	v.Type = ""
+	v.WapDesc = ""
+	v.WapDetailUrl = ""
+	v.WirelessDesc = ""
+	v.DescModules = ""
+	v.LargeScreenImageUrl = ""
+	v.CpvMemo = ""
+	v.FirstStartsTime = ""
+	v.DeliveryTime = ""
+	v.Qualification = ""
+	v.GlobalStockDeliveryPlace = ""
+	v.NumIid = 0
+	v.Num = 0
+	v.AfterSaleId = 0
+	v.AuctionPoint = 0
+	v.Cid = 0
+	v.CodPostageId = 0
+	v.DescModuleInfo = nil
+	v.FoodSecurity = nil
+	v.InnerShopAuctionTemplateId = 0
+	v.IsFenxiao = 0
+	v.LocalityLife = nil
+	v.Location = nil
+	v.MpicVideo = nil
+	v.OuterShopAuctionTemplateId = 0
+	v.PaimaiInfo = nil
+	v.PeriodSoldQuantity = 0
+	v.PostageId = 0
+	v.ProductId = 0
+	v.Score = 0
+	v.SoldQuantity = 0
+	v.SubStock = 0
+	v.ValidThru = 0
+	v.VideoId = 0
+	v.Volume = 0
+	v.WithHoldQuantity = 0
+	v.CuntaoItemSpecific = nil
+	v.AutoRepost = false
+	v.HasDiscount = false
+	v.HasInvoice = false
+	v.HasShowcase = false
+	v.HasWarranty = false
+	v.Is3D = false
+	v.IsEx = false
+	v.IsLightningConsignment = false
+	v.IsPrepay = false
+	v.IsTaobao = false
+	v.IsTiming = false
+	v.IsVirtual = false
+	v.IsXinpin = false
+	v.OneStation = false
+	v.SellPromise = false
+	v.Violation = false
+	v.WwStatus = false
+	v.IsAreaSale = false
+	v.IsCspu = false
+	v.GlobalStockTaxFreePromise = false
+	poolItem.Put(v)
 }

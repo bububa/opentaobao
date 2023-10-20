@@ -2,6 +2,7 @@ package paimai
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoAuctionBeikeItemSyncAPIRequest struct {
 // NewTaobaoAuctionBeikeItemSyncRequest 初始化TaobaoAuctionBeikeItemSyncAPIRequest对象
 func NewTaobaoAuctionBeikeItemSyncRequest() *TaobaoAuctionBeikeItemSyncAPIRequest {
 	return &TaobaoAuctionBeikeItemSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAuctionBeikeItemSyncAPIRequest) Reset() {
+	r._ds = 0
+	r._beikeItemDo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoAuctionBeikeItemSyncAPIRequest) SetBeikeItemDo(_beikeItemDo *Beik
 // GetBeikeItemDo BeikeItemDo Getter
 func (r TaobaoAuctionBeikeItemSyncAPIRequest) GetBeikeItemDo() *BeikeItemDo {
 	return r._beikeItemDo
+}
+
+var poolTaobaoAuctionBeikeItemSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAuctionBeikeItemSyncRequest()
+	},
+}
+
+// GetTaobaoAuctionBeikeItemSyncRequest 从 sync.Pool 获取 TaobaoAuctionBeikeItemSyncAPIRequest
+func GetTaobaoAuctionBeikeItemSyncAPIRequest() *TaobaoAuctionBeikeItemSyncAPIRequest {
+	return poolTaobaoAuctionBeikeItemSyncAPIRequest.Get().(*TaobaoAuctionBeikeItemSyncAPIRequest)
+}
+
+// ReleaseTaobaoAuctionBeikeItemSyncAPIRequest 将 TaobaoAuctionBeikeItemSyncAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAuctionBeikeItemSyncAPIRequest(v *TaobaoAuctionBeikeItemSyncAPIRequest) {
+	v.Reset()
+	poolTaobaoAuctionBeikeItemSyncAPIRequest.Put(v)
 }

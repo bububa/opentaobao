@@ -2,6 +2,7 @@ package wlbimports
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type CainiaoGlobalImPickupAppointmentOrderStatusAPIResponse struct {
 	CainiaoGlobalImPickupAppointmentOrderStatusAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *CainiaoGlobalImPickupAppointmentOrderStatusAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.CainiaoGlobalImPickupAppointmentOrderStatusAPIResponseModel).Reset()
+}
+
 // CainiaoGlobalImPickupAppointmentOrderStatusAPIResponseModel is 预约单状态查询 成功返回结果
 type CainiaoGlobalImPickupAppointmentOrderStatusAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_global_im_pickup_appointment_order_status_response"`
@@ -22,4 +29,27 @@ type CainiaoGlobalImPickupAppointmentOrderStatusAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// hsfResult
 	HsfResult *HsfResult `json:"hsf_result,omitempty" xml:"hsf_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *CainiaoGlobalImPickupAppointmentOrderStatusAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.HsfResult = nil
+}
+
+var poolCainiaoGlobalImPickupAppointmentOrderStatusAPIResponse = sync.Pool{
+	New: func() any {
+		return new(CainiaoGlobalImPickupAppointmentOrderStatusAPIResponse)
+	},
+}
+
+// GetCainiaoGlobalImPickupAppointmentOrderStatusAPIResponse 从 sync.Pool 获取 CainiaoGlobalImPickupAppointmentOrderStatusAPIResponse
+func GetCainiaoGlobalImPickupAppointmentOrderStatusAPIResponse() *CainiaoGlobalImPickupAppointmentOrderStatusAPIResponse {
+	return poolCainiaoGlobalImPickupAppointmentOrderStatusAPIResponse.Get().(*CainiaoGlobalImPickupAppointmentOrderStatusAPIResponse)
+}
+
+// ReleaseCainiaoGlobalImPickupAppointmentOrderStatusAPIResponse 将 CainiaoGlobalImPickupAppointmentOrderStatusAPIResponse 保存到 sync.Pool
+func ReleaseCainiaoGlobalImPickupAppointmentOrderStatusAPIResponse(v *CainiaoGlobalImPickupAppointmentOrderStatusAPIResponse) {
+	v.Reset()
+	poolCainiaoGlobalImPickupAppointmentOrderStatusAPIResponse.Put(v)
 }

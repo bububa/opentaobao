@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // ConsumePointOpenReq 结构体
 type ConsumePointOpenReq struct {
 	// 品牌id
@@ -26,4 +30,32 @@ type ConsumePointOpenReq struct {
 	BizChannel string `json:"biz_channel,omitempty" xml:"biz_channel,omitempty"`
 	// 变更积分数
 	ChangePoint int64 `json:"change_point,omitempty" xml:"change_point,omitempty"`
+}
+
+var poolConsumePointOpenReq = sync.Pool{
+	New: func() any {
+		return new(ConsumePointOpenReq)
+	},
+}
+
+// GetConsumePointOpenReq() 从对象池中获取ConsumePointOpenReq
+func GetConsumePointOpenReq() *ConsumePointOpenReq {
+	return poolConsumePointOpenReq.Get().(*ConsumePointOpenReq)
+}
+
+// ReleaseConsumePointOpenReq 释放ConsumePointOpenReq
+func ReleaseConsumePointOpenReq(v *ConsumePointOpenReq) {
+	v.BrandId = ""
+	v.CustomerId = ""
+	v.OperatorId = ""
+	v.OperatorName = ""
+	v.OutBizId = ""
+	v.Reason = ""
+	v.RequestId = ""
+	v.ShopId = ""
+	v.OutShopId = ""
+	v.OutBrandId = ""
+	v.BizChannel = ""
+	v.ChangePoint = 0
+	poolConsumePointOpenReq.Put(v)
 }

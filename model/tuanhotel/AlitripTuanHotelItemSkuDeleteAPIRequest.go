@@ -2,6 +2,7 @@ package tuanhotel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlitripTuanHotelItemSkuDeleteAPIRequest struct {
 // NewAlitripTuanHotelItemSkuDeleteRequest 初始化AlitripTuanHotelItemSkuDeleteAPIRequest对象
 func NewAlitripTuanHotelItemSkuDeleteRequest() *AlitripTuanHotelItemSkuDeleteAPIRequest {
 	return &AlitripTuanHotelItemSkuDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTuanHotelItemSkuDeleteAPIRequest) Reset() {
+	r._itemDeletedSkuIdList = r._itemDeletedSkuIdList[:0]
+	r._itemId = 0
+	r._catId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlitripTuanHotelItemSkuDeleteAPIRequest) SetCatId(_catId int64) error {
 // GetCatId CatId Getter
 func (r AlitripTuanHotelItemSkuDeleteAPIRequest) GetCatId() int64 {
 	return r._catId
+}
+
+var poolAlitripTuanHotelItemSkuDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTuanHotelItemSkuDeleteRequest()
+	},
+}
+
+// GetAlitripTuanHotelItemSkuDeleteRequest 从 sync.Pool 获取 AlitripTuanHotelItemSkuDeleteAPIRequest
+func GetAlitripTuanHotelItemSkuDeleteAPIRequest() *AlitripTuanHotelItemSkuDeleteAPIRequest {
+	return poolAlitripTuanHotelItemSkuDeleteAPIRequest.Get().(*AlitripTuanHotelItemSkuDeleteAPIRequest)
+}
+
+// ReleaseAlitripTuanHotelItemSkuDeleteAPIRequest 将 AlitripTuanHotelItemSkuDeleteAPIRequest 放入 sync.Pool
+func ReleaseAlitripTuanHotelItemSkuDeleteAPIRequest(v *AlitripTuanHotelItemSkuDeleteAPIRequest) {
+	v.Reset()
+	poolAlitripTuanHotelItemSkuDeleteAPIRequest.Put(v)
 }

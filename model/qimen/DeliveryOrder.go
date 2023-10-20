@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // DeliveryOrder 结构体
 type DeliveryOrder struct {
 	// 发票信息
@@ -138,4 +142,88 @@ type DeliveryOrder struct {
 	TotalOrderLines int64 `json:"totalOrderLines,omitempty" xml:"totalOrderLines,omitempty"`
 	// 提货人信息
 	PickerInfo *PickerInfo `json:"pickerInfo,omitempty" xml:"pickerInfo,omitempty"`
+}
+
+var poolDeliveryOrder = sync.Pool{
+	New: func() any {
+		return new(DeliveryOrder)
+	},
+}
+
+// GetDeliveryOrder() 从对象池中获取DeliveryOrder
+func GetDeliveryOrder() *DeliveryOrder {
+	return poolDeliveryOrder.Get().(*DeliveryOrder)
+}
+
+// ReleaseDeliveryOrder 释放DeliveryOrder
+func ReleaseDeliveryOrder(v *DeliveryOrder) {
+	v.Invoices = v.Invoices[:0]
+	v.OrderLines = v.OrderLines[:0]
+	v.RelatedOrders = v.RelatedOrders[:0]
+	v.DeliveryOrderCode = ""
+	v.DeliveryOrderId = ""
+	v.WarehouseCode = ""
+	v.OrderType = ""
+	v.Status = ""
+	v.OutBizCode = ""
+	v.OrderConfirmTime = ""
+	v.OperatorCode = ""
+	v.OperatorName = ""
+	v.OperateTime = ""
+	v.StorageFee = ""
+	v.PreDeliveryOrderCode = ""
+	v.PreDeliveryOrderId = ""
+	v.OrderFlag = ""
+	v.SourcePlatformCode = ""
+	v.SourcePlatformName = ""
+	v.CreateTime = ""
+	v.PlaceOrderTime = ""
+	v.PayTime = ""
+	v.PayNo = ""
+	v.ShopNick = ""
+	v.SellerNick = ""
+	v.BuyerNick = ""
+	v.TotalAmount = ""
+	v.ItemAmount = ""
+	v.DiscountAmount = ""
+	v.Freight = ""
+	v.ArAmount = ""
+	v.GotAmount = ""
+	v.ServiceFee = ""
+	v.LogisticsCode = ""
+	v.LogisticsName = ""
+	v.ExpressCode = ""
+	v.LogisticsAreaCode = ""
+	v.IsUrgency = ""
+	v.InvoiceFlag = ""
+	v.InsuranceFlag = ""
+	v.BuyerMessage = ""
+	v.SellerMessage = ""
+	v.Remark = ""
+	v.ServiceCode = ""
+	v.OaidOrderSourceCode = ""
+	v.OwnerCode = ""
+	v.LatestCollectionTime = ""
+	v.LatestDeliveryTime = ""
+	v.ResponsibleDepartment = ""
+	v.SubOrderType = ""
+	v.ScheduleDate = ""
+	v.SupplierCode = ""
+	v.SupplierName = ""
+	v.TransportMode = ""
+	v.OrderSourceType = ""
+	v.ReceivingTime = ""
+	v.ShippingTime = ""
+	v.TargetWarehouseName = ""
+	v.TargetWarehouseCode = ""
+	v.TargetEntryOrderCode = ""
+	v.WarehouseName = ""
+	v.ConfirmType = 0
+	v.DeliveryRequirements = nil
+	v.SenderInfo = nil
+	v.ReceiverInfo = nil
+	v.Insurance = nil
+	v.TotalOrderLines = 0
+	v.PickerInfo = nil
+	poolDeliveryOrder.Put(v)
 }

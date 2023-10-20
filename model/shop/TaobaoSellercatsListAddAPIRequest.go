@@ -2,6 +2,7 @@ package shop
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoSellercatsListAddAPIRequest struct {
 // NewTaobaoSellercatsListAddRequest 初始化TaobaoSellercatsListAddAPIRequest对象
 func NewTaobaoSellercatsListAddRequest() *TaobaoSellercatsListAddAPIRequest {
 	return &TaobaoSellercatsListAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSellercatsListAddAPIRequest) Reset() {
+	r._name = ""
+	r._pictUrl = ""
+	r._parentCid = 0
+	r._sortOrder = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoSellercatsListAddAPIRequest) SetSortOrder(_sortOrder int64) error
 // GetSortOrder SortOrder Getter
 func (r TaobaoSellercatsListAddAPIRequest) GetSortOrder() int64 {
 	return r._sortOrder
+}
+
+var poolTaobaoSellercatsListAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSellercatsListAddRequest()
+	},
+}
+
+// GetTaobaoSellercatsListAddRequest 从 sync.Pool 获取 TaobaoSellercatsListAddAPIRequest
+func GetTaobaoSellercatsListAddAPIRequest() *TaobaoSellercatsListAddAPIRequest {
+	return poolTaobaoSellercatsListAddAPIRequest.Get().(*TaobaoSellercatsListAddAPIRequest)
+}
+
+// ReleaseTaobaoSellercatsListAddAPIRequest 将 TaobaoSellercatsListAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSellercatsListAddAPIRequest(v *TaobaoSellercatsListAddAPIRequest) {
+	v.Reset()
+	poolTaobaoSellercatsListAddAPIRequest.Put(v)
 }

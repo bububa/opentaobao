@@ -2,6 +2,7 @@ package guoguo
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type CainiaoGuoguoBackupGraborderTakepackageAPIRequest struct {
 // NewCainiaoGuoguoBackupGraborderTakepackageRequest 初始化CainiaoGuoguoBackupGraborderTakepackageAPIRequest对象
 func NewCainiaoGuoguoBackupGraborderTakepackageRequest() *CainiaoGuoguoBackupGraborderTakepackageAPIRequest {
 	return &CainiaoGuoguoBackupGraborderTakepackageAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoGuoguoBackupGraborderTakepackageAPIRequest) Reset() {
+	r._orderCode = ""
+	r._packageCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *CainiaoGuoguoBackupGraborderTakepackageAPIRequest) SetPackageCode(_pack
 // GetPackageCode PackageCode Getter
 func (r CainiaoGuoguoBackupGraborderTakepackageAPIRequest) GetPackageCode() string {
 	return r._packageCode
+}
+
+var poolCainiaoGuoguoBackupGraborderTakepackageAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoGuoguoBackupGraborderTakepackageRequest()
+	},
+}
+
+// GetCainiaoGuoguoBackupGraborderTakepackageRequest 从 sync.Pool 获取 CainiaoGuoguoBackupGraborderTakepackageAPIRequest
+func GetCainiaoGuoguoBackupGraborderTakepackageAPIRequest() *CainiaoGuoguoBackupGraborderTakepackageAPIRequest {
+	return poolCainiaoGuoguoBackupGraborderTakepackageAPIRequest.Get().(*CainiaoGuoguoBackupGraborderTakepackageAPIRequest)
+}
+
+// ReleaseCainiaoGuoguoBackupGraborderTakepackageAPIRequest 将 CainiaoGuoguoBackupGraborderTakepackageAPIRequest 放入 sync.Pool
+func ReleaseCainiaoGuoguoBackupGraborderTakepackageAPIRequest(v *CainiaoGuoguoBackupGraborderTakepackageAPIRequest) {
+	v.Reset()
+	poolCainiaoGuoguoBackupGraborderTakepackageAPIRequest.Put(v)
 }

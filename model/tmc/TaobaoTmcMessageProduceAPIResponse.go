@@ -2,6 +2,7 @@ package tmc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTmcMessageProduceAPIResponse struct {
 	TaobaoTmcMessageProduceAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTmcMessageProduceAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTmcMessageProduceAPIResponseModel).Reset()
+}
+
 // TaobaoTmcMessageProduceAPIResponseModel is 发布单条消息 成功返回结果
 type TaobaoTmcMessageProduceAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmc_message_produce_response"`
@@ -26,4 +33,29 @@ type TaobaoTmcMessageProduceAPIResponseModel struct {
 	Total int64 `json:"total,omitempty" xml:"total,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTmcMessageProduceAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgIds = m.MsgIds[:0]
+	m.Total = 0
+	m.IsSuccess = false
+}
+
+var poolTaobaoTmcMessageProduceAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTmcMessageProduceAPIResponse)
+	},
+}
+
+// GetTaobaoTmcMessageProduceAPIResponse 从 sync.Pool 获取 TaobaoTmcMessageProduceAPIResponse
+func GetTaobaoTmcMessageProduceAPIResponse() *TaobaoTmcMessageProduceAPIResponse {
+	return poolTaobaoTmcMessageProduceAPIResponse.Get().(*TaobaoTmcMessageProduceAPIResponse)
+}
+
+// ReleaseTaobaoTmcMessageProduceAPIResponse 将 TaobaoTmcMessageProduceAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTmcMessageProduceAPIResponse(v *TaobaoTmcMessageProduceAPIResponse) {
+	v.Reset()
+	poolTaobaoTmcMessageProduceAPIResponse.Put(v)
 }

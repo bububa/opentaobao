@@ -1,5 +1,9 @@
 package xiami
 
+import (
+	"sync"
+)
+
 // Song 结构体
 type Song struct {
 	// 歌曲名称
@@ -46,4 +50,42 @@ type Song struct {
 	PlayAuthority int64 `json:"play_authority,omitempty" xml:"play_authority,omitempty"`
 	// 是否已收藏
 	Favourite bool `json:"favourite,omitempty" xml:"favourite,omitempty"`
+}
+
+var poolSong = sync.Pool{
+	New: func() any {
+		return new(Song)
+	},
+}
+
+// GetSong() 从对象池中获取Song
+func GetSong() *Song {
+	return poolSong.Get().(*Song)
+}
+
+// ReleaseSong 释放Song
+func ReleaseSong(v *Song) {
+	v.SongName = ""
+	v.AlbumName = ""
+	v.ArtistName = ""
+	v.LyricText = ""
+	v.Logo = ""
+	v.ArtistLogo = ""
+	v.Singers = ""
+	v.ListenFile = ""
+	v.Title = ""
+	v.Name = ""
+	v.AlbumLogo = ""
+	v.LyricFile = ""
+	v.SongId = 0
+	v.AlbumId = 0
+	v.ArtistId = 0
+	v.Recommends = 0
+	v.Length = 0
+	v.PlayCounts = 0
+	v.PlaySeconds = 0
+	v.Demo = 0
+	v.PlayAuthority = 0
+	v.Favourite = false
+	poolSong.Put(v)
 }

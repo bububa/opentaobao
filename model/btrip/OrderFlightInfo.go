@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OrderFlightInfo 结构体
 type OrderFlightInfo struct {
 	// 航司编码
@@ -68,4 +72,53 @@ type OrderFlightInfo struct {
 	SegmentType int64 `json:"segment_type,omitempty" xml:"segment_type,omitempty"`
 	// 票费用
 	TicketPrice int64 `json:"ticket_price,omitempty" xml:"ticket_price,omitempty"`
+}
+
+var poolOrderFlightInfo = sync.Pool{
+	New: func() any {
+		return new(OrderFlightInfo)
+	},
+}
+
+// GetOrderFlightInfo() 从对象池中获取OrderFlightInfo
+func GetOrderFlightInfo() *OrderFlightInfo {
+	return poolOrderFlightInfo.Get().(*OrderFlightInfo)
+}
+
+// ReleaseOrderFlightInfo 释放OrderFlightInfo
+func ReleaseOrderFlightInfo(v *OrderFlightInfo) {
+	v.AirlineCode = ""
+	v.ArrAirport = ""
+	v.ArrAirportCode = ""
+	v.ArrCity = ""
+	v.ArrCityCode = ""
+	v.ArrTime = ""
+	v.Baggage = ""
+	v.Cabin = ""
+	v.CabinClass = ""
+	v.Carrier = ""
+	v.DepAirport = ""
+	v.DepAirportCode = ""
+	v.DepCity = ""
+	v.DepCityCode = ""
+	v.DepTime = ""
+	v.FlightNo = ""
+	v.Meal = ""
+	v.StopArrTime = ""
+	v.StopCity = ""
+	v.StopDepTime = ""
+	v.LastFlightNo = ""
+	v.LastCabin = ""
+	v.TuigaiqianInfo = ""
+	v.DepTerminal = ""
+	v.ArrTerminal = ""
+	v.AirlineName = ""
+	v.AirlineSimpleName = ""
+	v.ArrAirportCodeName = ""
+	v.DepAirportCodeName = ""
+	v.BuildPrice = 0
+	v.OilPrice = 0
+	v.SegmentType = 0
+	v.TicketPrice = 0
+	poolOrderFlightInfo.Put(v)
 }

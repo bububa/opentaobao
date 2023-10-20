@@ -1,5 +1,9 @@
 package waybill
 
+import (
+	"sync"
+)
+
 // WaybillDetailQueryInfo 结构体
 type WaybillDetailQueryInfo struct {
 	// 交易订单列表
@@ -62,4 +66,50 @@ type WaybillDetailQueryInfo struct {
 	Volume int64 `json:"volume,omitempty" xml:"volume,omitempty"`
 	// 包裹体积 单位为ML(毫升)或立方厘米
 	Weight int64 `json:"weight,omitempty" xml:"weight,omitempty"`
+}
+
+var poolWaybillDetailQueryInfo = sync.Pool{
+	New: func() any {
+		return new(WaybillDetailQueryInfo)
+	},
+}
+
+// GetWaybillDetailQueryInfo() 从对象池中获取WaybillDetailQueryInfo
+func GetWaybillDetailQueryInfo() *WaybillDetailQueryInfo {
+	return poolWaybillDetailQueryInfo.Get().(*WaybillDetailQueryInfo)
+}
+
+// ReleaseWaybillDetailQueryInfo 释放WaybillDetailQueryInfo
+func ReleaseWaybillDetailQueryInfo(v *WaybillDetailQueryInfo) {
+	v.TradeOrderList = v.TradeOrderList[:0]
+	v.LogisticsServiceList = v.LogisticsServiceList[:0]
+	v.PackageItems = v.PackageItems[:0]
+	v.ConsigneeBranchCode = ""
+	v.ConsigneeBranchName = ""
+	v.ConsigneeName = ""
+	v.ConsigneePhone = ""
+	v.CpCode = ""
+	v.CreateTime = ""
+	v.LastPrintTime = ""
+	v.PackageCenterCode = ""
+	v.PackageCenterName = ""
+	v.PackageId = ""
+	v.PickupTime = ""
+	v.PrintConfig = ""
+	v.ProductType = ""
+	v.SendName = ""
+	v.SendPhone = ""
+	v.ShippingBranchCode = ""
+	v.ShippingBranchName = ""
+	v.ShortAddress = ""
+	v.SignTime = ""
+	v.WaybillCode = ""
+	v.ConsigneeAddress = nil
+	v.PrintCount = 0
+	v.ShippingAddress = nil
+	v.Status = 0
+	v.RealUserId = 0
+	v.Volume = 0
+	v.Weight = 0
+	poolWaybillDetailQueryInfo.Put(v)
 }

@@ -1,5 +1,9 @@
 package txcs
 
+import (
+	"sync"
+)
+
 // StatementBillFeeDetailQuery 结构体
 type StatementBillFeeDetailQuery struct {
 	// 结算公司编码
@@ -14,4 +18,26 @@ type StatementBillFeeDetailQuery struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 当前页码
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
+}
+
+var poolStatementBillFeeDetailQuery = sync.Pool{
+	New: func() any {
+		return new(StatementBillFeeDetailQuery)
+	},
+}
+
+// GetStatementBillFeeDetailQuery() 从对象池中获取StatementBillFeeDetailQuery
+func GetStatementBillFeeDetailQuery() *StatementBillFeeDetailQuery {
+	return poolStatementBillFeeDetailQuery.Get().(*StatementBillFeeDetailQuery)
+}
+
+// ReleaseStatementBillFeeDetailQuery 释放StatementBillFeeDetailQuery
+func ReleaseStatementBillFeeDetailQuery(v *StatementBillFeeDetailQuery) {
+	v.SettlementCompanyCode = ""
+	v.StatementBillCode = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.PageSize = 0
+	v.CurrentPage = 0
+	poolStatementBillFeeDetailQuery.Put(v)
 }

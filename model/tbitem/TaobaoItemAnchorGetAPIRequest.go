@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoItemAnchorGetAPIRequest struct {
 // NewTaobaoItemAnchorGetRequest 初始化TaobaoItemAnchorGetAPIRequest对象
 func NewTaobaoItemAnchorGetRequest() *TaobaoItemAnchorGetAPIRequest {
 	return &TaobaoItemAnchorGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoItemAnchorGetAPIRequest) Reset() {
+	r._type = 0
+	r._catId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoItemAnchorGetAPIRequest) SetCatId(_catId int64) error {
 // GetCatId CatId Getter
 func (r TaobaoItemAnchorGetAPIRequest) GetCatId() int64 {
 	return r._catId
+}
+
+var poolTaobaoItemAnchorGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoItemAnchorGetRequest()
+	},
+}
+
+// GetTaobaoItemAnchorGetRequest 从 sync.Pool 获取 TaobaoItemAnchorGetAPIRequest
+func GetTaobaoItemAnchorGetAPIRequest() *TaobaoItemAnchorGetAPIRequest {
+	return poolTaobaoItemAnchorGetAPIRequest.Get().(*TaobaoItemAnchorGetAPIRequest)
+}
+
+// ReleaseTaobaoItemAnchorGetAPIRequest 将 TaobaoItemAnchorGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoItemAnchorGetAPIRequest(v *TaobaoItemAnchorGetAPIRequest) {
+	v.Reset()
+	poolTaobaoItemAnchorGetAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.supplychain.flight.city
 //
 // 机场数据查询
-func AlitripBtripSupplychainFlightCity(clt *core.SDKClient, req *btrip.AlitripBtripSupplychainFlightCityAPIRequest, session string) (*btrip.AlitripBtripSupplychainFlightCityAPIResponse, error) {
-	var resp btrip.AlitripBtripSupplychainFlightCityAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripSupplychainFlightCity(clt *core.SDKClient, req *btrip.AlitripBtripSupplychainFlightCityAPIRequest, resp *btrip.AlitripBtripSupplychainFlightCityAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

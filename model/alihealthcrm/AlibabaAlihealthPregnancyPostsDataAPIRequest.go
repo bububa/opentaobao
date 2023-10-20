@@ -2,6 +2,7 @@ package alihealthcrm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type AlibabaAlihealthPregnancyPostsDataAPIRequest struct {
 // NewAlibabaAlihealthPregnancyPostsDataRequest 初始化AlibabaAlihealthPregnancyPostsDataAPIRequest对象
 func NewAlibabaAlihealthPregnancyPostsDataRequest() *AlibabaAlihealthPregnancyPostsDataAPIRequest {
 	return &AlibabaAlihealthPregnancyPostsDataAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthPregnancyPostsDataAPIRequest) Reset() {
+	r._title = ""
+	r._content = ""
+	r._picUrl = ""
+	r._userId = 0
+	r._eventType = 0
+	r._mainId = 0
+	r._replyId = 0
+	r._date = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *AlibabaAlihealthPregnancyPostsDataAPIRequest) SetDate(_date int64) erro
 // GetDate Date Getter
 func (r AlibabaAlihealthPregnancyPostsDataAPIRequest) GetDate() int64 {
 	return r._date
+}
+
+var poolAlibabaAlihealthPregnancyPostsDataAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthPregnancyPostsDataRequest()
+	},
+}
+
+// GetAlibabaAlihealthPregnancyPostsDataRequest 从 sync.Pool 获取 AlibabaAlihealthPregnancyPostsDataAPIRequest
+func GetAlibabaAlihealthPregnancyPostsDataAPIRequest() *AlibabaAlihealthPregnancyPostsDataAPIRequest {
+	return poolAlibabaAlihealthPregnancyPostsDataAPIRequest.Get().(*AlibabaAlihealthPregnancyPostsDataAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthPregnancyPostsDataAPIRequest 将 AlibabaAlihealthPregnancyPostsDataAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthPregnancyPostsDataAPIRequest(v *AlibabaAlihealthPregnancyPostsDataAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthPregnancyPostsDataAPIRequest.Put(v)
 }

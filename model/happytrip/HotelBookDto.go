@@ -1,5 +1,9 @@
 package happytrip
 
+import (
+	"sync"
+)
+
 // HotelBookDto 结构体
 type HotelBookDto struct {
 	// 创建时间
@@ -20,4 +24,29 @@ type HotelBookDto struct {
 	ResourceMainId int64 `json:"resource_main_id,omitempty" xml:"resource_main_id,omitempty"`
 	// 出行人id
 	TouristId int64 `json:"tourist_id,omitempty" xml:"tourist_id,omitempty"`
+}
+
+var poolHotelBookDto = sync.Pool{
+	New: func() any {
+		return new(HotelBookDto)
+	},
+}
+
+// GetHotelBookDto() 从对象池中获取HotelBookDto
+func GetHotelBookDto() *HotelBookDto {
+	return poolHotelBookDto.Get().(*HotelBookDto)
+}
+
+// ReleaseHotelBookDto 释放HotelBookDto
+func ReleaseHotelBookDto(v *HotelBookDto) {
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.ResourceId = ""
+	v.RoomNo = ""
+	v.Id = 0
+	v.OrderId = 0
+	v.ResourceHotelId = 0
+	v.ResourceMainId = 0
+	v.TouristId = 0
+	poolHotelBookDto.Put(v)
 }

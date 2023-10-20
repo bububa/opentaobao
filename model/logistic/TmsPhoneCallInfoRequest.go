@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // TmsPhoneCallInfoRequest 结构体
 type TmsPhoneCallInfoRequest struct {
 	// 电联属性，phoneCallInfo有值时，必需。SMART 智能云呼; NORMAL, 普通
@@ -20,4 +24,29 @@ type TmsPhoneCallInfoRequest struct {
 	CallTime string `json:"call_time,omitempty" xml:"call_time,omitempty"`
 	// 挂断时间
 	HangUpTime string `json:"hang_up_time,omitempty" xml:"hang_up_time,omitempty"`
+}
+
+var poolTmsPhoneCallInfoRequest = sync.Pool{
+	New: func() any {
+		return new(TmsPhoneCallInfoRequest)
+	},
+}
+
+// GetTmsPhoneCallInfoRequest() 从对象池中获取TmsPhoneCallInfoRequest
+func GetTmsPhoneCallInfoRequest() *TmsPhoneCallInfoRequest {
+	return poolTmsPhoneCallInfoRequest.Get().(*TmsPhoneCallInfoRequest)
+}
+
+// ReleaseTmsPhoneCallInfoRequest 释放TmsPhoneCallInfoRequest
+func ReleaseTmsPhoneCallInfoRequest(v *TmsPhoneCallInfoRequest) {
+	v.PhoneCallType = ""
+	v.HangUpType = ""
+	v.PhoneChatUrl = ""
+	v.PhoneCallDemandChangeTime = ""
+	v.ConnectTime = ""
+	v.PhoneCallResultRemark = ""
+	v.ConnectionStatus = ""
+	v.CallTime = ""
+	v.HangUpTime = ""
+	poolTmsPhoneCallInfoRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.einvoice.create.results.increment.get
 //
 // 增量开票结果获取
-func AlibabaEinvoiceCreateResultsIncrementGet(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceCreateResultsIncrementGetAPIRequest, session string) (*einvoice.AlibabaEinvoiceCreateResultsIncrementGetAPIResponse, error) {
-	var resp einvoice.AlibabaEinvoiceCreateResultsIncrementGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaEinvoiceCreateResultsIncrementGet(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceCreateResultsIncrementGetAPIRequest, resp *einvoice.AlibabaEinvoiceCreateResultsIncrementGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

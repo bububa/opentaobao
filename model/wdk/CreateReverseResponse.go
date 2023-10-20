@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // CreateReverseResponse 结构体
 type CreateReverseResponse struct {
 	// 外部单号
@@ -12,4 +16,25 @@ type CreateReverseResponse struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 门店id
 	StoreId string `json:"store_id,omitempty" xml:"store_id,omitempty"`
+}
+
+var poolCreateReverseResponse = sync.Pool{
+	New: func() any {
+		return new(CreateReverseResponse)
+	},
+}
+
+// GetCreateReverseResponse() 从对象池中获取CreateReverseResponse
+func GetCreateReverseResponse() *CreateReverseResponse {
+	return poolCreateReverseResponse.Get().(*CreateReverseResponse)
+}
+
+// ReleaseCreateReverseResponse 释放CreateReverseResponse
+func ReleaseCreateReverseResponse(v *CreateReverseResponse) {
+	v.OutBizOrderIds = v.OutBizOrderIds[:0]
+	v.ReverseIds = v.ReverseIds[:0]
+	v.OutOrderId = ""
+	v.RequestId = ""
+	v.StoreId = ""
+	poolCreateReverseResponse.Put(v)
 }

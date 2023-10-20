@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // ListResult 结构体
 type ListResult struct {
 	// content
@@ -22,4 +26,30 @@ type ListResult struct {
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// 是否调用成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolListResult = sync.Pool{
+	New: func() any {
+		return new(ListResult)
+	},
+}
+
+// GetListResult() 从对象池中获取ListResult
+func GetListResult() *ListResult {
+	return poolListResult.Get().(*ListResult)
+}
+
+// ReleaseListResult 释放ListResult
+func ReleaseListResult(v *ListResult) {
+	v.Contents = v.Contents[:0]
+	v.DeviceDataList = v.DeviceDataList[:0]
+	v.ContentList = v.ContentList[:0]
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.RequestId = ""
+	v.ErrorLevel = ""
+	v.ErrorExtInfo = ""
+	v.TotalCount = 0
+	v.Success = false
+	poolListResult.Put(v)
 }

@@ -2,6 +2,7 @@ package aliexpress
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AliexpressLogisticsAbnormalorderQueryAPIResponse struct {
 	model.CommonResponse
 	AliexpressLogisticsAbnormalorderQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AliexpressLogisticsAbnormalorderQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliexpressLogisticsAbnormalorderQueryAPIResponseModel).Reset()
 }
 
 // AliexpressLogisticsAbnormalorderQueryAPIResponseModel is 异常订单查询 成功返回结果
@@ -32,4 +39,32 @@ type AliexpressLogisticsAbnormalorderQueryAPIResponseModel struct {
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// 当前页
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliexpressLogisticsAbnormalorderQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = m.Result[:0]
+	m.ErrorDesc = ""
+	m.IsSuccess = ""
+	m.TotalPage = 0
+	m.TotalCount = 0
+	m.CurrentPage = 0
+}
+
+var poolAliexpressLogisticsAbnormalorderQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliexpressLogisticsAbnormalorderQueryAPIResponse)
+	},
+}
+
+// GetAliexpressLogisticsAbnormalorderQueryAPIResponse 从 sync.Pool 获取 AliexpressLogisticsAbnormalorderQueryAPIResponse
+func GetAliexpressLogisticsAbnormalorderQueryAPIResponse() *AliexpressLogisticsAbnormalorderQueryAPIResponse {
+	return poolAliexpressLogisticsAbnormalorderQueryAPIResponse.Get().(*AliexpressLogisticsAbnormalorderQueryAPIResponse)
+}
+
+// ReleaseAliexpressLogisticsAbnormalorderQueryAPIResponse 将 AliexpressLogisticsAbnormalorderQueryAPIResponse 保存到 sync.Pool
+func ReleaseAliexpressLogisticsAbnormalorderQueryAPIResponse(v *AliexpressLogisticsAbnormalorderQueryAPIResponse) {
+	v.Reset()
+	poolAliexpressLogisticsAbnormalorderQueryAPIResponse.Put(v)
 }

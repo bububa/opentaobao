@@ -1,5 +1,9 @@
 package baichuanctg
 
+import (
+	"sync"
+)
+
 // CtgRequest 结构体
 type CtgRequest struct {
 	// delivery_id
@@ -14,4 +18,26 @@ type CtgRequest struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// current_page
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
+}
+
+var poolCtgRequest = sync.Pool{
+	New: func() any {
+		return new(CtgRequest)
+	},
+}
+
+// GetCtgRequest() 从对象池中获取CtgRequest
+func GetCtgRequest() *CtgRequest {
+	return poolCtgRequest.Get().(*CtgRequest)
+}
+
+// ReleaseCtgRequest 释放CtgRequest
+func ReleaseCtgRequest(v *CtgRequest) {
+	v.DeliveryId = ""
+	v.ResId = ""
+	v.BusinessAppKey = ""
+	v.Date = ""
+	v.PageSize = 0
+	v.CurrentPage = 0
+	poolCtgRequest.Put(v)
 }

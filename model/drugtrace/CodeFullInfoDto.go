@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // CodeFullInfoDto 结构体
 type CodeFullInfoDto struct {
 	// 字段校验，1、本位码为空/疑似有误：空、连续7位数（含）为同一数字、循环数字； 2、有效期至疑似有误：不符合平台任意效期计算规则的数据（1.生产日期+有效期后的当天；2.生产日期+有效期后的前一天；3.生产日期+有效期后的上个月的最后一天；4.生产日期+有效期后的本月最后一天）；3、制剂规格疑似有误：被标记有误的数据
@@ -21,7 +25,7 @@ type CodeFullInfoDto struct {
 	// 药品基本信息对象
 	DrugEntBaseDTO *DrugEntBaseDto `json:"drug_ent_base_d_t_o,omitempty" xml:"drug_ent_base_d_t_o,omitempty"`
 	// 企业信息对象
-	PUserEntDTO *PuserEntDto `json:"p_user_ent_d_t_o,omitempty" xml:"p_user_ent_d_t_o,omitempty"`
+	PUserEntDTO *PUserEntDto `json:"p_user_ent_d_t_o,omitempty" xml:"p_user_ent_d_t_o,omitempty"`
 	// 追溯码状态对象
 	CodeStatusTypeDTO *CodeStatusTypeDto `json:"code_status_type_d_t_o,omitempty" xml:"code_status_type_d_t_o,omitempty"`
 	// 码包装层级
@@ -32,4 +36,35 @@ type CodeFullInfoDto struct {
 	Model *CodeFullInfoDto `json:"model,omitempty" xml:"model,omitempty"`
 	// 调用结果
 	ResponseSuccess bool `json:"response_success,omitempty" xml:"response_success,omitempty"`
+}
+
+var poolCodeFullInfoDto = sync.Pool{
+	New: func() any {
+		return new(CodeFullInfoDto)
+	},
+}
+
+// GetCodeFullInfoDto() 从对象池中获取CodeFullInfoDto
+func GetCodeFullInfoDto() *CodeFullInfoDto {
+	return poolCodeFullInfoDto.Get().(*CodeFullInfoDto)
+}
+
+// ReleaseCodeFullInfoDto 释放CodeFullInfoDto
+func ReleaseCodeFullInfoDto(v *CodeFullInfoDto) {
+	v.ValidationRuleList = v.ValidationRuleList[:0]
+	v.BillInOutDTOS = v.BillInOutDTOS[:0]
+	v.MsgCode = ""
+	v.Code = ""
+	v.Barcode69 = ""
+	v.PkgRatio = ""
+	v.MsgInfo = ""
+	v.CodeProduceInfoDTO = nil
+	v.DrugEntBaseDTO = nil
+	v.PUserEntDTO = nil
+	v.CodeStatusTypeDTO = nil
+	v.PackageLevel = 0
+	v.CodeActiveInfoListApiDTO = nil
+	v.Model = nil
+	v.ResponseSuccess = false
+	poolCodeFullInfoDto.Put(v)
 }

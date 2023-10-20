@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlscCrmOpenAssertVerifyAPIResponse struct {
 	AlibabaAlscCrmOpenAssertVerifyAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlscCrmOpenAssertVerifyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlscCrmOpenAssertVerifyAPIResponseModel).Reset()
+}
+
 // AlibabaAlscCrmOpenAssertVerifyAPIResponseModel is 资产核销接口 成功返回结果
 type AlibabaAlscCrmOpenAssertVerifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_crm_open_assert_verify_response"`
@@ -22,4 +29,27 @@ type AlibabaAlscCrmOpenAssertVerifyAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口结果
 	Result *CommonResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlscCrmOpenAssertVerifyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlscCrmOpenAssertVerifyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlscCrmOpenAssertVerifyAPIResponse)
+	},
+}
+
+// GetAlibabaAlscCrmOpenAssertVerifyAPIResponse 从 sync.Pool 获取 AlibabaAlscCrmOpenAssertVerifyAPIResponse
+func GetAlibabaAlscCrmOpenAssertVerifyAPIResponse() *AlibabaAlscCrmOpenAssertVerifyAPIResponse {
+	return poolAlibabaAlscCrmOpenAssertVerifyAPIResponse.Get().(*AlibabaAlscCrmOpenAssertVerifyAPIResponse)
+}
+
+// ReleaseAlibabaAlscCrmOpenAssertVerifyAPIResponse 将 AlibabaAlscCrmOpenAssertVerifyAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlscCrmOpenAssertVerifyAPIResponse(v *AlibabaAlscCrmOpenAssertVerifyAPIResponse) {
+	v.Reset()
+	poolAlibabaAlscCrmOpenAssertVerifyAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlicomOrderPreauthorizeCreateAPIRequest struct {
 // NewAlibabaAlicomOrderPreauthorizeCreateRequest 初始化AlibabaAlicomOrderPreauthorizeCreateAPIRequest对象
 func NewAlibabaAlicomOrderPreauthorizeCreateRequest() *AlibabaAlicomOrderPreauthorizeCreateAPIRequest {
 	return &AlibabaAlicomOrderPreauthorizeCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlicomOrderPreauthorizeCreateAPIRequest) Reset() {
+	r._preAuthorizeModel = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlicomOrderPreauthorizeCreateAPIRequest) SetPreAuthorizeModel(_p
 // GetPreAuthorizeModel PreAuthorizeModel Getter
 func (r AlibabaAlicomOrderPreauthorizeCreateAPIRequest) GetPreAuthorizeModel() *PreAuthorizeModel {
 	return r._preAuthorizeModel
+}
+
+var poolAlibabaAlicomOrderPreauthorizeCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlicomOrderPreauthorizeCreateRequest()
+	},
+}
+
+// GetAlibabaAlicomOrderPreauthorizeCreateRequest 从 sync.Pool 获取 AlibabaAlicomOrderPreauthorizeCreateAPIRequest
+func GetAlibabaAlicomOrderPreauthorizeCreateAPIRequest() *AlibabaAlicomOrderPreauthorizeCreateAPIRequest {
+	return poolAlibabaAlicomOrderPreauthorizeCreateAPIRequest.Get().(*AlibabaAlicomOrderPreauthorizeCreateAPIRequest)
+}
+
+// ReleaseAlibabaAlicomOrderPreauthorizeCreateAPIRequest 将 AlibabaAlicomOrderPreauthorizeCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlicomOrderPreauthorizeCreateAPIRequest(v *AlibabaAlicomOrderPreauthorizeCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaAlicomOrderPreauthorizeCreateAPIRequest.Put(v)
 }

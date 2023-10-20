@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // TopP4pQuickEffectQuery 结构体
 type TopP4pQuickEffectQuery struct {
 	// 结束时间 当inteval=7或30的时候 不需要填写，当inteval=1时需要填写（开始结束时间区间不允许大于180天）
@@ -24,4 +28,31 @@ type TopP4pQuickEffectQuery struct {
 	PerPageSize int64 `json:"per_page_size,omitempty" xml:"per_page_size,omitempty"`
 	// 若查询类型为人群，需要填写此字段  1（潜在访问偏好） 2（潜在采购意向） 3（店铺老客） 4（优选人群）
 	TagLabel int64 `json:"tag_label,omitempty" xml:"tag_label,omitempty"`
+}
+
+var poolTopP4pQuickEffectQuery = sync.Pool{
+	New: func() any {
+		return new(TopP4pQuickEffectQuery)
+	},
+}
+
+// GetTopP4pQuickEffectQuery() 从对象池中获取TopP4pQuickEffectQuery
+func GetTopP4pQuickEffectQuery() *TopP4pQuickEffectQuery {
+	return poolTopP4pQuickEffectQuery.Get().(*TopP4pQuickEffectQuery)
+}
+
+// ReleaseTopP4pQuickEffectQuery 释放TopP4pQuickEffectQuery
+func ReleaseTopP4pQuickEffectQuery(v *TopP4pQuickEffectQuery) {
+	v.EndDate = ""
+	v.BeginDate = ""
+	v.OrderType = ""
+	v.OrderField = ""
+	v.ProductName = ""
+	v.CampaignTitle = ""
+	v.TagType = ""
+	v.Interval = 0
+	v.ToPage = 0
+	v.PerPageSize = 0
+	v.TagLabel = 0
+	poolTopP4pQuickEffectQuery.Put(v)
 }

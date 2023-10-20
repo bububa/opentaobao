@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.settlement.storetransfer.audit
 //
 // 新康众审批门店分账
-func TmallServicecenterSettlementStoretransferAudit(clt *core.SDKClient, req *tmallservice.TmallServicecenterSettlementStoretransferAuditAPIRequest, session string) (*tmallservice.TmallServicecenterSettlementStoretransferAuditAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterSettlementStoretransferAuditAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterSettlementStoretransferAudit(clt *core.SDKClient, req *tmallservice.TmallServicecenterSettlementStoretransferAuditAPIRequest, resp *tmallservice.TmallServicecenterSettlementStoretransferAuditAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

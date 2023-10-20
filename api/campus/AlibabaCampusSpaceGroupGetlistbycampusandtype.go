@@ -11,11 +11,6 @@ import (
 // 根据园区id及TypeId获取空间分组
 // HSF接口名称：com.alibaba.campus.api.space.service.top.SpaceGroupApiTopService
 // HSF方法名称：getListByCampusAndType
-func AlibabaCampusSpaceGroupGetlistbycampusandtype(clt *core.SDKClient, req *campus.AlibabaCampusSpaceGroupGetlistbycampusandtypeAPIRequest, session string) (*campus.AlibabaCampusSpaceGroupGetlistbycampusandtypeAPIResponse, error) {
-	var resp campus.AlibabaCampusSpaceGroupGetlistbycampusandtypeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusSpaceGroupGetlistbycampusandtype(clt *core.SDKClient, req *campus.AlibabaCampusSpaceGroupGetlistbycampusandtypeAPIRequest, resp *campus.AlibabaCampusSpaceGroupGetlistbycampusandtypeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

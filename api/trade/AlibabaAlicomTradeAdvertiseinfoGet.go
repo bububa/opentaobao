@@ -9,11 +9,6 @@ import (
 // alibaba.alicom.trade.advertiseinfo.get
 //
 // 获取订单上的在信息流投放信息
-func AlibabaAlicomTradeAdvertiseinfoGet(clt *core.SDKClient, req *trade.AlibabaAlicomTradeAdvertiseinfoGetAPIRequest, session string) (*trade.AlibabaAlicomTradeAdvertiseinfoGetAPIResponse, error) {
-	var resp trade.AlibabaAlicomTradeAdvertiseinfoGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlicomTradeAdvertiseinfoGet(clt *core.SDKClient, req *trade.AlibabaAlicomTradeAdvertiseinfoGetAPIRequest, resp *trade.AlibabaAlicomTradeAdvertiseinfoGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

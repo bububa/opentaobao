@@ -2,6 +2,7 @@ package yunosad
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type YunosAdAuditCreativeGetAPIRequest struct {
 // NewYunosAdAuditCreativeGetRequest 初始化YunosAdAuditCreativeGetAPIRequest对象
 func NewYunosAdAuditCreativeGetRequest() *YunosAdAuditCreativeGetAPIRequest {
 	return &YunosAdAuditCreativeGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosAdAuditCreativeGetAPIRequest) Reset() {
+	r._creativeId = ""
+	r._memberId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *YunosAdAuditCreativeGetAPIRequest) SetMemberId(_memberId int64) error {
 // GetMemberId MemberId Getter
 func (r YunosAdAuditCreativeGetAPIRequest) GetMemberId() int64 {
 	return r._memberId
+}
+
+var poolYunosAdAuditCreativeGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosAdAuditCreativeGetRequest()
+	},
+}
+
+// GetYunosAdAuditCreativeGetRequest 从 sync.Pool 获取 YunosAdAuditCreativeGetAPIRequest
+func GetYunosAdAuditCreativeGetAPIRequest() *YunosAdAuditCreativeGetAPIRequest {
+	return poolYunosAdAuditCreativeGetAPIRequest.Get().(*YunosAdAuditCreativeGetAPIRequest)
+}
+
+// ReleaseYunosAdAuditCreativeGetAPIRequest 将 YunosAdAuditCreativeGetAPIRequest 放入 sync.Pool
+func ReleaseYunosAdAuditCreativeGetAPIRequest(v *YunosAdAuditCreativeGetAPIRequest) {
+	v.Reset()
+	poolYunosAdAuditCreativeGetAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alitrip.rail.trade.refund
 //
 // 退票接口
-func AlitripRailTradeRefund(clt *core.SDKClient, req *trade.AlitripRailTradeRefundAPIRequest, session string) (*trade.AlitripRailTradeRefundAPIResponse, error) {
-	var resp trade.AlitripRailTradeRefundAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripRailTradeRefund(clt *core.SDKClient, req *trade.AlitripRailTradeRefundAPIRequest, resp *trade.AlitripRailTradeRefundAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

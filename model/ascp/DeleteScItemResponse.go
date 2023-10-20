@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // DeleteScItemResponse 结构体
 type DeleteScItemResponse struct {
 	// 调用链路ID
@@ -12,4 +16,25 @@ type DeleteScItemResponse struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 成功或者失败
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolDeleteScItemResponse = sync.Pool{
+	New: func() any {
+		return new(DeleteScItemResponse)
+	},
+}
+
+// GetDeleteScItemResponse() 从对象池中获取DeleteScItemResponse
+func GetDeleteScItemResponse() *DeleteScItemResponse {
+	return poolDeleteScItemResponse.Get().(*DeleteScItemResponse)
+}
+
+// ReleaseDeleteScItemResponse 释放DeleteScItemResponse
+func ReleaseDeleteScItemResponse(v *DeleteScItemResponse) {
+	v.TraceId = ""
+	v.Code = ""
+	v.Data = ""
+	v.Message = ""
+	v.Success = false
+	poolDeleteScItemResponse.Put(v)
 }

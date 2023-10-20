@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // TaobaoSimbaSerchcrowdGetResult 结构体
 type TaobaoSimbaSerchcrowdGetResult struct {
 	// 出价方式1:溢价;0:出价
@@ -14,4 +18,26 @@ type TaobaoSimbaSerchcrowdGetResult struct {
 	IsDefaultPrice int64 `json:"is_default_price,omitempty" xml:"is_default_price,omitempty"`
 	// 人群上下线状态0:暂停, 1:启用
 	OnlineStatus int64 `json:"online_status,omitempty" xml:"online_status,omitempty"`
+}
+
+var poolTaobaoSimbaSerchcrowdGetResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoSimbaSerchcrowdGetResult)
+	},
+}
+
+// GetTaobaoSimbaSerchcrowdGetResult() 从对象池中获取TaobaoSimbaSerchcrowdGetResult
+func GetTaobaoSimbaSerchcrowdGetResult() *TaobaoSimbaSerchcrowdGetResult {
+	return poolTaobaoSimbaSerchcrowdGetResult.Get().(*TaobaoSimbaSerchcrowdGetResult)
+}
+
+// ReleaseTaobaoSimbaSerchcrowdGetResult 释放TaobaoSimbaSerchcrowdGetResult
+func ReleaseTaobaoSimbaSerchcrowdGetResult(v *TaobaoSimbaSerchcrowdGetResult) {
+	v.PriceMode = 0
+	v.Discount = 0
+	v.Crowd = nil
+	v.Id = 0
+	v.IsDefaultPrice = 0
+	v.OnlineStatus = 0
+	poolTaobaoSimbaSerchcrowdGetResult.Put(v)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // FulfillLogisticListResult 结构体
 type FulfillLogisticListResult struct {
 	// 小票批次信息
@@ -10,4 +14,24 @@ type FulfillLogisticListResult struct {
 	ErrDesc string `json:"err_desc,omitempty" xml:"err_desc,omitempty"`
 	// true 调用成功 false 调用异常
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolFulfillLogisticListResult = sync.Pool{
+	New: func() any {
+		return new(FulfillLogisticListResult)
+	},
+}
+
+// GetFulfillLogisticListResult() 从对象池中获取FulfillLogisticListResult
+func GetFulfillLogisticListResult() *FulfillLogisticListResult {
+	return poolFulfillLogisticListResult.Get().(*FulfillLogisticListResult)
+}
+
+// ReleaseFulfillLogisticListResult 释放FulfillLogisticListResult
+func ReleaseFulfillLogisticListResult(v *FulfillLogisticListResult) {
+	v.Results = v.Results[:0]
+	v.ErrCode = ""
+	v.ErrDesc = ""
+	v.Success = false
+	poolFulfillLogisticListResult.Put(v)
 }

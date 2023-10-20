@@ -2,6 +2,7 @@ package tmallchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TmallChannelProductsQueryAPIRequest struct {
 // NewTmallChannelProductsQueryRequest 初始化TmallChannelProductsQueryAPIRequest对象
 func NewTmallChannelProductsQueryRequest() *TmallChannelProductsQueryAPIRequest {
 	return &TmallChannelProductsQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallChannelProductsQueryAPIRequest) Reset() {
+	r._productIds = r._productIds[:0]
+	r._productNumber = ""
+	r._skuNumber = ""
+	r._pageSize = 0
+	r._productLineId = 0
+	r._pageNum = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TmallChannelProductsQueryAPIRequest) SetPageNum(_pageNum int64) error {
 // GetPageNum PageNum Getter
 func (r TmallChannelProductsQueryAPIRequest) GetPageNum() int64 {
 	return r._pageNum
+}
+
+var poolTmallChannelProductsQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallChannelProductsQueryRequest()
+	},
+}
+
+// GetTmallChannelProductsQueryRequest 从 sync.Pool 获取 TmallChannelProductsQueryAPIRequest
+func GetTmallChannelProductsQueryAPIRequest() *TmallChannelProductsQueryAPIRequest {
+	return poolTmallChannelProductsQueryAPIRequest.Get().(*TmallChannelProductsQueryAPIRequest)
+}
+
+// ReleaseTmallChannelProductsQueryAPIRequest 将 TmallChannelProductsQueryAPIRequest 放入 sync.Pool
+func ReleaseTmallChannelProductsQueryAPIRequest(v *TmallChannelProductsQueryAPIRequest) {
+	v.Reset()
+	poolTmallChannelProductsQueryAPIRequest.Put(v)
 }

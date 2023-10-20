@@ -2,6 +2,7 @@ package moziacl
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaMoziAclPermissionpkgAddRolesAPIResponse struct {
 	AlibabaMoziAclPermissionpkgAddRolesAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaMoziAclPermissionpkgAddRolesAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaMoziAclPermissionpkgAddRolesAPIResponseModel).Reset()
+}
+
 // AlibabaMoziAclPermissionpkgAddRolesAPIResponseModel is 将角色添加到权限套餐中 成功返回结果
 type AlibabaMoziAclPermissionpkgAddRolesAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mozi_acl_permissionpkg_add_roles_response"`
@@ -22,4 +29,27 @@ type AlibabaMoziAclPermissionpkgAddRolesAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果对象
 	Result *UpdateRolesToPermissionPackageResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaMoziAclPermissionpkgAddRolesAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaMoziAclPermissionpkgAddRolesAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaMoziAclPermissionpkgAddRolesAPIResponse)
+	},
+}
+
+// GetAlibabaMoziAclPermissionpkgAddRolesAPIResponse 从 sync.Pool 获取 AlibabaMoziAclPermissionpkgAddRolesAPIResponse
+func GetAlibabaMoziAclPermissionpkgAddRolesAPIResponse() *AlibabaMoziAclPermissionpkgAddRolesAPIResponse {
+	return poolAlibabaMoziAclPermissionpkgAddRolesAPIResponse.Get().(*AlibabaMoziAclPermissionpkgAddRolesAPIResponse)
+}
+
+// ReleaseAlibabaMoziAclPermissionpkgAddRolesAPIResponse 将 AlibabaMoziAclPermissionpkgAddRolesAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaMoziAclPermissionpkgAddRolesAPIResponse(v *AlibabaMoziAclPermissionpkgAddRolesAPIResponse) {
+	v.Reset()
+	poolAlibabaMoziAclPermissionpkgAddRolesAPIResponse.Put(v)
 }

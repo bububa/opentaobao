@@ -2,6 +2,7 @@ package elife
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoElifeLifecardQueryAPIRequest struct {
 // NewTaobaoElifeLifecardQueryRequest 初始化TaobaoElifeLifecardQueryAPIRequest对象
 func NewTaobaoElifeLifecardQueryRequest() *TaobaoElifeLifecardQueryAPIRequest {
 	return &TaobaoElifeLifecardQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoElifeLifecardQueryAPIRequest) Reset() {
+	r._queryRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoElifeLifecardQueryAPIRequest) SetQueryRequest(_queryRequest *Cons
 // GetQueryRequest QueryRequest Getter
 func (r TaobaoElifeLifecardQueryAPIRequest) GetQueryRequest() *ConsumeRequest {
 	return r._queryRequest
+}
+
+var poolTaobaoElifeLifecardQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoElifeLifecardQueryRequest()
+	},
+}
+
+// GetTaobaoElifeLifecardQueryRequest 从 sync.Pool 获取 TaobaoElifeLifecardQueryAPIRequest
+func GetTaobaoElifeLifecardQueryAPIRequest() *TaobaoElifeLifecardQueryAPIRequest {
+	return poolTaobaoElifeLifecardQueryAPIRequest.Get().(*TaobaoElifeLifecardQueryAPIRequest)
+}
+
+// ReleaseTaobaoElifeLifecardQueryAPIRequest 将 TaobaoElifeLifecardQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoElifeLifecardQueryAPIRequest(v *TaobaoElifeLifecardQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoElifeLifecardQueryAPIRequest.Put(v)
 }

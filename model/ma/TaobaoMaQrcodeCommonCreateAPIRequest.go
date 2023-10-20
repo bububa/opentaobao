@@ -2,6 +2,7 @@ package ma
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type TaobaoMaQrcodeCommonCreateAPIRequest struct {
 // NewTaobaoMaQrcodeCommonCreateRequest 初始化TaobaoMaQrcodeCommonCreateAPIRequest对象
 func NewTaobaoMaQrcodeCommonCreateRequest() *TaobaoMaQrcodeCommonCreateAPIRequest {
 	return &TaobaoMaQrcodeCommonCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMaQrcodeCommonCreateAPIRequest) Reset() {
+	r._type = ""
+	r._content = ""
+	r._name = ""
+	r._channelName = ""
+	r._style = ""
+	r._logo = ""
+	r._size = 0
+	r._needEps = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *TaobaoMaQrcodeCommonCreateAPIRequest) SetNeedEps(_needEps bool) error {
 // GetNeedEps NeedEps Getter
 func (r TaobaoMaQrcodeCommonCreateAPIRequest) GetNeedEps() bool {
 	return r._needEps
+}
+
+var poolTaobaoMaQrcodeCommonCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMaQrcodeCommonCreateRequest()
+	},
+}
+
+// GetTaobaoMaQrcodeCommonCreateRequest 从 sync.Pool 获取 TaobaoMaQrcodeCommonCreateAPIRequest
+func GetTaobaoMaQrcodeCommonCreateAPIRequest() *TaobaoMaQrcodeCommonCreateAPIRequest {
+	return poolTaobaoMaQrcodeCommonCreateAPIRequest.Get().(*TaobaoMaQrcodeCommonCreateAPIRequest)
+}
+
+// ReleaseTaobaoMaQrcodeCommonCreateAPIRequest 将 TaobaoMaQrcodeCommonCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMaQrcodeCommonCreateAPIRequest(v *TaobaoMaQrcodeCommonCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoMaQrcodeCommonCreateAPIRequest.Put(v)
 }

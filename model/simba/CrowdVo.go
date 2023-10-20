@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // CrowdVo 结构体
 type CrowdVo struct {
 	// 种子人群关联信息
@@ -18,4 +22,28 @@ type CrowdVo struct {
 	TargetType int64 `json:"target_type,omitempty" xml:"target_type,omitempty"`
 	// 定向标签
 	Label *LabelVo `json:"label,omitempty" xml:"label,omitempty"`
+}
+
+var poolCrowdVo = sync.Pool{
+	New: func() any {
+		return new(CrowdVo)
+	},
+}
+
+// GetCrowdVo() 从对象池中获取CrowdVo
+func GetCrowdVo() *CrowdVo {
+	return poolCrowdVo.Get().(*CrowdVo)
+}
+
+// ReleaseCrowdVo 释放CrowdVo
+func ReleaseCrowdVo(v *CrowdVo) {
+	v.ExtendSeedCrowdList = v.ExtendSeedCrowdList[:0]
+	v.SubCrowdList = v.SubCrowdList[:0]
+	v.CrowdName = ""
+	v.CrowdValue = ""
+	v.LookalikeMultiple = ""
+	v.CrowdId = 0
+	v.TargetType = 0
+	v.Label = nil
+	poolCrowdVo.Put(v)
 }

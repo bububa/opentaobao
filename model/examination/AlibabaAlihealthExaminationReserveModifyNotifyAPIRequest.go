@@ -2,6 +2,7 @@ package examination
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest struct {
 // NewAlibabaAlihealthExaminationReserveModifyNotifyRequest 初始化AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest对象
 func NewAlibabaAlihealthExaminationReserveModifyNotifyRequest() *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest {
 	return &AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) Reset() {
+	r._uniqReserveCode = ""
+	r._oldReserveDate = ""
+	r._packageCode = ""
+	r._reserveNumber = ""
+	r._newReserveDate = ""
+	r._goodsCode = ""
+	r._storeCode = ""
+	r._reason = ""
+	r._newReserveTimeStart = ""
+	r._newReserveTimeEnd = ""
+	r._pass = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetPass(_pass
 // GetPass Pass Getter
 func (r AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) GetPass() bool {
 	return r._pass
+}
+
+var poolAlibabaAlihealthExaminationReserveModifyNotifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthExaminationReserveModifyNotifyRequest()
+	},
+}
+
+// GetAlibabaAlihealthExaminationReserveModifyNotifyRequest 从 sync.Pool 获取 AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest
+func GetAlibabaAlihealthExaminationReserveModifyNotifyAPIRequest() *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest {
+	return poolAlibabaAlihealthExaminationReserveModifyNotifyAPIRequest.Get().(*AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthExaminationReserveModifyNotifyAPIRequest 将 AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthExaminationReserveModifyNotifyAPIRequest(v *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthExaminationReserveModifyNotifyAPIRequest.Put(v)
 }

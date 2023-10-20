@@ -1,5 +1,9 @@
 package eleenterpriserestaurant
 
+import (
+	"sync"
+)
+
 // Specfood 结构体
 type Specfood struct {
 	// 规格信息（示例为多规格例子，否则为 []）
@@ -20,4 +24,29 @@ type Specfood struct {
 	IsEssential bool `json:"is_essential,omitempty" xml:"is_essential,omitempty"`
 	// 是否售完
 	SoldOut bool `json:"sold_out,omitempty" xml:"sold_out,omitempty"`
+}
+
+var poolSpecfood = sync.Pool{
+	New: func() any {
+		return new(Specfood)
+	},
+}
+
+// GetSpecfood() 从对象池中获取Specfood
+func GetSpecfood() *Specfood {
+	return poolSpecfood.Get().(*Specfood)
+}
+
+// ReleaseSpecfood 释放Specfood
+func ReleaseSpecfood(v *Specfood) {
+	v.Specs = v.Specs[:0]
+	v.FoodName = ""
+	v.OriginalPrice = ""
+	v.Price = ""
+	v.FoodId = ""
+	v.SkuId = ""
+	v.Stock = 0
+	v.IsEssential = false
+	v.SoldOut = false
+	poolSpecfood.Put(v)
 }

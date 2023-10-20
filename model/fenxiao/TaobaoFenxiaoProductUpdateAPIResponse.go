@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoFenxiaoProductUpdateAPIResponse struct {
 	TaobaoFenxiaoProductUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoFenxiaoProductUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoFenxiaoProductUpdateAPIResponseModel).Reset()
+}
+
 // TaobaoFenxiaoProductUpdateAPIResponseModel is 更新产品 成功返回结果
 type TaobaoFenxiaoProductUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_product_update_response"`
@@ -24,4 +31,28 @@ type TaobaoFenxiaoProductUpdateAPIResponseModel struct {
 	Modified string `json:"modified,omitempty" xml:"modified,omitempty"`
 	// 产品ID
 	Pid int64 `json:"pid,omitempty" xml:"pid,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoFenxiaoProductUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Modified = ""
+	m.Pid = 0
+}
+
+var poolTaobaoFenxiaoProductUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoFenxiaoProductUpdateAPIResponse)
+	},
+}
+
+// GetTaobaoFenxiaoProductUpdateAPIResponse 从 sync.Pool 获取 TaobaoFenxiaoProductUpdateAPIResponse
+func GetTaobaoFenxiaoProductUpdateAPIResponse() *TaobaoFenxiaoProductUpdateAPIResponse {
+	return poolTaobaoFenxiaoProductUpdateAPIResponse.Get().(*TaobaoFenxiaoProductUpdateAPIResponse)
+}
+
+// ReleaseTaobaoFenxiaoProductUpdateAPIResponse 将 TaobaoFenxiaoProductUpdateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoFenxiaoProductUpdateAPIResponse(v *TaobaoFenxiaoProductUpdateAPIResponse) {
+	v.Reset()
+	poolTaobaoFenxiaoProductUpdateAPIResponse.Put(v)
 }

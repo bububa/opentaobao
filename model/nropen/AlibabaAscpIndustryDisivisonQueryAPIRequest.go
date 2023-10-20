@@ -2,6 +2,7 @@ package nropen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpIndustryDisivisonQueryAPIRequest struct {
 // NewAlibabaAscpIndustryDisivisonQueryRequest 初始化AlibabaAscpIndustryDisivisonQueryAPIRequest对象
 func NewAlibabaAscpIndustryDisivisonQueryRequest() *AlibabaAscpIndustryDisivisonQueryAPIRequest {
 	return &AlibabaAscpIndustryDisivisonQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpIndustryDisivisonQueryAPIRequest) Reset() {
+	r._serviceCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpIndustryDisivisonQueryAPIRequest) SetServiceCode(_serviceCod
 // GetServiceCode ServiceCode Getter
 func (r AlibabaAscpIndustryDisivisonQueryAPIRequest) GetServiceCode() string {
 	return r._serviceCode
+}
+
+var poolAlibabaAscpIndustryDisivisonQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpIndustryDisivisonQueryRequest()
+	},
+}
+
+// GetAlibabaAscpIndustryDisivisonQueryRequest 从 sync.Pool 获取 AlibabaAscpIndustryDisivisonQueryAPIRequest
+func GetAlibabaAscpIndustryDisivisonQueryAPIRequest() *AlibabaAscpIndustryDisivisonQueryAPIRequest {
+	return poolAlibabaAscpIndustryDisivisonQueryAPIRequest.Get().(*AlibabaAscpIndustryDisivisonQueryAPIRequest)
+}
+
+// ReleaseAlibabaAscpIndustryDisivisonQueryAPIRequest 将 AlibabaAscpIndustryDisivisonQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpIndustryDisivisonQueryAPIRequest(v *AlibabaAscpIndustryDisivisonQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpIndustryDisivisonQueryAPIRequest.Put(v)
 }

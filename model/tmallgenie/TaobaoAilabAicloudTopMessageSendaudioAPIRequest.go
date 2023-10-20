@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoAilabAicloudTopMessageSendaudioAPIRequest struct {
 // NewTaobaoAilabAicloudTopMessageSendaudioRequest 初始化TaobaoAilabAicloudTopMessageSendaudioAPIRequest对象
 func NewTaobaoAilabAicloudTopMessageSendaudioRequest() *TaobaoAilabAicloudTopMessageSendaudioAPIRequest {
 	return &TaobaoAilabAicloudTopMessageSendaudioAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopMessageSendaudioAPIRequest) Reset() {
+	r._schema = ""
+	r._userId = ""
+	r._utdId = ""
+	r._ext = ""
+	r._message = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoAilabAicloudTopMessageSendaudioAPIRequest) SetMessage(_message *m
 // GetMessage Message Getter
 func (r TaobaoAilabAicloudTopMessageSendaudioAPIRequest) GetMessage() *model.File {
 	return r._message
+}
+
+var poolTaobaoAilabAicloudTopMessageSendaudioAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopMessageSendaudioRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopMessageSendaudioRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopMessageSendaudioAPIRequest
+func GetTaobaoAilabAicloudTopMessageSendaudioAPIRequest() *TaobaoAilabAicloudTopMessageSendaudioAPIRequest {
+	return poolTaobaoAilabAicloudTopMessageSendaudioAPIRequest.Get().(*TaobaoAilabAicloudTopMessageSendaudioAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopMessageSendaudioAPIRequest 将 TaobaoAilabAicloudTopMessageSendaudioAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopMessageSendaudioAPIRequest(v *TaobaoAilabAicloudTopMessageSendaudioAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopMessageSendaudioAPIRequest.Put(v)
 }

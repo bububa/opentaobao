@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaInteractSensorUiAPIRequest struct {
 // NewAlibabaInteractSensorUiRequest 初始化AlibabaInteractSensorUiAPIRequest对象
 func NewAlibabaInteractSensorUiRequest() *AlibabaInteractSensorUiAPIRequest {
 	return &AlibabaInteractSensorUiAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractSensorUiAPIRequest) Reset() {
+	r._unNamed = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaInteractSensorUiAPIRequest) SetUnNamed(_unNamed string) error {
 // GetUnNamed UnNamed Getter
 func (r AlibabaInteractSensorUiAPIRequest) GetUnNamed() string {
 	return r._unNamed
+}
+
+var poolAlibabaInteractSensorUiAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractSensorUiRequest()
+	},
+}
+
+// GetAlibabaInteractSensorUiRequest 从 sync.Pool 获取 AlibabaInteractSensorUiAPIRequest
+func GetAlibabaInteractSensorUiAPIRequest() *AlibabaInteractSensorUiAPIRequest {
+	return poolAlibabaInteractSensorUiAPIRequest.Get().(*AlibabaInteractSensorUiAPIRequest)
+}
+
+// ReleaseAlibabaInteractSensorUiAPIRequest 将 AlibabaInteractSensorUiAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractSensorUiAPIRequest(v *AlibabaInteractSensorUiAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractSensorUiAPIRequest.Put(v)
 }

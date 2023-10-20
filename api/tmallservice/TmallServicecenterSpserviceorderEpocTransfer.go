@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.spserviceorder.epoc.transfer
 //
 // 电子保单受保人转移
-func TmallServicecenterSpserviceorderEpocTransfer(clt *core.SDKClient, req *tmallservice.TmallServicecenterSpserviceorderEpocTransferAPIRequest, session string) (*tmallservice.TmallServicecenterSpserviceorderEpocTransferAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterSpserviceorderEpocTransferAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterSpserviceorderEpocTransfer(clt *core.SDKClient, req *tmallservice.TmallServicecenterSpserviceorderEpocTransferAPIRequest, resp *tmallservice.TmallServicecenterSpserviceorderEpocTransferAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

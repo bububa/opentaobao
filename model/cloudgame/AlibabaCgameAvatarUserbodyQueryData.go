@@ -1,5 +1,9 @@
 package cloudgame
 
+import (
+	"sync"
+)
+
 // AlibabaCgameAvatarUserbodyQueryData 结构体
 type AlibabaCgameAvatarUserbodyQueryData struct {
 	// body traceID
@@ -14,4 +18,26 @@ type AlibabaCgameAvatarUserbodyQueryData struct {
 	ExtInfo string `json:"ext_info,omitempty" xml:"ext_info,omitempty"`
 	// 性别， 1-male, 2-female
 	Gender int64 `json:"gender,omitempty" xml:"gender,omitempty"`
+}
+
+var poolAlibabaCgameAvatarUserbodyQueryData = sync.Pool{
+	New: func() any {
+		return new(AlibabaCgameAvatarUserbodyQueryData)
+	},
+}
+
+// GetAlibabaCgameAvatarUserbodyQueryData() 从对象池中获取AlibabaCgameAvatarUserbodyQueryData
+func GetAlibabaCgameAvatarUserbodyQueryData() *AlibabaCgameAvatarUserbodyQueryData {
+	return poolAlibabaCgameAvatarUserbodyQueryData.Get().(*AlibabaCgameAvatarUserbodyQueryData)
+}
+
+// ReleaseAlibabaCgameAvatarUserbodyQueryData 释放AlibabaCgameAvatarUserbodyQueryData
+func ReleaseAlibabaCgameAvatarUserbodyQueryData(v *AlibabaCgameAvatarUserbodyQueryData) {
+	v.TraceId = ""
+	v.FaceDataJson = ""
+	v.RequestId = ""
+	v.MixUserId = ""
+	v.ExtInfo = ""
+	v.Gender = 0
+	poolAlibabaCgameAvatarUserbodyQueryData.Put(v)
 }

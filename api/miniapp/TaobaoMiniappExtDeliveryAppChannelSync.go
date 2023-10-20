@@ -9,11 +9,6 @@ import (
 // taobao.miniapp.ext.delivery.app.channel.sync
 //
 // ISV写入应用的渠道信息
-func TaobaoMiniappExtDeliveryAppChannelSync(clt *core.SDKClient, req *miniapp.TaobaoMiniappExtDeliveryAppChannelSyncAPIRequest, session string) (*miniapp.TaobaoMiniappExtDeliveryAppChannelSyncAPIResponse, error) {
-	var resp miniapp.TaobaoMiniappExtDeliveryAppChannelSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoMiniappExtDeliveryAppChannelSync(clt *core.SDKClient, req *miniapp.TaobaoMiniappExtDeliveryAppChannelSyncAPIRequest, resp *miniapp.TaobaoMiniappExtDeliveryAppChannelSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

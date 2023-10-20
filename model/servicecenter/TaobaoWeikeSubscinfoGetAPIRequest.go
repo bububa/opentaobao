@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoWeikeSubscinfoGetAPIRequest struct {
 // NewTaobaoWeikeSubscinfoGetRequest 初始化TaobaoWeikeSubscinfoGetAPIRequest对象
 func NewTaobaoWeikeSubscinfoGetRequest() *TaobaoWeikeSubscinfoGetAPIRequest {
 	return &TaobaoWeikeSubscinfoGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWeikeSubscinfoGetAPIRequest) Reset() {
+	r._sellerName = ""
+	r._startTime = ""
+	r._endTime = ""
+	r._pageNum = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoWeikeSubscinfoGetAPIRequest) SetPageNum(_pageNum int64) error {
 // GetPageNum PageNum Getter
 func (r TaobaoWeikeSubscinfoGetAPIRequest) GetPageNum() int64 {
 	return r._pageNum
+}
+
+var poolTaobaoWeikeSubscinfoGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWeikeSubscinfoGetRequest()
+	},
+}
+
+// GetTaobaoWeikeSubscinfoGetRequest 从 sync.Pool 获取 TaobaoWeikeSubscinfoGetAPIRequest
+func GetTaobaoWeikeSubscinfoGetAPIRequest() *TaobaoWeikeSubscinfoGetAPIRequest {
+	return poolTaobaoWeikeSubscinfoGetAPIRequest.Get().(*TaobaoWeikeSubscinfoGetAPIRequest)
+}
+
+// ReleaseTaobaoWeikeSubscinfoGetAPIRequest 将 TaobaoWeikeSubscinfoGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWeikeSubscinfoGetAPIRequest(v *TaobaoWeikeSubscinfoGetAPIRequest) {
+	v.Reset()
+	poolTaobaoWeikeSubscinfoGetAPIRequest.Put(v)
 }

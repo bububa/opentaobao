@@ -2,6 +2,7 @@ package exchange
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TmallExchangeReceiveGetAPIResponse struct {
 	model.CommonResponse
 	TmallExchangeReceiveGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TmallExchangeReceiveGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallExchangeReceiveGetAPIResponseModel).Reset()
 }
 
 // TmallExchangeReceiveGetAPIResponseModel is 卖家查询换货列表 成功返回结果
@@ -32,4 +39,32 @@ type TmallExchangeReceiveGetAPIResponseModel struct {
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 	// 是否还有下一页
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallExchangeReceiveGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Results = m.Results[:0]
+	m.ErrorCodes = ""
+	m.ErrorMsg = ""
+	m.PageResults = 0
+	m.TotalResults = 0
+	m.HasNext = false
+}
+
+var poolTmallExchangeReceiveGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallExchangeReceiveGetAPIResponse)
+	},
+}
+
+// GetTmallExchangeReceiveGetAPIResponse 从 sync.Pool 获取 TmallExchangeReceiveGetAPIResponse
+func GetTmallExchangeReceiveGetAPIResponse() *TmallExchangeReceiveGetAPIResponse {
+	return poolTmallExchangeReceiveGetAPIResponse.Get().(*TmallExchangeReceiveGetAPIResponse)
+}
+
+// ReleaseTmallExchangeReceiveGetAPIResponse 将 TmallExchangeReceiveGetAPIResponse 保存到 sync.Pool
+func ReleaseTmallExchangeReceiveGetAPIResponse(v *TmallExchangeReceiveGetAPIResponse) {
+	v.Reset()
+	poolTmallExchangeReceiveGetAPIResponse.Put(v)
 }

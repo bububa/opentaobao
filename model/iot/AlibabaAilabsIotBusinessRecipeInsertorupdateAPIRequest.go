@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest struct {
 // NewAlibabaAilabsIotBusinessRecipeInsertorupdateRequest 初始化AlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest对象
 func NewAlibabaAilabsIotBusinessRecipeInsertorupdateRequest() *AlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest {
 	return &AlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest) Reset() {
+	r._paramBusinessRecipeOpenParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest) SetParamBusines
 // GetParamBusinessRecipeOpenParam ParamBusinessRecipeOpenParam Getter
 func (r AlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest) GetParamBusinessRecipeOpenParam() *BusinessRecipeOpenParam {
 	return r._paramBusinessRecipeOpenParam
+}
+
+var poolAlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsIotBusinessRecipeInsertorupdateRequest()
+	},
+}
+
+// GetAlibabaAilabsIotBusinessRecipeInsertorupdateRequest 从 sync.Pool 获取 AlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest
+func GetAlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest() *AlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest {
+	return poolAlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest.Get().(*AlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest)
+}
+
+// ReleaseAlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest 将 AlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest(v *AlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest.Put(v)
 }

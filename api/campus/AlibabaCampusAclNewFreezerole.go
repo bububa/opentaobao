@@ -9,11 +9,6 @@ import (
 // alibaba.campus.acl.new.freezerole
 //
 // 冻结角色
-func AlibabaCampusAclNewFreezerole(clt *core.SDKClient, req *campus.AlibabaCampusAclNewFreezeroleAPIRequest, session string) (*campus.AlibabaCampusAclNewFreezeroleAPIResponse, error) {
-	var resp campus.AlibabaCampusAclNewFreezeroleAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusAclNewFreezerole(clt *core.SDKClient, req *campus.AlibabaCampusAclNewFreezeroleAPIRequest, resp *campus.AlibabaCampusAclNewFreezeroleAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

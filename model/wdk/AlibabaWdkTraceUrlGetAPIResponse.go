@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaWdkTraceUrlGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaWdkTraceUrlGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaWdkTraceUrlGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaWdkTraceUrlGetAPIResponseModel).Reset()
 }
 
 // AlibabaWdkTraceUrlGetAPIResponseModel is 溯源url透出 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaWdkTraceUrlGetAPIResponseModel struct {
 	ReturnCode string `json:"return_code,omitempty" xml:"return_code,omitempty"`
 	// success
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaWdkTraceUrlGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.Data = ""
+	m.ReturnCode = ""
+	m.IsSuccess = false
+}
+
+var poolAlibabaWdkTraceUrlGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkTraceUrlGetAPIResponse)
+	},
+}
+
+// GetAlibabaWdkTraceUrlGetAPIResponse 从 sync.Pool 获取 AlibabaWdkTraceUrlGetAPIResponse
+func GetAlibabaWdkTraceUrlGetAPIResponse() *AlibabaWdkTraceUrlGetAPIResponse {
+	return poolAlibabaWdkTraceUrlGetAPIResponse.Get().(*AlibabaWdkTraceUrlGetAPIResponse)
+}
+
+// ReleaseAlibabaWdkTraceUrlGetAPIResponse 将 AlibabaWdkTraceUrlGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaWdkTraceUrlGetAPIResponse(v *AlibabaWdkTraceUrlGetAPIResponse) {
+	v.Reset()
+	poolAlibabaWdkTraceUrlGetAPIResponse.Put(v)
 }

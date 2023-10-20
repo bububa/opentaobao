@@ -2,6 +2,7 @@ package crm
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoCrmGrademktMemberQueryAPIResponse struct {
 	TaobaoCrmGrademktMemberQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoCrmGrademktMemberQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoCrmGrademktMemberQueryAPIResponseModel).Reset()
+}
+
 // TaobaoCrmGrademktMemberQueryAPIResponseModel is 会员等级营销-会员关系查询 成功返回结果
 type TaobaoCrmGrademktMemberQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"crm_grademkt_member_query_response"`
@@ -22,4 +29,27 @@ type TaobaoCrmGrademktMemberQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// json格式
 	Module string `json:"module,omitempty" xml:"module,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoCrmGrademktMemberQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Module = ""
+}
+
+var poolTaobaoCrmGrademktMemberQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoCrmGrademktMemberQueryAPIResponse)
+	},
+}
+
+// GetTaobaoCrmGrademktMemberQueryAPIResponse 从 sync.Pool 获取 TaobaoCrmGrademktMemberQueryAPIResponse
+func GetTaobaoCrmGrademktMemberQueryAPIResponse() *TaobaoCrmGrademktMemberQueryAPIResponse {
+	return poolTaobaoCrmGrademktMemberQueryAPIResponse.Get().(*TaobaoCrmGrademktMemberQueryAPIResponse)
+}
+
+// ReleaseTaobaoCrmGrademktMemberQueryAPIResponse 将 TaobaoCrmGrademktMemberQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoCrmGrademktMemberQueryAPIResponse(v *TaobaoCrmGrademktMemberQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoCrmGrademktMemberQueryAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaPosFundCashierShiftSummaryAPIRequest struct {
 // NewAlibabaPosFundCashierShiftSummaryRequest 初始化AlibabaPosFundCashierShiftSummaryAPIRequest对象
 func NewAlibabaPosFundCashierShiftSummaryRequest() *AlibabaPosFundCashierShiftSummaryAPIRequest {
 	return &AlibabaPosFundCashierShiftSummaryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaPosFundCashierShiftSummaryAPIRequest) Reset() {
+	r._cashierShiftFundRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaPosFundCashierShiftSummaryAPIRequest) SetCashierShiftFundRequest
 // GetCashierShiftFundRequest CashierShiftFundRequest Getter
 func (r AlibabaPosFundCashierShiftSummaryAPIRequest) GetCashierShiftFundRequest() *CashierShiftFundRequest {
 	return r._cashierShiftFundRequest
+}
+
+var poolAlibabaPosFundCashierShiftSummaryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaPosFundCashierShiftSummaryRequest()
+	},
+}
+
+// GetAlibabaPosFundCashierShiftSummaryRequest 从 sync.Pool 获取 AlibabaPosFundCashierShiftSummaryAPIRequest
+func GetAlibabaPosFundCashierShiftSummaryAPIRequest() *AlibabaPosFundCashierShiftSummaryAPIRequest {
+	return poolAlibabaPosFundCashierShiftSummaryAPIRequest.Get().(*AlibabaPosFundCashierShiftSummaryAPIRequest)
+}
+
+// ReleaseAlibabaPosFundCashierShiftSummaryAPIRequest 将 AlibabaPosFundCashierShiftSummaryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaPosFundCashierShiftSummaryAPIRequest(v *AlibabaPosFundCashierShiftSummaryAPIRequest) {
+	v.Reset()
+	poolAlibabaPosFundCashierShiftSummaryAPIRequest.Put(v)
 }

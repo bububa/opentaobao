@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest struct {
 // NewAlibabaDchainMiaoshifuCustomerComplaintsPutRequest 初始化AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest对象
 func NewAlibabaDchainMiaoshifuCustomerComplaintsPutRequest() *AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest {
 	return &AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest) Reset() {
+	r._workerCustomerComplaintSaveCmd = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest) SetWorkerCustome
 // GetWorkerCustomerComplaintSaveCmd WorkerCustomerComplaintSaveCmd Getter
 func (r AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest) GetWorkerCustomerComplaintSaveCmd() *WorkerCustomerComplaintSaveCmd {
 	return r._workerCustomerComplaintSaveCmd
+}
+
+var poolAlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainMiaoshifuCustomerComplaintsPutRequest()
+	},
+}
+
+// GetAlibabaDchainMiaoshifuCustomerComplaintsPutRequest 从 sync.Pool 获取 AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest
+func GetAlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest() *AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest {
+	return poolAlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest.Get().(*AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest)
+}
+
+// ReleaseAlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest 将 AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest(v *AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest.Put(v)
 }

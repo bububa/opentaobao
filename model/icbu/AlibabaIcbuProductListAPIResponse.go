@@ -2,6 +2,7 @@ package icbu
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaIcbuProductListAPIResponse struct {
 	model.CommonResponse
 	AlibabaIcbuProductListAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaIcbuProductListAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaIcbuProductListAPIResponseModel).Reset()
 }
 
 // AlibabaIcbuProductListAPIResponseModel is 商品查询 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaIcbuProductListAPIResponseModel struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 总数
 	TotalItem int64 `json:"total_item,omitempty" xml:"total_item,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaIcbuProductListAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Products = m.Products[:0]
+	m.CurrentPage = 0
+	m.PageSize = 0
+	m.TotalItem = 0
+}
+
+var poolAlibabaIcbuProductListAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaIcbuProductListAPIResponse)
+	},
+}
+
+// GetAlibabaIcbuProductListAPIResponse 从 sync.Pool 获取 AlibabaIcbuProductListAPIResponse
+func GetAlibabaIcbuProductListAPIResponse() *AlibabaIcbuProductListAPIResponse {
+	return poolAlibabaIcbuProductListAPIResponse.Get().(*AlibabaIcbuProductListAPIResponse)
+}
+
+// ReleaseAlibabaIcbuProductListAPIResponse 将 AlibabaIcbuProductListAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaIcbuProductListAPIResponse(v *AlibabaIcbuProductListAPIResponse) {
+	v.Reset()
+	poolAlibabaIcbuProductListAPIResponse.Put(v)
 }

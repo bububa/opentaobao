@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoFenxiaoProductMapAddAPIRequest struct {
 // NewTaobaoFenxiaoProductMapAddRequest 初始化TaobaoFenxiaoProductMapAddAPIRequest对象
 func NewTaobaoFenxiaoProductMapAddRequest() *TaobaoFenxiaoProductMapAddAPIRequest {
 	return &TaobaoFenxiaoProductMapAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoProductMapAddAPIRequest) Reset() {
+	r._skuIds = ""
+	r._scItemIds = ""
+	r._productId = 0
+	r._scItemId = 0
+	r._notCheckOuterCode = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoFenxiaoProductMapAddAPIRequest) SetNotCheckOuterCode(_notCheckOut
 // GetNotCheckOuterCode NotCheckOuterCode Getter
 func (r TaobaoFenxiaoProductMapAddAPIRequest) GetNotCheckOuterCode() bool {
 	return r._notCheckOuterCode
+}
+
+var poolTaobaoFenxiaoProductMapAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoProductMapAddRequest()
+	},
+}
+
+// GetTaobaoFenxiaoProductMapAddRequest 从 sync.Pool 获取 TaobaoFenxiaoProductMapAddAPIRequest
+func GetTaobaoFenxiaoProductMapAddAPIRequest() *TaobaoFenxiaoProductMapAddAPIRequest {
+	return poolTaobaoFenxiaoProductMapAddAPIRequest.Get().(*TaobaoFenxiaoProductMapAddAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoProductMapAddAPIRequest 将 TaobaoFenxiaoProductMapAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoProductMapAddAPIRequest(v *TaobaoFenxiaoProductMapAddAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoProductMapAddAPIRequest.Put(v)
 }

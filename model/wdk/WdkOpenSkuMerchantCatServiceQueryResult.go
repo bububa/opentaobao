@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // WdkOpenSkuMerchantCatServiceQueryResult 结构体
 type WdkOpenSkuMerchantCatServiceQueryResult struct {
 	// 结果描述
@@ -10,4 +14,24 @@ type WdkOpenSkuMerchantCatServiceQueryResult struct {
 	SkuCodeCategoryCodeMap string `json:"sku_code_category_code_map,omitempty" xml:"sku_code_category_code_map,omitempty"`
 	// 成功或失败
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolWdkOpenSkuMerchantCatServiceQueryResult = sync.Pool{
+	New: func() any {
+		return new(WdkOpenSkuMerchantCatServiceQueryResult)
+	},
+}
+
+// GetWdkOpenSkuMerchantCatServiceQueryResult() 从对象池中获取WdkOpenSkuMerchantCatServiceQueryResult
+func GetWdkOpenSkuMerchantCatServiceQueryResult() *WdkOpenSkuMerchantCatServiceQueryResult {
+	return poolWdkOpenSkuMerchantCatServiceQueryResult.Get().(*WdkOpenSkuMerchantCatServiceQueryResult)
+}
+
+// ReleaseWdkOpenSkuMerchantCatServiceQueryResult 释放WdkOpenSkuMerchantCatServiceQueryResult
+func ReleaseWdkOpenSkuMerchantCatServiceQueryResult(v *WdkOpenSkuMerchantCatServiceQueryResult) {
+	v.ReturnMsg = ""
+	v.ReturnCode = ""
+	v.SkuCodeCategoryCodeMap = ""
+	v.Success = false
+	poolWdkOpenSkuMerchantCatServiceQueryResult.Put(v)
 }

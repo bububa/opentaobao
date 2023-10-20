@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoTbkScShopConvertAPIRequest struct {
 // NewTaobaoTbkScShopConvertRequest 初始化TaobaoTbkScShopConvertAPIRequest对象
 func NewTaobaoTbkScShopConvertRequest() *TaobaoTbkScShopConvertAPIRequest {
 	return &TaobaoTbkScShopConvertAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkScShopConvertAPIRequest) Reset() {
+	r._fields = ""
+	r._unid = ""
+	r._userIds = ""
+	r._adzoneId = 0
+	r._platform = 0
+	r._siteId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoTbkScShopConvertAPIRequest) SetSiteId(_siteId int64) error {
 // GetSiteId SiteId Getter
 func (r TaobaoTbkScShopConvertAPIRequest) GetSiteId() int64 {
 	return r._siteId
+}
+
+var poolTaobaoTbkScShopConvertAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkScShopConvertRequest()
+	},
+}
+
+// GetTaobaoTbkScShopConvertRequest 从 sync.Pool 获取 TaobaoTbkScShopConvertAPIRequest
+func GetTaobaoTbkScShopConvertAPIRequest() *TaobaoTbkScShopConvertAPIRequest {
+	return poolTaobaoTbkScShopConvertAPIRequest.Get().(*TaobaoTbkScShopConvertAPIRequest)
+}
+
+// ReleaseTaobaoTbkScShopConvertAPIRequest 将 TaobaoTbkScShopConvertAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkScShopConvertAPIRequest(v *TaobaoTbkScShopConvertAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkScShopConvertAPIRequest.Put(v)
 }

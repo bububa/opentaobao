@@ -11,11 +11,6 @@ import (
 // 分页查询空间类别接口
 // HSF接口名称：com.alibaba.campus.space.api.top.SpaceTypeApiTopService
 // HSF方法名称：getPageResult
-func AlibabaCampusSpaceTypeGetpageresult(clt *core.SDKClient, req *campus.AlibabaCampusSpaceTypeGetpageresultAPIRequest, session string) (*campus.AlibabaCampusSpaceTypeGetpageresultAPIResponse, error) {
-	var resp campus.AlibabaCampusSpaceTypeGetpageresultAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusSpaceTypeGetpageresult(clt *core.SDKClient, req *campus.AlibabaCampusSpaceTypeGetpageresultAPIRequest, resp *campus.AlibabaCampusSpaceTypeGetpageresultAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package inventory
 
+import (
+	"sync"
+)
+
 // InventoryCheckDto 结构体
 type InventoryCheckDto struct {
 	// 调整明细
@@ -12,4 +16,25 @@ type InventoryCheckDto struct {
 	CheckMode int64 `json:"check_mode,omitempty" xml:"check_mode,omitempty"`
 	// 2： 仓库类型   6：门店类型
 	InvStoreType int64 `json:"inv_store_type,omitempty" xml:"inv_store_type,omitempty"`
+}
+
+var poolInventoryCheckDto = sync.Pool{
+	New: func() any {
+		return new(InventoryCheckDto)
+	},
+}
+
+// GetInventoryCheckDto() 从对象池中获取InventoryCheckDto
+func GetInventoryCheckDto() *InventoryCheckDto {
+	return poolInventoryCheckDto.Get().(*InventoryCheckDto)
+}
+
+// ReleaseInventoryCheckDto 释放InventoryCheckDto
+func ReleaseInventoryCheckDto(v *InventoryCheckDto) {
+	v.DetailList = v.DetailList[:0]
+	v.StoreCode = ""
+	v.OrderId = ""
+	v.CheckMode = 0
+	v.InvStoreType = 0
+	poolInventoryCheckDto.Put(v)
 }

@@ -2,6 +2,7 @@ package charity
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaValueUserGetidAPIRequest struct {
 // NewAlibabaValueUserGetidRequest 初始化AlibabaValueUserGetidAPIRequest对象
 func NewAlibabaValueUserGetidRequest() *AlibabaValueUserGetidAPIRequest {
 	return &AlibabaValueUserGetidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaValueUserGetidAPIRequest) Reset() {
+	r._authCode = ""
+	r._channelCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaValueUserGetidAPIRequest) SetChannelCode(_channelCode string) er
 // GetChannelCode ChannelCode Getter
 func (r AlibabaValueUserGetidAPIRequest) GetChannelCode() string {
 	return r._channelCode
+}
+
+var poolAlibabaValueUserGetidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaValueUserGetidRequest()
+	},
+}
+
+// GetAlibabaValueUserGetidRequest 从 sync.Pool 获取 AlibabaValueUserGetidAPIRequest
+func GetAlibabaValueUserGetidAPIRequest() *AlibabaValueUserGetidAPIRequest {
+	return poolAlibabaValueUserGetidAPIRequest.Get().(*AlibabaValueUserGetidAPIRequest)
+}
+
+// ReleaseAlibabaValueUserGetidAPIRequest 将 AlibabaValueUserGetidAPIRequest 放入 sync.Pool
+func ReleaseAlibabaValueUserGetidAPIRequest(v *AlibabaValueUserGetidAPIRequest) {
+	v.Reset()
+	poolAlibabaValueUserGetidAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthMedicalbaseDeptStatusSyncAPIRequest struct {
 // NewAlibabaAlihealthMedicalbaseDeptStatusSyncRequest 初始化AlibabaAlihealthMedicalbaseDeptStatusSyncAPIRequest对象
 func NewAlibabaAlihealthMedicalbaseDeptStatusSyncRequest() *AlibabaAlihealthMedicalbaseDeptStatusSyncAPIRequest {
 	return &AlibabaAlihealthMedicalbaseDeptStatusSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthMedicalbaseDeptStatusSyncAPIRequest) Reset() {
+	r._topChannelDeptSyncDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthMedicalbaseDeptStatusSyncAPIRequest) SetTopChannelDeptS
 // GetTopChannelDeptSyncDTO TopChannelDeptSyncDTO Getter
 func (r AlibabaAlihealthMedicalbaseDeptStatusSyncAPIRequest) GetTopChannelDeptSyncDTO() *TopChannelDeptSyncDto {
 	return r._topChannelDeptSyncDTO
+}
+
+var poolAlibabaAlihealthMedicalbaseDeptStatusSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthMedicalbaseDeptStatusSyncRequest()
+	},
+}
+
+// GetAlibabaAlihealthMedicalbaseDeptStatusSyncRequest 从 sync.Pool 获取 AlibabaAlihealthMedicalbaseDeptStatusSyncAPIRequest
+func GetAlibabaAlihealthMedicalbaseDeptStatusSyncAPIRequest() *AlibabaAlihealthMedicalbaseDeptStatusSyncAPIRequest {
+	return poolAlibabaAlihealthMedicalbaseDeptStatusSyncAPIRequest.Get().(*AlibabaAlihealthMedicalbaseDeptStatusSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthMedicalbaseDeptStatusSyncAPIRequest 将 AlibabaAlihealthMedicalbaseDeptStatusSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthMedicalbaseDeptStatusSyncAPIRequest(v *AlibabaAlihealthMedicalbaseDeptStatusSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthMedicalbaseDeptStatusSyncAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package util
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoOpenuidGetBytradeAPIResponse struct {
 	TaobaoOpenuidGetBytradeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoOpenuidGetBytradeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOpenuidGetBytradeAPIResponseModel).Reset()
+}
+
 // TaobaoOpenuidGetBytradeAPIResponseModel is 通过订单获取对应买家的openUID 成功返回结果
 type TaobaoOpenuidGetBytradeAPIResponseModel struct {
 	XMLName xml.Name `xml:"openuid_get_bytrade_response"`
@@ -22,4 +29,27 @@ type TaobaoOpenuidGetBytradeAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 当前交易tid对应买家的openuid
 	OpenUid string `json:"open_uid,omitempty" xml:"open_uid,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOpenuidGetBytradeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.OpenUid = ""
+}
+
+var poolTaobaoOpenuidGetBytradeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOpenuidGetBytradeAPIResponse)
+	},
+}
+
+// GetTaobaoOpenuidGetBytradeAPIResponse 从 sync.Pool 获取 TaobaoOpenuidGetBytradeAPIResponse
+func GetTaobaoOpenuidGetBytradeAPIResponse() *TaobaoOpenuidGetBytradeAPIResponse {
+	return poolTaobaoOpenuidGetBytradeAPIResponse.Get().(*TaobaoOpenuidGetBytradeAPIResponse)
+}
+
+// ReleaseTaobaoOpenuidGetBytradeAPIResponse 将 TaobaoOpenuidGetBytradeAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOpenuidGetBytradeAPIResponse(v *TaobaoOpenuidGetBytradeAPIResponse) {
+	v.Reset()
+	poolTaobaoOpenuidGetBytradeAPIResponse.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.dchain.aoxiang.item.distribution.describe
 //
 // 分销商品文描
-func AlibabaDchainAoxiangItemDistributionDescribe(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangItemDistributionDescribeAPIRequest, session string) (*ascp.AlibabaDchainAoxiangItemDistributionDescribeAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangItemDistributionDescribeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDchainAoxiangItemDistributionDescribe(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangItemDistributionDescribeAPIRequest, resp *ascp.AlibabaDchainAoxiangItemDistributionDescribeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

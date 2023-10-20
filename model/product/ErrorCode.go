@@ -1,5 +1,9 @@
 package product
 
+import (
+	"sync"
+)
+
 // ErrorCode 结构体
 type ErrorCode struct {
 	// 分组信息
@@ -34,4 +38,36 @@ type ErrorCode struct {
 	Features int64 `json:"features,omitempty" xml:"features,omitempty"`
 	// 分组id
 	SegId int64 `json:"seg_id,omitempty" xml:"seg_id,omitempty"`
+}
+
+var poolErrorCode = sync.Pool{
+	New: func() any {
+		return new(ErrorCode)
+	},
+}
+
+// GetErrorCode() 从对象池中获取ErrorCode
+func GetErrorCode() *ErrorCode {
+	return poolErrorCode.Get().(*ErrorCode)
+}
+
+// ReleaseErrorCode 释放ErrorCode
+func ReleaseErrorCode(v *ErrorCode) {
+	v.Fields = v.Fields[:0]
+	v.MesCode = ""
+	v.Message = ""
+	v.Market = ""
+	v.GmtModified = ""
+	v.Name = ""
+	v.GmtCreate = ""
+	v.OuterId = ""
+	v.SellerId = 0
+	v.Id = 0
+	v.ItemSeriesExtend = nil
+	v.Status = 0
+	v.Sort = 0
+	v.SeriesId = 0
+	v.Features = 0
+	v.SegId = 0
+	poolErrorCode.Put(v)
 }

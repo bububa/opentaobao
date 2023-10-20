@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // TaxOptimizationQueryAlipayAccountResultDto 结构体
 type TaxOptimizationQueryAlipayAccountResultDto struct {
 	// 认证类型
@@ -14,4 +18,26 @@ type TaxOptimizationQueryAlipayAccountResultDto struct {
 	CanPay bool `json:"can_pay,omitempty" xml:"can_pay,omitempty"`
 	// 是否实人认证
 	Certified bool `json:"certified,omitempty" xml:"certified,omitempty"`
+}
+
+var poolTaxOptimizationQueryAlipayAccountResultDto = sync.Pool{
+	New: func() any {
+		return new(TaxOptimizationQueryAlipayAccountResultDto)
+	},
+}
+
+// GetTaxOptimizationQueryAlipayAccountResultDto() 从对象池中获取TaxOptimizationQueryAlipayAccountResultDto
+func GetTaxOptimizationQueryAlipayAccountResultDto() *TaxOptimizationQueryAlipayAccountResultDto {
+	return poolTaxOptimizationQueryAlipayAccountResultDto.Get().(*TaxOptimizationQueryAlipayAccountResultDto)
+}
+
+// ReleaseTaxOptimizationQueryAlipayAccountResultDto 释放TaxOptimizationQueryAlipayAccountResultDto
+func ReleaseTaxOptimizationQueryAlipayAccountResultDto(v *TaxOptimizationQueryAlipayAccountResultDto) {
+	v.CertTypeEnum = ""
+	v.EnableStatusEnum = ""
+	v.PaySalaryAlipayAccount = ""
+	v.AccountTypeEnum = 0
+	v.CanPay = false
+	v.Certified = false
+	poolTaxOptimizationQueryAlipayAccountResultDto.Put(v)
 }

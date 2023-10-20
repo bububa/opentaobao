@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoTbkScMembergroupOptionalAPIRequest struct {
 // NewTaobaoTbkScMembergroupOptionalRequest 初始化TaobaoTbkScMembergroupOptionalAPIRequest对象
 func NewTaobaoTbkScMembergroupOptionalRequest() *TaobaoTbkScMembergroupOptionalAPIRequest {
 	return &TaobaoTbkScMembergroupOptionalAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkScMembergroupOptionalAPIRequest) Reset() {
+	r._tbNumIds = ""
+	r._memberGroupId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoTbkScMembergroupOptionalAPIRequest) SetMemberGroupId(_memberGroup
 // GetMemberGroupId MemberGroupId Getter
 func (r TaobaoTbkScMembergroupOptionalAPIRequest) GetMemberGroupId() int64 {
 	return r._memberGroupId
+}
+
+var poolTaobaoTbkScMembergroupOptionalAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkScMembergroupOptionalRequest()
+	},
+}
+
+// GetTaobaoTbkScMembergroupOptionalRequest 从 sync.Pool 获取 TaobaoTbkScMembergroupOptionalAPIRequest
+func GetTaobaoTbkScMembergroupOptionalAPIRequest() *TaobaoTbkScMembergroupOptionalAPIRequest {
+	return poolTaobaoTbkScMembergroupOptionalAPIRequest.Get().(*TaobaoTbkScMembergroupOptionalAPIRequest)
+}
+
+// ReleaseTaobaoTbkScMembergroupOptionalAPIRequest 将 TaobaoTbkScMembergroupOptionalAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkScMembergroupOptionalAPIRequest(v *TaobaoTbkScMembergroupOptionalAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkScMembergroupOptionalAPIRequest.Put(v)
 }

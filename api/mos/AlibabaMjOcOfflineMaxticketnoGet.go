@@ -9,11 +9,6 @@ import (
 // alibaba.mj.oc.offline.maxticketno.get
 //
 // 给pos机提供线下最大小票号查询
-func AlibabaMjOcOfflineMaxticketnoGet(clt *core.SDKClient, req *mos.AlibabaMjOcOfflineMaxticketnoGetAPIRequest, session string) (*mos.AlibabaMjOcOfflineMaxticketnoGetAPIResponse, error) {
-	var resp mos.AlibabaMjOcOfflineMaxticketnoGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMjOcOfflineMaxticketnoGet(clt *core.SDKClient, req *mos.AlibabaMjOcOfflineMaxticketnoGetAPIRequest, resp *mos.AlibabaMjOcOfflineMaxticketnoGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

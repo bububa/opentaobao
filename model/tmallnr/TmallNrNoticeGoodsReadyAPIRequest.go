@@ -2,6 +2,7 @@ package tmallnr
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallNrNoticeGoodsReadyAPIRequest struct {
 // NewTmallNrNoticeGoodsReadyRequest 初始化TmallNrNoticeGoodsReadyAPIRequest对象
 func NewTmallNrNoticeGoodsReadyRequest() *TmallNrNoticeGoodsReadyAPIRequest {
 	return &TmallNrNoticeGoodsReadyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrNoticeGoodsReadyAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallNrNoticeGoodsReadyAPIRequest) SetParam0(_param0 *NrZqsGoodsReadyRe
 // GetParam0 Param0 Getter
 func (r TmallNrNoticeGoodsReadyAPIRequest) GetParam0() *NrZqsGoodsReadyReqDto {
 	return r._param0
+}
+
+var poolTmallNrNoticeGoodsReadyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrNoticeGoodsReadyRequest()
+	},
+}
+
+// GetTmallNrNoticeGoodsReadyRequest 从 sync.Pool 获取 TmallNrNoticeGoodsReadyAPIRequest
+func GetTmallNrNoticeGoodsReadyAPIRequest() *TmallNrNoticeGoodsReadyAPIRequest {
+	return poolTmallNrNoticeGoodsReadyAPIRequest.Get().(*TmallNrNoticeGoodsReadyAPIRequest)
+}
+
+// ReleaseTmallNrNoticeGoodsReadyAPIRequest 将 TmallNrNoticeGoodsReadyAPIRequest 放入 sync.Pool
+func ReleaseTmallNrNoticeGoodsReadyAPIRequest(v *TmallNrNoticeGoodsReadyAPIRequest) {
+	v.Reset()
+	poolTmallNrNoticeGoodsReadyAPIRequest.Put(v)
 }

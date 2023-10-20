@@ -1,6 +1,8 @@
 package alihouse
 
 import (
+	"sync"
+
 	"github.com/bububa/opentaobao/model"
 )
 
@@ -14,4 +16,24 @@ type EbbasItemDto struct {
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// 楼盘上下架状态
 	OnlineStatus *model.File `json:"online_status,omitempty" xml:"online_status,omitempty"`
+}
+
+var poolEbbasItemDto = sync.Pool{
+	New: func() any {
+		return new(EbbasItemDto)
+	},
+}
+
+// GetEbbasItemDto() 从对象池中获取EbbasItemDto
+func GetEbbasItemDto() *EbbasItemDto {
+	return poolEbbasItemDto.Get().(*EbbasItemDto)
+}
+
+// ReleaseEbbasItemDto 释放EbbasItemDto
+func ReleaseEbbasItemDto(v *EbbasItemDto) {
+	v.BrokerList = v.BrokerList[:0]
+	v.ItemId = ""
+	v.OuterId = ""
+	v.OnlineStatus = nil
+	poolEbbasItemDto.Put(v)
 }

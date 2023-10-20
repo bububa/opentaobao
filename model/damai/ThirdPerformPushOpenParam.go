@@ -1,5 +1,9 @@
 package damai
 
+import (
+	"sync"
+)
+
 // ThirdPerformPushOpenParam 结构体
 type ThirdPerformPushOpenParam struct {
 	// 场次结束时间
@@ -22,4 +26,30 @@ type ThirdPerformPushOpenParam struct {
 	VenueId int64 `json:"venue_id,omitempty" xml:"venue_id,omitempty"`
 	// 入场方式 : 1 = 纸制票入场，2 = 电子票入场，3 = 纸质票电子票均支持
 	InWay int64 `json:"in_way,omitempty" xml:"in_way,omitempty"`
+}
+
+var poolThirdPerformPushOpenParam = sync.Pool{
+	New: func() any {
+		return new(ThirdPerformPushOpenParam)
+	},
+}
+
+// GetThirdPerformPushOpenParam() 从对象池中获取ThirdPerformPushOpenParam
+func GetThirdPerformPushOpenParam() *ThirdPerformPushOpenParam {
+	return poolThirdPerformPushOpenParam.Get().(*ThirdPerformPushOpenParam)
+}
+
+// ReleaseThirdPerformPushOpenParam 释放ThirdPerformPushOpenParam
+func ReleaseThirdPerformPushOpenParam(v *ThirdPerformPushOpenParam) {
+	v.EndTime = ""
+	v.PerformName = ""
+	v.PushTime = ""
+	v.StartTime = ""
+	v.SupplierSecret = ""
+	v.PerformId = 0
+	v.ProjectId = 0
+	v.SystemId = 0
+	v.VenueId = 0
+	v.InWay = 0
+	poolThirdPerformPushOpenParam.Put(v)
 }

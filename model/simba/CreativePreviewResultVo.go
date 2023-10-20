@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // CreativePreviewResultVo 结构体
 type CreativePreviewResultVo struct {
 	// 预览创意图片地址
@@ -16,4 +20,27 @@ type CreativePreviewResultVo struct {
 	PreviewVideoImage string `json:"preview_video_image,omitempty" xml:"preview_video_image,omitempty"`
 	// 预览创意类型,2:图片,10:创意模板,12:微视频
 	PreviewFormat int64 `json:"preview_format,omitempty" xml:"preview_format,omitempty"`
+}
+
+var poolCreativePreviewResultVo = sync.Pool{
+	New: func() any {
+		return new(CreativePreviewResultVo)
+	},
+}
+
+// GetCreativePreviewResultVo() 从对象池中获取CreativePreviewResultVo
+func GetCreativePreviewResultVo() *CreativePreviewResultVo {
+	return poolCreativePreviewResultVo.Get().(*CreativePreviewResultVo)
+}
+
+// ReleaseCreativePreviewResultVo 释放CreativePreviewResultVo
+func ReleaseCreativePreviewResultVo(v *CreativePreviewResultVo) {
+	v.PreviewImgUrl = ""
+	v.PreviewClickUrl = ""
+	v.PreviewSize = ""
+	v.PreviewScale = ""
+	v.PreviewVideoPath = ""
+	v.PreviewVideoImage = ""
+	v.PreviewFormat = 0
+	poolCreativePreviewResultVo.Put(v)
 }

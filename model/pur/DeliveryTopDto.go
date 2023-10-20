@@ -1,5 +1,9 @@
 package pur
 
+import (
+	"sync"
+)
+
 // DeliveryTopDto 结构体
 type DeliveryTopDto struct {
 	// 发货明细
@@ -36,4 +40,37 @@ type DeliveryTopDto struct {
 	Distribution bool `json:"distribution,omitempty" xml:"distribution,omitempty"`
 	// 是否免审
 	NoApprovalRequired bool `json:"no_approval_required,omitempty" xml:"no_approval_required,omitempty"`
+}
+
+var poolDeliveryTopDto = sync.Pool{
+	New: func() any {
+		return new(DeliveryTopDto)
+	},
+}
+
+// GetDeliveryTopDto() 从对象池中获取DeliveryTopDto
+func GetDeliveryTopDto() *DeliveryTopDto {
+	return poolDeliveryTopDto.Get().(*DeliveryTopDto)
+}
+
+// ReleaseDeliveryTopDto 释放DeliveryTopDto
+func ReleaseDeliveryTopDto(v *DeliveryTopDto) {
+	v.List = v.List[:0]
+	v.MaterialInformation = v.MaterialInformation[:0]
+	v.BizType = ""
+	v.ContactPerson = ""
+	v.Creator = ""
+	v.DeliveryDate = ""
+	v.DeliveryType = ""
+	v.ExtStr = ""
+	v.LogisticsCompany = ""
+	v.LogisticsNumber = ""
+	v.PhoneNo = ""
+	v.Remark = ""
+	v.SourceId = ""
+	v.SourceType = ""
+	v.TenantId = 0
+	v.Distribution = false
+	v.NoApprovalRequired = false
+	poolDeliveryTopDto.Put(v)
 }

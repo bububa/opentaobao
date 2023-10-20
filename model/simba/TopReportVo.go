@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // TopReportVo 结构体
 type TopReportVo struct {
 	// 场景code
@@ -62,4 +66,50 @@ type TopReportVo struct {
 	HourId string `json:"hour_id,omitempty" xml:"hour_id,omitempty"`
 	// 报表指标集合对象
 	ReportIndex *TopReportIndexVo `json:"report_index,omitempty" xml:"report_index,omitempty"`
+}
+
+var poolTopReportVo = sync.Pool{
+	New: func() any {
+		return new(TopReportVo)
+	},
+}
+
+// GetTopReportVo() 从对象池中获取TopReportVo
+func GetTopReportVo() *TopReportVo {
+	return poolTopReportVo.Get().(*TopReportVo)
+}
+
+// ReleaseTopReportVo 释放TopReportVo
+func ReleaseTopReportVo(v *TopReportVo) {
+	v.BizCode = ""
+	v.Scene1Name = ""
+	v.Thedate = ""
+	v.CampaignId = ""
+	v.CampaignName = ""
+	v.AdgroupId = ""
+	v.AdgroupName = ""
+	v.BidwordId = ""
+	v.OriginalWord = ""
+	v.BidwordPkgId = ""
+	v.BidWordType = ""
+	v.PromotionId = ""
+	v.PromotionName = ""
+	v.ImgUrl = ""
+	v.LinkUrl = ""
+	v.CrowdName = ""
+	v.CreativeId = ""
+	v.CreativeName = ""
+	v.CreativeImagePath = ""
+	v.CreativeVedioPath = ""
+	v.CreativeSize = ""
+	v.BlackCreativePromotionId = ""
+	v.BlackCreativePromotionType = ""
+	v.ProvinceId = ""
+	v.ProvinceName = ""
+	v.CityId = ""
+	v.CityName = ""
+	v.BpCrowdId = ""
+	v.HourId = ""
+	v.ReportIndex = nil
+	poolTopReportVo.Put(v)
 }

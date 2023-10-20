@@ -9,11 +9,6 @@ import (
 // taobao.ump.detail.update
 //
 // 更新活动详情
-func TaobaoUmpDetailUpdate(clt *core.SDKClient, req *promotion.TaobaoUmpDetailUpdateAPIRequest, session string) (*promotion.TaobaoUmpDetailUpdateAPIResponse, error) {
-	var resp promotion.TaobaoUmpDetailUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUmpDetailUpdate(clt *core.SDKClient, req *promotion.TaobaoUmpDetailUpdateAPIRequest, resp *promotion.TaobaoUmpDetailUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaMosStoreGetdefautitemsAPIRequest struct {
 // NewAlibabaMosStoreGetdefautitemsRequest 初始化AlibabaMosStoreGetdefautitemsAPIRequest对象
 func NewAlibabaMosStoreGetdefautitemsRequest() *AlibabaMosStoreGetdefautitemsAPIRequest {
 	return &AlibabaMosStoreGetdefautitemsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosStoreGetdefautitemsAPIRequest) Reset() {
+	r._screenNo = ""
+	r._start = 0
+	r._limitCount = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaMosStoreGetdefautitemsAPIRequest) SetLimitCount(_limitCount int6
 // GetLimitCount LimitCount Getter
 func (r AlibabaMosStoreGetdefautitemsAPIRequest) GetLimitCount() int64 {
 	return r._limitCount
+}
+
+var poolAlibabaMosStoreGetdefautitemsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosStoreGetdefautitemsRequest()
+	},
+}
+
+// GetAlibabaMosStoreGetdefautitemsRequest 从 sync.Pool 获取 AlibabaMosStoreGetdefautitemsAPIRequest
+func GetAlibabaMosStoreGetdefautitemsAPIRequest() *AlibabaMosStoreGetdefautitemsAPIRequest {
+	return poolAlibabaMosStoreGetdefautitemsAPIRequest.Get().(*AlibabaMosStoreGetdefautitemsAPIRequest)
+}
+
+// ReleaseAlibabaMosStoreGetdefautitemsAPIRequest 将 AlibabaMosStoreGetdefautitemsAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosStoreGetdefautitemsAPIRequest(v *AlibabaMosStoreGetdefautitemsAPIRequest) {
+	v.Reset()
+	poolAlibabaMosStoreGetdefautitemsAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package tbtrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type TaobaoTradeShippingaddressUpdateAPIRequest struct {
 // NewTaobaoTradeShippingaddressUpdateRequest 初始化TaobaoTradeShippingaddressUpdateAPIRequest对象
 func NewTaobaoTradeShippingaddressUpdateRequest() *TaobaoTradeShippingaddressUpdateAPIRequest {
 	return &TaobaoTradeShippingaddressUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTradeShippingaddressUpdateAPIRequest) Reset() {
+	r._receiverName = ""
+	r._receiverPhone = ""
+	r._receiverMobile = ""
+	r._receiverState = ""
+	r._receiverCity = ""
+	r._receiverDistrict = ""
+	r._receiverAddress = ""
+	r._receiverZip = ""
+	r._receiverTown = ""
+	r._tid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *TaobaoTradeShippingaddressUpdateAPIRequest) SetTid(_tid int64) error {
 // GetTid Tid Getter
 func (r TaobaoTradeShippingaddressUpdateAPIRequest) GetTid() int64 {
 	return r._tid
+}
+
+var poolTaobaoTradeShippingaddressUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTradeShippingaddressUpdateRequest()
+	},
+}
+
+// GetTaobaoTradeShippingaddressUpdateRequest 从 sync.Pool 获取 TaobaoTradeShippingaddressUpdateAPIRequest
+func GetTaobaoTradeShippingaddressUpdateAPIRequest() *TaobaoTradeShippingaddressUpdateAPIRequest {
+	return poolTaobaoTradeShippingaddressUpdateAPIRequest.Get().(*TaobaoTradeShippingaddressUpdateAPIRequest)
+}
+
+// ReleaseTaobaoTradeShippingaddressUpdateAPIRequest 将 TaobaoTradeShippingaddressUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTradeShippingaddressUpdateAPIRequest(v *TaobaoTradeShippingaddressUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoTradeShippingaddressUpdateAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package interact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaFcMallxInteractionAiPicListAPIRequest struct {
 // NewAlibabaFcMallxInteractionAiPicListRequest 初始化AlibabaFcMallxInteractionAiPicListAPIRequest对象
 func NewAlibabaFcMallxInteractionAiPicListRequest() *AlibabaFcMallxInteractionAiPicListAPIRequest {
 	return &AlibabaFcMallxInteractionAiPicListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaFcMallxInteractionAiPicListAPIRequest) Reset() {
+	r._openid = ""
+	r._openId = ""
+	r._appId = ""
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaFcMallxInteractionAiPicListAPIRequest) SetParam(_param *Interact
 // GetParam Param Getter
 func (r AlibabaFcMallxInteractionAiPicListAPIRequest) GetParam() *InteractiveTopItemParam {
 	return r._param
+}
+
+var poolAlibabaFcMallxInteractionAiPicListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaFcMallxInteractionAiPicListRequest()
+	},
+}
+
+// GetAlibabaFcMallxInteractionAiPicListRequest 从 sync.Pool 获取 AlibabaFcMallxInteractionAiPicListAPIRequest
+func GetAlibabaFcMallxInteractionAiPicListAPIRequest() *AlibabaFcMallxInteractionAiPicListAPIRequest {
+	return poolAlibabaFcMallxInteractionAiPicListAPIRequest.Get().(*AlibabaFcMallxInteractionAiPicListAPIRequest)
+}
+
+// ReleaseAlibabaFcMallxInteractionAiPicListAPIRequest 将 AlibabaFcMallxInteractionAiPicListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaFcMallxInteractionAiPicListAPIRequest(v *AlibabaFcMallxInteractionAiPicListAPIRequest) {
+	v.Reset()
+	poolAlibabaFcMallxInteractionAiPicListAPIRequest.Put(v)
 }

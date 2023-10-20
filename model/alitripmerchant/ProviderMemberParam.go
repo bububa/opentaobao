@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // ProviderMemberParam 结构体
 type ProviderMemberParam struct {
 	// 用户英文姓
@@ -28,4 +32,33 @@ type ProviderMemberParam struct {
 	Subscription bool `json:"subscription,omitempty" xml:"subscription,omitempty"`
 	// 是否接受协议
 	AcceptedTandC bool `json:"accepted_tand_c,omitempty" xml:"accepted_tand_c,omitempty"`
+}
+
+var poolProviderMemberParam = sync.Pool{
+	New: func() any {
+		return new(ProviderMemberParam)
+	},
+}
+
+// GetProviderMemberParam() 从对象池中获取ProviderMemberParam
+func GetProviderMemberParam() *ProviderMemberParam {
+	return poolProviderMemberParam.Get().(*ProviderMemberParam)
+}
+
+// ReleaseProviderMemberParam 释放ProviderMemberParam
+func ReleaseProviderMemberParam(v *ProviderMemberParam) {
+	v.LastName = ""
+	v.Civility = ""
+	v.Signature = ""
+	v.PhonePre = ""
+	v.PhoneNum = ""
+	v.Language = ""
+	v.Url = ""
+	v.FirstName = ""
+	v.AppId = ""
+	v.Email = ""
+	v.PromoteInfo = ""
+	v.Subscription = false
+	v.AcceptedTandC = false
+	poolProviderMemberParam.Put(v)
 }

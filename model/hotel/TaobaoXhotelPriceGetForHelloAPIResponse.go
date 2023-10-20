@@ -2,6 +2,7 @@ package hotel
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoXhotelPriceGetForHelloAPIResponse struct {
 	TaobaoXhotelPriceGetForHelloAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoXhotelPriceGetForHelloAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoXhotelPriceGetForHelloAPIResponseModel).Reset()
+}
+
 // TaobaoXhotelPriceGetForHelloAPIResponseModel is 哈罗合作方获取酒店库存报价 成功返回结果
 type TaobaoXhotelPriceGetForHelloAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_price_get_for_hello_response"`
@@ -22,4 +29,27 @@ type TaobaoXhotelPriceGetForHelloAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 库价结果封装
 	Result *HotelPriceResultSet `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelPriceGetForHelloAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoXhotelPriceGetForHelloAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelPriceGetForHelloAPIResponse)
+	},
+}
+
+// GetTaobaoXhotelPriceGetForHelloAPIResponse 从 sync.Pool 获取 TaobaoXhotelPriceGetForHelloAPIResponse
+func GetTaobaoXhotelPriceGetForHelloAPIResponse() *TaobaoXhotelPriceGetForHelloAPIResponse {
+	return poolTaobaoXhotelPriceGetForHelloAPIResponse.Get().(*TaobaoXhotelPriceGetForHelloAPIResponse)
+}
+
+// ReleaseTaobaoXhotelPriceGetForHelloAPIResponse 将 TaobaoXhotelPriceGetForHelloAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoXhotelPriceGetForHelloAPIResponse(v *TaobaoXhotelPriceGetForHelloAPIResponse) {
+	v.Reset()
+	poolTaobaoXhotelPriceGetForHelloAPIResponse.Put(v)
 }

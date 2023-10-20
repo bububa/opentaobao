@@ -1,5 +1,9 @@
 package tmallchannel
 
+import (
+	"sync"
+)
+
 // TopChannelRefundDto 结构体
 type TopChannelRefundDto struct {
 	// 服务类型
@@ -26,4 +30,32 @@ type TopChannelRefundDto struct {
 	MainPurchaseOrderNo int64 `json:"main_purchase_order_no,omitempty" xml:"main_purchase_order_no,omitempty"`
 	// 销售子订单号（采购单）
 	SubPurchaseOrderNo int64 `json:"sub_purchase_order_no,omitempty" xml:"sub_purchase_order_no,omitempty"`
+}
+
+var poolTopChannelRefundDto = sync.Pool{
+	New: func() any {
+		return new(TopChannelRefundDto)
+	},
+}
+
+// GetTopChannelRefundDto() 从对象池中获取TopChannelRefundDto
+func GetTopChannelRefundDto() *TopChannelRefundDto {
+	return poolTopChannelRefundDto.Get().(*TopChannelRefundDto)
+}
+
+// ReleaseTopChannelRefundDto 释放TopChannelRefundDto
+func ReleaseTopChannelRefundDto(v *TopChannelRefundDto) {
+	v.RefundTypeDesc = ""
+	v.RefundStatusDesc = ""
+	v.MainChannelOrderNo = ""
+	v.RefundReasonDesc = ""
+	v.RefundCreateDate = ""
+	v.PurchaseOrderStatus = ""
+	v.DownAccountNick = ""
+	v.RefundId = 0
+	v.PurchaseOrderPayFee = 0
+	v.RefundFee = 0
+	v.MainPurchaseOrderNo = 0
+	v.SubPurchaseOrderNo = 0
+	poolTopChannelRefundDto.Put(v)
 }

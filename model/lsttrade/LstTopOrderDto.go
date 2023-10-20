@@ -1,5 +1,9 @@
 package lsttrade
 
+import (
+	"sync"
+)
+
 // LstTopOrderDto 结构体
 type LstTopOrderDto struct {
 	// 订单创建时间
@@ -76,4 +80,57 @@ type LstTopOrderDto struct {
 	OfflineOrder bool `json:"offline_order,omitempty" xml:"offline_order,omitempty"`
 	// 是否车销订单
 	OfflineCarOrder bool `json:"offline_car_order,omitempty" xml:"offline_car_order,omitempty"`
+}
+
+var poolLstTopOrderDto = sync.Pool{
+	New: func() any {
+		return new(LstTopOrderDto)
+	},
+}
+
+// GetLstTopOrderDto() 从对象池中获取LstTopOrderDto
+func GetLstTopOrderDto() *LstTopOrderDto {
+	return poolLstTopOrderDto.Get().(*LstTopOrderDto)
+}
+
+// ReleaseLstTopOrderDto 释放LstTopOrderDto
+func ReleaseLstTopOrderDto(v *LstTopOrderDto) {
+	v.GmtCreate = ""
+	v.Status = ""
+	v.Unit = ""
+	v.BuyerLoginId = ""
+	v.BarCode = ""
+	v.ProductName = ""
+	v.StoreName = ""
+	v.SellerName = ""
+	v.SellerLoginId = ""
+	v.GmtPayment = ""
+	v.GmtGoodsSend = ""
+	v.GmtGoodsReceived = ""
+	v.GmtCompleted = ""
+	v.OuterOfferId = ""
+	v.ReceiverAddress = ""
+	v.OuterStoreId = ""
+	v.OuterOperatorId = ""
+	v.MainOrderStatus = ""
+	v.WarehouseCode = ""
+	v.WarehouseName = ""
+	v.StoreId = ""
+	v.LstYdId = ""
+	v.ActSubOrderIds = ""
+	v.GroupId = ""
+	v.SignTime = ""
+	v.OfflineYdId = ""
+	v.OfflineYdName = ""
+	v.ActualPayFee = 0
+	v.Price = 0
+	v.Quantity = 0
+	v.PartnerId = 0
+	v.MainOrderId = 0
+	v.SubOrderId = 0
+	v.Gift = false
+	v.CombineItem = false
+	v.OfflineOrder = false
+	v.OfflineCarOrder = false
+	poolLstTopOrderDto.Put(v)
 }

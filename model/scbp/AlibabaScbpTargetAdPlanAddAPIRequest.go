@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaScbpTargetAdPlanAddAPIRequest struct {
 // NewAlibabaScbpTargetAdPlanAddRequest 初始化AlibabaScbpTargetAdPlanAddAPIRequest对象
 func NewAlibabaScbpTargetAdPlanAddRequest() *AlibabaScbpTargetAdPlanAddAPIRequest {
 	return &AlibabaScbpTargetAdPlanAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpTargetAdPlanAddAPIRequest) Reset() {
+	r._topP4pBasicQuickCampaign = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaScbpTargetAdPlanAddAPIRequest) SetTopP4pBasicQuickCampaign(_topP
 // GetTopP4pBasicQuickCampaign TopP4pBasicQuickCampaign Getter
 func (r AlibabaScbpTargetAdPlanAddAPIRequest) GetTopP4pBasicQuickCampaign() *BasicQuickCampaign {
 	return r._topP4pBasicQuickCampaign
+}
+
+var poolAlibabaScbpTargetAdPlanAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpTargetAdPlanAddRequest()
+	},
+}
+
+// GetAlibabaScbpTargetAdPlanAddRequest 从 sync.Pool 获取 AlibabaScbpTargetAdPlanAddAPIRequest
+func GetAlibabaScbpTargetAdPlanAddAPIRequest() *AlibabaScbpTargetAdPlanAddAPIRequest {
+	return poolAlibabaScbpTargetAdPlanAddAPIRequest.Get().(*AlibabaScbpTargetAdPlanAddAPIRequest)
+}
+
+// ReleaseAlibabaScbpTargetAdPlanAddAPIRequest 将 AlibabaScbpTargetAdPlanAddAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpTargetAdPlanAddAPIRequest(v *AlibabaScbpTargetAdPlanAddAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpTargetAdPlanAddAPIRequest.Put(v)
 }

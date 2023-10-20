@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest struct {
 // NewAlibabaAlscCrmRuleLevelQuerylevelruleRequest 初始化AlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest对象
 func NewAlibabaAlscCrmRuleLevelQuerylevelruleRequest() *AlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest {
 	return &AlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest) Reset() {
+	r._planRuleQueryRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest) SetPlanRuleQueryReques
 // GetPlanRuleQueryRequest PlanRuleQueryRequest Getter
 func (r AlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest) GetPlanRuleQueryRequest() *PlanRuleQueryOpenReq {
 	return r._planRuleQueryRequest
+}
+
+var poolAlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscCrmRuleLevelQuerylevelruleRequest()
+	},
+}
+
+// GetAlibabaAlscCrmRuleLevelQuerylevelruleRequest 从 sync.Pool 获取 AlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest
+func GetAlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest() *AlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest {
+	return poolAlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest.Get().(*AlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest)
+}
+
+// ReleaseAlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest 将 AlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest(v *AlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest.Put(v)
 }

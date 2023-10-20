@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.rx.ca.prescribe.signed.status.save
 //
 // 处方ca认证
-func AlibabaAlihealthRxCaPrescribeSignedStatusSave(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIRequest, session string) (*alihealthoutflow.AlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponse, error) {
-	var resp alihealthoutflow.AlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthRxCaPrescribeSignedStatusSave(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIRequest, resp *alihealthoutflow.AlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

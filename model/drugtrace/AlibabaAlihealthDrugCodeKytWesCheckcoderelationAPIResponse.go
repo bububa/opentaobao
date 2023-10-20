@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponseModel).Reset()
 }
 
 // AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponseModel is 检查输入的码之间是否有上下级关系 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponseModel struct {
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 调用是否成功
 	ResponseSuccess bool `json:"response_success,omitempty" xml:"response_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Model = m.Model[:0]
+	m.MsgInfo = ""
+	m.MsgCode = ""
+	m.ResponseSuccess = false
+}
+
+var poolAlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponse 从 sync.Pool 获取 AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponse
+func GetAlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponse() *AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponse {
+	return poolAlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponse.Get().(*AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponse 将 AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponse(v *AlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthDrugCodeKytWesCheckcoderelationAPIResponse.Put(v)
 }

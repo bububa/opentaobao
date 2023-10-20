@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLafiteSellerActivityListAPIRequest struct {
 // NewAlibabaLafiteSellerActivityListRequest 初始化AlibabaLafiteSellerActivityListAPIRequest对象
 func NewAlibabaLafiteSellerActivityListRequest() *AlibabaLafiteSellerActivityListAPIRequest {
 	return &AlibabaLafiteSellerActivityListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLafiteSellerActivityListAPIRequest) Reset() {
+	r._query = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLafiteSellerActivityListAPIRequest) SetQuery(_query *ActivityRea
 // GetQuery Query Getter
 func (r AlibabaLafiteSellerActivityListAPIRequest) GetQuery() *ActivityReadTopQuery {
 	return r._query
+}
+
+var poolAlibabaLafiteSellerActivityListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLafiteSellerActivityListRequest()
+	},
+}
+
+// GetAlibabaLafiteSellerActivityListRequest 从 sync.Pool 获取 AlibabaLafiteSellerActivityListAPIRequest
+func GetAlibabaLafiteSellerActivityListAPIRequest() *AlibabaLafiteSellerActivityListAPIRequest {
+	return poolAlibabaLafiteSellerActivityListAPIRequest.Get().(*AlibabaLafiteSellerActivityListAPIRequest)
+}
+
+// ReleaseAlibabaLafiteSellerActivityListAPIRequest 将 AlibabaLafiteSellerActivityListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLafiteSellerActivityListAPIRequest(v *AlibabaLafiteSellerActivityListAPIRequest) {
+	v.Reset()
+	poolAlibabaLafiteSellerActivityListAPIRequest.Put(v)
 }

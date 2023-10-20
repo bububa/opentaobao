@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaHmMarketingFullrangeQueryactivityAPIRequest struct {
 // NewAlibabaHmMarketingFullrangeQueryactivityRequest 初始化AlibabaHmMarketingFullrangeQueryactivityAPIRequest对象
 func NewAlibabaHmMarketingFullrangeQueryactivityRequest() *AlibabaHmMarketingFullrangeQueryactivityAPIRequest {
 	return &AlibabaHmMarketingFullrangeQueryactivityAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHmMarketingFullrangeQueryactivityAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaHmMarketingFullrangeQueryactivityAPIRequest) SetParam0(_param0 *
 // GetParam0 Param0 Getter
 func (r AlibabaHmMarketingFullrangeQueryactivityAPIRequest) GetParam0() *CommonActivityParam {
 	return r._param0
+}
+
+var poolAlibabaHmMarketingFullrangeQueryactivityAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHmMarketingFullrangeQueryactivityRequest()
+	},
+}
+
+// GetAlibabaHmMarketingFullrangeQueryactivityRequest 从 sync.Pool 获取 AlibabaHmMarketingFullrangeQueryactivityAPIRequest
+func GetAlibabaHmMarketingFullrangeQueryactivityAPIRequest() *AlibabaHmMarketingFullrangeQueryactivityAPIRequest {
+	return poolAlibabaHmMarketingFullrangeQueryactivityAPIRequest.Get().(*AlibabaHmMarketingFullrangeQueryactivityAPIRequest)
+}
+
+// ReleaseAlibabaHmMarketingFullrangeQueryactivityAPIRequest 将 AlibabaHmMarketingFullrangeQueryactivityAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHmMarketingFullrangeQueryactivityAPIRequest(v *AlibabaHmMarketingFullrangeQueryactivityAPIRequest) {
+	v.Reset()
+	poolAlibabaHmMarketingFullrangeQueryactivityAPIRequest.Put(v)
 }

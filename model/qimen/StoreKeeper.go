@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // StoreKeeper 结构体
 type StoreKeeper struct {
 	// 传真
@@ -12,4 +16,25 @@ type StoreKeeper struct {
 	ZipCode string `json:"zip_code,omitempty" xml:"zip_code,omitempty"`
 	// 移动电话
 	Mobile string `json:"mobile,omitempty" xml:"mobile,omitempty"`
+}
+
+var poolStoreKeeper = sync.Pool{
+	New: func() any {
+		return new(StoreKeeper)
+	},
+}
+
+// GetStoreKeeper() 从对象池中获取StoreKeeper
+func GetStoreKeeper() *StoreKeeper {
+	return poolStoreKeeper.Get().(*StoreKeeper)
+}
+
+// ReleaseStoreKeeper 释放StoreKeeper
+func ReleaseStoreKeeper(v *StoreKeeper) {
+	v.Fax = ""
+	v.Tel = ""
+	v.Name = ""
+	v.ZipCode = ""
+	v.Mobile = ""
+	poolStoreKeeper.Put(v)
 }

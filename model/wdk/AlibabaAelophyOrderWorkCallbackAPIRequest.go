@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAelophyOrderWorkCallbackAPIRequest struct {
 // NewAlibabaAelophyOrderWorkCallbackRequest 初始化AlibabaAelophyOrderWorkCallbackAPIRequest对象
 func NewAlibabaAelophyOrderWorkCallbackRequest() *AlibabaAelophyOrderWorkCallbackAPIRequest {
 	return &AlibabaAelophyOrderWorkCallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAelophyOrderWorkCallbackAPIRequest) Reset() {
+	r._workCallbackRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAelophyOrderWorkCallbackAPIRequest) SetWorkCallbackRequest(_work
 // GetWorkCallbackRequest WorkCallbackRequest Getter
 func (r AlibabaAelophyOrderWorkCallbackAPIRequest) GetWorkCallbackRequest() *WorkCallbackRequest {
 	return r._workCallbackRequest
+}
+
+var poolAlibabaAelophyOrderWorkCallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAelophyOrderWorkCallbackRequest()
+	},
+}
+
+// GetAlibabaAelophyOrderWorkCallbackRequest 从 sync.Pool 获取 AlibabaAelophyOrderWorkCallbackAPIRequest
+func GetAlibabaAelophyOrderWorkCallbackAPIRequest() *AlibabaAelophyOrderWorkCallbackAPIRequest {
+	return poolAlibabaAelophyOrderWorkCallbackAPIRequest.Get().(*AlibabaAelophyOrderWorkCallbackAPIRequest)
+}
+
+// ReleaseAlibabaAelophyOrderWorkCallbackAPIRequest 将 AlibabaAelophyOrderWorkCallbackAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAelophyOrderWorkCallbackAPIRequest(v *AlibabaAelophyOrderWorkCallbackAPIRequest) {
+	v.Reset()
+	poolAlibabaAelophyOrderWorkCallbackAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // EbbasCommunityDto 结构体
 type EbbasCommunityDto struct {
 	// 小区别名
@@ -200,4 +204,119 @@ type EbbasCommunityDto struct {
 	TempModuleId int64 `json:"temp_module_id,omitempty" xml:"temp_module_id,omitempty"`
 	// 是否为测试数据true:是
 	IsTest bool `json:"is_test,omitempty" xml:"is_test,omitempty"`
+}
+
+var poolEbbasCommunityDto = sync.Pool{
+	New: func() any {
+		return new(EbbasCommunityDto)
+	},
+}
+
+// GetEbbasCommunityDto() 从对象池中获取EbbasCommunityDto
+func GetEbbasCommunityDto() *EbbasCommunityDto {
+	return poolEbbasCommunityDto.Get().(*EbbasCommunityDto)
+}
+
+// ReleaseEbbasCommunityDto 释放EbbasCommunityDto
+func ReleaseEbbasCommunityDto(v *EbbasCommunityDto) {
+	v.AliasNames = v.AliasNames[:0]
+	v.TagCodes = v.TagCodes[:0]
+	v.EstateTypes = v.EstateTypes[:0]
+	v.PropertyRightsYearsCodes = v.PropertyRightsYearsCodes[:0]
+	v.BuildingCategorys = v.BuildingCategorys[:0]
+	v.BuildingTypes = v.BuildingTypes[:0]
+	v.HouseTypes = v.HouseTypes[:0]
+	v.Layouts = v.Layouts[:0]
+	v.Pictures = v.Pictures[:0]
+	v.DecorationStandardCodes = v.DecorationStandardCodes[:0]
+	v.ECode = ""
+	v.OuterId = ""
+	v.ProjectName = ""
+	v.Highlights = ""
+	v.AvgPrice = ""
+	v.ShowPrice = ""
+	v.BuildingArea = ""
+	v.ProjectDetailAddress = ""
+	v.MapLocationDetailAddress = ""
+	v.MapLocationLongitude = ""
+	v.MapLocationLatitude = ""
+	v.DeveloperFullName = ""
+	v.CommunityArea = ""
+	v.CommunityVolumeRate = ""
+	v.CommunityGreeningRate = ""
+	v.ParkingRadio = ""
+	v.CommunityEstateCompany = ""
+	v.CommunityEstateExpenses = ""
+	v.CommunityHeatingTypeDesc = ""
+	v.CommunityWaterTypeDesc = ""
+	v.CommunityPowerTypeDesc = ""
+	v.OverallIntroduction = ""
+	v.SubmitReason = ""
+	v.CountryName = ""
+	v.Prov = ""
+	v.City = ""
+	v.Area = ""
+	v.StreetName = ""
+	v.LoopLine = ""
+	v.ParkingFee = ""
+	v.GasSupplyDescription = ""
+	v.MainHouseTypeDescription = ""
+	v.DiversionPeopleVehicles = ""
+	v.Fencing = ""
+	v.ArchitectureAge = ""
+	v.PropertyAddress = ""
+	v.PropertyWorkingHours = ""
+	v.PropertyTelephone = ""
+	v.IsCommunityClosed = ""
+	v.FixedParkingFeeStandard = ""
+	v.TempParkingFeeStandard = ""
+	v.FacadeStyle = ""
+	v.ExteriorWallMaterials = ""
+	v.IsIntelligentGateInstalled = ""
+	v.HasAccessControl = ""
+	v.HasMonitor = ""
+	v.IsDutyAllDay = ""
+	v.PatrolFrequency = ""
+	v.HasPoliceConnected = ""
+	v.CommunityLevel = ""
+	v.Pinyin = ""
+	v.FullPinyin = ""
+	v.InternalMatching = ""
+	v.BuisnessId = ""
+	v.ModuleId = ""
+	v.AvgPriceUnit = ""
+	v.FunctionAreaId = ""
+	v.MetroLine = ""
+	v.FunctionId = ""
+	v.AmapProjectName = ""
+	v.AmapLocationDetailAddress = ""
+	v.AmapLocationLongitude = ""
+	v.AmapLocationLatitude = ""
+	v.Source = 0
+	v.Type = 0
+	v.CommunityPlanningBuilding = 0
+	v.CommunityPlanningHouseholds = 0
+	v.CountryId = 0
+	v.ProvId = 0
+	v.CityId = 0
+	v.AreaId = 0
+	v.StreetId = 0
+	v.ParkingNumber = 0
+	v.OvergroundParkingNumber = 0
+	v.UndergroundParkingNumber = 0
+	v.TransactionOwnership = 0
+	v.IdentificationNonMotorizedGarage = 0
+	v.AirFreshAirSign = 0
+	v.SecurityPostsNumber = 0
+	v.SecurityPersonnelNumber = 0
+	v.GarageConfiguration = 0
+	v.TotalFloor = 0
+	v.HasElevator = 0
+	v.ApartmentManagement = nil
+	v.TempCityId = 0
+	v.TempAreaId = 0
+	v.TempFunctionId = 0
+	v.TempModuleId = 0
+	v.IsTest = false
+	poolEbbasCommunityDto.Put(v)
 }

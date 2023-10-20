@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoTbkDgNewuserOrderSumAPIRequest struct {
 // NewTaobaoTbkDgNewuserOrderSumRequest 初始化TaobaoTbkDgNewuserOrderSumAPIRequest对象
 func NewTaobaoTbkDgNewuserOrderSumRequest() *TaobaoTbkDgNewuserOrderSumAPIRequest {
 	return &TaobaoTbkDgNewuserOrderSumAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) Reset() {
+	r._activityId = ""
+	r._settleMonth = ""
+	r._pageSize = 0
+	r._adzoneId = 0
+	r._pageNo = 0
+	r._siteId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetSiteId(_siteId int64) error {
 // GetSiteId SiteId Getter
 func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetSiteId() int64 {
 	return r._siteId
+}
+
+var poolTaobaoTbkDgNewuserOrderSumAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkDgNewuserOrderSumRequest()
+	},
+}
+
+// GetTaobaoTbkDgNewuserOrderSumRequest 从 sync.Pool 获取 TaobaoTbkDgNewuserOrderSumAPIRequest
+func GetTaobaoTbkDgNewuserOrderSumAPIRequest() *TaobaoTbkDgNewuserOrderSumAPIRequest {
+	return poolTaobaoTbkDgNewuserOrderSumAPIRequest.Get().(*TaobaoTbkDgNewuserOrderSumAPIRequest)
+}
+
+// ReleaseTaobaoTbkDgNewuserOrderSumAPIRequest 将 TaobaoTbkDgNewuserOrderSumAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkDgNewuserOrderSumAPIRequest(v *TaobaoTbkDgNewuserOrderSumAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkDgNewuserOrderSumAPIRequest.Put(v)
 }

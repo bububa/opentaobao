@@ -2,6 +2,7 @@ package fundplatform
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCfoIncomingInvoiceLedgerFullysyncAPIRequest struct {
 // NewAlibabaCfoIncomingInvoiceLedgerFullysyncRequest 初始化AlibabaCfoIncomingInvoiceLedgerFullysyncAPIRequest对象
 func NewAlibabaCfoIncomingInvoiceLedgerFullysyncRequest() *AlibabaCfoIncomingInvoiceLedgerFullysyncAPIRequest {
 	return &AlibabaCfoIncomingInvoiceLedgerFullysyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCfoIncomingInvoiceLedgerFullysyncAPIRequest) Reset() {
+	r._paramPytLedgerSyncRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCfoIncomingInvoiceLedgerFullysyncAPIRequest) SetParamPytLedgerSy
 // GetParamPytLedgerSyncRequest ParamPytLedgerSyncRequest Getter
 func (r AlibabaCfoIncomingInvoiceLedgerFullysyncAPIRequest) GetParamPytLedgerSyncRequest() *PytLedgerSyncRequest {
 	return r._paramPytLedgerSyncRequest
+}
+
+var poolAlibabaCfoIncomingInvoiceLedgerFullysyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCfoIncomingInvoiceLedgerFullysyncRequest()
+	},
+}
+
+// GetAlibabaCfoIncomingInvoiceLedgerFullysyncRequest 从 sync.Pool 获取 AlibabaCfoIncomingInvoiceLedgerFullysyncAPIRequest
+func GetAlibabaCfoIncomingInvoiceLedgerFullysyncAPIRequest() *AlibabaCfoIncomingInvoiceLedgerFullysyncAPIRequest {
+	return poolAlibabaCfoIncomingInvoiceLedgerFullysyncAPIRequest.Get().(*AlibabaCfoIncomingInvoiceLedgerFullysyncAPIRequest)
+}
+
+// ReleaseAlibabaCfoIncomingInvoiceLedgerFullysyncAPIRequest 将 AlibabaCfoIncomingInvoiceLedgerFullysyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCfoIncomingInvoiceLedgerFullysyncAPIRequest(v *AlibabaCfoIncomingInvoiceLedgerFullysyncAPIRequest) {
+	v.Reset()
+	poolAlibabaCfoIncomingInvoiceLedgerFullysyncAPIRequest.Put(v)
 }

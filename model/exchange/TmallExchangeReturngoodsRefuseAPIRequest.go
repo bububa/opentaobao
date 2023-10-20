@@ -2,6 +2,7 @@ package exchange
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TmallExchangeReturngoodsRefuseAPIRequest struct {
 // NewTmallExchangeReturngoodsRefuseRequest 初始化TmallExchangeReturngoodsRefuseAPIRequest对象
 func NewTmallExchangeReturngoodsRefuseRequest() *TmallExchangeReturngoodsRefuseAPIRequest {
 	return &TmallExchangeReturngoodsRefuseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallExchangeReturngoodsRefuseAPIRequest) Reset() {
+	r._leaveMessage = ""
+	r._leaveMessagePics = nil
+	r._disputeId = 0
+	r._sellerRefuseReasonId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TmallExchangeReturngoodsRefuseAPIRequest) SetSellerRefuseReasonId(_sell
 // GetSellerRefuseReasonId SellerRefuseReasonId Getter
 func (r TmallExchangeReturngoodsRefuseAPIRequest) GetSellerRefuseReasonId() int64 {
 	return r._sellerRefuseReasonId
+}
+
+var poolTmallExchangeReturngoodsRefuseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallExchangeReturngoodsRefuseRequest()
+	},
+}
+
+// GetTmallExchangeReturngoodsRefuseRequest 从 sync.Pool 获取 TmallExchangeReturngoodsRefuseAPIRequest
+func GetTmallExchangeReturngoodsRefuseAPIRequest() *TmallExchangeReturngoodsRefuseAPIRequest {
+	return poolTmallExchangeReturngoodsRefuseAPIRequest.Get().(*TmallExchangeReturngoodsRefuseAPIRequest)
+}
+
+// ReleaseTmallExchangeReturngoodsRefuseAPIRequest 将 TmallExchangeReturngoodsRefuseAPIRequest 放入 sync.Pool
+func ReleaseTmallExchangeReturngoodsRefuseAPIRequest(v *TmallExchangeReturngoodsRefuseAPIRequest) {
+	v.Reset()
+	poolTmallExchangeReturngoodsRefuseAPIRequest.Put(v)
 }

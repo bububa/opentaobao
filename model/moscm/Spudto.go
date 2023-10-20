@@ -1,5 +1,9 @@
 package moscm
 
+import (
+	"sync"
+)
+
 // Spudto 结构体
 type Spudto struct {
 	// 商品图片集合
@@ -52,4 +56,45 @@ type Spudto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 是否新品,默认true
 	IsNew bool `json:"is_new,omitempty" xml:"is_new,omitempty"`
+}
+
+var poolSpudto = sync.Pool{
+	New: func() any {
+		return new(Spudto)
+	},
+}
+
+// GetSpudto() 从对象池中获取Spudto
+func GetSpudto() *Spudto {
+	return poolSpudto.Get().(*Spudto)
+}
+
+// ReleaseSpudto 释放Spudto
+func ReleaseSpudto(v *Spudto) {
+	v.ProductImgs = v.ProductImgs[:0]
+	v.Props = v.Props[:0]
+	v.BarcodeStr = ""
+	v.BrandId = ""
+	v.BrandName = ""
+	v.CatName = ""
+	v.Cid = ""
+	v.Created = ""
+	v.Id = ""
+	v.Material = ""
+	v.Mdesc = ""
+	v.Modified = ""
+	v.PcDesc = ""
+	v.PicUrl = ""
+	v.Price = ""
+	v.ProductId = ""
+	v.SellPt = ""
+	v.StyleNo = ""
+	v.SubTitle = ""
+	v.Tags = ""
+	v.Title = ""
+	v.Level = 0
+	v.RateNum = 0
+	v.Status = 0
+	v.IsNew = false
+	poolSpudto.Put(v)
 }

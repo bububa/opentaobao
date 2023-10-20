@@ -1,5 +1,9 @@
 package lstlogistics2
 
+import (
+	"sync"
+)
+
 // SubOrders 结构体
 type SubOrders struct {
 	// 外部商品编码
@@ -18,4 +22,28 @@ type SubOrders struct {
 	PickQuantity int64 `json:"pick_quantity,omitempty" xml:"pick_quantity,omitempty"`
 	// 签收数量
 	SignQuantity int64 `json:"sign_quantity,omitempty" xml:"sign_quantity,omitempty"`
+}
+
+var poolSubOrders = sync.Pool{
+	New: func() any {
+		return new(SubOrders)
+	},
+}
+
+// GetSubOrders() 从对象池中获取SubOrders
+func GetSubOrders() *SubOrders {
+	return poolSubOrders.Get().(*SubOrders)
+}
+
+// ReleaseSubOrders 释放SubOrders
+func ReleaseSubOrders(v *SubOrders) {
+	v.OutItemCode = ""
+	v.ItemBarCode = ""
+	v.ItemName = ""
+	v.LstSubOrderId = ""
+	v.OutSubOrderId = ""
+	v.ItemQuantity = 0
+	v.PickQuantity = 0
+	v.SignQuantity = 0
+	poolSubOrders.Put(v)
 }

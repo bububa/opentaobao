@@ -2,6 +2,7 @@ package shop
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaShopCategoryGetAPIRequest struct {
 // NewAlibabaShopCategoryGetRequest 初始化AlibabaShopCategoryGetAPIRequest对象
 func NewAlibabaShopCategoryGetRequest() *AlibabaShopCategoryGetAPIRequest {
 	return &AlibabaShopCategoryGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaShopCategoryGetAPIRequest) Reset() {
+	r._categoryId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaShopCategoryGetAPIRequest) SetCategoryId(_categoryId int64) erro
 // GetCategoryId CategoryId Getter
 func (r AlibabaShopCategoryGetAPIRequest) GetCategoryId() int64 {
 	return r._categoryId
+}
+
+var poolAlibabaShopCategoryGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaShopCategoryGetRequest()
+	},
+}
+
+// GetAlibabaShopCategoryGetRequest 从 sync.Pool 获取 AlibabaShopCategoryGetAPIRequest
+func GetAlibabaShopCategoryGetAPIRequest() *AlibabaShopCategoryGetAPIRequest {
+	return poolAlibabaShopCategoryGetAPIRequest.Get().(*AlibabaShopCategoryGetAPIRequest)
+}
+
+// ReleaseAlibabaShopCategoryGetAPIRequest 将 AlibabaShopCategoryGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaShopCategoryGetAPIRequest(v *AlibabaShopCategoryGetAPIRequest) {
+	v.Reset()
+	poolAlibabaShopCategoryGetAPIRequest.Put(v)
 }

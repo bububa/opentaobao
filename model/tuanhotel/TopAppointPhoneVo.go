@@ -1,5 +1,9 @@
 package tuanhotel
 
+import (
+	"sync"
+)
+
 // TopAppointPhoneVo 结构体
 type TopAppointPhoneVo struct {
 	// 手机号
@@ -14,4 +18,26 @@ type TopAppointPhoneVo struct {
 	P400 string `json:"p400,omitempty" xml:"p400,omitempty"`
 	// 类型固话或手机
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolTopAppointPhoneVo = sync.Pool{
+	New: func() any {
+		return new(TopAppointPhoneVo)
+	},
+}
+
+// GetTopAppointPhoneVo() 从对象池中获取TopAppointPhoneVo
+func GetTopAppointPhoneVo() *TopAppointPhoneVo {
+	return poolTopAppointPhoneVo.Get().(*TopAppointPhoneVo)
+}
+
+// ReleaseTopAppointPhoneVo 释放TopAppointPhoneVo
+func ReleaseTopAppointPhoneVo(v *TopAppointPhoneVo) {
+	v.Mobil = ""
+	v.Area = ""
+	v.Country = ""
+	v.Fix = ""
+	v.P400 = ""
+	v.Type = ""
+	poolTopAppointPhoneVo.Put(v)
 }

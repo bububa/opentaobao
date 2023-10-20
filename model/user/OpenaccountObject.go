@@ -1,5 +1,9 @@
 package user
 
+import (
+	"sync"
+)
+
 // OpenaccountObject 结构体
 type OpenaccountObject struct {
 	// 返回信息
@@ -10,4 +14,24 @@ type OpenaccountObject struct {
 	Code int64 `json:"code,omitempty" xml:"code,omitempty"`
 	// 是否成功
 	Successful bool `json:"successful,omitempty" xml:"successful,omitempty"`
+}
+
+var poolOpenaccountObject = sync.Pool{
+	New: func() any {
+		return new(OpenaccountObject)
+	},
+}
+
+// GetOpenaccountObject() 从对象池中获取OpenaccountObject
+func GetOpenaccountObject() *OpenaccountObject {
+	return poolOpenaccountObject.Get().(*OpenaccountObject)
+}
+
+// ReleaseOpenaccountObject 释放OpenaccountObject
+func ReleaseOpenaccountObject(v *OpenaccountObject) {
+	v.Message = ""
+	v.Data = nil
+	v.Code = 0
+	v.Successful = false
+	poolOpenaccountObject.Put(v)
 }

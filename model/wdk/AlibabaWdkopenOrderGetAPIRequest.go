@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaWdkopenOrderGetAPIRequest struct {
 // NewAlibabaWdkopenOrderGetRequest 初始化AlibabaWdkopenOrderGetAPIRequest对象
 func NewAlibabaWdkopenOrderGetRequest() *AlibabaWdkopenOrderGetAPIRequest {
 	return &AlibabaWdkopenOrderGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkopenOrderGetAPIRequest) Reset() {
+	r._storeId = ""
+	r._outOrderId = ""
+	r._bizOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaWdkopenOrderGetAPIRequest) SetBizOrderId(_bizOrderId int64) erro
 // GetBizOrderId BizOrderId Getter
 func (r AlibabaWdkopenOrderGetAPIRequest) GetBizOrderId() int64 {
 	return r._bizOrderId
+}
+
+var poolAlibabaWdkopenOrderGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkopenOrderGetRequest()
+	},
+}
+
+// GetAlibabaWdkopenOrderGetRequest 从 sync.Pool 获取 AlibabaWdkopenOrderGetAPIRequest
+func GetAlibabaWdkopenOrderGetAPIRequest() *AlibabaWdkopenOrderGetAPIRequest {
+	return poolAlibabaWdkopenOrderGetAPIRequest.Get().(*AlibabaWdkopenOrderGetAPIRequest)
+}
+
+// ReleaseAlibabaWdkopenOrderGetAPIRequest 将 AlibabaWdkopenOrderGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkopenOrderGetAPIRequest(v *AlibabaWdkopenOrderGetAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkopenOrderGetAPIRequest.Put(v)
 }

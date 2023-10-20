@@ -2,6 +2,7 @@ package axindata
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest struct {
 // NewTaobaoAlitripTravelFscRouteApiBusinessAreaGetRequest 初始化TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest对象
 func NewTaobaoAlitripTravelFscRouteApiBusinessAreaGetRequest() *TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest {
 	return &TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest) Reset() {
+	r._fscBusinessAreaQueryRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest) SetFscBusiness
 // GetFscBusinessAreaQueryRequest FscBusinessAreaQueryRequest Getter
 func (r TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest) GetFscBusinessAreaQueryRequest() *FscBusinessAreaQueryRequest {
 	return r._fscBusinessAreaQueryRequest
+}
+
+var poolTaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripTravelFscRouteApiBusinessAreaGetRequest()
+	},
+}
+
+// GetTaobaoAlitripTravelFscRouteApiBusinessAreaGetRequest 从 sync.Pool 获取 TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest
+func GetTaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest() *TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest {
+	return poolTaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest.Get().(*TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest)
+}
+
+// ReleaseTaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest 将 TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest(v *TaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripTravelFscRouteApiBusinessAreaGetAPIRequest.Put(v)
 }

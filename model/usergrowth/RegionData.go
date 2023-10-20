@@ -1,5 +1,9 @@
 package usergrowth
 
+import (
+	"sync"
+)
+
 // RegionData 结构体
 type RegionData struct {
 	// 坐标字符串
@@ -14,4 +18,26 @@ type RegionData struct {
 	LabelId string `json:"label_id,omitempty" xml:"label_id,omitempty"`
 	// 序号
 	Ranking int64 `json:"ranking,omitempty" xml:"ranking,omitempty"`
+}
+
+var poolRegionData = sync.Pool{
+	New: func() any {
+		return new(RegionData)
+	},
+}
+
+// GetRegionData() 从对象池中获取RegionData
+func GetRegionData() *RegionData {
+	return poolRegionData.Get().(*RegionData)
+}
+
+// ReleaseRegionData 释放RegionData
+func ReleaseRegionData(v *RegionData) {
+	v.CoordinateStr = ""
+	v.Text = ""
+	v.Width = ""
+	v.Height = ""
+	v.LabelId = ""
+	v.Ranking = 0
+	poolRegionData.Put(v)
 }

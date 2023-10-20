@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // PromotionPriceDo 结构体
 type PromotionPriceDo struct {
 	// 促销说明
@@ -34,4 +38,36 @@ type PromotionPriceDo struct {
 	IfPromotion int64 `json:"if_promotion,omitempty" xml:"if_promotion,omitempty"`
 	// 会员促销价
 	MemberPromotionPrice int64 `json:"member_promotion_price,omitempty" xml:"member_promotion_price,omitempty"`
+}
+
+var poolPromotionPriceDo = sync.Pool{
+	New: func() any {
+		return new(PromotionPriceDo)
+	},
+}
+
+// GetPromotionPriceDo() 从对象池中获取PromotionPriceDo
+func GetPromotionPriceDo() *PromotionPriceDo {
+	return poolPromotionPriceDo.Get().(*PromotionPriceDo)
+}
+
+// ReleasePromotionPriceDo 释放PromotionPriceDo
+func ReleasePromotionPriceDo(v *PromotionPriceDo) {
+	v.PromotionReason = ""
+	v.ShopCode = ""
+	v.PromotionType = ""
+	v.PromotionStart = ""
+	v.PromotionGiftInfo = ""
+	v.PromotionEnd = ""
+	v.MerchantCode = ""
+	v.SkuCode = ""
+	v.MemberPromotionEndTime = ""
+	v.MemberPromotionStartTime = ""
+	v.MemberPromotionType = ""
+	v.Id = 0
+	v.ShopId = 0
+	v.PromotionPrice = 0
+	v.IfPromotion = 0
+	v.MemberPromotionPrice = 0
+	poolPromotionPriceDo.Put(v)
 }

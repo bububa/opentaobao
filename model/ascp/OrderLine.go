@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // OrderLine 结构体
 type OrderLine struct {
 	// 批次列表
@@ -58,4 +62,48 @@ type OrderLine struct {
 	PlanQty int64 `json:"plan_qty,omitempty" xml:"plan_qty,omitempty"`
 	// sn列表
 	SnList *SnList `json:"sn_list,omitempty" xml:"sn_list,omitempty"`
+}
+
+var poolOrderLine = sync.Pool{
+	New: func() any {
+		return new(OrderLine)
+	},
+}
+
+// GetOrderLine() 从对象池中获取OrderLine
+func GetOrderLine() *OrderLine {
+	return poolOrderLine.Get().(*OrderLine)
+}
+
+// ReleaseOrderLine 释放OrderLine
+func ReleaseOrderLine(v *OrderLine) {
+	v.Batchs = v.Batchs[:0]
+	v.SourceOrderCode = ""
+	v.SubSourceOrderCode = ""
+	v.OwnerCode = ""
+	v.ItemCode = ""
+	v.OrderLineNo = ""
+	v.OrderSourceCode = ""
+	v.SubSourceCode = ""
+	v.ItemId = ""
+	v.InventoryType = ""
+	v.ItemName = ""
+	v.ExtCode = ""
+	v.ActualQty = ""
+	v.BatchCode = ""
+	v.ProductDate = ""
+	v.ExpireDate = ""
+	v.ProduceCode = ""
+	v.QrCode = ""
+	v.SnCode = ""
+	v.SupplierName = ""
+	v.SupplierCode = ""
+	v.PayNo = ""
+	v.RetailPrice = ""
+	v.ActualPrice = ""
+	v.DiscountAmount = ""
+	v.ScItemId = ""
+	v.PlanQty = 0
+	v.SnList = nil
+	poolOrderLine.Put(v)
 }

@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // TradeFlowModel 结构体
 type TradeFlowModel struct {
 	// 交易流水信息-商品详情
@@ -34,4 +38,36 @@ type TradeFlowModel struct {
 	Commission int64 `json:"commission,omitempty" xml:"commission,omitempty"`
 	// 交易类型：1购买，2退款
 	TradeType int64 `json:"trade_type,omitempty" xml:"trade_type,omitempty"`
+}
+
+var poolTradeFlowModel = sync.Pool{
+	New: func() any {
+		return new(TradeFlowModel)
+	},
+}
+
+// GetTradeFlowModel() 从对象池中获取TradeFlowModel
+func GetTradeFlowModel() *TradeFlowModel {
+	return poolTradeFlowModel.Get().(*TradeFlowModel)
+}
+
+// ReleaseTradeFlowModel 释放TradeFlowModel
+func ReleaseTradeFlowModel(v *TradeFlowModel) {
+	v.TradeFlowGoodsDetailModelList = v.TradeFlowGoodsDetailModelList[:0]
+	v.TradeFlowPaymentModelList = v.TradeFlowPaymentModelList[:0]
+	v.GmtModified = ""
+	v.EquipmentCode = ""
+	v.PaymentTradeFlowNo = ""
+	v.GmtCreate = ""
+	v.EquipmentType = ""
+	v.OperatorUserId = ""
+	v.OperatorUserName = ""
+	v.TradeFlowNo = ""
+	v.EquipmentName = ""
+	v.ActualAmount = 0
+	v.Discount = 0
+	v.TotalAmount = 0
+	v.Commission = 0
+	v.TradeType = 0
+	poolTradeFlowModel.Put(v)
 }

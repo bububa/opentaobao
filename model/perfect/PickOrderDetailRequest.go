@@ -1,5 +1,9 @@
 package perfect
 
+import (
+	"sync"
+)
+
 // PickOrderDetailRequest 结构体
 type PickOrderDetailRequest struct {
 	// 1
@@ -28,4 +32,33 @@ type PickOrderDetailRequest struct {
 	Attributes string `json:"attributes,omitempty" xml:"attributes,omitempty"`
 	// 1
 	ContainerCode string `json:"container_code,omitempty" xml:"container_code,omitempty"`
+}
+
+var poolPickOrderDetailRequest = sync.Pool{
+	New: func() any {
+		return new(PickOrderDetailRequest)
+	},
+}
+
+// GetPickOrderDetailRequest() 从对象池中获取PickOrderDetailRequest
+func GetPickOrderDetailRequest() *PickOrderDetailRequest {
+	return poolPickOrderDetailRequest.Get().(*PickOrderDetailRequest)
+}
+
+// ReleasePickOrderDetailRequest 释放PickOrderDetailRequest
+func ReleasePickOrderDetailRequest(v *PickOrderDetailRequest) {
+	v.Barcodes = v.Barcodes[:0]
+	v.RealPickQuantity = ""
+	v.PickFinishTime = ""
+	v.ItemCode = ""
+	v.PickUnit = ""
+	v.PlanStockQuantity = ""
+	v.RealStockQuantity = ""
+	v.WarehouseCode = ""
+	v.PickOrderDetailCode = ""
+	v.StockUnit = ""
+	v.PlanPickQuantity = ""
+	v.Attributes = ""
+	v.ContainerCode = ""
+	poolPickOrderDetailRequest.Put(v)
 }

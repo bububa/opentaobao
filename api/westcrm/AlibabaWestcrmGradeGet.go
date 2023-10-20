@@ -9,11 +9,6 @@ import (
 // alibaba.westcrm.grade.get
 //
 // 获取会员卡等级列表
-func AlibabaWestcrmGradeGet(clt *core.SDKClient, req *westcrm.AlibabaWestcrmGradeGetAPIRequest, session string) (*westcrm.AlibabaWestcrmGradeGetAPIResponse, error) {
-	var resp westcrm.AlibabaWestcrmGradeGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWestcrmGradeGet(clt *core.SDKClient, req *westcrm.AlibabaWestcrmGradeGetAPIRequest, resp *westcrm.AlibabaWestcrmGradeGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

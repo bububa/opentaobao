@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAisAssetsTagGenerateAPIRequest struct {
 // NewAlibabaAisAssetsTagGenerateRequest 初始化AlibabaAisAssetsTagGenerateAPIRequest对象
 func NewAlibabaAisAssetsTagGenerateRequest() *AlibabaAisAssetsTagGenerateAPIRequest {
 	return &AlibabaAisAssetsTagGenerateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAisAssetsTagGenerateAPIRequest) Reset() {
+	r._requestParam = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAisAssetsTagGenerateAPIRequest) SetRequestParam(_requestParam st
 // GetRequestParam RequestParam Getter
 func (r AlibabaAisAssetsTagGenerateAPIRequest) GetRequestParam() string {
 	return r._requestParam
+}
+
+var poolAlibabaAisAssetsTagGenerateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAisAssetsTagGenerateRequest()
+	},
+}
+
+// GetAlibabaAisAssetsTagGenerateRequest 从 sync.Pool 获取 AlibabaAisAssetsTagGenerateAPIRequest
+func GetAlibabaAisAssetsTagGenerateAPIRequest() *AlibabaAisAssetsTagGenerateAPIRequest {
+	return poolAlibabaAisAssetsTagGenerateAPIRequest.Get().(*AlibabaAisAssetsTagGenerateAPIRequest)
+}
+
+// ReleaseAlibabaAisAssetsTagGenerateAPIRequest 将 AlibabaAisAssetsTagGenerateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAisAssetsTagGenerateAPIRequest(v *AlibabaAisAssetsTagGenerateAPIRequest) {
+	v.Reset()
+	poolAlibabaAisAssetsTagGenerateAPIRequest.Put(v)
 }

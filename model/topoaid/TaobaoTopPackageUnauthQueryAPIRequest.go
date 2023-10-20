@@ -2,6 +2,7 @@ package topoaid
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTopPackageUnauthQueryAPIRequest struct {
 // NewTaobaoTopPackageUnauthQueryRequest 初始化TaobaoTopPackageUnauthQueryAPIRequest对象
 func NewTaobaoTopPackageUnauthQueryRequest() *TaobaoTopPackageUnauthQueryAPIRequest {
 	return &TaobaoTopPackageUnauthQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTopPackageUnauthQueryAPIRequest) Reset() {
+	r._queryPackageListRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTopPackageUnauthQueryAPIRequest) SetQueryPackageListRequest(_quer
 // GetQueryPackageListRequest QueryPackageListRequest Getter
 func (r TaobaoTopPackageUnauthQueryAPIRequest) GetQueryPackageListRequest() *QueryPackageListRequest {
 	return r._queryPackageListRequest
+}
+
+var poolTaobaoTopPackageUnauthQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTopPackageUnauthQueryRequest()
+	},
+}
+
+// GetTaobaoTopPackageUnauthQueryRequest 从 sync.Pool 获取 TaobaoTopPackageUnauthQueryAPIRequest
+func GetTaobaoTopPackageUnauthQueryAPIRequest() *TaobaoTopPackageUnauthQueryAPIRequest {
+	return poolTaobaoTopPackageUnauthQueryAPIRequest.Get().(*TaobaoTopPackageUnauthQueryAPIRequest)
+}
+
+// ReleaseTaobaoTopPackageUnauthQueryAPIRequest 将 TaobaoTopPackageUnauthQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTopPackageUnauthQueryAPIRequest(v *TaobaoTopPackageUnauthQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoTopPackageUnauthQueryAPIRequest.Put(v)
 }

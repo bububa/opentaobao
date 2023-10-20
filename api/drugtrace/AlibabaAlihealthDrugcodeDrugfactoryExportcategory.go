@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drugcode.drugfactory.exportcategory
 //
 // 导出临床药品目录
-func AlibabaAlihealthDrugcodeDrugfactoryExportcategory(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugcodeDrugfactoryExportcategoryAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugcodeDrugfactoryExportcategoryAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugcodeDrugfactoryExportcategoryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugcodeDrugfactoryExportcategory(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugcodeDrugfactoryExportcategoryAPIRequest, resp *drugtrace.AlibabaAlihealthDrugcodeDrugfactoryExportcategoryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

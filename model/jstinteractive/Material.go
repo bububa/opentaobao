@@ -1,5 +1,9 @@
 package jstinteractive
 
+import (
+	"sync"
+)
+
 // Material 结构体
 type Material struct {
 	// 待完成按钮文案
@@ -22,4 +26,30 @@ type Material struct {
 	CompleteBtn string `json:"complete_btn,omitempty" xml:"complete_btn,omitempty"`
 	// 浏览任务需要多少秒才能完成
 	Duration int64 `json:"duration,omitempty" xml:"duration,omitempty"`
+}
+
+var poolMaterial = sync.Pool{
+	New: func() any {
+		return new(Material)
+	},
+}
+
+// GetMaterial() 从对象池中获取Material
+func GetMaterial() *Material {
+	return poolMaterial.Get().(*Material)
+}
+
+// ReleaseMaterial 释放Material
+func ReleaseMaterial(v *Material) {
+	v.AcceptBtn = ""
+	v.ActionType = ""
+	v.SubTitle = ""
+	v.Icon = ""
+	v.Action = ""
+	v.Title = ""
+	v.InitBtn = ""
+	v.AwardBtn = ""
+	v.CompleteBtn = ""
+	v.Duration = 0
+	poolMaterial.Put(v)
 }

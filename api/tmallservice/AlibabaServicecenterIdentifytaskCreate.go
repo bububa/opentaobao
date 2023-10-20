@@ -9,11 +9,6 @@ import (
 // alibaba.servicecenter.identifytask.create
 //
 // 创建核销单
-func AlibabaServicecenterIdentifytaskCreate(clt *core.SDKClient, req *tmallservice.AlibabaServicecenterIdentifytaskCreateAPIRequest, session string) (*tmallservice.AlibabaServicecenterIdentifytaskCreateAPIResponse, error) {
-	var resp tmallservice.AlibabaServicecenterIdentifytaskCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaServicecenterIdentifytaskCreate(clt *core.SDKClient, req *tmallservice.AlibabaServicecenterIdentifytaskCreateAPIRequest, resp *tmallservice.AlibabaServicecenterIdentifytaskCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

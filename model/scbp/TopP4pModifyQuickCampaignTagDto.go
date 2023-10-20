@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // TopP4pModifyQuickCampaignTagDto 结构体
 type TopP4pModifyQuickCampaignTagDto struct {
 	// 定向标签编码，新增/修改有效
@@ -14,4 +18,26 @@ type TopP4pModifyQuickCampaignTagDto struct {
 	TagId int64 `json:"tag_id,omitempty" xml:"tag_id,omitempty"`
 	// 定向类型，新增/修改有效，1=类目访客，2=类目询盘，3=固定标签，比如本店、高MOQ等，4=地域定向
 	TagType int64 `json:"tag_type,omitempty" xml:"tag_type,omitempty"`
+}
+
+var poolTopP4pModifyQuickCampaignTagDto = sync.Pool{
+	New: func() any {
+		return new(TopP4pModifyQuickCampaignTagDto)
+	},
+}
+
+// GetTopP4pModifyQuickCampaignTagDto() 从对象池中获取TopP4pModifyQuickCampaignTagDto
+func GetTopP4pModifyQuickCampaignTagDto() *TopP4pModifyQuickCampaignTagDto {
+	return poolTopP4pModifyQuickCampaignTagDto.Get().(*TopP4pModifyQuickCampaignTagDto)
+}
+
+// ReleaseTopP4pModifyQuickCampaignTagDto 释放TopP4pModifyQuickCampaignTagDto
+func ReleaseTopP4pModifyQuickCampaignTagDto(v *TopP4pModifyQuickCampaignTagDto) {
+	v.OptionValue = ""
+	v.Action = 0
+	v.BidRate = 0
+	v.CampaignId = 0
+	v.TagId = 0
+	v.TagType = 0
+	poolTopP4pModifyQuickCampaignTagDto.Put(v)
 }

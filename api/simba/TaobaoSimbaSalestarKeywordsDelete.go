@@ -9,11 +9,6 @@ import (
 // taobao.simba.salestar.keywords.delete
 //
 // （新）关键词删除相关接口
-func TaobaoSimbaSalestarKeywordsDelete(clt *core.SDKClient, req *simba.TaobaoSimbaSalestarKeywordsDeleteAPIRequest, session string) (*simba.TaobaoSimbaSalestarKeywordsDeleteAPIResponse, error) {
-	var resp simba.TaobaoSimbaSalestarKeywordsDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaSalestarKeywordsDelete(clt *core.SDKClient, req *simba.TaobaoSimbaSalestarKeywordsDeleteAPIRequest, resp *simba.TaobaoSimbaSalestarKeywordsDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

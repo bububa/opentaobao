@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkSeriesCreateAPIRequest struct {
 // NewAlibabaWdkSeriesCreateRequest 初始化AlibabaWdkSeriesCreateAPIRequest对象
 func NewAlibabaWdkSeriesCreateRequest() *AlibabaWdkSeriesCreateAPIRequest {
 	return &AlibabaWdkSeriesCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkSeriesCreateAPIRequest) Reset() {
+	r._series = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkSeriesCreateAPIRequest) SetSeries(_series *SkuSeriesCreateReq
 // GetSeries Series Getter
 func (r AlibabaWdkSeriesCreateAPIRequest) GetSeries() *SkuSeriesCreateRequest {
 	return r._series
+}
+
+var poolAlibabaWdkSeriesCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkSeriesCreateRequest()
+	},
+}
+
+// GetAlibabaWdkSeriesCreateRequest 从 sync.Pool 获取 AlibabaWdkSeriesCreateAPIRequest
+func GetAlibabaWdkSeriesCreateAPIRequest() *AlibabaWdkSeriesCreateAPIRequest {
+	return poolAlibabaWdkSeriesCreateAPIRequest.Get().(*AlibabaWdkSeriesCreateAPIRequest)
+}
+
+// ReleaseAlibabaWdkSeriesCreateAPIRequest 将 AlibabaWdkSeriesCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkSeriesCreateAPIRequest(v *AlibabaWdkSeriesCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkSeriesCreateAPIRequest.Put(v)
 }

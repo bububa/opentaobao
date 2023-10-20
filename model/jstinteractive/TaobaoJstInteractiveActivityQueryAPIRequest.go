@@ -2,6 +2,7 @@ package jstinteractive
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoJstInteractiveActivityQueryAPIRequest struct {
 // NewTaobaoJstInteractiveActivityQueryRequest 初始化TaobaoJstInteractiveActivityQueryAPIRequest对象
 func NewTaobaoJstInteractiveActivityQueryRequest() *TaobaoJstInteractiveActivityQueryAPIRequest {
 	return &TaobaoJstInteractiveActivityQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJstInteractiveActivityQueryAPIRequest) Reset() {
+	r._miniAppId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoJstInteractiveActivityQueryAPIRequest) SetMiniAppId(_miniAppId st
 // GetMiniAppId MiniAppId Getter
 func (r TaobaoJstInteractiveActivityQueryAPIRequest) GetMiniAppId() string {
 	return r._miniAppId
+}
+
+var poolTaobaoJstInteractiveActivityQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJstInteractiveActivityQueryRequest()
+	},
+}
+
+// GetTaobaoJstInteractiveActivityQueryRequest 从 sync.Pool 获取 TaobaoJstInteractiveActivityQueryAPIRequest
+func GetTaobaoJstInteractiveActivityQueryAPIRequest() *TaobaoJstInteractiveActivityQueryAPIRequest {
+	return poolTaobaoJstInteractiveActivityQueryAPIRequest.Get().(*TaobaoJstInteractiveActivityQueryAPIRequest)
+}
+
+// ReleaseTaobaoJstInteractiveActivityQueryAPIRequest 将 TaobaoJstInteractiveActivityQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJstInteractiveActivityQueryAPIRequest(v *TaobaoJstInteractiveActivityQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoJstInteractiveActivityQueryAPIRequest.Put(v)
 }

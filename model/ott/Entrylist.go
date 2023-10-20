@@ -1,5 +1,9 @@
 package ott
 
+import (
+	"sync"
+)
+
 // Entrylist 结构体
 type Entrylist struct {
 	// 入口名称
@@ -14,4 +18,26 @@ type Entrylist struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 排序
 	Sort int64 `json:"sort,omitempty" xml:"sort,omitempty"`
+}
+
+var poolEntrylist = sync.Pool{
+	New: func() any {
+		return new(Entrylist)
+	},
+}
+
+// GetEntrylist() 从对象池中获取Entrylist
+func GetEntrylist() *Entrylist {
+	return poolEntrylist.Get().(*Entrylist)
+}
+
+// ReleaseEntrylist 释放Entrylist
+func ReleaseEntrylist(v *Entrylist) {
+	v.Name = ""
+	v.PicUrl = ""
+	v.Action = ""
+	v.Extra = ""
+	v.Id = 0
+	v.Sort = 0
+	poolEntrylist.Put(v)
 }

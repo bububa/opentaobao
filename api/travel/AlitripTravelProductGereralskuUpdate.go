@@ -9,11 +9,6 @@ import (
 // alitrip.travel.product.gereralsku.update
 //
 // 发布SKU信息（如果properties重复 则更新）
-func AlitripTravelProductGereralskuUpdate(clt *core.SDKClient, req *travel.AlitripTravelProductGereralskuUpdateAPIRequest, session string) (*travel.AlitripTravelProductGereralskuUpdateAPIResponse, error) {
-	var resp travel.AlitripTravelProductGereralskuUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripTravelProductGereralskuUpdate(clt *core.SDKClient, req *travel.AlitripTravelProductGereralskuUpdateAPIRequest, resp *travel.AlitripTravelProductGereralskuUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

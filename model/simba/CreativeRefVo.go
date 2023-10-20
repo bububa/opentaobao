@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // CreativeRefVo 结构体
 type CreativeRefVo struct {
 	// 单品创意素材
@@ -88,4 +92,63 @@ type CreativeRefVo struct {
 	MaterialImageInfo *MaterialImageInfoVo `json:"material_image_info,omitempty" xml:"material_image_info,omitempty"`
 	// 视频id
 	VideoId int64 `json:"video_id,omitempty" xml:"video_id,omitempty"`
+}
+
+var poolCreativeRefVo = sync.Pool{
+	New: func() any {
+		return new(CreativeRefVo)
+	},
+}
+
+// GetCreativeRefVo() 从对象池中获取CreativeRefVo
+func GetCreativeRefVo() *CreativeRefVo {
+	return poolCreativeRefVo.Get().(*CreativeRefVo)
+}
+
+// ReleaseCreativeRefVo 释放CreativeRefVo
+func ReleaseCreativeRefVo(v *CreativeRefVo) {
+	v.MaterialList = v.MaterialList[:0]
+	v.ClickurlMediaTypeList = v.ClickurlMediaTypeList[:0]
+	v.AdzoneAuditResultList = v.AdzoneAuditResultList[:0]
+	v.PreviewList = v.PreviewList[:0]
+	v.ItemVideos = v.ItemVideos[:0]
+	v.ItemIdList = v.ItemIdList[:0]
+	v.Children = v.Children[:0]
+	v.CampaignName = ""
+	v.AdgroupName = ""
+	v.CreativeName = ""
+	v.CreativeCenterId = ""
+	v.JsInHtml = ""
+	v.TemplateData = ""
+	v.CreativeSize = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.CreateTime = ""
+	v.UpdateTime = ""
+	v.ExtendData = ""
+	v.Title = ""
+	v.ImagePath = ""
+	v.ClickUrl = ""
+	v.VideoDuration = ""
+	v.VideoPath = ""
+	v.VideoImagePath = ""
+	v.TabType = ""
+	v.TabTypeName = ""
+	v.TypeName = ""
+	v.Type = ""
+	v.MainPicVideo = ""
+	v.CampaignId = 0
+	v.AdgroupId = 0
+	v.CreativeId = 0
+	v.CreativeType = 0
+	v.Source = 0
+	v.Format = 0
+	v.TemplateId = 0
+	v.OuterId = 0
+	v.Audit = nil
+	v.OnlineStatus = 0
+	v.CreativePromotionEntity = nil
+	v.MaterialImageInfo = nil
+	v.VideoId = 0
+	poolCreativeRefVo.Put(v)
 }

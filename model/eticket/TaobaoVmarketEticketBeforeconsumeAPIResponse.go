@@ -2,6 +2,7 @@ package eticket
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoVmarketEticketBeforeconsumeAPIResponse struct {
 	model.CommonResponse
 	TaobaoVmarketEticketBeforeconsumeAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoVmarketEticketBeforeconsumeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoVmarketEticketBeforeconsumeAPIResponseModel).Reset()
 }
 
 // TaobaoVmarketEticketBeforeconsumeAPIResponseModel is 电子凭证验码前置确认 成功返回结果
@@ -38,4 +45,35 @@ type TaobaoVmarketEticketBeforeconsumeAPIResponseModel struct {
 	ItemType int64 `json:"item_type,omitempty" xml:"item_type,omitempty"`
 	// 当前码剩余可核销数量
 	CodeLeftNum int64 `json:"code_left_num,omitempty" xml:"code_left_num,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoVmarketEticketBeforeconsumeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ValidEnds = ""
+	m.ValidStart = ""
+	m.LeftAmount = ""
+	m.ItemTitle = ""
+	m.RetCode = 0
+	m.LeftNum = 0
+	m.OrderId = 0
+	m.ItemType = 0
+	m.CodeLeftNum = 0
+}
+
+var poolTaobaoVmarketEticketBeforeconsumeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoVmarketEticketBeforeconsumeAPIResponse)
+	},
+}
+
+// GetTaobaoVmarketEticketBeforeconsumeAPIResponse 从 sync.Pool 获取 TaobaoVmarketEticketBeforeconsumeAPIResponse
+func GetTaobaoVmarketEticketBeforeconsumeAPIResponse() *TaobaoVmarketEticketBeforeconsumeAPIResponse {
+	return poolTaobaoVmarketEticketBeforeconsumeAPIResponse.Get().(*TaobaoVmarketEticketBeforeconsumeAPIResponse)
+}
+
+// ReleaseTaobaoVmarketEticketBeforeconsumeAPIResponse 将 TaobaoVmarketEticketBeforeconsumeAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoVmarketEticketBeforeconsumeAPIResponse(v *TaobaoVmarketEticketBeforeconsumeAPIResponse) {
+	v.Reset()
+	poolTaobaoVmarketEticketBeforeconsumeAPIResponse.Put(v)
 }

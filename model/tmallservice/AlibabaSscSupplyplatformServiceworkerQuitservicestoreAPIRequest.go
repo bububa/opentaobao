@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest struct {
 // NewAlibabaSscSupplyplatformServiceworkerQuitservicestoreRequest 初始化AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest对象
 func NewAlibabaSscSupplyplatformServiceworkerQuitservicestoreRequest() *AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest {
 	return &AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest) Reset() {
+	r._workerQuitServiceStoreForTopReqDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest) SetWor
 // GetWorkerQuitServiceStoreForTopReqDto WorkerQuitServiceStoreForTopReqDto Getter
 func (r AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest) GetWorkerQuitServiceStoreForTopReqDto() *WorkerQuitServiceStoreForTopReqDto {
 	return r._workerQuitServiceStoreForTopReqDto
+}
+
+var poolAlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSscSupplyplatformServiceworkerQuitservicestoreRequest()
+	},
+}
+
+// GetAlibabaSscSupplyplatformServiceworkerQuitservicestoreRequest 从 sync.Pool 获取 AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest
+func GetAlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest() *AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest {
+	return poolAlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest.Get().(*AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest)
+}
+
+// ReleaseAlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest 将 AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest(v *AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest) {
+	v.Reset()
+	poolAlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest.Put(v)
 }

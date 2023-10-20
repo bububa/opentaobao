@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // WorkCallbackRequest 结构体
 type WorkCallbackRequest struct {
 	// 子单列表
@@ -20,4 +24,29 @@ type WorkCallbackRequest struct {
 	LogisticsNo string `json:"logistics_no,omitempty" xml:"logistics_no,omitempty"`
 	// 业务订单编码
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
+}
+
+var poolWorkCallbackRequest = sync.Pool{
+	New: func() any {
+		return new(WorkCallbackRequest)
+	},
+}
+
+// GetWorkCallbackRequest() 从对象池中获取WorkCallbackRequest
+func GetWorkCallbackRequest() *WorkCallbackRequest {
+	return poolWorkCallbackRequest.Get().(*WorkCallbackRequest)
+}
+
+// ReleaseWorkCallbackRequest 释放WorkCallbackRequest
+func ReleaseWorkCallbackRequest(v *WorkCallbackRequest) {
+	v.WorkCallbackSubOrderInfoList = v.WorkCallbackSubOrderInfoList[:0]
+	v.StoreId = ""
+	v.Status = ""
+	v.StatusRemark = ""
+	v.DelivererName = ""
+	v.DelivererPhone = ""
+	v.DelivererCompany = ""
+	v.LogisticsNo = ""
+	v.BizOrderId = 0
+	poolWorkCallbackRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package lstfundbill
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaLstTradeOrderFundbillQueryAPIResponse struct {
 	AlibabaLstTradeOrderFundbillQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaLstTradeOrderFundbillQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaLstTradeOrderFundbillQueryAPIResponseModel).Reset()
+}
+
 // AlibabaLstTradeOrderFundbillQueryAPIResponseModel is 结算明细数据查询（品牌商视角） 成功返回结果
 type AlibabaLstTradeOrderFundbillQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_lst_trade_order_fundbill_query_response"`
@@ -22,4 +29,27 @@ type AlibabaLstTradeOrderFundbillQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 包装类
 	Result *PagedResultDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaLstTradeOrderFundbillQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaLstTradeOrderFundbillQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaLstTradeOrderFundbillQueryAPIResponse)
+	},
+}
+
+// GetAlibabaLstTradeOrderFundbillQueryAPIResponse 从 sync.Pool 获取 AlibabaLstTradeOrderFundbillQueryAPIResponse
+func GetAlibabaLstTradeOrderFundbillQueryAPIResponse() *AlibabaLstTradeOrderFundbillQueryAPIResponse {
+	return poolAlibabaLstTradeOrderFundbillQueryAPIResponse.Get().(*AlibabaLstTradeOrderFundbillQueryAPIResponse)
+}
+
+// ReleaseAlibabaLstTradeOrderFundbillQueryAPIResponse 将 AlibabaLstTradeOrderFundbillQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaLstTradeOrderFundbillQueryAPIResponse(v *AlibabaLstTradeOrderFundbillQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaLstTradeOrderFundbillQueryAPIResponse.Put(v)
 }

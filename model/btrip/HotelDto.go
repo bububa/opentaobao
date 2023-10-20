@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // HotelDto 结构体
 type HotelDto struct {
 	// 房间列表
@@ -60,4 +64,49 @@ type HotelDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 是否是客栈
 	BnbHotel bool `json:"bnb_hotel,omitempty" xml:"bnb_hotel,omitempty"`
+}
+
+var poolHotelDto = sync.Pool{
+	New: func() any {
+		return new(HotelDto)
+	},
+}
+
+// GetHotelDto() 从对象池中获取HotelDto
+func GetHotelDto() *HotelDto {
+	return poolHotelDto.Get().(*HotelDto)
+}
+
+// ReleaseHotelDto 释放HotelDto
+func ReleaseHotelDto(v *HotelDto) {
+	v.Rooms = v.Rooms[:0]
+	v.Address = ""
+	v.Brand = ""
+	v.CheckInTime = ""
+	v.CheckOutTime = ""
+	v.DecorateTime = ""
+	v.Description = ""
+	v.H5DetailUrl = ""
+	v.HotelFacilities = ""
+	v.Lat = ""
+	v.Lng = ""
+	v.Name = ""
+	v.OpeningTime = ""
+	v.PcDetailUrl = ""
+	v.PicUrls = ""
+	v.RateScore = ""
+	v.ServicesStr = ""
+	v.Star = ""
+	v.SupplierCode = ""
+	v.SupplierName = ""
+	v.Tel = ""
+	v.Type = ""
+	v.City = 0
+	v.District = 0
+	v.Province = 0
+	v.RateNumber = 0
+	v.Shid = 0
+	v.Status = 0
+	v.BnbHotel = false
+	poolHotelDto.Put(v)
 }

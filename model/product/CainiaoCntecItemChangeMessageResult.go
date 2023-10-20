@@ -1,5 +1,9 @@
 package product
 
+import (
+	"sync"
+)
+
 // CainiaoCntecItemChangeMessageResult 结构体
 type CainiaoCntecItemChangeMessageResult struct {
 	// 错误码
@@ -10,4 +14,24 @@ type CainiaoCntecItemChangeMessageResult struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 是否成功接受到请求
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
+}
+
+var poolCainiaoCntecItemChangeMessageResult = sync.Pool{
+	New: func() any {
+		return new(CainiaoCntecItemChangeMessageResult)
+	},
+}
+
+// GetCainiaoCntecItemChangeMessageResult() 从对象池中获取CainiaoCntecItemChangeMessageResult
+func GetCainiaoCntecItemChangeMessageResult() *CainiaoCntecItemChangeMessageResult {
+	return poolCainiaoCntecItemChangeMessageResult.Get().(*CainiaoCntecItemChangeMessageResult)
+}
+
+// ReleaseCainiaoCntecItemChangeMessageResult 释放CainiaoCntecItemChangeMessageResult
+func ReleaseCainiaoCntecItemChangeMessageResult(v *CainiaoCntecItemChangeMessageResult) {
+	v.ErrCode = ""
+	v.ErrorMsg = ""
+	v.Success = false
+	v.Model = false
+	poolCainiaoCntecItemChangeMessageResult.Put(v)
 }

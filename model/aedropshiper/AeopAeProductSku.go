@@ -1,5 +1,9 @@
 package aedropshiper
 
+import (
+	"sync"
+)
+
 // AeopAeProductSku 结构体
 type AeopAeProductSku struct {
 	// SKU属性对象列表
@@ -28,4 +32,33 @@ type AeopAeProductSku struct {
 	SkuBulkOrder int64 `json:"sku_bulk_order,omitempty" xml:"sku_bulk_order,omitempty"`
 	// Sku库存,数据格式有货true，无货false；至少有一条sku记录是有货的。
 	SkuStock bool `json:"sku_stock,omitempty" xml:"sku_stock,omitempty"`
+}
+
+var poolAeopAeProductSku = sync.Pool{
+	New: func() any {
+		return new(AeopAeProductSku)
+	},
+}
+
+// GetAeopAeProductSku() 从对象池中获取AeopAeProductSku
+func GetAeopAeProductSku() *AeopAeProductSku {
+	return poolAeopAeProductSku.Get().(*AeopAeProductSku)
+}
+
+// ReleaseAeopAeProductSku 释放AeopAeProductSku
+func ReleaseAeopAeProductSku(v *AeopAeProductSku) {
+	v.AeopSKUPropertyList = v.AeopSKUPropertyList[:0]
+	v.AeopSKUPropertys = v.AeopSKUPropertys[:0]
+	v.SkuPrice = ""
+	v.Id = ""
+	v.CurrencyCode = ""
+	v.OfferSalePrice = ""
+	v.OfferBulkSalePrice = ""
+	v.SkuCode = ""
+	v.Barcode = ""
+	v.SKUAvailableStock = 0
+	v.IpmSkuStock = 0
+	v.SkuBulkOrder = 0
+	v.SkuStock = false
+	poolAeopAeProductSku.Put(v)
 }

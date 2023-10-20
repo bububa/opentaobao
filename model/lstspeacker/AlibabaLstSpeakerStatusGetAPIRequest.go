@@ -2,6 +2,7 @@ package lstspeacker
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLstSpeakerStatusGetAPIRequest struct {
 // NewAlibabaLstSpeakerStatusGetRequest 初始化AlibabaLstSpeakerStatusGetAPIRequest对象
 func NewAlibabaLstSpeakerStatusGetRequest() *AlibabaLstSpeakerStatusGetAPIRequest {
 	return &AlibabaLstSpeakerStatusGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstSpeakerStatusGetAPIRequest) Reset() {
+	r._deviceCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLstSpeakerStatusGetAPIRequest) SetDeviceCode(_deviceCode string)
 // GetDeviceCode DeviceCode Getter
 func (r AlibabaLstSpeakerStatusGetAPIRequest) GetDeviceCode() string {
 	return r._deviceCode
+}
+
+var poolAlibabaLstSpeakerStatusGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstSpeakerStatusGetRequest()
+	},
+}
+
+// GetAlibabaLstSpeakerStatusGetRequest 从 sync.Pool 获取 AlibabaLstSpeakerStatusGetAPIRequest
+func GetAlibabaLstSpeakerStatusGetAPIRequest() *AlibabaLstSpeakerStatusGetAPIRequest {
+	return poolAlibabaLstSpeakerStatusGetAPIRequest.Get().(*AlibabaLstSpeakerStatusGetAPIRequest)
+}
+
+// ReleaseAlibabaLstSpeakerStatusGetAPIRequest 将 AlibabaLstSpeakerStatusGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstSpeakerStatusGetAPIRequest(v *AlibabaLstSpeakerStatusGetAPIRequest) {
+	v.Reset()
+	poolAlibabaLstSpeakerStatusGetAPIRequest.Put(v)
 }

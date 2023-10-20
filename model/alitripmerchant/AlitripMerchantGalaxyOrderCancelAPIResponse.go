@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripMerchantGalaxyOrderCancelAPIResponse struct {
 	AlitripMerchantGalaxyOrderCancelAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripMerchantGalaxyOrderCancelAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripMerchantGalaxyOrderCancelAPIResponseModel).Reset()
+}
+
 // AlitripMerchantGalaxyOrderCancelAPIResponseModel is 星河-取消预订 成功返回结果
 type AlitripMerchantGalaxyOrderCancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_merchant_galaxy_order_cancel_response"`
@@ -22,4 +29,27 @@ type AlitripMerchantGalaxyOrderCancelAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 默认描述
 	Result *AlitripMerchantGalaxyOrderCancelResponse `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripMerchantGalaxyOrderCancelAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlitripMerchantGalaxyOrderCancelAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyOrderCancelAPIResponse)
+	},
+}
+
+// GetAlitripMerchantGalaxyOrderCancelAPIResponse 从 sync.Pool 获取 AlitripMerchantGalaxyOrderCancelAPIResponse
+func GetAlitripMerchantGalaxyOrderCancelAPIResponse() *AlitripMerchantGalaxyOrderCancelAPIResponse {
+	return poolAlitripMerchantGalaxyOrderCancelAPIResponse.Get().(*AlitripMerchantGalaxyOrderCancelAPIResponse)
+}
+
+// ReleaseAlitripMerchantGalaxyOrderCancelAPIResponse 将 AlitripMerchantGalaxyOrderCancelAPIResponse 保存到 sync.Pool
+func ReleaseAlitripMerchantGalaxyOrderCancelAPIResponse(v *AlitripMerchantGalaxyOrderCancelAPIResponse) {
+	v.Reset()
+	poolAlitripMerchantGalaxyOrderCancelAPIResponse.Put(v)
 }

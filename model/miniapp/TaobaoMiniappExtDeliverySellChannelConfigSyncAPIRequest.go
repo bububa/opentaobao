@@ -2,6 +2,7 @@ package miniapp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoMiniappExtDeliverySellChannelConfigSyncAPIRequest struct {
 // NewTaobaoMiniappExtDeliverySellChannelConfigSyncRequest 初始化TaobaoMiniappExtDeliverySellChannelConfigSyncAPIRequest对象
 func NewTaobaoMiniappExtDeliverySellChannelConfigSyncRequest() *TaobaoMiniappExtDeliverySellChannelConfigSyncAPIRequest {
 	return &TaobaoMiniappExtDeliverySellChannelConfigSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMiniappExtDeliverySellChannelConfigSyncAPIRequest) Reset() {
+	r._sellerChannelConfig = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoMiniappExtDeliverySellChannelConfigSyncAPIRequest) SetSellerChann
 // GetSellerChannelConfig SellerChannelConfig Getter
 func (r TaobaoMiniappExtDeliverySellChannelConfigSyncAPIRequest) GetSellerChannelConfig() *SellerChannelConfigDto {
 	return r._sellerChannelConfig
+}
+
+var poolTaobaoMiniappExtDeliverySellChannelConfigSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMiniappExtDeliverySellChannelConfigSyncRequest()
+	},
+}
+
+// GetTaobaoMiniappExtDeliverySellChannelConfigSyncRequest 从 sync.Pool 获取 TaobaoMiniappExtDeliverySellChannelConfigSyncAPIRequest
+func GetTaobaoMiniappExtDeliverySellChannelConfigSyncAPIRequest() *TaobaoMiniappExtDeliverySellChannelConfigSyncAPIRequest {
+	return poolTaobaoMiniappExtDeliverySellChannelConfigSyncAPIRequest.Get().(*TaobaoMiniappExtDeliverySellChannelConfigSyncAPIRequest)
+}
+
+// ReleaseTaobaoMiniappExtDeliverySellChannelConfigSyncAPIRequest 将 TaobaoMiniappExtDeliverySellChannelConfigSyncAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMiniappExtDeliverySellChannelConfigSyncAPIRequest(v *TaobaoMiniappExtDeliverySellChannelConfigSyncAPIRequest) {
+	v.Reset()
+	poolTaobaoMiniappExtDeliverySellChannelConfigSyncAPIRequest.Put(v)
 }

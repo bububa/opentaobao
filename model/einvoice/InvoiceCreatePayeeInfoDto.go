@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // InvoiceCreatePayeeInfoDto 结构体
 type InvoiceCreatePayeeInfoDto struct {
 	// 销方地址，销方电话加地址不超出100字符
@@ -20,4 +24,29 @@ type InvoiceCreatePayeeInfoDto struct {
 	PayeeReceiver string `json:"payee_receiver,omitempty" xml:"payee_receiver,omitempty"`
 	// 销方税务登记证号
 	PayeeRegisterNo string `json:"payee_register_no,omitempty" xml:"payee_register_no,omitempty"`
+}
+
+var poolInvoiceCreatePayeeInfoDto = sync.Pool{
+	New: func() any {
+		return new(InvoiceCreatePayeeInfoDto)
+	},
+}
+
+// GetInvoiceCreatePayeeInfoDto() 从对象池中获取InvoiceCreatePayeeInfoDto
+func GetInvoiceCreatePayeeInfoDto() *InvoiceCreatePayeeInfoDto {
+	return poolInvoiceCreatePayeeInfoDto.Get().(*InvoiceCreatePayeeInfoDto)
+}
+
+// ReleaseInvoiceCreatePayeeInfoDto 释放InvoiceCreatePayeeInfoDto
+func ReleaseInvoiceCreatePayeeInfoDto(v *InvoiceCreatePayeeInfoDto) {
+	v.PayeeAddress = ""
+	v.PayeeBankAccountId = ""
+	v.PayeeBankName = ""
+	v.PayeeChecker = ""
+	v.PayeeName = ""
+	v.PayeeOperator = ""
+	v.PayeePhone = ""
+	v.PayeeReceiver = ""
+	v.PayeeRegisterNo = ""
+	poolInvoiceCreatePayeeInfoDto.Put(v)
 }

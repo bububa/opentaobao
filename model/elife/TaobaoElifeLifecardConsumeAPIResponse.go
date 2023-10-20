@@ -2,6 +2,7 @@ package elife
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoElifeLifecardConsumeAPIResponse struct {
 	model.CommonResponse
 	TaobaoElifeLifecardConsumeAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoElifeLifecardConsumeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoElifeLifecardConsumeAPIResponseModel).Reset()
 }
 
 // TaobaoElifeLifecardConsumeAPIResponseModel is 品牌惠卡券核销 成功返回结果
@@ -30,4 +37,31 @@ type TaobaoElifeLifecardConsumeAPIResponseModel struct {
 	InflateAmount int64 `json:"inflate_amount,omitempty" xml:"inflate_amount,omitempty"`
 	// 是否成功
 	Successed bool `json:"successed,omitempty" xml:"successed,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoElifeLifecardConsumeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultCode = ""
+	m.ResultMsg = ""
+	m.Amount = 0
+	m.InflateAmount = 0
+	m.Successed = false
+}
+
+var poolTaobaoElifeLifecardConsumeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoElifeLifecardConsumeAPIResponse)
+	},
+}
+
+// GetTaobaoElifeLifecardConsumeAPIResponse 从 sync.Pool 获取 TaobaoElifeLifecardConsumeAPIResponse
+func GetTaobaoElifeLifecardConsumeAPIResponse() *TaobaoElifeLifecardConsumeAPIResponse {
+	return poolTaobaoElifeLifecardConsumeAPIResponse.Get().(*TaobaoElifeLifecardConsumeAPIResponse)
+}
+
+// ReleaseTaobaoElifeLifecardConsumeAPIResponse 将 TaobaoElifeLifecardConsumeAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoElifeLifecardConsumeAPIResponse(v *TaobaoElifeLifecardConsumeAPIResponse) {
+	v.Reset()
+	poolTaobaoElifeLifecardConsumeAPIResponse.Put(v)
 }

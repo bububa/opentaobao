@@ -2,6 +2,7 @@ package simba
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoSimbaKeywordFindbyidsAPIResponse struct {
 	TaobaoSimbaKeywordFindbyidsAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoSimbaKeywordFindbyidsAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoSimbaKeywordFindbyidsAPIResponseModel).Reset()
+}
+
 // TaobaoSimbaKeywordFindbyidsAPIResponseModel is （新）根据一堆关键词ids获取关键词 成功返回结果
 type TaobaoSimbaKeywordFindbyidsAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_keyword_findbyids_response"`
@@ -24,4 +31,28 @@ type TaobaoSimbaKeywordFindbyidsAPIResponseModel struct {
 	Results []SiriusBidwordDto `json:"results,omitempty" xml:"results>sirius_bidword_dto,omitempty"`
 	// 错误原因
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoSimbaKeywordFindbyidsAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Results = m.Results[:0]
+	m.ErrorMsg = ""
+}
+
+var poolTaobaoSimbaKeywordFindbyidsAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoSimbaKeywordFindbyidsAPIResponse)
+	},
+}
+
+// GetTaobaoSimbaKeywordFindbyidsAPIResponse 从 sync.Pool 获取 TaobaoSimbaKeywordFindbyidsAPIResponse
+func GetTaobaoSimbaKeywordFindbyidsAPIResponse() *TaobaoSimbaKeywordFindbyidsAPIResponse {
+	return poolTaobaoSimbaKeywordFindbyidsAPIResponse.Get().(*TaobaoSimbaKeywordFindbyidsAPIResponse)
+}
+
+// ReleaseTaobaoSimbaKeywordFindbyidsAPIResponse 将 TaobaoSimbaKeywordFindbyidsAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoSimbaKeywordFindbyidsAPIResponse(v *TaobaoSimbaKeywordFindbyidsAPIResponse) {
+	v.Reset()
+	poolTaobaoSimbaKeywordFindbyidsAPIResponse.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.marketing.itemdiscount.queryitems
 //
 // 查询参加特价活动的商品优惠详情
-func AlibabaWdkMarketingItemdiscountQueryitems(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItemdiscountQueryitemsAPIRequest, session string) (*wdk.AlibabaWdkMarketingItemdiscountQueryitemsAPIResponse, error) {
-	var resp wdk.AlibabaWdkMarketingItemdiscountQueryitemsAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkMarketingItemdiscountQueryitems(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItemdiscountQueryitemsAPIRequest, resp *wdk.AlibabaWdkMarketingItemdiscountQueryitemsAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQimenStoreDeleteAPIRequest struct {
 // NewTaobaoQimenStoreDeleteRequest 初始化TaobaoQimenStoreDeleteAPIRequest对象
 func NewTaobaoQimenStoreDeleteRequest() *TaobaoQimenStoreDeleteAPIRequest {
 	return &TaobaoQimenStoreDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenStoreDeleteAPIRequest) Reset() {
+	r._storeId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoQimenStoreDeleteAPIRequest) SetStoreId(_storeId int64) error {
 // GetStoreId StoreId Getter
 func (r TaobaoQimenStoreDeleteAPIRequest) GetStoreId() int64 {
 	return r._storeId
+}
+
+var poolTaobaoQimenStoreDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenStoreDeleteRequest()
+	},
+}
+
+// GetTaobaoQimenStoreDeleteRequest 从 sync.Pool 获取 TaobaoQimenStoreDeleteAPIRequest
+func GetTaobaoQimenStoreDeleteAPIRequest() *TaobaoQimenStoreDeleteAPIRequest {
+	return poolTaobaoQimenStoreDeleteAPIRequest.Get().(*TaobaoQimenStoreDeleteAPIRequest)
+}
+
+// ReleaseTaobaoQimenStoreDeleteAPIRequest 将 TaobaoQimenStoreDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenStoreDeleteAPIRequest(v *TaobaoQimenStoreDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenStoreDeleteAPIRequest.Put(v)
 }

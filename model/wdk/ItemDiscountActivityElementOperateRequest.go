@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ItemDiscountActivityElementOperateRequest 结构体
 type ItemDiscountActivityElementOperateRequest struct {
 	// 商品元素信息
@@ -12,4 +16,25 @@ type ItemDiscountActivityElementOperateRequest struct {
 	OutActId string `json:"out_act_id,omitempty" xml:"out_act_id,omitempty"`
 	// 操作活动的ID
 	ActId int64 `json:"act_id,omitempty" xml:"act_id,omitempty"`
+}
+
+var poolItemDiscountActivityElementOperateRequest = sync.Pool{
+	New: func() any {
+		return new(ItemDiscountActivityElementOperateRequest)
+	},
+}
+
+// GetItemDiscountActivityElementOperateRequest() 从对象池中获取ItemDiscountActivityElementOperateRequest
+func GetItemDiscountActivityElementOperateRequest() *ItemDiscountActivityElementOperateRequest {
+	return poolItemDiscountActivityElementOperateRequest.Get().(*ItemDiscountActivityElementOperateRequest)
+}
+
+// ReleaseItemDiscountActivityElementOperateRequest 释放ItemDiscountActivityElementOperateRequest
+func ReleaseItemDiscountActivityElementOperateRequest(v *ItemDiscountActivityElementOperateRequest) {
+	v.SkuElements = v.SkuElements[:0]
+	v.CreatorId = ""
+	v.CreatorName = ""
+	v.OutActId = ""
+	v.ActId = 0
+	poolItemDiscountActivityElementOperateRequest.Put(v)
 }

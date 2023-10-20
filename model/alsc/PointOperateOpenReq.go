@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // PointOperateOpenReq 结构体
 type PointOperateOpenReq struct {
 	// saas品牌id
@@ -26,4 +30,32 @@ type PointOperateOpenReq struct {
 	ChangePoint int64 `json:"change_point,omitempty" xml:"change_point,omitempty"`
 	// 1-增加(charge)  2-冻结(freeze)  3-核销(verify)  4-扣减(decrease)
 	OperateType int64 `json:"operate_type,omitempty" xml:"operate_type,omitempty"`
+}
+
+var poolPointOperateOpenReq = sync.Pool{
+	New: func() any {
+		return new(PointOperateOpenReq)
+	},
+}
+
+// GetPointOperateOpenReq() 从对象池中获取PointOperateOpenReq
+func GetPointOperateOpenReq() *PointOperateOpenReq {
+	return poolPointOperateOpenReq.Get().(*PointOperateOpenReq)
+}
+
+// ReleasePointOperateOpenReq 释放PointOperateOpenReq
+func ReleasePointOperateOpenReq(v *PointOperateOpenReq) {
+	v.BrandId = ""
+	v.Mobile = ""
+	v.OperatorId = ""
+	v.OuterId = ""
+	v.OuterType = ""
+	v.Reason = ""
+	v.RequestId = ""
+	v.ShopId = ""
+	v.OuterOrderId = ""
+	v.CustomerId = ""
+	v.ChangePoint = 0
+	v.OperateType = 0
+	poolPointOperateOpenReq.Put(v)
 }

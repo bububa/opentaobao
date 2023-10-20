@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.coupon.template.query
 //
 // 优惠券模版查询
-func AlibabaWdkCouponTemplateQuery(clt *core.SDKClient, req *promotion.AlibabaWdkCouponTemplateQueryAPIRequest, session string) (*promotion.AlibabaWdkCouponTemplateQueryAPIResponse, error) {
-	var resp promotion.AlibabaWdkCouponTemplateQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkCouponTemplateQuery(clt *core.SDKClient, req *promotion.AlibabaWdkCouponTemplateQueryAPIRequest, resp *promotion.AlibabaWdkCouponTemplateQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

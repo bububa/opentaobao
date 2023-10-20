@@ -2,6 +2,7 @@ package cityretail
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoCityretailWmflConvertWarehouseAPIRequest struct {
 // NewTaobaoCityretailWmflConvertWarehouseRequest 初始化TaobaoCityretailWmflConvertWarehouseAPIRequest对象
 func NewTaobaoCityretailWmflConvertWarehouseRequest() *TaobaoCityretailWmflConvertWarehouseAPIRequest {
 	return &TaobaoCityretailWmflConvertWarehouseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCityretailWmflConvertWarehouseAPIRequest) Reset() {
+	r._tbOrderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoCityretailWmflConvertWarehouseAPIRequest) SetTbOrderId(_tbOrderId
 // GetTbOrderId TbOrderId Getter
 func (r TaobaoCityretailWmflConvertWarehouseAPIRequest) GetTbOrderId() string {
 	return r._tbOrderId
+}
+
+var poolTaobaoCityretailWmflConvertWarehouseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCityretailWmflConvertWarehouseRequest()
+	},
+}
+
+// GetTaobaoCityretailWmflConvertWarehouseRequest 从 sync.Pool 获取 TaobaoCityretailWmflConvertWarehouseAPIRequest
+func GetTaobaoCityretailWmflConvertWarehouseAPIRequest() *TaobaoCityretailWmflConvertWarehouseAPIRequest {
+	return poolTaobaoCityretailWmflConvertWarehouseAPIRequest.Get().(*TaobaoCityretailWmflConvertWarehouseAPIRequest)
+}
+
+// ReleaseTaobaoCityretailWmflConvertWarehouseAPIRequest 将 TaobaoCityretailWmflConvertWarehouseAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCityretailWmflConvertWarehouseAPIRequest(v *TaobaoCityretailWmflConvertWarehouseAPIRequest) {
+	v.Reset()
+	poolTaobaoCityretailWmflConvertWarehouseAPIRequest.Put(v)
 }

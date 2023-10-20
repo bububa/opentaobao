@@ -1,5 +1,9 @@
 package tanx
 
+import (
+	"sync"
+)
+
 // QualificationQuery 结构体
 type QualificationQuery struct {
 	// tanx系统广告主表userId，查询时和user_names选其一
@@ -36,4 +40,37 @@ type QualificationQuery struct {
 	AuditStatus int64 `json:"audit_status,omitempty" xml:"audit_status,omitempty"`
 	// 正序还是倒序 1是正,0是倒
 	Asc int64 `json:"asc,omitempty" xml:"asc,omitempty"`
+}
+
+var poolQualificationQuery = sync.Pool{
+	New: func() any {
+		return new(QualificationQuery)
+	},
+}
+
+// GetQualificationQuery() 从对象池中获取QualificationQuery
+func GetQualificationQuery() *QualificationQuery {
+	return poolQualificationQuery.Get().(*QualificationQuery)
+}
+
+// ReleaseQualificationQuery 释放QualificationQuery
+func ReleaseQualificationQuery(v *QualificationQuery) {
+	v.UserIds = v.UserIds[:0]
+	v.UserNames = v.UserNames[:0]
+	v.ElementIds = v.ElementIds[:0]
+	v.Ids = v.Ids[:0]
+	v.StartTimeBegin = ""
+	v.OrderBy = ""
+	v.EndTimeEnd = ""
+	v.StartTimeEnd = ""
+	v.CreateTimeEnd = ""
+	v.AuditTimeBegin = ""
+	v.AuditTimeEnd = ""
+	v.EndTimeBegin = ""
+	v.CreateTimeBegin = ""
+	v.EffectiveStatus = 0
+	v.UserType = 0
+	v.AuditStatus = 0
+	v.Asc = 0
+	poolQualificationQuery.Put(v)
 }

@@ -2,6 +2,7 @@ package bus
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type TaobaoBusItemNotifyAPIResponse struct {
 	TaobaoBusItemNotifyAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoBusItemNotifyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoBusItemNotifyAPIResponseModel).Reset()
+}
+
 // TaobaoBusItemNotifyAPIResponseModel is 汽车票城际巴士车次变更通知飞猪接口 成功返回结果
 type TaobaoBusItemNotifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"bus_item_notify_response"`
@@ -27,4 +34,29 @@ type TaobaoBusItemNotifyAPIResponseModel struct {
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoBusItemNotifyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultCode = ""
+	m.ResultMsg = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoBusItemNotifyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoBusItemNotifyAPIResponse)
+	},
+}
+
+// GetTaobaoBusItemNotifyAPIResponse 从 sync.Pool 获取 TaobaoBusItemNotifyAPIResponse
+func GetTaobaoBusItemNotifyAPIResponse() *TaobaoBusItemNotifyAPIResponse {
+	return poolTaobaoBusItemNotifyAPIResponse.Get().(*TaobaoBusItemNotifyAPIResponse)
+}
+
+// ReleaseTaobaoBusItemNotifyAPIResponse 将 TaobaoBusItemNotifyAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoBusItemNotifyAPIResponse(v *TaobaoBusItemNotifyAPIResponse) {
+	v.Reset()
+	poolTaobaoBusItemNotifyAPIResponse.Put(v)
 }

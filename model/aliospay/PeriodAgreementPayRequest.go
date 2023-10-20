@@ -1,5 +1,9 @@
 package aliospay
 
+import (
+	"sync"
+)
+
 // PeriodAgreementPayRequest 结构体
 type PeriodAgreementPayRequest struct {
 	// 请求唯一id，不可重复，服务端会根据此参数防重放
@@ -20,4 +24,29 @@ type PeriodAgreementPayRequest struct {
 	PayNotifyUrl string `json:"pay_notify_url,omitempty" xml:"pay_notify_url,omitempty"`
 	// 订单总金额，单位为分
 	TotalAmount int64 `json:"total_amount,omitempty" xml:"total_amount,omitempty"`
+}
+
+var poolPeriodAgreementPayRequest = sync.Pool{
+	New: func() any {
+		return new(PeriodAgreementPayRequest)
+	},
+}
+
+// GetPeriodAgreementPayRequest() 从对象池中获取PeriodAgreementPayRequest
+func GetPeriodAgreementPayRequest() *PeriodAgreementPayRequest {
+	return poolPeriodAgreementPayRequest.Get().(*PeriodAgreementPayRequest)
+}
+
+// ReleasePeriodAgreementPayRequest 释放PeriodAgreementPayRequest
+func ReleasePeriodAgreementPayRequest(v *PeriodAgreementPayRequest) {
+	v.TraceId = ""
+	v.Lang = ""
+	v.Time = ""
+	v.BizOrderId = ""
+	v.Subject = ""
+	v.ExternalPeriodAgreementCode = ""
+	v.ServiceProtocol = ""
+	v.PayNotifyUrl = ""
+	v.TotalAmount = 0
+	poolPeriodAgreementPayRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package tmallgeniescp
 
+import (
+	"sync"
+)
+
 // IbpPurchaseOrderDto 结构体
 type IbpPurchaseOrderDto struct {
 	// 周
@@ -24,4 +28,31 @@ type IbpPurchaseOrderDto struct {
 	NormalPlanQuantity int64 `json:"normal_plan_quantity,omitempty" xml:"normal_plan_quantity,omitempty"`
 	// 计划数量
 	PlanQuantity int64 `json:"plan_quantity,omitempty" xml:"plan_quantity,omitempty"`
+}
+
+var poolIbpPurchaseOrderDto = sync.Pool{
+	New: func() any {
+		return new(IbpPurchaseOrderDto)
+	},
+}
+
+// GetIbpPurchaseOrderDto() 从对象池中获取IbpPurchaseOrderDto
+func GetIbpPurchaseOrderDto() *IbpPurchaseOrderDto {
+	return poolIbpPurchaseOrderDto.Get().(*IbpPurchaseOrderDto)
+}
+
+// ReleaseIbpPurchaseOrderDto 释放IbpPurchaseOrderDto
+func ReleaseIbpPurchaseOrderDto(v *IbpPurchaseOrderDto) {
+	v.WeekNO = ""
+	v.MaterielCode = ""
+	v.LocationCode = ""
+	v.ExtendJson = ""
+	v.Tenant = ""
+	v.KeyFigureDate = ""
+	v.LocationCodeTo = ""
+	v.ProductionQuantity = 0
+	v.UrgentPlanQuantity = 0
+	v.NormalPlanQuantity = 0
+	v.PlanQuantity = 0
+	poolIbpPurchaseOrderDto.Put(v)
 }

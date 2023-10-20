@@ -9,11 +9,6 @@ import (
 // taobao.uscesl.biz.item.light.up
 //
 // 亮灯API
-func TaobaoUsceslBizItemLightUp(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizItemLightUpAPIRequest, session string) (*uscesl.TaobaoUsceslBizItemLightUpAPIResponse, error) {
-	var resp uscesl.TaobaoUsceslBizItemLightUpAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUsceslBizItemLightUp(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizItemLightUpAPIRequest, resp *uscesl.TaobaoUsceslBizItemLightUpAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

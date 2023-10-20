@@ -1,5 +1,9 @@
 package topoaid
 
+import (
+	"sync"
+)
+
 // PackageInfo 结构体
 type PackageInfo struct {
 	// 运单号
@@ -16,4 +20,27 @@ type PackageInfo struct {
 	StationType string `json:"station_type,omitempty" xml:"station_type,omitempty"`
 	// 是否为隐私订单
 	PrivacyOrder bool `json:"privacy_order,omitempty" xml:"privacy_order,omitempty"`
+}
+
+var poolPackageInfo = sync.Pool{
+	New: func() any {
+		return new(PackageInfo)
+	},
+}
+
+// GetPackageInfo() 从对象池中获取PackageInfo
+func GetPackageInfo() *PackageInfo {
+	return poolPackageInfo.Get().(*PackageInfo)
+}
+
+// ReleasePackageInfo 释放PackageInfo
+func ReleasePackageInfo(v *PackageInfo) {
+	v.MailNo = ""
+	v.SecretNo = ""
+	v.SecretNoExpireTime = ""
+	v.ReceiverMobile = ""
+	v.CpCode = ""
+	v.StationType = ""
+	v.PrivacyOrder = false
+	poolPackageInfo.Put(v)
 }

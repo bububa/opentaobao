@@ -2,6 +2,7 @@ package legalsuit
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaLegalStandpointDraftstandpointInsertAPIResponse struct {
 	model.CommonResponse
 	AlibabaLegalStandpointDraftstandpointInsertAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaLegalStandpointDraftstandpointInsertAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaLegalStandpointDraftstandpointInsertAPIResponseModel).Reset()
 }
 
 // AlibabaLegalStandpointDraftstandpointInsertAPIResponseModel is 编辑后新增草稿口径 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaLegalStandpointDraftstandpointInsertAPIResponseModel struct {
 	Content int64 `json:"content,omitempty" xml:"content,omitempty"`
 	// 成功
 	SuccessRes bool `json:"success_res,omitempty" xml:"success_res,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaLegalStandpointDraftstandpointInsertAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorMsg = ""
+	m.ErrorCodeRes = 0
+	m.Content = 0
+	m.SuccessRes = false
+}
+
+var poolAlibabaLegalStandpointDraftstandpointInsertAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaLegalStandpointDraftstandpointInsertAPIResponse)
+	},
+}
+
+// GetAlibabaLegalStandpointDraftstandpointInsertAPIResponse 从 sync.Pool 获取 AlibabaLegalStandpointDraftstandpointInsertAPIResponse
+func GetAlibabaLegalStandpointDraftstandpointInsertAPIResponse() *AlibabaLegalStandpointDraftstandpointInsertAPIResponse {
+	return poolAlibabaLegalStandpointDraftstandpointInsertAPIResponse.Get().(*AlibabaLegalStandpointDraftstandpointInsertAPIResponse)
+}
+
+// ReleaseAlibabaLegalStandpointDraftstandpointInsertAPIResponse 将 AlibabaLegalStandpointDraftstandpointInsertAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaLegalStandpointDraftstandpointInsertAPIResponse(v *AlibabaLegalStandpointDraftstandpointInsertAPIResponse) {
+	v.Reset()
+	poolAlibabaLegalStandpointDraftstandpointInsertAPIResponse.Put(v)
 }

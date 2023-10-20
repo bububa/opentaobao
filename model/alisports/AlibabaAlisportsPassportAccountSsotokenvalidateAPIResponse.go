@@ -2,6 +2,7 @@ package alisports
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAlisportsPassportAccountSsotokenvalidateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlisportsPassportAccountSsotokenvalidateAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlisportsPassportAccountSsotokenvalidateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlisportsPassportAccountSsotokenvalidateAPIResponseModel).Reset()
 }
 
 // AlibabaAlisportsPassportAccountSsotokenvalidateAPIResponseModel is sso_token验证 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAlisportsPassportAccountSsotokenvalidateAPIResponseModel struct {
 	Appuid string `json:"appuid,omitempty" xml:"appuid,omitempty"`
 	// 状态码 200表示操作成功
 	AlispCode int64 `json:"alisp_code,omitempty" xml:"alisp_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlisportsPassportAccountSsotokenvalidateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.AlispMsg = ""
+	m.Aliuid = ""
+	m.Appuid = ""
+	m.AlispCode = 0
+}
+
+var poolAlibabaAlisportsPassportAccountSsotokenvalidateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlisportsPassportAccountSsotokenvalidateAPIResponse)
+	},
+}
+
+// GetAlibabaAlisportsPassportAccountSsotokenvalidateAPIResponse 从 sync.Pool 获取 AlibabaAlisportsPassportAccountSsotokenvalidateAPIResponse
+func GetAlibabaAlisportsPassportAccountSsotokenvalidateAPIResponse() *AlibabaAlisportsPassportAccountSsotokenvalidateAPIResponse {
+	return poolAlibabaAlisportsPassportAccountSsotokenvalidateAPIResponse.Get().(*AlibabaAlisportsPassportAccountSsotokenvalidateAPIResponse)
+}
+
+// ReleaseAlibabaAlisportsPassportAccountSsotokenvalidateAPIResponse 将 AlibabaAlisportsPassportAccountSsotokenvalidateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlisportsPassportAccountSsotokenvalidateAPIResponse(v *AlibabaAlisportsPassportAccountSsotokenvalidateAPIResponse) {
+	v.Reset()
+	poolAlibabaAlisportsPassportAccountSsotokenvalidateAPIResponse.Put(v)
 }

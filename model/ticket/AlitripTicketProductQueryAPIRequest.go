@@ -2,6 +2,7 @@ package ticket
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlitripTicketProductQueryAPIRequest struct {
 // NewAlitripTicketProductQueryRequest 初始化AlitripTicketProductQueryAPIRequest对象
 func NewAlitripTicketProductQueryRequest() *AlitripTicketProductQueryAPIRequest {
 	return &AlitripTicketProductQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTicketProductQueryAPIRequest) Reset() {
+	r._outProductId = ""
+	r._pageSource = ""
+	r._aliProductId = 0
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlitripTicketProductQueryAPIRequest) SetItemId(_itemId int64) error {
 // GetItemId ItemId Getter
 func (r AlitripTicketProductQueryAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolAlitripTicketProductQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTicketProductQueryRequest()
+	},
+}
+
+// GetAlitripTicketProductQueryRequest 从 sync.Pool 获取 AlitripTicketProductQueryAPIRequest
+func GetAlitripTicketProductQueryAPIRequest() *AlitripTicketProductQueryAPIRequest {
+	return poolAlitripTicketProductQueryAPIRequest.Get().(*AlitripTicketProductQueryAPIRequest)
+}
+
+// ReleaseAlitripTicketProductQueryAPIRequest 将 AlitripTicketProductQueryAPIRequest 放入 sync.Pool
+func ReleaseAlitripTicketProductQueryAPIRequest(v *AlitripTicketProductQueryAPIRequest) {
+	v.Reset()
+	poolAlitripTicketProductQueryAPIRequest.Put(v)
 }

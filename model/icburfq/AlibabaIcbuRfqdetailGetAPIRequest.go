@@ -2,6 +2,7 @@ package icburfq
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaIcbuRfqdetailGetAPIRequest struct {
 // NewAlibabaIcbuRfqdetailGetRequest 初始化AlibabaIcbuRfqdetailGetAPIRequest对象
 func NewAlibabaIcbuRfqdetailGetRequest() *AlibabaIcbuRfqdetailGetAPIRequest {
 	return &AlibabaIcbuRfqdetailGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIcbuRfqdetailGetAPIRequest) Reset() {
+	r._md5key = ""
+	r._rfqQueryDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaIcbuRfqdetailGetAPIRequest) SetRfqQueryDto(_rfqQueryDto *RfqDeta
 // GetRfqQueryDto RfqQueryDto Getter
 func (r AlibabaIcbuRfqdetailGetAPIRequest) GetRfqQueryDto() *RfqDetailSearchQueryDto {
 	return r._rfqQueryDto
+}
+
+var poolAlibabaIcbuRfqdetailGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIcbuRfqdetailGetRequest()
+	},
+}
+
+// GetAlibabaIcbuRfqdetailGetRequest 从 sync.Pool 获取 AlibabaIcbuRfqdetailGetAPIRequest
+func GetAlibabaIcbuRfqdetailGetAPIRequest() *AlibabaIcbuRfqdetailGetAPIRequest {
+	return poolAlibabaIcbuRfqdetailGetAPIRequest.Get().(*AlibabaIcbuRfqdetailGetAPIRequest)
+}
+
+// ReleaseAlibabaIcbuRfqdetailGetAPIRequest 将 AlibabaIcbuRfqdetailGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIcbuRfqdetailGetAPIRequest(v *AlibabaIcbuRfqdetailGetAPIRequest) {
+	v.Reset()
+	poolAlibabaIcbuRfqdetailGetAPIRequest.Put(v)
 }

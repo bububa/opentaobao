@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaWdkMarketingItempoolExcludeskucodeAPIRequest struct {
 // NewAlibabaWdkMarketingItempoolExcludeskucodeRequest 初始化AlibabaWdkMarketingItempoolExcludeskucodeAPIRequest对象
 func NewAlibabaWdkMarketingItempoolExcludeskucodeRequest() *AlibabaWdkMarketingItempoolExcludeskucodeAPIRequest {
 	return &AlibabaWdkMarketingItempoolExcludeskucodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkMarketingItempoolExcludeskucodeAPIRequest) Reset() {
+	r._param0 = nil
+	r._param1 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaWdkMarketingItempoolExcludeskucodeAPIRequest) SetParam1(_param1 
 // GetParam1 Param1 Getter
 func (r AlibabaWdkMarketingItempoolExcludeskucodeAPIRequest) GetParam1() *CommonActivityParam {
 	return r._param1
+}
+
+var poolAlibabaWdkMarketingItempoolExcludeskucodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkMarketingItempoolExcludeskucodeRequest()
+	},
+}
+
+// GetAlibabaWdkMarketingItempoolExcludeskucodeRequest 从 sync.Pool 获取 AlibabaWdkMarketingItempoolExcludeskucodeAPIRequest
+func GetAlibabaWdkMarketingItempoolExcludeskucodeAPIRequest() *AlibabaWdkMarketingItempoolExcludeskucodeAPIRequest {
+	return poolAlibabaWdkMarketingItempoolExcludeskucodeAPIRequest.Get().(*AlibabaWdkMarketingItempoolExcludeskucodeAPIRequest)
+}
+
+// ReleaseAlibabaWdkMarketingItempoolExcludeskucodeAPIRequest 将 AlibabaWdkMarketingItempoolExcludeskucodeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkMarketingItempoolExcludeskucodeAPIRequest(v *AlibabaWdkMarketingItempoolExcludeskucodeAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkMarketingItempoolExcludeskucodeAPIRequest.Put(v)
 }

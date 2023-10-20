@@ -9,11 +9,6 @@ import (
 // taobao.omni.order.detail
 //
 // 全渠道订单详情
-func TaobaoOmniOrderDetail(clt *core.SDKClient, req *omniorder.TaobaoOmniOrderDetailAPIRequest, session string) (*omniorder.TaobaoOmniOrderDetailAPIResponse, error) {
-	var resp omniorder.TaobaoOmniOrderDetailAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOmniOrderDetail(clt *core.SDKClient, req *omniorder.TaobaoOmniOrderDetailAPIRequest, resp *omniorder.TaobaoOmniOrderDetailAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

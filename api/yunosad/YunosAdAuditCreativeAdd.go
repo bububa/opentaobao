@@ -9,11 +9,6 @@ import (
 // yunos.ad.audit.creative.add
 //
 // YunOS广告业务第三方DSP单个创意预审接口
-func YunosAdAuditCreativeAdd(clt *core.SDKClient, req *yunosad.YunosAdAuditCreativeAddAPIRequest, session string) (*yunosad.YunosAdAuditCreativeAddAPIResponse, error) {
-	var resp yunosad.YunosAdAuditCreativeAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosAdAuditCreativeAdd(clt *core.SDKClient, req *yunosad.YunosAdAuditCreativeAddAPIRequest, resp *yunosad.YunosAdAuditCreativeAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package wlbimports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,14 @@ type TaobaoWlbCrossborderWaybillGetAPIRequest struct {
 // NewTaobaoWlbCrossborderWaybillGetRequest 初始化TaobaoWlbCrossborderWaybillGetAPIRequest对象
 func NewTaobaoWlbCrossborderWaybillGetRequest() *TaobaoWlbCrossborderWaybillGetAPIRequest {
 	return &TaobaoWlbCrossborderWaybillGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbCrossborderWaybillGetAPIRequest) Reset() {
+	r._orderCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -53,4 +60,21 @@ func (r *TaobaoWlbCrossborderWaybillGetAPIRequest) SetOrderCode(_orderCode strin
 // GetOrderCode OrderCode Getter
 func (r TaobaoWlbCrossborderWaybillGetAPIRequest) GetOrderCode() string {
 	return r._orderCode
+}
+
+var poolTaobaoWlbCrossborderWaybillGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbCrossborderWaybillGetRequest()
+	},
+}
+
+// GetTaobaoWlbCrossborderWaybillGetRequest 从 sync.Pool 获取 TaobaoWlbCrossborderWaybillGetAPIRequest
+func GetTaobaoWlbCrossborderWaybillGetAPIRequest() *TaobaoWlbCrossborderWaybillGetAPIRequest {
+	return poolTaobaoWlbCrossborderWaybillGetAPIRequest.Get().(*TaobaoWlbCrossborderWaybillGetAPIRequest)
+}
+
+// ReleaseTaobaoWlbCrossborderWaybillGetAPIRequest 将 TaobaoWlbCrossborderWaybillGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbCrossborderWaybillGetAPIRequest(v *TaobaoWlbCrossborderWaybillGetAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbCrossborderWaybillGetAPIRequest.Put(v)
 }

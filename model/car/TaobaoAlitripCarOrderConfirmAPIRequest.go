@@ -2,6 +2,7 @@ package car
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAlitripCarOrderConfirmAPIRequest struct {
 // NewTaobaoAlitripCarOrderConfirmRequest 初始化TaobaoAlitripCarOrderConfirmAPIRequest对象
 func NewTaobaoAlitripCarOrderConfirmRequest() *TaobaoAlitripCarOrderConfirmAPIRequest {
 	return &TaobaoAlitripCarOrderConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripCarOrderConfirmAPIRequest) Reset() {
+	r._paramOrderConfirm = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAlitripCarOrderConfirmAPIRequest) SetParamOrderConfirm(_paramOrde
 // GetParamOrderConfirm ParamOrderConfirm Getter
 func (r TaobaoAlitripCarOrderConfirmAPIRequest) GetParamOrderConfirm() *OrderConfirm {
 	return r._paramOrderConfirm
+}
+
+var poolTaobaoAlitripCarOrderConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripCarOrderConfirmRequest()
+	},
+}
+
+// GetTaobaoAlitripCarOrderConfirmRequest 从 sync.Pool 获取 TaobaoAlitripCarOrderConfirmAPIRequest
+func GetTaobaoAlitripCarOrderConfirmAPIRequest() *TaobaoAlitripCarOrderConfirmAPIRequest {
+	return poolTaobaoAlitripCarOrderConfirmAPIRequest.Get().(*TaobaoAlitripCarOrderConfirmAPIRequest)
+}
+
+// ReleaseTaobaoAlitripCarOrderConfirmAPIRequest 将 TaobaoAlitripCarOrderConfirmAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripCarOrderConfirmAPIRequest(v *TaobaoAlitripCarOrderConfirmAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripCarOrderConfirmAPIRequest.Put(v)
 }

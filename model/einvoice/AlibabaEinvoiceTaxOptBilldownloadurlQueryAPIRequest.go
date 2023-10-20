@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaEinvoiceTaxOptBilldownloadurlQueryAPIRequest struct {
 // NewAlibabaEinvoiceTaxOptBilldownloadurlQueryRequest 初始化AlibabaEinvoiceTaxOptBilldownloadurlQueryAPIRequest对象
 func NewAlibabaEinvoiceTaxOptBilldownloadurlQueryRequest() *AlibabaEinvoiceTaxOptBilldownloadurlQueryAPIRequest {
 	return &AlibabaEinvoiceTaxOptBilldownloadurlQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceTaxOptBilldownloadurlQueryAPIRequest) Reset() {
+	r._billDate = ""
+	r._companyCode = ""
+	r._userType = ""
+	r._belongingBusinessScenario = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaEinvoiceTaxOptBilldownloadurlQueryAPIRequest) SetBelongingBusine
 // GetBelongingBusinessScenario BelongingBusinessScenario Getter
 func (r AlibabaEinvoiceTaxOptBilldownloadurlQueryAPIRequest) GetBelongingBusinessScenario() string {
 	return r._belongingBusinessScenario
+}
+
+var poolAlibabaEinvoiceTaxOptBilldownloadurlQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceTaxOptBilldownloadurlQueryRequest()
+	},
+}
+
+// GetAlibabaEinvoiceTaxOptBilldownloadurlQueryRequest 从 sync.Pool 获取 AlibabaEinvoiceTaxOptBilldownloadurlQueryAPIRequest
+func GetAlibabaEinvoiceTaxOptBilldownloadurlQueryAPIRequest() *AlibabaEinvoiceTaxOptBilldownloadurlQueryAPIRequest {
+	return poolAlibabaEinvoiceTaxOptBilldownloadurlQueryAPIRequest.Get().(*AlibabaEinvoiceTaxOptBilldownloadurlQueryAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceTaxOptBilldownloadurlQueryAPIRequest 将 AlibabaEinvoiceTaxOptBilldownloadurlQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceTaxOptBilldownloadurlQueryAPIRequest(v *AlibabaEinvoiceTaxOptBilldownloadurlQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceTaxOptBilldownloadurlQueryAPIRequest.Put(v)
 }

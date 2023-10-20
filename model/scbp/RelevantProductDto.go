@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // RelevantProductDto 结构体
 type RelevantProductDto struct {
 	// 推荐理由
@@ -16,4 +20,27 @@ type RelevantProductDto struct {
 	AdGroupId int64 `json:"ad_group_id,omitempty" xml:"ad_group_id,omitempty"`
 	// 是否优推
 	IsPreferential bool `json:"is_preferential,omitempty" xml:"is_preferential,omitempty"`
+}
+
+var poolRelevantProductDto = sync.Pool{
+	New: func() any {
+		return new(RelevantProductDto)
+	},
+}
+
+// GetRelevantProductDto() 从对象池中获取RelevantProductDto
+func GetRelevantProductDto() *RelevantProductDto {
+	return poolRelevantProductDto.Get().(*RelevantProductDto)
+}
+
+// ReleaseRelevantProductDto 释放RelevantProductDto
+func ReleaseRelevantProductDto(v *RelevantProductDto) {
+	v.ReasonList = v.ReasonList[:0]
+	v.ImgUrl = ""
+	v.ProductName = ""
+	v.QsStar = 0
+	v.ProductId = 0
+	v.AdGroupId = 0
+	v.IsPreferential = false
+	poolRelevantProductDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package openmall
 
+import (
+	"sync"
+)
+
 // TopRefundVo 结构体
 type TopRefundVo struct {
 	// 退款单状态，此接口存在延迟，详情参考taobao.openmall.refund.get
@@ -50,4 +54,44 @@ type TopRefundVo struct {
 	HasGoodReturn bool `json:"has_good_return,omitempty" xml:"has_good_return,omitempty"`
 	// 当该退款单为 未发货仅退款 申请时，因卖家坚持发货而导致关单的情况下，该字段值为true；其余条件为空或false
 	ClosedBySellerShip bool `json:"closed_by_seller_ship,omitempty" xml:"closed_by_seller_ship,omitempty"`
+}
+
+var poolTopRefundVo = sync.Pool{
+	New: func() any {
+		return new(TopRefundVo)
+	},
+}
+
+// GetTopRefundVo() 从对象池中获取TopRefundVo
+func GetTopRefundVo() *TopRefundVo {
+	return poolTopRefundVo.Get().(*TopRefundVo)
+}
+
+// ReleaseTopRefundVo 释放TopRefundVo
+func ReleaseTopRefundVo(v *TopRefundVo) {
+	v.Status = ""
+	v.Created = ""
+	v.RefundFee = ""
+	v.GoodStatus = ""
+	v.Modified = ""
+	v.Payment = ""
+	v.RefundPhase = ""
+	v.Address = ""
+	v.ShippingType = ""
+	v.Sku = ""
+	v.TotalFee = ""
+	v.Sid = ""
+	v.CompanyName = ""
+	v.PostCode = ""
+	v.FixPhone = ""
+	v.Mobile = ""
+	v.ConsigneeFullName = ""
+	v.RefundId = 0
+	v.Tid = 0
+	v.Num = 0
+	v.NumIid = 0
+	v.RefundRemindTimeout = nil
+	v.HasGoodReturn = false
+	v.ClosedBySellerShip = false
+	poolTopRefundVo.Put(v)
 }

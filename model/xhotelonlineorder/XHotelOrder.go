@@ -1,9 +1,13 @@
 package xhotelonlineorder
 
-// XhotelOrder 结构体
-type XhotelOrder struct {
+import (
+	"sync"
+)
+
+// XHotelOrder 结构体
+type XHotelOrder struct {
 	// 入住人信息
-	Guests []XorderGuest `json:"guests,omitempty" xml:"guests>xorder_guest,omitempty"`
+	Guests []XOrderGuest `json:"guests,omitempty" xml:"guests>x_order_guest,omitempty"`
 	// 下单时每间夜的价格（分）
 	Prices []int64 `json:"prices,omitempty" xml:"prices>int64,omitempty"`
 	// 合作方订单号,最长250个字符
@@ -64,4 +68,51 @@ type XhotelOrder struct {
 	TotalRoomPrice int64 `json:"total_room_price,omitempty" xml:"total_room_price,omitempty"`
 	// 商品id
 	Gid int64 `json:"gid,omitempty" xml:"gid,omitempty"`
+}
+
+var poolXHotelOrder = sync.Pool{
+	New: func() any {
+		return new(XHotelOrder)
+	},
+}
+
+// GetXHotelOrder() 从对象池中获取XHotelOrder
+func GetXHotelOrder() *XHotelOrder {
+	return poolXHotelOrder.Get().(*XHotelOrder)
+}
+
+// ReleaseXHotelOrder 释放XHotelOrder
+func ReleaseXHotelOrder(v *XHotelOrder) {
+	v.Guests = v.Guests[:0]
+	v.Prices = v.Prices[:0]
+	v.OutOid = ""
+	v.CheckoutDate = ""
+	v.Created = ""
+	v.ArriveLate = ""
+	v.ContactName = ""
+	v.CheckinDate = ""
+	v.SellerNick = ""
+	v.ContactPhone = ""
+	v.ArriveEarly = ""
+	v.PayTime = ""
+	v.TradeStatus = ""
+	v.Modified = ""
+	v.BuyerNick = ""
+	v.Message = ""
+	v.EndTime = ""
+	v.AlipayTradeNo = ""
+	v.LogisticsStatus = ""
+	v.RefundStatus = ""
+	v.Hid = 0
+	v.Rpid = 0
+	v.Type = 0
+	v.Oid = 0
+	v.Tid = 0
+	v.Nights = 0
+	v.RoomNumber = 0
+	v.Payment = 0
+	v.Rid = 0
+	v.TotalRoomPrice = 0
+	v.Gid = 0
+	poolXHotelOrder.Put(v)
 }

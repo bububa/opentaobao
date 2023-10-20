@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // AgreementInfoDto 结构体
 type AgreementInfoDto struct {
 	// 协议类型
@@ -32,4 +36,35 @@ type AgreementInfoDto struct {
 	ExtendField string `json:"extend_field,omitempty" xml:"extend_field,omitempty"`
 	// 签约状态
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolAgreementInfoDto = sync.Pool{
+	New: func() any {
+		return new(AgreementInfoDto)
+	},
+}
+
+// GetAgreementInfoDto() 从对象池中获取AgreementInfoDto
+func GetAgreementInfoDto() *AgreementInfoDto {
+	return poolAgreementInfoDto.Get().(*AgreementInfoDto)
+}
+
+// ReleaseAgreementInfoDto 释放AgreementInfoDto
+func ReleaseAgreementInfoDto(v *AgreementInfoDto) {
+	v.AgreementType = ""
+	v.AssetSymbol = ""
+	v.EmployerCode = ""
+	v.SignTime = ""
+	v.AgreementUrl = ""
+	v.ContractorCode = ""
+	v.ContractorName = ""
+	v.AssetType = ""
+	v.ApplyDutiableModeEnum = ""
+	v.PaySalaryModeEnum = ""
+	v.TaxOptimizationMode = ""
+	v.TerminationTime = ""
+	v.IdentificationInBelongingEmployer = ""
+	v.ExtendField = ""
+	v.Status = ""
+	poolAgreementInfoDto.Put(v)
 }

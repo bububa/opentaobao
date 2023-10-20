@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoScitemOutercodeGetAPIRequest struct {
 // NewTaobaoScitemOutercodeGetRequest 初始化TaobaoScitemOutercodeGetAPIRequest对象
 func NewTaobaoScitemOutercodeGetRequest() *TaobaoScitemOutercodeGetAPIRequest {
 	return &TaobaoScitemOutercodeGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoScitemOutercodeGetAPIRequest) Reset() {
+	r._outerCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoScitemOutercodeGetAPIRequest) SetOuterCode(_outerCode string) err
 // GetOuterCode OuterCode Getter
 func (r TaobaoScitemOutercodeGetAPIRequest) GetOuterCode() string {
 	return r._outerCode
+}
+
+var poolTaobaoScitemOutercodeGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoScitemOutercodeGetRequest()
+	},
+}
+
+// GetTaobaoScitemOutercodeGetRequest 从 sync.Pool 获取 TaobaoScitemOutercodeGetAPIRequest
+func GetTaobaoScitemOutercodeGetAPIRequest() *TaobaoScitemOutercodeGetAPIRequest {
+	return poolTaobaoScitemOutercodeGetAPIRequest.Get().(*TaobaoScitemOutercodeGetAPIRequest)
+}
+
+// ReleaseTaobaoScitemOutercodeGetAPIRequest 将 TaobaoScitemOutercodeGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoScitemOutercodeGetAPIRequest(v *TaobaoScitemOutercodeGetAPIRequest) {
+	v.Reset()
+	poolTaobaoScitemOutercodeGetAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package aliexpress
 
+import (
+	"sync"
+)
+
 // AeopWarehouseAbnormalOrderResult 结构体
 type AeopWarehouseAbnormalOrderResult struct {
 	// 解决方案_仓编码
@@ -54,4 +58,46 @@ type AeopWarehouseAbnormalOrderResult struct {
 	HighValueInsure bool `json:"high_value_insure,omitempty" xml:"high_value_insure,omitempty"`
 	// 逆袭高货值保险
 	ReHighValueInsure bool `json:"re_high_value_insure,omitempty" xml:"re_high_value_insure,omitempty"`
+}
+
+var poolAeopWarehouseAbnormalOrderResult = sync.Pool{
+	New: func() any {
+		return new(AeopWarehouseAbnormalOrderResult)
+	},
+}
+
+// GetAeopWarehouseAbnormalOrderResult() 从对象池中获取AeopWarehouseAbnormalOrderResult
+func GetAeopWarehouseAbnormalOrderResult() *AeopWarehouseAbnormalOrderResult {
+	return poolAeopWarehouseAbnormalOrderResult.Get().(*AeopWarehouseAbnormalOrderResult)
+}
+
+// ReleaseAeopWarehouseAbnormalOrderResult 释放AeopWarehouseAbnormalOrderResult
+func ReleaseAeopWarehouseAbnormalOrderResult(v *AeopWarehouseAbnormalOrderResult) {
+	v.SchemeCode = ""
+	v.SolutionName = ""
+	v.DomesticLogisticCompanyName = ""
+	v.GmtStatusUpdate = ""
+	v.AbnormalReason = ""
+	v.AbnormalCode = ""
+	v.IntlTrackingNo = ""
+	v.GmtCreate = ""
+	v.WarehouseName = ""
+	v.SolutionCode = ""
+	v.WarehouseCode = ""
+	v.LogisticDetailUrl = ""
+	v.OrderStatusName = ""
+	v.CancelStatusCode = ""
+	v.PaymentStatusCode = ""
+	v.UndExpressMailNo = ""
+	v.ForbiddenAuditResult = ""
+	v.OrderStatusCode = ""
+	v.CancelStatusName = ""
+	v.PaymentStatusName = ""
+	v.DomesticLogisticTrackingNo = ""
+	v.TradeOrderId = 0
+	v.Id = 0
+	v.UnreachableInsured = false
+	v.HighValueInsure = false
+	v.ReHighValueInsure = false
+	poolAeopWarehouseAbnormalOrderResult.Put(v)
 }

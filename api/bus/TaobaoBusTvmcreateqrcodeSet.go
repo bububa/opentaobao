@@ -9,11 +9,6 @@ import (
 // taobao.bus.tvmcreateqrcode.set
 //
 // 用于汽车票线下自助机调用获取支付宝的二维码
-func TaobaoBusTvmcreateqrcodeSet(clt *core.SDKClient, req *bus.TaobaoBusTvmcreateqrcodeSetAPIRequest, session string) (*bus.TaobaoBusTvmcreateqrcodeSetAPIResponse, error) {
-	var resp bus.TaobaoBusTvmcreateqrcodeSetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoBusTvmcreateqrcodeSet(clt *core.SDKClient, req *bus.TaobaoBusTvmcreateqrcodeSetAPIRequest, resp *bus.TaobaoBusTvmcreateqrcodeSetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

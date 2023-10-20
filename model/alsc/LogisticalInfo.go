@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // LogisticalInfo 结构体
 type LogisticalInfo struct {
 	// 送达时间
@@ -10,4 +14,24 @@ type LogisticalInfo struct {
 	ReceiveAddress string `json:"receive_address,omitempty" xml:"receive_address,omitempty"`
 	// 联系人手机
 	ReceivePhone string `json:"receive_phone,omitempty" xml:"receive_phone,omitempty"`
+}
+
+var poolLogisticalInfo = sync.Pool{
+	New: func() any {
+		return new(LogisticalInfo)
+	},
+}
+
+// GetLogisticalInfo() 从对象池中获取LogisticalInfo
+func GetLogisticalInfo() *LogisticalInfo {
+	return poolLogisticalInfo.Get().(*LogisticalInfo)
+}
+
+// ReleaseLogisticalInfo 释放LogisticalInfo
+func ReleaseLogisticalInfo(v *LogisticalInfo) {
+	v.ArriveTime = ""
+	v.LogisticsStatus = ""
+	v.ReceiveAddress = ""
+	v.ReceivePhone = ""
+	poolLogisticalInfo.Put(v)
 }

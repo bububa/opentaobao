@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // ResultData 结构体
 type ResultData struct {
 	// 数据
@@ -94,4 +98,66 @@ type ResultData struct {
 	ServiceProductType int64 `json:"service_product_type,omitempty" xml:"service_product_type,omitempty"`
 	// 上传结果是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolResultData = sync.Pool{
+	New: func() any {
+		return new(ResultData)
+	},
+}
+
+// GetResultData() 从对象池中获取ResultData
+func GetResultData() *ResultData {
+	return poolResultData.Get().(*ResultData)
+}
+
+// ReleaseResultData 释放ResultData
+func ReleaseResultData(v *ResultData) {
+	v.OnePagedDataList = v.OnePagedDataList[:0]
+	v.SimpleServiceSkuList = v.SimpleServiceSkuList[:0]
+	v.TownCode = ""
+	v.ServiceStoreName = ""
+	v.ManagerName = ""
+	v.Type = ""
+	v.BrandCertification = ""
+	v.AddressDetail = ""
+	v.ServiceStoreAlias = ""
+	v.AddressCity = ""
+	v.Longitude = ""
+	v.LicensePhoto = ""
+	v.ServiceSiteCode = ""
+	v.AddressDistrict = ""
+	v.AddressProvince = ""
+	v.DistrictCode = ""
+	v.BizType = ""
+	v.GmtExpire = ""
+	v.CityCode = ""
+	v.Latitude = ""
+	v.AddressTown = ""
+	v.FrontPhoto = ""
+	v.CertificatedBrandIds = ""
+	v.ProvinceCode = ""
+	v.BusinessHours = ""
+	v.PlaceStoreId = ""
+	v.ServiceStoreCode = ""
+	v.ServiceMobile = ""
+	v.Attributes = ""
+	v.CompanyName = ""
+	v.SocialCreditCode = ""
+	v.CreateTime = ""
+	v.Title = ""
+	v.ServiceProductContent = ""
+	v.ServiceCode = ""
+	v.FailureCode = ""
+	v.FailurePriceFactors = ""
+	v.FailureDetail = ""
+	v.PageSize = 0
+	v.TotalCount = 0
+	v.Status = 0
+	v.AddressCode = 0
+	v.ServiceProductId = 0
+	v.ServiceProductStatus = 0
+	v.ServiceProductType = 0
+	v.Success = false
+	poolResultData.Put(v)
 }

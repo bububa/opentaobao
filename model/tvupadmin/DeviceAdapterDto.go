@@ -1,5 +1,9 @@
 package tvupadmin
 
+import (
+	"sync"
+)
+
 // DeviceAdapterDto 结构体
 type DeviceAdapterDto struct {
 	// brandName
@@ -18,4 +22,28 @@ type DeviceAdapterDto struct {
 	ModelId int64 `json:"model_id,omitempty" xml:"model_id,omitempty"`
 	// realTypeId
 	RealTypeId int64 `json:"real_type_id,omitempty" xml:"real_type_id,omitempty"`
+}
+
+var poolDeviceAdapterDto = sync.Pool{
+	New: func() any {
+		return new(DeviceAdapterDto)
+	},
+}
+
+// GetDeviceAdapterDto() 从对象池中获取DeviceAdapterDto
+func GetDeviceAdapterDto() *DeviceAdapterDto {
+	return poolDeviceAdapterDto.Get().(*DeviceAdapterDto)
+}
+
+// ReleaseDeviceAdapterDto 释放DeviceAdapterDto
+func ReleaseDeviceAdapterDto(v *DeviceAdapterDto) {
+	v.BrandName = ""
+	v.HighestSystemVersion = ""
+	v.MinimumSystemVersion = ""
+	v.ModelName = ""
+	v.RealTypeName = ""
+	v.BrandId = 0
+	v.ModelId = 0
+	v.RealTypeId = 0
+	poolDeviceAdapterDto.Put(v)
 }

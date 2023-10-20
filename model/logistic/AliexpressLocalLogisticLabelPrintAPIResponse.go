@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AliexpressLocalLogisticLabelPrintAPIResponse struct {
 	model.CommonResponse
 	AliexpressLocalLogisticLabelPrintAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AliexpressLocalLogisticLabelPrintAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliexpressLocalLogisticLabelPrintAPIResponseModel).Reset()
 }
 
 // AliexpressLocalLogisticLabelPrintAPIResponseModel is 物流打印面单 成功返回结果
@@ -28,4 +35,30 @@ type AliexpressLocalLogisticLabelPrintAPIResponseModel struct {
 	Data *LabelDto `json:"data,omitempty" xml:"data,omitempty"`
 	// 接口调用状态
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliexpressLocalLogisticLabelPrintAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorResultMessage = ""
+	m.ErrorResultCode = ""
+	m.Data = nil
+	m.IsSuccess = false
+}
+
+var poolAliexpressLocalLogisticLabelPrintAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliexpressLocalLogisticLabelPrintAPIResponse)
+	},
+}
+
+// GetAliexpressLocalLogisticLabelPrintAPIResponse 从 sync.Pool 获取 AliexpressLocalLogisticLabelPrintAPIResponse
+func GetAliexpressLocalLogisticLabelPrintAPIResponse() *AliexpressLocalLogisticLabelPrintAPIResponse {
+	return poolAliexpressLocalLogisticLabelPrintAPIResponse.Get().(*AliexpressLocalLogisticLabelPrintAPIResponse)
+}
+
+// ReleaseAliexpressLocalLogisticLabelPrintAPIResponse 将 AliexpressLocalLogisticLabelPrintAPIResponse 保存到 sync.Pool
+func ReleaseAliexpressLocalLogisticLabelPrintAPIResponse(v *AliexpressLocalLogisticLabelPrintAPIResponse) {
+	v.Reset()
+	poolAliexpressLocalLogisticLabelPrintAPIResponse.Put(v)
 }

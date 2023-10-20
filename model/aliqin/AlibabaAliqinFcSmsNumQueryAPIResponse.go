@@ -2,6 +2,7 @@ package aliqin
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAliqinFcSmsNumQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinFcSmsNumQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAliqinFcSmsNumQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAliqinFcSmsNumQueryAPIResponseModel).Reset()
 }
 
 // AlibabaAliqinFcSmsNumQueryAPIResponseModel is 短信发送记录查询 成功返回结果
@@ -30,4 +37,31 @@ type AlibabaAliqinFcSmsNumQueryAPIResponseModel struct {
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// 总页数
 	TotalPage int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAliqinFcSmsNumQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Values = m.Values[:0]
+	m.CurrentPage = 0
+	m.PageSize = 0
+	m.TotalCount = 0
+	m.TotalPage = 0
+}
+
+var poolAlibabaAliqinFcSmsNumQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAliqinFcSmsNumQueryAPIResponse)
+	},
+}
+
+// GetAlibabaAliqinFcSmsNumQueryAPIResponse 从 sync.Pool 获取 AlibabaAliqinFcSmsNumQueryAPIResponse
+func GetAlibabaAliqinFcSmsNumQueryAPIResponse() *AlibabaAliqinFcSmsNumQueryAPIResponse {
+	return poolAlibabaAliqinFcSmsNumQueryAPIResponse.Get().(*AlibabaAliqinFcSmsNumQueryAPIResponse)
+}
+
+// ReleaseAlibabaAliqinFcSmsNumQueryAPIResponse 将 AlibabaAliqinFcSmsNumQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAliqinFcSmsNumQueryAPIResponse(v *AlibabaAliqinFcSmsNumQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaAliqinFcSmsNumQueryAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package wirelessshare
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoWirelessShareTpwdQueryAPIRequest struct {
 // NewTaobaoWirelessShareTpwdQueryRequest 初始化TaobaoWirelessShareTpwdQueryAPIRequest对象
 func NewTaobaoWirelessShareTpwdQueryRequest() *TaobaoWirelessShareTpwdQueryAPIRequest {
 	return &TaobaoWirelessShareTpwdQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWirelessShareTpwdQueryAPIRequest) Reset() {
+	r._passwordContent = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoWirelessShareTpwdQueryAPIRequest) SetPasswordContent(_passwordCon
 // GetPasswordContent PasswordContent Getter
 func (r TaobaoWirelessShareTpwdQueryAPIRequest) GetPasswordContent() string {
 	return r._passwordContent
+}
+
+var poolTaobaoWirelessShareTpwdQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWirelessShareTpwdQueryRequest()
+	},
+}
+
+// GetTaobaoWirelessShareTpwdQueryRequest 从 sync.Pool 获取 TaobaoWirelessShareTpwdQueryAPIRequest
+func GetTaobaoWirelessShareTpwdQueryAPIRequest() *TaobaoWirelessShareTpwdQueryAPIRequest {
+	return poolTaobaoWirelessShareTpwdQueryAPIRequest.Get().(*TaobaoWirelessShareTpwdQueryAPIRequest)
+}
+
+// ReleaseTaobaoWirelessShareTpwdQueryAPIRequest 将 TaobaoWirelessShareTpwdQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWirelessShareTpwdQueryAPIRequest(v *TaobaoWirelessShareTpwdQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoWirelessShareTpwdQueryAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // WorkerDto 结构体
 type WorkerDto struct {
 	// 1111
@@ -56,4 +60,47 @@ type WorkerDto struct {
 	WorkerId int64 `json:"worker_id,omitempty" xml:"worker_id,omitempty"`
 	// 111
 	ProviderId int64 `json:"provider_id,omitempty" xml:"provider_id,omitempty"`
+}
+
+var poolWorkerDto = sync.Pool{
+	New: func() any {
+		return new(WorkerDto)
+	},
+}
+
+// GetWorkerDto() 从对象池中获取WorkerDto
+func GetWorkerDto() *WorkerDto {
+	return poolWorkerDto.Get().(*WorkerDto)
+}
+
+// ReleaseWorkerDto 释放WorkerDto
+func ReleaseWorkerDto(v *WorkerDto) {
+	v.ServiceAreas = v.ServiceAreas[:0]
+	v.ServiceTypes = v.ServiceTypes[:0]
+	v.RealName = ""
+	v.NickName = ""
+	v.Phone = ""
+	v.Province = ""
+	v.City = ""
+	v.District = ""
+	v.Town = ""
+	v.Address = ""
+	v.ProfilePictureUrl = ""
+	v.Remark = ""
+	v.IdentityId = ""
+	v.Name = ""
+	v.ProviderName = ""
+	v.RegisterTime = ""
+	v.WorkType = ""
+	v.HandheldCardPic = ""
+	v.Photo = ""
+	v.IdCardPicBack = ""
+	v.IdCardPic = ""
+	v.BizType = ""
+	v.ServiceCodes = ""
+	v.CoverCategoryIds = ""
+	v.ServiceStoreCode = ""
+	v.WorkerId = 0
+	v.ProviderId = 0
+	poolWorkerDto.Put(v)
 }

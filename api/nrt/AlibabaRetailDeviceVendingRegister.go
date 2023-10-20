@@ -9,11 +9,6 @@ import (
 // alibaba.retail.device.vending.register
 //
 // 贩卖机注册
-func AlibabaRetailDeviceVendingRegister(clt *core.SDKClient, req *nrt.AlibabaRetailDeviceVendingRegisterAPIRequest, session string) (*nrt.AlibabaRetailDeviceVendingRegisterAPIResponse, error) {
-	var resp nrt.AlibabaRetailDeviceVendingRegisterAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaRetailDeviceVendingRegister(clt *core.SDKClient, req *nrt.AlibabaRetailDeviceVendingRegisterAPIRequest, resp *nrt.AlibabaRetailDeviceVendingRegisterAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.lst.speaker.configure.syncaudio
 //
 // 音频同步
-func AlibabaLstSpeakerConfigureSyncaudio(clt *core.SDKClient, req *lstspeacker.AlibabaLstSpeakerConfigureSyncaudioAPIRequest, session string) (*lstspeacker.AlibabaLstSpeakerConfigureSyncaudioAPIResponse, error) {
-	var resp lstspeacker.AlibabaLstSpeakerConfigureSyncaudioAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLstSpeakerConfigureSyncaudio(clt *core.SDKClient, req *lstspeacker.AlibabaLstSpeakerConfigureSyncaudioAPIRequest, resp *lstspeacker.AlibabaLstSpeakerConfigureSyncaudioAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

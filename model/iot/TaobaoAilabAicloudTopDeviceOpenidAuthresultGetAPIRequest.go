@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest struct {
 // NewTaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest 初始化TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest对象
 func NewTaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest() *TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest {
 	return &TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest) Reset() {
+	r._authCodes = r._authCodes[:0]
+	r._schema = ""
+	r._utdId = ""
+	r._userId = ""
+	r._ext = ""
+	r._openId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest) SetOpenId(_op
 // GetOpenId OpenId Getter
 func (r TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest) GetOpenId() string {
 	return r._openId
+}
+
+var poolTaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest
+func GetTaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest() *TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest {
+	return poolTaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest.Get().(*TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest 将 TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest(v *TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoTbkOrderRefundGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTbkOrderRefundGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoTbkOrderRefundGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTbkOrderRefundGetAPIResponseModel).Reset()
 }
 
 // TaobaoTbkOrderRefundGetAPIResponseModel is 淘宝客-推广者-全量维权退款订单查询 成功返回结果
@@ -30,4 +37,31 @@ type TaobaoTbkOrderRefundGetAPIResponseModel struct {
 	ResultCode int64 `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 业务错误码 101, 102,103
 	BizErrorCode int64 `json:"biz_error_code,omitempty" xml:"biz_error_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTbkOrderRefundGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.BizErrorDesc = ""
+	m.ResultMsg = ""
+	m.Data = nil
+	m.ResultCode = 0
+	m.BizErrorCode = 0
+}
+
+var poolTaobaoTbkOrderRefundGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkOrderRefundGetAPIResponse)
+	},
+}
+
+// GetTaobaoTbkOrderRefundGetAPIResponse 从 sync.Pool 获取 TaobaoTbkOrderRefundGetAPIResponse
+func GetTaobaoTbkOrderRefundGetAPIResponse() *TaobaoTbkOrderRefundGetAPIResponse {
+	return poolTaobaoTbkOrderRefundGetAPIResponse.Get().(*TaobaoTbkOrderRefundGetAPIResponse)
+}
+
+// ReleaseTaobaoTbkOrderRefundGetAPIResponse 将 TaobaoTbkOrderRefundGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTbkOrderRefundGetAPIResponse(v *TaobaoTbkOrderRefundGetAPIResponse) {
+	v.Reset()
+	poolTaobaoTbkOrderRefundGetAPIResponse.Put(v)
 }

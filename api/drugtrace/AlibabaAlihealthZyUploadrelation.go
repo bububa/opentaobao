@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.zy.uploadrelation
 //
 // 中药片关联关系上传
-func AlibabaAlihealthZyUploadrelation(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthZyUploadrelationAPIRequest, session string) (*drugtrace.AlibabaAlihealthZyUploadrelationAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthZyUploadrelationAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthZyUploadrelation(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthZyUploadrelationAPIRequest, resp *drugtrace.AlibabaAlihealthZyUploadrelationAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // SpaceTypeQuery 结构体
 type SpaceTypeQuery struct {
 	// 模糊查询key
@@ -22,4 +26,30 @@ type SpaceTypeQuery struct {
 	SpaceTopLevelId int64 `json:"space_top_level_id,omitempty" xml:"space_top_level_id,omitempty"`
 	// 当前页码
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
+}
+
+var poolSpaceTypeQuery = sync.Pool{
+	New: func() any {
+		return new(SpaceTypeQuery)
+	},
+}
+
+// GetSpaceTypeQuery() 从对象池中获取SpaceTypeQuery
+func GetSpaceTypeQuery() *SpaceTypeQuery {
+	return poolSpaceTypeQuery.Get().(*SpaceTypeQuery)
+}
+
+// ReleaseSpaceTypeQuery 释放SpaceTypeQuery
+func ReleaseSpaceTypeQuery(v *SpaceTypeQuery) {
+	v.Key = ""
+	v.Limit = 0
+	v.TopLevelId = 0
+	v.Pid = 0
+	v.GroupTopLevelId = 0
+	v.Id = 0
+	v.Category = 0
+	v.StartRow = 0
+	v.SpaceTopLevelId = 0
+	v.CurrentPage = 0
+	poolSpaceTypeQuery.Put(v)
 }

@@ -1,5 +1,9 @@
 package examination
 
+import (
+	"sync"
+)
+
 // MedicalPractitionerInfo 结构体
 type MedicalPractitionerInfo struct {
 	// 性别(MALE-男;FEMALE-女;)
@@ -18,4 +22,28 @@ type MedicalPractitionerInfo struct {
 	PracticeAgencyProvince string `json:"practice_agency_province,omitempty" xml:"practice_agency_province,omitempty"`
 	// 执业机构所在省份Code
 	PracticeAgencyProvinceCode string `json:"practice_agency_province_code,omitempty" xml:"practice_agency_province_code,omitempty"`
+}
+
+var poolMedicalPractitionerInfo = sync.Pool{
+	New: func() any {
+		return new(MedicalPractitionerInfo)
+	},
+}
+
+// GetMedicalPractitionerInfo() 从对象池中获取MedicalPractitionerInfo
+func GetMedicalPractitionerInfo() *MedicalPractitionerInfo {
+	return poolMedicalPractitionerInfo.Get().(*MedicalPractitionerInfo)
+}
+
+// ReleaseMedicalPractitionerInfo 释放MedicalPractitionerInfo
+func ReleaseMedicalPractitionerInfo(v *MedicalPractitionerInfo) {
+	v.Gender = ""
+	v.Phone = ""
+	v.OuterPractitionerId = ""
+	v.Name = ""
+	v.CertificationsUrl = ""
+	v.PracticeAgencyName = ""
+	v.PracticeAgencyProvince = ""
+	v.PracticeAgencyProvinceCode = ""
+	poolMedicalPractitionerInfo.Put(v)
 }

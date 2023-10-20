@@ -1,5 +1,9 @@
 package taotv
 
+import (
+	"sync"
+)
+
 // TaobaoTaotvCarouselCategoryListModel 结构体
 type TaobaoTaotvCarouselCategoryListModel struct {
 	// 分类频道列表
@@ -14,4 +18,26 @@ type TaobaoTaotvCarouselCategoryListModel struct {
 	Bcp int64 `json:"bcp,omitempty" xml:"bcp,omitempty"`
 	// 分类ID
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolTaobaoTaotvCarouselCategoryListModel = sync.Pool{
+	New: func() any {
+		return new(TaobaoTaotvCarouselCategoryListModel)
+	},
+}
+
+// GetTaobaoTaotvCarouselCategoryListModel() 从对象池中获取TaobaoTaotvCarouselCategoryListModel
+func GetTaobaoTaotvCarouselCategoryListModel() *TaobaoTaotvCarouselCategoryListModel {
+	return poolTaobaoTaotvCarouselCategoryListModel.Get().(*TaobaoTaotvCarouselCategoryListModel)
+}
+
+// ReleaseTaobaoTaotvCarouselCategoryListModel 释放TaobaoTaotvCarouselCategoryListModel
+func ReleaseTaobaoTaotvCarouselCategoryListModel(v *TaobaoTaotvCarouselCategoryListModel) {
+	v.ChannelList = v.ChannelList[:0]
+	v.Pic = ""
+	v.Name = ""
+	v.Sort = 0
+	v.Bcp = 0
+	v.Id = 0
+	poolTaobaoTaotvCarouselCategoryListModel.Put(v)
 }

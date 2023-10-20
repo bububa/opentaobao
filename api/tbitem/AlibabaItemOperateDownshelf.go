@@ -9,11 +9,6 @@ import (
 // alibaba.item.operate.downshelf
 //
 // 商品下架
-func AlibabaItemOperateDownshelf(clt *core.SDKClient, req *tbitem.AlibabaItemOperateDownshelfAPIRequest, session string) (*tbitem.AlibabaItemOperateDownshelfAPIResponse, error) {
-	var resp tbitem.AlibabaItemOperateDownshelfAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaItemOperateDownshelf(clt *core.SDKClient, req *tbitem.AlibabaItemOperateDownshelfAPIRequest, resp *tbitem.AlibabaItemOperateDownshelfAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

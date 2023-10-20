@@ -1,5 +1,9 @@
 package alicom
 
+import (
+	"sync"
+)
+
 // DistributeTradeOrderInfo 结构体
 type DistributeTradeOrderInfo struct {
 	// 天猫订单号
@@ -14,4 +18,26 @@ type DistributeTradeOrderInfo struct {
 	SignStr string `json:"sign_str,omitempty" xml:"sign_str,omitempty"`
 	// 0:初始化，1:成功，2:失败
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolDistributeTradeOrderInfo = sync.Pool{
+	New: func() any {
+		return new(DistributeTradeOrderInfo)
+	},
+}
+
+// GetDistributeTradeOrderInfo() 从对象池中获取DistributeTradeOrderInfo
+func GetDistributeTradeOrderInfo() *DistributeTradeOrderInfo {
+	return poolDistributeTradeOrderInfo.Get().(*DistributeTradeOrderInfo)
+}
+
+// ReleaseDistributeTradeOrderInfo 释放DistributeTradeOrderInfo
+func ReleaseDistributeTradeOrderInfo(v *DistributeTradeOrderInfo) {
+	v.TbTradeId = ""
+	v.OutOrderId = ""
+	v.Price = ""
+	v.PayUrl = ""
+	v.SignStr = ""
+	v.Status = ""
+	poolDistributeTradeOrderInfo.Put(v)
 }

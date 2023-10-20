@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // ModifyListRequestDto 结构体
 type ModifyListRequestDto struct {
 	// 店铺id
@@ -12,4 +16,25 @@ type ModifyListRequestDto struct {
 	Page int64 `json:"page,omitempty" xml:"page,omitempty"`
 	// 改签单状态:1:待回填费用或行程,2:待用户支付,3:待出票,4:已完成,5:已拒绝
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolModifyListRequestDto = sync.Pool{
+	New: func() any {
+		return new(ModifyListRequestDto)
+	},
+}
+
+// GetModifyListRequestDto() 从对象池中获取ModifyListRequestDto
+func GetModifyListRequestDto() *ModifyListRequestDto {
+	return poolModifyListRequestDto.Get().(*ModifyListRequestDto)
+}
+
+// ReleaseModifyListRequestDto 释放ModifyListRequestDto
+func ReleaseModifyListRequestDto(v *ModifyListRequestDto) {
+	v.AgentIds = v.AgentIds[:0]
+	v.EndApplyTime = ""
+	v.BeginApplyTime = ""
+	v.Page = 0
+	v.Status = 0
+	poolModifyListRequestDto.Put(v)
 }

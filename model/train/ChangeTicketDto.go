@@ -1,5 +1,9 @@
 package train
 
+import (
+	"sync"
+)
+
 // ChangeTicketDto 结构体
 type ChangeTicketDto struct {
 	// 改签票坐席类型名
@@ -24,4 +28,31 @@ type ChangeTicketDto struct {
 	HandingFee int64 `json:"handing_fee,omitempty" xml:"handing_fee,omitempty"`
 	// 子单单号
 	SubOrderId int64 `json:"sub_order_id,omitempty" xml:"sub_order_id,omitempty"`
+}
+
+var poolChangeTicketDto = sync.Pool{
+	New: func() any {
+		return new(ChangeTicketDto)
+	},
+}
+
+// GetChangeTicketDto() 从对象池中获取ChangeTicketDto
+func GetChangeTicketDto() *ChangeTicketDto {
+	return poolChangeTicketDto.Get().(*ChangeTicketDto)
+}
+
+// ReleaseChangeTicketDto 释放ChangeTicketDto
+func ReleaseChangeTicketDto(v *ChangeTicketDto) {
+	v.ChangeSeatTypeName = ""
+	v.ChangeSeatTypeCode = ""
+	v.ChangeSeatNo = ""
+	v.ChangeCoachNo = ""
+	v.TicketTypeCode = ""
+	v.ChangeCoachName = ""
+	v.TicketTypeName = ""
+	v.ChangeTicketPrice = ""
+	v.ChangeApplyId = 0
+	v.HandingFee = 0
+	v.SubOrderId = 0
+	poolChangeTicketDto.Put(v)
 }

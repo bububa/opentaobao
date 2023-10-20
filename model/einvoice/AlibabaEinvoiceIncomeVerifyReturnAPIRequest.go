@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -73,8 +74,41 @@ type AlibabaEinvoiceIncomeVerifyReturnAPIRequest struct {
 // NewAlibabaEinvoiceIncomeVerifyReturnRequest 初始化AlibabaEinvoiceIncomeVerifyReturnAPIRequest对象
 func NewAlibabaEinvoiceIncomeVerifyReturnRequest() *AlibabaEinvoiceIncomeVerifyReturnAPIRequest {
 	return &AlibabaEinvoiceIncomeVerifyReturnAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(28),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) Reset() {
+	r._invoiceItems = r._invoiceItems[:0]
+	r._checksum = ""
+	r._errorCode = ""
+	r._errorMessage = ""
+	r._imageId = ""
+	r._invoiceAmount = ""
+	r._invoiceCode = ""
+	r._invoiceDate = ""
+	r._invoiceMemo = ""
+	r._invoiceNo = ""
+	r._machineNo = ""
+	r._payeeAddressPhone = ""
+	r._payeeBankAccount = ""
+	r._payeeChecker = ""
+	r._payeeName = ""
+	r._payeeOperator = ""
+	r._payeeReceiver = ""
+	r._payeeRegisterNo = ""
+	r._payerAddressPhone = ""
+	r._payerBankAccount = ""
+	r._payerName = ""
+	r._payerRegisterNo = ""
+	r._reqIndex = ""
+	r._sumPrice = ""
+	r._sumTax = ""
+	r._type = 0
+	r._invoiceStatus = 0
+	r._success = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -456,4 +490,21 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetSuccess(_success bool) 
 // GetSuccess Success Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetSuccess() bool {
 	return r._success
+}
+
+var poolAlibabaEinvoiceIncomeVerifyReturnAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceIncomeVerifyReturnRequest()
+	},
+}
+
+// GetAlibabaEinvoiceIncomeVerifyReturnRequest 从 sync.Pool 获取 AlibabaEinvoiceIncomeVerifyReturnAPIRequest
+func GetAlibabaEinvoiceIncomeVerifyReturnAPIRequest() *AlibabaEinvoiceIncomeVerifyReturnAPIRequest {
+	return poolAlibabaEinvoiceIncomeVerifyReturnAPIRequest.Get().(*AlibabaEinvoiceIncomeVerifyReturnAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceIncomeVerifyReturnAPIRequest 将 AlibabaEinvoiceIncomeVerifyReturnAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceIncomeVerifyReturnAPIRequest(v *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceIncomeVerifyReturnAPIRequest.Put(v)
 }

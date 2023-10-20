@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTbkScPunishOrderGetAPIResponse struct {
 	TaobaoTbkScPunishOrderGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTbkScPunishOrderGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTbkScPunishOrderGetAPIResponseModel).Reset()
+}
+
 // TaobaoTbkScPunishOrderGetAPIResponseModel is 淘宝客-服务商-处罚订单查询 成功返回结果
 type TaobaoTbkScPunishOrderGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tbk_sc_punish_order_get_response"`
@@ -22,4 +29,27 @@ type TaobaoTbkScPunishOrderGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 查询的对象
 	Result *TaobaoTbkScPunishOrderGetRpcResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTbkScPunishOrderGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoTbkScPunishOrderGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkScPunishOrderGetAPIResponse)
+	},
+}
+
+// GetTaobaoTbkScPunishOrderGetAPIResponse 从 sync.Pool 获取 TaobaoTbkScPunishOrderGetAPIResponse
+func GetTaobaoTbkScPunishOrderGetAPIResponse() *TaobaoTbkScPunishOrderGetAPIResponse {
+	return poolTaobaoTbkScPunishOrderGetAPIResponse.Get().(*TaobaoTbkScPunishOrderGetAPIResponse)
+}
+
+// ReleaseTaobaoTbkScPunishOrderGetAPIResponse 将 TaobaoTbkScPunishOrderGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTbkScPunishOrderGetAPIResponse(v *TaobaoTbkScPunishOrderGetAPIResponse) {
+	v.Reset()
+	poolTaobaoTbkScPunishOrderGetAPIResponse.Put(v)
 }

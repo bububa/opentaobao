@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoUniversalbpReportQueryRealtimeAPIRequest struct {
 // NewTaobaoUniversalbpReportQueryRealtimeRequest 初始化TaobaoUniversalbpReportQueryRealtimeAPIRequest对象
 func NewTaobaoUniversalbpReportQueryRealtimeRequest() *TaobaoUniversalbpReportQueryRealtimeAPIRequest {
 	return &TaobaoUniversalbpReportQueryRealtimeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpReportQueryRealtimeAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r._topRealTimeReportQueryVO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoUniversalbpReportQueryRealtimeAPIRequest) SetTopRealTimeReportQue
 // GetTopRealTimeReportQueryVO TopRealTimeReportQueryVO Getter
 func (r TaobaoUniversalbpReportQueryRealtimeAPIRequest) GetTopRealTimeReportQueryVO() *TopRealTimeReportQueryVo {
 	return r._topRealTimeReportQueryVO
+}
+
+var poolTaobaoUniversalbpReportQueryRealtimeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpReportQueryRealtimeRequest()
+	},
+}
+
+// GetTaobaoUniversalbpReportQueryRealtimeRequest 从 sync.Pool 获取 TaobaoUniversalbpReportQueryRealtimeAPIRequest
+func GetTaobaoUniversalbpReportQueryRealtimeAPIRequest() *TaobaoUniversalbpReportQueryRealtimeAPIRequest {
+	return poolTaobaoUniversalbpReportQueryRealtimeAPIRequest.Get().(*TaobaoUniversalbpReportQueryRealtimeAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpReportQueryRealtimeAPIRequest 将 TaobaoUniversalbpReportQueryRealtimeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpReportQueryRealtimeAPIRequest(v *TaobaoUniversalbpReportQueryRealtimeAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpReportQueryRealtimeAPIRequest.Put(v)
 }

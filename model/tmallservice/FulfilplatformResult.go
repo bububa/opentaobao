@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // FulfilplatformResult 结构体
 type FulfilplatformResult struct {
 	// 服务单列表数据
@@ -22,4 +26,30 @@ type FulfilplatformResult struct {
 	WorkcardId int64 `json:"workcard_id,omitempty" xml:"workcard_id,omitempty"`
 	// 是否执行成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolFulfilplatformResult = sync.Pool{
+	New: func() any {
+		return new(FulfilplatformResult)
+	},
+}
+
+// GetFulfilplatformResult() 从对象池中获取FulfilplatformResult
+func GetFulfilplatformResult() *FulfilplatformResult {
+	return poolFulfilplatformResult.Get().(*FulfilplatformResult)
+}
+
+// ReleaseFulfilplatformResult 释放FulfilplatformResult
+func ReleaseFulfilplatformResult(v *FulfilplatformResult) {
+	v.ResultList = v.ResultList[:0]
+	v.MsgInfo = ""
+	v.MsgCode = ""
+	v.DisplayMsg = ""
+	v.ErrorName = ""
+	v.ErrorType = ""
+	v.StageType = ""
+	v.ResultData = 0
+	v.WorkcardId = 0
+	v.Success = false
+	poolFulfilplatformResult.Put(v)
 }

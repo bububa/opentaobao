@@ -2,6 +2,7 @@ package yunos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AliyunCosmoGatewayInvokeAPIRequest struct {
 // NewAliyunCosmoGatewayInvokeRequest 初始化AliyunCosmoGatewayInvokeAPIRequest对象
 func NewAliyunCosmoGatewayInvokeRequest() *AliyunCosmoGatewayInvokeAPIRequest {
 	return &AliyunCosmoGatewayInvokeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliyunCosmoGatewayInvokeAPIRequest) Reset() {
+	r._context = nil
+	r._rdamRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AliyunCosmoGatewayInvokeAPIRequest) SetRdamRequest(_rdamRequest *RdamGe
 // GetRdamRequest RdamRequest Getter
 func (r AliyunCosmoGatewayInvokeAPIRequest) GetRdamRequest() *RdamGenericRequest {
 	return r._rdamRequest
+}
+
+var poolAliyunCosmoGatewayInvokeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliyunCosmoGatewayInvokeRequest()
+	},
+}
+
+// GetAliyunCosmoGatewayInvokeRequest 从 sync.Pool 获取 AliyunCosmoGatewayInvokeAPIRequest
+func GetAliyunCosmoGatewayInvokeAPIRequest() *AliyunCosmoGatewayInvokeAPIRequest {
+	return poolAliyunCosmoGatewayInvokeAPIRequest.Get().(*AliyunCosmoGatewayInvokeAPIRequest)
+}
+
+// ReleaseAliyunCosmoGatewayInvokeAPIRequest 将 AliyunCosmoGatewayInvokeAPIRequest 放入 sync.Pool
+func ReleaseAliyunCosmoGatewayInvokeAPIRequest(v *AliyunCosmoGatewayInvokeAPIRequest) {
+	v.Reset()
+	poolAliyunCosmoGatewayInvokeAPIRequest.Put(v)
 }

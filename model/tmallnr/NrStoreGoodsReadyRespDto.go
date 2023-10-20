@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // NrStoreGoodsReadyRespDto 结构体
 type NrStoreGoodsReadyRespDto struct {
 	// 取件码
@@ -16,4 +20,27 @@ type NrStoreGoodsReadyRespDto struct {
 	CancelCode string `json:"cancel_code,omitempty" xml:"cancel_code,omitempty"`
 	// 主订单号
 	MainOrderId int64 `json:"main_order_id,omitempty" xml:"main_order_id,omitempty"`
+}
+
+var poolNrStoreGoodsReadyRespDto = sync.Pool{
+	New: func() any {
+		return new(NrStoreGoodsReadyRespDto)
+	},
+}
+
+// GetNrStoreGoodsReadyRespDto() 从对象池中获取NrStoreGoodsReadyRespDto
+func GetNrStoreGoodsReadyRespDto() *NrStoreGoodsReadyRespDto {
+	return poolNrStoreGoodsReadyRespDto.Get().(*NrStoreGoodsReadyRespDto)
+}
+
+// ReleaseNrStoreGoodsReadyRespDto 释放NrStoreGoodsReadyRespDto
+func ReleaseNrStoreGoodsReadyRespDto(v *NrStoreGoodsReadyRespDto) {
+	v.GotCode = ""
+	v.ShortId = ""
+	v.MaCode = ""
+	v.CompanyOrderNo = ""
+	v.CompanyName = ""
+	v.CancelCode = ""
+	v.MainOrderId = 0
+	poolNrStoreGoodsReadyRespDto.Put(v)
 }

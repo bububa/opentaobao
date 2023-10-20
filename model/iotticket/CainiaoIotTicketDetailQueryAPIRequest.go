@@ -2,6 +2,7 @@ package iotticket
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type CainiaoIotTicketDetailQueryAPIRequest struct {
 // NewCainiaoIotTicketDetailQueryRequest 初始化CainiaoIotTicketDetailQueryAPIRequest对象
 func NewCainiaoIotTicketDetailQueryRequest() *CainiaoIotTicketDetailQueryAPIRequest {
 	return &CainiaoIotTicketDetailQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoIotTicketDetailQueryAPIRequest) Reset() {
+	r._spCode = ""
+	r._ticketId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *CainiaoIotTicketDetailQueryAPIRequest) SetTicketId(_ticketId int64) err
 // GetTicketId TicketId Getter
 func (r CainiaoIotTicketDetailQueryAPIRequest) GetTicketId() int64 {
 	return r._ticketId
+}
+
+var poolCainiaoIotTicketDetailQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoIotTicketDetailQueryRequest()
+	},
+}
+
+// GetCainiaoIotTicketDetailQueryRequest 从 sync.Pool 获取 CainiaoIotTicketDetailQueryAPIRequest
+func GetCainiaoIotTicketDetailQueryAPIRequest() *CainiaoIotTicketDetailQueryAPIRequest {
+	return poolCainiaoIotTicketDetailQueryAPIRequest.Get().(*CainiaoIotTicketDetailQueryAPIRequest)
+}
+
+// ReleaseCainiaoIotTicketDetailQueryAPIRequest 将 CainiaoIotTicketDetailQueryAPIRequest 放入 sync.Pool
+func ReleaseCainiaoIotTicketDetailQueryAPIRequest(v *CainiaoIotTicketDetailQueryAPIRequest) {
+	v.Reset()
+	poolCainiaoIotTicketDetailQueryAPIRequest.Put(v)
 }

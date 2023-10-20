@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // DeliveryCallbackOrder 结构体
 type DeliveryCallbackOrder struct {
 	// 拒收子单列表
@@ -18,4 +22,28 @@ type DeliveryCallbackOrder struct {
 	SourceSystem string `json:"source_system,omitempty" xml:"source_system,omitempty"`
 	// 配送员
 	Deliveryman *Deliveryman `json:"deliveryman,omitempty" xml:"deliveryman,omitempty"`
+}
+
+var poolDeliveryCallbackOrder = sync.Pool{
+	New: func() any {
+		return new(DeliveryCallbackOrder)
+	},
+}
+
+// GetDeliveryCallbackOrder() 从对象池中获取DeliveryCallbackOrder
+func GetDeliveryCallbackOrder() *DeliveryCallbackOrder {
+	return poolDeliveryCallbackOrder.Get().(*DeliveryCallbackOrder)
+}
+
+// ReleaseDeliveryCallbackOrder 释放DeliveryCallbackOrder
+func ReleaseDeliveryCallbackOrder(v *DeliveryCallbackOrder) {
+	v.RefusedOrderDetails = v.RefusedOrderDetails[:0]
+	v.WorkOrderId = ""
+	v.StatusChangeType = ""
+	v.StatusChangeTime = ""
+	v.Remark = ""
+	v.DeliveryDockCode = ""
+	v.SourceSystem = ""
+	v.Deliveryman = nil
+	poolDeliveryCallbackOrder.Put(v)
 }

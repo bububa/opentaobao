@@ -2,6 +2,7 @@ package flight
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAlitripTotoroAuxproductPushAPIRequest struct {
 // NewTaobaoAlitripTotoroAuxproductPushRequest 初始化TaobaoAlitripTotoroAuxproductPushAPIRequest对象
 func NewTaobaoAlitripTotoroAuxproductPushRequest() *TaobaoAlitripTotoroAuxproductPushAPIRequest {
 	return &TaobaoAlitripTotoroAuxproductPushAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripTotoroAuxproductPushAPIRequest) Reset() {
+	r._pushAuxProductsRq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAlitripTotoroAuxproductPushAPIRequest) SetPushAuxProductsRq(_push
 // GetPushAuxProductsRq PushAuxProductsRq Getter
 func (r TaobaoAlitripTotoroAuxproductPushAPIRequest) GetPushAuxProductsRq() *PushAuxProductsRq {
 	return r._pushAuxProductsRq
+}
+
+var poolTaobaoAlitripTotoroAuxproductPushAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripTotoroAuxproductPushRequest()
+	},
+}
+
+// GetTaobaoAlitripTotoroAuxproductPushRequest 从 sync.Pool 获取 TaobaoAlitripTotoroAuxproductPushAPIRequest
+func GetTaobaoAlitripTotoroAuxproductPushAPIRequest() *TaobaoAlitripTotoroAuxproductPushAPIRequest {
+	return poolTaobaoAlitripTotoroAuxproductPushAPIRequest.Get().(*TaobaoAlitripTotoroAuxproductPushAPIRequest)
+}
+
+// ReleaseTaobaoAlitripTotoroAuxproductPushAPIRequest 将 TaobaoAlitripTotoroAuxproductPushAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripTotoroAuxproductPushAPIRequest(v *TaobaoAlitripTotoroAuxproductPushAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripTotoroAuxproductPushAPIRequest.Put(v)
 }

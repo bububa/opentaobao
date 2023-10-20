@@ -2,6 +2,7 @@ package trade
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaWdkPosTradeQueryAPIResponse struct {
 	AlibabaWdkPosTradeQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaWdkPosTradeQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaWdkPosTradeQueryAPIResponseModel).Reset()
+}
+
 // AlibabaWdkPosTradeQueryAPIResponseModel is 轻pos品牌营销查询接口 成功返回结果
 type AlibabaWdkPosTradeQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_pos_trade_query_response"`
@@ -22,4 +29,27 @@ type AlibabaWdkPosTradeQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 查询返回结果
 	Result *FastBuyPosQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaWdkPosTradeQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaWdkPosTradeQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkPosTradeQueryAPIResponse)
+	},
+}
+
+// GetAlibabaWdkPosTradeQueryAPIResponse 从 sync.Pool 获取 AlibabaWdkPosTradeQueryAPIResponse
+func GetAlibabaWdkPosTradeQueryAPIResponse() *AlibabaWdkPosTradeQueryAPIResponse {
+	return poolAlibabaWdkPosTradeQueryAPIResponse.Get().(*AlibabaWdkPosTradeQueryAPIResponse)
+}
+
+// ReleaseAlibabaWdkPosTradeQueryAPIResponse 将 AlibabaWdkPosTradeQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaWdkPosTradeQueryAPIResponse(v *AlibabaWdkPosTradeQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaWdkPosTradeQueryAPIResponse.Put(v)
 }

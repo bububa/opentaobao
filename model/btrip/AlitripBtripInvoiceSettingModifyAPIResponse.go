@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlitripBtripInvoiceSettingModifyAPIResponse struct {
 	model.CommonResponse
 	AlitripBtripInvoiceSettingModifyAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlitripBtripInvoiceSettingModifyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripBtripInvoiceSettingModifyAPIResponseModel).Reset()
 }
 
 // AlitripBtripInvoiceSettingModifyAPIResponseModel is 发票变更 成功返回结果
@@ -28,4 +35,30 @@ type AlitripBtripInvoiceSettingModifyAPIResponseModel struct {
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
 	// 请求是否成功
 	SuccessFlag bool `json:"success_flag,omitempty" xml:"success_flag,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripBtripInvoiceSettingModifyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultMsg = ""
+	m.ResultCode = 0
+	m.Result = false
+	m.SuccessFlag = false
+}
+
+var poolAlitripBtripInvoiceSettingModifyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripBtripInvoiceSettingModifyAPIResponse)
+	},
+}
+
+// GetAlitripBtripInvoiceSettingModifyAPIResponse 从 sync.Pool 获取 AlitripBtripInvoiceSettingModifyAPIResponse
+func GetAlitripBtripInvoiceSettingModifyAPIResponse() *AlitripBtripInvoiceSettingModifyAPIResponse {
+	return poolAlitripBtripInvoiceSettingModifyAPIResponse.Get().(*AlitripBtripInvoiceSettingModifyAPIResponse)
+}
+
+// ReleaseAlitripBtripInvoiceSettingModifyAPIResponse 将 AlitripBtripInvoiceSettingModifyAPIResponse 保存到 sync.Pool
+func ReleaseAlitripBtripInvoiceSettingModifyAPIResponse(v *AlitripBtripInvoiceSettingModifyAPIResponse) {
+	v.Reset()
+	poolAlitripBtripInvoiceSettingModifyAPIResponse.Put(v)
 }

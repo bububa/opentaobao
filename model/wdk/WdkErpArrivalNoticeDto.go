@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // WdkErpArrivalNoticeDto 结构体
 type WdkErpArrivalNoticeDto struct {
 	// 1
@@ -24,4 +28,31 @@ type WdkErpArrivalNoticeDto struct {
 	SubOrderType int64 `json:"sub_order_type,omitempty" xml:"sub_order_type,omitempty"`
 	// 单据类型，入库接口的单据类型包括采配单和调拨入单(1 采购单(供应商)； 2 送货单(DC) ； 其他情况默认为0)
 	BizOrderType int64 `json:"biz_order_type,omitempty" xml:"biz_order_type,omitempty"`
+}
+
+var poolWdkErpArrivalNoticeDto = sync.Pool{
+	New: func() any {
+		return new(WdkErpArrivalNoticeDto)
+	},
+}
+
+// GetWdkErpArrivalNoticeDto() 从对象池中获取WdkErpArrivalNoticeDto
+func GetWdkErpArrivalNoticeDto() *WdkErpArrivalNoticeDto {
+	return poolWdkErpArrivalNoticeDto.Get().(*WdkErpArrivalNoticeDto)
+}
+
+// ReleaseWdkErpArrivalNoticeDto 释放WdkErpArrivalNoticeDto
+func ReleaseWdkErpArrivalNoticeDto(v *WdkErpArrivalNoticeDto) {
+	v.ItemList = v.ItemList[:0]
+	v.ArrivalDate = ""
+	v.ContactInfo = ""
+	v.WarehouseCode = ""
+	v.SupplierCode = ""
+	v.InvalidDate = ""
+	v.OriginalBillCode = ""
+	v.BizOrderCode = ""
+	v.Bypass = 0
+	v.SubOrderType = 0
+	v.BizOrderType = 0
+	poolWdkErpArrivalNoticeDto.Put(v)
 }

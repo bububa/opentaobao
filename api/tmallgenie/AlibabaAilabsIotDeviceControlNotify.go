@@ -9,11 +9,6 @@ import (
 // alibaba.ailabs.iot.device.control.notify
 //
 // 用于天猫精灵IoT云云接入控制结果的异步回调
-func AlibabaAilabsIotDeviceControlNotify(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsIotDeviceControlNotifyAPIRequest, session string) (*tmallgenie.AlibabaAilabsIotDeviceControlNotifyAPIResponse, error) {
-	var resp tmallgenie.AlibabaAilabsIotDeviceControlNotifyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAilabsIotDeviceControlNotify(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsIotDeviceControlNotifyAPIRequest, resp *tmallgenie.AlibabaAilabsIotDeviceControlNotifyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // CustomerSaveOpenReq 结构体
 type CustomerSaveOpenReq struct {
 	// 生日
@@ -26,4 +30,32 @@ type CustomerSaveOpenReq struct {
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
 	// 性别 0女 1男,2其他
 	Gender int64 `json:"gender,omitempty" xml:"gender,omitempty"`
+}
+
+var poolCustomerSaveOpenReq = sync.Pool{
+	New: func() any {
+		return new(CustomerSaveOpenReq)
+	},
+}
+
+// GetCustomerSaveOpenReq() 从对象池中获取CustomerSaveOpenReq
+func GetCustomerSaveOpenReq() *CustomerSaveOpenReq {
+	return poolCustomerSaveOpenReq.Get().(*CustomerSaveOpenReq)
+}
+
+// ReleaseCustomerSaveOpenReq 释放CustomerSaveOpenReq
+func ReleaseCustomerSaveOpenReq(v *CustomerSaveOpenReq) {
+	v.Birthday = ""
+	v.BrandId = ""
+	v.Channel = ""
+	v.Mobile = ""
+	v.Name = ""
+	v.OperatorId = ""
+	v.OuterId = ""
+	v.OuterType = ""
+	v.Remark = ""
+	v.RequestId = ""
+	v.ShopId = ""
+	v.Gender = 0
+	poolCustomerSaveOpenReq.Put(v)
 }

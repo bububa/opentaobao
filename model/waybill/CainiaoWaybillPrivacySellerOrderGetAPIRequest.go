@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type CainiaoWaybillPrivacySellerOrderGetAPIRequest struct {
 // NewCainiaoWaybillPrivacySellerOrderGetRequest 初始化CainiaoWaybillPrivacySellerOrderGetAPIRequest对象
 func NewCainiaoWaybillPrivacySellerOrderGetRequest() *CainiaoWaybillPrivacySellerOrderGetAPIRequest {
 	return &CainiaoWaybillPrivacySellerOrderGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoWaybillPrivacySellerOrderGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r CainiaoWaybillPrivacySellerOrderGetAPIRequest) GetApiParams(params url.V
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r CainiaoWaybillPrivacySellerOrderGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolCainiaoWaybillPrivacySellerOrderGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoWaybillPrivacySellerOrderGetRequest()
+	},
+}
+
+// GetCainiaoWaybillPrivacySellerOrderGetRequest 从 sync.Pool 获取 CainiaoWaybillPrivacySellerOrderGetAPIRequest
+func GetCainiaoWaybillPrivacySellerOrderGetAPIRequest() *CainiaoWaybillPrivacySellerOrderGetAPIRequest {
+	return poolCainiaoWaybillPrivacySellerOrderGetAPIRequest.Get().(*CainiaoWaybillPrivacySellerOrderGetAPIRequest)
+}
+
+// ReleaseCainiaoWaybillPrivacySellerOrderGetAPIRequest 将 CainiaoWaybillPrivacySellerOrderGetAPIRequest 放入 sync.Pool
+func ReleaseCainiaoWaybillPrivacySellerOrderGetAPIRequest(v *CainiaoWaybillPrivacySellerOrderGetAPIRequest) {
+	v.Reset()
+	poolCainiaoWaybillPrivacySellerOrderGetAPIRequest.Put(v)
 }

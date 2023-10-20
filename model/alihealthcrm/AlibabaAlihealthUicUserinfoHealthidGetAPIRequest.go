@@ -2,6 +2,7 @@ package alihealthcrm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthUicUserinfoHealthidGetAPIRequest struct {
 // NewAlibabaAlihealthUicUserinfoHealthidGetRequest 初始化AlibabaAlihealthUicUserinfoHealthidGetAPIRequest对象
 func NewAlibabaAlihealthUicUserinfoHealthidGetRequest() *AlibabaAlihealthUicUserinfoHealthidGetAPIRequest {
 	return &AlibabaAlihealthUicUserinfoHealthidGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthUicUserinfoHealthidGetAPIRequest) Reset() {
+	r._alipayUserId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthUicUserinfoHealthidGetAPIRequest) SetAlipayUserId(_alip
 // GetAlipayUserId AlipayUserId Getter
 func (r AlibabaAlihealthUicUserinfoHealthidGetAPIRequest) GetAlipayUserId() string {
 	return r._alipayUserId
+}
+
+var poolAlibabaAlihealthUicUserinfoHealthidGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthUicUserinfoHealthidGetRequest()
+	},
+}
+
+// GetAlibabaAlihealthUicUserinfoHealthidGetRequest 从 sync.Pool 获取 AlibabaAlihealthUicUserinfoHealthidGetAPIRequest
+func GetAlibabaAlihealthUicUserinfoHealthidGetAPIRequest() *AlibabaAlihealthUicUserinfoHealthidGetAPIRequest {
+	return poolAlibabaAlihealthUicUserinfoHealthidGetAPIRequest.Get().(*AlibabaAlihealthUicUserinfoHealthidGetAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthUicUserinfoHealthidGetAPIRequest 将 AlibabaAlihealthUicUserinfoHealthidGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthUicUserinfoHealthidGetAPIRequest(v *AlibabaAlihealthUicUserinfoHealthidGetAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthUicUserinfoHealthidGetAPIRequest.Put(v)
 }

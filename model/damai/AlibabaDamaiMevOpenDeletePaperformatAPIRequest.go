@@ -2,6 +2,7 @@ package damai
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDamaiMevOpenDeletePaperformatAPIRequest struct {
 // NewAlibabaDamaiMevOpenDeletePaperformatRequest 初始化AlibabaDamaiMevOpenDeletePaperformatAPIRequest对象
 func NewAlibabaDamaiMevOpenDeletePaperformatRequest() *AlibabaDamaiMevOpenDeletePaperformatAPIRequest {
 	return &AlibabaDamaiMevOpenDeletePaperformatAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDamaiMevOpenDeletePaperformatAPIRequest) Reset() {
+	r._deletePaperFormatParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDamaiMevOpenDeletePaperformatAPIRequest) SetDeletePaperFormatPar
 // GetDeletePaperFormatParam DeletePaperFormatParam Getter
 func (r AlibabaDamaiMevOpenDeletePaperformatAPIRequest) GetDeletePaperFormatParam() *TicketPaperFormatIdOpenParam {
 	return r._deletePaperFormatParam
+}
+
+var poolAlibabaDamaiMevOpenDeletePaperformatAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDamaiMevOpenDeletePaperformatRequest()
+	},
+}
+
+// GetAlibabaDamaiMevOpenDeletePaperformatRequest 从 sync.Pool 获取 AlibabaDamaiMevOpenDeletePaperformatAPIRequest
+func GetAlibabaDamaiMevOpenDeletePaperformatAPIRequest() *AlibabaDamaiMevOpenDeletePaperformatAPIRequest {
+	return poolAlibabaDamaiMevOpenDeletePaperformatAPIRequest.Get().(*AlibabaDamaiMevOpenDeletePaperformatAPIRequest)
+}
+
+// ReleaseAlibabaDamaiMevOpenDeletePaperformatAPIRequest 将 AlibabaDamaiMevOpenDeletePaperformatAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDamaiMevOpenDeletePaperformatAPIRequest(v *AlibabaDamaiMevOpenDeletePaperformatAPIRequest) {
+	v.Reset()
+	poolAlibabaDamaiMevOpenDeletePaperformatAPIRequest.Put(v)
 }

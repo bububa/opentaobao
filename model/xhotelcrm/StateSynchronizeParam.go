@@ -1,5 +1,9 @@
 package xhotelcrm
 
+import (
+	"sync"
+)
+
 // StateSynchronizeParam 结构体
 type StateSynchronizeParam struct {
 	// 券信息
@@ -20,4 +24,29 @@ type StateSynchronizeParam struct {
 	CardInstanceId string `json:"card_instance_id,omitempty" xml:"card_instance_id,omitempty"`
 	// 会员卡号
 	MemberCardNo string `json:"member_card_no,omitempty" xml:"member_card_no,omitempty"`
+}
+
+var poolStateSynchronizeParam = sync.Pool{
+	New: func() any {
+		return new(StateSynchronizeParam)
+	},
+}
+
+// GetStateSynchronizeParam() 从对象池中获取StateSynchronizeParam
+func GetStateSynchronizeParam() *StateSynchronizeParam {
+	return poolStateSynchronizeParam.Get().(*StateSynchronizeParam)
+}
+
+// ReleaseStateSynchronizeParam 释放StateSynchronizeParam
+func ReleaseStateSynchronizeParam(v *StateSynchronizeParam) {
+	v.CouponActiveParamList = v.CouponActiveParamList[:0]
+	v.CardEndDate = ""
+	v.CardStartDate = ""
+	v.OpType = ""
+	v.Channel = ""
+	v.CouponInstanceId = ""
+	v.FliggyOrderId = ""
+	v.CardInstanceId = ""
+	v.MemberCardNo = ""
+	poolStateSynchronizeParam.Put(v)
 }

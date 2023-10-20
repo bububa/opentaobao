@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // EinvoiceAmountCheckResult 结构体
 type EinvoiceAmountCheckResult struct {
 	// 税号
@@ -16,4 +20,27 @@ type EinvoiceAmountCheckResult struct {
 	InvoiceType string `json:"invoice_type,omitempty" xml:"invoice_type,omitempty"`
 	// 开票量
 	InvoiceCount int64 `json:"invoice_count,omitempty" xml:"invoice_count,omitempty"`
+}
+
+var poolEinvoiceAmountCheckResult = sync.Pool{
+	New: func() any {
+		return new(EinvoiceAmountCheckResult)
+	},
+}
+
+// GetEinvoiceAmountCheckResult() 从对象池中获取EinvoiceAmountCheckResult
+func GetEinvoiceAmountCheckResult() *EinvoiceAmountCheckResult {
+	return poolEinvoiceAmountCheckResult.Get().(*EinvoiceAmountCheckResult)
+}
+
+// ReleaseEinvoiceAmountCheckResult 释放EinvoiceAmountCheckResult
+func ReleaseEinvoiceAmountCheckResult(v *EinvoiceAmountCheckResult) {
+	v.PayeeRegisterNo = ""
+	v.InvoiceDate = ""
+	v.TotalAmount = ""
+	v.TotalPrice = ""
+	v.TotalTax = ""
+	v.InvoiceType = ""
+	v.InvoiceCount = 0
+	poolEinvoiceAmountCheckResult.Put(v)
 }

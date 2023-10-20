@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // ProjectTradeItemOrderDto 结构体
 type ProjectTradeItemOrderDto struct {
 	// 关联的商品列表
@@ -16,4 +20,27 @@ type ProjectTradeItemOrderDto struct {
 	OrderNo int64 `json:"order_no,omitempty" xml:"order_no,omitempty"`
 	// 类型
 	ItemType int64 `json:"item_type,omitempty" xml:"item_type,omitempty"`
+}
+
+var poolProjectTradeItemOrderDto = sync.Pool{
+	New: func() any {
+		return new(ProjectTradeItemOrderDto)
+	},
+}
+
+// GetProjectTradeItemOrderDto() 从对象池中获取ProjectTradeItemOrderDto
+func GetProjectTradeItemOrderDto() *ProjectTradeItemOrderDto {
+	return poolProjectTradeItemOrderDto.Get().(*ProjectTradeItemOrderDto)
+}
+
+// ReleaseProjectTradeItemOrderDto 释放ProjectTradeItemOrderDto
+func ReleaseProjectTradeItemOrderDto(v *ProjectTradeItemOrderDto) {
+	v.RelationTradeItem = v.RelationTradeItem[:0]
+	v.ImageUrl = ""
+	v.JumpValue = ""
+	v.ModuleId = ""
+	v.ItemId = 0
+	v.OrderNo = 0
+	v.ItemType = 0
+	poolProjectTradeItemOrderDto.Put(v)
 }

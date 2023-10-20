@@ -9,11 +9,6 @@ import (
 // taobao.rp.refund.intercept
 //
 // 卖家发起拦截
-func TaobaoRpRefundIntercept(clt *core.SDKClient, req *tbrefund.TaobaoRpRefundInterceptAPIRequest, session string) (*tbrefund.TaobaoRpRefundInterceptAPIResponse, error) {
-	var resp tbrefund.TaobaoRpRefundInterceptAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoRpRefundIntercept(clt *core.SDKClient, req *tbrefund.TaobaoRpRefundInterceptAPIRequest, resp *tbrefund.TaobaoRpRefundInterceptAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

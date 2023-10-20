@@ -2,6 +2,7 @@ package fundplatform
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaFundplatformCardordersStatusSendedAPIResponse struct {
 	AlibabaFundplatformCardordersStatusSendedAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaFundplatformCardordersStatusSendedAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaFundplatformCardordersStatusSendedAPIResponseModel).Reset()
+}
+
 // AlibabaFundplatformCardordersStatusSendedAPIResponseModel is 制卡商通知实体卡发货完成 成功返回结果
 type AlibabaFundplatformCardordersStatusSendedAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_fundplatform_cardorders_status_sended_response"`
@@ -22,4 +29,27 @@ type AlibabaFundplatformCardordersStatusSendedAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *CardMakingInformResponse `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaFundplatformCardordersStatusSendedAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaFundplatformCardordersStatusSendedAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaFundplatformCardordersStatusSendedAPIResponse)
+	},
+}
+
+// GetAlibabaFundplatformCardordersStatusSendedAPIResponse 从 sync.Pool 获取 AlibabaFundplatformCardordersStatusSendedAPIResponse
+func GetAlibabaFundplatformCardordersStatusSendedAPIResponse() *AlibabaFundplatformCardordersStatusSendedAPIResponse {
+	return poolAlibabaFundplatformCardordersStatusSendedAPIResponse.Get().(*AlibabaFundplatformCardordersStatusSendedAPIResponse)
+}
+
+// ReleaseAlibabaFundplatformCardordersStatusSendedAPIResponse 将 AlibabaFundplatformCardordersStatusSendedAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaFundplatformCardordersStatusSendedAPIResponse(v *AlibabaFundplatformCardordersStatusSendedAPIResponse) {
+	v.Reset()
+	poolAlibabaFundplatformCardordersStatusSendedAPIResponse.Put(v)
 }

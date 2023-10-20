@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAiContentBusinessGetThirdCycleVipStatusAPIRequest struct {
 // NewAlibabaAiContentBusinessGetThirdCycleVipStatusRequest 初始化AlibabaAiContentBusinessGetThirdCycleVipStatusAPIRequest对象
 func NewAlibabaAiContentBusinessGetThirdCycleVipStatusRequest() *AlibabaAiContentBusinessGetThirdCycleVipStatusAPIRequest {
 	return &AlibabaAiContentBusinessGetThirdCycleVipStatusAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAiContentBusinessGetThirdCycleVipStatusAPIRequest) Reset() {
+	r._getThirdVipStatusRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAiContentBusinessGetThirdCycleVipStatusAPIRequest) SetGetThirdVi
 // GetGetThirdVipStatusRequest GetThirdVipStatusRequest Getter
 func (r AlibabaAiContentBusinessGetThirdCycleVipStatusAPIRequest) GetGetThirdVipStatusRequest() *VipCycleThirdVipStatusRequest {
 	return r._getThirdVipStatusRequest
+}
+
+var poolAlibabaAiContentBusinessGetThirdCycleVipStatusAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAiContentBusinessGetThirdCycleVipStatusRequest()
+	},
+}
+
+// GetAlibabaAiContentBusinessGetThirdCycleVipStatusRequest 从 sync.Pool 获取 AlibabaAiContentBusinessGetThirdCycleVipStatusAPIRequest
+func GetAlibabaAiContentBusinessGetThirdCycleVipStatusAPIRequest() *AlibabaAiContentBusinessGetThirdCycleVipStatusAPIRequest {
+	return poolAlibabaAiContentBusinessGetThirdCycleVipStatusAPIRequest.Get().(*AlibabaAiContentBusinessGetThirdCycleVipStatusAPIRequest)
+}
+
+// ReleaseAlibabaAiContentBusinessGetThirdCycleVipStatusAPIRequest 将 AlibabaAiContentBusinessGetThirdCycleVipStatusAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAiContentBusinessGetThirdCycleVipStatusAPIRequest(v *AlibabaAiContentBusinessGetThirdCycleVipStatusAPIRequest) {
+	v.Reset()
+	poolAlibabaAiContentBusinessGetThirdCycleVipStatusAPIRequest.Put(v)
 }

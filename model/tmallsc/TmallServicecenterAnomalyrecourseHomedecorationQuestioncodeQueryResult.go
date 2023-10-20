@@ -1,5 +1,9 @@
 package tmallsc
 
+import (
+	"sync"
+)
+
 // TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryResult 结构体
 type TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryResult struct {
 	// 错误信息
@@ -10,4 +14,24 @@ type TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryResult stru
 	Value string `json:"value,omitempty" xml:"value,omitempty"`
 	// 调用是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryResult = sync.Pool{
+	New: func() any {
+		return new(TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryResult)
+	},
+}
+
+// GetTmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryResult() 从对象池中获取TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryResult
+func GetTmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryResult() *TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryResult {
+	return poolTmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryResult.Get().(*TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryResult)
+}
+
+// ReleaseTmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryResult 释放TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryResult
+func ReleaseTmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryResult(v *TmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryResult) {
+	v.ErrorMsg = ""
+	v.ErrorCode = ""
+	v.Value = ""
+	v.Success = false
+	poolTmallServicecenterAnomalyrecourseHomedecorationQuestioncodeQueryResult.Put(v)
 }

@@ -1,5 +1,9 @@
 package nazca
 
+import (
+	"sync"
+)
+
 // IssueCertApplyDo 结构体
 type IssueCertApplyDo struct {
 	// 合同编号
@@ -14,4 +18,26 @@ type IssueCertApplyDo struct {
 	PageNum int64 `json:"page_num,omitempty" xml:"page_num,omitempty"`
 	// 角色 0：接收者 1：发送者
 	SendReceive int64 `json:"send_receive,omitempty" xml:"send_receive,omitempty"`
+}
+
+var poolIssueCertApplyDo = sync.Pool{
+	New: func() any {
+		return new(IssueCertApplyDo)
+	},
+}
+
+// GetIssueCertApplyDo() 从对象池中获取IssueCertApplyDo
+func GetIssueCertApplyDo() *IssueCertApplyDo {
+	return poolIssueCertApplyDo.Get().(*IssueCertApplyDo)
+}
+
+// ReleaseIssueCertApplyDo 释放IssueCertApplyDo
+func ReleaseIssueCertApplyDo(v *IssueCertApplyDo) {
+	v.ContractNum = ""
+	v.PlatformUserId = ""
+	v.ReturnUrl = ""
+	v.Topic = ""
+	v.PageNum = 0
+	v.SendReceive = 0
+	poolIssueCertApplyDo.Put(v)
 }

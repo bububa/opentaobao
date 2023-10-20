@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // Extra 结构体
 type Extra struct {
 	// 领取率，领取淘礼金个数/创建淘礼金个数
@@ -30,4 +34,34 @@ type Extra struct {
 	UseNum int64 `json:"use_num,omitempty" xml:"use_num,omitempty"`
 	// 退款淘礼金个数，红包使用后，由于订单取消，退货退款等行为带来的淘礼金红包退回数量，退款红包数量单日内不重复计算，跨天重复计算
 	RefundNum int64 `json:"refund_num,omitempty" xml:"refund_num,omitempty"`
+}
+
+var poolExtra = sync.Pool{
+	New: func() any {
+		return new(Extra)
+	},
+}
+
+// GetExtra() 从对象池中获取Extra
+func GetExtra() *Extra {
+	return poolExtra.Get().(*Extra)
+}
+
+// ReleaseExtra 释放Extra
+func ReleaseExtra(v *Extra) {
+	v.GetRate = ""
+	v.UseRate = ""
+	v.AlipayAmt = ""
+	v.PrePubShareFeeForDisp = ""
+	v.CmSettleAmt = ""
+	v.WinSumAmt = ""
+	v.RemainingAmt = ""
+	v.UseSumAmt = ""
+	v.RefundSumAmt = ""
+	v.AlipayNum = 0
+	v.WinPv = 0
+	v.RemainingNum = 0
+	v.UseNum = 0
+	v.RefundNum = 0
+	poolExtra.Put(v)
 }

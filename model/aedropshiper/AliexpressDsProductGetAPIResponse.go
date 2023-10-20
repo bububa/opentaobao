@@ -2,6 +2,7 @@ package aedropshiper
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AliexpressDsProductGetAPIResponse struct {
 	AliexpressDsProductGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AliexpressDsProductGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliexpressDsProductGetAPIResponseModel).Reset()
+}
+
 // AliexpressDsProductGetAPIResponseModel is 商品信息查询 成功返回结果
 type AliexpressDsProductGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_ds_product_get_response"`
@@ -26,4 +33,29 @@ type AliexpressDsProductGetAPIResponseModel struct {
 	RspCode string `json:"rsp_code,omitempty" xml:"rsp_code,omitempty"`
 	// Product search results
 	Result *AeItemQueryResultDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliexpressDsProductGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RspMsg = ""
+	m.RspCode = ""
+	m.Result = nil
+}
+
+var poolAliexpressDsProductGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliexpressDsProductGetAPIResponse)
+	},
+}
+
+// GetAliexpressDsProductGetAPIResponse 从 sync.Pool 获取 AliexpressDsProductGetAPIResponse
+func GetAliexpressDsProductGetAPIResponse() *AliexpressDsProductGetAPIResponse {
+	return poolAliexpressDsProductGetAPIResponse.Get().(*AliexpressDsProductGetAPIResponse)
+}
+
+// ReleaseAliexpressDsProductGetAPIResponse 将 AliexpressDsProductGetAPIResponse 保存到 sync.Pool
+func ReleaseAliexpressDsProductGetAPIResponse(v *AliexpressDsProductGetAPIResponse) {
+	v.Reset()
+	poolAliexpressDsProductGetAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // ServiceApiBean 结构体
 type ServiceApiBean struct {
 	// 服务内容。 最多允许200个字符。 禁止空格等特殊符号。
@@ -14,4 +18,26 @@ type ServiceApiBean struct {
 	ServiceTimeStart string `json:"service_time_start,omitempty" xml:"service_time_start,omitempty"`
 	// 服务时间 1:不限制时间 2:按具体服务时间
 	ServiceTimeType int64 `json:"service_time_type,omitempty" xml:"service_time_type,omitempty"`
+}
+
+var poolServiceApiBean = sync.Pool{
+	New: func() any {
+		return new(ServiceApiBean)
+	},
+}
+
+// GetServiceApiBean() 从对象池中获取ServiceApiBean
+func GetServiceApiBean() *ServiceApiBean {
+	return poolServiceApiBean.Get().(*ServiceApiBean)
+}
+
+// ReleaseServiceApiBean 释放ServiceApiBean
+func ReleaseServiceApiBean(v *ServiceApiBean) {
+	v.ServiceContent = ""
+	v.RoomTip = ""
+	v.Room = ""
+	v.ServiceTimeEnd = ""
+	v.ServiceTimeStart = ""
+	v.ServiceTimeType = 0
+	poolServiceApiBean.Put(v)
 }

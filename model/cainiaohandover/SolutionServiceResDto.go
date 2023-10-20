@@ -1,5 +1,9 @@
 package cainiaohandover
 
+import (
+	"sync"
+)
+
 // SolutionServiceResDto 结构体
 type SolutionServiceResDto struct {
 	// 解决方案编码
@@ -22,4 +26,30 @@ type SolutionServiceResDto struct {
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 扩展字段
 	Features *Features `json:"features,omitempty" xml:"features,omitempty"`
+}
+
+var poolSolutionServiceResDto = sync.Pool{
+	New: func() any {
+		return new(SolutionServiceResDto)
+	},
+}
+
+// GetSolutionServiceResDto() 从对象池中获取SolutionServiceResDto
+func GetSolutionServiceResDto() *SolutionServiceResDto {
+	return poolSolutionServiceResDto.Get().(*SolutionServiceResDto)
+}
+
+// ReleaseSolutionServiceResDto 释放SolutionServiceResDto
+func ReleaseSolutionServiceResDto(v *SolutionServiceResDto) {
+	v.SolutionCode = ""
+	v.Priority = ""
+	v.ContactName = ""
+	v.ContactTelephone = ""
+	v.WorkTimeTips = ""
+	v.Division = ""
+	v.Address = ""
+	v.Name = ""
+	v.Code = ""
+	v.Features = nil
+	poolSolutionServiceResDto.Put(v)
 }

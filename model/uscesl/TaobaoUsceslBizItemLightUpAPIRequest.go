@@ -2,6 +2,7 @@ package uscesl
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoUsceslBizItemLightUpAPIRequest struct {
 // NewTaobaoUsceslBizItemLightUpRequest 初始化TaobaoUsceslBizItemLightUpAPIRequest对象
 func NewTaobaoUsceslBizItemLightUpRequest() *TaobaoUsceslBizItemLightUpAPIRequest {
 	return &TaobaoUsceslBizItemLightUpAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUsceslBizItemLightUpAPIRequest) Reset() {
+	r._itemBarCode = ""
+	r._ledColor = ""
+	r._bizBrandKey = ""
+	r._lightUpTime = 0
+	r._storeId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoUsceslBizItemLightUpAPIRequest) SetStoreId(_storeId int64) error 
 // GetStoreId StoreId Getter
 func (r TaobaoUsceslBizItemLightUpAPIRequest) GetStoreId() int64 {
 	return r._storeId
+}
+
+var poolTaobaoUsceslBizItemLightUpAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUsceslBizItemLightUpRequest()
+	},
+}
+
+// GetTaobaoUsceslBizItemLightUpRequest 从 sync.Pool 获取 TaobaoUsceslBizItemLightUpAPIRequest
+func GetTaobaoUsceslBizItemLightUpAPIRequest() *TaobaoUsceslBizItemLightUpAPIRequest {
+	return poolTaobaoUsceslBizItemLightUpAPIRequest.Get().(*TaobaoUsceslBizItemLightUpAPIRequest)
+}
+
+// ReleaseTaobaoUsceslBizItemLightUpAPIRequest 将 TaobaoUsceslBizItemLightUpAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUsceslBizItemLightUpAPIRequest(v *TaobaoUsceslBizItemLightUpAPIRequest) {
+	v.Reset()
+	poolTaobaoUsceslBizItemLightUpAPIRequest.Put(v)
 }

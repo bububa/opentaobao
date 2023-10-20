@@ -2,6 +2,7 @@ package user
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAppstoreSubscribeGetAPIRequest struct {
 // NewTaobaoAppstoreSubscribeGetRequest 初始化TaobaoAppstoreSubscribeGetAPIRequest对象
 func NewTaobaoAppstoreSubscribeGetRequest() *TaobaoAppstoreSubscribeGetAPIRequest {
 	return &TaobaoAppstoreSubscribeGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAppstoreSubscribeGetAPIRequest) Reset() {
+	r._nick = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAppstoreSubscribeGetAPIRequest) SetNick(_nick string) error {
 // GetNick Nick Getter
 func (r TaobaoAppstoreSubscribeGetAPIRequest) GetNick() string {
 	return r._nick
+}
+
+var poolTaobaoAppstoreSubscribeGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAppstoreSubscribeGetRequest()
+	},
+}
+
+// GetTaobaoAppstoreSubscribeGetRequest 从 sync.Pool 获取 TaobaoAppstoreSubscribeGetAPIRequest
+func GetTaobaoAppstoreSubscribeGetAPIRequest() *TaobaoAppstoreSubscribeGetAPIRequest {
+	return poolTaobaoAppstoreSubscribeGetAPIRequest.Get().(*TaobaoAppstoreSubscribeGetAPIRequest)
+}
+
+// ReleaseTaobaoAppstoreSubscribeGetAPIRequest 将 TaobaoAppstoreSubscribeGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAppstoreSubscribeGetAPIRequest(v *TaobaoAppstoreSubscribeGetAPIRequest) {
+	v.Reset()
+	poolTaobaoAppstoreSubscribeGetAPIRequest.Put(v)
 }

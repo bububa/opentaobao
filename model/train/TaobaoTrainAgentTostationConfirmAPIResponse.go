@@ -2,6 +2,7 @@ package train
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoTrainAgentTostationConfirmAPIResponse struct {
 	model.CommonResponse
 	TaobaoTrainAgentTostationConfirmAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoTrainAgentTostationConfirmAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTrainAgentTostationConfirmAPIResponseModel).Reset()
 }
 
 // TaobaoTrainAgentTostationConfirmAPIResponseModel is 线下票确认送票至车站服务 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoTrainAgentTostationConfirmAPIResponseModel struct {
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTrainAgentTostationConfirmAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorMsgCode = ""
+	m.ExtendParams = ""
+	m.ErrorMsg = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoTrainAgentTostationConfirmAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTrainAgentTostationConfirmAPIResponse)
+	},
+}
+
+// GetTaobaoTrainAgentTostationConfirmAPIResponse 从 sync.Pool 获取 TaobaoTrainAgentTostationConfirmAPIResponse
+func GetTaobaoTrainAgentTostationConfirmAPIResponse() *TaobaoTrainAgentTostationConfirmAPIResponse {
+	return poolTaobaoTrainAgentTostationConfirmAPIResponse.Get().(*TaobaoTrainAgentTostationConfirmAPIResponse)
+}
+
+// ReleaseTaobaoTrainAgentTostationConfirmAPIResponse 将 TaobaoTrainAgentTostationConfirmAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTrainAgentTostationConfirmAPIResponse(v *TaobaoTrainAgentTostationConfirmAPIResponse) {
+	v.Reset()
+	poolTaobaoTrainAgentTostationConfirmAPIResponse.Put(v)
 }

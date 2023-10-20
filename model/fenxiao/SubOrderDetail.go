@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // SubOrderDetail 结构体
 type SubOrderDetail struct {
 	// 建议废弃 Feature对象列表目前已有的属性： attr_key为 www，attr_value为1 表示是www子订单； attr_key为 wwwStoreCode，attr_value是www子订单发货的仓库编码； attr_key为 isWt，attr_value为1 表示是网厅子订单； attr_key为wtInfo,attr_value为网厅相关合约信息；  attr_key为 storeCode，attr_value为仓库信息；  attr_key为 erpHold，attr_value为1表示强管控中， attr_value为2表示分单完成；
@@ -128,4 +132,83 @@ type SubOrderDetail struct {
 	SecondarySupplierId int64 `json:"secondary_supplier_id,omitempty" xml:"secondary_supplier_id,omitempty"`
 	// tp单创单时间的货品采购单价
 	TpCreateTimePrice float64 `json:"tp_create_time_price,omitempty" xml:"tp_create_time_price,omitempty"`
+}
+
+var poolSubOrderDetail = sync.Pool{
+	New: func() any {
+		return new(SubOrderDetail)
+	},
+}
+
+// GetSubOrderDetail() 从对象池中获取SubOrderDetail
+func GetSubOrderDetail() *SubOrderDetail {
+	return poolSubOrderDetail.Get().(*SubOrderDetail)
+}
+
+// ReleaseSubOrderDetail 释放SubOrderDetail
+func ReleaseSubOrderDetail(v *SubOrderDetail) {
+	v.Features = v.Features[:0]
+	v.ItemOuterId = ""
+	v.SkuOuterId = ""
+	v.SkuProperties = ""
+	v.OldSkuProperties = ""
+	v.Title = ""
+	v.Price = ""
+	v.SnapshotUrl = ""
+	v.Created = ""
+	v.Status = ""
+	v.TotalFee = ""
+	v.DistributorPayment = ""
+	v.BuyerPayment = ""
+	v.RefundFee = ""
+	v.Order200Status = ""
+	v.AuctionPrice = ""
+	v.BillFee = ""
+	v.TcPreferentialType = ""
+	v.DiscountFee = ""
+	v.PromotionType = ""
+	v.DiscountFeeYuan = ""
+	v.SkuPropertyVal = ""
+	v.DistributorPayPriceYuan = ""
+	v.RefundFeeYuan = ""
+	v.ConfirmPaidFeeYuan = ""
+	v.BuyerPayPriceYuan = ""
+	v.OldSkuPropertyVal = ""
+	v.AlipayOrderNo = ""
+	v.SnapPath = ""
+	v.GmtCreate = ""
+	v.BillFeeYuan = ""
+	v.PriceYuan = ""
+	v.DistributorPriceYuan = ""
+	v.RefundStatusCode = ""
+	v.SubOrderStatusCode = ""
+	v.AuctionOutId = ""
+	v.AuctionOutSkuId = ""
+	v.TcOrderId = 0
+	v.FenxiaoId = 0
+	v.ItemId = 0
+	v.SkuId = 0
+	v.AuctionId = 0
+	v.AuctionSkuId = 0
+	v.Num = 0
+	v.Id = 0
+	v.ScItemId = 0
+	v.TcDiscountFee = 0
+	v.TcAdjustFee = 0
+	v.TopMemo = nil
+	v.BuyerPayPrice = 0
+	v.BuyNum = 0
+	v.SubTcOrderId = 0
+	v.ConfirmPaidFee = 0
+	v.RealAuctionId = 0
+	v.RealAuctionSkuId = 0
+	v.SubOrderId = 0
+	v.DistributorPrice = 0
+	v.AuctionSellerSkuId = 0
+	v.DistributorPayPrice = 0
+	v.RefundStatus = 0
+	v.SubOrderStatus = 0
+	v.SecondarySupplierId = 0
+	v.TpCreateTimePrice = 0
+	poolSubOrderDetail.Put(v)
 }

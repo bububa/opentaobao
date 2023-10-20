@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // LocationInfo 结构体
 type LocationInfo struct {
 	// 市区域码
@@ -18,4 +22,28 @@ type LocationInfo struct {
 	PoiName string `json:"poi_name,omitempty" xml:"poi_name,omitempty"`
 	// 省区域码
 	Province string `json:"province,omitempty" xml:"province,omitempty"`
+}
+
+var poolLocationInfo = sync.Pool{
+	New: func() any {
+		return new(LocationInfo)
+	},
+}
+
+// GetLocationInfo() 从对象池中获取LocationInfo
+func GetLocationInfo() *LocationInfo {
+	return poolLocationInfo.Get().(*LocationInfo)
+}
+
+// ReleaseLocationInfo 释放LocationInfo
+func ReleaseLocationInfo(v *LocationInfo) {
+	v.City = ""
+	v.District = ""
+	v.Lat = ""
+	v.Lng = ""
+	v.LocationType = ""
+	v.PoiId = ""
+	v.PoiName = ""
+	v.Province = ""
+	poolLocationInfo.Put(v)
 }

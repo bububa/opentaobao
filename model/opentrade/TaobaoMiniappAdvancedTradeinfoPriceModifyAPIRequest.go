@@ -2,6 +2,7 @@ package opentrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoMiniappAdvancedTradeinfoPriceModifyAPIRequest struct {
 // NewTaobaoMiniappAdvancedTradeinfoPriceModifyRequest 初始化TaobaoMiniappAdvancedTradeinfoPriceModifyAPIRequest对象
 func NewTaobaoMiniappAdvancedTradeinfoPriceModifyRequest() *TaobaoMiniappAdvancedTradeinfoPriceModifyAPIRequest {
 	return &TaobaoMiniappAdvancedTradeinfoPriceModifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMiniappAdvancedTradeinfoPriceModifyAPIRequest) Reset() {
+	r._req = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoMiniappAdvancedTradeinfoPriceModifyAPIRequest) SetReq(_req *SaveM
 // GetReq Req Getter
 func (r TaobaoMiniappAdvancedTradeinfoPriceModifyAPIRequest) GetReq() *SaveModifyPriceRequest {
 	return r._req
+}
+
+var poolTaobaoMiniappAdvancedTradeinfoPriceModifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMiniappAdvancedTradeinfoPriceModifyRequest()
+	},
+}
+
+// GetTaobaoMiniappAdvancedTradeinfoPriceModifyRequest 从 sync.Pool 获取 TaobaoMiniappAdvancedTradeinfoPriceModifyAPIRequest
+func GetTaobaoMiniappAdvancedTradeinfoPriceModifyAPIRequest() *TaobaoMiniappAdvancedTradeinfoPriceModifyAPIRequest {
+	return poolTaobaoMiniappAdvancedTradeinfoPriceModifyAPIRequest.Get().(*TaobaoMiniappAdvancedTradeinfoPriceModifyAPIRequest)
+}
+
+// ReleaseTaobaoMiniappAdvancedTradeinfoPriceModifyAPIRequest 将 TaobaoMiniappAdvancedTradeinfoPriceModifyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMiniappAdvancedTradeinfoPriceModifyAPIRequest(v *TaobaoMiniappAdvancedTradeinfoPriceModifyAPIRequest) {
+	v.Reset()
+	poolTaobaoMiniappAdvancedTradeinfoPriceModifyAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // ProductDetailQueryRequestForSupplier 结构体
 type ProductDetailQueryRequestForSupplier struct {
 	// 二级渠道编码
@@ -10,4 +14,24 @@ type ProductDetailQueryRequestForSupplier struct {
 	ChannelProductId int64 `json:"channel_product_id,omitempty" xml:"channel_product_id,omitempty"`
 	// 是否查询 sku 信息
 	IncludeSku bool `json:"include_sku,omitempty" xml:"include_sku,omitempty"`
+}
+
+var poolProductDetailQueryRequestForSupplier = sync.Pool{
+	New: func() any {
+		return new(ProductDetailQueryRequestForSupplier)
+	},
+}
+
+// GetProductDetailQueryRequestForSupplier() 从对象池中获取ProductDetailQueryRequestForSupplier
+func GetProductDetailQueryRequestForSupplier() *ProductDetailQueryRequestForSupplier {
+	return poolProductDetailQueryRequestForSupplier.Get().(*ProductDetailQueryRequestForSupplier)
+}
+
+// ReleaseProductDetailQueryRequestForSupplier 释放ProductDetailQueryRequestForSupplier
+func ReleaseProductDetailQueryRequestForSupplier(v *ProductDetailQueryRequestForSupplier) {
+	v.SubChannelCode = ""
+	v.ChannelCode = ""
+	v.ChannelProductId = 0
+	v.IncludeSku = false
+	poolProductDetailQueryRequestForSupplier.Put(v)
 }

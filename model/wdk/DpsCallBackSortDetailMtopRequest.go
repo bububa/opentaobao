@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // DpsCallBackSortDetailMtopRequest 结构体
 type DpsCallBackSortDetailMtopRequest struct {
 	// 提交时间
@@ -14,4 +18,26 @@ type DpsCallBackSortDetailMtopRequest struct {
 	UserAccountCode string `json:"user_account_code,omitempty" xml:"user_account_code,omitempty"`
 	// 明细id
 	DetailId int64 `json:"detail_id,omitempty" xml:"detail_id,omitempty"`
+}
+
+var poolDpsCallBackSortDetailMtopRequest = sync.Pool{
+	New: func() any {
+		return new(DpsCallBackSortDetailMtopRequest)
+	},
+}
+
+// GetDpsCallBackSortDetailMtopRequest() 从对象池中获取DpsCallBackSortDetailMtopRequest
+func GetDpsCallBackSortDetailMtopRequest() *DpsCallBackSortDetailMtopRequest {
+	return poolDpsCallBackSortDetailMtopRequest.Get().(*DpsCallBackSortDetailMtopRequest)
+}
+
+// ReleaseDpsCallBackSortDetailMtopRequest 释放DpsCallBackSortDetailMtopRequest
+func ReleaseDpsCallBackSortDetailMtopRequest(v *DpsCallBackSortDetailMtopRequest) {
+	v.SubmitTime = ""
+	v.LackNum = ""
+	v.SubmitNum = ""
+	v.ContainerCode = ""
+	v.UserAccountCode = ""
+	v.DetailId = 0
+	poolDpsCallBackSortDetailMtopRequest.Put(v)
 }

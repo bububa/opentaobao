@@ -2,6 +2,7 @@ package wlbimports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoGlobalImPickupBigbagExpressPrequeryAPIRequest struct {
 // NewCainiaoGlobalImPickupBigbagExpressPrequeryRequest 初始化CainiaoGlobalImPickupBigbagExpressPrequeryAPIRequest对象
 func NewCainiaoGlobalImPickupBigbagExpressPrequeryRequest() *CainiaoGlobalImPickupBigbagExpressPrequeryAPIRequest {
 	return &CainiaoGlobalImPickupBigbagExpressPrequeryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoGlobalImPickupBigbagExpressPrequeryAPIRequest) Reset() {
+	r._expressPreQueryRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoGlobalImPickupBigbagExpressPrequeryAPIRequest) SetExpressPreQuer
 // GetExpressPreQueryRequest ExpressPreQueryRequest Getter
 func (r CainiaoGlobalImPickupBigbagExpressPrequeryAPIRequest) GetExpressPreQueryRequest() *ExpressPreQueryRequest {
 	return r._expressPreQueryRequest
+}
+
+var poolCainiaoGlobalImPickupBigbagExpressPrequeryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoGlobalImPickupBigbagExpressPrequeryRequest()
+	},
+}
+
+// GetCainiaoGlobalImPickupBigbagExpressPrequeryRequest 从 sync.Pool 获取 CainiaoGlobalImPickupBigbagExpressPrequeryAPIRequest
+func GetCainiaoGlobalImPickupBigbagExpressPrequeryAPIRequest() *CainiaoGlobalImPickupBigbagExpressPrequeryAPIRequest {
+	return poolCainiaoGlobalImPickupBigbagExpressPrequeryAPIRequest.Get().(*CainiaoGlobalImPickupBigbagExpressPrequeryAPIRequest)
+}
+
+// ReleaseCainiaoGlobalImPickupBigbagExpressPrequeryAPIRequest 将 CainiaoGlobalImPickupBigbagExpressPrequeryAPIRequest 放入 sync.Pool
+func ReleaseCainiaoGlobalImPickupBigbagExpressPrequeryAPIRequest(v *CainiaoGlobalImPickupBigbagExpressPrequeryAPIRequest) {
+	v.Reset()
+	poolCainiaoGlobalImPickupBigbagExpressPrequeryAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package tmallgeniescp
 
+import (
+	"sync"
+)
+
 // CurrentQuotaDto 结构体
 type CurrentQuotaDto struct {
 	// 关键日期值
@@ -14,4 +18,26 @@ type CurrentQuotaDto struct {
 	ExtendJson string `json:"extend_json,omitempty" xml:"extend_json,omitempty"`
 	// 租户
 	Tenant string `json:"tenant,omitempty" xml:"tenant,omitempty"`
+}
+
+var poolCurrentQuotaDto = sync.Pool{
+	New: func() any {
+		return new(CurrentQuotaDto)
+	},
+}
+
+// GetCurrentQuotaDto() 从对象池中获取CurrentQuotaDto
+func GetCurrentQuotaDto() *CurrentQuotaDto {
+	return poolCurrentQuotaDto.Get().(*CurrentQuotaDto)
+}
+
+// ReleaseCurrentQuotaDto 释放CurrentQuotaDto
+func ReleaseCurrentQuotaDto(v *CurrentQuotaDto) {
+	v.KeyFigureDate = ""
+	v.Ratio = ""
+	v.MaterielCode = ""
+	v.LocationCode = ""
+	v.ExtendJson = ""
+	v.Tenant = ""
+	poolCurrentQuotaDto.Put(v)
 }

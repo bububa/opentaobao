@@ -1,5 +1,9 @@
 package inventory
 
+import (
+	"sync"
+)
+
 // PlanInstanceInvResultDto 结构体
 type PlanInstanceInvResultDto struct {
 	// 计划的履约仓信息
@@ -30,4 +34,34 @@ type PlanInstanceInvResultDto struct {
 	PlanInstanceId int64 `json:"plan_instance_id,omitempty" xml:"plan_instance_id,omitempty"`
 	// 最后一次全量设置的计划库存值。如果是增量编辑库存，settingQuantity不会变。这个值仅做参考，主要看前面的实时剩余可售数量sellable_quantity
 	SettingQuantity int64 `json:"setting_quantity,omitempty" xml:"setting_quantity,omitempty"`
+}
+
+var poolPlanInstanceInvResultDto = sync.Pool{
+	New: func() any {
+		return new(PlanInstanceInvResultDto)
+	},
+}
+
+// GetPlanInstanceInvResultDto() 从对象池中获取PlanInstanceInvResultDto
+func GetPlanInstanceInvResultDto() *PlanInstanceInvResultDto {
+	return poolPlanInstanceInvResultDto.Get().(*PlanInstanceInvResultDto)
+}
+
+// ReleasePlanInstanceInvResultDto 释放PlanInstanceInvResultDto
+func ReleasePlanInstanceInvResultDto(v *PlanInstanceInvResultDto) {
+	v.PromiseList = v.PromiseList[:0]
+	v.RelationList = v.RelationList[:0]
+	v.StartTime = ""
+	v.EndTime = ""
+	v.PlanOrderId = ""
+	v.ItemId = 0
+	v.ItemType = 0
+	v.SkuId = 0
+	v.SellableQuantity = 0
+	v.WithholdingQuantity = 0
+	v.OccupyQuantity = 0
+	v.Strategy = nil
+	v.PlanInstanceId = 0
+	v.SettingQuantity = 0
+	poolPlanInstanceInvResultDto.Put(v)
 }

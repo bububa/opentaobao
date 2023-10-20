@@ -1,5 +1,9 @@
 package mozi
 
+import (
+	"sync"
+)
+
 // AddOrUpdateTenantEmployeeAndAccountResult 结构体
 type AddOrUpdateTenantEmployeeAndAccountResult struct {
 	// 返回状态描述
@@ -14,4 +18,26 @@ type AddOrUpdateTenantEmployeeAndAccountResult struct {
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAddOrUpdateTenantEmployeeAndAccountResult = sync.Pool{
+	New: func() any {
+		return new(AddOrUpdateTenantEmployeeAndAccountResult)
+	},
+}
+
+// GetAddOrUpdateTenantEmployeeAndAccountResult() 从对象池中获取AddOrUpdateTenantEmployeeAndAccountResult
+func GetAddOrUpdateTenantEmployeeAndAccountResult() *AddOrUpdateTenantEmployeeAndAccountResult {
+	return poolAddOrUpdateTenantEmployeeAndAccountResult.Get().(*AddOrUpdateTenantEmployeeAndAccountResult)
+}
+
+// ReleaseAddOrUpdateTenantEmployeeAndAccountResult 释放AddOrUpdateTenantEmployeeAndAccountResult
+func ReleaseAddOrUpdateTenantEmployeeAndAccountResult(v *AddOrUpdateTenantEmployeeAndAccountResult) {
+	v.ResponseMessage = ""
+	v.ResponseMetaData = ""
+	v.ResponseCode = ""
+	v.RequestId = ""
+	v.Data = ""
+	v.Success = false
+	poolAddOrUpdateTenantEmployeeAndAccountResult.Put(v)
 }

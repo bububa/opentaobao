@@ -2,6 +2,7 @@ package mozi
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMoziFusionUpdateEmployeeAccountAPIRequest struct {
 // NewAlibabaMoziFusionUpdateEmployeeAccountRequest 初始化AlibabaMoziFusionUpdateEmployeeAccountAPIRequest对象
 func NewAlibabaMoziFusionUpdateEmployeeAccountRequest() *AlibabaMoziFusionUpdateEmployeeAccountAPIRequest {
 	return &AlibabaMoziFusionUpdateEmployeeAccountAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMoziFusionUpdateEmployeeAccountAPIRequest) Reset() {
+	r._employeeAccount = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMoziFusionUpdateEmployeeAccountAPIRequest) SetEmployeeAccount(_e
 // GetEmployeeAccount EmployeeAccount Getter
 func (r AlibabaMoziFusionUpdateEmployeeAccountAPIRequest) GetEmployeeAccount() *UpdateTenantEmployeeAndAccountRequest {
 	return r._employeeAccount
+}
+
+var poolAlibabaMoziFusionUpdateEmployeeAccountAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMoziFusionUpdateEmployeeAccountRequest()
+	},
+}
+
+// GetAlibabaMoziFusionUpdateEmployeeAccountRequest 从 sync.Pool 获取 AlibabaMoziFusionUpdateEmployeeAccountAPIRequest
+func GetAlibabaMoziFusionUpdateEmployeeAccountAPIRequest() *AlibabaMoziFusionUpdateEmployeeAccountAPIRequest {
+	return poolAlibabaMoziFusionUpdateEmployeeAccountAPIRequest.Get().(*AlibabaMoziFusionUpdateEmployeeAccountAPIRequest)
+}
+
+// ReleaseAlibabaMoziFusionUpdateEmployeeAccountAPIRequest 将 AlibabaMoziFusionUpdateEmployeeAccountAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMoziFusionUpdateEmployeeAccountAPIRequest(v *AlibabaMoziFusionUpdateEmployeeAccountAPIRequest) {
+	v.Reset()
+	poolAlibabaMoziFusionUpdateEmployeeAccountAPIRequest.Put(v)
 }

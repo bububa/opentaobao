@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // Sametownpackages 结构体
 type Sametownpackages struct {
 	// 货品列表
@@ -16,4 +20,27 @@ type Sametownpackages struct {
 	WorkOrderId string `json:"work_order_id,omitempty" xml:"work_order_id,omitempty"`
 	// 履约单id
 	FulfillOrderId string `json:"fulfill_order_id,omitempty" xml:"fulfill_order_id,omitempty"`
+}
+
+var poolSametownpackages = sync.Pool{
+	New: func() any {
+		return new(Sametownpackages)
+	},
+}
+
+// GetSametownpackages() 从对象池中获取Sametownpackages
+func GetSametownpackages() *Sametownpackages {
+	return poolSametownpackages.Get().(*Sametownpackages)
+}
+
+// ReleaseSametownpackages 释放Sametownpackages
+func ReleaseSametownpackages(v *Sametownpackages) {
+	v.SkuDetails = v.SkuDetails[:0]
+	v.Attribute = ""
+	v.IsTest = ""
+	v.TokenCode = ""
+	v.WarehouseCode = ""
+	v.WorkOrderId = ""
+	v.FulfillOrderId = ""
+	poolSametownpackages.Put(v)
 }

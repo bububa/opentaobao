@@ -2,6 +2,7 @@ package jst
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoJstSmsTemplateDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstSmsTemplateDeleteAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoJstSmsTemplateDeleteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoJstSmsTemplateDeleteAPIResponseModel).Reset()
 }
 
 // TaobaoJstSmsTemplateDeleteAPIResponseModel is 淘宝短信模板删除 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoJstSmsTemplateDeleteAPIResponseModel struct {
 	RSuccess bool `json:"r_success,omitempty" xml:"r_success,omitempty"`
 	// 删除成功
 	Module bool `json:"module,omitempty" xml:"module,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoJstSmsTemplateDeleteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RCode = ""
+	m.Message = ""
+	m.RSuccess = false
+	m.Module = false
+}
+
+var poolTaobaoJstSmsTemplateDeleteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoJstSmsTemplateDeleteAPIResponse)
+	},
+}
+
+// GetTaobaoJstSmsTemplateDeleteAPIResponse 从 sync.Pool 获取 TaobaoJstSmsTemplateDeleteAPIResponse
+func GetTaobaoJstSmsTemplateDeleteAPIResponse() *TaobaoJstSmsTemplateDeleteAPIResponse {
+	return poolTaobaoJstSmsTemplateDeleteAPIResponse.Get().(*TaobaoJstSmsTemplateDeleteAPIResponse)
+}
+
+// ReleaseTaobaoJstSmsTemplateDeleteAPIResponse 将 TaobaoJstSmsTemplateDeleteAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoJstSmsTemplateDeleteAPIResponse(v *TaobaoJstSmsTemplateDeleteAPIResponse) {
+	v.Reset()
+	poolTaobaoJstSmsTemplateDeleteAPIResponse.Put(v)
 }

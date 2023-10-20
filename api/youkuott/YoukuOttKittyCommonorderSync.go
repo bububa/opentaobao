@@ -9,11 +9,6 @@ import (
 // youku.ott.kitty.commonorder.sync
 //
 // 运营商一般订单同步
-func YoukuOttKittyCommonorderSync(clt *core.SDKClient, req *youkuott.YoukuOttKittyCommonorderSyncAPIRequest, session string) (*youkuott.YoukuOttKittyCommonorderSyncAPIResponse, error) {
-	var resp youkuott.YoukuOttKittyCommonorderSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YoukuOttKittyCommonorderSync(clt *core.SDKClient, req *youkuott.YoukuOttKittyCommonorderSyncAPIRequest, resp *youkuott.YoukuOttKittyCommonorderSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

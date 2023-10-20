@@ -2,6 +2,7 @@ package mtopopen
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoLogisticsTaowaiMsgSendAPIResponse struct {
 	model.CommonResponse
 	TaobaoLogisticsTaowaiMsgSendAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoLogisticsTaowaiMsgSendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoLogisticsTaowaiMsgSendAPIResponseModel).Reset()
 }
 
 // TaobaoLogisticsTaowaiMsgSendAPIResponseModel is 淘外包裹物流信息走淘宝发包裹状态通知接口 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoLogisticsTaowaiMsgSendAPIResponseModel struct {
 	Result *MsgSendResponse `json:"result,omitempty" xml:"result,omitempty"`
 	// 通讯成功/通讯失败
 	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoLogisticsTaowaiMsgSendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultMsg = ""
+	m.ResultCode = ""
+	m.Result = nil
+	m.ResultSuccess = false
+}
+
+var poolTaobaoLogisticsTaowaiMsgSendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoLogisticsTaowaiMsgSendAPIResponse)
+	},
+}
+
+// GetTaobaoLogisticsTaowaiMsgSendAPIResponse 从 sync.Pool 获取 TaobaoLogisticsTaowaiMsgSendAPIResponse
+func GetTaobaoLogisticsTaowaiMsgSendAPIResponse() *TaobaoLogisticsTaowaiMsgSendAPIResponse {
+	return poolTaobaoLogisticsTaowaiMsgSendAPIResponse.Get().(*TaobaoLogisticsTaowaiMsgSendAPIResponse)
+}
+
+// ReleaseTaobaoLogisticsTaowaiMsgSendAPIResponse 将 TaobaoLogisticsTaowaiMsgSendAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoLogisticsTaowaiMsgSendAPIResponse(v *TaobaoLogisticsTaowaiMsgSendAPIResponse) {
+	v.Reset()
+	poolTaobaoLogisticsTaowaiMsgSendAPIResponse.Put(v)
 }

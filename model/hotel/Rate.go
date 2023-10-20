@@ -1,5 +1,9 @@
 package hotel
 
+import (
+	"sync"
+)
+
 // Rate 结构体
 type Rate struct {
 	// 餐食信息
@@ -64,4 +68,51 @@ type Rate struct {
 	LaterPay bool `json:"later_pay,omitempty" xml:"later_pay,omitempty"`
 	// 是否展示“会员价”标签；不是原价的价格上也有优惠价与会员价的区分；true--展示
 	MemberPrice bool `json:"member_price,omitempty" xml:"member_price,omitempty"`
+}
+
+var poolRate = sync.Pool{
+	New: func() any {
+		return new(Rate)
+	},
+}
+
+// GetRate() 从对象池中获取Rate
+func GetRate() *Rate {
+	return poolRate.Get().(*Rate)
+}
+
+// ReleaseRate 释放Rate
+func ReleaseRate(v *Rate) {
+	v.Breakfast = ""
+	v.CanCheckinEnd = ""
+	v.CanCheckinStart = ""
+	v.CancelPolicyDesc = ""
+	v.CancelPolicyDescLong = ""
+	v.CancelPolicyDescMiddle = ""
+	v.GuaranteeStartTime = ""
+	v.H5BuyUrl = ""
+	v.Hourage = ""
+	v.InventoryPrice = ""
+	v.MemberLevelName = ""
+	v.PcBuyUrl = ""
+	v.RatePlanName = ""
+	v.CanCheckOutEnd = ""
+	v.Supplier = ""
+	v.BreakfastCount = 0
+	v.CancelType = 0
+	v.GuaranteeType = 0
+	v.MemberLevel = 0
+	v.PaymentTypeByte = 0
+	v.RateId = 0
+	v.RpId = 0
+	v.Subtract = 0
+	v.Rid = 0
+	v.SellerId = 0
+	v.Srid = 0
+	v.InstantConfirm = false
+	v.RegisterStatus = false
+	v.HourRate = false
+	v.LaterPay = false
+	v.MemberPrice = false
+	poolRate.Put(v)
 }

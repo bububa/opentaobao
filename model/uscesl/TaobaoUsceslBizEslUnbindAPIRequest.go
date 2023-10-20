@@ -2,6 +2,7 @@ package uscesl
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoUsceslBizEslUnbindAPIRequest struct {
 // NewTaobaoUsceslBizEslUnbindRequest 初始化TaobaoUsceslBizEslUnbindAPIRequest对象
 func NewTaobaoUsceslBizEslUnbindRequest() *TaobaoUsceslBizEslUnbindAPIRequest {
 	return &TaobaoUsceslBizEslUnbindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUsceslBizEslUnbindAPIRequest) Reset() {
+	r._eslBarCode = ""
+	r._bizBrandKey = ""
+	r._storeId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoUsceslBizEslUnbindAPIRequest) SetStoreId(_storeId int64) error {
 // GetStoreId StoreId Getter
 func (r TaobaoUsceslBizEslUnbindAPIRequest) GetStoreId() int64 {
 	return r._storeId
+}
+
+var poolTaobaoUsceslBizEslUnbindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUsceslBizEslUnbindRequest()
+	},
+}
+
+// GetTaobaoUsceslBizEslUnbindRequest 从 sync.Pool 获取 TaobaoUsceslBizEslUnbindAPIRequest
+func GetTaobaoUsceslBizEslUnbindAPIRequest() *TaobaoUsceslBizEslUnbindAPIRequest {
+	return poolTaobaoUsceslBizEslUnbindAPIRequest.Get().(*TaobaoUsceslBizEslUnbindAPIRequest)
+}
+
+// ReleaseTaobaoUsceslBizEslUnbindAPIRequest 将 TaobaoUsceslBizEslUnbindAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUsceslBizEslUnbindAPIRequest(v *TaobaoUsceslBizEslUnbindAPIRequest) {
+	v.Reset()
+	poolTaobaoUsceslBizEslUnbindAPIRequest.Put(v)
 }

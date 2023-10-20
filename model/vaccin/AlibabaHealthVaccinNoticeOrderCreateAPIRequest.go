@@ -2,6 +2,7 @@ package vaccin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -51,8 +52,30 @@ type AlibabaHealthVaccinNoticeOrderCreateAPIRequest struct {
 // NewAlibabaHealthVaccinNoticeOrderCreateRequest 初始化AlibabaHealthVaccinNoticeOrderCreateAPIRequest对象
 func NewAlibabaHealthVaccinNoticeOrderCreateRequest() *AlibabaHealthVaccinNoticeOrderCreateAPIRequest {
 	return &AlibabaHealthVaccinNoticeOrderCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(17),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) Reset() {
+	r._reserveDate = ""
+	r._alipayUserId = ""
+	r._vaccineInfo = ""
+	r._outerUserId = ""
+	r._orderId = ""
+	r._mobile = ""
+	r._name = ""
+	r._address = ""
+	r._povStoreName = ""
+	r._reserveTime = ""
+	r._orderDetailUrl = ""
+	r._area = ""
+	r._city = ""
+	r._province = ""
+	r._sex = 0
+	r._age = 0
+	r._ageType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -291,4 +314,21 @@ func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetAgeType(_ageType int
 // GetAgeType AgeType Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetAgeType() int64 {
 	return r._ageType
+}
+
+var poolAlibabaHealthVaccinNoticeOrderCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHealthVaccinNoticeOrderCreateRequest()
+	},
+}
+
+// GetAlibabaHealthVaccinNoticeOrderCreateRequest 从 sync.Pool 获取 AlibabaHealthVaccinNoticeOrderCreateAPIRequest
+func GetAlibabaHealthVaccinNoticeOrderCreateAPIRequest() *AlibabaHealthVaccinNoticeOrderCreateAPIRequest {
+	return poolAlibabaHealthVaccinNoticeOrderCreateAPIRequest.Get().(*AlibabaHealthVaccinNoticeOrderCreateAPIRequest)
+}
+
+// ReleaseAlibabaHealthVaccinNoticeOrderCreateAPIRequest 将 AlibabaHealthVaccinNoticeOrderCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHealthVaccinNoticeOrderCreateAPIRequest(v *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaHealthVaccinNoticeOrderCreateAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package tttm
 
+import (
+	"sync"
+)
+
 // OrderDto 结构体
 type OrderDto struct {
 	// 下单货品
@@ -34,4 +38,36 @@ type OrderDto struct {
 	BizSource int64 `json:"biz_source,omitempty" xml:"biz_source,omitempty"`
 	// 加工类型
 	WorkingType int64 `json:"working_type,omitempty" xml:"working_type,omitempty"`
+}
+
+var poolOrderDto = sync.Pool{
+	New: func() any {
+		return new(OrderDto)
+	},
+}
+
+// GetOrderDto() 从对象池中获取OrderDto
+func GetOrderDto() *OrderDto {
+	return poolOrderDto.Get().(*OrderDto)
+}
+
+// ReleaseOrderDto 释放OrderDto
+func ReleaseOrderDto(v *OrderDto) {
+	v.OrderProductList = v.OrderProductList[:0]
+	v.OrderId = ""
+	v.TotalPrice = ""
+	v.CompanyName = ""
+	v.Remark = ""
+	v.OrderTime = ""
+	v.OrderProducts = ""
+	v.ExternalId = ""
+	v.DueTime = ""
+	v.Annexes = ""
+	v.TotalAmount = ""
+	v.AnnexesJson = ""
+	v.ContractType = 0
+	v.ProduceStatus = 0
+	v.BizSource = 0
+	v.WorkingType = 0
+	poolOrderDto.Put(v)
 }

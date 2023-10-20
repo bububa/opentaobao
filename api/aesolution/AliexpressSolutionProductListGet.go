@@ -9,11 +9,6 @@ import (
 // aliexpress.solution.product.list.get
 //
 // Get product list
-func AliexpressSolutionProductListGet(clt *core.SDKClient, req *aesolution.AliexpressSolutionProductListGetAPIRequest, session string) (*aesolution.AliexpressSolutionProductListGetAPIResponse, error) {
-	var resp aesolution.AliexpressSolutionProductListGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressSolutionProductListGet(clt *core.SDKClient, req *aesolution.AliexpressSolutionProductListGetAPIRequest, resp *aesolution.AliexpressSolutionProductListGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package feedflow
 
+import (
+	"sync"
+)
+
 // RptResultDto 结构体
 type RptResultDto struct {
 	// 消耗
@@ -74,4 +78,56 @@ type RptResultDto struct {
 	CreativeId int64 `json:"creative_id,omitempty" xml:"creative_id,omitempty"`
 	// 人群id
 	CrowdId int64 `json:"crowd_id,omitempty" xml:"crowd_id,omitempty"`
+}
+
+var poolRptResultDto = sync.Pool{
+	New: func() any {
+		return new(RptResultDto)
+	},
+}
+
+// GetRptResultDto() 从对象池中获取RptResultDto
+func GetRptResultDto() *RptResultDto {
+	return poolRptResultDto.Get().(*RptResultDto)
+}
+
+// ReleaseRptResultDto 释放RptResultDto
+func ReleaseRptResultDto(v *RptResultDto) {
+	v.Charge = ""
+	v.Ecpm = ""
+	v.Ecpc = ""
+	v.InshopUvRate = ""
+	v.AvgAccessTime = ""
+	v.AvgAccessPageNum = ""
+	v.AddNewUvRate = ""
+	v.NewFCharge = ""
+	v.GmvInshopAmt = ""
+	v.AlipayInshopAmt = ""
+	v.Icvr = ""
+	v.Cvr = ""
+	v.Roi = ""
+	v.LogDate = ""
+	v.CampaignName = ""
+	v.AdgroupName = ""
+	v.AdzoneName = ""
+	v.CreativeName = ""
+	v.CrowdName = ""
+	v.AdPv = 0
+	v.Click = 0
+	v.InshopPv = 0
+	v.InshopUv = 0
+	v.DeepInshopNum = 0
+	v.FollowNumber = 0
+	v.AddNewUv = 0
+	v.InshopItemColNum = 0
+	v.CartNum = 0
+	v.GmvInshopNum = 0
+	v.AlipayInShopNum = 0
+	v.HourId = 0
+	v.CampaignId = 0
+	v.AdgroupId = 0
+	v.AdzoneId = 0
+	v.CreativeId = 0
+	v.CrowdId = 0
+	poolRptResultDto.Put(v)
 }

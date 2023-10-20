@@ -2,6 +2,7 @@ package itpolicy
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoAlitripItPolicyBatchdeleteAPIResponse struct {
 	TaobaoAlitripItPolicyBatchdeleteAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoAlitripItPolicyBatchdeleteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAlitripItPolicyBatchdeleteAPIResponseModel).Reset()
+}
+
 // TaobaoAlitripItPolicyBatchdeleteAPIResponseModel is 【国际机票销售规则】批量删除 成功返回结果
 type TaobaoAlitripItPolicyBatchdeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_it_policy_batchdelete_response"`
@@ -24,4 +31,28 @@ type TaobaoAlitripItPolicyBatchdeleteAPIResponseModel struct {
 	ExtendAttributes string `json:"extend_attributes,omitempty" xml:"extend_attributes,omitempty"`
 	// 任务id
 	TaskId int64 `json:"task_id,omitempty" xml:"task_id,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAlitripItPolicyBatchdeleteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ExtendAttributes = ""
+	m.TaskId = 0
+}
+
+var poolTaobaoAlitripItPolicyBatchdeleteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAlitripItPolicyBatchdeleteAPIResponse)
+	},
+}
+
+// GetTaobaoAlitripItPolicyBatchdeleteAPIResponse 从 sync.Pool 获取 TaobaoAlitripItPolicyBatchdeleteAPIResponse
+func GetTaobaoAlitripItPolicyBatchdeleteAPIResponse() *TaobaoAlitripItPolicyBatchdeleteAPIResponse {
+	return poolTaobaoAlitripItPolicyBatchdeleteAPIResponse.Get().(*TaobaoAlitripItPolicyBatchdeleteAPIResponse)
+}
+
+// ReleaseTaobaoAlitripItPolicyBatchdeleteAPIResponse 将 TaobaoAlitripItPolicyBatchdeleteAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAlitripItPolicyBatchdeleteAPIResponse(v *TaobaoAlitripItPolicyBatchdeleteAPIResponse) {
+	v.Reset()
+	poolTaobaoAlitripItPolicyBatchdeleteAPIResponse.Put(v)
 }

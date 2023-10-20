@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // Order 结构体
 type Order struct {
 	// 支付渠道列表
@@ -58,4 +62,48 @@ type Order struct {
 	OrderFrom int64 `json:"order_from,omitempty" xml:"order_from,omitempty"`
 	// 支付金额，单位分
 	PayAmt int64 `json:"pay_amt,omitempty" xml:"pay_amt,omitempty"`
+}
+
+var poolOrder = sync.Pool{
+	New: func() any {
+		return new(Order)
+	},
+}
+
+// GetOrder() 从对象池中获取Order
+func GetOrder() *Order {
+	return poolOrder.Get().(*Order)
+}
+
+// ReleaseOrder 释放Order
+func ReleaseOrder(v *Order) {
+	v.PayChannels = v.PayChannels[:0]
+	v.SubOrders = v.SubOrders[:0]
+	v.PayTime = ""
+	v.StoreId = ""
+	v.MemberCardNum = ""
+	v.OperatorId = ""
+	v.OperatorName = ""
+	v.MerchantCode = ""
+	v.OrderStatus = ""
+	v.MemberPoint = ""
+	v.PackageTime = ""
+	v.GiftCoupon = ""
+	v.DutyCode = ""
+	v.TradeAttributes = ""
+	v.OpenUid = ""
+	v.ShopId = ""
+	v.OutShopId = ""
+	v.OutOrderId = ""
+	v.OrderClient = ""
+	v.BizOrderId = 0
+	v.DiscountAmt = 0
+	v.OriginalAmt = 0
+	v.PostFee = 0
+	v.TrdType = 0
+	v.MemberDiscountAmt = 0
+	v.TbBizOrderId = 0
+	v.OrderFrom = 0
+	v.PayAmt = 0
+	poolOrder.Put(v)
 }

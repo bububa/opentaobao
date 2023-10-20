@@ -2,6 +2,7 @@ package alihealthoutflow
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihealthDoctorIncomeUpdateAPIResponse struct {
 	AlibabaAlihealthDoctorIncomeUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthDoctorIncomeUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthDoctorIncomeUpdateAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthDoctorIncomeUpdateAPIResponseModel is 医蝶谷医生收入打款情况回调 成功返回结果
 type AlibabaAlihealthDoctorIncomeUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_doctor_income_update_response"`
@@ -26,4 +33,29 @@ type AlibabaAlihealthDoctorIncomeUpdateAPIResponseModel struct {
 	ExceptionMessage string `json:"exception_message,omitempty" xml:"exception_message,omitempty"`
 	// 接口是否成功
 	Data bool `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDoctorIncomeUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ExceptionCode = ""
+	m.ExceptionMessage = ""
+	m.Data = false
+}
+
+var poolAlibabaAlihealthDoctorIncomeUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDoctorIncomeUpdateAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthDoctorIncomeUpdateAPIResponse 从 sync.Pool 获取 AlibabaAlihealthDoctorIncomeUpdateAPIResponse
+func GetAlibabaAlihealthDoctorIncomeUpdateAPIResponse() *AlibabaAlihealthDoctorIncomeUpdateAPIResponse {
+	return poolAlibabaAlihealthDoctorIncomeUpdateAPIResponse.Get().(*AlibabaAlihealthDoctorIncomeUpdateAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthDoctorIncomeUpdateAPIResponse 将 AlibabaAlihealthDoctorIncomeUpdateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthDoctorIncomeUpdateAPIResponse(v *AlibabaAlihealthDoctorIncomeUpdateAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthDoctorIncomeUpdateAPIResponse.Put(v)
 }

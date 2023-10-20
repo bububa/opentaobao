@@ -1,5 +1,9 @@
 package ascpqcc
 
+import (
+	"sync"
+)
+
 // SendResult 结构体
 type SendResult struct {
 	// errorMessage
@@ -12,4 +16,25 @@ type SendResult struct {
 	UpdateResponse *UpdateSampleResponse `json:"update_response,omitempty" xml:"update_response,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolSendResult = sync.Pool{
+	New: func() any {
+		return new(SendResult)
+	},
+}
+
+// GetSendResult() 从对象池中获取SendResult
+func GetSendResult() *SendResult {
+	return poolSendResult.Get().(*SendResult)
+}
+
+// ReleaseSendResult 释放SendResult
+func ReleaseSendResult(v *SendResult) {
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.CancelResponse = nil
+	v.UpdateResponse = nil
+	v.Success = false
+	poolSendResult.Put(v)
 }

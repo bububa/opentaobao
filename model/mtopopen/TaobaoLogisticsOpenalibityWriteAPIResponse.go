@@ -2,6 +2,7 @@ package mtopopen
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoLogisticsOpenalibityWriteAPIResponse struct {
 	model.CommonResponse
 	TaobaoLogisticsOpenalibityWriteAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoLogisticsOpenalibityWriteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoLogisticsOpenalibityWriteAPIResponseModel).Reset()
 }
 
 // TaobaoLogisticsOpenalibityWriteAPIResponseModel is 为快递公司提供的物流信息通用写入接口 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoLogisticsOpenalibityWriteAPIResponseModel struct {
 	WriteResponse *GeneralLogisticsDataWriteResponse `json:"write_response,omitempty" xml:"write_response,omitempty"`
 	// 接口调用是否成功
 	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoLogisticsOpenalibityWriteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultMsg = ""
+	m.ResultCode = ""
+	m.WriteResponse = nil
+	m.ResultSuccess = false
+}
+
+var poolTaobaoLogisticsOpenalibityWriteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoLogisticsOpenalibityWriteAPIResponse)
+	},
+}
+
+// GetTaobaoLogisticsOpenalibityWriteAPIResponse 从 sync.Pool 获取 TaobaoLogisticsOpenalibityWriteAPIResponse
+func GetTaobaoLogisticsOpenalibityWriteAPIResponse() *TaobaoLogisticsOpenalibityWriteAPIResponse {
+	return poolTaobaoLogisticsOpenalibityWriteAPIResponse.Get().(*TaobaoLogisticsOpenalibityWriteAPIResponse)
+}
+
+// ReleaseTaobaoLogisticsOpenalibityWriteAPIResponse 将 TaobaoLogisticsOpenalibityWriteAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoLogisticsOpenalibityWriteAPIResponse(v *TaobaoLogisticsOpenalibityWriteAPIResponse) {
+	v.Reset()
+	poolTaobaoLogisticsOpenalibityWriteAPIResponse.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.shop.update
 //
 // 目前只支持标题、公告和描述的更新
-func TaobaoShopUpdate(clt *core.SDKClient, req *shop.TaobaoShopUpdateAPIRequest, session string) (*shop.TaobaoShopUpdateAPIResponse, error) {
-	var resp shop.TaobaoShopUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoShopUpdate(clt *core.SDKClient, req *shop.TaobaoShopUpdateAPIRequest, resp *shop.TaobaoShopUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

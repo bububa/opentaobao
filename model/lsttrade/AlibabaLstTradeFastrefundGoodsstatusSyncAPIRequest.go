@@ -2,6 +2,7 @@ package lsttrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest struct {
 // NewAlibabaLstTradeFastrefundGoodsstatusSyncRequest 初始化AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest对象
 func NewAlibabaLstTradeFastrefundGoodsstatusSyncRequest() *AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest {
 	return &AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest) Reset() {
+	r._refundId = ""
+	r._status = ""
+	r._mainOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest) SetMainOrderId(_mai
 // GetMainOrderId MainOrderId Getter
 func (r AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest) GetMainOrderId() int64 {
 	return r._mainOrderId
+}
+
+var poolAlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstTradeFastrefundGoodsstatusSyncRequest()
+	},
+}
+
+// GetAlibabaLstTradeFastrefundGoodsstatusSyncRequest 从 sync.Pool 获取 AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest
+func GetAlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest() *AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest {
+	return poolAlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest.Get().(*AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest)
+}
+
+// ReleaseAlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest 将 AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest(v *AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alitrip.platform.poi.raw.feed
 //
 // 对接外部数据源，外部数据推送poi数据到飞猪
-func AlitripPlatformPoiRawFeed(clt *core.SDKClient, req *alitrippoi.AlitripPlatformPoiRawFeedAPIRequest, session string) (*alitrippoi.AlitripPlatformPoiRawFeedAPIResponse, error) {
-	var resp alitrippoi.AlitripPlatformPoiRawFeedAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripPlatformPoiRawFeed(clt *core.SDKClient, req *alitrippoi.AlitripPlatformPoiRawFeedAPIRequest, resp *alitrippoi.AlitripPlatformPoiRawFeedAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

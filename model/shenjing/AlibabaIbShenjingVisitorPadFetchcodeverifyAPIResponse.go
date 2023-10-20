@@ -2,6 +2,7 @@ package shenjing
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaIbShenjingVisitorPadFetchcodeverifyAPIResponse struct {
 	model.CommonResponse
 	AlibabaIbShenjingVisitorPadFetchcodeverifyAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaIbShenjingVisitorPadFetchcodeverifyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaIbShenjingVisitorPadFetchcodeverifyAPIResponseModel).Reset()
 }
 
 // AlibabaIbShenjingVisitorPadFetchcodeverifyAPIResponseModel is 访客通过PAD提交访客码 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaIbShenjingVisitorPadFetchcodeverifyAPIResponseModel struct {
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 	// 内容
 	Content *Content `json:"content,omitempty" xml:"content,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaIbShenjingVisitorPadFetchcodeverifyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultCode = ""
+	m.ResultRequestId = ""
+	m.ResultMsg = ""
+	m.Content = nil
+}
+
+var poolAlibabaIbShenjingVisitorPadFetchcodeverifyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaIbShenjingVisitorPadFetchcodeverifyAPIResponse)
+	},
+}
+
+// GetAlibabaIbShenjingVisitorPadFetchcodeverifyAPIResponse 从 sync.Pool 获取 AlibabaIbShenjingVisitorPadFetchcodeverifyAPIResponse
+func GetAlibabaIbShenjingVisitorPadFetchcodeverifyAPIResponse() *AlibabaIbShenjingVisitorPadFetchcodeverifyAPIResponse {
+	return poolAlibabaIbShenjingVisitorPadFetchcodeverifyAPIResponse.Get().(*AlibabaIbShenjingVisitorPadFetchcodeverifyAPIResponse)
+}
+
+// ReleaseAlibabaIbShenjingVisitorPadFetchcodeverifyAPIResponse 将 AlibabaIbShenjingVisitorPadFetchcodeverifyAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaIbShenjingVisitorPadFetchcodeverifyAPIResponse(v *AlibabaIbShenjingVisitorPadFetchcodeverifyAPIResponse) {
+	v.Reset()
+	poolAlibabaIbShenjingVisitorPadFetchcodeverifyAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package crm
 
+import (
+	"sync"
+)
+
 // CrmMember 结构体
 type CrmMember struct {
 	// 交易关闭的金额
@@ -38,4 +42,38 @@ type CrmMember struct {
 	Grade int64 `json:"grade,omitempty" xml:"grade,omitempty"`
 	// 交易成功笔数
 	TradeCount int64 `json:"trade_count,omitempty" xml:"trade_count,omitempty"`
+}
+
+var poolCrmMember = sync.Pool{
+	New: func() any {
+		return new(CrmMember)
+	},
+}
+
+// GetCrmMember() 从对象池中获取CrmMember
+func GetCrmMember() *CrmMember {
+	return poolCrmMember.Get().(*CrmMember)
+}
+
+// ReleaseCrmMember 释放CrmMember
+func ReleaseCrmMember(v *CrmMember) {
+	v.CloseTradeAmount = ""
+	v.Status = ""
+	v.GroupIds = ""
+	v.LastTradeTime = ""
+	v.City = ""
+	v.BuyerNick = ""
+	v.Ouid = ""
+	v.TradeAmount = ""
+	v.AvgPrice = ""
+	v.GradeName = ""
+	v.ItemNum = 0
+	v.ItemCloseCount = 0
+	v.RelationSource = 0
+	v.CloseTradeCount = 0
+	v.BizOrderId = 0
+	v.Province = 0
+	v.Grade = 0
+	v.TradeCount = 0
+	poolCrmMember.Put(v)
 }

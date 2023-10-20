@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest struct {
 // NewTaobaoAilabAicloudTopDeviceSettingsResetRequest 初始化TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest对象
 func NewTaobaoAilabAicloudTopDeviceSettingsResetRequest() *TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest {
 	return &TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest) Reset() {
+	r._schema = ""
+	r._userId = ""
+	r._utdId = ""
+	r._ext = ""
+	r._param1 = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest) SetParam1(_param1 s
 // GetParam1 Param1 Getter
 func (r TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest) GetParam1() string {
 	return r._param1
+}
+
+var poolTaobaoAilabAicloudTopDeviceSettingsResetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopDeviceSettingsResetRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopDeviceSettingsResetRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest
+func GetTaobaoAilabAicloudTopDeviceSettingsResetAPIRequest() *TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest {
+	return poolTaobaoAilabAicloudTopDeviceSettingsResetAPIRequest.Get().(*TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopDeviceSettingsResetAPIRequest 将 TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopDeviceSettingsResetAPIRequest(v *TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopDeviceSettingsResetAPIRequest.Put(v)
 }

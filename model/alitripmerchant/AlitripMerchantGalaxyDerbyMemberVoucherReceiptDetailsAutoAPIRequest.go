@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoAPIRequest struct 
 // NewAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoRequest 初始化AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoAPIRequest对象
 func NewAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoRequest() *AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoAPIRequest {
 	return &AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._keyword = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoAPIRequest) Se
 // GetKeyword Keyword Getter
 func (r AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoAPIRequest) GetKeyword() string {
 	return r._keyword
+}
+
+var poolAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoRequest 从 sync.Pool 获取 AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoAPIRequest
+func GetAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoAPIRequest() *AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoAPIRequest {
+	return poolAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoAPIRequest.Get().(*AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoAPIRequest 将 AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoAPIRequest(v *AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoAPIRequest.Put(v)
 }

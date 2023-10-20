@@ -2,6 +2,7 @@ package jms
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoJushitaJmsGroupGetAPIRequest struct {
 // NewTaobaoJushitaJmsGroupGetRequest 初始化TaobaoJushitaJmsGroupGetAPIRequest对象
 func NewTaobaoJushitaJmsGroupGetRequest() *TaobaoJushitaJmsGroupGetAPIRequest {
 	return &TaobaoJushitaJmsGroupGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJushitaJmsGroupGetAPIRequest) Reset() {
+	r._groupNames = r._groupNames[:0]
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoJushitaJmsGroupGetAPIRequest) SetPageSize(_pageSize int64) error 
 // GetPageSize PageSize Getter
 func (r TaobaoJushitaJmsGroupGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoJushitaJmsGroupGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJushitaJmsGroupGetRequest()
+	},
+}
+
+// GetTaobaoJushitaJmsGroupGetRequest 从 sync.Pool 获取 TaobaoJushitaJmsGroupGetAPIRequest
+func GetTaobaoJushitaJmsGroupGetAPIRequest() *TaobaoJushitaJmsGroupGetAPIRequest {
+	return poolTaobaoJushitaJmsGroupGetAPIRequest.Get().(*TaobaoJushitaJmsGroupGetAPIRequest)
+}
+
+// ReleaseTaobaoJushitaJmsGroupGetAPIRequest 将 TaobaoJushitaJmsGroupGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJushitaJmsGroupGetAPIRequest(v *TaobaoJushitaJmsGroupGetAPIRequest) {
+	v.Reset()
+	poolTaobaoJushitaJmsGroupGetAPIRequest.Put(v)
 }

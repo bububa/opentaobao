@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoOmniorderGuideDataGetAPIRequest struct {
 // NewTaobaoOmniorderGuideDataGetRequest 初始化TaobaoOmniorderGuideDataGetAPIRequest对象
 func NewTaobaoOmniorderGuideDataGetRequest() *TaobaoOmniorderGuideDataGetAPIRequest {
 	return &TaobaoOmniorderGuideDataGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOmniorderGuideDataGetAPIRequest) Reset() {
+	r._type = ""
+	r._startTime = ""
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoOmniorderGuideDataGetAPIRequest) SetPageSize(_pageSize int64) err
 // GetPageSize PageSize Getter
 func (r TaobaoOmniorderGuideDataGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoOmniorderGuideDataGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOmniorderGuideDataGetRequest()
+	},
+}
+
+// GetTaobaoOmniorderGuideDataGetRequest 从 sync.Pool 获取 TaobaoOmniorderGuideDataGetAPIRequest
+func GetTaobaoOmniorderGuideDataGetAPIRequest() *TaobaoOmniorderGuideDataGetAPIRequest {
+	return poolTaobaoOmniorderGuideDataGetAPIRequest.Get().(*TaobaoOmniorderGuideDataGetAPIRequest)
+}
+
+// ReleaseTaobaoOmniorderGuideDataGetAPIRequest 将 TaobaoOmniorderGuideDataGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOmniorderGuideDataGetAPIRequest(v *TaobaoOmniorderGuideDataGetAPIRequest) {
+	v.Reset()
+	poolTaobaoOmniorderGuideDataGetAPIRequest.Put(v)
 }

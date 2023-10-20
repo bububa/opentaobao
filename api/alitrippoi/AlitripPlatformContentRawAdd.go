@@ -9,11 +9,6 @@ import (
 // alitrip.platform.content.raw.add
 //
 // 穷游内容写入飞猪接口
-func AlitripPlatformContentRawAdd(clt *core.SDKClient, req *alitrippoi.AlitripPlatformContentRawAddAPIRequest, session string) (*alitrippoi.AlitripPlatformContentRawAddAPIResponse, error) {
-	var resp alitrippoi.AlitripPlatformContentRawAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripPlatformContentRawAdd(clt *core.SDKClient, req *alitrippoi.AlitripPlatformContentRawAddAPIRequest, resp *alitrippoi.AlitripPlatformContentRawAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

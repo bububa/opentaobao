@@ -2,6 +2,7 @@ package fpm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCfoIncomingInvoicePytImageUploadAPIRequest struct {
 // NewAlibabaCfoIncomingInvoicePytImageUploadRequest 初始化AlibabaCfoIncomingInvoicePytImageUploadAPIRequest对象
 func NewAlibabaCfoIncomingInvoicePytImageUploadRequest() *AlibabaCfoIncomingInvoicePytImageUploadAPIRequest {
 	return &AlibabaCfoIncomingInvoicePytImageUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCfoIncomingInvoicePytImageUploadAPIRequest) Reset() {
+	r._uploadRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCfoIncomingInvoicePytImageUploadAPIRequest) SetUploadRequest(_up
 // GetUploadRequest UploadRequest Getter
 func (r AlibabaCfoIncomingInvoicePytImageUploadAPIRequest) GetUploadRequest() *ImageUploadRequest {
 	return r._uploadRequest
+}
+
+var poolAlibabaCfoIncomingInvoicePytImageUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCfoIncomingInvoicePytImageUploadRequest()
+	},
+}
+
+// GetAlibabaCfoIncomingInvoicePytImageUploadRequest 从 sync.Pool 获取 AlibabaCfoIncomingInvoicePytImageUploadAPIRequest
+func GetAlibabaCfoIncomingInvoicePytImageUploadAPIRequest() *AlibabaCfoIncomingInvoicePytImageUploadAPIRequest {
+	return poolAlibabaCfoIncomingInvoicePytImageUploadAPIRequest.Get().(*AlibabaCfoIncomingInvoicePytImageUploadAPIRequest)
+}
+
+// ReleaseAlibabaCfoIncomingInvoicePytImageUploadAPIRequest 将 AlibabaCfoIncomingInvoicePytImageUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCfoIncomingInvoicePytImageUploadAPIRequest(v *AlibabaCfoIncomingInvoicePytImageUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaCfoIncomingInvoicePytImageUploadAPIRequest.Put(v)
 }

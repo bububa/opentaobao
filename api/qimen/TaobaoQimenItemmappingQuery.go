@@ -9,11 +9,6 @@ import (
 // taobao.qimen.itemmapping.query
 //
 // 前后端商品映射查询接口
-func TaobaoQimenItemmappingQuery(clt *core.SDKClient, req *qimen.TaobaoQimenItemmappingQueryAPIRequest, session string) (*qimen.TaobaoQimenItemmappingQueryAPIResponse, error) {
-	var resp qimen.TaobaoQimenItemmappingQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoQimenItemmappingQuery(clt *core.SDKClient, req *qimen.TaobaoQimenItemmappingQueryAPIRequest, resp *qimen.TaobaoQimenItemmappingQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // MerchantUserInfo 结构体
 type MerchantUserInfo struct {
 	// 真实手机号
@@ -50,4 +54,44 @@ type MerchantUserInfo struct {
 	Renew bool `json:"renew,omitempty" xml:"renew,omitempty"`
 	// 是否付费
 	PayMember bool `json:"pay_member,omitempty" xml:"pay_member,omitempty"`
+}
+
+var poolMerchantUserInfo = sync.Pool{
+	New: func() any {
+		return new(MerchantUserInfo)
+	},
+}
+
+// GetMerchantUserInfo() 从对象池中获取MerchantUserInfo
+func GetMerchantUserInfo() *MerchantUserInfo {
+	return poolMerchantUserInfo.Get().(*MerchantUserInfo)
+}
+
+// ReleaseMerchantUserInfo 释放MerchantUserInfo
+func ReleaseMerchantUserInfo(v *MerchantUserInfo) {
+	v.RealPhone = ""
+	v.Birthday = ""
+	v.Address = ""
+	v.Gender = ""
+	v.RegisterTime = ""
+	v.MemberLevel = ""
+	v.Source = ""
+	v.UserName = ""
+	v.CardNo = ""
+	v.ScoreBalance = ""
+	v.CustomizeChannel = ""
+	v.UnionUid = ""
+	v.ChannelUserId = ""
+	v.ExtendProperty = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.SourceTag = ""
+	v.ChannelCode = ""
+	v.OriginWholeData = ""
+	v.WxUserName = ""
+	v.WxUnionId = ""
+	v.CardBalance = 0
+	v.Renew = false
+	v.PayMember = false
+	poolMerchantUserInfo.Put(v)
 }

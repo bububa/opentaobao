@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // PayChannel 结构体
 type PayChannel struct {
 	// 销售渠道（POS，APP);订单来源（淘宝、京东、三江购物网）。如：APP|淘宝
@@ -38,4 +42,38 @@ type PayChannel struct {
 	PmtAlipayReduceAmt int64 `json:"pmt_alipay_reduce_amt,omitempty" xml:"pmt_alipay_reduce_amt,omitempty"`
 	// 口碑券的优惠金额，单位分
 	PmtKoubeiCouponAmt int64 `json:"pmt_koubei_coupon_amt,omitempty" xml:"pmt_koubei_coupon_amt,omitempty"`
+}
+
+var poolPayChannel = sync.Pool{
+	New: func() any {
+		return new(PayChannel)
+	},
+}
+
+// GetPayChannel() 从对象池中获取PayChannel
+func GetPayChannel() *PayChannel {
+	return poolPayChannel.Get().(*PayChannel)
+}
+
+// ReleasePayChannel 释放PayChannel
+func ReleasePayChannel(v *PayChannel) {
+	v.OrderChannel = ""
+	v.PosNo = ""
+	v.StoreId = ""
+	v.PromotionCardInfo = ""
+	v.PayAttributes = ""
+	v.KoubeiCouponInfo = ""
+	v.PayChannelType = 0
+	v.PayFee = 0
+	v.RefundFee = 0
+	v.BizOrderId = 0
+	v.PayAmount = 0
+	v.PayType = 0
+	v.TrdType = 0
+	v.ActualPayAmount = 0
+	v.AdjustAmount = 0
+	v.PmtAlipayPromotionAmt = 0
+	v.PmtAlipayReduceAmt = 0
+	v.PmtKoubeiCouponAmt = 0
+	poolPayChannel.Put(v)
 }

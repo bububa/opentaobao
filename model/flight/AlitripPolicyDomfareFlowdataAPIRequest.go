@@ -2,6 +2,7 @@ package flight
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripPolicyDomfareFlowdataAPIRequest struct {
 // NewAlitripPolicyDomfareFlowdataRequest 初始化AlitripPolicyDomfareFlowdataAPIRequest对象
 func NewAlitripPolicyDomfareFlowdataRequest() *AlitripPolicyDomfareFlowdataAPIRequest {
 	return &AlitripPolicyDomfareFlowdataAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripPolicyDomfareFlowdataAPIRequest) Reset() {
+	r._compareFlowDataQueryDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripPolicyDomfareFlowdataAPIRequest) SetCompareFlowDataQueryDTO(_com
 // GetCompareFlowDataQueryDTO CompareFlowDataQueryDTO Getter
 func (r AlitripPolicyDomfareFlowdataAPIRequest) GetCompareFlowDataQueryDTO() *CompareFlowDataQueryDto {
 	return r._compareFlowDataQueryDTO
+}
+
+var poolAlitripPolicyDomfareFlowdataAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripPolicyDomfareFlowdataRequest()
+	},
+}
+
+// GetAlitripPolicyDomfareFlowdataRequest 从 sync.Pool 获取 AlitripPolicyDomfareFlowdataAPIRequest
+func GetAlitripPolicyDomfareFlowdataAPIRequest() *AlitripPolicyDomfareFlowdataAPIRequest {
+	return poolAlitripPolicyDomfareFlowdataAPIRequest.Get().(*AlitripPolicyDomfareFlowdataAPIRequest)
+}
+
+// ReleaseAlitripPolicyDomfareFlowdataAPIRequest 将 AlitripPolicyDomfareFlowdataAPIRequest 放入 sync.Pool
+func ReleaseAlitripPolicyDomfareFlowdataAPIRequest(v *AlitripPolicyDomfareFlowdataAPIRequest) {
+	v.Reset()
+	poolAlitripPolicyDomfareFlowdataAPIRequest.Put(v)
 }

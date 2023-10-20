@@ -1,5 +1,9 @@
 package wlb
 
+import (
+	"sync"
+)
+
 // ReceiverInfo 结构体
 type ReceiverInfo struct {
 	// 收货人移动电话
@@ -16,4 +20,27 @@ type ReceiverInfo struct {
 	City string `json:"city,omitempty" xml:"city,omitempty"`
 	// 收货人省
 	Province string `json:"province,omitempty" xml:"province,omitempty"`
+}
+
+var poolReceiverInfo = sync.Pool{
+	New: func() any {
+		return new(ReceiverInfo)
+	},
+}
+
+// GetReceiverInfo() 从对象池中获取ReceiverInfo
+func GetReceiverInfo() *ReceiverInfo {
+	return poolReceiverInfo.Get().(*ReceiverInfo)
+}
+
+// ReleaseReceiverInfo 释放ReceiverInfo
+func ReleaseReceiverInfo(v *ReceiverInfo) {
+	v.Mobile = ""
+	v.Name = ""
+	v.DetailAddress = ""
+	v.Town = ""
+	v.Area = ""
+	v.City = ""
+	v.Province = ""
+	poolReceiverInfo.Put(v)
 }

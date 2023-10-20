@@ -2,6 +2,7 @@ package user
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoLarkPosItemprodFindterminalAPIRequest struct {
 // NewTaobaoLarkPosItemprodFindterminalRequest 初始化TaobaoLarkPosItemprodFindterminalAPIRequest对象
 func NewTaobaoLarkPosItemprodFindterminalRequest() *TaobaoLarkPosItemprodFindterminalAPIRequest {
 	return &TaobaoLarkPosItemprodFindterminalAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) Reset() {
+	r._deviceId = ""
+	r._deviceType = ""
+	r._createUser = ""
+	r._leaseCode = ""
+	r._cinemaId = ""
+	r._cinemaName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetCinemaName(_cinemaName 
 // GetCinemaName CinemaName Getter
 func (r TaobaoLarkPosItemprodFindterminalAPIRequest) GetCinemaName() string {
 	return r._cinemaName
+}
+
+var poolTaobaoLarkPosItemprodFindterminalAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLarkPosItemprodFindterminalRequest()
+	},
+}
+
+// GetTaobaoLarkPosItemprodFindterminalRequest 从 sync.Pool 获取 TaobaoLarkPosItemprodFindterminalAPIRequest
+func GetTaobaoLarkPosItemprodFindterminalAPIRequest() *TaobaoLarkPosItemprodFindterminalAPIRequest {
+	return poolTaobaoLarkPosItemprodFindterminalAPIRequest.Get().(*TaobaoLarkPosItemprodFindterminalAPIRequest)
+}
+
+// ReleaseTaobaoLarkPosItemprodFindterminalAPIRequest 将 TaobaoLarkPosItemprodFindterminalAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLarkPosItemprodFindterminalAPIRequest(v *TaobaoLarkPosItemprodFindterminalAPIRequest) {
+	v.Reset()
+	poolTaobaoLarkPosItemprodFindterminalAPIRequest.Put(v)
 }

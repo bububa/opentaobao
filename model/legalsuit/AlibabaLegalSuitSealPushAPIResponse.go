@@ -2,6 +2,7 @@ package legalsuit
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaLegalSuitSealPushAPIResponse struct {
 	model.CommonResponse
 	AlibabaLegalSuitSealPushAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaLegalSuitSealPushAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaLegalSuitSealPushAPIResponseModel).Reset()
 }
 
 // AlibabaLegalSuitSealPushAPIResponseModel is 法宝推送用印 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaLegalSuitSealPushAPIResponseModel struct {
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 是否成功
 	ApiSuccess bool `json:"api_success,omitempty" xml:"api_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaLegalSuitSealPushAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Content = m.Content[:0]
+	m.ApiErrorCode = ""
+	m.ErrorMsg = ""
+	m.ApiSuccess = false
+}
+
+var poolAlibabaLegalSuitSealPushAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaLegalSuitSealPushAPIResponse)
+	},
+}
+
+// GetAlibabaLegalSuitSealPushAPIResponse 从 sync.Pool 获取 AlibabaLegalSuitSealPushAPIResponse
+func GetAlibabaLegalSuitSealPushAPIResponse() *AlibabaLegalSuitSealPushAPIResponse {
+	return poolAlibabaLegalSuitSealPushAPIResponse.Get().(*AlibabaLegalSuitSealPushAPIResponse)
+}
+
+// ReleaseAlibabaLegalSuitSealPushAPIResponse 将 AlibabaLegalSuitSealPushAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaLegalSuitSealPushAPIResponse(v *AlibabaLegalSuitSealPushAPIResponse) {
+	v.Reset()
+	poolAlibabaLegalSuitSealPushAPIResponse.Put(v)
 }

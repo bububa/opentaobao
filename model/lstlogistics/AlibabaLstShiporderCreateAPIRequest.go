@@ -2,6 +2,7 @@ package lstlogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLstShiporderCreateAPIRequest struct {
 // NewAlibabaLstShiporderCreateRequest 初始化AlibabaLstShiporderCreateAPIRequest对象
 func NewAlibabaLstShiporderCreateRequest() *AlibabaLstShiporderCreateAPIRequest {
 	return &AlibabaLstShiporderCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstShiporderCreateAPIRequest) Reset() {
+	r._shipOrder = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLstShiporderCreateAPIRequest) SetShipOrder(_shipOrder *LstThirdP
 // GetShipOrder ShipOrder Getter
 func (r AlibabaLstShiporderCreateAPIRequest) GetShipOrder() *LstThirdPartMainShipOrderCreateDto {
 	return r._shipOrder
+}
+
+var poolAlibabaLstShiporderCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstShiporderCreateRequest()
+	},
+}
+
+// GetAlibabaLstShiporderCreateRequest 从 sync.Pool 获取 AlibabaLstShiporderCreateAPIRequest
+func GetAlibabaLstShiporderCreateAPIRequest() *AlibabaLstShiporderCreateAPIRequest {
+	return poolAlibabaLstShiporderCreateAPIRequest.Get().(*AlibabaLstShiporderCreateAPIRequest)
+}
+
+// ReleaseAlibabaLstShiporderCreateAPIRequest 将 AlibabaLstShiporderCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstShiporderCreateAPIRequest(v *AlibabaLstShiporderCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaLstShiporderCreateAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // yunos.appstore.open.getads
 //
 // 将广告外投给外部合作伙伴
-func YunosAppstoreOpenGetads(clt *core.SDKClient, req *yunosappstore.YunosAppstoreOpenGetadsAPIRequest, session string) (*yunosappstore.YunosAppstoreOpenGetadsAPIResponse, error) {
-	var resp yunosappstore.YunosAppstoreOpenGetadsAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosAppstoreOpenGetads(clt *core.SDKClient, req *yunosappstore.YunosAppstoreOpenGetadsAPIRequest, resp *yunosappstore.YunosAppstoreOpenGetadsAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

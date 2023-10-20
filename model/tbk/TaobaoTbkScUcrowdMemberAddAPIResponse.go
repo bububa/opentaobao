@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTbkScUcrowdMemberAddAPIResponse struct {
 	TaobaoTbkScUcrowdMemberAddAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTbkScUcrowdMemberAddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTbkScUcrowdMemberAddAPIResponseModel).Reset()
+}
+
 // TaobaoTbkScUcrowdMemberAddAPIResponseModel is 淘宝客-服务商-上传人群数据 成功返回结果
 type TaobaoTbkScUcrowdMemberAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"tbk_sc_ucrowd_member_add_response"`
@@ -22,4 +29,27 @@ type TaobaoTbkScUcrowdMemberAddAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// data
 	Data *TaobaoTbkScUcrowdMemberAddRpcResult `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTbkScUcrowdMemberAddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = nil
+}
+
+var poolTaobaoTbkScUcrowdMemberAddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkScUcrowdMemberAddAPIResponse)
+	},
+}
+
+// GetTaobaoTbkScUcrowdMemberAddAPIResponse 从 sync.Pool 获取 TaobaoTbkScUcrowdMemberAddAPIResponse
+func GetTaobaoTbkScUcrowdMemberAddAPIResponse() *TaobaoTbkScUcrowdMemberAddAPIResponse {
+	return poolTaobaoTbkScUcrowdMemberAddAPIResponse.Get().(*TaobaoTbkScUcrowdMemberAddAPIResponse)
+}
+
+// ReleaseTaobaoTbkScUcrowdMemberAddAPIResponse 将 TaobaoTbkScUcrowdMemberAddAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTbkScUcrowdMemberAddAPIResponse(v *TaobaoTbkScUcrowdMemberAddAPIResponse) {
+	v.Reset()
+	poolTaobaoTbkScUcrowdMemberAddAPIResponse.Put(v)
 }

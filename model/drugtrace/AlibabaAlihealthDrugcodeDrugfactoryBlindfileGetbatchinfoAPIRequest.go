@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoAPIRequest struct {
 // NewAlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoRequest 初始化AlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoAPIRequest对象
 func NewAlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoRequest() *AlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoAPIRequest {
 	return &AlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoAPIRequest) Reset() {
+	r._refEntId = ""
+	r._subTypeNo = ""
+	r._blindFileStartDate = ""
+	r._blindFileEndDate = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoAPIRequest) Set
 // GetBlindFileEndDate BlindFileEndDate Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoAPIRequest) GetBlindFileEndDate() string {
 	return r._blindFileEndDate
+}
+
+var poolAlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoRequest 从 sync.Pool 获取 AlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoAPIRequest
+func GetAlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoAPIRequest() *AlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoAPIRequest {
+	return poolAlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoAPIRequest.Get().(*AlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoAPIRequest 将 AlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoAPIRequest(v *AlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugcodeDrugfactoryBlindfileGetbatchinfoAPIRequest.Put(v)
 }

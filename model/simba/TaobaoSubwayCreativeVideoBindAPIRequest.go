@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoSubwayCreativeVideoBindAPIRequest struct {
 // NewTaobaoSubwayCreativeVideoBindRequest 初始化TaobaoSubwayCreativeVideoBindAPIRequest对象
 func NewTaobaoSubwayCreativeVideoBindRequest() *TaobaoSubwayCreativeVideoBindAPIRequest {
 	return &TaobaoSubwayCreativeVideoBindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSubwayCreativeVideoBindAPIRequest) Reset() {
+	r._nick = ""
+	r._videoId = 0
+	r._sizeType = 0
+	r._itemId = 0
+	r._creativeId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoSubwayCreativeVideoBindAPIRequest) SetCreativeId(_creativeId int6
 // GetCreativeId CreativeId Getter
 func (r TaobaoSubwayCreativeVideoBindAPIRequest) GetCreativeId() int64 {
 	return r._creativeId
+}
+
+var poolTaobaoSubwayCreativeVideoBindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSubwayCreativeVideoBindRequest()
+	},
+}
+
+// GetTaobaoSubwayCreativeVideoBindRequest 从 sync.Pool 获取 TaobaoSubwayCreativeVideoBindAPIRequest
+func GetTaobaoSubwayCreativeVideoBindAPIRequest() *TaobaoSubwayCreativeVideoBindAPIRequest {
+	return poolTaobaoSubwayCreativeVideoBindAPIRequest.Get().(*TaobaoSubwayCreativeVideoBindAPIRequest)
+}
+
+// ReleaseTaobaoSubwayCreativeVideoBindAPIRequest 将 TaobaoSubwayCreativeVideoBindAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSubwayCreativeVideoBindAPIRequest(v *TaobaoSubwayCreativeVideoBindAPIRequest) {
+	v.Reset()
+	poolTaobaoSubwayCreativeVideoBindAPIRequest.Put(v)
 }

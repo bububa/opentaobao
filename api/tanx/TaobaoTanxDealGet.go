@@ -9,11 +9,6 @@ import (
 // taobao.tanx.deal.get
 //
 // 对外部dsp提供交易id查询接口
-func TaobaoTanxDealGet(clt *core.SDKClient, req *tanx.TaobaoTanxDealGetAPIRequest, session string) (*tanx.TaobaoTanxDealGetAPIResponse, error) {
-	var resp tanx.TaobaoTanxDealGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTanxDealGet(clt *core.SDKClient, req *tanx.TaobaoTanxDealGetAPIRequest, resp *tanx.TaobaoTanxDealGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

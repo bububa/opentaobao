@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -43,8 +44,23 @@ type CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest struct {
 // NewCainiaoDataLogisticsCpDeliveryAgingPredictRequest 初始化CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest对象
 func NewCainiaoDataLogisticsCpDeliveryAgingPredictRequest() *CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest {
 	return &CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) Reset() {
+	r._sendCityName = ""
+	r._sendCountyName = ""
+	r._sendAddr = ""
+	r._sendProvName = ""
+	r._recCityName = ""
+	r._recAddr = ""
+	r._recCountyName = ""
+	r._recProvName = ""
+	r._recTownName = ""
+	r._cpId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -192,4 +208,21 @@ func (r *CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) SetCpId(_cpId str
 // GetCpId CpId Getter
 func (r CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) GetCpId() string {
 	return r._cpId
+}
+
+var poolCainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoDataLogisticsCpDeliveryAgingPredictRequest()
+	},
+}
+
+// GetCainiaoDataLogisticsCpDeliveryAgingPredictRequest 从 sync.Pool 获取 CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest
+func GetCainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest() *CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest {
+	return poolCainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest.Get().(*CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest)
+}
+
+// ReleaseCainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest 将 CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest 放入 sync.Pool
+func ReleaseCainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest(v *CainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest) {
+	v.Reset()
+	poolCainiaoDataLogisticsCpDeliveryAgingPredictAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkSkuCategoryQueryAPIRequest struct {
 // NewAlibabaWdkSkuCategoryQueryRequest 初始化AlibabaWdkSkuCategoryQueryAPIRequest对象
 func NewAlibabaWdkSkuCategoryQueryRequest() *AlibabaWdkSkuCategoryQueryAPIRequest {
 	return &AlibabaWdkSkuCategoryQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkSkuCategoryQueryAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkSkuCategoryQueryAPIRequest) SetParam(_param *CategoryDo) erro
 // GetParam Param Getter
 func (r AlibabaWdkSkuCategoryQueryAPIRequest) GetParam() *CategoryDo {
 	return r._param
+}
+
+var poolAlibabaWdkSkuCategoryQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkSkuCategoryQueryRequest()
+	},
+}
+
+// GetAlibabaWdkSkuCategoryQueryRequest 从 sync.Pool 获取 AlibabaWdkSkuCategoryQueryAPIRequest
+func GetAlibabaWdkSkuCategoryQueryAPIRequest() *AlibabaWdkSkuCategoryQueryAPIRequest {
+	return poolAlibabaWdkSkuCategoryQueryAPIRequest.Get().(*AlibabaWdkSkuCategoryQueryAPIRequest)
+}
+
+// ReleaseAlibabaWdkSkuCategoryQueryAPIRequest 将 AlibabaWdkSkuCategoryQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkSkuCategoryQueryAPIRequest(v *AlibabaWdkSkuCategoryQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkSkuCategoryQueryAPIRequest.Put(v)
 }

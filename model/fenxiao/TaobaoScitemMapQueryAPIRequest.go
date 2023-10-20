@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoScitemMapQueryAPIRequest struct {
 // NewTaobaoScitemMapQueryRequest 初始化TaobaoScitemMapQueryAPIRequest对象
 func NewTaobaoScitemMapQueryRequest() *TaobaoScitemMapQueryAPIRequest {
 	return &TaobaoScitemMapQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoScitemMapQueryAPIRequest) Reset() {
+	r._itemId = 0
+	r._skuId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoScitemMapQueryAPIRequest) SetSkuId(_skuId int64) error {
 // GetSkuId SkuId Getter
 func (r TaobaoScitemMapQueryAPIRequest) GetSkuId() int64 {
 	return r._skuId
+}
+
+var poolTaobaoScitemMapQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoScitemMapQueryRequest()
+	},
+}
+
+// GetTaobaoScitemMapQueryRequest 从 sync.Pool 获取 TaobaoScitemMapQueryAPIRequest
+func GetTaobaoScitemMapQueryAPIRequest() *TaobaoScitemMapQueryAPIRequest {
+	return poolTaobaoScitemMapQueryAPIRequest.Get().(*TaobaoScitemMapQueryAPIRequest)
+}
+
+// ReleaseTaobaoScitemMapQueryAPIRequest 将 TaobaoScitemMapQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoScitemMapQueryAPIRequest(v *TaobaoScitemMapQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoScitemMapQueryAPIRequest.Put(v)
 }

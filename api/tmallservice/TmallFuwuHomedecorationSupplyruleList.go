@@ -9,11 +9,6 @@ import (
 // tmall.fuwu.homedecoration.supplyrule.list
 //
 // 查询供给规则接口
-func TmallFuwuHomedecorationSupplyruleList(clt *core.SDKClient, req *tmallservice.TmallFuwuHomedecorationSupplyruleListAPIRequest, session string) (*tmallservice.TmallFuwuHomedecorationSupplyruleListAPIResponse, error) {
-	var resp tmallservice.TmallFuwuHomedecorationSupplyruleListAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallFuwuHomedecorationSupplyruleList(clt *core.SDKClient, req *tmallservice.TmallFuwuHomedecorationSupplyruleListAPIRequest, resp *tmallservice.TmallFuwuHomedecorationSupplyruleListAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

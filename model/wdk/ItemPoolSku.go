@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ItemPoolSku 结构体
 type ItemPoolSku struct {
 	// 商品名称
@@ -28,4 +32,33 @@ type ItemPoolSku struct {
 	IsDiscountRate bool `json:"is_discount_rate,omitempty" xml:"is_discount_rate,omitempty"`
 	// 是否为减钱
 	IsDecreaseMoney bool `json:"is_decrease_money,omitempty" xml:"is_decrease_money,omitempty"`
+}
+
+var poolItemPoolSku = sync.Pool{
+	New: func() any {
+		return new(ItemPoolSku)
+	},
+}
+
+// GetItemPoolSku() 从对象池中获取ItemPoolSku
+func GetItemPoolSku() *ItemPoolSku {
+	return poolItemPoolSku.Get().(*ItemPoolSku)
+}
+
+// ReleaseItemPoolSku 释放ItemPoolSku
+func ReleaseItemPoolSku(v *ItemPoolSku) {
+	v.SkuName = ""
+	v.SkuCode = ""
+	v.ItemShopRelation = ""
+	v.ExchangePrice = 0
+	v.ExchangeTotalLimit = 0
+	v.LogicGroupNumber = 0
+	v.FixPrice = 0
+	v.DiscountRate = 0
+	v.DecreaseMoney = 0
+	v.ExchangeOrderLimit = 0
+	v.IsFixPrice = false
+	v.IsDiscountRate = false
+	v.IsDecreaseMoney = false
+	poolItemPoolSku.Put(v)
 }

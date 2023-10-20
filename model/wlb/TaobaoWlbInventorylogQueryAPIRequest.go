@@ -2,6 +2,7 @@ package wlb
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type TaobaoWlbInventorylogQueryAPIRequest struct {
 // NewTaobaoWlbInventorylogQueryRequest 初始化TaobaoWlbInventorylogQueryAPIRequest对象
 func NewTaobaoWlbInventorylogQueryRequest() *TaobaoWlbInventorylogQueryAPIRequest {
 	return &TaobaoWlbInventorylogQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbInventorylogQueryAPIRequest) Reset() {
+	r._storeCode = ""
+	r._orderCode = ""
+	r._gmtStart = ""
+	r._gmtEnd = ""
+	r._opType = ""
+	r._itemId = 0
+	r._pageNo = 0
+	r._pageSize = 0
+	r._opUserId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *TaobaoWlbInventorylogQueryAPIRequest) SetOpUserId(_opUserId int64) erro
 // GetOpUserId OpUserId Getter
 func (r TaobaoWlbInventorylogQueryAPIRequest) GetOpUserId() int64 {
 	return r._opUserId
+}
+
+var poolTaobaoWlbInventorylogQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbInventorylogQueryRequest()
+	},
+}
+
+// GetTaobaoWlbInventorylogQueryRequest 从 sync.Pool 获取 TaobaoWlbInventorylogQueryAPIRequest
+func GetTaobaoWlbInventorylogQueryAPIRequest() *TaobaoWlbInventorylogQueryAPIRequest {
+	return poolTaobaoWlbInventorylogQueryAPIRequest.Get().(*TaobaoWlbInventorylogQueryAPIRequest)
+}
+
+// ReleaseTaobaoWlbInventorylogQueryAPIRequest 将 TaobaoWlbInventorylogQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbInventorylogQueryAPIRequest(v *TaobaoWlbInventorylogQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbInventorylogQueryAPIRequest.Put(v)
 }

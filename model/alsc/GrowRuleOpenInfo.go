@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // GrowRuleOpenInfo 结构体
 type GrowRuleOpenInfo struct {
 	// 不同等级消费获取成长值规则模型
@@ -28,4 +32,33 @@ type GrowRuleOpenInfo struct {
 	RechargeConsumeGrowSupport bool `json:"recharge_consume_grow_support,omitempty" xml:"recharge_consume_grow_support,omitempty"`
 	// 储值能否获取成长值
 	RechargeGrowSupport bool `json:"recharge_grow_support,omitempty" xml:"recharge_grow_support,omitempty"`
+}
+
+var poolGrowRuleOpenInfo = sync.Pool{
+	New: func() any {
+		return new(GrowRuleOpenInfo)
+	},
+}
+
+// GetGrowRuleOpenInfo() 从对象池中获取GrowRuleOpenInfo
+func GetGrowRuleOpenInfo() *GrowRuleOpenInfo {
+	return poolGrowRuleOpenInfo.Get().(*GrowRuleOpenInfo)
+}
+
+// ReleaseGrowRuleOpenInfo 释放GrowRuleOpenInfo
+func ReleaseGrowRuleOpenInfo(v *GrowRuleOpenInfo) {
+	v.LevelConsumeGrowRuleOpenInfoList = v.LevelConsumeGrowRuleOpenInfoList[:0]
+	v.CreateBy = ""
+	v.ExtInfo = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.GrowRuleId = ""
+	v.UpdateBy = ""
+	v.CommonConsumeGrowSupport = false
+	v.DecreaseSupport = false
+	v.Deleted = false
+	v.GrowSupport = false
+	v.RechargeConsumeGrowSupport = false
+	v.RechargeGrowSupport = false
+	poolGrowRuleOpenInfo.Put(v)
 }

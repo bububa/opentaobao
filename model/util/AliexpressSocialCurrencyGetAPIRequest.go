@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AliexpressSocialCurrencyGetAPIRequest struct {
 // NewAliexpressSocialCurrencyGetRequest 初始化AliexpressSocialCurrencyGetAPIRequest对象
 func NewAliexpressSocialCurrencyGetRequest() *AliexpressSocialCurrencyGetAPIRequest {
 	return &AliexpressSocialCurrencyGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressSocialCurrencyGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AliexpressSocialCurrencyGetAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AliexpressSocialCurrencyGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAliexpressSocialCurrencyGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressSocialCurrencyGetRequest()
+	},
+}
+
+// GetAliexpressSocialCurrencyGetRequest 从 sync.Pool 获取 AliexpressSocialCurrencyGetAPIRequest
+func GetAliexpressSocialCurrencyGetAPIRequest() *AliexpressSocialCurrencyGetAPIRequest {
+	return poolAliexpressSocialCurrencyGetAPIRequest.Get().(*AliexpressSocialCurrencyGetAPIRequest)
+}
+
+// ReleaseAliexpressSocialCurrencyGetAPIRequest 将 AliexpressSocialCurrencyGetAPIRequest 放入 sync.Pool
+func ReleaseAliexpressSocialCurrencyGetAPIRequest(v *AliexpressSocialCurrencyGetAPIRequest) {
+	v.Reset()
+	poolAliexpressSocialCurrencyGetAPIRequest.Put(v)
 }

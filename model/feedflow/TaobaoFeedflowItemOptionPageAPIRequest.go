@@ -2,6 +2,7 @@ package feedflow
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoFeedflowItemOptionPageAPIRequest struct {
 // NewTaobaoFeedflowItemOptionPageRequest 初始化TaobaoFeedflowItemOptionPageAPIRequest对象
 func NewTaobaoFeedflowItemOptionPageRequest() *TaobaoFeedflowItemOptionPageAPIRequest {
 	return &TaobaoFeedflowItemOptionPageAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFeedflowItemOptionPageAPIRequest) Reset() {
+	r._labelQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoFeedflowItemOptionPageAPIRequest) SetLabelQuery(_labelQuery *Labe
 // GetLabelQuery LabelQuery Getter
 func (r TaobaoFeedflowItemOptionPageAPIRequest) GetLabelQuery() *LabelQueryDto {
 	return r._labelQuery
+}
+
+var poolTaobaoFeedflowItemOptionPageAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFeedflowItemOptionPageRequest()
+	},
+}
+
+// GetTaobaoFeedflowItemOptionPageRequest 从 sync.Pool 获取 TaobaoFeedflowItemOptionPageAPIRequest
+func GetTaobaoFeedflowItemOptionPageAPIRequest() *TaobaoFeedflowItemOptionPageAPIRequest {
+	return poolTaobaoFeedflowItemOptionPageAPIRequest.Get().(*TaobaoFeedflowItemOptionPageAPIRequest)
+}
+
+// ReleaseTaobaoFeedflowItemOptionPageAPIRequest 将 TaobaoFeedflowItemOptionPageAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFeedflowItemOptionPageAPIRequest(v *TaobaoFeedflowItemOptionPageAPIRequest) {
+	v.Reset()
+	poolTaobaoFeedflowItemOptionPageAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package eleenterpriseordernew
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest struct {
 // NewAlibabaEleEnterpriseOrdernewPaymentstatusRequest 初始化AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest对象
 func NewAlibabaEleEnterpriseOrdernewPaymentstatusRequest() *AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest {
 	return &AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest) Reset() {
+	r._orderId = ""
+	r._paySerialNumber = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest) SetPaySerialNumber
 // GetPaySerialNumber PaySerialNumber Getter
 func (r AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest) GetPaySerialNumber() string {
 	return r._paySerialNumber
+}
+
+var poolAlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEleEnterpriseOrdernewPaymentstatusRequest()
+	},
+}
+
+// GetAlibabaEleEnterpriseOrdernewPaymentstatusRequest 从 sync.Pool 获取 AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest
+func GetAlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest() *AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest {
+	return poolAlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest.Get().(*AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest)
+}
+
+// ReleaseAlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest 将 AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest(v *AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest) {
+	v.Reset()
+	poolAlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest.Put(v)
 }

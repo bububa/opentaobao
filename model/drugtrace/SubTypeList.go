@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // SubTypeList 结构体
 type SubTypeList struct {
 	// 码列表
@@ -30,4 +34,34 @@ type SubTypeList struct {
 	SubTypeNo string `json:"sub_type_no,omitempty" xml:"sub_type_no,omitempty"`
 	// 旧批准文号
 	ApproveNoOld string `json:"approve_no_old,omitempty" xml:"approve_no_old,omitempty"`
+}
+
+var poolSubTypeList = sync.Pool{
+	New: func() any {
+		return new(SubTypeList)
+	},
+}
+
+// GetSubTypeList() 从对象池中获取SubTypeList
+func GetSubTypeList() *SubTypeList {
+	return poolSubTypeList.Get().(*SubTypeList)
+}
+
+// ReleaseSubTypeList 释放SubTypeList
+func ReleaseSubTypeList(v *SubTypeList) {
+	v.CodeResList = v.CodeResList[:0]
+	v.PrepnUnit = ""
+	v.PackageSpec = ""
+	v.PrepnSpec = ""
+	v.ProdSeqNo = ""
+	v.ApproveNo = ""
+	v.PhysicDetailType = ""
+	v.PackUnit = ""
+	v.DrugEntBaseInfoId = ""
+	v.PackUnitName = ""
+	v.PrepnDesc = ""
+	v.PrepnUnitName = ""
+	v.SubTypeNo = ""
+	v.ApproveNoOld = ""
+	poolSubTypeList.Put(v)
 }

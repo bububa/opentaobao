@@ -2,6 +2,7 @@ package paimai
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -45,8 +46,27 @@ type TaobaoPaimaiItempropsGetAPIRequest struct {
 // NewTaobaoPaimaiItempropsGetRequest 初始化TaobaoPaimaiItempropsGetAPIRequest对象
 func NewTaobaoPaimaiItempropsGetRequest() *TaobaoPaimaiItempropsGetAPIRequest {
 	return &TaobaoPaimaiItempropsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(14),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPaimaiItempropsGetAPIRequest) Reset() {
+	r._attrKeys = r._attrKeys[:0]
+	r._fields = r._fields[:0]
+	r._childPath = ""
+	r._datetime = ""
+	r._type = 0
+	r._pid = 0
+	r._cid = 0
+	r._parentPid = 0
+	r._isItemProp = false
+	r._isInputProp = false
+	r._isEnumProp = false
+	r._isSaleProp = false
+	r._isColorProp = false
+	r._isKeyProp = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -246,4 +266,21 @@ func (r *TaobaoPaimaiItempropsGetAPIRequest) SetIsKeyProp(_isKeyProp bool) error
 // GetIsKeyProp IsKeyProp Getter
 func (r TaobaoPaimaiItempropsGetAPIRequest) GetIsKeyProp() bool {
 	return r._isKeyProp
+}
+
+var poolTaobaoPaimaiItempropsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPaimaiItempropsGetRequest()
+	},
+}
+
+// GetTaobaoPaimaiItempropsGetRequest 从 sync.Pool 获取 TaobaoPaimaiItempropsGetAPIRequest
+func GetTaobaoPaimaiItempropsGetAPIRequest() *TaobaoPaimaiItempropsGetAPIRequest {
+	return poolTaobaoPaimaiItempropsGetAPIRequest.Get().(*TaobaoPaimaiItempropsGetAPIRequest)
+}
+
+// ReleaseTaobaoPaimaiItempropsGetAPIRequest 将 TaobaoPaimaiItempropsGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPaimaiItempropsGetAPIRequest(v *TaobaoPaimaiItempropsGetAPIRequest) {
+	v.Reset()
+	poolTaobaoPaimaiItempropsGetAPIRequest.Put(v)
 }

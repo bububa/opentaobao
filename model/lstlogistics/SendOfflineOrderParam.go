@@ -1,5 +1,9 @@
 package lstlogistics
 
+import (
+	"sync"
+)
+
 // SendOfflineOrderParam 结构体
 type SendOfflineOrderParam struct {
 	// 发货主订单列表
@@ -14,4 +18,26 @@ type SendOfflineOrderParam struct {
 	SendTime string `json:"send_time,omitempty" xml:"send_time,omitempty"`
 	// 备注
 	Remarks string `json:"remarks,omitempty" xml:"remarks,omitempty"`
+}
+
+var poolSendOfflineOrderParam = sync.Pool{
+	New: func() any {
+		return new(SendOfflineOrderParam)
+	},
+}
+
+// GetSendOfflineOrderParam() 从对象池中获取SendOfflineOrderParam
+func GetSendOfflineOrderParam() *SendOfflineOrderParam {
+	return poolSendOfflineOrderParam.Get().(*SendOfflineOrderParam)
+}
+
+// ReleaseSendOfflineOrderParam 释放SendOfflineOrderParam
+func ReleaseSendOfflineOrderParam(v *SendOfflineOrderParam) {
+	v.MainOrderParamList = v.MainOrderParamList[:0]
+	v.MailNo = ""
+	v.CpCompanyCode = ""
+	v.CpCompanyName = ""
+	v.SendTime = ""
+	v.Remarks = ""
+	poolSendOfflineOrderParam.Put(v)
 }

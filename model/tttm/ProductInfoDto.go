@@ -1,5 +1,9 @@
 package tttm
 
+import (
+	"sync"
+)
+
 // ProductInfoDto 结构体
 type ProductInfoDto struct {
 	// 货品编码
@@ -16,4 +20,27 @@ type ProductInfoDto struct {
 	IncrementAmount int64 `json:"increment_amount,omitempty" xml:"increment_amount,omitempty"`
 	// 出入库
 	IncrementType int64 `json:"increment_type,omitempty" xml:"increment_type,omitempty"`
+}
+
+var poolProductInfoDto = sync.Pool{
+	New: func() any {
+		return new(ProductInfoDto)
+	},
+}
+
+// GetProductInfoDto() 从对象池中获取ProductInfoDto
+func GetProductInfoDto() *ProductInfoDto {
+	return poolProductInfoDto.Get().(*ProductInfoDto)
+}
+
+// ReleaseProductInfoDto 释放ProductInfoDto
+func ReleaseProductInfoDto(v *ProductInfoDto) {
+	v.ProductCode = ""
+	v.ProductName = ""
+	v.ProductStatus = 0
+	v.SetAmount = 0
+	v.TotalAmount = 0
+	v.IncrementAmount = 0
+	v.IncrementType = 0
+	poolProductInfoDto.Put(v)
 }

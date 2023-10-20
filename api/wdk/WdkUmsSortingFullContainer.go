@@ -9,11 +9,6 @@ import (
 // wdk.ums.sorting.full.container
 //
 // dps分货-满箱
-func WdkUmsSortingFullContainer(clt *core.SDKClient, req *wdk.WdkUmsSortingFullContainerAPIRequest, session string) (*wdk.WdkUmsSortingFullContainerAPIResponse, error) {
-	var resp wdk.WdkUmsSortingFullContainerAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func WdkUmsSortingFullContainer(clt *core.SDKClient, req *wdk.WdkUmsSortingFullContainerAPIRequest, resp *wdk.WdkUmsSortingFullContainerAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

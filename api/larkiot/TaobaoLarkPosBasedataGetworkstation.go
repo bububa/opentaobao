@@ -9,11 +9,6 @@ import (
 // taobao.lark.pos.basedata.getworkstation
 //
 // 获取单独工作站
-func TaobaoLarkPosBasedataGetworkstation(clt *core.SDKClient, req *larkiot.TaobaoLarkPosBasedataGetworkstationAPIRequest, session string) (*larkiot.TaobaoLarkPosBasedataGetworkstationAPIResponse, error) {
-	var resp larkiot.TaobaoLarkPosBasedataGetworkstationAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoLarkPosBasedataGetworkstation(clt *core.SDKClient, req *larkiot.TaobaoLarkPosBasedataGetworkstationAPIRequest, resp *larkiot.TaobaoLarkPosBasedataGetworkstationAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package alihealth2
 
+import (
+	"sync"
+)
+
 // TopOrderDetailDto 结构体
 type TopOrderDetailDto struct {
 	// 商品集合
@@ -40,4 +44,39 @@ type TopOrderDetailDto struct {
 	RefundStatus int64 `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
 	// 物流状态（0未申请退款，默认值；1已申请退款；2同意退款；3拒绝退款；4已取消退款）
 	DeliveryStatus int64 `json:"delivery_status,omitempty" xml:"delivery_status,omitempty"`
+}
+
+var poolTopOrderDetailDto = sync.Pool{
+	New: func() any {
+		return new(TopOrderDetailDto)
+	},
+}
+
+// GetTopOrderDetailDto() 从对象池中获取TopOrderDetailDto
+func GetTopOrderDetailDto() *TopOrderDetailDto {
+	return poolTopOrderDetailDto.Get().(*TopOrderDetailDto)
+}
+
+// ReleaseTopOrderDetailDto 释放TopOrderDetailDto
+func ReleaseTopOrderDetailDto(v *TopOrderDetailDto) {
+	v.Items = v.Items[:0]
+	v.CepShopCode = ""
+	v.BuyerName = ""
+	v.BuyerPhone = ""
+	v.AddrProvince = ""
+	v.AddrCity = ""
+	v.AddrDistrict = ""
+	v.AddrDetail = ""
+	v.ExpectTime = ""
+	v.ExpressNumber = ""
+	v.ExpressName = ""
+	v.ExpressCode = ""
+	v.O2oOrderNo = ""
+	v.CepOrderId = 0
+	v.AddrLongitude = 0
+	v.AddrLatitude = 0
+	v.OrderStatus = 0
+	v.RefundStatus = 0
+	v.DeliveryStatus = 0
+	poolTopOrderDetailDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BtripApplyResult 结构体
 type BtripApplyResult struct {
 	// 审批单列表
@@ -18,4 +22,28 @@ type BtripApplyResult struct {
 	Total int64 `json:"total,omitempty" xml:"total,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolBtripApplyResult = sync.Pool{
+	New: func() any {
+		return new(BtripApplyResult)
+	},
+}
+
+// GetBtripApplyResult() 从对象池中获取BtripApplyResult
+func GetBtripApplyResult() *BtripApplyResult {
+	return poolBtripApplyResult.Get().(*BtripApplyResult)
+}
+
+// ReleaseBtripApplyResult 释放BtripApplyResult
+func ReleaseBtripApplyResult(v *BtripApplyResult) {
+	v.ApplyList = v.ApplyList[:0]
+	v.ResultMsg = ""
+	v.ErrMsg = ""
+	v.ResultCode = 0
+	v.Module = nil
+	v.ErrCode = 0
+	v.Total = 0
+	v.Success = false
+	poolBtripApplyResult.Put(v)
 }

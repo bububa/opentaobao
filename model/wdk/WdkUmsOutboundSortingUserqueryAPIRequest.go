@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type WdkUmsOutboundSortingUserqueryAPIRequest struct {
 // NewWdkUmsOutboundSortingUserqueryRequest 初始化WdkUmsOutboundSortingUserqueryAPIRequest对象
 func NewWdkUmsOutboundSortingUserqueryRequest() *WdkUmsOutboundSortingUserqueryAPIRequest {
 	return &WdkUmsOutboundSortingUserqueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *WdkUmsOutboundSortingUserqueryAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *WdkUmsOutboundSortingUserqueryAPIRequest) SetParam0(_param0 *UserQueryB
 // GetParam0 Param0 Getter
 func (r WdkUmsOutboundSortingUserqueryAPIRequest) GetParam0() *UserQueryByIdTopRequest {
 	return r._param0
+}
+
+var poolWdkUmsOutboundSortingUserqueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewWdkUmsOutboundSortingUserqueryRequest()
+	},
+}
+
+// GetWdkUmsOutboundSortingUserqueryRequest 从 sync.Pool 获取 WdkUmsOutboundSortingUserqueryAPIRequest
+func GetWdkUmsOutboundSortingUserqueryAPIRequest() *WdkUmsOutboundSortingUserqueryAPIRequest {
+	return poolWdkUmsOutboundSortingUserqueryAPIRequest.Get().(*WdkUmsOutboundSortingUserqueryAPIRequest)
+}
+
+// ReleaseWdkUmsOutboundSortingUserqueryAPIRequest 将 WdkUmsOutboundSortingUserqueryAPIRequest 放入 sync.Pool
+func ReleaseWdkUmsOutboundSortingUserqueryAPIRequest(v *WdkUmsOutboundSortingUserqueryAPIRequest) {
+	v.Reset()
+	poolWdkUmsOutboundSortingUserqueryAPIRequest.Put(v)
 }

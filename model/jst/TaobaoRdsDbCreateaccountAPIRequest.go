@@ -2,6 +2,7 @@ package jst
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoRdsDbCreateaccountAPIRequest struct {
 // NewTaobaoRdsDbCreateaccountRequest 初始化TaobaoRdsDbCreateaccountAPIRequest对象
 func NewTaobaoRdsDbCreateaccountRequest() *TaobaoRdsDbCreateaccountAPIRequest {
 	return &TaobaoRdsDbCreateaccountAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoRdsDbCreateaccountAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoRdsDbCreateaccountAPIRequest) SetParam0(_param0 *RequestDbAccount
 // GetParam0 Param0 Getter
 func (r TaobaoRdsDbCreateaccountAPIRequest) GetParam0() *RequestDbAccountModel {
 	return r._param0
+}
+
+var poolTaobaoRdsDbCreateaccountAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoRdsDbCreateaccountRequest()
+	},
+}
+
+// GetTaobaoRdsDbCreateaccountRequest 从 sync.Pool 获取 TaobaoRdsDbCreateaccountAPIRequest
+func GetTaobaoRdsDbCreateaccountAPIRequest() *TaobaoRdsDbCreateaccountAPIRequest {
+	return poolTaobaoRdsDbCreateaccountAPIRequest.Get().(*TaobaoRdsDbCreateaccountAPIRequest)
+}
+
+// ReleaseTaobaoRdsDbCreateaccountAPIRequest 将 TaobaoRdsDbCreateaccountAPIRequest 放入 sync.Pool
+func ReleaseTaobaoRdsDbCreateaccountAPIRequest(v *TaobaoRdsDbCreateaccountAPIRequest) {
+	v.Reset()
+	poolTaobaoRdsDbCreateaccountAPIRequest.Put(v)
 }

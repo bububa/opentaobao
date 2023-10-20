@@ -2,6 +2,7 @@ package xhotelonlineorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoXhotelOrderUpdateConfirmcodeAPIRequest struct {
 // NewTaobaoXhotelOrderUpdateConfirmcodeRequest 初始化TaobaoXhotelOrderUpdateConfirmcodeAPIRequest对象
 func NewTaobaoXhotelOrderUpdateConfirmcodeRequest() *TaobaoXhotelOrderUpdateConfirmcodeAPIRequest {
 	return &TaobaoXhotelOrderUpdateConfirmcodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelOrderUpdateConfirmcodeAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoXhotelOrderUpdateConfirmcodeAPIRequest) SetParam(_param *UpdateOr
 // GetParam Param Getter
 func (r TaobaoXhotelOrderUpdateConfirmcodeAPIRequest) GetParam() *UpdateOrderConfirmCodeParam {
 	return r._param
+}
+
+var poolTaobaoXhotelOrderUpdateConfirmcodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelOrderUpdateConfirmcodeRequest()
+	},
+}
+
+// GetTaobaoXhotelOrderUpdateConfirmcodeRequest 从 sync.Pool 获取 TaobaoXhotelOrderUpdateConfirmcodeAPIRequest
+func GetTaobaoXhotelOrderUpdateConfirmcodeAPIRequest() *TaobaoXhotelOrderUpdateConfirmcodeAPIRequest {
+	return poolTaobaoXhotelOrderUpdateConfirmcodeAPIRequest.Get().(*TaobaoXhotelOrderUpdateConfirmcodeAPIRequest)
+}
+
+// ReleaseTaobaoXhotelOrderUpdateConfirmcodeAPIRequest 将 TaobaoXhotelOrderUpdateConfirmcodeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelOrderUpdateConfirmcodeAPIRequest(v *TaobaoXhotelOrderUpdateConfirmcodeAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelOrderUpdateConfirmcodeAPIRequest.Put(v)
 }

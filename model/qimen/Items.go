@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // Items 结构体
 type Items struct {
 	// 货品编码,HZ1234,string(50),,
@@ -14,4 +18,26 @@ type Items struct {
 	PlanCount string `json:"planCount,omitempty" xml:"planCount,omitempty"`
 	// 商品
 	Item *Item `json:"item,omitempty" xml:"item,omitempty"`
+}
+
+var poolItems = sync.Pool{
+	New: func() any {
+		return new(Items)
+	},
+}
+
+// GetItems() 从对象池中获取Items
+func GetItems() *Items {
+	return poolItems.Get().(*Items)
+}
+
+// ReleaseItems 释放Items
+func ReleaseItems(v *Items) {
+	v.ScItemCode = ""
+	v.InventoryType = ""
+	v.OutCount = ""
+	v.InCount = ""
+	v.PlanCount = ""
+	v.Item = nil
+	poolItems.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallServicecenterWorkcardLogisticsorderQueryAPIRequest struct {
 // NewTmallServicecenterWorkcardLogisticsorderQueryRequest 初始化TmallServicecenterWorkcardLogisticsorderQueryAPIRequest对象
 func NewTmallServicecenterWorkcardLogisticsorderQueryRequest() *TmallServicecenterWorkcardLogisticsorderQueryAPIRequest {
 	return &TmallServicecenterWorkcardLogisticsorderQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterWorkcardLogisticsorderQueryAPIRequest) Reset() {
+	r._logisticsOrderId = 0
+	r._newLogistics = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallServicecenterWorkcardLogisticsorderQueryAPIRequest) SetNewLogistic
 // GetNewLogistics NewLogistics Getter
 func (r TmallServicecenterWorkcardLogisticsorderQueryAPIRequest) GetNewLogistics() bool {
 	return r._newLogistics
+}
+
+var poolTmallServicecenterWorkcardLogisticsorderQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterWorkcardLogisticsorderQueryRequest()
+	},
+}
+
+// GetTmallServicecenterWorkcardLogisticsorderQueryRequest 从 sync.Pool 获取 TmallServicecenterWorkcardLogisticsorderQueryAPIRequest
+func GetTmallServicecenterWorkcardLogisticsorderQueryAPIRequest() *TmallServicecenterWorkcardLogisticsorderQueryAPIRequest {
+	return poolTmallServicecenterWorkcardLogisticsorderQueryAPIRequest.Get().(*TmallServicecenterWorkcardLogisticsorderQueryAPIRequest)
+}
+
+// ReleaseTmallServicecenterWorkcardLogisticsorderQueryAPIRequest 将 TmallServicecenterWorkcardLogisticsorderQueryAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterWorkcardLogisticsorderQueryAPIRequest(v *TmallServicecenterWorkcardLogisticsorderQueryAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterWorkcardLogisticsorderQueryAPIRequest.Put(v)
 }

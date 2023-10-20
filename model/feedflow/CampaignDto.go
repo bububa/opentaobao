@@ -1,5 +1,9 @@
 package feedflow
 
+import (
+	"sync"
+)
+
 // CampaignDto 结构体
 type CampaignDto struct {
 	// 打折范围
@@ -16,4 +20,27 @@ type CampaignDto struct {
 	DayBudget int64 `json:"day_budget,omitempty" xml:"day_budget,omitempty"`
 	// 计划id
 	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
+}
+
+var poolCampaignDto = sync.Pool{
+	New: func() any {
+		return new(CampaignDto)
+	},
+}
+
+// GetCampaignDto() 从对象池中获取CampaignDto
+func GetCampaignDto() *CampaignDto {
+	return poolCampaignDto.Get().(*CampaignDto)
+}
+
+// ReleaseCampaignDto 释放CampaignDto
+func ReleaseCampaignDto(v *CampaignDto) {
+	v.LaunchPeriodList = v.LaunchPeriodList[:0]
+	v.LaunchAreaList = v.LaunchAreaList[:0]
+	v.CampaignName = ""
+	v.Status = ""
+	v.LaunchTime = nil
+	v.DayBudget = 0
+	v.CampaignId = 0
+	poolCampaignDto.Put(v)
 }

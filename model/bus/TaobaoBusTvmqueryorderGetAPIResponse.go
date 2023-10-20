@@ -2,6 +2,7 @@ package bus
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoBusTvmqueryorderGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoBusTvmqueryorderGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoBusTvmqueryorderGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoBusTvmqueryorderGetAPIResponseModel).Reset()
 }
 
 // TaobaoBusTvmqueryorderGetAPIResponseModel is 线下自助机查询订单信息 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoBusTvmqueryorderGetAPIResponseModel struct {
 	TvmBusOrderLineInfo *TvmBusOrderLineInfo `json:"tvm_bus_order_line_info,omitempty" xml:"tvm_bus_order_line_info,omitempty"`
 	// success
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoBusTvmqueryorderGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultCode = ""
+	m.ResultMsg = ""
+	m.TvmBusOrderLineInfo = nil
+	m.IsSuccess = false
+}
+
+var poolTaobaoBusTvmqueryorderGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoBusTvmqueryorderGetAPIResponse)
+	},
+}
+
+// GetTaobaoBusTvmqueryorderGetAPIResponse 从 sync.Pool 获取 TaobaoBusTvmqueryorderGetAPIResponse
+func GetTaobaoBusTvmqueryorderGetAPIResponse() *TaobaoBusTvmqueryorderGetAPIResponse {
+	return poolTaobaoBusTvmqueryorderGetAPIResponse.Get().(*TaobaoBusTvmqueryorderGetAPIResponse)
+}
+
+// ReleaseTaobaoBusTvmqueryorderGetAPIResponse 将 TaobaoBusTvmqueryorderGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoBusTvmqueryorderGetAPIResponse(v *TaobaoBusTvmqueryorderGetAPIResponse) {
+	v.Reset()
+	poolTaobaoBusTvmqueryorderGetAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // FastBuyPosQueryRequest 结构体
 type FastBuyPosQueryRequest struct {
 	// pos机id
@@ -10,4 +14,24 @@ type FastBuyPosQueryRequest struct {
 	StoreId string `json:"store_id,omitempty" xml:"store_id,omitempty"`
 	// 外部门店编码
 	OutShopCode string `json:"out_shop_code,omitempty" xml:"out_shop_code,omitempty"`
+}
+
+var poolFastBuyPosQueryRequest = sync.Pool{
+	New: func() any {
+		return new(FastBuyPosQueryRequest)
+	},
+}
+
+// GetFastBuyPosQueryRequest() 从对象池中获取FastBuyPosQueryRequest
+func GetFastBuyPosQueryRequest() *FastBuyPosQueryRequest {
+	return poolFastBuyPosQueryRequest.Get().(*FastBuyPosQueryRequest)
+}
+
+// ReleaseFastBuyPosQueryRequest 释放FastBuyPosQueryRequest
+func ReleaseFastBuyPosQueryRequest(v *FastBuyPosQueryRequest) {
+	v.MachineId = ""
+	v.OutOrderId = ""
+	v.StoreId = ""
+	v.OutShopCode = ""
+	poolFastBuyPosQueryRequest.Put(v)
 }

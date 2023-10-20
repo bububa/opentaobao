@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // VoucherHotelVo 结构体
 type VoucherHotelVo struct {
 	// 房型设施
@@ -64,4 +68,51 @@ type VoucherHotelVo struct {
 	ForeignCurrency *ForeignCurrencyInfo `json:"foreign_currency,omitempty" xml:"foreign_currency,omitempty"`
 	// 是否为外币支付
 	ForeignCurrencyPayment bool `json:"foreign_currency_payment,omitempty" xml:"foreign_currency_payment,omitempty"`
+}
+
+var poolVoucherHotelVo = sync.Pool{
+	New: func() any {
+		return new(VoucherHotelVo)
+	},
+}
+
+// GetVoucherHotelVo() 从对象池中获取VoucherHotelVo
+func GetVoucherHotelVo() *VoucherHotelVo {
+	return poolVoucherHotelVo.Get().(*VoucherHotelVo)
+}
+
+// ReleaseVoucherHotelVo 释放VoucherHotelVo
+func ReleaseVoucherHotelVo(v *VoucherHotelVo) {
+	v.HotelFacilityListVOList = v.HotelFacilityListVOList[:0]
+	v.DailyPrices = v.DailyPrices[:0]
+	v.HotelId = ""
+	v.HotelName = ""
+	v.HotelPhone = ""
+	v.HotelPicture = ""
+	v.HotelAddress = ""
+	v.Lon = ""
+	v.Lat = ""
+	v.CheckInNotice = ""
+	v.CancelDec = ""
+	v.CheckInDate = ""
+	v.CheckOutDate = ""
+	v.CheckIn = ""
+	v.CheckOut = ""
+	v.LimitDate = ""
+	v.Currency = ""
+	v.TotalRoomPrice = ""
+	v.TotalTax = ""
+	v.TotalPrice = ""
+	v.MarkupDesc = ""
+	v.Shid = 0
+	v.RoomNumber = 0
+	v.CancelRule = 0
+	v.Days = 0
+	v.Room = nil
+	v.CityCode = 0
+	v.RoomNum = 0
+	v.Spread = 0
+	v.ForeignCurrency = nil
+	v.ForeignCurrencyPayment = false
+	poolVoucherHotelVo.Put(v)
 }

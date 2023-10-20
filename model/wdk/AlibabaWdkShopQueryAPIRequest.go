@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkShopQueryAPIRequest struct {
 // NewAlibabaWdkShopQueryRequest 初始化AlibabaWdkShopQueryAPIRequest对象
 func NewAlibabaWdkShopQueryRequest() *AlibabaWdkShopQueryAPIRequest {
 	return &AlibabaWdkShopQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkShopQueryAPIRequest) Reset() {
+	r._ouCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkShopQueryAPIRequest) SetOuCode(_ouCode string) error {
 // GetOuCode OuCode Getter
 func (r AlibabaWdkShopQueryAPIRequest) GetOuCode() string {
 	return r._ouCode
+}
+
+var poolAlibabaWdkShopQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkShopQueryRequest()
+	},
+}
+
+// GetAlibabaWdkShopQueryRequest 从 sync.Pool 获取 AlibabaWdkShopQueryAPIRequest
+func GetAlibabaWdkShopQueryAPIRequest() *AlibabaWdkShopQueryAPIRequest {
+	return poolAlibabaWdkShopQueryAPIRequest.Get().(*AlibabaWdkShopQueryAPIRequest)
+}
+
+// ReleaseAlibabaWdkShopQueryAPIRequest 将 AlibabaWdkShopQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkShopQueryAPIRequest(v *AlibabaWdkShopQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkShopQueryAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,6 +20,12 @@ type AlibabaAlscCrmPointCalAPIResponse struct {
 	AlibabaAlscCrmPointCalAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlscCrmPointCalAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlscCrmPointCalAPIResponseModel).Reset()
+}
+
 // AlibabaAlscCrmPointCalAPIResponseModel is 计算积分可以抵扣的金额 成功返回结果
 type AlibabaAlscCrmPointCalAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_crm_point_cal_response"`
@@ -26,4 +33,27 @@ type AlibabaAlscCrmPointCalAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口结果
 	Result *CommonResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlscCrmPointCalAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlscCrmPointCalAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlscCrmPointCalAPIResponse)
+	},
+}
+
+// GetAlibabaAlscCrmPointCalAPIResponse 从 sync.Pool 获取 AlibabaAlscCrmPointCalAPIResponse
+func GetAlibabaAlscCrmPointCalAPIResponse() *AlibabaAlscCrmPointCalAPIResponse {
+	return poolAlibabaAlscCrmPointCalAPIResponse.Get().(*AlibabaAlscCrmPointCalAPIResponse)
+}
+
+// ReleaseAlibabaAlscCrmPointCalAPIResponse 将 AlibabaAlscCrmPointCalAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlscCrmPointCalAPIResponse(v *AlibabaAlscCrmPointCalAPIResponse) {
+	v.Reset()
+	poolAlibabaAlscCrmPointCalAPIResponse.Put(v)
 }

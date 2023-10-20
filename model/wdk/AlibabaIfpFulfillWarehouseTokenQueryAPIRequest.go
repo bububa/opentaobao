@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIfpFulfillWarehouseTokenQueryAPIRequest struct {
 // NewAlibabaIfpFulfillWarehouseTokenQueryRequest 初始化AlibabaIfpFulfillWarehouseTokenQueryAPIRequest对象
 func NewAlibabaIfpFulfillWarehouseTokenQueryRequest() *AlibabaIfpFulfillWarehouseTokenQueryAPIRequest {
 	return &AlibabaIfpFulfillWarehouseTokenQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIfpFulfillWarehouseTokenQueryAPIRequest) Reset() {
+	r._packageQueryDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIfpFulfillWarehouseTokenQueryAPIRequest) SetPackageQueryDTO(_pac
 // GetPackageQueryDTO PackageQueryDTO Getter
 func (r AlibabaIfpFulfillWarehouseTokenQueryAPIRequest) GetPackageQueryDTO() *PackageQueryDto {
 	return r._packageQueryDTO
+}
+
+var poolAlibabaIfpFulfillWarehouseTokenQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIfpFulfillWarehouseTokenQueryRequest()
+	},
+}
+
+// GetAlibabaIfpFulfillWarehouseTokenQueryRequest 从 sync.Pool 获取 AlibabaIfpFulfillWarehouseTokenQueryAPIRequest
+func GetAlibabaIfpFulfillWarehouseTokenQueryAPIRequest() *AlibabaIfpFulfillWarehouseTokenQueryAPIRequest {
+	return poolAlibabaIfpFulfillWarehouseTokenQueryAPIRequest.Get().(*AlibabaIfpFulfillWarehouseTokenQueryAPIRequest)
+}
+
+// ReleaseAlibabaIfpFulfillWarehouseTokenQueryAPIRequest 将 AlibabaIfpFulfillWarehouseTokenQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIfpFulfillWarehouseTokenQueryAPIRequest(v *AlibabaIfpFulfillWarehouseTokenQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaIfpFulfillWarehouseTokenQueryAPIRequest.Put(v)
 }

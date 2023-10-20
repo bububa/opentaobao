@@ -1,5 +1,9 @@
 package examination
 
+import (
+	"sync"
+)
+
 // CooperationOrderInfo 结构体
 type CooperationOrderInfo struct {
 	// 机构checkNo
@@ -26,4 +30,32 @@ type CooperationOrderInfo struct {
 	ReserveNumber string `json:"reserve_number,omitempty" xml:"reserve_number,omitempty"`
 	// 预约拒绝原因，在预约拒绝后才需赋值（仅上门服务中使用）
 	CancelReason string `json:"cancel_reason,omitempty" xml:"cancel_reason,omitempty"`
+}
+
+var poolCooperationOrderInfo = sync.Pool{
+	New: func() any {
+		return new(CooperationOrderInfo)
+	},
+}
+
+// GetCooperationOrderInfo() 从对象池中获取CooperationOrderInfo
+func GetCooperationOrderInfo() *CooperationOrderInfo {
+	return poolCooperationOrderInfo.Get().(*CooperationOrderInfo)
+}
+
+// ReleaseCooperationOrderInfo 释放CooperationOrderInfo
+func ReleaseCooperationOrderInfo(v *CooperationOrderInfo) {
+	v.CheckNo = ""
+	v.CertNumber = ""
+	v.Phone = ""
+	v.Married = ""
+	v.CertType = ""
+	v.Name = ""
+	v.Gender = ""
+	v.CheckDate = ""
+	v.Reportstatus = ""
+	v.UniqReserveCode = ""
+	v.ReserveNumber = ""
+	v.CancelReason = ""
+	poolCooperationOrderInfo.Put(v)
 }

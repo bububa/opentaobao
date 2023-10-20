@@ -9,11 +9,6 @@ import (
 // alibaba.retail.device.road.status.reset
 //
 // 贩卖机货道解锁
-func AlibabaRetailDeviceRoadStatusReset(clt *core.SDKClient, req *retail.AlibabaRetailDeviceRoadStatusResetAPIRequest, session string) (*retail.AlibabaRetailDeviceRoadStatusResetAPIResponse, error) {
-	var resp retail.AlibabaRetailDeviceRoadStatusResetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaRetailDeviceRoadStatusReset(clt *core.SDKClient, req *retail.AlibabaRetailDeviceRoadStatusResetAPIRequest, resp *retail.AlibabaRetailDeviceRoadStatusResetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

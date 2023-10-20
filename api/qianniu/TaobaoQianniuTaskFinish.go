@@ -9,11 +9,6 @@ import (
 // taobao.qianniu.task.finish
 //
 // 由任务执行者调用
-func TaobaoQianniuTaskFinish(clt *core.SDKClient, req *qianniu.TaobaoQianniuTaskFinishAPIRequest, session string) (*qianniu.TaobaoQianniuTaskFinishAPIResponse, error) {
-	var resp qianniu.TaobaoQianniuTaskFinishAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoQianniuTaskFinish(clt *core.SDKClient, req *qianniu.TaobaoQianniuTaskFinishAPIRequest, resp *qianniu.TaobaoQianniuTaskFinishAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

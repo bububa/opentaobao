@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ReceiptOrderDo 结构体
 type ReceiptOrderDo struct {
 	// 支付渠道
@@ -46,4 +50,42 @@ type ReceiptOrderDo struct {
 	OverflowAmt int64 `json:"overflow_amt,omitempty" xml:"overflow_amt,omitempty"`
 	// 交易类型
 	TrdType int64 `json:"trd_type,omitempty" xml:"trd_type,omitempty"`
+}
+
+var poolReceiptOrderDo = sync.Pool{
+	New: func() any {
+		return new(ReceiptOrderDo)
+	},
+}
+
+// GetReceiptOrderDo() 从对象池中获取ReceiptOrderDo
+func GetReceiptOrderDo() *ReceiptOrderDo {
+	return poolReceiptOrderDo.Get().(*ReceiptOrderDo)
+}
+
+// ReleaseReceiptOrderDo 释放ReceiptOrderDo
+func ReleaseReceiptOrderDo(v *ReceiptOrderDo) {
+	v.PayChannels = v.PayChannels[:0]
+	v.SubOrders = v.SubOrders[:0]
+	v.MemberCardNum = ""
+	v.MemberDiscount = ""
+	v.OpName = ""
+	v.OpNum = ""
+	v.OriginalPosNo = ""
+	v.OriginalSerialNum = ""
+	v.OriginalTrdTime = ""
+	v.PosNo = ""
+	v.SerialNum = ""
+	v.StoreId = ""
+	v.TrdTime = ""
+	v.OrderFrom = ""
+	v.MerchantCode = ""
+	v.AliUserid = ""
+	v.ActualAmt = 0
+	v.AskAmt = 0
+	v.ChangeAmt = 0
+	v.DiscountAmt = 0
+	v.OverflowAmt = 0
+	v.TrdType = 0
+	poolReceiptOrderDo.Put(v)
 }

@@ -1,7 +1,11 @@
 package tmalltrend
 
-// StyleProduceInfoBo 结构体
-type StyleProduceInfoBo struct {
+import (
+	"sync"
+)
+
+// StyleProduceInfoBO 结构体
+type StyleProduceInfoBO struct {
 	// 款式生产信息同步目的，枚举，INSERT(&#34;新增&#34;), UPDATE(&#34;更新&#34;), OFFLINE(&#34;下线&#34;);
 	SyncPurpose string `json:"sync_purpose,omitempty" xml:"sync_purpose,omitempty"`
 	// 生产价格区间
@@ -32,4 +36,35 @@ type StyleProduceInfoBo struct {
 	MaximumOder int64 `json:"maximum_oder,omitempty" xml:"maximum_oder,omitempty"`
 	// 是否支持打样，true--支持，false--不支持
 	CanMakeSample bool `json:"can_make_sample,omitempty" xml:"can_make_sample,omitempty"`
+}
+
+var poolStyleProduceInfoBO = sync.Pool{
+	New: func() any {
+		return new(StyleProduceInfoBO)
+	},
+}
+
+// GetStyleProduceInfoBO() 从对象池中获取StyleProduceInfoBO
+func GetStyleProduceInfoBO() *StyleProduceInfoBO {
+	return poolStyleProduceInfoBO.Get().(*StyleProduceInfoBO)
+}
+
+// ReleaseStyleProduceInfoBO 释放StyleProduceInfoBO
+func ReleaseStyleProduceInfoBO(v *StyleProduceInfoBO) {
+	v.SyncPurpose = ""
+	v.ProducePriceRange = ""
+	v.ContactInfo = ""
+	v.StyleSerialNumber = ""
+	v.ProducerName = ""
+	v.CraftSourceFile = ""
+	v.DesignCadSourceFile = ""
+	v.ProduceCycle = ""
+	v.MakeSamplePrice = ""
+	v.TaxId = ""
+	v.ProduceCadSourceFile = ""
+	v.Bom = ""
+	v.MinimalOder = 0
+	v.MaximumOder = 0
+	v.CanMakeSample = false
+	poolStyleProduceInfoBO.Put(v)
 }

@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest struct {
 // NewAlibabaAscpUopCnReverseWarehouseorderUpdateRequest 初始化AlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest对象
 func NewAlibabaAscpUopCnReverseWarehouseorderUpdateRequest() *AlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest {
 	return &AlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest) Reset() {
+	r._orderCode = ""
+	r._refundReason = ""
+	r._refunded = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest) SetRefunded(_ref
 // GetRefunded Refunded Getter
 func (r AlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest) GetRefunded() bool {
 	return r._refunded
+}
+
+var poolAlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpUopCnReverseWarehouseorderUpdateRequest()
+	},
+}
+
+// GetAlibabaAscpUopCnReverseWarehouseorderUpdateRequest 从 sync.Pool 获取 AlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest
+func GetAlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest() *AlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest {
+	return poolAlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest.Get().(*AlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest)
+}
+
+// ReleaseAlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest 将 AlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest(v *AlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest.Put(v)
 }

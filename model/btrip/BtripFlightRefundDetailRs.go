@@ -1,6 +1,8 @@
 package btrip
 
 import (
+	"sync"
+
 	"github.com/bububa/opentaobao/model"
 )
 
@@ -26,4 +28,30 @@ type BtripFlightRefundDetailRs struct {
 	RefundFee int64 `json:"refund_fee,omitempty" xml:"refund_fee,omitempty"`
 	// 退票金额
 	RefundPrice int64 `json:"refund_price,omitempty" xml:"refund_price,omitempty"`
+}
+
+var poolBtripFlightRefundDetailRs = sync.Pool{
+	New: func() any {
+		return new(BtripFlightRefundDetailRs)
+	},
+}
+
+// GetBtripFlightRefundDetailRs() 从对象池中获取BtripFlightRefundDetailRs
+func GetBtripFlightRefundDetailRs() *BtripFlightRefundDetailRs {
+	return poolBtripFlightRefundDetailRs.Get().(*BtripFlightRefundDetailRs)
+}
+
+// ReleaseBtripFlightRefundDetailRs 释放BtripFlightRefundDetailRs
+func ReleaseBtripFlightRefundDetailRs(v *BtripFlightRefundDetailRs) {
+	v.RefundFeeList = v.RefundFeeList[:0]
+	v.DisOrderId = ""
+	v.DisSubOrderId = ""
+	v.Reason = ""
+	v.Status = ""
+	v.BtripOrderId = 0
+	v.BtripSubOrderId = 0
+	v.IsVoluntary = nil
+	v.RefundFee = 0
+	v.RefundPrice = 0
+	poolBtripFlightRefundDetailRs.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaSscSupplyplatformServiceabilityDeleteAPIResponse struct {
 	AlibabaSscSupplyplatformServiceabilityDeleteAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaSscSupplyplatformServiceabilityDeleteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaSscSupplyplatformServiceabilityDeleteAPIResponseModel).Reset()
+}
+
 // AlibabaSscSupplyplatformServiceabilityDeleteAPIResponseModel is 删除服务能力 成功返回结果
 type AlibabaSscSupplyplatformServiceabilityDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ssc_supplyplatform_serviceability_delete_response"`
@@ -22,4 +29,27 @@ type AlibabaSscSupplyplatformServiceabilityDeleteAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *AlibabaSscSupplyplatformServiceabilityDeleteResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaSscSupplyplatformServiceabilityDeleteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaSscSupplyplatformServiceabilityDeleteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaSscSupplyplatformServiceabilityDeleteAPIResponse)
+	},
+}
+
+// GetAlibabaSscSupplyplatformServiceabilityDeleteAPIResponse 从 sync.Pool 获取 AlibabaSscSupplyplatformServiceabilityDeleteAPIResponse
+func GetAlibabaSscSupplyplatformServiceabilityDeleteAPIResponse() *AlibabaSscSupplyplatformServiceabilityDeleteAPIResponse {
+	return poolAlibabaSscSupplyplatformServiceabilityDeleteAPIResponse.Get().(*AlibabaSscSupplyplatformServiceabilityDeleteAPIResponse)
+}
+
+// ReleaseAlibabaSscSupplyplatformServiceabilityDeleteAPIResponse 将 AlibabaSscSupplyplatformServiceabilityDeleteAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaSscSupplyplatformServiceabilityDeleteAPIResponse(v *AlibabaSscSupplyplatformServiceabilityDeleteAPIResponse) {
+	v.Reset()
+	poolAlibabaSscSupplyplatformServiceabilityDeleteAPIResponse.Put(v)
 }

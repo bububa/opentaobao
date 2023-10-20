@@ -1,5 +1,9 @@
 package alitrippoi
 
+import (
+	"sync"
+)
+
 // FliggyContentRequest 结构体
 type FliggyContentRequest struct {
 	// 城市信息
@@ -36,4 +40,37 @@ type FliggyContentRequest struct {
 	UserIcon string `json:"user_icon,omitempty" xml:"user_icon,omitempty"`
 	// 分类
 	Category string `json:"category,omitempty" xml:"category,omitempty"`
+}
+
+var poolFliggyContentRequest = sync.Pool{
+	New: func() any {
+		return new(FliggyContentRequest)
+	},
+}
+
+// GetFliggyContentRequest() 从对象池中获取FliggyContentRequest
+func GetFliggyContentRequest() *FliggyContentRequest {
+	return poolFliggyContentRequest.Get().(*FliggyContentRequest)
+}
+
+// ReleaseFliggyContentRequest 释放FliggyContentRequest
+func ReleaseFliggyContentRequest(v *FliggyContentRequest) {
+	v.Citys = v.Citys[:0]
+	v.TagList = v.TagList[:0]
+	v.ImgList = v.ImgList[:0]
+	v.Summary = ""
+	v.PublishDate = ""
+	v.UserName = ""
+	v.Title = ""
+	v.UserId = ""
+	v.ParentId = ""
+	v.Content = ""
+	v.VideoCoverUrl = ""
+	v.VideoUrl = ""
+	v.Feature = ""
+	v.ArticleType = ""
+	v.Id = ""
+	v.UserIcon = ""
+	v.Category = ""
+	poolFliggyContentRequest.Put(v)
 }

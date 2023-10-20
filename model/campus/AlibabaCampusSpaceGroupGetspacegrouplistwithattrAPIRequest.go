@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest struct {
 // NewAlibabaCampusSpaceGroupGetspacegrouplistwithattrRequest 初始化AlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest对象
 func NewAlibabaCampusSpaceGroupGetspacegrouplistwithattrRequest() *AlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest {
 	return &AlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest) Reset() {
+	r._context = nil
+	r._groupQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest) SetGroupQue
 // GetGroupQuery GroupQuery Getter
 func (r AlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest) GetGroupQuery() *SpaceGroupQuery {
 	return r._groupQuery
+}
+
+var poolAlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusSpaceGroupGetspacegrouplistwithattrRequest()
+	},
+}
+
+// GetAlibabaCampusSpaceGroupGetspacegrouplistwithattrRequest 从 sync.Pool 获取 AlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest
+func GetAlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest() *AlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest {
+	return poolAlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest.Get().(*AlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest)
+}
+
+// ReleaseAlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest 将 AlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest(v *AlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest.Put(v)
 }

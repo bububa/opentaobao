@@ -9,11 +9,6 @@ import (
 // tmall.product.schema.get
 //
 // 产品信息获取接口schema形式返回
-func TmallProductSchemaGet(clt *core.SDKClient, req *tbitem.TmallProductSchemaGetAPIRequest, session string) (*tbitem.TmallProductSchemaGetAPIResponse, error) {
-	var resp tbitem.TmallProductSchemaGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallProductSchemaGet(clt *core.SDKClient, req *tbitem.TmallProductSchemaGetAPIRequest, resp *tbitem.TmallProductSchemaGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

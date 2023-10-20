@@ -2,6 +2,7 @@ package yunosminiapp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type YunosMiniappActivityCallAPIRequest struct {
 // NewYunosMiniappActivityCallRequest 初始化YunosMiniappActivityCallAPIRequest对象
 func NewYunosMiniappActivityCallRequest() *YunosMiniappActivityCallAPIRequest {
 	return &YunosMiniappActivityCallAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosMiniappActivityCallAPIRequest) Reset() {
+	r._activityId = ""
+	r._deviceId = ""
+	r._options = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *YunosMiniappActivityCallAPIRequest) SetOptions(_options *Options) error
 // GetOptions Options Getter
 func (r YunosMiniappActivityCallAPIRequest) GetOptions() *Options {
 	return r._options
+}
+
+var poolYunosMiniappActivityCallAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosMiniappActivityCallRequest()
+	},
+}
+
+// GetYunosMiniappActivityCallRequest 从 sync.Pool 获取 YunosMiniappActivityCallAPIRequest
+func GetYunosMiniappActivityCallAPIRequest() *YunosMiniappActivityCallAPIRequest {
+	return poolYunosMiniappActivityCallAPIRequest.Get().(*YunosMiniappActivityCallAPIRequest)
+}
+
+// ReleaseYunosMiniappActivityCallAPIRequest 将 YunosMiniappActivityCallAPIRequest 放入 sync.Pool
+func ReleaseYunosMiniappActivityCallAPIRequest(v *YunosMiniappActivityCallAPIRequest) {
+	v.Reset()
+	poolYunosMiniappActivityCallAPIRequest.Put(v)
 }

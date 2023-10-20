@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaRetailMarketingItemdiscountSkuQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaRetailMarketingItemdiscountSkuQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaRetailMarketingItemdiscountSkuQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaRetailMarketingItemdiscountSkuQueryAPIResponseModel).Reset()
 }
 
 // AlibabaRetailMarketingItemdiscountSkuQueryAPIResponseModel is 查询单品特价活动商品【同城零售】 成功返回结果
@@ -30,4 +37,31 @@ type AlibabaRetailMarketingItemdiscountSkuQueryAPIResponseModel struct {
 	PageInfo *PageInfoDto `json:"page_info,omitempty" xml:"page_info,omitempty"`
 	// 成功标识
 	Succeed bool `json:"succeed,omitempty" xml:"succeed,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaRetailMarketingItemdiscountSkuQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = m.Data[:0]
+	m.ErrMessage = ""
+	m.ErrNumber = ""
+	m.PageInfo = nil
+	m.Succeed = false
+}
+
+var poolAlibabaRetailMarketingItemdiscountSkuQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaRetailMarketingItemdiscountSkuQueryAPIResponse)
+	},
+}
+
+// GetAlibabaRetailMarketingItemdiscountSkuQueryAPIResponse 从 sync.Pool 获取 AlibabaRetailMarketingItemdiscountSkuQueryAPIResponse
+func GetAlibabaRetailMarketingItemdiscountSkuQueryAPIResponse() *AlibabaRetailMarketingItemdiscountSkuQueryAPIResponse {
+	return poolAlibabaRetailMarketingItemdiscountSkuQueryAPIResponse.Get().(*AlibabaRetailMarketingItemdiscountSkuQueryAPIResponse)
+}
+
+// ReleaseAlibabaRetailMarketingItemdiscountSkuQueryAPIResponse 将 AlibabaRetailMarketingItemdiscountSkuQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaRetailMarketingItemdiscountSkuQueryAPIResponse(v *AlibabaRetailMarketingItemdiscountSkuQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaRetailMarketingItemdiscountSkuQueryAPIResponse.Put(v)
 }

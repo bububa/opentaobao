@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // ItemTraffic 结构体
 type ItemTraffic struct {
 	// 交通公司名，飞机选填
@@ -18,4 +22,28 @@ type ItemTraffic struct {
 	ArrivalTime string `json:"arrival_time,omitempty" xml:"arrival_time,omitempty"`
 	// 关联的套餐id
 	RelatedPackageId int64 `json:"related_package_id,omitempty" xml:"related_package_id,omitempty"`
+}
+
+var poolItemTraffic = sync.Pool{
+	New: func() any {
+		return new(ItemTraffic)
+	},
+}
+
+// GetItemTraffic() 从对象池中获取ItemTraffic
+func GetItemTraffic() *ItemTraffic {
+	return poolItemTraffic.Get().(*ItemTraffic)
+}
+
+// ReleaseItemTraffic 释放ItemTraffic
+func ReleaseItemTraffic(v *ItemTraffic) {
+	v.Vendor = ""
+	v.TrafficNo = ""
+	v.PlaneType = ""
+	v.Destination = ""
+	v.DepartureTime = ""
+	v.Departure = ""
+	v.ArrivalTime = ""
+	v.RelatedPackageId = 0
+	poolItemTraffic.Put(v)
 }

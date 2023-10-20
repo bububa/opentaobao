@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpPresalespackageConsignAPIRequest struct {
 // NewAlibabaAscpPresalespackageConsignRequest 初始化AlibabaAscpPresalespackageConsignAPIRequest对象
 func NewAlibabaAscpPresalespackageConsignRequest() *AlibabaAscpPresalespackageConsignAPIRequest {
 	return &AlibabaAscpPresalespackageConsignAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpPresalespackageConsignAPIRequest) Reset() {
+	r._requestParams = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpPresalespackageConsignAPIRequest) SetRequestParams(_requestP
 // GetRequestParams RequestParams Getter
 func (r AlibabaAscpPresalespackageConsignAPIRequest) GetRequestParams() *Requestparams {
 	return r._requestParams
+}
+
+var poolAlibabaAscpPresalespackageConsignAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpPresalespackageConsignRequest()
+	},
+}
+
+// GetAlibabaAscpPresalespackageConsignRequest 从 sync.Pool 获取 AlibabaAscpPresalespackageConsignAPIRequest
+func GetAlibabaAscpPresalespackageConsignAPIRequest() *AlibabaAscpPresalespackageConsignAPIRequest {
+	return poolAlibabaAscpPresalespackageConsignAPIRequest.Get().(*AlibabaAscpPresalespackageConsignAPIRequest)
+}
+
+// ReleaseAlibabaAscpPresalespackageConsignAPIRequest 将 AlibabaAscpPresalespackageConsignAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpPresalespackageConsignAPIRequest(v *AlibabaAscpPresalespackageConsignAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpPresalespackageConsignAPIRequest.Put(v)
 }

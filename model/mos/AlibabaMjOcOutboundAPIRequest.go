@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMjOcOutboundAPIRequest struct {
 // NewAlibabaMjOcOutboundRequest 初始化AlibabaMjOcOutboundAPIRequest对象
 func NewAlibabaMjOcOutboundRequest() *AlibabaMjOcOutboundAPIRequest {
 	return &AlibabaMjOcOutboundAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMjOcOutboundAPIRequest) Reset() {
+	r._goodsOutbound = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMjOcOutboundAPIRequest) SetGoodsOutbound(_goodsOutbound *GoodsOu
 // GetGoodsOutbound GoodsOutbound Getter
 func (r AlibabaMjOcOutboundAPIRequest) GetGoodsOutbound() *GoodsOutboundDto {
 	return r._goodsOutbound
+}
+
+var poolAlibabaMjOcOutboundAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMjOcOutboundRequest()
+	},
+}
+
+// GetAlibabaMjOcOutboundRequest 从 sync.Pool 获取 AlibabaMjOcOutboundAPIRequest
+func GetAlibabaMjOcOutboundAPIRequest() *AlibabaMjOcOutboundAPIRequest {
+	return poolAlibabaMjOcOutboundAPIRequest.Get().(*AlibabaMjOcOutboundAPIRequest)
+}
+
+// ReleaseAlibabaMjOcOutboundAPIRequest 将 AlibabaMjOcOutboundAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMjOcOutboundAPIRequest(v *AlibabaMjOcOutboundAPIRequest) {
+	v.Reset()
+	poolAlibabaMjOcOutboundAPIRequest.Put(v)
 }

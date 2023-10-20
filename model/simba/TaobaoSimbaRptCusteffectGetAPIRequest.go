@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoSimbaRptCusteffectGetAPIRequest struct {
 // NewTaobaoSimbaRptCusteffectGetRequest 初始化TaobaoSimbaRptCusteffectGetAPIRequest对象
 func NewTaobaoSimbaRptCusteffectGetRequest() *TaobaoSimbaRptCusteffectGetAPIRequest {
 	return &TaobaoSimbaRptCusteffectGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaRptCusteffectGetAPIRequest) Reset() {
+	r._nick = ""
+	r._startTime = ""
+	r._endTime = ""
+	r._subwayToken = ""
+	r._source = ""
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoSimbaRptCusteffectGetAPIRequest) SetPageSize(_pageSize int64) err
 // GetPageSize PageSize Getter
 func (r TaobaoSimbaRptCusteffectGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoSimbaRptCusteffectGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaRptCusteffectGetRequest()
+	},
+}
+
+// GetTaobaoSimbaRptCusteffectGetRequest 从 sync.Pool 获取 TaobaoSimbaRptCusteffectGetAPIRequest
+func GetTaobaoSimbaRptCusteffectGetAPIRequest() *TaobaoSimbaRptCusteffectGetAPIRequest {
+	return poolTaobaoSimbaRptCusteffectGetAPIRequest.Get().(*TaobaoSimbaRptCusteffectGetAPIRequest)
+}
+
+// ReleaseTaobaoSimbaRptCusteffectGetAPIRequest 将 TaobaoSimbaRptCusteffectGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaRptCusteffectGetAPIRequest(v *TaobaoSimbaRptCusteffectGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaRptCusteffectGetAPIRequest.Put(v)
 }

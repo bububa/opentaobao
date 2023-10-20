@@ -9,11 +9,6 @@ import (
 // taobao.feedflow.item.crowd.page
 //
 // 分页查询单品单元下人群列表
-func TaobaoFeedflowItemCrowdPage(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCrowdPageAPIRequest, session string) (*feedflow.TaobaoFeedflowItemCrowdPageAPIResponse, error) {
-	var resp feedflow.TaobaoFeedflowItemCrowdPageAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFeedflowItemCrowdPage(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCrowdPageAPIRequest, resp *feedflow.TaobaoFeedflowItemCrowdPageAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

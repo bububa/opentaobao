@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type TaobaoInvTurnoverQueryAPIRequest struct {
 // NewTaobaoInvTurnoverQueryRequest 初始化TaobaoInvTurnoverQueryAPIRequest对象
 func NewTaobaoInvTurnoverQueryRequest() *TaobaoInvTurnoverQueryAPIRequest {
 	return &TaobaoInvTurnoverQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoInvTurnoverQueryAPIRequest) Reset() {
+	r._inventoryType = r._inventoryType[:0]
+	r._scItemId = ""
+	r._storeCode = ""
+	r._activityType = ""
+	r._sdate = ""
+	r._edate = ""
+	r._pageIndex = ""
+	r._pageSize = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *TaobaoInvTurnoverQueryAPIRequest) SetPageSize(_pageSize string) error {
 // GetPageSize PageSize Getter
 func (r TaobaoInvTurnoverQueryAPIRequest) GetPageSize() string {
 	return r._pageSize
+}
+
+var poolTaobaoInvTurnoverQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoInvTurnoverQueryRequest()
+	},
+}
+
+// GetTaobaoInvTurnoverQueryRequest 从 sync.Pool 获取 TaobaoInvTurnoverQueryAPIRequest
+func GetTaobaoInvTurnoverQueryAPIRequest() *TaobaoInvTurnoverQueryAPIRequest {
+	return poolTaobaoInvTurnoverQueryAPIRequest.Get().(*TaobaoInvTurnoverQueryAPIRequest)
+}
+
+// ReleaseTaobaoInvTurnoverQueryAPIRequest 将 TaobaoInvTurnoverQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoInvTurnoverQueryAPIRequest(v *TaobaoInvTurnoverQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoInvTurnoverQueryAPIRequest.Put(v)
 }

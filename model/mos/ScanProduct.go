@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // ScanProduct 结构体
 type ScanProduct struct {
 	// 销售属性
@@ -32,4 +36,35 @@ type ScanProduct struct {
 	UniqueCode string `json:"unique_code,omitempty" xml:"unique_code,omitempty"`
 	// 商品标签
 	Tag string `json:"tag,omitempty" xml:"tag,omitempty"`
+}
+
+var poolScanProduct = sync.Pool{
+	New: func() any {
+		return new(ScanProduct)
+	},
+}
+
+// GetScanProduct() 从对象池中获取ScanProduct
+func GetScanProduct() *ScanProduct {
+	return poolScanProduct.Get().(*ScanProduct)
+}
+
+// ReleaseScanProduct 释放ScanProduct
+func ReleaseScanProduct(v *ScanProduct) {
+	v.SalePropertys = v.SalePropertys[:0]
+	v.ArtNo = ""
+	v.BarCode = ""
+	v.GroupShopCode = ""
+	v.IntimeCodes = ""
+	v.Name = ""
+	v.Price = ""
+	v.ShopCode = ""
+	v.SkuId = ""
+	v.SourceType = ""
+	v.StoreCode = ""
+	v.TagPrice = ""
+	v.DefaultIntimeCode = ""
+	v.UniqueCode = ""
+	v.Tag = ""
+	poolScanProduct.Put(v)
 }

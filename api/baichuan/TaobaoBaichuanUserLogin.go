@@ -9,11 +9,6 @@ import (
 // taobao.baichuan.user.login
 //
 // 百川H5登录
-func TaobaoBaichuanUserLogin(clt *core.SDKClient, req *baichuan.TaobaoBaichuanUserLoginAPIRequest, session string) (*baichuan.TaobaoBaichuanUserLoginAPIResponse, error) {
-	var resp baichuan.TaobaoBaichuanUserLoginAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoBaichuanUserLogin(clt *core.SDKClient, req *baichuan.TaobaoBaichuanUserLoginAPIRequest, resp *baichuan.TaobaoBaichuanUserLoginAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

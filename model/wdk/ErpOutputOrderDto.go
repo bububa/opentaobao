@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ErpOutputOrderDto 结构体
 type ErpOutputOrderDto struct {
 	// 商品明细列表（子表）
@@ -18,4 +22,28 @@ type ErpOutputOrderDto struct {
 	BizType int64 `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
 	// 单据子类型，出库单据类型为退货单时，需要进一步区分子类型为退供应商和退大仓（DC）(1：退供应商  2：退大仓 )
 	SubType int64 `json:"sub_type,omitempty" xml:"sub_type,omitempty"`
+}
+
+var poolErpOutputOrderDto = sync.Pool{
+	New: func() any {
+		return new(ErpOutputOrderDto)
+	},
+}
+
+// GetErpOutputOrderDto() 从对象池中获取ErpOutputOrderDto
+func GetErpOutputOrderDto() *ErpOutputOrderDto {
+	return poolErpOutputOrderDto.Get().(*ErpOutputOrderDto)
+}
+
+// ReleaseErpOutputOrderDto 释放ErpOutputOrderDto
+func ReleaseErpOutputOrderDto(v *ErpOutputOrderDto) {
+	v.OutputItemInfos = v.OutputItemInfos[:0]
+	v.BizDate = ""
+	v.BizOrderCode = ""
+	v.Remark = ""
+	v.SupplierCode = ""
+	v.WarehouseCode = ""
+	v.BizType = 0
+	v.SubType = 0
+	poolErpOutputOrderDto.Put(v)
 }

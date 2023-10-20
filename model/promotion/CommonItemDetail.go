@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // CommonItemDetail 结构体
 type CommonItemDetail struct {
 	// 优惠活动ID
@@ -12,4 +16,25 @@ type CommonItemDetail struct {
 	PromotionType int64 `json:"promotion_type,omitempty" xml:"promotion_type,omitempty"`
 	// 优惠力度，其值的解释方式由promotion_type定义：当为减钱时解释成减钱数量，如：900表示减9元；当为打折时解释成打折折扣，如：900表示打9折
 	PromotionValue int64 `json:"promotion_value,omitempty" xml:"promotion_value,omitempty"`
+}
+
+var poolCommonItemDetail = sync.Pool{
+	New: func() any {
+		return new(CommonItemDetail)
+	},
+}
+
+// GetCommonItemDetail() 从对象池中获取CommonItemDetail
+func GetCommonItemDetail() *CommonItemDetail {
+	return poolCommonItemDetail.Get().(*CommonItemDetail)
+}
+
+// ReleaseCommonItemDetail 释放CommonItemDetail
+func ReleaseCommonItemDetail(v *CommonItemDetail) {
+	v.ActivityId = 0
+	v.DetailId = 0
+	v.ItemId = 0
+	v.PromotionType = 0
+	v.PromotionValue = 0
+	poolCommonItemDetail.Put(v)
 }

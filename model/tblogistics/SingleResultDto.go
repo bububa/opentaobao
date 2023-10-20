@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // SingleResultDto 结构体
 type SingleResultDto struct {
 	// 拆单子订单列表，对应的数据是：该物流订单下的全部子订单
@@ -56,4 +60,47 @@ type SingleResultDto struct {
 	IsSplit int64 `json:"is_split,omitempty" xml:"is_split,omitempty"`
 	// 标示为是否快捷COD订单
 	IsQuickCodOrder bool `json:"is_quick_cod_order,omitempty" xml:"is_quick_cod_order,omitempty"`
+}
+
+var poolSingleResultDto = sync.Pool{
+	New: func() any {
+		return new(SingleResultDto)
+	},
+}
+
+// GetSingleResultDto() 从对象池中获取SingleResultDto
+func GetSingleResultDto() *SingleResultDto {
+	return poolSingleResultDto.Get().(*SingleResultDto)
+}
+
+// ReleaseSingleResultDto 释放SingleResultDto
+func ReleaseSingleResultDto(v *SingleResultDto) {
+	v.SubTids = v.SubTids[:0]
+	v.Mails = v.Mails[:0]
+	v.OrderCode = ""
+	v.SellerNick = ""
+	v.BuyerNick = ""
+	v.DeliveryStart = ""
+	v.DeliveryEnd = ""
+	v.OutSid = ""
+	v.ItemTitle = ""
+	v.ReceiverName = ""
+	v.ReceiverPhone = ""
+	v.ReceiverMobile = ""
+	v.Created = ""
+	v.Modified = ""
+	v.Status = ""
+	v.Type = ""
+	v.FreightPayer = ""
+	v.CompanyName = ""
+	v.SellerConfirm = ""
+	v.Ouid = ""
+	v.ReceiverPhoneNew = ""
+	v.ReceiverMobileNew = ""
+	v.Openuid = ""
+	v.Tid = 0
+	v.Location = nil
+	v.IsSplit = 0
+	v.IsQuickCodOrder = false
+	poolSingleResultDto.Put(v)
 }

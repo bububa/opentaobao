@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoPromotionmiscItemActivityAddAPIResponse struct {
 	TaobaoPromotionmiscItemActivityAddAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoPromotionmiscItemActivityAddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoPromotionmiscItemActivityAddAPIResponseModel).Reset()
+}
+
 // TaobaoPromotionmiscItemActivityAddAPIResponseModel is 创建无条件单品优惠活动 成功返回结果
 type TaobaoPromotionmiscItemActivityAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"promotionmisc_item_activity_add_response"`
@@ -24,4 +31,28 @@ type TaobaoPromotionmiscItemActivityAddAPIResponseModel struct {
 	ActivityId int64 `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
 	// 是否保存成功。
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoPromotionmiscItemActivityAddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ActivityId = 0
+	m.IsSuccess = false
+}
+
+var poolTaobaoPromotionmiscItemActivityAddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoPromotionmiscItemActivityAddAPIResponse)
+	},
+}
+
+// GetTaobaoPromotionmiscItemActivityAddAPIResponse 从 sync.Pool 获取 TaobaoPromotionmiscItemActivityAddAPIResponse
+func GetTaobaoPromotionmiscItemActivityAddAPIResponse() *TaobaoPromotionmiscItemActivityAddAPIResponse {
+	return poolTaobaoPromotionmiscItemActivityAddAPIResponse.Get().(*TaobaoPromotionmiscItemActivityAddAPIResponse)
+}
+
+// ReleaseTaobaoPromotionmiscItemActivityAddAPIResponse 将 TaobaoPromotionmiscItemActivityAddAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoPromotionmiscItemActivityAddAPIResponse(v *TaobaoPromotionmiscItemActivityAddAPIResponse) {
+	v.Reset()
+	poolTaobaoPromotionmiscItemActivityAddAPIResponse.Put(v)
 }

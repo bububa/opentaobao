@@ -9,11 +9,6 @@ import (
 // alibaba.hm.marketing.itempool.item.remove.async
 //
 // 新模型下删除商品
-func AlibabaHmMarketingItempoolItemRemoveAsync(clt *core.SDKClient, req *wdk.AlibabaHmMarketingItempoolItemRemoveAsyncAPIRequest, session string) (*wdk.AlibabaHmMarketingItempoolItemRemoveAsyncAPIResponse, error) {
-	var resp wdk.AlibabaHmMarketingItempoolItemRemoveAsyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHmMarketingItempoolItemRemoveAsync(clt *core.SDKClient, req *wdk.AlibabaHmMarketingItempoolItemRemoveAsyncAPIRequest, resp *wdk.AlibabaHmMarketingItempoolItemRemoveAsyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

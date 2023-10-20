@@ -2,6 +2,7 @@ package axindata
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest struct {
 // NewTaobaoAlitripTravelAxinHotelPriceBatchGetRequest 初始化TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest对象
 func NewTaobaoAlitripTravelAxinHotelPriceBatchGetRequest() *TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest {
 	return &TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest) Reset() {
+	r._endDate = ""
+	r._startDate = ""
+	r._resourceChannel = ""
+	r._hotelList = nil
+	r._distributorTid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest) SetDistributorTid(
 // GetDistributorTid DistributorTid Getter
 func (r TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest) GetDistributorTid() int64 {
 	return r._distributorTid
+}
+
+var poolTaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripTravelAxinHotelPriceBatchGetRequest()
+	},
+}
+
+// GetTaobaoAlitripTravelAxinHotelPriceBatchGetRequest 从 sync.Pool 获取 TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest
+func GetTaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest() *TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest {
+	return poolTaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest.Get().(*TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest)
+}
+
+// ReleaseTaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest 将 TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest(v *TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest.Put(v)
 }

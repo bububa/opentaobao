@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // CompanyStoreDto 结构体
 type CompanyStoreDto struct {
 	// 公司外部ID
@@ -88,4 +92,63 @@ type CompanyStoreDto struct {
 	MainCategory int64 `json:"main_category,omitempty" xml:"main_category,omitempty"`
 	// 子类型
 	SubType int64 `json:"sub_type,omitempty" xml:"sub_type,omitempty"`
+}
+
+var poolCompanyStoreDto = sync.Pool{
+	New: func() any {
+		return new(CompanyStoreDto)
+	},
+}
+
+// GetCompanyStoreDto() 从对象池中获取CompanyStoreDto
+func GetCompanyStoreDto() *CompanyStoreDto {
+	return poolCompanyStoreDto.Get().(*CompanyStoreDto)
+}
+
+// ReleaseCompanyStoreDto 释放CompanyStoreDto
+func ReleaseCompanyStoreDto(v *CompanyStoreDto) {
+	v.OuterCompanyId = ""
+	v.OuterCompanyBrandId = ""
+	v.StoreName = ""
+	v.StoreNameShort = ""
+	v.StoreInfo = ""
+	v.MainUserNick = ""
+	v.ContactMan = ""
+	v.ContactPhone = ""
+	v.MainPhone = ""
+	v.SubPhone = ""
+	v.GaodeLongitude = ""
+	v.GaodeLatitude = ""
+	v.Address = ""
+	v.StoreBizType = ""
+	v.CompanyLicenseNo = ""
+	v.CompanyLegalPerson = ""
+	v.CompanyLicensePhoto = ""
+	v.CompanyLicenseExpireTime = ""
+	v.OuterStoreId = ""
+	v.CompanyName = ""
+	v.CompanyLicenseUrl = ""
+	v.PartakeBusiness = ""
+	v.TagCodes = ""
+	v.BatchNumber = ""
+	v.StoreIcon = ""
+	v.SourceChannel = ""
+	v.SigningCompanyName = ""
+	v.OuterCooperateBrandIds = ""
+	v.OuterSignCompanyId = ""
+	v.ExtendsInfo = ""
+	v.CityId = 0
+	v.StoreStatus = 0
+	v.IsDeleted = 0
+	v.CompanyLicenseStatus = 0
+	v.IsSmallKa = 0
+	v.VirtualType = 0
+	v.IsTest = 0
+	v.IsAsync = 0
+	v.StoreType = 0
+	v.BusinessLevel = 0
+	v.EtcVersion = 0
+	v.MainCategory = 0
+	v.SubType = 0
+	poolCompanyStoreDto.Put(v)
 }

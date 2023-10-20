@@ -2,6 +2,7 @@ package jym
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaJymIndustryVmosCommonCallbackAPIRequest struct {
 // NewAlibabaJymIndustryVmosCommonCallbackRequest 初始化AlibabaJymIndustryVmosCommonCallbackAPIRequest对象
 func NewAlibabaJymIndustryVmosCommonCallbackRequest() *AlibabaJymIndustryVmosCommonCallbackAPIRequest {
 	return &AlibabaJymIndustryVmosCommonCallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaJymIndustryVmosCommonCallbackAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaJymIndustryVmosCommonCallbackAPIRequest) SetParam0(_param0 *Comm
 // GetParam0 Param0 Getter
 func (r AlibabaJymIndustryVmosCommonCallbackAPIRequest) GetParam0() *CommonCallbackDto {
 	return r._param0
+}
+
+var poolAlibabaJymIndustryVmosCommonCallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaJymIndustryVmosCommonCallbackRequest()
+	},
+}
+
+// GetAlibabaJymIndustryVmosCommonCallbackRequest 从 sync.Pool 获取 AlibabaJymIndustryVmosCommonCallbackAPIRequest
+func GetAlibabaJymIndustryVmosCommonCallbackAPIRequest() *AlibabaJymIndustryVmosCommonCallbackAPIRequest {
+	return poolAlibabaJymIndustryVmosCommonCallbackAPIRequest.Get().(*AlibabaJymIndustryVmosCommonCallbackAPIRequest)
+}
+
+// ReleaseAlibabaJymIndustryVmosCommonCallbackAPIRequest 将 AlibabaJymIndustryVmosCommonCallbackAPIRequest 放入 sync.Pool
+func ReleaseAlibabaJymIndustryVmosCommonCallbackAPIRequest(v *AlibabaJymIndustryVmosCommonCallbackAPIRequest) {
+	v.Reset()
+	poolAlibabaJymIndustryVmosCommonCallbackAPIRequest.Put(v)
 }

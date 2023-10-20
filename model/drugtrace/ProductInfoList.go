@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // ProductInfoList 结构体
 type ProductInfoList struct {
 	// 69码
@@ -46,4 +50,42 @@ type ProductInfoList struct {
 	PkgNum int64 `json:"pkg_num,omitempty" xml:"pkg_num,omitempty"`
 	// 药品数量
 	DrugNum int64 `json:"drug_num,omitempty" xml:"drug_num,omitempty"`
+}
+
+var poolProductInfoList = sync.Pool{
+	New: func() any {
+		return new(ProductInfoList)
+	},
+}
+
+// GetProductInfoList() 从对象池中获取ProductInfoList
+func GetProductInfoList() *ProductInfoList {
+	return poolProductInfoList.Get().(*ProductInfoList)
+}
+
+// ReleaseProductInfoList 释放ProductInfoList
+func ReleaseProductInfoList(v *ProductInfoList) {
+	v.Ean = ""
+	v.AuthorizedNo = ""
+	v.EntId = ""
+	v.PhysicType = ""
+	v.PrepnUnit = ""
+	v.ProductCode = ""
+	v.PhysicCode = ""
+	v.ExprieDate = ""
+	v.ProductDate = ""
+	v.ProductBatchNo = ""
+	v.EntName = ""
+	v.PkgSpecUnit = ""
+	v.PkgSpec = ""
+	v.PrepnSpec = ""
+	v.PrepnType = ""
+	v.ProductName = ""
+	v.DrugPhysicName = ""
+	v.ProduceInfoId = ""
+	v.DrugId = ""
+	v.PhysicDetailType = 0
+	v.PkgNum = 0
+	v.DrugNum = 0
+	poolProductInfoList.Put(v)
 }

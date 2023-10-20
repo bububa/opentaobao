@@ -1,5 +1,9 @@
 package damai
 
+import (
+	"sync"
+)
+
 // AlibabaDamaiMevOpenBatchpushticketResult 结构体
 type AlibabaDamaiMevOpenBatchpushticketResult struct {
 	// 错误信息
@@ -10,4 +14,24 @@ type AlibabaDamaiMevOpenBatchpushticketResult struct {
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaDamaiMevOpenBatchpushticketResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaDamaiMevOpenBatchpushticketResult)
+	},
+}
+
+// GetAlibabaDamaiMevOpenBatchpushticketResult() 从对象池中获取AlibabaDamaiMevOpenBatchpushticketResult
+func GetAlibabaDamaiMevOpenBatchpushticketResult() *AlibabaDamaiMevOpenBatchpushticketResult {
+	return poolAlibabaDamaiMevOpenBatchpushticketResult.Get().(*AlibabaDamaiMevOpenBatchpushticketResult)
+}
+
+// ReleaseAlibabaDamaiMevOpenBatchpushticketResult 释放AlibabaDamaiMevOpenBatchpushticketResult
+func ReleaseAlibabaDamaiMevOpenBatchpushticketResult(v *AlibabaDamaiMevOpenBatchpushticketResult) {
+	v.ErrorMsg = ""
+	v.ErrorCode = 0
+	v.Model = false
+	v.Success = false
+	poolAlibabaDamaiMevOpenBatchpushticketResult.Put(v)
 }

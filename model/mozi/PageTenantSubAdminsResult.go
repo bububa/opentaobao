@@ -1,5 +1,9 @@
 package mozi
 
+import (
+	"sync"
+)
+
 // PageTenantSubAdminsResult 结构体
 type PageTenantSubAdminsResult struct {
 	// data数据
@@ -18,4 +22,28 @@ type PageTenantSubAdminsResult struct {
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolPageTenantSubAdminsResult = sync.Pool{
+	New: func() any {
+		return new(PageTenantSubAdminsResult)
+	},
+}
+
+// GetPageTenantSubAdminsResult() 从对象池中获取PageTenantSubAdminsResult
+func GetPageTenantSubAdminsResult() *PageTenantSubAdminsResult {
+	return poolPageTenantSubAdminsResult.Get().(*PageTenantSubAdminsResult)
+}
+
+// ReleasePageTenantSubAdminsResult 释放PageTenantSubAdminsResult
+func ReleasePageTenantSubAdminsResult(v *PageTenantSubAdminsResult) {
+	v.Datas = v.Datas[:0]
+	v.RequestId = ""
+	v.ResponseMessage = ""
+	v.ResponseCode = ""
+	v.TotalSize = 0
+	v.PageSize = 0
+	v.CurrentPage = 0
+	v.Success = false
+	poolPageTenantSubAdminsResult.Put(v)
 }

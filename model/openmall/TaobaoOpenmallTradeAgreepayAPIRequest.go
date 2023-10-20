@@ -2,6 +2,7 @@ package openmall
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoOpenmallTradeAgreepayAPIRequest struct {
 // NewTaobaoOpenmallTradeAgreepayRequest 初始化TaobaoOpenmallTradeAgreepayAPIRequest对象
 func NewTaobaoOpenmallTradeAgreepayRequest() *TaobaoOpenmallTradeAgreepayAPIRequest {
 	return &TaobaoOpenmallTradeAgreepayAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpenmallTradeAgreepayAPIRequest) Reset() {
+	r._distributor = ""
+	r._tid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoOpenmallTradeAgreepayAPIRequest) SetTid(_tid int64) error {
 // GetTid Tid Getter
 func (r TaobaoOpenmallTradeAgreepayAPIRequest) GetTid() int64 {
 	return r._tid
+}
+
+var poolTaobaoOpenmallTradeAgreepayAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpenmallTradeAgreepayRequest()
+	},
+}
+
+// GetTaobaoOpenmallTradeAgreepayRequest 从 sync.Pool 获取 TaobaoOpenmallTradeAgreepayAPIRequest
+func GetTaobaoOpenmallTradeAgreepayAPIRequest() *TaobaoOpenmallTradeAgreepayAPIRequest {
+	return poolTaobaoOpenmallTradeAgreepayAPIRequest.Get().(*TaobaoOpenmallTradeAgreepayAPIRequest)
+}
+
+// ReleaseTaobaoOpenmallTradeAgreepayAPIRequest 将 TaobaoOpenmallTradeAgreepayAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpenmallTradeAgreepayAPIRequest(v *TaobaoOpenmallTradeAgreepayAPIRequest) {
+	v.Reset()
+	poolTaobaoOpenmallTradeAgreepayAPIRequest.Put(v)
 }

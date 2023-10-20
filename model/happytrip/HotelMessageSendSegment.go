@@ -1,5 +1,9 @@
 package happytrip
 
+import (
+	"sync"
+)
+
 // HotelMessageSendSegment 结构体
 type HotelMessageSendSegment struct {
 	// 入住日期
@@ -22,4 +26,30 @@ type HotelMessageSendSegment struct {
 	SupplierCode string `json:"supplier_code,omitempty" xml:"supplier_code,omitempty"`
 	// 消息体参数容器
 	Parameters string `json:"parameters,omitempty" xml:"parameters,omitempty"`
+}
+
+var poolHotelMessageSendSegment = sync.Pool{
+	New: func() any {
+		return new(HotelMessageSendSegment)
+	},
+}
+
+// GetHotelMessageSendSegment() 从对象池中获取HotelMessageSendSegment
+func GetHotelMessageSendSegment() *HotelMessageSendSegment {
+	return poolHotelMessageSendSegment.Get().(*HotelMessageSendSegment)
+}
+
+// ReleaseHotelMessageSendSegment 释放HotelMessageSendSegment
+func ReleaseHotelMessageSendSegment(v *HotelMessageSendSegment) {
+	v.Checkin = ""
+	v.Checkout = ""
+	v.FeeBeginTime = ""
+	v.FeeFinishTime = ""
+	v.MessageType = ""
+	v.OutOrderId = ""
+	v.Result = ""
+	v.RoomTypeName = ""
+	v.SupplierCode = ""
+	v.Parameters = ""
+	poolHotelMessageSendSegment.Put(v)
 }

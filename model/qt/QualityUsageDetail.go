@@ -1,5 +1,9 @@
 package qt
 
+import (
+	"sync"
+)
+
 // QualityUsageDetail 结构体
 type QualityUsageDetail struct {
 	// 质检服务的收费项目码
@@ -20,4 +24,29 @@ type QualityUsageDetail struct {
 	ApplicationAmount int64 `json:"application_amount,omitempty" xml:"application_amount,omitempty"`
 	// 该订单中尚未使用的数量
 	AvailableAmount int64 `json:"available_amount,omitempty" xml:"available_amount,omitempty"`
+}
+
+var poolQualityUsageDetail = sync.Pool{
+	New: func() any {
+		return new(QualityUsageDetail)
+	},
+}
+
+// GetQualityUsageDetail() 从对象池中获取QualityUsageDetail
+func GetQualityUsageDetail() *QualityUsageDetail {
+	return poolQualityUsageDetail.Get().(*QualityUsageDetail)
+}
+
+// ReleaseQualityUsageDetail 释放QualityUsageDetail
+func ReleaseQualityUsageDetail(v *QualityUsageDetail) {
+	v.ArticleItemCode = ""
+	v.Price = ""
+	v.StartDate = ""
+	v.EndDate = ""
+	v.SubId = 0
+	v.UserId = 0
+	v.PurchasAmount = 0
+	v.ApplicationAmount = 0
+	v.AvailableAmount = 0
+	poolQualityUsageDetail.Put(v)
 }

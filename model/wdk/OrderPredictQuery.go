@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OrderPredictQuery 结构体
 type OrderPredictQuery struct {
 	// 查询日期列表，早于当前时间为查询实际单量，晚于当前时间为预测
@@ -14,4 +18,26 @@ type OrderPredictQuery struct {
 	OrderType int64 `json:"order_type,omitempty" xml:"order_type,omitempty"`
 	// 时间维度：1）每日一条预测，2）每日48条记录，半小时一条预测
 	TimeDimension int64 `json:"time_dimension,omitempty" xml:"time_dimension,omitempty"`
+}
+
+var poolOrderPredictQuery = sync.Pool{
+	New: func() any {
+		return new(OrderPredictQuery)
+	},
+}
+
+// GetOrderPredictQuery() 从对象池中获取OrderPredictQuery
+func GetOrderPredictQuery() *OrderPredictQuery {
+	return poolOrderPredictQuery.Get().(*OrderPredictQuery)
+}
+
+// ReleaseOrderPredictQuery 释放OrderPredictQuery
+func ReleaseOrderPredictQuery(v *OrderPredictQuery) {
+	v.DateList = v.DateList[:0]
+	v.DeliveryStationCode = ""
+	v.WarehouseCode = ""
+	v.DataType = 0
+	v.OrderType = 0
+	v.TimeDimension = 0
+	poolOrderPredictQuery.Put(v)
 }

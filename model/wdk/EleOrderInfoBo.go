@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // EleOrderInfoBo 结构体
 type EleOrderInfoBo struct {
 	// 损失承担方
@@ -22,4 +26,30 @@ type EleOrderInfoBo struct {
 	OrderIndex string `json:"order_index,omitempty" xml:"order_index,omitempty"`
 	// 订单费用明细
 	OrderDetailFee *OrderDetailFee `json:"order_detail_fee,omitempty" xml:"order_detail_fee,omitempty"`
+}
+
+var poolEleOrderInfoBo = sync.Pool{
+	New: func() any {
+		return new(EleOrderInfoBo)
+	},
+}
+
+// GetEleOrderInfoBo() 从对象池中获取EleOrderInfoBo
+func GetEleOrderInfoBo() *EleOrderInfoBo {
+	return poolEleOrderInfoBo.Get().(*EleOrderInfoBo)
+}
+
+// ReleaseEleOrderInfoBo 释放EleOrderInfoBo
+func ReleaseEleOrderInfoBo(v *EleOrderInfoBo) {
+	v.ResponsibleParty = ""
+	v.Amount = ""
+	v.TradeCreateTime = ""
+	v.OrderCreateTime = ""
+	v.PayEntity = ""
+	v.EleOrderId = ""
+	v.OrderId = ""
+	v.OrderFrom = ""
+	v.OrderIndex = ""
+	v.OrderDetailFee = nil
+	poolEleOrderInfoBo.Put(v)
 }

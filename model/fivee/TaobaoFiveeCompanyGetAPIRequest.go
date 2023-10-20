@@ -2,6 +2,7 @@ package fivee
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoFiveeCompanyGetAPIRequest struct {
 // NewTaobaoFiveeCompanyGetRequest 初始化TaobaoFiveeCompanyGetAPIRequest对象
 func NewTaobaoFiveeCompanyGetRequest() *TaobaoFiveeCompanyGetAPIRequest {
 	return &TaobaoFiveeCompanyGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFiveeCompanyGetAPIRequest) Reset() {
+	r._paramBucode = ""
+	r._paramUniqueCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoFiveeCompanyGetAPIRequest) SetParamUniqueCode(_paramUniqueCode st
 // GetParamUniqueCode ParamUniqueCode Getter
 func (r TaobaoFiveeCompanyGetAPIRequest) GetParamUniqueCode() string {
 	return r._paramUniqueCode
+}
+
+var poolTaobaoFiveeCompanyGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFiveeCompanyGetRequest()
+	},
+}
+
+// GetTaobaoFiveeCompanyGetRequest 从 sync.Pool 获取 TaobaoFiveeCompanyGetAPIRequest
+func GetTaobaoFiveeCompanyGetAPIRequest() *TaobaoFiveeCompanyGetAPIRequest {
+	return poolTaobaoFiveeCompanyGetAPIRequest.Get().(*TaobaoFiveeCompanyGetAPIRequest)
+}
+
+// ReleaseTaobaoFiveeCompanyGetAPIRequest 将 TaobaoFiveeCompanyGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFiveeCompanyGetAPIRequest(v *TaobaoFiveeCompanyGetAPIRequest) {
+	v.Reset()
+	poolTaobaoFiveeCompanyGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package user
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaSellerVendorWriteClientAPIRequest struct {
 // NewAlibabaSellerVendorWriteClientRequest 初始化AlibabaSellerVendorWriteClientAPIRequest对象
 func NewAlibabaSellerVendorWriteClientRequest() *AlibabaSellerVendorWriteClientAPIRequest {
 	return &AlibabaSellerVendorWriteClientAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSellerVendorWriteClientAPIRequest) Reset() {
+	r._appId = ""
+	r._paramThirdPartyClientDataParams = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaSellerVendorWriteClientAPIRequest) SetParamThirdPartyClientDataP
 // GetParamThirdPartyClientDataParams ParamThirdPartyClientDataParams Getter
 func (r AlibabaSellerVendorWriteClientAPIRequest) GetParamThirdPartyClientDataParams() *ThirdPartyClientDataParams {
 	return r._paramThirdPartyClientDataParams
+}
+
+var poolAlibabaSellerVendorWriteClientAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSellerVendorWriteClientRequest()
+	},
+}
+
+// GetAlibabaSellerVendorWriteClientRequest 从 sync.Pool 获取 AlibabaSellerVendorWriteClientAPIRequest
+func GetAlibabaSellerVendorWriteClientAPIRequest() *AlibabaSellerVendorWriteClientAPIRequest {
+	return poolAlibabaSellerVendorWriteClientAPIRequest.Get().(*AlibabaSellerVendorWriteClientAPIRequest)
+}
+
+// ReleaseAlibabaSellerVendorWriteClientAPIRequest 将 AlibabaSellerVendorWriteClientAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSellerVendorWriteClientAPIRequest(v *AlibabaSellerVendorWriteClientAPIRequest) {
+	v.Reset()
+	poolAlibabaSellerVendorWriteClientAPIRequest.Put(v)
 }

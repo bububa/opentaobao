@@ -1,7 +1,11 @@
 package logistic
 
-// Tms2mscUpdateOrderRequest 结构体
-type Tms2mscUpdateOrderRequest struct {
+import (
+	"sync"
+)
+
+// Tms2MscUpdateOrderRequest 结构体
+type Tms2MscUpdateOrderRequest struct {
 	// 电联信息（组）
 	PhoneCallInfos []TmsPhoneCallInfoDto `json:"phone_call_infos,omitempty" xml:"phone_call_infos>tms_phone_call_info_dto,omitempty"`
 	// 业务类型
@@ -20,4 +24,29 @@ type Tms2mscUpdateOrderRequest struct {
 	ServiceTimeRange string `json:"service_time_range,omitempty" xml:"service_time_range,omitempty"`
 	// 配资源编码
 	DeliverCode string `json:"deliver_code,omitempty" xml:"deliver_code,omitempty"`
+}
+
+var poolTms2MscUpdateOrderRequest = sync.Pool{
+	New: func() any {
+		return new(Tms2MscUpdateOrderRequest)
+	},
+}
+
+// GetTms2MscUpdateOrderRequest() 从对象池中获取Tms2MscUpdateOrderRequest
+func GetTms2MscUpdateOrderRequest() *Tms2MscUpdateOrderRequest {
+	return poolTms2MscUpdateOrderRequest.Get().(*Tms2MscUpdateOrderRequest)
+}
+
+// ReleaseTms2MscUpdateOrderRequest 释放Tms2MscUpdateOrderRequest
+func ReleaseTms2MscUpdateOrderRequest(v *Tms2MscUpdateOrderRequest) {
+	v.PhoneCallInfos = v.PhoneCallInfos[:0]
+	v.ServiceType = ""
+	v.SupplierId = ""
+	v.ServiceDate = ""
+	v.RequestType = ""
+	v.BizCode = ""
+	v.Reason = ""
+	v.ServiceTimeRange = ""
+	v.DeliverCode = ""
+	poolTms2MscUpdateOrderRequest.Put(v)
 }

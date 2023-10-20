@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaTmallSparepartsDetailsCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaTmallSparepartsDetailsCreateAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaTmallSparepartsDetailsCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaTmallSparepartsDetailsCreateAPIResponseModel).Reset()
 }
 
 // AlibabaTmallSparepartsDetailsCreateAPIResponseModel is 天猫蚁巢同步工单申请备件明细 成功返回结果
@@ -30,4 +37,31 @@ type AlibabaTmallSparepartsDetailsCreateAPIResponseModel struct {
 	ErrorParams string `json:"error_params,omitempty" xml:"error_params,omitempty"`
 	// 返回数据
 	Data bool `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaTmallSparepartsDetailsCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.DisplayMessage = ""
+	m.AppName = ""
+	m.ErrorMessage = ""
+	m.ErrorParams = ""
+	m.Data = false
+}
+
+var poolAlibabaTmallSparepartsDetailsCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaTmallSparepartsDetailsCreateAPIResponse)
+	},
+}
+
+// GetAlibabaTmallSparepartsDetailsCreateAPIResponse 从 sync.Pool 获取 AlibabaTmallSparepartsDetailsCreateAPIResponse
+func GetAlibabaTmallSparepartsDetailsCreateAPIResponse() *AlibabaTmallSparepartsDetailsCreateAPIResponse {
+	return poolAlibabaTmallSparepartsDetailsCreateAPIResponse.Get().(*AlibabaTmallSparepartsDetailsCreateAPIResponse)
+}
+
+// ReleaseAlibabaTmallSparepartsDetailsCreateAPIResponse 将 AlibabaTmallSparepartsDetailsCreateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaTmallSparepartsDetailsCreateAPIResponse(v *AlibabaTmallSparepartsDetailsCreateAPIResponse) {
+	v.Reset()
+	poolAlibabaTmallSparepartsDetailsCreateAPIResponse.Put(v)
 }

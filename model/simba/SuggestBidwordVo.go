@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // SuggestBidwordVo 结构体
 type SuggestBidwordVo struct {
 	// 关键词
@@ -18,4 +22,28 @@ type SuggestBidwordVo struct {
 	RelevanceType int64 `json:"relevance_type,omitempty" xml:"relevance_type,omitempty"`
 	// 分类,0:宝贝,1:店铺
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolSuggestBidwordVo = sync.Pool{
+	New: func() any {
+		return new(SuggestBidwordVo)
+	},
+}
+
+// GetSuggestBidwordVo() 从对象池中获取SuggestBidwordVo
+func GetSuggestBidwordVo() *SuggestBidwordVo {
+	return poolSuggestBidwordVo.Get().(*SuggestBidwordVo)
+}
+
+// ReleaseSuggestBidwordVo 释放SuggestBidwordVo
+func ReleaseSuggestBidwordVo(v *SuggestBidwordVo) {
+	v.Word = ""
+	v.BidPrice = ""
+	v.AvgPrice = ""
+	v.Impression = ""
+	v.Ctr = ""
+	v.Cvr = ""
+	v.RelevanceType = 0
+	v.Type = 0
+	poolSuggestBidwordVo.Put(v)
 }

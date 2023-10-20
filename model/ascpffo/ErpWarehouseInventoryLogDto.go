@@ -1,5 +1,9 @@
 package ascpffo
 
+import (
+	"sync"
+)
+
 // ErpWarehouseInventoryLogDto 结构体
 type ErpWarehouseInventoryLogDto struct {
 	// 交易子单号
@@ -40,4 +44,39 @@ type ErpWarehouseInventoryLogDto struct {
 	InventoryType int64 `json:"inventory_type,omitempty" xml:"inventory_type,omitempty"`
 	// 货品Id
 	ScItemId int64 `json:"sc_item_id,omitempty" xml:"sc_item_id,omitempty"`
+}
+
+var poolErpWarehouseInventoryLogDto = sync.Pool{
+	New: func() any {
+		return new(ErpWarehouseInventoryLogDto)
+	},
+}
+
+// GetErpWarehouseInventoryLogDto() 从对象池中获取ErpWarehouseInventoryLogDto
+func GetErpWarehouseInventoryLogDto() *ErpWarehouseInventoryLogDto {
+	return poolErpWarehouseInventoryLogDto.Get().(*ErpWarehouseInventoryLogDto)
+}
+
+// ReleaseErpWarehouseInventoryLogDto 释放ErpWarehouseInventoryLogDto
+func ReleaseErpWarehouseInventoryLogDto(v *ErpWarehouseInventoryLogDto) {
+	v.BizSubTradeId = ""
+	v.BizTradeId = ""
+	v.BizActivityType = ""
+	v.OperationDetailOrderId = ""
+	v.OperationOrderId = ""
+	v.ResultLockQuantity = ""
+	v.ChangeLockQuantity = ""
+	v.ResultQuantity = ""
+	v.ChangeQuantity = ""
+	v.Feature = ""
+	v.StoreName = ""
+	v.StoreCode = ""
+	v.WhcBarCode = ""
+	v.ScItemCode = ""
+	v.ScItemName = ""
+	v.WhOrderCode = ""
+	v.OperateTime = 0
+	v.InventoryType = 0
+	v.ScItemId = 0
+	poolErpWarehouseInventoryLogDto.Put(v)
 }

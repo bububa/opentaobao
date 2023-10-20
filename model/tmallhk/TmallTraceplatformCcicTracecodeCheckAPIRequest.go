@@ -2,6 +2,7 @@ package tmallhk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallTraceplatformCcicTracecodeCheckAPIRequest struct {
 // NewTmallTraceplatformCcicTracecodeCheckRequest 初始化TmallTraceplatformCcicTracecodeCheckAPIRequest对象
 func NewTmallTraceplatformCcicTracecodeCheckRequest() *TmallTraceplatformCcicTracecodeCheckAPIRequest {
 	return &TmallTraceplatformCcicTracecodeCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallTraceplatformCcicTracecodeCheckAPIRequest) Reset() {
+	r._shortTracecode = ""
+	r._hideCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallTraceplatformCcicTracecodeCheckAPIRequest) SetHideCode(_hideCode s
 // GetHideCode HideCode Getter
 func (r TmallTraceplatformCcicTracecodeCheckAPIRequest) GetHideCode() string {
 	return r._hideCode
+}
+
+var poolTmallTraceplatformCcicTracecodeCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallTraceplatformCcicTracecodeCheckRequest()
+	},
+}
+
+// GetTmallTraceplatformCcicTracecodeCheckRequest 从 sync.Pool 获取 TmallTraceplatformCcicTracecodeCheckAPIRequest
+func GetTmallTraceplatformCcicTracecodeCheckAPIRequest() *TmallTraceplatformCcicTracecodeCheckAPIRequest {
+	return poolTmallTraceplatformCcicTracecodeCheckAPIRequest.Get().(*TmallTraceplatformCcicTracecodeCheckAPIRequest)
+}
+
+// ReleaseTmallTraceplatformCcicTracecodeCheckAPIRequest 将 TmallTraceplatformCcicTracecodeCheckAPIRequest 放入 sync.Pool
+func ReleaseTmallTraceplatformCcicTracecodeCheckAPIRequest(v *TmallTraceplatformCcicTracecodeCheckAPIRequest) {
+	v.Reset()
+	poolTmallTraceplatformCcicTracecodeCheckAPIRequest.Put(v)
 }

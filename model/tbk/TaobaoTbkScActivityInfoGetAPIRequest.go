@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoTbkScActivityInfoGetAPIRequest struct {
 // NewTaobaoTbkScActivityInfoGetRequest 初始化TaobaoTbkScActivityInfoGetAPIRequest对象
 func NewTaobaoTbkScActivityInfoGetRequest() *TaobaoTbkScActivityInfoGetAPIRequest {
 	return &TaobaoTbkScActivityInfoGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkScActivityInfoGetAPIRequest) Reset() {
+	r._activityMaterialId = ""
+	r._unionId = ""
+	r._adzoneId = 0
+	r._siteId = 0
+	r._relationId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoTbkScActivityInfoGetAPIRequest) SetRelationId(_relationId int64) 
 // GetRelationId RelationId Getter
 func (r TaobaoTbkScActivityInfoGetAPIRequest) GetRelationId() int64 {
 	return r._relationId
+}
+
+var poolTaobaoTbkScActivityInfoGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkScActivityInfoGetRequest()
+	},
+}
+
+// GetTaobaoTbkScActivityInfoGetRequest 从 sync.Pool 获取 TaobaoTbkScActivityInfoGetAPIRequest
+func GetTaobaoTbkScActivityInfoGetAPIRequest() *TaobaoTbkScActivityInfoGetAPIRequest {
+	return poolTaobaoTbkScActivityInfoGetAPIRequest.Get().(*TaobaoTbkScActivityInfoGetAPIRequest)
+}
+
+// ReleaseTaobaoTbkScActivityInfoGetAPIRequest 将 TaobaoTbkScActivityInfoGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkScActivityInfoGetAPIRequest(v *TaobaoTbkScActivityInfoGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkScActivityInfoGetAPIRequest.Put(v)
 }

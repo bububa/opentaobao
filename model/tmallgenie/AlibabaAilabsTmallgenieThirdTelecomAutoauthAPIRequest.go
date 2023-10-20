@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AlibabaAilabsTmallgenieThirdTelecomAutoauthAPIRequest struct {
 // NewAlibabaAilabsTmallgenieThirdTelecomAutoauthRequest 初始化AlibabaAilabsTmallgenieThirdTelecomAutoauthAPIRequest对象
 func NewAlibabaAilabsTmallgenieThirdTelecomAutoauthRequest() *AlibabaAilabsTmallgenieThirdTelecomAutoauthAPIRequest {
 	return &AlibabaAilabsTmallgenieThirdTelecomAutoauthAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsTmallgenieThirdTelecomAutoauthAPIRequest) Reset() {
+	r._traceId = ""
+	r._ctPartnerId = ""
+	r._deviceId = ""
+	r._token = ""
+	r._time = ""
+	r._tyAccount = ""
+	r._extraParam = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AlibabaAilabsTmallgenieThirdTelecomAutoauthAPIRequest) SetExtraParam(_e
 // GetExtraParam ExtraParam Getter
 func (r AlibabaAilabsTmallgenieThirdTelecomAutoauthAPIRequest) GetExtraParam() string {
 	return r._extraParam
+}
+
+var poolAlibabaAilabsTmallgenieThirdTelecomAutoauthAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsTmallgenieThirdTelecomAutoauthRequest()
+	},
+}
+
+// GetAlibabaAilabsTmallgenieThirdTelecomAutoauthRequest 从 sync.Pool 获取 AlibabaAilabsTmallgenieThirdTelecomAutoauthAPIRequest
+func GetAlibabaAilabsTmallgenieThirdTelecomAutoauthAPIRequest() *AlibabaAilabsTmallgenieThirdTelecomAutoauthAPIRequest {
+	return poolAlibabaAilabsTmallgenieThirdTelecomAutoauthAPIRequest.Get().(*AlibabaAilabsTmallgenieThirdTelecomAutoauthAPIRequest)
+}
+
+// ReleaseAlibabaAilabsTmallgenieThirdTelecomAutoauthAPIRequest 将 AlibabaAilabsTmallgenieThirdTelecomAutoauthAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsTmallgenieThirdTelecomAutoauthAPIRequest(v *AlibabaAilabsTmallgenieThirdTelecomAutoauthAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsTmallgenieThirdTelecomAutoauthAPIRequest.Put(v)
 }

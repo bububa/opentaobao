@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // JzTopArgs 结构体
 type JzTopArgs struct {
 	// 运单号,用快递或商家自有发货时,必填
@@ -18,4 +22,28 @@ type JzTopArgs struct {
 	ZyConsignTime string `json:"zy_consign_time,omitempty" xml:"zy_consign_time,omitempty"`
 	// 自有物流公司电话
 	ZyPhoneNumber string `json:"zy_phone_number,omitempty" xml:"zy_phone_number,omitempty"`
+}
+
+var poolJzTopArgs = sync.Pool{
+	New: func() any {
+		return new(JzTopArgs)
+	},
+}
+
+// GetJzTopArgs() 从对象池中获取JzTopArgs
+func GetJzTopArgs() *JzTopArgs {
+	return poolJzTopArgs.Get().(*JzTopArgs)
+}
+
+// ReleaseJzTopArgs 释放JzTopArgs
+func ReleaseJzTopArgs(v *JzTopArgs) {
+	v.MailNo = ""
+	v.PackageNumber = ""
+	v.PackageRemark = ""
+	v.PackageVolume = ""
+	v.PackageWeight = ""
+	v.ZyCompany = ""
+	v.ZyConsignTime = ""
+	v.ZyPhoneNumber = ""
+	poolJzTopArgs.Put(v)
 }

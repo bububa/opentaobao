@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // ProcessInfoDto 结构体
 type ProcessInfoDto struct {
 	// 产地初加工管理图片（上传图片）图片建议尺寸：height: 310px;width: 670px;
@@ -16,4 +20,27 @@ type ProcessInfoDto struct {
 	ProcessMachine string `json:"process_machine,omitempty" xml:"process_machine,omitempty"`
 	// 采收地块
 	HarvestedPlot string `json:"harvested_plot,omitempty" xml:"harvested_plot,omitempty"`
+}
+
+var poolProcessInfoDto = sync.Pool{
+	New: func() any {
+		return new(ProcessInfoDto)
+	},
+}
+
+// GetProcessInfoDto() 从对象池中获取ProcessInfoDto
+func GetProcessInfoDto() *ProcessInfoDto {
+	return poolProcessInfoDto.Get().(*ProcessInfoDto)
+}
+
+// ReleaseProcessInfoDto 释放ProcessInfoDto
+func ReleaseProcessInfoDto(v *ProcessInfoDto) {
+	v.HarvestPictures = v.HarvestPictures[:0]
+	v.HarvestDate = ""
+	v.HarvestPosition = ""
+	v.HarvestNum = ""
+	v.ProcessMethod = ""
+	v.ProcessMachine = ""
+	v.HarvestedPlot = ""
+	poolProcessInfoDto.Put(v)
 }

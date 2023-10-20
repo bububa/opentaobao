@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoWdkEquipmentWcsWcsinfoUploadAPIResponse struct {
 	model.CommonResponse
 	TaobaoWdkEquipmentWcsWcsinfoUploadAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoWdkEquipmentWcsWcsinfoUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoWdkEquipmentWcsWcsinfoUploadAPIResponseModel).Reset()
 }
 
 // TaobaoWdkEquipmentWcsWcsinfoUploadAPIResponseModel is 悬挂链业务信息上传 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoWdkEquipmentWcsWcsinfoUploadAPIResponseModel struct {
 	ServiceErrorMsg string `json:"service_error_msg,omitempty" xml:"service_error_msg,omitempty"`
 	// success
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoWdkEquipmentWcsWcsinfoUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Model = ""
+	m.ServiceErrorCode = ""
+	m.ServiceErrorMsg = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoWdkEquipmentWcsWcsinfoUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoWdkEquipmentWcsWcsinfoUploadAPIResponse)
+	},
+}
+
+// GetTaobaoWdkEquipmentWcsWcsinfoUploadAPIResponse 从 sync.Pool 获取 TaobaoWdkEquipmentWcsWcsinfoUploadAPIResponse
+func GetTaobaoWdkEquipmentWcsWcsinfoUploadAPIResponse() *TaobaoWdkEquipmentWcsWcsinfoUploadAPIResponse {
+	return poolTaobaoWdkEquipmentWcsWcsinfoUploadAPIResponse.Get().(*TaobaoWdkEquipmentWcsWcsinfoUploadAPIResponse)
+}
+
+// ReleaseTaobaoWdkEquipmentWcsWcsinfoUploadAPIResponse 将 TaobaoWdkEquipmentWcsWcsinfoUploadAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoWdkEquipmentWcsWcsinfoUploadAPIResponse(v *TaobaoWdkEquipmentWcsWcsinfoUploadAPIResponse) {
+	v.Reset()
+	poolTaobaoWdkEquipmentWcsWcsinfoUploadAPIResponse.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alitrip.hotel.hstdf.businessarea.get
 //
 // 根据cityId分页查询商圈信息
-func AlitripHotelHstdfBusinessareaGet(clt *core.SDKClient, req *hotelhstdf.AlitripHotelHstdfBusinessareaGetAPIRequest, session string) (*hotelhstdf.AlitripHotelHstdfBusinessareaGetAPIResponse, error) {
-	var resp hotelhstdf.AlitripHotelHstdfBusinessareaGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripHotelHstdfBusinessareaGet(clt *core.SDKClient, req *hotelhstdf.AlitripHotelHstdfBusinessareaGetAPIRequest, resp *hotelhstdf.AlitripHotelHstdfBusinessareaGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

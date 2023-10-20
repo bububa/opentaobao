@@ -1,5 +1,9 @@
 package wms
 
+import (
+	"sync"
+)
+
 // Sninfo 结构体
 type Sninfo struct {
 	// sn编码
@@ -10,4 +14,24 @@ type Sninfo struct {
 	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 库存类型（1 可销售库存(正品) 101 残次 102 机损 103 箱损201 冻结库存）
 	InventoryType int64 `json:"inventory_type,omitempty" xml:"inventory_type,omitempty"`
+}
+
+var poolSninfo = sync.Pool{
+	New: func() any {
+		return new(Sninfo)
+	},
+}
+
+// GetSninfo() 从对象池中获取Sninfo
+func GetSninfo() *Sninfo {
+	return poolSninfo.Get().(*Sninfo)
+}
+
+// ReleaseSninfo 释放Sninfo
+func ReleaseSninfo(v *Sninfo) {
+	v.SnCode = ""
+	v.ItemCode = ""
+	v.ItemId = ""
+	v.InventoryType = 0
+	poolSninfo.Put(v)
 }

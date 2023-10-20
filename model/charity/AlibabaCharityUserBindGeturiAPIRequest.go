@@ -2,6 +2,7 @@ package charity
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaCharityUserBindGeturiAPIRequest struct {
 // NewAlibabaCharityUserBindGeturiRequest 初始化AlibabaCharityUserBindGeturiAPIRequest对象
 func NewAlibabaCharityUserBindGeturiRequest() *AlibabaCharityUserBindGeturiAPIRequest {
 	return &AlibabaCharityUserBindGeturiAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCharityUserBindGeturiAPIRequest) Reset() {
+	r._features = ""
+	r._platform = ""
+	r._userKey = ""
+	r._userNick = ""
+	r._timeout = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaCharityUserBindGeturiAPIRequest) SetTimeout(_timeout int64) erro
 // GetTimeout Timeout Getter
 func (r AlibabaCharityUserBindGeturiAPIRequest) GetTimeout() int64 {
 	return r._timeout
+}
+
+var poolAlibabaCharityUserBindGeturiAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCharityUserBindGeturiRequest()
+	},
+}
+
+// GetAlibabaCharityUserBindGeturiRequest 从 sync.Pool 获取 AlibabaCharityUserBindGeturiAPIRequest
+func GetAlibabaCharityUserBindGeturiAPIRequest() *AlibabaCharityUserBindGeturiAPIRequest {
+	return poolAlibabaCharityUserBindGeturiAPIRequest.Get().(*AlibabaCharityUserBindGeturiAPIRequest)
+}
+
+// ReleaseAlibabaCharityUserBindGeturiAPIRequest 将 AlibabaCharityUserBindGeturiAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCharityUserBindGeturiAPIRequest(v *AlibabaCharityUserBindGeturiAPIRequest) {
+	v.Reset()
+	poolAlibabaCharityUserBindGeturiAPIRequest.Put(v)
 }

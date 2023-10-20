@@ -1,5 +1,9 @@
 package legalsuit
 
+import (
+	"sync"
+)
+
 // AfterCourtDetailModel 结构体
 type AfterCourtDetailModel struct {
 	// 附件
@@ -20,4 +24,29 @@ type AfterCourtDetailModel struct {
 	NonEviAttachmentCount int64 `json:"non_evi_attachment_count,omitempty" xml:"non_evi_attachment_count,omitempty"`
 	// 附件数量
 	EviAttachmentCount int64 `json:"evi_attachment_count,omitempty" xml:"evi_attachment_count,omitempty"`
+}
+
+var poolAfterCourtDetailModel = sync.Pool{
+	New: func() any {
+		return new(AfterCourtDetailModel)
+	},
+}
+
+// GetAfterCourtDetailModel() 从对象池中获取AfterCourtDetailModel
+func GetAfterCourtDetailModel() *AfterCourtDetailModel {
+	return poolAfterCourtDetailModel.Get().(*AfterCourtDetailModel)
+}
+
+// ReleaseAfterCourtDetailModel 释放AfterCourtDetailModel
+func ReleaseAfterCourtDetailModel(v *AfterCourtDetailModel) {
+	v.NonEviAttachmentList = v.NonEviAttachmentList[:0]
+	v.EviAttachmentList = v.EviAttachmentList[:0]
+	v.SubmitDate = ""
+	v.Description = ""
+	v.Content = ""
+	v.Intro = ""
+	v.Name = ""
+	v.NonEviAttachmentCount = 0
+	v.EviAttachmentCount = 0
+	poolAfterCourtDetailModel.Put(v)
 }

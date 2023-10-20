@@ -9,11 +9,6 @@ import (
 // aliexpress.solution.issue.partner.rma.reverselogistic.state.update
 //
 // Updates the reverse logistics state for after sales services
-func AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdate(clt *core.SDKClient, req *aesolution.AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest, session string) (*aesolution.AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIResponse, error) {
-	var resp aesolution.AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdate(clt *core.SDKClient, req *aesolution.AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest, resp *aesolution.AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

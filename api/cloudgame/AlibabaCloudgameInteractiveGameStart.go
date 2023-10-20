@@ -9,11 +9,6 @@ import (
 // alibaba.cloudgame.interactive.game.start
 //
 // 开始游戏
-func AlibabaCloudgameInteractiveGameStart(clt *core.SDKClient, req *cloudgame.AlibabaCloudgameInteractiveGameStartAPIRequest, session string) (*cloudgame.AlibabaCloudgameInteractiveGameStartAPIResponse, error) {
-	var resp cloudgame.AlibabaCloudgameInteractiveGameStartAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCloudgameInteractiveGameStart(clt *core.SDKClient, req *cloudgame.AlibabaCloudgameInteractiveGameStartAPIRequest, resp *cloudgame.AlibabaCloudgameInteractiveGameStartAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

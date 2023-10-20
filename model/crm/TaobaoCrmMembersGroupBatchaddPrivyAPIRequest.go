@@ -2,6 +2,7 @@ package crm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoCrmMembersGroupBatchaddPrivyAPIRequest struct {
 // NewTaobaoCrmMembersGroupBatchaddPrivyRequest 初始化TaobaoCrmMembersGroupBatchaddPrivyAPIRequest对象
 func NewTaobaoCrmMembersGroupBatchaddPrivyRequest() *TaobaoCrmMembersGroupBatchaddPrivyAPIRequest {
 	return &TaobaoCrmMembersGroupBatchaddPrivyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCrmMembersGroupBatchaddPrivyAPIRequest) Reset() {
+	r._groupIds = r._groupIds[:0]
+	r._ouids = r._ouids[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoCrmMembersGroupBatchaddPrivyAPIRequest) SetOuids(_ouids []string)
 // GetOuids Ouids Getter
 func (r TaobaoCrmMembersGroupBatchaddPrivyAPIRequest) GetOuids() []string {
 	return r._ouids
+}
+
+var poolTaobaoCrmMembersGroupBatchaddPrivyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCrmMembersGroupBatchaddPrivyRequest()
+	},
+}
+
+// GetTaobaoCrmMembersGroupBatchaddPrivyRequest 从 sync.Pool 获取 TaobaoCrmMembersGroupBatchaddPrivyAPIRequest
+func GetTaobaoCrmMembersGroupBatchaddPrivyAPIRequest() *TaobaoCrmMembersGroupBatchaddPrivyAPIRequest {
+	return poolTaobaoCrmMembersGroupBatchaddPrivyAPIRequest.Get().(*TaobaoCrmMembersGroupBatchaddPrivyAPIRequest)
+}
+
+// ReleaseTaobaoCrmMembersGroupBatchaddPrivyAPIRequest 将 TaobaoCrmMembersGroupBatchaddPrivyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCrmMembersGroupBatchaddPrivyAPIRequest(v *TaobaoCrmMembersGroupBatchaddPrivyAPIRequest) {
+	v.Reset()
+	poolTaobaoCrmMembersGroupBatchaddPrivyAPIRequest.Put(v)
 }

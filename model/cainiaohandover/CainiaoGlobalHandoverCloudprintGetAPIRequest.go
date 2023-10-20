@@ -2,6 +2,7 @@ package cainiaohandover
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type CainiaoGlobalHandoverCloudprintGetAPIRequest struct {
 // NewCainiaoGlobalHandoverCloudprintGetRequest 初始化CainiaoGlobalHandoverCloudprintGetAPIRequest对象
 func NewCainiaoGlobalHandoverCloudprintGetRequest() *CainiaoGlobalHandoverCloudprintGetAPIRequest {
 	return &CainiaoGlobalHandoverCloudprintGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoGlobalHandoverCloudprintGetAPIRequest) Reset() {
+	r._trackingNumber = ""
+	r._orderCode = ""
+	r._client = ""
+	r._locale = ""
+	r._userInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *CainiaoGlobalHandoverCloudprintGetAPIRequest) SetUserInfo(_userInfo *Us
 // GetUserInfo UserInfo Getter
 func (r CainiaoGlobalHandoverCloudprintGetAPIRequest) GetUserInfo() *UserInfoDto {
 	return r._userInfo
+}
+
+var poolCainiaoGlobalHandoverCloudprintGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoGlobalHandoverCloudprintGetRequest()
+	},
+}
+
+// GetCainiaoGlobalHandoverCloudprintGetRequest 从 sync.Pool 获取 CainiaoGlobalHandoverCloudprintGetAPIRequest
+func GetCainiaoGlobalHandoverCloudprintGetAPIRequest() *CainiaoGlobalHandoverCloudprintGetAPIRequest {
+	return poolCainiaoGlobalHandoverCloudprintGetAPIRequest.Get().(*CainiaoGlobalHandoverCloudprintGetAPIRequest)
+}
+
+// ReleaseCainiaoGlobalHandoverCloudprintGetAPIRequest 将 CainiaoGlobalHandoverCloudprintGetAPIRequest 放入 sync.Pool
+func ReleaseCainiaoGlobalHandoverCloudprintGetAPIRequest(v *CainiaoGlobalHandoverCloudprintGetAPIRequest) {
+	v.Reset()
+	poolCainiaoGlobalHandoverCloudprintGetAPIRequest.Put(v)
 }

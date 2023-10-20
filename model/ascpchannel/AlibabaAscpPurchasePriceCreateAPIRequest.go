@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpPurchasePriceCreateAPIRequest struct {
 // NewAlibabaAscpPurchasePriceCreateRequest 初始化AlibabaAscpPurchasePriceCreateAPIRequest对象
 func NewAlibabaAscpPurchasePriceCreateRequest() *AlibabaAscpPurchasePriceCreateAPIRequest {
 	return &AlibabaAscpPurchasePriceCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpPurchasePriceCreateAPIRequest) Reset() {
+	r._createRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpPurchasePriceCreateAPIRequest) SetCreateRequest(_createReque
 // GetCreateRequest CreateRequest Getter
 func (r AlibabaAscpPurchasePriceCreateAPIRequest) GetCreateRequest() *AlibabaAscpPurchasePriceCreateRequest {
 	return r._createRequest
+}
+
+var poolAlibabaAscpPurchasePriceCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpPurchasePriceCreateRequest()
+	},
+}
+
+// GetAlibabaAscpPurchasePriceCreateRequest 从 sync.Pool 获取 AlibabaAscpPurchasePriceCreateAPIRequest
+func GetAlibabaAscpPurchasePriceCreateAPIRequest() *AlibabaAscpPurchasePriceCreateAPIRequest {
+	return poolAlibabaAscpPurchasePriceCreateAPIRequest.Get().(*AlibabaAscpPurchasePriceCreateAPIRequest)
+}
+
+// ReleaseAlibabaAscpPurchasePriceCreateAPIRequest 将 AlibabaAscpPurchasePriceCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpPurchasePriceCreateAPIRequest(v *AlibabaAscpPurchasePriceCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpPurchasePriceCreateAPIRequest.Put(v)
 }

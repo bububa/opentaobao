@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -97,8 +98,53 @@ type TaobaoXhotelHouseAddAPIRequest struct {
 // NewTaobaoXhotelHouseAddRequest 初始化TaobaoXhotelHouseAddAPIRequest对象
 func NewTaobaoXhotelHouseAddRequest() *TaobaoXhotelHouseAddAPIRequest {
 	return &TaobaoXhotelHouseAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(40),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelHouseAddAPIRequest) Reset() {
+	r._outerId = ""
+	r._name = ""
+	r._usedName = ""
+	r._country = ""
+	r._business = ""
+	r._address = ""
+	r._longitude = ""
+	r._latitude = ""
+	r._positionType = ""
+	r._tel = ""
+	r._extend = ""
+	r._vendor = ""
+	r._star = ""
+	r._openingTime = ""
+	r._decorateTime = ""
+	r._floors = ""
+	r._description = ""
+	r._hotelPolicies = ""
+	r._hotelFacilities = ""
+	r._service = ""
+	r._roomFacilities = ""
+	r._pics = ""
+	r._brand = ""
+	r._postalCode = ""
+	r._bookingNotice = ""
+	r._creditCardTypes = ""
+	r._orbitTrack = ""
+	r._nameE = ""
+	r._supplier = ""
+	r._settlementCurrency = ""
+	r._ownerInfo = ""
+	r._arroundDesc = ""
+	r._realAddress = ""
+	r._domestic = 0
+	r._province = 0
+	r._city = 0
+	r._district = 0
+	r._shid = 0
+	r._rooms = 0
+	r._status = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -636,4 +682,21 @@ func (r *TaobaoXhotelHouseAddAPIRequest) SetStatus(_status int64) error {
 // GetStatus Status Getter
 func (r TaobaoXhotelHouseAddAPIRequest) GetStatus() int64 {
 	return r._status
+}
+
+var poolTaobaoXhotelHouseAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelHouseAddRequest()
+	},
+}
+
+// GetTaobaoXhotelHouseAddRequest 从 sync.Pool 获取 TaobaoXhotelHouseAddAPIRequest
+func GetTaobaoXhotelHouseAddAPIRequest() *TaobaoXhotelHouseAddAPIRequest {
+	return poolTaobaoXhotelHouseAddAPIRequest.Get().(*TaobaoXhotelHouseAddAPIRequest)
+}
+
+// ReleaseTaobaoXhotelHouseAddAPIRequest 将 TaobaoXhotelHouseAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelHouseAddAPIRequest(v *TaobaoXhotelHouseAddAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelHouseAddAPIRequest.Put(v)
 }

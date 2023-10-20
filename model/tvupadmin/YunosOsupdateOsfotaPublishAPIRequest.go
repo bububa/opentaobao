@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YunosOsupdateOsfotaPublishAPIRequest struct {
 // NewYunosOsupdateOsfotaPublishRequest 初始化YunosOsupdateOsfotaPublishAPIRequest对象
 func NewYunosOsupdateOsfotaPublishRequest() *YunosOsupdateOsfotaPublishAPIRequest {
 	return &YunosOsupdateOsfotaPublishAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosOsupdateOsfotaPublishAPIRequest) Reset() {
+	r._publishJson = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YunosOsupdateOsfotaPublishAPIRequest) SetPublishJson(_publishJson strin
 // GetPublishJson PublishJson Getter
 func (r YunosOsupdateOsfotaPublishAPIRequest) GetPublishJson() string {
 	return r._publishJson
+}
+
+var poolYunosOsupdateOsfotaPublishAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosOsupdateOsfotaPublishRequest()
+	},
+}
+
+// GetYunosOsupdateOsfotaPublishRequest 从 sync.Pool 获取 YunosOsupdateOsfotaPublishAPIRequest
+func GetYunosOsupdateOsfotaPublishAPIRequest() *YunosOsupdateOsfotaPublishAPIRequest {
+	return poolYunosOsupdateOsfotaPublishAPIRequest.Get().(*YunosOsupdateOsfotaPublishAPIRequest)
+}
+
+// ReleaseYunosOsupdateOsfotaPublishAPIRequest 将 YunosOsupdateOsfotaPublishAPIRequest 放入 sync.Pool
+func ReleaseYunosOsupdateOsfotaPublishAPIRequest(v *YunosOsupdateOsfotaPublishAPIRequest) {
+	v.Reset()
+	poolYunosOsupdateOsfotaPublishAPIRequest.Put(v)
 }

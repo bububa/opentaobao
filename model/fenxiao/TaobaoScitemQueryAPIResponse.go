@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoScitemQueryAPIResponse struct {
 	TaobaoScitemQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoScitemQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoScitemQueryAPIResponseModel).Reset()
+}
+
 // TaobaoScitemQueryAPIResponseModel is 查询后端商品 成功返回结果
 type TaobaoScitemQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"scitem_query_response"`
@@ -26,4 +33,29 @@ type TaobaoScitemQueryAPIResponseModel struct {
 	TotalPage int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
 	// 分页
 	QueryPagination *QueryPagination `json:"query_pagination,omitempty" xml:"query_pagination,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoScitemQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ScItemList = m.ScItemList[:0]
+	m.TotalPage = 0
+	m.QueryPagination = nil
+}
+
+var poolTaobaoScitemQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoScitemQueryAPIResponse)
+	},
+}
+
+// GetTaobaoScitemQueryAPIResponse 从 sync.Pool 获取 TaobaoScitemQueryAPIResponse
+func GetTaobaoScitemQueryAPIResponse() *TaobaoScitemQueryAPIResponse {
+	return poolTaobaoScitemQueryAPIResponse.Get().(*TaobaoScitemQueryAPIResponse)
+}
+
+// ReleaseTaobaoScitemQueryAPIResponse 将 TaobaoScitemQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoScitemQueryAPIResponse(v *TaobaoScitemQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoScitemQueryAPIResponse.Put(v)
 }

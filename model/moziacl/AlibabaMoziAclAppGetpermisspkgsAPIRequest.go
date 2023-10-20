@@ -2,6 +2,7 @@ package moziacl
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMoziAclAppGetpermisspkgsAPIRequest struct {
 // NewAlibabaMoziAclAppGetpermisspkgsRequest 初始化AlibabaMoziAclAppGetpermisspkgsAPIRequest对象
 func NewAlibabaMoziAclAppGetpermisspkgsRequest() *AlibabaMoziAclAppGetpermisspkgsAPIRequest {
 	return &AlibabaMoziAclAppGetpermisspkgsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMoziAclAppGetpermisspkgsAPIRequest) Reset() {
+	r._getAppPermissionPackagesRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMoziAclAppGetpermisspkgsAPIRequest) SetGetAppPermissionPackagesR
 // GetGetAppPermissionPackagesRequest GetAppPermissionPackagesRequest Getter
 func (r AlibabaMoziAclAppGetpermisspkgsAPIRequest) GetGetAppPermissionPackagesRequest() *GetAppPermissionPackageRequest {
 	return r._getAppPermissionPackagesRequest
+}
+
+var poolAlibabaMoziAclAppGetpermisspkgsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMoziAclAppGetpermisspkgsRequest()
+	},
+}
+
+// GetAlibabaMoziAclAppGetpermisspkgsRequest 从 sync.Pool 获取 AlibabaMoziAclAppGetpermisspkgsAPIRequest
+func GetAlibabaMoziAclAppGetpermisspkgsAPIRequest() *AlibabaMoziAclAppGetpermisspkgsAPIRequest {
+	return poolAlibabaMoziAclAppGetpermisspkgsAPIRequest.Get().(*AlibabaMoziAclAppGetpermisspkgsAPIRequest)
+}
+
+// ReleaseAlibabaMoziAclAppGetpermisspkgsAPIRequest 将 AlibabaMoziAclAppGetpermisspkgsAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMoziAclAppGetpermisspkgsAPIRequest(v *AlibabaMoziAclAppGetpermisspkgsAPIRequest) {
+	v.Reset()
+	poolAlibabaMoziAclAppGetpermisspkgsAPIRequest.Put(v)
 }

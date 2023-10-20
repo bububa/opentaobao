@@ -2,6 +2,7 @@ package aetask
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AliexpressInteractiveTaskCompleteAPIRequest struct {
 // NewAliexpressInteractiveTaskCompleteRequest 初始化AliexpressInteractiveTaskCompleteAPIRequest对象
 func NewAliexpressInteractiveTaskCompleteRequest() *AliexpressInteractiveTaskCompleteAPIRequest {
 	return &AliexpressInteractiveTaskCompleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressInteractiveTaskCompleteAPIRequest) Reset() {
+	r._projectAppKey = ""
+	r._taskInstanceId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AliexpressInteractiveTaskCompleteAPIRequest) SetTaskInstanceId(_taskIns
 // GetTaskInstanceId TaskInstanceId Getter
 func (r AliexpressInteractiveTaskCompleteAPIRequest) GetTaskInstanceId() int64 {
 	return r._taskInstanceId
+}
+
+var poolAliexpressInteractiveTaskCompleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressInteractiveTaskCompleteRequest()
+	},
+}
+
+// GetAliexpressInteractiveTaskCompleteRequest 从 sync.Pool 获取 AliexpressInteractiveTaskCompleteAPIRequest
+func GetAliexpressInteractiveTaskCompleteAPIRequest() *AliexpressInteractiveTaskCompleteAPIRequest {
+	return poolAliexpressInteractiveTaskCompleteAPIRequest.Get().(*AliexpressInteractiveTaskCompleteAPIRequest)
+}
+
+// ReleaseAliexpressInteractiveTaskCompleteAPIRequest 将 AliexpressInteractiveTaskCompleteAPIRequest 放入 sync.Pool
+func ReleaseAliexpressInteractiveTaskCompleteAPIRequest(v *AliexpressInteractiveTaskCompleteAPIRequest) {
+	v.Reset()
+	poolAliexpressInteractiveTaskCompleteAPIRequest.Put(v)
 }

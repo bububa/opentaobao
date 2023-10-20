@@ -1,5 +1,9 @@
 package tbrefund
 
+import (
+	"sync"
+)
+
 // TmallDisputeReceiveGetResultSet 结构体
 type TmallDisputeReceiveGetResultSet struct {
 	// results
@@ -14,4 +18,26 @@ type TmallDisputeReceiveGetResultSet struct {
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 	// 是否还有下一页
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
+}
+
+var poolTmallDisputeReceiveGetResultSet = sync.Pool{
+	New: func() any {
+		return new(TmallDisputeReceiveGetResultSet)
+	},
+}
+
+// GetTmallDisputeReceiveGetResultSet() 从对象池中获取TmallDisputeReceiveGetResultSet
+func GetTmallDisputeReceiveGetResultSet() *TmallDisputeReceiveGetResultSet {
+	return poolTmallDisputeReceiveGetResultSet.Get().(*TmallDisputeReceiveGetResultSet)
+}
+
+// ReleaseTmallDisputeReceiveGetResultSet 释放TmallDisputeReceiveGetResultSet
+func ReleaseTmallDisputeReceiveGetResultSet(v *TmallDisputeReceiveGetResultSet) {
+	v.Results = v.Results[:0]
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.PageResults = 0
+	v.TotalResults = 0
+	v.HasNext = false
+	poolTmallDisputeReceiveGetResultSet.Put(v)
 }

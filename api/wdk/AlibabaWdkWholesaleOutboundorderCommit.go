@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.wholesale.outboundorder.commit
 //
 // 盒马帮发货信息回传接口
-func AlibabaWdkWholesaleOutboundorderCommit(clt *core.SDKClient, req *wdk.AlibabaWdkWholesaleOutboundorderCommitAPIRequest, session string) (*wdk.AlibabaWdkWholesaleOutboundorderCommitAPIResponse, error) {
-	var resp wdk.AlibabaWdkWholesaleOutboundorderCommitAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkWholesaleOutboundorderCommit(clt *core.SDKClient, req *wdk.AlibabaWdkWholesaleOutboundorderCommitAPIRequest, resp *wdk.AlibabaWdkWholesaleOutboundorderCommitAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

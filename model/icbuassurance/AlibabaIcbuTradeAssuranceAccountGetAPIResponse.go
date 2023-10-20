@@ -2,6 +2,7 @@ package icbuassurance
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaIcbuTradeAssuranceAccountGetAPIResponse struct {
 	AlibabaIcbuTradeAssuranceAccountGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaIcbuTradeAssuranceAccountGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaIcbuTradeAssuranceAccountGetAPIResponseModel).Reset()
+}
+
 // AlibabaIcbuTradeAssuranceAccountGetAPIResponseModel is icbu信保账户信息 成功返回结果
 type AlibabaIcbuTradeAssuranceAccountGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_icbu_trade_assurance_account_get_response"`
@@ -22,4 +29,27 @@ type AlibabaIcbuTradeAssuranceAccountGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// AssuranceAccountResult
 	AssuranceAccountResult *AssuranceAccountResult `json:"assurance_account_result,omitempty" xml:"assurance_account_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaIcbuTradeAssuranceAccountGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.AssuranceAccountResult = nil
+}
+
+var poolAlibabaIcbuTradeAssuranceAccountGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaIcbuTradeAssuranceAccountGetAPIResponse)
+	},
+}
+
+// GetAlibabaIcbuTradeAssuranceAccountGetAPIResponse 从 sync.Pool 获取 AlibabaIcbuTradeAssuranceAccountGetAPIResponse
+func GetAlibabaIcbuTradeAssuranceAccountGetAPIResponse() *AlibabaIcbuTradeAssuranceAccountGetAPIResponse {
+	return poolAlibabaIcbuTradeAssuranceAccountGetAPIResponse.Get().(*AlibabaIcbuTradeAssuranceAccountGetAPIResponse)
+}
+
+// ReleaseAlibabaIcbuTradeAssuranceAccountGetAPIResponse 将 AlibabaIcbuTradeAssuranceAccountGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaIcbuTradeAssuranceAccountGetAPIResponse(v *AlibabaIcbuTradeAssuranceAccountGetAPIResponse) {
+	v.Reset()
+	poolAlibabaIcbuTradeAssuranceAccountGetAPIResponse.Put(v)
 }

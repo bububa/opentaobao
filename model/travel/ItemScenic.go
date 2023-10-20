@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // ItemScenic 结构体
 type ItemScenic struct {
 	// 关联的套餐id
@@ -14,4 +18,26 @@ type ItemScenic struct {
 	CnName string `json:"cn_name,omitempty" xml:"cn_name,omitempty"`
 	// 必填，景点所在城市
 	City string `json:"city,omitempty" xml:"city,omitempty"`
+}
+
+var poolItemScenic = sync.Pool{
+	New: func() any {
+		return new(ItemScenic)
+	},
+}
+
+// GetItemScenic() 从对象池中获取ItemScenic
+func GetItemScenic() *ItemScenic {
+	return poolItemScenic.Get().(*ItemScenic)
+}
+
+// ReleaseItemScenic 释放ItemScenic
+func ReleaseItemScenic(v *ItemScenic) {
+	v.RelatedPackageId = ""
+	v.TicketType = ""
+	v.PoiResource = ""
+	v.Poi = ""
+	v.CnName = ""
+	v.City = ""
+	poolItemScenic.Put(v)
 }

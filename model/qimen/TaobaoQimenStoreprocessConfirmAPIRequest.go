@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQimenStoreprocessConfirmAPIRequest struct {
 // NewTaobaoQimenStoreprocessConfirmRequest 初始化TaobaoQimenStoreprocessConfirmAPIRequest对象
 func NewTaobaoQimenStoreprocessConfirmRequest() *TaobaoQimenStoreprocessConfirmAPIRequest {
 	return &TaobaoQimenStoreprocessConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenStoreprocessConfirmAPIRequest) Reset() {
+	r._request = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -50,4 +57,21 @@ func (r *TaobaoQimenStoreprocessConfirmAPIRequest) SetRequest(_request *StorePro
 // GetRequest Request Getter
 func (r TaobaoQimenStoreprocessConfirmAPIRequest) GetRequest() *StoreProcessConfirmRequest {
 	return r._request
+}
+
+var poolTaobaoQimenStoreprocessConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenStoreprocessConfirmRequest()
+	},
+}
+
+// GetTaobaoQimenStoreprocessConfirmRequest 从 sync.Pool 获取 TaobaoQimenStoreprocessConfirmAPIRequest
+func GetTaobaoQimenStoreprocessConfirmAPIRequest() *TaobaoQimenStoreprocessConfirmAPIRequest {
+	return poolTaobaoQimenStoreprocessConfirmAPIRequest.Get().(*TaobaoQimenStoreprocessConfirmAPIRequest)
+}
+
+// ReleaseTaobaoQimenStoreprocessConfirmAPIRequest 将 TaobaoQimenStoreprocessConfirmAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenStoreprocessConfirmAPIRequest(v *TaobaoQimenStoreprocessConfirmAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenStoreprocessConfirmAPIRequest.Put(v)
 }

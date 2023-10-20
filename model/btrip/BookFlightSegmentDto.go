@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BookFlightSegmentDto 结构体
 type BookFlightSegmentDto struct {
 	// 到达机场
@@ -24,4 +28,31 @@ type BookFlightSegmentDto struct {
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
 	// 行程单类型
 	InvoiceType int64 `json:"invoice_type,omitempty" xml:"invoice_type,omitempty"`
+}
+
+var poolBookFlightSegmentDto = sync.Pool{
+	New: func() any {
+		return new(BookFlightSegmentDto)
+	},
+}
+
+// GetBookFlightSegmentDto() 从对象池中获取BookFlightSegmentDto
+func GetBookFlightSegmentDto() *BookFlightSegmentDto {
+	return poolBookFlightSegmentDto.Get().(*BookFlightSegmentDto)
+}
+
+// ReleaseBookFlightSegmentDto 释放BookFlightSegmentDto
+func ReleaseBookFlightSegmentDto(v *BookFlightSegmentDto) {
+	v.ArrAirportCode = ""
+	v.ArrCityCode = ""
+	v.Cabin = ""
+	v.DepAirportCode = ""
+	v.DepCityCode = ""
+	v.DepDate = ""
+	v.FlightNo = ""
+	v.SegmentNumber = ""
+	v.SegSecretParams = ""
+	v.Price = 0
+	v.InvoiceType = 0
+	poolBookFlightSegmentDto.Put(v)
 }

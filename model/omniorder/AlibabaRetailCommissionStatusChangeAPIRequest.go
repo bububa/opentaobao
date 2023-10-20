@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaRetailCommissionStatusChangeAPIRequest struct {
 // NewAlibabaRetailCommissionStatusChangeRequest 初始化AlibabaRetailCommissionStatusChangeAPIRequest对象
 func NewAlibabaRetailCommissionStatusChangeRequest() *AlibabaRetailCommissionStatusChangeAPIRequest {
 	return &AlibabaRetailCommissionStatusChangeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaRetailCommissionStatusChangeAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaRetailCommissionStatusChangeAPIRequest) SetParam0(_param0 *Unive
 // GetParam0 Param0 Getter
 func (r AlibabaRetailCommissionStatusChangeAPIRequest) GetParam0() *UniverseOrderVo {
 	return r._param0
+}
+
+var poolAlibabaRetailCommissionStatusChangeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaRetailCommissionStatusChangeRequest()
+	},
+}
+
+// GetAlibabaRetailCommissionStatusChangeRequest 从 sync.Pool 获取 AlibabaRetailCommissionStatusChangeAPIRequest
+func GetAlibabaRetailCommissionStatusChangeAPIRequest() *AlibabaRetailCommissionStatusChangeAPIRequest {
+	return poolAlibabaRetailCommissionStatusChangeAPIRequest.Get().(*AlibabaRetailCommissionStatusChangeAPIRequest)
+}
+
+// ReleaseAlibabaRetailCommissionStatusChangeAPIRequest 将 AlibabaRetailCommissionStatusChangeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaRetailCommissionStatusChangeAPIRequest(v *AlibabaRetailCommissionStatusChangeAPIRequest) {
+	v.Reset()
+	poolAlibabaRetailCommissionStatusChangeAPIRequest.Put(v)
 }

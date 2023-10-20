@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaEinvoicePaperCommonReturnAPIRequest struct {
 // NewAlibabaEinvoicePaperCommonReturnRequest 初始化AlibabaEinvoicePaperCommonReturnAPIRequest对象
 func NewAlibabaEinvoicePaperCommonReturnRequest() *AlibabaEinvoicePaperCommonReturnAPIRequest {
 	return &AlibabaEinvoicePaperCommonReturnAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoicePaperCommonReturnAPIRequest) Reset() {
+	r._reqIndex = ""
+	r._bizErrorCode = ""
+	r._bizErrorMsg = ""
+	r._extProps = ""
+	r._success = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaEinvoicePaperCommonReturnAPIRequest) SetSuccess(_success bool) e
 // GetSuccess Success Getter
 func (r AlibabaEinvoicePaperCommonReturnAPIRequest) GetSuccess() bool {
 	return r._success
+}
+
+var poolAlibabaEinvoicePaperCommonReturnAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoicePaperCommonReturnRequest()
+	},
+}
+
+// GetAlibabaEinvoicePaperCommonReturnRequest 从 sync.Pool 获取 AlibabaEinvoicePaperCommonReturnAPIRequest
+func GetAlibabaEinvoicePaperCommonReturnAPIRequest() *AlibabaEinvoicePaperCommonReturnAPIRequest {
+	return poolAlibabaEinvoicePaperCommonReturnAPIRequest.Get().(*AlibabaEinvoicePaperCommonReturnAPIRequest)
+}
+
+// ReleaseAlibabaEinvoicePaperCommonReturnAPIRequest 将 AlibabaEinvoicePaperCommonReturnAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoicePaperCommonReturnAPIRequest(v *AlibabaEinvoicePaperCommonReturnAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoicePaperCommonReturnAPIRequest.Put(v)
 }

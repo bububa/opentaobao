@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkItemCategoryUpdateAPIRequest struct {
 // NewAlibabaWdkItemCategoryUpdateRequest 初始化AlibabaWdkItemCategoryUpdateAPIRequest对象
 func NewAlibabaWdkItemCategoryUpdateRequest() *AlibabaWdkItemCategoryUpdateAPIRequest {
 	return &AlibabaWdkItemCategoryUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkItemCategoryUpdateAPIRequest) Reset() {
+	r._bean = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkItemCategoryUpdateAPIRequest) SetBean(_bean *UpdateCategoryRe
 // GetBean Bean Getter
 func (r AlibabaWdkItemCategoryUpdateAPIRequest) GetBean() *UpdateCategoryRequestBean {
 	return r._bean
+}
+
+var poolAlibabaWdkItemCategoryUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkItemCategoryUpdateRequest()
+	},
+}
+
+// GetAlibabaWdkItemCategoryUpdateRequest 从 sync.Pool 获取 AlibabaWdkItemCategoryUpdateAPIRequest
+func GetAlibabaWdkItemCategoryUpdateAPIRequest() *AlibabaWdkItemCategoryUpdateAPIRequest {
+	return poolAlibabaWdkItemCategoryUpdateAPIRequest.Get().(*AlibabaWdkItemCategoryUpdateAPIRequest)
+}
+
+// ReleaseAlibabaWdkItemCategoryUpdateAPIRequest 将 AlibabaWdkItemCategoryUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkItemCategoryUpdateAPIRequest(v *AlibabaWdkItemCategoryUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkItemCategoryUpdateAPIRequest.Put(v)
 }

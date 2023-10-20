@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaScbpTargetAdCampaignTagEffectAPIRequest struct {
 // NewAlibabaScbpTargetAdCampaignTagEffectRequest 初始化AlibabaScbpTargetAdCampaignTagEffectAPIRequest对象
 func NewAlibabaScbpTargetAdCampaignTagEffectRequest() *AlibabaScbpTargetAdCampaignTagEffectAPIRequest {
 	return &AlibabaScbpTargetAdCampaignTagEffectAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpTargetAdCampaignTagEffectAPIRequest) Reset() {
+	r._topP4pQuickEffectQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaScbpTargetAdCampaignTagEffectAPIRequest) SetTopP4pQuickEffectQue
 // GetTopP4pQuickEffectQuery TopP4pQuickEffectQuery Getter
 func (r AlibabaScbpTargetAdCampaignTagEffectAPIRequest) GetTopP4pQuickEffectQuery() *TopP4pQuickEffectQuery {
 	return r._topP4pQuickEffectQuery
+}
+
+var poolAlibabaScbpTargetAdCampaignTagEffectAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpTargetAdCampaignTagEffectRequest()
+	},
+}
+
+// GetAlibabaScbpTargetAdCampaignTagEffectRequest 从 sync.Pool 获取 AlibabaScbpTargetAdCampaignTagEffectAPIRequest
+func GetAlibabaScbpTargetAdCampaignTagEffectAPIRequest() *AlibabaScbpTargetAdCampaignTagEffectAPIRequest {
+	return poolAlibabaScbpTargetAdCampaignTagEffectAPIRequest.Get().(*AlibabaScbpTargetAdCampaignTagEffectAPIRequest)
+}
+
+// ReleaseAlibabaScbpTargetAdCampaignTagEffectAPIRequest 将 AlibabaScbpTargetAdCampaignTagEffectAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpTargetAdCampaignTagEffectAPIRequest(v *AlibabaScbpTargetAdCampaignTagEffectAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpTargetAdCampaignTagEffectAPIRequest.Put(v)
 }

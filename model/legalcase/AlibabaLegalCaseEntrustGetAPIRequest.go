@@ -2,6 +2,7 @@ package legalcase
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLegalCaseEntrustGetAPIRequest struct {
 // NewAlibabaLegalCaseEntrustGetRequest 初始化AlibabaLegalCaseEntrustGetAPIRequest对象
 func NewAlibabaLegalCaseEntrustGetRequest() *AlibabaLegalCaseEntrustGetAPIRequest {
 	return &AlibabaLegalCaseEntrustGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLegalCaseEntrustGetAPIRequest) Reset() {
+	r._entrustId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLegalCaseEntrustGetAPIRequest) SetEntrustId(_entrustId int64) er
 // GetEntrustId EntrustId Getter
 func (r AlibabaLegalCaseEntrustGetAPIRequest) GetEntrustId() int64 {
 	return r._entrustId
+}
+
+var poolAlibabaLegalCaseEntrustGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLegalCaseEntrustGetRequest()
+	},
+}
+
+// GetAlibabaLegalCaseEntrustGetRequest 从 sync.Pool 获取 AlibabaLegalCaseEntrustGetAPIRequest
+func GetAlibabaLegalCaseEntrustGetAPIRequest() *AlibabaLegalCaseEntrustGetAPIRequest {
+	return poolAlibabaLegalCaseEntrustGetAPIRequest.Get().(*AlibabaLegalCaseEntrustGetAPIRequest)
+}
+
+// ReleaseAlibabaLegalCaseEntrustGetAPIRequest 将 AlibabaLegalCaseEntrustGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLegalCaseEntrustGetAPIRequest(v *AlibabaLegalCaseEntrustGetAPIRequest) {
+	v.Reset()
+	poolAlibabaLegalCaseEntrustGetAPIRequest.Put(v)
 }

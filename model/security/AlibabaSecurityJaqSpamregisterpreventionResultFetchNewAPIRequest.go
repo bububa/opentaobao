@@ -2,6 +2,7 @@ package security
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -59,8 +60,34 @@ type AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest struct {
 // NewAlibabaSecurityJaqSpamregisterpreventionResultFetchNewRequest 初始化AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest对象
 func NewAlibabaSecurityJaqSpamregisterpreventionResultFetchNewRequest() *AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest {
 	return &AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(21),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest) Reset() {
+	r._idNumber = ""
+	r._sdkToken = ""
+	r._address = ""
+	r._agent = ""
+	r._bankCardNumber = ""
+	r._companyName = ""
+	r._cookie = ""
+	r._registerUrl = ""
+	r._email = ""
+	r._extendData = ""
+	r._ip = ""
+	r._jsToken = ""
+	r._macAddress = ""
+	r._phoneNumber = ""
+	r._protocolVersion = ""
+	r._referer = ""
+	r._sessionId = ""
+	r._userId = ""
+	r._nickName = ""
+	r._idType = 0
+	r._source = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -351,4 +378,21 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest) SetSo
 // GetSource Source Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest) GetSource() int64 {
 	return r._source
+}
+
+var poolAlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSecurityJaqSpamregisterpreventionResultFetchNewRequest()
+	},
+}
+
+// GetAlibabaSecurityJaqSpamregisterpreventionResultFetchNewRequest 从 sync.Pool 获取 AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest
+func GetAlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest() *AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest {
+	return poolAlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest.Get().(*AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest)
+}
+
+// ReleaseAlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest 将 AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest(v *AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest) {
+	v.Reset()
+	poolAlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkUmsShiftGetAPIRequest struct {
 // NewAlibabaWdkUmsShiftGetRequest 初始化AlibabaWdkUmsShiftGetAPIRequest对象
 func NewAlibabaWdkUmsShiftGetRequest() *AlibabaWdkUmsShiftGetAPIRequest {
 	return &AlibabaWdkUmsShiftGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkUmsShiftGetAPIRequest) Reset() {
+	r._warehouseCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkUmsShiftGetAPIRequest) SetWarehouseCode(_warehouseCode string
 // GetWarehouseCode WarehouseCode Getter
 func (r AlibabaWdkUmsShiftGetAPIRequest) GetWarehouseCode() string {
 	return r._warehouseCode
+}
+
+var poolAlibabaWdkUmsShiftGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkUmsShiftGetRequest()
+	},
+}
+
+// GetAlibabaWdkUmsShiftGetRequest 从 sync.Pool 获取 AlibabaWdkUmsShiftGetAPIRequest
+func GetAlibabaWdkUmsShiftGetAPIRequest() *AlibabaWdkUmsShiftGetAPIRequest {
+	return poolAlibabaWdkUmsShiftGetAPIRequest.Get().(*AlibabaWdkUmsShiftGetAPIRequest)
+}
+
+// ReleaseAlibabaWdkUmsShiftGetAPIRequest 将 AlibabaWdkUmsShiftGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkUmsShiftGetAPIRequest(v *AlibabaWdkUmsShiftGetAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkUmsShiftGetAPIRequest.Put(v)
 }

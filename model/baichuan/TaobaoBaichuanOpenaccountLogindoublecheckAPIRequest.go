@@ -2,6 +2,7 @@ package baichuan
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest struct {
 // NewTaobaoBaichuanOpenaccountLogindoublecheckRequest 初始化TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest对象
 func NewTaobaoBaichuanOpenaccountLogindoublecheckRequest() *TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest {
 	return &TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest) Reset() {
+	r._name = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest) SetName(_name stri
 // GetName Name Getter
 func (r TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest) GetName() string {
 	return r._name
+}
+
+var poolTaobaoBaichuanOpenaccountLogindoublecheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBaichuanOpenaccountLogindoublecheckRequest()
+	},
+}
+
+// GetTaobaoBaichuanOpenaccountLogindoublecheckRequest 从 sync.Pool 获取 TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest
+func GetTaobaoBaichuanOpenaccountLogindoublecheckAPIRequest() *TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest {
+	return poolTaobaoBaichuanOpenaccountLogindoublecheckAPIRequest.Get().(*TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest)
+}
+
+// ReleaseTaobaoBaichuanOpenaccountLogindoublecheckAPIRequest 将 TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBaichuanOpenaccountLogindoublecheckAPIRequest(v *TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest) {
+	v.Reset()
+	poolTaobaoBaichuanOpenaccountLogindoublecheckAPIRequest.Put(v)
 }

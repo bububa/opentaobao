@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripEmployeeQueryAPIRequest struct {
 // NewAlitripBtripEmployeeQueryRequest 初始化AlitripBtripEmployeeQueryAPIRequest对象
 func NewAlitripBtripEmployeeQueryRequest() *AlitripBtripEmployeeQueryAPIRequest {
 	return &AlitripBtripEmployeeQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripEmployeeQueryAPIRequest) Reset() {
+	r._paramOpenEmployeeQueryRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripEmployeeQueryAPIRequest) SetParamOpenEmployeeQueryRequest(_
 // GetParamOpenEmployeeQueryRequest ParamOpenEmployeeQueryRequest Getter
 func (r AlitripBtripEmployeeQueryAPIRequest) GetParamOpenEmployeeQueryRequest() *OpenEmployeeQueryRequest {
 	return r._paramOpenEmployeeQueryRequest
+}
+
+var poolAlitripBtripEmployeeQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripEmployeeQueryRequest()
+	},
+}
+
+// GetAlitripBtripEmployeeQueryRequest 从 sync.Pool 获取 AlitripBtripEmployeeQueryAPIRequest
+func GetAlitripBtripEmployeeQueryAPIRequest() *AlitripBtripEmployeeQueryAPIRequest {
+	return poolAlitripBtripEmployeeQueryAPIRequest.Get().(*AlitripBtripEmployeeQueryAPIRequest)
+}
+
+// ReleaseAlitripBtripEmployeeQueryAPIRequest 将 AlitripBtripEmployeeQueryAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripEmployeeQueryAPIRequest(v *AlitripBtripEmployeeQueryAPIRequest) {
+	v.Reset()
+	poolAlitripBtripEmployeeQueryAPIRequest.Put(v)
 }

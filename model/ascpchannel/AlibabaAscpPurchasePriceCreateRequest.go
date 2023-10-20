@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // AlibabaAscpPurchasePriceCreateRequest 结构体
 type AlibabaAscpPurchasePriceCreateRequest struct {
 	// 供应链仓code
@@ -30,4 +34,34 @@ type AlibabaAscpPurchasePriceCreateRequest struct {
 	TransportType int64 `json:"transport_type,omitempty" xml:"transport_type,omitempty"`
 	// 贸易类型,1-EXW(跨境工厂交货价交易),2-CIF(跨境到岸价交易),3-FCA(跨境货交承运人交易),4-FOB(跨境离岸价交易),5-CFR(跨境目的港交货价交易),6-DDU(跨境到仓不含税价格交易),7-日本境内贸易,9-国内一般贸易交易,11-FAS,12-CNF,13-CPT,14-CIP,15-DDP,16-DAT,17-DAP
 	TradeType int64 `json:"trade_type,omitempty" xml:"trade_type,omitempty"`
+}
+
+var poolAlibabaAscpPurchasePriceCreateRequest = sync.Pool{
+	New: func() any {
+		return new(AlibabaAscpPurchasePriceCreateRequest)
+	},
+}
+
+// GetAlibabaAscpPurchasePriceCreateRequest() 从对象池中获取AlibabaAscpPurchasePriceCreateRequest
+func GetAlibabaAscpPurchasePriceCreateRequest() *AlibabaAscpPurchasePriceCreateRequest {
+	return poolAlibabaAscpPurchasePriceCreateRequest.Get().(*AlibabaAscpPurchasePriceCreateRequest)
+}
+
+// ReleaseAlibabaAscpPurchasePriceCreateRequest 释放AlibabaAscpPurchasePriceCreateRequest
+func ReleaseAlibabaAscpPurchasePriceCreateRequest(v *AlibabaAscpPurchasePriceCreateRequest) {
+	v.StoreCodeSets = v.StoreCodeSets[:0]
+	v.SupplierId = ""
+	v.PriceDeadlineDate = ""
+	v.OperatorName = ""
+	v.PriceStartDate = ""
+	v.TenantId = ""
+	v.Currency = ""
+	v.PortOfDestination = ""
+	v.PortOfLoading = ""
+	v.PriceType = 0
+	v.ScItemId = 0
+	v.PurchasePrice = 0
+	v.TransportType = 0
+	v.TradeType = 0
+	poolAlibabaAscpPurchasePriceCreateRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package taotv
 
+import (
+	"sync"
+)
+
 // TaobaoTaotvVideoPlaylistPageResult 结构体
 type TaobaoTaotvVideoPlaylistPageResult struct {
 	// msgInfo
@@ -12,4 +16,25 @@ type TaobaoTaotvVideoPlaylistPageResult struct {
 	Model *TaobaoTaotvVideoPlaylistPageModel `json:"model,omitempty" xml:"model,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoTaotvVideoPlaylistPageResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoTaotvVideoPlaylistPageResult)
+	},
+}
+
+// GetTaobaoTaotvVideoPlaylistPageResult() 从对象池中获取TaobaoTaotvVideoPlaylistPageResult
+func GetTaobaoTaotvVideoPlaylistPageResult() *TaobaoTaotvVideoPlaylistPageResult {
+	return poolTaobaoTaotvVideoPlaylistPageResult.Get().(*TaobaoTaotvVideoPlaylistPageResult)
+}
+
+// ReleaseTaobaoTaotvVideoPlaylistPageResult 释放TaobaoTaotvVideoPlaylistPageResult
+func ReleaseTaobaoTaotvVideoPlaylistPageResult(v *TaobaoTaotvVideoPlaylistPageResult) {
+	v.MsgInfo = ""
+	v.MsgCode = ""
+	v.HttpStatusCode = 0
+	v.Model = nil
+	v.Success = false
+	poolTaobaoTaotvVideoPlaylistPageResult.Put(v)
 }

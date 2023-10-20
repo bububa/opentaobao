@@ -2,6 +2,7 @@ package legalsuit
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaLegalSuitCaseGetAPIResponse struct {
 	AlibabaLegalSuitCaseGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaLegalSuitCaseGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaLegalSuitCaseGetAPIResponseModel).Reset()
+}
+
 // AlibabaLegalSuitCaseGetAPIResponseModel is 获取案件信息接口v2版本 成功返回结果
 type AlibabaLegalSuitCaseGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_legal_suit_case_get_response"`
@@ -22,4 +29,27 @@ type AlibabaLegalSuitCaseGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// alinkappserver系统返回的通用结果类
 	Result *ServiceResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaLegalSuitCaseGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaLegalSuitCaseGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaLegalSuitCaseGetAPIResponse)
+	},
+}
+
+// GetAlibabaLegalSuitCaseGetAPIResponse 从 sync.Pool 获取 AlibabaLegalSuitCaseGetAPIResponse
+func GetAlibabaLegalSuitCaseGetAPIResponse() *AlibabaLegalSuitCaseGetAPIResponse {
+	return poolAlibabaLegalSuitCaseGetAPIResponse.Get().(*AlibabaLegalSuitCaseGetAPIResponse)
+}
+
+// ReleaseAlibabaLegalSuitCaseGetAPIResponse 将 AlibabaLegalSuitCaseGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaLegalSuitCaseGetAPIResponse(v *AlibabaLegalSuitCaseGetAPIResponse) {
+	v.Reset()
+	poolAlibabaLegalSuitCaseGetAPIResponse.Put(v)
 }

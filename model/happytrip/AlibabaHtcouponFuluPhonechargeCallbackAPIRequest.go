@@ -2,6 +2,7 @@ package happytrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaHtcouponFuluPhonechargeCallbackAPIRequest struct {
 // NewAlibabaHtcouponFuluPhonechargeCallbackRequest 初始化AlibabaHtcouponFuluPhonechargeCallbackAPIRequest对象
 func NewAlibabaHtcouponFuluPhonechargeCallbackRequest() *AlibabaHtcouponFuluPhonechargeCallbackAPIRequest {
 	return &AlibabaHtcouponFuluPhonechargeCallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHtcouponFuluPhonechargeCallbackAPIRequest) Reset() {
+	r._errorMessage = ""
+	r._outOrderId = ""
+	r._orderState = ""
+	r._htOrderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaHtcouponFuluPhonechargeCallbackAPIRequest) SetHtOrderId(_htOrder
 // GetHtOrderId HtOrderId Getter
 func (r AlibabaHtcouponFuluPhonechargeCallbackAPIRequest) GetHtOrderId() string {
 	return r._htOrderId
+}
+
+var poolAlibabaHtcouponFuluPhonechargeCallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHtcouponFuluPhonechargeCallbackRequest()
+	},
+}
+
+// GetAlibabaHtcouponFuluPhonechargeCallbackRequest 从 sync.Pool 获取 AlibabaHtcouponFuluPhonechargeCallbackAPIRequest
+func GetAlibabaHtcouponFuluPhonechargeCallbackAPIRequest() *AlibabaHtcouponFuluPhonechargeCallbackAPIRequest {
+	return poolAlibabaHtcouponFuluPhonechargeCallbackAPIRequest.Get().(*AlibabaHtcouponFuluPhonechargeCallbackAPIRequest)
+}
+
+// ReleaseAlibabaHtcouponFuluPhonechargeCallbackAPIRequest 将 AlibabaHtcouponFuluPhonechargeCallbackAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHtcouponFuluPhonechargeCallbackAPIRequest(v *AlibabaHtcouponFuluPhonechargeCallbackAPIRequest) {
+	v.Reset()
+	poolAlibabaHtcouponFuluPhonechargeCallbackAPIRequest.Put(v)
 }

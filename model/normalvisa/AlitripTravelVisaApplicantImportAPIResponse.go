@@ -2,6 +2,7 @@ package normalvisa
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlitripTravelVisaApplicantImportAPIResponse struct {
 	model.CommonResponse
 	AlitripTravelVisaApplicantImportAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlitripTravelVisaApplicantImportAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripTravelVisaApplicantImportAPIResponseModel).Reset()
 }
 
 // AlitripTravelVisaApplicantImportAPIResponseModel is 签证申请人导入 成功返回结果
@@ -34,4 +41,33 @@ type AlitripTravelVisaApplicantImportAPIResponseModel struct {
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 错误类型:1-数据重复，2-数据错误
 	ErrorType int64 `json:"error_type,omitempty" xml:"error_type,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripTravelVisaApplicantImportAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.OuterApplyId = ""
+	m.ApplyId = ""
+	m.LastNamePinyin = ""
+	m.FirstNamePinyin = ""
+	m.PassportNumber = ""
+	m.ErrorMsg = ""
+	m.ErrorType = 0
+}
+
+var poolAlitripTravelVisaApplicantImportAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripTravelVisaApplicantImportAPIResponse)
+	},
+}
+
+// GetAlitripTravelVisaApplicantImportAPIResponse 从 sync.Pool 获取 AlitripTravelVisaApplicantImportAPIResponse
+func GetAlitripTravelVisaApplicantImportAPIResponse() *AlitripTravelVisaApplicantImportAPIResponse {
+	return poolAlitripTravelVisaApplicantImportAPIResponse.Get().(*AlitripTravelVisaApplicantImportAPIResponse)
+}
+
+// ReleaseAlitripTravelVisaApplicantImportAPIResponse 将 AlitripTravelVisaApplicantImportAPIResponse 保存到 sync.Pool
+func ReleaseAlitripTravelVisaApplicantImportAPIResponse(v *AlitripTravelVisaApplicantImportAPIResponse) {
+	v.Reset()
+	poolAlitripTravelVisaApplicantImportAPIResponse.Put(v)
 }

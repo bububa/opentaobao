@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaServicecenterWorkcardConfirmedskuQueryAPIRequest struct {
 // NewAlibabaServicecenterWorkcardConfirmedskuQueryRequest 初始化AlibabaServicecenterWorkcardConfirmedskuQueryAPIRequest对象
 func NewAlibabaServicecenterWorkcardConfirmedskuQueryRequest() *AlibabaServicecenterWorkcardConfirmedskuQueryAPIRequest {
 	return &AlibabaServicecenterWorkcardConfirmedskuQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaServicecenterWorkcardConfirmedskuQueryAPIRequest) Reset() {
+	r._realTpNick = ""
+	r._workcardId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaServicecenterWorkcardConfirmedskuQueryAPIRequest) SetWorkcardId(
 // GetWorkcardId WorkcardId Getter
 func (r AlibabaServicecenterWorkcardConfirmedskuQueryAPIRequest) GetWorkcardId() int64 {
 	return r._workcardId
+}
+
+var poolAlibabaServicecenterWorkcardConfirmedskuQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaServicecenterWorkcardConfirmedskuQueryRequest()
+	},
+}
+
+// GetAlibabaServicecenterWorkcardConfirmedskuQueryRequest 从 sync.Pool 获取 AlibabaServicecenterWorkcardConfirmedskuQueryAPIRequest
+func GetAlibabaServicecenterWorkcardConfirmedskuQueryAPIRequest() *AlibabaServicecenterWorkcardConfirmedskuQueryAPIRequest {
+	return poolAlibabaServicecenterWorkcardConfirmedskuQueryAPIRequest.Get().(*AlibabaServicecenterWorkcardConfirmedskuQueryAPIRequest)
+}
+
+// ReleaseAlibabaServicecenterWorkcardConfirmedskuQueryAPIRequest 将 AlibabaServicecenterWorkcardConfirmedskuQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaServicecenterWorkcardConfirmedskuQueryAPIRequest(v *AlibabaServicecenterWorkcardConfirmedskuQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaServicecenterWorkcardConfirmedskuQueryAPIRequest.Put(v)
 }

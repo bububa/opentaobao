@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest struct {
 // NewAlibabaAlihealthTracecodesellerWarehouseSearchRequest 初始化AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest对象
 func NewAlibabaAlihealthTracecodesellerWarehouseSearchRequest() *AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest {
 	return &AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) Reset() {
+	r._appkey = ""
+	r._entInfoId = 0
+	r._page = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) SetPageSize(_
 // GetPageSize PageSize Getter
 func (r AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthTracecodesellerWarehouseSearchRequest()
+	},
+}
+
+// GetAlibabaAlihealthTracecodesellerWarehouseSearchRequest 从 sync.Pool 获取 AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest
+func GetAlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest() *AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest {
+	return poolAlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest.Get().(*AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest 将 AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest(v *AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest.Put(v)
 }

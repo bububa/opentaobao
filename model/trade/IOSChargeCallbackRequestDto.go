@@ -1,7 +1,11 @@
 package trade
 
-// IoschargeCallbackRequestDto 结构体
-type IoschargeCallbackRequestDto struct {
+import (
+	"sync"
+)
+
+// IOSChargeCallbackRequestDto 结构体
+type IOSChargeCallbackRequestDto struct {
 	// 商家订单号
 	VendorOrderNo string `json:"vendor_order_no,omitempty" xml:"vendor_order_no,omitempty"`
 	// 失败的错误码
@@ -20,4 +24,29 @@ type IoschargeCallbackRequestDto struct {
 	VendorOrderSuccessTime string `json:"vendor_order_success_time,omitempty" xml:"vendor_order_success_time,omitempty"`
 	// 失败原因
 	FailedReason string `json:"failed_reason,omitempty" xml:"failed_reason,omitempty"`
+}
+
+var poolIOSChargeCallbackRequestDto = sync.Pool{
+	New: func() any {
+		return new(IOSChargeCallbackRequestDto)
+	},
+}
+
+// GetIOSChargeCallbackRequestDto() 从对象池中获取IOSChargeCallbackRequestDto
+func GetIOSChargeCallbackRequestDto() *IOSChargeCallbackRequestDto {
+	return poolIOSChargeCallbackRequestDto.Get().(*IOSChargeCallbackRequestDto)
+}
+
+// ReleaseIOSChargeCallbackRequestDto 释放IOSChargeCallbackRequestDto
+func ReleaseIOSChargeCallbackRequestDto(v *IOSChargeCallbackRequestDto) {
+	v.VendorOrderNo = ""
+	v.FailedCode = ""
+	v.JymOrderNo = ""
+	v.VendorId = ""
+	v.VendorOrderStatus = ""
+	v.VendorOrderSnap = ""
+	v.Version = ""
+	v.VendorOrderSuccessTime = ""
+	v.FailedReason = ""
+	poolIOSChargeCallbackRequestDto.Put(v)
 }

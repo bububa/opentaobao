@@ -2,6 +2,7 @@ package ma
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoWirelessXcodeCreateAPIRequest struct {
 // NewTaobaoWirelessXcodeCreateRequest 初始化TaobaoWirelessXcodeCreateAPIRequest对象
 func NewTaobaoWirelessXcodeCreateRequest() *TaobaoWirelessXcodeCreateAPIRequest {
 	return &TaobaoWirelessXcodeCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWirelessXcodeCreateAPIRequest) Reset() {
+	r._bizCode = ""
+	r._content = ""
+	r._style = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoWirelessXcodeCreateAPIRequest) SetStyle(_style *QrCodeStyle) erro
 // GetStyle Style Getter
 func (r TaobaoWirelessXcodeCreateAPIRequest) GetStyle() *QrCodeStyle {
 	return r._style
+}
+
+var poolTaobaoWirelessXcodeCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWirelessXcodeCreateRequest()
+	},
+}
+
+// GetTaobaoWirelessXcodeCreateRequest 从 sync.Pool 获取 TaobaoWirelessXcodeCreateAPIRequest
+func GetTaobaoWirelessXcodeCreateAPIRequest() *TaobaoWirelessXcodeCreateAPIRequest {
+	return poolTaobaoWirelessXcodeCreateAPIRequest.Get().(*TaobaoWirelessXcodeCreateAPIRequest)
+}
+
+// ReleaseTaobaoWirelessXcodeCreateAPIRequest 将 TaobaoWirelessXcodeCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWirelessXcodeCreateAPIRequest(v *TaobaoWirelessXcodeCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoWirelessXcodeCreateAPIRequest.Put(v)
 }

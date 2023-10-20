@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.order.alipayface.settle
 //
 // 用于离店付订单在客人离店后，发起结账以及扣款等后续动作
-func TaobaoXhotelOrderAlipayfaceSettle(clt *core.SDKClient, req *xhotelonlineorder.TaobaoXhotelOrderAlipayfaceSettleAPIRequest, session string) (*xhotelonlineorder.TaobaoXhotelOrderAlipayfaceSettleAPIResponse, error) {
-	var resp xhotelonlineorder.TaobaoXhotelOrderAlipayfaceSettleAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelOrderAlipayfaceSettle(clt *core.SDKClient, req *xhotelonlineorder.TaobaoXhotelOrderAlipayfaceSettleAPIRequest, resp *xhotelonlineorder.TaobaoXhotelOrderAlipayfaceSettleAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

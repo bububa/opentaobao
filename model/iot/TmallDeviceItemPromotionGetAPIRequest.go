@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallDeviceItemPromotionGetAPIRequest struct {
 // NewTmallDeviceItemPromotionGetRequest 初始化TmallDeviceItemPromotionGetAPIRequest对象
 func NewTmallDeviceItemPromotionGetRequest() *TmallDeviceItemPromotionGetAPIRequest {
 	return &TmallDeviceItemPromotionGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallDeviceItemPromotionGetAPIRequest) Reset() {
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallDeviceItemPromotionGetAPIRequest) SetItemId(_itemId int64) error {
 // GetItemId ItemId Getter
 func (r TmallDeviceItemPromotionGetAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolTmallDeviceItemPromotionGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallDeviceItemPromotionGetRequest()
+	},
+}
+
+// GetTmallDeviceItemPromotionGetRequest 从 sync.Pool 获取 TmallDeviceItemPromotionGetAPIRequest
+func GetTmallDeviceItemPromotionGetAPIRequest() *TmallDeviceItemPromotionGetAPIRequest {
+	return poolTmallDeviceItemPromotionGetAPIRequest.Get().(*TmallDeviceItemPromotionGetAPIRequest)
+}
+
+// ReleaseTmallDeviceItemPromotionGetAPIRequest 将 TmallDeviceItemPromotionGetAPIRequest 放入 sync.Pool
+func ReleaseTmallDeviceItemPromotionGetAPIRequest(v *TmallDeviceItemPromotionGetAPIRequest) {
+	v.Reset()
+	poolTmallDeviceItemPromotionGetAPIRequest.Put(v)
 }

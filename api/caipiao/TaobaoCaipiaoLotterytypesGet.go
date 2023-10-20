@@ -9,11 +9,6 @@ import (
 // taobao.caipiao.lotterytypes.get
 //
 // 获取彩票系统支持的可用于赠送的彩种列表
-func TaobaoCaipiaoLotterytypesGet(clt *core.SDKClient, req *caipiao.TaobaoCaipiaoLotterytypesGetAPIRequest, session string) (*caipiao.TaobaoCaipiaoLotterytypesGetAPIResponse, error) {
-	var resp caipiao.TaobaoCaipiaoLotterytypesGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoCaipiaoLotterytypesGet(clt *core.SDKClient, req *caipiao.TaobaoCaipiaoLotterytypesGetAPIRequest, resp *caipiao.TaobaoCaipiaoLotterytypesGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

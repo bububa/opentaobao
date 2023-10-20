@@ -2,6 +2,7 @@ package aedropshiper
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AliexpressDsProductGetAPIRequest struct {
 // NewAliexpressDsProductGetRequest 初始化AliexpressDsProductGetAPIRequest对象
 func NewAliexpressDsProductGetRequest() *AliexpressDsProductGetAPIRequest {
 	return &AliexpressDsProductGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressDsProductGetAPIRequest) Reset() {
+	r._shipToCountry = ""
+	r._targetCurrency = ""
+	r._targetLanguage = ""
+	r._productId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AliexpressDsProductGetAPIRequest) SetProductId(_productId int64) error 
 // GetProductId ProductId Getter
 func (r AliexpressDsProductGetAPIRequest) GetProductId() int64 {
 	return r._productId
+}
+
+var poolAliexpressDsProductGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressDsProductGetRequest()
+	},
+}
+
+// GetAliexpressDsProductGetRequest 从 sync.Pool 获取 AliexpressDsProductGetAPIRequest
+func GetAliexpressDsProductGetAPIRequest() *AliexpressDsProductGetAPIRequest {
+	return poolAliexpressDsProductGetAPIRequest.Get().(*AliexpressDsProductGetAPIRequest)
+}
+
+// ReleaseAliexpressDsProductGetAPIRequest 将 AliexpressDsProductGetAPIRequest 放入 sync.Pool
+func ReleaseAliexpressDsProductGetAPIRequest(v *AliexpressDsProductGetAPIRequest) {
+	v.Reset()
+	poolAliexpressDsProductGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package moziacl
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaMoziAclRoleRemoveAPIResponse struct {
 	model.CommonResponse
 	AlibabaMoziAclRoleRemoveAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaMoziAclRoleRemoveAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaMoziAclRoleRemoveAPIResponseModel).Reset()
 }
 
 // AlibabaMoziAclRoleRemoveAPIResponseModel is 删除角色 成功返回结果
@@ -30,4 +37,31 @@ type AlibabaMoziAclRoleRemoveAPIResponseModel struct {
 	ResponseCode string `json:"response_code,omitempty" xml:"response_code,omitempty"`
 	// 是否操作成功,true代表操作成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaMoziAclRoleRemoveAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = ""
+	m.MoziRequestId = ""
+	m.ResponseMessage = ""
+	m.ResponseCode = ""
+	m.IsSuccess = false
+}
+
+var poolAlibabaMoziAclRoleRemoveAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaMoziAclRoleRemoveAPIResponse)
+	},
+}
+
+// GetAlibabaMoziAclRoleRemoveAPIResponse 从 sync.Pool 获取 AlibabaMoziAclRoleRemoveAPIResponse
+func GetAlibabaMoziAclRoleRemoveAPIResponse() *AlibabaMoziAclRoleRemoveAPIResponse {
+	return poolAlibabaMoziAclRoleRemoveAPIResponse.Get().(*AlibabaMoziAclRoleRemoveAPIResponse)
+}
+
+// ReleaseAlibabaMoziAclRoleRemoveAPIResponse 将 AlibabaMoziAclRoleRemoveAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaMoziAclRoleRemoveAPIResponse(v *AlibabaMoziAclRoleRemoveAPIResponse) {
+	v.Reset()
+	poolAlibabaMoziAclRoleRemoveAPIResponse.Put(v)
 }

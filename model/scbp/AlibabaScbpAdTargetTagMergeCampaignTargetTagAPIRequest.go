@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest struct {
 // NewAlibabaScbpAdTargetTagMergeCampaignTargetTagRequest 初始化AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest对象
 func NewAlibabaScbpAdTargetTagMergeCampaignTargetTagRequest() *AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest {
 	return &AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest) Reset() {
+	r._data = ""
+	r._topContext = nil
+	r._campaignId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest) SetCampaignId(_
 // GetCampaignId CampaignId Getter
 func (r AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
+}
+
+var poolAlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdTargetTagMergeCampaignTargetTagRequest()
+	},
+}
+
+// GetAlibabaScbpAdTargetTagMergeCampaignTargetTagRequest 从 sync.Pool 获取 AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest
+func GetAlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest() *AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest {
+	return poolAlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest.Get().(*AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest 将 AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest(v *AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest.Put(v)
 }

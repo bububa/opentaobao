@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -47,8 +48,27 @@ type TaobaoItemsInventoryGetAPIRequest struct {
 // NewTaobaoItemsInventoryGetRequest 初始化TaobaoItemsInventoryGetAPIRequest对象
 func NewTaobaoItemsInventoryGetRequest() *TaobaoItemsInventoryGetAPIRequest {
 	return &TaobaoItemsInventoryGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(14),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoItemsInventoryGetAPIRequest) Reset() {
+	r._fields = ""
+	r._q = ""
+	r._sellerCids = ""
+	r._orderBy = ""
+	r._banner = ""
+	r._startModified = ""
+	r._endModified = ""
+	r._auctionType = ""
+	r._cid = 0
+	r._pageNo = 0
+	r._pageSize = 0
+	r._hasDiscount = false
+	r._isTaobao = false
+	r._isEx = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -248,4 +268,21 @@ func (r *TaobaoItemsInventoryGetAPIRequest) SetIsEx(_isEx bool) error {
 // GetIsEx IsEx Getter
 func (r TaobaoItemsInventoryGetAPIRequest) GetIsEx() bool {
 	return r._isEx
+}
+
+var poolTaobaoItemsInventoryGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoItemsInventoryGetRequest()
+	},
+}
+
+// GetTaobaoItemsInventoryGetRequest 从 sync.Pool 获取 TaobaoItemsInventoryGetAPIRequest
+func GetTaobaoItemsInventoryGetAPIRequest() *TaobaoItemsInventoryGetAPIRequest {
+	return poolTaobaoItemsInventoryGetAPIRequest.Get().(*TaobaoItemsInventoryGetAPIRequest)
+}
+
+// ReleaseTaobaoItemsInventoryGetAPIRequest 将 TaobaoItemsInventoryGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoItemsInventoryGetAPIRequest(v *TaobaoItemsInventoryGetAPIRequest) {
+	v.Reset()
+	poolTaobaoItemsInventoryGetAPIRequest.Put(v)
 }

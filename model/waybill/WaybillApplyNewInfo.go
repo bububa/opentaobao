@@ -1,5 +1,9 @@
 package waybill
 
+import (
+	"sync"
+)
+
 // WaybillApplyNewInfo 结构体
 type WaybillApplyNewInfo struct {
 	// 包裹对应的派件（收件）物流服务商网点（分支机构）代码
@@ -22,4 +26,30 @@ type WaybillApplyNewInfo struct {
 	WaybillCode string `json:"waybill_code,omitempty" xml:"waybill_code,omitempty"`
 	// 面单对应的订单列
 	TradeOrderInfo *TradeOrderInfo `json:"trade_order_info,omitempty" xml:"trade_order_info,omitempty"`
+}
+
+var poolWaybillApplyNewInfo = sync.Pool{
+	New: func() any {
+		return new(WaybillApplyNewInfo)
+	},
+}
+
+// GetWaybillApplyNewInfo() 从对象池中获取WaybillApplyNewInfo
+func GetWaybillApplyNewInfo() *WaybillApplyNewInfo {
+	return poolWaybillApplyNewInfo.Get().(*WaybillApplyNewInfo)
+}
+
+// ReleaseWaybillApplyNewInfo 释放WaybillApplyNewInfo
+func ReleaseWaybillApplyNewInfo(v *WaybillApplyNewInfo) {
+	v.ConsigneeBranchCode = ""
+	v.ConsigneeBranchName = ""
+	v.PackageCenterCode = ""
+	v.PackageCenterName = ""
+	v.PrintConfig = ""
+	v.ShippingBranchCode = ""
+	v.ShippingBranchName = ""
+	v.ShortAddress = ""
+	v.WaybillCode = ""
+	v.TradeOrderInfo = nil
+	poolWaybillApplyNewInfo.Put(v)
 }

@@ -2,6 +2,7 @@ package car
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoAlitripCarRentOrderCancelAPIResponse struct {
 	model.CommonResponse
 	TaobaoAlitripCarRentOrderCancelAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoAlitripCarRentOrderCancelAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAlitripCarRentOrderCancelAPIResponseModel).Reset()
 }
 
 // TaobaoAlitripCarRentOrderCancelAPIResponseModel is 租车-取消订单 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoAlitripCarRentOrderCancelAPIResponseModel struct {
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// 结果码
 	C int64 `json:"c,omitempty" xml:"c,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAlitripCarRentOrderCancelAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.Models = ""
+	m.Model = ""
+	m.C = 0
+}
+
+var poolTaobaoAlitripCarRentOrderCancelAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAlitripCarRentOrderCancelAPIResponse)
+	},
+}
+
+// GetTaobaoAlitripCarRentOrderCancelAPIResponse 从 sync.Pool 获取 TaobaoAlitripCarRentOrderCancelAPIResponse
+func GetTaobaoAlitripCarRentOrderCancelAPIResponse() *TaobaoAlitripCarRentOrderCancelAPIResponse {
+	return poolTaobaoAlitripCarRentOrderCancelAPIResponse.Get().(*TaobaoAlitripCarRentOrderCancelAPIResponse)
+}
+
+// ReleaseTaobaoAlitripCarRentOrderCancelAPIResponse 将 TaobaoAlitripCarRentOrderCancelAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAlitripCarRentOrderCancelAPIResponse(v *TaobaoAlitripCarRentOrderCancelAPIResponse) {
+	v.Reset()
+	poolTaobaoAlitripCarRentOrderCancelAPIResponse.Put(v)
 }

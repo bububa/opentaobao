@@ -9,11 +9,6 @@ import (
 // alibaba.ascp.suborder.estcontime.modify
 //
 // 向前修改发货时效
-func AlibabaAscpSuborderEstcontimeModify(clt *core.SDKClient, req *ascp.AlibabaAscpSuborderEstcontimeModifyAPIRequest, session string) (*ascp.AlibabaAscpSuborderEstcontimeModifyAPIResponse, error) {
-	var resp ascp.AlibabaAscpSuborderEstcontimeModifyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAscpSuborderEstcontimeModify(clt *core.SDKClient, req *ascp.AlibabaAscpSuborderEstcontimeModifyAPIRequest, resp *ascp.AlibabaAscpSuborderEstcontimeModifyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // SkuSupplierDo 结构体
 type SkuSupplierDo struct {
 	// 最小起订量
@@ -14,4 +18,26 @@ type SkuSupplierDo struct {
 	ReturnFlag int64 `json:"return_flag,omitempty" xml:"return_flag,omitempty"`
 	// 是否主供应商 1是主供应商 0非主供
 	MainFlag int64 `json:"main_flag,omitempty" xml:"main_flag,omitempty"`
+}
+
+var poolSkuSupplierDo = sync.Pool{
+	New: func() any {
+		return new(SkuSupplierDo)
+	},
+}
+
+// GetSkuSupplierDo() 从对象池中获取SkuSupplierDo
+func GetSkuSupplierDo() *SkuSupplierDo {
+	return poolSkuSupplierDo.Get().(*SkuSupplierDo)
+}
+
+// ReleaseSkuSupplierDo 释放SkuSupplierDo
+func ReleaseSkuSupplierDo(v *SkuSupplierDo) {
+	v.Minimum = ""
+	v.PurchasePrice = ""
+	v.SupplierNo = ""
+	v.SupplierName = ""
+	v.ReturnFlag = 0
+	v.MainFlag = 0
+	poolSkuSupplierDo.Put(v)
 }

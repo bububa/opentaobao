@@ -2,6 +2,7 @@ package nlife
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type AlibabaNlifeB2cTradePayAPIRequest struct {
 // NewAlibabaNlifeB2cTradePayRequest 初始化AlibabaNlifeB2cTradePayAPIRequest对象
 func NewAlibabaNlifeB2cTradePayRequest() *AlibabaNlifeB2cTradePayAPIRequest {
 	return &AlibabaNlifeB2cTradePayAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaNlifeB2cTradePayAPIRequest) Reset() {
+	r._fundBillList = r._fundBillList[:0]
+	r._tradeNo = ""
+	r._pickingUp = ""
+	r._consignee = ""
+	r._consigneePhoneNum = ""
+	r._consigneeAddress = ""
+	r._gmtPayment = ""
+	r._outTradeNo = ""
+	r._storeId = ""
+	r._actualPayFee = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *AlibabaNlifeB2cTradePayAPIRequest) SetActualPayFee(_actualPayFee int64)
 // GetActualPayFee ActualPayFee Getter
 func (r AlibabaNlifeB2cTradePayAPIRequest) GetActualPayFee() int64 {
 	return r._actualPayFee
+}
+
+var poolAlibabaNlifeB2cTradePayAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaNlifeB2cTradePayRequest()
+	},
+}
+
+// GetAlibabaNlifeB2cTradePayRequest 从 sync.Pool 获取 AlibabaNlifeB2cTradePayAPIRequest
+func GetAlibabaNlifeB2cTradePayAPIRequest() *AlibabaNlifeB2cTradePayAPIRequest {
+	return poolAlibabaNlifeB2cTradePayAPIRequest.Get().(*AlibabaNlifeB2cTradePayAPIRequest)
+}
+
+// ReleaseAlibabaNlifeB2cTradePayAPIRequest 将 AlibabaNlifeB2cTradePayAPIRequest 放入 sync.Pool
+func ReleaseAlibabaNlifeB2cTradePayAPIRequest(v *AlibabaNlifeB2cTradePayAPIRequest) {
+	v.Reset()
+	poolAlibabaNlifeB2cTradePayAPIRequest.Put(v)
 }

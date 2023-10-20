@@ -2,6 +2,7 @@ package mtopopen
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaInteractAllsparkisvDrawAPIResponse struct {
 	AlibabaInteractAllsparkisvDrawAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaInteractAllsparkisvDrawAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaInteractAllsparkisvDrawAPIResponseModel).Reset()
+}
+
 // AlibabaInteractAllsparkisvDrawAPIResponseModel is allspark提供抽奖tida接口对应鉴权接口 成功返回结果
 type AlibabaInteractAllsparkisvDrawAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_allsparkisv_draw_response"`
@@ -22,4 +29,27 @@ type AlibabaInteractAllsparkisvDrawAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// ddd
 	Ddd string `json:"ddd,omitempty" xml:"ddd,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaInteractAllsparkisvDrawAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Ddd = ""
+}
+
+var poolAlibabaInteractAllsparkisvDrawAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaInteractAllsparkisvDrawAPIResponse)
+	},
+}
+
+// GetAlibabaInteractAllsparkisvDrawAPIResponse 从 sync.Pool 获取 AlibabaInteractAllsparkisvDrawAPIResponse
+func GetAlibabaInteractAllsparkisvDrawAPIResponse() *AlibabaInteractAllsparkisvDrawAPIResponse {
+	return poolAlibabaInteractAllsparkisvDrawAPIResponse.Get().(*AlibabaInteractAllsparkisvDrawAPIResponse)
+}
+
+// ReleaseAlibabaInteractAllsparkisvDrawAPIResponse 将 AlibabaInteractAllsparkisvDrawAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaInteractAllsparkisvDrawAPIResponse(v *AlibabaInteractAllsparkisvDrawAPIResponse) {
+	v.Reset()
+	poolAlibabaInteractAllsparkisvDrawAPIResponse.Put(v)
 }

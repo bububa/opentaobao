@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // FastBuyPosQueryResult 结构体
 type FastBuyPosQueryResult struct {
 	// 五道口订单id
@@ -18,4 +22,28 @@ type FastBuyPosQueryResult struct {
 	PromotionFee int64 `json:"promotion_fee,omitempty" xml:"promotion_fee,omitempty"`
 	// 是否调用成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolFastBuyPosQueryResult = sync.Pool{
+	New: func() any {
+		return new(FastBuyPosQueryResult)
+	},
+}
+
+// GetFastBuyPosQueryResult() 从对象池中获取FastBuyPosQueryResult
+func GetFastBuyPosQueryResult() *FastBuyPosQueryResult {
+	return poolFastBuyPosQueryResult.Get().(*FastBuyPosQueryResult)
+}
+
+// ReleaseFastBuyPosQueryResult 释放FastBuyPosQueryResult
+func ReleaseFastBuyPosQueryResult(v *FastBuyPosQueryResult) {
+	v.BizOrderId = ""
+	v.ReturnCode = ""
+	v.ReturnMsg = ""
+	v.ItemPromotions = ""
+	v.CouponFee = 0
+	v.OrderStatus = 0
+	v.PromotionFee = 0
+	v.Success = false
+	poolFastBuyPosQueryResult.Put(v)
 }

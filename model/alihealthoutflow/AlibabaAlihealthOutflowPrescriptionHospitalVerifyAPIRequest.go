@@ -2,6 +2,7 @@ package alihealthoutflow
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest struct {
 // NewAlibabaAlihealthOutflowPrescriptionHospitalVerifyRequest 初始化AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest对象
 func NewAlibabaAlihealthOutflowPrescriptionHospitalVerifyRequest() *AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest {
 	return &AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest) Reset() {
+	r._updateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest) SetUpdateR
 // GetUpdateRequest UpdateRequest Getter
 func (r AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest) GetUpdateRequest() *PrescriptionOutflowUpdateRequest {
 	return r._updateRequest
+}
+
+var poolAlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthOutflowPrescriptionHospitalVerifyRequest()
+	},
+}
+
+// GetAlibabaAlihealthOutflowPrescriptionHospitalVerifyRequest 从 sync.Pool 获取 AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest
+func GetAlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest() *AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest {
+	return poolAlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest.Get().(*AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest 将 AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest(v *AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest.Put(v)
 }

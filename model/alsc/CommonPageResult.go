@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // CommonPageResult 结构体
 type CommonPageResult struct {
 	// 结果
@@ -22,4 +26,30 @@ type CommonPageResult struct {
 	BizSuccess bool `json:"biz_success,omitempty" xml:"biz_success,omitempty"`
 	// 是否有下一页
 	HasNextPage bool `json:"has_next_page,omitempty" xml:"has_next_page,omitempty"`
+}
+
+var poolCommonPageResult = sync.Pool{
+	New: func() any {
+		return new(CommonPageResult)
+	},
+}
+
+// GetCommonPageResult() 从对象池中获取CommonPageResult
+func GetCommonPageResult() *CommonPageResult {
+	return poolCommonPageResult.Get().(*CommonPageResult)
+}
+
+// ReleaseCommonPageResult 释放CommonPageResult
+func ReleaseCommonPageResult(v *CommonPageResult) {
+	v.ResultList = v.ResultList[:0]
+	v.ResultCode = ""
+	v.ResultDesc = ""
+	v.ResultView = ""
+	v.CurrentPage = 0
+	v.PageSize = 0
+	v.TotalSize = 0
+	v.TotalPage = 0
+	v.BizSuccess = false
+	v.HasNextPage = false
+	poolCommonPageResult.Put(v)
 }

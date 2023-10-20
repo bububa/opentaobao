@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.apply.get
 //
 // 获取单个审批单的详情数据
-func AlitripBtripApplyGet(clt *core.SDKClient, req *btrip.AlitripBtripApplyGetAPIRequest, session string) (*btrip.AlitripBtripApplyGetAPIResponse, error) {
-	var resp btrip.AlitripBtripApplyGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripApplyGet(clt *core.SDKClient, req *btrip.AlitripBtripApplyGetAPIRequest, resp *btrip.AlitripBtripApplyGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

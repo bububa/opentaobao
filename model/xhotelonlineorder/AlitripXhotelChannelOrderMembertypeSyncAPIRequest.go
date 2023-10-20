@@ -2,6 +2,7 @@ package xhotelonlineorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripXhotelChannelOrderMembertypeSyncAPIRequest struct {
 // NewAlitripXhotelChannelOrderMembertypeSyncRequest 初始化AlitripXhotelChannelOrderMembertypeSyncAPIRequest对象
 func NewAlitripXhotelChannelOrderMembertypeSyncRequest() *AlitripXhotelChannelOrderMembertypeSyncAPIRequest {
 	return &AlitripXhotelChannelOrderMembertypeSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripXhotelChannelOrderMembertypeSyncAPIRequest) Reset() {
+	r._channelSyncOrderMemberType = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripXhotelChannelOrderMembertypeSyncAPIRequest) SetChannelSyncOrderM
 // GetChannelSyncOrderMemberType ChannelSyncOrderMemberType Getter
 func (r AlitripXhotelChannelOrderMembertypeSyncAPIRequest) GetChannelSyncOrderMemberType() *ChannelSyncOrderMemberType {
 	return r._channelSyncOrderMemberType
+}
+
+var poolAlitripXhotelChannelOrderMembertypeSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripXhotelChannelOrderMembertypeSyncRequest()
+	},
+}
+
+// GetAlitripXhotelChannelOrderMembertypeSyncRequest 从 sync.Pool 获取 AlitripXhotelChannelOrderMembertypeSyncAPIRequest
+func GetAlitripXhotelChannelOrderMembertypeSyncAPIRequest() *AlitripXhotelChannelOrderMembertypeSyncAPIRequest {
+	return poolAlitripXhotelChannelOrderMembertypeSyncAPIRequest.Get().(*AlitripXhotelChannelOrderMembertypeSyncAPIRequest)
+}
+
+// ReleaseAlitripXhotelChannelOrderMembertypeSyncAPIRequest 将 AlitripXhotelChannelOrderMembertypeSyncAPIRequest 放入 sync.Pool
+func ReleaseAlitripXhotelChannelOrderMembertypeSyncAPIRequest(v *AlitripXhotelChannelOrderMembertypeSyncAPIRequest) {
+	v.Reset()
+	poolAlitripXhotelChannelOrderMembertypeSyncAPIRequest.Put(v)
 }

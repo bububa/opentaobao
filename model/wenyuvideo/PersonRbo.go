@@ -1,5 +1,9 @@
 package wenyuvideo
 
+import (
+	"sync"
+)
+
 // PersonRbo 结构体
 type PersonRbo struct {
 	// 姓名
@@ -14,4 +18,26 @@ type PersonRbo struct {
 	Job string `json:"job,omitempty" xml:"job,omitempty"`
 	// taotv媒资的演职人员id
 	PersonId int64 `json:"person_id,omitempty" xml:"person_id,omitempty"`
+}
+
+var poolPersonRbo = sync.Pool{
+	New: func() any {
+		return new(PersonRbo)
+	},
+}
+
+// GetPersonRbo() 从对象池中获取PersonRbo
+func GetPersonRbo() *PersonRbo {
+	return poolPersonRbo.Get().(*PersonRbo)
+}
+
+// ReleasePersonRbo 释放PersonRbo
+func ReleasePersonRbo(v *PersonRbo) {
+	v.Name = ""
+	v.ThumbUrl = ""
+	v.ThumbUrlLg = ""
+	v.PosterUrl = ""
+	v.Job = ""
+	v.PersonId = 0
+	poolPersonRbo.Put(v)
 }

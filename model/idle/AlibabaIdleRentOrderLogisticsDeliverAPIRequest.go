@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -22,8 +23,15 @@ type AlibabaIdleRentOrderLogisticsDeliverAPIRequest struct {
 // NewAlibabaIdleRentOrderLogisticsDeliverRequest 初始化AlibabaIdleRentOrderLogisticsDeliverAPIRequest对象
 func NewAlibabaIdleRentOrderLogisticsDeliverRequest() *AlibabaIdleRentOrderLogisticsDeliverAPIRequest {
 	return &AlibabaIdleRentOrderLogisticsDeliverAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleRentOrderLogisticsDeliverAPIRequest) Reset() {
+	r._orderId = 0
+	r._logistics = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -67,4 +75,21 @@ func (r *AlibabaIdleRentOrderLogisticsDeliverAPIRequest) SetLogistics(_logistics
 // GetLogistics Logistics Getter
 func (r AlibabaIdleRentOrderLogisticsDeliverAPIRequest) GetLogistics() *LogisticsDto {
 	return r._logistics
+}
+
+var poolAlibabaIdleRentOrderLogisticsDeliverAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleRentOrderLogisticsDeliverRequest()
+	},
+}
+
+// GetAlibabaIdleRentOrderLogisticsDeliverRequest 从 sync.Pool 获取 AlibabaIdleRentOrderLogisticsDeliverAPIRequest
+func GetAlibabaIdleRentOrderLogisticsDeliverAPIRequest() *AlibabaIdleRentOrderLogisticsDeliverAPIRequest {
+	return poolAlibabaIdleRentOrderLogisticsDeliverAPIRequest.Get().(*AlibabaIdleRentOrderLogisticsDeliverAPIRequest)
+}
+
+// ReleaseAlibabaIdleRentOrderLogisticsDeliverAPIRequest 将 AlibabaIdleRentOrderLogisticsDeliverAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleRentOrderLogisticsDeliverAPIRequest(v *AlibabaIdleRentOrderLogisticsDeliverAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleRentOrderLogisticsDeliverAPIRequest.Put(v)
 }

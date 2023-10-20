@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkAxStoreQueryAPIRequest struct {
 // NewAlibabaWdkAxStoreQueryRequest 初始化AlibabaWdkAxStoreQueryAPIRequest对象
 func NewAlibabaWdkAxStoreQueryRequest() *AlibabaWdkAxStoreQueryAPIRequest {
 	return &AlibabaWdkAxStoreQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkAxStoreQueryAPIRequest) Reset() {
+	r._queryRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkAxStoreQueryAPIRequest) SetQueryRequest(_queryRequest *AxStor
 // GetQueryRequest QueryRequest Getter
 func (r AlibabaWdkAxStoreQueryAPIRequest) GetQueryRequest() *AxStoreQueryRequest {
 	return r._queryRequest
+}
+
+var poolAlibabaWdkAxStoreQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkAxStoreQueryRequest()
+	},
+}
+
+// GetAlibabaWdkAxStoreQueryRequest 从 sync.Pool 获取 AlibabaWdkAxStoreQueryAPIRequest
+func GetAlibabaWdkAxStoreQueryAPIRequest() *AlibabaWdkAxStoreQueryAPIRequest {
+	return poolAlibabaWdkAxStoreQueryAPIRequest.Get().(*AlibabaWdkAxStoreQueryAPIRequest)
+}
+
+// ReleaseAlibabaWdkAxStoreQueryAPIRequest 将 AlibabaWdkAxStoreQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkAxStoreQueryAPIRequest(v *AlibabaWdkAxStoreQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkAxStoreQueryAPIRequest.Put(v)
 }

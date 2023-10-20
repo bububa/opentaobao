@@ -1,5 +1,9 @@
 package tmallhk
 
+import (
+	"sync"
+)
+
 // ClearanceTaxDo 结构体
 type ClearanceTaxDo struct {
 	// 海关税收编码
@@ -40,4 +44,39 @@ type ClearanceTaxDo struct {
 	OrderTotalTaxFee int64 `json:"order_total_tax_fee,omitempty" xml:"order_total_tax_fee,omitempty"`
 	// 完税价，主订单
 	CustomsTotalFee int64 `json:"customs_total_fee,omitempty" xml:"customs_total_fee,omitempty"`
+}
+
+var poolClearanceTaxDo = sync.Pool{
+	New: func() any {
+		return new(ClearanceTaxDo)
+	},
+}
+
+// GetClearanceTaxDo() 从对象池中获取ClearanceTaxDo
+func GetClearanceTaxDo() *ClearanceTaxDo {
+	return poolClearanceTaxDo.Get().(*ClearanceTaxDo)
+}
+
+// ReleaseClearanceTaxDo 释放ClearanceTaxDo
+func ReleaseClearanceTaxDo(v *ClearanceTaxDo) {
+	v.Hscode = ""
+	v.FirstQuantity = ""
+	v.SecondQuantity = ""
+	v.FirstUnit = ""
+	v.SecondUnit = ""
+	v.ExciseDutyFee = 0
+	v.OrderLineTotalTaxFee = 0
+	v.PostFee = 0
+	v.CustomDutyFee = 0
+	v.TariffVatFee = 0
+	v.TariffExciseFee = 0
+	v.VatFee = 0
+	v.CustomsCouponFee = 0
+	v.TariffFee = 0
+	v.CustomsSubTotalFee = 0
+	v.TariffCustomFee = 0
+	v.CustomsInsuranceFee = 0
+	v.OrderTotalTaxFee = 0
+	v.CustomsTotalFee = 0
+	poolClearanceTaxDo.Put(v)
 }

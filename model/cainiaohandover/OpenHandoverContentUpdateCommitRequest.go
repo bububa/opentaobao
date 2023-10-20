@@ -1,5 +1,9 @@
 package cainiaohandover
 
+import (
+	"sync"
+)
+
 // OpenHandoverContentUpdateCommitRequest 结构体
 type OpenHandoverContentUpdateCommitRequest struct {
 	// 新增和修改大包小包号;新增和修改的时候必填
@@ -18,4 +22,28 @@ type OpenHandoverContentUpdateCommitRequest struct {
 	UserInfo *UserInfoDto `json:"user_info,omitempty" xml:"user_info,omitempty"`
 	// 完成更新(必填)例如传入true则代表大包已经完成修改,不能再做修改的操作
 	CompleteUpdate bool `json:"complete_update,omitempty" xml:"complete_update,omitempty"`
+}
+
+var poolOpenHandoverContentUpdateCommitRequest = sync.Pool{
+	New: func() any {
+		return new(OpenHandoverContentUpdateCommitRequest)
+	},
+}
+
+// GetOpenHandoverContentUpdateCommitRequest() 从对象池中获取OpenHandoverContentUpdateCommitRequest
+func GetOpenHandoverContentUpdateCommitRequest() *OpenHandoverContentUpdateCommitRequest {
+	return poolOpenHandoverContentUpdateCommitRequest.Get().(*OpenHandoverContentUpdateCommitRequest)
+}
+
+// ReleaseOpenHandoverContentUpdateCommitRequest 释放OpenHandoverContentUpdateCommitRequest
+func ReleaseOpenHandoverContentUpdateCommitRequest(v *OpenHandoverContentUpdateCommitRequest) {
+	v.ParcelOrderList = v.ParcelOrderList[:0]
+	v.HandoverContentCode = ""
+	v.BizSource = ""
+	v.Client = ""
+	v.Locale = ""
+	v.UpdateType = ""
+	v.UserInfo = nil
+	v.CompleteUpdate = false
+	poolOpenHandoverContentUpdateCommitRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // tmall.fuwu.rate.get
 //
 // 服务商需获取到单条服务单评价信息
-func TmallFuwuRateGet(clt *core.SDKClient, req *tmallsc.TmallFuwuRateGetAPIRequest, session string) (*tmallsc.TmallFuwuRateGetAPIResponse, error) {
-	var resp tmallsc.TmallFuwuRateGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallFuwuRateGet(clt *core.SDKClient, req *tmallsc.TmallFuwuRateGetAPIRequest, resp *tmallsc.TmallFuwuRateGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

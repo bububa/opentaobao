@@ -1,5 +1,9 @@
 package store
 
+import (
+	"sync"
+)
+
 // TaobaoPlaceStoreExtendUpdateResultDo 结构体
 type TaobaoPlaceStoreExtendUpdateResultDo struct {
 	// 错误信息
@@ -20,4 +24,29 @@ type TaobaoPlaceStoreExtendUpdateResultDo struct {
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
 	// 调用是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoPlaceStoreExtendUpdateResultDo = sync.Pool{
+	New: func() any {
+		return new(TaobaoPlaceStoreExtendUpdateResultDo)
+	},
+}
+
+// GetTaobaoPlaceStoreExtendUpdateResultDo() 从对象池中获取TaobaoPlaceStoreExtendUpdateResultDo
+func GetTaobaoPlaceStoreExtendUpdateResultDo() *TaobaoPlaceStoreExtendUpdateResultDo {
+	return poolTaobaoPlaceStoreExtendUpdateResultDo.Get().(*TaobaoPlaceStoreExtendUpdateResultDo)
+}
+
+// ReleaseTaobaoPlaceStoreExtendUpdateResultDo 释放TaobaoPlaceStoreExtendUpdateResultDo
+func ReleaseTaobaoPlaceStoreExtendUpdateResultDo(v *TaobaoPlaceStoreExtendUpdateResultDo) {
+	v.ErrorMsg = ""
+	v.FullErrorMsg = ""
+	v.PriKey = ""
+	v.ResultCode = ""
+	v.Models = nil
+	v.TotalNum = 0
+	v.Failured = false
+	v.Result = false
+	v.Success = false
+	poolTaobaoPlaceStoreExtendUpdateResultDo.Put(v)
 }

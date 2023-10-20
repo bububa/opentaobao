@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleGoosefishPromotionActivityInfoQueryAPIRequest struct {
 // NewAlibabaIdleGoosefishPromotionActivityInfoQueryRequest 初始化AlibabaIdleGoosefishPromotionActivityInfoQueryAPIRequest对象
 func NewAlibabaIdleGoosefishPromotionActivityInfoQueryRequest() *AlibabaIdleGoosefishPromotionActivityInfoQueryAPIRequest {
 	return &AlibabaIdleGoosefishPromotionActivityInfoQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleGoosefishPromotionActivityInfoQueryAPIRequest) Reset() {
+	r._promotionActivityQueryParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleGoosefishPromotionActivityInfoQueryAPIRequest) SetPromotionA
 // GetPromotionActivityQueryParam PromotionActivityQueryParam Getter
 func (r AlibabaIdleGoosefishPromotionActivityInfoQueryAPIRequest) GetPromotionActivityQueryParam() *PromotionActivityQueryParam {
 	return r._promotionActivityQueryParam
+}
+
+var poolAlibabaIdleGoosefishPromotionActivityInfoQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleGoosefishPromotionActivityInfoQueryRequest()
+	},
+}
+
+// GetAlibabaIdleGoosefishPromotionActivityInfoQueryRequest 从 sync.Pool 获取 AlibabaIdleGoosefishPromotionActivityInfoQueryAPIRequest
+func GetAlibabaIdleGoosefishPromotionActivityInfoQueryAPIRequest() *AlibabaIdleGoosefishPromotionActivityInfoQueryAPIRequest {
+	return poolAlibabaIdleGoosefishPromotionActivityInfoQueryAPIRequest.Get().(*AlibabaIdleGoosefishPromotionActivityInfoQueryAPIRequest)
+}
+
+// ReleaseAlibabaIdleGoosefishPromotionActivityInfoQueryAPIRequest 将 AlibabaIdleGoosefishPromotionActivityInfoQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleGoosefishPromotionActivityInfoQueryAPIRequest(v *AlibabaIdleGoosefishPromotionActivityInfoQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleGoosefishPromotionActivityInfoQueryAPIRequest.Put(v)
 }

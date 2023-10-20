@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest struct {
 // NewAlibabaAliqinFlowAlipayIsbindingtbaccountRequest 初始化AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest对象
 func NewAlibabaAliqinFlowAlipayIsbindingtbaccountRequest() *AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest {
 	return &AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest) Reset() {
+	r._alipayId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest) SetAlipayId(_alipa
 // GetAlipayId AlipayId Getter
 func (r AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest) GetAlipayId() string {
 	return r._alipayId
+}
+
+var poolAlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinFlowAlipayIsbindingtbaccountRequest()
+	},
+}
+
+// GetAlibabaAliqinFlowAlipayIsbindingtbaccountRequest 从 sync.Pool 获取 AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest
+func GetAlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest() *AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest {
+	return poolAlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest.Get().(*AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest)
+}
+
+// ReleaseAlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest 将 AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest(v *AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest.Put(v)
 }

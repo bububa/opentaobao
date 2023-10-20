@@ -1,5 +1,9 @@
 package wms
 
+import (
+	"sync"
+)
+
 // CainiaoInventoryProfitlossOrderitem 结构体
 type CainiaoInventoryProfitlossOrderitem struct {
 	// 商家对商品的编码
@@ -20,4 +24,29 @@ type CainiaoInventoryProfitlossOrderitem struct {
 	BatchCode string `json:"batch_code,omitempty" xml:"batch_code,omitempty"`
 	// 商品ID
 	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
+}
+
+var poolCainiaoInventoryProfitlossOrderitem = sync.Pool{
+	New: func() any {
+		return new(CainiaoInventoryProfitlossOrderitem)
+	},
+}
+
+// GetCainiaoInventoryProfitlossOrderitem() 从对象池中获取CainiaoInventoryProfitlossOrderitem
+func GetCainiaoInventoryProfitlossOrderitem() *CainiaoInventoryProfitlossOrderitem {
+	return poolCainiaoInventoryProfitlossOrderitem.Get().(*CainiaoInventoryProfitlossOrderitem)
+}
+
+// ReleaseCainiaoInventoryProfitlossOrderitem 释放CainiaoInventoryProfitlossOrderitem
+func ReleaseCainiaoInventoryProfitlossOrderitem(v *CainiaoInventoryProfitlossOrderitem) {
+	v.ItemCode = ""
+	v.InventoryType = ""
+	v.ItemQty = ""
+	v.DueDate = ""
+	v.ProduceDate = ""
+	v.ProduceCode = ""
+	v.ProduceArea = ""
+	v.BatchCode = ""
+	v.ItemId = ""
+	poolCainiaoInventoryProfitlossOrderitem.Put(v)
 }

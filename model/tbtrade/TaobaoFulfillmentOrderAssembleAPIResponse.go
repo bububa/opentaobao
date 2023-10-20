@@ -2,6 +2,7 @@ package tbtrade
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoFulfillmentOrderAssembleAPIResponse struct {
 	model.CommonResponse
 	TaobaoFulfillmentOrderAssembleAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoFulfillmentOrderAssembleAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoFulfillmentOrderAssembleAPIResponseModel).Reset()
 }
 
 // TaobaoFulfillmentOrderAssembleAPIResponseModel is 拆合单结果回传接口 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoFulfillmentOrderAssembleAPIResponseModel struct {
 	Model *OrderAssembleResponse `json:"model,omitempty" xml:"model,omitempty"`
 	// 调用结果
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoFulfillmentOrderAssembleAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.CallErrorCode = ""
+	m.CallErrorMsg = ""
+	m.Model = nil
+	m.Result = false
+}
+
+var poolTaobaoFulfillmentOrderAssembleAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoFulfillmentOrderAssembleAPIResponse)
+	},
+}
+
+// GetTaobaoFulfillmentOrderAssembleAPIResponse 从 sync.Pool 获取 TaobaoFulfillmentOrderAssembleAPIResponse
+func GetTaobaoFulfillmentOrderAssembleAPIResponse() *TaobaoFulfillmentOrderAssembleAPIResponse {
+	return poolTaobaoFulfillmentOrderAssembleAPIResponse.Get().(*TaobaoFulfillmentOrderAssembleAPIResponse)
+}
+
+// ReleaseTaobaoFulfillmentOrderAssembleAPIResponse 将 TaobaoFulfillmentOrderAssembleAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoFulfillmentOrderAssembleAPIResponse(v *TaobaoFulfillmentOrderAssembleAPIResponse) {
+	v.Reset()
+	poolTaobaoFulfillmentOrderAssembleAPIResponse.Put(v)
 }

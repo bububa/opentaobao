@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripBtripApprovalNewAPIResponse struct {
 	AlitripBtripApprovalNewAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripBtripApprovalNewAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripBtripApprovalNewAPIResponseModel).Reset()
+}
+
 // AlitripBtripApprovalNewAPIResponseModel is 新建审批单 成功返回结果
 type AlitripBtripApprovalNewAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_approval_new_response"`
@@ -22,4 +29,27 @@ type AlitripBtripApprovalNewAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *BtriphomeResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripBtripApprovalNewAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlitripBtripApprovalNewAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripBtripApprovalNewAPIResponse)
+	},
+}
+
+// GetAlitripBtripApprovalNewAPIResponse 从 sync.Pool 获取 AlitripBtripApprovalNewAPIResponse
+func GetAlitripBtripApprovalNewAPIResponse() *AlitripBtripApprovalNewAPIResponse {
+	return poolAlitripBtripApprovalNewAPIResponse.Get().(*AlitripBtripApprovalNewAPIResponse)
+}
+
+// ReleaseAlitripBtripApprovalNewAPIResponse 将 AlitripBtripApprovalNewAPIResponse 保存到 sync.Pool
+func ReleaseAlitripBtripApprovalNewAPIResponse(v *AlitripBtripApprovalNewAPIResponse) {
+	v.Reset()
+	poolAlitripBtripApprovalNewAPIResponse.Put(v)
 }

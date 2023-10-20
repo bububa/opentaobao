@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // DetailItem 结构体
 type DetailItem struct {
 	// 返回信息码
@@ -30,4 +34,34 @@ type DetailItem struct {
 	SellerId string `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
 	// true|false
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolDetailItem = sync.Pool{
+	New: func() any {
+		return new(DetailItem)
+	},
+}
+
+// GetDetailItem() 从对象池中获取DetailItem
+func GetDetailItem() *DetailItem {
+	return poolDetailItem.Get().(*DetailItem)
+}
+
+// ReleaseDetailItem 释放DetailItem
+func ReleaseDetailItem(v *DetailItem) {
+	v.Code = ""
+	v.Message = ""
+	v.OwnerCode = ""
+	v.WarehouseCode = ""
+	v.ScItemCode = ""
+	v.CombineScItemCode = ""
+	v.CombineScItemId = ""
+	v.ErpCode = ""
+	v.ItemId = ""
+	v.SkuId = ""
+	v.ScItemId = ""
+	v.ScItemBarCode = ""
+	v.SellerId = ""
+	v.Success = false
+	poolDetailItem.Put(v)
 }

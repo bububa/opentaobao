@@ -2,6 +2,7 @@ package jst
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoRdsDbDeleteAPIRequest struct {
 // NewTaobaoRdsDbDeleteRequest 初始化TaobaoRdsDbDeleteAPIRequest对象
 func NewTaobaoRdsDbDeleteRequest() *TaobaoRdsDbDeleteAPIRequest {
 	return &TaobaoRdsDbDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoRdsDbDeleteAPIRequest) Reset() {
+	r._instanceName = ""
+	r._dbName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoRdsDbDeleteAPIRequest) SetDbName(_dbName string) error {
 // GetDbName DbName Getter
 func (r TaobaoRdsDbDeleteAPIRequest) GetDbName() string {
 	return r._dbName
+}
+
+var poolTaobaoRdsDbDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoRdsDbDeleteRequest()
+	},
+}
+
+// GetTaobaoRdsDbDeleteRequest 从 sync.Pool 获取 TaobaoRdsDbDeleteAPIRequest
+func GetTaobaoRdsDbDeleteAPIRequest() *TaobaoRdsDbDeleteAPIRequest {
+	return poolTaobaoRdsDbDeleteAPIRequest.Get().(*TaobaoRdsDbDeleteAPIRequest)
+}
+
+// ReleaseTaobaoRdsDbDeleteAPIRequest 将 TaobaoRdsDbDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoRdsDbDeleteAPIRequest(v *TaobaoRdsDbDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoRdsDbDeleteAPIRequest.Put(v)
 }

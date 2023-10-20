@@ -2,6 +2,7 @@ package iot
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponseModel).Reset()
 }
 
 // AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponseModel is 插入或更新食谱步骤 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponseModel struct {
 	RetCode int64 `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
 	// 返回结果
 	RetValue int64 `json:"ret_value,omitempty" xml:"ret_value,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.TraceId = ""
+	m.RetCode = 0
+	m.RetValue = 0
+}
+
+var poolAlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponse)
+	},
+}
+
+// GetAlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponse 从 sync.Pool 获取 AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponse
+func GetAlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponse() *AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponse {
+	return poolAlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponse.Get().(*AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponse)
+}
+
+// ReleaseAlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponse 将 AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponse(v *AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponse) {
+	v.Reset()
+	poolAlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package icbulogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest struct {
 // NewAlibabaOnetouchLogisticsExpressSpecialProductTypeListRequest 初始化AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest对象
 func NewAlibabaOnetouchLogisticsExpressSpecialProductTypeListRequest() *AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest {
 	return &AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest) GetApiP
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaOnetouchLogisticsExpressSpecialProductTypeListRequest()
+	},
+}
+
+// GetAlibabaOnetouchLogisticsExpressSpecialProductTypeListRequest 从 sync.Pool 获取 AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest
+func GetAlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest() *AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest {
+	return poolAlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest.Get().(*AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest)
+}
+
+// ReleaseAlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest 将 AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest(v *AlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest) {
+	v.Reset()
+	poolAlibabaOnetouchLogisticsExpressSpecialProductTypeListAPIRequest.Put(v)
 }

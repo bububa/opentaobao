@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallFuwuHomedecorationWorkerlevelListAPIRequest struct {
 // NewTmallFuwuHomedecorationWorkerlevelListRequest 初始化TmallFuwuHomedecorationWorkerlevelListAPIRequest对象
 func NewTmallFuwuHomedecorationWorkerlevelListRequest() *TmallFuwuHomedecorationWorkerlevelListAPIRequest {
 	return &TmallFuwuHomedecorationWorkerlevelListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallFuwuHomedecorationWorkerlevelListAPIRequest) Reset() {
+	r._pageIndex = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallFuwuHomedecorationWorkerlevelListAPIRequest) SetPageSize(_pageSize
 // GetPageSize PageSize Getter
 func (r TmallFuwuHomedecorationWorkerlevelListAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTmallFuwuHomedecorationWorkerlevelListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallFuwuHomedecorationWorkerlevelListRequest()
+	},
+}
+
+// GetTmallFuwuHomedecorationWorkerlevelListRequest 从 sync.Pool 获取 TmallFuwuHomedecorationWorkerlevelListAPIRequest
+func GetTmallFuwuHomedecorationWorkerlevelListAPIRequest() *TmallFuwuHomedecorationWorkerlevelListAPIRequest {
+	return poolTmallFuwuHomedecorationWorkerlevelListAPIRequest.Get().(*TmallFuwuHomedecorationWorkerlevelListAPIRequest)
+}
+
+// ReleaseTmallFuwuHomedecorationWorkerlevelListAPIRequest 将 TmallFuwuHomedecorationWorkerlevelListAPIRequest 放入 sync.Pool
+func ReleaseTmallFuwuHomedecorationWorkerlevelListAPIRequest(v *TmallFuwuHomedecorationWorkerlevelListAPIRequest) {
+	v.Reset()
+	poolTmallFuwuHomedecorationWorkerlevelListAPIRequest.Put(v)
 }

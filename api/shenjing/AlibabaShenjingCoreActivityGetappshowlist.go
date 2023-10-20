@@ -9,11 +9,6 @@ import (
 // alibaba.shenjing.core.activity.getappshowlist
 //
 // 获取神鲸活动列表
-func AlibabaShenjingCoreActivityGetappshowlist(clt *core.SDKClient, req *shenjing.AlibabaShenjingCoreActivityGetappshowlistAPIRequest, session string) (*shenjing.AlibabaShenjingCoreActivityGetappshowlistAPIResponse, error) {
-	var resp shenjing.AlibabaShenjingCoreActivityGetappshowlistAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaShenjingCoreActivityGetappshowlist(clt *core.SDKClient, req *shenjing.AlibabaShenjingCoreActivityGetappshowlistAPIRequest, resp *shenjing.AlibabaShenjingCoreActivityGetappshowlistAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

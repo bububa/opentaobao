@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // TopBulkData 结构体
 type TopBulkData struct {
 	// 批量结果集
@@ -50,4 +54,44 @@ type TopBulkData struct {
 	SuggestWordPackageVOList []SuggestWordPackageVo `json:"suggest_word_package_v_o_list,omitempty" xml:"suggest_word_package_v_o_list>suggest_word_package_vo,omitempty"`
 	// 数量
 	Count int64 `json:"count,omitempty" xml:"count,omitempty"`
+}
+
+var poolTopBulkData = sync.Pool{
+	New: func() any {
+		return new(TopBulkData)
+	},
+}
+
+// GetTopBulkData() 从对象池中获取TopBulkData
+func GetTopBulkData() *TopBulkData {
+	return poolTopBulkData.Get().(*TopBulkData)
+}
+
+// ReleaseTopBulkData 释放TopBulkData
+func ReleaseTopBulkData(v *TopBulkData) {
+	v.TopMarketSceneVOList = v.TopMarketSceneVOList[:0]
+	v.AdgroupVOList = v.AdgroupVOList[:0]
+	v.AdzoneConfigVOList = v.AdzoneConfigVOList[:0]
+	v.AdzoneRefVOList = v.AdzoneRefVOList[:0]
+	v.WordVOList = v.WordVOList[:0]
+	v.BidwordSuggestItemVOList = v.BidwordSuggestItemVOList[:0]
+	v.SuggestBidwordVOList = v.SuggestBidwordVOList[:0]
+	v.CampaignVOList = v.CampaignVOList[:0]
+	v.CampaignGroupVOList = v.CampaignGroupVOList[:0]
+	v.CreativeRefVOList = v.CreativeRefVOList[:0]
+	v.CreativeVOList = v.CreativeVOList[:0]
+	v.CrowdBindResultVOList = v.CrowdBindResultVOList[:0]
+	v.CrowdRefVOList = v.CrowdRefVOList[:0]
+	v.LabelConfigVOList = v.LabelConfigVOList[:0]
+	v.MaterialAccessAllowVOList = v.MaterialAccessAllowVOList[:0]
+	v.ItemVOList = v.ItemVOList[:0]
+	v.BrandInfoVOList = v.BrandInfoVOList[:0]
+	v.TopReportVOList = v.TopReportVOList[:0]
+	v.ShopCategoryVOList = v.ShopCategoryVOList[:0]
+	v.StdCategoryVOList = v.StdCategoryVOList[:0]
+	v.WordPackageVOList = v.WordPackageVOList[:0]
+	v.WordPackageSuggestItemVOList = v.WordPackageSuggestItemVOList[:0]
+	v.SuggestWordPackageVOList = v.SuggestWordPackageVOList[:0]
+	v.Count = 0
+	poolTopBulkData.Put(v)
 }

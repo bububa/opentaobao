@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoOmniorderItemTagOperateAPIRequest struct {
 // NewTaobaoOmniorderItemTagOperateRequest 初始化TaobaoOmniorderItemTagOperateAPIRequest对象
 func NewTaobaoOmniorderItemTagOperateRequest() *TaobaoOmniorderItemTagOperateAPIRequest {
 	return &TaobaoOmniorderItemTagOperateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOmniorderItemTagOperateAPIRequest) Reset() {
+	r._types = r._types[:0]
+	r._itemId = 0
+	r._status = 0
+	r._omniSetting = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoOmniorderItemTagOperateAPIRequest) SetOmniSetting(_omniSetting *O
 // GetOmniSetting OmniSetting Getter
 func (r TaobaoOmniorderItemTagOperateAPIRequest) GetOmniSetting() *OmniSettingDto {
 	return r._omniSetting
+}
+
+var poolTaobaoOmniorderItemTagOperateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOmniorderItemTagOperateRequest()
+	},
+}
+
+// GetTaobaoOmniorderItemTagOperateRequest 从 sync.Pool 获取 TaobaoOmniorderItemTagOperateAPIRequest
+func GetTaobaoOmniorderItemTagOperateAPIRequest() *TaobaoOmniorderItemTagOperateAPIRequest {
+	return poolTaobaoOmniorderItemTagOperateAPIRequest.Get().(*TaobaoOmniorderItemTagOperateAPIRequest)
+}
+
+// ReleaseTaobaoOmniorderItemTagOperateAPIRequest 将 TaobaoOmniorderItemTagOperateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOmniorderItemTagOperateAPIRequest(v *TaobaoOmniorderItemTagOperateAPIRequest) {
+	v.Reset()
+	poolTaobaoOmniorderItemTagOperateAPIRequest.Put(v)
 }

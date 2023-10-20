@@ -9,11 +9,6 @@ import (
 // taobao.ailab.aicloud.top.message.sendtext
 //
 // 故事机文本留言
-func TaobaoAilabAicloudTopMessageSendtext(clt *core.SDKClient, req *tmallgenie.TaobaoAilabAicloudTopMessageSendtextAPIRequest, session string) (*tmallgenie.TaobaoAilabAicloudTopMessageSendtextAPIResponse, error) {
-	var resp tmallgenie.TaobaoAilabAicloudTopMessageSendtextAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAilabAicloudTopMessageSendtext(clt *core.SDKClient, req *tmallgenie.TaobaoAilabAicloudTopMessageSendtextAPIRequest, resp *tmallgenie.TaobaoAilabAicloudTopMessageSendtextAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

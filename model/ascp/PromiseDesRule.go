@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // PromiseDesRule 结构体
 type PromiseDesRule struct {
 	// 线路发货快递公司编码列表
@@ -30,4 +34,34 @@ type PromiseDesRule struct {
 	DeliveryTime int64 `json:"delivery_time,omitempty" xml:"delivery_time,omitempty"`
 	// 仓接单-签收时长（小于等于）（h）
 	ExpressTime int64 `json:"express_time,omitempty" xml:"express_time,omitempty"`
+}
+
+var poolPromiseDesRule = sync.Pool{
+	New: func() any {
+		return new(PromiseDesRule)
+	},
+}
+
+// GetPromiseDesRule() 从对象池中获取PromiseDesRule
+func GetPromiseDesRule() *PromiseDesRule {
+	return poolPromiseDesRule.Get().(*PromiseDesRule)
+}
+
+// ReleasePromiseDesRule 释放PromiseDesRule
+func ReleasePromiseDesRule(v *PromiseDesRule) {
+	v.PlatformDeliveryCodes = v.PlatformDeliveryCodes[:0]
+	v.Waveability = v.Waveability[:0]
+	v.Province = ""
+	v.City = ""
+	v.Area = ""
+	v.Town = ""
+	v.OuterWaveId = ""
+	v.ReceiveCutTime = ""
+	v.PlanDeliveryTime = ""
+	v.PlanCollectionTime = ""
+	v.FirstAllocationTime = ""
+	v.TimingType = 0
+	v.DeliveryTime = 0
+	v.ExpressTime = 0
+	poolPromiseDesRule.Put(v)
 }

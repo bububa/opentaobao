@@ -2,6 +2,7 @@ package taotv
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -41,8 +42,25 @@ type YoukuTvDesktopToyouRecommendAPIRequest struct {
 // NewYoukuTvDesktopToyouRecommendRequest 初始化YoukuTvDesktopToyouRecommendAPIRequest对象
 func NewYoukuTvDesktopToyouRecommendRequest() *YoukuTvDesktopToyouRecommendAPIRequest {
 	return &YoukuTvDesktopToyouRecommendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(12),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YoukuTvDesktopToyouRecommendAPIRequest) Reset() {
+	r._token = ""
+	r._bcp = ""
+	r._deviceModel = ""
+	r._mac = ""
+	r._uuid = ""
+	r._from = ""
+	r._chargeType = ""
+	r._sw = ""
+	r._deviceMedia = ""
+	r._ip = ""
+	r._versionCode = 0
+	r._maxSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -216,4 +234,21 @@ func (r *YoukuTvDesktopToyouRecommendAPIRequest) SetMaxSize(_maxSize int64) erro
 // GetMaxSize MaxSize Getter
 func (r YoukuTvDesktopToyouRecommendAPIRequest) GetMaxSize() int64 {
 	return r._maxSize
+}
+
+var poolYoukuTvDesktopToyouRecommendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYoukuTvDesktopToyouRecommendRequest()
+	},
+}
+
+// GetYoukuTvDesktopToyouRecommendRequest 从 sync.Pool 获取 YoukuTvDesktopToyouRecommendAPIRequest
+func GetYoukuTvDesktopToyouRecommendAPIRequest() *YoukuTvDesktopToyouRecommendAPIRequest {
+	return poolYoukuTvDesktopToyouRecommendAPIRequest.Get().(*YoukuTvDesktopToyouRecommendAPIRequest)
+}
+
+// ReleaseYoukuTvDesktopToyouRecommendAPIRequest 将 YoukuTvDesktopToyouRecommendAPIRequest 放入 sync.Pool
+func ReleaseYoukuTvDesktopToyouRecommendAPIRequest(v *YoukuTvDesktopToyouRecommendAPIRequest) {
+	v.Reset()
+	poolYoukuTvDesktopToyouRecommendAPIRequest.Put(v)
 }

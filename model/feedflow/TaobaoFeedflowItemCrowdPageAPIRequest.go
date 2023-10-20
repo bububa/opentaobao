@@ -2,6 +2,7 @@ package feedflow
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoFeedflowItemCrowdPageAPIRequest struct {
 // NewTaobaoFeedflowItemCrowdPageRequest 初始化TaobaoFeedflowItemCrowdPageAPIRequest对象
 func NewTaobaoFeedflowItemCrowdPageRequest() *TaobaoFeedflowItemCrowdPageAPIRequest {
 	return &TaobaoFeedflowItemCrowdPageAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFeedflowItemCrowdPageAPIRequest) Reset() {
+	r._crowdQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoFeedflowItemCrowdPageAPIRequest) SetCrowdQuery(_crowdQuery *Crowd
 // GetCrowdQuery CrowdQuery Getter
 func (r TaobaoFeedflowItemCrowdPageAPIRequest) GetCrowdQuery() *CrowdQueryDto {
 	return r._crowdQuery
+}
+
+var poolTaobaoFeedflowItemCrowdPageAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFeedflowItemCrowdPageRequest()
+	},
+}
+
+// GetTaobaoFeedflowItemCrowdPageRequest 从 sync.Pool 获取 TaobaoFeedflowItemCrowdPageAPIRequest
+func GetTaobaoFeedflowItemCrowdPageAPIRequest() *TaobaoFeedflowItemCrowdPageAPIRequest {
+	return poolTaobaoFeedflowItemCrowdPageAPIRequest.Get().(*TaobaoFeedflowItemCrowdPageAPIRequest)
+}
+
+// ReleaseTaobaoFeedflowItemCrowdPageAPIRequest 将 TaobaoFeedflowItemCrowdPageAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFeedflowItemCrowdPageAPIRequest(v *TaobaoFeedflowItemCrowdPageAPIRequest) {
+	v.Reset()
+	poolTaobaoFeedflowItemCrowdPageAPIRequest.Put(v)
 }

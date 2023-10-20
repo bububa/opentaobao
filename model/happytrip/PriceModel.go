@@ -1,5 +1,9 @@
 package happytrip
 
+import (
+	"sync"
+)
+
 // PriceModel 结构体
 type PriceModel struct {
 	// 起步价格 单位：元
@@ -24,4 +28,31 @@ type PriceModel struct {
 	LineType int64 `json:"line_type,omitempty" xml:"line_type,omitempty"`
 	// 线路信息，线路为专线时不为空
 	LineInfo *LineInfo `json:"line_info,omitempty" xml:"line_info,omitempty"`
+}
+
+var poolPriceModel = sync.Pool{
+	New: func() any {
+		return new(PriceModel)
+	},
+}
+
+// GetPriceModel() 从对象池中获取PriceModel
+func GetPriceModel() *PriceModel {
+	return poolPriceModel.Get().(*PriceModel)
+}
+
+// ReleasePriceModel 释放PriceModel
+func ReleasePriceModel(v *PriceModel) {
+	v.StartPrice = ""
+	v.NormalUnitPrice = ""
+	v.DynamicPrice = ""
+	v.PriceTip = ""
+	v.Price = ""
+	v.DynamicMd5 = ""
+	v.Name = ""
+	v.Code = ""
+	v.OriginalPrice = ""
+	v.LineType = 0
+	v.LineInfo = nil
+	poolPriceModel.Put(v)
 }

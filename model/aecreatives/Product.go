@@ -1,5 +1,9 @@
 package aecreatives
 
+import (
+	"sync"
+)
+
 // Product 结构体
 type Product struct {
 	// 商品小图地址列表
@@ -72,4 +76,55 @@ type Product struct {
 	LastestVolume int64 `json:"lastest_volume,omitempty" xml:"lastest_volume,omitempty"`
 	// code信息
 	PromoCodeInfo *PromoCodeDto `json:"promo_code_info,omitempty" xml:"promo_code_info,omitempty"`
+}
+
+var poolProduct = sync.Pool{
+	New: func() any {
+		return new(Product)
+	},
+}
+
+// GetProduct() 从对象池中获取Product
+func GetProduct() *Product {
+	return poolProduct.Get().(*Product)
+}
+
+// ReleaseProduct 释放Product
+func ReleaseProduct(v *Product) {
+	v.ProductSmallImageUrls = v.ProductSmallImageUrls[:0]
+	v.AppSalePrice = ""
+	v.CommissionRate = ""
+	v.Discount = ""
+	v.FirstLevelCategoryName = ""
+	v.OriginalPrice = ""
+	v.ProductDetailUrl = ""
+	v.ProductMainImageUrl = ""
+	v.ProductTitle = ""
+	v.ProductVideoUrl = ""
+	v.PromotionLink = ""
+	v.SalePrice = ""
+	v.SecondLevelCategoryName = ""
+	v.ShopUrl = ""
+	v.TargetAppSalePrice = ""
+	v.TargetOriginalPrice = ""
+	v.TargetSalePrice = ""
+	v.HotProductCommissionRate = ""
+	v.PlatformProductType = ""
+	v.EvaluateRate = ""
+	v.AppSalePriceCurrency = ""
+	v.OriginalPriceCurrency = ""
+	v.TargetOriginalPriceCurrency = ""
+	v.TargetSalePriceCurrency = ""
+	v.TargetAppSalePriceCurrency = ""
+	v.SalePriceCurrency = ""
+	v.RelevantMarketCommissionRate = ""
+	v.ShipToDays = ""
+	v.CommisionRate = ""
+	v.FirstLevelCategoryId = 0
+	v.ProductId = 0
+	v.SecondLevelCategoryId = 0
+	v.ShopId = 0
+	v.LastestVolume = 0
+	v.PromoCodeInfo = nil
+	poolProduct.Put(v)
 }

@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlicomVtDistributeorderCreateAPIRequest struct {
 // NewAlibabaAlicomVtDistributeorderCreateRequest 初始化AlibabaAlicomVtDistributeorderCreateAPIRequest对象
 func NewAlibabaAlicomVtDistributeorderCreateRequest() *AlibabaAlicomVtDistributeorderCreateAPIRequest {
 	return &AlibabaAlicomVtDistributeorderCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlicomVtDistributeorderCreateAPIRequest) Reset() {
+	r._distributeTradeMsgModel = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlicomVtDistributeorderCreateAPIRequest) SetDistributeTradeMsgMo
 // GetDistributeTradeMsgModel DistributeTradeMsgModel Getter
 func (r AlibabaAlicomVtDistributeorderCreateAPIRequest) GetDistributeTradeMsgModel() *DistributeTradeMsgModel {
 	return r._distributeTradeMsgModel
+}
+
+var poolAlibabaAlicomVtDistributeorderCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlicomVtDistributeorderCreateRequest()
+	},
+}
+
+// GetAlibabaAlicomVtDistributeorderCreateRequest 从 sync.Pool 获取 AlibabaAlicomVtDistributeorderCreateAPIRequest
+func GetAlibabaAlicomVtDistributeorderCreateAPIRequest() *AlibabaAlicomVtDistributeorderCreateAPIRequest {
+	return poolAlibabaAlicomVtDistributeorderCreateAPIRequest.Get().(*AlibabaAlicomVtDistributeorderCreateAPIRequest)
+}
+
+// ReleaseAlibabaAlicomVtDistributeorderCreateAPIRequest 将 AlibabaAlicomVtDistributeorderCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlicomVtDistributeorderCreateAPIRequest(v *AlibabaAlicomVtDistributeorderCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaAlicomVtDistributeorderCreateAPIRequest.Put(v)
 }

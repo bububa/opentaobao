@@ -9,11 +9,6 @@ import (
 // taobao.simba.keyword.update
 //
 // （新）关键词更新相关接口
-func TaobaoSimbaKeywordUpdate(clt *core.SDKClient, req *simba.TaobaoSimbaKeywordUpdateAPIRequest, session string) (*simba.TaobaoSimbaKeywordUpdateAPIResponse, error) {
-	var resp simba.TaobaoSimbaKeywordUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaKeywordUpdate(clt *core.SDKClient, req *simba.TaobaoSimbaKeywordUpdateAPIRequest, resp *simba.TaobaoSimbaKeywordUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

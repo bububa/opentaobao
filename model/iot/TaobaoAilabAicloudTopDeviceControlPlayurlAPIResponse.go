@@ -2,6 +2,7 @@ package iot
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoAilabAicloudTopDeviceControlPlayurlAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopDeviceControlPlayurlAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopDeviceControlPlayurlAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAilabAicloudTopDeviceControlPlayurlAPIResponseModel).Reset()
 }
 
 // TaobaoAilabAicloudTopDeviceControlPlayurlAPIResponseModel is 点播url 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoAilabAicloudTopDeviceControlPlayurlAPIResponseModel struct {
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
 	// 网络请求是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopDeviceControlPlayurlAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgCode = ""
+	m.MsgInfo = ""
+	m.Model = false
+	m.IsSuccess = false
+}
+
+var poolTaobaoAilabAicloudTopDeviceControlPlayurlAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAilabAicloudTopDeviceControlPlayurlAPIResponse)
+	},
+}
+
+// GetTaobaoAilabAicloudTopDeviceControlPlayurlAPIResponse 从 sync.Pool 获取 TaobaoAilabAicloudTopDeviceControlPlayurlAPIResponse
+func GetTaobaoAilabAicloudTopDeviceControlPlayurlAPIResponse() *TaobaoAilabAicloudTopDeviceControlPlayurlAPIResponse {
+	return poolTaobaoAilabAicloudTopDeviceControlPlayurlAPIResponse.Get().(*TaobaoAilabAicloudTopDeviceControlPlayurlAPIResponse)
+}
+
+// ReleaseTaobaoAilabAicloudTopDeviceControlPlayurlAPIResponse 将 TaobaoAilabAicloudTopDeviceControlPlayurlAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAilabAicloudTopDeviceControlPlayurlAPIResponse(v *TaobaoAilabAicloudTopDeviceControlPlayurlAPIResponse) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopDeviceControlPlayurlAPIResponse.Put(v)
 }

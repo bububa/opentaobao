@@ -1,5 +1,9 @@
 package wlb
 
+import (
+	"sync"
+)
+
 // WlbOrder 结构体
 type WlbOrder struct {
 	// 出库或者入库，IN表示入库，OUT表示出库
@@ -94,4 +98,66 @@ type WlbOrder struct {
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// 1
 	IsCompleted bool `json:"is_completed,omitempty" xml:"is_completed,omitempty"`
+}
+
+var poolWlbOrder = sync.Pool{
+	New: func() any {
+		return new(WlbOrder)
+	},
+}
+
+// GetWlbOrder() 从对象池中获取WlbOrder
+func GetWlbOrder() *WlbOrder {
+	return poolWlbOrder.Get().(*WlbOrder)
+}
+
+// ReleaseWlbOrder 释放WlbOrder
+func ReleaseWlbOrder(v *WlbOrder) {
+	v.OperateType = ""
+	v.OrderCode = ""
+	v.OrderSource = ""
+	v.OrderSourceCode = ""
+	v.OrderType = ""
+	v.OrderSubType = ""
+	v.UserNick = ""
+	v.StoreCode = ""
+	v.TmsTpCode = ""
+	v.OrderStatus = ""
+	v.OrderStatusReason = ""
+	v.Remark = ""
+	v.PrevOrderCode = ""
+	v.BuyerNick = ""
+	v.ReceiverName = ""
+	v.ReceiverWangwang = ""
+	v.ReceiverMail = ""
+	v.ReceiverZipCode = ""
+	v.ReceiverMobile = ""
+	v.ReceiverPhone = ""
+	v.InvoiceInfo = ""
+	v.ReceiverProvince = ""
+	v.ReceiverCity = ""
+	v.ReceiverArea = ""
+	v.ReceiverAddress = ""
+	v.SenderProvince = ""
+	v.SenderCity = ""
+	v.SenderArea = ""
+	v.SenderAddress = ""
+	v.SenderName = ""
+	v.SenderEmail = ""
+	v.SenderPhone = ""
+	v.SenderMobile = ""
+	v.SenderZipCode = ""
+	v.ScheduleDay = ""
+	v.ScheduleEnd = ""
+	v.ExpectStartTime = ""
+	v.ExpectEndTime = ""
+	v.TotalAmount = 0
+	v.OrderFlag = 0
+	v.ReceivableAmount = 0
+	v.ServiceFee = 0
+	v.CancelOrderStatus = 0
+	v.ScheduleSpeed = 0
+	v.UserId = 0
+	v.IsCompleted = false
+	poolWlbOrder.Put(v)
 }

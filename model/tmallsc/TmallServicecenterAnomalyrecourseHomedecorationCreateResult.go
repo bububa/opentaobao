@@ -1,5 +1,9 @@
 package tmallsc
 
+import (
+	"sync"
+)
+
 // TmallServicecenterAnomalyrecourseHomedecorationCreateResult 结构体
 type TmallServicecenterAnomalyrecourseHomedecorationCreateResult struct {
 	// 错误信息
@@ -10,4 +14,24 @@ type TmallServicecenterAnomalyrecourseHomedecorationCreateResult struct {
 	Value int64 `json:"value,omitempty" xml:"value,omitempty"`
 	// 调用是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTmallServicecenterAnomalyrecourseHomedecorationCreateResult = sync.Pool{
+	New: func() any {
+		return new(TmallServicecenterAnomalyrecourseHomedecorationCreateResult)
+	},
+}
+
+// GetTmallServicecenterAnomalyrecourseHomedecorationCreateResult() 从对象池中获取TmallServicecenterAnomalyrecourseHomedecorationCreateResult
+func GetTmallServicecenterAnomalyrecourseHomedecorationCreateResult() *TmallServicecenterAnomalyrecourseHomedecorationCreateResult {
+	return poolTmallServicecenterAnomalyrecourseHomedecorationCreateResult.Get().(*TmallServicecenterAnomalyrecourseHomedecorationCreateResult)
+}
+
+// ReleaseTmallServicecenterAnomalyrecourseHomedecorationCreateResult 释放TmallServicecenterAnomalyrecourseHomedecorationCreateResult
+func ReleaseTmallServicecenterAnomalyrecourseHomedecorationCreateResult(v *TmallServicecenterAnomalyrecourseHomedecorationCreateResult) {
+	v.ErrorMsg = ""
+	v.ErrorCode = ""
+	v.Value = 0
+	v.Success = false
+	poolTmallServicecenterAnomalyrecourseHomedecorationCreateResult.Put(v)
 }

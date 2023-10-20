@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // AlibabaSscSupplyplatformServicedefinitionQueryskuResult 结构体
 type AlibabaSscSupplyplatformServicedefinitionQueryskuResult struct {
 	// 服务sku列表
@@ -12,4 +16,25 @@ type AlibabaSscSupplyplatformServicedefinitionQueryskuResult struct {
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 是否成功
 	Success string `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaSscSupplyplatformServicedefinitionQueryskuResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaSscSupplyplatformServicedefinitionQueryskuResult)
+	},
+}
+
+// GetAlibabaSscSupplyplatformServicedefinitionQueryskuResult() 从对象池中获取AlibabaSscSupplyplatformServicedefinitionQueryskuResult
+func GetAlibabaSscSupplyplatformServicedefinitionQueryskuResult() *AlibabaSscSupplyplatformServicedefinitionQueryskuResult {
+	return poolAlibabaSscSupplyplatformServicedefinitionQueryskuResult.Get().(*AlibabaSscSupplyplatformServicedefinitionQueryskuResult)
+}
+
+// ReleaseAlibabaSscSupplyplatformServicedefinitionQueryskuResult 释放AlibabaSscSupplyplatformServicedefinitionQueryskuResult
+func ReleaseAlibabaSscSupplyplatformServicedefinitionQueryskuResult(v *AlibabaSscSupplyplatformServicedefinitionQueryskuResult) {
+	v.ServiceSkus = v.ServiceSkus[:0]
+	v.DisplayMsg = ""
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Success = ""
+	poolAlibabaSscSupplyplatformServicedefinitionQueryskuResult.Put(v)
 }

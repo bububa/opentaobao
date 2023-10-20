@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseCategoryControlSyncAPIRequest struct {
 // NewAlibabaAlihouseCategoryControlSyncRequest 初始化AlibabaAlihouseCategoryControlSyncAPIRequest对象
 func NewAlibabaAlihouseCategoryControlSyncRequest() *AlibabaAlihouseCategoryControlSyncAPIRequest {
 	return &AlibabaAlihouseCategoryControlSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseCategoryControlSyncAPIRequest) Reset() {
+	r._categoryControlDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseCategoryControlSyncAPIRequest) SetCategoryControlDto(_ca
 // GetCategoryControlDto CategoryControlDto Getter
 func (r AlibabaAlihouseCategoryControlSyncAPIRequest) GetCategoryControlDto() *CategoryControlDto {
 	return r._categoryControlDto
+}
+
+var poolAlibabaAlihouseCategoryControlSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseCategoryControlSyncRequest()
+	},
+}
+
+// GetAlibabaAlihouseCategoryControlSyncRequest 从 sync.Pool 获取 AlibabaAlihouseCategoryControlSyncAPIRequest
+func GetAlibabaAlihouseCategoryControlSyncAPIRequest() *AlibabaAlihouseCategoryControlSyncAPIRequest {
+	return poolAlibabaAlihouseCategoryControlSyncAPIRequest.Get().(*AlibabaAlihouseCategoryControlSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseCategoryControlSyncAPIRequest 将 AlibabaAlihouseCategoryControlSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseCategoryControlSyncAPIRequest(v *AlibabaAlihouseCategoryControlSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseCategoryControlSyncAPIRequest.Put(v)
 }

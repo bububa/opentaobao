@@ -2,6 +2,7 @@ package wlbimports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoGlobalImPickupBigbagWaybillInfoAPIRequest struct {
 // NewCainiaoGlobalImPickupBigbagWaybillInfoRequest 初始化CainiaoGlobalImPickupBigbagWaybillInfoAPIRequest对象
 func NewCainiaoGlobalImPickupBigbagWaybillInfoRequest() *CainiaoGlobalImPickupBigbagWaybillInfoAPIRequest {
 	return &CainiaoGlobalImPickupBigbagWaybillInfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoGlobalImPickupBigbagWaybillInfoAPIRequest) Reset() {
+	r._bigbagWaybillRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoGlobalImPickupBigbagWaybillInfoAPIRequest) SetBigbagWaybillReque
 // GetBigbagWaybillRequest BigbagWaybillRequest Getter
 func (r CainiaoGlobalImPickupBigbagWaybillInfoAPIRequest) GetBigbagWaybillRequest() *BigbagWaybillRequest {
 	return r._bigbagWaybillRequest
+}
+
+var poolCainiaoGlobalImPickupBigbagWaybillInfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoGlobalImPickupBigbagWaybillInfoRequest()
+	},
+}
+
+// GetCainiaoGlobalImPickupBigbagWaybillInfoRequest 从 sync.Pool 获取 CainiaoGlobalImPickupBigbagWaybillInfoAPIRequest
+func GetCainiaoGlobalImPickupBigbagWaybillInfoAPIRequest() *CainiaoGlobalImPickupBigbagWaybillInfoAPIRequest {
+	return poolCainiaoGlobalImPickupBigbagWaybillInfoAPIRequest.Get().(*CainiaoGlobalImPickupBigbagWaybillInfoAPIRequest)
+}
+
+// ReleaseCainiaoGlobalImPickupBigbagWaybillInfoAPIRequest 将 CainiaoGlobalImPickupBigbagWaybillInfoAPIRequest 放入 sync.Pool
+func ReleaseCainiaoGlobalImPickupBigbagWaybillInfoAPIRequest(v *CainiaoGlobalImPickupBigbagWaybillInfoAPIRequest) {
+	v.Reset()
+	poolCainiaoGlobalImPickupBigbagWaybillInfoAPIRequest.Put(v)
 }

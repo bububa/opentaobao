@@ -1,5 +1,9 @@
 package user
 
+import (
+	"sync"
+)
+
 // UserInfoBaseDto 结构体
 type UserInfoBaseDto struct {
 	// 同一个开放平台帐号下，用户的 UnionID 是唯一的
@@ -16,4 +20,27 @@ type UserInfoBaseDto struct {
 	ExtraInfo string `json:"extra_info,omitempty" xml:"extra_info,omitempty"`
 	// 登录用户昵称
 	UserNick string `json:"user_nick,omitempty" xml:"user_nick,omitempty"`
+}
+
+var poolUserInfoBaseDto = sync.Pool{
+	New: func() any {
+		return new(UserInfoBaseDto)
+	},
+}
+
+// GetUserInfoBaseDto() 从对象池中获取UserInfoBaseDto
+func GetUserInfoBaseDto() *UserInfoBaseDto {
+	return poolUserInfoBaseDto.Get().(*UserInfoBaseDto)
+}
+
+// ReleaseUserInfoBaseDto 释放UserInfoBaseDto
+func ReleaseUserInfoBaseDto(v *UserInfoBaseDto) {
+	v.UnionId = ""
+	v.OpenUid = ""
+	v.AppId = ""
+	v.CorpId = ""
+	v.LoginType = ""
+	v.ExtraInfo = ""
+	v.UserNick = ""
+	poolUserInfoBaseDto.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.auction.vehicle.detect.report.update
 //
 // 检测服务-服务单报告信息更新
-func TaobaoAuctionVehicleDetectReportUpdate(clt *core.SDKClient, req *paimai.TaobaoAuctionVehicleDetectReportUpdateAPIRequest, session string) (*paimai.TaobaoAuctionVehicleDetectReportUpdateAPIResponse, error) {
-	var resp paimai.TaobaoAuctionVehicleDetectReportUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAuctionVehicleDetectReportUpdate(clt *core.SDKClient, req *paimai.TaobaoAuctionVehicleDetectReportUpdateAPIRequest, resp *paimai.TaobaoAuctionVehicleDetectReportUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

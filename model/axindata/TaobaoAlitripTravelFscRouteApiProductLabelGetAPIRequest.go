@@ -2,6 +2,7 @@ package axindata
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest struct {
 // NewTaobaoAlitripTravelFscRouteApiProductLabelGetRequest 初始化TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest对象
 func NewTaobaoAlitripTravelFscRouteApiProductLabelGetRequest() *TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest {
 	return &TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest) Reset() {
+	r._fscProductLabelQueryRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest) SetFscProductL
 // GetFscProductLabelQueryRequest FscProductLabelQueryRequest Getter
 func (r TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest) GetFscProductLabelQueryRequest() *FscProductLabelQueryRequest {
 	return r._fscProductLabelQueryRequest
+}
+
+var poolTaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripTravelFscRouteApiProductLabelGetRequest()
+	},
+}
+
+// GetTaobaoAlitripTravelFscRouteApiProductLabelGetRequest 从 sync.Pool 获取 TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest
+func GetTaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest() *TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest {
+	return poolTaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest.Get().(*TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest)
+}
+
+// ReleaseTaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest 将 TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest(v *TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest.Put(v)
 }

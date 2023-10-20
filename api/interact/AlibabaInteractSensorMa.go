@@ -9,11 +9,6 @@ import (
 // alibaba.interact.sensor.ma
 //
 // 码相关API
-func AlibabaInteractSensorMa(clt *core.SDKClient, req *interact.AlibabaInteractSensorMaAPIRequest, session string) (*interact.AlibabaInteractSensorMaAPIResponse, error) {
-	var resp interact.AlibabaInteractSensorMaAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaInteractSensorMa(clt *core.SDKClient, req *interact.AlibabaInteractSensorMaAPIRequest, resp *interact.AlibabaInteractSensorMaAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

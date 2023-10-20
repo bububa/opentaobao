@@ -2,6 +2,7 @@ package aliexpress
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AliexpressSocialInsDirectresultUpdateAPIResponse struct {
 	model.CommonResponse
 	AliexpressSocialInsDirectresultUpdateAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AliexpressSocialInsDirectresultUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliexpressSocialInsDirectresultUpdateAPIResponseModel).Reset()
 }
 
 // AliexpressSocialInsDirectresultUpdateAPIResponseModel is ISV更新INS私信发送的结果 成功返回结果
@@ -28,4 +35,30 @@ type AliexpressSocialInsDirectresultUpdateAPIResponseModel struct {
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
 	// 此次调用是否成功
 	Successs bool `json:"successs,omitempty" xml:"successs,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliexpressSocialInsDirectresultUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorCodee = ""
+	m.ErrorMsg = ""
+	m.Result = false
+	m.Successs = false
+}
+
+var poolAliexpressSocialInsDirectresultUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliexpressSocialInsDirectresultUpdateAPIResponse)
+	},
+}
+
+// GetAliexpressSocialInsDirectresultUpdateAPIResponse 从 sync.Pool 获取 AliexpressSocialInsDirectresultUpdateAPIResponse
+func GetAliexpressSocialInsDirectresultUpdateAPIResponse() *AliexpressSocialInsDirectresultUpdateAPIResponse {
+	return poolAliexpressSocialInsDirectresultUpdateAPIResponse.Get().(*AliexpressSocialInsDirectresultUpdateAPIResponse)
+}
+
+// ReleaseAliexpressSocialInsDirectresultUpdateAPIResponse 将 AliexpressSocialInsDirectresultUpdateAPIResponse 保存到 sync.Pool
+func ReleaseAliexpressSocialInsDirectresultUpdateAPIResponse(v *AliexpressSocialInsDirectresultUpdateAPIResponse) {
+	v.Reset()
+	poolAliexpressSocialInsDirectresultUpdateAPIResponse.Put(v)
 }

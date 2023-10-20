@@ -2,6 +2,7 @@ package aliqin
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAliqinFcVoiceNumDoublecallAPIResponse struct {
 	AlibabaAliqinFcVoiceNumDoublecallAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAliqinFcVoiceNumDoublecallAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAliqinFcVoiceNumDoublecallAPIResponseModel).Reset()
+}
+
 // AlibabaAliqinFcVoiceNumDoublecallAPIResponseModel is 多方通话 成功返回结果
 type AlibabaAliqinFcVoiceNumDoublecallAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_aliqin_fc_voice_num_doublecall_response"`
@@ -22,4 +29,27 @@ type AlibabaAliqinFcVoiceNumDoublecallAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回参数
 	Result *AlibabaAliqinFcVoiceNumDoublecallBizResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAliqinFcVoiceNumDoublecallAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAliqinFcVoiceNumDoublecallAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAliqinFcVoiceNumDoublecallAPIResponse)
+	},
+}
+
+// GetAlibabaAliqinFcVoiceNumDoublecallAPIResponse 从 sync.Pool 获取 AlibabaAliqinFcVoiceNumDoublecallAPIResponse
+func GetAlibabaAliqinFcVoiceNumDoublecallAPIResponse() *AlibabaAliqinFcVoiceNumDoublecallAPIResponse {
+	return poolAlibabaAliqinFcVoiceNumDoublecallAPIResponse.Get().(*AlibabaAliqinFcVoiceNumDoublecallAPIResponse)
+}
+
+// ReleaseAlibabaAliqinFcVoiceNumDoublecallAPIResponse 将 AlibabaAliqinFcVoiceNumDoublecallAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAliqinFcVoiceNumDoublecallAPIResponse(v *AlibabaAliqinFcVoiceNumDoublecallAPIResponse) {
+	v.Reset()
+	poolAlibabaAliqinFcVoiceNumDoublecallAPIResponse.Put(v)
 }

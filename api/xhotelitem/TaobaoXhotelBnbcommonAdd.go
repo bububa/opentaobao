@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.bnbcommon.add
 //
 // 通用调用top接口
-func TaobaoXhotelBnbcommonAdd(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBnbcommonAddAPIRequest, session string) (*xhotelitem.TaobaoXhotelBnbcommonAddAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelBnbcommonAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelBnbcommonAdd(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBnbcommonAddAPIRequest, resp *xhotelitem.TaobaoXhotelBnbcommonAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

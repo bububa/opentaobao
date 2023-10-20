@@ -1,5 +1,9 @@
 package eleenterpriserestaurant
 
+import (
+	"sync"
+)
+
 // Food 结构体
 type Food struct {
 	// 食物信息
@@ -30,4 +34,34 @@ type Food struct {
 	SatisfyRate int64 `json:"satisfy_rate,omitempty" xml:"satisfy_rate,omitempty"`
 	// 是否必点菜品
 	IsEssential bool `json:"is_essential,omitempty" xml:"is_essential,omitempty"`
+}
+
+var poolFood = sync.Pool{
+	New: func() any {
+		return new(Food)
+	},
+}
+
+// GetFood() 从对象池中获取Food
+func GetFood() *Food {
+	return poolFood.Get().(*Food)
+}
+
+// ReleaseFood 释放Food
+func ReleaseFood(v *Food) {
+	v.Specfoods = v.Specfoods[:0]
+	v.Specifications = v.Specifications[:0]
+	v.Attrs = v.Attrs[:0]
+	v.FoodId = ""
+	v.Rating = ""
+	v.Description = ""
+	v.Tips = ""
+	v.ImageUrl = ""
+	v.Name = ""
+	v.Activity = nil
+	v.MonthSales = 0
+	v.MinPurchase = 0
+	v.SatisfyRate = 0
+	v.IsEssential = false
+	poolFood.Put(v)
 }

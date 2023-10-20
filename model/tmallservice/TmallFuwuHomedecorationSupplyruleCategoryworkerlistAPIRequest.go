@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TmallFuwuHomedecorationSupplyruleCategoryworkerlistAPIRequest struct {
 // NewTmallFuwuHomedecorationSupplyruleCategoryworkerlistRequest 初始化TmallFuwuHomedecorationSupplyruleCategoryworkerlistAPIRequest对象
 func NewTmallFuwuHomedecorationSupplyruleCategoryworkerlistRequest() *TmallFuwuHomedecorationSupplyruleCategoryworkerlistAPIRequest {
 	return &TmallFuwuHomedecorationSupplyruleCategoryworkerlistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallFuwuHomedecorationSupplyruleCategoryworkerlistAPIRequest) Reset() {
+	r._uniqueNo = ""
+	r._pageIndex = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TmallFuwuHomedecorationSupplyruleCategoryworkerlistAPIRequest) SetPageS
 // GetPageSize PageSize Getter
 func (r TmallFuwuHomedecorationSupplyruleCategoryworkerlistAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTmallFuwuHomedecorationSupplyruleCategoryworkerlistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallFuwuHomedecorationSupplyruleCategoryworkerlistRequest()
+	},
+}
+
+// GetTmallFuwuHomedecorationSupplyruleCategoryworkerlistRequest 从 sync.Pool 获取 TmallFuwuHomedecorationSupplyruleCategoryworkerlistAPIRequest
+func GetTmallFuwuHomedecorationSupplyruleCategoryworkerlistAPIRequest() *TmallFuwuHomedecorationSupplyruleCategoryworkerlistAPIRequest {
+	return poolTmallFuwuHomedecorationSupplyruleCategoryworkerlistAPIRequest.Get().(*TmallFuwuHomedecorationSupplyruleCategoryworkerlistAPIRequest)
+}
+
+// ReleaseTmallFuwuHomedecorationSupplyruleCategoryworkerlistAPIRequest 将 TmallFuwuHomedecorationSupplyruleCategoryworkerlistAPIRequest 放入 sync.Pool
+func ReleaseTmallFuwuHomedecorationSupplyruleCategoryworkerlistAPIRequest(v *TmallFuwuHomedecorationSupplyruleCategoryworkerlistAPIRequest) {
+	v.Reset()
+	poolTmallFuwuHomedecorationSupplyruleCategoryworkerlistAPIRequest.Put(v)
 }

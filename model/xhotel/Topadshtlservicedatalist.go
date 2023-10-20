@@ -1,5 +1,9 @@
 package xhotel
 
+import (
+	"sync"
+)
+
 // Topadshtlservicedatalist 结构体
 type Topadshtlservicedatalist struct {
 	// 渠道名称
@@ -46,4 +50,42 @@ type Topadshtlservicedatalist struct {
 	ConfirmDuration int64 `json:"confirm_duration,omitempty" xml:"confirm_duration,omitempty"`
 	// 订单id
 	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
+}
+
+var poolTopadshtlservicedatalist = sync.Pool{
+	New: func() any {
+		return new(Topadshtlservicedatalist)
+	},
+}
+
+// GetTopadshtlservicedatalist() 从对象池中获取Topadshtlservicedatalist
+func GetTopadshtlservicedatalist() *Topadshtlservicedatalist {
+	return poolTopadshtlservicedatalist.Get().(*Topadshtlservicedatalist)
+}
+
+// ReleaseTopadshtlservicedatalist 释放Topadshtlservicedatalist
+func ReleaseTopadshtlservicedatalist(v *Topadshtlservicedatalist) {
+	v.Vendor = ""
+	v.Tel = ""
+	v.BookingSuccRateStr = ""
+	v.Name = ""
+	v.ReportDate = ""
+	v.OuterId = ""
+	v.IsCallNoOrder = ""
+	v.IsSpecTimeOrder = ""
+	v.CheckinDate = ""
+	v.IsNoRoomCompen = ""
+	v.HotelName = ""
+	v.IsSellerDeny = ""
+	v.CheckoutDate = ""
+	v.IsSellerRefund = ""
+	v.Supplier = ""
+	v.Hid = 0
+	v.SalesCountInCycle = 0
+	v.ClosedCountInCycle = 0
+	v.NoOrdCntInCycle = 0
+	v.NoRoomCntInCycle = 0
+	v.ConfirmDuration = 0
+	v.Tid = 0
+	poolTopadshtlservicedatalist.Put(v)
 }

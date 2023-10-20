@@ -9,11 +9,6 @@ import (
 // alitrip.policy.process
 //
 // 上传特殊类型的单程/往返政策
-func AlitripPolicyProcess(clt *core.SDKClient, req *flight.AlitripPolicyProcessAPIRequest, session string) (*flight.AlitripPolicyProcessAPIResponse, error) {
-	var resp flight.AlitripPolicyProcessAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripPolicyProcess(clt *core.SDKClient, req *flight.AlitripPolicyProcessAPIRequest, resp *flight.AlitripPolicyProcessAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

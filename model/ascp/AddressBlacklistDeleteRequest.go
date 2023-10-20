@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // AddressBlacklistDeleteRequest 结构体
 type AddressBlacklistDeleteRequest struct {
 	// 行政地址id（菜鸟地址库id）
@@ -24,4 +28,31 @@ type AddressBlacklistDeleteRequest struct {
 	RegionCode string `json:"region_code,omitempty" xml:"region_code,omitempty"`
 	// 时间戳（毫秒）
 	RequestTime int64 `json:"request_time,omitempty" xml:"request_time,omitempty"`
+}
+
+var poolAddressBlacklistDeleteRequest = sync.Pool{
+	New: func() any {
+		return new(AddressBlacklistDeleteRequest)
+	},
+}
+
+// GetAddressBlacklistDeleteRequest() 从对象池中获取AddressBlacklistDeleteRequest
+func GetAddressBlacklistDeleteRequest() *AddressBlacklistDeleteRequest {
+	return poolAddressBlacklistDeleteRequest.Get().(*AddressBlacklistDeleteRequest)
+}
+
+// ReleaseAddressBlacklistDeleteRequest 释放AddressBlacklistDeleteRequest
+func ReleaseAddressBlacklistDeleteRequest(v *AddressBlacklistDeleteRequest) {
+	v.AddressIds = v.AddressIds[:0]
+	v.AddressNames = v.AddressNames[:0]
+	v.RequestId = ""
+	v.SupplierId = ""
+	v.DeliveryCode = ""
+	v.ServiceType = ""
+	v.AbilityType = ""
+	v.ServiceScopeType = ""
+	v.AddressType = ""
+	v.RegionCode = ""
+	v.RequestTime = 0
+	poolAddressBlacklistDeleteRequest.Put(v)
 }

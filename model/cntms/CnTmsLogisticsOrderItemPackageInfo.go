@@ -1,5 +1,9 @@
 package cntms
 
+import (
+	"sync"
+)
+
 // CnTmsLogisticsOrderItemPackageInfo 结构体
 type CnTmsLogisticsOrderItemPackageInfo struct {
 	// 发货商品信息，最大50条记录
@@ -16,4 +20,27 @@ type CnTmsLogisticsOrderItemPackageInfo struct {
 	PackageHeight string `json:"package_height,omitempty" xml:"package_height,omitempty"`
 	// 包裹体积（立方厘米）
 	PackageVolume string `json:"package_volume,omitempty" xml:"package_volume,omitempty"`
+}
+
+var poolCnTmsLogisticsOrderItemPackageInfo = sync.Pool{
+	New: func() any {
+		return new(CnTmsLogisticsOrderItemPackageInfo)
+	},
+}
+
+// GetCnTmsLogisticsOrderItemPackageInfo() 从对象池中获取CnTmsLogisticsOrderItemPackageInfo
+func GetCnTmsLogisticsOrderItemPackageInfo() *CnTmsLogisticsOrderItemPackageInfo {
+	return poolCnTmsLogisticsOrderItemPackageInfo.Get().(*CnTmsLogisticsOrderItemPackageInfo)
+}
+
+// ReleaseCnTmsLogisticsOrderItemPackageInfo 释放CnTmsLogisticsOrderItemPackageInfo
+func ReleaseCnTmsLogisticsOrderItemPackageInfo(v *CnTmsLogisticsOrderItemPackageInfo) {
+	v.Items = v.Items[:0]
+	v.MailNo = ""
+	v.PackageWeight = ""
+	v.PackageLength = ""
+	v.PackageWidth = ""
+	v.PackageHeight = ""
+	v.PackageVolume = ""
+	poolCnTmsLogisticsOrderItemPackageInfo.Put(v)
 }

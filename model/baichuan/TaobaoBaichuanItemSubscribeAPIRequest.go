@@ -2,6 +2,7 @@ package baichuan
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoBaichuanItemSubscribeAPIRequest struct {
 // NewTaobaoBaichuanItemSubscribeRequest 初始化TaobaoBaichuanItemSubscribeAPIRequest对象
 func NewTaobaoBaichuanItemSubscribeRequest() *TaobaoBaichuanItemSubscribeAPIRequest {
 	return &TaobaoBaichuanItemSubscribeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBaichuanItemSubscribeAPIRequest) Reset() {
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoBaichuanItemSubscribeAPIRequest) SetItemId(_itemId int64) error {
 // GetItemId ItemId Getter
 func (r TaobaoBaichuanItemSubscribeAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolTaobaoBaichuanItemSubscribeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBaichuanItemSubscribeRequest()
+	},
+}
+
+// GetTaobaoBaichuanItemSubscribeRequest 从 sync.Pool 获取 TaobaoBaichuanItemSubscribeAPIRequest
+func GetTaobaoBaichuanItemSubscribeAPIRequest() *TaobaoBaichuanItemSubscribeAPIRequest {
+	return poolTaobaoBaichuanItemSubscribeAPIRequest.Get().(*TaobaoBaichuanItemSubscribeAPIRequest)
+}
+
+// ReleaseTaobaoBaichuanItemSubscribeAPIRequest 将 TaobaoBaichuanItemSubscribeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBaichuanItemSubscribeAPIRequest(v *TaobaoBaichuanItemSubscribeAPIRequest) {
+	v.Reset()
+	poolTaobaoBaichuanItemSubscribeAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // AgentConfirmBookRq 结构体
 type AgentConfirmBookRq struct {
 	// 乘客信息
@@ -28,4 +32,33 @@ type AgentConfirmBookRq struct {
 	AgentConfirmBookScheduleInfo *AgentConfirmBookScheduleInfo `json:"agent_confirm_book_schedule_info,omitempty" xml:"agent_confirm_book_schedule_info,omitempty"`
 	// 是否出票成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAgentConfirmBookRq = sync.Pool{
+	New: func() any {
+		return new(AgentConfirmBookRq)
+	},
+}
+
+// GetAgentConfirmBookRq() 从对象池中获取AgentConfirmBookRq
+func GetAgentConfirmBookRq() *AgentConfirmBookRq {
+	return poolAgentConfirmBookRq.Get().(*AgentConfirmBookRq)
+}
+
+// ReleaseAgentConfirmBookRq 释放AgentConfirmBookRq
+func ReleaseAgentConfirmBookRq(v *AgentConfirmBookRq) {
+	v.PassengerInfoList = v.PassengerInfoList[:0]
+	v.AgentOrderId = ""
+	v.BusInnerOrderId = ""
+	v.FetchTicketsAddress = ""
+	v.FetchTicketsNumber = ""
+	v.FetchTicketsPwd = ""
+	v.Message = ""
+	v.RiderSeatNumbers = ""
+	v.TicketWicket = ""
+	v.TicketCount = 0
+	v.TotalPrice = 0
+	v.AgentConfirmBookScheduleInfo = nil
+	v.Success = false
+	poolAgentConfirmBookRq.Put(v)
 }

@@ -2,6 +2,7 @@ package alihealthmdeer
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthMdeerScienceSynarticleAPIRequest struct {
 // NewAlibabaAlihealthMdeerScienceSynarticleRequest 初始化AlibabaAlihealthMdeerScienceSynarticleAPIRequest对象
 func NewAlibabaAlihealthMdeerScienceSynarticleRequest() *AlibabaAlihealthMdeerScienceSynarticleAPIRequest {
 	return &AlibabaAlihealthMdeerScienceSynarticleAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthMdeerScienceSynarticleAPIRequest) Reset() {
+	r._synArticleInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthMdeerScienceSynarticleAPIRequest) SetSynArticleInfo(_sy
 // GetSynArticleInfo SynArticleInfo Getter
 func (r AlibabaAlihealthMdeerScienceSynarticleAPIRequest) GetSynArticleInfo() *SynArticleInfo {
 	return r._synArticleInfo
+}
+
+var poolAlibabaAlihealthMdeerScienceSynarticleAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthMdeerScienceSynarticleRequest()
+	},
+}
+
+// GetAlibabaAlihealthMdeerScienceSynarticleRequest 从 sync.Pool 获取 AlibabaAlihealthMdeerScienceSynarticleAPIRequest
+func GetAlibabaAlihealthMdeerScienceSynarticleAPIRequest() *AlibabaAlihealthMdeerScienceSynarticleAPIRequest {
+	return poolAlibabaAlihealthMdeerScienceSynarticleAPIRequest.Get().(*AlibabaAlihealthMdeerScienceSynarticleAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthMdeerScienceSynarticleAPIRequest 将 AlibabaAlihealthMdeerScienceSynarticleAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthMdeerScienceSynarticleAPIRequest(v *AlibabaAlihealthMdeerScienceSynarticleAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthMdeerScienceSynarticleAPIRequest.Put(v)
 }

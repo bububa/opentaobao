@@ -1,5 +1,9 @@
 package scs
 
+import (
+	"sync"
+)
+
 // CampaignResultTopDto 结构体
 type CampaignResultTopDto struct {
 	// 单元id列表
@@ -86,4 +90,62 @@ type CampaignResultTopDto struct {
 	DayBudgetUnlimit bool `json:"day_budget_unlimit,omitempty" xml:"day_budget_unlimit,omitempty"`
 	// channelAdzoneDiscountSwitch
 	ChannelAdzoneDiscount bool `json:"channel_adzone_discount,omitempty" xml:"channel_adzone_discount,omitempty"`
+}
+
+var poolCampaignResultTopDto = sync.Pool{
+	New: func() any {
+		return new(CampaignResultTopDto)
+	},
+}
+
+// GetCampaignResultTopDto() 从对象池中获取CampaignResultTopDto
+func GetCampaignResultTopDto() *CampaignResultTopDto {
+	return poolCampaignResultTopDto.Get().(*CampaignResultTopDto)
+}
+
+// ReleaseCampaignResultTopDto 释放CampaignResultTopDto
+func ReleaseCampaignResultTopDto(v *CampaignResultTopDto) {
+	v.AdgroupIdList = v.AdgroupIdList[:0]
+	v.CreativeIdList = v.CreativeIdList[:0]
+	v.HeatItemIds = v.HeatItemIds[:0]
+	v.CampaignName = ""
+	v.CpcLimit = ""
+	v.DayBudget = ""
+	v.CyclicalBudget = ""
+	v.DmcBeginTime = ""
+	v.DmcEndTime = ""
+	v.MarketSceneType = ""
+	v.MaketSceneName = ""
+	v.ActivityId = ""
+	v.TopTime = ""
+	v.SettleCharge = ""
+	v.SourceChannel = ""
+	v.ConstraintValue = ""
+	v.StrategyCrowdInfo = ""
+	v.CampaignId = 0
+	v.CampaignGroupId = 0
+	v.CampaignType = 0
+	v.DmcPeriod = 0
+	v.SystemBid = 0
+	v.AutoBid = 0
+	v.SpeedType = 0
+	v.PeriodSpeedType = 0
+	v.SolutionType = 0
+	v.MarketScene = 0
+	v.MarketAim = 0
+	v.Status = 0
+	v.LifeCycle = 0
+	v.TargetBuyer = 0
+	v.SourceEntityId = 0
+	v.DmcType = 0
+	v.AutoDmc = 0
+	v.ConstraintType = 0
+	v.AvgDmc = 0
+	v.TotalBudget = 0
+	v.AbTestOpen = 0
+	v.MaterialId = 0
+	v.UserId = 0
+	v.DayBudgetUnlimit = false
+	v.ChannelAdzoneDiscount = false
+	poolCampaignResultTopDto.Put(v)
 }

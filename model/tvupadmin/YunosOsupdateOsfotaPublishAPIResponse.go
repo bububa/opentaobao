@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type YunosOsupdateOsfotaPublishAPIResponse struct {
 	YunosOsupdateOsfotaPublishAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *YunosOsupdateOsfotaPublishAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.YunosOsupdateOsfotaPublishAPIResponseModel).Reset()
+}
+
 // YunosOsupdateOsfotaPublishAPIResponseModel is 系统升级发布 成功返回结果
 type YunosOsupdateOsfotaPublishAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_osupdate_osfota_publish_response"`
@@ -22,4 +29,27 @@ type YunosOsupdateOsfotaPublishAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
 	Result *YunosOsupdateOsfotaPublishResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *YunosOsupdateOsfotaPublishAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolYunosOsupdateOsfotaPublishAPIResponse = sync.Pool{
+	New: func() any {
+		return new(YunosOsupdateOsfotaPublishAPIResponse)
+	},
+}
+
+// GetYunosOsupdateOsfotaPublishAPIResponse 从 sync.Pool 获取 YunosOsupdateOsfotaPublishAPIResponse
+func GetYunosOsupdateOsfotaPublishAPIResponse() *YunosOsupdateOsfotaPublishAPIResponse {
+	return poolYunosOsupdateOsfotaPublishAPIResponse.Get().(*YunosOsupdateOsfotaPublishAPIResponse)
+}
+
+// ReleaseYunosOsupdateOsfotaPublishAPIResponse 将 YunosOsupdateOsfotaPublishAPIResponse 保存到 sync.Pool
+func ReleaseYunosOsupdateOsfotaPublishAPIResponse(v *YunosOsupdateOsfotaPublishAPIResponse) {
+	v.Reset()
+	poolYunosOsupdateOsfotaPublishAPIResponse.Put(v)
 }

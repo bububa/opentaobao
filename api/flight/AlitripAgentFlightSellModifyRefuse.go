@@ -9,11 +9,6 @@ import (
 // alitrip.agent.flight.sell.modify.refuse
 //
 // 销售改签拒绝
-func AlitripAgentFlightSellModifyRefuse(clt *core.SDKClient, req *flight.AlitripAgentFlightSellModifyRefuseAPIRequest, session string) (*flight.AlitripAgentFlightSellModifyRefuseAPIResponse, error) {
-	var resp flight.AlitripAgentFlightSellModifyRefuseAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripAgentFlightSellModifyRefuse(clt *core.SDKClient, req *flight.AlitripAgentFlightSellModifyRefuseAPIRequest, resp *flight.AlitripAgentFlightSellModifyRefuseAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

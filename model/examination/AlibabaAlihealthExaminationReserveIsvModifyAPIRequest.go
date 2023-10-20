@@ -2,6 +2,7 @@ package examination
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaAlihealthExaminationReserveIsvModifyAPIRequest struct {
 // NewAlibabaAlihealthExaminationReserveIsvModifyRequest 初始化AlibabaAlihealthExaminationReserveIsvModifyAPIRequest对象
 func NewAlibabaAlihealthExaminationReserveIsvModifyRequest() *AlibabaAlihealthExaminationReserveIsvModifyAPIRequest {
 	return &AlibabaAlihealthExaminationReserveIsvModifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthExaminationReserveIsvModifyAPIRequest) Reset() {
+	r._reserveNumber = ""
+	r._uniqReserveCode = ""
+	r._reserveDate = ""
+	r._reserveTimeStart = ""
+	r._reserveTimeEnd = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaAlihealthExaminationReserveIsvModifyAPIRequest) SetReserveTimeEn
 // GetReserveTimeEnd ReserveTimeEnd Getter
 func (r AlibabaAlihealthExaminationReserveIsvModifyAPIRequest) GetReserveTimeEnd() string {
 	return r._reserveTimeEnd
+}
+
+var poolAlibabaAlihealthExaminationReserveIsvModifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthExaminationReserveIsvModifyRequest()
+	},
+}
+
+// GetAlibabaAlihealthExaminationReserveIsvModifyRequest 从 sync.Pool 获取 AlibabaAlihealthExaminationReserveIsvModifyAPIRequest
+func GetAlibabaAlihealthExaminationReserveIsvModifyAPIRequest() *AlibabaAlihealthExaminationReserveIsvModifyAPIRequest {
+	return poolAlibabaAlihealthExaminationReserveIsvModifyAPIRequest.Get().(*AlibabaAlihealthExaminationReserveIsvModifyAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthExaminationReserveIsvModifyAPIRequest 将 AlibabaAlihealthExaminationReserveIsvModifyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthExaminationReserveIsvModifyAPIRequest(v *AlibabaAlihealthExaminationReserveIsvModifyAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthExaminationReserveIsvModifyAPIRequest.Put(v)
 }

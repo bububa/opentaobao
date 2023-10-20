@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // FastBuyPosItemBo 结构体
 type FastBuyPosItemBo struct {
 	// 购买库存数量
@@ -18,4 +22,28 @@ type FastBuyPosItemBo struct {
 	LineId int64 `json:"line_id,omitempty" xml:"line_id,omitempty"`
 	// 一阶段优惠金额（商品实际优惠金额）：单价*数量-商家优惠
 	PromotionFee int64 `json:"promotion_fee,omitempty" xml:"promotion_fee,omitempty"`
+}
+
+var poolFastBuyPosItemBo = sync.Pool{
+	New: func() any {
+		return new(FastBuyPosItemBo)
+	},
+}
+
+// GetFastBuyPosItemBo() 从对象池中获取FastBuyPosItemBo
+func GetFastBuyPosItemBo() *FastBuyPosItemBo {
+	return poolFastBuyPosItemBo.Get().(*FastBuyPosItemBo)
+}
+
+// ReleaseFastBuyPosItemBo 释放FastBuyPosItemBo
+func ReleaseFastBuyPosItemBo(v *FastBuyPosItemBo) {
+	v.InvQuantity = ""
+	v.BarCode = ""
+	v.Title = ""
+	v.SkuCode = ""
+	v.ExtendInfo = ""
+	v.UnitPrice = 0
+	v.LineId = 0
+	v.PromotionFee = 0
+	poolFastBuyPosItemBo.Put(v)
 }

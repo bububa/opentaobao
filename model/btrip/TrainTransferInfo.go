@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // TrainTransferInfo 结构体
 type TrainTransferInfo struct {
 	// 出发站名
@@ -26,4 +30,32 @@ type TrainTransferInfo struct {
 	MiddleType string `json:"middleType,omitempty" xml:"middleType,omitempty"`
 	// 中转日期，yyyy-MM-dd
 	MiddleDate string `json:"middleDate,omitempty" xml:"middleDate,omitempty"`
+}
+
+var poolTrainTransferInfo = sync.Pool{
+	New: func() any {
+		return new(TrainTransferInfo)
+	},
+}
+
+// GetTrainTransferInfo() 从对象池中获取TrainTransferInfo
+func GetTrainTransferInfo() *TrainTransferInfo {
+	return poolTrainTransferInfo.Get().(*TrainTransferInfo)
+}
+
+// ReleaseTrainTransferInfo 释放TrainTransferInfo
+func ReleaseTrainTransferInfo(v *TrainTransferInfo) {
+	v.FromStationName = ""
+	v.ToStationName = ""
+	v.FromCityName = ""
+	v.ToCityName = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.CostTime = ""
+	v.WaitTime = ""
+	v.MiddleCity = ""
+	v.MiddleStation = ""
+	v.MiddleType = ""
+	v.MiddleDate = ""
+	poolTrainTransferInfo.Put(v)
 }

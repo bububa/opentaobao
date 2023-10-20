@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // ExpressInfo 结构体
 type ExpressInfo struct {
 	// 奇门仓储字段
@@ -12,4 +16,25 @@ type ExpressInfo struct {
 	BrandName string `json:"brandName,omitempty" xml:"brandName,omitempty"`
 	// 奇门仓储字段
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolExpressInfo = sync.Pool{
+	New: func() any {
+		return new(ExpressInfo)
+	},
+}
+
+// GetExpressInfo() 从对象池中获取ExpressInfo
+func GetExpressInfo() *ExpressInfo {
+	return poolExpressInfo.Get().(*ExpressInfo)
+}
+
+// ReleaseExpressInfo 释放ExpressInfo
+func ReleaseExpressInfo(v *ExpressInfo) {
+	v.ExpressCode = ""
+	v.ExpressName = ""
+	v.BrandCode = ""
+	v.BrandName = ""
+	v.Status = ""
+	poolExpressInfo.Put(v)
 }

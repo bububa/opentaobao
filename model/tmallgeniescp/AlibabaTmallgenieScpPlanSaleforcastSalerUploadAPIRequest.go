@@ -2,6 +2,7 @@ package tmallgeniescp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTmallgenieScpPlanSaleforcastSalerUploadAPIRequest struct {
 // NewAlibabaTmallgenieScpPlanSaleforcastSalerUploadRequest 初始化AlibabaTmallgenieScpPlanSaleforcastSalerUploadAPIRequest对象
 func NewAlibabaTmallgenieScpPlanSaleforcastSalerUploadRequest() *AlibabaTmallgenieScpPlanSaleforcastSalerUploadAPIRequest {
 	return &AlibabaTmallgenieScpPlanSaleforcastSalerUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTmallgenieScpPlanSaleforcastSalerUploadAPIRequest) Reset() {
+	r._salesForecastRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTmallgenieScpPlanSaleforcastSalerUploadAPIRequest) SetSalesForec
 // GetSalesForecastRequest SalesForecastRequest Getter
 func (r AlibabaTmallgenieScpPlanSaleforcastSalerUploadAPIRequest) GetSalesForecastRequest() *SalesForecastRequest {
 	return r._salesForecastRequest
+}
+
+var poolAlibabaTmallgenieScpPlanSaleforcastSalerUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTmallgenieScpPlanSaleforcastSalerUploadRequest()
+	},
+}
+
+// GetAlibabaTmallgenieScpPlanSaleforcastSalerUploadRequest 从 sync.Pool 获取 AlibabaTmallgenieScpPlanSaleforcastSalerUploadAPIRequest
+func GetAlibabaTmallgenieScpPlanSaleforcastSalerUploadAPIRequest() *AlibabaTmallgenieScpPlanSaleforcastSalerUploadAPIRequest {
+	return poolAlibabaTmallgenieScpPlanSaleforcastSalerUploadAPIRequest.Get().(*AlibabaTmallgenieScpPlanSaleforcastSalerUploadAPIRequest)
+}
+
+// ReleaseAlibabaTmallgenieScpPlanSaleforcastSalerUploadAPIRequest 将 AlibabaTmallgenieScpPlanSaleforcastSalerUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTmallgenieScpPlanSaleforcastSalerUploadAPIRequest(v *AlibabaTmallgenieScpPlanSaleforcastSalerUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaTmallgenieScpPlanSaleforcastSalerUploadAPIRequest.Put(v)
 }

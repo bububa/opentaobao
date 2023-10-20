@@ -2,6 +2,7 @@ package baichuan
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoBaichuanUserLoginbytokenAPIRequest struct {
 // NewTaobaoBaichuanUserLoginbytokenRequest 初始化TaobaoBaichuanUserLoginbytokenAPIRequest对象
 func NewTaobaoBaichuanUserLoginbytokenRequest() *TaobaoBaichuanUserLoginbytokenAPIRequest {
 	return &TaobaoBaichuanUserLoginbytokenAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBaichuanUserLoginbytokenAPIRequest) Reset() {
+	r._name = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoBaichuanUserLoginbytokenAPIRequest) SetName(_name string) error {
 // GetName Name Getter
 func (r TaobaoBaichuanUserLoginbytokenAPIRequest) GetName() string {
 	return r._name
+}
+
+var poolTaobaoBaichuanUserLoginbytokenAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBaichuanUserLoginbytokenRequest()
+	},
+}
+
+// GetTaobaoBaichuanUserLoginbytokenRequest 从 sync.Pool 获取 TaobaoBaichuanUserLoginbytokenAPIRequest
+func GetTaobaoBaichuanUserLoginbytokenAPIRequest() *TaobaoBaichuanUserLoginbytokenAPIRequest {
+	return poolTaobaoBaichuanUserLoginbytokenAPIRequest.Get().(*TaobaoBaichuanUserLoginbytokenAPIRequest)
+}
+
+// ReleaseTaobaoBaichuanUserLoginbytokenAPIRequest 将 TaobaoBaichuanUserLoginbytokenAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBaichuanUserLoginbytokenAPIRequest(v *TaobaoBaichuanUserLoginbytokenAPIRequest) {
+	v.Reset()
+	poolTaobaoBaichuanUserLoginbytokenAPIRequest.Put(v)
 }

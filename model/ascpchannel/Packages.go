@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // Packages 结构体
 type Packages struct {
 	// 商品信息
@@ -20,4 +24,29 @@ type Packages struct {
 	Weight string `json:"weight,omitempty" xml:"weight,omitempty"`
 	// 包裹体积 (升, L)
 	Volume string `json:"volume,omitempty" xml:"volume,omitempty"`
+}
+
+var poolPackages = sync.Pool{
+	New: func() any {
+		return new(Packages)
+	},
+}
+
+// GetPackages() 从对象池中获取Packages
+func GetPackages() *Packages {
+	return poolPackages.Get().(*Packages)
+}
+
+// ReleasePackages 释放Packages
+func ReleasePackages(v *Packages) {
+	v.Items = v.Items[:0]
+	v.LogisticsCode = ""
+	v.ExpressCode = ""
+	v.PackageCode = ""
+	v.Length = ""
+	v.Width = ""
+	v.Height = ""
+	v.Weight = ""
+	v.Volume = ""
+	poolPackages.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.servicecenter.workcard.evaluate
 //
 // 服务商售后鉴定服务,提供给服务商针对售后场景上门鉴定服务，鉴定成功则服务商完成履约，鉴定失败则取消工单
-func AlibabaServicecenterWorkcardEvaluate(clt *core.SDKClient, req *tmallsc.AlibabaServicecenterWorkcardEvaluateAPIRequest, session string) (*tmallsc.AlibabaServicecenterWorkcardEvaluateAPIResponse, error) {
-	var resp tmallsc.AlibabaServicecenterWorkcardEvaluateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaServicecenterWorkcardEvaluate(clt *core.SDKClient, req *tmallsc.AlibabaServicecenterWorkcardEvaluateAPIRequest, resp *tmallsc.AlibabaServicecenterWorkcardEvaluateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

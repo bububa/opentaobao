@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoUniversalbpReportQueryItemPromotionAPIRequest struct {
 // NewTaobaoUniversalbpReportQueryItemPromotionRequest 初始化TaobaoUniversalbpReportQueryItemPromotionAPIRequest对象
 func NewTaobaoUniversalbpReportQueryItemPromotionRequest() *TaobaoUniversalbpReportQueryItemPromotionAPIRequest {
 	return &TaobaoUniversalbpReportQueryItemPromotionAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpReportQueryItemPromotionAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r._topItemPromotionReportQueryVO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoUniversalbpReportQueryItemPromotionAPIRequest) SetTopItemPromotio
 // GetTopItemPromotionReportQueryVO TopItemPromotionReportQueryVO Getter
 func (r TaobaoUniversalbpReportQueryItemPromotionAPIRequest) GetTopItemPromotionReportQueryVO() *TopItemPromotionReportQueryVo {
 	return r._topItemPromotionReportQueryVO
+}
+
+var poolTaobaoUniversalbpReportQueryItemPromotionAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpReportQueryItemPromotionRequest()
+	},
+}
+
+// GetTaobaoUniversalbpReportQueryItemPromotionRequest 从 sync.Pool 获取 TaobaoUniversalbpReportQueryItemPromotionAPIRequest
+func GetTaobaoUniversalbpReportQueryItemPromotionAPIRequest() *TaobaoUniversalbpReportQueryItemPromotionAPIRequest {
+	return poolTaobaoUniversalbpReportQueryItemPromotionAPIRequest.Get().(*TaobaoUniversalbpReportQueryItemPromotionAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpReportQueryItemPromotionAPIRequest 将 TaobaoUniversalbpReportQueryItemPromotionAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpReportQueryItemPromotionAPIRequest(v *TaobaoUniversalbpReportQueryItemPromotionAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpReportQueryItemPromotionAPIRequest.Put(v)
 }

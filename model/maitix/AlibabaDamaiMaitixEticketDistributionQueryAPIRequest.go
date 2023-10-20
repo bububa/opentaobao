@@ -2,6 +2,7 @@ package maitix
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDamaiMaitixEticketDistributionQueryAPIRequest struct {
 // NewAlibabaDamaiMaitixEticketDistributionQueryRequest 初始化AlibabaDamaiMaitixEticketDistributionQueryAPIRequest对象
 func NewAlibabaDamaiMaitixEticketDistributionQueryRequest() *AlibabaDamaiMaitixEticketDistributionQueryAPIRequest {
 	return &AlibabaDamaiMaitixEticketDistributionQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDamaiMaitixEticketDistributionQueryAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDamaiMaitixEticketDistributionQueryAPIRequest) SetParam(_param *
 // GetParam Param Getter
 func (r AlibabaDamaiMaitixEticketDistributionQueryAPIRequest) GetParam() *EticketQueryParam {
 	return r._param
+}
+
+var poolAlibabaDamaiMaitixEticketDistributionQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDamaiMaitixEticketDistributionQueryRequest()
+	},
+}
+
+// GetAlibabaDamaiMaitixEticketDistributionQueryRequest 从 sync.Pool 获取 AlibabaDamaiMaitixEticketDistributionQueryAPIRequest
+func GetAlibabaDamaiMaitixEticketDistributionQueryAPIRequest() *AlibabaDamaiMaitixEticketDistributionQueryAPIRequest {
+	return poolAlibabaDamaiMaitixEticketDistributionQueryAPIRequest.Get().(*AlibabaDamaiMaitixEticketDistributionQueryAPIRequest)
+}
+
+// ReleaseAlibabaDamaiMaitixEticketDistributionQueryAPIRequest 将 AlibabaDamaiMaitixEticketDistributionQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDamaiMaitixEticketDistributionQueryAPIRequest(v *AlibabaDamaiMaitixEticketDistributionQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaDamaiMaitixEticketDistributionQueryAPIRequest.Put(v)
 }

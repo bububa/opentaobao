@@ -2,6 +2,7 @@ package flight
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripAgentCoordinateUploadAPIRequest struct {
 // NewAlitripAgentCoordinateUploadRequest 初始化AlitripAgentCoordinateUploadAPIRequest对象
 func NewAlitripAgentCoordinateUploadRequest() *AlitripAgentCoordinateUploadAPIRequest {
 	return &AlitripAgentCoordinateUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripAgentCoordinateUploadAPIRequest) Reset() {
+	r._fileContent = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripAgentCoordinateUploadAPIRequest) SetFileContent(_fileContent *mo
 // GetFileContent FileContent Getter
 func (r AlitripAgentCoordinateUploadAPIRequest) GetFileContent() *model.File {
 	return r._fileContent
+}
+
+var poolAlitripAgentCoordinateUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripAgentCoordinateUploadRequest()
+	},
+}
+
+// GetAlitripAgentCoordinateUploadRequest 从 sync.Pool 获取 AlitripAgentCoordinateUploadAPIRequest
+func GetAlitripAgentCoordinateUploadAPIRequest() *AlitripAgentCoordinateUploadAPIRequest {
+	return poolAlitripAgentCoordinateUploadAPIRequest.Get().(*AlitripAgentCoordinateUploadAPIRequest)
+}
+
+// ReleaseAlitripAgentCoordinateUploadAPIRequest 将 AlitripAgentCoordinateUploadAPIRequest 放入 sync.Pool
+func ReleaseAlitripAgentCoordinateUploadAPIRequest(v *AlitripAgentCoordinateUploadAPIRequest) {
+	v.Reset()
+	poolAlitripAgentCoordinateUploadAPIRequest.Put(v)
 }

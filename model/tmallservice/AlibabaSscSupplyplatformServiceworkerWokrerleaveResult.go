@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // AlibabaSscSupplyplatformServiceworkerWokrerleaveResult 结构体
 type AlibabaSscSupplyplatformServiceworkerWokrerleaveResult struct {
 	// 对外展示的错误信息
@@ -10,4 +14,24 @@ type AlibabaSscSupplyplatformServiceworkerWokrerleaveResult struct {
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaSscSupplyplatformServiceworkerWokrerleaveResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaSscSupplyplatformServiceworkerWokrerleaveResult)
+	},
+}
+
+// GetAlibabaSscSupplyplatformServiceworkerWokrerleaveResult() 从对象池中获取AlibabaSscSupplyplatformServiceworkerWokrerleaveResult
+func GetAlibabaSscSupplyplatformServiceworkerWokrerleaveResult() *AlibabaSscSupplyplatformServiceworkerWokrerleaveResult {
+	return poolAlibabaSscSupplyplatformServiceworkerWokrerleaveResult.Get().(*AlibabaSscSupplyplatformServiceworkerWokrerleaveResult)
+}
+
+// ReleaseAlibabaSscSupplyplatformServiceworkerWokrerleaveResult 释放AlibabaSscSupplyplatformServiceworkerWokrerleaveResult
+func ReleaseAlibabaSscSupplyplatformServiceworkerWokrerleaveResult(v *AlibabaSscSupplyplatformServiceworkerWokrerleaveResult) {
+	v.DisplayMsg = ""
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Success = false
+	poolAlibabaSscSupplyplatformServiceworkerWokrerleaveResult.Put(v)
 }

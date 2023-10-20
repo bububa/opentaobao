@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // TmsOrderCreateResponse 结构体
 type TmsOrderCreateResponse struct {
 	// 业务错误码
@@ -12,4 +16,25 @@ type TmsOrderCreateResponse struct {
 	BizException bool `json:"biz_exception,omitempty" xml:"biz_exception,omitempty"`
 	// 业务调用是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTmsOrderCreateResponse = sync.Pool{
+	New: func() any {
+		return new(TmsOrderCreateResponse)
+	},
+}
+
+// GetTmsOrderCreateResponse() 从对象池中获取TmsOrderCreateResponse
+func GetTmsOrderCreateResponse() *TmsOrderCreateResponse {
+	return poolTmsOrderCreateResponse.Get().(*TmsOrderCreateResponse)
+}
+
+// ReleaseTmsOrderCreateResponse 释放TmsOrderCreateResponse
+func ReleaseTmsOrderCreateResponse(v *TmsOrderCreateResponse) {
+	v.Code = ""
+	v.Data = ""
+	v.Message = ""
+	v.BizException = false
+	v.Success = false
+	poolTmsOrderCreateResponse.Put(v)
 }

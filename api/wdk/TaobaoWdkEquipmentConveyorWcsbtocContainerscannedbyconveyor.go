@@ -9,11 +9,6 @@ import (
 // taobao.wdk.equipment.conveyor.wcsbtoc.containerscannedbyconveyor
 //
 // 容器被悬挂链扫描
-func TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyor(clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIRequest, session string) (*wdk.TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse, error) {
-	var resp wdk.TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyor(clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIRequest, resp *wdk.TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripFlightDistributionRefundDetailAPIRequest struct {
 // NewAlitripBtripFlightDistributionRefundDetailRequest 初始化AlitripBtripFlightDistributionRefundDetailAPIRequest对象
 func NewAlitripBtripFlightDistributionRefundDetailRequest() *AlitripBtripFlightDistributionRefundDetailAPIRequest {
 	return &AlitripBtripFlightDistributionRefundDetailAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripFlightDistributionRefundDetailAPIRequest) Reset() {
+	r._paramBtripFlightOrderOperateCommonRq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripFlightDistributionRefundDetailAPIRequest) SetParamBtripFlig
 // GetParamBtripFlightOrderOperateCommonRq ParamBtripFlightOrderOperateCommonRq Getter
 func (r AlitripBtripFlightDistributionRefundDetailAPIRequest) GetParamBtripFlightOrderOperateCommonRq() *BtripFlightOrderOperateCommonRq {
 	return r._paramBtripFlightOrderOperateCommonRq
+}
+
+var poolAlitripBtripFlightDistributionRefundDetailAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripFlightDistributionRefundDetailRequest()
+	},
+}
+
+// GetAlitripBtripFlightDistributionRefundDetailRequest 从 sync.Pool 获取 AlitripBtripFlightDistributionRefundDetailAPIRequest
+func GetAlitripBtripFlightDistributionRefundDetailAPIRequest() *AlitripBtripFlightDistributionRefundDetailAPIRequest {
+	return poolAlitripBtripFlightDistributionRefundDetailAPIRequest.Get().(*AlitripBtripFlightDistributionRefundDetailAPIRequest)
+}
+
+// ReleaseAlitripBtripFlightDistributionRefundDetailAPIRequest 将 AlitripBtripFlightDistributionRefundDetailAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripFlightDistributionRefundDetailAPIRequest(v *AlitripBtripFlightDistributionRefundDetailAPIRequest) {
+	v.Reset()
+	poolAlitripBtripFlightDistributionRefundDetailAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkSopoPushTriggerAPIRequest struct {
 // NewAlibabaWdkSopoPushTriggerRequest 初始化AlibabaWdkSopoPushTriggerAPIRequest对象
 func NewAlibabaWdkSopoPushTriggerRequest() *AlibabaWdkSopoPushTriggerAPIRequest {
 	return &AlibabaWdkSopoPushTriggerAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkSopoPushTriggerAPIRequest) Reset() {
+	r._wdkOpenPushSoPoRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkSopoPushTriggerAPIRequest) SetWdkOpenPushSoPoRequest(_wdkOpen
 // GetWdkOpenPushSoPoRequest WdkOpenPushSoPoRequest Getter
 func (r AlibabaWdkSopoPushTriggerAPIRequest) GetWdkOpenPushSoPoRequest() *WdkOpenPushSoPoRequest {
 	return r._wdkOpenPushSoPoRequest
+}
+
+var poolAlibabaWdkSopoPushTriggerAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkSopoPushTriggerRequest()
+	},
+}
+
+// GetAlibabaWdkSopoPushTriggerRequest 从 sync.Pool 获取 AlibabaWdkSopoPushTriggerAPIRequest
+func GetAlibabaWdkSopoPushTriggerAPIRequest() *AlibabaWdkSopoPushTriggerAPIRequest {
+	return poolAlibabaWdkSopoPushTriggerAPIRequest.Get().(*AlibabaWdkSopoPushTriggerAPIRequest)
+}
+
+// ReleaseAlibabaWdkSopoPushTriggerAPIRequest 将 AlibabaWdkSopoPushTriggerAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkSopoPushTriggerAPIRequest(v *AlibabaWdkSopoPushTriggerAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkSopoPushTriggerAPIRequest.Put(v)
 }

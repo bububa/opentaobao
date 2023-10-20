@@ -1,5 +1,9 @@
 package smartstore
 
+import (
+	"sync"
+)
+
 // Storelist 结构体
 type Storelist struct {
 	// 需要的设备code列表
@@ -26,4 +30,32 @@ type Storelist struct {
 	MallName string `json:"mall_name,omitempty" xml:"mall_name,omitempty"`
 	// 门店id
 	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
+}
+
+var poolStorelist = sync.Pool{
+	New: func() any {
+		return new(Storelist)
+	},
+}
+
+// GetStorelist() 从对象池中获取Storelist
+func GetStorelist() *Storelist {
+	return poolStorelist.Get().(*Storelist)
+}
+
+// ReleaseStorelist 释放Storelist
+func ReleaseStorelist(v *Storelist) {
+	v.NeedDeviceCodeList = v.NeedDeviceCodeList[:0]
+	v.HasDeviceCodeList = v.HasDeviceCodeList[:0]
+	v.MallIntroduce = ""
+	v.MallProvince = ""
+	v.StoreName = ""
+	v.StoreAddress = ""
+	v.MallAddress = ""
+	v.MallArea = ""
+	v.MallCity = ""
+	v.AppKey = ""
+	v.MallName = ""
+	v.StoreId = 0
+	poolStorelist.Put(v)
 }

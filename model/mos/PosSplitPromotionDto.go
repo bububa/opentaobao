@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // PosSplitPromotionDto 结构体
 type PosSplitPromotionDto struct {
 	// 券码
@@ -22,4 +26,30 @@ type PosSplitPromotionDto struct {
 	SplitAmount int64 `json:"split_amount,omitempty" xml:"split_amount,omitempty"`
 	// 1:支付，2:优惠
 	PayType int64 `json:"pay_type,omitempty" xml:"pay_type,omitempty"`
+}
+
+var poolPosSplitPromotionDto = sync.Pool{
+	New: func() any {
+		return new(PosSplitPromotionDto)
+	},
+}
+
+// GetPosSplitPromotionDto() 从对象池中获取PosSplitPromotionDto
+func GetPosSplitPromotionDto() *PosSplitPromotionDto {
+	return poolPosSplitPromotionDto.Get().(*PosSplitPromotionDto)
+}
+
+// ReleasePosSplitPromotionDto 释放PosSplitPromotionDto
+func ReleasePosSplitPromotionDto(v *PosSplitPromotionDto) {
+	v.CouponCode = ""
+	v.SettleCode = ""
+	v.PayTime = ""
+	v.Payment = ""
+	v.SubPayment = ""
+	v.ExtendParams = ""
+	v.GoodsLineNo = 0
+	v.PaymentLineNo = 0
+	v.SplitAmount = 0
+	v.PayType = 0
+	poolPosSplitPromotionDto.Put(v)
 }

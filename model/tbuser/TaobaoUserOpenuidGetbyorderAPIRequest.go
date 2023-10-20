@@ -2,6 +2,7 @@ package tbuser
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoUserOpenuidGetbyorderAPIRequest struct {
 // NewTaobaoUserOpenuidGetbyorderRequest 初始化TaobaoUserOpenuidGetbyorderAPIRequest对象
 func NewTaobaoUserOpenuidGetbyorderRequest() *TaobaoUserOpenuidGetbyorderAPIRequest {
 	return &TaobaoUserOpenuidGetbyorderAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUserOpenuidGetbyorderAPIRequest) Reset() {
+	r._tidInfos = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoUserOpenuidGetbyorderAPIRequest) SetTidInfos(_tidInfos *BuyerOrde
 // GetTidInfos TidInfos Getter
 func (r TaobaoUserOpenuidGetbyorderAPIRequest) GetTidInfos() *BuyerOrder {
 	return r._tidInfos
+}
+
+var poolTaobaoUserOpenuidGetbyorderAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUserOpenuidGetbyorderRequest()
+	},
+}
+
+// GetTaobaoUserOpenuidGetbyorderRequest 从 sync.Pool 获取 TaobaoUserOpenuidGetbyorderAPIRequest
+func GetTaobaoUserOpenuidGetbyorderAPIRequest() *TaobaoUserOpenuidGetbyorderAPIRequest {
+	return poolTaobaoUserOpenuidGetbyorderAPIRequest.Get().(*TaobaoUserOpenuidGetbyorderAPIRequest)
+}
+
+// ReleaseTaobaoUserOpenuidGetbyorderAPIRequest 将 TaobaoUserOpenuidGetbyorderAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUserOpenuidGetbyorderAPIRequest(v *TaobaoUserOpenuidGetbyorderAPIRequest) {
+	v.Reset()
+	poolTaobaoUserOpenuidGetbyorderAPIRequest.Put(v)
 }

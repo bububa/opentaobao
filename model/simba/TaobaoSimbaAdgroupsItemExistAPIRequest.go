@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoSimbaAdgroupsItemExistAPIRequest struct {
 // NewTaobaoSimbaAdgroupsItemExistRequest 初始化TaobaoSimbaAdgroupsItemExistAPIRequest对象
 func NewTaobaoSimbaAdgroupsItemExistRequest() *TaobaoSimbaAdgroupsItemExistAPIRequest {
 	return &TaobaoSimbaAdgroupsItemExistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaAdgroupsItemExistAPIRequest) Reset() {
+	r._nick = ""
+	r._productId = 0
+	r._campaignId = 0
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoSimbaAdgroupsItemExistAPIRequest) SetItemId(_itemId int64) error 
 // GetItemId ItemId Getter
 func (r TaobaoSimbaAdgroupsItemExistAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolTaobaoSimbaAdgroupsItemExistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaAdgroupsItemExistRequest()
+	},
+}
+
+// GetTaobaoSimbaAdgroupsItemExistRequest 从 sync.Pool 获取 TaobaoSimbaAdgroupsItemExistAPIRequest
+func GetTaobaoSimbaAdgroupsItemExistAPIRequest() *TaobaoSimbaAdgroupsItemExistAPIRequest {
+	return poolTaobaoSimbaAdgroupsItemExistAPIRequest.Get().(*TaobaoSimbaAdgroupsItemExistAPIRequest)
+}
+
+// ReleaseTaobaoSimbaAdgroupsItemExistAPIRequest 将 TaobaoSimbaAdgroupsItemExistAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaAdgroupsItemExistAPIRequest(v *TaobaoSimbaAdgroupsItemExistAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaAdgroupsItemExistAPIRequest.Put(v)
 }

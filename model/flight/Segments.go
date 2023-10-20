@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // Segments 结构体
 type Segments struct {
 	// 舱等  (0:头等舱 1:商务舱 2:经济舱 3:超值经济舱 4:标准经济舱 5:超级经济舱)
@@ -30,4 +34,34 @@ type Segments struct {
 	OdIndex int64 `json:"od_index,omitempty" xml:"od_index,omitempty"`
 	// 公布票面价
 	SegPatPrice int64 `json:"seg_pat_price,omitempty" xml:"seg_pat_price,omitempty"`
+}
+
+var poolSegments = sync.Pool{
+	New: func() any {
+		return new(Segments)
+	},
+}
+
+// GetSegments() 从对象池中获取Segments
+func GetSegments() *Segments {
+	return poolSegments.Get().(*Segments)
+}
+
+// ReleaseSegments 释放Segments
+func ReleaseSegments(v *Segments) {
+	v.CabinClass = ""
+	v.FlightNo = ""
+	v.DepTime = ""
+	v.ArrCity = ""
+	v.DepCity = ""
+	v.Cabin = ""
+	v.ArrAirport = ""
+	v.DepAirport = ""
+	v.ArrTime = ""
+	v.OperatingAirline = ""
+	v.OperatingFlightNo = ""
+	v.SegmentIndex = 0
+	v.OdIndex = 0
+	v.SegPatPrice = 0
+	poolSegments.Put(v)
 }

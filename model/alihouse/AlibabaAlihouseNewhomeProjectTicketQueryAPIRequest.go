@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeProjectTicketQueryAPIRequest struct {
 // NewAlibabaAlihouseNewhomeProjectTicketQueryRequest 初始化AlibabaAlihouseNewhomeProjectTicketQueryAPIRequest对象
 func NewAlibabaAlihouseNewhomeProjectTicketQueryRequest() *AlibabaAlihouseNewhomeProjectTicketQueryAPIRequest {
 	return &AlibabaAlihouseNewhomeProjectTicketQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeProjectTicketQueryAPIRequest) Reset() {
+	r._queryDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomeProjectTicketQueryAPIRequest) SetQueryDto(_queryD
 // GetQueryDto QueryDto Getter
 func (r AlibabaAlihouseNewhomeProjectTicketQueryAPIRequest) GetQueryDto() *ProjectVerifyTicketQueryDto {
 	return r._queryDto
+}
+
+var poolAlibabaAlihouseNewhomeProjectTicketQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeProjectTicketQueryRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeProjectTicketQueryRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeProjectTicketQueryAPIRequest
+func GetAlibabaAlihouseNewhomeProjectTicketQueryAPIRequest() *AlibabaAlihouseNewhomeProjectTicketQueryAPIRequest {
+	return poolAlibabaAlihouseNewhomeProjectTicketQueryAPIRequest.Get().(*AlibabaAlihouseNewhomeProjectTicketQueryAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeProjectTicketQueryAPIRequest 将 AlibabaAlihouseNewhomeProjectTicketQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeProjectTicketQueryAPIRequest(v *AlibabaAlihouseNewhomeProjectTicketQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeProjectTicketQueryAPIRequest.Put(v)
 }

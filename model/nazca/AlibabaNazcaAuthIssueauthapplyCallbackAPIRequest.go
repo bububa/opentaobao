@@ -2,6 +2,7 @@ package nazca
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest struct {
 // NewAlibabaNazcaAuthIssueauthapplyCallbackRequest 初始化AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest对象
 func NewAlibabaNazcaAuthIssueauthapplyCallbackRequest() *AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest {
 	return &AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest) Reset() {
+	r._contractNum = ""
+	r._issueOrg = ""
+	r._platformUserId = ""
+	r._reportUrl = ""
+	r._status = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest) SetStatus(_status str
 // GetStatus Status Getter
 func (r AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest) GetStatus() string {
 	return r._status
+}
+
+var poolAlibabaNazcaAuthIssueauthapplyCallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaNazcaAuthIssueauthapplyCallbackRequest()
+	},
+}
+
+// GetAlibabaNazcaAuthIssueauthapplyCallbackRequest 从 sync.Pool 获取 AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest
+func GetAlibabaNazcaAuthIssueauthapplyCallbackAPIRequest() *AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest {
+	return poolAlibabaNazcaAuthIssueauthapplyCallbackAPIRequest.Get().(*AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest)
+}
+
+// ReleaseAlibabaNazcaAuthIssueauthapplyCallbackAPIRequest 将 AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest 放入 sync.Pool
+func ReleaseAlibabaNazcaAuthIssueauthapplyCallbackAPIRequest(v *AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest) {
+	v.Reset()
+	poolAlibabaNazcaAuthIssueauthapplyCallbackAPIRequest.Put(v)
 }

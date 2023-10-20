@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BtripCrediAmountRs 结构体
 type BtripCrediAmountRs struct {
 	// 已使用额度，分
@@ -16,4 +20,27 @@ type BtripCrediAmountRs struct {
 	AvailableAmount int64 `json:"available_amount,omitempty" xml:"available_amount,omitempty"`
 	// 账户状态1:激活 0：冻结
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolBtripCrediAmountRs = sync.Pool{
+	New: func() any {
+		return new(BtripCrediAmountRs)
+	},
+}
+
+// GetBtripCrediAmountRs() 从对象池中获取BtripCrediAmountRs
+func GetBtripCrediAmountRs() *BtripCrediAmountRs {
+	return poolBtripCrediAmountRs.Get().(*BtripCrediAmountRs)
+}
+
+// ReleaseBtripCrediAmountRs 释放BtripCrediAmountRs
+func ReleaseBtripCrediAmountRs(v *BtripCrediAmountRs) {
+	v.UsedCreditLimit = ""
+	v.StatusDesc = ""
+	v.CreditLimit = 0
+	v.FreezeAmount = 0
+	v.CreditBalance = 0
+	v.AvailableAmount = 0
+	v.Status = 0
+	poolBtripCrediAmountRs.Put(v)
 }

@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceResultModel 结构体
 type AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceResultModel struct {
 	// 成功失败编码
@@ -10,4 +14,24 @@ type AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceResultModel struct {
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
 	// 成功失败标记
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceResultModel = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceResultModel)
+	},
+}
+
+// GetAlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceResultModel() 从对象池中获取AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceResultModel
+func GetAlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceResultModel() *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceResultModel {
+	return poolAlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceResultModel.Get().(*AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceResultModel)
+}
+
+// ReleaseAlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceResultModel 释放AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceResultModel
+func ReleaseAlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceResultModel(v *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceResultModel) {
+	v.MsgCode = ""
+	v.MsgInfo = ""
+	v.Model = false
+	v.Success = false
+	poolAlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceResultModel.Put(v)
 }

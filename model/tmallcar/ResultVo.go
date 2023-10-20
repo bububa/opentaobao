@@ -1,6 +1,8 @@
 package tmallcar
 
 import (
+	"sync"
+
 	"github.com/bububa/opentaobao/model"
 )
 
@@ -20,4 +22,27 @@ type ResultVo struct {
 	Object bool `json:"object,omitempty" xml:"object,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolResultVo = sync.Pool{
+	New: func() any {
+		return new(ResultVo)
+	},
+}
+
+// GetResultVo() 从对象池中获取ResultVo
+func GetResultVo() *ResultVo {
+	return poolResultVo.Get().(*ResultVo)
+}
+
+// ReleaseResultVo 释放ResultVo
+func ReleaseResultVo(v *ResultVo) {
+	v.MsgCode = ""
+	v.MsgInfo = ""
+	v.CostTime = 0
+	v.GmtCurrentTime = 0
+	v.Objectbytes = nil
+	v.Object = false
+	v.Success = false
+	poolResultVo.Put(v)
 }

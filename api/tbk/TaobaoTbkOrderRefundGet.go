@@ -9,11 +9,6 @@ import (
 // taobao.tbk.order.refund.get
 //
 // 淘宝客账户下全量维权退款订单查询
-func TaobaoTbkOrderRefundGet(clt *core.SDKClient, req *tbk.TaobaoTbkOrderRefundGetAPIRequest, session string) (*tbk.TaobaoTbkOrderRefundGetAPIResponse, error) {
-	var resp tbk.TaobaoTbkOrderRefundGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTbkOrderRefundGet(clt *core.SDKClient, req *tbk.TaobaoTbkOrderRefundGetAPIRequest, resp *tbk.TaobaoTbkOrderRefundGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

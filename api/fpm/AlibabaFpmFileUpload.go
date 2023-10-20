@@ -9,11 +9,6 @@ import (
 // alibaba.fpm.file.upload
 //
 // 结算单文件上传
-func AlibabaFpmFileUpload(clt *core.SDKClient, req *fpm.AlibabaFpmFileUploadAPIRequest, session string) (*fpm.AlibabaFpmFileUploadAPIResponse, error) {
-	var resp fpm.AlibabaFpmFileUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaFpmFileUpload(clt *core.SDKClient, req *fpm.AlibabaFpmFileUploadAPIRequest, resp *fpm.AlibabaFpmFileUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

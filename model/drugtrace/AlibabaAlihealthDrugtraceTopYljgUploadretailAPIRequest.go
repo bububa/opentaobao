@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -51,8 +52,30 @@ type AlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest struct {
 // NewAlibabaAlihealthDrugtraceTopYljgUploadretailRequest 初始化AlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest对象
 func NewAlibabaAlihealthDrugtraceTopYljgUploadretailRequest() *AlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest {
 	return &AlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(17),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest) Reset() {
+	r._traceCodes = r._traceCodes[:0]
+	r._billCode = ""
+	r._billTime = ""
+	r._refUserId = ""
+	r._fromUserId = ""
+	r._operIcCode = ""
+	r._operIcName = ""
+	r._customerIdType = ""
+	r._customerId = ""
+	r._userTel = ""
+	r._networkBillFlag = ""
+	r._medicDoctor = ""
+	r._medicDispenser = ""
+	r._userName = ""
+	r._userAgent = ""
+	r._billType = 0
+	r._physicType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -291,4 +314,21 @@ func (r *AlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest) SetPhysicType(_
 // GetPhysicType PhysicType Getter
 func (r AlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest) GetPhysicType() int64 {
 	return r._physicType
+}
+
+var poolAlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugtraceTopYljgUploadretailRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugtraceTopYljgUploadretailRequest 从 sync.Pool 获取 AlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest
+func GetAlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest() *AlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest {
+	return poolAlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest.Get().(*AlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest 将 AlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest(v *AlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest.Put(v)
 }

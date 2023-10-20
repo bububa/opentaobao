@@ -2,6 +2,7 @@ package eticket
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoEticketMerchantTbmaGetAPIRequest struct {
 // NewTaobaoEticketMerchantTbmaGetRequest 初始化TaobaoEticketMerchantTbmaGetAPIRequest对象
 func NewTaobaoEticketMerchantTbmaGetRequest() *TaobaoEticketMerchantTbmaGetAPIRequest {
 	return &TaobaoEticketMerchantTbmaGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoEticketMerchantTbmaGetAPIRequest) Reset() {
+	r._queryTbMaCallbackReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoEticketMerchantTbmaGetAPIRequest) SetQueryTbMaCallbackReq(_queryT
 // GetQueryTbMaCallbackReq QueryTbMaCallbackReq Getter
 func (r TaobaoEticketMerchantTbmaGetAPIRequest) GetQueryTbMaCallbackReq() *QueryTbMaCallbackReq {
 	return r._queryTbMaCallbackReq
+}
+
+var poolTaobaoEticketMerchantTbmaGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoEticketMerchantTbmaGetRequest()
+	},
+}
+
+// GetTaobaoEticketMerchantTbmaGetRequest 从 sync.Pool 获取 TaobaoEticketMerchantTbmaGetAPIRequest
+func GetTaobaoEticketMerchantTbmaGetAPIRequest() *TaobaoEticketMerchantTbmaGetAPIRequest {
+	return poolTaobaoEticketMerchantTbmaGetAPIRequest.Get().(*TaobaoEticketMerchantTbmaGetAPIRequest)
+}
+
+// ReleaseTaobaoEticketMerchantTbmaGetAPIRequest 将 TaobaoEticketMerchantTbmaGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoEticketMerchantTbmaGetAPIRequest(v *TaobaoEticketMerchantTbmaGetAPIRequest) {
+	v.Reset()
+	poolTaobaoEticketMerchantTbmaGetAPIRequest.Put(v)
 }

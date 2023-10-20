@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoSimbaSalestarAdgroupDeleteAPIRequest struct {
 // NewTaobaoSimbaSalestarAdgroupDeleteRequest 初始化TaobaoSimbaSalestarAdgroupDeleteAPIRequest对象
 func NewTaobaoSimbaSalestarAdgroupDeleteRequest() *TaobaoSimbaSalestarAdgroupDeleteAPIRequest {
 	return &TaobaoSimbaSalestarAdgroupDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaSalestarAdgroupDeleteAPIRequest) Reset() {
+	r._nick = ""
+	r._adgroupId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoSimbaSalestarAdgroupDeleteAPIRequest) SetAdgroupId(_adgroupId int
 // GetAdgroupId AdgroupId Getter
 func (r TaobaoSimbaSalestarAdgroupDeleteAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
+}
+
+var poolTaobaoSimbaSalestarAdgroupDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaSalestarAdgroupDeleteRequest()
+	},
+}
+
+// GetTaobaoSimbaSalestarAdgroupDeleteRequest 从 sync.Pool 获取 TaobaoSimbaSalestarAdgroupDeleteAPIRequest
+func GetTaobaoSimbaSalestarAdgroupDeleteAPIRequest() *TaobaoSimbaSalestarAdgroupDeleteAPIRequest {
+	return poolTaobaoSimbaSalestarAdgroupDeleteAPIRequest.Get().(*TaobaoSimbaSalestarAdgroupDeleteAPIRequest)
+}
+
+// ReleaseTaobaoSimbaSalestarAdgroupDeleteAPIRequest 将 TaobaoSimbaSalestarAdgroupDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaSalestarAdgroupDeleteAPIRequest(v *TaobaoSimbaSalestarAdgroupDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaSalestarAdgroupDeleteAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package cmns
 
+import (
+	"sync"
+)
+
 // Pagination 结构体
 type Pagination struct {
 	// 总条数
@@ -10,4 +14,24 @@ type Pagination struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 分页每页数据集数
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
+}
+
+var poolPagination = sync.Pool{
+	New: func() any {
+		return new(Pagination)
+	},
+}
+
+// GetPagination() 从对象池中获取Pagination
+func GetPagination() *Pagination {
+	return poolPagination.Get().(*Pagination)
+}
+
+// ReleasePagination 释放Pagination
+func ReleasePagination(v *Pagination) {
+	v.TotalCount = 0
+	v.TotalPageCount = 0
+	v.PageSize = 0
+	v.PageIndex = 0
+	poolPagination.Put(v)
 }

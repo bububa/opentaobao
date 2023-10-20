@@ -2,6 +2,7 @@ package jym
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaJymIndustryRecommendGoodsGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaJymIndustryRecommendGoodsGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaJymIndustryRecommendGoodsGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaJymIndustryRecommendGoodsGetAPIResponseModel).Reset()
 }
 
 // AlibabaJymIndustryRecommendGoodsGetAPIResponseModel is 获取交易猫推荐商品 成功返回结果
@@ -32,4 +39,32 @@ type AlibabaJymIndustryRecommendGoodsGetAPIResponseModel struct {
 	Result *JymRecommendGoodsInfoDto `json:"result,omitempty" xml:"result,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaJymIndustryRecommendGoodsGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.SubCodeType = ""
+	m.SubExtraErrMsg = ""
+	m.StateCode = ""
+	m.ExtraErrMsg = ""
+	m.Result = nil
+	m.IsSuccess = false
+}
+
+var poolAlibabaJymIndustryRecommendGoodsGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaJymIndustryRecommendGoodsGetAPIResponse)
+	},
+}
+
+// GetAlibabaJymIndustryRecommendGoodsGetAPIResponse 从 sync.Pool 获取 AlibabaJymIndustryRecommendGoodsGetAPIResponse
+func GetAlibabaJymIndustryRecommendGoodsGetAPIResponse() *AlibabaJymIndustryRecommendGoodsGetAPIResponse {
+	return poolAlibabaJymIndustryRecommendGoodsGetAPIResponse.Get().(*AlibabaJymIndustryRecommendGoodsGetAPIResponse)
+}
+
+// ReleaseAlibabaJymIndustryRecommendGoodsGetAPIResponse 将 AlibabaJymIndustryRecommendGoodsGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaJymIndustryRecommendGoodsGetAPIResponse(v *AlibabaJymIndustryRecommendGoodsGetAPIResponse) {
+	v.Reset()
+	poolAlibabaJymIndustryRecommendGoodsGetAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // TmallCarLeaseRiskcallbackResult 结构体
 type TmallCarLeaseRiskcallbackResult struct {
 	// 错误码
@@ -18,4 +22,28 @@ type TmallCarLeaseRiskcallbackResult struct {
 	Object bool `json:"object,omitempty" xml:"object,omitempty"`
 	// 成功与否
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTmallCarLeaseRiskcallbackResult = sync.Pool{
+	New: func() any {
+		return new(TmallCarLeaseRiskcallbackResult)
+	},
+}
+
+// GetTmallCarLeaseRiskcallbackResult() 从对象池中获取TmallCarLeaseRiskcallbackResult
+func GetTmallCarLeaseRiskcallbackResult() *TmallCarLeaseRiskcallbackResult {
+	return poolTmallCarLeaseRiskcallbackResult.Get().(*TmallCarLeaseRiskcallbackResult)
+}
+
+// ReleaseTmallCarLeaseRiskcallbackResult 释放TmallCarLeaseRiskcallbackResult
+func ReleaseTmallCarLeaseRiskcallbackResult(v *TmallCarLeaseRiskcallbackResult) {
+	v.ErrorCode = ""
+	v.ErrorMessage = ""
+	v.MsgCode = ""
+	v.MsgInfo = ""
+	v.CostTime = 0
+	v.GmtCurrentTime = 0
+	v.Object = false
+	v.Success = false
+	poolTmallCarLeaseRiskcallbackResult.Put(v)
 }

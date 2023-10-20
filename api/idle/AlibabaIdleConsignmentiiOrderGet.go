@@ -9,11 +9,6 @@ import (
 // alibaba.idle.consignmentii.order.get
 //
 // 闲鱼寄卖V2服务商以闲鱼交易买家身份查询订单信息
-func AlibabaIdleConsignmentiiOrderGet(clt *core.SDKClient, req *idle.AlibabaIdleConsignmentiiOrderGetAPIRequest, session string) (*idle.AlibabaIdleConsignmentiiOrderGetAPIResponse, error) {
-	var resp idle.AlibabaIdleConsignmentiiOrderGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleConsignmentiiOrderGet(clt *core.SDKClient, req *idle.AlibabaIdleConsignmentiiOrderGetAPIRequest, resp *idle.AlibabaIdleConsignmentiiOrderGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

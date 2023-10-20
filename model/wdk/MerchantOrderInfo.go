@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // MerchantOrderInfo 结构体
 type MerchantOrderInfo struct {
 	// 支付方式
@@ -52,4 +56,45 @@ type MerchantOrderInfo struct {
 	TotalAmt int64 `json:"total_amt,omitempty" xml:"total_amt,omitempty"`
 	// 上传数据统计信息
 	UploadBatchInfo *UploadBatchInfo `json:"upload_batch_info,omitempty" xml:"upload_batch_info,omitempty"`
+}
+
+var poolMerchantOrderInfo = sync.Pool{
+	New: func() any {
+		return new(MerchantOrderInfo)
+	},
+}
+
+// GetMerchantOrderInfo() 从对象池中获取MerchantOrderInfo
+func GetMerchantOrderInfo() *MerchantOrderInfo {
+	return poolMerchantOrderInfo.Get().(*MerchantOrderInfo)
+}
+
+// ReleaseMerchantOrderInfo 释放MerchantOrderInfo
+func ReleaseMerchantOrderInfo(v *MerchantOrderInfo) {
+	v.PayChannelList = v.PayChannelList[:0]
+	v.SubOrderList = v.SubOrderList[:0]
+	v.ActivityInfo = ""
+	v.ChannelOrderId = ""
+	v.ChannelUserId = ""
+	v.CouponInfo = ""
+	v.CustomizeOrderChannel = ""
+	v.ExtendProperty = ""
+	v.MemberCardNum = ""
+	v.MemberId = ""
+	v.OrderChannel = ""
+	v.OrderId = ""
+	v.OriginWholeData = ""
+	v.OutStoreId = ""
+	v.PayTime = ""
+	v.PosNo = ""
+	v.RealPhone = ""
+	v.StoreId = ""
+	v.TraceId = ""
+	v.UnionUserId = ""
+	v.ActualAmt = 0
+	v.DiscountAmt = 0
+	v.PostFee = 0
+	v.TotalAmt = 0
+	v.UploadBatchInfo = nil
+	poolMerchantOrderInfo.Put(v)
 }

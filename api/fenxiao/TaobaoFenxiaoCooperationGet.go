@@ -9,11 +9,6 @@ import (
 // taobao.fenxiao.cooperation.get
 //
 // 获取供应商的合作关系信息
-func TaobaoFenxiaoCooperationGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoCooperationGetAPIRequest, session string) (*fenxiao.TaobaoFenxiaoCooperationGetAPIResponse, error) {
-	var resp fenxiao.TaobaoFenxiaoCooperationGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFenxiaoCooperationGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoCooperationGetAPIRequest, resp *fenxiao.TaobaoFenxiaoCooperationGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

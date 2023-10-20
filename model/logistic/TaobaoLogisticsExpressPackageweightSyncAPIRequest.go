@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsExpressPackageweightSyncAPIRequest struct {
 // NewTaobaoLogisticsExpressPackageweightSyncRequest 初始化TaobaoLogisticsExpressPackageweightSyncAPIRequest对象
 func NewTaobaoLogisticsExpressPackageweightSyncRequest() *TaobaoLogisticsExpressPackageweightSyncAPIRequest {
 	return &TaobaoLogisticsExpressPackageweightSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsExpressPackageweightSyncAPIRequest) Reset() {
+	r._tmsPackageWeightRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsExpressPackageweightSyncAPIRequest) SetTmsPackageWeightR
 // GetTmsPackageWeightRequest TmsPackageWeightRequest Getter
 func (r TaobaoLogisticsExpressPackageweightSyncAPIRequest) GetTmsPackageWeightRequest() *TmsPackageWeightRequest {
 	return r._tmsPackageWeightRequest
+}
+
+var poolTaobaoLogisticsExpressPackageweightSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsExpressPackageweightSyncRequest()
+	},
+}
+
+// GetTaobaoLogisticsExpressPackageweightSyncRequest 从 sync.Pool 获取 TaobaoLogisticsExpressPackageweightSyncAPIRequest
+func GetTaobaoLogisticsExpressPackageweightSyncAPIRequest() *TaobaoLogisticsExpressPackageweightSyncAPIRequest {
+	return poolTaobaoLogisticsExpressPackageweightSyncAPIRequest.Get().(*TaobaoLogisticsExpressPackageweightSyncAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsExpressPackageweightSyncAPIRequest 将 TaobaoLogisticsExpressPackageweightSyncAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsExpressPackageweightSyncAPIRequest(v *TaobaoLogisticsExpressPackageweightSyncAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsExpressPackageweightSyncAPIRequest.Put(v)
 }

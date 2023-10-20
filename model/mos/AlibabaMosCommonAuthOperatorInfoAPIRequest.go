@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMosCommonAuthOperatorInfoAPIRequest struct {
 // NewAlibabaMosCommonAuthOperatorInfoRequest 初始化AlibabaMosCommonAuthOperatorInfoAPIRequest对象
 func NewAlibabaMosCommonAuthOperatorInfoRequest() *AlibabaMosCommonAuthOperatorInfoAPIRequest {
 	return &AlibabaMosCommonAuthOperatorInfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosCommonAuthOperatorInfoAPIRequest) Reset() {
+	r._token = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMosCommonAuthOperatorInfoAPIRequest) SetToken(_token string) err
 // GetToken Token Getter
 func (r AlibabaMosCommonAuthOperatorInfoAPIRequest) GetToken() string {
 	return r._token
+}
+
+var poolAlibabaMosCommonAuthOperatorInfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosCommonAuthOperatorInfoRequest()
+	},
+}
+
+// GetAlibabaMosCommonAuthOperatorInfoRequest 从 sync.Pool 获取 AlibabaMosCommonAuthOperatorInfoAPIRequest
+func GetAlibabaMosCommonAuthOperatorInfoAPIRequest() *AlibabaMosCommonAuthOperatorInfoAPIRequest {
+	return poolAlibabaMosCommonAuthOperatorInfoAPIRequest.Get().(*AlibabaMosCommonAuthOperatorInfoAPIRequest)
+}
+
+// ReleaseAlibabaMosCommonAuthOperatorInfoAPIRequest 将 AlibabaMosCommonAuthOperatorInfoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosCommonAuthOperatorInfoAPIRequest(v *AlibabaMosCommonAuthOperatorInfoAPIRequest) {
+	v.Reset()
+	poolAlibabaMosCommonAuthOperatorInfoAPIRequest.Put(v)
 }

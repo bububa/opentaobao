@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // TaobaoWdkEquipmentConveyorConveyorinfoGetResult 结构体
 type TaobaoWdkEquipmentConveyorConveyorinfoGetResult struct {
 	// errorCode
@@ -10,4 +14,24 @@ type TaobaoWdkEquipmentConveyorConveyorinfoGetResult struct {
 	Model *WcsConveyorInfoDto `json:"model,omitempty" xml:"model,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoWdkEquipmentConveyorConveyorinfoGetResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoWdkEquipmentConveyorConveyorinfoGetResult)
+	},
+}
+
+// GetTaobaoWdkEquipmentConveyorConveyorinfoGetResult() 从对象池中获取TaobaoWdkEquipmentConveyorConveyorinfoGetResult
+func GetTaobaoWdkEquipmentConveyorConveyorinfoGetResult() *TaobaoWdkEquipmentConveyorConveyorinfoGetResult {
+	return poolTaobaoWdkEquipmentConveyorConveyorinfoGetResult.Get().(*TaobaoWdkEquipmentConveyorConveyorinfoGetResult)
+}
+
+// ReleaseTaobaoWdkEquipmentConveyorConveyorinfoGetResult 释放TaobaoWdkEquipmentConveyorConveyorinfoGetResult
+func ReleaseTaobaoWdkEquipmentConveyorConveyorinfoGetResult(v *TaobaoWdkEquipmentConveyorConveyorinfoGetResult) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Model = nil
+	v.Success = false
+	poolTaobaoWdkEquipmentConveyorConveyorinfoGetResult.Put(v)
 }

@@ -1,5 +1,9 @@
 package wlb
 
+import (
+	"sync"
+)
+
 // OrderLine 结构体
 type OrderLine struct {
 	// 库存类型，ZP=正品、CC=残次
@@ -28,4 +32,33 @@ type OrderLine struct {
 	Amount string `json:"amount,omitempty" xml:"amount,omitempty"`
 	// 商品数量
 	ItemQuantity int64 `json:"item_quantity,omitempty" xml:"item_quantity,omitempty"`
+}
+
+var poolOrderLine = sync.Pool{
+	New: func() any {
+		return new(OrderLine)
+	},
+}
+
+// GetOrderLine() 从对象池中获取OrderLine
+func GetOrderLine() *OrderLine {
+	return poolOrderLine.Get().(*OrderLine)
+}
+
+// ReleaseOrderLine 释放OrderLine
+func ReleaseOrderLine(v *OrderLine) {
+	v.InventoryType = ""
+	v.SourceOrderCode = ""
+	v.SubSourceOrderCode = ""
+	v.BatchCode = ""
+	v.ProductDate = ""
+	v.ExpireDate = ""
+	v.ProduceCode = ""
+	v.ItemCode = ""
+	v.ItemName = ""
+	v.ItemId = ""
+	v.OrderLineNo = ""
+	v.Amount = ""
+	v.ItemQuantity = 0
+	poolOrderLine.Put(v)
 }

@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripMerchantGalaxyReceiveCouponByActivityAPIResponse struct {
 	AlitripMerchantGalaxyReceiveCouponByActivityAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripMerchantGalaxyReceiveCouponByActivityAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripMerchantGalaxyReceiveCouponByActivityAPIResponseModel).Reset()
+}
+
 // AlitripMerchantGalaxyReceiveCouponByActivityAPIResponseModel is 按活动Id领取优惠券 成功返回结果
 type AlitripMerchantGalaxyReceiveCouponByActivityAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_merchant_galaxy_receive_coupon_by_activity_response"`
@@ -22,4 +29,27 @@ type AlitripMerchantGalaxyReceiveCouponByActivityAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *AlitripMerchantGalaxyReceiveCouponByActivityResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripMerchantGalaxyReceiveCouponByActivityAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlitripMerchantGalaxyReceiveCouponByActivityAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyReceiveCouponByActivityAPIResponse)
+	},
+}
+
+// GetAlitripMerchantGalaxyReceiveCouponByActivityAPIResponse 从 sync.Pool 获取 AlitripMerchantGalaxyReceiveCouponByActivityAPIResponse
+func GetAlitripMerchantGalaxyReceiveCouponByActivityAPIResponse() *AlitripMerchantGalaxyReceiveCouponByActivityAPIResponse {
+	return poolAlitripMerchantGalaxyReceiveCouponByActivityAPIResponse.Get().(*AlitripMerchantGalaxyReceiveCouponByActivityAPIResponse)
+}
+
+// ReleaseAlitripMerchantGalaxyReceiveCouponByActivityAPIResponse 将 AlitripMerchantGalaxyReceiveCouponByActivityAPIResponse 保存到 sync.Pool
+func ReleaseAlitripMerchantGalaxyReceiveCouponByActivityAPIResponse(v *AlitripMerchantGalaxyReceiveCouponByActivityAPIResponse) {
+	v.Reset()
+	poolAlitripMerchantGalaxyReceiveCouponByActivityAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseExistinghomeStoreBailSyncAPIRequest struct {
 // NewAlibabaAlihouseExistinghomeStoreBailSyncRequest 初始化AlibabaAlihouseExistinghomeStoreBailSyncAPIRequest对象
 func NewAlibabaAlihouseExistinghomeStoreBailSyncRequest() *AlibabaAlihouseExistinghomeStoreBailSyncAPIRequest {
 	return &AlibabaAlihouseExistinghomeStoreBailSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseExistinghomeStoreBailSyncAPIRequest) Reset() {
+	r._storeBailDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseExistinghomeStoreBailSyncAPIRequest) SetStoreBailDto(_st
 // GetStoreBailDto StoreBailDto Getter
 func (r AlibabaAlihouseExistinghomeStoreBailSyncAPIRequest) GetStoreBailDto() *StoreBailDto {
 	return r._storeBailDto
+}
+
+var poolAlibabaAlihouseExistinghomeStoreBailSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseExistinghomeStoreBailSyncRequest()
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeStoreBailSyncRequest 从 sync.Pool 获取 AlibabaAlihouseExistinghomeStoreBailSyncAPIRequest
+func GetAlibabaAlihouseExistinghomeStoreBailSyncAPIRequest() *AlibabaAlihouseExistinghomeStoreBailSyncAPIRequest {
+	return poolAlibabaAlihouseExistinghomeStoreBailSyncAPIRequest.Get().(*AlibabaAlihouseExistinghomeStoreBailSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeStoreBailSyncAPIRequest 将 AlibabaAlihouseExistinghomeStoreBailSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeStoreBailSyncAPIRequest(v *AlibabaAlihouseExistinghomeStoreBailSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeStoreBailSyncAPIRequest.Put(v)
 }

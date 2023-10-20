@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.code.getcodeinfo
 //
 // 码查询功能
-func AlibabaAlihealthCodeGetcodeinfo(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthCodeGetcodeinfoAPIRequest, session string) (*drugtrace.AlibabaAlihealthCodeGetcodeinfoAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthCodeGetcodeinfoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthCodeGetcodeinfo(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthCodeGetcodeinfoAPIRequest, resp *drugtrace.AlibabaAlihealthCodeGetcodeinfoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package security
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaSecurityJaqPornImageSyncDetectAPIRequest struct {
 // NewAlibabaSecurityJaqPornImageSyncDetectRequest 初始化AlibabaSecurityJaqPornImageSyncDetectAPIRequest对象
 func NewAlibabaSecurityJaqPornImageSyncDetectRequest() *AlibabaSecurityJaqPornImageSyncDetectAPIRequest {
 	return &AlibabaSecurityJaqPornImageSyncDetectAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSecurityJaqPornImageSyncDetectAPIRequest) Reset() {
+	r._imageUrl = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaSecurityJaqPornImageSyncDetectAPIRequest) SetImageUrl(_imageUrl 
 // GetImageUrl ImageUrl Getter
 func (r AlibabaSecurityJaqPornImageSyncDetectAPIRequest) GetImageUrl() string {
 	return r._imageUrl
+}
+
+var poolAlibabaSecurityJaqPornImageSyncDetectAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSecurityJaqPornImageSyncDetectRequest()
+	},
+}
+
+// GetAlibabaSecurityJaqPornImageSyncDetectRequest 从 sync.Pool 获取 AlibabaSecurityJaqPornImageSyncDetectAPIRequest
+func GetAlibabaSecurityJaqPornImageSyncDetectAPIRequest() *AlibabaSecurityJaqPornImageSyncDetectAPIRequest {
+	return poolAlibabaSecurityJaqPornImageSyncDetectAPIRequest.Get().(*AlibabaSecurityJaqPornImageSyncDetectAPIRequest)
+}
+
+// ReleaseAlibabaSecurityJaqPornImageSyncDetectAPIRequest 将 AlibabaSecurityJaqPornImageSyncDetectAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSecurityJaqPornImageSyncDetectAPIRequest(v *AlibabaSecurityJaqPornImageSyncDetectAPIRequest) {
+	v.Reset()
+	poolAlibabaSecurityJaqPornImageSyncDetectAPIRequest.Put(v)
 }

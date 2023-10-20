@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // ChannelInventoryQuery 结构体
 type ChannelInventoryQuery struct {
 	// 产品ID
@@ -18,4 +22,28 @@ type ChannelInventoryQuery struct {
 	CityName string `json:"city_name,omitempty" xml:"city_name,omitempty"`
 	// 区
 	AreaName string `json:"area_name,omitempty" xml:"area_name,omitempty"`
+}
+
+var poolChannelInventoryQuery = sync.Pool{
+	New: func() any {
+		return new(ChannelInventoryQuery)
+	},
+}
+
+// GetChannelInventoryQuery() 从对象池中获取ChannelInventoryQuery
+func GetChannelInventoryQuery() *ChannelInventoryQuery {
+	return poolChannelInventoryQuery.Get().(*ChannelInventoryQuery)
+}
+
+// ReleaseChannelInventoryQuery 释放ChannelInventoryQuery
+func ReleaseChannelInventoryQuery(v *ChannelInventoryQuery) {
+	v.ProductId = ""
+	v.SubChannelCode = ""
+	v.SkuId = ""
+	v.ProductType = ""
+	v.ChannelCode = ""
+	v.ProvinceName = ""
+	v.CityName = ""
+	v.AreaName = ""
+	poolChannelInventoryQuery.Put(v)
 }

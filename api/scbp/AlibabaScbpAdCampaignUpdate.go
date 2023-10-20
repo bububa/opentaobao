@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.ad.campaign.update
 //
 // 修改计划
-func AlibabaScbpAdCampaignUpdate(clt *core.SDKClient, req *scbp.AlibabaScbpAdCampaignUpdateAPIRequest, session string) (*scbp.AlibabaScbpAdCampaignUpdateAPIResponse, error) {
-	var resp scbp.AlibabaScbpAdCampaignUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpAdCampaignUpdate(clt *core.SDKClient, req *scbp.AlibabaScbpAdCampaignUpdateAPIRequest, resp *scbp.AlibabaScbpAdCampaignUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

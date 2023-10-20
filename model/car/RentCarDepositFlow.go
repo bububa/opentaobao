@@ -1,5 +1,9 @@
 package car
 
+import (
+	"sync"
+)
+
 // RentCarDepositFlow 结构体
 type RentCarDepositFlow struct {
 	// 主标题
@@ -12,4 +16,25 @@ type RentCarDepositFlow struct {
 	SubTitle string `json:"sub_title,omitempty" xml:"sub_title,omitempty"`
 	// 状态
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolRentCarDepositFlow = sync.Pool{
+	New: func() any {
+		return new(RentCarDepositFlow)
+	},
+}
+
+// GetRentCarDepositFlow() 从对象池中获取RentCarDepositFlow
+func GetRentCarDepositFlow() *RentCarDepositFlow {
+	return poolRentCarDepositFlow.Get().(*RentCarDepositFlow)
+}
+
+// ReleaseRentCarDepositFlow 释放RentCarDepositFlow
+func ReleaseRentCarDepositFlow(v *RentCarDepositFlow) {
+	v.MainTitle = ""
+	v.OccurTime = ""
+	v.StatusIcon = ""
+	v.SubTitle = ""
+	v.Status = 0
+	poolRentCarDepositFlow.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.member.alipay.query
 //
 // 希尔顿会员查询
-func TaobaoXhotelMemberAlipayQuery(clt *core.SDKClient, req *xhotelcrm.TaobaoXhotelMemberAlipayQueryAPIRequest, session string) (*xhotelcrm.TaobaoXhotelMemberAlipayQueryAPIResponse, error) {
-	var resp xhotelcrm.TaobaoXhotelMemberAlipayQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelMemberAlipayQuery(clt *core.SDKClient, req *xhotelcrm.TaobaoXhotelMemberAlipayQueryAPIRequest, resp *xhotelcrm.TaobaoXhotelMemberAlipayQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

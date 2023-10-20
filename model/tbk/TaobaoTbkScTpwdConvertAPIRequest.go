@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoTbkScTpwdConvertAPIRequest struct {
 // NewTaobaoTbkScTpwdConvertRequest 初始化TaobaoTbkScTpwdConvertAPIRequest对象
 func NewTaobaoTbkScTpwdConvertRequest() *TaobaoTbkScTpwdConvertAPIRequest {
 	return &TaobaoTbkScTpwdConvertAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkScTpwdConvertAPIRequest) Reset() {
+	r._passwordContent = ""
+	r._dx = ""
+	r._relationId = ""
+	r._adzoneId = 0
+	r._siteId = 0
+	r._ucrowdId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoTbkScTpwdConvertAPIRequest) SetUcrowdId(_ucrowdId int64) error {
 // GetUcrowdId UcrowdId Getter
 func (r TaobaoTbkScTpwdConvertAPIRequest) GetUcrowdId() int64 {
 	return r._ucrowdId
+}
+
+var poolTaobaoTbkScTpwdConvertAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkScTpwdConvertRequest()
+	},
+}
+
+// GetTaobaoTbkScTpwdConvertRequest 从 sync.Pool 获取 TaobaoTbkScTpwdConvertAPIRequest
+func GetTaobaoTbkScTpwdConvertAPIRequest() *TaobaoTbkScTpwdConvertAPIRequest {
+	return poolTaobaoTbkScTpwdConvertAPIRequest.Get().(*TaobaoTbkScTpwdConvertAPIRequest)
+}
+
+// ReleaseTaobaoTbkScTpwdConvertAPIRequest 将 TaobaoTbkScTpwdConvertAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkScTpwdConvertAPIRequest(v *TaobaoTbkScTpwdConvertAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkScTpwdConvertAPIRequest.Put(v)
 }

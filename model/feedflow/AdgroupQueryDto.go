@@ -1,5 +1,9 @@
 package feedflow
 
+import (
+	"sync"
+)
+
 // AdgroupQueryDto 结构体
 type AdgroupQueryDto struct {
 	// 单元id列表
@@ -14,4 +18,26 @@ type AdgroupQueryDto struct {
 	Offset int64 `json:"offset,omitempty" xml:"offset,omitempty"`
 	// 每页大小
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolAdgroupQueryDto = sync.Pool{
+	New: func() any {
+		return new(AdgroupQueryDto)
+	},
+}
+
+// GetAdgroupQueryDto() 从对象池中获取AdgroupQueryDto
+func GetAdgroupQueryDto() *AdgroupQueryDto {
+	return poolAdgroupQueryDto.Get().(*AdgroupQueryDto)
+}
+
+// ReleaseAdgroupQueryDto 释放AdgroupQueryDto
+func ReleaseAdgroupQueryDto(v *AdgroupQueryDto) {
+	v.AdgroupIdList = v.AdgroupIdList[:0]
+	v.CampaignIdList = v.CampaignIdList[:0]
+	v.StatusList = v.StatusList[:0]
+	v.AdgroupName = ""
+	v.Offset = 0
+	v.PageSize = 0
+	poolAdgroupQueryDto.Put(v)
 }

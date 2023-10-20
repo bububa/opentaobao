@@ -1,5 +1,9 @@
 package fpm
 
+import (
+	"sync"
+)
+
 // InvoiceMainExt 结构体
 type InvoiceMainExt struct {
 	// 申请人
@@ -60,4 +64,49 @@ type InvoiceMainExt struct {
 	DocNo string `json:"doc_no,omitempty" xml:"doc_no,omitempty"`
 	// 发票类型（支持全票种）
 	DocumentType string `json:"document_type,omitempty" xml:"document_type,omitempty"`
+}
+
+var poolInvoiceMainExt = sync.Pool{
+	New: func() any {
+		return new(InvoiceMainExt)
+	},
+}
+
+// GetInvoiceMainExt() 从对象池中获取InvoiceMainExt
+func GetInvoiceMainExt() *InvoiceMainExt {
+	return poolInvoiceMainExt.Get().(*InvoiceMainExt)
+}
+
+// ReleaseInvoiceMainExt 释放InvoiceMainExt
+func ReleaseInvoiceMainExt(v *InvoiceMainExt) {
+	v.AuthApplyUserId = ""
+	v.ScanTime = ""
+	v.SellerName = ""
+	v.Remark = ""
+	v.PurchaserCode = ""
+	v.CipherText = ""
+	v.AuthApplyTime = ""
+	v.InvoiceType = ""
+	v.IssuedTaxNo = ""
+	v.InvoiceNo = ""
+	v.FileId = ""
+	v.AmountWithoutTax = ""
+	v.BatchNo = ""
+	v.MachineCode = ""
+	v.ScanUserId = ""
+	v.InvoiceCode = ""
+	v.TwoCodeFlag = ""
+	v.ScanAccount = ""
+	v.PurchaserName = ""
+	v.TaxRate = ""
+	v.SellerTaxNo = ""
+	v.CipherTextTwocode = ""
+	v.PurchaserTaxNo = ""
+	v.VerifyNo = ""
+	v.PaperDrewDate = ""
+	v.TaxAmount = ""
+	v.WaybillNo = ""
+	v.DocNo = ""
+	v.DocumentType = ""
+	poolInvoiceMainExt.Put(v)
 }

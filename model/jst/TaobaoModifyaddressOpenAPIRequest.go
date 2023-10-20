@@ -2,6 +2,7 @@ package jst
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type TaobaoModifyaddressOpenAPIRequest struct {
 // NewTaobaoModifyaddressOpenRequest 初始化TaobaoModifyaddressOpenAPIRequest对象
 func NewTaobaoModifyaddressOpenRequest() *TaobaoModifyaddressOpenAPIRequest {
 	return &TaobaoModifyaddressOpenAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoModifyaddressOpenAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r TaobaoModifyaddressOpenAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r TaobaoModifyaddressOpenAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolTaobaoModifyaddressOpenAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoModifyaddressOpenRequest()
+	},
+}
+
+// GetTaobaoModifyaddressOpenRequest 从 sync.Pool 获取 TaobaoModifyaddressOpenAPIRequest
+func GetTaobaoModifyaddressOpenAPIRequest() *TaobaoModifyaddressOpenAPIRequest {
+	return poolTaobaoModifyaddressOpenAPIRequest.Get().(*TaobaoModifyaddressOpenAPIRequest)
+}
+
+// ReleaseTaobaoModifyaddressOpenAPIRequest 将 TaobaoModifyaddressOpenAPIRequest 放入 sync.Pool
+func ReleaseTaobaoModifyaddressOpenAPIRequest(v *TaobaoModifyaddressOpenAPIRequest) {
+	v.Reset()
+	poolTaobaoModifyaddressOpenAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package flightuppc
 
+import (
+	"sync"
+)
+
 // InsOrderOpenDetailDto 结构体
 type InsOrderOpenDetailDto struct {
 	// 修改时间
@@ -44,4 +48,41 @@ type InsOrderOpenDetailDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 订单是否有效
 	IsEnable bool `json:"is_enable,omitempty" xml:"is_enable,omitempty"`
+}
+
+var poolInsOrderOpenDetailDto = sync.Pool{
+	New: func() any {
+		return new(InsOrderOpenDetailDto)
+	},
+}
+
+// GetInsOrderOpenDetailDto() 从对象池中获取InsOrderOpenDetailDto
+func GetInsOrderOpenDetailDto() *InsOrderOpenDetailDto {
+	return poolInsOrderOpenDetailDto.Get().(*InsOrderOpenDetailDto)
+}
+
+// ReleaseInsOrderOpenDetailDto 释放InsOrderOpenDetailDto
+func ReleaseInsOrderOpenDetailDto(v *InsOrderOpenDetailDto) {
+	v.GmtModified = ""
+	v.PayTime = ""
+	v.PolicyNo = ""
+	v.ClaimApplyTime = ""
+	v.ProductNo = ""
+	v.InsCompany = ""
+	v.ClaimSuccessTime = ""
+	v.EffectiveEndTime = ""
+	v.GmtCreate = ""
+	v.EffectiveStartTime = ""
+	v.InsPersonId = 0
+	v.TcOrderId = 0
+	v.InsOrderOpenPerson = nil
+	v.Price = 0
+	v.ItemSourceTag = 0
+	v.ClaimFee = 0
+	v.InsSegmentId = 0
+	v.InsOrderOpenSegment = nil
+	v.OutOrderId = 0
+	v.Status = 0
+	v.IsEnable = false
+	poolInsOrderOpenDetailDto.Put(v)
 }

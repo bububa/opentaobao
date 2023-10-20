@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripCorpopDepartSyncAPIRequest struct {
 // NewAlitripBtripCorpopDepartSyncRequest 初始化AlitripBtripCorpopDepartSyncAPIRequest对象
 func NewAlitripBtripCorpopDepartSyncRequest() *AlitripBtripCorpopDepartSyncAPIRequest {
 	return &AlitripBtripCorpopDepartSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripCorpopDepartSyncAPIRequest) Reset() {
+	r._rq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripCorpopDepartSyncAPIRequest) SetRq(_rq *BtripDepartSyncRq) e
 // GetRq Rq Getter
 func (r AlitripBtripCorpopDepartSyncAPIRequest) GetRq() *BtripDepartSyncRq {
 	return r._rq
+}
+
+var poolAlitripBtripCorpopDepartSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripCorpopDepartSyncRequest()
+	},
+}
+
+// GetAlitripBtripCorpopDepartSyncRequest 从 sync.Pool 获取 AlitripBtripCorpopDepartSyncAPIRequest
+func GetAlitripBtripCorpopDepartSyncAPIRequest() *AlitripBtripCorpopDepartSyncAPIRequest {
+	return poolAlitripBtripCorpopDepartSyncAPIRequest.Get().(*AlitripBtripCorpopDepartSyncAPIRequest)
+}
+
+// ReleaseAlitripBtripCorpopDepartSyncAPIRequest 将 AlitripBtripCorpopDepartSyncAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripCorpopDepartSyncAPIRequest(v *AlitripBtripCorpopDepartSyncAPIRequest) {
+	v.Reset()
+	poolAlitripBtripCorpopDepartSyncAPIRequest.Put(v)
 }

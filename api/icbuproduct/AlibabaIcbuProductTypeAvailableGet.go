@@ -9,11 +9,6 @@ import (
 // alibaba.icbu.product.type.available.get
 //
 // 查询商家发品权限
-func AlibabaIcbuProductTypeAvailableGet(clt *core.SDKClient, req *icbuproduct.AlibabaIcbuProductTypeAvailableGetAPIRequest, session string) (*icbuproduct.AlibabaIcbuProductTypeAvailableGetAPIResponse, error) {
-	var resp icbuproduct.AlibabaIcbuProductTypeAvailableGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIcbuProductTypeAvailableGet(clt *core.SDKClient, req *icbuproduct.AlibabaIcbuProductTypeAvailableGetAPIRequest, resp *icbuproduct.AlibabaIcbuProductTypeAvailableGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

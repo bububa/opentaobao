@@ -2,6 +2,7 @@ package shop
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoStoreFollowurlGetAPIRequest struct {
 // NewTaobaoStoreFollowurlGetRequest 初始化TaobaoStoreFollowurlGetAPIRequest对象
 func NewTaobaoStoreFollowurlGetRequest() *TaobaoStoreFollowurlGetAPIRequest {
 	return &TaobaoStoreFollowurlGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoStoreFollowurlGetAPIRequest) Reset() {
+	r._callbackUrl = ""
+	r._userNick = ""
+	r._userId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoStoreFollowurlGetAPIRequest) SetUserId(_userId int64) error {
 // GetUserId UserId Getter
 func (r TaobaoStoreFollowurlGetAPIRequest) GetUserId() int64 {
 	return r._userId
+}
+
+var poolTaobaoStoreFollowurlGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoStoreFollowurlGetRequest()
+	},
+}
+
+// GetTaobaoStoreFollowurlGetRequest 从 sync.Pool 获取 TaobaoStoreFollowurlGetAPIRequest
+func GetTaobaoStoreFollowurlGetAPIRequest() *TaobaoStoreFollowurlGetAPIRequest {
+	return poolTaobaoStoreFollowurlGetAPIRequest.Get().(*TaobaoStoreFollowurlGetAPIRequest)
+}
+
+// ReleaseTaobaoStoreFollowurlGetAPIRequest 将 TaobaoStoreFollowurlGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoStoreFollowurlGetAPIRequest(v *TaobaoStoreFollowurlGetAPIRequest) {
+	v.Reset()
+	poolTaobaoStoreFollowurlGetAPIRequest.Put(v)
 }

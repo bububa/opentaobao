@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoCloudprintSingleCustomareaGetAPIRequest struct {
 // NewCainiaoCloudprintSingleCustomareaGetRequest 初始化CainiaoCloudprintSingleCustomareaGetAPIRequest对象
 func NewCainiaoCloudprintSingleCustomareaGetRequest() *CainiaoCloudprintSingleCustomareaGetAPIRequest {
 	return &CainiaoCloudprintSingleCustomareaGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoCloudprintSingleCustomareaGetAPIRequest) Reset() {
+	r._sellerId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoCloudprintSingleCustomareaGetAPIRequest) SetSellerId(_sellerId i
 // GetSellerId SellerId Getter
 func (r CainiaoCloudprintSingleCustomareaGetAPIRequest) GetSellerId() int64 {
 	return r._sellerId
+}
+
+var poolCainiaoCloudprintSingleCustomareaGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoCloudprintSingleCustomareaGetRequest()
+	},
+}
+
+// GetCainiaoCloudprintSingleCustomareaGetRequest 从 sync.Pool 获取 CainiaoCloudprintSingleCustomareaGetAPIRequest
+func GetCainiaoCloudprintSingleCustomareaGetAPIRequest() *CainiaoCloudprintSingleCustomareaGetAPIRequest {
+	return poolCainiaoCloudprintSingleCustomareaGetAPIRequest.Get().(*CainiaoCloudprintSingleCustomareaGetAPIRequest)
+}
+
+// ReleaseCainiaoCloudprintSingleCustomareaGetAPIRequest 将 CainiaoCloudprintSingleCustomareaGetAPIRequest 放入 sync.Pool
+func ReleaseCainiaoCloudprintSingleCustomareaGetAPIRequest(v *CainiaoCloudprintSingleCustomareaGetAPIRequest) {
+	v.Reset()
+	poolCainiaoCloudprintSingleCustomareaGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package simba
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoSimbaInsightCatsdataGetAPIResponse struct {
 	TaobaoSimbaInsightCatsdataGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoSimbaInsightCatsdataGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoSimbaInsightCatsdataGetAPIResponseModel).Reset()
+}
+
 // TaobaoSimbaInsightCatsdataGetAPIResponseModel is 获取类目的大盘数据 成功返回结果
 type TaobaoSimbaInsightCatsdataGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_insight_catsdata_get_response"`
@@ -22,4 +29,27 @@ type TaobaoSimbaInsightCatsdataGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 类目详细数据列表
 	CatDataList []InsightCategoryDataDto `json:"cat_data_list,omitempty" xml:"cat_data_list>insight_category_data_dto,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoSimbaInsightCatsdataGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.CatDataList = m.CatDataList[:0]
+}
+
+var poolTaobaoSimbaInsightCatsdataGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoSimbaInsightCatsdataGetAPIResponse)
+	},
+}
+
+// GetTaobaoSimbaInsightCatsdataGetAPIResponse 从 sync.Pool 获取 TaobaoSimbaInsightCatsdataGetAPIResponse
+func GetTaobaoSimbaInsightCatsdataGetAPIResponse() *TaobaoSimbaInsightCatsdataGetAPIResponse {
+	return poolTaobaoSimbaInsightCatsdataGetAPIResponse.Get().(*TaobaoSimbaInsightCatsdataGetAPIResponse)
+}
+
+// ReleaseTaobaoSimbaInsightCatsdataGetAPIResponse 将 TaobaoSimbaInsightCatsdataGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoSimbaInsightCatsdataGetAPIResponse(v *TaobaoSimbaInsightCatsdataGetAPIResponse) {
+	v.Reset()
+	poolTaobaoSimbaInsightCatsdataGetAPIResponse.Put(v)
 }

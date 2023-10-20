@@ -1,5 +1,9 @@
 package hotelalliance
 
+import (
+	"sync"
+)
+
 // AllianceSettleOrderInfo 结构体
 type AllianceSettleOrderInfo struct {
 	// 卖家昵称
@@ -32,4 +36,35 @@ type AllianceSettleOrderInfo struct {
 	Payment int64 `json:"payment,omitempty" xml:"payment,omitempty"`
 	// 底价金额（单位：分）
 	BasePrice int64 `json:"base_price,omitempty" xml:"base_price,omitempty"`
+}
+
+var poolAllianceSettleOrderInfo = sync.Pool{
+	New: func() any {
+		return new(AllianceSettleOrderInfo)
+	},
+}
+
+// GetAllianceSettleOrderInfo() 从对象池中获取AllianceSettleOrderInfo
+func GetAllianceSettleOrderInfo() *AllianceSettleOrderInfo {
+	return poolAllianceSettleOrderInfo.Get().(*AllianceSettleOrderInfo)
+}
+
+// ReleaseAllianceSettleOrderInfo 释放AllianceSettleOrderInfo
+func ReleaseAllianceSettleOrderInfo(v *AllianceSettleOrderInfo) {
+	v.SellerNick = ""
+	v.OrderSource = ""
+	v.SettleDate = ""
+	v.SettleRate = ""
+	v.SettleStatus = 0
+	v.OtherFee = 0
+	v.SettleAmount = 0
+	v.SellerCommission = 0
+	v.Tid = 0
+	v.InterceptAmount = 0
+	v.SellerId = 0
+	v.BaseMode = 0
+	v.Nights = 0
+	v.Payment = 0
+	v.BasePrice = 0
+	poolAllianceSettleOrderInfo.Put(v)
 }

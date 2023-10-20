@@ -1,5 +1,9 @@
 package legalsuit
 
+import (
+	"sync"
+)
+
 // StandpointOutPutDto 结构体
 type StandpointOutPutDto struct {
 	// 表格
@@ -36,4 +40,37 @@ type StandpointOutPutDto struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 是否收藏
 	IsCollection bool `json:"is_collection,omitempty" xml:"is_collection,omitempty"`
+}
+
+var poolStandpointOutPutDto = sync.Pool{
+	New: func() any {
+		return new(StandpointOutPutDto)
+	},
+}
+
+// GetStandpointOutPutDto() 从对象池中获取StandpointOutPutDto
+func GetStandpointOutPutDto() *StandpointOutPutDto {
+	return poolStandpointOutPutDto.Get().(*StandpointOutPutDto)
+}
+
+// ReleaseStandpointOutPutDto 释放StandpointOutPutDto
+func ReleaseStandpointOutPutDto(v *StandpointOutPutDto) {
+	v.TableStr = v.TableStr[:0]
+	v.StandpointLabels = v.StandpointLabels[:0]
+	v.Options = v.Options[:0]
+	v.ScenesStruct = ""
+	v.Label = ""
+	v.GmtCreate = ""
+	v.TableSchema = ""
+	v.DefenseCaliber = ""
+	v.StandpointDesc = ""
+	v.ScenesName = ""
+	v.CreaterWorkerNo = ""
+	v.ScenesStrucct = ""
+	v.ScenesId = 0
+	v.DeriveCount = 0
+	v.ReferencedCount = 0
+	v.Id = 0
+	v.IsCollection = false
+	poolStandpointOutPutDto.Put(v)
 }

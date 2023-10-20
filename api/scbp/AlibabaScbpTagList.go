@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.tag.list
 //
 // 查询所有分组
-func AlibabaScbpTagList(clt *core.SDKClient, req *scbp.AlibabaScbpTagListAPIRequest, session string) (*scbp.AlibabaScbpTagListAPIResponse, error) {
-	var resp scbp.AlibabaScbpTagListAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpTagList(clt *core.SDKClient, req *scbp.AlibabaScbpTagListAPIRequest, resp *scbp.AlibabaScbpTagListAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package inventory
 
+import (
+	"sync"
+)
+
 // PlanInstanceTopDto 结构体
 type PlanInstanceTopDto struct {
 	// 服务承诺信息
@@ -20,4 +24,29 @@ type PlanInstanceTopDto struct {
 	Strategy *Strategy `json:"strategy,omitempty" xml:"strategy,omitempty"`
 	// 设置的库存值
 	SettingQuantity int64 `json:"setting_quantity,omitempty" xml:"setting_quantity,omitempty"`
+}
+
+var poolPlanInstanceTopDto = sync.Pool{
+	New: func() any {
+		return new(PlanInstanceTopDto)
+	},
+}
+
+// GetPlanInstanceTopDto() 从对象池中获取PlanInstanceTopDto
+func GetPlanInstanceTopDto() *PlanInstanceTopDto {
+	return poolPlanInstanceTopDto.Get().(*PlanInstanceTopDto)
+}
+
+// ReleasePlanInstanceTopDto 释放PlanInstanceTopDto
+func ReleasePlanInstanceTopDto(v *PlanInstanceTopDto) {
+	v.PromiseList = v.PromiseList[:0]
+	v.RelationList = v.RelationList[:0]
+	v.StartTime = ""
+	v.EndTime = ""
+	v.PlanOrderId = ""
+	v.OperateCode = ""
+	v.QuantityOpType = 0
+	v.Strategy = nil
+	v.SettingQuantity = 0
+	poolPlanInstanceTopDto.Put(v)
 }

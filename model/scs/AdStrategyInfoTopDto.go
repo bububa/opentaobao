@@ -1,5 +1,9 @@
 package scs
 
+import (
+	"sync"
+)
+
 // AdStrategyInfoTopDto 结构体
 type AdStrategyInfoTopDto struct {
 	// 商品列表，小于等于10个
@@ -20,4 +24,29 @@ type AdStrategyInfoTopDto struct {
 	PredictCycle int64 `json:"predict_cycle,omitempty" xml:"predict_cycle,omitempty"`
 	// 侧重人群开关，默认为1
 	CrowdMode int64 `json:"crowd_mode,omitempty" xml:"crowd_mode,omitempty"`
+}
+
+var poolAdStrategyInfoTopDto = sync.Pool{
+	New: func() any {
+		return new(AdStrategyInfoTopDto)
+	},
+}
+
+// GetAdStrategyInfoTopDto() 从对象池中获取AdStrategyInfoTopDto
+func GetAdStrategyInfoTopDto() *AdStrategyInfoTopDto {
+	return poolAdStrategyInfoTopDto.Get().(*AdStrategyInfoTopDto)
+}
+
+// ReleaseAdStrategyInfoTopDto 释放AdStrategyInfoTopDto
+func ReleaseAdStrategyInfoTopDto(v *AdStrategyInfoTopDto) {
+	v.ItemIds = v.ItemIds[:0]
+	v.BehaviorWindowsList = v.BehaviorWindowsList[:0]
+	v.MarketScene = ""
+	v.MarketAim = ""
+	v.OrderAmount = ""
+	v.Budget = ""
+	v.LaunchStrategyType = ""
+	v.PredictCycle = 0
+	v.CrowdMode = 0
+	poolAdStrategyInfoTopDto.Put(v)
 }

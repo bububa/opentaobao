@@ -2,6 +2,7 @@ package travel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest struct {
 // NewTaobaoAlitripTravelBaseinfoCitiesGetRequest 初始化TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest对象
 func NewTaobaoAlitripTravelBaseinfoCitiesGetRequest() *TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest {
 	return &TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest) Reset() {
+	r._iocType = 0
+	r._catType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest) SetCatType(_catType int
 // GetCatType CatType Getter
 func (r TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest) GetCatType() int64 {
 	return r._catType
+}
+
+var poolTaobaoAlitripTravelBaseinfoCitiesGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripTravelBaseinfoCitiesGetRequest()
+	},
+}
+
+// GetTaobaoAlitripTravelBaseinfoCitiesGetRequest 从 sync.Pool 获取 TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest
+func GetTaobaoAlitripTravelBaseinfoCitiesGetAPIRequest() *TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest {
+	return poolTaobaoAlitripTravelBaseinfoCitiesGetAPIRequest.Get().(*TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest)
+}
+
+// ReleaseTaobaoAlitripTravelBaseinfoCitiesGetAPIRequest 将 TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripTravelBaseinfoCitiesGetAPIRequest(v *TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripTravelBaseinfoCitiesGetAPIRequest.Put(v)
 }

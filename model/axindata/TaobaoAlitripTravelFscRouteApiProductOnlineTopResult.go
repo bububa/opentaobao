@@ -1,5 +1,9 @@
 package axindata
 
+import (
+	"sync"
+)
+
 // TaobaoAlitripTravelFscRouteApiProductOnlineTopResult 结构体
 type TaobaoAlitripTravelFscRouteApiProductOnlineTopResult struct {
 	// 错误码
@@ -10,4 +14,24 @@ type TaobaoAlitripTravelFscRouteApiProductOnlineTopResult struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 业务数据
 	Data bool `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+var poolTaobaoAlitripTravelFscRouteApiProductOnlineTopResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoAlitripTravelFscRouteApiProductOnlineTopResult)
+	},
+}
+
+// GetTaobaoAlitripTravelFscRouteApiProductOnlineTopResult() 从对象池中获取TaobaoAlitripTravelFscRouteApiProductOnlineTopResult
+func GetTaobaoAlitripTravelFscRouteApiProductOnlineTopResult() *TaobaoAlitripTravelFscRouteApiProductOnlineTopResult {
+	return poolTaobaoAlitripTravelFscRouteApiProductOnlineTopResult.Get().(*TaobaoAlitripTravelFscRouteApiProductOnlineTopResult)
+}
+
+// ReleaseTaobaoAlitripTravelFscRouteApiProductOnlineTopResult 释放TaobaoAlitripTravelFscRouteApiProductOnlineTopResult
+func ReleaseTaobaoAlitripTravelFscRouteApiProductOnlineTopResult(v *TaobaoAlitripTravelFscRouteApiProductOnlineTopResult) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Success = false
+	v.Data = false
+	poolTaobaoAlitripTravelFscRouteApiProductOnlineTopResult.Put(v)
 }

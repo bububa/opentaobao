@@ -2,6 +2,7 @@ package interact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaInteractUmpMealQueryAPIRequest struct {
 // NewAlibabaInteractUmpMealQueryRequest 初始化AlibabaInteractUmpMealQueryAPIRequest对象
 func NewAlibabaInteractUmpMealQueryRequest() *AlibabaInteractUmpMealQueryAPIRequest {
 	return &AlibabaInteractUmpMealQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractUmpMealQueryAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaInteractUmpMealQueryAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaInteractUmpMealQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaInteractUmpMealQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractUmpMealQueryRequest()
+	},
+}
+
+// GetAlibabaInteractUmpMealQueryRequest 从 sync.Pool 获取 AlibabaInteractUmpMealQueryAPIRequest
+func GetAlibabaInteractUmpMealQueryAPIRequest() *AlibabaInteractUmpMealQueryAPIRequest {
+	return poolAlibabaInteractUmpMealQueryAPIRequest.Get().(*AlibabaInteractUmpMealQueryAPIRequest)
+}
+
+// ReleaseAlibabaInteractUmpMealQueryAPIRequest 将 AlibabaInteractUmpMealQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractUmpMealQueryAPIRequest(v *AlibabaInteractUmpMealQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractUmpMealQueryAPIRequest.Put(v)
 }

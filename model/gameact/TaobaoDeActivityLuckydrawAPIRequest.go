@@ -2,6 +2,7 @@ package gameact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type TaobaoDeActivityLuckydrawAPIRequest struct {
 // NewTaobaoDeActivityLuckydrawRequest 初始化TaobaoDeActivityLuckydrawAPIRequest对象
 func NewTaobaoDeActivityLuckydrawRequest() *TaobaoDeActivityLuckydrawAPIRequest {
 	return &TaobaoDeActivityLuckydrawAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoDeActivityLuckydrawAPIRequest) Reset() {
+	r._eventKey = ""
+	r._accountId = ""
+	r._machineId = ""
+	r._confirmKey = ""
+	r._behaviorKey = ""
+	r._channel = ""
+	r._market = ""
+	r._deviceModel = ""
+	r._distribChannel = ""
+	r._uuid = ""
+	r._sequenceId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *TaobaoDeActivityLuckydrawAPIRequest) SetSequenceId(_sequenceId int64) e
 // GetSequenceId SequenceId Getter
 func (r TaobaoDeActivityLuckydrawAPIRequest) GetSequenceId() int64 {
 	return r._sequenceId
+}
+
+var poolTaobaoDeActivityLuckydrawAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoDeActivityLuckydrawRequest()
+	},
+}
+
+// GetTaobaoDeActivityLuckydrawRequest 从 sync.Pool 获取 TaobaoDeActivityLuckydrawAPIRequest
+func GetTaobaoDeActivityLuckydrawAPIRequest() *TaobaoDeActivityLuckydrawAPIRequest {
+	return poolTaobaoDeActivityLuckydrawAPIRequest.Get().(*TaobaoDeActivityLuckydrawAPIRequest)
+}
+
+// ReleaseTaobaoDeActivityLuckydrawAPIRequest 将 TaobaoDeActivityLuckydrawAPIRequest 放入 sync.Pool
+func ReleaseTaobaoDeActivityLuckydrawAPIRequest(v *TaobaoDeActivityLuckydrawAPIRequest) {
+	v.Reset()
+	poolTaobaoDeActivityLuckydrawAPIRequest.Put(v)
 }

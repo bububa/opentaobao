@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.rateplan.get
 //
 // 酒店产品库rateplan查询
-func TaobaoXhotelRateplanGet(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRateplanGetAPIRequest, session string) (*xhotelitem.TaobaoXhotelRateplanGetAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelRateplanGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelRateplanGet(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRateplanGetAPIRequest, resp *xhotelitem.TaobaoXhotelRateplanGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

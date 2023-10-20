@@ -2,6 +2,7 @@ package examination
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihealthExaminationReserveStateAPIResponse struct {
 	AlibabaAlihealthExaminationReserveStateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthExaminationReserveStateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthExaminationReserveStateAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthExaminationReserveStateAPIResponseModel is 体检机构对接_体检状态查询 成功返回结果
 type AlibabaAlihealthExaminationReserveStateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_examination_reserve_state_response"`
@@ -26,4 +33,29 @@ type AlibabaAlihealthExaminationReserveStateAPIResponseModel struct {
 	ResponseCode string `json:"response_code,omitempty" xml:"response_code,omitempty"`
 	// 预约信息
 	CooperationOrderInfo *CooperationOrderInfo `json:"cooperation_order_info,omitempty" xml:"cooperation_order_info,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthExaminationReserveStateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.ResponseCode = ""
+	m.CooperationOrderInfo = nil
+}
+
+var poolAlibabaAlihealthExaminationReserveStateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthExaminationReserveStateAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthExaminationReserveStateAPIResponse 从 sync.Pool 获取 AlibabaAlihealthExaminationReserveStateAPIResponse
+func GetAlibabaAlihealthExaminationReserveStateAPIResponse() *AlibabaAlihealthExaminationReserveStateAPIResponse {
+	return poolAlibabaAlihealthExaminationReserveStateAPIResponse.Get().(*AlibabaAlihealthExaminationReserveStateAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthExaminationReserveStateAPIResponse 将 AlibabaAlihealthExaminationReserveStateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthExaminationReserveStateAPIResponse(v *AlibabaAlihealthExaminationReserveStateAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthExaminationReserveStateAPIResponse.Put(v)
 }

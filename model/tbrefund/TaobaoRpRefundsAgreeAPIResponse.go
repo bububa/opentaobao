@@ -2,6 +2,7 @@ package tbrefund
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoRpRefundsAgreeAPIResponse struct {
 	model.CommonResponse
 	TaobaoRpRefundsAgreeAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoRpRefundsAgreeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoRpRefundsAgreeAPIResponseModel).Reset()
 }
 
 // TaobaoRpRefundsAgreeAPIResponseModel is 同意退款 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoRpRefundsAgreeAPIResponseModel struct {
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 操作成功
 	Succ bool `json:"succ,omitempty" xml:"succ,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoRpRefundsAgreeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Results = m.Results[:0]
+	m.Message = ""
+	m.MsgCode = ""
+	m.Succ = false
+}
+
+var poolTaobaoRpRefundsAgreeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoRpRefundsAgreeAPIResponse)
+	},
+}
+
+// GetTaobaoRpRefundsAgreeAPIResponse 从 sync.Pool 获取 TaobaoRpRefundsAgreeAPIResponse
+func GetTaobaoRpRefundsAgreeAPIResponse() *TaobaoRpRefundsAgreeAPIResponse {
+	return poolTaobaoRpRefundsAgreeAPIResponse.Get().(*TaobaoRpRefundsAgreeAPIResponse)
+}
+
+// ReleaseTaobaoRpRefundsAgreeAPIResponse 将 TaobaoRpRefundsAgreeAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoRpRefundsAgreeAPIResponse(v *TaobaoRpRefundsAgreeAPIResponse) {
+	v.Reset()
+	poolTaobaoRpRefundsAgreeAPIResponse.Put(v)
 }

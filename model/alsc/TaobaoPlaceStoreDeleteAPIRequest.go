@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoPlaceStoreDeleteAPIRequest struct {
 // NewTaobaoPlaceStoreDeleteRequest 初始化TaobaoPlaceStoreDeleteAPIRequest对象
 func NewTaobaoPlaceStoreDeleteRequest() *TaobaoPlaceStoreDeleteAPIRequest {
 	return &TaobaoPlaceStoreDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPlaceStoreDeleteAPIRequest) Reset() {
+	r._storeId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoPlaceStoreDeleteAPIRequest) SetStoreId(_storeId int64) error {
 // GetStoreId StoreId Getter
 func (r TaobaoPlaceStoreDeleteAPIRequest) GetStoreId() int64 {
 	return r._storeId
+}
+
+var poolTaobaoPlaceStoreDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPlaceStoreDeleteRequest()
+	},
+}
+
+// GetTaobaoPlaceStoreDeleteRequest 从 sync.Pool 获取 TaobaoPlaceStoreDeleteAPIRequest
+func GetTaobaoPlaceStoreDeleteAPIRequest() *TaobaoPlaceStoreDeleteAPIRequest {
+	return poolTaobaoPlaceStoreDeleteAPIRequest.Get().(*TaobaoPlaceStoreDeleteAPIRequest)
+}
+
+// ReleaseTaobaoPlaceStoreDeleteAPIRequest 将 TaobaoPlaceStoreDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPlaceStoreDeleteAPIRequest(v *TaobaoPlaceStoreDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoPlaceStoreDeleteAPIRequest.Put(v)
 }

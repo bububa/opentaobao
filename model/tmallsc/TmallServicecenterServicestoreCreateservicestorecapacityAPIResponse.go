@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -18,6 +19,12 @@ type TmallServicecenterServicestoreCreateservicestorecapacityAPIResponse struct 
 	TmallServicecenterServicestoreCreateservicestorecapacityAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallServicecenterServicestoreCreateservicestorecapacityAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallServicecenterServicestoreCreateservicestorecapacityAPIResponseModel).Reset()
+}
+
 // TmallServicecenterServicestoreCreateservicestorecapacityAPIResponseModel is 新增网点容量 成功返回结果
 type TmallServicecenterServicestoreCreateservicestorecapacityAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_servicestore_createservicestorecapacity_response"`
@@ -25,4 +32,27 @@ type TmallServicecenterServicestoreCreateservicestorecapacityAPIResponseModel st
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *ResultBase `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallServicecenterServicestoreCreateservicestorecapacityAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTmallServicecenterServicestoreCreateservicestorecapacityAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallServicecenterServicestoreCreateservicestorecapacityAPIResponse)
+	},
+}
+
+// GetTmallServicecenterServicestoreCreateservicestorecapacityAPIResponse 从 sync.Pool 获取 TmallServicecenterServicestoreCreateservicestorecapacityAPIResponse
+func GetTmallServicecenterServicestoreCreateservicestorecapacityAPIResponse() *TmallServicecenterServicestoreCreateservicestorecapacityAPIResponse {
+	return poolTmallServicecenterServicestoreCreateservicestorecapacityAPIResponse.Get().(*TmallServicecenterServicestoreCreateservicestorecapacityAPIResponse)
+}
+
+// ReleaseTmallServicecenterServicestoreCreateservicestorecapacityAPIResponse 将 TmallServicecenterServicestoreCreateservicestorecapacityAPIResponse 保存到 sync.Pool
+func ReleaseTmallServicecenterServicestoreCreateservicestorecapacityAPIResponse(v *TmallServicecenterServicestoreCreateservicestorecapacityAPIResponse) {
+	v.Reset()
+	poolTmallServicecenterServicestoreCreateservicestorecapacityAPIResponse.Put(v)
 }

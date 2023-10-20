@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // PreDepositGoldDto 结构体
 type PreDepositGoldDto struct {
 	// 外部楼盘id
@@ -12,4 +16,25 @@ type PreDepositGoldDto struct {
 	IsDeleted int64 `json:"is_deleted,omitempty" xml:"is_deleted,omitempty"`
 	// 预存金淘宝商品id
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
+}
+
+var poolPreDepositGoldDto = sync.Pool{
+	New: func() any {
+		return new(PreDepositGoldDto)
+	},
+}
+
+// GetPreDepositGoldDto() 从对象池中获取PreDepositGoldDto
+func GetPreDepositGoldDto() *PreDepositGoldDto {
+	return poolPreDepositGoldDto.Get().(*PreDepositGoldDto)
+}
+
+// ReleasePreDepositGoldDto 释放PreDepositGoldDto
+func ReleasePreDepositGoldDto(v *PreDepositGoldDto) {
+	v.OuterProjectId = ""
+	v.OuterStoreId = ""
+	v.OuterSalesActivityId = ""
+	v.IsDeleted = 0
+	v.ItemId = 0
+	poolPreDepositGoldDto.Put(v)
 }

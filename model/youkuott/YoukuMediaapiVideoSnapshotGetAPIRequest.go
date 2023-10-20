@@ -2,6 +2,7 @@ package youkuott
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YoukuMediaapiVideoSnapshotGetAPIRequest struct {
 // NewYoukuMediaapiVideoSnapshotGetRequest 初始化YoukuMediaapiVideoSnapshotGetAPIRequest对象
 func NewYoukuMediaapiVideoSnapshotGetRequest() *YoukuMediaapiVideoSnapshotGetAPIRequest {
 	return &YoukuMediaapiVideoSnapshotGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YoukuMediaapiVideoSnapshotGetAPIRequest) Reset() {
+	r._vid = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YoukuMediaapiVideoSnapshotGetAPIRequest) SetVid(_vid string) error {
 // GetVid Vid Getter
 func (r YoukuMediaapiVideoSnapshotGetAPIRequest) GetVid() string {
 	return r._vid
+}
+
+var poolYoukuMediaapiVideoSnapshotGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYoukuMediaapiVideoSnapshotGetRequest()
+	},
+}
+
+// GetYoukuMediaapiVideoSnapshotGetRequest 从 sync.Pool 获取 YoukuMediaapiVideoSnapshotGetAPIRequest
+func GetYoukuMediaapiVideoSnapshotGetAPIRequest() *YoukuMediaapiVideoSnapshotGetAPIRequest {
+	return poolYoukuMediaapiVideoSnapshotGetAPIRequest.Get().(*YoukuMediaapiVideoSnapshotGetAPIRequest)
+}
+
+// ReleaseYoukuMediaapiVideoSnapshotGetAPIRequest 将 YoukuMediaapiVideoSnapshotGetAPIRequest 放入 sync.Pool
+func ReleaseYoukuMediaapiVideoSnapshotGetAPIRequest(v *YoukuMediaapiVideoSnapshotGetAPIRequest) {
+	v.Reset()
+	poolYoukuMediaapiVideoSnapshotGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihealthDrugcodeUserDataAPIRequest struct {
 // NewAlibabaAlihealthDrugcodeUserDataRequest 初始化AlibabaAlihealthDrugcodeUserDataAPIRequest对象
 func NewAlibabaAlihealthDrugcodeUserDataRequest() *AlibabaAlihealthDrugcodeUserDataAPIRequest {
 	return &AlibabaAlihealthDrugcodeUserDataAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugcodeUserDataAPIRequest) Reset() {
+	r._list = r._list[:0]
+	r._refEntId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihealthDrugcodeUserDataAPIRequest) SetRefEntId(_refEntId strin
 // GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugcodeUserDataAPIRequest) GetRefEntId() string {
 	return r._refEntId
+}
+
+var poolAlibabaAlihealthDrugcodeUserDataAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugcodeUserDataRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugcodeUserDataRequest 从 sync.Pool 获取 AlibabaAlihealthDrugcodeUserDataAPIRequest
+func GetAlibabaAlihealthDrugcodeUserDataAPIRequest() *AlibabaAlihealthDrugcodeUserDataAPIRequest {
+	return poolAlibabaAlihealthDrugcodeUserDataAPIRequest.Get().(*AlibabaAlihealthDrugcodeUserDataAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugcodeUserDataAPIRequest 将 AlibabaAlihealthDrugcodeUserDataAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugcodeUserDataAPIRequest(v *AlibabaAlihealthDrugcodeUserDataAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugcodeUserDataAPIRequest.Put(v)
 }

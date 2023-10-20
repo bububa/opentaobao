@@ -2,6 +2,7 @@ package tmallhk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallTraceplatformTicketOrderUploadAPIRequest struct {
 // NewTmallTraceplatformTicketOrderUploadRequest 初始化TmallTraceplatformTicketOrderUploadAPIRequest对象
 func NewTmallTraceplatformTicketOrderUploadRequest() *TmallTraceplatformTicketOrderUploadAPIRequest {
 	return &TmallTraceplatformTicketOrderUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallTraceplatformTicketOrderUploadAPIRequest) Reset() {
+	r._ticketOrder = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallTraceplatformTicketOrderUploadAPIRequest) SetTicketOrder(_ticketOr
 // GetTicketOrder TicketOrder Getter
 func (r TmallTraceplatformTicketOrderUploadAPIRequest) GetTicketOrder() *TicketOrderUpdator {
 	return r._ticketOrder
+}
+
+var poolTmallTraceplatformTicketOrderUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallTraceplatformTicketOrderUploadRequest()
+	},
+}
+
+// GetTmallTraceplatformTicketOrderUploadRequest 从 sync.Pool 获取 TmallTraceplatformTicketOrderUploadAPIRequest
+func GetTmallTraceplatformTicketOrderUploadAPIRequest() *TmallTraceplatformTicketOrderUploadAPIRequest {
+	return poolTmallTraceplatformTicketOrderUploadAPIRequest.Get().(*TmallTraceplatformTicketOrderUploadAPIRequest)
+}
+
+// ReleaseTmallTraceplatformTicketOrderUploadAPIRequest 将 TmallTraceplatformTicketOrderUploadAPIRequest 放入 sync.Pool
+func ReleaseTmallTraceplatformTicketOrderUploadAPIRequest(v *TmallTraceplatformTicketOrderUploadAPIRequest) {
+	v.Reset()
+	poolTmallTraceplatformTicketOrderUploadAPIRequest.Put(v)
 }

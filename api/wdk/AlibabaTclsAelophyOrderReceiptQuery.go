@@ -9,11 +9,6 @@ import (
 // alibaba.tcls.aelophy.order.receipt.query
 //
 // 订单小票查询
-func AlibabaTclsAelophyOrderReceiptQuery(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyOrderReceiptQueryAPIRequest, session string) (*wdk.AlibabaTclsAelophyOrderReceiptQueryAPIResponse, error) {
-	var resp wdk.AlibabaTclsAelophyOrderReceiptQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTclsAelophyOrderReceiptQuery(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyOrderReceiptQueryAPIRequest, resp *wdk.AlibabaTclsAelophyOrderReceiptQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

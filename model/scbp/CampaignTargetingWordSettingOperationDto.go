@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // CampaignTargetingWordSettingOperationDto 结构体
 type CampaignTargetingWordSettingOperationDto struct {
 	// 操作优推类型 add-增 del-删 mod-改
@@ -12,4 +16,25 @@ type CampaignTargetingWordSettingOperationDto struct {
 	KeywordId int64 `json:"keyword_id,omitempty" xml:"keyword_id,omitempty"`
 	// 计划id
 	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
+}
+
+var poolCampaignTargetingWordSettingOperationDto = sync.Pool{
+	New: func() any {
+		return new(CampaignTargetingWordSettingOperationDto)
+	},
+}
+
+// GetCampaignTargetingWordSettingOperationDto() 从对象池中获取CampaignTargetingWordSettingOperationDto
+func GetCampaignTargetingWordSettingOperationDto() *CampaignTargetingWordSettingOperationDto {
+	return poolCampaignTargetingWordSettingOperationDto.Get().(*CampaignTargetingWordSettingOperationDto)
+}
+
+// ReleaseCampaignTargetingWordSettingOperationDto 释放CampaignTargetingWordSettingOperationDto
+func ReleaseCampaignTargetingWordSettingOperationDto(v *CampaignTargetingWordSettingOperationDto) {
+	v.Operation = ""
+	v.Keyword = ""
+	v.AdgroupId = ""
+	v.KeywordId = 0
+	v.CampaignId = 0
+	poolCampaignTargetingWordSettingOperationDto.Put(v)
 }

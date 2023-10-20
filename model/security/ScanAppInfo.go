@@ -1,5 +1,9 @@
 package security
 
+import (
+	"sync"
+)
+
 // ScanAppInfo 结构体
 type ScanAppInfo struct {
 	// 任务处理完成后的反向通知回调地址,请不要使用ip地址,可能会无法回调,dataType=1时必填,通知为GET请求,请求URL: callbackUrl+&#34;?item_id=xxx&amp;task_status=1&#34;; item_id为应用加固/风险扫描接口返回的任务ID; task_status为任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时; 对于应用加固,接收到通知后如果task_status为1则可通过对应的查询接口查询加固/扫描结果; 对于应用风险扫描,如果task_status为1,3,4均可通过对应查询接口查询到结果,但不包括失败的扫描项的结果
@@ -14,4 +18,26 @@ type ScanAppInfo struct {
 	DataType int64 `json:"data_type,omitempty" xml:"data_type,omitempty"`
 	// APP包大小(单位:字节),dataType=1时必填,用于文件校验
 	Size int64 `json:"size,omitempty" xml:"size,omitempty"`
+}
+
+var poolScanAppInfo = sync.Pool{
+	New: func() any {
+		return new(ScanAppInfo)
+	},
+}
+
+// GetScanAppInfo() 从对象池中获取ScanAppInfo
+func GetScanAppInfo() *ScanAppInfo {
+	return poolScanAppInfo.Get().(*ScanAppInfo)
+}
+
+// ReleaseScanAppInfo 释放ScanAppInfo
+func ReleaseScanAppInfo(v *ScanAppInfo) {
+	v.CallbackUrl = ""
+	v.Data = ""
+	v.Md5 = ""
+	v.AppOsType = 0
+	v.DataType = 0
+	v.Size = 0
+	poolScanAppInfo.Put(v)
 }

@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // RefundOrderQueryListRq 结构体
 type RefundOrderQueryListRq struct {
 	// 申请单创建开始时间
@@ -16,4 +20,27 @@ type RefundOrderQueryListRq struct {
 	RefundStatus int64 `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
 	// 飞猪订单ID
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+}
+
+var poolRefundOrderQueryListRq = sync.Pool{
+	New: func() any {
+		return new(RefundOrderQueryListRq)
+	},
+}
+
+// GetRefundOrderQueryListRq() 从对象池中获取RefundOrderQueryListRq
+func GetRefundOrderQueryListRq() *RefundOrderQueryListRq {
+	return poolRefundOrderQueryListRq.Get().(*RefundOrderQueryListRq)
+}
+
+// ReleaseRefundOrderQueryListRq 释放RefundOrderQueryListRq
+func ReleaseRefundOrderQueryListRq(v *RefundOrderQueryListRq) {
+	v.CreateEndTime = ""
+	v.CreateStartTime = ""
+	v.AgentId = 0
+	v.PageIndex = 0
+	v.PageSize = 0
+	v.RefundStatus = 0
+	v.OrderId = 0
+	poolRefundOrderQueryListRq.Put(v)
 }

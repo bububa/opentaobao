@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaScbpTargetAdPlanCountryIdGetAPIRequest struct {
 // NewAlibabaScbpTargetAdPlanCountryIdGetRequest 初始化AlibabaScbpTargetAdPlanCountryIdGetAPIRequest对象
 func NewAlibabaScbpTargetAdPlanCountryIdGetRequest() *AlibabaScbpTargetAdPlanCountryIdGetAPIRequest {
 	return &AlibabaScbpTargetAdPlanCountryIdGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpTargetAdPlanCountryIdGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaScbpTargetAdPlanCountryIdGetAPIRequest) GetApiParams(params url.V
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaScbpTargetAdPlanCountryIdGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaScbpTargetAdPlanCountryIdGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpTargetAdPlanCountryIdGetRequest()
+	},
+}
+
+// GetAlibabaScbpTargetAdPlanCountryIdGetRequest 从 sync.Pool 获取 AlibabaScbpTargetAdPlanCountryIdGetAPIRequest
+func GetAlibabaScbpTargetAdPlanCountryIdGetAPIRequest() *AlibabaScbpTargetAdPlanCountryIdGetAPIRequest {
+	return poolAlibabaScbpTargetAdPlanCountryIdGetAPIRequest.Get().(*AlibabaScbpTargetAdPlanCountryIdGetAPIRequest)
+}
+
+// ReleaseAlibabaScbpTargetAdPlanCountryIdGetAPIRequest 将 AlibabaScbpTargetAdPlanCountryIdGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpTargetAdPlanCountryIdGetAPIRequest(v *AlibabaScbpTargetAdPlanCountryIdGetAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpTargetAdPlanCountryIdGetAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.tmallgenie.scp.location.get
 //
 // 天猫精灵供应链-计划域-IBP查询CDC和RDC数据接口
-func AlibabaTmallgenieScpLocationGet(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpLocationGetAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpLocationGetAPIResponse, error) {
-	var resp tmallgeniescp.AlibabaTmallgenieScpLocationGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTmallgenieScpLocationGet(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpLocationGetAPIRequest, resp *tmallgeniescp.AlibabaTmallgenieScpLocationGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

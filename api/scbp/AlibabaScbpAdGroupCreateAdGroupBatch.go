@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.ad.group.create.ad.group.batch
 //
 // 创建推广单元
-func AlibabaScbpAdGroupCreateAdGroupBatch(clt *core.SDKClient, req *scbp.AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest, session string) (*scbp.AlibabaScbpAdGroupCreateAdGroupBatchAPIResponse, error) {
-	var resp scbp.AlibabaScbpAdGroupCreateAdGroupBatchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpAdGroupCreateAdGroupBatch(clt *core.SDKClient, req *scbp.AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest, resp *scbp.AlibabaScbpAdGroupCreateAdGroupBatchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

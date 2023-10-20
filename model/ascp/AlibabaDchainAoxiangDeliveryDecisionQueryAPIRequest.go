@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangDeliveryDecisionQueryAPIRequest struct {
 // NewAlibabaDchainAoxiangDeliveryDecisionQueryRequest 初始化AlibabaDchainAoxiangDeliveryDecisionQueryAPIRequest对象
 func NewAlibabaDchainAoxiangDeliveryDecisionQueryRequest() *AlibabaDchainAoxiangDeliveryDecisionQueryAPIRequest {
 	return &AlibabaDchainAoxiangDeliveryDecisionQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangDeliveryDecisionQueryAPIRequest) Reset() {
+	r._deliveryDecisionQueryRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangDeliveryDecisionQueryAPIRequest) SetDeliveryDecisio
 // GetDeliveryDecisionQueryRequest DeliveryDecisionQueryRequest Getter
 func (r AlibabaDchainAoxiangDeliveryDecisionQueryAPIRequest) GetDeliveryDecisionQueryRequest() *DeliveryDecisionQueryRequest {
 	return r._deliveryDecisionQueryRequest
+}
+
+var poolAlibabaDchainAoxiangDeliveryDecisionQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangDeliveryDecisionQueryRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangDeliveryDecisionQueryRequest 从 sync.Pool 获取 AlibabaDchainAoxiangDeliveryDecisionQueryAPIRequest
+func GetAlibabaDchainAoxiangDeliveryDecisionQueryAPIRequest() *AlibabaDchainAoxiangDeliveryDecisionQueryAPIRequest {
+	return poolAlibabaDchainAoxiangDeliveryDecisionQueryAPIRequest.Get().(*AlibabaDchainAoxiangDeliveryDecisionQueryAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangDeliveryDecisionQueryAPIRequest 将 AlibabaDchainAoxiangDeliveryDecisionQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangDeliveryDecisionQueryAPIRequest(v *AlibabaDchainAoxiangDeliveryDecisionQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangDeliveryDecisionQueryAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package wdkitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaWdkPictureUploadAPIRequest struct {
 // NewAlibabaWdkPictureUploadRequest 初始化AlibabaWdkPictureUploadAPIRequest对象
 func NewAlibabaWdkPictureUploadRequest() *AlibabaWdkPictureUploadAPIRequest {
 	return &AlibabaWdkPictureUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkPictureUploadAPIRequest) Reset() {
+	r._imgInputTitle = ""
+	r._title = ""
+	r._pictureCategoryId = 0
+	r._img = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaWdkPictureUploadAPIRequest) SetImg(_img *model.File) error {
 // GetImg Img Getter
 func (r AlibabaWdkPictureUploadAPIRequest) GetImg() *model.File {
 	return r._img
+}
+
+var poolAlibabaWdkPictureUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkPictureUploadRequest()
+	},
+}
+
+// GetAlibabaWdkPictureUploadRequest 从 sync.Pool 获取 AlibabaWdkPictureUploadAPIRequest
+func GetAlibabaWdkPictureUploadAPIRequest() *AlibabaWdkPictureUploadAPIRequest {
+	return poolAlibabaWdkPictureUploadAPIRequest.Get().(*AlibabaWdkPictureUploadAPIRequest)
+}
+
+// ReleaseAlibabaWdkPictureUploadAPIRequest 将 AlibabaWdkPictureUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkPictureUploadAPIRequest(v *AlibabaWdkPictureUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkPictureUploadAPIRequest.Put(v)
 }

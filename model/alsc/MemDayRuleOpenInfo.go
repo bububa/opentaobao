@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // MemDayRuleOpenInfo 结构体
 type MemDayRuleOpenInfo struct {
 	// 会员等级和特价菜单的关系
@@ -26,4 +30,32 @@ type MemDayRuleOpenInfo struct {
 	MenuSwitch bool `json:"menu_switch,omitempty" xml:"menu_switch,omitempty"`
 	// 积分奖励开关
 	PointSwitch bool `json:"point_switch,omitempty" xml:"point_switch,omitempty"`
+}
+
+var poolMemDayRuleOpenInfo = sync.Pool{
+	New: func() any {
+		return new(MemDayRuleOpenInfo)
+	},
+}
+
+// GetMemDayRuleOpenInfo() 从对象池中获取MemDayRuleOpenInfo
+func GetMemDayRuleOpenInfo() *MemDayRuleOpenInfo {
+	return poolMemDayRuleOpenInfo.Get().(*MemDayRuleOpenInfo)
+}
+
+// ReleaseMemDayRuleOpenInfo 释放MemDayRuleOpenInfo
+func ReleaseMemDayRuleOpenInfo(v *MemDayRuleOpenInfo) {
+	v.LevelMenuList = v.LevelMenuList[:0]
+	v.LevelPointList = v.LevelPointList[:0]
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.MemDayCircle = ""
+	v.MemDayCircleType = ""
+	v.MemDayRuleId = ""
+	v.ExtInfo = ""
+	v.Deleted = false
+	v.MemDaySwitch = false
+	v.MenuSwitch = false
+	v.PointSwitch = false
+	poolMemDayRuleOpenInfo.Put(v)
 }

@@ -1,5 +1,9 @@
 package vaccin
 
+import (
+	"sync"
+)
+
 // AlipayVaccineUserBindDto 结构体
 type AlipayVaccineUserBindDto struct {
 	// 预约日期：2019-02-08 严格按照
@@ -16,4 +20,27 @@ type AlipayVaccineUserBindDto struct {
 	PovName string `json:"pov_name,omitempty" xml:"pov_name,omitempty"`
 	// 接种人出生日期
 	Birthday string `json:"birthday,omitempty" xml:"birthday,omitempty"`
+}
+
+var poolAlipayVaccineUserBindDto = sync.Pool{
+	New: func() any {
+		return new(AlipayVaccineUserBindDto)
+	},
+}
+
+// GetAlipayVaccineUserBindDto() 从对象池中获取AlipayVaccineUserBindDto
+func GetAlipayVaccineUserBindDto() *AlipayVaccineUserBindDto {
+	return poolAlipayVaccineUserBindDto.Get().(*AlipayVaccineUserBindDto)
+}
+
+// ReleaseAlipayVaccineUserBindDto 释放AlipayVaccineUserBindDto
+func ReleaseAlipayVaccineUserBindDto(v *AlipayVaccineUserBindDto) {
+	v.ReserveDate = ""
+	v.AgeType = ""
+	v.PovNo = ""
+	v.Name = ""
+	v.IsvUserId = ""
+	v.PovName = ""
+	v.Birthday = ""
+	poolAlipayVaccineUserBindDto.Put(v)
 }

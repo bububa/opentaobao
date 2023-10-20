@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type TaobaoSimbaRptAdgroupeffectGetAPIRequest struct {
 // NewTaobaoSimbaRptAdgroupeffectGetRequest 初始化TaobaoSimbaRptAdgroupeffectGetAPIRequest对象
 func NewTaobaoSimbaRptAdgroupeffectGetRequest() *TaobaoSimbaRptAdgroupeffectGetAPIRequest {
 	return &TaobaoSimbaRptAdgroupeffectGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) Reset() {
+	r._subwayToken = ""
+	r._nick = ""
+	r._startTime = ""
+	r._endTime = ""
+	r._searchType = ""
+	r._source = ""
+	r._campaignId = 0
+	r._adgroupId = 0
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetPageSize(_pageSize int64) 
 // GetPageSize PageSize Getter
 func (r TaobaoSimbaRptAdgroupeffectGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoSimbaRptAdgroupeffectGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaRptAdgroupeffectGetRequest()
+	},
+}
+
+// GetTaobaoSimbaRptAdgroupeffectGetRequest 从 sync.Pool 获取 TaobaoSimbaRptAdgroupeffectGetAPIRequest
+func GetTaobaoSimbaRptAdgroupeffectGetAPIRequest() *TaobaoSimbaRptAdgroupeffectGetAPIRequest {
+	return poolTaobaoSimbaRptAdgroupeffectGetAPIRequest.Get().(*TaobaoSimbaRptAdgroupeffectGetAPIRequest)
+}
+
+// ReleaseTaobaoSimbaRptAdgroupeffectGetAPIRequest 将 TaobaoSimbaRptAdgroupeffectGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaRptAdgroupeffectGetAPIRequest(v *TaobaoSimbaRptAdgroupeffectGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaRptAdgroupeffectGetAPIRequest.Put(v)
 }

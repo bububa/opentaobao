@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // TaxOptimizationSalaryBillCommitReqDto 结构体
 type TaxOptimizationSalaryBillCommitReqDto struct {
 	// 发薪明细
@@ -16,4 +20,27 @@ type TaxOptimizationSalaryBillCommitReqDto struct {
 	CloseAccountDate bool `json:"close_account_date,omitempty" xml:"close_account_date,omitempty"`
 	// 是否开启账单
 	StartAccountDate bool `json:"start_account_date,omitempty" xml:"start_account_date,omitempty"`
+}
+
+var poolTaxOptimizationSalaryBillCommitReqDto = sync.Pool{
+	New: func() any {
+		return new(TaxOptimizationSalaryBillCommitReqDto)
+	},
+}
+
+// GetTaxOptimizationSalaryBillCommitReqDto() 从对象池中获取TaxOptimizationSalaryBillCommitReqDto
+func GetTaxOptimizationSalaryBillCommitReqDto() *TaxOptimizationSalaryBillCommitReqDto {
+	return poolTaxOptimizationSalaryBillCommitReqDto.Get().(*TaxOptimizationSalaryBillCommitReqDto)
+}
+
+// ReleaseTaxOptimizationSalaryBillCommitReqDto 释放TaxOptimizationSalaryBillCommitReqDto
+func ReleaseTaxOptimizationSalaryBillCommitReqDto(v *TaxOptimizationSalaryBillCommitReqDto) {
+	v.DetailList = v.DetailList[:0]
+	v.AccountDate = ""
+	v.ContractorAppliedDutiableAmount = ""
+	v.EmployerCode = ""
+	v.TotalDetailCount = 0
+	v.CloseAccountDate = false
+	v.StartAccountDate = false
+	poolTaxOptimizationSalaryBillCommitReqDto.Put(v)
 }

@@ -2,6 +2,7 @@ package cainiaolocker
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type CainiaoEndpointLockerTopWithholdQueryAPIRequest struct {
 // NewCainiaoEndpointLockerTopWithholdQueryRequest 初始化CainiaoEndpointLockerTopWithholdQueryAPIRequest对象
 func NewCainiaoEndpointLockerTopWithholdQueryRequest() *CainiaoEndpointLockerTopWithholdQueryAPIRequest {
 	return &CainiaoEndpointLockerTopWithholdQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoEndpointLockerTopWithholdQueryAPIRequest) Reset() {
+	r._companyCode = ""
+	r._openUserId = ""
+	r._orderType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *CainiaoEndpointLockerTopWithholdQueryAPIRequest) SetOrderType(_orderTyp
 // GetOrderType OrderType Getter
 func (r CainiaoEndpointLockerTopWithholdQueryAPIRequest) GetOrderType() int64 {
 	return r._orderType
+}
+
+var poolCainiaoEndpointLockerTopWithholdQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoEndpointLockerTopWithholdQueryRequest()
+	},
+}
+
+// GetCainiaoEndpointLockerTopWithholdQueryRequest 从 sync.Pool 获取 CainiaoEndpointLockerTopWithholdQueryAPIRequest
+func GetCainiaoEndpointLockerTopWithholdQueryAPIRequest() *CainiaoEndpointLockerTopWithholdQueryAPIRequest {
+	return poolCainiaoEndpointLockerTopWithholdQueryAPIRequest.Get().(*CainiaoEndpointLockerTopWithholdQueryAPIRequest)
+}
+
+// ReleaseCainiaoEndpointLockerTopWithholdQueryAPIRequest 将 CainiaoEndpointLockerTopWithholdQueryAPIRequest 放入 sync.Pool
+func ReleaseCainiaoEndpointLockerTopWithholdQueryAPIRequest(v *CainiaoEndpointLockerTopWithholdQueryAPIRequest) {
+	v.Reset()
+	poolCainiaoEndpointLockerTopWithholdQueryAPIRequest.Put(v)
 }

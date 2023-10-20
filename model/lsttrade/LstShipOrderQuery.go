@@ -1,5 +1,9 @@
 package lsttrade
 
+import (
+	"sync"
+)
+
 // LstShipOrderQuery 结构体
 type LstShipOrderQuery struct {
 	// 配送商名称
@@ -16,4 +20,27 @@ type LstShipOrderQuery struct {
 	Page int64 `json:"page,omitempty" xml:"page,omitempty"`
 	// 每页最大主订单数，注意：返回的content_list数据按照子订单维度展开
 	Size int64 `json:"size,omitempty" xml:"size,omitempty"`
+}
+
+var poolLstShipOrderQuery = sync.Pool{
+	New: func() any {
+		return new(LstShipOrderQuery)
+	},
+}
+
+// GetLstShipOrderQuery() 从对象池中获取LstShipOrderQuery
+func GetLstShipOrderQuery() *LstShipOrderQuery {
+	return poolLstShipOrderQuery.Get().(*LstShipOrderQuery)
+}
+
+// ReleaseLstShipOrderQuery 释放LstShipOrderQuery
+func ReleaseLstShipOrderQuery(v *LstShipOrderQuery) {
+	v.DistributorName = ""
+	v.GmtModifiedEnd = ""
+	v.GmtModifiedStart = ""
+	v.MainBizOrderId = 0
+	v.MainShipOrderId = 0
+	v.Page = 0
+	v.Size = 0
+	poolLstShipOrderQuery.Put(v)
 }

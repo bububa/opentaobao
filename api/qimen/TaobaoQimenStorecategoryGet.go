@@ -9,11 +9,6 @@ import (
 // taobao.qimen.storecategory.get
 //
 // 商家在ERP中调用该接口，获取门店类目
-func TaobaoQimenStorecategoryGet(clt *core.SDKClient, req *qimen.TaobaoQimenStorecategoryGetAPIRequest, session string) (*qimen.TaobaoQimenStorecategoryGetAPIResponse, error) {
-	var resp qimen.TaobaoQimenStorecategoryGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoQimenStorecategoryGet(clt *core.SDKClient, req *qimen.TaobaoQimenStorecategoryGetAPIRequest, resp *qimen.TaobaoQimenStorecategoryGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package hotel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripHotelRateGetmixratelistGetAPIRequest struct {
 // NewAlitripHotelRateGetmixratelistGetRequest 初始化AlitripHotelRateGetmixratelistGetAPIRequest对象
 func NewAlitripHotelRateGetmixratelistGetRequest() *AlitripHotelRateGetmixratelistGetAPIRequest {
 	return &AlitripHotelRateGetmixratelistGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripHotelRateGetmixratelistGetAPIRequest) Reset() {
+	r._paramGetMixRateListParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripHotelRateGetmixratelistGetAPIRequest) SetParamGetMixRateListPara
 // GetParamGetMixRateListParam ParamGetMixRateListParam Getter
 func (r AlitripHotelRateGetmixratelistGetAPIRequest) GetParamGetMixRateListParam() *GetMixRateListParam {
 	return r._paramGetMixRateListParam
+}
+
+var poolAlitripHotelRateGetmixratelistGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripHotelRateGetmixratelistGetRequest()
+	},
+}
+
+// GetAlitripHotelRateGetmixratelistGetRequest 从 sync.Pool 获取 AlitripHotelRateGetmixratelistGetAPIRequest
+func GetAlitripHotelRateGetmixratelistGetAPIRequest() *AlitripHotelRateGetmixratelistGetAPIRequest {
+	return poolAlitripHotelRateGetmixratelistGetAPIRequest.Get().(*AlitripHotelRateGetmixratelistGetAPIRequest)
+}
+
+// ReleaseAlitripHotelRateGetmixratelistGetAPIRequest 将 AlitripHotelRateGetmixratelistGetAPIRequest 放入 sync.Pool
+func ReleaseAlitripHotelRateGetmixratelistGetAPIRequest(v *AlitripHotelRateGetmixratelistGetAPIRequest) {
+	v.Reset()
+	poolAlitripHotelRateGetmixratelistGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TmallPromotagTaguserSaveAPIRequest struct {
 // NewTmallPromotagTaguserSaveRequest 初始化TmallPromotagTaguserSaveAPIRequest对象
 func NewTmallPromotagTaguserSaveRequest() *TmallPromotagTaguserSaveAPIRequest {
 	return &TmallPromotagTaguserSaveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallPromotagTaguserSaveAPIRequest) Reset() {
+	r._nick = ""
+	r._ouid = ""
+	r._openid = ""
+	r._tagId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TmallPromotagTaguserSaveAPIRequest) SetTagId(_tagId int64) error {
 // GetTagId TagId Getter
 func (r TmallPromotagTaguserSaveAPIRequest) GetTagId() int64 {
 	return r._tagId
+}
+
+var poolTmallPromotagTaguserSaveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallPromotagTaguserSaveRequest()
+	},
+}
+
+// GetTmallPromotagTaguserSaveRequest 从 sync.Pool 获取 TmallPromotagTaguserSaveAPIRequest
+func GetTmallPromotagTaguserSaveAPIRequest() *TmallPromotagTaguserSaveAPIRequest {
+	return poolTmallPromotagTaguserSaveAPIRequest.Get().(*TmallPromotagTaguserSaveAPIRequest)
+}
+
+// ReleaseTmallPromotagTaguserSaveAPIRequest 将 TmallPromotagTaguserSaveAPIRequest 放入 sync.Pool
+func ReleaseTmallPromotagTaguserSaveAPIRequest(v *TmallPromotagTaguserSaveAPIRequest) {
+	v.Reset()
+	poolTmallPromotagTaguserSaveAPIRequest.Put(v)
 }

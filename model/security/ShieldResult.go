@@ -1,5 +1,9 @@
 package security
 
+import (
+	"sync"
+)
+
 // ShieldResult 结构体
 type ShieldResult struct {
 	// 加固后的应用列表(任务完成时才返回)  普通加固时只有1个文件，多渠道加固时每个渠道1个文件
@@ -12,4 +16,25 @@ type ShieldResult struct {
 	TaskStatus int64 `json:"task_status,omitempty" xml:"task_status,omitempty"`
 	// 混淆率计算返回结果
 	ObfuscateResult *ObfuscateResult `json:"obfuscate_result,omitempty" xml:"obfuscate_result,omitempty"`
+}
+
+var poolShieldResult = sync.Pool{
+	New: func() any {
+		return new(ShieldResult)
+	},
+}
+
+// GetShieldResult() 从对象池中获取ShieldResult
+func GetShieldResult() *ShieldResult {
+	return poolShieldResult.Get().(*ShieldResult)
+}
+
+// ReleaseShieldResult 释放ShieldResult
+func ReleaseShieldResult(v *ShieldResult) {
+	v.AppList = v.AppList[:0]
+	v.ErrorMsg = ""
+	v.MapUrl = ""
+	v.TaskStatus = 0
+	v.ObfuscateResult = nil
+	poolShieldResult.Put(v)
 }

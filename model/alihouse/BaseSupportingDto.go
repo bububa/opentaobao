@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // BaseSupportingDto 结构体
 type BaseSupportingDto struct {
 	// 外部配套id
@@ -34,4 +38,36 @@ type BaseSupportingDto struct {
 	ProvId int64 `json:"prov_id,omitempty" xml:"prov_id,omitempty"`
 	// 所属城市id
 	CityId int64 `json:"city_id,omitempty" xml:"city_id,omitempty"`
+}
+
+var poolBaseSupportingDto = sync.Pool{
+	New: func() any {
+		return new(BaseSupportingDto)
+	},
+}
+
+// GetBaseSupportingDto() 从对象池中获取BaseSupportingDto
+func GetBaseSupportingDto() *BaseSupportingDto {
+	return poolBaseSupportingDto.Get().(*BaseSupportingDto)
+}
+
+// ReleaseBaseSupportingDto 释放BaseSupportingDto
+func ReleaseBaseSupportingDto(v *BaseSupportingDto) {
+	v.OuterSid = ""
+	v.OuterId = ""
+	v.SupportType = ""
+	v.PointCode = ""
+	v.SupportName = ""
+	v.Address = ""
+	v.Longitude = ""
+	v.Latitude = ""
+	v.LinearDistance = ""
+	v.WalkingDistance = ""
+	v.CarDistance = ""
+	v.OuterStoreId = ""
+	v.Type = 0
+	v.IsValid = 0
+	v.ProvId = 0
+	v.CityId = 0
+	poolBaseSupportingDto.Put(v)
 }

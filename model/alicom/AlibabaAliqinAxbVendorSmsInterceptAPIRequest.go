@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAliqinAxbVendorSmsInterceptAPIRequest struct {
 // NewAlibabaAliqinAxbVendorSmsInterceptRequest 初始化AlibabaAliqinAxbVendorSmsInterceptAPIRequest对象
 func NewAlibabaAliqinAxbVendorSmsInterceptRequest() *AlibabaAliqinAxbVendorSmsInterceptAPIRequest {
 	return &AlibabaAliqinAxbVendorSmsInterceptAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinAxbVendorSmsInterceptAPIRequest) Reset() {
+	r._smsInterceptRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAliqinAxbVendorSmsInterceptAPIRequest) SetSmsInterceptRequest(_s
 // GetSmsInterceptRequest SmsInterceptRequest Getter
 func (r AlibabaAliqinAxbVendorSmsInterceptAPIRequest) GetSmsInterceptRequest() *SmsInterceptRequest {
 	return r._smsInterceptRequest
+}
+
+var poolAlibabaAliqinAxbVendorSmsInterceptAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinAxbVendorSmsInterceptRequest()
+	},
+}
+
+// GetAlibabaAliqinAxbVendorSmsInterceptRequest 从 sync.Pool 获取 AlibabaAliqinAxbVendorSmsInterceptAPIRequest
+func GetAlibabaAliqinAxbVendorSmsInterceptAPIRequest() *AlibabaAliqinAxbVendorSmsInterceptAPIRequest {
+	return poolAlibabaAliqinAxbVendorSmsInterceptAPIRequest.Get().(*AlibabaAliqinAxbVendorSmsInterceptAPIRequest)
+}
+
+// ReleaseAlibabaAliqinAxbVendorSmsInterceptAPIRequest 将 AlibabaAliqinAxbVendorSmsInterceptAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinAxbVendorSmsInterceptAPIRequest(v *AlibabaAliqinAxbVendorSmsInterceptAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinAxbVendorSmsInterceptAPIRequest.Put(v)
 }

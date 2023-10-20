@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // BrandListDto 结构体
 type BrandListDto struct {
 	// 品牌名称
@@ -12,4 +16,25 @@ type BrandListDto struct {
 	BrandCode string `json:"brand_code,omitempty" xml:"brand_code,omitempty"`
 	// 子品牌编码
 	SubType int64 `json:"sub_type,omitempty" xml:"sub_type,omitempty"`
+}
+
+var poolBrandListDto = sync.Pool{
+	New: func() any {
+		return new(BrandListDto)
+	},
+}
+
+// GetBrandListDto() 从对象池中获取BrandListDto
+func GetBrandListDto() *BrandListDto {
+	return poolBrandListDto.Get().(*BrandListDto)
+}
+
+// ReleaseBrandListDto 释放BrandListDto
+func ReleaseBrandListDto(v *BrandListDto) {
+	v.BrandName = ""
+	v.Species = ""
+	v.Logo = ""
+	v.BrandCode = ""
+	v.SubType = 0
+	poolBrandListDto.Put(v)
 }

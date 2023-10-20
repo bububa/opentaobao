@@ -1,5 +1,9 @@
 package pur
 
+import (
+	"sync"
+)
+
 // SupplierAsnItem 结构体
 type SupplierAsnItem struct {
 	// 关闭原因
@@ -32,4 +36,35 @@ type SupplierAsnItem struct {
 	AsnLineNum string `json:"asn_line_num,omitempty" xml:"asn_line_num,omitempty"`
 	// 延期原因
 	DelayReason string `json:"delay_reason,omitempty" xml:"delay_reason,omitempty"`
+}
+
+var poolSupplierAsnItem = sync.Pool{
+	New: func() any {
+		return new(SupplierAsnItem)
+	},
+}
+
+// GetSupplierAsnItem() 从对象池中获取SupplierAsnItem
+func GetSupplierAsnItem() *SupplierAsnItem {
+	return poolSupplierAsnItem.Get().(*SupplierAsnItem)
+}
+
+// ReleaseSupplierAsnItem 释放SupplierAsnItem
+func ReleaseSupplierAsnItem(v *SupplierAsnItem) {
+	v.LineCloseReason = ""
+	v.LineStatus = ""
+	v.LineRemark = ""
+	v.Cass = ""
+	v.ContainerNo = ""
+	v.PackingListNo = ""
+	v.DeliveryAmount = ""
+	v.DeliveryQty = ""
+	v.ProcurementMethod = ""
+	v.ShippingBatchNo = ""
+	v.SourcePoLineNum = ""
+	v.SourcePoNo = ""
+	v.IsPoSource = ""
+	v.AsnLineNum = ""
+	v.DelayReason = ""
+	poolSupplierAsnItem.Put(v)
 }

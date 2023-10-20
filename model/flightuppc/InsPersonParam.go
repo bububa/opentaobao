@@ -1,5 +1,9 @@
 package flightuppc
 
+import (
+	"sync"
+)
+
 // InsPersonParam 结构体
 type InsPersonParam struct {
 	// 证件号码
@@ -14,4 +18,26 @@ type InsPersonParam struct {
 	CertType string `json:"cert_type,omitempty" xml:"cert_type,omitempty"`
 	// 电话号码，不需要传
 	Phone string `json:"phone,omitempty" xml:"phone,omitempty"`
+}
+
+var poolInsPersonParam = sync.Pool{
+	New: func() any {
+		return new(InsPersonParam)
+	},
+}
+
+// GetInsPersonParam() 从对象池中获取InsPersonParam
+func GetInsPersonParam() *InsPersonParam {
+	return poolInsPersonParam.Get().(*InsPersonParam)
+}
+
+// ReleaseInsPersonParam 释放InsPersonParam
+func ReleaseInsPersonParam(v *InsPersonParam) {
+	v.CertNo = ""
+	v.IdentityType = ""
+	v.CertName = ""
+	v.Birthday = ""
+	v.CertType = ""
+	v.Phone = ""
+	poolInsPersonParam.Put(v)
 }

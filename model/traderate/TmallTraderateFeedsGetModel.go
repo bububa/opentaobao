@@ -1,5 +1,9 @@
 package traderate
 
+import (
+	"sync"
+)
+
 // TmallTraderateFeedsGetModel 结构体
 type TmallTraderateFeedsGetModel struct {
 	// 原始评价对应的标签列表
@@ -22,4 +26,30 @@ type TmallTraderateFeedsGetModel struct {
 	AppendHasNegtv bool `json:"append_has_negtv,omitempty" xml:"append_has_negtv,omitempty"`
 	// 原始评价是否含有负向标签
 	HasNegtv bool `json:"has_negtv,omitempty" xml:"has_negtv,omitempty"`
+}
+
+var poolTmallTraderateFeedsGetModel = sync.Pool{
+	New: func() any {
+		return new(TmallTraderateFeedsGetModel)
+	},
+}
+
+// GetTmallTraderateFeedsGetModel() 从对象池中获取TmallTraderateFeedsGetModel
+func GetTmallTraderateFeedsGetModel() *TmallTraderateFeedsGetModel {
+	return poolTmallTraderateFeedsGetModel.Get().(*TmallTraderateFeedsGetModel)
+}
+
+// ReleaseTmallTraderateFeedsGetModel 释放TmallTraderateFeedsGetModel
+func ReleaseTmallTraderateFeedsGetModel(v *TmallTraderateFeedsGetModel) {
+	v.Tags = v.Tags[:0]
+	v.AppendTags = v.AppendTags[:0]
+	v.AppendContent = ""
+	v.Content = ""
+	v.AppendTime = ""
+	v.UserNick = ""
+	v.CommentTime = ""
+	v.Ouid = ""
+	v.AppendHasNegtv = false
+	v.HasNegtv = false
+	poolTmallTraderateFeedsGetModel.Put(v)
 }

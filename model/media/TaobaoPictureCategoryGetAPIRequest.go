@@ -2,6 +2,7 @@ package media
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoPictureCategoryGetAPIRequest struct {
 // NewTaobaoPictureCategoryGetRequest 初始化TaobaoPictureCategoryGetAPIRequest对象
 func NewTaobaoPictureCategoryGetRequest() *TaobaoPictureCategoryGetAPIRequest {
 	return &TaobaoPictureCategoryGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPictureCategoryGetAPIRequest) Reset() {
+	r._pictureCategoryName = ""
+	r._type = ""
+	r._modifiedTime = ""
+	r._pictureCategoryId = 0
+	r._parentId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoPictureCategoryGetAPIRequest) SetParentId(_parentId int64) error 
 // GetParentId ParentId Getter
 func (r TaobaoPictureCategoryGetAPIRequest) GetParentId() int64 {
 	return r._parentId
+}
+
+var poolTaobaoPictureCategoryGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPictureCategoryGetRequest()
+	},
+}
+
+// GetTaobaoPictureCategoryGetRequest 从 sync.Pool 获取 TaobaoPictureCategoryGetAPIRequest
+func GetTaobaoPictureCategoryGetAPIRequest() *TaobaoPictureCategoryGetAPIRequest {
+	return poolTaobaoPictureCategoryGetAPIRequest.Get().(*TaobaoPictureCategoryGetAPIRequest)
+}
+
+// ReleaseTaobaoPictureCategoryGetAPIRequest 将 TaobaoPictureCategoryGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPictureCategoryGetAPIRequest(v *TaobaoPictureCategoryGetAPIRequest) {
+	v.Reset()
+	poolTaobaoPictureCategoryGetAPIRequest.Put(v)
 }

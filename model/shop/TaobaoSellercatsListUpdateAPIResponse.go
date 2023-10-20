@@ -2,6 +2,7 @@ package shop
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoSellercatsListUpdateAPIResponse struct {
 	TaobaoSellercatsListUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoSellercatsListUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoSellercatsListUpdateAPIResponseModel).Reset()
+}
+
 // TaobaoSellercatsListUpdateAPIResponseModel is 更新卖家自定义类目 成功返回结果
 type TaobaoSellercatsListUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"sellercats_list_update_response"`
@@ -22,4 +29,27 @@ type TaobaoSellercatsListUpdateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回sellercat数据结构中的：cid,modified
 	SellerCat *SellerCat `json:"seller_cat,omitempty" xml:"seller_cat,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoSellercatsListUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.SellerCat = nil
+}
+
+var poolTaobaoSellercatsListUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoSellercatsListUpdateAPIResponse)
+	},
+}
+
+// GetTaobaoSellercatsListUpdateAPIResponse 从 sync.Pool 获取 TaobaoSellercatsListUpdateAPIResponse
+func GetTaobaoSellercatsListUpdateAPIResponse() *TaobaoSellercatsListUpdateAPIResponse {
+	return poolTaobaoSellercatsListUpdateAPIResponse.Get().(*TaobaoSellercatsListUpdateAPIResponse)
+}
+
+// ReleaseTaobaoSellercatsListUpdateAPIResponse 将 TaobaoSellercatsListUpdateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoSellercatsListUpdateAPIResponse(v *TaobaoSellercatsListUpdateAPIResponse) {
+	v.Reset()
+	poolTaobaoSellercatsListUpdateAPIResponse.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.ascp.channel.sub.refund.create
 //
 // 淘外分销逆向创单（子单退）
-func AlibabaAscpChannelSubRefundCreate(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelSubRefundCreateAPIRequest, session string) (*ascpchannel.AlibabaAscpChannelSubRefundCreateAPIResponse, error) {
-	var resp ascpchannel.AlibabaAscpChannelSubRefundCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAscpChannelSubRefundCreate(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelSubRefundCreateAPIRequest, resp *ascpchannel.AlibabaAscpChannelSubRefundCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package miniappopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoMiniappInteractBenefitItemGetAPIRequest struct {
 // NewTaobaoMiniappInteractBenefitItemGetRequest 初始化TaobaoMiniappInteractBenefitItemGetAPIRequest对象
 func NewTaobaoMiniappInteractBenefitItemGetRequest() *TaobaoMiniappInteractBenefitItemGetAPIRequest {
 	return &TaobaoMiniappInteractBenefitItemGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMiniappInteractBenefitItemGetAPIRequest) Reset() {
+	r._miniAppSellerStrategyBenefitItemBindRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoMiniappInteractBenefitItemGetAPIRequest) SetMiniAppSellerStrategy
 // GetMiniAppSellerStrategyBenefitItemBindRequest MiniAppSellerStrategyBenefitItemBindRequest Getter
 func (r TaobaoMiniappInteractBenefitItemGetAPIRequest) GetMiniAppSellerStrategyBenefitItemBindRequest() *SellerStrategyBenefitItemBindOpenRequest {
 	return r._miniAppSellerStrategyBenefitItemBindRequest
+}
+
+var poolTaobaoMiniappInteractBenefitItemGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMiniappInteractBenefitItemGetRequest()
+	},
+}
+
+// GetTaobaoMiniappInteractBenefitItemGetRequest 从 sync.Pool 获取 TaobaoMiniappInteractBenefitItemGetAPIRequest
+func GetTaobaoMiniappInteractBenefitItemGetAPIRequest() *TaobaoMiniappInteractBenefitItemGetAPIRequest {
+	return poolTaobaoMiniappInteractBenefitItemGetAPIRequest.Get().(*TaobaoMiniappInteractBenefitItemGetAPIRequest)
+}
+
+// ReleaseTaobaoMiniappInteractBenefitItemGetAPIRequest 将 TaobaoMiniappInteractBenefitItemGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMiniappInteractBenefitItemGetAPIRequest(v *TaobaoMiniappInteractBenefitItemGetAPIRequest) {
+	v.Reset()
+	poolTaobaoMiniappInteractBenefitItemGetAPIRequest.Put(v)
 }

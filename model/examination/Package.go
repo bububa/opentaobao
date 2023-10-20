@@ -1,5 +1,9 @@
 package examination
 
+import (
+	"sync"
+)
+
 // Package 结构体
 type Package struct {
 	// 体检项列表
@@ -48,4 +52,43 @@ type Package struct {
 	OnlyAsSkuItem bool `json:"only_as_sku_item,omitempty" xml:"only_as_sku_item,omitempty"`
 	// 标记加项编码为空，用于清空加项
 	SkuItemCodesNoData bool `json:"sku_item_codes_no_data,omitempty" xml:"sku_item_codes_no_data,omitempty"`
+}
+
+var poolPackage = sync.Pool{
+	New: func() any {
+		return new(Package)
+	},
+}
+
+// GetPackage() 从对象池中获取Package
+func GetPackage() *Package {
+	return poolPackage.Get().(*Package)
+}
+
+// ReleasePackage 释放Package
+func ReleasePackage(v *Package) {
+	v.ItemList = v.ItemList[:0]
+	v.Labels = v.Labels[:0]
+	v.FeatureItem = v.FeatureItem[:0]
+	v.ServiceTypes = v.ServiceTypes[:0]
+	v.SkuItemCodes = v.SkuItemCodes[:0]
+	v.RecommendSkuItemCodes = v.RecommendSkuItemCodes[:0]
+	v.ContractPrice = ""
+	v.SettlementPrice = ""
+	v.PackageCode = ""
+	v.PackageName = ""
+	v.PackageDetail = ""
+	v.Gender = ""
+	v.MaritalStatus = ""
+	v.DetailImage = ""
+	v.ListImage = ""
+	v.MarkPrice = ""
+	v.InfoImage = ""
+	v.SellAlongPrice = ""
+	v.ReportGenerationMaxDurationBusinessCommitment = 0
+	v.Free = false
+	v.AllowOfflinePay = false
+	v.OnlyAsSkuItem = false
+	v.SkuItemCodesNoData = false
+	poolPackage.Put(v)
 }

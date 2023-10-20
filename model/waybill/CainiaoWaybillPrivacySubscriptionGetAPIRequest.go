@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type CainiaoWaybillPrivacySubscriptionGetAPIRequest struct {
 // NewCainiaoWaybillPrivacySubscriptionGetRequest 初始化CainiaoWaybillPrivacySubscriptionGetAPIRequest对象
 func NewCainiaoWaybillPrivacySubscriptionGetRequest() *CainiaoWaybillPrivacySubscriptionGetAPIRequest {
 	return &CainiaoWaybillPrivacySubscriptionGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoWaybillPrivacySubscriptionGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r CainiaoWaybillPrivacySubscriptionGetAPIRequest) GetApiParams(params url.
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r CainiaoWaybillPrivacySubscriptionGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolCainiaoWaybillPrivacySubscriptionGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoWaybillPrivacySubscriptionGetRequest()
+	},
+}
+
+// GetCainiaoWaybillPrivacySubscriptionGetRequest 从 sync.Pool 获取 CainiaoWaybillPrivacySubscriptionGetAPIRequest
+func GetCainiaoWaybillPrivacySubscriptionGetAPIRequest() *CainiaoWaybillPrivacySubscriptionGetAPIRequest {
+	return poolCainiaoWaybillPrivacySubscriptionGetAPIRequest.Get().(*CainiaoWaybillPrivacySubscriptionGetAPIRequest)
+}
+
+// ReleaseCainiaoWaybillPrivacySubscriptionGetAPIRequest 将 CainiaoWaybillPrivacySubscriptionGetAPIRequest 放入 sync.Pool
+func ReleaseCainiaoWaybillPrivacySubscriptionGetAPIRequest(v *CainiaoWaybillPrivacySubscriptionGetAPIRequest) {
+	v.Reset()
+	poolCainiaoWaybillPrivacySubscriptionGetAPIRequest.Put(v)
 }

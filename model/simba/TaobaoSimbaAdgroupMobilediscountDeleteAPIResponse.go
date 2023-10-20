@@ -2,6 +2,7 @@ package simba
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoSimbaAdgroupMobilediscountDeleteAPIResponse struct {
 	TaobaoSimbaAdgroupMobilediscountDeleteAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoSimbaAdgroupMobilediscountDeleteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoSimbaAdgroupMobilediscountDeleteAPIResponseModel).Reset()
+}
+
 // TaobaoSimbaAdgroupMobilediscountDeleteAPIResponseModel is 批量删除adgroup的移动溢价 成功返回结果
 type TaobaoSimbaAdgroupMobilediscountDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_adgroup_mobilediscount_delete_response"`
@@ -26,4 +33,29 @@ type TaobaoSimbaAdgroupMobilediscountDeleteAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 返回成功个数
 	Result int64 `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoSimbaAdgroupMobilediscountDeleteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Key = ""
+	m.Message = ""
+	m.Result = 0
+}
+
+var poolTaobaoSimbaAdgroupMobilediscountDeleteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoSimbaAdgroupMobilediscountDeleteAPIResponse)
+	},
+}
+
+// GetTaobaoSimbaAdgroupMobilediscountDeleteAPIResponse 从 sync.Pool 获取 TaobaoSimbaAdgroupMobilediscountDeleteAPIResponse
+func GetTaobaoSimbaAdgroupMobilediscountDeleteAPIResponse() *TaobaoSimbaAdgroupMobilediscountDeleteAPIResponse {
+	return poolTaobaoSimbaAdgroupMobilediscountDeleteAPIResponse.Get().(*TaobaoSimbaAdgroupMobilediscountDeleteAPIResponse)
+}
+
+// ReleaseTaobaoSimbaAdgroupMobilediscountDeleteAPIResponse 将 TaobaoSimbaAdgroupMobilediscountDeleteAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoSimbaAdgroupMobilediscountDeleteAPIResponse(v *TaobaoSimbaAdgroupMobilediscountDeleteAPIResponse) {
+	v.Reset()
+	poolTaobaoSimbaAdgroupMobilediscountDeleteAPIResponse.Put(v)
 }

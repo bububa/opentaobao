@@ -1,5 +1,9 @@
 package xhotelitem
 
+import (
+	"sync"
+)
+
 // Hotel 结构体
 type Hotel struct {
 	// 酒店修改备注
@@ -104,4 +108,71 @@ type Hotel struct {
 	MatchStatus int64 `json:"match_status,omitempty" xml:"match_status,omitempty"`
 	// 判断该酒店是不是对应的卖家直营
 	KzzyTag int64 `json:"kzzy_tag,omitempty" xml:"kzzy_tag,omitempty"`
+}
+
+var poolHotel = sync.Pool{
+	New: func() any {
+		return new(Hotel)
+	},
+}
+
+// GetHotel() 从对象池中获取Hotel
+func GetHotel() *Hotel {
+	return poolHotel.Get().(*Hotel)
+}
+
+// ReleaseHotel 释放Hotel
+func ReleaseHotel(v *Hotel) {
+	v.Remark = ""
+	v.Tel = ""
+	v.HotelFacilities = ""
+	v.Type = ""
+	v.Ext = ""
+	v.PostalCode = ""
+	v.Floors = ""
+	v.SellerNick = ""
+	v.Description = ""
+	v.Longitude = ""
+	v.CurrencyCodeName = ""
+	v.EnDesc = ""
+	v.Country = ""
+	v.HotelPolicies = ""
+	v.Latitude = ""
+	v.OperXiaoerName = ""
+	v.OuterId = ""
+	v.GmtModified = ""
+	v.EnAddr = ""
+	v.Business = ""
+	v.UsedName = ""
+	v.Pics = ""
+	v.RoomFacilities = ""
+	v.Name = ""
+	v.PositionType = ""
+	v.NameE = ""
+	v.GmtCreate = ""
+	v.Vendor = ""
+	v.Extend = ""
+	v.Star = ""
+	v.BookingNotice = ""
+	v.DecorateTime = ""
+	v.Address = ""
+	v.Service = ""
+	v.Brand = ""
+	v.OpeningTime = ""
+	v.Hid = 0
+	v.City = 0
+	v.Province = 0
+	v.DataConfirm = 0
+	v.Rooms = 0
+	v.Status = 0
+	v.DownShelfType = 0
+	v.Shid = 0
+	v.BillingProcessType = 0
+	v.District = 0
+	v.Domestic = 0
+	v.Source = 0
+	v.SellerId = 0
+	v.MatchStatus = 0
+	v.KzzyTag = 0
+	poolHotel.Put(v)
 }

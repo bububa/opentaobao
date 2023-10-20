@@ -1,5 +1,9 @@
 package tttm
 
+import (
+	"sync"
+)
+
 // ProduceSyncDto 结构体
 type ProduceSyncDto struct {
 	// 生产节点
@@ -16,4 +20,27 @@ type ProduceSyncDto struct {
 	DefectiveNum int64 `json:"defective_num,omitempty" xml:"defective_num,omitempty"`
 	// 生产状态
 	ProduceStatus int64 `json:"produce_status,omitempty" xml:"produce_status,omitempty"`
+}
+
+var poolProduceSyncDto = sync.Pool{
+	New: func() any {
+		return new(ProduceSyncDto)
+	},
+}
+
+// GetProduceSyncDto() 从对象池中获取ProduceSyncDto
+func GetProduceSyncDto() *ProduceSyncDto {
+	return poolProduceSyncDto.Get().(*ProduceSyncDto)
+}
+
+// ReleaseProduceSyncDto 释放ProduceSyncDto
+func ReleaseProduceSyncDto(v *ProduceSyncDto) {
+	v.ProduceLink = ""
+	v.SubmitTime = ""
+	v.FinishTime = ""
+	v.LinkSort = 0
+	v.ProduceNum = 0
+	v.DefectiveNum = 0
+	v.ProduceStatus = 0
+	poolProduceSyncDto.Put(v)
 }

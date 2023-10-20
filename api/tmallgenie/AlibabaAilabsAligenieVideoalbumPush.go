@@ -9,11 +9,6 @@ import (
 // alibaba.ailabs.aligenie.videoalbum.push
 //
 // 三方内容合作厂商可将视频辑数据通过此接口推送至天猫精灵内容库接入中，供天猫精灵使用
-func AlibabaAilabsAligenieVideoalbumPush(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsAligenieVideoalbumPushAPIRequest, session string) (*tmallgenie.AlibabaAilabsAligenieVideoalbumPushAPIResponse, error) {
-	var resp tmallgenie.AlibabaAilabsAligenieVideoalbumPushAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAilabsAligenieVideoalbumPush(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsAligenieVideoalbumPushAPIRequest, resp *tmallgenie.AlibabaAilabsAligenieVideoalbumPushAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

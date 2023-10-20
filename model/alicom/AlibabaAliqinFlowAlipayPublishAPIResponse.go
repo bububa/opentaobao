@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAliqinFlowAlipayPublishAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinFlowAlipayPublishAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAliqinFlowAlipayPublishAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAliqinFlowAlipayPublishAPIResponseModel).Reset()
 }
 
 // AlibabaAliqinFlowAlipayPublishAPIResponseModel is 流量钱包流量发放-面向支付宝用户 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAliqinFlowAlipayPublishAPIResponseModel struct {
 	AlicomErrorMsg string `json:"alicom_error_msg,omitempty" xml:"alicom_error_msg,omitempty"`
 	// error
 	Error bool `json:"error,omitempty" xml:"error,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAliqinFlowAlipayPublishAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Value = ""
+	m.AlicomErrorCode = ""
+	m.AlicomErrorMsg = ""
+	m.Error = false
+}
+
+var poolAlibabaAliqinFlowAlipayPublishAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAliqinFlowAlipayPublishAPIResponse)
+	},
+}
+
+// GetAlibabaAliqinFlowAlipayPublishAPIResponse 从 sync.Pool 获取 AlibabaAliqinFlowAlipayPublishAPIResponse
+func GetAlibabaAliqinFlowAlipayPublishAPIResponse() *AlibabaAliqinFlowAlipayPublishAPIResponse {
+	return poolAlibabaAliqinFlowAlipayPublishAPIResponse.Get().(*AlibabaAliqinFlowAlipayPublishAPIResponse)
+}
+
+// ReleaseAlibabaAliqinFlowAlipayPublishAPIResponse 将 AlibabaAliqinFlowAlipayPublishAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAliqinFlowAlipayPublishAPIResponse(v *AlibabaAliqinFlowAlipayPublishAPIResponse) {
+	v.Reset()
+	poolAlibabaAliqinFlowAlipayPublishAPIResponse.Put(v)
 }

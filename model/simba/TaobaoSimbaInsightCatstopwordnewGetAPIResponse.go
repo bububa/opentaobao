@@ -2,6 +2,7 @@ package simba
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoSimbaInsightCatstopwordnewGetAPIResponse struct {
 	TaobaoSimbaInsightCatstopwordnewGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoSimbaInsightCatstopwordnewGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoSimbaInsightCatstopwordnewGetAPIResponseModel).Reset()
+}
+
 // TaobaoSimbaInsightCatstopwordnewGetAPIResponseModel is 获取类目下最热门的词 成功返回结果
 type TaobaoSimbaInsightCatstopwordnewGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_insight_catstopwordnew_get_response"`
@@ -22,4 +29,27 @@ type TaobaoSimbaInsightCatstopwordnewGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 类目下热门词详细数据
 	TopwordDataList []InsightWordDataUnderCatDto `json:"topword_data_list,omitempty" xml:"topword_data_list>insight_word_data_under_cat_dto,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoSimbaInsightCatstopwordnewGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TopwordDataList = m.TopwordDataList[:0]
+}
+
+var poolTaobaoSimbaInsightCatstopwordnewGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoSimbaInsightCatstopwordnewGetAPIResponse)
+	},
+}
+
+// GetTaobaoSimbaInsightCatstopwordnewGetAPIResponse 从 sync.Pool 获取 TaobaoSimbaInsightCatstopwordnewGetAPIResponse
+func GetTaobaoSimbaInsightCatstopwordnewGetAPIResponse() *TaobaoSimbaInsightCatstopwordnewGetAPIResponse {
+	return poolTaobaoSimbaInsightCatstopwordnewGetAPIResponse.Get().(*TaobaoSimbaInsightCatstopwordnewGetAPIResponse)
+}
+
+// ReleaseTaobaoSimbaInsightCatstopwordnewGetAPIResponse 将 TaobaoSimbaInsightCatstopwordnewGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoSimbaInsightCatstopwordnewGetAPIResponse(v *TaobaoSimbaInsightCatstopwordnewGetAPIResponse) {
+	v.Reset()
+	poolTaobaoSimbaInsightCatstopwordnewGetAPIResponse.Put(v)
 }

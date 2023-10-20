@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAsrDataservicePromotionruleQueryAPIRequest struct {
 // NewAlibabaAsrDataservicePromotionruleQueryRequest 初始化AlibabaAsrDataservicePromotionruleQueryAPIRequest对象
 func NewAlibabaAsrDataservicePromotionruleQueryRequest() *AlibabaAsrDataservicePromotionruleQueryAPIRequest {
 	return &AlibabaAsrDataservicePromotionruleQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAsrDataservicePromotionruleQueryAPIRequest) Reset() {
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAsrDataservicePromotionruleQueryAPIRequest) SetPageSize(_pageSiz
 // GetPageSize PageSize Getter
 func (r AlibabaAsrDataservicePromotionruleQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAlibabaAsrDataservicePromotionruleQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAsrDataservicePromotionruleQueryRequest()
+	},
+}
+
+// GetAlibabaAsrDataservicePromotionruleQueryRequest 从 sync.Pool 获取 AlibabaAsrDataservicePromotionruleQueryAPIRequest
+func GetAlibabaAsrDataservicePromotionruleQueryAPIRequest() *AlibabaAsrDataservicePromotionruleQueryAPIRequest {
+	return poolAlibabaAsrDataservicePromotionruleQueryAPIRequest.Get().(*AlibabaAsrDataservicePromotionruleQueryAPIRequest)
+}
+
+// ReleaseAlibabaAsrDataservicePromotionruleQueryAPIRequest 将 AlibabaAsrDataservicePromotionruleQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAsrDataservicePromotionruleQueryAPIRequest(v *AlibabaAsrDataservicePromotionruleQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaAsrDataservicePromotionruleQueryAPIRequest.Put(v)
 }

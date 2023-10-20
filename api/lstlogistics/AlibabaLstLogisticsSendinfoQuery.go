@@ -9,11 +9,6 @@ import (
 // alibaba.lst.logistics.sendinfo.query
 //
 // 查询主订单包含的物流单
-func AlibabaLstLogisticsSendinfoQuery(clt *core.SDKClient, req *lstlogistics.AlibabaLstLogisticsSendinfoQueryAPIRequest, session string) (*lstlogistics.AlibabaLstLogisticsSendinfoQueryAPIResponse, error) {
-	var resp lstlogistics.AlibabaLstLogisticsSendinfoQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLstLogisticsSendinfoQuery(clt *core.SDKClient, req *lstlogistics.AlibabaLstLogisticsSendinfoQueryAPIRequest, resp *lstlogistics.AlibabaLstLogisticsSendinfoQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

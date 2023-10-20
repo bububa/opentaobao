@@ -2,6 +2,7 @@ package tmc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoTmcMessagesConfirmAPIRequest struct {
 // NewTaobaoTmcMessagesConfirmRequest 初始化TaobaoTmcMessagesConfirmAPIRequest对象
 func NewTaobaoTmcMessagesConfirmRequest() *TaobaoTmcMessagesConfirmAPIRequest {
 	return &TaobaoTmcMessagesConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTmcMessagesConfirmAPIRequest) Reset() {
+	r._sMessageIds = r._sMessageIds[:0]
+	r._fMessageIds = r._fMessageIds[:0]
+	r._groupName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoTmcMessagesConfirmAPIRequest) SetGroupName(_groupName string) err
 // GetGroupName GroupName Getter
 func (r TaobaoTmcMessagesConfirmAPIRequest) GetGroupName() string {
 	return r._groupName
+}
+
+var poolTaobaoTmcMessagesConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTmcMessagesConfirmRequest()
+	},
+}
+
+// GetTaobaoTmcMessagesConfirmRequest 从 sync.Pool 获取 TaobaoTmcMessagesConfirmAPIRequest
+func GetTaobaoTmcMessagesConfirmAPIRequest() *TaobaoTmcMessagesConfirmAPIRequest {
+	return poolTaobaoTmcMessagesConfirmAPIRequest.Get().(*TaobaoTmcMessagesConfirmAPIRequest)
+}
+
+// ReleaseTaobaoTmcMessagesConfirmAPIRequest 将 TaobaoTmcMessagesConfirmAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTmcMessagesConfirmAPIRequest(v *TaobaoTmcMessagesConfirmAPIRequest) {
+	v.Reset()
+	poolTaobaoTmcMessagesConfirmAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package alihealth2
 
+import (
+	"sync"
+)
+
 // GoodsList 结构体
 type GoodsList struct {
 	// 实际价格
@@ -22,4 +26,30 @@ type GoodsList struct {
 	IsPromotion bool `json:"is_promotion,omitempty" xml:"is_promotion,omitempty"`
 	// 是否是优惠商品
 	Promotion bool `json:"promotion,omitempty" xml:"promotion,omitempty"`
+}
+
+var poolGoodsList = sync.Pool{
+	New: func() any {
+		return new(GoodsList)
+	},
+}
+
+// GetGoodsList() 从对象池中获取GoodsList
+func GetGoodsList() *GoodsList {
+	return poolGoodsList.Get().(*GoodsList)
+}
+
+// ReleaseGoodsList 释放GoodsList
+func ReleaseGoodsList(v *GoodsList) {
+	v.RealPrice = ""
+	v.GoodsCode = ""
+	v.Name = ""
+	v.PromotionName = ""
+	v.Count = 0
+	v.PromotionStatus = 0
+	v.Id = 0
+	v.PromotionType = 0
+	v.IsPromotion = false
+	v.Promotion = false
+	poolGoodsList.Put(v)
 }

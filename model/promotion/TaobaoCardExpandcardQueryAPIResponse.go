@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoCardExpandcardQueryAPIResponse struct {
 	TaobaoCardExpandcardQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoCardExpandcardQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoCardExpandcardQueryAPIResponseModel).Reset()
+}
+
 // TaobaoCardExpandcardQueryAPIResponseModel is 购物金卡查询 成功返回结果
 type TaobaoCardExpandcardQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"card_expandcard_query_response"`
@@ -22,4 +29,27 @@ type TaobaoCardExpandcardQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *TaobaoCardExpandcardQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoCardExpandcardQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoCardExpandcardQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoCardExpandcardQueryAPIResponse)
+	},
+}
+
+// GetTaobaoCardExpandcardQueryAPIResponse 从 sync.Pool 获取 TaobaoCardExpandcardQueryAPIResponse
+func GetTaobaoCardExpandcardQueryAPIResponse() *TaobaoCardExpandcardQueryAPIResponse {
+	return poolTaobaoCardExpandcardQueryAPIResponse.Get().(*TaobaoCardExpandcardQueryAPIResponse)
+}
+
+// ReleaseTaobaoCardExpandcardQueryAPIResponse 将 TaobaoCardExpandcardQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoCardExpandcardQueryAPIResponse(v *TaobaoCardExpandcardQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoCardExpandcardQueryAPIResponse.Put(v)
 }

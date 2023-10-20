@@ -1,5 +1,9 @@
 package xiamicontent
 
+import (
+	"sync"
+)
+
 // Page 结构体
 type Page struct {
 	// 音乐列表
@@ -12,4 +16,25 @@ type Page struct {
 	PagingVo *PagingVo `json:"paging_vo,omitempty" xml:"paging_vo,omitempty"`
 	// 分页信息
 	Paging *PagingVo `json:"paging,omitempty" xml:"paging,omitempty"`
+}
+
+var poolPage = sync.Pool{
+	New: func() any {
+		return new(Page)
+	},
+}
+
+// GetPage() 从对象池中获取Page
+func GetPage() *Page {
+	return poolPage.Get().(*Page)
+}
+
+// ReleasePage 释放Page
+func ReleasePage(v *Page) {
+	v.Data = v.Data[:0]
+	v.SongList = v.SongList[:0]
+	v.Count = 0
+	v.PagingVo = nil
+	v.Paging = nil
+	poolPage.Put(v)
 }

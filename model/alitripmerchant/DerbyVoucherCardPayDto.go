@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // DerbyVoucherCardPayDto 结构体
 type DerbyVoucherCardPayDto struct {
 	// 实付金额
@@ -16,4 +20,27 @@ type DerbyVoucherCardPayDto struct {
 	OrderId string `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 是否勾选短信条款
 	OptinSMSALL bool `json:"optin_s_m_s_a_l_l,omitempty" xml:"optin_s_m_s_a_l_l,omitempty"`
+}
+
+var poolDerbyVoucherCardPayDto = sync.Pool{
+	New: func() any {
+		return new(DerbyVoucherCardPayDto)
+	},
+}
+
+// GetDerbyVoucherCardPayDto() 从对象池中获取DerbyVoucherCardPayDto
+func GetDerbyVoucherCardPayDto() *DerbyVoucherCardPayDto {
+	return poolDerbyVoucherCardPayDto.Get().(*DerbyVoucherCardPayDto)
+}
+
+// ReleaseDerbyVoucherCardPayDto 释放DerbyVoucherCardPayDto
+func ReleaseDerbyVoucherCardPayDto(v *DerbyVoucherCardPayDto) {
+	v.PaidInAmount = ""
+	v.VoucherCardCode = ""
+	v.VoucherCardCategory = ""
+	v.AcceptedTandC = ""
+	v.OptinAll = ""
+	v.OrderId = ""
+	v.OptinSMSALL = false
+	poolDerbyVoucherCardPayDto.Put(v)
 }

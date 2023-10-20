@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // SiteUpsetRequest 结构体
 type SiteUpsetRequest struct {
 	// 网点小件员信息
@@ -34,4 +38,36 @@ type SiteUpsetRequest struct {
 	RequestTime int64 `json:"request_time,omitempty" xml:"request_time,omitempty"`
 	// 网点状态  1-启用、2-停用
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolSiteUpsetRequest = sync.Pool{
+	New: func() any {
+		return new(SiteUpsetRequest)
+	},
+}
+
+// GetSiteUpsetRequest() 从对象池中获取SiteUpsetRequest
+func GetSiteUpsetRequest() *SiteUpsetRequest {
+	return poolSiteUpsetRequest.Get().(*SiteUpsetRequest)
+}
+
+// ReleaseSiteUpsetRequest 释放SiteUpsetRequest
+func ReleaseSiteUpsetRequest(v *SiteUpsetRequest) {
+	v.CourierInfos = v.CourierInfos[:0]
+	v.RequestId = ""
+	v.SupplierId = ""
+	v.SiteCode = ""
+	v.SiteName = ""
+	v.Province = ""
+	v.City = ""
+	v.Area = ""
+	v.Town = ""
+	v.Address = ""
+	v.AddressId = ""
+	v.ContactName = ""
+	v.ContactMobile = ""
+	v.ContactTel = ""
+	v.RequestTime = 0
+	v.Status = 0
+	poolSiteUpsetRequest.Put(v)
 }

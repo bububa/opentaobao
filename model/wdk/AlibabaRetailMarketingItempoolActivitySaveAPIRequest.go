@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaRetailMarketingItempoolActivitySaveAPIRequest struct {
 // NewAlibabaRetailMarketingItempoolActivitySaveRequest 初始化AlibabaRetailMarketingItempoolActivitySaveAPIRequest对象
 func NewAlibabaRetailMarketingItempoolActivitySaveRequest() *AlibabaRetailMarketingItempoolActivitySaveAPIRequest {
 	return &AlibabaRetailMarketingItempoolActivitySaveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaRetailMarketingItempoolActivitySaveAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaRetailMarketingItempoolActivitySaveAPIRequest) SetParam(_param *
 // GetParam Param Getter
 func (r AlibabaRetailMarketingItempoolActivitySaveAPIRequest) GetParam() *ItemPoolActivityOperateRequest {
 	return r._param
+}
+
+var poolAlibabaRetailMarketingItempoolActivitySaveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaRetailMarketingItempoolActivitySaveRequest()
+	},
+}
+
+// GetAlibabaRetailMarketingItempoolActivitySaveRequest 从 sync.Pool 获取 AlibabaRetailMarketingItempoolActivitySaveAPIRequest
+func GetAlibabaRetailMarketingItempoolActivitySaveAPIRequest() *AlibabaRetailMarketingItempoolActivitySaveAPIRequest {
+	return poolAlibabaRetailMarketingItempoolActivitySaveAPIRequest.Get().(*AlibabaRetailMarketingItempoolActivitySaveAPIRequest)
+}
+
+// ReleaseAlibabaRetailMarketingItempoolActivitySaveAPIRequest 将 AlibabaRetailMarketingItempoolActivitySaveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaRetailMarketingItempoolActivitySaveAPIRequest(v *AlibabaRetailMarketingItempoolActivitySaveAPIRequest) {
+	v.Reset()
+	poolAlibabaRetailMarketingItempoolActivitySaveAPIRequest.Put(v)
 }

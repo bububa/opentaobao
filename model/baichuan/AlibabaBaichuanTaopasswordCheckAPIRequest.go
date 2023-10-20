@@ -2,6 +2,7 @@ package baichuan
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaBaichuanTaopasswordCheckAPIRequest struct {
 // NewAlibabaBaichuanTaopasswordCheckRequest 初始化AlibabaBaichuanTaopasswordCheckAPIRequest对象
 func NewAlibabaBaichuanTaopasswordCheckRequest() *AlibabaBaichuanTaopasswordCheckAPIRequest {
 	return &AlibabaBaichuanTaopasswordCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaBaichuanTaopasswordCheckAPIRequest) Reset() {
+	r._paramDto = nil
+	r._clientInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaBaichuanTaopasswordCheckAPIRequest) SetClientInfo(_clientInfo *R
 // GetClientInfo ClientInfo Getter
 func (r AlibabaBaichuanTaopasswordCheckAPIRequest) GetClientInfo() *RichClientInfo {
 	return r._clientInfo
+}
+
+var poolAlibabaBaichuanTaopasswordCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaBaichuanTaopasswordCheckRequest()
+	},
+}
+
+// GetAlibabaBaichuanTaopasswordCheckRequest 从 sync.Pool 获取 AlibabaBaichuanTaopasswordCheckAPIRequest
+func GetAlibabaBaichuanTaopasswordCheckAPIRequest() *AlibabaBaichuanTaopasswordCheckAPIRequest {
+	return poolAlibabaBaichuanTaopasswordCheckAPIRequest.Get().(*AlibabaBaichuanTaopasswordCheckAPIRequest)
+}
+
+// ReleaseAlibabaBaichuanTaopasswordCheckAPIRequest 将 AlibabaBaichuanTaopasswordCheckAPIRequest 放入 sync.Pool
+func ReleaseAlibabaBaichuanTaopasswordCheckAPIRequest(v *AlibabaBaichuanTaopasswordCheckAPIRequest) {
+	v.Reset()
+	poolAlibabaBaichuanTaopasswordCheckAPIRequest.Put(v)
 }

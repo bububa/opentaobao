@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoQimenItemmappingQueryAPIResponse struct {
 	TaobaoQimenItemmappingQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoQimenItemmappingQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoQimenItemmappingQueryAPIResponseModel).Reset()
+}
+
 // TaobaoQimenItemmappingQueryAPIResponseModel is 前后端商品映射查询接口 成功返回结果
 type TaobaoQimenItemmappingQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"qimen_itemmapping_query_response"`
@@ -22,4 +29,27 @@ type TaobaoQimenItemmappingQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	//
 	Response *TaobaoQimenItemmappingQueryResponse `json:"response,omitempty" xml:"response,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoQimenItemmappingQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Response = nil
+}
+
+var poolTaobaoQimenItemmappingQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoQimenItemmappingQueryAPIResponse)
+	},
+}
+
+// GetTaobaoQimenItemmappingQueryAPIResponse 从 sync.Pool 获取 TaobaoQimenItemmappingQueryAPIResponse
+func GetTaobaoQimenItemmappingQueryAPIResponse() *TaobaoQimenItemmappingQueryAPIResponse {
+	return poolTaobaoQimenItemmappingQueryAPIResponse.Get().(*TaobaoQimenItemmappingQueryAPIResponse)
+}
+
+// ReleaseTaobaoQimenItemmappingQueryAPIResponse 将 TaobaoQimenItemmappingQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoQimenItemmappingQueryAPIResponse(v *TaobaoQimenItemmappingQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoQimenItemmappingQueryAPIResponse.Put(v)
 }

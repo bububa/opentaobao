@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // ValidateOrderParam 结构体
 type ValidateOrderParam struct {
 	// 多房价数据状态
@@ -32,4 +36,35 @@ type ValidateOrderParam struct {
 	CustomerNumbers int64 `json:"customer_numbers,omitempty" xml:"customer_numbers,omitempty"`
 	// 房间数量
 	RoomNum int64 `json:"room_num,omitempty" xml:"room_num,omitempty"`
+}
+
+var poolValidateOrderParam = sync.Pool{
+	New: func() any {
+		return new(ValidateOrderParam)
+	},
+}
+
+// GetValidateOrderParam() 从对象池中获取ValidateOrderParam
+func GetValidateOrderParam() *ValidateOrderParam {
+	return poolValidateOrderParam.Get().(*ValidateOrderParam)
+}
+
+// ReleaseValidateOrderParam 释放ValidateOrderParam
+func ReleaseValidateOrderParam(v *ValidateOrderParam) {
+	v.GuestByRoomDtos = v.GuestByRoomDtos[:0]
+	v.TotalPrice = ""
+	v.CheckOutDate = ""
+	v.CheckInDate = ""
+	v.HotelId = ""
+	v.RpCode = ""
+	v.RoomId = ""
+	v.PaymentType = 0
+	v.RateId = 0
+	v.Gid = 0
+	v.RpId = 0
+	v.OutRoomId = 0
+	v.Hid = 0
+	v.CustomerNumbers = 0
+	v.RoomNum = 0
+	poolValidateOrderParam.Put(v)
 }

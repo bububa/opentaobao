@@ -2,6 +2,7 @@ package qt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoQtReportsGetAPIRequest struct {
 // NewTaobaoQtReportsGetRequest 初始化TaobaoQtReportsGetAPIRequest对象
 func NewTaobaoQtReportsGetRequest() *TaobaoQtReportsGetAPIRequest {
 	return &TaobaoQtReportsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQtReportsGetAPIRequest) Reset() {
+	r._spName = ""
+	r._servcieItemCode = ""
+	r._nick = ""
+	r._startTime = ""
+	r._endTime = ""
+	r._qtType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoQtReportsGetAPIRequest) SetQtType(_qtType int64) error {
 // GetQtType QtType Getter
 func (r TaobaoQtReportsGetAPIRequest) GetQtType() int64 {
 	return r._qtType
+}
+
+var poolTaobaoQtReportsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQtReportsGetRequest()
+	},
+}
+
+// GetTaobaoQtReportsGetRequest 从 sync.Pool 获取 TaobaoQtReportsGetAPIRequest
+func GetTaobaoQtReportsGetAPIRequest() *TaobaoQtReportsGetAPIRequest {
+	return poolTaobaoQtReportsGetAPIRequest.Get().(*TaobaoQtReportsGetAPIRequest)
+}
+
+// ReleaseTaobaoQtReportsGetAPIRequest 将 TaobaoQtReportsGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQtReportsGetAPIRequest(v *TaobaoQtReportsGetAPIRequest) {
+	v.Reset()
+	poolTaobaoQtReportsGetAPIRequest.Put(v)
 }

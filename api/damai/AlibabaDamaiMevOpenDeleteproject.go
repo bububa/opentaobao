@@ -9,11 +9,6 @@ import (
 // alibaba.damai.mev.open.deleteproject
 //
 // deleteProject
-func AlibabaDamaiMevOpenDeleteproject(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenDeleteprojectAPIRequest, session string) (*damai.AlibabaDamaiMevOpenDeleteprojectAPIResponse, error) {
-	var resp damai.AlibabaDamaiMevOpenDeleteprojectAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMevOpenDeleteproject(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenDeleteprojectAPIRequest, resp *damai.AlibabaDamaiMevOpenDeleteprojectAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

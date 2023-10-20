@@ -2,6 +2,7 @@ package moscm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaMosGoodsSearchcspuAPIRequest struct {
 // NewAlibabaMosGoodsSearchcspuRequest 初始化AlibabaMosGoodsSearchcspuAPIRequest对象
 func NewAlibabaMosGoodsSearchcspuRequest() *AlibabaMosGoodsSearchcspuAPIRequest {
 	return &AlibabaMosGoodsSearchcspuAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosGoodsSearchcspuAPIRequest) Reset() {
+	r._paramCspuCriteria = nil
+	r._paramPaginator = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaMosGoodsSearchcspuAPIRequest) SetParamPaginator(_paramPaginator 
 // GetParamPaginator ParamPaginator Getter
 func (r AlibabaMosGoodsSearchcspuAPIRequest) GetParamPaginator() *Paginator {
 	return r._paramPaginator
+}
+
+var poolAlibabaMosGoodsSearchcspuAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosGoodsSearchcspuRequest()
+	},
+}
+
+// GetAlibabaMosGoodsSearchcspuRequest 从 sync.Pool 获取 AlibabaMosGoodsSearchcspuAPIRequest
+func GetAlibabaMosGoodsSearchcspuAPIRequest() *AlibabaMosGoodsSearchcspuAPIRequest {
+	return poolAlibabaMosGoodsSearchcspuAPIRequest.Get().(*AlibabaMosGoodsSearchcspuAPIRequest)
+}
+
+// ReleaseAlibabaMosGoodsSearchcspuAPIRequest 将 AlibabaMosGoodsSearchcspuAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosGoodsSearchcspuAPIRequest(v *AlibabaMosGoodsSearchcspuAPIRequest) {
+	v.Reset()
+	poolAlibabaMosGoodsSearchcspuAPIRequest.Put(v)
 }

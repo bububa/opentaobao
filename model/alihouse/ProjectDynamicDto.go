@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // ProjectDynamicDto 结构体
 type ProjectDynamicDto struct {
 	// 楼盘标签
@@ -20,4 +24,29 @@ type ProjectDynamicDto struct {
 	CityId int64 `json:"city_id,omitempty" xml:"city_id,omitempty"`
 	// 状态 0-无效 1-有效
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolProjectDynamicDto = sync.Pool{
+	New: func() any {
+		return new(ProjectDynamicDto)
+	},
+}
+
+// GetProjectDynamicDto() 从对象池中获取ProjectDynamicDto
+func GetProjectDynamicDto() *ProjectDynamicDto {
+	return poolProjectDynamicDto.Get().(*ProjectDynamicDto)
+}
+
+// ReleaseProjectDynamicDto 释放ProjectDynamicDto
+func ReleaseProjectDynamicDto(v *ProjectDynamicDto) {
+	v.ProjectTags = v.ProjectTags[:0]
+	v.OuterId = ""
+	v.OuterDynamicId = ""
+	v.Title = ""
+	v.Content = ""
+	v.PublishTime = ""
+	v.OuterStoreId = ""
+	v.CityId = 0
+	v.Status = 0
+	poolProjectDynamicDto.Put(v)
 }

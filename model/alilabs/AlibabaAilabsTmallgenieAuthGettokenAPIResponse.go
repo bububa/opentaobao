@@ -2,6 +2,7 @@ package alilabs
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAilabsTmallgenieAuthGettokenAPIResponse struct {
 	AlibabaAilabsTmallgenieAuthGettokenAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAilabsTmallgenieAuthGettokenAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAilabsTmallgenieAuthGettokenAPIResponseModel).Reset()
+}
+
 // AlibabaAilabsTmallgenieAuthGettokenAPIResponseModel is 设备授权 成功返回结果
 type AlibabaAilabsTmallgenieAuthGettokenAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailabs_tmallgenie_auth_gettoken_response"`
@@ -24,4 +31,28 @@ type AlibabaAilabsTmallgenieAuthGettokenAPIResponseModel struct {
 	RegisterResult *RegisterInfoVo `json:"register_result,omitempty" xml:"register_result,omitempty"`
 	// 授权结果
 	AuthResult *DeviceTokenVo `json:"auth_result,omitempty" xml:"auth_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAilabsTmallgenieAuthGettokenAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RegisterResult = nil
+	m.AuthResult = nil
+}
+
+var poolAlibabaAilabsTmallgenieAuthGettokenAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAilabsTmallgenieAuthGettokenAPIResponse)
+	},
+}
+
+// GetAlibabaAilabsTmallgenieAuthGettokenAPIResponse 从 sync.Pool 获取 AlibabaAilabsTmallgenieAuthGettokenAPIResponse
+func GetAlibabaAilabsTmallgenieAuthGettokenAPIResponse() *AlibabaAilabsTmallgenieAuthGettokenAPIResponse {
+	return poolAlibabaAilabsTmallgenieAuthGettokenAPIResponse.Get().(*AlibabaAilabsTmallgenieAuthGettokenAPIResponse)
+}
+
+// ReleaseAlibabaAilabsTmallgenieAuthGettokenAPIResponse 将 AlibabaAilabsTmallgenieAuthGettokenAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAilabsTmallgenieAuthGettokenAPIResponse(v *AlibabaAilabsTmallgenieAuthGettokenAPIResponse) {
+	v.Reset()
+	poolAlibabaAilabsTmallgenieAuthGettokenAPIResponse.Put(v)
 }

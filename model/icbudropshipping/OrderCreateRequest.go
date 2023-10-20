@@ -1,5 +1,9 @@
 package icbudropshipping
 
+import (
+	"sync"
+)
+
 // OrderCreateRequest 结构体
 type OrderCreateRequest struct {
 	// Product list
@@ -14,4 +18,26 @@ type OrderCreateRequest struct {
 	LogisticsDetail *LogisticsDetail `json:"logistics_detail,omitempty" xml:"logistics_detail,omitempty"`
 	// Payment details
 	PaymentDetail *PaymentDetail `json:"payment_detail,omitempty" xml:"payment_detail,omitempty"`
+}
+
+var poolOrderCreateRequest = sync.Pool{
+	New: func() any {
+		return new(OrderCreateRequest)
+	},
+}
+
+// GetOrderCreateRequest() 从对象池中获取OrderCreateRequest
+func GetOrderCreateRequest() *OrderCreateRequest {
+	return poolOrderCreateRequest.Get().(*OrderCreateRequest)
+}
+
+// ReleaseOrderCreateRequest 释放OrderCreateRequest
+func ReleaseOrderCreateRequest(v *OrderCreateRequest) {
+	v.ProductList = v.ProductList[:0]
+	v.ChannelReferId = ""
+	v.Properties = ""
+	v.Remark = ""
+	v.LogisticsDetail = nil
+	v.PaymentDetail = nil
+	poolOrderCreateRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.item.brand.query
 //
 // 品牌信息查询
-func AlibabaWdkItemBrandQuery(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemBrandQueryAPIRequest, session string) (*wdkitem.AlibabaWdkItemBrandQueryAPIResponse, error) {
-	var resp wdkitem.AlibabaWdkItemBrandQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkItemBrandQuery(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemBrandQueryAPIRequest, resp *wdkitem.AlibabaWdkItemBrandQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

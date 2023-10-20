@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // IeChangeItemVo 结构体
 type IeChangeItemVo struct {
 	// 目标行程信息
@@ -22,4 +26,30 @@ type IeChangeItemVo struct {
 	InfantUpgradeFee int64 `json:"infant_upgrade_fee,omitempty" xml:"infant_upgrade_fee,omitempty"`
 	// 婴儿改签费
 	InfantServiceFee int64 `json:"infant_service_fee,omitempty" xml:"infant_service_fee,omitempty"`
+}
+
+var poolIeChangeItemVo = sync.Pool{
+	New: func() any {
+		return new(IeChangeItemVo)
+	},
+}
+
+// GetIeChangeItemVo() 从对象池中获取IeChangeItemVo
+func GetIeChangeItemVo() *IeChangeItemVo {
+	return poolIeChangeItemVo.Get().(*IeChangeItemVo)
+}
+
+// ReleaseIeChangeItemVo 释放IeChangeItemVo
+func ReleaseIeChangeItemVo(v *IeChangeItemVo) {
+	v.DestinationItinerarys = v.DestinationItinerarys[:0]
+	v.SourceItinerarys = v.SourceItinerarys[:0]
+	v.BaggageRule = ""
+	v.AdultServiceFee = 0
+	v.AdultUpgradeFee = 0
+	v.ChildServiceFee = 0
+	v.ChildUpgradeFee = 0
+	v.TripType = 0
+	v.InfantUpgradeFee = 0
+	v.InfantServiceFee = 0
+	poolIeChangeItemVo.Put(v)
 }

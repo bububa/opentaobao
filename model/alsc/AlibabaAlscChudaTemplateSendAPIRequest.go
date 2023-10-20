@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscChudaTemplateSendAPIRequest struct {
 // NewAlibabaAlscChudaTemplateSendRequest 初始化AlibabaAlscChudaTemplateSendAPIRequest对象
 func NewAlibabaAlscChudaTemplateSendRequest() *AlibabaAlscChudaTemplateSendAPIRequest {
 	return &AlibabaAlscChudaTemplateSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscChudaTemplateSendAPIRequest) Reset() {
+	r._notifyRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscChudaTemplateSendAPIRequest) SetNotifyRequest(_notifyRequest
 // GetNotifyRequest NotifyRequest Getter
 func (r AlibabaAlscChudaTemplateSendAPIRequest) GetNotifyRequest() *TemplateNotifyRequest {
 	return r._notifyRequest
+}
+
+var poolAlibabaAlscChudaTemplateSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscChudaTemplateSendRequest()
+	},
+}
+
+// GetAlibabaAlscChudaTemplateSendRequest 从 sync.Pool 获取 AlibabaAlscChudaTemplateSendAPIRequest
+func GetAlibabaAlscChudaTemplateSendAPIRequest() *AlibabaAlscChudaTemplateSendAPIRequest {
+	return poolAlibabaAlscChudaTemplateSendAPIRequest.Get().(*AlibabaAlscChudaTemplateSendAPIRequest)
+}
+
+// ReleaseAlibabaAlscChudaTemplateSendAPIRequest 将 AlibabaAlscChudaTemplateSendAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscChudaTemplateSendAPIRequest(v *AlibabaAlscChudaTemplateSendAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscChudaTemplateSendAPIRequest.Put(v)
 }

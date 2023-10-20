@@ -2,6 +2,7 @@ package oversea
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaOverseaExchagerateGetAPIRequest struct {
 // NewAlibabaOverseaExchagerateGetRequest 初始化AlibabaOverseaExchagerateGetAPIRequest对象
 func NewAlibabaOverseaExchagerateGetRequest() *AlibabaOverseaExchagerateGetAPIRequest {
 	return &AlibabaOverseaExchagerateGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaOverseaExchagerateGetAPIRequest) Reset() {
+	r._bizCode = ""
+	r._baseCode = ""
+	r._targetCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaOverseaExchagerateGetAPIRequest) SetTargetCode(_targetCode strin
 // GetTargetCode TargetCode Getter
 func (r AlibabaOverseaExchagerateGetAPIRequest) GetTargetCode() string {
 	return r._targetCode
+}
+
+var poolAlibabaOverseaExchagerateGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaOverseaExchagerateGetRequest()
+	},
+}
+
+// GetAlibabaOverseaExchagerateGetRequest 从 sync.Pool 获取 AlibabaOverseaExchagerateGetAPIRequest
+func GetAlibabaOverseaExchagerateGetAPIRequest() *AlibabaOverseaExchagerateGetAPIRequest {
+	return poolAlibabaOverseaExchagerateGetAPIRequest.Get().(*AlibabaOverseaExchagerateGetAPIRequest)
+}
+
+// ReleaseAlibabaOverseaExchagerateGetAPIRequest 将 AlibabaOverseaExchagerateGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaOverseaExchagerateGetAPIRequest(v *AlibabaOverseaExchagerateGetAPIRequest) {
+	v.Reset()
+	poolAlibabaOverseaExchagerateGetAPIRequest.Put(v)
 }

@@ -1,6 +1,8 @@
 package btrip
 
 import (
+	"sync"
+
 	"github.com/bububa/opentaobao/model"
 )
 
@@ -40,4 +42,37 @@ type TravelerInfo struct {
 	CertNation string `json:"cert_nation,omitempty" xml:"cert_nation,omitempty"`
 	// 性别，0是男，1是女
 	Sex *model.File `json:"sex,omitempty" xml:"sex,omitempty"`
+}
+
+var poolTravelerInfo = sync.Pool{
+	New: func() any {
+		return new(TravelerInfo)
+	},
+}
+
+// GetTravelerInfo() 从对象池中获取TravelerInfo
+func GetTravelerInfo() *TravelerInfo {
+	return poolTravelerInfo.Get().(*TravelerInfo)
+}
+
+// ReleaseTravelerInfo 释放TravelerInfo
+func ReleaseTravelerInfo(v *TravelerInfo) {
+	v.CertNo = ""
+	v.CertType = ""
+	v.Name = ""
+	v.UserId = ""
+	v.DepAirport = ""
+	v.ArrAirport = ""
+	v.DepCity = ""
+	v.ArrCity = ""
+	v.Type = ""
+	v.Birthday = ""
+	v.Phone = ""
+	v.CertValidDate = ""
+	v.CertIssueCountry = ""
+	v.Nationality = ""
+	v.NationalityCode = ""
+	v.CertNation = ""
+	v.Sex = nil
+	poolTravelerInfo.Put(v)
 }

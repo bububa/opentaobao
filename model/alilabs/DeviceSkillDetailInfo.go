@@ -1,5 +1,9 @@
 package alilabs
 
+import (
+	"sync"
+)
+
 // DeviceSkillDetailInfo 结构体
 type DeviceSkillDetailInfo struct {
 	// 提供商集合
@@ -18,4 +22,28 @@ type DeviceSkillDetailInfo struct {
 	Sample string `json:"sample,omitempty" xml:"sample,omitempty"`
 	// 技能Id
 	SkillId int64 `json:"skill_id,omitempty" xml:"skill_id,omitempty"`
+}
+
+var poolDeviceSkillDetailInfo = sync.Pool{
+	New: func() any {
+		return new(DeviceSkillDetailInfo)
+	},
+}
+
+// GetDeviceSkillDetailInfo() 从对象池中获取DeviceSkillDetailInfo
+func GetDeviceSkillDetailInfo() *DeviceSkillDetailInfo {
+	return poolDeviceSkillDetailInfo.Get().(*DeviceSkillDetailInfo)
+}
+
+// ReleaseDeviceSkillDetailInfo 释放DeviceSkillDetailInfo
+func ReleaseDeviceSkillDetailInfo(v *DeviceSkillDetailInfo) {
+	v.ServiceProviders = v.ServiceProviders[:0]
+	v.InvocationName = ""
+	v.Name = ""
+	v.Category = ""
+	v.IcoinImageUrl = ""
+	v.Desc = ""
+	v.Sample = ""
+	v.SkillId = 0
+	poolDeviceSkillDetailInfo.Put(v)
 }

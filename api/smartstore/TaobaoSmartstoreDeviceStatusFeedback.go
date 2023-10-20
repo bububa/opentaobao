@@ -9,11 +9,6 @@ import (
 // taobao.smartstore.device.status.feedback
 //
 // 智能硬件设备状态回流
-func TaobaoSmartstoreDeviceStatusFeedback(clt *core.SDKClient, req *smartstore.TaobaoSmartstoreDeviceStatusFeedbackAPIRequest, session string) (*smartstore.TaobaoSmartstoreDeviceStatusFeedbackAPIResponse, error) {
-	var resp smartstore.TaobaoSmartstoreDeviceStatusFeedbackAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSmartstoreDeviceStatusFeedback(clt *core.SDKClient, req *smartstore.TaobaoSmartstoreDeviceStatusFeedbackAPIRequest, resp *smartstore.TaobaoSmartstoreDeviceStatusFeedbackAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

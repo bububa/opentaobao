@@ -2,6 +2,7 @@ package lstspeacker
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaLstSpeakerConfigureSyncaudioAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstSpeakerConfigureSyncaudioAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaLstSpeakerConfigureSyncaudioAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaLstSpeakerConfigureSyncaudioAPIResponseModel).Reset()
 }
 
 // AlibabaLstSpeakerConfigureSyncaudioAPIResponseModel is 音频同步 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaLstSpeakerConfigureSyncaudioAPIResponseModel struct {
 	Succ bool `json:"succ,omitempty" xml:"succ,omitempty"`
 	// 执行结果标识
 	Module bool `json:"module,omitempty" xml:"module,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaLstSpeakerConfigureSyncaudioAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErroMessage = ""
+	m.ErroCode = ""
+	m.Succ = false
+	m.Module = false
+}
+
+var poolAlibabaLstSpeakerConfigureSyncaudioAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaLstSpeakerConfigureSyncaudioAPIResponse)
+	},
+}
+
+// GetAlibabaLstSpeakerConfigureSyncaudioAPIResponse 从 sync.Pool 获取 AlibabaLstSpeakerConfigureSyncaudioAPIResponse
+func GetAlibabaLstSpeakerConfigureSyncaudioAPIResponse() *AlibabaLstSpeakerConfigureSyncaudioAPIResponse {
+	return poolAlibabaLstSpeakerConfigureSyncaudioAPIResponse.Get().(*AlibabaLstSpeakerConfigureSyncaudioAPIResponse)
+}
+
+// ReleaseAlibabaLstSpeakerConfigureSyncaudioAPIResponse 将 AlibabaLstSpeakerConfigureSyncaudioAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaLstSpeakerConfigureSyncaudioAPIResponse(v *AlibabaLstSpeakerConfigureSyncaudioAPIResponse) {
+	v.Reset()
+	poolAlibabaLstSpeakerConfigureSyncaudioAPIResponse.Put(v)
 }

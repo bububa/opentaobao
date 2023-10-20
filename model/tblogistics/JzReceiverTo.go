@@ -1,7 +1,11 @@
 package tblogistics
 
-// JzReceiverTo 结构体
-type JzReceiverTo struct {
+import (
+	"sync"
+)
+
+// JzReceiverTO 结构体
+type JzReceiverTO struct {
 	// 详细地址
 	Address string `json:"address,omitempty" xml:"address,omitempty"`
 	// 市
@@ -22,4 +26,30 @@ type JzReceiverTo struct {
 	TelePhone string `json:"tele_phone,omitempty" xml:"tele_phone,omitempty"`
 	// 邮编
 	ZipCode string `json:"zip_code,omitempty" xml:"zip_code,omitempty"`
+}
+
+var poolJzReceiverTO = sync.Pool{
+	New: func() any {
+		return new(JzReceiverTO)
+	},
+}
+
+// GetJzReceiverTO() 从对象池中获取JzReceiverTO
+func GetJzReceiverTO() *JzReceiverTO {
+	return poolJzReceiverTO.Get().(*JzReceiverTO)
+}
+
+// ReleaseJzReceiverTO 释放JzReceiverTO
+func ReleaseJzReceiverTO(v *JzReceiverTO) {
+	v.Address = ""
+	v.City = ""
+	v.ContactName = ""
+	v.Country = ""
+	v.District = ""
+	v.MobilePhone = ""
+	v.Province = ""
+	v.Street = ""
+	v.TelePhone = ""
+	v.ZipCode = ""
+	poolJzReceiverTO.Put(v)
 }

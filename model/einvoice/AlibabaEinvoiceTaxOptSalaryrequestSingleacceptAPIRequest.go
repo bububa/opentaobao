@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIRequest struct {
 // NewAlibabaEinvoiceTaxOptSalaryrequestSingleacceptRequest 初始化AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIRequest对象
 func NewAlibabaEinvoiceTaxOptSalaryrequestSingleacceptRequest() *AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIRequest {
 	return &AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIRequest) Reset() {
+	r._paramTaxOptimizationSingleDetailSalaryPaymentAccessDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIRequest) SetParamTaxOp
 // GetParamTaxOptimizationSingleDetailSalaryPaymentAccessDTO ParamTaxOptimizationSingleDetailSalaryPaymentAccessDTO Getter
 func (r AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIRequest) GetParamTaxOptimizationSingleDetailSalaryPaymentAccessDTO() *TaxOptimizationSingleDetailSalaryPaymentAccessDto {
 	return r._paramTaxOptimizationSingleDetailSalaryPaymentAccessDTO
+}
+
+var poolAlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceTaxOptSalaryrequestSingleacceptRequest()
+	},
+}
+
+// GetAlibabaEinvoiceTaxOptSalaryrequestSingleacceptRequest 从 sync.Pool 获取 AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIRequest
+func GetAlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIRequest() *AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIRequest {
+	return poolAlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIRequest.Get().(*AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIRequest 将 AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIRequest(v *AlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceTaxOptSalaryrequestSingleacceptAPIRequest.Put(v)
 }

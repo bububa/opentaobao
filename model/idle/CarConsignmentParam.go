@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // CarConsignmentParam 结构体
 type CarConsignmentParam struct {
 	// 订单id
@@ -14,4 +18,26 @@ type CarConsignmentParam struct {
 	Attribute string `json:"attribute,omitempty" xml:"attribute,omitempty"`
 	// 子状态
 	SubStatus string `json:"sub_status,omitempty" xml:"sub_status,omitempty"`
+}
+
+var poolCarConsignmentParam = sync.Pool{
+	New: func() any {
+		return new(CarConsignmentParam)
+	},
+}
+
+// GetCarConsignmentParam() 从对象池中获取CarConsignmentParam
+func GetCarConsignmentParam() *CarConsignmentParam {
+	return poolCarConsignmentParam.Get().(*CarConsignmentParam)
+}
+
+// ReleaseCarConsignmentParam 释放CarConsignmentParam
+func ReleaseCarConsignmentParam(v *CarConsignmentParam) {
+	v.BizOrderId = ""
+	v.MainStatus = ""
+	v.OrderStatus = ""
+	v.Appkey = ""
+	v.Attribute = ""
+	v.SubStatus = ""
+	poolCarConsignmentParam.Put(v)
 }

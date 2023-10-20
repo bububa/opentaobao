@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // Order 结构体
 type Order struct {
 	// ERP单号
@@ -22,4 +26,30 @@ type Order struct {
 	PreOrderCode string `json:"pre_order_code,omitempty" xml:"pre_order_code,omitempty"`
 	// 创建时间（时间戳）
 	CreateTime int64 `json:"create_time,omitempty" xml:"create_time,omitempty"`
+}
+
+var poolOrder = sync.Pool{
+	New: func() any {
+		return new(Order)
+	},
+}
+
+// GetOrder() 从对象池中获取Order
+func GetOrder() *Order {
+	return poolOrder.Get().(*Order)
+}
+
+// ReleaseOrder 释放Order
+func ReleaseOrder(v *Order) {
+	v.OrderCode = ""
+	v.OrderId = ""
+	v.OrderType = ""
+	v.WarehouseCode = ""
+	v.SourcePlatformCode = ""
+	v.SourcePlatformName = ""
+	v.ShopNick = ""
+	v.ErpWarehouseCode = ""
+	v.PreOrderCode = ""
+	v.CreateTime = 0
+	poolOrder.Put(v)
 }

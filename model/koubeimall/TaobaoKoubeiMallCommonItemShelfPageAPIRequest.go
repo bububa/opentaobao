@@ -2,6 +2,7 @@ package koubeimall
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type TaobaoKoubeiMallCommonItemShelfPageAPIRequest struct {
 // NewTaobaoKoubeiMallCommonItemShelfPageRequest 初始化TaobaoKoubeiMallCommonItemShelfPageAPIRequest对象
 func NewTaobaoKoubeiMallCommonItemShelfPageRequest() *TaobaoKoubeiMallCommonItemShelfPageAPIRequest {
 	return &TaobaoKoubeiMallCommonItemShelfPageAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoKoubeiMallCommonItemShelfPageAPIRequest) Reset() {
+	r._appVersion = ""
+	r._displayChannel = ""
+	r._terminalType = ""
+	r._latitude = ""
+	r._longitude = ""
+	r._cityCode = ""
+	r._dataSetId = ""
+	r._storeId = ""
+	r._mallId = ""
+	r._pageSize = 0
+	r._start = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *TaobaoKoubeiMallCommonItemShelfPageAPIRequest) SetStart(_start int64) e
 // GetStart Start Getter
 func (r TaobaoKoubeiMallCommonItemShelfPageAPIRequest) GetStart() int64 {
 	return r._start
+}
+
+var poolTaobaoKoubeiMallCommonItemShelfPageAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoKoubeiMallCommonItemShelfPageRequest()
+	},
+}
+
+// GetTaobaoKoubeiMallCommonItemShelfPageRequest 从 sync.Pool 获取 TaobaoKoubeiMallCommonItemShelfPageAPIRequest
+func GetTaobaoKoubeiMallCommonItemShelfPageAPIRequest() *TaobaoKoubeiMallCommonItemShelfPageAPIRequest {
+	return poolTaobaoKoubeiMallCommonItemShelfPageAPIRequest.Get().(*TaobaoKoubeiMallCommonItemShelfPageAPIRequest)
+}
+
+// ReleaseTaobaoKoubeiMallCommonItemShelfPageAPIRequest 将 TaobaoKoubeiMallCommonItemShelfPageAPIRequest 放入 sync.Pool
+func ReleaseTaobaoKoubeiMallCommonItemShelfPageAPIRequest(v *TaobaoKoubeiMallCommonItemShelfPageAPIRequest) {
+	v.Reset()
+	poolTaobaoKoubeiMallCommonItemShelfPageAPIRequest.Put(v)
 }

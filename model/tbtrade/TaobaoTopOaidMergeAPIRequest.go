@@ -2,6 +2,7 @@ package tbtrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTopOaidMergeAPIRequest struct {
 // NewTaobaoTopOaidMergeRequest 初始化TaobaoTopOaidMergeAPIRequest对象
 func NewTaobaoTopOaidMergeRequest() *TaobaoTopOaidMergeAPIRequest {
 	return &TaobaoTopOaidMergeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTopOaidMergeAPIRequest) Reset() {
+	r._mergeList = r._mergeList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTopOaidMergeAPIRequest) SetMergeList(_mergeList []OrderMerge) err
 // GetMergeList MergeList Getter
 func (r TaobaoTopOaidMergeAPIRequest) GetMergeList() []OrderMerge {
 	return r._mergeList
+}
+
+var poolTaobaoTopOaidMergeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTopOaidMergeRequest()
+	},
+}
+
+// GetTaobaoTopOaidMergeRequest 从 sync.Pool 获取 TaobaoTopOaidMergeAPIRequest
+func GetTaobaoTopOaidMergeAPIRequest() *TaobaoTopOaidMergeAPIRequest {
+	return poolTaobaoTopOaidMergeAPIRequest.Get().(*TaobaoTopOaidMergeAPIRequest)
+}
+
+// ReleaseTaobaoTopOaidMergeAPIRequest 将 TaobaoTopOaidMergeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTopOaidMergeAPIRequest(v *TaobaoTopOaidMergeAPIRequest) {
+	v.Reset()
+	poolTaobaoTopOaidMergeAPIRequest.Put(v)
 }

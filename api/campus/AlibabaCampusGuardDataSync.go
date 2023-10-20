@@ -9,11 +9,6 @@ import (
 // alibaba.campus.guard.data.sync
 //
 // 数据同步门禁系统
-func AlibabaCampusGuardDataSync(clt *core.SDKClient, req *campus.AlibabaCampusGuardDataSyncAPIRequest, session string) (*campus.AlibabaCampusGuardDataSyncAPIResponse, error) {
-	var resp campus.AlibabaCampusGuardDataSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusGuardDataSync(clt *core.SDKClient, req *campus.AlibabaCampusGuardDataSyncAPIRequest, resp *campus.AlibabaCampusGuardDataSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

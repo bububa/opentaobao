@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest struct {
 // NewAlibabaTxcsBrandmarketingCouponStatisticsGetRequest 初始化AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest对象
 func NewAlibabaTxcsBrandmarketingCouponStatisticsGetRequest() *AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest {
 	return &AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest) Reset() {
+	r._couponStatisticsParamDo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest) SetCouponStatis
 // GetCouponStatisticsParamDo CouponStatisticsParamDo Getter
 func (r AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest) GetCouponStatisticsParamDo() *CouponStatisticsParamDo {
 	return r._couponStatisticsParamDo
+}
+
+var poolAlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTxcsBrandmarketingCouponStatisticsGetRequest()
+	},
+}
+
+// GetAlibabaTxcsBrandmarketingCouponStatisticsGetRequest 从 sync.Pool 获取 AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest
+func GetAlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest() *AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest {
+	return poolAlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest.Get().(*AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest)
+}
+
+// ReleaseAlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest 将 AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest(v *AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest) {
+	v.Reset()
+	poolAlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest.Put(v)
 }

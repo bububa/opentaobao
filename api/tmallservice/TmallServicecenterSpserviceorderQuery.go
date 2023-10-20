@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.spserviceorder.query
 //
 // 查询服务单列表
-func TmallServicecenterSpserviceorderQuery(clt *core.SDKClient, req *tmallservice.TmallServicecenterSpserviceorderQueryAPIRequest, session string) (*tmallservice.TmallServicecenterSpserviceorderQueryAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterSpserviceorderQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterSpserviceorderQuery(clt *core.SDKClient, req *tmallservice.TmallServicecenterSpserviceorderQueryAPIRequest, resp *tmallservice.TmallServicecenterSpserviceorderQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

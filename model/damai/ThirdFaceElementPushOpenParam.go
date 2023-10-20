@@ -1,5 +1,9 @@
 package damai
 
+import (
+	"sync"
+)
+
 // ThirdFaceElementPushOpenParam 结构体
 type ThirdFaceElementPushOpenParam struct {
 	// 日期格式
@@ -40,4 +44,39 @@ type ThirdFaceElementPushOpenParam struct {
 	VerticalCoordinate int64 `json:"vertical_coordinate,omitempty" xml:"vertical_coordinate,omitempty"`
 	// 元素宽度
 	Width int64 `json:"width,omitempty" xml:"width,omitempty"`
+}
+
+var poolThirdFaceElementPushOpenParam = sync.Pool{
+	New: func() any {
+		return new(ThirdFaceElementPushOpenParam)
+	},
+}
+
+// GetThirdFaceElementPushOpenParam() 从对象池中获取ThirdFaceElementPushOpenParam
+func GetThirdFaceElementPushOpenParam() *ThirdFaceElementPushOpenParam {
+	return poolThirdFaceElementPushOpenParam.Get().(*ThirdFaceElementPushOpenParam)
+}
+
+// ReleaseThirdFaceElementPushOpenParam 释放ThirdFaceElementPushOpenParam
+func ReleaseThirdFaceElementPushOpenParam(v *ThirdFaceElementPushOpenParam) {
+	v.DateFormat = ""
+	v.ExtName = ""
+	v.ExtType = ""
+	v.Font = ""
+	v.PushTime = ""
+	v.StaticPicUrl = ""
+	v.StaticTextContent = ""
+	v.SupplierSecret = ""
+	v.DataType = 0
+	v.ElementType = 0
+	v.FaceId = 0
+	v.FontOrientation = 0
+	v.FontShape = 0
+	v.FontSize = 0
+	v.Height = 0
+	v.HorizontalCoordinate = 0
+	v.SystemId = 0
+	v.VerticalCoordinate = 0
+	v.Width = 0
+	poolThirdFaceElementPushOpenParam.Put(v)
 }

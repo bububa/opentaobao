@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.marketing.price
 //
 // 获取营销-促销商品中的实时价格
-func AlibabaWdkMarketingPrice(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingPriceAPIRequest, session string) (*wdk.AlibabaWdkMarketingPriceAPIResponse, error) {
-	var resp wdk.AlibabaWdkMarketingPriceAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkMarketingPrice(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingPriceAPIRequest, resp *wdk.AlibabaWdkMarketingPriceAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

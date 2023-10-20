@@ -9,11 +9,6 @@ import (
 // taobao.feedflow.item.algo.crowd.suggest
 //
 // 给超级推荐的广告主查看建议出价
-func TaobaoFeedflowItemAlgoCrowdSuggest(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest, session string) (*feedflow.TaobaoFeedflowItemAlgoCrowdSuggestAPIResponse, error) {
-	var resp feedflow.TaobaoFeedflowItemAlgoCrowdSuggestAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFeedflowItemAlgoCrowdSuggest(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest, resp *feedflow.TaobaoFeedflowItemAlgoCrowdSuggestAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

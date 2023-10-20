@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // RefundOrderFillConfirmFeeRs 结构体
 type RefundOrderFillConfirmFeeRs struct {
 	// 错误秒速
@@ -14,4 +18,26 @@ type RefundOrderFillConfirmFeeRs struct {
 	Failure bool `json:"failure,omitempty" xml:"failure,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolRefundOrderFillConfirmFeeRs = sync.Pool{
+	New: func() any {
+		return new(RefundOrderFillConfirmFeeRs)
+	},
+}
+
+// GetRefundOrderFillConfirmFeeRs() 从对象池中获取RefundOrderFillConfirmFeeRs
+func GetRefundOrderFillConfirmFeeRs() *RefundOrderFillConfirmFeeRs {
+	return poolRefundOrderFillConfirmFeeRs.Get().(*RefundOrderFillConfirmFeeRs)
+}
+
+// ReleaseRefundOrderFillConfirmFeeRs 释放RefundOrderFillConfirmFeeRs
+func ReleaseRefundOrderFillConfirmFeeRs(v *RefundOrderFillConfirmFeeRs) {
+	v.ApiErrorMsg = ""
+	v.ErrTrace = ""
+	v.HostName = ""
+	v.ApiErrorCode = 0
+	v.Failure = false
+	v.Success = false
+	poolRefundOrderFillConfirmFeeRs.Put(v)
 }

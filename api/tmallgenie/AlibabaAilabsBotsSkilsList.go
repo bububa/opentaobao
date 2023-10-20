@@ -9,11 +9,6 @@ import (
 // alibaba.ailabs.bots.skils.list
 //
 // 获取ai开放平台技能列表
-func AlibabaAilabsBotsSkilsList(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsBotsSkilsListAPIRequest, session string) (*tmallgenie.AlibabaAilabsBotsSkilsListAPIResponse, error) {
-	var resp tmallgenie.AlibabaAilabsBotsSkilsListAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAilabsBotsSkilsList(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsBotsSkilsListAPIRequest, resp *tmallgenie.AlibabaAilabsBotsSkilsListAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

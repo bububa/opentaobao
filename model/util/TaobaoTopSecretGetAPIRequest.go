@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoTopSecretGetAPIRequest struct {
 // NewTaobaoTopSecretGetRequest 初始化TaobaoTopSecretGetAPIRequest对象
 func NewTaobaoTopSecretGetRequest() *TaobaoTopSecretGetAPIRequest {
 	return &TaobaoTopSecretGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTopSecretGetAPIRequest) Reset() {
+	r._randomNum = ""
+	r._secretVersion = 0
+	r._customerUserId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoTopSecretGetAPIRequest) SetCustomerUserId(_customerUserId int64) 
 // GetCustomerUserId CustomerUserId Getter
 func (r TaobaoTopSecretGetAPIRequest) GetCustomerUserId() int64 {
 	return r._customerUserId
+}
+
+var poolTaobaoTopSecretGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTopSecretGetRequest()
+	},
+}
+
+// GetTaobaoTopSecretGetRequest 从 sync.Pool 获取 TaobaoTopSecretGetAPIRequest
+func GetTaobaoTopSecretGetAPIRequest() *TaobaoTopSecretGetAPIRequest {
+	return poolTaobaoTopSecretGetAPIRequest.Get().(*TaobaoTopSecretGetAPIRequest)
+}
+
+// ReleaseTaobaoTopSecretGetAPIRequest 将 TaobaoTopSecretGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTopSecretGetAPIRequest(v *TaobaoTopSecretGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTopSecretGetAPIRequest.Put(v)
 }

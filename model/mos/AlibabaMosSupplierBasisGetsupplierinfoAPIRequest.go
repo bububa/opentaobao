@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMosSupplierBasisGetsupplierinfoAPIRequest struct {
 // NewAlibabaMosSupplierBasisGetsupplierinfoRequest 初始化AlibabaMosSupplierBasisGetsupplierinfoAPIRequest对象
 func NewAlibabaMosSupplierBasisGetsupplierinfoRequest() *AlibabaMosSupplierBasisGetsupplierinfoAPIRequest {
 	return &AlibabaMosSupplierBasisGetsupplierinfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosSupplierBasisGetsupplierinfoAPIRequest) Reset() {
+	r._supplierId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMosSupplierBasisGetsupplierinfoAPIRequest) SetSupplierId(_suppli
 // GetSupplierId SupplierId Getter
 func (r AlibabaMosSupplierBasisGetsupplierinfoAPIRequest) GetSupplierId() string {
 	return r._supplierId
+}
+
+var poolAlibabaMosSupplierBasisGetsupplierinfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosSupplierBasisGetsupplierinfoRequest()
+	},
+}
+
+// GetAlibabaMosSupplierBasisGetsupplierinfoRequest 从 sync.Pool 获取 AlibabaMosSupplierBasisGetsupplierinfoAPIRequest
+func GetAlibabaMosSupplierBasisGetsupplierinfoAPIRequest() *AlibabaMosSupplierBasisGetsupplierinfoAPIRequest {
+	return poolAlibabaMosSupplierBasisGetsupplierinfoAPIRequest.Get().(*AlibabaMosSupplierBasisGetsupplierinfoAPIRequest)
+}
+
+// ReleaseAlibabaMosSupplierBasisGetsupplierinfoAPIRequest 将 AlibabaMosSupplierBasisGetsupplierinfoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosSupplierBasisGetsupplierinfoAPIRequest(v *AlibabaMosSupplierBasisGetsupplierinfoAPIRequest) {
+	v.Reset()
+	poolAlibabaMosSupplierBasisGetsupplierinfoAPIRequest.Put(v)
 }

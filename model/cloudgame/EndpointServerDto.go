@@ -1,5 +1,9 @@
 package cloudgame
 
+import (
+	"sync"
+)
+
 // EndpointServerDto 结构体
 type EndpointServerDto struct {
 	// name
@@ -14,4 +18,26 @@ type EndpointServerDto struct {
 	WsToken string `json:"ws_token,omitempty" xml:"ws_token,omitempty"`
 	// webSocketPort
 	WebSocketPort int64 `json:"web_socket_port,omitempty" xml:"web_socket_port,omitempty"`
+}
+
+var poolEndpointServerDto = sync.Pool{
+	New: func() any {
+		return new(EndpointServerDto)
+	},
+}
+
+// GetEndpointServerDto() 从对象池中获取EndpointServerDto
+func GetEndpointServerDto() *EndpointServerDto {
+	return poolEndpointServerDto.Get().(*EndpointServerDto)
+}
+
+// ReleaseEndpointServerDto 释放EndpointServerDto
+func ReleaseEndpointServerDto(v *EndpointServerDto) {
+	v.Name = ""
+	v.Type = ""
+	v.Isp = ""
+	v.WebSocketDomain = ""
+	v.WsToken = ""
+	v.WebSocketPort = 0
+	poolEndpointServerDto.Put(v)
 }

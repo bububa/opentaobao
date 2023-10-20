@@ -9,11 +9,6 @@ import (
 // taobao.picture.upload
 //
 // 图片空间上传接口
-func TaobaoPictureUpload(clt *core.SDKClient, req *media.TaobaoPictureUploadAPIRequest, session string) (*media.TaobaoPictureUploadAPIResponse, error) {
-	var resp media.TaobaoPictureUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoPictureUpload(clt *core.SDKClient, req *media.TaobaoPictureUploadAPIRequest, resp *media.TaobaoPictureUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

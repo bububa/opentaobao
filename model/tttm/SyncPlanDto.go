@@ -1,5 +1,9 @@
 package tttm
 
+import (
+	"sync"
+)
+
 // SyncPlanDto 结构体
 type SyncPlanDto struct {
 	// 工单
@@ -16,4 +20,27 @@ type SyncPlanDto struct {
 	StartTime string `json:"start_time,omitempty" xml:"start_time,omitempty"`
 	// 联系人电话
 	ContactTel string `json:"contact_tel,omitempty" xml:"contact_tel,omitempty"`
+}
+
+var poolSyncPlanDto = sync.Pool{
+	New: func() any {
+		return new(SyncPlanDto)
+	},
+}
+
+// GetSyncPlanDto() 从对象池中获取SyncPlanDto
+func GetSyncPlanDto() *SyncPlanDto {
+	return poolSyncPlanDto.Get().(*SyncPlanDto)
+}
+
+// ReleaseSyncPlanDto 释放SyncPlanDto
+func ReleaseSyncPlanDto(v *SyncPlanDto) {
+	v.SyncWorkDTOs = v.SyncWorkDTOs[:0]
+	v.FinishTime = ""
+	v.OrderId = ""
+	v.ContactName = ""
+	v.PlanId = ""
+	v.StartTime = ""
+	v.ContactTel = ""
+	poolSyncPlanDto.Put(v)
 }

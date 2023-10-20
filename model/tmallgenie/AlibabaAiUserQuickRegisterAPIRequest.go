@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAiUserQuickRegisterAPIRequest struct {
 // NewAlibabaAiUserQuickRegisterRequest 初始化AlibabaAiUserQuickRegisterAPIRequest对象
 func NewAlibabaAiUserQuickRegisterRequest() *AlibabaAiUserQuickRegisterAPIRequest {
 	return &AlibabaAiUserQuickRegisterAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAiUserQuickRegisterAPIRequest) Reset() {
+	r._serialNo = ""
+	r._reqTime = ""
+	r._merchantUserId = ""
+	r._schemaKey = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAiUserQuickRegisterAPIRequest) SetSchemaKey(_schemaKey string) e
 // GetSchemaKey SchemaKey Getter
 func (r AlibabaAiUserQuickRegisterAPIRequest) GetSchemaKey() string {
 	return r._schemaKey
+}
+
+var poolAlibabaAiUserQuickRegisterAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAiUserQuickRegisterRequest()
+	},
+}
+
+// GetAlibabaAiUserQuickRegisterRequest 从 sync.Pool 获取 AlibabaAiUserQuickRegisterAPIRequest
+func GetAlibabaAiUserQuickRegisterAPIRequest() *AlibabaAiUserQuickRegisterAPIRequest {
+	return poolAlibabaAiUserQuickRegisterAPIRequest.Get().(*AlibabaAiUserQuickRegisterAPIRequest)
+}
+
+// ReleaseAlibabaAiUserQuickRegisterAPIRequest 将 AlibabaAiUserQuickRegisterAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAiUserQuickRegisterAPIRequest(v *AlibabaAiUserQuickRegisterAPIRequest) {
+	v.Reset()
+	poolAlibabaAiUserQuickRegisterAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.qimen.deliveryorder.batchcreate
 //
 // taobao.qimen.deliveryorder.batchcreate
-func TaobaoQimenDeliveryorderBatchcreate(clt *core.SDKClient, req *qimen.TaobaoQimenDeliveryorderBatchcreateAPIRequest, session string) (*qimen.TaobaoQimenDeliveryorderBatchcreateAPIResponse, error) {
-	var resp qimen.TaobaoQimenDeliveryorderBatchcreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoQimenDeliveryorderBatchcreate(clt *core.SDKClient, req *qimen.TaobaoQimenDeliveryorderBatchcreateAPIRequest, resp *qimen.TaobaoQimenDeliveryorderBatchcreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

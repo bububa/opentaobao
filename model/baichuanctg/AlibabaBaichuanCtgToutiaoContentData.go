@@ -1,5 +1,9 @@
 package baichuanctg
 
+import (
+	"sync"
+)
+
 // AlibabaBaichuanCtgToutiaoContentData 结构体
 type AlibabaBaichuanCtgToutiaoContentData struct {
 	// 内容标题
@@ -34,4 +38,36 @@ type AlibabaBaichuanCtgToutiaoContentData struct {
 	ItemUrlList string `json:"item_url_list,omitempty" xml:"item_url_list,omitempty"`
 	// 内容id
 	ContentId string `json:"content_id,omitempty" xml:"content_id,omitempty"`
+}
+
+var poolAlibabaBaichuanCtgToutiaoContentData = sync.Pool{
+	New: func() any {
+		return new(AlibabaBaichuanCtgToutiaoContentData)
+	},
+}
+
+// GetAlibabaBaichuanCtgToutiaoContentData() 从对象池中获取AlibabaBaichuanCtgToutiaoContentData
+func GetAlibabaBaichuanCtgToutiaoContentData() *AlibabaBaichuanCtgToutiaoContentData {
+	return poolAlibabaBaichuanCtgToutiaoContentData.Get().(*AlibabaBaichuanCtgToutiaoContentData)
+}
+
+// ReleaseAlibabaBaichuanCtgToutiaoContentData 释放AlibabaBaichuanCtgToutiaoContentData
+func ReleaseAlibabaBaichuanCtgToutiaoContentData(v *AlibabaBaichuanCtgToutiaoContentData) {
+	v.Title = ""
+	v.PublishTime = ""
+	v.Source = ""
+	v.Summary = ""
+	v.CoverUrl = ""
+	v.ContentUrl = ""
+	v.OrgSource = ""
+	v.Nick = ""
+	v.TbUid = ""
+	v.WbUid = ""
+	v.CreateTime = ""
+	v.Ybhpss = ""
+	v.Body = ""
+	v.ModifiedTime = ""
+	v.ItemUrlList = ""
+	v.ContentId = ""
+	poolAlibabaBaichuanCtgToutiaoContentData.Put(v)
 }

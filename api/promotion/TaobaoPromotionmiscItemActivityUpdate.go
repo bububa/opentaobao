@@ -9,11 +9,6 @@ import (
 // taobao.promotionmisc.item.activity.update
 //
 // 修改无条件单品优惠活动。&lt;br/&gt;1、该接口只修改活动基本信息和打折信息，如需要增加、删除参与该活动的商品，请调用taobao.promotionmisc.activity.range.add和taobao.promotionmisc.activity.range.remove接口。 &lt;br/&gt;2、使用该接口时需要同时把未做修改的字段值也传入。 &lt;br/&gt;&lt;br/&gt;3、该接口受店铺最低折扣限制，如优惠不生效，请让卖家检查该优惠是否低于店铺的最低折扣设置。
-func TaobaoPromotionmiscItemActivityUpdate(clt *core.SDKClient, req *promotion.TaobaoPromotionmiscItemActivityUpdateAPIRequest, session string) (*promotion.TaobaoPromotionmiscItemActivityUpdateAPIResponse, error) {
-	var resp promotion.TaobaoPromotionmiscItemActivityUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoPromotionmiscItemActivityUpdate(clt *core.SDKClient, req *promotion.TaobaoPromotionmiscItemActivityUpdateAPIRequest, resp *promotion.TaobaoPromotionmiscItemActivityUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

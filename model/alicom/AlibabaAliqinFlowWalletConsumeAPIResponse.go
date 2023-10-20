@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAliqinFlowWalletConsumeAPIResponse struct {
 	AlibabaAliqinFlowWalletConsumeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAliqinFlowWalletConsumeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAliqinFlowWalletConsumeAPIResponseModel).Reset()
+}
+
 // AlibabaAliqinFlowWalletConsumeAPIResponseModel is 流量扣减 成功返回结果
 type AlibabaAliqinFlowWalletConsumeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_aliqin_flow_wallet_consume_response"`
@@ -22,4 +29,27 @@ type AlibabaAliqinFlowWalletConsumeAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// true为成功
 	Value string `json:"value,omitempty" xml:"value,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAliqinFlowWalletConsumeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Value = ""
+}
+
+var poolAlibabaAliqinFlowWalletConsumeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAliqinFlowWalletConsumeAPIResponse)
+	},
+}
+
+// GetAlibabaAliqinFlowWalletConsumeAPIResponse 从 sync.Pool 获取 AlibabaAliqinFlowWalletConsumeAPIResponse
+func GetAlibabaAliqinFlowWalletConsumeAPIResponse() *AlibabaAliqinFlowWalletConsumeAPIResponse {
+	return poolAlibabaAliqinFlowWalletConsumeAPIResponse.Get().(*AlibabaAliqinFlowWalletConsumeAPIResponse)
+}
+
+// ReleaseAlibabaAliqinFlowWalletConsumeAPIResponse 将 AlibabaAliqinFlowWalletConsumeAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAliqinFlowWalletConsumeAPIResponse(v *AlibabaAliqinFlowWalletConsumeAPIResponse) {
+	v.Reset()
+	poolAlibabaAliqinFlowWalletConsumeAPIResponse.Put(v)
 }

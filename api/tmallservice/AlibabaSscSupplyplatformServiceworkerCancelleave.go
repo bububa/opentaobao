@@ -9,11 +9,6 @@ import (
 // alibaba.ssc.supplyplatform.serviceworker.cancelleave
 //
 // 工人取消请假
-func AlibabaSscSupplyplatformServiceworkerCancelleave(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServiceworkerCancelleaveAPIResponse, error) {
-	var resp tmallservice.AlibabaSscSupplyplatformServiceworkerCancelleaveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaSscSupplyplatformServiceworkerCancelleave(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest, resp *tmallservice.AlibabaSscSupplyplatformServiceworkerCancelleaveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

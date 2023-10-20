@@ -9,11 +9,6 @@ import (
 // alibaba.ceres.supplier.po.querydetail
 //
 // 采购供应商订单明细查询接口
-func AlibabaCeresSupplierPoQuerydetail(clt *core.SDKClient, req *pur.AlibabaCeresSupplierPoQuerydetailAPIRequest, session string) (*pur.AlibabaCeresSupplierPoQuerydetailAPIResponse, error) {
-	var resp pur.AlibabaCeresSupplierPoQuerydetailAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCeresSupplierPoQuerydetail(clt *core.SDKClient, req *pur.AlibabaCeresSupplierPoQuerydetailAPIRequest, resp *pur.AlibabaCeresSupplierPoQuerydetailAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

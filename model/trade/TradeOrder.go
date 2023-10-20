@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // TradeOrder 结构体
 type TradeOrder struct {
 	// 业务子订单标识(允许为null)
@@ -38,4 +42,38 @@ type TradeOrder struct {
 	Delivery *OrderDelivery `json:"delivery,omitempty" xml:"delivery,omitempty"`
 	// 配送员信息
 	Deliverer *OrderDelivery `json:"deliverer,omitempty" xml:"deliverer,omitempty"`
+}
+
+var poolTradeOrder = sync.Pool{
+	New: func() any {
+		return new(TradeOrder)
+	},
+}
+
+// GetTradeOrder() 从对象池中获取TradeOrder
+func GetTradeOrder() *TradeOrder {
+	return poolTradeOrder.Get().(*TradeOrder)
+}
+
+// ReleaseTradeOrder 释放TradeOrder
+func ReleaseTradeOrder(v *TradeOrder) {
+	v.SubBizOrderIds = v.SubBizOrderIds[:0]
+	v.SubOrders = v.SubOrders[:0]
+	v.ShopId = ""
+	v.BizOrderId = ""
+	v.UserNick = ""
+	v.PayTime = ""
+	v.UserMem = ""
+	v.UserId = ""
+	v.OutOrderId = ""
+	v.BizType = ""
+	v.OrderStatus = ""
+	v.OrderFulfillStatus = ""
+	v.MerchantCode = ""
+	v.DiscountFee = 0
+	v.OriginFee = 0
+	v.PayFee = 0
+	v.Delivery = nil
+	v.Deliverer = nil
+	poolTradeOrder.Put(v)
 }

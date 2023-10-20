@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaScbpAdReportGetTargetReportAPIRequest struct {
 // NewAlibabaScbpAdReportGetTargetReportRequest 初始化AlibabaScbpAdReportGetTargetReportAPIRequest对象
 func NewAlibabaScbpAdReportGetTargetReportRequest() *AlibabaScbpAdReportGetTargetReportAPIRequest {
 	return &AlibabaScbpAdReportGetTargetReportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdReportGetTargetReportAPIRequest) Reset() {
+	r._topContext = nil
+	r._targetReportOperation = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaScbpAdReportGetTargetReportAPIRequest) SetTargetReportOperation(
 // GetTargetReportOperation TargetReportOperation Getter
 func (r AlibabaScbpAdReportGetTargetReportAPIRequest) GetTargetReportOperation() *TargetReportOperationDto {
 	return r._targetReportOperation
+}
+
+var poolAlibabaScbpAdReportGetTargetReportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdReportGetTargetReportRequest()
+	},
+}
+
+// GetAlibabaScbpAdReportGetTargetReportRequest 从 sync.Pool 获取 AlibabaScbpAdReportGetTargetReportAPIRequest
+func GetAlibabaScbpAdReportGetTargetReportAPIRequest() *AlibabaScbpAdReportGetTargetReportAPIRequest {
+	return poolAlibabaScbpAdReportGetTargetReportAPIRequest.Get().(*AlibabaScbpAdReportGetTargetReportAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdReportGetTargetReportAPIRequest 将 AlibabaScbpAdReportGetTargetReportAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdReportGetTargetReportAPIRequest(v *AlibabaScbpAdReportGetTargetReportAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdReportGetTargetReportAPIRequest.Put(v)
 }

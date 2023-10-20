@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallServicecenterTaskQueryrefundAPIRequest struct {
 // NewTmallServicecenterTaskQueryrefundRequest 初始化TmallServicecenterTaskQueryrefundAPIRequest对象
 func NewTmallServicecenterTaskQueryrefundRequest() *TmallServicecenterTaskQueryrefundAPIRequest {
 	return &TmallServicecenterTaskQueryrefundAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterTaskQueryrefundAPIRequest) Reset() {
+	r._workcardList = r._workcardList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallServicecenterTaskQueryrefundAPIRequest) SetWorkcardList(_workcardL
 // GetWorkcardList WorkcardList Getter
 func (r TmallServicecenterTaskQueryrefundAPIRequest) GetWorkcardList() []string {
 	return r._workcardList
+}
+
+var poolTmallServicecenterTaskQueryrefundAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterTaskQueryrefundRequest()
+	},
+}
+
+// GetTmallServicecenterTaskQueryrefundRequest 从 sync.Pool 获取 TmallServicecenterTaskQueryrefundAPIRequest
+func GetTmallServicecenterTaskQueryrefundAPIRequest() *TmallServicecenterTaskQueryrefundAPIRequest {
+	return poolTmallServicecenterTaskQueryrefundAPIRequest.Get().(*TmallServicecenterTaskQueryrefundAPIRequest)
+}
+
+// ReleaseTmallServicecenterTaskQueryrefundAPIRequest 将 TmallServicecenterTaskQueryrefundAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterTaskQueryrefundAPIRequest(v *TmallServicecenterTaskQueryrefundAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterTaskQueryrefundAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package lstspeacker
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaLstSpeakerConfigureAdjustvolumeAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstSpeakerConfigureAdjustvolumeAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaLstSpeakerConfigureAdjustvolumeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaLstSpeakerConfigureAdjustvolumeAPIResponseModel).Reset()
 }
 
 // AlibabaLstSpeakerConfigureAdjustvolumeAPIResponseModel is 音箱音量调节 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaLstSpeakerConfigureAdjustvolumeAPIResponseModel struct {
 	Succ bool `json:"succ,omitempty" xml:"succ,omitempty"`
 	// 执行结果标识
 	Module bool `json:"module,omitempty" xml:"module,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaLstSpeakerConfigureAdjustvolumeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErroMessage = ""
+	m.ErroCode = ""
+	m.Succ = false
+	m.Module = false
+}
+
+var poolAlibabaLstSpeakerConfigureAdjustvolumeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaLstSpeakerConfigureAdjustvolumeAPIResponse)
+	},
+}
+
+// GetAlibabaLstSpeakerConfigureAdjustvolumeAPIResponse 从 sync.Pool 获取 AlibabaLstSpeakerConfigureAdjustvolumeAPIResponse
+func GetAlibabaLstSpeakerConfigureAdjustvolumeAPIResponse() *AlibabaLstSpeakerConfigureAdjustvolumeAPIResponse {
+	return poolAlibabaLstSpeakerConfigureAdjustvolumeAPIResponse.Get().(*AlibabaLstSpeakerConfigureAdjustvolumeAPIResponse)
+}
+
+// ReleaseAlibabaLstSpeakerConfigureAdjustvolumeAPIResponse 将 AlibabaLstSpeakerConfigureAdjustvolumeAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaLstSpeakerConfigureAdjustvolumeAPIResponse(v *AlibabaLstSpeakerConfigureAdjustvolumeAPIResponse) {
+	v.Reset()
+	poolAlibabaLstSpeakerConfigureAdjustvolumeAPIResponse.Put(v)
 }

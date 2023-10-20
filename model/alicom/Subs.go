@@ -1,5 +1,9 @@
 package alicom
 
+import (
+	"sync"
+)
+
 // Subs 结构体
 type Subs struct {
 	// 顺振参数
@@ -44,4 +48,41 @@ type Subs struct {
 	NeedRecord bool `json:"need_record,omitempty" xml:"need_record,omitempty"`
 	// 是否实时媒体
 	NeedRealtimeMedia bool `json:"need_realtime_media,omitempty" xml:"need_realtime_media,omitempty"`
+}
+
+var poolSubs = sync.Pool{
+	New: func() any {
+		return new(Subs)
+	},
+}
+
+// GetSubs() 从对象池中获取Subs
+func GetSubs() *Subs {
+	return poolSubs.Get().(*Subs)
+}
+
+// ReleaseSubs 释放Subs
+func ReleaseSubs(v *Subs) {
+	v.SequenceCalls = v.SequenceCalls[:0]
+	v.CalledNo = ""
+	v.SmsChannel = ""
+	v.CallType = ""
+	v.RecType = ""
+	v.SubsId = ""
+	v.CalledDisplayNo = ""
+	v.RecordMode = ""
+	v.FastRecord = ""
+	v.WsAddr = ""
+	v.WsAddrCalled = ""
+	v.OutId = ""
+	v.RtpType = ""
+	v.ContentFormat = ""
+	v.SequenceTimeout = 0
+	v.RrdsControl = 0
+	v.EndCallIvr = nil
+	v.SequenceCallRule = nil
+	v.StatusReport = 0
+	v.NeedRecord = false
+	v.NeedRealtimeMedia = false
+	poolSubs.Put(v)
 }

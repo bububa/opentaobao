@@ -1,5 +1,9 @@
 package aliqin
 
+import (
+	"sync"
+)
+
 // DigitalSmsTemplateContentDto 结构体
 type DigitalSmsTemplateContentDto struct {
 	// 文件后缀名，文字内容转成txt，图片支持gif、jpg、png格式，音频支持mp3格式，视频支持mp4格式，目前只支持上传一个视频文件
@@ -10,4 +14,24 @@ type DigitalSmsTemplateContentDto struct {
 	FileContents string `json:"file_contents,omitempty" xml:"file_contents,omitempty"`
 	// 文件大小，单位：字节
 	FileSize int64 `json:"file_size,omitempty" xml:"file_size,omitempty"`
+}
+
+var poolDigitalSmsTemplateContentDto = sync.Pool{
+	New: func() any {
+		return new(DigitalSmsTemplateContentDto)
+	},
+}
+
+// GetDigitalSmsTemplateContentDto() 从对象池中获取DigitalSmsTemplateContentDto
+func GetDigitalSmsTemplateContentDto() *DigitalSmsTemplateContentDto {
+	return poolDigitalSmsTemplateContentDto.Get().(*DigitalSmsTemplateContentDto)
+}
+
+// ReleaseDigitalSmsTemplateContentDto 释放DigitalSmsTemplateContentDto
+func ReleaseDigitalSmsTemplateContentDto(v *DigitalSmsTemplateContentDto) {
+	v.FileSuffix = ""
+	v.FileName = ""
+	v.FileContents = ""
+	v.FileSize = 0
+	poolDigitalSmsTemplateContentDto.Put(v)
 }

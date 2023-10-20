@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallAliautoWisdomdataOmidRecieveAPIRequest struct {
 // NewTmallAliautoWisdomdataOmidRecieveRequest 初始化TmallAliautoWisdomdataOmidRecieveAPIRequest对象
 func NewTmallAliautoWisdomdataOmidRecieveRequest() *TmallAliautoWisdomdataOmidRecieveAPIRequest {
 	return &TmallAliautoWisdomdataOmidRecieveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallAliautoWisdomdataOmidRecieveAPIRequest) Reset() {
+	r._modelConfig = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallAliautoWisdomdataOmidRecieveAPIRequest) SetModelConfig(_modelConfi
 // GetModelConfig ModelConfig Getter
 func (r TmallAliautoWisdomdataOmidRecieveAPIRequest) GetModelConfig() string {
 	return r._modelConfig
+}
+
+var poolTmallAliautoWisdomdataOmidRecieveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallAliautoWisdomdataOmidRecieveRequest()
+	},
+}
+
+// GetTmallAliautoWisdomdataOmidRecieveRequest 从 sync.Pool 获取 TmallAliautoWisdomdataOmidRecieveAPIRequest
+func GetTmallAliautoWisdomdataOmidRecieveAPIRequest() *TmallAliautoWisdomdataOmidRecieveAPIRequest {
+	return poolTmallAliautoWisdomdataOmidRecieveAPIRequest.Get().(*TmallAliautoWisdomdataOmidRecieveAPIRequest)
+}
+
+// ReleaseTmallAliautoWisdomdataOmidRecieveAPIRequest 将 TmallAliautoWisdomdataOmidRecieveAPIRequest 放入 sync.Pool
+func ReleaseTmallAliautoWisdomdataOmidRecieveAPIRequest(v *TmallAliautoWisdomdataOmidRecieveAPIRequest) {
+	v.Reset()
+	poolTmallAliautoWisdomdataOmidRecieveAPIRequest.Put(v)
 }

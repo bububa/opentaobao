@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // AlitripAgentFlightSellTicketingListT 结构体
 type AlitripAgentFlightSellTicketingListT struct {
 	// 飞猪订单号
@@ -14,4 +18,26 @@ type AlitripAgentFlightSellTicketingListT struct {
 	UrgeRiskDesc string `json:"urge_risk_desc,omitempty" xml:"urge_risk_desc,omitempty"`
 	// 国内国际标识
 	DomesticIntl int64 `json:"domestic_intl,omitempty" xml:"domestic_intl,omitempty"`
+}
+
+var poolAlitripAgentFlightSellTicketingListT = sync.Pool{
+	New: func() any {
+		return new(AlitripAgentFlightSellTicketingListT)
+	},
+}
+
+// GetAlitripAgentFlightSellTicketingListT() 从对象池中获取AlitripAgentFlightSellTicketingListT
+func GetAlitripAgentFlightSellTicketingListT() *AlitripAgentFlightSellTicketingListT {
+	return poolAlitripAgentFlightSellTicketingListT.Get().(*AlitripAgentFlightSellTicketingListT)
+}
+
+// ReleaseAlitripAgentFlightSellTicketingListT 释放AlitripAgentFlightSellTicketingListT
+func ReleaseAlitripAgentFlightSellTicketingListT(v *AlitripAgentFlightSellTicketingListT) {
+	v.OrderId = ""
+	v.PayTime = ""
+	v.ServeDeadline = ""
+	v.UrgeServeDeadline = ""
+	v.UrgeRiskDesc = ""
+	v.DomesticIntl = 0
+	poolAlitripAgentFlightSellTicketingListT.Put(v)
 }

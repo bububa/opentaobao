@@ -2,6 +2,7 @@ package aliqin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaAliqinFcTtsNumSinglecallAPIRequest struct {
 // NewAlibabaAliqinFcTtsNumSinglecallRequest 初始化AlibabaAliqinFcTtsNumSinglecallAPIRequest对象
 func NewAlibabaAliqinFcTtsNumSinglecallRequest() *AlibabaAliqinFcTtsNumSinglecallAPIRequest {
 	return &AlibabaAliqinFcTtsNumSinglecallAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinFcTtsNumSinglecallAPIRequest) Reset() {
+	r._calledNum = ""
+	r._calledShowNum = ""
+	r._ttsCode = ""
+	r._extend = ""
+	r._ttsParam = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaAliqinFcTtsNumSinglecallAPIRequest) SetTtsParam(_ttsParam string
 // GetTtsParam TtsParam Getter
 func (r AlibabaAliqinFcTtsNumSinglecallAPIRequest) GetTtsParam() string {
 	return r._ttsParam
+}
+
+var poolAlibabaAliqinFcTtsNumSinglecallAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinFcTtsNumSinglecallRequest()
+	},
+}
+
+// GetAlibabaAliqinFcTtsNumSinglecallRequest 从 sync.Pool 获取 AlibabaAliqinFcTtsNumSinglecallAPIRequest
+func GetAlibabaAliqinFcTtsNumSinglecallAPIRequest() *AlibabaAliqinFcTtsNumSinglecallAPIRequest {
+	return poolAlibabaAliqinFcTtsNumSinglecallAPIRequest.Get().(*AlibabaAliqinFcTtsNumSinglecallAPIRequest)
+}
+
+// ReleaseAlibabaAliqinFcTtsNumSinglecallAPIRequest 将 AlibabaAliqinFcTtsNumSinglecallAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinFcTtsNumSinglecallAPIRequest(v *AlibabaAliqinFcTtsNumSinglecallAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinFcTtsNumSinglecallAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.mj.oc.getproductbyscancode
 //
 // 此API用于在银泰商场中，POS端扫码获取商品信息
-func AlibabaMjOcGetproductbyscancode(clt *core.SDKClient, req *mos.AlibabaMjOcGetproductbyscancodeAPIRequest, session string) (*mos.AlibabaMjOcGetproductbyscancodeAPIResponse, error) {
-	var resp mos.AlibabaMjOcGetproductbyscancodeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMjOcGetproductbyscancode(clt *core.SDKClient, req *mos.AlibabaMjOcGetproductbyscancodeAPIRequest, resp *mos.AlibabaMjOcGetproductbyscancodeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

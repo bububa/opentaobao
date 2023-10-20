@@ -2,6 +2,7 @@ package yunosad
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type YunosAdAuditCreativeAddAPIResponse struct {
 	YunosAdAuditCreativeAddAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *YunosAdAuditCreativeAddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.YunosAdAuditCreativeAddAPIResponseModel).Reset()
+}
+
 // YunosAdAuditCreativeAddAPIResponseModel is 单个创意预审接口 成功返回结果
 type YunosAdAuditCreativeAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_ad_audit_creative_add_response"`
@@ -26,4 +33,29 @@ type YunosAdAuditCreativeAddAPIResponseModel struct {
 	StatusCode int64 `json:"status_code,omitempty" xml:"status_code,omitempty"`
 	// isOk
 	IsOk bool `json:"is_ok,omitempty" xml:"is_ok,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *YunosAdAuditCreativeAddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.StatusCode = 0
+	m.IsOk = false
+}
+
+var poolYunosAdAuditCreativeAddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(YunosAdAuditCreativeAddAPIResponse)
+	},
+}
+
+// GetYunosAdAuditCreativeAddAPIResponse 从 sync.Pool 获取 YunosAdAuditCreativeAddAPIResponse
+func GetYunosAdAuditCreativeAddAPIResponse() *YunosAdAuditCreativeAddAPIResponse {
+	return poolYunosAdAuditCreativeAddAPIResponse.Get().(*YunosAdAuditCreativeAddAPIResponse)
+}
+
+// ReleaseYunosAdAuditCreativeAddAPIResponse 将 YunosAdAuditCreativeAddAPIResponse 保存到 sync.Pool
+func ReleaseYunosAdAuditCreativeAddAPIResponse(v *YunosAdAuditCreativeAddAPIResponse) {
+	v.Reset()
+	poolYunosAdAuditCreativeAddAPIResponse.Put(v)
 }

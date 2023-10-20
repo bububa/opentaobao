@@ -2,6 +2,7 @@ package idleisv
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleIsvPvQueryAPIRequest struct {
 // NewAlibabaIdleIsvPvQueryRequest 初始化AlibabaIdleIsvPvQueryAPIRequest对象
 func NewAlibabaIdleIsvPvQueryRequest() *AlibabaIdleIsvPvQueryAPIRequest {
 	return &AlibabaIdleIsvPvQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleIsvPvQueryAPIRequest) Reset() {
+	r._youpinCpvQry = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleIsvPvQueryAPIRequest) SetYoupinCpvQry(_youpinCpvQry *YoupinC
 // GetYoupinCpvQry YoupinCpvQry Getter
 func (r AlibabaIdleIsvPvQueryAPIRequest) GetYoupinCpvQry() *YoupinCpvQry {
 	return r._youpinCpvQry
+}
+
+var poolAlibabaIdleIsvPvQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleIsvPvQueryRequest()
+	},
+}
+
+// GetAlibabaIdleIsvPvQueryRequest 从 sync.Pool 获取 AlibabaIdleIsvPvQueryAPIRequest
+func GetAlibabaIdleIsvPvQueryAPIRequest() *AlibabaIdleIsvPvQueryAPIRequest {
+	return poolAlibabaIdleIsvPvQueryAPIRequest.Get().(*AlibabaIdleIsvPvQueryAPIRequest)
+}
+
+// ReleaseAlibabaIdleIsvPvQueryAPIRequest 将 AlibabaIdleIsvPvQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleIsvPvQueryAPIRequest(v *AlibabaIdleIsvPvQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleIsvPvQueryAPIRequest.Put(v)
 }

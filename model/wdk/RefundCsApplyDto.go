@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // RefundCsApplyDto 结构体
 type RefundCsApplyDto struct {
 	// 申请退款的子订单ID列表
@@ -14,4 +18,26 @@ type RefundCsApplyDto struct {
 	Memo string `json:"memo,omitempty" xml:"memo,omitempty"`
 	// 退款原因id
 	ReasonId int64 `json:"reason_id,omitempty" xml:"reason_id,omitempty"`
+}
+
+var poolRefundCsApplyDto = sync.Pool{
+	New: func() any {
+		return new(RefundCsApplyDto)
+	},
+}
+
+// GetRefundCsApplyDto() 从对象池中获取RefundCsApplyDto
+func GetRefundCsApplyDto() *RefundCsApplyDto {
+	return poolRefundCsApplyDto.Get().(*RefundCsApplyDto)
+}
+
+// ReleaseRefundCsApplyDto 释放RefundCsApplyDto
+func ReleaseRefundCsApplyDto(v *RefundCsApplyDto) {
+	v.OutSubOrderIds = v.OutSubOrderIds[:0]
+	v.OutOrderId = ""
+	v.StoreId = ""
+	v.RequestId = ""
+	v.Memo = ""
+	v.ReasonId = 0
+	poolRefundCsApplyDto.Put(v)
 }

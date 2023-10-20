@@ -9,11 +9,6 @@ import (
 // taobao.openmall.trade.close
 //
 // 关闭订单
-func TaobaoOpenmallTradeClose(clt *core.SDKClient, req *openmall.TaobaoOpenmallTradeCloseAPIRequest, session string) (*openmall.TaobaoOpenmallTradeCloseAPIResponse, error) {
-	var resp openmall.TaobaoOpenmallTradeCloseAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpenmallTradeClose(clt *core.SDKClient, req *openmall.TaobaoOpenmallTradeCloseAPIRequest, resp *openmall.TaobaoOpenmallTradeCloseAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

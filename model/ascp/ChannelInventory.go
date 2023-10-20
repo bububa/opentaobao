@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // ChannelInventory 结构体
 type ChannelInventory struct {
 	// 渠道，默认1000代表淘系渠道，预留后面可能猫超等渠道
@@ -12,4 +16,25 @@ type ChannelInventory struct {
 	ScItemCode string `json:"sc_item_code,omitempty" xml:"sc_item_code,omitempty"`
 	// 库存数量
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
+}
+
+var poolChannelInventory = sync.Pool{
+	New: func() any {
+		return new(ChannelInventory)
+	},
+}
+
+// GetChannelInventory() 从对象池中获取ChannelInventory
+func GetChannelInventory() *ChannelInventory {
+	return poolChannelInventory.Get().(*ChannelInventory)
+}
+
+// ReleaseChannelInventory 释放ChannelInventory
+func ReleaseChannelInventory(v *ChannelInventory) {
+	v.Channel = ""
+	v.OwnerCode = ""
+	v.WarehouseCode = ""
+	v.ScItemCode = ""
+	v.Quantity = 0
+	poolChannelInventory.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.target.ad.plan.update
 //
 // 定向推广-更新推广计划的基础信息
-func AlibabaScbpTargetAdPlanUpdate(clt *core.SDKClient, req *scbp.AlibabaScbpTargetAdPlanUpdateAPIRequest, session string) (*scbp.AlibabaScbpTargetAdPlanUpdateAPIResponse, error) {
-	var resp scbp.AlibabaScbpTargetAdPlanUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpTargetAdPlanUpdate(clt *core.SDKClient, req *scbp.AlibabaScbpTargetAdPlanUpdateAPIRequest, resp *scbp.AlibabaScbpTargetAdPlanUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

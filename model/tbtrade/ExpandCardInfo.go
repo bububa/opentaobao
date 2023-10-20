@@ -1,5 +1,9 @@
 package tbtrade
 
+import (
+	"sync"
+)
+
 // ExpandCardInfo 结构体
 type ExpandCardInfo struct {
 	// 买卡订单本金
@@ -10,4 +14,24 @@ type ExpandCardInfo struct {
 	BasicPriceUsed string `json:"basic_price_used,omitempty" xml:"basic_price_used,omitempty"`
 	// 用卡订单使用的权益金
 	ExpandPriceUsed string `json:"expand_price_used,omitempty" xml:"expand_price_used,omitempty"`
+}
+
+var poolExpandCardInfo = sync.Pool{
+	New: func() any {
+		return new(ExpandCardInfo)
+	},
+}
+
+// GetExpandCardInfo() 从对象池中获取ExpandCardInfo
+func GetExpandCardInfo() *ExpandCardInfo {
+	return poolExpandCardInfo.Get().(*ExpandCardInfo)
+}
+
+// ReleaseExpandCardInfo 释放ExpandCardInfo
+func ReleaseExpandCardInfo(v *ExpandCardInfo) {
+	v.BasicPrice = ""
+	v.ExpandPrice = ""
+	v.BasicPriceUsed = ""
+	v.ExpandPriceUsed = ""
+	poolExpandCardInfo.Put(v)
 }

@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaScbpAdGroupRecommendProductAPIRequest struct {
 // NewAlibabaScbpAdGroupRecommendProductRequest 初始化AlibabaScbpAdGroupRecommendProductAPIRequest对象
 func NewAlibabaScbpAdGroupRecommendProductRequest() *AlibabaScbpAdGroupRecommendProductAPIRequest {
 	return &AlibabaScbpAdGroupRecommendProductAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdGroupRecommendProductAPIRequest) Reset() {
+	r._topContext = nil
+	r._recommendQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaScbpAdGroupRecommendProductAPIRequest) SetRecommendQuery(_recomm
 // GetRecommendQuery RecommendQuery Getter
 func (r AlibabaScbpAdGroupRecommendProductAPIRequest) GetRecommendQuery() *ProductRecommendQueryDto {
 	return r._recommendQuery
+}
+
+var poolAlibabaScbpAdGroupRecommendProductAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdGroupRecommendProductRequest()
+	},
+}
+
+// GetAlibabaScbpAdGroupRecommendProductRequest 从 sync.Pool 获取 AlibabaScbpAdGroupRecommendProductAPIRequest
+func GetAlibabaScbpAdGroupRecommendProductAPIRequest() *AlibabaScbpAdGroupRecommendProductAPIRequest {
+	return poolAlibabaScbpAdGroupRecommendProductAPIRequest.Get().(*AlibabaScbpAdGroupRecommendProductAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdGroupRecommendProductAPIRequest 将 AlibabaScbpAdGroupRecommendProductAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdGroupRecommendProductAPIRequest(v *AlibabaScbpAdGroupRecommendProductAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdGroupRecommendProductAPIRequest.Put(v)
 }

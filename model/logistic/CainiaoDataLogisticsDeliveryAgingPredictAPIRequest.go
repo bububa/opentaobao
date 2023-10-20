@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,22 @@ type CainiaoDataLogisticsDeliveryAgingPredictAPIRequest struct {
 // NewCainiaoDataLogisticsDeliveryAgingPredictRequest 初始化CainiaoDataLogisticsDeliveryAgingPredictAPIRequest对象
 func NewCainiaoDataLogisticsDeliveryAgingPredictRequest() *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest {
 	return &CainiaoDataLogisticsDeliveryAgingPredictAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) Reset() {
+	r._sendCityName = ""
+	r._sendCountyName = ""
+	r._sendAddr = ""
+	r._sendProvName = ""
+	r._recCityName = ""
+	r._recAddr = ""
+	r._recCountyName = ""
+	r._recProvName = ""
+	r._recTownName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -175,4 +190,21 @@ func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetRecTownName(_rec
 // GetRecTownName RecTownName Getter
 func (r CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) GetRecTownName() string {
 	return r._recTownName
+}
+
+var poolCainiaoDataLogisticsDeliveryAgingPredictAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoDataLogisticsDeliveryAgingPredictRequest()
+	},
+}
+
+// GetCainiaoDataLogisticsDeliveryAgingPredictRequest 从 sync.Pool 获取 CainiaoDataLogisticsDeliveryAgingPredictAPIRequest
+func GetCainiaoDataLogisticsDeliveryAgingPredictAPIRequest() *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest {
+	return poolCainiaoDataLogisticsDeliveryAgingPredictAPIRequest.Get().(*CainiaoDataLogisticsDeliveryAgingPredictAPIRequest)
+}
+
+// ReleaseCainiaoDataLogisticsDeliveryAgingPredictAPIRequest 将 CainiaoDataLogisticsDeliveryAgingPredictAPIRequest 放入 sync.Pool
+func ReleaseCainiaoDataLogisticsDeliveryAgingPredictAPIRequest(v *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) {
+	v.Reset()
+	poolCainiaoDataLogisticsDeliveryAgingPredictAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAliqinFlowAlipayPublishAPIRequest struct {
 // NewAlibabaAliqinFlowAlipayPublishRequest 初始化AlibabaAliqinFlowAlipayPublishAPIRequest对象
 func NewAlibabaAliqinFlowAlipayPublishRequest() *AlibabaAliqinFlowAlipayPublishAPIRequest {
 	return &AlibabaAliqinFlowAlipayPublishAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinFlowAlipayPublishAPIRequest) Reset() {
+	r._alipayId = ""
+	r._serial = ""
+	r._flow = ""
+	r._reason = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAliqinFlowAlipayPublishAPIRequest) SetReason(_reason string) err
 // GetReason Reason Getter
 func (r AlibabaAliqinFlowAlipayPublishAPIRequest) GetReason() string {
 	return r._reason
+}
+
+var poolAlibabaAliqinFlowAlipayPublishAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinFlowAlipayPublishRequest()
+	},
+}
+
+// GetAlibabaAliqinFlowAlipayPublishRequest 从 sync.Pool 获取 AlibabaAliqinFlowAlipayPublishAPIRequest
+func GetAlibabaAliqinFlowAlipayPublishAPIRequest() *AlibabaAliqinFlowAlipayPublishAPIRequest {
+	return poolAlibabaAliqinFlowAlipayPublishAPIRequest.Get().(*AlibabaAliqinFlowAlipayPublishAPIRequest)
+}
+
+// ReleaseAlibabaAliqinFlowAlipayPublishAPIRequest 将 AlibabaAliqinFlowAlipayPublishAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinFlowAlipayPublishAPIRequest(v *AlibabaAliqinFlowAlipayPublishAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinFlowAlipayPublishAPIRequest.Put(v)
 }

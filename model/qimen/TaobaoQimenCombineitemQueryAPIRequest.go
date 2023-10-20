@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQimenCombineitemQueryAPIRequest struct {
 // NewTaobaoQimenCombineitemQueryRequest 初始化TaobaoQimenCombineitemQueryAPIRequest对象
 func NewTaobaoQimenCombineitemQueryRequest() *TaobaoQimenCombineitemQueryAPIRequest {
 	return &TaobaoQimenCombineitemQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenCombineitemQueryAPIRequest) Reset() {
+	r._request = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -50,4 +57,21 @@ func (r *TaobaoQimenCombineitemQueryAPIRequest) SetRequest(_request *TaobaoQimen
 // GetRequest Request Getter
 func (r TaobaoQimenCombineitemQueryAPIRequest) GetRequest() *TaobaoQimenCombineitemQueryRequest {
 	return r._request
+}
+
+var poolTaobaoQimenCombineitemQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenCombineitemQueryRequest()
+	},
+}
+
+// GetTaobaoQimenCombineitemQueryRequest 从 sync.Pool 获取 TaobaoQimenCombineitemQueryAPIRequest
+func GetTaobaoQimenCombineitemQueryAPIRequest() *TaobaoQimenCombineitemQueryAPIRequest {
+	return poolTaobaoQimenCombineitemQueryAPIRequest.Get().(*TaobaoQimenCombineitemQueryAPIRequest)
+}
+
+// ReleaseTaobaoQimenCombineitemQueryAPIRequest 将 TaobaoQimenCombineitemQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenCombineitemQueryAPIRequest(v *TaobaoQimenCombineitemQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenCombineitemQueryAPIRequest.Put(v)
 }

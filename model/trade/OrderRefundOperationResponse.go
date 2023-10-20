@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // OrderRefundOperationResponse 结构体
 type OrderRefundOperationResponse struct {
 	// 不能对某一个订单进行操作时的原因描述
@@ -14,4 +18,26 @@ type OrderRefundOperationResponse struct {
 	OrderId string `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 是否能对某一个订单进行操作
 	CanOperate bool `json:"can_operate,omitempty" xml:"can_operate,omitempty"`
+}
+
+var poolOrderRefundOperationResponse = sync.Pool{
+	New: func() any {
+		return new(OrderRefundOperationResponse)
+	},
+}
+
+// GetOrderRefundOperationResponse() 从对象池中获取OrderRefundOperationResponse
+func GetOrderRefundOperationResponse() *OrderRefundOperationResponse {
+	return poolOrderRefundOperationResponse.Get().(*OrderRefundOperationResponse)
+}
+
+// ReleaseOrderRefundOperationResponse 释放OrderRefundOperationResponse
+func ReleaseOrderRefundOperationResponse(v *OrderRefundOperationResponse) {
+	v.Message = ""
+	v.OperationResultCode = ""
+	v.OrderRefundActionType = ""
+	v.OperationUserId = ""
+	v.OrderId = ""
+	v.CanOperate = false
+	poolOrderRefundOperationResponse.Put(v)
 }

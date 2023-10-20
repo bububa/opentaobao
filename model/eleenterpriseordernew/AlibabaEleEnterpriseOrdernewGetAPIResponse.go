@@ -2,6 +2,7 @@ package eleenterpriseordernew
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaEleEnterpriseOrdernewGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleEnterpriseOrdernewGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaEleEnterpriseOrdernewGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaEleEnterpriseOrdernewGetAPIResponseModel).Reset()
 }
 
 // AlibabaEleEnterpriseOrdernewGetAPIResponseModel is 查询订单详情 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaEleEnterpriseOrdernewGetAPIResponseModel struct {
 	EnterpriseRequestid string `json:"enterprise_requestid,omitempty" xml:"enterprise_requestid,omitempty"`
 	// 返回值信息
 	EnterpriseData *StandardOrderTrackingInfoDto `json:"enterprise_data,omitempty" xml:"enterprise_data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaEleEnterpriseOrdernewGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.EnterpriseCode = ""
+	m.EnterpriseMsg = ""
+	m.EnterpriseRequestid = ""
+	m.EnterpriseData = nil
+}
+
+var poolAlibabaEleEnterpriseOrdernewGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaEleEnterpriseOrdernewGetAPIResponse)
+	},
+}
+
+// GetAlibabaEleEnterpriseOrdernewGetAPIResponse 从 sync.Pool 获取 AlibabaEleEnterpriseOrdernewGetAPIResponse
+func GetAlibabaEleEnterpriseOrdernewGetAPIResponse() *AlibabaEleEnterpriseOrdernewGetAPIResponse {
+	return poolAlibabaEleEnterpriseOrdernewGetAPIResponse.Get().(*AlibabaEleEnterpriseOrdernewGetAPIResponse)
+}
+
+// ReleaseAlibabaEleEnterpriseOrdernewGetAPIResponse 将 AlibabaEleEnterpriseOrdernewGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaEleEnterpriseOrdernewGetAPIResponse(v *AlibabaEleEnterpriseOrdernewGetAPIResponse) {
+	v.Reset()
+	poolAlibabaEleEnterpriseOrdernewGetAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest struct {
 // NewAlibabaAlihealthDrugcodeCenterReceiveBoundStatusRequest 初始化AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest对象
 func NewAlibabaAlihealthDrugcodeCenterReceiveBoundStatusRequest() *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest {
 	return &AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest) Reset() {
+	r._hospitalRefEntId = ""
+	r._centerRandomSysId = ""
+	r._projectId = 0
+	r._status = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest) SetStatus(_
 // GetStatus Status Getter
 func (r AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest) GetStatus() int64 {
 	return r._status
+}
+
+var poolAlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugcodeCenterReceiveBoundStatusRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugcodeCenterReceiveBoundStatusRequest 从 sync.Pool 获取 AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest
+func GetAlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest() *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest {
+	return poolAlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest.Get().(*AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest 将 AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest(v *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package openim
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoOpenimTribeSendmsgAPIResponse struct {
 	TaobaoOpenimTribeSendmsgAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoOpenimTribeSendmsgAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOpenimTribeSendmsgAPIResponseModel).Reset()
+}
+
 // TaobaoOpenimTribeSendmsgAPIResponseModel is 发送群消息 成功返回结果
 type TaobaoOpenimTribeSendmsgAPIResponseModel struct {
 	XMLName xml.Name `xml:"openim_tribe_sendmsg_response"`
@@ -24,4 +31,28 @@ type TaobaoOpenimTribeSendmsgAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 错误码
 	TribeCode int64 `json:"tribe_code,omitempty" xml:"tribe_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOpenimTribeSendmsgAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.TribeCode = 0
+}
+
+var poolTaobaoOpenimTribeSendmsgAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOpenimTribeSendmsgAPIResponse)
+	},
+}
+
+// GetTaobaoOpenimTribeSendmsgAPIResponse 从 sync.Pool 获取 TaobaoOpenimTribeSendmsgAPIResponse
+func GetTaobaoOpenimTribeSendmsgAPIResponse() *TaobaoOpenimTribeSendmsgAPIResponse {
+	return poolTaobaoOpenimTribeSendmsgAPIResponse.Get().(*TaobaoOpenimTribeSendmsgAPIResponse)
+}
+
+// ReleaseTaobaoOpenimTribeSendmsgAPIResponse 将 TaobaoOpenimTribeSendmsgAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOpenimTribeSendmsgAPIResponse(v *TaobaoOpenimTribeSendmsgAPIResponse) {
+	v.Reset()
+	poolTaobaoOpenimTribeSendmsgAPIResponse.Put(v)
 }

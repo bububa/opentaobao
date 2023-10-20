@@ -2,6 +2,7 @@ package fans
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallFansArenaPushAPIRequest struct {
 // NewTmallFansArenaPushRequest 初始化TmallFansArenaPushAPIRequest对象
 func NewTmallFansArenaPushRequest() *TmallFansArenaPushAPIRequest {
 	return &TmallFansArenaPushAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallFansArenaPushAPIRequest) Reset() {
+	r._pushList = r._pushList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallFansArenaPushAPIRequest) SetPushList(_pushList []PushMessageParamD
 // GetPushList PushList Getter
 func (r TmallFansArenaPushAPIRequest) GetPushList() []PushMessageParamDo {
 	return r._pushList
+}
+
+var poolTmallFansArenaPushAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallFansArenaPushRequest()
+	},
+}
+
+// GetTmallFansArenaPushRequest 从 sync.Pool 获取 TmallFansArenaPushAPIRequest
+func GetTmallFansArenaPushAPIRequest() *TmallFansArenaPushAPIRequest {
+	return poolTmallFansArenaPushAPIRequest.Get().(*TmallFansArenaPushAPIRequest)
+}
+
+// ReleaseTmallFansArenaPushAPIRequest 将 TmallFansArenaPushAPIRequest 放入 sync.Pool
+func ReleaseTmallFansArenaPushAPIRequest(v *TmallFansArenaPushAPIRequest) {
+	v.Reset()
+	poolTmallFansArenaPushAPIRequest.Put(v)
 }

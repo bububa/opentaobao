@@ -9,11 +9,6 @@ import (
 // alibaba.damai.maitix.order.distribution.create
 //
 // createDistributionOrder
-func AlibabaDamaiMaitixOrderDistributionCreate(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOrderDistributionCreateAPIRequest, session string) (*maitix.AlibabaDamaiMaitixOrderDistributionCreateAPIResponse, error) {
-	var resp maitix.AlibabaDamaiMaitixOrderDistributionCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMaitixOrderDistributionCreate(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOrderDistributionCreateAPIRequest, resp *maitix.AlibabaDamaiMaitixOrderDistributionCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

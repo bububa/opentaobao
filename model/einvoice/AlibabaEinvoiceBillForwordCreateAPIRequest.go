@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -47,8 +48,28 @@ type AlibabaEinvoiceBillForwordCreateAPIRequest struct {
 // NewAlibabaEinvoiceBillForwordCreateRequest 初始化AlibabaEinvoiceBillForwordCreateAPIRequest对象
 func NewAlibabaEinvoiceBillForwordCreateRequest() *AlibabaEinvoiceBillForwordCreateAPIRequest {
 	return &AlibabaEinvoiceBillForwordCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(15),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) Reset() {
+	r._invoiceItems = r._invoiceItems[:0]
+	r._orderId = ""
+	r._payeeRegisterNo = ""
+	r._platform = ""
+	r._seriNo = ""
+	r._shopName = ""
+	r._sumPrice = ""
+	r._payerAddress = ""
+	r._payerBankaccount = ""
+	r._payerEmail = ""
+	r._payerName = ""
+	r._payerPhone = ""
+	r._payerRegisterNo = ""
+	r._phoneNumber = ""
+	r._businessType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -261,4 +282,21 @@ func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetBusinessType(_businessTy
 // GetBusinessType BusinessType Getter
 func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetBusinessType() int64 {
 	return r._businessType
+}
+
+var poolAlibabaEinvoiceBillForwordCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceBillForwordCreateRequest()
+	},
+}
+
+// GetAlibabaEinvoiceBillForwordCreateRequest 从 sync.Pool 获取 AlibabaEinvoiceBillForwordCreateAPIRequest
+func GetAlibabaEinvoiceBillForwordCreateAPIRequest() *AlibabaEinvoiceBillForwordCreateAPIRequest {
+	return poolAlibabaEinvoiceBillForwordCreateAPIRequest.Get().(*AlibabaEinvoiceBillForwordCreateAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceBillForwordCreateAPIRequest 将 AlibabaEinvoiceBillForwordCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceBillForwordCreateAPIRequest(v *AlibabaEinvoiceBillForwordCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceBillForwordCreateAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package bus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoBusTvmpayorderSetAPIRequest struct {
 // NewTaobaoBusTvmpayorderSetRequest 初始化TaobaoBusTvmpayorderSetAPIRequest对象
 func NewTaobaoBusTvmpayorderSetRequest() *TaobaoBusTvmpayorderSetAPIRequest {
 	return &TaobaoBusTvmpayorderSetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBusTvmpayorderSetAPIRequest) Reset() {
+	r._alipayAuthCode = ""
+	r._alitripOrderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoBusTvmpayorderSetAPIRequest) SetAlitripOrderId(_alitripOrderId st
 // GetAlitripOrderId AlitripOrderId Getter
 func (r TaobaoBusTvmpayorderSetAPIRequest) GetAlitripOrderId() string {
 	return r._alitripOrderId
+}
+
+var poolTaobaoBusTvmpayorderSetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBusTvmpayorderSetRequest()
+	},
+}
+
+// GetTaobaoBusTvmpayorderSetRequest 从 sync.Pool 获取 TaobaoBusTvmpayorderSetAPIRequest
+func GetTaobaoBusTvmpayorderSetAPIRequest() *TaobaoBusTvmpayorderSetAPIRequest {
+	return poolTaobaoBusTvmpayorderSetAPIRequest.Get().(*TaobaoBusTvmpayorderSetAPIRequest)
+}
+
+// ReleaseTaobaoBusTvmpayorderSetAPIRequest 将 TaobaoBusTvmpayorderSetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBusTvmpayorderSetAPIRequest(v *TaobaoBusTvmpayorderSetAPIRequest) {
+	v.Reset()
+	poolTaobaoBusTvmpayorderSetAPIRequest.Put(v)
 }

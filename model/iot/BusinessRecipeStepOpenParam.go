@@ -1,5 +1,9 @@
 package iot
 
+import (
+	"sync"
+)
+
 // BusinessRecipeStepOpenParam 结构体
 type BusinessRecipeStepOpenParam struct {
 	// 步骤指令列表
@@ -26,4 +30,32 @@ type BusinessRecipeStepOpenParam struct {
 	VideoUrl *VideoUrlParam `json:"video_url,omitempty" xml:"video_url,omitempty"`
 	// 指令标识：0不支持指令，1支持指令
 	ActionFlag int64 `json:"action_flag,omitempty" xml:"action_flag,omitempty"`
+}
+
+var poolBusinessRecipeStepOpenParam = sync.Pool{
+	New: func() any {
+		return new(BusinessRecipeStepOpenParam)
+	},
+}
+
+// GetBusinessRecipeStepOpenParam() 从对象池中获取BusinessRecipeStepOpenParam
+func GetBusinessRecipeStepOpenParam() *BusinessRecipeStepOpenParam {
+	return poolBusinessRecipeStepOpenParam.Get().(*BusinessRecipeStepOpenParam)
+}
+
+// ReleaseBusinessRecipeStepOpenParam 释放BusinessRecipeStepOpenParam
+func ReleaseBusinessRecipeStepOpenParam(v *BusinessRecipeStepOpenParam) {
+	v.RecipeStepActionList = v.RecipeStepActionList[:0]
+	v.Description = ""
+	v.OpenAccountId = ""
+	v.RecipeStepNameCn = ""
+	v.Tips = ""
+	v.BusinessRecipeId = 0
+	v.BusinessRecipeStepId = 0
+	v.ImageUrl = nil
+	v.RecipeStepTime = 0
+	v.Sequence = 0
+	v.VideoUrl = nil
+	v.ActionFlag = 0
+	poolBusinessRecipeStepOpenParam.Put(v)
 }

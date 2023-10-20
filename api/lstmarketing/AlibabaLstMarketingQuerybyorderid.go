@@ -9,11 +9,6 @@ import (
 // alibaba.lst.marketing.querybyorderid
 //
 // 根据订单查询营销信息
-func AlibabaLstMarketingQuerybyorderid(clt *core.SDKClient, req *lstmarketing.AlibabaLstMarketingQuerybyorderidAPIRequest, session string) (*lstmarketing.AlibabaLstMarketingQuerybyorderidAPIResponse, error) {
-	var resp lstmarketing.AlibabaLstMarketingQuerybyorderidAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLstMarketingQuerybyorderid(clt *core.SDKClient, req *lstmarketing.AlibabaLstMarketingQuerybyorderidAPIRequest, resp *lstmarketing.AlibabaLstMarketingQuerybyorderidAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

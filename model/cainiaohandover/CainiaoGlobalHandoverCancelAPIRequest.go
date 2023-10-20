@@ -2,6 +2,7 @@ package cainiaohandover
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type CainiaoGlobalHandoverCancelAPIRequest struct {
 // NewCainiaoGlobalHandoverCancelRequest 初始化CainiaoGlobalHandoverCancelAPIRequest对象
 func NewCainiaoGlobalHandoverCancelRequest() *CainiaoGlobalHandoverCancelAPIRequest {
 	return &CainiaoGlobalHandoverCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoGlobalHandoverCancelAPIRequest) Reset() {
+	r._trackingNumber = ""
+	r._client = ""
+	r._locale = ""
+	r._userInfo = nil
+	r._handoverOrderId = 0
+	r._handoverContentId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *CainiaoGlobalHandoverCancelAPIRequest) SetHandoverContentId(_handoverCo
 // GetHandoverContentId HandoverContentId Getter
 func (r CainiaoGlobalHandoverCancelAPIRequest) GetHandoverContentId() int64 {
 	return r._handoverContentId
+}
+
+var poolCainiaoGlobalHandoverCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoGlobalHandoverCancelRequest()
+	},
+}
+
+// GetCainiaoGlobalHandoverCancelRequest 从 sync.Pool 获取 CainiaoGlobalHandoverCancelAPIRequest
+func GetCainiaoGlobalHandoverCancelAPIRequest() *CainiaoGlobalHandoverCancelAPIRequest {
+	return poolCainiaoGlobalHandoverCancelAPIRequest.Get().(*CainiaoGlobalHandoverCancelAPIRequest)
+}
+
+// ReleaseCainiaoGlobalHandoverCancelAPIRequest 将 CainiaoGlobalHandoverCancelAPIRequest 放入 sync.Pool
+func ReleaseCainiaoGlobalHandoverCancelAPIRequest(v *CainiaoGlobalHandoverCancelAPIRequest) {
+	v.Reset()
+	poolCainiaoGlobalHandoverCancelAPIRequest.Put(v)
 }

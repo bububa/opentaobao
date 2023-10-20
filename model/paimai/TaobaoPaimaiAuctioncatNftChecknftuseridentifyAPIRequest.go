@@ -2,6 +2,7 @@ package paimai
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIRequest struct {
 // NewTaobaoPaimaiAuctioncatNftChecknftuseridentifyRequest 初始化TaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIRequest对象
 func NewTaobaoPaimaiAuctioncatNftChecknftuseridentifyRequest() *TaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIRequest {
 	return &TaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIRequest) Reset() {
+	r._thirdId = ""
+	r._idNumber = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIRequest) SetIdNumber(_i
 // GetIdNumber IdNumber Getter
 func (r TaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIRequest) GetIdNumber() string {
 	return r._idNumber
+}
+
+var poolTaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPaimaiAuctioncatNftChecknftuseridentifyRequest()
+	},
+}
+
+// GetTaobaoPaimaiAuctioncatNftChecknftuseridentifyRequest 从 sync.Pool 获取 TaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIRequest
+func GetTaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIRequest() *TaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIRequest {
+	return poolTaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIRequest.Get().(*TaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIRequest)
+}
+
+// ReleaseTaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIRequest 将 TaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIRequest(v *TaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIRequest) {
+	v.Reset()
+	poolTaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIRequest.Put(v)
 }

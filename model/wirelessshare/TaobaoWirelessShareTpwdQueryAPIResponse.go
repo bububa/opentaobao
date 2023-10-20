@@ -2,6 +2,7 @@ package wirelessshare
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoWirelessShareTpwdQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoWirelessShareTpwdQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoWirelessShareTpwdQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoWirelessShareTpwdQueryAPIResponseModel).Reset()
 }
 
 // TaobaoWirelessShareTpwdQueryAPIResponseModel is 查询解析淘口令 成功返回结果
@@ -36,4 +43,34 @@ type TaobaoWirelessShareTpwdQueryAPIResponseModel struct {
 	ThumbPicUrl string `json:"thumb_pic_url,omitempty" xml:"thumb_pic_url,omitempty"`
 	// 是否成功
 	Suc bool `json:"suc,omitempty" xml:"suc,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoWirelessShareTpwdQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Content = ""
+	m.Title = ""
+	m.Price = ""
+	m.PicUrl = ""
+	m.Url = ""
+	m.NativeUrl = ""
+	m.ThumbPicUrl = ""
+	m.Suc = false
+}
+
+var poolTaobaoWirelessShareTpwdQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoWirelessShareTpwdQueryAPIResponse)
+	},
+}
+
+// GetTaobaoWirelessShareTpwdQueryAPIResponse 从 sync.Pool 获取 TaobaoWirelessShareTpwdQueryAPIResponse
+func GetTaobaoWirelessShareTpwdQueryAPIResponse() *TaobaoWirelessShareTpwdQueryAPIResponse {
+	return poolTaobaoWirelessShareTpwdQueryAPIResponse.Get().(*TaobaoWirelessShareTpwdQueryAPIResponse)
+}
+
+// ReleaseTaobaoWirelessShareTpwdQueryAPIResponse 将 TaobaoWirelessShareTpwdQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoWirelessShareTpwdQueryAPIResponse(v *TaobaoWirelessShareTpwdQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoWirelessShareTpwdQueryAPIResponse.Put(v)
 }

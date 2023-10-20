@@ -1,5 +1,9 @@
 package alihealthoutflow
 
+import (
+	"sync"
+)
+
 // SyncPatientInfoRequest 结构体
 type SyncPatientInfoRequest struct {
 	// 患者id(非空)
@@ -12,4 +16,25 @@ type SyncPatientInfoRequest struct {
 	MobilePhone string `json:"mobile_phone,omitempty" xml:"mobile_phone,omitempty"`
 	// 所属医院id(非空)
 	HospitalId string `json:"hospital_id,omitempty" xml:"hospital_id,omitempty"`
+}
+
+var poolSyncPatientInfoRequest = sync.Pool{
+	New: func() any {
+		return new(SyncPatientInfoRequest)
+	},
+}
+
+// GetSyncPatientInfoRequest() 从对象池中获取SyncPatientInfoRequest
+func GetSyncPatientInfoRequest() *SyncPatientInfoRequest {
+	return poolSyncPatientInfoRequest.Get().(*SyncPatientInfoRequest)
+}
+
+// ReleaseSyncPatientInfoRequest 释放SyncPatientInfoRequest
+func ReleaseSyncPatientInfoRequest(v *SyncPatientInfoRequest) {
+	v.PatientId = ""
+	v.PatientName = ""
+	v.IdCard = ""
+	v.MobilePhone = ""
+	v.HospitalId = ""
+	poolSyncPatientInfoRequest.Put(v)
 }

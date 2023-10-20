@@ -1,5 +1,9 @@
 package alicom
 
+import (
+	"sync"
+)
+
 // FlowSuppllierNotifyModel 结构体
 type FlowSuppllierNotifyModel struct {
 	// 阿里通信业务id，具体询问技术接口人
@@ -24,4 +28,31 @@ type FlowSuppllierNotifyModel struct {
 	UserId string `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// 运营商的收货状态，false：未收到
 	ReceiveStatus bool `json:"receive_status,omitempty" xml:"receive_status,omitempty"`
+}
+
+var poolFlowSuppllierNotifyModel = sync.Pool{
+	New: func() any {
+		return new(FlowSuppllierNotifyModel)
+	},
+}
+
+// GetFlowSuppllierNotifyModel() 从对象池中获取FlowSuppllierNotifyModel
+func GetFlowSuppllierNotifyModel() *FlowSuppllierNotifyModel {
+	return poolFlowSuppllierNotifyModel.Get().(*FlowSuppllierNotifyModel)
+}
+
+// ReleaseFlowSuppllierNotifyModel 释放FlowSuppllierNotifyModel
+func ReleaseFlowSuppllierNotifyModel(v *FlowSuppllierNotifyModel) {
+	v.BizType = ""
+	v.ExtInfo = ""
+	v.NotifyType = ""
+	v.OfferInvalidDate = ""
+	v.OfferValidDate = ""
+	v.OrderNo = ""
+	v.OutOrderNo = ""
+	v.SendGoodParam = ""
+	v.Iccid = ""
+	v.UserId = ""
+	v.ReceiveStatus = false
+	poolFlowSuppllierNotifyModel.Put(v)
 }

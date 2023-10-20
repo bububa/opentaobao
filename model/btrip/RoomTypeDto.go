@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // RoomTypeDto 结构体
 type RoomTypeDto struct {
 	// 面积
@@ -24,4 +28,31 @@ type RoomTypeDto struct {
 	Shid int64 `json:"shid,omitempty" xml:"shid,omitempty"`
 	// 房型Id
 	Srid int64 `json:"srid,omitempty" xml:"srid,omitempty"`
+}
+
+var poolRoomTypeDto = sync.Pool{
+	New: func() any {
+		return new(RoomTypeDto)
+	},
+}
+
+// GetRoomTypeDto() 从对象池中获取RoomTypeDto
+func GetRoomTypeDto() *RoomTypeDto {
+	return poolRoomTypeDto.Get().(*RoomTypeDto)
+}
+
+// ReleaseRoomTypeDto 释放RoomTypeDto
+func ReleaseRoomTypeDto(v *RoomTypeDto) {
+	v.Area = ""
+	v.Bed = ""
+	v.Facility = ""
+	v.Floor = ""
+	v.Internet = ""
+	v.PicUrl = ""
+	v.WindowType = ""
+	v.Name = ""
+	v.MaxOccupancy = 0
+	v.Shid = 0
+	v.Srid = 0
+	poolRoomTypeDto.Put(v)
 }

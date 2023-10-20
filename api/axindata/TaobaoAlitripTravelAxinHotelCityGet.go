@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.travel.axin.hotel.city.get
 //
 // 阿信城市列表信息查询
-func TaobaoAlitripTravelAxinHotelCityGet(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelAxinHotelCityGetAPIRequest, session string) (*axindata.TaobaoAlitripTravelAxinHotelCityGetAPIResponse, error) {
-	var resp axindata.TaobaoAlitripTravelAxinHotelCityGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripTravelAxinHotelCityGet(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelAxinHotelCityGetAPIRequest, resp *axindata.TaobaoAlitripTravelAxinHotelCityGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

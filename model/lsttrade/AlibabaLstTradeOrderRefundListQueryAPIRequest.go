@@ -2,6 +2,7 @@ package lsttrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLstTradeOrderRefundListQueryAPIRequest struct {
 // NewAlibabaLstTradeOrderRefundListQueryRequest 初始化AlibabaLstTradeOrderRefundListQueryAPIRequest对象
 func NewAlibabaLstTradeOrderRefundListQueryRequest() *AlibabaLstTradeOrderRefundListQueryAPIRequest {
 	return &AlibabaLstTradeOrderRefundListQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstTradeOrderRefundListQueryAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLstTradeOrderRefundListQueryAPIRequest) SetParam(_param *TopLstS
 // GetParam Param Getter
 func (r AlibabaLstTradeOrderRefundListQueryAPIRequest) GetParam() *TopLstSupplierOrderRefundQuery {
 	return r._param
+}
+
+var poolAlibabaLstTradeOrderRefundListQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstTradeOrderRefundListQueryRequest()
+	},
+}
+
+// GetAlibabaLstTradeOrderRefundListQueryRequest 从 sync.Pool 获取 AlibabaLstTradeOrderRefundListQueryAPIRequest
+func GetAlibabaLstTradeOrderRefundListQueryAPIRequest() *AlibabaLstTradeOrderRefundListQueryAPIRequest {
+	return poolAlibabaLstTradeOrderRefundListQueryAPIRequest.Get().(*AlibabaLstTradeOrderRefundListQueryAPIRequest)
+}
+
+// ReleaseAlibabaLstTradeOrderRefundListQueryAPIRequest 将 AlibabaLstTradeOrderRefundListQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstTradeOrderRefundListQueryAPIRequest(v *AlibabaLstTradeOrderRefundListQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaLstTradeOrderRefundListQueryAPIRequest.Put(v)
 }

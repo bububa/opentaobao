@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // FenxiaoSku 结构体
 type FenxiaoSku struct {
 	// 名称
@@ -26,4 +30,32 @@ type FenxiaoSku struct {
 	ScitemId int64 `json:"scitem_id,omitempty" xml:"scitem_id,omitempty"`
 	// 关联的前端宝贝对应的skuid
 	AuctionSkuId int64 `json:"auction_sku_id,omitempty" xml:"auction_sku_id,omitempty"`
+}
+
+var poolFenxiaoSku = sync.Pool{
+	New: func() any {
+		return new(FenxiaoSku)
+	},
+}
+
+// GetFenxiaoSku() 从对象池中获取FenxiaoSku
+func GetFenxiaoSku() *FenxiaoSku {
+	return poolFenxiaoSku.Get().(*FenxiaoSku)
+}
+
+// ReleaseFenxiaoSku 释放FenxiaoSku
+func ReleaseFenxiaoSku(v *FenxiaoSku) {
+	v.Name = ""
+	v.StandardPrice = ""
+	v.CostPrice = ""
+	v.DealerCostPrice = ""
+	v.OuterId = ""
+	v.Properties = ""
+	v.Id = 0
+	v.Quantity = 0
+	v.ReservedQuantity = 0
+	v.QuotaQuantity = 0
+	v.ScitemId = 0
+	v.AuctionSkuId = 0
+	poolFenxiaoSku.Put(v)
 }

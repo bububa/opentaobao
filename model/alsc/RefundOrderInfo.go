@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // RefundOrderInfo 结构体
 type RefundOrderInfo struct {
 	// 设备id
@@ -28,4 +32,33 @@ type RefundOrderInfo struct {
 	RefundFee int64 `json:"refund_fee,omitempty" xml:"refund_fee,omitempty"`
 	// 退款成功时间
 	SuccessTime int64 `json:"success_time,omitempty" xml:"success_time,omitempty"`
+}
+
+var poolRefundOrderInfo = sync.Pool{
+	New: func() any {
+		return new(RefundOrderInfo)
+	},
+}
+
+// GetRefundOrderInfo() 从对象池中获取RefundOrderInfo
+func GetRefundOrderInfo() *RefundOrderInfo {
+	return poolRefundOrderInfo.Get().(*RefundOrderInfo)
+}
+
+// ReleaseRefundOrderInfo 释放RefundOrderInfo
+func ReleaseRefundOrderInfo(v *RefundOrderInfo) {
+	v.DeviceId = ""
+	v.DeviceIp = ""
+	v.OutAuthorizerId = ""
+	v.OutAuthorizerName = ""
+	v.OutOperatorId = ""
+	v.OutOperatorName = ""
+	v.OutOrderNo = ""
+	v.OutRefundOrderNo = ""
+	v.RefundReason = ""
+	v.RefundType = ""
+	v.Status = ""
+	v.RefundFee = 0
+	v.SuccessTime = 0
+	poolRefundOrderInfo.Put(v)
 }

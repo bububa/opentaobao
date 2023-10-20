@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,6 +20,12 @@ type CainiaoDataLogisticsDeliveryAgingPredictAPIResponse struct {
 	CainiaoDataLogisticsDeliveryAgingPredictAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *CainiaoDataLogisticsDeliveryAgingPredictAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.CainiaoDataLogisticsDeliveryAgingPredictAPIResponseModel).Reset()
+}
+
 // CainiaoDataLogisticsDeliveryAgingPredictAPIResponseModel is 配送物流时效预测 成功返回结果
 type CainiaoDataLogisticsDeliveryAgingPredictAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_data_logistics_delivery_aging_predict_response"`
@@ -26,4 +33,27 @@ type CainiaoDataLogisticsDeliveryAgingPredictAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 列表类型返回
 	Datas []CainiaoDataLogisticsDeliveryAgingPredictData `json:"datas,omitempty" xml:"datas>cainiao_data_logistics_delivery_aging_predict_data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *CainiaoDataLogisticsDeliveryAgingPredictAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Datas = m.Datas[:0]
+}
+
+var poolCainiaoDataLogisticsDeliveryAgingPredictAPIResponse = sync.Pool{
+	New: func() any {
+		return new(CainiaoDataLogisticsDeliveryAgingPredictAPIResponse)
+	},
+}
+
+// GetCainiaoDataLogisticsDeliveryAgingPredictAPIResponse 从 sync.Pool 获取 CainiaoDataLogisticsDeliveryAgingPredictAPIResponse
+func GetCainiaoDataLogisticsDeliveryAgingPredictAPIResponse() *CainiaoDataLogisticsDeliveryAgingPredictAPIResponse {
+	return poolCainiaoDataLogisticsDeliveryAgingPredictAPIResponse.Get().(*CainiaoDataLogisticsDeliveryAgingPredictAPIResponse)
+}
+
+// ReleaseCainiaoDataLogisticsDeliveryAgingPredictAPIResponse 将 CainiaoDataLogisticsDeliveryAgingPredictAPIResponse 保存到 sync.Pool
+func ReleaseCainiaoDataLogisticsDeliveryAgingPredictAPIResponse(v *CainiaoDataLogisticsDeliveryAgingPredictAPIResponse) {
+	v.Reset()
+	poolCainiaoDataLogisticsDeliveryAgingPredictAPIResponse.Put(v)
 }

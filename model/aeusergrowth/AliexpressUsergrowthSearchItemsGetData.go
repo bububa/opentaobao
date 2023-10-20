@@ -1,5 +1,9 @@
 package aeusergrowth
 
+import (
+	"sync"
+)
+
 // AliexpressUsergrowthSearchItemsGetData 结构体
 type AliexpressUsergrowthSearchItemsGetData struct {
 	// product id
@@ -34,4 +38,36 @@ type AliexpressUsergrowthSearchItemsGetData struct {
 	PhotoWidth int64 `json:"photo_width,omitempty" xml:"photo_width,omitempty"`
 	// delivery freeShipping
 	FreeShipping bool `json:"free_shipping,omitempty" xml:"free_shipping,omitempty"`
+}
+
+var poolAliexpressUsergrowthSearchItemsGetData = sync.Pool{
+	New: func() any {
+		return new(AliexpressUsergrowthSearchItemsGetData)
+	},
+}
+
+// GetAliexpressUsergrowthSearchItemsGetData() 从对象池中获取AliexpressUsergrowthSearchItemsGetData
+func GetAliexpressUsergrowthSearchItemsGetData() *AliexpressUsergrowthSearchItemsGetData {
+	return poolAliexpressUsergrowthSearchItemsGetData.Get().(*AliexpressUsergrowthSearchItemsGetData)
+}
+
+// ReleaseAliexpressUsergrowthSearchItemsGetData 释放AliexpressUsergrowthSearchItemsGetData
+func ReleaseAliexpressUsergrowthSearchItemsGetData(v *AliexpressUsergrowthSearchItemsGetData) {
+	v.ProductId = ""
+	v.SalePrice = ""
+	v.Photo = ""
+	v.ShopName = ""
+	v.ProductName = ""
+	v.ShopDomain = ""
+	v.DetailUrl = ""
+	v.ShopId = ""
+	v.SubCategory = ""
+	v.ShopRating = ""
+	v.RatingValue = ""
+	v.Category = ""
+	v.RatingCount = 0
+	v.PhotoHeight = 0
+	v.PhotoWidth = 0
+	v.FreeShipping = false
+	poolAliexpressUsergrowthSearchItemsGetData.Put(v)
 }

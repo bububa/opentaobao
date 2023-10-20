@@ -2,6 +2,7 @@ package tmallgeniescp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest struct {
 // NewAlibabaTmallgenieScpPlanConsensusDemandUploadRequest 初始化AlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest对象
 func NewAlibabaTmallgenieScpPlanConsensusDemandUploadRequest() *AlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest {
 	return &AlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest) Reset() {
+	r._consensusDemandRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest) SetConsensusDe
 // GetConsensusDemandRequest ConsensusDemandRequest Getter
 func (r AlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest) GetConsensusDemandRequest() *ConsensusDemandRequest {
 	return r._consensusDemandRequest
+}
+
+var poolAlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTmallgenieScpPlanConsensusDemandUploadRequest()
+	},
+}
+
+// GetAlibabaTmallgenieScpPlanConsensusDemandUploadRequest 从 sync.Pool 获取 AlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest
+func GetAlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest() *AlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest {
+	return poolAlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest.Get().(*AlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest)
+}
+
+// ReleaseAlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest 将 AlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest(v *AlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest.Put(v)
 }

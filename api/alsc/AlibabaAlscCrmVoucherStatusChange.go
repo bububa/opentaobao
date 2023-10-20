@@ -9,11 +9,6 @@ import (
 // alibaba.alsc.crm.voucher.status.change
 //
 // 核销优惠券
-func AlibabaAlscCrmVoucherStatusChange(clt *core.SDKClient, req *alsc.AlibabaAlscCrmVoucherStatusChangeAPIRequest, session string) (*alsc.AlibabaAlscCrmVoucherStatusChangeAPIResponse, error) {
-	var resp alsc.AlibabaAlscCrmVoucherStatusChangeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlscCrmVoucherStatusChange(clt *core.SDKClient, req *alsc.AlibabaAlscCrmVoucherStatusChangeAPIRequest, resp *alsc.AlibabaAlscCrmVoucherStatusChangeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

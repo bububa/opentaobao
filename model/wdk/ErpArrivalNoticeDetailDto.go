@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ErpArrivalNoticeDetailDto 结构体
 type ErpArrivalNoticeDetailDto struct {
 	// 采购单位
@@ -24,4 +28,31 @@ type ErpArrivalNoticeDetailDto struct {
 	ItemCode string `json:"item_code,omitempty" xml:"item_code,omitempty"`
 	// 可指定库位，可空（按照需求附值）
 	CabinetCode string `json:"cabinet_code,omitempty" xml:"cabinet_code,omitempty"`
+}
+
+var poolErpArrivalNoticeDetailDto = sync.Pool{
+	New: func() any {
+		return new(ErpArrivalNoticeDetailDto)
+	},
+}
+
+// GetErpArrivalNoticeDetailDto() 从对象池中获取ErpArrivalNoticeDetailDto
+func GetErpArrivalNoticeDetailDto() *ErpArrivalNoticeDetailDto {
+	return poolErpArrivalNoticeDetailDto.Get().(*ErpArrivalNoticeDetailDto)
+}
+
+// ReleaseErpArrivalNoticeDetailDto 释放ErpArrivalNoticeDetailDto
+func ReleaseErpArrivalNoticeDetailDto(v *ErpArrivalNoticeDetailDto) {
+	v.Unit = ""
+	v.InventoryUnit = ""
+	v.Spec = ""
+	v.DeptCode = ""
+	v.Price = ""
+	v.PlanPackageQuantity = ""
+	v.Count = ""
+	v.ProduceDate = ""
+	v.BarCode = ""
+	v.ItemCode = ""
+	v.CabinetCode = ""
+	poolErpArrivalNoticeDetailDto.Put(v)
 }

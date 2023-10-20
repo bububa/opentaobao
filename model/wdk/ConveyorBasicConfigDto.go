@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ConveyorBasicConfigDto 结构体
 type ConveyorBasicConfigDto struct {
 	// 容器识别器1编号
@@ -26,4 +30,32 @@ type ConveyorBasicConfigDto struct {
 	EnableMonitor bool `json:"enable_monitor,omitempty" xml:"enable_monitor,omitempty"`
 	// 单件通道亮三色灯
 	EnableSingleSlidewayLight bool `json:"enable_single_slideway_light,omitempty" xml:"enable_single_slideway_light,omitempty"`
+}
+
+var poolConveyorBasicConfigDto = sync.Pool{
+	New: func() any {
+		return new(ConveyorBasicConfigDto)
+	},
+}
+
+// GetConveyorBasicConfigDto() 从对象池中获取ConveyorBasicConfigDto
+func GetConveyorBasicConfigDto() *ConveyorBasicConfigDto {
+	return poolConveyorBasicConfigDto.Get().(*ConveyorBasicConfigDto)
+}
+
+// ReleaseConveyorBasicConfigDto 释放ConveyorBasicConfigDto
+func ReleaseConveyorBasicConfigDto(v *ConveyorBasicConfigDto) {
+	v.ContainerReaderBox1 = ""
+	v.ContainerReaderBox2 = ""
+	v.ConveyorBox = ""
+	v.SlidewayCount = 0
+	v.ExceptionSlidewayId = 0
+	v.BatchTaskTimeoutInterval = 0
+	v.MaxOrbitingNum = 0
+	v.DispatchSlidewayPolicy = 0
+	v.SlidewayGroupCount = 0
+	v.EnableSeparator = false
+	v.EnableMonitor = false
+	v.EnableSingleSlidewayLight = false
+	poolConveyorBasicConfigDto.Put(v)
 }

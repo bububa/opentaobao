@@ -9,11 +9,6 @@ import (
 // alibaba.tcls.aelophy.refund.csapply.new
 //
 // 代客退
-func AlibabaTclsAelophyRefundCsapplyNew(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyRefundCsapplyNewAPIRequest, session string) (*wdk.AlibabaTclsAelophyRefundCsapplyNewAPIResponse, error) {
-	var resp wdk.AlibabaTclsAelophyRefundCsapplyNewAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTclsAelophyRefundCsapplyNew(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyRefundCsapplyNewAPIRequest, resp *wdk.AlibabaTclsAelophyRefundCsapplyNewAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

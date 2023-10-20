@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // SecondaryAttrDto 结构体
 type SecondaryAttrDto struct {
 	// 二级药物属性名称
@@ -10,4 +14,24 @@ type SecondaryAttrDto struct {
 	SecondaryAttrDesc string `json:"secondary_attr_desc,omitempty" xml:"secondary_attr_desc,omitempty"`
 	// 药品id
 	DrugEntBaseInfoId string `json:"drug_ent_base_info_id,omitempty" xml:"drug_ent_base_info_id,omitempty"`
+}
+
+var poolSecondaryAttrDto = sync.Pool{
+	New: func() any {
+		return new(SecondaryAttrDto)
+	},
+}
+
+// GetSecondaryAttrDto() 从对象池中获取SecondaryAttrDto
+func GetSecondaryAttrDto() *SecondaryAttrDto {
+	return poolSecondaryAttrDto.Get().(*SecondaryAttrDto)
+}
+
+// ReleaseSecondaryAttrDto 释放SecondaryAttrDto
+func ReleaseSecondaryAttrDto(v *SecondaryAttrDto) {
+	v.SecondaryAttributeName = ""
+	v.SecondaryAttributeNo = ""
+	v.SecondaryAttrDesc = ""
+	v.DrugEntBaseInfoId = ""
+	poolSecondaryAttrDto.Put(v)
 }

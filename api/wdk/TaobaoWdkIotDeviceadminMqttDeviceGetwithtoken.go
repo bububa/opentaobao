@@ -9,11 +9,6 @@ import (
 // taobao.wdk.iot.deviceadmin.mqtt.device.getwithtoken
 //
 // 智能硬件设备动态注册和获取mqtt设备信息
-func TaobaoWdkIotDeviceadminMqttDeviceGetwithtoken(clt *core.SDKClient, req *wdk.TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest, session string) (*wdk.TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIResponse, error) {
-	var resp wdk.TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWdkIotDeviceadminMqttDeviceGetwithtoken(clt *core.SDKClient, req *wdk.TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIRequest, resp *wdk.TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

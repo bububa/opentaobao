@@ -1,5 +1,9 @@
 package perfect
 
+import (
+	"sync"
+)
+
 // OutboundOrderCancelDto 结构体
 type OutboundOrderCancelDto struct {
 	// 1
@@ -18,4 +22,28 @@ type OutboundOrderCancelDto struct {
 	WarehouseId int64 `json:"warehouse_id,omitempty" xml:"warehouse_id,omitempty"`
 	// 1
 	CancelSuccess bool `json:"cancel_success,omitempty" xml:"cancel_success,omitempty"`
+}
+
+var poolOutboundOrderCancelDto = sync.Pool{
+	New: func() any {
+		return new(OutboundOrderCancelDto)
+	},
+}
+
+// GetOutboundOrderCancelDto() 从对象池中获取OutboundOrderCancelDto
+func GetOutboundOrderCancelDto() *OutboundOrderCancelDto {
+	return poolOutboundOrderCancelDto.Get().(*OutboundOrderCancelDto)
+}
+
+// ReleaseOutboundOrderCancelDto 释放OutboundOrderCancelDto
+func ReleaseOutboundOrderCancelDto(v *OutboundOrderCancelDto) {
+	v.WorkMode = ""
+	v.ItemCode = ""
+	v.SubOrderCode = ""
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.InterceptStatus = 0
+	v.WarehouseId = 0
+	v.CancelSuccess = false
+	poolOutboundOrderCancelDto.Put(v)
 }

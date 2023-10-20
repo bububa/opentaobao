@@ -2,6 +2,7 @@ package cainiaohandover
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type CainiaoGlobalSolutionInquiryAPIResponse struct {
 	CainiaoGlobalSolutionInquiryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *CainiaoGlobalSolutionInquiryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.CainiaoGlobalSolutionInquiryAPIResponseModel).Reset()
+}
+
 // CainiaoGlobalSolutionInquiryAPIResponseModel is 解决方案询盘 成功返回结果
 type CainiaoGlobalSolutionInquiryAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_global_solution_inquiry_response"`
@@ -26,4 +33,29 @@ type CainiaoGlobalSolutionInquiryAPIResponseModel struct {
 	Result *OpenSolutionInquiryResponse `json:"result,omitempty" xml:"result,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *CainiaoGlobalSolutionInquiryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorInfo = nil
+	m.Result = nil
+	m.IsSuccess = false
+}
+
+var poolCainiaoGlobalSolutionInquiryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(CainiaoGlobalSolutionInquiryAPIResponse)
+	},
+}
+
+// GetCainiaoGlobalSolutionInquiryAPIResponse 从 sync.Pool 获取 CainiaoGlobalSolutionInquiryAPIResponse
+func GetCainiaoGlobalSolutionInquiryAPIResponse() *CainiaoGlobalSolutionInquiryAPIResponse {
+	return poolCainiaoGlobalSolutionInquiryAPIResponse.Get().(*CainiaoGlobalSolutionInquiryAPIResponse)
+}
+
+// ReleaseCainiaoGlobalSolutionInquiryAPIResponse 将 CainiaoGlobalSolutionInquiryAPIResponse 保存到 sync.Pool
+func ReleaseCainiaoGlobalSolutionInquiryAPIResponse(v *CainiaoGlobalSolutionInquiryAPIResponse) {
+	v.Reset()
+	poolCainiaoGlobalSolutionInquiryAPIResponse.Put(v)
 }

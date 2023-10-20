@@ -9,11 +9,6 @@ import (
 // alibaba.mosflow.work.queryvariables
 //
 // 业务查询指定流程上下文内容
-func AlibabaMosflowWorkQueryvariables(clt *core.SDKClient, req *mos.AlibabaMosflowWorkQueryvariablesAPIRequest, session string) (*mos.AlibabaMosflowWorkQueryvariablesAPIResponse, error) {
-	var resp mos.AlibabaMosflowWorkQueryvariablesAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMosflowWorkQueryvariables(clt *core.SDKClient, req *mos.AlibabaMosflowWorkQueryvariablesAPIRequest, resp *mos.AlibabaMosflowWorkQueryvariablesAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

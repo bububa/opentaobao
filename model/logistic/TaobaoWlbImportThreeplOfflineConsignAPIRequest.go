@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoWlbImportThreeplOfflineConsignAPIRequest struct {
 // NewTaobaoWlbImportThreeplOfflineConsignRequest 初始化TaobaoWlbImportThreeplOfflineConsignAPIRequest对象
 func NewTaobaoWlbImportThreeplOfflineConsignRequest() *TaobaoWlbImportThreeplOfflineConsignAPIRequest {
 	return &TaobaoWlbImportThreeplOfflineConsignAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbImportThreeplOfflineConsignAPIRequest) Reset() {
+	r._resCode = ""
+	r._waybillNo = ""
+	r._tradeId = 0
+	r._resId = 0
+	r._fromId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoWlbImportThreeplOfflineConsignAPIRequest) SetFromId(_fromId int64
 // GetFromId FromId Getter
 func (r TaobaoWlbImportThreeplOfflineConsignAPIRequest) GetFromId() int64 {
 	return r._fromId
+}
+
+var poolTaobaoWlbImportThreeplOfflineConsignAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbImportThreeplOfflineConsignRequest()
+	},
+}
+
+// GetTaobaoWlbImportThreeplOfflineConsignRequest 从 sync.Pool 获取 TaobaoWlbImportThreeplOfflineConsignAPIRequest
+func GetTaobaoWlbImportThreeplOfflineConsignAPIRequest() *TaobaoWlbImportThreeplOfflineConsignAPIRequest {
+	return poolTaobaoWlbImportThreeplOfflineConsignAPIRequest.Get().(*TaobaoWlbImportThreeplOfflineConsignAPIRequest)
+}
+
+// ReleaseTaobaoWlbImportThreeplOfflineConsignAPIRequest 将 TaobaoWlbImportThreeplOfflineConsignAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbImportThreeplOfflineConsignAPIRequest(v *TaobaoWlbImportThreeplOfflineConsignAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbImportThreeplOfflineConsignAPIRequest.Put(v)
 }

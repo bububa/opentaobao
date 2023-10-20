@@ -1,5 +1,9 @@
 package tmallsc
 
+import (
+	"sync"
+)
+
 // WorkerCustomerComplaintSaveCmd 结构体
 type WorkerCustomerComplaintSaveCmd struct {
 	// 商家昵称
@@ -28,4 +32,33 @@ type WorkerCustomerComplaintSaveCmd struct {
 	Source int64 `json:"source,omitempty" xml:"source,omitempty"`
 	// 是否成立：1：成立，0：不成立
 	Established int64 `json:"established,omitempty" xml:"established,omitempty"`
+}
+
+var poolWorkerCustomerComplaintSaveCmd = sync.Pool{
+	New: func() any {
+		return new(WorkerCustomerComplaintSaveCmd)
+	},
+}
+
+// GetWorkerCustomerComplaintSaveCmd() 从对象池中获取WorkerCustomerComplaintSaveCmd
+func GetWorkerCustomerComplaintSaveCmd() *WorkerCustomerComplaintSaveCmd {
+	return poolWorkerCustomerComplaintSaveCmd.Get().(*WorkerCustomerComplaintSaveCmd)
+}
+
+// ReleaseWorkerCustomerComplaintSaveCmd 释放WorkerCustomerComplaintSaveCmd
+func ReleaseWorkerCustomerComplaintSaveCmd(v *WorkerCustomerComplaintSaveCmd) {
+	v.SellerNick = ""
+	v.OutId = ""
+	v.IdNumber = ""
+	v.TreatmentMeasures = ""
+	v.IdempotentId = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.ExtendInfo = ""
+	v.WorkcardId = 0
+	v.OutType = 0
+	v.Type = 0
+	v.Source = 0
+	v.Established = 0
+	poolWorkerCustomerComplaintSaveCmd.Put(v)
 }

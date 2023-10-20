@@ -2,6 +2,7 @@ package tmallhk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoCcoSelfCoordinateHandleFinishAPIResponse struct {
 	model.CommonResponse
 	TaobaoCcoSelfCoordinateHandleFinishAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoCcoSelfCoordinateHandleFinishAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoCcoSelfCoordinateHandleFinishAPIResponseModel).Reset()
 }
 
 // TaobaoCcoSelfCoordinateHandleFinishAPIResponseModel is 天猫国际直购供应商处理完结回复通知 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoCcoSelfCoordinateHandleFinishAPIResponseModel struct {
 	Data bool `json:"data,omitempty" xml:"data,omitempty"`
 	// 接口是否调用成功
 	ApiSuccess bool `json:"api_success,omitempty" xml:"api_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoCcoSelfCoordinateHandleFinishAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ApiCode = ""
+	m.ApiMessage = ""
+	m.Data = false
+	m.ApiSuccess = false
+}
+
+var poolTaobaoCcoSelfCoordinateHandleFinishAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoCcoSelfCoordinateHandleFinishAPIResponse)
+	},
+}
+
+// GetTaobaoCcoSelfCoordinateHandleFinishAPIResponse 从 sync.Pool 获取 TaobaoCcoSelfCoordinateHandleFinishAPIResponse
+func GetTaobaoCcoSelfCoordinateHandleFinishAPIResponse() *TaobaoCcoSelfCoordinateHandleFinishAPIResponse {
+	return poolTaobaoCcoSelfCoordinateHandleFinishAPIResponse.Get().(*TaobaoCcoSelfCoordinateHandleFinishAPIResponse)
+}
+
+// ReleaseTaobaoCcoSelfCoordinateHandleFinishAPIResponse 将 TaobaoCcoSelfCoordinateHandleFinishAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoCcoSelfCoordinateHandleFinishAPIResponse(v *TaobaoCcoSelfCoordinateHandleFinishAPIResponse) {
+	v.Reset()
+	poolTaobaoCcoSelfCoordinateHandleFinishAPIResponse.Put(v)
 }

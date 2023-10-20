@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.derby.voucher.card.unlimited.change.callback
 //
 // 德比无限次券核销通知接口
-func AlitripMerchantGalaxyDerbyVoucherCardUnlimitedChangeCallback(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyDerbyVoucherCardUnlimitedChangeCallbackAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyDerbyVoucherCardUnlimitedChangeCallbackAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyDerbyVoucherCardUnlimitedChangeCallbackAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyDerbyVoucherCardUnlimitedChangeCallback(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyDerbyVoucherCardUnlimitedChangeCallbackAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyDerbyVoucherCardUnlimitedChangeCallbackAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

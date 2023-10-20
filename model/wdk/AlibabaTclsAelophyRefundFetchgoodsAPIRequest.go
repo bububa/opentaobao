@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type AlibabaTclsAelophyRefundFetchgoodsAPIRequest struct {
 // NewAlibabaTclsAelophyRefundFetchgoodsRequest 初始化AlibabaTclsAelophyRefundFetchgoodsAPIRequest对象
 func NewAlibabaTclsAelophyRefundFetchgoodsRequest() *AlibabaTclsAelophyRefundFetchgoodsAPIRequest {
 	return &AlibabaTclsAelophyRefundFetchgoodsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTclsAelophyRefundFetchgoodsAPIRequest) Reset() {
+	r._storeId = ""
+	r._outOrderId = ""
+	r._refundId = ""
+	r._fetchStartTime = ""
+	r._fetchEndTime = ""
+	r._remark = ""
+	r._subRefundList = nil
+	r._orderFrom = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *AlibabaTclsAelophyRefundFetchgoodsAPIRequest) SetOrderFrom(_orderFrom i
 // GetOrderFrom OrderFrom Getter
 func (r AlibabaTclsAelophyRefundFetchgoodsAPIRequest) GetOrderFrom() int64 {
 	return r._orderFrom
+}
+
+var poolAlibabaTclsAelophyRefundFetchgoodsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTclsAelophyRefundFetchgoodsRequest()
+	},
+}
+
+// GetAlibabaTclsAelophyRefundFetchgoodsRequest 从 sync.Pool 获取 AlibabaTclsAelophyRefundFetchgoodsAPIRequest
+func GetAlibabaTclsAelophyRefundFetchgoodsAPIRequest() *AlibabaTclsAelophyRefundFetchgoodsAPIRequest {
+	return poolAlibabaTclsAelophyRefundFetchgoodsAPIRequest.Get().(*AlibabaTclsAelophyRefundFetchgoodsAPIRequest)
+}
+
+// ReleaseAlibabaTclsAelophyRefundFetchgoodsAPIRequest 将 AlibabaTclsAelophyRefundFetchgoodsAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTclsAelophyRefundFetchgoodsAPIRequest(v *AlibabaTclsAelophyRefundFetchgoodsAPIRequest) {
+	v.Reset()
+	poolAlibabaTclsAelophyRefundFetchgoodsAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.health.vaccin.order.update
 //
 // 回传取号状态
-func AlibabaHealthVaccinOrderUpdate(clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinOrderUpdateAPIRequest, session string) (*vaccin.AlibabaHealthVaccinOrderUpdateAPIResponse, error) {
-	var resp vaccin.AlibabaHealthVaccinOrderUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHealthVaccinOrderUpdate(clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinOrderUpdateAPIRequest, resp *vaccin.AlibabaHealthVaccinOrderUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

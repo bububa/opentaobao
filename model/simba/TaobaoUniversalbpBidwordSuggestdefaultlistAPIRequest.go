@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoUniversalbpBidwordSuggestdefaultlistAPIRequest struct {
 // NewTaobaoUniversalbpBidwordSuggestdefaultlistRequest 初始化TaobaoUniversalbpBidwordSuggestdefaultlistAPIRequest对象
 func NewTaobaoUniversalbpBidwordSuggestdefaultlistRequest() *TaobaoUniversalbpBidwordSuggestdefaultlistAPIRequest {
 	return &TaobaoUniversalbpBidwordSuggestdefaultlistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpBidwordSuggestdefaultlistAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r._bidwordDefaultQueryVO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoUniversalbpBidwordSuggestdefaultlistAPIRequest) SetBidwordDefault
 // GetBidwordDefaultQueryVO BidwordDefaultQueryVO Getter
 func (r TaobaoUniversalbpBidwordSuggestdefaultlistAPIRequest) GetBidwordDefaultQueryVO() *BidwordDefaultQueryVo {
 	return r._bidwordDefaultQueryVO
+}
+
+var poolTaobaoUniversalbpBidwordSuggestdefaultlistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpBidwordSuggestdefaultlistRequest()
+	},
+}
+
+// GetTaobaoUniversalbpBidwordSuggestdefaultlistRequest 从 sync.Pool 获取 TaobaoUniversalbpBidwordSuggestdefaultlistAPIRequest
+func GetTaobaoUniversalbpBidwordSuggestdefaultlistAPIRequest() *TaobaoUniversalbpBidwordSuggestdefaultlistAPIRequest {
+	return poolTaobaoUniversalbpBidwordSuggestdefaultlistAPIRequest.Get().(*TaobaoUniversalbpBidwordSuggestdefaultlistAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpBidwordSuggestdefaultlistAPIRequest 将 TaobaoUniversalbpBidwordSuggestdefaultlistAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpBidwordSuggestdefaultlistAPIRequest(v *TaobaoUniversalbpBidwordSuggestdefaultlistAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpBidwordSuggestdefaultlistAPIRequest.Put(v)
 }

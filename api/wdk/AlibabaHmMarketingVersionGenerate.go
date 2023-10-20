@@ -9,11 +9,6 @@ import (
 // alibaba.hm.marketing.version.generate
 //
 // 生成发布使用的版本号
-func AlibabaHmMarketingVersionGenerate(clt *core.SDKClient, req *wdk.AlibabaHmMarketingVersionGenerateAPIRequest, session string) (*wdk.AlibabaHmMarketingVersionGenerateAPIResponse, error) {
-	var resp wdk.AlibabaHmMarketingVersionGenerateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHmMarketingVersionGenerate(clt *core.SDKClient, req *wdk.AlibabaHmMarketingVersionGenerateAPIRequest, resp *wdk.AlibabaHmMarketingVersionGenerateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoWlbImportThreeplResourceGetAPIResponse struct {
 	TaobaoWlbImportThreeplResourceGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoWlbImportThreeplResourceGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoWlbImportThreeplResourceGetAPIResponseModel).Reset()
+}
+
 // TaobaoWlbImportThreeplResourceGetAPIResponseModel is 3PL直邮获取资源列表 成功返回结果
 type TaobaoWlbImportThreeplResourceGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_import_threepl_resource_get_response"`
@@ -22,4 +29,27 @@ type TaobaoWlbImportThreeplResourceGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *TaobaoWlbImportThreeplResourceGetTopResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoWlbImportThreeplResourceGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoWlbImportThreeplResourceGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoWlbImportThreeplResourceGetAPIResponse)
+	},
+}
+
+// GetTaobaoWlbImportThreeplResourceGetAPIResponse 从 sync.Pool 获取 TaobaoWlbImportThreeplResourceGetAPIResponse
+func GetTaobaoWlbImportThreeplResourceGetAPIResponse() *TaobaoWlbImportThreeplResourceGetAPIResponse {
+	return poolTaobaoWlbImportThreeplResourceGetAPIResponse.Get().(*TaobaoWlbImportThreeplResourceGetAPIResponse)
+}
+
+// ReleaseTaobaoWlbImportThreeplResourceGetAPIResponse 将 TaobaoWlbImportThreeplResourceGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoWlbImportThreeplResourceGetAPIResponse(v *TaobaoWlbImportThreeplResourceGetAPIResponse) {
+	v.Reset()
+	poolTaobaoWlbImportThreeplResourceGetAPIResponse.Put(v)
 }

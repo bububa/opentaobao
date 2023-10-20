@@ -1,5 +1,9 @@
 package dt
 
+import (
+	"sync"
+)
+
 // PriceTagReqParam 结构体
 type PriceTagReqParam struct {
 	// 图片名称，不能重复
@@ -12,4 +16,25 @@ type PriceTagReqParam struct {
 	BarCode string `json:"bar_code,omitempty" xml:"bar_code,omitempty"`
 	// 扩展信息
 	ExtendInfoMap string `json:"extend_info_map,omitempty" xml:"extend_info_map,omitempty"`
+}
+
+var poolPriceTagReqParam = sync.Pool{
+	New: func() any {
+		return new(PriceTagReqParam)
+	},
+}
+
+// GetPriceTagReqParam() 从对象池中获取PriceTagReqParam
+func GetPriceTagReqParam() *PriceTagReqParam {
+	return poolPriceTagReqParam.Get().(*PriceTagReqParam)
+}
+
+// ReleasePriceTagReqParam 释放PriceTagReqParam
+func ReleasePriceTagReqParam(v *PriceTagReqParam) {
+	v.ObjKeyName = ""
+	v.BusiCode = ""
+	v.Source = ""
+	v.BarCode = ""
+	v.ExtendInfoMap = ""
+	poolPriceTagReqParam.Put(v)
 }

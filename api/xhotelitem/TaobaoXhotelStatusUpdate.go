@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.status.update
 //
 // 酒店状态更新
-func TaobaoXhotelStatusUpdate(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelStatusUpdateAPIRequest, session string) (*xhotelitem.TaobaoXhotelStatusUpdateAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelStatusUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelStatusUpdate(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelStatusUpdateAPIRequest, resp *xhotelitem.TaobaoXhotelStatusUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

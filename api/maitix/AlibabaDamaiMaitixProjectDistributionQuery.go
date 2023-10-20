@@ -9,11 +9,6 @@ import (
 // alibaba.damai.maitix.project.distribution.query
 //
 // 发布分销项目查询单个项目信息接口
-func AlibabaDamaiMaitixProjectDistributionQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixProjectDistributionQueryAPIRequest, session string) (*maitix.AlibabaDamaiMaitixProjectDistributionQueryAPIResponse, error) {
-	var resp maitix.AlibabaDamaiMaitixProjectDistributionQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMaitixProjectDistributionQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixProjectDistributionQueryAPIRequest, resp *maitix.AlibabaDamaiMaitixProjectDistributionQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

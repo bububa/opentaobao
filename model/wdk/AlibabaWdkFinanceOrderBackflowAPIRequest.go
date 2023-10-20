@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkFinanceOrderBackflowAPIRequest struct {
 // NewAlibabaWdkFinanceOrderBackflowRequest 初始化AlibabaWdkFinanceOrderBackflowAPIRequest对象
 func NewAlibabaWdkFinanceOrderBackflowRequest() *AlibabaWdkFinanceOrderBackflowAPIRequest {
 	return &AlibabaWdkFinanceOrderBackflowAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkFinanceOrderBackflowAPIRequest) Reset() {
+	r._financeOrderDetailRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkFinanceOrderBackflowAPIRequest) SetFinanceOrderDetailRequest(
 // GetFinanceOrderDetailRequest FinanceOrderDetailRequest Getter
 func (r AlibabaWdkFinanceOrderBackflowAPIRequest) GetFinanceOrderDetailRequest() *FinanceOrderDetailRequest {
 	return r._financeOrderDetailRequest
+}
+
+var poolAlibabaWdkFinanceOrderBackflowAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkFinanceOrderBackflowRequest()
+	},
+}
+
+// GetAlibabaWdkFinanceOrderBackflowRequest 从 sync.Pool 获取 AlibabaWdkFinanceOrderBackflowAPIRequest
+func GetAlibabaWdkFinanceOrderBackflowAPIRequest() *AlibabaWdkFinanceOrderBackflowAPIRequest {
+	return poolAlibabaWdkFinanceOrderBackflowAPIRequest.Get().(*AlibabaWdkFinanceOrderBackflowAPIRequest)
+}
+
+// ReleaseAlibabaWdkFinanceOrderBackflowAPIRequest 将 AlibabaWdkFinanceOrderBackflowAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkFinanceOrderBackflowAPIRequest(v *AlibabaWdkFinanceOrderBackflowAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkFinanceOrderBackflowAPIRequest.Put(v)
 }

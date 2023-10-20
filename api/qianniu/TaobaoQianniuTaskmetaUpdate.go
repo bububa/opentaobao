@@ -9,11 +9,6 @@ import (
 // taobao.qianniu.taskmeta.update
 //
 // 由任务发起者调用
-func TaobaoQianniuTaskmetaUpdate(clt *core.SDKClient, req *qianniu.TaobaoQianniuTaskmetaUpdateAPIRequest, session string) (*qianniu.TaobaoQianniuTaskmetaUpdateAPIResponse, error) {
-	var resp qianniu.TaobaoQianniuTaskmetaUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoQianniuTaskmetaUpdate(clt *core.SDKClient, req *qianniu.TaobaoQianniuTaskmetaUpdateAPIRequest, resp *qianniu.TaobaoQianniuTaskmetaUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

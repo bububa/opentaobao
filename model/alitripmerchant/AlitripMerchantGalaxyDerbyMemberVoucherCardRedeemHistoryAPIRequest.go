@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIRequest struct {
 // NewAlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryRequest 初始化AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIRequest对象
 func NewAlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryRequest() *AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIRequest {
 	return &AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._token = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIRequest) Set
 // GetToken Token Getter
 func (r AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIRequest) GetToken() string {
 	return r._token
+}
+
+var poolAlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryRequest 从 sync.Pool 获取 AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIRequest
+func GetAlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIRequest() *AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIRequest {
+	return poolAlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIRequest.Get().(*AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIRequest 将 AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIRequest(v *AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIRequest.Put(v)
 }

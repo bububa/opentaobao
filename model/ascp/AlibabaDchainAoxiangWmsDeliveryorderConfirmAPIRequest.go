@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangWmsDeliveryorderConfirmAPIRequest struct {
 // NewAlibabaDchainAoxiangWmsDeliveryorderConfirmRequest 初始化AlibabaDchainAoxiangWmsDeliveryorderConfirmAPIRequest对象
 func NewAlibabaDchainAoxiangWmsDeliveryorderConfirmRequest() *AlibabaDchainAoxiangWmsDeliveryorderConfirmAPIRequest {
 	return &AlibabaDchainAoxiangWmsDeliveryorderConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangWmsDeliveryorderConfirmAPIRequest) Reset() {
+	r._deliveryOrderConfirmReportRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangWmsDeliveryorderConfirmAPIRequest) SetDeliveryOrder
 // GetDeliveryOrderConfirmReportRequest DeliveryOrderConfirmReportRequest Getter
 func (r AlibabaDchainAoxiangWmsDeliveryorderConfirmAPIRequest) GetDeliveryOrderConfirmReportRequest() *DeliveryOrderConfirmReportRequest {
 	return r._deliveryOrderConfirmReportRequest
+}
+
+var poolAlibabaDchainAoxiangWmsDeliveryorderConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangWmsDeliveryorderConfirmRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangWmsDeliveryorderConfirmRequest 从 sync.Pool 获取 AlibabaDchainAoxiangWmsDeliveryorderConfirmAPIRequest
+func GetAlibabaDchainAoxiangWmsDeliveryorderConfirmAPIRequest() *AlibabaDchainAoxiangWmsDeliveryorderConfirmAPIRequest {
+	return poolAlibabaDchainAoxiangWmsDeliveryorderConfirmAPIRequest.Get().(*AlibabaDchainAoxiangWmsDeliveryorderConfirmAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangWmsDeliveryorderConfirmAPIRequest 将 AlibabaDchainAoxiangWmsDeliveryorderConfirmAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangWmsDeliveryorderConfirmAPIRequest(v *AlibabaDchainAoxiangWmsDeliveryorderConfirmAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangWmsDeliveryorderConfirmAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // StoreTerraceBillDto 结构体
 type StoreTerraceBillDto struct {
 	// 单据ID
@@ -46,4 +50,42 @@ type StoreTerraceBillDto struct {
 	RefUserId string `json:"ref_user_id,omitempty" xml:"ref_user_id,omitempty"`
 	// 处理状态
 	ResultType string `json:"result_type,omitempty" xml:"result_type,omitempty"`
+}
+
+var poolStoreTerraceBillDto = sync.Pool{
+	New: func() any {
+		return new(StoreTerraceBillDto)
+	},
+}
+
+// GetStoreTerraceBillDto() 从对象池中获取StoreTerraceBillDto
+func GetStoreTerraceBillDto() *StoreTerraceBillDto {
+	return poolStoreTerraceBillDto.Get().(*StoreTerraceBillDto)
+}
+
+// ReleaseStoreTerraceBillDto 释放StoreTerraceBillDto
+func ReleaseStoreTerraceBillDto(v *StoreTerraceBillDto) {
+	v.BillId = ""
+	v.BillCode = ""
+	v.EntId = ""
+	v.CrtDate = ""
+	v.UploadFlag = ""
+	v.UploadFileName = ""
+	v.ProcessFlag = ""
+	v.ProcessDate = ""
+	v.DataType = ""
+	v.DrugType = ""
+	v.NoteInfo = ""
+	v.CorpId = ""
+	v.CorpName = ""
+	v.StoreInOutDate = ""
+	v.UploadFilePath = ""
+	v.FromUserId = ""
+	v.FromRefUserId = ""
+	v.ToUserId = ""
+	v.ToRefUserId = ""
+	v.OrderIsmatched = ""
+	v.RefUserId = ""
+	v.ResultType = ""
+	poolStoreTerraceBillDto.Put(v)
 }

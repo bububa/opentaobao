@@ -9,11 +9,6 @@ import (
 // tmall.traceplatform.ticket.order.upload
 //
 // upsertOrderBySeller
-func TmallTraceplatformTicketOrderUpload(clt *core.SDKClient, req *tmallhk.TmallTraceplatformTicketOrderUploadAPIRequest, session string) (*tmallhk.TmallTraceplatformTicketOrderUploadAPIResponse, error) {
-	var resp tmallhk.TmallTraceplatformTicketOrderUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallTraceplatformTicketOrderUpload(clt *core.SDKClient, req *tmallhk.TmallTraceplatformTicketOrderUploadAPIRequest, resp *tmallhk.TmallTraceplatformTicketOrderUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

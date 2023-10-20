@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // PointRuleOpenInfo 结构体
 type PointRuleOpenInfo struct {
 	// 创建者
@@ -28,4 +32,33 @@ type PointRuleOpenInfo struct {
 	PointDeductionRule *PointDeductionRuleOpenInfo `json:"point_deduction_rule,omitempty" xml:"point_deduction_rule,omitempty"`
 	// 逻辑删除标志
 	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
+}
+
+var poolPointRuleOpenInfo = sync.Pool{
+	New: func() any {
+		return new(PointRuleOpenInfo)
+	},
+}
+
+// GetPointRuleOpenInfo() 从对象池中获取PointRuleOpenInfo
+func GetPointRuleOpenInfo() *PointRuleOpenInfo {
+	return poolPointRuleOpenInfo.Get().(*PointRuleOpenInfo)
+}
+
+// ReleasePointRuleOpenInfo 释放PointRuleOpenInfo
+func ReleasePointRuleOpenInfo(v *PointRuleOpenInfo) {
+	v.CreateBy = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.Name = ""
+	v.RuleId = ""
+	v.UpdateBy = ""
+	v.UpdateByName = ""
+	v.CreateByName = ""
+	v.ExtInfo = nil
+	v.PointAdditionRule = nil
+	v.PointClearRule = nil
+	v.PointDeductionRule = nil
+	v.Deleted = false
+	poolPointRuleOpenInfo.Put(v)
 }

@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenFlightOrderRs 结构体
 type OpenFlightOrderRs struct {
 	// 保险信息
@@ -64,4 +68,51 @@ type OpenFlightOrderRs struct {
 	CostCenter *OpenCostCenterDo `json:"cost_center,omitempty" xml:"cost_center,omitempty"`
 	// invoiceDO
 	Invoice *OpenInvoiceDo `json:"invoice,omitempty" xml:"invoice,omitempty"`
+}
+
+var poolOpenFlightOrderRs = sync.Pool{
+	New: func() any {
+		return new(OpenFlightOrderRs)
+	},
+}
+
+// GetOpenFlightOrderRs() 从对象池中获取OpenFlightOrderRs
+func GetOpenFlightOrderRs() *OpenFlightOrderRs {
+	return poolOpenFlightOrderRs.Get().(*OpenFlightOrderRs)
+}
+
+// ReleaseOpenFlightOrderRs 释放OpenFlightOrderRs
+func ReleaseOpenFlightOrderRs(v *OpenFlightOrderRs) {
+	v.InsureInfoList = v.InsureInfoList[:0]
+	v.PriceInfoList = v.PriceInfoList[:0]
+	v.UserAffiliateList = v.UserAffiliateList[:0]
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.CorpId = ""
+	v.CorpName = ""
+	v.UserId = ""
+	v.UserName = ""
+	v.DepartId = ""
+	v.DepartName = ""
+	v.ContactName = ""
+	v.ContactPhone = ""
+	v.DepCity = ""
+	v.ArrCity = ""
+	v.DepDate = ""
+	v.RetDate = ""
+	v.CabinClass = ""
+	v.ArrAirport = ""
+	v.DepAirport = ""
+	v.PassengerName = ""
+	v.FlightNo = ""
+	v.Discount = ""
+	v.ThirdpartItineraryId = ""
+	v.Id = 0
+	v.ApplyId = 0
+	v.TripType = 0
+	v.PassengerCount = 0
+	v.Status = 0
+	v.CostCenter = nil
+	v.Invoice = nil
+	poolOpenFlightOrderRs.Put(v)
 }

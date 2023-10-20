@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // TmsOrderCreateRequest 结构体
 type TmsOrderCreateRequest struct {
 	// 货品信息
@@ -42,4 +46,40 @@ type TmsOrderCreateRequest struct {
 	Advance bool `json:"advance,omitempty" xml:"advance,omitempty"`
 	// 是否拼单
 	Gather bool `json:"gather,omitempty" xml:"gather,omitempty"`
+}
+
+var poolTmsOrderCreateRequest = sync.Pool{
+	New: func() any {
+		return new(TmsOrderCreateRequest)
+	},
+}
+
+// GetTmsOrderCreateRequest() 从对象池中获取TmsOrderCreateRequest
+func GetTmsOrderCreateRequest() *TmsOrderCreateRequest {
+	return poolTmsOrderCreateRequest.Get().(*TmsOrderCreateRequest)
+}
+
+// ReleaseTmsOrderCreateRequest 释放TmsOrderCreateRequest
+func ReleaseTmsOrderCreateRequest(v *TmsOrderCreateRequest) {
+	v.ItemCreateDtoList = v.ItemCreateDtoList[:0]
+	v.SellerId = ""
+	v.TradeCode = ""
+	v.OutBizCode = ""
+	v.SellerOrderCode = ""
+	v.CpCode = ""
+	v.Creator = ""
+	v.Feature = ""
+	v.Remark = ""
+	v.BillPic = ""
+	v.RequestId = ""
+	v.Industry = ""
+	v.TmsServiceType = 0
+	v.GatherNum = 0
+	v.RequestTime = 0
+	v.RdcCreateDto = nil
+	v.SenderCreateDto = nil
+	v.ReceiverCreateDto = nil
+	v.Advance = false
+	v.Gather = false
+	poolTmsOrderCreateRequest.Put(v)
 }

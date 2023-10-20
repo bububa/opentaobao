@@ -2,6 +2,7 @@ package rhino
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoRhinoCrmReviewDeliveryAPIRequest struct {
 // NewTaobaoRhinoCrmReviewDeliveryRequest 初始化TaobaoRhinoCrmReviewDeliveryAPIRequest对象
 func NewTaobaoRhinoCrmReviewDeliveryRequest() *TaobaoRhinoCrmReviewDeliveryAPIRequest {
 	return &TaobaoRhinoCrmReviewDeliveryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoRhinoCrmReviewDeliveryAPIRequest) Reset() {
+	r._crmEntity = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoRhinoCrmReviewDeliveryAPIRequest) SetCrmEntity(_crmEntity *CrmEnt
 // GetCrmEntity CrmEntity Getter
 func (r TaobaoRhinoCrmReviewDeliveryAPIRequest) GetCrmEntity() *CrmEntity {
 	return r._crmEntity
+}
+
+var poolTaobaoRhinoCrmReviewDeliveryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoRhinoCrmReviewDeliveryRequest()
+	},
+}
+
+// GetTaobaoRhinoCrmReviewDeliveryRequest 从 sync.Pool 获取 TaobaoRhinoCrmReviewDeliveryAPIRequest
+func GetTaobaoRhinoCrmReviewDeliveryAPIRequest() *TaobaoRhinoCrmReviewDeliveryAPIRequest {
+	return poolTaobaoRhinoCrmReviewDeliveryAPIRequest.Get().(*TaobaoRhinoCrmReviewDeliveryAPIRequest)
+}
+
+// ReleaseTaobaoRhinoCrmReviewDeliveryAPIRequest 将 TaobaoRhinoCrmReviewDeliveryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoRhinoCrmReviewDeliveryAPIRequest(v *TaobaoRhinoCrmReviewDeliveryAPIRequest) {
+	v.Reset()
+	poolTaobaoRhinoCrmReviewDeliveryAPIRequest.Put(v)
 }

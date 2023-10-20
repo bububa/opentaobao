@@ -1,5 +1,9 @@
 package traveltrade
 
+import (
+	"sync"
+)
+
 // NormalVisaApplicantInfo 结构体
 type NormalVisaApplicantInfo struct {
 	// 可选，申请人ID。更新申请人基本信息时必填，新增申请人信息时不用填
@@ -16,4 +20,27 @@ type NormalVisaApplicantInfo struct {
 	ApplyNameCn string `json:"apply_name_cn,omitempty" xml:"apply_name_cn,omitempty"`
 	// 办理人身份类型(8-在职人员,9-自由职业,10-在校学生,11-退休人员,12-学龄年儿童,13-所有申请者,14-单个成年人,15-随行直系亲属,16-在读学生)
 	UserType int64 `json:"user_type,omitempty" xml:"user_type,omitempty"`
+}
+
+var poolNormalVisaApplicantInfo = sync.Pool{
+	New: func() any {
+		return new(NormalVisaApplicantInfo)
+	},
+}
+
+// GetNormalVisaApplicantInfo() 从对象池中获取NormalVisaApplicantInfo
+func GetNormalVisaApplicantInfo() *NormalVisaApplicantInfo {
+	return poolNormalVisaApplicantInfo.Get().(*NormalVisaApplicantInfo)
+}
+
+// ReleaseNormalVisaApplicantInfo 释放NormalVisaApplicantInfo
+func ReleaseNormalVisaApplicantInfo(v *NormalVisaApplicantInfo) {
+	v.ApplyId = ""
+	v.Surname = ""
+	v.GivenName = ""
+	v.Mobile = ""
+	v.CertNo = ""
+	v.ApplyNameCn = ""
+	v.UserType = 0
+	poolNormalVisaApplicantInfo.Put(v)
 }

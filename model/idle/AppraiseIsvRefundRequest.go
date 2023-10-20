@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // AppraiseIsvRefundRequest 结构体
 type AppraiseIsvRefundRequest struct {
 	// 退款操作说明
@@ -10,4 +14,24 @@ type AppraiseIsvRefundRequest struct {
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
 	// 退货地址
 	ReturnGoodsAddress *ShippingAddressInfo `json:"return_goods_address,omitempty" xml:"return_goods_address,omitempty"`
+}
+
+var poolAppraiseIsvRefundRequest = sync.Pool{
+	New: func() any {
+		return new(AppraiseIsvRefundRequest)
+	},
+}
+
+// GetAppraiseIsvRefundRequest() 从对象池中获取AppraiseIsvRefundRequest
+func GetAppraiseIsvRefundRequest() *AppraiseIsvRefundRequest {
+	return poolAppraiseIsvRefundRequest.Get().(*AppraiseIsvRefundRequest)
+}
+
+// ReleaseAppraiseIsvRefundRequest 释放AppraiseIsvRefundRequest
+func ReleaseAppraiseIsvRefundRequest(v *AppraiseIsvRefundRequest) {
+	v.LeaveMessage = ""
+	v.Operation = ""
+	v.BizOrderId = 0
+	v.ReturnGoodsAddress = nil
+	poolAppraiseIsvRefundRequest.Put(v)
 }

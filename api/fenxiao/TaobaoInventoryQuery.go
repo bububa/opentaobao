@@ -10,11 +10,6 @@ import (
 //
 // 建议使用新接口：tmall.inventory.query.forstore ，新ISV不推荐使用。
 // 商家查询商品总体库存信息
-func TaobaoInventoryQuery(clt *core.SDKClient, req *fenxiao.TaobaoInventoryQueryAPIRequest, session string) (*fenxiao.TaobaoInventoryQueryAPIResponse, error) {
-	var resp fenxiao.TaobaoInventoryQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoInventoryQuery(clt *core.SDKClient, req *fenxiao.TaobaoInventoryQueryAPIRequest, resp *fenxiao.TaobaoInventoryQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

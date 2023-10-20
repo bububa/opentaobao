@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // PageViewRequest 结构体
 type PageViewRequest struct {
 	// 账号转换方案 当不传的时候，不做账号转换
@@ -54,4 +58,46 @@ type PageViewRequest struct {
 	MiniApp bool `json:"mini_app,omitempty" xml:"mini_app,omitempty"`
 	// 是否同步
 	Sync bool `json:"sync,omitempty" xml:"sync,omitempty"`
+}
+
+var poolPageViewRequest = sync.Pool{
+	New: func() any {
+		return new(PageViewRequest)
+	},
+}
+
+// GetPageViewRequest() 从对象池中获取PageViewRequest
+func GetPageViewRequest() *PageViewRequest {
+	return poolPageViewRequest.Get().(*PageViewRequest)
+}
+
+// ReleasePageViewRequest 释放PageViewRequest
+func ReleasePageViewRequest(v *PageViewRequest) {
+	v.AccountPlan = ""
+	v.ActionCode = ""
+	v.BizScene = ""
+	v.Channel = ""
+	v.CityId = ""
+	v.Client = ""
+	v.ClientUserType = ""
+	v.CollectionId = ""
+	v.ExtInfo = ""
+	v.Latitude = ""
+	v.Longitude = ""
+	v.MeetResultToken = ""
+	v.MissionId = ""
+	v.MissionXId = ""
+	v.PageFrom = ""
+	v.RequestId = ""
+	v.ShareId = ""
+	v.Ua = ""
+	v.UmiToken = ""
+	v.UnionId = ""
+	v.UserId = ""
+	v.ViewTime = ""
+	v.UserIdType = ""
+	v.AlipayThirdMiniProgram = false
+	v.MiniApp = false
+	v.Sync = false
+	poolPageViewRequest.Put(v)
 }

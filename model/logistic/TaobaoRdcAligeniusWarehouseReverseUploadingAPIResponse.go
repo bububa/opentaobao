@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoRdcAligeniusWarehouseReverseUploadingAPIResponse struct {
 	TaobaoRdcAligeniusWarehouseReverseUploadingAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoRdcAligeniusWarehouseReverseUploadingAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoRdcAligeniusWarehouseReverseUploadingAPIResponseModel).Reset()
+}
+
 // TaobaoRdcAligeniusWarehouseReverseUploadingAPIResponseModel is 销退单上传 成功返回结果
 type TaobaoRdcAligeniusWarehouseReverseUploadingAPIResponseModel struct {
 	XMLName xml.Name `xml:"rdc_aligenius_warehouse_reverse_uploading_response"`
@@ -26,4 +33,29 @@ type TaobaoRdcAligeniusWarehouseReverseUploadingAPIResponseModel struct {
 	FailCode string `json:"fail_code,omitempty" xml:"fail_code,omitempty"`
 	// 是否成功
 	SuccessFlag bool `json:"success_flag,omitempty" xml:"success_flag,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoRdcAligeniusWarehouseReverseUploadingAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.FailInfo = ""
+	m.FailCode = ""
+	m.SuccessFlag = false
+}
+
+var poolTaobaoRdcAligeniusWarehouseReverseUploadingAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoRdcAligeniusWarehouseReverseUploadingAPIResponse)
+	},
+}
+
+// GetTaobaoRdcAligeniusWarehouseReverseUploadingAPIResponse 从 sync.Pool 获取 TaobaoRdcAligeniusWarehouseReverseUploadingAPIResponse
+func GetTaobaoRdcAligeniusWarehouseReverseUploadingAPIResponse() *TaobaoRdcAligeniusWarehouseReverseUploadingAPIResponse {
+	return poolTaobaoRdcAligeniusWarehouseReverseUploadingAPIResponse.Get().(*TaobaoRdcAligeniusWarehouseReverseUploadingAPIResponse)
+}
+
+// ReleaseTaobaoRdcAligeniusWarehouseReverseUploadingAPIResponse 将 TaobaoRdcAligeniusWarehouseReverseUploadingAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoRdcAligeniusWarehouseReverseUploadingAPIResponse(v *TaobaoRdcAligeniusWarehouseReverseUploadingAPIResponse) {
+	v.Reset()
+	poolTaobaoRdcAligeniusWarehouseReverseUploadingAPIResponse.Put(v)
 }

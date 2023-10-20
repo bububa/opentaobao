@@ -9,11 +9,6 @@ import (
 // taobao.simba.rpt.targetingtag.get
 //
 // 获取搜搜人群实时报表
-func TaobaoSimbaRptTargetingtagGet(clt *core.SDKClient, req *simba.TaobaoSimbaRptTargetingtagGetAPIRequest, session string) (*simba.TaobaoSimbaRptTargetingtagGetAPIResponse, error) {
-	var resp simba.TaobaoSimbaRptTargetingtagGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaRptTargetingtagGet(clt *core.SDKClient, req *simba.TaobaoSimbaRptTargetingtagGetAPIRequest, resp *simba.TaobaoSimbaRptTargetingtagGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

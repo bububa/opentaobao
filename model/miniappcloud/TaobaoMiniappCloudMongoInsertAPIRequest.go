@@ -2,6 +2,7 @@ package miniappcloud
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoMiniappCloudMongoInsertAPIRequest struct {
 // NewTaobaoMiniappCloudMongoInsertRequest 初始化TaobaoMiniappCloudMongoInsertAPIRequest对象
 func NewTaobaoMiniappCloudMongoInsertRequest() *TaobaoMiniappCloudMongoInsertAPIRequest {
 	return &TaobaoMiniappCloudMongoInsertAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMiniappCloudMongoInsertAPIRequest) Reset() {
+	r._record = ""
+	r._collection = ""
+	r._env = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoMiniappCloudMongoInsertAPIRequest) SetEnv(_env string) error {
 // GetEnv Env Getter
 func (r TaobaoMiniappCloudMongoInsertAPIRequest) GetEnv() string {
 	return r._env
+}
+
+var poolTaobaoMiniappCloudMongoInsertAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMiniappCloudMongoInsertRequest()
+	},
+}
+
+// GetTaobaoMiniappCloudMongoInsertRequest 从 sync.Pool 获取 TaobaoMiniappCloudMongoInsertAPIRequest
+func GetTaobaoMiniappCloudMongoInsertAPIRequest() *TaobaoMiniappCloudMongoInsertAPIRequest {
+	return poolTaobaoMiniappCloudMongoInsertAPIRequest.Get().(*TaobaoMiniappCloudMongoInsertAPIRequest)
+}
+
+// ReleaseTaobaoMiniappCloudMongoInsertAPIRequest 将 TaobaoMiniappCloudMongoInsertAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMiniappCloudMongoInsertAPIRequest(v *TaobaoMiniappCloudMongoInsertAPIRequest) {
+	v.Reset()
+	poolTaobaoMiniappCloudMongoInsertAPIRequest.Put(v)
 }

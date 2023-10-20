@@ -2,6 +2,7 @@ package itpolicy
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoAlitripItFareBatchaddAPIRequest struct {
 // NewTaobaoAlitripItFareBatchaddRequest 初始化TaobaoAlitripItFareBatchaddAPIRequest对象
 func NewTaobaoAlitripItFareBatchaddRequest() *TaobaoAlitripItFareBatchaddAPIRequest {
 	return &TaobaoAlitripItFareBatchaddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripItFareBatchaddAPIRequest) Reset() {
+	r._extendAttributes = ""
+	r._addType = 0
+	r._bytes = nil
+	r._dataType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoAlitripItFareBatchaddAPIRequest) SetDataType(_dataType int64) err
 // GetDataType DataType Getter
 func (r TaobaoAlitripItFareBatchaddAPIRequest) GetDataType() int64 {
 	return r._dataType
+}
+
+var poolTaobaoAlitripItFareBatchaddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripItFareBatchaddRequest()
+	},
+}
+
+// GetTaobaoAlitripItFareBatchaddRequest 从 sync.Pool 获取 TaobaoAlitripItFareBatchaddAPIRequest
+func GetTaobaoAlitripItFareBatchaddAPIRequest() *TaobaoAlitripItFareBatchaddAPIRequest {
+	return poolTaobaoAlitripItFareBatchaddAPIRequest.Get().(*TaobaoAlitripItFareBatchaddAPIRequest)
+}
+
+// ReleaseTaobaoAlitripItFareBatchaddAPIRequest 将 TaobaoAlitripItFareBatchaddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripItFareBatchaddAPIRequest(v *TaobaoAlitripItFareBatchaddAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripItFareBatchaddAPIRequest.Put(v)
 }

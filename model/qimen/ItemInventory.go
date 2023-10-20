@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // ItemInventory 结构体
 type ItemInventory struct {
 	// 奇门仓储字段,C123,string(50),,
@@ -28,4 +32,33 @@ type ItemInventory struct {
 	CombItemId string `json:"combItemId,omitempty" xml:"combItemId,omitempty"`
 	// 奇门仓储字段
 	ItemQuantity string `json:"itemQuantity,omitempty" xml:"itemQuantity,omitempty"`
+}
+
+var poolItemInventory = sync.Pool{
+	New: func() any {
+		return new(ItemInventory)
+	},
+}
+
+// GetItemInventory() 从对象池中获取ItemInventory
+func GetItemInventory() *ItemInventory {
+	return poolItemInventory.Get().(*ItemInventory)
+}
+
+// ReleaseItemInventory 释放ItemInventory
+func ReleaseItemInventory(v *ItemInventory) {
+	v.ItemCode = ""
+	v.WarehouseCode = ""
+	v.ChannelCode = ""
+	v.Quantity = ""
+	v.LockQuantity = ""
+	v.OrderSourceCode = ""
+	v.SubSourceCode = ""
+	v.ItemId = ""
+	v.Flag = ""
+	v.Code = ""
+	v.Message = ""
+	v.CombItemId = ""
+	v.ItemQuantity = ""
+	poolItemInventory.Put(v)
 }

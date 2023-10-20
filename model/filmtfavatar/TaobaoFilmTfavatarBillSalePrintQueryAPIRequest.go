@@ -2,6 +2,7 @@ package filmtfavatar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -32,8 +33,20 @@ type TaobaoFilmTfavatarBillSalePrintQueryAPIRequest struct {
 // NewTaobaoFilmTfavatarBillSalePrintQueryRequest 初始化TaobaoFilmTfavatarBillSalePrintQueryAPIRequest对象
 func NewTaobaoFilmTfavatarBillSalePrintQueryRequest() *TaobaoFilmTfavatarBillSalePrintQueryAPIRequest {
 	return &TaobaoFilmTfavatarBillSalePrintQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) Reset() {
+	r._includedOrderStatus = r._includedOrderStatus[:0]
+	r._openAppKey = ""
+	r._beginTime = ""
+	r._endTime = ""
+	r._cinemaId = 0
+	r._offset = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -142,4 +155,21 @@ func (r *TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) SetPageSize(_pageSize i
 // GetPageSize PageSize Getter
 func (r TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoFilmTfavatarBillSalePrintQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFilmTfavatarBillSalePrintQueryRequest()
+	},
+}
+
+// GetTaobaoFilmTfavatarBillSalePrintQueryRequest 从 sync.Pool 获取 TaobaoFilmTfavatarBillSalePrintQueryAPIRequest
+func GetTaobaoFilmTfavatarBillSalePrintQueryAPIRequest() *TaobaoFilmTfavatarBillSalePrintQueryAPIRequest {
+	return poolTaobaoFilmTfavatarBillSalePrintQueryAPIRequest.Get().(*TaobaoFilmTfavatarBillSalePrintQueryAPIRequest)
+}
+
+// ReleaseTaobaoFilmTfavatarBillSalePrintQueryAPIRequest 将 TaobaoFilmTfavatarBillSalePrintQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFilmTfavatarBillSalePrintQueryAPIRequest(v *TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoFilmTfavatarBillSalePrintQueryAPIRequest.Put(v)
 }

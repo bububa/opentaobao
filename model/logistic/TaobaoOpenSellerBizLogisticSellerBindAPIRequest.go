@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoOpenSellerBizLogisticSellerBindAPIRequest struct {
 // NewTaobaoOpenSellerBizLogisticSellerBindRequest 初始化TaobaoOpenSellerBizLogisticSellerBindAPIRequest对象
 func NewTaobaoOpenSellerBizLogisticSellerBindRequest() *TaobaoOpenSellerBizLogisticSellerBindAPIRequest {
 	return &TaobaoOpenSellerBizLogisticSellerBindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpenSellerBizLogisticSellerBindAPIRequest) Reset() {
+	r._sellerNick = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoOpenSellerBizLogisticSellerBindAPIRequest) SetSellerNick(_sellerN
 // GetSellerNick SellerNick Getter
 func (r TaobaoOpenSellerBizLogisticSellerBindAPIRequest) GetSellerNick() string {
 	return r._sellerNick
+}
+
+var poolTaobaoOpenSellerBizLogisticSellerBindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpenSellerBizLogisticSellerBindRequest()
+	},
+}
+
+// GetTaobaoOpenSellerBizLogisticSellerBindRequest 从 sync.Pool 获取 TaobaoOpenSellerBizLogisticSellerBindAPIRequest
+func GetTaobaoOpenSellerBizLogisticSellerBindAPIRequest() *TaobaoOpenSellerBizLogisticSellerBindAPIRequest {
+	return poolTaobaoOpenSellerBizLogisticSellerBindAPIRequest.Get().(*TaobaoOpenSellerBizLogisticSellerBindAPIRequest)
+}
+
+// ReleaseTaobaoOpenSellerBizLogisticSellerBindAPIRequest 将 TaobaoOpenSellerBizLogisticSellerBindAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpenSellerBizLogisticSellerBindAPIRequest(v *TaobaoOpenSellerBizLogisticSellerBindAPIRequest) {
+	v.Reset()
+	poolTaobaoOpenSellerBizLogisticSellerBindAPIRequest.Put(v)
 }

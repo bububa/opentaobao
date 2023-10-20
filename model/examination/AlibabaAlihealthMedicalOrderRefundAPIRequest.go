@@ -2,6 +2,7 @@ package examination
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthMedicalOrderRefundAPIRequest struct {
 // NewAlibabaAlihealthMedicalOrderRefundRequest 初始化AlibabaAlihealthMedicalOrderRefundAPIRequest对象
 func NewAlibabaAlihealthMedicalOrderRefundRequest() *AlibabaAlihealthMedicalOrderRefundAPIRequest {
 	return &AlibabaAlihealthMedicalOrderRefundAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthMedicalOrderRefundAPIRequest) Reset() {
+	r._orderRefundRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthMedicalOrderRefundAPIRequest) SetOrderRefundRequest(_or
 // GetOrderRefundRequest OrderRefundRequest Getter
 func (r AlibabaAlihealthMedicalOrderRefundAPIRequest) GetOrderRefundRequest() *OrderRefundRequest {
 	return r._orderRefundRequest
+}
+
+var poolAlibabaAlihealthMedicalOrderRefundAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthMedicalOrderRefundRequest()
+	},
+}
+
+// GetAlibabaAlihealthMedicalOrderRefundRequest 从 sync.Pool 获取 AlibabaAlihealthMedicalOrderRefundAPIRequest
+func GetAlibabaAlihealthMedicalOrderRefundAPIRequest() *AlibabaAlihealthMedicalOrderRefundAPIRequest {
+	return poolAlibabaAlihealthMedicalOrderRefundAPIRequest.Get().(*AlibabaAlihealthMedicalOrderRefundAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthMedicalOrderRefundAPIRequest 将 AlibabaAlihealthMedicalOrderRefundAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthMedicalOrderRefundAPIRequest(v *AlibabaAlihealthMedicalOrderRefundAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthMedicalOrderRefundAPIRequest.Put(v)
 }

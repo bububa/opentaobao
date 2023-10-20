@@ -9,11 +9,6 @@ import (
 // alibaba.ele.fengniao.cancel.merchant
 //
 // 商户取消配送
-func AlibabaEleFengniaoCancelMerchant(clt *core.SDKClient, req *logistic.AlibabaEleFengniaoCancelMerchantAPIRequest, session string) (*logistic.AlibabaEleFengniaoCancelMerchantAPIResponse, error) {
-	var resp logistic.AlibabaEleFengniaoCancelMerchantAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaEleFengniaoCancelMerchant(clt *core.SDKClient, req *logistic.AlibabaEleFengniaoCancelMerchantAPIRequest, resp *logistic.AlibabaEleFengniaoCancelMerchantAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

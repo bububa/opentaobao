@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // ProjectCooperationDto 结构体
 type ProjectCooperationDto struct {
 	// 合作开始时间
@@ -30,4 +34,34 @@ type ProjectCooperationDto struct {
 	CooperationType int64 `json:"cooperation_type,omitempty" xml:"cooperation_type,omitempty"`
 	// 活动类型 1- 百亿房补大额电商券 2 - 直通车活动
 	ActivityType int64 `json:"activity_type,omitempty" xml:"activity_type,omitempty"`
+}
+
+var poolProjectCooperationDto = sync.Pool{
+	New: func() any {
+		return new(ProjectCooperationDto)
+	},
+}
+
+// GetProjectCooperationDto() 从对象池中获取ProjectCooperationDto
+func GetProjectCooperationDto() *ProjectCooperationDto {
+	return poolProjectCooperationDto.Get().(*ProjectCooperationDto)
+}
+
+// ReleaseProjectCooperationDto 释放ProjectCooperationDto
+func ReleaseProjectCooperationDto(v *ProjectCooperationDto) {
+	v.CooperationEndTime = ""
+	v.CooperationBeginTime = ""
+	v.KaProjectMid = ""
+	v.OuterCooperationId = ""
+	v.OuterId = ""
+	v.ProjectCode = ""
+	v.ContractNo = ""
+	v.OuterActivityId = ""
+	v.KaOuterId = ""
+	v.OuterStoreId = ""
+	v.Status = 0
+	v.IsPriority = 0
+	v.CooperationType = 0
+	v.ActivityType = 0
+	poolProjectCooperationDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package wdkitem
 
+import (
+	"sync"
+)
+
 // PromotionInfoDto 结构体
 type PromotionInfoDto struct {
 	// 展示文案
@@ -22,4 +26,30 @@ type PromotionInfoDto struct {
 	ActivityId int64 `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
 	// 活动类型, 1:单品活动,3:商品池活动
 	ActivityType int64 `json:"activity_type,omitempty" xml:"activity_type,omitempty"`
+}
+
+var poolPromotionInfoDto = sync.Pool{
+	New: func() any {
+		return new(PromotionInfoDto)
+	},
+}
+
+// GetPromotionInfoDto() 从对象池中获取PromotionInfoDto
+func GetPromotionInfoDto() *PromotionInfoDto {
+	return poolPromotionInfoDto.Get().(*PromotionInfoDto)
+}
+
+// ReleasePromotionInfoDto 释放PromotionInfoDto
+func ReleasePromotionInfoDto(v *PromotionInfoDto) {
+	v.DisplayText = ""
+	v.PromotionType = ""
+	v.CreateDateTime = ""
+	v.Name = ""
+	v.StartTime = ""
+	v.LimitInfo = ""
+	v.EndTime = ""
+	v.DiscountFee = 0
+	v.ActivityId = 0
+	v.ActivityType = 0
+	poolPromotionInfoDto.Put(v)
 }

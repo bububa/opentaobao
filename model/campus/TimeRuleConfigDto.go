@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // TimeRuleConfigDto 结构体
 type TimeRuleConfigDto struct {
 	// 时间规则集合
@@ -16,4 +20,27 @@ type TimeRuleConfigDto struct {
 	Time string `json:"time,omitempty" xml:"time,omitempty"`
 	// 时间规则ID
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolTimeRuleConfigDto = sync.Pool{
+	New: func() any {
+		return new(TimeRuleConfigDto)
+	},
+}
+
+// GetTimeRuleConfigDto() 从对象池中获取TimeRuleConfigDto
+func GetTimeRuleConfigDto() *TimeRuleConfigDto {
+	return poolTimeRuleConfigDto.Get().(*TimeRuleConfigDto)
+}
+
+// ReleaseTimeRuleConfigDto 释放TimeRuleConfigDto
+func ReleaseTimeRuleConfigDto(v *TimeRuleConfigDto) {
+	v.TimeRuleList = v.TimeRuleList[:0]
+	v.ForbidTemplateList = v.ForbidTemplateList[:0]
+	v.AllowTemplateList = v.AllowTemplateList[:0]
+	v.Name = ""
+	v.Week = ""
+	v.Time = ""
+	v.Id = 0
+	poolTimeRuleConfigDto.Put(v)
 }

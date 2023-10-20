@@ -1,5 +1,9 @@
 package wms
 
+import (
+	"sync"
+)
+
 // CainiaoBillQueryOrderinfo 结构体
 type CainiaoBillQueryOrderinfo struct {
 	// 交易订单号
@@ -20,4 +24,29 @@ type CainiaoBillQueryOrderinfo struct {
 	OrderSource string `json:"order_source,omitempty" xml:"order_source,omitempty"`
 	// 单据类型 201 销售出库 501 退货入库 502 换货出库 503 补发出库 904 普通入库 903 普通出库单 306 B2B入库单 305 B2B出库单 601 采购入库 901 退供出库单 701 盘点出库 702 盘点入库 711 库存异动单
 	OrderType int64 `json:"order_type,omitempty" xml:"order_type,omitempty"`
+}
+
+var poolCainiaoBillQueryOrderinfo = sync.Pool{
+	New: func() any {
+		return new(CainiaoBillQueryOrderinfo)
+	},
+}
+
+// GetCainiaoBillQueryOrderinfo() 从对象池中获取CainiaoBillQueryOrderinfo
+func GetCainiaoBillQueryOrderinfo() *CainiaoBillQueryOrderinfo {
+	return poolCainiaoBillQueryOrderinfo.Get().(*CainiaoBillQueryOrderinfo)
+}
+
+// ReleaseCainiaoBillQueryOrderinfo 释放CainiaoBillQueryOrderinfo
+func ReleaseCainiaoBillQueryOrderinfo(v *CainiaoBillQueryOrderinfo) {
+	v.OrderSourceCodes = v.OrderSourceCodes[:0]
+	v.Remark = ""
+	v.ModifiedTime = ""
+	v.Status = ""
+	v.StoreCode = ""
+	v.OrderCode = ""
+	v.CnOrderCode = ""
+	v.OrderSource = ""
+	v.OrderType = 0
+	poolCainiaoBillQueryOrderinfo.Put(v)
 }

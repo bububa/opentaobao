@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // UndedutOpenReq 结构体
 type UndedutOpenReq struct {
 	// 品牌ID(不能和outbrandid同时为空)
@@ -28,4 +32,33 @@ type UndedutOpenReq struct {
 	BizChannel string `json:"biz_channel,omitempty" xml:"biz_channel,omitempty"`
 	// 当vlaue不传时，就是退整单金额
 	Value int64 `json:"value,omitempty" xml:"value,omitempty"`
+}
+
+var poolUndedutOpenReq = sync.Pool{
+	New: func() any {
+		return new(UndedutOpenReq)
+	},
+}
+
+// GetUndedutOpenReq() 从对象池中获取UndedutOpenReq
+func GetUndedutOpenReq() *UndedutOpenReq {
+	return poolUndedutOpenReq.Get().(*UndedutOpenReq)
+}
+
+// ReleaseUndedutOpenReq 释放UndedutOpenReq
+func ReleaseUndedutOpenReq(v *UndedutOpenReq) {
+	v.BrandId = ""
+	v.CardId = ""
+	v.CustomerId = ""
+	v.NewOuterOrderId = ""
+	v.OperatorId = ""
+	v.OuterOrderId = ""
+	v.Remark = ""
+	v.RequestId = ""
+	v.ShopId = ""
+	v.OutShopId = ""
+	v.OutBrandId = ""
+	v.BizChannel = ""
+	v.Value = 0
+	poolUndedutOpenReq.Put(v)
 }

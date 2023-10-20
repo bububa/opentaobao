@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaNewretailPurchasePriceDeleteAPIRequest struct {
 // NewAlibabaNewretailPurchasePriceDeleteRequest 初始化AlibabaNewretailPurchasePriceDeleteAPIRequest对象
 func NewAlibabaNewretailPurchasePriceDeleteRequest() *AlibabaNewretailPurchasePriceDeleteAPIRequest {
 	return &AlibabaNewretailPurchasePriceDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaNewretailPurchasePriceDeleteAPIRequest) Reset() {
+	r._deletePurchasePriceRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaNewretailPurchasePriceDeleteAPIRequest) SetDeletePurchasePriceRe
 // GetDeletePurchasePriceRequest DeletePurchasePriceRequest Getter
 func (r AlibabaNewretailPurchasePriceDeleteAPIRequest) GetDeletePurchasePriceRequest() *DeletePurchasePriceRequest {
 	return r._deletePurchasePriceRequest
+}
+
+var poolAlibabaNewretailPurchasePriceDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaNewretailPurchasePriceDeleteRequest()
+	},
+}
+
+// GetAlibabaNewretailPurchasePriceDeleteRequest 从 sync.Pool 获取 AlibabaNewretailPurchasePriceDeleteAPIRequest
+func GetAlibabaNewretailPurchasePriceDeleteAPIRequest() *AlibabaNewretailPurchasePriceDeleteAPIRequest {
+	return poolAlibabaNewretailPurchasePriceDeleteAPIRequest.Get().(*AlibabaNewretailPurchasePriceDeleteAPIRequest)
+}
+
+// ReleaseAlibabaNewretailPurchasePriceDeleteAPIRequest 将 AlibabaNewretailPurchasePriceDeleteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaNewretailPurchasePriceDeleteAPIRequest(v *AlibabaNewretailPurchasePriceDeleteAPIRequest) {
+	v.Reset()
+	poolAlibabaNewretailPurchasePriceDeleteAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // RefundGoodsQueryResult 结构体
 type RefundGoodsQueryResult struct {
 	// 退货子订单详情
@@ -26,4 +30,32 @@ type RefundGoodsQueryResult struct {
 	InitFrom int64 `json:"init_from,omitempty" xml:"init_from,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolRefundGoodsQueryResult = sync.Pool{
+	New: func() any {
+		return new(RefundGoodsQueryResult)
+	},
+}
+
+// GetRefundGoodsQueryResult() 从对象池中获取RefundGoodsQueryResult
+func GetRefundGoodsQueryResult() *RefundGoodsQueryResult {
+	return poolRefundGoodsQueryResult.Get().(*RefundGoodsQueryResult)
+}
+
+// ReleaseRefundGoodsQueryResult 释放RefundGoodsQueryResult
+func ReleaseRefundGoodsQueryResult(v *RefundGoodsQueryResult) {
+	v.RefundGoodsSubOrderDetailList = v.RefundGoodsSubOrderDetailList[:0]
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.RefundFetchType = ""
+	v.BuyerId = ""
+	v.BuyerName = ""
+	v.BuyerPhone = ""
+	v.BuyerAddress = ""
+	v.InitOperator = ""
+	v.InitMemo = ""
+	v.InitFrom = 0
+	v.Success = false
+	poolRefundGoodsQueryResult.Put(v)
 }

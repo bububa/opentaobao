@@ -2,6 +2,7 @@ package alink
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AliyunAlinkOpendataUrlQueryAPIRequest struct {
 // NewAliyunAlinkOpendataUrlQueryRequest 初始化AliyunAlinkOpendataUrlQueryAPIRequest对象
 func NewAliyunAlinkOpendataUrlQueryRequest() *AliyunAlinkOpendataUrlQueryAPIRequest {
 	return &AliyunAlinkOpendataUrlQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliyunAlinkOpendataUrlQueryAPIRequest) Reset() {
+	r._accessKey = ""
+	r._bizDay = ""
+	r._bizHour = 0
+	r._dataType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AliyunAlinkOpendataUrlQueryAPIRequest) SetDataType(_dataType int64) err
 // GetDataType DataType Getter
 func (r AliyunAlinkOpendataUrlQueryAPIRequest) GetDataType() int64 {
 	return r._dataType
+}
+
+var poolAliyunAlinkOpendataUrlQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliyunAlinkOpendataUrlQueryRequest()
+	},
+}
+
+// GetAliyunAlinkOpendataUrlQueryRequest 从 sync.Pool 获取 AliyunAlinkOpendataUrlQueryAPIRequest
+func GetAliyunAlinkOpendataUrlQueryAPIRequest() *AliyunAlinkOpendataUrlQueryAPIRequest {
+	return poolAliyunAlinkOpendataUrlQueryAPIRequest.Get().(*AliyunAlinkOpendataUrlQueryAPIRequest)
+}
+
+// ReleaseAliyunAlinkOpendataUrlQueryAPIRequest 将 AliyunAlinkOpendataUrlQueryAPIRequest 放入 sync.Pool
+func ReleaseAliyunAlinkOpendataUrlQueryAPIRequest(v *AliyunAlinkOpendataUrlQueryAPIRequest) {
+	v.Reset()
+	poolAliyunAlinkOpendataUrlQueryAPIRequest.Put(v)
 }

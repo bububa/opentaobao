@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoRegionPriceCancleAPIRequest struct {
 // NewTaobaoRegionPriceCancleRequest 初始化TaobaoRegionPriceCancleAPIRequest对象
 func NewTaobaoRegionPriceCancleRequest() *TaobaoRegionPriceCancleAPIRequest {
 	return &TaobaoRegionPriceCancleAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoRegionPriceCancleAPIRequest) Reset() {
+	r._itemId = 0
+	r._skuId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoRegionPriceCancleAPIRequest) SetSkuId(_skuId int64) error {
 // GetSkuId SkuId Getter
 func (r TaobaoRegionPriceCancleAPIRequest) GetSkuId() int64 {
 	return r._skuId
+}
+
+var poolTaobaoRegionPriceCancleAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoRegionPriceCancleRequest()
+	},
+}
+
+// GetTaobaoRegionPriceCancleRequest 从 sync.Pool 获取 TaobaoRegionPriceCancleAPIRequest
+func GetTaobaoRegionPriceCancleAPIRequest() *TaobaoRegionPriceCancleAPIRequest {
+	return poolTaobaoRegionPriceCancleAPIRequest.Get().(*TaobaoRegionPriceCancleAPIRequest)
+}
+
+// ReleaseTaobaoRegionPriceCancleAPIRequest 将 TaobaoRegionPriceCancleAPIRequest 放入 sync.Pool
+func ReleaseTaobaoRegionPriceCancleAPIRequest(v *TaobaoRegionPriceCancleAPIRequest) {
+	v.Reset()
+	poolTaobaoRegionPriceCancleAPIRequest.Put(v)
 }

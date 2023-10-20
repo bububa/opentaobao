@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseProjectActivitySyncAPIRequest struct {
 // NewAlibabaAlihouseProjectActivitySyncRequest 初始化AlibabaAlihouseProjectActivitySyncAPIRequest对象
 func NewAlibabaAlihouseProjectActivitySyncRequest() *AlibabaAlihouseProjectActivitySyncAPIRequest {
 	return &AlibabaAlihouseProjectActivitySyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseProjectActivitySyncAPIRequest) Reset() {
+	r._businessActivityDataDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseProjectActivitySyncAPIRequest) SetBusinessActivityDataDt
 // GetBusinessActivityDataDto BusinessActivityDataDto Getter
 func (r AlibabaAlihouseProjectActivitySyncAPIRequest) GetBusinessActivityDataDto() *BusinessActivityDataDto {
 	return r._businessActivityDataDto
+}
+
+var poolAlibabaAlihouseProjectActivitySyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseProjectActivitySyncRequest()
+	},
+}
+
+// GetAlibabaAlihouseProjectActivitySyncRequest 从 sync.Pool 获取 AlibabaAlihouseProjectActivitySyncAPIRequest
+func GetAlibabaAlihouseProjectActivitySyncAPIRequest() *AlibabaAlihouseProjectActivitySyncAPIRequest {
+	return poolAlibabaAlihouseProjectActivitySyncAPIRequest.Get().(*AlibabaAlihouseProjectActivitySyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseProjectActivitySyncAPIRequest 将 AlibabaAlihouseProjectActivitySyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseProjectActivitySyncAPIRequest(v *AlibabaAlihouseProjectActivitySyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseProjectActivitySyncAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeCasefieldActivityProjectSubmitAPIRequest struct {
 // NewAlibabaAlihouseNewhomeCasefieldActivityProjectSubmitRequest 初始化AlibabaAlihouseNewhomeCasefieldActivityProjectSubmitAPIRequest对象
 func NewAlibabaAlihouseNewhomeCasefieldActivityProjectSubmitRequest() *AlibabaAlihouseNewhomeCasefieldActivityProjectSubmitAPIRequest {
 	return &AlibabaAlihouseNewhomeCasefieldActivityProjectSubmitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeCasefieldActivityProjectSubmitAPIRequest) Reset() {
+	r._caseFieldActivityProjectsDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomeCasefieldActivityProjectSubmitAPIRequest) SetCase
 // GetCaseFieldActivityProjectsDto CaseFieldActivityProjectsDto Getter
 func (r AlibabaAlihouseNewhomeCasefieldActivityProjectSubmitAPIRequest) GetCaseFieldActivityProjectsDto() *CaseFieldActivityProjectsDto {
 	return r._caseFieldActivityProjectsDto
+}
+
+var poolAlibabaAlihouseNewhomeCasefieldActivityProjectSubmitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeCasefieldActivityProjectSubmitRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeCasefieldActivityProjectSubmitRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeCasefieldActivityProjectSubmitAPIRequest
+func GetAlibabaAlihouseNewhomeCasefieldActivityProjectSubmitAPIRequest() *AlibabaAlihouseNewhomeCasefieldActivityProjectSubmitAPIRequest {
+	return poolAlibabaAlihouseNewhomeCasefieldActivityProjectSubmitAPIRequest.Get().(*AlibabaAlihouseNewhomeCasefieldActivityProjectSubmitAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeCasefieldActivityProjectSubmitAPIRequest 将 AlibabaAlihouseNewhomeCasefieldActivityProjectSubmitAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeCasefieldActivityProjectSubmitAPIRequest(v *AlibabaAlihouseNewhomeCasefieldActivityProjectSubmitAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeCasefieldActivityProjectSubmitAPIRequest.Put(v)
 }

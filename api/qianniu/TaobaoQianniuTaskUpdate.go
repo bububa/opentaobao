@@ -9,11 +9,6 @@ import (
 // taobao.qianniu.task.update
 //
 // 由任务执行者调用，sub_status，tag和memo至少提供一个
-func TaobaoQianniuTaskUpdate(clt *core.SDKClient, req *qianniu.TaobaoQianniuTaskUpdateAPIRequest, session string) (*qianniu.TaobaoQianniuTaskUpdateAPIResponse, error) {
-	var resp qianniu.TaobaoQianniuTaskUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoQianniuTaskUpdate(clt *core.SDKClient, req *qianniu.TaobaoQianniuTaskUpdateAPIRequest, resp *qianniu.TaobaoQianniuTaskUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

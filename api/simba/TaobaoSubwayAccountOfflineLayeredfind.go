@@ -9,11 +9,6 @@ import (
 // taobao.subway.account.offline.layeredfind
 //
 // 获取账户历史报表
-func TaobaoSubwayAccountOfflineLayeredfind(clt *core.SDKClient, req *simba.TaobaoSubwayAccountOfflineLayeredfindAPIRequest, session string) (*simba.TaobaoSubwayAccountOfflineLayeredfindAPIResponse, error) {
-	var resp simba.TaobaoSubwayAccountOfflineLayeredfindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSubwayAccountOfflineLayeredfind(clt *core.SDKClient, req *simba.TaobaoSubwayAccountOfflineLayeredfindAPIRequest, resp *simba.TaobaoSubwayAccountOfflineLayeredfindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

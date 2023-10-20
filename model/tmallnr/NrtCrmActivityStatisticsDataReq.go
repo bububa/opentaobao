@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // NrtCrmActivityStatisticsDataReq 结构体
 type NrtCrmActivityStatisticsDataReq struct {
 	// 数据上传时间
@@ -16,4 +20,27 @@ type NrtCrmActivityStatisticsDataReq struct {
 	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
 	// 导购员id
 	GuiderId int64 `json:"guider_id,omitempty" xml:"guider_id,omitempty"`
+}
+
+var poolNrtCrmActivityStatisticsDataReq = sync.Pool{
+	New: func() any {
+		return new(NrtCrmActivityStatisticsDataReq)
+	},
+}
+
+// GetNrtCrmActivityStatisticsDataReq() 从对象池中获取NrtCrmActivityStatisticsDataReq
+func GetNrtCrmActivityStatisticsDataReq() *NrtCrmActivityStatisticsDataReq {
+	return poolNrtCrmActivityStatisticsDataReq.Get().(*NrtCrmActivityStatisticsDataReq)
+}
+
+// ReleaseNrtCrmActivityStatisticsDataReq 释放NrtCrmActivityStatisticsDataReq
+func ReleaseNrtCrmActivityStatisticsDataReq(v *NrtCrmActivityStatisticsDataReq) {
+	v.Date = ""
+	v.BizCode = ""
+	v.Uv = 0
+	v.ActivityId = 0
+	v.Pv = 0
+	v.StoreId = 0
+	v.GuiderId = 0
+	poolNrtCrmActivityStatisticsDataReq.Put(v)
 }

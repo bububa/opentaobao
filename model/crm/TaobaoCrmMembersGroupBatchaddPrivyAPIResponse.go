@@ -2,6 +2,7 @@ package crm
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoCrmMembersGroupBatchaddPrivyAPIResponse struct {
 	TaobaoCrmMembersGroupBatchaddPrivyAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoCrmMembersGroupBatchaddPrivyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoCrmMembersGroupBatchaddPrivyAPIResponseModel).Reset()
+}
+
 // TaobaoCrmMembersGroupBatchaddPrivyAPIResponseModel is 一批会员添加分组(隐私号版） 成功返回结果
 type TaobaoCrmMembersGroupBatchaddPrivyAPIResponseModel struct {
 	XMLName xml.Name `xml:"crm_members_group_batchadd_privy_response"`
@@ -22,4 +29,27 @@ type TaobaoCrmMembersGroupBatchaddPrivyAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 添加操作是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoCrmMembersGroupBatchaddPrivyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoCrmMembersGroupBatchaddPrivyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoCrmMembersGroupBatchaddPrivyAPIResponse)
+	},
+}
+
+// GetTaobaoCrmMembersGroupBatchaddPrivyAPIResponse 从 sync.Pool 获取 TaobaoCrmMembersGroupBatchaddPrivyAPIResponse
+func GetTaobaoCrmMembersGroupBatchaddPrivyAPIResponse() *TaobaoCrmMembersGroupBatchaddPrivyAPIResponse {
+	return poolTaobaoCrmMembersGroupBatchaddPrivyAPIResponse.Get().(*TaobaoCrmMembersGroupBatchaddPrivyAPIResponse)
+}
+
+// ReleaseTaobaoCrmMembersGroupBatchaddPrivyAPIResponse 将 TaobaoCrmMembersGroupBatchaddPrivyAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoCrmMembersGroupBatchaddPrivyAPIResponse(v *TaobaoCrmMembersGroupBatchaddPrivyAPIResponse) {
+	v.Reset()
+	poolTaobaoCrmMembersGroupBatchaddPrivyAPIResponse.Put(v)
 }

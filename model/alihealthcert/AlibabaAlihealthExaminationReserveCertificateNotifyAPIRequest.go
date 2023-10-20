@@ -2,6 +2,7 @@ package alihealthcert
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest struct {
 // NewAlibabaAlihealthExaminationReserveCertificateNotifyRequest 初始化AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest对象
 func NewAlibabaAlihealthExaminationReserveCertificateNotifyRequest() *AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest {
 	return &AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) Reset() {
+	r._uniqReserveCode = ""
+	r._reserveNumber = ""
+	r._reportStatus = ""
+	r._checkNo = ""
+	r._statusReason = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) SetStatu
 // GetStatusReason StatusReason Getter
 func (r AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) GetStatusReason() string {
 	return r._statusReason
+}
+
+var poolAlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthExaminationReserveCertificateNotifyRequest()
+	},
+}
+
+// GetAlibabaAlihealthExaminationReserveCertificateNotifyRequest 从 sync.Pool 获取 AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest
+func GetAlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest() *AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest {
+	return poolAlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest.Get().(*AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest 将 AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest(v *AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest.Put(v)
 }

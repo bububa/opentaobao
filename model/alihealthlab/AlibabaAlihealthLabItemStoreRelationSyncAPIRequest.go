@@ -2,6 +2,7 @@ package alihealthlab
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAlihealthLabItemStoreRelationSyncAPIRequest struct {
 // NewAlibabaAlihealthLabItemStoreRelationSyncRequest 初始化AlibabaAlihealthLabItemStoreRelationSyncAPIRequest对象
 func NewAlibabaAlihealthLabItemStoreRelationSyncRequest() *AlibabaAlihealthLabItemStoreRelationSyncAPIRequest {
 	return &AlibabaAlihealthLabItemStoreRelationSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) Reset() {
+	r._isvStoreCodes = r._isvStoreCodes[:0]
+	r._isvRelationStatus = ""
+	r._isvItemCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) SetIsvItemCode(_isv
 // GetIsvItemCode IsvItemCode Getter
 func (r AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) GetIsvItemCode() string {
 	return r._isvItemCode
+}
+
+var poolAlibabaAlihealthLabItemStoreRelationSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthLabItemStoreRelationSyncRequest()
+	},
+}
+
+// GetAlibabaAlihealthLabItemStoreRelationSyncRequest 从 sync.Pool 获取 AlibabaAlihealthLabItemStoreRelationSyncAPIRequest
+func GetAlibabaAlihealthLabItemStoreRelationSyncAPIRequest() *AlibabaAlihealthLabItemStoreRelationSyncAPIRequest {
+	return poolAlibabaAlihealthLabItemStoreRelationSyncAPIRequest.Get().(*AlibabaAlihealthLabItemStoreRelationSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthLabItemStoreRelationSyncAPIRequest 将 AlibabaAlihealthLabItemStoreRelationSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthLabItemStoreRelationSyncAPIRequest(v *AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthLabItemStoreRelationSyncAPIRequest.Put(v)
 }

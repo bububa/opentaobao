@@ -9,11 +9,6 @@ import (
 // alibaba.idle.tender.pre.pay.action
 //
 // 服务商预付款完成接口
-func AlibabaIdleTenderPrePayAction(clt *core.SDKClient, req *idle.AlibabaIdleTenderPrePayActionAPIRequest, session string) (*idle.AlibabaIdleTenderPrePayActionAPIResponse, error) {
-	var resp idle.AlibabaIdleTenderPrePayActionAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleTenderPrePayAction(clt *core.SDKClient, req *idle.AlibabaIdleTenderPrePayActionAPIRequest, resp *idle.AlibabaIdleTenderPrePayActionAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

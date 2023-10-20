@@ -1,5 +1,9 @@
 package waybill
 
+import (
+	"sync"
+)
+
 // PrintCheckInfo 结构体
 type PrintCheckInfo struct {
 	// 物流服务能力集合
@@ -42,4 +46,40 @@ type PrintCheckInfo struct {
 	Volume int64 `json:"volume,omitempty" xml:"volume,omitempty"`
 	// 包裹重量 单位为G(克)
 	Weight int64 `json:"weight,omitempty" xml:"weight,omitempty"`
+}
+
+var poolPrintCheckInfo = sync.Pool{
+	New: func() any {
+		return new(PrintCheckInfo)
+	},
+}
+
+// GetPrintCheckInfo() 从对象池中获取PrintCheckInfo
+func GetPrintCheckInfo() *PrintCheckInfo {
+	return poolPrintCheckInfo.Get().(*PrintCheckInfo)
+}
+
+// ReleasePrintCheckInfo 释放PrintCheckInfo
+func ReleasePrintCheckInfo(v *PrintCheckInfo) {
+	v.LogisticsServiceList = v.LogisticsServiceList[:0]
+	v.ConsigneeBranchCode = ""
+	v.ConsigneeBranchName = ""
+	v.ConsigneeName = ""
+	v.ConsigneePhone = ""
+	v.PackageCenterCode = ""
+	v.PackageCenterName = ""
+	v.PrintConfig = ""
+	v.ProductType = ""
+	v.SendName = ""
+	v.SendPhone = ""
+	v.ShippingBranchCode = ""
+	v.ShippingBranchName = ""
+	v.ShortAddress = ""
+	v.WaybillCode = ""
+	v.ConsigneeAddress = nil
+	v.ShippingAddress = nil
+	v.RealUserId = 0
+	v.Volume = 0
+	v.Weight = 0
+	poolPrintCheckInfo.Put(v)
 }

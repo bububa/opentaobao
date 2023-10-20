@@ -1,5 +1,9 @@
 package axindata
 
+import (
+	"sync"
+)
+
 // BedInfoDto 结构体
 type BedInfoDto struct {
 	// 描述
@@ -12,4 +16,25 @@ type BedInfoDto struct {
 	Length string `json:"length,omitempty" xml:"length,omitempty"`
 	// 数量
 	BedNum int64 `json:"bed_num,omitempty" xml:"bed_num,omitempty"`
+}
+
+var poolBedInfoDto = sync.Pool{
+	New: func() any {
+		return new(BedInfoDto)
+	},
+}
+
+// GetBedInfoDto() 从对象池中获取BedInfoDto
+func GetBedInfoDto() *BedInfoDto {
+	return poolBedInfoDto.Get().(*BedInfoDto)
+}
+
+// ReleaseBedInfoDto 释放BedInfoDto
+func ReleaseBedInfoDto(v *BedInfoDto) {
+	v.Desc = ""
+	v.BedType = ""
+	v.Width = ""
+	v.Length = ""
+	v.BedNum = 0
+	poolBedInfoDto.Put(v)
 }

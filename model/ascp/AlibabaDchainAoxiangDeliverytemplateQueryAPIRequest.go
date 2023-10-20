@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangDeliverytemplateQueryAPIRequest struct {
 // NewAlibabaDchainAoxiangDeliverytemplateQueryRequest 初始化AlibabaDchainAoxiangDeliverytemplateQueryAPIRequest对象
 func NewAlibabaDchainAoxiangDeliverytemplateQueryRequest() *AlibabaDchainAoxiangDeliverytemplateQueryAPIRequest {
 	return &AlibabaDchainAoxiangDeliverytemplateQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangDeliverytemplateQueryAPIRequest) Reset() {
+	r._queryDeliveryTemplateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangDeliverytemplateQueryAPIRequest) SetQueryDeliveryTe
 // GetQueryDeliveryTemplateRequest QueryDeliveryTemplateRequest Getter
 func (r AlibabaDchainAoxiangDeliverytemplateQueryAPIRequest) GetQueryDeliveryTemplateRequest() *QueryDeliveryTemplateRequest {
 	return r._queryDeliveryTemplateRequest
+}
+
+var poolAlibabaDchainAoxiangDeliverytemplateQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangDeliverytemplateQueryRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangDeliverytemplateQueryRequest 从 sync.Pool 获取 AlibabaDchainAoxiangDeliverytemplateQueryAPIRequest
+func GetAlibabaDchainAoxiangDeliverytemplateQueryAPIRequest() *AlibabaDchainAoxiangDeliverytemplateQueryAPIRequest {
+	return poolAlibabaDchainAoxiangDeliverytemplateQueryAPIRequest.Get().(*AlibabaDchainAoxiangDeliverytemplateQueryAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangDeliverytemplateQueryAPIRequest 将 AlibabaDchainAoxiangDeliverytemplateQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangDeliverytemplateQueryAPIRequest(v *AlibabaDchainAoxiangDeliverytemplateQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangDeliverytemplateQueryAPIRequest.Put(v)
 }

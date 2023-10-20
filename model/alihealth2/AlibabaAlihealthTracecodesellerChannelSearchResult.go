@@ -1,5 +1,9 @@
 package alihealth2
 
+import (
+	"sync"
+)
+
 // AlibabaAlihealthTracecodesellerChannelSearchResult 结构体
 type AlibabaAlihealthTracecodesellerChannelSearchResult struct {
 	// 区县
@@ -14,4 +18,26 @@ type AlibabaAlihealthTracecodesellerChannelSearchResult struct {
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 自定义编码
 	ProvDesc string `json:"prov_desc,omitempty" xml:"prov_desc,omitempty"`
+}
+
+var poolAlibabaAlihealthTracecodesellerChannelSearchResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthTracecodesellerChannelSearchResult)
+	},
+}
+
+// GetAlibabaAlihealthTracecodesellerChannelSearchResult() 从对象池中获取AlibabaAlihealthTracecodesellerChannelSearchResult
+func GetAlibabaAlihealthTracecodesellerChannelSearchResult() *AlibabaAlihealthTracecodesellerChannelSearchResult {
+	return poolAlibabaAlihealthTracecodesellerChannelSearchResult.Get().(*AlibabaAlihealthTracecodesellerChannelSearchResult)
+}
+
+// ReleaseAlibabaAlihealthTracecodesellerChannelSearchResult 释放AlibabaAlihealthTracecodesellerChannelSearchResult
+func ReleaseAlibabaAlihealthTracecodesellerChannelSearchResult(v *AlibabaAlihealthTracecodesellerChannelSearchResult) {
+	v.AreaDesc = ""
+	v.CityDesc = ""
+	v.UserName = ""
+	v.MerchantId = ""
+	v.Code = ""
+	v.ProvDesc = ""
+	poolAlibabaAlihealthTracecodesellerChannelSearchResult.Put(v)
 }

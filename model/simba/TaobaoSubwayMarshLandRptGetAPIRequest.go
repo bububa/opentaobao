@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoSubwayMarshLandRptGetAPIRequest struct {
 // NewTaobaoSubwayMarshLandRptGetRequest 初始化TaobaoSubwayMarshLandRptGetAPIRequest对象
 func NewTaobaoSubwayMarshLandRptGetRequest() *TaobaoSubwayMarshLandRptGetAPIRequest {
 	return &TaobaoSubwayMarshLandRptGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSubwayMarshLandRptGetAPIRequest) Reset() {
+	r._nick = ""
+	r._endDate = ""
+	r._adgroupIdEqual = ""
+	r._isAutoMatchEqual = ""
+	r._campaignIdEqual = ""
+	r._startDate = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoSubwayMarshLandRptGetAPIRequest) SetStartDate(_startDate string) 
 // GetStartDate StartDate Getter
 func (r TaobaoSubwayMarshLandRptGetAPIRequest) GetStartDate() string {
 	return r._startDate
+}
+
+var poolTaobaoSubwayMarshLandRptGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSubwayMarshLandRptGetRequest()
+	},
+}
+
+// GetTaobaoSubwayMarshLandRptGetRequest 从 sync.Pool 获取 TaobaoSubwayMarshLandRptGetAPIRequest
+func GetTaobaoSubwayMarshLandRptGetAPIRequest() *TaobaoSubwayMarshLandRptGetAPIRequest {
+	return poolTaobaoSubwayMarshLandRptGetAPIRequest.Get().(*TaobaoSubwayMarshLandRptGetAPIRequest)
+}
+
+// ReleaseTaobaoSubwayMarshLandRptGetAPIRequest 将 TaobaoSubwayMarshLandRptGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSubwayMarshLandRptGetAPIRequest(v *TaobaoSubwayMarshLandRptGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSubwayMarshLandRptGetAPIRequest.Put(v)
 }

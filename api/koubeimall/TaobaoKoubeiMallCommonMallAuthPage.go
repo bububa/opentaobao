@@ -9,11 +9,6 @@ import (
 // taobao.koubei.mall.common.mall.auth.page
 //
 // 分页查询口碑已授权商圈的列表信息
-func TaobaoKoubeiMallCommonMallAuthPage(clt *core.SDKClient, req *koubeimall.TaobaoKoubeiMallCommonMallAuthPageAPIRequest, session string) (*koubeimall.TaobaoKoubeiMallCommonMallAuthPageAPIResponse, error) {
-	var resp koubeimall.TaobaoKoubeiMallCommonMallAuthPageAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoKoubeiMallCommonMallAuthPage(clt *core.SDKClient, req *koubeimall.TaobaoKoubeiMallCommonMallAuthPageAPIRequest, resp *koubeimall.TaobaoKoubeiMallCommonMallAuthPageAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

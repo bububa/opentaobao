@@ -2,6 +2,7 @@ package perfect
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTcwmsOutboundOrderCancelAPIRequest struct {
 // NewAlibabaTcwmsOutboundOrderCancelRequest 初始化AlibabaTcwmsOutboundOrderCancelAPIRequest对象
 func NewAlibabaTcwmsOutboundOrderCancelRequest() *AlibabaTcwmsOutboundOrderCancelAPIRequest {
 	return &AlibabaTcwmsOutboundOrderCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTcwmsOutboundOrderCancelAPIRequest) Reset() {
+	r._outboundCancelRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTcwmsOutboundOrderCancelAPIRequest) SetOutboundCancelRequest(_ou
 // GetOutboundCancelRequest OutboundCancelRequest Getter
 func (r AlibabaTcwmsOutboundOrderCancelAPIRequest) GetOutboundCancelRequest() *OutboundCancelRequest {
 	return r._outboundCancelRequest
+}
+
+var poolAlibabaTcwmsOutboundOrderCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTcwmsOutboundOrderCancelRequest()
+	},
+}
+
+// GetAlibabaTcwmsOutboundOrderCancelRequest 从 sync.Pool 获取 AlibabaTcwmsOutboundOrderCancelAPIRequest
+func GetAlibabaTcwmsOutboundOrderCancelAPIRequest() *AlibabaTcwmsOutboundOrderCancelAPIRequest {
+	return poolAlibabaTcwmsOutboundOrderCancelAPIRequest.Get().(*AlibabaTcwmsOutboundOrderCancelAPIRequest)
+}
+
+// ReleaseAlibabaTcwmsOutboundOrderCancelAPIRequest 将 AlibabaTcwmsOutboundOrderCancelAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTcwmsOutboundOrderCancelAPIRequest(v *AlibabaTcwmsOutboundOrderCancelAPIRequest) {
+	v.Reset()
+	poolAlibabaTcwmsOutboundOrderCancelAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTclsAelophyMerchantOrderUploadAPIRequest struct {
 // NewAlibabaTclsAelophyMerchantOrderUploadRequest 初始化AlibabaTclsAelophyMerchantOrderUploadAPIRequest对象
 func NewAlibabaTclsAelophyMerchantOrderUploadRequest() *AlibabaTclsAelophyMerchantOrderUploadAPIRequest {
 	return &AlibabaTclsAelophyMerchantOrderUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTclsAelophyMerchantOrderUploadAPIRequest) Reset() {
+	r._orderInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTclsAelophyMerchantOrderUploadAPIRequest) SetOrderInfo(_orderInf
 // GetOrderInfo OrderInfo Getter
 func (r AlibabaTclsAelophyMerchantOrderUploadAPIRequest) GetOrderInfo() *MerchantOrderInfo {
 	return r._orderInfo
+}
+
+var poolAlibabaTclsAelophyMerchantOrderUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTclsAelophyMerchantOrderUploadRequest()
+	},
+}
+
+// GetAlibabaTclsAelophyMerchantOrderUploadRequest 从 sync.Pool 获取 AlibabaTclsAelophyMerchantOrderUploadAPIRequest
+func GetAlibabaTclsAelophyMerchantOrderUploadAPIRequest() *AlibabaTclsAelophyMerchantOrderUploadAPIRequest {
+	return poolAlibabaTclsAelophyMerchantOrderUploadAPIRequest.Get().(*AlibabaTclsAelophyMerchantOrderUploadAPIRequest)
+}
+
+// ReleaseAlibabaTclsAelophyMerchantOrderUploadAPIRequest 将 AlibabaTclsAelophyMerchantOrderUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTclsAelophyMerchantOrderUploadAPIRequest(v *AlibabaTclsAelophyMerchantOrderUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaTclsAelophyMerchantOrderUploadAPIRequest.Put(v)
 }

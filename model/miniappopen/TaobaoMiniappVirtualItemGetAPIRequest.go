@@ -2,6 +2,7 @@ package miniappopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoMiniappVirtualItemGetAPIRequest struct {
 // NewTaobaoMiniappVirtualItemGetRequest 初始化TaobaoMiniappVirtualItemGetAPIRequest对象
 func NewTaobaoMiniappVirtualItemGetRequest() *TaobaoMiniappVirtualItemGetAPIRequest {
 	return &TaobaoMiniappVirtualItemGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMiniappVirtualItemGetAPIRequest) Reset() {
+	r._itemRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoMiniappVirtualItemGetAPIRequest) SetItemRequest(_itemRequest *Min
 // GetItemRequest ItemRequest Getter
 func (r TaobaoMiniappVirtualItemGetAPIRequest) GetItemRequest() *MiniappItemRequest {
 	return r._itemRequest
+}
+
+var poolTaobaoMiniappVirtualItemGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMiniappVirtualItemGetRequest()
+	},
+}
+
+// GetTaobaoMiniappVirtualItemGetRequest 从 sync.Pool 获取 TaobaoMiniappVirtualItemGetAPIRequest
+func GetTaobaoMiniappVirtualItemGetAPIRequest() *TaobaoMiniappVirtualItemGetAPIRequest {
+	return poolTaobaoMiniappVirtualItemGetAPIRequest.Get().(*TaobaoMiniappVirtualItemGetAPIRequest)
+}
+
+// ReleaseTaobaoMiniappVirtualItemGetAPIRequest 将 TaobaoMiniappVirtualItemGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMiniappVirtualItemGetAPIRequest(v *TaobaoMiniappVirtualItemGetAPIRequest) {
+	v.Reset()
+	poolTaobaoMiniappVirtualItemGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package wms
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoWlbWmsSkuGetAPIRequest struct {
 // NewTaobaoWlbWmsSkuGetRequest 初始化TaobaoWlbWmsSkuGetAPIRequest对象
 func NewTaobaoWlbWmsSkuGetRequest() *TaobaoWlbWmsSkuGetAPIRequest {
 	return &TaobaoWlbWmsSkuGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbWmsSkuGetAPIRequest) Reset() {
+	r._itemCode = ""
+	r._itemId = ""
+	r._ownerUserId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoWlbWmsSkuGetAPIRequest) SetOwnerUserId(_ownerUserId string) error
 // GetOwnerUserId OwnerUserId Getter
 func (r TaobaoWlbWmsSkuGetAPIRequest) GetOwnerUserId() string {
 	return r._ownerUserId
+}
+
+var poolTaobaoWlbWmsSkuGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbWmsSkuGetRequest()
+	},
+}
+
+// GetTaobaoWlbWmsSkuGetRequest 从 sync.Pool 获取 TaobaoWlbWmsSkuGetAPIRequest
+func GetTaobaoWlbWmsSkuGetAPIRequest() *TaobaoWlbWmsSkuGetAPIRequest {
+	return poolTaobaoWlbWmsSkuGetAPIRequest.Get().(*TaobaoWlbWmsSkuGetAPIRequest)
+}
+
+// ReleaseTaobaoWlbWmsSkuGetAPIRequest 将 TaobaoWlbWmsSkuGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbWmsSkuGetAPIRequest(v *TaobaoWlbWmsSkuGetAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbWmsSkuGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaHmMarketingItempoolAddcategoryAPIRequest struct {
 // NewAlibabaHmMarketingItempoolAddcategoryRequest 初始化AlibabaHmMarketingItempoolAddcategoryAPIRequest对象
 func NewAlibabaHmMarketingItempoolAddcategoryRequest() *AlibabaHmMarketingItempoolAddcategoryAPIRequest {
 	return &AlibabaHmMarketingItempoolAddcategoryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHmMarketingItempoolAddcategoryAPIRequest) Reset() {
+	r._itemPoolActivityCategory = nil
+	r._commonActivityParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaHmMarketingItempoolAddcategoryAPIRequest) SetCommonActivityParam
 // GetCommonActivityParam CommonActivityParam Getter
 func (r AlibabaHmMarketingItempoolAddcategoryAPIRequest) GetCommonActivityParam() *CommonActivityParam {
 	return r._commonActivityParam
+}
+
+var poolAlibabaHmMarketingItempoolAddcategoryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHmMarketingItempoolAddcategoryRequest()
+	},
+}
+
+// GetAlibabaHmMarketingItempoolAddcategoryRequest 从 sync.Pool 获取 AlibabaHmMarketingItempoolAddcategoryAPIRequest
+func GetAlibabaHmMarketingItempoolAddcategoryAPIRequest() *AlibabaHmMarketingItempoolAddcategoryAPIRequest {
+	return poolAlibabaHmMarketingItempoolAddcategoryAPIRequest.Get().(*AlibabaHmMarketingItempoolAddcategoryAPIRequest)
+}
+
+// ReleaseAlibabaHmMarketingItempoolAddcategoryAPIRequest 将 AlibabaHmMarketingItempoolAddcategoryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHmMarketingItempoolAddcategoryAPIRequest(v *AlibabaHmMarketingItempoolAddcategoryAPIRequest) {
+	v.Reset()
+	poolAlibabaHmMarketingItempoolAddcategoryAPIRequest.Put(v)
 }

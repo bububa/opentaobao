@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCampusGuardControllerOfflinelogAPIRequest struct {
 // NewAlibabaCampusGuardControllerOfflinelogRequest 初始化AlibabaCampusGuardControllerOfflinelogAPIRequest对象
 func NewAlibabaCampusGuardControllerOfflinelogRequest() *AlibabaCampusGuardControllerOfflinelogAPIRequest {
 	return &AlibabaCampusGuardControllerOfflinelogAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusGuardControllerOfflinelogAPIRequest) Reset() {
+	r._controllerOfflineRequestDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCampusGuardControllerOfflinelogAPIRequest) SetControllerOfflineR
 // GetControllerOfflineRequestDto ControllerOfflineRequestDto Getter
 func (r AlibabaCampusGuardControllerOfflinelogAPIRequest) GetControllerOfflineRequestDto() *ControllerOfflineRequestDto {
 	return r._controllerOfflineRequestDto
+}
+
+var poolAlibabaCampusGuardControllerOfflinelogAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusGuardControllerOfflinelogRequest()
+	},
+}
+
+// GetAlibabaCampusGuardControllerOfflinelogRequest 从 sync.Pool 获取 AlibabaCampusGuardControllerOfflinelogAPIRequest
+func GetAlibabaCampusGuardControllerOfflinelogAPIRequest() *AlibabaCampusGuardControllerOfflinelogAPIRequest {
+	return poolAlibabaCampusGuardControllerOfflinelogAPIRequest.Get().(*AlibabaCampusGuardControllerOfflinelogAPIRequest)
+}
+
+// ReleaseAlibabaCampusGuardControllerOfflinelogAPIRequest 将 AlibabaCampusGuardControllerOfflinelogAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusGuardControllerOfflinelogAPIRequest(v *AlibabaCampusGuardControllerOfflinelogAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusGuardControllerOfflinelogAPIRequest.Put(v)
 }

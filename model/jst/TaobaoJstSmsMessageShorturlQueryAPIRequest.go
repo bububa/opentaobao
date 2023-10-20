@@ -2,6 +2,7 @@ package jst
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoJstSmsMessageShorturlQueryAPIRequest struct {
 // NewTaobaoJstSmsMessageShorturlQueryRequest 初始化TaobaoJstSmsMessageShorturlQueryAPIRequest对象
 func NewTaobaoJstSmsMessageShorturlQueryRequest() *TaobaoJstSmsMessageShorturlQueryAPIRequest {
 	return &TaobaoJstSmsMessageShorturlQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJstSmsMessageShorturlQueryAPIRequest) Reset() {
+	r._shortName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoJstSmsMessageShorturlQueryAPIRequest) SetShortName(_shortName str
 // GetShortName ShortName Getter
 func (r TaobaoJstSmsMessageShorturlQueryAPIRequest) GetShortName() string {
 	return r._shortName
+}
+
+var poolTaobaoJstSmsMessageShorturlQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJstSmsMessageShorturlQueryRequest()
+	},
+}
+
+// GetTaobaoJstSmsMessageShorturlQueryRequest 从 sync.Pool 获取 TaobaoJstSmsMessageShorturlQueryAPIRequest
+func GetTaobaoJstSmsMessageShorturlQueryAPIRequest() *TaobaoJstSmsMessageShorturlQueryAPIRequest {
+	return poolTaobaoJstSmsMessageShorturlQueryAPIRequest.Get().(*TaobaoJstSmsMessageShorturlQueryAPIRequest)
+}
+
+// ReleaseTaobaoJstSmsMessageShorturlQueryAPIRequest 将 TaobaoJstSmsMessageShorturlQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJstSmsMessageShorturlQueryAPIRequest(v *TaobaoJstSmsMessageShorturlQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoJstSmsMessageShorturlQueryAPIRequest.Put(v)
 }

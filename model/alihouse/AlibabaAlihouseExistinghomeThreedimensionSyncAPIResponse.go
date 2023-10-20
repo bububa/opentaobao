@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihouseExistinghomeThreedimensionSyncAPIResponse struct {
 	AlibabaAlihouseExistinghomeThreedimensionSyncAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihouseExistinghomeThreedimensionSyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihouseExistinghomeThreedimensionSyncAPIResponseModel).Reset()
+}
+
 // AlibabaAlihouseExistinghomeThreedimensionSyncAPIResponseModel is 二手房3D户型信息同步 成功返回结果
 type AlibabaAlihouseExistinghomeThreedimensionSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihouse_existinghome_threedimension_sync_response"`
@@ -22,4 +29,27 @@ type AlibabaAlihouseExistinghomeThreedimensionSyncAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *AlibabaAlihouseExistinghomeThreedimensionSyncResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihouseExistinghomeThreedimensionSyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihouseExistinghomeThreedimensionSyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihouseExistinghomeThreedimensionSyncAPIResponse)
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeThreedimensionSyncAPIResponse 从 sync.Pool 获取 AlibabaAlihouseExistinghomeThreedimensionSyncAPIResponse
+func GetAlibabaAlihouseExistinghomeThreedimensionSyncAPIResponse() *AlibabaAlihouseExistinghomeThreedimensionSyncAPIResponse {
+	return poolAlibabaAlihouseExistinghomeThreedimensionSyncAPIResponse.Get().(*AlibabaAlihouseExistinghomeThreedimensionSyncAPIResponse)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeThreedimensionSyncAPIResponse 将 AlibabaAlihouseExistinghomeThreedimensionSyncAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeThreedimensionSyncAPIResponse(v *AlibabaAlihouseExistinghomeThreedimensionSyncAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeThreedimensionSyncAPIResponse.Put(v)
 }

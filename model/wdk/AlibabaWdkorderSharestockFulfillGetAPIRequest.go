@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkorderSharestockFulfillGetAPIRequest struct {
 // NewAlibabaWdkorderSharestockFulfillGetRequest 初始化AlibabaWdkorderSharestockFulfillGetAPIRequest对象
 func NewAlibabaWdkorderSharestockFulfillGetRequest() *AlibabaWdkorderSharestockFulfillGetAPIRequest {
 	return &AlibabaWdkorderSharestockFulfillGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkorderSharestockFulfillGetAPIRequest) Reset() {
+	r._fulfillOrderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkorderSharestockFulfillGetAPIRequest) SetFulfillOrderId(_fulfi
 // GetFulfillOrderId FulfillOrderId Getter
 func (r AlibabaWdkorderSharestockFulfillGetAPIRequest) GetFulfillOrderId() string {
 	return r._fulfillOrderId
+}
+
+var poolAlibabaWdkorderSharestockFulfillGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkorderSharestockFulfillGetRequest()
+	},
+}
+
+// GetAlibabaWdkorderSharestockFulfillGetRequest 从 sync.Pool 获取 AlibabaWdkorderSharestockFulfillGetAPIRequest
+func GetAlibabaWdkorderSharestockFulfillGetAPIRequest() *AlibabaWdkorderSharestockFulfillGetAPIRequest {
+	return poolAlibabaWdkorderSharestockFulfillGetAPIRequest.Get().(*AlibabaWdkorderSharestockFulfillGetAPIRequest)
+}
+
+// ReleaseAlibabaWdkorderSharestockFulfillGetAPIRequest 将 AlibabaWdkorderSharestockFulfillGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkorderSharestockFulfillGetAPIRequest(v *AlibabaWdkorderSharestockFulfillGetAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkorderSharestockFulfillGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package legalsuit
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLegalSuitPaymentPushAPIRequest struct {
 // NewAlibabaLegalSuitPaymentPushRequest 初始化AlibabaLegalSuitPaymentPushAPIRequest对象
 func NewAlibabaLegalSuitPaymentPushRequest() *AlibabaLegalSuitPaymentPushAPIRequest {
 	return &AlibabaLegalSuitPaymentPushAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLegalSuitPaymentPushAPIRequest) Reset() {
+	r._paymentOrderModel = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLegalSuitPaymentPushAPIRequest) SetPaymentOrderModel(_paymentOrd
 // GetPaymentOrderModel PaymentOrderModel Getter
 func (r AlibabaLegalSuitPaymentPushAPIRequest) GetPaymentOrderModel() *PaymentOrderModel {
 	return r._paymentOrderModel
+}
+
+var poolAlibabaLegalSuitPaymentPushAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLegalSuitPaymentPushRequest()
+	},
+}
+
+// GetAlibabaLegalSuitPaymentPushRequest 从 sync.Pool 获取 AlibabaLegalSuitPaymentPushAPIRequest
+func GetAlibabaLegalSuitPaymentPushAPIRequest() *AlibabaLegalSuitPaymentPushAPIRequest {
+	return poolAlibabaLegalSuitPaymentPushAPIRequest.Get().(*AlibabaLegalSuitPaymentPushAPIRequest)
+}
+
+// ReleaseAlibabaLegalSuitPaymentPushAPIRequest 将 AlibabaLegalSuitPaymentPushAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLegalSuitPaymentPushAPIRequest(v *AlibabaLegalSuitPaymentPushAPIRequest) {
+	v.Reset()
+	poolAlibabaLegalSuitPaymentPushAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.hm.marketing.itempool.item.add.async
 //
 // 新分组模型下新增商品
-func AlibabaHmMarketingItempoolItemAddAsync(clt *core.SDKClient, req *wdk.AlibabaHmMarketingItempoolItemAddAsyncAPIRequest, session string) (*wdk.AlibabaHmMarketingItempoolItemAddAsyncAPIResponse, error) {
-	var resp wdk.AlibabaHmMarketingItempoolItemAddAsyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHmMarketingItempoolItemAddAsync(clt *core.SDKClient, req *wdk.AlibabaHmMarketingItempoolItemAddAsyncAPIRequest, resp *wdk.AlibabaHmMarketingItempoolItemAddAsyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

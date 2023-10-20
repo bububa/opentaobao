@@ -9,11 +9,6 @@ import (
 // taobao.simba.salestar.creative.add
 //
 // 创建一个创意
-func TaobaoSimbaSalestarCreativeAdd(clt *core.SDKClient, req *simba.TaobaoSimbaSalestarCreativeAddAPIRequest, session string) (*simba.TaobaoSimbaSalestarCreativeAddAPIResponse, error) {
-	var resp simba.TaobaoSimbaSalestarCreativeAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaSalestarCreativeAdd(clt *core.SDKClient, req *simba.TaobaoSimbaSalestarCreativeAddAPIRequest, resp *simba.TaobaoSimbaSalestarCreativeAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

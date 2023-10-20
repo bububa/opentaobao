@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainIsvWmsOrderprocessBatchReportAPIRequest struct {
 // NewAlibabaDchainIsvWmsOrderprocessBatchReportRequest 初始化AlibabaDchainIsvWmsOrderprocessBatchReportAPIRequest对象
 func NewAlibabaDchainIsvWmsOrderprocessBatchReportRequest() *AlibabaDchainIsvWmsOrderprocessBatchReportAPIRequest {
 	return &AlibabaDchainIsvWmsOrderprocessBatchReportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainIsvWmsOrderprocessBatchReportAPIRequest) Reset() {
+	r._orderProcessBatchReportRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainIsvWmsOrderprocessBatchReportAPIRequest) SetOrderProcessBa
 // GetOrderProcessBatchReportRequest OrderProcessBatchReportRequest Getter
 func (r AlibabaDchainIsvWmsOrderprocessBatchReportAPIRequest) GetOrderProcessBatchReportRequest() *WmsOrderProcessBatchReportRequest {
 	return r._orderProcessBatchReportRequest
+}
+
+var poolAlibabaDchainIsvWmsOrderprocessBatchReportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainIsvWmsOrderprocessBatchReportRequest()
+	},
+}
+
+// GetAlibabaDchainIsvWmsOrderprocessBatchReportRequest 从 sync.Pool 获取 AlibabaDchainIsvWmsOrderprocessBatchReportAPIRequest
+func GetAlibabaDchainIsvWmsOrderprocessBatchReportAPIRequest() *AlibabaDchainIsvWmsOrderprocessBatchReportAPIRequest {
+	return poolAlibabaDchainIsvWmsOrderprocessBatchReportAPIRequest.Get().(*AlibabaDchainIsvWmsOrderprocessBatchReportAPIRequest)
+}
+
+// ReleaseAlibabaDchainIsvWmsOrderprocessBatchReportAPIRequest 将 AlibabaDchainIsvWmsOrderprocessBatchReportAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainIsvWmsOrderprocessBatchReportAPIRequest(v *AlibabaDchainIsvWmsOrderprocessBatchReportAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainIsvWmsOrderprocessBatchReportAPIRequest.Put(v)
 }

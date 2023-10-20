@@ -9,11 +9,6 @@ import (
 // taobao.eticket.merchant.ma.reverse
 //
 // 电子凭证平台冲正接口
-func TaobaoEticketMerchantMaReverse(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantMaReverseAPIRequest, session string) (*eticket.TaobaoEticketMerchantMaReverseAPIResponse, error) {
-	var resp eticket.TaobaoEticketMerchantMaReverseAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoEticketMerchantMaReverse(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantMaReverseAPIRequest, resp *eticket.TaobaoEticketMerchantMaReverseAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

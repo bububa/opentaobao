@@ -2,6 +2,7 @@ package subuser
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoSubusersSubaccountSearchAPIRequest struct {
 // NewTaobaoSubusersSubaccountSearchRequest 初始化TaobaoSubusersSubaccountSearchAPIRequest对象
 func NewTaobaoSubusersSubaccountSearchRequest() *TaobaoSubusersSubaccountSearchAPIRequest {
 	return &TaobaoSubusersSubaccountSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSubusersSubaccountSearchAPIRequest) Reset() {
+	r._mainNick = ""
+	r._filterKey = ""
+	r._pageSize = 0
+	r._pageNum = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoSubusersSubaccountSearchAPIRequest) SetPageNum(_pageNum int64) er
 // GetPageNum PageNum Getter
 func (r TaobaoSubusersSubaccountSearchAPIRequest) GetPageNum() int64 {
 	return r._pageNum
+}
+
+var poolTaobaoSubusersSubaccountSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSubusersSubaccountSearchRequest()
+	},
+}
+
+// GetTaobaoSubusersSubaccountSearchRequest 从 sync.Pool 获取 TaobaoSubusersSubaccountSearchAPIRequest
+func GetTaobaoSubusersSubaccountSearchAPIRequest() *TaobaoSubusersSubaccountSearchAPIRequest {
+	return poolTaobaoSubusersSubaccountSearchAPIRequest.Get().(*TaobaoSubusersSubaccountSearchAPIRequest)
+}
+
+// ReleaseTaobaoSubusersSubaccountSearchAPIRequest 将 TaobaoSubusersSubaccountSearchAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSubusersSubaccountSearchAPIRequest(v *TaobaoSubusersSubaccountSearchAPIRequest) {
+	v.Reset()
+	poolTaobaoSubusersSubaccountSearchAPIRequest.Put(v)
 }

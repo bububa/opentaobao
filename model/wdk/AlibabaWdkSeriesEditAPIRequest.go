@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkSeriesEditAPIRequest struct {
 // NewAlibabaWdkSeriesEditRequest 初始化AlibabaWdkSeriesEditAPIRequest对象
 func NewAlibabaWdkSeriesEditRequest() *AlibabaWdkSeriesEditAPIRequest {
 	return &AlibabaWdkSeriesEditAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkSeriesEditAPIRequest) Reset() {
+	r._series = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkSeriesEditAPIRequest) SetSeries(_series *SkuSeriesEditRequest
 // GetSeries Series Getter
 func (r AlibabaWdkSeriesEditAPIRequest) GetSeries() *SkuSeriesEditRequest {
 	return r._series
+}
+
+var poolAlibabaWdkSeriesEditAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkSeriesEditRequest()
+	},
+}
+
+// GetAlibabaWdkSeriesEditRequest 从 sync.Pool 获取 AlibabaWdkSeriesEditAPIRequest
+func GetAlibabaWdkSeriesEditAPIRequest() *AlibabaWdkSeriesEditAPIRequest {
+	return poolAlibabaWdkSeriesEditAPIRequest.Get().(*AlibabaWdkSeriesEditAPIRequest)
+}
+
+// ReleaseAlibabaWdkSeriesEditAPIRequest 将 AlibabaWdkSeriesEditAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkSeriesEditAPIRequest(v *AlibabaWdkSeriesEditAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkSeriesEditAPIRequest.Put(v)
 }

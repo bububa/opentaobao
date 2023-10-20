@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // FuturePlanDetail 结构体
 type FuturePlanDetail struct {
 	// 表达负卖的店铺宝贝列表
@@ -24,4 +28,31 @@ type FuturePlanDetail struct {
 	TimeStrategy int64 `json:"time_strategy,omitempty" xml:"time_strategy,omitempty"`
 	// 相对时间天数(单位:天 适用于相对计划)
 	RelativeTime int64 `json:"relative_time,omitempty" xml:"relative_time,omitempty"`
+}
+
+var poolFuturePlanDetail = sync.Pool{
+	New: func() any {
+		return new(FuturePlanDetail)
+	},
+}
+
+// GetFuturePlanDetail() 从对象池中获取FuturePlanDetail
+func GetFuturePlanDetail() *FuturePlanDetail {
+	return poolFuturePlanDetail.Get().(*FuturePlanDetail)
+}
+
+// ReleaseFuturePlanDetail 释放FuturePlanDetail
+func ReleaseFuturePlanDetail(v *FuturePlanDetail) {
+	v.IcItemList = v.IcItemList[:0]
+	v.OperationDetailOrderId = ""
+	v.StoreCode = ""
+	v.StartDate = ""
+	v.EndDate = ""
+	v.DeliveryStartDate = ""
+	v.ScItemId = 0
+	v.Quantity = 0
+	v.InventoryStrategy = 0
+	v.TimeStrategy = 0
+	v.RelativeTime = 0
+	poolFuturePlanDetail.Put(v)
 }

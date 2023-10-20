@@ -1,5 +1,9 @@
 package alihealth2
 
+import (
+	"sync"
+)
+
 // StatementDetailVo 结构体
 type StatementDetailVo struct {
 	// 订单ID
@@ -12,4 +16,25 @@ type StatementDetailVo struct {
 	ProfitPrice string `json:"profit_price,omitempty" xml:"profit_price,omitempty"`
 	// 核销状态 0 未核销 1已核销
 	ConsumeStatus int64 `json:"consume_status,omitempty" xml:"consume_status,omitempty"`
+}
+
+var poolStatementDetailVo = sync.Pool{
+	New: func() any {
+		return new(StatementDetailVo)
+	},
+}
+
+// GetStatementDetailVo() 从对象池中获取StatementDetailVo
+func GetStatementDetailVo() *StatementDetailVo {
+	return poolStatementDetailVo.Get().(*StatementDetailVo)
+}
+
+// ReleaseStatementDetailVo 释放StatementDetailVo
+func ReleaseStatementDetailVo(v *StatementDetailVo) {
+	v.OrderId = ""
+	v.SettlementPrice = ""
+	v.CostPrice = ""
+	v.ProfitPrice = ""
+	v.ConsumeStatus = 0
+	poolStatementDetailVo.Put(v)
 }

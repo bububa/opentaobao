@@ -9,11 +9,6 @@ import (
 // alibaba.ailabs.iot.device.list.get
 //
 // 通过此接口获取用户名下的iot设备列表
-func AlibabaAilabsIotDeviceListGet(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsIotDeviceListGetAPIRequest, session string) (*tmallgenie.AlibabaAilabsIotDeviceListGetAPIResponse, error) {
-	var resp tmallgenie.AlibabaAilabsIotDeviceListGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAilabsIotDeviceListGet(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsIotDeviceListGetAPIRequest, resp *tmallgenie.AlibabaAilabsIotDeviceListGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

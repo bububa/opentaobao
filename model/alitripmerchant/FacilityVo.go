@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // FacilityVo 结构体
 type FacilityVo struct {
 	// 图片icon
@@ -14,4 +18,26 @@ type FacilityVo struct {
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 设施Id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolFacilityVo = sync.Pool{
+	New: func() any {
+		return new(FacilityVo)
+	},
+}
+
+// GetFacilityVo() 从对象池中获取FacilityVo
+func GetFacilityVo() *FacilityVo {
+	return poolFacilityVo.Get().(*FacilityVo)
+}
+
+// ReleaseFacilityVo 释放FacilityVo
+func ReleaseFacilityVo(v *FacilityVo) {
+	v.Icon = ""
+	v.Name = ""
+	v.Summary = ""
+	v.Description = ""
+	v.Code = ""
+	v.Id = 0
+	poolFacilityVo.Put(v)
 }

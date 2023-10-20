@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,6 +18,12 @@ type AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIResponse struct {
 	AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIResponseModel is 根据码查询码信息 成功返回结果
 type AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drugtrace_top_yljg_query_codedetail_response"`
@@ -24,4 +31,27 @@ type AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 最外层结果
 	Result *AlibabaAlihealthDrugtraceTopYljgQueryCodedetailResultModel `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIResponse 从 sync.Pool 获取 AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIResponse
+func GetAlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIResponse() *AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIResponse {
+	return poolAlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIResponse.Get().(*AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIResponse 将 AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIResponse(v *AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIResponse.Put(v)
 }

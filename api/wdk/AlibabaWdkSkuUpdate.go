@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.sku.update
 //
 // 开放商品更新接口
-func AlibabaWdkSkuUpdate(clt *core.SDKClient, req *wdk.AlibabaWdkSkuUpdateAPIRequest, session string) (*wdk.AlibabaWdkSkuUpdateAPIResponse, error) {
-	var resp wdk.AlibabaWdkSkuUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkSkuUpdate(clt *core.SDKClient, req *wdk.AlibabaWdkSkuUpdateAPIRequest, resp *wdk.AlibabaWdkSkuUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

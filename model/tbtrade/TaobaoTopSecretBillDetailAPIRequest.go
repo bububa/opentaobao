@@ -2,6 +2,7 @@ package tbtrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTopSecretBillDetailAPIRequest struct {
 // NewTaobaoTopSecretBillDetailRequest 初始化TaobaoTopSecretBillDetailAPIRequest对象
 func NewTaobaoTopSecretBillDetailRequest() *TaobaoTopSecretBillDetailAPIRequest {
 	return &TaobaoTopSecretBillDetailAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTopSecretBillDetailAPIRequest) Reset() {
+	r._sellerBillQueryRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTopSecretBillDetailAPIRequest) SetSellerBillQueryRequest(_sellerB
 // GetSellerBillQueryRequest SellerBillQueryRequest Getter
 func (r TaobaoTopSecretBillDetailAPIRequest) GetSellerBillQueryRequest() *SellerBillQueryRequest {
 	return r._sellerBillQueryRequest
+}
+
+var poolTaobaoTopSecretBillDetailAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTopSecretBillDetailRequest()
+	},
+}
+
+// GetTaobaoTopSecretBillDetailRequest 从 sync.Pool 获取 TaobaoTopSecretBillDetailAPIRequest
+func GetTaobaoTopSecretBillDetailAPIRequest() *TaobaoTopSecretBillDetailAPIRequest {
+	return poolTaobaoTopSecretBillDetailAPIRequest.Get().(*TaobaoTopSecretBillDetailAPIRequest)
+}
+
+// ReleaseTaobaoTopSecretBillDetailAPIRequest 将 TaobaoTopSecretBillDetailAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTopSecretBillDetailAPIRequest(v *TaobaoTopSecretBillDetailAPIRequest) {
+	v.Reset()
+	poolTaobaoTopSecretBillDetailAPIRequest.Put(v)
 }

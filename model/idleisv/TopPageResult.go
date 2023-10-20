@@ -1,5 +1,9 @@
 package idleisv
 
+import (
+	"sync"
+)
+
 // TopPageResult 结构体
 type TopPageResult struct {
 	// 商品列表
@@ -14,4 +18,26 @@ type TopPageResult struct {
 	NextPage bool `json:"next_page,omitempty" xml:"next_page,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTopPageResult = sync.Pool{
+	New: func() any {
+		return new(TopPageResult)
+	},
+}
+
+// GetTopPageResult() 从对象池中获取TopPageResult
+func GetTopPageResult() *TopPageResult {
+	return poolTopPageResult.Get().(*TopPageResult)
+}
+
+// ReleaseTopPageResult 释放TopPageResult
+func ReleaseTopPageResult(v *TopPageResult) {
+	v.ItemList = v.ItemList[:0]
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.Total = 0
+	v.NextPage = false
+	v.Success = false
+	poolTopPageResult.Put(v)
 }

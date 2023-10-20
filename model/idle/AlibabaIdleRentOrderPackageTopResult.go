@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // AlibabaIdleRentOrderPackageTopResult 结构体
 type AlibabaIdleRentOrderPackageTopResult struct {
 	// 错误码
@@ -10,4 +14,24 @@ type AlibabaIdleRentOrderPackageTopResult struct {
 	Data bool `json:"data,omitempty" xml:"data,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaIdleRentOrderPackageTopResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaIdleRentOrderPackageTopResult)
+	},
+}
+
+// GetAlibabaIdleRentOrderPackageTopResult() 从对象池中获取AlibabaIdleRentOrderPackageTopResult
+func GetAlibabaIdleRentOrderPackageTopResult() *AlibabaIdleRentOrderPackageTopResult {
+	return poolAlibabaIdleRentOrderPackageTopResult.Get().(*AlibabaIdleRentOrderPackageTopResult)
+}
+
+// ReleaseAlibabaIdleRentOrderPackageTopResult 释放AlibabaIdleRentOrderPackageTopResult
+func ReleaseAlibabaIdleRentOrderPackageTopResult(v *AlibabaIdleRentOrderPackageTopResult) {
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.Data = false
+	v.Success = false
+	poolAlibabaIdleRentOrderPackageTopResult.Put(v)
 }

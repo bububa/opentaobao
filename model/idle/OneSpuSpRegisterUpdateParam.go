@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // OneSpuSpRegisterUpdateParam 结构体
 type OneSpuSpRegisterUpdateParam struct {
 	// 要挂载的闲鱼业务 PD 值，如：传 &#34;YHB&#34; 表示验货宝
@@ -12,4 +16,25 @@ type OneSpuSpRegisterUpdateParam struct {
 	Action string `json:"action,omitempty" xml:"action,omitempty"`
 	// 当前服务提供方的标识符，如 APPKEY
 	SpCode string `json:"sp_code,omitempty" xml:"sp_code,omitempty"`
+}
+
+var poolOneSpuSpRegisterUpdateParam = sync.Pool{
+	New: func() any {
+		return new(OneSpuSpRegisterUpdateParam)
+	},
+}
+
+// GetOneSpuSpRegisterUpdateParam() 从对象池中获取OneSpuSpRegisterUpdateParam
+func GetOneSpuSpRegisterUpdateParam() *OneSpuSpRegisterUpdateParam {
+	return poolOneSpuSpRegisterUpdateParam.Get().(*OneSpuSpRegisterUpdateParam)
+}
+
+// ReleaseOneSpuSpRegisterUpdateParam 释放OneSpuSpRegisterUpdateParam
+func ReleaseOneSpuSpRegisterUpdateParam(v *OneSpuSpRegisterUpdateParam) {
+	v.PdCode = ""
+	v.SceneType = ""
+	v.XpuId = ""
+	v.Action = ""
+	v.SpCode = ""
+	poolOneSpuSpRegisterUpdateParam.Put(v)
 }

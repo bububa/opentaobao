@@ -2,6 +2,7 @@ package xhotel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -55,8 +56,32 @@ type TaobaoXhotelOrderOfficialQualificationGetAPIRequest struct {
 // NewTaobaoXhotelOrderOfficialQualificationGetRequest 初始化TaobaoXhotelOrderOfficialQualificationGetAPIRequest对象
 func NewTaobaoXhotelOrderOfficialQualificationGetRequest() *TaobaoXhotelOrderOfficialQualificationGetAPIRequest {
 	return &TaobaoXhotelOrderOfficialQualificationGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(19),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelOrderOfficialQualificationGetAPIRequest) Reset() {
+	r._outUUID = ""
+	r._hotelCode = ""
+	r._checkOut = ""
+	r._idNumber = ""
+	r._dailyPriceInfo = ""
+	r._outMemberAccount = ""
+	r._alipayAccount = ""
+	r._guestName = ""
+	r._vendor = ""
+	r._mobileNo = ""
+	r._extendAttrs = ""
+	r._returnUrl = ""
+	r._notifyUrl = ""
+	r._checkIn = ""
+	r._outOid = ""
+	r._totalFee = 0
+	r._encryptType = 0
+	r._idType = 0
+	r._roomNum = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -321,4 +346,21 @@ func (r *TaobaoXhotelOrderOfficialQualificationGetAPIRequest) SetRoomNum(_roomNu
 // GetRoomNum RoomNum Getter
 func (r TaobaoXhotelOrderOfficialQualificationGetAPIRequest) GetRoomNum() int64 {
 	return r._roomNum
+}
+
+var poolTaobaoXhotelOrderOfficialQualificationGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelOrderOfficialQualificationGetRequest()
+	},
+}
+
+// GetTaobaoXhotelOrderOfficialQualificationGetRequest 从 sync.Pool 获取 TaobaoXhotelOrderOfficialQualificationGetAPIRequest
+func GetTaobaoXhotelOrderOfficialQualificationGetAPIRequest() *TaobaoXhotelOrderOfficialQualificationGetAPIRequest {
+	return poolTaobaoXhotelOrderOfficialQualificationGetAPIRequest.Get().(*TaobaoXhotelOrderOfficialQualificationGetAPIRequest)
+}
+
+// ReleaseTaobaoXhotelOrderOfficialQualificationGetAPIRequest 将 TaobaoXhotelOrderOfficialQualificationGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelOrderOfficialQualificationGetAPIRequest(v *TaobaoXhotelOrderOfficialQualificationGetAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelOrderOfficialQualificationGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIResponse struct {
 	AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIResponseModel).Reset()
+}
+
 // AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIResponseModel is 修改消费者服务地址 成功返回结果
 type AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_servicecenter_fulfiltask_buyeraddress_change_response"`
@@ -22,4 +29,27 @@ type AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *AlibabaServicecenterFulfiltaskBuyeraddressChangeResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaServicecenterFulfiltaskBuyeraddressChangeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIResponse)
+	},
+}
+
+// GetAlibabaServicecenterFulfiltaskBuyeraddressChangeAPIResponse 从 sync.Pool 获取 AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIResponse
+func GetAlibabaServicecenterFulfiltaskBuyeraddressChangeAPIResponse() *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIResponse {
+	return poolAlibabaServicecenterFulfiltaskBuyeraddressChangeAPIResponse.Get().(*AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIResponse)
+}
+
+// ReleaseAlibabaServicecenterFulfiltaskBuyeraddressChangeAPIResponse 将 AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaServicecenterFulfiltaskBuyeraddressChangeAPIResponse(v *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIResponse) {
+	v.Reset()
+	poolAlibabaServicecenterFulfiltaskBuyeraddressChangeAPIResponse.Put(v)
 }

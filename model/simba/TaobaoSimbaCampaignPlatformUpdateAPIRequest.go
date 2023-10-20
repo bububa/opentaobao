@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoSimbaCampaignPlatformUpdateAPIRequest struct {
 // NewTaobaoSimbaCampaignPlatformUpdateRequest 初始化TaobaoSimbaCampaignPlatformUpdateAPIRequest对象
 func NewTaobaoSimbaCampaignPlatformUpdateRequest() *TaobaoSimbaCampaignPlatformUpdateAPIRequest {
 	return &TaobaoSimbaCampaignPlatformUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaCampaignPlatformUpdateAPIRequest) Reset() {
+	r._searchChannels = r._searchChannels[:0]
+	r._nonsearchChannels = r._nonsearchChannels[:0]
+	r._nick = ""
+	r._campaignId = 0
+	r._outsideDiscount = 0
+	r._mobileDiscount = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoSimbaCampaignPlatformUpdateAPIRequest) SetMobileDiscount(_mobileD
 // GetMobileDiscount MobileDiscount Getter
 func (r TaobaoSimbaCampaignPlatformUpdateAPIRequest) GetMobileDiscount() int64 {
 	return r._mobileDiscount
+}
+
+var poolTaobaoSimbaCampaignPlatformUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaCampaignPlatformUpdateRequest()
+	},
+}
+
+// GetTaobaoSimbaCampaignPlatformUpdateRequest 从 sync.Pool 获取 TaobaoSimbaCampaignPlatformUpdateAPIRequest
+func GetTaobaoSimbaCampaignPlatformUpdateAPIRequest() *TaobaoSimbaCampaignPlatformUpdateAPIRequest {
+	return poolTaobaoSimbaCampaignPlatformUpdateAPIRequest.Get().(*TaobaoSimbaCampaignPlatformUpdateAPIRequest)
+}
+
+// ReleaseTaobaoSimbaCampaignPlatformUpdateAPIRequest 将 TaobaoSimbaCampaignPlatformUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaCampaignPlatformUpdateAPIRequest(v *TaobaoSimbaCampaignPlatformUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaCampaignPlatformUpdateAPIRequest.Put(v)
 }

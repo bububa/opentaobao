@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenInvoiceRuleRq 结构体
 type OpenInvoiceRuleRq struct {
 	// all_employe为true时非必传，否则必传
@@ -12,4 +16,25 @@ type OpenInvoiceRuleRq struct {
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
 	// 是否适用所有员工
 	AllEmploye bool `json:"all_employe,omitempty" xml:"all_employe,omitempty"`
+}
+
+var poolOpenInvoiceRuleRq = sync.Pool{
+	New: func() any {
+		return new(OpenInvoiceRuleRq)
+	},
+}
+
+// GetOpenInvoiceRuleRq() 从对象池中获取OpenInvoiceRuleRq
+func GetOpenInvoiceRuleRq() *OpenInvoiceRuleRq {
+	return poolOpenInvoiceRuleRq.Get().(*OpenInvoiceRuleRq)
+}
+
+// ReleaseOpenInvoiceRuleRq 释放OpenInvoiceRuleRq
+func ReleaseOpenInvoiceRuleRq(v *OpenInvoiceRuleRq) {
+	v.Entities = v.Entities[:0]
+	v.CorpId = ""
+	v.ThirdPartId = ""
+	v.Version = 0
+	v.AllEmploye = false
+	poolOpenInvoiceRuleRq.Put(v)
 }

@@ -2,6 +2,7 @@ package alisports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaAlisportsPassportAccountDelrelationAPIRequest struct {
 // NewAlibabaAlisportsPassportAccountDelrelationRequest 初始化AlibabaAlisportsPassportAccountDelrelationAPIRequest对象
 func NewAlibabaAlisportsPassportAccountDelrelationRequest() *AlibabaAlisportsPassportAccountDelrelationAPIRequest {
 	return &AlibabaAlisportsPassportAccountDelrelationAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlisportsPassportAccountDelrelationAPIRequest) Reset() {
+	r._alispAppKey = ""
+	r._alispTime = ""
+	r._alispSign = ""
+	r._appUid = ""
+	r._aliuid = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaAlisportsPassportAccountDelrelationAPIRequest) SetAliuid(_aliuid
 // GetAliuid Aliuid Getter
 func (r AlibabaAlisportsPassportAccountDelrelationAPIRequest) GetAliuid() string {
 	return r._aliuid
+}
+
+var poolAlibabaAlisportsPassportAccountDelrelationAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlisportsPassportAccountDelrelationRequest()
+	},
+}
+
+// GetAlibabaAlisportsPassportAccountDelrelationRequest 从 sync.Pool 获取 AlibabaAlisportsPassportAccountDelrelationAPIRequest
+func GetAlibabaAlisportsPassportAccountDelrelationAPIRequest() *AlibabaAlisportsPassportAccountDelrelationAPIRequest {
+	return poolAlibabaAlisportsPassportAccountDelrelationAPIRequest.Get().(*AlibabaAlisportsPassportAccountDelrelationAPIRequest)
+}
+
+// ReleaseAlibabaAlisportsPassportAccountDelrelationAPIRequest 将 AlibabaAlisportsPassportAccountDelrelationAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlisportsPassportAccountDelrelationAPIRequest(v *AlibabaAlisportsPassportAccountDelrelationAPIRequest) {
+	v.Reset()
+	poolAlibabaAlisportsPassportAccountDelrelationAPIRequest.Put(v)
 }

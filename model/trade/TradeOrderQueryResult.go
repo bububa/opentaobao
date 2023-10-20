@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // TradeOrderQueryResult 结构体
 type TradeOrderQueryResult struct {
 	// 订单查询结果
@@ -18,4 +22,28 @@ type TradeOrderQueryResult struct {
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// 查询是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTradeOrderQueryResult = sync.Pool{
+	New: func() any {
+		return new(TradeOrderQueryResult)
+	},
+}
+
+// GetTradeOrderQueryResult() 从对象池中获取TradeOrderQueryResult
+func GetTradeOrderQueryResult() *TradeOrderQueryResult {
+	return poolTradeOrderQueryResult.Get().(*TradeOrderQueryResult)
+}
+
+// ReleaseTradeOrderQueryResult 释放TradeOrderQueryResult
+func ReleaseTradeOrderQueryResult(v *TradeOrderQueryResult) {
+	v.TradeList = v.TradeList[:0]
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.PageSize = 0
+	v.PageIndex = 0
+	v.PageCount = 0
+	v.TotalCount = 0
+	v.Success = false
+	poolTradeOrderQueryResult.Put(v)
 }

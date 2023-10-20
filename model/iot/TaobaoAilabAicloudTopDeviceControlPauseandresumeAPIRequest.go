@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest struct {
 // NewTaobaoAilabAicloudTopDeviceControlPauseandresumeRequest 初始化TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest对象
 func NewTaobaoAilabAicloudTopDeviceControlPauseandresumeRequest() *TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest {
 	return &TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest) Reset() {
+	r._param1 = ""
+	r._param0 = nil
+	r._param2 = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest) SetParam2(_
 // GetParam2 Param2 Getter
 func (r TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest) GetParam2() bool {
 	return r._param2
+}
+
+var poolTaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopDeviceControlPauseandresumeRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopDeviceControlPauseandresumeRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest
+func GetTaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest() *TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest {
+	return poolTaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest.Get().(*TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest 将 TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest(v *TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest.Put(v)
 }

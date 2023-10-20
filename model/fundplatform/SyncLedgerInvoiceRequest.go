@@ -1,5 +1,9 @@
 package fundplatform
 
+import (
+	"sync"
+)
+
 // SyncLedgerInvoiceRequest 结构体
 type SyncLedgerInvoiceRequest struct {
 	// 发票行
@@ -58,4 +62,48 @@ type SyncLedgerInvoiceRequest struct {
 	EffectiveTaxAmount string `json:"effective_tax_amount,omitempty" xml:"effective_tax_amount,omitempty"`
 	// 认证方式标识
 	TaxDeductFag string `json:"tax_deduct_fag,omitempty" xml:"tax_deduct_fag,omitempty"`
+}
+
+var poolSyncLedgerInvoiceRequest = sync.Pool{
+	New: func() any {
+		return new(SyncLedgerInvoiceRequest)
+	},
+}
+
+// GetSyncLedgerInvoiceRequest() 从对象池中获取SyncLedgerInvoiceRequest
+func GetSyncLedgerInvoiceRequest() *SyncLedgerInvoiceRequest {
+	return poolSyncLedgerInvoiceRequest.Get().(*SyncLedgerInvoiceRequest)
+}
+
+// ReleaseSyncLedgerInvoiceRequest 释放SyncLedgerInvoiceRequest
+func ReleaseSyncLedgerInvoiceRequest(v *SyncLedgerInvoiceRequest) {
+	v.InputInvoiceLineDTOList = v.InputInvoiceLineDTOList[:0]
+	v.Amount = ""
+	v.CertifyDate = ""
+	v.CertifyFlag = ""
+	v.CheckSum = ""
+	v.CheckCertifyTime = ""
+	v.CipherText = ""
+	v.ExcludingTaxAmount = ""
+	v.InvoiceCode = ""
+	v.InvoiceDate = ""
+	v.InvoiceNo = ""
+	v.InvoiceStatus = ""
+	v.InvoiceType = ""
+	v.CheckCertifyStatus = ""
+	v.MachineCode = ""
+	v.PurchaserBankInfo = ""
+	v.PurchaserContactInfo = ""
+	v.PurchaserName = ""
+	v.PurchaserTaxNo = ""
+	v.Remark = ""
+	v.SellerBankInfo = ""
+	v.SellerContactInfo = ""
+	v.SellerName = ""
+	v.SellerTaxNo = ""
+	v.TaxAmount = ""
+	v.TaxPeriod = ""
+	v.EffectiveTaxAmount = ""
+	v.TaxDeductFag = ""
+	poolSyncLedgerInvoiceRequest.Put(v)
 }

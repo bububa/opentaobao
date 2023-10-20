@@ -1,5 +1,9 @@
 package icbuseller
 
+import (
+	"sync"
+)
+
 // OpenTradeDetailDto 结构体
 type OpenTradeDetailDto struct {
 	// 购买人
@@ -52,4 +56,45 @@ type OpenTradeDetailDto struct {
 	ServiceScore int64 `json:"service_score,omitempty" xml:"service_score,omitempty"`
 	// 服务分类id
 	ServiceCategoryId int64 `json:"service_category_id,omitempty" xml:"service_category_id,omitempty"`
+}
+
+var poolOpenTradeDetailDto = sync.Pool{
+	New: func() any {
+		return new(OpenTradeDetailDto)
+	},
+}
+
+// GetOpenTradeDetailDto() 从对象池中获取OpenTradeDetailDto
+func GetOpenTradeDetailDto() *OpenTradeDetailDto {
+	return poolOpenTradeDetailDto.Get().(*OpenTradeDetailDto)
+}
+
+// ReleaseOpenTradeDetailDto 释放OpenTradeDetailDto
+func ReleaseOpenTradeDetailDto(v *OpenTradeDetailDto) {
+	v.BuyerName = ""
+	v.CompanyName = ""
+	v.ContactMobile = ""
+	v.CreateTime = ""
+	v.Currency = ""
+	v.CurrentStatus = ""
+	v.FireTime = ""
+	v.OrderNo = ""
+	v.OrderTitle = ""
+	v.OrderType = ""
+	v.PayChannel = ""
+	v.RefundPrice = ""
+	v.ServiceCode = ""
+	v.ServiceName = ""
+	v.SkuCode = ""
+	v.SkuValue = ""
+	v.TransactionPrice = ""
+	v.TransactionUnitPrice = ""
+	v.BuyerLoginId = ""
+	v.ServiceCategory = ""
+	v.ServiceSkuLabel = ""
+	v.BuyerAliId = 0
+	v.Quantity = 0
+	v.ServiceScore = 0
+	v.ServiceCategoryId = 0
+	poolOpenTradeDetailDto.Put(v)
 }

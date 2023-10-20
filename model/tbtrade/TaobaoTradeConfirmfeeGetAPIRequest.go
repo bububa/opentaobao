@@ -2,6 +2,7 @@ package tbtrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTradeConfirmfeeGetAPIRequest struct {
 // NewTaobaoTradeConfirmfeeGetRequest 初始化TaobaoTradeConfirmfeeGetAPIRequest对象
 func NewTaobaoTradeConfirmfeeGetRequest() *TaobaoTradeConfirmfeeGetAPIRequest {
 	return &TaobaoTradeConfirmfeeGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTradeConfirmfeeGetAPIRequest) Reset() {
+	r._tid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTradeConfirmfeeGetAPIRequest) SetTid(_tid int64) error {
 // GetTid Tid Getter
 func (r TaobaoTradeConfirmfeeGetAPIRequest) GetTid() int64 {
 	return r._tid
+}
+
+var poolTaobaoTradeConfirmfeeGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTradeConfirmfeeGetRequest()
+	},
+}
+
+// GetTaobaoTradeConfirmfeeGetRequest 从 sync.Pool 获取 TaobaoTradeConfirmfeeGetAPIRequest
+func GetTaobaoTradeConfirmfeeGetAPIRequest() *TaobaoTradeConfirmfeeGetAPIRequest {
+	return poolTaobaoTradeConfirmfeeGetAPIRequest.Get().(*TaobaoTradeConfirmfeeGetAPIRequest)
+}
+
+// ReleaseTaobaoTradeConfirmfeeGetAPIRequest 将 TaobaoTradeConfirmfeeGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTradeConfirmfeeGetAPIRequest(v *TaobaoTradeConfirmfeeGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTradeConfirmfeeGetAPIRequest.Put(v)
 }

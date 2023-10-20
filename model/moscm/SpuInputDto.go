@@ -1,5 +1,9 @@
 package moscm
 
+import (
+	"sync"
+)
+
 // SpuInputDto 结构体
 type SpuInputDto struct {
 	// 产品的子图片.目前最多支持50张。
@@ -48,4 +52,43 @@ type SpuInputDto struct {
 	TmallItemId int64 `json:"tmall_item_id,omitempty" xml:"tmall_item_id,omitempty"`
 	// 是否新品默认是true
 	IsNew bool `json:"is_new,omitempty" xml:"is_new,omitempty"`
+}
+
+var poolSpuInputDto = sync.Pool{
+	New: func() any {
+		return new(SpuInputDto)
+	},
+}
+
+// GetSpuInputDto() 从对象池中获取SpuInputDto
+func GetSpuInputDto() *SpuInputDto {
+	return poolSpuInputDto.Get().(*SpuInputDto)
+}
+
+// ReleaseSpuInputDto 释放SpuInputDto
+func ReleaseSpuInputDto(v *SpuInputDto) {
+	v.ProductImgs = v.ProductImgs[:0]
+	v.Props = v.Props[:0]
+	v.DescPicList = v.DescPicList[:0]
+	v.BarcodeStr = ""
+	v.BrandId = ""
+	v.BrandName = ""
+	v.CatName = ""
+	v.Cid = ""
+	v.Id = ""
+	v.Material = ""
+	v.Mdesc = ""
+	v.PcDesc = ""
+	v.PicUrl = ""
+	v.Price = ""
+	v.ProductId = ""
+	v.SellPt = ""
+	v.StyleNo = ""
+	v.SubTitle = ""
+	v.Tags = ""
+	v.Title = ""
+	v.TmallBrandId = ""
+	v.TmallItemId = 0
+	v.IsNew = false
+	poolSpuInputDto.Put(v)
 }

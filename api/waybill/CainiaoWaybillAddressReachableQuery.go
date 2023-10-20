@@ -9,11 +9,6 @@ import (
 // cainiao.waybill.address.reachable.query
 //
 // 地址可达查询
-func CainiaoWaybillAddressReachableQuery(clt *core.SDKClient, req *waybill.CainiaoWaybillAddressReachableQueryAPIRequest, session string) (*waybill.CainiaoWaybillAddressReachableQueryAPIResponse, error) {
-	var resp waybill.CainiaoWaybillAddressReachableQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func CainiaoWaybillAddressReachableQuery(clt *core.SDKClient, req *waybill.CainiaoWaybillAddressReachableQueryAPIRequest, resp *waybill.CainiaoWaybillAddressReachableQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

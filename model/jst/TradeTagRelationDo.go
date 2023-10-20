@@ -1,5 +1,9 @@
 package jst
 
+import (
+	"sync"
+)
+
 // TradeTagRelationDo 结构体
 type TradeTagRelationDo struct {
 	// 该标签操作的历史记录
@@ -20,4 +24,29 @@ type TradeTagRelationDo struct {
 	TagType int64 `json:"tag_type,omitempty" xml:"tag_type,omitempty"`
 	// 该标签在消费者端是否显示,0:不显示,1：显示
 	Visible int64 `json:"visible,omitempty" xml:"visible,omitempty"`
+}
+
+var poolTradeTagRelationDo = sync.Pool{
+	New: func() any {
+		return new(TradeTagRelationDo)
+	},
+}
+
+// GetTradeTagRelationDo() 从对象池中获取TradeTagRelationDo
+func GetTradeTagRelationDo() *TradeTagRelationDo {
+	return poolTradeTagRelationDo.Get().(*TradeTagRelationDo)
+}
+
+// ReleaseTradeTagRelationDo 释放TradeTagRelationDo
+func ReleaseTradeTagRelationDo(v *TradeTagRelationDo) {
+	v.HistoryTradeTagRelations = v.HistoryTradeTagRelations[:0]
+	v.TagName = ""
+	v.TagValue = ""
+	v.GmtCreated = ""
+	v.GmtModified = ""
+	v.Id = 0
+	v.Tid = 0
+	v.TagType = 0
+	v.Visible = 0
+	poolTradeTagRelationDo.Put(v)
 }

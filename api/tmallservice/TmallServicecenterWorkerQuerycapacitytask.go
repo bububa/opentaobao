@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.worker.querycapacitytask
 //
 // 查询需求容量
-func TmallServicecenterWorkerQuerycapacitytask(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerQuerycapacitytaskAPIRequest, session string) (*tmallservice.TmallServicecenterWorkerQuerycapacitytaskAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterWorkerQuerycapacitytaskAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterWorkerQuerycapacitytask(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerQuerycapacitytaskAPIRequest, resp *tmallservice.TmallServicecenterWorkerQuerycapacitytaskAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

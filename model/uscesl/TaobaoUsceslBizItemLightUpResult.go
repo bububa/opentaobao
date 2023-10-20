@@ -1,5 +1,9 @@
 package uscesl
 
+import (
+	"sync"
+)
+
 // TaobaoUsceslBizItemLightUpResult 结构体
 type TaobaoUsceslBizItemLightUpResult struct {
 	// 返回码
@@ -12,4 +16,25 @@ type TaobaoUsceslBizItemLightUpResult struct {
 	Target *LightResultInfoBo `json:"target,omitempty" xml:"target,omitempty"`
 	// true或false
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+var poolTaobaoUsceslBizItemLightUpResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoUsceslBizItemLightUpResult)
+	},
+}
+
+// GetTaobaoUsceslBizItemLightUpResult() 从对象池中获取TaobaoUsceslBizItemLightUpResult
+func GetTaobaoUsceslBizItemLightUpResult() *TaobaoUsceslBizItemLightUpResult {
+	return poolTaobaoUsceslBizItemLightUpResult.Get().(*TaobaoUsceslBizItemLightUpResult)
+}
+
+// ReleaseTaobaoUsceslBizItemLightUpResult 释放TaobaoUsceslBizItemLightUpResult
+func ReleaseTaobaoUsceslBizItemLightUpResult(v *TaobaoUsceslBizItemLightUpResult) {
+	v.ReturnCode = ""
+	v.Message = ""
+	v.BusinessCode = ""
+	v.Target = nil
+	v.IsSuccess = false
+	poolTaobaoUsceslBizItemLightUpResult.Put(v)
 }

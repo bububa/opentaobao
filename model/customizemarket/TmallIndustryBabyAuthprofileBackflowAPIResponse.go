@@ -2,6 +2,7 @@ package customizemarket
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallIndustryBabyAuthprofileBackflowAPIResponse struct {
 	TmallIndustryBabyAuthprofileBackflowAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallIndustryBabyAuthprofileBackflowAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallIndustryBabyAuthprofileBackflowAPIResponseModel).Reset()
+}
+
 // TmallIndustryBabyAuthprofileBackflowAPIResponseModel is 孕校云回流档案 成功返回结果
 type TmallIndustryBabyAuthprofileBackflowAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_industry_baby_authprofile_backflow_response"`
@@ -26,4 +33,29 @@ type TmallIndustryBabyAuthprofileBackflowAPIResponseModel struct {
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 接口调用是否成功
 	ResultStatus bool `json:"result_status,omitempty" xml:"result_status,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallIndustryBabyAuthprofileBackflowAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgMessage = ""
+	m.MsgCode = ""
+	m.ResultStatus = false
+}
+
+var poolTmallIndustryBabyAuthprofileBackflowAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallIndustryBabyAuthprofileBackflowAPIResponse)
+	},
+}
+
+// GetTmallIndustryBabyAuthprofileBackflowAPIResponse 从 sync.Pool 获取 TmallIndustryBabyAuthprofileBackflowAPIResponse
+func GetTmallIndustryBabyAuthprofileBackflowAPIResponse() *TmallIndustryBabyAuthprofileBackflowAPIResponse {
+	return poolTmallIndustryBabyAuthprofileBackflowAPIResponse.Get().(*TmallIndustryBabyAuthprofileBackflowAPIResponse)
+}
+
+// ReleaseTmallIndustryBabyAuthprofileBackflowAPIResponse 将 TmallIndustryBabyAuthprofileBackflowAPIResponse 保存到 sync.Pool
+func ReleaseTmallIndustryBabyAuthprofileBackflowAPIResponse(v *TmallIndustryBabyAuthprofileBackflowAPIResponse) {
+	v.Reset()
+	poolTmallIndustryBabyAuthprofileBackflowAPIResponse.Put(v)
 }

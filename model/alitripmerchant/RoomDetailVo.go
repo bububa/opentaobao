@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // RoomDetailVo 结构体
 type RoomDetailVo struct {
 	// 价格分组
@@ -26,4 +30,32 @@ type RoomDetailVo struct {
 	RoomProperty *RoomProperty `json:"room_property,omitempty" xml:"room_property,omitempty"`
 	// 满房
 	Full bool `json:"full,omitempty" xml:"full,omitempty"`
+}
+
+var poolRoomDetailVo = sync.Pool{
+	New: func() any {
+		return new(RoomDetailVo)
+	},
+}
+
+// GetRoomDetailVo() 从对象池中获取RoomDetailVo
+func GetRoomDetailVo() *RoomDetailVo {
+	return poolRoomDetailVo.Get().(*RoomDetailVo)
+}
+
+// ReleaseRoomDetailVo 释放RoomDetailVo
+func ReleaseRoomDetailVo(v *RoomDetailVo) {
+	v.PriceInfoGroups = v.PriceInfoGroups[:0]
+	v.Pics = v.Pics[:0]
+	v.FacilityGroupList = v.FacilityGroupList[:0]
+	v.LowestPriceToString = ""
+	v.PriceType = ""
+	v.RoomName = ""
+	v.LowestPrice = 0
+	v.AddBed = 0
+	v.RoomId = 0
+	v.RoomTypeBedInfo = nil
+	v.RoomProperty = nil
+	v.Full = false
+	poolRoomDetailVo.Put(v)
 }

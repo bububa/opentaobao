@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // SupplierOrderQueryRequest 结构体
 type SupplierOrderQueryRequest struct {
 	// 订单状态: PAID / PACAKAGED / SUCCESS
@@ -22,4 +26,30 @@ type SupplierOrderQueryRequest struct {
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
 	// 分页大小，默认200
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolSupplierOrderQueryRequest = sync.Pool{
+	New: func() any {
+		return new(SupplierOrderQueryRequest)
+	},
+}
+
+// GetSupplierOrderQueryRequest() 从对象池中获取SupplierOrderQueryRequest
+func GetSupplierOrderQueryRequest() *SupplierOrderQueryRequest {
+	return poolSupplierOrderQueryRequest.Get().(*SupplierOrderQueryRequest)
+}
+
+// ReleaseSupplierOrderQueryRequest 释放SupplierOrderQueryRequest
+func ReleaseSupplierOrderQueryRequest(v *SupplierOrderQueryRequest) {
+	v.OrderStatus = v.OrderStatus[:0]
+	v.StoreId = ""
+	v.SourceMerchantCode = ""
+	v.EndTime = ""
+	v.StartTime = ""
+	v.OrderClient = ""
+	v.ShopId = ""
+	v.OrderFrom = 0
+	v.PageIndex = 0
+	v.PageSize = 0
+	poolSupplierOrderQueryRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package tmallgeniescp
 
+import (
+	"sync"
+)
+
 // NetDemandRawDto 结构体
 type NetDemandRawDto struct {
 	// 扩展参数
@@ -14,4 +18,26 @@ type NetDemandRawDto struct {
 	MaterialCode string `json:"material_code,omitempty" xml:"material_code,omitempty"`
 	// 二级物料净需求
 	NetDemandRaw int64 `json:"net_demand_raw,omitempty" xml:"net_demand_raw,omitempty"`
+}
+
+var poolNetDemandRawDto = sync.Pool{
+	New: func() any {
+		return new(NetDemandRawDto)
+	},
+}
+
+// GetNetDemandRawDto() 从对象池中获取NetDemandRawDto
+func GetNetDemandRawDto() *NetDemandRawDto {
+	return poolNetDemandRawDto.Get().(*NetDemandRawDto)
+}
+
+// ReleaseNetDemandRawDto 释放NetDemandRawDto
+func ReleaseNetDemandRawDto(v *NetDemandRawDto) {
+	v.ExtendJson = ""
+	v.Tenant = ""
+	v.KeyFigureDate = ""
+	v.Locid = ""
+	v.MaterialCode = ""
+	v.NetDemandRaw = 0
+	poolNetDemandRawDto.Put(v)
 }

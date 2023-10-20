@@ -9,11 +9,6 @@ import (
 // tmall.traceplatform.ticket.picture.upload
 //
 // uploadPicture
-func TmallTraceplatformTicketPictureUpload(clt *core.SDKClient, req *tmallhk.TmallTraceplatformTicketPictureUploadAPIRequest, session string) (*tmallhk.TmallTraceplatformTicketPictureUploadAPIResponse, error) {
-	var resp tmallhk.TmallTraceplatformTicketPictureUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallTraceplatformTicketPictureUpload(clt *core.SDKClient, req *tmallhk.TmallTraceplatformTicketPictureUploadAPIRequest, resp *tmallhk.TmallTraceplatformTicketPictureUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package dt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaNrsItemRtdataBackflowAPIRequest struct {
 // NewAlibabaNrsItemRtdataBackflowRequest 初始化AlibabaNrsItemRtdataBackflowAPIRequest对象
 func NewAlibabaNrsItemRtdataBackflowRequest() *AlibabaNrsItemRtdataBackflowAPIRequest {
 	return &AlibabaNrsItemRtdataBackflowAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaNrsItemRtdataBackflowAPIRequest) Reset() {
+	r._rtItemPriceTagBackParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaNrsItemRtdataBackflowAPIRequest) SetRtItemPriceTagBackParam(_rtI
 // GetRtItemPriceTagBackParam RtItemPriceTagBackParam Getter
 func (r AlibabaNrsItemRtdataBackflowAPIRequest) GetRtItemPriceTagBackParam() *RtItemPriceTagBackParam {
 	return r._rtItemPriceTagBackParam
+}
+
+var poolAlibabaNrsItemRtdataBackflowAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaNrsItemRtdataBackflowRequest()
+	},
+}
+
+// GetAlibabaNrsItemRtdataBackflowRequest 从 sync.Pool 获取 AlibabaNrsItemRtdataBackflowAPIRequest
+func GetAlibabaNrsItemRtdataBackflowAPIRequest() *AlibabaNrsItemRtdataBackflowAPIRequest {
+	return poolAlibabaNrsItemRtdataBackflowAPIRequest.Get().(*AlibabaNrsItemRtdataBackflowAPIRequest)
+}
+
+// ReleaseAlibabaNrsItemRtdataBackflowAPIRequest 将 AlibabaNrsItemRtdataBackflowAPIRequest 放入 sync.Pool
+func ReleaseAlibabaNrsItemRtdataBackflowAPIRequest(v *AlibabaNrsItemRtdataBackflowAPIRequest) {
+	v.Reset()
+	poolAlibabaNrsItemRtdataBackflowAPIRequest.Put(v)
 }

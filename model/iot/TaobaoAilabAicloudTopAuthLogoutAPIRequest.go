@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoAilabAicloudTopAuthLogoutAPIRequest struct {
 // NewTaobaoAilabAicloudTopAuthLogoutRequest 初始化TaobaoAilabAicloudTopAuthLogoutAPIRequest对象
 func NewTaobaoAilabAicloudTopAuthLogoutRequest() *TaobaoAilabAicloudTopAuthLogoutAPIRequest {
 	return &TaobaoAilabAicloudTopAuthLogoutAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopAuthLogoutAPIRequest) Reset() {
+	r._userId = ""
+	r._utdId = ""
+	r._schema = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoAilabAicloudTopAuthLogoutAPIRequest) SetSchema(_schema string) er
 // GetSchema Schema Getter
 func (r TaobaoAilabAicloudTopAuthLogoutAPIRequest) GetSchema() string {
 	return r._schema
+}
+
+var poolTaobaoAilabAicloudTopAuthLogoutAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopAuthLogoutRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopAuthLogoutRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopAuthLogoutAPIRequest
+func GetTaobaoAilabAicloudTopAuthLogoutAPIRequest() *TaobaoAilabAicloudTopAuthLogoutAPIRequest {
+	return poolTaobaoAilabAicloudTopAuthLogoutAPIRequest.Get().(*TaobaoAilabAicloudTopAuthLogoutAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopAuthLogoutAPIRequest 将 TaobaoAilabAicloudTopAuthLogoutAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopAuthLogoutAPIRequest(v *TaobaoAilabAicloudTopAuthLogoutAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopAuthLogoutAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // tmall.aliauto.receipt.order.check
 //
 // 查看工单查询订单是否已付款
-func TmallAliautoReceiptOrderCheck(clt *core.SDKClient, req *tmallcar.TmallAliautoReceiptOrderCheckAPIRequest, session string) (*tmallcar.TmallAliautoReceiptOrderCheckAPIResponse, error) {
-	var resp tmallcar.TmallAliautoReceiptOrderCheckAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallAliautoReceiptOrderCheck(clt *core.SDKClient, req *tmallcar.TmallAliautoReceiptOrderCheckAPIRequest, resp *tmallcar.TmallAliautoReceiptOrderCheckAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.mos.delivery.send
 //
 // 订单发货填写快递单
-func AlibabaMosDeliverySend(clt *core.SDKClient, req *moscm.AlibabaMosDeliverySendAPIRequest, session string) (*moscm.AlibabaMosDeliverySendAPIResponse, error) {
-	var resp moscm.AlibabaMosDeliverySendAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMosDeliverySend(clt *core.SDKClient, req *moscm.AlibabaMosDeliverySendAPIRequest, resp *moscm.AlibabaMosDeliverySendAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

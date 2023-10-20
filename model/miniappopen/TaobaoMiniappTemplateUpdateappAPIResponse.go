@@ -2,6 +2,7 @@ package miniappopen
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoMiniappTemplateUpdateappAPIResponse struct {
 	model.CommonResponse
 	TaobaoMiniappTemplateUpdateappAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoMiniappTemplateUpdateappAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoMiniappTemplateUpdateappAPIResponseModel).Reset()
 }
 
 // TaobaoMiniappTemplateUpdateappAPIResponseModel is 更新实例化应用 成功返回结果
@@ -36,4 +43,34 @@ type TaobaoMiniappTemplateUpdateappAPIResponseModel struct {
 	PreViewUrl string `json:"pre_view_url,omitempty" xml:"pre_view_url,omitempty"`
 	// 小程序简称
 	AppAlias string `json:"app_alias,omitempty" xml:"app_alias,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoMiniappTemplateUpdateappAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.AppDescription = ""
+	m.AppIcon = ""
+	m.AppName = ""
+	m.Appkey = ""
+	m.AppId = ""
+	m.AppVersion = ""
+	m.PreViewUrl = ""
+	m.AppAlias = ""
+}
+
+var poolTaobaoMiniappTemplateUpdateappAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoMiniappTemplateUpdateappAPIResponse)
+	},
+}
+
+// GetTaobaoMiniappTemplateUpdateappAPIResponse 从 sync.Pool 获取 TaobaoMiniappTemplateUpdateappAPIResponse
+func GetTaobaoMiniappTemplateUpdateappAPIResponse() *TaobaoMiniappTemplateUpdateappAPIResponse {
+	return poolTaobaoMiniappTemplateUpdateappAPIResponse.Get().(*TaobaoMiniappTemplateUpdateappAPIResponse)
+}
+
+// ReleaseTaobaoMiniappTemplateUpdateappAPIResponse 将 TaobaoMiniappTemplateUpdateappAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoMiniappTemplateUpdateappAPIResponse(v *TaobaoMiniappTemplateUpdateappAPIResponse) {
+	v.Reset()
+	poolTaobaoMiniappTemplateUpdateappAPIResponse.Put(v)
 }

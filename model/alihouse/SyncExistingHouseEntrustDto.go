@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // SyncExistingHouseEntrustDto 结构体
 type SyncExistingHouseEntrustDto struct {
 	// 委托人身份正号
@@ -98,4 +102,68 @@ type SyncExistingHouseEntrustDto struct {
 	LandlordType int64 `json:"landlord_type,omitempty" xml:"landlord_type,omitempty"`
 	// 代收主体id 当收款模式为代收是必填
 	InsteadMerchantOpenId int64 `json:"instead_merchant_open_id,omitempty" xml:"instead_merchant_open_id,omitempty"`
+}
+
+var poolSyncExistingHouseEntrustDto = sync.Pool{
+	New: func() any {
+		return new(SyncExistingHouseEntrustDto)
+	},
+}
+
+// GetSyncExistingHouseEntrustDto() 从对象池中获取SyncExistingHouseEntrustDto
+func GetSyncExistingHouseEntrustDto() *SyncExistingHouseEntrustDto {
+	return poolSyncExistingHouseEntrustDto.Get().(*SyncExistingHouseEntrustDto)
+}
+
+// ReleaseSyncExistingHouseEntrustDto 释放SyncExistingHouseEntrustDto
+func ReleaseSyncExistingHouseEntrustDto(v *SyncExistingHouseEntrustDto) {
+	v.RightsIdCards = v.RightsIdCards[:0]
+	v.RightsNames = v.RightsNames[:0]
+	v.EntrustPictures = v.EntrustPictures[:0]
+	v.RentVouchers = v.RentVouchers[:0]
+	v.HouseCheckPictureUrl = ""
+	v.HouseCheckCode = ""
+	v.EntrustEndTime = ""
+	v.EntrustBeginTime = ""
+	v.SaleRatioFee = ""
+	v.EntrustPicture = ""
+	v.CertificatePicture = ""
+	v.EntrustStatusReason = ""
+	v.HousePrice = ""
+	v.OuterAgentId = ""
+	v.OuterStoreId = ""
+	v.OuterCompanyId = ""
+	v.ConsignerPhone = ""
+	v.ConsignerName = ""
+	v.RightsNo = ""
+	v.OuterId = ""
+	v.HouseCheckDesc = ""
+	v.OwnershipAddress = ""
+	v.PayTypeJson = ""
+	v.ServiceContent = ""
+	v.RentRequirement = ""
+	v.ViewingTime = ""
+	v.CheckInTime = ""
+	v.OuterBrandId = ""
+	v.RentPrice = ""
+	v.MaintenanceTime = ""
+	v.HouseCheckInformation = ""
+	v.MerchantOpenId = ""
+	v.SendRentChargeModel = ""
+	v.RoleList = ""
+	v.HouseCheckStatus = 0
+	v.EntrustStatus = 0
+	v.Role = 0
+	v.EntrustSellingId = 0
+	v.MaxRentTime = 0
+	v.MinRentTime = 0
+	v.RightsNoType = 0
+	v.TradeBizType = 0
+	v.AgreementId = 0
+	v.NaturalMerchantOpenId = 0
+	v.EnterpriseMerchantOpenId = 0
+	v.CollectionType = 0
+	v.LandlordType = 0
+	v.InsteadMerchantOpenId = 0
+	poolSyncExistingHouseEntrustDto.Put(v)
 }

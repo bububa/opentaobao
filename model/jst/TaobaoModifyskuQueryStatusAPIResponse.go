@@ -2,6 +2,7 @@ package jst
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,6 +20,12 @@ type TaobaoModifyskuQueryStatusAPIResponse struct {
 	TaobaoModifyskuQueryStatusAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoModifyskuQueryStatusAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoModifyskuQueryStatusAPIResponseModel).Reset()
+}
+
 // TaobaoModifyskuQueryStatusAPIResponseModel is 查询商家是否开通自助修改商品信息服务 成功返回结果
 type TaobaoModifyskuQueryStatusAPIResponseModel struct {
 	XMLName xml.Name `xml:"modifysku_query_status_response"`
@@ -26,4 +33,27 @@ type TaobaoModifyskuQueryStatusAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
 	Model *CheckSignSkuResponse `json:"model,omitempty" xml:"model,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoModifyskuQueryStatusAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Model = nil
+}
+
+var poolTaobaoModifyskuQueryStatusAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoModifyskuQueryStatusAPIResponse)
+	},
+}
+
+// GetTaobaoModifyskuQueryStatusAPIResponse 从 sync.Pool 获取 TaobaoModifyskuQueryStatusAPIResponse
+func GetTaobaoModifyskuQueryStatusAPIResponse() *TaobaoModifyskuQueryStatusAPIResponse {
+	return poolTaobaoModifyskuQueryStatusAPIResponse.Get().(*TaobaoModifyskuQueryStatusAPIResponse)
+}
+
+// ReleaseTaobaoModifyskuQueryStatusAPIResponse 将 TaobaoModifyskuQueryStatusAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoModifyskuQueryStatusAPIResponse(v *TaobaoModifyskuQueryStatusAPIResponse) {
+	v.Reset()
+	poolTaobaoModifyskuQueryStatusAPIResponse.Put(v)
 }

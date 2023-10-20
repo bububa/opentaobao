@@ -9,11 +9,6 @@ import (
 // alibaba.ascp.logistics.seller.writeoff
 //
 // 商家配送核销
-func AlibabaAscpLogisticsSellerWriteoff(clt *core.SDKClient, req *tblogistics.AlibabaAscpLogisticsSellerWriteoffAPIRequest, session string) (*tblogistics.AlibabaAscpLogisticsSellerWriteoffAPIResponse, error) {
-	var resp tblogistics.AlibabaAscpLogisticsSellerWriteoffAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAscpLogisticsSellerWriteoff(clt *core.SDKClient, req *tblogistics.AlibabaAscpLogisticsSellerWriteoffAPIRequest, resp *tblogistics.AlibabaAscpLogisticsSellerWriteoffAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

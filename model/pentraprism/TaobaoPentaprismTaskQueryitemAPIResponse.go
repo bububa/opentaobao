@@ -2,6 +2,7 @@ package pentraprism
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoPentaprismTaskQueryitemAPIResponse struct {
 	TaobaoPentaprismTaskQueryitemAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoPentaprismTaskQueryitemAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoPentaprismTaskQueryitemAPIResponseModel).Reset()
+}
+
 // TaobaoPentaprismTaskQueryitemAPIResponseModel is 查询任务当前进度 成功返回结果
 type TaobaoPentaprismTaskQueryitemAPIResponseModel struct {
 	XMLName xml.Name `xml:"pentaprism_task_queryitem_response"`
@@ -22,4 +29,27 @@ type TaobaoPentaprismTaskQueryitemAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// TOP接口标准出参
 	Result *TaskResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoPentaprismTaskQueryitemAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoPentaprismTaskQueryitemAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoPentaprismTaskQueryitemAPIResponse)
+	},
+}
+
+// GetTaobaoPentaprismTaskQueryitemAPIResponse 从 sync.Pool 获取 TaobaoPentaprismTaskQueryitemAPIResponse
+func GetTaobaoPentaprismTaskQueryitemAPIResponse() *TaobaoPentaprismTaskQueryitemAPIResponse {
+	return poolTaobaoPentaprismTaskQueryitemAPIResponse.Get().(*TaobaoPentaprismTaskQueryitemAPIResponse)
+}
+
+// ReleaseTaobaoPentaprismTaskQueryitemAPIResponse 将 TaobaoPentaprismTaskQueryitemAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoPentaprismTaskQueryitemAPIResponse(v *TaobaoPentaprismTaskQueryitemAPIResponse) {
+	v.Reset()
+	poolTaobaoPentaprismTaskQueryitemAPIResponse.Put(v)
 }

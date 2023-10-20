@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaTianmaoUopConsignAPIRequest struct {
 // NewAlibabaTianmaoUopConsignRequest 初始化AlibabaTianmaoUopConsignAPIRequest对象
 func NewAlibabaTianmaoUopConsignRequest() *AlibabaTianmaoUopConsignAPIRequest {
 	return &AlibabaTianmaoUopConsignAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTianmaoUopConsignAPIRequest) Reset() {
+	r._scpCode = ""
+	r._ownerId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaTianmaoUopConsignAPIRequest) SetOwnerId(_ownerId int64) error {
 // GetOwnerId OwnerId Getter
 func (r AlibabaTianmaoUopConsignAPIRequest) GetOwnerId() int64 {
 	return r._ownerId
+}
+
+var poolAlibabaTianmaoUopConsignAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTianmaoUopConsignRequest()
+	},
+}
+
+// GetAlibabaTianmaoUopConsignRequest 从 sync.Pool 获取 AlibabaTianmaoUopConsignAPIRequest
+func GetAlibabaTianmaoUopConsignAPIRequest() *AlibabaTianmaoUopConsignAPIRequest {
+	return poolAlibabaTianmaoUopConsignAPIRequest.Get().(*AlibabaTianmaoUopConsignAPIRequest)
+}
+
+// ReleaseAlibabaTianmaoUopConsignAPIRequest 将 AlibabaTianmaoUopConsignAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTianmaoUopConsignAPIRequest(v *AlibabaTianmaoUopConsignAPIRequest) {
+	v.Reset()
+	poolAlibabaTianmaoUopConsignAPIRequest.Put(v)
 }

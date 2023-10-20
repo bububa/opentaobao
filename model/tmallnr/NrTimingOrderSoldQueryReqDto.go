@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // NrTimingOrderSoldQueryReqDto 结构体
 type NrTimingOrderSoldQueryReqDto struct {
 	// 要查询的订单创建结束时间，开始时间和结束时间之间最多相隔72小时
@@ -14,4 +18,26 @@ type NrTimingOrderSoldQueryReqDto struct {
 	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
 	// 每页大小--当前限制了20
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolNrTimingOrderSoldQueryReqDto = sync.Pool{
+	New: func() any {
+		return new(NrTimingOrderSoldQueryReqDto)
+	},
+}
+
+// GetNrTimingOrderSoldQueryReqDto() 从对象池中获取NrTimingOrderSoldQueryReqDto
+func GetNrTimingOrderSoldQueryReqDto() *NrTimingOrderSoldQueryReqDto {
+	return poolNrTimingOrderSoldQueryReqDto.Get().(*NrTimingOrderSoldQueryReqDto)
+}
+
+// ReleaseNrTimingOrderSoldQueryReqDto 释放NrTimingOrderSoldQueryReqDto
+func ReleaseNrTimingOrderSoldQueryReqDto(v *NrTimingOrderSoldQueryReqDto) {
+	v.EndCreated = ""
+	v.StartCreated = ""
+	v.BizIdentity = ""
+	v.BrandSellerId = 0
+	v.PageNo = 0
+	v.PageSize = 0
+	poolNrTimingOrderSoldQueryReqDto.Put(v)
 }

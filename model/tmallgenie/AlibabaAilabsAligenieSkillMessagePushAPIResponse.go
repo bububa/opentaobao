@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAilabsAligenieSkillMessagePushAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabsAligenieSkillMessagePushAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAilabsAligenieSkillMessagePushAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAilabsAligenieSkillMessagePushAPIResponseModel).Reset()
 }
 
 // AlibabaAilabsAligenieSkillMessagePushAPIResponseModel is 天猫精灵消息推送标准接口 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAilabsAligenieSkillMessagePushAPIResponseModel struct {
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
 	// 接口调用是否成功
 	PushResult bool `json:"push_result,omitempty" xml:"push_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAilabsAligenieSkillMessagePushAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.PushErrorCode = ""
+	m.PushErrorMsg = ""
+	m.Model = false
+	m.PushResult = false
+}
+
+var poolAlibabaAilabsAligenieSkillMessagePushAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAilabsAligenieSkillMessagePushAPIResponse)
+	},
+}
+
+// GetAlibabaAilabsAligenieSkillMessagePushAPIResponse 从 sync.Pool 获取 AlibabaAilabsAligenieSkillMessagePushAPIResponse
+func GetAlibabaAilabsAligenieSkillMessagePushAPIResponse() *AlibabaAilabsAligenieSkillMessagePushAPIResponse {
+	return poolAlibabaAilabsAligenieSkillMessagePushAPIResponse.Get().(*AlibabaAilabsAligenieSkillMessagePushAPIResponse)
+}
+
+// ReleaseAlibabaAilabsAligenieSkillMessagePushAPIResponse 将 AlibabaAilabsAligenieSkillMessagePushAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAilabsAligenieSkillMessagePushAPIResponse(v *AlibabaAilabsAligenieSkillMessagePushAPIResponse) {
+	v.Reset()
+	poolAlibabaAilabsAligenieSkillMessagePushAPIResponse.Put(v)
 }

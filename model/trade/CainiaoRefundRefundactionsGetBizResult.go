@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // CainiaoRefundRefundactionsGetBizResult 结构体
 type CainiaoRefundRefundactionsGetBizResult struct {
 	// 调用错误时，错误code
@@ -10,4 +14,24 @@ type CainiaoRefundRefundactionsGetBizResult struct {
 	Data *OrderRefundActionResponse `json:"data,omitempty" xml:"data,omitempty"`
 	// true表示成功，false表示失败
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolCainiaoRefundRefundactionsGetBizResult = sync.Pool{
+	New: func() any {
+		return new(CainiaoRefundRefundactionsGetBizResult)
+	},
+}
+
+// GetCainiaoRefundRefundactionsGetBizResult() 从对象池中获取CainiaoRefundRefundactionsGetBizResult
+func GetCainiaoRefundRefundactionsGetBizResult() *CainiaoRefundRefundactionsGetBizResult {
+	return poolCainiaoRefundRefundactionsGetBizResult.Get().(*CainiaoRefundRefundactionsGetBizResult)
+}
+
+// ReleaseCainiaoRefundRefundactionsGetBizResult 释放CainiaoRefundRefundactionsGetBizResult
+func ReleaseCainiaoRefundRefundactionsGetBizResult(v *CainiaoRefundRefundactionsGetBizResult) {
+	v.StatusCode = ""
+	v.StatusMessage = ""
+	v.Data = nil
+	v.Success = false
+	poolCainiaoRefundRefundactionsGetBizResult.Put(v)
 }

@@ -1,5 +1,9 @@
 package ott
 
+import (
+	"sync"
+)
+
 // Items 结构体
 type Items struct {
 	// 便签按钮
@@ -68,4 +72,53 @@ type Items struct {
 	RecAppId int64 `json:"rec_app_id,omitempty" xml:"rec_app_id,omitempty"`
 	// 推荐类型,0:运营自主推荐,1:纯个性化推荐,2:主题个性化推荐
 	RecType int64 `json:"rec_type,omitempty" xml:"rec_type,omitempty"`
+}
+
+var poolItems = sync.Pool{
+	New: func() any {
+		return new(Items)
+	},
+}
+
+// GetItems() 从对象池中获取Items
+func GetItems() *Items {
+	return poolItems.Get().(*Items)
+}
+
+// ReleaseItems 释放Items
+func ReleaseItems(v *Items) {
+	v.NoteBtns = v.NoteBtns[:0]
+	v.PicPops = v.PicPops[:0]
+	v.ItemList = v.ItemList[:0]
+	v.EntryList = v.EntryList[:0]
+	v.SubTitles = v.SubTitles[:0]
+	v.RuleIds = v.RuleIds[:0]
+	v.AnimeType = ""
+	v.MainTitle = ""
+	v.PicUrl1 = ""
+	v.PicUrl2 = ""
+	v.PicUrl = ""
+	v.Summary = ""
+	v.Type = ""
+	v.Name = ""
+	v.VerifyCode = ""
+	v.DisplayType = ""
+	v.PicTitle = ""
+	v.Extra = ""
+	v.Action = ""
+	v.ShowType = ""
+	v.PicMap = ""
+	v.Position = 0
+	v.PicCorner = nil
+	v.Id = 0
+	v.CycleTime = 0
+	v.ItemId = 0
+	v.Entry = nil
+	v.Chart = nil
+	v.ChannelId = 0
+	v.EntryStyle = 0
+	v.RuleId = 0
+	v.RecAppId = 0
+	v.RecType = 0
+	poolItems.Put(v)
 }

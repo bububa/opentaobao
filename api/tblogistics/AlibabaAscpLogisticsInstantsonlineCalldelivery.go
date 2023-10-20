@@ -9,11 +9,6 @@ import (
 // alibaba.ascp.logistics.instantsonline.calldelivery
 //
 // 同城配送在线下单正式下单呼叫运力
-func AlibabaAscpLogisticsInstantsonlineCalldelivery(clt *core.SDKClient, req *tblogistics.AlibabaAscpLogisticsInstantsonlineCalldeliveryAPIRequest, session string) (*tblogistics.AlibabaAscpLogisticsInstantsonlineCalldeliveryAPIResponse, error) {
-	var resp tblogistics.AlibabaAscpLogisticsInstantsonlineCalldeliveryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAscpLogisticsInstantsonlineCalldelivery(clt *core.SDKClient, req *tblogistics.AlibabaAscpLogisticsInstantsonlineCalldeliveryAPIRequest, resp *tblogistics.AlibabaAscpLogisticsInstantsonlineCalldeliveryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

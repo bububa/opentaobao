@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAlihouseNewhomeRcChangestatusAPIRequest struct {
 // NewAlibabaAlihouseNewhomeRcChangestatusRequest 初始化AlibabaAlihouseNewhomeRcChangestatusAPIRequest对象
 func NewAlibabaAlihouseNewhomeRcChangestatusRequest() *AlibabaAlihouseNewhomeRcChangestatusAPIRequest {
 	return &AlibabaAlihouseNewhomeRcChangestatusAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeRcChangestatusAPIRequest) Reset() {
+	r._outerId = ""
+	r._outerProjectId = ""
+	r._outerStoreId = ""
+	r._status = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAlihouseNewhomeRcChangestatusAPIRequest) SetStatus(_status int64
 // GetStatus Status Getter
 func (r AlibabaAlihouseNewhomeRcChangestatusAPIRequest) GetStatus() int64 {
 	return r._status
+}
+
+var poolAlibabaAlihouseNewhomeRcChangestatusAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeRcChangestatusRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeRcChangestatusRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeRcChangestatusAPIRequest
+func GetAlibabaAlihouseNewhomeRcChangestatusAPIRequest() *AlibabaAlihouseNewhomeRcChangestatusAPIRequest {
+	return poolAlibabaAlihouseNewhomeRcChangestatusAPIRequest.Get().(*AlibabaAlihouseNewhomeRcChangestatusAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeRcChangestatusAPIRequest 将 AlibabaAlihouseNewhomeRcChangestatusAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeRcChangestatusAPIRequest(v *AlibabaAlihouseNewhomeRcChangestatusAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeRcChangestatusAPIRequest.Put(v)
 }

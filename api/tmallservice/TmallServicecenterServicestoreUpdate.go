@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.servicestore.update
 //
 // 用于修改门店/网点信息。多个业务共用
-func TmallServicecenterServicestoreUpdate(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreUpdateAPIRequest, session string) (*tmallservice.TmallServicecenterServicestoreUpdateAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterServicestoreUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterServicestoreUpdate(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreUpdateAPIRequest, resp *tmallservice.TmallServicecenterServicestoreUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

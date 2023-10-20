@@ -1,5 +1,9 @@
 package jipiao
 
+import (
+	"sync"
+)
+
 // Passenger 结构体
 type Passenger struct {
 	// 乘客生日
@@ -14,4 +18,26 @@ type Passenger struct {
 	TicketNo string `json:"ticket_no,omitempty" xml:"ticket_no,omitempty"`
 	// 改签前的票号
 	OldTicketNo string `json:"old_ticket_no,omitempty" xml:"old_ticket_no,omitempty"`
+}
+
+var poolPassenger = sync.Pool{
+	New: func() any {
+		return new(Passenger)
+	},
+}
+
+// GetPassenger() 从对象池中获取Passenger
+func GetPassenger() *Passenger {
+	return poolPassenger.Get().(*Passenger)
+}
+
+// ReleasePassenger 释放Passenger
+func ReleasePassenger(v *Passenger) {
+	v.Birthday = ""
+	v.CertNum = ""
+	v.PassengerName = ""
+	v.Pnr = ""
+	v.TicketNo = ""
+	v.OldTicketNo = ""
+	poolPassenger.Put(v)
 }

@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // FastBuyPosCreateRequest 结构体
 type FastBuyPosCreateRequest struct {
 	// 购买商品信息
@@ -24,4 +28,31 @@ type FastBuyPosCreateRequest struct {
 	OutCouponPayFee int64 `json:"out_coupon_pay_fee,omitempty" xml:"out_coupon_pay_fee,omitempty"`
 	// 外部优惠金额
 	OutPromotionFee int64 `json:"out_promotion_fee,omitempty" xml:"out_promotion_fee,omitempty"`
+}
+
+var poolFastBuyPosCreateRequest = sync.Pool{
+	New: func() any {
+		return new(FastBuyPosCreateRequest)
+	},
+}
+
+// GetFastBuyPosCreateRequest() 从对象池中获取FastBuyPosCreateRequest
+func GetFastBuyPosCreateRequest() *FastBuyPosCreateRequest {
+	return poolFastBuyPosCreateRequest.Get().(*FastBuyPosCreateRequest)
+}
+
+// ReleaseFastBuyPosCreateRequest 释放FastBuyPosCreateRequest
+func ReleaseFastBuyPosCreateRequest(v *FastBuyPosCreateRequest) {
+	v.Items = v.Items[:0]
+	v.CashierNum = ""
+	v.MachineId = ""
+	v.OutOrderId = ""
+	v.PayCode = ""
+	v.StoreId = ""
+	v.OutShopCode = ""
+	v.ExtendInfo = ""
+	v.PayFee = 0
+	v.OutCouponPayFee = 0
+	v.OutPromotionFee = 0
+	poolFastBuyPosCreateRequest.Put(v)
 }

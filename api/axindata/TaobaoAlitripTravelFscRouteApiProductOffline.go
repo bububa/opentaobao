@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.travel.fsc.route.api.product.offline
 //
 // 产品下线
-func TaobaoAlitripTravelFscRouteApiProductOffline(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelFscRouteApiProductOfflineAPIRequest, session string) (*axindata.TaobaoAlitripTravelFscRouteApiProductOfflineAPIResponse, error) {
-	var resp axindata.TaobaoAlitripTravelFscRouteApiProductOfflineAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripTravelFscRouteApiProductOffline(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelFscRouteApiProductOfflineAPIRequest, resp *axindata.TaobaoAlitripTravelFscRouteApiProductOfflineAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

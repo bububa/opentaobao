@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.tracecodeseller.bill.rootcode.get
 //
 // 获取最外层包装码
-func AlibabaAlihealthTracecodesellerBillRootcodeGet(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthTracecodesellerBillRootcodeGetAPIRequest, session string) (*drugtrace.AlibabaAlihealthTracecodesellerBillRootcodeGetAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthTracecodesellerBillRootcodeGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthTracecodesellerBillRootcodeGet(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthTracecodesellerBillRootcodeGetAPIRequest, resp *drugtrace.AlibabaAlihealthTracecodesellerBillRootcodeGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.tc.compass.warehousenetwork.query
 //
 // 按仓维度来查询鸟潮网络
-func AlibabaTcCompassWarehousenetworkQuery(clt *core.SDKClient, req *wdk.AlibabaTcCompassWarehousenetworkQueryAPIRequest, session string) (*wdk.AlibabaTcCompassWarehousenetworkQueryAPIResponse, error) {
-	var resp wdk.AlibabaTcCompassWarehousenetworkQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTcCompassWarehousenetworkQuery(clt *core.SDKClient, req *wdk.AlibabaTcCompassWarehousenetworkQueryAPIRequest, resp *wdk.AlibabaTcCompassWarehousenetworkQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

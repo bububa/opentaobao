@@ -1,5 +1,9 @@
 package tmallcar
 
+import (
+	"sync"
+)
+
 // ResourceMetaCommand 结构体
 type ResourceMetaCommand struct {
 	// 摘要
@@ -22,4 +26,30 @@ type ResourceMetaCommand struct {
 	GroupId int64 `json:"group_id,omitempty" xml:"group_id,omitempty"`
 	// 外部车型id
 	OutModelId int64 `json:"out_model_id,omitempty" xml:"out_model_id,omitempty"`
+}
+
+var poolResourceMetaCommand = sync.Pool{
+	New: func() any {
+		return new(ResourceMetaCommand)
+	},
+}
+
+// GetResourceMetaCommand() 从对象池中获取ResourceMetaCommand
+func GetResourceMetaCommand() *ResourceMetaCommand {
+	return poolResourceMetaCommand.Get().(*ResourceMetaCommand)
+}
+
+// ReleaseResourceMetaCommand 释放ResourceMetaCommand
+func ReleaseResourceMetaCommand(v *ResourceMetaCommand) {
+	v.Summary = ""
+	v.ExtensionField = ""
+	v.Title = ""
+	v.FromSource = ""
+	v.ResourceType = ""
+	v.ResourceOptions = ""
+	v.ResourceId = 0
+	v.OutSeriesId = 0
+	v.GroupId = 0
+	v.OutModelId = 0
+	poolResourceMetaCommand.Put(v)
 }

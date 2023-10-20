@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIResponse struct {
 	AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIResponseModel).Reset()
+}
+
 // AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIResponseModel is 任务领奖 成功返回结果
 type AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_growth_interactive_task_receivetaskprize_response"`
@@ -22,4 +29,27 @@ type AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 发奖结果
 	Result *BaseResponse `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIResponse)
+	},
+}
+
+// GetAlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIResponse 从 sync.Pool 获取 AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIResponse
+func GetAlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIResponse() *AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIResponse {
+	return poolAlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIResponse.Get().(*AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIResponse)
+}
+
+// ReleaseAlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIResponse 将 AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIResponse(v *AlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIResponse) {
+	v.Reset()
+	poolAlibabaAlscGrowthInteractiveTaskReceivetaskprizeAPIResponse.Put(v)
 }

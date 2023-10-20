@@ -2,6 +2,7 @@ package mc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TmallMcRecordOrderSyncAPIRequest struct {
 // NewTmallMcRecordOrderSyncRequest 初始化TmallMcRecordOrderSyncAPIRequest对象
 func NewTmallMcRecordOrderSyncRequest() *TmallMcRecordOrderSyncAPIRequest {
 	return &TmallMcRecordOrderSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallMcRecordOrderSyncAPIRequest) Reset() {
+	r._deviceCode = ""
+	r._openId = ""
+	r._result = ""
+	r._version = ""
+	r._originPrice = 0
+	r._payPrice = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TmallMcRecordOrderSyncAPIRequest) SetPayPrice(_payPrice int64) error {
 // GetPayPrice PayPrice Getter
 func (r TmallMcRecordOrderSyncAPIRequest) GetPayPrice() int64 {
 	return r._payPrice
+}
+
+var poolTmallMcRecordOrderSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallMcRecordOrderSyncRequest()
+	},
+}
+
+// GetTmallMcRecordOrderSyncRequest 从 sync.Pool 获取 TmallMcRecordOrderSyncAPIRequest
+func GetTmallMcRecordOrderSyncAPIRequest() *TmallMcRecordOrderSyncAPIRequest {
+	return poolTmallMcRecordOrderSyncAPIRequest.Get().(*TmallMcRecordOrderSyncAPIRequest)
+}
+
+// ReleaseTmallMcRecordOrderSyncAPIRequest 将 TmallMcRecordOrderSyncAPIRequest 放入 sync.Pool
+func ReleaseTmallMcRecordOrderSyncAPIRequest(v *TmallMcRecordOrderSyncAPIRequest) {
+	v.Reset()
+	poolTmallMcRecordOrderSyncAPIRequest.Put(v)
 }

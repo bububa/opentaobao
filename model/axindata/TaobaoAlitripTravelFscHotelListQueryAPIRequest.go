@@ -2,6 +2,7 @@ package axindata
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoAlitripTravelFscHotelListQueryAPIRequest struct {
 // NewTaobaoAlitripTravelFscHotelListQueryRequest 初始化TaobaoAlitripTravelFscHotelListQueryAPIRequest对象
 func NewTaobaoAlitripTravelFscHotelListQueryRequest() *TaobaoAlitripTravelFscHotelListQueryAPIRequest {
 	return &TaobaoAlitripTravelFscHotelListQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripTravelFscHotelListQueryAPIRequest) Reset() {
+	r._lastMaxShid = 0
+	r._cityCode = 0
+	r._limit = 0
+	r._distributorTid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoAlitripTravelFscHotelListQueryAPIRequest) SetDistributorTid(_dist
 // GetDistributorTid DistributorTid Getter
 func (r TaobaoAlitripTravelFscHotelListQueryAPIRequest) GetDistributorTid() int64 {
 	return r._distributorTid
+}
+
+var poolTaobaoAlitripTravelFscHotelListQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripTravelFscHotelListQueryRequest()
+	},
+}
+
+// GetTaobaoAlitripTravelFscHotelListQueryRequest 从 sync.Pool 获取 TaobaoAlitripTravelFscHotelListQueryAPIRequest
+func GetTaobaoAlitripTravelFscHotelListQueryAPIRequest() *TaobaoAlitripTravelFscHotelListQueryAPIRequest {
+	return poolTaobaoAlitripTravelFscHotelListQueryAPIRequest.Get().(*TaobaoAlitripTravelFscHotelListQueryAPIRequest)
+}
+
+// ReleaseTaobaoAlitripTravelFscHotelListQueryAPIRequest 将 TaobaoAlitripTravelFscHotelListQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripTravelFscHotelListQueryAPIRequest(v *TaobaoAlitripTravelFscHotelListQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripTravelFscHotelListQueryAPIRequest.Put(v)
 }

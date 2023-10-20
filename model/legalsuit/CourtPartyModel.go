@@ -1,5 +1,9 @@
 package legalsuit
 
+import (
+	"sync"
+)
+
 // CourtPartyModel 结构体
 type CourtPartyModel struct {
 	// 送达情况
@@ -18,4 +22,28 @@ type CourtPartyModel struct {
 	IsProxy string `json:"is_proxy,omitempty" xml:"is_proxy,omitempty"`
 	// 原告/被告名称
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
+}
+
+var poolCourtPartyModel = sync.Pool{
+	New: func() any {
+		return new(CourtPartyModel)
+	},
+}
+
+// GetCourtPartyModel() 从对象池中获取CourtPartyModel
+func GetCourtPartyModel() *CourtPartyModel {
+	return poolCourtPartyModel.Get().(*CourtPartyModel)
+}
+
+// ReleaseCourtPartyModel 释放CourtPartyModel
+func ReleaseCourtPartyModel(v *CourtPartyModel) {
+	v.DeliverySituation = ""
+	v.IsRespond = ""
+	v.IsAppear = ""
+	v.Identity = ""
+	v.ProxyIdentity = ""
+	v.ProxyName = ""
+	v.IsProxy = ""
+	v.Name = ""
+	poolCourtPartyModel.Put(v)
 }

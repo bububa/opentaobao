@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkSeriesSortAPIRequest struct {
 // NewAlibabaWdkSeriesSortRequest 初始化AlibabaWdkSeriesSortAPIRequest对象
 func NewAlibabaWdkSeriesSortRequest() *AlibabaWdkSeriesSortAPIRequest {
 	return &AlibabaWdkSeriesSortAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkSeriesSortAPIRequest) Reset() {
+	r._sort = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkSeriesSortAPIRequest) SetSort(_sort *SeriesSortRequest) error
 // GetSort Sort Getter
 func (r AlibabaWdkSeriesSortAPIRequest) GetSort() *SeriesSortRequest {
 	return r._sort
+}
+
+var poolAlibabaWdkSeriesSortAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkSeriesSortRequest()
+	},
+}
+
+// GetAlibabaWdkSeriesSortRequest 从 sync.Pool 获取 AlibabaWdkSeriesSortAPIRequest
+func GetAlibabaWdkSeriesSortAPIRequest() *AlibabaWdkSeriesSortAPIRequest {
+	return poolAlibabaWdkSeriesSortAPIRequest.Get().(*AlibabaWdkSeriesSortAPIRequest)
+}
+
+// ReleaseAlibabaWdkSeriesSortAPIRequest 将 AlibabaWdkSeriesSortAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkSeriesSortAPIRequest(v *AlibabaWdkSeriesSortAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkSeriesSortAPIRequest.Put(v)
 }

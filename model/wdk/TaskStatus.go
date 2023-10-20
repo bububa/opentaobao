@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // TaskStatus 结构体
 type TaskStatus struct {
 	// 容器编号列表
@@ -26,4 +30,32 @@ type TaskStatus struct {
 	ContainerCount int64 `json:"container_count,omitempty" xml:"container_count,omitempty"`
 	// 是否最终状态（打包完成\整批次所有sku全部缺货：true，其他：false）
 	IsFinalStatus bool `json:"is_final_status,omitempty" xml:"is_final_status,omitempty"`
+}
+
+var poolTaskStatus = sync.Pool{
+	New: func() any {
+		return new(TaskStatus)
+	},
+}
+
+// GetTaskStatus() 从对象池中获取TaskStatus
+func GetTaskStatus() *TaskStatus {
+	return poolTaskStatus.Get().(*TaskStatus)
+}
+
+// ReleaseTaskStatus 释放TaskStatus
+func ReleaseTaskStatus(v *TaskStatus) {
+	v.ContainerInfoList = v.ContainerInfoList[:0]
+	v.FulfillOrderList = v.FulfillOrderList[:0]
+	v.NodeType = ""
+	v.NodeCode = ""
+	v.BatchId = ""
+	v.StatusChangeType = ""
+	v.StatusChangeTime = ""
+	v.OperatorCode = ""
+	v.AbnormalPackCount = ""
+	v.Attributes = ""
+	v.ContainerCount = 0
+	v.IsFinalStatus = false
+	poolTaskStatus.Put(v)
 }

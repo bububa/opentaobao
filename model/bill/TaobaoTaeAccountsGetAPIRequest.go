@@ -2,6 +2,7 @@ package bill
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoTaeAccountsGetAPIRequest struct {
 // NewTaobaoTaeAccountsGetRequest 初始化TaobaoTaeAccountsGetAPIRequest对象
 func NewTaobaoTaeAccountsGetRequest() *TaobaoTaeAccountsGetAPIRequest {
 	return &TaobaoTaeAccountsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTaeAccountsGetAPIRequest) Reset() {
+	r._fields = r._fields[:0]
+	r._aids = r._aids[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoTaeAccountsGetAPIRequest) SetAids(_aids []string) error {
 // GetAids Aids Getter
 func (r TaobaoTaeAccountsGetAPIRequest) GetAids() []string {
 	return r._aids
+}
+
+var poolTaobaoTaeAccountsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTaeAccountsGetRequest()
+	},
+}
+
+// GetTaobaoTaeAccountsGetRequest 从 sync.Pool 获取 TaobaoTaeAccountsGetAPIRequest
+func GetTaobaoTaeAccountsGetAPIRequest() *TaobaoTaeAccountsGetAPIRequest {
+	return poolTaobaoTaeAccountsGetAPIRequest.Get().(*TaobaoTaeAccountsGetAPIRequest)
+}
+
+// ReleaseTaobaoTaeAccountsGetAPIRequest 将 TaobaoTaeAccountsGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTaeAccountsGetAPIRequest(v *TaobaoTaeAccountsGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTaeAccountsGetAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.logistics.erp.delivery.cut
 //
 // ERP发起配拦截
-func TaobaoLogisticsErpDeliveryCut(clt *core.SDKClient, req *logistic.TaobaoLogisticsErpDeliveryCutAPIRequest, session string) (*logistic.TaobaoLogisticsErpDeliveryCutAPIResponse, error) {
-	var resp logistic.TaobaoLogisticsErpDeliveryCutAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoLogisticsErpDeliveryCut(clt *core.SDKClient, req *logistic.TaobaoLogisticsErpDeliveryCutAPIRequest, resp *logistic.TaobaoLogisticsErpDeliveryCutAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package fundplatform
 
+import (
+	"sync"
+)
+
 // PytLedgerInvoiceLineRequest 结构体
 type PytLedgerInvoiceLineRequest struct {
 	// 含税金额
@@ -38,4 +42,38 @@ type PytLedgerInvoiceLineRequest struct {
 	ItemName string `json:"item_name,omitempty" xml:"item_name,omitempty"`
 	// 项目编码
 	ItemCode string `json:"item_code,omitempty" xml:"item_code,omitempty"`
+}
+
+var poolPytLedgerInvoiceLineRequest = sync.Pool{
+	New: func() any {
+		return new(PytLedgerInvoiceLineRequest)
+	},
+}
+
+// GetPytLedgerInvoiceLineRequest() 从对象池中获取PytLedgerInvoiceLineRequest
+func GetPytLedgerInvoiceLineRequest() *PytLedgerInvoiceLineRequest {
+	return poolPytLedgerInvoiceLineRequest.Get().(*PytLedgerInvoiceLineRequest)
+}
+
+// ReleasePytLedgerInvoiceLineRequest 释放PytLedgerInvoiceLineRequest
+func ReleasePytLedgerInvoiceLineRequest(v *PytLedgerInvoiceLineRequest) {
+	v.AmountWithTax = ""
+	v.AmountWithoutTax = ""
+	v.Deductions = ""
+	v.GoodsTaxNo = ""
+	v.GoodsTaxNoVersion = ""
+	v.Quantity = ""
+	v.Specifications = ""
+	v.TaxAmount = ""
+	v.TaxPre = ""
+	v.TaxPreCon = ""
+	v.TaxRate = ""
+	v.TollEndDate = ""
+	v.TollStartDate = ""
+	v.Unit = ""
+	v.UnitPrice = ""
+	v.ZeroTax = ""
+	v.ItemName = ""
+	v.ItemCode = ""
+	poolPytLedgerInvoiceLineRequest.Put(v)
 }

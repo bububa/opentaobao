@@ -2,6 +2,7 @@ package legalsuit
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaLegalStandpointDraftstandpointInsertAPIRequest struct {
 // NewAlibabaLegalStandpointDraftstandpointInsertRequest 初始化AlibabaLegalStandpointDraftstandpointInsertAPIRequest对象
 func NewAlibabaLegalStandpointDraftstandpointInsertRequest() *AlibabaLegalStandpointDraftstandpointInsertAPIRequest {
 	return &AlibabaLegalStandpointDraftstandpointInsertAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLegalStandpointDraftstandpointInsertAPIRequest) Reset() {
+	r._inputSystemCode = ""
+	r._standpointDeriveDraftEpaasDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaLegalStandpointDraftstandpointInsertAPIRequest) SetStandpointDer
 // GetStandpointDeriveDraftEpaasDto StandpointDeriveDraftEpaasDto Getter
 func (r AlibabaLegalStandpointDraftstandpointInsertAPIRequest) GetStandpointDeriveDraftEpaasDto() *StandpointDeriveDraftEpaasDto {
 	return r._standpointDeriveDraftEpaasDto
+}
+
+var poolAlibabaLegalStandpointDraftstandpointInsertAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLegalStandpointDraftstandpointInsertRequest()
+	},
+}
+
+// GetAlibabaLegalStandpointDraftstandpointInsertRequest 从 sync.Pool 获取 AlibabaLegalStandpointDraftstandpointInsertAPIRequest
+func GetAlibabaLegalStandpointDraftstandpointInsertAPIRequest() *AlibabaLegalStandpointDraftstandpointInsertAPIRequest {
+	return poolAlibabaLegalStandpointDraftstandpointInsertAPIRequest.Get().(*AlibabaLegalStandpointDraftstandpointInsertAPIRequest)
+}
+
+// ReleaseAlibabaLegalStandpointDraftstandpointInsertAPIRequest 将 AlibabaLegalStandpointDraftstandpointInsertAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLegalStandpointDraftstandpointInsertAPIRequest(v *AlibabaLegalStandpointDraftstandpointInsertAPIRequest) {
+	v.Reset()
+	poolAlibabaLegalStandpointDraftstandpointInsertAPIRequest.Put(v)
 }

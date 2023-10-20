@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // MerchantBusLineInfo 结构体
 type MerchantBusLineInfo struct {
 	// 目的地
@@ -16,4 +20,27 @@ type MerchantBusLineInfo struct {
 	ScheduleId string `json:"schedule_id,omitempty" xml:"schedule_id,omitempty"`
 	// 出发站名称
 	StartStationName string `json:"start_station_name,omitempty" xml:"start_station_name,omitempty"`
+}
+
+var poolMerchantBusLineInfo = sync.Pool{
+	New: func() any {
+		return new(MerchantBusLineInfo)
+	},
+}
+
+// GetMerchantBusLineInfo() 从对象池中获取MerchantBusLineInfo
+func GetMerchantBusLineInfo() *MerchantBusLineInfo {
+	return poolMerchantBusLineInfo.Get().(*MerchantBusLineInfo)
+}
+
+// ReleaseMerchantBusLineInfo 释放MerchantBusLineInfo
+func ReleaseMerchantBusLineInfo(v *MerchantBusLineInfo) {
+	v.LastPlaceName = ""
+	v.ArriveStationName = ""
+	v.DepartDate = ""
+	v.BusNumber = ""
+	v.StartTime = ""
+	v.ScheduleId = ""
+	v.StartStationName = ""
+	poolMerchantBusLineInfo.Put(v)
 }

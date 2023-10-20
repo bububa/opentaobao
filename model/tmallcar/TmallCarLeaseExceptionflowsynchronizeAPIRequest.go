@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TmallCarLeaseExceptionflowsynchronizeAPIRequest struct {
 // NewTmallCarLeaseExceptionflowsynchronizeRequest 初始化TmallCarLeaseExceptionflowsynchronizeAPIRequest对象
 func NewTmallCarLeaseExceptionflowsynchronizeRequest() *TmallCarLeaseExceptionflowsynchronizeAPIRequest {
 	return &TmallCarLeaseExceptionflowsynchronizeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCarLeaseExceptionflowsynchronizeAPIRequest) Reset() {
+	r._desc = ""
+	r._orderId = 0
+	r._status = 0
+	r._flowType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TmallCarLeaseExceptionflowsynchronizeAPIRequest) SetFlowType(_flowType 
 // GetFlowType FlowType Getter
 func (r TmallCarLeaseExceptionflowsynchronizeAPIRequest) GetFlowType() int64 {
 	return r._flowType
+}
+
+var poolTmallCarLeaseExceptionflowsynchronizeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCarLeaseExceptionflowsynchronizeRequest()
+	},
+}
+
+// GetTmallCarLeaseExceptionflowsynchronizeRequest 从 sync.Pool 获取 TmallCarLeaseExceptionflowsynchronizeAPIRequest
+func GetTmallCarLeaseExceptionflowsynchronizeAPIRequest() *TmallCarLeaseExceptionflowsynchronizeAPIRequest {
+	return poolTmallCarLeaseExceptionflowsynchronizeAPIRequest.Get().(*TmallCarLeaseExceptionflowsynchronizeAPIRequest)
+}
+
+// ReleaseTmallCarLeaseExceptionflowsynchronizeAPIRequest 将 TmallCarLeaseExceptionflowsynchronizeAPIRequest 放入 sync.Pool
+func ReleaseTmallCarLeaseExceptionflowsynchronizeAPIRequest(v *TmallCarLeaseExceptionflowsynchronizeAPIRequest) {
+	v.Reset()
+	poolTmallCarLeaseExceptionflowsynchronizeAPIRequest.Put(v)
 }

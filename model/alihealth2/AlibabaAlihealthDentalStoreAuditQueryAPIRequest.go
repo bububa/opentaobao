@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthDentalStoreAuditQueryAPIRequest struct {
 // NewAlibabaAlihealthDentalStoreAuditQueryRequest 初始化AlibabaAlihealthDentalStoreAuditQueryAPIRequest对象
 func NewAlibabaAlihealthDentalStoreAuditQueryRequest() *AlibabaAlihealthDentalStoreAuditQueryAPIRequest {
 	return &AlibabaAlihealthDentalStoreAuditQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDentalStoreAuditQueryAPIRequest) Reset() {
+	r._storeAuditIds = r._storeAuditIds[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthDentalStoreAuditQueryAPIRequest) SetStoreAuditIds(_stor
 // GetStoreAuditIds StoreAuditIds Getter
 func (r AlibabaAlihealthDentalStoreAuditQueryAPIRequest) GetStoreAuditIds() []string {
 	return r._storeAuditIds
+}
+
+var poolAlibabaAlihealthDentalStoreAuditQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDentalStoreAuditQueryRequest()
+	},
+}
+
+// GetAlibabaAlihealthDentalStoreAuditQueryRequest 从 sync.Pool 获取 AlibabaAlihealthDentalStoreAuditQueryAPIRequest
+func GetAlibabaAlihealthDentalStoreAuditQueryAPIRequest() *AlibabaAlihealthDentalStoreAuditQueryAPIRequest {
+	return poolAlibabaAlihealthDentalStoreAuditQueryAPIRequest.Get().(*AlibabaAlihealthDentalStoreAuditQueryAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDentalStoreAuditQueryAPIRequest 将 AlibabaAlihealthDentalStoreAuditQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDentalStoreAuditQueryAPIRequest(v *AlibabaAlihealthDentalStoreAuditQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDentalStoreAuditQueryAPIRequest.Put(v)
 }

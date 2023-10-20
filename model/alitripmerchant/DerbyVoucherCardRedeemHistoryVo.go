@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // DerbyVoucherCardRedeemHistoryVo 结构体
 type DerbyVoucherCardRedeemHistoryVo struct {
 	// 臻享卡卡号
@@ -14,4 +18,26 @@ type DerbyVoucherCardRedeemHistoryVo struct {
 	RedeemTime string `json:"redeem_time,omitempty" xml:"redeem_time,omitempty"`
 	// 兑换成功
 	RedeemSuccess bool `json:"redeem_success,omitempty" xml:"redeem_success,omitempty"`
+}
+
+var poolDerbyVoucherCardRedeemHistoryVo = sync.Pool{
+	New: func() any {
+		return new(DerbyVoucherCardRedeemHistoryVo)
+	},
+}
+
+// GetDerbyVoucherCardRedeemHistoryVo() 从对象池中获取DerbyVoucherCardRedeemHistoryVo
+func GetDerbyVoucherCardRedeemHistoryVo() *DerbyVoucherCardRedeemHistoryVo {
+	return poolDerbyVoucherCardRedeemHistoryVo.Get().(*DerbyVoucherCardRedeemHistoryVo)
+}
+
+// ReleaseDerbyVoucherCardRedeemHistoryVo 释放DerbyVoucherCardRedeemHistoryVo
+func ReleaseDerbyVoucherCardRedeemHistoryVo(v *DerbyVoucherCardRedeemHistoryVo) {
+	v.MemberVoucherCardID = ""
+	v.CardNumber = ""
+	v.TicketCode = ""
+	v.VoucherCardCategory = ""
+	v.RedeemTime = ""
+	v.RedeemSuccess = false
+	poolDerbyVoucherCardRedeemHistoryVo.Put(v)
 }

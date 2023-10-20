@@ -1,5 +1,9 @@
 package tbrefund
 
+import (
+	"sync"
+)
+
 // Address 结构体
 type Address struct {
 	// 收件人姓名
@@ -24,4 +28,31 @@ type Address struct {
 	DivisionCode string `json:"division_code,omitempty" xml:"division_code,omitempty"`
 	// 地址ID
 	AddressId int64 `json:"address_id,omitempty" xml:"address_id,omitempty"`
+}
+
+var poolAddress = sync.Pool{
+	New: func() any {
+		return new(Address)
+	},
+}
+
+// GetAddress() 从对象池中获取Address
+func GetAddress() *Address {
+	return poolAddress.Get().(*Address)
+}
+
+// ReleaseAddress 释放Address
+func ReleaseAddress(v *Address) {
+	v.ReceiverName = ""
+	v.PostCode = ""
+	v.Mobile = ""
+	v.CountryName = ""
+	v.ProvinceName = ""
+	v.CityName = ""
+	v.AreaName = ""
+	v.TownName = ""
+	v.AddressDetail = ""
+	v.DivisionCode = ""
+	v.AddressId = 0
+	poolAddress.Put(v)
 }

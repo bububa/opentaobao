@@ -2,6 +2,7 @@ package alimsg
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaIdleOrderMsgSendAPIRequest struct {
 // NewAlibabaIdleOrderMsgSendRequest 初始化AlibabaIdleOrderMsgSendAPIRequest对象
 func NewAlibabaIdleOrderMsgSendRequest() *AlibabaIdleOrderMsgSendAPIRequest {
 	return &AlibabaIdleOrderMsgSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleOrderMsgSendAPIRequest) Reset() {
+	r._orderId = ""
+	r._text = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaIdleOrderMsgSendAPIRequest) SetText(_text string) error {
 // GetText Text Getter
 func (r AlibabaIdleOrderMsgSendAPIRequest) GetText() string {
 	return r._text
+}
+
+var poolAlibabaIdleOrderMsgSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleOrderMsgSendRequest()
+	},
+}
+
+// GetAlibabaIdleOrderMsgSendRequest 从 sync.Pool 获取 AlibabaIdleOrderMsgSendAPIRequest
+func GetAlibabaIdleOrderMsgSendAPIRequest() *AlibabaIdleOrderMsgSendAPIRequest {
+	return poolAlibabaIdleOrderMsgSendAPIRequest.Get().(*AlibabaIdleOrderMsgSendAPIRequest)
+}
+
+// ReleaseAlibabaIdleOrderMsgSendAPIRequest 将 AlibabaIdleOrderMsgSendAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleOrderMsgSendAPIRequest(v *AlibabaIdleOrderMsgSendAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleOrderMsgSendAPIRequest.Put(v)
 }

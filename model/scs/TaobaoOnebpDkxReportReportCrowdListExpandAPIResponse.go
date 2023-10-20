@@ -2,6 +2,7 @@ package scs
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,6 +18,12 @@ type TaobaoOnebpDkxReportReportCrowdListExpandAPIResponse struct {
 	TaobaoOnebpDkxReportReportCrowdListExpandAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoOnebpDkxReportReportCrowdListExpandAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOnebpDkxReportReportCrowdListExpandAPIResponseModel).Reset()
+}
+
 // TaobaoOnebpDkxReportReportCrowdListExpandAPIResponseModel is 获取拓展人群数据报表 成功返回结果
 type TaobaoOnebpDkxReportReportCrowdListExpandAPIResponseModel struct {
 	XMLName xml.Name `xml:"onebp_dkx_report_report_crowd_list_expand_response"`
@@ -24,4 +31,27 @@ type TaobaoOnebpDkxReportReportCrowdListExpandAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果体
 	Result *TaobaoOnebpDkxReportReportCrowdListExpandResultDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOnebpDkxReportReportCrowdListExpandAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoOnebpDkxReportReportCrowdListExpandAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOnebpDkxReportReportCrowdListExpandAPIResponse)
+	},
+}
+
+// GetTaobaoOnebpDkxReportReportCrowdListExpandAPIResponse 从 sync.Pool 获取 TaobaoOnebpDkxReportReportCrowdListExpandAPIResponse
+func GetTaobaoOnebpDkxReportReportCrowdListExpandAPIResponse() *TaobaoOnebpDkxReportReportCrowdListExpandAPIResponse {
+	return poolTaobaoOnebpDkxReportReportCrowdListExpandAPIResponse.Get().(*TaobaoOnebpDkxReportReportCrowdListExpandAPIResponse)
+}
+
+// ReleaseTaobaoOnebpDkxReportReportCrowdListExpandAPIResponse 将 TaobaoOnebpDkxReportReportCrowdListExpandAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOnebpDkxReportReportCrowdListExpandAPIResponse(v *TaobaoOnebpDkxReportReportCrowdListExpandAPIResponse) {
+	v.Reset()
+	poolTaobaoOnebpDkxReportReportCrowdListExpandAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package tbrefund
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallDisputeReceiveGetAPIResponse struct {
 	TmallDisputeReceiveGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallDisputeReceiveGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallDisputeReceiveGetAPIResponseModel).Reset()
+}
+
 // TmallDisputeReceiveGetAPIResponseModel is 天猫逆向纠纷查询 成功返回结果
 type TmallDisputeReceiveGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_dispute_receive_get_response"`
@@ -22,4 +29,27 @@ type TmallDisputeReceiveGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *TmallDisputeReceiveGetResultSet `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallDisputeReceiveGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTmallDisputeReceiveGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallDisputeReceiveGetAPIResponse)
+	},
+}
+
+// GetTmallDisputeReceiveGetAPIResponse 从 sync.Pool 获取 TmallDisputeReceiveGetAPIResponse
+func GetTmallDisputeReceiveGetAPIResponse() *TmallDisputeReceiveGetAPIResponse {
+	return poolTmallDisputeReceiveGetAPIResponse.Get().(*TmallDisputeReceiveGetAPIResponse)
+}
+
+// ReleaseTmallDisputeReceiveGetAPIResponse 将 TmallDisputeReceiveGetAPIResponse 保存到 sync.Pool
+func ReleaseTmallDisputeReceiveGetAPIResponse(v *TmallDisputeReceiveGetAPIResponse) {
+	v.Reset()
+	poolTmallDisputeReceiveGetAPIResponse.Put(v)
 }

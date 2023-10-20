@@ -1,5 +1,9 @@
 package traveltrade
 
+import (
+	"sync"
+)
+
 // SubOrderInfo 结构体
 type SubOrderInfo struct {
 	// 出行人信息
@@ -40,4 +44,39 @@ type SubOrderInfo struct {
 	TotalFee int64 `json:"total_fee,omitempty" xml:"total_fee,omitempty"`
 	// 二次确认状态，1、待商家确认 2、确认不通过 3、确认通过 4、过期未确认 5、买家申请退款成功 6、票号验证
 	ConfirmStatus int64 `json:"confirm_status,omitempty" xml:"confirm_status,omitempty"`
+}
+
+var poolSubOrderInfo = sync.Pool{
+	New: func() any {
+		return new(SubOrderInfo)
+	},
+}
+
+// GetSubOrderInfo() 从对象池中获取SubOrderInfo
+func GetSubOrderInfo() *SubOrderInfo {
+	return poolSubOrderInfo.Get().(*SubOrderInfo)
+}
+
+// ReleaseSubOrderInfo 释放SubOrderInfo
+func ReleaseSubOrderInfo(v *SubOrderInfo) {
+	v.Travellers = v.Travellers[:0]
+	v.EndTime = ""
+	v.ExpireTime = ""
+	v.ExtendAttributes = ""
+	v.RefundStatus = ""
+	v.Status = ""
+	v.SubOrderIdString = ""
+	v.ProcessTime = ""
+	v.AdjustFee = 0
+	v.BizType = 0
+	v.BuyItemInfo = nil
+	v.Contactor = nil
+	v.DiscountFee = 0
+	v.OrderType = 0
+	v.Payment = 0
+	v.RefundId = 0
+	v.SubOrderId = 0
+	v.TotalFee = 0
+	v.ConfirmStatus = 0
+	poolSubOrderInfo.Put(v)
 }

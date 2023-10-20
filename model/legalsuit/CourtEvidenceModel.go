@@ -1,5 +1,9 @@
 package legalsuit
 
+import (
+	"sync"
+)
+
 // CourtEvidenceModel 结构体
 type CourtEvidenceModel struct {
 	// 质证意见
@@ -16,4 +20,27 @@ type CourtEvidenceModel struct {
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 质证证据类型(原告证据还是被告证据)
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolCourtEvidenceModel = sync.Pool{
+	New: func() any {
+		return new(CourtEvidenceModel)
+	},
+}
+
+// GetCourtEvidenceModel() 从对象池中获取CourtEvidenceModel
+func GetCourtEvidenceModel() *CourtEvidenceModel {
+	return poolCourtEvidenceModel.Get().(*CourtEvidenceModel)
+}
+
+// ReleaseCourtEvidenceModel 释放CourtEvidenceModel
+func ReleaseCourtEvidenceModel(v *CourtEvidenceModel) {
+	v.Opinion = ""
+	v.IsAgreed = ""
+	v.Evidence = ""
+	v.EvidenceAim = ""
+	v.EvidenceName = ""
+	v.Name = ""
+	v.Type = ""
+	poolCourtEvidenceModel.Put(v)
 }

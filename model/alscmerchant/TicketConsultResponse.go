@@ -1,5 +1,9 @@
 package alscmerchant
 
+import (
+	"sync"
+)
+
 // TicketConsultResponse 结构体
 type TicketConsultResponse struct {
 	// 券码所属订单下，可使用的凭证（同商品）列表
@@ -18,4 +22,28 @@ type TicketConsultResponse struct {
 	OutItemId string `json:"out_item_id,omitempty" xml:"out_item_id,omitempty"`
 	// 剩余可核销数量。团购举例：购买2份团购券，已核销了1份，该属性返回1；次卡举例：购买了3次卡，已核销1次，该属性返回2
 	AvailableQuantity int64 `json:"available_quantity,omitempty" xml:"available_quantity,omitempty"`
+}
+
+var poolTicketConsultResponse = sync.Pool{
+	New: func() any {
+		return new(TicketConsultResponse)
+	},
+}
+
+// GetTicketConsultResponse() 从对象池中获取TicketConsultResponse
+func GetTicketConsultResponse() *TicketConsultResponse {
+	return poolTicketConsultResponse.Get().(*TicketConsultResponse)
+}
+
+// ReleaseTicketConsultResponse 释放TicketConsultResponse
+func ReleaseTicketConsultResponse(v *TicketConsultResponse) {
+	v.TicketInfoList = v.TicketInfoList[:0]
+	v.UserPhone = ""
+	v.BuyerId = ""
+	v.AlscOrderNo = ""
+	v.AlscSubOrderNo = ""
+	v.ItemId = ""
+	v.OutItemId = ""
+	v.AvailableQuantity = 0
+	poolTicketConsultResponse.Put(v)
 }

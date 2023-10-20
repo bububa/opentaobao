@@ -2,6 +2,7 @@ package qt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTsPropertyGetAPIRequest struct {
 // NewTaobaoTsPropertyGetRequest 初始化TaobaoTsPropertyGetAPIRequest对象
 func NewTaobaoTsPropertyGetRequest() *TaobaoTsPropertyGetAPIRequest {
 	return &TaobaoTsPropertyGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTsPropertyGetAPIRequest) Reset() {
+	r._serviceItemCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTsPropertyGetAPIRequest) SetServiceItemCode(_serviceItemCode stri
 // GetServiceItemCode ServiceItemCode Getter
 func (r TaobaoTsPropertyGetAPIRequest) GetServiceItemCode() string {
 	return r._serviceItemCode
+}
+
+var poolTaobaoTsPropertyGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTsPropertyGetRequest()
+	},
+}
+
+// GetTaobaoTsPropertyGetRequest 从 sync.Pool 获取 TaobaoTsPropertyGetAPIRequest
+func GetTaobaoTsPropertyGetAPIRequest() *TaobaoTsPropertyGetAPIRequest {
+	return poolTaobaoTsPropertyGetAPIRequest.Get().(*TaobaoTsPropertyGetAPIRequest)
+}
+
+// ReleaseTaobaoTsPropertyGetAPIRequest 将 TaobaoTsPropertyGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTsPropertyGetAPIRequest(v *TaobaoTsPropertyGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTsPropertyGetAPIRequest.Put(v)
 }

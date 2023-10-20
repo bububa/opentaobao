@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // CrowdDto 结构体
 type CrowdDto struct {
 	// 用户所选择的人群名称
@@ -18,4 +22,28 @@ type CrowdDto struct {
 	FitDiscount int64 `json:"fit_discount,omitempty" xml:"fit_discount,omitempty"`
 	// 所选择的人群id
 	DmpcrowdId int64 `json:"dmpcrowd_id,omitempty" xml:"dmpcrowd_id,omitempty"`
+}
+
+var poolCrowdDto = sync.Pool{
+	New: func() any {
+		return new(CrowdDto)
+	},
+}
+
+// GetCrowdDto() 从对象池中获取CrowdDto
+func GetCrowdDto() *CrowdDto {
+	return poolCrowdDto.Get().(*CrowdDto)
+}
+
+// ReleaseCrowdDto 释放CrowdDto
+func ReleaseCrowdDto(v *CrowdDto) {
+	v.Name = ""
+	v.BizType = 0
+	v.CustId = 0
+	v.TemplateId = 0
+	v.Type = 0
+	v.CrowdId = 0
+	v.FitDiscount = 0
+	v.DmpcrowdId = 0
+	poolCrowdDto.Put(v)
 }

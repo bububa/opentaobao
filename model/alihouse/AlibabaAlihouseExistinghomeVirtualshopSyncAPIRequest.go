@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseExistinghomeVirtualshopSyncAPIRequest struct {
 // NewAlibabaAlihouseExistinghomeVirtualshopSyncRequest 初始化AlibabaAlihouseExistinghomeVirtualshopSyncAPIRequest对象
 func NewAlibabaAlihouseExistinghomeVirtualshopSyncRequest() *AlibabaAlihouseExistinghomeVirtualshopSyncAPIRequest {
 	return &AlibabaAlihouseExistinghomeVirtualshopSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseExistinghomeVirtualshopSyncAPIRequest) Reset() {
+	r._companyVirtualShopDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseExistinghomeVirtualshopSyncAPIRequest) SetCompanyVirtual
 // GetCompanyVirtualShopDto CompanyVirtualShopDto Getter
 func (r AlibabaAlihouseExistinghomeVirtualshopSyncAPIRequest) GetCompanyVirtualShopDto() *CompanyVirtualShopDto {
 	return r._companyVirtualShopDto
+}
+
+var poolAlibabaAlihouseExistinghomeVirtualshopSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseExistinghomeVirtualshopSyncRequest()
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeVirtualshopSyncRequest 从 sync.Pool 获取 AlibabaAlihouseExistinghomeVirtualshopSyncAPIRequest
+func GetAlibabaAlihouseExistinghomeVirtualshopSyncAPIRequest() *AlibabaAlihouseExistinghomeVirtualshopSyncAPIRequest {
+	return poolAlibabaAlihouseExistinghomeVirtualshopSyncAPIRequest.Get().(*AlibabaAlihouseExistinghomeVirtualshopSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeVirtualshopSyncAPIRequest 将 AlibabaAlihouseExistinghomeVirtualshopSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeVirtualshopSyncAPIRequest(v *AlibabaAlihouseExistinghomeVirtualshopSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeVirtualshopSyncAPIRequest.Put(v)
 }

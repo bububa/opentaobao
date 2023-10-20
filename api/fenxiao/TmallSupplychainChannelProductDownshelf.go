@@ -9,11 +9,6 @@ import (
 // tmall.supplychain.channel.product.downshelf
 //
 // 产品下架
-func TmallSupplychainChannelProductDownshelf(clt *core.SDKClient, req *fenxiao.TmallSupplychainChannelProductDownshelfAPIRequest, session string) (*fenxiao.TmallSupplychainChannelProductDownshelfAPIResponse, error) {
-	var resp fenxiao.TmallSupplychainChannelProductDownshelfAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallSupplychainChannelProductDownshelf(clt *core.SDKClient, req *fenxiao.TmallSupplychainChannelProductDownshelfAPIRequest, resp *fenxiao.TmallSupplychainChannelProductDownshelfAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

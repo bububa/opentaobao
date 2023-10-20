@@ -1,5 +1,9 @@
 package tmallgenie
 
+import (
+	"sync"
+)
+
 // TaobaoAilabAicloudTopIdListConverterResult 结构体
 type TaobaoAilabAicloudTopIdListConverterResult struct {
 	// 返回查询内容
@@ -10,4 +14,24 @@ type TaobaoAilabAicloudTopIdListConverterResult struct {
 	RtCode int64 `json:"rt_code,omitempty" xml:"rt_code,omitempty"`
 	// 请求状态
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+var poolTaobaoAilabAicloudTopIdListConverterResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoAilabAicloudTopIdListConverterResult)
+	},
+}
+
+// GetTaobaoAilabAicloudTopIdListConverterResult() 从对象池中获取TaobaoAilabAicloudTopIdListConverterResult
+func GetTaobaoAilabAicloudTopIdListConverterResult() *TaobaoAilabAicloudTopIdListConverterResult {
+	return poolTaobaoAilabAicloudTopIdListConverterResult.Get().(*TaobaoAilabAicloudTopIdListConverterResult)
+}
+
+// ReleaseTaobaoAilabAicloudTopIdListConverterResult 释放TaobaoAilabAicloudTopIdListConverterResult
+func ReleaseTaobaoAilabAicloudTopIdListConverterResult(v *TaobaoAilabAicloudTopIdListConverterResult) {
+	v.RtValue = v.RtValue[:0]
+	v.Message = ""
+	v.RtCode = 0
+	v.IsSuccess = false
+	poolTaobaoAilabAicloudTopIdListConverterResult.Put(v)
 }

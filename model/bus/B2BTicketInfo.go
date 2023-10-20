@@ -1,7 +1,11 @@
 package bus
 
-// B2bticketInfo 结构体
-type B2bticketInfo struct {
+import (
+	"sync"
+)
+
+// B2BTicketInfo 结构体
+type B2BTicketInfo struct {
 	// 乘客类型
 	RiderCertType string `json:"rider_cert_type,omitempty" xml:"rider_cert_type,omitempty"`
 	// 乘客姓名
@@ -22,4 +26,30 @@ type B2bticketInfo struct {
 	SubOrderId int64 `json:"sub_order_id,omitempty" xml:"sub_order_id,omitempty"`
 	// 票价
 	TicketPrice int64 `json:"ticket_price,omitempty" xml:"ticket_price,omitempty"`
+}
+
+var poolB2BTicketInfo = sync.Pool{
+	New: func() any {
+		return new(B2BTicketInfo)
+	},
+}
+
+// GetB2BTicketInfo() 从对象池中获取B2BTicketInfo
+func GetB2BTicketInfo() *B2BTicketInfo {
+	return poolB2BTicketInfo.Get().(*B2BTicketInfo)
+}
+
+// ReleaseB2BTicketInfo 释放B2BTicketInfo
+func ReleaseB2BTicketInfo(v *B2BTicketInfo) {
+	v.RiderCertType = ""
+	v.RiderName = ""
+	v.RiderSeatNumber = ""
+	v.TicketId = ""
+	v.CommissionFee = 0
+	v.RefundFee = 0
+	v.RefundStatus = 0
+	v.ServiceCharge = 0
+	v.SubOrderId = 0
+	v.TicketPrice = 0
+	poolB2BTicketInfo.Put(v)
 }

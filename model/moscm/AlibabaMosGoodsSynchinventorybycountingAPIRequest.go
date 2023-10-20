@@ -2,6 +2,7 @@ package moscm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -22,8 +23,15 @@ type AlibabaMosGoodsSynchinventorybycountingAPIRequest struct {
 // NewAlibabaMosGoodsSynchinventorybycountingRequest 初始化AlibabaMosGoodsSynchinventorybycountingAPIRequest对象
 func NewAlibabaMosGoodsSynchinventorybycountingRequest() *AlibabaMosGoodsSynchinventorybycountingAPIRequest {
 	return &AlibabaMosGoodsSynchinventorybycountingAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosGoodsSynchinventorybycountingAPIRequest) Reset() {
+	r._countingItemDto = r._countingItemDto[:0]
+	r._paramCountingInfoDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -67,4 +75,21 @@ func (r *AlibabaMosGoodsSynchinventorybycountingAPIRequest) SetParamCountingInfo
 // GetParamCountingInfoDto ParamCountingInfoDto Getter
 func (r AlibabaMosGoodsSynchinventorybycountingAPIRequest) GetParamCountingInfoDto() *CountingInfoDto {
 	return r._paramCountingInfoDto
+}
+
+var poolAlibabaMosGoodsSynchinventorybycountingAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosGoodsSynchinventorybycountingRequest()
+	},
+}
+
+// GetAlibabaMosGoodsSynchinventorybycountingRequest 从 sync.Pool 获取 AlibabaMosGoodsSynchinventorybycountingAPIRequest
+func GetAlibabaMosGoodsSynchinventorybycountingAPIRequest() *AlibabaMosGoodsSynchinventorybycountingAPIRequest {
+	return poolAlibabaMosGoodsSynchinventorybycountingAPIRequest.Get().(*AlibabaMosGoodsSynchinventorybycountingAPIRequest)
+}
+
+// ReleaseAlibabaMosGoodsSynchinventorybycountingAPIRequest 将 AlibabaMosGoodsSynchinventorybycountingAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosGoodsSynchinventorybycountingAPIRequest(v *AlibabaMosGoodsSynchinventorybycountingAPIRequest) {
+	v.Reset()
+	poolAlibabaMosGoodsSynchinventorybycountingAPIRequest.Put(v)
 }

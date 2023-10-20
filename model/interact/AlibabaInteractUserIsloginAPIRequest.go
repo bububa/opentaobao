@@ -2,6 +2,7 @@ package interact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaInteractUserIsloginAPIRequest struct {
 // NewAlibabaInteractUserIsloginRequest 初始化AlibabaInteractUserIsloginAPIRequest对象
 func NewAlibabaInteractUserIsloginRequest() *AlibabaInteractUserIsloginAPIRequest {
 	return &AlibabaInteractUserIsloginAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractUserIsloginAPIRequest) Reset() {
+	r._buyerNick = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaInteractUserIsloginAPIRequest) SetBuyerNick(_buyerNick string) e
 // GetBuyerNick BuyerNick Getter
 func (r AlibabaInteractUserIsloginAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
+}
+
+var poolAlibabaInteractUserIsloginAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractUserIsloginRequest()
+	},
+}
+
+// GetAlibabaInteractUserIsloginRequest 从 sync.Pool 获取 AlibabaInteractUserIsloginAPIRequest
+func GetAlibabaInteractUserIsloginAPIRequest() *AlibabaInteractUserIsloginAPIRequest {
+	return poolAlibabaInteractUserIsloginAPIRequest.Get().(*AlibabaInteractUserIsloginAPIRequest)
+}
+
+// ReleaseAlibabaInteractUserIsloginAPIRequest 将 AlibabaInteractUserIsloginAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractUserIsloginAPIRequest(v *AlibabaInteractUserIsloginAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractUserIsloginAPIRequest.Put(v)
 }

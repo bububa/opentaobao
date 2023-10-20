@@ -2,6 +2,7 @@ package crm
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoCrmExchangeActivityCreateAPIResponse struct {
 	TaobaoCrmExchangeActivityCreateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoCrmExchangeActivityCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoCrmExchangeActivityCreateAPIResponseModel).Reset()
+}
+
 // TaobaoCrmExchangeActivityCreateAPIResponseModel is 创建积分兑换活动 成功返回结果
 type TaobaoCrmExchangeActivityCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"crm_exchange_activity_create_response"`
@@ -26,4 +33,29 @@ type TaobaoCrmExchangeActivityCreateAPIResponseModel struct {
 	CrowdinstanceId int64 `json:"crowdinstance_id,omitempty" xml:"crowdinstance_id,omitempty"`
 	// 接口调用成功
 	SubSuccess bool `json:"sub_success,omitempty" xml:"sub_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoCrmExchangeActivityCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ActivityId = 0
+	m.CrowdinstanceId = 0
+	m.SubSuccess = false
+}
+
+var poolTaobaoCrmExchangeActivityCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoCrmExchangeActivityCreateAPIResponse)
+	},
+}
+
+// GetTaobaoCrmExchangeActivityCreateAPIResponse 从 sync.Pool 获取 TaobaoCrmExchangeActivityCreateAPIResponse
+func GetTaobaoCrmExchangeActivityCreateAPIResponse() *TaobaoCrmExchangeActivityCreateAPIResponse {
+	return poolTaobaoCrmExchangeActivityCreateAPIResponse.Get().(*TaobaoCrmExchangeActivityCreateAPIResponse)
+}
+
+// ReleaseTaobaoCrmExchangeActivityCreateAPIResponse 将 TaobaoCrmExchangeActivityCreateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoCrmExchangeActivityCreateAPIResponse(v *TaobaoCrmExchangeActivityCreateAPIResponse) {
+	v.Reset()
+	poolTaobaoCrmExchangeActivityCreateAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaWdkMarketingExpirePromotionQueryAPIRequest struct {
 // NewAlibabaWdkMarketingExpirePromotionQueryRequest 初始化AlibabaWdkMarketingExpirePromotionQueryAPIRequest对象
 func NewAlibabaWdkMarketingExpirePromotionQueryRequest() *AlibabaWdkMarketingExpirePromotionQueryAPIRequest {
 	return &AlibabaWdkMarketingExpirePromotionQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkMarketingExpirePromotionQueryAPIRequest) Reset() {
+	r._shopId = ""
+	r._skuCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaWdkMarketingExpirePromotionQueryAPIRequest) SetSkuCode(_skuCode 
 // GetSkuCode SkuCode Getter
 func (r AlibabaWdkMarketingExpirePromotionQueryAPIRequest) GetSkuCode() string {
 	return r._skuCode
+}
+
+var poolAlibabaWdkMarketingExpirePromotionQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkMarketingExpirePromotionQueryRequest()
+	},
+}
+
+// GetAlibabaWdkMarketingExpirePromotionQueryRequest 从 sync.Pool 获取 AlibabaWdkMarketingExpirePromotionQueryAPIRequest
+func GetAlibabaWdkMarketingExpirePromotionQueryAPIRequest() *AlibabaWdkMarketingExpirePromotionQueryAPIRequest {
+	return poolAlibabaWdkMarketingExpirePromotionQueryAPIRequest.Get().(*AlibabaWdkMarketingExpirePromotionQueryAPIRequest)
+}
+
+// ReleaseAlibabaWdkMarketingExpirePromotionQueryAPIRequest 将 AlibabaWdkMarketingExpirePromotionQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkMarketingExpirePromotionQueryAPIRequest(v *AlibabaWdkMarketingExpirePromotionQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkMarketingExpirePromotionQueryAPIRequest.Put(v)
 }

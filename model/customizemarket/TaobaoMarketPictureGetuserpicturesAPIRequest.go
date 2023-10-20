@@ -2,6 +2,7 @@ package customizemarket
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoMarketPictureGetuserpicturesAPIRequest struct {
 // NewTaobaoMarketPictureGetuserpicturesRequest 初始化TaobaoMarketPictureGetuserpicturesAPIRequest对象
 func NewTaobaoMarketPictureGetuserpicturesRequest() *TaobaoMarketPictureGetuserpicturesAPIRequest {
 	return &TaobaoMarketPictureGetuserpicturesAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMarketPictureGetuserpicturesAPIRequest) Reset() {
+	r._orderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoMarketPictureGetuserpicturesAPIRequest) SetOrderId(_orderId int64
 // GetOrderId OrderId Getter
 func (r TaobaoMarketPictureGetuserpicturesAPIRequest) GetOrderId() int64 {
 	return r._orderId
+}
+
+var poolTaobaoMarketPictureGetuserpicturesAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMarketPictureGetuserpicturesRequest()
+	},
+}
+
+// GetTaobaoMarketPictureGetuserpicturesRequest 从 sync.Pool 获取 TaobaoMarketPictureGetuserpicturesAPIRequest
+func GetTaobaoMarketPictureGetuserpicturesAPIRequest() *TaobaoMarketPictureGetuserpicturesAPIRequest {
+	return poolTaobaoMarketPictureGetuserpicturesAPIRequest.Get().(*TaobaoMarketPictureGetuserpicturesAPIRequest)
+}
+
+// ReleaseTaobaoMarketPictureGetuserpicturesAPIRequest 将 TaobaoMarketPictureGetuserpicturesAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMarketPictureGetuserpicturesAPIRequest(v *TaobaoMarketPictureGetuserpicturesAPIRequest) {
+	v.Reset()
+	poolTaobaoMarketPictureGetuserpicturesAPIRequest.Put(v)
 }

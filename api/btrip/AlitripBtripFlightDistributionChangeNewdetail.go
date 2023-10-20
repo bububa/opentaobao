@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.flight.distribution.change.newdetail
 //
 // 商旅机票改签详情接口
-func AlitripBtripFlightDistributionChangeNewdetail(clt *core.SDKClient, req *btrip.AlitripBtripFlightDistributionChangeNewdetailAPIRequest, session string) (*btrip.AlitripBtripFlightDistributionChangeNewdetailAPIResponse, error) {
-	var resp btrip.AlitripBtripFlightDistributionChangeNewdetailAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripFlightDistributionChangeNewdetail(clt *core.SDKClient, req *btrip.AlitripBtripFlightDistributionChangeNewdetailAPIRequest, resp *btrip.AlitripBtripFlightDistributionChangeNewdetailAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

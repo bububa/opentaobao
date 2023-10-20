@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // SpecifyDistributionResponse 结构体
 type SpecifyDistributionResponse struct {
 	// 每个品的处理结果
@@ -10,4 +14,24 @@ type SpecifyDistributionResponse struct {
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	//  处理是否成功，只有处理成功responseDetailList 中才会有值。 responseDetailList中代表每个品的处理结果
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolSpecifyDistributionResponse = sync.Pool{
+	New: func() any {
+		return new(SpecifyDistributionResponse)
+	},
+}
+
+// GetSpecifyDistributionResponse() 从对象池中获取SpecifyDistributionResponse
+func GetSpecifyDistributionResponse() *SpecifyDistributionResponse {
+	return poolSpecifyDistributionResponse.Get().(*SpecifyDistributionResponse)
+}
+
+// ReleaseSpecifyDistributionResponse 释放SpecifyDistributionResponse
+func ReleaseSpecifyDistributionResponse(v *SpecifyDistributionResponse) {
+	v.ResponseDetailList = v.ResponseDetailList[:0]
+	v.ErrorCode = ""
+	v.ErrorMessage = ""
+	v.Success = false
+	poolSpecifyDistributionResponse.Put(v)
 }

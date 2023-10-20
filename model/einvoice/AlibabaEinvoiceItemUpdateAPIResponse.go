@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaEinvoiceItemUpdateAPIResponse struct {
 	AlibabaEinvoiceItemUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaEinvoiceItemUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaEinvoiceItemUpdateAPIResponseModel).Reset()
+}
+
 // AlibabaEinvoiceItemUpdateAPIResponseModel is 修改商品开票信息 成功返回结果
 type AlibabaEinvoiceItemUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_einvoice_item_update_response"`
@@ -22,4 +29,27 @@ type AlibabaEinvoiceItemUpdateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 修改结果
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaEinvoiceItemUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.IsSuccess = false
+}
+
+var poolAlibabaEinvoiceItemUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaEinvoiceItemUpdateAPIResponse)
+	},
+}
+
+// GetAlibabaEinvoiceItemUpdateAPIResponse 从 sync.Pool 获取 AlibabaEinvoiceItemUpdateAPIResponse
+func GetAlibabaEinvoiceItemUpdateAPIResponse() *AlibabaEinvoiceItemUpdateAPIResponse {
+	return poolAlibabaEinvoiceItemUpdateAPIResponse.Get().(*AlibabaEinvoiceItemUpdateAPIResponse)
+}
+
+// ReleaseAlibabaEinvoiceItemUpdateAPIResponse 将 AlibabaEinvoiceItemUpdateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaEinvoiceItemUpdateAPIResponse(v *AlibabaEinvoiceItemUpdateAPIResponse) {
+	v.Reset()
+	poolAlibabaEinvoiceItemUpdateAPIResponse.Put(v)
 }

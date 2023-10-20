@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenIsvApplyRs 结构体
 type OpenIsvApplyRs struct {
 	// 审批人列表
@@ -82,4 +86,60 @@ type OpenIsvApplyRs struct {
 	ApplyId int64 `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
 	// 审批类型（5:机票改签审批、6:机票退票审批、3:超标审批）
 	BizCategory int64 `json:"biz_category,omitempty" xml:"biz_category,omitempty"`
+}
+
+var poolOpenIsvApplyRs = sync.Pool{
+	New: func() any {
+		return new(OpenIsvApplyRs)
+	},
+}
+
+// GetOpenIsvApplyRs() 从对象池中获取OpenIsvApplyRs
+func GetOpenIsvApplyRs() *OpenIsvApplyRs {
+	return poolOpenIsvApplyRs.Get().(*OpenIsvApplyRs)
+}
+
+// ReleaseOpenIsvApplyRs 释放OpenIsvApplyRs
+func ReleaseOpenIsvApplyRs(v *OpenIsvApplyRs) {
+	v.ApproverList = v.ApproverList[:0]
+	v.ItineraryList = v.ItineraryList[:0]
+	v.TravelerList = v.TravelerList[:0]
+	v.ExternalTravelerList = v.ExternalTravelerList[:0]
+	v.ItinerarySetList = v.ItinerarySetList[:0]
+	v.ApplyShowId = ""
+	v.CorpId = ""
+	v.CorpName = ""
+	v.DepartId = ""
+	v.DepartName = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.StatusDesc = ""
+	v.ThirdpartBusinessId = ""
+	v.ThirdpartId = ""
+	v.TripCause = ""
+	v.TripTitle = ""
+	v.UserId = ""
+	v.UserName = ""
+	v.UnionNo = ""
+	v.FlowCode = ""
+	v.ThirdpartCorpId = ""
+	v.ExtendValue = ""
+	v.Cause = ""
+	v.Id = 0
+	v.Status = 0
+	v.TripDay = 0
+	v.Type = 0
+	v.HotelBudget = 0
+	v.FlightBudget = 0
+	v.TrainBudget = 0
+	v.VehicleBudget = 0
+	v.Budget = 0
+	v.BudgetMerge = 0
+	v.LimitTraveler = 0
+	v.TogetherBookRule = 0
+	v.HotelShare = nil
+	v.ItineraryRule = 0
+	v.ApplyId = 0
+	v.BizCategory = 0
+	poolOpenIsvApplyRs.Put(v)
 }

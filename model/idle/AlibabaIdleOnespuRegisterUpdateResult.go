@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // AlibabaIdleOnespuRegisterUpdateResult 结构体
 type AlibabaIdleOnespuRegisterUpdateResult struct {
 	// 错误码
@@ -10,4 +14,24 @@ type AlibabaIdleOnespuRegisterUpdateResult struct {
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaIdleOnespuRegisterUpdateResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaIdleOnespuRegisterUpdateResult)
+	},
+}
+
+// GetAlibabaIdleOnespuRegisterUpdateResult() 从对象池中获取AlibabaIdleOnespuRegisterUpdateResult
+func GetAlibabaIdleOnespuRegisterUpdateResult() *AlibabaIdleOnespuRegisterUpdateResult {
+	return poolAlibabaIdleOnespuRegisterUpdateResult.Get().(*AlibabaIdleOnespuRegisterUpdateResult)
+}
+
+// ReleaseAlibabaIdleOnespuRegisterUpdateResult 释放AlibabaIdleOnespuRegisterUpdateResult
+func ReleaseAlibabaIdleOnespuRegisterUpdateResult(v *AlibabaIdleOnespuRegisterUpdateResult) {
+	v.ErrCode = ""
+	v.Module = ""
+	v.ErrMsg = ""
+	v.Success = false
+	poolAlibabaIdleOnespuRegisterUpdateResult.Put(v)
 }

@@ -2,6 +2,7 @@ package icbu
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type AlibabaIcbuProductListAPIRequest struct {
 // NewAlibabaIcbuProductListRequest 初始化AlibabaIcbuProductListAPIRequest对象
 func NewAlibabaIcbuProductListRequest() *AlibabaIcbuProductListAPIRequest {
 	return &AlibabaIcbuProductListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIcbuProductListAPIRequest) Reset() {
+	r._subject = ""
+	r._language = ""
+	r._gmtModifiedTo = ""
+	r._gmtModifiedFrom = ""
+	r._categoryId = 0
+	r._currentPage = 0
+	r._pageSize = 0
+	r._groupId3 = 0
+	r._groupId2 = 0
+	r._groupId1 = 0
+	r._id = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *AlibabaIcbuProductListAPIRequest) SetId(_id int64) error {
 // GetId Id Getter
 func (r AlibabaIcbuProductListAPIRequest) GetId() int64 {
 	return r._id
+}
+
+var poolAlibabaIcbuProductListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIcbuProductListRequest()
+	},
+}
+
+// GetAlibabaIcbuProductListRequest 从 sync.Pool 获取 AlibabaIcbuProductListAPIRequest
+func GetAlibabaIcbuProductListAPIRequest() *AlibabaIcbuProductListAPIRequest {
+	return poolAlibabaIcbuProductListAPIRequest.Get().(*AlibabaIcbuProductListAPIRequest)
+}
+
+// ReleaseAlibabaIcbuProductListAPIRequest 将 AlibabaIcbuProductListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIcbuProductListAPIRequest(v *AlibabaIcbuProductListAPIRequest) {
+	v.Reset()
+	poolAlibabaIcbuProductListAPIRequest.Put(v)
 }

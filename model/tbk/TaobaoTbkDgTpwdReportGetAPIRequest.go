@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoTbkDgTpwdReportGetAPIRequest struct {
 // NewTaobaoTbkDgTpwdReportGetRequest 初始化TaobaoTbkDgTpwdReportGetAPIRequest对象
 func NewTaobaoTbkDgTpwdReportGetRequest() *TaobaoTbkDgTpwdReportGetAPIRequest {
 	return &TaobaoTbkDgTpwdReportGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkDgTpwdReportGetAPIRequest) Reset() {
+	r._taoPassword = ""
+	r._adzoneId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoTbkDgTpwdReportGetAPIRequest) SetAdzoneId(_adzoneId string) error
 // GetAdzoneId AdzoneId Getter
 func (r TaobaoTbkDgTpwdReportGetAPIRequest) GetAdzoneId() string {
 	return r._adzoneId
+}
+
+var poolTaobaoTbkDgTpwdReportGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkDgTpwdReportGetRequest()
+	},
+}
+
+// GetTaobaoTbkDgTpwdReportGetRequest 从 sync.Pool 获取 TaobaoTbkDgTpwdReportGetAPIRequest
+func GetTaobaoTbkDgTpwdReportGetAPIRequest() *TaobaoTbkDgTpwdReportGetAPIRequest {
+	return poolTaobaoTbkDgTpwdReportGetAPIRequest.Get().(*TaobaoTbkDgTpwdReportGetAPIRequest)
+}
+
+// ReleaseTaobaoTbkDgTpwdReportGetAPIRequest 将 TaobaoTbkDgTpwdReportGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkDgTpwdReportGetAPIRequest(v *TaobaoTbkDgTpwdReportGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkDgTpwdReportGetAPIRequest.Put(v)
 }

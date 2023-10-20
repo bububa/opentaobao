@@ -9,11 +9,6 @@ import (
 // alibaba.wholesale.shippingline.template.list
 //
 // 查询运费模板信息
-func AlibabaWholesaleShippinglineTemplateList(clt *core.SDKClient, req *icbu.AlibabaWholesaleShippinglineTemplateListAPIRequest, session string) (*icbu.AlibabaWholesaleShippinglineTemplateListAPIResponse, error) {
-	var resp icbu.AlibabaWholesaleShippinglineTemplateListAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWholesaleShippinglineTemplateList(clt *core.SDKClient, req *icbu.AlibabaWholesaleShippinglineTemplateListAPIRequest, resp *icbu.AlibabaWholesaleShippinglineTemplateListAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

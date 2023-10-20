@@ -1,5 +1,9 @@
 package usergrowth
 
+import (
+	"sync"
+)
+
 // SuggestionDto 结构体
 type SuggestionDto struct {
 	// 标题
@@ -22,4 +26,30 @@ type SuggestionDto struct {
 	H5Url string `json:"h5_url,omitempty" xml:"h5_url,omitempty"`
 	// 主图url
 	ImageUrl string `json:"image_url,omitempty" xml:"image_url,omitempty"`
+}
+
+var poolSuggestionDto = sync.Pool{
+	New: func() any {
+		return new(SuggestionDto)
+	},
+}
+
+// GetSuggestionDto() 从对象池中获取SuggestionDto
+func GetSuggestionDto() *SuggestionDto {
+	return poolSuggestionDto.Get().(*SuggestionDto)
+}
+
+// ReleaseSuggestionDto 释放SuggestionDto
+func ReleaseSuggestionDto(v *SuggestionDto) {
+	v.Title = ""
+	v.SubTitle = ""
+	v.IconUrl = ""
+	v.DeeplinkUrl = ""
+	v.ExposureUrl = ""
+	v.ClickUrl = ""
+	v.Text = ""
+	v.MaterialId = ""
+	v.H5Url = ""
+	v.ImageUrl = ""
+	poolSuggestionDto.Put(v)
 }

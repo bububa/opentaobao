@@ -2,6 +2,7 @@ package antifraud
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAntifraudRiskassessmentGetAPIRequest struct {
 // NewTaobaoAntifraudRiskassessmentGetRequest 初始化TaobaoAntifraudRiskassessmentGetAPIRequest对象
 func NewTaobaoAntifraudRiskassessmentGetRequest() *TaobaoAntifraudRiskassessmentGetAPIRequest {
 	return &TaobaoAntifraudRiskassessmentGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAntifraudRiskassessmentGetAPIRequest) Reset() {
+	r._collinadataContext = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAntifraudRiskassessmentGetAPIRequest) SetCollinadataContext(_coll
 // GetCollinadataContext CollinadataContext Getter
 func (r TaobaoAntifraudRiskassessmentGetAPIRequest) GetCollinadataContext() *CollinadataContext {
 	return r._collinadataContext
+}
+
+var poolTaobaoAntifraudRiskassessmentGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAntifraudRiskassessmentGetRequest()
+	},
+}
+
+// GetTaobaoAntifraudRiskassessmentGetRequest 从 sync.Pool 获取 TaobaoAntifraudRiskassessmentGetAPIRequest
+func GetTaobaoAntifraudRiskassessmentGetAPIRequest() *TaobaoAntifraudRiskassessmentGetAPIRequest {
+	return poolTaobaoAntifraudRiskassessmentGetAPIRequest.Get().(*TaobaoAntifraudRiskassessmentGetAPIRequest)
+}
+
+// ReleaseTaobaoAntifraudRiskassessmentGetAPIRequest 将 TaobaoAntifraudRiskassessmentGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAntifraudRiskassessmentGetAPIRequest(v *TaobaoAntifraudRiskassessmentGetAPIRequest) {
+	v.Reset()
+	poolTaobaoAntifraudRiskassessmentGetAPIRequest.Put(v)
 }

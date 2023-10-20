@@ -1,5 +1,9 @@
 package wms
 
+import (
+	"sync"
+)
+
 // CainiaoInventoryProfitlossProfitlossinfo 结构体
 type CainiaoInventoryProfitlossProfitlossinfo struct {
 	// 商品信息列表
@@ -14,4 +18,26 @@ type CainiaoInventoryProfitlossProfitlossinfo struct {
 	CreatedTime string `json:"created_time,omitempty" xml:"created_time,omitempty"`
 	// 订单类型： 701 盘点出库 702 盘点入库
 	OrderType int64 `json:"order_type,omitempty" xml:"order_type,omitempty"`
+}
+
+var poolCainiaoInventoryProfitlossProfitlossinfo = sync.Pool{
+	New: func() any {
+		return new(CainiaoInventoryProfitlossProfitlossinfo)
+	},
+}
+
+// GetCainiaoInventoryProfitlossProfitlossinfo() 从对象池中获取CainiaoInventoryProfitlossProfitlossinfo
+func GetCainiaoInventoryProfitlossProfitlossinfo() *CainiaoInventoryProfitlossProfitlossinfo {
+	return poolCainiaoInventoryProfitlossProfitlossinfo.Get().(*CainiaoInventoryProfitlossProfitlossinfo)
+}
+
+// ReleaseCainiaoInventoryProfitlossProfitlossinfo 释放CainiaoInventoryProfitlossProfitlossinfo
+func ReleaseCainiaoInventoryProfitlossProfitlossinfo(v *CainiaoInventoryProfitlossProfitlossinfo) {
+	v.OrderItemList = v.OrderItemList[:0]
+	v.StoreCode = ""
+	v.CnOrderCode = ""
+	v.Remark = ""
+	v.CreatedTime = ""
+	v.OrderType = 0
+	poolCainiaoInventoryProfitlossProfitlossinfo.Put(v)
 }

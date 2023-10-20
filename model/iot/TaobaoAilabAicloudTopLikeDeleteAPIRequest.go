@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoAilabAicloudTopLikeDeleteAPIRequest struct {
 // NewTaobaoAilabAicloudTopLikeDeleteRequest 初始化TaobaoAilabAicloudTopLikeDeleteAPIRequest对象
 func NewTaobaoAilabAicloudTopLikeDeleteRequest() *TaobaoAilabAicloudTopLikeDeleteAPIRequest {
 	return &TaobaoAilabAicloudTopLikeDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopLikeDeleteAPIRequest) Reset() {
+	r._ext = ""
+	r._utdId = ""
+	r._userId = ""
+	r._schema = ""
+	r._type = ""
+	r._source = ""
+	r._itemId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoAilabAicloudTopLikeDeleteAPIRequest) SetItemId(_itemId string) er
 // GetItemId ItemId Getter
 func (r TaobaoAilabAicloudTopLikeDeleteAPIRequest) GetItemId() string {
 	return r._itemId
+}
+
+var poolTaobaoAilabAicloudTopLikeDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopLikeDeleteRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopLikeDeleteRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopLikeDeleteAPIRequest
+func GetTaobaoAilabAicloudTopLikeDeleteAPIRequest() *TaobaoAilabAicloudTopLikeDeleteAPIRequest {
+	return poolTaobaoAilabAicloudTopLikeDeleteAPIRequest.Get().(*TaobaoAilabAicloudTopLikeDeleteAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopLikeDeleteAPIRequest 将 TaobaoAilabAicloudTopLikeDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopLikeDeleteAPIRequest(v *TaobaoAilabAicloudTopLikeDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopLikeDeleteAPIRequest.Put(v)
 }

@@ -1,7 +1,11 @@
 package alihouse
 
-// UpdateNewHomeEcodeInfoDto 结构体
-type UpdateNewHomeEcodeInfoDto struct {
+import (
+	"sync"
+)
+
+// UpdateNewHomeECodeInfoDto 结构体
+type UpdateNewHomeECodeInfoDto struct {
 	// 外部小区id
 	CommunityOuterId string `json:"community_outer_id,omitempty" xml:"community_outer_id,omitempty"`
 	// 房源E码
@@ -16,4 +20,27 @@ type UpdateNewHomeEcodeInfoDto struct {
 	HouseType int64 `json:"house_type,omitempty" xml:"house_type,omitempty"`
 	// 是否为货 0-非货,信息流 1-货�商品
 	IsCargo int64 `json:"is_cargo,omitempty" xml:"is_cargo,omitempty"`
+}
+
+var poolUpdateNewHomeECodeInfoDto = sync.Pool{
+	New: func() any {
+		return new(UpdateNewHomeECodeInfoDto)
+	},
+}
+
+// GetUpdateNewHomeECodeInfoDto() 从对象池中获取UpdateNewHomeECodeInfoDto
+func GetUpdateNewHomeECodeInfoDto() *UpdateNewHomeECodeInfoDto {
+	return poolUpdateNewHomeECodeInfoDto.Get().(*UpdateNewHomeECodeInfoDto)
+}
+
+// ReleaseUpdateNewHomeECodeInfoDto 释放UpdateNewHomeECodeInfoDto
+func ReleaseUpdateNewHomeECodeInfoDto(v *UpdateNewHomeECodeInfoDto) {
+	v.CommunityOuterId = ""
+	v.Ecode = ""
+	v.OuterId = ""
+	v.OuterStoreId = ""
+	v.BusinessType = 0
+	v.HouseType = 0
+	v.IsCargo = 0
+	poolUpdateNewHomeECodeInfoDto.Put(v)
 }

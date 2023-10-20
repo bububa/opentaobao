@@ -2,6 +2,7 @@ package alihealthoutflow
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthDoctorLeshuiAuditResultAPIRequest struct {
 // NewAlibabaAlihealthDoctorLeshuiAuditResultRequest 初始化AlibabaAlihealthDoctorLeshuiAuditResultAPIRequest对象
 func NewAlibabaAlihealthDoctorLeshuiAuditResultRequest() *AlibabaAlihealthDoctorLeshuiAuditResultAPIRequest {
 	return &AlibabaAlihealthDoctorLeshuiAuditResultAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDoctorLeshuiAuditResultAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthDoctorLeshuiAuditResultAPIRequest) SetParam(_param *Pay
 // GetParam Param Getter
 func (r AlibabaAlihealthDoctorLeshuiAuditResultAPIRequest) GetParam() *PayTaxNoticeRequest {
 	return r._param
+}
+
+var poolAlibabaAlihealthDoctorLeshuiAuditResultAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDoctorLeshuiAuditResultRequest()
+	},
+}
+
+// GetAlibabaAlihealthDoctorLeshuiAuditResultRequest 从 sync.Pool 获取 AlibabaAlihealthDoctorLeshuiAuditResultAPIRequest
+func GetAlibabaAlihealthDoctorLeshuiAuditResultAPIRequest() *AlibabaAlihealthDoctorLeshuiAuditResultAPIRequest {
+	return poolAlibabaAlihealthDoctorLeshuiAuditResultAPIRequest.Get().(*AlibabaAlihealthDoctorLeshuiAuditResultAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDoctorLeshuiAuditResultAPIRequest 将 AlibabaAlihealthDoctorLeshuiAuditResultAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDoctorLeshuiAuditResultAPIRequest(v *AlibabaAlihealthDoctorLeshuiAuditResultAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDoctorLeshuiAuditResultAPIRequest.Put(v)
 }

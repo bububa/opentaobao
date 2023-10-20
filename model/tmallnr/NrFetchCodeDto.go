@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // NrFetchCodeDto 结构体
 type NrFetchCodeDto struct {
 	// 发货公司名称
@@ -36,4 +40,37 @@ type NrFetchCodeDto struct {
 	MainOrderId int64 `json:"main_order_id,omitempty" xml:"main_order_id,omitempty"`
 	// 对货码
 	ShortId int64 `json:"short_id,omitempty" xml:"short_id,omitempty"`
+}
+
+var poolNrFetchCodeDto = sync.Pool{
+	New: func() any {
+		return new(NrFetchCodeDto)
+	},
+}
+
+// GetNrFetchCodeDto() 从对象池中获取NrFetchCodeDto
+func GetNrFetchCodeDto() *NrFetchCodeDto {
+	return poolNrFetchCodeDto.Get().(*NrFetchCodeDto)
+}
+
+// ReleaseNrFetchCodeDto 释放NrFetchCodeDto
+func ReleaseNrFetchCodeDto(v *NrFetchCodeDto) {
+	v.ConsignCompanyName = ""
+	v.BizType = ""
+	v.ConsignCompanyCode = ""
+	v.Printdata = ""
+	v.FetchCode = ""
+	v.FaceSheetId = ""
+	v.TagNo = ""
+	v.CpOutId = ""
+	v.ReceivePhone = ""
+	v.ReceiveAddr = ""
+	v.ReceiveName = ""
+	v.SendProvince = ""
+	v.SendCity = ""
+	v.SendAddr = ""
+	v.WriteOffCode = ""
+	v.MainOrderId = 0
+	v.ShortId = 0
+	poolNrFetchCodeDto.Put(v)
 }

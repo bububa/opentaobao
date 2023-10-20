@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoItemSkuDeleteAPIRequest struct {
 // NewTaobaoItemSkuDeleteRequest 初始化TaobaoItemSkuDeleteAPIRequest对象
 func NewTaobaoItemSkuDeleteRequest() *TaobaoItemSkuDeleteAPIRequest {
 	return &TaobaoItemSkuDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoItemSkuDeleteAPIRequest) Reset() {
+	r._properties = ""
+	r._lang = ""
+	r._ignorewarning = ""
+	r._numIid = 0
+	r._itemPrice = 0
+	r._itemNum = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoItemSkuDeleteAPIRequest) SetItemNum(_itemNum int64) error {
 // GetItemNum ItemNum Getter
 func (r TaobaoItemSkuDeleteAPIRequest) GetItemNum() int64 {
 	return r._itemNum
+}
+
+var poolTaobaoItemSkuDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoItemSkuDeleteRequest()
+	},
+}
+
+// GetTaobaoItemSkuDeleteRequest 从 sync.Pool 获取 TaobaoItemSkuDeleteAPIRequest
+func GetTaobaoItemSkuDeleteAPIRequest() *TaobaoItemSkuDeleteAPIRequest {
+	return poolTaobaoItemSkuDeleteAPIRequest.Get().(*TaobaoItemSkuDeleteAPIRequest)
+}
+
+// ReleaseTaobaoItemSkuDeleteAPIRequest 将 TaobaoItemSkuDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoItemSkuDeleteAPIRequest(v *TaobaoItemSkuDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoItemSkuDeleteAPIRequest.Put(v)
 }

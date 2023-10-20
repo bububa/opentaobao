@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // FinanceOrderDetailRequest 结构体
 type FinanceOrderDetailRequest struct {
 	// 门店编码list
@@ -18,4 +22,28 @@ type FinanceOrderDetailRequest struct {
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
 	// 每页条数
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolFinanceOrderDetailRequest = sync.Pool{
+	New: func() any {
+		return new(FinanceOrderDetailRequest)
+	},
+}
+
+// GetFinanceOrderDetailRequest() 从对象池中获取FinanceOrderDetailRequest
+func GetFinanceOrderDetailRequest() *FinanceOrderDetailRequest {
+	return poolFinanceOrderDetailRequest.Get().(*FinanceOrderDetailRequest)
+}
+
+// ReleaseFinanceOrderDetailRequest 释放FinanceOrderDetailRequest
+func ReleaseFinanceOrderDetailRequest(v *FinanceOrderDetailRequest) {
+	v.ShopCodes = v.ShopCodes[:0]
+	v.SaleChannel = ""
+	v.SaleSource = ""
+	v.TradeType = ""
+	v.EndTime = ""
+	v.StartTime = ""
+	v.CurrentPage = 0
+	v.PageSize = 0
+	poolFinanceOrderDetailRequest.Put(v)
 }

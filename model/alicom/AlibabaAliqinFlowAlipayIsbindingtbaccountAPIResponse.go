@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse struct {
 	model.CommonResponse
 	AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponseModel).Reset()
 }
 
 // AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponseModel is 判断支付宝用户是否绑定淘宝账号 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponseModel struct {
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// error
 	Error bool `json:"error,omitempty" xml:"error,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Value = ""
+	m.AlicomFlowErrorCode = ""
+	m.ErrorMsg = ""
+	m.Error = false
+}
+
+var poolAlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse)
+	},
+}
+
+// GetAlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse 从 sync.Pool 获取 AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse
+func GetAlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse() *AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse {
+	return poolAlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse.Get().(*AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse)
+}
+
+// ReleaseAlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse 将 AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse(v *AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse) {
+	v.Reset()
+	poolAlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse.Put(v)
 }

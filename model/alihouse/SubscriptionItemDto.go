@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // SubscriptionItemDto 结构体
 type SubscriptionItemDto struct {
 	// 外部支付方式id集合
@@ -44,4 +48,41 @@ type SubscriptionItemDto struct {
 	BuyLimit int64 `json:"buy_limit,omitempty" xml:"buy_limit,omitempty"`
 	// 是否异步销控
 	IsAsyncSell int64 `json:"is_async_sell,omitempty" xml:"is_async_sell,omitempty"`
+}
+
+var poolSubscriptionItemDto = sync.Pool{
+	New: func() any {
+		return new(SubscriptionItemDto)
+	},
+}
+
+// GetSubscriptionItemDto() 从对象池中获取SubscriptionItemDto
+func GetSubscriptionItemDto() *SubscriptionItemDto {
+	return poolSubscriptionItemDto.Get().(*SubscriptionItemDto)
+}
+
+// ReleaseSubscriptionItemDto 释放SubscriptionItemDto
+func ReleaseSubscriptionItemDto(v *SubscriptionItemDto) {
+	v.OuterPaymentIds = v.OuterPaymentIds[:0]
+	v.OuterSalesActivityId = ""
+	v.OuterProjectId = ""
+	v.OuterStoreId = ""
+	v.ItemName = ""
+	v.ShowTitle = ""
+	v.PreDepositItemName = ""
+	v.PreDepositItemTitle = ""
+	v.SignOnlineTimeVal = ""
+	v.ProjectCid = 0
+	v.ItemId = 0
+	v.PreDepositItemId = 0
+	v.SettleAid = 0
+	v.SignType = 0
+	v.SignTimeoutTime = 0
+	v.ElecSignatureId = 0
+	v.ElecAgreementId = 0
+	v.SealType = 0
+	v.SignOnlineTimeType = 0
+	v.BuyLimit = 0
+	v.IsAsyncSell = 0
+	poolSubscriptionItemDto.Put(v)
 }

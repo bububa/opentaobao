@@ -9,11 +9,6 @@ import (
 // yunos.tvpubadmin.epg.desktop.operation
 //
 // 影视桌面运营通用接口
-func YunosTvpubadminEpgDesktopOperation(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminEpgDesktopOperationAPIRequest, session string) (*tvupadmin.YunosTvpubadminEpgDesktopOperationAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminEpgDesktopOperationAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosTvpubadminEpgDesktopOperation(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminEpgDesktopOperationAPIRequest, resp *tvupadmin.YunosTvpubadminEpgDesktopOperationAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

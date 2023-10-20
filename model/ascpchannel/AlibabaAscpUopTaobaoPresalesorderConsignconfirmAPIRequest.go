@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIRequest struct {
 // NewAlibabaAscpUopTaobaoPresalesorderConsignconfirmRequest 初始化AlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIRequest对象
 func NewAlibabaAscpUopTaobaoPresalesorderConsignconfirmRequest() *AlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIRequest {
 	return &AlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIRequest) Reset() {
+	r._presalesOrderConsignConfirmRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIRequest) SetPresalesO
 // GetPresalesOrderConsignConfirmRequest PresalesOrderConsignConfirmRequest Getter
 func (r AlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIRequest) GetPresalesOrderConsignConfirmRequest() *Presalesorderconsignconfirmrequest {
 	return r._presalesOrderConsignConfirmRequest
+}
+
+var poolAlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpUopTaobaoPresalesorderConsignconfirmRequest()
+	},
+}
+
+// GetAlibabaAscpUopTaobaoPresalesorderConsignconfirmRequest 从 sync.Pool 获取 AlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIRequest
+func GetAlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIRequest() *AlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIRequest {
+	return poolAlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIRequest.Get().(*AlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIRequest)
+}
+
+// ReleaseAlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIRequest 将 AlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIRequest(v *AlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIRequest.Put(v)
 }

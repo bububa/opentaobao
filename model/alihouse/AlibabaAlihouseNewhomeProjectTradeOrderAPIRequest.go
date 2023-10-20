@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeProjectTradeOrderAPIRequest struct {
 // NewAlibabaAlihouseNewhomeProjectTradeOrderRequest 初始化AlibabaAlihouseNewhomeProjectTradeOrderAPIRequest对象
 func NewAlibabaAlihouseNewhomeProjectTradeOrderRequest() *AlibabaAlihouseNewhomeProjectTradeOrderAPIRequest {
 	return &AlibabaAlihouseNewhomeProjectTradeOrderAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeProjectTradeOrderAPIRequest) Reset() {
+	r._tradeOrder = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomeProjectTradeOrderAPIRequest) SetTradeOrder(_trade
 // GetTradeOrder TradeOrder Getter
 func (r AlibabaAlihouseNewhomeProjectTradeOrderAPIRequest) GetTradeOrder() *ProjectTradeOrderDto {
 	return r._tradeOrder
+}
+
+var poolAlibabaAlihouseNewhomeProjectTradeOrderAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeProjectTradeOrderRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeProjectTradeOrderRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeProjectTradeOrderAPIRequest
+func GetAlibabaAlihouseNewhomeProjectTradeOrderAPIRequest() *AlibabaAlihouseNewhomeProjectTradeOrderAPIRequest {
+	return poolAlibabaAlihouseNewhomeProjectTradeOrderAPIRequest.Get().(*AlibabaAlihouseNewhomeProjectTradeOrderAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeProjectTradeOrderAPIRequest 将 AlibabaAlihouseNewhomeProjectTradeOrderAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeProjectTradeOrderAPIRequest(v *AlibabaAlihouseNewhomeProjectTradeOrderAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeProjectTradeOrderAPIRequest.Put(v)
 }

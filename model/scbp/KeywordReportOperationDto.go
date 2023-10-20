@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // KeywordReportOperationDto 结构体
 type KeywordReportOperationDto struct {
 	// 精确搜索关键词
@@ -26,4 +30,32 @@ type KeywordReportOperationDto struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 页码
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
+}
+
+var poolKeywordReportOperationDto = sync.Pool{
+	New: func() any {
+		return new(KeywordReportOperationDto)
+	},
+}
+
+// GetKeywordReportOperationDto() 从对象池中获取KeywordReportOperationDto
+func GetKeywordReportOperationDto() *KeywordReportOperationDto {
+	return poolKeywordReportOperationDto.Get().(*KeywordReportOperationDto)
+}
+
+// ReleaseKeywordReportOperationDto 释放KeywordReportOperationDto
+func ReleaseKeywordReportOperationDto(v *KeywordReportOperationDto) {
+	v.KeywordList = v.KeywordList[:0]
+	v.Keyword = ""
+	v.GetDetailData = ""
+	v.DateBegin = ""
+	v.DateEnd = ""
+	v.OrderField = ""
+	v.OrderType = ""
+	v.DateRange = 0
+	v.CampaignType = 0
+	v.CampaignId = 0
+	v.PageSize = 0
+	v.PageIndex = 0
+	poolKeywordReportOperationDto.Put(v)
 }

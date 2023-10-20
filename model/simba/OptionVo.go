@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // OptionVo 结构体
 type OptionVo struct {
 	// 选项名称
@@ -16,4 +20,27 @@ type OptionVo struct {
 	TagId int64 `json:"tag_id,omitempty" xml:"tag_id,omitempty"`
 	// 透传属性
 	LabelOptionProperties *LabelOptionProperties `json:"label_option_properties,omitempty" xml:"label_option_properties,omitempty"`
+}
+
+var poolOptionVo = sync.Pool{
+	New: func() any {
+		return new(OptionVo)
+	},
+}
+
+// GetOptionVo() 从对象池中获取OptionVo
+func GetOptionVo() *OptionVo {
+	return poolOptionVo.Get().(*OptionVo)
+}
+
+// ReleaseOptionVo 释放OptionVo
+func ReleaseOptionVo(v *OptionVo) {
+	v.OptionName = ""
+	v.OptionValue = ""
+	v.OptionDesc = ""
+	v.OptionGroupName = ""
+	v.Properties = ""
+	v.TagId = 0
+	v.LabelOptionProperties = nil
+	poolOptionVo.Put(v)
 }

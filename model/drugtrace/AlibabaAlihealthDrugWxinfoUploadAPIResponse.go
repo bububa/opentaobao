@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihealthDrugWxinfoUploadAPIResponse struct {
 	AlibabaAlihealthDrugWxinfoUploadAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugWxinfoUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthDrugWxinfoUploadAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthDrugWxinfoUploadAPIResponseModel is 小程序数据回传 成功返回结果
 type AlibabaAlihealthDrugWxinfoUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drug_wxinfo_upload_response"`
@@ -26,4 +33,29 @@ type AlibabaAlihealthDrugWxinfoUploadAPIResponseModel struct {
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// model
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugWxinfoUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgInfo = ""
+	m.MsgCode = ""
+	m.Model = false
+}
+
+var poolAlibabaAlihealthDrugWxinfoUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugWxinfoUploadAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthDrugWxinfoUploadAPIResponse 从 sync.Pool 获取 AlibabaAlihealthDrugWxinfoUploadAPIResponse
+func GetAlibabaAlihealthDrugWxinfoUploadAPIResponse() *AlibabaAlihealthDrugWxinfoUploadAPIResponse {
+	return poolAlibabaAlihealthDrugWxinfoUploadAPIResponse.Get().(*AlibabaAlihealthDrugWxinfoUploadAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthDrugWxinfoUploadAPIResponse 将 AlibabaAlihealthDrugWxinfoUploadAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthDrugWxinfoUploadAPIResponse(v *AlibabaAlihealthDrugWxinfoUploadAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthDrugWxinfoUploadAPIResponse.Put(v)
 }

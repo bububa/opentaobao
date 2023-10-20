@@ -2,6 +2,7 @@ package campus
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaVisitorGetidsbyqrcodeAPIResponse struct {
 	AlibabaVisitorGetidsbyqrcodeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaVisitorGetidsbyqrcodeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaVisitorGetidsbyqrcodeAPIResponseModel).Reset()
+}
+
 // AlibabaVisitorGetidsbyqrcodeAPIResponseModel is 根据访客二维码查访客行程id 成功返回结果
 type AlibabaVisitorGetidsbyqrcodeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_visitor_getidsbyqrcode_response"`
@@ -22,4 +29,27 @@ type AlibabaVisitorGetidsbyqrcodeAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 出参
 	Result *PojoResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaVisitorGetidsbyqrcodeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaVisitorGetidsbyqrcodeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaVisitorGetidsbyqrcodeAPIResponse)
+	},
+}
+
+// GetAlibabaVisitorGetidsbyqrcodeAPIResponse 从 sync.Pool 获取 AlibabaVisitorGetidsbyqrcodeAPIResponse
+func GetAlibabaVisitorGetidsbyqrcodeAPIResponse() *AlibabaVisitorGetidsbyqrcodeAPIResponse {
+	return poolAlibabaVisitorGetidsbyqrcodeAPIResponse.Get().(*AlibabaVisitorGetidsbyqrcodeAPIResponse)
+}
+
+// ReleaseAlibabaVisitorGetidsbyqrcodeAPIResponse 将 AlibabaVisitorGetidsbyqrcodeAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaVisitorGetidsbyqrcodeAPIResponse(v *AlibabaVisitorGetidsbyqrcodeAPIResponse) {
+	v.Reset()
+	poolAlibabaVisitorGetidsbyqrcodeAPIResponse.Put(v)
 }

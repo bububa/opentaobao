@@ -1,5 +1,9 @@
 package auction
 
+import (
+	"sync"
+)
+
 // RealTimeData 结构体
 type RealTimeData struct {
 	// 在线标的件数
@@ -20,4 +24,29 @@ type RealTimeData struct {
 	UserViewNumber int64 `json:"user_view_number,omitempty" xml:"user_view_number,omitempty"`
 	// 结束标的件数
 	AuctionEndNumber int64 `json:"auction_end_number,omitempty" xml:"auction_end_number,omitempty"`
+}
+
+var poolRealTimeData = sync.Pool{
+	New: func() any {
+		return new(RealTimeData)
+	},
+}
+
+// GetRealTimeData() 从对象池中获取RealTimeData
+func GetRealTimeData() *RealTimeData {
+	return poolRealTimeData.Get().(*RealTimeData)
+}
+
+// ReleaseRealTimeData 释放RealTimeData
+func ReleaseRealTimeData(v *RealTimeData) {
+	v.AuctionOnlineNumber = 0
+	v.UserBidNumber = 0
+	v.AuctionStartNumber = 0
+	v.AuctionPublishCount = 0
+	v.UserApplyNumber = 0
+	v.UserIntentionNumber = 0
+	v.TodayPredictGmv = 0
+	v.UserViewNumber = 0
+	v.AuctionEndNumber = 0
+	poolRealTimeData.Put(v)
 }

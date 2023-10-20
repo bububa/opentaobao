@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoAilabAicloudTopDeviceOpenidAuthcodeGetAPIRequest struct {
 // NewTaobaoAilabAicloudTopDeviceOpenidAuthcodeGetRequest 初始化TaobaoAilabAicloudTopDeviceOpenidAuthcodeGetAPIRequest对象
 func NewTaobaoAilabAicloudTopDeviceOpenidAuthcodeGetRequest() *TaobaoAilabAicloudTopDeviceOpenidAuthcodeGetAPIRequest {
 	return &TaobaoAilabAicloudTopDeviceOpenidAuthcodeGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopDeviceOpenidAuthcodeGetAPIRequest) Reset() {
+	r._schema = ""
+	r._utdId = ""
+	r._ext = ""
+	r._openId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoAilabAicloudTopDeviceOpenidAuthcodeGetAPIRequest) SetOpenId(_open
 // GetOpenId OpenId Getter
 func (r TaobaoAilabAicloudTopDeviceOpenidAuthcodeGetAPIRequest) GetOpenId() string {
 	return r._openId
+}
+
+var poolTaobaoAilabAicloudTopDeviceOpenidAuthcodeGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopDeviceOpenidAuthcodeGetRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopDeviceOpenidAuthcodeGetRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopDeviceOpenidAuthcodeGetAPIRequest
+func GetTaobaoAilabAicloudTopDeviceOpenidAuthcodeGetAPIRequest() *TaobaoAilabAicloudTopDeviceOpenidAuthcodeGetAPIRequest {
+	return poolTaobaoAilabAicloudTopDeviceOpenidAuthcodeGetAPIRequest.Get().(*TaobaoAilabAicloudTopDeviceOpenidAuthcodeGetAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopDeviceOpenidAuthcodeGetAPIRequest 将 TaobaoAilabAicloudTopDeviceOpenidAuthcodeGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopDeviceOpenidAuthcodeGetAPIRequest(v *TaobaoAilabAicloudTopDeviceOpenidAuthcodeGetAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopDeviceOpenidAuthcodeGetAPIRequest.Put(v)
 }

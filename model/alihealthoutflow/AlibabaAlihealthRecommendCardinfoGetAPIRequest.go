@@ -2,6 +2,7 @@ package alihealthoutflow
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthRecommendCardinfoGetAPIRequest struct {
 // NewAlibabaAlihealthRecommendCardinfoGetRequest 初始化AlibabaAlihealthRecommendCardinfoGetAPIRequest对象
 func NewAlibabaAlihealthRecommendCardinfoGetRequest() *AlibabaAlihealthRecommendCardinfoGetAPIRequest {
 	return &AlibabaAlihealthRecommendCardinfoGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthRecommendCardinfoGetAPIRequest) Reset() {
+	r._cardRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthRecommendCardinfoGetAPIRequest) SetCardRequest(_cardReq
 // GetCardRequest CardRequest Getter
 func (r AlibabaAlihealthRecommendCardinfoGetAPIRequest) GetCardRequest() *QuickAppRequest {
 	return r._cardRequest
+}
+
+var poolAlibabaAlihealthRecommendCardinfoGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthRecommendCardinfoGetRequest()
+	},
+}
+
+// GetAlibabaAlihealthRecommendCardinfoGetRequest 从 sync.Pool 获取 AlibabaAlihealthRecommendCardinfoGetAPIRequest
+func GetAlibabaAlihealthRecommendCardinfoGetAPIRequest() *AlibabaAlihealthRecommendCardinfoGetAPIRequest {
+	return poolAlibabaAlihealthRecommendCardinfoGetAPIRequest.Get().(*AlibabaAlihealthRecommendCardinfoGetAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthRecommendCardinfoGetAPIRequest 将 AlibabaAlihealthRecommendCardinfoGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthRecommendCardinfoGetAPIRequest(v *AlibabaAlihealthRecommendCardinfoGetAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthRecommendCardinfoGetAPIRequest.Put(v)
 }

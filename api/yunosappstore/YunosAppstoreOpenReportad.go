@@ -9,11 +9,6 @@ import (
 // yunos.appstore.open.reportad
 //
 // 外投广告回流上报接口
-func YunosAppstoreOpenReportad(clt *core.SDKClient, req *yunosappstore.YunosAppstoreOpenReportadAPIRequest, session string) (*yunosappstore.YunosAppstoreOpenReportadAPIResponse, error) {
-	var resp yunosappstore.YunosAppstoreOpenReportadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosAppstoreOpenReportad(clt *core.SDKClient, req *yunosappstore.YunosAppstoreOpenReportadAPIRequest, resp *yunosappstore.YunosAppstoreOpenReportadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

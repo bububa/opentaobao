@@ -1,5 +1,9 @@
 package refund
 
+import (
+	"sync"
+)
+
 // SyncIdentifyRefundCaseDto 结构体
 type SyncIdentifyRefundCaseDto struct {
 	// 鉴定工单操作备注
@@ -16,4 +20,27 @@ type SyncIdentifyRefundCaseDto struct {
 	OperateType int64 `json:"operate_type,omitempty" xml:"operate_type,omitempty"`
 	// 退款ID
 	RefundId int64 `json:"refund_id,omitempty" xml:"refund_id,omitempty"`
+}
+
+var poolSyncIdentifyRefundCaseDto = sync.Pool{
+	New: func() any {
+		return new(SyncIdentifyRefundCaseDto)
+	},
+}
+
+// GetSyncIdentifyRefundCaseDto() 从对象池中获取SyncIdentifyRefundCaseDto
+func GetSyncIdentifyRefundCaseDto() *SyncIdentifyRefundCaseDto {
+	return poolSyncIdentifyRefundCaseDto.Get().(*SyncIdentifyRefundCaseDto)
+}
+
+// ReleaseSyncIdentifyRefundCaseDto 释放SyncIdentifyRefundCaseDto
+func ReleaseSyncIdentifyRefundCaseDto(v *SyncIdentifyRefundCaseDto) {
+	v.OperateTips = ""
+	v.OuterCaseId = ""
+	v.ExtAttrs = ""
+	v.DetailOrderId = 0
+	v.OccurTime = 0
+	v.OperateType = 0
+	v.RefundId = 0
+	poolSyncIdentifyRefundCaseDto.Put(v)
 }

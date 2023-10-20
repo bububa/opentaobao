@@ -1,5 +1,9 @@
 package ju
 
+import (
+	"sync"
+)
+
 // AlibabaJhsCommunitySubmittingTextData 结构体
 type AlibabaJhsCommunitySubmittingTextData struct {
 	// 微信直播二维码
@@ -34,4 +38,36 @@ type AlibabaJhsCommunitySubmittingTextData struct {
 	OperationStatus string `json:"operation_status,omitempty" xml:"operation_status,omitempty"`
 	// 就可以抢购啦
 	OperationHint string `json:"operation_hint,omitempty" xml:"operation_hint,omitempty"`
+}
+
+var poolAlibabaJhsCommunitySubmittingTextData = sync.Pool{
+	New: func() any {
+		return new(AlibabaJhsCommunitySubmittingTextData)
+	},
+}
+
+// GetAlibabaJhsCommunitySubmittingTextData() 从对象池中获取AlibabaJhsCommunitySubmittingTextData
+func GetAlibabaJhsCommunitySubmittingTextData() *AlibabaJhsCommunitySubmittingTextData {
+	return poolAlibabaJhsCommunitySubmittingTextData.Get().(*AlibabaJhsCommunitySubmittingTextData)
+}
+
+// ReleaseAlibabaJhsCommunitySubmittingTextData 释放AlibabaJhsCommunitySubmittingTextData
+func ReleaseAlibabaJhsCommunitySubmittingTextData(v *AlibabaJhsCommunitySubmittingTextData) {
+	v.WechatLiveQR = ""
+	v.ToWechatLive = ""
+	v.WechatLiveLink = ""
+	v.WechatLiveBackground = ""
+	v.IsToWechatLive = ""
+	v.ToTBBackground = ""
+	v.ToTBAvatar = ""
+	v.QrFloat = ""
+	v.IsShowQrFloat = ""
+	v.QrCode = ""
+	v.ToTB = ""
+	v.NoTaoTokenTip = ""
+	v.QrCodeTip = ""
+	v.QrCodeTitle = ""
+	v.OperationStatus = ""
+	v.OperationHint = ""
+	poolAlibabaJhsCommunitySubmittingTextData.Put(v)
 }

@@ -2,6 +2,7 @@ package media
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoPictureDeleteAPIRequest struct {
 // NewTaobaoPictureDeleteRequest 初始化TaobaoPictureDeleteAPIRequest对象
 func NewTaobaoPictureDeleteRequest() *TaobaoPictureDeleteAPIRequest {
 	return &TaobaoPictureDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPictureDeleteAPIRequest) Reset() {
+	r._pictureIds = r._pictureIds[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoPictureDeleteAPIRequest) SetPictureIds(_pictureIds []string) erro
 // GetPictureIds PictureIds Getter
 func (r TaobaoPictureDeleteAPIRequest) GetPictureIds() []string {
 	return r._pictureIds
+}
+
+var poolTaobaoPictureDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPictureDeleteRequest()
+	},
+}
+
+// GetTaobaoPictureDeleteRequest 从 sync.Pool 获取 TaobaoPictureDeleteAPIRequest
+func GetTaobaoPictureDeleteAPIRequest() *TaobaoPictureDeleteAPIRequest {
+	return poolTaobaoPictureDeleteAPIRequest.Get().(*TaobaoPictureDeleteAPIRequest)
+}
+
+// ReleaseTaobaoPictureDeleteAPIRequest 将 TaobaoPictureDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPictureDeleteAPIRequest(v *TaobaoPictureDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoPictureDeleteAPIRequest.Put(v)
 }

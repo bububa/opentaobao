@@ -2,6 +2,7 @@ package miniappopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -20,8 +21,14 @@ type TaobaoMiniappShorturlCreateAPIRequest struct {
 // NewTaobaoMiniappShorturlCreateRequest 初始化TaobaoMiniappShorturlCreateAPIRequest对象
 func NewTaobaoMiniappShorturlCreateRequest() *TaobaoMiniappShorturlCreateAPIRequest {
 	return &TaobaoMiniappShorturlCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMiniappShorturlCreateAPIRequest) Reset() {
+	r._miniappUrl = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -52,4 +59,21 @@ func (r *TaobaoMiniappShorturlCreateAPIRequest) SetMiniappUrl(_miniappUrl string
 // GetMiniappUrl MiniappUrl Getter
 func (r TaobaoMiniappShorturlCreateAPIRequest) GetMiniappUrl() string {
 	return r._miniappUrl
+}
+
+var poolTaobaoMiniappShorturlCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMiniappShorturlCreateRequest()
+	},
+}
+
+// GetTaobaoMiniappShorturlCreateRequest 从 sync.Pool 获取 TaobaoMiniappShorturlCreateAPIRequest
+func GetTaobaoMiniappShorturlCreateAPIRequest() *TaobaoMiniappShorturlCreateAPIRequest {
+	return poolTaobaoMiniappShorturlCreateAPIRequest.Get().(*TaobaoMiniappShorturlCreateAPIRequest)
+}
+
+// ReleaseTaobaoMiniappShorturlCreateAPIRequest 将 TaobaoMiniappShorturlCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMiniappShorturlCreateAPIRequest(v *TaobaoMiniappShorturlCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoMiniappShorturlCreateAPIRequest.Put(v)
 }

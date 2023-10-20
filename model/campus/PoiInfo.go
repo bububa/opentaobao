@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // PoiInfo 结构体
 type PoiInfo struct {
 	// spaceGroups
@@ -64,4 +68,51 @@ type PoiInfo struct {
 	GroupId int64 `json:"group_id,omitempty" xml:"group_id,omitempty"`
 	// 是否删除
 	IsDelete bool `json:"is_delete,omitempty" xml:"is_delete,omitempty"`
+}
+
+var poolPoiInfo = sync.Pool{
+	New: func() any {
+		return new(PoiInfo)
+	},
+}
+
+// GetPoiInfo() 从对象池中获取PoiInfo
+func GetPoiInfo() *PoiInfo {
+	return poolPoiInfo.Get().(*PoiInfo)
+}
+
+// ReleasePoiInfo 释放PoiInfo
+func ReleasePoiInfo(v *PoiInfo) {
+	v.SpaceGroups = v.SpaceGroups[:0]
+	v.Attrs = v.Attrs[:0]
+	v.FtId = ""
+	v.Uuid = ""
+	v.Name = ""
+	v.CampusName = ""
+	v.CampusCode = ""
+	v.TypeName = ""
+	v.Area = ""
+	v.Height = ""
+	v.FloorName = ""
+	v.TypeCode = ""
+	v.BuildingName = ""
+	v.Code = ""
+	v.GmtModified = ""
+	v.Modifier = ""
+	v.Creator = ""
+	v.GmtCreate = ""
+	v.CategoryName = ""
+	v.GeoFloorId = 0
+	v.FloorId = 0
+	v.Category = 0
+	v.Id = 0
+	v.TypeId = 0
+	v.CampusId = 0
+	v.BuildingId = 0
+	v.Status = 0
+	v.CompanyId = 0
+	v.Central = nil
+	v.GroupId = 0
+	v.IsDelete = false
+	poolPoiInfo.Put(v)
 }

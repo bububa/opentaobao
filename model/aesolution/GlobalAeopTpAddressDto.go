@@ -1,5 +1,9 @@
 package aesolution
 
+import (
+	"sync"
+)
+
 // GlobalAeopTpAddressDto 结构体
 type GlobalAeopTpAddressDto struct {
 	// Fax area code
@@ -34,4 +38,36 @@ type GlobalAeopTpAddressDto struct {
 	MobileNo string `json:"mobile_no,omitempty" xml:"mobile_no,omitempty"`
 	// localized address, currently only used in Russia
 	LocalizedAddress string `json:"localized_address,omitempty" xml:"localized_address,omitempty"`
+}
+
+var poolGlobalAeopTpAddressDto = sync.Pool{
+	New: func() any {
+		return new(GlobalAeopTpAddressDto)
+	},
+}
+
+// GetGlobalAeopTpAddressDto() 从对象池中获取GlobalAeopTpAddressDto
+func GetGlobalAeopTpAddressDto() *GlobalAeopTpAddressDto {
+	return poolGlobalAeopTpAddressDto.Get().(*GlobalAeopTpAddressDto)
+}
+
+// ReleaseGlobalAeopTpAddressDto 释放GlobalAeopTpAddressDto
+func ReleaseGlobalAeopTpAddressDto(v *GlobalAeopTpAddressDto) {
+	v.FaxArea = ""
+	v.Zip = ""
+	v.FaxCountry = ""
+	v.Address2 = ""
+	v.DetailAddress = ""
+	v.Country = ""
+	v.City = ""
+	v.FaxNumber = ""
+	v.PhoneNumber = ""
+	v.Address = ""
+	v.Province = ""
+	v.PhoneArea = ""
+	v.PhoneCountry = ""
+	v.ContactPerson = ""
+	v.MobileNo = ""
+	v.LocalizedAddress = ""
+	poolGlobalAeopTpAddressDto.Put(v)
 }

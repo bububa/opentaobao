@@ -9,11 +9,6 @@ import (
 // taobao.wlb.stores.baseinfo.get
 //
 // 通过USERID和仓库类型，获取商家自有仓库或菜鸟仓库或全部仓库
-func TaobaoWlbStoresBaseinfoGet(clt *core.SDKClient, req *tblogistics.TaobaoWlbStoresBaseinfoGetAPIRequest, session string) (*tblogistics.TaobaoWlbStoresBaseinfoGetAPIResponse, error) {
-	var resp tblogistics.TaobaoWlbStoresBaseinfoGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWlbStoresBaseinfoGet(clt *core.SDKClient, req *tblogistics.TaobaoWlbStoresBaseinfoGetAPIRequest, resp *tblogistics.TaobaoWlbStoresBaseinfoGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

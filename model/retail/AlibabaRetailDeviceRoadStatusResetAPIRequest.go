@@ -2,6 +2,7 @@ package retail
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaRetailDeviceRoadStatusResetAPIRequest struct {
 // NewAlibabaRetailDeviceRoadStatusResetRequest 初始化AlibabaRetailDeviceRoadStatusResetAPIRequest对象
 func NewAlibabaRetailDeviceRoadStatusResetRequest() *AlibabaRetailDeviceRoadStatusResetAPIRequest {
 	return &AlibabaRetailDeviceRoadStatusResetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaRetailDeviceRoadStatusResetAPIRequest) Reset() {
+	r._roadNoList = r._roadNoList[:0]
+	r._deviceUuid = ""
+	r._deviceCode = ""
+	r._deviceSn = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaRetailDeviceRoadStatusResetAPIRequest) SetDeviceSn(_deviceSn str
 // GetDeviceSn DeviceSn Getter
 func (r AlibabaRetailDeviceRoadStatusResetAPIRequest) GetDeviceSn() string {
 	return r._deviceSn
+}
+
+var poolAlibabaRetailDeviceRoadStatusResetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaRetailDeviceRoadStatusResetRequest()
+	},
+}
+
+// GetAlibabaRetailDeviceRoadStatusResetRequest 从 sync.Pool 获取 AlibabaRetailDeviceRoadStatusResetAPIRequest
+func GetAlibabaRetailDeviceRoadStatusResetAPIRequest() *AlibabaRetailDeviceRoadStatusResetAPIRequest {
+	return poolAlibabaRetailDeviceRoadStatusResetAPIRequest.Get().(*AlibabaRetailDeviceRoadStatusResetAPIRequest)
+}
+
+// ReleaseAlibabaRetailDeviceRoadStatusResetAPIRequest 将 AlibabaRetailDeviceRoadStatusResetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaRetailDeviceRoadStatusResetAPIRequest(v *AlibabaRetailDeviceRoadStatusResetAPIRequest) {
+	v.Reset()
+	poolAlibabaRetailDeviceRoadStatusResetAPIRequest.Put(v)
 }

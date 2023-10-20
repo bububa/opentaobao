@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type YunosTvpubadminContentTableauditQuerychilddesktopAPIResponse struct {
 	YunosTvpubadminContentTableauditQuerychilddesktopAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *YunosTvpubadminContentTableauditQuerychilddesktopAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.YunosTvpubadminContentTableauditQuerychilddesktopAPIResponseModel).Reset()
+}
+
 // YunosTvpubadminContentTableauditQuerychilddesktopAPIResponseModel is 迎客松查看小酷宝桌面坑位元数据列表 成功返回结果
 type YunosTvpubadminContentTableauditQuerychilddesktopAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_tvpubadmin_content_tableaudit_querychilddesktop_response"`
@@ -22,4 +29,27 @@ type YunosTvpubadminContentTableauditQuerychilddesktopAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// object
 	Object string `json:"object,omitempty" xml:"object,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *YunosTvpubadminContentTableauditQuerychilddesktopAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Object = ""
+}
+
+var poolYunosTvpubadminContentTableauditQuerychilddesktopAPIResponse = sync.Pool{
+	New: func() any {
+		return new(YunosTvpubadminContentTableauditQuerychilddesktopAPIResponse)
+	},
+}
+
+// GetYunosTvpubadminContentTableauditQuerychilddesktopAPIResponse 从 sync.Pool 获取 YunosTvpubadminContentTableauditQuerychilddesktopAPIResponse
+func GetYunosTvpubadminContentTableauditQuerychilddesktopAPIResponse() *YunosTvpubadminContentTableauditQuerychilddesktopAPIResponse {
+	return poolYunosTvpubadminContentTableauditQuerychilddesktopAPIResponse.Get().(*YunosTvpubadminContentTableauditQuerychilddesktopAPIResponse)
+}
+
+// ReleaseYunosTvpubadminContentTableauditQuerychilddesktopAPIResponse 将 YunosTvpubadminContentTableauditQuerychilddesktopAPIResponse 保存到 sync.Pool
+func ReleaseYunosTvpubadminContentTableauditQuerychilddesktopAPIResponse(v *YunosTvpubadminContentTableauditQuerychilddesktopAPIResponse) {
+	v.Reset()
+	poolYunosTvpubadminContentTableauditQuerychilddesktopAPIResponse.Put(v)
 }

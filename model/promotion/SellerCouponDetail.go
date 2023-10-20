@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // SellerCouponDetail 结构体
 type SellerCouponDetail struct {
 	// 商品优惠券会有商品id集合
@@ -34,4 +38,36 @@ type SellerCouponDetail struct {
 	CouponType int64 `json:"coupon_type,omitempty" xml:"coupon_type,omitempty"`
 	// 状态信息
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolSellerCouponDetail = sync.Pool{
+	New: func() any {
+		return new(SellerCouponDetail)
+	},
+}
+
+// GetSellerCouponDetail() 从对象池中获取SellerCouponDetail
+func GetSellerCouponDetail() *SellerCouponDetail {
+	return poolSellerCouponDetail.Get().(*SellerCouponDetail)
+}
+
+// ReleaseSellerCouponDetail 释放SellerCouponDetail
+func ReleaseSellerCouponDetail(v *SellerCouponDetail) {
+	v.ItemIds = v.ItemIds[:0]
+	v.Title = ""
+	v.SellerId = ""
+	v.StatusName = ""
+	v.CouponTypeName = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.Url = ""
+	v.SellerNick = ""
+	v.SpreadId = ""
+	v.ShopName = ""
+	v.Amount = 0
+	v.TotalCount = 0
+	v.StartFee = 0
+	v.CouponType = 0
+	v.Status = 0
+	poolSellerCouponDetail.Put(v)
 }

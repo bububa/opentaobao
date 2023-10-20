@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.workcard.reservefail
 //
 // 服务商调用该接口回传工单预约失败
-func TmallServicecenterWorkcardReservefail(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardReservefailAPIRequest, session string) (*tmallservice.TmallServicecenterWorkcardReservefailAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterWorkcardReservefailAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterWorkcardReservefail(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardReservefailAPIRequest, resp *tmallservice.TmallServicecenterWorkcardReservefailAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

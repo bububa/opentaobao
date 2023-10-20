@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.pos.trade.reverse
 //
 // 轻pos品牌营销场景，商家调用退款接口
-func AlibabaWdkPosTradeReverse(clt *core.SDKClient, req *trade.AlibabaWdkPosTradeReverseAPIRequest, session string) (*trade.AlibabaWdkPosTradeReverseAPIResponse, error) {
-	var resp trade.AlibabaWdkPosTradeReverseAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkPosTradeReverse(clt *core.SDKClient, req *trade.AlibabaWdkPosTradeReverseAPIRequest, resp *trade.AlibabaWdkPosTradeReverseAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

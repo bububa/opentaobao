@@ -2,6 +2,7 @@ package paimai
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAuctionZcUpdateVrStatusAPIRequest struct {
 // NewTaobaoAuctionZcUpdateVrStatusRequest 初始化TaobaoAuctionZcUpdateVrStatusAPIRequest对象
 func NewTaobaoAuctionZcUpdateVrStatusRequest() *TaobaoAuctionZcUpdateVrStatusAPIRequest {
 	return &TaobaoAuctionZcUpdateVrStatusAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAuctionZcUpdateVrStatusAPIRequest) Reset() {
+	r._message = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAuctionZcUpdateVrStatusAPIRequest) SetMessage(_message string) er
 // GetMessage Message Getter
 func (r TaobaoAuctionZcUpdateVrStatusAPIRequest) GetMessage() string {
 	return r._message
+}
+
+var poolTaobaoAuctionZcUpdateVrStatusAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAuctionZcUpdateVrStatusRequest()
+	},
+}
+
+// GetTaobaoAuctionZcUpdateVrStatusRequest 从 sync.Pool 获取 TaobaoAuctionZcUpdateVrStatusAPIRequest
+func GetTaobaoAuctionZcUpdateVrStatusAPIRequest() *TaobaoAuctionZcUpdateVrStatusAPIRequest {
+	return poolTaobaoAuctionZcUpdateVrStatusAPIRequest.Get().(*TaobaoAuctionZcUpdateVrStatusAPIRequest)
+}
+
+// ReleaseTaobaoAuctionZcUpdateVrStatusAPIRequest 将 TaobaoAuctionZcUpdateVrStatusAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAuctionZcUpdateVrStatusAPIRequest(v *TaobaoAuctionZcUpdateVrStatusAPIRequest) {
+	v.Reset()
+	poolTaobaoAuctionZcUpdateVrStatusAPIRequest.Put(v)
 }

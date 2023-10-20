@@ -2,6 +2,7 @@ package lstfundbill
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaLstTradeSellerOrderFundbillListQueryAPIRequest struct {
 // NewAlibabaLstTradeSellerOrderFundbillListQueryRequest 初始化AlibabaLstTradeSellerOrderFundbillListQueryAPIRequest对象
 func NewAlibabaLstTradeSellerOrderFundbillListQueryRequest() *AlibabaLstTradeSellerOrderFundbillListQueryAPIRequest {
 	return &AlibabaLstTradeSellerOrderFundbillListQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstTradeSellerOrderFundbillListQueryAPIRequest) Reset() {
+	r._billDate = ""
+	r._size = 0
+	r._page = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaLstTradeSellerOrderFundbillListQueryAPIRequest) SetPage(_page in
 // GetPage Page Getter
 func (r AlibabaLstTradeSellerOrderFundbillListQueryAPIRequest) GetPage() int64 {
 	return r._page
+}
+
+var poolAlibabaLstTradeSellerOrderFundbillListQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstTradeSellerOrderFundbillListQueryRequest()
+	},
+}
+
+// GetAlibabaLstTradeSellerOrderFundbillListQueryRequest 从 sync.Pool 获取 AlibabaLstTradeSellerOrderFundbillListQueryAPIRequest
+func GetAlibabaLstTradeSellerOrderFundbillListQueryAPIRequest() *AlibabaLstTradeSellerOrderFundbillListQueryAPIRequest {
+	return poolAlibabaLstTradeSellerOrderFundbillListQueryAPIRequest.Get().(*AlibabaLstTradeSellerOrderFundbillListQueryAPIRequest)
+}
+
+// ReleaseAlibabaLstTradeSellerOrderFundbillListQueryAPIRequest 将 AlibabaLstTradeSellerOrderFundbillListQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstTradeSellerOrderFundbillListQueryAPIRequest(v *AlibabaLstTradeSellerOrderFundbillListQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaLstTradeSellerOrderFundbillListQueryAPIRequest.Put(v)
 }

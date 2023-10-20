@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpIndustryAnomalyRecourseStatusModifyAPIRequest struct {
 // NewAlibabaAscpIndustryAnomalyRecourseStatusModifyRequest 初始化AlibabaAscpIndustryAnomalyRecourseStatusModifyAPIRequest对象
 func NewAlibabaAscpIndustryAnomalyRecourseStatusModifyRequest() *AlibabaAscpIndustryAnomalyRecourseStatusModifyAPIRequest {
 	return &AlibabaAscpIndustryAnomalyRecourseStatusModifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpIndustryAnomalyRecourseStatusModifyAPIRequest) Reset() {
+	r._omsComplaintWorkcardStatusModifyParameter = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpIndustryAnomalyRecourseStatusModifyAPIRequest) SetOmsComplai
 // GetOmsComplaintWorkcardStatusModifyParameter OmsComplaintWorkcardStatusModifyParameter Getter
 func (r AlibabaAscpIndustryAnomalyRecourseStatusModifyAPIRequest) GetOmsComplaintWorkcardStatusModifyParameter() *OmsComplaintWorkCardStatusModifyParameter {
 	return r._omsComplaintWorkcardStatusModifyParameter
+}
+
+var poolAlibabaAscpIndustryAnomalyRecourseStatusModifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpIndustryAnomalyRecourseStatusModifyRequest()
+	},
+}
+
+// GetAlibabaAscpIndustryAnomalyRecourseStatusModifyRequest 从 sync.Pool 获取 AlibabaAscpIndustryAnomalyRecourseStatusModifyAPIRequest
+func GetAlibabaAscpIndustryAnomalyRecourseStatusModifyAPIRequest() *AlibabaAscpIndustryAnomalyRecourseStatusModifyAPIRequest {
+	return poolAlibabaAscpIndustryAnomalyRecourseStatusModifyAPIRequest.Get().(*AlibabaAscpIndustryAnomalyRecourseStatusModifyAPIRequest)
+}
+
+// ReleaseAlibabaAscpIndustryAnomalyRecourseStatusModifyAPIRequest 将 AlibabaAscpIndustryAnomalyRecourseStatusModifyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpIndustryAnomalyRecourseStatusModifyAPIRequest(v *AlibabaAscpIndustryAnomalyRecourseStatusModifyAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpIndustryAnomalyRecourseStatusModifyAPIRequest.Put(v)
 }

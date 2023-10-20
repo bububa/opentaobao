@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.merchant.storeitem.query
 //
 // 门店商品信心查询
-func AlibabaWdkMerchantStoreitemQuery(clt *core.SDKClient, req *wdk.AlibabaWdkMerchantStoreitemQueryAPIRequest, session string) (*wdk.AlibabaWdkMerchantStoreitemQueryAPIResponse, error) {
-	var resp wdk.AlibabaWdkMerchantStoreitemQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkMerchantStoreitemQuery(clt *core.SDKClient, req *wdk.AlibabaWdkMerchantStoreitemQueryAPIRequest, resp *wdk.AlibabaWdkMerchantStoreitemQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

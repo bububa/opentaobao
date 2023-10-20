@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaServicecenterSpserviceorderUpdateAPIRequest struct {
 // NewAlibabaServicecenterSpserviceorderUpdateRequest 初始化AlibabaServicecenterSpserviceorderUpdateAPIRequest对象
 func NewAlibabaServicecenterSpserviceorderUpdateRequest() *AlibabaServicecenterSpserviceorderUpdateAPIRequest {
 	return &AlibabaServicecenterSpserviceorderUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaServicecenterSpserviceorderUpdateAPIRequest) Reset() {
+	r._action = ""
+	r._newSn = ""
+	r._oldSn = ""
+	r._gmtEffect = ""
+	r._gmtExpire = ""
+	r._spServiceOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaServicecenterSpserviceorderUpdateAPIRequest) SetSpServiceOrderId
 // GetSpServiceOrderId SpServiceOrderId Getter
 func (r AlibabaServicecenterSpserviceorderUpdateAPIRequest) GetSpServiceOrderId() int64 {
 	return r._spServiceOrderId
+}
+
+var poolAlibabaServicecenterSpserviceorderUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaServicecenterSpserviceorderUpdateRequest()
+	},
+}
+
+// GetAlibabaServicecenterSpserviceorderUpdateRequest 从 sync.Pool 获取 AlibabaServicecenterSpserviceorderUpdateAPIRequest
+func GetAlibabaServicecenterSpserviceorderUpdateAPIRequest() *AlibabaServicecenterSpserviceorderUpdateAPIRequest {
+	return poolAlibabaServicecenterSpserviceorderUpdateAPIRequest.Get().(*AlibabaServicecenterSpserviceorderUpdateAPIRequest)
+}
+
+// ReleaseAlibabaServicecenterSpserviceorderUpdateAPIRequest 将 AlibabaServicecenterSpserviceorderUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaServicecenterSpserviceorderUpdateAPIRequest(v *AlibabaServicecenterSpserviceorderUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaServicecenterSpserviceorderUpdateAPIRequest.Put(v)
 }

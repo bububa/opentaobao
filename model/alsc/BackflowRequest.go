@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // BackflowRequest 结构体
 type BackflowRequest struct {
 	// 订单或子订单属性信息
@@ -20,4 +24,29 @@ type BackflowRequest struct {
 	BizSource string `json:"biz_source,omitempty" xml:"biz_source,omitempty"`
 	// 订单信息
 	OrderInfo *OrderInfo `json:"order_info,omitempty" xml:"order_info,omitempty"`
+}
+
+var poolBackflowRequest = sync.Pool{
+	New: func() any {
+		return new(BackflowRequest)
+	},
+}
+
+// GetBackflowRequest() 从对象池中获取BackflowRequest
+func GetBackflowRequest() *BackflowRequest {
+	return poolBackflowRequest.Get().(*BackflowRequest)
+}
+
+// ReleaseBackflowRequest 释放BackflowRequest
+func ReleaseBackflowRequest(v *BackflowRequest) {
+	v.OrderAttributeInfoList = v.OrderAttributeInfoList[:0]
+	v.PayDetailInfoList = v.PayDetailInfoList[:0]
+	v.PromoDetailInfoList = v.PromoDetailInfoList[:0]
+	v.RefundFundDetailInfoList = v.RefundFundDetailInfoList[:0]
+	v.RefundItemDetailInfoList = v.RefundItemDetailInfoList[:0]
+	v.RefundOrderInfoList = v.RefundOrderInfoList[:0]
+	v.SubOrderInfoList = v.SubOrderInfoList[:0]
+	v.BizSource = ""
+	v.OrderInfo = nil
+	poolBackflowRequest.Put(v)
 }

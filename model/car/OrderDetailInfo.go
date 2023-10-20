@@ -1,5 +1,9 @@
 package car
 
+import (
+	"sync"
+)
+
 // OrderDetailInfo 结构体
 type OrderDetailInfo struct {
 	// 关单原因
@@ -32,4 +36,35 @@ type OrderDetailInfo struct {
 	RefundStatus int64 `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
 	// version
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
+}
+
+var poolOrderDetailInfo = sync.Pool{
+	New: func() any {
+		return new(OrderDetailInfo)
+	},
+}
+
+// GetOrderDetailInfo() 从对象池中获取OrderDetailInfo
+func GetOrderDetailInfo() *OrderDetailInfo {
+	return poolOrderDetailInfo.Get().(*OrderDetailInfo)
+}
+
+// ReleaseOrderDetailInfo 释放OrderDetailInfo
+func ReleaseOrderDetailInfo(v *OrderDetailInfo) {
+	v.CancelReason = ""
+	v.CreatedTime = ""
+	v.EndTime = ""
+	v.ModifiedTime = ""
+	v.OrderSource = ""
+	v.PayTime = ""
+	v.PayTimeOutTime = ""
+	v.TraceId = ""
+	v.DiscountFee = 0
+	v.OrderId = 0
+	v.PayStatus = 0
+	v.RealPay = 0
+	v.RefundFee = 0
+	v.RefundStatus = 0
+	v.Version = 0
+	poolOrderDetailInfo.Put(v)
 }

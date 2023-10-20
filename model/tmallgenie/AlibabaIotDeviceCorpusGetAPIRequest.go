@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaIotDeviceCorpusGetAPIRequest struct {
 // NewAlibabaIotDeviceCorpusGetRequest 初始化AlibabaIotDeviceCorpusGetAPIRequest对象
 func NewAlibabaIotDeviceCorpusGetRequest() *AlibabaIotDeviceCorpusGetAPIRequest {
 	return &AlibabaIotDeviceCorpusGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIotDeviceCorpusGetAPIRequest) Reset() {
+	r._userOpenId = ""
+	r._clientId = ""
+	r._devId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaIotDeviceCorpusGetAPIRequest) SetDevId(_devId string) error {
 // GetDevId DevId Getter
 func (r AlibabaIotDeviceCorpusGetAPIRequest) GetDevId() string {
 	return r._devId
+}
+
+var poolAlibabaIotDeviceCorpusGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIotDeviceCorpusGetRequest()
+	},
+}
+
+// GetAlibabaIotDeviceCorpusGetRequest 从 sync.Pool 获取 AlibabaIotDeviceCorpusGetAPIRequest
+func GetAlibabaIotDeviceCorpusGetAPIRequest() *AlibabaIotDeviceCorpusGetAPIRequest {
+	return poolAlibabaIotDeviceCorpusGetAPIRequest.Get().(*AlibabaIotDeviceCorpusGetAPIRequest)
+}
+
+// ReleaseAlibabaIotDeviceCorpusGetAPIRequest 将 AlibabaIotDeviceCorpusGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIotDeviceCorpusGetAPIRequest(v *AlibabaIotDeviceCorpusGetAPIRequest) {
+	v.Reset()
+	poolAlibabaIotDeviceCorpusGetAPIRequest.Put(v)
 }

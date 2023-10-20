@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // TradeFlowPaymentModel 结构体
 type TradeFlowPaymentModel struct {
 	// 外部系统支付用户ID，比如：支付宝PID
@@ -20,4 +24,29 @@ type TradeFlowPaymentModel struct {
 	PayChannel int64 `json:"pay_channel,omitempty" xml:"pay_channel,omitempty"`
 	// 支付状态：1待付款，2已付款
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolTradeFlowPaymentModel = sync.Pool{
+	New: func() any {
+		return new(TradeFlowPaymentModel)
+	},
+}
+
+// GetTradeFlowPaymentModel() 从对象池中获取TradeFlowPaymentModel
+func GetTradeFlowPaymentModel() *TradeFlowPaymentModel {
+	return poolTradeFlowPaymentModel.Get().(*TradeFlowPaymentModel)
+}
+
+// ReleaseTradeFlowPaymentModel 释放TradeFlowPaymentModel
+func ReleaseTradeFlowPaymentModel(v *TradeFlowPaymentModel) {
+	v.PaymentUserId = ""
+	v.PaymentFlowNo = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.PayAmount = 0
+	v.PayType = 0
+	v.Commission = 0
+	v.PayChannel = 0
+	v.Status = 0
+	poolTradeFlowPaymentModel.Put(v)
 }

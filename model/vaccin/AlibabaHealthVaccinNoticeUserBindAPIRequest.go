@@ -2,6 +2,7 @@ package vaccin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaHealthVaccinNoticeUserBindAPIRequest struct {
 // NewAlibabaHealthVaccinNoticeUserBindRequest 初始化AlibabaHealthVaccinNoticeUserBindAPIRequest对象
 func NewAlibabaHealthVaccinNoticeUserBindRequest() *AlibabaHealthVaccinNoticeUserBindAPIRequest {
 	return &AlibabaHealthVaccinNoticeUserBindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHealthVaccinNoticeUserBindAPIRequest) Reset() {
+	r._bindUsers = r._bindUsers[:0]
+	r._alipayUserId = ""
+	r._outerUserId = ""
+	r._mobile = ""
+	r._appChannel = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaHealthVaccinNoticeUserBindAPIRequest) SetAppChannel(_appChannel 
 // GetAppChannel AppChannel Getter
 func (r AlibabaHealthVaccinNoticeUserBindAPIRequest) GetAppChannel() string {
 	return r._appChannel
+}
+
+var poolAlibabaHealthVaccinNoticeUserBindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHealthVaccinNoticeUserBindRequest()
+	},
+}
+
+// GetAlibabaHealthVaccinNoticeUserBindRequest 从 sync.Pool 获取 AlibabaHealthVaccinNoticeUserBindAPIRequest
+func GetAlibabaHealthVaccinNoticeUserBindAPIRequest() *AlibabaHealthVaccinNoticeUserBindAPIRequest {
+	return poolAlibabaHealthVaccinNoticeUserBindAPIRequest.Get().(*AlibabaHealthVaccinNoticeUserBindAPIRequest)
+}
+
+// ReleaseAlibabaHealthVaccinNoticeUserBindAPIRequest 将 AlibabaHealthVaccinNoticeUserBindAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHealthVaccinNoticeUserBindAPIRequest(v *AlibabaHealthVaccinNoticeUserBindAPIRequest) {
+	v.Reset()
+	poolAlibabaHealthVaccinNoticeUserBindAPIRequest.Put(v)
 }

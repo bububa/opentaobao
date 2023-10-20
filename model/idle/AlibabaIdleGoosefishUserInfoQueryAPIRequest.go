@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaIdleGoosefishUserInfoQueryAPIRequest struct {
 // NewAlibabaIdleGoosefishUserInfoQueryRequest 初始化AlibabaIdleGoosefishUserInfoQueryAPIRequest对象
 func NewAlibabaIdleGoosefishUserInfoQueryRequest() *AlibabaIdleGoosefishUserInfoQueryAPIRequest {
 	return &AlibabaIdleGoosefishUserInfoQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleGoosefishUserInfoQueryAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaIdleGoosefishUserInfoQueryAPIRequest) GetApiParams(params url.Val
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaIdleGoosefishUserInfoQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaIdleGoosefishUserInfoQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleGoosefishUserInfoQueryRequest()
+	},
+}
+
+// GetAlibabaIdleGoosefishUserInfoQueryRequest 从 sync.Pool 获取 AlibabaIdleGoosefishUserInfoQueryAPIRequest
+func GetAlibabaIdleGoosefishUserInfoQueryAPIRequest() *AlibabaIdleGoosefishUserInfoQueryAPIRequest {
+	return poolAlibabaIdleGoosefishUserInfoQueryAPIRequest.Get().(*AlibabaIdleGoosefishUserInfoQueryAPIRequest)
+}
+
+// ReleaseAlibabaIdleGoosefishUserInfoQueryAPIRequest 将 AlibabaIdleGoosefishUserInfoQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleGoosefishUserInfoQueryAPIRequest(v *AlibabaIdleGoosefishUserInfoQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleGoosefishUserInfoQueryAPIRequest.Put(v)
 }

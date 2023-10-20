@@ -9,11 +9,6 @@ import (
 // alibaba.alsc.crm.point.consumepoint
 //
 // 积分抵现
-func AlibabaAlscCrmPointConsumepoint(clt *core.SDKClient, req *alsc.AlibabaAlscCrmPointConsumepointAPIRequest, session string) (*alsc.AlibabaAlscCrmPointConsumepointAPIResponse, error) {
-	var resp alsc.AlibabaAlscCrmPointConsumepointAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlscCrmPointConsumepoint(clt *core.SDKClient, req *alsc.AlibabaAlscCrmPointConsumepointAPIRequest, resp *alsc.AlibabaAlscCrmPointConsumepointAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

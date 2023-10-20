@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // ResDrugDetailInfoDto 结构体
 type ResDrugDetailInfoDto struct {
 	// 包装单位描述
@@ -76,4 +80,57 @@ type ResDrugDetailInfoDto struct {
 	ProdCode string `json:"prod_code,omitempty" xml:"prod_code,omitempty"`
 	// 批准文号类型
 	ApprovalLicenceType string `json:"approval_licence_type,omitempty" xml:"approval_licence_type,omitempty"`
+}
+
+var poolResDrugDetailInfoDto = sync.Pool{
+	New: func() any {
+		return new(ResDrugDetailInfoDto)
+	},
+}
+
+// GetResDrugDetailInfoDto() 从对象池中获取ResDrugDetailInfoDto
+func GetResDrugDetailInfoDto() *ResDrugDetailInfoDto {
+	return poolResDrugDetailInfoDto.Get().(*ResDrugDetailInfoDto)
+}
+
+// ReleaseResDrugDetailInfoDto 释放ResDrugDetailInfoDto
+func ReleaseResDrugDetailInfoDto(v *ResDrugDetailInfoDto) {
+	v.PkgUnitDesc = ""
+	v.ApprovalLicenceExpiry = ""
+	v.ExprieUnit = ""
+	v.PhysicDetailType = ""
+	v.PkgSpec = ""
+	v.EntName = ""
+	v.DrugBaseInfoId = ""
+	v.Status = ""
+	v.RefEntId = ""
+	v.PhysicTypeDesc = ""
+	v.PkgNum = ""
+	v.CrtDate = ""
+	v.EntId = ""
+	v.PrepnUnitDesc = ""
+	v.AnnCodeAmt = ""
+	v.DrugApprovalInfoId = ""
+	v.SdcCode = ""
+	v.ExprieLife = ""
+	v.ProdName = ""
+	v.PhysicType = ""
+	v.RegRegionDetail = ""
+	v.PhysicNatCode = ""
+	v.DrugEntBaseInfoId = ""
+	v.PrepnUnit = ""
+	v.PrepnSpec = ""
+	v.PrepnType = ""
+	v.DrugEntBaseId = ""
+	v.PrepnTypeDesc = ""
+	v.PhysicName = ""
+	v.PkgUnit = ""
+	v.PkgSpecCrit = ""
+	v.AuthorizerFlag = ""
+	v.ModDate = ""
+	v.ApprovalLicenceNo = ""
+	v.PhysicInfo = ""
+	v.ProdCode = ""
+	v.ApprovalLicenceType = ""
+	poolResDrugDetailInfoDto.Put(v)
 }

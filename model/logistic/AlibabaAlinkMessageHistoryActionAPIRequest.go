@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlinkMessageHistoryActionAPIRequest struct {
 // NewAlibabaAlinkMessageHistoryActionRequest 初始化AlibabaAlinkMessageHistoryActionAPIRequest对象
 func NewAlibabaAlinkMessageHistoryActionRequest() *AlibabaAlinkMessageHistoryActionAPIRequest {
 	return &AlibabaAlinkMessageHistoryActionAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlinkMessageHistoryActionAPIRequest) Reset() {
+	r._index = ""
+	r._action = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlinkMessageHistoryActionAPIRequest) SetAction(_action string) e
 // GetAction Action Getter
 func (r AlibabaAlinkMessageHistoryActionAPIRequest) GetAction() string {
 	return r._action
+}
+
+var poolAlibabaAlinkMessageHistoryActionAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlinkMessageHistoryActionRequest()
+	},
+}
+
+// GetAlibabaAlinkMessageHistoryActionRequest 从 sync.Pool 获取 AlibabaAlinkMessageHistoryActionAPIRequest
+func GetAlibabaAlinkMessageHistoryActionAPIRequest() *AlibabaAlinkMessageHistoryActionAPIRequest {
+	return poolAlibabaAlinkMessageHistoryActionAPIRequest.Get().(*AlibabaAlinkMessageHistoryActionAPIRequest)
+}
+
+// ReleaseAlibabaAlinkMessageHistoryActionAPIRequest 将 AlibabaAlinkMessageHistoryActionAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlinkMessageHistoryActionAPIRequest(v *AlibabaAlinkMessageHistoryActionAPIRequest) {
+	v.Reset()
+	poolAlibabaAlinkMessageHistoryActionAPIRequest.Put(v)
 }

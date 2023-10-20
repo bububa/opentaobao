@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // InvoiceOrderRefundResultDto 结构体
 type InvoiceOrderRefundResultDto struct {
 	// 拒绝退款原因，拒绝退款时必传
@@ -8,4 +12,23 @@ type InvoiceOrderRefundResultDto struct {
 	Action string `json:"action,omitempty" xml:"action,omitempty"`
 	// 退款工单流程ID
 	FlowId string `json:"flow_id,omitempty" xml:"flow_id,omitempty"`
+}
+
+var poolInvoiceOrderRefundResultDto = sync.Pool{
+	New: func() any {
+		return new(InvoiceOrderRefundResultDto)
+	},
+}
+
+// GetInvoiceOrderRefundResultDto() 从对象池中获取InvoiceOrderRefundResultDto
+func GetInvoiceOrderRefundResultDto() *InvoiceOrderRefundResultDto {
+	return poolInvoiceOrderRefundResultDto.Get().(*InvoiceOrderRefundResultDto)
+}
+
+// ReleaseInvoiceOrderRefundResultDto 释放InvoiceOrderRefundResultDto
+func ReleaseInvoiceOrderRefundResultDto(v *InvoiceOrderRefundResultDto) {
+	v.Reason = ""
+	v.Action = ""
+	v.FlowId = ""
+	poolInvoiceOrderRefundResultDto.Put(v)
 }

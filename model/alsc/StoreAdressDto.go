@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // StoreAdressDto 结构体
 type StoreAdressDto struct {
 	// 详细地址
@@ -18,4 +22,28 @@ type StoreAdressDto struct {
 	PosY float64 `json:"pos_y,omitempty" xml:"pos_y,omitempty"`
 	// 经度
 	PosX float64 `json:"pos_x,omitempty" xml:"pos_x,omitempty"`
+}
+
+var poolStoreAdressDto = sync.Pool{
+	New: func() any {
+		return new(StoreAdressDto)
+	},
+}
+
+// GetStoreAdressDto() 从对象池中获取StoreAdressDto
+func GetStoreAdressDto() *StoreAdressDto {
+	return poolStoreAdressDto.Get().(*StoreAdressDto)
+}
+
+// ReleaseStoreAdressDto 释放StoreAdressDto
+func ReleaseStoreAdressDto(v *StoreAdressDto) {
+	v.DetailAddress = ""
+	v.Town = ""
+	v.Area = ""
+	v.City = ""
+	v.Province = ""
+	v.BusinessArea = ""
+	v.PosY = 0
+	v.PosX = 0
+	poolStoreAdressDto.Put(v)
 }

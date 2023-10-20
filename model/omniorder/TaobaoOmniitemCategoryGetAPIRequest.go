@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoOmniitemCategoryGetAPIRequest struct {
 // NewTaobaoOmniitemCategoryGetRequest 初始化TaobaoOmniitemCategoryGetAPIRequest对象
 func NewTaobaoOmniitemCategoryGetRequest() *TaobaoOmniitemCategoryGetAPIRequest {
 	return &TaobaoOmniitemCategoryGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOmniitemCategoryGetAPIRequest) Reset() {
+	r._categoryId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoOmniitemCategoryGetAPIRequest) SetCategoryId(_categoryId int64) e
 // GetCategoryId CategoryId Getter
 func (r TaobaoOmniitemCategoryGetAPIRequest) GetCategoryId() int64 {
 	return r._categoryId
+}
+
+var poolTaobaoOmniitemCategoryGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOmniitemCategoryGetRequest()
+	},
+}
+
+// GetTaobaoOmniitemCategoryGetRequest 从 sync.Pool 获取 TaobaoOmniitemCategoryGetAPIRequest
+func GetTaobaoOmniitemCategoryGetAPIRequest() *TaobaoOmniitemCategoryGetAPIRequest {
+	return poolTaobaoOmniitemCategoryGetAPIRequest.Get().(*TaobaoOmniitemCategoryGetAPIRequest)
+}
+
+// ReleaseTaobaoOmniitemCategoryGetAPIRequest 将 TaobaoOmniitemCategoryGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOmniitemCategoryGetAPIRequest(v *TaobaoOmniitemCategoryGetAPIRequest) {
+	v.Reset()
+	poolTaobaoOmniitemCategoryGetAPIRequest.Put(v)
 }

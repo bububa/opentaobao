@@ -2,6 +2,7 @@ package lstlogistics2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLstTradeSellerOfflineOrderQueryAPIRequest struct {
 // NewAlibabaLstTradeSellerOfflineOrderQueryRequest 初始化AlibabaLstTradeSellerOfflineOrderQueryAPIRequest对象
 func NewAlibabaLstTradeSellerOfflineOrderQueryRequest() *AlibabaLstTradeSellerOfflineOrderQueryAPIRequest {
 	return &AlibabaLstTradeSellerOfflineOrderQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstTradeSellerOfflineOrderQueryAPIRequest) Reset() {
+	r._offlineOrderQueryParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLstTradeSellerOfflineOrderQueryAPIRequest) SetOfflineOrderQueryP
 // GetOfflineOrderQueryParam OfflineOrderQueryParam Getter
 func (r AlibabaLstTradeSellerOfflineOrderQueryAPIRequest) GetOfflineOrderQueryParam() *LstOfflineOrderQueryParam {
 	return r._offlineOrderQueryParam
+}
+
+var poolAlibabaLstTradeSellerOfflineOrderQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstTradeSellerOfflineOrderQueryRequest()
+	},
+}
+
+// GetAlibabaLstTradeSellerOfflineOrderQueryRequest 从 sync.Pool 获取 AlibabaLstTradeSellerOfflineOrderQueryAPIRequest
+func GetAlibabaLstTradeSellerOfflineOrderQueryAPIRequest() *AlibabaLstTradeSellerOfflineOrderQueryAPIRequest {
+	return poolAlibabaLstTradeSellerOfflineOrderQueryAPIRequest.Get().(*AlibabaLstTradeSellerOfflineOrderQueryAPIRequest)
+}
+
+// ReleaseAlibabaLstTradeSellerOfflineOrderQueryAPIRequest 将 AlibabaLstTradeSellerOfflineOrderQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstTradeSellerOfflineOrderQueryAPIRequest(v *AlibabaLstTradeSellerOfflineOrderQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaLstTradeSellerOfflineOrderQueryAPIRequest.Put(v)
 }

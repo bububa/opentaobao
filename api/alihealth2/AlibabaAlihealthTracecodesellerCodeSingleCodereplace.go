@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.tracecodeseller.code.single.codereplace
 //
 // 提供非药追溯码单码替换功能
-func AlibabaAlihealthTracecodesellerCodeSingleCodereplace(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest, session string) (*alihealth2.AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIResponse, error) {
-	var resp alihealth2.AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthTracecodesellerCodeSingleCodereplace(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest, resp *alihealth2.AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

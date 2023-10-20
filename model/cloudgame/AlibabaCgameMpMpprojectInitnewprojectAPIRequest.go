@@ -2,6 +2,7 @@ package cloudgame
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -45,8 +46,27 @@ type AlibabaCgameMpMpprojectInitnewprojectAPIRequest struct {
 // NewAlibabaCgameMpMpprojectInitnewprojectRequest 初始化AlibabaCgameMpMpprojectInitnewprojectAPIRequest对象
 func NewAlibabaCgameMpMpprojectInitnewprojectRequest() *AlibabaCgameMpMpprojectInitnewprojectAPIRequest {
 	return &AlibabaCgameMpMpprojectInitnewprojectAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(14),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCgameMpMpprojectInitnewprojectAPIRequest) Reset() {
+	r._deviceId = ""
+	r._userId = ""
+	r._userToken = ""
+	r._userAccessToken = ""
+	r._instanceId = ""
+	r._gameId = ""
+	r._gameProjectKey = ""
+	r._customerUniqueId = ""
+	r._customerEnv = ""
+	r._customerProjectId = ""
+	r._checkUserToken = 0
+	r._onlyOneBlock = 0
+	r._defaultMpBlockId = 0
+	r._mpProjectId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -246,4 +266,21 @@ func (r *AlibabaCgameMpMpprojectInitnewprojectAPIRequest) SetMpProjectId(_mpProj
 // GetMpProjectId MpProjectId Getter
 func (r AlibabaCgameMpMpprojectInitnewprojectAPIRequest) GetMpProjectId() int64 {
 	return r._mpProjectId
+}
+
+var poolAlibabaCgameMpMpprojectInitnewprojectAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCgameMpMpprojectInitnewprojectRequest()
+	},
+}
+
+// GetAlibabaCgameMpMpprojectInitnewprojectRequest 从 sync.Pool 获取 AlibabaCgameMpMpprojectInitnewprojectAPIRequest
+func GetAlibabaCgameMpMpprojectInitnewprojectAPIRequest() *AlibabaCgameMpMpprojectInitnewprojectAPIRequest {
+	return poolAlibabaCgameMpMpprojectInitnewprojectAPIRequest.Get().(*AlibabaCgameMpMpprojectInitnewprojectAPIRequest)
+}
+
+// ReleaseAlibabaCgameMpMpprojectInitnewprojectAPIRequest 将 AlibabaCgameMpMpprojectInitnewprojectAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCgameMpMpprojectInitnewprojectAPIRequest(v *AlibabaCgameMpMpprojectInitnewprojectAPIRequest) {
+	v.Reset()
+	poolAlibabaCgameMpMpprojectInitnewprojectAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type WdkUmsOutboundSortingCallbackTaskdetailAPIResponse struct {
 	WdkUmsOutboundSortingCallbackTaskdetailAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *WdkUmsOutboundSortingCallbackTaskdetailAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.WdkUmsOutboundSortingCallbackTaskdetailAPIResponseModel).Reset()
+}
+
 // WdkUmsOutboundSortingCallbackTaskdetailAPIResponseModel is dps分货，明细回传 成功返回结果
 type WdkUmsOutboundSortingCallbackTaskdetailAPIResponseModel struct {
 	XMLName xml.Name `xml:"wdk_ums_outbound_sorting_callback_taskdetail_response"`
@@ -22,4 +29,27 @@ type WdkUmsOutboundSortingCallbackTaskdetailAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果
 	Result *UmsResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *WdkUmsOutboundSortingCallbackTaskdetailAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolWdkUmsOutboundSortingCallbackTaskdetailAPIResponse = sync.Pool{
+	New: func() any {
+		return new(WdkUmsOutboundSortingCallbackTaskdetailAPIResponse)
+	},
+}
+
+// GetWdkUmsOutboundSortingCallbackTaskdetailAPIResponse 从 sync.Pool 获取 WdkUmsOutboundSortingCallbackTaskdetailAPIResponse
+func GetWdkUmsOutboundSortingCallbackTaskdetailAPIResponse() *WdkUmsOutboundSortingCallbackTaskdetailAPIResponse {
+	return poolWdkUmsOutboundSortingCallbackTaskdetailAPIResponse.Get().(*WdkUmsOutboundSortingCallbackTaskdetailAPIResponse)
+}
+
+// ReleaseWdkUmsOutboundSortingCallbackTaskdetailAPIResponse 将 WdkUmsOutboundSortingCallbackTaskdetailAPIResponse 保存到 sync.Pool
+func ReleaseWdkUmsOutboundSortingCallbackTaskdetailAPIResponse(v *WdkUmsOutboundSortingCallbackTaskdetailAPIResponse) {
+	v.Reset()
+	poolWdkUmsOutboundSortingCallbackTaskdetailAPIResponse.Put(v)
 }

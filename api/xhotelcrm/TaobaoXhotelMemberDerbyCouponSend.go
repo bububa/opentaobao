@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.member.derby.coupon.send
 //
 // 发券
-func TaobaoXhotelMemberDerbyCouponSend(clt *core.SDKClient, req *xhotelcrm.TaobaoXhotelMemberDerbyCouponSendAPIRequest, session string) (*xhotelcrm.TaobaoXhotelMemberDerbyCouponSendAPIResponse, error) {
-	var resp xhotelcrm.TaobaoXhotelMemberDerbyCouponSendAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelMemberDerbyCouponSend(clt *core.SDKClient, req *xhotelcrm.TaobaoXhotelMemberDerbyCouponSendAPIRequest, resp *xhotelcrm.TaobaoXhotelMemberDerbyCouponSendAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

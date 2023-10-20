@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // Criteria 结构体
 type Criteria struct {
 	// 仓库编码
@@ -14,4 +18,26 @@ type Criteria struct {
 	InventoryType string `json:"inventoryType,omitempty" xml:"inventoryType,omitempty"`
 	// 备注
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
+}
+
+var poolCriteria = sync.Pool{
+	New: func() any {
+		return new(Criteria)
+	},
+}
+
+// GetCriteria() 从对象池中获取Criteria
+func GetCriteria() *Criteria {
+	return poolCriteria.Get().(*Criteria)
+}
+
+// ReleaseCriteria 释放Criteria
+func ReleaseCriteria(v *Criteria) {
+	v.WarehouseCode = ""
+	v.OwnerCode = ""
+	v.ItemCode = ""
+	v.ItemId = ""
+	v.InventoryType = ""
+	v.Remark = ""
+	poolCriteria.Put(v)
 }

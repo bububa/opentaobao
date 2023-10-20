@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // InvoiceItem 结构体
 type InvoiceItem struct {
 	// 发票项目名称（或商品名称）
@@ -34,4 +38,36 @@ type InvoiceItem struct {
 	Imei string `json:"imei,omitempty" xml:"imei,omitempty"`
 	// 是否运费行标识，true:运费行，false:非运费行
 	IsPostFeeRow bool `json:"is_post_fee_row,omitempty" xml:"is_post_fee_row,omitempty"`
+}
+
+var poolInvoiceItem = sync.Pool{
+	New: func() any {
+		return new(InvoiceItem)
+	},
+}
+
+// GetInvoiceItem() 从对象池中获取InvoiceItem
+func GetInvoiceItem() *InvoiceItem {
+	return poolInvoiceItem.Get().(*InvoiceItem)
+}
+
+// ReleaseInvoiceItem 释放InvoiceItem
+func ReleaseInvoiceItem(v *InvoiceItem) {
+	v.ItemName = ""
+	v.Amount = ""
+	v.RowType = ""
+	v.Specification = ""
+	v.SumPrice = ""
+	v.Tax = ""
+	v.Price = ""
+	v.Quantity = ""
+	v.TaxRate = ""
+	v.Unit = ""
+	v.ItemNo = ""
+	v.BizOrderId = ""
+	v.ZeroRateFlag = ""
+	v.OuterId = ""
+	v.Imei = ""
+	v.IsPostFeeRow = false
+	poolInvoiceItem.Put(v)
 }

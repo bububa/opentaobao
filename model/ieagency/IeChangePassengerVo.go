@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // IeChangePassengerVo 结构体
 type IeChangePassengerVo struct {
 	// 出生日期
@@ -22,4 +26,30 @@ type IeChangePassengerVo struct {
 	PassengerId int64 `json:"passenger_id,omitempty" xml:"passenger_id,omitempty"`
 	// 乘机人类型 0-成人,1-儿童,2-留学生
 	PassengerType int64 `json:"passenger_type,omitempty" xml:"passenger_type,omitempty"`
+}
+
+var poolIeChangePassengerVo = sync.Pool{
+	New: func() any {
+		return new(IeChangePassengerVo)
+	},
+}
+
+// GetIeChangePassengerVo() 从对象池中获取IeChangePassengerVo
+func GetIeChangePassengerVo() *IeChangePassengerVo {
+	return poolIeChangePassengerVo.Get().(*IeChangePassengerVo)
+}
+
+// ReleaseIeChangePassengerVo 释放IeChangePassengerVo
+func ReleaseIeChangePassengerVo(v *IeChangePassengerVo) {
+	v.BirthDate = ""
+	v.DocumentExpireDate = ""
+	v.DocumentHolderNationality = ""
+	v.DocumentID = ""
+	v.DocumentIssueCountry = ""
+	v.Name = ""
+	v.DocumentType = 0
+	v.Gender = 0
+	v.PassengerId = 0
+	v.PassengerType = 0
+	poolIeChangePassengerVo.Put(v)
 }

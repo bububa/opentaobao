@@ -1,5 +1,9 @@
 package axindata
 
+import (
+	"sync"
+)
+
 // RateDto 结构体
 type RateDto struct {
 	// 价库日历
@@ -70,4 +74,54 @@ type RateDto struct {
 	MultiplePrice bool `json:"multiple_price,omitempty" xml:"multiple_price,omitempty"`
 	// 是否小时房,不为空且为true时标识小时房，否则全日房
 	HourRoom bool `json:"hour_room,omitempty" xml:"hour_room,omitempty"`
+}
+
+var poolRateDto = sync.Pool{
+	New: func() any {
+		return new(RateDto)
+	},
+}
+
+// GetRateDto() 从对象池中获取RateDto
+func GetRateDto() *RateDto {
+	return poolRateDto.Get().(*RateDto)
+}
+
+// ReleaseRateDto 释放RateDto
+func ReleaseRateDto(v *RateDto) {
+	v.PriceStockDtoList = v.PriceStockDtoList[:0]
+	v.BreakFastList = v.BreakFastList[:0]
+	v.CancelRuleList = v.CancelRuleList[:0]
+	v.CurrencyCode = ""
+	v.RatePlanName = ""
+	v.ResourceTag = ""
+	v.CommissionFeeRate = ""
+	v.EndTimeDaily = ""
+	v.InstantConfirm = ""
+	v.RatePlanNameEn = ""
+	v.StartTimeDaily = ""
+	v.DistributeMode = ""
+	v.ModifiedTime = 0
+	v.RateId = 0
+	v.ItemId = 0
+	v.RatePlanId = 0
+	v.SellerId = 0
+	v.MinAdvHours = 0
+	v.MaxAdvHours = 0
+	v.MinStay = 0
+	v.MaxStay = 0
+	v.MinBookCount = 0
+	v.MaxBookCount = 0
+	v.Nod = 0
+	v.Nop = 0
+	v.MaxOccupancy = 0
+	v.MaxDays = 0
+	v.DawnBookingDto = nil
+	v.MinDays = 0
+	v.HourRoomInfo = nil
+	v.HourRoomInfoDto = nil
+	v.InvoicingMode = 0
+	v.MultiplePrice = false
+	v.HourRoom = false
+	poolRateDto.Put(v)
 }

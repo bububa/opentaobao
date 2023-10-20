@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeActivityCustomerSaveAPIRequest struct {
 // NewAlibabaAlihouseNewhomeActivityCustomerSaveRequest 初始化AlibabaAlihouseNewhomeActivityCustomerSaveAPIRequest对象
 func NewAlibabaAlihouseNewhomeActivityCustomerSaveRequest() *AlibabaAlihouseNewhomeActivityCustomerSaveAPIRequest {
 	return &AlibabaAlihouseNewhomeActivityCustomerSaveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeActivityCustomerSaveAPIRequest) Reset() {
+	r._activityCustomerSaveDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomeActivityCustomerSaveAPIRequest) SetActivityCustom
 // GetActivityCustomerSaveDto ActivityCustomerSaveDto Getter
 func (r AlibabaAlihouseNewhomeActivityCustomerSaveAPIRequest) GetActivityCustomerSaveDto() *ActivityCustomerSaveDto {
 	return r._activityCustomerSaveDto
+}
+
+var poolAlibabaAlihouseNewhomeActivityCustomerSaveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeActivityCustomerSaveRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeActivityCustomerSaveRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeActivityCustomerSaveAPIRequest
+func GetAlibabaAlihouseNewhomeActivityCustomerSaveAPIRequest() *AlibabaAlihouseNewhomeActivityCustomerSaveAPIRequest {
+	return poolAlibabaAlihouseNewhomeActivityCustomerSaveAPIRequest.Get().(*AlibabaAlihouseNewhomeActivityCustomerSaveAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeActivityCustomerSaveAPIRequest 将 AlibabaAlihouseNewhomeActivityCustomerSaveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeActivityCustomerSaveAPIRequest(v *AlibabaAlihouseNewhomeActivityCustomerSaveAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeActivityCustomerSaveAPIRequest.Put(v)
 }

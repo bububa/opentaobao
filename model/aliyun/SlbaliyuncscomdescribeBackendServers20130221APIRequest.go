@@ -2,6 +2,7 @@ package aliyun
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type SlbAliyuncsComDescribeBackendServers20130221APIRequest struct {
 // NewSlbAliyuncsComDescribeBackendServers20130221Request 初始化SlbAliyuncsComDescribeBackendServers20130221APIRequest对象
 func NewSlbAliyuncsComDescribeBackendServers20130221Request() *SlbAliyuncsComDescribeBackendServers20130221APIRequest {
 	return &SlbAliyuncsComDescribeBackendServers20130221APIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *SlbAliyuncsComDescribeBackendServers20130221APIRequest) Reset() {
+	r._loadBalancerId = ""
+	r._listenerPort = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *SlbAliyuncsComDescribeBackendServers20130221APIRequest) SetListenerPort
 // GetListenerPort ListenerPort Getter
 func (r SlbAliyuncsComDescribeBackendServers20130221APIRequest) GetListenerPort() int64 {
 	return r._listenerPort
+}
+
+var poolSlbAliyuncsComDescribeBackendServers20130221APIRequest = sync.Pool{
+	New: func() any {
+		return NewSlbAliyuncsComDescribeBackendServers20130221Request()
+	},
+}
+
+// GetSlbAliyuncsComDescribeBackendServers20130221Request 从 sync.Pool 获取 SlbAliyuncsComDescribeBackendServers20130221APIRequest
+func GetSlbAliyuncsComDescribeBackendServers20130221APIRequest() *SlbAliyuncsComDescribeBackendServers20130221APIRequest {
+	return poolSlbAliyuncsComDescribeBackendServers20130221APIRequest.Get().(*SlbAliyuncsComDescribeBackendServers20130221APIRequest)
+}
+
+// ReleaseSlbAliyuncsComDescribeBackendServers20130221APIRequest 将 SlbAliyuncsComDescribeBackendServers20130221APIRequest 放入 sync.Pool
+func ReleaseSlbAliyuncsComDescribeBackendServers20130221APIRequest(v *SlbAliyuncsComDescribeBackendServers20130221APIRequest) {
+	v.Reset()
+	poolSlbAliyuncsComDescribeBackendServers20130221APIRequest.Put(v)
 }

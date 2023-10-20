@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -47,8 +48,28 @@ type TaobaoTbkPrivilegeGetAPIRequest struct {
 // NewTaobaoTbkPrivilegeGetRequest 初始化TaobaoTbkPrivilegeGetAPIRequest对象
 func NewTaobaoTbkPrivilegeGetRequest() *TaobaoTbkPrivilegeGetAPIRequest {
 	return &TaobaoTbkPrivilegeGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(15),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkPrivilegeGetAPIRequest) Reset() {
+	r._relationId = ""
+	r._specialId = ""
+	r._externalId = ""
+	r._xid = ""
+	r._itemId = ""
+	r._promotionType = ""
+	r._bizSceneId = ""
+	r._adzoneId = 0
+	r._platform = 0
+	r._siteId = 0
+	r._ucrowdId = 0
+	r._getTopnRate = 0
+	r._miniProgramLink = 0
+	r._manageItemPubId = 0
+	r._skuId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -261,4 +282,21 @@ func (r *TaobaoTbkPrivilegeGetAPIRequest) SetSkuId(_skuId int64) error {
 // GetSkuId SkuId Getter
 func (r TaobaoTbkPrivilegeGetAPIRequest) GetSkuId() int64 {
 	return r._skuId
+}
+
+var poolTaobaoTbkPrivilegeGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkPrivilegeGetRequest()
+	},
+}
+
+// GetTaobaoTbkPrivilegeGetRequest 从 sync.Pool 获取 TaobaoTbkPrivilegeGetAPIRequest
+func GetTaobaoTbkPrivilegeGetAPIRequest() *TaobaoTbkPrivilegeGetAPIRequest {
+	return poolTaobaoTbkPrivilegeGetAPIRequest.Get().(*TaobaoTbkPrivilegeGetAPIRequest)
+}
+
+// ReleaseTaobaoTbkPrivilegeGetAPIRequest 将 TaobaoTbkPrivilegeGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkPrivilegeGetAPIRequest(v *TaobaoTbkPrivilegeGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkPrivilegeGetAPIRequest.Put(v)
 }

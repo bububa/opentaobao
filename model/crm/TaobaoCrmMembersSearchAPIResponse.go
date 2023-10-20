@@ -2,6 +2,7 @@ package crm
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoCrmMembersSearchAPIResponse struct {
 	TaobaoCrmMembersSearchAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoCrmMembersSearchAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoCrmMembersSearchAPIResponseModel).Reset()
+}
+
 // TaobaoCrmMembersSearchAPIResponseModel is 获取卖家会员（高级查询） 成功返回结果
 type TaobaoCrmMembersSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"crm_members_search_response"`
@@ -24,4 +31,28 @@ type TaobaoCrmMembersSearchAPIResponseModel struct {
 	Members []CrmMember `json:"members,omitempty" xml:"members>crm_member,omitempty"`
 	// 记录的总条数
 	TotalResult int64 `json:"total_result,omitempty" xml:"total_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoCrmMembersSearchAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Members = m.Members[:0]
+	m.TotalResult = 0
+}
+
+var poolTaobaoCrmMembersSearchAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoCrmMembersSearchAPIResponse)
+	},
+}
+
+// GetTaobaoCrmMembersSearchAPIResponse 从 sync.Pool 获取 TaobaoCrmMembersSearchAPIResponse
+func GetTaobaoCrmMembersSearchAPIResponse() *TaobaoCrmMembersSearchAPIResponse {
+	return poolTaobaoCrmMembersSearchAPIResponse.Get().(*TaobaoCrmMembersSearchAPIResponse)
+}
+
+// ReleaseTaobaoCrmMembersSearchAPIResponse 将 TaobaoCrmMembersSearchAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoCrmMembersSearchAPIResponse(v *TaobaoCrmMembersSearchAPIResponse) {
+	v.Reset()
+	poolTaobaoCrmMembersSearchAPIResponse.Put(v)
 }

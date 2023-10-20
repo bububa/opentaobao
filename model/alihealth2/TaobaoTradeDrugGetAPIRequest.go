@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoTradeDrugGetAPIRequest struct {
 // NewTaobaoTradeDrugGetRequest 初始化TaobaoTradeDrugGetAPIRequest对象
 func NewTaobaoTradeDrugGetRequest() *TaobaoTradeDrugGetAPIRequest {
 	return &TaobaoTradeDrugGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTradeDrugGetAPIRequest) Reset() {
+	r._storeId = 0
+	r._maxSize = 0
+	r._isAll = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoTradeDrugGetAPIRequest) SetIsAll(_isAll bool) error {
 // GetIsAll IsAll Getter
 func (r TaobaoTradeDrugGetAPIRequest) GetIsAll() bool {
 	return r._isAll
+}
+
+var poolTaobaoTradeDrugGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTradeDrugGetRequest()
+	},
+}
+
+// GetTaobaoTradeDrugGetRequest 从 sync.Pool 获取 TaobaoTradeDrugGetAPIRequest
+func GetTaobaoTradeDrugGetAPIRequest() *TaobaoTradeDrugGetAPIRequest {
+	return poolTaobaoTradeDrugGetAPIRequest.Get().(*TaobaoTradeDrugGetAPIRequest)
+}
+
+// ReleaseTaobaoTradeDrugGetAPIRequest 将 TaobaoTradeDrugGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTradeDrugGetAPIRequest(v *TaobaoTradeDrugGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTradeDrugGetAPIRequest.Put(v)
 }

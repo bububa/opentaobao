@@ -9,11 +9,6 @@ import (
 // taobao.rds.db.delete
 //
 // 通过api删除用户RDS的数据库
-func TaobaoRdsDbDelete(clt *core.SDKClient, req *jst.TaobaoRdsDbDeleteAPIRequest, session string) (*jst.TaobaoRdsDbDeleteAPIResponse, error) {
-	var resp jst.TaobaoRdsDbDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoRdsDbDelete(clt *core.SDKClient, req *jst.TaobaoRdsDbDeleteAPIRequest, resp *jst.TaobaoRdsDbDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

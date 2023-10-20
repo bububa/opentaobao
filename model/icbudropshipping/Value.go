@@ -1,5 +1,9 @@
 package icbudropshipping
 
+import (
+	"sync"
+)
+
 // Value 结构体
 type Value struct {
 	// shipping type
@@ -18,4 +22,28 @@ type Value struct {
 	DeliveryTime string `json:"delivery_time,omitempty" xml:"delivery_time,omitempty"`
 	// shipping fee
 	Fee float64 `json:"fee,omitempty" xml:"fee,omitempty"`
+}
+
+var poolValue = sync.Pool{
+	New: func() any {
+		return new(Value)
+	},
+}
+
+// GetValue() 从对象池中获取Value
+func GetValue() *Value {
+	return poolValue.Get().(*Value)
+}
+
+// ReleaseValue 释放Value
+func ReleaseValue(v *Value) {
+	v.ShippingType = ""
+	v.TradeTerm = ""
+	v.DispatchCountry = ""
+	v.DestinationCountry = ""
+	v.VendorCode = ""
+	v.VendorName = ""
+	v.DeliveryTime = ""
+	v.Fee = 0
+	poolValue.Put(v)
 }

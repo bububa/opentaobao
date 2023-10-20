@@ -9,11 +9,6 @@ import (
 // taobao.universalbp.label.dmp.finddmpmoduleconfig
 //
 // 入参账号信息，出参达摩盘相关配置信息
-func TaobaoUniversalbpLabelDmpFinddmpmoduleconfig(clt *core.SDKClient, req *simba.TaobaoUniversalbpLabelDmpFinddmpmoduleconfigAPIRequest, session string) (*simba.TaobaoUniversalbpLabelDmpFinddmpmoduleconfigAPIResponse, error) {
-	var resp simba.TaobaoUniversalbpLabelDmpFinddmpmoduleconfigAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUniversalbpLabelDmpFinddmpmoduleconfig(clt *core.SDKClient, req *simba.TaobaoUniversalbpLabelDmpFinddmpmoduleconfigAPIRequest, resp *simba.TaobaoUniversalbpLabelDmpFinddmpmoduleconfigAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

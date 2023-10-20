@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type WdkWarehouseOrderDispatchAPIRequest struct {
 // NewWdkWarehouseOrderDispatchRequest 初始化WdkWarehouseOrderDispatchAPIRequest对象
 func NewWdkWarehouseOrderDispatchRequest() *WdkWarehouseOrderDispatchAPIRequest {
 	return &WdkWarehouseOrderDispatchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *WdkWarehouseOrderDispatchAPIRequest) Reset() {
+	r._workOrder = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *WdkWarehouseOrderDispatchAPIRequest) SetWorkOrder(_workOrder *WorkOrder
 // GetWorkOrder WorkOrder Getter
 func (r WdkWarehouseOrderDispatchAPIRequest) GetWorkOrder() *WorkOrder {
 	return r._workOrder
+}
+
+var poolWdkWarehouseOrderDispatchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewWdkWarehouseOrderDispatchRequest()
+	},
+}
+
+// GetWdkWarehouseOrderDispatchRequest 从 sync.Pool 获取 WdkWarehouseOrderDispatchAPIRequest
+func GetWdkWarehouseOrderDispatchAPIRequest() *WdkWarehouseOrderDispatchAPIRequest {
+	return poolWdkWarehouseOrderDispatchAPIRequest.Get().(*WdkWarehouseOrderDispatchAPIRequest)
+}
+
+// ReleaseWdkWarehouseOrderDispatchAPIRequest 将 WdkWarehouseOrderDispatchAPIRequest 放入 sync.Pool
+func ReleaseWdkWarehouseOrderDispatchAPIRequest(v *WdkWarehouseOrderDispatchAPIRequest) {
+	v.Reset()
+	poolWdkWarehouseOrderDispatchAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlicomVtOpentradeGetproductinfoAPIResponse struct {
 	AlibabaAlicomVtOpentradeGetproductinfoAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlicomVtOpentradeGetproductinfoAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlicomVtOpentradeGetproductinfoAPIResponseModel).Reset()
+}
+
 // AlibabaAlicomVtOpentradeGetproductinfoAPIResponseModel is 查询新虚拟产品配置信息 成功返回结果
 type AlibabaAlicomVtOpentradeGetproductinfoAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alicom_vt_opentrade_getproductinfo_response"`
@@ -22,4 +29,27 @@ type AlibabaAlicomVtOpentradeGetproductinfoAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *TopResultDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlicomVtOpentradeGetproductinfoAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlicomVtOpentradeGetproductinfoAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlicomVtOpentradeGetproductinfoAPIResponse)
+	},
+}
+
+// GetAlibabaAlicomVtOpentradeGetproductinfoAPIResponse 从 sync.Pool 获取 AlibabaAlicomVtOpentradeGetproductinfoAPIResponse
+func GetAlibabaAlicomVtOpentradeGetproductinfoAPIResponse() *AlibabaAlicomVtOpentradeGetproductinfoAPIResponse {
+	return poolAlibabaAlicomVtOpentradeGetproductinfoAPIResponse.Get().(*AlibabaAlicomVtOpentradeGetproductinfoAPIResponse)
+}
+
+// ReleaseAlibabaAlicomVtOpentradeGetproductinfoAPIResponse 将 AlibabaAlicomVtOpentradeGetproductinfoAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlicomVtOpentradeGetproductinfoAPIResponse(v *AlibabaAlicomVtOpentradeGetproductinfoAPIResponse) {
+	v.Reset()
+	poolAlibabaAlicomVtOpentradeGetproductinfoAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TmallServicecenterWorkcardExpressorderConsignAPIRequest struct {
 // NewTmallServicecenterWorkcardExpressorderConsignRequest 初始化TmallServicecenterWorkcardExpressorderConsignAPIRequest对象
 func NewTmallServicecenterWorkcardExpressorderConsignRequest() *TmallServicecenterWorkcardExpressorderConsignAPIRequest {
 	return &TmallServicecenterWorkcardExpressorderConsignAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterWorkcardExpressorderConsignAPIRequest) Reset() {
+	r._workcardIdList = r._workcardIdList[:0]
+	r._realTpNick = ""
+	r._expressOrderId = 0
+	r._logisticsOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TmallServicecenterWorkcardExpressorderConsignAPIRequest) SetLogisticsOr
 // GetLogisticsOrderId LogisticsOrderId Getter
 func (r TmallServicecenterWorkcardExpressorderConsignAPIRequest) GetLogisticsOrderId() int64 {
 	return r._logisticsOrderId
+}
+
+var poolTmallServicecenterWorkcardExpressorderConsignAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterWorkcardExpressorderConsignRequest()
+	},
+}
+
+// GetTmallServicecenterWorkcardExpressorderConsignRequest 从 sync.Pool 获取 TmallServicecenterWorkcardExpressorderConsignAPIRequest
+func GetTmallServicecenterWorkcardExpressorderConsignAPIRequest() *TmallServicecenterWorkcardExpressorderConsignAPIRequest {
+	return poolTmallServicecenterWorkcardExpressorderConsignAPIRequest.Get().(*TmallServicecenterWorkcardExpressorderConsignAPIRequest)
+}
+
+// ReleaseTmallServicecenterWorkcardExpressorderConsignAPIRequest 将 TmallServicecenterWorkcardExpressorderConsignAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterWorkcardExpressorderConsignAPIRequest(v *TmallServicecenterWorkcardExpressorderConsignAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterWorkcardExpressorderConsignAPIRequest.Put(v)
 }

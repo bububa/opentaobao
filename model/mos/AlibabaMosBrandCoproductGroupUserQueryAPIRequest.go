@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMosBrandCoproductGroupUserQueryAPIRequest struct {
 // NewAlibabaMosBrandCoproductGroupUserQueryRequest 初始化AlibabaMosBrandCoproductGroupUserQueryAPIRequest对象
 func NewAlibabaMosBrandCoproductGroupUserQueryRequest() *AlibabaMosBrandCoproductGroupUserQueryAPIRequest {
 	return &AlibabaMosBrandCoproductGroupUserQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosBrandCoproductGroupUserQueryAPIRequest) Reset() {
+	r._brandCoProductGroupUserQueryParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMosBrandCoproductGroupUserQueryAPIRequest) SetBrandCoProductGrou
 // GetBrandCoProductGroupUserQueryParam BrandCoProductGroupUserQueryParam Getter
 func (r AlibabaMosBrandCoproductGroupUserQueryAPIRequest) GetBrandCoProductGroupUserQueryParam() *BrandCoProductGroupUserQueryParam {
 	return r._brandCoProductGroupUserQueryParam
+}
+
+var poolAlibabaMosBrandCoproductGroupUserQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosBrandCoproductGroupUserQueryRequest()
+	},
+}
+
+// GetAlibabaMosBrandCoproductGroupUserQueryRequest 从 sync.Pool 获取 AlibabaMosBrandCoproductGroupUserQueryAPIRequest
+func GetAlibabaMosBrandCoproductGroupUserQueryAPIRequest() *AlibabaMosBrandCoproductGroupUserQueryAPIRequest {
+	return poolAlibabaMosBrandCoproductGroupUserQueryAPIRequest.Get().(*AlibabaMosBrandCoproductGroupUserQueryAPIRequest)
+}
+
+// ReleaseAlibabaMosBrandCoproductGroupUserQueryAPIRequest 将 AlibabaMosBrandCoproductGroupUserQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosBrandCoproductGroupUserQueryAPIRequest(v *AlibabaMosBrandCoproductGroupUserQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaMosBrandCoproductGroupUserQueryAPIRequest.Put(v)
 }

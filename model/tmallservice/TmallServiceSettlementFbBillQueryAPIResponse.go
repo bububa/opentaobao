@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TmallServiceSettlementFbBillQueryAPIResponse struct {
 	model.CommonResponse
 	TmallServiceSettlementFbBillQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TmallServiceSettlementFbBillQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallServiceSettlementFbBillQueryAPIResponseModel).Reset()
 }
 
 // TmallServiceSettlementFbBillQueryAPIResponseModel is 服务商工单结算对账查询 成功返回结果
@@ -28,4 +35,30 @@ type TmallServiceSettlementFbBillQueryAPIResponseModel struct {
 	Obj *PagedResult `json:"obj,omitempty" xml:"obj,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallServiceSettlementFbBillQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RetMsg = ""
+	m.RetCode = ""
+	m.Obj = nil
+	m.IsSuccess = false
+}
+
+var poolTmallServiceSettlementFbBillQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallServiceSettlementFbBillQueryAPIResponse)
+	},
+}
+
+// GetTmallServiceSettlementFbBillQueryAPIResponse 从 sync.Pool 获取 TmallServiceSettlementFbBillQueryAPIResponse
+func GetTmallServiceSettlementFbBillQueryAPIResponse() *TmallServiceSettlementFbBillQueryAPIResponse {
+	return poolTmallServiceSettlementFbBillQueryAPIResponse.Get().(*TmallServiceSettlementFbBillQueryAPIResponse)
+}
+
+// ReleaseTmallServiceSettlementFbBillQueryAPIResponse 将 TmallServiceSettlementFbBillQueryAPIResponse 保存到 sync.Pool
+func ReleaseTmallServiceSettlementFbBillQueryAPIResponse(v *TmallServiceSettlementFbBillQueryAPIResponse) {
+	v.Reset()
+	poolTmallServiceSettlementFbBillQueryAPIResponse.Put(v)
 }

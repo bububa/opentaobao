@@ -9,11 +9,6 @@ import (
 // taobao.tbk.sc.adzone.create
 //
 // 提供淘宝客创建广告位
-func TaobaoTbkScAdzoneCreate(clt *core.SDKClient, req *tbk.TaobaoTbkScAdzoneCreateAPIRequest, session string) (*tbk.TaobaoTbkScAdzoneCreateAPIResponse, error) {
-	var resp tbk.TaobaoTbkScAdzoneCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTbkScAdzoneCreate(clt *core.SDKClient, req *tbk.TaobaoTbkScAdzoneCreateAPIRequest, resp *tbk.TaobaoTbkScAdzoneCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

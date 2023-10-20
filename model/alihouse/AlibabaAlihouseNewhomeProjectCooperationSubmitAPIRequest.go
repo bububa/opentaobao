@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest struct {
 // NewAlibabaAlihouseNewhomeProjectCooperationSubmitRequest 初始化AlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest对象
 func NewAlibabaAlihouseNewhomeProjectCooperationSubmitRequest() *AlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest {
 	return &AlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest) Reset() {
+	r._projectCooperationDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest) SetProjectCoo
 // GetProjectCooperationDto ProjectCooperationDto Getter
 func (r AlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest) GetProjectCooperationDto() *ProjectCooperationDto {
 	return r._projectCooperationDto
+}
+
+var poolAlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeProjectCooperationSubmitRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeProjectCooperationSubmitRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest
+func GetAlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest() *AlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest {
+	return poolAlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest.Get().(*AlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest 将 AlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest(v *AlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest.Put(v)
 }

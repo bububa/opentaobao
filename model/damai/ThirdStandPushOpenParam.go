@@ -1,5 +1,9 @@
 package damai
 
+import (
+	"sync"
+)
+
 // ThirdStandPushOpenParam 结构体
 type ThirdStandPushOpenParam struct {
 	// 推送时间
@@ -16,4 +20,27 @@ type ThirdStandPushOpenParam struct {
 	SystemId int64 `json:"system_id,omitempty" xml:"system_id,omitempty"`
 	// 场馆id
 	VenueId int64 `json:"venue_id,omitempty" xml:"venue_id,omitempty"`
+}
+
+var poolThirdStandPushOpenParam = sync.Pool{
+	New: func() any {
+		return new(ThirdStandPushOpenParam)
+	},
+}
+
+// GetThirdStandPushOpenParam() 从对象池中获取ThirdStandPushOpenParam
+func GetThirdStandPushOpenParam() *ThirdStandPushOpenParam {
+	return poolThirdStandPushOpenParam.Get().(*ThirdStandPushOpenParam)
+}
+
+// ReleaseThirdStandPushOpenParam 释放ThirdStandPushOpenParam
+func ReleaseThirdStandPushOpenParam(v *ThirdStandPushOpenParam) {
+	v.PushTime = ""
+	v.StandName = ""
+	v.SupplierSecret = ""
+	v.PerformId = 0
+	v.StandId = 0
+	v.SystemId = 0
+	v.VenueId = 0
+	poolThirdStandPushOpenParam.Put(v)
 }

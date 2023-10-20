@@ -9,11 +9,6 @@ import (
 // taobao.open.account.token.apply
 //
 // 申请免登Open Account Token
-func TaobaoOpenAccountTokenApply(clt *core.SDKClient, req *user.TaobaoOpenAccountTokenApplyAPIRequest, session string) (*user.TaobaoOpenAccountTokenApplyAPIResponse, error) {
-	var resp user.TaobaoOpenAccountTokenApplyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpenAccountTokenApply(clt *core.SDKClient, req *user.TaobaoOpenAccountTokenApplyAPIRequest, resp *user.TaobaoOpenAccountTokenApplyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

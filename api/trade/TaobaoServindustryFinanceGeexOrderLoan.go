@@ -9,11 +9,6 @@ import (
 // taobao.servindustry.finance.geex.order.loan
 //
 // 即科放款信息api
-func TaobaoServindustryFinanceGeexOrderLoan(clt *core.SDKClient, req *trade.TaobaoServindustryFinanceGeexOrderLoanAPIRequest, session string) (*trade.TaobaoServindustryFinanceGeexOrderLoanAPIResponse, error) {
-	var resp trade.TaobaoServindustryFinanceGeexOrderLoanAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoServindustryFinanceGeexOrderLoan(clt *core.SDKClient, req *trade.TaobaoServindustryFinanceGeexOrderLoanAPIRequest, resp *trade.TaobaoServindustryFinanceGeexOrderLoanAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

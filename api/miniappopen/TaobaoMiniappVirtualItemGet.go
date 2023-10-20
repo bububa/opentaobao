@@ -9,11 +9,6 @@ import (
 // taobao.miniapp.virtual.item.get
 //
 // 小程序关联虚拟商品查询
-func TaobaoMiniappVirtualItemGet(clt *core.SDKClient, req *miniappopen.TaobaoMiniappVirtualItemGetAPIRequest, session string) (*miniappopen.TaobaoMiniappVirtualItemGetAPIResponse, error) {
-	var resp miniappopen.TaobaoMiniappVirtualItemGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoMiniappVirtualItemGet(clt *core.SDKClient, req *miniappopen.TaobaoMiniappVirtualItemGetAPIRequest, resp *miniappopen.TaobaoMiniappVirtualItemGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

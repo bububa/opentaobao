@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OrderAggregateQueryRequest 结构体
 type OrderAggregateQueryRequest struct {
 	// 起始时间
@@ -22,4 +26,30 @@ type OrderAggregateQueryRequest struct {
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
 	// 分页size
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolOrderAggregateQueryRequest = sync.Pool{
+	New: func() any {
+		return new(OrderAggregateQueryRequest)
+	},
+}
+
+// GetOrderAggregateQueryRequest() 从对象池中获取OrderAggregateQueryRequest
+func GetOrderAggregateQueryRequest() *OrderAggregateQueryRequest {
+	return poolOrderAggregateQueryRequest.Get().(*OrderAggregateQueryRequest)
+}
+
+// ReleaseOrderAggregateQueryRequest 释放OrderAggregateQueryRequest
+func ReleaseOrderAggregateQueryRequest(v *OrderAggregateQueryRequest) {
+	v.StartTime = ""
+	v.EndTime = ""
+	v.StoreId = ""
+	v.PosNo = ""
+	v.OrderClient = ""
+	v.DutyCode = ""
+	v.OperatorId = ""
+	v.OrderStatus = ""
+	v.PageIndex = 0
+	v.PageSize = 0
+	poolOrderAggregateQueryRequest.Put(v)
 }

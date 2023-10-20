@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoUniversalbpAccountGetCanUseBizcodeAPIRequest struct {
 // NewTaobaoUniversalbpAccountGetCanUseBizcodeRequest 初始化TaobaoUniversalbpAccountGetCanUseBizcodeAPIRequest对象
 func NewTaobaoUniversalbpAccountGetCanUseBizcodeRequest() *TaobaoUniversalbpAccountGetCanUseBizcodeAPIRequest {
 	return &TaobaoUniversalbpAccountGetCanUseBizcodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpAccountGetCanUseBizcodeAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoUniversalbpAccountGetCanUseBizcodeAPIRequest) SetTopServiceContex
 // GetTopServiceContext TopServiceContext Getter
 func (r TaobaoUniversalbpAccountGetCanUseBizcodeAPIRequest) GetTopServiceContext() *TopServiceContext {
 	return r._topServiceContext
+}
+
+var poolTaobaoUniversalbpAccountGetCanUseBizcodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpAccountGetCanUseBizcodeRequest()
+	},
+}
+
+// GetTaobaoUniversalbpAccountGetCanUseBizcodeRequest 从 sync.Pool 获取 TaobaoUniversalbpAccountGetCanUseBizcodeAPIRequest
+func GetTaobaoUniversalbpAccountGetCanUseBizcodeAPIRequest() *TaobaoUniversalbpAccountGetCanUseBizcodeAPIRequest {
+	return poolTaobaoUniversalbpAccountGetCanUseBizcodeAPIRequest.Get().(*TaobaoUniversalbpAccountGetCanUseBizcodeAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpAccountGetCanUseBizcodeAPIRequest 将 TaobaoUniversalbpAccountGetCanUseBizcodeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpAccountGetCanUseBizcodeAPIRequest(v *TaobaoUniversalbpAccountGetCanUseBizcodeAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpAccountGetCanUseBizcodeAPIRequest.Put(v)
 }

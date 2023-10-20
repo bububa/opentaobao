@@ -11,11 +11,6 @@ import (
 // 根据userId(支持单个或批量)获取用户实时位置信息
 // HSF接口名称：com.alibaba.campus.api.adminmap.service.top.UserLocationQueryApiTopService
 // HSF方法名称：getActualUserLocationInfoByIds
-func AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyids(clt *core.SDKClient, req *campus.AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRequest, session string) (*campus.AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIResponse, error) {
-	var resp campus.AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyids(clt *core.SDKClient, req *campus.AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRequest, resp *campus.AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

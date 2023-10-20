@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponse struct {
 	model.CommonResponse
 	AlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponseModel).Reset()
 }
 
 // AlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponseModel is 提交发薪账单 成功返回结果
@@ -32,4 +39,32 @@ type AlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponseModel struct {
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 错误原因
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ContractorCode = ""
+	m.DetailId = ""
+	m.EmployerCode = ""
+	m.IdentificationInBelongingEmployer = ""
+	m.ResultCode = ""
+	m.ResultMsg = ""
+}
+
+var poolAlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponse)
+	},
+}
+
+// GetAlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponse 从 sync.Pool 获取 AlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponse
+func GetAlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponse() *AlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponse {
+	return poolAlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponse.Get().(*AlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponse)
+}
+
+// ReleaseAlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponse 将 AlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponse(v *AlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponse) {
+	v.Reset()
+	poolAlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package tanx
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoTanxCreativeGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTanxCreativeGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoTanxCreativeGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTanxCreativeGetAPIResponseModel).Reset()
 }
 
 // TaobaoTanxCreativeGetAPIResponseModel is 获取单个审核创意状态 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoTanxCreativeGetAPIResponseModel struct {
 	Result *CreativeAuditDto `json:"result,omitempty" xml:"result,omitempty"`
 	// 是否成功
 	IsOk bool `json:"is_ok,omitempty" xml:"is_ok,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTanxCreativeGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.TanxErrorCode = 0
+	m.Result = nil
+	m.IsOk = false
+}
+
+var poolTaobaoTanxCreativeGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTanxCreativeGetAPIResponse)
+	},
+}
+
+// GetTaobaoTanxCreativeGetAPIResponse 从 sync.Pool 获取 TaobaoTanxCreativeGetAPIResponse
+func GetTaobaoTanxCreativeGetAPIResponse() *TaobaoTanxCreativeGetAPIResponse {
+	return poolTaobaoTanxCreativeGetAPIResponse.Get().(*TaobaoTanxCreativeGetAPIResponse)
+}
+
+// ReleaseTaobaoTanxCreativeGetAPIResponse 将 TaobaoTanxCreativeGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTanxCreativeGetAPIResponse(v *TaobaoTanxCreativeGetAPIResponse) {
+	v.Reset()
+	poolTaobaoTanxCreativeGetAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package wms
 
+import (
+	"sync"
+)
+
 // Inventoryitem 结构体
 type Inventoryitem struct {
 	// 批次号
@@ -16,4 +20,27 @@ type Inventoryitem struct {
 	ItemQty int64 `json:"item_qty,omitempty" xml:"item_qty,omitempty"`
 	// 库存类型：1 可销售库存 (正品) 101 类型用来定义残次品 201 冻结类型库存 301 在途库存
 	InventoryType int64 `json:"inventory_type,omitempty" xml:"inventory_type,omitempty"`
+}
+
+var poolInventoryitem = sync.Pool{
+	New: func() any {
+		return new(Inventoryitem)
+	},
+}
+
+// GetInventoryitem() 从对象池中获取Inventoryitem
+func GetInventoryitem() *Inventoryitem {
+	return poolInventoryitem.Get().(*Inventoryitem)
+}
+
+// ReleaseInventoryitem 释放Inventoryitem
+func ReleaseInventoryitem(v *Inventoryitem) {
+	v.BatchCode = ""
+	v.ProduceArea = ""
+	v.ProduceCode = ""
+	v.ProduceDate = ""
+	v.DueDate = ""
+	v.ItemQty = 0
+	v.InventoryType = 0
+	poolInventoryitem.Put(v)
 }

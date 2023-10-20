@@ -9,11 +9,6 @@ import (
 // alitrip.agent.flight.sell.modify.list
 //
 // 销售改签单列表
-func AlitripAgentFlightSellModifyList(clt *core.SDKClient, req *flight.AlitripAgentFlightSellModifyListAPIRequest, session string) (*flight.AlitripAgentFlightSellModifyListAPIResponse, error) {
-	var resp flight.AlitripAgentFlightSellModifyListAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripAgentFlightSellModifyList(clt *core.SDKClient, req *flight.AlitripAgentFlightSellModifyListAPIRequest, resp *flight.AlitripAgentFlightSellModifyListAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

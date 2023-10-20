@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -143,8 +144,76 @@ type TaobaoXhotelBnbroomtypeAddAPIRequest struct {
 // NewTaobaoXhotelBnbroomtypeAddRequest 初始化TaobaoXhotelBnbroomtypeAddAPIRequest对象
 func NewTaobaoXhotelBnbroomtypeAddRequest() *TaobaoXhotelBnbroomtypeAddAPIRequest {
 	return &TaobaoXhotelBnbroomtypeAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(63),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) Reset() {
+	r._pics = r._pics[:0]
+	r._name = r._name[:0]
+	r._bnbName = r._bnbName[:0]
+	r._outerTags = ""
+	r._outHid = ""
+	r._tel = ""
+	r._localInfo = ""
+	r._brand = ""
+	r._nameE = ""
+	r._decorateTime = ""
+	r._settlementCurrency = ""
+	r._surroundInfo = ""
+	r._activitiesAllowed = ""
+	r._openingTime = ""
+	r._newOuterId = ""
+	r._houseModel = ""
+	r._videoUrl = ""
+	r._vendor = ""
+	r._brightspot = ""
+	r._floor = ""
+	r._introduction = ""
+	r._checkInNotes = ""
+	r._realTel = ""
+	r._service = ""
+	r._outerId = ""
+	r._bedInfo = ""
+	r._extraFee = ""
+	r._standardRoomFacilities = ""
+	r._bnbExtend = ""
+	r._rentSize = 0
+	r._supportIm = 0
+	r._cleaningCharge = 0
+	r._invoice = 0
+	r._decorateLevel = 0
+	r._bnbBookingTime = nil
+	r._receiveForeigners = 0
+	r._cleaningType = 0
+	r._depositAmount = 0
+	r._extraBedsNum = 0
+	r._invoiceType = 0
+	r._hasFrontDesk = 0
+	r._guestAge = 0
+	r._maxOccupancy = 0
+	r._isUseShootImage = 0
+	r._status = nil
+	r._guestGender = 0
+	r._extraCleaningCharge = 0
+	r._rentType = 0
+	r._windowType = 0
+	r._hasLicense = 0
+	r._quickOrder = 0
+	r._houseSize = 0
+	r._productType = 0
+	r._hasLandlord = 0
+	r._charge = nil
+	r._decorateStyle = 0
+	r._supportcredit = 0
+	r._cleaningFrequency = 0
+	r._location = nil
+	r._scenicFeature = 0
+	r._depositType = 0
+	r._extraBedsFee = 0
+	r._srid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -981,4 +1050,21 @@ func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetSrid(_srid int64) error {
 // GetSrid Srid Getter
 func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetSrid() int64 {
 	return r._srid
+}
+
+var poolTaobaoXhotelBnbroomtypeAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelBnbroomtypeAddRequest()
+	},
+}
+
+// GetTaobaoXhotelBnbroomtypeAddRequest 从 sync.Pool 获取 TaobaoXhotelBnbroomtypeAddAPIRequest
+func GetTaobaoXhotelBnbroomtypeAddAPIRequest() *TaobaoXhotelBnbroomtypeAddAPIRequest {
+	return poolTaobaoXhotelBnbroomtypeAddAPIRequest.Get().(*TaobaoXhotelBnbroomtypeAddAPIRequest)
+}
+
+// ReleaseTaobaoXhotelBnbroomtypeAddAPIRequest 将 TaobaoXhotelBnbroomtypeAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelBnbroomtypeAddAPIRequest(v *TaobaoXhotelBnbroomtypeAddAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelBnbroomtypeAddAPIRequest.Put(v)
 }

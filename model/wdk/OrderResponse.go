@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OrderResponse 结构体
 type OrderResponse struct {
 	// 子订单列表
@@ -60,4 +64,49 @@ type OrderResponse struct {
 	PlatformDeduction *PlatformDeduction `json:"platform_deduction,omitempty" xml:"platform_deduction,omitempty"`
 	// 送货信息
 	DeliveryInfo *DeliveryInfo `json:"delivery_info,omitempty" xml:"delivery_info,omitempty"`
+}
+
+var poolOrderResponse = sync.Pool{
+	New: func() any {
+		return new(OrderResponse)
+	},
+}
+
+// GetOrderResponse() 从对象池中获取OrderResponse
+func GetOrderResponse() *OrderResponse {
+	return poolOrderResponse.Get().(*OrderResponse)
+}
+
+// ReleaseOrderResponse 释放OrderResponse
+func ReleaseOrderResponse(v *OrderResponse) {
+	v.SubOrderResponseList = v.SubOrderResponseList[:0]
+	v.PayChannels = v.PayChannels[:0]
+	v.Activitys = v.Activitys[:0]
+	v.FundsDiscounts = v.FundsDiscounts[:0]
+	v.MerchantCode = ""
+	v.StoreId = ""
+	v.ShopId = ""
+	v.OutOrderId = ""
+	v.PayTime = ""
+	v.OrderStatus = ""
+	v.OutShopId = ""
+	v.OrderNo = ""
+	v.OpenUid = ""
+	v.OrderFrom = 0
+	v.BizOrderId = 0
+	v.OriginalFee = 0
+	v.DiscountFee = 0
+	v.PostFee = 0
+	v.PackageFee = 0
+	v.PayFee = 0
+	v.ReceiveInfo = nil
+	v.Ext = nil
+	v.SkuDiscountPlatformFee = 0
+	v.SkuDiscountMerchantFee = 0
+	v.PostDiscountPlatformFee = 0
+	v.PostDiscountMerchantFee = 0
+	v.DeliveryType = 0
+	v.PlatformDeduction = nil
+	v.DeliveryInfo = nil
+	poolOrderResponse.Put(v)
 }

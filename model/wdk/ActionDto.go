@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ActionDto 结构体
 type ActionDto struct {
 	// 满减金额，单位分
@@ -16,4 +20,27 @@ type ActionDto struct {
 	Discount bool `json:"discount,omitempty" xml:"discount,omitempty"`
 	// 是否一口价
 	FixPrice bool `json:"fix_price,omitempty" xml:"fix_price,omitempty"`
+}
+
+var poolActionDto = sync.Pool{
+	New: func() any {
+		return new(ActionDto)
+	},
+}
+
+// GetActionDto() 从对象池中获取ActionDto
+func GetActionDto() *ActionDto {
+	return poolActionDto.Get().(*ActionDto)
+}
+
+// ReleaseActionDto 释放ActionDto
+func ReleaseActionDto(v *ActionDto) {
+	v.DecreaseMoney = 0
+	v.DiscountRate = 0
+	v.FixPriceMoney = 0
+	v.FixPriceType = 0
+	v.Decrease = false
+	v.Discount = false
+	v.FixPrice = false
+	poolActionDto.Put(v)
 }

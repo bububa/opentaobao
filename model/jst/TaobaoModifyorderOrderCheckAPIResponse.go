@@ -2,6 +2,7 @@ package jst
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoModifyorderOrderCheckAPIResponse struct {
 	TaobaoModifyorderOrderCheckAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoModifyorderOrderCheckAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoModifyorderOrderCheckAPIResponseModel).Reset()
+}
+
 // TaobaoModifyorderOrderCheckAPIResponseModel is 自助改单服务发货订单校验 成功返回结果
 type TaobaoModifyorderOrderCheckAPIResponseModel struct {
 	XMLName xml.Name `xml:"modifyorder_order_check_response"`
@@ -26,4 +33,29 @@ type TaobaoModifyorderOrderCheckAPIResponseModel struct {
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 	// 请求是否成功
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoModifyorderOrderCheckAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultCode = ""
+	m.ResultMsg = ""
+	m.Result = false
+}
+
+var poolTaobaoModifyorderOrderCheckAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoModifyorderOrderCheckAPIResponse)
+	},
+}
+
+// GetTaobaoModifyorderOrderCheckAPIResponse 从 sync.Pool 获取 TaobaoModifyorderOrderCheckAPIResponse
+func GetTaobaoModifyorderOrderCheckAPIResponse() *TaobaoModifyorderOrderCheckAPIResponse {
+	return poolTaobaoModifyorderOrderCheckAPIResponse.Get().(*TaobaoModifyorderOrderCheckAPIResponse)
+}
+
+// ReleaseTaobaoModifyorderOrderCheckAPIResponse 将 TaobaoModifyorderOrderCheckAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoModifyorderOrderCheckAPIResponse(v *TaobaoModifyorderOrderCheckAPIResponse) {
+	v.Reset()
+	poolTaobaoModifyorderOrderCheckAPIResponse.Put(v)
 }

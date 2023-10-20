@@ -2,6 +2,7 @@ package opentrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoOpentradeToolsItemsQueryAPIRequest struct {
 // NewTaobaoOpentradeToolsItemsQueryRequest 初始化TaobaoOpentradeToolsItemsQueryAPIRequest对象
 func NewTaobaoOpentradeToolsItemsQueryRequest() *TaobaoOpentradeToolsItemsQueryAPIRequest {
 	return &TaobaoOpentradeToolsItemsQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpentradeToolsItemsQueryAPIRequest) Reset() {
+	r._miniappId = 0
+	r._pageIndex = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoOpentradeToolsItemsQueryAPIRequest) SetPageSize(_pageSize int64) 
 // GetPageSize PageSize Getter
 func (r TaobaoOpentradeToolsItemsQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoOpentradeToolsItemsQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpentradeToolsItemsQueryRequest()
+	},
+}
+
+// GetTaobaoOpentradeToolsItemsQueryRequest 从 sync.Pool 获取 TaobaoOpentradeToolsItemsQueryAPIRequest
+func GetTaobaoOpentradeToolsItemsQueryAPIRequest() *TaobaoOpentradeToolsItemsQueryAPIRequest {
+	return poolTaobaoOpentradeToolsItemsQueryAPIRequest.Get().(*TaobaoOpentradeToolsItemsQueryAPIRequest)
+}
+
+// ReleaseTaobaoOpentradeToolsItemsQueryAPIRequest 将 TaobaoOpentradeToolsItemsQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpentradeToolsItemsQueryAPIRequest(v *TaobaoOpentradeToolsItemsQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoOpentradeToolsItemsQueryAPIRequest.Put(v)
 }

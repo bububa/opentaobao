@@ -1,5 +1,9 @@
 package cloudgame
 
+import (
+	"sync"
+)
+
 // JoinCodeAssignResponse 结构体
 type JoinCodeAssignResponse struct {
 	// 玩家列表
@@ -14,4 +18,26 @@ type JoinCodeAssignResponse struct {
 	Game *OpenGameDto `json:"game,omitempty" xml:"game,omitempty"`
 	// 房间id
 	RoomId int64 `json:"room_id,omitempty" xml:"room_id,omitempty"`
+}
+
+var poolJoinCodeAssignResponse = sync.Pool{
+	New: func() any {
+		return new(JoinCodeAssignResponse)
+	},
+}
+
+// GetJoinCodeAssignResponse() 从对象池中获取JoinCodeAssignResponse
+func GetJoinCodeAssignResponse() *JoinCodeAssignResponse {
+	return poolJoinCodeAssignResponse.Get().(*JoinCodeAssignResponse)
+}
+
+// ReleaseJoinCodeAssignResponse 释放JoinCodeAssignResponse
+func ReleaseJoinCodeAssignResponse(v *JoinCodeAssignResponse) {
+	v.PlayerList = v.PlayerList[:0]
+	v.JoinCode = ""
+	v.GameSession = ""
+	v.ExtInfo = ""
+	v.Game = nil
+	v.RoomId = 0
+	poolJoinCodeAssignResponse.Put(v)
 }

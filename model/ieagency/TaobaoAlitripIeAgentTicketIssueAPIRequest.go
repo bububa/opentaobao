@@ -2,6 +2,7 @@ package ieagency
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoAlitripIeAgentTicketIssueAPIRequest struct {
 // NewTaobaoAlitripIeAgentTicketIssueRequest 初始化TaobaoAlitripIeAgentTicketIssueAPIRequest对象
 func NewTaobaoAlitripIeAgentTicketIssueRequest() *TaobaoAlitripIeAgentTicketIssueAPIRequest {
 	return &TaobaoAlitripIeAgentTicketIssueAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripIeAgentTicketIssueAPIRequest) Reset() {
+	r._agentId = 0
+	r._issueTicketVO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoAlitripIeAgentTicketIssueAPIRequest) SetIssueTicketVO(_issueTicke
 // GetIssueTicketVO IssueTicketVO Getter
 func (r TaobaoAlitripIeAgentTicketIssueAPIRequest) GetIssueTicketVO() *IeIssueTicketVo {
 	return r._issueTicketVO
+}
+
+var poolTaobaoAlitripIeAgentTicketIssueAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripIeAgentTicketIssueRequest()
+	},
+}
+
+// GetTaobaoAlitripIeAgentTicketIssueRequest 从 sync.Pool 获取 TaobaoAlitripIeAgentTicketIssueAPIRequest
+func GetTaobaoAlitripIeAgentTicketIssueAPIRequest() *TaobaoAlitripIeAgentTicketIssueAPIRequest {
+	return poolTaobaoAlitripIeAgentTicketIssueAPIRequest.Get().(*TaobaoAlitripIeAgentTicketIssueAPIRequest)
+}
+
+// ReleaseTaobaoAlitripIeAgentTicketIssueAPIRequest 将 TaobaoAlitripIeAgentTicketIssueAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripIeAgentTicketIssueAPIRequest(v *TaobaoAlitripIeAgentTicketIssueAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripIeAgentTicketIssueAPIRequest.Put(v)
 }

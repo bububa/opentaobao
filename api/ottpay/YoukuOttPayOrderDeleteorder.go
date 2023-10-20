@@ -9,11 +9,6 @@ import (
 // youku.ott.pay.order.deleteorder
 //
 // 应用中心sdk连续包月退订接口
-func YoukuOttPayOrderDeleteorder(clt *core.SDKClient, req *ottpay.YoukuOttPayOrderDeleteorderAPIRequest, session string) (*ottpay.YoukuOttPayOrderDeleteorderAPIResponse, error) {
-	var resp ottpay.YoukuOttPayOrderDeleteorderAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YoukuOttPayOrderDeleteorder(clt *core.SDKClient, req *ottpay.YoukuOttPayOrderDeleteorderAPIRequest, resp *ottpay.YoukuOttPayOrderDeleteorderAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.mozi.fusion.update.employee.account
 //
 // 更新人员和账号基本属性
-func AlibabaMoziFusionUpdateEmployeeAccount(clt *core.SDKClient, req *mozi.AlibabaMoziFusionUpdateEmployeeAccountAPIRequest, session string) (*mozi.AlibabaMoziFusionUpdateEmployeeAccountAPIResponse, error) {
-	var resp mozi.AlibabaMoziFusionUpdateEmployeeAccountAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMoziFusionUpdateEmployeeAccount(clt *core.SDKClient, req *mozi.AlibabaMoziFusionUpdateEmployeeAccountAPIRequest, resp *mozi.AlibabaMoziFusionUpdateEmployeeAccountAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

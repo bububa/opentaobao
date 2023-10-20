@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TmallServiceSettlementFbBillQueryAPIRequest struct {
 // NewTmallServiceSettlementFbBillQueryRequest 初始化TmallServiceSettlementFbBillQueryAPIRequest对象
 func NewTmallServiceSettlementFbBillQueryRequest() *TmallServiceSettlementFbBillQueryAPIRequest {
 	return &TmallServiceSettlementFbBillQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServiceSettlementFbBillQueryAPIRequest) Reset() {
+	r._payTimeStart = ""
+	r._payTimeEnd = ""
+	r._billTimeEnd = ""
+	r._billTimeStart = ""
+	r._pageSize = 0
+	r._pageNum = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TmallServiceSettlementFbBillQueryAPIRequest) SetPageNum(_pageNum int64)
 // GetPageNum PageNum Getter
 func (r TmallServiceSettlementFbBillQueryAPIRequest) GetPageNum() int64 {
 	return r._pageNum
+}
+
+var poolTmallServiceSettlementFbBillQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServiceSettlementFbBillQueryRequest()
+	},
+}
+
+// GetTmallServiceSettlementFbBillQueryRequest 从 sync.Pool 获取 TmallServiceSettlementFbBillQueryAPIRequest
+func GetTmallServiceSettlementFbBillQueryAPIRequest() *TmallServiceSettlementFbBillQueryAPIRequest {
+	return poolTmallServiceSettlementFbBillQueryAPIRequest.Get().(*TmallServiceSettlementFbBillQueryAPIRequest)
+}
+
+// ReleaseTmallServiceSettlementFbBillQueryAPIRequest 将 TmallServiceSettlementFbBillQueryAPIRequest 放入 sync.Pool
+func ReleaseTmallServiceSettlementFbBillQueryAPIRequest(v *TmallServiceSettlementFbBillQueryAPIRequest) {
+	v.Reset()
+	poolTmallServiceSettlementFbBillQueryAPIRequest.Put(v)
 }

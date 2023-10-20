@@ -1,5 +1,9 @@
 package antifraud
 
+import (
+	"sync"
+)
+
 // SigAuthenticateContext 结构体
 type SigAuthenticateContext struct {
 	// 接入密码
@@ -14,4 +18,26 @@ type SigAuthenticateContext struct {
 	Sig string `json:"sig,omitempty" xml:"sig,omitempty"`
 	// 会话标识,由sip提供的tokenutil工具类生成
 	Token string `json:"token,omitempty" xml:"token,omitempty"`
+}
+
+var poolSigAuthenticateContext = sync.Pool{
+	New: func() any {
+		return new(SigAuthenticateContext)
+	},
+}
+
+// GetSigAuthenticateContext() 从对象池中获取SigAuthenticateContext
+func GetSigAuthenticateContext() *SigAuthenticateContext {
+	return poolSigAuthenticateContext.Get().(*SigAuthenticateContext)
+}
+
+// ReleaseSigAuthenticateContext 释放SigAuthenticateContext
+func ReleaseSigAuthenticateContext(v *SigAuthenticateContext) {
+	v.AccessKey = ""
+	v.AppKey = ""
+	v.RemoteIp = ""
+	v.SessionId = ""
+	v.Sig = ""
+	v.Token = ""
+	poolSigAuthenticateContext.Put(v)
 }

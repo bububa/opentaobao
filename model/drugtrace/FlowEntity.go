@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // FlowEntity 结构体
 type FlowEntity struct {
 	// 发货企业名称
@@ -38,4 +42,38 @@ type FlowEntity struct {
 	InTypeCode int64 `json:"in_type_code,omitempty" xml:"in_type_code,omitempty"`
 	// 企业类型
 	EntType int64 `json:"ent_type,omitempty" xml:"ent_type,omitempty"`
+}
+
+var poolFlowEntity = sync.Pool{
+	New: func() any {
+		return new(FlowEntity)
+	},
+}
+
+// GetFlowEntity() 从对象池中获取FlowEntity
+func GetFlowEntity() *FlowEntity {
+	return poolFlowEntity.Get().(*FlowEntity)
+}
+
+// ReleaseFlowEntity 释放FlowEntity
+func ReleaseFlowEntity(v *FlowEntity) {
+	v.FromEntName = ""
+	v.EntProvName = ""
+	v.OutBillCode = ""
+	v.InBillCode = ""
+	v.OutType = ""
+	v.InType = ""
+	v.OutBillId = ""
+	v.InBillId = ""
+	v.OutDate = ""
+	v.InDate = ""
+	v.OutTypeCode = ""
+	v.ToEntId = ""
+	v.ToEntName = ""
+	v.EntId = ""
+	v.EntName = ""
+	v.FromEntId = ""
+	v.InTypeCode = 0
+	v.EntType = 0
+	poolFlowEntity.Put(v)
 }

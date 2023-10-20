@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // VerificateCallbackDto 结构体
 type VerificateCallbackDto struct {
 	// 核销说明, 核销失败则填写核销失败原因
@@ -16,4 +20,27 @@ type VerificateCallbackDto struct {
 	VerificateStatus int64 `json:"verificate_status,omitempty" xml:"verificate_status,omitempty"`
 	// 核销账单类型  1=正向 / 2=逆向
 	BillType int64 `json:"bill_type,omitempty" xml:"bill_type,omitempty"`
+}
+
+var poolVerificateCallbackDto = sync.Pool{
+	New: func() any {
+		return new(VerificateCallbackDto)
+	},
+}
+
+// GetVerificateCallbackDto() 从对象池中获取VerificateCallbackDto
+func GetVerificateCallbackDto() *VerificateCallbackDto {
+	return poolVerificateCallbackDto.Get().(*VerificateCallbackDto)
+}
+
+// ReleaseVerificateCallbackDto 释放VerificateCallbackDto
+func ReleaseVerificateCallbackDto(v *VerificateCallbackDto) {
+	v.Remark = ""
+	v.VerificateTime = ""
+	v.BillOrderId = ""
+	v.StoreId = ""
+	v.MerchantCode = ""
+	v.VerificateStatus = 0
+	v.BillType = 0
+	poolVerificateCallbackDto.Put(v)
 }

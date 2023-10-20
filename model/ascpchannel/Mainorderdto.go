@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // Mainorderdto 结构体
 type Mainorderdto struct {
 	// JIT协议ID
@@ -12,4 +16,25 @@ type Mainorderdto struct {
 	OrderSourceCode string `json:"order_source_code,omitempty" xml:"order_source_code,omitempty"`
 	// 物流货主ID
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
+}
+
+var poolMainorderdto = sync.Pool{
+	New: func() any {
+		return new(Mainorderdto)
+	},
+}
+
+// GetMainorderdto() 从对象池中获取Mainorderdto
+func GetMainorderdto() *Mainorderdto {
+	return poolMainorderdto.Get().(*Mainorderdto)
+}
+
+// ReleaseMainorderdto 释放Mainorderdto
+func ReleaseMainorderdto(v *Mainorderdto) {
+	v.OperationOrderId = ""
+	v.BizActivityCode = ""
+	v.OperationCode = ""
+	v.OrderSourceCode = ""
+	v.UserId = 0
+	poolMainorderdto.Put(v)
 }

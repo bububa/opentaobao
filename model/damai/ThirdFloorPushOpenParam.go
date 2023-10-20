@@ -1,5 +1,9 @@
 package damai
 
+import (
+	"sync"
+)
+
 // ThirdFloorPushOpenParam 结构体
 type ThirdFloorPushOpenParam struct {
 	// 楼层名称
@@ -16,4 +20,27 @@ type ThirdFloorPushOpenParam struct {
 	SystemId int64 `json:"system_id,omitempty" xml:"system_id,omitempty"`
 	// 场馆id
 	VenueId int64 `json:"venue_id,omitempty" xml:"venue_id,omitempty"`
+}
+
+var poolThirdFloorPushOpenParam = sync.Pool{
+	New: func() any {
+		return new(ThirdFloorPushOpenParam)
+	},
+}
+
+// GetThirdFloorPushOpenParam() 从对象池中获取ThirdFloorPushOpenParam
+func GetThirdFloorPushOpenParam() *ThirdFloorPushOpenParam {
+	return poolThirdFloorPushOpenParam.Get().(*ThirdFloorPushOpenParam)
+}
+
+// ReleaseThirdFloorPushOpenParam 释放ThirdFloorPushOpenParam
+func ReleaseThirdFloorPushOpenParam(v *ThirdFloorPushOpenParam) {
+	v.FloorName = ""
+	v.PushTime = ""
+	v.SupplierSecret = ""
+	v.FloorId = 0
+	v.PerformId = 0
+	v.SystemId = 0
+	v.VenueId = 0
+	poolThirdFloorPushOpenParam.Put(v)
 }

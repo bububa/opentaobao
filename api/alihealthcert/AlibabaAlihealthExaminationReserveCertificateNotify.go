@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.examination.reserve.certificate.notify
 //
 // 当ISV执行完健康证预约成功之后， 调用通知阿里健康
-func AlibabaAlihealthExaminationReserveCertificateNotify(clt *core.SDKClient, req *alihealthcert.AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest, session string) (*alihealthcert.AlibabaAlihealthExaminationReserveCertificateNotifyAPIResponse, error) {
-	var resp alihealthcert.AlibabaAlihealthExaminationReserveCertificateNotifyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthExaminationReserveCertificateNotify(clt *core.SDKClient, req *alihealthcert.AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest, resp *alihealthcert.AlibabaAlihealthExaminationReserveCertificateNotifyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

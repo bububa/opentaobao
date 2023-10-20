@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoSubwayCiaUpdateAPIRequest struct {
 // NewTaobaoSubwayCiaUpdateRequest 初始化TaobaoSubwayCiaUpdateAPIRequest对象
 func NewTaobaoSubwayCiaUpdateRequest() *TaobaoSubwayCiaUpdateAPIRequest {
 	return &TaobaoSubwayCiaUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSubwayCiaUpdateAPIRequest) Reset() {
+	r._ciaConfigs = r._ciaConfigs[:0]
+	r._nick = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoSubwayCiaUpdateAPIRequest) SetNick(_nick string) error {
 // GetNick Nick Getter
 func (r TaobaoSubwayCiaUpdateAPIRequest) GetNick() string {
 	return r._nick
+}
+
+var poolTaobaoSubwayCiaUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSubwayCiaUpdateRequest()
+	},
+}
+
+// GetTaobaoSubwayCiaUpdateRequest 从 sync.Pool 获取 TaobaoSubwayCiaUpdateAPIRequest
+func GetTaobaoSubwayCiaUpdateAPIRequest() *TaobaoSubwayCiaUpdateAPIRequest {
+	return poolTaobaoSubwayCiaUpdateAPIRequest.Get().(*TaobaoSubwayCiaUpdateAPIRequest)
+}
+
+// ReleaseTaobaoSubwayCiaUpdateAPIRequest 将 TaobaoSubwayCiaUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSubwayCiaUpdateAPIRequest(v *TaobaoSubwayCiaUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoSubwayCiaUpdateAPIRequest.Put(v)
 }

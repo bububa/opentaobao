@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // Package 结构体
 type Package struct {
 	// 实际发货的配编码
@@ -10,4 +14,24 @@ type Package struct {
 	ItemCode string `json:"item_code,omitempty" xml:"item_code,omitempty"`
 	// 发货数量
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
+}
+
+var poolPackage = sync.Pool{
+	New: func() any {
+		return new(Package)
+	},
+}
+
+// GetPackage() 从对象池中获取Package
+func GetPackage() *Package {
+	return poolPackage.Get().(*Package)
+}
+
+// ReleasePackage 释放Package
+func ReleasePackage(v *Package) {
+	v.LogisticsCode = ""
+	v.ExpressCode = ""
+	v.ItemCode = ""
+	v.Quantity = 0
+	poolPackage.Put(v)
 }

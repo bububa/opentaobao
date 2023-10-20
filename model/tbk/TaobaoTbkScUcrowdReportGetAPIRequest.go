@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoTbkScUcrowdReportGetAPIRequest struct {
 // NewTaobaoTbkScUcrowdReportGetRequest 初始化TaobaoTbkScUcrowdReportGetAPIRequest对象
 func NewTaobaoTbkScUcrowdReportGetRequest() *TaobaoTbkScUcrowdReportGetAPIRequest {
 	return &TaobaoTbkScUcrowdReportGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkScUcrowdReportGetAPIRequest) Reset() {
+	r._reportDate = ""
+	r._ucrowdId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoTbkScUcrowdReportGetAPIRequest) SetUcrowdId(_ucrowdId int64) erro
 // GetUcrowdId UcrowdId Getter
 func (r TaobaoTbkScUcrowdReportGetAPIRequest) GetUcrowdId() int64 {
 	return r._ucrowdId
+}
+
+var poolTaobaoTbkScUcrowdReportGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkScUcrowdReportGetRequest()
+	},
+}
+
+// GetTaobaoTbkScUcrowdReportGetRequest 从 sync.Pool 获取 TaobaoTbkScUcrowdReportGetAPIRequest
+func GetTaobaoTbkScUcrowdReportGetAPIRequest() *TaobaoTbkScUcrowdReportGetAPIRequest {
+	return poolTaobaoTbkScUcrowdReportGetAPIRequest.Get().(*TaobaoTbkScUcrowdReportGetAPIRequest)
+}
+
+// ReleaseTaobaoTbkScUcrowdReportGetAPIRequest 将 TaobaoTbkScUcrowdReportGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkScUcrowdReportGetAPIRequest(v *TaobaoTbkScUcrowdReportGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkScUcrowdReportGetAPIRequest.Put(v)
 }

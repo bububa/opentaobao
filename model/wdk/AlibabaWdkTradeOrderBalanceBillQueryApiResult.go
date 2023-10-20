@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // AlibabaWdkTradeOrderBalanceBillQueryApiResult 结构体
 type AlibabaWdkTradeOrderBalanceBillQueryApiResult struct {
 	// 错误码
@@ -10,4 +14,24 @@ type AlibabaWdkTradeOrderBalanceBillQueryApiResult struct {
 	Model *OrderBalanceBillResponseDo `json:"model,omitempty" xml:"model,omitempty"`
 	// 成功失败
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaWdkTradeOrderBalanceBillQueryApiResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkTradeOrderBalanceBillQueryApiResult)
+	},
+}
+
+// GetAlibabaWdkTradeOrderBalanceBillQueryApiResult() 从对象池中获取AlibabaWdkTradeOrderBalanceBillQueryApiResult
+func GetAlibabaWdkTradeOrderBalanceBillQueryApiResult() *AlibabaWdkTradeOrderBalanceBillQueryApiResult {
+	return poolAlibabaWdkTradeOrderBalanceBillQueryApiResult.Get().(*AlibabaWdkTradeOrderBalanceBillQueryApiResult)
+}
+
+// ReleaseAlibabaWdkTradeOrderBalanceBillQueryApiResult 释放AlibabaWdkTradeOrderBalanceBillQueryApiResult
+func ReleaseAlibabaWdkTradeOrderBalanceBillQueryApiResult(v *AlibabaWdkTradeOrderBalanceBillQueryApiResult) {
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.Model = nil
+	v.Success = false
+	poolAlibabaWdkTradeOrderBalanceBillQueryApiResult.Put(v)
 }

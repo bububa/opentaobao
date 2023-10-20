@@ -2,6 +2,7 @@ package train
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest struct {
 // NewTaobaoTrainAgentHandleticketConfirmVtwoRequest 初始化TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest对象
 func NewTaobaoTrainAgentHandleticketConfirmVtwoRequest() *TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest {
 	return &TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest) Reset() {
+	r._extendParams = ""
+	r._mainOrderId = 0
+	r._sellerId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest) SetSellerId(_sellerI
 // GetSellerId SellerId Getter
 func (r TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest) GetSellerId() int64 {
 	return r._sellerId
+}
+
+var poolTaobaoTrainAgentHandleticketConfirmVtwoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTrainAgentHandleticketConfirmVtwoRequest()
+	},
+}
+
+// GetTaobaoTrainAgentHandleticketConfirmVtwoRequest 从 sync.Pool 获取 TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest
+func GetTaobaoTrainAgentHandleticketConfirmVtwoAPIRequest() *TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest {
+	return poolTaobaoTrainAgentHandleticketConfirmVtwoAPIRequest.Get().(*TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest)
+}
+
+// ReleaseTaobaoTrainAgentHandleticketConfirmVtwoAPIRequest 将 TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTrainAgentHandleticketConfirmVtwoAPIRequest(v *TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest) {
+	v.Reset()
+	poolTaobaoTrainAgentHandleticketConfirmVtwoAPIRequest.Put(v)
 }

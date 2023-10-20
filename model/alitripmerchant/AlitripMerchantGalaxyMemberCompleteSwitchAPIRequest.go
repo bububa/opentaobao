@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlitripMerchantGalaxyMemberCompleteSwitchAPIRequest struct {
 // NewAlitripMerchantGalaxyMemberCompleteSwitchRequest 初始化AlitripMerchantGalaxyMemberCompleteSwitchAPIRequest对象
 func NewAlitripMerchantGalaxyMemberCompleteSwitchRequest() *AlitripMerchantGalaxyMemberCompleteSwitchAPIRequest {
 	return &AlitripMerchantGalaxyMemberCompleteSwitchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyMemberCompleteSwitchAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._token = ""
+	r._verificationCode = ""
+	r._sceneSource = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlitripMerchantGalaxyMemberCompleteSwitchAPIRequest) SetSceneSource(_sc
 // GetSceneSource SceneSource Getter
 func (r AlitripMerchantGalaxyMemberCompleteSwitchAPIRequest) GetSceneSource() string {
 	return r._sceneSource
+}
+
+var poolAlitripMerchantGalaxyMemberCompleteSwitchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyMemberCompleteSwitchRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyMemberCompleteSwitchRequest 从 sync.Pool 获取 AlitripMerchantGalaxyMemberCompleteSwitchAPIRequest
+func GetAlitripMerchantGalaxyMemberCompleteSwitchAPIRequest() *AlitripMerchantGalaxyMemberCompleteSwitchAPIRequest {
+	return poolAlitripMerchantGalaxyMemberCompleteSwitchAPIRequest.Get().(*AlitripMerchantGalaxyMemberCompleteSwitchAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyMemberCompleteSwitchAPIRequest 将 AlitripMerchantGalaxyMemberCompleteSwitchAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyMemberCompleteSwitchAPIRequest(v *AlitripMerchantGalaxyMemberCompleteSwitchAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyMemberCompleteSwitchAPIRequest.Put(v)
 }

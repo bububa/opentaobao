@@ -2,6 +2,7 @@ package baodian
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoBaodianDepositGetWithSdkversionAPIRequest struct {
 // NewTaobaoBaodianDepositGetWithSdkversionRequest 初始化TaobaoBaodianDepositGetWithSdkversionAPIRequest对象
 func NewTaobaoBaodianDepositGetWithSdkversionRequest() *TaobaoBaodianDepositGetWithSdkversionAPIRequest {
 	return &TaobaoBaodianDepositGetWithSdkversionAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBaodianDepositGetWithSdkversionAPIRequest) Reset() {
+	r._deviceModel = ""
+	r._uuid = ""
+	r._sdkVersion = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoBaodianDepositGetWithSdkversionAPIRequest) SetSdkVersion(_sdkVers
 // GetSdkVersion SdkVersion Getter
 func (r TaobaoBaodianDepositGetWithSdkversionAPIRequest) GetSdkVersion() string {
 	return r._sdkVersion
+}
+
+var poolTaobaoBaodianDepositGetWithSdkversionAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBaodianDepositGetWithSdkversionRequest()
+	},
+}
+
+// GetTaobaoBaodianDepositGetWithSdkversionRequest 从 sync.Pool 获取 TaobaoBaodianDepositGetWithSdkversionAPIRequest
+func GetTaobaoBaodianDepositGetWithSdkversionAPIRequest() *TaobaoBaodianDepositGetWithSdkversionAPIRequest {
+	return poolTaobaoBaodianDepositGetWithSdkversionAPIRequest.Get().(*TaobaoBaodianDepositGetWithSdkversionAPIRequest)
+}
+
+// ReleaseTaobaoBaodianDepositGetWithSdkversionAPIRequest 将 TaobaoBaodianDepositGetWithSdkversionAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBaodianDepositGetWithSdkversionAPIRequest(v *TaobaoBaodianDepositGetWithSdkversionAPIRequest) {
+	v.Reset()
+	poolTaobaoBaodianDepositGetWithSdkversionAPIRequest.Put(v)
 }

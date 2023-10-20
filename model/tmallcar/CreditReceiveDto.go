@@ -1,5 +1,9 @@
 package tmallcar
 
+import (
+	"sync"
+)
+
 // CreditReceiveDto 结构体
 type CreditReceiveDto struct {
 	// 扩展字段2
@@ -24,4 +28,31 @@ type CreditReceiveDto struct {
 	RequestTime string `json:"request_time,omitempty" xml:"request_time,omitempty"`
 	// 如果授信通过了,要有授信额度(单位分)
 	CreditAmount int64 `json:"credit_amount,omitempty" xml:"credit_amount,omitempty"`
+}
+
+var poolCreditReceiveDto = sync.Pool{
+	New: func() any {
+		return new(CreditReceiveDto)
+	},
+}
+
+// GetCreditReceiveDto() 从对象池中获取CreditReceiveDto
+func GetCreditReceiveDto() *CreditReceiveDto {
+	return poolCreditReceiveDto.Get().(*CreditReceiveDto)
+}
+
+// ReleaseCreditReceiveDto 释放CreditReceiveDto
+func ReleaseCreditReceiveDto(v *CreditReceiveDto) {
+	v.ExtensionField02 = ""
+	v.ExtensionField01 = ""
+	v.CapitalName = ""
+	v.CapitalCode = ""
+	v.FailReason = ""
+	v.CreditId = ""
+	v.CreditResult = ""
+	v.TmallBizNo = ""
+	v.BizCode = ""
+	v.RequestTime = ""
+	v.CreditAmount = 0
+	poolCreditReceiveDto.Put(v)
 }

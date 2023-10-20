@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // TaxOptimizationSingleDetailSalaryPaymentAccessDto 结构体
 type TaxOptimizationSingleDetailSalaryPaymentAccessDto struct {
 	// 业务提交时间
@@ -16,4 +20,27 @@ type TaxOptimizationSingleDetailSalaryPaymentAccessDto struct {
 	SalaryRemark string `json:"salary_remark,omitempty" xml:"salary_remark,omitempty"`
 	// 发薪金额
 	ApplyAmount int64 `json:"apply_amount,omitempty" xml:"apply_amount,omitempty"`
+}
+
+var poolTaxOptimizationSingleDetailSalaryPaymentAccessDto = sync.Pool{
+	New: func() any {
+		return new(TaxOptimizationSingleDetailSalaryPaymentAccessDto)
+	},
+}
+
+// GetTaxOptimizationSingleDetailSalaryPaymentAccessDto() 从对象池中获取TaxOptimizationSingleDetailSalaryPaymentAccessDto
+func GetTaxOptimizationSingleDetailSalaryPaymentAccessDto() *TaxOptimizationSingleDetailSalaryPaymentAccessDto {
+	return poolTaxOptimizationSingleDetailSalaryPaymentAccessDto.Get().(*TaxOptimizationSingleDetailSalaryPaymentAccessDto)
+}
+
+// ReleaseTaxOptimizationSingleDetailSalaryPaymentAccessDto 释放TaxOptimizationSingleDetailSalaryPaymentAccessDto
+func ReleaseTaxOptimizationSingleDetailSalaryPaymentAccessDto(v *TaxOptimizationSingleDetailSalaryPaymentAccessDto) {
+	v.BusinessTime = ""
+	v.ContractorCode = ""
+	v.DetailId = ""
+	v.EmployerCode = ""
+	v.IdentificationInBelongingEmployer = ""
+	v.SalaryRemark = ""
+	v.ApplyAmount = 0
+	poolTaxOptimizationSingleDetailSalaryPaymentAccessDto.Put(v)
 }

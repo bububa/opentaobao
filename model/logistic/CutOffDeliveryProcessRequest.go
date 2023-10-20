@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // CutOffDeliveryProcessRequest 结构体
 type CutOffDeliveryProcessRequest struct {
 	// 面单号
@@ -12,4 +16,25 @@ type CutOffDeliveryProcessRequest struct {
 	InterceptReason string `json:"intercept_reason,omitempty" xml:"intercept_reason,omitempty"`
 	// 快递公司编码
 	TmsCpCode string `json:"tms_cp_code,omitempty" xml:"tms_cp_code,omitempty"`
+}
+
+var poolCutOffDeliveryProcessRequest = sync.Pool{
+	New: func() any {
+		return new(CutOffDeliveryProcessRequest)
+	},
+}
+
+// GetCutOffDeliveryProcessRequest() 从对象池中获取CutOffDeliveryProcessRequest
+func GetCutOffDeliveryProcessRequest() *CutOffDeliveryProcessRequest {
+	return poolCutOffDeliveryProcessRequest.Get().(*CutOffDeliveryProcessRequest)
+}
+
+// ReleaseCutOffDeliveryProcessRequest 释放CutOffDeliveryProcessRequest
+func ReleaseCutOffDeliveryProcessRequest(v *CutOffDeliveryProcessRequest) {
+	v.MailNo = ""
+	v.OuterOrderId = ""
+	v.InterceptTime = ""
+	v.InterceptReason = ""
+	v.TmsCpCode = ""
+	poolCutOffDeliveryProcessRequest.Put(v)
 }

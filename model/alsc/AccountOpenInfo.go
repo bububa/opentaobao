@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // AccountOpenInfo 结构体
 type AccountOpenInfo struct {
 	// 账户ID
@@ -38,4 +42,38 @@ type AccountOpenInfo struct {
 	ExtInfo *Extinfo `json:"ext_info,omitempty" xml:"ext_info,omitempty"`
 	// 逻辑删除标志
 	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
+}
+
+var poolAccountOpenInfo = sync.Pool{
+	New: func() any {
+		return new(AccountOpenInfo)
+	},
+}
+
+// GetAccountOpenInfo() 从对象池中获取AccountOpenInfo
+func GetAccountOpenInfo() *AccountOpenInfo {
+	return poolAccountOpenInfo.Get().(*AccountOpenInfo)
+}
+
+// ReleaseAccountOpenInfo 释放AccountOpenInfo
+func ReleaseAccountOpenInfo(v *AccountOpenInfo) {
+	v.AccountId = ""
+	v.AccountType = ""
+	v.CreateBy = ""
+	v.Currency = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.Status = ""
+	v.UpdateBy = ""
+	v.OptPlanId = ""
+	v.Balance = 0
+	v.Gift = 0
+	v.Pre = 0
+	v.Real = 0
+	v.TotalGift = 0
+	v.TotalPre = 0
+	v.TotalReal = 0
+	v.ExtInfo = nil
+	v.Deleted = false
+	poolAccountOpenInfo.Put(v)
 }

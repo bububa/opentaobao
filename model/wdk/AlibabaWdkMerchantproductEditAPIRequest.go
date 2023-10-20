@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkMerchantproductEditAPIRequest struct {
 // NewAlibabaWdkMerchantproductEditRequest 初始化AlibabaWdkMerchantproductEditAPIRequest对象
 func NewAlibabaWdkMerchantproductEditRequest() *AlibabaWdkMerchantproductEditAPIRequest {
 	return &AlibabaWdkMerchantproductEditAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkMerchantproductEditAPIRequest) Reset() {
+	r._req = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkMerchantproductEditAPIRequest) SetReq(_req *MerchantProductRe
 // GetReq Req Getter
 func (r AlibabaWdkMerchantproductEditAPIRequest) GetReq() *MerchantProductRequest {
 	return r._req
+}
+
+var poolAlibabaWdkMerchantproductEditAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkMerchantproductEditRequest()
+	},
+}
+
+// GetAlibabaWdkMerchantproductEditRequest 从 sync.Pool 获取 AlibabaWdkMerchantproductEditAPIRequest
+func GetAlibabaWdkMerchantproductEditAPIRequest() *AlibabaWdkMerchantproductEditAPIRequest {
+	return poolAlibabaWdkMerchantproductEditAPIRequest.Get().(*AlibabaWdkMerchantproductEditAPIRequest)
+}
+
+// ReleaseAlibabaWdkMerchantproductEditAPIRequest 将 AlibabaWdkMerchantproductEditAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkMerchantproductEditAPIRequest(v *AlibabaWdkMerchantproductEditAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkMerchantproductEditAPIRequest.Put(v)
 }

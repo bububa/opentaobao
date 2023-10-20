@@ -9,11 +9,6 @@ import (
 // alibaba.dchain.aoxiang.wms.orderprocess.report
 //
 // 回传发货单流水通知
-func AlibabaDchainAoxiangWmsOrderprocessReport(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangWmsOrderprocessReportAPIRequest, session string) (*ascp.AlibabaDchainAoxiangWmsOrderprocessReportAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangWmsOrderprocessReportAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDchainAoxiangWmsOrderprocessReport(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangWmsOrderprocessReportAPIRequest, resp *ascp.AlibabaDchainAoxiangWmsOrderprocessReportAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

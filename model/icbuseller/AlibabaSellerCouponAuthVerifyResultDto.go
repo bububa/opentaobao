@@ -1,5 +1,9 @@
 package icbuseller
 
+import (
+	"sync"
+)
+
 // AlibabaSellerCouponAuthVerifyResultDto 结构体
 type AlibabaSellerCouponAuthVerifyResultDto struct {
 	// 验证失败结果
@@ -10,4 +14,24 @@ type AlibabaSellerCouponAuthVerifyResultDto struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 是否验证通过
 	Dto bool `json:"dto,omitempty" xml:"dto,omitempty"`
+}
+
+var poolAlibabaSellerCouponAuthVerifyResultDto = sync.Pool{
+	New: func() any {
+		return new(AlibabaSellerCouponAuthVerifyResultDto)
+	},
+}
+
+// GetAlibabaSellerCouponAuthVerifyResultDto() 从对象池中获取AlibabaSellerCouponAuthVerifyResultDto
+func GetAlibabaSellerCouponAuthVerifyResultDto() *AlibabaSellerCouponAuthVerifyResultDto {
+	return poolAlibabaSellerCouponAuthVerifyResultDto.Get().(*AlibabaSellerCouponAuthVerifyResultDto)
+}
+
+// ReleaseAlibabaSellerCouponAuthVerifyResultDto 释放AlibabaSellerCouponAuthVerifyResultDto
+func ReleaseAlibabaSellerCouponAuthVerifyResultDto(v *AlibabaSellerCouponAuthVerifyResultDto) {
+	v.ExecDescription = ""
+	v.ReturnCode = 0
+	v.Success = false
+	v.Dto = false
+	poolAlibabaSellerCouponAuthVerifyResultDto.Put(v)
 }

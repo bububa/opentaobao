@@ -1,5 +1,9 @@
 package alihealthoutflow
 
+import (
+	"sync"
+)
+
 // DrugDto 结构体
 type DrugDto struct {
 	// 用法用量
@@ -68,4 +72,53 @@ type DrugDto struct {
 	DrugClassCode string `json:"drug_class_code,omitempty" xml:"drug_class_code,omitempty"`
 	// 是否允许电子处方
 	ElectricPres bool `json:"electric_pres,omitempty" xml:"electric_pres,omitempty"`
+}
+
+var poolDrugDto = sync.Pool{
+	New: func() any {
+		return new(DrugDto)
+	},
+}
+
+// GetDrugDto() 从对象池中获取DrugDto
+func GetDrugDto() *DrugDto {
+	return poolDrugDto.Get().(*DrugDto)
+}
+
+// ReleaseDrugDto 释放DrugDto
+func ReleaseDrugDto(v *DrugDto) {
+	v.DrugUsageList = v.DrugUsageList[:0]
+	v.Spec = ""
+	v.Total = ""
+	v.CommonDrugName = ""
+	v.DrugName = ""
+	v.DoseForm = ""
+	v.DrugCommonNamePy = ""
+	v.DrugNamePy = ""
+	v.ProvinceDrugCode = ""
+	v.Indication = ""
+	v.HisDrugName = ""
+	v.SingleDosageUnit = ""
+	v.SingleDosage = ""
+	v.PackSpecSaleUnit = ""
+	v.PackSpecUseUnit = ""
+	v.PackSpecAmount = ""
+	v.PackUnit = ""
+	v.PackQty = ""
+	v.RetailPrice = ""
+	v.MedicareNo = ""
+	v.DrugUsageCode = ""
+	v.DrugUsage = ""
+	v.FrequencyCode = ""
+	v.Frequency = ""
+	v.DrugBasicCode = ""
+	v.DosageForm = ""
+	v.ApprovalNumber = ""
+	v.Manufacture = ""
+	v.PackSpec = ""
+	v.DrugCode = ""
+	v.DrugCommonName = ""
+	v.DrugClassCode = ""
+	v.ElectricPres = false
+	poolDrugDto.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.ele.fengniao.trade.update
 //
 // 汇金扣费成功后，回调该接口更新扣费状态
-func AlibabaEleFengniaoTradeUpdate(clt *core.SDKClient, req *logistic.AlibabaEleFengniaoTradeUpdateAPIRequest, session string) (*logistic.AlibabaEleFengniaoTradeUpdateAPIResponse, error) {
-	var resp logistic.AlibabaEleFengniaoTradeUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaEleFengniaoTradeUpdate(clt *core.SDKClient, req *logistic.AlibabaEleFengniaoTradeUpdateAPIRequest, resp *logistic.AlibabaEleFengniaoTradeUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package nazca
 
+import (
+	"sync"
+)
+
 // ChangeAuthApplyDo 结构体
 type ChangeAuthApplyDo struct {
 	// 企业名称
@@ -20,4 +24,29 @@ type ChangeAuthApplyDo struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 是否认证
 	Autherized bool `json:"autherized,omitempty" xml:"autherized,omitempty"`
+}
+
+var poolChangeAuthApplyDo = sync.Pool{
+	New: func() any {
+		return new(ChangeAuthApplyDo)
+	},
+}
+
+// GetChangeAuthApplyDo() 从对象池中获取ChangeAuthApplyDo
+func GetChangeAuthApplyDo() *ChangeAuthApplyDo {
+	return poolChangeAuthApplyDo.Get().(*ChangeAuthApplyDo)
+}
+
+// ReleaseChangeAuthApplyDo 释放ChangeAuthApplyDo
+func ReleaseChangeAuthApplyDo(v *ChangeAuthApplyDo) {
+	v.EnterpriseName = ""
+	v.License = ""
+	v.Organization = ""
+	v.PlatformUserId = ""
+	v.ReturnUrl = ""
+	v.Status = ""
+	v.ThreeCertNumber = ""
+	v.Type = 0
+	v.Autherized = false
+	poolChangeAuthApplyDo.Put(v)
 }

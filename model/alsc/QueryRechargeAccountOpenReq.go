@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // QueryRechargeAccountOpenReq 结构体
 type QueryRechargeAccountOpenReq struct {
 	// 账户Id，如果有，则查询单个账户
@@ -16,4 +20,27 @@ type QueryRechargeAccountOpenReq struct {
 	OutShopId string `json:"out_shop_id,omitempty" xml:"out_shop_id,omitempty"`
 	// 外部品牌ID(不能和brandid同时为空)
 	OutBrandId string `json:"out_brand_id,omitempty" xml:"out_brand_id,omitempty"`
+}
+
+var poolQueryRechargeAccountOpenReq = sync.Pool{
+	New: func() any {
+		return new(QueryRechargeAccountOpenReq)
+	},
+}
+
+// GetQueryRechargeAccountOpenReq() 从对象池中获取QueryRechargeAccountOpenReq
+func GetQueryRechargeAccountOpenReq() *QueryRechargeAccountOpenReq {
+	return poolQueryRechargeAccountOpenReq.Get().(*QueryRechargeAccountOpenReq)
+}
+
+// ReleaseQueryRechargeAccountOpenReq 释放QueryRechargeAccountOpenReq
+func ReleaseQueryRechargeAccountOpenReq(v *QueryRechargeAccountOpenReq) {
+	v.AccountId = ""
+	v.BrandId = ""
+	v.CardId = ""
+	v.CustomerId = ""
+	v.ShopId = ""
+	v.OutShopId = ""
+	v.OutBrandId = ""
+	poolQueryRechargeAccountOpenReq.Put(v)
 }

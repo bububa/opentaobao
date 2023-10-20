@@ -1,5 +1,9 @@
 package happytrip
 
+import (
+	"sync"
+)
+
 // TouristDto 结构体
 type TouristDto struct {
 	// 证件签发国
@@ -26,4 +30,32 @@ type TouristDto struct {
 	TouristType int64 `json:"tourist_type,omitempty" xml:"tourist_type,omitempty"`
 	// 出行人0，同行人1，外部人员2
 	TravelBusinessType int64 `json:"travel_business_type,omitempty" xml:"travel_business_type,omitempty"`
+}
+
+var poolTouristDto = sync.Pool{
+	New: func() any {
+		return new(TouristDto)
+	},
+}
+
+// GetTouristDto() 从对象池中获取TouristDto
+func GetTouristDto() *TouristDto {
+	return poolTouristDto.Get().(*TouristDto)
+}
+
+// ReleaseTouristDto 释放TouristDto
+func ReleaseTouristDto(v *TouristDto) {
+	v.CertNation = ""
+	v.FirstName = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.LastName = ""
+	v.Name = ""
+	v.UserId = ""
+	v.Id = 0
+	v.OrderId = 0
+	v.Sex = 0
+	v.TouristType = 0
+	v.TravelBusinessType = 0
+	poolTouristDto.Put(v)
 }

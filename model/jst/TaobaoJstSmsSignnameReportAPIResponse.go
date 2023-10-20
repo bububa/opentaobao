@@ -2,6 +2,7 @@ package jst
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoJstSmsSignnameReportAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstSmsSignnameReportAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoJstSmsSignnameReportAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoJstSmsSignnameReportAPIResponseModel).Reset()
 }
 
 // TaobaoJstSmsSignnameReportAPIResponseModel is 服务商存量短信签名上传 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoJstSmsSignnameReportAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 结果
 	Module bool `json:"module,omitempty" xml:"module,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoJstSmsSignnameReportAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RCode = ""
+	m.RSuccess = ""
+	m.Message = ""
+	m.Module = false
+}
+
+var poolTaobaoJstSmsSignnameReportAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoJstSmsSignnameReportAPIResponse)
+	},
+}
+
+// GetTaobaoJstSmsSignnameReportAPIResponse 从 sync.Pool 获取 TaobaoJstSmsSignnameReportAPIResponse
+func GetTaobaoJstSmsSignnameReportAPIResponse() *TaobaoJstSmsSignnameReportAPIResponse {
+	return poolTaobaoJstSmsSignnameReportAPIResponse.Get().(*TaobaoJstSmsSignnameReportAPIResponse)
+}
+
+// ReleaseTaobaoJstSmsSignnameReportAPIResponse 将 TaobaoJstSmsSignnameReportAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoJstSmsSignnameReportAPIResponse(v *TaobaoJstSmsSignnameReportAPIResponse) {
+	v.Reset()
+	poolTaobaoJstSmsSignnameReportAPIResponse.Put(v)
 }

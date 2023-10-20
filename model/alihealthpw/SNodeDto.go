@@ -1,7 +1,11 @@
 package alihealthpw
 
-// SnodeDto 结构体
-type SnodeDto struct {
+import (
+	"sync"
+)
+
+// SNodeDto 结构体
+type SNodeDto struct {
 	// 患者姓名
 	PatientName string `json:"patient_name,omitempty" xml:"patient_name,omitempty"`
 	// 医疗费用补助
@@ -50,4 +54,44 @@ type SnodeDto struct {
 	HospitalEmsAddress string `json:"hospital_ems_address,omitempty" xml:"hospital_ems_address,omitempty"`
 	// 打款机构
 	PaymentInstitution string `json:"payment_institution,omitempty" xml:"payment_institution,omitempty"`
+}
+
+var poolSNodeDto = sync.Pool{
+	New: func() any {
+		return new(SNodeDto)
+	},
+}
+
+// GetSNodeDto() 从对象池中获取SNodeDto
+func GetSNodeDto() *SNodeDto {
+	return poolSNodeDto.Get().(*SNodeDto)
+}
+
+// ReleaseSNodeDto 释放SNodeDto
+func ReleaseSNodeDto(v *SNodeDto) {
+	v.PatientName = ""
+	v.HospitalAllowance = ""
+	v.HospitalEmsPhone = ""
+	v.IsRefer = ""
+	v.DownloadUrl = ""
+	v.HospitalAddress = ""
+	v.UserUniqueCode = ""
+	v.ApplyAuditTime = ""
+	v.FoundationPayDate = ""
+	v.CheckRemark = ""
+	v.HospitalPhone = ""
+	v.FoundationEmsPhone = ""
+	v.Url = ""
+	v.FoundationEmsAddress = ""
+	v.FoundationAllowance = ""
+	v.SmsPhone = ""
+	v.HospitalAddressee = ""
+	v.ApplyAuditStatus = ""
+	v.TreatHospital = ""
+	v.FoundationAddressee = ""
+	v.HospitalPayDate = ""
+	v.ProjectThirdId = ""
+	v.HospitalEmsAddress = ""
+	v.PaymentInstitution = ""
+	poolSNodeDto.Put(v)
 }

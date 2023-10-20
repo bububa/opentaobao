@@ -1,5 +1,9 @@
 package tmallhk
 
+import (
+	"sync"
+)
+
 // ConsigneeCertifyInfo 结构体
 type ConsigneeCertifyInfo struct {
 	// 身份证正面
@@ -16,4 +20,27 @@ type ConsigneeCertifyInfo struct {
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 证件类型
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolConsigneeCertifyInfo = sync.Pool{
+	New: func() any {
+		return new(ConsigneeCertifyInfo)
+	},
+}
+
+// GetConsigneeCertifyInfo() 从对象池中获取ConsigneeCertifyInfo
+func GetConsigneeCertifyInfo() *ConsigneeCertifyInfo {
+	return poolConsigneeCertifyInfo.Get().(*ConsigneeCertifyInfo)
+}
+
+// ReleaseConsigneeCertifyInfo 释放ConsigneeCertifyInfo
+func ReleaseConsigneeCertifyInfo(v *ConsigneeCertifyInfo) {
+	v.Credential1 = ""
+	v.Credential2 = ""
+	v.OcrExp = ""
+	v.OcrId = ""
+	v.OcrName = ""
+	v.OrderId = 0
+	v.Type = 0
+	poolConsigneeCertifyInfo.Put(v)
 }

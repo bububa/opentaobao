@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTclsAelophyBillVerificateCallbackAPIRequest struct {
 // NewAlibabaTclsAelophyBillVerificateCallbackRequest 初始化AlibabaTclsAelophyBillVerificateCallbackAPIRequest对象
 func NewAlibabaTclsAelophyBillVerificateCallbackRequest() *AlibabaTclsAelophyBillVerificateCallbackAPIRequest {
 	return &AlibabaTclsAelophyBillVerificateCallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTclsAelophyBillVerificateCallbackAPIRequest) Reset() {
+	r._module = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTclsAelophyBillVerificateCallbackAPIRequest) SetModule(_module *
 // GetModule Module Getter
 func (r AlibabaTclsAelophyBillVerificateCallbackAPIRequest) GetModule() *VerificateCallbackDto {
 	return r._module
+}
+
+var poolAlibabaTclsAelophyBillVerificateCallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTclsAelophyBillVerificateCallbackRequest()
+	},
+}
+
+// GetAlibabaTclsAelophyBillVerificateCallbackRequest 从 sync.Pool 获取 AlibabaTclsAelophyBillVerificateCallbackAPIRequest
+func GetAlibabaTclsAelophyBillVerificateCallbackAPIRequest() *AlibabaTclsAelophyBillVerificateCallbackAPIRequest {
+	return poolAlibabaTclsAelophyBillVerificateCallbackAPIRequest.Get().(*AlibabaTclsAelophyBillVerificateCallbackAPIRequest)
+}
+
+// ReleaseAlibabaTclsAelophyBillVerificateCallbackAPIRequest 将 AlibabaTclsAelophyBillVerificateCallbackAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTclsAelophyBillVerificateCallbackAPIRequest(v *AlibabaTclsAelophyBillVerificateCallbackAPIRequest) {
+	v.Reset()
+	poolAlibabaTclsAelophyBillVerificateCallbackAPIRequest.Put(v)
 }

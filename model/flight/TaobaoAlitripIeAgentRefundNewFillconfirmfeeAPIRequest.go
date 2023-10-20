@@ -2,6 +2,7 @@ package flight
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest struct {
 // NewTaobaoAlitripIeAgentRefundNewFillconfirmfeeRequest 初始化TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest对象
 func NewTaobaoAlitripIeAgentRefundNewFillconfirmfeeRequest() *TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest {
 	return &TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest) Reset() {
+	r._paramRefundOrderFillConfirmFeeRq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest) SetParamRefundOr
 // GetParamRefundOrderFillConfirmFeeRq ParamRefundOrderFillConfirmFeeRq Getter
 func (r TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest) GetParamRefundOrderFillConfirmFeeRq() *RefundOrderFillConfirmFeeRq {
 	return r._paramRefundOrderFillConfirmFeeRq
+}
+
+var poolTaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripIeAgentRefundNewFillconfirmfeeRequest()
+	},
+}
+
+// GetTaobaoAlitripIeAgentRefundNewFillconfirmfeeRequest 从 sync.Pool 获取 TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest
+func GetTaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest() *TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest {
+	return poolTaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest.Get().(*TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest)
+}
+
+// ReleaseTaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest 将 TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest(v *TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest.Put(v)
 }

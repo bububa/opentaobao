@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaServicecenterFulfiltaskCreateAPIRequest struct {
 // NewAlibabaServicecenterFulfiltaskCreateRequest 初始化AlibabaServicecenterFulfiltaskCreateAPIRequest对象
 func NewAlibabaServicecenterFulfiltaskCreateRequest() *AlibabaServicecenterFulfiltaskCreateAPIRequest {
 	return &AlibabaServicecenterFulfiltaskCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaServicecenterFulfiltaskCreateAPIRequest) Reset() {
+	r._workcardIds = r._workcardIds[:0]
+	r._outerId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaServicecenterFulfiltaskCreateAPIRequest) SetOuterId(_outerId str
 // GetOuterId OuterId Getter
 func (r AlibabaServicecenterFulfiltaskCreateAPIRequest) GetOuterId() string {
 	return r._outerId
+}
+
+var poolAlibabaServicecenterFulfiltaskCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaServicecenterFulfiltaskCreateRequest()
+	},
+}
+
+// GetAlibabaServicecenterFulfiltaskCreateRequest 从 sync.Pool 获取 AlibabaServicecenterFulfiltaskCreateAPIRequest
+func GetAlibabaServicecenterFulfiltaskCreateAPIRequest() *AlibabaServicecenterFulfiltaskCreateAPIRequest {
+	return poolAlibabaServicecenterFulfiltaskCreateAPIRequest.Get().(*AlibabaServicecenterFulfiltaskCreateAPIRequest)
+}
+
+// ReleaseAlibabaServicecenterFulfiltaskCreateAPIRequest 将 AlibabaServicecenterFulfiltaskCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaServicecenterFulfiltaskCreateAPIRequest(v *AlibabaServicecenterFulfiltaskCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaServicecenterFulfiltaskCreateAPIRequest.Put(v)
 }

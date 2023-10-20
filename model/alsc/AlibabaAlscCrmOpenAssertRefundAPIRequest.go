@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscCrmOpenAssertRefundAPIRequest struct {
 // NewAlibabaAlscCrmOpenAssertRefundRequest 初始化AlibabaAlscCrmOpenAssertRefundAPIRequest对象
 func NewAlibabaAlscCrmOpenAssertRefundRequest() *AlibabaAlscCrmOpenAssertRefundAPIRequest {
 	return &AlibabaAlscCrmOpenAssertRefundAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscCrmOpenAssertRefundAPIRequest) Reset() {
+	r._paramPropertyRefundOpenReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscCrmOpenAssertRefundAPIRequest) SetParamPropertyRefundOpenReq
 // GetParamPropertyRefundOpenReq ParamPropertyRefundOpenReq Getter
 func (r AlibabaAlscCrmOpenAssertRefundAPIRequest) GetParamPropertyRefundOpenReq() *PropertyRefundOpenReq {
 	return r._paramPropertyRefundOpenReq
+}
+
+var poolAlibabaAlscCrmOpenAssertRefundAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscCrmOpenAssertRefundRequest()
+	},
+}
+
+// GetAlibabaAlscCrmOpenAssertRefundRequest 从 sync.Pool 获取 AlibabaAlscCrmOpenAssertRefundAPIRequest
+func GetAlibabaAlscCrmOpenAssertRefundAPIRequest() *AlibabaAlscCrmOpenAssertRefundAPIRequest {
+	return poolAlibabaAlscCrmOpenAssertRefundAPIRequest.Get().(*AlibabaAlscCrmOpenAssertRefundAPIRequest)
+}
+
+// ReleaseAlibabaAlscCrmOpenAssertRefundAPIRequest 将 AlibabaAlscCrmOpenAssertRefundAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscCrmOpenAssertRefundAPIRequest(v *AlibabaAlscCrmOpenAssertRefundAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscCrmOpenAssertRefundAPIRequest.Put(v)
 }

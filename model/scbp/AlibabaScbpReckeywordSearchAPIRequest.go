@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaScbpReckeywordSearchAPIRequest struct {
 // NewAlibabaScbpReckeywordSearchRequest 初始化AlibabaScbpReckeywordSearchAPIRequest对象
 func NewAlibabaScbpReckeywordSearchRequest() *AlibabaScbpReckeywordSearchAPIRequest {
 	return &AlibabaScbpReckeywordSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpReckeywordSearchAPIRequest) Reset() {
+	r._queryDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaScbpReckeywordSearchAPIRequest) SetQueryDto(_queryDto *RecKeywor
 // GetQueryDto QueryDto Getter
 func (r AlibabaScbpReckeywordSearchAPIRequest) GetQueryDto() *RecKeywordQuery {
 	return r._queryDto
+}
+
+var poolAlibabaScbpReckeywordSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpReckeywordSearchRequest()
+	},
+}
+
+// GetAlibabaScbpReckeywordSearchRequest 从 sync.Pool 获取 AlibabaScbpReckeywordSearchAPIRequest
+func GetAlibabaScbpReckeywordSearchAPIRequest() *AlibabaScbpReckeywordSearchAPIRequest {
+	return poolAlibabaScbpReckeywordSearchAPIRequest.Get().(*AlibabaScbpReckeywordSearchAPIRequest)
+}
+
+// ReleaseAlibabaScbpReckeywordSearchAPIRequest 将 AlibabaScbpReckeywordSearchAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpReckeywordSearchAPIRequest(v *AlibabaScbpReckeywordSearchAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpReckeywordSearchAPIRequest.Put(v)
 }

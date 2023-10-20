@@ -2,6 +2,7 @@ package aliqin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAliqinFcIotUseroscontrolAPIRequest struct {
 // NewAlibabaAliqinFcIotUseroscontrolRequest 初始化AlibabaAliqinFcIotUseroscontrolAPIRequest对象
 func NewAlibabaAliqinFcIotUseroscontrolRequest() *AlibabaAliqinFcIotUseroscontrolAPIRequest {
 	return &AlibabaAliqinFcIotUseroscontrolAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinFcIotUseroscontrolAPIRequest) Reset() {
+	r._iccid = ""
+	r._action = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAliqinFcIotUseroscontrolAPIRequest) SetAction(_action string) er
 // GetAction Action Getter
 func (r AlibabaAliqinFcIotUseroscontrolAPIRequest) GetAction() string {
 	return r._action
+}
+
+var poolAlibabaAliqinFcIotUseroscontrolAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinFcIotUseroscontrolRequest()
+	},
+}
+
+// GetAlibabaAliqinFcIotUseroscontrolRequest 从 sync.Pool 获取 AlibabaAliqinFcIotUseroscontrolAPIRequest
+func GetAlibabaAliqinFcIotUseroscontrolAPIRequest() *AlibabaAliqinFcIotUseroscontrolAPIRequest {
+	return poolAlibabaAliqinFcIotUseroscontrolAPIRequest.Get().(*AlibabaAliqinFcIotUseroscontrolAPIRequest)
+}
+
+// ReleaseAlibabaAliqinFcIotUseroscontrolAPIRequest 将 AlibabaAliqinFcIotUseroscontrolAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinFcIotUseroscontrolAPIRequest(v *AlibabaAliqinFcIotUseroscontrolAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinFcIotUseroscontrolAPIRequest.Put(v)
 }

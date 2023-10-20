@@ -9,11 +9,6 @@ import (
 // taobao.subway.crowdofflinenew.find
 //
 // 获取人群离线报表
-func TaobaoSubwayCrowdofflinenewFind(clt *core.SDKClient, req *simba.TaobaoSubwayCrowdofflinenewFindAPIRequest, session string) (*simba.TaobaoSubwayCrowdofflinenewFindAPIResponse, error) {
-	var resp simba.TaobaoSubwayCrowdofflinenewFindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSubwayCrowdofflinenewFind(clt *core.SDKClient, req *simba.TaobaoSubwayCrowdofflinenewFindAPIRequest, resp *simba.TaobaoSubwayCrowdofflinenewFindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

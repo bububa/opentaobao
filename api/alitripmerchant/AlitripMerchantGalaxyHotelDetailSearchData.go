@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.hotel.detail.search.data
 //
 // 星河服务，获取雅高酒店详细信息，详情页新改版接口
-func AlitripMerchantGalaxyHotelDetailSearchData(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyHotelDetailSearchDataAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyHotelDetailSearchDataAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyHotelDetailSearchDataAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyHotelDetailSearchData(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyHotelDetailSearchDataAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyHotelDetailSearchDataAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

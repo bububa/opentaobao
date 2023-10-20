@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type TaobaoSubwayAdgroupOfflineFindAPIRequest struct {
 // NewTaobaoSubwayAdgroupOfflineFindRequest 初始化TaobaoSubwayAdgroupOfflineFindAPIRequest对象
 func NewTaobaoSubwayAdgroupOfflineFindRequest() *TaobaoSubwayAdgroupOfflineFindAPIRequest {
 	return &TaobaoSubwayAdgroupOfflineFindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSubwayAdgroupOfflineFindAPIRequest) Reset() {
+	r._adgroupIdIn = r._adgroupIdIn[:0]
+	r._startTime = ""
+	r._endTime = ""
+	r._pvTypeIn = 0
+	r._offset = 0
+	r._pageSize = 0
+	r._effect = 0
+	r._campaignIdEqual = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *TaobaoSubwayAdgroupOfflineFindAPIRequest) SetCampaignIdEqual(_campaignI
 // GetCampaignIdEqual CampaignIdEqual Getter
 func (r TaobaoSubwayAdgroupOfflineFindAPIRequest) GetCampaignIdEqual() int64 {
 	return r._campaignIdEqual
+}
+
+var poolTaobaoSubwayAdgroupOfflineFindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSubwayAdgroupOfflineFindRequest()
+	},
+}
+
+// GetTaobaoSubwayAdgroupOfflineFindRequest 从 sync.Pool 获取 TaobaoSubwayAdgroupOfflineFindAPIRequest
+func GetTaobaoSubwayAdgroupOfflineFindAPIRequest() *TaobaoSubwayAdgroupOfflineFindAPIRequest {
+	return poolTaobaoSubwayAdgroupOfflineFindAPIRequest.Get().(*TaobaoSubwayAdgroupOfflineFindAPIRequest)
+}
+
+// ReleaseTaobaoSubwayAdgroupOfflineFindAPIRequest 将 TaobaoSubwayAdgroupOfflineFindAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSubwayAdgroupOfflineFindAPIRequest(v *TaobaoSubwayAdgroupOfflineFindAPIRequest) {
+	v.Reset()
+	poolTaobaoSubwayAdgroupOfflineFindAPIRequest.Put(v)
 }

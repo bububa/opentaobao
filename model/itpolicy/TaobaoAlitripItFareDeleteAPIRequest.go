@@ -2,6 +2,7 @@ package itpolicy
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoAlitripItFareDeleteAPIRequest struct {
 // NewTaobaoAlitripItFareDeleteRequest 初始化TaobaoAlitripItFareDeleteAPIRequest对象
 func NewTaobaoAlitripItFareDeleteRequest() *TaobaoAlitripItFareDeleteAPIRequest {
 	return &TaobaoAlitripItFareDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripItFareDeleteAPIRequest) Reset() {
+	r._extendAttributes = ""
+	r._outId = ""
+	r._fareId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoAlitripItFareDeleteAPIRequest) SetFareId(_fareId int64) error {
 // GetFareId FareId Getter
 func (r TaobaoAlitripItFareDeleteAPIRequest) GetFareId() int64 {
 	return r._fareId
+}
+
+var poolTaobaoAlitripItFareDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripItFareDeleteRequest()
+	},
+}
+
+// GetTaobaoAlitripItFareDeleteRequest 从 sync.Pool 获取 TaobaoAlitripItFareDeleteAPIRequest
+func GetTaobaoAlitripItFareDeleteAPIRequest() *TaobaoAlitripItFareDeleteAPIRequest {
+	return poolTaobaoAlitripItFareDeleteAPIRequest.Get().(*TaobaoAlitripItFareDeleteAPIRequest)
+}
+
+// ReleaseTaobaoAlitripItFareDeleteAPIRequest 将 TaobaoAlitripItFareDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripItFareDeleteAPIRequest(v *TaobaoAlitripItFareDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripItFareDeleteAPIRequest.Put(v)
 }

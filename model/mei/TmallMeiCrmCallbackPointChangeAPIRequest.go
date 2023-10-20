@@ -2,6 +2,7 @@ package mei
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TmallMeiCrmCallbackPointChangeAPIRequest struct {
 // NewTmallMeiCrmCallbackPointChangeRequest 初始化TmallMeiCrmCallbackPointChangeAPIRequest对象
 func NewTmallMeiCrmCallbackPointChangeRequest() *TmallMeiCrmCallbackPointChangeAPIRequest {
 	return &TmallMeiCrmCallbackPointChangeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallMeiCrmCallbackPointChangeAPIRequest) Reset() {
+	r._mixMobile = ""
+	r._errorCode = ""
+	r._extInfo = ""
+	r._recordId = 0
+	r._result = 0
+	r._point = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TmallMeiCrmCallbackPointChangeAPIRequest) SetPoint(_point int64) error 
 // GetPoint Point Getter
 func (r TmallMeiCrmCallbackPointChangeAPIRequest) GetPoint() int64 {
 	return r._point
+}
+
+var poolTmallMeiCrmCallbackPointChangeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallMeiCrmCallbackPointChangeRequest()
+	},
+}
+
+// GetTmallMeiCrmCallbackPointChangeRequest 从 sync.Pool 获取 TmallMeiCrmCallbackPointChangeAPIRequest
+func GetTmallMeiCrmCallbackPointChangeAPIRequest() *TmallMeiCrmCallbackPointChangeAPIRequest {
+	return poolTmallMeiCrmCallbackPointChangeAPIRequest.Get().(*TmallMeiCrmCallbackPointChangeAPIRequest)
+}
+
+// ReleaseTmallMeiCrmCallbackPointChangeAPIRequest 将 TmallMeiCrmCallbackPointChangeAPIRequest 放入 sync.Pool
+func ReleaseTmallMeiCrmCallbackPointChangeAPIRequest(v *TmallMeiCrmCallbackPointChangeAPIRequest) {
+	v.Reset()
+	poolTmallMeiCrmCallbackPointChangeAPIRequest.Put(v)
 }

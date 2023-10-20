@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // AlibabaWdkSkuCategoryDeleteApiResult 结构体
 type AlibabaWdkSkuCategoryDeleteApiResult struct {
 	// 错误码（只有有异常才有值）
@@ -10,4 +14,24 @@ type AlibabaWdkSkuCategoryDeleteApiResult struct {
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// 接口返回成功标志
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaWdkSkuCategoryDeleteApiResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkSkuCategoryDeleteApiResult)
+	},
+}
+
+// GetAlibabaWdkSkuCategoryDeleteApiResult() 从对象池中获取AlibabaWdkSkuCategoryDeleteApiResult
+func GetAlibabaWdkSkuCategoryDeleteApiResult() *AlibabaWdkSkuCategoryDeleteApiResult {
+	return poolAlibabaWdkSkuCategoryDeleteApiResult.Get().(*AlibabaWdkSkuCategoryDeleteApiResult)
+}
+
+// ReleaseAlibabaWdkSkuCategoryDeleteApiResult 释放AlibabaWdkSkuCategoryDeleteApiResult
+func ReleaseAlibabaWdkSkuCategoryDeleteApiResult(v *AlibabaWdkSkuCategoryDeleteApiResult) {
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.Model = ""
+	v.Success = false
+	poolAlibabaWdkSkuCategoryDeleteApiResult.Put(v)
 }

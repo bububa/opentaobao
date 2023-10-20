@@ -2,6 +2,7 @@ package user
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaBenefitSendAPIRequest struct {
 // NewAlibabaBenefitSendRequest 初始化AlibabaBenefitSendAPIRequest对象
 func NewAlibabaBenefitSendRequest() *AlibabaBenefitSendAPIRequest {
 	return &AlibabaBenefitSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaBenefitSendAPIRequest) Reset() {
+	r._rightEname = ""
+	r._receiverId = ""
+	r._userType = ""
+	r._uniqueId = ""
+	r._appName = ""
+	r._ip = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaBenefitSendAPIRequest) SetIp(_ip string) error {
 // GetIp Ip Getter
 func (r AlibabaBenefitSendAPIRequest) GetIp() string {
 	return r._ip
+}
+
+var poolAlibabaBenefitSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaBenefitSendRequest()
+	},
+}
+
+// GetAlibabaBenefitSendRequest 从 sync.Pool 获取 AlibabaBenefitSendAPIRequest
+func GetAlibabaBenefitSendAPIRequest() *AlibabaBenefitSendAPIRequest {
+	return poolAlibabaBenefitSendAPIRequest.Get().(*AlibabaBenefitSendAPIRequest)
+}
+
+// ReleaseAlibabaBenefitSendAPIRequest 将 AlibabaBenefitSendAPIRequest 放入 sync.Pool
+func ReleaseAlibabaBenefitSendAPIRequest(v *AlibabaBenefitSendAPIRequest) {
+	v.Reset()
+	poolAlibabaBenefitSendAPIRequest.Put(v)
 }

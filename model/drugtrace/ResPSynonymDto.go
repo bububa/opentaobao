@@ -1,7 +1,11 @@
 package drugtrace
 
-// ResPsynonymDto 结构体
-type ResPsynonymDto struct {
+import (
+	"sync"
+)
+
+// ResPSynonymDto 结构体
+type ResPSynonymDto struct {
 	// 企业名称
 	EntName string `json:"ent_name,omitempty" xml:"ent_name,omitempty"`
 	// 市
@@ -24,4 +28,31 @@ type ResPsynonymDto struct {
 	CrtDate string `json:"crt_date,omitempty" xml:"crt_date,omitempty"`
 	// 角色
 	UserRoleType string `json:"user_role_type,omitempty" xml:"user_role_type,omitempty"`
+}
+
+var poolResPSynonymDto = sync.Pool{
+	New: func() any {
+		return new(ResPSynonymDto)
+	},
+}
+
+// GetResPSynonymDto() 从对象池中获取ResPSynonymDto
+func GetResPSynonymDto() *ResPSynonymDto {
+	return poolResPSynonymDto.Get().(*ResPSynonymDto)
+}
+
+// ReleaseResPSynonymDto 释放ResPSynonymDto
+func ReleaseResPSynonymDto(v *ResPSynonymDto) {
+	v.EntName = ""
+	v.CityDesc = ""
+	v.ProvDesc = ""
+	v.AreaDesc = ""
+	v.EntId = ""
+	v.DictRegionCode = ""
+	v.RefEntId = ""
+	v.SynOwnEntId = ""
+	v.UserEntId = ""
+	v.CrtDate = ""
+	v.UserRoleType = ""
+	poolResPSynonymDto.Put(v)
 }

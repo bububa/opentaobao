@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // WorkOrderUnitContents 结构体
 type WorkOrderUnitContents struct {
 	// 商品名称
@@ -20,4 +24,29 @@ type WorkOrderUnitContents struct {
 	StockUnit string `json:"stock_unit,omitempty" xml:"stock_unit,omitempty"`
 	// 子订单号
 	OrderSubCode string `json:"order_sub_code,omitempty" xml:"order_sub_code,omitempty"`
+}
+
+var poolWorkOrderUnitContents = sync.Pool{
+	New: func() any {
+		return new(WorkOrderUnitContents)
+	},
+}
+
+// GetWorkOrderUnitContents() 从对象池中获取WorkOrderUnitContents
+func GetWorkOrderUnitContents() *WorkOrderUnitContents {
+	return poolWorkOrderUnitContents.Get().(*WorkOrderUnitContents)
+}
+
+// ReleaseWorkOrderUnitContents 释放WorkOrderUnitContents
+func ReleaseWorkOrderUnitContents(v *WorkOrderUnitContents) {
+	v.SkuName = ""
+	v.ExpectStockQuantity = ""
+	v.AttributeMap = ""
+	v.ExpectSaleQuantity = ""
+	v.WorkUnitContentId = ""
+	v.SaleUnit = ""
+	v.SkuCode = ""
+	v.StockUnit = ""
+	v.OrderSubCode = ""
+	poolWorkOrderUnitContents.Put(v)
 }

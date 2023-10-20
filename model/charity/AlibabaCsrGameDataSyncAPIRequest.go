@@ -2,6 +2,7 @@ package charity
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCsrGameDataSyncAPIRequest struct {
 // NewAlibabaCsrGameDataSyncRequest 初始化AlibabaCsrGameDataSyncAPIRequest对象
 func NewAlibabaCsrGameDataSyncRequest() *AlibabaCsrGameDataSyncAPIRequest {
 	return &AlibabaCsrGameDataSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCsrGameDataSyncAPIRequest) Reset() {
+	r._snakeDataSyncRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCsrGameDataSyncAPIRequest) SetSnakeDataSyncRequest(_snakeDataSyn
 // GetSnakeDataSyncRequest SnakeDataSyncRequest Getter
 func (r AlibabaCsrGameDataSyncAPIRequest) GetSnakeDataSyncRequest() *SnakeDataSyncRequest {
 	return r._snakeDataSyncRequest
+}
+
+var poolAlibabaCsrGameDataSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCsrGameDataSyncRequest()
+	},
+}
+
+// GetAlibabaCsrGameDataSyncRequest 从 sync.Pool 获取 AlibabaCsrGameDataSyncAPIRequest
+func GetAlibabaCsrGameDataSyncAPIRequest() *AlibabaCsrGameDataSyncAPIRequest {
+	return poolAlibabaCsrGameDataSyncAPIRequest.Get().(*AlibabaCsrGameDataSyncAPIRequest)
+}
+
+// ReleaseAlibabaCsrGameDataSyncAPIRequest 将 AlibabaCsrGameDataSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCsrGameDataSyncAPIRequest(v *AlibabaCsrGameDataSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaCsrGameDataSyncAPIRequest.Put(v)
 }

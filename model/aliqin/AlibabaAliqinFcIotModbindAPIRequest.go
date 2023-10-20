@@ -2,6 +2,7 @@ package aliqin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AlibabaAliqinFcIotModbindAPIRequest struct {
 // NewAlibabaAliqinFcIotModbindRequest 初始化AlibabaAliqinFcIotModbindAPIRequest对象
 func NewAlibabaAliqinFcIotModbindRequest() *AlibabaAliqinFcIotModbindAPIRequest {
 	return &AlibabaAliqinFcIotModbindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinFcIotModbindAPIRequest) Reset() {
+	r._opionType = ""
+	r._billReal = ""
+	r._iccid = ""
+	r._newimei = ""
+	r._imei = ""
+	r._billSource = ""
+	r._midPatChannel = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AlibabaAliqinFcIotModbindAPIRequest) SetMidPatChannel(_midPatChannel st
 // GetMidPatChannel MidPatChannel Getter
 func (r AlibabaAliqinFcIotModbindAPIRequest) GetMidPatChannel() string {
 	return r._midPatChannel
+}
+
+var poolAlibabaAliqinFcIotModbindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinFcIotModbindRequest()
+	},
+}
+
+// GetAlibabaAliqinFcIotModbindRequest 从 sync.Pool 获取 AlibabaAliqinFcIotModbindAPIRequest
+func GetAlibabaAliqinFcIotModbindAPIRequest() *AlibabaAliqinFcIotModbindAPIRequest {
+	return poolAlibabaAliqinFcIotModbindAPIRequest.Get().(*AlibabaAliqinFcIotModbindAPIRequest)
+}
+
+// ReleaseAlibabaAliqinFcIotModbindAPIRequest 将 AlibabaAliqinFcIotModbindAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinFcIotModbindAPIRequest(v *AlibabaAliqinFcIotModbindAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinFcIotModbindAPIRequest.Put(v)
 }

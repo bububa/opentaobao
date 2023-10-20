@@ -2,6 +2,7 @@ package smartstore
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallPopupstoreActivityQueryAPIResponse struct {
 	TmallPopupstoreActivityQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallPopupstoreActivityQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallPopupstoreActivityQueryAPIResponseModel).Reset()
+}
+
 // TmallPopupstoreActivityQueryAPIResponseModel is 查询某段时间内的快闪活动列表 成功返回结果
 type TmallPopupstoreActivityQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_popupstore_activity_query_response"`
@@ -22,4 +29,27 @@ type TmallPopupstoreActivityQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 出参对象
 	ResultDto *TmallPopupstoreActivityQueryResultDto `json:"result_dto,omitempty" xml:"result_dto,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallPopupstoreActivityQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultDto = nil
+}
+
+var poolTmallPopupstoreActivityQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallPopupstoreActivityQueryAPIResponse)
+	},
+}
+
+// GetTmallPopupstoreActivityQueryAPIResponse 从 sync.Pool 获取 TmallPopupstoreActivityQueryAPIResponse
+func GetTmallPopupstoreActivityQueryAPIResponse() *TmallPopupstoreActivityQueryAPIResponse {
+	return poolTmallPopupstoreActivityQueryAPIResponse.Get().(*TmallPopupstoreActivityQueryAPIResponse)
+}
+
+// ReleaseTmallPopupstoreActivityQueryAPIResponse 将 TmallPopupstoreActivityQueryAPIResponse 保存到 sync.Pool
+func ReleaseTmallPopupstoreActivityQueryAPIResponse(v *TmallPopupstoreActivityQueryAPIResponse) {
+	v.Reset()
+	poolTmallPopupstoreActivityQueryAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package aliqin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type AlibabaAliqinFcIvrNumCallAPIRequest struct {
 // NewAlibabaAliqinFcIvrNumCallRequest 初始化AlibabaAliqinFcIvrNumCallAPIRequest对象
 func NewAlibabaAliqinFcIvrNumCallRequest() *AlibabaAliqinFcIvrNumCallAPIRequest {
 	return &AlibabaAliqinFcIvrNumCallAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinFcIvrNumCallAPIRequest) Reset() {
+	r._calledNumber = ""
+	r._calledShowNumber = ""
+	r._useTts = ""
+	r._menuCode = ""
+	r._sessionTimeOut = ""
+	r._extend = ""
+	r._byeCode = ""
+	r._menuArgs = ""
+	r._params = ""
+	r._serviceNumber = ""
+	r._playTimes = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *AlibabaAliqinFcIvrNumCallAPIRequest) SetPlayTimes(_playTimes int64) err
 // GetPlayTimes PlayTimes Getter
 func (r AlibabaAliqinFcIvrNumCallAPIRequest) GetPlayTimes() int64 {
 	return r._playTimes
+}
+
+var poolAlibabaAliqinFcIvrNumCallAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinFcIvrNumCallRequest()
+	},
+}
+
+// GetAlibabaAliqinFcIvrNumCallRequest 从 sync.Pool 获取 AlibabaAliqinFcIvrNumCallAPIRequest
+func GetAlibabaAliqinFcIvrNumCallAPIRequest() *AlibabaAliqinFcIvrNumCallAPIRequest {
+	return poolAlibabaAliqinFcIvrNumCallAPIRequest.Get().(*AlibabaAliqinFcIvrNumCallAPIRequest)
+}
+
+// ReleaseAlibabaAliqinFcIvrNumCallAPIRequest 将 AlibabaAliqinFcIvrNumCallAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinFcIvrNumCallAPIRequest(v *AlibabaAliqinFcIvrNumCallAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinFcIvrNumCallAPIRequest.Put(v)
 }

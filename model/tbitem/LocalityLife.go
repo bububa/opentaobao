@@ -1,5 +1,9 @@
 package tbitem
 
+import (
+	"sync"
+)
+
 // LocalityLife 结构体
 type LocalityLife struct {
 	// 表示是否使用邮寄 0: 代表不使用邮寄； 1：代表使用邮寄；如果不设置这个值，代表不使用邮寄
@@ -20,4 +24,29 @@ type LocalityLife struct {
 	OnsaleAutoRefundRatio int64 `json:"onsale_auto_refund_ratio,omitempty" xml:"onsale_auto_refund_ratio,omitempty"`
 	// 退款比例，百分比%前的数字，1-100的正整数值；在参数empty_fields里设置locality_life.refund_ratio可删除退款比例
 	RefundRatio int64 `json:"refund_ratio,omitempty" xml:"refund_ratio,omitempty"`
+}
+
+var poolLocalityLife = sync.Pool{
+	New: func() any {
+		return new(LocalityLife)
+	},
+}
+
+// GetLocalityLife() 从对象池中获取LocalityLife
+func GetLocalityLife() *LocalityLife {
+	return poolLocalityLife.Get().(*LocalityLife)
+}
+
+// ReleaseLocalityLife 释放LocalityLife
+func ReleaseLocalityLife(v *LocalityLife) {
+	v.ChooseLogis = ""
+	v.Eticket = ""
+	v.Expirydate = ""
+	v.Merchant = ""
+	v.NetworkId = ""
+	v.Refundmafee = ""
+	v.Verification = ""
+	v.OnsaleAutoRefundRatio = 0
+	v.RefundRatio = 0
+	poolLocalityLife.Put(v)
 }

@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // ServiceContractDo 结构体
 type ServiceContractDo struct {
 	// 服务电话
@@ -116,4 +120,77 @@ type ServiceContractDo struct {
 	ServiceOrderId int64 `json:"service_order_id,omitempty" xml:"service_order_id,omitempty"`
 	// 服务商编号
 	TpId int64 `json:"tp_id,omitempty" xml:"tp_id,omitempty"`
+}
+
+var poolServiceContractDo = sync.Pool{
+	New: func() any {
+		return new(ServiceContractDo)
+	},
+}
+
+// GetServiceContractDo() 从对象池中获取ServiceContractDo
+func GetServiceContractDo() *ServiceContractDo {
+	return poolServiceContractDo.Get().(*ServiceContractDo)
+}
+
+// ReleaseServiceContractDo 释放ServiceContractDo
+func ReleaseServiceContractDo(v *ServiceContractDo) {
+	v.ServicePhone = ""
+	v.ServiceName = ""
+	v.BuyerMobile = ""
+	v.BuyerAddress = ""
+	v.SellerNick = ""
+	v.TpFeedbackInfo = ""
+	v.AuctionSerialNum = ""
+	v.SellerPhone = ""
+	v.ReceiveTime = ""
+	v.PayTime = ""
+	v.Content = ""
+	v.EffectDate = ""
+	v.GmtCreate = ""
+	v.Category = ""
+	v.TpName = ""
+	v.CancelMemo = ""
+	v.ContractUrl = ""
+	v.Canceler = ""
+	v.ServiceProduct = ""
+	v.ExpireDate = ""
+	v.Memo = ""
+	v.Attribute = ""
+	v.BuyerZipCode = ""
+	v.BuyerPhone = ""
+	v.GmtModify = ""
+	v.Name = ""
+	v.AuctionName = ""
+	v.BuyerName = ""
+	v.BuyerMail = ""
+	v.ContractMemo = ""
+	v.ShopName = ""
+	v.ModelNumber = ""
+	v.SellerMobile = ""
+	v.Brand = ""
+	v.CancelDate = ""
+	v.ContractStatus = 0
+	v.ServiceCount = 0
+	v.BuyAmount = 0
+	v.ContractPrice = 0
+	v.AuctionPrice = 0
+	v.ContractType = 0
+	v.ExtPrice = 0
+	v.PayTimeNumber = 0
+	v.Flag = 0
+	v.AuctionId = 0
+	v.SellerId = 0
+	v.ContractNo = 0
+	v.OrderRelationId = 0
+	v.ReceiveTimeNumber = 0
+	v.Id = 0
+	v.EffectDateNumber = 0
+	v.ExpireDateNumber = 0
+	v.LifeCycle = 0
+	v.ParentBizOrderId = 0
+	v.BizOrderId = 0
+	v.ServiceOrderId = 0
+	v.TpId = 0
+	poolServiceContractDo.Put(v)
 }

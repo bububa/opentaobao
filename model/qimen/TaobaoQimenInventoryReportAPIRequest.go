@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQimenInventoryReportAPIRequest struct {
 // NewTaobaoQimenInventoryReportRequest 初始化TaobaoQimenInventoryReportAPIRequest对象
 func NewTaobaoQimenInventoryReportRequest() *TaobaoQimenInventoryReportAPIRequest {
 	return &TaobaoQimenInventoryReportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenInventoryReportAPIRequest) Reset() {
+	r._request = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -50,4 +57,21 @@ func (r *TaobaoQimenInventoryReportAPIRequest) SetRequest(_request *InventoryRep
 // GetRequest Request Getter
 func (r TaobaoQimenInventoryReportAPIRequest) GetRequest() *InventoryReportRequest {
 	return r._request
+}
+
+var poolTaobaoQimenInventoryReportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenInventoryReportRequest()
+	},
+}
+
+// GetTaobaoQimenInventoryReportRequest 从 sync.Pool 获取 TaobaoQimenInventoryReportAPIRequest
+func GetTaobaoQimenInventoryReportAPIRequest() *TaobaoQimenInventoryReportAPIRequest {
+	return poolTaobaoQimenInventoryReportAPIRequest.Get().(*TaobaoQimenInventoryReportAPIRequest)
+}
+
+// ReleaseTaobaoQimenInventoryReportAPIRequest 将 TaobaoQimenInventoryReportAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenInventoryReportAPIRequest(v *TaobaoQimenInventoryReportAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenInventoryReportAPIRequest.Put(v)
 }

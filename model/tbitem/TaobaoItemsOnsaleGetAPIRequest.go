@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -51,8 +52,29 @@ type TaobaoItemsOnsaleGetAPIRequest struct {
 // NewTaobaoItemsOnsaleGetRequest 初始化TaobaoItemsOnsaleGetAPIRequest对象
 func NewTaobaoItemsOnsaleGetRequest() *TaobaoItemsOnsaleGetAPIRequest {
 	return &TaobaoItemsOnsaleGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(16),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoItemsOnsaleGetAPIRequest) Reset() {
+	r._fields = ""
+	r._q = ""
+	r._sellerCids = ""
+	r._orderBy = ""
+	r._startModified = ""
+	r._endModified = ""
+	r._auctionType = ""
+	r._cid = 0
+	r._pageNo = 0
+	r._pageSize = 0
+	r._hasDiscount = false
+	r._hasShowcase = false
+	r._isTaobao = false
+	r._isEx = false
+	r._isCspu = false
+	r._isCombine = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -278,4 +300,21 @@ func (r *TaobaoItemsOnsaleGetAPIRequest) SetIsCombine(_isCombine bool) error {
 // GetIsCombine IsCombine Getter
 func (r TaobaoItemsOnsaleGetAPIRequest) GetIsCombine() bool {
 	return r._isCombine
+}
+
+var poolTaobaoItemsOnsaleGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoItemsOnsaleGetRequest()
+	},
+}
+
+// GetTaobaoItemsOnsaleGetRequest 从 sync.Pool 获取 TaobaoItemsOnsaleGetAPIRequest
+func GetTaobaoItemsOnsaleGetAPIRequest() *TaobaoItemsOnsaleGetAPIRequest {
+	return poolTaobaoItemsOnsaleGetAPIRequest.Get().(*TaobaoItemsOnsaleGetAPIRequest)
+}
+
+// ReleaseTaobaoItemsOnsaleGetAPIRequest 将 TaobaoItemsOnsaleGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoItemsOnsaleGetAPIRequest(v *TaobaoItemsOnsaleGetAPIRequest) {
+	v.Reset()
+	poolTaobaoItemsOnsaleGetAPIRequest.Put(v)
 }

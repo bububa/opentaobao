@@ -2,6 +2,7 @@ package qianniu
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQncopilotPictureAuditAPIRequest struct {
 // NewTaobaoQncopilotPictureAuditRequest 初始化TaobaoQncopilotPictureAuditAPIRequest对象
 func NewTaobaoQncopilotPictureAuditRequest() *TaobaoQncopilotPictureAuditAPIRequest {
 	return &TaobaoQncopilotPictureAuditAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQncopilotPictureAuditAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoQncopilotPictureAuditAPIRequest) SetParam(_param *PicAuditParam) 
 // GetParam Param Getter
 func (r TaobaoQncopilotPictureAuditAPIRequest) GetParam() *PicAuditParam {
 	return r._param
+}
+
+var poolTaobaoQncopilotPictureAuditAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQncopilotPictureAuditRequest()
+	},
+}
+
+// GetTaobaoQncopilotPictureAuditRequest 从 sync.Pool 获取 TaobaoQncopilotPictureAuditAPIRequest
+func GetTaobaoQncopilotPictureAuditAPIRequest() *TaobaoQncopilotPictureAuditAPIRequest {
+	return poolTaobaoQncopilotPictureAuditAPIRequest.Get().(*TaobaoQncopilotPictureAuditAPIRequest)
+}
+
+// ReleaseTaobaoQncopilotPictureAuditAPIRequest 将 TaobaoQncopilotPictureAuditAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQncopilotPictureAuditAPIRequest(v *TaobaoQncopilotPictureAuditAPIRequest) {
+	v.Reset()
+	poolTaobaoQncopilotPictureAuditAPIRequest.Put(v)
 }

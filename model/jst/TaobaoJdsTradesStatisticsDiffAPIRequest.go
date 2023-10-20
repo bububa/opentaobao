@@ -2,6 +2,7 @@ package jst
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoJdsTradesStatisticsDiffAPIRequest struct {
 // NewTaobaoJdsTradesStatisticsDiffRequest 初始化TaobaoJdsTradesStatisticsDiffAPIRequest对象
 func NewTaobaoJdsTradesStatisticsDiffRequest() *TaobaoJdsTradesStatisticsDiffAPIRequest {
 	return &TaobaoJdsTradesStatisticsDiffAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJdsTradesStatisticsDiffAPIRequest) Reset() {
+	r._postStatus = ""
+	r._preStatus = ""
+	r._date = 0
+	r._pageNo = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoJdsTradesStatisticsDiffAPIRequest) SetPageNo(_pageNo int64) error
 // GetPageNo PageNo Getter
 func (r TaobaoJdsTradesStatisticsDiffAPIRequest) GetPageNo() int64 {
 	return r._pageNo
+}
+
+var poolTaobaoJdsTradesStatisticsDiffAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJdsTradesStatisticsDiffRequest()
+	},
+}
+
+// GetTaobaoJdsTradesStatisticsDiffRequest 从 sync.Pool 获取 TaobaoJdsTradesStatisticsDiffAPIRequest
+func GetTaobaoJdsTradesStatisticsDiffAPIRequest() *TaobaoJdsTradesStatisticsDiffAPIRequest {
+	return poolTaobaoJdsTradesStatisticsDiffAPIRequest.Get().(*TaobaoJdsTradesStatisticsDiffAPIRequest)
+}
+
+// ReleaseTaobaoJdsTradesStatisticsDiffAPIRequest 将 TaobaoJdsTradesStatisticsDiffAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJdsTradesStatisticsDiffAPIRequest(v *TaobaoJdsTradesStatisticsDiffAPIRequest) {
+	v.Reset()
+	poolTaobaoJdsTradesStatisticsDiffAPIRequest.Put(v)
 }

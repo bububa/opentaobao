@@ -2,6 +2,7 @@ package smartstore
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -20,8 +21,14 @@ type TaobaoIstoreAreasGetAPIRequest struct {
 // NewTaobaoIstoreAreasGetRequest 初始化TaobaoIstoreAreasGetAPIRequest对象
 func NewTaobaoIstoreAreasGetRequest() *TaobaoIstoreAreasGetAPIRequest {
 	return &TaobaoIstoreAreasGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoIstoreAreasGetAPIRequest) Reset() {
+	r._fields = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -52,4 +59,21 @@ func (r *TaobaoIstoreAreasGetAPIRequest) SetFields(_fields string) error {
 // GetFields Fields Getter
 func (r TaobaoIstoreAreasGetAPIRequest) GetFields() string {
 	return r._fields
+}
+
+var poolTaobaoIstoreAreasGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoIstoreAreasGetRequest()
+	},
+}
+
+// GetTaobaoIstoreAreasGetRequest 从 sync.Pool 获取 TaobaoIstoreAreasGetAPIRequest
+func GetTaobaoIstoreAreasGetAPIRequest() *TaobaoIstoreAreasGetAPIRequest {
+	return poolTaobaoIstoreAreasGetAPIRequest.Get().(*TaobaoIstoreAreasGetAPIRequest)
+}
+
+// ReleaseTaobaoIstoreAreasGetAPIRequest 将 TaobaoIstoreAreasGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoIstoreAreasGetAPIRequest(v *TaobaoIstoreAreasGetAPIRequest) {
+	v.Reset()
+	poolTaobaoIstoreAreasGetAPIRequest.Put(v)
 }

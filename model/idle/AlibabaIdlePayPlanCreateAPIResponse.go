@@ -2,6 +2,7 @@ package idle
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,6 +18,12 @@ type AlibabaIdlePayPlanCreateAPIResponse struct {
 	AlibabaIdlePayPlanCreateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaIdlePayPlanCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaIdlePayPlanCreateAPIResponseModel).Reset()
+}
+
 // AlibabaIdlePayPlanCreateAPIResponseModel is 创建代扣计划 成功返回结果
 type AlibabaIdlePayPlanCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_idle_pay_plan_create_response"`
@@ -24,4 +31,27 @@ type AlibabaIdlePayPlanCreateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *AlibabaIdlePayPlanCreateResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaIdlePayPlanCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaIdlePayPlanCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaIdlePayPlanCreateAPIResponse)
+	},
+}
+
+// GetAlibabaIdlePayPlanCreateAPIResponse 从 sync.Pool 获取 AlibabaIdlePayPlanCreateAPIResponse
+func GetAlibabaIdlePayPlanCreateAPIResponse() *AlibabaIdlePayPlanCreateAPIResponse {
+	return poolAlibabaIdlePayPlanCreateAPIResponse.Get().(*AlibabaIdlePayPlanCreateAPIResponse)
+}
+
+// ReleaseAlibabaIdlePayPlanCreateAPIResponse 将 AlibabaIdlePayPlanCreateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaIdlePayPlanCreateAPIResponse(v *AlibabaIdlePayPlanCreateAPIResponse) {
+	v.Reset()
+	poolAlibabaIdlePayPlanCreateAPIResponse.Put(v)
 }

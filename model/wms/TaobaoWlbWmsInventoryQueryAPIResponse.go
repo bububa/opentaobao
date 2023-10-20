@@ -2,6 +2,7 @@ package wms
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoWlbWmsInventoryQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbWmsInventoryQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoWlbWmsInventoryQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoWlbWmsInventoryQueryAPIResponseModel).Reset()
 }
 
 // TaobaoWlbWmsInventoryQueryAPIResponseModel is 菜鸟商品库存查询 成功返回结果
@@ -30,4 +37,31 @@ type TaobaoWlbWmsInventoryQueryAPIResponseModel struct {
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// 是否成功
 	WlSuccess bool `json:"wl_success,omitempty" xml:"wl_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoWlbWmsInventoryQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ItemList = m.ItemList[:0]
+	m.WlErrorCode = ""
+	m.WlErrorMsg = ""
+	m.TotalCount = 0
+	m.WlSuccess = false
+}
+
+var poolTaobaoWlbWmsInventoryQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoWlbWmsInventoryQueryAPIResponse)
+	},
+}
+
+// GetTaobaoWlbWmsInventoryQueryAPIResponse 从 sync.Pool 获取 TaobaoWlbWmsInventoryQueryAPIResponse
+func GetTaobaoWlbWmsInventoryQueryAPIResponse() *TaobaoWlbWmsInventoryQueryAPIResponse {
+	return poolTaobaoWlbWmsInventoryQueryAPIResponse.Get().(*TaobaoWlbWmsInventoryQueryAPIResponse)
+}
+
+// ReleaseTaobaoWlbWmsInventoryQueryAPIResponse 将 TaobaoWlbWmsInventoryQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoWlbWmsInventoryQueryAPIResponse(v *TaobaoWlbWmsInventoryQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoWlbWmsInventoryQueryAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaEinvoiceClosereqAPIRequest struct {
 // NewAlibabaEinvoiceClosereqRequest 初始化AlibabaEinvoiceClosereqAPIRequest对象
 func NewAlibabaEinvoiceClosereqRequest() *AlibabaEinvoiceClosereqAPIRequest {
 	return &AlibabaEinvoiceClosereqAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceClosereqAPIRequest) Reset() {
+	r._serialNo = ""
+	r._payeeRegisterNo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaEinvoiceClosereqAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo 
 // GetPayeeRegisterNo PayeeRegisterNo Getter
 func (r AlibabaEinvoiceClosereqAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
+}
+
+var poolAlibabaEinvoiceClosereqAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceClosereqRequest()
+	},
+}
+
+// GetAlibabaEinvoiceClosereqRequest 从 sync.Pool 获取 AlibabaEinvoiceClosereqAPIRequest
+func GetAlibabaEinvoiceClosereqAPIRequest() *AlibabaEinvoiceClosereqAPIRequest {
+	return poolAlibabaEinvoiceClosereqAPIRequest.Get().(*AlibabaEinvoiceClosereqAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceClosereqAPIRequest 将 AlibabaEinvoiceClosereqAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceClosereqAPIRequest(v *AlibabaEinvoiceClosereqAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceClosereqAPIRequest.Put(v)
 }

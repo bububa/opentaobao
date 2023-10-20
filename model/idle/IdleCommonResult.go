@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // IdleCommonResult 结构体
 type IdleCommonResult struct {
 	// 错误码
@@ -12,4 +16,25 @@ type IdleCommonResult struct {
 	Data int64 `json:"data,omitempty" xml:"data,omitempty"`
 	// 成功
 	RespSuccess bool `json:"resp_success,omitempty" xml:"resp_success,omitempty"`
+}
+
+var poolIdleCommonResult = sync.Pool{
+	New: func() any {
+		return new(IdleCommonResult)
+	},
+}
+
+// GetIdleCommonResult() 从对象池中获取IdleCommonResult
+func GetIdleCommonResult() *IdleCommonResult {
+	return poolIdleCommonResult.Get().(*IdleCommonResult)
+}
+
+// ReleaseIdleCommonResult 释放IdleCommonResult
+func ReleaseIdleCommonResult(v *IdleCommonResult) {
+	v.ErrCodeInfo = ""
+	v.Context = ""
+	v.ErrMsgInfo = ""
+	v.Data = 0
+	v.RespSuccess = false
+	poolIdleCommonResult.Put(v)
 }

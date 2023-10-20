@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // AliexpressPaymentExchangeGetModule 结构体
 type AliexpressPaymentExchangeGetModule struct {
 	// 报价币种
@@ -20,4 +24,29 @@ type AliexpressPaymentExchangeGetModule struct {
 	ExchangeRateNo string `json:"exchange_rate_no,omitempty" xml:"exchange_rate_no,omitempty"`
 	// 是否可交易
 	Tradable bool `json:"tradable,omitempty" xml:"tradable,omitempty"`
+}
+
+var poolAliexpressPaymentExchangeGetModule = sync.Pool{
+	New: func() any {
+		return new(AliexpressPaymentExchangeGetModule)
+	},
+}
+
+// GetAliexpressPaymentExchangeGetModule() 从对象池中获取AliexpressPaymentExchangeGetModule
+func GetAliexpressPaymentExchangeGetModule() *AliexpressPaymentExchangeGetModule {
+	return poolAliexpressPaymentExchangeGetModule.Get().(*AliexpressPaymentExchangeGetModule)
+}
+
+// ReleaseAliexpressPaymentExchangeGetModule 释放AliexpressPaymentExchangeGetModule
+func ReleaseAliexpressPaymentExchangeGetModule(v *AliexpressPaymentExchangeGetModule) {
+	v.QuoteCurrency = ""
+	v.InstExchangeRateNo = ""
+	v.ExpireTime = ""
+	v.ThresholdTime = ""
+	v.Rate = ""
+	v.ValidTime = ""
+	v.BaseCurrency = ""
+	v.ExchangeRateNo = ""
+	v.Tradable = false
+	poolAliexpressPaymentExchangeGetModule.Put(v)
 }

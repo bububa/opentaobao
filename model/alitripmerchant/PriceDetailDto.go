@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // PriceDetailDto 结构体
 type PriceDetailDto struct {
 	// 每日价格
@@ -26,4 +30,32 @@ type PriceDetailDto struct {
 	RoomNum int64 `json:"room_num,omitempty" xml:"room_num,omitempty"`
 	// 房间属性
 	RoomProperty *DailyPrice `json:"room_property,omitempty" xml:"room_property,omitempty"`
+}
+
+var poolPriceDetailDto = sync.Pool{
+	New: func() any {
+		return new(PriceDetailDto)
+	},
+}
+
+// GetPriceDetailDto() 从对象池中获取PriceDetailDto
+func GetPriceDetailDto() *PriceDetailDto {
+	return poolPriceDetailDto.Get().(*PriceDetailDto)
+}
+
+// ReleasePriceDetailDto 释放PriceDetailDto
+func ReleasePriceDetailDto(v *PriceDetailDto) {
+	v.DailyPrices = v.DailyPrices[:0]
+	v.Pics = v.Pics[:0]
+	v.FacilityGroupList = v.FacilityGroupList[:0]
+	v.TotalPrice = ""
+	v.TotalTax = ""
+	v.TotalRoomPrice = ""
+	v.Currency = ""
+	v.RoomName = ""
+	v.RpName = ""
+	v.Days = 0
+	v.RoomNum = 0
+	v.RoomProperty = nil
+	poolPriceDetailDto.Put(v)
 }

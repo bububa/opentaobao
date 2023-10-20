@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoOmniorderAllocatedinfoSyncAPIRequest struct {
 // NewTaobaoOmniorderAllocatedinfoSyncRequest 初始化TaobaoOmniorderAllocatedinfoSyncAPIRequest对象
 func NewTaobaoOmniorderAllocatedinfoSyncRequest() *TaobaoOmniorderAllocatedinfoSyncAPIRequest {
 	return &TaobaoOmniorderAllocatedinfoSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOmniorderAllocatedinfoSyncAPIRequest) Reset() {
+	r._subOrderList = r._subOrderList[:0]
+	r._traceId = ""
+	r._status = ""
+	r._message = ""
+	r._tid = 0
+	r._reportTimestamp = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoOmniorderAllocatedinfoSyncAPIRequest) SetReportTimestamp(_reportT
 // GetReportTimestamp ReportTimestamp Getter
 func (r TaobaoOmniorderAllocatedinfoSyncAPIRequest) GetReportTimestamp() int64 {
 	return r._reportTimestamp
+}
+
+var poolTaobaoOmniorderAllocatedinfoSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOmniorderAllocatedinfoSyncRequest()
+	},
+}
+
+// GetTaobaoOmniorderAllocatedinfoSyncRequest 从 sync.Pool 获取 TaobaoOmniorderAllocatedinfoSyncAPIRequest
+func GetTaobaoOmniorderAllocatedinfoSyncAPIRequest() *TaobaoOmniorderAllocatedinfoSyncAPIRequest {
+	return poolTaobaoOmniorderAllocatedinfoSyncAPIRequest.Get().(*TaobaoOmniorderAllocatedinfoSyncAPIRequest)
+}
+
+// ReleaseTaobaoOmniorderAllocatedinfoSyncAPIRequest 将 TaobaoOmniorderAllocatedinfoSyncAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOmniorderAllocatedinfoSyncAPIRequest(v *TaobaoOmniorderAllocatedinfoSyncAPIRequest) {
+	v.Reset()
+	poolTaobaoOmniorderAllocatedinfoSyncAPIRequest.Put(v)
 }

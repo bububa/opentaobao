@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsWarehouseCapacityRuleUpdateAPIRequest struct {
 // NewTaobaoLogisticsWarehouseCapacityRuleUpdateRequest 初始化TaobaoLogisticsWarehouseCapacityRuleUpdateAPIRequest对象
 func NewTaobaoLogisticsWarehouseCapacityRuleUpdateRequest() *TaobaoLogisticsWarehouseCapacityRuleUpdateAPIRequest {
 	return &TaobaoLogisticsWarehouseCapacityRuleUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsWarehouseCapacityRuleUpdateAPIRequest) Reset() {
+	r._capacityRuleUpdateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsWarehouseCapacityRuleUpdateAPIRequest) SetCapacityRuleUp
 // GetCapacityRuleUpdateRequest CapacityRuleUpdateRequest Getter
 func (r TaobaoLogisticsWarehouseCapacityRuleUpdateAPIRequest) GetCapacityRuleUpdateRequest() *CapacityRuleUpdateRequest {
 	return r._capacityRuleUpdateRequest
+}
+
+var poolTaobaoLogisticsWarehouseCapacityRuleUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsWarehouseCapacityRuleUpdateRequest()
+	},
+}
+
+// GetTaobaoLogisticsWarehouseCapacityRuleUpdateRequest 从 sync.Pool 获取 TaobaoLogisticsWarehouseCapacityRuleUpdateAPIRequest
+func GetTaobaoLogisticsWarehouseCapacityRuleUpdateAPIRequest() *TaobaoLogisticsWarehouseCapacityRuleUpdateAPIRequest {
+	return poolTaobaoLogisticsWarehouseCapacityRuleUpdateAPIRequest.Get().(*TaobaoLogisticsWarehouseCapacityRuleUpdateAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsWarehouseCapacityRuleUpdateAPIRequest 将 TaobaoLogisticsWarehouseCapacityRuleUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsWarehouseCapacityRuleUpdateAPIRequest(v *TaobaoLogisticsWarehouseCapacityRuleUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsWarehouseCapacityRuleUpdateAPIRequest.Put(v)
 }

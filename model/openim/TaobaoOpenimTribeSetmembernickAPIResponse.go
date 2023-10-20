@@ -2,6 +2,7 @@ package openim
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,6 +18,12 @@ type TaobaoOpenimTribeSetmembernickAPIResponse struct {
 	TaobaoOpenimTribeSetmembernickAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoOpenimTribeSetmembernickAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOpenimTribeSetmembernickAPIResponseModel).Reset()
+}
+
 // TaobaoOpenimTribeSetmembernickAPIResponseModel is 设置群成员昵称 成功返回结果
 type TaobaoOpenimTribeSetmembernickAPIResponseModel struct {
 	XMLName xml.Name `xml:"openim_tribe_setmembernick_response"`
@@ -24,4 +31,27 @@ type TaobaoOpenimTribeSetmembernickAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 是否成功
 	TribeCode int64 `json:"tribe_code,omitempty" xml:"tribe_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOpenimTribeSetmembernickAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TribeCode = 0
+}
+
+var poolTaobaoOpenimTribeSetmembernickAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOpenimTribeSetmembernickAPIResponse)
+	},
+}
+
+// GetTaobaoOpenimTribeSetmembernickAPIResponse 从 sync.Pool 获取 TaobaoOpenimTribeSetmembernickAPIResponse
+func GetTaobaoOpenimTribeSetmembernickAPIResponse() *TaobaoOpenimTribeSetmembernickAPIResponse {
+	return poolTaobaoOpenimTribeSetmembernickAPIResponse.Get().(*TaobaoOpenimTribeSetmembernickAPIResponse)
+}
+
+// ReleaseTaobaoOpenimTribeSetmembernickAPIResponse 将 TaobaoOpenimTribeSetmembernickAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOpenimTribeSetmembernickAPIResponse(v *TaobaoOpenimTribeSetmembernickAPIResponse) {
+	v.Reset()
+	poolTaobaoOpenimTribeSetmembernickAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package kclub
 
+import (
+	"sync"
+)
+
 // KcQaSolutionDto 结构体
 type KcQaSolutionDto struct {
 	// 子知识编辑时间
@@ -24,4 +28,31 @@ type KcQaSolutionDto struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 子知识答案内容类型
 	ContentType int64 `json:"content_type,omitempty" xml:"content_type,omitempty"`
+}
+
+var poolKcQaSolutionDto = sync.Pool{
+	New: func() any {
+		return new(KcQaSolutionDto)
+	},
+}
+
+// GetKcQaSolutionDto() 从对象池中获取KcQaSolutionDto
+func GetKcQaSolutionDto() *KcQaSolutionDto {
+	return poolKcQaSolutionDto.Get().(*KcQaSolutionDto)
+}
+
+// ReleaseKcQaSolutionDto 释放KcQaSolutionDto
+func ReleaseKcQaSolutionDto(v *KcQaSolutionDto) {
+	v.GmtModified = ""
+	v.GmtCreate = ""
+	v.PlainText = ""
+	v.Summary = ""
+	v.ExtraContent = ""
+	v.ContentView = ""
+	v.Content = ""
+	v.QuestionId = 0
+	v.Id = 0
+	v.Type = 0
+	v.ContentType = 0
+	poolKcQaSolutionDto.Put(v)
 }

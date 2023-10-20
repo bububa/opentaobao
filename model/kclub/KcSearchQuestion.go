@@ -1,5 +1,9 @@
 package kclub
 
+import (
+	"sync"
+)
+
 // KcSearchQuestion 结构体
 type KcSearchQuestion struct {
 	// catId 路径
@@ -56,4 +60,47 @@ type KcSearchQuestion struct {
 	CatId int64 `json:"cat_id,omitempty" xml:"cat_id,omitempty"`
 	// 相似问题主键id
 	SimilarId int64 `json:"similar_id,omitempty" xml:"similar_id,omitempty"`
+}
+
+var poolKcSearchQuestion = sync.Pool{
+	New: func() any {
+		return new(KcSearchQuestion)
+	},
+}
+
+// GetKcSearchQuestion() 从对象池中获取KcSearchQuestion
+func GetKcSearchQuestion() *KcSearchQuestion {
+	return poolKcSearchQuestion.Get().(*KcSearchQuestion)
+}
+
+// ReleaseKcSearchQuestion 释放KcSearchQuestion
+func ReleaseKcSearchQuestion(v *KcSearchQuestion) {
+	v.CatIdPathList = v.CatIdPathList[:0]
+	v.EntityCode = ""
+	v.ModifiedUserName = ""
+	v.CreateUserName = ""
+	v.TitleSegment = ""
+	v.Title = ""
+	v.GmtModified = ""
+	v.GmtCreate = ""
+	v.EndDate = ""
+	v.StartDate = ""
+	v.Ext = ""
+	v.CatName = ""
+	v.CatPathName = ""
+	v.Uuid = ""
+	v.Score = ""
+	v.SimilarTitle = ""
+	v.QuestionType = 0
+	v.TenantId = 0
+	v.Status = 0
+	v.Id = 0
+	v.Type = 0
+	v.QuestionId = 0
+	v.IsSimilarTitle = 0
+	v.Source = 0
+	v.Version = 0
+	v.CatId = 0
+	v.SimilarId = 0
+	poolKcSearchQuestion.Put(v)
 }

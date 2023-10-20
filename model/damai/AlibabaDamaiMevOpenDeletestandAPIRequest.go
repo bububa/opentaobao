@@ -2,6 +2,7 @@ package damai
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDamaiMevOpenDeletestandAPIRequest struct {
 // NewAlibabaDamaiMevOpenDeletestandRequest 初始化AlibabaDamaiMevOpenDeletestandAPIRequest对象
 func NewAlibabaDamaiMevOpenDeletestandRequest() *AlibabaDamaiMevOpenDeletestandAPIRequest {
 	return &AlibabaDamaiMevOpenDeletestandAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDamaiMevOpenDeletestandAPIRequest) Reset() {
+	r._deleteStandParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDamaiMevOpenDeletestandAPIRequest) SetDeleteStandParam(_deleteSt
 // GetDeleteStandParam DeleteStandParam Getter
 func (r AlibabaDamaiMevOpenDeletestandAPIRequest) GetDeleteStandParam() *StandIdOpenParam {
 	return r._deleteStandParam
+}
+
+var poolAlibabaDamaiMevOpenDeletestandAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDamaiMevOpenDeletestandRequest()
+	},
+}
+
+// GetAlibabaDamaiMevOpenDeletestandRequest 从 sync.Pool 获取 AlibabaDamaiMevOpenDeletestandAPIRequest
+func GetAlibabaDamaiMevOpenDeletestandAPIRequest() *AlibabaDamaiMevOpenDeletestandAPIRequest {
+	return poolAlibabaDamaiMevOpenDeletestandAPIRequest.Get().(*AlibabaDamaiMevOpenDeletestandAPIRequest)
+}
+
+// ReleaseAlibabaDamaiMevOpenDeletestandAPIRequest 将 AlibabaDamaiMevOpenDeletestandAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDamaiMevOpenDeletestandAPIRequest(v *AlibabaDamaiMevOpenDeletestandAPIRequest) {
+	v.Reset()
+	poolAlibabaDamaiMevOpenDeletestandAPIRequest.Put(v)
 }

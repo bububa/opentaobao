@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // CreditInfoTopDto 结构体
 type CreditInfoTopDto struct {
 	// 身份证
@@ -18,4 +22,28 @@ type CreditInfoTopDto struct {
 	Flag int64 `json:"flag,omitempty" xml:"flag,omitempty"`
 	// 是否通过
 	Pass bool `json:"pass,omitempty" xml:"pass,omitempty"`
+}
+
+var poolCreditInfoTopDto = sync.Pool{
+	New: func() any {
+		return new(CreditInfoTopDto)
+	},
+}
+
+// GetCreditInfoTopDto() 从对象池中获取CreditInfoTopDto
+func GetCreditInfoTopDto() *CreditInfoTopDto {
+	return poolCreditInfoTopDto.Get().(*CreditInfoTopDto)
+}
+
+// ReleaseCreditInfoTopDto 释放CreditInfoTopDto
+func ReleaseCreditInfoTopDto(v *CreditInfoTopDto) {
+	v.IdentityNo = ""
+	v.Name = ""
+	v.RejectMsg = ""
+	v.Uuid = ""
+	v.Mobile = 0
+	v.Amount = 0
+	v.Flag = 0
+	v.Pass = false
+	poolCreditInfoTopDto.Put(v)
 }

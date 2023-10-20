@@ -50,10 +50,13 @@ import (
 
 func main() {
     clt := core.NewSDKClient(APP_KEY, APP_SECRET)
-    req := userModel.NewTaobaoUserAvatarGetRequest()
+    req := userModel.GetTaobaoUserAvatarGetAPIRequest()
+    defer userModel.PutTaobaoUserAvatarGetAPIRequest(req)
     req.SetNick("nick")
-    resp, err := userApi.TaobaoUserAvatarGet(clt, req)
-    if err != nil {
+    resp := userModel.GetTaobaoUserAvatarGetAPIResponse()
+    defer userModel.PutTaobaoUserAvatarGetAPIResponse(resp)
+    accessToken := ""
+    if err := userApi.TaobaoUserAvatarGet(clt, req, resp, accessToken); err != nil {
         log.Fatalln(err)
     }
     log.Printf("%+v\n", resp)

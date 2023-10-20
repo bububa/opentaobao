@@ -2,6 +2,7 @@ package wms
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoWlbWmsSnInfoQueryAPIRequest struct {
 // NewTaobaoWlbWmsSnInfoQueryRequest 初始化TaobaoWlbWmsSnInfoQueryAPIRequest对象
 func NewTaobaoWlbWmsSnInfoQueryRequest() *TaobaoWlbWmsSnInfoQueryAPIRequest {
 	return &TaobaoWlbWmsSnInfoQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbWmsSnInfoQueryAPIRequest) Reset() {
+	r._orderCode = ""
+	r._orderCodeType = 0
+	r._pageIndex = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoWlbWmsSnInfoQueryAPIRequest) SetPageIndex(_pageIndex int64) error
 // GetPageIndex PageIndex Getter
 func (r TaobaoWlbWmsSnInfoQueryAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
+}
+
+var poolTaobaoWlbWmsSnInfoQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbWmsSnInfoQueryRequest()
+	},
+}
+
+// GetTaobaoWlbWmsSnInfoQueryRequest 从 sync.Pool 获取 TaobaoWlbWmsSnInfoQueryAPIRequest
+func GetTaobaoWlbWmsSnInfoQueryAPIRequest() *TaobaoWlbWmsSnInfoQueryAPIRequest {
+	return poolTaobaoWlbWmsSnInfoQueryAPIRequest.Get().(*TaobaoWlbWmsSnInfoQueryAPIRequest)
+}
+
+// ReleaseTaobaoWlbWmsSnInfoQueryAPIRequest 将 TaobaoWlbWmsSnInfoQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbWmsSnInfoQueryAPIRequest(v *TaobaoWlbWmsSnInfoQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbWmsSnInfoQueryAPIRequest.Put(v)
 }

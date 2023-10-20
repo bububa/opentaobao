@@ -2,6 +2,7 @@ package fundplatform
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaFundplatformCardordersStatusMakeFinishAPIRequest struct {
 // NewAlibabaFundplatformCardordersStatusMakeFinishRequest 初始化AlibabaFundplatformCardordersStatusMakeFinishAPIRequest对象
 func NewAlibabaFundplatformCardordersStatusMakeFinishRequest() *AlibabaFundplatformCardordersStatusMakeFinishAPIRequest {
 	return &AlibabaFundplatformCardordersStatusMakeFinishAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaFundplatformCardordersStatusMakeFinishAPIRequest) Reset() {
+	r._cardOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaFundplatformCardordersStatusMakeFinishAPIRequest) SetCardOrderId
 // GetCardOrderId CardOrderId Getter
 func (r AlibabaFundplatformCardordersStatusMakeFinishAPIRequest) GetCardOrderId() int64 {
 	return r._cardOrderId
+}
+
+var poolAlibabaFundplatformCardordersStatusMakeFinishAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaFundplatformCardordersStatusMakeFinishRequest()
+	},
+}
+
+// GetAlibabaFundplatformCardordersStatusMakeFinishRequest 从 sync.Pool 获取 AlibabaFundplatformCardordersStatusMakeFinishAPIRequest
+func GetAlibabaFundplatformCardordersStatusMakeFinishAPIRequest() *AlibabaFundplatformCardordersStatusMakeFinishAPIRequest {
+	return poolAlibabaFundplatformCardordersStatusMakeFinishAPIRequest.Get().(*AlibabaFundplatformCardordersStatusMakeFinishAPIRequest)
+}
+
+// ReleaseAlibabaFundplatformCardordersStatusMakeFinishAPIRequest 将 AlibabaFundplatformCardordersStatusMakeFinishAPIRequest 放入 sync.Pool
+func ReleaseAlibabaFundplatformCardordersStatusMakeFinishAPIRequest(v *AlibabaFundplatformCardordersStatusMakeFinishAPIRequest) {
+	v.Reset()
+	poolAlibabaFundplatformCardordersStatusMakeFinishAPIRequest.Put(v)
 }

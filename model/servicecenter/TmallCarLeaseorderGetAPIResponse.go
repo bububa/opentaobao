@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallCarLeaseorderGetAPIResponse struct {
 	TmallCarLeaseorderGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallCarLeaseorderGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallCarLeaseorderGetAPIResponseModel).Reset()
+}
+
 // TmallCarLeaseorderGetAPIResponseModel is 获取租赁订单信息 成功返回结果
 type TmallCarLeaseorderGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_car_leaseorder_get_response"`
@@ -22,4 +29,27 @@ type TmallCarLeaseorderGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果
 	Result *ResultVo `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallCarLeaseorderGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTmallCarLeaseorderGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallCarLeaseorderGetAPIResponse)
+	},
+}
+
+// GetTmallCarLeaseorderGetAPIResponse 从 sync.Pool 获取 TmallCarLeaseorderGetAPIResponse
+func GetTmallCarLeaseorderGetAPIResponse() *TmallCarLeaseorderGetAPIResponse {
+	return poolTmallCarLeaseorderGetAPIResponse.Get().(*TmallCarLeaseorderGetAPIResponse)
+}
+
+// ReleaseTmallCarLeaseorderGetAPIResponse 将 TmallCarLeaseorderGetAPIResponse 保存到 sync.Pool
+func ReleaseTmallCarLeaseorderGetAPIResponse(v *TmallCarLeaseorderGetAPIResponse) {
+	v.Reset()
+	poolTmallCarLeaseorderGetAPIResponse.Put(v)
 }

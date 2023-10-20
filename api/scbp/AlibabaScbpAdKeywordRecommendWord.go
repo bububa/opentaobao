@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.ad.keyword.recommend.word
 //
 // 推词
-func AlibabaScbpAdKeywordRecommendWord(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordRecommendWordAPIRequest, session string) (*scbp.AlibabaScbpAdKeywordRecommendWordAPIResponse, error) {
-	var resp scbp.AlibabaScbpAdKeywordRecommendWordAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpAdKeywordRecommendWord(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordRecommendWordAPIRequest, resp *scbp.AlibabaScbpAdKeywordRecommendWordAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

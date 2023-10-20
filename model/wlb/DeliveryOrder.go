@@ -1,5 +1,9 @@
 package wlb
 
+import (
+	"sync"
+)
+
 // DeliveryOrder 结构体
 type DeliveryOrder struct {
 	// 订单信息
@@ -36,4 +40,37 @@ type DeliveryOrder struct {
 	CnOrderCode string `json:"cn_order_code,omitempty" xml:"cn_order_code,omitempty"`
 	// 收货人信息
 	ReceiverInfo *ReceiverInfo `json:"receiver_info,omitempty" xml:"receiver_info,omitempty"`
+}
+
+var poolDeliveryOrder = sync.Pool{
+	New: func() any {
+		return new(DeliveryOrder)
+	},
+}
+
+// GetDeliveryOrder() 从对象池中获取DeliveryOrder
+func GetDeliveryOrder() *DeliveryOrder {
+	return poolDeliveryOrder.Get().(*DeliveryOrder)
+}
+
+// ReleaseDeliveryOrder 释放DeliveryOrder
+func ReleaseDeliveryOrder(v *DeliveryOrder) {
+	v.OrderLine = v.OrderLine[:0]
+	v.OrderLines = v.OrderLines[:0]
+	v.CreateTime = ""
+	v.DeliveryOrderCode = ""
+	v.LogisticsCode = ""
+	v.RelInBoundOrderCode = ""
+	v.WarehouseCode = ""
+	v.OrderType = ""
+	v.ArriveChannelType = ""
+	v.LogisticsName = ""
+	v.LastArriveDate = ""
+	v.ExtendProps = ""
+	v.SignTime = ""
+	v.IsSelfLifting = ""
+	v.TransportMode = ""
+	v.CnOrderCode = ""
+	v.ReceiverInfo = nil
+	poolDeliveryOrder.Put(v)
 }

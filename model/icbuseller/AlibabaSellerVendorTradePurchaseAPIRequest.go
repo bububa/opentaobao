@@ -2,6 +2,7 @@ package icbuseller
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaSellerVendorTradePurchaseAPIRequest struct {
 // NewAlibabaSellerVendorTradePurchaseRequest 初始化AlibabaSellerVendorTradePurchaseAPIRequest对象
 func NewAlibabaSellerVendorTradePurchaseRequest() *AlibabaSellerVendorTradePurchaseAPIRequest {
 	return &AlibabaSellerVendorTradePurchaseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSellerVendorTradePurchaseAPIRequest) Reset() {
+	r._buyerLoginId = ""
+	r._serviceCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaSellerVendorTradePurchaseAPIRequest) SetServiceCode(_serviceCode
 // GetServiceCode ServiceCode Getter
 func (r AlibabaSellerVendorTradePurchaseAPIRequest) GetServiceCode() string {
 	return r._serviceCode
+}
+
+var poolAlibabaSellerVendorTradePurchaseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSellerVendorTradePurchaseRequest()
+	},
+}
+
+// GetAlibabaSellerVendorTradePurchaseRequest 从 sync.Pool 获取 AlibabaSellerVendorTradePurchaseAPIRequest
+func GetAlibabaSellerVendorTradePurchaseAPIRequest() *AlibabaSellerVendorTradePurchaseAPIRequest {
+	return poolAlibabaSellerVendorTradePurchaseAPIRequest.Get().(*AlibabaSellerVendorTradePurchaseAPIRequest)
+}
+
+// ReleaseAlibabaSellerVendorTradePurchaseAPIRequest 将 AlibabaSellerVendorTradePurchaseAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSellerVendorTradePurchaseAPIRequest(v *AlibabaSellerVendorTradePurchaseAPIRequest) {
+	v.Reset()
+	poolAlibabaSellerVendorTradePurchaseAPIRequest.Put(v)
 }

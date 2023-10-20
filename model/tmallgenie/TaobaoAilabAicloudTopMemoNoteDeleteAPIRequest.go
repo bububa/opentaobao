@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest struct {
 // NewTaobaoAilabAicloudTopMemoNoteDeleteRequest 初始化TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest对象
 func NewTaobaoAilabAicloudTopMemoNoteDeleteRequest() *TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest {
 	return &TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest) Reset() {
+	r._schema = ""
+	r._userId = ""
+	r._utdId = ""
+	r._ext = ""
+	r._memoId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest) SetMemoId(_memoId int64)
 // GetMemoId MemoId Getter
 func (r TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest) GetMemoId() int64 {
 	return r._memoId
+}
+
+var poolTaobaoAilabAicloudTopMemoNoteDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopMemoNoteDeleteRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopMemoNoteDeleteRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest
+func GetTaobaoAilabAicloudTopMemoNoteDeleteAPIRequest() *TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest {
+	return poolTaobaoAilabAicloudTopMemoNoteDeleteAPIRequest.Get().(*TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopMemoNoteDeleteAPIRequest 将 TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopMemoNoteDeleteAPIRequest(v *TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopMemoNoteDeleteAPIRequest.Put(v)
 }

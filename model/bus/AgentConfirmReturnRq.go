@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // AgentConfirmReturnRq 结构体
 type AgentConfirmReturnRq struct {
 	// 商家单号
@@ -20,4 +24,29 @@ type AgentConfirmReturnRq struct {
 	AgentReturnTicketStatus int64 `json:"agent_return_ticket_status,omitempty" xml:"agent_return_ticket_status,omitempty"`
 	// 退票类型 0-按票退 1-按单退
 	AgentReturnTicketType int64 `json:"agent_return_ticket_type,omitempty" xml:"agent_return_ticket_type,omitempty"`
+}
+
+var poolAgentConfirmReturnRq = sync.Pool{
+	New: func() any {
+		return new(AgentConfirmReturnRq)
+	},
+}
+
+// GetAgentConfirmReturnRq() 从对象池中获取AgentConfirmReturnRq
+func GetAgentConfirmReturnRq() *AgentConfirmReturnRq {
+	return poolAgentConfirmReturnRq.Get().(*AgentConfirmReturnRq)
+}
+
+// ReleaseAgentConfirmReturnRq 释放AgentConfirmReturnRq
+func ReleaseAgentConfirmReturnRq(v *AgentConfirmReturnRq) {
+	v.AgentOrderId = ""
+	v.AgentTicketId = ""
+	v.ComeFrom = ""
+	v.PassengerName = ""
+	v.RefundAmount = ""
+	v.Isign = ""
+	v.SuccessTime = ""
+	v.AgentReturnTicketStatus = 0
+	v.AgentReturnTicketType = 0
+	poolAgentConfirmReturnRq.Put(v)
 }

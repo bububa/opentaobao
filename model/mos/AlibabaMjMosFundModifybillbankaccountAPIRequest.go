@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMjMosFundModifybillbankaccountAPIRequest struct {
 // NewAlibabaMjMosFundModifybillbankaccountRequest 初始化AlibabaMjMosFundModifybillbankaccountAPIRequest对象
 func NewAlibabaMjMosFundModifybillbankaccountRequest() *AlibabaMjMosFundModifybillbankaccountAPIRequest {
 	return &AlibabaMjMosFundModifybillbankaccountAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMjMosFundModifybillbankaccountAPIRequest) Reset() {
+	r._modifyDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMjMosFundModifybillbankaccountAPIRequest) SetModifyDto(_modifyDt
 // GetModifyDto ModifyDto Getter
 func (r AlibabaMjMosFundModifybillbankaccountAPIRequest) GetModifyDto() *ModifyBillDto {
 	return r._modifyDto
+}
+
+var poolAlibabaMjMosFundModifybillbankaccountAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMjMosFundModifybillbankaccountRequest()
+	},
+}
+
+// GetAlibabaMjMosFundModifybillbankaccountRequest 从 sync.Pool 获取 AlibabaMjMosFundModifybillbankaccountAPIRequest
+func GetAlibabaMjMosFundModifybillbankaccountAPIRequest() *AlibabaMjMosFundModifybillbankaccountAPIRequest {
+	return poolAlibabaMjMosFundModifybillbankaccountAPIRequest.Get().(*AlibabaMjMosFundModifybillbankaccountAPIRequest)
+}
+
+// ReleaseAlibabaMjMosFundModifybillbankaccountAPIRequest 将 AlibabaMjMosFundModifybillbankaccountAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMjMosFundModifybillbankaccountAPIRequest(v *AlibabaMjMosFundModifybillbankaccountAPIRequest) {
+	v.Reset()
+	poolAlibabaMjMosFundModifybillbankaccountAPIRequest.Put(v)
 }

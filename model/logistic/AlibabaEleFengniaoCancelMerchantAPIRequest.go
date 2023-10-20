@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaEleFengniaoCancelMerchantAPIRequest struct {
 // NewAlibabaEleFengniaoCancelMerchantRequest 初始化AlibabaEleFengniaoCancelMerchantAPIRequest对象
 func NewAlibabaEleFengniaoCancelMerchantRequest() *AlibabaEleFengniaoCancelMerchantAPIRequest {
 	return &AlibabaEleFengniaoCancelMerchantAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEleFengniaoCancelMerchantAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaEleFengniaoCancelMerchantAPIRequest) SetParam(_param *Param) err
 // GetParam Param Getter
 func (r AlibabaEleFengniaoCancelMerchantAPIRequest) GetParam() *Param {
 	return r._param
+}
+
+var poolAlibabaEleFengniaoCancelMerchantAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEleFengniaoCancelMerchantRequest()
+	},
+}
+
+// GetAlibabaEleFengniaoCancelMerchantRequest 从 sync.Pool 获取 AlibabaEleFengniaoCancelMerchantAPIRequest
+func GetAlibabaEleFengniaoCancelMerchantAPIRequest() *AlibabaEleFengniaoCancelMerchantAPIRequest {
+	return poolAlibabaEleFengniaoCancelMerchantAPIRequest.Get().(*AlibabaEleFengniaoCancelMerchantAPIRequest)
+}
+
+// ReleaseAlibabaEleFengniaoCancelMerchantAPIRequest 将 AlibabaEleFengniaoCancelMerchantAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEleFengniaoCancelMerchantAPIRequest(v *AlibabaEleFengniaoCancelMerchantAPIRequest) {
+	v.Reset()
+	poolAlibabaEleFengniaoCancelMerchantAPIRequest.Put(v)
 }

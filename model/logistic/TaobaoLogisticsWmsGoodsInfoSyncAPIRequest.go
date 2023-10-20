@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsWmsGoodsInfoSyncAPIRequest struct {
 // NewTaobaoLogisticsWmsGoodsInfoSyncRequest 初始化TaobaoLogisticsWmsGoodsInfoSyncAPIRequest对象
 func NewTaobaoLogisticsWmsGoodsInfoSyncRequest() *TaobaoLogisticsWmsGoodsInfoSyncAPIRequest {
 	return &TaobaoLogisticsWmsGoodsInfoSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsWmsGoodsInfoSyncAPIRequest) Reset() {
+	r._wmsGoodsInfoSyncRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsWmsGoodsInfoSyncAPIRequest) SetWmsGoodsInfoSyncRequest(_
 // GetWmsGoodsInfoSyncRequest WmsGoodsInfoSyncRequest Getter
 func (r TaobaoLogisticsWmsGoodsInfoSyncAPIRequest) GetWmsGoodsInfoSyncRequest() *WmsGoodsInfoSyncRequest {
 	return r._wmsGoodsInfoSyncRequest
+}
+
+var poolTaobaoLogisticsWmsGoodsInfoSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsWmsGoodsInfoSyncRequest()
+	},
+}
+
+// GetTaobaoLogisticsWmsGoodsInfoSyncRequest 从 sync.Pool 获取 TaobaoLogisticsWmsGoodsInfoSyncAPIRequest
+func GetTaobaoLogisticsWmsGoodsInfoSyncAPIRequest() *TaobaoLogisticsWmsGoodsInfoSyncAPIRequest {
+	return poolTaobaoLogisticsWmsGoodsInfoSyncAPIRequest.Get().(*TaobaoLogisticsWmsGoodsInfoSyncAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsWmsGoodsInfoSyncAPIRequest 将 TaobaoLogisticsWmsGoodsInfoSyncAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsWmsGoodsInfoSyncAPIRequest(v *TaobaoLogisticsWmsGoodsInfoSyncAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsWmsGoodsInfoSyncAPIRequest.Put(v)
 }

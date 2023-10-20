@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMosPosAlarmAPIRequest struct {
 // NewAlibabaMosPosAlarmRequest 初始化AlibabaMosPosAlarmAPIRequest对象
 func NewAlibabaMosPosAlarmRequest() *AlibabaMosPosAlarmAPIRequest {
 	return &AlibabaMosPosAlarmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosPosAlarmAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMosPosAlarmAPIRequest) SetParam0(_param0 *PosLogDto) error {
 // GetParam0 Param0 Getter
 func (r AlibabaMosPosAlarmAPIRequest) GetParam0() *PosLogDto {
 	return r._param0
+}
+
+var poolAlibabaMosPosAlarmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosPosAlarmRequest()
+	},
+}
+
+// GetAlibabaMosPosAlarmRequest 从 sync.Pool 获取 AlibabaMosPosAlarmAPIRequest
+func GetAlibabaMosPosAlarmAPIRequest() *AlibabaMosPosAlarmAPIRequest {
+	return poolAlibabaMosPosAlarmAPIRequest.Get().(*AlibabaMosPosAlarmAPIRequest)
+}
+
+// ReleaseAlibabaMosPosAlarmAPIRequest 将 AlibabaMosPosAlarmAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosPosAlarmAPIRequest(v *AlibabaMosPosAlarmAPIRequest) {
+	v.Reset()
+	poolAlibabaMosPosAlarmAPIRequest.Put(v)
 }

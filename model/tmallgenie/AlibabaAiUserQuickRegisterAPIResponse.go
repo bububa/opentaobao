@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAiUserQuickRegisterAPIResponse struct {
 	model.CommonResponse
 	AlibabaAiUserQuickRegisterAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAiUserQuickRegisterAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAiUserQuickRegisterAPIResponseModel).Reset()
 }
 
 // AlibabaAiUserQuickRegisterAPIResponseModel is 精灵用户注册申请 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAiUserQuickRegisterAPIResponseModel struct {
 	MessageDetail string `json:"message_detail,omitempty" xml:"message_detail,omitempty"`
 	// 结果码
 	StatusCode int64 `json:"status_code,omitempty" xml:"status_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAiUserQuickRegisterAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.Result = ""
+	m.MessageDetail = ""
+	m.StatusCode = 0
+}
+
+var poolAlibabaAiUserQuickRegisterAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAiUserQuickRegisterAPIResponse)
+	},
+}
+
+// GetAlibabaAiUserQuickRegisterAPIResponse 从 sync.Pool 获取 AlibabaAiUserQuickRegisterAPIResponse
+func GetAlibabaAiUserQuickRegisterAPIResponse() *AlibabaAiUserQuickRegisterAPIResponse {
+	return poolAlibabaAiUserQuickRegisterAPIResponse.Get().(*AlibabaAiUserQuickRegisterAPIResponse)
+}
+
+// ReleaseAlibabaAiUserQuickRegisterAPIResponse 将 AlibabaAiUserQuickRegisterAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAiUserQuickRegisterAPIResponse(v *AlibabaAiUserQuickRegisterAPIResponse) {
+	v.Reset()
+	poolAlibabaAiUserQuickRegisterAPIResponse.Put(v)
 }

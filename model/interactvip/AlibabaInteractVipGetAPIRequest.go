@@ -2,6 +2,7 @@ package interactvip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaInteractVipGetAPIRequest struct {
 // NewAlibabaInteractVipGetRequest 初始化AlibabaInteractVipGetAPIRequest对象
 func NewAlibabaInteractVipGetRequest() *AlibabaInteractVipGetAPIRequest {
 	return &AlibabaInteractVipGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractVipGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaInteractVipGetAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaInteractVipGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaInteractVipGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractVipGetRequest()
+	},
+}
+
+// GetAlibabaInteractVipGetRequest 从 sync.Pool 获取 AlibabaInteractVipGetAPIRequest
+func GetAlibabaInteractVipGetAPIRequest() *AlibabaInteractVipGetAPIRequest {
+	return poolAlibabaInteractVipGetAPIRequest.Get().(*AlibabaInteractVipGetAPIRequest)
+}
+
+// ReleaseAlibabaInteractVipGetAPIRequest 将 AlibabaInteractVipGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractVipGetAPIRequest(v *AlibabaInteractVipGetAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractVipGetAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package legalsuit
 
+import (
+	"sync"
+)
+
 // SuitFeeModel 结构体
 type SuitFeeModel struct {
 	// 财产保全保险费
@@ -26,4 +30,32 @@ type SuitFeeModel struct {
 	PrepayCourtFeeAmount string `json:"prepay_court_fee_amount,omitempty" xml:"prepay_court_fee_amount,omitempty"`
 	// 预缴诉讼费日期
 	PrepayCourtFeeTime string `json:"prepay_court_fee_time,omitempty" xml:"prepay_court_fee_time,omitempty"`
+}
+
+var poolSuitFeeModel = sync.Pool{
+	New: func() any {
+		return new(SuitFeeModel)
+	},
+}
+
+// GetSuitFeeModel() 从对象池中获取SuitFeeModel
+func GetSuitFeeModel() *SuitFeeModel {
+	return poolSuitFeeModel.Get().(*SuitFeeModel)
+}
+
+// ReleaseSuitFeeModel 释放SuitFeeModel
+func ReleaseSuitFeeModel(v *SuitFeeModel) {
+	v.DepositInsuranceAmount = ""
+	v.OtherFeeAmount = ""
+	v.EvaluationFeeAmount = ""
+	v.NotarialFeeAmount = ""
+	v.AnnouncementFeeAmount = ""
+	v.SecurityDepositAmount = ""
+	v.ReturnCourtFeeAmount = ""
+	v.PreserveFeeAmount = ""
+	v.MakeupPayCourtFeeAmount = ""
+	v.MakeupPayCourtFeeTime = ""
+	v.PrepayCourtFeeAmount = ""
+	v.PrepayCourtFeeTime = ""
+	poolSuitFeeModel.Put(v)
 }

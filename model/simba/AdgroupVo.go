@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // AdgroupVo 结构体
 type AdgroupVo struct {
 	// 计划名称
@@ -32,4 +36,35 @@ type AdgroupVo struct {
 	Material *CommonMaterialVo `json:"material,omitempty" xml:"material,omitempty"`
 	// 视频组件id,0:宝贝链接,3:订阅店铺,5:直播,6:加购,7:收藏加购,8:入会有礼,12:关注有礼,11:直播联动,10:自定义模板,13:同店搜
 	AliveGroupId int64 `json:"alive_group_id,omitempty" xml:"alive_group_id,omitempty"`
+}
+
+var poolAdgroupVo = sync.Pool{
+	New: func() any {
+		return new(AdgroupVo)
+	},
+}
+
+// GetAdgroupVo() 从对象池中获取AdgroupVo
+func GetAdgroupVo() *AdgroupVo {
+	return poolAdgroupVo.Get().(*AdgroupVo)
+}
+
+// ReleaseAdgroupVo 释放AdgroupVo
+func ReleaseAdgroupVo(v *AdgroupVo) {
+	v.CampaignName = ""
+	v.AdgroupName = ""
+	v.DisplayStatus = ""
+	v.AuditReason = ""
+	v.PromotionType = ""
+	v.SubPromotionType = ""
+	v.AliveGroupName = ""
+	v.BlackCreativeStatus = ""
+	v.CampaignId = 0
+	v.AdgroupId = 0
+	v.OnlineStatus = 0
+	v.AuditStatus = 0
+	v.AdgroupOcpc = nil
+	v.Material = nil
+	v.AliveGroupId = 0
+	poolAdgroupVo.Put(v)
 }

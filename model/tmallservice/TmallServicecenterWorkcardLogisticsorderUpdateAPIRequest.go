@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -55,8 +56,32 @@ type TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest struct {
 // NewTmallServicecenterWorkcardLogisticsorderUpdateRequest 初始化TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest对象
 func NewTmallServicecenterWorkcardLogisticsorderUpdateRequest() *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest {
 	return &TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(19),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) Reset() {
+	r._subExpressCodes = r._subExpressCodes[:0]
+	r._comment = ""
+	r._expressCode = ""
+	r._expressCompany = ""
+	r._courierMobile = ""
+	r._courierName = ""
+	r._gotCode = ""
+	r._goodsInfo = ""
+	r._statusCode = ""
+	r._deliveryTime = ""
+	r._signTime = ""
+	r._pickupFinishTime = ""
+	r._pickupDoorTime = ""
+	r._extendInfo = ""
+	r._volume = 0
+	r._weight = 0
+	r._logisticsOrderId = 0
+	r._cost = 0
+	r._newLogistics = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -321,4 +346,21 @@ func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetNewLogisti
 // GetNewLogistics NewLogistics Getter
 func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetNewLogistics() bool {
 	return r._newLogistics
+}
+
+var poolTmallServicecenterWorkcardLogisticsorderUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterWorkcardLogisticsorderUpdateRequest()
+	},
+}
+
+// GetTmallServicecenterWorkcardLogisticsorderUpdateRequest 从 sync.Pool 获取 TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest
+func GetTmallServicecenterWorkcardLogisticsorderUpdateAPIRequest() *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest {
+	return poolTmallServicecenterWorkcardLogisticsorderUpdateAPIRequest.Get().(*TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest)
+}
+
+// ReleaseTmallServicecenterWorkcardLogisticsorderUpdateAPIRequest 将 TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterWorkcardLogisticsorderUpdateAPIRequest(v *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterWorkcardLogisticsorderUpdateAPIRequest.Put(v)
 }

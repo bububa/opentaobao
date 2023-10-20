@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // RewardReceiveQuery 结构体
 type RewardReceiveQuery struct {
 	// 位置信息
@@ -24,4 +28,31 @@ type RewardReceiveQuery struct {
 	Stage *Stage `json:"stage,omitempty" xml:"stage,omitempty"`
 	// 用户信息
 	UserInfo *UserInfo `json:"user_info,omitempty" xml:"user_info,omitempty"`
+}
+
+var poolRewardReceiveQuery = sync.Pool{
+	New: func() any {
+		return new(RewardReceiveQuery)
+	},
+}
+
+// GetRewardReceiveQuery() 从对象池中获取RewardReceiveQuery
+func GetRewardReceiveQuery() *RewardReceiveQuery {
+	return poolRewardReceiveQuery.Get().(*RewardReceiveQuery)
+}
+
+// ReleaseRewardReceiveQuery 释放RewardReceiveQuery
+func ReleaseRewardReceiveQuery(v *RewardReceiveQuery) {
+	v.LocationInfos = v.LocationInfos[:0]
+	v.BizScene = ""
+	v.Ext = ""
+	v.MissionXId = ""
+	v.RiskParam = ""
+	v.DeviceInfo = nil
+	v.MissionCollectionId = 0
+	v.MissionDefId = 0
+	v.MissionInstanceId = 0
+	v.Stage = nil
+	v.UserInfo = nil
+	poolRewardReceiveQuery.Put(v)
 }

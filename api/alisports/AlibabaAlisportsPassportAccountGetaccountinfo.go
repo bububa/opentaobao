@@ -9,11 +9,6 @@ import (
 // alibaba.alisports.passport.account.getaccountinfo
 //
 // 获取阿里体育会员信息
-func AlibabaAlisportsPassportAccountGetaccountinfo(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest, session string) (*alisports.AlibabaAlisportsPassportAccountGetaccountinfoAPIResponse, error) {
-	var resp alisports.AlibabaAlisportsPassportAccountGetaccountinfoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlisportsPassportAccountGetaccountinfo(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest, resp *alisports.AlibabaAlisportsPassportAccountGetaccountinfoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

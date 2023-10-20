@@ -2,6 +2,7 @@ package jst
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoJstMiniappCrowdCreateAPIRequest struct {
 // NewTaobaoJstMiniappCrowdCreateRequest 初始化TaobaoJstMiniappCrowdCreateAPIRequest对象
 func NewTaobaoJstMiniappCrowdCreateRequest() *TaobaoJstMiniappCrowdCreateAPIRequest {
 	return &TaobaoJstMiniappCrowdCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJstMiniappCrowdCreateAPIRequest) Reset() {
+	r._endDate = ""
+	r._description = ""
+	r._startDate = ""
+	r._crowdName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoJstMiniappCrowdCreateAPIRequest) SetCrowdName(_crowdName string) 
 // GetCrowdName CrowdName Getter
 func (r TaobaoJstMiniappCrowdCreateAPIRequest) GetCrowdName() string {
 	return r._crowdName
+}
+
+var poolTaobaoJstMiniappCrowdCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJstMiniappCrowdCreateRequest()
+	},
+}
+
+// GetTaobaoJstMiniappCrowdCreateRequest 从 sync.Pool 获取 TaobaoJstMiniappCrowdCreateAPIRequest
+func GetTaobaoJstMiniappCrowdCreateAPIRequest() *TaobaoJstMiniappCrowdCreateAPIRequest {
+	return poolTaobaoJstMiniappCrowdCreateAPIRequest.Get().(*TaobaoJstMiniappCrowdCreateAPIRequest)
+}
+
+// ReleaseTaobaoJstMiniappCrowdCreateAPIRequest 将 TaobaoJstMiniappCrowdCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJstMiniappCrowdCreateAPIRequest(v *TaobaoJstMiniappCrowdCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoJstMiniappCrowdCreateAPIRequest.Put(v)
 }

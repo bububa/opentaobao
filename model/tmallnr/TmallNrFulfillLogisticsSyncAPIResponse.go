@@ -2,6 +2,7 @@ package tmallnr
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallNrFulfillLogisticsSyncAPIResponse struct {
 	TmallNrFulfillLogisticsSyncAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallNrFulfillLogisticsSyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallNrFulfillLogisticsSyncAPIResponseModel).Reset()
+}
+
 // TmallNrFulfillLogisticsSyncAPIResponseModel is 同城配物流信息回传 成功返回结果
 type TmallNrFulfillLogisticsSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_nr_fulfill_logistics_sync_response"`
@@ -22,4 +29,27 @@ type TmallNrFulfillLogisticsSyncAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
 	Result *NrResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallNrFulfillLogisticsSyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTmallNrFulfillLogisticsSyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallNrFulfillLogisticsSyncAPIResponse)
+	},
+}
+
+// GetTmallNrFulfillLogisticsSyncAPIResponse 从 sync.Pool 获取 TmallNrFulfillLogisticsSyncAPIResponse
+func GetTmallNrFulfillLogisticsSyncAPIResponse() *TmallNrFulfillLogisticsSyncAPIResponse {
+	return poolTmallNrFulfillLogisticsSyncAPIResponse.Get().(*TmallNrFulfillLogisticsSyncAPIResponse)
+}
+
+// ReleaseTmallNrFulfillLogisticsSyncAPIResponse 将 TmallNrFulfillLogisticsSyncAPIResponse 保存到 sync.Pool
+func ReleaseTmallNrFulfillLogisticsSyncAPIResponse(v *TmallNrFulfillLogisticsSyncAPIResponse) {
+	v.Reset()
+	poolTmallNrFulfillLogisticsSyncAPIResponse.Put(v)
 }

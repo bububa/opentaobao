@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // AdzoneRefVo 结构体
 type AdzoneRefVo struct {
 	// 操作按钮列表
@@ -22,4 +26,30 @@ type AdzoneRefVo struct {
 	MinDiscount int64 `json:"min_discount,omitempty" xml:"min_discount,omitempty"`
 	// 资源位支持的最高溢价
 	MaxDiscount int64 `json:"max_discount,omitempty" xml:"max_discount,omitempty"`
+}
+
+var poolAdzoneRefVo = sync.Pool{
+	New: func() any {
+		return new(AdzoneRefVo)
+	},
+}
+
+// GetAdzoneRefVo() 从对象池中获取AdzoneRefVo
+func GetAdzoneRefVo() *AdzoneRefVo {
+	return poolAdzoneRefVo.Get().(*AdzoneRefVo)
+}
+
+// ReleaseAdzoneRefVo 释放AdzoneRefVo
+func ReleaseAdzoneRefVo(v *AdzoneRefVo) {
+	v.OperationList = v.OperationList[:0]
+	v.AdzoneName = ""
+	v.CampaignName = ""
+	v.BidType = ""
+	v.Status = ""
+	v.AdzoneId = 0
+	v.CampaignId = 0
+	v.Discount = 0
+	v.MinDiscount = 0
+	v.MaxDiscount = 0
+	poolAdzoneRefVo.Put(v)
 }

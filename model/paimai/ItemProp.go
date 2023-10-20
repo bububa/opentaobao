@@ -1,5 +1,9 @@
 package paimai
 
+import (
+	"sync"
+)
+
 // ItemProp 结构体
 type ItemProp struct {
 	//
@@ -46,4 +50,42 @@ type ItemProp struct {
 	IsTaosir bool `json:"is_taosir,omitempty" xml:"is_taosir,omitempty"`
 	// 是否是材质 属性项
 	IsMaterial bool `json:"is_material,omitempty" xml:"is_material,omitempty"`
+}
+
+var poolItemProp = sync.Pool{
+	New: func() any {
+		return new(ItemProp)
+	},
+}
+
+// GetItemProp() 从对象池中获取ItemProp
+func GetItemProp() *ItemProp {
+	return poolItemProp.Get().(*ItemProp)
+}
+
+// ReleaseItemProp 释放ItemProp
+func ReleaseItemProp(v *ItemProp) {
+	v.PropValues = v.PropValues[:0]
+	v.Features = v.Features[:0]
+	v.Name = ""
+	v.Status = ""
+	v.ChildTemplate = ""
+	v.Pid = 0
+	v.ParentPid = 0
+	v.ParentVid = 0
+	v.SortOrder = 0
+	v.TaosirDo = nil
+	v.MaterialDo = nil
+	v.IsKeyProp = false
+	v.IsSaleProp = false
+	v.IsColorProp = false
+	v.IsEnumProp = false
+	v.IsInputProp = false
+	v.IsItemProp = false
+	v.Must = false
+	v.Multi = false
+	v.IsAllowAlias = false
+	v.IsTaosir = false
+	v.IsMaterial = false
+	poolItemProp.Put(v)
 }

@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaEleFengniaoShippingorderEventAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleFengniaoShippingorderEventAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaEleFengniaoShippingorderEventAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaEleFengniaoShippingorderEventAPIResponseModel).Reset()
 }
 
 // AlibabaEleFengniaoShippingorderEventAPIResponseModel is 查询运单事件信息 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaEleFengniaoShippingorderEventAPIResponseModel struct {
 	FinishAt int64 `json:"finish_at,omitempty" xml:"finish_at,omitempty"`
 	// 骑手预计送达时间
 	PredictDeliveryAt int64 `json:"predict_delivery_at,omitempty" xml:"predict_delivery_at,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaEleFengniaoShippingorderEventAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ShippingOrderEvents = m.ShippingOrderEvents[:0]
+	m.ShippingRemarkCode = ""
+	m.FinishAt = 0
+	m.PredictDeliveryAt = 0
+}
+
+var poolAlibabaEleFengniaoShippingorderEventAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaEleFengniaoShippingorderEventAPIResponse)
+	},
+}
+
+// GetAlibabaEleFengniaoShippingorderEventAPIResponse 从 sync.Pool 获取 AlibabaEleFengniaoShippingorderEventAPIResponse
+func GetAlibabaEleFengniaoShippingorderEventAPIResponse() *AlibabaEleFengniaoShippingorderEventAPIResponse {
+	return poolAlibabaEleFengniaoShippingorderEventAPIResponse.Get().(*AlibabaEleFengniaoShippingorderEventAPIResponse)
+}
+
+// ReleaseAlibabaEleFengniaoShippingorderEventAPIResponse 将 AlibabaEleFengniaoShippingorderEventAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaEleFengniaoShippingorderEventAPIResponse(v *AlibabaEleFengniaoShippingorderEventAPIResponse) {
+	v.Reset()
+	poolAlibabaEleFengniaoShippingorderEventAPIResponse.Put(v)
 }

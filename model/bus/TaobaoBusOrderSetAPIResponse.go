@@ -2,6 +2,7 @@ package bus
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoBusOrderSetAPIResponse struct {
 	model.CommonResponse
 	TaobaoBusOrderSetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoBusOrderSetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoBusOrderSetAPIResponseModel).Reset()
 }
 
 // TaobaoBusOrderSetAPIResponseModel is 汽车票下单接口 成功返回结果
@@ -30,4 +37,31 @@ type TaobaoBusOrderSetAPIResponseModel struct {
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 是否下单成功
 	Issuccess bool `json:"issuccess,omitempty" xml:"issuccess,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoBusOrderSetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.AliPayTradeId = ""
+	m.AlitripOrderId = ""
+	m.ErrorCode1 = ""
+	m.ErrorMsg = ""
+	m.Issuccess = false
+}
+
+var poolTaobaoBusOrderSetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoBusOrderSetAPIResponse)
+	},
+}
+
+// GetTaobaoBusOrderSetAPIResponse 从 sync.Pool 获取 TaobaoBusOrderSetAPIResponse
+func GetTaobaoBusOrderSetAPIResponse() *TaobaoBusOrderSetAPIResponse {
+	return poolTaobaoBusOrderSetAPIResponse.Get().(*TaobaoBusOrderSetAPIResponse)
+}
+
+// ReleaseTaobaoBusOrderSetAPIResponse 将 TaobaoBusOrderSetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoBusOrderSetAPIResponse(v *TaobaoBusOrderSetAPIResponse) {
+	v.Reset()
+	poolTaobaoBusOrderSetAPIResponse.Put(v)
 }

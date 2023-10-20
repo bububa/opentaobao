@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // CodeProduceInfoDto 结构体
 type CodeProduceInfoDto struct {
 	// 生产信息集合
@@ -58,4 +62,48 @@ type CodeProduceInfoDto struct {
 	SmallMeasureNum int64 `json:"small_measure_num,omitempty" xml:"small_measure_num,omitempty"`
 	// 该生产信息对应的最小包装数量
 	SmallPkgNum int64 `json:"small_pkg_num,omitempty" xml:"small_pkg_num,omitempty"`
+}
+
+var poolCodeProduceInfoDto = sync.Pool{
+	New: func() any {
+		return new(CodeProduceInfoDto)
+	},
+}
+
+// GetCodeProduceInfoDto() 从对象池中获取CodeProduceInfoDto
+func GetCodeProduceInfoDto() *CodeProduceInfoDto {
+	return poolCodeProduceInfoDto.Get().(*CodeProduceInfoDto)
+}
+
+// ReleaseCodeProduceInfoDto 释放CodeProduceInfoDto
+func ReleaseCodeProduceInfoDto(v *CodeProduceInfoDto) {
+	v.ProduceInfoList = v.ProduceInfoList[:0]
+	v.ProduceDate = ""
+	v.ProduceBatchNo = ""
+	v.ProduceInfoId = ""
+	v.PkgRatio = ""
+	v.ProdSeqNo = ""
+	v.ProductRefEntId = ""
+	v.ProductEntId = ""
+	v.ProductEntName = ""
+	v.PrepnUnitDesc = ""
+	v.PhysicInfo = ""
+	v.PkgSpec = ""
+	v.PhysicType = ""
+	v.ProduceEntName = ""
+	v.RefEntId = ""
+	v.LicenceNo = ""
+	v.AgentEntId = ""
+	v.PackEntId = ""
+	v.ProduceEntId = ""
+	v.ApprovalNo = ""
+	v.AuthrizerEntId = ""
+	v.DrugEntBaseInfoId = ""
+	v.CurrEntId = ""
+	v.ExprieDate = ""
+	v.PrepnUnit = 0
+	v.PkgNum = 0
+	v.SmallMeasureNum = 0
+	v.SmallPkgNum = 0
+	poolCodeProduceInfoDto.Put(v)
 }

@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpLogisticsInstantsonlineCheckdeliveryauthAPIRequest struct {
 // NewAlibabaAscpLogisticsInstantsonlineCheckdeliveryauthRequest 初始化AlibabaAscpLogisticsInstantsonlineCheckdeliveryauthAPIRequest对象
 func NewAlibabaAscpLogisticsInstantsonlineCheckdeliveryauthRequest() *AlibabaAscpLogisticsInstantsonlineCheckdeliveryauthAPIRequest {
 	return &AlibabaAscpLogisticsInstantsonlineCheckdeliveryauthAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpLogisticsInstantsonlineCheckdeliveryauthAPIRequest) Reset() {
+	r._bizType = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpLogisticsInstantsonlineCheckdeliveryauthAPIRequest) SetBizTy
 // GetBizType BizType Getter
 func (r AlibabaAscpLogisticsInstantsonlineCheckdeliveryauthAPIRequest) GetBizType() string {
 	return r._bizType
+}
+
+var poolAlibabaAscpLogisticsInstantsonlineCheckdeliveryauthAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpLogisticsInstantsonlineCheckdeliveryauthRequest()
+	},
+}
+
+// GetAlibabaAscpLogisticsInstantsonlineCheckdeliveryauthRequest 从 sync.Pool 获取 AlibabaAscpLogisticsInstantsonlineCheckdeliveryauthAPIRequest
+func GetAlibabaAscpLogisticsInstantsonlineCheckdeliveryauthAPIRequest() *AlibabaAscpLogisticsInstantsonlineCheckdeliveryauthAPIRequest {
+	return poolAlibabaAscpLogisticsInstantsonlineCheckdeliveryauthAPIRequest.Get().(*AlibabaAscpLogisticsInstantsonlineCheckdeliveryauthAPIRequest)
+}
+
+// ReleaseAlibabaAscpLogisticsInstantsonlineCheckdeliveryauthAPIRequest 将 AlibabaAscpLogisticsInstantsonlineCheckdeliveryauthAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpLogisticsInstantsonlineCheckdeliveryauthAPIRequest(v *AlibabaAscpLogisticsInstantsonlineCheckdeliveryauthAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpLogisticsInstantsonlineCheckdeliveryauthAPIRequest.Put(v)
 }

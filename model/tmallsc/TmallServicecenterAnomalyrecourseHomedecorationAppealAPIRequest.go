@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TmallServicecenterAnomalyrecourseHomedecorationAppealAPIRequest struct {
 // NewTmallServicecenterAnomalyrecourseHomedecorationAppealRequest 初始化TmallServicecenterAnomalyrecourseHomedecorationAppealAPIRequest对象
 func NewTmallServicecenterAnomalyrecourseHomedecorationAppealRequest() *TmallServicecenterAnomalyrecourseHomedecorationAppealAPIRequest {
 	return &TmallServicecenterAnomalyrecourseHomedecorationAppealAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterAnomalyrecourseHomedecorationAppealAPIRequest) Reset() {
+	r._remark = ""
+	r._images = ""
+	r._id = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TmallServicecenterAnomalyrecourseHomedecorationAppealAPIRequest) SetId(
 // GetId Id Getter
 func (r TmallServicecenterAnomalyrecourseHomedecorationAppealAPIRequest) GetId() int64 {
 	return r._id
+}
+
+var poolTmallServicecenterAnomalyrecourseHomedecorationAppealAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterAnomalyrecourseHomedecorationAppealRequest()
+	},
+}
+
+// GetTmallServicecenterAnomalyrecourseHomedecorationAppealRequest 从 sync.Pool 获取 TmallServicecenterAnomalyrecourseHomedecorationAppealAPIRequest
+func GetTmallServicecenterAnomalyrecourseHomedecorationAppealAPIRequest() *TmallServicecenterAnomalyrecourseHomedecorationAppealAPIRequest {
+	return poolTmallServicecenterAnomalyrecourseHomedecorationAppealAPIRequest.Get().(*TmallServicecenterAnomalyrecourseHomedecorationAppealAPIRequest)
+}
+
+// ReleaseTmallServicecenterAnomalyrecourseHomedecorationAppealAPIRequest 将 TmallServicecenterAnomalyrecourseHomedecorationAppealAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterAnomalyrecourseHomedecorationAppealAPIRequest(v *TmallServicecenterAnomalyrecourseHomedecorationAppealAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterAnomalyrecourseHomedecorationAppealAPIRequest.Put(v)
 }

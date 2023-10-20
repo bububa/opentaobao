@@ -2,6 +2,7 @@ package xhotelonlineorder
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoXhotelCommoninvoiceUpdateAPIResponse struct {
 	TaobaoXhotelCommoninvoiceUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoXhotelCommoninvoiceUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoXhotelCommoninvoiceUpdateAPIResponseModel).Reset()
+}
+
 // TaobaoXhotelCommoninvoiceUpdateAPIResponseModel is 常用发票信息更新接口 成功返回结果
 type TaobaoXhotelCommoninvoiceUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_commoninvoice_update_response"`
@@ -26,4 +33,29 @@ type TaobaoXhotelCommoninvoiceUpdateAPIResponseModel struct {
 	Errmsg string `json:"errmsg,omitempty" xml:"errmsg,omitempty"`
 	// success
 	Issuccess bool `json:"issuccess,omitempty" xml:"issuccess,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelCommoninvoiceUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Errcode = ""
+	m.Errmsg = ""
+	m.Issuccess = false
+}
+
+var poolTaobaoXhotelCommoninvoiceUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelCommoninvoiceUpdateAPIResponse)
+	},
+}
+
+// GetTaobaoXhotelCommoninvoiceUpdateAPIResponse 从 sync.Pool 获取 TaobaoXhotelCommoninvoiceUpdateAPIResponse
+func GetTaobaoXhotelCommoninvoiceUpdateAPIResponse() *TaobaoXhotelCommoninvoiceUpdateAPIResponse {
+	return poolTaobaoXhotelCommoninvoiceUpdateAPIResponse.Get().(*TaobaoXhotelCommoninvoiceUpdateAPIResponse)
+}
+
+// ReleaseTaobaoXhotelCommoninvoiceUpdateAPIResponse 将 TaobaoXhotelCommoninvoiceUpdateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoXhotelCommoninvoiceUpdateAPIResponse(v *TaobaoXhotelCommoninvoiceUpdateAPIResponse) {
+	v.Reset()
+	poolTaobaoXhotelCommoninvoiceUpdateAPIResponse.Put(v)
 }

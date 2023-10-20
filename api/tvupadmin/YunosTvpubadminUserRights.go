@@ -9,11 +9,6 @@ import (
 // yunos.tvpubadmin.user.rights
 //
 // 获取用户权益
-func YunosTvpubadminUserRights(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminUserRightsAPIRequest, session string) (*tvupadmin.YunosTvpubadminUserRightsAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminUserRightsAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosTvpubadminUserRights(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminUserRightsAPIRequest, resp *tvupadmin.YunosTvpubadminUserRightsAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

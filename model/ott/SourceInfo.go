@@ -1,5 +1,9 @@
 package ott
 
+import (
+	"sync"
+)
+
 // SourceInfo 结构体
 type SourceInfo struct {
 	// v1080
@@ -28,4 +32,33 @@ type SourceInfo struct {
 	V320tv string `json:"v320tv,omitempty" xml:"v320tv,omitempty"`
 	// v240tv
 	V240tv string `json:"v240tv,omitempty" xml:"v240tv,omitempty"`
+}
+
+var poolSourceInfo = sync.Pool{
+	New: func() any {
+		return new(SourceInfo)
+	},
+}
+
+// GetSourceInfo() 从对象池中获取SourceInfo
+func GetSourceInfo() *SourceInfo {
+	return poolSourceInfo.Get().(*SourceInfo)
+}
+
+// ReleaseSourceInfo 释放SourceInfo
+func ReleaseSourceInfo(v *SourceInfo) {
+	v.V1080 = ""
+	v.V720 = ""
+	v.V480 = ""
+	v.V320 = ""
+	v.V240 = ""
+	v.VBlueray4k = ""
+	v.HlsContentUrl = ""
+	v.V2160tv = ""
+	v.V1080tv = ""
+	v.V720tv = ""
+	v.V480tv = ""
+	v.V320tv = ""
+	v.V240tv = ""
+	poolSourceInfo.Put(v)
 }

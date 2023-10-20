@@ -2,6 +2,7 @@ package viapi
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type AliyunViapiObjectdetDetectobjectAPIResponse struct {
 	AliyunViapiObjectdetDetectobjectAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AliyunViapiObjectdetDetectobjectAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliyunViapiObjectdetDetectobjectAPIResponseModel).Reset()
+}
+
 // AliyunViapiObjectdetDetectobjectAPIResponseModel is 物体检测 成功返回结果
 type AliyunViapiObjectdetDetectobjectAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliyun_viapi_objectdet_detectobject_response"`
@@ -25,4 +32,28 @@ type AliyunViapiObjectdetDetectobjectAPIResponseModel struct {
 	TaobaoRequestId string `json:"taobao_request_id,omitempty" xml:"taobao_request_id,omitempty"`
 	// 系统自动生成
 	Data *AliyunViapiObjectdetDetectobjectData `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliyunViapiObjectdetDetectobjectAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TaobaoRequestId = ""
+	m.Data = nil
+}
+
+var poolAliyunViapiObjectdetDetectobjectAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliyunViapiObjectdetDetectobjectAPIResponse)
+	},
+}
+
+// GetAliyunViapiObjectdetDetectobjectAPIResponse 从 sync.Pool 获取 AliyunViapiObjectdetDetectobjectAPIResponse
+func GetAliyunViapiObjectdetDetectobjectAPIResponse() *AliyunViapiObjectdetDetectobjectAPIResponse {
+	return poolAliyunViapiObjectdetDetectobjectAPIResponse.Get().(*AliyunViapiObjectdetDetectobjectAPIResponse)
+}
+
+// ReleaseAliyunViapiObjectdetDetectobjectAPIResponse 将 AliyunViapiObjectdetDetectobjectAPIResponse 保存到 sync.Pool
+func ReleaseAliyunViapiObjectdetDetectobjectAPIResponse(v *AliyunViapiObjectdetDetectobjectAPIResponse) {
+	v.Reset()
+	poolAliyunViapiObjectdetDetectobjectAPIResponse.Put(v)
 }

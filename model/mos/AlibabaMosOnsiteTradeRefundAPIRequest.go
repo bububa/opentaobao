@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -22,8 +23,14 @@ type AlibabaMosOnsiteTradeRefundAPIRequest struct {
 // NewAlibabaMosOnsiteTradeRefundRequest 初始化AlibabaMosOnsiteTradeRefundAPIRequest对象
 func NewAlibabaMosOnsiteTradeRefundRequest() *AlibabaMosOnsiteTradeRefundAPIRequest {
 	return &AlibabaMosOnsiteTradeRefundAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosOnsiteTradeRefundAPIRequest) Reset() {
+	r._onsiteRefundRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -54,4 +61,21 @@ func (r *AlibabaMosOnsiteTradeRefundAPIRequest) SetOnsiteRefundRequest(_onsiteRe
 // GetOnsiteRefundRequest OnsiteRefundRequest Getter
 func (r AlibabaMosOnsiteTradeRefundAPIRequest) GetOnsiteRefundRequest() *OnsiteRefundRequest {
 	return r._onsiteRefundRequest
+}
+
+var poolAlibabaMosOnsiteTradeRefundAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosOnsiteTradeRefundRequest()
+	},
+}
+
+// GetAlibabaMosOnsiteTradeRefundRequest 从 sync.Pool 获取 AlibabaMosOnsiteTradeRefundAPIRequest
+func GetAlibabaMosOnsiteTradeRefundAPIRequest() *AlibabaMosOnsiteTradeRefundAPIRequest {
+	return poolAlibabaMosOnsiteTradeRefundAPIRequest.Get().(*AlibabaMosOnsiteTradeRefundAPIRequest)
+}
+
+// ReleaseAlibabaMosOnsiteTradeRefundAPIRequest 将 AlibabaMosOnsiteTradeRefundAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosOnsiteTradeRefundAPIRequest(v *AlibabaMosOnsiteTradeRefundAPIRequest) {
+	v.Reset()
+	poolAlibabaMosOnsiteTradeRefundAPIRequest.Put(v)
 }

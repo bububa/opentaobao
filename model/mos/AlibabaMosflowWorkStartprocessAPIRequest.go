@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaMosflowWorkStartprocessAPIRequest struct {
 // NewAlibabaMosflowWorkStartprocessRequest 初始化AlibabaMosflowWorkStartprocessAPIRequest对象
 func NewAlibabaMosflowWorkStartprocessRequest() *AlibabaMosflowWorkStartprocessAPIRequest {
 	return &AlibabaMosflowWorkStartprocessAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosflowWorkStartprocessAPIRequest) Reset() {
+	r._variables = ""
+	r._parameterEntity = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaMosflowWorkStartprocessAPIRequest) SetParameterEntity(_parameter
 // GetParameterEntity ParameterEntity Getter
 func (r AlibabaMosflowWorkStartprocessAPIRequest) GetParameterEntity() *ParameterEntity {
 	return r._parameterEntity
+}
+
+var poolAlibabaMosflowWorkStartprocessAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosflowWorkStartprocessRequest()
+	},
+}
+
+// GetAlibabaMosflowWorkStartprocessRequest 从 sync.Pool 获取 AlibabaMosflowWorkStartprocessAPIRequest
+func GetAlibabaMosflowWorkStartprocessAPIRequest() *AlibabaMosflowWorkStartprocessAPIRequest {
+	return poolAlibabaMosflowWorkStartprocessAPIRequest.Get().(*AlibabaMosflowWorkStartprocessAPIRequest)
+}
+
+// ReleaseAlibabaMosflowWorkStartprocessAPIRequest 将 AlibabaMosflowWorkStartprocessAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosflowWorkStartprocessAPIRequest(v *AlibabaMosflowWorkStartprocessAPIRequest) {
+	v.Reset()
+	poolAlibabaMosflowWorkStartprocessAPIRequest.Put(v)
 }

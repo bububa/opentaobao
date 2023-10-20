@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsExpressAddressBlacklistTmsAsyncAPIRequest struct {
 // NewTaobaoLogisticsExpressAddressBlacklistTmsAsyncRequest 初始化TaobaoLogisticsExpressAddressBlacklistTmsAsyncAPIRequest对象
 func NewTaobaoLogisticsExpressAddressBlacklistTmsAsyncRequest() *TaobaoLogisticsExpressAddressBlacklistTmsAsyncAPIRequest {
 	return &TaobaoLogisticsExpressAddressBlacklistTmsAsyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsExpressAddressBlacklistTmsAsyncAPIRequest) Reset() {
+	r._addressBlacklistRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsExpressAddressBlacklistTmsAsyncAPIRequest) SetAddressBla
 // GetAddressBlacklistRequest AddressBlacklistRequest Getter
 func (r TaobaoLogisticsExpressAddressBlacklistTmsAsyncAPIRequest) GetAddressBlacklistRequest() *AddressBlacklistRequest {
 	return r._addressBlacklistRequest
+}
+
+var poolTaobaoLogisticsExpressAddressBlacklistTmsAsyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsExpressAddressBlacklistTmsAsyncRequest()
+	},
+}
+
+// GetTaobaoLogisticsExpressAddressBlacklistTmsAsyncRequest 从 sync.Pool 获取 TaobaoLogisticsExpressAddressBlacklistTmsAsyncAPIRequest
+func GetTaobaoLogisticsExpressAddressBlacklistTmsAsyncAPIRequest() *TaobaoLogisticsExpressAddressBlacklistTmsAsyncAPIRequest {
+	return poolTaobaoLogisticsExpressAddressBlacklistTmsAsyncAPIRequest.Get().(*TaobaoLogisticsExpressAddressBlacklistTmsAsyncAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsExpressAddressBlacklistTmsAsyncAPIRequest 将 TaobaoLogisticsExpressAddressBlacklistTmsAsyncAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsExpressAddressBlacklistTmsAsyncAPIRequest(v *TaobaoLogisticsExpressAddressBlacklistTmsAsyncAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsExpressAddressBlacklistTmsAsyncAPIRequest.Put(v)
 }

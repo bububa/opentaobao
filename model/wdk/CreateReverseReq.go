@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // CreateReverseReq 结构体
 type CreateReverseReq struct {
 	// wdk子单号
@@ -22,4 +26,30 @@ type CreateReverseReq struct {
 	ReasonId int64 `json:"reason_id,omitempty" xml:"reason_id,omitempty"`
 	// 退款金额
 	RefundAmount int64 `json:"refund_amount,omitempty" xml:"refund_amount,omitempty"`
+}
+
+var poolCreateReverseReq = sync.Pool{
+	New: func() any {
+		return new(CreateReverseReq)
+	},
+}
+
+// GetCreateReverseReq() 从对象池中获取CreateReverseReq
+func GetCreateReverseReq() *CreateReverseReq {
+	return poolCreateReverseReq.Get().(*CreateReverseReq)
+}
+
+// ReleaseCreateReverseReq 释放CreateReverseReq
+func ReleaseCreateReverseReq(v *CreateReverseReq) {
+	v.BizOrderIds = v.BizOrderIds[:0]
+	v.GiftCardNos = v.GiftCardNos[:0]
+	v.Proofs = v.Proofs[:0]
+	v.RefundChannelList = v.RefundChannelList[:0]
+	v.ReasonText = ""
+	v.RequestId = ""
+	v.StoreId = ""
+	v.Operator = nil
+	v.ReasonId = 0
+	v.RefundAmount = 0
+	poolCreateReverseReq.Put(v)
 }

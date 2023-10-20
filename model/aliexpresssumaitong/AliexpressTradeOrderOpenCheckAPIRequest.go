@@ -2,6 +2,7 @@ package aliexpresssumaitong
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AliexpressTradeOrderOpenCheckAPIRequest struct {
 // NewAliexpressTradeOrderOpenCheckRequest 初始化AliexpressTradeOrderOpenCheckAPIRequest对象
 func NewAliexpressTradeOrderOpenCheckRequest() *AliexpressTradeOrderOpenCheckAPIRequest {
 	return &AliexpressTradeOrderOpenCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressTradeOrderOpenCheckAPIRequest) Reset() {
+	r._paramPreCreateOrderRequest = nil
+	r._paramClientInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AliexpressTradeOrderOpenCheckAPIRequest) SetParamClientInfo(_paramClien
 // GetParamClientInfo ParamClientInfo Getter
 func (r AliexpressTradeOrderOpenCheckAPIRequest) GetParamClientInfo() *ClientInfo {
 	return r._paramClientInfo
+}
+
+var poolAliexpressTradeOrderOpenCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressTradeOrderOpenCheckRequest()
+	},
+}
+
+// GetAliexpressTradeOrderOpenCheckRequest 从 sync.Pool 获取 AliexpressTradeOrderOpenCheckAPIRequest
+func GetAliexpressTradeOrderOpenCheckAPIRequest() *AliexpressTradeOrderOpenCheckAPIRequest {
+	return poolAliexpressTradeOrderOpenCheckAPIRequest.Get().(*AliexpressTradeOrderOpenCheckAPIRequest)
+}
+
+// ReleaseAliexpressTradeOrderOpenCheckAPIRequest 将 AliexpressTradeOrderOpenCheckAPIRequest 放入 sync.Pool
+func ReleaseAliexpressTradeOrderOpenCheckAPIRequest(v *AliexpressTradeOrderOpenCheckAPIRequest) {
+	v.Reset()
+	poolAliexpressTradeOrderOpenCheckAPIRequest.Put(v)
 }

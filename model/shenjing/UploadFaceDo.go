@@ -1,5 +1,9 @@
 package shenjing
 
+import (
+	"sync"
+)
+
 // UploadFaceDo 结构体
 type UploadFaceDo struct {
 	// 中文消息
@@ -14,4 +18,26 @@ type UploadFaceDo struct {
 	Map *ResultMap `json:"map,omitempty" xml:"map,omitempty"`
 	// 当前上传人数
 	VisitorFacePhotoCurrentNum int64 `json:"visitor_face_photo_current_num,omitempty" xml:"visitor_face_photo_current_num,omitempty"`
+}
+
+var poolUploadFaceDo = sync.Pool{
+	New: func() any {
+		return new(UploadFaceDo)
+	},
+}
+
+// GetUploadFaceDo() 从对象池中获取UploadFaceDo
+func GetUploadFaceDo() *UploadFaceDo {
+	return poolUploadFaceDo.Get().(*UploadFaceDo)
+}
+
+// ReleaseUploadFaceDo 释放UploadFaceDo
+func ReleaseUploadFaceDo(v *UploadFaceDo) {
+	v.Desc = ""
+	v.ExtDesc = ""
+	v.Code = ""
+	v.VisitorFacePhotoTotalNum = 0
+	v.Map = nil
+	v.VisitorFacePhotoCurrentNum = 0
+	poolUploadFaceDo.Put(v)
 }

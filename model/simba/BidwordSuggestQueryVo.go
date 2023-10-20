@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // BidwordSuggestQueryVo 结构体
 type BidwordSuggestQueryVo struct {
 	// 人群id
@@ -12,4 +16,25 @@ type BidwordSuggestQueryVo struct {
 	AdgroupId int64 `json:"adgroup_id,omitempty" xml:"adgroup_id,omitempty"`
 	// 计划id,计划已经存在场景必填
 	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
+}
+
+var poolBidwordSuggestQueryVo = sync.Pool{
+	New: func() any {
+		return new(BidwordSuggestQueryVo)
+	},
+}
+
+// GetBidwordSuggestQueryVo() 从对象池中获取BidwordSuggestQueryVo
+func GetBidwordSuggestQueryVo() *BidwordSuggestQueryVo {
+	return poolBidwordSuggestQueryVo.Get().(*BidwordSuggestQueryVo)
+}
+
+// ReleaseBidwordSuggestQueryVo 释放BidwordSuggestQueryVo
+func ReleaseBidwordSuggestQueryVo(v *BidwordSuggestQueryVo) {
+	v.CrowdIdList = v.CrowdIdList[:0]
+	v.Type = ""
+	v.MaterialId = 0
+	v.AdgroupId = 0
+	v.CampaignId = 0
+	poolBidwordSuggestQueryVo.Put(v)
 }

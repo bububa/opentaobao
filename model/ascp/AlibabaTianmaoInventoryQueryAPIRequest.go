@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTianmaoInventoryQueryAPIRequest struct {
 // NewAlibabaTianmaoInventoryQueryRequest 初始化AlibabaTianmaoInventoryQueryAPIRequest对象
 func NewAlibabaTianmaoInventoryQueryRequest() *AlibabaTianmaoInventoryQueryAPIRequest {
 	return &AlibabaTianmaoInventoryQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTianmaoInventoryQueryAPIRequest) Reset() {
+	r._hiErpQueryInventoryReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTianmaoInventoryQueryAPIRequest) SetHiErpQueryInventoryReq(_hiEr
 // GetHiErpQueryInventoryReq HiErpQueryInventoryReq Getter
 func (r AlibabaTianmaoInventoryQueryAPIRequest) GetHiErpQueryInventoryReq() *HiErpQueryInventoryReq {
 	return r._hiErpQueryInventoryReq
+}
+
+var poolAlibabaTianmaoInventoryQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTianmaoInventoryQueryRequest()
+	},
+}
+
+// GetAlibabaTianmaoInventoryQueryRequest 从 sync.Pool 获取 AlibabaTianmaoInventoryQueryAPIRequest
+func GetAlibabaTianmaoInventoryQueryAPIRequest() *AlibabaTianmaoInventoryQueryAPIRequest {
+	return poolAlibabaTianmaoInventoryQueryAPIRequest.Get().(*AlibabaTianmaoInventoryQueryAPIRequest)
+}
+
+// ReleaseAlibabaTianmaoInventoryQueryAPIRequest 将 AlibabaTianmaoInventoryQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTianmaoInventoryQueryAPIRequest(v *AlibabaTianmaoInventoryQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaTianmaoInventoryQueryAPIRequest.Put(v)
 }

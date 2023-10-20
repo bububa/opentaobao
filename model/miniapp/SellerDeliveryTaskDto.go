@@ -1,5 +1,9 @@
 package miniapp
 
+import (
+	"sync"
+)
+
 // SellerDeliveryTaskDto 结构体
 type SellerDeliveryTaskDto struct {
 	// 扩展参数
@@ -18,4 +22,28 @@ type SellerDeliveryTaskDto struct {
 	TaskStatus string `json:"task_status,omitempty" xml:"task_status,omitempty"`
 	// 策略id
 	StrategyId int64 `json:"strategy_id,omitempty" xml:"strategy_id,omitempty"`
+}
+
+var poolSellerDeliveryTaskDto = sync.Pool{
+	New: func() any {
+		return new(SellerDeliveryTaskDto)
+	},
+}
+
+// GetSellerDeliveryTaskDto() 从对象池中获取SellerDeliveryTaskDto
+func GetSellerDeliveryTaskDto() *SellerDeliveryTaskDto {
+	return poolSellerDeliveryTaskDto.Get().(*SellerDeliveryTaskDto)
+}
+
+// ReleaseSellerDeliveryTaskDto 释放SellerDeliveryTaskDto
+func ReleaseSellerDeliveryTaskDto(v *SellerDeliveryTaskDto) {
+	v.ExtProperties = ""
+	v.Channel = ""
+	v.Source = ""
+	v.SubChannel = ""
+	v.TaskName = ""
+	v.OutId = ""
+	v.TaskStatus = ""
+	v.StrategyId = 0
+	poolSellerDeliveryTaskDto.Put(v)
 }

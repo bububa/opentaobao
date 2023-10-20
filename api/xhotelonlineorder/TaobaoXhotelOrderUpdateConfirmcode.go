@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.order.update.confirmcode
 //
 // 商家拿到订单确认号后，异步推送给飞猪或更新给飞猪。订单确认号用于到店查无时的紧急查单依据。
-func TaobaoXhotelOrderUpdateConfirmcode(clt *core.SDKClient, req *xhotelonlineorder.TaobaoXhotelOrderUpdateConfirmcodeAPIRequest, session string) (*xhotelonlineorder.TaobaoXhotelOrderUpdateConfirmcodeAPIResponse, error) {
-	var resp xhotelonlineorder.TaobaoXhotelOrderUpdateConfirmcodeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelOrderUpdateConfirmcode(clt *core.SDKClient, req *xhotelonlineorder.TaobaoXhotelOrderUpdateConfirmcodeAPIRequest, resp *xhotelonlineorder.TaobaoXhotelOrderUpdateConfirmcodeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

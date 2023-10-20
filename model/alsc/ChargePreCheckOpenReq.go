@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // ChargePreCheckOpenReq 结构体
 type ChargePreCheckOpenReq struct {
 	// 品牌ID(和outbrandid不能同时为空)
@@ -14,4 +18,26 @@ type ChargePreCheckOpenReq struct {
 	OutShopId string `json:"out_shop_id,omitempty" xml:"out_shop_id,omitempty"`
 	// 外部品牌ID(不能和brandid同时为空)
 	OutBrandId string `json:"out_brand_id,omitempty" xml:"out_brand_id,omitempty"`
+}
+
+var poolChargePreCheckOpenReq = sync.Pool{
+	New: func() any {
+		return new(ChargePreCheckOpenReq)
+	},
+}
+
+// GetChargePreCheckOpenReq() 从对象池中获取ChargePreCheckOpenReq
+func GetChargePreCheckOpenReq() *ChargePreCheckOpenReq {
+	return poolChargePreCheckOpenReq.Get().(*ChargePreCheckOpenReq)
+}
+
+// ReleaseChargePreCheckOpenReq 释放ChargePreCheckOpenReq
+func ReleaseChargePreCheckOpenReq(v *ChargePreCheckOpenReq) {
+	v.BrandId = ""
+	v.CardId = ""
+	v.CustomerId = ""
+	v.ShopId = ""
+	v.OutShopId = ""
+	v.OutBrandId = ""
+	poolChargePreCheckOpenReq.Put(v)
 }

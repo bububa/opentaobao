@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // PartnerDetail 结构体
 type PartnerDetail struct {
 	// 物流公司支付宝账号
@@ -16,4 +20,27 @@ type PartnerDetail struct {
 	CompanyName string `json:"company_name,omitempty" xml:"company_name,omitempty"`
 	// 物流公司id
 	CompanyId int64 `json:"company_id,omitempty" xml:"company_id,omitempty"`
+}
+
+var poolPartnerDetail = sync.Pool{
+	New: func() any {
+		return new(PartnerDetail)
+	},
+}
+
+// GetPartnerDetail() 从对象池中获取PartnerDetail
+func GetPartnerDetail() *PartnerDetail {
+	return poolPartnerDetail.Get().(*PartnerDetail)
+}
+
+// ReleasePartnerDetail 释放PartnerDetail
+func ReleasePartnerDetail(v *PartnerDetail) {
+	v.AccountNo = ""
+	v.CompanyCode = ""
+	v.FullName = ""
+	v.RegMailNo = ""
+	v.WangwangId = ""
+	v.CompanyName = ""
+	v.CompanyId = 0
+	poolPartnerDetail.Put(v)
 }

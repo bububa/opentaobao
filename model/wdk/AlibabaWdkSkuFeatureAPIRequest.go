@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkSkuFeatureAPIRequest struct {
 // NewAlibabaWdkSkuFeatureRequest 初始化AlibabaWdkSkuFeatureAPIRequest对象
 func NewAlibabaWdkSkuFeatureRequest() *AlibabaWdkSkuFeatureAPIRequest {
 	return &AlibabaWdkSkuFeatureAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkSkuFeatureAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkSkuFeatureAPIRequest) SetParam(_param *SkuFeatureDo) error {
 // GetParam Param Getter
 func (r AlibabaWdkSkuFeatureAPIRequest) GetParam() *SkuFeatureDo {
 	return r._param
+}
+
+var poolAlibabaWdkSkuFeatureAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkSkuFeatureRequest()
+	},
+}
+
+// GetAlibabaWdkSkuFeatureRequest 从 sync.Pool 获取 AlibabaWdkSkuFeatureAPIRequest
+func GetAlibabaWdkSkuFeatureAPIRequest() *AlibabaWdkSkuFeatureAPIRequest {
+	return poolAlibabaWdkSkuFeatureAPIRequest.Get().(*AlibabaWdkSkuFeatureAPIRequest)
+}
+
+// ReleaseAlibabaWdkSkuFeatureAPIRequest 将 AlibabaWdkSkuFeatureAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkSkuFeatureAPIRequest(v *AlibabaWdkSkuFeatureAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkSkuFeatureAPIRequest.Put(v)
 }

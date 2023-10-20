@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.workcard.desensitization.query
 //
 // 工单查询接口
-func TmallServicecenterWorkcardDesensitizationQuery(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardDesensitizationQueryAPIRequest, session string) (*tmallservice.TmallServicecenterWorkcardDesensitizationQueryAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterWorkcardDesensitizationQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterWorkcardDesensitizationQuery(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardDesensitizationQueryAPIRequest, resp *tmallservice.TmallServicecenterWorkcardDesensitizationQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

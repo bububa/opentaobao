@@ -2,6 +2,7 @@ package user
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -20,8 +21,14 @@ type TmallServiceSettleadjustmentModifyAPIRequest struct {
 // NewTmallServiceSettleadjustmentModifyRequest 初始化TmallServiceSettleadjustmentModifyAPIRequest对象
 func NewTmallServiceSettleadjustmentModifyRequest() *TmallServiceSettleadjustmentModifyAPIRequest {
 	return &TmallServiceSettleadjustmentModifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServiceSettleadjustmentModifyAPIRequest) Reset() {
+	r._paramSettleAdjustmentRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -52,4 +59,21 @@ func (r *TmallServiceSettleadjustmentModifyAPIRequest) SetParamSettleAdjustmentR
 // GetParamSettleAdjustmentRequest ParamSettleAdjustmentRequest Getter
 func (r TmallServiceSettleadjustmentModifyAPIRequest) GetParamSettleAdjustmentRequest() *SettleAdjustmentRequest {
 	return r._paramSettleAdjustmentRequest
+}
+
+var poolTmallServiceSettleadjustmentModifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServiceSettleadjustmentModifyRequest()
+	},
+}
+
+// GetTmallServiceSettleadjustmentModifyRequest 从 sync.Pool 获取 TmallServiceSettleadjustmentModifyAPIRequest
+func GetTmallServiceSettleadjustmentModifyAPIRequest() *TmallServiceSettleadjustmentModifyAPIRequest {
+	return poolTmallServiceSettleadjustmentModifyAPIRequest.Get().(*TmallServiceSettleadjustmentModifyAPIRequest)
+}
+
+// ReleaseTmallServiceSettleadjustmentModifyAPIRequest 将 TmallServiceSettleadjustmentModifyAPIRequest 放入 sync.Pool
+func ReleaseTmallServiceSettleadjustmentModifyAPIRequest(v *TmallServiceSettleadjustmentModifyAPIRequest) {
+	v.Reset()
+	poolTmallServiceSettleadjustmentModifyAPIRequest.Put(v)
 }

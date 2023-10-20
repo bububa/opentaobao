@@ -9,11 +9,6 @@ import (
 // taobao.apple.olduser.charge.notify
 //
 // 老用户激活并兑换通知接口
-func TaobaoAppleOlduserChargeNotify(clt *core.SDKClient, req *game.TaobaoAppleOlduserChargeNotifyAPIRequest, session string) (*game.TaobaoAppleOlduserChargeNotifyAPIResponse, error) {
-	var resp game.TaobaoAppleOlduserChargeNotifyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAppleOlduserChargeNotify(clt *core.SDKClient, req *game.TaobaoAppleOlduserChargeNotifyAPIRequest, resp *game.TaobaoAppleOlduserChargeNotifyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

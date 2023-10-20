@@ -1,21 +1,25 @@
 package legalsuit
 
+import (
+	"sync"
+)
+
 // RefereeRegistrationModel 结构体
 type RefereeRegistrationModel struct {
 	// 反馈附件
-	FeedbackAttachmentList []LfileModel `json:"feedback_attachment_list,omitempty" xml:"feedback_attachment_list>lfile_model,omitempty"`
+	FeedbackAttachmentList []LFileModel `json:"feedback_attachment_list,omitempty" xml:"feedback_attachment_list>l_file_model,omitempty"`
 	// 调解凭证附件列表
 	MediationCertificateFiles []FileModel `json:"mediation_certificate_files,omitempty" xml:"mediation_certificate_files>file_model,omitempty"`
 	// 裁定书附件列表
-	WrittenVerdictFiles []LfileModel `json:"written_verdict_files,omitempty" xml:"written_verdict_files>lfile_model,omitempty"`
+	WrittenVerdictFiles []LFileModel `json:"written_verdict_files,omitempty" xml:"written_verdict_files>l_file_model,omitempty"`
 	// 和解协议附件列表
-	SettlementAgreeFiles []LfileModel `json:"settlement_agree_files,omitempty" xml:"settlement_agree_files>lfile_model,omitempty"`
+	SettlementAgreeFiles []LFileModel `json:"settlement_agree_files,omitempty" xml:"settlement_agree_files>l_file_model,omitempty"`
 	// 裁决书附件列表
-	JudgeFiles []LfileModel `json:"judge_files,omitempty" xml:"judge_files>lfile_model,omitempty"`
+	JudgeFiles []LFileModel `json:"judge_files,omitempty" xml:"judge_files>l_file_model,omitempty"`
 	// 撤诉文件附件列表
-	DroppedFiles []LfileModel `json:"dropped_files,omitempty" xml:"dropped_files>lfile_model,omitempty"`
+	DroppedFiles []LFileModel `json:"dropped_files,omitempty" xml:"dropped_files>l_file_model,omitempty"`
 	// 其他附件附件列表
-	OtherFiles []LfileModel `json:"other_files,omitempty" xml:"other_files>lfile_model,omitempty"`
+	OtherFiles []LFileModel `json:"other_files,omitempty" xml:"other_files>l_file_model,omitempty"`
 	// 是否开庭
 	IsCourtOpened string `json:"is_court_opened,omitempty" xml:"is_court_opened,omitempty"`
 	// 主要观点
@@ -70,4 +74,54 @@ type RefereeRegistrationModel struct {
 	FeedbackId int64 `json:"feedback_id,omitempty" xml:"feedback_id,omitempty"`
 	// 委托ID,
 	EntrustId int64 `json:"entrust_id,omitempty" xml:"entrust_id,omitempty"`
+}
+
+var poolRefereeRegistrationModel = sync.Pool{
+	New: func() any {
+		return new(RefereeRegistrationModel)
+	},
+}
+
+// GetRefereeRegistrationModel() 从对象池中获取RefereeRegistrationModel
+func GetRefereeRegistrationModel() *RefereeRegistrationModel {
+	return poolRefereeRegistrationModel.Get().(*RefereeRegistrationModel)
+}
+
+// ReleaseRefereeRegistrationModel 释放RefereeRegistrationModel
+func ReleaseRefereeRegistrationModel(v *RefereeRegistrationModel) {
+	v.FeedbackAttachmentList = v.FeedbackAttachmentList[:0]
+	v.MediationCertificateFiles = v.MediationCertificateFiles[:0]
+	v.WrittenVerdictFiles = v.WrittenVerdictFiles[:0]
+	v.SettlementAgreeFiles = v.SettlementAgreeFiles[:0]
+	v.JudgeFiles = v.JudgeFiles[:0]
+	v.DroppedFiles = v.DroppedFiles[:0]
+	v.OtherFiles = v.OtherFiles[:0]
+	v.IsCourtOpened = ""
+	v.MainPoint = ""
+	v.TypicalCause = ""
+	v.OtherBusinessLabel = ""
+	v.BusinessLabelKeys = ""
+	v.JudgementResultSecond = ""
+	v.JudgementResult = ""
+	v.ReceivedTime = ""
+	v.CallingTime = ""
+	v.Updater = ""
+	v.Founder = ""
+	v.DefendantReceive = ""
+	v.AmountOurReceive = ""
+	v.AmountOurGive = ""
+	v.Amount = ""
+	v.Processor = ""
+	v.IsAssumeResponsibility = ""
+	v.UpdateTime = ""
+	v.CreateTime = ""
+	v.DropDate = ""
+	v.FeedbackContent = ""
+	v.ResultFrom = ""
+	v.OperationType = ""
+	v.RegistrationId = 0
+	v.SuitId = 0
+	v.FeedbackId = 0
+	v.EntrustId = 0
+	poolRefereeRegistrationModel.Put(v)
 }

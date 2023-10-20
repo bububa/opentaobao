@@ -1,5 +1,9 @@
 package axintrade
 
+import (
+	"sync"
+)
+
 // TravelerDto 结构体
 type TravelerDto struct {
 	// 姓名
@@ -12,4 +16,25 @@ type TravelerDto struct {
 	Certificates string `json:"certificates,omitempty" xml:"certificates,omitempty"`
 	// 联系人证件类型
 	CertificatesType int64 `json:"certificates_type,omitempty" xml:"certificates_type,omitempty"`
+}
+
+var poolTravelerDto = sync.Pool{
+	New: func() any {
+		return new(TravelerDto)
+	},
+}
+
+// GetTravelerDto() 从对象池中获取TravelerDto
+func GetTravelerDto() *TravelerDto {
+	return poolTravelerDto.Get().(*TravelerDto)
+}
+
+// ReleaseTravelerDto 释放TravelerDto
+func ReleaseTravelerDto(v *TravelerDto) {
+	v.Name = ""
+	v.Mobile = ""
+	v.Email = ""
+	v.Certificates = ""
+	v.CertificatesType = 0
+	poolTravelerDto.Put(v)
 }

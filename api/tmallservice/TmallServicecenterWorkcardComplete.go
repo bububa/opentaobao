@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.workcard.complete
 //
 // 工单完结
-func TmallServicecenterWorkcardComplete(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardCompleteAPIRequest, session string) (*tmallservice.TmallServicecenterWorkcardCompleteAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterWorkcardCompleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterWorkcardComplete(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardCompleteAPIRequest, resp *tmallservice.TmallServicecenterWorkcardCompleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

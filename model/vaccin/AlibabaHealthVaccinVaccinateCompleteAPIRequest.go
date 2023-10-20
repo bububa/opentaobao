@@ -2,6 +2,7 @@ package vaccin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type AlibabaHealthVaccinVaccinateCompleteAPIRequest struct {
 // NewAlibabaHealthVaccinVaccinateCompleteRequest 初始化AlibabaHealthVaccinVaccinateCompleteAPIRequest对象
 func NewAlibabaHealthVaccinVaccinateCompleteRequest() *AlibabaHealthVaccinVaccinateCompleteAPIRequest {
 	return &AlibabaHealthVaccinVaccinateCompleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHealthVaccinVaccinateCompleteAPIRequest) Reset() {
+	r._vaccineList = r._vaccineList[:0]
+	r._alipayUserId = ""
+	r._isvUserId = ""
+	r._orderId = ""
+	r._name = ""
+	r._mobile = ""
+	r._vaccinateDate = ""
+	r._vaccinateTime = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *AlibabaHealthVaccinVaccinateCompleteAPIRequest) SetVaccinateTime(_vacci
 // GetVaccinateTime VaccinateTime Getter
 func (r AlibabaHealthVaccinVaccinateCompleteAPIRequest) GetVaccinateTime() string {
 	return r._vaccinateTime
+}
+
+var poolAlibabaHealthVaccinVaccinateCompleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHealthVaccinVaccinateCompleteRequest()
+	},
+}
+
+// GetAlibabaHealthVaccinVaccinateCompleteRequest 从 sync.Pool 获取 AlibabaHealthVaccinVaccinateCompleteAPIRequest
+func GetAlibabaHealthVaccinVaccinateCompleteAPIRequest() *AlibabaHealthVaccinVaccinateCompleteAPIRequest {
+	return poolAlibabaHealthVaccinVaccinateCompleteAPIRequest.Get().(*AlibabaHealthVaccinVaccinateCompleteAPIRequest)
+}
+
+// ReleaseAlibabaHealthVaccinVaccinateCompleteAPIRequest 将 AlibabaHealthVaccinVaccinateCompleteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHealthVaccinVaccinateCompleteAPIRequest(v *AlibabaHealthVaccinVaccinateCompleteAPIRequest) {
+	v.Reset()
+	poolAlibabaHealthVaccinVaccinateCompleteAPIRequest.Put(v)
 }

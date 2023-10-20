@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // CodeQueryFlows 结构体
 type CodeQueryFlows struct {
 	// 入库单委托单位
@@ -34,4 +38,36 @@ type CodeQueryFlows struct {
 	FromAssRefEntId string `json:"from_ass_ref_ent_id,omitempty" xml:"from_ass_ref_ent_id,omitempty"`
 	// 疑似单据存在异常， 为空或否：不存在异常   是：存在异常
 	Flag string `json:"flag,omitempty" xml:"flag,omitempty"`
+}
+
+var poolCodeQueryFlows = sync.Pool{
+	New: func() any {
+		return new(CodeQueryFlows)
+	},
+}
+
+// GetCodeQueryFlows() 从对象池中获取CodeQueryFlows
+func GetCodeQueryFlows() *CodeQueryFlows {
+	return poolCodeQueryFlows.Get().(*CodeQueryFlows)
+}
+
+// ReleaseCodeQueryFlows 释放CodeQueryFlows
+func ReleaseCodeQueryFlows(v *CodeQueryFlows) {
+	v.FromAssRefEntname = ""
+	v.OutDate = ""
+	v.EntName = ""
+	v.ToAssRefEntName = ""
+	v.Level = ""
+	v.InDate = ""
+	v.OutType = ""
+	v.ToAssRefEntId = ""
+	v.EntType = ""
+	v.Authority = ""
+	v.RefEntId = ""
+	v.EntTypeCode = ""
+	v.Region = ""
+	v.InType = ""
+	v.FromAssRefEntId = ""
+	v.Flag = ""
+	poolCodeQueryFlows.Put(v)
 }

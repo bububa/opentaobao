@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.bm.paiyang.stock.query
 //
 // 淘鲜达接入第三方进行派样，第三方查询派样商品的门店库存信息。
-func AlibabaWdkBmPaiyangStockQuery(clt *core.SDKClient, req *wdk.AlibabaWdkBmPaiyangStockQueryAPIRequest, session string) (*wdk.AlibabaWdkBmPaiyangStockQueryAPIResponse, error) {
-	var resp wdk.AlibabaWdkBmPaiyangStockQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkBmPaiyangStockQuery(clt *core.SDKClient, req *wdk.AlibabaWdkBmPaiyangStockQueryAPIRequest, resp *wdk.AlibabaWdkBmPaiyangStockQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

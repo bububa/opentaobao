@@ -1,5 +1,9 @@
 package icbu
 
+import (
+	"sync"
+)
+
 // Attribute 结构体
 type Attribute struct {
 	// 属性可选的属性值
@@ -26,4 +30,32 @@ type Attribute struct {
 	SkuAttribute bool `json:"sku_attribute,omitempty" xml:"sku_attribute,omitempty"`
 	// 表示是否车型库属性，如果是，则需要从分层属性接口里获取下一级属性
 	CarModel bool `json:"car_model,omitempty" xml:"car_model,omitempty"`
+}
+
+var poolAttribute = sync.Pool{
+	New: func() any {
+		return new(Attribute)
+	},
+}
+
+// GetAttribute() 从对象池中获取Attribute
+func GetAttribute() *Attribute {
+	return poolAttribute.Get().(*Attribute)
+}
+
+// ReleaseAttribute 释放Attribute
+func ReleaseAttribute(v *Attribute) {
+	v.AttributeValues = v.AttributeValues[:0]
+	v.Units = v.Units[:0]
+	v.EnName = ""
+	v.InputType = ""
+	v.ShowType = ""
+	v.ValueType = ""
+	v.AttrId = 0
+	v.CustomizeImage = false
+	v.CustomizeValue = false
+	v.Required = false
+	v.SkuAttribute = false
+	v.CarModel = false
+	poolAttribute.Put(v)
 }

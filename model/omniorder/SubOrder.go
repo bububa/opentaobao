@@ -1,5 +1,9 @@
 package omniorder
 
+import (
+	"sync"
+)
+
 // SubOrder 结构体
 type SubOrder struct {
 	// 0表示无系统异常
@@ -20,4 +24,29 @@ type SubOrder struct {
 	SubOid int64 `json:"sub_oid,omitempty" xml:"sub_oid,omitempty"`
 	// 主订单Id
 	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
+}
+
+var poolSubOrder = sync.Pool{
+	New: func() any {
+		return new(SubOrder)
+	},
+}
+
+// GetSubOrder() 从对象池中获取SubOrder
+func GetSubOrder() *SubOrder {
+	return poolSubOrder.Get().(*SubOrder)
+}
+
+// ReleaseSubOrder 释放SubOrder
+func ReleaseSubOrder(v *SubOrder) {
+	v.Code = ""
+	v.Message = ""
+	v.StoreId = ""
+	v.StoreType = ""
+	v.StoreName = ""
+	v.Operator = ""
+	v.Attributes = ""
+	v.SubOid = 0
+	v.Tid = 0
+	poolSubOrder.Put(v)
 }

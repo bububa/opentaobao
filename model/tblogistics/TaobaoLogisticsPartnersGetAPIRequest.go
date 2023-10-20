@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoLogisticsPartnersGetAPIRequest struct {
 // NewTaobaoLogisticsPartnersGetRequest 初始化TaobaoLogisticsPartnersGetAPIRequest对象
 func NewTaobaoLogisticsPartnersGetRequest() *TaobaoLogisticsPartnersGetAPIRequest {
 	return &TaobaoLogisticsPartnersGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsPartnersGetAPIRequest) Reset() {
+	r._sourceId = ""
+	r._targetId = ""
+	r._serviceType = ""
+	r._goodsValue = ""
+	r._isNeedCarriage = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoLogisticsPartnersGetAPIRequest) SetIsNeedCarriage(_isNeedCarriage
 // GetIsNeedCarriage IsNeedCarriage Getter
 func (r TaobaoLogisticsPartnersGetAPIRequest) GetIsNeedCarriage() bool {
 	return r._isNeedCarriage
+}
+
+var poolTaobaoLogisticsPartnersGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsPartnersGetRequest()
+	},
+}
+
+// GetTaobaoLogisticsPartnersGetRequest 从 sync.Pool 获取 TaobaoLogisticsPartnersGetAPIRequest
+func GetTaobaoLogisticsPartnersGetAPIRequest() *TaobaoLogisticsPartnersGetAPIRequest {
+	return poolTaobaoLogisticsPartnersGetAPIRequest.Get().(*TaobaoLogisticsPartnersGetAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsPartnersGetAPIRequest 将 TaobaoLogisticsPartnersGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsPartnersGetAPIRequest(v *TaobaoLogisticsPartnersGetAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsPartnersGetAPIRequest.Put(v)
 }

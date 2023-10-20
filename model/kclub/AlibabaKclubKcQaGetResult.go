@@ -1,5 +1,9 @@
 package kclub
 
+import (
+	"sync"
+)
+
 // AlibabaKclubKcQaGetResult 结构体
 type AlibabaKclubKcQaGetResult struct {
 	// 错误信息
@@ -10,4 +14,24 @@ type AlibabaKclubKcQaGetResult struct {
 	Data *KcQaRead `json:"data,omitempty" xml:"data,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaKclubKcQaGetResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaKclubKcQaGetResult)
+	},
+}
+
+// GetAlibabaKclubKcQaGetResult() 从对象池中获取AlibabaKclubKcQaGetResult
+func GetAlibabaKclubKcQaGetResult() *AlibabaKclubKcQaGetResult {
+	return poolAlibabaKclubKcQaGetResult.Get().(*AlibabaKclubKcQaGetResult)
+}
+
+// ReleaseAlibabaKclubKcQaGetResult 释放AlibabaKclubKcQaGetResult
+func ReleaseAlibabaKclubKcQaGetResult(v *AlibabaKclubKcQaGetResult) {
+	v.Message = ""
+	v.Code = ""
+	v.Data = nil
+	v.Success = false
+	poolAlibabaKclubKcQaGetResult.Put(v)
 }

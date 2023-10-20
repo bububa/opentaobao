@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaEleFengniaoOrderQueryAPIRequest struct {
 // NewAlibabaEleFengniaoOrderQueryRequest 初始化AlibabaEleFengniaoOrderQueryAPIRequest对象
 func NewAlibabaEleFengniaoOrderQueryRequest() *AlibabaEleFengniaoOrderQueryAPIRequest {
 	return &AlibabaEleFengniaoOrderQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEleFengniaoOrderQueryAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaEleFengniaoOrderQueryAPIRequest) SetParam(_param *Param) error {
 // GetParam Param Getter
 func (r AlibabaEleFengniaoOrderQueryAPIRequest) GetParam() *Param {
 	return r._param
+}
+
+var poolAlibabaEleFengniaoOrderQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEleFengniaoOrderQueryRequest()
+	},
+}
+
+// GetAlibabaEleFengniaoOrderQueryRequest 从 sync.Pool 获取 AlibabaEleFengniaoOrderQueryAPIRequest
+func GetAlibabaEleFengniaoOrderQueryAPIRequest() *AlibabaEleFengniaoOrderQueryAPIRequest {
+	return poolAlibabaEleFengniaoOrderQueryAPIRequest.Get().(*AlibabaEleFengniaoOrderQueryAPIRequest)
+}
+
+// ReleaseAlibabaEleFengniaoOrderQueryAPIRequest 将 AlibabaEleFengniaoOrderQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEleFengniaoOrderQueryAPIRequest(v *AlibabaEleFengniaoOrderQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaEleFengniaoOrderQueryAPIRequest.Put(v)
 }

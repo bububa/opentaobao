@@ -9,11 +9,6 @@ import (
 // alibaba.lst.vending.tradeflow.save
 //
 // 自动售货机交易信息同步接口，ISV通过此接口上传售货机交易信息。
-func AlibabaLstVendingTradeflowSave(clt *core.SDKClient, req *lstvending.AlibabaLstVendingTradeflowSaveAPIRequest, session string) (*lstvending.AlibabaLstVendingTradeflowSaveAPIResponse, error) {
-	var resp lstvending.AlibabaLstVendingTradeflowSaveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLstVendingTradeflowSave(clt *core.SDKClient, req *lstvending.AlibabaLstVendingTradeflowSaveAPIRequest, resp *lstvending.AlibabaLstVendingTradeflowSaveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

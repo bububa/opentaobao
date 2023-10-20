@@ -2,6 +2,7 @@ package alidoc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest struct {
 // NewAlibabaAlihealthAlidocDrugStoreUpdateRequest 初始化AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest对象
 func NewAlibabaAlihealthAlidocDrugStoreUpdateRequest() *AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest {
 	return &AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest) Reset() {
+	r._drugStoreUpdateTopRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest) SetDrugStoreUpdateTopR
 // GetDrugStoreUpdateTopRequest DrugStoreUpdateTopRequest Getter
 func (r AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest) GetDrugStoreUpdateTopRequest() *DrugStoreUpdateTopRequest {
 	return r._drugStoreUpdateTopRequest
+}
+
+var poolAlibabaAlihealthAlidocDrugStoreUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthAlidocDrugStoreUpdateRequest()
+	},
+}
+
+// GetAlibabaAlihealthAlidocDrugStoreUpdateRequest 从 sync.Pool 获取 AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest
+func GetAlibabaAlihealthAlidocDrugStoreUpdateAPIRequest() *AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest {
+	return poolAlibabaAlihealthAlidocDrugStoreUpdateAPIRequest.Get().(*AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthAlidocDrugStoreUpdateAPIRequest 将 AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthAlidocDrugStoreUpdateAPIRequest(v *AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthAlidocDrugStoreUpdateAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package icbudropshipping
 
+import (
+	"sync"
+)
+
 // CashierPayResponse 结构体
 type CashierPayResponse struct {
 	// Payment url
@@ -12,4 +16,25 @@ type CashierPayResponse struct {
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// order id
 	TradeId int64 `json:"trade_id,omitempty" xml:"trade_id,omitempty"`
+}
+
+var poolCashierPayResponse = sync.Pool{
+	New: func() any {
+		return new(CashierPayResponse)
+	},
+}
+
+// GetCashierPayResponse() 从对象池中获取CashierPayResponse
+func GetCashierPayResponse() *CashierPayResponse {
+	return poolCashierPayResponse.Get().(*CashierPayResponse)
+}
+
+// ReleaseCashierPayResponse 释放CashierPayResponse
+func ReleaseCashierPayResponse(v *CashierPayResponse) {
+	v.PayUrl = ""
+	v.ReasonCode = ""
+	v.ReasonMessage = ""
+	v.Status = ""
+	v.TradeId = 0
+	poolCashierPayResponse.Put(v)
 }

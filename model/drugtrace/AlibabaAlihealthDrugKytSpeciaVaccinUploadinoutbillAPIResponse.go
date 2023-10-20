@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -14,6 +15,12 @@ import (
 type AlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponseModel).Reset()
 }
 
 // AlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponseModel is 疫苗企业出入库上传 成功返回结果
@@ -29,4 +36,30 @@ type AlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponseModel struct {
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// 是否成功(true 成功 false 失败)
 	ResponseSuccess bool `json:"response_success,omitempty" xml:"response_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Model = ""
+	m.MsgCode = ""
+	m.MsgInfo = ""
+	m.ResponseSuccess = false
+}
+
+var poolAlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponse 从 sync.Pool 获取 AlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponse
+func GetAlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponse() *AlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponse {
+	return poolAlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponse.Get().(*AlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponse 将 AlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponse(v *AlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytSpeciaVaccinUploadinoutbillAPIResponse.Put(v)
 }

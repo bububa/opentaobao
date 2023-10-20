@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest struct {
 // NewAlibabaAlihouseNewhomeProjectDynamicDeleteRequest 初始化AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest对象
 func NewAlibabaAlihouseNewhomeProjectDynamicDeleteRequest() *AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest {
 	return &AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) Reset() {
+	r._outerDynamicId = ""
+	r._outerStoreId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) SetOuterStoreId(_
 // GetOuterStoreId OuterStoreId Getter
 func (r AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) GetOuterStoreId() string {
 	return r._outerStoreId
+}
+
+var poolAlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeProjectDynamicDeleteRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeProjectDynamicDeleteRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest
+func GetAlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest() *AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest {
+	return poolAlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest.Get().(*AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest 将 AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest(v *AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest.Put(v)
 }

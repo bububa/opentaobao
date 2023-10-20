@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoOmniitemItemDeleteAPIRequest struct {
 // NewTaobaoOmniitemItemDeleteRequest 初始化TaobaoOmniitemItemDeleteAPIRequest对象
 func NewTaobaoOmniitemItemDeleteRequest() *TaobaoOmniitemItemDeleteAPIRequest {
 	return &TaobaoOmniitemItemDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOmniitemItemDeleteAPIRequest) Reset() {
+	r._barCode = ""
+	r._outerId = ""
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoOmniitemItemDeleteAPIRequest) SetItemId(_itemId int64) error {
 // GetItemId ItemId Getter
 func (r TaobaoOmniitemItemDeleteAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolTaobaoOmniitemItemDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOmniitemItemDeleteRequest()
+	},
+}
+
+// GetTaobaoOmniitemItemDeleteRequest 从 sync.Pool 获取 TaobaoOmniitemItemDeleteAPIRequest
+func GetTaobaoOmniitemItemDeleteAPIRequest() *TaobaoOmniitemItemDeleteAPIRequest {
+	return poolTaobaoOmniitemItemDeleteAPIRequest.Get().(*TaobaoOmniitemItemDeleteAPIRequest)
+}
+
+// ReleaseTaobaoOmniitemItemDeleteAPIRequest 将 TaobaoOmniitemItemDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOmniitemItemDeleteAPIRequest(v *TaobaoOmniitemItemDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoOmniitemItemDeleteAPIRequest.Put(v)
 }

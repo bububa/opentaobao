@@ -2,6 +2,7 @@ package fundplatform
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaFundplatformCardorderReceiptAPIResponse struct {
 	AlibabaFundplatformCardorderReceiptAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaFundplatformCardorderReceiptAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaFundplatformCardorderReceiptAPIResponseModel).Reset()
+}
+
 // AlibabaFundplatformCardorderReceiptAPIResponseModel is 通知确认收货 成功返回结果
 type AlibabaFundplatformCardorderReceiptAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_fundplatform_cardorder_receipt_response"`
@@ -26,4 +33,29 @@ type AlibabaFundplatformCardorderReceiptAPIResponseModel struct {
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 是否调用成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaFundplatformCardorderReceiptAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultMessage = ""
+	m.ResultCode = ""
+	m.Success = false
+}
+
+var poolAlibabaFundplatformCardorderReceiptAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaFundplatformCardorderReceiptAPIResponse)
+	},
+}
+
+// GetAlibabaFundplatformCardorderReceiptAPIResponse 从 sync.Pool 获取 AlibabaFundplatformCardorderReceiptAPIResponse
+func GetAlibabaFundplatformCardorderReceiptAPIResponse() *AlibabaFundplatformCardorderReceiptAPIResponse {
+	return poolAlibabaFundplatformCardorderReceiptAPIResponse.Get().(*AlibabaFundplatformCardorderReceiptAPIResponse)
+}
+
+// ReleaseAlibabaFundplatformCardorderReceiptAPIResponse 将 AlibabaFundplatformCardorderReceiptAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaFundplatformCardorderReceiptAPIResponse(v *AlibabaFundplatformCardorderReceiptAPIResponse) {
+	v.Reset()
+	poolAlibabaFundplatformCardorderReceiptAPIResponse.Put(v)
 }

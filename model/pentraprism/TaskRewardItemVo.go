@@ -1,5 +1,9 @@
 package pentraprism
 
+import (
+	"sync"
+)
+
 // TaskRewardItemVo 结构体
 type TaskRewardItemVo struct {
 	// 奖励发放图标
@@ -28,4 +32,33 @@ type TaskRewardItemVo struct {
 	OwnCount int64 `json:"own_count,omitempty" xml:"own_count,omitempty"`
 	// 成就点
 	PointCount int64 `json:"point_count,omitempty" xml:"point_count,omitempty"`
+}
+
+var poolTaskRewardItemVo = sync.Pool{
+	New: func() any {
+		return new(TaskRewardItemVo)
+	},
+}
+
+// GetTaskRewardItemVo() 从对象池中获取TaskRewardItemVo
+func GetTaskRewardItemVo() *TaskRewardItemVo {
+	return poolTaskRewardItemVo.Get().(*TaskRewardItemVo)
+}
+
+// ReleaseTaskRewardItemVo 释放TaskRewardItemVo
+func ReleaseTaskRewardItemVo(v *TaskRewardItemVo) {
+	v.Icon = ""
+	v.Mode = ""
+	v.OwnCountText = ""
+	v.Type = ""
+	v.Unit = ""
+	v.BaseCount = 0
+	v.ConfigId = 0
+	v.Encourage = 0
+	v.FinalCount = 0
+	v.MaxCount = 0
+	v.MinCount = 0
+	v.OwnCount = 0
+	v.PointCount = 0
+	poolTaskRewardItemVo.Put(v)
 }

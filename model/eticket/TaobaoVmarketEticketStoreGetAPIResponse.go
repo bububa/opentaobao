@@ -2,6 +2,7 @@ package eticket
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoVmarketEticketStoreGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoVmarketEticketStoreGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoVmarketEticketStoreGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoVmarketEticketStoreGetAPIResponseModel).Reset()
 }
 
 // TaobaoVmarketEticketStoreGetAPIResponseModel is 获取电子凭证预约门店信息 成功返回结果
@@ -36,4 +43,34 @@ type TaobaoVmarketEticketStoreGetAPIResponseModel struct {
 	Selfcode string `json:"selfcode,omitempty" xml:"selfcode,omitempty"`
 	// 商户id
 	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoVmarketEticketStoreGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Address = ""
+	m.Name = ""
+	m.District = ""
+	m.City = ""
+	m.Province = ""
+	m.Contract = ""
+	m.Selfcode = ""
+	m.StoreId = 0
+}
+
+var poolTaobaoVmarketEticketStoreGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoVmarketEticketStoreGetAPIResponse)
+	},
+}
+
+// GetTaobaoVmarketEticketStoreGetAPIResponse 从 sync.Pool 获取 TaobaoVmarketEticketStoreGetAPIResponse
+func GetTaobaoVmarketEticketStoreGetAPIResponse() *TaobaoVmarketEticketStoreGetAPIResponse {
+	return poolTaobaoVmarketEticketStoreGetAPIResponse.Get().(*TaobaoVmarketEticketStoreGetAPIResponse)
+}
+
+// ReleaseTaobaoVmarketEticketStoreGetAPIResponse 将 TaobaoVmarketEticketStoreGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoVmarketEticketStoreGetAPIResponse(v *TaobaoVmarketEticketStoreGetAPIResponse) {
+	v.Reset()
+	poolTaobaoVmarketEticketStoreGetAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // PageResult 结构体
 type PageResult struct {
 	// 数据结果
@@ -22,4 +26,30 @@ type PageResult struct {
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
 	// 是否有下一页
 	HasPre bool `json:"has_pre,omitempty" xml:"has_pre,omitempty"`
+}
+
+var poolPageResult = sync.Pool{
+	New: func() any {
+		return new(PageResult)
+	},
+}
+
+// GetPageResult() 从对象池中获取PageResult
+func GetPageResult() *PageResult {
+	return poolPageResult.Get().(*PageResult)
+}
+
+// ReleasePageResult 释放PageResult
+func ReleasePageResult(v *PageResult) {
+	v.Results = v.Results[:0]
+	v.Runtime = ""
+	v.PrePage = 0
+	v.NextPage = 0
+	v.PageNo = 0
+	v.TotalPages = 0
+	v.PageSize = 0
+	v.TotalCount = 0
+	v.HasNext = false
+	v.HasPre = false
+	poolPageResult.Put(v)
 }

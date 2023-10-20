@@ -1,5 +1,9 @@
 package product
 
+import (
+	"sync"
+)
+
 // SizeMappingTemplate 结构体
 type SizeMappingTemplate struct {
 	// 尺码表模板名称
@@ -8,4 +12,23 @@ type SizeMappingTemplate struct {
 	TemplateContent string `json:"template_content,omitempty" xml:"template_content,omitempty"`
 	// 尺码表模板ID
 	TemplateId int64 `json:"template_id,omitempty" xml:"template_id,omitempty"`
+}
+
+var poolSizeMappingTemplate = sync.Pool{
+	New: func() any {
+		return new(SizeMappingTemplate)
+	},
+}
+
+// GetSizeMappingTemplate() 从对象池中获取SizeMappingTemplate
+func GetSizeMappingTemplate() *SizeMappingTemplate {
+	return poolSizeMappingTemplate.Get().(*SizeMappingTemplate)
+}
+
+// ReleaseSizeMappingTemplate 释放SizeMappingTemplate
+func ReleaseSizeMappingTemplate(v *SizeMappingTemplate) {
+	v.TemplateName = ""
+	v.TemplateContent = ""
+	v.TemplateId = 0
+	poolSizeMappingTemplate.Put(v)
 }

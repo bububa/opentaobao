@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // TransferInfo 结构体
 type TransferInfo struct {
 	// 第二程退改签规则列表
@@ -20,4 +24,29 @@ type TransferInfo struct {
 	TransferDepAirportInfo *AirportInfo `json:"transfer_dep_airport_info,omitempty" xml:"transfer_dep_airport_info,omitempty"`
 	// 第二程销售航司信息
 	TransferAirlineInfo *AirlineInfo `json:"transfer_airline_info,omitempty" xml:"transfer_airline_info,omitempty"`
+}
+
+var poolTransferInfo = sync.Pool{
+	New: func() any {
+		return new(TransferInfo)
+	},
+}
+
+// GetTransferInfo() 从对象池中获取TransferInfo
+func GetTransferInfo() *TransferInfo {
+	return poolTransferInfo.Get().(*TransferInfo)
+}
+
+// ReleaseTransferInfo 释放TransferInfo
+func ReleaseTransferInfo(v *TransferInfo) {
+	v.TransferFlightRuleList = v.TransferFlightRuleList[:0]
+	v.TransferFlightNo = ""
+	v.TransferArrDate = ""
+	v.TransferDepDate = ""
+	v.FlightSize = ""
+	v.FlightType = ""
+	v.TransferArrAirportInfo = nil
+	v.TransferDepAirportInfo = nil
+	v.TransferAirlineInfo = nil
+	poolTransferInfo.Put(v)
 }

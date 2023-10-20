@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoWlbStoresBaseinfoGetAPIRequest struct {
 // NewTaobaoWlbStoresBaseinfoGetRequest 初始化TaobaoWlbStoresBaseinfoGetAPIRequest对象
 func NewTaobaoWlbStoresBaseinfoGetRequest() *TaobaoWlbStoresBaseinfoGetAPIRequest {
 	return &TaobaoWlbStoresBaseinfoGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbStoresBaseinfoGetAPIRequest) Reset() {
+	r._type = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoWlbStoresBaseinfoGetAPIRequest) SetType(_type int64) error {
 // GetType Type Getter
 func (r TaobaoWlbStoresBaseinfoGetAPIRequest) GetType() int64 {
 	return r._type
+}
+
+var poolTaobaoWlbStoresBaseinfoGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbStoresBaseinfoGetRequest()
+	},
+}
+
+// GetTaobaoWlbStoresBaseinfoGetRequest 从 sync.Pool 获取 TaobaoWlbStoresBaseinfoGetAPIRequest
+func GetTaobaoWlbStoresBaseinfoGetAPIRequest() *TaobaoWlbStoresBaseinfoGetAPIRequest {
+	return poolTaobaoWlbStoresBaseinfoGetAPIRequest.Get().(*TaobaoWlbStoresBaseinfoGetAPIRequest)
+}
+
+// ReleaseTaobaoWlbStoresBaseinfoGetAPIRequest 将 TaobaoWlbStoresBaseinfoGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbStoresBaseinfoGetAPIRequest(v *TaobaoWlbStoresBaseinfoGetAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbStoresBaseinfoGetAPIRequest.Put(v)
 }

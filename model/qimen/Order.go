@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // Order 结构体
 type Order struct {
 	// 订单包裹信息
@@ -38,4 +42,38 @@ type Order struct {
 	DeliveryOrder *DeliveryOrder `json:"deliveryOrder,omitempty" xml:"deliveryOrder,omitempty"`
 	// 单据详情
 	OrderInfo *OrderInfo `json:"orderInfo,omitempty" xml:"orderInfo,omitempty"`
+}
+
+var poolOrder = sync.Pool{
+	New: func() any {
+		return new(Order)
+	},
+}
+
+// GetOrder() 从对象池中获取Order
+func GetOrder() *Order {
+	return poolOrder.Get().(*Order)
+}
+
+// ReleaseOrder 释放Order
+func ReleaseOrder(v *Order) {
+	v.Packages = v.Packages[:0]
+	v.OrderLines = v.OrderLines[:0]
+	v.DeliveryOrders = v.DeliveryOrders[:0]
+	v.DeliveryOrderCode = ""
+	v.Message = ""
+	v.Flag = ""
+	v.Code = ""
+	v.OrderCode = ""
+	v.WarehouseCode = ""
+	v.OwnerCode = ""
+	v.OrderType = ""
+	v.OutBizCode = ""
+	v.OrderId = ""
+	v.Remark = ""
+	v.DeliveryOrderId = ""
+	v.Num = ""
+	v.DeliveryOrder = nil
+	v.OrderInfo = nil
+	poolOrder.Put(v)
 }

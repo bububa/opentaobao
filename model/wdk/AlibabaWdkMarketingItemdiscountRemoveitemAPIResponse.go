@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaWdkMarketingItemdiscountRemoveitemAPIResponse struct {
 	AlibabaWdkMarketingItemdiscountRemoveitemAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaWdkMarketingItemdiscountRemoveitemAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaWdkMarketingItemdiscountRemoveitemAPIResponseModel).Reset()
+}
+
 // AlibabaWdkMarketingItemdiscountRemoveitemAPIResponseModel is 移除报名的商品 成功返回结果
 type AlibabaWdkMarketingItemdiscountRemoveitemAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_marketing_itemdiscount_removeitem_response"`
@@ -22,4 +29,27 @@ type AlibabaWdkMarketingItemdiscountRemoveitemAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 移除商品返回结果
 	Result *MarketResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaWdkMarketingItemdiscountRemoveitemAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaWdkMarketingItemdiscountRemoveitemAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkMarketingItemdiscountRemoveitemAPIResponse)
+	},
+}
+
+// GetAlibabaWdkMarketingItemdiscountRemoveitemAPIResponse 从 sync.Pool 获取 AlibabaWdkMarketingItemdiscountRemoveitemAPIResponse
+func GetAlibabaWdkMarketingItemdiscountRemoveitemAPIResponse() *AlibabaWdkMarketingItemdiscountRemoveitemAPIResponse {
+	return poolAlibabaWdkMarketingItemdiscountRemoveitemAPIResponse.Get().(*AlibabaWdkMarketingItemdiscountRemoveitemAPIResponse)
+}
+
+// ReleaseAlibabaWdkMarketingItemdiscountRemoveitemAPIResponse 将 AlibabaWdkMarketingItemdiscountRemoveitemAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaWdkMarketingItemdiscountRemoveitemAPIResponse(v *AlibabaWdkMarketingItemdiscountRemoveitemAPIResponse) {
+	v.Reset()
+	poolAlibabaWdkMarketingItemdiscountRemoveitemAPIResponse.Put(v)
 }

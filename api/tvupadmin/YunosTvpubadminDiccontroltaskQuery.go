@@ -9,11 +9,6 @@ import (
 // yunos.tvpubadmin.diccontroltask.query
 //
 // 牌照方对终端设备的停开服管理
-func YunosTvpubadminDiccontroltaskQuery(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDiccontroltaskQueryAPIRequest, session string) (*tvupadmin.YunosTvpubadminDiccontroltaskQueryAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminDiccontroltaskQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosTvpubadminDiccontroltaskQuery(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDiccontroltaskQueryAPIRequest, resp *tvupadmin.YunosTvpubadminDiccontroltaskQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

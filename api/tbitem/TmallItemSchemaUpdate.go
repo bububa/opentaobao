@@ -9,11 +9,6 @@ import (
 // tmall.item.schema.update
 //
 // 天猫根据规则编辑商品
-func TmallItemSchemaUpdate(clt *core.SDKClient, req *tbitem.TmallItemSchemaUpdateAPIRequest, session string) (*tbitem.TmallItemSchemaUpdateAPIResponse, error) {
-	var resp tbitem.TmallItemSchemaUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallItemSchemaUpdate(clt *core.SDKClient, req *tbitem.TmallItemSchemaUpdateAPIRequest, resp *tbitem.TmallItemSchemaUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

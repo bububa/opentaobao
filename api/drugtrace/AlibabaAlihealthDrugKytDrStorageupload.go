@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drug.kyt.dr.storageupload
 //
 // 疫苗存储温度上传
-func AlibabaAlihealthDrugKytDrStorageupload(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytDrStorageuploadAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytDrStorageuploadAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugKytDrStorageuploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugKytDrStorageupload(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytDrStorageuploadAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytDrStorageuploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

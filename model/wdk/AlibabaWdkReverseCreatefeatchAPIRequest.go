@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkReverseCreatefeatchAPIRequest struct {
 // NewAlibabaWdkReverseCreatefeatchRequest 初始化AlibabaWdkReverseCreatefeatchAPIRequest对象
 func NewAlibabaWdkReverseCreatefeatchRequest() *AlibabaWdkReverseCreatefeatchAPIRequest {
 	return &AlibabaWdkReverseCreatefeatchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkReverseCreatefeatchAPIRequest) Reset() {
+	r._paramCreateFetchReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkReverseCreatefeatchAPIRequest) SetParamCreateFetchReq(_paramC
 // GetParamCreateFetchReq ParamCreateFetchReq Getter
 func (r AlibabaWdkReverseCreatefeatchAPIRequest) GetParamCreateFetchReq() *CreateFetchReq {
 	return r._paramCreateFetchReq
+}
+
+var poolAlibabaWdkReverseCreatefeatchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkReverseCreatefeatchRequest()
+	},
+}
+
+// GetAlibabaWdkReverseCreatefeatchRequest 从 sync.Pool 获取 AlibabaWdkReverseCreatefeatchAPIRequest
+func GetAlibabaWdkReverseCreatefeatchAPIRequest() *AlibabaWdkReverseCreatefeatchAPIRequest {
+	return poolAlibabaWdkReverseCreatefeatchAPIRequest.Get().(*AlibabaWdkReverseCreatefeatchAPIRequest)
+}
+
+// ReleaseAlibabaWdkReverseCreatefeatchAPIRequest 将 AlibabaWdkReverseCreatefeatchAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkReverseCreatefeatchAPIRequest(v *AlibabaWdkReverseCreatefeatchAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkReverseCreatefeatchAPIRequest.Put(v)
 }

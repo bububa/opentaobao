@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.quota.update
 //
 // 库存更新接口
-func TaobaoXhotelQuotaUpdate(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelQuotaUpdateAPIRequest, session string) (*xhotelitem.TaobaoXhotelQuotaUpdateAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelQuotaUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelQuotaUpdate(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelQuotaUpdateAPIRequest, resp *xhotelitem.TaobaoXhotelQuotaUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

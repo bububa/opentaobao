@@ -9,11 +9,6 @@ import (
 // taobao.logistics.express.site.tms.sync
 //
 // 配服务商网点信息同步
-func TaobaoLogisticsExpressSiteTmsSync(clt *core.SDKClient, req *ascp.TaobaoLogisticsExpressSiteTmsSyncAPIRequest, session string) (*ascp.TaobaoLogisticsExpressSiteTmsSyncAPIResponse, error) {
-	var resp ascp.TaobaoLogisticsExpressSiteTmsSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoLogisticsExpressSiteTmsSync(clt *core.SDKClient, req *ascp.TaobaoLogisticsExpressSiteTmsSyncAPIRequest, resp *ascp.TaobaoLogisticsExpressSiteTmsSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

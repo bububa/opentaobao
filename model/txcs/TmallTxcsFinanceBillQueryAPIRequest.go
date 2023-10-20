@@ -2,6 +2,7 @@ package txcs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallTxcsFinanceBillQueryAPIRequest struct {
 // NewTmallTxcsFinanceBillQueryRequest 初始化TmallTxcsFinanceBillQueryAPIRequest对象
 func NewTmallTxcsFinanceBillQueryRequest() *TmallTxcsFinanceBillQueryAPIRequest {
 	return &TmallTxcsFinanceBillQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallTxcsFinanceBillQueryAPIRequest) Reset() {
+	r._statementBillQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallTxcsFinanceBillQueryAPIRequest) SetStatementBillQuery(_statementBi
 // GetStatementBillQuery StatementBillQuery Getter
 func (r TmallTxcsFinanceBillQueryAPIRequest) GetStatementBillQuery() *StatementBillQuery {
 	return r._statementBillQuery
+}
+
+var poolTmallTxcsFinanceBillQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallTxcsFinanceBillQueryRequest()
+	},
+}
+
+// GetTmallTxcsFinanceBillQueryRequest 从 sync.Pool 获取 TmallTxcsFinanceBillQueryAPIRequest
+func GetTmallTxcsFinanceBillQueryAPIRequest() *TmallTxcsFinanceBillQueryAPIRequest {
+	return poolTmallTxcsFinanceBillQueryAPIRequest.Get().(*TmallTxcsFinanceBillQueryAPIRequest)
+}
+
+// ReleaseTmallTxcsFinanceBillQueryAPIRequest 将 TmallTxcsFinanceBillQueryAPIRequest 放入 sync.Pool
+func ReleaseTmallTxcsFinanceBillQueryAPIRequest(v *TmallTxcsFinanceBillQueryAPIRequest) {
+	v.Reset()
+	poolTmallTxcsFinanceBillQueryAPIRequest.Put(v)
 }

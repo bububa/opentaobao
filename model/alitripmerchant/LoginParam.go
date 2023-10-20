@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // LoginParam 结构体
 type LoginParam struct {
 	// 用户信息初始化向量
@@ -32,4 +36,35 @@ type LoginParam struct {
 	OldVersion bool `json:"old_version,omitempty" xml:"old_version,omitempty"`
 	// 注销账号场景
 	DestroyVerification bool `json:"destroy_verification,omitempty" xml:"destroy_verification,omitempty"`
+}
+
+var poolLoginParam = sync.Pool{
+	New: func() any {
+		return new(LoginParam)
+	},
+}
+
+// GetLoginParam() 从对象池中获取LoginParam
+func GetLoginParam() *LoginParam {
+	return poolLoginParam.Get().(*LoginParam)
+}
+
+// ReleaseLoginParam 释放LoginParam
+func ReleaseLoginParam(v *LoginParam) {
+	v.InfoIv = ""
+	v.Code = ""
+	v.EncryptedPhone = ""
+	v.Signature = ""
+	v.Ip = ""
+	v.EncryptedInfo = ""
+	v.PhoneIv = ""
+	v.RawData = ""
+	v.SceneDistinction = ""
+	v.NameVerification = ""
+	v.UserEncryptInfo = ""
+	v.Channel = 0
+	v.NewUserinfo = nil
+	v.OldVersion = false
+	v.DestroyVerification = false
+	poolLoginParam.Put(v)
 }

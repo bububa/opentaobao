@@ -2,6 +2,7 @@ package train
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoTrainAgentTostationReceiveAPIRequest struct {
 // NewTaobaoTrainAgentTostationReceiveRequest 初始化TaobaoTrainAgentTostationReceiveAPIRequest对象
 func NewTaobaoTrainAgentTostationReceiveRequest() *TaobaoTrainAgentTostationReceiveAPIRequest {
 	return &TaobaoTrainAgentTostationReceiveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTrainAgentTostationReceiveAPIRequest) Reset() {
+	r._mainOrderId = 0
+	r._agentId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoTrainAgentTostationReceiveAPIRequest) SetAgentId(_agentId int64) 
 // GetAgentId AgentId Getter
 func (r TaobaoTrainAgentTostationReceiveAPIRequest) GetAgentId() int64 {
 	return r._agentId
+}
+
+var poolTaobaoTrainAgentTostationReceiveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTrainAgentTostationReceiveRequest()
+	},
+}
+
+// GetTaobaoTrainAgentTostationReceiveRequest 从 sync.Pool 获取 TaobaoTrainAgentTostationReceiveAPIRequest
+func GetTaobaoTrainAgentTostationReceiveAPIRequest() *TaobaoTrainAgentTostationReceiveAPIRequest {
+	return poolTaobaoTrainAgentTostationReceiveAPIRequest.Get().(*TaobaoTrainAgentTostationReceiveAPIRequest)
+}
+
+// ReleaseTaobaoTrainAgentTostationReceiveAPIRequest 将 TaobaoTrainAgentTostationReceiveAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTrainAgentTostationReceiveAPIRequest(v *TaobaoTrainAgentTostationReceiveAPIRequest) {
+	v.Reset()
+	poolTaobaoTrainAgentTostationReceiveAPIRequest.Put(v)
 }

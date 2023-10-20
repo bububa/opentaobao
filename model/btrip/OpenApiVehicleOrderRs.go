@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenApiVehicleOrderRs 结构体
 type OpenApiVehicleOrderRs struct {
 	// 价目详情列表
@@ -102,4 +106,70 @@ type OpenApiVehicleOrderRs struct {
 	ProjectId int64 `json:"project_id,omitempty" xml:"project_id,omitempty"`
 	// 是否特殊订单
 	IsSpecial bool `json:"is_special,omitempty" xml:"is_special,omitempty"`
+}
+
+var poolOpenApiVehicleOrderRs = sync.Pool{
+	New: func() any {
+		return new(OpenApiVehicleOrderRs)
+	},
+}
+
+// GetOpenApiVehicleOrderRs() 从对象池中获取OpenApiVehicleOrderRs
+func GetOpenApiVehicleOrderRs() *OpenApiVehicleOrderRs {
+	return poolOpenApiVehicleOrderRs.Get().(*OpenApiVehicleOrderRs)
+}
+
+// ReleaseOpenApiVehicleOrderRs 释放OpenApiVehicleOrderRs
+func ReleaseOpenApiVehicleOrderRs(v *OpenApiVehicleOrderRs) {
+	v.PriceInfoList = v.PriceInfoList[:0]
+	v.UserAffiliateList = v.UserAffiliateList[:0]
+	v.SpecialTypes = v.SpecialTypes[:0]
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.PassengerName = ""
+	v.CorpId = ""
+	v.CorpName = ""
+	v.UserName = ""
+	v.UserId = ""
+	v.DeptName = ""
+	v.ApplyShowId = ""
+	v.RealFromAddress = ""
+	v.RealToAddress = ""
+	v.RealFromCityName = ""
+	v.RealToCityName = ""
+	v.FromAddress = ""
+	v.ToAddress = ""
+	v.FromCityName = ""
+	v.ToCityName = ""
+	v.Memo = ""
+	v.CarInfo = ""
+	v.EstimatePrice = ""
+	v.PublishTime = ""
+	v.TakenTime = ""
+	v.DriverConfirmTime = ""
+	v.CancelTime = ""
+	v.PayTime = ""
+	v.TravelDistance = ""
+	v.BusinessCategory = ""
+	v.CostCenterNumber = ""
+	v.InvoiceTitle = ""
+	v.ProjectCode = ""
+	v.ProjectTitle = ""
+	v.ThirdpartItineraryId = ""
+	v.ThirdpartApplyId = ""
+	v.BtripTitle = ""
+	v.CostCenterName = ""
+	v.Id = 0
+	v.DeptId = 0
+	v.ApplyId = 0
+	v.OrderStatus = 0
+	v.CarLevel = 0
+	v.ServiceType = 0
+	v.CostCenterId = 0
+	v.InvoiceId = 0
+	v.UserConfirm = 0
+	v.Provider = 0
+	v.ProjectId = 0
+	v.IsSpecial = false
+	poolOpenApiVehicleOrderRs.Put(v)
 }

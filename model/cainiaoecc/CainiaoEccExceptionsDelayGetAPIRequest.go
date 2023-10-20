@@ -2,6 +2,7 @@ package cainiaoecc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoEccExceptionsDelayGetAPIRequest struct {
 // NewCainiaoEccExceptionsDelayGetRequest 初始化CainiaoEccExceptionsDelayGetAPIRequest对象
 func NewCainiaoEccExceptionsDelayGetRequest() *CainiaoEccExceptionsDelayGetAPIRequest {
 	return &CainiaoEccExceptionsDelayGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoEccExceptionsDelayGetAPIRequest) Reset() {
+	r._mailNo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoEccExceptionsDelayGetAPIRequest) SetMailNo(_mailNo string) error
 // GetMailNo MailNo Getter
 func (r CainiaoEccExceptionsDelayGetAPIRequest) GetMailNo() string {
 	return r._mailNo
+}
+
+var poolCainiaoEccExceptionsDelayGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoEccExceptionsDelayGetRequest()
+	},
+}
+
+// GetCainiaoEccExceptionsDelayGetRequest 从 sync.Pool 获取 CainiaoEccExceptionsDelayGetAPIRequest
+func GetCainiaoEccExceptionsDelayGetAPIRequest() *CainiaoEccExceptionsDelayGetAPIRequest {
+	return poolCainiaoEccExceptionsDelayGetAPIRequest.Get().(*CainiaoEccExceptionsDelayGetAPIRequest)
+}
+
+// ReleaseCainiaoEccExceptionsDelayGetAPIRequest 将 CainiaoEccExceptionsDelayGetAPIRequest 放入 sync.Pool
+func ReleaseCainiaoEccExceptionsDelayGetAPIRequest(v *CainiaoEccExceptionsDelayGetAPIRequest) {
+	v.Reset()
+	poolCainiaoEccExceptionsDelayGetAPIRequest.Put(v)
 }

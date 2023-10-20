@@ -1,7 +1,11 @@
 package ma
 
-// XcodeTo 结构体
-type XcodeTo struct {
+import (
+	"sync"
+)
+
+// XCodeTo 结构体
+type XCodeTo struct {
 	// 二维码图片地址
 	ImgUrl string `json:"img_url,omitempty" xml:"img_url,omitempty"`
 	// 最后修改时间
@@ -22,4 +26,30 @@ type XcodeTo struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 所属用户ID，如果入参没有用户登录信息，则随机生成
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
+}
+
+var poolXCodeTo = sync.Pool{
+	New: func() any {
+		return new(XCodeTo)
+	},
+}
+
+// GetXCodeTo() 从对象池中获取XCodeTo
+func GetXCodeTo() *XCodeTo {
+	return poolXCodeTo.Get().(*XCodeTo)
+}
+
+// ReleaseXCodeTo 释放XCodeTo
+func ReleaseXCodeTo(v *XCodeTo) {
+	v.ImgUrl = ""
+	v.GmtModified = ""
+	v.GmtCreate = ""
+	v.LifeStart = ""
+	v.ShortUrl = ""
+	v.ShortName = ""
+	v.LifeEnd = ""
+	v.Id = 0
+	v.Status = 0
+	v.UserId = 0
+	poolXCodeTo.Put(v)
 }

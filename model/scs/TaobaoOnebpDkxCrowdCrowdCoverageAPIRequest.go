@@ -2,6 +2,7 @@ package scs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoOnebpDkxCrowdCrowdCoverageAPIRequest struct {
 // NewTaobaoOnebpDkxCrowdCrowdCoverageRequest 初始化TaobaoOnebpDkxCrowdCrowdCoverageAPIRequest对象
 func NewTaobaoOnebpDkxCrowdCrowdCoverageRequest() *TaobaoOnebpDkxCrowdCrowdCoverageAPIRequest {
 	return &TaobaoOnebpDkxCrowdCrowdCoverageAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOnebpDkxCrowdCrowdCoverageAPIRequest) Reset() {
+	r._apiServiceContext = nil
+	r._groupQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoOnebpDkxCrowdCrowdCoverageAPIRequest) SetGroupQuery(_groupQuery *
 // GetGroupQuery GroupQuery Getter
 func (r TaobaoOnebpDkxCrowdCrowdCoverageAPIRequest) GetGroupQuery() *GroupQueryTopDto {
 	return r._groupQuery
+}
+
+var poolTaobaoOnebpDkxCrowdCrowdCoverageAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOnebpDkxCrowdCrowdCoverageRequest()
+	},
+}
+
+// GetTaobaoOnebpDkxCrowdCrowdCoverageRequest 从 sync.Pool 获取 TaobaoOnebpDkxCrowdCrowdCoverageAPIRequest
+func GetTaobaoOnebpDkxCrowdCrowdCoverageAPIRequest() *TaobaoOnebpDkxCrowdCrowdCoverageAPIRequest {
+	return poolTaobaoOnebpDkxCrowdCrowdCoverageAPIRequest.Get().(*TaobaoOnebpDkxCrowdCrowdCoverageAPIRequest)
+}
+
+// ReleaseTaobaoOnebpDkxCrowdCrowdCoverageAPIRequest 将 TaobaoOnebpDkxCrowdCrowdCoverageAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOnebpDkxCrowdCrowdCoverageAPIRequest(v *TaobaoOnebpDkxCrowdCrowdCoverageAPIRequest) {
+	v.Reset()
+	poolTaobaoOnebpDkxCrowdCrowdCoverageAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.tmc.user.get
 //
 // 查询指定用户开通的消息通道和组
-func TaobaoTmcUserGet(clt *core.SDKClient, req *tmc.TaobaoTmcUserGetAPIRequest, session string) (*tmc.TaobaoTmcUserGetAPIResponse, error) {
-	var resp tmc.TaobaoTmcUserGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTmcUserGet(clt *core.SDKClient, req *tmc.TaobaoTmcUserGetAPIRequest, resp *tmc.TaobaoTmcUserGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

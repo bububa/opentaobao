@@ -9,11 +9,6 @@ import (
 // alibaba.campus.guard.controller.configsync
 //
 // 门禁控制器配置项同步
-func AlibabaCampusGuardControllerConfigsync(clt *core.SDKClient, req *campus.AlibabaCampusGuardControllerConfigsyncAPIRequest, session string) (*campus.AlibabaCampusGuardControllerConfigsyncAPIResponse, error) {
-	var resp campus.AlibabaCampusGuardControllerConfigsyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusGuardControllerConfigsync(clt *core.SDKClient, req *campus.AlibabaCampusGuardControllerConfigsyncAPIRequest, resp *campus.AlibabaCampusGuardControllerConfigsyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

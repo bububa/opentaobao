@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -32,8 +33,14 @@ type TmallServicecenterServicestoreUpdateservicestoreAPIRequest struct {
 // NewTmallServicecenterServicestoreUpdateservicestoreRequest 初始化TmallServicecenterServicestoreUpdateservicestoreAPIRequest对象
 func NewTmallServicecenterServicestoreUpdateservicestoreRequest() *TmallServicecenterServicestoreUpdateservicestoreAPIRequest {
 	return &TmallServicecenterServicestoreUpdateservicestoreAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterServicestoreUpdateservicestoreAPIRequest) Reset() {
+	r._serviceStore = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -64,4 +71,21 @@ func (r *TmallServicecenterServicestoreUpdateservicestoreAPIRequest) SetServiceS
 // GetServiceStore ServiceStore Getter
 func (r TmallServicecenterServicestoreUpdateservicestoreAPIRequest) GetServiceStore() *ServiceStoreDto {
 	return r._serviceStore
+}
+
+var poolTmallServicecenterServicestoreUpdateservicestoreAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterServicestoreUpdateservicestoreRequest()
+	},
+}
+
+// GetTmallServicecenterServicestoreUpdateservicestoreRequest 从 sync.Pool 获取 TmallServicecenterServicestoreUpdateservicestoreAPIRequest
+func GetTmallServicecenterServicestoreUpdateservicestoreAPIRequest() *TmallServicecenterServicestoreUpdateservicestoreAPIRequest {
+	return poolTmallServicecenterServicestoreUpdateservicestoreAPIRequest.Get().(*TmallServicecenterServicestoreUpdateservicestoreAPIRequest)
+}
+
+// ReleaseTmallServicecenterServicestoreUpdateservicestoreAPIRequest 将 TmallServicecenterServicestoreUpdateservicestoreAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterServicestoreUpdateservicestoreAPIRequest(v *TmallServicecenterServicestoreUpdateservicestoreAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterServicestoreUpdateservicestoreAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.bnbreview.add
 //
 // 对外开放评论接口
-func TaobaoXhotelBnbreviewAdd(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBnbreviewAddAPIRequest, session string) (*xhotelitem.TaobaoXhotelBnbreviewAddAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelBnbreviewAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelBnbreviewAdd(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBnbreviewAddAPIRequest, resp *xhotelitem.TaobaoXhotelBnbreviewAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

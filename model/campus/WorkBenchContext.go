@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // WorkBenchContext 结构体
 type WorkBenchContext struct {
 	// 应用id
@@ -24,4 +28,31 @@ type WorkBenchContext struct {
 	CampusId int64 `json:"campus_id,omitempty" xml:"campus_id,omitempty"`
 	// userId
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
+}
+
+var poolWorkBenchContext = sync.Pool{
+	New: func() any {
+		return new(WorkBenchContext)
+	},
+}
+
+// GetWorkBenchContext() 从对象池中获取WorkBenchContext
+func GetWorkBenchContext() *WorkBenchContext {
+	return poolWorkBenchContext.Get().(*WorkBenchContext)
+}
+
+// ReleaseWorkBenchContext 释放WorkBenchContext
+func ReleaseWorkBenchContext(v *WorkBenchContext) {
+	v.SystemId = ""
+	v.AppCode = ""
+	v.SecurityCode = ""
+	v.CampusCode = ""
+	v.UserName = ""
+	v.EagleEyeTraceId = ""
+	v.Ip = ""
+	v.Language = ""
+	v.CompanyId = 0
+	v.CampusId = 0
+	v.UserId = 0
+	poolWorkBenchContext.Put(v)
 }

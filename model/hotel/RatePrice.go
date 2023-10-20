@@ -1,5 +1,9 @@
 package hotel
 
+import (
+	"sync"
+)
+
 // RatePrice 结构体
 type RatePrice struct {
 	// 商品属性，INSTANT_CONFIRM(&#34;及时确认&#34;),MORNING_ORDER(&#34;支持凌晨入住&#34;),
@@ -38,4 +42,38 @@ type RatePrice struct {
 	MinAdvanceHour int64 `json:"min_advance_hour,omitempty" xml:"min_advance_hour,omitempty"`
 	// 最大提前预定小时数
 	MaxAdvanceHour int64 `json:"max_advance_hour,omitempty" xml:"max_advance_hour,omitempty"`
+}
+
+var poolRatePrice = sync.Pool{
+	New: func() any {
+		return new(RatePrice)
+	},
+}
+
+// GetRatePrice() 从对象池中获取RatePrice
+func GetRatePrice() *RatePrice {
+	return poolRatePrice.Get().(*RatePrice)
+}
+
+// ReleaseRatePrice 释放RatePrice
+func ReleaseRatePrice(v *RatePrice) {
+	v.Attribute = v.Attribute[:0]
+	v.CheckinCheckoutPrices = v.CheckinCheckoutPrices[:0]
+	v.CurrencyCode = ""
+	v.EffectiveDailyStartTime = ""
+	v.EffectiveDailyEndTime = ""
+	v.EffectiveStartTime = ""
+	v.EffectiveEndTime = ""
+	v.CancelPolicyJson = ""
+	v.CancelPolicyDesc = ""
+	v.RateId = 0
+	v.RateplanId = 0
+	v.ItemId = 0
+	v.InvoiceProvider = 0
+	v.MaxStayDays = 0
+	v.MinStayDays = 0
+	v.MaxOccupancy = 0
+	v.MinAdvanceHour = 0
+	v.MaxAdvanceHour = 0
+	poolRatePrice.Put(v)
 }

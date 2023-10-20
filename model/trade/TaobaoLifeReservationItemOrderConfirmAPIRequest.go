@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoLifeReservationItemOrderConfirmAPIRequest struct {
 // NewTaobaoLifeReservationItemOrderConfirmRequest 初始化TaobaoLifeReservationItemOrderConfirmAPIRequest对象
 func NewTaobaoLifeReservationItemOrderConfirmRequest() *TaobaoLifeReservationItemOrderConfirmAPIRequest {
 	return &TaobaoLifeReservationItemOrderConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLifeReservationItemOrderConfirmAPIRequest) Reset() {
+	r._ticketId = ""
+	r._optType = ""
+	r._reservationOrderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoLifeReservationItemOrderConfirmAPIRequest) SetReservationOrderId(
 // GetReservationOrderId ReservationOrderId Getter
 func (r TaobaoLifeReservationItemOrderConfirmAPIRequest) GetReservationOrderId() string {
 	return r._reservationOrderId
+}
+
+var poolTaobaoLifeReservationItemOrderConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLifeReservationItemOrderConfirmRequest()
+	},
+}
+
+// GetTaobaoLifeReservationItemOrderConfirmRequest 从 sync.Pool 获取 TaobaoLifeReservationItemOrderConfirmAPIRequest
+func GetTaobaoLifeReservationItemOrderConfirmAPIRequest() *TaobaoLifeReservationItemOrderConfirmAPIRequest {
+	return poolTaobaoLifeReservationItemOrderConfirmAPIRequest.Get().(*TaobaoLifeReservationItemOrderConfirmAPIRequest)
+}
+
+// ReleaseTaobaoLifeReservationItemOrderConfirmAPIRequest 将 TaobaoLifeReservationItemOrderConfirmAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLifeReservationItemOrderConfirmAPIRequest(v *TaobaoLifeReservationItemOrderConfirmAPIRequest) {
+	v.Reset()
+	poolTaobaoLifeReservationItemOrderConfirmAPIRequest.Put(v)
 }

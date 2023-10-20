@@ -9,11 +9,6 @@ import (
 // taobao.feedflow.item.adgroup.adzone.bind
 //
 // 信息流单元内绑定资源位
-func TaobaoFeedflowItemAdgroupAdzoneBind(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdgroupAdzoneBindAPIRequest, session string) (*feedflow.TaobaoFeedflowItemAdgroupAdzoneBindAPIResponse, error) {
-	var resp feedflow.TaobaoFeedflowItemAdgroupAdzoneBindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFeedflowItemAdgroupAdzoneBind(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemAdgroupAdzoneBindAPIRequest, resp *feedflow.TaobaoFeedflowItemAdgroupAdzoneBindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

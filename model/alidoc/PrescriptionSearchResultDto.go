@@ -1,5 +1,9 @@
 package alidoc
 
+import (
+	"sync"
+)
+
 // PrescriptionSearchResultDto 结构体
 type PrescriptionSearchResultDto struct {
 	// 药品列表
@@ -16,4 +20,27 @@ type PrescriptionSearchResultDto struct {
 	Patient *RxPatientDto `json:"patient,omitempty" xml:"patient,omitempty"`
 	// 患者问诊信息
 	PatientDiagnostic *RxPatientDiagnosticDto `json:"patient_diagnostic,omitempty" xml:"patient_diagnostic,omitempty"`
+}
+
+var poolPrescriptionSearchResultDto = sync.Pool{
+	New: func() any {
+		return new(PrescriptionSearchResultDto)
+	},
+}
+
+// GetPrescriptionSearchResultDto() 从对象池中获取PrescriptionSearchResultDto
+func GetPrescriptionSearchResultDto() *PrescriptionSearchResultDto {
+	return poolPrescriptionSearchResultDto.Get().(*PrescriptionSearchResultDto)
+}
+
+// ReleasePrescriptionSearchResultDto 释放PrescriptionSearchResultDto
+func ReleasePrescriptionSearchResultDto(v *PrescriptionSearchResultDto) {
+	v.DrugList = v.DrugList[:0]
+	v.RxId = ""
+	v.CreateTime = ""
+	v.PicUrl = ""
+	v.Doctor = nil
+	v.Patient = nil
+	v.PatientDiagnostic = nil
+	poolPrescriptionSearchResultDto.Put(v)
 }

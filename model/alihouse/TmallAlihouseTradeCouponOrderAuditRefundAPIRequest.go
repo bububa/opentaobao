@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallAlihouseTradeCouponOrderAuditRefundAPIRequest struct {
 // NewTmallAlihouseTradeCouponOrderAuditRefundRequest 初始化TmallAlihouseTradeCouponOrderAuditRefundAPIRequest对象
 func NewTmallAlihouseTradeCouponOrderAuditRefundRequest() *TmallAlihouseTradeCouponOrderAuditRefundAPIRequest {
 	return &TmallAlihouseTradeCouponOrderAuditRefundAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallAlihouseTradeCouponOrderAuditRefundAPIRequest) Reset() {
+	r._auditOrderDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallAlihouseTradeCouponOrderAuditRefundAPIRequest) SetAuditOrderDto(_a
 // GetAuditOrderDto AuditOrderDto Getter
 func (r TmallAlihouseTradeCouponOrderAuditRefundAPIRequest) GetAuditOrderDto() *AuditOrderDto {
 	return r._auditOrderDto
+}
+
+var poolTmallAlihouseTradeCouponOrderAuditRefundAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallAlihouseTradeCouponOrderAuditRefundRequest()
+	},
+}
+
+// GetTmallAlihouseTradeCouponOrderAuditRefundRequest 从 sync.Pool 获取 TmallAlihouseTradeCouponOrderAuditRefundAPIRequest
+func GetTmallAlihouseTradeCouponOrderAuditRefundAPIRequest() *TmallAlihouseTradeCouponOrderAuditRefundAPIRequest {
+	return poolTmallAlihouseTradeCouponOrderAuditRefundAPIRequest.Get().(*TmallAlihouseTradeCouponOrderAuditRefundAPIRequest)
+}
+
+// ReleaseTmallAlihouseTradeCouponOrderAuditRefundAPIRequest 将 TmallAlihouseTradeCouponOrderAuditRefundAPIRequest 放入 sync.Pool
+func ReleaseTmallAlihouseTradeCouponOrderAuditRefundAPIRequest(v *TmallAlihouseTradeCouponOrderAuditRefundAPIRequest) {
+	v.Reset()
+	poolTmallAlihouseTradeCouponOrderAuditRefundAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package lsticitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLstIcItemInfoQueryAPIRequest struct {
 // NewAlibabaLstIcItemInfoQueryRequest 初始化AlibabaLstIcItemInfoQueryAPIRequest对象
 func NewAlibabaLstIcItemInfoQueryRequest() *AlibabaLstIcItemInfoQueryAPIRequest {
 	return &AlibabaLstIcItemInfoQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstIcItemInfoQueryAPIRequest) Reset() {
+	r._query = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLstIcItemInfoQueryAPIRequest) SetQuery(_query *LstItemListParam)
 // GetQuery Query Getter
 func (r AlibabaLstIcItemInfoQueryAPIRequest) GetQuery() *LstItemListParam {
 	return r._query
+}
+
+var poolAlibabaLstIcItemInfoQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstIcItemInfoQueryRequest()
+	},
+}
+
+// GetAlibabaLstIcItemInfoQueryRequest 从 sync.Pool 获取 AlibabaLstIcItemInfoQueryAPIRequest
+func GetAlibabaLstIcItemInfoQueryAPIRequest() *AlibabaLstIcItemInfoQueryAPIRequest {
+	return poolAlibabaLstIcItemInfoQueryAPIRequest.Get().(*AlibabaLstIcItemInfoQueryAPIRequest)
+}
+
+// ReleaseAlibabaLstIcItemInfoQueryAPIRequest 将 AlibabaLstIcItemInfoQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstIcItemInfoQueryAPIRequest(v *AlibabaLstIcItemInfoQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaLstIcItemInfoQueryAPIRequest.Put(v)
 }

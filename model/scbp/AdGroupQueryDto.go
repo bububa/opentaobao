@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // AdGroupQueryDto 结构体
 type AdGroupQueryDto struct {
 	// 标题
@@ -50,4 +54,44 @@ type AdGroupQueryDto struct {
 	Size int64 `json:"size,omitempty" xml:"size,omitempty"`
 	// 分页
 	Paging bool `json:"paging,omitempty" xml:"paging,omitempty"`
+}
+
+var poolAdGroupQueryDto = sync.Pool{
+	New: func() any {
+		return new(AdGroupQueryDto)
+	},
+}
+
+// GetAdGroupQueryDto() 从对象池中获取AdGroupQueryDto
+func GetAdGroupQueryDto() *AdGroupQueryDto {
+	return poolAdGroupQueryDto.Get().(*AdGroupQueryDto)
+}
+
+// ReleaseAdGroupQueryDto 释放AdGroupQueryDto
+func ReleaseAdGroupQueryDto(v *AdGroupQueryDto) {
+	v.Subject = ""
+	v.OwnerMemberId = ""
+	v.OrderBy = ""
+	v.Order = ""
+	v.AdgroupOnlineStatus = 0
+	v.FeedOnlineStatus = 0
+	v.MinImprCnt = 0
+	v.HotPotentialProduct = 0
+	v.ProductId = 0
+	v.GroupLv1Id = 0
+	v.GroupLv2Id = 0
+	v.GroupLv3Id = 0
+	v.CateLv1Id = 0
+	v.CateLv2Id = 0
+	v.CateLv3Id = 0
+	v.CampaignType = 0
+	v.CampaignStatus = 0
+	v.AdGroupId = 0
+	v.AdGroupStatus = 0
+	v.AdsLineId = 0
+	v.AdsId = 0
+	v.Page = 0
+	v.Size = 0
+	v.Paging = false
+	poolAdGroupQueryDto.Put(v)
 }

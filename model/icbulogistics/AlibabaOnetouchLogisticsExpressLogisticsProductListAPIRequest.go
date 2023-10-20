@@ -2,6 +2,7 @@ package icbulogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaOnetouchLogisticsExpressLogisticsProductListAPIRequest struct {
 // NewAlibabaOnetouchLogisticsExpressLogisticsProductListRequest 初始化AlibabaOnetouchLogisticsExpressLogisticsProductListAPIRequest对象
 func NewAlibabaOnetouchLogisticsExpressLogisticsProductListRequest() *AlibabaOnetouchLogisticsExpressLogisticsProductListAPIRequest {
 	return &AlibabaOnetouchLogisticsExpressLogisticsProductListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaOnetouchLogisticsExpressLogisticsProductListAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaOnetouchLogisticsExpressLogisticsProductListAPIRequest) GetApiPar
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaOnetouchLogisticsExpressLogisticsProductListAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaOnetouchLogisticsExpressLogisticsProductListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaOnetouchLogisticsExpressLogisticsProductListRequest()
+	},
+}
+
+// GetAlibabaOnetouchLogisticsExpressLogisticsProductListRequest 从 sync.Pool 获取 AlibabaOnetouchLogisticsExpressLogisticsProductListAPIRequest
+func GetAlibabaOnetouchLogisticsExpressLogisticsProductListAPIRequest() *AlibabaOnetouchLogisticsExpressLogisticsProductListAPIRequest {
+	return poolAlibabaOnetouchLogisticsExpressLogisticsProductListAPIRequest.Get().(*AlibabaOnetouchLogisticsExpressLogisticsProductListAPIRequest)
+}
+
+// ReleaseAlibabaOnetouchLogisticsExpressLogisticsProductListAPIRequest 将 AlibabaOnetouchLogisticsExpressLogisticsProductListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaOnetouchLogisticsExpressLogisticsProductListAPIRequest(v *AlibabaOnetouchLogisticsExpressLogisticsProductListAPIRequest) {
+	v.Reset()
+	poolAlibabaOnetouchLogisticsExpressLogisticsProductListAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package ticket
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripTicketScenicBindAPIResponse struct {
 	AlitripTicketScenicBindAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripTicketScenicBindAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripTicketScenicBindAPIResponseModel).Reset()
+}
+
 // AlitripTicketScenicBindAPIResponseModel is 【门票API2.0】门票景点绑定接口 成功返回结果
 type AlitripTicketScenicBindAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_ticket_scenic_bind_response"`
@@ -22,4 +29,27 @@ type AlitripTicketScenicBindAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 景点绑定结果
 	FirstResult *TicketScenicResult `json:"first_result,omitempty" xml:"first_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripTicketScenicBindAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.FirstResult = nil
+}
+
+var poolAlitripTicketScenicBindAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripTicketScenicBindAPIResponse)
+	},
+}
+
+// GetAlitripTicketScenicBindAPIResponse 从 sync.Pool 获取 AlitripTicketScenicBindAPIResponse
+func GetAlitripTicketScenicBindAPIResponse() *AlitripTicketScenicBindAPIResponse {
+	return poolAlitripTicketScenicBindAPIResponse.Get().(*AlitripTicketScenicBindAPIResponse)
+}
+
+// ReleaseAlitripTicketScenicBindAPIResponse 将 AlitripTicketScenicBindAPIResponse 保存到 sync.Pool
+func ReleaseAlitripTicketScenicBindAPIResponse(v *AlitripTicketScenicBindAPIResponse) {
+	v.Reset()
+	poolAlitripTicketScenicBindAPIResponse.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // yunos.tvpubadmin.content.show.edit
 //
 // 供迎客松修改媒资节目信息
-func YunosTvpubadminContentShowEdit(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentShowEditAPIRequest, session string) (*tvupadmin.YunosTvpubadminContentShowEditAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminContentShowEditAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosTvpubadminContentShowEdit(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentShowEditAPIRequest, resp *tvupadmin.YunosTvpubadminContentShowEditAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

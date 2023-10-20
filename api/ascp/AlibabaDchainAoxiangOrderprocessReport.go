@@ -9,11 +9,6 @@ import (
 // alibaba.dchain.aoxiang.orderprocess.report
 //
 // 回传仓内作业节点
-func AlibabaDchainAoxiangOrderprocessReport(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangOrderprocessReportAPIRequest, session string) (*ascp.AlibabaDchainAoxiangOrderprocessReportAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangOrderprocessReportAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDchainAoxiangOrderprocessReport(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangOrderprocessReportAPIRequest, resp *ascp.AlibabaDchainAoxiangOrderprocessReportAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

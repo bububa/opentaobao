@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaEinvoiceTaxOptSalaryaccountQueryAPIRequest struct {
 // NewAlibabaEinvoiceTaxOptSalaryaccountQueryRequest 初始化AlibabaEinvoiceTaxOptSalaryaccountQueryAPIRequest对象
 func NewAlibabaEinvoiceTaxOptSalaryaccountQueryRequest() *AlibabaEinvoiceTaxOptSalaryaccountQueryAPIRequest {
 	return &AlibabaEinvoiceTaxOptSalaryaccountQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceTaxOptSalaryaccountQueryAPIRequest) Reset() {
+	r._paramTaxOptimizationQueryPaySalaryAccountDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaEinvoiceTaxOptSalaryaccountQueryAPIRequest) SetParamTaxOptimizat
 // GetParamTaxOptimizationQueryPaySalaryAccountDTO ParamTaxOptimizationQueryPaySalaryAccountDTO Getter
 func (r AlibabaEinvoiceTaxOptSalaryaccountQueryAPIRequest) GetParamTaxOptimizationQueryPaySalaryAccountDTO() *TaxOptimizationQueryPaySalaryAccountDto {
 	return r._paramTaxOptimizationQueryPaySalaryAccountDTO
+}
+
+var poolAlibabaEinvoiceTaxOptSalaryaccountQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceTaxOptSalaryaccountQueryRequest()
+	},
+}
+
+// GetAlibabaEinvoiceTaxOptSalaryaccountQueryRequest 从 sync.Pool 获取 AlibabaEinvoiceTaxOptSalaryaccountQueryAPIRequest
+func GetAlibabaEinvoiceTaxOptSalaryaccountQueryAPIRequest() *AlibabaEinvoiceTaxOptSalaryaccountQueryAPIRequest {
+	return poolAlibabaEinvoiceTaxOptSalaryaccountQueryAPIRequest.Get().(*AlibabaEinvoiceTaxOptSalaryaccountQueryAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceTaxOptSalaryaccountQueryAPIRequest 将 AlibabaEinvoiceTaxOptSalaryaccountQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceTaxOptSalaryaccountQueryAPIRequest(v *AlibabaEinvoiceTaxOptSalaryaccountQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceTaxOptSalaryaccountQueryAPIRequest.Put(v)
 }

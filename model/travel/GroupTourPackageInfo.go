@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // GroupTourPackageInfo 结构体
 type GroupTourPackageInfo struct {
 	// 行程信息，新发布商品必填，数据，可以一次提交多天的行程信息
@@ -28,4 +32,33 @@ type GroupTourPackageInfo struct {
 	TripDays int64 `json:"trip_days,omitempty" xml:"trip_days,omitempty"`
 	// 套餐级别行程晚数，必填。
 	AccomNights int64 `json:"accom_nights,omitempty" xml:"accom_nights,omitempty"`
+}
+
+var poolGroupTourPackageInfo = sync.Pool{
+	New: func() any {
+		return new(GroupTourPackageInfo)
+	},
+}
+
+// GetGroupTourPackageInfo() 从对象池中获取GroupTourPackageInfo
+func GetGroupTourPackageInfo() *GroupTourPackageInfo {
+	return poolGroupTourPackageInfo.Get().(*GroupTourPackageInfo)
+}
+
+// ReleaseGroupTourPackageInfo 释放GroupTourPackageInfo
+func ReleaseGroupTourPackageInfo(v *GroupTourPackageInfo) {
+	v.TripElementList = v.TripElementList[:0]
+	v.BackTrafficInfoList = v.BackTrafficInfoList[:0]
+	v.GoTrafficInfoList = v.GoTrafficInfoList[:0]
+	v.SelfExplanation = v.SelfExplanation[:0]
+	v.OrderInfo = v.OrderInfo[:0]
+	v.FeeExclude = v.FeeExclude[:0]
+	v.FeeInclude = v.FeeInclude[:0]
+	v.FromLocations = ""
+	v.OutProductId = ""
+	v.PackageName = ""
+	v.PackageOperation = 0
+	v.TripDays = 0
+	v.AccomNights = 0
+	poolGroupTourPackageInfo.Put(v)
 }

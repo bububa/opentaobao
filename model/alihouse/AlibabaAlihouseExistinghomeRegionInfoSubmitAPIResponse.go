@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihouseExistinghomeRegionInfoSubmitAPIResponse struct {
 	AlibabaAlihouseExistinghomeRegionInfoSubmitAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihouseExistinghomeRegionInfoSubmitAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihouseExistinghomeRegionInfoSubmitAPIResponseModel).Reset()
+}
+
 // AlibabaAlihouseExistinghomeRegionInfoSubmitAPIResponseModel is 商圈专家信息同步 成功返回结果
 type AlibabaAlihouseExistinghomeRegionInfoSubmitAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihouse_existinghome_region_info_submit_response"`
@@ -22,4 +29,27 @@ type AlibabaAlihouseExistinghomeRegionInfoSubmitAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
 	Result *AlibabaAlihouseExistinghomeRegionInfoSubmitResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihouseExistinghomeRegionInfoSubmitAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihouseExistinghomeRegionInfoSubmitAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihouseExistinghomeRegionInfoSubmitAPIResponse)
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeRegionInfoSubmitAPIResponse 从 sync.Pool 获取 AlibabaAlihouseExistinghomeRegionInfoSubmitAPIResponse
+func GetAlibabaAlihouseExistinghomeRegionInfoSubmitAPIResponse() *AlibabaAlihouseExistinghomeRegionInfoSubmitAPIResponse {
+	return poolAlibabaAlihouseExistinghomeRegionInfoSubmitAPIResponse.Get().(*AlibabaAlihouseExistinghomeRegionInfoSubmitAPIResponse)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeRegionInfoSubmitAPIResponse 将 AlibabaAlihouseExistinghomeRegionInfoSubmitAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeRegionInfoSubmitAPIResponse(v *AlibabaAlihouseExistinghomeRegionInfoSubmitAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeRegionInfoSubmitAPIResponse.Put(v)
 }

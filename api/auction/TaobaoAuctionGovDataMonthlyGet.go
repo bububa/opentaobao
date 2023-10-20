@@ -15,11 +15,6 @@ import (
 // 在线标的：在线标的件数、意向用户数、网拍围观人次
 //
 // 最长12个月，月的起始时间不能早于2017年3月
-func TaobaoAuctionGovDataMonthlyGet(clt *core.SDKClient, req *auction.TaobaoAuctionGovDataMonthlyGetAPIRequest, session string) (*auction.TaobaoAuctionGovDataMonthlyGetAPIResponse, error) {
-	var resp auction.TaobaoAuctionGovDataMonthlyGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAuctionGovDataMonthlyGet(clt *core.SDKClient, req *auction.TaobaoAuctionGovDataMonthlyGetAPIRequest, resp *auction.TaobaoAuctionGovDataMonthlyGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

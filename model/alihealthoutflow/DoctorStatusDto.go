@@ -1,5 +1,9 @@
 package alihealthoutflow
 
+import (
+	"sync"
+)
+
 // DoctorStatusDto 结构体
 type DoctorStatusDto struct {
 	// 审核拒绝原因/证书信息
@@ -24,4 +28,31 @@ type DoctorStatusDto struct {
 	TemplateId string `json:"template_id,omitempty" xml:"template_id,omitempty"`
 	// 订阅服务ID（必填）
 	ServiceId int64 `json:"service_id,omitempty" xml:"service_id,omitempty"`
+}
+
+var poolDoctorStatusDto = sync.Pool{
+	New: func() any {
+		return new(DoctorStatusDto)
+	},
+}
+
+// GetDoctorStatusDto() 从对象池中获取DoctorStatusDto
+func GetDoctorStatusDto() *DoctorStatusDto {
+	return poolDoctorStatusDto.Get().(*DoctorStatusDto)
+}
+
+// ReleaseDoctorStatusDto 释放DoctorStatusDto
+func ReleaseDoctorStatusDto(v *DoctorStatusDto) {
+	v.Note = ""
+	v.Process = ""
+	v.ClientId = ""
+	v.OpenId = ""
+	v.Sign = ""
+	v.Stamp = ""
+	v.PhoneNum = ""
+	v.Time = ""
+	v.StampStatus = ""
+	v.TemplateId = ""
+	v.ServiceId = 0
+	poolDoctorStatusDto.Put(v)
 }

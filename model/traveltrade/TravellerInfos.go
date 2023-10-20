@@ -1,5 +1,9 @@
 package traveltrade
 
+import (
+	"sync"
+)
+
 // TravellerInfos 结构体
 type TravellerInfos struct {
 	// 证件签发日期
@@ -50,4 +54,44 @@ type TravellerInfos struct {
 	CredentialsType int64 `json:"credentials_type,omitempty" xml:"credentials_type,omitempty"`
 	// 是否仅更新bookId字段
 	OnlyUpateBookId bool `json:"only_upate_book_id,omitempty" xml:"only_upate_book_id,omitempty"`
+}
+
+var poolTravellerInfos = sync.Pool{
+	New: func() any {
+		return new(TravellerInfos)
+	},
+}
+
+// GetTravellerInfos() 从对象池中获取TravellerInfos
+func GetTravellerInfos() *TravellerInfos {
+	return poolTravellerInfos.Get().(*TravellerInfos)
+}
+
+// ReleaseTravellerInfos 释放TravellerInfos
+func ReleaseTravellerInfos(v *TravellerInfos) {
+	v.IssuedDate = ""
+	v.LastName = ""
+	v.BizType = ""
+	v.SubTcOrderId = ""
+	v.TcOrderId = ""
+	v.TravellerName = ""
+	v.BuyerRemark = ""
+	v.ModifyTime = ""
+	v.PersonType = ""
+	v.Sku = ""
+	v.CredentialsCode = ""
+	v.SubTcOrderIds = ""
+	v.TravellerNamePinyin = ""
+	v.TerminalType = ""
+	v.FirstName = ""
+	v.ItemId = ""
+	v.Nationality = ""
+	v.CreateTime = ""
+	v.IssuedCountry = ""
+	v.Telphone = ""
+	v.TravellerJson = ""
+	v.BookInfoId = 0
+	v.CredentialsType = 0
+	v.OnlyUpateBookId = false
+	poolTravellerInfos.Put(v)
 }

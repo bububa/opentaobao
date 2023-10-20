@@ -2,6 +2,7 @@ package tmic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TmallTmicQuestionnaireAnswerPushAPIRequest struct {
 // NewTmallTmicQuestionnaireAnswerPushRequest 初始化TmallTmicQuestionnaireAnswerPushAPIRequest对象
 func NewTmallTmicQuestionnaireAnswerPushRequest() *TmallTmicQuestionnaireAnswerPushAPIRequest {
 	return &TmallTmicQuestionnaireAnswerPushAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallTmicQuestionnaireAnswerPushAPIRequest) Reset() {
+	r._userAnswerList = r._userAnswerList[:0]
+	r._hashCode = ""
+	r._biz = ""
+	r._openUserId = ""
+	r._recordId = 0
+	r._version = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TmallTmicQuestionnaireAnswerPushAPIRequest) SetVersion(_version int64) 
 // GetVersion Version Getter
 func (r TmallTmicQuestionnaireAnswerPushAPIRequest) GetVersion() int64 {
 	return r._version
+}
+
+var poolTmallTmicQuestionnaireAnswerPushAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallTmicQuestionnaireAnswerPushRequest()
+	},
+}
+
+// GetTmallTmicQuestionnaireAnswerPushRequest 从 sync.Pool 获取 TmallTmicQuestionnaireAnswerPushAPIRequest
+func GetTmallTmicQuestionnaireAnswerPushAPIRequest() *TmallTmicQuestionnaireAnswerPushAPIRequest {
+	return poolTmallTmicQuestionnaireAnswerPushAPIRequest.Get().(*TmallTmicQuestionnaireAnswerPushAPIRequest)
+}
+
+// ReleaseTmallTmicQuestionnaireAnswerPushAPIRequest 将 TmallTmicQuestionnaireAnswerPushAPIRequest 放入 sync.Pool
+func ReleaseTmallTmicQuestionnaireAnswerPushAPIRequest(v *TmallTmicQuestionnaireAnswerPushAPIRequest) {
+	v.Reset()
+	poolTmallTmicQuestionnaireAnswerPushAPIRequest.Put(v)
 }

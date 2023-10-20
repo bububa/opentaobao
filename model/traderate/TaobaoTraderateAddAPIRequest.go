@@ -2,6 +2,7 @@ package traderate
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoTraderateAddAPIRequest struct {
 // NewTaobaoTraderateAddRequest 初始化TaobaoTraderateAddAPIRequest对象
 func NewTaobaoTraderateAddRequest() *TaobaoTraderateAddAPIRequest {
 	return &TaobaoTraderateAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTraderateAddAPIRequest) Reset() {
+	r._result = ""
+	r._role = ""
+	r._content = ""
+	r._tid = 0
+	r._oid = 0
+	r._anony = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoTraderateAddAPIRequest) SetAnony(_anony bool) error {
 // GetAnony Anony Getter
 func (r TaobaoTraderateAddAPIRequest) GetAnony() bool {
 	return r._anony
+}
+
+var poolTaobaoTraderateAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTraderateAddRequest()
+	},
+}
+
+// GetTaobaoTraderateAddRequest 从 sync.Pool 获取 TaobaoTraderateAddAPIRequest
+func GetTaobaoTraderateAddAPIRequest() *TaobaoTraderateAddAPIRequest {
+	return poolTaobaoTraderateAddAPIRequest.Get().(*TaobaoTraderateAddAPIRequest)
+}
+
+// ReleaseTaobaoTraderateAddAPIRequest 将 TaobaoTraderateAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTraderateAddAPIRequest(v *TaobaoTraderateAddAPIRequest) {
+	v.Reset()
+	poolTaobaoTraderateAddAPIRequest.Put(v)
 }

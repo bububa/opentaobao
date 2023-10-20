@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscRightTokenCheckAPIRequest struct {
 // NewAlibabaAlscRightTokenCheckRequest 初始化AlibabaAlscRightTokenCheckAPIRequest对象
 func NewAlibabaAlscRightTokenCheckRequest() *AlibabaAlscRightTokenCheckAPIRequest {
 	return &AlibabaAlscRightTokenCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscRightTokenCheckAPIRequest) Reset() {
+	r._token = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscRightTokenCheckAPIRequest) SetToken(_token string) error {
 // GetToken Token Getter
 func (r AlibabaAlscRightTokenCheckAPIRequest) GetToken() string {
 	return r._token
+}
+
+var poolAlibabaAlscRightTokenCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscRightTokenCheckRequest()
+	},
+}
+
+// GetAlibabaAlscRightTokenCheckRequest 从 sync.Pool 获取 AlibabaAlscRightTokenCheckAPIRequest
+func GetAlibabaAlscRightTokenCheckAPIRequest() *AlibabaAlscRightTokenCheckAPIRequest {
+	return poolAlibabaAlscRightTokenCheckAPIRequest.Get().(*AlibabaAlscRightTokenCheckAPIRequest)
+}
+
+// ReleaseAlibabaAlscRightTokenCheckAPIRequest 将 AlibabaAlscRightTokenCheckAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscRightTokenCheckAPIRequest(v *AlibabaAlscRightTokenCheckAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscRightTokenCheckAPIRequest.Put(v)
 }

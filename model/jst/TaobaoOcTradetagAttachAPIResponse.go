@@ -2,6 +2,7 @@ package jst
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoOcTradetagAttachAPIResponse struct {
 	TaobaoOcTradetagAttachAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoOcTradetagAttachAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOcTradetagAttachAPIResponseModel).Reset()
+}
+
 // TaobaoOcTradetagAttachAPIResponseModel is 订单打标或者订单标签更新 成功返回结果
 type TaobaoOcTradetagAttachAPIResponseModel struct {
 	XMLName xml.Name `xml:"oc_tradetag_attach_response"`
@@ -22,4 +29,27 @@ type TaobaoOcTradetagAttachAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 操作成功或者操作失败
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOcTradetagAttachAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = false
+}
+
+var poolTaobaoOcTradetagAttachAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOcTradetagAttachAPIResponse)
+	},
+}
+
+// GetTaobaoOcTradetagAttachAPIResponse 从 sync.Pool 获取 TaobaoOcTradetagAttachAPIResponse
+func GetTaobaoOcTradetagAttachAPIResponse() *TaobaoOcTradetagAttachAPIResponse {
+	return poolTaobaoOcTradetagAttachAPIResponse.Get().(*TaobaoOcTradetagAttachAPIResponse)
+}
+
+// ReleaseTaobaoOcTradetagAttachAPIResponse 将 TaobaoOcTradetagAttachAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOcTradetagAttachAPIResponse(v *TaobaoOcTradetagAttachAPIResponse) {
+	v.Reset()
+	poolTaobaoOcTradetagAttachAPIResponse.Put(v)
 }

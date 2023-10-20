@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleConsignmentSpuStatisticsAPIRequest struct {
 // NewAlibabaIdleConsignmentSpuStatisticsRequest 初始化AlibabaIdleConsignmentSpuStatisticsAPIRequest对象
 func NewAlibabaIdleConsignmentSpuStatisticsRequest() *AlibabaIdleConsignmentSpuStatisticsAPIRequest {
 	return &AlibabaIdleConsignmentSpuStatisticsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleConsignmentSpuStatisticsAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleConsignmentSpuStatisticsAPIRequest) SetParam(_param *SpuStat
 // GetParam Param Getter
 func (r AlibabaIdleConsignmentSpuStatisticsAPIRequest) GetParam() *SpuStatistics {
 	return r._param
+}
+
+var poolAlibabaIdleConsignmentSpuStatisticsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleConsignmentSpuStatisticsRequest()
+	},
+}
+
+// GetAlibabaIdleConsignmentSpuStatisticsRequest 从 sync.Pool 获取 AlibabaIdleConsignmentSpuStatisticsAPIRequest
+func GetAlibabaIdleConsignmentSpuStatisticsAPIRequest() *AlibabaIdleConsignmentSpuStatisticsAPIRequest {
+	return poolAlibabaIdleConsignmentSpuStatisticsAPIRequest.Get().(*AlibabaIdleConsignmentSpuStatisticsAPIRequest)
+}
+
+// ReleaseAlibabaIdleConsignmentSpuStatisticsAPIRequest 将 AlibabaIdleConsignmentSpuStatisticsAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleConsignmentSpuStatisticsAPIRequest(v *AlibabaIdleConsignmentSpuStatisticsAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleConsignmentSpuStatisticsAPIRequest.Put(v)
 }

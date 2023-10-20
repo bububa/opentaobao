@@ -9,11 +9,6 @@ import (
 // taobao.idle.recycle.refund.apply
 //
 // 回收商买家申请退款
-func TaobaoIdleRecycleRefundApply(clt *core.SDKClient, req *idle.TaobaoIdleRecycleRefundApplyAPIRequest, session string) (*idle.TaobaoIdleRecycleRefundApplyAPIResponse, error) {
-	var resp idle.TaobaoIdleRecycleRefundApplyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoIdleRecycleRefundApply(clt *core.SDKClient, req *idle.TaobaoIdleRecycleRefundApplyAPIRequest, resp *idle.TaobaoIdleRecycleRefundApplyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

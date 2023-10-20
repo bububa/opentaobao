@@ -2,6 +2,7 @@ package degoperation
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoDegoperationCheckAddrStatusAPIRequest struct {
 // NewTaobaoDegoperationCheckAddrStatusRequest 初始化TaobaoDegoperationCheckAddrStatusAPIRequest对象
 func NewTaobaoDegoperationCheckAddrStatusRequest() *TaobaoDegoperationCheckAddrStatusAPIRequest {
 	return &TaobaoDegoperationCheckAddrStatusAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoDegoperationCheckAddrStatusAPIRequest) Reset() {
+	r._sequenceNo = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoDegoperationCheckAddrStatusAPIRequest) SetSequenceNo(_sequenceNo 
 // GetSequenceNo SequenceNo Getter
 func (r TaobaoDegoperationCheckAddrStatusAPIRequest) GetSequenceNo() int64 {
 	return r._sequenceNo
+}
+
+var poolTaobaoDegoperationCheckAddrStatusAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoDegoperationCheckAddrStatusRequest()
+	},
+}
+
+// GetTaobaoDegoperationCheckAddrStatusRequest 从 sync.Pool 获取 TaobaoDegoperationCheckAddrStatusAPIRequest
+func GetTaobaoDegoperationCheckAddrStatusAPIRequest() *TaobaoDegoperationCheckAddrStatusAPIRequest {
+	return poolTaobaoDegoperationCheckAddrStatusAPIRequest.Get().(*TaobaoDegoperationCheckAddrStatusAPIRequest)
+}
+
+// ReleaseTaobaoDegoperationCheckAddrStatusAPIRequest 将 TaobaoDegoperationCheckAddrStatusAPIRequest 放入 sync.Pool
+func ReleaseTaobaoDegoperationCheckAddrStatusAPIRequest(v *TaobaoDegoperationCheckAddrStatusAPIRequest) {
+	v.Reset()
+	poolTaobaoDegoperationCheckAddrStatusAPIRequest.Put(v)
 }

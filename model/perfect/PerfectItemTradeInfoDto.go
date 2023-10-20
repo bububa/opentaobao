@@ -1,5 +1,9 @@
 package perfect
 
+import (
+	"sync"
+)
+
 // PerfectItemTradeInfoDto 结构体
 type PerfectItemTradeInfoDto struct {
 	// 是否提供发票
@@ -12,4 +16,25 @@ type PerfectItemTradeInfoDto struct {
 	Support7Day bool `json:"support7_day,omitempty" xml:"support7_day,omitempty"`
 	// 是否保修
 	Warrant bool `json:"warrant,omitempty" xml:"warrant,omitempty"`
+}
+
+var poolPerfectItemTradeInfoDto = sync.Pool{
+	New: func() any {
+		return new(PerfectItemTradeInfoDto)
+	},
+}
+
+// GetPerfectItemTradeInfoDto() 从对象池中获取PerfectItemTradeInfoDto
+func GetPerfectItemTradeInfoDto() *PerfectItemTradeInfoDto {
+	return poolPerfectItemTradeInfoDto.Get().(*PerfectItemTradeInfoDto)
+}
+
+// ReleasePerfectItemTradeInfoDto 释放PerfectItemTradeInfoDto
+func ReleasePerfectItemTradeInfoDto(v *PerfectItemTradeInfoDto) {
+	v.HasInvoice = false
+	v.SellPromise = false
+	v.SubStockAtBuy = false
+	v.Support7Day = false
+	v.Warrant = false
+	poolPerfectItemTradeInfoDto.Put(v)
 }

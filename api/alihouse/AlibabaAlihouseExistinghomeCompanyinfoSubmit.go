@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.existinghome.companyinfo.submit
 //
 // 进件接口
-func AlibabaAlihouseExistinghomeCompanyinfoSubmit(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeCompanyinfoSubmitAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomeCompanyinfoSubmitAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseExistinghomeCompanyinfoSubmitAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseExistinghomeCompanyinfoSubmit(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeCompanyinfoSubmitAPIRequest, resp *alihouse.AlibabaAlihouseExistinghomeCompanyinfoSubmitAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

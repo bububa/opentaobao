@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // SpaceUnitQuery 结构体
 type SpaceUnitQuery struct {
 	// 空间单元ID集合
@@ -36,4 +40,37 @@ type SpaceUnitQuery struct {
 	Category int64 `json:"category,omitempty" xml:"category,omitempty"`
 	// 启用停用
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolSpaceUnitQuery = sync.Pool{
+	New: func() any {
+		return new(SpaceUnitQuery)
+	},
+}
+
+// GetSpaceUnitQuery() 从对象池中获取SpaceUnitQuery
+func GetSpaceUnitQuery() *SpaceUnitQuery {
+	return poolSpaceUnitQuery.Get().(*SpaceUnitQuery)
+}
+
+// ReleaseSpaceUnitQuery 释放SpaceUnitQuery
+func ReleaseSpaceUnitQuery(v *SpaceUnitQuery) {
+	v.Ids = v.Ids[:0]
+	v.GroupCode = ""
+	v.TypeCode = ""
+	v.Name = ""
+	v.Code = ""
+	v.NameOrCode = ""
+	v.CodeKeyWord = ""
+	v.Limit = 0
+	v.GroupId = 0
+	v.CurrentPage = 0
+	v.TypeId = 0
+	v.FloorId = 0
+	v.CompanyId = 0
+	v.CampusId = 0
+	v.BuildingId = 0
+	v.Category = 0
+	v.Status = 0
+	poolSpaceUnitQuery.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // aliexpress.local.logistics.order.info.query
 //
 // query order details
-func AliexpressLocalLogisticsOrderInfoQuery(clt *core.SDKClient, req *logistic.AliexpressLocalLogisticsOrderInfoQueryAPIRequest, session string) (*logistic.AliexpressLocalLogisticsOrderInfoQueryAPIResponse, error) {
-	var resp logistic.AliexpressLocalLogisticsOrderInfoQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressLocalLogisticsOrderInfoQuery(clt *core.SDKClient, req *logistic.AliexpressLocalLogisticsOrderInfoQueryAPIRequest, resp *logistic.AliexpressLocalLogisticsOrderInfoQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

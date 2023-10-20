@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -26,8 +27,15 @@ type TaobaoTradeSimpleGetAPIRequest struct {
 // NewTaobaoTradeSimpleGetRequest 初始化TaobaoTradeSimpleGetAPIRequest对象
 func NewTaobaoTradeSimpleGetRequest() *TaobaoTradeSimpleGetAPIRequest {
 	return &TaobaoTradeSimpleGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTradeSimpleGetAPIRequest) Reset() {
+	r._fields = ""
+	r._tid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -71,4 +79,21 @@ func (r *TaobaoTradeSimpleGetAPIRequest) SetTid(_tid int64) error {
 // GetTid Tid Getter
 func (r TaobaoTradeSimpleGetAPIRequest) GetTid() int64 {
 	return r._tid
+}
+
+var poolTaobaoTradeSimpleGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTradeSimpleGetRequest()
+	},
+}
+
+// GetTaobaoTradeSimpleGetRequest 从 sync.Pool 获取 TaobaoTradeSimpleGetAPIRequest
+func GetTaobaoTradeSimpleGetAPIRequest() *TaobaoTradeSimpleGetAPIRequest {
+	return poolTaobaoTradeSimpleGetAPIRequest.Get().(*TaobaoTradeSimpleGetAPIRequest)
+}
+
+// ReleaseTaobaoTradeSimpleGetAPIRequest 将 TaobaoTradeSimpleGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTradeSimpleGetAPIRequest(v *TaobaoTradeSimpleGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTradeSimpleGetAPIRequest.Put(v)
 }

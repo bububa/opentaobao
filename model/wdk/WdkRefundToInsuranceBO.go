@@ -1,7 +1,11 @@
 package wdk
 
-// WdkRefundToInsuranceBo 结构体
-type WdkRefundToInsuranceBo struct {
+import (
+	"sync"
+)
+
+// WdkRefundToInsuranceBO 结构体
+type WdkRefundToInsuranceBO struct {
 	// 退货原因
 	RefundReason string `json:"refund_reason,omitempty" xml:"refund_reason,omitempty"`
 	// 退款完成时间
@@ -30,4 +34,34 @@ type WdkRefundToInsuranceBo struct {
 	ReverseType string `json:"reverse_type,omitempty" xml:"reverse_type,omitempty"`
 	// 交易子订单ID
 	TbSubOrderId int64 `json:"tb_sub_order_id,omitempty" xml:"tb_sub_order_id,omitempty"`
+}
+
+var poolWdkRefundToInsuranceBO = sync.Pool{
+	New: func() any {
+		return new(WdkRefundToInsuranceBO)
+	},
+}
+
+// GetWdkRefundToInsuranceBO() 从对象池中获取WdkRefundToInsuranceBO
+func GetWdkRefundToInsuranceBO() *WdkRefundToInsuranceBO {
+	return poolWdkRefundToInsuranceBO.Get().(*WdkRefundToInsuranceBO)
+}
+
+// ReleaseWdkRefundToInsuranceBO 释放WdkRefundToInsuranceBO
+func ReleaseWdkRefundToInsuranceBO(v *WdkRefundToInsuranceBO) {
+	v.RefundReason = ""
+	v.RefundSuccessTime = ""
+	v.DeliveryAddress = ""
+	v.SendAddress = ""
+	v.RefundAmount = ""
+	v.ItemCategory = ""
+	v.ItemPrice = ""
+	v.ItemQuantity = ""
+	v.ItemName = ""
+	v.RefundId = ""
+	v.RefundCreateTime = ""
+	v.SignTime = ""
+	v.ReverseType = ""
+	v.TbSubOrderId = 0
+	poolWdkRefundToInsuranceBO.Put(v)
 }

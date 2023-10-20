@@ -2,6 +2,7 @@ package film
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoFilmLotteryPerformanceAPIResponse struct {
 	model.CommonResponse
 	TaobaoFilmLotteryPerformanceAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoFilmLotteryPerformanceAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoFilmLotteryPerformanceAPIResponseModel).Reset()
 }
 
 // TaobaoFilmLotteryPerformanceAPIResponseModel is 淘票票履约发放权益 成功返回结果
@@ -32,4 +39,32 @@ type TaobaoFilmLotteryPerformanceAPIResponseModel struct {
 	ReturnErrorSolution string `json:"return_error_solution,omitempty" xml:"return_error_solution,omitempty"`
 	// 返回值
 	ReturnValue *LotteryPerformanceResult `json:"return_value,omitempty" xml:"return_value,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoFilmLotteryPerformanceAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ReturnCode = ""
+	m.ReturnErrorStackTrace = ""
+	m.ReturnMessage = ""
+	m.ReturnErrorOper = ""
+	m.ReturnErrorSolution = ""
+	m.ReturnValue = nil
+}
+
+var poolTaobaoFilmLotteryPerformanceAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoFilmLotteryPerformanceAPIResponse)
+	},
+}
+
+// GetTaobaoFilmLotteryPerformanceAPIResponse 从 sync.Pool 获取 TaobaoFilmLotteryPerformanceAPIResponse
+func GetTaobaoFilmLotteryPerformanceAPIResponse() *TaobaoFilmLotteryPerformanceAPIResponse {
+	return poolTaobaoFilmLotteryPerformanceAPIResponse.Get().(*TaobaoFilmLotteryPerformanceAPIResponse)
+}
+
+// ReleaseTaobaoFilmLotteryPerformanceAPIResponse 将 TaobaoFilmLotteryPerformanceAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoFilmLotteryPerformanceAPIResponse(v *TaobaoFilmLotteryPerformanceAPIResponse) {
+	v.Reset()
+	poolTaobaoFilmLotteryPerformanceAPIResponse.Put(v)
 }

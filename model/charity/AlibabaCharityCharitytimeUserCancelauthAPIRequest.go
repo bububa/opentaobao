@@ -2,6 +2,7 @@ package charity
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCharityCharitytimeUserCancelauthAPIRequest struct {
 // NewAlibabaCharityCharitytimeUserCancelauthRequest 初始化AlibabaCharityCharitytimeUserCancelauthAPIRequest对象
 func NewAlibabaCharityCharitytimeUserCancelauthRequest() *AlibabaCharityCharitytimeUserCancelauthAPIRequest {
 	return &AlibabaCharityCharitytimeUserCancelauthAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCharityCharitytimeUserCancelauthAPIRequest) Reset() {
+	r._cancelAuthHsfRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCharityCharitytimeUserCancelauthAPIRequest) SetCancelAuthHsfRequ
 // GetCancelAuthHsfRequest CancelAuthHsfRequest Getter
 func (r AlibabaCharityCharitytimeUserCancelauthAPIRequest) GetCancelAuthHsfRequest() *CancelAuthHsfRequest {
 	return r._cancelAuthHsfRequest
+}
+
+var poolAlibabaCharityCharitytimeUserCancelauthAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCharityCharitytimeUserCancelauthRequest()
+	},
+}
+
+// GetAlibabaCharityCharitytimeUserCancelauthRequest 从 sync.Pool 获取 AlibabaCharityCharitytimeUserCancelauthAPIRequest
+func GetAlibabaCharityCharitytimeUserCancelauthAPIRequest() *AlibabaCharityCharitytimeUserCancelauthAPIRequest {
+	return poolAlibabaCharityCharitytimeUserCancelauthAPIRequest.Get().(*AlibabaCharityCharitytimeUserCancelauthAPIRequest)
+}
+
+// ReleaseAlibabaCharityCharitytimeUserCancelauthAPIRequest 将 AlibabaCharityCharitytimeUserCancelauthAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCharityCharitytimeUserCancelauthAPIRequest(v *AlibabaCharityCharitytimeUserCancelauthAPIRequest) {
+	v.Reset()
+	poolAlibabaCharityCharitytimeUserCancelauthAPIRequest.Put(v)
 }

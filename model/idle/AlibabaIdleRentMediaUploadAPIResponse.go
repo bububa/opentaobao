@@ -2,6 +2,7 @@ package idle
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaIdleRentMediaUploadAPIResponse struct {
 	AlibabaIdleRentMediaUploadAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaIdleRentMediaUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaIdleRentMediaUploadAPIResponseModel).Reset()
+}
+
 // AlibabaIdleRentMediaUploadAPIResponseModel is 闲鱼多媒体上传接口 成功返回结果
 type AlibabaIdleRentMediaUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_idle_rent_media_upload_response"`
@@ -22,4 +29,27 @@ type AlibabaIdleRentMediaUploadAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 响应数据
 	Result *AlibabaIdleRentMediaUploadTopResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaIdleRentMediaUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaIdleRentMediaUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaIdleRentMediaUploadAPIResponse)
+	},
+}
+
+// GetAlibabaIdleRentMediaUploadAPIResponse 从 sync.Pool 获取 AlibabaIdleRentMediaUploadAPIResponse
+func GetAlibabaIdleRentMediaUploadAPIResponse() *AlibabaIdleRentMediaUploadAPIResponse {
+	return poolAlibabaIdleRentMediaUploadAPIResponse.Get().(*AlibabaIdleRentMediaUploadAPIResponse)
+}
+
+// ReleaseAlibabaIdleRentMediaUploadAPIResponse 将 AlibabaIdleRentMediaUploadAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaIdleRentMediaUploadAPIResponse(v *AlibabaIdleRentMediaUploadAPIResponse) {
+	v.Reset()
+	poolAlibabaIdleRentMediaUploadAPIResponse.Put(v)
 }

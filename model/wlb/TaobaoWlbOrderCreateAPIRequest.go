@@ -2,6 +2,7 @@ package wlb
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -73,8 +74,41 @@ type TaobaoWlbOrderCreateAPIRequest struct {
 // NewTaobaoWlbOrderCreateRequest 初始化TaobaoWlbOrderCreateAPIRequest对象
 func NewTaobaoWlbOrderCreateRequest() *TaobaoWlbOrderCreateAPIRequest {
 	return &TaobaoWlbOrderCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(28),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbOrderCreateAPIRequest) Reset() {
+	r._attributes = ""
+	r._orderItemList = ""
+	r._orderFlag = ""
+	r._storeCode = ""
+	r._outBizCode = ""
+	r._prevOrderCode = ""
+	r._tmsServiceCode = ""
+	r._remark = ""
+	r._buyerNick = ""
+	r._expectStartTime = ""
+	r._expectEndTime = ""
+	r._scheduleStart = ""
+	r._scheduleEnd = ""
+	r._orderCode = ""
+	r._tmsOrderCode = ""
+	r._orderType = ""
+	r._orderSubType = ""
+	r._invoinceInfo = ""
+	r._tmsInfo = ""
+	r._alipayNo = ""
+	r._scheduleType = ""
+	r._receiverInfo = ""
+	r._senderInfo = ""
+	r._totalAmount = 0
+	r._payableAmount = 0
+	r._serviceFee = 0
+	r._packageCount = 0
+	r._isFinished = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -456,4 +490,21 @@ func (r *TaobaoWlbOrderCreateAPIRequest) SetIsFinished(_isFinished bool) error {
 // GetIsFinished IsFinished Getter
 func (r TaobaoWlbOrderCreateAPIRequest) GetIsFinished() bool {
 	return r._isFinished
+}
+
+var poolTaobaoWlbOrderCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbOrderCreateRequest()
+	},
+}
+
+// GetTaobaoWlbOrderCreateRequest 从 sync.Pool 获取 TaobaoWlbOrderCreateAPIRequest
+func GetTaobaoWlbOrderCreateAPIRequest() *TaobaoWlbOrderCreateAPIRequest {
+	return poolTaobaoWlbOrderCreateAPIRequest.Get().(*TaobaoWlbOrderCreateAPIRequest)
+}
+
+// ReleaseTaobaoWlbOrderCreateAPIRequest 将 TaobaoWlbOrderCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbOrderCreateAPIRequest(v *TaobaoWlbOrderCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbOrderCreateAPIRequest.Put(v)
 }

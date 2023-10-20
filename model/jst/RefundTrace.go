@@ -1,5 +1,9 @@
 package jst
 
+import (
+	"sync"
+)
+
 // RefundTrace 结构体
 type RefundTrace struct {
 	// 动作发生的时间
@@ -14,4 +18,26 @@ type RefundTrace struct {
 	RefundId int64 `json:"refund_id,omitempty" xml:"refund_id,omitempty"`
 	// 交易tid
 	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
+}
+
+var poolRefundTrace = sync.Pool{
+	New: func() any {
+		return new(RefundTrace)
+	},
+}
+
+// GetRefundTrace() 从对象池中获取RefundTrace
+func GetRefundTrace() *RefundTrace {
+	return poolRefundTrace.Get().(*RefundTrace)
+}
+
+// ReleaseRefundTrace 释放RefundTrace
+func ReleaseRefundTrace(v *RefundTrace) {
+	v.ActionTime = ""
+	v.AppTitle = ""
+	v.Remark = ""
+	v.Status = ""
+	v.RefundId = 0
+	v.Tid = 0
+	poolRefundTrace.Put(v)
 }

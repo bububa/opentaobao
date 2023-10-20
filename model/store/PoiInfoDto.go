@@ -1,5 +1,9 @@
 package store
 
+import (
+	"sync"
+)
+
 // PoiInfoDto 结构体
 type PoiInfoDto struct {
 	// 地址
@@ -58,4 +62,48 @@ type PoiInfoDto struct {
 	Town int64 `json:"town,omitempty" xml:"town,omitempty"`
 	// 街道
 	TownInt int64 `json:"town_int,omitempty" xml:"town_int,omitempty"`
+}
+
+var poolPoiInfoDto = sync.Pool{
+	New: func() any {
+		return new(PoiInfoDto)
+	},
+}
+
+// GetPoiInfoDto() 从对象池中获取PoiInfoDto
+func GetPoiInfoDto() *PoiInfoDto {
+	return poolPoiInfoDto.Get().(*PoiInfoDto)
+}
+
+// ReleasePoiInfoDto 释放PoiInfoDto
+func ReleasePoiInfoDto(v *PoiInfoDto) {
+	v.Address = ""
+	v.AddressAlias = ""
+	v.AddressEn = ""
+	v.AddressLocal = ""
+	v.Bunk = ""
+	v.BusinessArea = ""
+	v.CityName = ""
+	v.ContinentName = ""
+	v.CountryName = ""
+	v.DistrictName = ""
+	v.Floor = ""
+	v.FullAddress = ""
+	v.PostCode = ""
+	v.Posx = ""
+	v.Posy = ""
+	v.ProvName = ""
+	v.TownName = ""
+	v.City = 0
+	v.CityInt = 0
+	v.Continent = 0
+	v.Country = 0
+	v.District = 0
+	v.DistrictInt = 0
+	v.DivisionType = 0
+	v.Prov = 0
+	v.ProvInt = 0
+	v.Town = 0
+	v.TownInt = 0
+	poolPoiInfoDto.Put(v)
 }

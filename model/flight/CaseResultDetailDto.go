@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // CaseResultDetailDto 结构体
 type CaseResultDetailDto struct {
 	// 创建时间
@@ -44,4 +48,41 @@ type CaseResultDetailDto struct {
 	PayStatus int64 `json:"pay_status,omitempty" xml:"pay_status,omitempty"`
 	// 是否需要支付
 	NeedPayFlag bool `json:"need_pay_flag,omitempty" xml:"need_pay_flag,omitempty"`
+}
+
+var poolCaseResultDetailDto = sync.Pool{
+	New: func() any {
+		return new(CaseResultDetailDto)
+	},
+}
+
+// GetCaseResultDetailDto() 从对象池中获取CaseResultDetailDto
+func GetCaseResultDetailDto() *CaseResultDetailDto {
+	return poolCaseResultDetailDto.Get().(*CaseResultDetailDto)
+}
+
+// ReleaseCaseResultDetailDto 释放CaseResultDetailDto
+func ReleaseCaseResultDetailDto(v *CaseResultDetailDto) {
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.Title = ""
+	v.ServeDeadline = ""
+	v.CorrelationOutOrderId = ""
+	v.CreatorName = ""
+	v.FollowerName = ""
+	v.Request = ""
+	v.Reply = ""
+	v.ExtraInfo = ""
+	v.EndTime = ""
+	v.OperateFinishTime = ""
+	v.UrgerName = ""
+	v.Id = 0
+	v.CaseType = 0
+	v.Status = 0
+	v.Urge = 0
+	v.CorrelationBizType = 0
+	v.FollowTime = 0
+	v.PayStatus = 0
+	v.NeedPayFlag = false
+	poolCaseResultDetailDto.Put(v)
 }

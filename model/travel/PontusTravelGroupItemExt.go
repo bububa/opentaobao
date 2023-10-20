@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // PontusTravelGroupItemExt 结构体
 type PontusTravelGroupItemExt struct {
 	// 集合地信息
@@ -12,4 +16,25 @@ type PontusTravelGroupItemExt struct {
 	RouteType int64 `json:"route_type,omitempty" xml:"route_type,omitempty"`
 	// 是否支持电子合同，默认不支持
 	Electronic bool `json:"electronic,omitempty" xml:"electronic,omitempty"`
+}
+
+var poolPontusTravelGroupItemExt = sync.Pool{
+	New: func() any {
+		return new(PontusTravelGroupItemExt)
+	},
+}
+
+// GetPontusTravelGroupItemExt() 从对象池中获取PontusTravelGroupItemExt
+func GetPontusTravelGroupItemExt() *PontusTravelGroupItemExt {
+	return poolPontusTravelGroupItemExt.Get().(*PontusTravelGroupItemExt)
+}
+
+// ReleasePontusTravelGroupItemExt 释放PontusTravelGroupItemExt
+func ReleasePontusTravelGroupItemExt(v *PontusTravelGroupItemExt) {
+	v.GatherPlaces = v.GatherPlaces[:0]
+	v.BackTrafficInfo = nil
+	v.GoTrafficInfo = nil
+	v.RouteType = 0
+	v.Electronic = false
+	poolPontusTravelGroupItemExt.Put(v)
 }

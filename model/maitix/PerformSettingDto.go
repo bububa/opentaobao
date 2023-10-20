@@ -1,5 +1,9 @@
 package maitix
 
+import (
+	"sync"
+)
+
 // PerformSettingDto 结构体
 type PerformSettingDto struct {
 	// 入场方式 1纸质票入场 2电子票入场
@@ -22,4 +26,30 @@ type PerformSettingDto struct {
 	IsRealNameEnter int64 `json:"is_real_name_enter,omitempty" xml:"is_real_name_enter,omitempty"`
 	// 销售设置 0开票 1预售
 	SaleType int64 `json:"sale_type,omitempty" xml:"sale_type,omitempty"`
+}
+
+var poolPerformSettingDto = sync.Pool{
+	New: func() any {
+		return new(PerformSettingDto)
+	},
+}
+
+// GetPerformSettingDto() 从对象池中获取PerformSettingDto
+func GetPerformSettingDto() *PerformSettingDto {
+	return poolPerformSettingDto.Get().(*PerformSettingDto)
+}
+
+// ReleasePerformSettingDto 释放PerformSettingDto
+func ReleasePerformSettingDto(v *PerformSettingDto) {
+	v.IssueEnterModesList = v.IssueEnterModesList[:0]
+	v.IssueTicketModesList = v.IssueTicketModesList[:0]
+	v.TakeTicketTypes = v.TakeTicketTypes[:0]
+	v.SeatSelectTypeList = v.SeatSelectTypeList[:0]
+	v.CardType = ""
+	v.PerformId = 0
+	v.IsOneOrderOneCard = 0
+	v.IsOneTicketOneCard = 0
+	v.IsRealNameEnter = 0
+	v.SaleType = 0
+	poolPerformSettingDto.Put(v)
 }

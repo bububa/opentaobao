@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -119,8 +120,63 @@ type AlibabaEinvoiceCoreInvUploadAPIRequest struct {
 // NewAlibabaEinvoiceCoreInvUploadRequest 初始化AlibabaEinvoiceCoreInvUploadAPIRequest对象
 func NewAlibabaEinvoiceCoreInvUploadRequest() *AlibabaEinvoiceCoreInvUploadAPIRequest {
 	return &AlibabaEinvoiceCoreInvUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(50),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) Reset() {
+	r._invoiceItems = r._invoiceItems[:0]
+	r._sumTax = ""
+	r._payeePhone = ""
+	r._platformTid = ""
+	r._sumPrice = ""
+	r._invoiceAmount = ""
+	r._source = ""
+	r._invoiceFileType = ""
+	r._payeeReceiver = ""
+	r._redNoticeNo = ""
+	r._payeeRegisterNo = ""
+	r._applyId = ""
+	r._payeeName = ""
+	r._qrCode = ""
+	r._levyType = ""
+	r._invoiceType = ""
+	r._payerName = ""
+	r._invoiceNo = ""
+	r._invoiceMemo = ""
+	r._payerEmail = ""
+	r._receiveMobile = ""
+	r._antiFakeCode = ""
+	r._payerBankAccountId = ""
+	r._payerBankName = ""
+	r._payeeBankAccountId = ""
+	r._payeeChecker = ""
+	r._payerPhone = ""
+	r._normalInvoiceCode = ""
+	r._deviceNo = ""
+	r._invoiceDate = ""
+	r._invoiceCode = ""
+	r._checkCode = ""
+	r._payeeAddress = ""
+	r._normalInvoiceNo = ""
+	r._payerAddress = ""
+	r._payeeBankName = ""
+	r._payeeOperator = ""
+	r._payerRegisterNo = ""
+	r._specialFlag = ""
+	r._platformCode = ""
+	r._platformUserId = ""
+	r._bizErrorMsg = ""
+	r._bizErrorCode = ""
+	r._createResult = ""
+	r._serialNo = ""
+	r._invoiceFileContent = ""
+	r._deductAmount = ""
+	r._invoiceKind = 0
+	r._businessType = 0
+	r._invoiceFileData = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -788,4 +844,21 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceFileData(_invoiceFile
 // GetInvoiceFileData InvoiceFileData Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetInvoiceFileData() *model.File {
 	return r._invoiceFileData
+}
+
+var poolAlibabaEinvoiceCoreInvUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceCoreInvUploadRequest()
+	},
+}
+
+// GetAlibabaEinvoiceCoreInvUploadRequest 从 sync.Pool 获取 AlibabaEinvoiceCoreInvUploadAPIRequest
+func GetAlibabaEinvoiceCoreInvUploadAPIRequest() *AlibabaEinvoiceCoreInvUploadAPIRequest {
+	return poolAlibabaEinvoiceCoreInvUploadAPIRequest.Get().(*AlibabaEinvoiceCoreInvUploadAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceCoreInvUploadAPIRequest 将 AlibabaEinvoiceCoreInvUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceCoreInvUploadAPIRequest(v *AlibabaEinvoiceCoreInvUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceCoreInvUploadAPIRequest.Put(v)
 }

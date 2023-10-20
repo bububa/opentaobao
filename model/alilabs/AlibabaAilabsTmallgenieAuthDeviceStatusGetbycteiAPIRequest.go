@@ -2,6 +2,7 @@ package alilabs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest struct {
 // NewAlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiRequest 初始化AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest对象
 func NewAlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiRequest() *AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest {
 	return &AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest) Reset() {
+	r._ctei = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest) SetCtei(_ct
 // GetCtei Ctei Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest) GetCtei() string {
 	return r._ctei
+}
+
+var poolAlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiRequest()
+	},
+}
+
+// GetAlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiRequest 从 sync.Pool 获取 AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest
+func GetAlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest() *AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest {
+	return poolAlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest.Get().(*AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest)
+}
+
+// ReleaseAlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest 将 AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest(v *AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest.Put(v)
 }

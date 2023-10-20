@@ -9,11 +9,6 @@ import (
 // taobao.jst.sms.signname.delete
 //
 // 淘宝短信签名删除
-func TaobaoJstSmsSignnameDelete(clt *core.SDKClient, req *jst.TaobaoJstSmsSignnameDeleteAPIRequest, session string) (*jst.TaobaoJstSmsSignnameDeleteAPIResponse, error) {
-	var resp jst.TaobaoJstSmsSignnameDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoJstSmsSignnameDelete(clt *core.SDKClient, req *jst.TaobaoJstSmsSignnameDeleteAPIRequest, resp *jst.TaobaoJstSmsSignnameDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

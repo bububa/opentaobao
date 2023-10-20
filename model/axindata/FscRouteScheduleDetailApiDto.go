@@ -1,5 +1,9 @@
 package axindata
 
+import (
+	"sync"
+)
+
 // FscRouteScheduleDetailApiDto 结构体
 type FscRouteScheduleDetailApiDto struct {
 	// 日程明细类型 SCENIC景点;HOTEL酒店;TRAFFIC交通;BREAKFAST早餐;LUNCH午餐;DINNER晚餐;SHOPPING购物;ACTIVITY活动;OTHER其他;TRIP_DESCRIPTION行程描述
@@ -12,4 +16,25 @@ type FscRouteScheduleDetailApiDto struct {
 	ScheduleName string `json:"schedule_name,omitempty" xml:"schedule_name,omitempty"`
 	// 日程明细排序
 	Sort int64 `json:"sort,omitempty" xml:"sort,omitempty"`
+}
+
+var poolFscRouteScheduleDetailApiDto = sync.Pool{
+	New: func() any {
+		return new(FscRouteScheduleDetailApiDto)
+	},
+}
+
+// GetFscRouteScheduleDetailApiDto() 从对象池中获取FscRouteScheduleDetailApiDto
+func GetFscRouteScheduleDetailApiDto() *FscRouteScheduleDetailApiDto {
+	return poolFscRouteScheduleDetailApiDto.Get().(*FscRouteScheduleDetailApiDto)
+}
+
+// ReleaseFscRouteScheduleDetailApiDto 释放FscRouteScheduleDetailApiDto
+func ReleaseFscRouteScheduleDetailApiDto(v *FscRouteScheduleDetailApiDto) {
+	v.ScheduleItem = ""
+	v.ScheduleDesc = ""
+	v.PoiId = ""
+	v.ScheduleName = ""
+	v.Sort = 0
+	poolFscRouteScheduleDetailApiDto.Put(v)
 }

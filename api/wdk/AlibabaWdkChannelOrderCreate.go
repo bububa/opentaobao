@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.channel.order.create
 //
 // 外部商家创建订单
-func AlibabaWdkChannelOrderCreate(clt *core.SDKClient, req *wdk.AlibabaWdkChannelOrderCreateAPIRequest, session string) (*wdk.AlibabaWdkChannelOrderCreateAPIResponse, error) {
-	var resp wdk.AlibabaWdkChannelOrderCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkChannelOrderCreate(clt *core.SDKClient, req *wdk.AlibabaWdkChannelOrderCreateAPIRequest, resp *wdk.AlibabaWdkChannelOrderCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

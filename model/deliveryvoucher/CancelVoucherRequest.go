@@ -1,5 +1,9 @@
 package deliveryvoucher
 
+import (
+	"sync"
+)
+
 // CancelVoucherRequest 结构体
 type CancelVoucherRequest struct {
 	// 券信息,券信息,最多100条券记录
@@ -14,4 +18,26 @@ type CancelVoucherRequest struct {
 	Provider string `json:"provider,omitempty" xml:"provider,omitempty"`
 	// 主订单id
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+}
+
+var poolCancelVoucherRequest = sync.Pool{
+	New: func() any {
+		return new(CancelVoucherRequest)
+	},
+}
+
+// GetCancelVoucherRequest() 从对象池中获取CancelVoucherRequest
+func GetCancelVoucherRequest() *CancelVoucherRequest {
+	return poolCancelVoucherRequest.Get().(*CancelVoucherRequest)
+}
+
+// ReleaseCancelVoucherRequest 释放CancelVoucherRequest
+func ReleaseCancelVoucherRequest(v *CancelVoucherRequest) {
+	v.VoucherInfos = v.VoucherInfos[:0]
+	v.OperateDate = ""
+	v.Extend = ""
+	v.OpId = ""
+	v.Provider = ""
+	v.OrderId = 0
+	poolCancelVoucherRequest.Put(v)
 }

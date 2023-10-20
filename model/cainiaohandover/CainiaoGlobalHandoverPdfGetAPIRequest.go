@@ -2,6 +2,7 @@ package cainiaohandover
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type CainiaoGlobalHandoverPdfGetAPIRequest struct {
 // NewCainiaoGlobalHandoverPdfGetRequest 初始化CainiaoGlobalHandoverPdfGetAPIRequest对象
 func NewCainiaoGlobalHandoverPdfGetRequest() *CainiaoGlobalHandoverPdfGetAPIRequest {
 	return &CainiaoGlobalHandoverPdfGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoGlobalHandoverPdfGetAPIRequest) Reset() {
+	r._client = ""
+	r._locale = ""
+	r._userInfo = nil
+	r._handoverContentId = 0
+	r._type = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *CainiaoGlobalHandoverPdfGetAPIRequest) SetType(_type int64) error {
 // GetType Type Getter
 func (r CainiaoGlobalHandoverPdfGetAPIRequest) GetType() int64 {
 	return r._type
+}
+
+var poolCainiaoGlobalHandoverPdfGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoGlobalHandoverPdfGetRequest()
+	},
+}
+
+// GetCainiaoGlobalHandoverPdfGetRequest 从 sync.Pool 获取 CainiaoGlobalHandoverPdfGetAPIRequest
+func GetCainiaoGlobalHandoverPdfGetAPIRequest() *CainiaoGlobalHandoverPdfGetAPIRequest {
+	return poolCainiaoGlobalHandoverPdfGetAPIRequest.Get().(*CainiaoGlobalHandoverPdfGetAPIRequest)
+}
+
+// ReleaseCainiaoGlobalHandoverPdfGetAPIRequest 将 CainiaoGlobalHandoverPdfGetAPIRequest 放入 sync.Pool
+func ReleaseCainiaoGlobalHandoverPdfGetAPIRequest(v *CainiaoGlobalHandoverPdfGetAPIRequest) {
+	v.Reset()
+	poolCainiaoGlobalHandoverPdfGetAPIRequest.Put(v)
 }

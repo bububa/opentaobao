@@ -9,11 +9,6 @@ import (
 // taobao.paimai.auctioncat.nft.checknftuseridentify
 //
 // 根据用户数字id和身份证号校验该用户是否已实名认证成功
-func TaobaoPaimaiAuctioncatNftChecknftuseridentify(clt *core.SDKClient, req *paimai.TaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIRequest, session string) (*paimai.TaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIResponse, error) {
-	var resp paimai.TaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoPaimaiAuctioncatNftChecknftuseridentify(clt *core.SDKClient, req *paimai.TaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIRequest, resp *paimai.TaobaoPaimaiAuctioncatNftChecknftuseridentifyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

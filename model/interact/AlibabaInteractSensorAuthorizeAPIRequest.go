@@ -2,6 +2,7 @@ package interact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaInteractSensorAuthorizeAPIRequest struct {
 // NewAlibabaInteractSensorAuthorizeRequest 初始化AlibabaInteractSensorAuthorizeAPIRequest对象
 func NewAlibabaInteractSensorAuthorizeRequest() *AlibabaInteractSensorAuthorizeAPIRequest {
 	return &AlibabaInteractSensorAuthorizeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractSensorAuthorizeAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaInteractSensorAuthorizeAPIRequest) GetApiParams(params url.Values
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaInteractSensorAuthorizeAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaInteractSensorAuthorizeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractSensorAuthorizeRequest()
+	},
+}
+
+// GetAlibabaInteractSensorAuthorizeRequest 从 sync.Pool 获取 AlibabaInteractSensorAuthorizeAPIRequest
+func GetAlibabaInteractSensorAuthorizeAPIRequest() *AlibabaInteractSensorAuthorizeAPIRequest {
+	return poolAlibabaInteractSensorAuthorizeAPIRequest.Get().(*AlibabaInteractSensorAuthorizeAPIRequest)
+}
+
+// ReleaseAlibabaInteractSensorAuthorizeAPIRequest 将 AlibabaInteractSensorAuthorizeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractSensorAuthorizeAPIRequest(v *AlibabaInteractSensorAuthorizeAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractSensorAuthorizeAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.jym.industry.outsidegamepropertysync.syncpropertyinfo
 //
 // 外部上报游戏属性信息
-func AlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfo(clt *core.SDKClient, req *jym.AlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIRequest, session string) (*jym.AlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIResponse, error) {
-	var resp jym.AlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfo(clt *core.SDKClient, req *jym.AlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIRequest, resp *jym.AlibabaJymIndustryOutsidegamepropertysyncSyncpropertyinfoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

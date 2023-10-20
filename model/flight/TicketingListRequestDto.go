@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // TicketingListRequestDto 结构体
 type TicketingListRequestDto struct {
 	// 店铺id
@@ -12,4 +16,25 @@ type TicketingListRequestDto struct {
 	Page int64 `json:"page,omitempty" xml:"page,omitempty"`
 	// 订单状态:1:待支付，2:待出票，3:已完成，4:已取消
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolTicketingListRequestDto = sync.Pool{
+	New: func() any {
+		return new(TicketingListRequestDto)
+	},
+}
+
+// GetTicketingListRequestDto() 从对象池中获取TicketingListRequestDto
+func GetTicketingListRequestDto() *TicketingListRequestDto {
+	return poolTicketingListRequestDto.Get().(*TicketingListRequestDto)
+}
+
+// ReleaseTicketingListRequestDto 释放TicketingListRequestDto
+func ReleaseTicketingListRequestDto(v *TicketingListRequestDto) {
+	v.AgentIds = v.AgentIds[:0]
+	v.BeginPayTime = ""
+	v.EndPayTime = ""
+	v.Page = 0
+	v.Status = 0
+	poolTicketingListRequestDto.Put(v)
 }

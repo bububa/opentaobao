@@ -9,11 +9,6 @@ import (
 // taobao.bus.refund.set
 //
 // B2B业务支持退票
-func TaobaoBusRefundSet(clt *core.SDKClient, req *bus.TaobaoBusRefundSetAPIRequest, session string) (*bus.TaobaoBusRefundSetAPIResponse, error) {
-	var resp bus.TaobaoBusRefundSetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoBusRefundSet(clt *core.SDKClient, req *bus.TaobaoBusRefundSetAPIRequest, resp *bus.TaobaoBusRefundSetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

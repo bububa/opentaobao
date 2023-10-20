@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaScbpAdKeywordListRelevantProductsAPIRequest struct {
 // NewAlibabaScbpAdKeywordListRelevantProductsRequest 初始化AlibabaScbpAdKeywordListRelevantProductsAPIRequest对象
 func NewAlibabaScbpAdKeywordListRelevantProductsRequest() *AlibabaScbpAdKeywordListRelevantProductsAPIRequest {
 	return &AlibabaScbpAdKeywordListRelevantProductsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdKeywordListRelevantProductsAPIRequest) Reset() {
+	r._keyword = ""
+	r._topContext = nil
+	r._campaignId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaScbpAdKeywordListRelevantProductsAPIRequest) SetCampaignId(_camp
 // GetCampaignId CampaignId Getter
 func (r AlibabaScbpAdKeywordListRelevantProductsAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
+}
+
+var poolAlibabaScbpAdKeywordListRelevantProductsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdKeywordListRelevantProductsRequest()
+	},
+}
+
+// GetAlibabaScbpAdKeywordListRelevantProductsRequest 从 sync.Pool 获取 AlibabaScbpAdKeywordListRelevantProductsAPIRequest
+func GetAlibabaScbpAdKeywordListRelevantProductsAPIRequest() *AlibabaScbpAdKeywordListRelevantProductsAPIRequest {
+	return poolAlibabaScbpAdKeywordListRelevantProductsAPIRequest.Get().(*AlibabaScbpAdKeywordListRelevantProductsAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdKeywordListRelevantProductsAPIRequest 将 AlibabaScbpAdKeywordListRelevantProductsAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdKeywordListRelevantProductsAPIRequest(v *AlibabaScbpAdKeywordListRelevantProductsAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdKeywordListRelevantProductsAPIRequest.Put(v)
 }

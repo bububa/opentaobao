@@ -1,5 +1,9 @@
 package tmallgenie
 
+import (
+	"sync"
+)
+
 // OpenContent 结构体
 type OpenContent struct {
 	// 内容标签
@@ -64,4 +68,51 @@ type OpenContent struct {
 	IsAudition bool `json:"is_audition,omitempty" xml:"is_audition,omitempty"`
 	// 是否仅大会员内容
 	IsSuperVipFree bool `json:"is_super_vip_free,omitempty" xml:"is_super_vip_free,omitempty"`
+}
+
+var poolOpenContent = sync.Pool{
+	New: func() any {
+		return new(OpenContent)
+	},
+}
+
+// GetOpenContent() 从对象池中获取OpenContent
+func GetOpenContent() *OpenContent {
+	return poolOpenContent.Get().(*OpenContent)
+}
+
+// ReleaseOpenContent 释放OpenContent
+func ReleaseOpenContent(v *OpenContent) {
+	v.Tags = v.Tags[:0]
+	v.PlayUrls = v.PlayUrls[:0]
+	v.TagIds = v.TagIds[:0]
+	v.Remark = ""
+	v.AlbumTitle = ""
+	v.ExtendInfo = ""
+	v.Operation = ""
+	v.Title = ""
+	v.Description = ""
+	v.AlbumDescription = ""
+	v.DescriptionType = ""
+	v.ProductDesc = ""
+	v.AlbumRawId = 0
+	v.RawId = 0
+	v.ImageUrl = nil
+	v.Author = nil
+	v.Duration = 0
+	v.PlayCount = 0
+	v.ReleaseTime = 0
+	v.SortNum = 0
+	v.HotScore = 0
+	v.ChargeType = 0
+	v.PlayOrder = 0
+	v.CostPrice = 0
+	v.SuggestMinPrice = 0
+	v.SuggestMaxPrice = 0
+	v.Score = 0
+	v.VipFree = false
+	v.IsAlbumAudition = false
+	v.IsAudition = false
+	v.IsSuperVipFree = false
+	poolOpenContent.Put(v)
 }

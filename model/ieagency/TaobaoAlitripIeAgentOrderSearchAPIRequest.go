@@ -2,6 +2,7 @@ package ieagency
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type TaobaoAlitripIeAgentOrderSearchAPIRequest struct {
 // NewTaobaoAlitripIeAgentOrderSearchRequest 初始化TaobaoAlitripIeAgentOrderSearchAPIRequest对象
 func NewTaobaoAlitripIeAgentOrderSearchRequest() *TaobaoAlitripIeAgentOrderSearchAPIRequest {
 	return &TaobaoAlitripIeAgentOrderSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) Reset() {
+	r._beginTime = ""
+	r._endTime = ""
+	r._orderStatus = ""
+	r._resourceCode = ""
+	r._officeNo = ""
+	r._agentId = 0
+	r._currentPage = 0
+	r._pageSize = 0
+	r._fareSource = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetFareSource(_fareSource in
 // GetFareSource FareSource Getter
 func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetFareSource() int64 {
 	return r._fareSource
+}
+
+var poolTaobaoAlitripIeAgentOrderSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripIeAgentOrderSearchRequest()
+	},
+}
+
+// GetTaobaoAlitripIeAgentOrderSearchRequest 从 sync.Pool 获取 TaobaoAlitripIeAgentOrderSearchAPIRequest
+func GetTaobaoAlitripIeAgentOrderSearchAPIRequest() *TaobaoAlitripIeAgentOrderSearchAPIRequest {
+	return poolTaobaoAlitripIeAgentOrderSearchAPIRequest.Get().(*TaobaoAlitripIeAgentOrderSearchAPIRequest)
+}
+
+// ReleaseTaobaoAlitripIeAgentOrderSearchAPIRequest 将 TaobaoAlitripIeAgentOrderSearchAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripIeAgentOrderSearchAPIRequest(v *TaobaoAlitripIeAgentOrderSearchAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripIeAgentOrderSearchAPIRequest.Put(v)
 }

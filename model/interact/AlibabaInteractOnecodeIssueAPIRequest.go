@@ -2,6 +2,7 @@ package interact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaInteractOnecodeIssueAPIRequest struct {
 // NewAlibabaInteractOnecodeIssueRequest 初始化AlibabaInteractOnecodeIssueAPIRequest对象
 func NewAlibabaInteractOnecodeIssueRequest() *AlibabaInteractOnecodeIssueAPIRequest {
 	return &AlibabaInteractOnecodeIssueAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractOnecodeIssueAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaInteractOnecodeIssueAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaInteractOnecodeIssueAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaInteractOnecodeIssueAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractOnecodeIssueRequest()
+	},
+}
+
+// GetAlibabaInteractOnecodeIssueRequest 从 sync.Pool 获取 AlibabaInteractOnecodeIssueAPIRequest
+func GetAlibabaInteractOnecodeIssueAPIRequest() *AlibabaInteractOnecodeIssueAPIRequest {
+	return poolAlibabaInteractOnecodeIssueAPIRequest.Get().(*AlibabaInteractOnecodeIssueAPIRequest)
+}
+
+// ReleaseAlibabaInteractOnecodeIssueAPIRequest 将 AlibabaInteractOnecodeIssueAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractOnecodeIssueAPIRequest(v *AlibabaInteractOnecodeIssueAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractOnecodeIssueAPIRequest.Put(v)
 }

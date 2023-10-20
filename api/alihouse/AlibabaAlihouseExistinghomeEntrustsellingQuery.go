@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.existinghome.entrustselling.query
 //
 // 管家状态及房源信息接口
-func AlibabaAlihouseExistinghomeEntrustsellingQuery(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeEntrustsellingQueryAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomeEntrustsellingQueryAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseExistinghomeEntrustsellingQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseExistinghomeEntrustsellingQuery(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeEntrustsellingQueryAPIRequest, resp *alihouse.AlibabaAlihouseExistinghomeEntrustsellingQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

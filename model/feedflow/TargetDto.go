@@ -1,5 +1,9 @@
 package feedflow
 
+import (
+	"sync"
+)
+
 // TargetDto 结构体
 type TargetDto struct {
 	// 定向名称
@@ -10,4 +14,24 @@ type TargetDto struct {
 	TargetType string `json:"target_type,omitempty" xml:"target_type,omitempty"`
 	// 定向id
 	TargetId int64 `json:"target_id,omitempty" xml:"target_id,omitempty"`
+}
+
+var poolTargetDto = sync.Pool{
+	New: func() any {
+		return new(TargetDto)
+	},
+}
+
+// GetTargetDto() 从对象池中获取TargetDto
+func GetTargetDto() *TargetDto {
+	return poolTargetDto.Get().(*TargetDto)
+}
+
+// ReleaseTargetDto 释放TargetDto
+func ReleaseTargetDto(v *TargetDto) {
+	v.TargetName = ""
+	v.TargetDesc = ""
+	v.TargetType = ""
+	v.TargetId = 0
+	poolTargetDto.Put(v)
 }

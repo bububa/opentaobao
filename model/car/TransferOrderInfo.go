@@ -1,5 +1,9 @@
 package car
 
+import (
+	"sync"
+)
+
 // TransferOrderInfo 结构体
 type TransferOrderInfo struct {
 	// 订单修改时间
@@ -22,4 +26,30 @@ type TransferOrderInfo struct {
 	OrderStatus int64 `json:"order_status,omitempty" xml:"order_status,omitempty"`
 	// 是否有责取消（可能为空）
 	CloseDuty bool `json:"close_duty,omitempty" xml:"close_duty,omitempty"`
+}
+
+var poolTransferOrderInfo = sync.Pool{
+	New: func() any {
+		return new(TransferOrderInfo)
+	},
+}
+
+// GetTransferOrderInfo() 从对象池中获取TransferOrderInfo
+func GetTransferOrderInfo() *TransferOrderInfo {
+	return poolTransferOrderInfo.Get().(*TransferOrderInfo)
+}
+
+// ReleaseTransferOrderInfo 释放TransferOrderInfo
+func ReleaseTransferOrderInfo(v *TransferOrderInfo) {
+	v.ModifiedTime = ""
+	v.OrderId = ""
+	v.OutOrderId = ""
+	v.CreatedTime = ""
+	v.PaymentTime = ""
+	v.CancelReason = ""
+	v.RefundTime = ""
+	v.Distance = 0
+	v.OrderStatus = 0
+	v.CloseDuty = false
+	poolTransferOrderInfo.Put(v)
 }

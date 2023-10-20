@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // Package 结构体
 type Package struct {
 	// 包材信息
@@ -36,4 +40,37 @@ type Package struct {
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 备注, string (500) ,
 	Remarks string `json:"remarks,omitempty" xml:"remarks,omitempty"`
+}
+
+var poolPackage = sync.Pool{
+	New: func() any {
+		return new(Package)
+	},
+}
+
+// GetPackage() 从对象池中获取Package
+func GetPackage() *Package {
+	return poolPackage.Get().(*Package)
+}
+
+// ReleasePackage 释放Package
+func ReleasePackage(v *Package) {
+	v.PackageMaterialList = v.PackageMaterialList[:0]
+	v.Items = v.Items[:0]
+	v.LogisticsCode = ""
+	v.LogisticsName = ""
+	v.ExpressCode = ""
+	v.PackageCode = ""
+	v.Length = ""
+	v.Width = ""
+	v.Height = ""
+	v.TheoreticalWeight = ""
+	v.Weight = ""
+	v.Volume = ""
+	v.InvoiceNo = ""
+	v.SignUserName = ""
+	v.SignTime = ""
+	v.Status = ""
+	v.Remarks = ""
+	poolPackage.Put(v)
 }

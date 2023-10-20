@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoTopEventPublishAPIRequest struct {
 // NewTaobaoTopEventPublishRequest 初始化TaobaoTopEventPublishAPIRequest对象
 func NewTaobaoTopEventPublishRequest() *TaobaoTopEventPublishAPIRequest {
 	return &TaobaoTopEventPublishAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTopEventPublishAPIRequest) Reset() {
+	r._triggerCode = ""
+	r._content = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoTopEventPublishAPIRequest) SetContent(_content string) error {
 // GetContent Content Getter
 func (r TaobaoTopEventPublishAPIRequest) GetContent() string {
 	return r._content
+}
+
+var poolTaobaoTopEventPublishAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTopEventPublishRequest()
+	},
+}
+
+// GetTaobaoTopEventPublishRequest 从 sync.Pool 获取 TaobaoTopEventPublishAPIRequest
+func GetTaobaoTopEventPublishAPIRequest() *TaobaoTopEventPublishAPIRequest {
+	return poolTaobaoTopEventPublishAPIRequest.Get().(*TaobaoTopEventPublishAPIRequest)
+}
+
+// ReleaseTaobaoTopEventPublishAPIRequest 将 TaobaoTopEventPublishAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTopEventPublishAPIRequest(v *TaobaoTopEventPublishAPIRequest) {
+	v.Reset()
+	poolTaobaoTopEventPublishAPIRequest.Put(v)
 }

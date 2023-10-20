@@ -2,6 +2,7 @@ package bus
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoBusAgentRefundConfirmAPIResponse struct {
 	TaobaoBusAgentRefundConfirmAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoBusAgentRefundConfirmAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoBusAgentRefundConfirmAPIResponseModel).Reset()
+}
+
 // TaobaoBusAgentRefundConfirmAPIResponseModel is 汽车票退票和退款二合一接口 成功返回结果
 type TaobaoBusAgentRefundConfirmAPIResponseModel struct {
 	XMLName xml.Name `xml:"bus_agent_refund_confirm_response"`
@@ -26,4 +33,29 @@ type TaobaoBusAgentRefundConfirmAPIResponseModel struct {
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 	// 退票回调是否收到
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoBusAgentRefundConfirmAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultCode = ""
+	m.ResultMsg = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoBusAgentRefundConfirmAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoBusAgentRefundConfirmAPIResponse)
+	},
+}
+
+// GetTaobaoBusAgentRefundConfirmAPIResponse 从 sync.Pool 获取 TaobaoBusAgentRefundConfirmAPIResponse
+func GetTaobaoBusAgentRefundConfirmAPIResponse() *TaobaoBusAgentRefundConfirmAPIResponse {
+	return poolTaobaoBusAgentRefundConfirmAPIResponse.Get().(*TaobaoBusAgentRefundConfirmAPIResponse)
+}
+
+// ReleaseTaobaoBusAgentRefundConfirmAPIResponse 将 TaobaoBusAgentRefundConfirmAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoBusAgentRefundConfirmAPIResponse(v *TaobaoBusAgentRefundConfirmAPIResponse) {
+	v.Reset()
+	poolTaobaoBusAgentRefundConfirmAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package eleenterprisecoupon
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaEleEnterpriseCouponGetAPIRequest struct {
 // NewAlibabaEleEnterpriseCouponGetRequest 初始化AlibabaEleEnterpriseCouponGetAPIRequest对象
 func NewAlibabaEleEnterpriseCouponGetRequest() *AlibabaEleEnterpriseCouponGetAPIRequest {
 	return &AlibabaEleEnterpriseCouponGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEleEnterpriseCouponGetAPIRequest) Reset() {
+	r._phone = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaEleEnterpriseCouponGetAPIRequest) SetPhone(_phone string) error 
 // GetPhone Phone Getter
 func (r AlibabaEleEnterpriseCouponGetAPIRequest) GetPhone() string {
 	return r._phone
+}
+
+var poolAlibabaEleEnterpriseCouponGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEleEnterpriseCouponGetRequest()
+	},
+}
+
+// GetAlibabaEleEnterpriseCouponGetRequest 从 sync.Pool 获取 AlibabaEleEnterpriseCouponGetAPIRequest
+func GetAlibabaEleEnterpriseCouponGetAPIRequest() *AlibabaEleEnterpriseCouponGetAPIRequest {
+	return poolAlibabaEleEnterpriseCouponGetAPIRequest.Get().(*AlibabaEleEnterpriseCouponGetAPIRequest)
+}
+
+// ReleaseAlibabaEleEnterpriseCouponGetAPIRequest 将 AlibabaEleEnterpriseCouponGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEleEnterpriseCouponGetAPIRequest(v *AlibabaEleEnterpriseCouponGetAPIRequest) {
+	v.Reset()
+	poolAlibabaEleEnterpriseCouponGetAPIRequest.Put(v)
 }

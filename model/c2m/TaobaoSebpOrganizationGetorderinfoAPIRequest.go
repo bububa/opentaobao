@@ -2,6 +2,7 @@ package c2m
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoSebpOrganizationGetorderinfoAPIRequest struct {
 // NewTaobaoSebpOrganizationGetorderinfoRequest 初始化TaobaoSebpOrganizationGetorderinfoAPIRequest对象
 func NewTaobaoSebpOrganizationGetorderinfoRequest() *TaobaoSebpOrganizationGetorderinfoAPIRequest {
 	return &TaobaoSebpOrganizationGetorderinfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSebpOrganizationGetorderinfoAPIRequest) Reset() {
+	r._modifyDate = ""
+	r._endTime = ""
+	r._startTime = ""
+	r._pageNum = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoSebpOrganizationGetorderinfoAPIRequest) SetPageNum(_pageNum int64
 // GetPageNum PageNum Getter
 func (r TaobaoSebpOrganizationGetorderinfoAPIRequest) GetPageNum() int64 {
 	return r._pageNum
+}
+
+var poolTaobaoSebpOrganizationGetorderinfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSebpOrganizationGetorderinfoRequest()
+	},
+}
+
+// GetTaobaoSebpOrganizationGetorderinfoRequest 从 sync.Pool 获取 TaobaoSebpOrganizationGetorderinfoAPIRequest
+func GetTaobaoSebpOrganizationGetorderinfoAPIRequest() *TaobaoSebpOrganizationGetorderinfoAPIRequest {
+	return poolTaobaoSebpOrganizationGetorderinfoAPIRequest.Get().(*TaobaoSebpOrganizationGetorderinfoAPIRequest)
+}
+
+// ReleaseTaobaoSebpOrganizationGetorderinfoAPIRequest 将 TaobaoSebpOrganizationGetorderinfoAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSebpOrganizationGetorderinfoAPIRequest(v *TaobaoSebpOrganizationGetorderinfoAPIRequest) {
+	v.Reset()
+	poolTaobaoSebpOrganizationGetorderinfoAPIRequest.Put(v)
 }

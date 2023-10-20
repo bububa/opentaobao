@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // OrderConfirmQueryDto 结构体
 type OrderConfirmQueryDto struct {
 	// APPKEY，必填
@@ -16,4 +20,27 @@ type OrderConfirmQueryDto struct {
 	DeviceType string `json:"device_type,omitempty" xml:"device_type,omitempty"`
 	// 计量型服务的数量，如果是计量型内购服务，则必填
 	Quantity string `json:"quantity,omitempty" xml:"quantity,omitempty"`
+}
+
+var poolOrderConfirmQueryDto = sync.Pool{
+	New: func() any {
+		return new(OrderConfirmQueryDto)
+	},
+}
+
+// GetOrderConfirmQueryDto() 从对象池中获取OrderConfirmQueryDto
+func GetOrderConfirmQueryDto() *OrderConfirmQueryDto {
+	return poolOrderConfirmQueryDto.Get().(*OrderConfirmQueryDto)
+}
+
+// ReleaseOrderConfirmQueryDto 释放OrderConfirmQueryDto
+func ReleaseOrderConfirmQueryDto(v *OrderConfirmQueryDto) {
+	v.AppKey = ""
+	v.ItemCode = ""
+	v.CycUnit = ""
+	v.CycNum = ""
+	v.OutTradeCode = ""
+	v.DeviceType = ""
+	v.Quantity = ""
+	poolOrderConfirmQueryDto.Put(v)
 }

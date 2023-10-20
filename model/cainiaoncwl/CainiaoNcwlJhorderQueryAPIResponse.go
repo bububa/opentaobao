@@ -2,6 +2,7 @@ package cainiaoncwl
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type CainiaoNcwlJhorderQueryAPIResponse struct {
 	model.CommonResponse
 	CainiaoNcwlJhorderQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *CainiaoNcwlJhorderQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.CainiaoNcwlJhorderQueryAPIResponseModel).Reset()
 }
 
 // CainiaoNcwlJhorderQueryAPIResponseModel is 农村物流集货单查询接口 成功返回结果
@@ -28,4 +35,30 @@ type CainiaoNcwlJhorderQueryAPIResponseModel struct {
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
 	// 总页数
 	TotalPage int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *CainiaoNcwlJhorderQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.JhOrderList = m.JhOrderList[:0]
+	m.TotalResults = 0
+	m.CurrentPage = 0
+	m.TotalPage = 0
+}
+
+var poolCainiaoNcwlJhorderQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(CainiaoNcwlJhorderQueryAPIResponse)
+	},
+}
+
+// GetCainiaoNcwlJhorderQueryAPIResponse 从 sync.Pool 获取 CainiaoNcwlJhorderQueryAPIResponse
+func GetCainiaoNcwlJhorderQueryAPIResponse() *CainiaoNcwlJhorderQueryAPIResponse {
+	return poolCainiaoNcwlJhorderQueryAPIResponse.Get().(*CainiaoNcwlJhorderQueryAPIResponse)
+}
+
+// ReleaseCainiaoNcwlJhorderQueryAPIResponse 将 CainiaoNcwlJhorderQueryAPIResponse 保存到 sync.Pool
+func ReleaseCainiaoNcwlJhorderQueryAPIResponse(v *CainiaoNcwlJhorderQueryAPIResponse) {
+	v.Reset()
+	poolCainiaoNcwlJhorderQueryAPIResponse.Put(v)
 }

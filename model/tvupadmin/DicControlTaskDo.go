@@ -1,5 +1,9 @@
 package tvupadmin
 
+import (
+	"sync"
+)
+
 // DicControlTaskDo 结构体
 type DicControlTaskDo struct {
 	// 操作者
@@ -18,4 +22,28 @@ type DicControlTaskDo struct {
 	ApkId int64 `json:"apk_id,omitempty" xml:"apk_id,omitempty"`
 	// 牌照方
 	License int64 `json:"license,omitempty" xml:"license,omitempty"`
+}
+
+var poolDicControlTaskDo = sync.Pool{
+	New: func() any {
+		return new(DicControlTaskDo)
+	},
+}
+
+// GetDicControlTaskDo() 从对象池中获取DicControlTaskDo
+func GetDicControlTaskDo() *DicControlTaskDo {
+	return poolDicControlTaskDo.Get().(*DicControlTaskDo)
+}
+
+// ReleaseDicControlTaskDo 释放DicControlTaskDo
+func ReleaseDicControlTaskDo(v *DicControlTaskDo) {
+	v.Operator = ""
+	v.Description = ""
+	v.Name = ""
+	v.Uuid = ""
+	v.Devices = ""
+	v.Type = 0
+	v.ApkId = 0
+	v.License = 0
+	poolDicControlTaskDo.Put(v)
 }

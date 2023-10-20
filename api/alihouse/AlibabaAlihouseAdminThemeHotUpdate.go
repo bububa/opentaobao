@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.admin.theme.hot.update
 //
 // 云主题更新
-func AlibabaAlihouseAdminThemeHotUpdate(clt *core.SDKClient, req *alihouse.AlibabaAlihouseAdminThemeHotUpdateAPIRequest, session string) (*alihouse.AlibabaAlihouseAdminThemeHotUpdateAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseAdminThemeHotUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseAdminThemeHotUpdate(clt *core.SDKClient, req *alihouse.AlibabaAlihouseAdminThemeHotUpdateAPIRequest, resp *alihouse.AlibabaAlihouseAdminThemeHotUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

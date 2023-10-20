@@ -9,11 +9,6 @@ import (
 // alibaba.interact.sensor.ui
 //
 // Weex 基本UI操作
-func AlibabaInteractSensorUi(clt *core.SDKClient, req *util.AlibabaInteractSensorUiAPIRequest, session string) (*util.AlibabaInteractSensorUiAPIResponse, error) {
-	var resp util.AlibabaInteractSensorUiAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaInteractSensorUi(clt *core.SDKClient, req *util.AlibabaInteractSensorUiAPIRequest, resp *util.AlibabaInteractSensorUiAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

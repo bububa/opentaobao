@@ -2,6 +2,7 @@ package damai
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDamaiMevOpenResetticketAPIRequest struct {
 // NewAlibabaDamaiMevOpenResetticketRequest 初始化AlibabaDamaiMevOpenResetticketAPIRequest对象
 func NewAlibabaDamaiMevOpenResetticketRequest() *AlibabaDamaiMevOpenResetticketAPIRequest {
 	return &AlibabaDamaiMevOpenResetticketAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDamaiMevOpenResetticketAPIRequest) Reset() {
+	r._ticketIdOpenParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDamaiMevOpenResetticketAPIRequest) SetTicketIdOpenParam(_ticketI
 // GetTicketIdOpenParam TicketIdOpenParam Getter
 func (r AlibabaDamaiMevOpenResetticketAPIRequest) GetTicketIdOpenParam() *TicketIdOpenParam {
 	return r._ticketIdOpenParam
+}
+
+var poolAlibabaDamaiMevOpenResetticketAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDamaiMevOpenResetticketRequest()
+	},
+}
+
+// GetAlibabaDamaiMevOpenResetticketRequest 从 sync.Pool 获取 AlibabaDamaiMevOpenResetticketAPIRequest
+func GetAlibabaDamaiMevOpenResetticketAPIRequest() *AlibabaDamaiMevOpenResetticketAPIRequest {
+	return poolAlibabaDamaiMevOpenResetticketAPIRequest.Get().(*AlibabaDamaiMevOpenResetticketAPIRequest)
+}
+
+// ReleaseAlibabaDamaiMevOpenResetticketAPIRequest 将 AlibabaDamaiMevOpenResetticketAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDamaiMevOpenResetticketAPIRequest(v *AlibabaDamaiMevOpenResetticketAPIRequest) {
+	v.Reset()
+	poolAlibabaDamaiMevOpenResetticketAPIRequest.Put(v)
 }

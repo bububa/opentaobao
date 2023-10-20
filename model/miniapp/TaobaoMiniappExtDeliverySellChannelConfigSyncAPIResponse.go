@@ -2,6 +2,7 @@ package miniapp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoMiniappExtDeliverySellChannelConfigSyncAPIResponse struct {
 	model.CommonResponse
 	TaobaoMiniappExtDeliverySellChannelConfigSyncAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoMiniappExtDeliverySellChannelConfigSyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoMiniappExtDeliverySellChannelConfigSyncAPIResponseModel).Reset()
 }
 
 // TaobaoMiniappExtDeliverySellChannelConfigSyncAPIResponseModel is 写入商家配置信息 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoMiniappExtDeliverySellChannelConfigSyncAPIResponseModel struct {
 	Successful bool `json:"successful,omitempty" xml:"successful,omitempty"`
 	// 操作结果
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoMiniappExtDeliverySellChannelConfigSyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorMsg = ""
+	m.ErrorType = 0
+	m.Successful = false
+	m.Model = false
+}
+
+var poolTaobaoMiniappExtDeliverySellChannelConfigSyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoMiniappExtDeliverySellChannelConfigSyncAPIResponse)
+	},
+}
+
+// GetTaobaoMiniappExtDeliverySellChannelConfigSyncAPIResponse 从 sync.Pool 获取 TaobaoMiniappExtDeliverySellChannelConfigSyncAPIResponse
+func GetTaobaoMiniappExtDeliverySellChannelConfigSyncAPIResponse() *TaobaoMiniappExtDeliverySellChannelConfigSyncAPIResponse {
+	return poolTaobaoMiniappExtDeliverySellChannelConfigSyncAPIResponse.Get().(*TaobaoMiniappExtDeliverySellChannelConfigSyncAPIResponse)
+}
+
+// ReleaseTaobaoMiniappExtDeliverySellChannelConfigSyncAPIResponse 将 TaobaoMiniappExtDeliverySellChannelConfigSyncAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoMiniappExtDeliverySellChannelConfigSyncAPIResponse(v *TaobaoMiniappExtDeliverySellChannelConfigSyncAPIResponse) {
+	v.Reset()
+	poolTaobaoMiniappExtDeliverySellChannelConfigSyncAPIResponse.Put(v)
 }

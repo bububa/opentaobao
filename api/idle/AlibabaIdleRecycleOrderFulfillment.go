@@ -9,11 +9,6 @@ import (
 // alibaba.idle.recycle.order.fulfillment
 //
 // 外部回收商针对自有回收订单的履行
-func AlibabaIdleRecycleOrderFulfillment(clt *core.SDKClient, req *idle.AlibabaIdleRecycleOrderFulfillmentAPIRequest, session string) (*idle.AlibabaIdleRecycleOrderFulfillmentAPIResponse, error) {
-	var resp idle.AlibabaIdleRecycleOrderFulfillmentAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleRecycleOrderFulfillment(clt *core.SDKClient, req *idle.AlibabaIdleRecycleOrderFulfillmentAPIRequest, resp *idle.AlibabaIdleRecycleOrderFulfillmentAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

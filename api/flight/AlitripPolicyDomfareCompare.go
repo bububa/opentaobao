@@ -9,11 +9,6 @@ import (
 // alitrip.policy.domfare.compare
 //
 // 比价工具
-func AlitripPolicyDomfareCompare(clt *core.SDKClient, req *flight.AlitripPolicyDomfareCompareAPIRequest, session string) (*flight.AlitripPolicyDomfareCompareAPIResponse, error) {
-	var resp flight.AlitripPolicyDomfareCompareAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripPolicyDomfareCompare(clt *core.SDKClient, req *flight.AlitripPolicyDomfareCompareAPIRequest, resp *flight.AlitripPolicyDomfareCompareAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

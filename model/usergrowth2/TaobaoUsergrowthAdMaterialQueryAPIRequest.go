@@ -2,6 +2,7 @@ package usergrowth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoUsergrowthAdMaterialQueryAPIRequest struct {
 // NewTaobaoUsergrowthAdMaterialQueryRequest 初始化TaobaoUsergrowthAdMaterialQueryAPIRequest对象
 func NewTaobaoUsergrowthAdMaterialQueryRequest() *TaobaoUsergrowthAdMaterialQueryAPIRequest {
 	return &TaobaoUsergrowthAdMaterialQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUsergrowthAdMaterialQueryAPIRequest) Reset() {
+	r._outerCreativeId = ""
+	r._channelId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoUsergrowthAdMaterialQueryAPIRequest) SetChannelId(_channelId int6
 // GetChannelId ChannelId Getter
 func (r TaobaoUsergrowthAdMaterialQueryAPIRequest) GetChannelId() int64 {
 	return r._channelId
+}
+
+var poolTaobaoUsergrowthAdMaterialQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUsergrowthAdMaterialQueryRequest()
+	},
+}
+
+// GetTaobaoUsergrowthAdMaterialQueryRequest 从 sync.Pool 获取 TaobaoUsergrowthAdMaterialQueryAPIRequest
+func GetTaobaoUsergrowthAdMaterialQueryAPIRequest() *TaobaoUsergrowthAdMaterialQueryAPIRequest {
+	return poolTaobaoUsergrowthAdMaterialQueryAPIRequest.Get().(*TaobaoUsergrowthAdMaterialQueryAPIRequest)
+}
+
+// ReleaseTaobaoUsergrowthAdMaterialQueryAPIRequest 将 TaobaoUsergrowthAdMaterialQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUsergrowthAdMaterialQueryAPIRequest(v *TaobaoUsergrowthAdMaterialQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoUsergrowthAdMaterialQueryAPIRequest.Put(v)
 }

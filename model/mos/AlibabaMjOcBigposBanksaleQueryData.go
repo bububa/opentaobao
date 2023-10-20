@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // AlibabaMjOcBigposBanksaleQueryData 结构体
 type AlibabaMjOcBigposBanksaleQueryData struct {
 	// 交易时间
@@ -16,4 +20,27 @@ type AlibabaMjOcBigposBanksaleQueryData struct {
 	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
 	// 已调账金额
 	AdjustedAmount int64 `json:"adjusted_amount,omitempty" xml:"adjusted_amount,omitempty"`
+}
+
+var poolAlibabaMjOcBigposBanksaleQueryData = sync.Pool{
+	New: func() any {
+		return new(AlibabaMjOcBigposBanksaleQueryData)
+	},
+}
+
+// GetAlibabaMjOcBigposBanksaleQueryData() 从对象池中获取AlibabaMjOcBigposBanksaleQueryData
+func GetAlibabaMjOcBigposBanksaleQueryData() *AlibabaMjOcBigposBanksaleQueryData {
+	return poolAlibabaMjOcBigposBanksaleQueryData.Get().(*AlibabaMjOcBigposBanksaleQueryData)
+}
+
+// ReleaseAlibabaMjOcBigposBanksaleQueryData 释放AlibabaMjOcBigposBanksaleQueryData
+func ReleaseAlibabaMjOcBigposBanksaleQueryData(v *AlibabaMjOcBigposBanksaleQueryData) {
+	v.OperTime = ""
+	v.PosTraceNo = ""
+	v.Refnum = ""
+	v.Fphm = ""
+	v.RowNo = 0
+	v.Amount = 0
+	v.AdjustedAmount = 0
+	poolAlibabaMjOcBigposBanksaleQueryData.Put(v)
 }

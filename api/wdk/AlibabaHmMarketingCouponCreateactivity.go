@@ -9,11 +9,6 @@ import (
 // alibaba.hm.marketing.coupon.createactivity
 //
 // 添加优惠券活动
-func AlibabaHmMarketingCouponCreateactivity(clt *core.SDKClient, req *wdk.AlibabaHmMarketingCouponCreateactivityAPIRequest, session string) (*wdk.AlibabaHmMarketingCouponCreateactivityAPIResponse, error) {
-	var resp wdk.AlibabaHmMarketingCouponCreateactivityAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHmMarketingCouponCreateactivity(clt *core.SDKClient, req *wdk.AlibabaHmMarketingCouponCreateactivityAPIRequest, resp *wdk.AlibabaHmMarketingCouponCreateactivityAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

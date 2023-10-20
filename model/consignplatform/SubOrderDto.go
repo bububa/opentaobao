@@ -1,5 +1,9 @@
 package consignplatform
 
+import (
+	"sync"
+)
+
 // SubOrderDto 结构体
 type SubOrderDto struct {
 	// 外部子订单id
@@ -16,4 +20,27 @@ type SubOrderDto struct {
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
 	// 商品类别。1 日用品; 2 食品; 3 文件; 4 衣物; 5 数码产品; 6 其他
 	Category int64 `json:"category,omitempty" xml:"category,omitempty"`
+}
+
+var poolSubOrderDto = sync.Pool{
+	New: func() any {
+		return new(SubOrderDto)
+	},
+}
+
+// GetSubOrderDto() 从对象池中获取SubOrderDto
+func GetSubOrderDto() *SubOrderDto {
+	return poolSubOrderDto.Get().(*SubOrderDto)
+}
+
+// ReleaseSubOrderDto 释放SubOrderDto
+func ReleaseSubOrderDto(v *SubOrderDto) {
+	v.OuterOrderId = ""
+	v.GoodsName = ""
+	v.PictureUrl = ""
+	v.GoodsId = ""
+	v.Amount = 0
+	v.Price = 0
+	v.Category = 0
+	poolSubOrderDto.Put(v)
 }

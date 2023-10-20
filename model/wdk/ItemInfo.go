@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ItemInfo 结构体
 type ItemInfo struct {
 	// 商品状态：商品在机构内的生命周期，商品状态；A-正常、T-暂时停购、C-淘汰出清、R-清退、D-删除封挡，传ATCRD
@@ -54,4 +58,46 @@ type ItemInfo struct {
 	WeightFlag int64 `json:"weight_flag,omitempty" xml:"weight_flag,omitempty"`
 	// 均重
 	AvgWeight int64 `json:"avg_weight,omitempty" xml:"avg_weight,omitempty"`
+}
+
+var poolItemInfo = sync.Pool{
+	New: func() any {
+		return new(ItemInfo)
+	},
+}
+
+// GetItemInfo() 从对象池中获取ItemInfo
+func GetItemInfo() *ItemInfo {
+	return poolItemInfo.Get().(*ItemInfo)
+}
+
+// ReleaseItemInfo 释放ItemInfo
+func ReleaseItemInfo(v *ItemInfo) {
+	v.LifeStatus = ""
+	v.SkuName = ""
+	v.ItemTypeNew = ""
+	v.SkuCode = ""
+	v.MerchantCatCode = ""
+	v.InventoryUtil = ""
+	v.OrgName = ""
+	v.OrgCode = ""
+	v.BackCatCode = ""
+	v.ProducerPlace = ""
+	v.SupplierNo = ""
+	v.SaleSpec = ""
+	v.ShortTitle = ""
+	v.BrandName = ""
+	v.Content = ""
+	v.Storage = ""
+	v.Barcode = ""
+	v.LabelStyleType = ""
+	v.SaleUtil = ""
+	v.SkuPrice = 0
+	v.MemberPrice = 0
+	v.Weight = 0
+	v.ImportFlag = 0
+	v.Period = 0
+	v.WeightFlag = 0
+	v.AvgWeight = 0
+	poolItemInfo.Put(v)
 }

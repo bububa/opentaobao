@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // HiErpOrderDto 结构体
 type HiErpOrderDto struct {
 	// 外部订单号，唯一标识
@@ -32,4 +36,35 @@ type HiErpOrderDto struct {
 	CipherText bool `json:"cipher_text,omitempty" xml:"cipher_text,omitempty"`
 	// 是否自动下发，默认为false
 	AutoSend bool `json:"auto_send,omitempty" xml:"auto_send,omitempty"`
+}
+
+var poolHiErpOrderDto = sync.Pool{
+	New: func() any {
+		return new(HiErpOrderDto)
+	},
+}
+
+// GetHiErpOrderDto() 从对象池中获取HiErpOrderDto
+func GetHiErpOrderDto() *HiErpOrderDto {
+	return poolHiErpOrderDto.Get().(*HiErpOrderDto)
+}
+
+// ReleaseHiErpOrderDto 释放HiErpOrderDto
+func ReleaseHiErpOrderDto(v *HiErpOrderDto) {
+	v.OutOrderCode = ""
+	v.TradeId = ""
+	v.Channel = ""
+	v.SellerNick = ""
+	v.OutSellerNick = ""
+	v.OrderType = ""
+	v.OrderTime = ""
+	v.PayTime = ""
+	v.BuyerMemo = ""
+	v.Feature = ""
+	v.SellerMessage = ""
+	v.StoreCode = ""
+	v.OwnerId = 0
+	v.CipherText = false
+	v.AutoSend = false
+	poolHiErpOrderDto.Put(v)
 }

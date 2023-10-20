@@ -9,11 +9,6 @@ import (
 // taobao.fuwu.sp.billreord.add
 //
 // isv能通过该接口上传确认单明细数据
-func TaobaoFuwuSpBillreordAdd(clt *core.SDKClient, req *servicecenter.TaobaoFuwuSpBillreordAddAPIRequest, session string) (*servicecenter.TaobaoFuwuSpBillreordAddAPIResponse, error) {
-	var resp servicecenter.TaobaoFuwuSpBillreordAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFuwuSpBillreordAdd(clt *core.SDKClient, req *servicecenter.TaobaoFuwuSpBillreordAddAPIRequest, resp *servicecenter.TaobaoFuwuSpBillreordAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // ItemHotel 结构体
 type ItemHotel struct {
 	// 酒店描述
@@ -20,4 +24,29 @@ type ItemHotel struct {
 	RelatedPackageId int64 `json:"related_package_id,omitempty" xml:"related_package_id,omitempty"`
 	// 晚数
 	HotelDays int64 `json:"hotel_days,omitempty" xml:"hotel_days,omitempty"`
+}
+
+var poolItemHotel = sync.Pool{
+	New: func() any {
+		return new(ItemHotel)
+	},
+}
+
+// GetItemHotel() 从对象池中获取ItemHotel
+func GetItemHotel() *ItemHotel {
+	return poolItemHotel.Get().(*ItemHotel)
+}
+
+// ReleaseItemHotel 释放ItemHotel
+func ReleaseItemHotel(v *ItemHotel) {
+	v.HotelDesc = ""
+	v.PoiResource = ""
+	v.Poi = ""
+	v.HouseType = ""
+	v.HotelLevel = ""
+	v.CnName = ""
+	v.City = ""
+	v.RelatedPackageId = 0
+	v.HotelDays = 0
+	poolItemHotel.Put(v)
 }

@@ -2,6 +2,7 @@ package simba
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoUniversalbpAccountGetCanUseBizcodeAPIResponse struct {
 	TaobaoUniversalbpAccountGetCanUseBizcodeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoUniversalbpAccountGetCanUseBizcodeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoUniversalbpAccountGetCanUseBizcodeAPIResponseModel).Reset()
+}
+
 // TaobaoUniversalbpAccountGetCanUseBizcodeAPIResponseModel is 获取账户可用的bizCode 成功返回结果
 type TaobaoUniversalbpAccountGetCanUseBizcodeAPIResponseModel struct {
 	XMLName xml.Name `xml:"universalbp_account_get_can_use_bizcode_response"`
@@ -22,4 +29,27 @@ type TaobaoUniversalbpAccountGetCanUseBizcodeAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果体
 	Result *TaobaoUniversalbpAccountGetCanUseBizcodeTopResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoUniversalbpAccountGetCanUseBizcodeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoUniversalbpAccountGetCanUseBizcodeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoUniversalbpAccountGetCanUseBizcodeAPIResponse)
+	},
+}
+
+// GetTaobaoUniversalbpAccountGetCanUseBizcodeAPIResponse 从 sync.Pool 获取 TaobaoUniversalbpAccountGetCanUseBizcodeAPIResponse
+func GetTaobaoUniversalbpAccountGetCanUseBizcodeAPIResponse() *TaobaoUniversalbpAccountGetCanUseBizcodeAPIResponse {
+	return poolTaobaoUniversalbpAccountGetCanUseBizcodeAPIResponse.Get().(*TaobaoUniversalbpAccountGetCanUseBizcodeAPIResponse)
+}
+
+// ReleaseTaobaoUniversalbpAccountGetCanUseBizcodeAPIResponse 将 TaobaoUniversalbpAccountGetCanUseBizcodeAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoUniversalbpAccountGetCanUseBizcodeAPIResponse(v *TaobaoUniversalbpAccountGetCanUseBizcodeAPIResponse) {
+	v.Reset()
+	poolTaobaoUniversalbpAccountGetCanUseBizcodeAPIResponse.Put(v)
 }

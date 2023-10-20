@@ -9,11 +9,6 @@ import (
 // alibaba.interact.sensor.glue
 //
 // 视频播放
-func AlibabaInteractSensorGlue(clt *core.SDKClient, req *interact.AlibabaInteractSensorGlueAPIRequest, session string) (*interact.AlibabaInteractSensorGlueAPIResponse, error) {
-	var resp interact.AlibabaInteractSensorGlueAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaInteractSensorGlue(clt *core.SDKClient, req *interact.AlibabaInteractSensorGlueAPIRequest, resp *interact.AlibabaInteractSensorGlueAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

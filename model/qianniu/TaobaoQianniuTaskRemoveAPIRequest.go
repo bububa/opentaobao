@@ -2,6 +2,7 @@ package qianniu
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQianniuTaskRemoveAPIRequest struct {
 // NewTaobaoQianniuTaskRemoveRequest 初始化TaobaoQianniuTaskRemoveAPIRequest对象
 func NewTaobaoQianniuTaskRemoveRequest() *TaobaoQianniuTaskRemoveAPIRequest {
 	return &TaobaoQianniuTaskRemoveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQianniuTaskRemoveAPIRequest) Reset() {
+	r._metadataId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoQianniuTaskRemoveAPIRequest) SetMetadataId(_metadataId int64) err
 // GetMetadataId MetadataId Getter
 func (r TaobaoQianniuTaskRemoveAPIRequest) GetMetadataId() int64 {
 	return r._metadataId
+}
+
+var poolTaobaoQianniuTaskRemoveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQianniuTaskRemoveRequest()
+	},
+}
+
+// GetTaobaoQianniuTaskRemoveRequest 从 sync.Pool 获取 TaobaoQianniuTaskRemoveAPIRequest
+func GetTaobaoQianniuTaskRemoveAPIRequest() *TaobaoQianniuTaskRemoveAPIRequest {
+	return poolTaobaoQianniuTaskRemoveAPIRequest.Get().(*TaobaoQianniuTaskRemoveAPIRequest)
+}
+
+// ReleaseTaobaoQianniuTaskRemoveAPIRequest 将 TaobaoQianniuTaskRemoveAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQianniuTaskRemoveAPIRequest(v *TaobaoQianniuTaskRemoveAPIRequest) {
+	v.Reset()
+	poolTaobaoQianniuTaskRemoveAPIRequest.Put(v)
 }

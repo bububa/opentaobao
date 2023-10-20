@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // OrderProcessReports 结构体
 type OrderProcessReports struct {
 	// (创建发货单)条件必填
@@ -16,4 +20,27 @@ type OrderProcessReports struct {
 	Order *Order `json:"order,omitempty" xml:"order,omitempty"`
 	// 单据作业信息
 	Process *Process `json:"process,omitempty" xml:"process,omitempty"`
+}
+
+var poolOrderProcessReports = sync.Pool{
+	New: func() any {
+		return new(OrderProcessReports)
+	},
+}
+
+// GetOrderProcessReports() 从对象池中获取OrderProcessReports
+func GetOrderProcessReports() *OrderProcessReports {
+	return poolOrderProcessReports.Get().(*OrderProcessReports)
+}
+
+// ReleaseOrderProcessReports 释放OrderProcessReports
+func ReleaseOrderProcessReports(v *OrderProcessReports) {
+	v.OrderLines = v.OrderLines[:0]
+	v.ConfirmOrderLines = v.ConfirmOrderLines[:0]
+	v.ConfirmPackages = v.ConfirmPackages[:0]
+	v.OrderFlag = ""
+	v.OrderProcessReportId = ""
+	v.Order = nil
+	v.Process = nil
+	poolOrderProcessReports.Put(v)
 }

@@ -2,6 +2,7 @@ package qt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -53,8 +54,31 @@ type TaobaoQtReportAddAPIRequest struct {
 // NewTaobaoQtReportAddRequest 初始化TaobaoQtReportAddAPIRequest对象
 func NewTaobaoQtReportAddRequest() *TaobaoQtReportAddAPIRequest {
 	return &TaobaoQtReportAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(18),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQtReportAddAPIRequest) Reset() {
+	r._servcieItemCode = ""
+	r._spName = ""
+	r._nick = ""
+	r._qtCode = ""
+	r._qtName = ""
+	r._itemUrl = ""
+	r._itemDesc = ""
+	r._qtStandard = ""
+	r._reportUrl = ""
+	r._message = ""
+	r._extAttr = ""
+	r._gmtSubmit = ""
+	r._gmtReport = ""
+	r._gmtExpiry = ""
+	r._qtType = 0
+	r._status = 0
+	r._numIid = 0
+	r._isPassed = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -306,4 +330,21 @@ func (r *TaobaoQtReportAddAPIRequest) SetIsPassed(_isPassed bool) error {
 // GetIsPassed IsPassed Getter
 func (r TaobaoQtReportAddAPIRequest) GetIsPassed() bool {
 	return r._isPassed
+}
+
+var poolTaobaoQtReportAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQtReportAddRequest()
+	},
+}
+
+// GetTaobaoQtReportAddRequest 从 sync.Pool 获取 TaobaoQtReportAddAPIRequest
+func GetTaobaoQtReportAddAPIRequest() *TaobaoQtReportAddAPIRequest {
+	return poolTaobaoQtReportAddAPIRequest.Get().(*TaobaoQtReportAddAPIRequest)
+}
+
+// ReleaseTaobaoQtReportAddAPIRequest 将 TaobaoQtReportAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQtReportAddAPIRequest(v *TaobaoQtReportAddAPIRequest) {
+	v.Reset()
+	poolTaobaoQtReportAddAPIRequest.Put(v)
 }

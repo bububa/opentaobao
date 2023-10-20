@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponse struct {
 	AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponseModel).Reset()
+}
+
 // AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponseModel is 删除单品买赠活动商品 成功返回结果
 type AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_retail_marketing_buygift_activity_sku_delete_response"`
@@ -22,4 +29,27 @@ type AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 操作结果
 	Result *OctopusOpenResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponse)
+	},
+}
+
+// GetAlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponse 从 sync.Pool 获取 AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponse
+func GetAlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponse() *AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponse {
+	return poolAlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponse.Get().(*AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponse)
+}
+
+// ReleaseAlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponse 将 AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponse(v *AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponse) {
+	v.Reset()
+	poolAlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // MemberDto 结构体
 type MemberDto struct {
 	// 会员权益走马灯
@@ -58,4 +62,48 @@ type MemberDto struct {
 	IsFakeEmail bool `json:"is_fake_email,omitempty" xml:"is_fake_email,omitempty"`
 	// 快速升级资格
 	FastTrackEligibility bool `json:"fast_track_eligibility,omitempty" xml:"fast_track_eligibility,omitempty"`
+}
+
+var poolMemberDto = sync.Pool{
+	New: func() any {
+		return new(MemberDto)
+	},
+}
+
+// GetMemberDto() 从对象池中获取MemberDto
+func GetMemberDto() *MemberDto {
+	return poolMemberDto.Get().(*MemberDto)
+}
+
+// ReleaseMemberDto 释放MemberDto
+func ReleaseMemberDto(v *MemberDto) {
+	v.MemberRightCarousels = v.MemberRightCarousels[:0]
+	v.TenantUserId = ""
+	v.WechatAvatarUrl = ""
+	v.WechatNickName = ""
+	v.PhoneNum = ""
+	v.PhonePri = ""
+	v.Email = ""
+	v.Token = ""
+	v.GmtCreate = ""
+	v.AuthorizeStatus = ""
+	v.RegisterType = ""
+	v.PopUpPage = ""
+	v.NextLevelName = ""
+	v.PhoneByDerby = ""
+	v.DerbyEmailId = ""
+	v.MemberBaseInfo = nil
+	v.CardBaseInfo = nil
+	v.CouponCount = 0
+	v.MemberCardDetail = nil
+	v.VoucherCount = 0
+	v.PointsDetail = nil
+	v.NightDetail = nil
+	v.PwdErrorCount = 0
+	v.DerbySpecialField = nil
+	v.IsMember = false
+	v.HasWechatPublicAccountOpenId = false
+	v.IsFakeEmail = false
+	v.FastTrackEligibility = false
+	poolMemberDto.Put(v)
 }

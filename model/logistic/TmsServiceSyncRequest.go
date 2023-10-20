@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // TmsServiceSyncRequest 结构体
 type TmsServiceSyncRequest struct {
 	// 图片信息
@@ -34,4 +38,36 @@ type TmsServiceSyncRequest struct {
 	BusinessType string `json:"business_type,omitempty" xml:"business_type,omitempty"`
 	// 上门签收描述
 	DeliveryResultRemark string `json:"delivery_result_remark,omitempty" xml:"delivery_result_remark,omitempty"`
+}
+
+var poolTmsServiceSyncRequest = sync.Pool{
+	New: func() any {
+		return new(TmsServiceSyncRequest)
+	},
+}
+
+// GetTmsServiceSyncRequest() 从对象池中获取TmsServiceSyncRequest
+func GetTmsServiceSyncRequest() *TmsServiceSyncRequest {
+	return poolTmsServiceSyncRequest.Get().(*TmsServiceSyncRequest)
+}
+
+// ReleaseTmsServiceSyncRequest 释放TmsServiceSyncRequest
+func ReleaseTmsServiceSyncRequest(v *TmsServiceSyncRequest) {
+	v.PictureInfoList = v.PictureInfoList[:0]
+	v.SmsInfoList = v.SmsInfoList[:0]
+	v.PhoneCallInfoList = v.PhoneCallInfoList[:0]
+	v.ServiceType = ""
+	v.TmsBrandCode = ""
+	v.LogisticsDetailDesc = ""
+	v.SendSignType = ""
+	v.BizCode = ""
+	v.OperateTime = ""
+	v.DeliveryResult = ""
+	v.MailNo = ""
+	v.ServiceState = ""
+	v.PhoneCallResult = ""
+	v.TmsCpCode = ""
+	v.BusinessType = ""
+	v.DeliveryResultRemark = ""
+	poolTmsServiceSyncRequest.Put(v)
 }

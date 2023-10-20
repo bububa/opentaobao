@@ -2,6 +2,7 @@ package security
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaDiafiTokenCheckAPIRequest struct {
 // NewAlibabaDiafiTokenCheckRequest 初始化AlibabaDiafiTokenCheckAPIRequest对象
 func NewAlibabaDiafiTokenCheckRequest() *AlibabaDiafiTokenCheckAPIRequest {
 	return &AlibabaDiafiTokenCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDiafiTokenCheckAPIRequest) Reset() {
+	r._token = ""
+	r._app = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaDiafiTokenCheckAPIRequest) SetApp(_app string) error {
 // GetApp App Getter
 func (r AlibabaDiafiTokenCheckAPIRequest) GetApp() string {
 	return r._app
+}
+
+var poolAlibabaDiafiTokenCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDiafiTokenCheckRequest()
+	},
+}
+
+// GetAlibabaDiafiTokenCheckRequest 从 sync.Pool 获取 AlibabaDiafiTokenCheckAPIRequest
+func GetAlibabaDiafiTokenCheckAPIRequest() *AlibabaDiafiTokenCheckAPIRequest {
+	return poolAlibabaDiafiTokenCheckAPIRequest.Get().(*AlibabaDiafiTokenCheckAPIRequest)
+}
+
+// ReleaseAlibabaDiafiTokenCheckAPIRequest 将 AlibabaDiafiTokenCheckAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDiafiTokenCheckAPIRequest(v *AlibabaDiafiTokenCheckAPIRequest) {
+	v.Reset()
+	poolAlibabaDiafiTokenCheckAPIRequest.Put(v)
 }

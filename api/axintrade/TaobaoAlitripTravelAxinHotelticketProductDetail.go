@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.travel.axin.hotelticket.product.detail
 //
 // 阿信酒景套餐产品详情查询
-func TaobaoAlitripTravelAxinHotelticketProductDetail(clt *core.SDKClient, req *axintrade.TaobaoAlitripTravelAxinHotelticketProductDetailAPIRequest, session string) (*axintrade.TaobaoAlitripTravelAxinHotelticketProductDetailAPIResponse, error) {
-	var resp axintrade.TaobaoAlitripTravelAxinHotelticketProductDetailAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripTravelAxinHotelticketProductDetail(clt *core.SDKClient, req *axintrade.TaobaoAlitripTravelAxinHotelticketProductDetailAPIRequest, resp *axintrade.TaobaoAlitripTravelAxinHotelticketProductDetailAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

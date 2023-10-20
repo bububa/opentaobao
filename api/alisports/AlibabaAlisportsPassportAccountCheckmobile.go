@@ -9,11 +9,6 @@ import (
 // alibaba.alisports.passport.account.checkmobile
 //
 // 验证三方用户的手机号，获取对应的阿里体育会员id
-func AlibabaAlisportsPassportAccountCheckmobile(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportAccountCheckmobileAPIRequest, session string) (*alisports.AlibabaAlisportsPassportAccountCheckmobileAPIResponse, error) {
-	var resp alisports.AlibabaAlisportsPassportAccountCheckmobileAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlisportsPassportAccountCheckmobile(clt *core.SDKClient, req *alisports.AlibabaAlisportsPassportAccountCheckmobileAPIRequest, resp *alisports.AlibabaAlisportsPassportAccountCheckmobileAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

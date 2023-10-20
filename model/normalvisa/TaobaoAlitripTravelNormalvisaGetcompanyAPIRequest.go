@@ -2,6 +2,7 @@ package normalvisa
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAlitripTravelNormalvisaGetcompanyAPIRequest struct {
 // NewTaobaoAlitripTravelNormalvisaGetcompanyRequest 初始化TaobaoAlitripTravelNormalvisaGetcompanyAPIRequest对象
 func NewTaobaoAlitripTravelNormalvisaGetcompanyRequest() *TaobaoAlitripTravelNormalvisaGetcompanyAPIRequest {
 	return &TaobaoAlitripTravelNormalvisaGetcompanyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripTravelNormalvisaGetcompanyAPIRequest) Reset() {
+	r._param0 = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAlitripTravelNormalvisaGetcompanyAPIRequest) SetParam0(_param0 bo
 // GetParam0 Param0 Getter
 func (r TaobaoAlitripTravelNormalvisaGetcompanyAPIRequest) GetParam0() bool {
 	return r._param0
+}
+
+var poolTaobaoAlitripTravelNormalvisaGetcompanyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripTravelNormalvisaGetcompanyRequest()
+	},
+}
+
+// GetTaobaoAlitripTravelNormalvisaGetcompanyRequest 从 sync.Pool 获取 TaobaoAlitripTravelNormalvisaGetcompanyAPIRequest
+func GetTaobaoAlitripTravelNormalvisaGetcompanyAPIRequest() *TaobaoAlitripTravelNormalvisaGetcompanyAPIRequest {
+	return poolTaobaoAlitripTravelNormalvisaGetcompanyAPIRequest.Get().(*TaobaoAlitripTravelNormalvisaGetcompanyAPIRequest)
+}
+
+// ReleaseTaobaoAlitripTravelNormalvisaGetcompanyAPIRequest 将 TaobaoAlitripTravelNormalvisaGetcompanyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripTravelNormalvisaGetcompanyAPIRequest(v *TaobaoAlitripTravelNormalvisaGetcompanyAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripTravelNormalvisaGetcompanyAPIRequest.Put(v)
 }

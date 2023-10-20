@@ -2,6 +2,7 @@ package util
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoQimenEventsProduceAPIResponse struct {
 	TaobaoQimenEventsProduceAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoQimenEventsProduceAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoQimenEventsProduceAPIResponseModel).Reset()
+}
+
 // TaobaoQimenEventsProduceAPIResponseModel is 批量发送奇门事件 成功返回结果
 type TaobaoQimenEventsProduceAPIResponseModel struct {
 	XMLName xml.Name `xml:"qimen_events_produce_response"`
@@ -24,4 +31,28 @@ type TaobaoQimenEventsProduceAPIResponseModel struct {
 	Results []QimenResult `json:"results,omitempty" xml:"results>qimen_result,omitempty"`
 	// 是否全部成功
 	IsAllSuccess bool `json:"is_all_success,omitempty" xml:"is_all_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoQimenEventsProduceAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Results = m.Results[:0]
+	m.IsAllSuccess = false
+}
+
+var poolTaobaoQimenEventsProduceAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoQimenEventsProduceAPIResponse)
+	},
+}
+
+// GetTaobaoQimenEventsProduceAPIResponse 从 sync.Pool 获取 TaobaoQimenEventsProduceAPIResponse
+func GetTaobaoQimenEventsProduceAPIResponse() *TaobaoQimenEventsProduceAPIResponse {
+	return poolTaobaoQimenEventsProduceAPIResponse.Get().(*TaobaoQimenEventsProduceAPIResponse)
+}
+
+// ReleaseTaobaoQimenEventsProduceAPIResponse 将 TaobaoQimenEventsProduceAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoQimenEventsProduceAPIResponse(v *TaobaoQimenEventsProduceAPIResponse) {
+	v.Reset()
+	poolTaobaoQimenEventsProduceAPIResponse.Put(v)
 }

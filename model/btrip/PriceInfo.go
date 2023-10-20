@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // PriceInfo 结构体
 type PriceInfo struct {
 	// 乘机人，多个用‘,’分割
@@ -16,4 +20,27 @@ type PriceInfo struct {
 	CategoryCode int64 `json:"category_code,omitempty" xml:"category_code,omitempty"`
 	// 资金流向:1:支出，2:收入
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolPriceInfo = sync.Pool{
+	New: func() any {
+		return new(PriceInfo)
+	},
+}
+
+// GetPriceInfo() 从对象池中获取PriceInfo
+func GetPriceInfo() *PriceInfo {
+	return poolPriceInfo.Get().(*PriceInfo)
+}
+
+// ReleasePriceInfo 释放PriceInfo
+func ReleasePriceInfo(v *PriceInfo) {
+	v.PassengerName = ""
+	v.GmtCreate = ""
+	v.TradeId = ""
+	v.PayType = 0
+	v.Price = 0
+	v.CategoryCode = 0
+	v.Type = 0
+	poolPriceInfo.Put(v)
 }

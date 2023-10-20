@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.wechat.user.modify.phone
 //
 // DFC-ID用户换绑手机号
-func AlitripMerchantGalaxyWechatUserModifyPhone(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyWechatUserModifyPhoneAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyWechatUserModifyPhoneAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyWechatUserModifyPhoneAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyWechatUserModifyPhone(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyWechatUserModifyPhoneAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyWechatUserModifyPhoneAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

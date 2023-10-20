@@ -2,6 +2,7 @@ package scs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoOnebpDkxCreativeCreativeReportOfflineAPIRequest struct {
 // NewTaobaoOnebpDkxCreativeCreativeReportOfflineRequest 初始化TaobaoOnebpDkxCreativeCreativeReportOfflineAPIRequest对象
 func NewTaobaoOnebpDkxCreativeCreativeReportOfflineRequest() *TaobaoOnebpDkxCreativeCreativeReportOfflineAPIRequest {
 	return &TaobaoOnebpDkxCreativeCreativeReportOfflineAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOnebpDkxCreativeCreativeReportOfflineAPIRequest) Reset() {
+	r._apiServiceContext = nil
+	r._creativeBindQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoOnebpDkxCreativeCreativeReportOfflineAPIRequest) SetCreativeBindQ
 // GetCreativeBindQuery CreativeBindQuery Getter
 func (r TaobaoOnebpDkxCreativeCreativeReportOfflineAPIRequest) GetCreativeBindQuery() *CreativeBindQueryTopDto {
 	return r._creativeBindQuery
+}
+
+var poolTaobaoOnebpDkxCreativeCreativeReportOfflineAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOnebpDkxCreativeCreativeReportOfflineRequest()
+	},
+}
+
+// GetTaobaoOnebpDkxCreativeCreativeReportOfflineRequest 从 sync.Pool 获取 TaobaoOnebpDkxCreativeCreativeReportOfflineAPIRequest
+func GetTaobaoOnebpDkxCreativeCreativeReportOfflineAPIRequest() *TaobaoOnebpDkxCreativeCreativeReportOfflineAPIRequest {
+	return poolTaobaoOnebpDkxCreativeCreativeReportOfflineAPIRequest.Get().(*TaobaoOnebpDkxCreativeCreativeReportOfflineAPIRequest)
+}
+
+// ReleaseTaobaoOnebpDkxCreativeCreativeReportOfflineAPIRequest 将 TaobaoOnebpDkxCreativeCreativeReportOfflineAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOnebpDkxCreativeCreativeReportOfflineAPIRequest(v *TaobaoOnebpDkxCreativeCreativeReportOfflineAPIRequest) {
+	v.Reset()
+	poolTaobaoOnebpDkxCreativeCreativeReportOfflineAPIRequest.Put(v)
 }

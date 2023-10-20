@@ -1,5 +1,9 @@
 package xiamicontent
 
+import (
+	"sync"
+)
+
 // AudioDto 结构体
 type AudioDto struct {
 	// 试听文件地址
@@ -28,4 +32,33 @@ type AudioDto struct {
 	Quality int64 `json:"quality,omitempty" xml:"quality,omitempty"`
 	// 超时时间
 	Expire int64 `json:"expire,omitempty" xml:"expire,omitempty"`
+}
+
+var poolAudioDto = sync.Pool{
+	New: func() any {
+		return new(AudioDto)
+	},
+}
+
+// GetAudioDto() 从对象池中获取AudioDto
+func GetAudioDto() *AudioDto {
+	return poolAudioDto.Get().(*AudioDto)
+}
+
+// ReleaseAudioDto 释放AudioDto
+func ReleaseAudioDto(v *AudioDto) {
+	v.ListenUrl = ""
+	v.Format = ""
+	v.AudioCover = ""
+	v.AudioName = ""
+	v.AudioDesc = ""
+	v.Duration = 0
+	v.Rate = 0
+	v.FileSize = 0
+	v.AudioId = 0
+	v.Bits = 0
+	v.SampleRate = 0
+	v.Quality = 0
+	v.Expire = 0
+	poolAudioDto.Put(v)
 }

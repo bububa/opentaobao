@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // CnskuExtendDto 结构体
 type CnskuExtendDto struct {
 	// 最大列表长度：20
@@ -74,4 +78,56 @@ type CnskuExtendDto struct {
 	IsDrugs bool `json:"is_drugs,omitempty" xml:"is_drugs,omitempty"`
 	// 是否贵品
 	IsPrecious bool `json:"is_precious,omitempty" xml:"is_precious,omitempty"`
+}
+
+var poolCnskuExtendDto = sync.Pool{
+	New: func() any {
+		return new(CnskuExtendDto)
+	},
+}
+
+// GetCnskuExtendDto() 从对象池中获取CnskuExtendDto
+func GetCnskuExtendDto() *CnskuExtendDto {
+	return poolCnskuExtendDto.Get().(*CnskuExtendDto)
+}
+
+// ReleaseCnskuExtendDto 释放CnskuExtendDto
+func ReleaseCnskuExtendDto(v *CnskuExtendDto) {
+	v.CnskuSnSampleDTOList = v.CnskuSnSampleDTOList[:0]
+	v.DeliverRequirements = ""
+	v.TemperatureRequirement = ""
+	v.PicUrl = ""
+	v.Classification = ""
+	v.TaxCode = ""
+	v.TaxRate = ""
+	v.IncludeBattery = ""
+	v.Manufacturer = ""
+	v.TransImageUrl = ""
+	v.BrandCountry = ""
+	v.Currency = ""
+	v.ProducingArea = ""
+	v.RecordUrl = ""
+	v.MainComposition = ""
+	v.PackageUnit = ""
+	v.PackageMaterialClass = ""
+	v.TypeProperty = ""
+	v.WwwBarCode = ""
+	v.DosageForms = ""
+	v.PictureUrl = ""
+	v.TransWidth = 0
+	v.TransLength = 0
+	v.TransHeight = 0
+	v.TransVolume = 0
+	v.TransWeight = 0
+	v.InnerLength = 0
+	v.LoadBearing = 0
+	v.InnerHeight = 0
+	v.MaterialType = 0
+	v.PackageMaterialMode = 0
+	v.InnerWidth = 0
+	v.IsProduceCodeMgt = false
+	v.IsImported = false
+	v.IsDrugs = false
+	v.IsPrecious = false
+	poolCnskuExtendDto.Put(v)
 }

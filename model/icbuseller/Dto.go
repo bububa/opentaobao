@@ -1,5 +1,9 @@
 package icbuseller
 
+import (
+	"sync"
+)
+
 // Dto 结构体
 type Dto struct {
 	// 订单类型
@@ -40,4 +44,39 @@ type Dto struct {
 	BuyerAliId int64 `json:"buyer_ali_id,omitempty" xml:"buyer_ali_id,omitempty"`
 	// 服务分类id
 	ServiceCategoryId int64 `json:"service_category_id,omitempty" xml:"service_category_id,omitempty"`
+}
+
+var poolDto = sync.Pool{
+	New: func() any {
+		return new(Dto)
+	},
+}
+
+// GetDto() 从对象池中获取Dto
+func GetDto() *Dto {
+	return poolDto.Get().(*Dto)
+}
+
+// ReleaseDto 释放Dto
+func ReleaseDto(v *Dto) {
+	v.OrderType = ""
+	v.OrderNo = ""
+	v.CurrentStatus = ""
+	v.ServiceCode = ""
+	v.FireTime = ""
+	v.TransactionPrice = ""
+	v.CreateTime = ""
+	v.TransactionUnitPrice = ""
+	v.PayChannel = ""
+	v.Currency = ""
+	v.RefundPrice = ""
+	v.OrderTitle = ""
+	v.SkuCode = ""
+	v.BuyerLoginId = ""
+	v.ServiceCategory = ""
+	v.ServiceSkuLabel = ""
+	v.Quantity = 0
+	v.BuyerAliId = 0
+	v.ServiceCategoryId = 0
+	poolDto.Put(v)
 }

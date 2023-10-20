@@ -9,11 +9,6 @@ import (
 // taobao.feedflow.item.campaign.delete
 //
 // 删除计划
-func TaobaoFeedflowItemCampaignDelete(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCampaignDeleteAPIRequest, session string) (*feedflow.TaobaoFeedflowItemCampaignDeleteAPIResponse, error) {
-	var resp feedflow.TaobaoFeedflowItemCampaignDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFeedflowItemCampaignDelete(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCampaignDeleteAPIRequest, resp *feedflow.TaobaoFeedflowItemCampaignDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

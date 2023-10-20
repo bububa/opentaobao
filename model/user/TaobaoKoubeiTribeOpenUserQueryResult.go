@@ -1,5 +1,9 @@
 package user
 
+import (
+	"sync"
+)
+
 // TaobaoKoubeiTribeOpenUserQueryResult 结构体
 type TaobaoKoubeiTribeOpenUserQueryResult struct {
 	// traceId
@@ -10,4 +14,24 @@ type TaobaoKoubeiTribeOpenUserQueryResult struct {
 	Data *UserInfoDto `json:"data,omitempty" xml:"data,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoKoubeiTribeOpenUserQueryResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoKoubeiTribeOpenUserQueryResult)
+	},
+}
+
+// GetTaobaoKoubeiTribeOpenUserQueryResult() 从对象池中获取TaobaoKoubeiTribeOpenUserQueryResult
+func GetTaobaoKoubeiTribeOpenUserQueryResult() *TaobaoKoubeiTribeOpenUserQueryResult {
+	return poolTaobaoKoubeiTribeOpenUserQueryResult.Get().(*TaobaoKoubeiTribeOpenUserQueryResult)
+}
+
+// ReleaseTaobaoKoubeiTribeOpenUserQueryResult 释放TaobaoKoubeiTribeOpenUserQueryResult
+func ReleaseTaobaoKoubeiTribeOpenUserQueryResult(v *TaobaoKoubeiTribeOpenUserQueryResult) {
+	v.TraceId = ""
+	v.Error = ""
+	v.Data = nil
+	v.Success = false
+	poolTaobaoKoubeiTribeOpenUserQueryResult.Put(v)
 }

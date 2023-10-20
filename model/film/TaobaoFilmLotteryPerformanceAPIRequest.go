@@ -2,6 +2,7 @@ package film
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoFilmLotteryPerformanceAPIRequest struct {
 // NewTaobaoFilmLotteryPerformanceRequest 初始化TaobaoFilmLotteryPerformanceAPIRequest对象
 func NewTaobaoFilmLotteryPerformanceRequest() *TaobaoFilmLotteryPerformanceAPIRequest {
 	return &TaobaoFilmLotteryPerformanceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFilmLotteryPerformanceAPIRequest) Reset() {
+	r._lotteryPerformanceTopParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoFilmLotteryPerformanceAPIRequest) SetLotteryPerformanceTopParam(_
 // GetLotteryPerformanceTopParam LotteryPerformanceTopParam Getter
 func (r TaobaoFilmLotteryPerformanceAPIRequest) GetLotteryPerformanceTopParam() *LotteryPerformanceTopParam {
 	return r._lotteryPerformanceTopParam
+}
+
+var poolTaobaoFilmLotteryPerformanceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFilmLotteryPerformanceRequest()
+	},
+}
+
+// GetTaobaoFilmLotteryPerformanceRequest 从 sync.Pool 获取 TaobaoFilmLotteryPerformanceAPIRequest
+func GetTaobaoFilmLotteryPerformanceAPIRequest() *TaobaoFilmLotteryPerformanceAPIRequest {
+	return poolTaobaoFilmLotteryPerformanceAPIRequest.Get().(*TaobaoFilmLotteryPerformanceAPIRequest)
+}
+
+// ReleaseTaobaoFilmLotteryPerformanceAPIRequest 将 TaobaoFilmLotteryPerformanceAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFilmLotteryPerformanceAPIRequest(v *TaobaoFilmLotteryPerformanceAPIRequest) {
+	v.Reset()
+	poolTaobaoFilmLotteryPerformanceAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripCostCenterEntitySetAPIRequest struct {
 // NewAlitripBtripCostCenterEntitySetRequest 初始化AlitripBtripCostCenterEntitySetAPIRequest对象
 func NewAlitripBtripCostCenterEntitySetRequest() *AlitripBtripCostCenterEntitySetAPIRequest {
 	return &AlitripBtripCostCenterEntitySetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripCostCenterEntitySetAPIRequest) Reset() {
+	r._rq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripCostCenterEntitySetAPIRequest) SetRq(_rq *OpenCostCenterSet
 // GetRq Rq Getter
 func (r AlitripBtripCostCenterEntitySetAPIRequest) GetRq() *OpenCostCenterSetEntityRq {
 	return r._rq
+}
+
+var poolAlitripBtripCostCenterEntitySetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripCostCenterEntitySetRequest()
+	},
+}
+
+// GetAlitripBtripCostCenterEntitySetRequest 从 sync.Pool 获取 AlitripBtripCostCenterEntitySetAPIRequest
+func GetAlitripBtripCostCenterEntitySetAPIRequest() *AlitripBtripCostCenterEntitySetAPIRequest {
+	return poolAlitripBtripCostCenterEntitySetAPIRequest.Get().(*AlitripBtripCostCenterEntitySetAPIRequest)
+}
+
+// ReleaseAlitripBtripCostCenterEntitySetAPIRequest 将 AlitripBtripCostCenterEntitySetAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripCostCenterEntitySetAPIRequest(v *AlitripBtripCostCenterEntitySetAPIRequest) {
+	v.Reset()
+	poolAlitripBtripCostCenterEntitySetAPIRequest.Put(v)
 }

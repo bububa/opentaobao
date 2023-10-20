@@ -2,6 +2,7 @@ package train
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoTrainAgentTostationConfirmAPIRequest struct {
 // NewTaobaoTrainAgentTostationConfirmRequest 初始化TaobaoTrainAgentTostationConfirmAPIRequest对象
 func NewTaobaoTrainAgentTostationConfirmRequest() *TaobaoTrainAgentTostationConfirmAPIRequest {
 	return &TaobaoTrainAgentTostationConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTrainAgentTostationConfirmAPIRequest) Reset() {
+	r._mainOrderId = 0
+	r._agentId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoTrainAgentTostationConfirmAPIRequest) SetAgentId(_agentId int64) 
 // GetAgentId AgentId Getter
 func (r TaobaoTrainAgentTostationConfirmAPIRequest) GetAgentId() int64 {
 	return r._agentId
+}
+
+var poolTaobaoTrainAgentTostationConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTrainAgentTostationConfirmRequest()
+	},
+}
+
+// GetTaobaoTrainAgentTostationConfirmRequest 从 sync.Pool 获取 TaobaoTrainAgentTostationConfirmAPIRequest
+func GetTaobaoTrainAgentTostationConfirmAPIRequest() *TaobaoTrainAgentTostationConfirmAPIRequest {
+	return poolTaobaoTrainAgentTostationConfirmAPIRequest.Get().(*TaobaoTrainAgentTostationConfirmAPIRequest)
+}
+
+// ReleaseTaobaoTrainAgentTostationConfirmAPIRequest 将 TaobaoTrainAgentTostationConfirmAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTrainAgentTostationConfirmAPIRequest(v *TaobaoTrainAgentTostationConfirmAPIRequest) {
+	v.Reset()
+	poolTaobaoTrainAgentTostationConfirmAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoWaybillIiQueryByTradecodeAPIRequest struct {
 // NewCainiaoWaybillIiQueryByTradecodeRequest 初始化CainiaoWaybillIiQueryByTradecodeAPIRequest对象
 func NewCainiaoWaybillIiQueryByTradecodeRequest() *CainiaoWaybillIiQueryByTradecodeAPIRequest {
 	return &CainiaoWaybillIiQueryByTradecodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoWaybillIiQueryByTradecodeAPIRequest) Reset() {
+	r._paramList = r._paramList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoWaybillIiQueryByTradecodeAPIRequest) SetParamList(_paramList []W
 // GetParamList ParamList Getter
 func (r CainiaoWaybillIiQueryByTradecodeAPIRequest) GetParamList() []WaybillDetailQueryByBizSubCodeRequest {
 	return r._paramList
+}
+
+var poolCainiaoWaybillIiQueryByTradecodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoWaybillIiQueryByTradecodeRequest()
+	},
+}
+
+// GetCainiaoWaybillIiQueryByTradecodeRequest 从 sync.Pool 获取 CainiaoWaybillIiQueryByTradecodeAPIRequest
+func GetCainiaoWaybillIiQueryByTradecodeAPIRequest() *CainiaoWaybillIiQueryByTradecodeAPIRequest {
+	return poolCainiaoWaybillIiQueryByTradecodeAPIRequest.Get().(*CainiaoWaybillIiQueryByTradecodeAPIRequest)
+}
+
+// ReleaseCainiaoWaybillIiQueryByTradecodeAPIRequest 将 CainiaoWaybillIiQueryByTradecodeAPIRequest 放入 sync.Pool
+func ReleaseCainiaoWaybillIiQueryByTradecodeAPIRequest(v *CainiaoWaybillIiQueryByTradecodeAPIRequest) {
+	v.Reset()
+	poolCainiaoWaybillIiQueryByTradecodeAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.lst.bm.store.add
 //
 // 导入品牌商自有门店
-func AlibabaLstBmStoreAdd(clt *core.SDKClient, req *lstbm.AlibabaLstBmStoreAddAPIRequest, session string) (*lstbm.AlibabaLstBmStoreAddAPIResponse, error) {
-	var resp lstbm.AlibabaLstBmStoreAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLstBmStoreAdd(clt *core.SDKClient, req *lstbm.AlibabaLstBmStoreAddAPIRequest, resp *lstbm.AlibabaLstBmStoreAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

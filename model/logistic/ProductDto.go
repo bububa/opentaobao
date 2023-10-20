@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // ProductDto 结构体
 type ProductDto struct {
 	// Total weight of a SKU in its original packaging. Default unit: kilograms
@@ -16,4 +20,27 @@ type ProductDto struct {
 	SkuId string `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 	// Quantity of a sku in the order. It&#39;s used to calculate the total number of products in a parcel
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
+}
+
+var poolProductDto = sync.Pool{
+	New: func() any {
+		return new(ProductDto)
+	},
+}
+
+// GetProductDto() 从对象池中获取ProductDto
+func GetProductDto() *ProductDto {
+	return poolProductDto.Get().(*ProductDto)
+}
+
+// ReleaseProductDto 释放ProductDto
+func ReleaseProductDto(v *ProductDto) {
+	v.Weight = ""
+	v.Length = ""
+	v.Width = ""
+	v.Height = ""
+	v.Price = ""
+	v.SkuId = ""
+	v.Quantity = 0
+	poolProductDto.Put(v)
 }

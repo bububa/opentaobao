@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlitripMerchantGalaxyFavoriteQueryAPIRequest struct {
 // NewAlitripMerchantGalaxyFavoriteQueryRequest 初始化AlitripMerchantGalaxyFavoriteQueryAPIRequest对象
 func NewAlitripMerchantGalaxyFavoriteQueryRequest() *AlitripMerchantGalaxyFavoriteQueryAPIRequest {
 	return &AlitripMerchantGalaxyFavoriteQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyFavoriteQueryAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._token = ""
+	r._hotelId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlitripMerchantGalaxyFavoriteQueryAPIRequest) SetHotelId(_hotelId strin
 // GetHotelId HotelId Getter
 func (r AlitripMerchantGalaxyFavoriteQueryAPIRequest) GetHotelId() string {
 	return r._hotelId
+}
+
+var poolAlitripMerchantGalaxyFavoriteQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyFavoriteQueryRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyFavoriteQueryRequest 从 sync.Pool 获取 AlitripMerchantGalaxyFavoriteQueryAPIRequest
+func GetAlitripMerchantGalaxyFavoriteQueryAPIRequest() *AlitripMerchantGalaxyFavoriteQueryAPIRequest {
+	return poolAlitripMerchantGalaxyFavoriteQueryAPIRequest.Get().(*AlitripMerchantGalaxyFavoriteQueryAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyFavoriteQueryAPIRequest 将 AlitripMerchantGalaxyFavoriteQueryAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyFavoriteQueryAPIRequest(v *AlitripMerchantGalaxyFavoriteQueryAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyFavoriteQueryAPIRequest.Put(v)
 }

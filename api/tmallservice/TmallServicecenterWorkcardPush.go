@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.workcard.push
 //
 // 服务商家推送工单信息到天猫。
-func TmallServicecenterWorkcardPush(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardPushAPIRequest, session string) (*tmallservice.TmallServicecenterWorkcardPushAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterWorkcardPushAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterWorkcardPush(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardPushAPIRequest, resp *tmallservice.TmallServicecenterWorkcardPushAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

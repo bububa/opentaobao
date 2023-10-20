@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAlihealthDrugKytQuerycodeactiveAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugKytQuerycodeactiveAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugKytQuerycodeactiveAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthDrugKytQuerycodeactiveAPIResponseModel).Reset()
 }
 
 // AlibabaAlihealthDrugKytQuerycodeactiveAPIResponseModel is 查询码是否激活 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAlihealthDrugKytQuerycodeactiveAPIResponseModel struct {
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// 是否成功(true 成功 ,false失败)
 	ResponseSuccess bool `json:"response_success,omitempty" xml:"response_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugKytQuerycodeactiveAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Models = m.Models[:0]
+	m.MsgCode = ""
+	m.MsgInfo = ""
+	m.ResponseSuccess = false
+}
+
+var poolAlibabaAlihealthDrugKytQuerycodeactiveAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugKytQuerycodeactiveAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthDrugKytQuerycodeactiveAPIResponse 从 sync.Pool 获取 AlibabaAlihealthDrugKytQuerycodeactiveAPIResponse
+func GetAlibabaAlihealthDrugKytQuerycodeactiveAPIResponse() *AlibabaAlihealthDrugKytQuerycodeactiveAPIResponse {
+	return poolAlibabaAlihealthDrugKytQuerycodeactiveAPIResponse.Get().(*AlibabaAlihealthDrugKytQuerycodeactiveAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthDrugKytQuerycodeactiveAPIResponse 将 AlibabaAlihealthDrugKytQuerycodeactiveAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytQuerycodeactiveAPIResponse(v *AlibabaAlihealthDrugKytQuerycodeactiveAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytQuerycodeactiveAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type YunosTvpubadminContentAppQuerybylicenceAPIResponse struct {
 	YunosTvpubadminContentAppQuerybylicenceAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *YunosTvpubadminContentAppQuerybylicenceAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.YunosTvpubadminContentAppQuerybylicenceAPIResponseModel).Reset()
+}
+
 // YunosTvpubadminContentAppQuerybylicenceAPIResponseModel is 按牌照查询应用 成功返回结果
 type YunosTvpubadminContentAppQuerybylicenceAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_tvpubadmin_content_app_querybylicence_response"`
@@ -22,4 +29,27 @@ type YunosTvpubadminContentAppQuerybylicenceAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// Result&lt;AppInfo&gt;
 	Object string `json:"object,omitempty" xml:"object,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *YunosTvpubadminContentAppQuerybylicenceAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Object = ""
+}
+
+var poolYunosTvpubadminContentAppQuerybylicenceAPIResponse = sync.Pool{
+	New: func() any {
+		return new(YunosTvpubadminContentAppQuerybylicenceAPIResponse)
+	},
+}
+
+// GetYunosTvpubadminContentAppQuerybylicenceAPIResponse 从 sync.Pool 获取 YunosTvpubadminContentAppQuerybylicenceAPIResponse
+func GetYunosTvpubadminContentAppQuerybylicenceAPIResponse() *YunosTvpubadminContentAppQuerybylicenceAPIResponse {
+	return poolYunosTvpubadminContentAppQuerybylicenceAPIResponse.Get().(*YunosTvpubadminContentAppQuerybylicenceAPIResponse)
+}
+
+// ReleaseYunosTvpubadminContentAppQuerybylicenceAPIResponse 将 YunosTvpubadminContentAppQuerybylicenceAPIResponse 保存到 sync.Pool
+func ReleaseYunosTvpubadminContentAppQuerybylicenceAPIResponse(v *YunosTvpubadminContentAppQuerybylicenceAPIResponse) {
+	v.Reset()
+	poolYunosTvpubadminContentAppQuerybylicenceAPIResponse.Put(v)
 }

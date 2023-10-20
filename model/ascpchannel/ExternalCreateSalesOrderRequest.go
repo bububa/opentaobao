@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // ExternalCreateSalesOrderRequest 结构体
 type ExternalCreateSalesOrderRequest struct {
 	// 子订单列表
@@ -20,4 +24,29 @@ type ExternalCreateSalesOrderRequest struct {
 	Receiver *ExternalReceiverRequest `json:"receiver,omitempty" xml:"receiver,omitempty"`
 	// 发货人
 	Sender *ExternalSenderRequest `json:"sender,omitempty" xml:"sender,omitempty"`
+}
+
+var poolExternalCreateSalesOrderRequest = sync.Pool{
+	New: func() any {
+		return new(ExternalCreateSalesOrderRequest)
+	},
+}
+
+// GetExternalCreateSalesOrderRequest() 从对象池中获取ExternalCreateSalesOrderRequest
+func GetExternalCreateSalesOrderRequest() *ExternalCreateSalesOrderRequest {
+	return poolExternalCreateSalesOrderRequest.Get().(*ExternalCreateSalesOrderRequest)
+}
+
+// ReleaseExternalCreateSalesOrderRequest 释放ExternalCreateSalesOrderRequest
+func ReleaseExternalCreateSalesOrderRequest(v *ExternalCreateSalesOrderRequest) {
+	v.OutSubOrders = v.OutSubOrders[:0]
+	v.CurrencyType = ""
+	v.SalesMode = ""
+	v.OutOrderNo = ""
+	v.SubChannelCode = ""
+	v.ChannelCode = ""
+	v.Attributes = ""
+	v.Receiver = nil
+	v.Sender = nil
+	poolExternalCreateSalesOrderRequest.Put(v)
 }

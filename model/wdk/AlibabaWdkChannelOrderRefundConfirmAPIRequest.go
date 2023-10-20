@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkChannelOrderRefundConfirmAPIRequest struct {
 // NewAlibabaWdkChannelOrderRefundConfirmRequest 初始化AlibabaWdkChannelOrderRefundConfirmAPIRequest对象
 func NewAlibabaWdkChannelOrderRefundConfirmRequest() *AlibabaWdkChannelOrderRefundConfirmAPIRequest {
 	return &AlibabaWdkChannelOrderRefundConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkChannelOrderRefundConfirmAPIRequest) Reset() {
+	r._orderRefundConfirmInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkChannelOrderRefundConfirmAPIRequest) SetOrderRefundConfirmInf
 // GetOrderRefundConfirmInfo OrderRefundConfirmInfo Getter
 func (r AlibabaWdkChannelOrderRefundConfirmAPIRequest) GetOrderRefundConfirmInfo() *OrderRefundConfirmInfo {
 	return r._orderRefundConfirmInfo
+}
+
+var poolAlibabaWdkChannelOrderRefundConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkChannelOrderRefundConfirmRequest()
+	},
+}
+
+// GetAlibabaWdkChannelOrderRefundConfirmRequest 从 sync.Pool 获取 AlibabaWdkChannelOrderRefundConfirmAPIRequest
+func GetAlibabaWdkChannelOrderRefundConfirmAPIRequest() *AlibabaWdkChannelOrderRefundConfirmAPIRequest {
+	return poolAlibabaWdkChannelOrderRefundConfirmAPIRequest.Get().(*AlibabaWdkChannelOrderRefundConfirmAPIRequest)
+}
+
+// ReleaseAlibabaWdkChannelOrderRefundConfirmAPIRequest 将 AlibabaWdkChannelOrderRefundConfirmAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkChannelOrderRefundConfirmAPIRequest(v *AlibabaWdkChannelOrderRefundConfirmAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkChannelOrderRefundConfirmAPIRequest.Put(v)
 }

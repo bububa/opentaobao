@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // RefundList 结构体
 type RefundList struct {
 	// 票号,必填
@@ -48,4 +52,43 @@ type RefundList struct {
 	PnrXe int64 `json:"pnr_xe,omitempty" xml:"pnr_xe,omitempty"`
 	// 乘机人性别:1表示男性，2表示女性
 	Gender int64 `json:"gender,omitempty" xml:"gender,omitempty"`
+}
+
+var poolRefundList = sync.Pool{
+	New: func() any {
+		return new(RefundList)
+	},
+}
+
+// GetRefundList() 从对象池中获取RefundList
+func GetRefundList() *RefundList {
+	return poolRefundList.Get().(*RefundList)
+}
+
+// ReleaseRefundList 释放RefundList
+func ReleaseRefundList(v *RefundList) {
+	v.Tickets = v.Tickets[:0]
+	v.RefundSegments = v.RefundSegments[:0]
+	v.Taxes = v.Taxes[:0]
+	v.PassengerName = ""
+	v.PnrXeTime = ""
+	v.SurName = ""
+	v.GivenName = ""
+	v.CertPeriod = ""
+	v.Nationality = ""
+	v.CertIssueCountry = ""
+	v.Birthday = ""
+	v.RefundFee = 0
+	v.RefundUpgradeFee = 0
+	v.RefundModifyFee = 0
+	v.PassengerType = 0
+	v.RefundAmount = 0
+	v.TicketPrice = 0
+	v.TotalModifyFee = 0
+	v.TotalUpgradeFee = 0
+	v.RealPrice = 0
+	v.RefundItemType = 0
+	v.PnrXe = 0
+	v.Gender = 0
+	poolRefundList.Put(v)
 }

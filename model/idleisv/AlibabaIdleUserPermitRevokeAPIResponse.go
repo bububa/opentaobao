@@ -2,6 +2,7 @@ package idleisv
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaIdleUserPermitRevokeAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleUserPermitRevokeAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaIdleUserPermitRevokeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaIdleUserPermitRevokeAPIResponseModel).Reset()
 }
 
 // AlibabaIdleUserPermitRevokeAPIResponseModel is 删除服务商与卖家之间的订单消息绑定关系 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaIdleUserPermitRevokeAPIResponseModel struct {
 	Data bool `json:"data,omitempty" xml:"data,omitempty"`
 	// 处理结果
 	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaIdleUserPermitRevokeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultErrorCode = ""
+	m.ResultErrorMsg = ""
+	m.Data = false
+	m.ResultSuccess = false
+}
+
+var poolAlibabaIdleUserPermitRevokeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaIdleUserPermitRevokeAPIResponse)
+	},
+}
+
+// GetAlibabaIdleUserPermitRevokeAPIResponse 从 sync.Pool 获取 AlibabaIdleUserPermitRevokeAPIResponse
+func GetAlibabaIdleUserPermitRevokeAPIResponse() *AlibabaIdleUserPermitRevokeAPIResponse {
+	return poolAlibabaIdleUserPermitRevokeAPIResponse.Get().(*AlibabaIdleUserPermitRevokeAPIResponse)
+}
+
+// ReleaseAlibabaIdleUserPermitRevokeAPIResponse 将 AlibabaIdleUserPermitRevokeAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaIdleUserPermitRevokeAPIResponse(v *AlibabaIdleUserPermitRevokeAPIResponse) {
+	v.Reset()
+	poolAlibabaIdleUserPermitRevokeAPIResponse.Put(v)
 }

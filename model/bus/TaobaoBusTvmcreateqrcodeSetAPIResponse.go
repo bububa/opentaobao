@@ -2,6 +2,7 @@ package bus
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoBusTvmcreateqrcodeSetAPIResponse struct {
 	model.CommonResponse
 	TaobaoBusTvmcreateqrcodeSetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoBusTvmcreateqrcodeSetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoBusTvmcreateqrcodeSetAPIResponseModel).Reset()
 }
 
 // TaobaoBusTvmcreateqrcodeSetAPIResponseModel is 自助机生成支付宝支付二维码 成功返回结果
@@ -32,4 +39,32 @@ type TaobaoBusTvmcreateqrcodeSetAPIResponseModel struct {
 	CustomQrPicUrl string `json:"custom_qr_pic_url,omitempty" xml:"custom_qr_pic_url,omitempty"`
 	// success true 成功 false 失败
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoBusTvmcreateqrcodeSetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultCode = ""
+	m.ResultMsg = ""
+	m.QrCode = ""
+	m.CustomQrPicBase64 = ""
+	m.CustomQrPicUrl = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoBusTvmcreateqrcodeSetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoBusTvmcreateqrcodeSetAPIResponse)
+	},
+}
+
+// GetTaobaoBusTvmcreateqrcodeSetAPIResponse 从 sync.Pool 获取 TaobaoBusTvmcreateqrcodeSetAPIResponse
+func GetTaobaoBusTvmcreateqrcodeSetAPIResponse() *TaobaoBusTvmcreateqrcodeSetAPIResponse {
+	return poolTaobaoBusTvmcreateqrcodeSetAPIResponse.Get().(*TaobaoBusTvmcreateqrcodeSetAPIResponse)
+}
+
+// ReleaseTaobaoBusTvmcreateqrcodeSetAPIResponse 将 TaobaoBusTvmcreateqrcodeSetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoBusTvmcreateqrcodeSetAPIResponse(v *TaobaoBusTvmcreateqrcodeSetAPIResponse) {
+	v.Reset()
+	poolTaobaoBusTvmcreateqrcodeSetAPIResponse.Put(v)
 }

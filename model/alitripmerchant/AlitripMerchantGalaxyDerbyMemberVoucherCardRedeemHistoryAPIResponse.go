@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIResponse struct 
 	AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIResponseModel).Reset()
+}
+
 // AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIResponseModel is 查询会员兑换臻享卡历史记录 成功返回结果
 type AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_merchant_galaxy_derby_member_voucher_card_redeem_history_response"`
@@ -22,4 +29,27 @@ type AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIResponseModel st
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// response
 	Result *AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryResponse `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIResponse)
+	},
+}
+
+// GetAlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIResponse 从 sync.Pool 获取 AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIResponse
+func GetAlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIResponse() *AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIResponse {
+	return poolAlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIResponse.Get().(*AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIResponse)
+}
+
+// ReleaseAlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIResponse 将 AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIResponse 保存到 sync.Pool
+func ReleaseAlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIResponse(v *AlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIResponse) {
+	v.Reset()
+	poolAlitripMerchantGalaxyDerbyMemberVoucherCardRedeemHistoryAPIResponse.Put(v)
 }

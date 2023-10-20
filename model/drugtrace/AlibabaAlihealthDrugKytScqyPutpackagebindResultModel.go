@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // AlibabaAlihealthDrugKytScqyPutpackagebindResultModel 结构体
 type AlibabaAlihealthDrugKytScqyPutpackagebindResultModel struct {
 	// 消息码
@@ -10,4 +14,24 @@ type AlibabaAlihealthDrugKytScqyPutpackagebindResultModel struct {
 	Model *CodeMovePackagingSecondDto `json:"model,omitempty" xml:"model,omitempty"`
 	// 查询成功失败标记
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaAlihealthDrugKytScqyPutpackagebindResultModel = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugKytScqyPutpackagebindResultModel)
+	},
+}
+
+// GetAlibabaAlihealthDrugKytScqyPutpackagebindResultModel() 从对象池中获取AlibabaAlihealthDrugKytScqyPutpackagebindResultModel
+func GetAlibabaAlihealthDrugKytScqyPutpackagebindResultModel() *AlibabaAlihealthDrugKytScqyPutpackagebindResultModel {
+	return poolAlibabaAlihealthDrugKytScqyPutpackagebindResultModel.Get().(*AlibabaAlihealthDrugKytScqyPutpackagebindResultModel)
+}
+
+// ReleaseAlibabaAlihealthDrugKytScqyPutpackagebindResultModel 释放AlibabaAlihealthDrugKytScqyPutpackagebindResultModel
+func ReleaseAlibabaAlihealthDrugKytScqyPutpackagebindResultModel(v *AlibabaAlihealthDrugKytScqyPutpackagebindResultModel) {
+	v.MsgCode = ""
+	v.MsgInfo = ""
+	v.Model = nil
+	v.Success = false
+	poolAlibabaAlihealthDrugKytScqyPutpackagebindResultModel.Put(v)
 }

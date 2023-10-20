@@ -1,5 +1,9 @@
 package maitix
 
+import (
+	"sync"
+)
+
 // DisStatusDto 结构体
 type DisStatusDto struct {
 	// 票品状态列表
@@ -12,4 +16,25 @@ type DisStatusDto struct {
 	PerformId int64 `json:"perform_id,omitempty" xml:"perform_id,omitempty"`
 	// 项目id
 	ProjectId int64 `json:"project_id,omitempty" xml:"project_id,omitempty"`
+}
+
+var poolDisStatusDto = sync.Pool{
+	New: func() any {
+		return new(DisStatusDto)
+	},
+}
+
+// GetDisStatusDto() 从对象池中获取DisStatusDto
+func GetDisStatusDto() *DisStatusDto {
+	return poolDisStatusDto.Get().(*DisStatusDto)
+}
+
+// ReleaseDisStatusDto 释放DisStatusDto
+func ReleaseDisStatusDto(v *DisStatusDto) {
+	v.DisTicketItemStatusDTOList = v.DisTicketItemStatusDTOList[:0]
+	v.DisPerformStatusDTOList = v.DisPerformStatusDTOList[:0]
+	v.Status = 0
+	v.PerformId = 0
+	v.ProjectId = 0
+	poolDisStatusDto.Put(v)
 }

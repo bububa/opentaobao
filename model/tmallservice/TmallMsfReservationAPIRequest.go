@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallMsfReservationAPIRequest struct {
 // NewTmallMsfReservationRequest 初始化TmallMsfReservationAPIRequest对象
 func NewTmallMsfReservationRequest() *TmallMsfReservationAPIRequest {
 	return &TmallMsfReservationAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallMsfReservationAPIRequest) Reset() {
+	r._reservInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallMsfReservationAPIRequest) SetReservInfo(_reservInfo *ReservationDt
 // GetReservInfo ReservInfo Getter
 func (r TmallMsfReservationAPIRequest) GetReservInfo() *ReservationDto {
 	return r._reservInfo
+}
+
+var poolTmallMsfReservationAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallMsfReservationRequest()
+	},
+}
+
+// GetTmallMsfReservationRequest 从 sync.Pool 获取 TmallMsfReservationAPIRequest
+func GetTmallMsfReservationAPIRequest() *TmallMsfReservationAPIRequest {
+	return poolTmallMsfReservationAPIRequest.Get().(*TmallMsfReservationAPIRequest)
+}
+
+// ReleaseTmallMsfReservationAPIRequest 将 TmallMsfReservationAPIRequest 放入 sync.Pool
+func ReleaseTmallMsfReservationAPIRequest(v *TmallMsfReservationAPIRequest) {
+	v.Reset()
+	poolTmallMsfReservationAPIRequest.Put(v)
 }

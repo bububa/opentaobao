@@ -2,6 +2,7 @@ package tmallgeniescp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest struct {
 // NewAlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadRequest 初始化AlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest对象
 func NewAlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadRequest() *AlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest {
 	return &AlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest) Reset() {
+	r._netDemandRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest) SetNetDem
 // GetNetDemandRequest NetDemandRequest Getter
 func (r AlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest) GetNetDemandRequest() *NetDemandRequest {
 	return r._netDemandRequest
+}
+
+var poolAlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadRequest()
+	},
+}
+
+// GetAlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadRequest 从 sync.Pool 获取 AlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest
+func GetAlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest() *AlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest {
+	return poolAlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest.Get().(*AlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest)
+}
+
+// ReleaseAlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest 将 AlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest(v *AlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaTmallgenieScpPlanCorrectSupplierQuoteUploadAPIRequest.Put(v)
 }

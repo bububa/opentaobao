@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // InvoiceApplyResultDto 结构体
 type InvoiceApplyResultDto struct {
 	// 开票结果
@@ -10,4 +14,24 @@ type InvoiceApplyResultDto struct {
 	ApplyStatus string `json:"apply_status,omitempty" xml:"apply_status,omitempty"`
 	// 生成的发票申请页面URL, 用户可在该页面中填写抬头等信息，然后提交正式的发票申请。  当apply_mode=create_apply_url 时必须返回。
 	ApplyUrl string `json:"apply_url,omitempty" xml:"apply_url,omitempty"`
+}
+
+var poolInvoiceApplyResultDto = sync.Pool{
+	New: func() any {
+		return new(InvoiceApplyResultDto)
+	},
+}
+
+// GetInvoiceApplyResultDto() 从对象池中获取InvoiceApplyResultDto
+func GetInvoiceApplyResultDto() *InvoiceApplyResultDto {
+	return poolInvoiceApplyResultDto.Get().(*InvoiceApplyResultDto)
+}
+
+// ReleaseInvoiceApplyResultDto 释放InvoiceApplyResultDto
+func ReleaseInvoiceApplyResultDto(v *InvoiceApplyResultDto) {
+	v.CreateInvResultList = v.CreateInvResultList[:0]
+	v.ApplyId = ""
+	v.ApplyStatus = ""
+	v.ApplyUrl = ""
+	poolInvoiceApplyResultDto.Put(v)
 }

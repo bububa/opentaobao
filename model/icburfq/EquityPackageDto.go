@@ -1,5 +1,9 @@
 package icburfq
 
+import (
+	"sync"
+)
+
 // EquityPackageDto 结构体
 type EquityPackageDto struct {
 	// 过期时间
@@ -16,4 +20,27 @@ type EquityPackageDto struct {
 	Score int64 `json:"score,omitempty" xml:"score,omitempty"`
 	// 剩余置顶报价权益
 	TopServiceCount int64 `json:"top_service_count,omitempty" xml:"top_service_count,omitempty"`
+}
+
+var poolEquityPackageDto = sync.Pool{
+	New: func() any {
+		return new(EquityPackageDto)
+	},
+}
+
+// GetEquityPackageDto() 从对象池中获取EquityPackageDto
+func GetEquityPackageDto() *EquityPackageDto {
+	return poolEquityPackageDto.Get().(*EquityPackageDto)
+}
+
+// ReleaseEquityPackageDto 释放EquityPackageDto
+func ReleaseEquityPackageDto(v *EquityPackageDto) {
+	v.ExpiredDate = ""
+	v.BeatSupplierPercent = ""
+	v.StatisticStartDate = ""
+	v.StatisticEndDate = ""
+	v.EquityCount = 0
+	v.Score = 0
+	v.TopServiceCount = 0
+	poolEquityPackageDto.Put(v)
 }

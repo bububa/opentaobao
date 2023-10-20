@@ -1,5 +1,9 @@
 package lstlogistics
 
+import (
+	"sync"
+)
+
 // LstThirdPartDetailShipOrderCreateDto 结构体
 type LstThirdPartDetailShipOrderCreateDto struct {
 	// 品牌
@@ -20,4 +24,29 @@ type LstThirdPartDetailShipOrderCreateDto struct {
 	SkuPrice int64 `json:"sku_price,omitempty" xml:"sku_price,omitempty"`
 	// 货品实付金额，单位为分
 	PayFee int64 `json:"pay_fee,omitempty" xml:"pay_fee,omitempty"`
+}
+
+var poolLstThirdPartDetailShipOrderCreateDto = sync.Pool{
+	New: func() any {
+		return new(LstThirdPartDetailShipOrderCreateDto)
+	},
+}
+
+// GetLstThirdPartDetailShipOrderCreateDto() 从对象池中获取LstThirdPartDetailShipOrderCreateDto
+func GetLstThirdPartDetailShipOrderCreateDto() *LstThirdPartDetailShipOrderCreateDto {
+	return poolLstThirdPartDetailShipOrderCreateDto.Get().(*LstThirdPartDetailShipOrderCreateDto)
+}
+
+// ReleaseLstThirdPartDetailShipOrderCreateDto 释放LstThirdPartDetailShipOrderCreateDto
+func ReleaseLstThirdPartDetailShipOrderCreateDto(v *LstThirdPartDetailShipOrderCreateDto) {
+	v.SkuBrand = ""
+	v.SkuSpec = ""
+	v.SkuUnit = ""
+	v.SkuCode = ""
+	v.SkuName = ""
+	v.DetailOrderId = ""
+	v.SaleQuantity = 0
+	v.SkuPrice = 0
+	v.PayFee = 0
+	poolLstThirdPartDetailShipOrderCreateDto.Put(v)
 }

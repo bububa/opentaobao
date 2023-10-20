@@ -9,11 +9,6 @@ import (
 // alibaba.mozi.fusion.dimission.employee.account
 //
 // 人员离职并且回收账号
-func AlibabaMoziFusionDimissionEmployeeAccount(clt *core.SDKClient, req *mozi.AlibabaMoziFusionDimissionEmployeeAccountAPIRequest, session string) (*mozi.AlibabaMoziFusionDimissionEmployeeAccountAPIResponse, error) {
-	var resp mozi.AlibabaMoziFusionDimissionEmployeeAccountAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMoziFusionDimissionEmployeeAccount(clt *core.SDKClient, req *mozi.AlibabaMoziFusionDimissionEmployeeAccountAPIRequest, resp *mozi.AlibabaMoziFusionDimissionEmployeeAccountAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

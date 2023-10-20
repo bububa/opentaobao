@@ -1,5 +1,9 @@
 package moziacl
 
+import (
+	"sync"
+)
+
 // GrantRolesResult 结构体
 type GrantRolesResult struct {
 	// 请求id
@@ -12,4 +16,25 @@ type GrantRolesResult struct {
 	ResponseCode string `json:"response_code,omitempty" xml:"response_code,omitempty"`
 	// 是否调用成功，成功则为true，否则为false
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolGrantRolesResult = sync.Pool{
+	New: func() any {
+		return new(GrantRolesResult)
+	},
+}
+
+// GetGrantRolesResult() 从对象池中获取GrantRolesResult
+func GetGrantRolesResult() *GrantRolesResult {
+	return poolGrantRolesResult.Get().(*GrantRolesResult)
+}
+
+// ReleaseGrantRolesResult 释放GrantRolesResult
+func ReleaseGrantRolesResult(v *GrantRolesResult) {
+	v.RequestId = ""
+	v.ResponseMessage = ""
+	v.ResponseMetaData = ""
+	v.ResponseCode = ""
+	v.Success = false
+	poolGrantRolesResult.Put(v)
 }

@@ -2,6 +2,7 @@ package tuanhotel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoXhotelComboOffshelfAPIRequest struct {
 // NewTaobaoXhotelComboOffshelfRequest 初始化TaobaoXhotelComboOffshelfAPIRequest对象
 func NewTaobaoXhotelComboOffshelfRequest() *TaobaoXhotelComboOffshelfAPIRequest {
 	return &TaobaoXhotelComboOffshelfAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelComboOffshelfAPIRequest) Reset() {
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoXhotelComboOffshelfAPIRequest) SetItemId(_itemId int64) error {
 // GetItemId ItemId Getter
 func (r TaobaoXhotelComboOffshelfAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolTaobaoXhotelComboOffshelfAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelComboOffshelfRequest()
+	},
+}
+
+// GetTaobaoXhotelComboOffshelfRequest 从 sync.Pool 获取 TaobaoXhotelComboOffshelfAPIRequest
+func GetTaobaoXhotelComboOffshelfAPIRequest() *TaobaoXhotelComboOffshelfAPIRequest {
+	return poolTaobaoXhotelComboOffshelfAPIRequest.Get().(*TaobaoXhotelComboOffshelfAPIRequest)
+}
+
+// ReleaseTaobaoXhotelComboOffshelfAPIRequest 将 TaobaoXhotelComboOffshelfAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelComboOffshelfAPIRequest(v *TaobaoXhotelComboOffshelfAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelComboOffshelfAPIRequest.Put(v)
 }

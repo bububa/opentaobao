@@ -9,11 +9,6 @@ import (
 // alibaba.einvoice.partner.return
 //
 // 开票商返回开票结果数据
-func AlibabaEinvoicePartnerReturn(clt *core.SDKClient, req *einvoice.AlibabaEinvoicePartnerReturnAPIRequest, session string) (*einvoice.AlibabaEinvoicePartnerReturnAPIResponse, error) {
-	var resp einvoice.AlibabaEinvoicePartnerReturnAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaEinvoicePartnerReturn(clt *core.SDKClient, req *einvoice.AlibabaEinvoicePartnerReturnAPIRequest, resp *einvoice.AlibabaEinvoicePartnerReturnAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

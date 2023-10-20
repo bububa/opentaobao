@@ -2,6 +2,7 @@ package eleenterpriseordernew
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest struct {
 // NewAlibabaEleEnterpriseOrdernewGetrefundinfoRequest 初始化AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest对象
 func NewAlibabaEleEnterpriseOrdernewGetrefundinfoRequest() *AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest {
 	return &AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest) Reset() {
+	r._orderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest) SetOrderId(_orderI
 // GetOrderId OrderId Getter
 func (r AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest) GetOrderId() string {
 	return r._orderId
+}
+
+var poolAlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEleEnterpriseOrdernewGetrefundinfoRequest()
+	},
+}
+
+// GetAlibabaEleEnterpriseOrdernewGetrefundinfoRequest 从 sync.Pool 获取 AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest
+func GetAlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest() *AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest {
+	return poolAlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest.Get().(*AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest)
+}
+
+// ReleaseAlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest 将 AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest(v *AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest) {
+	v.Reset()
+	poolAlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest.Put(v)
 }

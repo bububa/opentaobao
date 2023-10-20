@@ -1,7 +1,11 @@
 package iotticket
 
-// AcceptTicketV2topRequest 结构体
-type AcceptTicketV2topRequest struct {
+import (
+	"sync"
+)
+
+// AcceptTicketV2TopRequest 结构体
+type AcceptTicketV2TopRequest struct {
 	// 维修方案 depot_repair:寄回维修;parts_replacement:配件更换;onsite_repair:上门维修;remote_solution:远程解决;transfer_to_customer_service:转单给菜鸟
 	MaintenanceModeCode string `json:"maintenance_mode_code,omitempty" xml:"maintenance_mode_code,omitempty"`
 	// 上门人员Id
@@ -36,4 +40,37 @@ type AcceptTicketV2topRequest struct {
 	OperatorId string `json:"operator_id,omitempty" xml:"operator_id,omitempty"`
 	// 工单Id
 	TicketId int64 `json:"ticket_id,omitempty" xml:"ticket_id,omitempty"`
+}
+
+var poolAcceptTicketV2TopRequest = sync.Pool{
+	New: func() any {
+		return new(AcceptTicketV2TopRequest)
+	},
+}
+
+// GetAcceptTicketV2TopRequest() 从对象池中获取AcceptTicketV2TopRequest
+func GetAcceptTicketV2TopRequest() *AcceptTicketV2TopRequest {
+	return poolAcceptTicketV2TopRequest.Get().(*AcceptTicketV2TopRequest)
+}
+
+// ReleaseAcceptTicketV2TopRequest 释放AcceptTicketV2TopRequest
+func ReleaseAcceptTicketV2TopRequest(v *AcceptTicketV2TopRequest) {
+	v.MaintenanceModeCode = ""
+	v.OnsiteStaffId = ""
+	v.ReceiverName = ""
+	v.OnsiteAddress = ""
+	v.Remark = ""
+	v.OperatorPhone = ""
+	v.OperatorName = ""
+	v.OnsiteStaffName = ""
+	v.OnsiteTime = ""
+	v.SpCode = ""
+	v.ReceiverAddress = ""
+	v.OnsiteStaffPhone = ""
+	v.ReceiverPhone = ""
+	v.Feature = ""
+	v.SolutionRemark = ""
+	v.OperatorId = ""
+	v.TicketId = 0
+	poolAcceptTicketV2TopRequest.Put(v)
 }

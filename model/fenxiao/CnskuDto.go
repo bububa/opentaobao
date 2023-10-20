@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // CnskuDto 结构体
 type CnskuDto struct {
 	// 组合货品
@@ -54,4 +58,46 @@ type CnskuDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 版本号
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
+}
+
+var poolCnskuDto = sync.Pool{
+	New: func() any {
+		return new(CnskuDto)
+	},
+}
+
+// GetCnskuDto() 从对象池中获取CnskuDto
+func GetCnskuDto() *CnskuDto {
+	return poolCnskuDto.Get().(*CnskuDto)
+}
+
+// ReleaseCnskuDto 释放CnskuDto
+func ReleaseCnskuDto(v *CnskuDto) {
+	v.CombRelationDTOList = v.CombRelationDTOList[:0]
+	v.SuiteGoodsRelationList = v.SuiteGoodsRelationList[:0]
+	v.UpdateFeatureMap = ""
+	v.ItemCode = ""
+	v.Type = ""
+	v.WhcBarCode = ""
+	v.Title = ""
+	v.RemoveFeatureMap = ""
+	v.Brand = ""
+	v.PackageMaterial = ""
+	v.FeatureMap = ""
+	v.Height = 0
+	v.Weight = 0
+	v.ReservePrice = 0
+	v.CnskuExtendDTO = nil
+	v.CnskuFeatureDTO = nil
+	v.Length = 0
+	v.Width = 0
+	v.CategoryId = 0
+	v.CnskuId = 0
+	v.OwnerId = 0
+	v.SkuId = 0
+	v.SkuCategory = 0
+	v.Volume = 0
+	v.Status = 0
+	v.Version = 0
+	poolCnskuDto.Put(v)
 }

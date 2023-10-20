@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTradeAlianceCreateAPIRequest struct {
 // NewAlibabaTradeAlianceCreateRequest 初始化AlibabaTradeAlianceCreateAPIRequest对象
 func NewAlibabaTradeAlianceCreateRequest() *AlibabaTradeAlianceCreateAPIRequest {
 	return &AlibabaTradeAlianceCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTradeAlianceCreateAPIRequest) Reset() {
+	r._paramIsvCreateOrderParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTradeAlianceCreateAPIRequest) SetParamIsvCreateOrderParam(_param
 // GetParamIsvCreateOrderParam ParamIsvCreateOrderParam Getter
 func (r AlibabaTradeAlianceCreateAPIRequest) GetParamIsvCreateOrderParam() *IsvCreateOrderParam {
 	return r._paramIsvCreateOrderParam
+}
+
+var poolAlibabaTradeAlianceCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTradeAlianceCreateRequest()
+	},
+}
+
+// GetAlibabaTradeAlianceCreateRequest 从 sync.Pool 获取 AlibabaTradeAlianceCreateAPIRequest
+func GetAlibabaTradeAlianceCreateAPIRequest() *AlibabaTradeAlianceCreateAPIRequest {
+	return poolAlibabaTradeAlianceCreateAPIRequest.Get().(*AlibabaTradeAlianceCreateAPIRequest)
+}
+
+// ReleaseAlibabaTradeAlianceCreateAPIRequest 将 AlibabaTradeAlianceCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTradeAlianceCreateAPIRequest(v *AlibabaTradeAlianceCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaTradeAlianceCreateAPIRequest.Put(v)
 }

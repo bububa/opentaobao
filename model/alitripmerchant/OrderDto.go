@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // OrderDto 结构体
 type OrderDto struct {
 	// 床型名称
@@ -50,4 +54,44 @@ type OrderDto struct {
 	ForeignCurrency *ForeignCurrencyInfo `json:"foreign_currency,omitempty" xml:"foreign_currency,omitempty"`
 	// 是否为外币支付
 	ForeignCurrencyPayment bool `json:"foreign_currency_payment,omitempty" xml:"foreign_currency_payment,omitempty"`
+}
+
+var poolOrderDto = sync.Pool{
+	New: func() any {
+		return new(OrderDto)
+	},
+}
+
+// GetOrderDto() 从对象池中获取OrderDto
+func GetOrderDto() *OrderDto {
+	return poolOrderDto.Get().(*OrderDto)
+}
+
+// ReleaseOrderDto 释放OrderDto
+func ReleaseOrderDto(v *OrderDto) {
+	v.BedName = ""
+	v.Currency = ""
+	v.OrderStatus = ""
+	v.TotalAmount = ""
+	v.BookDate = ""
+	v.ContactName = ""
+	v.CheckOutDate = ""
+	v.CheckInDate = ""
+	v.RoomName = ""
+	v.HotelName = ""
+	v.OrderCode = ""
+	v.RoomPhotoUrl = ""
+	v.HotelId = ""
+	v.PlaceOrderType = ""
+	v.UniversalCouponId = ""
+	v.Spread = ""
+	v.VoucherName = ""
+	v.PayRemainTime = 0
+	v.RoomNumber = 0
+	v.Shid = 0
+	v.AdultNumber = 0
+	v.ChildrenNumber = 0
+	v.ForeignCurrency = nil
+	v.ForeignCurrencyPayment = false
+	poolOrderDto.Put(v)
 }

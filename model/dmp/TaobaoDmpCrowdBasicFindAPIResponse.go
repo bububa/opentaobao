@@ -2,6 +2,7 @@ package dmp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoDmpCrowdBasicFindAPIResponse struct {
 	model.CommonResponse
 	TaobaoDmpCrowdBasicFindAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoDmpCrowdBasicFindAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoDmpCrowdBasicFindAPIResponseModel).Reset()
 }
 
 // TaobaoDmpCrowdBasicFindAPIResponseModel is DMP_BP版人群列表查询 成功返回结果
@@ -30,4 +37,31 @@ type TaobaoDmpCrowdBasicFindAPIResponseModel struct {
 	Pager *Pager `json:"pager,omitempty" xml:"pager,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoDmpCrowdBasicFindAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = m.Result[:0]
+	m.ResultErrorCode = ""
+	m.Message = ""
+	m.Pager = nil
+	m.IsSuccess = false
+}
+
+var poolTaobaoDmpCrowdBasicFindAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoDmpCrowdBasicFindAPIResponse)
+	},
+}
+
+// GetTaobaoDmpCrowdBasicFindAPIResponse 从 sync.Pool 获取 TaobaoDmpCrowdBasicFindAPIResponse
+func GetTaobaoDmpCrowdBasicFindAPIResponse() *TaobaoDmpCrowdBasicFindAPIResponse {
+	return poolTaobaoDmpCrowdBasicFindAPIResponse.Get().(*TaobaoDmpCrowdBasicFindAPIResponse)
+}
+
+// ReleaseTaobaoDmpCrowdBasicFindAPIResponse 将 TaobaoDmpCrowdBasicFindAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoDmpCrowdBasicFindAPIResponse(v *TaobaoDmpCrowdBasicFindAPIResponse) {
+	v.Reset()
+	poolTaobaoDmpCrowdBasicFindAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // SaveCodeRelationType 结构体
 type SaveCodeRelationType struct {
 	// 操作的icCode
@@ -22,4 +26,30 @@ type SaveCodeRelationType struct {
 	EntSeqNo string `json:"ent_seq_no,omitempty" xml:"ent_seq_no,omitempty"`
 	// 1药  3中药饮片  5医疗器材
 	BusinessType int64 `json:"business_type,omitempty" xml:"business_type,omitempty"`
+}
+
+var poolSaveCodeRelationType = sync.Pool{
+	New: func() any {
+		return new(SaveCodeRelationType)
+	},
+}
+
+// GetSaveCodeRelationType() 从对象池中获取SaveCodeRelationType
+func GetSaveCodeRelationType() *SaveCodeRelationType {
+	return poolSaveCodeRelationType.Get().(*SaveCodeRelationType)
+}
+
+// ReleaseSaveCodeRelationType 释放SaveCodeRelationType
+func ReleaseSaveCodeRelationType(v *SaveCodeRelationType) {
+	v.OperIcCode = ""
+	v.UserCert = ""
+	v.ProdCode = ""
+	v.EntName = ""
+	v.OperIcName = ""
+	v.UploadFlag = ""
+	v.UploadFileName = ""
+	v.CrtDate = ""
+	v.EntSeqNo = ""
+	v.BusinessType = 0
+	poolSaveCodeRelationType.Put(v)
 }

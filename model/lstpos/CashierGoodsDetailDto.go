@@ -1,5 +1,9 @@
 package lstpos
 
+import (
+	"sync"
+)
+
 // CashierGoodsDetailDto 结构体
 type CashierGoodsDetailDto struct {
 	// 商品条码，可能有无码商品
@@ -16,4 +20,27 @@ type CashierGoodsDetailDto struct {
 	GoodsActualPrice int64 `json:"goods_actual_price,omitempty" xml:"goods_actual_price,omitempty"`
 	// 商品原价(折前)，单位:分
 	GoodsOriginPrice int64 `json:"goods_origin_price,omitempty" xml:"goods_origin_price,omitempty"`
+}
+
+var poolCashierGoodsDetailDto = sync.Pool{
+	New: func() any {
+		return new(CashierGoodsDetailDto)
+	},
+}
+
+// GetCashierGoodsDetailDto() 从对象池中获取CashierGoodsDetailDto
+func GetCashierGoodsDetailDto() *CashierGoodsDetailDto {
+	return poolCashierGoodsDetailDto.Get().(*CashierGoodsDetailDto)
+}
+
+// ReleaseCashierGoodsDetailDto 释放CashierGoodsDetailDto
+func ReleaseCashierGoodsDetailDto(v *CashierGoodsDetailDto) {
+	v.BarCode = ""
+	v.Count = ""
+	v.GoodsName = ""
+	v.IsvGoodsId = ""
+	v.GoodsCostPrice = 0
+	v.GoodsActualPrice = 0
+	v.GoodsOriginPrice = 0
+	poolCashierGoodsDetailDto.Put(v)
 }

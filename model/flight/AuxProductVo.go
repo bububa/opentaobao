@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // AuxProductVo 结构体
 type AuxProductVo struct {
 	// 外部outerId
@@ -22,4 +26,30 @@ type AuxProductVo struct {
 	SeatVo *SeatVo `json:"seat_vo,omitempty" xml:"seat_vo,omitempty"`
 	// 产品类型 4:付费行李，6:值机，7:餐食, 8:值机及选座
 	UnityProductType int64 `json:"unity_product_type,omitempty" xml:"unity_product_type,omitempty"`
+}
+
+var poolAuxProductVo = sync.Pool{
+	New: func() any {
+		return new(AuxProductVo)
+	},
+}
+
+// GetAuxProductVo() 从对象池中获取AuxProductVo
+func GetAuxProductVo() *AuxProductVo {
+	return poolAuxProductVo.Get().(*AuxProductVo)
+}
+
+// ReleaseAuxProductVo 释放AuxProductVo
+func ReleaseAuxProductVo(v *AuxProductVo) {
+	v.OuterId = ""
+	v.ProductName = ""
+	v.BaggageVo = nil
+	v.BasePrice = 0
+	v.CounterPrice = 0
+	v.OnlinePrice = 0
+	v.ProductType = 0
+	v.SaleType = 0
+	v.SeatVo = nil
+	v.UnityProductType = 0
+	poolAuxProductVo.Put(v)
 }

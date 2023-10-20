@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // IeOrderVo 结构体
 type IeOrderVo struct {
 	// activityVOs
@@ -22,4 +26,30 @@ type IeOrderVo struct {
 	TradeOrderId int64 `json:"trade_order_id,omitempty" xml:"trade_order_id,omitempty"`
 	// 订单模式
 	BusinessMode int64 `json:"business_mode,omitempty" xml:"business_mode,omitempty"`
+}
+
+var poolIeOrderVo = sync.Pool{
+	New: func() any {
+		return new(IeOrderVo)
+	},
+}
+
+// GetIeOrderVo() 从对象池中获取IeOrderVo
+func GetIeOrderVo() *IeOrderVo {
+	return poolIeOrderVo.Get().(*IeOrderVo)
+}
+
+// ReleaseIeOrderVo 释放IeOrderVo
+func ReleaseIeOrderVo(v *IeOrderVo) {
+	v.ActivityVos = v.ActivityVos[:0]
+	v.BookOrderVos = v.BookOrderVos[:0]
+	v.PassgenerVos = v.PassgenerVos[:0]
+	v.VirProOrderVos = v.VirProOrderVos[:0]
+	v.BaseOrderVo = nil
+	v.ContactsVo = nil
+	v.ItemVo = nil
+	v.ItineraryVo = nil
+	v.TradeOrderId = 0
+	v.BusinessMode = 0
+	poolIeOrderVo.Put(v)
 }

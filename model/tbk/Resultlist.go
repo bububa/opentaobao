@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // Resultlist 结构体
 type Resultlist struct {
 	// 活动id
@@ -12,4 +16,25 @@ type Resultlist struct {
 	WxMiniprogramPath string `json:"wx_miniprogram_path,omitempty" xml:"wx_miniprogram_path,omitempty"`
 	// 微信小程序码
 	WxQrcodeUrl string `json:"wx_qrcode_url,omitempty" xml:"wx_qrcode_url,omitempty"`
+}
+
+var poolResultlist = sync.Pool{
+	New: func() any {
+		return new(Resultlist)
+	},
+}
+
+// GetResultlist() 从对象池中获取Resultlist
+func GetResultlist() *Resultlist {
+	return poolResultlist.Get().(*Resultlist)
+}
+
+// ReleaseResultlist 释放Resultlist
+func ReleaseResultlist(v *Resultlist) {
+	v.OfferId = ""
+	v.Status = ""
+	v.ClickUrl = ""
+	v.WxMiniprogramPath = ""
+	v.WxQrcodeUrl = ""
+	poolResultlist.Put(v)
 }

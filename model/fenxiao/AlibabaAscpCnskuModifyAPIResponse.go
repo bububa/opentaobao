@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAscpCnskuModifyAPIResponse struct {
 	model.CommonResponse
 	AlibabaAscpCnskuModifyAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAscpCnskuModifyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAscpCnskuModifyAPIResponseModel).Reset()
 }
 
 // AlibabaAscpCnskuModifyAPIResponseModel is 供应链中台货品修改接口 成功返回结果
@@ -30,4 +37,31 @@ type AlibabaAscpCnskuModifyAPIResponseModel struct {
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// 是否系统异常
 	IsSystemFailed bool `json:"is_system_failed,omitempty" xml:"is_system_failed,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAscpCnskuModifyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorMessages = m.ErrorMessages[:0]
+	m.Data = ""
+	m.SysErrorCode = ""
+	m.IsSuccess = false
+	m.IsSystemFailed = false
+}
+
+var poolAlibabaAscpCnskuModifyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAscpCnskuModifyAPIResponse)
+	},
+}
+
+// GetAlibabaAscpCnskuModifyAPIResponse 从 sync.Pool 获取 AlibabaAscpCnskuModifyAPIResponse
+func GetAlibabaAscpCnskuModifyAPIResponse() *AlibabaAscpCnskuModifyAPIResponse {
+	return poolAlibabaAscpCnskuModifyAPIResponse.Get().(*AlibabaAscpCnskuModifyAPIResponse)
+}
+
+// ReleaseAlibabaAscpCnskuModifyAPIResponse 将 AlibabaAscpCnskuModifyAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAscpCnskuModifyAPIResponse(v *AlibabaAscpCnskuModifyAPIResponse) {
+	v.Reset()
+	poolAlibabaAscpCnskuModifyAPIResponse.Put(v)
 }

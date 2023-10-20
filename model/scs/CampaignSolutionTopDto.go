@@ -1,5 +1,9 @@
 package scs
 
+import (
+	"sync"
+)
+
 // CampaignSolutionTopDto 结构体
 type CampaignSolutionTopDto struct {
 	// 新达摩盘精选人群信息
@@ -18,4 +22,28 @@ type CampaignSolutionTopDto struct {
 	LaunchTime *LaunchTimeTopDto `json:"launch_time,omitempty" xml:"launch_time,omitempty"`
 	// 计划策略信息
 	AdStrategyInfo *AdStrategyInfoTopDto `json:"ad_strategy_info,omitempty" xml:"ad_strategy_info,omitempty"`
+}
+
+var poolCampaignSolutionTopDto = sync.Pool{
+	New: func() any {
+		return new(CampaignSolutionTopDto)
+	},
+}
+
+// GetCampaignSolutionTopDto() 从对象池中获取CampaignSolutionTopDto
+func GetCampaignSolutionTopDto() *CampaignSolutionTopDto {
+	return poolCampaignSolutionTopDto.Get().(*CampaignSolutionTopDto)
+}
+
+// ReleaseCampaignSolutionTopDto 释放CampaignSolutionTopDto
+func ReleaseCampaignSolutionTopDto(v *CampaignSolutionTopDto) {
+	v.NewDmpTemplateCrowd = v.NewDmpTemplateCrowd[:0]
+	v.CampaignName = ""
+	v.PromotionModel = ""
+	v.DayBudget = nil
+	v.LifeCycle = 0
+	v.Marketing = nil
+	v.LaunchTime = nil
+	v.AdStrategyInfo = nil
+	poolCampaignSolutionTopDto.Put(v)
 }

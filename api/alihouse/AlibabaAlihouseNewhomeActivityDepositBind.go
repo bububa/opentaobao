@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.newhome.activity.deposit.bind
 //
 // 销售活动绑定预存金商品id
-func AlibabaAlihouseNewhomeActivityDepositBind(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeActivityDepositBindAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeActivityDepositBindAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeActivityDepositBindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseNewhomeActivityDepositBind(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeActivityDepositBindAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeActivityDepositBindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

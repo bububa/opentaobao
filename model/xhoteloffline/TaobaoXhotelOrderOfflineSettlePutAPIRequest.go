@@ -2,6 +2,7 @@ package xhoteloffline
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -49,8 +50,29 @@ type TaobaoXhotelOrderOfflineSettlePutAPIRequest struct {
 // NewTaobaoXhotelOrderOfflineSettlePutRequest 初始化TaobaoXhotelOrderOfflineSettlePutAPIRequest对象
 func NewTaobaoXhotelOrderOfflineSettlePutRequest() *TaobaoXhotelOrderOfflineSettlePutAPIRequest {
 	return &TaobaoXhotelOrderOfflineSettlePutAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(16),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelOrderOfflineSettlePutAPIRequest) Reset() {
+	r._roomSettleInfoList = r._roomSettleInfoList[:0]
+	r._otherFeeDetail = ""
+	r._outId = ""
+	r._roomNo = ""
+	r._dailyPriceInfo = ""
+	r._checkOut = ""
+	r._memo = ""
+	r._outUuid = ""
+	r._notifyUrl = ""
+	r._hotelCode = ""
+	r._vendor = ""
+	r._tid = 0
+	r._totalRoomFee = 0
+	r._otherFee = 0
+	r._containGuarantee = 0
+	r._amount = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -276,4 +298,21 @@ func (r *TaobaoXhotelOrderOfflineSettlePutAPIRequest) SetAmount(_amount int64) e
 // GetAmount Amount Getter
 func (r TaobaoXhotelOrderOfflineSettlePutAPIRequest) GetAmount() int64 {
 	return r._amount
+}
+
+var poolTaobaoXhotelOrderOfflineSettlePutAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelOrderOfflineSettlePutRequest()
+	},
+}
+
+// GetTaobaoXhotelOrderOfflineSettlePutRequest 从 sync.Pool 获取 TaobaoXhotelOrderOfflineSettlePutAPIRequest
+func GetTaobaoXhotelOrderOfflineSettlePutAPIRequest() *TaobaoXhotelOrderOfflineSettlePutAPIRequest {
+	return poolTaobaoXhotelOrderOfflineSettlePutAPIRequest.Get().(*TaobaoXhotelOrderOfflineSettlePutAPIRequest)
+}
+
+// ReleaseTaobaoXhotelOrderOfflineSettlePutAPIRequest 将 TaobaoXhotelOrderOfflineSettlePutAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelOrderOfflineSettlePutAPIRequest(v *TaobaoXhotelOrderOfflineSettlePutAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelOrderOfflineSettlePutAPIRequest.Put(v)
 }

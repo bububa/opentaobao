@@ -1,5 +1,9 @@
 package xhotel
 
+import (
+	"sync"
+)
+
 // DchotelSignDo 结构体
 type DchotelSignDo struct {
 	// taccAuthLetterAllowDate
@@ -42,4 +46,40 @@ type DchotelSignDo struct {
 	CommLetterStatus int64 `json:"comm_letter_status,omitempty" xml:"comm_letter_status,omitempty"`
 	// toDcHotelStatus
 	ToDcHotelStatus int64 `json:"to_dc_hotel_status,omitempty" xml:"to_dc_hotel_status,omitempty"`
+}
+
+var poolDchotelSignDo = sync.Pool{
+	New: func() any {
+		return new(DchotelSignDo)
+	},
+}
+
+// GetDchotelSignDo() 从对象池中获取DchotelSignDo
+func GetDchotelSignDo() *DchotelSignDo {
+	return poolDchotelSignDo.Get().(*DchotelSignDo)
+}
+
+// ReleaseDchotelSignDo 释放DchotelSignDo
+func ReleaseDchotelSignDo(v *DchotelSignDo) {
+	v.TaccAuthLetterAllowDate = ""
+	v.Phone = ""
+	v.Email = ""
+	v.Name = ""
+	v.IntentAchieveDate = ""
+	v.HotelAccount = ""
+	v.PrivateReceiptAccountStatus = 0
+	v.HotelierIdStatus = 0
+	v.StlStatus = 0
+	v.BlStatus = 0
+	v.IdConfirmLetterStatus = 0
+	v.QlfType = 0
+	v.PayType = 0
+	v.IsKezhanSign = 0
+	v.SignStatus = 0
+	v.Pid = 0
+	v.Hid = 0
+	v.HotelPicturesStatus = 0
+	v.CommLetterStatus = 0
+	v.ToDcHotelStatus = 0
+	poolDchotelSignDo.Put(v)
 }

@@ -1,5 +1,9 @@
 package aedropshiper
 
+import (
+	"sync"
+)
+
 // AeItemQueryResultDto 结构体
 type AeItemQueryResultDto struct {
 	// SKU information
@@ -18,4 +22,28 @@ type AeItemQueryResultDto struct {
 	AeStoreInfo *AeStoreInfo `json:"ae_store_info,omitempty" xml:"ae_store_info,omitempty"`
 	// product id converter result
 	ProductIdConverterResult *ProductIdConverterResultDto `json:"product_id_converter_result,omitempty" xml:"product_id_converter_result,omitempty"`
+}
+
+var poolAeItemQueryResultDto = sync.Pool{
+	New: func() any {
+		return new(AeItemQueryResultDto)
+	},
+}
+
+// GetAeItemQueryResultDto() 从对象池中获取AeItemQueryResultDto
+func GetAeItemQueryResultDto() *AeItemQueryResultDto {
+	return poolAeItemQueryResultDto.Get().(*AeItemQueryResultDto)
+}
+
+// ReleaseAeItemQueryResultDto 释放AeItemQueryResultDto
+func ReleaseAeItemQueryResultDto(v *AeItemQueryResultDto) {
+	v.AeItemSkuInfoDtos = v.AeItemSkuInfoDtos[:0]
+	v.AeItemProperties = v.AeItemProperties[:0]
+	v.AeItemBaseInfoDto = nil
+	v.AeMultimediaInfoDto = nil
+	v.PackageInfoDto = nil
+	v.LogisticsInfoDto = nil
+	v.AeStoreInfo = nil
+	v.ProductIdConverterResult = nil
+	poolAeItemQueryResultDto.Put(v)
 }

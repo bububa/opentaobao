@@ -9,11 +9,6 @@ import (
 // taobao.rdc.aligenius.warehouse.resend.update
 //
 // 补发单状态回传接口
-func TaobaoRdcAligeniusWarehouseResendUpdate(clt *core.SDKClient, req *logistic.TaobaoRdcAligeniusWarehouseResendUpdateAPIRequest, session string) (*logistic.TaobaoRdcAligeniusWarehouseResendUpdateAPIResponse, error) {
-	var resp logistic.TaobaoRdcAligeniusWarehouseResendUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoRdcAligeniusWarehouseResendUpdate(clt *core.SDKClient, req *logistic.TaobaoRdcAligeniusWarehouseResendUpdateAPIRequest, resp *logistic.TaobaoRdcAligeniusWarehouseResendUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package aesolution
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AliexpressSolutionFeedListGetAPIRequest struct {
 // NewAliexpressSolutionFeedListGetRequest 初始化AliexpressSolutionFeedListGetAPIRequest对象
 func NewAliexpressSolutionFeedListGetRequest() *AliexpressSolutionFeedListGetAPIRequest {
 	return &AliexpressSolutionFeedListGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressSolutionFeedListGetAPIRequest) Reset() {
+	r._feedType = ""
+	r._status = ""
+	r._submittedTimeEnd = ""
+	r._submittedTimeStart = ""
+	r._currentPage = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AliexpressSolutionFeedListGetAPIRequest) SetPageSize(_pageSize int64) e
 // GetPageSize PageSize Getter
 func (r AliexpressSolutionFeedListGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAliexpressSolutionFeedListGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressSolutionFeedListGetRequest()
+	},
+}
+
+// GetAliexpressSolutionFeedListGetRequest 从 sync.Pool 获取 AliexpressSolutionFeedListGetAPIRequest
+func GetAliexpressSolutionFeedListGetAPIRequest() *AliexpressSolutionFeedListGetAPIRequest {
+	return poolAliexpressSolutionFeedListGetAPIRequest.Get().(*AliexpressSolutionFeedListGetAPIRequest)
+}
+
+// ReleaseAliexpressSolutionFeedListGetAPIRequest 将 AliexpressSolutionFeedListGetAPIRequest 放入 sync.Pool
+func ReleaseAliexpressSolutionFeedListGetAPIRequest(v *AliexpressSolutionFeedListGetAPIRequest) {
+	v.Reset()
+	poolAliexpressSolutionFeedListGetAPIRequest.Put(v)
 }

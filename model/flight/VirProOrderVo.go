@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // VirProOrderVo 结构体
 type VirProOrderVo struct {
 	// 乘机人购买辅营产品详情
@@ -20,4 +24,29 @@ type VirProOrderVo struct {
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 辅营订单状态，1-	待支付 2-	支付成功 3-	辅营出货成功 4-	订单取消
 	OrderStatus int64 `json:"order_status,omitempty" xml:"order_status,omitempty"`
+}
+
+var poolVirProOrderVo = sync.Pool{
+	New: func() any {
+		return new(VirProOrderVo)
+	},
+}
+
+// GetVirProOrderVo() 从对象池中获取VirProOrderVo
+func GetVirProOrderVo() *VirProOrderVo {
+	return poolVirProOrderVo.Get().(*VirProOrderVo)
+}
+
+// ReleaseVirProOrderVo 释放VirProOrderVo
+func ReleaseVirProOrderVo(v *VirProOrderVo) {
+	v.PassengerAuxVos = v.PassengerAuxVos[:0]
+	v.BookTime = ""
+	v.PayNo = ""
+	v.PayTime = ""
+	v.ContactPhone = ""
+	v.FlightOrderId = 0
+	v.PayPrice = 0
+	v.OrderId = 0
+	v.OrderStatus = 0
+	poolVirProOrderVo.Put(v)
 }

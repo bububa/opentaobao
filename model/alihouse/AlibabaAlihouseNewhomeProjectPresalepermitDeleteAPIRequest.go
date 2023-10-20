@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIRequest struct {
 // NewAlibabaAlihouseNewhomeProjectPresalepermitDeleteRequest 初始化AlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIRequest对象
 func NewAlibabaAlihouseNewhomeProjectPresalepermitDeleteRequest() *AlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIRequest {
 	return &AlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIRequest) Reset() {
+	r._outerPermitId = ""
+	r._outerId = ""
+	r._outerStoreId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIRequest) SetOuterSto
 // GetOuterStoreId OuterStoreId Getter
 func (r AlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIRequest) GetOuterStoreId() string {
 	return r._outerStoreId
+}
+
+var poolAlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeProjectPresalepermitDeleteRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeProjectPresalepermitDeleteRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIRequest
+func GetAlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIRequest() *AlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIRequest {
+	return poolAlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIRequest.Get().(*AlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIRequest 将 AlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIRequest(v *AlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIRequest.Put(v)
 }

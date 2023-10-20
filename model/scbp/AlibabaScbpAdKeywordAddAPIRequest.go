@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaScbpAdKeywordAddAPIRequest struct {
 // NewAlibabaScbpAdKeywordAddRequest 初始化AlibabaScbpAdKeywordAddAPIRequest对象
 func NewAlibabaScbpAdKeywordAddRequest() *AlibabaScbpAdKeywordAddAPIRequest {
 	return &AlibabaScbpAdKeywordAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdKeywordAddAPIRequest) Reset() {
+	r._adKeyword = ""
+	r._priceStr = ""
+	r._tagName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaScbpAdKeywordAddAPIRequest) SetTagName(_tagName string) error {
 // GetTagName TagName Getter
 func (r AlibabaScbpAdKeywordAddAPIRequest) GetTagName() string {
 	return r._tagName
+}
+
+var poolAlibabaScbpAdKeywordAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdKeywordAddRequest()
+	},
+}
+
+// GetAlibabaScbpAdKeywordAddRequest 从 sync.Pool 获取 AlibabaScbpAdKeywordAddAPIRequest
+func GetAlibabaScbpAdKeywordAddAPIRequest() *AlibabaScbpAdKeywordAddAPIRequest {
+	return poolAlibabaScbpAdKeywordAddAPIRequest.Get().(*AlibabaScbpAdKeywordAddAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdKeywordAddAPIRequest 将 AlibabaScbpAdKeywordAddAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdKeywordAddAPIRequest(v *AlibabaScbpAdKeywordAddAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdKeywordAddAPIRequest.Put(v)
 }

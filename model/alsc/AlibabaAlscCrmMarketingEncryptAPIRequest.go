@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscCrmMarketingEncryptAPIRequest struct {
 // NewAlibabaAlscCrmMarketingEncryptRequest 初始化AlibabaAlscCrmMarketingEncryptAPIRequest对象
 func NewAlibabaAlscCrmMarketingEncryptRequest() *AlibabaAlscCrmMarketingEncryptAPIRequest {
 	return &AlibabaAlscCrmMarketingEncryptAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscCrmMarketingEncryptAPIRequest) Reset() {
+	r._param = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscCrmMarketingEncryptAPIRequest) SetParam(_param string) error
 // GetParam Param Getter
 func (r AlibabaAlscCrmMarketingEncryptAPIRequest) GetParam() string {
 	return r._param
+}
+
+var poolAlibabaAlscCrmMarketingEncryptAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscCrmMarketingEncryptRequest()
+	},
+}
+
+// GetAlibabaAlscCrmMarketingEncryptRequest 从 sync.Pool 获取 AlibabaAlscCrmMarketingEncryptAPIRequest
+func GetAlibabaAlscCrmMarketingEncryptAPIRequest() *AlibabaAlscCrmMarketingEncryptAPIRequest {
+	return poolAlibabaAlscCrmMarketingEncryptAPIRequest.Get().(*AlibabaAlscCrmMarketingEncryptAPIRequest)
+}
+
+// ReleaseAlibabaAlscCrmMarketingEncryptAPIRequest 将 AlibabaAlscCrmMarketingEncryptAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscCrmMarketingEncryptAPIRequest(v *AlibabaAlscCrmMarketingEncryptAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscCrmMarketingEncryptAPIRequest.Put(v)
 }

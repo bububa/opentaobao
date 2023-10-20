@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type YunosPubadminCommonOperationAPIRequest struct {
 // NewYunosPubadminCommonOperationRequest 初始化YunosPubadminCommonOperationAPIRequest对象
 func NewYunosPubadminCommonOperationRequest() *YunosPubadminCommonOperationAPIRequest {
 	return &YunosPubadminCommonOperationAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosPubadminCommonOperationAPIRequest) Reset() {
+	r._interfaceName = ""
+	r._methodName = ""
+	r._parameter = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *YunosPubadminCommonOperationAPIRequest) SetParameter(_parameter string)
 // GetParameter Parameter Getter
 func (r YunosPubadminCommonOperationAPIRequest) GetParameter() string {
 	return r._parameter
+}
+
+var poolYunosPubadminCommonOperationAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosPubadminCommonOperationRequest()
+	},
+}
+
+// GetYunosPubadminCommonOperationRequest 从 sync.Pool 获取 YunosPubadminCommonOperationAPIRequest
+func GetYunosPubadminCommonOperationAPIRequest() *YunosPubadminCommonOperationAPIRequest {
+	return poolYunosPubadminCommonOperationAPIRequest.Get().(*YunosPubadminCommonOperationAPIRequest)
+}
+
+// ReleaseYunosPubadminCommonOperationAPIRequest 将 YunosPubadminCommonOperationAPIRequest 放入 sync.Pool
+func ReleaseYunosPubadminCommonOperationAPIRequest(v *YunosPubadminCommonOperationAPIRequest) {
+	v.Reset()
+	poolYunosPubadminCommonOperationAPIRequest.Put(v)
 }

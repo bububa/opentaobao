@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -20,8 +21,14 @@ type TaobaoWirelessPictureCheckAPIRequest struct {
 // NewTaobaoWirelessPictureCheckRequest 初始化TaobaoWirelessPictureCheckAPIRequest对象
 func NewTaobaoWirelessPictureCheckRequest() *TaobaoWirelessPictureCheckAPIRequest {
 	return &TaobaoWirelessPictureCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWirelessPictureCheckAPIRequest) Reset() {
+	r._url = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -52,4 +59,21 @@ func (r *TaobaoWirelessPictureCheckAPIRequest) SetUrl(_url string) error {
 // GetUrl Url Getter
 func (r TaobaoWirelessPictureCheckAPIRequest) GetUrl() string {
 	return r._url
+}
+
+var poolTaobaoWirelessPictureCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWirelessPictureCheckRequest()
+	},
+}
+
+// GetTaobaoWirelessPictureCheckRequest 从 sync.Pool 获取 TaobaoWirelessPictureCheckAPIRequest
+func GetTaobaoWirelessPictureCheckAPIRequest() *TaobaoWirelessPictureCheckAPIRequest {
+	return poolTaobaoWirelessPictureCheckAPIRequest.Get().(*TaobaoWirelessPictureCheckAPIRequest)
+}
+
+// ReleaseTaobaoWirelessPictureCheckAPIRequest 将 TaobaoWirelessPictureCheckAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWirelessPictureCheckAPIRequest(v *TaobaoWirelessPictureCheckAPIRequest) {
+	v.Reset()
+	poolTaobaoWirelessPictureCheckAPIRequest.Put(v)
 }

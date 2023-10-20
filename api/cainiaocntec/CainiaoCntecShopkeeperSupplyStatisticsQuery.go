@@ -9,11 +9,6 @@ import (
 // cainiao.cntec.shopkeeper.supply.statistics.query
 //
 // 查询门店售卖商品统计数据
-func CainiaoCntecShopkeeperSupplyStatisticsQuery(clt *core.SDKClient, req *cainiaocntec.CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest, session string) (*cainiaocntec.CainiaoCntecShopkeeperSupplyStatisticsQueryAPIResponse, error) {
-	var resp cainiaocntec.CainiaoCntecShopkeeperSupplyStatisticsQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func CainiaoCntecShopkeeperSupplyStatisticsQuery(clt *core.SDKClient, req *cainiaocntec.CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest, resp *cainiaocntec.CainiaoCntecShopkeeperSupplyStatisticsQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

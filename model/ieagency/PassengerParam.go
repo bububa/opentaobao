@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // PassengerParam 结构体
 type PassengerParam struct {
 	// 出生日期
@@ -20,4 +24,29 @@ type PassengerParam struct {
 	Gender int64 `json:"gender,omitempty" xml:"gender,omitempty"`
 	// 乘机人类型(0:成人; 1 儿童)
 	PassengerType int64 `json:"passenger_type,omitempty" xml:"passenger_type,omitempty"`
+}
+
+var poolPassengerParam = sync.Pool{
+	New: func() any {
+		return new(PassengerParam)
+	},
+}
+
+// GetPassengerParam() 从对象池中获取PassengerParam
+func GetPassengerParam() *PassengerParam {
+	return poolPassengerParam.Get().(*PassengerParam)
+}
+
+// ReleasePassengerParam 释放PassengerParam
+func ReleasePassengerParam(v *PassengerParam) {
+	v.BirthDate = ""
+	v.DocHolderNationalityName = ""
+	v.DocId = ""
+	v.DocIssueCountryName = ""
+	v.EffectiveDate = ""
+	v.Name = ""
+	v.CertType = 0
+	v.Gender = 0
+	v.PassengerType = 0
+	poolPassengerParam.Put(v)
 }

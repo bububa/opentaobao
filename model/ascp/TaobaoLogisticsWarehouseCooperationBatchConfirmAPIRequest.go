@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsWarehouseCooperationBatchConfirmAPIRequest struct {
 // NewTaobaoLogisticsWarehouseCooperationBatchConfirmRequest 初始化TaobaoLogisticsWarehouseCooperationBatchConfirmAPIRequest对象
 func NewTaobaoLogisticsWarehouseCooperationBatchConfirmRequest() *TaobaoLogisticsWarehouseCooperationBatchConfirmAPIRequest {
 	return &TaobaoLogisticsWarehouseCooperationBatchConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsWarehouseCooperationBatchConfirmAPIRequest) Reset() {
+	r._warehouseCooperationBatchConfirmRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsWarehouseCooperationBatchConfirmAPIRequest) SetWarehouse
 // GetWarehouseCooperationBatchConfirmRequest WarehouseCooperationBatchConfirmRequest Getter
 func (r TaobaoLogisticsWarehouseCooperationBatchConfirmAPIRequest) GetWarehouseCooperationBatchConfirmRequest() *WarehouseCooperationBatchConfirmRequest {
 	return r._warehouseCooperationBatchConfirmRequest
+}
+
+var poolTaobaoLogisticsWarehouseCooperationBatchConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsWarehouseCooperationBatchConfirmRequest()
+	},
+}
+
+// GetTaobaoLogisticsWarehouseCooperationBatchConfirmRequest 从 sync.Pool 获取 TaobaoLogisticsWarehouseCooperationBatchConfirmAPIRequest
+func GetTaobaoLogisticsWarehouseCooperationBatchConfirmAPIRequest() *TaobaoLogisticsWarehouseCooperationBatchConfirmAPIRequest {
+	return poolTaobaoLogisticsWarehouseCooperationBatchConfirmAPIRequest.Get().(*TaobaoLogisticsWarehouseCooperationBatchConfirmAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsWarehouseCooperationBatchConfirmAPIRequest 将 TaobaoLogisticsWarehouseCooperationBatchConfirmAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsWarehouseCooperationBatchConfirmAPIRequest(v *TaobaoLogisticsWarehouseCooperationBatchConfirmAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsWarehouseCooperationBatchConfirmAPIRequest.Put(v)
 }

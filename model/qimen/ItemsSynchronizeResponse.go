@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // ItemsSynchronizeResponse 结构体
 type ItemsSynchronizeResponse struct {
 	// 商品同步批量接口中单商品信息
@@ -10,4 +14,24 @@ type ItemsSynchronizeResponse struct {
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 响应信息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
+}
+
+var poolItemsSynchronizeResponse = sync.Pool{
+	New: func() any {
+		return new(ItemsSynchronizeResponse)
+	},
+}
+
+// GetItemsSynchronizeResponse() 从对象池中获取ItemsSynchronizeResponse
+func GetItemsSynchronizeResponse() *ItemsSynchronizeResponse {
+	return poolItemsSynchronizeResponse.Get().(*ItemsSynchronizeResponse)
+}
+
+// ReleaseItemsSynchronizeResponse 释放ItemsSynchronizeResponse
+func ReleaseItemsSynchronizeResponse(v *ItemsSynchronizeResponse) {
+	v.Items = v.Items[:0]
+	v.Flag = ""
+	v.Code = ""
+	v.Message = ""
+	poolItemsSynchronizeResponse.Put(v)
 }

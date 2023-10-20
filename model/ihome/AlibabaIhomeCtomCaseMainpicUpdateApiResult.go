@@ -1,5 +1,9 @@
 package ihome
 
+import (
+	"sync"
+)
+
 // AlibabaIhomeCtomCaseMainpicUpdateApiResult 结构体
 type AlibabaIhomeCtomCaseMainpicUpdateApiResult struct {
 	// 具体错误信息
@@ -10,4 +14,24 @@ type AlibabaIhomeCtomCaseMainpicUpdateApiResult struct {
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// true
 	Status bool `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolAlibabaIhomeCtomCaseMainpicUpdateApiResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaIhomeCtomCaseMainpicUpdateApiResult)
+	},
+}
+
+// GetAlibabaIhomeCtomCaseMainpicUpdateApiResult() 从对象池中获取AlibabaIhomeCtomCaseMainpicUpdateApiResult
+func GetAlibabaIhomeCtomCaseMainpicUpdateApiResult() *AlibabaIhomeCtomCaseMainpicUpdateApiResult {
+	return poolAlibabaIhomeCtomCaseMainpicUpdateApiResult.Get().(*AlibabaIhomeCtomCaseMainpicUpdateApiResult)
+}
+
+// ReleaseAlibabaIhomeCtomCaseMainpicUpdateApiResult 释放AlibabaIhomeCtomCaseMainpicUpdateApiResult
+func ReleaseAlibabaIhomeCtomCaseMainpicUpdateApiResult(v *AlibabaIhomeCtomCaseMainpicUpdateApiResult) {
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.Data = ""
+	v.Status = false
+	poolAlibabaIhomeCtomCaseMainpicUpdateApiResult.Put(v)
 }

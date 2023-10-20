@@ -2,6 +2,7 @@ package wdkitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaWdkItemBrandQueryAPIRequest struct {
 // NewAlibabaWdkItemBrandQueryRequest 初始化AlibabaWdkItemBrandQueryAPIRequest对象
 func NewAlibabaWdkItemBrandQueryRequest() *AlibabaWdkItemBrandQueryAPIRequest {
 	return &AlibabaWdkItemBrandQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkItemBrandQueryAPIRequest) Reset() {
+	r._keyword = ""
+	r._offset = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaWdkItemBrandQueryAPIRequest) SetPageSize(_pageSize int64) error 
 // GetPageSize PageSize Getter
 func (r AlibabaWdkItemBrandQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAlibabaWdkItemBrandQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkItemBrandQueryRequest()
+	},
+}
+
+// GetAlibabaWdkItemBrandQueryRequest 从 sync.Pool 获取 AlibabaWdkItemBrandQueryAPIRequest
+func GetAlibabaWdkItemBrandQueryAPIRequest() *AlibabaWdkItemBrandQueryAPIRequest {
+	return poolAlibabaWdkItemBrandQueryAPIRequest.Get().(*AlibabaWdkItemBrandQueryAPIRequest)
+}
+
+// ReleaseAlibabaWdkItemBrandQueryAPIRequest 将 AlibabaWdkItemBrandQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkItemBrandQueryAPIRequest(v *AlibabaWdkItemBrandQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkItemBrandQueryAPIRequest.Put(v)
 }

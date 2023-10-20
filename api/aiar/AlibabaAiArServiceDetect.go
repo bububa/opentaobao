@@ -9,11 +9,6 @@ import (
 // alibaba.ai.ar.service.detect
 //
 // ailab AR图像检索
-func AlibabaAiArServiceDetect(clt *core.SDKClient, req *aiar.AlibabaAiArServiceDetectAPIRequest, session string) (*aiar.AlibabaAiArServiceDetectAPIResponse, error) {
-	var resp aiar.AlibabaAiArServiceDetectAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAiArServiceDetect(clt *core.SDKClient, req *aiar.AlibabaAiArServiceDetectAPIRequest, resp *aiar.AlibabaAiArServiceDetectAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

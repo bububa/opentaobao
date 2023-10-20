@@ -1,5 +1,9 @@
 package lstspeacker
 
+import (
+	"sync"
+)
+
 // SpeakerConfigAudioList 结构体
 type SpeakerConfigAudioList struct {
 	// 音频名称
@@ -16,4 +20,27 @@ type SpeakerConfigAudioList struct {
 	PlayStartDateTime int64 `json:"play_start_date_time,omitempty" xml:"play_start_date_time,omitempty"`
 	// 音频播放结束时间
 	PlayEndDateTime int64 `json:"play_end_date_time,omitempty" xml:"play_end_date_time,omitempty"`
+}
+
+var poolSpeakerConfigAudioList = sync.Pool{
+	New: func() any {
+		return new(SpeakerConfigAudioList)
+	},
+}
+
+// GetSpeakerConfigAudioList() 从对象池中获取SpeakerConfigAudioList
+func GetSpeakerConfigAudioList() *SpeakerConfigAudioList {
+	return poolSpeakerConfigAudioList.Get().(*SpeakerConfigAudioList)
+}
+
+// ReleaseSpeakerConfigAudioList 释放SpeakerConfigAudioList
+func ReleaseSpeakerConfigAudioList(v *SpeakerConfigAudioList) {
+	v.Name = ""
+	v.Url = ""
+	v.Md5 = ""
+	v.Length = 0
+	v.PlayPos = 0
+	v.PlayStartDateTime = 0
+	v.PlayEndDateTime = 0
+	poolSpeakerConfigAudioList.Put(v)
 }

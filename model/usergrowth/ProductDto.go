@@ -1,5 +1,9 @@
 package usergrowth
 
+import (
+	"sync"
+)
+
 // ProductDto 结构体
 type ProductDto struct {
 	// 商品名
@@ -22,4 +26,30 @@ type ProductDto struct {
 	ProductQuery string `json:"product_query,omitempty" xml:"product_query,omitempty"`
 	// 实体词
 	EntityWord string `json:"entity_word,omitempty" xml:"entity_word,omitempty"`
+}
+
+var poolProductDto = sync.Pool{
+	New: func() any {
+		return new(ProductDto)
+	},
+}
+
+// GetProductDto() 从对象池中获取ProductDto
+func GetProductDto() *ProductDto {
+	return poolProductDto.Get().(*ProductDto)
+}
+
+// ReleaseProductDto 释放ProductDto
+func ReleaseProductDto(v *ProductDto) {
+	v.Name = ""
+	v.Description = ""
+	v.ImageUrl = ""
+	v.Tags = ""
+	v.Category = ""
+	v.Deeplink = ""
+	v.ClickUrl = ""
+	v.ExposureUrl = ""
+	v.ProductQuery = ""
+	v.EntityWord = ""
+	poolProductDto.Put(v)
 }

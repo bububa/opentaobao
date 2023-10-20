@@ -1,5 +1,9 @@
 package refund
 
+import (
+	"sync"
+)
+
 // TaobaoRdcAligeniusSendgoodsCancelResult 结构体
 type TaobaoRdcAligeniusSendgoodsCancelResult struct {
 	// 异常信息
@@ -10,4 +14,24 @@ type TaobaoRdcAligeniusSendgoodsCancelResult struct {
 	ResultData *Resultdata `json:"result_data,omitempty" xml:"result_data,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoRdcAligeniusSendgoodsCancelResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoRdcAligeniusSendgoodsCancelResult)
+	},
+}
+
+// GetTaobaoRdcAligeniusSendgoodsCancelResult() 从对象池中获取TaobaoRdcAligeniusSendgoodsCancelResult
+func GetTaobaoRdcAligeniusSendgoodsCancelResult() *TaobaoRdcAligeniusSendgoodsCancelResult {
+	return poolTaobaoRdcAligeniusSendgoodsCancelResult.Get().(*TaobaoRdcAligeniusSendgoodsCancelResult)
+}
+
+// ReleaseTaobaoRdcAligeniusSendgoodsCancelResult 释放TaobaoRdcAligeniusSendgoodsCancelResult
+func ReleaseTaobaoRdcAligeniusSendgoodsCancelResult(v *TaobaoRdcAligeniusSendgoodsCancelResult) {
+	v.ErrorInfo = ""
+	v.ErrorCode = ""
+	v.ResultData = nil
+	v.Success = false
+	poolTaobaoRdcAligeniusSendgoodsCancelResult.Put(v)
 }

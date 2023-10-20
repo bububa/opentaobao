@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // InsuranceProductVo 结构体
 type InsuranceProductVo struct {
 	// 保险产品码
@@ -32,4 +36,35 @@ type InsuranceProductVo struct {
 	CustomerServicePhone *InsurancePropertyVo `json:"customer_service_phone,omitempty" xml:"customer_service_phone,omitempty"`
 	// 保险售卖价格(单位：分)
 	InsPrice int64 `json:"ins_price,omitempty" xml:"ins_price,omitempty"`
+}
+
+var poolInsuranceProductVo = sync.Pool{
+	New: func() any {
+		return new(InsuranceProductVo)
+	},
+}
+
+// GetInsuranceProductVo() 从对象池中获取InsuranceProductVo
+func GetInsuranceProductVo() *InsuranceProductVo {
+	return poolInsuranceProductVo.Get().(*InsuranceProductVo)
+}
+
+// ReleaseInsuranceProductVo 释放InsuranceProductVo
+func ReleaseInsuranceProductVo(v *InsuranceProductVo) {
+	v.InsProductCode = ""
+	v.InsName = ""
+	v.InsTitle = ""
+	v.SpecialTermsAndConditions = nil
+	v.ProductFeatureImage = nil
+	v.CheckDtails = nil
+	v.ClaimFlow = nil
+	v.ProductTerm = nil
+	v.ProdTag = nil
+	v.ProductFeature = nil
+	v.ClaimServicePhone = nil
+	v.ProductImage = nil
+	v.InsMustKnow = nil
+	v.CustomerServicePhone = nil
+	v.InsPrice = 0
+	poolInsuranceProductVo.Put(v)
 }

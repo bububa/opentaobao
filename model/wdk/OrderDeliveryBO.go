@@ -1,7 +1,11 @@
 package wdk
 
-// OrderDeliveryBo 结构体
-type OrderDeliveryBo struct {
+import (
+	"sync"
+)
+
+// OrderDeliveryBO 结构体
+type OrderDeliveryBO struct {
 	// 外部子单号
 	OutSubOrderId string `json:"out_sub_order_id,omitempty" xml:"out_sub_order_id,omitempty"`
 	// 后端商品编码
@@ -82,4 +86,60 @@ type OrderDeliveryBo struct {
 	MerchantDiscountFee int64 `json:"merchant_discount_fee,omitempty" xml:"merchant_discount_fee,omitempty"`
 	// 买家id
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
+}
+
+var poolOrderDeliveryBO = sync.Pool{
+	New: func() any {
+		return new(OrderDeliveryBO)
+	},
+}
+
+// GetOrderDeliveryBO() 从对象池中获取OrderDeliveryBO
+func GetOrderDeliveryBO() *OrderDeliveryBO {
+	return poolOrderDeliveryBO.Get().(*OrderDeliveryBO)
+}
+
+// ReleaseOrderDeliveryBO 释放OrderDeliveryBO
+func ReleaseOrderDeliveryBO(v *OrderDeliveryBO) {
+	v.OutSubOrderId = ""
+	v.SkuCode = ""
+	v.AuctionTitle = ""
+	v.SaleUnit = ""
+	v.StockQuantity = ""
+	v.StockUnit = ""
+	v.OrderCreateTime = ""
+	v.SellerNick = ""
+	v.OrderSource = ""
+	v.OrderTerminal = ""
+	v.ShopId = ""
+	v.StoreId = ""
+	v.PayTime = ""
+	v.ExpectArriveTime = ""
+	v.UserNick = ""
+	v.Name = ""
+	v.Phone = ""
+	v.Address = ""
+	v.Geo = ""
+	v.IsMain = 0
+	v.IsDetail = 0
+	v.AuctionId = 0
+	v.SalePrice = 0
+	v.SaleQuantity = 0
+	v.OriginFee = 0
+	v.PayFee = 0
+	v.DiscountFee = 0
+	v.BusinessType = 0
+	v.SubBusinessType = 0
+	v.SellerId = 0
+	v.OrderFrom = 0
+	v.OrderChannel = 0
+	v.DeliverType = 0
+	v.ArriveType = 0
+	v.OrderStatus = 0
+	v.PostFee = 0
+	v.PackageFee = 0
+	v.PlatformDiscountFee = 0
+	v.MerchantDiscountFee = 0
+	v.UserId = 0
+	poolOrderDeliveryBO.Put(v)
 }

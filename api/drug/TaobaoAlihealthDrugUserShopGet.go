@@ -9,11 +9,6 @@ import (
 // taobao.alihealth.drug.user.shop.get
 //
 // 提供给千牛智能客服，获取用户当前咨询的店铺ID
-func TaobaoAlihealthDrugUserShopGet(clt *core.SDKClient, req *drug.TaobaoAlihealthDrugUserShopGetAPIRequest, session string) (*drug.TaobaoAlihealthDrugUserShopGetAPIResponse, error) {
-	var resp drug.TaobaoAlihealthDrugUserShopGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlihealthDrugUserShopGet(clt *core.SDKClient, req *drug.TaobaoAlihealthDrugUserShopGetAPIRequest, resp *drug.TaobaoAlihealthDrugUserShopGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package admarket
 
+import (
+	"sync"
+)
+
 // BidRequest 结构体
 type BidRequest struct {
 	// 广告位列表
@@ -24,4 +28,31 @@ type BidRequest struct {
 	Network *Network `json:"network,omitempty" xml:"network,omitempty"`
 	// 定位信息
 	Location *Location `json:"location,omitempty" xml:"location,omitempty"`
+}
+
+var poolBidRequest = sync.Pool{
+	New: func() any {
+		return new(BidRequest)
+	},
+}
+
+// GetBidRequest() 从对象池中获取BidRequest
+func GetBidRequest() *BidRequest {
+	return poolBidRequest.Get().(*BidRequest)
+}
+
+// ReleaseBidRequest 释放BidRequest
+func ReleaseBidRequest(v *BidRequest) {
+	v.AdSlots = v.AdSlots[:0]
+	v.Channel = ""
+	v.Version = ""
+	v.BatchId = ""
+	v.AppInfo = nil
+	v.SdkInfo = nil
+	v.DeviceInfo = nil
+	v.Udid = nil
+	v.UserInfo = nil
+	v.Network = nil
+	v.Location = nil
+	poolBidRequest.Put(v)
 }

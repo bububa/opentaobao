@@ -9,11 +9,6 @@ import (
 // tmall.nr.fulfill.cancel.reason.query
 //
 // 新零售门店业务查询取消上门揽件的原因列表
-func TmallNrFulfillCancelReasonQuery(clt *core.SDKClient, req *tmallnr.TmallNrFulfillCancelReasonQueryAPIRequest, session string) (*tmallnr.TmallNrFulfillCancelReasonQueryAPIResponse, error) {
-	var resp tmallnr.TmallNrFulfillCancelReasonQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallNrFulfillCancelReasonQuery(clt *core.SDKClient, req *tmallnr.TmallNrFulfillCancelReasonQueryAPIRequest, resp *tmallnr.TmallNrFulfillCancelReasonQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

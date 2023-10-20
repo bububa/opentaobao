@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTclsAelophyBillDailyQueryAPIRequest struct {
 // NewAlibabaTclsAelophyBillDailyQueryRequest 初始化AlibabaTclsAelophyBillDailyQueryAPIRequest对象
 func NewAlibabaTclsAelophyBillDailyQueryRequest() *AlibabaTclsAelophyBillDailyQueryAPIRequest {
 	return &AlibabaTclsAelophyBillDailyQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTclsAelophyBillDailyQueryAPIRequest) Reset() {
+	r._dailyRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTclsAelophyBillDailyQueryAPIRequest) SetDailyRequest(_dailyReque
 // GetDailyRequest DailyRequest Getter
 func (r AlibabaTclsAelophyBillDailyQueryAPIRequest) GetDailyRequest() *BillDailyQueryRequest {
 	return r._dailyRequest
+}
+
+var poolAlibabaTclsAelophyBillDailyQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTclsAelophyBillDailyQueryRequest()
+	},
+}
+
+// GetAlibabaTclsAelophyBillDailyQueryRequest 从 sync.Pool 获取 AlibabaTclsAelophyBillDailyQueryAPIRequest
+func GetAlibabaTclsAelophyBillDailyQueryAPIRequest() *AlibabaTclsAelophyBillDailyQueryAPIRequest {
+	return poolAlibabaTclsAelophyBillDailyQueryAPIRequest.Get().(*AlibabaTclsAelophyBillDailyQueryAPIRequest)
+}
+
+// ReleaseAlibabaTclsAelophyBillDailyQueryAPIRequest 将 AlibabaTclsAelophyBillDailyQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTclsAelophyBillDailyQueryAPIRequest(v *AlibabaTclsAelophyBillDailyQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaTclsAelophyBillDailyQueryAPIRequest.Put(v)
 }

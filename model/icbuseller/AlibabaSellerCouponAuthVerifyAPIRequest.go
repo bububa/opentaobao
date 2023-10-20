@@ -2,6 +2,7 @@ package icbuseller
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaSellerCouponAuthVerifyAPIRequest struct {
 // NewAlibabaSellerCouponAuthVerifyRequest 初始化AlibabaSellerCouponAuthVerifyAPIRequest对象
 func NewAlibabaSellerCouponAuthVerifyRequest() *AlibabaSellerCouponAuthVerifyAPIRequest {
 	return &AlibabaSellerCouponAuthVerifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSellerCouponAuthVerifyAPIRequest) Reset() {
+	r._serviceCode = ""
+	r._couponSeqNumber = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaSellerCouponAuthVerifyAPIRequest) SetCouponSeqNumber(_couponSeqN
 // GetCouponSeqNumber CouponSeqNumber Getter
 func (r AlibabaSellerCouponAuthVerifyAPIRequest) GetCouponSeqNumber() string {
 	return r._couponSeqNumber
+}
+
+var poolAlibabaSellerCouponAuthVerifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSellerCouponAuthVerifyRequest()
+	},
+}
+
+// GetAlibabaSellerCouponAuthVerifyRequest 从 sync.Pool 获取 AlibabaSellerCouponAuthVerifyAPIRequest
+func GetAlibabaSellerCouponAuthVerifyAPIRequest() *AlibabaSellerCouponAuthVerifyAPIRequest {
+	return poolAlibabaSellerCouponAuthVerifyAPIRequest.Get().(*AlibabaSellerCouponAuthVerifyAPIRequest)
+}
+
+// ReleaseAlibabaSellerCouponAuthVerifyAPIRequest 将 AlibabaSellerCouponAuthVerifyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSellerCouponAuthVerifyAPIRequest(v *AlibabaSellerCouponAuthVerifyAPIRequest) {
+	v.Reset()
+	poolAlibabaSellerCouponAuthVerifyAPIRequest.Put(v)
 }

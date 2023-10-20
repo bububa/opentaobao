@@ -2,6 +2,7 @@ package simba
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoUniversalbpWordpackageSuggestdefaultlistAPIResponse struct {
 	TaobaoUniversalbpWordpackageSuggestdefaultlistAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoUniversalbpWordpackageSuggestdefaultlistAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoUniversalbpWordpackageSuggestdefaultlistAPIResponseModel).Reset()
+}
+
 // TaobaoUniversalbpWordpackageSuggestdefaultlistAPIResponseModel is 建议默认关键词包 成功返回结果
 type TaobaoUniversalbpWordpackageSuggestdefaultlistAPIResponseModel struct {
 	XMLName xml.Name `xml:"universalbp_wordpackage_suggestdefaultlist_response"`
@@ -22,4 +29,27 @@ type TaobaoUniversalbpWordpackageSuggestdefaultlistAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果体
 	Result *TaobaoUniversalbpWordpackageSuggestdefaultlistTopResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoUniversalbpWordpackageSuggestdefaultlistAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoUniversalbpWordpackageSuggestdefaultlistAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoUniversalbpWordpackageSuggestdefaultlistAPIResponse)
+	},
+}
+
+// GetTaobaoUniversalbpWordpackageSuggestdefaultlistAPIResponse 从 sync.Pool 获取 TaobaoUniversalbpWordpackageSuggestdefaultlistAPIResponse
+func GetTaobaoUniversalbpWordpackageSuggestdefaultlistAPIResponse() *TaobaoUniversalbpWordpackageSuggestdefaultlistAPIResponse {
+	return poolTaobaoUniversalbpWordpackageSuggestdefaultlistAPIResponse.Get().(*TaobaoUniversalbpWordpackageSuggestdefaultlistAPIResponse)
+}
+
+// ReleaseTaobaoUniversalbpWordpackageSuggestdefaultlistAPIResponse 将 TaobaoUniversalbpWordpackageSuggestdefaultlistAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoUniversalbpWordpackageSuggestdefaultlistAPIResponse(v *TaobaoUniversalbpWordpackageSuggestdefaultlistAPIResponse) {
+	v.Reset()
+	poolTaobaoUniversalbpWordpackageSuggestdefaultlistAPIResponse.Put(v)
 }

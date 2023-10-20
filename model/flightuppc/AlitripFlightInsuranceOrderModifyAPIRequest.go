@@ -2,6 +2,7 @@ package flightuppc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripFlightInsuranceOrderModifyAPIRequest struct {
 // NewAlitripFlightInsuranceOrderModifyRequest 初始化AlitripFlightInsuranceOrderModifyAPIRequest对象
 func NewAlitripFlightInsuranceOrderModifyRequest() *AlitripFlightInsuranceOrderModifyAPIRequest {
 	return &AlitripFlightInsuranceOrderModifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripFlightInsuranceOrderModifyAPIRequest) Reset() {
+	r._insReverseOrderReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripFlightInsuranceOrderModifyAPIRequest) SetInsReverseOrderReq(_ins
 // GetInsReverseOrderReq InsReverseOrderReq Getter
 func (r AlitripFlightInsuranceOrderModifyAPIRequest) GetInsReverseOrderReq() *InsReverseOrderReq {
 	return r._insReverseOrderReq
+}
+
+var poolAlitripFlightInsuranceOrderModifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripFlightInsuranceOrderModifyRequest()
+	},
+}
+
+// GetAlitripFlightInsuranceOrderModifyRequest 从 sync.Pool 获取 AlitripFlightInsuranceOrderModifyAPIRequest
+func GetAlitripFlightInsuranceOrderModifyAPIRequest() *AlitripFlightInsuranceOrderModifyAPIRequest {
+	return poolAlitripFlightInsuranceOrderModifyAPIRequest.Get().(*AlitripFlightInsuranceOrderModifyAPIRequest)
+}
+
+// ReleaseAlitripFlightInsuranceOrderModifyAPIRequest 将 AlitripFlightInsuranceOrderModifyAPIRequest 放入 sync.Pool
+func ReleaseAlitripFlightInsuranceOrderModifyAPIRequest(v *AlitripFlightInsuranceOrderModifyAPIRequest) {
+	v.Reset()
+	poolAlitripFlightInsuranceOrderModifyAPIRequest.Put(v)
 }

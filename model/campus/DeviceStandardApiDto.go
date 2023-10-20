@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // DeviceStandardApiDto 结构体
 type DeviceStandardApiDto struct {
 	// 设备参数信息
@@ -54,4 +58,46 @@ type DeviceStandardApiDto struct {
 	BeRun bool `json:"be_run,omitempty" xml:"be_run,omitempty"`
 	// 是否是逻辑设备
 	BeLogic bool `json:"be_logic,omitempty" xml:"be_logic,omitempty"`
+}
+
+var poolDeviceStandardApiDto = sync.Pool{
+	New: func() any {
+		return new(DeviceStandardApiDto)
+	},
+}
+
+// GetDeviceStandardApiDto() 从对象池中获取DeviceStandardApiDto
+func GetDeviceStandardApiDto() *DeviceStandardApiDto {
+	return poolDeviceStandardApiDto.Get().(*DeviceStandardApiDto)
+}
+
+// ReleaseDeviceStandardApiDto 释放DeviceStandardApiDto
+func ReleaseDeviceStandardApiDto(v *DeviceStandardApiDto) {
+	v.MetaPointDatas = v.MetaPointDatas[:0]
+	v.TagInfoList = v.TagInfoList[:0]
+	v.Code = ""
+	v.CampusName = ""
+	v.BuildingName = ""
+	v.FloorName = ""
+	v.TemplateCode = ""
+	v.LastUpdateTime = ""
+	v.Uuid = ""
+	v.DeviceId = ""
+	v.Version = ""
+	v.Longitude = ""
+	v.Latitude = ""
+	v.SpaceName = ""
+	v.TemplateName = ""
+	v.Nickname = ""
+	v.RunStatusName = ""
+	v.CampusId = 0
+	v.BuildingId = 0
+	v.FloorId = 0
+	v.TemplateId = 0
+	v.SpaceId = 0
+	v.RunStatus = 0
+	v.CompanyId = 0
+	v.BeRun = false
+	v.BeLogic = false
+	poolDeviceStandardApiDto.Put(v)
 }

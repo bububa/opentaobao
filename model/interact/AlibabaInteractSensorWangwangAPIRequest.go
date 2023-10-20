@@ -2,6 +2,7 @@ package interact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaInteractSensorWangwangAPIRequest struct {
 // NewAlibabaInteractSensorWangwangRequest 初始化AlibabaInteractSensorWangwangAPIRequest对象
 func NewAlibabaInteractSensorWangwangRequest() *AlibabaInteractSensorWangwangAPIRequest {
 	return &AlibabaInteractSensorWangwangAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractSensorWangwangAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaInteractSensorWangwangAPIRequest) GetApiParams(params url.Values)
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaInteractSensorWangwangAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaInteractSensorWangwangAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractSensorWangwangRequest()
+	},
+}
+
+// GetAlibabaInteractSensorWangwangRequest 从 sync.Pool 获取 AlibabaInteractSensorWangwangAPIRequest
+func GetAlibabaInteractSensorWangwangAPIRequest() *AlibabaInteractSensorWangwangAPIRequest {
+	return poolAlibabaInteractSensorWangwangAPIRequest.Get().(*AlibabaInteractSensorWangwangAPIRequest)
+}
+
+// ReleaseAlibabaInteractSensorWangwangAPIRequest 将 AlibabaInteractSensorWangwangAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractSensorWangwangAPIRequest(v *AlibabaInteractSensorWangwangAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractSensorWangwangAPIRequest.Put(v)
 }

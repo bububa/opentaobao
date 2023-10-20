@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // ForeignCurrencyDto 结构体
 type ForeignCurrencyDto struct {
 	// 外币每日价格
@@ -12,4 +16,25 @@ type ForeignCurrencyDto struct {
 	TotalTax string `json:"total_tax,omitempty" xml:"total_tax,omitempty"`
 	// 外币币种
 	Currency string `json:"currency,omitempty" xml:"currency,omitempty"`
+}
+
+var poolForeignCurrencyDto = sync.Pool{
+	New: func() any {
+		return new(ForeignCurrencyDto)
+	},
+}
+
+// GetForeignCurrencyDto() 从对象池中获取ForeignCurrencyDto
+func GetForeignCurrencyDto() *ForeignCurrencyDto {
+	return poolForeignCurrencyDto.Get().(*ForeignCurrencyDto)
+}
+
+// ReleaseForeignCurrencyDto 释放ForeignCurrencyDto
+func ReleaseForeignCurrencyDto(v *ForeignCurrencyDto) {
+	v.DailyPriceList = v.DailyPriceList[:0]
+	v.TotalAmount = ""
+	v.TotalPrice = ""
+	v.TotalTax = ""
+	v.Currency = ""
+	poolForeignCurrencyDto.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.sungari.inspection.submit
 //
 // 抽检指令录入
-func TaobaoSungariInspectionSubmit(clt *core.SDKClient, req *sungari.TaobaoSungariInspectionSubmitAPIRequest, session string) (*sungari.TaobaoSungariInspectionSubmitAPIResponse, error) {
-	var resp sungari.TaobaoSungariInspectionSubmitAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSungariInspectionSubmit(clt *core.SDKClient, req *sungari.TaobaoSungariInspectionSubmitAPIRequest, resp *sungari.TaobaoSungariInspectionSubmitAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

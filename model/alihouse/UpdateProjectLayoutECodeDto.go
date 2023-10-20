@@ -1,7 +1,11 @@
 package alihouse
 
-// UpdateProjectLayoutEcodeDto 结构体
-type UpdateProjectLayoutEcodeDto struct {
+import (
+	"sync"
+)
+
+// UpdateProjectLayoutECodeDto 结构体
+type UpdateProjectLayoutECodeDto struct {
 	// 楼盘ID
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// 外部货ID
@@ -14,4 +18,26 @@ type UpdateProjectLayoutEcodeDto struct {
 	ECode string `json:"e_code,omitempty" xml:"e_code,omitempty"`
 	// 数据源类型 （1-新房 2-二手房）
 	SourceType int64 `json:"source_type,omitempty" xml:"source_type,omitempty"`
+}
+
+var poolUpdateProjectLayoutECodeDto = sync.Pool{
+	New: func() any {
+		return new(UpdateProjectLayoutECodeDto)
+	},
+}
+
+// GetUpdateProjectLayoutECodeDto() 从对象池中获取UpdateProjectLayoutECodeDto
+func GetUpdateProjectLayoutECodeDto() *UpdateProjectLayoutECodeDto {
+	return poolUpdateProjectLayoutECodeDto.Get().(*UpdateProjectLayoutECodeDto)
+}
+
+// ReleaseUpdateProjectLayoutECodeDto 释放UpdateProjectLayoutECodeDto
+func ReleaseUpdateProjectLayoutECodeDto(v *UpdateProjectLayoutECodeDto) {
+	v.OuterId = ""
+	v.OuterTid = ""
+	v.OuterLayoutId = ""
+	v.OuterStoreId = ""
+	v.ECode = ""
+	v.SourceType = 0
+	poolUpdateProjectLayoutECodeDto.Put(v)
 }

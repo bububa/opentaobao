@@ -1,5 +1,9 @@
 package flightuppc
 
+import (
+	"sync"
+)
+
 // InsOrderOpenSegmentDto 结构体
 type InsOrderOpenSegmentDto struct {
 	// 航司名称
@@ -22,4 +26,30 @@ type InsOrderOpenSegmentDto struct {
 	TcOrderId int64 `json:"tc_order_id,omitempty" xml:"tc_order_id,omitempty"`
 	// 外部订单号
 	OutOrderId int64 `json:"out_order_id,omitempty" xml:"out_order_id,omitempty"`
+}
+
+var poolInsOrderOpenSegmentDto = sync.Pool{
+	New: func() any {
+		return new(InsOrderOpenSegmentDto)
+	},
+}
+
+// GetInsOrderOpenSegmentDto() 从对象池中获取InsOrderOpenSegmentDto
+func GetInsOrderOpenSegmentDto() *InsOrderOpenSegmentDto {
+	return poolInsOrderOpenSegmentDto.Get().(*InsOrderOpenSegmentDto)
+}
+
+// ReleaseInsOrderOpenSegmentDto 释放InsOrderOpenSegmentDto
+func ReleaseInsOrderOpenSegmentDto(v *InsOrderOpenSegmentDto) {
+	v.CompanyName = ""
+	v.ArrCity = ""
+	v.DepCity = ""
+	v.PolicyNo = ""
+	v.SegmentNo = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.Attribute = ""
+	v.TcOrderId = 0
+	v.OutOrderId = 0
+	poolInsOrderOpenSegmentDto.Put(v)
 }

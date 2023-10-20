@@ -9,11 +9,6 @@ import (
 // taobao.opentrade.special.items.bind
 //
 // 专属下单场景商品绑定
-func TaobaoOpentradeSpecialItemsBind(clt *core.SDKClient, req *opentrade.TaobaoOpentradeSpecialItemsBindAPIRequest, session string) (*opentrade.TaobaoOpentradeSpecialItemsBindAPIResponse, error) {
-	var resp opentrade.TaobaoOpentradeSpecialItemsBindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpentradeSpecialItemsBind(clt *core.SDKClient, req *opentrade.TaobaoOpentradeSpecialItemsBindAPIRequest, resp *opentrade.TaobaoOpentradeSpecialItemsBindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

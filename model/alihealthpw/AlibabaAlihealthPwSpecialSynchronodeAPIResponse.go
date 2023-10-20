@@ -2,6 +2,7 @@ package alihealthpw
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihealthPwSpecialSynchronodeAPIResponse struct {
 	AlibabaAlihealthPwSpecialSynchronodeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthPwSpecialSynchronodeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthPwSpecialSynchronodeAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthPwSpecialSynchronodeAPIResponseModel is 合作方同步状态至阿里健康 成功返回结果
 type AlibabaAlihealthPwSpecialSynchronodeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_pw_special_synchronode_response"`
@@ -22,4 +29,27 @@ type AlibabaAlihealthPwSpecialSynchronodeAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回值
 	Result *ResponseMessage `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthPwSpecialSynchronodeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihealthPwSpecialSynchronodeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthPwSpecialSynchronodeAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthPwSpecialSynchronodeAPIResponse 从 sync.Pool 获取 AlibabaAlihealthPwSpecialSynchronodeAPIResponse
+func GetAlibabaAlihealthPwSpecialSynchronodeAPIResponse() *AlibabaAlihealthPwSpecialSynchronodeAPIResponse {
+	return poolAlibabaAlihealthPwSpecialSynchronodeAPIResponse.Get().(*AlibabaAlihealthPwSpecialSynchronodeAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthPwSpecialSynchronodeAPIResponse 将 AlibabaAlihealthPwSpecialSynchronodeAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthPwSpecialSynchronodeAPIResponse(v *AlibabaAlihealthPwSpecialSynchronodeAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthPwSpecialSynchronodeAPIResponse.Put(v)
 }

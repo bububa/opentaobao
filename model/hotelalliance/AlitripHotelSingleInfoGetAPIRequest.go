@@ -2,6 +2,7 @@ package hotelalliance
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripHotelSingleInfoGetAPIRequest struct {
 // NewAlitripHotelSingleInfoGetRequest 初始化AlitripHotelSingleInfoGetAPIRequest对象
 func NewAlitripHotelSingleInfoGetRequest() *AlitripHotelSingleInfoGetAPIRequest {
 	return &AlitripHotelSingleInfoGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripHotelSingleInfoGetAPIRequest) Reset() {
+	r._queryHotelInfoParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripHotelSingleInfoGetAPIRequest) SetQueryHotelInfoParam(_queryHotel
 // GetQueryHotelInfoParam QueryHotelInfoParam Getter
 func (r AlitripHotelSingleInfoGetAPIRequest) GetQueryHotelInfoParam() *QueryHotelInfoParam {
 	return r._queryHotelInfoParam
+}
+
+var poolAlitripHotelSingleInfoGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripHotelSingleInfoGetRequest()
+	},
+}
+
+// GetAlitripHotelSingleInfoGetRequest 从 sync.Pool 获取 AlitripHotelSingleInfoGetAPIRequest
+func GetAlitripHotelSingleInfoGetAPIRequest() *AlitripHotelSingleInfoGetAPIRequest {
+	return poolAlitripHotelSingleInfoGetAPIRequest.Get().(*AlitripHotelSingleInfoGetAPIRequest)
+}
+
+// ReleaseAlitripHotelSingleInfoGetAPIRequest 将 AlitripHotelSingleInfoGetAPIRequest 放入 sync.Pool
+func ReleaseAlitripHotelSingleInfoGetAPIRequest(v *AlitripHotelSingleInfoGetAPIRequest) {
+	v.Reset()
+	poolAlitripHotelSingleInfoGetAPIRequest.Put(v)
 }

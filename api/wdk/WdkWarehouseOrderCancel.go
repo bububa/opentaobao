@@ -9,11 +9,6 @@ import (
 // wdk.warehouse.order.cancel
 //
 // 仓作业取消下发
-func WdkWarehouseOrderCancel(clt *core.SDKClient, req *wdk.WdkWarehouseOrderCancelAPIRequest, session string) (*wdk.WdkWarehouseOrderCancelAPIResponse, error) {
-	var resp wdk.WdkWarehouseOrderCancelAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func WdkWarehouseOrderCancel(clt *core.SDKClient, req *wdk.WdkWarehouseOrderCancelAPIRequest, resp *wdk.WdkWarehouseOrderCancelAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

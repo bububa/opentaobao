@@ -1,5 +1,9 @@
 package openmall
 
+import (
+	"sync"
+)
+
 // TopOrderVo 结构体
 type TopOrderVo struct {
 	// 子订单发货时间，当卖家对订单进行了多次发货，子订单的发货时间和主订单的发货时间可能不一样了，那么就需要以子订单的时间为准。（没有进行多次发货的订单，主订单的发货时间和子订单的发货时间都一样）
@@ -42,4 +46,40 @@ type TopOrderVo struct {
 	RefundId int64 `json:"refund_id,omitempty" xml:"refund_id,omitempty"`
 	// 是否发货
 	IsShShip bool `json:"is_sh_ship,omitempty" xml:"is_sh_ship,omitempty"`
+}
+
+var poolTopOrderVo = sync.Pool{
+	New: func() any {
+		return new(TopOrderVo)
+	},
+}
+
+// GetTopOrderVo() 从对象池中获取TopOrderVo
+func GetTopOrderVo() *TopOrderVo {
+	return poolTopOrderVo.Get().(*TopOrderVo)
+}
+
+// ReleaseTopOrderVo 释放TopOrderVo
+func ReleaseTopOrderVo(v *TopOrderVo) {
+	v.ConsignTime = ""
+	v.EndTime = ""
+	v.EstimateConTime = ""
+	v.ItemMemo = ""
+	v.OuterSkuId = ""
+	v.Payment = ""
+	v.Price = ""
+	v.RefundStatus = ""
+	v.SkuPropertiesName = ""
+	v.SkuId = ""
+	v.Status = ""
+	v.Title = ""
+	v.TotalFee = ""
+	v.LogisticsCompany = ""
+	v.InvoiceNo = ""
+	v.Num = 0
+	v.NumIid = 0
+	v.Oid = 0
+	v.RefundId = 0
+	v.IsShShip = false
+	poolTopOrderVo.Put(v)
 }

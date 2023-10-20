@@ -1,5 +1,9 @@
 package tvupadmin
 
+import (
+	"sync"
+)
+
 // ChildNodeContentVo 结构体
 type ChildNodeContentVo struct {
 	// 内容名称
@@ -22,4 +26,30 @@ type ChildNodeContentVo struct {
 	Sort int64 `json:"sort,omitempty" xml:"sort,omitempty"`
 	// 状态
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolChildNodeContentVo = sync.Pool{
+	New: func() any {
+		return new(ChildNodeContentVo)
+	},
+}
+
+// GetChildNodeContentVo() 从对象池中获取ChildNodeContentVo
+func GetChildNodeContentVo() *ChildNodeContentVo {
+	return poolChildNodeContentVo.Get().(*ChildNodeContentVo)
+}
+
+// ReleaseChildNodeContentVo 释放ChildNodeContentVo
+func ReleaseChildNodeContentVo(v *ChildNodeContentVo) {
+	v.Name = ""
+	v.Picurl = ""
+	v.Type = ""
+	v.Extra = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.Id = 0
+	v.NodeId = 0
+	v.Sort = 0
+	v.Status = 0
+	poolChildNodeContentVo.Put(v)
 }

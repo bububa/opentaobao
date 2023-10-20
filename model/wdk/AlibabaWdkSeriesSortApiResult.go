@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // AlibabaWdkSeriesSortApiResult 结构体
 type AlibabaWdkSeriesSortApiResult struct {
 	// 错误码
@@ -10,4 +14,24 @@ type AlibabaWdkSeriesSortApiResult struct {
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaWdkSeriesSortApiResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkSeriesSortApiResult)
+	},
+}
+
+// GetAlibabaWdkSeriesSortApiResult() 从对象池中获取AlibabaWdkSeriesSortApiResult
+func GetAlibabaWdkSeriesSortApiResult() *AlibabaWdkSeriesSortApiResult {
+	return poolAlibabaWdkSeriesSortApiResult.Get().(*AlibabaWdkSeriesSortApiResult)
+}
+
+// ReleaseAlibabaWdkSeriesSortApiResult 释放AlibabaWdkSeriesSortApiResult
+func ReleaseAlibabaWdkSeriesSortApiResult(v *AlibabaWdkSeriesSortApiResult) {
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.Model = false
+	v.Success = false
+	poolAlibabaWdkSeriesSortApiResult.Put(v)
 }

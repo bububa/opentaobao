@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.store.punish.info.query
 //
 // 门店处罚信息查询
-func AlibabaAlihouseStorePunishInfoQuery(clt *core.SDKClient, req *alihouse.AlibabaAlihouseStorePunishInfoQueryAPIRequest, session string) (*alihouse.AlibabaAlihouseStorePunishInfoQueryAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseStorePunishInfoQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseStorePunishInfoQuery(clt *core.SDKClient, req *alihouse.AlibabaAlihouseStorePunishInfoQueryAPIRequest, resp *alihouse.AlibabaAlihouseStorePunishInfoQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

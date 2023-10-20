@@ -1,5 +1,9 @@
 package tmallcar
 
+import (
+	"sync"
+)
+
 // LogisticsTraceReq 结构体
 type LogisticsTraceReq struct {
 	// 当前区县
@@ -18,4 +22,28 @@ type LogisticsTraceReq struct {
 	LogisticsDesc string `json:"logistics_desc,omitempty" xml:"logistics_desc,omitempty"`
 	// 经度
 	Longitude string `json:"longitude,omitempty" xml:"longitude,omitempty"`
+}
+
+var poolLogisticsTraceReq = sync.Pool{
+	New: func() any {
+		return new(LogisticsTraceReq)
+	},
+}
+
+// GetLogisticsTraceReq() 从对象池中获取LogisticsTraceReq
+func GetLogisticsTraceReq() *LogisticsTraceReq {
+	return poolLogisticsTraceReq.Get().(*LogisticsTraceReq)
+}
+
+// ReleaseLogisticsTraceReq 释放LogisticsTraceReq
+func ReleaseLogisticsTraceReq(v *LogisticsTraceReq) {
+	v.CurrentDistinct = ""
+	v.CurrentLocationDetail = ""
+	v.Latitude = ""
+	v.CurrentCity = ""
+	v.CurrentStreet = ""
+	v.CurrentProvince = ""
+	v.LogisticsDesc = ""
+	v.Longitude = ""
+	poolLogisticsTraceReq.Put(v)
 }

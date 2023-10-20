@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoPhoneBankCreditProcessAPIResponse struct {
 	TaobaoPhoneBankCreditProcessAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoPhoneBankCreditProcessAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoPhoneBankCreditProcessAPIResponseModel).Reset()
+}
+
 // TaobaoPhoneBankCreditProcessAPIResponseModel is 虚拟话费任务银行信用卡办理进度回传 成功返回结果
 type TaobaoPhoneBankCreditProcessAPIResponseModel struct {
 	XMLName xml.Name `xml:"phone_bank_credit_process_response"`
@@ -26,4 +33,29 @@ type TaobaoPhoneBankCreditProcessAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 响应结果
 	Data *BankCreditResponse `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoPhoneBankCreditProcessAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.BizCode = ""
+	m.Message = ""
+	m.Data = nil
+}
+
+var poolTaobaoPhoneBankCreditProcessAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoPhoneBankCreditProcessAPIResponse)
+	},
+}
+
+// GetTaobaoPhoneBankCreditProcessAPIResponse 从 sync.Pool 获取 TaobaoPhoneBankCreditProcessAPIResponse
+func GetTaobaoPhoneBankCreditProcessAPIResponse() *TaobaoPhoneBankCreditProcessAPIResponse {
+	return poolTaobaoPhoneBankCreditProcessAPIResponse.Get().(*TaobaoPhoneBankCreditProcessAPIResponse)
+}
+
+// ReleaseTaobaoPhoneBankCreditProcessAPIResponse 将 TaobaoPhoneBankCreditProcessAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoPhoneBankCreditProcessAPIResponse(v *TaobaoPhoneBankCreditProcessAPIResponse) {
+	v.Reset()
+	poolTaobaoPhoneBankCreditProcessAPIResponse.Put(v)
 }

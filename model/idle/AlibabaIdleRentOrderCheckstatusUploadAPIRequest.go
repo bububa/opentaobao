@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaIdleRentOrderCheckstatusUploadAPIRequest struct {
 // NewAlibabaIdleRentOrderCheckstatusUploadRequest 初始化AlibabaIdleRentOrderCheckstatusUploadAPIRequest对象
 func NewAlibabaIdleRentOrderCheckstatusUploadRequest() *AlibabaIdleRentOrderCheckstatusUploadAPIRequest {
 	return &AlibabaIdleRentOrderCheckstatusUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleRentOrderCheckstatusUploadAPIRequest) Reset() {
+	r._orderId = 0
+	r._checkResult = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaIdleRentOrderCheckstatusUploadAPIRequest) SetCheckResult(_checkR
 // GetCheckResult CheckResult Getter
 func (r AlibabaIdleRentOrderCheckstatusUploadAPIRequest) GetCheckResult() *CheckResultDto {
 	return r._checkResult
+}
+
+var poolAlibabaIdleRentOrderCheckstatusUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleRentOrderCheckstatusUploadRequest()
+	},
+}
+
+// GetAlibabaIdleRentOrderCheckstatusUploadRequest 从 sync.Pool 获取 AlibabaIdleRentOrderCheckstatusUploadAPIRequest
+func GetAlibabaIdleRentOrderCheckstatusUploadAPIRequest() *AlibabaIdleRentOrderCheckstatusUploadAPIRequest {
+	return poolAlibabaIdleRentOrderCheckstatusUploadAPIRequest.Get().(*AlibabaIdleRentOrderCheckstatusUploadAPIRequest)
+}
+
+// ReleaseAlibabaIdleRentOrderCheckstatusUploadAPIRequest 将 AlibabaIdleRentOrderCheckstatusUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleRentOrderCheckstatusUploadAPIRequest(v *AlibabaIdleRentOrderCheckstatusUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleRentOrderCheckstatusUploadAPIRequest.Put(v)
 }

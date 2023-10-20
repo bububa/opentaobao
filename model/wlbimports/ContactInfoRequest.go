@@ -1,5 +1,9 @@
 package wlbimports
 
+import (
+	"sync"
+)
+
 // ContactInfoRequest 结构体
 type ContactInfoRequest struct {
 	// 国家
@@ -24,4 +28,31 @@ type ContactInfoRequest struct {
 	AreaId int64 `json:"area_id,omitempty" xml:"area_id,omitempty"`
 	// 国家id
 	CountryId int64 `json:"country_id,omitempty" xml:"country_id,omitempty"`
+}
+
+var poolContactInfoRequest = sync.Pool{
+	New: func() any {
+		return new(ContactInfoRequest)
+	},
+}
+
+// GetContactInfoRequest() 从对象池中获取ContactInfoRequest
+func GetContactInfoRequest() *ContactInfoRequest {
+	return poolContactInfoRequest.Get().(*ContactInfoRequest)
+}
+
+// ReleaseContactInfoRequest 释放ContactInfoRequest
+func ReleaseContactInfoRequest(v *ContactInfoRequest) {
+	v.Country = ""
+	v.ZipCode = ""
+	v.Province = ""
+	v.Phone = ""
+	v.City = ""
+	v.CompanyName = ""
+	v.Name = ""
+	v.DetailAddress = ""
+	v.Email = ""
+	v.AreaId = 0
+	v.CountryId = 0
+	poolContactInfoRequest.Put(v)
 }

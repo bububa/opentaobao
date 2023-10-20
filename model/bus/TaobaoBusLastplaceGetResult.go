@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // TaobaoBusLastplaceGetResult 结构体
 type TaobaoBusLastplaceGetResult struct {
 	// errCode
@@ -10,4 +14,24 @@ type TaobaoBusLastplaceGetResult struct {
 	Module string `json:"module,omitempty" xml:"module,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoBusLastplaceGetResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoBusLastplaceGetResult)
+	},
+}
+
+// GetTaobaoBusLastplaceGetResult() 从对象池中获取TaobaoBusLastplaceGetResult
+func GetTaobaoBusLastplaceGetResult() *TaobaoBusLastplaceGetResult {
+	return poolTaobaoBusLastplaceGetResult.Get().(*TaobaoBusLastplaceGetResult)
+}
+
+// ReleaseTaobaoBusLastplaceGetResult 释放TaobaoBusLastplaceGetResult
+func ReleaseTaobaoBusLastplaceGetResult(v *TaobaoBusLastplaceGetResult) {
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.Module = ""
+	v.Success = false
+	poolTaobaoBusLastplaceGetResult.Put(v)
 }

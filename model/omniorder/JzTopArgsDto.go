@@ -1,5 +1,9 @@
 package omniorder
 
+import (
+	"sync"
+)
+
 // JzTopArgsDto 结构体
 type JzTopArgsDto struct {
 	// 运单号,用快递或商家自有发货时,必填
@@ -18,4 +22,28 @@ type JzTopArgsDto struct {
 	ZyPhoneNumber string `json:"zy_phone_number,omitempty" xml:"zy_phone_number,omitempty"`
 	// 包裹数量
 	PackageNumber string `json:"package_number,omitempty" xml:"package_number,omitempty"`
+}
+
+var poolJzTopArgsDto = sync.Pool{
+	New: func() any {
+		return new(JzTopArgsDto)
+	},
+}
+
+// GetJzTopArgsDto() 从对象池中获取JzTopArgsDto
+func GetJzTopArgsDto() *JzTopArgsDto {
+	return poolJzTopArgsDto.Get().(*JzTopArgsDto)
+}
+
+// ReleaseJzTopArgsDto 释放JzTopArgsDto
+func ReleaseJzTopArgsDto(v *JzTopArgsDto) {
+	v.MailNo = ""
+	v.PackageVolume = ""
+	v.PackageRemark = ""
+	v.ZyCompany = ""
+	v.PackageWeight = ""
+	v.ZyConsignTime = ""
+	v.ZyPhoneNumber = ""
+	v.PackageNumber = ""
+	poolJzTopArgsDto.Put(v)
 }

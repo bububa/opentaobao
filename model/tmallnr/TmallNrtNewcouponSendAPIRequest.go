@@ -2,6 +2,7 @@ package tmallnr
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallNrtNewcouponSendAPIRequest struct {
 // NewTmallNrtNewcouponSendRequest 初始化TmallNrtNewcouponSendAPIRequest对象
 func NewTmallNrtNewcouponSendRequest() *TmallNrtNewcouponSendAPIRequest {
 	return &TmallNrtNewcouponSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrtNewcouponSendAPIRequest) Reset() {
+	r._nrtCouponSendDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallNrtNewcouponSendAPIRequest) SetNrtCouponSendDto(_nrtCouponSendDto 
 // GetNrtCouponSendDto NrtCouponSendDto Getter
 func (r TmallNrtNewcouponSendAPIRequest) GetNrtCouponSendDto() *NrtCouponSendDto {
 	return r._nrtCouponSendDto
+}
+
+var poolTmallNrtNewcouponSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrtNewcouponSendRequest()
+	},
+}
+
+// GetTmallNrtNewcouponSendRequest 从 sync.Pool 获取 TmallNrtNewcouponSendAPIRequest
+func GetTmallNrtNewcouponSendAPIRequest() *TmallNrtNewcouponSendAPIRequest {
+	return poolTmallNrtNewcouponSendAPIRequest.Get().(*TmallNrtNewcouponSendAPIRequest)
+}
+
+// ReleaseTmallNrtNewcouponSendAPIRequest 将 TmallNrtNewcouponSendAPIRequest 放入 sync.Pool
+func ReleaseTmallNrtNewcouponSendAPIRequest(v *TmallNrtNewcouponSendAPIRequest) {
+	v.Reset()
+	poolTmallNrtNewcouponSendAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package paimai
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoPaimaiNftCertificateApplycallbackAPIResponse struct {
 	model.CommonResponse
 	TaobaoPaimaiNftCertificateApplycallbackAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoPaimaiNftCertificateApplycallbackAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoPaimaiNftCertificateApplycallbackAPIResponseModel).Reset()
 }
 
 // TaobaoPaimaiNftCertificateApplycallbackAPIResponseModel is 数字藏品版权证书申请结果回调 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoPaimaiNftCertificateApplycallbackAPIResponseModel struct {
 	FailMessage string `json:"fail_message,omitempty" xml:"fail_message,omitempty"`
 	// true/false 是否成功
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoPaimaiNftCertificateApplycallbackAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TraceId = ""
+	m.FailCode = ""
+	m.FailMessage = ""
+	m.Result = false
+}
+
+var poolTaobaoPaimaiNftCertificateApplycallbackAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoPaimaiNftCertificateApplycallbackAPIResponse)
+	},
+}
+
+// GetTaobaoPaimaiNftCertificateApplycallbackAPIResponse 从 sync.Pool 获取 TaobaoPaimaiNftCertificateApplycallbackAPIResponse
+func GetTaobaoPaimaiNftCertificateApplycallbackAPIResponse() *TaobaoPaimaiNftCertificateApplycallbackAPIResponse {
+	return poolTaobaoPaimaiNftCertificateApplycallbackAPIResponse.Get().(*TaobaoPaimaiNftCertificateApplycallbackAPIResponse)
+}
+
+// ReleaseTaobaoPaimaiNftCertificateApplycallbackAPIResponse 将 TaobaoPaimaiNftCertificateApplycallbackAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoPaimaiNftCertificateApplycallbackAPIResponse(v *TaobaoPaimaiNftCertificateApplycallbackAPIResponse) {
+	v.Reset()
+	poolTaobaoPaimaiNftCertificateApplycallbackAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package bus
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoBusAgentCityChangeAPIResponse struct {
 	TaobaoBusAgentCityChangeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoBusAgentCityChangeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoBusAgentCityChangeAPIResponseModel).Reset()
+}
+
 // TaobaoBusAgentCityChangeAPIResponseModel is 城市变更 成功返回结果
 type TaobaoBusAgentCityChangeAPIResponseModel struct {
 	XMLName xml.Name `xml:"bus_agent_city_change_response"`
@@ -26,4 +33,29 @@ type TaobaoBusAgentCityChangeAPIResponseModel struct {
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoBusAgentCityChangeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrCode = ""
+	m.ErrMsg = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoBusAgentCityChangeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoBusAgentCityChangeAPIResponse)
+	},
+}
+
+// GetTaobaoBusAgentCityChangeAPIResponse 从 sync.Pool 获取 TaobaoBusAgentCityChangeAPIResponse
+func GetTaobaoBusAgentCityChangeAPIResponse() *TaobaoBusAgentCityChangeAPIResponse {
+	return poolTaobaoBusAgentCityChangeAPIResponse.Get().(*TaobaoBusAgentCityChangeAPIResponse)
+}
+
+// ReleaseTaobaoBusAgentCityChangeAPIResponse 将 TaobaoBusAgentCityChangeAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoBusAgentCityChangeAPIResponse(v *TaobaoBusAgentCityChangeAPIResponse) {
+	v.Reset()
+	poolTaobaoBusAgentCityChangeAPIResponse.Put(v)
 }

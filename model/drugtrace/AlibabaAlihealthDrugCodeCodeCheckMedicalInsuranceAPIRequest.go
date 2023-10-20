@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -34,8 +35,19 @@ type AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest struct {
 // NewAlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest 初始化AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest对象
 func NewAlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest() *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest {
 	return &AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) Reset() {
+	r._codes = r._codes[:0]
+	r._terminalEntId = ""
+	r._bureauName = ""
+	r._terminalId = ""
+	r._terminalType = ""
+	r._cType = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -131,4 +143,21 @@ func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetCType(_
 // GetCType CType Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) GetCType() string {
 	return r._cType
+}
+
+var poolAlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest 从 sync.Pool 获取 AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest
+func GetAlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest() *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest {
+	return poolAlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest.Get().(*AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest 将 AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest(v *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // BusNumberDto 结构体
 type BusNumberDto struct {
 	// 始发城市ID
@@ -62,4 +66,50 @@ type BusNumberDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 总座位数
 	TotalSeats int64 `json:"total_seats,omitempty" xml:"total_seats,omitempty"`
+}
+
+var poolBusNumberDto = sync.Pool{
+	New: func() any {
+		return new(BusNumberDto)
+	},
+}
+
+// GetBusNumberDto() 从对象池中获取BusNumberDto
+func GetBusNumberDto() *BusNumberDto {
+	return poolBusNumberDto.Get().(*BusNumberDto)
+}
+
+// ReleaseBusNumberDto 释放BusNumberDto
+func ReleaseBusNumberDto(v *BusNumberDto) {
+	v.AgentFromCityId = ""
+	v.AgentFromStationId = ""
+	v.ArriveTime = ""
+	v.Attribute = ""
+	v.BusNumber = ""
+	v.BusType = ""
+	v.DepartTime = ""
+	v.DestinationName = ""
+	v.FromCityName = ""
+	v.FromStationName = ""
+	v.LastSchedule = ""
+	v.ScheduleId = ""
+	v.TicketWicket = ""
+	v.ToCityName = ""
+	v.ToProvinceName = ""
+	v.ToStationName = ""
+	v.ViaStation = ""
+	v.BizType = 0
+	v.BookLimitTime = 0
+	v.Distance = 0
+	v.ExtraSchedule = 0
+	v.FullPrice = 0
+	v.HalfPrice = 0
+	v.IsRefund = 0
+	v.RemainSeats = 0
+	v.RunTime = 0
+	v.ServicePrice = 0
+	v.ShiftType = 0
+	v.Status = 0
+	v.TotalSeats = 0
+	poolBusNumberDto.Put(v)
 }

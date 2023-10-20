@@ -9,11 +9,6 @@ import (
 // alibaba.campus.acl.new.checkuserrole
 //
 // 校验用户是否有角色
-func AlibabaCampusAclNewCheckuserrole(clt *core.SDKClient, req *campus.AlibabaCampusAclNewCheckuserroleAPIRequest, session string) (*campus.AlibabaCampusAclNewCheckuserroleAPIResponse, error) {
-	var resp campus.AlibabaCampusAclNewCheckuserroleAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusAclNewCheckuserrole(clt *core.SDKClient, req *campus.AlibabaCampusAclNewCheckuserroleAPIRequest, resp *campus.AlibabaCampusAclNewCheckuserroleAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

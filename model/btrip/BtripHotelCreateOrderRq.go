@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BtripHotelCreateOrderRq 结构体
 type BtripHotelCreateOrderRq struct {
 	// 预订人在分销商平台的用户昵称
@@ -42,4 +46,40 @@ type BtripHotelCreateOrderRq struct {
 	CorpPayPrice int64 `json:"corp_pay_price,omitempty" xml:"corp_pay_price,omitempty"`
 	// 订单总价中个人支付部分
 	PersonPayPrice int64 `json:"person_pay_price,omitempty" xml:"person_pay_price,omitempty"`
+}
+
+var poolBtripHotelCreateOrderRq = sync.Pool{
+	New: func() any {
+		return new(BtripHotelCreateOrderRq)
+	},
+}
+
+// GetBtripHotelCreateOrderRq() 从对象池中获取BtripHotelCreateOrderRq
+func GetBtripHotelCreateOrderRq() *BtripHotelCreateOrderRq {
+	return poolBtripHotelCreateOrderRq.Get().(*BtripHotelCreateOrderRq)
+}
+
+// ReleaseBtripHotelCreateOrderRq 释放BtripHotelCreateOrderRq
+func ReleaseBtripHotelCreateOrderRq(v *BtripHotelCreateOrderRq) {
+	v.BuyerName = ""
+	v.BuyerUniqueKey = ""
+	v.CheckIn = ""
+	v.CheckOut = ""
+	v.CreateOrderKey = ""
+	v.Customers = ""
+	v.DisOrderId = ""
+	v.EarliestArrivalTime = ""
+	v.LatestArrivalTime = ""
+	v.SubChannel = ""
+	v.SupplierCode = ""
+	v.HotelContact = nil
+	v.ItemId = 0
+	v.NumberOfAdultsPerRoom = 0
+	v.RatePlanId = 0
+	v.RoomNum = 0
+	v.TotalPromotion = 0
+	v.TotalRoomPrice = 0
+	v.CorpPayPrice = 0
+	v.PersonPayPrice = 0
+	poolBtripHotelCreateOrderRq.Put(v)
 }

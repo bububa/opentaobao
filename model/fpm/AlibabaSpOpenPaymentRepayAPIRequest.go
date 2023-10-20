@@ -2,6 +2,7 @@ package fpm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaSpOpenPaymentRepayAPIRequest struct {
 // NewAlibabaSpOpenPaymentRepayRequest 初始化AlibabaSpOpenPaymentRepayAPIRequest对象
 func NewAlibabaSpOpenPaymentRepayRequest() *AlibabaSpOpenPaymentRepayAPIRequest {
 	return &AlibabaSpOpenPaymentRepayAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSpOpenPaymentRepayAPIRequest) Reset() {
+	r._appCode = ""
+	r._data = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaSpOpenPaymentRepayAPIRequest) SetData(_data string) error {
 // GetData Data Getter
 func (r AlibabaSpOpenPaymentRepayAPIRequest) GetData() string {
 	return r._data
+}
+
+var poolAlibabaSpOpenPaymentRepayAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSpOpenPaymentRepayRequest()
+	},
+}
+
+// GetAlibabaSpOpenPaymentRepayRequest 从 sync.Pool 获取 AlibabaSpOpenPaymentRepayAPIRequest
+func GetAlibabaSpOpenPaymentRepayAPIRequest() *AlibabaSpOpenPaymentRepayAPIRequest {
+	return poolAlibabaSpOpenPaymentRepayAPIRequest.Get().(*AlibabaSpOpenPaymentRepayAPIRequest)
+}
+
+// ReleaseAlibabaSpOpenPaymentRepayAPIRequest 将 AlibabaSpOpenPaymentRepayAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSpOpenPaymentRepayAPIRequest(v *AlibabaSpOpenPaymentRepayAPIRequest) {
+	v.Reset()
+	poolAlibabaSpOpenPaymentRepayAPIRequest.Put(v)
 }

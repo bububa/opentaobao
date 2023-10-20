@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeItemTagSubmitAPIRequest struct {
 // NewAlibabaAlihouseNewhomeItemTagSubmitRequest 初始化AlibabaAlihouseNewhomeItemTagSubmitAPIRequest对象
 func NewAlibabaAlihouseNewhomeItemTagSubmitRequest() *AlibabaAlihouseNewhomeItemTagSubmitAPIRequest {
 	return &AlibabaAlihouseNewhomeItemTagSubmitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeItemTagSubmitAPIRequest) Reset() {
+	r._itemTagRequestDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -52,4 +59,21 @@ func (r *AlibabaAlihouseNewhomeItemTagSubmitAPIRequest) SetItemTagRequestDto(_it
 // GetItemTagRequestDto ItemTagRequestDto Getter
 func (r AlibabaAlihouseNewhomeItemTagSubmitAPIRequest) GetItemTagRequestDto() *ItemTagRequestDto {
 	return r._itemTagRequestDto
+}
+
+var poolAlibabaAlihouseNewhomeItemTagSubmitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeItemTagSubmitRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeItemTagSubmitRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeItemTagSubmitAPIRequest
+func GetAlibabaAlihouseNewhomeItemTagSubmitAPIRequest() *AlibabaAlihouseNewhomeItemTagSubmitAPIRequest {
+	return poolAlibabaAlihouseNewhomeItemTagSubmitAPIRequest.Get().(*AlibabaAlihouseNewhomeItemTagSubmitAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeItemTagSubmitAPIRequest 将 AlibabaAlihouseNewhomeItemTagSubmitAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeItemTagSubmitAPIRequest(v *AlibabaAlihouseNewhomeItemTagSubmitAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeItemTagSubmitAPIRequest.Put(v)
 }

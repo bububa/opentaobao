@@ -1,5 +1,9 @@
 package alitrippoi
 
+import (
+	"sync"
+)
+
 // TripPoiRawSaveParamV2 结构体
 type TripPoiRawSaveParamV2 struct {
 	// 图片地址(,分隔多张)
@@ -96,4 +100,67 @@ type TripPoiRawSaveParamV2 struct {
 	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
 	// 操作类型(0:新增 1:更新)
 	OperatorType int64 `json:"operator_type,omitempty" xml:"operator_type,omitempty"`
+}
+
+var poolTripPoiRawSaveParamV2 = sync.Pool{
+	New: func() any {
+		return new(TripPoiRawSaveParamV2)
+	},
+}
+
+// GetTripPoiRawSaveParamV2() 从对象池中获取TripPoiRawSaveParamV2
+func GetTripPoiRawSaveParamV2() *TripPoiRawSaveParamV2 {
+	return poolTripPoiRawSaveParamV2.Get().(*TripPoiRawSaveParamV2)
+}
+
+// ReleaseTripPoiRawSaveParamV2 释放TripPoiRawSaveParamV2
+func ReleaseTripPoiRawSaveParamV2(v *TripPoiRawSaveParamV2) {
+	v.PhotoUrls = v.PhotoUrls[:0]
+	v.OfflineReason = ""
+	v.GmtModified = ""
+	v.City = ""
+	v.MainPhone = ""
+	v.Bios = ""
+	v.PostalCode = ""
+	v.Description = ""
+	v.WebSiteUrl = ""
+	v.Province = ""
+	v.VideoUrl = ""
+	v.CommercialCircle = ""
+	v.CountryCode = ""
+	v.ExtendMap = ""
+	v.ShopId = ""
+	v.OpenTime = ""
+	v.AddressEn = ""
+	v.Lat = ""
+	v.Address = ""
+	v.SourceBizId = ""
+	v.Lng = ""
+	v.NameAlias = ""
+	v.BusinessHour = ""
+	v.AddressLocal = ""
+	v.AlternativePhone = ""
+	v.Telephone = ""
+	v.Consumption = ""
+	v.NameEn = ""
+	v.Transport = ""
+	v.GmtCreate = ""
+	v.LocalName = ""
+	v.RecommendInfos = ""
+	v.Name = ""
+	v.CountryName = ""
+	v.ShopType = ""
+	v.Category = ""
+	v.LocalLanguage = ""
+	v.OfflineReasonDetail = ""
+	v.ServiceInfo = nil
+	v.Type = 0
+	v.SellerId = 0
+	v.SubSellerId = 0
+	v.PoiId = 0
+	v.BrandInfo = nil
+	v.OpenStatus = 0
+	v.StoreId = 0
+	v.OperatorType = 0
+	poolTripPoiRawSaveParamV2.Put(v)
 }

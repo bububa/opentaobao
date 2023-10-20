@@ -1,5 +1,9 @@
 package examination
 
+import (
+	"sync"
+)
+
 // Reportdiagnosemessagelist 结构体
 type Reportdiagnosemessagelist struct {
 	// 发送时间
@@ -20,4 +24,29 @@ type Reportdiagnosemessagelist struct {
 	SenderId string `json:"sender_id,omitempty" xml:"sender_id,omitempty"`
 	// 序列号
 	SeqNo string `json:"seq_no,omitempty" xml:"seq_no,omitempty"`
+}
+
+var poolReportdiagnosemessagelist = sync.Pool{
+	New: func() any {
+		return new(Reportdiagnosemessagelist)
+	},
+}
+
+// GetReportdiagnosemessagelist() 从对象池中获取Reportdiagnosemessagelist
+func GetReportdiagnosemessagelist() *Reportdiagnosemessagelist {
+	return poolReportdiagnosemessagelist.Get().(*Reportdiagnosemessagelist)
+}
+
+// ReleaseReportdiagnosemessagelist 释放Reportdiagnosemessagelist
+func ReleaseReportdiagnosemessagelist(v *Reportdiagnosemessagelist) {
+	v.SendTime = ""
+	v.MessageMediaUrl = ""
+	v.MessageType = ""
+	v.MessageContent = ""
+	v.ReceiverName = ""
+	v.ReceiverId = ""
+	v.SenderName = ""
+	v.SenderId = ""
+	v.SeqNo = ""
+	poolReportdiagnosemessagelist.Put(v)
 }

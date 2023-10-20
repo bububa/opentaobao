@@ -2,6 +2,7 @@ package alimember
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMemberExitAPIRequest struct {
 // NewAlibabaMemberExitRequest 初始化AlibabaMemberExitAPIRequest对象
 func NewAlibabaMemberExitRequest() *AlibabaMemberExitAPIRequest {
 	return &AlibabaMemberExitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMemberExitAPIRequest) Reset() {
+	r._exitMember = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMemberExitAPIRequest) SetExitMember(_exitMember *ExitMemberDto) 
 // GetExitMember ExitMember Getter
 func (r AlibabaMemberExitAPIRequest) GetExitMember() *ExitMemberDto {
 	return r._exitMember
+}
+
+var poolAlibabaMemberExitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMemberExitRequest()
+	},
+}
+
+// GetAlibabaMemberExitRequest 从 sync.Pool 获取 AlibabaMemberExitAPIRequest
+func GetAlibabaMemberExitAPIRequest() *AlibabaMemberExitAPIRequest {
+	return poolAlibabaMemberExitAPIRequest.Get().(*AlibabaMemberExitAPIRequest)
+}
+
+// ReleaseAlibabaMemberExitAPIRequest 将 AlibabaMemberExitAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMemberExitAPIRequest(v *AlibabaMemberExitAPIRequest) {
+	v.Reset()
+	poolAlibabaMemberExitAPIRequest.Put(v)
 }

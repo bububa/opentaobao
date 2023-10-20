@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // AlibabaAscpChannelSubRefundCreateResultDto 结构体
 type AlibabaAscpChannelSubRefundCreateResultDto struct {
 	// 错误码
@@ -10,4 +14,24 @@ type AlibabaAscpChannelSubRefundCreateResultDto struct {
 	Data *AlibabaAscpChannelSubRefundCreateData `json:"data,omitempty" xml:"data,omitempty"`
 	// 执行结果
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaAscpChannelSubRefundCreateResultDto = sync.Pool{
+	New: func() any {
+		return new(AlibabaAscpChannelSubRefundCreateResultDto)
+	},
+}
+
+// GetAlibabaAscpChannelSubRefundCreateResultDto() 从对象池中获取AlibabaAscpChannelSubRefundCreateResultDto
+func GetAlibabaAscpChannelSubRefundCreateResultDto() *AlibabaAscpChannelSubRefundCreateResultDto {
+	return poolAlibabaAscpChannelSubRefundCreateResultDto.Get().(*AlibabaAscpChannelSubRefundCreateResultDto)
+}
+
+// ReleaseAlibabaAscpChannelSubRefundCreateResultDto 释放AlibabaAscpChannelSubRefundCreateResultDto
+func ReleaseAlibabaAscpChannelSubRefundCreateResultDto(v *AlibabaAscpChannelSubRefundCreateResultDto) {
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.Data = nil
+	v.Success = false
+	poolAlibabaAscpChannelSubRefundCreateResultDto.Put(v)
 }

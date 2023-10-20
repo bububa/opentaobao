@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQimenOrderprocessQueryAPIRequest struct {
 // NewTaobaoQimenOrderprocessQueryRequest 初始化TaobaoQimenOrderprocessQueryAPIRequest对象
 func NewTaobaoQimenOrderprocessQueryRequest() *TaobaoQimenOrderprocessQueryAPIRequest {
 	return &TaobaoQimenOrderprocessQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenOrderprocessQueryAPIRequest) Reset() {
+	r._request = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -50,4 +57,21 @@ func (r *TaobaoQimenOrderprocessQueryAPIRequest) SetRequest(_request *OrderProce
 // GetRequest Request Getter
 func (r TaobaoQimenOrderprocessQueryAPIRequest) GetRequest() *OrderProcessQueryRequest {
 	return r._request
+}
+
+var poolTaobaoQimenOrderprocessQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenOrderprocessQueryRequest()
+	},
+}
+
+// GetTaobaoQimenOrderprocessQueryRequest 从 sync.Pool 获取 TaobaoQimenOrderprocessQueryAPIRequest
+func GetTaobaoQimenOrderprocessQueryAPIRequest() *TaobaoQimenOrderprocessQueryAPIRequest {
+	return poolTaobaoQimenOrderprocessQueryAPIRequest.Get().(*TaobaoQimenOrderprocessQueryAPIRequest)
+}
+
+// ReleaseTaobaoQimenOrderprocessQueryAPIRequest 将 TaobaoQimenOrderprocessQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenOrderprocessQueryAPIRequest(v *TaobaoQimenOrderprocessQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenOrderprocessQueryAPIRequest.Put(v)
 }

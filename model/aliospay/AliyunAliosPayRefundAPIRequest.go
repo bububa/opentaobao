@@ -2,6 +2,7 @@ package aliospay
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliyunAliosPayRefundAPIRequest struct {
 // NewAliyunAliosPayRefundRequest 初始化AliyunAliosPayRefundAPIRequest对象
 func NewAliyunAliosPayRefundRequest() *AliyunAliosPayRefundAPIRequest {
 	return &AliyunAliosPayRefundAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliyunAliosPayRefundAPIRequest) Reset() {
+	r._refundRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliyunAliosPayRefundAPIRequest) SetRefundRequest(_refundRequest *Refund
 // GetRefundRequest RefundRequest Getter
 func (r AliyunAliosPayRefundAPIRequest) GetRefundRequest() *RefundRequest {
 	return r._refundRequest
+}
+
+var poolAliyunAliosPayRefundAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliyunAliosPayRefundRequest()
+	},
+}
+
+// GetAliyunAliosPayRefundRequest 从 sync.Pool 获取 AliyunAliosPayRefundAPIRequest
+func GetAliyunAliosPayRefundAPIRequest() *AliyunAliosPayRefundAPIRequest {
+	return poolAliyunAliosPayRefundAPIRequest.Get().(*AliyunAliosPayRefundAPIRequest)
+}
+
+// ReleaseAliyunAliosPayRefundAPIRequest 将 AliyunAliosPayRefundAPIRequest 放入 sync.Pool
+func ReleaseAliyunAliosPayRefundAPIRequest(v *AliyunAliosPayRefundAPIRequest) {
+	v.Reset()
+	poolAliyunAliosPayRefundAPIRequest.Put(v)
 }

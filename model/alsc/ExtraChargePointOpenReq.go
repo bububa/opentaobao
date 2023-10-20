@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // ExtraChargePointOpenReq 结构体
 type ExtraChargePointOpenReq struct {
 	// CS是辰森，KRY是客如云
@@ -24,4 +28,31 @@ type ExtraChargePointOpenReq struct {
 	OutBrandId string `json:"out_brand_id,omitempty" xml:"out_brand_id,omitempty"`
 	// 变更积分数,不能小于等于0
 	ChangePoint int64 `json:"change_point,omitempty" xml:"change_point,omitempty"`
+}
+
+var poolExtraChargePointOpenReq = sync.Pool{
+	New: func() any {
+		return new(ExtraChargePointOpenReq)
+	},
+}
+
+// GetExtraChargePointOpenReq() 从对象池中获取ExtraChargePointOpenReq
+func GetExtraChargePointOpenReq() *ExtraChargePointOpenReq {
+	return poolExtraChargePointOpenReq.Get().(*ExtraChargePointOpenReq)
+}
+
+// ReleaseExtraChargePointOpenReq 释放ExtraChargePointOpenReq
+func ReleaseExtraChargePointOpenReq(v *ExtraChargePointOpenReq) {
+	v.BizChannel = ""
+	v.BrandId = ""
+	v.CustomerId = ""
+	v.OperatorId = ""
+	v.OutBizId = ""
+	v.Reason = ""
+	v.RequestId = ""
+	v.ShopId = ""
+	v.OutShopId = ""
+	v.OutBrandId = ""
+	v.ChangePoint = 0
+	poolExtraChargePointOpenReq.Put(v)
 }

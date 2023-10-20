@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // UserBlacklistRequest 结构体
 type UserBlacklistRequest struct {
 	// 黑名单用户
@@ -16,4 +20,27 @@ type UserBlacklistRequest struct {
 	RequestTime int64 `json:"request_time,omitempty" xml:"request_time,omitempty"`
 	// 更新类型 1-新增(增量新增) /更新 ；2-删除
 	OperateType int64 `json:"operate_type,omitempty" xml:"operate_type,omitempty"`
+}
+
+var poolUserBlacklistRequest = sync.Pool{
+	New: func() any {
+		return new(UserBlacklistRequest)
+	},
+}
+
+// GetUserBlacklistRequest() 从对象池中获取UserBlacklistRequest
+func GetUserBlacklistRequest() *UserBlacklistRequest {
+	return poolUserBlacklistRequest.Get().(*UserBlacklistRequest)
+}
+
+// ReleaseUserBlacklistRequest 释放UserBlacklistRequest
+func ReleaseUserBlacklistRequest(v *UserBlacklistRequest) {
+	v.Blacklist = v.Blacklist[:0]
+	v.RequestId = ""
+	v.SupplierId = ""
+	v.ServiceType = ""
+	v.AbilityType = ""
+	v.RequestTime = 0
+	v.OperateType = 0
+	poolUserBlacklistRequest.Put(v)
 }

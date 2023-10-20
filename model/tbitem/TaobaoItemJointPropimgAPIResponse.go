@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoItemJointPropimgAPIResponse struct {
 	TaobaoItemJointPropimgAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoItemJointPropimgAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoItemJointPropimgAPIResponseModel).Reset()
+}
+
 // TaobaoItemJointPropimgAPIResponseModel is 商品关联属性图 成功返回结果
 type TaobaoItemJointPropimgAPIResponseModel struct {
 	XMLName xml.Name `xml:"item_joint_propimg_response"`
@@ -22,4 +29,27 @@ type TaobaoItemJointPropimgAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 属性图片对象信息
 	PropImg *PropImg `json:"prop_img,omitempty" xml:"prop_img,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoItemJointPropimgAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.PropImg = nil
+}
+
+var poolTaobaoItemJointPropimgAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoItemJointPropimgAPIResponse)
+	},
+}
+
+// GetTaobaoItemJointPropimgAPIResponse 从 sync.Pool 获取 TaobaoItemJointPropimgAPIResponse
+func GetTaobaoItemJointPropimgAPIResponse() *TaobaoItemJointPropimgAPIResponse {
+	return poolTaobaoItemJointPropimgAPIResponse.Get().(*TaobaoItemJointPropimgAPIResponse)
+}
+
+// ReleaseTaobaoItemJointPropimgAPIResponse 将 TaobaoItemJointPropimgAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoItemJointPropimgAPIResponse(v *TaobaoItemJointPropimgAPIResponse) {
+	v.Reset()
+	poolTaobaoItemJointPropimgAPIResponse.Put(v)
 }

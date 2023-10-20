@@ -9,11 +9,6 @@ import (
 // yunos.tvpubadmin.manage.topic.contentdelete
 //
 // 删除专题下内容信息
-func YunosTvpubadminManageTopicContentdelete(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminManageTopicContentdeleteAPIRequest, session string) (*tvupadmin.YunosTvpubadminManageTopicContentdeleteAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminManageTopicContentdeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosTvpubadminManageTopicContentdelete(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminManageTopicContentdeleteAPIRequest, resp *tvupadmin.YunosTvpubadminManageTopicContentdeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

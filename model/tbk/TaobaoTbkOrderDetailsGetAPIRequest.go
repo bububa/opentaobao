@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type TaobaoTbkOrderDetailsGetAPIRequest struct {
 // NewTaobaoTbkOrderDetailsGetRequest 初始化TaobaoTbkOrderDetailsGetAPIRequest对象
 func NewTaobaoTbkOrderDetailsGetRequest() *TaobaoTbkOrderDetailsGetAPIRequest {
 	return &TaobaoTbkOrderDetailsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkOrderDetailsGetAPIRequest) Reset() {
+	r._positionIndex = ""
+	r._endTime = ""
+	r._startTime = ""
+	r._queryType = 0
+	r._pageSize = 0
+	r._memberType = 0
+	r._tkStatus = 0
+	r._jumpType = 0
+	r._pageNo = 0
+	r._orderScene = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *TaobaoTbkOrderDetailsGetAPIRequest) SetOrderScene(_orderScene int64) er
 // GetOrderScene OrderScene Getter
 func (r TaobaoTbkOrderDetailsGetAPIRequest) GetOrderScene() int64 {
 	return r._orderScene
+}
+
+var poolTaobaoTbkOrderDetailsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkOrderDetailsGetRequest()
+	},
+}
+
+// GetTaobaoTbkOrderDetailsGetRequest 从 sync.Pool 获取 TaobaoTbkOrderDetailsGetAPIRequest
+func GetTaobaoTbkOrderDetailsGetAPIRequest() *TaobaoTbkOrderDetailsGetAPIRequest {
+	return poolTaobaoTbkOrderDetailsGetAPIRequest.Get().(*TaobaoTbkOrderDetailsGetAPIRequest)
+}
+
+// ReleaseTaobaoTbkOrderDetailsGetAPIRequest 将 TaobaoTbkOrderDetailsGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkOrderDetailsGetAPIRequest(v *TaobaoTbkOrderDetailsGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkOrderDetailsGetAPIRequest.Put(v)
 }

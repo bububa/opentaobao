@@ -1,5 +1,9 @@
 package aedropshiper
 
+import (
+	"sync"
+)
+
 // PackageInfoDto 结构体
 type PackageInfoDto struct {
 	// The gross weight of the product
@@ -16,4 +20,27 @@ type PackageInfoDto struct {
 	ProductUnit int64 `json:"product_unit,omitempty" xml:"product_unit,omitempty"`
 	// Type of packaging
 	PackageType bool `json:"package_type,omitempty" xml:"package_type,omitempty"`
+}
+
+var poolPackageInfoDto = sync.Pool{
+	New: func() any {
+		return new(PackageInfoDto)
+	},
+}
+
+// GetPackageInfoDto() 从对象池中获取PackageInfoDto
+func GetPackageInfoDto() *PackageInfoDto {
+	return poolPackageInfoDto.Get().(*PackageInfoDto)
+}
+
+// ReleasePackageInfoDto 释放PackageInfoDto
+func ReleasePackageInfoDto(v *PackageInfoDto) {
+	v.GrossWeight = ""
+	v.PackageLength = 0
+	v.PackageHeight = 0
+	v.PackageWidth = 0
+	v.BaseUnit = 0
+	v.ProductUnit = 0
+	v.PackageType = false
+	poolPackageInfoDto.Put(v)
 }

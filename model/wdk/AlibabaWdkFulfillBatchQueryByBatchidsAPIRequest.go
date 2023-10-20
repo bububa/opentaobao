@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest struct {
 // NewAlibabaWdkFulfillBatchQueryByBatchidsRequest 初始化AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest对象
 func NewAlibabaWdkFulfillBatchQueryByBatchidsRequest() *AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest {
 	return &AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest) Reset() {
+	r._batchIds = r._batchIds[:0]
+	r._nodeType = ""
+	r._nodeCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest) SetNodeCode(_nodeCode 
 // GetNodeCode NodeCode Getter
 func (r AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest) GetNodeCode() string {
 	return r._nodeCode
+}
+
+var poolAlibabaWdkFulfillBatchQueryByBatchidsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkFulfillBatchQueryByBatchidsRequest()
+	},
+}
+
+// GetAlibabaWdkFulfillBatchQueryByBatchidsRequest 从 sync.Pool 获取 AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest
+func GetAlibabaWdkFulfillBatchQueryByBatchidsAPIRequest() *AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest {
+	return poolAlibabaWdkFulfillBatchQueryByBatchidsAPIRequest.Get().(*AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest)
+}
+
+// ReleaseAlibabaWdkFulfillBatchQueryByBatchidsAPIRequest 将 AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkFulfillBatchQueryByBatchidsAPIRequest(v *AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkFulfillBatchQueryByBatchidsAPIRequest.Put(v)
 }

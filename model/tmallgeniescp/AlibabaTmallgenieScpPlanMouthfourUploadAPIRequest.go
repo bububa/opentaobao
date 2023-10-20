@@ -2,6 +2,7 @@ package tmallgeniescp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTmallgenieScpPlanMouthfourUploadAPIRequest struct {
 // NewAlibabaTmallgenieScpPlanMouthfourUploadRequest 初始化AlibabaTmallgenieScpPlanMouthfourUploadAPIRequest对象
 func NewAlibabaTmallgenieScpPlanMouthfourUploadRequest() *AlibabaTmallgenieScpPlanMouthfourUploadAPIRequest {
 	return &AlibabaTmallgenieScpPlanMouthfourUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTmallgenieScpPlanMouthfourUploadAPIRequest) Reset() {
+	r._monthFourPrRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTmallgenieScpPlanMouthfourUploadAPIRequest) SetMonthFourPrReques
 // GetMonthFourPrRequest MonthFourPrRequest Getter
 func (r AlibabaTmallgenieScpPlanMouthfourUploadAPIRequest) GetMonthFourPrRequest() *MonthFourPrRequest {
 	return r._monthFourPrRequest
+}
+
+var poolAlibabaTmallgenieScpPlanMouthfourUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTmallgenieScpPlanMouthfourUploadRequest()
+	},
+}
+
+// GetAlibabaTmallgenieScpPlanMouthfourUploadRequest 从 sync.Pool 获取 AlibabaTmallgenieScpPlanMouthfourUploadAPIRequest
+func GetAlibabaTmallgenieScpPlanMouthfourUploadAPIRequest() *AlibabaTmallgenieScpPlanMouthfourUploadAPIRequest {
+	return poolAlibabaTmallgenieScpPlanMouthfourUploadAPIRequest.Get().(*AlibabaTmallgenieScpPlanMouthfourUploadAPIRequest)
+}
+
+// ReleaseAlibabaTmallgenieScpPlanMouthfourUploadAPIRequest 将 AlibabaTmallgenieScpPlanMouthfourUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTmallgenieScpPlanMouthfourUploadAPIRequest(v *AlibabaTmallgenieScpPlanMouthfourUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaTmallgenieScpPlanMouthfourUploadAPIRequest.Put(v)
 }

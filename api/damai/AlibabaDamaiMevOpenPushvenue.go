@@ -9,11 +9,6 @@ import (
 // alibaba.damai.mev.open.pushvenue
 //
 // 开放接口推送场馆
-func AlibabaDamaiMevOpenPushvenue(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushvenueAPIRequest, session string) (*damai.AlibabaDamaiMevOpenPushvenueAPIResponse, error) {
-	var resp damai.AlibabaDamaiMevOpenPushvenueAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMevOpenPushvenue(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushvenueAPIRequest, resp *damai.AlibabaDamaiMevOpenPushvenueAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

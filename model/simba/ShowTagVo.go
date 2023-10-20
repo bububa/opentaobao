@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // ShowTagVo 结构体
 type ShowTagVo struct {
 	// 标签code
@@ -16,4 +20,27 @@ type ShowTagVo struct {
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
 	// 扩展属性
 	Properties string `json:"properties,omitempty" xml:"properties,omitempty"`
+}
+
+var poolShowTagVo = sync.Pool{
+	New: func() any {
+		return new(ShowTagVo)
+	},
+}
+
+// GetShowTagVo() 从对象池中获取ShowTagVo
+func GetShowTagVo() *ShowTagVo {
+	return poolShowTagVo.Get().(*ShowTagVo)
+}
+
+// ReleaseShowTagVo 释放ShowTagVo
+func ReleaseShowTagVo(v *ShowTagVo) {
+	v.Code = ""
+	v.Name = ""
+	v.Tips = ""
+	v.Icon = ""
+	v.Color = ""
+	v.Type = ""
+	v.Properties = ""
+	poolShowTagVo.Put(v)
 }

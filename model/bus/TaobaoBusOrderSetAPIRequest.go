@@ -2,6 +2,7 @@ package bus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,14 +14,20 @@ import (
 type TaobaoBusOrderSetAPIRequest struct {
 	model.Params
 	// 下单参数
-	_paramB2BCreateOrderRQ *B2bcreateOrderRq
+	_paramB2BCreateOrderRQ *B2BCreateOrderRq
 }
 
 // NewTaobaoBusOrderSetRequest 初始化TaobaoBusOrderSetAPIRequest对象
 func NewTaobaoBusOrderSetRequest() *TaobaoBusOrderSetAPIRequest {
 	return &TaobaoBusOrderSetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBusOrderSetAPIRequest) Reset() {
+	r._paramB2BCreateOrderRQ = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -42,13 +49,30 @@ func (r TaobaoBusOrderSetAPIRequest) GetRawParams() model.Params {
 
 // SetParamB2BCreateOrderRQ is ParamB2BCreateOrderRQ Setter
 // 下单参数
-func (r *TaobaoBusOrderSetAPIRequest) SetParamB2BCreateOrderRQ(_paramB2BCreateOrderRQ *B2bcreateOrderRq) error {
+func (r *TaobaoBusOrderSetAPIRequest) SetParamB2BCreateOrderRQ(_paramB2BCreateOrderRQ *B2BCreateOrderRq) error {
 	r._paramB2BCreateOrderRQ = _paramB2BCreateOrderRQ
 	r.Set("param_b2_b_create_order_r_q", _paramB2BCreateOrderRQ)
 	return nil
 }
 
 // GetParamB2BCreateOrderRQ ParamB2BCreateOrderRQ Getter
-func (r TaobaoBusOrderSetAPIRequest) GetParamB2BCreateOrderRQ() *B2bcreateOrderRq {
+func (r TaobaoBusOrderSetAPIRequest) GetParamB2BCreateOrderRQ() *B2BCreateOrderRq {
 	return r._paramB2BCreateOrderRQ
+}
+
+var poolTaobaoBusOrderSetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBusOrderSetRequest()
+	},
+}
+
+// GetTaobaoBusOrderSetRequest 从 sync.Pool 获取 TaobaoBusOrderSetAPIRequest
+func GetTaobaoBusOrderSetAPIRequest() *TaobaoBusOrderSetAPIRequest {
+	return poolTaobaoBusOrderSetAPIRequest.Get().(*TaobaoBusOrderSetAPIRequest)
+}
+
+// ReleaseTaobaoBusOrderSetAPIRequest 将 TaobaoBusOrderSetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBusOrderSetAPIRequest(v *TaobaoBusOrderSetAPIRequest) {
+	v.Reset()
+	poolTaobaoBusOrderSetAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package alicom
 
+import (
+	"sync"
+)
+
 // EndCallRequest 结构体
 type EndCallRequest struct {
 	// 唯一呼叫ID，需要和转呼控制接口的call_id对应起来；最大可支持字符串长度256
@@ -46,4 +50,42 @@ type EndCallRequest struct {
 	SmsNumber int64 `json:"sms_number,omitempty" xml:"sms_number,omitempty"`
 	// 顺振全部呼叫事件
 	SequceCallInfo *SequceCallInfo `json:"sequce_call_info,omitempty" xml:"sequce_call_info,omitempty"`
+}
+
+var poolEndCallRequest = sync.Pool{
+	New: func() any {
+		return new(EndCallRequest)
+	},
+}
+
+// GetEndCallRequest() 从对象池中获取EndCallRequest
+func GetEndCallRequest() *EndCallRequest {
+	return poolEndCallRequest.Get().(*EndCallRequest)
+}
+
+// ReleaseEndCallRequest 释放EndCallRequest
+func ReleaseEndCallRequest(v *EndCallRequest) {
+	v.CallId = ""
+	v.RingTime = ""
+	v.StartTime = ""
+	v.SecretNo = ""
+	v.CallOutTime = ""
+	v.ReleaseTime = ""
+	v.SubsId = ""
+	v.VendorKey = ""
+	v.FreeRingTime = ""
+	v.RecordUrl = ""
+	v.CallResult = ""
+	v.RingingRecordUrl = ""
+	v.CallType = ""
+	v.CallNo = ""
+	v.CalledNo = ""
+	v.ExtensionNo = ""
+	v.EndCallIvrDtmf = ""
+	v.SmsSubmitResult = ""
+	v.ReleaseCause = 0
+	v.ReleaseDir = 0
+	v.SmsNumber = 0
+	v.SequceCallInfo = nil
+	poolEndCallRequest.Put(v)
 }

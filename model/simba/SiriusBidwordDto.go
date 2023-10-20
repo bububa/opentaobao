@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // SiriusBidwordDto 结构体
 type SiriusBidwordDto struct {
 	// 关键词
@@ -24,4 +28,31 @@ type SiriusBidwordDto struct {
 	AuditStatus int64 `json:"audit_status,omitempty" xml:"audit_status,omitempty"`
 	// 关键词id
 	BidwordId int64 `json:"bidword_id,omitempty" xml:"bidword_id,omitempty"`
+}
+
+var poolSiriusBidwordDto = sync.Pool{
+	New: func() any {
+		return new(SiriusBidwordDto)
+	},
+}
+
+// GetSiriusBidwordDto() 从对象池中获取SiriusBidwordDto
+func GetSiriusBidwordDto() *SiriusBidwordDto {
+	return poolSiriusBidwordDto.Get().(*SiriusBidwordDto)
+}
+
+// ReleaseSiriusBidwordDto 释放SiriusBidwordDto
+func ReleaseSiriusBidwordDto(v *SiriusBidwordDto) {
+	v.Word = ""
+	v.AuditReason = ""
+	v.PlanDeleteTime = ""
+	v.MobileBidPrice = 0
+	v.Id = 0
+	v.AdgroupId = 0
+	v.GarbageStatus = 0
+	v.MatchScope = 0
+	v.CampaignId = 0
+	v.AuditStatus = 0
+	v.BidwordId = 0
+	poolSiriusBidwordDto.Put(v)
 }

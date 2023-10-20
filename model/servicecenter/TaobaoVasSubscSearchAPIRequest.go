@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type TaobaoVasSubscSearchAPIRequest struct {
 // NewTaobaoVasSubscSearchRequest 初始化TaobaoVasSubscSearchAPIRequest对象
 func NewTaobaoVasSubscSearchRequest() *TaobaoVasSubscSearchAPIRequest {
 	return &TaobaoVasSubscSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoVasSubscSearchAPIRequest) Reset() {
+	r._articleCode = ""
+	r._itemCode = ""
+	r._startDeadline = ""
+	r._endDeadline = ""
+	r._nick = ""
+	r._status = 0
+	r._pageSize = 0
+	r._pageNo = 0
+	r._autosub = false
+	r._expireNotice = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *TaobaoVasSubscSearchAPIRequest) SetExpireNotice(_expireNotice bool) err
 // GetExpireNotice ExpireNotice Getter
 func (r TaobaoVasSubscSearchAPIRequest) GetExpireNotice() bool {
 	return r._expireNotice
+}
+
+var poolTaobaoVasSubscSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoVasSubscSearchRequest()
+	},
+}
+
+// GetTaobaoVasSubscSearchRequest 从 sync.Pool 获取 TaobaoVasSubscSearchAPIRequest
+func GetTaobaoVasSubscSearchAPIRequest() *TaobaoVasSubscSearchAPIRequest {
+	return poolTaobaoVasSubscSearchAPIRequest.Get().(*TaobaoVasSubscSearchAPIRequest)
+}
+
+// ReleaseTaobaoVasSubscSearchAPIRequest 将 TaobaoVasSubscSearchAPIRequest 放入 sync.Pool
+func ReleaseTaobaoVasSubscSearchAPIRequest(v *TaobaoVasSubscSearchAPIRequest) {
+	v.Reset()
+	poolTaobaoVasSubscSearchAPIRequest.Put(v)
 }

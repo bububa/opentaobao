@@ -9,11 +9,6 @@ import (
 // alibaba.legal.suit.file.upload
 //
 // 上传文件接口
-func AlibabaLegalSuitFileUpload(clt *core.SDKClient, req *legalcase.AlibabaLegalSuitFileUploadAPIRequest, session string) (*legalcase.AlibabaLegalSuitFileUploadAPIResponse, error) {
-	var resp legalcase.AlibabaLegalSuitFileUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLegalSuitFileUpload(clt *core.SDKClient, req *legalcase.AlibabaLegalSuitFileUploadAPIRequest, resp *legalcase.AlibabaLegalSuitFileUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

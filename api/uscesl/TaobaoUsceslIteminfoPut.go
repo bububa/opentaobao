@@ -9,11 +9,6 @@ import (
 // taobao.uscesl.iteminfo.put
 //
 // 用于电子价签上显示的商品信息的写入，包含价格及促销信息
-func TaobaoUsceslIteminfoPut(clt *core.SDKClient, req *uscesl.TaobaoUsceslIteminfoPutAPIRequest, session string) (*uscesl.TaobaoUsceslIteminfoPutAPIResponse, error) {
-	var resp uscesl.TaobaoUsceslIteminfoPutAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUsceslIteminfoPut(clt *core.SDKClient, req *uscesl.TaobaoUsceslIteminfoPutAPIRequest, resp *uscesl.TaobaoUsceslIteminfoPutAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

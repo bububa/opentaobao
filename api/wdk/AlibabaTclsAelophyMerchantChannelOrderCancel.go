@@ -9,11 +9,6 @@ import (
 // alibaba.tcls.aelophy.merchant.channel.order.cancel
 //
 // 翱象小程序用户取消订单
-func AlibabaTclsAelophyMerchantChannelOrderCancel(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantChannelOrderCancelAPIRequest, session string) (*wdk.AlibabaTclsAelophyMerchantChannelOrderCancelAPIResponse, error) {
-	var resp wdk.AlibabaTclsAelophyMerchantChannelOrderCancelAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTclsAelophyMerchantChannelOrderCancel(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantChannelOrderCancelAPIRequest, resp *wdk.AlibabaTclsAelophyMerchantChannelOrderCancelAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

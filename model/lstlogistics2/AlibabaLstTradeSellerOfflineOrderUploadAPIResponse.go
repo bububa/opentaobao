@@ -2,6 +2,7 @@ package lstlogistics2
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaLstTradeSellerOfflineOrderUploadAPIResponse struct {
 	AlibabaLstTradeSellerOfflineOrderUploadAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaLstTradeSellerOfflineOrderUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaLstTradeSellerOfflineOrderUploadAPIResponseModel).Reset()
+}
+
 // AlibabaLstTradeSellerOfflineOrderUploadAPIResponseModel is 供应商-线下订单-导入接口 成功返回结果
 type AlibabaLstTradeSellerOfflineOrderUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_lst_trade_seller_offline_order_upload_response"`
@@ -22,4 +29,27 @@ type AlibabaLstTradeSellerOfflineOrderUploadAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *AlibabaLstTradeSellerOfflineOrderUploadResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaLstTradeSellerOfflineOrderUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaLstTradeSellerOfflineOrderUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaLstTradeSellerOfflineOrderUploadAPIResponse)
+	},
+}
+
+// GetAlibabaLstTradeSellerOfflineOrderUploadAPIResponse 从 sync.Pool 获取 AlibabaLstTradeSellerOfflineOrderUploadAPIResponse
+func GetAlibabaLstTradeSellerOfflineOrderUploadAPIResponse() *AlibabaLstTradeSellerOfflineOrderUploadAPIResponse {
+	return poolAlibabaLstTradeSellerOfflineOrderUploadAPIResponse.Get().(*AlibabaLstTradeSellerOfflineOrderUploadAPIResponse)
+}
+
+// ReleaseAlibabaLstTradeSellerOfflineOrderUploadAPIResponse 将 AlibabaLstTradeSellerOfflineOrderUploadAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaLstTradeSellerOfflineOrderUploadAPIResponse(v *AlibabaLstTradeSellerOfflineOrderUploadAPIResponse) {
+	v.Reset()
+	poolAlibabaLstTradeSellerOfflineOrderUploadAPIResponse.Put(v)
 }

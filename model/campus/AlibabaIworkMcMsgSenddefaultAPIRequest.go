@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIworkMcMsgSenddefaultAPIRequest struct {
 // NewAlibabaIworkMcMsgSenddefaultRequest 初始化AlibabaIworkMcMsgSenddefaultAPIRequest对象
 func NewAlibabaIworkMcMsgSenddefaultRequest() *AlibabaIworkMcMsgSenddefaultAPIRequest {
 	return &AlibabaIworkMcMsgSenddefaultAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIworkMcMsgSenddefaultAPIRequest) Reset() {
+	r._messageEvent = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIworkMcMsgSenddefaultAPIRequest) SetMessageEvent(_messageEvent *
 // GetMessageEvent MessageEvent Getter
 func (r AlibabaIworkMcMsgSenddefaultAPIRequest) GetMessageEvent() *DefaultMessageEvent {
 	return r._messageEvent
+}
+
+var poolAlibabaIworkMcMsgSenddefaultAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIworkMcMsgSenddefaultRequest()
+	},
+}
+
+// GetAlibabaIworkMcMsgSenddefaultRequest 从 sync.Pool 获取 AlibabaIworkMcMsgSenddefaultAPIRequest
+func GetAlibabaIworkMcMsgSenddefaultAPIRequest() *AlibabaIworkMcMsgSenddefaultAPIRequest {
+	return poolAlibabaIworkMcMsgSenddefaultAPIRequest.Get().(*AlibabaIworkMcMsgSenddefaultAPIRequest)
+}
+
+// ReleaseAlibabaIworkMcMsgSenddefaultAPIRequest 将 AlibabaIworkMcMsgSenddefaultAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIworkMcMsgSenddefaultAPIRequest(v *AlibabaIworkMcMsgSenddefaultAPIRequest) {
+	v.Reset()
+	poolAlibabaIworkMcMsgSenddefaultAPIRequest.Put(v)
 }

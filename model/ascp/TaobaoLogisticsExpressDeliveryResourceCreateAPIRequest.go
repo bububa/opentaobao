@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsExpressDeliveryResourceCreateAPIRequest struct {
 // NewTaobaoLogisticsExpressDeliveryResourceCreateRequest 初始化TaobaoLogisticsExpressDeliveryResourceCreateAPIRequest对象
 func NewTaobaoLogisticsExpressDeliveryResourceCreateRequest() *TaobaoLogisticsExpressDeliveryResourceCreateAPIRequest {
 	return &TaobaoLogisticsExpressDeliveryResourceCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsExpressDeliveryResourceCreateAPIRequest) Reset() {
+	r._deliveryResourceCreateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsExpressDeliveryResourceCreateAPIRequest) SetDeliveryReso
 // GetDeliveryResourceCreateRequest DeliveryResourceCreateRequest Getter
 func (r TaobaoLogisticsExpressDeliveryResourceCreateAPIRequest) GetDeliveryResourceCreateRequest() *DeliveryResourceCreateRequest {
 	return r._deliveryResourceCreateRequest
+}
+
+var poolTaobaoLogisticsExpressDeliveryResourceCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsExpressDeliveryResourceCreateRequest()
+	},
+}
+
+// GetTaobaoLogisticsExpressDeliveryResourceCreateRequest 从 sync.Pool 获取 TaobaoLogisticsExpressDeliveryResourceCreateAPIRequest
+func GetTaobaoLogisticsExpressDeliveryResourceCreateAPIRequest() *TaobaoLogisticsExpressDeliveryResourceCreateAPIRequest {
+	return poolTaobaoLogisticsExpressDeliveryResourceCreateAPIRequest.Get().(*TaobaoLogisticsExpressDeliveryResourceCreateAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsExpressDeliveryResourceCreateAPIRequest 将 TaobaoLogisticsExpressDeliveryResourceCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsExpressDeliveryResourceCreateAPIRequest(v *TaobaoLogisticsExpressDeliveryResourceCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsExpressDeliveryResourceCreateAPIRequest.Put(v)
 }

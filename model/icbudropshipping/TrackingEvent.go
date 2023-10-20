@@ -1,5 +1,9 @@
 package icbudropshipping
 
+import (
+	"sync"
+)
+
 // TrackingEvent 结构体
 type TrackingEvent struct {
 	// event code
@@ -10,4 +14,24 @@ type TrackingEvent struct {
 	EventName string `json:"event_name,omitempty" xml:"event_name,omitempty"`
 	// event time
 	EventTime string `json:"event_time,omitempty" xml:"event_time,omitempty"`
+}
+
+var poolTrackingEvent = sync.Pool{
+	New: func() any {
+		return new(TrackingEvent)
+	},
+}
+
+// GetTrackingEvent() 从对象池中获取TrackingEvent
+func GetTrackingEvent() *TrackingEvent {
+	return poolTrackingEvent.Get().(*TrackingEvent)
+}
+
+// ReleaseTrackingEvent 释放TrackingEvent
+func ReleaseTrackingEvent(v *TrackingEvent) {
+	v.EventCode = ""
+	v.EventLocation = ""
+	v.EventName = ""
+	v.EventTime = ""
+	poolTrackingEvent.Put(v)
 }

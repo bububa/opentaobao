@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // Trade 结构体
 type Trade struct {
 	// 订单列表
@@ -178,4 +182,108 @@ type Trade struct {
 	IsPartConsign bool `json:"is_part_consign,omitempty" xml:"is_part_consign,omitempty"`
 	// 判断订单是否有买家留言，有买家留言返回true，否则返回false
 	HasBuyerMessage bool `json:"has_buyer_message,omitempty" xml:"has_buyer_message,omitempty"`
+}
+
+var poolTrade = sync.Pool{
+	New: func() any {
+		return new(Trade)
+	},
+}
+
+// GetTrade() 从对象池中获取Trade
+func GetTrade() *Trade {
+	return poolTrade.Get().(*Trade)
+}
+
+// ReleaseTrade 释放Trade
+func ReleaseTrade(v *Trade) {
+	v.Orders = v.Orders[:0]
+	v.PromotionDetails = v.PromotionDetails[:0]
+	v.ServiceTags = v.ServiceTags[:0]
+	v.ServiceOrders = v.ServiceOrders[:0]
+	v.Type = ""
+	v.Created = ""
+	v.Tid = ""
+	v.Status = ""
+	v.TotalFee = ""
+	v.Price = ""
+	v.PayTime = ""
+	v.SellerMemo = ""
+	v.BuyerMemo = ""
+	v.PostFee = ""
+	v.StepTradeStatus = ""
+	v.StepPaidFee = ""
+	v.SellerNick = ""
+	v.Payment = ""
+	v.Modified = ""
+	v.BuyerOpenUid = ""
+	v.BuyerNick = ""
+	v.Title = ""
+	v.Sid = ""
+	v.DiscountFee = ""
+	v.AdjustFee = ""
+	v.EndTime = ""
+	v.ConsignTime = ""
+	v.ReceivedPayment = ""
+	v.CommissionFee = ""
+	v.AlipayNo = ""
+	v.BuyerMessage = ""
+	v.PicPath = ""
+	v.CodFee = ""
+	v.CodStatus = ""
+	v.ShippingType = ""
+	v.ArriveCutTime = ""
+	v.O2o = ""
+	v.O2oGuideId = ""
+	v.O2oGuideName = ""
+	v.O2oShopId = ""
+	v.O2oShopName = ""
+	v.O2oDelivery = ""
+	v.O2oOutTradeId = ""
+	v.EtSerTime = ""
+	v.EtShopName = ""
+	v.EtVerifiedShopName = ""
+	v.EtPlateNumber = ""
+	v.OrderTaxFee = ""
+	v.EticketServiceAddr = ""
+	v.O2oEtOrderId = ""
+	v.OrderTaxPromotionFee = ""
+	v.Pmtp = ""
+	v.ReceiverState = ""
+	v.ReceiverCity = ""
+	v.AvailableConfirmFee = ""
+	v.TimeoutActionTime = ""
+	v.SnapshotUrl = ""
+	v.TradeFrom = ""
+	v.ExpandCardBasicPrice = ""
+	v.ExpandCardExpandPrice = ""
+	v.ExpandCardBasicPriceUsed = ""
+	v.ExpandCardExpandPriceUsed = ""
+	v.RxAuditStatus = ""
+	v.Ouid = ""
+	v.AsyncModified = ""
+	v.BuyerArea = ""
+	v.TradeSource = ""
+	v.SendTime = ""
+	v.MarkDesc = ""
+	v.NumIid = 0
+	v.Num = 0
+	v.PointFee = 0
+	v.RealPointFee = 0
+	v.BuyerObtainPointFee = 0
+	v.ArriveInterval = 0
+	v.ConsignInterval = 0
+	v.ExpandcardInfo = nil
+	v.CouponFee = 0
+	v.SellerFlag = 0
+	v.HasPostFee = false
+	v.SellerRate = false
+	v.BuyerRate = false
+	v.IsDaixiao = false
+	v.IsWt = false
+	v.CanRate = false
+	v.SellerCanRate = false
+	v.IsPartConsign = false
+	v.HasBuyerMessage = false
+	poolTrade.Put(v)
 }

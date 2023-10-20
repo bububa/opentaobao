@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.bnbpromo.bind
 //
 // 自促活动绑定接口
-func TaobaoXhotelBnbpromoBind(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBnbpromoBindAPIRequest, session string) (*xhotelitem.TaobaoXhotelBnbpromoBindAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelBnbpromoBindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelBnbpromoBind(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBnbpromoBindAPIRequest, resp *xhotelitem.TaobaoXhotelBnbpromoBindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

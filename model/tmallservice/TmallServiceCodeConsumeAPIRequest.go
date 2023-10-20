@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TmallServiceCodeConsumeAPIRequest struct {
 // NewTmallServiceCodeConsumeRequest 初始化TmallServiceCodeConsumeAPIRequest对象
 func NewTmallServiceCodeConsumeRequest() *TmallServiceCodeConsumeAPIRequest {
 	return &TmallServiceCodeConsumeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServiceCodeConsumeAPIRequest) Reset() {
+	r._operatorNick = ""
+	r._consumeCode = ""
+	r._shopId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TmallServiceCodeConsumeAPIRequest) SetShopId(_shopId string) error {
 // GetShopId ShopId Getter
 func (r TmallServiceCodeConsumeAPIRequest) GetShopId() string {
 	return r._shopId
+}
+
+var poolTmallServiceCodeConsumeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServiceCodeConsumeRequest()
+	},
+}
+
+// GetTmallServiceCodeConsumeRequest 从 sync.Pool 获取 TmallServiceCodeConsumeAPIRequest
+func GetTmallServiceCodeConsumeAPIRequest() *TmallServiceCodeConsumeAPIRequest {
+	return poolTmallServiceCodeConsumeAPIRequest.Get().(*TmallServiceCodeConsumeAPIRequest)
+}
+
+// ReleaseTmallServiceCodeConsumeAPIRequest 将 TmallServiceCodeConsumeAPIRequest 放入 sync.Pool
+func ReleaseTmallServiceCodeConsumeAPIRequest(v *TmallServiceCodeConsumeAPIRequest) {
+	v.Reset()
+	poolTmallServiceCodeConsumeAPIRequest.Put(v)
 }

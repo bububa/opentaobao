@@ -1,5 +1,9 @@
 package damai
 
+import (
+	"sync"
+)
+
 // ThirdTicketFacePushOpenParam 结构体
 type ThirdTicketFacePushOpenParam struct {
 	// 推送时间
@@ -18,4 +22,28 @@ type ThirdTicketFacePushOpenParam struct {
 	PerformId int64 `json:"perform_id,omitempty" xml:"perform_id,omitempty"`
 	// 系统id
 	SystemId int64 `json:"system_id,omitempty" xml:"system_id,omitempty"`
+}
+
+var poolThirdTicketFacePushOpenParam = sync.Pool{
+	New: func() any {
+		return new(ThirdTicketFacePushOpenParam)
+	},
+}
+
+// GetThirdTicketFacePushOpenParam() 从对象池中获取ThirdTicketFacePushOpenParam
+func GetThirdTicketFacePushOpenParam() *ThirdTicketFacePushOpenParam {
+	return poolThirdTicketFacePushOpenParam.Get().(*ThirdTicketFacePushOpenParam)
+}
+
+// ReleaseThirdTicketFacePushOpenParam 释放ThirdTicketFacePushOpenParam
+func ReleaseThirdTicketFacePushOpenParam(v *ThirdTicketFacePushOpenParam) {
+	v.PushTime = ""
+	v.SupplierSecret = ""
+	v.FaceId = 0
+	v.FaceMode = 0
+	v.FrontType = 0
+	v.PaperFormatId = 0
+	v.PerformId = 0
+	v.SystemId = 0
+	poolThirdTicketFacePushOpenParam.Put(v)
 }

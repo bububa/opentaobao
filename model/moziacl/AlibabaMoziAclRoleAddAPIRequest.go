@@ -2,6 +2,7 @@ package moziacl
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMoziAclRoleAddAPIRequest struct {
 // NewAlibabaMoziAclRoleAddRequest 初始化AlibabaMoziAclRoleAddAPIRequest对象
 func NewAlibabaMoziAclRoleAddRequest() *AlibabaMoziAclRoleAddAPIRequest {
 	return &AlibabaMoziAclRoleAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMoziAclRoleAddAPIRequest) Reset() {
+	r._createRoleRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMoziAclRoleAddAPIRequest) SetCreateRoleRequest(_createRoleReques
 // GetCreateRoleRequest CreateRoleRequest Getter
 func (r AlibabaMoziAclRoleAddAPIRequest) GetCreateRoleRequest() *CreateRoleRequest {
 	return r._createRoleRequest
+}
+
+var poolAlibabaMoziAclRoleAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMoziAclRoleAddRequest()
+	},
+}
+
+// GetAlibabaMoziAclRoleAddRequest 从 sync.Pool 获取 AlibabaMoziAclRoleAddAPIRequest
+func GetAlibabaMoziAclRoleAddAPIRequest() *AlibabaMoziAclRoleAddAPIRequest {
+	return poolAlibabaMoziAclRoleAddAPIRequest.Get().(*AlibabaMoziAclRoleAddAPIRequest)
+}
+
+// ReleaseAlibabaMoziAclRoleAddAPIRequest 将 AlibabaMoziAclRoleAddAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMoziAclRoleAddAPIRequest(v *AlibabaMoziAclRoleAddAPIRequest) {
+	v.Reset()
+	poolAlibabaMoziAclRoleAddAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpChannelSupplierProductAuthAPIRequest struct {
 // NewAlibabaAscpChannelSupplierProductAuthRequest 初始化AlibabaAscpChannelSupplierProductAuthAPIRequest对象
 func NewAlibabaAscpChannelSupplierProductAuthRequest() *AlibabaAscpChannelSupplierProductAuthAPIRequest {
 	return &AlibabaAscpChannelSupplierProductAuthAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpChannelSupplierProductAuthAPIRequest) Reset() {
+	r._channelProductAuthRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpChannelSupplierProductAuthAPIRequest) SetChannelProductAuthR
 // GetChannelProductAuthRequest ChannelProductAuthRequest Getter
 func (r AlibabaAscpChannelSupplierProductAuthAPIRequest) GetChannelProductAuthRequest() *ChannelProductAuthRequest {
 	return r._channelProductAuthRequest
+}
+
+var poolAlibabaAscpChannelSupplierProductAuthAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpChannelSupplierProductAuthRequest()
+	},
+}
+
+// GetAlibabaAscpChannelSupplierProductAuthRequest 从 sync.Pool 获取 AlibabaAscpChannelSupplierProductAuthAPIRequest
+func GetAlibabaAscpChannelSupplierProductAuthAPIRequest() *AlibabaAscpChannelSupplierProductAuthAPIRequest {
+	return poolAlibabaAscpChannelSupplierProductAuthAPIRequest.Get().(*AlibabaAscpChannelSupplierProductAuthAPIRequest)
+}
+
+// ReleaseAlibabaAscpChannelSupplierProductAuthAPIRequest 将 AlibabaAscpChannelSupplierProductAuthAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpChannelSupplierProductAuthAPIRequest(v *AlibabaAscpChannelSupplierProductAuthAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpChannelSupplierProductAuthAPIRequest.Put(v)
 }

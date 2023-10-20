@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripMerchantGalaxyMemberProviderRegisterAPIResponse struct {
 	AlitripMerchantGalaxyMemberProviderRegisterAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripMerchantGalaxyMemberProviderRegisterAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripMerchantGalaxyMemberProviderRegisterAPIResponseModel).Reset()
+}
+
 // AlitripMerchantGalaxyMemberProviderRegisterAPIResponseModel is 对外提供会员注册服务 成功返回结果
 type AlitripMerchantGalaxyMemberProviderRegisterAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_merchant_galaxy_member_provider_register_response"`
@@ -22,4 +29,27 @@ type AlitripMerchantGalaxyMemberProviderRegisterAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 默认描述
 	Result *AlitripMerchantGalaxyMemberProviderRegisterResponse `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripMerchantGalaxyMemberProviderRegisterAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlitripMerchantGalaxyMemberProviderRegisterAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyMemberProviderRegisterAPIResponse)
+	},
+}
+
+// GetAlitripMerchantGalaxyMemberProviderRegisterAPIResponse 从 sync.Pool 获取 AlitripMerchantGalaxyMemberProviderRegisterAPIResponse
+func GetAlitripMerchantGalaxyMemberProviderRegisterAPIResponse() *AlitripMerchantGalaxyMemberProviderRegisterAPIResponse {
+	return poolAlitripMerchantGalaxyMemberProviderRegisterAPIResponse.Get().(*AlitripMerchantGalaxyMemberProviderRegisterAPIResponse)
+}
+
+// ReleaseAlitripMerchantGalaxyMemberProviderRegisterAPIResponse 将 AlitripMerchantGalaxyMemberProviderRegisterAPIResponse 保存到 sync.Pool
+func ReleaseAlitripMerchantGalaxyMemberProviderRegisterAPIResponse(v *AlitripMerchantGalaxyMemberProviderRegisterAPIResponse) {
+	v.Reset()
+	poolAlitripMerchantGalaxyMemberProviderRegisterAPIResponse.Put(v)
 }

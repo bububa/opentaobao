@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // WtExtResult 结构体
 type WtExtResult struct {
 	// 用户手机号码
@@ -48,4 +52,43 @@ type WtExtResult struct {
 	UserType int64 `json:"user_type,omitempty" xml:"user_type,omitempty"`
 	// 合约类型，合约类目， 0=机卡合约，1001=购物送，1002=阿里通信号卡合约，1003=信用购，1007=话费充值卡，1005=游戏点卡，1006=QQ点卡，99=未知（默认）
 	ContractType int64 `json:"contract_type,omitempty" xml:"contract_type,omitempty"`
+}
+
+var poolWtExtResult = sync.Pool{
+	New: func() any {
+		return new(WtExtResult)
+	},
+}
+
+// GetWtExtResult() 从对象池中获取WtExtResult
+func GetWtExtResult() *WtExtResult {
+	return poolWtExtResult.Get().(*WtExtResult)
+}
+
+// ReleaseWtExtResult 释放WtExtResult
+func ReleaseWtExtResult(v *WtExtResult) {
+	v.PhoneNum = ""
+	v.PhoneCityCode = ""
+	v.PhoneProvinceCode = ""
+	v.PlanTitle = ""
+	v.OutPlanId = ""
+	v.OutPackageId = ""
+	v.PhoneOwnerName = ""
+	v.CertCardNum = ""
+	v.AuthType = ""
+	v.Attr = ""
+	v.Address = ""
+	v.OwnerName = ""
+	v.Account = ""
+	v.PromotionDesc = ""
+	v.BiometricSeq = ""
+	v.Tid = 0
+	v.EffectRule = 0
+	v.AgreementId = 0
+	v.CertType = 0
+	v.PhoneDeposit = 0
+	v.PhoneFreeDeposit = 0
+	v.UserType = 0
+	v.ContractType = 0
+	poolWtExtResult.Put(v)
 }

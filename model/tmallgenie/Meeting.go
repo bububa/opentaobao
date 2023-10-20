@@ -1,5 +1,9 @@
 package tmallgenie
 
+import (
+	"sync"
+)
+
 // Meeting 结构体
 type Meeting struct {
 	// 会议必选参与人员
@@ -36,4 +40,37 @@ type Meeting struct {
 	MemoId int64 `json:"memo_id,omitempty" xml:"memo_id,omitempty"`
 	// 调度信息
 	ScheduleInfo *ScheduleInfo `json:"schedule_info,omitempty" xml:"schedule_info,omitempty"`
+}
+
+var poolMeeting = sync.Pool{
+	New: func() any {
+		return new(Meeting)
+	},
+}
+
+// GetMeeting() 从对象池中获取Meeting
+func GetMeeting() *Meeting {
+	return poolMeeting.Get().(*Meeting)
+}
+
+// ReleaseMeeting 释放Meeting
+func ReleaseMeeting(v *Meeting) {
+	v.RequiredParticipants = v.RequiredParticipants[:0]
+	v.OptionalParticipants = v.OptionalParticipants[:0]
+	v.AlertWays = v.AlertWays[:0]
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.Uuid = ""
+	v.Status = ""
+	v.ExpectedStartTime = ""
+	v.ExpectedEndTime = ""
+	v.ExpectedRemindTime = ""
+	v.Location = ""
+	v.Organizer = ""
+	v.Content = ""
+	v.Topic = ""
+	v.MusicUrl = ""
+	v.MemoId = 0
+	v.ScheduleInfo = nil
+	poolMeeting.Put(v)
 }

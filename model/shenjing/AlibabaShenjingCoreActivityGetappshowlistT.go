@@ -1,5 +1,9 @@
 package shenjing
 
+import (
+	"sync"
+)
+
 // AlibabaShenjingCoreActivityGetappshowlistT 结构体
 type AlibabaShenjingCoreActivityGetappshowlistT struct {
 	// 获取地址
@@ -28,4 +32,33 @@ type AlibabaShenjingCoreActivityGetappshowlistT struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 活动创建的时间戳
 	Timestamp int64 `json:"timestamp,omitempty" xml:"timestamp,omitempty"`
+}
+
+var poolAlibabaShenjingCoreActivityGetappshowlistT = sync.Pool{
+	New: func() any {
+		return new(AlibabaShenjingCoreActivityGetappshowlistT)
+	},
+}
+
+// GetAlibabaShenjingCoreActivityGetappshowlistT() 从对象池中获取AlibabaShenjingCoreActivityGetappshowlistT
+func GetAlibabaShenjingCoreActivityGetappshowlistT() *AlibabaShenjingCoreActivityGetappshowlistT {
+	return poolAlibabaShenjingCoreActivityGetappshowlistT.Get().(*AlibabaShenjingCoreActivityGetappshowlistT)
+}
+
+// ReleaseAlibabaShenjingCoreActivityGetappshowlistT 释放AlibabaShenjingCoreActivityGetappshowlistT
+func ReleaseAlibabaShenjingCoreActivityGetappshowlistT(v *AlibabaShenjingCoreActivityGetappshowlistT) {
+	v.FullAdress = ""
+	v.ActDetailUrl = ""
+	v.Content = ""
+	v.Status = ""
+	v.ViewEndTime = ""
+	v.ViewStartTime = ""
+	v.ActEndTime = ""
+	v.ActStartTime = ""
+	v.Images = ""
+	v.Name = ""
+	v.WyCompanyId = 0
+	v.Id = 0
+	v.Timestamp = 0
+	poolAlibabaShenjingCoreActivityGetappshowlistT.Put(v)
 }

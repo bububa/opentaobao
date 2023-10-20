@@ -9,11 +9,6 @@ import (
 // taobao.place.store.delete
 //
 // 用于商家删除线下门店
-func TaobaoPlaceStoreDelete(clt *core.SDKClient, req *alsc.TaobaoPlaceStoreDeleteAPIRequest, session string) (*alsc.TaobaoPlaceStoreDeleteAPIResponse, error) {
-	var resp alsc.TaobaoPlaceStoreDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoPlaceStoreDelete(clt *core.SDKClient, req *alsc.TaobaoPlaceStoreDeleteAPIRequest, resp *alsc.TaobaoPlaceStoreDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest struct {
 // NewAlibabaCampusDeviceOpenapiGetdevicerealtimelogRequest 初始化AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest对象
 func NewAlibabaCampusDeviceOpenapiGetdevicerealtimelogRequest() *AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest {
 	return &AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest) Reset() {
+	r._uuid = ""
+	r._workBenchContext = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest) SetWorkBenchC
 // GetWorkBenchContext WorkBenchContext Getter
 func (r AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest) GetWorkBenchContext() *WorkBenchContext {
 	return r._workBenchContext
+}
+
+var poolAlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusDeviceOpenapiGetdevicerealtimelogRequest()
+	},
+}
+
+// GetAlibabaCampusDeviceOpenapiGetdevicerealtimelogRequest 从 sync.Pool 获取 AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest
+func GetAlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest() *AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest {
+	return poolAlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest.Get().(*AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest)
+}
+
+// ReleaseAlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest 将 AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest(v *AlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusDeviceOpenapiGetdevicerealtimelogAPIRequest.Put(v)
 }

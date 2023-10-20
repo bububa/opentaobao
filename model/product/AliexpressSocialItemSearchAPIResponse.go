@@ -2,6 +2,7 @@ package product
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AliexpressSocialItemSearchAPIResponse struct {
 	AliexpressSocialItemSearchAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AliexpressSocialItemSearchAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliexpressSocialItemSearchAPIResponseModel).Reset()
+}
+
 // AliexpressSocialItemSearchAPIResponseModel is AE社交选品 成功返回结果
 type AliexpressSocialItemSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_social_item_search_response"`
@@ -22,4 +29,27 @@ type AliexpressSocialItemSearchAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 报类型
 	Result *ItemPickPagingResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliexpressSocialItemSearchAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAliexpressSocialItemSearchAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliexpressSocialItemSearchAPIResponse)
+	},
+}
+
+// GetAliexpressSocialItemSearchAPIResponse 从 sync.Pool 获取 AliexpressSocialItemSearchAPIResponse
+func GetAliexpressSocialItemSearchAPIResponse() *AliexpressSocialItemSearchAPIResponse {
+	return poolAliexpressSocialItemSearchAPIResponse.Get().(*AliexpressSocialItemSearchAPIResponse)
+}
+
+// ReleaseAliexpressSocialItemSearchAPIResponse 将 AliexpressSocialItemSearchAPIResponse 保存到 sync.Pool
+func ReleaseAliexpressSocialItemSearchAPIResponse(v *AliexpressSocialItemSearchAPIResponse) {
+	v.Reset()
+	poolAliexpressSocialItemSearchAPIResponse.Put(v)
 }

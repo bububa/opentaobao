@@ -2,6 +2,7 @@ package fivee
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoFiveeImportproductPublishAPIRequest struct {
 // NewTaobaoFiveeImportproductPublishRequest 初始化TaobaoFiveeImportproductPublishAPIRequest对象
 func NewTaobaoFiveeImportproductPublishRequest() *TaobaoFiveeImportproductPublishAPIRequest {
 	return &TaobaoFiveeImportproductPublishAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFiveeImportproductPublishAPIRequest) Reset() {
+	r._paramBucode = ""
+	r._importProduct = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoFiveeImportproductPublishAPIRequest) SetImportProduct(_importProd
 // GetImportProduct ImportProduct Getter
 func (r TaobaoFiveeImportproductPublishAPIRequest) GetImportProduct() *ImportProduct {
 	return r._importProduct
+}
+
+var poolTaobaoFiveeImportproductPublishAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFiveeImportproductPublishRequest()
+	},
+}
+
+// GetTaobaoFiveeImportproductPublishRequest 从 sync.Pool 获取 TaobaoFiveeImportproductPublishAPIRequest
+func GetTaobaoFiveeImportproductPublishAPIRequest() *TaobaoFiveeImportproductPublishAPIRequest {
+	return poolTaobaoFiveeImportproductPublishAPIRequest.Get().(*TaobaoFiveeImportproductPublishAPIRequest)
+}
+
+// ReleaseTaobaoFiveeImportproductPublishAPIRequest 将 TaobaoFiveeImportproductPublishAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFiveeImportproductPublishAPIRequest(v *TaobaoFiveeImportproductPublishAPIRequest) {
+	v.Reset()
+	poolTaobaoFiveeImportproductPublishAPIRequest.Put(v)
 }

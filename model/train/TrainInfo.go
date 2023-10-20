@@ -1,5 +1,9 @@
 package train
 
+import (
+	"sync"
+)
+
 // TrainInfo 结构体
 type TrainInfo struct {
 	// 到达站
@@ -14,4 +18,26 @@ type TrainInfo struct {
 	TrainNo string `json:"train_no,omitempty" xml:"train_no,omitempty"`
 	// 坐席信息
 	ChooseSeat string `json:"choose_seat,omitempty" xml:"choose_seat,omitempty"`
+}
+
+var poolTrainInfo = sync.Pool{
+	New: func() any {
+		return new(TrainInfo)
+	},
+}
+
+// GetTrainInfo() 从对象池中获取TrainInfo
+func GetTrainInfo() *TrainInfo {
+	return poolTrainInfo.Get().(*TrainInfo)
+}
+
+// ReleaseTrainInfo 释放TrainInfo
+func ReleaseTrainInfo(v *TrainInfo) {
+	v.TrainTo = ""
+	v.TrainFrom = ""
+	v.SequenceNo = ""
+	v.TrainDate = ""
+	v.TrainNo = ""
+	v.ChooseSeat = ""
+	poolTrainInfo.Put(v)
 }

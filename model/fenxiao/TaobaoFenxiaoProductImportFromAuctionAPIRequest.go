@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoFenxiaoProductImportFromAuctionAPIRequest struct {
 // NewTaobaoFenxiaoProductImportFromAuctionRequest 初始化TaobaoFenxiaoProductImportFromAuctionAPIRequest对象
 func NewTaobaoFenxiaoProductImportFromAuctionRequest() *TaobaoFenxiaoProductImportFromAuctionAPIRequest {
 	return &TaobaoFenxiaoProductImportFromAuctionAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoProductImportFromAuctionAPIRequest) Reset() {
+	r._tradeType = 0
+	r._auctionId = 0
+	r._productLineId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoFenxiaoProductImportFromAuctionAPIRequest) SetProductLineId(_prod
 // GetProductLineId ProductLineId Getter
 func (r TaobaoFenxiaoProductImportFromAuctionAPIRequest) GetProductLineId() int64 {
 	return r._productLineId
+}
+
+var poolTaobaoFenxiaoProductImportFromAuctionAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoProductImportFromAuctionRequest()
+	},
+}
+
+// GetTaobaoFenxiaoProductImportFromAuctionRequest 从 sync.Pool 获取 TaobaoFenxiaoProductImportFromAuctionAPIRequest
+func GetTaobaoFenxiaoProductImportFromAuctionAPIRequest() *TaobaoFenxiaoProductImportFromAuctionAPIRequest {
+	return poolTaobaoFenxiaoProductImportFromAuctionAPIRequest.Get().(*TaobaoFenxiaoProductImportFromAuctionAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoProductImportFromAuctionAPIRequest 将 TaobaoFenxiaoProductImportFromAuctionAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoProductImportFromAuctionAPIRequest(v *TaobaoFenxiaoProductImportFromAuctionAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoProductImportFromAuctionAPIRequest.Put(v)
 }

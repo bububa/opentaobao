@@ -19,11 +19,6 @@ import (
 // 3. 变更eval_recer：可空，返回脱敏的买家nick，如：摩天轮 -&gt; 摩**
 //
 // 4. 新增labelName：可空
-func TaobaoAirislandKefuevalGet(clt *core.SDKClient, req *wangwang.TaobaoAirislandKefuevalGetAPIRequest, session string) (*wangwang.TaobaoAirislandKefuevalGetAPIResponse, error) {
-	var resp wangwang.TaobaoAirislandKefuevalGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAirislandKefuevalGet(clt *core.SDKClient, req *wangwang.TaobaoAirislandKefuevalGetAPIRequest, resp *wangwang.TaobaoAirislandKefuevalGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

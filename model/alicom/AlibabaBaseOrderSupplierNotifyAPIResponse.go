@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaBaseOrderSupplierNotifyAPIResponse struct {
 	AlibabaBaseOrderSupplierNotifyAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaBaseOrderSupplierNotifyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaBaseOrderSupplierNotifyAPIResponseModel).Reset()
+}
+
 // AlibabaBaseOrderSupplierNotifyAPIResponseModel is 阿里通信运营商信息回传 成功返回结果
 type AlibabaBaseOrderSupplierNotifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_base_order_supplier_notify_response"`
@@ -22,4 +29,27 @@ type AlibabaBaseOrderSupplierNotifyAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *CommonResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaBaseOrderSupplierNotifyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaBaseOrderSupplierNotifyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaBaseOrderSupplierNotifyAPIResponse)
+	},
+}
+
+// GetAlibabaBaseOrderSupplierNotifyAPIResponse 从 sync.Pool 获取 AlibabaBaseOrderSupplierNotifyAPIResponse
+func GetAlibabaBaseOrderSupplierNotifyAPIResponse() *AlibabaBaseOrderSupplierNotifyAPIResponse {
+	return poolAlibabaBaseOrderSupplierNotifyAPIResponse.Get().(*AlibabaBaseOrderSupplierNotifyAPIResponse)
+}
+
+// ReleaseAlibabaBaseOrderSupplierNotifyAPIResponse 将 AlibabaBaseOrderSupplierNotifyAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaBaseOrderSupplierNotifyAPIResponse(v *AlibabaBaseOrderSupplierNotifyAPIResponse) {
+	v.Reset()
+	poolAlibabaBaseOrderSupplierNotifyAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenPriceInfo 结构体
 type OpenPriceInfo struct {
 	// 交易类目
@@ -46,4 +50,42 @@ type OpenPriceInfo struct {
 	CategoryType int64 `json:"category_type,omitempty" xml:"category_type,omitempty"`
 	// 交易类目编码
 	CategoryCode int64 `json:"category_code,omitempty" xml:"category_code,omitempty"`
+}
+
+var poolOpenPriceInfo = sync.Pool{
+	New: func() any {
+		return new(OpenPriceInfo)
+	},
+}
+
+// GetOpenPriceInfo() 从对象池中获取OpenPriceInfo
+func GetOpenPriceInfo() *OpenPriceInfo {
+	return poolOpenPriceInfo.Get().(*OpenPriceInfo)
+}
+
+// ReleaseOpenPriceInfo 释放OpenPriceInfo
+func ReleaseOpenPriceInfo(v *OpenPriceInfo) {
+	v.Category = ""
+	v.Price = ""
+	v.GmtCreate = ""
+	v.AlipayTradeNo = ""
+	v.PassengerName = ""
+	v.TradeId = ""
+	v.OriginalTicketNo = ""
+	v.TicketNo = ""
+	v.ChangeFlightNo = ""
+	v.Discount = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.OriginalTrainNo = ""
+	v.TrainNo = ""
+	v.SeatType = ""
+	v.StartCity = ""
+	v.EndCity = ""
+	v.PersonPrice = ""
+	v.PayType = 0
+	v.Type = 0
+	v.CategoryType = 0
+	v.CategoryCode = 0
+	poolOpenPriceInfo.Put(v)
 }

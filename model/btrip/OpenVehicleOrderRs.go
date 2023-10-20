@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenVehicleOrderRs 结构体
 type OpenVehicleOrderRs struct {
 	// 价目详情列表
@@ -86,4 +90,62 @@ type OpenVehicleOrderRs struct {
 	ApplyId int64 `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
 	// 订单id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolOpenVehicleOrderRs = sync.Pool{
+	New: func() any {
+		return new(OpenVehicleOrderRs)
+	},
+}
+
+// GetOpenVehicleOrderRs() 从对象池中获取OpenVehicleOrderRs
+func GetOpenVehicleOrderRs() *OpenVehicleOrderRs {
+	return poolOpenVehicleOrderRs.Get().(*OpenVehicleOrderRs)
+}
+
+// ReleaseOpenVehicleOrderRs 释放OpenVehicleOrderRs
+func ReleaseOpenVehicleOrderRs(v *OpenVehicleOrderRs) {
+	v.PriceInfoList = v.PriceInfoList[:0]
+	v.UserAffiliateList = v.UserAffiliateList[:0]
+	v.ProjectTitle = ""
+	v.ProjectCode = ""
+	v.InvoiceTitle = ""
+	v.CostCenterName = ""
+	v.CostCenterNumber = ""
+	v.BusinessCategory = ""
+	v.CarLicense = ""
+	v.TravelDistance = ""
+	v.CancelTime = ""
+	v.DriverConfirmTime = ""
+	v.TakenTime = ""
+	v.PublishTime = ""
+	v.EstimatePrice = ""
+	v.CarInfo = ""
+	v.Memo = ""
+	v.ToCityName = ""
+	v.FromCityName = ""
+	v.ToAddress = ""
+	v.FromAddress = ""
+	v.RealToCityName = ""
+	v.RealFromCityName = ""
+	v.ApplyShowId = ""
+	v.DepartName = ""
+	v.DepartId = ""
+	v.UserId = ""
+	v.UserName = ""
+	v.CorpName = ""
+	v.CorpId = ""
+	v.PassengerName = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.PayTime = ""
+	v.ThirdpartItineraryId = ""
+	v.InvoiceId = 0
+	v.CostCenterId = 0
+	v.ServiceType = 0
+	v.CarLevel = 0
+	v.OrderStatus = 0
+	v.ApplyId = 0
+	v.Id = 0
+	poolOpenVehicleOrderRs.Put(v)
 }

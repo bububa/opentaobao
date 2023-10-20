@@ -2,6 +2,7 @@ package security
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AlibabaSecurityJaqCaptchaSendAPIRequest struct {
 // NewAlibabaSecurityJaqCaptchaSendRequest 初始化AlibabaSecurityJaqCaptchaSendAPIRequest对象
 func NewAlibabaSecurityJaqCaptchaSendRequest() *AlibabaSecurityJaqCaptchaSendAPIRequest {
 	return &AlibabaSecurityJaqCaptchaSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSecurityJaqCaptchaSendAPIRequest) Reset() {
+	r._extendData = ""
+	r._infoToken = ""
+	r._protocolVersion = ""
+	r._rsign = ""
+	r._rtkenIndex = ""
+	r._utoken = ""
+	r._captchaType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AlibabaSecurityJaqCaptchaSendAPIRequest) SetCaptchaType(_captchaType in
 // GetCaptchaType CaptchaType Getter
 func (r AlibabaSecurityJaqCaptchaSendAPIRequest) GetCaptchaType() int64 {
 	return r._captchaType
+}
+
+var poolAlibabaSecurityJaqCaptchaSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSecurityJaqCaptchaSendRequest()
+	},
+}
+
+// GetAlibabaSecurityJaqCaptchaSendRequest 从 sync.Pool 获取 AlibabaSecurityJaqCaptchaSendAPIRequest
+func GetAlibabaSecurityJaqCaptchaSendAPIRequest() *AlibabaSecurityJaqCaptchaSendAPIRequest {
+	return poolAlibabaSecurityJaqCaptchaSendAPIRequest.Get().(*AlibabaSecurityJaqCaptchaSendAPIRequest)
+}
+
+// ReleaseAlibabaSecurityJaqCaptchaSendAPIRequest 将 AlibabaSecurityJaqCaptchaSendAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSecurityJaqCaptchaSendAPIRequest(v *AlibabaSecurityJaqCaptchaSendAPIRequest) {
+	v.Reset()
+	poolAlibabaSecurityJaqCaptchaSendAPIRequest.Put(v)
 }

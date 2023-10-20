@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // OrderCreateRequest 结构体
 type OrderCreateRequest struct {
 	// 额外信息
@@ -18,4 +22,28 @@ type OrderCreateRequest struct {
 	BuyQuantity int64 `json:"buy_quantity,omitempty" xml:"buy_quantity,omitempty"`
 	// 是否为虚拟商品下单，默认为false
 	VirtualItemOrder bool `json:"virtual_item_order,omitempty" xml:"virtual_item_order,omitempty"`
+}
+
+var poolOrderCreateRequest = sync.Pool{
+	New: func() any {
+		return new(OrderCreateRequest)
+	},
+}
+
+// GetOrderCreateRequest() 从对象池中获取OrderCreateRequest
+func GetOrderCreateRequest() *OrderCreateRequest {
+	return poolOrderCreateRequest.Get().(*OrderCreateRequest)
+}
+
+// ReleaseOrderCreateRequest 释放OrderCreateRequest
+func ReleaseOrderCreateRequest(v *OrderCreateRequest) {
+	v.ExtraData = ""
+	v.VirtualItemCode = ""
+	v.XGlobalBizCode = ""
+	v.DeliverId = ""
+	v.ItemId = 0
+	v.Amount = 0
+	v.BuyQuantity = 0
+	v.VirtualItemOrder = false
+	poolOrderCreateRequest.Put(v)
 }

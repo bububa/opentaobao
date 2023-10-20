@@ -2,6 +2,7 @@ package train
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTrainAgentFreechildrendealConfirmVtwoAPIRequest struct {
 // NewTaobaoTrainAgentFreechildrendealConfirmVtwoRequest 初始化TaobaoTrainAgentFreechildrendealConfirmVtwoAPIRequest对象
 func NewTaobaoTrainAgentFreechildrendealConfirmVtwoRequest() *TaobaoTrainAgentFreechildrendealConfirmVtwoAPIRequest {
 	return &TaobaoTrainAgentFreechildrendealConfirmVtwoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTrainAgentFreechildrendealConfirmVtwoAPIRequest) Reset() {
+	r._freeChildrenTicketDealRq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTrainAgentFreechildrendealConfirmVtwoAPIRequest) SetFreeChildrenT
 // GetFreeChildrenTicketDealRq FreeChildrenTicketDealRq Getter
 func (r TaobaoTrainAgentFreechildrendealConfirmVtwoAPIRequest) GetFreeChildrenTicketDealRq() *FreeChildrenTicketDealRq {
 	return r._freeChildrenTicketDealRq
+}
+
+var poolTaobaoTrainAgentFreechildrendealConfirmVtwoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTrainAgentFreechildrendealConfirmVtwoRequest()
+	},
+}
+
+// GetTaobaoTrainAgentFreechildrendealConfirmVtwoRequest 从 sync.Pool 获取 TaobaoTrainAgentFreechildrendealConfirmVtwoAPIRequest
+func GetTaobaoTrainAgentFreechildrendealConfirmVtwoAPIRequest() *TaobaoTrainAgentFreechildrendealConfirmVtwoAPIRequest {
+	return poolTaobaoTrainAgentFreechildrendealConfirmVtwoAPIRequest.Get().(*TaobaoTrainAgentFreechildrendealConfirmVtwoAPIRequest)
+}
+
+// ReleaseTaobaoTrainAgentFreechildrendealConfirmVtwoAPIRequest 将 TaobaoTrainAgentFreechildrendealConfirmVtwoAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTrainAgentFreechildrendealConfirmVtwoAPIRequest(v *TaobaoTrainAgentFreechildrendealConfirmVtwoAPIRequest) {
+	v.Reset()
+	poolTaobaoTrainAgentFreechildrendealConfirmVtwoAPIRequest.Put(v)
 }

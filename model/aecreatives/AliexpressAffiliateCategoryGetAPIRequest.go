@@ -2,6 +2,7 @@ package aecreatives
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliexpressAffiliateCategoryGetAPIRequest struct {
 // NewAliexpressAffiliateCategoryGetRequest 初始化AliexpressAffiliateCategoryGetAPIRequest对象
 func NewAliexpressAffiliateCategoryGetRequest() *AliexpressAffiliateCategoryGetAPIRequest {
 	return &AliexpressAffiliateCategoryGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressAffiliateCategoryGetAPIRequest) Reset() {
+	r._appSignature = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliexpressAffiliateCategoryGetAPIRequest) SetAppSignature(_appSignature
 // GetAppSignature AppSignature Getter
 func (r AliexpressAffiliateCategoryGetAPIRequest) GetAppSignature() string {
 	return r._appSignature
+}
+
+var poolAliexpressAffiliateCategoryGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressAffiliateCategoryGetRequest()
+	},
+}
+
+// GetAliexpressAffiliateCategoryGetRequest 从 sync.Pool 获取 AliexpressAffiliateCategoryGetAPIRequest
+func GetAliexpressAffiliateCategoryGetAPIRequest() *AliexpressAffiliateCategoryGetAPIRequest {
+	return poolAliexpressAffiliateCategoryGetAPIRequest.Get().(*AliexpressAffiliateCategoryGetAPIRequest)
+}
+
+// ReleaseAliexpressAffiliateCategoryGetAPIRequest 将 AliexpressAffiliateCategoryGetAPIRequest 放入 sync.Pool
+func ReleaseAliexpressAffiliateCategoryGetAPIRequest(v *AliexpressAffiliateCategoryGetAPIRequest) {
+	v.Reset()
+	poolAliexpressAffiliateCategoryGetAPIRequest.Put(v)
 }

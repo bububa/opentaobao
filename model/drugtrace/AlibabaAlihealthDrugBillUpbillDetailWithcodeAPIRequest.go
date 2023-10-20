@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest struct {
 // NewAlibabaAlihealthDrugBillUpbillDetailWithcodeRequest 初始化AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest对象
 func NewAlibabaAlihealthDrugBillUpbillDetailWithcodeRequest() *AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest {
 	return &AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest) Reset() {
+	r._refEntId = ""
+	r._billCode = ""
+	r._fromRefUserId = ""
+	r._toRefUserId = ""
+	r._agentRefEntId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest) SetAgentRefEntI
 // GetAgentRefEntId AgentRefEntId Getter
 func (r AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest) GetAgentRefEntId() string {
 	return r._agentRefEntId
+}
+
+var poolAlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugBillUpbillDetailWithcodeRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugBillUpbillDetailWithcodeRequest 从 sync.Pool 获取 AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest
+func GetAlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest() *AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest {
+	return poolAlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest.Get().(*AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest 将 AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest(v *AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package crm
 
+import (
+	"sync"
+)
+
 // ExchangeActivityCreateDto 结构体
 type ExchangeActivityCreateDto struct {
 	// 不包邮地区
@@ -18,4 +22,28 @@ type ExchangeActivityCreateDto struct {
 	FixPrice int64 `json:"fix_price,omitempty" xml:"fix_price,omitempty"`
 	// 商品是否包邮
 	FreePostage bool `json:"free_postage,omitempty" xml:"free_postage,omitempty"`
+}
+
+var poolExchangeActivityCreateDto = sync.Pool{
+	New: func() any {
+		return new(ExchangeActivityCreateDto)
+	},
+}
+
+// GetExchangeActivityCreateDto() 从对象池中获取ExchangeActivityCreateDto
+func GetExchangeActivityCreateDto() *ExchangeActivityCreateDto {
+	return poolExchangeActivityCreateDto.Get().(*ExchangeActivityCreateDto)
+}
+
+// ReleaseExchangeActivityCreateDto 释放ExchangeActivityCreateDto
+func ReleaseExchangeActivityCreateDto(v *ExchangeActivityCreateDto) {
+	v.ExcludeArea = ""
+	v.EndTime = ""
+	v.ActivityTag = ""
+	v.StartTime = ""
+	v.ActivityName = ""
+	v.ItmeId = 0
+	v.FixPrice = 0
+	v.FreePostage = false
+	poolExchangeActivityCreateDto.Put(v)
 }

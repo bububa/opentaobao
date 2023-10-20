@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenIsvBillSettlementHotelRs 结构体
 type OpenIsvBillSettlementHotelRs struct {
 	// 出行人名称
@@ -108,4 +112,73 @@ type OpenIsvBillSettlementHotelRs struct {
 	Nights int64 `json:"nights,omitempty" xml:"nights,omitempty"`
 	// 票据类型，枚举详见语雀
 	VoucherType int64 `json:"voucher_type,omitempty" xml:"voucher_type,omitempty"`
+}
+
+var poolOpenIsvBillSettlementHotelRs = sync.Pool{
+	New: func() any {
+		return new(OpenIsvBillSettlementHotelRs)
+	},
+}
+
+// GetOpenIsvBillSettlementHotelRs() 从对象池中获取OpenIsvBillSettlementHotelRs
+func GetOpenIsvBillSettlementHotelRs() *OpenIsvBillSettlementHotelRs {
+	return poolOpenIsvBillSettlementHotelRs.Get().(*OpenIsvBillSettlementHotelRs)
+}
+
+// ReleaseOpenIsvBillSettlementHotelRs 释放OpenIsvBillSettlementHotelRs
+func ReleaseOpenIsvBillSettlementHotelRs(v *OpenIsvBillSettlementHotelRs) {
+	v.TravelerName = ""
+	v.OrderType = ""
+	v.Fees = ""
+	v.OrderId = ""
+	v.DepartmentId = ""
+	v.OverApplyId = ""
+	v.ApplyId = ""
+	v.BookerId = ""
+	v.CostCenterNumber = ""
+	v.InvoiceTitle = ""
+	v.RoomType = ""
+	v.PromotionFee = ""
+	v.ServiceFee = ""
+	v.RoomPrice = ""
+	v.CostCenter = ""
+	v.PersonRefundFee = ""
+	v.SettlementFee = ""
+	v.Index = ""
+	v.BookTime = ""
+	v.FeeType = ""
+	v.CheckoutDate = ""
+	v.PersonSettlePrice = ""
+	v.IsNegotiation = ""
+	v.ProjectName = ""
+	v.City = ""
+	v.CityCode = ""
+	v.TravelerJobNo = ""
+	v.CheckInDate = ""
+	v.ProjectCode = ""
+	v.CascadeDepartment = ""
+	v.OrderPrice = ""
+	v.Department = ""
+	v.CorpTotalFee = ""
+	v.SettlementType = ""
+	v.AlipayTradeNo = ""
+	v.CorpRefundFee = ""
+	v.FuPointFee = ""
+	v.BookerName = ""
+	v.HotelName = ""
+	v.TravelerId = ""
+	v.CapitalDirection = ""
+	v.SettlementTime = ""
+	v.BookerJobNo = ""
+	v.IsShareStr = ""
+	v.BillRecordTime = ""
+	v.SettlementGrantFee = ""
+	v.Remark = ""
+	v.PrimaryId = 0
+	v.TotalNights = 0
+	v.Status = 0
+	v.RoomNumber = 0
+	v.Nights = 0
+	v.VoucherType = 0
+	poolOpenIsvBillSettlementHotelRs.Put(v)
 }

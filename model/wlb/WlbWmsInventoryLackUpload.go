@@ -1,5 +1,9 @@
 package wlb
 
+import (
+	"sync"
+)
+
 // WlbWmsInventoryLackUpload 结构体
 type WlbWmsInventoryLackUpload struct {
 	// 商品信息列表
@@ -14,4 +18,26 @@ type WlbWmsInventoryLackUpload struct {
 	OrderCode string `json:"order_code,omitempty" xml:"order_code,omitempty"`
 	// 仓库编码
 	StoreCode string `json:"store_code,omitempty" xml:"store_code,omitempty"`
+}
+
+var poolWlbWmsInventoryLackUpload = sync.Pool{
+	New: func() any {
+		return new(WlbWmsInventoryLackUpload)
+	},
+}
+
+// GetWlbWmsInventoryLackUpload() 从对象池中获取WlbWmsInventoryLackUpload
+func GetWlbWmsInventoryLackUpload() *WlbWmsInventoryLackUpload {
+	return poolWlbWmsInventoryLackUpload.Get().(*WlbWmsInventoryLackUpload)
+}
+
+// ReleaseWlbWmsInventoryLackUpload 释放WlbWmsInventoryLackUpload
+func ReleaseWlbWmsInventoryLackUpload(v *WlbWmsInventoryLackUpload) {
+	v.ItemList = v.ItemList[:0]
+	v.CreateTime = ""
+	v.OutBizCode = ""
+	v.StoreOrderCode = ""
+	v.OrderCode = ""
+	v.StoreCode = ""
+	poolWlbWmsInventoryLackUpload.Put(v)
 }

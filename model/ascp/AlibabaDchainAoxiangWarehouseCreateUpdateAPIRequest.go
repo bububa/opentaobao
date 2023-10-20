@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangWarehouseCreateUpdateAPIRequest struct {
 // NewAlibabaDchainAoxiangWarehouseCreateUpdateRequest 初始化AlibabaDchainAoxiangWarehouseCreateUpdateAPIRequest对象
 func NewAlibabaDchainAoxiangWarehouseCreateUpdateRequest() *AlibabaDchainAoxiangWarehouseCreateUpdateAPIRequest {
 	return &AlibabaDchainAoxiangWarehouseCreateUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangWarehouseCreateUpdateAPIRequest) Reset() {
+	r._warehouseUpsertRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangWarehouseCreateUpdateAPIRequest) SetWarehouseUpsert
 // GetWarehouseUpsertRequest WarehouseUpsertRequest Getter
 func (r AlibabaDchainAoxiangWarehouseCreateUpdateAPIRequest) GetWarehouseUpsertRequest() *WarehouseUpsertRequest {
 	return r._warehouseUpsertRequest
+}
+
+var poolAlibabaDchainAoxiangWarehouseCreateUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangWarehouseCreateUpdateRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangWarehouseCreateUpdateRequest 从 sync.Pool 获取 AlibabaDchainAoxiangWarehouseCreateUpdateAPIRequest
+func GetAlibabaDchainAoxiangWarehouseCreateUpdateAPIRequest() *AlibabaDchainAoxiangWarehouseCreateUpdateAPIRequest {
+	return poolAlibabaDchainAoxiangWarehouseCreateUpdateAPIRequest.Get().(*AlibabaDchainAoxiangWarehouseCreateUpdateAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangWarehouseCreateUpdateAPIRequest 将 AlibabaDchainAoxiangWarehouseCreateUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangWarehouseCreateUpdateAPIRequest(v *AlibabaDchainAoxiangWarehouseCreateUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangWarehouseCreateUpdateAPIRequest.Put(v)
 }

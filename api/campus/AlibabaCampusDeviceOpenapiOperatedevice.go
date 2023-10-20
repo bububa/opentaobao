@@ -9,11 +9,6 @@ import (
 // alibaba.campus.device.openapi.operatedevice
 //
 // 根据uuid操作设备
-func AlibabaCampusDeviceOpenapiOperatedevice(clt *core.SDKClient, req *campus.AlibabaCampusDeviceOpenapiOperatedeviceAPIRequest, session string) (*campus.AlibabaCampusDeviceOpenapiOperatedeviceAPIResponse, error) {
-	var resp campus.AlibabaCampusDeviceOpenapiOperatedeviceAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusDeviceOpenapiOperatedevice(clt *core.SDKClient, req *campus.AlibabaCampusDeviceOpenapiOperatedeviceAPIRequest, resp *campus.AlibabaCampusDeviceOpenapiOperatedeviceAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

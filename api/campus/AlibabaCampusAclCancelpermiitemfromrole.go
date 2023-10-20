@@ -9,11 +9,6 @@ import (
 // alibaba.campus.acl.cancelpermiitemfromrole
 //
 // 取消角色和权限之间的关系
-func AlibabaCampusAclCancelpermiitemfromrole(clt *core.SDKClient, req *campus.AlibabaCampusAclCancelpermiitemfromroleAPIRequest, session string) (*campus.AlibabaCampusAclCancelpermiitemfromroleAPIResponse, error) {
-	var resp campus.AlibabaCampusAclCancelpermiitemfromroleAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusAclCancelpermiitemfromrole(clt *core.SDKClient, req *campus.AlibabaCampusAclCancelpermiitemfromroleAPIRequest, resp *campus.AlibabaCampusAclCancelpermiitemfromroleAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

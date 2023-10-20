@@ -1,5 +1,9 @@
 package jipiao
 
+import (
+	"sync"
+)
+
 // TaobaoAlitripSellerRefundSearchResultDo 结构体
 type TaobaoAlitripSellerRefundSearchResultDo struct {
 	// ReturnTicketDo
@@ -10,4 +14,24 @@ type TaobaoAlitripSellerRefundSearchResultDo struct {
 	ErrorMsg string `json:"errorMsg,omitempty" xml:"errorMsg,omitempty"`
 	// 调用是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoAlitripSellerRefundSearchResultDo = sync.Pool{
+	New: func() any {
+		return new(TaobaoAlitripSellerRefundSearchResultDo)
+	},
+}
+
+// GetTaobaoAlitripSellerRefundSearchResultDo() 从对象池中获取TaobaoAlitripSellerRefundSearchResultDo
+func GetTaobaoAlitripSellerRefundSearchResultDo() *TaobaoAlitripSellerRefundSearchResultDo {
+	return poolTaobaoAlitripSellerRefundSearchResultDo.Get().(*TaobaoAlitripSellerRefundSearchResultDo)
+}
+
+// ReleaseTaobaoAlitripSellerRefundSearchResultDo 释放TaobaoAlitripSellerRefundSearchResultDo
+func ReleaseTaobaoAlitripSellerRefundSearchResultDo(v *TaobaoAlitripSellerRefundSearchResultDo) {
+	v.Results = v.Results[:0]
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Success = false
+	poolTaobaoAlitripSellerRefundSearchResultDo.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.rds.db.get
 //
 // 查询rds实例下的数据库
-func TaobaoRdsDbGet(clt *core.SDKClient, req *jst.TaobaoRdsDbGetAPIRequest, session string) (*jst.TaobaoRdsDbGetAPIResponse, error) {
-	var resp jst.TaobaoRdsDbGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoRdsDbGet(clt *core.SDKClient, req *jst.TaobaoRdsDbGetAPIRequest, resp *jst.TaobaoRdsDbGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

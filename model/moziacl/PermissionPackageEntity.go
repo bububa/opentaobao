@@ -1,5 +1,9 @@
 package moziacl
 
+import (
+	"sync"
+)
+
 // PermissionPackageEntity 结构体
 type PermissionPackageEntity struct {
 	// 注册的租户列表
@@ -28,4 +32,33 @@ type PermissionPackageEntity struct {
 	DataPermissionCount int64 `json:"data_permission_count,omitempty" xml:"data_permission_count,omitempty"`
 	// 权限套餐创建人
 	Creator *BucUser `json:"creator,omitempty" xml:"creator,omitempty"`
+}
+
+var poolPermissionPackageEntity = sync.Pool{
+	New: func() any {
+		return new(PermissionPackageEntity)
+	},
+}
+
+// GetPermissionPackageEntity() 从对象池中获取PermissionPackageEntity
+func GetPermissionPackageEntity() *PermissionPackageEntity {
+	return poolPermissionPackageEntity.Get().(*PermissionPackageEntity)
+}
+
+// ReleasePermissionPackageEntity 释放PermissionPackageEntity
+func ReleasePermissionPackageEntity(v *PermissionPackageEntity) {
+	v.RegistRealmList = v.RegistRealmList[:0]
+	v.Name = ""
+	v.Title = ""
+	v.NameEN = ""
+	v.AppName = ""
+	v.Description = ""
+	v.DescriptionEN = ""
+	v.ExtStr = ""
+	v.CreateTime = ""
+	v.PermissionCount = 0
+	v.RoleCount = 0
+	v.DataPermissionCount = 0
+	v.Creator = nil
+	poolPermissionPackageEntity.Put(v)
 }

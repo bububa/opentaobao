@@ -2,6 +2,7 @@ package eleenterpriseordernew
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaEleEnterpriseOrdernewGetstatusAPIRequest struct {
 // NewAlibabaEleEnterpriseOrdernewGetstatusRequest 初始化AlibabaEleEnterpriseOrdernewGetstatusAPIRequest对象
 func NewAlibabaEleEnterpriseOrdernewGetstatusRequest() *AlibabaEleEnterpriseOrdernewGetstatusAPIRequest {
 	return &AlibabaEleEnterpriseOrdernewGetstatusAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEleEnterpriseOrdernewGetstatusAPIRequest) Reset() {
+	r._elemeOrderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaEleEnterpriseOrdernewGetstatusAPIRequest) SetElemeOrderId(_eleme
 // GetElemeOrderId ElemeOrderId Getter
 func (r AlibabaEleEnterpriseOrdernewGetstatusAPIRequest) GetElemeOrderId() string {
 	return r._elemeOrderId
+}
+
+var poolAlibabaEleEnterpriseOrdernewGetstatusAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEleEnterpriseOrdernewGetstatusRequest()
+	},
+}
+
+// GetAlibabaEleEnterpriseOrdernewGetstatusRequest 从 sync.Pool 获取 AlibabaEleEnterpriseOrdernewGetstatusAPIRequest
+func GetAlibabaEleEnterpriseOrdernewGetstatusAPIRequest() *AlibabaEleEnterpriseOrdernewGetstatusAPIRequest {
+	return poolAlibabaEleEnterpriseOrdernewGetstatusAPIRequest.Get().(*AlibabaEleEnterpriseOrdernewGetstatusAPIRequest)
+}
+
+// ReleaseAlibabaEleEnterpriseOrdernewGetstatusAPIRequest 将 AlibabaEleEnterpriseOrdernewGetstatusAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEleEnterpriseOrdernewGetstatusAPIRequest(v *AlibabaEleEnterpriseOrdernewGetstatusAPIRequest) {
+	v.Reset()
+	poolAlibabaEleEnterpriseOrdernewGetstatusAPIRequest.Put(v)
 }

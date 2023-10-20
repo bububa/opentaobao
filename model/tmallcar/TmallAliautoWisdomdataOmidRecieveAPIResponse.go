@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallAliautoWisdomdataOmidRecieveAPIResponse struct {
 	TmallAliautoWisdomdataOmidRecieveAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallAliautoWisdomdataOmidRecieveAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallAliautoWisdomdataOmidRecieveAPIResponseModel).Reset()
+}
+
 // TmallAliautoWisdomdataOmidRecieveAPIResponseModel is 大搜车车型参配数据接入 成功返回结果
 type TmallAliautoWisdomdataOmidRecieveAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_aliauto_wisdomdata_omid_recieve_response"`
@@ -24,4 +31,28 @@ type TmallAliautoWisdomdataOmidRecieveAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 记录总数
 	TotalNum int64 `json:"total_num,omitempty" xml:"total_num,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallAliautoWisdomdataOmidRecieveAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.TotalNum = 0
+}
+
+var poolTmallAliautoWisdomdataOmidRecieveAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallAliautoWisdomdataOmidRecieveAPIResponse)
+	},
+}
+
+// GetTmallAliautoWisdomdataOmidRecieveAPIResponse 从 sync.Pool 获取 TmallAliautoWisdomdataOmidRecieveAPIResponse
+func GetTmallAliautoWisdomdataOmidRecieveAPIResponse() *TmallAliautoWisdomdataOmidRecieveAPIResponse {
+	return poolTmallAliautoWisdomdataOmidRecieveAPIResponse.Get().(*TmallAliautoWisdomdataOmidRecieveAPIResponse)
+}
+
+// ReleaseTmallAliautoWisdomdataOmidRecieveAPIResponse 将 TmallAliautoWisdomdataOmidRecieveAPIResponse 保存到 sync.Pool
+func ReleaseTmallAliautoWisdomdataOmidRecieveAPIResponse(v *TmallAliautoWisdomdataOmidRecieveAPIResponse) {
+	v.Reset()
+	poolTmallAliautoWisdomdataOmidRecieveAPIResponse.Put(v)
 }

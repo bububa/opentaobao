@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihealthDrugDownloadFileacceptretAPIRequest struct {
 // NewAlibabaAlihealthDrugDownloadFileacceptretRequest 初始化AlibabaAlihealthDrugDownloadFileacceptretAPIRequest对象
 func NewAlibabaAlihealthDrugDownloadFileacceptretRequest() *AlibabaAlihealthDrugDownloadFileacceptretAPIRequest {
 	return &AlibabaAlihealthDrugDownloadFileacceptretAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugDownloadFileacceptretAPIRequest) Reset() {
+	r._appKeyN = ""
+	r._fileResultJson = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihealthDrugDownloadFileacceptretAPIRequest) SetFileResultJson(
 // GetFileResultJson FileResultJson Getter
 func (r AlibabaAlihealthDrugDownloadFileacceptretAPIRequest) GetFileResultJson() string {
 	return r._fileResultJson
+}
+
+var poolAlibabaAlihealthDrugDownloadFileacceptretAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugDownloadFileacceptretRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugDownloadFileacceptretRequest 从 sync.Pool 获取 AlibabaAlihealthDrugDownloadFileacceptretAPIRequest
+func GetAlibabaAlihealthDrugDownloadFileacceptretAPIRequest() *AlibabaAlihealthDrugDownloadFileacceptretAPIRequest {
+	return poolAlibabaAlihealthDrugDownloadFileacceptretAPIRequest.Get().(*AlibabaAlihealthDrugDownloadFileacceptretAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugDownloadFileacceptretAPIRequest 将 AlibabaAlihealthDrugDownloadFileacceptretAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugDownloadFileacceptretAPIRequest(v *AlibabaAlihealthDrugDownloadFileacceptretAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugDownloadFileacceptretAPIRequest.Put(v)
 }

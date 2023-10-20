@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeProjectLotteryResultSubmitAPIRequest struct {
 // NewAlibabaAlihouseNewhomeProjectLotteryResultSubmitRequest 初始化AlibabaAlihouseNewhomeProjectLotteryResultSubmitAPIRequest对象
 func NewAlibabaAlihouseNewhomeProjectLotteryResultSubmitRequest() *AlibabaAlihouseNewhomeProjectLotteryResultSubmitAPIRequest {
 	return &AlibabaAlihouseNewhomeProjectLotteryResultSubmitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeProjectLotteryResultSubmitAPIRequest) Reset() {
+	r._projectLotteryResultParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomeProjectLotteryResultSubmitAPIRequest) SetProjectL
 // GetProjectLotteryResultParam ProjectLotteryResultParam Getter
 func (r AlibabaAlihouseNewhomeProjectLotteryResultSubmitAPIRequest) GetProjectLotteryResultParam() *ProjectLotteryResultParam {
 	return r._projectLotteryResultParam
+}
+
+var poolAlibabaAlihouseNewhomeProjectLotteryResultSubmitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeProjectLotteryResultSubmitRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeProjectLotteryResultSubmitRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeProjectLotteryResultSubmitAPIRequest
+func GetAlibabaAlihouseNewhomeProjectLotteryResultSubmitAPIRequest() *AlibabaAlihouseNewhomeProjectLotteryResultSubmitAPIRequest {
+	return poolAlibabaAlihouseNewhomeProjectLotteryResultSubmitAPIRequest.Get().(*AlibabaAlihouseNewhomeProjectLotteryResultSubmitAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeProjectLotteryResultSubmitAPIRequest 将 AlibabaAlihouseNewhomeProjectLotteryResultSubmitAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeProjectLotteryResultSubmitAPIRequest(v *AlibabaAlihouseNewhomeProjectLotteryResultSubmitAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeProjectLotteryResultSubmitAPIRequest.Put(v)
 }

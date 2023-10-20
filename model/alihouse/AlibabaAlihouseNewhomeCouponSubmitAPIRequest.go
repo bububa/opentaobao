@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeCouponSubmitAPIRequest struct {
 // NewAlibabaAlihouseNewhomeCouponSubmitRequest 初始化AlibabaAlihouseNewhomeCouponSubmitAPIRequest对象
 func NewAlibabaAlihouseNewhomeCouponSubmitRequest() *AlibabaAlihouseNewhomeCouponSubmitAPIRequest {
 	return &AlibabaAlihouseNewhomeCouponSubmitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeCouponSubmitAPIRequest) Reset() {
+	r._couponDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomeCouponSubmitAPIRequest) SetCouponDto(_couponDto *
 // GetCouponDto CouponDto Getter
 func (r AlibabaAlihouseNewhomeCouponSubmitAPIRequest) GetCouponDto() *MarketingCouponDto {
 	return r._couponDto
+}
+
+var poolAlibabaAlihouseNewhomeCouponSubmitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeCouponSubmitRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeCouponSubmitRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeCouponSubmitAPIRequest
+func GetAlibabaAlihouseNewhomeCouponSubmitAPIRequest() *AlibabaAlihouseNewhomeCouponSubmitAPIRequest {
+	return poolAlibabaAlihouseNewhomeCouponSubmitAPIRequest.Get().(*AlibabaAlihouseNewhomeCouponSubmitAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeCouponSubmitAPIRequest 将 AlibabaAlihouseNewhomeCouponSubmitAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeCouponSubmitAPIRequest(v *AlibabaAlihouseNewhomeCouponSubmitAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeCouponSubmitAPIRequest.Put(v)
 }

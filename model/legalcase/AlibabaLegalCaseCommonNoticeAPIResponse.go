@@ -2,6 +2,7 @@ package legalcase
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaLegalCaseCommonNoticeAPIResponse struct {
 	model.CommonResponse
 	AlibabaLegalCaseCommonNoticeAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaLegalCaseCommonNoticeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaLegalCaseCommonNoticeAPIResponseModel).Reset()
 }
 
 // AlibabaLegalCaseCommonNoticeAPIResponseModel is 消息通知 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaLegalCaseCommonNoticeAPIResponseModel struct {
 	Errmsg string `json:"errmsg,omitempty" xml:"errmsg,omitempty"`
 	// success
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaLegalCaseCommonNoticeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Errcode = ""
+	m.Content = ""
+	m.Errmsg = ""
+	m.IsSuccess = false
+}
+
+var poolAlibabaLegalCaseCommonNoticeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaLegalCaseCommonNoticeAPIResponse)
+	},
+}
+
+// GetAlibabaLegalCaseCommonNoticeAPIResponse 从 sync.Pool 获取 AlibabaLegalCaseCommonNoticeAPIResponse
+func GetAlibabaLegalCaseCommonNoticeAPIResponse() *AlibabaLegalCaseCommonNoticeAPIResponse {
+	return poolAlibabaLegalCaseCommonNoticeAPIResponse.Get().(*AlibabaLegalCaseCommonNoticeAPIResponse)
+}
+
+// ReleaseAlibabaLegalCaseCommonNoticeAPIResponse 将 AlibabaLegalCaseCommonNoticeAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaLegalCaseCommonNoticeAPIResponse(v *AlibabaLegalCaseCommonNoticeAPIResponse) {
+	v.Reset()
+	poolAlibabaLegalCaseCommonNoticeAPIResponse.Put(v)
 }

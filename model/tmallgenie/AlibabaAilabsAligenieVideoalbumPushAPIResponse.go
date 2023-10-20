@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAilabsAligenieVideoalbumPushAPIResponse struct {
 	AlibabaAilabsAligenieVideoalbumPushAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAilabsAligenieVideoalbumPushAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAilabsAligenieVideoalbumPushAPIResponseModel).Reset()
+}
+
 // AlibabaAilabsAligenieVideoalbumPushAPIResponseModel is 天猫精灵内容库视频合辑数据推送接口 成功返回结果
 type AlibabaAilabsAligenieVideoalbumPushAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailabs_aligenie_videoalbum_push_response"`
@@ -24,4 +31,28 @@ type AlibabaAilabsAligenieVideoalbumPushAPIResponseModel struct {
 	RetMsg string `json:"ret_msg,omitempty" xml:"ret_msg,omitempty"`
 	// 状态码
 	RetCode int64 `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAilabsAligenieVideoalbumPushAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RetMsg = ""
+	m.RetCode = 0
+}
+
+var poolAlibabaAilabsAligenieVideoalbumPushAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAilabsAligenieVideoalbumPushAPIResponse)
+	},
+}
+
+// GetAlibabaAilabsAligenieVideoalbumPushAPIResponse 从 sync.Pool 获取 AlibabaAilabsAligenieVideoalbumPushAPIResponse
+func GetAlibabaAilabsAligenieVideoalbumPushAPIResponse() *AlibabaAilabsAligenieVideoalbumPushAPIResponse {
+	return poolAlibabaAilabsAligenieVideoalbumPushAPIResponse.Get().(*AlibabaAilabsAligenieVideoalbumPushAPIResponse)
+}
+
+// ReleaseAlibabaAilabsAligenieVideoalbumPushAPIResponse 将 AlibabaAilabsAligenieVideoalbumPushAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAilabsAligenieVideoalbumPushAPIResponse(v *AlibabaAilabsAligenieVideoalbumPushAPIResponse) {
+	v.Reset()
+	poolAlibabaAilabsAligenieVideoalbumPushAPIResponse.Put(v)
 }

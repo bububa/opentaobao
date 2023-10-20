@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // TaobaoQimenTransferorderReportStruct 结构体
 type TaobaoQimenTransferorderReportStruct struct {
 	// 项目集
@@ -32,4 +36,35 @@ type TaobaoQimenTransferorderReportStruct struct {
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 响应信息,invalid appkey,string(100),,
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
+}
+
+var poolTaobaoQimenTransferorderReportStruct = sync.Pool{
+	New: func() any {
+		return new(TaobaoQimenTransferorderReportStruct)
+	},
+}
+
+// GetTaobaoQimenTransferorderReportStruct() 从对象池中获取TaobaoQimenTransferorderReportStruct
+func GetTaobaoQimenTransferorderReportStruct() *TaobaoQimenTransferorderReportStruct {
+	return poolTaobaoQimenTransferorderReportStruct.Get().(*TaobaoQimenTransferorderReportStruct)
+}
+
+// ReleaseTaobaoQimenTransferorderReportStruct 释放TaobaoQimenTransferorderReportStruct
+func ReleaseTaobaoQimenTransferorderReportStruct(v *TaobaoQimenTransferorderReportStruct) {
+	v.Items = v.Items[:0]
+	v.TransferOrderCode = ""
+	v.TransferOutOrderCode = ""
+	v.TransferInOrderCode = ""
+	v.ConfirmOutTime = ""
+	v.ConfirmInTime = ""
+	v.CreateTime = ""
+	v.FromWarehouseCode = ""
+	v.ToWarehouseCode = ""
+	v.OwnerCode = ""
+	v.ErpOrderCode = ""
+	v.OrderStatus = ""
+	v.Flag = ""
+	v.Code = ""
+	v.Message = ""
+	poolTaobaoQimenTransferorderReportStruct.Put(v)
 }

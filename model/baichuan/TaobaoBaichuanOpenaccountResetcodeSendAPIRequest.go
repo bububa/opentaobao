@@ -2,6 +2,7 @@ package baichuan
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoBaichuanOpenaccountResetcodeSendAPIRequest struct {
 // NewTaobaoBaichuanOpenaccountResetcodeSendRequest 初始化TaobaoBaichuanOpenaccountResetcodeSendAPIRequest对象
 func NewTaobaoBaichuanOpenaccountResetcodeSendRequest() *TaobaoBaichuanOpenaccountResetcodeSendAPIRequest {
 	return &TaobaoBaichuanOpenaccountResetcodeSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBaichuanOpenaccountResetcodeSendAPIRequest) Reset() {
+	r._name = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoBaichuanOpenaccountResetcodeSendAPIRequest) SetName(_name string)
 // GetName Name Getter
 func (r TaobaoBaichuanOpenaccountResetcodeSendAPIRequest) GetName() string {
 	return r._name
+}
+
+var poolTaobaoBaichuanOpenaccountResetcodeSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBaichuanOpenaccountResetcodeSendRequest()
+	},
+}
+
+// GetTaobaoBaichuanOpenaccountResetcodeSendRequest 从 sync.Pool 获取 TaobaoBaichuanOpenaccountResetcodeSendAPIRequest
+func GetTaobaoBaichuanOpenaccountResetcodeSendAPIRequest() *TaobaoBaichuanOpenaccountResetcodeSendAPIRequest {
+	return poolTaobaoBaichuanOpenaccountResetcodeSendAPIRequest.Get().(*TaobaoBaichuanOpenaccountResetcodeSendAPIRequest)
+}
+
+// ReleaseTaobaoBaichuanOpenaccountResetcodeSendAPIRequest 将 TaobaoBaichuanOpenaccountResetcodeSendAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBaichuanOpenaccountResetcodeSendAPIRequest(v *TaobaoBaichuanOpenaccountResetcodeSendAPIRequest) {
+	v.Reset()
+	poolTaobaoBaichuanOpenaccountResetcodeSendAPIRequest.Put(v)
 }

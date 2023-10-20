@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoAilabAicloudTopDeviceGetstatusAPIRequest struct {
 // NewTaobaoAilabAicloudTopDeviceGetstatusRequest 初始化TaobaoAilabAicloudTopDeviceGetstatusAPIRequest对象
 func NewTaobaoAilabAicloudTopDeviceGetstatusRequest() *TaobaoAilabAicloudTopDeviceGetstatusAPIRequest {
 	return &TaobaoAilabAicloudTopDeviceGetstatusAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopDeviceGetstatusAPIRequest) Reset() {
+	r._param1 = ""
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoAilabAicloudTopDeviceGetstatusAPIRequest) SetParam0(_param0 *Open
 // GetParam0 Param0 Getter
 func (r TaobaoAilabAicloudTopDeviceGetstatusAPIRequest) GetParam0() *OpenBaseInfo {
 	return r._param0
+}
+
+var poolTaobaoAilabAicloudTopDeviceGetstatusAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopDeviceGetstatusRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopDeviceGetstatusRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopDeviceGetstatusAPIRequest
+func GetTaobaoAilabAicloudTopDeviceGetstatusAPIRequest() *TaobaoAilabAicloudTopDeviceGetstatusAPIRequest {
+	return poolTaobaoAilabAicloudTopDeviceGetstatusAPIRequest.Get().(*TaobaoAilabAicloudTopDeviceGetstatusAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopDeviceGetstatusAPIRequest 将 TaobaoAilabAicloudTopDeviceGetstatusAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopDeviceGetstatusAPIRequest(v *TaobaoAilabAicloudTopDeviceGetstatusAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopDeviceGetstatusAPIRequest.Put(v)
 }

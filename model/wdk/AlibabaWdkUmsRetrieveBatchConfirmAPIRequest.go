@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaWdkUmsRetrieveBatchConfirmAPIRequest struct {
 // NewAlibabaWdkUmsRetrieveBatchConfirmRequest 初始化AlibabaWdkUmsRetrieveBatchConfirmAPIRequest对象
 func NewAlibabaWdkUmsRetrieveBatchConfirmRequest() *AlibabaWdkUmsRetrieveBatchConfirmAPIRequest {
 	return &AlibabaWdkUmsRetrieveBatchConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkUmsRetrieveBatchConfirmAPIRequest) Reset() {
+	r._uuids = r._uuids[:0]
+	r._warehouseCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaWdkUmsRetrieveBatchConfirmAPIRequest) SetWarehouseCode(_warehous
 // GetWarehouseCode WarehouseCode Getter
 func (r AlibabaWdkUmsRetrieveBatchConfirmAPIRequest) GetWarehouseCode() string {
 	return r._warehouseCode
+}
+
+var poolAlibabaWdkUmsRetrieveBatchConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkUmsRetrieveBatchConfirmRequest()
+	},
+}
+
+// GetAlibabaWdkUmsRetrieveBatchConfirmRequest 从 sync.Pool 获取 AlibabaWdkUmsRetrieveBatchConfirmAPIRequest
+func GetAlibabaWdkUmsRetrieveBatchConfirmAPIRequest() *AlibabaWdkUmsRetrieveBatchConfirmAPIRequest {
+	return poolAlibabaWdkUmsRetrieveBatchConfirmAPIRequest.Get().(*AlibabaWdkUmsRetrieveBatchConfirmAPIRequest)
+}
+
+// ReleaseAlibabaWdkUmsRetrieveBatchConfirmAPIRequest 将 AlibabaWdkUmsRetrieveBatchConfirmAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkUmsRetrieveBatchConfirmAPIRequest(v *AlibabaWdkUmsRetrieveBatchConfirmAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkUmsRetrieveBatchConfirmAPIRequest.Put(v)
 }

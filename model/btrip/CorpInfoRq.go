@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // CorpInfoRq 结构体
 type CorpInfoRq struct {
 	// 第三方企业ID（注册签约时必填）
@@ -20,4 +24,29 @@ type CorpInfoRq struct {
 	Scope int64 `json:"scope,omitempty" xml:"scope,omitempty"`
 	// 企业人数
 	PeopleSize int64 `json:"people_size,omitempty" xml:"people_size,omitempty"`
+}
+
+var poolCorpInfoRq = sync.Pool{
+	New: func() any {
+		return new(CorpInfoRq)
+	},
+}
+
+// GetCorpInfoRq() 从对象池中获取CorpInfoRq
+func GetCorpInfoRq() *CorpInfoRq {
+	return poolCorpInfoRq.Get().(*CorpInfoRq)
+}
+
+// ReleaseCorpInfoRq 释放CorpInfoRq
+func ReleaseCorpInfoRq(v *CorpInfoRq) {
+	v.CorpId = ""
+	v.CorpName = ""
+	v.Industry = ""
+	v.Province = ""
+	v.City = ""
+	v.Contact = ""
+	v.Mobile = ""
+	v.Scope = 0
+	v.PeopleSize = 0
+	poolCorpInfoRq.Put(v)
 }

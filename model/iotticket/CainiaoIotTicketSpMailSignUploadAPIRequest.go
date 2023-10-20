@@ -2,6 +2,7 @@ package iotticket
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoIotTicketSpMailSignUploadAPIRequest struct {
 // NewCainiaoIotTicketSpMailSignUploadRequest 初始化CainiaoIotTicketSpMailSignUploadAPIRequest对象
 func NewCainiaoIotTicketSpMailSignUploadRequest() *CainiaoIotTicketSpMailSignUploadAPIRequest {
 	return &CainiaoIotTicketSpMailSignUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoIotTicketSpMailSignUploadAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoIotTicketSpMailSignUploadAPIRequest) SetParam(_param *UploadSign
 // GetParam Param Getter
 func (r CainiaoIotTicketSpMailSignUploadAPIRequest) GetParam() *UploadSignVoucherRequest {
 	return r._param
+}
+
+var poolCainiaoIotTicketSpMailSignUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoIotTicketSpMailSignUploadRequest()
+	},
+}
+
+// GetCainiaoIotTicketSpMailSignUploadRequest 从 sync.Pool 获取 CainiaoIotTicketSpMailSignUploadAPIRequest
+func GetCainiaoIotTicketSpMailSignUploadAPIRequest() *CainiaoIotTicketSpMailSignUploadAPIRequest {
+	return poolCainiaoIotTicketSpMailSignUploadAPIRequest.Get().(*CainiaoIotTicketSpMailSignUploadAPIRequest)
+}
+
+// ReleaseCainiaoIotTicketSpMailSignUploadAPIRequest 将 CainiaoIotTicketSpMailSignUploadAPIRequest 放入 sync.Pool
+func ReleaseCainiaoIotTicketSpMailSignUploadAPIRequest(v *CainiaoIotTicketSpMailSignUploadAPIRequest) {
+	v.Reset()
+	poolCainiaoIotTicketSpMailSignUploadAPIRequest.Put(v)
 }

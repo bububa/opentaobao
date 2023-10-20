@@ -9,11 +9,6 @@ import (
 // taobao.wlb.order.page.get
 //
 // 分页查询物流宝订单
-func TaobaoWlbOrderPageGet(clt *core.SDKClient, req *wlb.TaobaoWlbOrderPageGetAPIRequest, session string) (*wlb.TaobaoWlbOrderPageGetAPIResponse, error) {
-	var resp wlb.TaobaoWlbOrderPageGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWlbOrderPageGet(clt *core.SDKClient, req *wlb.TaobaoWlbOrderPageGetAPIRequest, resp *wlb.TaobaoWlbOrderPageGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

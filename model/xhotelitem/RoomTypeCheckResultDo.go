@@ -1,5 +1,9 @@
 package xhotelitem
 
+import (
+	"sync"
+)
+
 // RoomTypeCheckResultDo 结构体
 type RoomTypeCheckResultDo struct {
 	// 床型数据检查结果，false代表有冲突
@@ -28,4 +32,33 @@ type RoomTypeCheckResultDo struct {
 	Bedtypedesc string `json:"bedtypedesc,omitempty" xml:"bedtypedesc,omitempty"`
 	// 床型检查信息
 	Bedtypecheckmsg string `json:"bedtypecheckmsg,omitempty" xml:"bedtypecheckmsg,omitempty"`
+}
+
+var poolRoomTypeCheckResultDo = sync.Pool{
+	New: func() any {
+		return new(RoomTypeCheckResultDo)
+	},
+}
+
+// GetRoomTypeCheckResultDo() 从对象池中获取RoomTypeCheckResultDo
+func GetRoomTypeCheckResultDo() *RoomTypeCheckResultDo {
+	return poolRoomTypeCheckResultDo.Get().(*RoomTypeCheckResultDo)
+}
+
+// ReleaseRoomTypeCheckResultDo 释放RoomTypeCheckResultDo
+func ReleaseRoomTypeCheckResultDo(v *RoomTypeCheckResultDo) {
+	v.Bedtypecheckresult = ""
+	v.BedType = ""
+	v.OriginBedType = ""
+	v.Roomtypeenname = ""
+	v.Roomtypename = ""
+	v.OuterRoomTypeId = ""
+	v.Hotelname = ""
+	v.OuterHotelId = ""
+	v.GmtCreate = ""
+	v.Ennamebedtypedesc = ""
+	v.Namebedtypedesc = ""
+	v.Bedtypedesc = ""
+	v.Bedtypecheckmsg = ""
+	poolRoomTypeCheckResultDo.Put(v)
 }

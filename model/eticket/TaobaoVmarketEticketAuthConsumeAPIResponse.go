@@ -2,6 +2,7 @@ package eticket
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoVmarketEticketAuthConsumeAPIResponse struct {
 	model.CommonResponse
 	TaobaoVmarketEticketAuthConsumeAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoVmarketEticketAuthConsumeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoVmarketEticketAuthConsumeAPIResponseModel).Reset()
 }
 
 // TaobaoVmarketEticketAuthConsumeAPIResponseModel is 核销放行的核销接口 成功返回结果
@@ -30,4 +37,31 @@ type TaobaoVmarketEticketAuthConsumeAPIResponseModel struct {
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 淘宝卖家ID
 	TaobaoSid int64 `json:"taobao_sid,omitempty" xml:"taobao_sid,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoVmarketEticketAuthConsumeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ItemTitle = ""
+	m.SellerNick = ""
+	m.RetCode = 0
+	m.OrderId = 0
+	m.TaobaoSid = 0
+}
+
+var poolTaobaoVmarketEticketAuthConsumeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoVmarketEticketAuthConsumeAPIResponse)
+	},
+}
+
+// GetTaobaoVmarketEticketAuthConsumeAPIResponse 从 sync.Pool 获取 TaobaoVmarketEticketAuthConsumeAPIResponse
+func GetTaobaoVmarketEticketAuthConsumeAPIResponse() *TaobaoVmarketEticketAuthConsumeAPIResponse {
+	return poolTaobaoVmarketEticketAuthConsumeAPIResponse.Get().(*TaobaoVmarketEticketAuthConsumeAPIResponse)
+}
+
+// ReleaseTaobaoVmarketEticketAuthConsumeAPIResponse 将 TaobaoVmarketEticketAuthConsumeAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoVmarketEticketAuthConsumeAPIResponse(v *TaobaoVmarketEticketAuthConsumeAPIResponse) {
+	v.Reset()
+	poolTaobaoVmarketEticketAuthConsumeAPIResponse.Put(v)
 }

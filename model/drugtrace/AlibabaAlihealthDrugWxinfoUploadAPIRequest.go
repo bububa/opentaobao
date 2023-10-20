@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAlihealthDrugWxinfoUploadAPIRequest struct {
 // NewAlibabaAlihealthDrugWxinfoUploadRequest 初始化AlibabaAlihealthDrugWxinfoUploadAPIRequest对象
 func NewAlibabaAlihealthDrugWxinfoUploadRequest() *AlibabaAlihealthDrugWxinfoUploadAPIRequest {
 	return &AlibabaAlihealthDrugWxinfoUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugWxinfoUploadAPIRequest) Reset() {
+	r._userInfo = ""
+	r._shopInfo = ""
+	r._salerInfo = ""
+	r._isvChannel = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAlihealthDrugWxinfoUploadAPIRequest) SetIsvChannel(_isvChannel s
 // GetIsvChannel IsvChannel Getter
 func (r AlibabaAlihealthDrugWxinfoUploadAPIRequest) GetIsvChannel() string {
 	return r._isvChannel
+}
+
+var poolAlibabaAlihealthDrugWxinfoUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugWxinfoUploadRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugWxinfoUploadRequest 从 sync.Pool 获取 AlibabaAlihealthDrugWxinfoUploadAPIRequest
+func GetAlibabaAlihealthDrugWxinfoUploadAPIRequest() *AlibabaAlihealthDrugWxinfoUploadAPIRequest {
+	return poolAlibabaAlihealthDrugWxinfoUploadAPIRequest.Get().(*AlibabaAlihealthDrugWxinfoUploadAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugWxinfoUploadAPIRequest 将 AlibabaAlihealthDrugWxinfoUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugWxinfoUploadAPIRequest(v *AlibabaAlihealthDrugWxinfoUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugWxinfoUploadAPIRequest.Put(v)
 }

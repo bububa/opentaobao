@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // TaobaoTbkRelationRefundResult 结构体
 type TaobaoTbkRelationRefundResult struct {
 	// 第三方应该返还的补贴
@@ -50,4 +54,44 @@ type TaobaoTbkRelationRefundResult struct {
 	TbTradeId int64 `json:"tb_trade_id,omitempty" xml:"tb_trade_id,omitempty"`
 	// 1 表示2方，2表示3方
 	RefundType int64 `json:"refund_type,omitempty" xml:"refund_type,omitempty"`
+}
+
+var poolTaobaoTbkRelationRefundResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkRelationRefundResult)
+	},
+}
+
+// GetTaobaoTbkRelationRefundResult() 从对象池中获取TaobaoTbkRelationRefundResult
+func GetTaobaoTbkRelationRefundResult() *TaobaoTbkRelationRefundResult {
+	return poolTaobaoTbkRelationRefundResult.Get().(*TaobaoTbkRelationRefundResult)
+}
+
+// ReleaseTaobaoTbkRelationRefundResult 释放TaobaoTbkRelationRefundResult
+func ReleaseTaobaoTbkRelationRefundResult(v *TaobaoTbkRelationRefundResult) {
+	v.TkSubsidyFeeRefund3rdPub = ""
+	v.TkCommissionFeeRefund3rdPub = ""
+	v.TkSubsidyFeeRefundPub = ""
+	v.TkCommissionFeeRefundPub = ""
+	v.TkRefundSuitTime = ""
+	v.TkRefundTime = ""
+	v.EarningTime = ""
+	v.TbTradeCreateTime = ""
+	v.TbAuctionTitle = ""
+	v.RefundFee = ""
+	v.TbTradeFinishPrice = ""
+	v.TkPubShowReturnFee = ""
+	v.Tk3rdPubShowReturnFee = ""
+	v.AlscPid = ""
+	v.AlscId = ""
+	v.ModifiedTime = ""
+	v.TbTradeParentId = 0
+	v.SpecialId = 0
+	v.RelationId = 0
+	v.Tk3rdPubId = 0
+	v.TkPubId = 0
+	v.RefundStatus = 0
+	v.TbTradeId = 0
+	v.RefundType = 0
+	poolTaobaoTbkRelationRefundResult.Put(v)
 }

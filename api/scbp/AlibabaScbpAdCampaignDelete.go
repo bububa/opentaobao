@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.ad.campaign.delete
 //
 // 删除计划
-func AlibabaScbpAdCampaignDelete(clt *core.SDKClient, req *scbp.AlibabaScbpAdCampaignDeleteAPIRequest, session string) (*scbp.AlibabaScbpAdCampaignDeleteAPIResponse, error) {
-	var resp scbp.AlibabaScbpAdCampaignDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpAdCampaignDelete(clt *core.SDKClient, req *scbp.AlibabaScbpAdCampaignDeleteAPIRequest, resp *scbp.AlibabaScbpAdCampaignDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

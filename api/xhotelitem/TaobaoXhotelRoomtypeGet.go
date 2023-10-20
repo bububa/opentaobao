@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.roomtype.get
 //
 // 房型查询房型查询接口返回结果增加date_confirm字段
-func TaobaoXhotelRoomtypeGet(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRoomtypeGetAPIRequest, session string) (*xhotelitem.TaobaoXhotelRoomtypeGetAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelRoomtypeGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelRoomtypeGet(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRoomtypeGetAPIRequest, resp *xhotelitem.TaobaoXhotelRoomtypeGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

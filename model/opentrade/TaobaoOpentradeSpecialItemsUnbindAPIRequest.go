@@ -2,6 +2,7 @@ package opentrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoOpentradeSpecialItemsUnbindAPIRequest struct {
 // NewTaobaoOpentradeSpecialItemsUnbindRequest 初始化TaobaoOpentradeSpecialItemsUnbindAPIRequest对象
 func NewTaobaoOpentradeSpecialItemsUnbindRequest() *TaobaoOpentradeSpecialItemsUnbindAPIRequest {
 	return &TaobaoOpentradeSpecialItemsUnbindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpentradeSpecialItemsUnbindAPIRequest) Reset() {
+	r._itemIds = r._itemIds[:0]
+	r._miniappId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoOpentradeSpecialItemsUnbindAPIRequest) SetMiniappId(_miniappId in
 // GetMiniappId MiniappId Getter
 func (r TaobaoOpentradeSpecialItemsUnbindAPIRequest) GetMiniappId() int64 {
 	return r._miniappId
+}
+
+var poolTaobaoOpentradeSpecialItemsUnbindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpentradeSpecialItemsUnbindRequest()
+	},
+}
+
+// GetTaobaoOpentradeSpecialItemsUnbindRequest 从 sync.Pool 获取 TaobaoOpentradeSpecialItemsUnbindAPIRequest
+func GetTaobaoOpentradeSpecialItemsUnbindAPIRequest() *TaobaoOpentradeSpecialItemsUnbindAPIRequest {
+	return poolTaobaoOpentradeSpecialItemsUnbindAPIRequest.Get().(*TaobaoOpentradeSpecialItemsUnbindAPIRequest)
+}
+
+// ReleaseTaobaoOpentradeSpecialItemsUnbindAPIRequest 将 TaobaoOpentradeSpecialItemsUnbindAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpentradeSpecialItemsUnbindAPIRequest(v *TaobaoOpentradeSpecialItemsUnbindAPIRequest) {
+	v.Reset()
+	poolTaobaoOpentradeSpecialItemsUnbindAPIRequest.Put(v)
 }

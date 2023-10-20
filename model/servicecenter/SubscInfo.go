@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // SubscInfo 结构体
 type SubscInfo struct {
 	// 订单创建时间
@@ -22,4 +26,30 @@ type SubscInfo struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 订单状态
 	ProcessStatus int64 `json:"process_status,omitempty" xml:"process_status,omitempty"`
+}
+
+var poolSubscInfo = sync.Pool{
+	New: func() any {
+		return new(SubscInfo)
+	},
+}
+
+// GetSubscInfo() 从对象池中获取SubscInfo
+func GetSubscInfo() *SubscInfo {
+	return poolSubscInfo.Get().(*SubscInfo)
+}
+
+// ReleaseSubscInfo 释放SubscInfo
+func ReleaseSubscInfo(v *SubscInfo) {
+	v.SubscCreatedTime = ""
+	v.SpName = ""
+	v.SubAccountList = ""
+	v.ServiceEndTime = ""
+	v.SellerName = ""
+	v.ServiceStartTime = ""
+	v.SubscModifiedTime = ""
+	v.SaleBonus = ""
+	v.Id = 0
+	v.ProcessStatus = 0
+	poolSubscInfo.Put(v)
 }

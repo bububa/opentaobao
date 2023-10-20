@@ -1,5 +1,9 @@
 package axintrade
 
+import (
+	"sync"
+)
+
 // BookingPolicyDto 结构体
 type BookingPolicyDto struct {
 	// 提前预订时间
@@ -12,4 +16,25 @@ type BookingPolicyDto struct {
 	ValidMinuteLimit int64 `json:"valid_minute_limit,omitempty" xml:"valid_minute_limit,omitempty"`
 	// 是否需要选择指定日期
 	IsSpecifyTime bool `json:"is_specify_time,omitempty" xml:"is_specify_time,omitempty"`
+}
+
+var poolBookingPolicyDto = sync.Pool{
+	New: func() any {
+		return new(BookingPolicyDto)
+	},
+}
+
+// GetBookingPolicyDto() 从对象池中获取BookingPolicyDto
+func GetBookingPolicyDto() *BookingPolicyDto {
+	return poolBookingPolicyDto.Get().(*BookingPolicyDto)
+}
+
+// ReleaseBookingPolicyDto 释放BookingPolicyDto
+func ReleaseBookingPolicyDto(v *BookingPolicyDto) {
+	v.AdvanceBookingTime = ""
+	v.AdvanceBookingDays = 0
+	v.ValidHourLimit = 0
+	v.ValidMinuteLimit = 0
+	v.IsSpecifyTime = false
+	poolBookingPolicyDto.Put(v)
 }

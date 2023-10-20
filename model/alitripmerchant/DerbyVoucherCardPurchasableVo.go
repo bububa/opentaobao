@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // DerbyVoucherCardPurchasableVo 结构体
 type DerbyVoucherCardPurchasableVo struct {
 	// 订单id
@@ -40,4 +44,39 @@ type DerbyVoucherCardPurchasableVo struct {
 	ProductCount int64 `json:"product_count,omitempty" xml:"product_count,omitempty"`
 	// 是否需要注册 true需要 false不需要
 	NeedRegister bool `json:"need_register,omitempty" xml:"need_register,omitempty"`
+}
+
+var poolDerbyVoucherCardPurchasableVo = sync.Pool{
+	New: func() any {
+		return new(DerbyVoucherCardPurchasableVo)
+	},
+}
+
+// GetDerbyVoucherCardPurchasableVo() 从对象池中获取DerbyVoucherCardPurchasableVo
+func GetDerbyVoucherCardPurchasableVo() *DerbyVoucherCardPurchasableVo {
+	return poolDerbyVoucherCardPurchasableVo.Get().(*DerbyVoucherCardPurchasableVo)
+}
+
+// ReleaseDerbyVoucherCardPurchasableVo 释放DerbyVoucherCardPurchasableVo
+func ReleaseDerbyVoucherCardPurchasableVo(v *DerbyVoucherCardPurchasableVo) {
+	v.OrderId = ""
+	v.TimeStamp = ""
+	v.NonceStr = ""
+	v.Packag = ""
+	v.PaySign = ""
+	v.SignType = ""
+	v.Name = ""
+	v.VoucherCardCode = ""
+	v.CardImage = ""
+	v.VoucherCardCategory = ""
+	v.VoucherCardCategoryName = ""
+	v.ProductType = ""
+	v.ProductTypeName = ""
+	v.PriceDesc = ""
+	v.Price = 0
+	v.SalePrice = 0
+	v.CountDownTime = 0
+	v.ProductCount = 0
+	v.NeedRegister = false
+	poolDerbyVoucherCardPurchasableVo.Put(v)
 }

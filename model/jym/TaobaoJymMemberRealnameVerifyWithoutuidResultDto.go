@@ -1,5 +1,9 @@
 package jym
 
+import (
+	"sync"
+)
+
 // TaobaoJymMemberRealnameVerifyWithoutuidResultDto 结构体
 type TaobaoJymMemberRealnameVerifyWithoutuidResultDto struct {
 	// 调用接口结果编码
@@ -10,4 +14,24 @@ type TaobaoJymMemberRealnameVerifyWithoutuidResultDto struct {
 	Result *RealNameVerifyTopDto `json:"result,omitempty" xml:"result,omitempty"`
 	// 调用是否成功
 	Succ bool `json:"succ,omitempty" xml:"succ,omitempty"`
+}
+
+var poolTaobaoJymMemberRealnameVerifyWithoutuidResultDto = sync.Pool{
+	New: func() any {
+		return new(TaobaoJymMemberRealnameVerifyWithoutuidResultDto)
+	},
+}
+
+// GetTaobaoJymMemberRealnameVerifyWithoutuidResultDto() 从对象池中获取TaobaoJymMemberRealnameVerifyWithoutuidResultDto
+func GetTaobaoJymMemberRealnameVerifyWithoutuidResultDto() *TaobaoJymMemberRealnameVerifyWithoutuidResultDto {
+	return poolTaobaoJymMemberRealnameVerifyWithoutuidResultDto.Get().(*TaobaoJymMemberRealnameVerifyWithoutuidResultDto)
+}
+
+// ReleaseTaobaoJymMemberRealnameVerifyWithoutuidResultDto 释放TaobaoJymMemberRealnameVerifyWithoutuidResultDto
+func ReleaseTaobaoJymMemberRealnameVerifyWithoutuidResultDto(v *TaobaoJymMemberRealnameVerifyWithoutuidResultDto) {
+	v.StateCode = ""
+	v.ExtraErrMsg = ""
+	v.Result = nil
+	v.Succ = false
+	poolTaobaoJymMemberRealnameVerifyWithoutuidResultDto.Put(v)
 }

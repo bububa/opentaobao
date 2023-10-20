@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallCarLeaseRiskcallbackAPIRequest struct {
 // NewTmallCarLeaseRiskcallbackRequest 初始化TmallCarLeaseRiskcallbackAPIRequest对象
 func NewTmallCarLeaseRiskcallbackRequest() *TmallCarLeaseRiskcallbackAPIRequest {
 	return &TmallCarLeaseRiskcallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCarLeaseRiskcallbackAPIRequest) Reset() {
+	r._creditInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallCarLeaseRiskcallbackAPIRequest) SetCreditInfo(_creditInfo *CreditI
 // GetCreditInfo CreditInfo Getter
 func (r TmallCarLeaseRiskcallbackAPIRequest) GetCreditInfo() *CreditInfoTopDto {
 	return r._creditInfo
+}
+
+var poolTmallCarLeaseRiskcallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCarLeaseRiskcallbackRequest()
+	},
+}
+
+// GetTmallCarLeaseRiskcallbackRequest 从 sync.Pool 获取 TmallCarLeaseRiskcallbackAPIRequest
+func GetTmallCarLeaseRiskcallbackAPIRequest() *TmallCarLeaseRiskcallbackAPIRequest {
+	return poolTmallCarLeaseRiskcallbackAPIRequest.Get().(*TmallCarLeaseRiskcallbackAPIRequest)
+}
+
+// ReleaseTmallCarLeaseRiskcallbackAPIRequest 将 TmallCarLeaseRiskcallbackAPIRequest 放入 sync.Pool
+func ReleaseTmallCarLeaseRiskcallbackAPIRequest(v *TmallCarLeaseRiskcallbackAPIRequest) {
+	v.Reset()
+	poolTmallCarLeaseRiskcallbackAPIRequest.Put(v)
 }

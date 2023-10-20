@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenApiFlightOrderDetailRs 结构体
 type OpenApiFlightOrderDetailRs struct {
 	// 订单费用列表
@@ -20,4 +24,29 @@ type OpenApiFlightOrderDetailRs struct {
 	OrderBaseInfo *OrderBaseInfo `json:"order_base_info,omitempty" xml:"order_base_info,omitempty"`
 	// 发票信息
 	InvoiceInfo *InvoiceInfo `json:"invoice_info,omitempty" xml:"invoice_info,omitempty"`
+}
+
+var poolOpenApiFlightOrderDetailRs = sync.Pool{
+	New: func() any {
+		return new(OpenApiFlightOrderDetailRs)
+	},
+}
+
+// GetOpenApiFlightOrderDetailRs() 从对象池中获取OpenApiFlightOrderDetailRs
+func GetOpenApiFlightOrderDetailRs() *OpenApiFlightOrderDetailRs {
+	return poolOpenApiFlightOrderDetailRs.Get().(*OpenApiFlightOrderDetailRs)
+}
+
+// ReleaseOpenApiFlightOrderDetailRs 释放OpenApiFlightOrderDetailRs
+func ReleaseOpenApiFlightOrderDetailRs(v *OpenApiFlightOrderDetailRs) {
+	v.PriceInfoList = v.PriceInfoList[:0]
+	v.FlightRefundTicketInfoList = v.FlightRefundTicketInfoList[:0]
+	v.FlightInfoList = v.FlightInfoList[:0]
+	v.InsuranceInfoList = v.InsuranceInfoList[:0]
+	v.FlightTicketInfoList = v.FlightTicketInfoList[:0]
+	v.PassengerInfoList = v.PassengerInfoList[:0]
+	v.FlightChangeTicketInfoList = v.FlightChangeTicketInfoList[:0]
+	v.OrderBaseInfo = nil
+	v.InvoiceInfo = nil
+	poolOpenApiFlightOrderDetailRs.Put(v)
 }

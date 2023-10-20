@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // ServiceTradeOrderDto 结构体
 type ServiceTradeOrderDto struct {
 	// 卖家名称
@@ -28,4 +32,33 @@ type ServiceTradeOrderDto struct {
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 	// 服务采购价
 	PurchasePriceUnit int64 `json:"purchase_price_unit,omitempty" xml:"purchase_price_unit,omitempty"`
+}
+
+var poolServiceTradeOrderDto = sync.Pool{
+	New: func() any {
+		return new(ServiceTradeOrderDto)
+	},
+}
+
+// GetServiceTradeOrderDto() 从对象池中获取ServiceTradeOrderDto
+func GetServiceTradeOrderDto() *ServiceTradeOrderDto {
+	return poolServiceTradeOrderDto.Get().(*ServiceTradeOrderDto)
+}
+
+// ReleaseServiceTradeOrderDto 释放ServiceTradeOrderDto
+func ReleaseServiceTradeOrderDto(v *ServiceTradeOrderDto) {
+	v.SellerNick = ""
+	v.AuctionTitle = ""
+	v.Attribute = ""
+	v.ShopName = ""
+	v.SkuDesc = ""
+	v.OuterIdSku = ""
+	v.AuctionId = 0
+	v.OrderId = 0
+	v.Price = 0
+	v.ParentBizOrderId = 0
+	v.CategoryId = 0
+	v.SkuId = 0
+	v.PurchasePriceUnit = 0
+	poolServiceTradeOrderDto.Put(v)
 }

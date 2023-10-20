@@ -2,6 +2,7 @@ package alihealthpw
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthPwSpecialSynchrosmsAPIRequest struct {
 // NewAlibabaAlihealthPwSpecialSynchrosmsRequest 初始化AlibabaAlihealthPwSpecialSynchrosmsAPIRequest对象
 func NewAlibabaAlihealthPwSpecialSynchrosmsRequest() *AlibabaAlihealthPwSpecialSynchrosmsAPIRequest {
 	return &AlibabaAlihealthPwSpecialSynchrosmsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthPwSpecialSynchrosmsAPIRequest) Reset() {
+	r._body = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthPwSpecialSynchrosmsAPIRequest) SetBody(_body *SynchroSm
 // GetBody Body Getter
 func (r AlibabaAlihealthPwSpecialSynchrosmsAPIRequest) GetBody() *SynchroSmsDto {
 	return r._body
+}
+
+var poolAlibabaAlihealthPwSpecialSynchrosmsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthPwSpecialSynchrosmsRequest()
+	},
+}
+
+// GetAlibabaAlihealthPwSpecialSynchrosmsRequest 从 sync.Pool 获取 AlibabaAlihealthPwSpecialSynchrosmsAPIRequest
+func GetAlibabaAlihealthPwSpecialSynchrosmsAPIRequest() *AlibabaAlihealthPwSpecialSynchrosmsAPIRequest {
+	return poolAlibabaAlihealthPwSpecialSynchrosmsAPIRequest.Get().(*AlibabaAlihealthPwSpecialSynchrosmsAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthPwSpecialSynchrosmsAPIRequest 将 AlibabaAlihealthPwSpecialSynchrosmsAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthPwSpecialSynchrosmsAPIRequest(v *AlibabaAlihealthPwSpecialSynchrosmsAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthPwSpecialSynchrosmsAPIRequest.Put(v)
 }

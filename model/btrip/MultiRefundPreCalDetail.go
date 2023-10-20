@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // MultiRefundPreCalDetail 结构体
 type MultiRefundPreCalDetail struct {
 	// 名字
@@ -12,4 +16,25 @@ type MultiRefundPreCalDetail struct {
 	RefundFee int64 `json:"refund_fee,omitempty" xml:"refund_fee,omitempty"`
 	// 是否能退票申请
 	CanApplyRefund bool `json:"can_apply_refund,omitempty" xml:"can_apply_refund,omitempty"`
+}
+
+var poolMultiRefundPreCalDetail = sync.Pool{
+	New: func() any {
+		return new(MultiRefundPreCalDetail)
+	},
+}
+
+// GetMultiRefundPreCalDetail() 从对象池中获取MultiRefundPreCalDetail
+func GetMultiRefundPreCalDetail() *MultiRefundPreCalDetail {
+	return poolMultiRefundPreCalDetail.Get().(*MultiRefundPreCalDetail)
+}
+
+// ReleaseMultiRefundPreCalDetail 释放MultiRefundPreCalDetail
+func ReleaseMultiRefundPreCalDetail(v *MultiRefundPreCalDetail) {
+	v.Name = ""
+	v.UserId = ""
+	v.PreRefundMoney = 0
+	v.RefundFee = 0
+	v.CanApplyRefund = false
+	poolMultiRefundPreCalDetail.Put(v)
 }

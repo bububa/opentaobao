@@ -2,6 +2,7 @@ package feedflow
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -20,8 +21,13 @@ type TaobaoFeedflowAccountGetAPIRequest struct {
 // NewTaobaoFeedflowAccountGetRequest 初始化TaobaoFeedflowAccountGetAPIRequest对象
 func NewTaobaoFeedflowAccountGetRequest() *TaobaoFeedflowAccountGetAPIRequest {
 	return &TaobaoFeedflowAccountGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFeedflowAccountGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -39,4 +45,21 @@ func (r TaobaoFeedflowAccountGetAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r TaobaoFeedflowAccountGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolTaobaoFeedflowAccountGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFeedflowAccountGetRequest()
+	},
+}
+
+// GetTaobaoFeedflowAccountGetRequest 从 sync.Pool 获取 TaobaoFeedflowAccountGetAPIRequest
+func GetTaobaoFeedflowAccountGetAPIRequest() *TaobaoFeedflowAccountGetAPIRequest {
+	return poolTaobaoFeedflowAccountGetAPIRequest.Get().(*TaobaoFeedflowAccountGetAPIRequest)
+}
+
+// ReleaseTaobaoFeedflowAccountGetAPIRequest 将 TaobaoFeedflowAccountGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFeedflowAccountGetAPIRequest(v *TaobaoFeedflowAccountGetAPIRequest) {
+	v.Reset()
+	poolTaobaoFeedflowAccountGetAPIRequest.Put(v)
 }

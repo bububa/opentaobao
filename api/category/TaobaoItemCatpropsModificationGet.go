@@ -9,11 +9,6 @@ import (
 // taobao.item.catprops.modification.get
 //
 // 查询商品类目属性变更信息
-func TaobaoItemCatpropsModificationGet(clt *core.SDKClient, req *category.TaobaoItemCatpropsModificationGetAPIRequest, session string) (*category.TaobaoItemCatpropsModificationGetAPIResponse, error) {
-	var resp category.TaobaoItemCatpropsModificationGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoItemCatpropsModificationGet(clt *core.SDKClient, req *category.TaobaoItemCatpropsModificationGetAPIRequest, resp *category.TaobaoItemCatpropsModificationGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

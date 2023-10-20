@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // GiftOrder 结构体
 type GiftOrder struct {
 	// 赠品绑赠单号，回滚时需要传递
@@ -22,4 +26,30 @@ type GiftOrder struct {
 	ActivityName string `json:"activity_name,omitempty" xml:"activity_name,omitempty"`
 	// 赠品数量
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
+}
+
+var poolGiftOrder = sync.Pool{
+	New: func() any {
+		return new(GiftOrder)
+	},
+}
+
+// GetGiftOrder() 从对象池中获取GiftOrder
+func GetGiftOrder() *GiftOrder {
+	return poolGiftOrder.Get().(*GiftOrder)
+}
+
+// ReleaseGiftOrder 释放GiftOrder
+func ReleaseGiftOrder(v *GiftOrder) {
+	v.GiftOrderId = ""
+	v.ScItemCode = ""
+	v.ScItemName = ""
+	v.ItemId = ""
+	v.ItemName = ""
+	v.ActivityId = ""
+	v.GiftId = ""
+	v.SellerNick = ""
+	v.ActivityName = ""
+	v.Quantity = 0
+	poolGiftOrder.Put(v)
 }

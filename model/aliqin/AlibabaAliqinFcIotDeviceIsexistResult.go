@@ -1,5 +1,9 @@
 package aliqin
 
+import (
+	"sync"
+)
+
 // AlibabaAliqinFcIotDeviceIsexistResult 结构体
 type AlibabaAliqinFcIotDeviceIsexistResult struct {
 	// code
@@ -10,4 +14,24 @@ type AlibabaAliqinFcIotDeviceIsexistResult struct {
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
 	// 是否异常
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaAliqinFcIotDeviceIsexistResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaAliqinFcIotDeviceIsexistResult)
+	},
+}
+
+// GetAlibabaAliqinFcIotDeviceIsexistResult() 从对象池中获取AlibabaAliqinFcIotDeviceIsexistResult
+func GetAlibabaAliqinFcIotDeviceIsexistResult() *AlibabaAliqinFcIotDeviceIsexistResult {
+	return poolAlibabaAliqinFcIotDeviceIsexistResult.Get().(*AlibabaAliqinFcIotDeviceIsexistResult)
+}
+
+// ReleaseAlibabaAliqinFcIotDeviceIsexistResult 释放AlibabaAliqinFcIotDeviceIsexistResult
+func ReleaseAlibabaAliqinFcIotDeviceIsexistResult(v *AlibabaAliqinFcIotDeviceIsexistResult) {
+	v.Code = ""
+	v.Msg = ""
+	v.Model = false
+	v.Success = false
+	poolAlibabaAliqinFcIotDeviceIsexistResult.Put(v)
 }

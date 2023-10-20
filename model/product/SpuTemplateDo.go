@@ -1,5 +1,9 @@
 package product
 
+import (
+	"sync"
+)
+
 // SpuTemplateDo 结构体
 type SpuTemplateDo struct {
 	// 产品关键属性，内容为属性ID(PID)的列表，注意关键属性可以在类目上不存在。不存在的PID，默认为输入，没有子属性。属性名称在prop_name_str中取
@@ -18,4 +22,28 @@ type SpuTemplateDo struct {
 	TemplateId int64 `json:"template_id,omitempty" xml:"template_id,omitempty"`
 	// 品类ID，和类目ID类似
 	CommodityId int64 `json:"commodity_id,omitempty" xml:"commodity_id,omitempty"`
+}
+
+var poolSpuTemplateDo = sync.Pool{
+	New: func() any {
+		return new(SpuTemplateDo)
+	},
+}
+
+// GetSpuTemplateDo() 从对象池中获取SpuTemplateDo
+func GetSpuTemplateDo() *SpuTemplateDo {
+	return poolSpuTemplateDo.Get().(*SpuTemplateDo)
+}
+
+// ReleaseSpuTemplateDo 释放SpuTemplateDo
+func ReleaseSpuTemplateDo(v *SpuTemplateDo) {
+	v.KeyProperties = v.KeyProperties[:0]
+	v.AffectProperties = v.AffectProperties[:0]
+	v.FilterProperties = v.FilterProperties[:0]
+	v.PropNameStr = ""
+	v.PropFeatures = ""
+	v.CategoryId = 0
+	v.TemplateId = 0
+	v.CommodityId = 0
+	poolSpuTemplateDo.Put(v)
 }

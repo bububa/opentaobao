@@ -9,11 +9,6 @@ import (
 // taobao.ump.promotion.global.discount.get
 //
 // 提供卖家最低折扣查询功能
-func TaobaoUmpPromotionGlobalDiscountGet(clt *core.SDKClient, req *promotion.TaobaoUmpPromotionGlobalDiscountGetAPIRequest, session string) (*promotion.TaobaoUmpPromotionGlobalDiscountGetAPIResponse, error) {
-	var resp promotion.TaobaoUmpPromotionGlobalDiscountGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUmpPromotionGlobalDiscountGet(clt *core.SDKClient, req *promotion.TaobaoUmpPromotionGlobalDiscountGetAPIRequest, resp *promotion.TaobaoUmpPromotionGlobalDiscountGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

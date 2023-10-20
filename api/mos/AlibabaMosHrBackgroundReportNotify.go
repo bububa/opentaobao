@@ -9,11 +9,6 @@ import (
 // alibaba.mos.hr.background.report.notify
 //
 // 背调公司背调结果通知
-func AlibabaMosHrBackgroundReportNotify(clt *core.SDKClient, req *mos.AlibabaMosHrBackgroundReportNotifyAPIRequest, session string) (*mos.AlibabaMosHrBackgroundReportNotifyAPIResponse, error) {
-	var resp mos.AlibabaMosHrBackgroundReportNotifyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMosHrBackgroundReportNotify(clt *core.SDKClient, req *mos.AlibabaMosHrBackgroundReportNotifyAPIRequest, resp *mos.AlibabaMosHrBackgroundReportNotifyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

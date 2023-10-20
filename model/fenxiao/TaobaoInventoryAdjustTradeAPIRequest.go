@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoInventoryAdjustTradeAPIRequest struct {
 // NewTaobaoInventoryAdjustTradeRequest 初始化TaobaoInventoryAdjustTradeAPIRequest对象
 func NewTaobaoInventoryAdjustTradeRequest() *TaobaoInventoryAdjustTradeAPIRequest {
 	return &TaobaoInventoryAdjustTradeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoInventoryAdjustTradeAPIRequest) Reset() {
+	r._tbOrderType = ""
+	r._operateTime = ""
+	r._bizUniqueCode = ""
+	r._items = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoInventoryAdjustTradeAPIRequest) SetItems(_items string) error {
 // GetItems Items Getter
 func (r TaobaoInventoryAdjustTradeAPIRequest) GetItems() string {
 	return r._items
+}
+
+var poolTaobaoInventoryAdjustTradeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoInventoryAdjustTradeRequest()
+	},
+}
+
+// GetTaobaoInventoryAdjustTradeRequest 从 sync.Pool 获取 TaobaoInventoryAdjustTradeAPIRequest
+func GetTaobaoInventoryAdjustTradeAPIRequest() *TaobaoInventoryAdjustTradeAPIRequest {
+	return poolTaobaoInventoryAdjustTradeAPIRequest.Get().(*TaobaoInventoryAdjustTradeAPIRequest)
+}
+
+// ReleaseTaobaoInventoryAdjustTradeAPIRequest 将 TaobaoInventoryAdjustTradeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoInventoryAdjustTradeAPIRequest(v *TaobaoInventoryAdjustTradeAPIRequest) {
+	v.Reset()
+	poolTaobaoInventoryAdjustTradeAPIRequest.Put(v)
 }

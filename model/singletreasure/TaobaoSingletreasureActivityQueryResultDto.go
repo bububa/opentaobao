@@ -1,5 +1,9 @@
 package singletreasure
 
+import (
+	"sync"
+)
+
 // TaobaoSingletreasureActivityQueryResultDto 结构体
 type TaobaoSingletreasureActivityQueryResultDto struct {
 	// 查询结果
@@ -16,4 +20,27 @@ type TaobaoSingletreasureActivityQueryResultDto struct {
 	Size int64 `json:"size,omitempty" xml:"size,omitempty"`
 	// 系统执行是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoSingletreasureActivityQueryResultDto = sync.Pool{
+	New: func() any {
+		return new(TaobaoSingletreasureActivityQueryResultDto)
+	},
+}
+
+// GetTaobaoSingletreasureActivityQueryResultDto() 从对象池中获取TaobaoSingletreasureActivityQueryResultDto
+func GetTaobaoSingletreasureActivityQueryResultDto() *TaobaoSingletreasureActivityQueryResultDto {
+	return poolTaobaoSingletreasureActivityQueryResultDto.Get().(*TaobaoSingletreasureActivityQueryResultDto)
+}
+
+// ReleaseTaobaoSingletreasureActivityQueryResultDto 释放TaobaoSingletreasureActivityQueryResultDto
+func ReleaseTaobaoSingletreasureActivityQueryResultDto(v *TaobaoSingletreasureActivityQueryResultDto) {
+	v.DataList = v.DataList[:0]
+	v.Message = ""
+	v.Code = 0
+	v.PageNumber = 0
+	v.TotalCount = 0
+	v.Size = 0
+	v.Success = false
+	poolTaobaoSingletreasureActivityQueryResultDto.Put(v)
 }

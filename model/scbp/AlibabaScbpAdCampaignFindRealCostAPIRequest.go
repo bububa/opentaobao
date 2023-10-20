@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaScbpAdCampaignFindRealCostAPIRequest struct {
 // NewAlibabaScbpAdCampaignFindRealCostRequest 初始化AlibabaScbpAdCampaignFindRealCostAPIRequest对象
 func NewAlibabaScbpAdCampaignFindRealCostRequest() *AlibabaScbpAdCampaignFindRealCostAPIRequest {
 	return &AlibabaScbpAdCampaignFindRealCostAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdCampaignFindRealCostAPIRequest) Reset() {
+	r._topContext = nil
+	r._campaignQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaScbpAdCampaignFindRealCostAPIRequest) SetCampaignQuery(_campaign
 // GetCampaignQuery CampaignQuery Getter
 func (r AlibabaScbpAdCampaignFindRealCostAPIRequest) GetCampaignQuery() *CampaignQueryDto {
 	return r._campaignQuery
+}
+
+var poolAlibabaScbpAdCampaignFindRealCostAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdCampaignFindRealCostRequest()
+	},
+}
+
+// GetAlibabaScbpAdCampaignFindRealCostRequest 从 sync.Pool 获取 AlibabaScbpAdCampaignFindRealCostAPIRequest
+func GetAlibabaScbpAdCampaignFindRealCostAPIRequest() *AlibabaScbpAdCampaignFindRealCostAPIRequest {
+	return poolAlibabaScbpAdCampaignFindRealCostAPIRequest.Get().(*AlibabaScbpAdCampaignFindRealCostAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdCampaignFindRealCostAPIRequest 将 AlibabaScbpAdCampaignFindRealCostAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdCampaignFindRealCostAPIRequest(v *AlibabaScbpAdCampaignFindRealCostAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdCampaignFindRealCostAPIRequest.Put(v)
 }

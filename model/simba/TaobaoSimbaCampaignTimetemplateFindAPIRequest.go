@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type TaobaoSimbaCampaignTimetemplateFindAPIRequest struct {
 // NewTaobaoSimbaCampaignTimetemplateFindRequest 初始化TaobaoSimbaCampaignTimetemplateFindAPIRequest对象
 func NewTaobaoSimbaCampaignTimetemplateFindRequest() *TaobaoSimbaCampaignTimetemplateFindAPIRequest {
 	return &TaobaoSimbaCampaignTimetemplateFindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaCampaignTimetemplateFindAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r TaobaoSimbaCampaignTimetemplateFindAPIRequest) GetApiParams(params url.V
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r TaobaoSimbaCampaignTimetemplateFindAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolTaobaoSimbaCampaignTimetemplateFindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaCampaignTimetemplateFindRequest()
+	},
+}
+
+// GetTaobaoSimbaCampaignTimetemplateFindRequest 从 sync.Pool 获取 TaobaoSimbaCampaignTimetemplateFindAPIRequest
+func GetTaobaoSimbaCampaignTimetemplateFindAPIRequest() *TaobaoSimbaCampaignTimetemplateFindAPIRequest {
+	return poolTaobaoSimbaCampaignTimetemplateFindAPIRequest.Get().(*TaobaoSimbaCampaignTimetemplateFindAPIRequest)
+}
+
+// ReleaseTaobaoSimbaCampaignTimetemplateFindAPIRequest 将 TaobaoSimbaCampaignTimetemplateFindAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaCampaignTimetemplateFindAPIRequest(v *TaobaoSimbaCampaignTimetemplateFindAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaCampaignTimetemplateFindAPIRequest.Put(v)
 }

@@ -1,9 +1,13 @@
 package wdk
 
-// MissfreshO2ocallbackOrder 结构体
-type MissfreshO2ocallbackOrder struct {
+import (
+	"sync"
+)
+
+// MissfreshO2OCallbackOrder 结构体
+type MissfreshO2OCallbackOrder struct {
 	// 作业单元
-	CallbackUnits []MissfreshO2ocallbackUnit `json:"callback_units,omitempty" xml:"callback_units>missfresh_o2ocallback_unit,omitempty"`
+	CallbackUnits []MissfreshO2OCallbackUnit `json:"callback_units,omitempty" xml:"callback_units>missfresh_o2o_callback_unit,omitempty"`
 	// 容器列表
 	Containers []Container `json:"containers,omitempty" xml:"containers>container,omitempty"`
 	// 作业状态变更时间
@@ -20,4 +24,29 @@ type MissfreshO2ocallbackOrder struct {
 	Operator *Operator `json:"operator,omitempty" xml:"operator,omitempty"`
 	// 是否作业节点终态
 	IsFinal bool `json:"is_final,omitempty" xml:"is_final,omitempty"`
+}
+
+var poolMissfreshO2OCallbackOrder = sync.Pool{
+	New: func() any {
+		return new(MissfreshO2OCallbackOrder)
+	},
+}
+
+// GetMissfreshO2OCallbackOrder() 从对象池中获取MissfreshO2OCallbackOrder
+func GetMissfreshO2OCallbackOrder() *MissfreshO2OCallbackOrder {
+	return poolMissfreshO2OCallbackOrder.Get().(*MissfreshO2OCallbackOrder)
+}
+
+// ReleaseMissfreshO2OCallbackOrder 释放MissfreshO2OCallbackOrder
+func ReleaseMissfreshO2OCallbackOrder(v *MissfreshO2OCallbackOrder) {
+	v.CallbackUnits = v.CallbackUnits[:0]
+	v.Containers = v.Containers[:0]
+	v.StatusChangeTime = ""
+	v.StatusChangeType = ""
+	v.NodeCode = ""
+	v.WorkOrderType = ""
+	v.WorkOrderId = ""
+	v.Operator = nil
+	v.IsFinal = false
+	poolMissfreshO2OCallbackOrder.Put(v)
 }

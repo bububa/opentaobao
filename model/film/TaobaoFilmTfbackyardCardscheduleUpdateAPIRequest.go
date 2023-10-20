@@ -2,6 +2,7 @@ package film
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoFilmTfbackyardCardscheduleUpdateAPIRequest struct {
 // NewTaobaoFilmTfbackyardCardscheduleUpdateRequest 初始化TaobaoFilmTfbackyardCardscheduleUpdateAPIRequest对象
 func NewTaobaoFilmTfbackyardCardscheduleUpdateRequest() *TaobaoFilmTfbackyardCardscheduleUpdateAPIRequest {
 	return &TaobaoFilmTfbackyardCardscheduleUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFilmTfbackyardCardscheduleUpdateAPIRequest) Reset() {
+	r._jsonData = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoFilmTfbackyardCardscheduleUpdateAPIRequest) SetJsonData(_jsonData
 // GetJsonData JsonData Getter
 func (r TaobaoFilmTfbackyardCardscheduleUpdateAPIRequest) GetJsonData() string {
 	return r._jsonData
+}
+
+var poolTaobaoFilmTfbackyardCardscheduleUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFilmTfbackyardCardscheduleUpdateRequest()
+	},
+}
+
+// GetTaobaoFilmTfbackyardCardscheduleUpdateRequest 从 sync.Pool 获取 TaobaoFilmTfbackyardCardscheduleUpdateAPIRequest
+func GetTaobaoFilmTfbackyardCardscheduleUpdateAPIRequest() *TaobaoFilmTfbackyardCardscheduleUpdateAPIRequest {
+	return poolTaobaoFilmTfbackyardCardscheduleUpdateAPIRequest.Get().(*TaobaoFilmTfbackyardCardscheduleUpdateAPIRequest)
+}
+
+// ReleaseTaobaoFilmTfbackyardCardscheduleUpdateAPIRequest 将 TaobaoFilmTfbackyardCardscheduleUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFilmTfbackyardCardscheduleUpdateAPIRequest(v *TaobaoFilmTfbackyardCardscheduleUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoFilmTfbackyardCardscheduleUpdateAPIRequest.Put(v)
 }

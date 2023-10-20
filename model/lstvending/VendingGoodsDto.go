@@ -1,6 +1,8 @@
 package lstvending
 
 import (
+	"sync"
+
 	"github.com/bububa/opentaobao/model"
 )
 
@@ -38,4 +40,36 @@ type VendingGoodsDto struct {
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
 	// 商品ID
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolVendingGoodsDto = sync.Pool{
+	New: func() any {
+		return new(VendingGoodsDto)
+	},
+}
+
+// GetVendingGoodsDto() 从对象池中获取VendingGoodsDto
+func GetVendingGoodsDto() *VendingGoodsDto {
+	return poolVendingGoodsDto.Get().(*VendingGoodsDto)
+}
+
+// ReleaseVendingGoodsDto 释放VendingGoodsDto
+func ReleaseVendingGoodsDto(v *VendingGoodsDto) {
+	v.ImgData = v.ImgData[:0]
+	v.ShelfNoList = v.ShelfNoList[:0]
+	v.Barcode = ""
+	v.ExternalId = ""
+	v.Unit = ""
+	v.Title = ""
+	v.Category = ""
+	v.EquipmentCode = ""
+	v.ImgPathId = ""
+	v.SupplierCode = ""
+	v.ImgUrl = ""
+	v.GmtModified = 0
+	v.GmtCreate = 0
+	v.Status = 0
+	v.Price = 0
+	v.Id = 0
+	poolVendingGoodsDto.Put(v)
 }

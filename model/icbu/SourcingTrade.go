@@ -1,5 +1,9 @@
 package icbu
 
+import (
+	"sync"
+)
+
 // SourcingTrade 结构体
 type SourcingTrade struct {
 	// 付款方式，枚举值
@@ -30,4 +34,34 @@ type SourcingTrade struct {
 	SupplyUnitType string `json:"supply_unit_type,omitempty" xml:"supply_unit_type,omitempty"`
 	// 包装信息
 	PackagingDesc string `json:"packaging_desc,omitempty" xml:"packaging_desc,omitempty"`
+}
+
+var poolSourcingTrade = sync.Pool{
+	New: func() any {
+		return new(SourcingTrade)
+	},
+}
+
+// GetSourcingTrade() 从对象池中获取SourcingTrade
+func GetSourcingTrade() *SourcingTrade {
+	return poolSourcingTrade.Get().(*SourcingTrade)
+}
+
+// ReleaseSourcingTrade 释放SourcingTrade
+func ReleaseSourcingTrade(v *SourcingTrade) {
+	v.PaymentMethods = v.PaymentMethods[:0]
+	v.DeliverPeriods = v.DeliverPeriods[:0]
+	v.DeliveryPort = ""
+	v.DeliveryTime = ""
+	v.FobCurrency = ""
+	v.FobMaxPrice = ""
+	v.FobMinPrice = ""
+	v.FobUnitType = ""
+	v.MinOrderQuantity = ""
+	v.MinOrderUnitType = ""
+	v.SupplyPeriodType = ""
+	v.SupplyQuantity = ""
+	v.SupplyUnitType = ""
+	v.PackagingDesc = ""
+	poolSourcingTrade.Put(v)
 }

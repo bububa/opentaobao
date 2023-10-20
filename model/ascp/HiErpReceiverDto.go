@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // HiErpReceiverDto 结构体
 type HiErpReceiverDto struct {
 	// 收件人姓名
@@ -22,4 +26,30 @@ type HiErpReceiverDto struct {
 	DetailAddress string `json:"detail_address,omitempty" xml:"detail_address,omitempty"`
 	// 扩展字段，json格式
 	Feature string `json:"feature,omitempty" xml:"feature,omitempty"`
+}
+
+var poolHiErpReceiverDto = sync.Pool{
+	New: func() any {
+		return new(HiErpReceiverDto)
+	},
+}
+
+// GetHiErpReceiverDto() 从对象池中获取HiErpReceiverDto
+func GetHiErpReceiverDto() *HiErpReceiverDto {
+	return poolHiErpReceiverDto.Get().(*HiErpReceiverDto)
+}
+
+// ReleaseHiErpReceiverDto 释放HiErpReceiverDto
+func ReleaseHiErpReceiverDto(v *HiErpReceiverDto) {
+	v.ReceiverName = ""
+	v.CellPhone = ""
+	v.TelePhone = ""
+	v.Country = ""
+	v.Province = ""
+	v.City = ""
+	v.Area = ""
+	v.Town = ""
+	v.DetailAddress = ""
+	v.Feature = ""
+	poolHiErpReceiverDto.Put(v)
 }

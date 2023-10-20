@@ -1,5 +1,9 @@
 package waybill
 
+import (
+	"sync"
+)
+
 // WaybillOrderConfirmWaybillInfo 结构体
 type WaybillOrderConfirmWaybillInfo struct {
 	// 面单号
@@ -14,4 +18,26 @@ type WaybillOrderConfirmWaybillInfo struct {
 	Weight int64 `json:"weight,omitempty" xml:"weight,omitempty"`
 	// 包裹宽，单位厘米
 	Width int64 `json:"width,omitempty" xml:"width,omitempty"`
+}
+
+var poolWaybillOrderConfirmWaybillInfo = sync.Pool{
+	New: func() any {
+		return new(WaybillOrderConfirmWaybillInfo)
+	},
+}
+
+// GetWaybillOrderConfirmWaybillInfo() 从对象池中获取WaybillOrderConfirmWaybillInfo
+func GetWaybillOrderConfirmWaybillInfo() *WaybillOrderConfirmWaybillInfo {
+	return poolWaybillOrderConfirmWaybillInfo.Get().(*WaybillOrderConfirmWaybillInfo)
+}
+
+// ReleaseWaybillOrderConfirmWaybillInfo 释放WaybillOrderConfirmWaybillInfo
+func ReleaseWaybillOrderConfirmWaybillInfo(v *WaybillOrderConfirmWaybillInfo) {
+	v.WaybillCode = ""
+	v.Height = 0
+	v.Length = 0
+	v.Volume = 0
+	v.Weight = 0
+	v.Width = 0
+	poolWaybillOrderConfirmWaybillInfo.Put(v)
 }

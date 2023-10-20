@@ -2,6 +2,7 @@ package user
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaBenefitSendAPIResponse struct {
 	model.CommonResponse
 	AlibabaBenefitSendAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaBenefitSendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaBenefitSendAPIResponseModel).Reset()
 }
 
 // AlibabaBenefitSendAPIResponseModel is 发奖接口 成功返回结果
@@ -30,4 +37,31 @@ type AlibabaBenefitSendAPIResponseModel struct {
 	RightId int64 `json:"right_id,omitempty" xml:"right_id,omitempty"`
 	// 是否处理成功
 	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaBenefitSendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultMsg = ""
+	m.ResultCode = ""
+	m.PrizeName = ""
+	m.RightId = 0
+	m.ResultSuccess = false
+}
+
+var poolAlibabaBenefitSendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaBenefitSendAPIResponse)
+	},
+}
+
+// GetAlibabaBenefitSendAPIResponse 从 sync.Pool 获取 AlibabaBenefitSendAPIResponse
+func GetAlibabaBenefitSendAPIResponse() *AlibabaBenefitSendAPIResponse {
+	return poolAlibabaBenefitSendAPIResponse.Get().(*AlibabaBenefitSendAPIResponse)
+}
+
+// ReleaseAlibabaBenefitSendAPIResponse 将 AlibabaBenefitSendAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaBenefitSendAPIResponse(v *AlibabaBenefitSendAPIResponse) {
+	v.Reset()
+	poolAlibabaBenefitSendAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // EmployeeBasic 结构体
 type EmployeeBasic struct {
 	// 私人邮箱
@@ -124,4 +128,81 @@ type EmployeeBasic struct {
 	PerformancePay string `json:"performance_pay,omitempty" xml:"performance_pay,omitempty"`
 	// 餐补
 	MealAllowance string `json:"meal_allowance,omitempty" xml:"meal_allowance,omitempty"`
+}
+
+var poolEmployeeBasic = sync.Pool{
+	New: func() any {
+		return new(EmployeeBasic)
+	},
+}
+
+// GetEmployeeBasic() 从对象池中获取EmployeeBasic
+func GetEmployeeBasic() *EmployeeBasic {
+	return poolEmployeeBasic.Get().(*EmployeeBasic)
+}
+
+// ReleaseEmployeeBasic 释放EmployeeBasic
+func ReleaseEmployeeBasic(v *EmployeeBasic) {
+	v.EMail = ""
+	v.AccountName = ""
+	v.AmountOfCivilDisputes = ""
+	v.Attachment = ""
+	v.BankAccount = ""
+	v.BankBranch = ""
+	v.BankCountry = ""
+	v.BankSubbranch = ""
+	v.BasicSalary = ""
+	v.Birthday = ""
+	v.CompaniesEmployed = ""
+	v.ComputerOperate = ""
+	v.CrimeDesc = ""
+	v.Degree = ""
+	v.DiseasesName = ""
+	v.Education = ""
+	v.EmpSubType = ""
+	v.EmpType = ""
+	v.EndTimeEmployed = ""
+	v.EntryAssistant = ""
+	v.GmtEntry = ""
+	v.GmtHealthCertEnd = ""
+	v.GmtOrigRegular = ""
+	v.HouseFundPayTime = ""
+	v.HukouType = ""
+	v.IsCrime = ""
+	v.IsDisability = ""
+	v.IsDiseases = ""
+	v.IsEmployed = ""
+	v.IsInternalReferral = ""
+	v.IsOversea = ""
+	v.IsPayHouseFund = ""
+	v.IsPaySocialSecurity = ""
+	v.IsStillCivilDisputes = ""
+	v.JobEmployed = ""
+	v.JobLevel = ""
+	v.LocationEmployed = ""
+	v.LocationNo = ""
+	v.Marriage = ""
+	v.Mobile = ""
+	v.Name = ""
+	v.Nation = ""
+	v.NationCountry = ""
+	v.NativePlace = ""
+	v.OrgCode = ""
+	v.OtherSkill = ""
+	v.PostNo = ""
+	v.ReferralName = ""
+	v.ReferralRelation = ""
+	v.SalaryType = ""
+	v.ServiceCompany = ""
+	v.Sex = ""
+	v.SignCompany = ""
+	v.Source = ""
+	v.StartTimeEmployed = ""
+	v.SuperName = ""
+	v.UnemploymentPayTime = ""
+	v.VirtName = ""
+	v.LevelSalary = ""
+	v.PerformancePay = ""
+	v.MealAllowance = ""
+	poolEmployeeBasic.Put(v)
 }

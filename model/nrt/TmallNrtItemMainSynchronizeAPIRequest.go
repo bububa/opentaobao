@@ -2,6 +2,7 @@ package nrt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type TmallNrtItemMainSynchronizeAPIRequest struct {
 // NewTmallNrtItemMainSynchronizeRequest 初始化TmallNrtItemMainSynchronizeAPIRequest对象
 func NewTmallNrtItemMainSynchronizeRequest() *TmallNrtItemMainSynchronizeAPIRequest {
 	return &TmallNrtItemMainSynchronizeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrtItemMainSynchronizeAPIRequest) Reset() {
+	r._props = r._props[:0]
+	r._boothId = ""
+	r._dealerCode = ""
+	r._mallId = ""
+	r._outerId = ""
+	r._price = ""
+	r._title = ""
+	r._cid = 0
+	r._outerProps = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *TmallNrtItemMainSynchronizeAPIRequest) SetOuterProps(_outerProps *Macal
 // GetOuterProps OuterProps Getter
 func (r TmallNrtItemMainSynchronizeAPIRequest) GetOuterProps() *MacallineItemExtDto {
 	return r._outerProps
+}
+
+var poolTmallNrtItemMainSynchronizeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrtItemMainSynchronizeRequest()
+	},
+}
+
+// GetTmallNrtItemMainSynchronizeRequest 从 sync.Pool 获取 TmallNrtItemMainSynchronizeAPIRequest
+func GetTmallNrtItemMainSynchronizeAPIRequest() *TmallNrtItemMainSynchronizeAPIRequest {
+	return poolTmallNrtItemMainSynchronizeAPIRequest.Get().(*TmallNrtItemMainSynchronizeAPIRequest)
+}
+
+// ReleaseTmallNrtItemMainSynchronizeAPIRequest 将 TmallNrtItemMainSynchronizeAPIRequest 放入 sync.Pool
+func ReleaseTmallNrtItemMainSynchronizeAPIRequest(v *TmallNrtItemMainSynchronizeAPIRequest) {
+	v.Reset()
+	poolTmallNrtItemMainSynchronizeAPIRequest.Put(v)
 }

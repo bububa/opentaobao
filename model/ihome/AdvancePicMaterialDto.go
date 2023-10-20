@@ -1,5 +1,9 @@
 package ihome
 
+import (
+	"sync"
+)
+
 // AdvancePicMaterialDto 结构体
 type AdvancePicMaterialDto struct {
 	// 标题
@@ -18,4 +22,28 @@ type AdvancePicMaterialDto struct {
 	EntId int64 `json:"ent_id,omitempty" xml:"ent_id,omitempty"`
 	// 0 普通图 1 全景图 2 鸟瞰图
 	Flag int64 `json:"flag,omitempty" xml:"flag,omitempty"`
+}
+
+var poolAdvancePicMaterialDto = sync.Pool{
+	New: func() any {
+		return new(AdvancePicMaterialDto)
+	},
+}
+
+// GetAdvancePicMaterialDto() 从对象池中获取AdvancePicMaterialDto
+func GetAdvancePicMaterialDto() *AdvancePicMaterialDto {
+	return poolAdvancePicMaterialDto.Get().(*AdvancePicMaterialDto)
+}
+
+// ReleaseAdvancePicMaterialDto 释放AdvancePicMaterialDto
+func ReleaseAdvancePicMaterialDto(v *AdvancePicMaterialDto) {
+	v.Title = ""
+	v.UserId = ""
+	v.Url = ""
+	v.CaseId = ""
+	v.Width = 0
+	v.Height = 0
+	v.EntId = 0
+	v.Flag = 0
+	poolAdvancePicMaterialDto.Put(v)
 }

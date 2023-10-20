@@ -1,5 +1,9 @@
 package aliospay
 
+import (
+	"sync"
+)
+
 // SearchRecordRequest 结构体
 type SearchRecordRequest struct {
 	// 请求唯一id，不可重复，服务端会根据此参数防重放
@@ -16,4 +20,27 @@ type SearchRecordRequest struct {
 	Offset int64 `json:"offset,omitempty" xml:"offset,omitempty"`
 	// 每页数量，默认100
 	Size int64 `json:"size,omitempty" xml:"size,omitempty"`
+}
+
+var poolSearchRecordRequest = sync.Pool{
+	New: func() any {
+		return new(SearchRecordRequest)
+	},
+}
+
+// GetSearchRecordRequest() 从对象池中获取SearchRecordRequest
+func GetSearchRecordRequest() *SearchRecordRequest {
+	return poolSearchRecordRequest.Get().(*SearchRecordRequest)
+}
+
+// ReleaseSearchRecordRequest 释放SearchRecordRequest
+func ReleaseSearchRecordRequest(v *SearchRecordRequest) {
+	v.TraceId = ""
+	v.Lang = ""
+	v.Time = ""
+	v.BeginTime = 0
+	v.EndTime = 0
+	v.Offset = 0
+	v.Size = 0
+	poolSearchRecordRequest.Put(v)
 }

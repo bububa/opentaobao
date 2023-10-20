@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YunosTvpubadminDeviceApkinfoAPIRequest struct {
 // NewYunosTvpubadminDeviceApkinfoRequest 初始化YunosTvpubadminDeviceApkinfoAPIRequest对象
 func NewYunosTvpubadminDeviceApkinfoRequest() *YunosTvpubadminDeviceApkinfoAPIRequest {
 	return &YunosTvpubadminDeviceApkinfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminDeviceApkinfoAPIRequest) Reset() {
+	r._id = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YunosTvpubadminDeviceApkinfoAPIRequest) SetId(_id int64) error {
 // GetId Id Getter
 func (r YunosTvpubadminDeviceApkinfoAPIRequest) GetId() int64 {
 	return r._id
+}
+
+var poolYunosTvpubadminDeviceApkinfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminDeviceApkinfoRequest()
+	},
+}
+
+// GetYunosTvpubadminDeviceApkinfoRequest 从 sync.Pool 获取 YunosTvpubadminDeviceApkinfoAPIRequest
+func GetYunosTvpubadminDeviceApkinfoAPIRequest() *YunosTvpubadminDeviceApkinfoAPIRequest {
+	return poolYunosTvpubadminDeviceApkinfoAPIRequest.Get().(*YunosTvpubadminDeviceApkinfoAPIRequest)
+}
+
+// ReleaseYunosTvpubadminDeviceApkinfoAPIRequest 将 YunosTvpubadminDeviceApkinfoAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminDeviceApkinfoAPIRequest(v *YunosTvpubadminDeviceApkinfoAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminDeviceApkinfoAPIRequest.Put(v)
 }

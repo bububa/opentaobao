@@ -2,6 +2,7 @@ package drug
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAlihealthNrTradeOrderGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthNrTradeOrderGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthNrTradeOrderGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthNrTradeOrderGetAPIResponseModel).Reset()
 }
 
 // AlibabaAlihealthNrTradeOrderGetAPIResponseModel is 获取订单详情 成功返回结果
@@ -88,4 +95,60 @@ type AlibabaAlihealthNrTradeOrderGetAPIResponseModel struct {
 	Rx int64 `json:"rx,omitempty" xml:"rx,omitempty"`
 	// 自提标识
 	DrugTake int64 `json:"drug_take,omitempty" xml:"drug_take,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthNrTradeOrderGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.PromotionList = m.PromotionList[:0]
+	m.SubOrderList = m.SubOrderList[:0]
+	m.RxPicList = m.RxPicList[:0]
+	m.SerialNo = ""
+	m.StoreId = ""
+	m.StoreName = ""
+	m.StoreAddressPoi = ""
+	m.BuyerName = ""
+	m.BuyerPhone = ""
+	m.BuyerNote = ""
+	m.InvoiceTitle = ""
+	m.BuyerAddress = ""
+	m.BuyerAddressPoi = ""
+	m.RxPhone = ""
+	m.BuyerAddressProvince = ""
+	m.BuyerAddressCity = ""
+	m.BuyerAddressDistrict = ""
+	m.ExpectedDeliveryTime = ""
+	m.RxType = ""
+	m.OutStoreId = ""
+	m.MiCheckParam = ""
+	m.OrderId = 0
+	m.OrderStatus = 0
+	m.CreateTime = 0
+	m.PayTime = 0
+	m.ShopId = 0
+	m.TotalFee = 0
+	m.ActualReceiveFee = 0
+	m.ActualPayFee = 0
+	m.TotalPromotion = 0
+	m.IsFrequenter = 0
+	m.Carriage = 0
+	m.Rx = 0
+	m.DrugTake = 0
+}
+
+var poolAlibabaAlihealthNrTradeOrderGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthNrTradeOrderGetAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthNrTradeOrderGetAPIResponse 从 sync.Pool 获取 AlibabaAlihealthNrTradeOrderGetAPIResponse
+func GetAlibabaAlihealthNrTradeOrderGetAPIResponse() *AlibabaAlihealthNrTradeOrderGetAPIResponse {
+	return poolAlibabaAlihealthNrTradeOrderGetAPIResponse.Get().(*AlibabaAlihealthNrTradeOrderGetAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthNrTradeOrderGetAPIResponse 将 AlibabaAlihealthNrTradeOrderGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthNrTradeOrderGetAPIResponse(v *AlibabaAlihealthNrTradeOrderGetAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthNrTradeOrderGetAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package examination
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest struct {
 // NewAlibabaAlihealthExaminationTodoorServiceinfoSyncRequest 初始化AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest对象
 func NewAlibabaAlihealthExaminationTodoorServiceinfoSyncRequest() *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest {
 	return &AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) Reset() {
+	r._uniqReserveCode = ""
+	r._eventOccurTime = ""
+	r._event = ""
+	r._reserveNumber = ""
+	r._medicalPractitionerInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) SetMedicalP
 // GetMedicalPractitionerInfo MedicalPractitionerInfo Getter
 func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) GetMedicalPractitionerInfo() *MedicalPractitionerInfo {
 	return r._medicalPractitionerInfo
+}
+
+var poolAlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthExaminationTodoorServiceinfoSyncRequest()
+	},
+}
+
+// GetAlibabaAlihealthExaminationTodoorServiceinfoSyncRequest 从 sync.Pool 获取 AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest
+func GetAlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest() *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest {
+	return poolAlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest.Get().(*AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest 将 AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest(v *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest.Put(v)
 }

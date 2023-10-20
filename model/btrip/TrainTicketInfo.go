@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // TrainTicketInfo 结构体
 type TrainTicketInfo struct {
 	// 票号
@@ -40,4 +44,39 @@ type TrainTicketInfo struct {
 	SegmentIndex int64 `json:"segment_index,omitempty" xml:"segment_index,omitempty"`
 	// 是否改签
 	Changed bool `json:"changed,omitempty" xml:"changed,omitempty"`
+}
+
+var poolTrainTicketInfo = sync.Pool{
+	New: func() any {
+		return new(TrainTicketInfo)
+	},
+}
+
+// GetTrainTicketInfo() 从对象池中获取TrainTicketInfo
+func GetTrainTicketInfo() *TrainTicketInfo {
+	return poolTrainTicketInfo.Get().(*TrainTicketInfo)
+}
+
+// ReleaseTrainTicketInfo 释放TrainTicketInfo
+func ReleaseTrainTicketInfo(v *TrainTicketInfo) {
+	v.TicketNo = ""
+	v.CoachNo = ""
+	v.GmtModify = ""
+	v.SeatTypeName = ""
+	v.GmtCreate = ""
+	v.UserId = ""
+	v.TrainTypeName = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.SeatNo = ""
+	v.CheckInTime = ""
+	v.CheckOutTime = ""
+	v.OutTicketStatus = ""
+	v.ServiceFee = 0
+	v.TicketPrice = 0
+	v.PayType = 0
+	v.TicketStatus = 0
+	v.SegmentIndex = 0
+	v.Changed = false
+	poolTrainTicketInfo.Put(v)
 }

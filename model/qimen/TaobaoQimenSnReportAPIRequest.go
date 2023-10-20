@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQimenSnReportAPIRequest struct {
 // NewTaobaoQimenSnReportRequest 初始化TaobaoQimenSnReportAPIRequest对象
 func NewTaobaoQimenSnReportRequest() *TaobaoQimenSnReportAPIRequest {
 	return &TaobaoQimenSnReportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenSnReportAPIRequest) Reset() {
+	r._request = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -50,4 +57,21 @@ func (r *TaobaoQimenSnReportAPIRequest) SetRequest(_request *SnReportRequest) er
 // GetRequest Request Getter
 func (r TaobaoQimenSnReportAPIRequest) GetRequest() *SnReportRequest {
 	return r._request
+}
+
+var poolTaobaoQimenSnReportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenSnReportRequest()
+	},
+}
+
+// GetTaobaoQimenSnReportRequest 从 sync.Pool 获取 TaobaoQimenSnReportAPIRequest
+func GetTaobaoQimenSnReportAPIRequest() *TaobaoQimenSnReportAPIRequest {
+	return poolTaobaoQimenSnReportAPIRequest.Get().(*TaobaoQimenSnReportAPIRequest)
+}
+
+// ReleaseTaobaoQimenSnReportAPIRequest 将 TaobaoQimenSnReportAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenSnReportAPIRequest(v *TaobaoQimenSnReportAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenSnReportAPIRequest.Put(v)
 }

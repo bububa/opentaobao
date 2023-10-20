@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.item.merchantstoresku.update
 //
 // 门店商品信息修改
-func AlibabaWdkItemMerchantstoreskuUpdate(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemMerchantstoreskuUpdateAPIRequest, session string) (*wdkitem.AlibabaWdkItemMerchantstoreskuUpdateAPIResponse, error) {
-	var resp wdkitem.AlibabaWdkItemMerchantstoreskuUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkItemMerchantstoreskuUpdate(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemMerchantstoreskuUpdateAPIRequest, resp *wdkitem.AlibabaWdkItemMerchantstoreskuUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package media
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaVideoTokenGetAPIRequest struct {
 // NewAlibabaVideoTokenGetRequest 初始化AlibabaVideoTokenGetAPIRequest对象
 func NewAlibabaVideoTokenGetRequest() *AlibabaVideoTokenGetAPIRequest {
 	return &AlibabaVideoTokenGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaVideoTokenGetAPIRequest) Reset() {
+	r._mimeLimit = ""
+	r._sizeLimit = 0
+	r._expiration = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaVideoTokenGetAPIRequest) SetExpiration(_expiration int64) error 
 // GetExpiration Expiration Getter
 func (r AlibabaVideoTokenGetAPIRequest) GetExpiration() int64 {
 	return r._expiration
+}
+
+var poolAlibabaVideoTokenGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaVideoTokenGetRequest()
+	},
+}
+
+// GetAlibabaVideoTokenGetRequest 从 sync.Pool 获取 AlibabaVideoTokenGetAPIRequest
+func GetAlibabaVideoTokenGetAPIRequest() *AlibabaVideoTokenGetAPIRequest {
+	return poolAlibabaVideoTokenGetAPIRequest.Get().(*AlibabaVideoTokenGetAPIRequest)
+}
+
+// ReleaseAlibabaVideoTokenGetAPIRequest 将 AlibabaVideoTokenGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaVideoTokenGetAPIRequest(v *AlibabaVideoTokenGetAPIRequest) {
+	v.Reset()
+	poolAlibabaVideoTokenGetAPIRequest.Put(v)
 }

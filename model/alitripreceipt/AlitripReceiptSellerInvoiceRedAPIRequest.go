@@ -2,6 +2,7 @@ package alitripreceipt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripReceiptSellerInvoiceRedAPIRequest struct {
 // NewAlitripReceiptSellerInvoiceRedRequest 初始化AlitripReceiptSellerInvoiceRedAPIRequest对象
 func NewAlitripReceiptSellerInvoiceRedRequest() *AlitripReceiptSellerInvoiceRedAPIRequest {
 	return &AlitripReceiptSellerInvoiceRedAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripReceiptSellerInvoiceRedAPIRequest) Reset() {
+	r._redReceiptParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripReceiptSellerInvoiceRedAPIRequest) SetRedReceiptParam(_redReceip
 // GetRedReceiptParam RedReceiptParam Getter
 func (r AlitripReceiptSellerInvoiceRedAPIRequest) GetRedReceiptParam() *RedReceiptParam {
 	return r._redReceiptParam
+}
+
+var poolAlitripReceiptSellerInvoiceRedAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripReceiptSellerInvoiceRedRequest()
+	},
+}
+
+// GetAlitripReceiptSellerInvoiceRedRequest 从 sync.Pool 获取 AlitripReceiptSellerInvoiceRedAPIRequest
+func GetAlitripReceiptSellerInvoiceRedAPIRequest() *AlitripReceiptSellerInvoiceRedAPIRequest {
+	return poolAlitripReceiptSellerInvoiceRedAPIRequest.Get().(*AlitripReceiptSellerInvoiceRedAPIRequest)
+}
+
+// ReleaseAlitripReceiptSellerInvoiceRedAPIRequest 将 AlitripReceiptSellerInvoiceRedAPIRequest 放入 sync.Pool
+func ReleaseAlitripReceiptSellerInvoiceRedAPIRequest(v *AlitripReceiptSellerInvoiceRedAPIRequest) {
+	v.Reset()
+	poolAlitripReceiptSellerInvoiceRedAPIRequest.Put(v)
 }

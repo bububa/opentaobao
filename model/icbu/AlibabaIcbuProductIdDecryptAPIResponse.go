@@ -2,6 +2,7 @@ package icbu
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaIcbuProductIdDecryptAPIResponse struct {
 	AlibabaIcbuProductIdDecryptAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaIcbuProductIdDecryptAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaIcbuProductIdDecryptAPIResponseModel).Reset()
+}
+
 // AlibabaIcbuProductIdDecryptAPIResponseModel is 商品ID解密 成功返回结果
 type AlibabaIcbuProductIdDecryptAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_icbu_product_id_decrypt_response"`
@@ -22,4 +29,27 @@ type AlibabaIcbuProductIdDecryptAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 商品ID
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaIcbuProductIdDecryptAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Id = 0
+}
+
+var poolAlibabaIcbuProductIdDecryptAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaIcbuProductIdDecryptAPIResponse)
+	},
+}
+
+// GetAlibabaIcbuProductIdDecryptAPIResponse 从 sync.Pool 获取 AlibabaIcbuProductIdDecryptAPIResponse
+func GetAlibabaIcbuProductIdDecryptAPIResponse() *AlibabaIcbuProductIdDecryptAPIResponse {
+	return poolAlibabaIcbuProductIdDecryptAPIResponse.Get().(*AlibabaIcbuProductIdDecryptAPIResponse)
+}
+
+// ReleaseAlibabaIcbuProductIdDecryptAPIResponse 将 AlibabaIcbuProductIdDecryptAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaIcbuProductIdDecryptAPIResponse(v *AlibabaIcbuProductIdDecryptAPIResponse) {
+	v.Reset()
+	poolAlibabaIcbuProductIdDecryptAPIResponse.Put(v)
 }

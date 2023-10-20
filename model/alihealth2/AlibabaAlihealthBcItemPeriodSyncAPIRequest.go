@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthBcItemPeriodSyncAPIRequest struct {
 // NewAlibabaAlihealthBcItemPeriodSyncRequest 初始化AlibabaAlihealthBcItemPeriodSyncAPIRequest对象
 func NewAlibabaAlihealthBcItemPeriodSyncRequest() *AlibabaAlihealthBcItemPeriodSyncAPIRequest {
 	return &AlibabaAlihealthBcItemPeriodSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthBcItemPeriodSyncAPIRequest) Reset() {
+	r._validityPeriodSyncReqDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthBcItemPeriodSyncAPIRequest) SetValidityPeriodSyncReqDto
 // GetValidityPeriodSyncReqDto ValidityPeriodSyncReqDto Getter
 func (r AlibabaAlihealthBcItemPeriodSyncAPIRequest) GetValidityPeriodSyncReqDto() *ValidityPeriodSyncReqDto {
 	return r._validityPeriodSyncReqDto
+}
+
+var poolAlibabaAlihealthBcItemPeriodSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthBcItemPeriodSyncRequest()
+	},
+}
+
+// GetAlibabaAlihealthBcItemPeriodSyncRequest 从 sync.Pool 获取 AlibabaAlihealthBcItemPeriodSyncAPIRequest
+func GetAlibabaAlihealthBcItemPeriodSyncAPIRequest() *AlibabaAlihealthBcItemPeriodSyncAPIRequest {
+	return poolAlibabaAlihealthBcItemPeriodSyncAPIRequest.Get().(*AlibabaAlihealthBcItemPeriodSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthBcItemPeriodSyncAPIRequest 将 AlibabaAlihealthBcItemPeriodSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthBcItemPeriodSyncAPIRequest(v *AlibabaAlihealthBcItemPeriodSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthBcItemPeriodSyncAPIRequest.Put(v)
 }

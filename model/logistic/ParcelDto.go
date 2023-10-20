@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // ParcelDto 结构体
 type ParcelDto struct {
 	// Type: ENVELOPE, BOX, BAG, TUBE, PALLET
@@ -18,4 +22,28 @@ type ParcelDto struct {
 	ParcelType string `json:"parcel_type,omitempty" xml:"parcel_type,omitempty"`
 	// number of the parcel and there&#39;s only one parcel
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
+}
+
+var poolParcelDto = sync.Pool{
+	New: func() any {
+		return new(ParcelDto)
+	},
+}
+
+// GetParcelDto() 从对象池中获取ParcelDto
+func GetParcelDto() *ParcelDto {
+	return poolParcelDto.Get().(*ParcelDto)
+}
+
+// ReleaseParcelDto 释放ParcelDto
+func ReleaseParcelDto(v *ParcelDto) {
+	v.ParcelTypeCode = ""
+	v.Width = ""
+	v.Length = ""
+	v.Weight = ""
+	v.Height = ""
+	v.ProductTotalPrice = ""
+	v.ParcelType = ""
+	v.Quantity = 0
+	poolParcelDto.Put(v)
 }

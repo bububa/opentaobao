@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // CompanyDto 结构体
 type CompanyDto struct {
 	// 公司编号
@@ -30,4 +34,34 @@ type CompanyDto struct {
 	IsWuye bool `json:"is_wuye,omitempty" xml:"is_wuye,omitempty"`
 	// 是否默认公司
 	IsDefault bool `json:"is_default,omitempty" xml:"is_default,omitempty"`
+}
+
+var poolCompanyDto = sync.Pool{
+	New: func() any {
+		return new(CompanyDto)
+	},
+}
+
+// GetCompanyDto() 从对象池中获取CompanyDto
+func GetCompanyDto() *CompanyDto {
+	return poolCompanyDto.Get().(*CompanyDto)
+}
+
+// ReleaseCompanyDto 释放CompanyDto
+func ReleaseCompanyDto(v *CompanyDto) {
+	v.CompanyCode = ""
+	v.CorpId = ""
+	v.HrSignCompanyId = ""
+	v.CampusName = ""
+	v.Mobile = ""
+	v.Status = ""
+	v.ShortName = ""
+	v.Name = ""
+	v.Count = 0
+	v.CampusId = 0
+	v.CompanyId = 0
+	v.Id = 0
+	v.IsWuye = false
+	v.IsDefault = false
+	poolCompanyDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package tvupadmin
 
+import (
+	"sync"
+)
+
 // ChildRecItemVo 结构体
 type ChildRecItemVo struct {
 	// 名称
@@ -28,4 +32,33 @@ type ChildRecItemVo struct {
 	Sort int64 `json:"sort,omitempty" xml:"sort,omitempty"`
 	// 主题ID
 	RuleId int64 `json:"rule_id,omitempty" xml:"rule_id,omitempty"`
+}
+
+var poolChildRecItemVo = sync.Pool{
+	New: func() any {
+		return new(ChildRecItemVo)
+	},
+}
+
+// GetChildRecItemVo() 从对象池中获取ChildRecItemVo
+func GetChildRecItemVo() *ChildRecItemVo {
+	return poolChildRecItemVo.Get().(*ChildRecItemVo)
+}
+
+// ReleaseChildRecItemVo 释放ChildRecItemVo
+func ReleaseChildRecItemVo(v *ChildRecItemVo) {
+	v.Name = ""
+	v.Type = ""
+	v.Extra = ""
+	v.PicUrl = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.Id = 0
+	v.Version = 0
+	v.NodeId = 0
+	v.LayoutId = 0
+	v.Status = 0
+	v.Sort = 0
+	v.RuleId = 0
+	poolChildRecItemVo.Put(v)
 }

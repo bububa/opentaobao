@@ -2,6 +2,7 @@ package icbu
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaWholesaleShippinglineTemplateListAPIRequest struct {
 // NewAlibabaWholesaleShippinglineTemplateListRequest 初始化AlibabaWholesaleShippinglineTemplateListAPIRequest对象
 func NewAlibabaWholesaleShippinglineTemplateListRequest() *AlibabaWholesaleShippinglineTemplateListAPIRequest {
 	return &AlibabaWholesaleShippinglineTemplateListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWholesaleShippinglineTemplateListAPIRequest) Reset() {
+	r._pageNum = 0
+	r._count = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaWholesaleShippinglineTemplateListAPIRequest) SetCount(_count int
 // GetCount Count Getter
 func (r AlibabaWholesaleShippinglineTemplateListAPIRequest) GetCount() int64 {
 	return r._count
+}
+
+var poolAlibabaWholesaleShippinglineTemplateListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWholesaleShippinglineTemplateListRequest()
+	},
+}
+
+// GetAlibabaWholesaleShippinglineTemplateListRequest 从 sync.Pool 获取 AlibabaWholesaleShippinglineTemplateListAPIRequest
+func GetAlibabaWholesaleShippinglineTemplateListAPIRequest() *AlibabaWholesaleShippinglineTemplateListAPIRequest {
+	return poolAlibabaWholesaleShippinglineTemplateListAPIRequest.Get().(*AlibabaWholesaleShippinglineTemplateListAPIRequest)
+}
+
+// ReleaseAlibabaWholesaleShippinglineTemplateListAPIRequest 将 AlibabaWholesaleShippinglineTemplateListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWholesaleShippinglineTemplateListAPIRequest(v *AlibabaWholesaleShippinglineTemplateListAPIRequest) {
+	v.Reset()
+	poolAlibabaWholesaleShippinglineTemplateListAPIRequest.Put(v)
 }

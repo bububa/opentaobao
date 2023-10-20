@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaWdkReverseLoadFeatchorderAPIResponse struct {
 	AlibabaWdkReverseLoadFeatchorderAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaWdkReverseLoadFeatchorderAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaWdkReverseLoadFeatchorderAPIResponseModel).Reset()
+}
+
 // AlibabaWdkReverseLoadFeatchorderAPIResponseModel is 取货详情 成功返回结果
 type AlibabaWdkReverseLoadFeatchorderAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_reverse_load_featchorder_response"`
@@ -22,4 +29,27 @@ type AlibabaWdkReverseLoadFeatchorderAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// ReverseResult
 	Result *ReverseResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaWdkReverseLoadFeatchorderAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaWdkReverseLoadFeatchorderAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkReverseLoadFeatchorderAPIResponse)
+	},
+}
+
+// GetAlibabaWdkReverseLoadFeatchorderAPIResponse 从 sync.Pool 获取 AlibabaWdkReverseLoadFeatchorderAPIResponse
+func GetAlibabaWdkReverseLoadFeatchorderAPIResponse() *AlibabaWdkReverseLoadFeatchorderAPIResponse {
+	return poolAlibabaWdkReverseLoadFeatchorderAPIResponse.Get().(*AlibabaWdkReverseLoadFeatchorderAPIResponse)
+}
+
+// ReleaseAlibabaWdkReverseLoadFeatchorderAPIResponse 将 AlibabaWdkReverseLoadFeatchorderAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaWdkReverseLoadFeatchorderAPIResponse(v *AlibabaWdkReverseLoadFeatchorderAPIResponse) {
+	v.Reset()
+	poolAlibabaWdkReverseLoadFeatchorderAPIResponse.Put(v)
 }

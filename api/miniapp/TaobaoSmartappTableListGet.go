@@ -9,11 +9,6 @@ import (
 // taobao.smartapp.table.list.get
 //
 // 智能应用服务登记工作表列表查询
-func TaobaoSmartappTableListGet(clt *core.SDKClient, req *miniapp.TaobaoSmartappTableListGetAPIRequest, session string) (*miniapp.TaobaoSmartappTableListGetAPIResponse, error) {
-	var resp miniapp.TaobaoSmartappTableListGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSmartappTableListGet(clt *core.SDKClient, req *miniapp.TaobaoSmartappTableListGetAPIRequest, resp *miniapp.TaobaoSmartappTableListGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

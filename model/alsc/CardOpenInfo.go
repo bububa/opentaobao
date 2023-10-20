@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // CardOpenInfo 结构体
 type CardOpenInfo struct {
 	// 资产账户列表
@@ -58,4 +62,48 @@ type CardOpenInfo struct {
 	Buy bool `json:"buy,omitempty" xml:"buy,omitempty"`
 	// 逻辑删除
 	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
+}
+
+var poolCardOpenInfo = sync.Pool{
+	New: func() any {
+		return new(CardOpenInfo)
+	},
+}
+
+// GetCardOpenInfo() 从对象池中获取CardOpenInfo
+func GetCardOpenInfo() *CardOpenInfo {
+	return poolCardOpenInfo.Get().(*CardOpenInfo)
+}
+
+// ReleaseCardOpenInfo 释放CardOpenInfo
+func ReleaseCardOpenInfo(v *CardOpenInfo) {
+	v.Accounts = v.Accounts[:0]
+	v.PhysicalCards = v.PhysicalCards[:0]
+	v.ActiveOperatorId = ""
+	v.ActiveOperatorName = ""
+	v.ActiveShopId = ""
+	v.ActiveTime = ""
+	v.CardId = ""
+	v.CardTemplateId = ""
+	v.CardType = ""
+	v.CreateBy = ""
+	v.CustomerId = ""
+	v.ExpireEnd = ""
+	v.ExpireStart = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.OpenOperatorId = ""
+	v.OpenOperatorName = ""
+	v.OpenShopId = ""
+	v.OpenShopName = ""
+	v.OpenTime = ""
+	v.OperatorId = ""
+	v.OptPlanId = ""
+	v.PlanId = ""
+	v.Status = ""
+	v.UpdateBy = ""
+	v.ExtInfo = nil
+	v.Buy = false
+	v.Deleted = false
+	poolCardOpenInfo.Put(v)
 }

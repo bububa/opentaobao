@@ -1,5 +1,9 @@
 package jipiao
 
+import (
+	"sync"
+)
+
 // TripFlightInfo 结构体
 type TripFlightInfo struct {
 	// 乘机人信息列表
@@ -36,4 +40,37 @@ type TripFlightInfo struct {
 	SegmentNumber int64 `json:"segment_number,omitempty" xml:"segment_number,omitempty"`
 	// 当前航段票面价格，单位：分
 	TicketPrice int64 `json:"ticket_price,omitempty" xml:"ticket_price,omitempty"`
+}
+
+var poolTripFlightInfo = sync.Pool{
+	New: func() any {
+		return new(TripFlightInfo)
+	},
+}
+
+// GetTripFlightInfo() 从对象池中获取TripFlightInfo
+func GetTripFlightInfo() *TripFlightInfo {
+	return poolTripFlightInfo.Get().(*TripFlightInfo)
+}
+
+// ReleaseTripFlightInfo 释放TripFlightInfo
+func ReleaseTripFlightInfo(v *TripFlightInfo) {
+	v.Passengers = v.Passengers[:0]
+	v.AirlineCode = ""
+	v.FlightNo = ""
+	v.Carrier = ""
+	v.FlightType = ""
+	v.DepCityCode = ""
+	v.ArrCityCode = ""
+	v.DepAirportCode = ""
+	v.ArrAirportCode = ""
+	v.DepTime = ""
+	v.ArrTime = ""
+	v.Extra = ""
+	v.SpecialRule = ""
+	v.FlightId = 0
+	v.SegmentType = 0
+	v.SegmentNumber = 0
+	v.TicketPrice = 0
+	poolTripFlightInfo.Put(v)
 }

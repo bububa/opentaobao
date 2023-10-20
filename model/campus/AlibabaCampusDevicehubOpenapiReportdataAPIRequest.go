@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCampusDevicehubOpenapiReportdataAPIRequest struct {
 // NewAlibabaCampusDevicehubOpenapiReportdataRequest 初始化AlibabaCampusDevicehubOpenapiReportdataAPIRequest对象
 func NewAlibabaCampusDevicehubOpenapiReportdataRequest() *AlibabaCampusDevicehubOpenapiReportdataAPIRequest {
 	return &AlibabaCampusDevicehubOpenapiReportdataAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusDevicehubOpenapiReportdataAPIRequest) Reset() {
+	r._deviceEventData = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCampusDevicehubOpenapiReportdataAPIRequest) SetDeviceEventData(_
 // GetDeviceEventData DeviceEventData Getter
 func (r AlibabaCampusDevicehubOpenapiReportdataAPIRequest) GetDeviceEventData() *DeviceReportEventDto {
 	return r._deviceEventData
+}
+
+var poolAlibabaCampusDevicehubOpenapiReportdataAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusDevicehubOpenapiReportdataRequest()
+	},
+}
+
+// GetAlibabaCampusDevicehubOpenapiReportdataRequest 从 sync.Pool 获取 AlibabaCampusDevicehubOpenapiReportdataAPIRequest
+func GetAlibabaCampusDevicehubOpenapiReportdataAPIRequest() *AlibabaCampusDevicehubOpenapiReportdataAPIRequest {
+	return poolAlibabaCampusDevicehubOpenapiReportdataAPIRequest.Get().(*AlibabaCampusDevicehubOpenapiReportdataAPIRequest)
+}
+
+// ReleaseAlibabaCampusDevicehubOpenapiReportdataAPIRequest 将 AlibabaCampusDevicehubOpenapiReportdataAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusDevicehubOpenapiReportdataAPIRequest(v *AlibabaCampusDevicehubOpenapiReportdataAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusDevicehubOpenapiReportdataAPIRequest.Put(v)
 }

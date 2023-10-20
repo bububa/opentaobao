@@ -9,11 +9,6 @@ import (
 // taobao.modifyaddress.open
 //
 // 商家自助修改地址服务开通
-func TaobaoModifyaddressOpen(clt *core.SDKClient, req *jst.TaobaoModifyaddressOpenAPIRequest, session string) (*jst.TaobaoModifyaddressOpenAPIResponse, error) {
-	var resp jst.TaobaoModifyaddressOpenAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoModifyaddressOpen(clt *core.SDKClient, req *jst.TaobaoModifyaddressOpenAPIRequest, resp *jst.TaobaoModifyaddressOpenAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

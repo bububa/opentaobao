@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallInventoryQueryForstoreAPIRequest struct {
 // NewTmallInventoryQueryForstoreRequest 初始化TmallInventoryQueryForstoreAPIRequest对象
 func NewTmallInventoryQueryForstoreRequest() *TmallInventoryQueryForstoreAPIRequest {
 	return &TmallInventoryQueryForstoreAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallInventoryQueryForstoreAPIRequest) Reset() {
+	r._paramList = r._paramList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallInventoryQueryForstoreAPIRequest) SetParamList(_paramList []Invent
 // GetParamList ParamList Getter
 func (r TmallInventoryQueryForstoreAPIRequest) GetParamList() []InventoryQueryForStoreRequest {
 	return r._paramList
+}
+
+var poolTmallInventoryQueryForstoreAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallInventoryQueryForstoreRequest()
+	},
+}
+
+// GetTmallInventoryQueryForstoreRequest 从 sync.Pool 获取 TmallInventoryQueryForstoreAPIRequest
+func GetTmallInventoryQueryForstoreAPIRequest() *TmallInventoryQueryForstoreAPIRequest {
+	return poolTmallInventoryQueryForstoreAPIRequest.Get().(*TmallInventoryQueryForstoreAPIRequest)
+}
+
+// ReleaseTmallInventoryQueryForstoreAPIRequest 将 TmallInventoryQueryForstoreAPIRequest 放入 sync.Pool
+func ReleaseTmallInventoryQueryForstoreAPIRequest(v *TmallInventoryQueryForstoreAPIRequest) {
+	v.Reset()
+	poolTmallInventoryQueryForstoreAPIRequest.Put(v)
 }

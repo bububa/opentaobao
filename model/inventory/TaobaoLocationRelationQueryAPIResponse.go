@@ -2,6 +2,7 @@ package inventory
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type TaobaoLocationRelationQueryAPIResponse struct {
 	TaobaoLocationRelationQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoLocationRelationQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoLocationRelationQueryAPIResponseModel).Reset()
+}
+
 // TaobaoLocationRelationQueryAPIResponseModel is 地点关联关系查询 成功返回结果
 type TaobaoLocationRelationQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"location_relation_query_response"`
@@ -23,4 +30,27 @@ type TaobaoLocationRelationQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *SingleResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoLocationRelationQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoLocationRelationQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoLocationRelationQueryAPIResponse)
+	},
+}
+
+// GetTaobaoLocationRelationQueryAPIResponse 从 sync.Pool 获取 TaobaoLocationRelationQueryAPIResponse
+func GetTaobaoLocationRelationQueryAPIResponse() *TaobaoLocationRelationQueryAPIResponse {
+	return poolTaobaoLocationRelationQueryAPIResponse.Get().(*TaobaoLocationRelationQueryAPIResponse)
+}
+
+// ReleaseTaobaoLocationRelationQueryAPIResponse 将 TaobaoLocationRelationQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoLocationRelationQueryAPIResponse(v *TaobaoLocationRelationQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoLocationRelationQueryAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package ott
 
+import (
+	"sync"
+)
+
 // ItemEntryDo 结构体
 type ItemEntryDo struct {
 	// 行为扩展
@@ -14,4 +18,26 @@ type ItemEntryDo struct {
 	Sort int64 `json:"sort,omitempty" xml:"sort,omitempty"`
 	// 入口ID
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolItemEntryDo = sync.Pool{
+	New: func() any {
+		return new(ItemEntryDo)
+	},
+}
+
+// GetItemEntryDo() 从对象池中获取ItemEntryDo
+func GetItemEntryDo() *ItemEntryDo {
+	return poolItemEntryDo.Get().(*ItemEntryDo)
+}
+
+// ReleaseItemEntryDo 释放ItemEntryDo
+func ReleaseItemEntryDo(v *ItemEntryDo) {
+	v.Extra = ""
+	v.Action = ""
+	v.PicUrl = ""
+	v.Name = ""
+	v.Sort = 0
+	v.Id = 0
+	poolItemEntryDo.Put(v)
 }

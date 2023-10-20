@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // BillUpOutDetailDto 结构体
 type BillUpOutDetailDto struct {
 	// 药品信息数据
@@ -22,4 +26,30 @@ type BillUpOutDetailDto struct {
 	StoreOutDate string `json:"store_out_date,omitempty" xml:"store_out_date,omitempty"`
 	// 最后更新时间
 	UpdateDate string `json:"update_date,omitempty" xml:"update_date,omitempty"`
+}
+
+var poolBillUpOutDetailDto = sync.Pool{
+	New: func() any {
+		return new(BillUpOutDetailDto)
+	},
+}
+
+// GetBillUpOutDetailDto() 从对象池中获取BillUpOutDetailDto
+func GetBillUpOutDetailDto() *BillUpOutDetailDto {
+	return poolBillUpOutDetailDto.Get().(*BillUpOutDetailDto)
+}
+
+// ReleaseBillUpOutDetailDto 释放BillUpOutDetailDto
+func ReleaseBillUpOutDetailDto(v *BillUpOutDetailDto) {
+	v.DrugInfosDtoList = v.DrugInfosDtoList[:0]
+	v.BillCode = ""
+	v.BillTypeName = ""
+	v.BillType = ""
+	v.EntSendName = ""
+	v.EntSendId = ""
+	v.EntRecvName = ""
+	v.EntRecvId = ""
+	v.StoreOutDate = ""
+	v.UpdateDate = ""
+	poolBillUpOutDetailDto.Put(v)
 }

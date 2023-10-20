@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeMetroSyncAPIRequest struct {
 // NewAlibabaAlihouseNewhomeMetroSyncRequest 初始化AlibabaAlihouseNewhomeMetroSyncAPIRequest对象
 func NewAlibabaAlihouseNewhomeMetroSyncRequest() *AlibabaAlihouseNewhomeMetroSyncAPIRequest {
 	return &AlibabaAlihouseNewhomeMetroSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeMetroSyncAPIRequest) Reset() {
+	r._baseMetroLineDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomeMetroSyncAPIRequest) SetBaseMetroLineDto(_baseMet
 // GetBaseMetroLineDto BaseMetroLineDto Getter
 func (r AlibabaAlihouseNewhomeMetroSyncAPIRequest) GetBaseMetroLineDto() *BaseMetroLineDto {
 	return r._baseMetroLineDto
+}
+
+var poolAlibabaAlihouseNewhomeMetroSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeMetroSyncRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeMetroSyncRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeMetroSyncAPIRequest
+func GetAlibabaAlihouseNewhomeMetroSyncAPIRequest() *AlibabaAlihouseNewhomeMetroSyncAPIRequest {
+	return poolAlibabaAlihouseNewhomeMetroSyncAPIRequest.Get().(*AlibabaAlihouseNewhomeMetroSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeMetroSyncAPIRequest 将 AlibabaAlihouseNewhomeMetroSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeMetroSyncAPIRequest(v *AlibabaAlihouseNewhomeMetroSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeMetroSyncAPIRequest.Put(v)
 }

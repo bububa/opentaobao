@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIRequest struct {
 // NewTaobaoUniversalbpReportAsyncCreateDownloadTaskRequest 初始化TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIRequest对象
 func NewTaobaoUniversalbpReportAsyncCreateDownloadTaskRequest() *TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIRequest {
 	return &TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r._reportQueryVO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIRequest) SetReportQuer
 // GetReportQueryVO ReportQueryVO Getter
 func (r TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIRequest) GetReportQueryVO() *ReportQueryVo {
 	return r._reportQueryVO
+}
+
+var poolTaobaoUniversalbpReportAsyncCreateDownloadTaskAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpReportAsyncCreateDownloadTaskRequest()
+	},
+}
+
+// GetTaobaoUniversalbpReportAsyncCreateDownloadTaskRequest 从 sync.Pool 获取 TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIRequest
+func GetTaobaoUniversalbpReportAsyncCreateDownloadTaskAPIRequest() *TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIRequest {
+	return poolTaobaoUniversalbpReportAsyncCreateDownloadTaskAPIRequest.Get().(*TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpReportAsyncCreateDownloadTaskAPIRequest 将 TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpReportAsyncCreateDownloadTaskAPIRequest(v *TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpReportAsyncCreateDownloadTaskAPIRequest.Put(v)
 }

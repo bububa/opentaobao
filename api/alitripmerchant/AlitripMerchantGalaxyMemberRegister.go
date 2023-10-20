@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.member.register
 //
 // 星河产品=微信小程序注册雅高会员服务
-func AlitripMerchantGalaxyMemberRegister(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyMemberRegisterAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyMemberRegisterAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyMemberRegisterAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyMemberRegister(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyMemberRegisterAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyMemberRegisterAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

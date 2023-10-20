@@ -2,6 +2,7 @@ package mos
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaMosHrBackgroundReportNotifyAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosHrBackgroundReportNotifyAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaMosHrBackgroundReportNotifyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaMosHrBackgroundReportNotifyAPIResponseModel).Reset()
 }
 
 // AlibabaMosHrBackgroundReportNotifyAPIResponseModel is 背调公司背调结果通知 成功返回结果
@@ -36,4 +43,34 @@ type AlibabaMosHrBackgroundReportNotifyAPIResponseModel struct {
 	Issuccess bool `json:"issuccess,omitempty" xml:"issuccess,omitempty"`
 	// 是否同步
 	IsAsync bool `json:"is_async,omitempty" xml:"is_async,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaMosHrBackgroundReportNotifyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TraceId = ""
+	m.AsyncResult = ""
+	m.Data = ""
+	m.Errcode = ""
+	m.Attributes = ""
+	m.ErrMessage = ""
+	m.Issuccess = false
+	m.IsAsync = false
+}
+
+var poolAlibabaMosHrBackgroundReportNotifyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaMosHrBackgroundReportNotifyAPIResponse)
+	},
+}
+
+// GetAlibabaMosHrBackgroundReportNotifyAPIResponse 从 sync.Pool 获取 AlibabaMosHrBackgroundReportNotifyAPIResponse
+func GetAlibabaMosHrBackgroundReportNotifyAPIResponse() *AlibabaMosHrBackgroundReportNotifyAPIResponse {
+	return poolAlibabaMosHrBackgroundReportNotifyAPIResponse.Get().(*AlibabaMosHrBackgroundReportNotifyAPIResponse)
+}
+
+// ReleaseAlibabaMosHrBackgroundReportNotifyAPIResponse 将 AlibabaMosHrBackgroundReportNotifyAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaMosHrBackgroundReportNotifyAPIResponse(v *AlibabaMosHrBackgroundReportNotifyAPIResponse) {
+	v.Reset()
+	poolAlibabaMosHrBackgroundReportNotifyAPIResponse.Put(v)
 }

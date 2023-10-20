@@ -1,5 +1,9 @@
 package viapi
 
+import (
+	"sync"
+)
+
 // SubResult 结构体
 type SubResult struct {
 	// 识别到的图片中的完整文字信息。 说明 默认不返回，如需返回请通过工单联系我们
@@ -22,4 +26,30 @@ type SubResult struct {
 	Scene string `json:"scene,omitempty" xml:"scene,omitempty"`
 	// 相似概率
 	Rate int64 `json:"rate,omitempty" xml:"rate,omitempty"`
+}
+
+var poolSubResult = sync.Pool{
+	New: func() any {
+		return new(SubResult)
+	},
+}
+
+// GetSubResult() 从对象池中获取SubResult
+func GetSubResult() *SubResult {
+	return poolSubResult.Get().(*SubResult)
+}
+
+// ReleaseSubResult 释放SubResult
+func ReleaseSubResult(v *SubResult) {
+	v.OcrDataList = v.OcrDataList[:0]
+	v.Frames = v.Frames[:0]
+	v.HintWordsInfoList = v.HintWordsInfoList[:0]
+	v.ProgramCodeDataList = v.ProgramCodeDataList[:0]
+	v.LogoDataList = v.LogoDataList[:0]
+	v.SfaceDataList = v.SfaceDataList[:0]
+	v.Suggestion = ""
+	v.Label = ""
+	v.Scene = ""
+	v.Rate = 0
+	poolSubResult.Put(v)
 }

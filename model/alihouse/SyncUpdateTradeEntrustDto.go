@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // SyncUpdateTradeEntrustDto 结构体
 type SyncUpdateTradeEntrustDto struct {
 	// 租房凭证
@@ -40,4 +44,39 @@ type SyncUpdateTradeEntrustDto struct {
 	InsteadMerchantOpenId int64 `json:"instead_merchant_open_id,omitempty" xml:"instead_merchant_open_id,omitempty"`
 	// ms级时间戳
 	EtcVersion int64 `json:"etc_version,omitempty" xml:"etc_version,omitempty"`
+}
+
+var poolSyncUpdateTradeEntrustDto = sync.Pool{
+	New: func() any {
+		return new(SyncUpdateTradeEntrustDto)
+	},
+}
+
+// GetSyncUpdateTradeEntrustDto() 从对象池中获取SyncUpdateTradeEntrustDto
+func GetSyncUpdateTradeEntrustDto() *SyncUpdateTradeEntrustDto {
+	return poolSyncUpdateTradeEntrustDto.Get().(*SyncUpdateTradeEntrustDto)
+}
+
+// ReleaseSyncUpdateTradeEntrustDto 释放SyncUpdateTradeEntrustDto
+func ReleaseSyncUpdateTradeEntrustDto(v *SyncUpdateTradeEntrustDto) {
+	v.RentVouchers = v.RentVouchers[:0]
+	v.OuterCommunityId = ""
+	v.OuterEntrustId = ""
+	v.OuterStoreId = ""
+	v.OuterBrokerId = ""
+	v.SendRentChargeModel = ""
+	v.Address = ""
+	v.OwnershipAddress = ""
+	v.BusinessType = 0
+	v.MerchantOpenId = 0
+	v.TradeBizType = 0
+	v.AgreementId = 0
+	v.NaturalMerchantOpenId = 0
+	v.EntrustStatus = 0
+	v.EnterpriseMerchantOpenId = 0
+	v.CollectionType = 0
+	v.LandlordType = 0
+	v.InsteadMerchantOpenId = 0
+	v.EtcVersion = 0
+	poolSyncUpdateTradeEntrustDto.Put(v)
 }

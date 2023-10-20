@@ -1,5 +1,9 @@
 package feedflow
 
+import (
+	"sync"
+)
+
 // RptQueryDto 结构体
 type RptQueryDto struct {
 	// 查询开始日期
@@ -24,4 +28,31 @@ type RptQueryDto struct {
 	CreativeId int64 `json:"creative_id,omitempty" xml:"creative_id,omitempty"`
 	// 定向id
 	CrowdId int64 `json:"crowd_id,omitempty" xml:"crowd_id,omitempty"`
+}
+
+var poolRptQueryDto = sync.Pool{
+	New: func() any {
+		return new(RptQueryDto)
+	},
+}
+
+// GetRptQueryDto() 从对象池中获取RptQueryDto
+func GetRptQueryDto() *RptQueryDto {
+	return poolRptQueryDto.Get().(*RptQueryDto)
+}
+
+// ReleaseRptQueryDto 释放RptQueryDto
+func ReleaseRptQueryDto(v *RptQueryDto) {
+	v.StartTime = ""
+	v.EndTime = ""
+	v.LogDate = ""
+	v.Effect = 0
+	v.EndHourId = 0
+	v.StartHourId = 0
+	v.CampaignId = 0
+	v.AdgroupId = 0
+	v.AdzoneId = 0
+	v.CreativeId = 0
+	v.CrowdId = 0
+	poolRptQueryDto.Put(v)
 }

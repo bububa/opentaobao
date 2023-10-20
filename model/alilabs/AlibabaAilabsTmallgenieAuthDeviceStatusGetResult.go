@@ -1,5 +1,9 @@
 package alilabs
 
+import (
+	"sync"
+)
+
 // AlibabaAilabsTmallgenieAuthDeviceStatusGetResult 结构体
 type AlibabaAilabsTmallgenieAuthDeviceStatusGetResult struct {
 	// 结果描述
@@ -16,4 +20,27 @@ type AlibabaAilabsTmallgenieAuthDeviceStatusGetResult struct {
 	Result *AlibabaAilabsTmallgenieAuthDeviceStatusGetResult `json:"result,omitempty" xml:"result,omitempty"`
 	// 状态码（200：成功，其他：失败）
 	Code int64 `json:"code,omitempty" xml:"code,omitempty"`
+}
+
+var poolAlibabaAilabsTmallgenieAuthDeviceStatusGetResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaAilabsTmallgenieAuthDeviceStatusGetResult)
+	},
+}
+
+// GetAlibabaAilabsTmallgenieAuthDeviceStatusGetResult() 从对象池中获取AlibabaAilabsTmallgenieAuthDeviceStatusGetResult
+func GetAlibabaAilabsTmallgenieAuthDeviceStatusGetResult() *AlibabaAilabsTmallgenieAuthDeviceStatusGetResult {
+	return poolAlibabaAilabsTmallgenieAuthDeviceStatusGetResult.Get().(*AlibabaAilabsTmallgenieAuthDeviceStatusGetResult)
+}
+
+// ReleaseAlibabaAilabsTmallgenieAuthDeviceStatusGetResult 释放AlibabaAilabsTmallgenieAuthDeviceStatusGetResult
+func ReleaseAlibabaAilabsTmallgenieAuthDeviceStatusGetResult(v *AlibabaAilabsTmallgenieAuthDeviceStatusGetResult) {
+	v.Message = ""
+	v.DeviceIp = ""
+	v.Extensions = ""
+	v.OnlineStatus = ""
+	v.Uuid = ""
+	v.Result = nil
+	v.Code = 0
+	poolAlibabaAilabsTmallgenieAuthDeviceStatusGetResult.Put(v)
 }

@@ -2,6 +2,7 @@ package drug
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest struct {
 // NewAlibabaHealthNrLogisticsDeliverynoUpdateRequest 初始化AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest对象
 func NewAlibabaHealthNrLogisticsDeliverynoUpdateRequest() *AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest {
 	return &AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest) Reset() {
+	r._cpCode = ""
+	r._courierNo = ""
+	r._orderId = 0
+	r._force = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest) SetForce(_force int
 // GetForce Force Getter
 func (r AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest) GetForce() int64 {
 	return r._force
+}
+
+var poolAlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHealthNrLogisticsDeliverynoUpdateRequest()
+	},
+}
+
+// GetAlibabaHealthNrLogisticsDeliverynoUpdateRequest 从 sync.Pool 获取 AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest
+func GetAlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest() *AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest {
+	return poolAlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest.Get().(*AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest)
+}
+
+// ReleaseAlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest 将 AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest(v *AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest.Put(v)
 }

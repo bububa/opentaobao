@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // OrderDiscountBillQueryResult 结构体
 type OrderDiscountBillQueryResult struct {
 	// 账单列表
@@ -14,4 +18,26 @@ type OrderDiscountBillQueryResult struct {
 	TotalNumber int64 `json:"total_number,omitempty" xml:"total_number,omitempty"`
 	// 业务请求成功与否
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolOrderDiscountBillQueryResult = sync.Pool{
+	New: func() any {
+		return new(OrderDiscountBillQueryResult)
+	},
+}
+
+// GetOrderDiscountBillQueryResult() 从对象池中获取OrderDiscountBillQueryResult
+func GetOrderDiscountBillQueryResult() *OrderDiscountBillQueryResult {
+	return poolOrderDiscountBillQueryResult.Get().(*OrderDiscountBillQueryResult)
+}
+
+// ReleaseOrderDiscountBillQueryResult 释放OrderDiscountBillQueryResult
+func ReleaseOrderDiscountBillQueryResult(v *OrderDiscountBillQueryResult) {
+	v.DiscountBills = v.DiscountBills[:0]
+	v.ReturnCode = ""
+	v.ReturnMsg = ""
+	v.NextId = 0
+	v.TotalNumber = 0
+	v.Success = false
+	poolOrderDiscountBillQueryResult.Put(v)
 }

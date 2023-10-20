@@ -2,6 +2,7 @@ package ott
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type YoukuOttPlayserviceGetplayurlAPIRequest struct {
 // NewYoukuOttPlayserviceGetplayurlRequest 初始化YoukuOttPlayserviceGetplayurlAPIRequest对象
 func NewYoukuOttPlayserviceGetplayurlRequest() *YoukuOttPlayserviceGetplayurlAPIRequest {
 	return &YoukuOttPlayserviceGetplayurlAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YoukuOttPlayserviceGetplayurlAPIRequest) Reset() {
+	r._yktk = ""
+	r._havanaToken = ""
+	r._systemInfo = ""
+	r._videoId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *YoukuOttPlayserviceGetplayurlAPIRequest) SetVideoId(_videoId int64) err
 // GetVideoId VideoId Getter
 func (r YoukuOttPlayserviceGetplayurlAPIRequest) GetVideoId() int64 {
 	return r._videoId
+}
+
+var poolYoukuOttPlayserviceGetplayurlAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYoukuOttPlayserviceGetplayurlRequest()
+	},
+}
+
+// GetYoukuOttPlayserviceGetplayurlRequest 从 sync.Pool 获取 YoukuOttPlayserviceGetplayurlAPIRequest
+func GetYoukuOttPlayserviceGetplayurlAPIRequest() *YoukuOttPlayserviceGetplayurlAPIRequest {
+	return poolYoukuOttPlayserviceGetplayurlAPIRequest.Get().(*YoukuOttPlayserviceGetplayurlAPIRequest)
+}
+
+// ReleaseYoukuOttPlayserviceGetplayurlAPIRequest 将 YoukuOttPlayserviceGetplayurlAPIRequest 放入 sync.Pool
+func ReleaseYoukuOttPlayserviceGetplayurlAPIRequest(v *YoukuOttPlayserviceGetplayurlAPIRequest) {
+	v.Reset()
+	poolYoukuOttPlayserviceGetplayurlAPIRequest.Put(v)
 }

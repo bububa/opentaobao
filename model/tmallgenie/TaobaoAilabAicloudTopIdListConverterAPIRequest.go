@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAilabAicloudTopIdListConverterAPIRequest struct {
 // NewTaobaoAilabAicloudTopIdListConverterRequest 初始化TaobaoAilabAicloudTopIdListConverterAPIRequest对象
 func NewTaobaoAilabAicloudTopIdListConverterRequest() *TaobaoAilabAicloudTopIdListConverterAPIRequest {
 	return &TaobaoAilabAicloudTopIdListConverterAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopIdListConverterAPIRequest) Reset() {
+	r._convertData = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAilabAicloudTopIdListConverterAPIRequest) SetConvertData(_convert
 // GetConvertData ConvertData Getter
 func (r TaobaoAilabAicloudTopIdListConverterAPIRequest) GetConvertData() *ConverterIdRequest {
 	return r._convertData
+}
+
+var poolTaobaoAilabAicloudTopIdListConverterAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopIdListConverterRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopIdListConverterRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopIdListConverterAPIRequest
+func GetTaobaoAilabAicloudTopIdListConverterAPIRequest() *TaobaoAilabAicloudTopIdListConverterAPIRequest {
+	return poolTaobaoAilabAicloudTopIdListConverterAPIRequest.Get().(*TaobaoAilabAicloudTopIdListConverterAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopIdListConverterAPIRequest 将 TaobaoAilabAicloudTopIdListConverterAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopIdListConverterAPIRequest(v *TaobaoAilabAicloudTopIdListConverterAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopIdListConverterAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package cmns
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type YunosServiceCmnsCoaDeviceIsonlineAPIRequest struct {
 // NewYunosServiceCmnsCoaDeviceIsonlineRequest 初始化YunosServiceCmnsCoaDeviceIsonlineAPIRequest对象
 func NewYunosServiceCmnsCoaDeviceIsonlineRequest() *YunosServiceCmnsCoaDeviceIsonlineAPIRequest {
 	return &YunosServiceCmnsCoaDeviceIsonlineAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosServiceCmnsCoaDeviceIsonlineAPIRequest) Reset() {
+	r._type = ""
+	r._value = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *YunosServiceCmnsCoaDeviceIsonlineAPIRequest) SetValue(_value string) er
 // GetValue Value Getter
 func (r YunosServiceCmnsCoaDeviceIsonlineAPIRequest) GetValue() string {
 	return r._value
+}
+
+var poolYunosServiceCmnsCoaDeviceIsonlineAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosServiceCmnsCoaDeviceIsonlineRequest()
+	},
+}
+
+// GetYunosServiceCmnsCoaDeviceIsonlineRequest 从 sync.Pool 获取 YunosServiceCmnsCoaDeviceIsonlineAPIRequest
+func GetYunosServiceCmnsCoaDeviceIsonlineAPIRequest() *YunosServiceCmnsCoaDeviceIsonlineAPIRequest {
+	return poolYunosServiceCmnsCoaDeviceIsonlineAPIRequest.Get().(*YunosServiceCmnsCoaDeviceIsonlineAPIRequest)
+}
+
+// ReleaseYunosServiceCmnsCoaDeviceIsonlineAPIRequest 将 YunosServiceCmnsCoaDeviceIsonlineAPIRequest 放入 sync.Pool
+func ReleaseYunosServiceCmnsCoaDeviceIsonlineAPIRequest(v *YunosServiceCmnsCoaDeviceIsonlineAPIRequest) {
+	v.Reset()
+	poolYunosServiceCmnsCoaDeviceIsonlineAPIRequest.Put(v)
 }

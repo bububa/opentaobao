@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoXhotelServicetimeUpdateAPIRequest struct {
 // NewTaobaoXhotelServicetimeUpdateRequest 初始化TaobaoXhotelServicetimeUpdateAPIRequest对象
 func NewTaobaoXhotelServicetimeUpdateRequest() *TaobaoXhotelServicetimeUpdateAPIRequest {
 	return &TaobaoXhotelServicetimeUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelServicetimeUpdateAPIRequest) Reset() {
+	r._param = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoXhotelServicetimeUpdateAPIRequest) SetParam(_param string) error 
 // GetParam Param Getter
 func (r TaobaoXhotelServicetimeUpdateAPIRequest) GetParam() string {
 	return r._param
+}
+
+var poolTaobaoXhotelServicetimeUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelServicetimeUpdateRequest()
+	},
+}
+
+// GetTaobaoXhotelServicetimeUpdateRequest 从 sync.Pool 获取 TaobaoXhotelServicetimeUpdateAPIRequest
+func GetTaobaoXhotelServicetimeUpdateAPIRequest() *TaobaoXhotelServicetimeUpdateAPIRequest {
+	return poolTaobaoXhotelServicetimeUpdateAPIRequest.Get().(*TaobaoXhotelServicetimeUpdateAPIRequest)
+}
+
+// ReleaseTaobaoXhotelServicetimeUpdateAPIRequest 将 TaobaoXhotelServicetimeUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelServicetimeUpdateAPIRequest(v *TaobaoXhotelServicetimeUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelServicetimeUpdateAPIRequest.Put(v)
 }

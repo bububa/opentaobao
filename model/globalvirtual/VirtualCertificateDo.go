@@ -1,5 +1,9 @@
 package globalvirtual
 
+import (
+	"sync"
+)
+
 // VirtualCertificateDo 结构体
 type VirtualCertificateDo struct {
 	// provide download file
@@ -22,4 +26,30 @@ type VirtualCertificateDo struct {
 	GmtCreate int64 `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// trade order id
 	TradeOrderLineId int64 `json:"trade_order_line_id,omitempty" xml:"trade_order_line_id,omitempty"`
+}
+
+var poolVirtualCertificateDo = sync.Pool{
+	New: func() any {
+		return new(VirtualCertificateDo)
+	},
+}
+
+// GetVirtualCertificateDo() 从对象池中获取VirtualCertificateDo
+func GetVirtualCertificateDo() *VirtualCertificateDo {
+	return poolVirtualCertificateDo.Get().(*VirtualCertificateDo)
+}
+
+// ReleaseVirtualCertificateDo 释放VirtualCertificateDo
+func ReleaseVirtualCertificateDo(v *VirtualCertificateDo) {
+	v.File = ""
+	v.Code = ""
+	v.OrderTrackId = ""
+	v.Remark = ""
+	v.GmtModified = 0
+	v.StartTime = 0
+	v.Id = 0
+	v.EndTime = 0
+	v.GmtCreate = 0
+	v.TradeOrderLineId = 0
+	poolVirtualCertificateDo.Put(v)
 }

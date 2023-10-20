@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest struct {
 // NewAlibabaAscpUopSupplierConsignorderNotifyReceivedRequest 初始化AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest对象
 func NewAlibabaAscpUopSupplierConsignorderNotifyReceivedRequest() *AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest {
 	return &AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest) Reset() {
+	r._supplierId = ""
+	r._bizOrderCode = ""
+	r._bizTime = ""
+	r._businessModel = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest) SetBusiness
 // GetBusinessModel BusinessModel Getter
 func (r AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest) GetBusinessModel() string {
 	return r._businessModel
+}
+
+var poolAlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpUopSupplierConsignorderNotifyReceivedRequest()
+	},
+}
+
+// GetAlibabaAscpUopSupplierConsignorderNotifyReceivedRequest 从 sync.Pool 获取 AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest
+func GetAlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest() *AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest {
+	return poolAlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest.Get().(*AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest)
+}
+
+// ReleaseAlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest 将 AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest(v *AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest.Put(v)
 }

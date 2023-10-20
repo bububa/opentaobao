@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.examination.goods.publish
 //
 // 体检机构对接_商品发布／更新
-func AlibabaAlihealthExaminationGoodsPublish(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationGoodsPublishAPIRequest, session string) (*examination.AlibabaAlihealthExaminationGoodsPublishAPIResponse, error) {
-	var resp examination.AlibabaAlihealthExaminationGoodsPublishAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthExaminationGoodsPublish(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationGoodsPublishAPIRequest, resp *examination.AlibabaAlihealthExaminationGoodsPublishAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

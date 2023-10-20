@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.existinghouse.house.base
 //
 // 房屋信息上翻
-func AlibabaAlihouseExistinghouseHouseBase(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghouseHouseBaseAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghouseHouseBaseAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseExistinghouseHouseBaseAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseExistinghouseHouseBase(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghouseHouseBaseAPIRequest, resp *alihouse.AlibabaAlihouseExistinghouseHouseBaseAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

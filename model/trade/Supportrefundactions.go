@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // Supportrefundactions 结构体
 type Supportrefundactions struct {
 	// 退款退货操作的描述
@@ -10,4 +14,24 @@ type Supportrefundactions struct {
 	Key string `json:"key,omitempty" xml:"key,omitempty"`
 	// 一个纠纷单可能已经在处理流程中，比如退款退货操作，买家已经提交申请，卖家正在审核中，则该字段是true
 	InProcess string `json:"in_process,omitempty" xml:"in_process,omitempty"`
+}
+
+var poolSupportrefundactions = sync.Pool{
+	New: func() any {
+		return new(Supportrefundactions)
+	},
+}
+
+// GetSupportrefundactions() 从对象池中获取Supportrefundactions
+func GetSupportrefundactions() *Supportrefundactions {
+	return poolSupportrefundactions.Get().(*Supportrefundactions)
+}
+
+// ReleaseSupportrefundactions 释放Supportrefundactions
+func ReleaseSupportrefundactions(v *Supportrefundactions) {
+	v.Desc = ""
+	v.DefaultLabel = ""
+	v.Key = ""
+	v.InProcess = ""
+	poolSupportrefundactions.Put(v)
 }

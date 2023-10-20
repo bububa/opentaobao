@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoAilabAicloudTopMessageListAPIRequest struct {
 // NewTaobaoAilabAicloudTopMessageListRequest 初始化TaobaoAilabAicloudTopMessageListAPIRequest对象
 func NewTaobaoAilabAicloudTopMessageListRequest() *TaobaoAilabAicloudTopMessageListAPIRequest {
 	return &TaobaoAilabAicloudTopMessageListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopMessageListAPIRequest) Reset() {
+	r._schema = ""
+	r._userId = ""
+	r._utdId = ""
+	r._ext = ""
+	r._beforeTime = ""
+	r._limit = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoAilabAicloudTopMessageListAPIRequest) SetLimit(_limit int64) erro
 // GetLimit Limit Getter
 func (r TaobaoAilabAicloudTopMessageListAPIRequest) GetLimit() int64 {
 	return r._limit
+}
+
+var poolTaobaoAilabAicloudTopMessageListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopMessageListRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopMessageListRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopMessageListAPIRequest
+func GetTaobaoAilabAicloudTopMessageListAPIRequest() *TaobaoAilabAicloudTopMessageListAPIRequest {
+	return poolTaobaoAilabAicloudTopMessageListAPIRequest.Get().(*TaobaoAilabAicloudTopMessageListAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopMessageListAPIRequest 将 TaobaoAilabAicloudTopMessageListAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopMessageListAPIRequest(v *TaobaoAilabAicloudTopMessageListAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopMessageListAPIRequest.Put(v)
 }

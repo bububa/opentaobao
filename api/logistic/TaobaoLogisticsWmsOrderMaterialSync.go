@@ -9,11 +9,6 @@ import (
 // taobao.logistics.wms.order.material.sync
 //
 // 仓服务商订单包材耗材信息同步
-func TaobaoLogisticsWmsOrderMaterialSync(clt *core.SDKClient, req *logistic.TaobaoLogisticsWmsOrderMaterialSyncAPIRequest, session string) (*logistic.TaobaoLogisticsWmsOrderMaterialSyncAPIResponse, error) {
-	var resp logistic.TaobaoLogisticsWmsOrderMaterialSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoLogisticsWmsOrderMaterialSync(clt *core.SDKClient, req *logistic.TaobaoLogisticsWmsOrderMaterialSyncAPIRequest, resp *logistic.TaobaoLogisticsWmsOrderMaterialSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package miniappopen
 
+import (
+	"sync"
+)
+
 // DistributionOrderSaveOpenRequest 结构体
 type DistributionOrderSaveOpenRequest struct {
 	// 投放的小程序链接
@@ -20,4 +24,29 @@ type DistributionOrderSaveOpenRequest struct {
 	StartTime int64 `json:"start_time,omitempty" xml:"start_time,omitempty"`
 	// 投放计划结束时间
 	EndTime int64 `json:"end_time,omitempty" xml:"end_time,omitempty"`
+}
+
+var poolDistributionOrderSaveOpenRequest = sync.Pool{
+	New: func() any {
+		return new(DistributionOrderSaveOpenRequest)
+	},
+}
+
+// GetDistributionOrderSaveOpenRequest() 从对象池中获取DistributionOrderSaveOpenRequest
+func GetDistributionOrderSaveOpenRequest() *DistributionOrderSaveOpenRequest {
+	return poolDistributionOrderSaveOpenRequest.Get().(*DistributionOrderSaveOpenRequest)
+}
+
+// ReleaseDistributionOrderSaveOpenRequest 释放DistributionOrderSaveOpenRequest
+func ReleaseDistributionOrderSaveOpenRequest(v *DistributionOrderSaveOpenRequest) {
+	v.Url = ""
+	v.TimeType = ""
+	v.Name = ""
+	v.CardData = ""
+	v.AppId = 0
+	v.CardId = 0
+	v.SceneId = 0
+	v.StartTime = 0
+	v.EndTime = 0
+	poolDistributionOrderSaveOpenRequest.Put(v)
 }

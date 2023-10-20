@@ -1,5 +1,9 @@
 package maitix
 
+import (
+	"sync"
+)
+
 // MoaTicketInfo 结构体
 type MoaTicketInfo struct {
 	// 外部子订单号，分销方子订单号，可不填
@@ -20,4 +24,29 @@ type MoaTicketInfo struct {
 	SeatId int64 `json:"seat_id,omitempty" xml:"seat_id,omitempty"`
 	// 票品ID,如果是套票就是套票的票品id.有的地方也叫price_id。必填
 	TicketItemId int64 `json:"ticket_item_id,omitempty" xml:"ticket_item_id,omitempty"`
+}
+
+var poolMoaTicketInfo = sync.Pool{
+	New: func() any {
+		return new(MoaTicketInfo)
+	},
+}
+
+// GetMoaTicketInfo() 从对象池中获取MoaTicketInfo
+func GetMoaTicketInfo() *MoaTicketInfo {
+	return poolMoaTicketInfo.Get().(*MoaTicketInfo)
+}
+
+// ReleaseMoaTicketInfo 释放MoaTicketInfo
+func ReleaseMoaTicketInfo(v *MoaTicketInfo) {
+	v.ExternalSubOrderNo = ""
+	v.RealTicketOwnerIdCardNo = ""
+	v.RealTicketOwnerName = ""
+	v.RealTicketOwnerPhone = ""
+	v.RealTicketOwnerPhoneCountryCode = ""
+	v.CombineId = 0
+	v.RealTicketOwnerIdCardType = 0
+	v.SeatId = 0
+	v.TicketItemId = 0
+	poolMoaTicketInfo.Put(v)
 }

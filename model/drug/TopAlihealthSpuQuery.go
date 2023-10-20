@@ -1,5 +1,9 @@
 package drug
 
+import (
+	"sync"
+)
+
 // TopAlihealthSpuQuery 结构体
 type TopAlihealthSpuQuery struct {
 	// 69码
@@ -32,4 +36,35 @@ type TopAlihealthSpuQuery struct {
 	AlihealthDrugInstructionDTO *TopAlihealthDrugInstructionDto `json:"alihealth_drug_instruction_d_t_o,omitempty" xml:"alihealth_drug_instruction_d_t_o,omitempty"`
 	// 是否只搜索药品
 	OnlyDrug bool `json:"only_drug,omitempty" xml:"only_drug,omitempty"`
+}
+
+var poolTopAlihealthSpuQuery = sync.Pool{
+	New: func() any {
+		return new(TopAlihealthSpuQuery)
+	},
+}
+
+// GetTopAlihealthSpuQuery() 从对象池中获取TopAlihealthSpuQuery
+func GetTopAlihealthSpuQuery() *TopAlihealthSpuQuery {
+	return poolTopAlihealthSpuQuery.Get().(*TopAlihealthSpuQuery)
+}
+
+// ReleaseTopAlihealthSpuQuery 释放TopAlihealthSpuQuery
+func ReleaseTopAlihealthSpuQuery(v *TopAlihealthSpuQuery) {
+	v.Barcode = ""
+	v.ApprovalNumber = ""
+	v.Title = ""
+	v.Specification = ""
+	v.Manufacturer = ""
+	v.BrandName = ""
+	v.ProductTitle = ""
+	v.TitleAlias = ""
+	v.OpenId = 0
+	v.Offset = 0
+	v.PageNo = 0
+	v.PageSize = 0
+	v.SpuId = 0
+	v.AlihealthDrugInstructionDTO = nil
+	v.OnlyDrug = false
+	poolTopAlihealthSpuQuery.Put(v)
 }

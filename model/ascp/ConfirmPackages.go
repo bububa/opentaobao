@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // ConfirmPackages 结构体
 type ConfirmPackages struct {
 	// 运单内所包含的所有货品（与翱象对接的货品编码）
@@ -8,4 +12,23 @@ type ConfirmPackages struct {
 	LogisticsCode string `json:"logistics_code,omitempty" xml:"logistics_code,omitempty"`
 	// 运单号
 	ExpressCode string `json:"express_code,omitempty" xml:"express_code,omitempty"`
+}
+
+var poolConfirmPackages = sync.Pool{
+	New: func() any {
+		return new(ConfirmPackages)
+	},
+}
+
+// GetConfirmPackages() 从对象池中获取ConfirmPackages
+func GetConfirmPackages() *ConfirmPackages {
+	return poolConfirmPackages.Get().(*ConfirmPackages)
+}
+
+// ReleaseConfirmPackages 释放ConfirmPackages
+func ReleaseConfirmPackages(v *ConfirmPackages) {
+	v.ScItems = v.ScItems[:0]
+	v.LogisticsCode = ""
+	v.ExpressCode = ""
+	poolConfirmPackages.Put(v)
 }

@@ -1,5 +1,9 @@
 package user
 
+import (
+	"sync"
+)
+
 // TaobaoNewretailDivisionRecordListGetT 结构体
 type TaobaoNewretailDivisionRecordListGetT struct {
 	// 买家昵称
@@ -28,4 +32,33 @@ type TaobaoNewretailDivisionRecordListGetT struct {
 	OrderPayTime int64 `json:"order_pay_time,omitempty" xml:"order_pay_time,omitempty"`
 	// 订单支付金额
 	OrderPayMoney int64 `json:"order_pay_money,omitempty" xml:"order_pay_money,omitempty"`
+}
+
+var poolTaobaoNewretailDivisionRecordListGetT = sync.Pool{
+	New: func() any {
+		return new(TaobaoNewretailDivisionRecordListGetT)
+	},
+}
+
+// GetTaobaoNewretailDivisionRecordListGetT() 从对象池中获取TaobaoNewretailDivisionRecordListGetT
+func GetTaobaoNewretailDivisionRecordListGetT() *TaobaoNewretailDivisionRecordListGetT {
+	return poolTaobaoNewretailDivisionRecordListGetT.Get().(*TaobaoNewretailDivisionRecordListGetT)
+}
+
+// ReleaseTaobaoNewretailDivisionRecordListGetT 释放TaobaoNewretailDivisionRecordListGetT
+func ReleaseTaobaoNewretailDivisionRecordListGetT(v *TaobaoNewretailDivisionRecordListGetT) {
+	v.BuyerNick = ""
+	v.CommissionEmployeeName = ""
+	v.OrderCreateTime = ""
+	v.OpenUid = ""
+	v.OrderEndTime = ""
+	v.CommissionMoney = 0
+	v.OrderId = 0
+	v.OrderStatus = 0
+	v.CommissionTime = 0
+	v.BizOrderId = 0
+	v.CommissionEmployeeId = 0
+	v.OrderPayTime = 0
+	v.OrderPayMoney = 0
+	poolTaobaoNewretailDivisionRecordListGetT.Put(v)
 }

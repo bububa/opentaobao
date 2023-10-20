@@ -9,11 +9,6 @@ import (
 // alibaba.jym.industry.trade.max.price.get
 //
 // 获取交易猫单个游戏渠道帐号交易成功最高价
-func AlibabaJymIndustryTradeMaxPriceGet(clt *core.SDKClient, req *jym.AlibabaJymIndustryTradeMaxPriceGetAPIRequest, session string) (*jym.AlibabaJymIndustryTradeMaxPriceGetAPIResponse, error) {
-	var resp jym.AlibabaJymIndustryTradeMaxPriceGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaJymIndustryTradeMaxPriceGet(clt *core.SDKClient, req *jym.AlibabaJymIndustryTradeMaxPriceGetAPIRequest, resp *jym.AlibabaJymIndustryTradeMaxPriceGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.supplier.refund.get
 //
 // 五道口按订单号批量查询供应商退款单
-func AlibabaWdkSupplierRefundGet(clt *core.SDKClient, req *wdk.AlibabaWdkSupplierRefundGetAPIRequest, session string) (*wdk.AlibabaWdkSupplierRefundGetAPIResponse, error) {
-	var resp wdk.AlibabaWdkSupplierRefundGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkSupplierRefundGet(clt *core.SDKClient, req *wdk.AlibabaWdkSupplierRefundGetAPIRequest, resp *wdk.AlibabaWdkSupplierRefundGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

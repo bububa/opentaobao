@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaTianmaoInventoryModifyAPIResponse struct {
 	AlibabaTianmaoInventoryModifyAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaTianmaoInventoryModifyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaTianmaoInventoryModifyAPIResponseModel).Reset()
+}
+
 // AlibabaTianmaoInventoryModifyAPIResponseModel is 阿里巴巴.天猫.aic库存.修改 成功返回结果
 type AlibabaTianmaoInventoryModifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_tianmao_inventory_modify_response"`
@@ -22,4 +29,27 @@ type AlibabaTianmaoInventoryModifyAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果
 	Result *BaseResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaTianmaoInventoryModifyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaTianmaoInventoryModifyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaTianmaoInventoryModifyAPIResponse)
+	},
+}
+
+// GetAlibabaTianmaoInventoryModifyAPIResponse 从 sync.Pool 获取 AlibabaTianmaoInventoryModifyAPIResponse
+func GetAlibabaTianmaoInventoryModifyAPIResponse() *AlibabaTianmaoInventoryModifyAPIResponse {
+	return poolAlibabaTianmaoInventoryModifyAPIResponse.Get().(*AlibabaTianmaoInventoryModifyAPIResponse)
+}
+
+// ReleaseAlibabaTianmaoInventoryModifyAPIResponse 将 AlibabaTianmaoInventoryModifyAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaTianmaoInventoryModifyAPIResponse(v *AlibabaTianmaoInventoryModifyAPIResponse) {
+	v.Reset()
+	poolAlibabaTianmaoInventoryModifyAPIResponse.Put(v)
 }

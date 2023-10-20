@@ -1,5 +1,9 @@
 package aedropshiper
 
+import (
+	"sync"
+)
+
 // AeopOrderInfo 结构体
 type AeopOrderInfo struct {
 	// 子订单列表
@@ -16,4 +20,27 @@ type AeopOrderInfo struct {
 	OrderAmount *SimpleMoney `json:"order_amount,omitempty" xml:"order_amount,omitempty"`
 	// 店铺信息
 	StoreInfo *AeopStoreInfo `json:"store_info,omitempty" xml:"store_info,omitempty"`
+}
+
+var poolAeopOrderInfo = sync.Pool{
+	New: func() any {
+		return new(AeopOrderInfo)
+	},
+}
+
+// GetAeopOrderInfo() 从对象池中获取AeopOrderInfo
+func GetAeopOrderInfo() *AeopOrderInfo {
+	return poolAeopOrderInfo.Get().(*AeopOrderInfo)
+}
+
+// ReleaseAeopOrderInfo 释放AeopOrderInfo
+func ReleaseAeopOrderInfo(v *AeopOrderInfo) {
+	v.ChildOrderList = v.ChildOrderList[:0]
+	v.LogisticsInfoList = v.LogisticsInfoList[:0]
+	v.GmtCreate = ""
+	v.OrderStatus = ""
+	v.LogisticsStatus = ""
+	v.OrderAmount = nil
+	v.StoreInfo = nil
+	poolAeopOrderInfo.Put(v)
 }

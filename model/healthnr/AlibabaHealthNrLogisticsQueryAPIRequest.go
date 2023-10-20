@@ -2,6 +2,7 @@ package healthnr
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaHealthNrLogisticsQueryAPIRequest struct {
 // NewAlibabaHealthNrLogisticsQueryRequest 初始化AlibabaHealthNrLogisticsQueryAPIRequest对象
 func NewAlibabaHealthNrLogisticsQueryRequest() *AlibabaHealthNrLogisticsQueryAPIRequest {
 	return &AlibabaHealthNrLogisticsQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHealthNrLogisticsQueryAPIRequest) Reset() {
+	r._orderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaHealthNrLogisticsQueryAPIRequest) SetOrderId(_orderId int64) err
 // GetOrderId OrderId Getter
 func (r AlibabaHealthNrLogisticsQueryAPIRequest) GetOrderId() int64 {
 	return r._orderId
+}
+
+var poolAlibabaHealthNrLogisticsQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHealthNrLogisticsQueryRequest()
+	},
+}
+
+// GetAlibabaHealthNrLogisticsQueryRequest 从 sync.Pool 获取 AlibabaHealthNrLogisticsQueryAPIRequest
+func GetAlibabaHealthNrLogisticsQueryAPIRequest() *AlibabaHealthNrLogisticsQueryAPIRequest {
+	return poolAlibabaHealthNrLogisticsQueryAPIRequest.Get().(*AlibabaHealthNrLogisticsQueryAPIRequest)
+}
+
+// ReleaseAlibabaHealthNrLogisticsQueryAPIRequest 将 AlibabaHealthNrLogisticsQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHealthNrLogisticsQueryAPIRequest(v *AlibabaHealthNrLogisticsQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaHealthNrLogisticsQueryAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package nrt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallNrtItemGetAPIRequest struct {
 // NewTmallNrtItemGetRequest 初始化TmallNrtItemGetAPIRequest对象
 func NewTmallNrtItemGetRequest() *TmallNrtItemGetAPIRequest {
 	return &TmallNrtItemGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrtItemGetAPIRequest) Reset() {
+	r._boothId = 0
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallNrtItemGetAPIRequest) SetItemId(_itemId int64) error {
 // GetItemId ItemId Getter
 func (r TmallNrtItemGetAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolTmallNrtItemGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrtItemGetRequest()
+	},
+}
+
+// GetTmallNrtItemGetRequest 从 sync.Pool 获取 TmallNrtItemGetAPIRequest
+func GetTmallNrtItemGetAPIRequest() *TmallNrtItemGetAPIRequest {
+	return poolTmallNrtItemGetAPIRequest.Get().(*TmallNrtItemGetAPIRequest)
+}
+
+// ReleaseTmallNrtItemGetAPIRequest 将 TmallNrtItemGetAPIRequest 放入 sync.Pool
+func ReleaseTmallNrtItemGetAPIRequest(v *TmallNrtItemGetAPIRequest) {
+	v.Reset()
+	poolTmallNrtItemGetAPIRequest.Put(v)
 }

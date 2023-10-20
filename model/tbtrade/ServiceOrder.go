@@ -1,5 +1,9 @@
 package tbtrade
 
+import (
+	"sync"
+)
+
 // ServiceOrder 结构体
 type ServiceOrder struct {
 	// 服务详情的URL地址
@@ -56,4 +60,47 @@ type ServiceOrder struct {
 	CombineSubItemId int64 `json:"combine_sub_item_id,omitempty" xml:"combine_sub_item_id,omitempty"`
 	// 套餐购对应的成分品的skuId
 	CombineSubItemSkuId int64 `json:"combine_sub_item_sku_id,omitempty" xml:"combine_sub_item_sku_id,omitempty"`
+}
+
+var poolServiceOrder = sync.Pool{
+	New: func() any {
+		return new(ServiceOrder)
+	},
+}
+
+// GetServiceOrder() 从对象池中获取ServiceOrder
+func GetServiceOrder() *ServiceOrder {
+	return poolServiceOrder.Get().(*ServiceOrder)
+}
+
+// ReleaseServiceOrder 释放ServiceOrder
+func ReleaseServiceOrder(v *ServiceOrder) {
+	v.ServiceDetailUrl = ""
+	v.Price = ""
+	v.Payment = ""
+	v.Title = ""
+	v.TotalFee = ""
+	v.BuyerNick = ""
+	v.RefundId = ""
+	v.SellerNick = ""
+	v.PicPath = ""
+	v.TmserSpuCode = ""
+	v.EtSerTime = ""
+	v.EtShopName = ""
+	v.EtVerifiedShopName = ""
+	v.EtPlateNumber = ""
+	v.OidStr = ""
+	v.AppleCareEmail = ""
+	v.AppleCareMpn = ""
+	v.ServiceOuterId = ""
+	v.ServiceOrderType = ""
+	v.ExtServiceBizId = ""
+	v.CommAmountUnit = ""
+	v.Oid = 0
+	v.ItemOid = 0
+	v.ServiceId = 0
+	v.Num = 0
+	v.CombineSubItemId = 0
+	v.CombineSubItemSkuId = 0
+	poolServiceOrder.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallhk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TmallHkClearanceInfoSendAPIResponse struct {
 	model.CommonResponse
 	TmallHkClearanceInfoSendAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TmallHkClearanceInfoSendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallHkClearanceInfoSendAPIResponseModel).Reset()
 }
 
 // TmallHkClearanceInfoSendAPIResponseModel is 清关信息回调通知 成功返回结果
@@ -28,4 +35,30 @@ type TmallHkClearanceInfoSendAPIResponseModel struct {
 	MsgSuccess bool `json:"msg_success,omitempty" xml:"msg_success,omitempty"`
 	// 接口调用是否成功
 	MsgObj bool `json:"msg_obj,omitempty" xml:"msg_obj,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallHkClearanceInfoSendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgInfo = ""
+	m.MsgCode = ""
+	m.MsgSuccess = false
+	m.MsgObj = false
+}
+
+var poolTmallHkClearanceInfoSendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallHkClearanceInfoSendAPIResponse)
+	},
+}
+
+// GetTmallHkClearanceInfoSendAPIResponse 从 sync.Pool 获取 TmallHkClearanceInfoSendAPIResponse
+func GetTmallHkClearanceInfoSendAPIResponse() *TmallHkClearanceInfoSendAPIResponse {
+	return poolTmallHkClearanceInfoSendAPIResponse.Get().(*TmallHkClearanceInfoSendAPIResponse)
+}
+
+// ReleaseTmallHkClearanceInfoSendAPIResponse 将 TmallHkClearanceInfoSendAPIResponse 保存到 sync.Pool
+func ReleaseTmallHkClearanceInfoSendAPIResponse(v *TmallHkClearanceInfoSendAPIResponse) {
+	v.Reset()
+	poolTmallHkClearanceInfoSendAPIResponse.Put(v)
 }

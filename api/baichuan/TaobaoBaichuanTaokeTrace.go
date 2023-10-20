@@ -9,11 +9,6 @@ import (
 // taobao.baichuan.taoke.trace
 //
 // 百川淘客打点
-func TaobaoBaichuanTaokeTrace(clt *core.SDKClient, req *baichuan.TaobaoBaichuanTaokeTraceAPIRequest, session string) (*baichuan.TaobaoBaichuanTaokeTraceAPIResponse, error) {
-	var resp baichuan.TaobaoBaichuanTaokeTraceAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoBaichuanTaokeTrace(clt *core.SDKClient, req *baichuan.TaobaoBaichuanTaokeTraceAPIRequest, resp *baichuan.TaobaoBaichuanTaokeTraceAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

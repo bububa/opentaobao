@@ -1,5 +1,9 @@
 package tmallgeniescp
 
+import (
+	"sync"
+)
+
 // ChannelQuotaDto 结构体
 type ChannelQuotaDto struct {
 	// 关键日期值
@@ -16,4 +20,27 @@ type ChannelQuotaDto struct {
 	ExtendJson string `json:"extend_json,omitempty" xml:"extend_json,omitempty"`
 	// 租户
 	Tenant string `json:"tenant,omitempty" xml:"tenant,omitempty"`
+}
+
+var poolChannelQuotaDto = sync.Pool{
+	New: func() any {
+		return new(ChannelQuotaDto)
+	},
+}
+
+// GetChannelQuotaDto() 从对象池中获取ChannelQuotaDto
+func GetChannelQuotaDto() *ChannelQuotaDto {
+	return poolChannelQuotaDto.Get().(*ChannelQuotaDto)
+}
+
+// ReleaseChannelQuotaDto 释放ChannelQuotaDto
+func ReleaseChannelQuotaDto(v *ChannelQuotaDto) {
+	v.KeyFigureDate = ""
+	v.Ratio = ""
+	v.MaterielCode = ""
+	v.LocationCode = ""
+	v.ChannelId = ""
+	v.ExtendJson = ""
+	v.Tenant = ""
+	poolChannelQuotaDto.Put(v)
 }

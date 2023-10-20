@@ -9,11 +9,6 @@ import (
 // taobao.openim.tribe.expel
 //
 // OPENIM群踢出成员
-func TaobaoOpenimTribeExpel(clt *core.SDKClient, req *openim.TaobaoOpenimTribeExpelAPIRequest, session string) (*openim.TaobaoOpenimTribeExpelAPIResponse, error) {
-	var resp openim.TaobaoOpenimTribeExpelAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpenimTribeExpel(clt *core.SDKClient, req *openim.TaobaoOpenimTribeExpelAPIRequest, resp *openim.TaobaoOpenimTribeExpelAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

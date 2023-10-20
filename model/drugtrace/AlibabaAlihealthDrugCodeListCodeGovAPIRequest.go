@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AlibabaAlihealthDrugCodeListCodeGovAPIRequest struct {
 // NewAlibabaAlihealthDrugCodeListCodeGovRequest 初始化AlibabaAlihealthDrugCodeListCodeGovAPIRequest对象
 func NewAlibabaAlihealthDrugCodeListCodeGovRequest() *AlibabaAlihealthDrugCodeListCodeGovAPIRequest {
 	return &AlibabaAlihealthDrugCodeListCodeGovAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugCodeListCodeGovAPIRequest) Reset() {
+	r._codeList = r._codeList[:0]
+	r._certIsvNo = ""
+	r._invocation = ""
+	r._terminalType = ""
+	r._terminalName = ""
+	r._bureauName = ""
+	r._errorMessage = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AlibabaAlihealthDrugCodeListCodeGovAPIRequest) SetErrorMessage(_errorMe
 // GetErrorMessage ErrorMessage Getter
 func (r AlibabaAlihealthDrugCodeListCodeGovAPIRequest) GetErrorMessage() string {
 	return r._errorMessage
+}
+
+var poolAlibabaAlihealthDrugCodeListCodeGovAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugCodeListCodeGovRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugCodeListCodeGovRequest 从 sync.Pool 获取 AlibabaAlihealthDrugCodeListCodeGovAPIRequest
+func GetAlibabaAlihealthDrugCodeListCodeGovAPIRequest() *AlibabaAlihealthDrugCodeListCodeGovAPIRequest {
+	return poolAlibabaAlihealthDrugCodeListCodeGovAPIRequest.Get().(*AlibabaAlihealthDrugCodeListCodeGovAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugCodeListCodeGovAPIRequest 将 AlibabaAlihealthDrugCodeListCodeGovAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugCodeListCodeGovAPIRequest(v *AlibabaAlihealthDrugCodeListCodeGovAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugCodeListCodeGovAPIRequest.Put(v)
 }

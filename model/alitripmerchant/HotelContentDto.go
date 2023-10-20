@@ -1,6 +1,8 @@
 package alitripmerchant
 
 import (
+	"sync"
+
 	"github.com/bububa/opentaobao/model"
 )
 
@@ -32,4 +34,33 @@ type HotelContentDto struct {
 	Shid int64 `json:"shid,omitempty" xml:"shid,omitempty"`
 	// 城市code
 	CityCode int64 `json:"city_code,omitempty" xml:"city_code,omitempty"`
+}
+
+var poolHotelContentDto = sync.Pool{
+	New: func() any {
+		return new(HotelContentDto)
+	},
+}
+
+// GetHotelContentDto() 从对象池中获取HotelContentDto
+func GetHotelContentDto() *HotelContentDto {
+	return poolHotelContentDto.Get().(*HotelContentDto)
+}
+
+// ReleaseHotelContentDto 释放HotelContentDto
+func ReleaseHotelContentDto(v *HotelContentDto) {
+	v.HotelId = ""
+	v.HotelIntro = ""
+	v.HotelPhone = ""
+	v.PictureUrl = ""
+	v.Latitude = ""
+	v.Longitude = ""
+	v.Address = ""
+	v.HotelName = ""
+	v.CityCn = ""
+	v.CityPyHead = ""
+	v.PositionType = nil
+	v.Shid = 0
+	v.CityCode = 0
+	poolHotelContentDto.Put(v)
 }

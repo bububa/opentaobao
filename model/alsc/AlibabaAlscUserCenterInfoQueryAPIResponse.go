@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAlscUserCenterInfoQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlscUserCenterInfoQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlscUserCenterInfoQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlscUserCenterInfoQueryAPIResponseModel).Reset()
 }
 
 // AlibabaAlscUserCenterInfoQueryAPIResponseModel is 查询授权的用户信息 成功返回结果
@@ -38,4 +45,35 @@ type AlibabaAlscUserCenterInfoQueryAPIResponseModel struct {
 	EncryptUsername string `json:"encrypt_username,omitempty" xml:"encrypt_username,omitempty"`
 	// 不同appkey下同一用户的openId不同
 	OpenId string `json:"open_id,omitempty" xml:"open_id,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlscUserCenterInfoQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.EncryptNickName = ""
+	m.NickName = ""
+	m.Intro = ""
+	m.Mobile = ""
+	m.AccessAvatarUrl = ""
+	m.UserName = ""
+	m.EncryptMobile = ""
+	m.EncryptUsername = ""
+	m.OpenId = ""
+}
+
+var poolAlibabaAlscUserCenterInfoQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlscUserCenterInfoQueryAPIResponse)
+	},
+}
+
+// GetAlibabaAlscUserCenterInfoQueryAPIResponse 从 sync.Pool 获取 AlibabaAlscUserCenterInfoQueryAPIResponse
+func GetAlibabaAlscUserCenterInfoQueryAPIResponse() *AlibabaAlscUserCenterInfoQueryAPIResponse {
+	return poolAlibabaAlscUserCenterInfoQueryAPIResponse.Get().(*AlibabaAlscUserCenterInfoQueryAPIResponse)
+}
+
+// ReleaseAlibabaAlscUserCenterInfoQueryAPIResponse 将 AlibabaAlscUserCenterInfoQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlscUserCenterInfoQueryAPIResponse(v *AlibabaAlscUserCenterInfoQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaAlscUserCenterInfoQueryAPIResponse.Put(v)
 }

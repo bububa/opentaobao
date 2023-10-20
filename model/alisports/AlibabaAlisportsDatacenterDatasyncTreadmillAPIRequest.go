@@ -2,6 +2,7 @@ package alisports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -77,8 +78,43 @@ type AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest struct {
 // NewAlibabaAlisportsDatacenterDatasyncTreadmillRequest 初始化AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest对象
 func NewAlibabaAlisportsDatacenterDatasyncTreadmillRequest() *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest {
 	return &AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(30),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) Reset() {
+	r._tempoDatas = r._tempoDatas[:0]
+	r._heartrateDatas = r._heartrateDatas[:0]
+	r._hrzMotionRangeDatas = r._hrzMotionRangeDatas[:0]
+	r._motionFrequencyDatas = r._motionFrequencyDatas[:0]
+	r._speedDatas = r._speedDatas[:0]
+	r._timezone = ""
+	r._deviceName = ""
+	r._messageId = ""
+	r._userId = ""
+	r._location = ""
+	r._deviceModel = ""
+	r._cityCode = 0
+	r._minHeartrate = 0
+	r._maxHeartrate = 0
+	r._avgHeartrate = 0
+	r._speed = 0
+	r._collectTimeInterval = 0
+	r._countryCode = 0
+	r._endTime = 0
+	r._startTime = 0
+	r._mileage = 0
+	r._climb = 0
+	r._deviceType = 0
+	r._durationTime = 0
+	r._provinceCode = 0
+	r._collectTimeUnit = 0
+	r._maxSpeed = 0
+	r._powerFrequency = 0
+	r._calorie = 0
+	r._steps = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -486,4 +522,21 @@ func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetSteps(_steps 
 // GetSteps Steps Getter
 func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetSteps() int64 {
 	return r._steps
+}
+
+var poolAlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlisportsDatacenterDatasyncTreadmillRequest()
+	},
+}
+
+// GetAlibabaAlisportsDatacenterDatasyncTreadmillRequest 从 sync.Pool 获取 AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest
+func GetAlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest() *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest {
+	return poolAlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest.Get().(*AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest)
+}
+
+// ReleaseAlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest 将 AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest(v *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) {
+	v.Reset()
+	poolAlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest.Put(v)
 }

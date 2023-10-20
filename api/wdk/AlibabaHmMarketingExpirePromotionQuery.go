@@ -9,11 +9,6 @@ import (
 // alibaba.hm.marketing.expire.promotion.query
 //
 // 短保优惠查询
-func AlibabaHmMarketingExpirePromotionQuery(clt *core.SDKClient, req *wdk.AlibabaHmMarketingExpirePromotionQueryAPIRequest, session string) (*wdk.AlibabaHmMarketingExpirePromotionQueryAPIResponse, error) {
-	var resp wdk.AlibabaHmMarketingExpirePromotionQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHmMarketingExpirePromotionQuery(clt *core.SDKClient, req *wdk.AlibabaHmMarketingExpirePromotionQueryAPIRequest, resp *wdk.AlibabaHmMarketingExpirePromotionQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // tmall.exchange.messages.get
 //
 // 查询换货订单留言列表
-func TmallExchangeMessagesGet(clt *core.SDKClient, req *exchange.TmallExchangeMessagesGetAPIRequest, session string) (*exchange.TmallExchangeMessagesGetAPIResponse, error) {
-	var resp exchange.TmallExchangeMessagesGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallExchangeMessagesGet(clt *core.SDKClient, req *exchange.TmallExchangeMessagesGetAPIRequest, resp *exchange.TmallExchangeMessagesGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

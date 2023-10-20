@@ -1,5 +1,9 @@
 package cainiaohandover
 
+import (
+	"sync"
+)
+
 // PickupDto 结构体
 type PickupDto struct {
 	// 邮箱
@@ -14,4 +18,26 @@ type PickupDto struct {
 	Address *AddressDto `json:"address,omitempty" xml:"address,omitempty"`
 	// AE后台维护的发件地址ID
 	AddressId int64 `json:"address_id,omitempty" xml:"address_id,omitempty"`
+}
+
+var poolPickupDto = sync.Pool{
+	New: func() any {
+		return new(PickupDto)
+	},
+}
+
+// GetPickupDto() 从对象池中获取PickupDto
+func GetPickupDto() *PickupDto {
+	return poolPickupDto.Get().(*PickupDto)
+}
+
+// ReleasePickupDto 释放PickupDto
+func ReleasePickupDto(v *PickupDto) {
+	v.Email = ""
+	v.Mobile = ""
+	v.Phone = ""
+	v.Name = ""
+	v.Address = nil
+	v.AddressId = 0
+	poolPickupDto.Put(v)
 }

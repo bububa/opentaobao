@@ -1,5 +1,9 @@
 package maitix
 
+import (
+	"sync"
+)
+
 // CombineSeatDto 结构体
 type CombineSeatDto struct {
 	// 套票下的单票信息
@@ -14,4 +18,26 @@ type CombineSeatDto struct {
 	ThirdCombineTicketId int64 `json:"third_combine_ticket_id,omitempty" xml:"third_combine_ticket_id,omitempty"`
 	// 套票ID,如果是套票。下单的时候传这个给ticket_item_id,和上面的third_combine_ticket_id一样
 	CombineTicketId int64 `json:"combine_ticket_id,omitempty" xml:"combine_ticket_id,omitempty"`
+}
+
+var poolCombineSeatDto = sync.Pool{
+	New: func() any {
+		return new(CombineSeatDto)
+	},
+}
+
+// GetCombineSeatDto() 从对象池中获取CombineSeatDto
+func GetCombineSeatDto() *CombineSeatDto {
+	return poolCombineSeatDto.Get().(*CombineSeatDto)
+}
+
+// ReleaseCombineSeatDto 释放CombineSeatDto
+func ReleaseCombineSeatDto(v *CombineSeatDto) {
+	v.OrdinaryTickets = v.OrdinaryTickets[:0]
+	v.CombineTicketPrice = ""
+	v.CombineTicketName = ""
+	v.ThirdCombineJointTicketId = 0
+	v.ThirdCombineTicketId = 0
+	v.CombineTicketId = 0
+	poolCombineSeatDto.Put(v)
 }

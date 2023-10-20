@@ -2,6 +2,7 @@ package campus
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaCampusAclNewListuserbymenuAPIResponse struct {
 	AlibabaCampusAclNewListuserbymenuAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaCampusAclNewListuserbymenuAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaCampusAclNewListuserbymenuAPIResponseModel).Reset()
+}
+
 // AlibabaCampusAclNewListuserbymenuAPIResponseModel is 查询菜单下的人员 成功返回结果
 type AlibabaCampusAclNewListuserbymenuAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_campus_acl_new_listuserbymenu_response"`
@@ -22,4 +29,27 @@ type AlibabaCampusAclNewListuserbymenuAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *ListResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaCampusAclNewListuserbymenuAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaCampusAclNewListuserbymenuAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaCampusAclNewListuserbymenuAPIResponse)
+	},
+}
+
+// GetAlibabaCampusAclNewListuserbymenuAPIResponse 从 sync.Pool 获取 AlibabaCampusAclNewListuserbymenuAPIResponse
+func GetAlibabaCampusAclNewListuserbymenuAPIResponse() *AlibabaCampusAclNewListuserbymenuAPIResponse {
+	return poolAlibabaCampusAclNewListuserbymenuAPIResponse.Get().(*AlibabaCampusAclNewListuserbymenuAPIResponse)
+}
+
+// ReleaseAlibabaCampusAclNewListuserbymenuAPIResponse 将 AlibabaCampusAclNewListuserbymenuAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaCampusAclNewListuserbymenuAPIResponse(v *AlibabaCampusAclNewListuserbymenuAPIResponse) {
+	v.Reset()
+	poolAlibabaCampusAclNewListuserbymenuAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package jym
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaJymIndustryTradeMaxPriceGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaJymIndustryTradeMaxPriceGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaJymIndustryTradeMaxPriceGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaJymIndustryTradeMaxPriceGetAPIResponseModel).Reset()
 }
 
 // AlibabaJymIndustryTradeMaxPriceGetAPIResponseModel is 获取交易猫单个游戏渠道帐号交易成功最高价 成功返回结果
@@ -32,4 +39,32 @@ type AlibabaJymIndustryTradeMaxPriceGetAPIResponseModel struct {
 	Result *JymMaxPriceOrderInfoDto `json:"result,omitempty" xml:"result,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaJymIndustryTradeMaxPriceGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.SubCodeType = ""
+	m.SubExtraErrMsg = ""
+	m.StateCode = ""
+	m.ExtraErrMsg = ""
+	m.Result = nil
+	m.IsSuccess = false
+}
+
+var poolAlibabaJymIndustryTradeMaxPriceGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaJymIndustryTradeMaxPriceGetAPIResponse)
+	},
+}
+
+// GetAlibabaJymIndustryTradeMaxPriceGetAPIResponse 从 sync.Pool 获取 AlibabaJymIndustryTradeMaxPriceGetAPIResponse
+func GetAlibabaJymIndustryTradeMaxPriceGetAPIResponse() *AlibabaJymIndustryTradeMaxPriceGetAPIResponse {
+	return poolAlibabaJymIndustryTradeMaxPriceGetAPIResponse.Get().(*AlibabaJymIndustryTradeMaxPriceGetAPIResponse)
+}
+
+// ReleaseAlibabaJymIndustryTradeMaxPriceGetAPIResponse 将 AlibabaJymIndustryTradeMaxPriceGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaJymIndustryTradeMaxPriceGetAPIResponse(v *AlibabaJymIndustryTradeMaxPriceGetAPIResponse) {
+	v.Reset()
+	poolAlibabaJymIndustryTradeMaxPriceGetAPIResponse.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.top.event.subscription.query
 //
 // 三方事件订阅查询
-func TaobaoTopEventSubscriptionQuery(clt *core.SDKClient, req *util.TaobaoTopEventSubscriptionQueryAPIRequest, session string) (*util.TaobaoTopEventSubscriptionQueryAPIResponse, error) {
-	var resp util.TaobaoTopEventSubscriptionQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTopEventSubscriptionQuery(clt *core.SDKClient, req *util.TaobaoTopEventSubscriptionQueryAPIRequest, resp *util.TaobaoTopEventSubscriptionQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package taotv
 
+import (
+	"sync"
+)
+
 // TaobaoTaotvVideoPlaylistGetModel 结构体
 type TaobaoTaotvVideoPlaylistGetModel struct {
 	// 视频图片
@@ -16,4 +20,27 @@ type TaobaoTaotvVideoPlaylistGetModel struct {
 	From int64 `json:"from,omitempty" xml:"from,omitempty"`
 	// id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolTaobaoTaotvVideoPlaylistGetModel = sync.Pool{
+	New: func() any {
+		return new(TaobaoTaotvVideoPlaylistGetModel)
+	},
+}
+
+// GetTaobaoTaotvVideoPlaylistGetModel() 从对象池中获取TaobaoTaotvVideoPlaylistGetModel
+func GetTaobaoTaotvVideoPlaylistGetModel() *TaobaoTaotvVideoPlaylistGetModel {
+	return poolTaobaoTaotvVideoPlaylistGetModel.Get().(*TaobaoTaotvVideoPlaylistGetModel)
+}
+
+// ReleaseTaobaoTaotvVideoPlaylistGetModel 释放TaobaoTaotvVideoPlaylistGetModel
+func ReleaseTaobaoTaotvVideoPlaylistGetModel(v *TaobaoTaotvVideoPlaylistGetModel) {
+	v.PicUrl = ""
+	v.VideoId = ""
+	v.Title = ""
+	v.Seconds = ""
+	v.OttUpdateTime = ""
+	v.From = 0
+	v.Id = 0
+	poolTaobaoTaotvVideoPlaylistGetModel.Put(v)
 }

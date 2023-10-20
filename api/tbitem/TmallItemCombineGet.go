@@ -9,11 +9,6 @@ import (
 // tmall.item.combine.get
 //
 // 查询组合商品的SKU信息
-func TmallItemCombineGet(clt *core.SDKClient, req *tbitem.TmallItemCombineGetAPIRequest, session string) (*tbitem.TmallItemCombineGetAPIResponse, error) {
-	var resp tbitem.TmallItemCombineGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallItemCombineGet(clt *core.SDKClient, req *tbitem.TmallItemCombineGetAPIRequest, resp *tbitem.TmallItemCombineGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

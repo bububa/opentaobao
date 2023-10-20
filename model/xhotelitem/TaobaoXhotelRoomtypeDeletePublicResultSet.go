@@ -1,5 +1,9 @@
 package xhotelitem
 
+import (
+	"sync"
+)
+
 // TaobaoXhotelRoomtypeDeletePublicResultSet 结构体
 type TaobaoXhotelRoomtypeDeletePublicResultSet struct {
 	// errorMsg
@@ -10,4 +14,24 @@ type TaobaoXhotelRoomtypeDeletePublicResultSet struct {
 	DeleteResult string `json:"delete_result,omitempty" xml:"delete_result,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoXhotelRoomtypeDeletePublicResultSet = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelRoomtypeDeletePublicResultSet)
+	},
+}
+
+// GetTaobaoXhotelRoomtypeDeletePublicResultSet() 从对象池中获取TaobaoXhotelRoomtypeDeletePublicResultSet
+func GetTaobaoXhotelRoomtypeDeletePublicResultSet() *TaobaoXhotelRoomtypeDeletePublicResultSet {
+	return poolTaobaoXhotelRoomtypeDeletePublicResultSet.Get().(*TaobaoXhotelRoomtypeDeletePublicResultSet)
+}
+
+// ReleaseTaobaoXhotelRoomtypeDeletePublicResultSet 释放TaobaoXhotelRoomtypeDeletePublicResultSet
+func ReleaseTaobaoXhotelRoomtypeDeletePublicResultSet(v *TaobaoXhotelRoomtypeDeletePublicResultSet) {
+	v.ErrorMsg = ""
+	v.ErrorCode = ""
+	v.DeleteResult = ""
+	v.Success = false
+	poolTaobaoXhotelRoomtypeDeletePublicResultSet.Put(v)
 }

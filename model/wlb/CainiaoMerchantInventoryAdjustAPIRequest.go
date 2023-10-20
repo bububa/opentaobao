@@ -2,6 +2,7 @@ package wlb
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type CainiaoMerchantInventoryAdjustAPIRequest struct {
 // NewCainiaoMerchantInventoryAdjustRequest 初始化CainiaoMerchantInventoryAdjustAPIRequest对象
 func NewCainiaoMerchantInventoryAdjustRequest() *CainiaoMerchantInventoryAdjustAPIRequest {
 	return &CainiaoMerchantInventoryAdjustAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoMerchantInventoryAdjustAPIRequest) Reset() {
+	r._adjustRequest = r._adjustRequest[:0]
+	r._appName = ""
+	r._operation = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *CainiaoMerchantInventoryAdjustAPIRequest) SetOperation(_operation strin
 // GetOperation Operation Getter
 func (r CainiaoMerchantInventoryAdjustAPIRequest) GetOperation() string {
 	return r._operation
+}
+
+var poolCainiaoMerchantInventoryAdjustAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoMerchantInventoryAdjustRequest()
+	},
+}
+
+// GetCainiaoMerchantInventoryAdjustRequest 从 sync.Pool 获取 CainiaoMerchantInventoryAdjustAPIRequest
+func GetCainiaoMerchantInventoryAdjustAPIRequest() *CainiaoMerchantInventoryAdjustAPIRequest {
+	return poolCainiaoMerchantInventoryAdjustAPIRequest.Get().(*CainiaoMerchantInventoryAdjustAPIRequest)
+}
+
+// ReleaseCainiaoMerchantInventoryAdjustAPIRequest 将 CainiaoMerchantInventoryAdjustAPIRequest 放入 sync.Pool
+func ReleaseCainiaoMerchantInventoryAdjustAPIRequest(v *CainiaoMerchantInventoryAdjustAPIRequest) {
+	v.Reset()
+	poolCainiaoMerchantInventoryAdjustAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alscmerchant
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlscMerchantExtTicketcodeSendAPIResponse struct {
 	AlibabaAlscMerchantExtTicketcodeSendAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlscMerchantExtTicketcodeSendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlscMerchantExtTicketcodeSendAPIResponseModel).Reset()
+}
+
 // AlibabaAlscMerchantExtTicketcodeSendAPIResponseModel is 异步发码 成功返回结果
 type AlibabaAlscMerchantExtTicketcodeSendAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_merchant_ext_ticketcode_send_response"`
@@ -24,4 +31,28 @@ type AlibabaAlscMerchantExtTicketcodeSendAPIResponseModel struct {
 	TicketRequestId string `json:"ticket_request_id,omitempty" xml:"ticket_request_id,omitempty"`
 	// 该字段用于描述本次返回中的业务属性，现有：BIZ_ALREADY_SUCCESS（幂等业务码）。
 	BizCode string `json:"biz_code,omitempty" xml:"biz_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlscMerchantExtTicketcodeSendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TicketRequestId = ""
+	m.BizCode = ""
+}
+
+var poolAlibabaAlscMerchantExtTicketcodeSendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlscMerchantExtTicketcodeSendAPIResponse)
+	},
+}
+
+// GetAlibabaAlscMerchantExtTicketcodeSendAPIResponse 从 sync.Pool 获取 AlibabaAlscMerchantExtTicketcodeSendAPIResponse
+func GetAlibabaAlscMerchantExtTicketcodeSendAPIResponse() *AlibabaAlscMerchantExtTicketcodeSendAPIResponse {
+	return poolAlibabaAlscMerchantExtTicketcodeSendAPIResponse.Get().(*AlibabaAlscMerchantExtTicketcodeSendAPIResponse)
+}
+
+// ReleaseAlibabaAlscMerchantExtTicketcodeSendAPIResponse 将 AlibabaAlscMerchantExtTicketcodeSendAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlscMerchantExtTicketcodeSendAPIResponse(v *AlibabaAlscMerchantExtTicketcodeSendAPIResponse) {
+	v.Reset()
+	poolAlibabaAlscMerchantExtTicketcodeSendAPIResponse.Put(v)
 }

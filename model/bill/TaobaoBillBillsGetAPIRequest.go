@@ -2,6 +2,7 @@ package bill
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type TaobaoBillBillsGetAPIRequest struct {
 // NewTaobaoBillBillsGetRequest 初始化TaobaoBillBillsGetAPIRequest对象
 func NewTaobaoBillBillsGetRequest() *TaobaoBillBillsGetAPIRequest {
 	return &TaobaoBillBillsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBillBillsGetAPIRequest) Reset() {
+	r._fields = r._fields[:0]
+	r._endTime = ""
+	r._startTime = ""
+	r._timeType = 0
+	r._tradeId = 0
+	r._accountId = 0
+	r._pageNo = 0
+	r._pageSize = 0
+	r._orderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *TaobaoBillBillsGetAPIRequest) SetOrderId(_orderId int64) error {
 // GetOrderId OrderId Getter
 func (r TaobaoBillBillsGetAPIRequest) GetOrderId() int64 {
 	return r._orderId
+}
+
+var poolTaobaoBillBillsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBillBillsGetRequest()
+	},
+}
+
+// GetTaobaoBillBillsGetRequest 从 sync.Pool 获取 TaobaoBillBillsGetAPIRequest
+func GetTaobaoBillBillsGetAPIRequest() *TaobaoBillBillsGetAPIRequest {
+	return poolTaobaoBillBillsGetAPIRequest.Get().(*TaobaoBillBillsGetAPIRequest)
+}
+
+// ReleaseTaobaoBillBillsGetAPIRequest 将 TaobaoBillBillsGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBillBillsGetAPIRequest(v *TaobaoBillBillsGetAPIRequest) {
+	v.Reset()
+	poolTaobaoBillBillsGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoLogisticsDummySendAPIResponse struct {
 	TaobaoLogisticsDummySendAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoLogisticsDummySendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoLogisticsDummySendAPIResponseModel).Reset()
+}
+
 // TaobaoLogisticsDummySendAPIResponseModel is 无需物流（虚拟）发货处理 成功返回结果
 type TaobaoLogisticsDummySendAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_dummy_send_response"`
@@ -22,4 +29,27 @@ type TaobaoLogisticsDummySendAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回发货是否成功is_success
 	Shipping *Shipping `json:"shipping,omitempty" xml:"shipping,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoLogisticsDummySendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Shipping = nil
+}
+
+var poolTaobaoLogisticsDummySendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoLogisticsDummySendAPIResponse)
+	},
+}
+
+// GetTaobaoLogisticsDummySendAPIResponse 从 sync.Pool 获取 TaobaoLogisticsDummySendAPIResponse
+func GetTaobaoLogisticsDummySendAPIResponse() *TaobaoLogisticsDummySendAPIResponse {
+	return poolTaobaoLogisticsDummySendAPIResponse.Get().(*TaobaoLogisticsDummySendAPIResponse)
+}
+
+// ReleaseTaobaoLogisticsDummySendAPIResponse 将 TaobaoLogisticsDummySendAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoLogisticsDummySendAPIResponse(v *TaobaoLogisticsDummySendAPIResponse) {
+	v.Reset()
+	poolTaobaoLogisticsDummySendAPIResponse.Put(v)
 }

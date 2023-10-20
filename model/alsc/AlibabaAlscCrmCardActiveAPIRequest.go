@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscCrmCardActiveAPIRequest struct {
 // NewAlibabaAlscCrmCardActiveRequest 初始化AlibabaAlscCrmCardActiveAPIRequest对象
 func NewAlibabaAlscCrmCardActiveRequest() *AlibabaAlscCrmCardActiveAPIRequest {
 	return &AlibabaAlscCrmCardActiveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscCrmCardActiveAPIRequest) Reset() {
+	r._paramActiveCardOpenReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscCrmCardActiveAPIRequest) SetParamActiveCardOpenReq(_paramAct
 // GetParamActiveCardOpenReq ParamActiveCardOpenReq Getter
 func (r AlibabaAlscCrmCardActiveAPIRequest) GetParamActiveCardOpenReq() *ActiveCardOpenReq {
 	return r._paramActiveCardOpenReq
+}
+
+var poolAlibabaAlscCrmCardActiveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscCrmCardActiveRequest()
+	},
+}
+
+// GetAlibabaAlscCrmCardActiveRequest 从 sync.Pool 获取 AlibabaAlscCrmCardActiveAPIRequest
+func GetAlibabaAlscCrmCardActiveAPIRequest() *AlibabaAlscCrmCardActiveAPIRequest {
+	return poolAlibabaAlscCrmCardActiveAPIRequest.Get().(*AlibabaAlscCrmCardActiveAPIRequest)
+}
+
+// ReleaseAlibabaAlscCrmCardActiveAPIRequest 将 AlibabaAlscCrmCardActiveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscCrmCardActiveAPIRequest(v *AlibabaAlscCrmCardActiveAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscCrmCardActiveAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // DeviceInfo 结构体
 type DeviceInfo struct {
 	// 设备ID
@@ -22,4 +26,30 @@ type DeviceInfo struct {
 	Ttid string `json:"ttid,omitempty" xml:"ttid,omitempty"`
 	// 特征字符串
 	UserAgent string `json:"user_agent,omitempty" xml:"user_agent,omitempty"`
+}
+
+var poolDeviceInfo = sync.Pool{
+	New: func() any {
+		return new(DeviceInfo)
+	},
+}
+
+// GetDeviceInfo() 从对象池中获取DeviceInfo
+func GetDeviceInfo() *DeviceInfo {
+	return poolDeviceInfo.Get().(*DeviceInfo)
+}
+
+// ReleaseDeviceInfo 释放DeviceInfo
+func ReleaseDeviceInfo(v *DeviceInfo) {
+	v.DeviceId = ""
+	v.Ip = ""
+	v.Mac = ""
+	v.Platform = ""
+	v.PlatformVersion = ""
+	v.ProdVersion = ""
+	v.Product = ""
+	v.SchemaPlatform = ""
+	v.Ttid = ""
+	v.UserAgent = ""
+	poolDeviceInfo.Put(v)
 }

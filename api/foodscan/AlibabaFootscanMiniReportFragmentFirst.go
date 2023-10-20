@@ -9,11 +9,6 @@ import (
 // alibaba.footscan.mini.report.fragment.first
 //
 // 第一只脚生成报告接口
-func AlibabaFootscanMiniReportFragmentFirst(clt *core.SDKClient, req *foodscan.AlibabaFootscanMiniReportFragmentFirstAPIRequest, session string) (*foodscan.AlibabaFootscanMiniReportFragmentFirstAPIResponse, error) {
-	var resp foodscan.AlibabaFootscanMiniReportFragmentFirstAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaFootscanMiniReportFragmentFirst(clt *core.SDKClient, req *foodscan.AlibabaFootscanMiniReportFragmentFirstAPIRequest, resp *foodscan.AlibabaFootscanMiniReportFragmentFirstAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

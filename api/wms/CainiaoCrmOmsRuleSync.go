@@ -9,11 +9,6 @@ import (
 // cainiao.crm.oms.rule.sync
 //
 // 将商家ERP订单处理规则同步到菜鸟CRM系统
-func CainiaoCrmOmsRuleSync(clt *core.SDKClient, req *wms.CainiaoCrmOmsRuleSyncAPIRequest, session string) (*wms.CainiaoCrmOmsRuleSyncAPIResponse, error) {
-	var resp wms.CainiaoCrmOmsRuleSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func CainiaoCrmOmsRuleSync(clt *core.SDKClient, req *wms.CainiaoCrmOmsRuleSyncAPIRequest, resp *wms.CainiaoCrmOmsRuleSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

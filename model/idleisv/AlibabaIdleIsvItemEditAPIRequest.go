@@ -2,6 +2,7 @@ package idleisv
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleIsvItemEditAPIRequest struct {
 // NewAlibabaIdleIsvItemEditRequest 初始化AlibabaIdleIsvItemEditAPIRequest对象
 func NewAlibabaIdleIsvItemEditRequest() *AlibabaIdleIsvItemEditAPIRequest {
 	return &AlibabaIdleIsvItemEditAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleIsvItemEditAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleIsvItemEditAPIRequest) SetParam(_param *IdleItemApiDo) error
 // GetParam Param Getter
 func (r AlibabaIdleIsvItemEditAPIRequest) GetParam() *IdleItemApiDo {
 	return r._param
+}
+
+var poolAlibabaIdleIsvItemEditAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleIsvItemEditRequest()
+	},
+}
+
+// GetAlibabaIdleIsvItemEditRequest 从 sync.Pool 获取 AlibabaIdleIsvItemEditAPIRequest
+func GetAlibabaIdleIsvItemEditAPIRequest() *AlibabaIdleIsvItemEditAPIRequest {
+	return poolAlibabaIdleIsvItemEditAPIRequest.Get().(*AlibabaIdleIsvItemEditAPIRequest)
+}
+
+// ReleaseAlibabaIdleIsvItemEditAPIRequest 将 AlibabaIdleIsvItemEditAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleIsvItemEditAPIRequest(v *AlibabaIdleIsvItemEditAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleIsvItemEditAPIRequest.Put(v)
 }

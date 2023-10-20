@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // MultiCabinClassInfo 结构体
 type MultiCabinClassInfo struct {
 	// 退改签规则列表
@@ -50,4 +54,44 @@ type MultiCabinClassInfo struct {
 	BasicCabinPrice int64 `json:"basic_cabin_price,omitempty" xml:"basic_cabin_price,omitempty"`
 	// 是否协议价
 	IsProtocol bool `json:"is_protocol,omitempty" xml:"is_protocol,omitempty"`
+}
+
+var poolMultiCabinClassInfo = sync.Pool{
+	New: func() any {
+		return new(MultiCabinClassInfo)
+	},
+}
+
+// GetMultiCabinClassInfo() 从对象池中获取MultiCabinClassInfo
+func GetMultiCabinClassInfo() *MultiCabinClassInfo {
+	return poolMultiCabinClassInfo.Get().(*MultiCabinClassInfo)
+}
+
+// ReleaseMultiCabinClassInfo 释放MultiCabinClassInfo
+func ReleaseMultiCabinClassInfo(v *MultiCabinClassInfo) {
+	v.FlightRuleList = v.FlightRuleList[:0]
+	v.RemainedSeatCount = ""
+	v.Cabin = ""
+	v.ClassName = ""
+	v.CabinClass = ""
+	v.CabinClassName = ""
+	v.Discount = ""
+	v.PromotionPrice = ""
+	v.Memo = ""
+	v.OrderParams = ""
+	v.ClassRule = ""
+	v.ProductTypeDesc = ""
+	v.ChildCabin = ""
+	v.OtaItemId = ""
+	v.FlightRuleListStr = ""
+	v.Price = 0
+	v.TicketPrice = 0
+	v.ProductType = 0
+	v.InvoiceType = 0
+	v.OilPrice = 0
+	v.BuildPrice = 0
+	v.TotalPrice = 0
+	v.BasicCabinPrice = 0
+	v.IsProtocol = false
+	poolMultiCabinClassInfo.Put(v)
 }

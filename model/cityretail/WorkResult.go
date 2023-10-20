@@ -1,5 +1,9 @@
 package cityretail
 
+import (
+	"sync"
+)
+
 // WorkResult 结构体
 type WorkResult struct {
 	// 错误码
@@ -18,4 +22,28 @@ type WorkResult struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+var poolWorkResult = sync.Pool{
+	New: func() any {
+		return new(WorkResult)
+	},
+}
+
+// GetWorkResult() 从对象池中获取WorkResult
+func GetWorkResult() *WorkResult {
+	return poolWorkResult.Get().(*WorkResult)
+}
+
+// ReleaseWorkResult 释放WorkResult
+func ReleaseWorkResult(v *WorkResult) {
+	v.Code = ""
+	v.Message = ""
+	v.ErrorCode = ""
+	v.ErrorMessage = ""
+	v.Data = nil
+	v.ResultData = nil
+	v.Success = false
+	v.IsSuccess = false
+	poolWorkResult.Put(v)
 }

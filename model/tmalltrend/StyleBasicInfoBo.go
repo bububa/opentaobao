@@ -1,5 +1,9 @@
 package tmalltrend
 
+import (
+	"sync"
+)
+
 // StyleBasicInfoBo 结构体
 type StyleBasicInfoBo struct {
 	// 款式同步目的，枚举，INSERT(&#34;新增&#34;), UPDATE(&#34;更新&#34;), OFFLINE(&#34;下线&#34;);
@@ -68,4 +72,53 @@ type StyleBasicInfoBo struct {
 	Version string `json:"version,omitempty" xml:"version,omitempty"`
 	// 是否拥有IP版权，true--有，false--无
 	IpCopyright bool `json:"ip_copyright,omitempty" xml:"ip_copyright,omitempty"`
+}
+
+var poolStyleBasicInfoBo = sync.Pool{
+	New: func() any {
+		return new(StyleBasicInfoBo)
+	},
+}
+
+// GetStyleBasicInfoBo() 从对象池中获取StyleBasicInfoBo
+func GetStyleBasicInfoBo() *StyleBasicInfoBo {
+	return poolStyleBasicInfoBo.Get().(*StyleBasicInfoBo)
+}
+
+// ReleaseStyleBasicInfoBo 释放StyleBasicInfoBo
+func ReleaseStyleBasicInfoBo(v *StyleBasicInfoBo) {
+	v.SyncPurpose = ""
+	v.OfflineReason = ""
+	v.CopyrightOwner = ""
+	v.ModelSourceUrl = ""
+	v.StyleSerialNumber = ""
+	v.Pattern = ""
+	v.StyleName = ""
+	v.Craftsmanship = ""
+	v.MajorMaterialCate = ""
+	v.StyleType = ""
+	v.MainPicSourceUrl = ""
+	v.DetailPicSourceUrl = ""
+	v.ContourCate = ""
+	v.MinorMaterial = ""
+	v.KeyProperties = ""
+	v.Price = ""
+	v.AuthorizeProofSourceUrl = ""
+	v.CrowedType = ""
+	v.DecorationDetail = ""
+	v.MajorMaterialComponent = ""
+	v.VideoSourceUrl = ""
+	v.OfflineReasonDetail = ""
+	v.Clothings = ""
+	v.Modelling = ""
+	v.Components = ""
+	v.Fabrics = ""
+	v.Decals = ""
+	v.Fonts = ""
+	v.Accessories = ""
+	v.Scenes = ""
+	v.Lights = ""
+	v.Version = ""
+	v.IpCopyright = false
+	poolStyleBasicInfoBo.Put(v)
 }

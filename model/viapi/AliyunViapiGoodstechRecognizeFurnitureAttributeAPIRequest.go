@@ -2,6 +2,7 @@ package viapi
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest struct {
 // NewAliyunViapiGoodstechRecognizeFurnitureAttributeRequest 初始化AliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest对象
 func NewAliyunViapiGoodstechRecognizeFurnitureAttributeRequest() *AliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest {
 	return &AliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest) Reset() {
+	r._imageUrl = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest) SetImageUrl(
 // GetImageUrl ImageUrl Getter
 func (r AliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest) GetImageUrl() string {
 	return r._imageUrl
+}
+
+var poolAliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliyunViapiGoodstechRecognizeFurnitureAttributeRequest()
+	},
+}
+
+// GetAliyunViapiGoodstechRecognizeFurnitureAttributeRequest 从 sync.Pool 获取 AliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest
+func GetAliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest() *AliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest {
+	return poolAliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest.Get().(*AliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest)
+}
+
+// ReleaseAliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest 将 AliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest 放入 sync.Pool
+func ReleaseAliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest(v *AliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest) {
+	v.Reset()
+	poolAliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.aelophy.order.get
 //
 // 翱象拉取订单接口
-func AlibabaAelophyOrderGet(clt *core.SDKClient, req *wdk.AlibabaAelophyOrderGetAPIRequest, session string) (*wdk.AlibabaAelophyOrderGetAPIResponse, error) {
-	var resp wdk.AlibabaAelophyOrderGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAelophyOrderGet(clt *core.SDKClient, req *wdk.AlibabaAelophyOrderGetAPIRequest, resp *wdk.AlibabaAelophyOrderGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

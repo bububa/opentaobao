@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaScbpEffectAccountListAPIResponse struct {
 	AlibabaScbpEffectAccountListAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaScbpEffectAccountListAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaScbpEffectAccountListAPIResponseModel).Reset()
+}
+
 // AlibabaScbpEffectAccountListAPIResponseModel is 账户-报表 成功返回结果
 type AlibabaScbpEffectAccountListAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_effect_account_list_response"`
@@ -26,4 +33,29 @@ type AlibabaScbpEffectAccountListAPIResponseModel struct {
 	TotalNum int64 `json:"total_num,omitempty" xml:"total_num,omitempty"`
 	// 总页数
 	TotalPage int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaScbpEffectAccountListAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.AccountReportList = m.AccountReportList[:0]
+	m.TotalNum = 0
+	m.TotalPage = 0
+}
+
+var poolAlibabaScbpEffectAccountListAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaScbpEffectAccountListAPIResponse)
+	},
+}
+
+// GetAlibabaScbpEffectAccountListAPIResponse 从 sync.Pool 获取 AlibabaScbpEffectAccountListAPIResponse
+func GetAlibabaScbpEffectAccountListAPIResponse() *AlibabaScbpEffectAccountListAPIResponse {
+	return poolAlibabaScbpEffectAccountListAPIResponse.Get().(*AlibabaScbpEffectAccountListAPIResponse)
+}
+
+// ReleaseAlibabaScbpEffectAccountListAPIResponse 将 AlibabaScbpEffectAccountListAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaScbpEffectAccountListAPIResponse(v *AlibabaScbpEffectAccountListAPIResponse) {
+	v.Reset()
+	poolAlibabaScbpEffectAccountListAPIResponse.Put(v)
 }

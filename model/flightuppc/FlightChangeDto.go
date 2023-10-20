@@ -1,5 +1,9 @@
 package flightuppc
 
+import (
+	"sync"
+)
+
 // FlightChangeDto 结构体
 type FlightChangeDto struct {
 	// 航班号
@@ -34,4 +38,36 @@ type FlightChangeDto struct {
 	ChangeType int64 `json:"change_type,omitempty" xml:"change_type,omitempty"`
 	// 航变子原因，如延误、恢复、航班保护，详情见新京杭航变接入文档
 	SubType int64 `json:"sub_type,omitempty" xml:"sub_type,omitempty"`
+}
+
+var poolFlightChangeDto = sync.Pool{
+	New: func() any {
+		return new(FlightChangeDto)
+	},
+}
+
+// GetFlightChangeDto() 从对象池中获取FlightChangeDto
+func GetFlightChangeDto() *FlightChangeDto {
+	return poolFlightChangeDto.Get().(*FlightChangeDto)
+}
+
+// ReleaseFlightChangeDto 释放FlightChangeDto
+func ReleaseFlightChangeDto(v *FlightChangeDto) {
+	v.OldFlightNo = ""
+	v.OldFlightDate = ""
+	v.OldDepartCode = ""
+	v.OldArriveCode = ""
+	v.OldDepartTime = ""
+	v.OldArriveTime = ""
+	v.NewFlightNo = ""
+	v.NewFlightDate = ""
+	v.NewDepartCode = ""
+	v.NewArriveCode = ""
+	v.NewDepartTime = ""
+	v.NewArriveTime = ""
+	v.ChangeTime = ""
+	v.ChangeReason = ""
+	v.ChangeType = 0
+	v.SubType = 0
+	poolFlightChangeDto.Put(v)
 }

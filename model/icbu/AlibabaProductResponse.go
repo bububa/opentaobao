@@ -1,5 +1,9 @@
 package icbu
 
+import (
+	"sync"
+)
+
 // AlibabaProductResponse 结构体
 type AlibabaProductResponse struct {
 	// 商品属性
@@ -48,4 +52,43 @@ type AlibabaProductResponse struct {
 	IsSmartEdit bool `json:"is_smart_edit,omitempty" xml:"is_smart_edit,omitempty"`
 	// 是否是有效rts
 	Rts bool `json:"rts,omitempty" xml:"rts,omitempty"`
+}
+
+var poolAlibabaProductResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaProductResponse)
+	},
+}
+
+// GetAlibabaProductResponse() 从对象池中获取AlibabaProductResponse
+func GetAlibabaProductResponse() *AlibabaProductResponse {
+	return poolAlibabaProductResponse.Get().(*AlibabaProductResponse)
+}
+
+// ReleaseAlibabaProductResponse 释放AlibabaProductResponse
+func ReleaseAlibabaProductResponse(v *AlibabaProductResponse) {
+	v.Attributes = v.Attributes[:0]
+	v.Keywords = v.Keywords[:0]
+	v.Description = ""
+	v.Status = ""
+	v.Subject = ""
+	v.Language = ""
+	v.ProductType = ""
+	v.Display = ""
+	v.GmtModified = ""
+	v.OwnerMemberDisplayName = ""
+	v.PriceType = ""
+	v.PcDetailUrl = ""
+	v.ProductId = ""
+	v.CategoryId = 0
+	v.GroupId = 0
+	v.MainImage = nil
+	v.ProductSku = nil
+	v.SourcingTrade = nil
+	v.WholesaleTrade = nil
+	v.OwnerMember = 0
+	v.CustomInfo = nil
+	v.IsSmartEdit = false
+	v.Rts = false
+	poolAlibabaProductResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package tmc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoTmcGroupDeleteAPIRequest struct {
 // NewTaobaoTmcGroupDeleteRequest 初始化TaobaoTmcGroupDeleteAPIRequest对象
 func NewTaobaoTmcGroupDeleteRequest() *TaobaoTmcGroupDeleteAPIRequest {
 	return &TaobaoTmcGroupDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTmcGroupDeleteAPIRequest) Reset() {
+	r._nicks = r._nicks[:0]
+	r._groupName = ""
+	r._userPlatform = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoTmcGroupDeleteAPIRequest) SetUserPlatform(_userPlatform string) e
 // GetUserPlatform UserPlatform Getter
 func (r TaobaoTmcGroupDeleteAPIRequest) GetUserPlatform() string {
 	return r._userPlatform
+}
+
+var poolTaobaoTmcGroupDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTmcGroupDeleteRequest()
+	},
+}
+
+// GetTaobaoTmcGroupDeleteRequest 从 sync.Pool 获取 TaobaoTmcGroupDeleteAPIRequest
+func GetTaobaoTmcGroupDeleteAPIRequest() *TaobaoTmcGroupDeleteAPIRequest {
+	return poolTaobaoTmcGroupDeleteAPIRequest.Get().(*TaobaoTmcGroupDeleteAPIRequest)
+}
+
+// ReleaseTaobaoTmcGroupDeleteAPIRequest 将 TaobaoTmcGroupDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTmcGroupDeleteAPIRequest(v *TaobaoTmcGroupDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoTmcGroupDeleteAPIRequest.Put(v)
 }

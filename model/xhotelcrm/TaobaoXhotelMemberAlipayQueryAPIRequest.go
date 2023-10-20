@@ -2,6 +2,7 @@ package xhotelcrm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoXhotelMemberAlipayQueryAPIRequest struct {
 // NewTaobaoXhotelMemberAlipayQueryRequest 初始化TaobaoXhotelMemberAlipayQueryAPIRequest对象
 func NewTaobaoXhotelMemberAlipayQueryRequest() *TaobaoXhotelMemberAlipayQueryAPIRequest {
 	return &TaobaoXhotelMemberAlipayQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelMemberAlipayQueryAPIRequest) Reset() {
+	r._fpt = ""
+	r._alipayUserId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoXhotelMemberAlipayQueryAPIRequest) SetAlipayUserId(_alipayUserId 
 // GetAlipayUserId AlipayUserId Getter
 func (r TaobaoXhotelMemberAlipayQueryAPIRequest) GetAlipayUserId() int64 {
 	return r._alipayUserId
+}
+
+var poolTaobaoXhotelMemberAlipayQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelMemberAlipayQueryRequest()
+	},
+}
+
+// GetTaobaoXhotelMemberAlipayQueryRequest 从 sync.Pool 获取 TaobaoXhotelMemberAlipayQueryAPIRequest
+func GetTaobaoXhotelMemberAlipayQueryAPIRequest() *TaobaoXhotelMemberAlipayQueryAPIRequest {
+	return poolTaobaoXhotelMemberAlipayQueryAPIRequest.Get().(*TaobaoXhotelMemberAlipayQueryAPIRequest)
+}
+
+// ReleaseTaobaoXhotelMemberAlipayQueryAPIRequest 将 TaobaoXhotelMemberAlipayQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelMemberAlipayQueryAPIRequest(v *TaobaoXhotelMemberAlipayQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelMemberAlipayQueryAPIRequest.Put(v)
 }

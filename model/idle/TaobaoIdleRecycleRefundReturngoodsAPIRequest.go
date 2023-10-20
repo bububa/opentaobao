@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoIdleRecycleRefundReturngoodsAPIRequest struct {
 // NewTaobaoIdleRecycleRefundReturngoodsRequest 初始化TaobaoIdleRecycleRefundReturngoodsAPIRequest对象
 func NewTaobaoIdleRecycleRefundReturngoodsRequest() *TaobaoIdleRecycleRefundReturngoodsAPIRequest {
 	return &TaobaoIdleRecycleRefundReturngoodsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoIdleRecycleRefundReturngoodsAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoIdleRecycleRefundReturngoodsAPIRequest) SetParam0(_param0 *Recycl
 // GetParam0 Param0 Getter
 func (r TaobaoIdleRecycleRefundReturngoodsAPIRequest) GetParam0() *RecycleReturnGoodsRequest {
 	return r._param0
+}
+
+var poolTaobaoIdleRecycleRefundReturngoodsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoIdleRecycleRefundReturngoodsRequest()
+	},
+}
+
+// GetTaobaoIdleRecycleRefundReturngoodsRequest 从 sync.Pool 获取 TaobaoIdleRecycleRefundReturngoodsAPIRequest
+func GetTaobaoIdleRecycleRefundReturngoodsAPIRequest() *TaobaoIdleRecycleRefundReturngoodsAPIRequest {
+	return poolTaobaoIdleRecycleRefundReturngoodsAPIRequest.Get().(*TaobaoIdleRecycleRefundReturngoodsAPIRequest)
+}
+
+// ReleaseTaobaoIdleRecycleRefundReturngoodsAPIRequest 将 TaobaoIdleRecycleRefundReturngoodsAPIRequest 放入 sync.Pool
+func ReleaseTaobaoIdleRecycleRefundReturngoodsAPIRequest(v *TaobaoIdleRecycleRefundReturngoodsAPIRequest) {
+	v.Reset()
+	poolTaobaoIdleRecycleRefundReturngoodsAPIRequest.Put(v)
 }

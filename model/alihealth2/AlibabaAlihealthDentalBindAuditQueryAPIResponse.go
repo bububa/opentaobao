@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihealthDentalBindAuditQueryAPIResponse struct {
 	AlibabaAlihealthDentalBindAuditQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthDentalBindAuditQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthDentalBindAuditQueryAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthDentalBindAuditQueryAPIResponseModel is ISV查询绑定审核状态 成功返回结果
 type AlibabaAlihealthDentalBindAuditQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_dental_bind_audit_query_response"`
@@ -22,4 +29,27 @@ type AlibabaAlihealthDentalBindAuditQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *AlibabaAlihealthDentalBindAuditQueryMtopResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDentalBindAuditQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihealthDentalBindAuditQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDentalBindAuditQueryAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthDentalBindAuditQueryAPIResponse 从 sync.Pool 获取 AlibabaAlihealthDentalBindAuditQueryAPIResponse
+func GetAlibabaAlihealthDentalBindAuditQueryAPIResponse() *AlibabaAlihealthDentalBindAuditQueryAPIResponse {
+	return poolAlibabaAlihealthDentalBindAuditQueryAPIResponse.Get().(*AlibabaAlihealthDentalBindAuditQueryAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthDentalBindAuditQueryAPIResponse 将 AlibabaAlihealthDentalBindAuditQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthDentalBindAuditQueryAPIResponse(v *AlibabaAlihealthDentalBindAuditQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthDentalBindAuditQueryAPIResponse.Put(v)
 }

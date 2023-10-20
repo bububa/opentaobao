@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // GetDeliveryOrderTopResponse 结构体
 type GetDeliveryOrderTopResponse struct {
 	// 商品清单
@@ -34,4 +38,36 @@ type GetDeliveryOrderTopResponse struct {
 	TotalItemActualValue int64 `json:"total_item_actual_value,omitempty" xml:"total_item_actual_value,omitempty"`
 	// 总重量，单位KG
 	TotalWeight int64 `json:"total_weight,omitempty" xml:"total_weight,omitempty"`
+}
+
+var poolGetDeliveryOrderTopResponse = sync.Pool{
+	New: func() any {
+		return new(GetDeliveryOrderTopResponse)
+	},
+}
+
+// GetGetDeliveryOrderTopResponse() 从对象池中获取GetDeliveryOrderTopResponse
+func GetGetDeliveryOrderTopResponse() *GetDeliveryOrderTopResponse {
+	return poolGetDeliveryOrderTopResponse.Get().(*GetDeliveryOrderTopResponse)
+}
+
+// ReleaseGetDeliveryOrderTopResponse 释放GetDeliveryOrderTopResponse
+func ReleaseGetDeliveryOrderTopResponse(v *GetDeliveryOrderTopResponse) {
+	v.ItemList = v.ItemList[:0]
+	v.CwOrderId = ""
+	v.WaybillCode = ""
+	v.PickupCode = ""
+	v.OutOrderId = ""
+	v.DeliveryName = ""
+	v.DeliveryPhone = ""
+	v.Features = ""
+	v.BizType = ""
+	v.Status = ""
+	v.Tid = 0
+	v.Sender = nil
+	v.SelectedResource = nil
+	v.TotalItemValue = 0
+	v.TotalItemActualValue = 0
+	v.TotalWeight = 0
+	poolGetDeliveryOrderTopResponse.Put(v)
 }

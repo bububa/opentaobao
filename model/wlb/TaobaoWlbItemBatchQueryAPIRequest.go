@@ -2,6 +2,7 @@ package wlb
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoWlbItemBatchQueryAPIRequest struct {
 // NewTaobaoWlbItemBatchQueryRequest 初始化TaobaoWlbItemBatchQueryAPIRequest对象
 func NewTaobaoWlbItemBatchQueryRequest() *TaobaoWlbItemBatchQueryAPIRequest {
 	return &TaobaoWlbItemBatchQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbItemBatchQueryAPIRequest) Reset() {
+	r._itemIds = ""
+	r._storeCode = ""
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoWlbItemBatchQueryAPIRequest) SetPageSize(_pageSize int64) error {
 // GetPageSize PageSize Getter
 func (r TaobaoWlbItemBatchQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoWlbItemBatchQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbItemBatchQueryRequest()
+	},
+}
+
+// GetTaobaoWlbItemBatchQueryRequest 从 sync.Pool 获取 TaobaoWlbItemBatchQueryAPIRequest
+func GetTaobaoWlbItemBatchQueryAPIRequest() *TaobaoWlbItemBatchQueryAPIRequest {
+	return poolTaobaoWlbItemBatchQueryAPIRequest.Get().(*TaobaoWlbItemBatchQueryAPIRequest)
+}
+
+// ReleaseTaobaoWlbItemBatchQueryAPIRequest 将 TaobaoWlbItemBatchQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbItemBatchQueryAPIRequest(v *TaobaoWlbItemBatchQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbItemBatchQueryAPIRequest.Put(v)
 }

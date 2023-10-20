@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAilabAicloudTopMessagePushAPIRequest struct {
 // NewTaobaoAilabAicloudTopMessagePushRequest 初始化TaobaoAilabAicloudTopMessagePushAPIRequest对象
 func NewTaobaoAilabAicloudTopMessagePushRequest() *TaobaoAilabAicloudTopMessagePushAPIRequest {
 	return &TaobaoAilabAicloudTopMessagePushAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopMessagePushAPIRequest) Reset() {
+	r._messageBroadcastRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAilabAicloudTopMessagePushAPIRequest) SetMessageBroadcastRequest(
 // GetMessageBroadcastRequest MessageBroadcastRequest Getter
 func (r TaobaoAilabAicloudTopMessagePushAPIRequest) GetMessageBroadcastRequest() *MessageBroadcastRequest {
 	return r._messageBroadcastRequest
+}
+
+var poolTaobaoAilabAicloudTopMessagePushAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopMessagePushRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopMessagePushRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopMessagePushAPIRequest
+func GetTaobaoAilabAicloudTopMessagePushAPIRequest() *TaobaoAilabAicloudTopMessagePushAPIRequest {
+	return poolTaobaoAilabAicloudTopMessagePushAPIRequest.Get().(*TaobaoAilabAicloudTopMessagePushAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopMessagePushAPIRequest 将 TaobaoAilabAicloudTopMessagePushAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopMessagePushAPIRequest(v *TaobaoAilabAicloudTopMessagePushAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopMessagePushAPIRequest.Put(v)
 }

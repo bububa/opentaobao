@@ -1,5 +1,9 @@
 package axindata
 
+import (
+	"sync"
+)
+
 // FlightInfoApiDto 结构体
 type FlightInfoApiDto struct {
 	// 行程天数第几天
@@ -28,4 +32,33 @@ type FlightInfoApiDto struct {
 	CabinType string `json:"cabin_type,omitempty" xml:"cabin_type,omitempty"`
 	// 是否包机 true-是false-否
 	BuyOut bool `json:"buy_out,omitempty" xml:"buy_out,omitempty"`
+}
+
+var poolFlightInfoApiDto = sync.Pool{
+	New: func() any {
+		return new(FlightInfoApiDto)
+	},
+}
+
+// GetFlightInfoApiDto() 从对象池中获取FlightInfoApiDto
+func GetFlightInfoApiDto() *FlightInfoApiDto {
+	return poolFlightInfoApiDto.Get().(*FlightInfoApiDto)
+}
+
+// ReleaseFlightInfoApiDto 释放FlightInfoApiDto
+func ReleaseFlightInfoApiDto(v *FlightInfoApiDto) {
+	v.Day = ""
+	v.Date = ""
+	v.FlightCode = ""
+	v.AirlineCode = ""
+	v.StartCity = ""
+	v.StartTime = ""
+	v.StartAirport = ""
+	v.ArriveCity = ""
+	v.ArriveTime = ""
+	v.ArriveAirport = ""
+	v.FlightType = ""
+	v.CabinType = ""
+	v.BuyOut = false
+	poolFlightInfoApiDto.Put(v)
 }

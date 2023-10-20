@@ -2,6 +2,7 @@ package xhotelofficial
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -43,8 +44,26 @@ type TaobaoXhotelOrderOfficialSettlePutAPIRequest struct {
 // NewTaobaoXhotelOrderOfficialSettlePutRequest 初始化TaobaoXhotelOrderOfficialSettlePutAPIRequest对象
 func NewTaobaoXhotelOrderOfficialSettlePutRequest() *TaobaoXhotelOrderOfficialSettlePutAPIRequest {
 	return &TaobaoXhotelOrderOfficialSettlePutAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(13),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelOrderOfficialSettlePutAPIRequest) Reset() {
+	r._roomSettleInfoList = r._roomSettleInfoList[:0]
+	r._otherFeeDetail = ""
+	r._outId = ""
+	r._roomNo = ""
+	r._dailyPriceInfo = ""
+	r._checkOut = ""
+	r._memo = ""
+	r._outUuid = ""
+	r._notifyUrl = ""
+	r._tid = 0
+	r._totalRoomFee = 0
+	r._otherFee = 0
+	r._containGuarantee = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -231,4 +250,21 @@ func (r *TaobaoXhotelOrderOfficialSettlePutAPIRequest) SetContainGuarantee(_cont
 // GetContainGuarantee ContainGuarantee Getter
 func (r TaobaoXhotelOrderOfficialSettlePutAPIRequest) GetContainGuarantee() int64 {
 	return r._containGuarantee
+}
+
+var poolTaobaoXhotelOrderOfficialSettlePutAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelOrderOfficialSettlePutRequest()
+	},
+}
+
+// GetTaobaoXhotelOrderOfficialSettlePutRequest 从 sync.Pool 获取 TaobaoXhotelOrderOfficialSettlePutAPIRequest
+func GetTaobaoXhotelOrderOfficialSettlePutAPIRequest() *TaobaoXhotelOrderOfficialSettlePutAPIRequest {
+	return poolTaobaoXhotelOrderOfficialSettlePutAPIRequest.Get().(*TaobaoXhotelOrderOfficialSettlePutAPIRequest)
+}
+
+// ReleaseTaobaoXhotelOrderOfficialSettlePutAPIRequest 将 TaobaoXhotelOrderOfficialSettlePutAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelOrderOfficialSettlePutAPIRequest(v *TaobaoXhotelOrderOfficialSettlePutAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelOrderOfficialSettlePutAPIRequest.Put(v)
 }

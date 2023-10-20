@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripBtripFlightDistributionOrderNewcreateAPIResponse struct {
 	AlitripBtripFlightDistributionOrderNewcreateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripBtripFlightDistributionOrderNewcreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripBtripFlightDistributionOrderNewcreateAPIResponseModel).Reset()
+}
+
 // AlitripBtripFlightDistributionOrderNewcreateAPIResponseModel is 商旅机票分销-创建订单V2 成功返回结果
 type AlitripBtripFlightDistributionOrderNewcreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_flight_distribution_order_newcreate_response"`
@@ -22,4 +29,27 @@ type AlitripBtripFlightDistributionOrderNewcreateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 响应信息
 	Result *HisvResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripBtripFlightDistributionOrderNewcreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlitripBtripFlightDistributionOrderNewcreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripBtripFlightDistributionOrderNewcreateAPIResponse)
+	},
+}
+
+// GetAlitripBtripFlightDistributionOrderNewcreateAPIResponse 从 sync.Pool 获取 AlitripBtripFlightDistributionOrderNewcreateAPIResponse
+func GetAlitripBtripFlightDistributionOrderNewcreateAPIResponse() *AlitripBtripFlightDistributionOrderNewcreateAPIResponse {
+	return poolAlitripBtripFlightDistributionOrderNewcreateAPIResponse.Get().(*AlitripBtripFlightDistributionOrderNewcreateAPIResponse)
+}
+
+// ReleaseAlitripBtripFlightDistributionOrderNewcreateAPIResponse 将 AlitripBtripFlightDistributionOrderNewcreateAPIResponse 保存到 sync.Pool
+func ReleaseAlitripBtripFlightDistributionOrderNewcreateAPIResponse(v *AlitripBtripFlightDistributionOrderNewcreateAPIResponse) {
+	v.Reset()
+	poolAlitripBtripFlightDistributionOrderNewcreateAPIResponse.Put(v)
 }

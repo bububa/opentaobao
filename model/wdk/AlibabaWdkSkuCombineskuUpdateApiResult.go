@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // AlibabaWdkSkuCombineskuUpdateApiResult 结构体
 type AlibabaWdkSkuCombineskuUpdateApiResult struct {
 	// 单个商品更新异常编码（异常才有值）
@@ -10,4 +14,24 @@ type AlibabaWdkSkuCombineskuUpdateApiResult struct {
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// 单个商品是否更新成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaWdkSkuCombineskuUpdateApiResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkSkuCombineskuUpdateApiResult)
+	},
+}
+
+// GetAlibabaWdkSkuCombineskuUpdateApiResult() 从对象池中获取AlibabaWdkSkuCombineskuUpdateApiResult
+func GetAlibabaWdkSkuCombineskuUpdateApiResult() *AlibabaWdkSkuCombineskuUpdateApiResult {
+	return poolAlibabaWdkSkuCombineskuUpdateApiResult.Get().(*AlibabaWdkSkuCombineskuUpdateApiResult)
+}
+
+// ReleaseAlibabaWdkSkuCombineskuUpdateApiResult 释放AlibabaWdkSkuCombineskuUpdateApiResult
+func ReleaseAlibabaWdkSkuCombineskuUpdateApiResult(v *AlibabaWdkSkuCombineskuUpdateApiResult) {
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.Model = ""
+	v.Success = false
+	poolAlibabaWdkSkuCombineskuUpdateApiResult.Put(v)
 }

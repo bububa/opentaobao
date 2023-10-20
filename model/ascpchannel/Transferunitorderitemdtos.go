@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // Transferunitorderitemdtos 结构体
 type Transferunitorderitemdtos struct {
 	// 品信息
@@ -16,4 +20,27 @@ type Transferunitorderitemdtos struct {
 	PlanQuantity int64 `json:"plan_quantity,omitempty" xml:"plan_quantity,omitempty"`
 	// 实际回传数量
 	RealQuantity int64 `json:"real_quantity,omitempty" xml:"real_quantity,omitempty"`
+}
+
+var poolTransferunitorderitemdtos = sync.Pool{
+	New: func() any {
+		return new(Transferunitorderitemdtos)
+	},
+}
+
+// GetTransferunitorderitemdtos() 从对象池中获取Transferunitorderitemdtos
+func GetTransferunitorderitemdtos() *Transferunitorderitemdtos {
+	return poolTransferunitorderitemdtos.Get().(*Transferunitorderitemdtos)
+}
+
+// ReleaseTransferunitorderitemdtos 释放Transferunitorderitemdtos
+func ReleaseTransferunitorderitemdtos(v *Transferunitorderitemdtos) {
+	v.TransferExtendOrderItemList = v.TransferExtendOrderItemList[:0]
+	v.UnitBizCode = ""
+	v.ItemName = ""
+	v.ItemCode = ""
+	v.ItemId = 0
+	v.PlanQuantity = 0
+	v.RealQuantity = 0
+	poolTransferunitorderitemdtos.Put(v)
 }

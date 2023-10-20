@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaRetailMarketingItempoolSkuQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaRetailMarketingItempoolSkuQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaRetailMarketingItempoolSkuQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaRetailMarketingItempoolSkuQueryAPIResponseModel).Reset()
 }
 
 // AlibabaRetailMarketingItempoolSkuQueryAPIResponseModel is 查询商品池活动商品【同城零售】 成功返回结果
@@ -30,4 +37,31 @@ type AlibabaRetailMarketingItempoolSkuQueryAPIResponseModel struct {
 	PageInfo *PageInfoDto `json:"page_info,omitempty" xml:"page_info,omitempty"`
 	// 成功标识
 	Succeed bool `json:"succeed,omitempty" xml:"succeed,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaRetailMarketingItempoolSkuQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = m.Data[:0]
+	m.ErrMessage = ""
+	m.ErrNumber = ""
+	m.PageInfo = nil
+	m.Succeed = false
+}
+
+var poolAlibabaRetailMarketingItempoolSkuQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaRetailMarketingItempoolSkuQueryAPIResponse)
+	},
+}
+
+// GetAlibabaRetailMarketingItempoolSkuQueryAPIResponse 从 sync.Pool 获取 AlibabaRetailMarketingItempoolSkuQueryAPIResponse
+func GetAlibabaRetailMarketingItempoolSkuQueryAPIResponse() *AlibabaRetailMarketingItempoolSkuQueryAPIResponse {
+	return poolAlibabaRetailMarketingItempoolSkuQueryAPIResponse.Get().(*AlibabaRetailMarketingItempoolSkuQueryAPIResponse)
+}
+
+// ReleaseAlibabaRetailMarketingItempoolSkuQueryAPIResponse 将 AlibabaRetailMarketingItempoolSkuQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaRetailMarketingItempoolSkuQueryAPIResponse(v *AlibabaRetailMarketingItempoolSkuQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaRetailMarketingItempoolSkuQueryAPIResponse.Put(v)
 }

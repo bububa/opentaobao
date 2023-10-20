@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type TaobaoTimeGetAPIRequest struct {
 // NewTaobaoTimeGetRequest 初始化TaobaoTimeGetAPIRequest对象
 func NewTaobaoTimeGetRequest() *TaobaoTimeGetAPIRequest {
 	return &TaobaoTimeGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTimeGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r TaobaoTimeGetAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r TaobaoTimeGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolTaobaoTimeGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTimeGetRequest()
+	},
+}
+
+// GetTaobaoTimeGetRequest 从 sync.Pool 获取 TaobaoTimeGetAPIRequest
+func GetTaobaoTimeGetAPIRequest() *TaobaoTimeGetAPIRequest {
+	return poolTaobaoTimeGetAPIRequest.Get().(*TaobaoTimeGetAPIRequest)
+}
+
+// ReleaseTaobaoTimeGetAPIRequest 将 TaobaoTimeGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTimeGetAPIRequest(v *TaobaoTimeGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTimeGetAPIRequest.Put(v)
 }

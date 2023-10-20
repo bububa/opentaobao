@@ -2,6 +2,7 @@ package kclub
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaKclubKcQueryknowledgeAPIResponse struct {
 	AlibabaKclubKcQueryknowledgeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaKclubKcQueryknowledgeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaKclubKcQueryknowledgeAPIResponseModel).Reset()
+}
+
 // AlibabaKclubKcQueryknowledgeAPIResponseModel is 知识云-通用知识查询服务 成功返回结果
 type AlibabaKclubKcQueryknowledgeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_kclub_kc_queryknowledge_response"`
@@ -22,4 +29,27 @@ type AlibabaKclubKcQueryknowledgeAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果
 	Result *AlibabaKclubKcQueryknowledgeResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaKclubKcQueryknowledgeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaKclubKcQueryknowledgeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaKclubKcQueryknowledgeAPIResponse)
+	},
+}
+
+// GetAlibabaKclubKcQueryknowledgeAPIResponse 从 sync.Pool 获取 AlibabaKclubKcQueryknowledgeAPIResponse
+func GetAlibabaKclubKcQueryknowledgeAPIResponse() *AlibabaKclubKcQueryknowledgeAPIResponse {
+	return poolAlibabaKclubKcQueryknowledgeAPIResponse.Get().(*AlibabaKclubKcQueryknowledgeAPIResponse)
+}
+
+// ReleaseAlibabaKclubKcQueryknowledgeAPIResponse 将 AlibabaKclubKcQueryknowledgeAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaKclubKcQueryknowledgeAPIResponse(v *AlibabaKclubKcQueryknowledgeAPIResponse) {
+	v.Reset()
+	poolAlibabaKclubKcQueryknowledgeAPIResponse.Put(v)
 }

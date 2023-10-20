@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // ServiceStoreSaveForTopReqDto 结构体
 type ServiceStoreSaveForTopReqDto struct {
 	// 支付宝账号
@@ -56,4 +60,47 @@ type ServiceStoreSaveForTopReqDto struct {
 	AddressId int64 `json:"address_id,omitempty" xml:"address_id,omitempty"`
 	// 网点id和网点code选其一
 	ServiceStoreId int64 `json:"service_store_id,omitempty" xml:"service_store_id,omitempty"`
+}
+
+var poolServiceStoreSaveForTopReqDto = sync.Pool{
+	New: func() any {
+		return new(ServiceStoreSaveForTopReqDto)
+	},
+}
+
+// GetServiceStoreSaveForTopReqDto() 从对象池中获取ServiceStoreSaveForTopReqDto
+func GetServiceStoreSaveForTopReqDto() *ServiceStoreSaveForTopReqDto {
+	return poolServiceStoreSaveForTopReqDto.Get().(*ServiceStoreSaveForTopReqDto)
+}
+
+// ReleaseServiceStoreSaveForTopReqDto 释放ServiceStoreSaveForTopReqDto
+func ReleaseServiceStoreSaveForTopReqDto(v *ServiceStoreSaveForTopReqDto) {
+	v.AlipayAccountIdNumber = ""
+	v.LegalPersonIdCardPicBack = ""
+	v.ServiceStoreName = ""
+	v.Latitude = ""
+	v.CompanyName = ""
+	v.Attributes = ""
+	v.LegalPersonIdNumber = ""
+	v.ManagerName = ""
+	v.LegalPersonIdCardPic = ""
+	v.SocialCreditCode = ""
+	v.LegalPersonName = ""
+	v.BrandCertification = ""
+	v.ServiceStoreMail = ""
+	v.ManagerPhone = ""
+	v.Longitude = ""
+	v.FrontPhoto = ""
+	v.Address = ""
+	v.CertificatedBrandIds = ""
+	v.BusinessHours = ""
+	v.AlipayAccountId = ""
+	v.AlipayAccount = ""
+	v.ServiceStoreCode = ""
+	v.LicensePhoto = ""
+	v.Phone = ""
+	v.AlipayAccountName = ""
+	v.AddressId = 0
+	v.ServiceStoreId = 0
+	poolServiceStoreSaveForTopReqDto.Put(v)
 }

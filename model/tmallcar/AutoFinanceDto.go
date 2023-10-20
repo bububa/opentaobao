@@ -1,5 +1,9 @@
 package tmallcar
 
+import (
+	"sync"
+)
+
 // AutoFinanceDto 结构体
 type AutoFinanceDto struct {
 	// 金融方案名称
@@ -20,4 +24,29 @@ type AutoFinanceDto struct {
 	LoanAmount int64 `json:"loan_amount,omitempty" xml:"loan_amount,omitempty"`
 	// 月供（单位：分）
 	MonthPayment int64 `json:"month_payment,omitempty" xml:"month_payment,omitempty"`
+}
+
+var poolAutoFinanceDto = sync.Pool{
+	New: func() any {
+		return new(AutoFinanceDto)
+	},
+}
+
+// GetAutoFinanceDto() 从对象池中获取AutoFinanceDto
+func GetAutoFinanceDto() *AutoFinanceDto {
+	return poolAutoFinanceDto.Get().(*AutoFinanceDto)
+}
+
+// ReleaseAutoFinanceDto 释放AutoFinanceDto
+func ReleaseAutoFinanceDto(v *AutoFinanceDto) {
+	v.LoanPlanName = ""
+	v.LoanPlanEnName = ""
+	v.ContractInterestRate = ""
+	v.LoanInterestRate = ""
+	v.DownPaymentRatio = ""
+	v.Periods = 0
+	v.DownPaymentAmount = 0
+	v.LoanAmount = 0
+	v.MonthPayment = 0
+	poolAutoFinanceDto.Put(v)
 }

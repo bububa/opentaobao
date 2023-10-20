@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BtripFlightOrderDetailRs 结构体
 type BtripFlightOrderDetailRs struct {
 	// 航班信息列表
@@ -42,4 +46,40 @@ type BtripFlightOrderDetailRs struct {
 	TotalOilPrice int64 `json:"total_oil_price,omitempty" xml:"total_oil_price,omitempty"`
 	// 总订单费用
 	TotalOrderPrice int64 `json:"total_order_price,omitempty" xml:"total_order_price,omitempty"`
+}
+
+var poolBtripFlightOrderDetailRs = sync.Pool{
+	New: func() any {
+		return new(BtripFlightOrderDetailRs)
+	},
+}
+
+// GetBtripFlightOrderDetailRs() 从对象池中获取BtripFlightOrderDetailRs
+func GetBtripFlightOrderDetailRs() *BtripFlightOrderDetailRs {
+	return poolBtripFlightOrderDetailRs.Get().(*BtripFlightOrderDetailRs)
+}
+
+// ReleaseBtripFlightOrderDetailRs 释放BtripFlightOrderDetailRs
+func ReleaseBtripFlightOrderDetailRs(v *BtripFlightOrderDetailRs) {
+	v.FlightInfoList = v.FlightInfoList[:0]
+	v.TicketInfoList = v.TicketInfoList[:0]
+	v.TravelerInfoList = v.TravelerInfoList[:0]
+	v.AlipayTradeNo = ""
+	v.BookUserId = ""
+	v.ContactName = ""
+	v.ContactPhone = ""
+	v.Extra = ""
+	v.LastPayTime = ""
+	v.DisOrderId = ""
+	v.PayTime = ""
+	v.BtripOrderId = 0
+	v.PayStatus = 0
+	v.PromotionPrice = 0
+	v.SettleAmount = 0
+	v.SettleType = 0
+	v.Status = 0
+	v.TotalBuildPrice = 0
+	v.TotalOilPrice = 0
+	v.TotalOrderPrice = 0
+	poolBtripFlightOrderDetailRs.Put(v)
 }

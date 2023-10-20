@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // TopFee 结构体
 type TopFee struct {
 	// 可选值：post:平邮; cod:货到付款; ems:EMS; express:快递公司
@@ -14,4 +18,26 @@ type TopFee struct {
 	AddStandard string `json:"add_standard,omitempty" xml:"add_standard,omitempty"`
 	// 增费：输入0.00-999.99（最多包含两位小数） 不能为空不输入运费时必须输入0
 	AddFee string `json:"add_fee,omitempty" xml:"add_fee,omitempty"`
+}
+
+var poolTopFee = sync.Pool{
+	New: func() any {
+		return new(TopFee)
+	},
+}
+
+// GetTopFee() 从对象池中获取TopFee
+func GetTopFee() *TopFee {
+	return poolTopFee.Get().(*TopFee)
+}
+
+// ReleaseTopFee 释放TopFee
+func ReleaseTopFee(v *TopFee) {
+	v.ServiceType = ""
+	v.Destination = ""
+	v.StartStandard = ""
+	v.StartFee = ""
+	v.AddStandard = ""
+	v.AddFee = ""
+	poolTopFee.Put(v)
 }

@@ -1,5 +1,9 @@
 package lstlogistics
 
+import (
+	"sync"
+)
+
 // LstThirdPartMainShipOrderDto 结构体
 type LstThirdPartMainShipOrderDto struct {
 	// 货品列表
@@ -20,4 +24,29 @@ type LstThirdPartMainShipOrderDto struct {
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
 	// 发货单ID
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolLstThirdPartMainShipOrderDto = sync.Pool{
+	New: func() any {
+		return new(LstThirdPartMainShipOrderDto)
+	},
+}
+
+// GetLstThirdPartMainShipOrderDto() 从对象池中获取LstThirdPartMainShipOrderDto
+func GetLstThirdPartMainShipOrderDto() *LstThirdPartMainShipOrderDto {
+	return poolLstThirdPartMainShipOrderDto.Get().(*LstThirdPartMainShipOrderDto)
+}
+
+// ReleaseLstThirdPartMainShipOrderDto 释放LstThirdPartMainShipOrderDto
+func ReleaseLstThirdPartMainShipOrderDto(v *LstThirdPartMainShipOrderDto) {
+	v.Details = v.Details[:0]
+	v.SignTime = ""
+	v.Status = ""
+	v.OutOrderId = ""
+	v.GmtModified = ""
+	v.GmtCreate = ""
+	v.LoadTime = ""
+	v.BizOrderId = 0
+	v.Id = 0
+	poolLstThirdPartMainShipOrderDto.Put(v)
 }

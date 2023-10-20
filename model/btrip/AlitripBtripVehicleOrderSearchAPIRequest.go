@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripVehicleOrderSearchAPIRequest struct {
 // NewAlitripBtripVehicleOrderSearchRequest 初始化AlitripBtripVehicleOrderSearchAPIRequest对象
 func NewAlitripBtripVehicleOrderSearchRequest() *AlitripBtripVehicleOrderSearchAPIRequest {
 	return &AlitripBtripVehicleOrderSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripVehicleOrderSearchAPIRequest) Reset() {
+	r._rq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripVehicleOrderSearchAPIRequest) SetRq(_rq *OpenSearchRq) erro
 // GetRq Rq Getter
 func (r AlitripBtripVehicleOrderSearchAPIRequest) GetRq() *OpenSearchRq {
 	return r._rq
+}
+
+var poolAlitripBtripVehicleOrderSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripVehicleOrderSearchRequest()
+	},
+}
+
+// GetAlitripBtripVehicleOrderSearchRequest 从 sync.Pool 获取 AlitripBtripVehicleOrderSearchAPIRequest
+func GetAlitripBtripVehicleOrderSearchAPIRequest() *AlitripBtripVehicleOrderSearchAPIRequest {
+	return poolAlitripBtripVehicleOrderSearchAPIRequest.Get().(*AlitripBtripVehicleOrderSearchAPIRequest)
+}
+
+// ReleaseAlitripBtripVehicleOrderSearchAPIRequest 将 AlitripBtripVehicleOrderSearchAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripVehicleOrderSearchAPIRequest(v *AlitripBtripVehicleOrderSearchAPIRequest) {
+	v.Reset()
+	poolAlitripBtripVehicleOrderSearchAPIRequest.Put(v)
 }

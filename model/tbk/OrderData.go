@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // OrderData 结构体
 type OrderData struct {
 	// 预估佣金
@@ -10,4 +14,24 @@ type OrderData struct {
 	PayTime string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
 	// 订单号
 	OrderNo string `json:"order_no,omitempty" xml:"order_no,omitempty"`
+}
+
+var poolOrderData = sync.Pool{
+	New: func() any {
+		return new(OrderData)
+	},
+}
+
+// GetOrderData() 从对象池中获取OrderData
+func GetOrderData() *OrderData {
+	return poolOrderData.Get().(*OrderData)
+}
+
+// ReleaseOrderData 释放OrderData
+func ReleaseOrderData(v *OrderData) {
+	v.Commission = ""
+	v.ConfirmReceiveTime = ""
+	v.PayTime = ""
+	v.OrderNo = ""
+	poolOrderData.Put(v)
 }

@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaEinvoiceTaxOptSalaryresultQueryAPIRequest struct {
 // NewAlibabaEinvoiceTaxOptSalaryresultQueryRequest 初始化AlibabaEinvoiceTaxOptSalaryresultQueryAPIRequest对象
 func NewAlibabaEinvoiceTaxOptSalaryresultQueryRequest() *AlibabaEinvoiceTaxOptSalaryresultQueryAPIRequest {
 	return &AlibabaEinvoiceTaxOptSalaryresultQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceTaxOptSalaryresultQueryAPIRequest) Reset() {
+	r._detailIdList = r._detailIdList[:0]
+	r._employerCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaEinvoiceTaxOptSalaryresultQueryAPIRequest) SetEmployerCode(_empl
 // GetEmployerCode EmployerCode Getter
 func (r AlibabaEinvoiceTaxOptSalaryresultQueryAPIRequest) GetEmployerCode() string {
 	return r._employerCode
+}
+
+var poolAlibabaEinvoiceTaxOptSalaryresultQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceTaxOptSalaryresultQueryRequest()
+	},
+}
+
+// GetAlibabaEinvoiceTaxOptSalaryresultQueryRequest 从 sync.Pool 获取 AlibabaEinvoiceTaxOptSalaryresultQueryAPIRequest
+func GetAlibabaEinvoiceTaxOptSalaryresultQueryAPIRequest() *AlibabaEinvoiceTaxOptSalaryresultQueryAPIRequest {
+	return poolAlibabaEinvoiceTaxOptSalaryresultQueryAPIRequest.Get().(*AlibabaEinvoiceTaxOptSalaryresultQueryAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceTaxOptSalaryresultQueryAPIRequest 将 AlibabaEinvoiceTaxOptSalaryresultQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceTaxOptSalaryresultQueryAPIRequest(v *AlibabaEinvoiceTaxOptSalaryresultQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceTaxOptSalaryresultQueryAPIRequest.Put(v)
 }

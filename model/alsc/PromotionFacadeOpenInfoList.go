@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // PromotionFacadeOpenInfoList 结构体
 type PromotionFacadeOpenInfoList struct {
 	// 圈选商品
@@ -40,4 +44,39 @@ type PromotionFacadeOpenInfoList struct {
 	UpdateByName string `json:"update_by_name,omitempty" xml:"update_by_name,omitempty"`
 	// 是否已经删除
 	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
+}
+
+var poolPromotionFacadeOpenInfoList = sync.Pool{
+	New: func() any {
+		return new(PromotionFacadeOpenInfoList)
+	},
+}
+
+// GetPromotionFacadeOpenInfoList() 从对象池中获取PromotionFacadeOpenInfoList
+func GetPromotionFacadeOpenInfoList() *PromotionFacadeOpenInfoList {
+	return poolPromotionFacadeOpenInfoList.Get().(*PromotionFacadeOpenInfoList)
+}
+
+// ReleasePromotionFacadeOpenInfoList 释放PromotionFacadeOpenInfoList
+func ReleasePromotionFacadeOpenInfoList(v *PromotionFacadeOpenInfoList) {
+	v.ItemSelectedOpenInfoList = v.ItemSelectedOpenInfoList[:0]
+	v.ShopSelectedOpenInfoList = v.ShopSelectedOpenInfoList[:0]
+	v.AvailableTime = ""
+	v.GmtCreate = ""
+	v.Description = ""
+	v.EndTime = ""
+	v.ItemCoverage = ""
+	v.Name = ""
+	v.PromotionId = ""
+	v.StartTime = ""
+	v.Status = ""
+	v.SuitablePeople = ""
+	v.GmtModified = ""
+	v.Type = ""
+	v.ExtInfo = ""
+	v.CreateBy = ""
+	v.UpdateBy = ""
+	v.UpdateByName = ""
+	v.Deleted = false
+	poolPromotionFacadeOpenInfoList.Put(v)
 }

@@ -1,5 +1,9 @@
 package paimai
 
+import (
+	"sync"
+)
+
 // BeikeItemDo 结构体
 type BeikeItemDo struct {
 	// 城市（简称）
@@ -70,4 +74,54 @@ type BeikeItemDo struct {
 	HousesForRent int64 `json:"houses_for_rent,omitempty" xml:"houses_for_rent,omitempty"`
 	// 绿化率
 	GreeningRate int64 `json:"greening_rate,omitempty" xml:"greening_rate,omitempty"`
+}
+
+var poolBeikeItemDo = sync.Pool{
+	New: func() any {
+		return new(BeikeItemDo)
+	},
+}
+
+// GetBeikeItemDo() 从对象池中获取BeikeItemDo
+func GetBeikeItemDo() *BeikeItemDo {
+	return poolBeikeItemDo.Get().(*BeikeItemDo)
+}
+
+// ReleaseBeikeItemDo 释放BeikeItemDo
+func ReleaseBeikeItemDo(v *BeikeItemDo) {
+	v.City = ""
+	v.Title = ""
+	v.HousePurpose = ""
+	v.TransOwnership = ""
+	v.Feature = ""
+	v.PropertyManagement = ""
+	v.CommunityAlias = ""
+	v.BrokerTele = ""
+	v.HouseToward = ""
+	v.FloorDesc = ""
+	v.Prov = ""
+	v.ParkingRatio = ""
+	v.Address = ""
+	v.HouseType = ""
+	v.Community = ""
+	v.VolumeRate = ""
+	v.ImgUrl = ""
+	v.District = ""
+	v.Location = ""
+	v.BuildingType = ""
+	v.RefUnitPrice = 0
+	v.TotalPrice = 0
+	v.CommunityScore = 0
+	v.BuildingTime = 0
+	v.HouseArea = 0
+	v.PropertyUnitPrice = 0
+	v.Lat = 0
+	v.UnitPrice = 0
+	v.Lng = 0
+	v.HousesForSale = 0
+	v.ItemId = 0
+	v.TotalFloor = 0
+	v.HousesForRent = 0
+	v.GreeningRate = 0
+	poolBeikeItemDo.Put(v)
 }

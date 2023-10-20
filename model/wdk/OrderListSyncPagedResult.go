@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OrderListSyncPagedResult 结构体
 type OrderListSyncPagedResult struct {
 	// orders
@@ -14,4 +18,26 @@ type OrderListSyncPagedResult struct {
 	NextIndex int64 `json:"next_index,omitempty" xml:"next_index,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolOrderListSyncPagedResult = sync.Pool{
+	New: func() any {
+		return new(OrderListSyncPagedResult)
+	},
+}
+
+// GetOrderListSyncPagedResult() 从对象池中获取OrderListSyncPagedResult
+func GetOrderListSyncPagedResult() *OrderListSyncPagedResult {
+	return poolOrderListSyncPagedResult.Get().(*OrderListSyncPagedResult)
+}
+
+// ReleaseOrderListSyncPagedResult 释放OrderListSyncPagedResult
+func ReleaseOrderListSyncPagedResult(v *OrderListSyncPagedResult) {
+	v.Orders = v.Orders[:0]
+	v.ReturnMsg = ""
+	v.ReturnCode = ""
+	v.TotalNumber = 0
+	v.NextIndex = 0
+	v.Success = false
+	poolOrderListSyncPagedResult.Put(v)
 }

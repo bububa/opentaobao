@@ -9,11 +9,6 @@ import (
 // alibaba.interact.sensor.social
 //
 // 赞，评论 ，关注 新增接口
-func AlibabaInteractSensorSocial(clt *core.SDKClient, req *mtopopen.AlibabaInteractSensorSocialAPIRequest, session string) (*mtopopen.AlibabaInteractSensorSocialAPIResponse, error) {
-	var resp mtopopen.AlibabaInteractSensorSocialAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaInteractSensorSocial(clt *core.SDKClient, req *mtopopen.AlibabaInteractSensorSocialAPIRequest, resp *mtopopen.AlibabaInteractSensorSocialAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

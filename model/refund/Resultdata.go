@@ -1,5 +1,9 @@
 package refund
 
+import (
+	"sync"
+)
+
 // Resultdata 结构体
 type Resultdata struct {
 	// 数据消费结果编码
@@ -10,4 +14,24 @@ type Resultdata struct {
 	ConsumeStatus string `json:"consume_status,omitempty" xml:"consume_status,omitempty"`
 	// 退款单号
 	RefundId int64 `json:"refund_id,omitempty" xml:"refund_id,omitempty"`
+}
+
+var poolResultdata = sync.Pool{
+	New: func() any {
+		return new(Resultdata)
+	},
+}
+
+// GetResultdata() 从对象池中获取Resultdata
+func GetResultdata() *Resultdata {
+	return poolResultdata.Get().(*Resultdata)
+}
+
+// ReleaseResultdata 释放Resultdata
+func ReleaseResultdata(v *Resultdata) {
+	v.ResultCode = ""
+	v.ResultTips = ""
+	v.ConsumeStatus = ""
+	v.RefundId = 0
+	poolResultdata.Put(v)
 }

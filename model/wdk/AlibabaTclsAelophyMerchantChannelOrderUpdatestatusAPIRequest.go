@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIRequest struct {
 // NewAlibabaTclsAelophyMerchantChannelOrderUpdatestatusRequest 初始化AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIRequest对象
 func NewAlibabaTclsAelophyMerchantChannelOrderUpdatestatusRequest() *AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIRequest {
 	return &AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIRequest) Reset() {
+	r._orderStatusInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIRequest) SetOrderS
 // GetOrderStatusInfo OrderStatusInfo Getter
 func (r AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIRequest) GetOrderStatusInfo() *OrderStatusInfo {
 	return r._orderStatusInfo
+}
+
+var poolAlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTclsAelophyMerchantChannelOrderUpdatestatusRequest()
+	},
+}
+
+// GetAlibabaTclsAelophyMerchantChannelOrderUpdatestatusRequest 从 sync.Pool 获取 AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIRequest
+func GetAlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIRequest() *AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIRequest {
+	return poolAlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIRequest.Get().(*AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIRequest)
+}
+
+// ReleaseAlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIRequest 将 AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIRequest(v *AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIRequest) {
+	v.Reset()
+	poolAlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIRequest.Put(v)
 }

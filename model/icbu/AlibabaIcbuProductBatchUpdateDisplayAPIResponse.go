@@ -2,6 +2,7 @@ package icbu
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaIcbuProductBatchUpdateDisplayAPIResponse struct {
 	model.CommonResponse
 	AlibabaIcbuProductBatchUpdateDisplayAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaIcbuProductBatchUpdateDisplayAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaIcbuProductBatchUpdateDisplayAPIResponseModel).Reset()
 }
 
 // AlibabaIcbuProductBatchUpdateDisplayAPIResponseModel is 商品批量上下架接口 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaIcbuProductBatchUpdateDisplayAPIResponseModel struct {
 	SubErrorMsg string `json:"sub_error_msg,omitempty" xml:"sub_error_msg,omitempty"`
 	// 本次操作是否成功，true表示成功，false表示失败
 	SubSuccess bool `json:"sub_success,omitempty" xml:"sub_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaIcbuProductBatchUpdateDisplayAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TraceId = ""
+	m.SubErrorCode = ""
+	m.SubErrorMsg = ""
+	m.SubSuccess = false
+}
+
+var poolAlibabaIcbuProductBatchUpdateDisplayAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaIcbuProductBatchUpdateDisplayAPIResponse)
+	},
+}
+
+// GetAlibabaIcbuProductBatchUpdateDisplayAPIResponse 从 sync.Pool 获取 AlibabaIcbuProductBatchUpdateDisplayAPIResponse
+func GetAlibabaIcbuProductBatchUpdateDisplayAPIResponse() *AlibabaIcbuProductBatchUpdateDisplayAPIResponse {
+	return poolAlibabaIcbuProductBatchUpdateDisplayAPIResponse.Get().(*AlibabaIcbuProductBatchUpdateDisplayAPIResponse)
+}
+
+// ReleaseAlibabaIcbuProductBatchUpdateDisplayAPIResponse 将 AlibabaIcbuProductBatchUpdateDisplayAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaIcbuProductBatchUpdateDisplayAPIResponse(v *AlibabaIcbuProductBatchUpdateDisplayAPIResponse) {
+	v.Reset()
+	poolAlibabaIcbuProductBatchUpdateDisplayAPIResponse.Put(v)
 }

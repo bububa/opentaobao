@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // PolicyDto 结构体
 type PolicyDto struct {
 	// 行程信息
@@ -64,4 +68,51 @@ type PolicyDto struct {
 	OutMainFlight bool `json:"out_main_flight,omitempty" xml:"out_main_flight,omitempty"`
 	// 是否中转运价.true:是，false:否
 	IsOwEoe bool `json:"is_ow_eoe,omitempty" xml:"is_ow_eoe,omitempty"`
+}
+
+var poolPolicyDto = sync.Pool{
+	New: func() any {
+		return new(PolicyDto)
+	},
+}
+
+// GetPolicyDto() 从对象池中获取PolicyDto
+func GetPolicyDto() *PolicyDto {
+	return poolPolicyDto.Get().(*PolicyDto)
+}
+
+// ReleasePolicyDto 释放PolicyDto
+func ReleasePolicyDto(v *PolicyDto) {
+	v.Flights = v.Flights[:0]
+	v.NotApplOd = v.NotApplOd[:0]
+	v.FareSource = v.FareSource[:0]
+	v.Airline = ""
+	v.ArrAirport = ""
+	v.DepAirport = ""
+	v.OfficeNo = ""
+	v.PolicyCode = ""
+	v.Memo = ""
+	v.CodeShareAirline = ""
+	v.AccountCode = ""
+	v.FareBasis = ""
+	v.TransitAirport = ""
+	v.BeforeCombineAirline = ""
+	v.NextCombineAirline = ""
+	v.NextCombineCity = ""
+	v.CreatePnr = 0
+	v.PolicySource = 0
+	v.Price = nil
+	v.Sale = nil
+	v.Status = 0
+	v.IsWhite = 0
+	v.Pata = 0
+	v.CodeShare = 0
+	v.DirectTransferType = 0
+	v.Passenger = nil
+	v.CreatePnrLimit = 0
+	v.FarePrice = 0
+	v.PriceType = 0
+	v.OutMainFlight = false
+	v.IsOwEoe = false
+	poolPolicyDto.Put(v)
 }

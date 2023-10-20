@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // ResultDto 结构体
 type ResultDto struct {
 	// 错误信息
@@ -10,4 +14,24 @@ type ResultDto struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 是否绑定成功
 	Module bool `json:"module,omitempty" xml:"module,omitempty"`
+}
+
+var poolResultDto = sync.Pool{
+	New: func() any {
+		return new(ResultDto)
+	},
+}
+
+// GetResultDto() 从对象池中获取ResultDto
+func GetResultDto() *ResultDto {
+	return poolResultDto.Get().(*ResultDto)
+}
+
+// ReleaseResultDto 释放ResultDto
+func ReleaseResultDto(v *ResultDto) {
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.Success = false
+	v.Module = false
+	poolResultDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // DerbyVoucherReceiptQueryVo 结构体
 type DerbyVoucherReceiptQueryVo struct {
 	// 邮箱
@@ -20,4 +24,29 @@ type DerbyVoucherReceiptQueryVo struct {
 	ReceiptType string `json:"receipt_type,omitempty" xml:"receipt_type,omitempty"`
 	// 手机号
 	Phone string `json:"phone,omitempty" xml:"phone,omitempty"`
+}
+
+var poolDerbyVoucherReceiptQueryVo = sync.Pool{
+	New: func() any {
+		return new(DerbyVoucherReceiptQueryVo)
+	},
+}
+
+// GetDerbyVoucherReceiptQueryVo() 从对象池中获取DerbyVoucherReceiptQueryVo
+func GetDerbyVoucherReceiptQueryVo() *DerbyVoucherReceiptQueryVo {
+	return poolDerbyVoucherReceiptQueryVo.Get().(*DerbyVoucherReceiptQueryVo)
+}
+
+// ReleaseDerbyVoucherReceiptQueryVo 释放DerbyVoucherReceiptQueryVo
+func ReleaseDerbyVoucherReceiptQueryVo(v *DerbyVoucherReceiptQueryVo) {
+	v.Email = ""
+	v.Name = ""
+	v.ReceiptStatus = ""
+	v.ReceiptURL = ""
+	v.OrderId = ""
+	v.TaxID = ""
+	v.TotalRate = ""
+	v.ReceiptType = ""
+	v.Phone = ""
+	poolDerbyVoucherReceiptQueryVo.Put(v)
 }

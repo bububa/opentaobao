@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // DrfTxdActivityBo 结构体
 type DrfTxdActivityBo struct {
 	// 换购机台
@@ -68,4 +72,53 @@ type DrfTxdActivityBo struct {
 	TxdActivityId int64 `json:"txd_activity_id,omitempty" xml:"txd_activity_id,omitempty"`
 	// 是否针对单个商品使用优惠
 	IsAlone int64 `json:"is_alone,omitempty" xml:"is_alone,omitempty"`
+}
+
+var poolDrfTxdActivityBo = sync.Pool{
+	New: func() any {
+		return new(DrfTxdActivityBo)
+	},
+}
+
+// GetDrfTxdActivityBo() 从对象池中获取DrfTxdActivityBo
+func GetDrfTxdActivityBo() *DrfTxdActivityBo {
+	return poolDrfTxdActivityBo.Get().(*DrfTxdActivityBo)
+}
+
+// ReleaseDrfTxdActivityBo 释放DrfTxdActivityBo
+func ReleaseDrfTxdActivityBo(v *DrfTxdActivityBo) {
+	v.ActivityChannel = ""
+	v.PoolRules = ""
+	v.MerchantCrowdCode = ""
+	v.Terminals = ""
+	v.StoreIds = ""
+	v.ActivityContent = ""
+	v.ActivityName = ""
+	v.PromotionId = ""
+	v.StairRules = ""
+	v.PeriodConfig = ""
+	v.CellingAmount = 0
+	v.IsMultiMix = 0
+	v.ItemOverlay = 0
+	v.DiscountFeeModel = 0
+	v.EnableMultiple = 0
+	v.PoolNum = 0
+	v.TotalDayLimit = 0
+	v.UserDayLimit = 0
+	v.TotalLimit = 0
+	v.UserLimit = 0
+	v.FixPrice = 0
+	v.CountAt = 0
+	v.DiscountType = 0
+	v.ActivityType = 0
+	v.LimitWeight = 0
+	v.UpdateTime = 0
+	v.InsertTime = 0
+	v.Status = 0
+	v.EndDate = 0
+	v.StartDate = 0
+	v.IsCheckAllCond = 0
+	v.TxdActivityId = 0
+	v.IsAlone = 0
+	poolDrfTxdActivityBo.Put(v)
 }

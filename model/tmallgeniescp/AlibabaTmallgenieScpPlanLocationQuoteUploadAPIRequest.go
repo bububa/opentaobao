@@ -2,6 +2,7 @@ package tmallgeniescp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest struct {
 // NewAlibabaTmallgenieScpPlanLocationQuoteUploadRequest 初始化AlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest对象
 func NewAlibabaTmallgenieScpPlanLocationQuoteUploadRequest() *AlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest {
 	return &AlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest) Reset() {
+	r._netDemandRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest) SetNetDemandRequ
 // GetNetDemandRequest NetDemandRequest Getter
 func (r AlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest) GetNetDemandRequest() *NetDemandRequest {
 	return r._netDemandRequest
+}
+
+var poolAlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTmallgenieScpPlanLocationQuoteUploadRequest()
+	},
+}
+
+// GetAlibabaTmallgenieScpPlanLocationQuoteUploadRequest 从 sync.Pool 获取 AlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest
+func GetAlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest() *AlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest {
+	return poolAlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest.Get().(*AlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest)
+}
+
+// ReleaseAlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest 将 AlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest(v *AlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaTmallgenieScpPlanLocationQuoteUploadAPIRequest.Put(v)
 }

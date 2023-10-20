@@ -2,6 +2,7 @@ package perfect
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaPerfectPerformanceItemQueryAPIRequest struct {
 // NewAlibabaPerfectPerformanceItemQueryRequest 初始化AlibabaPerfectPerformanceItemQueryAPIRequest对象
 func NewAlibabaPerfectPerformanceItemQueryRequest() *AlibabaPerfectPerformanceItemQueryAPIRequest {
 	return &AlibabaPerfectPerformanceItemQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaPerfectPerformanceItemQueryAPIRequest) Reset() {
+	r._itemPerfectPerformanceQueryReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaPerfectPerformanceItemQueryAPIRequest) SetItemPerfectPerformance
 // GetItemPerfectPerformanceQueryReq ItemPerfectPerformanceQueryReq Getter
 func (r AlibabaPerfectPerformanceItemQueryAPIRequest) GetItemPerfectPerformanceQueryReq() *ItemPerfectPerformanceQueryReq {
 	return r._itemPerfectPerformanceQueryReq
+}
+
+var poolAlibabaPerfectPerformanceItemQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaPerfectPerformanceItemQueryRequest()
+	},
+}
+
+// GetAlibabaPerfectPerformanceItemQueryRequest 从 sync.Pool 获取 AlibabaPerfectPerformanceItemQueryAPIRequest
+func GetAlibabaPerfectPerformanceItemQueryAPIRequest() *AlibabaPerfectPerformanceItemQueryAPIRequest {
+	return poolAlibabaPerfectPerformanceItemQueryAPIRequest.Get().(*AlibabaPerfectPerformanceItemQueryAPIRequest)
+}
+
+// ReleaseAlibabaPerfectPerformanceItemQueryAPIRequest 将 AlibabaPerfectPerformanceItemQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaPerfectPerformanceItemQueryAPIRequest(v *AlibabaPerfectPerformanceItemQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaPerfectPerformanceItemQueryAPIRequest.Put(v)
 }

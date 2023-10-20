@@ -1,5 +1,9 @@
 package koubeimall
 
+import (
+	"sync"
+)
+
 // DistrictInfo 结构体
 type DistrictInfo struct {
 	// 区域编码
@@ -20,4 +24,29 @@ type DistrictInfo struct {
 	ProvinceName string `json:"province_name,omitempty" xml:"province_name,omitempty"`
 	// 经度
 	Longitude string `json:"longitude,omitempty" xml:"longitude,omitempty"`
+}
+
+var poolDistrictInfo = sync.Pool{
+	New: func() any {
+		return new(DistrictInfo)
+	},
+}
+
+// GetDistrictInfo() 从对象池中获取DistrictInfo
+func GetDistrictInfo() *DistrictInfo {
+	return poolDistrictInfo.Get().(*DistrictInfo)
+}
+
+// ReleaseDistrictInfo 释放DistrictInfo
+func ReleaseDistrictInfo(v *DistrictInfo) {
+	v.DistrictCode = ""
+	v.Address = ""
+	v.DistrictName = ""
+	v.CityName = ""
+	v.CityCode = ""
+	v.ProvinceCode = ""
+	v.Latitude = ""
+	v.ProvinceName = ""
+	v.Longitude = ""
+	poolDistrictInfo.Put(v)
 }

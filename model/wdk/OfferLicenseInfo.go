@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OfferLicenseInfo 结构体
 type OfferLicenseInfo struct {
 	// 是否首选证件
@@ -14,4 +18,26 @@ type OfferLicenseInfo struct {
 	LicenseType string `json:"license_type,omitempty" xml:"license_type,omitempty"`
 	// 证件号码
 	LicenseValue string `json:"license_value,omitempty" xml:"license_value,omitempty"`
+}
+
+var poolOfferLicenseInfo = sync.Pool{
+	New: func() any {
+		return new(OfferLicenseInfo)
+	},
+}
+
+// GetOfferLicenseInfo() 从对象池中获取OfferLicenseInfo
+func GetOfferLicenseInfo() *OfferLicenseInfo {
+	return poolOfferLicenseInfo.Get().(*OfferLicenseInfo)
+}
+
+// ReleaseOfferLicenseInfo 释放OfferLicenseInfo
+func ReleaseOfferLicenseInfo(v *OfferLicenseInfo) {
+	v.First = ""
+	v.GmtBegin = ""
+	v.GmtValidity = ""
+	v.LicenseCountry = ""
+	v.LicenseType = ""
+	v.LicenseValue = ""
+	poolOfferLicenseInfo.Put(v)
 }

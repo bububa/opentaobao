@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // CrmTagOpenInfo 结构体
 type CrmTagOpenInfo struct {
 	// 创建时间
@@ -16,4 +20,27 @@ type CrmTagOpenInfo struct {
 	TagType string `json:"tag_type,omitempty" xml:"tag_type,omitempty"`
 	// 是否已删除
 	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
+}
+
+var poolCrmTagOpenInfo = sync.Pool{
+	New: func() any {
+		return new(CrmTagOpenInfo)
+	},
+}
+
+// GetCrmTagOpenInfo() 从对象池中获取CrmTagOpenInfo
+func GetCrmTagOpenInfo() *CrmTagOpenInfo {
+	return poolCrmTagOpenInfo.Get().(*CrmTagOpenInfo)
+}
+
+// ReleaseCrmTagOpenInfo 释放CrmTagOpenInfo
+func ReleaseCrmTagOpenInfo(v *CrmTagOpenInfo) {
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.PlanId = ""
+	v.TagId = ""
+	v.TagName = ""
+	v.TagType = ""
+	v.Deleted = false
+	poolCrmTagOpenInfo.Put(v)
 }

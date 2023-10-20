@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,6 +18,12 @@ type AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIResponse struct {
 	AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIResponseModel is 根据码查询码信息（疫苗） 成功返回结果
 type AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drug_code_kyt_specia_vaccin_querycode_response"`
@@ -24,4 +31,27 @@ type AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 最外层结果
 	Result *AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeResultModel `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIResponse 从 sync.Pool 获取 AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIResponse
+func GetAlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIResponse() *AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIResponse {
+	return poolAlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIResponse.Get().(*AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIResponse 将 AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIResponse(v *AlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthDrugCodeKytSpeciaVaccinQuerycodeAPIResponse.Put(v)
 }

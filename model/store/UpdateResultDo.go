@@ -1,5 +1,9 @@
 package store
 
+import (
+	"sync"
+)
+
 // UpdateResultDo 结构体
 type UpdateResultDo struct {
 	// 失败的标签id集合
@@ -26,4 +30,32 @@ type UpdateResultDo struct {
 	Failured bool `json:"failured,omitempty" xml:"failured,omitempty"`
 	// 是否请求成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolUpdateResultDo = sync.Pool{
+	New: func() any {
+		return new(UpdateResultDo)
+	},
+}
+
+// GetUpdateResultDo() 从对象池中获取UpdateResultDo
+func GetUpdateResultDo() *UpdateResultDo {
+	return poolUpdateResultDo.Get().(*UpdateResultDo)
+}
+
+// ReleaseUpdateResultDo 释放UpdateResultDo
+func ReleaseUpdateResultDo(v *UpdateResultDo) {
+	v.FailuredList = v.FailuredList[:0]
+	v.SuccessList = v.SuccessList[:0]
+	v.ErrorMsg = ""
+	v.FullErrorMsg = ""
+	v.PriKey = ""
+	v.Result = ""
+	v.ResultCode = ""
+	v.Count = 0
+	v.Models = nil
+	v.TotalNum = 0
+	v.Failured = false
+	v.Success = false
+	poolUpdateResultDo.Put(v)
 }

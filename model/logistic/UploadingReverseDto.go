@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // UploadingReverseDto 结构体
 type UploadingReverseDto struct {
 	// 商品行列表
@@ -32,4 +36,35 @@ type UploadingReverseDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 主订单编号
 	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
+}
+
+var poolUploadingReverseDto = sync.Pool{
+	New: func() any {
+		return new(UploadingReverseDto)
+	},
+}
+
+// GetUploadingReverseDto() 从对象池中获取UploadingReverseDto
+func GetUploadingReverseDto() *UploadingReverseDto {
+	return poolUploadingReverseDto.Get().(*UploadingReverseDto)
+}
+
+// ReleaseUploadingReverseDto 释放UploadingReverseDto
+func ReleaseUploadingReverseDto(v *UploadingReverseDto) {
+	v.GoodsItemDTOList = v.GoodsItemDTOList[:0]
+	v.Extra = ""
+	v.WarehouseName = ""
+	v.Adr = ""
+	v.DistrictName = ""
+	v.CityName = ""
+	v.ProvinceName = ""
+	v.CountryName = ""
+	v.CreateTime = ""
+	v.CpCode = ""
+	v.CpName = ""
+	v.MailNo = ""
+	v.Id = ""
+	v.Status = 0
+	v.Tid = 0
+	poolUploadingReverseDto.Put(v)
 }

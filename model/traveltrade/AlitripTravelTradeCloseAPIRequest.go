@@ -2,6 +2,7 @@ package traveltrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlitripTravelTradeCloseAPIRequest struct {
 // NewAlitripTravelTradeCloseRequest 初始化AlitripTravelTradeCloseAPIRequest对象
 func NewAlitripTravelTradeCloseRequest() *AlitripTravelTradeCloseAPIRequest {
 	return &AlitripTravelTradeCloseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTravelTradeCloseAPIRequest) Reset() {
+	r._closeReason = ""
+	r._reasonDesc = ""
+	r._subOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlitripTravelTradeCloseAPIRequest) SetSubOrderId(_subOrderId int64) err
 // GetSubOrderId SubOrderId Getter
 func (r AlitripTravelTradeCloseAPIRequest) GetSubOrderId() int64 {
 	return r._subOrderId
+}
+
+var poolAlitripTravelTradeCloseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTravelTradeCloseRequest()
+	},
+}
+
+// GetAlitripTravelTradeCloseRequest 从 sync.Pool 获取 AlitripTravelTradeCloseAPIRequest
+func GetAlitripTravelTradeCloseAPIRequest() *AlitripTravelTradeCloseAPIRequest {
+	return poolAlitripTravelTradeCloseAPIRequest.Get().(*AlitripTravelTradeCloseAPIRequest)
+}
+
+// ReleaseAlitripTravelTradeCloseAPIRequest 将 AlitripTravelTradeCloseAPIRequest 放入 sync.Pool
+func ReleaseAlitripTravelTradeCloseAPIRequest(v *AlitripTravelTradeCloseAPIRequest) {
+	v.Reset()
+	poolAlitripTravelTradeCloseAPIRequest.Put(v)
 }

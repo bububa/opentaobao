@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaEinvoiceQrcodeCreateAPIResponse struct {
 	AlibabaEinvoiceQrcodeCreateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaEinvoiceQrcodeCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaEinvoiceQrcodeCreateAPIResponseModel).Reset()
+}
+
 // AlibabaEinvoiceQrcodeCreateAPIResponseModel is 扫码开票二维码生成 成功返回结果
 type AlibabaEinvoiceQrcodeCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_einvoice_qrcode_create_response"`
@@ -22,4 +29,27 @@ type AlibabaEinvoiceQrcodeCreateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *AlibabaEinvoiceQrcodeCreateResultSet `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaEinvoiceQrcodeCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaEinvoiceQrcodeCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaEinvoiceQrcodeCreateAPIResponse)
+	},
+}
+
+// GetAlibabaEinvoiceQrcodeCreateAPIResponse 从 sync.Pool 获取 AlibabaEinvoiceQrcodeCreateAPIResponse
+func GetAlibabaEinvoiceQrcodeCreateAPIResponse() *AlibabaEinvoiceQrcodeCreateAPIResponse {
+	return poolAlibabaEinvoiceQrcodeCreateAPIResponse.Get().(*AlibabaEinvoiceQrcodeCreateAPIResponse)
+}
+
+// ReleaseAlibabaEinvoiceQrcodeCreateAPIResponse 将 AlibabaEinvoiceQrcodeCreateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaEinvoiceQrcodeCreateAPIResponse(v *AlibabaEinvoiceQrcodeCreateAPIResponse) {
+	v.Reset()
+	poolAlibabaEinvoiceQrcodeCreateAPIResponse.Put(v)
 }

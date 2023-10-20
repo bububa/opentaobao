@@ -1,5 +1,9 @@
 package bill
 
+import (
+	"sync"
+)
+
 // BookBill 结构体
 type BookBill struct {
 	// 创建时间
@@ -20,4 +24,29 @@ type BookBill struct {
 	AccountId int64 `json:"account_id,omitempty" xml:"account_id,omitempty"`
 	// 虚拟账户流水编号
 	Bid int64 `json:"bid,omitempty" xml:"bid,omitempty"`
+}
+
+var poolBookBill = sync.Pool{
+	New: func() any {
+		return new(BookBill)
+	},
+}
+
+// GetBookBill() 从对象池中获取BookBill
+func GetBookBill() *BookBill {
+	return poolBookBill.Get().(*BookBill)
+}
+
+// ReleaseBookBill 释放BookBill
+func ReleaseBookBill(v *BookBill) {
+	v.GmtCreate = ""
+	v.Description = ""
+	v.TaobaoAlipayId = ""
+	v.OtherAlipayId = ""
+	v.BookTime = ""
+	v.Amount = 0
+	v.JournalType = 0
+	v.AccountId = 0
+	v.Bid = 0
+	poolBookBill.Put(v)
 }

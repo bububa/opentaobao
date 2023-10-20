@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscCrmPointExtraConsumeAPIRequest struct {
 // NewAlibabaAlscCrmPointExtraConsumeRequest 初始化AlibabaAlscCrmPointExtraConsumeAPIRequest对象
 func NewAlibabaAlscCrmPointExtraConsumeRequest() *AlibabaAlscCrmPointExtraConsumeAPIRequest {
 	return &AlibabaAlscCrmPointExtraConsumeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscCrmPointExtraConsumeAPIRequest) Reset() {
+	r._paramExtraConsumePointOpenReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscCrmPointExtraConsumeAPIRequest) SetParamExtraConsumePointOpe
 // GetParamExtraConsumePointOpenReq ParamExtraConsumePointOpenReq Getter
 func (r AlibabaAlscCrmPointExtraConsumeAPIRequest) GetParamExtraConsumePointOpenReq() *ExtraConsumePointOpenReq {
 	return r._paramExtraConsumePointOpenReq
+}
+
+var poolAlibabaAlscCrmPointExtraConsumeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscCrmPointExtraConsumeRequest()
+	},
+}
+
+// GetAlibabaAlscCrmPointExtraConsumeRequest 从 sync.Pool 获取 AlibabaAlscCrmPointExtraConsumeAPIRequest
+func GetAlibabaAlscCrmPointExtraConsumeAPIRequest() *AlibabaAlscCrmPointExtraConsumeAPIRequest {
+	return poolAlibabaAlscCrmPointExtraConsumeAPIRequest.Get().(*AlibabaAlscCrmPointExtraConsumeAPIRequest)
+}
+
+// ReleaseAlibabaAlscCrmPointExtraConsumeAPIRequest 将 AlibabaAlscCrmPointExtraConsumeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscCrmPointExtraConsumeAPIRequest(v *AlibabaAlscCrmPointExtraConsumeAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscCrmPointExtraConsumeAPIRequest.Put(v)
 }

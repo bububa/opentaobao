@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoLogisticsOrderCreateAPIResponse struct {
 	TaobaoLogisticsOrderCreateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoLogisticsOrderCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoLogisticsOrderCreateAPIResponseModel).Reset()
+}
+
 // TaobaoLogisticsOrderCreateAPIResponseModel is 创建物流订单 成功返回结果
 type TaobaoLogisticsOrderCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_order_create_response"`
@@ -22,4 +29,27 @@ type TaobaoLogisticsOrderCreateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 淘宝物流订单交易号，如返回-1则表示错误。如果在新建订单时传入trade_id,此处会返回此id，如果未传入trade_id，此处会返回淘宝物流分配的交易号码。
 	TradeId int64 `json:"trade_id,omitempty" xml:"trade_id,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoLogisticsOrderCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TradeId = 0
+}
+
+var poolTaobaoLogisticsOrderCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoLogisticsOrderCreateAPIResponse)
+	},
+}
+
+// GetTaobaoLogisticsOrderCreateAPIResponse 从 sync.Pool 获取 TaobaoLogisticsOrderCreateAPIResponse
+func GetTaobaoLogisticsOrderCreateAPIResponse() *TaobaoLogisticsOrderCreateAPIResponse {
+	return poolTaobaoLogisticsOrderCreateAPIResponse.Get().(*TaobaoLogisticsOrderCreateAPIResponse)
+}
+
+// ReleaseTaobaoLogisticsOrderCreateAPIResponse 将 TaobaoLogisticsOrderCreateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoLogisticsOrderCreateAPIResponse(v *TaobaoLogisticsOrderCreateAPIResponse) {
+	v.Reset()
+	poolTaobaoLogisticsOrderCreateAPIResponse.Put(v)
 }

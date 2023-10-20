@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // ProjectTradeOrderDto 结构体
 type ProjectTradeOrderDto struct {
 	// 楼盘列表
@@ -14,4 +18,26 @@ type ProjectTradeOrderDto struct {
 	IsDefault int64 `json:"is_default,omitempty" xml:"is_default,omitempty"`
 	// 场景 1-店铺 2-详情页
 	Scene int64 `json:"scene,omitempty" xml:"scene,omitempty"`
+}
+
+var poolProjectTradeOrderDto = sync.Pool{
+	New: func() any {
+		return new(ProjectTradeOrderDto)
+	},
+}
+
+// GetProjectTradeOrderDto() 从对象池中获取ProjectTradeOrderDto
+func GetProjectTradeOrderDto() *ProjectTradeOrderDto {
+	return poolProjectTradeOrderDto.Get().(*ProjectTradeOrderDto)
+}
+
+// ReleaseProjectTradeOrderDto 释放ProjectTradeOrderDto
+func ReleaseProjectTradeOrderDto(v *ProjectTradeOrderDto) {
+	v.ProjectList = v.ProjectList[:0]
+	v.SelectId = ""
+	v.OuterStoreId = ""
+	v.Status = 0
+	v.IsDefault = 0
+	v.Scene = 0
+	poolProjectTradeOrderDto.Put(v)
 }

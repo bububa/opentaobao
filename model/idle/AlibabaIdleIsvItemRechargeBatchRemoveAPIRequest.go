@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleIsvItemRechargeBatchRemoveAPIRequest struct {
 // NewAlibabaIdleIsvItemRechargeBatchRemoveRequest 初始化AlibabaIdleIsvItemRechargeBatchRemoveAPIRequest对象
 func NewAlibabaIdleIsvItemRechargeBatchRemoveRequest() *AlibabaIdleIsvItemRechargeBatchRemoveAPIRequest {
 	return &AlibabaIdleIsvItemRechargeBatchRemoveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleIsvItemRechargeBatchRemoveAPIRequest) Reset() {
+	r._idleItemAutoRechargeBatchRemoveApiDo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleIsvItemRechargeBatchRemoveAPIRequest) SetIdleItemAutoRecharg
 // GetIdleItemAutoRechargeBatchRemoveApiDo IdleItemAutoRechargeBatchRemoveApiDo Getter
 func (r AlibabaIdleIsvItemRechargeBatchRemoveAPIRequest) GetIdleItemAutoRechargeBatchRemoveApiDo() *IdleItemAutoRechargeBatchRemoveApiDo {
 	return r._idleItemAutoRechargeBatchRemoveApiDo
+}
+
+var poolAlibabaIdleIsvItemRechargeBatchRemoveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleIsvItemRechargeBatchRemoveRequest()
+	},
+}
+
+// GetAlibabaIdleIsvItemRechargeBatchRemoveRequest 从 sync.Pool 获取 AlibabaIdleIsvItemRechargeBatchRemoveAPIRequest
+func GetAlibabaIdleIsvItemRechargeBatchRemoveAPIRequest() *AlibabaIdleIsvItemRechargeBatchRemoveAPIRequest {
+	return poolAlibabaIdleIsvItemRechargeBatchRemoveAPIRequest.Get().(*AlibabaIdleIsvItemRechargeBatchRemoveAPIRequest)
+}
+
+// ReleaseAlibabaIdleIsvItemRechargeBatchRemoveAPIRequest 将 AlibabaIdleIsvItemRechargeBatchRemoveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleIsvItemRechargeBatchRemoveAPIRequest(v *AlibabaIdleIsvItemRechargeBatchRemoveAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleIsvItemRechargeBatchRemoveAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.fenxiao.requisitions.get
 //
 // 合作申请查询
-func TaobaoFenxiaoRequisitionsGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoRequisitionsGetAPIRequest, session string) (*fenxiao.TaobaoFenxiaoRequisitionsGetAPIResponse, error) {
-	var resp fenxiao.TaobaoFenxiaoRequisitionsGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFenxiaoRequisitionsGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoRequisitionsGetAPIRequest, resp *fenxiao.TaobaoFenxiaoRequisitionsGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

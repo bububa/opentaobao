@@ -2,6 +2,7 @@ package mtopopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsFengchaoMsgSendAPIRequest struct {
 // NewTaobaoLogisticsFengchaoMsgSendRequest 初始化TaobaoLogisticsFengchaoMsgSendAPIRequest对象
 func NewTaobaoLogisticsFengchaoMsgSendRequest() *TaobaoLogisticsFengchaoMsgSendAPIRequest {
 	return &TaobaoLogisticsFengchaoMsgSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsFengchaoMsgSendAPIRequest) Reset() {
+	r._msgSendRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsFengchaoMsgSendAPIRequest) SetMsgSendRequest(_msgSendReq
 // GetMsgSendRequest MsgSendRequest Getter
 func (r TaobaoLogisticsFengchaoMsgSendAPIRequest) GetMsgSendRequest() *MsgSendRequest {
 	return r._msgSendRequest
+}
+
+var poolTaobaoLogisticsFengchaoMsgSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsFengchaoMsgSendRequest()
+	},
+}
+
+// GetTaobaoLogisticsFengchaoMsgSendRequest 从 sync.Pool 获取 TaobaoLogisticsFengchaoMsgSendAPIRequest
+func GetTaobaoLogisticsFengchaoMsgSendAPIRequest() *TaobaoLogisticsFengchaoMsgSendAPIRequest {
+	return poolTaobaoLogisticsFengchaoMsgSendAPIRequest.Get().(*TaobaoLogisticsFengchaoMsgSendAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsFengchaoMsgSendAPIRequest 将 TaobaoLogisticsFengchaoMsgSendAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsFengchaoMsgSendAPIRequest(v *TaobaoLogisticsFengchaoMsgSendAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsFengchaoMsgSendAPIRequest.Put(v)
 }

@@ -1,6 +1,8 @@
 package mos
 
 import (
+	"sync"
+
 	"github.com/bububa/opentaobao/model"
 )
 
@@ -30,4 +32,32 @@ type OnsiteRefundRequest struct {
 	RefundAmount int64 `json:"refund_amount,omitempty" xml:"refund_amount,omitempty"`
 	// 退款来源.1：商家退款，2：用户主动退款，3：过期退款，4：线下POS退款
 	RefundSource *model.File `json:"refund_source,omitempty" xml:"refund_source,omitempty"`
+}
+
+var poolOnsiteRefundRequest = sync.Pool{
+	New: func() any {
+		return new(OnsiteRefundRequest)
+	},
+}
+
+// GetOnsiteRefundRequest() 从对象池中获取OnsiteRefundRequest
+func GetOnsiteRefundRequest() *OnsiteRefundRequest {
+	return poolOnsiteRefundRequest.Get().(*OnsiteRefundRequest)
+}
+
+// ReleaseOnsiteRefundRequest 释放OnsiteRefundRequest
+func ReleaseOnsiteRefundRequest(v *OnsiteRefundRequest) {
+	v.ExtendParams = ""
+	v.OperatorId = ""
+	v.OutRequestNo = ""
+	v.RefundReason = ""
+	v.MjShopId = ""
+	v.StoreId = ""
+	v.StoreIdType = ""
+	v.TerminalId = ""
+	v.OrderNo = ""
+	v.AppId = ""
+	v.RefundAmount = 0
+	v.RefundSource = nil
+	poolOnsiteRefundRequest.Put(v)
 }

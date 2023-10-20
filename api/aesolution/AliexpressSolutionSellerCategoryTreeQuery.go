@@ -9,11 +9,6 @@ import (
 // aliexpress.solution.seller.category.tree.query
 //
 // API for seller to query the category tree. Support only displaying the categories which seller have permissions to publish products.
-func AliexpressSolutionSellerCategoryTreeQuery(clt *core.SDKClient, req *aesolution.AliexpressSolutionSellerCategoryTreeQueryAPIRequest, session string) (*aesolution.AliexpressSolutionSellerCategoryTreeQueryAPIResponse, error) {
-	var resp aesolution.AliexpressSolutionSellerCategoryTreeQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressSolutionSellerCategoryTreeQuery(clt *core.SDKClient, req *aesolution.AliexpressSolutionSellerCategoryTreeQueryAPIRequest, resp *aesolution.AliexpressSolutionSellerCategoryTreeQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

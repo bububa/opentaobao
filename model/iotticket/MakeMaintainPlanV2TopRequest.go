@@ -1,7 +1,11 @@
 package iotticket
 
-// MakeMaintainPlanV2topRequest 结构体
-type MakeMaintainPlanV2topRequest struct {
+import (
+	"sync"
+)
+
+// MakeMaintainPlanV2TopRequest 结构体
+type MakeMaintainPlanV2TopRequest struct {
 	// 维修项
 	IotMaintainPlanItemList []IotMaintainPlanItemTopRequest `json:"iot_maintain_plan_item_list,omitempty" xml:"iot_maintain_plan_item_list>iot_maintain_plan_item_top_request,omitempty"`
 	// 问题列表（需要映射）
@@ -32,4 +36,35 @@ type MakeMaintainPlanV2topRequest struct {
 	LaborExpense string `json:"labor_expense,omitempty" xml:"labor_expense,omitempty"`
 	// 工单Id
 	TicketId int64 `json:"ticket_id,omitempty" xml:"ticket_id,omitempty"`
+}
+
+var poolMakeMaintainPlanV2TopRequest = sync.Pool{
+	New: func() any {
+		return new(MakeMaintainPlanV2TopRequest)
+	},
+}
+
+// GetMakeMaintainPlanV2TopRequest() 从对象池中获取MakeMaintainPlanV2TopRequest
+func GetMakeMaintainPlanV2TopRequest() *MakeMaintainPlanV2TopRequest {
+	return poolMakeMaintainPlanV2TopRequest.Get().(*MakeMaintainPlanV2TopRequest)
+}
+
+// ReleaseMakeMaintainPlanV2TopRequest 释放MakeMaintainPlanV2TopRequest
+func ReleaseMakeMaintainPlanV2TopRequest(v *MakeMaintainPlanV2TopRequest) {
+	v.IotMaintainPlanItemList = v.IotMaintainPlanItemList[:0]
+	v.ProblemTypeList = v.ProblemTypeList[:0]
+	v.ProblemCauseList = v.ProblemCauseList[:0]
+	v.EventTypeList = v.EventTypeList[:0]
+	v.OtherFee = ""
+	v.OperatorPhone = ""
+	v.OperatorName = ""
+	v.SpCode = ""
+	v.Feature = ""
+	v.FeeRemark = ""
+	v.WarrantyType = ""
+	v.PayPictureUrl = ""
+	v.OperatorId = ""
+	v.LaborExpense = ""
+	v.TicketId = 0
+	poolMakeMaintainPlanV2TopRequest.Put(v)
 }

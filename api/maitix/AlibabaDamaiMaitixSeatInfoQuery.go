@@ -9,11 +9,6 @@ import (
 // alibaba.damai.maitix.seat.info.query
 //
 // 分销查询座位文案信息
-func AlibabaDamaiMaitixSeatInfoQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixSeatInfoQueryAPIRequest, session string) (*maitix.AlibabaDamaiMaitixSeatInfoQueryAPIResponse, error) {
-	var resp maitix.AlibabaDamaiMaitixSeatInfoQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMaitixSeatInfoQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixSeatInfoQueryAPIRequest, resp *maitix.AlibabaDamaiMaitixSeatInfoQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

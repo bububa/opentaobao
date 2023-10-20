@@ -1,5 +1,9 @@
 package moscm
 
+import (
+	"sync"
+)
+
 // CspuInputDto 结构体
 type CspuInputDto struct {
 	// 销售属性
@@ -22,4 +26,30 @@ type CspuInputDto struct {
 	SpuInputDto *SpuInputDto `json:"spu_input_dto,omitempty" xml:"spu_input_dto,omitempty"`
 	// 天猫Sku
 	TmallSkuId int64 `json:"tmall_sku_id,omitempty" xml:"tmall_sku_id,omitempty"`
+}
+
+var poolCspuInputDto = sync.Pool{
+	New: func() any {
+		return new(CspuInputDto)
+	},
+}
+
+// GetCspuInputDto() 从对象池中获取CspuInputDto
+func GetCspuInputDto() *CspuInputDto {
+	return poolCspuInputDto.Get().(*CspuInputDto)
+}
+
+// ReleaseCspuInputDto 释放CspuInputDto
+func ReleaseCspuInputDto(v *CspuInputDto) {
+	v.Properties = v.Properties[:0]
+	v.ArtNo = ""
+	v.Barcode = ""
+	v.OuterId = ""
+	v.SubTitle = ""
+	v.TagPrice = ""
+	v.Tags = ""
+	v.Title = ""
+	v.SpuInputDto = nil
+	v.TmallSkuId = 0
+	poolCspuInputDto.Put(v)
 }

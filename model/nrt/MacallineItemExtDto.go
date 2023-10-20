@@ -1,5 +1,9 @@
 package nrt
 
+import (
+	"sync"
+)
+
 // MacallineItemExtDto 结构体
 type MacallineItemExtDto struct {
 	// 品牌系列ID
@@ -30,4 +34,34 @@ type MacallineItemExtDto struct {
 	PriceType int64 `json:"price_type,omitempty" xml:"price_type,omitempty"`
 	// 是否支持退换货
 	SupportReturnGoods bool `json:"support_return_goods,omitempty" xml:"support_return_goods,omitempty"`
+}
+
+var poolMacallineItemExtDto = sync.Pool{
+	New: func() any {
+		return new(MacallineItemExtDto)
+	},
+}
+
+// GetMacallineItemExtDto() 从对象池中获取MacallineItemExtDto
+func GetMacallineItemExtDto() *MacallineItemExtDto {
+	return poolMacallineItemExtDto.Get().(*MacallineItemExtDto)
+}
+
+// ReleaseMacallineItemExtDto 释放MacallineItemExtDto
+func ReleaseMacallineItemExtDto(v *MacallineItemExtDto) {
+	v.BrandSeriesId = ""
+	v.BrandSeriesName = ""
+	v.ChargeUnit = ""
+	v.Pricer = ""
+	v.SecondarySteel = ""
+	v.Specification = ""
+	v.SpecificationUnit = ""
+	v.Substrate = ""
+	v.Veneer = ""
+	v.Grade = 0
+	v.LabelPriceType = 0
+	v.OriginalLocation = nil
+	v.PriceType = 0
+	v.SupportReturnGoods = false
+	poolMacallineItemExtDto.Put(v)
 }

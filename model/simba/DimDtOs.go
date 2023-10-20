@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // DimDtOs 结构体
 type DimDtOs struct {
 	// tagList
@@ -8,4 +12,23 @@ type DimDtOs struct {
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 维度id,如性别年龄的id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolDimDtOs = sync.Pool{
+	New: func() any {
+		return new(DimDtOs)
+	},
+}
+
+// GetDimDtOs() 从对象池中获取DimDtOs
+func GetDimDtOs() *DimDtOs {
+	return poolDimDtOs.Get().(*DimDtOs)
+}
+
+// ReleaseDimDtOs 释放DimDtOs
+func ReleaseDimDtOs(v *DimDtOs) {
+	v.TagList = v.TagList[:0]
+	v.Name = ""
+	v.Id = 0
+	poolDimDtOs.Put(v)
 }

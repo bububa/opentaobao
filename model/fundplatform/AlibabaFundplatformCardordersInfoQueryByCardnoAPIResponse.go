@@ -2,6 +2,7 @@ package fundplatform
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaFundplatformCardordersInfoQueryByCardnoAPIResponse struct {
 	AlibabaFundplatformCardordersInfoQueryByCardnoAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaFundplatformCardordersInfoQueryByCardnoAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaFundplatformCardordersInfoQueryByCardnoAPIResponseModel).Reset()
+}
+
 // AlibabaFundplatformCardordersInfoQueryByCardnoAPIResponseModel is 通过卡号查询卡信息 成功返回结果
 type AlibabaFundplatformCardordersInfoQueryByCardnoAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_fundplatform_cardorders_info_query_by_cardno_response"`
@@ -22,4 +29,27 @@ type AlibabaFundplatformCardordersInfoQueryByCardnoAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *CardMakingInfoQueryResponse `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaFundplatformCardordersInfoQueryByCardnoAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaFundplatformCardordersInfoQueryByCardnoAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaFundplatformCardordersInfoQueryByCardnoAPIResponse)
+	},
+}
+
+// GetAlibabaFundplatformCardordersInfoQueryByCardnoAPIResponse 从 sync.Pool 获取 AlibabaFundplatformCardordersInfoQueryByCardnoAPIResponse
+func GetAlibabaFundplatformCardordersInfoQueryByCardnoAPIResponse() *AlibabaFundplatformCardordersInfoQueryByCardnoAPIResponse {
+	return poolAlibabaFundplatformCardordersInfoQueryByCardnoAPIResponse.Get().(*AlibabaFundplatformCardordersInfoQueryByCardnoAPIResponse)
+}
+
+// ReleaseAlibabaFundplatformCardordersInfoQueryByCardnoAPIResponse 将 AlibabaFundplatformCardordersInfoQueryByCardnoAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaFundplatformCardordersInfoQueryByCardnoAPIResponse(v *AlibabaFundplatformCardordersInfoQueryByCardnoAPIResponse) {
+	v.Reset()
+	poolAlibabaFundplatformCardordersInfoQueryByCardnoAPIResponse.Put(v)
 }

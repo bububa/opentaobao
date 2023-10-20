@@ -1,5 +1,9 @@
 package wms
 
+import (
+	"sync"
+)
+
 // CainiaoStockOutBillPackageinfo 结构体
 type CainiaoStockOutBillPackageinfo struct {
 	// 包裹里面的商品信息列表
@@ -18,4 +22,28 @@ type CainiaoStockOutBillPackageinfo struct {
 	PackageWidth int64 `json:"package_width,omitempty" xml:"package_width,omitempty"`
 	// 包裹高度，单位：毫米
 	PackageHeight int64 `json:"package_height,omitempty" xml:"package_height,omitempty"`
+}
+
+var poolCainiaoStockOutBillPackageinfo = sync.Pool{
+	New: func() any {
+		return new(CainiaoStockOutBillPackageinfo)
+	},
+}
+
+// GetCainiaoStockOutBillPackageinfo() 从对象池中获取CainiaoStockOutBillPackageinfo
+func GetCainiaoStockOutBillPackageinfo() *CainiaoStockOutBillPackageinfo {
+	return poolCainiaoStockOutBillPackageinfo.Get().(*CainiaoStockOutBillPackageinfo)
+}
+
+// ReleaseCainiaoStockOutBillPackageinfo 释放CainiaoStockOutBillPackageinfo
+func ReleaseCainiaoStockOutBillPackageinfo(v *CainiaoStockOutBillPackageinfo) {
+	v.PackageItemList = v.PackageItemList[:0]
+	v.TmsCode = ""
+	v.TmsOrderCode = ""
+	v.PackageCode = ""
+	v.PackageWeight = 0
+	v.PackageLength = 0
+	v.PackageWidth = 0
+	v.PackageHeight = 0
+	poolCainiaoStockOutBillPackageinfo.Put(v)
 }

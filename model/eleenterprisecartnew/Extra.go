@@ -1,5 +1,9 @@
 package eleenterprisecartnew
 
+import (
+	"sync"
+)
+
 // Extra 结构体
 type Extra struct {
 	// 优惠券id
@@ -22,4 +26,30 @@ type Extra struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 订单项目分类
 	CategoryId int64 `json:"category_id,omitempty" xml:"category_id,omitempty"`
+}
+
+var poolExtra = sync.Pool{
+	New: func() any {
+		return new(Extra)
+	},
+}
+
+// GetExtra() 从对象池中获取Extra
+func GetExtra() *Extra {
+	return poolExtra.Get().(*Extra)
+}
+
+// ReleaseExtra 释放Extra
+func ReleaseExtra(v *Extra) {
+	v.IdStr = ""
+	v.Total = ""
+	v.Price = ""
+	v.FoodId = ""
+	v.Name = ""
+	v.Description = ""
+	v.Quantity = 0
+	v.Reduced = 0
+	v.Id = 0
+	v.CategoryId = 0
+	poolExtra.Put(v)
 }

@@ -1,5 +1,9 @@
 package wms
 
+import (
+	"sync"
+)
+
 // Consignsendinfo 结构体
 type Consignsendinfo struct {
 	// 发票确认信息列表
@@ -20,4 +24,29 @@ type Consignsendinfo struct {
 	OrderCode string `json:"order_code,omitempty" xml:"order_code,omitempty"`
 	// 订单类型 201 销售出库 502 换货出库 503 补发出库
 	OrderType int64 `json:"order_type,omitempty" xml:"order_type,omitempty"`
+}
+
+var poolConsignsendinfo = sync.Pool{
+	New: func() any {
+		return new(Consignsendinfo)
+	},
+}
+
+// GetConsignsendinfo() 从对象池中获取Consignsendinfo
+func GetConsignsendinfo() *Consignsendinfo {
+	return poolConsignsendinfo.Get().(*Consignsendinfo)
+}
+
+// ReleaseConsignsendinfo 释放Consignsendinfo
+func ReleaseConsignsendinfo(v *Consignsendinfo) {
+	v.InvoinceConfirmList = v.InvoinceConfirmList[:0]
+	v.TmsOrderList = v.TmsOrderList[:0]
+	v.OrderItemList = v.OrderItemList[:0]
+	v.ConfirmTime = ""
+	v.Status = ""
+	v.StoreCode = ""
+	v.CnOrderCode = ""
+	v.OrderCode = ""
+	v.OrderType = 0
+	poolConsignsendinfo.Put(v)
 }

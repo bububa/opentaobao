@@ -9,11 +9,6 @@ import (
 // alibaba.alsc.crm.rule.level.querylevelrule
 //
 // 查询会员等级规则
-func AlibabaAlscCrmRuleLevelQuerylevelrule(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest, session string) (*alsc.AlibabaAlscCrmRuleLevelQuerylevelruleAPIResponse, error) {
-	var resp alsc.AlibabaAlscCrmRuleLevelQuerylevelruleAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlscCrmRuleLevelQuerylevelrule(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest, resp *alsc.AlibabaAlscCrmRuleLevelQuerylevelruleAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

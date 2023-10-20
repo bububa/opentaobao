@@ -2,6 +2,7 @@ package usergrowth
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoGrowthReachingBuzzwordQueryAPIRequest struct {
 // NewTaobaoGrowthReachingBuzzwordQueryRequest 初始化TaobaoGrowthReachingBuzzwordQueryAPIRequest对象
 func NewTaobaoGrowthReachingBuzzwordQueryRequest() *TaobaoGrowthReachingBuzzwordQueryAPIRequest {
 	return &TaobaoGrowthReachingBuzzwordQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoGrowthReachingBuzzwordQueryAPIRequest) Reset() {
+	r._siteId = ""
+	r._deviceIds = nil
+	r._wantedSize = 0
+	r._dataOffset = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoGrowthReachingBuzzwordQueryAPIRequest) SetDataOffset(_dataOffset 
 // GetDataOffset DataOffset Getter
 func (r TaobaoGrowthReachingBuzzwordQueryAPIRequest) GetDataOffset() int64 {
 	return r._dataOffset
+}
+
+var poolTaobaoGrowthReachingBuzzwordQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoGrowthReachingBuzzwordQueryRequest()
+	},
+}
+
+// GetTaobaoGrowthReachingBuzzwordQueryRequest 从 sync.Pool 获取 TaobaoGrowthReachingBuzzwordQueryAPIRequest
+func GetTaobaoGrowthReachingBuzzwordQueryAPIRequest() *TaobaoGrowthReachingBuzzwordQueryAPIRequest {
+	return poolTaobaoGrowthReachingBuzzwordQueryAPIRequest.Get().(*TaobaoGrowthReachingBuzzwordQueryAPIRequest)
+}
+
+// ReleaseTaobaoGrowthReachingBuzzwordQueryAPIRequest 将 TaobaoGrowthReachingBuzzwordQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoGrowthReachingBuzzwordQueryAPIRequest(v *TaobaoGrowthReachingBuzzwordQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoGrowthReachingBuzzwordQueryAPIRequest.Put(v)
 }

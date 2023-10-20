@@ -1,5 +1,9 @@
 package fundplatform
 
+import (
+	"sync"
+)
+
 // FundAccountJournalDto 结构体
 type FundAccountJournalDto struct {
 	// 描述
@@ -18,4 +22,28 @@ type FundAccountJournalDto struct {
 	DealAmount int64 `json:"deal_amount,omitempty" xml:"deal_amount,omitempty"`
 	// 用户ID
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
+}
+
+var poolFundAccountJournalDto = sync.Pool{
+	New: func() any {
+		return new(FundAccountJournalDto)
+	},
+}
+
+// GetFundAccountJournalDto() 从对象池中获取FundAccountJournalDto
+func GetFundAccountJournalDto() *FundAccountJournalDto {
+	return poolFundAccountJournalDto.Get().(*FundAccountJournalDto)
+}
+
+// ReleaseFundAccountJournalDto 释放FundAccountJournalDto
+func ReleaseFundAccountJournalDto(v *FundAccountJournalDto) {
+	v.Description = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.JournalType = ""
+	v.OutBizId = ""
+	v.AccountId = 0
+	v.DealAmount = 0
+	v.UserId = 0
+	poolFundAccountJournalDto.Put(v)
 }

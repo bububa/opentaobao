@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // CreateFetchReq 结构体
 type CreateFetchReq struct {
 	// 取货详情
@@ -30,4 +34,34 @@ type CreateFetchReq struct {
 	ReasonId int64 `json:"reason_id,omitempty" xml:"reason_id,omitempty"`
 	// 退款金额
 	RefundAmount int64 `json:"refund_amount,omitempty" xml:"refund_amount,omitempty"`
+}
+
+var poolCreateFetchReq = sync.Pool{
+	New: func() any {
+		return new(CreateFetchReq)
+	},
+}
+
+// GetCreateFetchReq() 从对象池中获取CreateFetchReq
+func GetCreateFetchReq() *CreateFetchReq {
+	return poolCreateFetchReq.Get().(*CreateFetchReq)
+}
+
+// ReleaseCreateFetchReq 释放CreateFetchReq
+func ReleaseCreateFetchReq(v *CreateFetchReq) {
+	v.FetchAggregateList = v.FetchAggregateList[:0]
+	v.BuyerAddress = ""
+	v.BuyerName = ""
+	v.BuyerPhone = ""
+	v.ExpectFetchEndTime = ""
+	v.ExpectFetchStartTime = ""
+	v.MainOutOrderId = ""
+	v.Memo = ""
+	v.ReverseId = ""
+	v.StoreId = ""
+	v.FetchType = 0
+	v.Operator = nil
+	v.ReasonId = 0
+	v.RefundAmount = 0
+	poolCreateFetchReq.Put(v)
 }

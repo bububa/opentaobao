@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoTbkCartCouponExpireUserQueryAPIRequest struct {
 // NewTaobaoTbkCartCouponExpireUserQueryRequest 初始化TaobaoTbkCartCouponExpireUserQueryAPIRequest对象
 func NewTaobaoTbkCartCouponExpireUserQueryRequest() *TaobaoTbkCartCouponExpireUserQueryAPIRequest {
 	return &TaobaoTbkCartCouponExpireUserQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkCartCouponExpireUserQueryAPIRequest) Reset() {
+	r._ruleId = ""
+	r._pageNum = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoTbkCartCouponExpireUserQueryAPIRequest) SetPageSize(_pageSize int
 // GetPageSize PageSize Getter
 func (r TaobaoTbkCartCouponExpireUserQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoTbkCartCouponExpireUserQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkCartCouponExpireUserQueryRequest()
+	},
+}
+
+// GetTaobaoTbkCartCouponExpireUserQueryRequest 从 sync.Pool 获取 TaobaoTbkCartCouponExpireUserQueryAPIRequest
+func GetTaobaoTbkCartCouponExpireUserQueryAPIRequest() *TaobaoTbkCartCouponExpireUserQueryAPIRequest {
+	return poolTaobaoTbkCartCouponExpireUserQueryAPIRequest.Get().(*TaobaoTbkCartCouponExpireUserQueryAPIRequest)
+}
+
+// ReleaseTaobaoTbkCartCouponExpireUserQueryAPIRequest 将 TaobaoTbkCartCouponExpireUserQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkCartCouponExpireUserQueryAPIRequest(v *TaobaoTbkCartCouponExpireUserQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkCartCouponExpireUserQueryAPIRequest.Put(v)
 }

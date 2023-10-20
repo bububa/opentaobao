@@ -9,11 +9,6 @@ import (
 // alibaba.taobao.industry.pet.profile.query
 //
 // 用户宠物列表查询
-func AlibabaTaobaoIndustryPetProfileQuery(clt *core.SDKClient, req *customizemarket.AlibabaTaobaoIndustryPetProfileQueryAPIRequest, session string) (*customizemarket.AlibabaTaobaoIndustryPetProfileQueryAPIResponse, error) {
-	var resp customizemarket.AlibabaTaobaoIndustryPetProfileQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTaobaoIndustryPetProfileQuery(clt *core.SDKClient, req *customizemarket.AlibabaTaobaoIndustryPetProfileQueryAPIRequest, resp *customizemarket.AlibabaTaobaoIndustryPetProfileQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

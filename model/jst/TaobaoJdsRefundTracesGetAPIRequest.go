@@ -2,6 +2,7 @@ package jst
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoJdsRefundTracesGetAPIRequest struct {
 // NewTaobaoJdsRefundTracesGetRequest 初始化TaobaoJdsRefundTracesGetAPIRequest对象
 func NewTaobaoJdsRefundTracesGetRequest() *TaobaoJdsRefundTracesGetAPIRequest {
 	return &TaobaoJdsRefundTracesGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJdsRefundTracesGetAPIRequest) Reset() {
+	r._refundId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoJdsRefundTracesGetAPIRequest) SetRefundId(_refundId int64) error 
 // GetRefundId RefundId Getter
 func (r TaobaoJdsRefundTracesGetAPIRequest) GetRefundId() int64 {
 	return r._refundId
+}
+
+var poolTaobaoJdsRefundTracesGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJdsRefundTracesGetRequest()
+	},
+}
+
+// GetTaobaoJdsRefundTracesGetRequest 从 sync.Pool 获取 TaobaoJdsRefundTracesGetAPIRequest
+func GetTaobaoJdsRefundTracesGetAPIRequest() *TaobaoJdsRefundTracesGetAPIRequest {
+	return poolTaobaoJdsRefundTracesGetAPIRequest.Get().(*TaobaoJdsRefundTracesGetAPIRequest)
+}
+
+// ReleaseTaobaoJdsRefundTracesGetAPIRequest 将 TaobaoJdsRefundTracesGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJdsRefundTracesGetAPIRequest(v *TaobaoJdsRefundTracesGetAPIRequest) {
+	v.Reset()
+	poolTaobaoJdsRefundTracesGetAPIRequest.Put(v)
 }

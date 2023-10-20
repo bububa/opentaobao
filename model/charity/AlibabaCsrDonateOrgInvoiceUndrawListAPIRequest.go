@@ -2,6 +2,7 @@ package charity
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCsrDonateOrgInvoiceUndrawListAPIRequest struct {
 // NewAlibabaCsrDonateOrgInvoiceUndrawListRequest 初始化AlibabaCsrDonateOrgInvoiceUndrawListAPIRequest对象
 func NewAlibabaCsrDonateOrgInvoiceUndrawListRequest() *AlibabaCsrDonateOrgInvoiceUndrawListAPIRequest {
 	return &AlibabaCsrDonateOrgInvoiceUndrawListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCsrDonateOrgInvoiceUndrawListAPIRequest) Reset() {
+	r._csrInvoiceExternalOrgQueryDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCsrDonateOrgInvoiceUndrawListAPIRequest) SetCsrInvoiceExternalOr
 // GetCsrInvoiceExternalOrgQueryDto CsrInvoiceExternalOrgQueryDto Getter
 func (r AlibabaCsrDonateOrgInvoiceUndrawListAPIRequest) GetCsrInvoiceExternalOrgQueryDto() *CsrInvoiceExternalOrgQueryDto {
 	return r._csrInvoiceExternalOrgQueryDto
+}
+
+var poolAlibabaCsrDonateOrgInvoiceUndrawListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCsrDonateOrgInvoiceUndrawListRequest()
+	},
+}
+
+// GetAlibabaCsrDonateOrgInvoiceUndrawListRequest 从 sync.Pool 获取 AlibabaCsrDonateOrgInvoiceUndrawListAPIRequest
+func GetAlibabaCsrDonateOrgInvoiceUndrawListAPIRequest() *AlibabaCsrDonateOrgInvoiceUndrawListAPIRequest {
+	return poolAlibabaCsrDonateOrgInvoiceUndrawListAPIRequest.Get().(*AlibabaCsrDonateOrgInvoiceUndrawListAPIRequest)
+}
+
+// ReleaseAlibabaCsrDonateOrgInvoiceUndrawListAPIRequest 将 AlibabaCsrDonateOrgInvoiceUndrawListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCsrDonateOrgInvoiceUndrawListAPIRequest(v *AlibabaCsrDonateOrgInvoiceUndrawListAPIRequest) {
+	v.Reset()
+	poolAlibabaCsrDonateOrgInvoiceUndrawListAPIRequest.Put(v)
 }

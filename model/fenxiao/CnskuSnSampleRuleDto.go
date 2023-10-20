@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // CnskuSnSampleRuleDto 结构体
 type CnskuSnSampleRuleDto struct {
 	// 规则正则表达式
@@ -18,4 +22,28 @@ type CnskuSnSampleRuleDto struct {
 	SnMgtSubStart int64 `json:"sn_mgt_sub_start,omitempty" xml:"sn_mgt_sub_start,omitempty"`
 	// SN是否需要截取
 	IsSnMgtSub bool `json:"is_sn_mgt_sub,omitempty" xml:"is_sn_mgt_sub,omitempty"`
+}
+
+var poolCnskuSnSampleRuleDto = sync.Pool{
+	New: func() any {
+		return new(CnskuSnSampleRuleDto)
+	},
+}
+
+// GetCnskuSnSampleRuleDto() 从对象池中获取CnskuSnSampleRuleDto
+func GetCnskuSnSampleRuleDto() *CnskuSnSampleRuleDto {
+	return poolCnskuSnSampleRuleDto.Get().(*CnskuSnSampleRuleDto)
+}
+
+// ReleaseCnskuSnSampleRuleDto 释放CnskuSnSampleRuleDto
+func ReleaseCnskuSnSampleRuleDto(v *CnskuSnSampleRuleDto) {
+	v.RuleRegularExpression = ""
+	v.RuleDesc = ""
+	v.RuleImgUrl = ""
+	v.SnMgtSubExpression = ""
+	v.RuleSample = ""
+	v.SnMgtSubEnd = 0
+	v.SnMgtSubStart = 0
+	v.IsSnMgtSub = false
+	poolCnskuSnSampleRuleDto.Put(v)
 }

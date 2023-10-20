@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // SeriesSkuRequest 结构体
 type SeriesSkuRequest struct {
 	// 商品编码集合
@@ -10,4 +14,24 @@ type SeriesSkuRequest struct {
 	SeriesId int64 `json:"series_id,omitempty" xml:"series_id,omitempty"`
 	// 需要移除默认商品
 	RemoveDefaultSku bool `json:"remove_default_sku,omitempty" xml:"remove_default_sku,omitempty"`
+}
+
+var poolSeriesSkuRequest = sync.Pool{
+	New: func() any {
+		return new(SeriesSkuRequest)
+	},
+}
+
+// GetSeriesSkuRequest() 从对象池中获取SeriesSkuRequest
+func GetSeriesSkuRequest() *SeriesSkuRequest {
+	return poolSeriesSkuRequest.Get().(*SeriesSkuRequest)
+}
+
+// ReleaseSeriesSkuRequest 释放SeriesSkuRequest
+func ReleaseSeriesSkuRequest(v *SeriesSkuRequest) {
+	v.SkuCodes = v.SkuCodes[:0]
+	v.DefaultSkuCode = ""
+	v.SeriesId = 0
+	v.RemoveDefaultSku = false
+	poolSeriesSkuRequest.Put(v)
 }

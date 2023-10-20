@@ -1,5 +1,9 @@
 package mozivds
 
+import (
+	"sync"
+)
+
 // RemoveTenantAdminsResult 结构体
 type RemoveTenantAdminsResult struct {
 	// 请求id
@@ -12,4 +16,25 @@ type RemoveTenantAdminsResult struct {
 	ResponseCode string `json:"response_code,omitempty" xml:"response_code,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolRemoveTenantAdminsResult = sync.Pool{
+	New: func() any {
+		return new(RemoveTenantAdminsResult)
+	},
+}
+
+// GetRemoveTenantAdminsResult() 从对象池中获取RemoveTenantAdminsResult
+func GetRemoveTenantAdminsResult() *RemoveTenantAdminsResult {
+	return poolRemoveTenantAdminsResult.Get().(*RemoveTenantAdminsResult)
+}
+
+// ReleaseRemoveTenantAdminsResult 释放RemoveTenantAdminsResult
+func ReleaseRemoveTenantAdminsResult(v *RemoveTenantAdminsResult) {
+	v.RequestId = ""
+	v.ResponseMessage = ""
+	v.ResponseMetaData = ""
+	v.ResponseCode = ""
+	v.Success = false
+	poolRemoveTenantAdminsResult.Put(v)
 }

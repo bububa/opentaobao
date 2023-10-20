@@ -2,6 +2,7 @@ package vaccin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest struct {
 // NewAlibabaAlihealthVaccineTradeSubscribeDetailGetRequest 初始化AlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest对象
 func NewAlibabaAlihealthVaccineTradeSubscribeDetailGetRequest() *AlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest {
 	return &AlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest) Reset() {
+	r._tradeSubscribeDetailQueryTopRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest) SetTradeSubsc
 // GetTradeSubscribeDetailQueryTopRequest TradeSubscribeDetailQueryTopRequest Getter
 func (r AlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest) GetTradeSubscribeDetailQueryTopRequest() *TradeSubscribeDetailQueryTopRequest {
 	return r._tradeSubscribeDetailQueryTopRequest
+}
+
+var poolAlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthVaccineTradeSubscribeDetailGetRequest()
+	},
+}
+
+// GetAlibabaAlihealthVaccineTradeSubscribeDetailGetRequest 从 sync.Pool 获取 AlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest
+func GetAlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest() *AlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest {
+	return poolAlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest.Get().(*AlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest 将 AlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest(v *AlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest.Put(v)
 }

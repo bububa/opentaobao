@@ -2,6 +2,7 @@ package game
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoAppleCardActiveCancelNotifyAPIRequest struct {
 // NewTaobaoAppleCardActiveCancelNotifyRequest 初始化TaobaoAppleCardActiveCancelNotifyAPIRequest对象
 func NewTaobaoAppleCardActiveCancelNotifyRequest() *TaobaoAppleCardActiveCancelNotifyAPIRequest {
 	return &TaobaoAppleCardActiveCancelNotifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAppleCardActiveCancelNotifyAPIRequest) Reset() {
+	r._appleCardCancels = r._appleCardCancels[:0]
+	r._orderNo = ""
+	r._resultCode = ""
+	r._gatewayOrderNo = ""
+	r._resultMsg = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoAppleCardActiveCancelNotifyAPIRequest) SetResultMsg(_resultMsg st
 // GetResultMsg ResultMsg Getter
 func (r TaobaoAppleCardActiveCancelNotifyAPIRequest) GetResultMsg() string {
 	return r._resultMsg
+}
+
+var poolTaobaoAppleCardActiveCancelNotifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAppleCardActiveCancelNotifyRequest()
+	},
+}
+
+// GetTaobaoAppleCardActiveCancelNotifyRequest 从 sync.Pool 获取 TaobaoAppleCardActiveCancelNotifyAPIRequest
+func GetTaobaoAppleCardActiveCancelNotifyAPIRequest() *TaobaoAppleCardActiveCancelNotifyAPIRequest {
+	return poolTaobaoAppleCardActiveCancelNotifyAPIRequest.Get().(*TaobaoAppleCardActiveCancelNotifyAPIRequest)
+}
+
+// ReleaseTaobaoAppleCardActiveCancelNotifyAPIRequest 将 TaobaoAppleCardActiveCancelNotifyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAppleCardActiveCancelNotifyAPIRequest(v *TaobaoAppleCardActiveCancelNotifyAPIRequest) {
+	v.Reset()
+	poolTaobaoAppleCardActiveCancelNotifyAPIRequest.Put(v)
 }

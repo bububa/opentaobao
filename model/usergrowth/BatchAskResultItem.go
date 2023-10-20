@@ -1,5 +1,9 @@
 package usergrowth
 
+import (
+	"sync"
+)
+
 // BatchAskResultItem 结构体
 type BatchAskResultItem struct {
 	// 在巨浪平台可投放的任务ID列表
@@ -14,4 +18,26 @@ type BatchAskResultItem struct {
 	TaskId string `json:"task_id,omitempty" xml:"task_id,omitempty"`
 	// caid的md5值， 32位小写，前面拼接上caid版本号，当前支持20220111、20211207版本
 	CaidMd5 string `json:"caid_md5,omitempty" xml:"caid_md5,omitempty"`
+}
+
+var poolBatchAskResultItem = sync.Pool{
+	New: func() any {
+		return new(BatchAskResultItem)
+	},
+}
+
+// GetBatchAskResultItem() 从对象池中获取BatchAskResultItem
+func GetBatchAskResultItem() *BatchAskResultItem {
+	return poolBatchAskResultItem.Get().(*BatchAskResultItem)
+}
+
+// ReleaseBatchAskResultItem 释放BatchAskResultItem
+func ReleaseBatchAskResultItem(v *BatchAskResultItem) {
+	v.TaskIdList = v.TaskIdList[:0]
+	v.OaidMd5 = ""
+	v.IdfaMd5 = ""
+	v.ImeiMd5 = ""
+	v.TaskId = ""
+	v.CaidMd5 = ""
+	poolBatchAskResultItem.Put(v)
 }

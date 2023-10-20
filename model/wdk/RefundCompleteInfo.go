@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // RefundCompleteInfo 结构体
 type RefundCompleteInfo struct {
 	// 子单
@@ -66,4 +70,52 @@ type RefundCompleteInfo struct {
 	PriceIncreasePerformanceFee int64 `json:"price_increase_performance_fee,omitempty" xml:"price_increase_performance_fee,omitempty"`
 	// 退款原因类型：10-整单全缺;11-订单部分缺;12-商家侧发起的退款(商家拒单); 13-用户侧发起的退款(用户逆向申请);15-用户拒收
 	RefundReasonType int64 `json:"refund_reason_type,omitempty" xml:"refund_reason_type,omitempty"`
+}
+
+var poolRefundCompleteInfo = sync.Pool{
+	New: func() any {
+		return new(RefundCompleteInfo)
+	},
+}
+
+// GetRefundCompleteInfo() 从对象池中获取RefundCompleteInfo
+func GetRefundCompleteInfo() *RefundCompleteInfo {
+	return poolRefundCompleteInfo.Get().(*RefundCompleteInfo)
+}
+
+// ReleaseRefundCompleteInfo 释放RefundCompleteInfo
+func ReleaseRefundCompleteInfo(v *RefundCompleteInfo) {
+	v.SubRefundOrders = v.SubRefundOrders[:0]
+	v.PayChannels = v.PayChannels[:0]
+	v.OutOrderId = ""
+	v.OutShopId = ""
+	v.OutRefundId = ""
+	v.ShopId = ""
+	v.RefundFee = 0
+	v.RefundPostFee = 0
+	v.RefundPackageFee = 0
+	v.OrderFrom = 0
+	v.Commission = 0
+	v.OtherMerchantSubsidyFee = 0
+	v.OtherPlatSubsidyFee = 0
+	v.MerchantTotalFee = 0
+	v.PlatSendSubsidyFee = 0
+	v.MerchantSendSubsidyFee = 0
+	v.MerchantCallOrderFee = 0
+	v.ColdChainSendFee = 0
+	v.MerchantCallOrderSendFee = 0
+	v.SendInsuranceFee = 0
+	v.LogisticsShopServiceFee = 0
+	v.ActualIncrementServiceFee = 0
+	v.PerformanceIncrementServiceFee = 0
+	v.DistanceIncreasePerformanceFee = 0
+	v.TimeIncreasePerformanceFee = 0
+	v.MerchantPublicDonation = 0
+	v.PlatPointsDeductionFee = 0
+	v.SelfPickDiscountFee = 0
+	v.SelfPickPayableFee = 0
+	v.MerchantBaseSendFee = 0
+	v.PriceIncreasePerformanceFee = 0
+	v.RefundReasonType = 0
+	poolRefundCompleteInfo.Put(v)
 }

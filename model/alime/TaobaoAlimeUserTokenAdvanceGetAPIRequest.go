@@ -2,6 +2,7 @@ package alime
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoAlimeUserTokenAdvanceGetAPIRequest struct {
 // NewTaobaoAlimeUserTokenAdvanceGetRequest 初始化TaobaoAlimeUserTokenAdvanceGetAPIRequest对象
 func NewTaobaoAlimeUserTokenAdvanceGetRequest() *TaobaoAlimeUserTokenAdvanceGetAPIRequest {
 	return &TaobaoAlimeUserTokenAdvanceGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlimeUserTokenAdvanceGetAPIRequest) Reset() {
+	r._foreignId = ""
+	r._nick = ""
+	r._routing = 0
+	r._type = 0
+	r._source = 0
+	r._id = 0
+	r._expires = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoAlimeUserTokenAdvanceGetAPIRequest) SetExpires(_expires int64) er
 // GetExpires Expires Getter
 func (r TaobaoAlimeUserTokenAdvanceGetAPIRequest) GetExpires() int64 {
 	return r._expires
+}
+
+var poolTaobaoAlimeUserTokenAdvanceGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlimeUserTokenAdvanceGetRequest()
+	},
+}
+
+// GetTaobaoAlimeUserTokenAdvanceGetRequest 从 sync.Pool 获取 TaobaoAlimeUserTokenAdvanceGetAPIRequest
+func GetTaobaoAlimeUserTokenAdvanceGetAPIRequest() *TaobaoAlimeUserTokenAdvanceGetAPIRequest {
+	return poolTaobaoAlimeUserTokenAdvanceGetAPIRequest.Get().(*TaobaoAlimeUserTokenAdvanceGetAPIRequest)
+}
+
+// ReleaseTaobaoAlimeUserTokenAdvanceGetAPIRequest 将 TaobaoAlimeUserTokenAdvanceGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlimeUserTokenAdvanceGetAPIRequest(v *TaobaoAlimeUserTokenAdvanceGetAPIRequest) {
+	v.Reset()
+	poolTaobaoAlimeUserTokenAdvanceGetAPIRequest.Put(v)
 }

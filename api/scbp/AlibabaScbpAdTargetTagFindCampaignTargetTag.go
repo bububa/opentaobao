@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.ad.target.tag.find.campaign.target.tag
 //
 // 查询标签数据
-func AlibabaScbpAdTargetTagFindCampaignTargetTag(clt *core.SDKClient, req *scbp.AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest, session string) (*scbp.AlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponse, error) {
-	var resp scbp.AlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpAdTargetTagFindCampaignTargetTag(clt *core.SDKClient, req *scbp.AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest, resp *scbp.AlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

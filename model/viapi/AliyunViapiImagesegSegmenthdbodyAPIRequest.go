@@ -2,6 +2,7 @@ package viapi
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliyunViapiImagesegSegmenthdbodyAPIRequest struct {
 // NewAliyunViapiImagesegSegmenthdbodyRequest 初始化AliyunViapiImagesegSegmenthdbodyAPIRequest对象
 func NewAliyunViapiImagesegSegmenthdbodyRequest() *AliyunViapiImagesegSegmenthdbodyAPIRequest {
 	return &AliyunViapiImagesegSegmenthdbodyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliyunViapiImagesegSegmenthdbodyAPIRequest) Reset() {
+	r._imageUrl = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliyunViapiImagesegSegmenthdbodyAPIRequest) SetImageUrl(_imageUrl strin
 // GetImageUrl ImageUrl Getter
 func (r AliyunViapiImagesegSegmenthdbodyAPIRequest) GetImageUrl() string {
 	return r._imageUrl
+}
+
+var poolAliyunViapiImagesegSegmenthdbodyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliyunViapiImagesegSegmenthdbodyRequest()
+	},
+}
+
+// GetAliyunViapiImagesegSegmenthdbodyRequest 从 sync.Pool 获取 AliyunViapiImagesegSegmenthdbodyAPIRequest
+func GetAliyunViapiImagesegSegmenthdbodyAPIRequest() *AliyunViapiImagesegSegmenthdbodyAPIRequest {
+	return poolAliyunViapiImagesegSegmenthdbodyAPIRequest.Get().(*AliyunViapiImagesegSegmenthdbodyAPIRequest)
+}
+
+// ReleaseAliyunViapiImagesegSegmenthdbodyAPIRequest 将 AliyunViapiImagesegSegmenthdbodyAPIRequest 放入 sync.Pool
+func ReleaseAliyunViapiImagesegSegmenthdbodyAPIRequest(v *AliyunViapiImagesegSegmenthdbodyAPIRequest) {
+	v.Reset()
+	poolAliyunViapiImagesegSegmenthdbodyAPIRequest.Put(v)
 }

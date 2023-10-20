@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // BuildingDto 结构体
 type BuildingDto struct {
 	// 货下挂的其他品列表
@@ -42,4 +46,40 @@ type BuildingDto struct {
 	IsCargo int64 `json:"is_cargo,omitempty" xml:"is_cargo,omitempty"`
 	// 是否有电梯 0-否 1-是
 	IsElevator int64 `json:"is_elevator,omitempty" xml:"is_elevator,omitempty"`
+}
+
+var poolBuildingDto = sync.Pool{
+	New: func() any {
+		return new(BuildingDto)
+	},
+}
+
+// GetBuildingDto() 从对象池中获取BuildingDto
+func GetBuildingDto() *BuildingDto {
+	return poolBuildingDto.Get().(*BuildingDto)
+}
+
+// ReleaseBuildingDto 释放BuildingDto
+func ReleaseBuildingDto(v *BuildingDto) {
+	v.Extend = v.Extend[:0]
+	v.RelationCargos = v.RelationCargos[:0]
+	v.ECode = ""
+	v.Title = ""
+	v.DeveloperOpeningTime = ""
+	v.DeveloperDueTime = ""
+	v.OuterTid = ""
+	v.OuterId = ""
+	v.OuterStoreId = ""
+	v.BuildingNo = ""
+	v.ElevatorNo = 0
+	v.HouseholdNo = 0
+	v.Units = 0
+	v.Floors = 0
+	v.Rooms = 0
+	v.ItemId = 0
+	v.SalesStatus = 0
+	v.Type = 0
+	v.IsCargo = 0
+	v.IsElevator = 0
+	poolBuildingDto.Put(v)
 }

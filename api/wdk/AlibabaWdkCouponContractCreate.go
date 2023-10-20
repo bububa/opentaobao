@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.coupon.contract.create
 //
 // 营销券合同创建接口
-func AlibabaWdkCouponContractCreate(clt *core.SDKClient, req *wdk.AlibabaWdkCouponContractCreateAPIRequest, session string) (*wdk.AlibabaWdkCouponContractCreateAPIResponse, error) {
-	var resp wdk.AlibabaWdkCouponContractCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkCouponContractCreate(clt *core.SDKClient, req *wdk.AlibabaWdkCouponContractCreateAPIRequest, resp *wdk.AlibabaWdkCouponContractCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

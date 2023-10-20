@@ -2,6 +2,7 @@ package happytrip
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,6 +32,12 @@ type AlibabaHappytripTaxiOrderComplainAPIResponse struct {
 	AlibabaHappytripTaxiOrderComplainAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaHappytripTaxiOrderComplainAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaHappytripTaxiOrderComplainAPIResponseModel).Reset()
+}
+
 // AlibabaHappytripTaxiOrderComplainAPIResponseModel is 用户投诉 成功返回结果
 type AlibabaHappytripTaxiOrderComplainAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_happytrip_taxi_order_complain_response"`
@@ -42,4 +49,29 @@ type AlibabaHappytripTaxiOrderComplainAPIResponseModel struct {
 	Errno int64 `json:"errno,omitempty" xml:"errno,omitempty"`
 	// 投诉结果
 	Data *AlibabaHappytripTaxiOrderComplainStruct `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaHappytripTaxiOrderComplainAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Errmsg = ""
+	m.Errno = 0
+	m.Data = nil
+}
+
+var poolAlibabaHappytripTaxiOrderComplainAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaHappytripTaxiOrderComplainAPIResponse)
+	},
+}
+
+// GetAlibabaHappytripTaxiOrderComplainAPIResponse 从 sync.Pool 获取 AlibabaHappytripTaxiOrderComplainAPIResponse
+func GetAlibabaHappytripTaxiOrderComplainAPIResponse() *AlibabaHappytripTaxiOrderComplainAPIResponse {
+	return poolAlibabaHappytripTaxiOrderComplainAPIResponse.Get().(*AlibabaHappytripTaxiOrderComplainAPIResponse)
+}
+
+// ReleaseAlibabaHappytripTaxiOrderComplainAPIResponse 将 AlibabaHappytripTaxiOrderComplainAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaHappytripTaxiOrderComplainAPIResponse(v *AlibabaHappytripTaxiOrderComplainAPIResponse) {
+	v.Reset()
+	poolAlibabaHappytripTaxiOrderComplainAPIResponse.Put(v)
 }

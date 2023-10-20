@@ -2,6 +2,7 @@ package travel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoAlitripTravelProductBaseModifyAPIRequest struct {
 // NewTaobaoAlitripTravelProductBaseModifyRequest 初始化TaobaoAlitripTravelProductBaseModifyAPIRequest对象
 func NewTaobaoAlitripTravelProductBaseModifyRequest() *TaobaoAlitripTravelProductBaseModifyAPIRequest {
 	return &TaobaoAlitripTravelProductBaseModifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripTravelProductBaseModifyAPIRequest) Reset() {
+	r._itineraries = r._itineraries[:0]
+	r._bookingRules = r._bookingRules[:0]
+	r._baseInfo = nil
+	r._itemId = 0
+	r._refundInfo = nil
+	r._cruiseProductExt = nil
+	r._productSaleInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoAlitripTravelProductBaseModifyAPIRequest) SetProductSaleInfo(_pro
 // GetProductSaleInfo ProductSaleInfo Getter
 func (r TaobaoAlitripTravelProductBaseModifyAPIRequest) GetProductSaleInfo() *ProductSaleInfo {
 	return r._productSaleInfo
+}
+
+var poolTaobaoAlitripTravelProductBaseModifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripTravelProductBaseModifyRequest()
+	},
+}
+
+// GetTaobaoAlitripTravelProductBaseModifyRequest 从 sync.Pool 获取 TaobaoAlitripTravelProductBaseModifyAPIRequest
+func GetTaobaoAlitripTravelProductBaseModifyAPIRequest() *TaobaoAlitripTravelProductBaseModifyAPIRequest {
+	return poolTaobaoAlitripTravelProductBaseModifyAPIRequest.Get().(*TaobaoAlitripTravelProductBaseModifyAPIRequest)
+}
+
+// ReleaseTaobaoAlitripTravelProductBaseModifyAPIRequest 将 TaobaoAlitripTravelProductBaseModifyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripTravelProductBaseModifyAPIRequest(v *TaobaoAlitripTravelProductBaseModifyAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripTravelProductBaseModifyAPIRequest.Put(v)
 }

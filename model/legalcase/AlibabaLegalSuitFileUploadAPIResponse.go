@@ -2,6 +2,7 @@ package legalcase
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaLegalSuitFileUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaLegalSuitFileUploadAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaLegalSuitFileUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaLegalSuitFileUploadAPIResponseModel).Reset()
 }
 
 // AlibabaLegalSuitFileUploadAPIResponseModel is 诉讼文件上传接口 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaLegalSuitFileUploadAPIResponseModel struct {
 	CodeError string `json:"code_error,omitempty" xml:"code_error,omitempty"`
 	// 是否调用成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaLegalSuitFileUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorMsg = ""
+	m.Content = ""
+	m.CodeError = ""
+	m.IsSuccess = false
+}
+
+var poolAlibabaLegalSuitFileUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaLegalSuitFileUploadAPIResponse)
+	},
+}
+
+// GetAlibabaLegalSuitFileUploadAPIResponse 从 sync.Pool 获取 AlibabaLegalSuitFileUploadAPIResponse
+func GetAlibabaLegalSuitFileUploadAPIResponse() *AlibabaLegalSuitFileUploadAPIResponse {
+	return poolAlibabaLegalSuitFileUploadAPIResponse.Get().(*AlibabaLegalSuitFileUploadAPIResponse)
+}
+
+// ReleaseAlibabaLegalSuitFileUploadAPIResponse 将 AlibabaLegalSuitFileUploadAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaLegalSuitFileUploadAPIResponse(v *AlibabaLegalSuitFileUploadAPIResponse) {
+	v.Reset()
+	poolAlibabaLegalSuitFileUploadAPIResponse.Put(v)
 }

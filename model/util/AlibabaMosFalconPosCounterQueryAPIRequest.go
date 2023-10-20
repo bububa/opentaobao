@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaMosFalconPosCounterQueryAPIRequest struct {
 // NewAlibabaMosFalconPosCounterQueryRequest 初始化AlibabaMosFalconPosCounterQueryAPIRequest对象
 func NewAlibabaMosFalconPosCounterQueryRequest() *AlibabaMosFalconPosCounterQueryAPIRequest {
 	return &AlibabaMosFalconPosCounterQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosFalconPosCounterQueryAPIRequest) Reset() {
+	r._sn = ""
+	r._storeNo = ""
+	r._counterNo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaMosFalconPosCounterQueryAPIRequest) SetCounterNo(_counterNo stri
 // GetCounterNo CounterNo Getter
 func (r AlibabaMosFalconPosCounterQueryAPIRequest) GetCounterNo() string {
 	return r._counterNo
+}
+
+var poolAlibabaMosFalconPosCounterQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosFalconPosCounterQueryRequest()
+	},
+}
+
+// GetAlibabaMosFalconPosCounterQueryRequest 从 sync.Pool 获取 AlibabaMosFalconPosCounterQueryAPIRequest
+func GetAlibabaMosFalconPosCounterQueryAPIRequest() *AlibabaMosFalconPosCounterQueryAPIRequest {
+	return poolAlibabaMosFalconPosCounterQueryAPIRequest.Get().(*AlibabaMosFalconPosCounterQueryAPIRequest)
+}
+
+// ReleaseAlibabaMosFalconPosCounterQueryAPIRequest 将 AlibabaMosFalconPosCounterQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosFalconPosCounterQueryAPIRequest(v *AlibabaMosFalconPosCounterQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaMosFalconPosCounterQueryAPIRequest.Put(v)
 }

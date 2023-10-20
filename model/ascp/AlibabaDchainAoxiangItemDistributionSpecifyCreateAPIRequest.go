@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIRequest struct {
 // NewAlibabaDchainAoxiangItemDistributionSpecifyCreateRequest 初始化AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIRequest对象
 func NewAlibabaDchainAoxiangItemDistributionSpecifyCreateRequest() *AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIRequest {
 	return &AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIRequest) Reset() {
+	r._createItemDistributionRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIRequest) SetCreateI
 // GetCreateItemDistributionRequest CreateItemDistributionRequest Getter
 func (r AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIRequest) GetCreateItemDistributionRequest() *SpecifyDistributionRequest {
 	return r._createItemDistributionRequest
+}
+
+var poolAlibabaDchainAoxiangItemDistributionSpecifyCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangItemDistributionSpecifyCreateRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangItemDistributionSpecifyCreateRequest 从 sync.Pool 获取 AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIRequest
+func GetAlibabaDchainAoxiangItemDistributionSpecifyCreateAPIRequest() *AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIRequest {
+	return poolAlibabaDchainAoxiangItemDistributionSpecifyCreateAPIRequest.Get().(*AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangItemDistributionSpecifyCreateAPIRequest 将 AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangItemDistributionSpecifyCreateAPIRequest(v *AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangItemDistributionSpecifyCreateAPIRequest.Put(v)
 }

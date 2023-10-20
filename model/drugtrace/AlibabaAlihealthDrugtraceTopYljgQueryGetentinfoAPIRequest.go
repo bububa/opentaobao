@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest struct {
 // NewAlibabaAlihealthDrugtraceTopYljgQueryGetentinfoRequest 初始化AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest对象
 func NewAlibabaAlihealthDrugtraceTopYljgQueryGetentinfoRequest() *AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest {
 	return &AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest) Reset() {
+	r._entName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest) SetEntName(_
 // GetEntName EntName Getter
 func (r AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest) GetEntName() string {
 	return r._entName
+}
+
+var poolAlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugtraceTopYljgQueryGetentinfoRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugtraceTopYljgQueryGetentinfoRequest 从 sync.Pool 获取 AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest
+func GetAlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest() *AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest {
+	return poolAlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest.Get().(*AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest 将 AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest(v *AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugtraceTopYljgQueryGetentinfoAPIRequest.Put(v)
 }

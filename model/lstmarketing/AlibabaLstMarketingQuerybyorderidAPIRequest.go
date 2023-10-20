@@ -2,6 +2,7 @@ package lstmarketing
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaLstMarketingQuerybyorderidAPIRequest struct {
 // NewAlibabaLstMarketingQuerybyorderidRequest 初始化AlibabaLstMarketingQuerybyorderidAPIRequest对象
 func NewAlibabaLstMarketingQuerybyorderidRequest() *AlibabaLstMarketingQuerybyorderidAPIRequest {
 	return &AlibabaLstMarketingQuerybyorderidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstMarketingQuerybyorderidAPIRequest) Reset() {
+	r._mainOrderId = 0
+	r._subOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaLstMarketingQuerybyorderidAPIRequest) SetSubOrderId(_subOrderId 
 // GetSubOrderId SubOrderId Getter
 func (r AlibabaLstMarketingQuerybyorderidAPIRequest) GetSubOrderId() int64 {
 	return r._subOrderId
+}
+
+var poolAlibabaLstMarketingQuerybyorderidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstMarketingQuerybyorderidRequest()
+	},
+}
+
+// GetAlibabaLstMarketingQuerybyorderidRequest 从 sync.Pool 获取 AlibabaLstMarketingQuerybyorderidAPIRequest
+func GetAlibabaLstMarketingQuerybyorderidAPIRequest() *AlibabaLstMarketingQuerybyorderidAPIRequest {
+	return poolAlibabaLstMarketingQuerybyorderidAPIRequest.Get().(*AlibabaLstMarketingQuerybyorderidAPIRequest)
+}
+
+// ReleaseAlibabaLstMarketingQuerybyorderidAPIRequest 将 AlibabaLstMarketingQuerybyorderidAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstMarketingQuerybyorderidAPIRequest(v *AlibabaLstMarketingQuerybyorderidAPIRequest) {
+	v.Reset()
+	poolAlibabaLstMarketingQuerybyorderidAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package charity
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCharityCharitytimeCommonauthAPIRequest struct {
 // NewAlibabaCharityCharitytimeCommonauthRequest 初始化AlibabaCharityCharitytimeCommonauthAPIRequest对象
 func NewAlibabaCharityCharitytimeCommonauthRequest() *AlibabaCharityCharitytimeCommonauthAPIRequest {
 	return &AlibabaCharityCharitytimeCommonauthAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCharityCharitytimeCommonauthAPIRequest) Reset() {
+	r._jumpAddressHsfRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCharityCharitytimeCommonauthAPIRequest) SetJumpAddressHsfRequest
 // GetJumpAddressHsfRequest JumpAddressHsfRequest Getter
 func (r AlibabaCharityCharitytimeCommonauthAPIRequest) GetJumpAddressHsfRequest() *JumpAddressHsfRequest {
 	return r._jumpAddressHsfRequest
+}
+
+var poolAlibabaCharityCharitytimeCommonauthAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCharityCharitytimeCommonauthRequest()
+	},
+}
+
+// GetAlibabaCharityCharitytimeCommonauthRequest 从 sync.Pool 获取 AlibabaCharityCharitytimeCommonauthAPIRequest
+func GetAlibabaCharityCharitytimeCommonauthAPIRequest() *AlibabaCharityCharitytimeCommonauthAPIRequest {
+	return poolAlibabaCharityCharitytimeCommonauthAPIRequest.Get().(*AlibabaCharityCharitytimeCommonauthAPIRequest)
+}
+
+// ReleaseAlibabaCharityCharitytimeCommonauthAPIRequest 将 AlibabaCharityCharitytimeCommonauthAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCharityCharitytimeCommonauthAPIRequest(v *AlibabaCharityCharitytimeCommonauthAPIRequest) {
+	v.Reset()
+	poolAlibabaCharityCharitytimeCommonauthAPIRequest.Put(v)
 }

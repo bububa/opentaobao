@@ -2,6 +2,7 @@ package idle
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaIdleGoosefishUserInfoQueryAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleGoosefishUserInfoQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaIdleGoosefishUserInfoQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaIdleGoosefishUserInfoQueryAPIResponseModel).Reset()
 }
 
 // AlibabaIdleGoosefishUserInfoQueryAPIResponseModel is 闲鱼三方容器用户信息获取 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaIdleGoosefishUserInfoQueryAPIResponseModel struct {
 	Data *IdleGooseFishUserInfoVo `json:"data,omitempty" xml:"data,omitempty"`
 	// 是否成功
 	ApiSuccess bool `json:"api_success,omitempty" xml:"api_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaIdleGoosefishUserInfoQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ApiErrorCode = ""
+	m.ApiErrorMsg = ""
+	m.Data = nil
+	m.ApiSuccess = false
+}
+
+var poolAlibabaIdleGoosefishUserInfoQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaIdleGoosefishUserInfoQueryAPIResponse)
+	},
+}
+
+// GetAlibabaIdleGoosefishUserInfoQueryAPIResponse 从 sync.Pool 获取 AlibabaIdleGoosefishUserInfoQueryAPIResponse
+func GetAlibabaIdleGoosefishUserInfoQueryAPIResponse() *AlibabaIdleGoosefishUserInfoQueryAPIResponse {
+	return poolAlibabaIdleGoosefishUserInfoQueryAPIResponse.Get().(*AlibabaIdleGoosefishUserInfoQueryAPIResponse)
+}
+
+// ReleaseAlibabaIdleGoosefishUserInfoQueryAPIResponse 将 AlibabaIdleGoosefishUserInfoQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaIdleGoosefishUserInfoQueryAPIResponse(v *AlibabaIdleGoosefishUserInfoQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaIdleGoosefishUserInfoQueryAPIResponse.Put(v)
 }

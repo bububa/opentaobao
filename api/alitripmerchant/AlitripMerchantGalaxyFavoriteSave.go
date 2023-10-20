@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.favorite.save
 //
 // 用户可以点击收藏酒店，再次点击移除收藏的酒店
-func AlitripMerchantGalaxyFavoriteSave(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyFavoriteSaveAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyFavoriteSaveAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyFavoriteSaveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyFavoriteSave(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyFavoriteSaveAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyFavoriteSaveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

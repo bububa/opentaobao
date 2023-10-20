@@ -2,6 +2,7 @@ package bus
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoBusMerchantOrderGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoBusMerchantOrderGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoBusMerchantOrderGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoBusMerchantOrderGetAPIResponseModel).Reset()
 }
 
 // TaobaoBusMerchantOrderGetAPIResponseModel is 商家侧查询订单详情 成功返回结果
@@ -32,4 +39,32 @@ type TaobaoBusMerchantOrderGetAPIResponseModel struct {
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// 业务接口是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoBusMerchantOrderGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RefundOrderInfos = m.RefundOrderInfos[:0]
+	m.OrderInfos = m.OrderInfos[:0]
+	m.ErrorMsgCode = ""
+	m.ErrorMsgDesc = ""
+	m.TotalCount = 0
+	m.IsSuccess = false
+}
+
+var poolTaobaoBusMerchantOrderGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoBusMerchantOrderGetAPIResponse)
+	},
+}
+
+// GetTaobaoBusMerchantOrderGetAPIResponse 从 sync.Pool 获取 TaobaoBusMerchantOrderGetAPIResponse
+func GetTaobaoBusMerchantOrderGetAPIResponse() *TaobaoBusMerchantOrderGetAPIResponse {
+	return poolTaobaoBusMerchantOrderGetAPIResponse.Get().(*TaobaoBusMerchantOrderGetAPIResponse)
+}
+
+// ReleaseTaobaoBusMerchantOrderGetAPIResponse 将 TaobaoBusMerchantOrderGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoBusMerchantOrderGetAPIResponse(v *TaobaoBusMerchantOrderGetAPIResponse) {
+	v.Reset()
+	poolTaobaoBusMerchantOrderGetAPIResponse.Put(v)
 }

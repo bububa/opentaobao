@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoTbkRtaConsumerMatchAPIRequest struct {
 // NewTaobaoTbkRtaConsumerMatchRequest 初始化TaobaoTbkRtaConsumerMatchAPIRequest对象
 func NewTaobaoTbkRtaConsumerMatchRequest() *TaobaoTbkRtaConsumerMatchAPIRequest {
 	return &TaobaoTbkRtaConsumerMatchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkRtaConsumerMatchAPIRequest) Reset() {
+	r._offerList = r._offerList[:0]
+	r._specialId = ""
+	r._deviceValue = ""
+	r._deviceType = ""
+	r._strategyIdList = ""
+	r._adzoneId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoTbkRtaConsumerMatchAPIRequest) SetAdzoneId(_adzoneId int64) error
 // GetAdzoneId AdzoneId Getter
 func (r TaobaoTbkRtaConsumerMatchAPIRequest) GetAdzoneId() int64 {
 	return r._adzoneId
+}
+
+var poolTaobaoTbkRtaConsumerMatchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkRtaConsumerMatchRequest()
+	},
+}
+
+// GetTaobaoTbkRtaConsumerMatchRequest 从 sync.Pool 获取 TaobaoTbkRtaConsumerMatchAPIRequest
+func GetTaobaoTbkRtaConsumerMatchAPIRequest() *TaobaoTbkRtaConsumerMatchAPIRequest {
+	return poolTaobaoTbkRtaConsumerMatchAPIRequest.Get().(*TaobaoTbkRtaConsumerMatchAPIRequest)
+}
+
+// ReleaseTaobaoTbkRtaConsumerMatchAPIRequest 将 TaobaoTbkRtaConsumerMatchAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkRtaConsumerMatchAPIRequest(v *TaobaoTbkRtaConsumerMatchAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkRtaConsumerMatchAPIRequest.Put(v)
 }

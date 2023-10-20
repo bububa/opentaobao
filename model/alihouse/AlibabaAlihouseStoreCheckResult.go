@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // AlibabaAlihouseStoreCheckResult 结构体
 type AlibabaAlihouseStoreCheckResult struct {
 	// 结果列表
@@ -10,4 +14,24 @@ type AlibabaAlihouseStoreCheckResult struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaAlihouseStoreCheckResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihouseStoreCheckResult)
+	},
+}
+
+// GetAlibabaAlihouseStoreCheckResult() 从对象池中获取AlibabaAlihouseStoreCheckResult
+func GetAlibabaAlihouseStoreCheckResult() *AlibabaAlihouseStoreCheckResult {
+	return poolAlibabaAlihouseStoreCheckResult.Get().(*AlibabaAlihouseStoreCheckResult)
+}
+
+// ReleaseAlibabaAlihouseStoreCheckResult 释放AlibabaAlihouseStoreCheckResult
+func ReleaseAlibabaAlihouseStoreCheckResult(v *AlibabaAlihouseStoreCheckResult) {
+	v.Data = v.Data[:0]
+	v.Code = ""
+	v.Message = ""
+	v.Success = false
+	poolAlibabaAlihouseStoreCheckResult.Put(v)
 }

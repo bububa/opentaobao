@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.showcase.list
 //
 // 橱窗查询
-func AlibabaScbpShowcaseList(clt *core.SDKClient, req *icbushowcase.AlibabaScbpShowcaseListAPIRequest, session string) (*icbushowcase.AlibabaScbpShowcaseListAPIResponse, error) {
-	var resp icbushowcase.AlibabaScbpShowcaseListAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpShowcaseList(clt *core.SDKClient, req *icbushowcase.AlibabaScbpShowcaseListAPIRequest, resp *icbushowcase.AlibabaScbpShowcaseListAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

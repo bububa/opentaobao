@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoWaybillIiConfirmAPIRequest struct {
 // NewCainiaoWaybillIiConfirmRequest 初始化CainiaoWaybillIiConfirmAPIRequest对象
 func NewCainiaoWaybillIiConfirmRequest() *CainiaoWaybillIiConfirmAPIRequest {
 	return &CainiaoWaybillIiConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoWaybillIiConfirmAPIRequest) Reset() {
+	r._paramWaybillOrderConfirmRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoWaybillIiConfirmAPIRequest) SetParamWaybillOrderConfirmRequest(_
 // GetParamWaybillOrderConfirmRequest ParamWaybillOrderConfirmRequest Getter
 func (r CainiaoWaybillIiConfirmAPIRequest) GetParamWaybillOrderConfirmRequest() *WaybillOrderConfirmRequest {
 	return r._paramWaybillOrderConfirmRequest
+}
+
+var poolCainiaoWaybillIiConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoWaybillIiConfirmRequest()
+	},
+}
+
+// GetCainiaoWaybillIiConfirmRequest 从 sync.Pool 获取 CainiaoWaybillIiConfirmAPIRequest
+func GetCainiaoWaybillIiConfirmAPIRequest() *CainiaoWaybillIiConfirmAPIRequest {
+	return poolCainiaoWaybillIiConfirmAPIRequest.Get().(*CainiaoWaybillIiConfirmAPIRequest)
+}
+
+// ReleaseCainiaoWaybillIiConfirmAPIRequest 将 CainiaoWaybillIiConfirmAPIRequest 放入 sync.Pool
+func ReleaseCainiaoWaybillIiConfirmAPIRequest(v *CainiaoWaybillIiConfirmAPIRequest) {
+	v.Reset()
+	poolCainiaoWaybillIiConfirmAPIRequest.Put(v)
 }

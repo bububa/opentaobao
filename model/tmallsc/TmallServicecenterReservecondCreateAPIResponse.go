@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallServicecenterReservecondCreateAPIResponse struct {
 	TmallServicecenterReservecondCreateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallServicecenterReservecondCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallServicecenterReservecondCreateAPIResponseModel).Reset()
+}
+
 // TmallServicecenterReservecondCreateAPIResponseModel is 创建主动预约开通条件 成功返回结果
 type TmallServicecenterReservecondCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_reservecond_create_response"`
@@ -26,4 +33,29 @@ type TmallServicecenterReservecondCreateAPIResponseModel struct {
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 是否成功
 	MsgSuccess bool `json:"msg_success,omitempty" xml:"msg_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallServicecenterReservecondCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgInfo = ""
+	m.MsgCode = ""
+	m.MsgSuccess = false
+}
+
+var poolTmallServicecenterReservecondCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallServicecenterReservecondCreateAPIResponse)
+	},
+}
+
+// GetTmallServicecenterReservecondCreateAPIResponse 从 sync.Pool 获取 TmallServicecenterReservecondCreateAPIResponse
+func GetTmallServicecenterReservecondCreateAPIResponse() *TmallServicecenterReservecondCreateAPIResponse {
+	return poolTmallServicecenterReservecondCreateAPIResponse.Get().(*TmallServicecenterReservecondCreateAPIResponse)
+}
+
+// ReleaseTmallServicecenterReservecondCreateAPIResponse 将 TmallServicecenterReservecondCreateAPIResponse 保存到 sync.Pool
+func ReleaseTmallServicecenterReservecondCreateAPIResponse(v *TmallServicecenterReservecondCreateAPIResponse) {
+	v.Reset()
+	poolTmallServicecenterReservecondCreateAPIResponse.Put(v)
 }

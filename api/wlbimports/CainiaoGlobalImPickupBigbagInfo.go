@@ -9,11 +9,6 @@ import (
 // cainiao.global.im.pickup.bigbag.info
 //
 // 大包状态查询
-func CainiaoGlobalImPickupBigbagInfo(clt *core.SDKClient, req *wlbimports.CainiaoGlobalImPickupBigbagInfoAPIRequest, session string) (*wlbimports.CainiaoGlobalImPickupBigbagInfoAPIResponse, error) {
-	var resp wlbimports.CainiaoGlobalImPickupBigbagInfoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func CainiaoGlobalImPickupBigbagInfo(clt *core.SDKClient, req *wlbimports.CainiaoGlobalImPickupBigbagInfoAPIRequest, resp *wlbimports.CainiaoGlobalImPickupBigbagInfoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

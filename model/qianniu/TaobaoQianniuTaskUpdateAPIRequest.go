@@ -2,6 +2,7 @@ package qianniu
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type TaobaoQianniuTaskUpdateAPIRequest struct {
 // NewTaobaoQianniuTaskUpdateRequest 初始化TaobaoQianniuTaskUpdateAPIRequest对象
 func NewTaobaoQianniuTaskUpdateRequest() *TaobaoQianniuTaskUpdateAPIRequest {
 	return &TaobaoQianniuTaskUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQianniuTaskUpdateAPIRequest) Reset() {
+	r._subStatus = ""
+	r._status = ""
+	r._tag = ""
+	r._memo = ""
+	r._bizParam = ""
+	r._taskId = 0
+	r._remindTime = 0
+	r._remindFlag = 0
+	r._memoMode = 0
+	r._priority = 0
+	r._isDeleted = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *TaobaoQianniuTaskUpdateAPIRequest) SetIsDeleted(_isDeleted int64) error
 // GetIsDeleted IsDeleted Getter
 func (r TaobaoQianniuTaskUpdateAPIRequest) GetIsDeleted() int64 {
 	return r._isDeleted
+}
+
+var poolTaobaoQianniuTaskUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQianniuTaskUpdateRequest()
+	},
+}
+
+// GetTaobaoQianniuTaskUpdateRequest 从 sync.Pool 获取 TaobaoQianniuTaskUpdateAPIRequest
+func GetTaobaoQianniuTaskUpdateAPIRequest() *TaobaoQianniuTaskUpdateAPIRequest {
+	return poolTaobaoQianniuTaskUpdateAPIRequest.Get().(*TaobaoQianniuTaskUpdateAPIRequest)
+}
+
+// ReleaseTaobaoQianniuTaskUpdateAPIRequest 将 TaobaoQianniuTaskUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQianniuTaskUpdateAPIRequest(v *TaobaoQianniuTaskUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoQianniuTaskUpdateAPIRequest.Put(v)
 }

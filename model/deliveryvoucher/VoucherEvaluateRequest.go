@@ -1,5 +1,9 @@
 package deliveryvoucher
 
+import (
+	"sync"
+)
+
 // VoucherEvaluateRequest 结构体
 type VoucherEvaluateRequest struct {
 	// 券信息，券信息,最多20条券记录
@@ -20,4 +24,29 @@ type VoucherEvaluateRequest struct {
 	EvaluateScore int64 `json:"evaluate_score,omitempty" xml:"evaluate_score,omitempty"`
 	// 主交易订单号
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+}
+
+var poolVoucherEvaluateRequest = sync.Pool{
+	New: func() any {
+		return new(VoucherEvaluateRequest)
+	},
+}
+
+// GetVoucherEvaluateRequest() 从对象池中获取VoucherEvaluateRequest
+func GetVoucherEvaluateRequest() *VoucherEvaluateRequest {
+	return poolVoucherEvaluateRequest.Get().(*VoucherEvaluateRequest)
+}
+
+// ReleaseVoucherEvaluateRequest 释放VoucherEvaluateRequest
+func ReleaseVoucherEvaluateRequest(v *VoucherEvaluateRequest) {
+	v.VoucherInfos = v.VoucherInfos[:0]
+	v.EvaluateContent = ""
+	v.Extend = ""
+	v.EvaluateTime = ""
+	v.OperateDate = ""
+	v.OpId = ""
+	v.Provider = ""
+	v.EvaluateScore = 0
+	v.OrderId = 0
+	poolVoucherEvaluateRequest.Put(v)
 }

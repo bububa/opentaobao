@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // CustomerEntrustSellingDto 结构体
 type CustomerEntrustSellingDto struct {
 	// 城市
@@ -42,4 +46,40 @@ type CustomerEntrustSellingDto struct {
 	HouseFloor int64 `json:"house_floor,omitempty" xml:"house_floor,omitempty"`
 	// 是否测试（0-否 1-是）
 	IsTest int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
+}
+
+var poolCustomerEntrustSellingDto = sync.Pool{
+	New: func() any {
+		return new(CustomerEntrustSellingDto)
+	},
+}
+
+// GetCustomerEntrustSellingDto() 从对象池中获取CustomerEntrustSellingDto
+func GetCustomerEntrustSellingDto() *CustomerEntrustSellingDto {
+	return poolCustomerEntrustSellingDto.Get().(*CustomerEntrustSellingDto)
+}
+
+// ReleaseCustomerEntrustSellingDto 释放CustomerEntrustSellingDto
+func ReleaseCustomerEntrustSellingDto(v *CustomerEntrustSellingDto) {
+	v.CityCode = ""
+	v.CityName = ""
+	v.EntrustCommunityName = ""
+	v.Building = ""
+	v.Unit = ""
+	v.HouseNumber = ""
+	v.Name = ""
+	v.PhoneNumber = ""
+	v.HouseHold = ""
+	v.HouseSize = ""
+	v.Decoration = ""
+	v.ContactInfo = ""
+	v.BusiType = 0
+	v.OuterCommunityId = 0
+	v.ExpectingBidding = 0
+	v.RoomNumber = 0
+	v.ParlorNumber = 0
+	v.ToiletNumber = 0
+	v.HouseFloor = 0
+	v.IsTest = 0
+	poolCustomerEntrustSellingDto.Put(v)
 }

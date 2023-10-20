@@ -1,7 +1,11 @@
 package hotel
 
-// SroomTypeVo 结构体
-type SroomTypeVo struct {
+import (
+	"sync"
+)
+
+// SRoomTypeVo 结构体
+type SRoomTypeVo struct {
 	// 面积
 	Area string `json:"area,omitempty" xml:"area,omitempty"`
 	// 设施文本
@@ -33,5 +37,37 @@ type SroomTypeVo struct {
 	// 上下架状态，0--下架，其他状态-下架
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 房型附加属性集合
-	SroomTypeProperties *SroomTypePropertiesSetVo `json:"sroom_type_properties,omitempty" xml:"sroom_type_properties,omitempty"`
+	SroomTypeProperties *SRoomTypePropertiesSetVo `json:"sroom_type_properties,omitempty" xml:"sroom_type_properties,omitempty"`
+}
+
+var poolSRoomTypeVo = sync.Pool{
+	New: func() any {
+		return new(SRoomTypeVo)
+	},
+}
+
+// GetSRoomTypeVo() 从对象池中获取SRoomTypeVo
+func GetSRoomTypeVo() *SRoomTypeVo {
+	return poolSRoomTypeVo.Get().(*SRoomTypeVo)
+}
+
+// ReleaseSRoomTypeVo 释放SRoomTypeVo
+func ReleaseSRoomTypeVo(v *SRoomTypeVo) {
+	v.Area = ""
+	v.Facility = ""
+	v.Floor = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.Name = ""
+	v.NameE = ""
+	v.WindowType = ""
+	v.PicUrls = ""
+	v.AddBed = 0
+	v.MaxOccupancy = 0
+	v.RoomTypeBedInfo = nil
+	v.Shid = 0
+	v.Srid = 0
+	v.Status = 0
+	v.SroomTypeProperties = nil
+	poolSRoomTypeVo.Put(v)
 }

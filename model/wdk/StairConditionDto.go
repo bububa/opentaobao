@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // StairConditionDto 结构体
 type StairConditionDto struct {
 	// 满元门槛值 -- 单位分
@@ -14,4 +18,26 @@ type StairConditionDto struct {
 	CountBegin bool `json:"count_begin,omitempty" xml:"count_begin,omitempty"`
 	// 是否第几件
 	Appoint bool `json:"appoint,omitempty" xml:"appoint,omitempty"`
+}
+
+var poolStairConditionDto = sync.Pool{
+	New: func() any {
+		return new(StairConditionDto)
+	},
+}
+
+// GetStairConditionDto() 从对象池中获取StairConditionDto
+func GetStairConditionDto() *StairConditionDto {
+	return poolStairConditionDto.Get().(*StairConditionDto)
+}
+
+// ReleaseStairConditionDto 释放StairConditionDto
+func ReleaseStairConditionDto(v *StairConditionDto) {
+	v.Amount = 0
+	v.Count = 0
+	v.AmountAt = false
+	v.CountAt = false
+	v.CountBegin = false
+	v.Appoint = false
+	poolStairConditionDto.Put(v)
 }

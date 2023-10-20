@@ -1,5 +1,9 @@
 package perfect
 
+import (
+	"sync"
+)
+
 // LoadContainerOrderRequest 结构体
 type LoadContainerOrderRequest struct {
 	// 包裹
@@ -16,4 +20,27 @@ type LoadContainerOrderRequest struct {
 	StationCode string `json:"station_code,omitempty" xml:"station_code,omitempty"`
 	// 站点名称
 	StationName string `json:"station_name,omitempty" xml:"station_name,omitempty"`
+}
+
+var poolLoadContainerOrderRequest = sync.Pool{
+	New: func() any {
+		return new(LoadContainerOrderRequest)
+	},
+}
+
+// GetLoadContainerOrderRequest() 从对象池中获取LoadContainerOrderRequest
+func GetLoadContainerOrderRequest() *LoadContainerOrderRequest {
+	return poolLoadContainerOrderRequest.Get().(*LoadContainerOrderRequest)
+}
+
+// ReleaseLoadContainerOrderRequest 释放LoadContainerOrderRequest
+func ReleaseLoadContainerOrderRequest(v *LoadContainerOrderRequest) {
+	v.Packages = v.Packages[:0]
+	v.ContainerOrderCode = ""
+	v.ContainerOrderType = ""
+	v.Attributes = ""
+	v.ContainerCode = ""
+	v.StationCode = ""
+	v.StationName = ""
+	poolLoadContainerOrderRequest.Put(v)
 }

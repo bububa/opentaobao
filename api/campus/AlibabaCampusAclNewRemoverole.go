@@ -9,11 +9,6 @@ import (
 // alibaba.campus.acl.new.removerole
 //
 // 删除角色
-func AlibabaCampusAclNewRemoverole(clt *core.SDKClient, req *campus.AlibabaCampusAclNewRemoveroleAPIRequest, session string) (*campus.AlibabaCampusAclNewRemoveroleAPIResponse, error) {
-	var resp campus.AlibabaCampusAclNewRemoveroleAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusAclNewRemoverole(clt *core.SDKClient, req *campus.AlibabaCampusAclNewRemoveroleAPIRequest, resp *campus.AlibabaCampusAclNewRemoveroleAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

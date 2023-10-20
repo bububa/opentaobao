@@ -2,6 +2,7 @@ package xhotelonlineorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoXhotelOrderDetailSearchAPIRequest struct {
 // NewTaobaoXhotelOrderDetailSearchRequest 初始化TaobaoXhotelOrderDetailSearchAPIRequest对象
 func NewTaobaoXhotelOrderDetailSearchRequest() *TaobaoXhotelOrderDetailSearchAPIRequest {
 	return &TaobaoXhotelOrderDetailSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelOrderDetailSearchAPIRequest) Reset() {
+	r._outOid = ""
+	r._tid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoXhotelOrderDetailSearchAPIRequest) SetTid(_tid int64) error {
 // GetTid Tid Getter
 func (r TaobaoXhotelOrderDetailSearchAPIRequest) GetTid() int64 {
 	return r._tid
+}
+
+var poolTaobaoXhotelOrderDetailSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelOrderDetailSearchRequest()
+	},
+}
+
+// GetTaobaoXhotelOrderDetailSearchRequest 从 sync.Pool 获取 TaobaoXhotelOrderDetailSearchAPIRequest
+func GetTaobaoXhotelOrderDetailSearchAPIRequest() *TaobaoXhotelOrderDetailSearchAPIRequest {
+	return poolTaobaoXhotelOrderDetailSearchAPIRequest.Get().(*TaobaoXhotelOrderDetailSearchAPIRequest)
+}
+
+// ReleaseTaobaoXhotelOrderDetailSearchAPIRequest 将 TaobaoXhotelOrderDetailSearchAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelOrderDetailSearchAPIRequest(v *TaobaoXhotelOrderDetailSearchAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelOrderDetailSearchAPIRequest.Put(v)
 }

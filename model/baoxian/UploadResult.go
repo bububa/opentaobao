@@ -1,5 +1,9 @@
 package baoxian
 
+import (
+	"sync"
+)
+
 // UploadResult 结构体
 type UploadResult struct {
 	// errorCode
@@ -10,4 +14,24 @@ type UploadResult struct {
 	Model *InsAttachmentUploadVo `json:"model,omitempty" xml:"model,omitempty"`
 	// isSuccess
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+var poolUploadResult = sync.Pool{
+	New: func() any {
+		return new(UploadResult)
+	},
+}
+
+// GetUploadResult() 从对象池中获取UploadResult
+func GetUploadResult() *UploadResult {
+	return poolUploadResult.Get().(*UploadResult)
+}
+
+// ReleaseUploadResult 释放UploadResult
+func ReleaseUploadResult(v *UploadResult) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Model = nil
+	v.IsSuccess = false
+	poolUploadResult.Put(v)
 }

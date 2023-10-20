@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // SubscribeMerchantDto 结构体
 type SubscribeMerchantDto struct {
 	// 技术电话
@@ -18,4 +22,28 @@ type SubscribeMerchantDto struct {
 	SubscribeOrderId int64 `json:"subscribe_order_id,omitempty" xml:"subscribe_order_id,omitempty"`
 	// spuid
 	SpuId int64 `json:"spu_id,omitempty" xml:"spu_id,omitempty"`
+}
+
+var poolSubscribeMerchantDto = sync.Pool{
+	New: func() any {
+		return new(SubscribeMerchantDto)
+	},
+}
+
+// GetSubscribeMerchantDto() 从对象池中获取SubscribeMerchantDto
+func GetSubscribeMerchantDto() *SubscribeMerchantDto {
+	return poolSubscribeMerchantDto.Get().(*SubscribeMerchantDto)
+}
+
+// ReleaseSubscribeMerchantDto 释放SubscribeMerchantDto
+func ReleaseSubscribeMerchantDto(v *SubscribeMerchantDto) {
+	v.TechPhone = ""
+	v.OperatorPhone = ""
+	v.AfterSalePhone = ""
+	v.ServiceCode = ""
+	v.SubscriberNick = ""
+	v.SellerType = ""
+	v.SubscribeOrderId = 0
+	v.SpuId = 0
+	poolSubscribeMerchantDto.Put(v)
 }

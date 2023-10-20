@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // SenderInfo 结构体
 type SenderInfo struct {
 	// 公司名称
@@ -26,4 +30,32 @@ type SenderInfo struct {
 	Town string `json:"town,omitempty" xml:"town,omitempty"`
 	// 详细地址
 	DetailAddress string `json:"detail_address,omitempty" xml:"detail_address,omitempty"`
+}
+
+var poolSenderInfo = sync.Pool{
+	New: func() any {
+		return new(SenderInfo)
+	},
+}
+
+// GetSenderInfo() 从对象池中获取SenderInfo
+func GetSenderInfo() *SenderInfo {
+	return poolSenderInfo.Get().(*SenderInfo)
+}
+
+// ReleaseSenderInfo 释放SenderInfo
+func ReleaseSenderInfo(v *SenderInfo) {
+	v.Company = ""
+	v.Name = ""
+	v.ZipCode = ""
+	v.Tel = ""
+	v.Mobile = ""
+	v.Email = ""
+	v.CountryCode = ""
+	v.Province = ""
+	v.City = ""
+	v.Area = ""
+	v.Town = ""
+	v.DetailAddress = ""
+	poolSenderInfo.Put(v)
 }

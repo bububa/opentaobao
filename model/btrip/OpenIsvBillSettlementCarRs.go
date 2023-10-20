@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenIsvBillSettlementCarRs 结构体
 type OpenIsvBillSettlementCarRs struct {
 	// 出行人名称
@@ -116,4 +120,77 @@ type OpenIsvBillSettlementCarRs struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 票据类型，枚举详见语雀
 	VoucherType int64 `json:"voucher_type,omitempty" xml:"voucher_type,omitempty"`
+}
+
+var poolOpenIsvBillSettlementCarRs = sync.Pool{
+	New: func() any {
+		return new(OpenIsvBillSettlementCarRs)
+	},
+}
+
+// GetOpenIsvBillSettlementCarRs() 从对象池中获取OpenIsvBillSettlementCarRs
+func GetOpenIsvBillSettlementCarRs() *OpenIsvBillSettlementCarRs {
+	return poolOpenIsvBillSettlementCarRs.Get().(*OpenIsvBillSettlementCarRs)
+}
+
+// ReleaseOpenIsvBillSettlementCarRs 释放OpenIsvBillSettlementCarRs
+func ReleaseOpenIsvBillSettlementCarRs(v *OpenIsvBillSettlementCarRs) {
+	v.TravelerName = ""
+	v.ArrDate = ""
+	v.OrderId = ""
+	v.DepartmentId = ""
+	v.Memo = ""
+	v.OverApplyId = ""
+	v.ApplyId = ""
+	v.BookerId = ""
+	v.CostCenterNumber = ""
+	v.InvoiceTitle = ""
+	v.ProviderName = ""
+	v.ServiceFee = ""
+	v.RealDriveDistance = ""
+	v.CostCenter = ""
+	v.CarLevel = ""
+	v.SpecialOrder = ""
+	v.SettlementFee = ""
+	v.Index = ""
+	v.BookTime = ""
+	v.FeeType = ""
+	v.PersonSettleFee = ""
+	v.UserConfirmDesc = ""
+	v.SpecialReason = ""
+	v.DeptCity = ""
+	v.ProjectName = ""
+	v.DeptTime = ""
+	v.ArrCity = ""
+	v.TravelerJobNo = ""
+	v.ArrLocation = ""
+	v.RealFromAddr = ""
+	v.ProjectCode = ""
+	v.CascadeDepartment = ""
+	v.OrderPrice = ""
+	v.Department = ""
+	v.SettlementType = ""
+	v.Coupon = ""
+	v.AlipayTradeNo = ""
+	v.BookerName = ""
+	v.EstimateDriveDistance = ""
+	v.TravelerId = ""
+	v.CapitalDirection = ""
+	v.RealToAddr = ""
+	v.SettlementTime = ""
+	v.DeptLocation = ""
+	v.BusinessCategory = ""
+	v.CouponPrice = ""
+	v.BookerJobNo = ""
+	v.EstimatePrice = ""
+	v.ArrTime = ""
+	v.DeptDate = ""
+	v.SubOrderId = ""
+	v.BillRecordTime = ""
+	v.SettlementGrantFee = ""
+	v.Remark = ""
+	v.PrimaryId = 0
+	v.Status = 0
+	v.VoucherType = 0
+	poolOpenIsvBillSettlementCarRs.Put(v)
 }

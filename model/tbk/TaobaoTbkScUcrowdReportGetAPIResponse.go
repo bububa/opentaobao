@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTbkScUcrowdReportGetAPIResponse struct {
 	TaobaoTbkScUcrowdReportGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTbkScUcrowdReportGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTbkScUcrowdReportGetAPIResponseModel).Reset()
+}
+
 // TaobaoTbkScUcrowdReportGetAPIResponseModel is 淘宝客-服务商-人群推广效果 成功返回结果
 type TaobaoTbkScUcrowdReportGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tbk_sc_ucrowd_report_get_response"`
@@ -22,4 +29,27 @@ type TaobaoTbkScUcrowdReportGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// data
 	Data *TaobaoTbkScUcrowdReportGetRpcResult `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTbkScUcrowdReportGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = nil
+}
+
+var poolTaobaoTbkScUcrowdReportGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkScUcrowdReportGetAPIResponse)
+	},
+}
+
+// GetTaobaoTbkScUcrowdReportGetAPIResponse 从 sync.Pool 获取 TaobaoTbkScUcrowdReportGetAPIResponse
+func GetTaobaoTbkScUcrowdReportGetAPIResponse() *TaobaoTbkScUcrowdReportGetAPIResponse {
+	return poolTaobaoTbkScUcrowdReportGetAPIResponse.Get().(*TaobaoTbkScUcrowdReportGetAPIResponse)
+}
+
+// ReleaseTaobaoTbkScUcrowdReportGetAPIResponse 将 TaobaoTbkScUcrowdReportGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTbkScUcrowdReportGetAPIResponse(v *TaobaoTbkScUcrowdReportGetAPIResponse) {
+	v.Reset()
+	poolTaobaoTbkScUcrowdReportGetAPIResponse.Put(v)
 }

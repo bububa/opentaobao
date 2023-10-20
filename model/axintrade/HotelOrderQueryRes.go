@@ -1,5 +1,9 @@
 package axintrade
 
+import (
+	"sync"
+)
+
 // HotelOrderQueryRes 结构体
 type HotelOrderQueryRes struct {
 	// 每日价格信息
@@ -32,4 +36,35 @@ type HotelOrderQueryRes struct {
 	ExchangeRate float64 `json:"exchange_rate,omitempty" xml:"exchange_rate,omitempty"`
 	// 实际支付原币种金额
 	OriginActualTotalFee int64 `json:"origin_actual_total_fee,omitempty" xml:"origin_actual_total_fee,omitempty"`
+}
+
+var poolHotelOrderQueryRes = sync.Pool{
+	New: func() any {
+		return new(HotelOrderQueryRes)
+	},
+}
+
+// GetHotelOrderQueryRes() 从对象池中获取HotelOrderQueryRes
+func GetHotelOrderQueryRes() *HotelOrderQueryRes {
+	return poolHotelOrderQueryRes.Get().(*HotelOrderQueryRes)
+}
+
+// ReleaseHotelOrderQueryRes 释放HotelOrderQueryRes
+func ReleaseHotelOrderQueryRes(v *HotelOrderQueryRes) {
+	v.DailyInfoList = v.DailyInfoList[:0]
+	v.StatusDesc = ""
+	v.OuterOrderId = ""
+	v.FliggyOrderId = ""
+	v.CurrencyCode = ""
+	v.HotelInfo = nil
+	v.RoomInfo = nil
+	v.OrderFulfillInfo = nil
+	v.ActualTotalFee = 0
+	v.Status = 0
+	v.PurchaseOrderId = 0
+	v.RefundFee = 0
+	v.PayId = 0
+	v.ExchangeRate = 0
+	v.OriginActualTotalFee = 0
+	poolHotelOrderQueryRes.Put(v)
 }

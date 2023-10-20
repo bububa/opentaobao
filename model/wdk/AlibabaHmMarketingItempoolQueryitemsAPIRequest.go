@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaHmMarketingItempoolQueryitemsAPIRequest struct {
 // NewAlibabaHmMarketingItempoolQueryitemsRequest 初始化AlibabaHmMarketingItempoolQueryitemsAPIRequest对象
 func NewAlibabaHmMarketingItempoolQueryitemsRequest() *AlibabaHmMarketingItempoolQueryitemsAPIRequest {
 	return &AlibabaHmMarketingItempoolQueryitemsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHmMarketingItempoolQueryitemsAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaHmMarketingItempoolQueryitemsAPIRequest) SetParam(_param *Activi
 // GetParam Param Getter
 func (r AlibabaHmMarketingItempoolQueryitemsAPIRequest) GetParam() *ActivitySkuQuery {
 	return r._param
+}
+
+var poolAlibabaHmMarketingItempoolQueryitemsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHmMarketingItempoolQueryitemsRequest()
+	},
+}
+
+// GetAlibabaHmMarketingItempoolQueryitemsRequest 从 sync.Pool 获取 AlibabaHmMarketingItempoolQueryitemsAPIRequest
+func GetAlibabaHmMarketingItempoolQueryitemsAPIRequest() *AlibabaHmMarketingItempoolQueryitemsAPIRequest {
+	return poolAlibabaHmMarketingItempoolQueryitemsAPIRequest.Get().(*AlibabaHmMarketingItempoolQueryitemsAPIRequest)
+}
+
+// ReleaseAlibabaHmMarketingItempoolQueryitemsAPIRequest 将 AlibabaHmMarketingItempoolQueryitemsAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHmMarketingItempoolQueryitemsAPIRequest(v *AlibabaHmMarketingItempoolQueryitemsAPIRequest) {
+	v.Reset()
+	poolAlibabaHmMarketingItempoolQueryitemsAPIRequest.Put(v)
 }

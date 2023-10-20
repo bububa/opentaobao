@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // WordVo 结构体
 type WordVo struct {
 	// 词
@@ -18,4 +22,28 @@ type WordVo struct {
 	BidwordId int64 `json:"bidword_id,omitempty" xml:"bidword_id,omitempty"`
 	// 抢位信息
 	BidStrategyInfo *BidStrategyVo `json:"bid_strategy_info,omitempty" xml:"bid_strategy_info,omitempty"`
+}
+
+var poolWordVo = sync.Pool{
+	New: func() any {
+		return new(WordVo)
+	},
+}
+
+// GetWordVo() 从对象池中获取WordVo
+func GetWordVo() *WordVo {
+	return poolWordVo.Get().(*WordVo)
+}
+
+// ReleaseWordVo 释放WordVo
+func ReleaseWordVo(v *WordVo) {
+	v.Word = ""
+	v.BidPrice = ""
+	v.Status = ""
+	v.CampaignId = 0
+	v.AdgroupId = 0
+	v.MatchScope = 0
+	v.BidwordId = 0
+	v.BidStrategyInfo = nil
+	poolWordVo.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // xiami.api.song.listenfile.get
 //
 // 获取歌曲试听文件
-func XiamiApiSongListenfileGet(clt *core.SDKClient, req *xiamiopen.XiamiApiSongListenfileGetAPIRequest, session string) (*xiamiopen.XiamiApiSongListenfileGetAPIResponse, error) {
-	var resp xiamiopen.XiamiApiSongListenfileGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func XiamiApiSongListenfileGet(clt *core.SDKClient, req *xiamiopen.XiamiApiSongListenfileGetAPIRequest, resp *xiamiopen.XiamiApiSongListenfileGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

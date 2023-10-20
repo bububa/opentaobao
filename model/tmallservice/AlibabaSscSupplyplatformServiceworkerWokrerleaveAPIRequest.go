@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaSscSupplyplatformServiceworkerWokrerleaveAPIRequest struct {
 // NewAlibabaSscSupplyplatformServiceworkerWokrerleaveRequest 初始化AlibabaSscSupplyplatformServiceworkerWokrerleaveAPIRequest对象
 func NewAlibabaSscSupplyplatformServiceworkerWokrerleaveRequest() *AlibabaSscSupplyplatformServiceworkerWokrerleaveAPIRequest {
 	return &AlibabaSscSupplyplatformServiceworkerWokrerleaveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSscSupplyplatformServiceworkerWokrerleaveAPIRequest) Reset() {
+	r._leaveBeginAndEndArray = r._leaveBeginAndEndArray[:0]
+	r._reason = ""
+	r._identityNumber = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaSscSupplyplatformServiceworkerWokrerleaveAPIRequest) SetIdentity
 // GetIdentityNumber IdentityNumber Getter
 func (r AlibabaSscSupplyplatformServiceworkerWokrerleaveAPIRequest) GetIdentityNumber() string {
 	return r._identityNumber
+}
+
+var poolAlibabaSscSupplyplatformServiceworkerWokrerleaveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSscSupplyplatformServiceworkerWokrerleaveRequest()
+	},
+}
+
+// GetAlibabaSscSupplyplatformServiceworkerWokrerleaveRequest 从 sync.Pool 获取 AlibabaSscSupplyplatformServiceworkerWokrerleaveAPIRequest
+func GetAlibabaSscSupplyplatformServiceworkerWokrerleaveAPIRequest() *AlibabaSscSupplyplatformServiceworkerWokrerleaveAPIRequest {
+	return poolAlibabaSscSupplyplatformServiceworkerWokrerleaveAPIRequest.Get().(*AlibabaSscSupplyplatformServiceworkerWokrerleaveAPIRequest)
+}
+
+// ReleaseAlibabaSscSupplyplatformServiceworkerWokrerleaveAPIRequest 将 AlibabaSscSupplyplatformServiceworkerWokrerleaveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSscSupplyplatformServiceworkerWokrerleaveAPIRequest(v *AlibabaSscSupplyplatformServiceworkerWokrerleaveAPIRequest) {
+	v.Reset()
+	poolAlibabaSscSupplyplatformServiceworkerWokrerleaveAPIRequest.Put(v)
 }

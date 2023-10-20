@@ -9,11 +9,6 @@ import (
 // alibaba.mos.goods.setprice
 //
 // 价格变更接口，供供应商修改价格时使用。
-func AlibabaMosGoodsSetprice(clt *core.SDKClient, req *moscm.AlibabaMosGoodsSetpriceAPIRequest, session string) (*moscm.AlibabaMosGoodsSetpriceAPIResponse, error) {
-	var resp moscm.AlibabaMosGoodsSetpriceAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMosGoodsSetprice(clt *core.SDKClient, req *moscm.AlibabaMosGoodsSetpriceAPIRequest, resp *moscm.AlibabaMosGoodsSetpriceAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

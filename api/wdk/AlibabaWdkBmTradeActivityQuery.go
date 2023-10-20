@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.bm.trade.activity.query
 //
 // 品牌营销的订单活动信息查询
-func AlibabaWdkBmTradeActivityQuery(clt *core.SDKClient, req *wdk.AlibabaWdkBmTradeActivityQueryAPIRequest, session string) (*wdk.AlibabaWdkBmTradeActivityQueryAPIResponse, error) {
-	var resp wdk.AlibabaWdkBmTradeActivityQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkBmTradeActivityQuery(clt *core.SDKClient, req *wdk.AlibabaWdkBmTradeActivityQueryAPIRequest, resp *wdk.AlibabaWdkBmTradeActivityQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

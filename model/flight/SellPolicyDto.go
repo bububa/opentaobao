@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // SellPolicyDto 结构体
 type SellPolicyDto struct {
 	// 政策ID
@@ -16,4 +20,27 @@ type SellPolicyDto struct {
 	PolicyType int64 `json:"policy_type,omitempty" xml:"policy_type,omitempty"`
 	// 销售方式：1-3 机+X，4-5返现
 	SaleModeCode int64 `json:"sale_mode_code,omitempty" xml:"sale_mode_code,omitempty"`
+}
+
+var poolSellPolicyDto = sync.Pool{
+	New: func() any {
+		return new(SellPolicyDto)
+	},
+}
+
+// GetSellPolicyDto() 从对象池中获取SellPolicyDto
+func GetSellPolicyDto() *SellPolicyDto {
+	return poolSellPolicyDto.Get().(*SellPolicyDto)
+}
+
+// ReleaseSellPolicyDto 释放SellPolicyDto
+func ReleaseSellPolicyDto(v *SellPolicyDto) {
+	v.PolicyId = ""
+	v.Remark = ""
+	v.PolicyCode = ""
+	v.Memo = ""
+	v.OutId = ""
+	v.PolicyType = 0
+	v.SaleModeCode = 0
+	poolSellPolicyDto.Put(v)
 }

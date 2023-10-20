@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // ModifyItemDto 结构体
 type ModifyItemDto struct {
 	// 票号
@@ -18,4 +22,28 @@ type ModifyItemDto struct {
 	ModifyFee int64 `json:"modify_fee,omitempty" xml:"modify_fee,omitempty"`
 	// 升舱费用
 	UpgradeFee int64 `json:"upgrade_fee,omitempty" xml:"upgrade_fee,omitempty"`
+}
+
+var poolModifyItemDto = sync.Pool{
+	New: func() any {
+		return new(ModifyItemDto)
+	},
+}
+
+// GetModifyItemDto() 从对象池中获取ModifyItemDto
+func GetModifyItemDto() *ModifyItemDto {
+	return poolModifyItemDto.Get().(*ModifyItemDto)
+}
+
+// ReleaseModifyItemDto 释放ModifyItemDto
+func ReleaseModifyItemDto(v *ModifyItemDto) {
+	v.Tickets = v.Tickets[:0]
+	v.AfterChangeSegments = v.AfterChangeSegments[:0]
+	v.BeforeChangeSegments = v.BeforeChangeSegments[:0]
+	v.TicketNos = v.TicketNos[:0]
+	v.PassengerName = ""
+	v.Pnr = ""
+	v.ModifyFee = 0
+	v.UpgradeFee = 0
+	poolModifyItemDto.Put(v)
 }

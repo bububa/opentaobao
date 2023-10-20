@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoLogisticsExpressModifyAppointAPIResponse struct {
 	TaobaoLogisticsExpressModifyAppointAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoLogisticsExpressModifyAppointAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoLogisticsExpressModifyAppointAPIResponseModel).Reset()
+}
+
 // TaobaoLogisticsExpressModifyAppointAPIResponseModel is 快递改约api 成功返回结果
 type TaobaoLogisticsExpressModifyAppointAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_express_modify_appoint_response"`
@@ -22,4 +29,27 @@ type TaobaoLogisticsExpressModifyAppointAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 调用结果
 	Result *SingleResultDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoLogisticsExpressModifyAppointAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoLogisticsExpressModifyAppointAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoLogisticsExpressModifyAppointAPIResponse)
+	},
+}
+
+// GetTaobaoLogisticsExpressModifyAppointAPIResponse 从 sync.Pool 获取 TaobaoLogisticsExpressModifyAppointAPIResponse
+func GetTaobaoLogisticsExpressModifyAppointAPIResponse() *TaobaoLogisticsExpressModifyAppointAPIResponse {
+	return poolTaobaoLogisticsExpressModifyAppointAPIResponse.Get().(*TaobaoLogisticsExpressModifyAppointAPIResponse)
+}
+
+// ReleaseTaobaoLogisticsExpressModifyAppointAPIResponse 将 TaobaoLogisticsExpressModifyAppointAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoLogisticsExpressModifyAppointAPIResponse(v *TaobaoLogisticsExpressModifyAppointAPIResponse) {
+	v.Reset()
+	poolTaobaoLogisticsExpressModifyAppointAPIResponse.Put(v)
 }

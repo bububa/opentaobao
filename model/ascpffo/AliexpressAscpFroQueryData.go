@@ -1,5 +1,9 @@
 package ascpffo
 
+import (
+	"sync"
+)
+
 // AliexpressAscpFroQueryData 结构体
 type AliexpressAscpFroQueryData struct {
 	// 用户订单号
@@ -28,4 +32,33 @@ type AliexpressAscpFroQueryData struct {
 	ReturnOrderCreateTime int64 `json:"return_order_create_time,omitempty" xml:"return_order_create_time,omitempty"`
 	// 退货入库时间戳
 	ReturnOrderInboundTime int64 `json:"return_order_inbound_time,omitempty" xml:"return_order_inbound_time,omitempty"`
+}
+
+var poolAliexpressAscpFroQueryData = sync.Pool{
+	New: func() any {
+		return new(AliexpressAscpFroQueryData)
+	},
+}
+
+// GetAliexpressAscpFroQueryData() 从对象池中获取AliexpressAscpFroQueryData
+func GetAliexpressAscpFroQueryData() *AliexpressAscpFroQueryData {
+	return poolAliexpressAscpFroQueryData.Get().(*AliexpressAscpFroQueryData)
+}
+
+// ReleaseAliexpressAscpFroQueryData 释放AliexpressAscpFroQueryData
+func ReleaseAliexpressAscpFroQueryData(v *AliexpressAscpFroQueryData) {
+	v.TradeOrderNo = ""
+	v.FulfillmentOrderNo = ""
+	v.OriginalLbxNo = ""
+	v.LbxNo = ""
+	v.ReceiverName = ""
+	v.ReceiverMobile = ""
+	v.ShippingProviderName = ""
+	v.TrackingNumber = ""
+	v.OrderStatus = ""
+	v.OrderType = ""
+	v.ExtendFields = ""
+	v.ReturnOrderCreateTime = 0
+	v.ReturnOrderInboundTime = 0
+	poolAliexpressAscpFroQueryData.Put(v)
 }

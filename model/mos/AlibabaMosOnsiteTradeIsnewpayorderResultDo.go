@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // AlibabaMosOnsiteTradeIsnewpayorderResultDo 结构体
 type AlibabaMosOnsiteTradeIsnewpayorderResultDo struct {
 	// errMsg
@@ -10,4 +14,24 @@ type AlibabaMosOnsiteTradeIsnewpayorderResultDo struct {
 	Data bool `json:"data,omitempty" xml:"data,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaMosOnsiteTradeIsnewpayorderResultDo = sync.Pool{
+	New: func() any {
+		return new(AlibabaMosOnsiteTradeIsnewpayorderResultDo)
+	},
+}
+
+// GetAlibabaMosOnsiteTradeIsnewpayorderResultDo() 从对象池中获取AlibabaMosOnsiteTradeIsnewpayorderResultDo
+func GetAlibabaMosOnsiteTradeIsnewpayorderResultDo() *AlibabaMosOnsiteTradeIsnewpayorderResultDo {
+	return poolAlibabaMosOnsiteTradeIsnewpayorderResultDo.Get().(*AlibabaMosOnsiteTradeIsnewpayorderResultDo)
+}
+
+// ReleaseAlibabaMosOnsiteTradeIsnewpayorderResultDo 释放AlibabaMosOnsiteTradeIsnewpayorderResultDo
+func ReleaseAlibabaMosOnsiteTradeIsnewpayorderResultDo(v *AlibabaMosOnsiteTradeIsnewpayorderResultDo) {
+	v.ErrMsg = ""
+	v.ErrCode = 0
+	v.Data = false
+	v.Success = false
+	poolAlibabaMosOnsiteTradeIsnewpayorderResultDo.Put(v)
 }

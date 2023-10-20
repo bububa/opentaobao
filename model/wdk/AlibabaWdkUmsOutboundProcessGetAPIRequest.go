@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkUmsOutboundProcessGetAPIRequest struct {
 // NewAlibabaWdkUmsOutboundProcessGetRequest 初始化AlibabaWdkUmsOutboundProcessGetAPIRequest对象
 func NewAlibabaWdkUmsOutboundProcessGetRequest() *AlibabaWdkUmsOutboundProcessGetAPIRequest {
 	return &AlibabaWdkUmsOutboundProcessGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkUmsOutboundProcessGetAPIRequest) Reset() {
+	r._warehouseCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkUmsOutboundProcessGetAPIRequest) SetWarehouseCode(_warehouseC
 // GetWarehouseCode WarehouseCode Getter
 func (r AlibabaWdkUmsOutboundProcessGetAPIRequest) GetWarehouseCode() string {
 	return r._warehouseCode
+}
+
+var poolAlibabaWdkUmsOutboundProcessGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkUmsOutboundProcessGetRequest()
+	},
+}
+
+// GetAlibabaWdkUmsOutboundProcessGetRequest 从 sync.Pool 获取 AlibabaWdkUmsOutboundProcessGetAPIRequest
+func GetAlibabaWdkUmsOutboundProcessGetAPIRequest() *AlibabaWdkUmsOutboundProcessGetAPIRequest {
+	return poolAlibabaWdkUmsOutboundProcessGetAPIRequest.Get().(*AlibabaWdkUmsOutboundProcessGetAPIRequest)
+}
+
+// ReleaseAlibabaWdkUmsOutboundProcessGetAPIRequest 将 AlibabaWdkUmsOutboundProcessGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkUmsOutboundProcessGetAPIRequest(v *AlibabaWdkUmsOutboundProcessGetAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkUmsOutboundProcessGetAPIRequest.Put(v)
 }

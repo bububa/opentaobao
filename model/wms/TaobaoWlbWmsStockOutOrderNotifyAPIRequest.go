@@ -2,6 +2,7 @@ package wms
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -53,8 +54,31 @@ type TaobaoWlbWmsStockOutOrderNotifyAPIRequest struct {
 // NewTaobaoWlbWmsStockOutOrderNotifyRequest 初始化TaobaoWlbWmsStockOutOrderNotifyAPIRequest对象
 func NewTaobaoWlbWmsStockOutOrderNotifyRequest() *TaobaoWlbWmsStockOutOrderNotifyAPIRequest {
 	return &TaobaoWlbWmsStockOutOrderNotifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(18),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbWmsStockOutOrderNotifyAPIRequest) Reset() {
+	r._orderItemList = r._orderItemList[:0]
+	r._storeCode = ""
+	r._orderCode = ""
+	r._outboundTypeDesc = ""
+	r._orderCreateTime = ""
+	r._sendTime = ""
+	r._transportMode = ""
+	r._carriersName = ""
+	r._pickName = ""
+	r._pickCall = ""
+	r._pickId = ""
+	r._carNo = ""
+	r._remark = ""
+	r._prevOrderCode = ""
+	r._extendFields = ""
+	r._orderType = 0
+	r._receiverInfo = nil
+	r._senderInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -306,4 +330,21 @@ func (r *TaobaoWlbWmsStockOutOrderNotifyAPIRequest) SetSenderInfo(_senderInfo *S
 // GetSenderInfo SenderInfo Getter
 func (r TaobaoWlbWmsStockOutOrderNotifyAPIRequest) GetSenderInfo() *Senderwlbwmsstockoutordernotify {
 	return r._senderInfo
+}
+
+var poolTaobaoWlbWmsStockOutOrderNotifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbWmsStockOutOrderNotifyRequest()
+	},
+}
+
+// GetTaobaoWlbWmsStockOutOrderNotifyRequest 从 sync.Pool 获取 TaobaoWlbWmsStockOutOrderNotifyAPIRequest
+func GetTaobaoWlbWmsStockOutOrderNotifyAPIRequest() *TaobaoWlbWmsStockOutOrderNotifyAPIRequest {
+	return poolTaobaoWlbWmsStockOutOrderNotifyAPIRequest.Get().(*TaobaoWlbWmsStockOutOrderNotifyAPIRequest)
+}
+
+// ReleaseTaobaoWlbWmsStockOutOrderNotifyAPIRequest 将 TaobaoWlbWmsStockOutOrderNotifyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbWmsStockOutOrderNotifyAPIRequest(v *TaobaoWlbWmsStockOutOrderNotifyAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbWmsStockOutOrderNotifyAPIRequest.Put(v)
 }

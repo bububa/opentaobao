@@ -2,6 +2,7 @@ package travel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -76,8 +77,41 @@ type AlitripFreetourProductUploadAPIRequest struct {
 // NewAlitripFreetourProductUploadRequest 初始化AlitripFreetourProductUploadAPIRequest对象
 func NewAlitripFreetourProductUploadRequest() *AlitripFreetourProductUploadAPIRequest {
 	return &AlitripFreetourProductUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(28),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripFreetourProductUploadAPIRequest) Reset() {
+	r._freeTourPackageInfo = r._freeTourPackageInfo[:0]
+	r._picUrls = r._picUrls[:0]
+	r._subTitles = r._subTitles[:0]
+	r._sellerCids = r._sellerCids[:0]
+	r._wapDesc = ""
+	r._descXml = ""
+	r._title = ""
+	r._itemCustomTag = ""
+	r._outProductId = ""
+	r._toLocations = ""
+	r._reserveLimit = ""
+	r._descHtml = ""
+	r._fromLocations = ""
+	r._refundRegulationsJson = ""
+	r._secondKill = ""
+	r._goTrafficType = 0
+	r._tripDay = 0
+	r._subStock = 0
+	r._backTrafficType = 0
+	r._confirmTime = 0
+	r._confirmType = 0
+	r._tripNight = 0
+	r._itemId = 0
+	r._refundType = 0
+	r._travellerTemplateId = 0
+	r._isOverseasTour = 0
+	r._packageOperation = 0
+	r._hasDiscount = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -459,4 +493,21 @@ func (r *AlitripFreetourProductUploadAPIRequest) SetHasDiscount(_hasDiscount boo
 // GetHasDiscount HasDiscount Getter
 func (r AlitripFreetourProductUploadAPIRequest) GetHasDiscount() bool {
 	return r._hasDiscount
+}
+
+var poolAlitripFreetourProductUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripFreetourProductUploadRequest()
+	},
+}
+
+// GetAlitripFreetourProductUploadRequest 从 sync.Pool 获取 AlitripFreetourProductUploadAPIRequest
+func GetAlitripFreetourProductUploadAPIRequest() *AlitripFreetourProductUploadAPIRequest {
+	return poolAlitripFreetourProductUploadAPIRequest.Get().(*AlitripFreetourProductUploadAPIRequest)
+}
+
+// ReleaseAlitripFreetourProductUploadAPIRequest 将 AlitripFreetourProductUploadAPIRequest 放入 sync.Pool
+func ReleaseAlitripFreetourProductUploadAPIRequest(v *AlitripFreetourProductUploadAPIRequest) {
+	v.Reset()
+	poolAlitripFreetourProductUploadAPIRequest.Put(v)
 }

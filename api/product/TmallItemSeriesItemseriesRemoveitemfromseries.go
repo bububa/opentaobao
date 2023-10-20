@@ -9,11 +9,6 @@ import (
 // tmall.item.series.itemseries.removeitemfromseries
 //
 // 从商品系列中移除商品
-func TmallItemSeriesItemseriesRemoveitemfromseries(clt *core.SDKClient, req *product.TmallItemSeriesItemseriesRemoveitemfromseriesAPIRequest, session string) (*product.TmallItemSeriesItemseriesRemoveitemfromseriesAPIResponse, error) {
-	var resp product.TmallItemSeriesItemseriesRemoveitemfromseriesAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallItemSeriesItemseriesRemoveitemfromseries(clt *core.SDKClient, req *product.TmallItemSeriesItemseriesRemoveitemfromseriesAPIRequest, resp *product.TmallItemSeriesItemseriesRemoveitemfromseriesAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

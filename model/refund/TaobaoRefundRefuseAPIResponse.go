@@ -2,6 +2,7 @@ package refund
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoRefundRefuseAPIResponse struct {
 	TaobaoRefundRefuseAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoRefundRefuseAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoRefundRefuseAPIResponseModel).Reset()
+}
+
 // TaobaoRefundRefuseAPIResponseModel is 卖家拒绝退款 成功返回结果
 type TaobaoRefundRefuseAPIResponseModel struct {
 	XMLName xml.Name `xml:"refund_refuse_response"`
@@ -24,4 +31,28 @@ type TaobaoRefundRefuseAPIResponseModel struct {
 	Refund *Refund `json:"refund,omitempty" xml:"refund,omitempty"`
 	// 拒绝退款操作是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoRefundRefuseAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Refund = nil
+	m.IsSuccess = false
+}
+
+var poolTaobaoRefundRefuseAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoRefundRefuseAPIResponse)
+	},
+}
+
+// GetTaobaoRefundRefuseAPIResponse 从 sync.Pool 获取 TaobaoRefundRefuseAPIResponse
+func GetTaobaoRefundRefuseAPIResponse() *TaobaoRefundRefuseAPIResponse {
+	return poolTaobaoRefundRefuseAPIResponse.Get().(*TaobaoRefundRefuseAPIResponse)
+}
+
+// ReleaseTaobaoRefundRefuseAPIResponse 将 TaobaoRefundRefuseAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoRefundRefuseAPIResponse(v *TaobaoRefundRefuseAPIResponse) {
+	v.Reset()
+	poolTaobaoRefundRefuseAPIResponse.Put(v)
 }

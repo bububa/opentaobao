@@ -2,6 +2,7 @@ package jipiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoJipiaoAgentOrderBdetailAPIRequest struct {
 // NewTaobaoJipiaoAgentOrderBdetailRequest 初始化TaobaoJipiaoAgentOrderBdetailAPIRequest对象
 func NewTaobaoJipiaoAgentOrderBdetailRequest() *TaobaoJipiaoAgentOrderBdetailAPIRequest {
 	return &TaobaoJipiaoAgentOrderBdetailAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJipiaoAgentOrderBdetailAPIRequest) Reset() {
+	r._orderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoJipiaoAgentOrderBdetailAPIRequest) SetOrderId(_orderId int64) err
 // GetOrderId OrderId Getter
 func (r TaobaoJipiaoAgentOrderBdetailAPIRequest) GetOrderId() int64 {
 	return r._orderId
+}
+
+var poolTaobaoJipiaoAgentOrderBdetailAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJipiaoAgentOrderBdetailRequest()
+	},
+}
+
+// GetTaobaoJipiaoAgentOrderBdetailRequest 从 sync.Pool 获取 TaobaoJipiaoAgentOrderBdetailAPIRequest
+func GetTaobaoJipiaoAgentOrderBdetailAPIRequest() *TaobaoJipiaoAgentOrderBdetailAPIRequest {
+	return poolTaobaoJipiaoAgentOrderBdetailAPIRequest.Get().(*TaobaoJipiaoAgentOrderBdetailAPIRequest)
+}
+
+// ReleaseTaobaoJipiaoAgentOrderBdetailAPIRequest 将 TaobaoJipiaoAgentOrderBdetailAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJipiaoAgentOrderBdetailAPIRequest(v *TaobaoJipiaoAgentOrderBdetailAPIRequest) {
+	v.Reset()
+	poolTaobaoJipiaoAgentOrderBdetailAPIRequest.Put(v)
 }

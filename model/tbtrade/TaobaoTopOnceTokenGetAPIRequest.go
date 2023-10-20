@@ -2,6 +2,7 @@ package tbtrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTopOnceTokenGetAPIRequest struct {
 // NewTaobaoTopOnceTokenGetRequest 初始化TaobaoTopOnceTokenGetAPIRequest对象
 func NewTaobaoTopOnceTokenGetRequest() *TaobaoTopOnceTokenGetAPIRequest {
 	return &TaobaoTopOnceTokenGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTopOnceTokenGetAPIRequest) Reset() {
+	r._secToken = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTopOnceTokenGetAPIRequest) SetSecToken(_secToken string) error {
 // GetSecToken SecToken Getter
 func (r TaobaoTopOnceTokenGetAPIRequest) GetSecToken() string {
 	return r._secToken
+}
+
+var poolTaobaoTopOnceTokenGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTopOnceTokenGetRequest()
+	},
+}
+
+// GetTaobaoTopOnceTokenGetRequest 从 sync.Pool 获取 TaobaoTopOnceTokenGetAPIRequest
+func GetTaobaoTopOnceTokenGetAPIRequest() *TaobaoTopOnceTokenGetAPIRequest {
+	return poolTaobaoTopOnceTokenGetAPIRequest.Get().(*TaobaoTopOnceTokenGetAPIRequest)
+}
+
+// ReleaseTaobaoTopOnceTokenGetAPIRequest 将 TaobaoTopOnceTokenGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTopOnceTokenGetAPIRequest(v *TaobaoTopOnceTokenGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTopOnceTokenGetAPIRequest.Put(v)
 }

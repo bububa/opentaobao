@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -47,8 +48,28 @@ type TmallServicecenterWorkcardReserveAPIRequest struct {
 // NewTmallServicecenterWorkcardReserveRequest 初始化TmallServicecenterWorkcardReserveAPIRequest对象
 func NewTmallServicecenterWorkcardReserveRequest() *TmallServicecenterWorkcardReserveAPIRequest {
 	return &TmallServicecenterWorkcardReserveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(15),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterWorkcardReserveAPIRequest) Reset() {
+	r._reserveTimeStart = ""
+	r._reserveTimeEnd = ""
+	r._workerMobile = ""
+	r._reserveRemark = ""
+	r._workerName = ""
+	r._attributes = ""
+	r._action = ""
+	r._fulfilType = ""
+	r._serviceStoreCode = ""
+	r._serviceStoreName = ""
+	r._reasonDesc = ""
+	r._workcardId = 0
+	r._type = 0
+	r._fulfilTaskId = 0
+	r._reasonCode = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -261,4 +282,21 @@ func (r *TmallServicecenterWorkcardReserveAPIRequest) SetReasonCode(_reasonCode 
 // GetReasonCode ReasonCode Getter
 func (r TmallServicecenterWorkcardReserveAPIRequest) GetReasonCode() int64 {
 	return r._reasonCode
+}
+
+var poolTmallServicecenterWorkcardReserveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterWorkcardReserveRequest()
+	},
+}
+
+// GetTmallServicecenterWorkcardReserveRequest 从 sync.Pool 获取 TmallServicecenterWorkcardReserveAPIRequest
+func GetTmallServicecenterWorkcardReserveAPIRequest() *TmallServicecenterWorkcardReserveAPIRequest {
+	return poolTmallServicecenterWorkcardReserveAPIRequest.Get().(*TmallServicecenterWorkcardReserveAPIRequest)
+}
+
+// ReleaseTmallServicecenterWorkcardReserveAPIRequest 将 TmallServicecenterWorkcardReserveAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterWorkcardReserveAPIRequest(v *TmallServicecenterWorkcardReserveAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterWorkcardReserveAPIRequest.Put(v)
 }

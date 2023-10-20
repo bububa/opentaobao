@@ -10,11 +10,6 @@ import (
 //
 // icbu开展 drop shipping 业务，阿里巴巴下单场景运费方案计算
 // alibaba Create order scenario freight calculation
-func AlibabaOrderFreightCalculate(clt *core.SDKClient, req *icbudropshipping.AlibabaOrderFreightCalculateAPIRequest, session string) (*icbudropshipping.AlibabaOrderFreightCalculateAPIResponse, error) {
-	var resp icbudropshipping.AlibabaOrderFreightCalculateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaOrderFreightCalculate(clt *core.SDKClient, req *icbudropshipping.AlibabaOrderFreightCalculateAPIRequest, resp *icbudropshipping.AlibabaOrderFreightCalculateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

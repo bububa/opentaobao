@@ -2,6 +2,7 @@ package fundplatform
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaFundplatformCardTemplateNewAPIResponse struct {
 	AlibabaFundplatformCardTemplateNewAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaFundplatformCardTemplateNewAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaFundplatformCardTemplateNewAPIResponseModel).Reset()
+}
+
 // AlibabaFundplatformCardTemplateNewAPIResponseModel is 新增实体卡模板 成功返回结果
 type AlibabaFundplatformCardTemplateNewAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_fundplatform_card_template_new_response"`
@@ -26,4 +33,29 @@ type AlibabaFundplatformCardTemplateNewAPIResponseModel struct {
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 是否调用成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaFundplatformCardTemplateNewAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultMessage = ""
+	m.ResultCode = ""
+	m.Success = false
+}
+
+var poolAlibabaFundplatformCardTemplateNewAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaFundplatformCardTemplateNewAPIResponse)
+	},
+}
+
+// GetAlibabaFundplatformCardTemplateNewAPIResponse 从 sync.Pool 获取 AlibabaFundplatformCardTemplateNewAPIResponse
+func GetAlibabaFundplatformCardTemplateNewAPIResponse() *AlibabaFundplatformCardTemplateNewAPIResponse {
+	return poolAlibabaFundplatformCardTemplateNewAPIResponse.Get().(*AlibabaFundplatformCardTemplateNewAPIResponse)
+}
+
+// ReleaseAlibabaFundplatformCardTemplateNewAPIResponse 将 AlibabaFundplatformCardTemplateNewAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaFundplatformCardTemplateNewAPIResponse(v *AlibabaFundplatformCardTemplateNewAPIResponse) {
+	v.Reset()
+	poolAlibabaFundplatformCardTemplateNewAPIResponse.Put(v)
 }

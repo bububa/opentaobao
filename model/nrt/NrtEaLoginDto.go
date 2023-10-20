@@ -1,5 +1,9 @@
 package nrt
 
+import (
+	"sync"
+)
+
 // NrtEaLoginDto 结构体
 type NrtEaLoginDto struct {
 	// 绑定类型
@@ -22,4 +26,30 @@ type NrtEaLoginDto struct {
 	EntId int64 `json:"ent_id,omitempty" xml:"ent_id,omitempty"`
 	// 操作时间戳
 	OperateTime int64 `json:"operate_time,omitempty" xml:"operate_time,omitempty"`
+}
+
+var poolNrtEaLoginDto = sync.Pool{
+	New: func() any {
+		return new(NrtEaLoginDto)
+	},
+}
+
+// GetNrtEaLoginDto() 从对象池中获取NrtEaLoginDto
+func GetNrtEaLoginDto() *NrtEaLoginDto {
+	return poolNrtEaLoginDto.Get().(*NrtEaLoginDto)
+}
+
+// ReleaseNrtEaLoginDto 释放NrtEaLoginDto
+func ReleaseNrtEaLoginDto(v *NrtEaLoginDto) {
+	v.ActionType = ""
+	v.EntName = ""
+	v.BizCode = ""
+	v.Mobile = ""
+	v.UserId = ""
+	v.Scene = ""
+	v.RedirectUrl = ""
+	v.BindSiteUserId = 0
+	v.EntId = 0
+	v.OperateTime = 0
+	poolNrtEaLoginDto.Put(v)
 }

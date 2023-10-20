@@ -1,5 +1,9 @@
 package hotel
 
+import (
+	"sync"
+)
+
 // CheckInCheckOutPrice 结构体
 type CheckInCheckOutPrice struct {
 	// 飞猪营销优惠列表
@@ -16,4 +20,27 @@ type CheckInCheckOutPrice struct {
 	BreakfastCount int64 `json:"breakfast_count,omitempty" xml:"breakfast_count,omitempty"`
 	// 商品营销前报价，精度（分）
 	OriginalPrice int64 `json:"original_price,omitempty" xml:"original_price,omitempty"`
+}
+
+var poolCheckInCheckOutPrice = sync.Pool{
+	New: func() any {
+		return new(CheckInCheckOutPrice)
+	},
+}
+
+// GetCheckInCheckOutPrice() 从对象池中获取CheckInCheckOutPrice
+func GetCheckInCheckOutPrice() *CheckInCheckOutPrice {
+	return poolCheckInCheckOutPrice.Get().(*CheckInCheckOutPrice)
+}
+
+// ReleaseCheckInCheckOutPrice 释放CheckInCheckOutPrice
+func ReleaseCheckInCheckOutPrice(v *CheckInCheckOutPrice) {
+	v.Promotions = v.Promotions[:0]
+	v.CheckinDate = ""
+	v.CheckoutDate = ""
+	v.StayDays = 0
+	v.Price = 0
+	v.BreakfastCount = 0
+	v.OriginalPrice = 0
+	poolCheckInCheckOutPrice.Put(v)
 }

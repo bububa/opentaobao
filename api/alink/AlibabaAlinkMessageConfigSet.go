@@ -9,11 +9,6 @@ import (
 // alibaba.alink.message.config.set
 //
 // 阿里智能消息开关
-func AlibabaAlinkMessageConfigSet(clt *core.SDKClient, req *alink.AlibabaAlinkMessageConfigSetAPIRequest, session string) (*alink.AlibabaAlinkMessageConfigSetAPIResponse, error) {
-	var resp alink.AlibabaAlinkMessageConfigSetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlinkMessageConfigSet(clt *core.SDKClient, req *alink.AlibabaAlinkMessageConfigSetAPIRequest, resp *alink.AlibabaAlinkMessageConfigSetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

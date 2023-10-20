@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoBanamadpcItemRenderAPIRequest struct {
 // NewTaobaoBanamadpcItemRenderRequest 初始化TaobaoBanamadpcItemRenderAPIRequest对象
 func NewTaobaoBanamadpcItemRenderRequest() *TaobaoBanamadpcItemRenderAPIRequest {
 	return &TaobaoBanamadpcItemRenderAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBanamadpcItemRenderAPIRequest) Reset() {
+	r._catId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoBanamadpcItemRenderAPIRequest) SetCatId(_catId int64) error {
 // GetCatId CatId Getter
 func (r TaobaoBanamadpcItemRenderAPIRequest) GetCatId() int64 {
 	return r._catId
+}
+
+var poolTaobaoBanamadpcItemRenderAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBanamadpcItemRenderRequest()
+	},
+}
+
+// GetTaobaoBanamadpcItemRenderRequest 从 sync.Pool 获取 TaobaoBanamadpcItemRenderAPIRequest
+func GetTaobaoBanamadpcItemRenderAPIRequest() *TaobaoBanamadpcItemRenderAPIRequest {
+	return poolTaobaoBanamadpcItemRenderAPIRequest.Get().(*TaobaoBanamadpcItemRenderAPIRequest)
+}
+
+// ReleaseTaobaoBanamadpcItemRenderAPIRequest 将 TaobaoBanamadpcItemRenderAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBanamadpcItemRenderAPIRequest(v *TaobaoBanamadpcItemRenderAPIRequest) {
+	v.Reset()
+	poolTaobaoBanamadpcItemRenderAPIRequest.Put(v)
 }

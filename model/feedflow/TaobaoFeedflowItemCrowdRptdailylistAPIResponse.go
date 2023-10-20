@@ -2,6 +2,7 @@ package feedflow
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoFeedflowItemCrowdRptdailylistAPIResponse struct {
 	TaobaoFeedflowItemCrowdRptdailylistAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoFeedflowItemCrowdRptdailylistAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoFeedflowItemCrowdRptdailylistAPIResponseModel).Reset()
+}
+
 // TaobaoFeedflowItemCrowdRptdailylistAPIResponseModel is 定向分日数据查询 成功返回结果
 type TaobaoFeedflowItemCrowdRptdailylistAPIResponseModel struct {
 	XMLName xml.Name `xml:"feedflow_item_crowd_rptdailylist_response"`
@@ -22,4 +29,27 @@ type TaobaoFeedflowItemCrowdRptdailylistAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
 	Result *TaobaoFeedflowItemCrowdRptdailylistResultDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoFeedflowItemCrowdRptdailylistAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoFeedflowItemCrowdRptdailylistAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoFeedflowItemCrowdRptdailylistAPIResponse)
+	},
+}
+
+// GetTaobaoFeedflowItemCrowdRptdailylistAPIResponse 从 sync.Pool 获取 TaobaoFeedflowItemCrowdRptdailylistAPIResponse
+func GetTaobaoFeedflowItemCrowdRptdailylistAPIResponse() *TaobaoFeedflowItemCrowdRptdailylistAPIResponse {
+	return poolTaobaoFeedflowItemCrowdRptdailylistAPIResponse.Get().(*TaobaoFeedflowItemCrowdRptdailylistAPIResponse)
+}
+
+// ReleaseTaobaoFeedflowItemCrowdRptdailylistAPIResponse 将 TaobaoFeedflowItemCrowdRptdailylistAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoFeedflowItemCrowdRptdailylistAPIResponse(v *TaobaoFeedflowItemCrowdRptdailylistAPIResponse) {
+	v.Reset()
+	poolTaobaoFeedflowItemCrowdRptdailylistAPIResponse.Put(v)
 }

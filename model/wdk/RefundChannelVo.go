@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // RefundChannelVo 结构体
 type RefundChannelVo struct {
 	// 渠道码
@@ -16,4 +20,27 @@ type RefundChannelVo struct {
 	RefundedAmount int64 `json:"refunded_amount,omitempty" xml:"refunded_amount,omitempty"`
 	// 渠道退款状态
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolRefundChannelVo = sync.Pool{
+	New: func() any {
+		return new(RefundChannelVo)
+	},
+}
+
+// GetRefundChannelVo() 从对象池中获取RefundChannelVo
+func GetRefundChannelVo() *RefundChannelVo {
+	return poolRefundChannelVo.Get().(*RefundChannelVo)
+}
+
+// ReleaseRefundChannelVo 释放RefundChannelVo
+func ReleaseRefundChannelVo(v *RefundChannelVo) {
+	v.Code = ""
+	v.Name = ""
+	v.PayCode = ""
+	v.UniqueId = ""
+	v.Amount = 0
+	v.RefundedAmount = 0
+	v.Status = 0
+	poolRefundChannelVo.Put(v)
 }

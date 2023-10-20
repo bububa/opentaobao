@@ -1,5 +1,9 @@
 package wms
 
+import (
+	"sync"
+)
+
 // Tmsorder 结构体
 type Tmsorder struct {
 	// 包裹里面的商品信息列表
@@ -20,4 +24,29 @@ type Tmsorder struct {
 	PackageLength int64 `json:"package_length,omitempty" xml:"package_length,omitempty"`
 	// 包裹重量，单位：克
 	PackageWeight int64 `json:"package_weight,omitempty" xml:"package_weight,omitempty"`
+}
+
+var poolTmsorder = sync.Pool{
+	New: func() any {
+		return new(Tmsorder)
+	},
+}
+
+// GetTmsorder() 从对象池中获取Tmsorder
+func GetTmsorder() *Tmsorder {
+	return poolTmsorder.Get().(*Tmsorder)
+}
+
+// ReleaseTmsorder 释放Tmsorder
+func ReleaseTmsorder(v *Tmsorder) {
+	v.TmsItemList = v.TmsItemList[:0]
+	v.PackageMaterialList = v.PackageMaterialList[:0]
+	v.PackageCode = ""
+	v.TmsOrderCode = ""
+	v.TmsCode = ""
+	v.PackageHeight = 0
+	v.PackageWidth = 0
+	v.PackageLength = 0
+	v.PackageWeight = 0
+	poolTmsorder.Put(v)
 }

@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlitripMerchantGalaxyTriggerEventAPIRequest struct {
 // NewAlitripMerchantGalaxyTriggerEventRequest 初始化AlitripMerchantGalaxyTriggerEventAPIRequest对象
 func NewAlitripMerchantGalaxyTriggerEventRequest() *AlitripMerchantGalaxyTriggerEventAPIRequest {
 	return &AlitripMerchantGalaxyTriggerEventAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyTriggerEventAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._eventParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlitripMerchantGalaxyTriggerEventAPIRequest) SetEventParam(_eventParam 
 // GetEventParam EventParam Getter
 func (r AlitripMerchantGalaxyTriggerEventAPIRequest) GetEventParam() *EventParam {
 	return r._eventParam
+}
+
+var poolAlitripMerchantGalaxyTriggerEventAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyTriggerEventRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyTriggerEventRequest 从 sync.Pool 获取 AlitripMerchantGalaxyTriggerEventAPIRequest
+func GetAlitripMerchantGalaxyTriggerEventAPIRequest() *AlitripMerchantGalaxyTriggerEventAPIRequest {
+	return poolAlitripMerchantGalaxyTriggerEventAPIRequest.Get().(*AlitripMerchantGalaxyTriggerEventAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyTriggerEventAPIRequest 将 AlitripMerchantGalaxyTriggerEventAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyTriggerEventAPIRequest(v *AlitripMerchantGalaxyTriggerEventAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyTriggerEventAPIRequest.Put(v)
 }

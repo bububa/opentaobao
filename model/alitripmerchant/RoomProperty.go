@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // RoomProperty 结构体
 type RoomProperty struct {
 	// 面积
@@ -22,4 +26,30 @@ type RoomProperty struct {
 	WindowType string `json:"window_type,omitempty" xml:"window_type,omitempty"`
 	// 最大人数
 	MaxOccupancy int64 `json:"max_occupancy,omitempty" xml:"max_occupancy,omitempty"`
+}
+
+var poolRoomProperty = sync.Pool{
+	New: func() any {
+		return new(RoomProperty)
+	},
+}
+
+// GetRoomProperty() 从对象池中获取RoomProperty
+func GetRoomProperty() *RoomProperty {
+	return poolRoomProperty.Get().(*RoomProperty)
+}
+
+// ReleaseRoomProperty 释放RoomProperty
+func ReleaseRoomProperty(v *RoomProperty) {
+	v.Area = ""
+	v.NetworkService = ""
+	v.BedTypeIcon = ""
+	v.MaxOccupancyIcon = ""
+	v.Floor = ""
+	v.FloorIcon = ""
+	v.AreaIcon = ""
+	v.WindowTypeIcon = ""
+	v.WindowType = ""
+	v.MaxOccupancy = 0
+	poolRoomProperty.Put(v)
 }

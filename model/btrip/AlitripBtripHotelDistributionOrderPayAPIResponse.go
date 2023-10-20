@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripBtripHotelDistributionOrderPayAPIResponse struct {
 	AlitripBtripHotelDistributionOrderPayAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripBtripHotelDistributionOrderPayAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripBtripHotelDistributionOrderPayAPIResponseModel).Reset()
+}
+
 // AlitripBtripHotelDistributionOrderPayAPIResponseModel is 商旅酒店分销订单支付 成功返回结果
 type AlitripBtripHotelDistributionOrderPayAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_hotel_distribution_order_pay_response"`
@@ -26,4 +33,29 @@ type AlitripBtripHotelDistributionOrderPayAPIResponseModel struct {
 	ResultCode int64 `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 是否支付成功
 	Module bool `json:"module,omitempty" xml:"module,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripBtripHotelDistributionOrderPayAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultMsg = ""
+	m.ResultCode = 0
+	m.Module = false
+}
+
+var poolAlitripBtripHotelDistributionOrderPayAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripBtripHotelDistributionOrderPayAPIResponse)
+	},
+}
+
+// GetAlitripBtripHotelDistributionOrderPayAPIResponse 从 sync.Pool 获取 AlitripBtripHotelDistributionOrderPayAPIResponse
+func GetAlitripBtripHotelDistributionOrderPayAPIResponse() *AlitripBtripHotelDistributionOrderPayAPIResponse {
+	return poolAlitripBtripHotelDistributionOrderPayAPIResponse.Get().(*AlitripBtripHotelDistributionOrderPayAPIResponse)
+}
+
+// ReleaseAlitripBtripHotelDistributionOrderPayAPIResponse 将 AlitripBtripHotelDistributionOrderPayAPIResponse 保存到 sync.Pool
+func ReleaseAlitripBtripHotelDistributionOrderPayAPIResponse(v *AlitripBtripHotelDistributionOrderPayAPIResponse) {
+	v.Reset()
+	poolAlitripBtripHotelDistributionOrderPayAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package omniorder
 
+import (
+	"sync"
+)
+
 // StoreConsignedResult 结构体
 type StoreConsignedResult struct {
 	// 扩展字段
@@ -30,4 +34,34 @@ type StoreConsignedResult struct {
 	PackageId int64 `json:"package_id,omitempty" xml:"package_id,omitempty"`
 	// 主订单Id
 	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
+}
+
+var poolStoreConsignedResult = sync.Pool{
+	New: func() any {
+		return new(StoreConsignedResult)
+	},
+}
+
+// GetStoreConsignedResult() 从对象池中获取StoreConsignedResult
+func GetStoreConsignedResult() *StoreConsignedResult {
+	return poolStoreConsignedResult.Get().(*StoreConsignedResult)
+}
+
+// ReleaseStoreConsignedResult 释放StoreConsignedResult
+func ReleaseStoreConsignedResult(v *StoreConsignedResult) {
+	v.Attributes = ""
+	v.Code = ""
+	v.LogisticCompany = ""
+	v.LogisticCompanyCode = ""
+	v.LogisticId = ""
+	v.LogisticNo = ""
+	v.Message = ""
+	v.Operator = ""
+	v.StoreId = ""
+	v.StoreName = ""
+	v.StoreType = ""
+	v.SubOid = 0
+	v.PackageId = 0
+	v.Tid = 0
+	poolStoreConsignedResult.Put(v)
 }

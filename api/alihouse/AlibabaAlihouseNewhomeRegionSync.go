@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.newhome.region.sync
 //
 // 城区数据同步
-func AlibabaAlihouseNewhomeRegionSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeRegionSyncAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeRegionSyncAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeRegionSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseNewhomeRegionSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeRegionSyncAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeRegionSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

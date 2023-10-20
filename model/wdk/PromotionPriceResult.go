@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // PromotionPriceResult 结构体
 type PromotionPriceResult struct {
 	// 促销信息记录
@@ -18,4 +22,28 @@ type PromotionPriceResult struct {
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolPromotionPriceResult = sync.Pool{
+	New: func() any {
+		return new(PromotionPriceResult)
+	},
+}
+
+// GetPromotionPriceResult() 从对象池中获取PromotionPriceResult
+func GetPromotionPriceResult() *PromotionPriceResult {
+	return poolPromotionPriceResult.Get().(*PromotionPriceResult)
+}
+
+// ReleasePromotionPriceResult 释放PromotionPriceResult
+func ReleasePromotionPriceResult(v *PromotionPriceResult) {
+	v.ItemList = v.ItemList[:0]
+	v.ErrMsg = ""
+	v.ErrCode = ""
+	v.Total = 0
+	v.PageCount = 0
+	v.PageSize = 0
+	v.PageIndex = 0
+	v.Success = false
+	poolPromotionPriceResult.Put(v)
 }

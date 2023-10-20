@@ -2,6 +2,7 @@ package train
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTrainAgentFreechildrendetailQueryVtwoAPIRequest struct {
 // NewTaobaoTrainAgentFreechildrendetailQueryVtwoRequest 初始化TaobaoTrainAgentFreechildrendetailQueryVtwoAPIRequest对象
 func NewTaobaoTrainAgentFreechildrendetailQueryVtwoRequest() *TaobaoTrainAgentFreechildrendetailQueryVtwoAPIRequest {
 	return &TaobaoTrainAgentFreechildrendetailQueryVtwoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTrainAgentFreechildrendetailQueryVtwoAPIRequest) Reset() {
+	r._freeChildrenTicketDetailRq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTrainAgentFreechildrendetailQueryVtwoAPIRequest) SetFreeChildrenT
 // GetFreeChildrenTicketDetailRq FreeChildrenTicketDetailRq Getter
 func (r TaobaoTrainAgentFreechildrendetailQueryVtwoAPIRequest) GetFreeChildrenTicketDetailRq() *FreeChildrenTicketDetailRq {
 	return r._freeChildrenTicketDetailRq
+}
+
+var poolTaobaoTrainAgentFreechildrendetailQueryVtwoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTrainAgentFreechildrendetailQueryVtwoRequest()
+	},
+}
+
+// GetTaobaoTrainAgentFreechildrendetailQueryVtwoRequest 从 sync.Pool 获取 TaobaoTrainAgentFreechildrendetailQueryVtwoAPIRequest
+func GetTaobaoTrainAgentFreechildrendetailQueryVtwoAPIRequest() *TaobaoTrainAgentFreechildrendetailQueryVtwoAPIRequest {
+	return poolTaobaoTrainAgentFreechildrendetailQueryVtwoAPIRequest.Get().(*TaobaoTrainAgentFreechildrendetailQueryVtwoAPIRequest)
+}
+
+// ReleaseTaobaoTrainAgentFreechildrendetailQueryVtwoAPIRequest 将 TaobaoTrainAgentFreechildrendetailQueryVtwoAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTrainAgentFreechildrendetailQueryVtwoAPIRequest(v *TaobaoTrainAgentFreechildrendetailQueryVtwoAPIRequest) {
+	v.Reset()
+	poolTaobaoTrainAgentFreechildrendetailQueryVtwoAPIRequest.Put(v)
 }

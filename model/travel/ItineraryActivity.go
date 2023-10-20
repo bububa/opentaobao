@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // ItineraryActivity 结构体
 type ItineraryActivity struct {
 	// 活动图片列表，多个图片以英文逗号分隔
@@ -12,4 +16,25 @@ type ItineraryActivity struct {
 	Hour int64 `json:"hour,omitempty" xml:"hour,omitempty"`
 	// 活动预计时长，分钟数
 	Minute int64 `json:"minute,omitempty" xml:"minute,omitempty"`
+}
+
+var poolItineraryActivity = sync.Pool{
+	New: func() any {
+		return new(ItineraryActivity)
+	},
+}
+
+// GetItineraryActivity() 从对象池中获取ItineraryActivity
+func GetItineraryActivity() *ItineraryActivity {
+	return poolItineraryActivity.Get().(*ItineraryActivity)
+}
+
+// ReleaseItineraryActivity 释放ItineraryActivity
+func ReleaseItineraryActivity(v *ItineraryActivity) {
+	v.Images = v.Images[:0]
+	v.Title = ""
+	v.Txt = ""
+	v.Hour = 0
+	v.Minute = 0
+	poolItineraryActivity.Put(v)
 }

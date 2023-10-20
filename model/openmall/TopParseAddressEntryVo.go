@@ -1,5 +1,9 @@
 package openmall
 
+import (
+	"sync"
+)
+
 // TopParseAddressEntryVo 结构体
 type TopParseAddressEntryVo struct {
 	// 地区编码
@@ -8,4 +12,23 @@ type TopParseAddressEntryVo struct {
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 地区级别，2代表省、自治区、直辖市、特别行政区；3代表地级市、 地区、盟、自治州；4代表县、区、自治县、旗；5代表乡、镇、街道，openmall中请取第三或者第四级别地域编码传入即可
 	Scope int64 `json:"scope,omitempty" xml:"scope,omitempty"`
+}
+
+var poolTopParseAddressEntryVo = sync.Pool{
+	New: func() any {
+		return new(TopParseAddressEntryVo)
+	},
+}
+
+// GetTopParseAddressEntryVo() 从对象池中获取TopParseAddressEntryVo
+func GetTopParseAddressEntryVo() *TopParseAddressEntryVo {
+	return poolTopParseAddressEntryVo.Get().(*TopParseAddressEntryVo)
+}
+
+// ReleaseTopParseAddressEntryVo 释放TopParseAddressEntryVo
+func ReleaseTopParseAddressEntryVo(v *TopParseAddressEntryVo) {
+	v.Code = ""
+	v.Name = ""
+	v.Scope = 0
+	poolTopParseAddressEntryVo.Put(v)
 }

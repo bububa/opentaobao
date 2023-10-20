@@ -2,6 +2,7 @@ package ihome
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -26,8 +27,17 @@ type AlibabaIhomeCtomCaseMainpicUpdateAPIRequest struct {
 // NewAlibabaIhomeCtomCaseMainpicUpdateRequest 初始化AlibabaIhomeCtomCaseMainpicUpdateAPIRequest对象
 func NewAlibabaIhomeCtomCaseMainpicUpdateRequest() *AlibabaIhomeCtomCaseMainpicUpdateAPIRequest {
 	return &AlibabaIhomeCtomCaseMainpicUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIhomeCtomCaseMainpicUpdateAPIRequest) Reset() {
+	r._traceId = ""
+	r._caseId = ""
+	r._picUrl = ""
+	r._picType = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -97,4 +107,21 @@ func (r *AlibabaIhomeCtomCaseMainpicUpdateAPIRequest) SetPicType(_picType string
 // GetPicType PicType Getter
 func (r AlibabaIhomeCtomCaseMainpicUpdateAPIRequest) GetPicType() string {
 	return r._picType
+}
+
+var poolAlibabaIhomeCtomCaseMainpicUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIhomeCtomCaseMainpicUpdateRequest()
+	},
+}
+
+// GetAlibabaIhomeCtomCaseMainpicUpdateRequest 从 sync.Pool 获取 AlibabaIhomeCtomCaseMainpicUpdateAPIRequest
+func GetAlibabaIhomeCtomCaseMainpicUpdateAPIRequest() *AlibabaIhomeCtomCaseMainpicUpdateAPIRequest {
+	return poolAlibabaIhomeCtomCaseMainpicUpdateAPIRequest.Get().(*AlibabaIhomeCtomCaseMainpicUpdateAPIRequest)
+}
+
+// ReleaseAlibabaIhomeCtomCaseMainpicUpdateAPIRequest 将 AlibabaIhomeCtomCaseMainpicUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIhomeCtomCaseMainpicUpdateAPIRequest(v *AlibabaIhomeCtomCaseMainpicUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaIhomeCtomCaseMainpicUpdateAPIRequest.Put(v)
 }

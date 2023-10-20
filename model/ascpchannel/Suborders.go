@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // Suborders 结构体
 type Suborders struct {
 	// 外部skuId
@@ -14,4 +18,26 @@ type Suborders struct {
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 	// 产品id
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
+}
+
+var poolSuborders = sync.Pool{
+	New: func() any {
+		return new(Suborders)
+	},
+}
+
+// GetSuborders() 从对象池中获取Suborders
+func GetSuborders() *Suborders {
+	return poolSuborders.Get().(*Suborders)
+}
+
+// ReleaseSuborders 释放Suborders
+func ReleaseSuborders(v *Suborders) {
+	v.OutSkuId = ""
+	v.OutItemId = ""
+	v.OutSubOrderNo = ""
+	v.SubSaleOrderNo = ""
+	v.SkuId = 0
+	v.ProductId = 0
+	poolSuborders.Put(v)
 }

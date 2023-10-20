@@ -9,11 +9,6 @@ import (
 // taobao.simba.keywords.pricevon.set
 //
 // 设置一批关键词的信息，包含无线出价、计算机出价和关键词匹配方式
-func TaobaoSimbaKeywordsPricevonSet(clt *core.SDKClient, req *simba.TaobaoSimbaKeywordsPricevonSetAPIRequest, session string) (*simba.TaobaoSimbaKeywordsPricevonSetAPIResponse, error) {
-	var resp simba.TaobaoSimbaKeywordsPricevonSetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaKeywordsPricevonSet(clt *core.SDKClient, req *simba.TaobaoSimbaKeywordsPricevonSetAPIRequest, resp *simba.TaobaoSimbaKeywordsPricevonSetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

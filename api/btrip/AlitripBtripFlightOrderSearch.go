@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.flight.order.search
 //
 // 第三方OA厂商获取机票订单列表
-func AlitripBtripFlightOrderSearch(clt *core.SDKClient, req *btrip.AlitripBtripFlightOrderSearchAPIRequest, session string) (*btrip.AlitripBtripFlightOrderSearchAPIResponse, error) {
-	var resp btrip.AlitripBtripFlightOrderSearchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripFlightOrderSearch(clt *core.SDKClient, req *btrip.AlitripBtripFlightOrderSearchAPIRequest, resp *btrip.AlitripBtripFlightOrderSearchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package wms
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type CainiaoCrmOmsRuleSyncAPIRequest struct {
 // NewCainiaoCrmOmsRuleSyncRequest 初始化CainiaoCrmOmsRuleSyncAPIRequest对象
 func NewCainiaoCrmOmsRuleSyncRequest() *CainiaoCrmOmsRuleSyncAPIRequest {
 	return &CainiaoCrmOmsRuleSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoCrmOmsRuleSyncAPIRequest) Reset() {
+	r._shopCode = ""
+	r._checkRuleMsg = ""
+	r._otherRule = ""
+	r._mergeOrderCycle = 0
+	r._isOpenCnauto = false
+	r._isAutoCheck = false
+	r._isSysMergeOrder = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *CainiaoCrmOmsRuleSyncAPIRequest) SetIsSysMergeOrder(_isSysMergeOrder bo
 // GetIsSysMergeOrder IsSysMergeOrder Getter
 func (r CainiaoCrmOmsRuleSyncAPIRequest) GetIsSysMergeOrder() bool {
 	return r._isSysMergeOrder
+}
+
+var poolCainiaoCrmOmsRuleSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoCrmOmsRuleSyncRequest()
+	},
+}
+
+// GetCainiaoCrmOmsRuleSyncRequest 从 sync.Pool 获取 CainiaoCrmOmsRuleSyncAPIRequest
+func GetCainiaoCrmOmsRuleSyncAPIRequest() *CainiaoCrmOmsRuleSyncAPIRequest {
+	return poolCainiaoCrmOmsRuleSyncAPIRequest.Get().(*CainiaoCrmOmsRuleSyncAPIRequest)
+}
+
+// ReleaseCainiaoCrmOmsRuleSyncAPIRequest 将 CainiaoCrmOmsRuleSyncAPIRequest 放入 sync.Pool
+func ReleaseCainiaoCrmOmsRuleSyncAPIRequest(v *CainiaoCrmOmsRuleSyncAPIRequest) {
+	v.Reset()
+	poolCainiaoCrmOmsRuleSyncAPIRequest.Put(v)
 }

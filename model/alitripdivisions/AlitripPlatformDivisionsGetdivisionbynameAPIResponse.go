@@ -2,6 +2,7 @@ package alitripdivisions
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripPlatformDivisionsGetdivisionbynameAPIResponse struct {
 	AlitripPlatformDivisionsGetdivisionbynameAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripPlatformDivisionsGetdivisionbynameAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripPlatformDivisionsGetdivisionbynameAPIResponseModel).Reset()
+}
+
 // AlitripPlatformDivisionsGetdivisionbynameAPIResponseModel is 根据中文名称与行政区划级别查询行政区划数据 成功返回结果
 type AlitripPlatformDivisionsGetdivisionbynameAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_platform_divisions_getdivisionbyname_response"`
@@ -22,4 +29,27 @@ type AlitripPlatformDivisionsGetdivisionbynameAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Results []string `json:"results,omitempty" xml:"results>string,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripPlatformDivisionsGetdivisionbynameAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Results = m.Results[:0]
+}
+
+var poolAlitripPlatformDivisionsGetdivisionbynameAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripPlatformDivisionsGetdivisionbynameAPIResponse)
+	},
+}
+
+// GetAlitripPlatformDivisionsGetdivisionbynameAPIResponse 从 sync.Pool 获取 AlitripPlatformDivisionsGetdivisionbynameAPIResponse
+func GetAlitripPlatformDivisionsGetdivisionbynameAPIResponse() *AlitripPlatformDivisionsGetdivisionbynameAPIResponse {
+	return poolAlitripPlatformDivisionsGetdivisionbynameAPIResponse.Get().(*AlitripPlatformDivisionsGetdivisionbynameAPIResponse)
+}
+
+// ReleaseAlitripPlatformDivisionsGetdivisionbynameAPIResponse 将 AlitripPlatformDivisionsGetdivisionbynameAPIResponse 保存到 sync.Pool
+func ReleaseAlitripPlatformDivisionsGetdivisionbynameAPIResponse(v *AlitripPlatformDivisionsGetdivisionbynameAPIResponse) {
+	v.Reset()
+	poolAlitripPlatformDivisionsGetdivisionbynameAPIResponse.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.examination.reserve.state
 //
 // 体检机构对接_体检状态查询
-func AlibabaAlihealthExaminationReserveState(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationReserveStateAPIRequest, session string) (*examination.AlibabaAlihealthExaminationReserveStateAPIResponse, error) {
-	var resp examination.AlibabaAlihealthExaminationReserveStateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthExaminationReserveState(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationReserveStateAPIRequest, resp *examination.AlibabaAlihealthExaminationReserveStateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

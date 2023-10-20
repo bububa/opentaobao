@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.im.receive.model.sync
 //
 // IM承接方式同步
-func AlibabaAlihouseImReceiveModelSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseImReceiveModelSyncAPIRequest, session string) (*alihouse.AlibabaAlihouseImReceiveModelSyncAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseImReceiveModelSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseImReceiveModelSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseImReceiveModelSyncAPIRequest, resp *alihouse.AlibabaAlihouseImReceiveModelSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package game
 
+import (
+	"sync"
+)
+
 // AppleTopActivateNotifyDo 结构体
 type AppleTopActivateNotifyDo struct {
 	// 电子卡卡号
@@ -18,4 +22,28 @@ type AppleTopActivateNotifyDo struct {
 	GatewayOrderNo string `json:"gateway_order_no,omitempty" xml:"gateway_order_no,omitempty"`
 	// 电子卡密码
 	CardPass string `json:"card_pass,omitempty" xml:"card_pass,omitempty"`
+}
+
+var poolAppleTopActivateNotifyDo = sync.Pool{
+	New: func() any {
+		return new(AppleTopActivateNotifyDo)
+	},
+}
+
+// GetAppleTopActivateNotifyDo() 从对象池中获取AppleTopActivateNotifyDo
+func GetAppleTopActivateNotifyDo() *AppleTopActivateNotifyDo {
+	return poolAppleTopActivateNotifyDo.Get().(*AppleTopActivateNotifyDo)
+}
+
+// ReleaseAppleTopActivateNotifyDo 释放AppleTopActivateNotifyDo
+func ReleaseAppleTopActivateNotifyDo(v *AppleTopActivateNotifyDo) {
+	v.CardNo = ""
+	v.GoodsId = ""
+	v.OrderNo = ""
+	v.Memo = ""
+	v.Uci = ""
+	v.FacePrice = ""
+	v.GatewayOrderNo = ""
+	v.CardPass = ""
+	poolAppleTopActivateNotifyDo.Put(v)
 }

@@ -1,5 +1,9 @@
 package miniappopen
 
+import (
+	"sync"
+)
+
 // MiniAppEntityTemplateDto 结构体
 type MiniAppEntityTemplateDto struct {
 	// 小程序描述
@@ -26,4 +30,32 @@ type MiniAppEntityTemplateDto struct {
 	PreViewUrl string `json:"pre_view_url,omitempty" xml:"pre_view_url,omitempty"`
 	// 小部件版本
 	NewVersion string `json:"new_version,omitempty" xml:"new_version,omitempty"`
+}
+
+var poolMiniAppEntityTemplateDto = sync.Pool{
+	New: func() any {
+		return new(MiniAppEntityTemplateDto)
+	},
+}
+
+// GetMiniAppEntityTemplateDto() 从对象池中获取MiniAppEntityTemplateDto
+func GetMiniAppEntityTemplateDto() *MiniAppEntityTemplateDto {
+	return poolMiniAppEntityTemplateDto.Get().(*MiniAppEntityTemplateDto)
+}
+
+// ReleaseMiniAppEntityTemplateDto 释放MiniAppEntityTemplateDto
+func ReleaseMiniAppEntityTemplateDto(v *MiniAppEntityTemplateDto) {
+	v.AppDescription = ""
+	v.AppName = ""
+	v.Appkey = ""
+	v.AppId = ""
+	v.AppIcon = ""
+	v.OnlineUrl = ""
+	v.AppAlias = ""
+	v.Id = ""
+	v.OnlineCode = ""
+	v.OnlineVersion = ""
+	v.PreViewUrl = ""
+	v.NewVersion = ""
+	poolMiniAppEntityTemplateDto.Put(v)
 }

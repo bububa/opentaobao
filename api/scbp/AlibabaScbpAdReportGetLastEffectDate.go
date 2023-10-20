@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.ad.report.get.last.effect.date
 //
 // 获取最近报表生成时间
-func AlibabaScbpAdReportGetLastEffectDate(clt *core.SDKClient, req *scbp.AlibabaScbpAdReportGetLastEffectDateAPIRequest, session string) (*scbp.AlibabaScbpAdReportGetLastEffectDateAPIResponse, error) {
-	var resp scbp.AlibabaScbpAdReportGetLastEffectDateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpAdReportGetLastEffectDate(clt *core.SDKClient, req *scbp.AlibabaScbpAdReportGetLastEffectDateAPIRequest, resp *scbp.AlibabaScbpAdReportGetLastEffectDateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

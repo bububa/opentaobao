@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // AlibabaIdleTenderOrderGetResult 结构体
 type AlibabaIdleTenderOrderGetResult struct {
 	// 错误code
@@ -10,4 +14,24 @@ type AlibabaIdleTenderOrderGetResult struct {
 	Module *TenderOrderInfoDto `json:"module,omitempty" xml:"module,omitempty"`
 	// 是否成功
 	RespSuccess bool `json:"resp_success,omitempty" xml:"resp_success,omitempty"`
+}
+
+var poolAlibabaIdleTenderOrderGetResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaIdleTenderOrderGetResult)
+	},
+}
+
+// GetAlibabaIdleTenderOrderGetResult() 从对象池中获取AlibabaIdleTenderOrderGetResult
+func GetAlibabaIdleTenderOrderGetResult() *AlibabaIdleTenderOrderGetResult {
+	return poolAlibabaIdleTenderOrderGetResult.Get().(*AlibabaIdleTenderOrderGetResult)
+}
+
+// ReleaseAlibabaIdleTenderOrderGetResult 释放AlibabaIdleTenderOrderGetResult
+func ReleaseAlibabaIdleTenderOrderGetResult(v *AlibabaIdleTenderOrderGetResult) {
+	v.ErrorCodeInfo = ""
+	v.ErrorMsgInfo = ""
+	v.Module = nil
+	v.RespSuccess = false
+	poolAlibabaIdleTenderOrderGetResult.Put(v)
 }

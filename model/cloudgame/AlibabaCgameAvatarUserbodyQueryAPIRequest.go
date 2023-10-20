@@ -2,6 +2,7 @@ package cloudgame
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCgameAvatarUserbodyQueryAPIRequest struct {
 // NewAlibabaCgameAvatarUserbodyQueryRequest 初始化AlibabaCgameAvatarUserbodyQueryAPIRequest对象
 func NewAlibabaCgameAvatarUserbodyQueryRequest() *AlibabaCgameAvatarUserbodyQueryAPIRequest {
 	return &AlibabaCgameAvatarUserbodyQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCgameAvatarUserbodyQueryAPIRequest) Reset() {
+	r._mixUserId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCgameAvatarUserbodyQueryAPIRequest) SetMixUserId(_mixUserId stri
 // GetMixUserId MixUserId Getter
 func (r AlibabaCgameAvatarUserbodyQueryAPIRequest) GetMixUserId() string {
 	return r._mixUserId
+}
+
+var poolAlibabaCgameAvatarUserbodyQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCgameAvatarUserbodyQueryRequest()
+	},
+}
+
+// GetAlibabaCgameAvatarUserbodyQueryRequest 从 sync.Pool 获取 AlibabaCgameAvatarUserbodyQueryAPIRequest
+func GetAlibabaCgameAvatarUserbodyQueryAPIRequest() *AlibabaCgameAvatarUserbodyQueryAPIRequest {
+	return poolAlibabaCgameAvatarUserbodyQueryAPIRequest.Get().(*AlibabaCgameAvatarUserbodyQueryAPIRequest)
+}
+
+// ReleaseAlibabaCgameAvatarUserbodyQueryAPIRequest 将 AlibabaCgameAvatarUserbodyQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCgameAvatarUserbodyQueryAPIRequest(v *AlibabaCgameAvatarUserbodyQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaCgameAvatarUserbodyQueryAPIRequest.Put(v)
 }

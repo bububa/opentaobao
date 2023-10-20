@@ -1,5 +1,9 @@
 package fivee
 
+import (
+	"sync"
+)
+
 // ImportProduct 结构体
 type ImportProduct struct {
 	// 代理商信息
@@ -18,4 +22,28 @@ type ImportProduct struct {
 	InnerCode string `json:"inner_code,omitempty" xml:"inner_code,omitempty"`
 	// 业务备注
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
+}
+
+var poolImportProduct = sync.Pool{
+	New: func() any {
+		return new(ImportProduct)
+	},
+}
+
+// GetImportProduct() 从对象池中获取ImportProduct
+func GetImportProduct() *ImportProduct {
+	return poolImportProduct.Get().(*ImportProduct)
+}
+
+// ReleaseImportProduct 释放ImportProduct
+func ReleaseImportProduct(v *ImportProduct) {
+	v.AgentCompanies = v.AgentCompanies[:0]
+	v.Licences = v.Licences[:0]
+	v.SanitationCertificates = v.SanitationCertificates[:0]
+	v.AuthCode = ""
+	v.Barcode = ""
+	v.Name = ""
+	v.InnerCode = ""
+	v.Remark = ""
+	poolImportProduct.Put(v)
 }

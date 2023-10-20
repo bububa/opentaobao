@@ -2,6 +2,7 @@ package scs
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -18,6 +19,12 @@ type TaobaoOnebpDkxCampaignCampaignAddAPIResponse struct {
 	TaobaoOnebpDkxCampaignCampaignAddAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoOnebpDkxCampaignCampaignAddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOnebpDkxCampaignCampaignAddAPIResponseModel).Reset()
+}
+
 // TaobaoOnebpDkxCampaignCampaignAddAPIResponseModel is 添加计划 成功返回结果
 type TaobaoOnebpDkxCampaignCampaignAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"onebp_dkx_campaign_campaign_add_response"`
@@ -25,4 +32,27 @@ type TaobaoOnebpDkxCampaignCampaignAddAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果体
 	Result *TaobaoOnebpDkxCampaignCampaignAddResultDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOnebpDkxCampaignCampaignAddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoOnebpDkxCampaignCampaignAddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOnebpDkxCampaignCampaignAddAPIResponse)
+	},
+}
+
+// GetTaobaoOnebpDkxCampaignCampaignAddAPIResponse 从 sync.Pool 获取 TaobaoOnebpDkxCampaignCampaignAddAPIResponse
+func GetTaobaoOnebpDkxCampaignCampaignAddAPIResponse() *TaobaoOnebpDkxCampaignCampaignAddAPIResponse {
+	return poolTaobaoOnebpDkxCampaignCampaignAddAPIResponse.Get().(*TaobaoOnebpDkxCampaignCampaignAddAPIResponse)
+}
+
+// ReleaseTaobaoOnebpDkxCampaignCampaignAddAPIResponse 将 TaobaoOnebpDkxCampaignCampaignAddAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOnebpDkxCampaignCampaignAddAPIResponse(v *TaobaoOnebpDkxCampaignCampaignAddAPIResponse) {
+	v.Reset()
+	poolTaobaoOnebpDkxCampaignCampaignAddAPIResponse.Put(v)
 }

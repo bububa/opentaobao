@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaMjMemberHasbindAPIRequest struct {
 // NewAlibabaMjMemberHasbindRequest 初始化AlibabaMjMemberHasbindAPIRequest对象
 func NewAlibabaMjMemberHasbindRequest() *AlibabaMjMemberHasbindAPIRequest {
 	return &AlibabaMjMemberHasbindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMjMemberHasbindAPIRequest) Reset() {
+	r._openId = ""
+	r._userId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaMjMemberHasbindAPIRequest) SetUserId(_userId int64) error {
 // GetUserId UserId Getter
 func (r AlibabaMjMemberHasbindAPIRequest) GetUserId() int64 {
 	return r._userId
+}
+
+var poolAlibabaMjMemberHasbindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMjMemberHasbindRequest()
+	},
+}
+
+// GetAlibabaMjMemberHasbindRequest 从 sync.Pool 获取 AlibabaMjMemberHasbindAPIRequest
+func GetAlibabaMjMemberHasbindAPIRequest() *AlibabaMjMemberHasbindAPIRequest {
+	return poolAlibabaMjMemberHasbindAPIRequest.Get().(*AlibabaMjMemberHasbindAPIRequest)
+}
+
+// ReleaseAlibabaMjMemberHasbindAPIRequest 将 AlibabaMjMemberHasbindAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMjMemberHasbindAPIRequest(v *AlibabaMjMemberHasbindAPIRequest) {
+	v.Reset()
+	poolAlibabaMjMemberHasbindAPIRequest.Put(v)
 }

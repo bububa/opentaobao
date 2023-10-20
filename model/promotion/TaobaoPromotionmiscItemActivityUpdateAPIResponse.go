@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoPromotionmiscItemActivityUpdateAPIResponse struct {
 	TaobaoPromotionmiscItemActivityUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoPromotionmiscItemActivityUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoPromotionmiscItemActivityUpdateAPIResponseModel).Reset()
+}
+
 // TaobaoPromotionmiscItemActivityUpdateAPIResponseModel is 修改无条件单品优惠活动 成功返回结果
 type TaobaoPromotionmiscItemActivityUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"promotionmisc_item_activity_update_response"`
@@ -22,4 +29,27 @@ type TaobaoPromotionmiscItemActivityUpdateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 修改是否成功。
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoPromotionmiscItemActivityUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoPromotionmiscItemActivityUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoPromotionmiscItemActivityUpdateAPIResponse)
+	},
+}
+
+// GetTaobaoPromotionmiscItemActivityUpdateAPIResponse 从 sync.Pool 获取 TaobaoPromotionmiscItemActivityUpdateAPIResponse
+func GetTaobaoPromotionmiscItemActivityUpdateAPIResponse() *TaobaoPromotionmiscItemActivityUpdateAPIResponse {
+	return poolTaobaoPromotionmiscItemActivityUpdateAPIResponse.Get().(*TaobaoPromotionmiscItemActivityUpdateAPIResponse)
+}
+
+// ReleaseTaobaoPromotionmiscItemActivityUpdateAPIResponse 将 TaobaoPromotionmiscItemActivityUpdateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoPromotionmiscItemActivityUpdateAPIResponse(v *TaobaoPromotionmiscItemActivityUpdateAPIResponse) {
+	v.Reset()
+	poolTaobaoPromotionmiscItemActivityUpdateAPIResponse.Put(v)
 }

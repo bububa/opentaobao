@@ -9,11 +9,6 @@ import (
 // taobao.tbk.dg.tpwd.risk.report
 //
 // 淘宝客-推广者-淘口令预警及拦截查询
-func TaobaoTbkDgTpwdRiskReport(clt *core.SDKClient, req *tbk.TaobaoTbkDgTpwdRiskReportAPIRequest, session string) (*tbk.TaobaoTbkDgTpwdRiskReportAPIResponse, error) {
-	var resp tbk.TaobaoTbkDgTpwdRiskReportAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTbkDgTpwdRiskReport(clt *core.SDKClient, req *tbk.TaobaoTbkDgTpwdRiskReportAPIRequest, resp *tbk.TaobaoTbkDgTpwdRiskReportAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

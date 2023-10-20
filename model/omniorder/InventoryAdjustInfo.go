@@ -1,5 +1,9 @@
 package omniorder
 
+import (
+	"sync"
+)
+
 // InventoryAdjustInfo 结构体
 type InventoryAdjustInfo struct {
 	// 需要调整的原始门店ID
@@ -26,4 +30,32 @@ type InventoryAdjustInfo struct {
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 商品的SKU编码
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
+}
+
+var poolInventoryAdjustInfo = sync.Pool{
+	New: func() any {
+		return new(InventoryAdjustInfo)
+	},
+}
+
+// GetInventoryAdjustInfo() 从对象池中获取InventoryAdjustInfo
+func GetInventoryAdjustInfo() *InventoryAdjustInfo {
+	return poolInventoryAdjustInfo.Get().(*InventoryAdjustInfo)
+}
+
+// ReleaseInventoryAdjustInfo 释放InventoryAdjustInfo
+func ReleaseInventoryAdjustInfo(v *InventoryAdjustInfo) {
+	v.OriginalWarehouseId = ""
+	v.TbTradeOrder = ""
+	v.BillNum = ""
+	v.InventoryType = ""
+	v.AdjustType = ""
+	v.TbSubTradeOrder = ""
+	v.TargetWarehouseId = ""
+	v.OuterId = ""
+	v.Quantity = 0
+	v.ScItemId = 0
+	v.ItemId = 0
+	v.SkuId = 0
+	poolInventoryAdjustInfo.Put(v)
 }

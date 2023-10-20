@@ -2,6 +2,7 @@ package tttm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliyunIndustryTttmProductsSyncAPIRequest struct {
 // NewAliyunIndustryTttmProductsSyncRequest 初始化AliyunIndustryTttmProductsSyncAPIRequest对象
 func NewAliyunIndustryTttmProductsSyncRequest() *AliyunIndustryTttmProductsSyncAPIRequest {
 	return &AliyunIndustryTttmProductsSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliyunIndustryTttmProductsSyncAPIRequest) Reset() {
+	r._syncProducts = r._syncProducts[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliyunIndustryTttmProductsSyncAPIRequest) SetSyncProducts(_syncProducts
 // GetSyncProducts SyncProducts Getter
 func (r AliyunIndustryTttmProductsSyncAPIRequest) GetSyncProducts() []ProductInfoDto {
 	return r._syncProducts
+}
+
+var poolAliyunIndustryTttmProductsSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliyunIndustryTttmProductsSyncRequest()
+	},
+}
+
+// GetAliyunIndustryTttmProductsSyncRequest 从 sync.Pool 获取 AliyunIndustryTttmProductsSyncAPIRequest
+func GetAliyunIndustryTttmProductsSyncAPIRequest() *AliyunIndustryTttmProductsSyncAPIRequest {
+	return poolAliyunIndustryTttmProductsSyncAPIRequest.Get().(*AliyunIndustryTttmProductsSyncAPIRequest)
+}
+
+// ReleaseAliyunIndustryTttmProductsSyncAPIRequest 将 AliyunIndustryTttmProductsSyncAPIRequest 放入 sync.Pool
+func ReleaseAliyunIndustryTttmProductsSyncAPIRequest(v *AliyunIndustryTttmProductsSyncAPIRequest) {
+	v.Reset()
+	poolAliyunIndustryTttmProductsSyncAPIRequest.Put(v)
 }

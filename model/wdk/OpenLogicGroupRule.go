@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OpenLogicGroupRule 结构体
 type OpenLogicGroupRule struct {
 	// 换购分组名称
@@ -22,4 +26,30 @@ type OpenLogicGroupRule struct {
 	Ratio int64 `json:"ratio,omitempty" xml:"ratio,omitempty"`
 	// 是否为优惠作用分组
 	IsEffectiveGroup bool `json:"is_effective_group,omitempty" xml:"is_effective_group,omitempty"`
+}
+
+var poolOpenLogicGroupRule = sync.Pool{
+	New: func() any {
+		return new(OpenLogicGroupRule)
+	},
+}
+
+// GetOpenLogicGroupRule() 从对象池中获取OpenLogicGroupRule
+func GetOpenLogicGroupRule() *OpenLogicGroupRule {
+	return poolOpenLogicGroupRule.Get().(*OpenLogicGroupRule)
+}
+
+// ReleaseOpenLogicGroupRule 释放OpenLogicGroupRule
+func ReleaseOpenLogicGroupRule(v *OpenLogicGroupRule) {
+	v.ExchangeGroupName = ""
+	v.CoverAllDiscountRule = nil
+	v.Amount = 0
+	v.Count = 0
+	v.CanExtraItemNum = 0
+	v.LogicGroupType = 0
+	v.Number = 0
+	v.ExchangeGroupOrder = 0
+	v.Ratio = 0
+	v.IsEffectiveGroup = false
+	poolOpenLogicGroupRule.Put(v)
 }

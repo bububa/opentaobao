@@ -2,6 +2,7 @@ package xiamiatrist
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type XiamiContentArtistInfoQueryAPIRequest struct {
 // NewXiamiContentArtistInfoQueryRequest 初始化XiamiContentArtistInfoQueryAPIRequest对象
 func NewXiamiContentArtistInfoQueryRequest() *XiamiContentArtistInfoQueryAPIRequest {
 	return &XiamiContentArtistInfoQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *XiamiContentArtistInfoQueryAPIRequest) Reset() {
+	r._gender = 0
+	r._language = 0
+	r._genre = 0
+	r._pageReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *XiamiContentArtistInfoQueryAPIRequest) SetPageReq(_pageReq *PagingVo) e
 // GetPageReq PageReq Getter
 func (r XiamiContentArtistInfoQueryAPIRequest) GetPageReq() *PagingVo {
 	return r._pageReq
+}
+
+var poolXiamiContentArtistInfoQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewXiamiContentArtistInfoQueryRequest()
+	},
+}
+
+// GetXiamiContentArtistInfoQueryRequest 从 sync.Pool 获取 XiamiContentArtistInfoQueryAPIRequest
+func GetXiamiContentArtistInfoQueryAPIRequest() *XiamiContentArtistInfoQueryAPIRequest {
+	return poolXiamiContentArtistInfoQueryAPIRequest.Get().(*XiamiContentArtistInfoQueryAPIRequest)
+}
+
+// ReleaseXiamiContentArtistInfoQueryAPIRequest 将 XiamiContentArtistInfoQueryAPIRequest 放入 sync.Pool
+func ReleaseXiamiContentArtistInfoQueryAPIRequest(v *XiamiContentArtistInfoQueryAPIRequest) {
+	v.Reset()
+	poolXiamiContentArtistInfoQueryAPIRequest.Put(v)
 }

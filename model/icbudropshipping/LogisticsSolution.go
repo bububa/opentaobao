@@ -1,5 +1,9 @@
 package icbudropshipping
 
+import (
+	"sync"
+)
+
 // LogisticsSolution 结构体
 type LogisticsSolution struct {
 	// delivery time (days)
@@ -18,4 +22,28 @@ type LogisticsSolution struct {
 	VendorName string `json:"vendor_name,omitempty" xml:"vendor_name,omitempty"`
 	// shipping fee
 	Fee float64 `json:"fee,omitempty" xml:"fee,omitempty"`
+}
+
+var poolLogisticsSolution = sync.Pool{
+	New: func() any {
+		return new(LogisticsSolution)
+	},
+}
+
+// GetLogisticsSolution() 从对象池中获取LogisticsSolution
+func GetLogisticsSolution() *LogisticsSolution {
+	return poolLogisticsSolution.Get().(*LogisticsSolution)
+}
+
+// ReleaseLogisticsSolution 释放LogisticsSolution
+func ReleaseLogisticsSolution(v *LogisticsSolution) {
+	v.DeliveryTime = ""
+	v.DestinationCountry = ""
+	v.DispatchCountry = ""
+	v.ShippingType = ""
+	v.TradeTerm = ""
+	v.VendorCode = ""
+	v.VendorName = ""
+	v.Fee = 0
+	poolLogisticsSolution.Put(v)
 }

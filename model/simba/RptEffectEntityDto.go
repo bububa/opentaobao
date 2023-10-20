@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // RptEffectEntityDto 结构体
 type RptEffectEntityDto struct {
 	// 日期
@@ -34,4 +38,36 @@ type RptEffectEntityDto struct {
 	Source string `json:"source,omitempty" xml:"source,omitempty"`
 	// 人群id
 	Crowdid string `json:"crowdid,omitempty" xml:"crowdid,omitempty"`
+}
+
+var poolRptEffectEntityDto = sync.Pool{
+	New: func() any {
+		return new(RptEffectEntityDto)
+	},
+}
+
+// GetRptEffectEntityDto() 从对象池中获取RptEffectEntityDto
+func GetRptEffectEntityDto() *RptEffectEntityDto {
+	return poolRptEffectEntityDto.Get().(*RptEffectEntityDto)
+}
+
+// ReleaseRptEffectEntityDto 释放RptEffectEntityDto
+func ReleaseRptEffectEntityDto(v *RptEffectEntityDto) {
+	v.Thedate = ""
+	v.Campaignid = ""
+	v.Adgroupid = ""
+	v.Directtransaction = ""
+	v.Indirecttransaction = ""
+	v.Directtransactionshipping = ""
+	v.Indirecttransactionshipping = ""
+	v.Favitemtotal = ""
+	v.Favshoptotal = ""
+	v.Roi = ""
+	v.Coverage = ""
+	v.Directcarttotal = ""
+	v.Indirectcarttotal = ""
+	v.Crowdname = ""
+	v.Source = ""
+	v.Crowdid = ""
+	poolRptEffectEntityDto.Put(v)
 }

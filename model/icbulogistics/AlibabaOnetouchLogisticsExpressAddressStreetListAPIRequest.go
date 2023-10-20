@@ -2,6 +2,7 @@ package icbulogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaOnetouchLogisticsExpressAddressStreetListAPIRequest struct {
 // NewAlibabaOnetouchLogisticsExpressAddressStreetListRequest 初始化AlibabaOnetouchLogisticsExpressAddressStreetListAPIRequest对象
 func NewAlibabaOnetouchLogisticsExpressAddressStreetListRequest() *AlibabaOnetouchLogisticsExpressAddressStreetListAPIRequest {
 	return &AlibabaOnetouchLogisticsExpressAddressStreetListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaOnetouchLogisticsExpressAddressStreetListAPIRequest) Reset() {
+	r._paramQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaOnetouchLogisticsExpressAddressStreetListAPIRequest) SetParamQue
 // GetParamQuery ParamQuery Getter
 func (r AlibabaOnetouchLogisticsExpressAddressStreetListAPIRequest) GetParamQuery() *AddressQueryDto {
 	return r._paramQuery
+}
+
+var poolAlibabaOnetouchLogisticsExpressAddressStreetListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaOnetouchLogisticsExpressAddressStreetListRequest()
+	},
+}
+
+// GetAlibabaOnetouchLogisticsExpressAddressStreetListRequest 从 sync.Pool 获取 AlibabaOnetouchLogisticsExpressAddressStreetListAPIRequest
+func GetAlibabaOnetouchLogisticsExpressAddressStreetListAPIRequest() *AlibabaOnetouchLogisticsExpressAddressStreetListAPIRequest {
+	return poolAlibabaOnetouchLogisticsExpressAddressStreetListAPIRequest.Get().(*AlibabaOnetouchLogisticsExpressAddressStreetListAPIRequest)
+}
+
+// ReleaseAlibabaOnetouchLogisticsExpressAddressStreetListAPIRequest 将 AlibabaOnetouchLogisticsExpressAddressStreetListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaOnetouchLogisticsExpressAddressStreetListAPIRequest(v *AlibabaOnetouchLogisticsExpressAddressStreetListAPIRequest) {
+	v.Reset()
+	poolAlibabaOnetouchLogisticsExpressAddressStreetListAPIRequest.Put(v)
 }

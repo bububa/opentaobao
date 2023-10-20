@@ -2,6 +2,7 @@ package hotel
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripHotelRateGetmixratelistGetAPIResponse struct {
 	AlitripHotelRateGetmixratelistGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripHotelRateGetmixratelistGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripHotelRateGetmixratelistGetAPIResponseModel).Reset()
+}
+
 // AlitripHotelRateGetmixratelistGetAPIResponseModel is 酒店评论接口 成功返回结果
 type AlitripHotelRateGetmixratelistGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_hotel_rate_getmixratelist_get_response"`
@@ -22,4 +29,27 @@ type AlitripHotelRateGetmixratelistGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *AlitripHotelRateGetmixratelistGetResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripHotelRateGetmixratelistGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlitripHotelRateGetmixratelistGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripHotelRateGetmixratelistGetAPIResponse)
+	},
+}
+
+// GetAlitripHotelRateGetmixratelistGetAPIResponse 从 sync.Pool 获取 AlitripHotelRateGetmixratelistGetAPIResponse
+func GetAlitripHotelRateGetmixratelistGetAPIResponse() *AlitripHotelRateGetmixratelistGetAPIResponse {
+	return poolAlitripHotelRateGetmixratelistGetAPIResponse.Get().(*AlitripHotelRateGetmixratelistGetAPIResponse)
+}
+
+// ReleaseAlitripHotelRateGetmixratelistGetAPIResponse 将 AlitripHotelRateGetmixratelistGetAPIResponse 保存到 sync.Pool
+func ReleaseAlitripHotelRateGetmixratelistGetAPIResponse(v *AlitripHotelRateGetmixratelistGetAPIResponse) {
+	v.Reset()
+	poolAlitripHotelRateGetmixratelistGetAPIResponse.Put(v)
 }

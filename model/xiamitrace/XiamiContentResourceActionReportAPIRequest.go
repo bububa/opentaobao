@@ -2,6 +2,7 @@ package xiamitrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type XiamiContentResourceActionReportAPIRequest struct {
 // NewXiamiContentResourceActionReportRequest 初始化XiamiContentResourceActionReportAPIRequest对象
 func NewXiamiContentResourceActionReportRequest() *XiamiContentResourceActionReportAPIRequest {
 	return &XiamiContentResourceActionReportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *XiamiContentResourceActionReportAPIRequest) Reset() {
+	r._resourceId = ""
+	r._action = ""
+	r._resourceType = ""
+	r._fromId = ""
+	r._openId = ""
+	r._utdid = ""
+	r._extra = ""
+	r._relationId = ""
+	r._relationType = ""
+	r._num = 0
+	r._fromType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *XiamiContentResourceActionReportAPIRequest) SetFromType(_fromType int64
 // GetFromType FromType Getter
 func (r XiamiContentResourceActionReportAPIRequest) GetFromType() int64 {
 	return r._fromType
+}
+
+var poolXiamiContentResourceActionReportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewXiamiContentResourceActionReportRequest()
+	},
+}
+
+// GetXiamiContentResourceActionReportRequest 从 sync.Pool 获取 XiamiContentResourceActionReportAPIRequest
+func GetXiamiContentResourceActionReportAPIRequest() *XiamiContentResourceActionReportAPIRequest {
+	return poolXiamiContentResourceActionReportAPIRequest.Get().(*XiamiContentResourceActionReportAPIRequest)
+}
+
+// ReleaseXiamiContentResourceActionReportAPIRequest 将 XiamiContentResourceActionReportAPIRequest 放入 sync.Pool
+func ReleaseXiamiContentResourceActionReportAPIRequest(v *XiamiContentResourceActionReportAPIRequest) {
+	v.Reset()
+	poolXiamiContentResourceActionReportAPIRequest.Put(v)
 }

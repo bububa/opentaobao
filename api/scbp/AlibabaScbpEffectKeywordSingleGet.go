@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.effect.keyword.single.get
 //
 // 单个关键词效果报表
-func AlibabaScbpEffectKeywordSingleGet(clt *core.SDKClient, req *scbp.AlibabaScbpEffectKeywordSingleGetAPIRequest, session string) (*scbp.AlibabaScbpEffectKeywordSingleGetAPIResponse, error) {
-	var resp scbp.AlibabaScbpEffectKeywordSingleGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpEffectKeywordSingleGet(clt *core.SDKClient, req *scbp.AlibabaScbpEffectKeywordSingleGetAPIRequest, resp *scbp.AlibabaScbpEffectKeywordSingleGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

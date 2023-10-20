@@ -1,6 +1,8 @@
 package baichuan
 
 import (
+	"sync"
+
 	"github.com/bububa/opentaobao/model"
 )
 
@@ -14,4 +16,24 @@ type IsvItemSubDo struct {
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 数据库索引id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolIsvItemSubDo = sync.Pool{
+	New: func() any {
+		return new(IsvItemSubDo)
+	},
+}
+
+// GetIsvItemSubDo() 从对象池中获取IsvItemSubDo
+func GetIsvItemSubDo() *IsvItemSubDo {
+	return poolIsvItemSubDo.Get().(*IsvItemSubDo)
+}
+
+// ReleaseIsvItemSubDo 释放IsvItemSubDo
+func ReleaseIsvItemSubDo(v *IsvItemSubDo) {
+	v.AddTime = ""
+	v.ItemStatus = nil
+	v.ItemId = 0
+	v.Id = 0
+	poolIsvItemSubDo.Put(v)
 }

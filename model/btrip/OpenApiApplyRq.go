@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenApiApplyRq 结构体
 type OpenApiApplyRq struct {
 	// 行程列表
@@ -64,4 +68,51 @@ type OpenApiApplyRq struct {
 	ExternalTravelerStandard *ExternalUserStandard `json:"external_traveler_standard,omitempty" xml:"external_traveler_standard,omitempty"`
 	// 申请单城市规则： 0出发&amp;目的地一对一，按列表传行程  1多选N个地点，城市集行程 不传默认为0 会根据商旅管理后台-通用差旅设置-行程城市规则中的设置，校验申请单本字段的值是否正确 当行程城市规则中设置的是“1对1行程”时，必须传0 当行程城市规则中设置的是“多对多城市集行程”时，必须传1 会根据此字段传入的值，校验行程传参是否正确 当申请单城市规则为0，itinerary_list行程列表必填 当申请单城市规则为1，城市集行程必填
 	ItineraryRule int64 `json:"itinerary_rule,omitempty" xml:"itinerary_rule,omitempty"`
+}
+
+var poolOpenApiApplyRq = sync.Pool{
+	New: func() any {
+		return new(OpenApiApplyRq)
+	},
+}
+
+// GetOpenApiApplyRq() 从对象池中获取OpenApiApplyRq
+func GetOpenApiApplyRq() *OpenApiApplyRq {
+	return poolOpenApiApplyRq.Get().(*OpenApiApplyRq)
+}
+
+// ReleaseOpenApiApplyRq 释放OpenApiApplyRq
+func ReleaseOpenApiApplyRq(v *OpenApiApplyRq) {
+	v.ItineraryList = v.ItineraryList[:0]
+	v.TravelerList = v.TravelerList[:0]
+	v.ExternalTravelerList = v.ExternalTravelerList[:0]
+	v.TravelerStandard = v.TravelerStandard[:0]
+	v.ItinerarySetList = v.ItinerarySetList[:0]
+	v.ThirdpartApplyId = ""
+	v.ThirdpartBusinessId = ""
+	v.CorpId = ""
+	v.CorpName = ""
+	v.DepartId = ""
+	v.DepartName = ""
+	v.TripCause = ""
+	v.TripTitle = ""
+	v.UserId = ""
+	v.UserName = ""
+	v.UnionNo = ""
+	v.Status = 0
+	v.TripDay = 0
+	v.Version = 0
+	v.Type = 0
+	v.HotelBudget = 0
+	v.FlightBudget = 0
+	v.TrainBudget = 0
+	v.VehicleBudget = 0
+	v.Budget = 0
+	v.BudgetMerge = 0
+	v.LimitTraveler = 0
+	v.TogetherBookRule = 0
+	v.HotelShare = nil
+	v.ExternalTravelerStandard = nil
+	v.ItineraryRule = 0
+	poolOpenApiApplyRq.Put(v)
 }

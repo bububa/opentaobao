@@ -2,6 +2,7 @@ package wlb
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoWlbWaybillShengxianGetAPIRequest struct {
 // NewTaobaoWlbWaybillShengxianGetRequest 初始化TaobaoWlbWaybillShengxianGetAPIRequest对象
 func NewTaobaoWlbWaybillShengxianGetRequest() *TaobaoWlbWaybillShengxianGetAPIRequest {
 	return &TaobaoWlbWaybillShengxianGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbWaybillShengxianGetAPIRequest) Reset() {
+	r._deliveryType = ""
+	r._bizCode = ""
+	r._tradeId = ""
+	r._feature = ""
+	r._serviceCode = ""
+	r._senderAddressId = ""
+	r._orderChannelsType = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoWlbWaybillShengxianGetAPIRequest) SetOrderChannelsType(_orderChan
 // GetOrderChannelsType OrderChannelsType Getter
 func (r TaobaoWlbWaybillShengxianGetAPIRequest) GetOrderChannelsType() string {
 	return r._orderChannelsType
+}
+
+var poolTaobaoWlbWaybillShengxianGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbWaybillShengxianGetRequest()
+	},
+}
+
+// GetTaobaoWlbWaybillShengxianGetRequest 从 sync.Pool 获取 TaobaoWlbWaybillShengxianGetAPIRequest
+func GetTaobaoWlbWaybillShengxianGetAPIRequest() *TaobaoWlbWaybillShengxianGetAPIRequest {
+	return poolTaobaoWlbWaybillShengxianGetAPIRequest.Get().(*TaobaoWlbWaybillShengxianGetAPIRequest)
+}
+
+// ReleaseTaobaoWlbWaybillShengxianGetAPIRequest 将 TaobaoWlbWaybillShengxianGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbWaybillShengxianGetAPIRequest(v *TaobaoWlbWaybillShengxianGetAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbWaybillShengxianGetAPIRequest.Put(v)
 }

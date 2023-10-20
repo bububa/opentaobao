@@ -2,6 +2,7 @@ package nrt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type TmallNrtBrandinfoQueryAPIRequest struct {
 // NewTmallNrtBrandinfoQueryRequest 初始化TmallNrtBrandinfoQueryAPIRequest对象
 func NewTmallNrtBrandinfoQueryRequest() *TmallNrtBrandinfoQueryAPIRequest {
 	return &TmallNrtBrandinfoQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrtBrandinfoQueryAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r TmallNrtBrandinfoQueryAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r TmallNrtBrandinfoQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolTmallNrtBrandinfoQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrtBrandinfoQueryRequest()
+	},
+}
+
+// GetTmallNrtBrandinfoQueryRequest 从 sync.Pool 获取 TmallNrtBrandinfoQueryAPIRequest
+func GetTmallNrtBrandinfoQueryAPIRequest() *TmallNrtBrandinfoQueryAPIRequest {
+	return poolTmallNrtBrandinfoQueryAPIRequest.Get().(*TmallNrtBrandinfoQueryAPIRequest)
+}
+
+// ReleaseTmallNrtBrandinfoQueryAPIRequest 将 TmallNrtBrandinfoQueryAPIRequest 放入 sync.Pool
+func ReleaseTmallNrtBrandinfoQueryAPIRequest(v *TmallNrtBrandinfoQueryAPIRequest) {
+	v.Reset()
+	poolTmallNrtBrandinfoQueryAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.workcard.serviceprogress.update
 //
 // 回传工单服务进度
-func TmallServicecenterWorkcardServiceprogressUpdate(clt *core.SDKClient, req *tmallsc.TmallServicecenterWorkcardServiceprogressUpdateAPIRequest, session string) (*tmallsc.TmallServicecenterWorkcardServiceprogressUpdateAPIResponse, error) {
-	var resp tmallsc.TmallServicecenterWorkcardServiceprogressUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterWorkcardServiceprogressUpdate(clt *core.SDKClient, req *tmallsc.TmallServicecenterWorkcardServiceprogressUpdateAPIRequest, resp *tmallsc.TmallServicecenterWorkcardServiceprogressUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAliqinAxbVendorHeartBeatAPIRequest struct {
 // NewAlibabaAliqinAxbVendorHeartBeatRequest 初始化AlibabaAliqinAxbVendorHeartBeatAPIRequest对象
 func NewAlibabaAliqinAxbVendorHeartBeatRequest() *AlibabaAliqinAxbVendorHeartBeatAPIRequest {
 	return &AlibabaAliqinAxbVendorHeartBeatAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinAxbVendorHeartBeatAPIRequest) Reset() {
+	r._status = ""
+	r._vendorKey = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAliqinAxbVendorHeartBeatAPIRequest) SetVendorKey(_vendorKey stri
 // GetVendorKey VendorKey Getter
 func (r AlibabaAliqinAxbVendorHeartBeatAPIRequest) GetVendorKey() string {
 	return r._vendorKey
+}
+
+var poolAlibabaAliqinAxbVendorHeartBeatAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinAxbVendorHeartBeatRequest()
+	},
+}
+
+// GetAlibabaAliqinAxbVendorHeartBeatRequest 从 sync.Pool 获取 AlibabaAliqinAxbVendorHeartBeatAPIRequest
+func GetAlibabaAliqinAxbVendorHeartBeatAPIRequest() *AlibabaAliqinAxbVendorHeartBeatAPIRequest {
+	return poolAlibabaAliqinAxbVendorHeartBeatAPIRequest.Get().(*AlibabaAliqinAxbVendorHeartBeatAPIRequest)
+}
+
+// ReleaseAlibabaAliqinAxbVendorHeartBeatAPIRequest 将 AlibabaAliqinAxbVendorHeartBeatAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinAxbVendorHeartBeatAPIRequest(v *AlibabaAliqinAxbVendorHeartBeatAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinAxbVendorHeartBeatAPIRequest.Put(v)
 }

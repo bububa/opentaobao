@@ -1,5 +1,9 @@
 package aesolution
 
+import (
+	"sync"
+)
+
 // PaginationResult 结构体
 type PaginationResult struct {
 	// target list
@@ -20,4 +24,29 @@ type PaginationResult struct {
 	TotalPage int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
 	// success or not
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolPaginationResult = sync.Pool{
+	New: func() any {
+		return new(PaginationResult)
+	},
+}
+
+// GetPaginationResult() 从对象池中获取PaginationResult
+func GetPaginationResult() *PaginationResult {
+	return poolPaginationResult.Get().(*PaginationResult)
+}
+
+// ReleasePaginationResult 释放PaginationResult
+func ReleasePaginationResult(v *PaginationResult) {
+	v.TargetList = v.TargetList[:0]
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.TimeStamp = ""
+	v.TotalCount = 0
+	v.PageSize = 0
+	v.CurrentPage = 0
+	v.TotalPage = 0
+	v.Success = false
+	poolPaginationResult.Put(v)
 }

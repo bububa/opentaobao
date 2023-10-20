@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OrderAggregateQueryResult 结构体
 type OrderAggregateQueryResult struct {
 	// 240000310869037498
@@ -18,4 +22,28 @@ type OrderAggregateQueryResult struct {
 	DiscountAmt int64 `json:"discount_amt,omitempty" xml:"discount_amt,omitempty"`
 	// 下一页序号
 	NextIndex int64 `json:"next_index,omitempty" xml:"next_index,omitempty"`
+}
+
+var poolOrderAggregateQueryResult = sync.Pool{
+	New: func() any {
+		return new(OrderAggregateQueryResult)
+	},
+}
+
+// GetOrderAggregateQueryResult() 从对象池中获取OrderAggregateQueryResult
+func GetOrderAggregateQueryResult() *OrderAggregateQueryResult {
+	return poolOrderAggregateQueryResult.Get().(*OrderAggregateQueryResult)
+}
+
+// ReleaseOrderAggregateQueryResult 释放OrderAggregateQueryResult
+func ReleaseOrderAggregateQueryResult(v *OrderAggregateQueryResult) {
+	v.BizIdList = v.BizIdList[:0]
+	v.TbBizIdList = v.TbBizIdList[:0]
+	v.ReturnCode = ""
+	v.ReturnMsg = ""
+	v.TotalNum = 0
+	v.OriginalAmt = 0
+	v.DiscountAmt = 0
+	v.NextIndex = 0
+	poolOrderAggregateQueryResult.Put(v)
 }

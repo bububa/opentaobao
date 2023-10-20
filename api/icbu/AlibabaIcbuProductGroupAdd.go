@@ -9,11 +9,6 @@ import (
 // alibaba.icbu.product.group.add
 //
 // 增加商品分组
-func AlibabaIcbuProductGroupAdd(clt *core.SDKClient, req *icbu.AlibabaIcbuProductGroupAddAPIRequest, session string) (*icbu.AlibabaIcbuProductGroupAddAPIResponse, error) {
-	var resp icbu.AlibabaIcbuProductGroupAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIcbuProductGroupAdd(clt *core.SDKClient, req *icbu.AlibabaIcbuProductGroupAddAPIRequest, resp *icbu.AlibabaIcbuProductGroupAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

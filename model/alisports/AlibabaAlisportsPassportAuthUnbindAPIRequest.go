@@ -2,6 +2,7 @@ package alisports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAlisportsPassportAuthUnbindAPIRequest struct {
 // NewAlibabaAlisportsPassportAuthUnbindRequest 初始化AlibabaAlisportsPassportAuthUnbindAPIRequest对象
 func NewAlibabaAlisportsPassportAuthUnbindRequest() *AlibabaAlisportsPassportAuthUnbindAPIRequest {
 	return &AlibabaAlisportsPassportAuthUnbindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlisportsPassportAuthUnbindAPIRequest) Reset() {
+	r._alispAppKey = ""
+	r._openId = ""
+	r._thirdOpenId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAlisportsPassportAuthUnbindAPIRequest) SetThirdOpenId(_thirdOpen
 // GetThirdOpenId ThirdOpenId Getter
 func (r AlibabaAlisportsPassportAuthUnbindAPIRequest) GetThirdOpenId() string {
 	return r._thirdOpenId
+}
+
+var poolAlibabaAlisportsPassportAuthUnbindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlisportsPassportAuthUnbindRequest()
+	},
+}
+
+// GetAlibabaAlisportsPassportAuthUnbindRequest 从 sync.Pool 获取 AlibabaAlisportsPassportAuthUnbindAPIRequest
+func GetAlibabaAlisportsPassportAuthUnbindAPIRequest() *AlibabaAlisportsPassportAuthUnbindAPIRequest {
+	return poolAlibabaAlisportsPassportAuthUnbindAPIRequest.Get().(*AlibabaAlisportsPassportAuthUnbindAPIRequest)
+}
+
+// ReleaseAlibabaAlisportsPassportAuthUnbindAPIRequest 将 AlibabaAlisportsPassportAuthUnbindAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlisportsPassportAuthUnbindAPIRequest(v *AlibabaAlisportsPassportAuthUnbindAPIRequest) {
+	v.Reset()
+	poolAlibabaAlisportsPassportAuthUnbindAPIRequest.Put(v)
 }

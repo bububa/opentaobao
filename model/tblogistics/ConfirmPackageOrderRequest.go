@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // ConfirmPackageOrderRequest 结构体
 type ConfirmPackageOrderRequest struct {
 	// 包裹信息
@@ -24,4 +28,31 @@ type ConfirmPackageOrderRequest struct {
 	OuterOrderCode string `json:"outer_order_code,omitempty" xml:"outer_order_code,omitempty"`
 	// 包裹入库单号
 	EntryOrderCode string `json:"entry_order_code,omitempty" xml:"entry_order_code,omitempty"`
+}
+
+var poolConfirmPackageOrderRequest = sync.Pool{
+	New: func() any {
+		return new(ConfirmPackageOrderRequest)
+	},
+}
+
+// GetConfirmPackageOrderRequest() 从对象池中获取ConfirmPackageOrderRequest
+func GetConfirmPackageOrderRequest() *ConfirmPackageOrderRequest {
+	return poolConfirmPackageOrderRequest.Get().(*ConfirmPackageOrderRequest)
+}
+
+// ReleaseConfirmPackageOrderRequest 释放ConfirmPackageOrderRequest
+func ReleaseConfirmPackageOrderRequest(v *ConfirmPackageOrderRequest) {
+	v.Packages = v.Packages[:0]
+	v.DeliveryOrderCode = ""
+	v.OrderType = ""
+	v.OrderStatus = ""
+	v.OperateTime = ""
+	v.LogisticsOwner = ""
+	v.ErrorType = ""
+	v.ErrorMsg = ""
+	v.WarehouseCode = ""
+	v.OuterOrderCode = ""
+	v.EntryOrderCode = ""
+	poolConfirmPackageOrderRequest.Put(v)
 }

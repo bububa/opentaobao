@@ -1,5 +1,9 @@
 package aetask
 
+import (
+	"sync"
+)
+
 // AliexpressInteractiveTaskCompleteResult 结构体
 type AliexpressInteractiveTaskCompleteResult struct {
 	// 结果
@@ -14,4 +18,26 @@ type AliexpressInteractiveTaskCompleteResult struct {
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAliexpressInteractiveTaskCompleteResult = sync.Pool{
+	New: func() any {
+		return new(AliexpressInteractiveTaskCompleteResult)
+	},
+}
+
+// GetAliexpressInteractiveTaskCompleteResult() 从对象池中获取AliexpressInteractiveTaskCompleteResult
+func GetAliexpressInteractiveTaskCompleteResult() *AliexpressInteractiveTaskCompleteResult {
+	return poolAliexpressInteractiveTaskCompleteResult.Get().(*AliexpressInteractiveTaskCompleteResult)
+}
+
+// ReleaseAliexpressInteractiveTaskCompleteResult 释放AliexpressInteractiveTaskCompleteResult
+func ReleaseAliexpressInteractiveTaskCompleteResult(v *AliexpressInteractiveTaskCompleteResult) {
+	v.Result = ""
+	v.ErrorCode = ""
+	v.MsgInfo = ""
+	v.MsgCode = ""
+	v.ErrorMsg = ""
+	v.Success = false
+	poolAliexpressInteractiveTaskCompleteResult.Put(v)
 }

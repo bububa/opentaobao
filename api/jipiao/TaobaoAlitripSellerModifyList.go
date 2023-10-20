@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.seller.modify.list
 //
 // 提供机票代理商查询改签订单列表
-func TaobaoAlitripSellerModifyList(clt *core.SDKClient, req *jipiao.TaobaoAlitripSellerModifyListAPIRequest, session string) (*jipiao.TaobaoAlitripSellerModifyListAPIResponse, error) {
-	var resp jipiao.TaobaoAlitripSellerModifyListAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripSellerModifyList(clt *core.SDKClient, req *jipiao.TaobaoAlitripSellerModifyListAPIRequest, resp *jipiao.TaobaoAlitripSellerModifyListAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

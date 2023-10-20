@@ -2,6 +2,7 @@ package traveltrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlitripTravelHotelticketProductProductupdatepushAPIRequest struct {
 // NewAlitripTravelHotelticketProductProductupdatepushRequest 初始化AlitripTravelHotelticketProductProductupdatepushAPIRequest对象
 func NewAlitripTravelHotelticketProductProductupdatepushRequest() *AlitripTravelHotelticketProductProductupdatepushAPIRequest {
 	return &AlitripTravelHotelticketProductProductupdatepushAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTravelHotelticketProductProductupdatepushAPIRequest) Reset() {
+	r._accessKey = ""
+	r._productUpdates = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlitripTravelHotelticketProductProductupdatepushAPIRequest) SetProductU
 // GetProductUpdates ProductUpdates Getter
 func (r AlitripTravelHotelticketProductProductupdatepushAPIRequest) GetProductUpdates() *ProductUpdatePushDto {
 	return r._productUpdates
+}
+
+var poolAlitripTravelHotelticketProductProductupdatepushAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTravelHotelticketProductProductupdatepushRequest()
+	},
+}
+
+// GetAlitripTravelHotelticketProductProductupdatepushRequest 从 sync.Pool 获取 AlitripTravelHotelticketProductProductupdatepushAPIRequest
+func GetAlitripTravelHotelticketProductProductupdatepushAPIRequest() *AlitripTravelHotelticketProductProductupdatepushAPIRequest {
+	return poolAlitripTravelHotelticketProductProductupdatepushAPIRequest.Get().(*AlitripTravelHotelticketProductProductupdatepushAPIRequest)
+}
+
+// ReleaseAlitripTravelHotelticketProductProductupdatepushAPIRequest 将 AlitripTravelHotelticketProductProductupdatepushAPIRequest 放入 sync.Pool
+func ReleaseAlitripTravelHotelticketProductProductupdatepushAPIRequest(v *AlitripTravelHotelticketProductProductupdatepushAPIRequest) {
+	v.Reset()
+	poolAlitripTravelHotelticketProductProductupdatepushAPIRequest.Put(v)
 }

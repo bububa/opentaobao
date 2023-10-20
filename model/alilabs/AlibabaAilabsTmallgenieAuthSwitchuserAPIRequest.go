@@ -2,6 +2,7 @@ package alilabs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest struct {
 // NewAlibabaAilabsTmallgenieAuthSwitchuserRequest 初始化AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest对象
 func NewAlibabaAilabsTmallgenieAuthSwitchuserRequest() *AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest {
 	return &AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) Reset() {
+	r._clientId = ""
+	r._newUserOpenId = ""
+	r._oldUserOpenId = ""
+	r._uuid = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) SetUuid(_uuid string) 
 // GetUuid Uuid Getter
 func (r AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) GetUuid() string {
 	return r._uuid
+}
+
+var poolAlibabaAilabsTmallgenieAuthSwitchuserAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsTmallgenieAuthSwitchuserRequest()
+	},
+}
+
+// GetAlibabaAilabsTmallgenieAuthSwitchuserRequest 从 sync.Pool 获取 AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest
+func GetAlibabaAilabsTmallgenieAuthSwitchuserAPIRequest() *AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest {
+	return poolAlibabaAilabsTmallgenieAuthSwitchuserAPIRequest.Get().(*AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest)
+}
+
+// ReleaseAlibabaAilabsTmallgenieAuthSwitchuserAPIRequest 将 AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsTmallgenieAuthSwitchuserAPIRequest(v *AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsTmallgenieAuthSwitchuserAPIRequest.Put(v)
 }

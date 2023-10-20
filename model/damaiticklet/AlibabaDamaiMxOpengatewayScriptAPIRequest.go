@@ -2,6 +2,7 @@ package damaiticklet
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDamaiMxOpengatewayScriptAPIRequest struct {
 // NewAlibabaDamaiMxOpengatewayScriptRequest 初始化AlibabaDamaiMxOpengatewayScriptAPIRequest对象
 func NewAlibabaDamaiMxOpengatewayScriptRequest() *AlibabaDamaiMxOpengatewayScriptAPIRequest {
 	return &AlibabaDamaiMxOpengatewayScriptAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDamaiMxOpengatewayScriptAPIRequest) Reset() {
+	r._scriptInfoOpenParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDamaiMxOpengatewayScriptAPIRequest) SetScriptInfoOpenParam(_scri
 // GetScriptInfoOpenParam ScriptInfoOpenParam Getter
 func (r AlibabaDamaiMxOpengatewayScriptAPIRequest) GetScriptInfoOpenParam() *ScriptInfoOpenParam {
 	return r._scriptInfoOpenParam
+}
+
+var poolAlibabaDamaiMxOpengatewayScriptAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDamaiMxOpengatewayScriptRequest()
+	},
+}
+
+// GetAlibabaDamaiMxOpengatewayScriptRequest 从 sync.Pool 获取 AlibabaDamaiMxOpengatewayScriptAPIRequest
+func GetAlibabaDamaiMxOpengatewayScriptAPIRequest() *AlibabaDamaiMxOpengatewayScriptAPIRequest {
+	return poolAlibabaDamaiMxOpengatewayScriptAPIRequest.Get().(*AlibabaDamaiMxOpengatewayScriptAPIRequest)
+}
+
+// ReleaseAlibabaDamaiMxOpengatewayScriptAPIRequest 将 AlibabaDamaiMxOpengatewayScriptAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDamaiMxOpengatewayScriptAPIRequest(v *AlibabaDamaiMxOpengatewayScriptAPIRequest) {
+	v.Reset()
+	poolAlibabaDamaiMxOpengatewayScriptAPIRequest.Put(v)
 }

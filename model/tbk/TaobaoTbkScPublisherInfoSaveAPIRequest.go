@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type TaobaoTbkScPublisherInfoSaveAPIRequest struct {
 // NewTaobaoTbkScPublisherInfoSaveRequest 初始化TaobaoTbkScPublisherInfoSaveAPIRequest对象
 func NewTaobaoTbkScPublisherInfoSaveRequest() *TaobaoTbkScPublisherInfoSaveAPIRequest {
 	return &TaobaoTbkScPublisherInfoSaveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkScPublisherInfoSaveAPIRequest) Reset() {
+	r._relationFrom = ""
+	r._offlineScene = ""
+	r._onlineScene = ""
+	r._inviterCode = ""
+	r._note = ""
+	r._registerInfo = ""
+	r._infoType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *TaobaoTbkScPublisherInfoSaveAPIRequest) SetInfoType(_infoType int64) er
 // GetInfoType InfoType Getter
 func (r TaobaoTbkScPublisherInfoSaveAPIRequest) GetInfoType() int64 {
 	return r._infoType
+}
+
+var poolTaobaoTbkScPublisherInfoSaveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkScPublisherInfoSaveRequest()
+	},
+}
+
+// GetTaobaoTbkScPublisherInfoSaveRequest 从 sync.Pool 获取 TaobaoTbkScPublisherInfoSaveAPIRequest
+func GetTaobaoTbkScPublisherInfoSaveAPIRequest() *TaobaoTbkScPublisherInfoSaveAPIRequest {
+	return poolTaobaoTbkScPublisherInfoSaveAPIRequest.Get().(*TaobaoTbkScPublisherInfoSaveAPIRequest)
+}
+
+// ReleaseTaobaoTbkScPublisherInfoSaveAPIRequest 将 TaobaoTbkScPublisherInfoSaveAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkScPublisherInfoSaveAPIRequest(v *TaobaoTbkScPublisherInfoSaveAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkScPublisherInfoSaveAPIRequest.Put(v)
 }

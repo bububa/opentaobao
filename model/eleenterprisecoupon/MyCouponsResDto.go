@@ -1,5 +1,9 @@
 package eleenterprisecoupon
 
+import (
+	"sync"
+)
+
 // MyCouponsResDto 结构体
 type MyCouponsResDto struct {
 	// 券的明细数据
@@ -42,4 +46,40 @@ type MyCouponsResDto struct {
 	GroupMulti bool `json:"group_multi,omitempty" xml:"group_multi,omitempty"`
 	// 已选择的券是不是可以有效组合选中
 	SelectedLegalStatus bool `json:"selected_legal_status,omitempty" xml:"selected_legal_status,omitempty"`
+}
+
+var poolMyCouponsResDto = sync.Pool{
+	New: func() any {
+		return new(MyCouponsResDto)
+	},
+}
+
+// GetMyCouponsResDto() 从对象池中获取MyCouponsResDto
+func GetMyCouponsResDto() *MyCouponsResDto {
+	return poolMyCouponsResDto.Get().(*MyCouponsResDto)
+}
+
+// ReleaseMyCouponsResDto 释放MyCouponsResDto
+func ReleaseMyCouponsResDto(v *MyCouponsResDto) {
+	v.Groups = v.Groups[:0]
+	v.Recommends = v.Recommends[:0]
+	v.Descriptions = v.Descriptions[:0]
+	v.SelectedTotalPrice = ""
+	v.RecommendsTotalPrice = ""
+	v.ErrorMsg = ""
+	v.Name = ""
+	v.Amount = ""
+	v.Threshold = ""
+	v.Sn = ""
+	v.Title = ""
+	v.BeginDateTime = ""
+	v.EndDateTime = ""
+	v.Phone = ""
+	v.Condition = ""
+	v.SelectedQuantity = 0
+	v.RecommendsQuantity = 0
+	v.Id = 0
+	v.GroupMulti = false
+	v.SelectedLegalStatus = false
+	poolMyCouponsResDto.Put(v)
 }

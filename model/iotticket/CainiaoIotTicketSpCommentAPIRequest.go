@@ -2,6 +2,7 @@ package iotticket
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoIotTicketSpCommentAPIRequest struct {
 // NewCainiaoIotTicketSpCommentRequest 初始化CainiaoIotTicketSpCommentAPIRequest对象
 func NewCainiaoIotTicketSpCommentRequest() *CainiaoIotTicketSpCommentAPIRequest {
 	return &CainiaoIotTicketSpCommentAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoIotTicketSpCommentAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoIotTicketSpCommentAPIRequest) SetParam(_param *CommentTicketTopR
 // GetParam Param Getter
 func (r CainiaoIotTicketSpCommentAPIRequest) GetParam() *CommentTicketTopRequest {
 	return r._param
+}
+
+var poolCainiaoIotTicketSpCommentAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoIotTicketSpCommentRequest()
+	},
+}
+
+// GetCainiaoIotTicketSpCommentRequest 从 sync.Pool 获取 CainiaoIotTicketSpCommentAPIRequest
+func GetCainiaoIotTicketSpCommentAPIRequest() *CainiaoIotTicketSpCommentAPIRequest {
+	return poolCainiaoIotTicketSpCommentAPIRequest.Get().(*CainiaoIotTicketSpCommentAPIRequest)
+}
+
+// ReleaseCainiaoIotTicketSpCommentAPIRequest 将 CainiaoIotTicketSpCommentAPIRequest 放入 sync.Pool
+func ReleaseCainiaoIotTicketSpCommentAPIRequest(v *CainiaoIotTicketSpCommentAPIRequest) {
+	v.Reset()
+	poolCainiaoIotTicketSpCommentAPIRequest.Put(v)
 }

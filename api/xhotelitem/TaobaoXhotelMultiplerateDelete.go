@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.multiplerate.delete
 //
 // 酒店产品库rate删除
-func TaobaoXhotelMultiplerateDelete(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelMultiplerateDeleteAPIRequest, session string) (*xhotelitem.TaobaoXhotelMultiplerateDeleteAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelMultiplerateDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelMultiplerateDelete(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelMultiplerateDeleteAPIRequest, resp *xhotelitem.TaobaoXhotelMultiplerateDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package kclub
 
+import (
+	"sync"
+)
+
 // KcSearchQuestionQuery 结构体
 type KcSearchQuestionQuery struct {
 	// 租户列表
@@ -40,4 +44,39 @@ type KcSearchQuestionQuery struct {
 	IncludeSubCategorys bool `json:"include_sub_categorys,omitempty" xml:"include_sub_categorys,omitempty"`
 	// 是否默认展示扩展标题
 	DisplayExtTitle bool `json:"display_ext_title,omitempty" xml:"display_ext_title,omitempty"`
+}
+
+var poolKcSearchQuestionQuery = sync.Pool{
+	New: func() any {
+		return new(KcSearchQuestionQuery)
+	},
+}
+
+// GetKcSearchQuestionQuery() 从对象池中获取KcSearchQuestionQuery
+func GetKcSearchQuestionQuery() *KcSearchQuestionQuery {
+	return poolKcSearchQuestionQuery.Get().(*KcSearchQuestionQuery)
+}
+
+// ReleaseKcSearchQuestionQuery 释放KcSearchQuestionQuery
+func ReleaseKcSearchQuestionQuery(v *KcSearchQuestionQuery) {
+	v.TenantIdList = v.TenantIdList[:0]
+	v.ContextList = v.ContextList[:0]
+	v.Views = v.Views[:0]
+	v.CategoryIdList = v.CategoryIdList[:0]
+	v.SearchString = ""
+	v.SearchRule = ""
+	v.TenantId = 0
+	v.KnowledgeId = 0
+	v.EditorId = 0
+	v.QuestionType = 0
+	v.Status = 0
+	v.PageSize = 0
+	v.CreatorId = 0
+	v.CurrentPage = 0
+	v.SorterConfig = nil
+	v.Highlight = false
+	v.NeedContent = false
+	v.IncludeSubCategorys = false
+	v.DisplayExtTitle = false
+	poolKcSearchQuestionQuery.Put(v)
 }

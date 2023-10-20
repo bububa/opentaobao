@@ -2,6 +2,7 @@ package aliqin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAliqinFcIotCardofferAPIRequest struct {
 // NewAlibabaAliqinFcIotCardofferRequest 初始化AlibabaAliqinFcIotCardofferAPIRequest对象
 func NewAlibabaAliqinFcIotCardofferRequest() *AlibabaAliqinFcIotCardofferAPIRequest {
 	return &AlibabaAliqinFcIotCardofferAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinFcIotCardofferAPIRequest) Reset() {
+	r._billreal = ""
+	r._billsource = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAliqinFcIotCardofferAPIRequest) SetBillsource(_billsource string
 // GetBillsource Billsource Getter
 func (r AlibabaAliqinFcIotCardofferAPIRequest) GetBillsource() string {
 	return r._billsource
+}
+
+var poolAlibabaAliqinFcIotCardofferAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinFcIotCardofferRequest()
+	},
+}
+
+// GetAlibabaAliqinFcIotCardofferRequest 从 sync.Pool 获取 AlibabaAliqinFcIotCardofferAPIRequest
+func GetAlibabaAliqinFcIotCardofferAPIRequest() *AlibabaAliqinFcIotCardofferAPIRequest {
+	return poolAlibabaAliqinFcIotCardofferAPIRequest.Get().(*AlibabaAliqinFcIotCardofferAPIRequest)
+}
+
+// ReleaseAlibabaAliqinFcIotCardofferAPIRequest 将 AlibabaAliqinFcIotCardofferAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinFcIotCardofferAPIRequest(v *AlibabaAliqinFcIotCardofferAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinFcIotCardofferAPIRequest.Put(v)
 }

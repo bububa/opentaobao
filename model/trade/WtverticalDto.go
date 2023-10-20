@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // WtverticalDto 结构体
 type WtverticalDto struct {
 	// 手机号码
@@ -24,4 +28,31 @@ type WtverticalDto struct {
 	EffectRule string `json:"effect_rule,omitempty" xml:"effect_rule,omitempty"`
 	// 协议商家编码
 	AgreementId string `json:"agreement_id,omitempty" xml:"agreement_id,omitempty"`
+}
+
+var poolWtverticalDto = sync.Pool{
+	New: func() any {
+		return new(WtverticalDto)
+	},
+}
+
+// GetWtverticalDto() 从对象池中获取WtverticalDto
+func GetWtverticalDto() *WtverticalDto {
+	return poolWtverticalDto.Get().(*WtverticalDto)
+}
+
+// ReleaseWtverticalDto 释放WtverticalDto
+func ReleaseWtverticalDto(v *WtverticalDto) {
+	v.PhoneNo = ""
+	v.BizOrderId = ""
+	v.PhoneCityCode = ""
+	v.PhoneProvinceCode = ""
+	v.Attr = ""
+	v.PhoneCityName = ""
+	v.PhoneProvinceName = ""
+	v.PlanTitle = ""
+	v.OutPlanId = ""
+	v.EffectRule = ""
+	v.AgreementId = ""
+	poolWtverticalDto.Put(v)
 }

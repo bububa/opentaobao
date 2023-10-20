@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAilabsIotCloudDeviceReportAPIRequest struct {
 // NewAlibabaAilabsIotCloudDeviceReportRequest 初始化AlibabaAilabsIotCloudDeviceReportAPIRequest对象
 func NewAlibabaAilabsIotCloudDeviceReportRequest() *AlibabaAilabsIotCloudDeviceReportAPIRequest {
 	return &AlibabaAilabsIotCloudDeviceReportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsIotCloudDeviceReportAPIRequest) Reset() {
+	r._cloudReportParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAilabsIotCloudDeviceReportAPIRequest) SetCloudReportParam(_cloud
 // GetCloudReportParam CloudReportParam Getter
 func (r AlibabaAilabsIotCloudDeviceReportAPIRequest) GetCloudReportParam() *CloudReportParam {
 	return r._cloudReportParam
+}
+
+var poolAlibabaAilabsIotCloudDeviceReportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsIotCloudDeviceReportRequest()
+	},
+}
+
+// GetAlibabaAilabsIotCloudDeviceReportRequest 从 sync.Pool 获取 AlibabaAilabsIotCloudDeviceReportAPIRequest
+func GetAlibabaAilabsIotCloudDeviceReportAPIRequest() *AlibabaAilabsIotCloudDeviceReportAPIRequest {
+	return poolAlibabaAilabsIotCloudDeviceReportAPIRequest.Get().(*AlibabaAilabsIotCloudDeviceReportAPIRequest)
+}
+
+// ReleaseAlibabaAilabsIotCloudDeviceReportAPIRequest 将 AlibabaAilabsIotCloudDeviceReportAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsIotCloudDeviceReportAPIRequest(v *AlibabaAilabsIotCloudDeviceReportAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsIotCloudDeviceReportAPIRequest.Put(v)
 }

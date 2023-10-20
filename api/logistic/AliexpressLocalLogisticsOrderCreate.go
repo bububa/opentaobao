@@ -9,11 +9,6 @@ import (
 // aliexpress.local.logistics.order.create
 //
 // create logistics order
-func AliexpressLocalLogisticsOrderCreate(clt *core.SDKClient, req *logistic.AliexpressLocalLogisticsOrderCreateAPIRequest, session string) (*logistic.AliexpressLocalLogisticsOrderCreateAPIResponse, error) {
-	var resp logistic.AliexpressLocalLogisticsOrderCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressLocalLogisticsOrderCreate(clt *core.SDKClient, req *logistic.AliexpressLocalLogisticsOrderCreateAPIRequest, resp *logistic.AliexpressLocalLogisticsOrderCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

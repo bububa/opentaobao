@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // ActivityReadTopQuery 结构体
 type ActivityReadTopQuery struct {
 	// 筛选状态列表，EFFECTIVE为生效，OFFLINE为下线
@@ -18,4 +22,28 @@ type ActivityReadTopQuery struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 当前页
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
+}
+
+var poolActivityReadTopQuery = sync.Pool{
+	New: func() any {
+		return new(ActivityReadTopQuery)
+	},
+}
+
+// GetActivityReadTopQuery() 从对象池中获取ActivityReadTopQuery
+func GetActivityReadTopQuery() *ActivityReadTopQuery {
+	return poolActivityReadTopQuery.Get().(*ActivityReadTopQuery)
+}
+
+// ReleaseActivityReadTopQuery 释放ActivityReadTopQuery
+func ReleaseActivityReadTopQuery(v *ActivityReadTopQuery) {
+	v.StatusList = v.StatusList[:0]
+	v.StartTimeEnd = ""
+	v.Source = ""
+	v.StartTimeBegin = ""
+	v.EndTimeBegin = ""
+	v.EndTimeEnd = ""
+	v.PageSize = 0
+	v.CurrentPage = 0
+	poolActivityReadTopQuery.Put(v)
 }

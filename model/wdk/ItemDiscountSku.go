@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ItemDiscountSku 结构体
 type ItemDiscountSku struct {
 	// 商品的skuCode
@@ -16,4 +20,27 @@ type ItemDiscountSku struct {
 	ConditionNum int64 `json:"condition_num,omitempty" xml:"condition_num,omitempty"`
 	// 门槛类型，2：累计消费金额，3：累计购买次数
 	ConditionType int64 `json:"condition_type,omitempty" xml:"condition_type,omitempty"`
+}
+
+var poolItemDiscountSku = sync.Pool{
+	New: func() any {
+		return new(ItemDiscountSku)
+	},
+}
+
+// GetItemDiscountSku() 从对象池中获取ItemDiscountSku
+func GetItemDiscountSku() *ItemDiscountSku {
+	return poolItemDiscountSku.Get().(*ItemDiscountSku)
+}
+
+// ReleaseItemDiscountSku 释放ItemDiscountSku
+func ReleaseItemDiscountSku(v *ItemDiscountSku) {
+	v.SkuCode = ""
+	v.SkuName = ""
+	v.ItemShopRelation = ""
+	v.LimitInfo = nil
+	v.Value = 0
+	v.ConditionNum = 0
+	v.ConditionType = 0
+	poolItemDiscountSku.Put(v)
 }

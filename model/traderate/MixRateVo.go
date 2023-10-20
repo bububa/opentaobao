@@ -1,5 +1,9 @@
 package traderate
 
+import (
+	"sync"
+)
+
 // MixRateVo 结构体
 type MixRateVo struct {
 	// 图片信息
@@ -16,4 +20,27 @@ type MixRateVo struct {
 	UserNick string `json:"user_nick,omitempty" xml:"user_nick,omitempty"`
 	// 总评分
 	TotalScore int64 `json:"total_score,omitempty" xml:"total_score,omitempty"`
+}
+
+var poolMixRateVo = sync.Pool{
+	New: func() any {
+		return new(MixRateVo)
+	},
+}
+
+// GetMixRateVo() 从对象池中获取MixRateVo
+func GetMixRateVo() *MixRateVo {
+	return poolMixRateVo.Get().(*MixRateVo)
+}
+
+// ReleaseMixRateVo 释放MixRateVo
+func ReleaseMixRateVo(v *MixRateVo) {
+	v.PictureUrls = v.PictureUrls[:0]
+	v.Content = ""
+	v.GmtCreate = ""
+	v.Title = ""
+	v.UserIcon = ""
+	v.UserNick = ""
+	v.TotalScore = 0
+	poolMixRateVo.Put(v)
 }

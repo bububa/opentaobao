@@ -1,5 +1,9 @@
 package wlb
 
+import (
+	"sync"
+)
+
 // MerStoreInvAdjustDto 结构体
 type MerStoreInvAdjustDto struct {
 	// 扩展属性
@@ -14,4 +18,26 @@ type MerStoreInvAdjustDto struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 货品id
 	ScItemId int64 `json:"sc_item_id,omitempty" xml:"sc_item_id,omitempty"`
+}
+
+var poolMerStoreInvAdjustDto = sync.Pool{
+	New: func() any {
+		return new(MerStoreInvAdjustDto)
+	},
+}
+
+// GetMerStoreInvAdjustDto() 从对象池中获取MerStoreInvAdjustDto
+func GetMerStoreInvAdjustDto() *MerStoreInvAdjustDto {
+	return poolMerStoreInvAdjustDto.Get().(*MerStoreInvAdjustDto)
+}
+
+// ReleaseMerStoreInvAdjustDto 释放MerStoreInvAdjustDto
+func ReleaseMerStoreInvAdjustDto(v *MerStoreInvAdjustDto) {
+	v.Attribute = ""
+	v.OutBizCode = ""
+	v.StoreCode = ""
+	v.InventoryType = 0
+	v.Quantity = 0
+	v.ScItemId = 0
+	poolMerStoreInvAdjustDto.Put(v)
 }

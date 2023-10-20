@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type WdkLogisticNetworkResourceGroupQueryAPIRequest struct {
 // NewWdkLogisticNetworkResourceGroupQueryRequest 初始化WdkLogisticNetworkResourceGroupQueryAPIRequest对象
 func NewWdkLogisticNetworkResourceGroupQueryRequest() *WdkLogisticNetworkResourceGroupQueryAPIRequest {
 	return &WdkLogisticNetworkResourceGroupQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *WdkLogisticNetworkResourceGroupQueryAPIRequest) Reset() {
+	r._paramResourceGroupPageQueryRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *WdkLogisticNetworkResourceGroupQueryAPIRequest) SetParamResourceGroupPa
 // GetParamResourceGroupPageQueryRequest ParamResourceGroupPageQueryRequest Getter
 func (r WdkLogisticNetworkResourceGroupQueryAPIRequest) GetParamResourceGroupPageQueryRequest() *ResourceGroupPageQueryRequest {
 	return r._paramResourceGroupPageQueryRequest
+}
+
+var poolWdkLogisticNetworkResourceGroupQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewWdkLogisticNetworkResourceGroupQueryRequest()
+	},
+}
+
+// GetWdkLogisticNetworkResourceGroupQueryRequest 从 sync.Pool 获取 WdkLogisticNetworkResourceGroupQueryAPIRequest
+func GetWdkLogisticNetworkResourceGroupQueryAPIRequest() *WdkLogisticNetworkResourceGroupQueryAPIRequest {
+	return poolWdkLogisticNetworkResourceGroupQueryAPIRequest.Get().(*WdkLogisticNetworkResourceGroupQueryAPIRequest)
+}
+
+// ReleaseWdkLogisticNetworkResourceGroupQueryAPIRequest 将 WdkLogisticNetworkResourceGroupQueryAPIRequest 放入 sync.Pool
+func ReleaseWdkLogisticNetworkResourceGroupQueryAPIRequest(v *WdkLogisticNetworkResourceGroupQueryAPIRequest) {
+	v.Reset()
+	poolWdkLogisticNetworkResourceGroupQueryAPIRequest.Put(v)
 }

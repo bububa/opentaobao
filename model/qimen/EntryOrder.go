@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // EntryOrder 结构体
 type EntryOrder struct {
 	// 关联订单信息
@@ -74,4 +78,56 @@ type EntryOrder struct {
 	SenderInfo *SenderInfo `json:"senderInfo,omitempty" xml:"senderInfo,omitempty"`
 	// 收件人信息
 	ReceiverInfo *ReceiverInfo `json:"receiverInfo,omitempty" xml:"receiverInfo,omitempty"`
+}
+
+var poolEntryOrder = sync.Pool{
+	New: func() any {
+		return new(EntryOrder)
+	},
+}
+
+// GetEntryOrder() 从对象池中获取EntryOrder
+func GetEntryOrder() *EntryOrder {
+	return poolEntryOrder.Get().(*EntryOrder)
+}
+
+// ReleaseEntryOrder 释放EntryOrder
+func ReleaseEntryOrder(v *EntryOrder) {
+	v.RelatedOrders = v.RelatedOrders[:0]
+	v.OrderCode = ""
+	v.OrderId = ""
+	v.OrderType = ""
+	v.WarehouseName = ""
+	v.EntryOrderCode = ""
+	v.OwnerCode = ""
+	v.PurchaseOrderCode = ""
+	v.WarehouseCode = ""
+	v.EntryOrderId = ""
+	v.EntryOrderType = ""
+	v.OutBizCode = ""
+	v.Status = ""
+	v.OperateTime = ""
+	v.Remark = ""
+	v.Freight = ""
+	v.SubOrderType = ""
+	v.ResponsibleDepartment = ""
+	v.ShopNick = ""
+	v.ShopCode = ""
+	v.OrderCreateTime = ""
+	v.ExpectStartTime = ""
+	v.ExpectEndTime = ""
+	v.LogisticsCode = ""
+	v.LogisticsName = ""
+	v.ExpressCode = ""
+	v.SupplierCode = ""
+	v.SupplierName = ""
+	v.OperatorCode = ""
+	v.OperatorName = ""
+	v.SourceWarehouseCode = ""
+	v.SourceWarehouseName = ""
+	v.TotalOrderLines = 0
+	v.ConfirmType = 0
+	v.SenderInfo = nil
+	v.ReceiverInfo = nil
+	poolEntryOrder.Put(v)
 }

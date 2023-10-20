@@ -9,11 +9,6 @@ import (
 // taobao.tae.book.bills.get
 //
 // tae查询虚拟账户明细数据
-func TaobaoTaeBookBillsGet(clt *core.SDKClient, req *bill.TaobaoTaeBookBillsGetAPIRequest, session string) (*bill.TaobaoTaeBookBillsGetAPIResponse, error) {
-	var resp bill.TaobaoTaeBookBillsGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTaeBookBillsGet(clt *core.SDKClient, req *bill.TaobaoTaeBookBillsGetAPIRequest, resp *bill.TaobaoTaeBookBillsGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

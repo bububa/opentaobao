@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // PolicyQueryParamDto 结构体
 type PolicyQueryParamDto struct {
 	// 航司二字码
@@ -32,4 +36,35 @@ type PolicyQueryParamDto struct {
 	FuzzyQuery bool `json:"fuzzy_query,omitempty" xml:"fuzzy_query,omitempty"`
 	// 中转运价标识
 	IsOwEoe bool `json:"is_ow_eoe,omitempty" xml:"is_ow_eoe,omitempty"`
+}
+
+var poolPolicyQueryParamDto = sync.Pool{
+	New: func() any {
+		return new(PolicyQueryParamDto)
+	},
+}
+
+// GetPolicyQueryParamDto() 从对象池中获取PolicyQueryParamDto
+func GetPolicyQueryParamDto() *PolicyQueryParamDto {
+	return poolPolicyQueryParamDto.Get().(*PolicyQueryParamDto)
+}
+
+// ReleasePolicyQueryParamDto 释放PolicyQueryParamDto
+func ReleasePolicyQueryParamDto(v *PolicyQueryParamDto) {
+	v.Airline = ""
+	v.ArrAirport = ""
+	v.CabinList1 = ""
+	v.CabinList2 = ""
+	v.DepAirport = ""
+	v.PolicyCode = ""
+	v.SaleStartDate = ""
+	v.SalesEndDate = ""
+	v.TravelEndDate = ""
+	v.TravelStartDate = ""
+	v.AccountCode = ""
+	v.PolicySource = 0
+	v.Status = 0
+	v.FuzzyQuery = false
+	v.IsOwEoe = false
+	poolPolicyQueryParamDto.Put(v)
 }

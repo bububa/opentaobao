@@ -1,5 +1,9 @@
 package cainiaohandover
 
+import (
+	"sync"
+)
+
 // OpenAddressParam 结构体
 type OpenAddressParam struct {
 	// 邮编
@@ -20,4 +24,29 @@ type OpenAddressParam struct {
 	CountryCode string `json:"country_code,omitempty" xml:"country_code,omitempty"`
 	// 最小区划地址库ID
 	DivisionId int64 `json:"division_id,omitempty" xml:"division_id,omitempty"`
+}
+
+var poolOpenAddressParam = sync.Pool{
+	New: func() any {
+		return new(OpenAddressParam)
+	},
+}
+
+// GetOpenAddressParam() 从对象池中获取OpenAddressParam
+func GetOpenAddressParam() *OpenAddressParam {
+	return poolOpenAddressParam.Get().(*OpenAddressParam)
+}
+
+// ReleaseOpenAddressParam 释放OpenAddressParam
+func ReleaseOpenAddressParam(v *OpenAddressParam) {
+	v.ZipCode = ""
+	v.CountryName = ""
+	v.Province = ""
+	v.City = ""
+	v.District = ""
+	v.Street = ""
+	v.DetailAddress = ""
+	v.CountryCode = ""
+	v.DivisionId = 0
+	poolOpenAddressParam.Put(v)
 }

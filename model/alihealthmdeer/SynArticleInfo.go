@@ -1,5 +1,9 @@
 package alihealthmdeer
 
+import (
+	"sync"
+)
+
 // SynArticleInfo 结构体
 type SynArticleInfo struct {
 	// 作者电话
@@ -30,4 +34,34 @@ type SynArticleInfo struct {
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 文章ID
 	ArticleId int64 `json:"article_id,omitempty" xml:"article_id,omitempty"`
+}
+
+var poolSynArticleInfo = sync.Pool{
+	New: func() any {
+		return new(SynArticleInfo)
+	},
+}
+
+// GetSynArticleInfo() 从对象池中获取SynArticleInfo
+func GetSynArticleInfo() *SynArticleInfo {
+	return poolSynArticleInfo.Get().(*SynArticleInfo)
+}
+
+// ReleaseSynArticleInfo 释放SynArticleInfo
+func ReleaseSynArticleInfo(v *SynArticleInfo) {
+	v.PhoneNumber = ""
+	v.AuthorIntroduction = ""
+	v.AuthorDepartment = ""
+	v.AuthorLevel = ""
+	v.HospitalLevel = ""
+	v.HospitalName = ""
+	v.PortraitUrl = ""
+	v.AuthorName = ""
+	v.Content = ""
+	v.OriginalArticleUrl = ""
+	v.TitleImage = ""
+	v.ArticleAbstract = ""
+	v.Title = ""
+	v.ArticleId = 0
+	poolSynArticleInfo.Put(v)
 }

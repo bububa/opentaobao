@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoWaybillIiProductAPIRequest struct {
 // NewCainiaoWaybillIiProductRequest 初始化CainiaoWaybillIiProductAPIRequest对象
 func NewCainiaoWaybillIiProductRequest() *CainiaoWaybillIiProductAPIRequest {
 	return &CainiaoWaybillIiProductAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoWaybillIiProductAPIRequest) Reset() {
+	r._cpCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoWaybillIiProductAPIRequest) SetCpCode(_cpCode string) error {
 // GetCpCode CpCode Getter
 func (r CainiaoWaybillIiProductAPIRequest) GetCpCode() string {
 	return r._cpCode
+}
+
+var poolCainiaoWaybillIiProductAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoWaybillIiProductRequest()
+	},
+}
+
+// GetCainiaoWaybillIiProductRequest 从 sync.Pool 获取 CainiaoWaybillIiProductAPIRequest
+func GetCainiaoWaybillIiProductAPIRequest() *CainiaoWaybillIiProductAPIRequest {
+	return poolCainiaoWaybillIiProductAPIRequest.Get().(*CainiaoWaybillIiProductAPIRequest)
+}
+
+// ReleaseCainiaoWaybillIiProductAPIRequest 将 CainiaoWaybillIiProductAPIRequest 放入 sync.Pool
+func ReleaseCainiaoWaybillIiProductAPIRequest(v *CainiaoWaybillIiProductAPIRequest) {
+	v.Reset()
+	poolCainiaoWaybillIiProductAPIRequest.Put(v)
 }

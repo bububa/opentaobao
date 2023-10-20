@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // AlitripPolicySpecialUploadResult 结构体
 type AlitripPolicySpecialUploadResult struct {
 	// 错误码
@@ -10,4 +14,24 @@ type AlitripPolicySpecialUploadResult struct {
 	Data *PolicyCreateResponseDto `json:"data,omitempty" xml:"data,omitempty"`
 	// 执行结果
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlitripPolicySpecialUploadResult = sync.Pool{
+	New: func() any {
+		return new(AlitripPolicySpecialUploadResult)
+	},
+}
+
+// GetAlitripPolicySpecialUploadResult() 从对象池中获取AlitripPolicySpecialUploadResult
+func GetAlitripPolicySpecialUploadResult() *AlitripPolicySpecialUploadResult {
+	return poolAlitripPolicySpecialUploadResult.Get().(*AlitripPolicySpecialUploadResult)
+}
+
+// ReleaseAlitripPolicySpecialUploadResult 释放AlitripPolicySpecialUploadResult
+func ReleaseAlitripPolicySpecialUploadResult(v *AlitripPolicySpecialUploadResult) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Data = nil
+	v.Success = false
+	poolAlitripPolicySpecialUploadResult.Put(v)
 }

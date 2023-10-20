@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpChannelSalesOrderConfirmAPIRequest struct {
 // NewAlibabaAscpChannelSalesOrderConfirmRequest 初始化AlibabaAscpChannelSalesOrderConfirmAPIRequest对象
 func NewAlibabaAscpChannelSalesOrderConfirmRequest() *AlibabaAscpChannelSalesOrderConfirmAPIRequest {
 	return &AlibabaAscpChannelSalesOrderConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpChannelSalesOrderConfirmAPIRequest) Reset() {
+	r._confirmOrderRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpChannelSalesOrderConfirmAPIRequest) SetConfirmOrderRequest(_
 // GetConfirmOrderRequest ConfirmOrderRequest Getter
 func (r AlibabaAscpChannelSalesOrderConfirmAPIRequest) GetConfirmOrderRequest() *ExternalConfirmSalesOrderRequest {
 	return r._confirmOrderRequest
+}
+
+var poolAlibabaAscpChannelSalesOrderConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpChannelSalesOrderConfirmRequest()
+	},
+}
+
+// GetAlibabaAscpChannelSalesOrderConfirmRequest 从 sync.Pool 获取 AlibabaAscpChannelSalesOrderConfirmAPIRequest
+func GetAlibabaAscpChannelSalesOrderConfirmAPIRequest() *AlibabaAscpChannelSalesOrderConfirmAPIRequest {
+	return poolAlibabaAscpChannelSalesOrderConfirmAPIRequest.Get().(*AlibabaAscpChannelSalesOrderConfirmAPIRequest)
+}
+
+// ReleaseAlibabaAscpChannelSalesOrderConfirmAPIRequest 将 AlibabaAscpChannelSalesOrderConfirmAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpChannelSalesOrderConfirmAPIRequest(v *AlibabaAscpChannelSalesOrderConfirmAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpChannelSalesOrderConfirmAPIRequest.Put(v)
 }

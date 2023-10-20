@@ -1,5 +1,9 @@
 package alidoc
 
+import (
+	"sync"
+)
+
 // DrugUsageDto 结构体
 type DrugUsageDto struct {
 	// 用法用量单位
@@ -16,4 +20,27 @@ type DrugUsageDto struct {
 	Frequency string `json:"frequency,omitempty" xml:"frequency,omitempty"`
 	// 每次用量
 	DoseValue string `json:"dose_value,omitempty" xml:"dose_value,omitempty"`
+}
+
+var poolDrugUsageDto = sync.Pool{
+	New: func() any {
+		return new(DrugUsageDto)
+	},
+}
+
+// GetDrugUsageDto() 从对象池中获取DrugUsageDto
+func GetDrugUsageDto() *DrugUsageDto {
+	return poolDrugUsageDto.Get().(*DrugUsageDto)
+}
+
+// ReleaseDrugUsageDto 释放DrugUsageDto
+func ReleaseDrugUsageDto(v *DrugUsageDto) {
+	v.MeasureUnit = ""
+	v.DrugUsage = ""
+	v.Days = ""
+	v.FrequencyUnit = ""
+	v.FrequencyValue = ""
+	v.Frequency = ""
+	v.DoseValue = ""
+	poolDrugUsageDto.Put(v)
 }

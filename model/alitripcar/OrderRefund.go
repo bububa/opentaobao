@@ -1,5 +1,9 @@
 package alitripcar
 
+import (
+	"sync"
+)
+
 // OrderRefund 结构体
 type OrderRefund struct {
 	// 退款金额(单位：分)
@@ -14,4 +18,26 @@ type OrderRefund struct {
 	AgentUniqKey string `json:"agent_uniq_key,omitempty" xml:"agent_uniq_key,omitempty"`
 	// 供应商编号
 	ProviderId string `json:"provider_id,omitempty" xml:"provider_id,omitempty"`
+}
+
+var poolOrderRefund = sync.Pool{
+	New: func() any {
+		return new(OrderRefund)
+	},
+}
+
+// GetOrderRefund() 从对象池中获取OrderRefund
+func GetOrderRefund() *OrderRefund {
+	return poolOrderRefund.Get().(*OrderRefund)
+}
+
+// ReleaseOrderRefund 释放OrderRefund
+func ReleaseOrderRefund(v *OrderRefund) {
+	v.RefundFee = ""
+	v.OriginalPrice = ""
+	v.ThirdOrderId = ""
+	v.OrderId = ""
+	v.AgentUniqKey = ""
+	v.ProviderId = ""
+	poolOrderRefund.Put(v)
 }

@@ -2,6 +2,7 @@ package mc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TmallMcTaskChargeLaunchAPIRequest struct {
 // NewTmallMcTaskChargeLaunchRequest 初始化TmallMcTaskChargeLaunchAPIRequest对象
 func NewTmallMcTaskChargeLaunchRequest() *TmallMcTaskChargeLaunchAPIRequest {
 	return &TmallMcTaskChargeLaunchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallMcTaskChargeLaunchAPIRequest) Reset() {
+	r._outerCode = ""
+	r._channelId = ""
+	r._alipayOpenId = ""
+	r._urlId = ""
+	r._extra = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TmallMcTaskChargeLaunchAPIRequest) SetExtra(_extra string) error {
 // GetExtra Extra Getter
 func (r TmallMcTaskChargeLaunchAPIRequest) GetExtra() string {
 	return r._extra
+}
+
+var poolTmallMcTaskChargeLaunchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallMcTaskChargeLaunchRequest()
+	},
+}
+
+// GetTmallMcTaskChargeLaunchRequest 从 sync.Pool 获取 TmallMcTaskChargeLaunchAPIRequest
+func GetTmallMcTaskChargeLaunchAPIRequest() *TmallMcTaskChargeLaunchAPIRequest {
+	return poolTmallMcTaskChargeLaunchAPIRequest.Get().(*TmallMcTaskChargeLaunchAPIRequest)
+}
+
+// ReleaseTmallMcTaskChargeLaunchAPIRequest 将 TmallMcTaskChargeLaunchAPIRequest 放入 sync.Pool
+func ReleaseTmallMcTaskChargeLaunchAPIRequest(v *TmallMcTaskChargeLaunchAPIRequest) {
+	v.Reset()
+	poolTmallMcTaskChargeLaunchAPIRequest.Put(v)
 }

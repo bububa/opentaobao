@@ -2,6 +2,7 @@ package examination
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -73,8 +74,41 @@ type AlibabaAlihealthExaminationHospitalPublishAPIRequest struct {
 // NewAlibabaAlihealthExaminationHospitalPublishRequest 初始化AlibabaAlihealthExaminationHospitalPublishAPIRequest对象
 func NewAlibabaAlihealthExaminationHospitalPublishRequest() *AlibabaAlihealthExaminationHospitalPublishAPIRequest {
 	return &AlibabaAlihealthExaminationHospitalPublishAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(28),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthExaminationHospitalPublishAPIRequest) Reset() {
+	r._detail = ""
+	r._tel = ""
+	r._cityName = ""
+	r._cityCode = ""
+	r._type = ""
+	r._keyWord = ""
+	r._examNotice = ""
+	r._pointX = ""
+	r._pointY = ""
+	r._address = ""
+	r._workTime = ""
+	r._hospitalName = ""
+	r._hospitalCode = ""
+	r._routes = ""
+	r._logo = ""
+	r._socialCreditCode = ""
+	r._reportWay = ""
+	r._reportWayOnline = ""
+	r._envImgsUrl = ""
+	r._specialTagsCode = ""
+	r._notify = ""
+	r._noteCategory = ""
+	r._mode = ""
+	r._agreement = ""
+	r._businessLicense = ""
+	r._medicalLicense = ""
+	r._category = ""
+	r._onlineReport = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -456,4 +490,21 @@ func (r *AlibabaAlihealthExaminationHospitalPublishAPIRequest) SetOnlineReport(_
 // GetOnlineReport OnlineReport Getter
 func (r AlibabaAlihealthExaminationHospitalPublishAPIRequest) GetOnlineReport() int64 {
 	return r._onlineReport
+}
+
+var poolAlibabaAlihealthExaminationHospitalPublishAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthExaminationHospitalPublishRequest()
+	},
+}
+
+// GetAlibabaAlihealthExaminationHospitalPublishRequest 从 sync.Pool 获取 AlibabaAlihealthExaminationHospitalPublishAPIRequest
+func GetAlibabaAlihealthExaminationHospitalPublishAPIRequest() *AlibabaAlihealthExaminationHospitalPublishAPIRequest {
+	return poolAlibabaAlihealthExaminationHospitalPublishAPIRequest.Get().(*AlibabaAlihealthExaminationHospitalPublishAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthExaminationHospitalPublishAPIRequest 将 AlibabaAlihealthExaminationHospitalPublishAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthExaminationHospitalPublishAPIRequest(v *AlibabaAlihealthExaminationHospitalPublishAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthExaminationHospitalPublishAPIRequest.Put(v)
 }

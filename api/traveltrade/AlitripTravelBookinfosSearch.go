@@ -9,11 +9,6 @@ import (
 // alitrip.travel.bookinfos.search
 //
 // 查询订单预定信息列表
-func AlitripTravelBookinfosSearch(clt *core.SDKClient, req *traveltrade.AlitripTravelBookinfosSearchAPIRequest, session string) (*traveltrade.AlitripTravelBookinfosSearchAPIResponse, error) {
-	var resp traveltrade.AlitripTravelBookinfosSearchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripTravelBookinfosSearch(clt *core.SDKClient, req *traveltrade.AlitripTravelBookinfosSearchAPIRequest, resp *traveltrade.AlitripTravelBookinfosSearchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

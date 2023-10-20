@@ -1,5 +1,9 @@
 package util
 
+import (
+	"sync"
+)
+
 // KfcSearchResult 结构体
 type KfcSearchResult struct {
 	// 匹配到的关键词的等级，值为null，或为A、B、C、D。&lt;br/&gt;当匹配不到关键词时，值为null，否则值为A、B、C、D中的一个。&lt;br/&gt;A、B、C、D等级按严重程度从高至低排列。
@@ -8,4 +12,23 @@ type KfcSearchResult struct {
 	Content string `json:"content,omitempty" xml:"content,omitempty"`
 	// 是否匹配到关键词,匹配到则为true.
 	Matched bool `json:"matched,omitempty" xml:"matched,omitempty"`
+}
+
+var poolKfcSearchResult = sync.Pool{
+	New: func() any {
+		return new(KfcSearchResult)
+	},
+}
+
+// GetKfcSearchResult() 从对象池中获取KfcSearchResult
+func GetKfcSearchResult() *KfcSearchResult {
+	return poolKfcSearchResult.Get().(*KfcSearchResult)
+}
+
+// ReleaseKfcSearchResult 释放KfcSearchResult
+func ReleaseKfcSearchResult(v *KfcSearchResult) {
+	v.Level = ""
+	v.Content = ""
+	v.Matched = false
+	poolKfcSearchResult.Put(v)
 }

@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // CreativeQueryVo 结构体
 type CreativeQueryVo struct {
 	// 单元id集合
@@ -14,4 +18,26 @@ type CreativeQueryVo struct {
 	RptQuery *RptQueryVo `json:"rpt_query,omitempty" xml:"rpt_query,omitempty"`
 	// 创意id
 	CreativeId int64 `json:"creative_id,omitempty" xml:"creative_id,omitempty"`
+}
+
+var poolCreativeQueryVo = sync.Pool{
+	New: func() any {
+		return new(CreativeQueryVo)
+	},
+}
+
+// GetCreativeQueryVo() 从对象池中获取CreativeQueryVo
+func GetCreativeQueryVo() *CreativeQueryVo {
+	return poolCreativeQueryVo.Get().(*CreativeQueryVo)
+}
+
+// ReleaseCreativeQueryVo 释放CreativeQueryVo
+func ReleaseCreativeQueryVo(v *CreativeQueryVo) {
+	v.AdgroupIdList = v.AdgroupIdList[:0]
+	v.CampaignIdList = v.CampaignIdList[:0]
+	v.Offset = 0
+	v.PageSize = 0
+	v.RptQuery = nil
+	v.CreativeId = 0
+	poolCreativeQueryVo.Put(v)
 }

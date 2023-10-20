@@ -9,11 +9,6 @@ import (
 // taobao.qimen.supplier.synchronize
 //
 // 这个接口用来同步供应商信息
-func TaobaoQimenSupplierSynchronize(clt *core.SDKClient, req *qimen.TaobaoQimenSupplierSynchronizeAPIRequest, session string) (*qimen.TaobaoQimenSupplierSynchronizeAPIResponse, error) {
-	var resp qimen.TaobaoQimenSupplierSynchronizeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoQimenSupplierSynchronize(clt *core.SDKClient, req *qimen.TaobaoQimenSupplierSynchronizeAPIRequest, resp *qimen.TaobaoQimenSupplierSynchronizeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

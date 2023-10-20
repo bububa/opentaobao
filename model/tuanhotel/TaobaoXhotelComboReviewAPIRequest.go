@@ -2,6 +2,7 @@ package tuanhotel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoXhotelComboReviewAPIRequest struct {
 // NewTaobaoXhotelComboReviewRequest 初始化TaobaoXhotelComboReviewAPIRequest对象
 func NewTaobaoXhotelComboReviewRequest() *TaobaoXhotelComboReviewAPIRequest {
 	return &TaobaoXhotelComboReviewAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelComboReviewAPIRequest) Reset() {
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoXhotelComboReviewAPIRequest) SetItemId(_itemId int64) error {
 // GetItemId ItemId Getter
 func (r TaobaoXhotelComboReviewAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolTaobaoXhotelComboReviewAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelComboReviewRequest()
+	},
+}
+
+// GetTaobaoXhotelComboReviewRequest 从 sync.Pool 获取 TaobaoXhotelComboReviewAPIRequest
+func GetTaobaoXhotelComboReviewAPIRequest() *TaobaoXhotelComboReviewAPIRequest {
+	return poolTaobaoXhotelComboReviewAPIRequest.Get().(*TaobaoXhotelComboReviewAPIRequest)
+}
+
+// ReleaseTaobaoXhotelComboReviewAPIRequest 将 TaobaoXhotelComboReviewAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelComboReviewAPIRequest(v *TaobaoXhotelComboReviewAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelComboReviewAPIRequest.Put(v)
 }

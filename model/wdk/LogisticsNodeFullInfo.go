@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // LogisticsNodeFullInfo 结构体
 type LogisticsNodeFullInfo struct {
 	// 节点名称
@@ -26,4 +30,32 @@ type LogisticsNodeFullInfo struct {
 	ProvId string `json:"prov_id,omitempty" xml:"prov_id,omitempty"`
 	// *      * 仓           WAREHOUSE(1, &#34;仓&#34;),      *      * 揽运站           COLLECT_DOCK(2, &#34;揽运站&#34;),      *      * 配送站           DELIVERY_DOCK(3, &#34;配送站&#34;),      *      * 近端履约中心           CFC(4, &#34;近端履约中心&#34;),     ;
 	NodeType int64 `json:"node_type,omitempty" xml:"node_type,omitempty"`
+}
+
+var poolLogisticsNodeFullInfo = sync.Pool{
+	New: func() any {
+		return new(LogisticsNodeFullInfo)
+	},
+}
+
+// GetLogisticsNodeFullInfo() 从对象池中获取LogisticsNodeFullInfo
+func GetLogisticsNodeFullInfo() *LogisticsNodeFullInfo {
+	return poolLogisticsNodeFullInfo.Get().(*LogisticsNodeFullInfo)
+}
+
+// ReleaseLogisticsNodeFullInfo 释放LogisticsNodeFullInfo
+func ReleaseLogisticsNodeFullInfo(v *LogisticsNodeFullInfo) {
+	v.NodeName = ""
+	v.MerchantCode = ""
+	v.ProvName = ""
+	v.Address = ""
+	v.NodeCode = ""
+	v.CityId = ""
+	v.Poi = ""
+	v.AreaId = ""
+	v.CityName = ""
+	v.AreaName = ""
+	v.ProvId = ""
+	v.NodeType = 0
+	poolLogisticsNodeFullInfo.Put(v)
 }

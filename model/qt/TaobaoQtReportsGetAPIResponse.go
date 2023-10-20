@@ -2,6 +2,7 @@ package qt
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoQtReportsGetAPIResponse struct {
 	TaobaoQtReportsGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoQtReportsGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoQtReportsGetAPIResponseModel).Reset()
+}
+
 // TaobaoQtReportsGetAPIResponseModel is 批量查询质检报告 成功返回结果
 type TaobaoQtReportsGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"qt_reports_get_response"`
@@ -22,4 +29,27 @@ type TaobaoQtReportsGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 质检报告列表
 	Reports []QtReport `json:"reports,omitempty" xml:"reports>qt_report,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoQtReportsGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Reports = m.Reports[:0]
+}
+
+var poolTaobaoQtReportsGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoQtReportsGetAPIResponse)
+	},
+}
+
+// GetTaobaoQtReportsGetAPIResponse 从 sync.Pool 获取 TaobaoQtReportsGetAPIResponse
+func GetTaobaoQtReportsGetAPIResponse() *TaobaoQtReportsGetAPIResponse {
+	return poolTaobaoQtReportsGetAPIResponse.Get().(*TaobaoQtReportsGetAPIResponse)
+}
+
+// ReleaseTaobaoQtReportsGetAPIResponse 将 TaobaoQtReportsGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoQtReportsGetAPIResponse(v *TaobaoQtReportsGetAPIResponse) {
+	v.Reset()
+	poolTaobaoQtReportsGetAPIResponse.Put(v)
 }

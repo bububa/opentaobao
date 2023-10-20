@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoTmallgenieHotelplayerpauseAPIRequest struct {
 // NewTaobaoTmallgenieHotelplayerpauseRequest 初始化TaobaoTmallgenieHotelplayerpauseAPIRequest对象
 func NewTaobaoTmallgenieHotelplayerpauseRequest() *TaobaoTmallgenieHotelplayerpauseAPIRequest {
 	return &TaobaoTmallgenieHotelplayerpauseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTmallgenieHotelplayerpauseAPIRequest) Reset() {
+	r._roomNo = ""
+	r._hotelId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoTmallgenieHotelplayerpauseAPIRequest) SetHotelId(_hotelId int64) 
 // GetHotelId HotelId Getter
 func (r TaobaoTmallgenieHotelplayerpauseAPIRequest) GetHotelId() int64 {
 	return r._hotelId
+}
+
+var poolTaobaoTmallgenieHotelplayerpauseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTmallgenieHotelplayerpauseRequest()
+	},
+}
+
+// GetTaobaoTmallgenieHotelplayerpauseRequest 从 sync.Pool 获取 TaobaoTmallgenieHotelplayerpauseAPIRequest
+func GetTaobaoTmallgenieHotelplayerpauseAPIRequest() *TaobaoTmallgenieHotelplayerpauseAPIRequest {
+	return poolTaobaoTmallgenieHotelplayerpauseAPIRequest.Get().(*TaobaoTmallgenieHotelplayerpauseAPIRequest)
+}
+
+// ReleaseTaobaoTmallgenieHotelplayerpauseAPIRequest 将 TaobaoTmallgenieHotelplayerpauseAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTmallgenieHotelplayerpauseAPIRequest(v *TaobaoTmallgenieHotelplayerpauseAPIRequest) {
+	v.Reset()
+	poolTaobaoTmallgenieHotelplayerpauseAPIRequest.Put(v)
 }

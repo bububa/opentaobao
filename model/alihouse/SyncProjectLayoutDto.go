@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // SyncProjectLayoutDto 结构体
 type SyncProjectLayoutDto struct {
 	// 绑定的品
@@ -82,4 +86,60 @@ type SyncProjectLayoutDto struct {
 	EstateType int64 `json:"estate_type,omitempty" xml:"estate_type,omitempty"`
 	// 装修标准
 	DecorationStandard int64 `json:"decoration_standard,omitempty" xml:"decoration_standard,omitempty"`
+}
+
+var poolSyncProjectLayoutDto = sync.Pool{
+	New: func() any {
+		return new(SyncProjectLayoutDto)
+	},
+}
+
+// GetSyncProjectLayoutDto() 从对象池中获取SyncProjectLayoutDto
+func GetSyncProjectLayoutDto() *SyncProjectLayoutDto {
+	return poolSyncProjectLayoutDto.Get().(*SyncProjectLayoutDto)
+}
+
+// ReleaseSyncProjectLayoutDto 释放SyncProjectLayoutDto
+func ReleaseSyncProjectLayoutDto(v *SyncProjectLayoutDto) {
+	v.Extend = v.Extend[:0]
+	v.RelationCargos = v.RelationCargos[:0]
+	v.OuterConsultantIds = v.OuterConsultantIds[:0]
+	v.Orientation = ""
+	v.LayoutName = ""
+	v.OuterLayoutId = ""
+	v.LayoutImages = ""
+	v.AvgPrice = ""
+	v.TotalPrice = ""
+	v.InsideArea = ""
+	v.ConstructionArea = ""
+	v.Bathroom = ""
+	v.Hall = ""
+	v.Room = ""
+	v.Description = ""
+	v.SalesStatus = ""
+	v.LayoutLabel = ""
+	v.Kitchen = ""
+	v.ServiceFacility = ""
+	v.OuterId = ""
+	v.IsDeleted = ""
+	v.OuterStoreId = ""
+	v.OuterTid = ""
+	v.VideoCoverImg = ""
+	v.VideoUrl = ""
+	v.ECode = ""
+	v.OuterBrokerId = ""
+	v.BuildingDescribe = ""
+	v.Balcony = ""
+	v.BelongBuildings = ""
+	v.BelongUnits = ""
+	v.BelongRooms = ""
+	v.RoomNumber = ""
+	v.IsMainLayout = 0
+	v.OpenKitchen = 0
+	v.SourceType = 0
+	v.ItemId = 0
+	v.Type = 0
+	v.EstateType = 0
+	v.DecorationStandard = 0
+	poolSyncProjectLayoutDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package tmallsc
 
+import (
+	"sync"
+)
+
 // UpdateServiceProgressRequest 结构体
 type UpdateServiceProgressRequest struct {
 	// 图片地址回传集合
@@ -12,4 +16,25 @@ type UpdateServiceProgressRequest struct {
 	AttributeMap string `json:"attribute_map,omitempty" xml:"attribute_map,omitempty"`
 	// 工单id
 	WorkcardId int64 `json:"workcard_id,omitempty" xml:"workcard_id,omitempty"`
+}
+
+var poolUpdateServiceProgressRequest = sync.Pool{
+	New: func() any {
+		return new(UpdateServiceProgressRequest)
+	},
+}
+
+// GetUpdateServiceProgressRequest() 从对象池中获取UpdateServiceProgressRequest
+func GetUpdateServiceProgressRequest() *UpdateServiceProgressRequest {
+	return poolUpdateServiceProgressRequest.Get().(*UpdateServiceProgressRequest)
+}
+
+// ReleaseUpdateServiceProgressRequest 释放UpdateServiceProgressRequest
+func ReleaseUpdateServiceProgressRequest(v *UpdateServiceProgressRequest) {
+	v.PicUrlList = v.PicUrlList[:0]
+	v.Desc = ""
+	v.Action = ""
+	v.AttributeMap = ""
+	v.WorkcardId = 0
+	poolUpdateServiceProgressRequest.Put(v)
 }

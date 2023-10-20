@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ItemPoolActivity 结构体
 type ItemPoolActivity struct {
 	// 活动的梯度列表
@@ -46,4 +50,42 @@ type ItemPoolActivity struct {
 	IsCategory bool `json:"is_category,omitempty" xml:"is_category,omitempty"`
 	// 是否自定义渠道同步
 	ByChannel bool `json:"by_channel,omitempty" xml:"by_channel,omitempty"`
+}
+
+var poolItemPoolActivity = sync.Pool{
+	New: func() any {
+		return new(ItemPoolActivity)
+	},
+}
+
+// GetItemPoolActivity() 从对象池中获取ItemPoolActivity
+func GetItemPoolActivity() *ItemPoolActivity {
+	return poolItemPoolActivity.Get().(*ItemPoolActivity)
+}
+
+// ReleaseItemPoolActivity 释放ItemPoolActivity
+func ReleaseItemPoolActivity(v *ItemPoolActivity) {
+	v.RuleStairs = v.RuleStairs[:0]
+	v.Terminals = v.Terminals[:0]
+	v.ShopIds = v.ShopIds[:0]
+	v.LogicGroupRules = v.LogicGroupRules[:0]
+	v.ChannelConfigList = v.ChannelConfigList[:0]
+	v.OutActId = ""
+	v.ActivityName = ""
+	v.Description = ""
+	v.MerchantCrowdCode = ""
+	v.TxdCrowdCode = ""
+	v.LimitInfo = nil
+	v.ActivityId = 0
+	v.StartTime = 0
+	v.EndTime = 0
+	v.MemberLimit = 0
+	v.ActivityRule = nil
+	v.PeriodConfig = nil
+	v.PriorityValue = 0
+	v.IsComb = false
+	v.ExcludeSingle = false
+	v.IsCategory = false
+	v.ByChannel = false
+	poolItemPoolActivity.Put(v)
 }

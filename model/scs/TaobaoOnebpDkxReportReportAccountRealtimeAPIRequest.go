@@ -2,6 +2,7 @@ package scs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,15 @@ type TaobaoOnebpDkxReportReportAccountRealtimeAPIRequest struct {
 // NewTaobaoOnebpDkxReportReportAccountRealtimeRequest 初始化TaobaoOnebpDkxReportReportAccountRealtimeAPIRequest对象
 func NewTaobaoOnebpDkxReportReportAccountRealtimeRequest() *TaobaoOnebpDkxReportReportAccountRealtimeAPIRequest {
 	return &TaobaoOnebpDkxReportReportAccountRealtimeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOnebpDkxReportReportAccountRealtimeAPIRequest) Reset() {
+	r._apiServiceContext = nil
+	r._reportQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -68,4 +76,21 @@ func (r *TaobaoOnebpDkxReportReportAccountRealtimeAPIRequest) SetReportQuery(_re
 // GetReportQuery ReportQuery Getter
 func (r TaobaoOnebpDkxReportReportAccountRealtimeAPIRequest) GetReportQuery() *ReportQueryTopDto {
 	return r._reportQuery
+}
+
+var poolTaobaoOnebpDkxReportReportAccountRealtimeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOnebpDkxReportReportAccountRealtimeRequest()
+	},
+}
+
+// GetTaobaoOnebpDkxReportReportAccountRealtimeRequest 从 sync.Pool 获取 TaobaoOnebpDkxReportReportAccountRealtimeAPIRequest
+func GetTaobaoOnebpDkxReportReportAccountRealtimeAPIRequest() *TaobaoOnebpDkxReportReportAccountRealtimeAPIRequest {
+	return poolTaobaoOnebpDkxReportReportAccountRealtimeAPIRequest.Get().(*TaobaoOnebpDkxReportReportAccountRealtimeAPIRequest)
+}
+
+// ReleaseTaobaoOnebpDkxReportReportAccountRealtimeAPIRequest 将 TaobaoOnebpDkxReportReportAccountRealtimeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOnebpDkxReportReportAccountRealtimeAPIRequest(v *TaobaoOnebpDkxReportReportAccountRealtimeAPIRequest) {
+	v.Reset()
+	poolTaobaoOnebpDkxReportReportAccountRealtimeAPIRequest.Put(v)
 }

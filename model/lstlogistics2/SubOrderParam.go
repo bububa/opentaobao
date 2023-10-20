@@ -1,5 +1,9 @@
 package lstlogistics2
 
+import (
+	"sync"
+)
+
 // SubOrderParam 结构体
 type SubOrderParam struct {
 	// 外部erp子单号
@@ -32,4 +36,35 @@ type SubOrderParam struct {
 	Weight int64 `json:"weight,omitempty" xml:"weight,omitempty"`
 	// 体积 单位：立方毫米
 	Volume int64 `json:"volume,omitempty" xml:"volume,omitempty"`
+}
+
+var poolSubOrderParam = sync.Pool{
+	New: func() any {
+		return new(SubOrderParam)
+	},
+}
+
+// GetSubOrderParam() 从对象池中获取SubOrderParam
+func GetSubOrderParam() *SubOrderParam {
+	return poolSubOrderParam.Get().(*SubOrderParam)
+}
+
+// ReleaseSubOrderParam 释放SubOrderParam
+func ReleaseSubOrderParam(v *SubOrderParam) {
+	v.SubOrderId = ""
+	v.ItemName = ""
+	v.OutItemCode = ""
+	v.ItemBarCode = ""
+	v.ItemUnit = ""
+	v.ItemId = 0
+	v.ScItemId = 0
+	v.ItemPrice = 0
+	v.ItemQuantity = 0
+	v.PayAmount = 0
+	v.Length = 0
+	v.Width = 0
+	v.Height = 0
+	v.Weight = 0
+	v.Volume = 0
+	poolSubOrderParam.Put(v)
 }

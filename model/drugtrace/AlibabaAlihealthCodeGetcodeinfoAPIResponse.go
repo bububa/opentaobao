@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihealthCodeGetcodeinfoAPIResponse struct {
 	AlibabaAlihealthCodeGetcodeinfoAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthCodeGetcodeinfoAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthCodeGetcodeinfoAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthCodeGetcodeinfoAPIResponseModel is 码查询功能 成功返回结果
 type AlibabaAlihealthCodeGetcodeinfoAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_code_getcodeinfo_response"`
@@ -26,4 +33,29 @@ type AlibabaAlihealthCodeGetcodeinfoAPIResponseModel struct {
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 码信息类
 	Model *DrugEntUseDto `json:"model,omitempty" xml:"model,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthCodeGetcodeinfoAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgInfo = ""
+	m.MsgCode = ""
+	m.Model = nil
+}
+
+var poolAlibabaAlihealthCodeGetcodeinfoAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthCodeGetcodeinfoAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthCodeGetcodeinfoAPIResponse 从 sync.Pool 获取 AlibabaAlihealthCodeGetcodeinfoAPIResponse
+func GetAlibabaAlihealthCodeGetcodeinfoAPIResponse() *AlibabaAlihealthCodeGetcodeinfoAPIResponse {
+	return poolAlibabaAlihealthCodeGetcodeinfoAPIResponse.Get().(*AlibabaAlihealthCodeGetcodeinfoAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthCodeGetcodeinfoAPIResponse 将 AlibabaAlihealthCodeGetcodeinfoAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthCodeGetcodeinfoAPIResponse(v *AlibabaAlihealthCodeGetcodeinfoAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthCodeGetcodeinfoAPIResponse.Put(v)
 }

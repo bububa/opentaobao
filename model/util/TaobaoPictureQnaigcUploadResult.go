@@ -1,5 +1,9 @@
 package util
 
+import (
+	"sync"
+)
+
 // TaobaoPictureQnaigcUploadResult 结构体
 type TaobaoPictureQnaigcUploadResult struct {
 	// 上传额外信息
@@ -12,4 +16,25 @@ type TaobaoPictureQnaigcUploadResult struct {
 	HttpStatusCode int64 `json:"http_status_code,omitempty" xml:"http_status_code,omitempty"`
 	// 图片结果
 	Model *FileDo `json:"model,omitempty" xml:"model,omitempty"`
+}
+
+var poolTaobaoPictureQnaigcUploadResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoPictureQnaigcUploadResult)
+	},
+}
+
+// GetTaobaoPictureQnaigcUploadResult() 从对象池中获取TaobaoPictureQnaigcUploadResult
+func GetTaobaoPictureQnaigcUploadResult() *TaobaoPictureQnaigcUploadResult {
+	return poolTaobaoPictureQnaigcUploadResult.Get().(*TaobaoPictureQnaigcUploadResult)
+}
+
+// ReleaseTaobaoPictureQnaigcUploadResult 释放TaobaoPictureQnaigcUploadResult
+func ReleaseTaobaoPictureQnaigcUploadResult(v *TaobaoPictureQnaigcUploadResult) {
+	v.BizExtMap = ""
+	v.MsgInfo = ""
+	v.MsgCode = ""
+	v.HttpStatusCode = 0
+	v.Model = nil
+	poolTaobaoPictureQnaigcUploadResult.Put(v)
 }

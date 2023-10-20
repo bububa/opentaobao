@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // KeywordQuery 结构体
 type KeywordQuery struct {
 	// 请求实体集合
@@ -22,4 +26,30 @@ type KeywordQuery struct {
 	PerPageSize int64 `json:"per_page_size,omitempty" xml:"per_page_size,omitempty"`
 	// 指定第几页
 	ToPage int64 `json:"to_page,omitempty" xml:"to_page,omitempty"`
+}
+
+var poolKeywordQuery = sync.Pool{
+	New: func() any {
+		return new(KeywordQuery)
+	},
+}
+
+// GetKeywordQuery() 从对象池中获取KeywordQuery
+func GetKeywordQuery() *KeywordQuery {
+	return poolKeywordQuery.Get().(*KeywordQuery)
+}
+
+// ReleaseKeywordQuery 释放KeywordQuery
+func ReleaseKeywordQuery(v *KeywordQuery) {
+	v.KeywordList = v.KeywordList[:0]
+	v.FromDate = ""
+	v.IsExact = ""
+	v.Keyword = ""
+	v.QsStar = ""
+	v.Status = ""
+	v.TagName = ""
+	v.Inteval = 0
+	v.PerPageSize = 0
+	v.ToPage = 0
+	poolKeywordQuery.Put(v)
 }

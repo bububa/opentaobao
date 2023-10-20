@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaServicecenterWorkcardEvaluateAPIResponse struct {
 	AlibabaServicecenterWorkcardEvaluateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaServicecenterWorkcardEvaluateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaServicecenterWorkcardEvaluateAPIResponseModel).Reset()
+}
+
 // AlibabaServicecenterWorkcardEvaluateAPIResponseModel is 服务商售后鉴定服务 成功返回结果
 type AlibabaServicecenterWorkcardEvaluateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_servicecenter_workcard_evaluate_response"`
@@ -22,4 +29,27 @@ type AlibabaServicecenterWorkcardEvaluateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果对象
 	SscResult *AlibabaServicecenterWorkcardEvaluateResult `json:"ssc_result,omitempty" xml:"ssc_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaServicecenterWorkcardEvaluateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.SscResult = nil
+}
+
+var poolAlibabaServicecenterWorkcardEvaluateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaServicecenterWorkcardEvaluateAPIResponse)
+	},
+}
+
+// GetAlibabaServicecenterWorkcardEvaluateAPIResponse 从 sync.Pool 获取 AlibabaServicecenterWorkcardEvaluateAPIResponse
+func GetAlibabaServicecenterWorkcardEvaluateAPIResponse() *AlibabaServicecenterWorkcardEvaluateAPIResponse {
+	return poolAlibabaServicecenterWorkcardEvaluateAPIResponse.Get().(*AlibabaServicecenterWorkcardEvaluateAPIResponse)
+}
+
+// ReleaseAlibabaServicecenterWorkcardEvaluateAPIResponse 将 AlibabaServicecenterWorkcardEvaluateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaServicecenterWorkcardEvaluateAPIResponse(v *AlibabaServicecenterWorkcardEvaluateAPIResponse) {
+	v.Reset()
+	poolAlibabaServicecenterWorkcardEvaluateAPIResponse.Put(v)
 }

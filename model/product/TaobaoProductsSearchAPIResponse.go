@@ -2,6 +2,7 @@ package product
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,6 +24,12 @@ type TaobaoProductsSearchAPIResponse struct {
 	TaobaoProductsSearchAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoProductsSearchAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoProductsSearchAPIResponseModel).Reset()
+}
+
 // TaobaoProductsSearchAPIResponseModel is 搜索产品信息 成功返回结果
 type TaobaoProductsSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"products_search_response"`
@@ -32,4 +39,28 @@ type TaobaoProductsSearchAPIResponseModel struct {
 	Products []Product `json:"products,omitempty" xml:"products>product,omitempty"`
 	// 结果总数
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoProductsSearchAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Products = m.Products[:0]
+	m.TotalResults = 0
+}
+
+var poolTaobaoProductsSearchAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoProductsSearchAPIResponse)
+	},
+}
+
+// GetTaobaoProductsSearchAPIResponse 从 sync.Pool 获取 TaobaoProductsSearchAPIResponse
+func GetTaobaoProductsSearchAPIResponse() *TaobaoProductsSearchAPIResponse {
+	return poolTaobaoProductsSearchAPIResponse.Get().(*TaobaoProductsSearchAPIResponse)
+}
+
+// ReleaseTaobaoProductsSearchAPIResponse 将 TaobaoProductsSearchAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoProductsSearchAPIResponse(v *TaobaoProductsSearchAPIResponse) {
+	v.Reset()
+	poolTaobaoProductsSearchAPIResponse.Put(v)
 }

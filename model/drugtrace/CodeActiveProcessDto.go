@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // CodeActiveProcessDto 结构体
 type CodeActiveProcessDto struct {
 	// 错误码信息
@@ -58,4 +62,48 @@ type CodeActiveProcessDto struct {
 	ActiveInfoSeqNo string `json:"active_info_seq_no,omitempty" xml:"active_info_seq_no,omitempty"`
 	// 制剂单位
 	PrepnUnit int64 `json:"prepn_unit,omitempty" xml:"prepn_unit,omitempty"`
+}
+
+var poolCodeActiveProcessDto = sync.Pool{
+	New: func() any {
+		return new(CodeActiveProcessDto)
+	},
+}
+
+// GetCodeActiveProcessDto() 从对象池中获取CodeActiveProcessDto
+func GetCodeActiveProcessDto() *CodeActiveProcessDto {
+	return poolCodeActiveProcessDto.Get().(*CodeActiveProcessDto)
+}
+
+// ReleaseCodeActiveProcessDto 释放CodeActiveProcessDto
+func ReleaseCodeActiveProcessDto(v *CodeActiveProcessDto) {
+	v.NoteInfo = ""
+	v.DeleteReason = ""
+	v.OperName = ""
+	v.PiatsCode = ""
+	v.ProcessDate = ""
+	v.RefEntId = ""
+	v.ProcessDes = ""
+	v.FileName = ""
+	v.ProcessFlag = ""
+	v.UploadDate = ""
+	v.UploadFlag = ""
+	v.ExprieDate = ""
+	v.ProduceDate = ""
+	v.PkgUnitCode = ""
+	v.SmallNum = ""
+	v.OtherNum = ""
+	v.ActiveCount = ""
+	v.PrepnSpec = ""
+	v.PkgRatio = ""
+	v.PkgUnitDesc = ""
+	v.PkgSpec = ""
+	v.ProduceBatchNo = ""
+	v.PrepnTypeDesc = ""
+	v.PhysicName = ""
+	v.PhysicInfo = ""
+	v.ProdSeqNo = ""
+	v.ActiveInfoSeqNo = ""
+	v.PrepnUnit = 0
+	poolCodeActiveProcessDto.Put(v)
 }

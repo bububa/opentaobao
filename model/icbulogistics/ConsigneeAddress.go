@@ -1,5 +1,9 @@
 package icbulogistics
 
+import (
+	"sync"
+)
+
 // ConsigneeAddress 结构体
 type ConsigneeAddress struct {
 	// 地址所有者邮箱(卖家维护收货地址, 值等于买家邮箱)
@@ -16,4 +20,27 @@ type ConsigneeAddress struct {
 	Address *Address `json:"address,omitempty" xml:"address,omitempty"`
 	// 联系方式(邮箱、电话号码、手机号码等)
 	Contact *Contact `json:"contact,omitempty" xml:"contact,omitempty"`
+}
+
+var poolConsigneeAddress = sync.Pool{
+	New: func() any {
+		return new(ConsigneeAddress)
+	},
+}
+
+// GetConsigneeAddress() 从对象池中获取ConsigneeAddress
+func GetConsigneeAddress() *ConsigneeAddress {
+	return poolConsigneeAddress.Get().(*ConsigneeAddress)
+}
+
+// ReleaseConsigneeAddress 释放ConsigneeAddress
+func ReleaseConsigneeAddress(v *ConsigneeAddress) {
+	v.AddressEmail = ""
+	v.CompanyNameEn = ""
+	v.ContactPerson = ""
+	v.Type = ""
+	v.CompanyNameCn = ""
+	v.Address = nil
+	v.Contact = nil
+	poolConsigneeAddress.Put(v)
 }

@@ -2,6 +2,7 @@ package nlife
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaNlifeB2cMemberDiscountruleGetAPIRequest struct {
 // NewAlibabaNlifeB2cMemberDiscountruleGetRequest 初始化AlibabaNlifeB2cMemberDiscountruleGetAPIRequest对象
 func NewAlibabaNlifeB2cMemberDiscountruleGetRequest() *AlibabaNlifeB2cMemberDiscountruleGetAPIRequest {
 	return &AlibabaNlifeB2cMemberDiscountruleGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaNlifeB2cMemberDiscountruleGetAPIRequest) Reset() {
+	r._companyId = ""
+	r._cardNo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaNlifeB2cMemberDiscountruleGetAPIRequest) SetCardNo(_cardNo strin
 // GetCardNo CardNo Getter
 func (r AlibabaNlifeB2cMemberDiscountruleGetAPIRequest) GetCardNo() string {
 	return r._cardNo
+}
+
+var poolAlibabaNlifeB2cMemberDiscountruleGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaNlifeB2cMemberDiscountruleGetRequest()
+	},
+}
+
+// GetAlibabaNlifeB2cMemberDiscountruleGetRequest 从 sync.Pool 获取 AlibabaNlifeB2cMemberDiscountruleGetAPIRequest
+func GetAlibabaNlifeB2cMemberDiscountruleGetAPIRequest() *AlibabaNlifeB2cMemberDiscountruleGetAPIRequest {
+	return poolAlibabaNlifeB2cMemberDiscountruleGetAPIRequest.Get().(*AlibabaNlifeB2cMemberDiscountruleGetAPIRequest)
+}
+
+// ReleaseAlibabaNlifeB2cMemberDiscountruleGetAPIRequest 将 AlibabaNlifeB2cMemberDiscountruleGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaNlifeB2cMemberDiscountruleGetAPIRequest(v *AlibabaNlifeB2cMemberDiscountruleGetAPIRequest) {
+	v.Reset()
+	poolAlibabaNlifeB2cMemberDiscountruleGetAPIRequest.Put(v)
 }

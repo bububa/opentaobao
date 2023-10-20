@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // Spb2bOderQuery 结构体
 type Spb2bOderQuery struct {
 	// 开始日期
@@ -26,4 +30,32 @@ type Spb2bOderQuery struct {
 	NeedByPage bool `json:"need_by_page,omitempty" xml:"need_by_page,omitempty"`
 	// 是否查询新供给ssc订购数据
 	NewSupplySubscriberData bool `json:"new_supply_subscriber_data,omitempty" xml:"new_supply_subscriber_data,omitempty"`
+}
+
+var poolSpb2bOderQuery = sync.Pool{
+	New: func() any {
+		return new(Spb2bOderQuery)
+	},
+}
+
+// GetSpb2bOderQuery() 从对象池中获取Spb2bOderQuery
+func GetSpb2bOderQuery() *Spb2bOderQuery {
+	return poolSpb2bOderQuery.Get().(*Spb2bOderQuery)
+}
+
+// ReleaseSpb2bOderQuery 释放Spb2bOderQuery
+func ReleaseSpb2bOderQuery(v *Spb2bOderQuery) {
+	v.StartDate = ""
+	v.EndDate = ""
+	v.SellerNick = ""
+	v.ServiceCode = ""
+	v.Status = 0
+	v.PageSize = 0
+	v.EndRow = 0
+	v.StartRow = 0
+	v.SellerId = 0
+	v.CurrentPage = 0
+	v.NeedByPage = false
+	v.NewSupplySubscriberData = false
+	poolSpb2bOderQuery.Put(v)
 }

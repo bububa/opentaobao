@@ -1,5 +1,9 @@
 package product
 
+import (
+	"sync"
+)
+
 // ItemSeriesRequest 结构体
 type ItemSeriesRequest struct {
 	// 市场
@@ -16,4 +20,27 @@ type ItemSeriesRequest struct {
 	SeriesId int64 `json:"series_id,omitempty" xml:"series_id,omitempty"`
 	// 系列状态
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolItemSeriesRequest = sync.Pool{
+	New: func() any {
+		return new(ItemSeriesRequest)
+	},
+}
+
+// GetItemSeriesRequest() 从对象池中获取ItemSeriesRequest
+func GetItemSeriesRequest() *ItemSeriesRequest {
+	return poolItemSeriesRequest.Get().(*ItemSeriesRequest)
+}
+
+// ReleaseItemSeriesRequest 释放ItemSeriesRequest
+func ReleaseItemSeriesRequest(v *ItemSeriesRequest) {
+	v.Market = ""
+	v.SeriesName = ""
+	v.SeriesDesc = ""
+	v.BrandName = ""
+	v.CatId = 0
+	v.SeriesId = 0
+	v.Status = 0
+	poolItemSeriesRequest.Put(v)
 }

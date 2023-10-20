@@ -1,5 +1,9 @@
 package wlbimports
 
+import (
+	"sync"
+)
+
 // HsfResult 结构体
 type HsfResult struct {
 	// data
@@ -32,4 +36,35 @@ type HsfResult struct {
 	TransferStoreResponse *TransferStoreResponse `json:"transfer_store_response,omitempty" xml:"transfer_store_response,omitempty"`
 	// 响应是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolHsfResult = sync.Pool{
+	New: func() any {
+		return new(HsfResult)
+	},
+}
+
+// GetHsfResult() 从对象池中获取HsfResult
+func GetHsfResult() *HsfResult {
+	return poolHsfResult.Get().(*HsfResult)
+}
+
+// ReleaseHsfResult 释放HsfResult
+func ReleaseHsfResult(v *HsfResult) {
+	v.ExpressPreQueryResponseList = v.ExpressPreQueryResponseList[:0]
+	v.ErrorCode = ""
+	v.InternalErrorCode = ""
+	v.ErrorMsg = ""
+	v.ExtErrorMap = ""
+	v.AppointmentCancleReponse = nil
+	v.AppointmentOrderDifferenceDetailsResponse = nil
+	v.AppointmentCreateResponse = nil
+	v.AppointmentOrderStatusResponse = nil
+	v.BigbagCancelResponse = nil
+	v.BigbagCreateResponse = nil
+	v.Data = nil
+	v.BigbagWaybillResponse = nil
+	v.TransferStoreResponse = nil
+	v.Success = false
+	poolHsfResult.Put(v)
 }

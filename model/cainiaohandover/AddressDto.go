@@ -1,5 +1,9 @@
 package cainiaohandover
 
+import (
+	"sync"
+)
+
 // AddressDto 结构体
 type AddressDto struct {
 	// 邮编
@@ -16,4 +20,27 @@ type AddressDto struct {
 	Province string `json:"province,omitempty" xml:"province,omitempty"`
 	// 国家
 	Country string `json:"country,omitempty" xml:"country,omitempty"`
+}
+
+var poolAddressDto = sync.Pool{
+	New: func() any {
+		return new(AddressDto)
+	},
+}
+
+// GetAddressDto() 从对象池中获取AddressDto
+func GetAddressDto() *AddressDto {
+	return poolAddressDto.Get().(*AddressDto)
+}
+
+// ReleaseAddressDto 释放AddressDto
+func ReleaseAddressDto(v *AddressDto) {
+	v.ZipCode = ""
+	v.DetailAddress = ""
+	v.Street = ""
+	v.District = ""
+	v.City = ""
+	v.Province = ""
+	v.Country = ""
+	poolAddressDto.Put(v)
 }

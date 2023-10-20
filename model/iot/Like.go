@@ -1,5 +1,9 @@
 package iot
 
+import (
+	"sync"
+)
+
 // Like 结构体
 type Like struct {
 	// 收藏音频源
@@ -12,4 +16,25 @@ type Like struct {
 	Author string `json:"author,omitempty" xml:"author,omitempty"`
 	// 收藏音频名
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
+}
+
+var poolLike = sync.Pool{
+	New: func() any {
+		return new(Like)
+	},
+}
+
+// GetLike() 从对象池中获取Like
+func GetLike() *Like {
+	return poolLike.Get().(*Like)
+}
+
+// ReleaseLike 释放Like
+func ReleaseLike(v *Like) {
+	v.Source = ""
+	v.Id = ""
+	v.Album = ""
+	v.Author = ""
+	v.Name = ""
+	poolLike.Put(v)
 }

@@ -1,5 +1,9 @@
 package tmallgenie
 
+import (
+	"sync"
+)
+
 // Alarm 结构体
 type Alarm struct {
 	// 闹钟音乐列表
@@ -28,4 +32,33 @@ type Alarm struct {
 	ScheduleInfo *ScheduleInfo `json:"schedule_info,omitempty" xml:"schedule_info,omitempty"`
 	// memo_ID
 	MemoId int64 `json:"memo_id,omitempty" xml:"memo_id,omitempty"`
+}
+
+var poolAlarm = sync.Pool{
+	New: func() any {
+		return new(Alarm)
+	},
+}
+
+// GetAlarm() 从对象池中获取Alarm
+func GetAlarm() *Alarm {
+	return poolAlarm.Get().(*Alarm)
+}
+
+// ReleaseAlarm 释放Alarm
+func ReleaseAlarm(v *Alarm) {
+	v.AlarmMusics = v.AlarmMusics[:0]
+	v.AlertWays = v.AlertWays[:0]
+	v.MusicPre = ""
+	v.MusicUrl = ""
+	v.Topic = ""
+	v.RingType = ""
+	v.Status = ""
+	v.Uuid = ""
+	v.GmtModified = ""
+	v.GmtCreate = ""
+	v.AlarmMusic = nil
+	v.ScheduleInfo = nil
+	v.MemoId = 0
+	poolAlarm.Put(v)
 }

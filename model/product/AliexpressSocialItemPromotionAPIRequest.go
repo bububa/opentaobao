@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AliexpressSocialItemPromotionAPIRequest struct {
 // NewAliexpressSocialItemPromotionRequest 初始化AliexpressSocialItemPromotionAPIRequest对象
 func NewAliexpressSocialItemPromotionRequest() *AliexpressSocialItemPromotionAPIRequest {
 	return &AliexpressSocialItemPromotionAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressSocialItemPromotionAPIRequest) Reset() {
+	r._targetUrl = ""
+	r._af = ""
+	r._cn = ""
+	r._cv = ""
+	r._dp = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AliexpressSocialItemPromotionAPIRequest) SetDp(_dp string) error {
 // GetDp Dp Getter
 func (r AliexpressSocialItemPromotionAPIRequest) GetDp() string {
 	return r._dp
+}
+
+var poolAliexpressSocialItemPromotionAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressSocialItemPromotionRequest()
+	},
+}
+
+// GetAliexpressSocialItemPromotionRequest 从 sync.Pool 获取 AliexpressSocialItemPromotionAPIRequest
+func GetAliexpressSocialItemPromotionAPIRequest() *AliexpressSocialItemPromotionAPIRequest {
+	return poolAliexpressSocialItemPromotionAPIRequest.Get().(*AliexpressSocialItemPromotionAPIRequest)
+}
+
+// ReleaseAliexpressSocialItemPromotionAPIRequest 将 AliexpressSocialItemPromotionAPIRequest 放入 sync.Pool
+func ReleaseAliexpressSocialItemPromotionAPIRequest(v *AliexpressSocialItemPromotionAPIRequest) {
+	v.Reset()
+	poolAliexpressSocialItemPromotionAPIRequest.Put(v)
 }

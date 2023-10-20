@@ -2,6 +2,7 @@ package wms
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoWlbWmsOrderCancelNotifyAPIRequest struct {
 // NewTaobaoWlbWmsOrderCancelNotifyRequest 初始化TaobaoWlbWmsOrderCancelNotifyAPIRequest对象
 func NewTaobaoWlbWmsOrderCancelNotifyRequest() *TaobaoWlbWmsOrderCancelNotifyAPIRequest {
 	return &TaobaoWlbWmsOrderCancelNotifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbWmsOrderCancelNotifyAPIRequest) Reset() {
+	r._orderCode = ""
+	r._orderType = ""
+	r._storeCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoWlbWmsOrderCancelNotifyAPIRequest) SetStoreCode(_storeCode string
 // GetStoreCode StoreCode Getter
 func (r TaobaoWlbWmsOrderCancelNotifyAPIRequest) GetStoreCode() string {
 	return r._storeCode
+}
+
+var poolTaobaoWlbWmsOrderCancelNotifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbWmsOrderCancelNotifyRequest()
+	},
+}
+
+// GetTaobaoWlbWmsOrderCancelNotifyRequest 从 sync.Pool 获取 TaobaoWlbWmsOrderCancelNotifyAPIRequest
+func GetTaobaoWlbWmsOrderCancelNotifyAPIRequest() *TaobaoWlbWmsOrderCancelNotifyAPIRequest {
+	return poolTaobaoWlbWmsOrderCancelNotifyAPIRequest.Get().(*TaobaoWlbWmsOrderCancelNotifyAPIRequest)
+}
+
+// ReleaseTaobaoWlbWmsOrderCancelNotifyAPIRequest 将 TaobaoWlbWmsOrderCancelNotifyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbWmsOrderCancelNotifyAPIRequest(v *TaobaoWlbWmsOrderCancelNotifyAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbWmsOrderCancelNotifyAPIRequest.Put(v)
 }

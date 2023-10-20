@@ -2,6 +2,7 @@ package car
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAlitripCarOrderQueryAPIRequest struct {
 // NewTaobaoAlitripCarOrderQueryRequest 初始化TaobaoAlitripCarOrderQueryAPIRequest对象
 func NewTaobaoAlitripCarOrderQueryRequest() *TaobaoAlitripCarOrderQueryAPIRequest {
 	return &TaobaoAlitripCarOrderQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripCarOrderQueryAPIRequest) Reset() {
+	r._orderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAlitripCarOrderQueryAPIRequest) SetOrderId(_orderId string) error
 // GetOrderId OrderId Getter
 func (r TaobaoAlitripCarOrderQueryAPIRequest) GetOrderId() string {
 	return r._orderId
+}
+
+var poolTaobaoAlitripCarOrderQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripCarOrderQueryRequest()
+	},
+}
+
+// GetTaobaoAlitripCarOrderQueryRequest 从 sync.Pool 获取 TaobaoAlitripCarOrderQueryAPIRequest
+func GetTaobaoAlitripCarOrderQueryAPIRequest() *TaobaoAlitripCarOrderQueryAPIRequest {
+	return poolTaobaoAlitripCarOrderQueryAPIRequest.Get().(*TaobaoAlitripCarOrderQueryAPIRequest)
+}
+
+// ReleaseTaobaoAlitripCarOrderQueryAPIRequest 将 TaobaoAlitripCarOrderQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripCarOrderQueryAPIRequest(v *TaobaoAlitripCarOrderQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripCarOrderQueryAPIRequest.Put(v)
 }

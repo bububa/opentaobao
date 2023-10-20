@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest struct {
 // NewAlibabaAscpUopSupplierReverseorderInstorageFeedbackRequest 初始化AlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest对象
 func NewAlibabaAscpUopSupplierReverseorderInstorageFeedbackRequest() *AlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest {
 	return &AlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest) Reset() {
+	r._instorageFeedbackRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest) SetInsto
 // GetInstorageFeedbackRequest InstorageFeedbackRequest Getter
 func (r AlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest) GetInstorageFeedbackRequest() *Instoragefeedbackrequest {
 	return r._instorageFeedbackRequest
+}
+
+var poolAlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpUopSupplierReverseorderInstorageFeedbackRequest()
+	},
+}
+
+// GetAlibabaAscpUopSupplierReverseorderInstorageFeedbackRequest 从 sync.Pool 获取 AlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest
+func GetAlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest() *AlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest {
+	return poolAlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest.Get().(*AlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest)
+}
+
+// ReleaseAlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest 将 AlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest(v *AlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest.Put(v)
 }

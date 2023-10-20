@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // WaybillGenReceiver 结构体
 type WaybillGenReceiver struct {
 	// 联系人电话
@@ -14,4 +18,26 @@ type WaybillGenReceiver struct {
 	ReceiverCity string `json:"receiver_city,omitempty" xml:"receiver_city,omitempty"`
 	// 区
 	ReceiverArea string `json:"receiver_area,omitempty" xml:"receiver_area,omitempty"`
+}
+
+var poolWaybillGenReceiver = sync.Pool{
+	New: func() any {
+		return new(WaybillGenReceiver)
+	},
+}
+
+// GetWaybillGenReceiver() 从对象池中获取WaybillGenReceiver
+func GetWaybillGenReceiver() *WaybillGenReceiver {
+	return poolWaybillGenReceiver.Get().(*WaybillGenReceiver)
+}
+
+// ReleaseWaybillGenReceiver 释放WaybillGenReceiver
+func ReleaseWaybillGenReceiver(v *WaybillGenReceiver) {
+	v.ContactMobile = ""
+	v.ContactName = ""
+	v.DetailAddress = ""
+	v.ReceiverProvince = ""
+	v.ReceiverCity = ""
+	v.ReceiverArea = ""
+	poolWaybillGenReceiver.Put(v)
 }

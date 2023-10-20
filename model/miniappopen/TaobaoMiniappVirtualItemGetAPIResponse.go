@@ -2,6 +2,7 @@ package miniappopen
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoMiniappVirtualItemGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoMiniappVirtualItemGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoMiniappVirtualItemGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoMiniappVirtualItemGetAPIResponseModel).Reset()
 }
 
 // TaobaoMiniappVirtualItemGetAPIResponseModel is 小程序关联虚拟商品查询 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoMiniappVirtualItemGetAPIResponseModel struct {
 	ECode int64 `json:"e_code,omitempty" xml:"e_code,omitempty"`
 	// 是否成功
 	Suc bool `json:"suc,omitempty" xml:"suc,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoMiniappVirtualItemGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Model = m.Model[:0]
+	m.ErrMessage = ""
+	m.ECode = 0
+	m.Suc = false
+}
+
+var poolTaobaoMiniappVirtualItemGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoMiniappVirtualItemGetAPIResponse)
+	},
+}
+
+// GetTaobaoMiniappVirtualItemGetAPIResponse 从 sync.Pool 获取 TaobaoMiniappVirtualItemGetAPIResponse
+func GetTaobaoMiniappVirtualItemGetAPIResponse() *TaobaoMiniappVirtualItemGetAPIResponse {
+	return poolTaobaoMiniappVirtualItemGetAPIResponse.Get().(*TaobaoMiniappVirtualItemGetAPIResponse)
+}
+
+// ReleaseTaobaoMiniappVirtualItemGetAPIResponse 将 TaobaoMiniappVirtualItemGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoMiniappVirtualItemGetAPIResponse(v *TaobaoMiniappVirtualItemGetAPIResponse) {
+	v.Reset()
+	poolTaobaoMiniappVirtualItemGetAPIResponse.Put(v)
 }

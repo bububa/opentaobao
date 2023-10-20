@@ -2,6 +2,7 @@ package openmall
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type TaobaoOpenmallRefundBatchGetAPIResponse struct {
 	TaobaoOpenmallRefundBatchGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoOpenmallRefundBatchGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOpenmallRefundBatchGetAPIResponseModel).Reset()
+}
+
 // TaobaoOpenmallRefundBatchGetAPIResponseModel is 批量获取openmall退款单 成功返回结果
 type TaobaoOpenmallRefundBatchGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"openmall_refund_batch_get_response"`
@@ -25,4 +32,28 @@ type TaobaoOpenmallRefundBatchGetAPIResponseModel struct {
 	Entities []TopRefundVo `json:"entities,omitempty" xml:"entities>top_refund_vo,omitempty"`
 	// 范围内总的退款单个数
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOpenmallRefundBatchGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Entities = m.Entities[:0]
+	m.TotalCount = 0
+}
+
+var poolTaobaoOpenmallRefundBatchGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOpenmallRefundBatchGetAPIResponse)
+	},
+}
+
+// GetTaobaoOpenmallRefundBatchGetAPIResponse 从 sync.Pool 获取 TaobaoOpenmallRefundBatchGetAPIResponse
+func GetTaobaoOpenmallRefundBatchGetAPIResponse() *TaobaoOpenmallRefundBatchGetAPIResponse {
+	return poolTaobaoOpenmallRefundBatchGetAPIResponse.Get().(*TaobaoOpenmallRefundBatchGetAPIResponse)
+}
+
+// ReleaseTaobaoOpenmallRefundBatchGetAPIResponse 将 TaobaoOpenmallRefundBatchGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOpenmallRefundBatchGetAPIResponse(v *TaobaoOpenmallRefundBatchGetAPIResponse) {
+	v.Reset()
+	poolTaobaoOpenmallRefundBatchGetAPIResponse.Put(v)
 }

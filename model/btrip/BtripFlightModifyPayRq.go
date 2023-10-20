@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BtripFlightModifyPayRq 结构体
 type BtripFlightModifyPayRq struct {
 	// 分销外部订单号
@@ -16,4 +20,27 @@ type BtripFlightModifyPayRq struct {
 	CorpPayPrice int64 `json:"corp_pay_price,omitempty" xml:"corp_pay_price,omitempty"`
 	// 个人支付金额
 	PersonalPayPrice int64 `json:"personal_pay_price,omitempty" xml:"personal_pay_price,omitempty"`
+}
+
+var poolBtripFlightModifyPayRq = sync.Pool{
+	New: func() any {
+		return new(BtripFlightModifyPayRq)
+	},
+}
+
+// GetBtripFlightModifyPayRq() 从对象池中获取BtripFlightModifyPayRq
+func GetBtripFlightModifyPayRq() *BtripFlightModifyPayRq {
+	return poolBtripFlightModifyPayRq.Get().(*BtripFlightModifyPayRq)
+}
+
+// ReleaseBtripFlightModifyPayRq 释放BtripFlightModifyPayRq
+func ReleaseBtripFlightModifyPayRq(v *BtripFlightModifyPayRq) {
+	v.DisOrderId = ""
+	v.SubChannel = ""
+	v.DisSubOrderId = ""
+	v.Extra = ""
+	v.TotalPayPrice = 0
+	v.CorpPayPrice = 0
+	v.PersonalPayPrice = 0
+	poolBtripFlightModifyPayRq.Put(v)
 }

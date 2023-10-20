@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // AlibabaAscpChannelSubRefundCreateData 结构体
 type AlibabaAscpChannelSubRefundCreateData struct {
 	// 外部退款单号
@@ -18,4 +22,28 @@ type AlibabaAscpChannelSubRefundCreateData struct {
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 	// 产品id
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
+}
+
+var poolAlibabaAscpChannelSubRefundCreateData = sync.Pool{
+	New: func() any {
+		return new(AlibabaAscpChannelSubRefundCreateData)
+	},
+}
+
+// GetAlibabaAscpChannelSubRefundCreateData() 从对象池中获取AlibabaAscpChannelSubRefundCreateData
+func GetAlibabaAscpChannelSubRefundCreateData() *AlibabaAscpChannelSubRefundCreateData {
+	return poolAlibabaAscpChannelSubRefundCreateData.Get().(*AlibabaAscpChannelSubRefundCreateData)
+}
+
+// ReleaseAlibabaAscpChannelSubRefundCreateData 释放AlibabaAscpChannelSubRefundCreateData
+func ReleaseAlibabaAscpChannelSubRefundCreateData(v *AlibabaAscpChannelSubRefundCreateData) {
+	v.OutRefundNo = ""
+	v.RefundNo = ""
+	v.OutSubOrderNo = ""
+	v.SubSaleOrderNo = ""
+	v.SaleOrderNo = ""
+	v.RefundFee = 0
+	v.SkuId = 0
+	v.ProductId = 0
+	poolAlibabaAscpChannelSubRefundCreateData.Put(v)
 }

@@ -1,5 +1,9 @@
 package hotelhstdf
 
+import (
+	"sync"
+)
+
 // HotelRoomStaticDo 结构体
 type HotelRoomStaticDo struct {
 	// 字典code,收费停车场
@@ -34,4 +38,36 @@ type HotelRoomStaticDo struct {
 	Tag int64 `json:"tag,omitempty" xml:"tag,omitempty"`
 	// 字典类型，10--预订须知，116--酒店设施，117--娱乐设施，118--酒店服务，119--房间设施
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolHotelRoomStaticDo = sync.Pool{
+	New: func() any {
+		return new(HotelRoomStaticDo)
+	},
+}
+
+// GetHotelRoomStaticDo() 从对象池中获取HotelRoomStaticDo
+func GetHotelRoomStaticDo() *HotelRoomStaticDo {
+	return poolHotelRoomStaticDo.Get().(*HotelRoomStaticDo)
+}
+
+// ReleaseHotelRoomStaticDo 释放HotelRoomStaticDo
+func ReleaseHotelRoomStaticDo(v *HotelRoomStaticDo) {
+	v.Code = ""
+	v.DataBankBrandId = ""
+	v.Description = ""
+	v.DisplayName = ""
+	v.EnName = ""
+	v.ExtendInfo = ""
+	v.LogoUrl = ""
+	v.Name = ""
+	v.Hot = 0
+	v.Id = 0
+	v.ParentId = 0
+	v.Priority = 0
+	v.Status = 0
+	v.SubType = 0
+	v.Tag = 0
+	v.Type = 0
+	poolHotelRoomStaticDo.Put(v)
 }

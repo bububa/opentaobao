@@ -1,5 +1,9 @@
 package ioti
 
+import (
+	"sync"
+)
+
 // EslTopEngineAssetsDo 结构体
 type EslTopEngineAssetsDo struct {
 	// mac
@@ -18,4 +22,28 @@ type EslTopEngineAssetsDo struct {
 	BatteryVoltage int64 `json:"battery_voltage,omitempty" xml:"battery_voltage,omitempty"`
 	// ap上次上报的最强rssi值
 	ApRssi int64 `json:"ap_rssi,omitempty" xml:"ap_rssi,omitempty"`
+}
+
+var poolEslTopEngineAssetsDo = sync.Pool{
+	New: func() any {
+		return new(EslTopEngineAssetsDo)
+	},
+}
+
+// GetEslTopEngineAssetsDo() 从对象池中获取EslTopEngineAssetsDo
+func GetEslTopEngineAssetsDo() *EslTopEngineAssetsDo {
+	return poolEslTopEngineAssetsDo.Get().(*EslTopEngineAssetsDo)
+}
+
+// ReleaseEslTopEngineAssetsDo 释放EslTopEngineAssetsDo
+func ReleaseEslTopEngineAssetsDo(v *EslTopEngineAssetsDo) {
+	v.EslMac = ""
+	v.EslModelName = ""
+	v.ApMac = ""
+	v.Lastseen = 0
+	v.FirmwareVersion = 0
+	v.BatteryLevel = 0
+	v.BatteryVoltage = 0
+	v.ApRssi = 0
+	poolEslTopEngineAssetsDo.Put(v)
 }

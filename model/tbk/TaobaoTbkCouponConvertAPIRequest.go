@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -45,8 +46,27 @@ type TaobaoTbkCouponConvertAPIRequest struct {
 // NewTaobaoTbkCouponConvertRequest 初始化TaobaoTbkCouponConvertAPIRequest对象
 func NewTaobaoTbkCouponConvertRequest() *TaobaoTbkCouponConvertAPIRequest {
 	return &TaobaoTbkCouponConvertAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(14),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkCouponConvertAPIRequest) Reset() {
+	r._itemId = ""
+	r._relationId = ""
+	r._specialId = ""
+	r._externalId = ""
+	r._xid = ""
+	r._bizSceneId = ""
+	r._promotionType = ""
+	r._adzoneId = 0
+	r._platform = 0
+	r._ucrowdId = 0
+	r._getTopnRate = 0
+	r._miniProgramLink = 0
+	r._manageItemPubId = 0
+	r._skuId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -246,4 +266,21 @@ func (r *TaobaoTbkCouponConvertAPIRequest) SetSkuId(_skuId int64) error {
 // GetSkuId SkuId Getter
 func (r TaobaoTbkCouponConvertAPIRequest) GetSkuId() int64 {
 	return r._skuId
+}
+
+var poolTaobaoTbkCouponConvertAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkCouponConvertRequest()
+	},
+}
+
+// GetTaobaoTbkCouponConvertRequest 从 sync.Pool 获取 TaobaoTbkCouponConvertAPIRequest
+func GetTaobaoTbkCouponConvertAPIRequest() *TaobaoTbkCouponConvertAPIRequest {
+	return poolTaobaoTbkCouponConvertAPIRequest.Get().(*TaobaoTbkCouponConvertAPIRequest)
+}
+
+// ReleaseTaobaoTbkCouponConvertAPIRequest 将 TaobaoTbkCouponConvertAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkCouponConvertAPIRequest(v *TaobaoTbkCouponConvertAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkCouponConvertAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package alihealthpw
 
+import (
+	"sync"
+)
+
 // ModifyNameRo 结构体
 type ModifyNameRo struct {
 	// 患者姓名
@@ -10,4 +14,24 @@ type ModifyNameRo struct {
 	UserUniqueCode string `json:"user_unique_code,omitempty" xml:"user_unique_code,omitempty"`
 	// 三方项目id
 	ProjectThirdId string `json:"project_third_id,omitempty" xml:"project_third_id,omitempty"`
+}
+
+var poolModifyNameRo = sync.Pool{
+	New: func() any {
+		return new(ModifyNameRo)
+	},
+}
+
+// GetModifyNameRo() 从对象池中获取ModifyNameRo
+func GetModifyNameRo() *ModifyNameRo {
+	return poolModifyNameRo.Get().(*ModifyNameRo)
+}
+
+// ReleaseModifyNameRo 释放ModifyNameRo
+func ReleaseModifyNameRo(v *ModifyNameRo) {
+	v.PatientName = ""
+	v.ModifyTime = ""
+	v.UserUniqueCode = ""
+	v.ProjectThirdId = ""
+	poolModifyNameRo.Put(v)
 }

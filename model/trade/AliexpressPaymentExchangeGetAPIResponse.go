@@ -2,6 +2,7 @@ package trade
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AliexpressPaymentExchangeGetAPIResponse struct {
 	AliexpressPaymentExchangeGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AliexpressPaymentExchangeGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliexpressPaymentExchangeGetAPIResponseModel).Reset()
+}
+
 // AliexpressPaymentExchangeGetAPIResponseModel is getExchange 成功返回结果
 type AliexpressPaymentExchangeGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_payment_exchange_get_response"`
@@ -22,4 +29,27 @@ type AliexpressPaymentExchangeGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *AliexpressPaymentExchangeGetResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliexpressPaymentExchangeGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAliexpressPaymentExchangeGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliexpressPaymentExchangeGetAPIResponse)
+	},
+}
+
+// GetAliexpressPaymentExchangeGetAPIResponse 从 sync.Pool 获取 AliexpressPaymentExchangeGetAPIResponse
+func GetAliexpressPaymentExchangeGetAPIResponse() *AliexpressPaymentExchangeGetAPIResponse {
+	return poolAliexpressPaymentExchangeGetAPIResponse.Get().(*AliexpressPaymentExchangeGetAPIResponse)
+}
+
+// ReleaseAliexpressPaymentExchangeGetAPIResponse 将 AliexpressPaymentExchangeGetAPIResponse 保存到 sync.Pool
+func ReleaseAliexpressPaymentExchangeGetAPIResponse(v *AliexpressPaymentExchangeGetAPIResponse) {
+	v.Reset()
+	poolAliexpressPaymentExchangeGetAPIResponse.Put(v)
 }

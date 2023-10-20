@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoTopAuthTokenCreateAPIRequest struct {
 // NewTaobaoTopAuthTokenCreateRequest 初始化TaobaoTopAuthTokenCreateAPIRequest对象
 func NewTaobaoTopAuthTokenCreateRequest() *TaobaoTopAuthTokenCreateAPIRequest {
 	return &TaobaoTopAuthTokenCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTopAuthTokenCreateAPIRequest) Reset() {
+	r._code = ""
+	r._uuid = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoTopAuthTokenCreateAPIRequest) SetUuid(_uuid string) error {
 // GetUuid Uuid Getter
 func (r TaobaoTopAuthTokenCreateAPIRequest) GetUuid() string {
 	return r._uuid
+}
+
+var poolTaobaoTopAuthTokenCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTopAuthTokenCreateRequest()
+	},
+}
+
+// GetTaobaoTopAuthTokenCreateRequest 从 sync.Pool 获取 TaobaoTopAuthTokenCreateAPIRequest
+func GetTaobaoTopAuthTokenCreateAPIRequest() *TaobaoTopAuthTokenCreateAPIRequest {
+	return poolTaobaoTopAuthTokenCreateAPIRequest.Get().(*TaobaoTopAuthTokenCreateAPIRequest)
+}
+
+// ReleaseTaobaoTopAuthTokenCreateAPIRequest 将 TaobaoTopAuthTokenCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTopAuthTokenCreateAPIRequest(v *TaobaoTopAuthTokenCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoTopAuthTokenCreateAPIRequest.Put(v)
 }

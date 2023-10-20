@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.seller.refund.fillfee
 //
 // 回填手续费
-func TaobaoAlitripSellerRefundFillfee(clt *core.SDKClient, req *jipiao.TaobaoAlitripSellerRefundFillfeeAPIRequest, session string) (*jipiao.TaobaoAlitripSellerRefundFillfeeAPIResponse, error) {
-	var resp jipiao.TaobaoAlitripSellerRefundFillfeeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripSellerRefundFillfee(clt *core.SDKClient, req *jipiao.TaobaoAlitripSellerRefundFillfeeAPIRequest, resp *jipiao.TaobaoAlitripSellerRefundFillfeeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

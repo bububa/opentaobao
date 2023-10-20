@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // ProductSkuDo 结构体
 type ProductSkuDo struct {
 	// sku的销售属性组合字符串。格式:pid:vid;pid:vid,如:1627207:3232483;1630696:3284570,表示:机身颜色:军绿色;手机套餐:一电一充。
@@ -24,4 +28,31 @@ type ProductSkuDo struct {
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 	// 市场价单位分
 	StandardPriceFen int64 `json:"standard_price_fen,omitempty" xml:"standard_price_fen,omitempty"`
+}
+
+var poolProductSkuDo = sync.Pool{
+	New: func() any {
+		return new(ProductSkuDo)
+	},
+}
+
+// GetProductSkuDo() 从对象池中获取ProductSkuDo
+func GetProductSkuDo() *ProductSkuDo {
+	return poolProductSkuDo.Get().(*ProductSkuDo)
+}
+
+// ReleaseProductSkuDo 释放ProductSkuDo
+func ReleaseProductSkuDo(v *ProductSkuDo) {
+	v.Properties = ""
+	v.OuterId = ""
+	v.AuctionSkuId = 0
+	v.CostPriceFen = 0
+	v.PriceCostDealerFen = 0
+	v.Quantity = 0
+	v.QuotaQuantity = 0
+	v.ReservedQuantity = 0
+	v.ScitemId = 0
+	v.SkuId = 0
+	v.StandardPriceFen = 0
+	poolProductSkuDo.Put(v)
 }

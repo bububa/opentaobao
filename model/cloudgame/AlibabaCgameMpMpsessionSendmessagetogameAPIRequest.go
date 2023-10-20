@@ -2,6 +2,7 @@ package cloudgame
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type AlibabaCgameMpMpsessionSendmessagetogameAPIRequest struct {
 // NewAlibabaCgameMpMpsessionSendmessagetogameRequest 初始化AlibabaCgameMpMpsessionSendmessagetogameAPIRequest对象
 func NewAlibabaCgameMpMpsessionSendmessagetogameRequest() *AlibabaCgameMpMpsessionSendmessagetogameAPIRequest {
 	return &AlibabaCgameMpMpsessionSendmessagetogameAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCgameMpMpsessionSendmessagetogameAPIRequest) Reset() {
+	r._deviceId = ""
+	r._userId = ""
+	r._userToken = ""
+	r._userAccessToken = ""
+	r._instanceId = ""
+	r._gameId = ""
+	r._gameProjectKey = ""
+	r._customerAccountId = ""
+	r._message = ""
+	r._mpAccountId = 0
+	r._accountType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *AlibabaCgameMpMpsessionSendmessagetogameAPIRequest) SetAccountType(_acc
 // GetAccountType AccountType Getter
 func (r AlibabaCgameMpMpsessionSendmessagetogameAPIRequest) GetAccountType() int64 {
 	return r._accountType
+}
+
+var poolAlibabaCgameMpMpsessionSendmessagetogameAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCgameMpMpsessionSendmessagetogameRequest()
+	},
+}
+
+// GetAlibabaCgameMpMpsessionSendmessagetogameRequest 从 sync.Pool 获取 AlibabaCgameMpMpsessionSendmessagetogameAPIRequest
+func GetAlibabaCgameMpMpsessionSendmessagetogameAPIRequest() *AlibabaCgameMpMpsessionSendmessagetogameAPIRequest {
+	return poolAlibabaCgameMpMpsessionSendmessagetogameAPIRequest.Get().(*AlibabaCgameMpMpsessionSendmessagetogameAPIRequest)
+}
+
+// ReleaseAlibabaCgameMpMpsessionSendmessagetogameAPIRequest 将 AlibabaCgameMpMpsessionSendmessagetogameAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCgameMpMpsessionSendmessagetogameAPIRequest(v *AlibabaCgameMpMpsessionSendmessagetogameAPIRequest) {
+	v.Reset()
+	poolAlibabaCgameMpMpsessionSendmessagetogameAPIRequest.Put(v)
 }

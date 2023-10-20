@@ -1,5 +1,9 @@
 package idleparttime
 
+import (
+	"sync"
+)
+
 // PartTimeJob 结构体
 type PartTimeJob struct {
 	// 岗位具体的要求和要求的类型
@@ -48,4 +52,43 @@ type PartTimeJob struct {
 	ShowCancel int64 `json:"show_cancel,omitempty" xml:"show_cancel,omitempty"`
 	// 是否可以主动联系商家, 0: 可以, 1: 不可以
 	ContactMerchant int64 `json:"contact_merchant,omitempty" xml:"contact_merchant,omitempty"`
+}
+
+var poolPartTimeJob = sync.Pool{
+	New: func() any {
+		return new(PartTimeJob)
+	},
+}
+
+// GetPartTimeJob() 从对象池中获取PartTimeJob
+func GetPartTimeJob() *PartTimeJob {
+	return poolPartTimeJob.Get().(*PartTimeJob)
+}
+
+// ReleasePartTimeJob 释放PartTimeJob
+func ReleasePartTimeJob(v *PartTimeJob) {
+	v.JobRequirements = v.JobRequirements[:0]
+	v.JobItemTitle = ""
+	v.JobType = ""
+	v.JobTitle = ""
+	v.Salary = ""
+	v.PayWay = ""
+	v.Location = ""
+	v.JobDescription = ""
+	v.Royalties = ""
+	v.WorkDuration = ""
+	v.WorkTime = ""
+	v.Company = ""
+	v.CompanyDescription = ""
+	v.CompanyLogo = ""
+	v.Gps = ""
+	v.Category = ""
+	v.ContactPhone = ""
+	v.PublishGps = ""
+	v.RecruitCount = 0
+	v.JobId = 0
+	v.IsAdd = 0
+	v.ShowCancel = 0
+	v.ContactMerchant = 0
+	poolPartTimeJob.Put(v)
 }

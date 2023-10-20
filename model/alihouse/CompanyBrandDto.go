@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // CompanyBrandDto 结构体
 type CompanyBrandDto struct {
 	// 品牌logo
@@ -18,4 +22,28 @@ type CompanyBrandDto struct {
 	BrandCategory int64 `json:"brand_category,omitempty" xml:"brand_category,omitempty"`
 	// 是否为测试数据  1-是  0-否
 	IsTest int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
+}
+
+var poolCompanyBrandDto = sync.Pool{
+	New: func() any {
+		return new(CompanyBrandDto)
+	},
+}
+
+// GetCompanyBrandDto() 从对象池中获取CompanyBrandDto
+func GetCompanyBrandDto() *CompanyBrandDto {
+	return poolCompanyBrandDto.Get().(*CompanyBrandDto)
+}
+
+// ReleaseCompanyBrandDto 释放CompanyBrandDto
+func ReleaseCompanyBrandDto(v *CompanyBrandDto) {
+	v.Logo = ""
+	v.BrandName = ""
+	v.OuterBrandId = ""
+	v.Description = ""
+	v.BrandTags = ""
+	v.IsDeleted = 0
+	v.BrandCategory = 0
+	v.IsTest = 0
+	poolCompanyBrandDto.Put(v)
 }

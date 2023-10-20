@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -18,6 +19,12 @@ type TmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponse str
 	TmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponseModel).Reset()
+}
+
 // TmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponseModel is 更新网点覆盖的服务 成功返回结果
 type TmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_servicestore_updateservicestorecoverservice_response"`
@@ -25,4 +32,27 @@ type TmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponseMode
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *ResultBase `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponse)
+	},
+}
+
+// GetTmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponse 从 sync.Pool 获取 TmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponse
+func GetTmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponse() *TmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponse {
+	return poolTmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponse.Get().(*TmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponse)
+}
+
+// ReleaseTmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponse 将 TmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponse 保存到 sync.Pool
+func ReleaseTmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponse(v *TmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponse) {
+	v.Reset()
+	poolTmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponse.Put(v)
 }

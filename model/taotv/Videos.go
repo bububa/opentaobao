@@ -1,5 +1,9 @@
 package taotv
 
+import (
+	"sync"
+)
+
 // Videos 结构体
 type Videos struct {
 	// 视频标题
@@ -12,4 +16,25 @@ type Videos struct {
 	From string `json:"from,omitempty" xml:"from,omitempty"`
 	// id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolVideos = sync.Pool{
+	New: func() any {
+		return new(Videos)
+	},
+}
+
+// GetVideos() 从对象池中获取Videos
+func GetVideos() *Videos {
+	return poolVideos.Get().(*Videos)
+}
+
+// ReleaseVideos 释放Videos
+func ReleaseVideos(v *Videos) {
+	v.Title = ""
+	v.VideoId = ""
+	v.PicUrl = ""
+	v.From = ""
+	v.Id = 0
+	poolVideos.Put(v)
 }

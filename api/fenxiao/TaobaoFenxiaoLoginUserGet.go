@@ -9,11 +9,6 @@ import (
 // taobao.fenxiao.login.user.get
 //
 // 获取用户登录信息
-func TaobaoFenxiaoLoginUserGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoLoginUserGetAPIRequest, session string) (*fenxiao.TaobaoFenxiaoLoginUserGetAPIResponse, error) {
-	var resp fenxiao.TaobaoFenxiaoLoginUserGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFenxiaoLoginUserGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoLoginUserGetAPIRequest, resp *fenxiao.TaobaoFenxiaoLoginUserGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoCardExpandcardQueryAPIRequest struct {
 // NewTaobaoCardExpandcardQueryRequest 初始化TaobaoCardExpandcardQueryAPIRequest对象
 func NewTaobaoCardExpandcardQueryRequest() *TaobaoCardExpandcardQueryAPIRequest {
 	return &TaobaoCardExpandcardQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCardExpandcardQueryAPIRequest) Reset() {
+	r._accountNo = ""
+	r._usedScopeCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoCardExpandcardQueryAPIRequest) SetUsedScopeCode(_usedScopeCode st
 // GetUsedScopeCode UsedScopeCode Getter
 func (r TaobaoCardExpandcardQueryAPIRequest) GetUsedScopeCode() string {
 	return r._usedScopeCode
+}
+
+var poolTaobaoCardExpandcardQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCardExpandcardQueryRequest()
+	},
+}
+
+// GetTaobaoCardExpandcardQueryRequest 从 sync.Pool 获取 TaobaoCardExpandcardQueryAPIRequest
+func GetTaobaoCardExpandcardQueryAPIRequest() *TaobaoCardExpandcardQueryAPIRequest {
+	return poolTaobaoCardExpandcardQueryAPIRequest.Get().(*TaobaoCardExpandcardQueryAPIRequest)
+}
+
+// ReleaseTaobaoCardExpandcardQueryAPIRequest 将 TaobaoCardExpandcardQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCardExpandcardQueryAPIRequest(v *TaobaoCardExpandcardQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoCardExpandcardQueryAPIRequest.Put(v)
 }

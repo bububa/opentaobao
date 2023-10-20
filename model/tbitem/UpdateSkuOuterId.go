@@ -1,5 +1,9 @@
 package tbitem
 
+import (
+	"sync"
+)
+
 // UpdateSkuOuterId 结构体
 type UpdateSkuOuterId struct {
 	// 被更新的Sku的商家外部id
@@ -8,4 +12,23 @@ type UpdateSkuOuterId struct {
 	Properties string `json:"properties,omitempty" xml:"properties,omitempty"`
 	// SkuID，如果填写，将以SKUID查找被更新的SKU
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
+}
+
+var poolUpdateSkuOuterId = sync.Pool{
+	New: func() any {
+		return new(UpdateSkuOuterId)
+	},
+}
+
+// GetUpdateSkuOuterId() 从对象池中获取UpdateSkuOuterId
+func GetUpdateSkuOuterId() *UpdateSkuOuterId {
+	return poolUpdateSkuOuterId.Get().(*UpdateSkuOuterId)
+}
+
+// ReleaseUpdateSkuOuterId 释放UpdateSkuOuterId
+func ReleaseUpdateSkuOuterId(v *UpdateSkuOuterId) {
+	v.OuterId = ""
+	v.Properties = ""
+	v.SkuId = 0
+	poolUpdateSkuOuterId.Put(v)
 }

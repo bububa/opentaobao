@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpChannelSalesOrderCreateAPIRequest struct {
 // NewAlibabaAscpChannelSalesOrderCreateRequest 初始化AlibabaAscpChannelSalesOrderCreateAPIRequest对象
 func NewAlibabaAscpChannelSalesOrderCreateRequest() *AlibabaAscpChannelSalesOrderCreateAPIRequest {
 	return &AlibabaAscpChannelSalesOrderCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpChannelSalesOrderCreateAPIRequest) Reset() {
+	r._createOrderRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpChannelSalesOrderCreateAPIRequest) SetCreateOrderRequest(_cr
 // GetCreateOrderRequest CreateOrderRequest Getter
 func (r AlibabaAscpChannelSalesOrderCreateAPIRequest) GetCreateOrderRequest() *ExternalCreateSalesOrderRequest {
 	return r._createOrderRequest
+}
+
+var poolAlibabaAscpChannelSalesOrderCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpChannelSalesOrderCreateRequest()
+	},
+}
+
+// GetAlibabaAscpChannelSalesOrderCreateRequest 从 sync.Pool 获取 AlibabaAscpChannelSalesOrderCreateAPIRequest
+func GetAlibabaAscpChannelSalesOrderCreateAPIRequest() *AlibabaAscpChannelSalesOrderCreateAPIRequest {
+	return poolAlibabaAscpChannelSalesOrderCreateAPIRequest.Get().(*AlibabaAscpChannelSalesOrderCreateAPIRequest)
+}
+
+// ReleaseAlibabaAscpChannelSalesOrderCreateAPIRequest 将 AlibabaAscpChannelSalesOrderCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpChannelSalesOrderCreateAPIRequest(v *AlibabaAscpChannelSalesOrderCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpChannelSalesOrderCreateAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package moziacl
 
+import (
+	"sync"
+)
+
 // GrantRolesRequest 结构体
 type GrantRolesRequest struct {
 	// 授予的角色的code列表
@@ -14,4 +18,26 @@ type GrantRolesRequest struct {
 	ExpireDate string `json:"expire_date,omitempty" xml:"expire_date,omitempty"`
 	// 授角色主体
 	Principal *BucUserPrincipalParam `json:"principal,omitempty" xml:"principal,omitempty"`
+}
+
+var poolGrantRolesRequest = sync.Pool{
+	New: func() any {
+		return new(GrantRolesRequest)
+	},
+}
+
+// GetGrantRolesRequest() 从对象池中获取GrantRolesRequest
+func GetGrantRolesRequest() *GrantRolesRequest {
+	return poolGrantRolesRequest.Get().(*GrantRolesRequest)
+}
+
+// ReleaseGrantRolesRequest 释放GrantRolesRequest
+func ReleaseGrantRolesRequest(v *GrantRolesRequest) {
+	v.RoleNames = v.RoleNames[:0]
+	v.Reason = ""
+	v.TargetAppName = ""
+	v.RequestMetaData = ""
+	v.ExpireDate = ""
+	v.Principal = nil
+	poolGrantRolesRequest.Put(v)
 }

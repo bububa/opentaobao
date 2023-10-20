@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlitripMerchantGalaxyHotelDetailSearchAPIRequest struct {
 // NewAlitripMerchantGalaxyHotelDetailSearchRequest 初始化AlitripMerchantGalaxyHotelDetailSearchAPIRequest对象
 func NewAlitripMerchantGalaxyHotelDetailSearchRequest() *AlitripMerchantGalaxyHotelDetailSearchAPIRequest {
 	return &AlitripMerchantGalaxyHotelDetailSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyHotelDetailSearchAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._hotelDetailsParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlitripMerchantGalaxyHotelDetailSearchAPIRequest) SetHotelDetailsParam(
 // GetHotelDetailsParam HotelDetailsParam Getter
 func (r AlitripMerchantGalaxyHotelDetailSearchAPIRequest) GetHotelDetailsParam() *HotelDetailsParam {
 	return r._hotelDetailsParam
+}
+
+var poolAlitripMerchantGalaxyHotelDetailSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyHotelDetailSearchRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyHotelDetailSearchRequest 从 sync.Pool 获取 AlitripMerchantGalaxyHotelDetailSearchAPIRequest
+func GetAlitripMerchantGalaxyHotelDetailSearchAPIRequest() *AlitripMerchantGalaxyHotelDetailSearchAPIRequest {
+	return poolAlitripMerchantGalaxyHotelDetailSearchAPIRequest.Get().(*AlitripMerchantGalaxyHotelDetailSearchAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyHotelDetailSearchAPIRequest 将 AlitripMerchantGalaxyHotelDetailSearchAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyHotelDetailSearchAPIRequest(v *AlitripMerchantGalaxyHotelDetailSearchAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyHotelDetailSearchAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkTradeOrderCreateAPIRequest struct {
 // NewAlibabaWdkTradeOrderCreateRequest 初始化AlibabaWdkTradeOrderCreateAPIRequest对象
 func NewAlibabaWdkTradeOrderCreateRequest() *AlibabaWdkTradeOrderCreateAPIRequest {
 	return &AlibabaWdkTradeOrderCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkTradeOrderCreateAPIRequest) Reset() {
+	r._trade = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkTradeOrderCreateAPIRequest) SetTrade(_trade *TradeOrder) erro
 // GetTrade Trade Getter
 func (r AlibabaWdkTradeOrderCreateAPIRequest) GetTrade() *TradeOrder {
 	return r._trade
+}
+
+var poolAlibabaWdkTradeOrderCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkTradeOrderCreateRequest()
+	},
+}
+
+// GetAlibabaWdkTradeOrderCreateRequest 从 sync.Pool 获取 AlibabaWdkTradeOrderCreateAPIRequest
+func GetAlibabaWdkTradeOrderCreateAPIRequest() *AlibabaWdkTradeOrderCreateAPIRequest {
+	return poolAlibabaWdkTradeOrderCreateAPIRequest.Get().(*AlibabaWdkTradeOrderCreateAPIRequest)
+}
+
+// ReleaseAlibabaWdkTradeOrderCreateAPIRequest 将 AlibabaWdkTradeOrderCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkTradeOrderCreateAPIRequest(v *AlibabaWdkTradeOrderCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkTradeOrderCreateAPIRequest.Put(v)
 }

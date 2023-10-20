@@ -1,5 +1,9 @@
 package tbtrade
 
+import (
+	"sync"
+)
+
 // BillDetailInfo 结构体
 type BillDetailInfo struct {
 	// 店铺名称
@@ -20,4 +24,29 @@ type BillDetailInfo struct {
 	BillDuration int64 `json:"bill_duration,omitempty" xml:"bill_duration,omitempty"`
 	// 订单号
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+}
+
+var poolBillDetailInfo = sync.Pool{
+	New: func() any {
+		return new(BillDetailInfo)
+	},
+}
+
+// GetBillDetailInfo() 从对象池中获取BillDetailInfo
+func GetBillDetailInfo() *BillDetailInfo {
+	return poolBillDetailInfo.Get().(*BillDetailInfo)
+}
+
+// ReleaseBillDetailInfo 释放BillDetailInfo
+func ReleaseBillDetailInfo(v *BillDetailInfo) {
+	v.ShopNick = ""
+	v.Cost = ""
+	v.SecretNo = ""
+	v.Start = ""
+	v.End = ""
+	v.SellerNick = ""
+	v.BillItem = 0
+	v.BillDuration = 0
+	v.OrderId = 0
+	poolBillDetailInfo.Put(v)
 }

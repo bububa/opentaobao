@@ -1,5 +1,9 @@
 package tuanhotel
 
+import (
+	"sync"
+)
+
 // TuanEticketPackageVo 结构体
 type TuanEticketPackageVo struct {
 	// 核销放行码商名称
@@ -24,4 +28,31 @@ type TuanEticketPackageVo struct {
 	MultipleTimes int64 `json:"multiple_times,omitempty" xml:"multiple_times,omitempty"`
 	// 核销放行码商id
 	PassMerchantUserId int64 `json:"pass_merchant_user_id,omitempty" xml:"pass_merchant_user_id,omitempty"`
+}
+
+var poolTuanEticketPackageVo = sync.Pool{
+	New: func() any {
+		return new(TuanEticketPackageVo)
+	},
+}
+
+// GetTuanEticketPackageVo() 从对象池中获取TuanEticketPackageVo
+func GetTuanEticketPackageVo() *TuanEticketPackageVo {
+	return poolTuanEticketPackageVo.Get().(*TuanEticketPackageVo)
+}
+
+// ReleaseTuanEticketPackageVo 释放TuanEticketPackageVo
+func ReleaseTuanEticketPackageVo(v *TuanEticketPackageVo) {
+	v.PassMerchantUserName = ""
+	v.SendMerchantUserName = ""
+	v.BillInfos = ""
+	v.BillTypeDesc = ""
+	v.IsMoneyToStore = 0
+	v.BillType = 0
+	v.IsSubAccount = 0
+	v.Online = 0
+	v.SendMerchantUserId = 0
+	v.MultipleTimes = 0
+	v.PassMerchantUserId = 0
+	poolTuanEticketPackageVo.Put(v)
 }

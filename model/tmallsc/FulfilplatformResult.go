@@ -1,5 +1,9 @@
 package tmallsc
 
+import (
+	"sync"
+)
+
 // FulfilplatformResult 结构体
 type FulfilplatformResult struct {
 	// 错误描述
@@ -10,4 +14,24 @@ type FulfilplatformResult struct {
 	ResultData *PagedResult `json:"result_data,omitempty" xml:"result_data,omitempty"`
 	// true：成功；false：失败
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolFulfilplatformResult = sync.Pool{
+	New: func() any {
+		return new(FulfilplatformResult)
+	},
+}
+
+// GetFulfilplatformResult() 从对象池中获取FulfilplatformResult
+func GetFulfilplatformResult() *FulfilplatformResult {
+	return poolFulfilplatformResult.Get().(*FulfilplatformResult)
+}
+
+// ReleaseFulfilplatformResult 释放FulfilplatformResult
+func ReleaseFulfilplatformResult(v *FulfilplatformResult) {
+	v.MsgInfo = ""
+	v.MsgCode = ""
+	v.ResultData = nil
+	v.Success = false
+	poolFulfilplatformResult.Put(v)
 }

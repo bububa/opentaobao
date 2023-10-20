@@ -1,5 +1,9 @@
 package qt
 
+import (
+	"sync"
+)
+
 // QtReport 结构体
 type QtReport struct {
 	// 创建日期
@@ -38,4 +42,38 @@ type QtReport struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 是否合格
 	IsPassed bool `json:"is_passed,omitempty" xml:"is_passed,omitempty"`
+}
+
+var poolQtReport = sync.Pool{
+	New: func() any {
+		return new(QtReport)
+	},
+}
+
+// GetQtReport() 从对象池中获取QtReport
+func GetQtReport() *QtReport {
+	return poolQtReport.Get().(*QtReport)
+}
+
+// ReleaseQtReport 释放QtReport
+func ReleaseQtReport(v *QtReport) {
+	v.GmtCreate = ""
+	v.Nick = ""
+	v.SpName = ""
+	v.GmtReport = ""
+	v.Message = ""
+	v.GmtSubmit = ""
+	v.QtCode = ""
+	v.QtName = ""
+	v.ItemUrl = ""
+	v.QtStandard = ""
+	v.ReportUrl = ""
+	v.ExtAttr = ""
+	v.GmtExpiry = ""
+	v.Id = 0
+	v.QtType = 0
+	v.NumIid = 0
+	v.Status = 0
+	v.IsPassed = false
+	poolQtReport.Put(v)
 }

@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseExistinghomeStoreStatusChangeSyncAPIRequest struct {
 // NewAlibabaAlihouseExistinghomeStoreStatusChangeSyncRequest 初始化AlibabaAlihouseExistinghomeStoreStatusChangeSyncAPIRequest对象
 func NewAlibabaAlihouseExistinghomeStoreStatusChangeSyncRequest() *AlibabaAlihouseExistinghomeStoreStatusChangeSyncAPIRequest {
 	return &AlibabaAlihouseExistinghomeStoreStatusChangeSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseExistinghomeStoreStatusChangeSyncAPIRequest) Reset() {
+	r._storeStatusDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseExistinghomeStoreStatusChangeSyncAPIRequest) SetStoreSta
 // GetStoreStatusDto StoreStatusDto Getter
 func (r AlibabaAlihouseExistinghomeStoreStatusChangeSyncAPIRequest) GetStoreStatusDto() *StoreStatusDto {
 	return r._storeStatusDto
+}
+
+var poolAlibabaAlihouseExistinghomeStoreStatusChangeSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseExistinghomeStoreStatusChangeSyncRequest()
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeStoreStatusChangeSyncRequest 从 sync.Pool 获取 AlibabaAlihouseExistinghomeStoreStatusChangeSyncAPIRequest
+func GetAlibabaAlihouseExistinghomeStoreStatusChangeSyncAPIRequest() *AlibabaAlihouseExistinghomeStoreStatusChangeSyncAPIRequest {
+	return poolAlibabaAlihouseExistinghomeStoreStatusChangeSyncAPIRequest.Get().(*AlibabaAlihouseExistinghomeStoreStatusChangeSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeStoreStatusChangeSyncAPIRequest 将 AlibabaAlihouseExistinghomeStoreStatusChangeSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeStoreStatusChangeSyncAPIRequest(v *AlibabaAlihouseExistinghomeStoreStatusChangeSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeStoreStatusChangeSyncAPIRequest.Put(v)
 }

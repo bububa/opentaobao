@@ -1,5 +1,9 @@
 package iotticket
 
+import (
+	"sync"
+)
+
 // CainiaoIotTicketDetailQueryData 结构体
 type CainiaoIotTicketDetailQueryData struct {
 	// 图片列表
@@ -34,4 +38,36 @@ type CainiaoIotTicketDetailQueryData struct {
 	RepairmanInfo *RepairmanInfo `json:"repairman_info,omitempty" xml:"repairman_info,omitempty"`
 	// 工单Id
 	TicketId int64 `json:"ticket_id,omitempty" xml:"ticket_id,omitempty"`
+}
+
+var poolCainiaoIotTicketDetailQueryData = sync.Pool{
+	New: func() any {
+		return new(CainiaoIotTicketDetailQueryData)
+	},
+}
+
+// GetCainiaoIotTicketDetailQueryData() 从对象池中获取CainiaoIotTicketDetailQueryData
+func GetCainiaoIotTicketDetailQueryData() *CainiaoIotTicketDetailQueryData {
+	return poolCainiaoIotTicketDetailQueryData.Get().(*CainiaoIotTicketDetailQueryData)
+}
+
+// ReleaseCainiaoIotTicketDetailQueryData 释放CainiaoIotTicketDetailQueryData
+func ReleaseCainiaoIotTicketDetailQueryData(v *CainiaoIotTicketDetailQueryData) {
+	v.Images = v.Images[:0]
+	v.OperateLogList = v.OperateLogList[:0]
+	v.CustomerAddress = ""
+	v.EventTypeDesc = ""
+	v.GmtCreate = ""
+	v.CustomerMailNo = ""
+	v.CustomerName = ""
+	v.DeviceBarCode = ""
+	v.DevicePurchaseDate = ""
+	v.CustomerPhone = ""
+	v.TicketDescription = ""
+	v.SpMailNo = ""
+	v.StatusDesc = ""
+	v.MaintenanceInfo = nil
+	v.RepairmanInfo = nil
+	v.TicketId = 0
+	poolCainiaoIotTicketDetailQueryData.Put(v)
 }

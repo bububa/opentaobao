@@ -2,6 +2,7 @@ package aecreatives
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AliexpressAffiliateProductdetailGetAPIRequest struct {
 // NewAliexpressAffiliateProductdetailGetRequest 初始化AliexpressAffiliateProductdetailGetAPIRequest对象
 func NewAliexpressAffiliateProductdetailGetRequest() *AliexpressAffiliateProductdetailGetAPIRequest {
 	return &AliexpressAffiliateProductdetailGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressAffiliateProductdetailGetAPIRequest) Reset() {
+	r._appSignature = ""
+	r._fields = ""
+	r._productIds = ""
+	r._targetCurrency = ""
+	r._targetLanguage = ""
+	r._trackingId = ""
+	r._country = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AliexpressAffiliateProductdetailGetAPIRequest) SetCountry(_country stri
 // GetCountry Country Getter
 func (r AliexpressAffiliateProductdetailGetAPIRequest) GetCountry() string {
 	return r._country
+}
+
+var poolAliexpressAffiliateProductdetailGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressAffiliateProductdetailGetRequest()
+	},
+}
+
+// GetAliexpressAffiliateProductdetailGetRequest 从 sync.Pool 获取 AliexpressAffiliateProductdetailGetAPIRequest
+func GetAliexpressAffiliateProductdetailGetAPIRequest() *AliexpressAffiliateProductdetailGetAPIRequest {
+	return poolAliexpressAffiliateProductdetailGetAPIRequest.Get().(*AliexpressAffiliateProductdetailGetAPIRequest)
+}
+
+// ReleaseAliexpressAffiliateProductdetailGetAPIRequest 将 AliexpressAffiliateProductdetailGetAPIRequest 放入 sync.Pool
+func ReleaseAliexpressAffiliateProductdetailGetAPIRequest(v *AliexpressAffiliateProductdetailGetAPIRequest) {
+	v.Reset()
+	poolAliexpressAffiliateProductdetailGetAPIRequest.Put(v)
 }

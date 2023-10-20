@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaWtCifCoopOsstokenGetAPIRequest struct {
 // NewAlibabaWtCifCoopOsstokenGetRequest 初始化AlibabaWtCifCoopOsstokenGetAPIRequest对象
 func NewAlibabaWtCifCoopOsstokenGetRequest() *AlibabaWtCifCoopOsstokenGetAPIRequest {
 	return &AlibabaWtCifCoopOsstokenGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWtCifCoopOsstokenGetAPIRequest) Reset() {
+	r._appName = ""
+	r._source = ""
+	r._biz = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaWtCifCoopOsstokenGetAPIRequest) SetBiz(_biz string) error {
 // GetBiz Biz Getter
 func (r AlibabaWtCifCoopOsstokenGetAPIRequest) GetBiz() string {
 	return r._biz
+}
+
+var poolAlibabaWtCifCoopOsstokenGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWtCifCoopOsstokenGetRequest()
+	},
+}
+
+// GetAlibabaWtCifCoopOsstokenGetRequest 从 sync.Pool 获取 AlibabaWtCifCoopOsstokenGetAPIRequest
+func GetAlibabaWtCifCoopOsstokenGetAPIRequest() *AlibabaWtCifCoopOsstokenGetAPIRequest {
+	return poolAlibabaWtCifCoopOsstokenGetAPIRequest.Get().(*AlibabaWtCifCoopOsstokenGetAPIRequest)
+}
+
+// ReleaseAlibabaWtCifCoopOsstokenGetAPIRequest 将 AlibabaWtCifCoopOsstokenGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWtCifCoopOsstokenGetAPIRequest(v *AlibabaWtCifCoopOsstokenGetAPIRequest) {
+	v.Reset()
+	poolAlibabaWtCifCoopOsstokenGetAPIRequest.Put(v)
 }

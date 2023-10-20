@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // InvoiceApplyDto 结构体
 type InvoiceApplyDto struct {
 	// 开票明细
@@ -74,4 +78,56 @@ type InvoiceApplyDto struct {
 	PayerLogisticsInfo *PayerLogisticsInfoDto `json:"payer_logistics_info,omitempty" xml:"payer_logistics_info,omitempty"`
 	// 当前申请单是否自动开票。当业务前台传入了该字段时，以前台传入的值为准。当前台未传值时，中台会读取商户在中台维护的自动开票配置。true: 申请单会自动转开票请求，调用税控进行开票。false: 申请单数据会在中台落地，状态为申请中。不会发起开票请求。适用于商户需要人工审核之后，再确认开票的场景。
 	AutoCreateInvoice bool `json:"auto_create_invoice,omitempty" xml:"auto_create_invoice,omitempty"`
+}
+
+var poolInvoiceApplyDto = sync.Pool{
+	New: func() any {
+		return new(InvoiceApplyDto)
+	},
+}
+
+// GetInvoiceApplyDto() 从对象池中获取InvoiceApplyDto
+func GetInvoiceApplyDto() *InvoiceApplyDto {
+	return poolInvoiceApplyDto.Get().(*InvoiceApplyDto)
+}
+
+// ReleaseInvoiceApplyDto 释放InvoiceApplyDto
+func ReleaseInvoiceApplyDto(v *InvoiceApplyDto) {
+	v.InvoiceItems = v.InvoiceItems[:0]
+	v.ApplyAmount = ""
+	v.ApplyMode = ""
+	v.ApplySource = ""
+	v.DeviceId = ""
+	v.InvoiceMemo = ""
+	v.InvoiceType = ""
+	v.NormalInvoiceCode = ""
+	v.NormalInvoiceNo = ""
+	v.OuterId = ""
+	v.PayeeRegisterNo = ""
+	v.PayerAddress = ""
+	v.PayerBankAccountId = ""
+	v.PayerBankName = ""
+	v.PayerEmail = ""
+	v.PayerMemo = ""
+	v.PayerName = ""
+	v.PayerPhone = ""
+	v.PayerRegisterNo = ""
+	v.PayerUid = ""
+	v.PhoneNumber = ""
+	v.PlatformBizFlag = ""
+	v.PlatformCode = ""
+	v.PlatformTid = ""
+	v.PlatformUserId = ""
+	v.RedNoticeNo = ""
+	v.SourceFlag = ""
+	v.SourcePlatformCode = ""
+	v.SpecialFlag = ""
+	v.TradeTime = ""
+	v.BusinessType = 0
+	v.CreateInvPayeeInfo = nil
+	v.InvoiceKind = 0
+	v.LevyType = 0
+	v.PayerLogisticsInfo = nil
+	v.AutoCreateInvoice = false
+	poolInvoiceApplyDto.Put(v)
 }

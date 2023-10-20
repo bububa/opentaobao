@@ -2,6 +2,7 @@ package usergrowth2
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoUsergrowthAdMediaDataSyncAPIResponse struct {
 	model.CommonResponse
 	TaobaoUsergrowthAdMediaDataSyncAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoUsergrowthAdMediaDataSyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoUsergrowthAdMediaDataSyncAPIResponseModel).Reset()
 }
 
 // TaobaoUsergrowthAdMediaDataSyncAPIResponseModel is 媒体资源位投放效果数据回传 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoUsergrowthAdMediaDataSyncAPIResponseModel struct {
 	Data bool `json:"data,omitempty" xml:"data,omitempty"`
 	// 请求是否成功
 	Successful bool `json:"successful,omitempty" xml:"successful,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoUsergrowthAdMediaDataSyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.ResponseCode = 0
+	m.Data = false
+	m.Successful = false
+}
+
+var poolTaobaoUsergrowthAdMediaDataSyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoUsergrowthAdMediaDataSyncAPIResponse)
+	},
+}
+
+// GetTaobaoUsergrowthAdMediaDataSyncAPIResponse 从 sync.Pool 获取 TaobaoUsergrowthAdMediaDataSyncAPIResponse
+func GetTaobaoUsergrowthAdMediaDataSyncAPIResponse() *TaobaoUsergrowthAdMediaDataSyncAPIResponse {
+	return poolTaobaoUsergrowthAdMediaDataSyncAPIResponse.Get().(*TaobaoUsergrowthAdMediaDataSyncAPIResponse)
+}
+
+// ReleaseTaobaoUsergrowthAdMediaDataSyncAPIResponse 将 TaobaoUsergrowthAdMediaDataSyncAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoUsergrowthAdMediaDataSyncAPIResponse(v *TaobaoUsergrowthAdMediaDataSyncAPIResponse) {
+	v.Reset()
+	poolTaobaoUsergrowthAdMediaDataSyncAPIResponse.Put(v)
 }

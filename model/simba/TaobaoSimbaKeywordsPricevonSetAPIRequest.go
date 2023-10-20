@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoSimbaKeywordsPricevonSetAPIRequest struct {
 // NewTaobaoSimbaKeywordsPricevonSetRequest 初始化TaobaoSimbaKeywordsPricevonSetAPIRequest对象
 func NewTaobaoSimbaKeywordsPricevonSetRequest() *TaobaoSimbaKeywordsPricevonSetAPIRequest {
 	return &TaobaoSimbaKeywordsPricevonSetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaKeywordsPricevonSetAPIRequest) Reset() {
+	r._nick = ""
+	r._keywordidPrices = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoSimbaKeywordsPricevonSetAPIRequest) SetKeywordidPrices(_keywordid
 // GetKeywordidPrices KeywordidPrices Getter
 func (r TaobaoSimbaKeywordsPricevonSetAPIRequest) GetKeywordidPrices() string {
 	return r._keywordidPrices
+}
+
+var poolTaobaoSimbaKeywordsPricevonSetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaKeywordsPricevonSetRequest()
+	},
+}
+
+// GetTaobaoSimbaKeywordsPricevonSetRequest 从 sync.Pool 获取 TaobaoSimbaKeywordsPricevonSetAPIRequest
+func GetTaobaoSimbaKeywordsPricevonSetAPIRequest() *TaobaoSimbaKeywordsPricevonSetAPIRequest {
+	return poolTaobaoSimbaKeywordsPricevonSetAPIRequest.Get().(*TaobaoSimbaKeywordsPricevonSetAPIRequest)
+}
+
+// ReleaseTaobaoSimbaKeywordsPricevonSetAPIRequest 将 TaobaoSimbaKeywordsPricevonSetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaKeywordsPricevonSetAPIRequest(v *TaobaoSimbaKeywordsPricevonSetAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaKeywordsPricevonSetAPIRequest.Put(v)
 }

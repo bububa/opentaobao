@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.item.morebarcode.ops
 //
 // 商品一品多码维护操作
-func AlibabaWdkItemMorebarcodeOps(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemMorebarcodeOpsAPIRequest, session string) (*wdkitem.AlibabaWdkItemMorebarcodeOpsAPIResponse, error) {
-	var resp wdkitem.AlibabaWdkItemMorebarcodeOpsAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkItemMorebarcodeOps(clt *core.SDKClient, req *wdkitem.AlibabaWdkItemMorebarcodeOpsAPIRequest, resp *wdkitem.AlibabaWdkItemMorebarcodeOpsAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

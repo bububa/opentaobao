@@ -1,5 +1,9 @@
 package xhotelonlineorder
 
+import (
+	"sync"
+)
+
 // DailyPriceTo 结构体
 type DailyPriceTo struct {
 	// 币种名称
@@ -30,4 +34,34 @@ type DailyPriceTo struct {
 	ServiceForeignPrice int64 `json:"service_foreign_price,omitempty" xml:"service_foreign_price,omitempty"`
 	// 外币底价
 	BaseForeignPrice int64 `json:"base_foreign_price,omitempty" xml:"base_foreign_price,omitempty"`
+}
+
+var poolDailyPriceTo = sync.Pool{
+	New: func() any {
+		return new(DailyPriceTo)
+	},
+}
+
+// GetDailyPriceTo() 从对象池中获取DailyPriceTo
+func GetDailyPriceTo() *DailyPriceTo {
+	return poolDailyPriceTo.Get().(*DailyPriceTo)
+}
+
+// ReleaseDailyPriceTo 释放DailyPriceTo
+func ReleaseDailyPriceTo(v *DailyPriceTo) {
+	v.CurrencyCodeName = ""
+	v.Day = ""
+	v.ForeignCurrencyPrice = 0
+	v.Point = 0
+	v.Mileage = 0
+	v.Price = 0
+	v.TaxPrice = 0
+	v.BreakFastCount = 0
+	v.AfterPromotionPrice = 0
+	v.BasePrice = 0
+	v.TaxForeignPrice = 0
+	v.ServicePrice = 0
+	v.ServiceForeignPrice = 0
+	v.BaseForeignPrice = 0
+	poolDailyPriceTo.Put(v)
 }

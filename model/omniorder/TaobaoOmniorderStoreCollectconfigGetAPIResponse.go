@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoOmniorderStoreCollectconfigGetAPIResponse struct {
 	TaobaoOmniorderStoreCollectconfigGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoOmniorderStoreCollectconfigGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOmniorderStoreCollectconfigGetAPIResponseModel).Reset()
+}
+
 // TaobaoOmniorderStoreCollectconfigGetAPIResponseModel is 查询门店自提配置内容 成功返回结果
 type TaobaoOmniorderStoreCollectconfigGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"omniorder_store_collectconfig_get_response"`
@@ -22,4 +29,27 @@ type TaobaoOmniorderStoreCollectconfigGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *TaobaoOmniorderStoreCollectconfigGetResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOmniorderStoreCollectconfigGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoOmniorderStoreCollectconfigGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOmniorderStoreCollectconfigGetAPIResponse)
+	},
+}
+
+// GetTaobaoOmniorderStoreCollectconfigGetAPIResponse 从 sync.Pool 获取 TaobaoOmniorderStoreCollectconfigGetAPIResponse
+func GetTaobaoOmniorderStoreCollectconfigGetAPIResponse() *TaobaoOmniorderStoreCollectconfigGetAPIResponse {
+	return poolTaobaoOmniorderStoreCollectconfigGetAPIResponse.Get().(*TaobaoOmniorderStoreCollectconfigGetAPIResponse)
+}
+
+// ReleaseTaobaoOmniorderStoreCollectconfigGetAPIResponse 将 TaobaoOmniorderStoreCollectconfigGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOmniorderStoreCollectconfigGetAPIResponse(v *TaobaoOmniorderStoreCollectconfigGetAPIResponse) {
+	v.Reset()
+	poolTaobaoOmniorderStoreCollectconfigGetAPIResponse.Put(v)
 }

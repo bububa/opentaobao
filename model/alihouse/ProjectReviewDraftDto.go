@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // ProjectReviewDraftDto 结构体
 type ProjectReviewDraftDto struct {
 	// 楼盘id
@@ -42,4 +46,40 @@ type ProjectReviewDraftDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 1测试数据 0正常数据
 	IsTest int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
+}
+
+var poolProjectReviewDraftDto = sync.Pool{
+	New: func() any {
+		return new(ProjectReviewDraftDto)
+	},
+}
+
+// GetProjectReviewDraftDto() 从对象池中获取ProjectReviewDraftDto
+func GetProjectReviewDraftDto() *ProjectReviewDraftDto {
+	return poolProjectReviewDraftDto.Get().(*ProjectReviewDraftDto)
+}
+
+// ReleaseProjectReviewDraftDto 释放ProjectReviewDraftDto
+func ReleaseProjectReviewDraftDto(v *ProjectReviewDraftDto) {
+	v.OuterId = ""
+	v.OuterReviewId = ""
+	v.DistrictDesc = ""
+	v.BlockDesc = ""
+	v.SubwayDesc = ""
+	v.MainRoad = ""
+	v.EduSource = ""
+	v.MedicalSource = ""
+	v.OtherSource = ""
+	v.NowPrice = ""
+	v.PotentialPrice = ""
+	v.HouseTypeAnalysis = ""
+	v.ModelHouse = ""
+	v.PublicTraffic = ""
+	v.Lights = ""
+	v.Defect = ""
+	v.PublishTime = ""
+	v.CityId = 0
+	v.Status = 0
+	v.IsTest = 0
+	poolProjectReviewDraftDto.Put(v)
 }

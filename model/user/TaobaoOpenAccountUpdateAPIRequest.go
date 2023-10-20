@@ -2,6 +2,7 @@ package user
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoOpenAccountUpdateAPIRequest struct {
 // NewTaobaoOpenAccountUpdateRequest 初始化TaobaoOpenAccountUpdateAPIRequest对象
 func NewTaobaoOpenAccountUpdateRequest() *TaobaoOpenAccountUpdateAPIRequest {
 	return &TaobaoOpenAccountUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpenAccountUpdateAPIRequest) Reset() {
+	r._paramList = r._paramList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoOpenAccountUpdateAPIRequest) SetParamList(_paramList []OpenAccoun
 // GetParamList ParamList Getter
 func (r TaobaoOpenAccountUpdateAPIRequest) GetParamList() []OpenAccount {
 	return r._paramList
+}
+
+var poolTaobaoOpenAccountUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpenAccountUpdateRequest()
+	},
+}
+
+// GetTaobaoOpenAccountUpdateRequest 从 sync.Pool 获取 TaobaoOpenAccountUpdateAPIRequest
+func GetTaobaoOpenAccountUpdateAPIRequest() *TaobaoOpenAccountUpdateAPIRequest {
+	return poolTaobaoOpenAccountUpdateAPIRequest.Get().(*TaobaoOpenAccountUpdateAPIRequest)
+}
+
+// ReleaseTaobaoOpenAccountUpdateAPIRequest 将 TaobaoOpenAccountUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpenAccountUpdateAPIRequest(v *TaobaoOpenAccountUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoOpenAccountUpdateAPIRequest.Put(v)
 }

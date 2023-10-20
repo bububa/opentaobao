@@ -2,6 +2,7 @@ package xhoteloffline
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoXhotelOrderAlipayfaceCreateAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelOrderAlipayfaceCreateAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelOrderAlipayfaceCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoXhotelOrderAlipayfaceCreateAPIResponseModel).Reset()
 }
 
 // TaobaoXhotelOrderAlipayfaceCreateAPIResponseModel is 信用住支付创建接口 成功返回结果
@@ -36,4 +43,34 @@ type TaobaoXhotelOrderAlipayfaceCreateAPIResponseModel struct {
 	AlitripDiscount int64 `json:"alitrip_discount,omitempty" xml:"alitrip_discount,omitempty"`
 	// 商家自身提供给该订单的优惠金额，单位为分
 	SellerDiscount int64 `json:"seller_discount,omitempty" xml:"seller_discount,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelOrderAlipayfaceCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.OutOrderId = ""
+	m.MainIdNumber = ""
+	m.BuyerNick = ""
+	m.Remark = ""
+	m.Tid = 0
+	m.GuaranteeAmout = 0
+	m.AlitripDiscount = 0
+	m.SellerDiscount = 0
+}
+
+var poolTaobaoXhotelOrderAlipayfaceCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelOrderAlipayfaceCreateAPIResponse)
+	},
+}
+
+// GetTaobaoXhotelOrderAlipayfaceCreateAPIResponse 从 sync.Pool 获取 TaobaoXhotelOrderAlipayfaceCreateAPIResponse
+func GetTaobaoXhotelOrderAlipayfaceCreateAPIResponse() *TaobaoXhotelOrderAlipayfaceCreateAPIResponse {
+	return poolTaobaoXhotelOrderAlipayfaceCreateAPIResponse.Get().(*TaobaoXhotelOrderAlipayfaceCreateAPIResponse)
+}
+
+// ReleaseTaobaoXhotelOrderAlipayfaceCreateAPIResponse 将 TaobaoXhotelOrderAlipayfaceCreateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoXhotelOrderAlipayfaceCreateAPIResponse(v *TaobaoXhotelOrderAlipayfaceCreateAPIResponse) {
+	v.Reset()
+	poolTaobaoXhotelOrderAlipayfaceCreateAPIResponse.Put(v)
 }

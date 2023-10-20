@@ -9,11 +9,6 @@ import (
 // alibaba.tcls.aelophy.merchant.id.mix
 //
 // 商家用户id混淆
-func AlibabaTclsAelophyMerchantIdMix(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantIdMixAPIRequest, session string) (*wdk.AlibabaTclsAelophyMerchantIdMixAPIResponse, error) {
-	var resp wdk.AlibabaTclsAelophyMerchantIdMixAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTclsAelophyMerchantIdMix(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantIdMixAPIRequest, resp *wdk.AlibabaTclsAelophyMerchantIdMixAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

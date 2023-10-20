@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponse struct {
 	model.CommonResponse
 	CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponseModel).Reset()
 }
 
 // CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponseModel is 根据交易单号判断是否为菜鸟发货订单 成功返回结果
@@ -28,4 +35,30 @@ type CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponseModel struct {
 	IsCainiaoOrder bool `json:"is_cainiao_order,omitempty" xml:"is_cainiao_order,omitempty"`
 	// success
 	ResSuccess bool `json:"res_success,omitempty" xml:"res_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResErrorCode = ""
+	m.ResErrorMsg = ""
+	m.IsCainiaoOrder = false
+	m.ResSuccess = false
+}
+
+var poolCainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponse = sync.Pool{
+	New: func() any {
+		return new(CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponse)
+	},
+}
+
+// GetCainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponse 从 sync.Pool 获取 CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponse
+func GetCainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponse() *CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponse {
+	return poolCainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponse.Get().(*CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponse)
+}
+
+// ReleaseCainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponse 将 CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponse 保存到 sync.Pool
+func ReleaseCainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponse(v *CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponse) {
+	v.Reset()
+	poolCainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponse.Put(v)
 }

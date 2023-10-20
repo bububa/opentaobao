@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // AlibabaAlihealthDrugKytSynonymauthsResult 结构体
 type AlibabaAlihealthDrugKytSynonymauthsResult struct {
 	// 企业名称
@@ -24,4 +28,31 @@ type AlibabaAlihealthDrugKytSynonymauthsResult struct {
 	CrtDate string `json:"crt_date,omitempty" xml:"crt_date,omitempty"`
 	// 角色
 	UserRoleType string `json:"user_role_type,omitempty" xml:"user_role_type,omitempty"`
+}
+
+var poolAlibabaAlihealthDrugKytSynonymauthsResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugKytSynonymauthsResult)
+	},
+}
+
+// GetAlibabaAlihealthDrugKytSynonymauthsResult() 从对象池中获取AlibabaAlihealthDrugKytSynonymauthsResult
+func GetAlibabaAlihealthDrugKytSynonymauthsResult() *AlibabaAlihealthDrugKytSynonymauthsResult {
+	return poolAlibabaAlihealthDrugKytSynonymauthsResult.Get().(*AlibabaAlihealthDrugKytSynonymauthsResult)
+}
+
+// ReleaseAlibabaAlihealthDrugKytSynonymauthsResult 释放AlibabaAlihealthDrugKytSynonymauthsResult
+func ReleaseAlibabaAlihealthDrugKytSynonymauthsResult(v *AlibabaAlihealthDrugKytSynonymauthsResult) {
+	v.EntName = ""
+	v.CityDesc = ""
+	v.ProvDesc = ""
+	v.AreaDesc = ""
+	v.EntId = ""
+	v.DictRegionCode = ""
+	v.RefEntId = ""
+	v.SynOwnEntId = ""
+	v.UserEntId = ""
+	v.CrtDate = ""
+	v.UserRoleType = ""
+	poolAlibabaAlihealthDrugKytSynonymauthsResult.Put(v)
 }

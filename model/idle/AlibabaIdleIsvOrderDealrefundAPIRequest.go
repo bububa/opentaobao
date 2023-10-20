@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleIsvOrderDealrefundAPIRequest struct {
 // NewAlibabaIdleIsvOrderDealrefundRequest 初始化AlibabaIdleIsvOrderDealrefundAPIRequest对象
 func NewAlibabaIdleIsvOrderDealrefundRequest() *AlibabaIdleIsvOrderDealrefundAPIRequest {
 	return &AlibabaIdleIsvOrderDealrefundAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleIsvOrderDealrefundAPIRequest) Reset() {
+	r._paramAppraiseIsvRefundRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleIsvOrderDealrefundAPIRequest) SetParamAppraiseIsvRefundReque
 // GetParamAppraiseIsvRefundRequest ParamAppraiseIsvRefundRequest Getter
 func (r AlibabaIdleIsvOrderDealrefundAPIRequest) GetParamAppraiseIsvRefundRequest() *AppraiseIsvRefundRequest {
 	return r._paramAppraiseIsvRefundRequest
+}
+
+var poolAlibabaIdleIsvOrderDealrefundAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleIsvOrderDealrefundRequest()
+	},
+}
+
+// GetAlibabaIdleIsvOrderDealrefundRequest 从 sync.Pool 获取 AlibabaIdleIsvOrderDealrefundAPIRequest
+func GetAlibabaIdleIsvOrderDealrefundAPIRequest() *AlibabaIdleIsvOrderDealrefundAPIRequest {
+	return poolAlibabaIdleIsvOrderDealrefundAPIRequest.Get().(*AlibabaIdleIsvOrderDealrefundAPIRequest)
+}
+
+// ReleaseAlibabaIdleIsvOrderDealrefundAPIRequest 将 AlibabaIdleIsvOrderDealrefundAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleIsvOrderDealrefundAPIRequest(v *AlibabaIdleIsvOrderDealrefundAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleIsvOrderDealrefundAPIRequest.Put(v)
 }

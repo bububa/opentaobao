@@ -2,6 +2,7 @@ package crm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoCrmServiceChannelShortlinkCreateAPIRequest struct {
 // NewTaobaoCrmServiceChannelShortlinkCreateRequest 初始化TaobaoCrmServiceChannelShortlinkCreateAPIRequest对象
 func NewTaobaoCrmServiceChannelShortlinkCreateRequest() *TaobaoCrmServiceChannelShortlinkCreateAPIRequest {
 	return &TaobaoCrmServiceChannelShortlinkCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCrmServiceChannelShortlinkCreateAPIRequest) Reset() {
+	r._linkType = ""
+	r._shortLinkData = ""
+	r._shortLinkName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoCrmServiceChannelShortlinkCreateAPIRequest) SetShortLinkName(_sho
 // GetShortLinkName ShortLinkName Getter
 func (r TaobaoCrmServiceChannelShortlinkCreateAPIRequest) GetShortLinkName() string {
 	return r._shortLinkName
+}
+
+var poolTaobaoCrmServiceChannelShortlinkCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCrmServiceChannelShortlinkCreateRequest()
+	},
+}
+
+// GetTaobaoCrmServiceChannelShortlinkCreateRequest 从 sync.Pool 获取 TaobaoCrmServiceChannelShortlinkCreateAPIRequest
+func GetTaobaoCrmServiceChannelShortlinkCreateAPIRequest() *TaobaoCrmServiceChannelShortlinkCreateAPIRequest {
+	return poolTaobaoCrmServiceChannelShortlinkCreateAPIRequest.Get().(*TaobaoCrmServiceChannelShortlinkCreateAPIRequest)
+}
+
+// ReleaseTaobaoCrmServiceChannelShortlinkCreateAPIRequest 将 TaobaoCrmServiceChannelShortlinkCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCrmServiceChannelShortlinkCreateAPIRequest(v *TaobaoCrmServiceChannelShortlinkCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoCrmServiceChannelShortlinkCreateAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest struct {
 // NewAlibabaEinvoiceTaxOptSalarybillCommitbillRequest 初始化AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest对象
 func NewAlibabaEinvoiceTaxOptSalarybillCommitbillRequest() *AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest {
 	return &AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest) Reset() {
+	r._paramTaxOptimizationSalaryBillCommitReqDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest) SetParamTaxOptimiz
 // GetParamTaxOptimizationSalaryBillCommitReqDTO ParamTaxOptimizationSalaryBillCommitReqDTO Getter
 func (r AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest) GetParamTaxOptimizationSalaryBillCommitReqDTO() *TaxOptimizationSalaryBillCommitReqDto {
 	return r._paramTaxOptimizationSalaryBillCommitReqDTO
+}
+
+var poolAlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceTaxOptSalarybillCommitbillRequest()
+	},
+}
+
+// GetAlibabaEinvoiceTaxOptSalarybillCommitbillRequest 从 sync.Pool 获取 AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest
+func GetAlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest() *AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest {
+	return poolAlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest.Get().(*AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest 将 AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest(v *AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package qianniu
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoQianniuNumberPutAPIResponse struct {
 	TaobaoQianniuNumberPutAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoQianniuNumberPutAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoQianniuNumberPutAPIResponseModel).Reset()
+}
+
 // TaobaoQianniuNumberPutAPIResponseModel is ISV上传数据接口 成功返回结果
 type TaobaoQianniuNumberPutAPIResponseModel struct {
 	XMLName xml.Name `xml:"qianniu_number_put_response"`
@@ -22,4 +29,27 @@ type TaobaoQianniuNumberPutAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 是否上传成功。返回的是个json串，分别表示每条记录是否成功。
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoQianniuNumberPutAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = ""
+}
+
+var poolTaobaoQianniuNumberPutAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoQianniuNumberPutAPIResponse)
+	},
+}
+
+// GetTaobaoQianniuNumberPutAPIResponse 从 sync.Pool 获取 TaobaoQianniuNumberPutAPIResponse
+func GetTaobaoQianniuNumberPutAPIResponse() *TaobaoQianniuNumberPutAPIResponse {
+	return poolTaobaoQianniuNumberPutAPIResponse.Get().(*TaobaoQianniuNumberPutAPIResponse)
+}
+
+// ReleaseTaobaoQianniuNumberPutAPIResponse 将 TaobaoQianniuNumberPutAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoQianniuNumberPutAPIResponse(v *TaobaoQianniuNumberPutAPIResponse) {
+	v.Reset()
+	poolTaobaoQianniuNumberPutAPIResponse.Put(v)
 }

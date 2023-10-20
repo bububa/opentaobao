@@ -2,6 +2,7 @@ package car
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripTravelCrsorderCompleteAPIRequest struct {
 // NewAlitripTravelCrsorderCompleteRequest 初始化AlitripTravelCrsorderCompleteAPIRequest对象
 func NewAlitripTravelCrsorderCompleteRequest() *AlitripTravelCrsorderCompleteAPIRequest {
 	return &AlitripTravelCrsorderCompleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTravelCrsorderCompleteAPIRequest) Reset() {
+	r._crsOrderCompleteParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripTravelCrsorderCompleteAPIRequest) SetCrsOrderCompleteParam(_crsO
 // GetCrsOrderCompleteParam CrsOrderCompleteParam Getter
 func (r AlitripTravelCrsorderCompleteAPIRequest) GetCrsOrderCompleteParam() *CrsOrderCompleteParam {
 	return r._crsOrderCompleteParam
+}
+
+var poolAlitripTravelCrsorderCompleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTravelCrsorderCompleteRequest()
+	},
+}
+
+// GetAlitripTravelCrsorderCompleteRequest 从 sync.Pool 获取 AlitripTravelCrsorderCompleteAPIRequest
+func GetAlitripTravelCrsorderCompleteAPIRequest() *AlitripTravelCrsorderCompleteAPIRequest {
+	return poolAlitripTravelCrsorderCompleteAPIRequest.Get().(*AlitripTravelCrsorderCompleteAPIRequest)
+}
+
+// ReleaseAlitripTravelCrsorderCompleteAPIRequest 将 AlitripTravelCrsorderCompleteAPIRequest 放入 sync.Pool
+func ReleaseAlitripTravelCrsorderCompleteAPIRequest(v *AlitripTravelCrsorderCompleteAPIRequest) {
+	v.Reset()
+	poolAlitripTravelCrsorderCompleteAPIRequest.Put(v)
 }

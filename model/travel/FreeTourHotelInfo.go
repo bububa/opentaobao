@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // FreeTourHotelInfo 结构体
 type FreeTourHotelInfo struct {
 	// 酒店描述
@@ -16,4 +20,27 @@ type FreeTourHotelInfo struct {
 	HotelStar string `json:"hotel_star,omitempty" xml:"hotel_star,omitempty"`
 	// 酒店名称
 	CnName string `json:"cn_name,omitempty" xml:"cn_name,omitempty"`
+}
+
+var poolFreeTourHotelInfo = sync.Pool{
+	New: func() any {
+		return new(FreeTourHotelInfo)
+	},
+}
+
+// GetFreeTourHotelInfo() 从对象池中获取FreeTourHotelInfo
+func GetFreeTourHotelInfo() *FreeTourHotelInfo {
+	return poolFreeTourHotelInfo.Get().(*FreeTourHotelInfo)
+}
+
+// ReleaseFreeTourHotelInfo 释放FreeTourHotelInfo
+func ReleaseFreeTourHotelInfo(v *FreeTourHotelInfo) {
+	v.HotelDesc = ""
+	v.PicUrls = ""
+	v.City = ""
+	v.HouseType = ""
+	v.HotelLevel = ""
+	v.HotelStar = ""
+	v.CnName = ""
+	poolFreeTourHotelInfo.Put(v)
 }

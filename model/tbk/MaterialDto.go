@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // MaterialDto 结构体
 type MaterialDto struct {
 	// 优惠券面额
@@ -48,4 +52,43 @@ type MaterialDto struct {
 	MiniProgram *MiniProgramDto `json:"mini_program,omitempty" xml:"mini_program,omitempty"`
 	// 计划类型，0代表通用计划，1代表定向计划，2代表鹊桥计划，3代表营销计划
 	CampaignType int64 `json:"campaign_type,omitempty" xml:"campaign_type,omitempty"`
+}
+
+var poolMaterialDto = sync.Pool{
+	New: func() any {
+		return new(MaterialDto)
+	},
+}
+
+// GetMaterialDto() 从对象池中获取MaterialDto
+func GetMaterialDto() *MaterialDto {
+	return poolMaterialDto.Get().(*MaterialDto)
+}
+
+// ReleaseMaterialDto 释放MaterialDto
+func ReleaseMaterialDto(v *MaterialDto) {
+	v.CouponInfo = ""
+	v.CouponEndTime = ""
+	v.CouponStartTime = ""
+	v.CouponClickUrl = ""
+	v.MaxCommissionRate = ""
+	v.ItemUrl = ""
+	v.YsylClickUrl = ""
+	v.YsylTljFace = ""
+	v.YsylTljSendTime = ""
+	v.YsylTljUseStartTime = ""
+	v.YsylCommissionRate = ""
+	v.YsylTljUseEndTime = ""
+	v.MinCommissionRate = ""
+	v.ItemId = ""
+	v.ExtraInfo = ""
+	v.CouponRemainCount = 0
+	v.CouponTotalCount = 0
+	v.CouponType = 0
+	v.CategoryId = 0
+	v.RewardInfo = 0
+	v.TopnInfo = nil
+	v.MiniProgram = nil
+	v.CampaignType = 0
+	poolMaterialDto.Put(v)
 }

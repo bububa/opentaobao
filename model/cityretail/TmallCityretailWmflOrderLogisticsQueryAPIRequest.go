@@ -2,6 +2,7 @@ package cityretail
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallCityretailWmflOrderLogisticsQueryAPIRequest struct {
 // NewTmallCityretailWmflOrderLogisticsQueryRequest 初始化TmallCityretailWmflOrderLogisticsQueryAPIRequest对象
 func NewTmallCityretailWmflOrderLogisticsQueryRequest() *TmallCityretailWmflOrderLogisticsQueryAPIRequest {
 	return &TmallCityretailWmflOrderLogisticsQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCityretailWmflOrderLogisticsQueryAPIRequest) Reset() {
+	r._mainOrderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallCityretailWmflOrderLogisticsQueryAPIRequest) SetMainOrderId(_mainO
 // GetMainOrderId MainOrderId Getter
 func (r TmallCityretailWmflOrderLogisticsQueryAPIRequest) GetMainOrderId() string {
 	return r._mainOrderId
+}
+
+var poolTmallCityretailWmflOrderLogisticsQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCityretailWmflOrderLogisticsQueryRequest()
+	},
+}
+
+// GetTmallCityretailWmflOrderLogisticsQueryRequest 从 sync.Pool 获取 TmallCityretailWmflOrderLogisticsQueryAPIRequest
+func GetTmallCityretailWmflOrderLogisticsQueryAPIRequest() *TmallCityretailWmflOrderLogisticsQueryAPIRequest {
+	return poolTmallCityretailWmflOrderLogisticsQueryAPIRequest.Get().(*TmallCityretailWmflOrderLogisticsQueryAPIRequest)
+}
+
+// ReleaseTmallCityretailWmflOrderLogisticsQueryAPIRequest 将 TmallCityretailWmflOrderLogisticsQueryAPIRequest 放入 sync.Pool
+func ReleaseTmallCityretailWmflOrderLogisticsQueryAPIRequest(v *TmallCityretailWmflOrderLogisticsQueryAPIRequest) {
+	v.Reset()
+	poolTmallCityretailWmflOrderLogisticsQueryAPIRequest.Put(v)
 }

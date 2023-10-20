@@ -1,5 +1,9 @@
 package nrt
 
+import (
+	"sync"
+)
+
 // NrtBenefitDto 结构体
 type NrtBenefitDto struct {
 	// 修改时间
@@ -36,4 +40,37 @@ type NrtBenefitDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 使用渠道
 	UseChannel int64 `json:"use_channel,omitempty" xml:"use_channel,omitempty"`
+}
+
+var poolNrtBenefitDto = sync.Pool{
+	New: func() any {
+		return new(NrtBenefitDto)
+	},
+}
+
+// GetNrtBenefitDto() 从对象池中获取NrtBenefitDto
+func GetNrtBenefitDto() *NrtBenefitDto {
+	return poolNrtBenefitDto.Get().(*NrtBenefitDto)
+}
+
+// ReleaseNrtBenefitDto 释放NrtBenefitDto
+func ReleaseNrtBenefitDto(v *NrtBenefitDto) {
+	v.GmtModified = ""
+	v.BenefitType = ""
+	v.Probability = ""
+	v.BizCode = ""
+	v.Description = ""
+	v.GmtCreate = ""
+	v.BenefitName = ""
+	v.Extra = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.ImgUrl = ""
+	v.OutRelateId = 0
+	v.BenefitId = 0
+	v.TotalQuantity = 0
+	v.PersonLimitCount = 0
+	v.Status = 0
+	v.UseChannel = 0
+	poolNrtBenefitDto.Put(v)
 }

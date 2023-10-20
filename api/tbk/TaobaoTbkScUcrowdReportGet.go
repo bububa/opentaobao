@@ -9,11 +9,6 @@ import (
 // taobao.tbk.sc.ucrowd.report.get
 //
 // 服务商使用。支持淘宝客通过入参人群标签id，获得人群的推广和转化效果数据。
-func TaobaoTbkScUcrowdReportGet(clt *core.SDKClient, req *tbk.TaobaoTbkScUcrowdReportGetAPIRequest, session string) (*tbk.TaobaoTbkScUcrowdReportGetAPIResponse, error) {
-	var resp tbk.TaobaoTbkScUcrowdReportGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTbkScUcrowdReportGet(clt *core.SDKClient, req *tbk.TaobaoTbkScUcrowdReportGetAPIRequest, resp *tbk.TaobaoTbkScUcrowdReportGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

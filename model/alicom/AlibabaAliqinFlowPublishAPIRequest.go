@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaAliqinFlowPublishAPIRequest struct {
 // NewAlibabaAliqinFlowPublishRequest 初始化AlibabaAliqinFlowPublishAPIRequest对象
 func NewAlibabaAliqinFlowPublishRequest() *AlibabaAliqinFlowPublishAPIRequest {
 	return &AlibabaAliqinFlowPublishAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinFlowPublishAPIRequest) Reset() {
+	r._userId = ""
+	r._flow = ""
+	r._reason = ""
+	r._serial = ""
+	r._always = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaAliqinFlowPublishAPIRequest) SetAlways(_always string) error {
 // GetAlways Always Getter
 func (r AlibabaAliqinFlowPublishAPIRequest) GetAlways() string {
 	return r._always
+}
+
+var poolAlibabaAliqinFlowPublishAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinFlowPublishRequest()
+	},
+}
+
+// GetAlibabaAliqinFlowPublishRequest 从 sync.Pool 获取 AlibabaAliqinFlowPublishAPIRequest
+func GetAlibabaAliqinFlowPublishAPIRequest() *AlibabaAliqinFlowPublishAPIRequest {
+	return poolAlibabaAliqinFlowPublishAPIRequest.Get().(*AlibabaAliqinFlowPublishAPIRequest)
+}
+
+// ReleaseAlibabaAliqinFlowPublishAPIRequest 将 AlibabaAliqinFlowPublishAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinFlowPublishAPIRequest(v *AlibabaAliqinFlowPublishAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinFlowPublishAPIRequest.Put(v)
 }

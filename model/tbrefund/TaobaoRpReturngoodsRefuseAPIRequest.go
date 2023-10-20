@@ -2,6 +2,7 @@ package tbrefund
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoRpReturngoodsRefuseAPIRequest struct {
 // NewTaobaoRpReturngoodsRefuseRequest 初始化TaobaoRpReturngoodsRefuseAPIRequest对象
 func NewTaobaoRpReturngoodsRefuseRequest() *TaobaoRpReturngoodsRefuseAPIRequest {
 	return &TaobaoRpReturngoodsRefuseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoRpReturngoodsRefuseAPIRequest) Reset() {
+	r._refundPhase = ""
+	r._refundId = 0
+	r._refundVersion = 0
+	r._refuseProof = nil
+	r._refuseReasonId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoRpReturngoodsRefuseAPIRequest) SetRefuseReasonId(_refuseReasonId 
 // GetRefuseReasonId RefuseReasonId Getter
 func (r TaobaoRpReturngoodsRefuseAPIRequest) GetRefuseReasonId() int64 {
 	return r._refuseReasonId
+}
+
+var poolTaobaoRpReturngoodsRefuseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoRpReturngoodsRefuseRequest()
+	},
+}
+
+// GetTaobaoRpReturngoodsRefuseRequest 从 sync.Pool 获取 TaobaoRpReturngoodsRefuseAPIRequest
+func GetTaobaoRpReturngoodsRefuseAPIRequest() *TaobaoRpReturngoodsRefuseAPIRequest {
+	return poolTaobaoRpReturngoodsRefuseAPIRequest.Get().(*TaobaoRpReturngoodsRefuseAPIRequest)
+}
+
+// ReleaseTaobaoRpReturngoodsRefuseAPIRequest 将 TaobaoRpReturngoodsRefuseAPIRequest 放入 sync.Pool
+func ReleaseTaobaoRpReturngoodsRefuseAPIRequest(v *TaobaoRpReturngoodsRefuseAPIRequest) {
+	v.Reset()
+	poolTaobaoRpReturngoodsRefuseAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTbkDgPunishOrderGetAPIRequest struct {
 // NewTaobaoTbkDgPunishOrderGetRequest 初始化TaobaoTbkDgPunishOrderGetAPIRequest对象
 func NewTaobaoTbkDgPunishOrderGetRequest() *TaobaoTbkDgPunishOrderGetAPIRequest {
 	return &TaobaoTbkDgPunishOrderGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkDgPunishOrderGetAPIRequest) Reset() {
+	r._afOrderOption = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTbkDgPunishOrderGetAPIRequest) SetAfOrderOption(_afOrderOption *T
 // GetAfOrderOption AfOrderOption Getter
 func (r TaobaoTbkDgPunishOrderGetAPIRequest) GetAfOrderOption() *TopApiAfOrderOption {
 	return r._afOrderOption
+}
+
+var poolTaobaoTbkDgPunishOrderGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkDgPunishOrderGetRequest()
+	},
+}
+
+// GetTaobaoTbkDgPunishOrderGetRequest 从 sync.Pool 获取 TaobaoTbkDgPunishOrderGetAPIRequest
+func GetTaobaoTbkDgPunishOrderGetAPIRequest() *TaobaoTbkDgPunishOrderGetAPIRequest {
+	return poolTaobaoTbkDgPunishOrderGetAPIRequest.Get().(*TaobaoTbkDgPunishOrderGetAPIRequest)
+}
+
+// ReleaseTaobaoTbkDgPunishOrderGetAPIRequest 将 TaobaoTbkDgPunishOrderGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkDgPunishOrderGetAPIRequest(v *TaobaoTbkDgPunishOrderGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkDgPunishOrderGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package tttm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AliyunIndustryTttmOrderQueryAPIRequest struct {
 // NewAliyunIndustryTttmOrderQueryRequest 初始化AliyunIndustryTttmOrderQueryAPIRequest对象
 func NewAliyunIndustryTttmOrderQueryRequest() *AliyunIndustryTttmOrderQueryAPIRequest {
 	return &AliyunIndustryTttmOrderQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliyunIndustryTttmOrderQueryAPIRequest) Reset() {
+	r._orderId = ""
+	r._externalId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AliyunIndustryTttmOrderQueryAPIRequest) SetExternalId(_externalId strin
 // GetExternalId ExternalId Getter
 func (r AliyunIndustryTttmOrderQueryAPIRequest) GetExternalId() string {
 	return r._externalId
+}
+
+var poolAliyunIndustryTttmOrderQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliyunIndustryTttmOrderQueryRequest()
+	},
+}
+
+// GetAliyunIndustryTttmOrderQueryRequest 从 sync.Pool 获取 AliyunIndustryTttmOrderQueryAPIRequest
+func GetAliyunIndustryTttmOrderQueryAPIRequest() *AliyunIndustryTttmOrderQueryAPIRequest {
+	return poolAliyunIndustryTttmOrderQueryAPIRequest.Get().(*AliyunIndustryTttmOrderQueryAPIRequest)
+}
+
+// ReleaseAliyunIndustryTttmOrderQueryAPIRequest 将 AliyunIndustryTttmOrderQueryAPIRequest 放入 sync.Pool
+func ReleaseAliyunIndustryTttmOrderQueryAPIRequest(v *AliyunIndustryTttmOrderQueryAPIRequest) {
+	v.Reset()
+	poolAliyunIndustryTttmOrderQueryAPIRequest.Put(v)
 }

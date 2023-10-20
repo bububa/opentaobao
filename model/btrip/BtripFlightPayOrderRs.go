@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BtripFlightPayOrderRs 结构体
 type BtripFlightPayOrderRs struct {
 	// 支付宝流水号（现付支付宝不为空）
@@ -14,4 +18,26 @@ type BtripFlightPayOrderRs struct {
 	ActualPayPrice int64 `json:"actual_pay_price,omitempty" xml:"actual_pay_price,omitempty"`
 	// 支付状态
 	PayStatus int64 `json:"pay_status,omitempty" xml:"pay_status,omitempty"`
+}
+
+var poolBtripFlightPayOrderRs = sync.Pool{
+	New: func() any {
+		return new(BtripFlightPayOrderRs)
+	},
+}
+
+// GetBtripFlightPayOrderRs() 从对象池中获取BtripFlightPayOrderRs
+func GetBtripFlightPayOrderRs() *BtripFlightPayOrderRs {
+	return poolBtripFlightPayOrderRs.Get().(*BtripFlightPayOrderRs)
+}
+
+// ReleaseBtripFlightPayOrderRs 释放BtripFlightPayOrderRs
+func ReleaseBtripFlightPayOrderRs(v *BtripFlightPayOrderRs) {
+	v.AlipayTradeNo = ""
+	v.LastPayTime = ""
+	v.FailCode = ""
+	v.FailReason = ""
+	v.ActualPayPrice = 0
+	v.PayStatus = 0
+	poolBtripFlightPayOrderRs.Put(v)
 }

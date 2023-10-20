@@ -2,6 +2,7 @@ package ju
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaJhsCommunityWechatLoginAPIResponse struct {
 	AlibabaJhsCommunityWechatLoginAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaJhsCommunityWechatLoginAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaJhsCommunityWechatLoginAPIResponseModel).Reset()
+}
+
 // AlibabaJhsCommunityWechatLoginAPIResponseModel is 聚划算用增淘外社群登录 成功返回结果
 type AlibabaJhsCommunityWechatLoginAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_jhs_community_wechat_login_response"`
@@ -24,4 +31,28 @@ type AlibabaJhsCommunityWechatLoginAPIResponseModel struct {
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// 错误信息
 	Error string `json:"error,omitempty" xml:"error,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaJhsCommunityWechatLoginAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = ""
+	m.Error = ""
+}
+
+var poolAlibabaJhsCommunityWechatLoginAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaJhsCommunityWechatLoginAPIResponse)
+	},
+}
+
+// GetAlibabaJhsCommunityWechatLoginAPIResponse 从 sync.Pool 获取 AlibabaJhsCommunityWechatLoginAPIResponse
+func GetAlibabaJhsCommunityWechatLoginAPIResponse() *AlibabaJhsCommunityWechatLoginAPIResponse {
+	return poolAlibabaJhsCommunityWechatLoginAPIResponse.Get().(*AlibabaJhsCommunityWechatLoginAPIResponse)
+}
+
+// ReleaseAlibabaJhsCommunityWechatLoginAPIResponse 将 AlibabaJhsCommunityWechatLoginAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaJhsCommunityWechatLoginAPIResponse(v *AlibabaJhsCommunityWechatLoginAPIResponse) {
+	v.Reset()
+	poolAlibabaJhsCommunityWechatLoginAPIResponse.Put(v)
 }

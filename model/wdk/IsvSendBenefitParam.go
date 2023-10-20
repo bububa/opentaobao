@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // IsvSendBenefitParam 结构体
 type IsvSendBenefitParam struct {
 	// 外部订单号
@@ -12,4 +16,25 @@ type IsvSendBenefitParam struct {
 	DeviceId string `json:"device_id,omitempty" xml:"device_id,omitempty"`
 	// 设备类型。1是人工pos，2是自助pos
 	DeviceType int64 `json:"device_type,omitempty" xml:"device_type,omitempty"`
+}
+
+var poolIsvSendBenefitParam = sync.Pool{
+	New: func() any {
+		return new(IsvSendBenefitParam)
+	},
+}
+
+// GetIsvSendBenefitParam() 从对象池中获取IsvSendBenefitParam
+func GetIsvSendBenefitParam() *IsvSendBenefitParam {
+	return poolIsvSendBenefitParam.Get().(*IsvSendBenefitParam)
+}
+
+// ReleaseIsvSendBenefitParam 释放IsvSendBenefitParam
+func ReleaseIsvSendBenefitParam(v *IsvSendBenefitParam) {
+	v.OutOrderId = ""
+	v.OutShopCode = ""
+	v.AlipayTradeId = ""
+	v.DeviceId = ""
+	v.DeviceType = 0
+	poolIsvSendBenefitParam.Put(v)
 }

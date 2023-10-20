@@ -9,11 +9,6 @@ import (
 // cainiao.cloudprint.clientinfo.put
 //
 // 云打印客户端监控信息收集
-func CainiaoCloudprintClientinfoPut(clt *core.SDKClient, req *waybill.CainiaoCloudprintClientinfoPutAPIRequest, session string) (*waybill.CainiaoCloudprintClientinfoPutAPIResponse, error) {
-	var resp waybill.CainiaoCloudprintClientinfoPutAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func CainiaoCloudprintClientinfoPut(clt *core.SDKClient, req *waybill.CainiaoCloudprintClientinfoPutAPIRequest, resp *waybill.CainiaoCloudprintClientinfoPutAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

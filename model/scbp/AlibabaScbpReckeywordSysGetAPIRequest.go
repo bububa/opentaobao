@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaScbpReckeywordSysGetAPIRequest struct {
 // NewAlibabaScbpReckeywordSysGetRequest 初始化AlibabaScbpReckeywordSysGetAPIRequest对象
 func NewAlibabaScbpReckeywordSysGetRequest() *AlibabaScbpReckeywordSysGetAPIRequest {
 	return &AlibabaScbpReckeywordSysGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpReckeywordSysGetAPIRequest) Reset() {
+	r._queryDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaScbpReckeywordSysGetAPIRequest) SetQueryDto(_queryDto *RecKeywor
 // GetQueryDto QueryDto Getter
 func (r AlibabaScbpReckeywordSysGetAPIRequest) GetQueryDto() *RecKeywordQuery {
 	return r._queryDto
+}
+
+var poolAlibabaScbpReckeywordSysGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpReckeywordSysGetRequest()
+	},
+}
+
+// GetAlibabaScbpReckeywordSysGetRequest 从 sync.Pool 获取 AlibabaScbpReckeywordSysGetAPIRequest
+func GetAlibabaScbpReckeywordSysGetAPIRequest() *AlibabaScbpReckeywordSysGetAPIRequest {
+	return poolAlibabaScbpReckeywordSysGetAPIRequest.Get().(*AlibabaScbpReckeywordSysGetAPIRequest)
+}
+
+// ReleaseAlibabaScbpReckeywordSysGetAPIRequest 将 AlibabaScbpReckeywordSysGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpReckeywordSysGetAPIRequest(v *AlibabaScbpReckeywordSysGetAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpReckeywordSysGetAPIRequest.Put(v)
 }

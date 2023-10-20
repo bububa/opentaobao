@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // CouponActivity 结构体
 type CouponActivity struct {
 	// 优惠适用场景[APP|POS|POS+APP分别对应的值为1|2|1,2]
@@ -44,4 +48,41 @@ type CouponActivity struct {
 	StartCount int64 `json:"start_count,omitempty" xml:"start_count,omitempty"`
 	// [减至券特有]优惠件数，限制最多优惠N件，值为-1代表不限制优惠件数 [单位为整数]【已下线】
 	Count int64 `json:"count,omitempty" xml:"count,omitempty"`
+}
+
+var poolCouponActivity = sync.Pool{
+	New: func() any {
+		return new(CouponActivity)
+	},
+}
+
+// GetCouponActivity() 从对象池中获取CouponActivity
+func GetCouponActivity() *CouponActivity {
+	return poolCouponActivity.Get().(*CouponActivity)
+}
+
+// ReleaseCouponActivity 释放CouponActivity
+func ReleaseCouponActivity(v *CouponActivity) {
+	v.Terminals = v.Terminals[:0]
+	v.ShopIds = v.ShopIds[:0]
+	v.ApplicableCategories = v.ApplicableCategories[:0]
+	v.ApplyChannels = v.ApplyChannels[:0]
+	v.Details = v.Details[:0]
+	v.RangeType = ""
+	v.OutActId = ""
+	v.SendType = ""
+	v.LogoUrl = ""
+	v.Description = ""
+	v.ActivityName = ""
+	v.DiscountType = ""
+	v.MaCode = ""
+	v.LimitInfo = nil
+	v.EndTime = 0
+	v.Amount = 0
+	v.StartTime = 0
+	v.ValidDays = 0
+	v.StartFee = 0
+	v.StartCount = 0
+	v.Count = 0
+	poolCouponActivity.Put(v)
 }

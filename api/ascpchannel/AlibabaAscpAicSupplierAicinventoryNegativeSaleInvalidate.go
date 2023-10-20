@@ -9,11 +9,6 @@ import (
 // alibaba.ascp.aic.supplier.aicinventory.negative.sale.invalidate
 //
 // 失效负卖库存数据
-func AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidate(clt *core.SDKClient, req *ascpchannel.AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateAPIRequest, session string) (*ascpchannel.AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateAPIResponse, error) {
-	var resp ascpchannel.AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidate(clt *core.SDKClient, req *ascpchannel.AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateAPIRequest, resp *ascpchannel.AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

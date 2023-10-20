@@ -2,6 +2,7 @@ package cloudgame
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCgameScoreReportAPIRequest struct {
 // NewAlibabaCgameScoreReportRequest 初始化AlibabaCgameScoreReportAPIRequest对象
 func NewAlibabaCgameScoreReportRequest() *AlibabaCgameScoreReportAPIRequest {
 	return &AlibabaCgameScoreReportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCgameScoreReportAPIRequest) Reset() {
+	r._reportData = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCgameScoreReportAPIRequest) SetReportData(_reportData *CpCallbac
 // GetReportData ReportData Getter
 func (r AlibabaCgameScoreReportAPIRequest) GetReportData() *CpCallbackReportDto {
 	return r._reportData
+}
+
+var poolAlibabaCgameScoreReportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCgameScoreReportRequest()
+	},
+}
+
+// GetAlibabaCgameScoreReportRequest 从 sync.Pool 获取 AlibabaCgameScoreReportAPIRequest
+func GetAlibabaCgameScoreReportAPIRequest() *AlibabaCgameScoreReportAPIRequest {
+	return poolAlibabaCgameScoreReportAPIRequest.Get().(*AlibabaCgameScoreReportAPIRequest)
+}
+
+// ReleaseAlibabaCgameScoreReportAPIRequest 将 AlibabaCgameScoreReportAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCgameScoreReportAPIRequest(v *AlibabaCgameScoreReportAPIRequest) {
+	v.Reset()
+	poolAlibabaCgameScoreReportAPIRequest.Put(v)
 }

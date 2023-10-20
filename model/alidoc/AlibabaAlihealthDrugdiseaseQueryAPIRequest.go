@@ -2,6 +2,7 @@ package alidoc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthDrugdiseaseQueryAPIRequest struct {
 // NewAlibabaAlihealthDrugdiseaseQueryRequest 初始化AlibabaAlihealthDrugdiseaseQueryAPIRequest对象
 func NewAlibabaAlihealthDrugdiseaseQueryRequest() *AlibabaAlihealthDrugdiseaseQueryAPIRequest {
 	return &AlibabaAlihealthDrugdiseaseQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugdiseaseQueryAPIRequest) Reset() {
+	r._spuDiseaseQueryDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthDrugdiseaseQueryAPIRequest) SetSpuDiseaseQueryDto(_spuD
 // GetSpuDiseaseQueryDto SpuDiseaseQueryDto Getter
 func (r AlibabaAlihealthDrugdiseaseQueryAPIRequest) GetSpuDiseaseQueryDto() *SpuDiseaseQueryDto {
 	return r._spuDiseaseQueryDto
+}
+
+var poolAlibabaAlihealthDrugdiseaseQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugdiseaseQueryRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugdiseaseQueryRequest 从 sync.Pool 获取 AlibabaAlihealthDrugdiseaseQueryAPIRequest
+func GetAlibabaAlihealthDrugdiseaseQueryAPIRequest() *AlibabaAlihealthDrugdiseaseQueryAPIRequest {
+	return poolAlibabaAlihealthDrugdiseaseQueryAPIRequest.Get().(*AlibabaAlihealthDrugdiseaseQueryAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugdiseaseQueryAPIRequest 将 AlibabaAlihealthDrugdiseaseQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugdiseaseQueryAPIRequest(v *AlibabaAlihealthDrugdiseaseQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugdiseaseQueryAPIRequest.Put(v)
 }

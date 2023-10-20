@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TmallMallitemcenterServiceproductQueryAPIRequest struct {
 // NewTmallMallitemcenterServiceproductQueryRequest 初始化TmallMallitemcenterServiceproductQueryAPIRequest对象
 func NewTmallMallitemcenterServiceproductQueryRequest() *TmallMallitemcenterServiceproductQueryAPIRequest {
 	return &TmallMallitemcenterServiceproductQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallMallitemcenterServiceproductQueryAPIRequest) Reset() {
+	r._serviceCode = ""
+	r._id = 0
+	r._status = 0
+	r._serviceProductType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TmallMallitemcenterServiceproductQueryAPIRequest) SetServiceProductType
 // GetServiceProductType ServiceProductType Getter
 func (r TmallMallitemcenterServiceproductQueryAPIRequest) GetServiceProductType() int64 {
 	return r._serviceProductType
+}
+
+var poolTmallMallitemcenterServiceproductQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallMallitemcenterServiceproductQueryRequest()
+	},
+}
+
+// GetTmallMallitemcenterServiceproductQueryRequest 从 sync.Pool 获取 TmallMallitemcenterServiceproductQueryAPIRequest
+func GetTmallMallitemcenterServiceproductQueryAPIRequest() *TmallMallitemcenterServiceproductQueryAPIRequest {
+	return poolTmallMallitemcenterServiceproductQueryAPIRequest.Get().(*TmallMallitemcenterServiceproductQueryAPIRequest)
+}
+
+// ReleaseTmallMallitemcenterServiceproductQueryAPIRequest 将 TmallMallitemcenterServiceproductQueryAPIRequest 放入 sync.Pool
+func ReleaseTmallMallitemcenterServiceproductQueryAPIRequest(v *TmallMallitemcenterServiceproductQueryAPIRequest) {
+	v.Reset()
+	poolTmallMallitemcenterServiceproductQueryAPIRequest.Put(v)
 }

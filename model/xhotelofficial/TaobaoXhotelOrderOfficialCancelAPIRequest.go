@@ -2,6 +2,7 @@ package xhotelofficial
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoXhotelOrderOfficialCancelAPIRequest struct {
 // NewTaobaoXhotelOrderOfficialCancelRequest 初始化TaobaoXhotelOrderOfficialCancelAPIRequest对象
 func NewTaobaoXhotelOrderOfficialCancelRequest() *TaobaoXhotelOrderOfficialCancelAPIRequest {
 	return &TaobaoXhotelOrderOfficialCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelOrderOfficialCancelAPIRequest) Reset() {
+	r._reasonText = ""
+	r._outId = ""
+	r._outUuid = ""
+	r._notifyUrl = ""
+	r._tid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoXhotelOrderOfficialCancelAPIRequest) SetTid(_tid int64) error {
 // GetTid Tid Getter
 func (r TaobaoXhotelOrderOfficialCancelAPIRequest) GetTid() int64 {
 	return r._tid
+}
+
+var poolTaobaoXhotelOrderOfficialCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelOrderOfficialCancelRequest()
+	},
+}
+
+// GetTaobaoXhotelOrderOfficialCancelRequest 从 sync.Pool 获取 TaobaoXhotelOrderOfficialCancelAPIRequest
+func GetTaobaoXhotelOrderOfficialCancelAPIRequest() *TaobaoXhotelOrderOfficialCancelAPIRequest {
+	return poolTaobaoXhotelOrderOfficialCancelAPIRequest.Get().(*TaobaoXhotelOrderOfficialCancelAPIRequest)
+}
+
+// ReleaseTaobaoXhotelOrderOfficialCancelAPIRequest 将 TaobaoXhotelOrderOfficialCancelAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelOrderOfficialCancelAPIRequest(v *TaobaoXhotelOrderOfficialCancelAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelOrderOfficialCancelAPIRequest.Put(v)
 }

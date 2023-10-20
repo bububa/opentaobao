@@ -2,6 +2,7 @@ package perfect
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaPerfectPerformanceLocalitemPublishAPIRequest struct {
 // NewAlibabaPerfectPerformanceLocalitemPublishRequest 初始化AlibabaPerfectPerformanceLocalitemPublishAPIRequest对象
 func NewAlibabaPerfectPerformanceLocalitemPublishRequest() *AlibabaPerfectPerformanceLocalitemPublishAPIRequest {
 	return &AlibabaPerfectPerformanceLocalitemPublishAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaPerfectPerformanceLocalitemPublishAPIRequest) Reset() {
+	r._paramPerfectPerformanceItemPublishReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaPerfectPerformanceLocalitemPublishAPIRequest) SetParamPerfectPer
 // GetParamPerfectPerformanceItemPublishReq ParamPerfectPerformanceItemPublishReq Getter
 func (r AlibabaPerfectPerformanceLocalitemPublishAPIRequest) GetParamPerfectPerformanceItemPublishReq() *PerfectPerformanceItemPublishReq {
 	return r._paramPerfectPerformanceItemPublishReq
+}
+
+var poolAlibabaPerfectPerformanceLocalitemPublishAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaPerfectPerformanceLocalitemPublishRequest()
+	},
+}
+
+// GetAlibabaPerfectPerformanceLocalitemPublishRequest 从 sync.Pool 获取 AlibabaPerfectPerformanceLocalitemPublishAPIRequest
+func GetAlibabaPerfectPerformanceLocalitemPublishAPIRequest() *AlibabaPerfectPerformanceLocalitemPublishAPIRequest {
+	return poolAlibabaPerfectPerformanceLocalitemPublishAPIRequest.Get().(*AlibabaPerfectPerformanceLocalitemPublishAPIRequest)
+}
+
+// ReleaseAlibabaPerfectPerformanceLocalitemPublishAPIRequest 将 AlibabaPerfectPerformanceLocalitemPublishAPIRequest 放入 sync.Pool
+func ReleaseAlibabaPerfectPerformanceLocalitemPublishAPIRequest(v *AlibabaPerfectPerformanceLocalitemPublishAPIRequest) {
+	v.Reset()
+	poolAlibabaPerfectPerformanceLocalitemPublishAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // CommonPageResult 结构体
 type CommonPageResult struct {
 	// 商品数据
@@ -16,4 +20,27 @@ type CommonPageResult struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 是否有下页
 	HasNextPage bool `json:"has_next_page,omitempty" xml:"has_next_page,omitempty"`
+}
+
+var poolCommonPageResult = sync.Pool{
+	New: func() any {
+		return new(CommonPageResult)
+	},
+}
+
+// GetCommonPageResult() 从对象池中获取CommonPageResult
+func GetCommonPageResult() *CommonPageResult {
+	return poolCommonPageResult.Get().(*CommonPageResult)
+}
+
+// ReleaseCommonPageResult 释放CommonPageResult
+func ReleaseCommonPageResult(v *CommonPageResult) {
+	v.Data = v.Data[:0]
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.CurrentPage = 0
+	v.Total = 0
+	v.Success = false
+	v.HasNextPage = false
+	poolCommonPageResult.Put(v)
 }

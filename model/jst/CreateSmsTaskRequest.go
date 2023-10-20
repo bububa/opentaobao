@@ -1,5 +1,9 @@
 package jst
 
+import (
+	"sync"
+)
+
 // CreateSmsTaskRequest 结构体
 type CreateSmsTaskRequest struct {
 	// 权益短信必须是两个文案，其他类型短信为一个文案，文案中必须带${url}占位符，普通短信文案在第一个，权益短信文案在第二个，请严格按照顺序提交
@@ -14,4 +18,26 @@ type CreateSmsTaskRequest struct {
 	Url string `json:"url,omitempty" xml:"url,omitempty"`
 	// 任务对应的短信类型 ：1--数字短信  2--权益短信  3--公众号短信
 	SmsType int64 `json:"sms_type,omitempty" xml:"sms_type,omitempty"`
+}
+
+var poolCreateSmsTaskRequest = sync.Pool{
+	New: func() any {
+		return new(CreateSmsTaskRequest)
+	},
+}
+
+// GetCreateSmsTaskRequest() 从对象池中获取CreateSmsTaskRequest
+func GetCreateSmsTaskRequest() *CreateSmsTaskRequest {
+	return poolCreateSmsTaskRequest.Get().(*CreateSmsTaskRequest)
+}
+
+// ReleaseCreateSmsTaskRequest 释放CreateSmsTaskRequest
+func ReleaseCreateSmsTaskRequest(v *CreateSmsTaskRequest) {
+	v.Contents = v.Contents[:0]
+	v.TemplateCodes = v.TemplateCodes[:0]
+	v.SignNames = v.SignNames[:0]
+	v.TaskCode = ""
+	v.Url = ""
+	v.SmsType = 0
+	poolCreateSmsTaskRequest.Put(v)
 }

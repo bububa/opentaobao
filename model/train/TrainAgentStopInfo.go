@@ -1,5 +1,9 @@
 package train
 
+import (
+	"sync"
+)
+
 // TrainAgentStopInfo 结构体
 type TrainAgentStopInfo struct {
 	// 车次号
@@ -14,4 +18,26 @@ type TrainAgentStopInfo struct {
 	TrainStatus string `json:"train_status,omitempty" xml:"train_status,omitempty"`
 	// uuid唯一标识
 	Uuid string `json:"uuid,omitempty" xml:"uuid,omitempty"`
+}
+
+var poolTrainAgentStopInfo = sync.Pool{
+	New: func() any {
+		return new(TrainAgentStopInfo)
+	},
+}
+
+// GetTrainAgentStopInfo() 从对象池中获取TrainAgentStopInfo
+func GetTrainAgentStopInfo() *TrainAgentStopInfo {
+	return poolTrainAgentStopInfo.Get().(*TrainAgentStopInfo)
+}
+
+// ReleaseTrainAgentStopInfo 释放TrainAgentStopInfo
+func ReleaseTrainAgentStopInfo(v *TrainAgentStopInfo) {
+	v.TrainNo = ""
+	v.DepTime = ""
+	v.FromStation = ""
+	v.ToStation = ""
+	v.TrainStatus = ""
+	v.Uuid = ""
+	poolTrainAgentStopInfo.Put(v)
 }

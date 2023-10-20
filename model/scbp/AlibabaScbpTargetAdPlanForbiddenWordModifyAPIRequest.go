@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest struct {
 // NewAlibabaScbpTargetAdPlanForbiddenWordModifyRequest 初始化AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest对象
 func NewAlibabaScbpTargetAdPlanForbiddenWordModifyRequest() *AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest {
 	return &AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest) Reset() {
+	r._topP4pQuickForbiddenWord = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest) SetTopP4pQuickFor
 // GetTopP4pQuickForbiddenWord TopP4pQuickForbiddenWord Getter
 func (r AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest) GetTopP4pQuickForbiddenWord() *TopP4pQuickForbiddenWordDto {
 	return r._topP4pQuickForbiddenWord
+}
+
+var poolAlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpTargetAdPlanForbiddenWordModifyRequest()
+	},
+}
+
+// GetAlibabaScbpTargetAdPlanForbiddenWordModifyRequest 从 sync.Pool 获取 AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest
+func GetAlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest() *AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest {
+	return poolAlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest.Get().(*AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest)
+}
+
+// ReleaseAlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest 将 AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest(v *AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest.Put(v)
 }

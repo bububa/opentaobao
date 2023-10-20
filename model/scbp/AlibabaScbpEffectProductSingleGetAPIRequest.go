@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaScbpEffectProductSingleGetAPIRequest struct {
 // NewAlibabaScbpEffectProductSingleGetRequest 初始化AlibabaScbpEffectProductSingleGetAPIRequest对象
 func NewAlibabaScbpEffectProductSingleGetRequest() *AlibabaScbpEffectProductSingleGetAPIRequest {
 	return &AlibabaScbpEffectProductSingleGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpEffectProductSingleGetAPIRequest) Reset() {
+	r._p4pProductReportQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaScbpEffectProductSingleGetAPIRequest) SetP4pProductReportQuery(_
 // GetP4pProductReportQuery P4pProductReportQuery Getter
 func (r AlibabaScbpEffectProductSingleGetAPIRequest) GetP4pProductReportQuery() *ProductQuery {
 	return r._p4pProductReportQuery
+}
+
+var poolAlibabaScbpEffectProductSingleGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpEffectProductSingleGetRequest()
+	},
+}
+
+// GetAlibabaScbpEffectProductSingleGetRequest 从 sync.Pool 获取 AlibabaScbpEffectProductSingleGetAPIRequest
+func GetAlibabaScbpEffectProductSingleGetAPIRequest() *AlibabaScbpEffectProductSingleGetAPIRequest {
+	return poolAlibabaScbpEffectProductSingleGetAPIRequest.Get().(*AlibabaScbpEffectProductSingleGetAPIRequest)
+}
+
+// ReleaseAlibabaScbpEffectProductSingleGetAPIRequest 将 AlibabaScbpEffectProductSingleGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpEffectProductSingleGetAPIRequest(v *AlibabaScbpEffectProductSingleGetAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpEffectProductSingleGetAPIRequest.Put(v)
 }

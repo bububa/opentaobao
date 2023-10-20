@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // Integer 结构体
 type Integer struct {
 	// 操作项code
@@ -12,4 +16,25 @@ type Integer struct {
 	Disabled string `json:"disabled,omitempty" xml:"disabled,omitempty"`
 	// 扩展属性
 	Properties string `json:"properties,omitempty" xml:"properties,omitempty"`
+}
+
+var poolInteger = sync.Pool{
+	New: func() any {
+		return new(Integer)
+	},
+}
+
+// GetInteger() 从对象池中获取Integer
+func GetInteger() *Integer {
+	return poolInteger.Get().(*Integer)
+}
+
+// ReleaseInteger 释放Integer
+func ReleaseInteger(v *Integer) {
+	v.Code = ""
+	v.Name = ""
+	v.Tips = ""
+	v.Disabled = ""
+	v.Properties = ""
+	poolInteger.Put(v)
 }

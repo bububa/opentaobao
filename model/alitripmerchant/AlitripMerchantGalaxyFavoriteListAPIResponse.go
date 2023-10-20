@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripMerchantGalaxyFavoriteListAPIResponse struct {
 	AlitripMerchantGalaxyFavoriteListAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripMerchantGalaxyFavoriteListAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripMerchantGalaxyFavoriteListAPIResponseModel).Reset()
+}
+
 // AlitripMerchantGalaxyFavoriteListAPIResponseModel is 用户收藏列表查询 成功返回结果
 type AlitripMerchantGalaxyFavoriteListAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_merchant_galaxy_favorite_list_response"`
@@ -22,4 +29,27 @@ type AlitripMerchantGalaxyFavoriteListAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 默认描述
 	Result *AlitripMerchantGalaxyFavoriteListResponse `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripMerchantGalaxyFavoriteListAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlitripMerchantGalaxyFavoriteListAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyFavoriteListAPIResponse)
+	},
+}
+
+// GetAlitripMerchantGalaxyFavoriteListAPIResponse 从 sync.Pool 获取 AlitripMerchantGalaxyFavoriteListAPIResponse
+func GetAlitripMerchantGalaxyFavoriteListAPIResponse() *AlitripMerchantGalaxyFavoriteListAPIResponse {
+	return poolAlitripMerchantGalaxyFavoriteListAPIResponse.Get().(*AlitripMerchantGalaxyFavoriteListAPIResponse)
+}
+
+// ReleaseAlitripMerchantGalaxyFavoriteListAPIResponse 将 AlitripMerchantGalaxyFavoriteListAPIResponse 保存到 sync.Pool
+func ReleaseAlitripMerchantGalaxyFavoriteListAPIResponse(v *AlitripMerchantGalaxyFavoriteListAPIResponse) {
+	v.Reset()
+	poolAlitripMerchantGalaxyFavoriteListAPIResponse.Put(v)
 }

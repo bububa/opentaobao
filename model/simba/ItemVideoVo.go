@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // ItemVideoVo 结构体
 type ItemVideoVo struct {
 	// 封面url
@@ -28,4 +32,33 @@ type ItemVideoVo struct {
 	Duration int64 `json:"duration,omitempty" xml:"duration,omitempty"`
 	// 对应的海棠id
 	HaitangId int64 `json:"haitang_id,omitempty" xml:"haitang_id,omitempty"`
+}
+
+var poolItemVideoVo = sync.Pool{
+	New: func() any {
+		return new(ItemVideoVo)
+	},
+}
+
+// GetItemVideoVo() 从对象池中获取ItemVideoVo
+func GetItemVideoVo() *ItemVideoVo {
+	return poolItemVideoVo.Get().(*ItemVideoVo)
+}
+
+// ReleaseItemVideoVo 释放ItemVideoVo
+func ReleaseItemVideoVo(v *ItemVideoVo) {
+	v.CoverUrl = ""
+	v.Poster = ""
+	v.VideoUrl = ""
+	v.AuditDesc = ""
+	v.ItemId = 0
+	v.AuditState = 0
+	v.VideoId = 0
+	v.Source = 0
+	v.Type = 0
+	v.Width = 0
+	v.Height = 0
+	v.Duration = 0
+	v.HaitangId = 0
+	poolItemVideoVo.Put(v)
 }

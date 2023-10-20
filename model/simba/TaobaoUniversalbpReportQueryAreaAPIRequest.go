@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoUniversalbpReportQueryAreaAPIRequest struct {
 // NewTaobaoUniversalbpReportQueryAreaRequest 初始化TaobaoUniversalbpReportQueryAreaAPIRequest对象
 func NewTaobaoUniversalbpReportQueryAreaRequest() *TaobaoUniversalbpReportQueryAreaAPIRequest {
 	return &TaobaoUniversalbpReportQueryAreaAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpReportQueryAreaAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r._topAreaReportQueryVO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoUniversalbpReportQueryAreaAPIRequest) SetTopAreaReportQueryVO(_to
 // GetTopAreaReportQueryVO TopAreaReportQueryVO Getter
 func (r TaobaoUniversalbpReportQueryAreaAPIRequest) GetTopAreaReportQueryVO() *TopAreaReportQueryVo {
 	return r._topAreaReportQueryVO
+}
+
+var poolTaobaoUniversalbpReportQueryAreaAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpReportQueryAreaRequest()
+	},
+}
+
+// GetTaobaoUniversalbpReportQueryAreaRequest 从 sync.Pool 获取 TaobaoUniversalbpReportQueryAreaAPIRequest
+func GetTaobaoUniversalbpReportQueryAreaAPIRequest() *TaobaoUniversalbpReportQueryAreaAPIRequest {
+	return poolTaobaoUniversalbpReportQueryAreaAPIRequest.Get().(*TaobaoUniversalbpReportQueryAreaAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpReportQueryAreaAPIRequest 将 TaobaoUniversalbpReportQueryAreaAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpReportQueryAreaAPIRequest(v *TaobaoUniversalbpReportQueryAreaAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpReportQueryAreaAPIRequest.Put(v)
 }

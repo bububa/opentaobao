@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // UserSyncInfo 结构体
 type UserSyncInfo struct {
 	// 手机号
@@ -16,4 +20,27 @@ type UserSyncInfo struct {
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
 	// 用户Id
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
+}
+
+var poolUserSyncInfo = sync.Pool{
+	New: func() any {
+		return new(UserSyncInfo)
+	},
+}
+
+// GetUserSyncInfo() 从对象池中获取UserSyncInfo
+func GetUserSyncInfo() *UserSyncInfo {
+	return poolUserSyncInfo.Get().(*UserSyncInfo)
+}
+
+// ReleaseUserSyncInfo 释放UserSyncInfo
+func ReleaseUserSyncInfo(v *UserSyncInfo) {
+	v.Phone = ""
+	v.UserName = ""
+	v.UserNick = ""
+	v.RealName = ""
+	v.Gender = ""
+	v.Type = ""
+	v.UserId = 0
+	poolUserSyncInfo.Put(v)
 }

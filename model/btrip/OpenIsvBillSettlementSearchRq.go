@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenIsvBillSettlementSearchRq 结构体
 type OpenIsvBillSettlementSearchRq struct {
 	// 第三方企业id
@@ -16,4 +20,27 @@ type OpenIsvBillSettlementSearchRq struct {
 	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
 	// 类目：机酒火车 1：机票； 2：酒店； 4：用车 6：商旅火车票
 	Category int64 `json:"category,omitempty" xml:"category,omitempty"`
+}
+
+var poolOpenIsvBillSettlementSearchRq = sync.Pool{
+	New: func() any {
+		return new(OpenIsvBillSettlementSearchRq)
+	},
+}
+
+// GetOpenIsvBillSettlementSearchRq() 从对象池中获取OpenIsvBillSettlementSearchRq
+func GetOpenIsvBillSettlementSearchRq() *OpenIsvBillSettlementSearchRq {
+	return poolOpenIsvBillSettlementSearchRq.Get().(*OpenIsvBillSettlementSearchRq)
+}
+
+// ReleaseOpenIsvBillSettlementSearchRq 释放OpenIsvBillSettlementSearchRq
+func ReleaseOpenIsvBillSettlementSearchRq(v *OpenIsvBillSettlementSearchRq) {
+	v.CorpId = ""
+	v.PeriodStart = ""
+	v.PeriodEnd = ""
+	v.PageSize = 0
+	v.Version = 0
+	v.PageNo = 0
+	v.Category = 0
+	poolOpenIsvBillSettlementSearchRq.Put(v)
 }

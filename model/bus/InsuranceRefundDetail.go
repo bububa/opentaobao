@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // InsuranceRefundDetail 结构体
 type InsuranceRefundDetail struct {
 	// 退保信息
@@ -12,4 +16,25 @@ type InsuranceRefundDetail struct {
 	RiderName string `json:"rider_name,omitempty" xml:"rider_name,omitempty"`
 	// 保险退款总金额
 	InsurePrice int64 `json:"insure_price,omitempty" xml:"insure_price,omitempty"`
+}
+
+var poolInsuranceRefundDetail = sync.Pool{
+	New: func() any {
+		return new(InsuranceRefundDetail)
+	},
+}
+
+// GetInsuranceRefundDetail() 从对象池中获取InsuranceRefundDetail
+func GetInsuranceRefundDetail() *InsuranceRefundDetail {
+	return poolInsuranceRefundDetail.Get().(*InsuranceRefundDetail)
+}
+
+// ReleaseInsuranceRefundDetail 释放InsuranceRefundDetail
+func ReleaseInsuranceRefundDetail(v *InsuranceRefundDetail) {
+	v.TvmInsuranceInfos = v.TvmInsuranceInfos[:0]
+	v.RiderCertNumber = ""
+	v.RiderCertType = ""
+	v.RiderName = ""
+	v.InsurePrice = 0
+	poolInsuranceRefundDetail.Put(v)
 }

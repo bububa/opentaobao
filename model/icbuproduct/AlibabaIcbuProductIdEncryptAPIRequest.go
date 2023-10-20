@@ -2,6 +2,7 @@ package icbuproduct
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaIcbuProductIdEncryptAPIRequest struct {
 // NewAlibabaIcbuProductIdEncryptRequest 初始化AlibabaIcbuProductIdEncryptAPIRequest对象
 func NewAlibabaIcbuProductIdEncryptRequest() *AlibabaIcbuProductIdEncryptAPIRequest {
 	return &AlibabaIcbuProductIdEncryptAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIcbuProductIdEncryptAPIRequest) Reset() {
+	r._language = ""
+	r._productId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaIcbuProductIdEncryptAPIRequest) SetProductId(_productId int64) e
 // GetProductId ProductId Getter
 func (r AlibabaIcbuProductIdEncryptAPIRequest) GetProductId() int64 {
 	return r._productId
+}
+
+var poolAlibabaIcbuProductIdEncryptAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIcbuProductIdEncryptRequest()
+	},
+}
+
+// GetAlibabaIcbuProductIdEncryptRequest 从 sync.Pool 获取 AlibabaIcbuProductIdEncryptAPIRequest
+func GetAlibabaIcbuProductIdEncryptAPIRequest() *AlibabaIcbuProductIdEncryptAPIRequest {
+	return poolAlibabaIcbuProductIdEncryptAPIRequest.Get().(*AlibabaIcbuProductIdEncryptAPIRequest)
+}
+
+// ReleaseAlibabaIcbuProductIdEncryptAPIRequest 将 AlibabaIcbuProductIdEncryptAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIcbuProductIdEncryptAPIRequest(v *AlibabaIcbuProductIdEncryptAPIRequest) {
+	v.Reset()
+	poolAlibabaIcbuProductIdEncryptAPIRequest.Put(v)
 }

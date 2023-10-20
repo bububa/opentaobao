@@ -1,5 +1,9 @@
 package util
 
+import (
+	"sync"
+)
+
 // AiotTopOpenDeviceDto 结构体
 type AiotTopOpenDeviceDto struct {
 	// 设备唯一标识
@@ -12,4 +16,25 @@ type AiotTopOpenDeviceDto struct {
 	Base *AiotOpenDeviceBaseDto `json:"base,omitempty" xml:"base,omitempty"`
 	// 租户号
 	TenantId int64 `json:"tenant_id,omitempty" xml:"tenant_id,omitempty"`
+}
+
+var poolAiotTopOpenDeviceDto = sync.Pool{
+	New: func() any {
+		return new(AiotTopOpenDeviceDto)
+	},
+}
+
+// GetAiotTopOpenDeviceDto() 从对象池中获取AiotTopOpenDeviceDto
+func GetAiotTopOpenDeviceDto() *AiotTopOpenDeviceDto {
+	return poolAiotTopOpenDeviceDto.Get().(*AiotTopOpenDeviceDto)
+}
+
+// ReleaseAiotTopOpenDeviceDto 释放AiotTopOpenDeviceDto
+func ReleaseAiotTopOpenDeviceDto(v *AiotTopOpenDeviceDto) {
+	v.Uuid = ""
+	v.ExtendStr = ""
+	v.Organization = nil
+	v.Base = nil
+	v.TenantId = 0
+	poolAiotTopOpenDeviceDto.Put(v)
 }

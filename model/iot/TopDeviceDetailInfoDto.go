@@ -1,5 +1,9 @@
 package iot
 
+import (
+	"sync"
+)
+
 // TopDeviceDetailInfoDto 结构体
 type TopDeviceDetailInfoDto struct {
 	// 设备id
@@ -16,4 +20,27 @@ type TopDeviceDetailInfoDto struct {
 	FirmwareVersion string `json:"firmware_version,omitempty" xml:"firmware_version,omitempty"`
 	// 设备序列号
 	Sn string `json:"sn,omitempty" xml:"sn,omitempty"`
+}
+
+var poolTopDeviceDetailInfoDto = sync.Pool{
+	New: func() any {
+		return new(TopDeviceDetailInfoDto)
+	},
+}
+
+// GetTopDeviceDetailInfoDto() 从对象池中获取TopDeviceDetailInfoDto
+func GetTopDeviceDetailInfoDto() *TopDeviceDetailInfoDto {
+	return poolTopDeviceDetailInfoDto.Get().(*TopDeviceDetailInfoDto)
+}
+
+// ReleaseTopDeviceDetailInfoDto 释放TopDeviceDetailInfoDto
+func ReleaseTopDeviceDetailInfoDto(v *TopDeviceDetailInfoDto) {
+	v.DeviceId = ""
+	v.DeviceIp = ""
+	v.DeviceMac = ""
+	v.ExtDeviceId = ""
+	v.ExtDeviceType = ""
+	v.FirmwareVersion = ""
+	v.Sn = ""
+	poolTopDeviceDetailInfoDto.Put(v)
 }

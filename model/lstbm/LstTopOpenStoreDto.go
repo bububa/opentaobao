@@ -1,5 +1,9 @@
 package lstbm
 
+import (
+	"sync"
+)
+
 // LstTopOpenStoreDto 结构体
 type LstTopOpenStoreDto struct {
 	// 店主的手机号
@@ -28,4 +32,33 @@ type LstTopOpenStoreDto struct {
 	Province string `json:"province,omitempty" xml:"province,omitempty"`
 	// 区县内的街道
 	Town string `json:"town,omitempty" xml:"town,omitempty"`
+}
+
+var poolLstTopOpenStoreDto = sync.Pool{
+	New: func() any {
+		return new(LstTopOpenStoreDto)
+	},
+}
+
+// GetLstTopOpenStoreDto() 从对象池中获取LstTopOpenStoreDto
+func GetLstTopOpenStoreDto() *LstTopOpenStoreDto {
+	return poolLstTopOpenStoreDto.Get().(*LstTopOpenStoreDto)
+}
+
+// ReleaseLstTopOpenStoreDto 释放LstTopOpenStoreDto
+func ReleaseLstTopOpenStoreDto(v *LstTopOpenStoreDto) {
+	v.Phone = ""
+	v.StoreName = ""
+	v.SecondCategory = ""
+	v.StoreId = ""
+	v.PrimaryCategory = ""
+	v.LicenseOwner = ""
+	v.Addr = ""
+	v.City = ""
+	v.Area = ""
+	v.LicenseNo = ""
+	v.Name = ""
+	v.Province = ""
+	v.Town = ""
+	poolLstTopOpenStoreDto.Put(v)
 }

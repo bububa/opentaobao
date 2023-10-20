@@ -2,6 +2,7 @@ package admarket
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YunosAdmarketMaterialAuditAPIRequest struct {
 // NewYunosAdmarketMaterialAuditRequest 初始化YunosAdmarketMaterialAuditAPIRequest对象
 func NewYunosAdmarketMaterialAuditRequest() *YunosAdmarketMaterialAuditAPIRequest {
 	return &YunosAdmarketMaterialAuditAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosAdmarketMaterialAuditAPIRequest) Reset() {
+	r._sspMaterialAuditResult = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YunosAdmarketMaterialAuditAPIRequest) SetSspMaterialAuditResult(_sspMat
 // GetSspMaterialAuditResult SspMaterialAuditResult Getter
 func (r YunosAdmarketMaterialAuditAPIRequest) GetSspMaterialAuditResult() *SspMaterialAuditResult {
 	return r._sspMaterialAuditResult
+}
+
+var poolYunosAdmarketMaterialAuditAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosAdmarketMaterialAuditRequest()
+	},
+}
+
+// GetYunosAdmarketMaterialAuditRequest 从 sync.Pool 获取 YunosAdmarketMaterialAuditAPIRequest
+func GetYunosAdmarketMaterialAuditAPIRequest() *YunosAdmarketMaterialAuditAPIRequest {
+	return poolYunosAdmarketMaterialAuditAPIRequest.Get().(*YunosAdmarketMaterialAuditAPIRequest)
+}
+
+// ReleaseYunosAdmarketMaterialAuditAPIRequest 将 YunosAdmarketMaterialAuditAPIRequest 放入 sync.Pool
+func ReleaseYunosAdmarketMaterialAuditAPIRequest(v *YunosAdmarketMaterialAuditAPIRequest) {
+	v.Reset()
+	poolYunosAdmarketMaterialAuditAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package miniappopen
 
+import (
+	"sync"
+)
+
 // DistributionOrderBindTargetEntityOpenResultDto 结构体
 type DistributionOrderBindTargetEntityOpenResultDto struct {
 	// 商品列表的绑定结果
@@ -10,4 +14,24 @@ type DistributionOrderBindTargetEntityOpenResultDto struct {
 	SceneName string `json:"scene_name,omitempty" xml:"scene_name,omitempty"`
 	// 绑定的投放计划id
 	DistributeId int64 `json:"distribute_id,omitempty" xml:"distribute_id,omitempty"`
+}
+
+var poolDistributionOrderBindTargetEntityOpenResultDto = sync.Pool{
+	New: func() any {
+		return new(DistributionOrderBindTargetEntityOpenResultDto)
+	},
+}
+
+// GetDistributionOrderBindTargetEntityOpenResultDto() 从对象池中获取DistributionOrderBindTargetEntityOpenResultDto
+func GetDistributionOrderBindTargetEntityOpenResultDto() *DistributionOrderBindTargetEntityOpenResultDto {
+	return poolDistributionOrderBindTargetEntityOpenResultDto.Get().(*DistributionOrderBindTargetEntityOpenResultDto)
+}
+
+// ReleaseDistributionOrderBindTargetEntityOpenResultDto 释放DistributionOrderBindTargetEntityOpenResultDto
+func ReleaseDistributionOrderBindTargetEntityOpenResultDto(v *DistributionOrderBindTargetEntityOpenResultDto) {
+	v.BindResultList = v.BindResultList[:0]
+	v.Url = ""
+	v.SceneName = ""
+	v.DistributeId = 0
+	poolDistributionOrderBindTargetEntityOpenResultDto.Put(v)
 }

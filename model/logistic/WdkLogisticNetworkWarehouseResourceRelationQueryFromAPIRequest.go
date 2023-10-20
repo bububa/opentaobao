@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type WdkLogisticNetworkWarehouseResourceRelationQueryFromAPIRequest struct {
 // NewWdkLogisticNetworkWarehouseResourceRelationQueryFromRequest 初始化WdkLogisticNetworkWarehouseResourceRelationQueryFromAPIRequest对象
 func NewWdkLogisticNetworkWarehouseResourceRelationQueryFromRequest() *WdkLogisticNetworkWarehouseResourceRelationQueryFromAPIRequest {
 	return &WdkLogisticNetworkWarehouseResourceRelationQueryFromAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *WdkLogisticNetworkWarehouseResourceRelationQueryFromAPIRequest) Reset() {
+	r._paramPageQueryWarehouseResourceRelationByFromRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *WdkLogisticNetworkWarehouseResourceRelationQueryFromAPIRequest) SetPara
 // GetParamPageQueryWarehouseResourceRelationByFromRequest ParamPageQueryWarehouseResourceRelationByFromRequest Getter
 func (r WdkLogisticNetworkWarehouseResourceRelationQueryFromAPIRequest) GetParamPageQueryWarehouseResourceRelationByFromRequest() *PageQueryWarehouseResourceRelationByFromRequest {
 	return r._paramPageQueryWarehouseResourceRelationByFromRequest
+}
+
+var poolWdkLogisticNetworkWarehouseResourceRelationQueryFromAPIRequest = sync.Pool{
+	New: func() any {
+		return NewWdkLogisticNetworkWarehouseResourceRelationQueryFromRequest()
+	},
+}
+
+// GetWdkLogisticNetworkWarehouseResourceRelationQueryFromRequest 从 sync.Pool 获取 WdkLogisticNetworkWarehouseResourceRelationQueryFromAPIRequest
+func GetWdkLogisticNetworkWarehouseResourceRelationQueryFromAPIRequest() *WdkLogisticNetworkWarehouseResourceRelationQueryFromAPIRequest {
+	return poolWdkLogisticNetworkWarehouseResourceRelationQueryFromAPIRequest.Get().(*WdkLogisticNetworkWarehouseResourceRelationQueryFromAPIRequest)
+}
+
+// ReleaseWdkLogisticNetworkWarehouseResourceRelationQueryFromAPIRequest 将 WdkLogisticNetworkWarehouseResourceRelationQueryFromAPIRequest 放入 sync.Pool
+func ReleaseWdkLogisticNetworkWarehouseResourceRelationQueryFromAPIRequest(v *WdkLogisticNetworkWarehouseResourceRelationQueryFromAPIRequest) {
+	v.Reset()
+	poolWdkLogisticNetworkWarehouseResourceRelationQueryFromAPIRequest.Put(v)
 }

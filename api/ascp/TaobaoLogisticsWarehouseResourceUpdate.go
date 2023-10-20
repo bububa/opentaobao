@@ -9,11 +9,6 @@ import (
 // taobao.logistics.warehouse.resource.update
 //
 // 服务商新建/更新仓
-func TaobaoLogisticsWarehouseResourceUpdate(clt *core.SDKClient, req *ascp.TaobaoLogisticsWarehouseResourceUpdateAPIRequest, session string) (*ascp.TaobaoLogisticsWarehouseResourceUpdateAPIResponse, error) {
-	var resp ascp.TaobaoLogisticsWarehouseResourceUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoLogisticsWarehouseResourceUpdate(clt *core.SDKClient, req *ascp.TaobaoLogisticsWarehouseResourceUpdateAPIRequest, resp *ascp.TaobaoLogisticsWarehouseResourceUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

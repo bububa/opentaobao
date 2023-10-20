@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // LoadReverseResponse 结构体
 type LoadReverseResponse struct {
 	// wdk单号list
@@ -66,4 +70,52 @@ type LoadReverseResponse struct {
 	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
 	// 是否称重品
 	Weight bool `json:"weight,omitempty" xml:"weight,omitempty"`
+}
+
+var poolLoadReverseResponse = sync.Pool{
+	New: func() any {
+		return new(LoadReverseResponse)
+	},
+}
+
+// GetLoadReverseResponse() 从对象池中获取LoadReverseResponse
+func GetLoadReverseResponse() *LoadReverseResponse {
+	return poolLoadReverseResponse.Get().(*LoadReverseResponse)
+}
+
+// ReleaseLoadReverseResponse 释放LoadReverseResponse
+func ReleaseLoadReverseResponse(v *LoadReverseResponse) {
+	v.BizOrderIds = v.BizOrderIds[:0]
+	v.OutBizOrderIds = v.OutBizOrderIds[:0]
+	v.Proofs = v.Proofs[:0]
+	v.ReasonTags = v.ReasonTags[:0]
+	v.RefundChannelList = v.RefundChannelList[:0]
+	v.ReverseIds = v.ReverseIds[:0]
+	v.CreateDate = ""
+	v.CreateMemo = ""
+	v.EndDate = ""
+	v.EndReason = ""
+	v.Ender = ""
+	v.MainOutOrderId = ""
+	v.ModifiedMemo = ""
+	v.ModifiedReasonText = ""
+	v.OutOrderId = ""
+	v.ReasonText = ""
+	v.RequestId = ""
+	v.ReverseStatusStr = ""
+	v.ReverseTypeStr = ""
+	v.StoreId = ""
+	v.BizOrderId = 0
+	v.CreateChannel = 0
+	v.FetchOrderId = 0
+	v.MainBizOrderId = 0
+	v.ModifiedReasonId = 0
+	v.ReasonId = 0
+	v.RefundAmount = 0
+	v.ReverseId = 0
+	v.ReverseStatus = 0
+	v.ReverseType = 0
+	v.SellerId = 0
+	v.Weight = false
+	poolLoadReverseResponse.Put(v)
 }

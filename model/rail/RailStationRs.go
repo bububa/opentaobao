@@ -1,5 +1,9 @@
 package rail
 
+import (
+	"sync"
+)
+
 // RailStationRs 结构体
 type RailStationRs struct {
 	// 车站图片url，多个;号分隔
@@ -24,4 +28,31 @@ type RailStationRs struct {
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 所属城市id
 	DivisionId int64 `json:"division_id,omitempty" xml:"division_id,omitempty"`
+}
+
+var poolRailStationRs = sync.Pool{
+	New: func() any {
+		return new(RailStationRs)
+	},
+}
+
+// GetRailStationRs() 从对象池中获取RailStationRs
+func GetRailStationRs() *RailStationRs {
+	return poolRailStationRs.Get().(*RailStationRs)
+}
+
+// ReleaseRailStationRs 释放RailStationRs
+func ReleaseRailStationRs(v *RailStationRs) {
+	v.Image = ""
+	v.Detail = ""
+	v.Address = ""
+	v.Latitude = ""
+	v.Longitude = ""
+	v.CnName = ""
+	v.EnName = ""
+	v.DivisionName = ""
+	v.Name = ""
+	v.Code = ""
+	v.DivisionId = 0
+	poolRailStationRs.Put(v)
 }

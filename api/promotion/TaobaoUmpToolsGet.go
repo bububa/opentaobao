@@ -9,11 +9,6 @@ import (
 // taobao.ump.tools.get
 //
 // 查询工具列表
-func TaobaoUmpToolsGet(clt *core.SDKClient, req *promotion.TaobaoUmpToolsGetAPIRequest, session string) (*promotion.TaobaoUmpToolsGetAPIResponse, error) {
-	var resp promotion.TaobaoUmpToolsGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUmpToolsGet(clt *core.SDKClient, req *promotion.TaobaoUmpToolsGetAPIRequest, resp *promotion.TaobaoUmpToolsGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

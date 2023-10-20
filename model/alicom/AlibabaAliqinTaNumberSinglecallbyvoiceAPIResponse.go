@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAliqinTaNumberSinglecallbyvoiceAPIResponse struct {
 	AlibabaAliqinTaNumberSinglecallbyvoiceAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAliqinTaNumberSinglecallbyvoiceAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAliqinTaNumberSinglecallbyvoiceAPIResponseModel).Reset()
+}
+
 // AlibabaAliqinTaNumberSinglecallbyvoiceAPIResponseModel is 根据号码tts单呼 成功返回结果
 type AlibabaAliqinTaNumberSinglecallbyvoiceAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_aliqin_ta_number_singlecallbyvoice_response"`
@@ -22,4 +29,27 @@ type AlibabaAliqinTaNumberSinglecallbyvoiceAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *AlibabaAliqinTaNumberSinglecallbyvoiceResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAliqinTaNumberSinglecallbyvoiceAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAliqinTaNumberSinglecallbyvoiceAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAliqinTaNumberSinglecallbyvoiceAPIResponse)
+	},
+}
+
+// GetAlibabaAliqinTaNumberSinglecallbyvoiceAPIResponse 从 sync.Pool 获取 AlibabaAliqinTaNumberSinglecallbyvoiceAPIResponse
+func GetAlibabaAliqinTaNumberSinglecallbyvoiceAPIResponse() *AlibabaAliqinTaNumberSinglecallbyvoiceAPIResponse {
+	return poolAlibabaAliqinTaNumberSinglecallbyvoiceAPIResponse.Get().(*AlibabaAliqinTaNumberSinglecallbyvoiceAPIResponse)
+}
+
+// ReleaseAlibabaAliqinTaNumberSinglecallbyvoiceAPIResponse 将 AlibabaAliqinTaNumberSinglecallbyvoiceAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAliqinTaNumberSinglecallbyvoiceAPIResponse(v *AlibabaAliqinTaNumberSinglecallbyvoiceAPIResponse) {
+	v.Reset()
+	poolAlibabaAliqinTaNumberSinglecallbyvoiceAPIResponse.Put(v)
 }

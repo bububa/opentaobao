@@ -1,5 +1,9 @@
 package wdkitem
 
+import (
+	"sync"
+)
+
 // PictureDo 结构体
 type PictureDo struct {
 	// 返回的是相对路劲
@@ -24,4 +28,31 @@ type PictureDo struct {
 	PictureCategoryId int64 `json:"picture_category_id,omitempty" xml:"picture_category_id,omitempty"`
 	// 图片大小,bite单位
 	Sizes int64 `json:"sizes,omitempty" xml:"sizes,omitempty"`
+}
+
+var poolPictureDo = sync.Pool{
+	New: func() any {
+		return new(PictureDo)
+	},
+}
+
+// GetPictureDo() 从对象池中获取PictureDo
+func GetPictureDo() *PictureDo {
+	return poolPictureDo.Get().(*PictureDo)
+}
+
+// ReleasePictureDo 释放PictureDo
+func ReleasePictureDo(v *PictureDo) {
+	v.PicturePath = ""
+	v.Title = ""
+	v.Status = ""
+	v.Deleted = ""
+	v.Created = ""
+	v.Modified = ""
+	v.Pixel = ""
+	v.FullUrl = ""
+	v.PictureId = 0
+	v.PictureCategoryId = 0
+	v.Sizes = 0
+	poolPictureDo.Put(v)
 }

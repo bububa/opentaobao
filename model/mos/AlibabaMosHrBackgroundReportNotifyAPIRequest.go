@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMosHrBackgroundReportNotifyAPIRequest struct {
 // NewAlibabaMosHrBackgroundReportNotifyRequest 初始化AlibabaMosHrBackgroundReportNotifyAPIRequest对象
 func NewAlibabaMosHrBackgroundReportNotifyRequest() *AlibabaMosHrBackgroundReportNotifyAPIRequest {
 	return &AlibabaMosHrBackgroundReportNotifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosHrBackgroundReportNotifyAPIRequest) Reset() {
+	r._hrBackgroundReportNotifyDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMosHrBackgroundReportNotifyAPIRequest) SetHrBackgroundReportNoti
 // GetHrBackgroundReportNotifyDto HrBackgroundReportNotifyDto Getter
 func (r AlibabaMosHrBackgroundReportNotifyAPIRequest) GetHrBackgroundReportNotifyDto() *HrBackgroundReportNotifyDto {
 	return r._hrBackgroundReportNotifyDto
+}
+
+var poolAlibabaMosHrBackgroundReportNotifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosHrBackgroundReportNotifyRequest()
+	},
+}
+
+// GetAlibabaMosHrBackgroundReportNotifyRequest 从 sync.Pool 获取 AlibabaMosHrBackgroundReportNotifyAPIRequest
+func GetAlibabaMosHrBackgroundReportNotifyAPIRequest() *AlibabaMosHrBackgroundReportNotifyAPIRequest {
+	return poolAlibabaMosHrBackgroundReportNotifyAPIRequest.Get().(*AlibabaMosHrBackgroundReportNotifyAPIRequest)
+}
+
+// ReleaseAlibabaMosHrBackgroundReportNotifyAPIRequest 将 AlibabaMosHrBackgroundReportNotifyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosHrBackgroundReportNotifyAPIRequest(v *AlibabaMosHrBackgroundReportNotifyAPIRequest) {
+	v.Reset()
+	poolAlibabaMosHrBackgroundReportNotifyAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package uscesl
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoUsceslBizBrandInsertAPIRequest struct {
 // NewTaobaoUsceslBizBrandInsertRequest 初始化TaobaoUsceslBizBrandInsertAPIRequest对象
 func NewTaobaoUsceslBizBrandInsertRequest() *TaobaoUsceslBizBrandInsertAPIRequest {
 	return &TaobaoUsceslBizBrandInsertAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUsceslBizBrandInsertAPIRequest) Reset() {
+	r._brandName = ""
+	r._brandOutCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoUsceslBizBrandInsertAPIRequest) SetBrandOutCode(_brandOutCode str
 // GetBrandOutCode BrandOutCode Getter
 func (r TaobaoUsceslBizBrandInsertAPIRequest) GetBrandOutCode() string {
 	return r._brandOutCode
+}
+
+var poolTaobaoUsceslBizBrandInsertAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUsceslBizBrandInsertRequest()
+	},
+}
+
+// GetTaobaoUsceslBizBrandInsertRequest 从 sync.Pool 获取 TaobaoUsceslBizBrandInsertAPIRequest
+func GetTaobaoUsceslBizBrandInsertAPIRequest() *TaobaoUsceslBizBrandInsertAPIRequest {
+	return poolTaobaoUsceslBizBrandInsertAPIRequest.Get().(*TaobaoUsceslBizBrandInsertAPIRequest)
+}
+
+// ReleaseTaobaoUsceslBizBrandInsertAPIRequest 将 TaobaoUsceslBizBrandInsertAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUsceslBizBrandInsertAPIRequest(v *TaobaoUsceslBizBrandInsertAPIRequest) {
+	v.Reset()
+	poolTaobaoUsceslBizBrandInsertAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package util
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTopAuthTokenRefreshAPIResponse struct {
 	TaobaoTopAuthTokenRefreshAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTopAuthTokenRefreshAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTopAuthTokenRefreshAPIResponseModel).Reset()
+}
+
 // TaobaoTopAuthTokenRefreshAPIResponseModel is 刷新Access Token 成功返回结果
 type TaobaoTopAuthTokenRefreshAPIResponseModel struct {
 	XMLName xml.Name `xml:"top_auth_token_refresh_response"`
@@ -22,4 +29,27 @@ type TaobaoTopAuthTokenRefreshAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回的是json信息
 	TokenResult string `json:"token_result,omitempty" xml:"token_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTopAuthTokenRefreshAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TokenResult = ""
+}
+
+var poolTaobaoTopAuthTokenRefreshAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTopAuthTokenRefreshAPIResponse)
+	},
+}
+
+// GetTaobaoTopAuthTokenRefreshAPIResponse 从 sync.Pool 获取 TaobaoTopAuthTokenRefreshAPIResponse
+func GetTaobaoTopAuthTokenRefreshAPIResponse() *TaobaoTopAuthTokenRefreshAPIResponse {
+	return poolTaobaoTopAuthTokenRefreshAPIResponse.Get().(*TaobaoTopAuthTokenRefreshAPIResponse)
+}
+
+// ReleaseTaobaoTopAuthTokenRefreshAPIResponse 将 TaobaoTopAuthTokenRefreshAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTopAuthTokenRefreshAPIResponse(v *TaobaoTopAuthTokenRefreshAPIResponse) {
+	v.Reset()
+	poolTaobaoTopAuthTokenRefreshAPIResponse.Put(v)
 }

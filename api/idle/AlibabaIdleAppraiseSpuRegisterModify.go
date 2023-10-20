@@ -9,11 +9,6 @@ import (
 // alibaba.idle.appraise.spu.register.modify
 //
 // 闲鱼接收回收商spu模板挂载信息
-func AlibabaIdleAppraiseSpuRegisterModify(clt *core.SDKClient, req *idle.AlibabaIdleAppraiseSpuRegisterModifyAPIRequest, session string) (*idle.AlibabaIdleAppraiseSpuRegisterModifyAPIResponse, error) {
-	var resp idle.AlibabaIdleAppraiseSpuRegisterModifyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleAppraiseSpuRegisterModify(clt *core.SDKClient, req *idle.AlibabaIdleAppraiseSpuRegisterModifyAPIRequest, resp *idle.AlibabaIdleAppraiseSpuRegisterModifyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

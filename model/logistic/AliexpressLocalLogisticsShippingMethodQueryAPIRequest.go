@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliexpressLocalLogisticsShippingMethodQueryAPIRequest struct {
 // NewAliexpressLocalLogisticsShippingMethodQueryRequest 初始化AliexpressLocalLogisticsShippingMethodQueryAPIRequest对象
 func NewAliexpressLocalLogisticsShippingMethodQueryRequest() *AliexpressLocalLogisticsShippingMethodQueryAPIRequest {
 	return &AliexpressLocalLogisticsShippingMethodQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressLocalLogisticsShippingMethodQueryAPIRequest) Reset() {
+	r._param1 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliexpressLocalLogisticsShippingMethodQueryAPIRequest) SetParam1(_param
 // GetParam1 Param1 Getter
 func (r AliexpressLocalLogisticsShippingMethodQueryAPIRequest) GetParam1() *QueryShippingMethodRequestTopDto {
 	return r._param1
+}
+
+var poolAliexpressLocalLogisticsShippingMethodQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressLocalLogisticsShippingMethodQueryRequest()
+	},
+}
+
+// GetAliexpressLocalLogisticsShippingMethodQueryRequest 从 sync.Pool 获取 AliexpressLocalLogisticsShippingMethodQueryAPIRequest
+func GetAliexpressLocalLogisticsShippingMethodQueryAPIRequest() *AliexpressLocalLogisticsShippingMethodQueryAPIRequest {
+	return poolAliexpressLocalLogisticsShippingMethodQueryAPIRequest.Get().(*AliexpressLocalLogisticsShippingMethodQueryAPIRequest)
+}
+
+// ReleaseAliexpressLocalLogisticsShippingMethodQueryAPIRequest 将 AliexpressLocalLogisticsShippingMethodQueryAPIRequest 放入 sync.Pool
+func ReleaseAliexpressLocalLogisticsShippingMethodQueryAPIRequest(v *AliexpressLocalLogisticsShippingMethodQueryAPIRequest) {
+	v.Reset()
+	poolAliexpressLocalLogisticsShippingMethodQueryAPIRequest.Put(v)
 }

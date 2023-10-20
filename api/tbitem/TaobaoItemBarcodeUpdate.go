@@ -9,11 +9,6 @@ import (
 // taobao.item.barcode.update
 //
 // 通过该接口，将商品以及SKU上得条形码信息补全
-func TaobaoItemBarcodeUpdate(clt *core.SDKClient, req *tbitem.TaobaoItemBarcodeUpdateAPIRequest, session string) (*tbitem.TaobaoItemBarcodeUpdateAPIResponse, error) {
-	var resp tbitem.TaobaoItemBarcodeUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoItemBarcodeUpdate(clt *core.SDKClient, req *tbitem.TaobaoItemBarcodeUpdateAPIRequest, resp *tbitem.TaobaoItemBarcodeUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

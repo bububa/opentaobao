@@ -2,6 +2,7 @@ package brandhub
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoBrandStartshopRptCreativeGetAPIRequest struct {
 // NewTaobaoBrandStartshopRptCreativeGetRequest 初始化TaobaoBrandStartshopRptCreativeGetAPIRequest对象
 func NewTaobaoBrandStartshopRptCreativeGetRequest() *TaobaoBrandStartshopRptCreativeGetAPIRequest {
 	return &TaobaoBrandStartshopRptCreativeGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBrandStartshopRptCreativeGetAPIRequest) Reset() {
+	r._trafficType = ""
+	r._startDate = ""
+	r._endDate = ""
+	r._pageIndex = ""
+	r._pageSize = ""
+	r._effect = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoBrandStartshopRptCreativeGetAPIRequest) SetEffect(_effect string)
 // GetEffect Effect Getter
 func (r TaobaoBrandStartshopRptCreativeGetAPIRequest) GetEffect() string {
 	return r._effect
+}
+
+var poolTaobaoBrandStartshopRptCreativeGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBrandStartshopRptCreativeGetRequest()
+	},
+}
+
+// GetTaobaoBrandStartshopRptCreativeGetRequest 从 sync.Pool 获取 TaobaoBrandStartshopRptCreativeGetAPIRequest
+func GetTaobaoBrandStartshopRptCreativeGetAPIRequest() *TaobaoBrandStartshopRptCreativeGetAPIRequest {
+	return poolTaobaoBrandStartshopRptCreativeGetAPIRequest.Get().(*TaobaoBrandStartshopRptCreativeGetAPIRequest)
+}
+
+// ReleaseTaobaoBrandStartshopRptCreativeGetAPIRequest 将 TaobaoBrandStartshopRptCreativeGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBrandStartshopRptCreativeGetAPIRequest(v *TaobaoBrandStartshopRptCreativeGetAPIRequest) {
+	v.Reset()
+	poolTaobaoBrandStartshopRptCreativeGetAPIRequest.Put(v)
 }

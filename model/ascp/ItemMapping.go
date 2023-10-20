@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // ItemMapping 结构体
 type ItemMapping struct {
 	// 商品Id
@@ -14,4 +18,26 @@ type ItemMapping struct {
 	NeedSyncScItemInvToItem int64 `json:"need_sync_sc_item_inv_to_item,omitempty" xml:"need_sync_sc_item_inv_to_item,omitempty"`
 	// 是否禁止无库存货品同步库存给上架中商品，0-否，1-是 默认值为1
 	ForbidNoScItemInvSyncToItem int64 `json:"forbid_no_sc_item_inv_sync_to_item,omitempty" xml:"forbid_no_sc_item_inv_sync_to_item,omitempty"`
+}
+
+var poolItemMapping = sync.Pool{
+	New: func() any {
+		return new(ItemMapping)
+	},
+}
+
+// GetItemMapping() 从对象池中获取ItemMapping
+func GetItemMapping() *ItemMapping {
+	return poolItemMapping.Get().(*ItemMapping)
+}
+
+// ReleaseItemMapping 释放ItemMapping
+func ReleaseItemMapping(v *ItemMapping) {
+	v.ItemId = ""
+	v.SkuId = ""
+	v.ScItemCode = ""
+	v.ScItemId = ""
+	v.NeedSyncScItemInvToItem = 0
+	v.ForbidNoScItemInvSyncToItem = 0
+	poolItemMapping.Put(v)
 }

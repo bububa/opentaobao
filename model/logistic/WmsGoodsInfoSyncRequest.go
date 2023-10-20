@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // WmsGoodsInfoSyncRequest 结构体
 type WmsGoodsInfoSyncRequest struct {
 	// 货主code
@@ -26,4 +30,32 @@ type WmsGoodsInfoSyncRequest struct {
 	Feature string `json:"feature,omitempty" xml:"feature,omitempty"`
 	// 货品id
 	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
+}
+
+var poolWmsGoodsInfoSyncRequest = sync.Pool{
+	New: func() any {
+		return new(WmsGoodsInfoSyncRequest)
+	},
+}
+
+// GetWmsGoodsInfoSyncRequest() 从对象池中获取WmsGoodsInfoSyncRequest
+func GetWmsGoodsInfoSyncRequest() *WmsGoodsInfoSyncRequest {
+	return poolWmsGoodsInfoSyncRequest.Get().(*WmsGoodsInfoSyncRequest)
+}
+
+// ReleaseWmsGoodsInfoSyncRequest 释放WmsGoodsInfoSyncRequest
+func ReleaseWmsGoodsInfoSyncRequest(v *WmsGoodsInfoSyncRequest) {
+	v.WmsOwnerCode = ""
+	v.WmsWarehouseCode = ""
+	v.ItemCode = ""
+	v.Length = ""
+	v.Width = ""
+	v.Height = ""
+	v.Volume = ""
+	v.GrossWeight = ""
+	v.NetWeight = ""
+	v.Pic = ""
+	v.Feature = ""
+	v.ItemId = ""
+	poolWmsGoodsInfoSyncRequest.Put(v)
 }

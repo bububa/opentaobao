@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // CreativePromotionEntityVo 结构体
 type CreativePromotionEntityVo struct {
 	// 推广主体类型,item:商品,item_private_mini:独享橱窗,shop:店铺,content:内容,short_video:短视频,user_define:自定义;
@@ -10,4 +14,24 @@ type CreativePromotionEntityVo struct {
 	PromotionEntityId int64 `json:"promotion_entity_id,omitempty" xml:"promotion_entity_id,omitempty"`
 	// 主体物料信息
 	Material *PromotionMaterialInfoVo `json:"material,omitempty" xml:"material,omitempty"`
+}
+
+var poolCreativePromotionEntityVo = sync.Pool{
+	New: func() any {
+		return new(CreativePromotionEntityVo)
+	},
+}
+
+// GetCreativePromotionEntityVo() 从对象池中获取CreativePromotionEntityVo
+func GetCreativePromotionEntityVo() *CreativePromotionEntityVo {
+	return poolCreativePromotionEntityVo.Get().(*CreativePromotionEntityVo)
+}
+
+// ReleaseCreativePromotionEntityVo 释放CreativePromotionEntityVo
+func ReleaseCreativePromotionEntityVo(v *CreativePromotionEntityVo) {
+	v.PromotionType = ""
+	v.SubPromotionType = ""
+	v.PromotionEntityId = 0
+	v.Material = nil
+	poolCreativePromotionEntityVo.Put(v)
 }

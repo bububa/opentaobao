@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaTcCompassWarehousenetworkQueryAPIRequest struct {
 // NewAlibabaTcCompassWarehousenetworkQueryRequest 初始化AlibabaTcCompassWarehousenetworkQueryAPIRequest对象
 func NewAlibabaTcCompassWarehousenetworkQueryRequest() *AlibabaTcCompassWarehousenetworkQueryAPIRequest {
 	return &AlibabaTcCompassWarehousenetworkQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTcCompassWarehousenetworkQueryAPIRequest) Reset() {
+	r._warehouseMerchantCode = ""
+	r._warehouseCode = ""
+	r._serviceType = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaTcCompassWarehousenetworkQueryAPIRequest) SetServiceType(_servic
 // GetServiceType ServiceType Getter
 func (r AlibabaTcCompassWarehousenetworkQueryAPIRequest) GetServiceType() string {
 	return r._serviceType
+}
+
+var poolAlibabaTcCompassWarehousenetworkQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTcCompassWarehousenetworkQueryRequest()
+	},
+}
+
+// GetAlibabaTcCompassWarehousenetworkQueryRequest 从 sync.Pool 获取 AlibabaTcCompassWarehousenetworkQueryAPIRequest
+func GetAlibabaTcCompassWarehousenetworkQueryAPIRequest() *AlibabaTcCompassWarehousenetworkQueryAPIRequest {
+	return poolAlibabaTcCompassWarehousenetworkQueryAPIRequest.Get().(*AlibabaTcCompassWarehousenetworkQueryAPIRequest)
+}
+
+// ReleaseAlibabaTcCompassWarehousenetworkQueryAPIRequest 将 AlibabaTcCompassWarehousenetworkQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTcCompassWarehousenetworkQueryAPIRequest(v *AlibabaTcCompassWarehousenetworkQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaTcCompassWarehousenetworkQueryAPIRequest.Put(v)
 }

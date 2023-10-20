@@ -2,6 +2,7 @@ package interact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaInteractActivityPushtoalicomAPIRequest struct {
 // NewAlibabaInteractActivityPushtoalicomRequest 初始化AlibabaInteractActivityPushtoalicomAPIRequest对象
 func NewAlibabaInteractActivityPushtoalicomRequest() *AlibabaInteractActivityPushtoalicomAPIRequest {
 	return &AlibabaInteractActivityPushtoalicomAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractActivityPushtoalicomAPIRequest) Reset() {
+	r._bannerUrl = ""
+	r._bizId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaInteractActivityPushtoalicomAPIRequest) SetBizId(_bizId string) 
 // GetBizId BizId Getter
 func (r AlibabaInteractActivityPushtoalicomAPIRequest) GetBizId() string {
 	return r._bizId
+}
+
+var poolAlibabaInteractActivityPushtoalicomAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractActivityPushtoalicomRequest()
+	},
+}
+
+// GetAlibabaInteractActivityPushtoalicomRequest 从 sync.Pool 获取 AlibabaInteractActivityPushtoalicomAPIRequest
+func GetAlibabaInteractActivityPushtoalicomAPIRequest() *AlibabaInteractActivityPushtoalicomAPIRequest {
+	return poolAlibabaInteractActivityPushtoalicomAPIRequest.Get().(*AlibabaInteractActivityPushtoalicomAPIRequest)
+}
+
+// ReleaseAlibabaInteractActivityPushtoalicomAPIRequest 将 AlibabaInteractActivityPushtoalicomAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractActivityPushtoalicomAPIRequest(v *AlibabaInteractActivityPushtoalicomAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractActivityPushtoalicomAPIRequest.Put(v)
 }

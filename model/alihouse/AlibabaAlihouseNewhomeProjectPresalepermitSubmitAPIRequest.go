@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest struct {
 // NewAlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest 初始化AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest对象
 func NewAlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest() *AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest {
 	return &AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest) Reset() {
+	r._preSalePermitDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest) SetPreSaleP
 // GetPreSalePermitDto PreSalePermitDto Getter
 func (r AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest) GetPreSalePermitDto() *PreSalePermitDto {
 	return r._preSalePermitDto
+}
+
+var poolAlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest
+func GetAlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest() *AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest {
+	return poolAlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest.Get().(*AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest 将 AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest(v *AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest.Put(v)
 }

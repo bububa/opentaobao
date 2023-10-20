@@ -9,11 +9,6 @@ import (
 // tmall.exchange.receive.get
 //
 // 卖家查询换货列表
-func TmallExchangeReceiveGet(clt *core.SDKClient, req *exchange.TmallExchangeReceiveGetAPIRequest, session string) (*exchange.TmallExchangeReceiveGetAPIResponse, error) {
-	var resp exchange.TmallExchangeReceiveGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallExchangeReceiveGet(clt *core.SDKClient, req *exchange.TmallExchangeReceiveGetAPIRequest, resp *exchange.TmallExchangeReceiveGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

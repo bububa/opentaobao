@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsExpressCourierSyncAPIRequest struct {
 // NewTaobaoLogisticsExpressCourierSyncRequest 初始化TaobaoLogisticsExpressCourierSyncAPIRequest对象
 func NewTaobaoLogisticsExpressCourierSyncRequest() *TaobaoLogisticsExpressCourierSyncAPIRequest {
 	return &TaobaoLogisticsExpressCourierSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsExpressCourierSyncAPIRequest) Reset() {
+	r._tmsCourierRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsExpressCourierSyncAPIRequest) SetTmsCourierRequest(_tmsC
 // GetTmsCourierRequest TmsCourierRequest Getter
 func (r TaobaoLogisticsExpressCourierSyncAPIRequest) GetTmsCourierRequest() *TmsCourierRequest {
 	return r._tmsCourierRequest
+}
+
+var poolTaobaoLogisticsExpressCourierSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsExpressCourierSyncRequest()
+	},
+}
+
+// GetTaobaoLogisticsExpressCourierSyncRequest 从 sync.Pool 获取 TaobaoLogisticsExpressCourierSyncAPIRequest
+func GetTaobaoLogisticsExpressCourierSyncAPIRequest() *TaobaoLogisticsExpressCourierSyncAPIRequest {
+	return poolTaobaoLogisticsExpressCourierSyncAPIRequest.Get().(*TaobaoLogisticsExpressCourierSyncAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsExpressCourierSyncAPIRequest 将 TaobaoLogisticsExpressCourierSyncAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsExpressCourierSyncAPIRequest(v *TaobaoLogisticsExpressCourierSyncAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsExpressCourierSyncAPIRequest.Put(v)
 }

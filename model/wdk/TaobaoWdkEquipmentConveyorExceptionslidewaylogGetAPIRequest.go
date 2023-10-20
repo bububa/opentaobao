@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest struct {
 // NewTaobaoWdkEquipmentConveyorExceptionslidewaylogGetRequest 初始化TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest对象
 func NewTaobaoWdkEquipmentConveyorExceptionslidewaylogGetRequest() *TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest {
 	return &TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest) Reset() {
+	r._warehouseId = 0
+	r._conveyorId = 0
+	r._startId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest) SetStartId
 // GetStartId StartId Getter
 func (r TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest) GetStartId() int64 {
 	return r._startId
+}
+
+var poolTaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWdkEquipmentConveyorExceptionslidewaylogGetRequest()
+	},
+}
+
+// GetTaobaoWdkEquipmentConveyorExceptionslidewaylogGetRequest 从 sync.Pool 获取 TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest
+func GetTaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest() *TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest {
+	return poolTaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest.Get().(*TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest)
+}
+
+// ReleaseTaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest 将 TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest(v *TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest) {
+	v.Reset()
+	poolTaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest.Put(v)
 }

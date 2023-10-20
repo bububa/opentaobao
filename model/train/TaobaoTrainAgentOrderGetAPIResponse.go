@@ -2,6 +2,7 @@ package train
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoTrainAgentOrderGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTrainAgentOrderGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoTrainAgentOrderGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTrainAgentOrderGetAPIResponseModel).Reset()
 }
 
 // TaobaoTrainAgentOrderGetAPIResponseModel is 代理商获取订单信息回调API 成功返回结果
@@ -64,4 +71,48 @@ type TaobaoTrainAgentOrderGetAPIResponseModel struct {
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// 是否需要保险邮件地址
 	Mailing bool `json:"mailing,omitempty" xml:"mailing,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTrainAgentOrderGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Tickets = m.Tickets[:0]
+	m.Telephone = ""
+	m.Address = ""
+	m.RelationName = ""
+	m.CompanyName = ""
+	m.LatestIssueTime = ""
+	m.TransportName = ""
+	m.TransportPhone = ""
+	m.TransportAddress = ""
+	m.ExtendParams = ""
+	m.TtpOrderId = 0
+	m.MainOrderId = 0
+	m.TotalPrice = 0
+	m.OrderStatus = 0
+	m.OrderType = 0
+	m.PaperType = 0
+	m.PaperBackup = 0
+	m.PaperLowSeatCount = 0
+	m.TransportPrice = 0
+	m.ServicePrice = 0
+	m.IsSuccess = false
+	m.Mailing = false
+}
+
+var poolTaobaoTrainAgentOrderGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTrainAgentOrderGetAPIResponse)
+	},
+}
+
+// GetTaobaoTrainAgentOrderGetAPIResponse 从 sync.Pool 获取 TaobaoTrainAgentOrderGetAPIResponse
+func GetTaobaoTrainAgentOrderGetAPIResponse() *TaobaoTrainAgentOrderGetAPIResponse {
+	return poolTaobaoTrainAgentOrderGetAPIResponse.Get().(*TaobaoTrainAgentOrderGetAPIResponse)
+}
+
+// ReleaseTaobaoTrainAgentOrderGetAPIResponse 将 TaobaoTrainAgentOrderGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTrainAgentOrderGetAPIResponse(v *TaobaoTrainAgentOrderGetAPIResponse) {
+	v.Reset()
+	poolTaobaoTrainAgentOrderGetAPIResponse.Put(v)
 }

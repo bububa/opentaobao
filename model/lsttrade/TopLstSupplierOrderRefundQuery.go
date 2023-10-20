@@ -1,5 +1,9 @@
 package lsttrade
 
+import (
+	"sync"
+)
+
 // TopLstSupplierOrderRefundQuery 结构体
 type TopLstSupplierOrderRefundQuery struct {
 	// 退款申请时间（起始）
@@ -20,4 +24,29 @@ type TopLstSupplierOrderRefundQuery struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 买家userid
 	BuyerUserId int64 `json:"buyer_user_id,omitempty" xml:"buyer_user_id,omitempty"`
+}
+
+var poolTopLstSupplierOrderRefundQuery = sync.Pool{
+	New: func() any {
+		return new(TopLstSupplierOrderRefundQuery)
+	},
+}
+
+// GetTopLstSupplierOrderRefundQuery() 从对象池中获取TopLstSupplierOrderRefundQuery
+func GetTopLstSupplierOrderRefundQuery() *TopLstSupplierOrderRefundQuery {
+	return poolTopLstSupplierOrderRefundQuery.Get().(*TopLstSupplierOrderRefundQuery)
+}
+
+// ReleaseTopLstSupplierOrderRefundQuery 释放TopLstSupplierOrderRefundQuery
+func ReleaseTopLstSupplierOrderRefundQuery(v *TopLstSupplierOrderRefundQuery) {
+	v.ApplyEndTime = ""
+	v.RefundStatus = ""
+	v.RefundId = ""
+	v.ApplyStartTime = ""
+	v.RefundType = 0
+	v.OrderId = 0
+	v.CurrentPageNum = 0
+	v.PageSize = 0
+	v.BuyerUserId = 0
+	poolTopLstSupplierOrderRefundQuery.Put(v)
 }

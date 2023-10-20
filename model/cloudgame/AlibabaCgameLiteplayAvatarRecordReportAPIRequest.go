@@ -2,6 +2,7 @@ package cloudgame
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCgameLiteplayAvatarRecordReportAPIRequest struct {
 // NewAlibabaCgameLiteplayAvatarRecordReportRequest 初始化AlibabaCgameLiteplayAvatarRecordReportAPIRequest对象
 func NewAlibabaCgameLiteplayAvatarRecordReportRequest() *AlibabaCgameLiteplayAvatarRecordReportAPIRequest {
 	return &AlibabaCgameLiteplayAvatarRecordReportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCgameLiteplayAvatarRecordReportAPIRequest) Reset() {
+	r._requestDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCgameLiteplayAvatarRecordReportAPIRequest) SetRequestDto(_reques
 // GetRequestDto RequestDto Getter
 func (r AlibabaCgameLiteplayAvatarRecordReportAPIRequest) GetRequestDto() *TopRecordCallbackRequest {
 	return r._requestDto
+}
+
+var poolAlibabaCgameLiteplayAvatarRecordReportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCgameLiteplayAvatarRecordReportRequest()
+	},
+}
+
+// GetAlibabaCgameLiteplayAvatarRecordReportRequest 从 sync.Pool 获取 AlibabaCgameLiteplayAvatarRecordReportAPIRequest
+func GetAlibabaCgameLiteplayAvatarRecordReportAPIRequest() *AlibabaCgameLiteplayAvatarRecordReportAPIRequest {
+	return poolAlibabaCgameLiteplayAvatarRecordReportAPIRequest.Get().(*AlibabaCgameLiteplayAvatarRecordReportAPIRequest)
+}
+
+// ReleaseAlibabaCgameLiteplayAvatarRecordReportAPIRequest 将 AlibabaCgameLiteplayAvatarRecordReportAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCgameLiteplayAvatarRecordReportAPIRequest(v *AlibabaCgameLiteplayAvatarRecordReportAPIRequest) {
+	v.Reset()
+	poolAlibabaCgameLiteplayAvatarRecordReportAPIRequest.Put(v)
 }

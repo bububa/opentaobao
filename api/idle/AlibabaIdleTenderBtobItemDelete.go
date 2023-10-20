@@ -9,11 +9,6 @@ import (
 // alibaba.idle.tender.btob.item.delete
 //
 // 暗拍b2b商品下架/删除
-func AlibabaIdleTenderBtobItemDelete(clt *core.SDKClient, req *idle.AlibabaIdleTenderBtobItemDeleteAPIRequest, session string) (*idle.AlibabaIdleTenderBtobItemDeleteAPIResponse, error) {
-	var resp idle.AlibabaIdleTenderBtobItemDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleTenderBtobItemDelete(clt *core.SDKClient, req *idle.AlibabaIdleTenderBtobItemDeleteAPIRequest, resp *idle.AlibabaIdleTenderBtobItemDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

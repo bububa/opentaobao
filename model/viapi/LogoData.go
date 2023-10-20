@@ -1,5 +1,9 @@
 package viapi
 
+import (
+	"sync"
+)
+
 // LogoData 结构体
 type LogoData struct {
 	// 识别出的logo类型，取值为TV （台标）
@@ -14,4 +18,26 @@ type LogoData struct {
 	Width int64 `json:"width,omitempty" xml:"width,omitempty"`
 	// logo区域高度
 	Height int64 `json:"height,omitempty" xml:"height,omitempty"`
+}
+
+var poolLogoData = sync.Pool{
+	New: func() any {
+		return new(LogoData)
+	},
+}
+
+// GetLogoData() 从对象池中获取LogoData
+func GetLogoData() *LogoData {
+	return poolLogoData.Get().(*LogoData)
+}
+
+// ReleaseLogoData 释放LogoData
+func ReleaseLogoData(v *LogoData) {
+	v.Type = ""
+	v.Name = ""
+	v.X = 0
+	v.Y = 0
+	v.Width = 0
+	v.Height = 0
+	poolLogoData.Put(v)
 }

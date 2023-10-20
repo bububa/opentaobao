@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ChannelSkuQueryDo 结构体
 type ChannelSkuQueryDo struct {
 	// skucode集合
@@ -12,4 +16,25 @@ type ChannelSkuQueryDo struct {
 	CustomerMerchantCode string `json:"customer_merchant_code,omitempty" xml:"customer_merchant_code,omitempty"`
 	// 渠道编码（默认-1）
 	ChannelCode int64 `json:"channel_code,omitempty" xml:"channel_code,omitempty"`
+}
+
+var poolChannelSkuQueryDo = sync.Pool{
+	New: func() any {
+		return new(ChannelSkuQueryDo)
+	},
+}
+
+// GetChannelSkuQueryDo() 从对象池中获取ChannelSkuQueryDo
+func GetChannelSkuQueryDo() *ChannelSkuQueryDo {
+	return poolChannelSkuQueryDo.Get().(*ChannelSkuQueryDo)
+}
+
+// ReleaseChannelSkuQueryDo 释放ChannelSkuQueryDo
+func ReleaseChannelSkuQueryDo(v *ChannelSkuQueryDo) {
+	v.SkuCodes = v.SkuCodes[:0]
+	v.OuCode = ""
+	v.DeliverWarehouse = ""
+	v.CustomerMerchantCode = ""
+	v.ChannelCode = 0
+	poolChannelSkuQueryDo.Put(v)
 }

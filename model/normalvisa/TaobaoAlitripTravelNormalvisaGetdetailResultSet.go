@@ -1,5 +1,9 @@
 package normalvisa
 
+import (
+	"sync"
+)
+
 // TaobaoAlitripTravelNormalvisaGetdetailResultSet 结构体
 type TaobaoAlitripTravelNormalvisaGetdetailResultSet struct {
 	// 结果
@@ -14,4 +18,26 @@ type TaobaoAlitripTravelNormalvisaGetdetailResultSet struct {
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 	// 是否包含下一个
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
+}
+
+var poolTaobaoAlitripTravelNormalvisaGetdetailResultSet = sync.Pool{
+	New: func() any {
+		return new(TaobaoAlitripTravelNormalvisaGetdetailResultSet)
+	},
+}
+
+// GetTaobaoAlitripTravelNormalvisaGetdetailResultSet() 从对象池中获取TaobaoAlitripTravelNormalvisaGetdetailResultSet
+func GetTaobaoAlitripTravelNormalvisaGetdetailResultSet() *TaobaoAlitripTravelNormalvisaGetdetailResultSet {
+	return poolTaobaoAlitripTravelNormalvisaGetdetailResultSet.Get().(*TaobaoAlitripTravelNormalvisaGetdetailResultSet)
+}
+
+// ReleaseTaobaoAlitripTravelNormalvisaGetdetailResultSet 释放TaobaoAlitripTravelNormalvisaGetdetailResultSet
+func ReleaseTaobaoAlitripTravelNormalvisaGetdetailResultSet(v *TaobaoAlitripTravelNormalvisaGetdetailResultSet) {
+	v.Results = v.Results[:0]
+	v.Exception = ""
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.TotalResults = 0
+	v.HasNext = false
+	poolTaobaoAlitripTravelNormalvisaGetdetailResultSet.Put(v)
 }

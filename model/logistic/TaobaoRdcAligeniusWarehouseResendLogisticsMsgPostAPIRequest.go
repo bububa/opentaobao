@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest struct {
 // NewTaobaoRdcAligeniusWarehouseResendLogisticsMsgPostRequest 初始化TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest对象
 func NewTaobaoRdcAligeniusWarehouseResendLogisticsMsgPostRequest() *TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest {
 	return &TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest) SetParam0(
 // GetParam0 Param0 Getter
 func (r TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest) GetParam0() *SendResendLogisticsMsgDto {
 	return r._param0
+}
+
+var poolTaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoRdcAligeniusWarehouseResendLogisticsMsgPostRequest()
+	},
+}
+
+// GetTaobaoRdcAligeniusWarehouseResendLogisticsMsgPostRequest 从 sync.Pool 获取 TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest
+func GetTaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest() *TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest {
+	return poolTaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest.Get().(*TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest)
+}
+
+// ReleaseTaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest 将 TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest 放入 sync.Pool
+func ReleaseTaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest(v *TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest) {
+	v.Reset()
+	poolTaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIRequest.Put(v)
 }

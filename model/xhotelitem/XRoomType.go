@@ -1,7 +1,11 @@
 package xhotelitem
 
-// XroomType 结构体
-type XroomType struct {
+import (
+	"sync"
+)
+
+// XRoomType 结构体
+type XRoomType struct {
 	// 创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 修改时间
@@ -49,5 +53,45 @@ type XroomType struct {
 	// 窗型,0：无窗/1：有窗
 	WindowType int64 `json:"window_type,omitempty" xml:"window_type,omitempty"`
 	// 标准房型信息
-	SRoomtype *SroomType `json:"s_roomtype,omitempty" xml:"s_roomtype,omitempty"`
+	SRoomtype *SRoomType `json:"s_roomtype,omitempty" xml:"s_roomtype,omitempty"`
+}
+
+var poolXRoomType = sync.Pool{
+	New: func() any {
+		return new(XRoomType)
+	},
+}
+
+// GetXRoomType() 从对象池中获取XRoomType
+func GetXRoomType() *XRoomType {
+	return poolXRoomType.Get().(*XRoomType)
+}
+
+// ReleaseXRoomType 释放XRoomType
+func ReleaseXRoomType(v *XRoomType) {
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.OuterId = ""
+	v.Name = ""
+	v.Area = ""
+	v.Service = ""
+	v.Internet = ""
+	v.Floor = ""
+	v.CreatedTime = ""
+	v.ModifiedTime = ""
+	v.ErrorInfo = ""
+	v.BedType = ""
+	v.BedSize = ""
+	v.Extend = ""
+	v.NameE = ""
+	v.DataConfirmStr = ""
+	v.TagJson = ""
+	v.Hid = 0
+	v.Rid = 0
+	v.Status = 0
+	v.MatchStatus = 0
+	v.MaxOccupancy = 0
+	v.WindowType = 0
+	v.SRoomtype = nil
+	poolXRoomType.Put(v)
 }

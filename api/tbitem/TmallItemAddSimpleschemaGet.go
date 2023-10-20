@@ -9,11 +9,6 @@ import (
 // tmall.item.add.simpleschema.get
 //
 // 通过商家信息获取商品发布字段和规则。
-func TmallItemAddSimpleschemaGet(clt *core.SDKClient, req *tbitem.TmallItemAddSimpleschemaGetAPIRequest, session string) (*tbitem.TmallItemAddSimpleschemaGetAPIResponse, error) {
-	var resp tbitem.TmallItemAddSimpleschemaGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallItemAddSimpleschemaGet(clt *core.SDKClient, req *tbitem.TmallItemAddSimpleschemaGetAPIRequest, resp *tbitem.TmallItemAddSimpleschemaGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

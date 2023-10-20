@@ -1,5 +1,9 @@
 package alimember
 
+import (
+	"sync"
+)
+
 // SyncMemberIdentityDto 结构体
 type SyncMemberIdentityDto struct {
 	// 外部会员ID，识别商家会员的唯一身份标识
@@ -20,4 +24,29 @@ type SyncMemberIdentityDto struct {
 	IdentityModel *IdentityModel `json:"identity_model,omitempty" xml:"identity_model,omitempty"`
 	// 签约单据信息
 	OrderModel *OrderModel `json:"order_model,omitempty" xml:"order_model,omitempty"`
+}
+
+var poolSyncMemberIdentityDto = sync.Pool{
+	New: func() any {
+		return new(SyncMemberIdentityDto)
+	},
+}
+
+// GetSyncMemberIdentityDto() 从对象池中获取SyncMemberIdentityDto
+func GetSyncMemberIdentityDto() *SyncMemberIdentityDto {
+	return poolSyncMemberIdentityDto.Get().(*SyncMemberIdentityDto)
+}
+
+// ReleaseSyncMemberIdentityDto 释放SyncMemberIdentityDto
+func ReleaseSyncMemberIdentityDto(v *SyncMemberIdentityDto) {
+	v.OuterMemberId = ""
+	v.IdentityTemplateId = ""
+	v.OpenMerchantId = ""
+	v.IsvSyncOperateType = ""
+	v.SyncType = ""
+	v.UserMobile = ""
+	v.TimeStamp = 0
+	v.IdentityModel = nil
+	v.OrderModel = nil
+	poolSyncMemberIdentityDto.Put(v)
 }

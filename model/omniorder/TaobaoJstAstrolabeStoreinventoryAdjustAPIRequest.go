@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoJstAstrolabeStoreinventoryAdjustAPIRequest struct {
 // NewTaobaoJstAstrolabeStoreinventoryAdjustRequest 初始化TaobaoJstAstrolabeStoreinventoryAdjustAPIRequest对象
 func NewTaobaoJstAstrolabeStoreinventoryAdjustRequest() *TaobaoJstAstrolabeStoreinventoryAdjustAPIRequest {
 	return &TaobaoJstAstrolabeStoreinventoryAdjustAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJstAstrolabeStoreinventoryAdjustAPIRequest) Reset() {
+	r._operationTime = ""
+	r._inventoryAdjustInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoJstAstrolabeStoreinventoryAdjustAPIRequest) SetInventoryAdjustInf
 // GetInventoryAdjustInfo InventoryAdjustInfo Getter
 func (r TaobaoJstAstrolabeStoreinventoryAdjustAPIRequest) GetInventoryAdjustInfo() *InventoryAdjustInfo {
 	return r._inventoryAdjustInfo
+}
+
+var poolTaobaoJstAstrolabeStoreinventoryAdjustAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJstAstrolabeStoreinventoryAdjustRequest()
+	},
+}
+
+// GetTaobaoJstAstrolabeStoreinventoryAdjustRequest 从 sync.Pool 获取 TaobaoJstAstrolabeStoreinventoryAdjustAPIRequest
+func GetTaobaoJstAstrolabeStoreinventoryAdjustAPIRequest() *TaobaoJstAstrolabeStoreinventoryAdjustAPIRequest {
+	return poolTaobaoJstAstrolabeStoreinventoryAdjustAPIRequest.Get().(*TaobaoJstAstrolabeStoreinventoryAdjustAPIRequest)
+}
+
+// ReleaseTaobaoJstAstrolabeStoreinventoryAdjustAPIRequest 将 TaobaoJstAstrolabeStoreinventoryAdjustAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJstAstrolabeStoreinventoryAdjustAPIRequest(v *TaobaoJstAstrolabeStoreinventoryAdjustAPIRequest) {
+	v.Reset()
+	poolTaobaoJstAstrolabeStoreinventoryAdjustAPIRequest.Put(v)
 }

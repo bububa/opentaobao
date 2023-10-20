@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.ad.keyword.list.campaign.keywords
 //
 // 获取计划关键词
-func AlibabaScbpAdKeywordListCampaignKeywords(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest, session string) (*scbp.AlibabaScbpAdKeywordListCampaignKeywordsAPIResponse, error) {
-	var resp scbp.AlibabaScbpAdKeywordListCampaignKeywordsAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpAdKeywordListCampaignKeywords(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest, resp *scbp.AlibabaScbpAdKeywordListCampaignKeywordsAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

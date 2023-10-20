@@ -2,6 +2,7 @@ package tmallgeniescp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaTmallgenieScpPlanForecastRawUploadAPIResponse struct {
 	AlibabaTmallgenieScpPlanForecastRawUploadAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaTmallgenieScpPlanForecastRawUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaTmallgenieScpPlanForecastRawUploadAPIResponseModel).Reset()
+}
+
 // AlibabaTmallgenieScpPlanForecastRawUploadAPIResponseModel is 17-供应商预测（原料-二级物料）回传接口 成功返回结果
 type AlibabaTmallgenieScpPlanForecastRawUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_tmallgenie_scp_plan_forecast_raw_upload_response"`
@@ -26,4 +33,29 @@ type AlibabaTmallgenieScpPlanForecastRawUploadAPIResponseModel struct {
 	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
 	// 结果code
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaTmallgenieScpPlanForecastRawUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultMsg = ""
+	m.TraceId = ""
+	m.ResultCode = ""
+}
+
+var poolAlibabaTmallgenieScpPlanForecastRawUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaTmallgenieScpPlanForecastRawUploadAPIResponse)
+	},
+}
+
+// GetAlibabaTmallgenieScpPlanForecastRawUploadAPIResponse 从 sync.Pool 获取 AlibabaTmallgenieScpPlanForecastRawUploadAPIResponse
+func GetAlibabaTmallgenieScpPlanForecastRawUploadAPIResponse() *AlibabaTmallgenieScpPlanForecastRawUploadAPIResponse {
+	return poolAlibabaTmallgenieScpPlanForecastRawUploadAPIResponse.Get().(*AlibabaTmallgenieScpPlanForecastRawUploadAPIResponse)
+}
+
+// ReleaseAlibabaTmallgenieScpPlanForecastRawUploadAPIResponse 将 AlibabaTmallgenieScpPlanForecastRawUploadAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaTmallgenieScpPlanForecastRawUploadAPIResponse(v *AlibabaTmallgenieScpPlanForecastRawUploadAPIResponse) {
+	v.Reset()
+	poolAlibabaTmallgenieScpPlanForecastRawUploadAPIResponse.Put(v)
 }

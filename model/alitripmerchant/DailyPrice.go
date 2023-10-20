@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // DailyPrice 结构体
 type DailyPrice struct {
 	// 每日价格
@@ -26,4 +30,32 @@ type DailyPrice struct {
 	WindowType string `json:"window_type,omitempty" xml:"window_type,omitempty"`
 	// 最大入住人数
 	MaxOccupancy int64 `json:"max_occupancy,omitempty" xml:"max_occupancy,omitempty"`
+}
+
+var poolDailyPrice = sync.Pool{
+	New: func() any {
+		return new(DailyPrice)
+	},
+}
+
+// GetDailyPrice() 从对象池中获取DailyPrice
+func GetDailyPrice() *DailyPrice {
+	return poolDailyPrice.Get().(*DailyPrice)
+}
+
+// ReleaseDailyPrice 释放DailyPrice
+func ReleaseDailyPrice(v *DailyPrice) {
+	v.ReallyPrice = ""
+	v.Date = ""
+	v.OutReallyPrice = ""
+	v.Area = ""
+	v.BedTypeIcon = ""
+	v.MaxOccupancyIcon = ""
+	v.Floor = ""
+	v.FloorIcon = ""
+	v.AreaIcon = ""
+	v.WindowTypeIcon = ""
+	v.WindowType = ""
+	v.MaxOccupancy = 0
+	poolDailyPrice.Put(v)
 }

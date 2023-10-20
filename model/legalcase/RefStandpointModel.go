@@ -1,5 +1,9 @@
 package legalcase
 
+import (
+	"sync"
+)
+
 // RefStandpointModel 结构体
 type RefStandpointModel struct {
 	// 口径描述
@@ -14,4 +18,26 @@ type RefStandpointModel struct {
 	StandpointId int64 `json:"standpoint_id,omitempty" xml:"standpoint_id,omitempty"`
 	// 口径版本
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
+}
+
+var poolRefStandpointModel = sync.Pool{
+	New: func() any {
+		return new(RefStandpointModel)
+	},
+}
+
+// GetRefStandpointModel() 从对象池中获取RefStandpointModel
+func GetRefStandpointModel() *RefStandpointModel {
+	return poolRefStandpointModel.Get().(*RefStandpointModel)
+}
+
+// ReleaseRefStandpointModel 释放RefStandpointModel
+func ReleaseRefStandpointModel(v *RefStandpointModel) {
+	v.StandpointDesc = ""
+	v.DefenseCaliber = ""
+	v.SuitId = 0
+	v.EntrustId = 0
+	v.StandpointId = 0
+	v.Version = 0
+	poolRefStandpointModel.Put(v)
 }

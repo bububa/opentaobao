@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -41,8 +42,25 @@ type AlibabaEinvoiceBillSyncAPIRequest struct {
 // NewAlibabaEinvoiceBillSyncRequest 初始化AlibabaEinvoiceBillSyncAPIRequest对象
 func NewAlibabaEinvoiceBillSyncRequest() *AlibabaEinvoiceBillSyncAPIRequest {
 	return &AlibabaEinvoiceBillSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(12),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceBillSyncAPIRequest) Reset() {
+	r._invoiceItems = r._invoiceItems[:0]
+	r._orderDate = ""
+	r._shopName = ""
+	r._payeeRegisterNo = ""
+	r._invoicePrice = ""
+	r._orderId = ""
+	r._sumPrice = ""
+	r._platform = ""
+	r._brandName = ""
+	r._shopPlatform = ""
+	r._status = 0
+	r._qrcode = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -216,4 +234,21 @@ func (r *AlibabaEinvoiceBillSyncAPIRequest) SetQrcode(_qrcode *QrCodeDo) error {
 // GetQrcode Qrcode Getter
 func (r AlibabaEinvoiceBillSyncAPIRequest) GetQrcode() *QrCodeDo {
 	return r._qrcode
+}
+
+var poolAlibabaEinvoiceBillSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceBillSyncRequest()
+	},
+}
+
+// GetAlibabaEinvoiceBillSyncRequest 从 sync.Pool 获取 AlibabaEinvoiceBillSyncAPIRequest
+func GetAlibabaEinvoiceBillSyncAPIRequest() *AlibabaEinvoiceBillSyncAPIRequest {
+	return poolAlibabaEinvoiceBillSyncAPIRequest.Get().(*AlibabaEinvoiceBillSyncAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceBillSyncAPIRequest 将 AlibabaEinvoiceBillSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceBillSyncAPIRequest(v *AlibabaEinvoiceBillSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceBillSyncAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponseModel).Reset()
 }
 
 // AlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponseModel is 门店扩展信息变更 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponseModel struct {
 	Data bool `json:"data,omitempty" xml:"data,omitempty"`
 	// aaa
 	ReturnSuccess bool `json:"return_success,omitempty" xml:"return_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ReturnCode = ""
+	m.ReturnMessage = ""
+	m.Data = false
+	m.ReturnSuccess = false
+}
+
+var poolAlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponse)
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponse 从 sync.Pool 获取 AlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponse
+func GetAlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponse() *AlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponse {
+	return poolAlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponse.Get().(*AlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponse)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponse 将 AlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponse(v *AlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeStoreExtendsSyncAPIResponse.Put(v)
 }

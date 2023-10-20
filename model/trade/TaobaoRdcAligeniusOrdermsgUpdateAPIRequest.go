@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoRdcAligeniusOrdermsgUpdateAPIRequest struct {
 // NewTaobaoRdcAligeniusOrdermsgUpdateRequest 初始化TaobaoRdcAligeniusOrdermsgUpdateAPIRequest对象
 func NewTaobaoRdcAligeniusOrdermsgUpdateRequest() *TaobaoRdcAligeniusOrdermsgUpdateAPIRequest {
 	return &TaobaoRdcAligeniusOrdermsgUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoRdcAligeniusOrdermsgUpdateAPIRequest) Reset() {
+	r._oid = 0
+	r._status = 0
+	r._tid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoRdcAligeniusOrdermsgUpdateAPIRequest) SetTid(_tid int64) error {
 // GetTid Tid Getter
 func (r TaobaoRdcAligeniusOrdermsgUpdateAPIRequest) GetTid() int64 {
 	return r._tid
+}
+
+var poolTaobaoRdcAligeniusOrdermsgUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoRdcAligeniusOrdermsgUpdateRequest()
+	},
+}
+
+// GetTaobaoRdcAligeniusOrdermsgUpdateRequest 从 sync.Pool 获取 TaobaoRdcAligeniusOrdermsgUpdateAPIRequest
+func GetTaobaoRdcAligeniusOrdermsgUpdateAPIRequest() *TaobaoRdcAligeniusOrdermsgUpdateAPIRequest {
+	return poolTaobaoRdcAligeniusOrdermsgUpdateAPIRequest.Get().(*TaobaoRdcAligeniusOrdermsgUpdateAPIRequest)
+}
+
+// ReleaseTaobaoRdcAligeniusOrdermsgUpdateAPIRequest 将 TaobaoRdcAligeniusOrdermsgUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoRdcAligeniusOrdermsgUpdateAPIRequest(v *TaobaoRdcAligeniusOrdermsgUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoRdcAligeniusOrdermsgUpdateAPIRequest.Put(v)
 }

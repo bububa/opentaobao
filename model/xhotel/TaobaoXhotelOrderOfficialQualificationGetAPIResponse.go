@@ -2,6 +2,7 @@ package xhotel
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoXhotelOrderOfficialQualificationGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoXhotelOrderOfficialQualificationGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelOrderOfficialQualificationGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoXhotelOrderOfficialQualificationGetAPIResponseModel).Reset()
 }
 
 // TaobaoXhotelOrderOfficialQualificationGetAPIResponseModel is 官网信用住用户资质校验 成功返回结果
@@ -32,4 +39,32 @@ type TaobaoXhotelOrderOfficialQualificationGetAPIResponseModel struct {
 	ExtendAttrs string `json:"extend_attrs,omitempty" xml:"extend_attrs,omitempty"`
 	// 资质校验是否成功,有资格返回true, 无资格返回false
 	MatchCondition bool `json:"match_condition,omitempty" xml:"match_condition,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelOrderOfficialQualificationGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Reason = ""
+	m.IdNumber = ""
+	m.OutUUID = ""
+	m.OutMemeberAccount = ""
+	m.ExtendAttrs = ""
+	m.MatchCondition = false
+}
+
+var poolTaobaoXhotelOrderOfficialQualificationGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelOrderOfficialQualificationGetAPIResponse)
+	},
+}
+
+// GetTaobaoXhotelOrderOfficialQualificationGetAPIResponse 从 sync.Pool 获取 TaobaoXhotelOrderOfficialQualificationGetAPIResponse
+func GetTaobaoXhotelOrderOfficialQualificationGetAPIResponse() *TaobaoXhotelOrderOfficialQualificationGetAPIResponse {
+	return poolTaobaoXhotelOrderOfficialQualificationGetAPIResponse.Get().(*TaobaoXhotelOrderOfficialQualificationGetAPIResponse)
+}
+
+// ReleaseTaobaoXhotelOrderOfficialQualificationGetAPIResponse 将 TaobaoXhotelOrderOfficialQualificationGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoXhotelOrderOfficialQualificationGetAPIResponse(v *TaobaoXhotelOrderOfficialQualificationGetAPIResponse) {
+	v.Reset()
+	poolTaobaoXhotelOrderOfficialQualificationGetAPIResponse.Put(v)
 }

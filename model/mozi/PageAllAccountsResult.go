@@ -1,5 +1,9 @@
 package mozi
 
+import (
+	"sync"
+)
+
 // PageAllAccountsResult 结构体
 type PageAllAccountsResult struct {
 	// 返回的数据
@@ -20,4 +24,29 @@ type PageAllAccountsResult struct {
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolPageAllAccountsResult = sync.Pool{
+	New: func() any {
+		return new(PageAllAccountsResult)
+	},
+}
+
+// GetPageAllAccountsResult() 从对象池中获取PageAllAccountsResult
+func GetPageAllAccountsResult() *PageAllAccountsResult {
+	return poolPageAllAccountsResult.Get().(*PageAllAccountsResult)
+}
+
+// ReleasePageAllAccountsResult 释放PageAllAccountsResult
+func ReleasePageAllAccountsResult(v *PageAllAccountsResult) {
+	v.DataList = v.DataList[:0]
+	v.RequestId = ""
+	v.ResponseMessage = ""
+	v.ResponseMetaData = ""
+	v.ResponseCode = ""
+	v.TotalSize = 0
+	v.PageSize = 0
+	v.CurrentPage = 0
+	v.Success = false
+	poolPageAllAccountsResult.Put(v)
 }

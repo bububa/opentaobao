@@ -2,6 +2,7 @@ package tbrefund
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type TaobaoSpecialRefundsReceiveGetAPIRequest struct {
 // NewTaobaoSpecialRefundsReceiveGetRequest 初始化TaobaoSpecialRefundsReceiveGetAPIRequest对象
 func NewTaobaoSpecialRefundsReceiveGetRequest() *TaobaoSpecialRefundsReceiveGetAPIRequest {
 	return &TaobaoSpecialRefundsReceiveGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSpecialRefundsReceiveGetAPIRequest) Reset() {
+	r._fields = r._fields[:0]
+	r._buyerNick = ""
+	r._endModified = ""
+	r._startModified = ""
+	r._status = ""
+	r._type = ""
+	r._buyerOpenUid = ""
+	r._pageNo = 0
+	r._pageSize = 0
+	r._useHasNext = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *TaobaoSpecialRefundsReceiveGetAPIRequest) SetUseHasNext(_useHasNext boo
 // GetUseHasNext UseHasNext Getter
 func (r TaobaoSpecialRefundsReceiveGetAPIRequest) GetUseHasNext() bool {
 	return r._useHasNext
+}
+
+var poolTaobaoSpecialRefundsReceiveGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSpecialRefundsReceiveGetRequest()
+	},
+}
+
+// GetTaobaoSpecialRefundsReceiveGetRequest 从 sync.Pool 获取 TaobaoSpecialRefundsReceiveGetAPIRequest
+func GetTaobaoSpecialRefundsReceiveGetAPIRequest() *TaobaoSpecialRefundsReceiveGetAPIRequest {
+	return poolTaobaoSpecialRefundsReceiveGetAPIRequest.Get().(*TaobaoSpecialRefundsReceiveGetAPIRequest)
+}
+
+// ReleaseTaobaoSpecialRefundsReceiveGetAPIRequest 将 TaobaoSpecialRefundsReceiveGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSpecialRefundsReceiveGetAPIRequest(v *TaobaoSpecialRefundsReceiveGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSpecialRefundsReceiveGetAPIRequest.Put(v)
 }

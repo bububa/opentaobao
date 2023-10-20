@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoItemUpdateListingAPIRequest struct {
 // NewTaobaoItemUpdateListingRequest 初始化TaobaoItemUpdateListingAPIRequest对象
 func NewTaobaoItemUpdateListingRequest() *TaobaoItemUpdateListingAPIRequest {
 	return &TaobaoItemUpdateListingAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoItemUpdateListingAPIRequest) Reset() {
+	r._numIid = 0
+	r._num = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoItemUpdateListingAPIRequest) SetNum(_num int64) error {
 // GetNum Num Getter
 func (r TaobaoItemUpdateListingAPIRequest) GetNum() int64 {
 	return r._num
+}
+
+var poolTaobaoItemUpdateListingAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoItemUpdateListingRequest()
+	},
+}
+
+// GetTaobaoItemUpdateListingRequest 从 sync.Pool 获取 TaobaoItemUpdateListingAPIRequest
+func GetTaobaoItemUpdateListingAPIRequest() *TaobaoItemUpdateListingAPIRequest {
+	return poolTaobaoItemUpdateListingAPIRequest.Get().(*TaobaoItemUpdateListingAPIRequest)
+}
+
+// ReleaseTaobaoItemUpdateListingAPIRequest 将 TaobaoItemUpdateListingAPIRequest 放入 sync.Pool
+func ReleaseTaobaoItemUpdateListingAPIRequest(v *TaobaoItemUpdateListingAPIRequest) {
+	v.Reset()
+	poolTaobaoItemUpdateListingAPIRequest.Put(v)
 }

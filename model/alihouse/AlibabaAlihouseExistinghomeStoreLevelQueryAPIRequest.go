@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihouseExistinghomeStoreLevelQueryAPIRequest struct {
 // NewAlibabaAlihouseExistinghomeStoreLevelQueryRequest 初始化AlibabaAlihouseExistinghomeStoreLevelQueryAPIRequest对象
 func NewAlibabaAlihouseExistinghomeStoreLevelQueryRequest() *AlibabaAlihouseExistinghomeStoreLevelQueryAPIRequest {
 	return &AlibabaAlihouseExistinghomeStoreLevelQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseExistinghomeStoreLevelQueryAPIRequest) Reset() {
+	r._outerStoreIds = ""
+	r._businessType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihouseExistinghomeStoreLevelQueryAPIRequest) SetBusinessType(_
 // GetBusinessType BusinessType Getter
 func (r AlibabaAlihouseExistinghomeStoreLevelQueryAPIRequest) GetBusinessType() int64 {
 	return r._businessType
+}
+
+var poolAlibabaAlihouseExistinghomeStoreLevelQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseExistinghomeStoreLevelQueryRequest()
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeStoreLevelQueryRequest 从 sync.Pool 获取 AlibabaAlihouseExistinghomeStoreLevelQueryAPIRequest
+func GetAlibabaAlihouseExistinghomeStoreLevelQueryAPIRequest() *AlibabaAlihouseExistinghomeStoreLevelQueryAPIRequest {
+	return poolAlibabaAlihouseExistinghomeStoreLevelQueryAPIRequest.Get().(*AlibabaAlihouseExistinghomeStoreLevelQueryAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeStoreLevelQueryAPIRequest 将 AlibabaAlihouseExistinghomeStoreLevelQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeStoreLevelQueryAPIRequest(v *AlibabaAlihouseExistinghomeStoreLevelQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeStoreLevelQueryAPIRequest.Put(v)
 }

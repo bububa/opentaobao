@@ -1,5 +1,9 @@
 package usergrowth
 
+import (
+	"sync"
+)
+
 // BuzzwordDto 结构体
 type BuzzwordDto struct {
 	// 点击上报链接
@@ -26,4 +30,32 @@ type BuzzwordDto struct {
 	Popularity int64 `json:"popularity,omitempty" xml:"popularity,omitempty"`
 	// 词条失效时间(秒级时间戳)
 	InvalidTime int64 `json:"invalid_time,omitempty" xml:"invalid_time,omitempty"`
+}
+
+var poolBuzzwordDto = sync.Pool{
+	New: func() any {
+		return new(BuzzwordDto)
+	},
+}
+
+// GetBuzzwordDto() 从对象池中获取BuzzwordDto
+func GetBuzzwordDto() *BuzzwordDto {
+	return poolBuzzwordDto.Get().(*BuzzwordDto)
+}
+
+// ReleaseBuzzwordDto 释放BuzzwordDto
+func ReleaseBuzzwordDto(v *BuzzwordDto) {
+	v.ClickUrl = v.ClickUrl[:0]
+	v.ExposureUrl = v.ExposureUrl[:0]
+	v.Name = ""
+	v.Tag = ""
+	v.TagUrl = ""
+	v.DeeplinkUrl = ""
+	v.H5Url = ""
+	v.DisplayImageUrl = ""
+	v.HeatSearchText = ""
+	v.SubTitle = ""
+	v.Popularity = 0
+	v.InvalidTime = 0
+	poolBuzzwordDto.Put(v)
 }

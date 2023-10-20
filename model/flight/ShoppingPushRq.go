@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // ShoppingPushRq 结构体
 type ShoppingPushRq struct {
 	// 去程日期，格式为 YYYYMMDD ；如果为多程，20180729,20180804方式传输数据
@@ -18,4 +22,28 @@ type ShoppingPushRq struct {
 	ChannelId int64 `json:"channel_id,omitempty" xml:"channel_id,omitempty"`
 	// 行程类型，1：单程；2：往返；5:  多程
 	TripType int64 `json:"trip_type,omitempty" xml:"trip_type,omitempty"`
+}
+
+var poolShoppingPushRq = sync.Pool{
+	New: func() any {
+		return new(ShoppingPushRq)
+	},
+}
+
+// GetShoppingPushRq() 从对象池中获取ShoppingPushRq
+func GetShoppingPushRq() *ShoppingPushRq {
+	return poolShoppingPushRq.Get().(*ShoppingPushRq)
+}
+
+// ReleaseShoppingPushRq 释放ShoppingPushRq
+func ReleaseShoppingPushRq(v *ShoppingPushRq) {
+	v.FromDate = ""
+	v.RetDate = ""
+	v.ToCity = ""
+	v.SearchRs = ""
+	v.FromCity = ""
+	v.Cid = ""
+	v.ChannelId = 0
+	v.TripType = 0
+	poolShoppingPushRq.Put(v)
 }

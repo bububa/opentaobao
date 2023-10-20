@@ -2,6 +2,7 @@ package degoperation
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoDegoperationCheckAddrStatusAPIResponse struct {
 	TaobaoDegoperationCheckAddrStatusAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoDegoperationCheckAddrStatusAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoDegoperationCheckAddrStatusAPIResponseModel).Reset()
+}
+
 // TaobaoDegoperationCheckAddrStatusAPIResponseModel is 地址 成功返回结果
 type TaobaoDegoperationCheckAddrStatusAPIResponseModel struct {
 	XMLName xml.Name `xml:"degoperation_check_addr_status_response"`
@@ -22,4 +29,27 @@ type TaobaoDegoperationCheckAddrStatusAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *BonusResultDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoDegoperationCheckAddrStatusAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoDegoperationCheckAddrStatusAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoDegoperationCheckAddrStatusAPIResponse)
+	},
+}
+
+// GetTaobaoDegoperationCheckAddrStatusAPIResponse 从 sync.Pool 获取 TaobaoDegoperationCheckAddrStatusAPIResponse
+func GetTaobaoDegoperationCheckAddrStatusAPIResponse() *TaobaoDegoperationCheckAddrStatusAPIResponse {
+	return poolTaobaoDegoperationCheckAddrStatusAPIResponse.Get().(*TaobaoDegoperationCheckAddrStatusAPIResponse)
+}
+
+// ReleaseTaobaoDegoperationCheckAddrStatusAPIResponse 将 TaobaoDegoperationCheckAddrStatusAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoDegoperationCheckAddrStatusAPIResponse(v *TaobaoDegoperationCheckAddrStatusAPIResponse) {
+	v.Reset()
+	poolTaobaoDegoperationCheckAddrStatusAPIResponse.Put(v)
 }

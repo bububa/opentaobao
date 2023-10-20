@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type WdkRexoutDeviceIotRegisteridAPIRequest struct {
 // NewWdkRexoutDeviceIotRegisteridRequest 初始化WdkRexoutDeviceIotRegisteridAPIRequest对象
 func NewWdkRexoutDeviceIotRegisteridRequest() *WdkRexoutDeviceIotRegisteridAPIRequest {
 	return &WdkRexoutDeviceIotRegisteridAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *WdkRexoutDeviceIotRegisteridAPIRequest) Reset() {
+	r._accessKey = ""
+	r._accessSign = ""
+	r._accessTime = ""
+	r._uuid = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *WdkRexoutDeviceIotRegisteridAPIRequest) SetUuid(_uuid string) error {
 // GetUuid Uuid Getter
 func (r WdkRexoutDeviceIotRegisteridAPIRequest) GetUuid() string {
 	return r._uuid
+}
+
+var poolWdkRexoutDeviceIotRegisteridAPIRequest = sync.Pool{
+	New: func() any {
+		return NewWdkRexoutDeviceIotRegisteridRequest()
+	},
+}
+
+// GetWdkRexoutDeviceIotRegisteridRequest 从 sync.Pool 获取 WdkRexoutDeviceIotRegisteridAPIRequest
+func GetWdkRexoutDeviceIotRegisteridAPIRequest() *WdkRexoutDeviceIotRegisteridAPIRequest {
+	return poolWdkRexoutDeviceIotRegisteridAPIRequest.Get().(*WdkRexoutDeviceIotRegisteridAPIRequest)
+}
+
+// ReleaseWdkRexoutDeviceIotRegisteridAPIRequest 将 WdkRexoutDeviceIotRegisteridAPIRequest 放入 sync.Pool
+func ReleaseWdkRexoutDeviceIotRegisteridAPIRequest(v *WdkRexoutDeviceIotRegisteridAPIRequest) {
+	v.Reset()
+	poolWdkRexoutDeviceIotRegisteridAPIRequest.Put(v)
 }

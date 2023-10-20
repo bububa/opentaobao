@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // TopCustomerDto 结构体
 type TopCustomerDto struct {
 	// 币种
@@ -20,4 +24,29 @@ type TopCustomerDto struct {
 	ScoreTemp int64 `json:"score_temp,omitempty" xml:"score_temp,omitempty"`
 	// 账户余额，单位：分
 	CustomerBalance int64 `json:"customer_balance,omitempty" xml:"customer_balance,omitempty"`
+}
+
+var poolTopCustomerDto = sync.Pool{
+	New: func() any {
+		return new(TopCustomerDto)
+	},
+}
+
+// GetTopCustomerDto() 从对象池中获取TopCustomerDto
+func GetTopCustomerDto() *TopCustomerDto {
+	return poolTopCustomerDto.Get().(*TopCustomerDto)
+}
+
+// ReleaseTopCustomerDto 释放TopCustomerDto
+func ReleaseTopCustomerDto(v *TopCustomerDto) {
+	v.Currency = ""
+	v.ExchangeRate = ""
+	v.TaxRate = ""
+	v.Region = ""
+	v.Level = 0
+	v.Score = 0
+	v.StarTemp = 0
+	v.ScoreTemp = 0
+	v.CustomerBalance = 0
+	poolTopCustomerDto.Put(v)
 }

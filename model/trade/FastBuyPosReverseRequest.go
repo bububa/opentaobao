@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // FastBuyPosReverseRequest 结构体
 type FastBuyPosReverseRequest struct {
 	// 外部唯一订单号
@@ -14,4 +18,26 @@ type FastBuyPosReverseRequest struct {
 	RefundAlipayTradeId string `json:"refund_alipay_trade_id,omitempty" xml:"refund_alipay_trade_id,omitempty"`
 	// 外部门店编码
 	OutShopCode string `json:"out_shop_code,omitempty" xml:"out_shop_code,omitempty"`
+}
+
+var poolFastBuyPosReverseRequest = sync.Pool{
+	New: func() any {
+		return new(FastBuyPosReverseRequest)
+	},
+}
+
+// GetFastBuyPosReverseRequest() 从对象池中获取FastBuyPosReverseRequest
+func GetFastBuyPosReverseRequest() *FastBuyPosReverseRequest {
+	return poolFastBuyPosReverseRequest.Get().(*FastBuyPosReverseRequest)
+}
+
+// ReleaseFastBuyPosReverseRequest 释放FastBuyPosReverseRequest
+func ReleaseFastBuyPosReverseRequest(v *FastBuyPosReverseRequest) {
+	v.OutOrderId = ""
+	v.OutRefundId = ""
+	v.StoreId = ""
+	v.OperatorNum = ""
+	v.RefundAlipayTradeId = ""
+	v.OutShopCode = ""
+	poolFastBuyPosReverseRequest.Put(v)
 }

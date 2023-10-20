@@ -1,5 +1,9 @@
 package healthnr
 
+import (
+	"sync"
+)
+
 // LogisticsDetail 结构体
 type LogisticsDetail struct {
 	// 物流商
@@ -22,4 +26,30 @@ type LogisticsDetail struct {
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 物流状态
 	LogisticsStatus int64 `json:"logistics_status,omitempty" xml:"logistics_status,omitempty"`
+}
+
+var poolLogisticsDetail = sync.Pool{
+	New: func() any {
+		return new(LogisticsDetail)
+	},
+}
+
+// GetLogisticsDetail() 从对象池中获取LogisticsDetail
+func GetLogisticsDetail() *LogisticsDetail {
+	return poolLogisticsDetail.Get().(*LogisticsDetail)
+}
+
+// ReleaseLogisticsDetail 释放LogisticsDetail
+func ReleaseLogisticsDetail(v *LogisticsDetail) {
+	v.LogisticsName = ""
+	v.SendTime = ""
+	v.ConfirmTime = ""
+	v.CancelTime = ""
+	v.FetchTime = ""
+	v.CompleteTime = ""
+	v.DispatcherName = ""
+	v.DispatcherMobile = ""
+	v.OrderId = 0
+	v.LogisticsStatus = 0
+	poolLogisticsDetail.Put(v)
 }

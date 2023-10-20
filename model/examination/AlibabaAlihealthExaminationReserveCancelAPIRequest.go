@@ -2,6 +2,7 @@ package examination
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaAlihealthExaminationReserveCancelAPIRequest struct {
 // NewAlibabaAlihealthExaminationReserveCancelRequest 初始化AlibabaAlihealthExaminationReserveCancelAPIRequest对象
 func NewAlibabaAlihealthExaminationReserveCancelRequest() *AlibabaAlihealthExaminationReserveCancelAPIRequest {
 	return &AlibabaAlihealthExaminationReserveCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthExaminationReserveCancelAPIRequest) Reset() {
+	r._merchantCode = ""
+	r._reserveNumber = ""
+	r._reserveDate = ""
+	r._packageCode = ""
+	r._storeId = ""
+	r._uniqReserveCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaAlihealthExaminationReserveCancelAPIRequest) SetUniqReserveCode(
 // GetUniqReserveCode UniqReserveCode Getter
 func (r AlibabaAlihealthExaminationReserveCancelAPIRequest) GetUniqReserveCode() string {
 	return r._uniqReserveCode
+}
+
+var poolAlibabaAlihealthExaminationReserveCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthExaminationReserveCancelRequest()
+	},
+}
+
+// GetAlibabaAlihealthExaminationReserveCancelRequest 从 sync.Pool 获取 AlibabaAlihealthExaminationReserveCancelAPIRequest
+func GetAlibabaAlihealthExaminationReserveCancelAPIRequest() *AlibabaAlihealthExaminationReserveCancelAPIRequest {
+	return poolAlibabaAlihealthExaminationReserveCancelAPIRequest.Get().(*AlibabaAlihealthExaminationReserveCancelAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthExaminationReserveCancelAPIRequest 将 AlibabaAlihealthExaminationReserveCancelAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthExaminationReserveCancelAPIRequest(v *AlibabaAlihealthExaminationReserveCancelAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthExaminationReserveCancelAPIRequest.Put(v)
 }

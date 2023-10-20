@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripOpenCostCenterTransferAPIRequest struct {
 // NewAlitripBtripOpenCostCenterTransferRequest 初始化AlitripBtripOpenCostCenterTransferAPIRequest对象
 func NewAlitripBtripOpenCostCenterTransferRequest() *AlitripBtripOpenCostCenterTransferAPIRequest {
 	return &AlitripBtripOpenCostCenterTransferAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripOpenCostCenterTransferAPIRequest) Reset() {
+	r._rq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripOpenCostCenterTransferAPIRequest) SetRq(_rq *OpenCostCenter
 // GetRq Rq Getter
 func (r AlitripBtripOpenCostCenterTransferAPIRequest) GetRq() *OpenCostCenterTransferRq {
 	return r._rq
+}
+
+var poolAlitripBtripOpenCostCenterTransferAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripOpenCostCenterTransferRequest()
+	},
+}
+
+// GetAlitripBtripOpenCostCenterTransferRequest 从 sync.Pool 获取 AlitripBtripOpenCostCenterTransferAPIRequest
+func GetAlitripBtripOpenCostCenterTransferAPIRequest() *AlitripBtripOpenCostCenterTransferAPIRequest {
+	return poolAlitripBtripOpenCostCenterTransferAPIRequest.Get().(*AlitripBtripOpenCostCenterTransferAPIRequest)
+}
+
+// ReleaseAlitripBtripOpenCostCenterTransferAPIRequest 将 AlitripBtripOpenCostCenterTransferAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripOpenCostCenterTransferAPIRequest(v *AlitripBtripOpenCostCenterTransferAPIRequest) {
+	v.Reset()
+	poolAlitripBtripOpenCostCenterTransferAPIRequest.Put(v)
 }

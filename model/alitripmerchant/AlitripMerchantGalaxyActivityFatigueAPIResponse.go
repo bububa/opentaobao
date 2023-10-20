@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripMerchantGalaxyActivityFatigueAPIResponse struct {
 	AlitripMerchantGalaxyActivityFatigueAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripMerchantGalaxyActivityFatigueAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripMerchantGalaxyActivityFatigueAPIResponseModel).Reset()
+}
+
 // AlitripMerchantGalaxyActivityFatigueAPIResponseModel is 营销抽奖-弹窗疲劳度控制 成功返回结果
 type AlitripMerchantGalaxyActivityFatigueAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_merchant_galaxy_activity_fatigue_response"`
@@ -22,4 +29,27 @@ type AlitripMerchantGalaxyActivityFatigueAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 默认描述
 	Result *AlitripMerchantGalaxyActivityFatigueResponse `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripMerchantGalaxyActivityFatigueAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlitripMerchantGalaxyActivityFatigueAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyActivityFatigueAPIResponse)
+	},
+}
+
+// GetAlitripMerchantGalaxyActivityFatigueAPIResponse 从 sync.Pool 获取 AlitripMerchantGalaxyActivityFatigueAPIResponse
+func GetAlitripMerchantGalaxyActivityFatigueAPIResponse() *AlitripMerchantGalaxyActivityFatigueAPIResponse {
+	return poolAlitripMerchantGalaxyActivityFatigueAPIResponse.Get().(*AlitripMerchantGalaxyActivityFatigueAPIResponse)
+}
+
+// ReleaseAlitripMerchantGalaxyActivityFatigueAPIResponse 将 AlitripMerchantGalaxyActivityFatigueAPIResponse 保存到 sync.Pool
+func ReleaseAlitripMerchantGalaxyActivityFatigueAPIResponse(v *AlitripMerchantGalaxyActivityFatigueAPIResponse) {
+	v.Reset()
+	poolAlitripMerchantGalaxyActivityFatigueAPIResponse.Put(v)
 }

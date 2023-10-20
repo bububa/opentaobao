@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // WarehouseDeliveryRelationPageQueryRequest 结构体
 type WarehouseDeliveryRelationPageQueryRequest struct {
 	// 网格仓外部编码列表
@@ -32,4 +36,35 @@ type WarehouseDeliveryRelationPageQueryRequest struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 是否返回汇总数
 	ShowTotal int64 `json:"show_total,omitempty" xml:"show_total,omitempty"`
+}
+
+var poolWarehouseDeliveryRelationPageQueryRequest = sync.Pool{
+	New: func() any {
+		return new(WarehouseDeliveryRelationPageQueryRequest)
+	},
+}
+
+// GetWarehouseDeliveryRelationPageQueryRequest() 从对象池中获取WarehouseDeliveryRelationPageQueryRequest
+func GetWarehouseDeliveryRelationPageQueryRequest() *WarehouseDeliveryRelationPageQueryRequest {
+	return poolWarehouseDeliveryRelationPageQueryRequest.Get().(*WarehouseDeliveryRelationPageQueryRequest)
+}
+
+// ReleaseWarehouseDeliveryRelationPageQueryRequest 释放WarehouseDeliveryRelationPageQueryRequest
+func ReleaseWarehouseDeliveryRelationPageQueryRequest(v *WarehouseDeliveryRelationPageQueryRequest) {
+	v.FromOrgResourceCodeList = v.FromOrgResourceCodeList[:0]
+	v.FromResourceCodeList = v.FromResourceCodeList[:0]
+	v.ToResourceCodeList = v.ToResourceCodeList[:0]
+	v.FromOrgResourceCode = ""
+	v.FromResourceCode = ""
+	v.FromResourceType = ""
+	v.NetworkCode = ""
+	v.ToOrgResourceCode = ""
+	v.ToResourceCode = ""
+	v.ToResourceType = ""
+	v.StartGmtModified = ""
+	v.EndGmtModified = ""
+	v.PageIndex = 0
+	v.PageSize = 0
+	v.ShowTotal = 0
+	poolWarehouseDeliveryRelationPageQueryRequest.Put(v)
 }

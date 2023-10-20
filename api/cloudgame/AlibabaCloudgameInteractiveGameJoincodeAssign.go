@@ -9,11 +9,6 @@ import (
 // alibaba.cloudgame.interactive.game.joincode.assign
 //
 // 分配joinCode
-func AlibabaCloudgameInteractiveGameJoincodeAssign(clt *core.SDKClient, req *cloudgame.AlibabaCloudgameInteractiveGameJoincodeAssignAPIRequest, session string) (*cloudgame.AlibabaCloudgameInteractiveGameJoincodeAssignAPIResponse, error) {
-	var resp cloudgame.AlibabaCloudgameInteractiveGameJoincodeAssignAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCloudgameInteractiveGameJoincodeAssign(clt *core.SDKClient, req *cloudgame.AlibabaCloudgameInteractiveGameJoincodeAssignAPIRequest, resp *cloudgame.AlibabaCloudgameInteractiveGameJoincodeAssignAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

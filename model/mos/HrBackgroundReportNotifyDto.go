@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // HrBackgroundReportNotifyDto 结构体
 type HrBackgroundReportNotifyDto struct {
 	// 下单时MOS传的唯一编码
@@ -20,4 +24,29 @@ type HrBackgroundReportNotifyDto struct {
 	EstimateFinishTime string `json:"estimate_finish_time,omitempty" xml:"estimate_finish_time,omitempty"`
 	// 背调公司
 	BackgroundCompanyName string `json:"background_company_name,omitempty" xml:"background_company_name,omitempty"`
+}
+
+var poolHrBackgroundReportNotifyDto = sync.Pool{
+	New: func() any {
+		return new(HrBackgroundReportNotifyDto)
+	},
+}
+
+// GetHrBackgroundReportNotifyDto() 从对象池中获取HrBackgroundReportNotifyDto
+func GetHrBackgroundReportNotifyDto() *HrBackgroundReportNotifyDto {
+	return poolHrBackgroundReportNotifyDto.Get().(*HrBackgroundReportNotifyDto)
+}
+
+// ReleaseHrBackgroundReportNotifyDto 释放HrBackgroundReportNotifyDto
+func ReleaseHrBackgroundReportNotifyDto(v *HrBackgroundReportNotifyDto) {
+	v.SourceId = ""
+	v.FinalReportResSel = ""
+	v.OrderNo = ""
+	v.RecordStatus = ""
+	v.ReportData = ""
+	v.Remark = ""
+	v.FinalVersion = ""
+	v.EstimateFinishTime = ""
+	v.BackgroundCompanyName = ""
+	poolHrBackgroundReportNotifyDto.Put(v)
 }

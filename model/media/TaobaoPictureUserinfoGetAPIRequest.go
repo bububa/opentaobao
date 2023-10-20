@@ -2,6 +2,7 @@ package media
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type TaobaoPictureUserinfoGetAPIRequest struct {
 // NewTaobaoPictureUserinfoGetRequest 初始化TaobaoPictureUserinfoGetAPIRequest对象
 func NewTaobaoPictureUserinfoGetRequest() *TaobaoPictureUserinfoGetAPIRequest {
 	return &TaobaoPictureUserinfoGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPictureUserinfoGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r TaobaoPictureUserinfoGetAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r TaobaoPictureUserinfoGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolTaobaoPictureUserinfoGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPictureUserinfoGetRequest()
+	},
+}
+
+// GetTaobaoPictureUserinfoGetRequest 从 sync.Pool 获取 TaobaoPictureUserinfoGetAPIRequest
+func GetTaobaoPictureUserinfoGetAPIRequest() *TaobaoPictureUserinfoGetAPIRequest {
+	return poolTaobaoPictureUserinfoGetAPIRequest.Get().(*TaobaoPictureUserinfoGetAPIRequest)
+}
+
+// ReleaseTaobaoPictureUserinfoGetAPIRequest 将 TaobaoPictureUserinfoGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPictureUserinfoGetAPIRequest(v *TaobaoPictureUserinfoGetAPIRequest) {
+	v.Reset()
+	poolTaobaoPictureUserinfoGetAPIRequest.Put(v)
 }

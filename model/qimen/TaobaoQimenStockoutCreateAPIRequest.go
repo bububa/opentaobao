@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQimenStockoutCreateAPIRequest struct {
 // NewTaobaoQimenStockoutCreateRequest 初始化TaobaoQimenStockoutCreateAPIRequest对象
 func NewTaobaoQimenStockoutCreateRequest() *TaobaoQimenStockoutCreateAPIRequest {
 	return &TaobaoQimenStockoutCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenStockoutCreateAPIRequest) Reset() {
+	r._request = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -50,4 +57,21 @@ func (r *TaobaoQimenStockoutCreateAPIRequest) SetRequest(_request *StockOutCreat
 // GetRequest Request Getter
 func (r TaobaoQimenStockoutCreateAPIRequest) GetRequest() *StockOutCreateRequest {
 	return r._request
+}
+
+var poolTaobaoQimenStockoutCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenStockoutCreateRequest()
+	},
+}
+
+// GetTaobaoQimenStockoutCreateRequest 从 sync.Pool 获取 TaobaoQimenStockoutCreateAPIRequest
+func GetTaobaoQimenStockoutCreateAPIRequest() *TaobaoQimenStockoutCreateAPIRequest {
+	return poolTaobaoQimenStockoutCreateAPIRequest.Get().(*TaobaoQimenStockoutCreateAPIRequest)
+}
+
+// ReleaseTaobaoQimenStockoutCreateAPIRequest 将 TaobaoQimenStockoutCreateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenStockoutCreateAPIRequest(v *TaobaoQimenStockoutCreateAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenStockoutCreateAPIRequest.Put(v)
 }

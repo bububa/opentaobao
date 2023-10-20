@@ -1,5 +1,9 @@
 package nrt
 
+import (
+	"sync"
+)
+
 // CouponTemplateDto 结构体
 type CouponTemplateDto struct {
 	// 圈选商品列表
@@ -46,4 +50,42 @@ type CouponTemplateDto struct {
 	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
 	// 券模板ID
 	CouponTemplateId int64 `json:"coupon_template_id,omitempty" xml:"coupon_template_id,omitempty"`
+}
+
+var poolCouponTemplateDto = sync.Pool{
+	New: func() any {
+		return new(CouponTemplateDto)
+	},
+}
+
+// GetCouponTemplateDto() 从对象池中获取CouponTemplateDto
+func GetCouponTemplateDto() *CouponTemplateDto {
+	return poolCouponTemplateDto.Get().(*CouponTemplateDto)
+}
+
+// ReleaseCouponTemplateDto 释放CouponTemplateDto
+func ReleaseCouponTemplateDto(v *CouponTemplateDto) {
+	v.ItemIds = v.ItemIds[:0]
+	v.MallIds = v.MallIds[:0]
+	v.StoreIds = v.StoreIds[:0]
+	v.Channel = ""
+	v.CouponName = ""
+	v.Creator = ""
+	v.ModifiedBy = ""
+	v.SendEndTime = ""
+	v.SendStartTime = ""
+	v.UseEndTime = ""
+	v.UseStartTime = ""
+	v.Uuid = ""
+	v.CouponType = 0
+	v.Discount = 0
+	v.Id = 0
+	v.StartFee = 0
+	v.Status = 0
+	v.UseTime = 0
+	v.UseTimeType = 0
+	v.Version = 0
+	v.SellerId = 0
+	v.CouponTemplateId = 0
+	poolCouponTemplateDto.Put(v)
 }

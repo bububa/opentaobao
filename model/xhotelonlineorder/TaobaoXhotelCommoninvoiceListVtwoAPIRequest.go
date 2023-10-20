@@ -2,6 +2,7 @@ package xhotelonlineorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type TaobaoXhotelCommoninvoiceListVtwoAPIRequest struct {
 // NewTaobaoXhotelCommoninvoiceListVtwoRequest 初始化TaobaoXhotelCommoninvoiceListVtwoAPIRequest对象
 func NewTaobaoXhotelCommoninvoiceListVtwoRequest() *TaobaoXhotelCommoninvoiceListVtwoAPIRequest {
 	return &TaobaoXhotelCommoninvoiceListVtwoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelCommoninvoiceListVtwoAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r TaobaoXhotelCommoninvoiceListVtwoAPIRequest) GetApiParams(params url.Val
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r TaobaoXhotelCommoninvoiceListVtwoAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolTaobaoXhotelCommoninvoiceListVtwoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelCommoninvoiceListVtwoRequest()
+	},
+}
+
+// GetTaobaoXhotelCommoninvoiceListVtwoRequest 从 sync.Pool 获取 TaobaoXhotelCommoninvoiceListVtwoAPIRequest
+func GetTaobaoXhotelCommoninvoiceListVtwoAPIRequest() *TaobaoXhotelCommoninvoiceListVtwoAPIRequest {
+	return poolTaobaoXhotelCommoninvoiceListVtwoAPIRequest.Get().(*TaobaoXhotelCommoninvoiceListVtwoAPIRequest)
+}
+
+// ReleaseTaobaoXhotelCommoninvoiceListVtwoAPIRequest 将 TaobaoXhotelCommoninvoiceListVtwoAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelCommoninvoiceListVtwoAPIRequest(v *TaobaoXhotelCommoninvoiceListVtwoAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelCommoninvoiceListVtwoAPIRequest.Put(v)
 }

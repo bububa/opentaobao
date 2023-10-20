@@ -2,6 +2,7 @@ package interact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoMixnickWetoplayAPIRequest struct {
 // NewTaobaoMixnickWetoplayRequest 初始化TaobaoMixnickWetoplayAPIRequest对象
 func NewTaobaoMixnickWetoplayRequest() *TaobaoMixnickWetoplayAPIRequest {
 	return &TaobaoMixnickWetoplayAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMixnickWetoplayAPIRequest) Reset() {
+	r._traceId = ""
+	r._weMixnick = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoMixnickWetoplayAPIRequest) SetWeMixnick(_weMixnick string) error 
 // GetWeMixnick WeMixnick Getter
 func (r TaobaoMixnickWetoplayAPIRequest) GetWeMixnick() string {
 	return r._weMixnick
+}
+
+var poolTaobaoMixnickWetoplayAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMixnickWetoplayRequest()
+	},
+}
+
+// GetTaobaoMixnickWetoplayRequest 从 sync.Pool 获取 TaobaoMixnickWetoplayAPIRequest
+func GetTaobaoMixnickWetoplayAPIRequest() *TaobaoMixnickWetoplayAPIRequest {
+	return poolTaobaoMixnickWetoplayAPIRequest.Get().(*TaobaoMixnickWetoplayAPIRequest)
+}
+
+// ReleaseTaobaoMixnickWetoplayAPIRequest 将 TaobaoMixnickWetoplayAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMixnickWetoplayAPIRequest(v *TaobaoMixnickWetoplayAPIRequest) {
+	v.Reset()
+	poolTaobaoMixnickWetoplayAPIRequest.Put(v)
 }

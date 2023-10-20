@@ -2,6 +2,7 @@ package xhotelonlineorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoXhotelFastinvoiceCompleteAPIRequest struct {
 // NewTaobaoXhotelFastinvoiceCompleteRequest 初始化TaobaoXhotelFastinvoiceCompleteAPIRequest对象
 func NewTaobaoXhotelFastinvoiceCompleteRequest() *TaobaoXhotelFastinvoiceCompleteAPIRequest {
 	return &TaobaoXhotelFastinvoiceCompleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelFastinvoiceCompleteAPIRequest) Reset() {
+	r._invoiceInfoParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoXhotelFastinvoiceCompleteAPIRequest) SetInvoiceInfoParam(_invoice
 // GetInvoiceInfoParam InvoiceInfoParam Getter
 func (r TaobaoXhotelFastinvoiceCompleteAPIRequest) GetInvoiceInfoParam() *InvoiceInfoParam {
 	return r._invoiceInfoParam
+}
+
+var poolTaobaoXhotelFastinvoiceCompleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelFastinvoiceCompleteRequest()
+	},
+}
+
+// GetTaobaoXhotelFastinvoiceCompleteRequest 从 sync.Pool 获取 TaobaoXhotelFastinvoiceCompleteAPIRequest
+func GetTaobaoXhotelFastinvoiceCompleteAPIRequest() *TaobaoXhotelFastinvoiceCompleteAPIRequest {
+	return poolTaobaoXhotelFastinvoiceCompleteAPIRequest.Get().(*TaobaoXhotelFastinvoiceCompleteAPIRequest)
+}
+
+// ReleaseTaobaoXhotelFastinvoiceCompleteAPIRequest 将 TaobaoXhotelFastinvoiceCompleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelFastinvoiceCompleteAPIRequest(v *TaobaoXhotelFastinvoiceCompleteAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelFastinvoiceCompleteAPIRequest.Put(v)
 }

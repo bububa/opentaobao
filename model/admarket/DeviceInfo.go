@@ -1,5 +1,9 @@
 package admarket
 
+import (
+	"sync"
+)
+
 // DeviceInfo 结构体
 type DeviceInfo struct {
 	// 机型
@@ -20,4 +24,29 @@ type DeviceInfo struct {
 	ScreenWidth int64 `json:"screen_width,omitempty" xml:"screen_width,omitempty"`
 	// 分辨率高
 	ScreenHeight int64 `json:"screen_height,omitempty" xml:"screen_height,omitempty"`
+}
+
+var poolDeviceInfo = sync.Pool{
+	New: func() any {
+		return new(DeviceInfo)
+	},
+}
+
+// GetDeviceInfo() 从对象池中获取DeviceInfo
+func GetDeviceInfo() *DeviceInfo {
+	return poolDeviceInfo.Get().(*DeviceInfo)
+}
+
+// ReleaseDeviceInfo 释放DeviceInfo
+func ReleaseDeviceInfo(v *DeviceInfo) {
+	v.Model = ""
+	v.OsVersion = ""
+	v.DeviceType = ""
+	v.Vendor = ""
+	v.OsType = ""
+	v.ClientType = ""
+	v.ScreenType = ""
+	v.ScreenWidth = 0
+	v.ScreenHeight = 0
+	poolDeviceInfo.Put(v)
 }

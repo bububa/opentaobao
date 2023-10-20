@@ -1,5 +1,9 @@
 package icbudropshipping
 
+import (
+	"sync"
+)
+
 // OrderPayRequest 结构体
 type OrderPayRequest struct {
 	// Order numbers to be paid，max size is  10
@@ -16,4 +20,27 @@ type OrderPayRequest struct {
 	IsvDropShipperRegistrationTime int64 `json:"isv_drop_shipper_registration_time,omitempty" xml:"isv_drop_shipper_registration_time,omitempty"`
 	// is PC ? true/false, current only support pc
 	IsPc bool `json:"is_pc,omitempty" xml:"is_pc,omitempty"`
+}
+
+var poolOrderPayRequest = sync.Pool{
+	New: func() any {
+		return new(OrderPayRequest)
+	},
+}
+
+// GetOrderPayRequest() 从对象池中获取OrderPayRequest
+func GetOrderPayRequest() *OrderPayRequest {
+	return poolOrderPayRequest.Get().(*OrderPayRequest)
+}
+
+// ReleaseOrderPayRequest 释放OrderPayRequest
+func ReleaseOrderPayRequest(v *OrderPayRequest) {
+	v.OrderIdList = v.OrderIdList[:0]
+	v.AcceptLanguage = ""
+	v.ScreenResolution = ""
+	v.UserAgent = ""
+	v.UserIp = ""
+	v.IsvDropShipperRegistrationTime = 0
+	v.IsPc = false
+	poolOrderPayRequest.Put(v)
 }

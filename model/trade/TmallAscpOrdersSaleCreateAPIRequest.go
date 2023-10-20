@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallAscpOrdersSaleCreateAPIRequest struct {
 // NewTmallAscpOrdersSaleCreateRequest 初始化TmallAscpOrdersSaleCreateAPIRequest对象
 func NewTmallAscpOrdersSaleCreateRequest() *TmallAscpOrdersSaleCreateAPIRequest {
 	return &TmallAscpOrdersSaleCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallAscpOrdersSaleCreateAPIRequest) Reset() {
+	r._channelOrderRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallAscpOrdersSaleCreateAPIRequest) SetChannelOrderRequest(_channelOrd
 // GetChannelOrderRequest ChannelOrderRequest Getter
 func (r TmallAscpOrdersSaleCreateAPIRequest) GetChannelOrderRequest() *CreateChannelOrderRequest {
 	return r._channelOrderRequest
+}
+
+var poolTmallAscpOrdersSaleCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallAscpOrdersSaleCreateRequest()
+	},
+}
+
+// GetTmallAscpOrdersSaleCreateRequest 从 sync.Pool 获取 TmallAscpOrdersSaleCreateAPIRequest
+func GetTmallAscpOrdersSaleCreateAPIRequest() *TmallAscpOrdersSaleCreateAPIRequest {
+	return poolTmallAscpOrdersSaleCreateAPIRequest.Get().(*TmallAscpOrdersSaleCreateAPIRequest)
+}
+
+// ReleaseTmallAscpOrdersSaleCreateAPIRequest 将 TmallAscpOrdersSaleCreateAPIRequest 放入 sync.Pool
+func ReleaseTmallAscpOrdersSaleCreateAPIRequest(v *TmallAscpOrdersSaleCreateAPIRequest) {
+	v.Reset()
+	poolTmallAscpOrdersSaleCreateAPIRequest.Put(v)
 }

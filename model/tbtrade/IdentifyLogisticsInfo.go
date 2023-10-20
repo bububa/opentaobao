@@ -1,5 +1,9 @@
 package tbtrade
 
+import (
+	"sync"
+)
+
 // IdentifyLogisticsInfo 结构体
 type IdentifyLogisticsInfo struct {
 	// 物流公司
@@ -14,4 +18,26 @@ type IdentifyLogisticsInfo struct {
 	StageNo int64 `json:"stage_no,omitempty" xml:"stage_no,omitempty"`
 	// 是否退货
 	Refund bool `json:"refund,omitempty" xml:"refund,omitempty"`
+}
+
+var poolIdentifyLogisticsInfo = sync.Pool{
+	New: func() any {
+		return new(IdentifyLogisticsInfo)
+	},
+}
+
+// GetIdentifyLogisticsInfo() 从对象池中获取IdentifyLogisticsInfo
+func GetIdentifyLogisticsInfo() *IdentifyLogisticsInfo {
+	return poolIdentifyLogisticsInfo.Get().(*IdentifyLogisticsInfo)
+}
+
+// ReleaseIdentifyLogisticsInfo 释放IdentifyLogisticsInfo
+func ReleaseIdentifyLogisticsInfo(v *IdentifyLogisticsInfo) {
+	v.LogisticsCompany = ""
+	v.InvoiceNo = ""
+	v.RefundId = ""
+	v.DetailOrderId = 0
+	v.StageNo = 0
+	v.Refund = false
+	poolIdentifyLogisticsInfo.Put(v)
 }

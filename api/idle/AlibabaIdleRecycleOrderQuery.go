@@ -9,11 +9,6 @@ import (
 // alibaba.idle.recycle.order.query
 //
 // 查询回收订单
-func AlibabaIdleRecycleOrderQuery(clt *core.SDKClient, req *idle.AlibabaIdleRecycleOrderQueryAPIRequest, session string) (*idle.AlibabaIdleRecycleOrderQueryAPIResponse, error) {
-	var resp idle.AlibabaIdleRecycleOrderQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleRecycleOrderQuery(clt *core.SDKClient, req *idle.AlibabaIdleRecycleOrderQueryAPIRequest, resp *idle.AlibabaIdleRecycleOrderQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

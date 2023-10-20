@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // InventoryInfoDetailDto 结构体
 type InventoryInfoDetailDto struct {
 	// subList
@@ -22,4 +26,30 @@ type InventoryInfoDetailDto struct {
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 	// 1前端商品 2供应链货品
 	ItemType int64 `json:"item_type,omitempty" xml:"item_type,omitempty"`
+}
+
+var poolInventoryInfoDetailDto = sync.Pool{
+	New: func() any {
+		return new(InventoryInfoDetailDto)
+	},
+}
+
+// GetInventoryInfoDetailDto() 从对象池中获取InventoryInfoDetailDto
+func GetInventoryInfoDetailDto() *InventoryInfoDetailDto {
+	return poolInventoryInfoDetailDto.Get().(*InventoryInfoDetailDto)
+}
+
+// ReleaseInventoryInfoDetailDto 释放InventoryInfoDetailDto
+func ReleaseInventoryInfoDetailDto(v *InventoryInfoDetailDto) {
+	v.SubList = v.SubList[:0]
+	v.ScItemCode = ""
+	v.StoreCode = ""
+	v.OccupyQuantity = 0
+	v.Quantity = 0
+	v.ReserveQuantity = 0
+	v.ScItemId = 0
+	v.InvStoreType = 0
+	v.SkuId = 0
+	v.ItemType = 0
+	poolInventoryInfoDetailDto.Put(v)
 }

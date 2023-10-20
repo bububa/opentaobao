@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drug.lsyd.saveent
 //
 // 新增往来单位企业记录
-func AlibabaAlihealthDrugLsydSaveent(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugLsydSaveentAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugLsydSaveentAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugLsydSaveentAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugLsydSaveent(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugLsydSaveentAPIRequest, resp *drugtrace.AlibabaAlihealthDrugLsydSaveentAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

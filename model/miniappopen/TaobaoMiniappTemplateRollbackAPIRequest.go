@@ -2,6 +2,7 @@ package miniappopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoMiniappTemplateRollbackAPIRequest struct {
 // NewTaobaoMiniappTemplateRollbackRequest 初始化TaobaoMiniappTemplateRollbackAPIRequest对象
 func NewTaobaoMiniappTemplateRollbackRequest() *TaobaoMiniappTemplateRollbackAPIRequest {
 	return &TaobaoMiniappTemplateRollbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMiniappTemplateRollbackAPIRequest) Reset() {
+	r._clients = r._clients[:0]
+	r._appId = ""
+	r._appVersion = ""
+	r._templateId = ""
+	r._templateVersion = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoMiniappTemplateRollbackAPIRequest) SetTemplateVersion(_templateVe
 // GetTemplateVersion TemplateVersion Getter
 func (r TaobaoMiniappTemplateRollbackAPIRequest) GetTemplateVersion() string {
 	return r._templateVersion
+}
+
+var poolTaobaoMiniappTemplateRollbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMiniappTemplateRollbackRequest()
+	},
+}
+
+// GetTaobaoMiniappTemplateRollbackRequest 从 sync.Pool 获取 TaobaoMiniappTemplateRollbackAPIRequest
+func GetTaobaoMiniappTemplateRollbackAPIRequest() *TaobaoMiniappTemplateRollbackAPIRequest {
+	return poolTaobaoMiniappTemplateRollbackAPIRequest.Get().(*TaobaoMiniappTemplateRollbackAPIRequest)
+}
+
+// ReleaseTaobaoMiniappTemplateRollbackAPIRequest 将 TaobaoMiniappTemplateRollbackAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMiniappTemplateRollbackAPIRequest(v *TaobaoMiniappTemplateRollbackAPIRequest) {
+	v.Reset()
+	poolTaobaoMiniappTemplateRollbackAPIRequest.Put(v)
 }

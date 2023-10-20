@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // AlitripMerchantGalaxyReceiveCouponByActivityResult 结构体
 type AlitripMerchantGalaxyReceiveCouponByActivityResult struct {
 	// 是否成功
@@ -10,4 +14,24 @@ type AlitripMerchantGalaxyReceiveCouponByActivityResult struct {
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 是否参与活动成功
 	Content bool `json:"content,omitempty" xml:"content,omitempty"`
+}
+
+var poolAlitripMerchantGalaxyReceiveCouponByActivityResult = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyReceiveCouponByActivityResult)
+	},
+}
+
+// GetAlitripMerchantGalaxyReceiveCouponByActivityResult() 从对象池中获取AlitripMerchantGalaxyReceiveCouponByActivityResult
+func GetAlitripMerchantGalaxyReceiveCouponByActivityResult() *AlitripMerchantGalaxyReceiveCouponByActivityResult {
+	return poolAlitripMerchantGalaxyReceiveCouponByActivityResult.Get().(*AlitripMerchantGalaxyReceiveCouponByActivityResult)
+}
+
+// ReleaseAlitripMerchantGalaxyReceiveCouponByActivityResult 释放AlitripMerchantGalaxyReceiveCouponByActivityResult
+func ReleaseAlitripMerchantGalaxyReceiveCouponByActivityResult(v *AlitripMerchantGalaxyReceiveCouponByActivityResult) {
+	v.Success = ""
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Content = false
+	poolAlitripMerchantGalaxyReceiveCouponByActivityResult.Put(v)
 }

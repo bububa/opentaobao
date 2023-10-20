@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ItemBuyGiftSku 结构体
 type ItemBuyGiftSku struct {
 	// 商品的skuCode
@@ -16,4 +20,27 @@ type ItemBuyGiftSku struct {
 	LimitInfo *LimitInfo `json:"limit_info,omitempty" xml:"limit_info,omitempty"`
 	// 买赠门槛数量
 	BuyNum int64 `json:"buy_num,omitempty" xml:"buy_num,omitempty"`
+}
+
+var poolItemBuyGiftSku = sync.Pool{
+	New: func() any {
+		return new(ItemBuyGiftSku)
+	},
+}
+
+// GetItemBuyGiftSku() 从对象池中获取ItemBuyGiftSku
+func GetItemBuyGiftSku() *ItemBuyGiftSku {
+	return poolItemBuyGiftSku.Get().(*ItemBuyGiftSku)
+}
+
+// ReleaseItemBuyGiftSku 释放ItemBuyGiftSku
+func ReleaseItemBuyGiftSku(v *ItemBuyGiftSku) {
+	v.SkuCode = ""
+	v.GiftSkuCode = ""
+	v.ItemShopRelation = ""
+	v.SkuName = ""
+	v.GiftSkuName = ""
+	v.LimitInfo = nil
+	v.BuyNum = 0
+	poolItemBuyGiftSku.Put(v)
 }

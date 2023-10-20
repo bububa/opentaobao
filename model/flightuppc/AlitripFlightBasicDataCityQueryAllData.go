@@ -1,5 +1,9 @@
 package flightuppc
 
+import (
+	"sync"
+)
+
 // AlitripFlightBasicDataCityQueryAllData 结构体
 type AlitripFlightBasicDataCityQueryAllData struct {
 	// 航空大区
@@ -44,4 +48,41 @@ type AlitripFlightBasicDataCityQueryAllData struct {
 	SearchHeat int64 `json:"search_heat,omitempty" xml:"search_heat,omitempty"`
 	// 城市通航状态
 	NavigableStatus int64 `json:"navigable_status,omitempty" xml:"navigable_status,omitempty"`
+}
+
+var poolAlitripFlightBasicDataCityQueryAllData = sync.Pool{
+	New: func() any {
+		return new(AlitripFlightBasicDataCityQueryAllData)
+	},
+}
+
+// GetAlitripFlightBasicDataCityQueryAllData() 从对象池中获取AlitripFlightBasicDataCityQueryAllData
+func GetAlitripFlightBasicDataCityQueryAllData() *AlitripFlightBasicDataCityQueryAllData {
+	return poolAlitripFlightBasicDataCityQueryAllData.Get().(*AlitripFlightBasicDataCityQueryAllData)
+}
+
+// ReleaseAlitripFlightBasicDataCityQueryAllData 释放AlitripFlightBasicDataCityQueryAllData
+func ReleaseAlitripFlightBasicDataCityQueryAllData(v *AlitripFlightBasicDataCityQueryAllData) {
+	v.AirZone = ""
+	v.CountryName = ""
+	v.CityJp = ""
+	v.TimeZoneSummerPeriod = ""
+	v.TimeZoneSummer = ""
+	v.TimeZoneStandard = ""
+	v.Continent = ""
+	v.ProvinceName = ""
+	v.CountryCode = ""
+	v.ProvinceCode = ""
+	v.CityCapital = ""
+	v.EnglishName = ""
+	v.CityPy = ""
+	v.CityName = ""
+	v.CityCode = ""
+	v.IataCode = ""
+	v.SecdZone = ""
+	v.OagSummerPeriod = ""
+	v.MiniIataCode = ""
+	v.SearchHeat = 0
+	v.NavigableStatus = 0
+	poolAlitripFlightBasicDataCityQueryAllData.Put(v)
 }

@@ -2,6 +2,7 @@ package happytrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaHappytripTaxiProviderAccountBalanceAPIRequest struct {
 // NewAlibabaHappytripTaxiProviderAccountBalanceRequest 初始化AlibabaHappytripTaxiProviderAccountBalanceAPIRequest对象
 func NewAlibabaHappytripTaxiProviderAccountBalanceRequest() *AlibabaHappytripTaxiProviderAccountBalanceAPIRequest {
 	return &AlibabaHappytripTaxiProviderAccountBalanceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHappytripTaxiProviderAccountBalanceAPIRequest) Reset() {
+	r._costCenter = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaHappytripTaxiProviderAccountBalanceAPIRequest) SetCostCenter(_co
 // GetCostCenter CostCenter Getter
 func (r AlibabaHappytripTaxiProviderAccountBalanceAPIRequest) GetCostCenter() string {
 	return r._costCenter
+}
+
+var poolAlibabaHappytripTaxiProviderAccountBalanceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHappytripTaxiProviderAccountBalanceRequest()
+	},
+}
+
+// GetAlibabaHappytripTaxiProviderAccountBalanceRequest 从 sync.Pool 获取 AlibabaHappytripTaxiProviderAccountBalanceAPIRequest
+func GetAlibabaHappytripTaxiProviderAccountBalanceAPIRequest() *AlibabaHappytripTaxiProviderAccountBalanceAPIRequest {
+	return poolAlibabaHappytripTaxiProviderAccountBalanceAPIRequest.Get().(*AlibabaHappytripTaxiProviderAccountBalanceAPIRequest)
+}
+
+// ReleaseAlibabaHappytripTaxiProviderAccountBalanceAPIRequest 将 AlibabaHappytripTaxiProviderAccountBalanceAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHappytripTaxiProviderAccountBalanceAPIRequest(v *AlibabaHappytripTaxiProviderAccountBalanceAPIRequest) {
+	v.Reset()
+	poolAlibabaHappytripTaxiProviderAccountBalanceAPIRequest.Put(v)
 }

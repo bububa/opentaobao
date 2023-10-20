@@ -1,5 +1,9 @@
 package tmallcar
 
+import (
+	"sync"
+)
+
 // AreaDto 结构体
 type AreaDto struct {
 	// 公司详细地址
@@ -16,4 +20,27 @@ type AreaDto struct {
 	DivisionId int64 `json:"division_id,omitempty" xml:"division_id,omitempty"`
 	// 状态:1正常,2删除
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolAreaDto = sync.Pool{
+	New: func() any {
+		return new(AreaDto)
+	},
+}
+
+// GetAreaDto() 从对象池中获取AreaDto
+func GetAreaDto() *AreaDto {
+	return poolAreaDto.Get().(*AreaDto)
+}
+
+// ReleaseAreaDto 释放AreaDto
+func ReleaseAreaDto(v *AreaDto) {
+	v.CompanyAdress = ""
+	v.CompanyEmail = ""
+	v.CompanyName = ""
+	v.CompanyPhone = ""
+	v.DivisionName = ""
+	v.DivisionId = 0
+	v.Status = 0
+	poolAreaDto.Put(v)
 }

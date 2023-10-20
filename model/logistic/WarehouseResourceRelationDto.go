@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // WarehouseResourceRelationDto 结构体
 type WarehouseResourceRelationDto struct {
 	// from资源外部编码
@@ -28,4 +32,33 @@ type WarehouseResourceRelationDto struct {
 	ToResourceName string `json:"to_resource_name,omitempty" xml:"to_resource_name,omitempty"`
 	// to资源类型
 	ToResourceType string `json:"to_resource_type,omitempty" xml:"to_resource_type,omitempty"`
+}
+
+var poolWarehouseResourceRelationDto = sync.Pool{
+	New: func() any {
+		return new(WarehouseResourceRelationDto)
+	},
+}
+
+// GetWarehouseResourceRelationDto() 从对象池中获取WarehouseResourceRelationDto
+func GetWarehouseResourceRelationDto() *WarehouseResourceRelationDto {
+	return poolWarehouseResourceRelationDto.Get().(*WarehouseResourceRelationDto)
+}
+
+// ReleaseWarehouseResourceRelationDto 释放WarehouseResourceRelationDto
+func ReleaseWarehouseResourceRelationDto(v *WarehouseResourceRelationDto) {
+	v.FromOrgResourceCode = ""
+	v.FromOrgSource = ""
+	v.FromResourceCode = ""
+	v.FromResourceName = ""
+	v.FromResourceType = ""
+	v.MerchantCode = ""
+	v.NetworkCode = ""
+	v.RelationType = ""
+	v.ToOrgResourceCode = ""
+	v.ToOrgSource = ""
+	v.ToResourceCode = ""
+	v.ToResourceName = ""
+	v.ToResourceType = ""
+	poolWarehouseResourceRelationDto.Put(v)
 }

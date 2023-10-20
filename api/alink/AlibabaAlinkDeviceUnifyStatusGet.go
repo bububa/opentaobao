@@ -9,11 +9,6 @@ import (
 // alibaba.alink.device.unify.status.get
 //
 // 查询设备最新标准属性状态
-func AlibabaAlinkDeviceUnifyStatusGet(clt *core.SDKClient, req *alink.AlibabaAlinkDeviceUnifyStatusGetAPIRequest, session string) (*alink.AlibabaAlinkDeviceUnifyStatusGetAPIResponse, error) {
-	var resp alink.AlibabaAlinkDeviceUnifyStatusGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlinkDeviceUnifyStatusGet(clt *core.SDKClient, req *alink.AlibabaAlinkDeviceUnifyStatusGetAPIRequest, resp *alink.AlibabaAlinkDeviceUnifyStatusGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

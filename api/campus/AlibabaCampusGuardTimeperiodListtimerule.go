@@ -9,11 +9,6 @@ import (
 // alibaba.campus.guard.timeperiod.listtimerule
 //
 // 门禁控制器查询时间规则
-func AlibabaCampusGuardTimeperiodListtimerule(clt *core.SDKClient, req *campus.AlibabaCampusGuardTimeperiodListtimeruleAPIRequest, session string) (*campus.AlibabaCampusGuardTimeperiodListtimeruleAPIResponse, error) {
-	var resp campus.AlibabaCampusGuardTimeperiodListtimeruleAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusGuardTimeperiodListtimerule(clt *core.SDKClient, req *campus.AlibabaCampusGuardTimeperiodListtimeruleAPIRequest, resp *campus.AlibabaCampusGuardTimeperiodListtimeruleAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package itpolicy
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -41,23 +42,23 @@ type TaobaoAlitripItFareAddowAPIRequest struct {
 	// 排除航班号限制，同一航段之间用，隔开表示或的关系；不同航段之间用/隔开。                       1 CA001-999,CA3000-3999  表示CA001至999以及3000至3999之间航班号的航班 2 MU  表示所有MU开头的自营航班  3 CA(LH\AZ) 表示CA开头的实际承运人为LH或AZ的航班 4 CA(*)   表示CA代码共享航班/CA开头的实际承运人为其他航空公司的航班 5 CA(CA)   表示CA自营航班/CA实际承运航班； 6 CA(OZ)001-999 表示CA开头航班号为001-999之间且实际承运人为OZ的航班； 7 为空表示无限制；8比如两段，第一段无限制，第二段有限制 /CA123
 	_excludeFlightNo string
 	// 去程旅行有效期，支持多段组合，用“,”隔开， 1.不得为空 2例：2014-04-01~2014-06-30，2014-09-01 ~2014-09-30， 3日期格式为 YYYY-MM-DD或YYYY/MM/DD，例：2014-04-01或2014/04/01
-	_validDate4dep string
+	_validDate4Dep string
 	// 去程旅行排除时间段，支持多段组合，用“,”隔开隔开， 1.格式，例：2014-04-01~2014-12-31；或例：2014-04-01~2014-06-30,2014-09-01~2014-09-30， 3日期格式为 YYYY-MM-DD,YYYY/MM/DD 4、旅行排除日期最多只能输入200个字符
-	_excludeDateRange4dep string
+	_excludeDateRange4Dep string
 	// 去程旅行日期作用点，始发航段/第一国际段/主航段/全部；默认空为 第一国际段
-	_tripDatePoint4dep string
+	_tripDatePoint4Dep string
 	// 去程旅行排除日期作用点，始发航段/第一国际段/主航段/全部；默认空为 第一国际段
-	_tripExcludeDatePoint4dep string
+	_tripExcludeDatePoint4Dep string
 	// 去程班期限制，1.12表示周一周二                                                                                              2.12:00-14:00表示每天的12点到14点                                                                                  3. 12:00FRI-12:00SAT 表示周五的中午12点至周六的中午12点
-	_flightDateRestrict4dep string
+	_flightDateRestrict4Dep string
 	// 去程班期作用点，始发航段/第一国际段/主航段/全部；默认空为 第一国际段
-	_flightDatePoint4dep string
+	_flightDatePoint4Dep string
 	// 销售日期，1、不得为空 2.输入格式为：2014-04-01~2014-06-30 3.不支持多段组合， 4.3日期格式为 YYYY-MM-DD或YYYY/MM/DD，例：2014-04-01或20104/04/01
 	_saleDate string
 	// 成人旅客身份，1.不得为空 2.普通/学生  3.当输入学生时，儿童价格项输入无效 4.当为小团产品时，此适用身份类别必须为 普通。5、后期支持劳工、移民、海员、老人、青年
 	_adultPassengerIdentity string
 	// 小团儿童计数规则，可选值：1个儿童计1个成人、2个儿童计1个成人、儿童不计
-	_gv2childRule string
+	_gv2ChildRule string
 	// 国籍，可录入多个用","隔开表示或的关系 1、可录入国家二字代码，为空表示不限制，最多录20个 *默认为空，不输入为不限制
 	_nationality string
 	// 除外国籍，可录入多个用","隔开表示或的关系 1、可录入国家二字代码，为空表示不限制，最多录20个 *默认为空，不输入为不限制
@@ -83,23 +84,23 @@ type TaobaoAlitripItFareAddowAPIRequest struct {
 	// 是否校验票面价,1、可填写 是或者否；默认为否
 	_isValidatPrice string
 	// （已废除字段）,去程全部未使用可否退票，录入是或否
-	_isCanRefund4dep string
+	_isCanRefund4Dep string
 	// （已废除字段）,去程全部未使用退票费用,可输入格式如：200-72-300-48-1000-0-*，表示72小时前退票手续费200；48小时到72小时，退票手续费300；飞机起飞不足48小时退票手续费1000；飞机起飞后不予退票（输入*）；
-	_refundPrice4dep string
+	_refundPrice4Dep string
 	// （已废除字段）,去程部分未使用退票费用,可输入空，*或正整数，其中空表示按照航空公司规定执行，*表示不支持部分退票
-	_refundPartPrice4dep string
+	_refundPartPrice4Dep string
 	// （已废除字段）,去程全部未使用可否改期，录入是或否
-	_isCanReissue4dep string
+	_isCanReissue4Dep string
 	// （已废除字段）,去程全部未使用改期费用，可输入格式如：200-72-300-48-1000-0-*，表示72小时前改期手续费200；48小时到72小时，改期手续费300；飞机起飞不足48小时改期手续费1000；飞机起飞后不予改期（输入*）；
-	_reissuePrice4dep string
+	_reissuePrice4Dep string
 	// （已废除字段）,去程部分未使用改期费用,可输入空，*或正整数，其中空表示按照航空公司规定执行，*表示不支持部分改期
-	_reissuePartPrice4dep string
+	_reissuePartPrice4Dep string
 	// （已废除字段）,去程NOSHOW能否退票，输入是或否；默认为否
-	_isNoShowCanRefund4dep string
+	_isNoShowCanRefund4Dep string
 	// （已废除字段）,去程NOSHOW能否改期，输入是或否；默认为否
-	_isNoShowCanReissue4dep string
+	_isNoShowCanReissue4Dep string
 	// （后期字段，预留）,去程行李额规定,可输入1-23,1-23 中间用","隔开，表示第一程和第二程（中转）支持行李额为1PC，23KG。若某段为空表示该段按照航空公司规定执行，逗号不可缺少；若不提供免费行李额直接输入空
-	_luggageRule4dep string
+	_luggageRule4Dep string
 	// 备注,出票备注文本
 	_remark string
 	// 工作时间,18:00FRI表示周一到周五的每天早上9点到下午6点                                                     最多录入三个时间段用，隔开表示或的关系                                                                               可以为空，表示不限制(运价上的工作时间优先级高于设置时间界面上的时间)
@@ -181,16 +182,107 @@ type TaobaoAlitripItFareAddowAPIRequest struct {
 	// 最晚出票时限,默认为空，代表无限制； 输入为小于等于365的正整数。 大于或等于提前出票时限。 单位为天
 	_lateTicketingTimeLimit int64
 	// （已废除字段）,去程NOSHOW规定时限，输入正整数
-	_noShowTimeLimit4dep int64
+	_noShowTimeLimit4Dep int64
 	// （已废除字段）,去程NOSHOW罚金，可为空，若输入则为正整数；其中空表示按航空公司规定执行
-	_noShowPenalty4dep int64
+	_noShowPenalty4Dep int64
 }
 
 // NewTaobaoAlitripItFareAddowRequest 初始化TaobaoAlitripItFareAddowAPIRequest对象
 func NewTaobaoAlitripItFareAddowRequest() *TaobaoAlitripItFareAddowAPIRequest {
 	return &TaobaoAlitripItFareAddowAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(86),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripItFareAddowAPIRequest) Reset() {
+	r._outFileCode = ""
+	r._fileCode = ""
+	r._productType = ""
+	r._stockMode = ""
+	r._ticketingAirline = ""
+	r._saleAirline = ""
+	r._addressOption = ""
+	r._tripType = ""
+	r._originLand = ""
+	r._destination = ""
+	r._transitLand = ""
+	r._cabin = ""
+	r._restrictFlightNo = ""
+	r._excludeFlightNo = ""
+	r._validDate4Dep = ""
+	r._excludeDateRange4Dep = ""
+	r._tripDatePoint4Dep = ""
+	r._tripExcludeDatePoint4Dep = ""
+	r._flightDateRestrict4Dep = ""
+	r._flightDatePoint4Dep = ""
+	r._saleDate = ""
+	r._adultPassengerIdentity = ""
+	r._gv2ChildRule = ""
+	r._nationality = ""
+	r._excludeNationality = ""
+	r._passengerAge = ""
+	r._adultTax = ""
+	r._childPrice = ""
+	r._childTax = ""
+	r._vipCode = ""
+	r._fareSource = ""
+	r._isCreatePnr = ""
+	r._bookingOffice = ""
+	r._receipts = ""
+	r._isValidatPrice = ""
+	r._isCanRefund4Dep = ""
+	r._refundPrice4Dep = ""
+	r._refundPartPrice4Dep = ""
+	r._isCanReissue4Dep = ""
+	r._reissuePrice4Dep = ""
+	r._reissuePartPrice4Dep = ""
+	r._isNoShowCanRefund4Dep = ""
+	r._isNoShowCanReissue4Dep = ""
+	r._luggageRule4Dep = ""
+	r._remark = ""
+	r._workingHours = ""
+	r._refundRule = ""
+	r._reissueRule = ""
+	r._noshowRule = ""
+	r._luggageRule = ""
+	r._applyChannel = ""
+	r._commodityType = ""
+	r._codeSharingType = ""
+	r._extendAttributes = ""
+	r._buyTicketNotice = ""
+	r._isCanAllRefund = ""
+	r._refundFeeAllUnused = ""
+	r._refundCurrencyAllUnused = ""
+	r._refundFeeTypeAllUnused = ""
+	r._isCanPartRefund = ""
+	r._refundFeePartUnused = ""
+	r._refundCurrencyPartUnused = ""
+	r._refundFeeTypePartUnused = ""
+	r._canDepChange = ""
+	r._depChangeFee = ""
+	r._depChangeCurrency = ""
+	r._depChangeFeeType = ""
+	r._noshowRestrict = ""
+	r._noshowTimeRestrict = ""
+	r._noshowTimeRestrictUnit = ""
+	r._noshowRuleType = ""
+	r._noshowFee = ""
+	r._noshowCurrency = ""
+	r._farebasis = ""
+	r._fareTypeCode = ""
+	r._tariff = ""
+	r._ruleId = ""
+	r._minTravelPerson = 0
+	r._maxTravelPerson = 0
+	r._ticketPrice = 0
+	r._returnPoint = 0
+	r._adjustMoney = 0
+	r._earlyTicketingTimeLimit = 0
+	r._lateTicketingTimeLimit = 0
+	r._noShowTimeLimit4Dep = 0
+	r._noShowPenalty4Dep = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -392,82 +484,82 @@ func (r TaobaoAlitripItFareAddowAPIRequest) GetExcludeFlightNo() string {
 	return r._excludeFlightNo
 }
 
-// SetValidDate4dep is ValidDate4dep Setter
+// SetValidDate4Dep is ValidDate4Dep Setter
 // 去程旅行有效期，支持多段组合，用“,”隔开， 1.不得为空 2例：2014-04-01~2014-06-30，2014-09-01 ~2014-09-30， 3日期格式为 YYYY-MM-DD或YYYY/MM/DD，例：2014-04-01或2014/04/01
-func (r *TaobaoAlitripItFareAddowAPIRequest) SetValidDate4dep(_validDate4dep string) error {
-	r._validDate4dep = _validDate4dep
-	r.Set("validDate4Dep", _validDate4dep)
+func (r *TaobaoAlitripItFareAddowAPIRequest) SetValidDate4Dep(_validDate4Dep string) error {
+	r._validDate4Dep = _validDate4Dep
+	r.Set("validDate4Dep", _validDate4Dep)
 	return nil
 }
 
-// GetValidDate4dep ValidDate4dep Getter
-func (r TaobaoAlitripItFareAddowAPIRequest) GetValidDate4dep() string {
-	return r._validDate4dep
+// GetValidDate4Dep ValidDate4Dep Getter
+func (r TaobaoAlitripItFareAddowAPIRequest) GetValidDate4Dep() string {
+	return r._validDate4Dep
 }
 
-// SetExcludeDateRange4dep is ExcludeDateRange4dep Setter
+// SetExcludeDateRange4Dep is ExcludeDateRange4Dep Setter
 // 去程旅行排除时间段，支持多段组合，用“,”隔开隔开， 1.格式，例：2014-04-01~2014-12-31；或例：2014-04-01~2014-06-30,2014-09-01~2014-09-30， 3日期格式为 YYYY-MM-DD,YYYY/MM/DD 4、旅行排除日期最多只能输入200个字符
-func (r *TaobaoAlitripItFareAddowAPIRequest) SetExcludeDateRange4dep(_excludeDateRange4dep string) error {
-	r._excludeDateRange4dep = _excludeDateRange4dep
-	r.Set("excludeDateRange4Dep", _excludeDateRange4dep)
+func (r *TaobaoAlitripItFareAddowAPIRequest) SetExcludeDateRange4Dep(_excludeDateRange4Dep string) error {
+	r._excludeDateRange4Dep = _excludeDateRange4Dep
+	r.Set("excludeDateRange4Dep", _excludeDateRange4Dep)
 	return nil
 }
 
-// GetExcludeDateRange4dep ExcludeDateRange4dep Getter
-func (r TaobaoAlitripItFareAddowAPIRequest) GetExcludeDateRange4dep() string {
-	return r._excludeDateRange4dep
+// GetExcludeDateRange4Dep ExcludeDateRange4Dep Getter
+func (r TaobaoAlitripItFareAddowAPIRequest) GetExcludeDateRange4Dep() string {
+	return r._excludeDateRange4Dep
 }
 
-// SetTripDatePoint4dep is TripDatePoint4dep Setter
+// SetTripDatePoint4Dep is TripDatePoint4Dep Setter
 // 去程旅行日期作用点，始发航段/第一国际段/主航段/全部；默认空为 第一国际段
-func (r *TaobaoAlitripItFareAddowAPIRequest) SetTripDatePoint4dep(_tripDatePoint4dep string) error {
-	r._tripDatePoint4dep = _tripDatePoint4dep
-	r.Set("tripDatePoint4Dep", _tripDatePoint4dep)
+func (r *TaobaoAlitripItFareAddowAPIRequest) SetTripDatePoint4Dep(_tripDatePoint4Dep string) error {
+	r._tripDatePoint4Dep = _tripDatePoint4Dep
+	r.Set("tripDatePoint4Dep", _tripDatePoint4Dep)
 	return nil
 }
 
-// GetTripDatePoint4dep TripDatePoint4dep Getter
-func (r TaobaoAlitripItFareAddowAPIRequest) GetTripDatePoint4dep() string {
-	return r._tripDatePoint4dep
+// GetTripDatePoint4Dep TripDatePoint4Dep Getter
+func (r TaobaoAlitripItFareAddowAPIRequest) GetTripDatePoint4Dep() string {
+	return r._tripDatePoint4Dep
 }
 
-// SetTripExcludeDatePoint4dep is TripExcludeDatePoint4dep Setter
+// SetTripExcludeDatePoint4Dep is TripExcludeDatePoint4Dep Setter
 // 去程旅行排除日期作用点，始发航段/第一国际段/主航段/全部；默认空为 第一国际段
-func (r *TaobaoAlitripItFareAddowAPIRequest) SetTripExcludeDatePoint4dep(_tripExcludeDatePoint4dep string) error {
-	r._tripExcludeDatePoint4dep = _tripExcludeDatePoint4dep
-	r.Set("tripExcludeDatePoint4Dep", _tripExcludeDatePoint4dep)
+func (r *TaobaoAlitripItFareAddowAPIRequest) SetTripExcludeDatePoint4Dep(_tripExcludeDatePoint4Dep string) error {
+	r._tripExcludeDatePoint4Dep = _tripExcludeDatePoint4Dep
+	r.Set("tripExcludeDatePoint4Dep", _tripExcludeDatePoint4Dep)
 	return nil
 }
 
-// GetTripExcludeDatePoint4dep TripExcludeDatePoint4dep Getter
-func (r TaobaoAlitripItFareAddowAPIRequest) GetTripExcludeDatePoint4dep() string {
-	return r._tripExcludeDatePoint4dep
+// GetTripExcludeDatePoint4Dep TripExcludeDatePoint4Dep Getter
+func (r TaobaoAlitripItFareAddowAPIRequest) GetTripExcludeDatePoint4Dep() string {
+	return r._tripExcludeDatePoint4Dep
 }
 
-// SetFlightDateRestrict4dep is FlightDateRestrict4dep Setter
+// SetFlightDateRestrict4Dep is FlightDateRestrict4Dep Setter
 // 去程班期限制，1.12表示周一周二                                                                                              2.12:00-14:00表示每天的12点到14点                                                                                  3. 12:00FRI-12:00SAT 表示周五的中午12点至周六的中午12点
-func (r *TaobaoAlitripItFareAddowAPIRequest) SetFlightDateRestrict4dep(_flightDateRestrict4dep string) error {
-	r._flightDateRestrict4dep = _flightDateRestrict4dep
-	r.Set("flightDateRestrict4Dep", _flightDateRestrict4dep)
+func (r *TaobaoAlitripItFareAddowAPIRequest) SetFlightDateRestrict4Dep(_flightDateRestrict4Dep string) error {
+	r._flightDateRestrict4Dep = _flightDateRestrict4Dep
+	r.Set("flightDateRestrict4Dep", _flightDateRestrict4Dep)
 	return nil
 }
 
-// GetFlightDateRestrict4dep FlightDateRestrict4dep Getter
-func (r TaobaoAlitripItFareAddowAPIRequest) GetFlightDateRestrict4dep() string {
-	return r._flightDateRestrict4dep
+// GetFlightDateRestrict4Dep FlightDateRestrict4Dep Getter
+func (r TaobaoAlitripItFareAddowAPIRequest) GetFlightDateRestrict4Dep() string {
+	return r._flightDateRestrict4Dep
 }
 
-// SetFlightDatePoint4dep is FlightDatePoint4dep Setter
+// SetFlightDatePoint4Dep is FlightDatePoint4Dep Setter
 // 去程班期作用点，始发航段/第一国际段/主航段/全部；默认空为 第一国际段
-func (r *TaobaoAlitripItFareAddowAPIRequest) SetFlightDatePoint4dep(_flightDatePoint4dep string) error {
-	r._flightDatePoint4dep = _flightDatePoint4dep
-	r.Set("flightDatePoint4Dep", _flightDatePoint4dep)
+func (r *TaobaoAlitripItFareAddowAPIRequest) SetFlightDatePoint4Dep(_flightDatePoint4Dep string) error {
+	r._flightDatePoint4Dep = _flightDatePoint4Dep
+	r.Set("flightDatePoint4Dep", _flightDatePoint4Dep)
 	return nil
 }
 
-// GetFlightDatePoint4dep FlightDatePoint4dep Getter
-func (r TaobaoAlitripItFareAddowAPIRequest) GetFlightDatePoint4dep() string {
-	return r._flightDatePoint4dep
+// GetFlightDatePoint4Dep FlightDatePoint4Dep Getter
+func (r TaobaoAlitripItFareAddowAPIRequest) GetFlightDatePoint4Dep() string {
+	return r._flightDatePoint4Dep
 }
 
 // SetSaleDate is SaleDate Setter
@@ -496,17 +588,17 @@ func (r TaobaoAlitripItFareAddowAPIRequest) GetAdultPassengerIdentity() string {
 	return r._adultPassengerIdentity
 }
 
-// SetGv2childRule is Gv2childRule Setter
+// SetGv2ChildRule is Gv2ChildRule Setter
 // 小团儿童计数规则，可选值：1个儿童计1个成人、2个儿童计1个成人、儿童不计
-func (r *TaobaoAlitripItFareAddowAPIRequest) SetGv2childRule(_gv2childRule string) error {
-	r._gv2childRule = _gv2childRule
-	r.Set("gv2ChildRule", _gv2childRule)
+func (r *TaobaoAlitripItFareAddowAPIRequest) SetGv2ChildRule(_gv2ChildRule string) error {
+	r._gv2ChildRule = _gv2ChildRule
+	r.Set("gv2ChildRule", _gv2ChildRule)
 	return nil
 }
 
-// GetGv2childRule Gv2childRule Getter
-func (r TaobaoAlitripItFareAddowAPIRequest) GetGv2childRule() string {
-	return r._gv2childRule
+// GetGv2ChildRule Gv2ChildRule Getter
+func (r TaobaoAlitripItFareAddowAPIRequest) GetGv2ChildRule() string {
+	return r._gv2ChildRule
 }
 
 // SetNationality is Nationality Setter
@@ -665,121 +757,121 @@ func (r TaobaoAlitripItFareAddowAPIRequest) GetIsValidatPrice() string {
 	return r._isValidatPrice
 }
 
-// SetIsCanRefund4dep is IsCanRefund4dep Setter
+// SetIsCanRefund4Dep is IsCanRefund4Dep Setter
 // （已废除字段）,去程全部未使用可否退票，录入是或否
-func (r *TaobaoAlitripItFareAddowAPIRequest) SetIsCanRefund4dep(_isCanRefund4dep string) error {
-	r._isCanRefund4dep = _isCanRefund4dep
-	r.Set("isCanRefund4Dep", _isCanRefund4dep)
+func (r *TaobaoAlitripItFareAddowAPIRequest) SetIsCanRefund4Dep(_isCanRefund4Dep string) error {
+	r._isCanRefund4Dep = _isCanRefund4Dep
+	r.Set("isCanRefund4Dep", _isCanRefund4Dep)
 	return nil
 }
 
-// GetIsCanRefund4dep IsCanRefund4dep Getter
-func (r TaobaoAlitripItFareAddowAPIRequest) GetIsCanRefund4dep() string {
-	return r._isCanRefund4dep
+// GetIsCanRefund4Dep IsCanRefund4Dep Getter
+func (r TaobaoAlitripItFareAddowAPIRequest) GetIsCanRefund4Dep() string {
+	return r._isCanRefund4Dep
 }
 
-// SetRefundPrice4dep is RefundPrice4dep Setter
+// SetRefundPrice4Dep is RefundPrice4Dep Setter
 // （已废除字段）,去程全部未使用退票费用,可输入格式如：200-72-300-48-1000-0-*，表示72小时前退票手续费200；48小时到72小时，退票手续费300；飞机起飞不足48小时退票手续费1000；飞机起飞后不予退票（输入*）；
-func (r *TaobaoAlitripItFareAddowAPIRequest) SetRefundPrice4dep(_refundPrice4dep string) error {
-	r._refundPrice4dep = _refundPrice4dep
-	r.Set("refundPrice4Dep", _refundPrice4dep)
+func (r *TaobaoAlitripItFareAddowAPIRequest) SetRefundPrice4Dep(_refundPrice4Dep string) error {
+	r._refundPrice4Dep = _refundPrice4Dep
+	r.Set("refundPrice4Dep", _refundPrice4Dep)
 	return nil
 }
 
-// GetRefundPrice4dep RefundPrice4dep Getter
-func (r TaobaoAlitripItFareAddowAPIRequest) GetRefundPrice4dep() string {
-	return r._refundPrice4dep
+// GetRefundPrice4Dep RefundPrice4Dep Getter
+func (r TaobaoAlitripItFareAddowAPIRequest) GetRefundPrice4Dep() string {
+	return r._refundPrice4Dep
 }
 
-// SetRefundPartPrice4dep is RefundPartPrice4dep Setter
+// SetRefundPartPrice4Dep is RefundPartPrice4Dep Setter
 // （已废除字段）,去程部分未使用退票费用,可输入空，*或正整数，其中空表示按照航空公司规定执行，*表示不支持部分退票
-func (r *TaobaoAlitripItFareAddowAPIRequest) SetRefundPartPrice4dep(_refundPartPrice4dep string) error {
-	r._refundPartPrice4dep = _refundPartPrice4dep
-	r.Set("refundPartPrice4Dep", _refundPartPrice4dep)
+func (r *TaobaoAlitripItFareAddowAPIRequest) SetRefundPartPrice4Dep(_refundPartPrice4Dep string) error {
+	r._refundPartPrice4Dep = _refundPartPrice4Dep
+	r.Set("refundPartPrice4Dep", _refundPartPrice4Dep)
 	return nil
 }
 
-// GetRefundPartPrice4dep RefundPartPrice4dep Getter
-func (r TaobaoAlitripItFareAddowAPIRequest) GetRefundPartPrice4dep() string {
-	return r._refundPartPrice4dep
+// GetRefundPartPrice4Dep RefundPartPrice4Dep Getter
+func (r TaobaoAlitripItFareAddowAPIRequest) GetRefundPartPrice4Dep() string {
+	return r._refundPartPrice4Dep
 }
 
-// SetIsCanReissue4dep is IsCanReissue4dep Setter
+// SetIsCanReissue4Dep is IsCanReissue4Dep Setter
 // （已废除字段）,去程全部未使用可否改期，录入是或否
-func (r *TaobaoAlitripItFareAddowAPIRequest) SetIsCanReissue4dep(_isCanReissue4dep string) error {
-	r._isCanReissue4dep = _isCanReissue4dep
-	r.Set("isCanReissue4Dep", _isCanReissue4dep)
+func (r *TaobaoAlitripItFareAddowAPIRequest) SetIsCanReissue4Dep(_isCanReissue4Dep string) error {
+	r._isCanReissue4Dep = _isCanReissue4Dep
+	r.Set("isCanReissue4Dep", _isCanReissue4Dep)
 	return nil
 }
 
-// GetIsCanReissue4dep IsCanReissue4dep Getter
-func (r TaobaoAlitripItFareAddowAPIRequest) GetIsCanReissue4dep() string {
-	return r._isCanReissue4dep
+// GetIsCanReissue4Dep IsCanReissue4Dep Getter
+func (r TaobaoAlitripItFareAddowAPIRequest) GetIsCanReissue4Dep() string {
+	return r._isCanReissue4Dep
 }
 
-// SetReissuePrice4dep is ReissuePrice4dep Setter
+// SetReissuePrice4Dep is ReissuePrice4Dep Setter
 // （已废除字段）,去程全部未使用改期费用，可输入格式如：200-72-300-48-1000-0-*，表示72小时前改期手续费200；48小时到72小时，改期手续费300；飞机起飞不足48小时改期手续费1000；飞机起飞后不予改期（输入*）；
-func (r *TaobaoAlitripItFareAddowAPIRequest) SetReissuePrice4dep(_reissuePrice4dep string) error {
-	r._reissuePrice4dep = _reissuePrice4dep
-	r.Set("reissuePrice4Dep", _reissuePrice4dep)
+func (r *TaobaoAlitripItFareAddowAPIRequest) SetReissuePrice4Dep(_reissuePrice4Dep string) error {
+	r._reissuePrice4Dep = _reissuePrice4Dep
+	r.Set("reissuePrice4Dep", _reissuePrice4Dep)
 	return nil
 }
 
-// GetReissuePrice4dep ReissuePrice4dep Getter
-func (r TaobaoAlitripItFareAddowAPIRequest) GetReissuePrice4dep() string {
-	return r._reissuePrice4dep
+// GetReissuePrice4Dep ReissuePrice4Dep Getter
+func (r TaobaoAlitripItFareAddowAPIRequest) GetReissuePrice4Dep() string {
+	return r._reissuePrice4Dep
 }
 
-// SetReissuePartPrice4dep is ReissuePartPrice4dep Setter
+// SetReissuePartPrice4Dep is ReissuePartPrice4Dep Setter
 // （已废除字段）,去程部分未使用改期费用,可输入空，*或正整数，其中空表示按照航空公司规定执行，*表示不支持部分改期
-func (r *TaobaoAlitripItFareAddowAPIRequest) SetReissuePartPrice4dep(_reissuePartPrice4dep string) error {
-	r._reissuePartPrice4dep = _reissuePartPrice4dep
-	r.Set("reissuePartPrice4Dep", _reissuePartPrice4dep)
+func (r *TaobaoAlitripItFareAddowAPIRequest) SetReissuePartPrice4Dep(_reissuePartPrice4Dep string) error {
+	r._reissuePartPrice4Dep = _reissuePartPrice4Dep
+	r.Set("reissuePartPrice4Dep", _reissuePartPrice4Dep)
 	return nil
 }
 
-// GetReissuePartPrice4dep ReissuePartPrice4dep Getter
-func (r TaobaoAlitripItFareAddowAPIRequest) GetReissuePartPrice4dep() string {
-	return r._reissuePartPrice4dep
+// GetReissuePartPrice4Dep ReissuePartPrice4Dep Getter
+func (r TaobaoAlitripItFareAddowAPIRequest) GetReissuePartPrice4Dep() string {
+	return r._reissuePartPrice4Dep
 }
 
-// SetIsNoShowCanRefund4dep is IsNoShowCanRefund4dep Setter
+// SetIsNoShowCanRefund4Dep is IsNoShowCanRefund4Dep Setter
 // （已废除字段）,去程NOSHOW能否退票，输入是或否；默认为否
-func (r *TaobaoAlitripItFareAddowAPIRequest) SetIsNoShowCanRefund4dep(_isNoShowCanRefund4dep string) error {
-	r._isNoShowCanRefund4dep = _isNoShowCanRefund4dep
-	r.Set("isNoShowCanRefund4Dep", _isNoShowCanRefund4dep)
+func (r *TaobaoAlitripItFareAddowAPIRequest) SetIsNoShowCanRefund4Dep(_isNoShowCanRefund4Dep string) error {
+	r._isNoShowCanRefund4Dep = _isNoShowCanRefund4Dep
+	r.Set("isNoShowCanRefund4Dep", _isNoShowCanRefund4Dep)
 	return nil
 }
 
-// GetIsNoShowCanRefund4dep IsNoShowCanRefund4dep Getter
-func (r TaobaoAlitripItFareAddowAPIRequest) GetIsNoShowCanRefund4dep() string {
-	return r._isNoShowCanRefund4dep
+// GetIsNoShowCanRefund4Dep IsNoShowCanRefund4Dep Getter
+func (r TaobaoAlitripItFareAddowAPIRequest) GetIsNoShowCanRefund4Dep() string {
+	return r._isNoShowCanRefund4Dep
 }
 
-// SetIsNoShowCanReissue4dep is IsNoShowCanReissue4dep Setter
+// SetIsNoShowCanReissue4Dep is IsNoShowCanReissue4Dep Setter
 // （已废除字段）,去程NOSHOW能否改期，输入是或否；默认为否
-func (r *TaobaoAlitripItFareAddowAPIRequest) SetIsNoShowCanReissue4dep(_isNoShowCanReissue4dep string) error {
-	r._isNoShowCanReissue4dep = _isNoShowCanReissue4dep
-	r.Set("isNoShowCanReissue4Dep", _isNoShowCanReissue4dep)
+func (r *TaobaoAlitripItFareAddowAPIRequest) SetIsNoShowCanReissue4Dep(_isNoShowCanReissue4Dep string) error {
+	r._isNoShowCanReissue4Dep = _isNoShowCanReissue4Dep
+	r.Set("isNoShowCanReissue4Dep", _isNoShowCanReissue4Dep)
 	return nil
 }
 
-// GetIsNoShowCanReissue4dep IsNoShowCanReissue4dep Getter
-func (r TaobaoAlitripItFareAddowAPIRequest) GetIsNoShowCanReissue4dep() string {
-	return r._isNoShowCanReissue4dep
+// GetIsNoShowCanReissue4Dep IsNoShowCanReissue4Dep Getter
+func (r TaobaoAlitripItFareAddowAPIRequest) GetIsNoShowCanReissue4Dep() string {
+	return r._isNoShowCanReissue4Dep
 }
 
-// SetLuggageRule4dep is LuggageRule4dep Setter
+// SetLuggageRule4Dep is LuggageRule4Dep Setter
 // （后期字段，预留）,去程行李额规定,可输入1-23,1-23 中间用&#34;,&#34;隔开，表示第一程和第二程（中转）支持行李额为1PC，23KG。若某段为空表示该段按照航空公司规定执行，逗号不可缺少；若不提供免费行李额直接输入空
-func (r *TaobaoAlitripItFareAddowAPIRequest) SetLuggageRule4dep(_luggageRule4dep string) error {
-	r._luggageRule4dep = _luggageRule4dep
-	r.Set("luggageRule4Dep", _luggageRule4dep)
+func (r *TaobaoAlitripItFareAddowAPIRequest) SetLuggageRule4Dep(_luggageRule4Dep string) error {
+	r._luggageRule4Dep = _luggageRule4Dep
+	r.Set("luggageRule4Dep", _luggageRule4Dep)
 	return nil
 }
 
-// GetLuggageRule4dep LuggageRule4dep Getter
-func (r TaobaoAlitripItFareAddowAPIRequest) GetLuggageRule4dep() string {
-	return r._luggageRule4dep
+// GetLuggageRule4Dep LuggageRule4Dep Getter
+func (r TaobaoAlitripItFareAddowAPIRequest) GetLuggageRule4Dep() string {
+	return r._luggageRule4Dep
 }
 
 // SetRemark is Remark Setter
@@ -1302,28 +1394,45 @@ func (r TaobaoAlitripItFareAddowAPIRequest) GetLateTicketingTimeLimit() int64 {
 	return r._lateTicketingTimeLimit
 }
 
-// SetNoShowTimeLimit4dep is NoShowTimeLimit4dep Setter
+// SetNoShowTimeLimit4Dep is NoShowTimeLimit4Dep Setter
 // （已废除字段）,去程NOSHOW规定时限，输入正整数
-func (r *TaobaoAlitripItFareAddowAPIRequest) SetNoShowTimeLimit4dep(_noShowTimeLimit4dep int64) error {
-	r._noShowTimeLimit4dep = _noShowTimeLimit4dep
-	r.Set("noShowTimeLimit4Dep", _noShowTimeLimit4dep)
+func (r *TaobaoAlitripItFareAddowAPIRequest) SetNoShowTimeLimit4Dep(_noShowTimeLimit4Dep int64) error {
+	r._noShowTimeLimit4Dep = _noShowTimeLimit4Dep
+	r.Set("noShowTimeLimit4Dep", _noShowTimeLimit4Dep)
 	return nil
 }
 
-// GetNoShowTimeLimit4dep NoShowTimeLimit4dep Getter
-func (r TaobaoAlitripItFareAddowAPIRequest) GetNoShowTimeLimit4dep() int64 {
-	return r._noShowTimeLimit4dep
+// GetNoShowTimeLimit4Dep NoShowTimeLimit4Dep Getter
+func (r TaobaoAlitripItFareAddowAPIRequest) GetNoShowTimeLimit4Dep() int64 {
+	return r._noShowTimeLimit4Dep
 }
 
-// SetNoShowPenalty4dep is NoShowPenalty4dep Setter
+// SetNoShowPenalty4Dep is NoShowPenalty4Dep Setter
 // （已废除字段）,去程NOSHOW罚金，可为空，若输入则为正整数；其中空表示按航空公司规定执行
-func (r *TaobaoAlitripItFareAddowAPIRequest) SetNoShowPenalty4dep(_noShowPenalty4dep int64) error {
-	r._noShowPenalty4dep = _noShowPenalty4dep
-	r.Set("noShowPenalty4Dep", _noShowPenalty4dep)
+func (r *TaobaoAlitripItFareAddowAPIRequest) SetNoShowPenalty4Dep(_noShowPenalty4Dep int64) error {
+	r._noShowPenalty4Dep = _noShowPenalty4Dep
+	r.Set("noShowPenalty4Dep", _noShowPenalty4Dep)
 	return nil
 }
 
-// GetNoShowPenalty4dep NoShowPenalty4dep Getter
-func (r TaobaoAlitripItFareAddowAPIRequest) GetNoShowPenalty4dep() int64 {
-	return r._noShowPenalty4dep
+// GetNoShowPenalty4Dep NoShowPenalty4Dep Getter
+func (r TaobaoAlitripItFareAddowAPIRequest) GetNoShowPenalty4Dep() int64 {
+	return r._noShowPenalty4Dep
+}
+
+var poolTaobaoAlitripItFareAddowAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripItFareAddowRequest()
+	},
+}
+
+// GetTaobaoAlitripItFareAddowRequest 从 sync.Pool 获取 TaobaoAlitripItFareAddowAPIRequest
+func GetTaobaoAlitripItFareAddowAPIRequest() *TaobaoAlitripItFareAddowAPIRequest {
+	return poolTaobaoAlitripItFareAddowAPIRequest.Get().(*TaobaoAlitripItFareAddowAPIRequest)
+}
+
+// ReleaseTaobaoAlitripItFareAddowAPIRequest 将 TaobaoAlitripItFareAddowAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripItFareAddowAPIRequest(v *TaobaoAlitripItFareAddowAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripItFareAddowAPIRequest.Put(v)
 }

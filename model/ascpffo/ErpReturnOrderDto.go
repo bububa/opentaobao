@@ -1,5 +1,9 @@
 package ascpffo
 
+import (
+	"sync"
+)
+
 // ErpReturnOrderDto 结构体
 type ErpReturnOrderDto struct {
 	// 单据创建人
@@ -42,4 +46,40 @@ type ErpReturnOrderDto struct {
 	TotalQuantity int64 `json:"total_quantity,omitempty" xml:"total_quantity,omitempty"`
 	// 实际退供数量
 	TotalReturnQuantity int64 `json:"total_return_quantity,omitempty" xml:"total_return_quantity,omitempty"`
+}
+
+var poolErpReturnOrderDto = sync.Pool{
+	New: func() any {
+		return new(ErpReturnOrderDto)
+	},
+}
+
+// GetErpReturnOrderDto() 从对象池中获取ErpReturnOrderDto
+func GetErpReturnOrderDto() *ErpReturnOrderDto {
+	return poolErpReturnOrderDto.Get().(*ErpReturnOrderDto)
+}
+
+// ReleaseErpReturnOrderDto 释放ErpReturnOrderDto
+func ReleaseErpReturnOrderDto(v *ErpReturnOrderDto) {
+	v.Creator = ""
+	v.ExtendFields = ""
+	v.InventoryTypeDesc = ""
+	v.LbxNo = ""
+	v.ReturnOrderNo = ""
+	v.ReturnReasonDesc = ""
+	v.ReturnTypeDesc = ""
+	v.StatusDesc = ""
+	v.StoreCode = ""
+	v.StoreName = ""
+	v.SupplierName = ""
+	v.TotalAmount = ""
+	v.TotalReturnAmount = ""
+	v.GmtCreate = 0
+	v.GmtOutbound = 0
+	v.SkuCount = 0
+	v.Status = 0
+	v.SupplierId = 0
+	v.TotalQuantity = 0
+	v.TotalReturnQuantity = 0
+	poolErpReturnOrderDto.Put(v)
 }

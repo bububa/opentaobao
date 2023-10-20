@@ -1,5 +1,9 @@
 package alscmerchant
 
+import (
+	"sync"
+)
+
 // MerchantTicketUseDetail 结构体
 type MerchantTicketUseDetail struct {
 	// 券核销流水号
@@ -18,4 +22,28 @@ type MerchantTicketUseDetail struct {
 	InvoiceAmount string `json:"invoice_amount,omitempty" xml:"invoice_amount,omitempty"`
 	// 对应的凭证id
 	TicketId string `json:"ticket_id,omitempty" xml:"ticket_id,omitempty"`
+}
+
+var poolMerchantTicketUseDetail = sync.Pool{
+	New: func() any {
+		return new(MerchantTicketUseDetail)
+	},
+}
+
+// GetMerchantTicketUseDetail() 从对象池中获取MerchantTicketUseDetail
+func GetMerchantTicketUseDetail() *MerchantTicketUseDetail {
+	return poolMerchantTicketUseDetail.Get().(*MerchantTicketUseDetail)
+}
+
+// ReleaseMerchantTicketUseDetail 释放MerchantTicketUseDetail
+func ReleaseMerchantTicketUseDetail(v *MerchantTicketUseDetail) {
+	v.TicketTransId = ""
+	v.TicketCode = ""
+	v.BuyerPayAmount = ""
+	v.ReceiptAmount = ""
+	v.DiscountAmount = ""
+	v.MerchantSubsidyAmount = ""
+	v.InvoiceAmount = ""
+	v.TicketId = ""
+	poolMerchantTicketUseDetail.Put(v)
 }

@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // SupplierBankInfoDto 结构体
 type SupplierBankInfoDto struct {
 	// 修改时间
@@ -52,4 +56,45 @@ type SupplierBankInfoDto struct {
 	AccountType int64 `json:"account_type,omitempty" xml:"account_type,omitempty"`
 	// 操作类型
 	ApprovalType int64 `json:"approval_type,omitempty" xml:"approval_type,omitempty"`
+}
+
+var poolSupplierBankInfoDto = sync.Pool{
+	New: func() any {
+		return new(SupplierBankInfoDto)
+	},
+}
+
+// GetSupplierBankInfoDto() 从对象池中获取SupplierBankInfoDto
+func GetSupplierBankInfoDto() *SupplierBankInfoDto {
+	return poolSupplierBankInfoDto.Get().(*SupplierBankInfoDto)
+}
+
+// ReleaseSupplierBankInfoDto 释放SupplierBankInfoDto
+func ReleaseSupplierBankInfoDto(v *SupplierBankInfoDto) {
+	v.GmtModified = ""
+	v.CountryName = ""
+	v.CityName = ""
+	v.ProvinceCode = ""
+	v.CityCode = ""
+	v.ProvinceName = ""
+	v.CoCode = ""
+	v.ReceiveAccount = ""
+	v.BankBranchName = ""
+	v.CnapsCode = ""
+	v.ReceiveName = ""
+	v.CoName = ""
+	v.BankBranchCode = ""
+	v.SupplierId = ""
+	v.GmtCreate = ""
+	v.CountryCode = ""
+	v.BankName = ""
+	v.BankCode = ""
+	v.Id = 0
+	v.ApprovalStatus = 0
+	v.Status = 0
+	v.BusinessType = 0
+	v.RelationAccountId = 0
+	v.AccountType = 0
+	v.ApprovalType = 0
+	poolSupplierBankInfoDto.Put(v)
 }

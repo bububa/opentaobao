@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.rx.ca.doctor.status.save
 //
 // ca认证获取医师认证结果
-func AlibabaAlihealthRxCaDoctorStatusSave(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthRxCaDoctorStatusSaveAPIRequest, session string) (*alihealthoutflow.AlibabaAlihealthRxCaDoctorStatusSaveAPIResponse, error) {
-	var resp alihealthoutflow.AlibabaAlihealthRxCaDoctorStatusSaveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthRxCaDoctorStatusSave(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthRxCaDoctorStatusSaveAPIRequest, resp *alihealthoutflow.AlibabaAlihealthRxCaDoctorStatusSaveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

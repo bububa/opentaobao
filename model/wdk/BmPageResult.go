@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // BmPageResult 结构体
 type BmPageResult struct {
 	// 对应data
@@ -18,4 +22,28 @@ type BmPageResult struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolBmPageResult = sync.Pool{
+	New: func() any {
+		return new(BmPageResult)
+	},
+}
+
+// GetBmPageResult() 从对象池中获取BmPageResult
+func GetBmPageResult() *BmPageResult {
+	return poolBmPageResult.Get().(*BmPageResult)
+}
+
+// ReleaseBmPageResult 释放BmPageResult
+func ReleaseBmPageResult(v *BmPageResult) {
+	v.Data = v.Data[:0]
+	v.ErrorCode = ""
+	v.Message = ""
+	v.Current = 0
+	v.Total = 0
+	v.TotalPage = 0
+	v.PageSize = 0
+	v.Success = false
+	poolBmPageResult.Put(v)
 }

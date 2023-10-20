@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoCarVehicleinfoRegisterAPIRequest struct {
 // NewTaobaoCarVehicleinfoRegisterRequest 初始化TaobaoCarVehicleinfoRegisterAPIRequest对象
 func NewTaobaoCarVehicleinfoRegisterRequest() *TaobaoCarVehicleinfoRegisterAPIRequest {
 	return &TaobaoCarVehicleinfoRegisterAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCarVehicleinfoRegisterAPIRequest) Reset() {
+	r._paramList = r._paramList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoCarVehicleinfoRegisterAPIRequest) SetParamList(_paramList []FullI
 // GetParamList ParamList Getter
 func (r TaobaoCarVehicleinfoRegisterAPIRequest) GetParamList() []FullInfoCarModelDto {
 	return r._paramList
+}
+
+var poolTaobaoCarVehicleinfoRegisterAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCarVehicleinfoRegisterRequest()
+	},
+}
+
+// GetTaobaoCarVehicleinfoRegisterRequest 从 sync.Pool 获取 TaobaoCarVehicleinfoRegisterAPIRequest
+func GetTaobaoCarVehicleinfoRegisterAPIRequest() *TaobaoCarVehicleinfoRegisterAPIRequest {
+	return poolTaobaoCarVehicleinfoRegisterAPIRequest.Get().(*TaobaoCarVehicleinfoRegisterAPIRequest)
+}
+
+// ReleaseTaobaoCarVehicleinfoRegisterAPIRequest 将 TaobaoCarVehicleinfoRegisterAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCarVehicleinfoRegisterAPIRequest(v *TaobaoCarVehicleinfoRegisterAPIRequest) {
+	v.Reset()
+	poolTaobaoCarVehicleinfoRegisterAPIRequest.Put(v)
 }

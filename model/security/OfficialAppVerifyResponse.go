@@ -1,5 +1,9 @@
 package security
 
+import (
+	"sync"
+)
+
 // OfficialAppVerifyResponse 结构体
 type OfficialAppVerifyResponse struct {
 	// 应用名
@@ -22,4 +26,30 @@ type OfficialAppVerifyResponse struct {
 	OfficialResult int64 `json:"official_result,omitempty" xml:"official_result,omitempty"`
 	// 请求是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolOfficialAppVerifyResponse = sync.Pool{
+	New: func() any {
+		return new(OfficialAppVerifyResponse)
+	},
+}
+
+// GetOfficialAppVerifyResponse() 从对象池中获取OfficialAppVerifyResponse
+func GetOfficialAppVerifyResponse() *OfficialAppVerifyResponse {
+	return poolOfficialAppVerifyResponse.Get().(*OfficialAppVerifyResponse)
+}
+
+// ReleaseOfficialAppVerifyResponse 释放OfficialAppVerifyResponse
+func ReleaseOfficialAppVerifyResponse(v *OfficialAppVerifyResponse) {
+	v.AppName = ""
+	v.PkgName = ""
+	v.Developer = ""
+	v.ErrMsg = ""
+	v.CertMd5 = ""
+	v.Status = 0
+	v.QueryInterval = 0
+	v.ErrCode = 0
+	v.OfficialResult = 0
+	v.Success = false
+	poolOfficialAppVerifyResponse.Put(v)
 }

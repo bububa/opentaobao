@@ -9,11 +9,6 @@ import (
 // alibaba.ib.shenjing.visitor.pad.uploadface
 //
 // 访客PAD端上传人脸。
-func AlibabaIbShenjingVisitorPadUploadface(clt *core.SDKClient, req *shenjing.AlibabaIbShenjingVisitorPadUploadfaceAPIRequest, session string) (*shenjing.AlibabaIbShenjingVisitorPadUploadfaceAPIResponse, error) {
-	var resp shenjing.AlibabaIbShenjingVisitorPadUploadfaceAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIbShenjingVisitorPadUploadface(clt *core.SDKClient, req *shenjing.AlibabaIbShenjingVisitorPadUploadfaceAPIRequest, resp *shenjing.AlibabaIbShenjingVisitorPadUploadfaceAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

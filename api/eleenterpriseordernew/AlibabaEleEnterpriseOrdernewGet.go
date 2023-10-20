@@ -9,11 +9,6 @@ import (
 // alibaba.ele.enterprise.ordernew.get
 //
 // 查询订单详情
-func AlibabaEleEnterpriseOrdernewGet(clt *core.SDKClient, req *eleenterpriseordernew.AlibabaEleEnterpriseOrdernewGetAPIRequest, session string) (*eleenterpriseordernew.AlibabaEleEnterpriseOrdernewGetAPIResponse, error) {
-	var resp eleenterpriseordernew.AlibabaEleEnterpriseOrdernewGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaEleEnterpriseOrdernewGet(clt *core.SDKClient, req *eleenterpriseordernew.AlibabaEleEnterpriseOrdernewGetAPIRequest, resp *eleenterpriseordernew.AlibabaEleEnterpriseOrdernewGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

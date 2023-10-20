@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TmallServicecenterPictureUploadAPIRequest struct {
 // NewTmallServicecenterPictureUploadRequest 初始化TmallServicecenterPictureUploadAPIRequest对象
 func NewTmallServicecenterPictureUploadRequest() *TmallServicecenterPictureUploadAPIRequest {
 	return &TmallServicecenterPictureUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterPictureUploadAPIRequest) Reset() {
+	r._pictureName = ""
+	r._img = nil
+	r._isHttps = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TmallServicecenterPictureUploadAPIRequest) SetIsHttps(_isHttps bool) er
 // GetIsHttps IsHttps Getter
 func (r TmallServicecenterPictureUploadAPIRequest) GetIsHttps() bool {
 	return r._isHttps
+}
+
+var poolTmallServicecenterPictureUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterPictureUploadRequest()
+	},
+}
+
+// GetTmallServicecenterPictureUploadRequest 从 sync.Pool 获取 TmallServicecenterPictureUploadAPIRequest
+func GetTmallServicecenterPictureUploadAPIRequest() *TmallServicecenterPictureUploadAPIRequest {
+	return poolTmallServicecenterPictureUploadAPIRequest.Get().(*TmallServicecenterPictureUploadAPIRequest)
+}
+
+// ReleaseTmallServicecenterPictureUploadAPIRequest 将 TmallServicecenterPictureUploadAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterPictureUploadAPIRequest(v *TmallServicecenterPictureUploadAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterPictureUploadAPIRequest.Put(v)
 }

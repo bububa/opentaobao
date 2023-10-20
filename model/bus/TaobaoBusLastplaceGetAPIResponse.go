@@ -2,6 +2,7 @@ package bus
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoBusLastplaceGetAPIResponse struct {
 	TaobaoBusLastplaceGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoBusLastplaceGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoBusLastplaceGetAPIResponseModel).Reset()
+}
+
 // TaobaoBusLastplaceGetAPIResponseModel is 获取目的地数据 成功返回结果
 type TaobaoBusLastplaceGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"bus_lastplace_get_response"`
@@ -22,4 +29,27 @@ type TaobaoBusLastplaceGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 目的地返回结果
 	Result *TaobaoBusLastplaceGetResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoBusLastplaceGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoBusLastplaceGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoBusLastplaceGetAPIResponse)
+	},
+}
+
+// GetTaobaoBusLastplaceGetAPIResponse 从 sync.Pool 获取 TaobaoBusLastplaceGetAPIResponse
+func GetTaobaoBusLastplaceGetAPIResponse() *TaobaoBusLastplaceGetAPIResponse {
+	return poolTaobaoBusLastplaceGetAPIResponse.Get().(*TaobaoBusLastplaceGetAPIResponse)
+}
+
+// ReleaseTaobaoBusLastplaceGetAPIResponse 将 TaobaoBusLastplaceGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoBusLastplaceGetAPIResponse(v *TaobaoBusLastplaceGetAPIResponse) {
+	v.Reset()
+	poolTaobaoBusLastplaceGetAPIResponse.Put(v)
 }

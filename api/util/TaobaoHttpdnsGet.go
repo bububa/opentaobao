@@ -9,11 +9,6 @@ import (
 // taobao.httpdns.get
 //
 // 获取TOP DNS配置
-func TaobaoHttpdnsGet(clt *core.SDKClient, req *util.TaobaoHttpdnsGetAPIRequest, session string) (*util.TaobaoHttpdnsGetAPIResponse, error) {
-	var resp util.TaobaoHttpdnsGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoHttpdnsGet(clt *core.SDKClient, req *util.TaobaoHttpdnsGetAPIRequest, resp *util.TaobaoHttpdnsGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

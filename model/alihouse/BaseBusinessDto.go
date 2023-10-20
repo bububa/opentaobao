@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // BaseBusinessDto 结构体
 type BaseBusinessDto struct {
 	// 高的围栏
@@ -28,4 +32,33 @@ type BaseBusinessDto struct {
 	AreaId int64 `json:"area_id,omitempty" xml:"area_id,omitempty"`
 	// 数据源类型（1-新房 2-二手房）
 	SourceType int64 `json:"source_type,omitempty" xml:"source_type,omitempty"`
+}
+
+var poolBaseBusinessDto = sync.Pool{
+	New: func() any {
+		return new(BaseBusinessDto)
+	},
+}
+
+// GetBaseBusinessDto() 从对象池中获取BaseBusinessDto
+func GetBaseBusinessDto() *BaseBusinessDto {
+	return poolBaseBusinessDto.Get().(*BaseBusinessDto)
+}
+
+// ReleaseBaseBusinessDto 释放BaseBusinessDto
+func ReleaseBaseBusinessDto(v *BaseBusinessDto) {
+	v.Fencing = ""
+	v.GaodeLatitude = ""
+	v.GaodeLongitude = ""
+	v.NameSimple = ""
+	v.Name = ""
+	v.NamePinyin = ""
+	v.NamePinyinSimple = ""
+	v.RegionType = ""
+	v.OuterBusinessId = ""
+	v.IsDeleted = ""
+	v.RegionId = 0
+	v.AreaId = 0
+	v.SourceType = 0
+	poolBaseBusinessDto.Put(v)
 }

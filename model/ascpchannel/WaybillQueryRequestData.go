@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // WaybillQueryRequestData 结构体
 type WaybillQueryRequestData struct {
 	// 商品信息
@@ -20,4 +24,29 @@ type WaybillQueryRequestData struct {
 	Width string `json:"width,omitempty" xml:"width,omitempty"`
 	// 高，单位mm
 	Height string `json:"height,omitempty" xml:"height,omitempty"`
+}
+
+var poolWaybillQueryRequestData = sync.Pool{
+	New: func() any {
+		return new(WaybillQueryRequestData)
+	},
+}
+
+// GetWaybillQueryRequestData() 从对象池中获取WaybillQueryRequestData
+func GetWaybillQueryRequestData() *WaybillQueryRequestData {
+	return poolWaybillQueryRequestData.Get().(*WaybillQueryRequestData)
+}
+
+// ReleaseWaybillQueryRequestData 释放WaybillQueryRequestData
+func ReleaseWaybillQueryRequestData(v *WaybillQueryRequestData) {
+	v.Items = v.Items[:0]
+	v.Code = ""
+	v.Description = ""
+	v.TotalPackageCount = ""
+	v.Weight = ""
+	v.Volume = ""
+	v.Length = ""
+	v.Width = ""
+	v.Height = ""
+	poolWaybillQueryRequestData.Put(v)
 }

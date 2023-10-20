@@ -1,5 +1,9 @@
 package kclub
 
+import (
+	"sync"
+)
+
 // AlibabaKclubKcGetcategorytreeResult 结构体
 type AlibabaKclubKcGetcategorytreeResult struct {
 	// message
@@ -10,4 +14,24 @@ type AlibabaKclubKcGetcategorytreeResult struct {
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaKclubKcGetcategorytreeResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaKclubKcGetcategorytreeResult)
+	},
+}
+
+// GetAlibabaKclubKcGetcategorytreeResult() 从对象池中获取AlibabaKclubKcGetcategorytreeResult
+func GetAlibabaKclubKcGetcategorytreeResult() *AlibabaKclubKcGetcategorytreeResult {
+	return poolAlibabaKclubKcGetcategorytreeResult.Get().(*AlibabaKclubKcGetcategorytreeResult)
+}
+
+// ReleaseAlibabaKclubKcGetcategorytreeResult 释放AlibabaKclubKcGetcategorytreeResult
+func ReleaseAlibabaKclubKcGetcategorytreeResult(v *AlibabaKclubKcGetcategorytreeResult) {
+	v.Message = ""
+	v.Data = ""
+	v.Code = ""
+	v.Success = false
+	poolAlibabaKclubKcGetcategorytreeResult.Put(v)
 }

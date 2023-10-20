@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMosStoreGetcloudshelfversionAPIRequest struct {
 // NewAlibabaMosStoreGetcloudshelfversionRequest 初始化AlibabaMosStoreGetcloudshelfversionAPIRequest对象
 func NewAlibabaMosStoreGetcloudshelfversionRequest() *AlibabaMosStoreGetcloudshelfversionAPIRequest {
 	return &AlibabaMosStoreGetcloudshelfversionAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosStoreGetcloudshelfversionAPIRequest) Reset() {
+	r._screenNo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMosStoreGetcloudshelfversionAPIRequest) SetScreenNo(_screenNo st
 // GetScreenNo ScreenNo Getter
 func (r AlibabaMosStoreGetcloudshelfversionAPIRequest) GetScreenNo() string {
 	return r._screenNo
+}
+
+var poolAlibabaMosStoreGetcloudshelfversionAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosStoreGetcloudshelfversionRequest()
+	},
+}
+
+// GetAlibabaMosStoreGetcloudshelfversionRequest 从 sync.Pool 获取 AlibabaMosStoreGetcloudshelfversionAPIRequest
+func GetAlibabaMosStoreGetcloudshelfversionAPIRequest() *AlibabaMosStoreGetcloudshelfversionAPIRequest {
+	return poolAlibabaMosStoreGetcloudshelfversionAPIRequest.Get().(*AlibabaMosStoreGetcloudshelfversionAPIRequest)
+}
+
+// ReleaseAlibabaMosStoreGetcloudshelfversionAPIRequest 将 AlibabaMosStoreGetcloudshelfversionAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosStoreGetcloudshelfversionAPIRequest(v *AlibabaMosStoreGetcloudshelfversionAPIRequest) {
+	v.Reset()
+	poolAlibabaMosStoreGetcloudshelfversionAPIRequest.Put(v)
 }

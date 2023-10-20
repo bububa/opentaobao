@@ -9,11 +9,6 @@ import (
 // alibaba.damai.mev.open.deleteface
 //
 // deleteFace
-func AlibabaDamaiMevOpenDeleteface(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenDeletefaceAPIRequest, session string) (*damai.AlibabaDamaiMevOpenDeletefaceAPIResponse, error) {
-	var resp damai.AlibabaDamaiMevOpenDeletefaceAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMevOpenDeleteface(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenDeletefaceAPIRequest, resp *damai.AlibabaDamaiMevOpenDeletefaceAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

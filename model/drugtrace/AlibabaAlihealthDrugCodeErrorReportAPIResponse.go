@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAlihealthDrugCodeErrorReportAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugCodeErrorReportAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugCodeErrorReportAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthDrugCodeErrorReportAPIResponseModel).Reset()
 }
 
 // AlibabaAlihealthDrugCodeErrorReportAPIResponseModel is 码信息错误上报 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAlihealthDrugCodeErrorReportAPIResponseModel struct {
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
 	// 接口调用状态
 	ResponseSuccess bool `json:"response_success,omitempty" xml:"response_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugCodeErrorReportAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgInfo = ""
+	m.MsgCode = ""
+	m.Model = false
+	m.ResponseSuccess = false
+}
+
+var poolAlibabaAlihealthDrugCodeErrorReportAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugCodeErrorReportAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthDrugCodeErrorReportAPIResponse 从 sync.Pool 获取 AlibabaAlihealthDrugCodeErrorReportAPIResponse
+func GetAlibabaAlihealthDrugCodeErrorReportAPIResponse() *AlibabaAlihealthDrugCodeErrorReportAPIResponse {
+	return poolAlibabaAlihealthDrugCodeErrorReportAPIResponse.Get().(*AlibabaAlihealthDrugCodeErrorReportAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthDrugCodeErrorReportAPIResponse 将 AlibabaAlihealthDrugCodeErrorReportAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthDrugCodeErrorReportAPIResponse(v *AlibabaAlihealthDrugCodeErrorReportAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthDrugCodeErrorReportAPIResponse.Put(v)
 }

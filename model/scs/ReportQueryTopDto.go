@@ -1,5 +1,9 @@
 package scs
 
+import (
+	"sync"
+)
+
 // ReportQueryTopDto 结构体
 type ReportQueryTopDto struct {
 	// 查询日期
@@ -26,4 +30,32 @@ type ReportQueryTopDto struct {
 	QueryUdf bool `json:"query_udf,omitempty" xml:"query_udf,omitempty"`
 	// 是否场景
 	StrategyScene bool `json:"strategy_scene,omitempty" xml:"strategy_scene,omitempty"`
+}
+
+var poolReportQueryTopDto = sync.Pool{
+	New: func() any {
+		return new(ReportQueryTopDto)
+	},
+}
+
+// GetReportQueryTopDto() 从对象池中获取ReportQueryTopDto
+func GetReportQueryTopDto() *ReportQueryTopDto {
+	return poolReportQueryTopDto.Get().(*ReportQueryTopDto)
+}
+
+// ReleaseReportQueryTopDto 释放ReportQueryTopDto
+func ReleaseReportQueryTopDto(v *ReportQueryTopDto) {
+	v.LogDateList = v.LogDateList[:0]
+	v.CampaignIdList = v.CampaignIdList[:0]
+	v.LaunchProductIdList = v.LaunchProductIdList[:0]
+	v.WhiteCrowdIdList = v.WhiteCrowdIdList[:0]
+	v.StartTime = ""
+	v.EndTime = ""
+	v.EffectType = ""
+	v.UnifyType = ""
+	v.Effect = 0
+	v.CrowdId = 0
+	v.QueryUdf = false
+	v.StrategyScene = false
+	poolReportQueryTopDto.Put(v)
 }

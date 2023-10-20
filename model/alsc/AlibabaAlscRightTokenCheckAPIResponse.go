@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlscRightTokenCheckAPIResponse struct {
 	AlibabaAlscRightTokenCheckAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlscRightTokenCheckAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlscRightTokenCheckAPIResponseModel).Reset()
+}
+
 // AlibabaAlscRightTokenCheckAPIResponseModel is 实物奖品凭证校验 成功返回结果
 type AlibabaAlscRightTokenCheckAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_right_token_check_response"`
@@ -22,4 +29,27 @@ type AlibabaAlscRightTokenCheckAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
 	Result *BaseResponse `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlscRightTokenCheckAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlscRightTokenCheckAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlscRightTokenCheckAPIResponse)
+	},
+}
+
+// GetAlibabaAlscRightTokenCheckAPIResponse 从 sync.Pool 获取 AlibabaAlscRightTokenCheckAPIResponse
+func GetAlibabaAlscRightTokenCheckAPIResponse() *AlibabaAlscRightTokenCheckAPIResponse {
+	return poolAlibabaAlscRightTokenCheckAPIResponse.Get().(*AlibabaAlscRightTokenCheckAPIResponse)
+}
+
+// ReleaseAlibabaAlscRightTokenCheckAPIResponse 将 AlibabaAlscRightTokenCheckAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlscRightTokenCheckAPIResponse(v *AlibabaAlscRightTokenCheckAPIResponse) {
+	v.Reset()
+	poolAlibabaAlscRightTokenCheckAPIResponse.Put(v)
 }

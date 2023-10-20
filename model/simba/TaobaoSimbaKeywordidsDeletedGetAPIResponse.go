@@ -2,6 +2,7 @@ package simba
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoSimbaKeywordidsDeletedGetAPIResponse struct {
 	TaobaoSimbaKeywordidsDeletedGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoSimbaKeywordidsDeletedGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoSimbaKeywordidsDeletedGetAPIResponseModel).Reset()
+}
+
 // TaobaoSimbaKeywordidsDeletedGetAPIResponseModel is 获取删除的词ID 成功返回结果
 type TaobaoSimbaKeywordidsDeletedGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_keywordids_deleted_get_response"`
@@ -22,4 +29,27 @@ type TaobaoSimbaKeywordidsDeletedGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 词ID列表
 	DeletedKeywordIds []int64 `json:"deleted_keyword_ids,omitempty" xml:"deleted_keyword_ids>int64,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoSimbaKeywordidsDeletedGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.DeletedKeywordIds = m.DeletedKeywordIds[:0]
+}
+
+var poolTaobaoSimbaKeywordidsDeletedGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoSimbaKeywordidsDeletedGetAPIResponse)
+	},
+}
+
+// GetTaobaoSimbaKeywordidsDeletedGetAPIResponse 从 sync.Pool 获取 TaobaoSimbaKeywordidsDeletedGetAPIResponse
+func GetTaobaoSimbaKeywordidsDeletedGetAPIResponse() *TaobaoSimbaKeywordidsDeletedGetAPIResponse {
+	return poolTaobaoSimbaKeywordidsDeletedGetAPIResponse.Get().(*TaobaoSimbaKeywordidsDeletedGetAPIResponse)
+}
+
+// ReleaseTaobaoSimbaKeywordidsDeletedGetAPIResponse 将 TaobaoSimbaKeywordidsDeletedGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoSimbaKeywordidsDeletedGetAPIResponse(v *TaobaoSimbaKeywordidsDeletedGetAPIResponse) {
+	v.Reset()
+	poolTaobaoSimbaKeywordidsDeletedGetAPIResponse.Put(v)
 }

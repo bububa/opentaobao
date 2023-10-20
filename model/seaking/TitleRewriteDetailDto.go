@@ -1,5 +1,9 @@
 package seaking
 
+import (
+	"sync"
+)
+
 // TitleRewriteDetailDto 结构体
 type TitleRewriteDetailDto struct {
 	// 目标语种
@@ -20,4 +24,29 @@ type TitleRewriteDetailDto struct {
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// 子任务编号，从1开始，必须连续
 	Idx int64 `json:"idx,omitempty" xml:"idx,omitempty"`
+}
+
+var poolTitleRewriteDetailDto = sync.Pool{
+	New: func() any {
+		return new(TitleRewriteDetailDto)
+	},
+}
+
+// GetTitleRewriteDetailDto() 从对象池中获取TitleRewriteDetailDto
+func GetTitleRewriteDetailDto() *TitleRewriteDetailDto {
+	return poolTitleRewriteDetailDto.Get().(*TitleRewriteDetailDto)
+}
+
+// ReleaseTitleRewriteDetailDto 释放TitleRewriteDetailDto
+func ReleaseTitleRewriteDetailDto(v *TitleRewriteDetailDto) {
+	v.TargetLang = ""
+	v.SourceLang = ""
+	v.CategoryName = ""
+	v.Title = ""
+	v.Platform = ""
+	v.ImageUrl = ""
+	v.CategoryId = 0
+	v.ProductId = 0
+	v.Idx = 0
+	poolTitleRewriteDetailDto.Put(v)
 }

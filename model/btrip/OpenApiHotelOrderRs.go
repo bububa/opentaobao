@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenApiHotelOrderRs 结构体
 type OpenApiHotelOrderRs struct {
 	// 价目详情列表
@@ -72,4 +76,55 @@ type OpenApiHotelOrderRs struct {
 	ProjectId int64 `json:"project_id,omitempty" xml:"project_id,omitempty"`
 	// 酒店开票支持类型：11 仅支持增值税普通发票 12 支持增值税专用发票和增值税普通发票
 	HotelSupportVatInvoiceType int64 `json:"hotel_support_vat_invoice_type,omitempty" xml:"hotel_support_vat_invoice_type,omitempty"`
+}
+
+var poolOpenApiHotelOrderRs = sync.Pool{
+	New: func() any {
+		return new(OpenApiHotelOrderRs)
+	},
+}
+
+// GetOpenApiHotelOrderRs() 从对象池中获取OpenApiHotelOrderRs
+func GetOpenApiHotelOrderRs() *OpenApiHotelOrderRs {
+	return poolOpenApiHotelOrderRs.Get().(*OpenApiHotelOrderRs)
+}
+
+// ReleaseOpenApiHotelOrderRs 释放OpenApiHotelOrderRs
+func ReleaseOpenApiHotelOrderRs(v *OpenApiHotelOrderRs) {
+	v.PriceInfoList = v.PriceInfoList[:0]
+	v.UserAffiliateList = v.UserAffiliateList[:0]
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.CorpId = ""
+	v.CorpName = ""
+	v.UserId = ""
+	v.UserName = ""
+	v.DepartId = ""
+	v.DepartName = ""
+	v.ContactName = ""
+	v.City = ""
+	v.HotelName = ""
+	v.CheckIn = ""
+	v.CheckOut = ""
+	v.RoomType = ""
+	v.Guest = ""
+	v.OrderTypeDesc = ""
+	v.OrderStatusDesc = ""
+	v.ThirdpartItineraryId = ""
+	v.ThirdpartApplyId = ""
+	v.BtripTitle = ""
+	v.ProjectTitle = ""
+	v.ProjectCode = ""
+	v.ThirdpartProjectId = ""
+	v.Id = 0
+	v.ApplyId = 0
+	v.RoomNum = 0
+	v.Night = 0
+	v.CostCenter = nil
+	v.OrderType = 0
+	v.OrderStatus = 0
+	v.Invoice = nil
+	v.ProjectId = 0
+	v.HotelSupportVatInvoiceType = 0
+	poolOpenApiHotelOrderRs.Put(v)
 }

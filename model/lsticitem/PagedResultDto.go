@@ -1,5 +1,9 @@
 package lsticitem
 
+import (
+	"sync"
+)
+
 // PagedResultDto 结构体
 type PagedResultDto struct {
 	// 商品集合
@@ -16,4 +20,27 @@ type PagedResultDto struct {
 	Page int64 `json:"page,omitempty" xml:"page,omitempty"`
 	// 返回成功与否
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolPagedResultDto = sync.Pool{
+	New: func() any {
+		return new(PagedResultDto)
+	},
+}
+
+// GetPagedResultDto() 从对象池中获取PagedResultDto
+func GetPagedResultDto() *PagedResultDto {
+	return poolPagedResultDto.Get().(*PagedResultDto)
+}
+
+// ReleasePagedResultDto 释放PagedResultDto
+func ReleasePagedResultDto(v *PagedResultDto) {
+	v.ContentList = v.ContentList[:0]
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.Total = 0
+	v.Size = 0
+	v.Page = 0
+	v.Success = false
+	poolPagedResultDto.Put(v)
 }

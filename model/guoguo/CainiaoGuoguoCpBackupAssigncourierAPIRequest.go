@@ -2,6 +2,7 @@ package guoguo
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type CainiaoGuoguoCpBackupAssigncourierAPIRequest struct {
 // NewCainiaoGuoguoCpBackupAssigncourierRequest 初始化CainiaoGuoguoCpBackupAssigncourierAPIRequest对象
 func NewCainiaoGuoguoCpBackupAssigncourierRequest() *CainiaoGuoguoCpBackupAssigncourierAPIRequest {
 	return &CainiaoGuoguoCpBackupAssigncourierAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoGuoguoCpBackupAssigncourierAPIRequest) Reset() {
+	r._cpCode = ""
+	r._cpUserId = ""
+	r._lpCode = ""
+	r._assignReasonCode = ""
+	r._assignReason = ""
+	r._mobile = ""
+	r._taskId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *CainiaoGuoguoCpBackupAssigncourierAPIRequest) SetTaskId(_taskId int64) 
 // GetTaskId TaskId Getter
 func (r CainiaoGuoguoCpBackupAssigncourierAPIRequest) GetTaskId() int64 {
 	return r._taskId
+}
+
+var poolCainiaoGuoguoCpBackupAssigncourierAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoGuoguoCpBackupAssigncourierRequest()
+	},
+}
+
+// GetCainiaoGuoguoCpBackupAssigncourierRequest 从 sync.Pool 获取 CainiaoGuoguoCpBackupAssigncourierAPIRequest
+func GetCainiaoGuoguoCpBackupAssigncourierAPIRequest() *CainiaoGuoguoCpBackupAssigncourierAPIRequest {
+	return poolCainiaoGuoguoCpBackupAssigncourierAPIRequest.Get().(*CainiaoGuoguoCpBackupAssigncourierAPIRequest)
+}
+
+// ReleaseCainiaoGuoguoCpBackupAssigncourierAPIRequest 将 CainiaoGuoguoCpBackupAssigncourierAPIRequest 放入 sync.Pool
+func ReleaseCainiaoGuoguoCpBackupAssigncourierAPIRequest(v *CainiaoGuoguoCpBackupAssigncourierAPIRequest) {
+	v.Reset()
+	poolCainiaoGuoguoCpBackupAssigncourierAPIRequest.Put(v)
 }

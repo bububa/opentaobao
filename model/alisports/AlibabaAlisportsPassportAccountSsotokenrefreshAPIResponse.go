@@ -2,6 +2,7 @@ package alisports
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlisportsPassportAccountSsotokenrefreshAPIResponse struct {
 	AlibabaAlisportsPassportAccountSsotokenrefreshAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlisportsPassportAccountSsotokenrefreshAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlisportsPassportAccountSsotokenrefreshAPIResponseModel).Reset()
+}
+
 // AlibabaAlisportsPassportAccountSsotokenrefreshAPIResponseModel is sso_token刷新 成功返回结果
 type AlibabaAlisportsPassportAccountSsotokenrefreshAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alisports_passport_account_ssotokenrefresh_response"`
@@ -26,4 +33,29 @@ type AlibabaAlisportsPassportAccountSsotokenrefreshAPIResponseModel struct {
 	AlispMsg string `json:"alisp_msg,omitempty" xml:"alisp_msg,omitempty"`
 	// alisp_data
 	AlispData *AlispData `json:"alisp_data,omitempty" xml:"alisp_data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlisportsPassportAccountSsotokenrefreshAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.AlispCode = ""
+	m.AlispMsg = ""
+	m.AlispData = nil
+}
+
+var poolAlibabaAlisportsPassportAccountSsotokenrefreshAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlisportsPassportAccountSsotokenrefreshAPIResponse)
+	},
+}
+
+// GetAlibabaAlisportsPassportAccountSsotokenrefreshAPIResponse 从 sync.Pool 获取 AlibabaAlisportsPassportAccountSsotokenrefreshAPIResponse
+func GetAlibabaAlisportsPassportAccountSsotokenrefreshAPIResponse() *AlibabaAlisportsPassportAccountSsotokenrefreshAPIResponse {
+	return poolAlibabaAlisportsPassportAccountSsotokenrefreshAPIResponse.Get().(*AlibabaAlisportsPassportAccountSsotokenrefreshAPIResponse)
+}
+
+// ReleaseAlibabaAlisportsPassportAccountSsotokenrefreshAPIResponse 将 AlibabaAlisportsPassportAccountSsotokenrefreshAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlisportsPassportAccountSsotokenrefreshAPIResponse(v *AlibabaAlisportsPassportAccountSsotokenrefreshAPIResponse) {
+	v.Reset()
+	poolAlibabaAlisportsPassportAccountSsotokenrefreshAPIResponse.Put(v)
 }

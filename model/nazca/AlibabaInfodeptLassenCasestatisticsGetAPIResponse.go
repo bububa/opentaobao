@@ -2,6 +2,7 @@ package nazca
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaInfodeptLassenCasestatisticsGetAPIResponse struct {
 	AlibabaInfodeptLassenCasestatisticsGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaInfodeptLassenCasestatisticsGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaInfodeptLassenCasestatisticsGetAPIResponseModel).Reset()
+}
+
 // AlibabaInfodeptLassenCasestatisticsGetAPIResponseModel is 法庭提交和结案案件量接口 成功返回结果
 type AlibabaInfodeptLassenCasestatisticsGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_infodept_lassen_casestatistics_get_response"`
@@ -22,4 +29,27 @@ type AlibabaInfodeptLassenCasestatisticsGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaInfodeptLassenCasestatisticsGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = ""
+}
+
+var poolAlibabaInfodeptLassenCasestatisticsGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaInfodeptLassenCasestatisticsGetAPIResponse)
+	},
+}
+
+// GetAlibabaInfodeptLassenCasestatisticsGetAPIResponse 从 sync.Pool 获取 AlibabaInfodeptLassenCasestatisticsGetAPIResponse
+func GetAlibabaInfodeptLassenCasestatisticsGetAPIResponse() *AlibabaInfodeptLassenCasestatisticsGetAPIResponse {
+	return poolAlibabaInfodeptLassenCasestatisticsGetAPIResponse.Get().(*AlibabaInfodeptLassenCasestatisticsGetAPIResponse)
+}
+
+// ReleaseAlibabaInfodeptLassenCasestatisticsGetAPIResponse 将 AlibabaInfodeptLassenCasestatisticsGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaInfodeptLassenCasestatisticsGetAPIResponse(v *AlibabaInfodeptLassenCasestatisticsGetAPIResponse) {
+	v.Reset()
+	poolAlibabaInfodeptLassenCasestatisticsGetAPIResponse.Put(v)
 }

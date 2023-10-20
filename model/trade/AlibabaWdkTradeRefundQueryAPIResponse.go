@@ -2,6 +2,7 @@ package trade
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaWdkTradeRefundQueryAPIResponse struct {
 	AlibabaWdkTradeRefundQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaWdkTradeRefundQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaWdkTradeRefundQueryAPIResponseModel).Reset()
+}
+
 // AlibabaWdkTradeRefundQueryAPIResponseModel is 外部渠道查询退货订单详情接口 成功返回结果
 type AlibabaWdkTradeRefundQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_trade_refund_query_response"`
@@ -22,4 +29,27 @@ type AlibabaWdkTradeRefundQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 查询结果
 	RefundGoodsQueryResult *RefundGoodsQueryResult `json:"refund_goods_query_result,omitempty" xml:"refund_goods_query_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaWdkTradeRefundQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RefundGoodsQueryResult = nil
+}
+
+var poolAlibabaWdkTradeRefundQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkTradeRefundQueryAPIResponse)
+	},
+}
+
+// GetAlibabaWdkTradeRefundQueryAPIResponse 从 sync.Pool 获取 AlibabaWdkTradeRefundQueryAPIResponse
+func GetAlibabaWdkTradeRefundQueryAPIResponse() *AlibabaWdkTradeRefundQueryAPIResponse {
+	return poolAlibabaWdkTradeRefundQueryAPIResponse.Get().(*AlibabaWdkTradeRefundQueryAPIResponse)
+}
+
+// ReleaseAlibabaWdkTradeRefundQueryAPIResponse 将 AlibabaWdkTradeRefundQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaWdkTradeRefundQueryAPIResponse(v *AlibabaWdkTradeRefundQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaWdkTradeRefundQueryAPIResponse.Put(v)
 }

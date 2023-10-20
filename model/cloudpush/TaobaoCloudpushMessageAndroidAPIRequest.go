@@ -2,6 +2,7 @@ package cloudpush
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoCloudpushMessageAndroidAPIRequest struct {
 // NewTaobaoCloudpushMessageAndroidRequest 初始化TaobaoCloudpushMessageAndroidAPIRequest对象
 func NewTaobaoCloudpushMessageAndroidRequest() *TaobaoCloudpushMessageAndroidAPIRequest {
 	return &TaobaoCloudpushMessageAndroidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCloudpushMessageAndroidAPIRequest) Reset() {
+	r._body = ""
+	r._target = ""
+	r._targetValue = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoCloudpushMessageAndroidAPIRequest) SetTargetValue(_targetValue st
 // GetTargetValue TargetValue Getter
 func (r TaobaoCloudpushMessageAndroidAPIRequest) GetTargetValue() string {
 	return r._targetValue
+}
+
+var poolTaobaoCloudpushMessageAndroidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCloudpushMessageAndroidRequest()
+	},
+}
+
+// GetTaobaoCloudpushMessageAndroidRequest 从 sync.Pool 获取 TaobaoCloudpushMessageAndroidAPIRequest
+func GetTaobaoCloudpushMessageAndroidAPIRequest() *TaobaoCloudpushMessageAndroidAPIRequest {
+	return poolTaobaoCloudpushMessageAndroidAPIRequest.Get().(*TaobaoCloudpushMessageAndroidAPIRequest)
+}
+
+// ReleaseTaobaoCloudpushMessageAndroidAPIRequest 将 TaobaoCloudpushMessageAndroidAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCloudpushMessageAndroidAPIRequest(v *TaobaoCloudpushMessageAndroidAPIRequest) {
+	v.Reset()
+	poolTaobaoCloudpushMessageAndroidAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.item.img.delete
 //
 // 删除商品图片
-func TaobaoItemImgDelete(clt *core.SDKClient, req *tbitem.TaobaoItemImgDeleteAPIRequest, session string) (*tbitem.TaobaoItemImgDeleteAPIResponse, error) {
-	var resp tbitem.TaobaoItemImgDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoItemImgDelete(clt *core.SDKClient, req *tbitem.TaobaoItemImgDeleteAPIRequest, resp *tbitem.TaobaoItemImgDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

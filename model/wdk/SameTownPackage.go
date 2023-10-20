@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // SameTownPackage 结构体
 type SameTownPackage struct {
 	// 令牌号
@@ -12,4 +16,25 @@ type SameTownPackage struct {
 	ActualStockQuantity string `json:"actual_stock_quantity,omitempty" xml:"actual_stock_quantity,omitempty"`
 	// 周转箱
 	Container *Container `json:"container,omitempty" xml:"container,omitempty"`
+}
+
+var poolSameTownPackage = sync.Pool{
+	New: func() any {
+		return new(SameTownPackage)
+	},
+}
+
+// GetSameTownPackage() 从对象池中获取SameTownPackage
+func GetSameTownPackage() *SameTownPackage {
+	return poolSameTownPackage.Get().(*SameTownPackage)
+}
+
+// ReleaseSameTownPackage 释放SameTownPackage
+func ReleaseSameTownPackage(v *SameTownPackage) {
+	v.TokenCode = ""
+	v.PickupCode = ""
+	v.ActualSaleQuantity = ""
+	v.ActualStockQuantity = ""
+	v.Container = nil
+	poolSameTownPackage.Put(v)
 }

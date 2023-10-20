@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQimenReceiverinfoQueryAPIRequest struct {
 // NewTaobaoQimenReceiverinfoQueryRequest 初始化TaobaoQimenReceiverinfoQueryAPIRequest对象
 func NewTaobaoQimenReceiverinfoQueryRequest() *TaobaoQimenReceiverinfoQueryAPIRequest {
 	return &TaobaoQimenReceiverinfoQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenReceiverinfoQueryAPIRequest) Reset() {
+	r._request = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -50,4 +57,21 @@ func (r *TaobaoQimenReceiverinfoQueryAPIRequest) SetRequest(_request *TaobaoQime
 // GetRequest Request Getter
 func (r TaobaoQimenReceiverinfoQueryAPIRequest) GetRequest() *TaobaoQimenReceiverinfoQueryRequest {
 	return r._request
+}
+
+var poolTaobaoQimenReceiverinfoQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenReceiverinfoQueryRequest()
+	},
+}
+
+// GetTaobaoQimenReceiverinfoQueryRequest 从 sync.Pool 获取 TaobaoQimenReceiverinfoQueryAPIRequest
+func GetTaobaoQimenReceiverinfoQueryAPIRequest() *TaobaoQimenReceiverinfoQueryAPIRequest {
+	return poolTaobaoQimenReceiverinfoQueryAPIRequest.Get().(*TaobaoQimenReceiverinfoQueryAPIRequest)
+}
+
+// ReleaseTaobaoQimenReceiverinfoQueryAPIRequest 将 TaobaoQimenReceiverinfoQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenReceiverinfoQueryAPIRequest(v *TaobaoQimenReceiverinfoQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenReceiverinfoQueryAPIRequest.Put(v)
 }

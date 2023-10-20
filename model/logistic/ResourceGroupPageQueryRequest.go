@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // ResourceGroupPageQueryRequest 结构体
 type ResourceGroupPageQueryRequest struct {
 	// 自提点编码
@@ -18,4 +22,28 @@ type ResourceGroupPageQueryRequest struct {
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
 	// 页面大小，上限50
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolResourceGroupPageQueryRequest = sync.Pool{
+	New: func() any {
+		return new(ResourceGroupPageQueryRequest)
+	},
+}
+
+// GetResourceGroupPageQueryRequest() 从对象池中获取ResourceGroupPageQueryRequest
+func GetResourceGroupPageQueryRequest() *ResourceGroupPageQueryRequest {
+	return poolResourceGroupPageQueryRequest.Get().(*ResourceGroupPageQueryRequest)
+}
+
+// ReleaseResourceGroupPageQueryRequest 释放ResourceGroupPageQueryRequest
+func ReleaseResourceGroupPageQueryRequest(v *ResourceGroupPageQueryRequest) {
+	v.GroupResourceCodeList = v.GroupResourceCodeList[:0]
+	v.AreaCode = ""
+	v.FromOrgResourceCode = ""
+	v.FromResourceCode = ""
+	v.FromResourceType = ""
+	v.NetworkCode = ""
+	v.PageIndex = 0
+	v.PageSize = 0
+	poolResourceGroupPageQueryRequest.Put(v)
 }

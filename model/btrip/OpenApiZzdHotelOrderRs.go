@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenApiZzdHotelOrderRs 结构体
 type OpenApiZzdHotelOrderRs struct {
 	// 成本中心信息
@@ -84,4 +88,61 @@ type OpenApiZzdHotelOrderRs struct {
 	HotelInfoDo *HotelInfoDo `json:"hotel_info_do,omitempty" xml:"hotel_info_do,omitempty"`
 	// 房间信息
 	RoomInfoDo *RoomInfoDo `json:"room_info_do,omitempty" xml:"room_info_do,omitempty"`
+}
+
+var poolOpenApiZzdHotelOrderRs = sync.Pool{
+	New: func() any {
+		return new(OpenApiZzdHotelOrderRs)
+	},
+}
+
+// GetOpenApiZzdHotelOrderRs() 从对象池中获取OpenApiZzdHotelOrderRs
+func GetOpenApiZzdHotelOrderRs() *OpenApiZzdHotelOrderRs {
+	return poolOpenApiZzdHotelOrderRs.Get().(*OpenApiZzdHotelOrderRs)
+}
+
+// ReleaseOpenApiZzdHotelOrderRs 释放OpenApiZzdHotelOrderRs
+func ReleaseOpenApiZzdHotelOrderRs(v *OpenApiZzdHotelOrderRs) {
+	v.CostCenterList = v.CostCenterList[:0]
+	v.ClientInfoDos = v.ClientInfoDos[:0]
+	v.GmtModified = ""
+	v.GmtCreate = ""
+	v.Status = ""
+	v.ApplyTitle = ""
+	v.ThirdPartApplyId = ""
+	v.DepartName = ""
+	v.UserNick = ""
+	v.UserId = ""
+	v.ThirdpartCorpId = ""
+	v.CorpId = ""
+	v.TradeId = ""
+	v.Currency = ""
+	v.Approver = ""
+	v.SettlementBatchNo = ""
+	v.InvoiceId = ""
+	v.InvoiceTitle = ""
+	v.ProjectCode = ""
+	v.ProjectTitle = ""
+	v.ThirdpartItineraryId = ""
+	v.ItineraryNo = ""
+	v.CheckInDate = ""
+	v.CheckOutDate = ""
+	v.ServiceFee = 0
+	v.RefundServiceFee = 0
+	v.RefundFee = 0
+	v.PersonalAmount = 0
+	v.CorpAmount = 0
+	v.Amount = 0
+	v.SettleType = 0
+	v.PayType = 0
+	v.ApplyId = 0
+	v.OrderId = 0
+	v.TradeAction = 0
+	v.TradeType = 0
+	v.TravelStandardAmount = 0
+	v.Type = 0
+	v.VoucherType = 0
+	v.HotelInfoDo = nil
+	v.RoomInfoDo = nil
+	poolOpenApiZzdHotelOrderRs.Put(v)
 }

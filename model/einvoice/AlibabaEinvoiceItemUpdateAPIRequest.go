@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type AlibabaEinvoiceItemUpdateAPIRequest struct {
 // NewAlibabaEinvoiceItemUpdateRequest 初始化AlibabaEinvoiceItemUpdateAPIRequest对象
 func NewAlibabaEinvoiceItemUpdateRequest() *AlibabaEinvoiceItemUpdateAPIRequest {
 	return &AlibabaEinvoiceItemUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceItemUpdateAPIRequest) Reset() {
+	r._invoiceName = ""
+	r._itemNo = ""
+	r._specification = ""
+	r._taxRate = ""
+	r._zeroRateFlag = ""
+	r._unit = ""
+	r._outerId = ""
+	r._itemId = 0
+	r._skuId = 0
+	r._updateSku = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *AlibabaEinvoiceItemUpdateAPIRequest) SetUpdateSku(_updateSku bool) erro
 // GetUpdateSku UpdateSku Getter
 func (r AlibabaEinvoiceItemUpdateAPIRequest) GetUpdateSku() bool {
 	return r._updateSku
+}
+
+var poolAlibabaEinvoiceItemUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceItemUpdateRequest()
+	},
+}
+
+// GetAlibabaEinvoiceItemUpdateRequest 从 sync.Pool 获取 AlibabaEinvoiceItemUpdateAPIRequest
+func GetAlibabaEinvoiceItemUpdateAPIRequest() *AlibabaEinvoiceItemUpdateAPIRequest {
+	return poolAlibabaEinvoiceItemUpdateAPIRequest.Get().(*AlibabaEinvoiceItemUpdateAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceItemUpdateAPIRequest 将 AlibabaEinvoiceItemUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceItemUpdateAPIRequest(v *AlibabaEinvoiceItemUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceItemUpdateAPIRequest.Put(v)
 }

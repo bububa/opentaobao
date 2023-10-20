@@ -2,6 +2,7 @@ package newretail
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -47,8 +48,28 @@ type AlibabaItApAddressSetAPIRequest struct {
 // NewAlibabaItApAddressSetRequest 初始化AlibabaItApAddressSetAPIRequest对象
 func NewAlibabaItApAddressSetRequest() *AlibabaItApAddressSetAPIRequest {
 	return &AlibabaItApAddressSetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(15),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaItApAddressSetAPIRequest) Reset() {
+	r._apCityName = ""
+	r._lng = ""
+	r._signature = ""
+	r._apCampusName = ""
+	r._apAreaName = ""
+	r._apProvinceName = ""
+	r._mac = ""
+	r._apUnitName = ""
+	r._apFloor = ""
+	r._apBuildingName = ""
+	r._appKeyInternal = ""
+	r._apNationName = ""
+	r._lat = ""
+	r._direction = ""
+	r._timestampInternal = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -261,4 +282,21 @@ func (r *AlibabaItApAddressSetAPIRequest) SetTimestampInternal(_timestampInterna
 // GetTimestampInternal TimestampInternal Getter
 func (r AlibabaItApAddressSetAPIRequest) GetTimestampInternal() int64 {
 	return r._timestampInternal
+}
+
+var poolAlibabaItApAddressSetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaItApAddressSetRequest()
+	},
+}
+
+// GetAlibabaItApAddressSetRequest 从 sync.Pool 获取 AlibabaItApAddressSetAPIRequest
+func GetAlibabaItApAddressSetAPIRequest() *AlibabaItApAddressSetAPIRequest {
+	return poolAlibabaItApAddressSetAPIRequest.Get().(*AlibabaItApAddressSetAPIRequest)
+}
+
+// ReleaseAlibabaItApAddressSetAPIRequest 将 AlibabaItApAddressSetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaItApAddressSetAPIRequest(v *AlibabaItApAddressSetAPIRequest) {
+	v.Reset()
+	poolAlibabaItApAddressSetAPIRequest.Put(v)
 }

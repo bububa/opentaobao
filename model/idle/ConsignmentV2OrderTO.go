@@ -1,7 +1,11 @@
 package idle
 
-// ConsignmentV2orderTo 结构体
-type ConsignmentV2orderTo struct {
+import (
+	"sync"
+)
+
+// ConsignmentV2OrderTO 结构体
+type ConsignmentV2OrderTO struct {
 	// appkey
 	Appkey string `json:"appkey,omitempty" xml:"appkey,omitempty"`
 	// 订单id
@@ -98,4 +102,68 @@ type ConsignmentV2orderTo struct {
 	AppKey string `json:"app_key,omitempty" xml:"app_key,omitempty"`
 	// 用户定价，精确到分
 	ConfirmFee string `json:"confirm_fee,omitempty" xml:"confirm_fee,omitempty"`
+}
+
+var poolConsignmentV2OrderTO = sync.Pool{
+	New: func() any {
+		return new(ConsignmentV2OrderTO)
+	},
+}
+
+// GetConsignmentV2OrderTO() 从对象池中获取ConsignmentV2OrderTO
+func GetConsignmentV2OrderTO() *ConsignmentV2OrderTO {
+	return poolConsignmentV2OrderTO.Get().(*ConsignmentV2OrderTO)
+}
+
+// ReleaseConsignmentV2OrderTO 释放ConsignmentV2OrderTO
+func ReleaseConsignmentV2OrderTO(v *ConsignmentV2OrderTO) {
+	v.Appkey = ""
+	v.BizOrderId = ""
+	v.OrderStatus = ""
+	v.OrderSubStatus = ""
+	v.SellerId = ""
+	v.SellerNick = ""
+	v.SellerAlipayUserId = ""
+	v.SellerAlipayAccount = ""
+	v.ApprizeAmount = ""
+	v.SellerAddress = ""
+	v.SellerPhone = ""
+	v.ShipTime = ""
+	v.SellerRealName = ""
+	v.ApprizeId = ""
+	v.City = ""
+	v.Province = ""
+	v.Area = ""
+	v.Country = ""
+	v.Channel = ""
+	v.SubChannel = ""
+	v.ChannelData = ""
+	v.RateGrade = ""
+	v.RateContent = ""
+	v.SellerCloseReason = ""
+	v.BuyerCloseReason = ""
+	v.Env = ""
+	v.GmtCreate = ""
+	v.ServiceRule = ""
+	v.ShipMailNo = ""
+	v.Summary = ""
+	v.ReportUrl = ""
+	v.Degree = ""
+	v.ConsignmentServiceFee = ""
+	v.ConsignmentPayAmount = ""
+	v.QaAmount = ""
+	v.ConsignmentMaxDealAmt = ""
+	v.ReferenceRecyclePrice = ""
+	v.SellerReceiptAddressId = ""
+	v.SellerReceiptAddress = ""
+	v.RefundMailNo = ""
+	v.SellerReceiptPhone = ""
+	v.SellerReceiptName = ""
+	v.ReverseServiceFee = ""
+	v.SpuId = ""
+	v.ShipType = ""
+	v.StationId = ""
+	v.AppKey = ""
+	v.ConfirmFee = ""
+	poolConsignmentV2OrderTO.Put(v)
 }

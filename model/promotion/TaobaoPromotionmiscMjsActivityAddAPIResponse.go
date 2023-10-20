@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoPromotionmiscMjsActivityAddAPIResponse struct {
 	TaobaoPromotionmiscMjsActivityAddAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoPromotionmiscMjsActivityAddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoPromotionmiscMjsActivityAddAPIResponseModel).Reset()
+}
+
 // TaobaoPromotionmiscMjsActivityAddAPIResponseModel is 创建满就送活动 成功返回结果
 type TaobaoPromotionmiscMjsActivityAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"promotionmisc_mjs_activity_add_response"`
@@ -24,4 +31,28 @@ type TaobaoPromotionmiscMjsActivityAddAPIResponseModel struct {
 	ActivityId int64 `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
 	// 是否保存成功。
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoPromotionmiscMjsActivityAddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ActivityId = 0
+	m.IsSuccess = false
+}
+
+var poolTaobaoPromotionmiscMjsActivityAddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoPromotionmiscMjsActivityAddAPIResponse)
+	},
+}
+
+// GetTaobaoPromotionmiscMjsActivityAddAPIResponse 从 sync.Pool 获取 TaobaoPromotionmiscMjsActivityAddAPIResponse
+func GetTaobaoPromotionmiscMjsActivityAddAPIResponse() *TaobaoPromotionmiscMjsActivityAddAPIResponse {
+	return poolTaobaoPromotionmiscMjsActivityAddAPIResponse.Get().(*TaobaoPromotionmiscMjsActivityAddAPIResponse)
+}
+
+// ReleaseTaobaoPromotionmiscMjsActivityAddAPIResponse 将 TaobaoPromotionmiscMjsActivityAddAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoPromotionmiscMjsActivityAddAPIResponse(v *TaobaoPromotionmiscMjsActivityAddAPIResponse) {
+	v.Reset()
+	poolTaobaoPromotionmiscMjsActivityAddAPIResponse.Put(v)
 }

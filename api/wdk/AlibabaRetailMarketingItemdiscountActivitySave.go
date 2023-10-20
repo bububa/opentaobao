@@ -9,11 +9,6 @@ import (
 // alibaba.retail.marketing.itemdiscount.activity.save
 //
 // 【同城零售】单品活动保存
-func AlibabaRetailMarketingItemdiscountActivitySave(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingItemdiscountActivitySaveAPIRequest, session string) (*wdk.AlibabaRetailMarketingItemdiscountActivitySaveAPIResponse, error) {
-	var resp wdk.AlibabaRetailMarketingItemdiscountActivitySaveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaRetailMarketingItemdiscountActivitySave(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingItemdiscountActivitySaveAPIRequest, resp *wdk.AlibabaRetailMarketingItemdiscountActivitySaveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

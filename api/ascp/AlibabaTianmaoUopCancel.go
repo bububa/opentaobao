@@ -9,11 +9,6 @@ import (
 // alibaba.tianmao.uop.cancel
 //
 // 阿里巴巴.天猫. 履约订单. 取消
-func AlibabaTianmaoUopCancel(clt *core.SDKClient, req *ascp.AlibabaTianmaoUopCancelAPIRequest, session string) (*ascp.AlibabaTianmaoUopCancelAPIResponse, error) {
-	var resp ascp.AlibabaTianmaoUopCancelAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTianmaoUopCancel(clt *core.SDKClient, req *ascp.AlibabaTianmaoUopCancelAPIRequest, resp *ascp.AlibabaTianmaoUopCancelAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

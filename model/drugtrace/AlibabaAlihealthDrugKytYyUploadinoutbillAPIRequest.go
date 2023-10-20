@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -64,8 +65,36 @@ type AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest struct {
 // NewAlibabaAlihealthDrugKytYyUploadinoutbillRequest 初始化AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest对象
 func NewAlibabaAlihealthDrugKytYyUploadinoutbillRequest() *AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest {
 	return &AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(23),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest) Reset() {
+	r._traceCodes = r._traceCodes[:0]
+	r._billCode = ""
+	r._billTime = ""
+	r._refUserId = ""
+	r._agentRefUserId = ""
+	r._fromUserId = ""
+	r._toUserId = ""
+	r._destUserId = ""
+	r._operIcCode = ""
+	r._operIcName = ""
+	r._warehouseId = ""
+	r._drugId = ""
+	r._clientType = ""
+	r._returnReasonCode = ""
+	r._returnReasonDes = ""
+	r._cancelReasonCode = ""
+	r._cancelReasonDes = ""
+	r._executerName = ""
+	r._executerCode = ""
+	r._superviserName = ""
+	r._superviserCode = ""
+	r._billType = 0
+	r._physicType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -382,4 +411,21 @@ func (r *AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest) SetPhysicType(_phys
 // GetPhysicType PhysicType Getter
 func (r AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest) GetPhysicType() int64 {
 	return r._physicType
+}
+
+var poolAlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugKytYyUploadinoutbillRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugKytYyUploadinoutbillRequest 从 sync.Pool 获取 AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest
+func GetAlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest() *AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest {
+	return poolAlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest.Get().(*AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest 将 AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest(v *AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest.Put(v)
 }

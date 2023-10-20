@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAlihouseMerchantOpenUpdateAPIRequest struct {
 // NewAlibabaAlihouseMerchantOpenUpdateRequest 初始化AlibabaAlihouseMerchantOpenUpdateAPIRequest对象
 func NewAlibabaAlihouseMerchantOpenUpdateRequest() *AlibabaAlihouseMerchantOpenUpdateAPIRequest {
 	return &AlibabaAlihouseMerchantOpenUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseMerchantOpenUpdateAPIRequest) Reset() {
+	r._legalCertExpireTime = ""
+	r._merchantOpenId = 0
+	r._legalCertStatus = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAlihouseMerchantOpenUpdateAPIRequest) SetLegalCertStatus(_legalC
 // GetLegalCertStatus LegalCertStatus Getter
 func (r AlibabaAlihouseMerchantOpenUpdateAPIRequest) GetLegalCertStatus() int64 {
 	return r._legalCertStatus
+}
+
+var poolAlibabaAlihouseMerchantOpenUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseMerchantOpenUpdateRequest()
+	},
+}
+
+// GetAlibabaAlihouseMerchantOpenUpdateRequest 从 sync.Pool 获取 AlibabaAlihouseMerchantOpenUpdateAPIRequest
+func GetAlibabaAlihouseMerchantOpenUpdateAPIRequest() *AlibabaAlihouseMerchantOpenUpdateAPIRequest {
+	return poolAlibabaAlihouseMerchantOpenUpdateAPIRequest.Get().(*AlibabaAlihouseMerchantOpenUpdateAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseMerchantOpenUpdateAPIRequest 将 AlibabaAlihouseMerchantOpenUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseMerchantOpenUpdateAPIRequest(v *AlibabaAlihouseMerchantOpenUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseMerchantOpenUpdateAPIRequest.Put(v)
 }

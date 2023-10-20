@@ -9,11 +9,6 @@ import (
 // alibaba.campus.guard.controller.offlinedata
 //
 // 点位离线数据拉取
-func AlibabaCampusGuardControllerOfflinedata(clt *core.SDKClient, req *campus.AlibabaCampusGuardControllerOfflinedataAPIRequest, session string) (*campus.AlibabaCampusGuardControllerOfflinedataAPIResponse, error) {
-	var resp campus.AlibabaCampusGuardControllerOfflinedataAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusGuardControllerOfflinedata(clt *core.SDKClient, req *campus.AlibabaCampusGuardControllerOfflinedataAPIRequest, resp *campus.AlibabaCampusGuardControllerOfflinedataAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

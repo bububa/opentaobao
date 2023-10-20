@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // NrOrderDto 结构体
 type NrOrderDto struct {
 	// 创建时间
@@ -34,4 +38,36 @@ type NrOrderDto struct {
 	AuctionPrice int64 `json:"auction_price,omitempty" xml:"auction_price,omitempty"`
 	// 配送计划的详情，仅做周期送业务需要
 	NrZqsPlanRespDTO *NrZqsPlanRespDto `json:"nr_zqs_plan_resp_d_t_o,omitempty" xml:"nr_zqs_plan_resp_d_t_o,omitempty"`
+}
+
+var poolNrOrderDto = sync.Pool{
+	New: func() any {
+		return new(NrOrderDto)
+	},
+}
+
+// GetNrOrderDto() 从对象池中获取NrOrderDto
+func GetNrOrderDto() *NrOrderDto {
+	return poolNrOrderDto.Get().(*NrOrderDto)
+}
+
+// ReleaseNrOrderDto 释放NrOrderDto
+func ReleaseNrOrderDto(v *NrOrderDto) {
+	v.CreateTime = ""
+	v.BuyerNick = ""
+	v.SellerNick = ""
+	v.RefundStatus = ""
+	v.Title = ""
+	v.OutIdItemCode = ""
+	v.OuterIdSku = ""
+	v.Num = 0
+	v.SkuId = 0
+	v.ItemId = 0
+	v.OrderId = 0
+	v.AdjustFee = 0
+	v.DiscountFee = 0
+	v.ActualPaidFee = 0
+	v.AuctionPrice = 0
+	v.NrZqsPlanRespDTO = nil
+	poolNrOrderDto.Put(v)
 }

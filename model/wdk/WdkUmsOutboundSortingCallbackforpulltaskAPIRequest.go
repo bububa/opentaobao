@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type WdkUmsOutboundSortingCallbackforpulltaskAPIRequest struct {
 // NewWdkUmsOutboundSortingCallbackforpulltaskRequest 初始化WdkUmsOutboundSortingCallbackforpulltaskAPIRequest对象
 func NewWdkUmsOutboundSortingCallbackforpulltaskRequest() *WdkUmsOutboundSortingCallbackforpulltaskAPIRequest {
 	return &WdkUmsOutboundSortingCallbackforpulltaskAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *WdkUmsOutboundSortingCallbackforpulltaskAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *WdkUmsOutboundSortingCallbackforpulltaskAPIRequest) SetParam0(_param0 *
 // GetParam0 Param0 Getter
 func (r WdkUmsOutboundSortingCallbackforpulltaskAPIRequest) GetParam0() *DpsCallBackForPullTaskMtopRequest {
 	return r._param0
+}
+
+var poolWdkUmsOutboundSortingCallbackforpulltaskAPIRequest = sync.Pool{
+	New: func() any {
+		return NewWdkUmsOutboundSortingCallbackforpulltaskRequest()
+	},
+}
+
+// GetWdkUmsOutboundSortingCallbackforpulltaskRequest 从 sync.Pool 获取 WdkUmsOutboundSortingCallbackforpulltaskAPIRequest
+func GetWdkUmsOutboundSortingCallbackforpulltaskAPIRequest() *WdkUmsOutboundSortingCallbackforpulltaskAPIRequest {
+	return poolWdkUmsOutboundSortingCallbackforpulltaskAPIRequest.Get().(*WdkUmsOutboundSortingCallbackforpulltaskAPIRequest)
+}
+
+// ReleaseWdkUmsOutboundSortingCallbackforpulltaskAPIRequest 将 WdkUmsOutboundSortingCallbackforpulltaskAPIRequest 放入 sync.Pool
+func ReleaseWdkUmsOutboundSortingCallbackforpulltaskAPIRequest(v *WdkUmsOutboundSortingCallbackforpulltaskAPIRequest) {
+	v.Reset()
+	poolWdkUmsOutboundSortingCallbackforpulltaskAPIRequest.Put(v)
 }

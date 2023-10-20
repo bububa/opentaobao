@@ -2,6 +2,7 @@ package jst
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,6 +20,12 @@ type AlibabaModifyaddressIsvBindsellerCheckAPIResponse struct {
 	AlibabaModifyaddressIsvBindsellerCheckAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaModifyaddressIsvBindsellerCheckAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaModifyaddressIsvBindsellerCheckAPIResponseModel).Reset()
+}
+
 // AlibabaModifyaddressIsvBindsellerCheckAPIResponseModel is 查询服务商下的商家是否开通了改地址 成功返回结果
 type AlibabaModifyaddressIsvBindsellerCheckAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_modifyaddress_isv_bindseller_check_response"`
@@ -26,4 +33,27 @@ type AlibabaModifyaddressIsvBindsellerCheckAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// model
 	Model *CheckSellerChooseErpResponse `json:"model,omitempty" xml:"model,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaModifyaddressIsvBindsellerCheckAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Model = nil
+}
+
+var poolAlibabaModifyaddressIsvBindsellerCheckAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaModifyaddressIsvBindsellerCheckAPIResponse)
+	},
+}
+
+// GetAlibabaModifyaddressIsvBindsellerCheckAPIResponse 从 sync.Pool 获取 AlibabaModifyaddressIsvBindsellerCheckAPIResponse
+func GetAlibabaModifyaddressIsvBindsellerCheckAPIResponse() *AlibabaModifyaddressIsvBindsellerCheckAPIResponse {
+	return poolAlibabaModifyaddressIsvBindsellerCheckAPIResponse.Get().(*AlibabaModifyaddressIsvBindsellerCheckAPIResponse)
+}
+
+// ReleaseAlibabaModifyaddressIsvBindsellerCheckAPIResponse 将 AlibabaModifyaddressIsvBindsellerCheckAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaModifyaddressIsvBindsellerCheckAPIResponse(v *AlibabaModifyaddressIsvBindsellerCheckAPIResponse) {
+	v.Reset()
+	poolAlibabaModifyaddressIsvBindsellerCheckAPIResponse.Put(v)
 }

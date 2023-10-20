@@ -1,5 +1,9 @@
 package cityretail
 
+import (
+	"sync"
+)
+
 // OrderLogisticsResponseDto 结构体
 type OrderLogisticsResponseDto struct {
 	// 快递员姓名
@@ -16,4 +20,27 @@ type OrderLogisticsResponseDto struct {
 	LogisticStatus string `json:"logistic_status,omitempty" xml:"logistic_status,omitempty"`
 	// 物流状态说明
 	LogisticStatusName string `json:"logistic_status_name,omitempty" xml:"logistic_status_name,omitempty"`
+}
+
+var poolOrderLogisticsResponseDto = sync.Pool{
+	New: func() any {
+		return new(OrderLogisticsResponseDto)
+	},
+}
+
+// GetOrderLogisticsResponseDto() 从对象池中获取OrderLogisticsResponseDto
+func GetOrderLogisticsResponseDto() *OrderLogisticsResponseDto {
+	return poolOrderLogisticsResponseDto.Get().(*OrderLogisticsResponseDto)
+}
+
+// ReleaseOrderLogisticsResponseDto 释放OrderLogisticsResponseDto
+func ReleaseOrderLogisticsResponseDto(v *OrderLogisticsResponseDto) {
+	v.DelivererName = ""
+	v.DelivererPhone = ""
+	v.FailReason = ""
+	v.FailCode = ""
+	v.LogisticTime = ""
+	v.LogisticStatus = ""
+	v.LogisticStatusName = ""
+	poolOrderLogisticsResponseDto.Put(v)
 }

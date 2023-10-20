@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlitripMerchantGalaxyOrderCancelAPIRequest struct {
 // NewAlitripMerchantGalaxyOrderCancelRequest 初始化AlitripMerchantGalaxyOrderCancelAPIRequest对象
 func NewAlitripMerchantGalaxyOrderCancelRequest() *AlitripMerchantGalaxyOrderCancelAPIRequest {
 	return &AlitripMerchantGalaxyOrderCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyOrderCancelAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._token = ""
+	r._orderId = ""
+	r._reason = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlitripMerchantGalaxyOrderCancelAPIRequest) SetReason(_reason string) e
 // GetReason Reason Getter
 func (r AlitripMerchantGalaxyOrderCancelAPIRequest) GetReason() string {
 	return r._reason
+}
+
+var poolAlitripMerchantGalaxyOrderCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyOrderCancelRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyOrderCancelRequest 从 sync.Pool 获取 AlitripMerchantGalaxyOrderCancelAPIRequest
+func GetAlitripMerchantGalaxyOrderCancelAPIRequest() *AlitripMerchantGalaxyOrderCancelAPIRequest {
+	return poolAlitripMerchantGalaxyOrderCancelAPIRequest.Get().(*AlitripMerchantGalaxyOrderCancelAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyOrderCancelAPIRequest 将 AlitripMerchantGalaxyOrderCancelAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyOrderCancelAPIRequest(v *AlitripMerchantGalaxyOrderCancelAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyOrderCancelAPIRequest.Put(v)
 }

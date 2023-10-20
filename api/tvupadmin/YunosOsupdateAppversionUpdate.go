@@ -9,11 +9,6 @@ import (
 // yunos.osupdate.appversion.update
 //
 // 应用升级任务更新
-func YunosOsupdateAppversionUpdate(clt *core.SDKClient, req *tvupadmin.YunosOsupdateAppversionUpdateAPIRequest, session string) (*tvupadmin.YunosOsupdateAppversionUpdateAPIResponse, error) {
-	var resp tvupadmin.YunosOsupdateAppversionUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosOsupdateAppversionUpdate(clt *core.SDKClient, req *tvupadmin.YunosOsupdateAppversionUpdateAPIRequest, resp *tvupadmin.YunosOsupdateAppversionUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

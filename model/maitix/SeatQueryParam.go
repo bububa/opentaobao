@@ -1,5 +1,9 @@
 package maitix
 
+import (
+	"sync"
+)
+
 // SeatQueryParam 结构体
 type SeatQueryParam struct {
 	// 有条件必传-看台信息,如果传了下面的seat_info信息可以不传这个,否则必传
@@ -16,4 +20,27 @@ type SeatQueryParam struct {
 	ProjectId int64 `json:"project_id,omitempty" xml:"project_id,omitempty"`
 	// 有条件必传-城市ID,如果传了下面的seat_info信息可以不传这个
 	CityId int64 `json:"city_id,omitempty" xml:"city_id,omitempty"`
+}
+
+var poolSeatQueryParam = sync.Pool{
+	New: func() any {
+		return new(SeatQueryParam)
+	},
+}
+
+// GetSeatQueryParam() 从对象池中获取SeatQueryParam
+func GetSeatQueryParam() *SeatQueryParam {
+	return poolSeatQueryParam.Get().(*SeatQueryParam)
+}
+
+// ReleaseSeatQueryParam 释放SeatQueryParam
+func ReleaseSeatQueryParam(v *SeatQueryParam) {
+	v.Stands = v.Stands[:0]
+	v.Token = ""
+	v.RequestId = ""
+	v.SeatInfo = ""
+	v.PerformId = 0
+	v.ProjectId = 0
+	v.CityId = 0
+	poolSeatQueryParam.Put(v)
 }

@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoUniversalbpMemberFindbrandinfolistAPIRequest struct {
 // NewTaobaoUniversalbpMemberFindbrandinfolistRequest 初始化TaobaoUniversalbpMemberFindbrandinfolistAPIRequest对象
 func NewTaobaoUniversalbpMemberFindbrandinfolistRequest() *TaobaoUniversalbpMemberFindbrandinfolistAPIRequest {
 	return &TaobaoUniversalbpMemberFindbrandinfolistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpMemberFindbrandinfolistAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoUniversalbpMemberFindbrandinfolistAPIRequest) SetTopServiceContex
 // GetTopServiceContext TopServiceContext Getter
 func (r TaobaoUniversalbpMemberFindbrandinfolistAPIRequest) GetTopServiceContext() *TopServiceContext {
 	return r._topServiceContext
+}
+
+var poolTaobaoUniversalbpMemberFindbrandinfolistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpMemberFindbrandinfolistRequest()
+	},
+}
+
+// GetTaobaoUniversalbpMemberFindbrandinfolistRequest 从 sync.Pool 获取 TaobaoUniversalbpMemberFindbrandinfolistAPIRequest
+func GetTaobaoUniversalbpMemberFindbrandinfolistAPIRequest() *TaobaoUniversalbpMemberFindbrandinfolistAPIRequest {
+	return poolTaobaoUniversalbpMemberFindbrandinfolistAPIRequest.Get().(*TaobaoUniversalbpMemberFindbrandinfolistAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpMemberFindbrandinfolistAPIRequest 将 TaobaoUniversalbpMemberFindbrandinfolistAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpMemberFindbrandinfolistAPIRequest(v *TaobaoUniversalbpMemberFindbrandinfolistAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpMemberFindbrandinfolistAPIRequest.Put(v)
 }

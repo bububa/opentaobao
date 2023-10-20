@@ -9,11 +9,6 @@ import (
 // taobao.trade.receivetime.delay
 //
 // 延长交易收货时间
-func TaobaoTradeReceivetimeDelay(clt *core.SDKClient, req *tbtrade.TaobaoTradeReceivetimeDelayAPIRequest, session string) (*tbtrade.TaobaoTradeReceivetimeDelayAPIResponse, error) {
-	var resp tbtrade.TaobaoTradeReceivetimeDelayAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTradeReceivetimeDelay(clt *core.SDKClient, req *tbtrade.TaobaoTradeReceivetimeDelayAPIRequest, resp *tbtrade.TaobaoTradeReceivetimeDelayAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

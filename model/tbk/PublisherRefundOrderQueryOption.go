@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // PublisherRefundOrderQueryOption 结构体
 type PublisherRefundOrderQueryOption struct {
 	// 位点，除第一页之外，都需要传递；前端原样返回。
@@ -20,4 +24,29 @@ type PublisherRefundOrderQueryOption struct {
 	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
 	// 1 表示2方，2表示3方，4表示不限
 	MemberType int64 `json:"member_type,omitempty" xml:"member_type,omitempty"`
+}
+
+var poolPublisherRefundOrderQueryOption = sync.Pool{
+	New: func() any {
+		return new(PublisherRefundOrderQueryOption)
+	},
+}
+
+// GetPublisherRefundOrderQueryOption() 从对象池中获取PublisherRefundOrderQueryOption
+func GetPublisherRefundOrderQueryOption() *PublisherRefundOrderQueryOption {
+	return poolPublisherRefundOrderQueryOption.Get().(*PublisherRefundOrderQueryOption)
+}
+
+// ReleasePublisherRefundOrderQueryOption 释放PublisherRefundOrderQueryOption
+func ReleasePublisherRefundOrderQueryOption(v *PublisherRefundOrderQueryOption) {
+	v.PositionIndex = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.JumpType = 0
+	v.OrderScene = 0
+	v.PageSize = 0
+	v.QueryType = 0
+	v.PageNo = 0
+	v.MemberType = 0
+	poolPublisherRefundOrderQueryOption.Put(v)
 }

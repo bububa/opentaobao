@@ -2,6 +2,7 @@ package mozi
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest struct {
 // NewAlibabaMoziVdsTenantApiServiceTenantbyidRequest 初始化AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest对象
 func NewAlibabaMoziVdsTenantApiServiceTenantbyidRequest() *AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest {
 	return &AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest) Reset() {
+	r._par0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest) SetPar0(_par0 *GetT
 // GetPar0 Par0 Getter
 func (r AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest) GetPar0() *GetTenantByIdRequest {
 	return r._par0
+}
+
+var poolAlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMoziVdsTenantApiServiceTenantbyidRequest()
+	},
+}
+
+// GetAlibabaMoziVdsTenantApiServiceTenantbyidRequest 从 sync.Pool 获取 AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest
+func GetAlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest() *AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest {
+	return poolAlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest.Get().(*AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest)
+}
+
+// ReleaseAlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest 将 AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest(v *AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest) {
+	v.Reset()
+	poolAlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest.Put(v)
 }

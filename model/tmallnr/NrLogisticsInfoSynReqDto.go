@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // NrLogisticsInfoSynReqDto 结构体
 type NrLogisticsInfoSynReqDto struct {
 	// 站点名称
@@ -44,4 +48,41 @@ type NrLogisticsInfoSynReqDto struct {
 	EventOperType int64 `json:"event_oper_type,omitempty" xml:"event_oper_type,omitempty"`
 	// 配送序号
 	SequenceNo int64 `json:"sequence_no,omitempty" xml:"sequence_no,omitempty"`
+}
+
+var poolNrLogisticsInfoSynReqDto = sync.Pool{
+	New: func() any {
+		return new(NrLogisticsInfoSynReqDto)
+	},
+}
+
+// GetNrLogisticsInfoSynReqDto() 从对象池中获取NrLogisticsInfoSynReqDto
+func GetNrLogisticsInfoSynReqDto() *NrLogisticsInfoSynReqDto {
+	return poolNrLogisticsInfoSynReqDto.Get().(*NrLogisticsInfoSynReqDto)
+}
+
+// ReleaseNrLogisticsInfoSynReqDto 释放NrLogisticsInfoSynReqDto
+func ReleaseNrLogisticsInfoSynReqDto(v *NrLogisticsInfoSynReqDto) {
+	v.FacilityName = ""
+	v.PlanDate = ""
+	v.Desc = ""
+	v.DeliveryUserName = ""
+	v.EventCreateTime = ""
+	v.CancelReason = ""
+	v.MailCpName = ""
+	v.City = ""
+	v.MailNo = ""
+	v.CancelReasonCode = ""
+	v.DeliveryPhone = ""
+	v.TraceId = ""
+	v.MailCp = ""
+	v.BizIdentity = ""
+	v.DeliveryUserType = 0
+	v.DeliveryUserId = 0
+	v.MainBizOrderId = 0
+	v.SubBizOrderId = 0
+	v.Event = 0
+	v.EventOperType = 0
+	v.SequenceNo = 0
+	poolNrLogisticsInfoSynReqDto.Put(v)
 }

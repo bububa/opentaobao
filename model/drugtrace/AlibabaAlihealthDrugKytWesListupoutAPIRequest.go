@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -49,8 +50,29 @@ type AlibabaAlihealthDrugKytWesListupoutAPIRequest struct {
 // NewAlibabaAlihealthDrugKytWesListupoutRequest 初始化AlibabaAlihealthDrugKytWesListupoutAPIRequest对象
 func NewAlibabaAlihealthDrugKytWesListupoutRequest() *AlibabaAlihealthDrugKytWesListupoutAPIRequest {
 	return &AlibabaAlihealthDrugKytWesListupoutAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(16),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugKytWesListupoutAPIRequest) Reset() {
+	r._refEntId = ""
+	r._licenseToken = ""
+	r._beginDate = ""
+	r._endDate = ""
+	r._fromUserId = ""
+	r._produceBatchNo = ""
+	r._drugEntBaseInfoId = ""
+	r._billType = ""
+	r._physicType = ""
+	r._status = ""
+	r._billCode = ""
+	r._agentRefEntId = ""
+	r._uploadTimeBegin = ""
+	r._uploadTimeEnd = ""
+	r._pageSize = 0
+	r._page = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -276,4 +298,21 @@ func (r *AlibabaAlihealthDrugKytWesListupoutAPIRequest) SetPage(_page int64) err
 // GetPage Page Getter
 func (r AlibabaAlihealthDrugKytWesListupoutAPIRequest) GetPage() int64 {
 	return r._page
+}
+
+var poolAlibabaAlihealthDrugKytWesListupoutAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugKytWesListupoutRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugKytWesListupoutRequest 从 sync.Pool 获取 AlibabaAlihealthDrugKytWesListupoutAPIRequest
+func GetAlibabaAlihealthDrugKytWesListupoutAPIRequest() *AlibabaAlihealthDrugKytWesListupoutAPIRequest {
+	return poolAlibabaAlihealthDrugKytWesListupoutAPIRequest.Get().(*AlibabaAlihealthDrugKytWesListupoutAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugKytWesListupoutAPIRequest 将 AlibabaAlihealthDrugKytWesListupoutAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytWesListupoutAPIRequest(v *AlibabaAlihealthDrugKytWesListupoutAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytWesListupoutAPIRequest.Put(v)
 }

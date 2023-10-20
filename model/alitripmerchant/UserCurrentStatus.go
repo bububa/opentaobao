@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // UserCurrentStatus 结构体
 type UserCurrentStatus struct {
 	// token
@@ -14,4 +18,26 @@ type UserCurrentStatus struct {
 	UserEncryptInfo string `json:"user_encrypt_info,omitempty" xml:"user_encrypt_info,omitempty"`
 	// 手机号更新换绑提示
 	UpdateToastSign bool `json:"update_toast_sign,omitempty" xml:"update_toast_sign,omitempty"`
+}
+
+var poolUserCurrentStatus = sync.Pool{
+	New: func() any {
+		return new(UserCurrentStatus)
+	},
+}
+
+// GetUserCurrentStatus() 从对象池中获取UserCurrentStatus
+func GetUserCurrentStatus() *UserCurrentStatus {
+	return poolUserCurrentStatus.Get().(*UserCurrentStatus)
+}
+
+// ReleaseUserCurrentStatus 释放UserCurrentStatus
+func ReleaseUserCurrentStatus(v *UserCurrentStatus) {
+	v.Token = ""
+	v.Status = ""
+	v.SceneCode = ""
+	v.ForNameVerification = ""
+	v.UserEncryptInfo = ""
+	v.UpdateToastSign = false
+	poolUserCurrentStatus.Put(v)
 }

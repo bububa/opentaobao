@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TmallServicecenterWorkcardSigninAPIRequest struct {
 // NewTmallServicecenterWorkcardSigninRequest 初始化TmallServicecenterWorkcardSigninAPIRequest对象
 func NewTmallServicecenterWorkcardSigninRequest() *TmallServicecenterWorkcardSigninAPIRequest {
 	return &TmallServicecenterWorkcardSigninAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterWorkcardSigninAPIRequest) Reset() {
+	r._outerId = ""
+	r._picUrls = ""
+	r._workcardId = 0
+	r._fulfilTaskId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TmallServicecenterWorkcardSigninAPIRequest) SetFulfilTaskId(_fulfilTask
 // GetFulfilTaskId FulfilTaskId Getter
 func (r TmallServicecenterWorkcardSigninAPIRequest) GetFulfilTaskId() int64 {
 	return r._fulfilTaskId
+}
+
+var poolTmallServicecenterWorkcardSigninAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterWorkcardSigninRequest()
+	},
+}
+
+// GetTmallServicecenterWorkcardSigninRequest 从 sync.Pool 获取 TmallServicecenterWorkcardSigninAPIRequest
+func GetTmallServicecenterWorkcardSigninAPIRequest() *TmallServicecenterWorkcardSigninAPIRequest {
+	return poolTmallServicecenterWorkcardSigninAPIRequest.Get().(*TmallServicecenterWorkcardSigninAPIRequest)
+}
+
+// ReleaseTmallServicecenterWorkcardSigninAPIRequest 将 TmallServicecenterWorkcardSigninAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterWorkcardSigninAPIRequest(v *TmallServicecenterWorkcardSigninAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterWorkcardSigninAPIRequest.Put(v)
 }

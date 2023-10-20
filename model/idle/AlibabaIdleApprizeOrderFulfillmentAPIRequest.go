@@ -2,6 +2,7 @@ package idle
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaIdleApprizeOrderFulfillmentAPIRequest struct {
 // NewAlibabaIdleApprizeOrderFulfillmentRequest 初始化AlibabaIdleApprizeOrderFulfillmentAPIRequest对象
 func NewAlibabaIdleApprizeOrderFulfillmentRequest() *AlibabaIdleApprizeOrderFulfillmentAPIRequest {
 	return &AlibabaIdleApprizeOrderFulfillmentAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleApprizeOrderFulfillmentAPIRequest) Reset() {
+	r._action = ""
+	r._workCardId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaIdleApprizeOrderFulfillmentAPIRequest) SetWorkCardId(_workCardId
 // GetWorkCardId WorkCardId Getter
 func (r AlibabaIdleApprizeOrderFulfillmentAPIRequest) GetWorkCardId() int64 {
 	return r._workCardId
+}
+
+var poolAlibabaIdleApprizeOrderFulfillmentAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleApprizeOrderFulfillmentRequest()
+	},
+}
+
+// GetAlibabaIdleApprizeOrderFulfillmentRequest 从 sync.Pool 获取 AlibabaIdleApprizeOrderFulfillmentAPIRequest
+func GetAlibabaIdleApprizeOrderFulfillmentAPIRequest() *AlibabaIdleApprizeOrderFulfillmentAPIRequest {
+	return poolAlibabaIdleApprizeOrderFulfillmentAPIRequest.Get().(*AlibabaIdleApprizeOrderFulfillmentAPIRequest)
+}
+
+// ReleaseAlibabaIdleApprizeOrderFulfillmentAPIRequest 将 AlibabaIdleApprizeOrderFulfillmentAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleApprizeOrderFulfillmentAPIRequest(v *AlibabaIdleApprizeOrderFulfillmentAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleApprizeOrderFulfillmentAPIRequest.Put(v)
 }

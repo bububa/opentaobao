@@ -1,5 +1,9 @@
 package tvupadmin
 
+import (
+	"sync"
+)
+
 // YunosTvpubadminManageDialogDeleteTopResult 结构体
 type YunosTvpubadminManageDialogDeleteTopResult struct {
 	// errorCode
@@ -12,4 +16,25 @@ type YunosTvpubadminManageDialogDeleteTopResult struct {
 	Object int64 `json:"object,omitempty" xml:"object,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolYunosTvpubadminManageDialogDeleteTopResult = sync.Pool{
+	New: func() any {
+		return new(YunosTvpubadminManageDialogDeleteTopResult)
+	},
+}
+
+// GetYunosTvpubadminManageDialogDeleteTopResult() 从对象池中获取YunosTvpubadminManageDialogDeleteTopResult
+func GetYunosTvpubadminManageDialogDeleteTopResult() *YunosTvpubadminManageDialogDeleteTopResult {
+	return poolYunosTvpubadminManageDialogDeleteTopResult.Get().(*YunosTvpubadminManageDialogDeleteTopResult)
+}
+
+// ReleaseYunosTvpubadminManageDialogDeleteTopResult 释放YunosTvpubadminManageDialogDeleteTopResult
+func ReleaseYunosTvpubadminManageDialogDeleteTopResult(v *YunosTvpubadminManageDialogDeleteTopResult) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.RetCode = 0
+	v.Object = 0
+	v.Success = false
+	poolYunosTvpubadminManageDialogDeleteTopResult.Put(v)
 }

@@ -1,5 +1,9 @@
 package alihealth2
 
+import (
+	"sync"
+)
+
 // DentalOuterStoreRequest 结构体
 type DentalOuterStoreRequest struct {
 	// 营业执照图片
@@ -40,4 +44,39 @@ type DentalOuterStoreRequest struct {
 	SignPic string `json:"sign_pic,omitempty" xml:"sign_pic,omitempty"`
 	// 门店ID
 	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
+}
+
+var poolDentalOuterStoreRequest = sync.Pool{
+	New: func() any {
+		return new(DentalOuterStoreRequest)
+	},
+}
+
+// GetDentalOuterStoreRequest() 从对象池中获取DentalOuterStoreRequest
+func GetDentalOuterStoreRequest() *DentalOuterStoreRequest {
+	return poolDentalOuterStoreRequest.Get().(*DentalOuterStoreRequest)
+}
+
+// ReleaseDentalOuterStoreRequest 释放DentalOuterStoreRequest
+func ReleaseDentalOuterStoreRequest(v *DentalOuterStoreRequest) {
+	v.LicensePics = v.LicensePics[:0]
+	v.MedicalPics = v.MedicalPics[:0]
+	v.StorePics = v.StorePics[:0]
+	v.Logo = ""
+	v.StoreName = ""
+	v.CityCode = ""
+	v.StoreDesc = ""
+	v.LicenseName = ""
+	v.StorePhone = ""
+	v.PointX = ""
+	v.LicenseNo = ""
+	v.PointY = ""
+	v.Address = ""
+	v.StoreCode = ""
+	v.KeyWords = ""
+	v.WorkTime = ""
+	v.Routes = ""
+	v.SignPic = ""
+	v.StoreId = 0
+	poolDentalOuterStoreRequest.Put(v)
 }

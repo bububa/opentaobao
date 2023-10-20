@@ -2,6 +2,7 @@ package nlife
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaNlifeB2cTradeGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaNlifeB2cTradeGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaNlifeB2cTradeGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaNlifeB2cTradeGetAPIResponseModel).Reset()
 }
 
 // AlibabaNlifeB2cTradeGetAPIResponseModel is 零售+平台查询订单 成功返回结果
@@ -74,4 +81,53 @@ type AlibabaNlifeB2cTradeGetAPIResponseModel struct {
 	TotalAmount int64 `json:"total_amount,omitempty" xml:"total_amount,omitempty"`
 	// 0：门店订单；1：全渠道订单；3：网直供订单
 	TradeBizType *model.File `json:"trade_biz_type,omitempty" xml:"trade_biz_type,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaNlifeB2cTradeGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.GoodsList = m.GoodsList[:0]
+	m.FundBillList = m.FundBillList[:0]
+	m.RefundList = m.RefundList[:0]
+	m.LogisticsStatusList = m.LogisticsStatusList[:0]
+	m.Channel = ""
+	m.ChannelData = ""
+	m.BuyerId = ""
+	m.BuyerIdType = ""
+	m.OutCardNo = ""
+	m.OrderBody = ""
+	m.SalesId = ""
+	m.PickingUp = ""
+	m.GmtCreate = ""
+	m.GmtPay = ""
+	m.GmtCancel = ""
+	m.PayStatus = ""
+	m.RefundStatus = ""
+	m.LogisticsStatus = ""
+	m.ExtendParams = ""
+	m.Attachment = ""
+	m.TradeNo = ""
+	m.OutTradeNo = ""
+	m.OmniTradeNo = ""
+	m.StoreId = ""
+	m.SalesName = ""
+	m.TotalAmount = 0
+	m.TradeBizType = nil
+}
+
+var poolAlibabaNlifeB2cTradeGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaNlifeB2cTradeGetAPIResponse)
+	},
+}
+
+// GetAlibabaNlifeB2cTradeGetAPIResponse 从 sync.Pool 获取 AlibabaNlifeB2cTradeGetAPIResponse
+func GetAlibabaNlifeB2cTradeGetAPIResponse() *AlibabaNlifeB2cTradeGetAPIResponse {
+	return poolAlibabaNlifeB2cTradeGetAPIResponse.Get().(*AlibabaNlifeB2cTradeGetAPIResponse)
+}
+
+// ReleaseAlibabaNlifeB2cTradeGetAPIResponse 将 AlibabaNlifeB2cTradeGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaNlifeB2cTradeGetAPIResponse(v *AlibabaNlifeB2cTradeGetAPIResponse) {
+	v.Reset()
+	poolAlibabaNlifeB2cTradeGetAPIResponse.Put(v)
 }

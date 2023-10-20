@@ -1,5 +1,9 @@
 package shop
 
+import (
+	"sync"
+)
+
 // OpenApiHit 结构体
 type OpenApiHit struct {
 	// 店铺ID
@@ -18,4 +22,28 @@ type OpenApiHit struct {
 	Weight string `json:"weight,omitempty" xml:"weight,omitempty"`
 	// 优先级
 	Priority int64 `json:"priority,omitempty" xml:"priority,omitempty"`
+}
+
+var poolOpenApiHit = sync.Pool{
+	New: func() any {
+		return new(OpenApiHit)
+	},
+}
+
+// GetOpenApiHit() 从对象池中获取OpenApiHit
+func GetOpenApiHit() *OpenApiHit {
+	return poolOpenApiHit.Get().(*OpenApiHit)
+}
+
+// ReleaseOpenApiHit 释放OpenApiHit
+func ReleaseOpenApiHit(v *OpenApiHit) {
+	v.BizId = ""
+	v.Desc = ""
+	v.EntityId = ""
+	v.EntityType = ""
+	v.RecmAttrs = ""
+	v.RuleId = ""
+	v.Weight = ""
+	v.Priority = 0
+	poolOpenApiHit.Put(v)
 }

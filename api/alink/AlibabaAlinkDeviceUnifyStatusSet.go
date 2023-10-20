@@ -9,11 +9,6 @@ import (
 // alibaba.alink.device.unify.status.set
 //
 // 操作用户绑定的设备
-func AlibabaAlinkDeviceUnifyStatusSet(clt *core.SDKClient, req *alink.AlibabaAlinkDeviceUnifyStatusSetAPIRequest, session string) (*alink.AlibabaAlinkDeviceUnifyStatusSetAPIResponse, error) {
-	var resp alink.AlibabaAlinkDeviceUnifyStatusSetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlinkDeviceUnifyStatusSet(clt *core.SDKClient, req *alink.AlibabaAlinkDeviceUnifyStatusSetAPIRequest, resp *alink.AlibabaAlinkDeviceUnifyStatusSetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

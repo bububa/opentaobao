@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // ScItem 结构体
 type ScItem struct {
 	// 条形码
@@ -48,4 +52,43 @@ type ScItem struct {
 	IsDangerous bool `json:"is_dangerous,omitempty" xml:"is_dangerous,omitempty"`
 	// 贵重品:false:不是 true：是
 	IsCostly bool `json:"is_costly,omitempty" xml:"is_costly,omitempty"`
+}
+
+var poolScItem = sync.Pool{
+	New: func() any {
+		return new(ScItem)
+	},
+}
+
+// GetScItem() 从对象池中获取ScItem
+func GetScItem() *ScItem {
+	return poolScItem.Get().(*ScItem)
+}
+
+// ReleaseScItem 释放ScItem
+func ReleaseScItem(v *ScItem) {
+	v.BarCode = ""
+	v.Remark = ""
+	v.Properties = ""
+	v.BrandName = ""
+	v.WmsCode = ""
+	v.ItemName = ""
+	v.OuterCode = ""
+	v.MatterStatus = ""
+	v.Weight = 0
+	v.Width = 0
+	v.BrandId = 0
+	v.Price = 0
+	v.Height = 0
+	v.ItemId = 0
+	v.Volume = 0
+	v.Length = 0
+	v.ItemType = 0
+	v.IsAreaSale = 0
+	v.Options = 0
+	v.IsFriable = false
+	v.IsWarranty = false
+	v.IsDangerous = false
+	v.IsCostly = false
+	poolScItem.Put(v)
 }

@@ -2,6 +2,7 @@ package user
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoOpensecurityIsvUidGetAPIRequest struct {
 // NewTaobaoOpensecurityIsvUidGetRequest 初始化TaobaoOpensecurityIsvUidGetAPIRequest对象
 func NewTaobaoOpensecurityIsvUidGetRequest() *TaobaoOpensecurityIsvUidGetAPIRequest {
 	return &TaobaoOpensecurityIsvUidGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpensecurityIsvUidGetAPIRequest) Reset() {
+	r._openUid = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoOpensecurityIsvUidGetAPIRequest) SetOpenUid(_openUid string) erro
 // GetOpenUid OpenUid Getter
 func (r TaobaoOpensecurityIsvUidGetAPIRequest) GetOpenUid() string {
 	return r._openUid
+}
+
+var poolTaobaoOpensecurityIsvUidGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpensecurityIsvUidGetRequest()
+	},
+}
+
+// GetTaobaoOpensecurityIsvUidGetRequest 从 sync.Pool 获取 TaobaoOpensecurityIsvUidGetAPIRequest
+func GetTaobaoOpensecurityIsvUidGetAPIRequest() *TaobaoOpensecurityIsvUidGetAPIRequest {
+	return poolTaobaoOpensecurityIsvUidGetAPIRequest.Get().(*TaobaoOpensecurityIsvUidGetAPIRequest)
+}
+
+// ReleaseTaobaoOpensecurityIsvUidGetAPIRequest 将 TaobaoOpensecurityIsvUidGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpensecurityIsvUidGetAPIRequest(v *TaobaoOpensecurityIsvUidGetAPIRequest) {
+	v.Reset()
+	poolTaobaoOpensecurityIsvUidGetAPIRequest.Put(v)
 }

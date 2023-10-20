@@ -2,6 +2,7 @@ package mozi
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaMoziBucAccountListAccountidsAPIResponse struct {
 	AlibabaMoziBucAccountListAccountidsAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaMoziBucAccountListAccountidsAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaMoziBucAccountListAccountidsAPIResponseModel).Reset()
+}
+
 // AlibabaMoziBucAccountListAccountidsAPIResponseModel is 根据一批账号ID查询账号列表 成功返回结果
 type AlibabaMoziBucAccountListAccountidsAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mozi_buc_account_list_accountids_response"`
@@ -22,4 +29,27 @@ type AlibabaMoziBucAccountListAccountidsAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 出参
 	Result *ListAccountsByAccountIdsResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaMoziBucAccountListAccountidsAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaMoziBucAccountListAccountidsAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaMoziBucAccountListAccountidsAPIResponse)
+	},
+}
+
+// GetAlibabaMoziBucAccountListAccountidsAPIResponse 从 sync.Pool 获取 AlibabaMoziBucAccountListAccountidsAPIResponse
+func GetAlibabaMoziBucAccountListAccountidsAPIResponse() *AlibabaMoziBucAccountListAccountidsAPIResponse {
+	return poolAlibabaMoziBucAccountListAccountidsAPIResponse.Get().(*AlibabaMoziBucAccountListAccountidsAPIResponse)
+}
+
+// ReleaseAlibabaMoziBucAccountListAccountidsAPIResponse 将 AlibabaMoziBucAccountListAccountidsAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaMoziBucAccountListAccountidsAPIResponse(v *AlibabaMoziBucAccountListAccountidsAPIResponse) {
+	v.Reset()
+	poolAlibabaMoziBucAccountListAccountidsAPIResponse.Put(v)
 }

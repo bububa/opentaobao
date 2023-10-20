@@ -1,5 +1,9 @@
 package koubeimall
 
+import (
+	"sync"
+)
+
 // DisplayGoodsDto 结构体
 type DisplayGoodsDto struct {
 	// 带图片的推荐菜详情模型
@@ -12,4 +16,25 @@ type DisplayGoodsDto struct {
 	GoodsCount int64 `json:"goods_count,omitempty" xml:"goods_count,omitempty"`
 	// 是否有图模式。true：有图，false：无图
 	HasPicture bool `json:"has_picture,omitempty" xml:"has_picture,omitempty"`
+}
+
+var poolDisplayGoodsDto = sync.Pool{
+	New: func() any {
+		return new(DisplayGoodsDto)
+	},
+}
+
+// GetDisplayGoodsDto() 从对象池中获取DisplayGoodsDto
+func GetDisplayGoodsDto() *DisplayGoodsDto {
+	return poolDisplayGoodsDto.Get().(*DisplayGoodsDto)
+}
+
+// ReleaseDisplayGoodsDto 释放DisplayGoodsDto
+func ReleaseDisplayGoodsDto(v *DisplayGoodsDto) {
+	v.GoodsDetailInfos = v.GoodsDetailInfos[:0]
+	v.GoodsTitle = ""
+	v.GoodsDesc = ""
+	v.GoodsCount = 0
+	v.HasPicture = false
+	poolDisplayGoodsDto.Put(v)
 }

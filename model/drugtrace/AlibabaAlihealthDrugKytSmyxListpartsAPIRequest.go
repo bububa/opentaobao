@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AlibabaAlihealthDrugKytSmyxListpartsAPIRequest struct {
 // NewAlibabaAlihealthDrugKytSmyxListpartsRequest 初始化AlibabaAlihealthDrugKytSmyxListpartsAPIRequest对象
 func NewAlibabaAlihealthDrugKytSmyxListpartsRequest() *AlibabaAlihealthDrugKytSmyxListpartsAPIRequest {
 	return &AlibabaAlihealthDrugKytSmyxListpartsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugKytSmyxListpartsAPIRequest) Reset() {
+	r._refEntId = ""
+	r._entName = ""
+	r._refPartnerId = ""
+	r._beginDate = ""
+	r._endDate = ""
+	r._pageSize = 0
+	r._page = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AlibabaAlihealthDrugKytSmyxListpartsAPIRequest) SetPage(_page int64) er
 // GetPage Page Getter
 func (r AlibabaAlihealthDrugKytSmyxListpartsAPIRequest) GetPage() int64 {
 	return r._page
+}
+
+var poolAlibabaAlihealthDrugKytSmyxListpartsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugKytSmyxListpartsRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugKytSmyxListpartsRequest 从 sync.Pool 获取 AlibabaAlihealthDrugKytSmyxListpartsAPIRequest
+func GetAlibabaAlihealthDrugKytSmyxListpartsAPIRequest() *AlibabaAlihealthDrugKytSmyxListpartsAPIRequest {
+	return poolAlibabaAlihealthDrugKytSmyxListpartsAPIRequest.Get().(*AlibabaAlihealthDrugKytSmyxListpartsAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugKytSmyxListpartsAPIRequest 将 AlibabaAlihealthDrugKytSmyxListpartsAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytSmyxListpartsAPIRequest(v *AlibabaAlihealthDrugKytSmyxListpartsAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytSmyxListpartsAPIRequest.Put(v)
 }

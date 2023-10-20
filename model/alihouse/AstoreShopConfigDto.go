@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // AstoreShopConfigDto 结构体
 type AstoreShopConfigDto struct {
 	// 外部ID
@@ -14,4 +18,26 @@ type AstoreShopConfigDto struct {
 	FitupType int64 `json:"fitup_type,omitempty" xml:"fitup_type,omitempty"`
 	// 版本号
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
+}
+
+var poolAstoreShopConfigDto = sync.Pool{
+	New: func() any {
+		return new(AstoreShopConfigDto)
+	},
+}
+
+// GetAstoreShopConfigDto() 从对象池中获取AstoreShopConfigDto
+func GetAstoreShopConfigDto() *AstoreShopConfigDto {
+	return poolAstoreShopConfigDto.Get().(*AstoreShopConfigDto)
+}
+
+// ReleaseAstoreShopConfigDto 释放AstoreShopConfigDto
+func ReleaseAstoreShopConfigDto(v *AstoreShopConfigDto) {
+	v.OuterTargetId = ""
+	v.OuterStoreId = ""
+	v.TargetType = 0
+	v.Status = 0
+	v.FitupType = 0
+	v.Version = 0
+	poolAstoreShopConfigDto.Put(v)
 }

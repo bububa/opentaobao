@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripMerchantGalaxyMessageSubscriptionQueryAPIResponse struct {
 	AlitripMerchantGalaxyMessageSubscriptionQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripMerchantGalaxyMessageSubscriptionQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripMerchantGalaxyMessageSubscriptionQueryAPIResponseModel).Reset()
+}
+
 // AlitripMerchantGalaxyMessageSubscriptionQueryAPIResponseModel is 查询用户是否有模版ID权限 成功返回结果
 type AlitripMerchantGalaxyMessageSubscriptionQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_merchant_galaxy_message_subscription_query_response"`
@@ -22,4 +29,27 @@ type AlitripMerchantGalaxyMessageSubscriptionQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 默认描述
 	Result *AlitripMerchantGalaxyMessageSubscriptionQueryResponse `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripMerchantGalaxyMessageSubscriptionQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlitripMerchantGalaxyMessageSubscriptionQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyMessageSubscriptionQueryAPIResponse)
+	},
+}
+
+// GetAlitripMerchantGalaxyMessageSubscriptionQueryAPIResponse 从 sync.Pool 获取 AlitripMerchantGalaxyMessageSubscriptionQueryAPIResponse
+func GetAlitripMerchantGalaxyMessageSubscriptionQueryAPIResponse() *AlitripMerchantGalaxyMessageSubscriptionQueryAPIResponse {
+	return poolAlitripMerchantGalaxyMessageSubscriptionQueryAPIResponse.Get().(*AlitripMerchantGalaxyMessageSubscriptionQueryAPIResponse)
+}
+
+// ReleaseAlitripMerchantGalaxyMessageSubscriptionQueryAPIResponse 将 AlitripMerchantGalaxyMessageSubscriptionQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlitripMerchantGalaxyMessageSubscriptionQueryAPIResponse(v *AlitripMerchantGalaxyMessageSubscriptionQueryAPIResponse) {
+	v.Reset()
+	poolAlitripMerchantGalaxyMessageSubscriptionQueryAPIResponse.Put(v)
 }

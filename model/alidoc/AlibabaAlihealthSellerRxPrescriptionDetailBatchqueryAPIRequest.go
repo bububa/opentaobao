@@ -2,6 +2,7 @@ package alidoc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIRequest struct {
 // NewAlibabaAlihealthSellerRxPrescriptionDetailBatchqueryRequest 初始化AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIRequest对象
 func NewAlibabaAlihealthSellerRxPrescriptionDetailBatchqueryRequest() *AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIRequest {
 	return &AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIRequest) Reset() {
+	r._bizOrderIds = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIRequest) SetBizO
 // GetBizOrderIds BizOrderIds Getter
 func (r AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIRequest) GetBizOrderIds() string {
 	return r._bizOrderIds
+}
+
+var poolAlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthSellerRxPrescriptionDetailBatchqueryRequest()
+	},
+}
+
+// GetAlibabaAlihealthSellerRxPrescriptionDetailBatchqueryRequest 从 sync.Pool 获取 AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIRequest
+func GetAlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIRequest() *AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIRequest {
+	return poolAlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIRequest.Get().(*AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIRequest 将 AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIRequest(v *AlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthSellerRxPrescriptionDetailBatchqueryAPIRequest.Put(v)
 }

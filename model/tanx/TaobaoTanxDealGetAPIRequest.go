@@ -2,6 +2,7 @@ package tanx
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoTanxDealGetAPIRequest struct {
 // NewTaobaoTanxDealGetRequest 初始化TaobaoTanxDealGetAPIRequest对象
 func NewTaobaoTanxDealGetRequest() *TaobaoTanxDealGetAPIRequest {
 	return &TaobaoTanxDealGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTanxDealGetAPIRequest) Reset() {
+	r._token = ""
+	r._dspId = 0
+	r._dealId = 0
+	r._signTime = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoTanxDealGetAPIRequest) SetSignTime(_signTime int64) error {
 // GetSignTime SignTime Getter
 func (r TaobaoTanxDealGetAPIRequest) GetSignTime() int64 {
 	return r._signTime
+}
+
+var poolTaobaoTanxDealGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTanxDealGetRequest()
+	},
+}
+
+// GetTaobaoTanxDealGetRequest 从 sync.Pool 获取 TaobaoTanxDealGetAPIRequest
+func GetTaobaoTanxDealGetAPIRequest() *TaobaoTanxDealGetAPIRequest {
+	return poolTaobaoTanxDealGetAPIRequest.Get().(*TaobaoTanxDealGetAPIRequest)
+}
+
+// ReleaseTaobaoTanxDealGetAPIRequest 将 TaobaoTanxDealGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTanxDealGetAPIRequest(v *TaobaoTanxDealGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTanxDealGetAPIRequest.Put(v)
 }

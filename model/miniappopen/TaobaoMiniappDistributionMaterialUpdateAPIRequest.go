@@ -2,6 +2,7 @@ package miniappopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoMiniappDistributionMaterialUpdateAPIRequest struct {
 // NewTaobaoMiniappDistributionMaterialUpdateRequest 初始化TaobaoMiniappDistributionMaterialUpdateAPIRequest对象
 func NewTaobaoMiniappDistributionMaterialUpdateRequest() *TaobaoMiniappDistributionMaterialUpdateAPIRequest {
 	return &TaobaoMiniappDistributionMaterialUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMiniappDistributionMaterialUpdateAPIRequest) Reset() {
+	r._materialRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoMiniappDistributionMaterialUpdateAPIRequest) SetMaterialRequest(_
 // GetMaterialRequest MaterialRequest Getter
 func (r TaobaoMiniappDistributionMaterialUpdateAPIRequest) GetMaterialRequest() *MiniAppEntranceMaterialBizOpenDto {
 	return r._materialRequest
+}
+
+var poolTaobaoMiniappDistributionMaterialUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMiniappDistributionMaterialUpdateRequest()
+	},
+}
+
+// GetTaobaoMiniappDistributionMaterialUpdateRequest 从 sync.Pool 获取 TaobaoMiniappDistributionMaterialUpdateAPIRequest
+func GetTaobaoMiniappDistributionMaterialUpdateAPIRequest() *TaobaoMiniappDistributionMaterialUpdateAPIRequest {
+	return poolTaobaoMiniappDistributionMaterialUpdateAPIRequest.Get().(*TaobaoMiniappDistributionMaterialUpdateAPIRequest)
+}
+
+// ReleaseTaobaoMiniappDistributionMaterialUpdateAPIRequest 将 TaobaoMiniappDistributionMaterialUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMiniappDistributionMaterialUpdateAPIRequest(v *TaobaoMiniappDistributionMaterialUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoMiniappDistributionMaterialUpdateAPIRequest.Put(v)
 }

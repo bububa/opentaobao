@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // OfferDetailsDto 结构体
 type OfferDetailsDto struct {
 	// 酒店数据集合
@@ -50,4 +54,44 @@ type OfferDetailsDto struct {
 	NeedActivityPage bool `json:"need_activity_page,omitempty" xml:"need_activity_page,omitempty"`
 	// 是否配置了弹屏
 	NeedPopUpScreen bool `json:"need_pop_up_screen,omitempty" xml:"need_pop_up_screen,omitempty"`
+}
+
+var poolOfferDetailsDto = sync.Pool{
+	New: func() any {
+		return new(OfferDetailsDto)
+	},
+}
+
+// GetOfferDetailsDto() 从对象池中获取OfferDetailsDto
+func GetOfferDetailsDto() *OfferDetailsDto {
+	return poolOfferDetailsDto.Get().(*OfferDetailsDto)
+}
+
+// ReleaseOfferDetailsDto 释放OfferDetailsDto
+func ReleaseOfferDetailsDto(v *OfferDetailsDto) {
+	v.HotelContentList = v.HotelContentList[:0]
+	v.JoinBrands = v.JoinBrands[:0]
+	v.OfferImageWireless = v.OfferImageWireless[:0]
+	v.OfferName = ""
+	v.Subtitle = ""
+	v.BookStartDate = ""
+	v.BookEndDate = ""
+	v.FromPriceUnit = ""
+	v.OfferImageSmall = ""
+	v.OfferImageBig = ""
+	v.Description = ""
+	v.OfferRedirectUrl = ""
+	v.FromPriceAmount = ""
+	v.TimeZone = ""
+	v.OfferType = ""
+	v.ClEndDate = ""
+	v.ClStartDate = ""
+	v.SubType = ""
+	v.ButtonContent = ""
+	v.OfferId = 0
+	v.ActivityLuckyDraw = nil
+	v.PopUpInfo = nil
+	v.NeedActivityPage = false
+	v.NeedPopUpScreen = false
+	poolOfferDetailsDto.Put(v)
 }

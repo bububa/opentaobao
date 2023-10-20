@@ -2,6 +2,7 @@ package tmallnr
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallNrInventoryInitialAPIRequest struct {
 // NewTmallNrInventoryInitialRequest 初始化TmallNrInventoryInitialAPIRequest对象
 func NewTmallNrInventoryInitialRequest() *TmallNrInventoryInitialAPIRequest {
 	return &TmallNrInventoryInitialAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrInventoryInitialAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallNrInventoryInitialAPIRequest) SetParam0(_param0 *NrStoreInvItemIni
 // GetParam0 Param0 Getter
 func (r TmallNrInventoryInitialAPIRequest) GetParam0() *NrStoreInvItemInitialReqDto {
 	return r._param0
+}
+
+var poolTmallNrInventoryInitialAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrInventoryInitialRequest()
+	},
+}
+
+// GetTmallNrInventoryInitialRequest 从 sync.Pool 获取 TmallNrInventoryInitialAPIRequest
+func GetTmallNrInventoryInitialAPIRequest() *TmallNrInventoryInitialAPIRequest {
+	return poolTmallNrInventoryInitialAPIRequest.Get().(*TmallNrInventoryInitialAPIRequest)
+}
+
+// ReleaseTmallNrInventoryInitialAPIRequest 将 TmallNrInventoryInitialAPIRequest 放入 sync.Pool
+func ReleaseTmallNrInventoryInitialAPIRequest(v *TmallNrInventoryInitialAPIRequest) {
+	v.Reset()
+	poolTmallNrInventoryInitialAPIRequest.Put(v)
 }

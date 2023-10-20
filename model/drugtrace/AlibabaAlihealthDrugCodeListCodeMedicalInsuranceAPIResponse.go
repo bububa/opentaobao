@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,6 +22,12 @@ type AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponse struct {
 	AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponseModel is 根据码获取码信息接口-医保 成功返回结果
 type AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drug_code_list_code_medical_insurance_response"`
@@ -28,4 +35,27 @@ type AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 最外层结果
 	Result *AlibabaAlihealthDrugCodeListCodeMedicalInsuranceResultModel `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponse 从 sync.Pool 获取 AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponse
+func GetAlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponse() *AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponse {
+	return poolAlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponse.Get().(*AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponse 将 AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponse(v *AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponse.Put(v)
 }

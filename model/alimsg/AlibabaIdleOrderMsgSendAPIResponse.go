@@ -2,6 +2,7 @@ package alimsg
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaIdleOrderMsgSendAPIResponse struct {
 	AlibabaIdleOrderMsgSendAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaIdleOrderMsgSendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaIdleOrderMsgSendAPIResponseModel).Reset()
+}
+
 // AlibabaIdleOrderMsgSendAPIResponseModel is 虚拟发货消息发送接口 成功返回结果
 type AlibabaIdleOrderMsgSendAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_idle_order_msg_send_response"`
@@ -22,4 +29,27 @@ type AlibabaIdleOrderMsgSendAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 是否发送成功
 	SendSuccess bool `json:"send_success,omitempty" xml:"send_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaIdleOrderMsgSendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.SendSuccess = false
+}
+
+var poolAlibabaIdleOrderMsgSendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaIdleOrderMsgSendAPIResponse)
+	},
+}
+
+// GetAlibabaIdleOrderMsgSendAPIResponse 从 sync.Pool 获取 AlibabaIdleOrderMsgSendAPIResponse
+func GetAlibabaIdleOrderMsgSendAPIResponse() *AlibabaIdleOrderMsgSendAPIResponse {
+	return poolAlibabaIdleOrderMsgSendAPIResponse.Get().(*AlibabaIdleOrderMsgSendAPIResponse)
+}
+
+// ReleaseAlibabaIdleOrderMsgSendAPIResponse 将 AlibabaIdleOrderMsgSendAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaIdleOrderMsgSendAPIResponse(v *AlibabaIdleOrderMsgSendAPIResponse) {
+	v.Reset()
+	poolAlibabaIdleOrderMsgSendAPIResponse.Put(v)
 }

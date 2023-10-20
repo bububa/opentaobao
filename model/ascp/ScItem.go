@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // ScItem 结构体
 type ScItem struct {
 	// 仓库编码集合
@@ -60,4 +64,49 @@ type ScItem struct {
 	Precious int64 `json:"precious,omitempty" xml:"precious,omitempty"`
 	// 是否需要下发仓。0表示否，1表示是
 	NeedNotifyWarehouse int64 `json:"need_notify_warehouse,omitempty" xml:"need_notify_warehouse,omitempty"`
+}
+
+var poolScItem = sync.Pool{
+	New: func() any {
+		return new(ScItem)
+	},
+}
+
+// GetScItem() 从对象池中获取ScItem
+func GetScItem() *ScItem {
+	return poolScItem.Get().(*ScItem)
+}
+
+// ReleaseScItem 释放ScItem
+func ReleaseScItem(v *ScItem) {
+	v.WarehouseCodes = v.WarehouseCodes[:0]
+	v.WarehouseScItemRelation = v.WarehouseScItemRelation[:0]
+	v.PurchasePrices = v.PurchasePrices[:0]
+	v.ScItemCode = ""
+	v.ScItemType = ""
+	v.ScItemId = ""
+	v.ScItemName = ""
+	v.BarCode = ""
+	v.ExtendProps = ""
+	v.Industry = ""
+	v.OwnerCode = ""
+	v.WarehouseCode = ""
+	v.BrandName = ""
+	v.CategoryName = ""
+	v.PicPath = ""
+	v.StorageEnvironment = ""
+	v.Remark = ""
+	v.Currency = ""
+	v.WarehouseScItemCode = ""
+	v.Length = 0
+	v.Width = 0
+	v.Height = 0
+	v.Weight = 0
+	v.RetailPrice = 0
+	v.Hazardous = 0
+	v.Fragile = 0
+	v.Liquid = 0
+	v.Precious = 0
+	v.NeedNotifyWarehouse = 0
+	poolScItem.Put(v)
 }

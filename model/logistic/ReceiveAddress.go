@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // ReceiveAddress 结构体
 type ReceiveAddress struct {
 	// 镇/街道
@@ -12,4 +16,25 @@ type ReceiveAddress struct {
 	AreaName string `json:"area_name,omitempty" xml:"area_name,omitempty"`
 	// 省
 	ProvinceName string `json:"province_name,omitempty" xml:"province_name,omitempty"`
+}
+
+var poolReceiveAddress = sync.Pool{
+	New: func() any {
+		return new(ReceiveAddress)
+	},
+}
+
+// GetReceiveAddress() 从对象池中获取ReceiveAddress
+func GetReceiveAddress() *ReceiveAddress {
+	return poolReceiveAddress.Get().(*ReceiveAddress)
+}
+
+// ReleaseReceiveAddress 释放ReceiveAddress
+func ReleaseReceiveAddress(v *ReceiveAddress) {
+	v.TownName = ""
+	v.AddressDetail = ""
+	v.CityName = ""
+	v.AreaName = ""
+	v.ProvinceName = ""
+	poolReceiveAddress.Put(v)
 }

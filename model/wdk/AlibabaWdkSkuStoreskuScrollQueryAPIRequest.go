@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaWdkSkuStoreskuScrollQueryAPIRequest struct {
 // NewAlibabaWdkSkuStoreskuScrollQueryRequest 初始化AlibabaWdkSkuStoreskuScrollQueryAPIRequest对象
 func NewAlibabaWdkSkuStoreskuScrollQueryRequest() *AlibabaWdkSkuStoreskuScrollQueryAPIRequest {
 	return &AlibabaWdkSkuStoreskuScrollQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkSkuStoreskuScrollQueryAPIRequest) Reset() {
+	r._storeId = ""
+	r._scrollId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaWdkSkuStoreskuScrollQueryAPIRequest) SetScrollId(_scrollId strin
 // GetScrollId ScrollId Getter
 func (r AlibabaWdkSkuStoreskuScrollQueryAPIRequest) GetScrollId() string {
 	return r._scrollId
+}
+
+var poolAlibabaWdkSkuStoreskuScrollQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkSkuStoreskuScrollQueryRequest()
+	},
+}
+
+// GetAlibabaWdkSkuStoreskuScrollQueryRequest 从 sync.Pool 获取 AlibabaWdkSkuStoreskuScrollQueryAPIRequest
+func GetAlibabaWdkSkuStoreskuScrollQueryAPIRequest() *AlibabaWdkSkuStoreskuScrollQueryAPIRequest {
+	return poolAlibabaWdkSkuStoreskuScrollQueryAPIRequest.Get().(*AlibabaWdkSkuStoreskuScrollQueryAPIRequest)
+}
+
+// ReleaseAlibabaWdkSkuStoreskuScrollQueryAPIRequest 将 AlibabaWdkSkuStoreskuScrollQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkSkuStoreskuScrollQueryAPIRequest(v *AlibabaWdkSkuStoreskuScrollQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkSkuStoreskuScrollQueryAPIRequest.Put(v)
 }

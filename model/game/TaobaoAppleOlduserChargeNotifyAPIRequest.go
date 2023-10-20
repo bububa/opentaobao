@@ -2,6 +2,7 @@ package game
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoAppleOlduserChargeNotifyAPIRequest struct {
 // NewTaobaoAppleOlduserChargeNotifyRequest 初始化TaobaoAppleOlduserChargeNotifyAPIRequest对象
 func NewTaobaoAppleOlduserChargeNotifyRequest() *TaobaoAppleOlduserChargeNotifyAPIRequest {
 	return &TaobaoAppleOlduserChargeNotifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAppleOlduserChargeNotifyAPIRequest) Reset() {
+	r._resultCode = ""
+	r._resultMsg = ""
+	r._mainData = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoAppleOlduserChargeNotifyAPIRequest) SetMainData(_mainData *AppleT
 // GetMainData MainData Getter
 func (r TaobaoAppleOlduserChargeNotifyAPIRequest) GetMainData() *AppleTopOldSignNotifyDo {
 	return r._mainData
+}
+
+var poolTaobaoAppleOlduserChargeNotifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAppleOlduserChargeNotifyRequest()
+	},
+}
+
+// GetTaobaoAppleOlduserChargeNotifyRequest 从 sync.Pool 获取 TaobaoAppleOlduserChargeNotifyAPIRequest
+func GetTaobaoAppleOlduserChargeNotifyAPIRequest() *TaobaoAppleOlduserChargeNotifyAPIRequest {
+	return poolTaobaoAppleOlduserChargeNotifyAPIRequest.Get().(*TaobaoAppleOlduserChargeNotifyAPIRequest)
+}
+
+// ReleaseTaobaoAppleOlduserChargeNotifyAPIRequest 将 TaobaoAppleOlduserChargeNotifyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAppleOlduserChargeNotifyAPIRequest(v *TaobaoAppleOlduserChargeNotifyAPIRequest) {
+	v.Reset()
+	poolTaobaoAppleOlduserChargeNotifyAPIRequest.Put(v)
 }

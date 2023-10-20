@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.newhome.project.salestime
 //
 // 楼盘销售时刻同步
-func AlibabaAlihouseNewhomeProjectSalestime(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeProjectSalestimeAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeProjectSalestimeAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeProjectSalestimeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseNewhomeProjectSalestime(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeProjectSalestimeAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeProjectSalestimeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

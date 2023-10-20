@@ -1,5 +1,9 @@
 package icbuseller
 
+import (
+	"sync"
+)
+
 // TradePurchaseDto 结构体
 type TradePurchaseDto struct {
 	// 服务code
@@ -28,4 +32,33 @@ type TradePurchaseDto struct {
 	TransactionPrice int64 `json:"transaction_price,omitempty" xml:"transaction_price,omitempty"`
 	// 成交单价（无效字段）
 	TransactionUnitPrice int64 `json:"transaction_unit_price,omitempty" xml:"transaction_unit_price,omitempty"`
+}
+
+var poolTradePurchaseDto = sync.Pool{
+	New: func() any {
+		return new(TradePurchaseDto)
+	},
+}
+
+// GetTradePurchaseDto() 从对象池中获取TradePurchaseDto
+func GetTradePurchaseDto() *TradePurchaseDto {
+	return poolTradePurchaseDto.Get().(*TradePurchaseDto)
+}
+
+// ReleaseTradePurchaseDto 释放TradePurchaseDto
+func ReleaseTradePurchaseDto(v *TradePurchaseDto) {
+	v.ServiceCode = ""
+	v.ServiceBegin = ""
+	v.ServiceEnd = ""
+	v.ServiceType = ""
+	v.Status = ""
+	v.OrderNo = ""
+	v.BuyerLoginId = ""
+	v.VendorId = ""
+	v.CreateTime = ""
+	v.SkuCode = ""
+	v.Quantity = 0
+	v.TransactionPrice = 0
+	v.TransactionUnitPrice = 0
+	poolTradePurchaseDto.Put(v)
 }

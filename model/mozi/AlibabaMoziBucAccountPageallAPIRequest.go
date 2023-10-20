@@ -2,6 +2,7 @@ package mozi
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMoziBucAccountPageallAPIRequest struct {
 // NewAlibabaMoziBucAccountPageallRequest 初始化AlibabaMoziBucAccountPageallAPIRequest对象
 func NewAlibabaMoziBucAccountPageallRequest() *AlibabaMoziBucAccountPageallAPIRequest {
 	return &AlibabaMoziBucAccountPageallAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMoziBucAccountPageallAPIRequest) Reset() {
+	r._pageAll = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMoziBucAccountPageallAPIRequest) SetPageAll(_pageAll *PageAllAcc
 // GetPageAll PageAll Getter
 func (r AlibabaMoziBucAccountPageallAPIRequest) GetPageAll() *PageAllAccountsRequest {
 	return r._pageAll
+}
+
+var poolAlibabaMoziBucAccountPageallAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMoziBucAccountPageallRequest()
+	},
+}
+
+// GetAlibabaMoziBucAccountPageallRequest 从 sync.Pool 获取 AlibabaMoziBucAccountPageallAPIRequest
+func GetAlibabaMoziBucAccountPageallAPIRequest() *AlibabaMoziBucAccountPageallAPIRequest {
+	return poolAlibabaMoziBucAccountPageallAPIRequest.Get().(*AlibabaMoziBucAccountPageallAPIRequest)
+}
+
+// ReleaseAlibabaMoziBucAccountPageallAPIRequest 将 AlibabaMoziBucAccountPageallAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMoziBucAccountPageallAPIRequest(v *AlibabaMoziBucAccountPageallAPIRequest) {
+	v.Reset()
+	poolAlibabaMoziBucAccountPageallAPIRequest.Put(v)
 }

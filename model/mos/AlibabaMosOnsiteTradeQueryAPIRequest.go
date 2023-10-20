@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -26,8 +27,17 @@ type AlibabaMosOnsiteTradeQueryAPIRequest struct {
 // NewAlibabaMosOnsiteTradeQueryRequest 初始化AlibabaMosOnsiteTradeQueryAPIRequest对象
 func NewAlibabaMosOnsiteTradeQueryRequest() *AlibabaMosOnsiteTradeQueryAPIRequest {
 	return &AlibabaMosOnsiteTradeQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosOnsiteTradeQueryAPIRequest) Reset() {
+	r._tradeNo = ""
+	r._outTradeNo = ""
+	r._storeIdType = ""
+	r._storeId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -97,4 +107,21 @@ func (r *AlibabaMosOnsiteTradeQueryAPIRequest) SetStoreId(_storeId string) error
 // GetStoreId StoreId Getter
 func (r AlibabaMosOnsiteTradeQueryAPIRequest) GetStoreId() string {
 	return r._storeId
+}
+
+var poolAlibabaMosOnsiteTradeQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosOnsiteTradeQueryRequest()
+	},
+}
+
+// GetAlibabaMosOnsiteTradeQueryRequest 从 sync.Pool 获取 AlibabaMosOnsiteTradeQueryAPIRequest
+func GetAlibabaMosOnsiteTradeQueryAPIRequest() *AlibabaMosOnsiteTradeQueryAPIRequest {
+	return poolAlibabaMosOnsiteTradeQueryAPIRequest.Get().(*AlibabaMosOnsiteTradeQueryAPIRequest)
+}
+
+// ReleaseAlibabaMosOnsiteTradeQueryAPIRequest 将 AlibabaMosOnsiteTradeQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosOnsiteTradeQueryAPIRequest(v *AlibabaMosOnsiteTradeQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaMosOnsiteTradeQueryAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package cainiaolocker
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type CainiaoNbaddAppointdeliverFeedbackcodesAPIResponse struct {
 	model.CommonResponse
 	CainiaoNbaddAppointdeliverFeedbackcodesAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *CainiaoNbaddAppointdeliverFeedbackcodesAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.CainiaoNbaddAppointdeliverFeedbackcodesAPIResponseModel).Reset()
 }
 
 // CainiaoNbaddAppointdeliverFeedbackcodesAPIResponseModel is 服务质量反馈编码列表 成功返回结果
@@ -28,4 +35,30 @@ type CainiaoNbaddAppointdeliverFeedbackcodesAPIResponseModel struct {
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 接口调用是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *CainiaoNbaddAppointdeliverFeedbackcodesAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultList = m.ResultList[:0]
+	m.ResultDesc = ""
+	m.ResultCode = ""
+	m.IsSuccess = false
+}
+
+var poolCainiaoNbaddAppointdeliverFeedbackcodesAPIResponse = sync.Pool{
+	New: func() any {
+		return new(CainiaoNbaddAppointdeliverFeedbackcodesAPIResponse)
+	},
+}
+
+// GetCainiaoNbaddAppointdeliverFeedbackcodesAPIResponse 从 sync.Pool 获取 CainiaoNbaddAppointdeliverFeedbackcodesAPIResponse
+func GetCainiaoNbaddAppointdeliverFeedbackcodesAPIResponse() *CainiaoNbaddAppointdeliverFeedbackcodesAPIResponse {
+	return poolCainiaoNbaddAppointdeliverFeedbackcodesAPIResponse.Get().(*CainiaoNbaddAppointdeliverFeedbackcodesAPIResponse)
+}
+
+// ReleaseCainiaoNbaddAppointdeliverFeedbackcodesAPIResponse 将 CainiaoNbaddAppointdeliverFeedbackcodesAPIResponse 保存到 sync.Pool
+func ReleaseCainiaoNbaddAppointdeliverFeedbackcodesAPIResponse(v *CainiaoNbaddAppointdeliverFeedbackcodesAPIResponse) {
+	v.Reset()
+	poolCainiaoNbaddAppointdeliverFeedbackcodesAPIResponse.Put(v)
 }

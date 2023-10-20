@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // MenuOpenInfo 结构体
 type MenuOpenInfo struct {
 	// 菜品集合
@@ -22,4 +26,30 @@ type MenuOpenInfo struct {
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 是否逻辑删除
 	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
+}
+
+var poolMenuOpenInfo = sync.Pool{
+	New: func() any {
+		return new(MenuOpenInfo)
+	},
+}
+
+// GetMenuOpenInfo() 从对象池中获取MenuOpenInfo
+func GetMenuOpenInfo() *MenuOpenInfo {
+	return poolMenuOpenInfo.Get().(*MenuOpenInfo)
+}
+
+// ReleaseMenuOpenInfo 释放MenuOpenInfo
+func ReleaseMenuOpenInfo(v *MenuOpenInfo) {
+	v.MenuDetailOpenInfoList = v.MenuDetailOpenInfoList[:0]
+	v.EffectEnd = ""
+	v.EffectStart = ""
+	v.MenuId = ""
+	v.Name = ""
+	v.ProDiscount = ""
+	v.ProMode = ""
+	v.GmtModified = ""
+	v.GmtCreate = ""
+	v.Deleted = false
+	poolMenuOpenInfo.Put(v)
 }

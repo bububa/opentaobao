@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // PageQueryAccountFlowsOpenReq 结构体
 type PageQueryAccountFlowsOpenReq struct {
 	// 品牌ID(不能和outbrandid同时为空)
@@ -28,4 +32,33 @@ type PageQueryAccountFlowsOpenReq struct {
 	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
 	// 每页大小
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolPageQueryAccountFlowsOpenReq = sync.Pool{
+	New: func() any {
+		return new(PageQueryAccountFlowsOpenReq)
+	},
+}
+
+// GetPageQueryAccountFlowsOpenReq() 从对象池中获取PageQueryAccountFlowsOpenReq
+func GetPageQueryAccountFlowsOpenReq() *PageQueryAccountFlowsOpenReq {
+	return poolPageQueryAccountFlowsOpenReq.Get().(*PageQueryAccountFlowsOpenReq)
+}
+
+// ReleasePageQueryAccountFlowsOpenReq 释放PageQueryAccountFlowsOpenReq
+func ReleasePageQueryAccountFlowsOpenReq(v *PageQueryAccountFlowsOpenReq) {
+	v.BrandId = ""
+	v.CardId = ""
+	v.CustomerId = ""
+	v.EndTime = ""
+	v.FlowTypes = ""
+	v.OutOrderId = ""
+	v.OutBrandId = ""
+	v.OutShopId = ""
+	v.ShopId = ""
+	v.StartTime = ""
+	v.BizChannel = ""
+	v.PageNo = 0
+	v.PageSize = 0
+	poolPageQueryAccountFlowsOpenReq.Put(v)
 }

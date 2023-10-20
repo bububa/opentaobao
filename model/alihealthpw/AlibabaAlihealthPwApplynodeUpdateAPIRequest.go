@@ -2,6 +2,7 @@ package alihealthpw
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthPwApplynodeUpdateAPIRequest struct {
 // NewAlibabaAlihealthPwApplynodeUpdateRequest 初始化AlibabaAlihealthPwApplynodeUpdateAPIRequest对象
 func NewAlibabaAlihealthPwApplynodeUpdateRequest() *AlibabaAlihealthPwApplynodeUpdateAPIRequest {
 	return &AlibabaAlihealthPwApplynodeUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthPwApplynodeUpdateAPIRequest) Reset() {
+	r._body = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthPwApplynodeUpdateAPIRequest) SetBody(_body *AuditRollba
 // GetBody Body Getter
 func (r AlibabaAlihealthPwApplynodeUpdateAPIRequest) GetBody() *AuditRollbackRo {
 	return r._body
+}
+
+var poolAlibabaAlihealthPwApplynodeUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthPwApplynodeUpdateRequest()
+	},
+}
+
+// GetAlibabaAlihealthPwApplynodeUpdateRequest 从 sync.Pool 获取 AlibabaAlihealthPwApplynodeUpdateAPIRequest
+func GetAlibabaAlihealthPwApplynodeUpdateAPIRequest() *AlibabaAlihealthPwApplynodeUpdateAPIRequest {
+	return poolAlibabaAlihealthPwApplynodeUpdateAPIRequest.Get().(*AlibabaAlihealthPwApplynodeUpdateAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthPwApplynodeUpdateAPIRequest 将 AlibabaAlihealthPwApplynodeUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthPwApplynodeUpdateAPIRequest(v *AlibabaAlihealthPwApplynodeUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthPwApplynodeUpdateAPIRequest.Put(v)
 }

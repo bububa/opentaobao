@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.marketing.itembuygift.createactivity
 //
 // 创建买赠活动
-func AlibabaWdkMarketingItembuygiftCreateactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItembuygiftCreateactivityAPIRequest, session string) (*wdk.AlibabaWdkMarketingItembuygiftCreateactivityAPIResponse, error) {
-	var resp wdk.AlibabaWdkMarketingItembuygiftCreateactivityAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkMarketingItembuygiftCreateactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItembuygiftCreateactivityAPIRequest, resp *wdk.AlibabaWdkMarketingItembuygiftCreateactivityAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

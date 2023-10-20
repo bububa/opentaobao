@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMjMosFundCancelbillAPIRequest struct {
 // NewAlibabaMjMosFundCancelbillRequest 初始化AlibabaMjMosFundCancelbillAPIRequest对象
 func NewAlibabaMjMosFundCancelbillRequest() *AlibabaMjMosFundCancelbillAPIRequest {
 	return &AlibabaMjMosFundCancelbillAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMjMosFundCancelbillAPIRequest) Reset() {
+	r._cancelBillDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMjMosFundCancelbillAPIRequest) SetCancelBillDTO(_cancelBillDTO *
 // GetCancelBillDTO CancelBillDTO Getter
 func (r AlibabaMjMosFundCancelbillAPIRequest) GetCancelBillDTO() *CancelBillDto {
 	return r._cancelBillDTO
+}
+
+var poolAlibabaMjMosFundCancelbillAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMjMosFundCancelbillRequest()
+	},
+}
+
+// GetAlibabaMjMosFundCancelbillRequest 从 sync.Pool 获取 AlibabaMjMosFundCancelbillAPIRequest
+func GetAlibabaMjMosFundCancelbillAPIRequest() *AlibabaMjMosFundCancelbillAPIRequest {
+	return poolAlibabaMjMosFundCancelbillAPIRequest.Get().(*AlibabaMjMosFundCancelbillAPIRequest)
+}
+
+// ReleaseAlibabaMjMosFundCancelbillAPIRequest 将 AlibabaMjMosFundCancelbillAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMjMosFundCancelbillAPIRequest(v *AlibabaMjMosFundCancelbillAPIRequest) {
+	v.Reset()
+	poolAlibabaMjMosFundCancelbillAPIRequest.Put(v)
 }

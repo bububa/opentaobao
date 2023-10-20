@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenApiJumpInfoRq 结构体
 type OpenApiJumpInfoRq struct {
 	// 第三方企业ID
@@ -20,4 +24,29 @@ type OpenApiJumpInfoRq struct {
 	CorpInfoRq *CorpInfoRq `json:"corp_info_rq,omitempty" xml:"corp_info_rq,omitempty"`
 	// 注册签约时管理员信息（注册签约时必填）
 	UserInfoRq *UserInfoRq `json:"user_info_rq,omitempty" xml:"user_info_rq,omitempty"`
+}
+
+var poolOpenApiJumpInfoRq = sync.Pool{
+	New: func() any {
+		return new(OpenApiJumpInfoRq)
+	},
+}
+
+// GetOpenApiJumpInfoRq() 从对象池中获取OpenApiJumpInfoRq
+func GetOpenApiJumpInfoRq() *OpenApiJumpInfoRq {
+	return poolOpenApiJumpInfoRq.Get().(*OpenApiJumpInfoRq)
+}
+
+// ReleaseOpenApiJumpInfoRq 释放OpenApiJumpInfoRq
+func ReleaseOpenApiJumpInfoRq(v *OpenApiJumpInfoRq) {
+	v.CorpId = ""
+	v.UserId = ""
+	v.ItineraryId = ""
+	v.Phone = ""
+	v.Type = 0
+	v.ActionType = 0
+	v.Version = 0
+	v.CorpInfoRq = nil
+	v.UserInfoRq = nil
+	poolOpenApiJumpInfoRq.Put(v)
 }

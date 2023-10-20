@@ -1,5 +1,9 @@
 package wlbimports
 
+import (
+	"sync"
+)
+
 // BigbagCreateRequest 结构体
 type BigbagCreateRequest struct {
 	// 包裹，快递方案必填
@@ -42,4 +46,40 @@ type BigbagCreateRequest struct {
 	SenderInfo *ContactInfoRequest `json:"sender_info,omitempty" xml:"sender_info,omitempty"`
 	// 是否危险品，快递方案必填
 	DangerousFlag bool `json:"dangerous_flag,omitempty" xml:"dangerous_flag,omitempty"`
+}
+
+var poolBigbagCreateRequest = sync.Pool{
+	New: func() any {
+		return new(BigbagCreateRequest)
+	},
+}
+
+// GetBigbagCreateRequest() 从对象池中获取BigbagCreateRequest
+func GetBigbagCreateRequest() *BigbagCreateRequest {
+	return poolBigbagCreateRequest.Get().(*BigbagCreateRequest)
+}
+
+// ReleaseBigbagCreateRequest 释放BigbagCreateRequest
+func ReleaseBigbagCreateRequest(v *BigbagCreateRequest) {
+	v.Packages = v.Packages[:0]
+	v.ParcelOrderCodeList = v.ParcelOrderCodeList[:0]
+	v.PickUpTimeRange = ""
+	v.CutOrderTime = ""
+	v.EstimatedDeliveryTime = ""
+	v.ScItemInfo = ""
+	v.PickupType = ""
+	v.InsureAmount = ""
+	v.ProductCode = ""
+	v.ReceiveCpCode = ""
+	v.PlannedShippingDateAndTime = ""
+	v.StoreName = ""
+	v.Currency = ""
+	v.AddServiceType = ""
+	v.StoreCode = ""
+	v.HandoverOrderCode = ""
+	v.ReceiverInfo = nil
+	v.SellerId = 0
+	v.SenderInfo = nil
+	v.DangerousFlag = false
+	poolBigbagCreateRequest.Put(v)
 }

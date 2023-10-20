@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // CompanyBrandCityDto 结构体
 type CompanyBrandCityDto struct {
 	// 外部城市品牌店ID
@@ -52,4 +56,45 @@ type CompanyBrandCityDto struct {
 	IsTest int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
 	// 城市品牌类型：交易服务类型-5、二租业务类型-0
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolCompanyBrandCityDto = sync.Pool{
+	New: func() any {
+		return new(CompanyBrandCityDto)
+	},
+}
+
+// GetCompanyBrandCityDto() 从对象池中获取CompanyBrandCityDto
+func GetCompanyBrandCityDto() *CompanyBrandCityDto {
+	return poolCompanyBrandCityDto.Get().(*CompanyBrandCityDto)
+}
+
+// ReleaseCompanyBrandCityDto 释放CompanyBrandCityDto
+func ReleaseCompanyBrandCityDto(v *CompanyBrandCityDto) {
+	v.OuterCompanyBrandId = ""
+	v.OuterCompanyId = ""
+	v.OuterBrandId = ""
+	v.CompanyName = ""
+	v.CompanyNameShort = ""
+	v.CompanyLicenseNo = ""
+	v.CompanyLegalPerson = ""
+	v.CompanyLicensePhoto = ""
+	v.CompanyLicenseExpireTime = ""
+	v.CompanyLogo = ""
+	v.CompanyCertificateNo = ""
+	v.CompanyCertificatePhoto = ""
+	v.ContactMan = ""
+	v.ContactPhone = ""
+	v.GaodeLongitude = ""
+	v.GaodeLatitude = ""
+	v.Address = ""
+	v.Description = ""
+	v.TagCodes = ""
+	v.CityId = 0
+	v.CompanyLicenseStatus = 0
+	v.IsDeleted = 0
+	v.IsVirtualCompany = 0
+	v.IsTest = 0
+	v.Type = 0
+	poolCompanyBrandCityDto.Put(v)
 }

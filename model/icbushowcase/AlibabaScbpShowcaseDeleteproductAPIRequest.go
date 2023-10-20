@@ -2,6 +2,7 @@ package icbushowcase
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaScbpShowcaseDeleteproductAPIRequest struct {
 // NewAlibabaScbpShowcaseDeleteproductRequest 初始化AlibabaScbpShowcaseDeleteproductAPIRequest对象
 func NewAlibabaScbpShowcaseDeleteproductRequest() *AlibabaScbpShowcaseDeleteproductAPIRequest {
 	return &AlibabaScbpShowcaseDeleteproductAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpShowcaseDeleteproductAPIRequest) Reset() {
+	r._windowIdList = r._windowIdList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaScbpShowcaseDeleteproductAPIRequest) SetWindowIdList(_windowIdLi
 // GetWindowIdList WindowIdList Getter
 func (r AlibabaScbpShowcaseDeleteproductAPIRequest) GetWindowIdList() []string {
 	return r._windowIdList
+}
+
+var poolAlibabaScbpShowcaseDeleteproductAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpShowcaseDeleteproductRequest()
+	},
+}
+
+// GetAlibabaScbpShowcaseDeleteproductRequest 从 sync.Pool 获取 AlibabaScbpShowcaseDeleteproductAPIRequest
+func GetAlibabaScbpShowcaseDeleteproductAPIRequest() *AlibabaScbpShowcaseDeleteproductAPIRequest {
+	return poolAlibabaScbpShowcaseDeleteproductAPIRequest.Get().(*AlibabaScbpShowcaseDeleteproductAPIRequest)
+}
+
+// ReleaseAlibabaScbpShowcaseDeleteproductAPIRequest 将 AlibabaScbpShowcaseDeleteproductAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpShowcaseDeleteproductAPIRequest(v *AlibabaScbpShowcaseDeleteproductAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpShowcaseDeleteproductAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package lsttrade
 
+import (
+	"sync"
+)
+
 // AlibabaLstTradeSellerOrderDetailQueryResultDto 结构体
 type AlibabaLstTradeSellerOrderDetailQueryResultDto struct {
 	// 错误码
@@ -10,4 +14,24 @@ type AlibabaLstTradeSellerOrderDetailQueryResultDto struct {
 	Content *Content `json:"content,omitempty" xml:"content,omitempty"`
 	// 执行结果
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaLstTradeSellerOrderDetailQueryResultDto = sync.Pool{
+	New: func() any {
+		return new(AlibabaLstTradeSellerOrderDetailQueryResultDto)
+	},
+}
+
+// GetAlibabaLstTradeSellerOrderDetailQueryResultDto() 从对象池中获取AlibabaLstTradeSellerOrderDetailQueryResultDto
+func GetAlibabaLstTradeSellerOrderDetailQueryResultDto() *AlibabaLstTradeSellerOrderDetailQueryResultDto {
+	return poolAlibabaLstTradeSellerOrderDetailQueryResultDto.Get().(*AlibabaLstTradeSellerOrderDetailQueryResultDto)
+}
+
+// ReleaseAlibabaLstTradeSellerOrderDetailQueryResultDto 释放AlibabaLstTradeSellerOrderDetailQueryResultDto
+func ReleaseAlibabaLstTradeSellerOrderDetailQueryResultDto(v *AlibabaLstTradeSellerOrderDetailQueryResultDto) {
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.Content = nil
+	v.Success = false
+	poolAlibabaLstTradeSellerOrderDetailQueryResultDto.Put(v)
 }

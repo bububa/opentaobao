@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // BuyGiftActivitySkuOperateRequest 结构体
 type BuyGiftActivitySkuOperateRequest struct {
 	// 商品元素信息
@@ -12,4 +16,25 @@ type BuyGiftActivitySkuOperateRequest struct {
 	OutActId string `json:"out_act_id,omitempty" xml:"out_act_id,omitempty"`
 	// 操作活动的ID
 	ActId int64 `json:"act_id,omitempty" xml:"act_id,omitempty"`
+}
+
+var poolBuyGiftActivitySkuOperateRequest = sync.Pool{
+	New: func() any {
+		return new(BuyGiftActivitySkuOperateRequest)
+	},
+}
+
+// GetBuyGiftActivitySkuOperateRequest() 从对象池中获取BuyGiftActivitySkuOperateRequest
+func GetBuyGiftActivitySkuOperateRequest() *BuyGiftActivitySkuOperateRequest {
+	return poolBuyGiftActivitySkuOperateRequest.Get().(*BuyGiftActivitySkuOperateRequest)
+}
+
+// ReleaseBuyGiftActivitySkuOperateRequest 释放BuyGiftActivitySkuOperateRequest
+func ReleaseBuyGiftActivitySkuOperateRequest(v *BuyGiftActivitySkuOperateRequest) {
+	v.SkuElements = v.SkuElements[:0]
+	v.CreatorId = ""
+	v.CreatorName = ""
+	v.OutActId = ""
+	v.ActId = 0
+	poolBuyGiftActivitySkuOperateRequest.Put(v)
 }

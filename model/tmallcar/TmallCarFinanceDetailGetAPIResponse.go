@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TmallCarFinanceDetailGetAPIResponse struct {
 	model.CommonResponse
 	TmallCarFinanceDetailGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TmallCarFinanceDetailGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallCarFinanceDetailGetAPIResponseModel).Reset()
 }
 
 // TmallCarFinanceDetailGetAPIResponseModel is 查询汽车金融订单信息 成功返回结果
@@ -28,4 +35,30 @@ type TmallCarFinanceDetailGetAPIResponseModel struct {
 	Data *FinanceDetailInfoDto `json:"data,omitempty" xml:"data,omitempty"`
 	// 是否成功
 	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallCarFinanceDetailGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgInfo = ""
+	m.MsgCode = ""
+	m.Data = nil
+	m.ResultSuccess = false
+}
+
+var poolTmallCarFinanceDetailGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallCarFinanceDetailGetAPIResponse)
+	},
+}
+
+// GetTmallCarFinanceDetailGetAPIResponse 从 sync.Pool 获取 TmallCarFinanceDetailGetAPIResponse
+func GetTmallCarFinanceDetailGetAPIResponse() *TmallCarFinanceDetailGetAPIResponse {
+	return poolTmallCarFinanceDetailGetAPIResponse.Get().(*TmallCarFinanceDetailGetAPIResponse)
+}
+
+// ReleaseTmallCarFinanceDetailGetAPIResponse 将 TmallCarFinanceDetailGetAPIResponse 保存到 sync.Pool
+func ReleaseTmallCarFinanceDetailGetAPIResponse(v *TmallCarFinanceDetailGetAPIResponse) {
+	v.Reset()
+	poolTmallCarFinanceDetailGetAPIResponse.Put(v)
 }

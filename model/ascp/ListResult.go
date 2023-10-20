@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // ListResult 结构体
 type ListResult struct {
 	// 库存返回模型
@@ -12,4 +16,25 @@ type ListResult struct {
 	Msg string `json:"msg,omitempty" xml:"msg,omitempty"`
 	// 结果是否正确   true：成功  false：失败
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolListResult = sync.Pool{
+	New: func() any {
+		return new(ListResult)
+	},
+}
+
+// GetListResult() 从对象池中获取ListResult
+func GetListResult() *ListResult {
+	return poolListResult.Get().(*ListResult)
+}
+
+// ReleaseListResult 释放ListResult
+func ReleaseListResult(v *ListResult) {
+	v.Result = v.Result[:0]
+	v.ErrorMsg = ""
+	v.ErrorCode = ""
+	v.Msg = ""
+	v.Success = false
+	poolListResult.Put(v)
 }

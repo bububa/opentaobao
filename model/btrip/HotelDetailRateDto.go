@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // HotelDetailRateDto 结构体
 type HotelDetailRateDto struct {
 	// 每日优惠后价格DTO
@@ -52,4 +56,45 @@ type HotelDetailRateDto struct {
 	InstantConfirm bool `json:"instant_confirm,omitempty" xml:"instant_confirm,omitempty"`
 	// 是否支持专票
 	SupportSpecialInvoice bool `json:"support_special_invoice,omitempty" xml:"support_special_invoice,omitempty"`
+}
+
+var poolHotelDetailRateDto = sync.Pool{
+	New: func() any {
+		return new(HotelDetailRateDto)
+	},
+}
+
+// GetHotelDetailRateDto() 从对象池中获取HotelDetailRateDto
+func GetHotelDetailRateDto() *HotelDetailRateDto {
+	return poolHotelDetailRateDto.Get().(*HotelDetailRateDto)
+}
+
+// ReleaseHotelDetailRateDto 释放HotelDetailRateDto
+func ReleaseHotelDetailRateDto(v *HotelDetailRateDto) {
+	v.PricePlan = v.PricePlan[:0]
+	v.Breakfast = ""
+	v.CancelPolicyDesc = ""
+	v.CompanyAassist = ""
+	v.CurrencyCode = ""
+	v.EndTimeDaily = ""
+	v.InventoryPrice = ""
+	v.PromotionInfo = ""
+	v.RatePlanName = ""
+	v.StartTimeDaily = ""
+	v.SupplierCode = ""
+	v.SupplierName = ""
+	v.ItemId = 0
+	v.MinAdvHours = 0
+	v.MinDays = 0
+	v.Nod = 0
+	v.Nop = 0
+	v.PaymentType = 0
+	v.RateId = 0
+	v.RpId = 0
+	v.BtripHotelCancelPolicyDTO = nil
+	v.DailyPriceFormatYuan = 0
+	v.DailyPriceView = 0
+	v.InstantConfirm = false
+	v.SupportSpecialInvoice = false
+	poolHotelDetailRateDto.Put(v)
 }

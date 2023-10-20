@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // InvoiceResultFeedbackTopReq 结构体
 type InvoiceResultFeedbackTopReq struct {
 	// 实际开票金额
@@ -18,4 +22,28 @@ type InvoiceResultFeedbackTopReq struct {
 	EmailInvoiceImage string `json:"email_invoice_image,omitempty" xml:"email_invoice_image,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolInvoiceResultFeedbackTopReq = sync.Pool{
+	New: func() any {
+		return new(InvoiceResultFeedbackTopReq)
+	},
+}
+
+// GetInvoiceResultFeedbackTopReq() 从对象池中获取InvoiceResultFeedbackTopReq
+func GetInvoiceResultFeedbackTopReq() *InvoiceResultFeedbackTopReq {
+	return poolInvoiceResultFeedbackTopReq.Get().(*InvoiceResultFeedbackTopReq)
+}
+
+// ReleaseInvoiceResultFeedbackTopReq 释放InvoiceResultFeedbackTopReq
+func ReleaseInvoiceResultFeedbackTopReq(v *InvoiceResultFeedbackTopReq) {
+	v.RealAmount = ""
+	v.InvoiceApplyId = ""
+	v.ExpressNumber = ""
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.InvoiceId = ""
+	v.EmailInvoiceImage = ""
+	v.Success = false
+	poolInvoiceResultFeedbackTopReq.Put(v)
 }

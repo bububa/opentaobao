@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponse stru
 	AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponseModel).Reset()
+}
+
 // AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponseModel is 天猫精灵 IoT 视频 SaaS 服务-江苏电信-appKeySecret 更新 成功返回结果
 type AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_aliyun_aicloud_iot_vision_saas_ctcc_jiangsu_key_secret_update_response"`
@@ -26,4 +33,29 @@ type AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponseModel
 	SeqId string `json:"seq_id,omitempty" xml:"seq_id,omitempty"`
 	// 错误码。200 表示成功
 	RspCode int64 `json:"rsp_code,omitempty" xml:"rsp_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RspMsg = ""
+	m.SeqId = ""
+	m.RspCode = 0
+}
+
+var poolAlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponse)
+	},
+}
+
+// GetAlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponse 从 sync.Pool 获取 AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponse
+func GetAlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponse() *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponse {
+	return poolAlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponse.Get().(*AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponse)
+}
+
+// ReleaseAlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponse 将 AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponse(v *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponse) {
+	v.Reset()
+	poolAlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIResponse.Put(v)
 }

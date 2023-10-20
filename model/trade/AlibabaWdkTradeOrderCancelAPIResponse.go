@@ -2,6 +2,7 @@ package trade
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaWdkTradeOrderCancelAPIResponse struct {
 	AlibabaWdkTradeOrderCancelAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaWdkTradeOrderCancelAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaWdkTradeOrderCancelAPIResponseModel).Reset()
+}
+
 // AlibabaWdkTradeOrderCancelAPIResponseModel is 外部交易订单取消接口 成功返回结果
 type AlibabaWdkTradeOrderCancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_trade_order_cancel_response"`
@@ -22,4 +29,27 @@ type AlibabaWdkTradeOrderCancelAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 执行结果
 	Result *OrderResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaWdkTradeOrderCancelAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaWdkTradeOrderCancelAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkTradeOrderCancelAPIResponse)
+	},
+}
+
+// GetAlibabaWdkTradeOrderCancelAPIResponse 从 sync.Pool 获取 AlibabaWdkTradeOrderCancelAPIResponse
+func GetAlibabaWdkTradeOrderCancelAPIResponse() *AlibabaWdkTradeOrderCancelAPIResponse {
+	return poolAlibabaWdkTradeOrderCancelAPIResponse.Get().(*AlibabaWdkTradeOrderCancelAPIResponse)
+}
+
+// ReleaseAlibabaWdkTradeOrderCancelAPIResponse 将 AlibabaWdkTradeOrderCancelAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaWdkTradeOrderCancelAPIResponse(v *AlibabaWdkTradeOrderCancelAPIResponse) {
+	v.Reset()
+	poolAlibabaWdkTradeOrderCancelAPIResponse.Put(v)
 }

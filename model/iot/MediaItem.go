@@ -1,5 +1,9 @@
 package iot
 
+import (
+	"sync"
+)
+
 // MediaItem 结构体
 type MediaItem struct {
 	// json格式附加信息
@@ -16,4 +20,27 @@ type MediaItem struct {
 	Length int64 `json:"length,omitempty" xml:"length,omitempty"`
 	// 是否为专辑
 	IsAlbum bool `json:"is_album,omitempty" xml:"is_album,omitempty"`
+}
+
+var poolMediaItem = sync.Pool{
+	New: func() any {
+		return new(MediaItem)
+	},
+}
+
+// GetMediaItem() 从对象池中获取MediaItem
+func GetMediaItem() *MediaItem {
+	return poolMediaItem.Get().(*MediaItem)
+}
+
+// ReleaseMediaItem 释放MediaItem
+func ReleaseMediaItem(v *MediaItem) {
+	v.Content = ""
+	v.AlbumId = ""
+	v.Source = ""
+	v.ItemId = ""
+	v.ExtendInfo = ""
+	v.Length = 0
+	v.IsAlbum = false
+	poolMediaItem.Put(v)
 }

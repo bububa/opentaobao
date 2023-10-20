@@ -9,11 +9,6 @@ import (
 // taobao.fuwu.purchase.order.confirm
 //
 // 通过传入服务市场商品的itemcode等信息，返回给服务商内购服务的下单链接
-func TaobaoFuwuPurchaseOrderConfirm(clt *core.SDKClient, req *servicecenter.TaobaoFuwuPurchaseOrderConfirmAPIRequest, session string) (*servicecenter.TaobaoFuwuPurchaseOrderConfirmAPIResponse, error) {
-	var resp servicecenter.TaobaoFuwuPurchaseOrderConfirmAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFuwuPurchaseOrderConfirm(clt *core.SDKClient, req *servicecenter.TaobaoFuwuPurchaseOrderConfirmAPIRequest, resp *servicecenter.TaobaoFuwuPurchaseOrderConfirmAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

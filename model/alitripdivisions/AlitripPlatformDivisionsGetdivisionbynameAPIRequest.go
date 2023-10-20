@@ -2,6 +2,7 @@ package alitripdivisions
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlitripPlatformDivisionsGetdivisionbynameAPIRequest struct {
 // NewAlitripPlatformDivisionsGetdivisionbynameRequest 初始化AlitripPlatformDivisionsGetdivisionbynameAPIRequest对象
 func NewAlitripPlatformDivisionsGetdivisionbynameRequest() *AlitripPlatformDivisionsGetdivisionbynameAPIRequest {
 	return &AlitripPlatformDivisionsGetdivisionbynameAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripPlatformDivisionsGetdivisionbynameAPIRequest) Reset() {
+	r._name = ""
+	r._level = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlitripPlatformDivisionsGetdivisionbynameAPIRequest) SetLevel(_level in
 // GetLevel Level Getter
 func (r AlitripPlatformDivisionsGetdivisionbynameAPIRequest) GetLevel() int64 {
 	return r._level
+}
+
+var poolAlitripPlatformDivisionsGetdivisionbynameAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripPlatformDivisionsGetdivisionbynameRequest()
+	},
+}
+
+// GetAlitripPlatformDivisionsGetdivisionbynameRequest 从 sync.Pool 获取 AlitripPlatformDivisionsGetdivisionbynameAPIRequest
+func GetAlitripPlatformDivisionsGetdivisionbynameAPIRequest() *AlitripPlatformDivisionsGetdivisionbynameAPIRequest {
+	return poolAlitripPlatformDivisionsGetdivisionbynameAPIRequest.Get().(*AlitripPlatformDivisionsGetdivisionbynameAPIRequest)
+}
+
+// ReleaseAlitripPlatformDivisionsGetdivisionbynameAPIRequest 将 AlitripPlatformDivisionsGetdivisionbynameAPIRequest 放入 sync.Pool
+func ReleaseAlitripPlatformDivisionsGetdivisionbynameAPIRequest(v *AlitripPlatformDivisionsGetdivisionbynameAPIRequest) {
+	v.Reset()
+	poolAlitripPlatformDivisionsGetdivisionbynameAPIRequest.Put(v)
 }

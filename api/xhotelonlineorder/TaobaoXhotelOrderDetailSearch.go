@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.order.detail.search
 //
 // 提供订单详情查询
-func TaobaoXhotelOrderDetailSearch(clt *core.SDKClient, req *xhotelonlineorder.TaobaoXhotelOrderDetailSearchAPIRequest, session string) (*xhotelonlineorder.TaobaoXhotelOrderDetailSearchAPIResponse, error) {
-	var resp xhotelonlineorder.TaobaoXhotelOrderDetailSearchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelOrderDetailSearch(clt *core.SDKClient, req *xhotelonlineorder.TaobaoXhotelOrderDetailSearchAPIRequest, resp *xhotelonlineorder.TaobaoXhotelOrderDetailSearchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

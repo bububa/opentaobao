@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoFilesGetAPIRequest struct {
 // NewTaobaoFilesGetRequest 初始化TaobaoFilesGetAPIRequest对象
 func NewTaobaoFilesGetRequest() *TaobaoFilesGetAPIRequest {
 	return &TaobaoFilesGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFilesGetAPIRequest) Reset() {
+	r._startDate = ""
+	r._endDate = ""
+	r._status = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoFilesGetAPIRequest) SetStatus(_status int64) error {
 // GetStatus Status Getter
 func (r TaobaoFilesGetAPIRequest) GetStatus() int64 {
 	return r._status
+}
+
+var poolTaobaoFilesGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFilesGetRequest()
+	},
+}
+
+// GetTaobaoFilesGetRequest 从 sync.Pool 获取 TaobaoFilesGetAPIRequest
+func GetTaobaoFilesGetAPIRequest() *TaobaoFilesGetAPIRequest {
+	return poolTaobaoFilesGetAPIRequest.Get().(*TaobaoFilesGetAPIRequest)
+}
+
+// ReleaseTaobaoFilesGetAPIRequest 将 TaobaoFilesGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFilesGetAPIRequest(v *TaobaoFilesGetAPIRequest) {
+	v.Reset()
+	poolTaobaoFilesGetAPIRequest.Put(v)
 }

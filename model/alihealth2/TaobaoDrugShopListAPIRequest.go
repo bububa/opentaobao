@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoDrugShopListAPIRequest struct {
 // NewTaobaoDrugShopListRequest 初始化TaobaoDrugShopListAPIRequest对象
 func NewTaobaoDrugShopListRequest() *TaobaoDrugShopListAPIRequest {
 	return &TaobaoDrugShopListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoDrugShopListAPIRequest) Reset() {
+	r._keywords = ""
+	r._status = 0
+	r._page = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoDrugShopListAPIRequest) SetPageSize(_pageSize int64) error {
 // GetPageSize PageSize Getter
 func (r TaobaoDrugShopListAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoDrugShopListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoDrugShopListRequest()
+	},
+}
+
+// GetTaobaoDrugShopListRequest 从 sync.Pool 获取 TaobaoDrugShopListAPIRequest
+func GetTaobaoDrugShopListAPIRequest() *TaobaoDrugShopListAPIRequest {
+	return poolTaobaoDrugShopListAPIRequest.Get().(*TaobaoDrugShopListAPIRequest)
+}
+
+// ReleaseTaobaoDrugShopListAPIRequest 将 TaobaoDrugShopListAPIRequest 放入 sync.Pool
+func ReleaseTaobaoDrugShopListAPIRequest(v *TaobaoDrugShopListAPIRequest) {
+	v.Reset()
+	poolTaobaoDrugShopListAPIRequest.Put(v)
 }

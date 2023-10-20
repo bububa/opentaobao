@@ -9,11 +9,6 @@ import (
 // taobao.wlb.imports.order.get
 //
 // 一般进口物流订单获取
-func TaobaoWlbImportsOrderGet(clt *core.SDKClient, req *wlbimports.TaobaoWlbImportsOrderGetAPIRequest, session string) (*wlbimports.TaobaoWlbImportsOrderGetAPIResponse, error) {
-	var resp wlbimports.TaobaoWlbImportsOrderGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWlbImportsOrderGet(clt *core.SDKClient, req *wlbimports.TaobaoWlbImportsOrderGetAPIRequest, resp *wlbimports.TaobaoWlbImportsOrderGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

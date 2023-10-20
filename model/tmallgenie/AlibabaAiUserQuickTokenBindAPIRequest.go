@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaAiUserQuickTokenBindAPIRequest struct {
 // NewAlibabaAiUserQuickTokenBindRequest 初始化AlibabaAiUserQuickTokenBindAPIRequest对象
 func NewAlibabaAiUserQuickTokenBindRequest() *AlibabaAiUserQuickTokenBindAPIRequest {
 	return &AlibabaAiUserQuickTokenBindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAiUserQuickTokenBindAPIRequest) Reset() {
+	r._accessTokenValue = ""
+	r._merchantUserId = ""
+	r._skillId = ""
+	r._schemaKey = ""
+	r._refreshToken = ""
+	r._expiredTime = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaAiUserQuickTokenBindAPIRequest) SetExpiredTime(_expiredTime int6
 // GetExpiredTime ExpiredTime Getter
 func (r AlibabaAiUserQuickTokenBindAPIRequest) GetExpiredTime() int64 {
 	return r._expiredTime
+}
+
+var poolAlibabaAiUserQuickTokenBindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAiUserQuickTokenBindRequest()
+	},
+}
+
+// GetAlibabaAiUserQuickTokenBindRequest 从 sync.Pool 获取 AlibabaAiUserQuickTokenBindAPIRequest
+func GetAlibabaAiUserQuickTokenBindAPIRequest() *AlibabaAiUserQuickTokenBindAPIRequest {
+	return poolAlibabaAiUserQuickTokenBindAPIRequest.Get().(*AlibabaAiUserQuickTokenBindAPIRequest)
+}
+
+// ReleaseAlibabaAiUserQuickTokenBindAPIRequest 将 AlibabaAiUserQuickTokenBindAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAiUserQuickTokenBindAPIRequest(v *AlibabaAiUserQuickTokenBindAPIRequest) {
+	v.Reset()
+	poolAlibabaAiUserQuickTokenBindAPIRequest.Put(v)
 }

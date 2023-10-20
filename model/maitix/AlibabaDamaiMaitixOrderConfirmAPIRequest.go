@@ -2,6 +2,7 @@ package maitix
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDamaiMaitixOrderConfirmAPIRequest struct {
 // NewAlibabaDamaiMaitixOrderConfirmRequest 初始化AlibabaDamaiMaitixOrderConfirmAPIRequest对象
 func NewAlibabaDamaiMaitixOrderConfirmRequest() *AlibabaDamaiMaitixOrderConfirmAPIRequest {
 	return &AlibabaDamaiMaitixOrderConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDamaiMaitixOrderConfirmAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDamaiMaitixOrderConfirmAPIRequest) SetParam(_param *MoaConfirmOr
 // GetParam Param Getter
 func (r AlibabaDamaiMaitixOrderConfirmAPIRequest) GetParam() *MoaConfirmOrderParam {
 	return r._param
+}
+
+var poolAlibabaDamaiMaitixOrderConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDamaiMaitixOrderConfirmRequest()
+	},
+}
+
+// GetAlibabaDamaiMaitixOrderConfirmRequest 从 sync.Pool 获取 AlibabaDamaiMaitixOrderConfirmAPIRequest
+func GetAlibabaDamaiMaitixOrderConfirmAPIRequest() *AlibabaDamaiMaitixOrderConfirmAPIRequest {
+	return poolAlibabaDamaiMaitixOrderConfirmAPIRequest.Get().(*AlibabaDamaiMaitixOrderConfirmAPIRequest)
+}
+
+// ReleaseAlibabaDamaiMaitixOrderConfirmAPIRequest 将 AlibabaDamaiMaitixOrderConfirmAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDamaiMaitixOrderConfirmAPIRequest(v *AlibabaDamaiMaitixOrderConfirmAPIRequest) {
+	v.Reset()
+	poolAlibabaDamaiMaitixOrderConfirmAPIRequest.Put(v)
 }

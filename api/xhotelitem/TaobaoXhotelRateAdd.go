@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.rate.add
 //
 // 酒店产品库rate添加
-func TaobaoXhotelRateAdd(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRateAddAPIRequest, session string) (*xhotelitem.TaobaoXhotelRateAddAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelRateAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelRateAdd(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRateAddAPIRequest, resp *xhotelitem.TaobaoXhotelRateAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

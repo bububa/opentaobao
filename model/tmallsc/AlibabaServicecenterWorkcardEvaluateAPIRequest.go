@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaServicecenterWorkcardEvaluateAPIRequest struct {
 // NewAlibabaServicecenterWorkcardEvaluateRequest 初始化AlibabaServicecenterWorkcardEvaluateAPIRequest对象
 func NewAlibabaServicecenterWorkcardEvaluateRequest() *AlibabaServicecenterWorkcardEvaluateAPIRequest {
 	return &AlibabaServicecenterWorkcardEvaluateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaServicecenterWorkcardEvaluateAPIRequest) Reset() {
+	r._picUrlList = ""
+	r._failReason = ""
+	r._extendInfo = ""
+	r._workcardId = 0
+	r._passEvaluation = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaServicecenterWorkcardEvaluateAPIRequest) SetPassEvaluation(_pass
 // GetPassEvaluation PassEvaluation Getter
 func (r AlibabaServicecenterWorkcardEvaluateAPIRequest) GetPassEvaluation() bool {
 	return r._passEvaluation
+}
+
+var poolAlibabaServicecenterWorkcardEvaluateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaServicecenterWorkcardEvaluateRequest()
+	},
+}
+
+// GetAlibabaServicecenterWorkcardEvaluateRequest 从 sync.Pool 获取 AlibabaServicecenterWorkcardEvaluateAPIRequest
+func GetAlibabaServicecenterWorkcardEvaluateAPIRequest() *AlibabaServicecenterWorkcardEvaluateAPIRequest {
+	return poolAlibabaServicecenterWorkcardEvaluateAPIRequest.Get().(*AlibabaServicecenterWorkcardEvaluateAPIRequest)
+}
+
+// ReleaseAlibabaServicecenterWorkcardEvaluateAPIRequest 将 AlibabaServicecenterWorkcardEvaluateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaServicecenterWorkcardEvaluateAPIRequest(v *AlibabaServicecenterWorkcardEvaluateAPIRequest) {
+	v.Reset()
+	poolAlibabaServicecenterWorkcardEvaluateAPIRequest.Put(v)
 }

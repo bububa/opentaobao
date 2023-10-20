@@ -2,6 +2,7 @@ package tmallnr
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TmallNrNoticeGoodsReadyAPIResponse struct {
 	model.CommonResponse
 	TmallNrNoticeGoodsReadyAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TmallNrNoticeGoodsReadyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallNrNoticeGoodsReadyAPIResponseModel).Reset()
 }
 
 // TmallNrNoticeGoodsReadyAPIResponseModel is 同步天猫配送人员信息 成功返回结果
@@ -28,4 +35,30 @@ type TmallNrNoticeGoodsReadyAPIResponseModel struct {
 	ResultData bool `json:"result_data,omitempty" xml:"result_data,omitempty"`
 	// isSuccess
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallNrNoticeGoodsReadyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorMessage = ""
+	m.ErrorCode2 = ""
+	m.ResultData = false
+	m.IsSuccess = false
+}
+
+var poolTmallNrNoticeGoodsReadyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallNrNoticeGoodsReadyAPIResponse)
+	},
+}
+
+// GetTmallNrNoticeGoodsReadyAPIResponse 从 sync.Pool 获取 TmallNrNoticeGoodsReadyAPIResponse
+func GetTmallNrNoticeGoodsReadyAPIResponse() *TmallNrNoticeGoodsReadyAPIResponse {
+	return poolTmallNrNoticeGoodsReadyAPIResponse.Get().(*TmallNrNoticeGoodsReadyAPIResponse)
+}
+
+// ReleaseTmallNrNoticeGoodsReadyAPIResponse 将 TmallNrNoticeGoodsReadyAPIResponse 保存到 sync.Pool
+func ReleaseTmallNrNoticeGoodsReadyAPIResponse(v *TmallNrNoticeGoodsReadyAPIResponse) {
+	v.Reset()
+	poolTmallNrNoticeGoodsReadyAPIResponse.Put(v)
 }

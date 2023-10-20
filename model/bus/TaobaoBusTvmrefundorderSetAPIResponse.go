@@ -2,6 +2,7 @@ package bus
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoBusTvmrefundorderSetAPIResponse struct {
 	TaobaoBusTvmrefundorderSetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoBusTvmrefundorderSetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoBusTvmrefundorderSetAPIResponseModel).Reset()
+}
+
 // TaobaoBusTvmrefundorderSetAPIResponseModel is 线下自助机逆向退款接口 成功返回结果
 type TaobaoBusTvmrefundorderSetAPIResponseModel struct {
 	XMLName xml.Name `xml:"bus_tvmrefundorder_set_response"`
@@ -26,4 +33,29 @@ type TaobaoBusTvmrefundorderSetAPIResponseModel struct {
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 	// success true 成功 false 失败
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoBusTvmrefundorderSetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultCode = ""
+	m.ResultMsg = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoBusTvmrefundorderSetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoBusTvmrefundorderSetAPIResponse)
+	},
+}
+
+// GetTaobaoBusTvmrefundorderSetAPIResponse 从 sync.Pool 获取 TaobaoBusTvmrefundorderSetAPIResponse
+func GetTaobaoBusTvmrefundorderSetAPIResponse() *TaobaoBusTvmrefundorderSetAPIResponse {
+	return poolTaobaoBusTvmrefundorderSetAPIResponse.Get().(*TaobaoBusTvmrefundorderSetAPIResponse)
+}
+
+// ReleaseTaobaoBusTvmrefundorderSetAPIResponse 将 TaobaoBusTvmrefundorderSetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoBusTvmrefundorderSetAPIResponse(v *TaobaoBusTvmrefundorderSetAPIResponse) {
+	v.Reset()
+	poolTaobaoBusTvmrefundorderSetAPIResponse.Put(v)
 }

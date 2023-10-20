@@ -9,11 +9,6 @@ import (
 // alibaba.ele.enterprise.ordernew.cancel
 //
 // 订单取消
-func AlibabaEleEnterpriseOrdernewCancel(clt *core.SDKClient, req *eleenterpriseordernew.AlibabaEleEnterpriseOrdernewCancelAPIRequest, session string) (*eleenterpriseordernew.AlibabaEleEnterpriseOrdernewCancelAPIResponse, error) {
-	var resp eleenterpriseordernew.AlibabaEleEnterpriseOrdernewCancelAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaEleEnterpriseOrdernewCancel(clt *core.SDKClient, req *eleenterpriseordernew.AlibabaEleEnterpriseOrdernewCancelAPIRequest, resp *eleenterpriseordernew.AlibabaEleEnterpriseOrdernewCancelAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

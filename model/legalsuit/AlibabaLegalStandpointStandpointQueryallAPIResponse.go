@@ -2,6 +2,7 @@ package legalsuit
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaLegalStandpointStandpointQueryallAPIResponse struct {
 	model.CommonResponse
 	AlibabaLegalStandpointStandpointQueryallAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaLegalStandpointStandpointQueryallAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaLegalStandpointStandpointQueryallAPIResponseModel).Reset()
 }
 
 // AlibabaLegalStandpointStandpointQueryallAPIResponseModel is 滑动查询口径 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaLegalStandpointStandpointQueryallAPIResponseModel struct {
 	ErrorCodeRes int64 `json:"error_code_res,omitempty" xml:"error_code_res,omitempty"`
 	// 是否成功
 	SuccessRes bool `json:"success_res,omitempty" xml:"success_res,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaLegalStandpointStandpointQueryallAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Content = m.Content[:0]
+	m.ErrorMsg = ""
+	m.ErrorCodeRes = 0
+	m.SuccessRes = false
+}
+
+var poolAlibabaLegalStandpointStandpointQueryallAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaLegalStandpointStandpointQueryallAPIResponse)
+	},
+}
+
+// GetAlibabaLegalStandpointStandpointQueryallAPIResponse 从 sync.Pool 获取 AlibabaLegalStandpointStandpointQueryallAPIResponse
+func GetAlibabaLegalStandpointStandpointQueryallAPIResponse() *AlibabaLegalStandpointStandpointQueryallAPIResponse {
+	return poolAlibabaLegalStandpointStandpointQueryallAPIResponse.Get().(*AlibabaLegalStandpointStandpointQueryallAPIResponse)
+}
+
+// ReleaseAlibabaLegalStandpointStandpointQueryallAPIResponse 将 AlibabaLegalStandpointStandpointQueryallAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaLegalStandpointStandpointQueryallAPIResponse(v *AlibabaLegalStandpointStandpointQueryallAPIResponse) {
+	v.Reset()
+	poolAlibabaLegalStandpointStandpointQueryallAPIResponse.Put(v)
 }

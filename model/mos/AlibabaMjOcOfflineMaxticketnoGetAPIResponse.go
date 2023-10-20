@@ -2,6 +2,7 @@ package mos
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaMjOcOfflineMaxticketnoGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaMjOcOfflineMaxticketnoGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaMjOcOfflineMaxticketnoGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaMjOcOfflineMaxticketnoGetAPIResponseModel).Reset()
 }
 
 // AlibabaMjOcOfflineMaxticketnoGetAPIResponseModel is pos机获取线下最大小票号 成功返回结果
@@ -30,4 +37,31 @@ type AlibabaMjOcOfflineMaxticketnoGetAPIResponseModel struct {
 	StoreNo string `json:"store_no,omitempty" xml:"store_no,omitempty"`
 	// 联合收银标记
 	Union bool `json:"union,omitempty" xml:"union,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaMjOcOfflineMaxticketnoGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.PayDate = ""
+	m.PosNo = ""
+	m.PayNo = ""
+	m.StoreNo = ""
+	m.Union = false
+}
+
+var poolAlibabaMjOcOfflineMaxticketnoGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaMjOcOfflineMaxticketnoGetAPIResponse)
+	},
+}
+
+// GetAlibabaMjOcOfflineMaxticketnoGetAPIResponse 从 sync.Pool 获取 AlibabaMjOcOfflineMaxticketnoGetAPIResponse
+func GetAlibabaMjOcOfflineMaxticketnoGetAPIResponse() *AlibabaMjOcOfflineMaxticketnoGetAPIResponse {
+	return poolAlibabaMjOcOfflineMaxticketnoGetAPIResponse.Get().(*AlibabaMjOcOfflineMaxticketnoGetAPIResponse)
+}
+
+// ReleaseAlibabaMjOcOfflineMaxticketnoGetAPIResponse 将 AlibabaMjOcOfflineMaxticketnoGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaMjOcOfflineMaxticketnoGetAPIResponse(v *AlibabaMjOcOfflineMaxticketnoGetAPIResponse) {
+	v.Reset()
+	poolAlibabaMjOcOfflineMaxticketnoGetAPIResponse.Put(v)
 }

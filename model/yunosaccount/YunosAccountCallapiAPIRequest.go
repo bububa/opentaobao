@@ -2,6 +2,7 @@ package yunosaccount
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type YunosAccountCallapiAPIRequest struct {
 // NewYunosAccountCallapiRequest 初始化YunosAccountCallapiAPIRequest对象
 func NewYunosAccountCallapiRequest() *YunosAccountCallapiAPIRequest {
 	return &YunosAccountCallapiAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosAccountCallapiAPIRequest) Reset() {
+	r._version = ""
+	r._api = ""
+	r._timeStamp = ""
+	r._params = ""
+	r._authSign = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *YunosAccountCallapiAPIRequest) SetAuthSign(_authSign string) error {
 // GetAuthSign AuthSign Getter
 func (r YunosAccountCallapiAPIRequest) GetAuthSign() string {
 	return r._authSign
+}
+
+var poolYunosAccountCallapiAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosAccountCallapiRequest()
+	},
+}
+
+// GetYunosAccountCallapiRequest 从 sync.Pool 获取 YunosAccountCallapiAPIRequest
+func GetYunosAccountCallapiAPIRequest() *YunosAccountCallapiAPIRequest {
+	return poolYunosAccountCallapiAPIRequest.Get().(*YunosAccountCallapiAPIRequest)
+}
+
+// ReleaseYunosAccountCallapiAPIRequest 将 YunosAccountCallapiAPIRequest 放入 sync.Pool
+func ReleaseYunosAccountCallapiAPIRequest(v *YunosAccountCallapiAPIRequest) {
+	v.Reset()
+	poolYunosAccountCallapiAPIRequest.Put(v)
 }

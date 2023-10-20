@@ -1,5 +1,9 @@
 package aesolution
 
+import (
+	"sync"
+)
+
 // SupportedSkuAttributeDto 结构体
 type SupportedSkuAttributeDto struct {
 	// aliexpress sku value list
@@ -12,4 +16,25 @@ type SupportedSkuAttributeDto struct {
 	SupportCustomizedName bool `json:"support_customized_name,omitempty" xml:"support_customized_name,omitempty"`
 	// whether the corresponding aliexpress_sku_name support customized picture
 	SupportCustomizedPicture bool `json:"support_customized_picture,omitempty" xml:"support_customized_picture,omitempty"`
+}
+
+var poolSupportedSkuAttributeDto = sync.Pool{
+	New: func() any {
+		return new(SupportedSkuAttributeDto)
+	},
+}
+
+// GetSupportedSkuAttributeDto() 从对象池中获取SupportedSkuAttributeDto
+func GetSupportedSkuAttributeDto() *SupportedSkuAttributeDto {
+	return poolSupportedSkuAttributeDto.Get().(*SupportedSkuAttributeDto)
+}
+
+// ReleaseSupportedSkuAttributeDto 释放SupportedSkuAttributeDto
+func ReleaseSupportedSkuAttributeDto(v *SupportedSkuAttributeDto) {
+	v.AliexpressSkuValueList = v.AliexpressSkuValueList[:0]
+	v.AliexpressSkuName = ""
+	v.Required = false
+	v.SupportCustomizedName = false
+	v.SupportCustomizedPicture = false
+	poolSupportedSkuAttributeDto.Put(v)
 }

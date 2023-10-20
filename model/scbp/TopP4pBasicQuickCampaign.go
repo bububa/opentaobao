@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // TopP4pBasicQuickCampaign 结构体
 type TopP4pBasicQuickCampaign struct {
 	// 出价区间-上限(一位小数，不低于3.0)
@@ -12,4 +16,25 @@ type TopP4pBasicQuickCampaign struct {
 	Budget int64 `json:"budget,omitempty" xml:"budget,omitempty"`
 	// 推广计划id
 	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
+}
+
+var poolTopP4pBasicQuickCampaign = sync.Pool{
+	New: func() any {
+		return new(TopP4pBasicQuickCampaign)
+	},
+}
+
+// GetTopP4pBasicQuickCampaign() 从对象池中获取TopP4pBasicQuickCampaign
+func GetTopP4pBasicQuickCampaign() *TopP4pBasicQuickCampaign {
+	return poolTopP4pBasicQuickCampaign.Get().(*TopP4pBasicQuickCampaign)
+}
+
+// ReleaseTopP4pBasicQuickCampaign 释放TopP4pBasicQuickCampaign
+func ReleaseTopP4pBasicQuickCampaign(v *TopP4pBasicQuickCampaign) {
+	v.MaxPrice = ""
+	v.MinPrice = ""
+	v.Title = ""
+	v.Budget = 0
+	v.CampaignId = 0
+	poolTopP4pBasicQuickCampaign.Put(v)
 }

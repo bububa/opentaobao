@@ -9,11 +9,6 @@ import (
 // alibaba.dchain.aoxiang.scitem.query
 //
 // 货品查询
-func AlibabaDchainAoxiangScitemQuery(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangScitemQueryAPIRequest, session string) (*ascp.AlibabaDchainAoxiangScitemQueryAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangScitemQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDchainAoxiangScitemQuery(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangScitemQueryAPIRequest, resp *ascp.AlibabaDchainAoxiangScitemQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

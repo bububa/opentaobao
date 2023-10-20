@@ -2,6 +2,7 @@ package alilabs
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAilabsTvsDeviceListAPIResponse struct {
 	model.CommonResponse
 	AlibabaAilabsTvsDeviceListAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAilabsTvsDeviceListAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAilabsTvsDeviceListAPIResponseModel).Reset()
 }
 
 // AlibabaAilabsTvsDeviceListAPIResponseModel is 获取TVS设备列表 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAilabsTvsDeviceListAPIResponseModel struct {
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 服务请求是否成功。
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAilabsTvsDeviceListAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Devices = m.Devices[:0]
+	m.StatusCode = ""
+	m.ErrorMsg = ""
+	m.IsSuccess = false
+}
+
+var poolAlibabaAilabsTvsDeviceListAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAilabsTvsDeviceListAPIResponse)
+	},
+}
+
+// GetAlibabaAilabsTvsDeviceListAPIResponse 从 sync.Pool 获取 AlibabaAilabsTvsDeviceListAPIResponse
+func GetAlibabaAilabsTvsDeviceListAPIResponse() *AlibabaAilabsTvsDeviceListAPIResponse {
+	return poolAlibabaAilabsTvsDeviceListAPIResponse.Get().(*AlibabaAilabsTvsDeviceListAPIResponse)
+}
+
+// ReleaseAlibabaAilabsTvsDeviceListAPIResponse 将 AlibabaAilabsTvsDeviceListAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAilabsTvsDeviceListAPIResponse(v *AlibabaAilabsTvsDeviceListAPIResponse) {
+	v.Reset()
+	poolAlibabaAilabsTvsDeviceListAPIResponse.Put(v)
 }

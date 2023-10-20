@@ -9,11 +9,6 @@ import (
 // cainiao.waybill.ii.search
 //
 // 获取发货地&amp;CP开通状态&amp;账户的使用情况
-func CainiaoWaybillIiSearch(clt *core.SDKClient, req *waybill.CainiaoWaybillIiSearchAPIRequest, session string) (*waybill.CainiaoWaybillIiSearchAPIResponse, error) {
-	var resp waybill.CainiaoWaybillIiSearchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func CainiaoWaybillIiSearch(clt *core.SDKClient, req *waybill.CainiaoWaybillIiSearchAPIRequest, resp *waybill.CainiaoWaybillIiSearchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

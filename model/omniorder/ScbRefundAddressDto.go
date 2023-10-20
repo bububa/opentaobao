@@ -1,5 +1,9 @@
 package omniorder
 
+import (
+	"sync"
+)
+
 // ScbRefundAddressDto 结构体
 type ScbRefundAddressDto struct {
 	// 详细地址
@@ -24,4 +28,31 @@ type ScbRefundAddressDto struct {
 	ContactId int64 `json:"contact_id,omitempty" xml:"contact_id,omitempty"`
 	// 区code
 	DivisionCode int64 `json:"division_code,omitempty" xml:"division_code,omitempty"`
+}
+
+var poolScbRefundAddressDto = sync.Pool{
+	New: func() any {
+		return new(ScbRefundAddressDto)
+	},
+}
+
+// GetScbRefundAddressDto() 从对象池中获取ScbRefundAddressDto
+func GetScbRefundAddressDto() *ScbRefundAddressDto {
+	return poolScbRefundAddressDto.Get().(*ScbRefundAddressDto)
+}
+
+// ReleaseScbRefundAddressDto 释放ScbRefundAddressDto
+func ReleaseScbRefundAddressDto(v *ScbRefundAddressDto) {
+	v.AddressDetail = ""
+	v.AreaName = ""
+	v.CityName = ""
+	v.CompleteAddress = ""
+	v.ConsigneeFullName = ""
+	v.FixedPhone = ""
+	v.Mobile = ""
+	v.PostCode = ""
+	v.ProvinceName = ""
+	v.ContactId = 0
+	v.DivisionCode = 0
+	poolScbRefundAddressDto.Put(v)
 }

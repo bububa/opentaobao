@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseExistinghomeHouseChangeCommunityAPIRequest struct {
 // NewAlibabaAlihouseExistinghomeHouseChangeCommunityRequest 初始化AlibabaAlihouseExistinghomeHouseChangeCommunityAPIRequest对象
 func NewAlibabaAlihouseExistinghomeHouseChangeCommunityRequest() *AlibabaAlihouseExistinghomeHouseChangeCommunityAPIRequest {
 	return &AlibabaAlihouseExistinghomeHouseChangeCommunityAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseExistinghomeHouseChangeCommunityAPIRequest) Reset() {
+	r._syncChangeHouseInfoDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseExistinghomeHouseChangeCommunityAPIRequest) SetSyncChang
 // GetSyncChangeHouseInfoDto SyncChangeHouseInfoDto Getter
 func (r AlibabaAlihouseExistinghomeHouseChangeCommunityAPIRequest) GetSyncChangeHouseInfoDto() *SyncChangeHouseInfoDto {
 	return r._syncChangeHouseInfoDto
+}
+
+var poolAlibabaAlihouseExistinghomeHouseChangeCommunityAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseExistinghomeHouseChangeCommunityRequest()
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeHouseChangeCommunityRequest 从 sync.Pool 获取 AlibabaAlihouseExistinghomeHouseChangeCommunityAPIRequest
+func GetAlibabaAlihouseExistinghomeHouseChangeCommunityAPIRequest() *AlibabaAlihouseExistinghomeHouseChangeCommunityAPIRequest {
+	return poolAlibabaAlihouseExistinghomeHouseChangeCommunityAPIRequest.Get().(*AlibabaAlihouseExistinghomeHouseChangeCommunityAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeHouseChangeCommunityAPIRequest 将 AlibabaAlihouseExistinghomeHouseChangeCommunityAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeHouseChangeCommunityAPIRequest(v *AlibabaAlihouseExistinghomeHouseChangeCommunityAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeHouseChangeCommunityAPIRequest.Put(v)
 }

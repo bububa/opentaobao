@@ -1,5 +1,9 @@
 package tbitem
 
+import (
+	"sync"
+)
+
 // FoodSecurity 结构体
 type FoodSecurity struct {
 	// 厂家联系方式
@@ -32,4 +36,35 @@ type FoodSecurity struct {
 	StockDateStart string `json:"stock_date_start,omitempty" xml:"stock_date_start,omitempty"`
 	// 供货商
 	Supplier string `json:"supplier,omitempty" xml:"supplier,omitempty"`
+}
+
+var poolFoodSecurity = sync.Pool{
+	New: func() any {
+		return new(FoodSecurity)
+	},
+}
+
+// GetFoodSecurity() 从对象池中获取FoodSecurity
+func GetFoodSecurity() *FoodSecurity {
+	return poolFoodSecurity.Get().(*FoodSecurity)
+}
+
+// ReleaseFoodSecurity 释放FoodSecurity
+func ReleaseFoodSecurity(v *FoodSecurity) {
+	v.Contact = ""
+	v.DesignCode = ""
+	v.Factory = ""
+	v.FactorySite = ""
+	v.FoodAdditive = ""
+	v.HealthProductNo = ""
+	v.Mix = ""
+	v.Period = ""
+	v.PlanStorage = ""
+	v.PrdLicenseNo = ""
+	v.ProductDateEnd = ""
+	v.ProductDateStart = ""
+	v.StockDateEnd = ""
+	v.StockDateStart = ""
+	v.Supplier = ""
+	poolFoodSecurity.Put(v)
 }

@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // PoiTypeWrap 结构体
 type PoiTypeWrap struct {
 	// description
@@ -30,4 +34,34 @@ type PoiTypeWrap struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// isDelete
 	IsDelete bool `json:"is_delete,omitempty" xml:"is_delete,omitempty"`
+}
+
+var poolPoiTypeWrap = sync.Pool{
+	New: func() any {
+		return new(PoiTypeWrap)
+	},
+}
+
+// GetPoiTypeWrap() 从对象池中获取PoiTypeWrap
+func GetPoiTypeWrap() *PoiTypeWrap {
+	return poolPoiTypeWrap.Get().(*PoiTypeWrap)
+}
+
+// ReleasePoiTypeWrap 释放PoiTypeWrap
+func ReleasePoiTypeWrap(v *PoiTypeWrap) {
+	v.Description = ""
+	v.FullName = ""
+	v.Name = ""
+	v.Code = ""
+	v.SecondTypeName = ""
+	v.SecondTypeCode = ""
+	v.Modifier = ""
+	v.Creator = ""
+	v.GmtModified = ""
+	v.GmtCreate = ""
+	v.Classify = ""
+	v.SecondTypeId = 0
+	v.Id = 0
+	v.IsDelete = false
+	poolPoiTypeWrap.Put(v)
 }

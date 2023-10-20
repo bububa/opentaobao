@@ -2,6 +2,7 @@ package subuser
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoSellercenterRoleAddAPIResponse struct {
 	TaobaoSellercenterRoleAddAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoSellercenterRoleAddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoSellercenterRoleAddAPIResponseModel).Reset()
+}
+
 // TaobaoSellercenterRoleAddAPIResponseModel is 子账号角色的新增（指定卖家） 成功返回结果
 type TaobaoSellercenterRoleAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"sellercenter_role_add_response"`
@@ -22,4 +29,27 @@ type TaobaoSellercenterRoleAddAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 子账号角色
 	Role *Role `json:"role,omitempty" xml:"role,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoSellercenterRoleAddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Role = nil
+}
+
+var poolTaobaoSellercenterRoleAddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoSellercenterRoleAddAPIResponse)
+	},
+}
+
+// GetTaobaoSellercenterRoleAddAPIResponse 从 sync.Pool 获取 TaobaoSellercenterRoleAddAPIResponse
+func GetTaobaoSellercenterRoleAddAPIResponse() *TaobaoSellercenterRoleAddAPIResponse {
+	return poolTaobaoSellercenterRoleAddAPIResponse.Get().(*TaobaoSellercenterRoleAddAPIResponse)
+}
+
+// ReleaseTaobaoSellercenterRoleAddAPIResponse 将 TaobaoSellercenterRoleAddAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoSellercenterRoleAddAPIResponse(v *TaobaoSellercenterRoleAddAPIResponse) {
+	v.Reset()
+	poolTaobaoSellercenterRoleAddAPIResponse.Put(v)
 }

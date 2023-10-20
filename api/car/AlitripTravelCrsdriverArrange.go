@@ -9,11 +9,6 @@ import (
 // alitrip.travel.crsdriver.arrange
 //
 // 提供给CRS接送机商家派司机的API
-func AlitripTravelCrsdriverArrange(clt *core.SDKClient, req *car.AlitripTravelCrsdriverArrangeAPIRequest, session string) (*car.AlitripTravelCrsdriverArrangeAPIResponse, error) {
-	var resp car.AlitripTravelCrsdriverArrangeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripTravelCrsdriverArrange(clt *core.SDKClient, req *car.AlitripTravelCrsdriverArrangeAPIRequest, resp *car.AlitripTravelCrsdriverArrangeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

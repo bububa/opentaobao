@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // Condition 结构体
 type Condition struct {
 	// 满元金额，单位分
@@ -14,4 +18,26 @@ type Condition struct {
 	Appoint bool `json:"appoint,omitempty" xml:"appoint,omitempty"`
 	// 是否满元
 	AmountAt bool `json:"amount_at,omitempty" xml:"amount_at,omitempty"`
+}
+
+var poolCondition = sync.Pool{
+	New: func() any {
+		return new(Condition)
+	},
+}
+
+// GetCondition() 从对象池中获取Condition
+func GetCondition() *Condition {
+	return poolCondition.Get().(*Condition)
+}
+
+// ReleaseCondition 释放Condition
+func ReleaseCondition(v *Condition) {
+	v.Amount = 0
+	v.Count = 0
+	v.CountAt = false
+	v.CountBegin = false
+	v.Appoint = false
+	v.AmountAt = false
+	poolCondition.Put(v)
 }

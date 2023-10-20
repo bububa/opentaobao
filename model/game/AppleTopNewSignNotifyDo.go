@@ -1,5 +1,9 @@
 package game
 
+import (
+	"sync"
+)
+
 // AppleTopNewSignNotifyDo 结构体
 type AppleTopNewSignNotifyDo struct {
 	// 电子卡卡号
@@ -20,4 +24,29 @@ type AppleTopNewSignNotifyDo struct {
 	QueryId string `json:"query_id,omitempty" xml:"query_id,omitempty"`
 	// 商户上送tUCI
 	Tuci string `json:"tuci,omitempty" xml:"tuci,omitempty"`
+}
+
+var poolAppleTopNewSignNotifyDo = sync.Pool{
+	New: func() any {
+		return new(AppleTopNewSignNotifyDo)
+	},
+}
+
+// GetAppleTopNewSignNotifyDo() 从对象池中获取AppleTopNewSignNotifyDo
+func GetAppleTopNewSignNotifyDo() *AppleTopNewSignNotifyDo {
+	return poolAppleTopNewSignNotifyDo.Get().(*AppleTopNewSignNotifyDo)
+}
+
+// ReleaseAppleTopNewSignNotifyDo 释放AppleTopNewSignNotifyDo
+func ReleaseAppleTopNewSignNotifyDo(v *AppleTopNewSignNotifyDo) {
+	v.CardNo = ""
+	v.Tut = ""
+	v.OrderNo = ""
+	v.Memo = ""
+	v.UserNo = ""
+	v.Uci = ""
+	v.Mai = ""
+	v.QueryId = ""
+	v.Tuci = ""
+	poolAppleTopNewSignNotifyDo.Put(v)
 }

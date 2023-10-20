@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoCntecItemChangeMessageAPIRequest struct {
 // NewCainiaoCntecItemChangeMessageRequest 初始化CainiaoCntecItemChangeMessageAPIRequest对象
 func NewCainiaoCntecItemChangeMessageRequest() *CainiaoCntecItemChangeMessageAPIRequest {
 	return &CainiaoCntecItemChangeMessageAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoCntecItemChangeMessageAPIRequest) Reset() {
+	r._itemChangeMessage = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoCntecItemChangeMessageAPIRequest) SetItemChangeMessage(_itemChan
 // GetItemChangeMessage ItemChangeMessage Getter
 func (r CainiaoCntecItemChangeMessageAPIRequest) GetItemChangeMessage() *SupplyItemChangeMessage {
 	return r._itemChangeMessage
+}
+
+var poolCainiaoCntecItemChangeMessageAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoCntecItemChangeMessageRequest()
+	},
+}
+
+// GetCainiaoCntecItemChangeMessageRequest 从 sync.Pool 获取 CainiaoCntecItemChangeMessageAPIRequest
+func GetCainiaoCntecItemChangeMessageAPIRequest() *CainiaoCntecItemChangeMessageAPIRequest {
+	return poolCainiaoCntecItemChangeMessageAPIRequest.Get().(*CainiaoCntecItemChangeMessageAPIRequest)
+}
+
+// ReleaseCainiaoCntecItemChangeMessageAPIRequest 将 CainiaoCntecItemChangeMessageAPIRequest 放入 sync.Pool
+func ReleaseCainiaoCntecItemChangeMessageAPIRequest(v *CainiaoCntecItemChangeMessageAPIRequest) {
+	v.Reset()
+	poolCainiaoCntecItemChangeMessageAPIRequest.Put(v)
 }

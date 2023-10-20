@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAlihealthBcItemPeriodSyncAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthBcItemPeriodSyncAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthBcItemPeriodSyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthBcItemPeriodSyncAPIResponseModel).Reset()
 }
 
 // AlibabaAlihealthBcItemPeriodSyncAPIResponseModel is 代销品效期同步 成功返回结果
@@ -30,4 +37,31 @@ type AlibabaAlihealthBcItemPeriodSyncAPIResponseModel struct {
 	CanRetry bool `json:"can_retry,omitempty" xml:"can_retry,omitempty"`
 	// 当前请求是否成功-所有明细都成功才算成功
 	Succ bool `json:"succ,omitempty" xml:"succ,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthBcItemPeriodSyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TraceId = ""
+	m.ErrorNo = ""
+	m.ErrorMsg = ""
+	m.CanRetry = false
+	m.Succ = false
+}
+
+var poolAlibabaAlihealthBcItemPeriodSyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthBcItemPeriodSyncAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthBcItemPeriodSyncAPIResponse 从 sync.Pool 获取 AlibabaAlihealthBcItemPeriodSyncAPIResponse
+func GetAlibabaAlihealthBcItemPeriodSyncAPIResponse() *AlibabaAlihealthBcItemPeriodSyncAPIResponse {
+	return poolAlibabaAlihealthBcItemPeriodSyncAPIResponse.Get().(*AlibabaAlihealthBcItemPeriodSyncAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthBcItemPeriodSyncAPIResponse 将 AlibabaAlihealthBcItemPeriodSyncAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthBcItemPeriodSyncAPIResponse(v *AlibabaAlihealthBcItemPeriodSyncAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthBcItemPeriodSyncAPIResponse.Put(v)
 }

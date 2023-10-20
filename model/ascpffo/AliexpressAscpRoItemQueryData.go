@@ -1,5 +1,9 @@
 package ascpffo
 
+import (
+	"sync"
+)
+
 // AliexpressAscpRoItemQueryData 结构体
 type AliexpressAscpRoItemQueryData struct {
 	// 退供单号
@@ -20,4 +24,29 @@ type AliexpressAscpRoItemQueryData struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 实际退供数量
 	ReturnQuantity int64 `json:"return_quantity,omitempty" xml:"return_quantity,omitempty"`
+}
+
+var poolAliexpressAscpRoItemQueryData = sync.Pool{
+	New: func() any {
+		return new(AliexpressAscpRoItemQueryData)
+	},
+}
+
+// GetAliexpressAscpRoItemQueryData() 从对象池中获取AliexpressAscpRoItemQueryData
+func GetAliexpressAscpRoItemQueryData() *AliexpressAscpRoItemQueryData {
+	return poolAliexpressAscpRoItemQueryData.Get().(*AliexpressAscpRoItemQueryData)
+}
+
+// ReleaseAliexpressAscpRoItemQueryData 释放AliexpressAscpRoItemQueryData
+func ReleaseAliexpressAscpRoItemQueryData(v *AliexpressAscpRoItemQueryData) {
+	v.ReturnOrderNo = ""
+	v.Title = ""
+	v.InventoryTypeDesc = ""
+	v.TaxRate = ""
+	v.ReturnPrice = ""
+	v.ExtendFields = ""
+	v.ScItemId = 0
+	v.Quantity = 0
+	v.ReturnQuantity = 0
+	poolAliexpressAscpRoItemQueryData.Put(v)
 }

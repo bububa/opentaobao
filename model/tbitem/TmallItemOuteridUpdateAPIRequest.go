@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TmallItemOuteridUpdateAPIRequest struct {
 // NewTmallItemOuteridUpdateRequest 初始化TmallItemOuteridUpdateAPIRequest对象
 func NewTmallItemOuteridUpdateRequest() *TmallItemOuteridUpdateAPIRequest {
 	return &TmallItemOuteridUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallItemOuteridUpdateAPIRequest) Reset() {
+	r._skuOuters = r._skuOuters[:0]
+	r._outerId = ""
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TmallItemOuteridUpdateAPIRequest) SetItemId(_itemId int64) error {
 // GetItemId ItemId Getter
 func (r TmallItemOuteridUpdateAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolTmallItemOuteridUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallItemOuteridUpdateRequest()
+	},
+}
+
+// GetTmallItemOuteridUpdateRequest 从 sync.Pool 获取 TmallItemOuteridUpdateAPIRequest
+func GetTmallItemOuteridUpdateAPIRequest() *TmallItemOuteridUpdateAPIRequest {
+	return poolTmallItemOuteridUpdateAPIRequest.Get().(*TmallItemOuteridUpdateAPIRequest)
+}
+
+// ReleaseTmallItemOuteridUpdateAPIRequest 将 TmallItemOuteridUpdateAPIRequest 放入 sync.Pool
+func ReleaseTmallItemOuteridUpdateAPIRequest(v *TmallItemOuteridUpdateAPIRequest) {
+	v.Reset()
+	poolTmallItemOuteridUpdateAPIRequest.Put(v)
 }

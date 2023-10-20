@@ -9,11 +9,6 @@ import (
 // alibaba.icbu.category.schema.level.get
 //
 // 将表单中层级属性的子属性返回
-func AlibabaIcbuCategorySchemaLevelGet(clt *core.SDKClient, req *icbu.AlibabaIcbuCategorySchemaLevelGetAPIRequest, session string) (*icbu.AlibabaIcbuCategorySchemaLevelGetAPIResponse, error) {
-	var resp icbu.AlibabaIcbuCategorySchemaLevelGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIcbuCategorySchemaLevelGet(clt *core.SDKClient, req *icbu.AlibabaIcbuCategorySchemaLevelGetAPIRequest, resp *icbu.AlibabaIcbuCategorySchemaLevelGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.jst.interactive.task.query
 //
 // 查询用户的互动任务列表
-func TaobaoJstInteractiveTaskQuery(clt *core.SDKClient, req *jstinteractive.TaobaoJstInteractiveTaskQueryAPIRequest, session string) (*jstinteractive.TaobaoJstInteractiveTaskQueryAPIResponse, error) {
-	var resp jstinteractive.TaobaoJstInteractiveTaskQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoJstInteractiveTaskQuery(clt *core.SDKClient, req *jstinteractive.TaobaoJstInteractiveTaskQueryAPIRequest, resp *jstinteractive.TaobaoJstInteractiveTaskQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package happytrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -75,8 +76,42 @@ type AlibabaHappytripTaxiOrderCreateAPIRequest struct {
 // NewAlibabaHappytripTaxiOrderCreateRequest 初始化AlibabaHappytripTaxiOrderCreateAPIRequest对象
 func NewAlibabaHappytripTaxiOrderCreateRequest() *AlibabaHappytripTaxiOrderCreateAPIRequest {
 	return &AlibabaHappytripTaxiOrderCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(29),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHappytripTaxiOrderCreateAPIRequest) Reset() {
+	r._uid = ""
+	r._orderId = ""
+	r._passengerPhone = ""
+	r._city = ""
+	r._flat = ""
+	r._flng = ""
+	r._startName = ""
+	r._startAddress = ""
+	r._tlat = ""
+	r._tlng = ""
+	r._endName = ""
+	r._endAddress = ""
+	r._clat = ""
+	r._clng = ""
+	r._departureTime = ""
+	r._requireLevel = ""
+	r._appTime = ""
+	r._mapType = ""
+	r._extraInfo = ""
+	r._dynamicMd5 = ""
+	r._costCenter = ""
+	r._addPrice = ""
+	r._startPoiId = ""
+	r._endPoiId = ""
+	r._type = 0
+	r._smsPolicy = 0
+	r._lineType = 0
+	r._carpoolType = 0
+	r._passengerNumber = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -471,4 +506,21 @@ func (r *AlibabaHappytripTaxiOrderCreateAPIRequest) SetPassengerNumber(_passenge
 // GetPassengerNumber PassengerNumber Getter
 func (r AlibabaHappytripTaxiOrderCreateAPIRequest) GetPassengerNumber() int64 {
 	return r._passengerNumber
+}
+
+var poolAlibabaHappytripTaxiOrderCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHappytripTaxiOrderCreateRequest()
+	},
+}
+
+// GetAlibabaHappytripTaxiOrderCreateRequest 从 sync.Pool 获取 AlibabaHappytripTaxiOrderCreateAPIRequest
+func GetAlibabaHappytripTaxiOrderCreateAPIRequest() *AlibabaHappytripTaxiOrderCreateAPIRequest {
+	return poolAlibabaHappytripTaxiOrderCreateAPIRequest.Get().(*AlibabaHappytripTaxiOrderCreateAPIRequest)
+}
+
+// ReleaseAlibabaHappytripTaxiOrderCreateAPIRequest 将 AlibabaHappytripTaxiOrderCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHappytripTaxiOrderCreateAPIRequest(v *AlibabaHappytripTaxiOrderCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaHappytripTaxiOrderCreateAPIRequest.Put(v)
 }

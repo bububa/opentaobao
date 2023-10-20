@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type TmallServicecenterWorkcardDesensitizationQueryAPIRequest struct {
 // NewTmallServicecenterWorkcardDesensitizationQueryRequest 初始化TmallServicecenterWorkcardDesensitizationQueryAPIRequest对象
 func NewTmallServicecenterWorkcardDesensitizationQueryRequest() *TmallServicecenterWorkcardDesensitizationQueryAPIRequest {
 	return &TmallServicecenterWorkcardDesensitizationQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterWorkcardDesensitizationQueryAPIRequest) Reset() {
+	r._identifyCode = ""
+	r._gmtCreateStart = ""
+	r._gmtCreateEnd = ""
+	r._serviceStoreId = 0
+	r._id = 0
+	r._bizOrderId = 0
+	r._currentPage = 0
+	r._pageSize = 0
+	r._requestSourceType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *TmallServicecenterWorkcardDesensitizationQueryAPIRequest) SetRequestSou
 // GetRequestSourceType RequestSourceType Getter
 func (r TmallServicecenterWorkcardDesensitizationQueryAPIRequest) GetRequestSourceType() int64 {
 	return r._requestSourceType
+}
+
+var poolTmallServicecenterWorkcardDesensitizationQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterWorkcardDesensitizationQueryRequest()
+	},
+}
+
+// GetTmallServicecenterWorkcardDesensitizationQueryRequest 从 sync.Pool 获取 TmallServicecenterWorkcardDesensitizationQueryAPIRequest
+func GetTmallServicecenterWorkcardDesensitizationQueryAPIRequest() *TmallServicecenterWorkcardDesensitizationQueryAPIRequest {
+	return poolTmallServicecenterWorkcardDesensitizationQueryAPIRequest.Get().(*TmallServicecenterWorkcardDesensitizationQueryAPIRequest)
+}
+
+// ReleaseTmallServicecenterWorkcardDesensitizationQueryAPIRequest 将 TmallServicecenterWorkcardDesensitizationQueryAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterWorkcardDesensitizationQueryAPIRequest(v *TmallServicecenterWorkcardDesensitizationQueryAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterWorkcardDesensitizationQueryAPIRequest.Put(v)
 }

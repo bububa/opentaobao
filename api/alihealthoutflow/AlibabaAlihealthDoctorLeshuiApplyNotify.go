@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.doctor.leshui.apply.notify
 //
 // 申请单审核结果通知
-func AlibabaAlihealthDoctorLeshuiApplyNotify(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthDoctorLeshuiApplyNotifyAPIRequest, session string) (*alihealthoutflow.AlibabaAlihealthDoctorLeshuiApplyNotifyAPIResponse, error) {
-	var resp alihealthoutflow.AlibabaAlihealthDoctorLeshuiApplyNotifyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDoctorLeshuiApplyNotify(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthDoctorLeshuiApplyNotifyAPIRequest, resp *alihealthoutflow.AlibabaAlihealthDoctorLeshuiApplyNotifyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

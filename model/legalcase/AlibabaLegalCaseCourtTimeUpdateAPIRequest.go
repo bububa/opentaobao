@@ -2,6 +2,7 @@ package legalcase
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaLegalCaseCourtTimeUpdateAPIRequest struct {
 // NewAlibabaLegalCaseCourtTimeUpdateRequest 初始化AlibabaLegalCaseCourtTimeUpdateAPIRequest对象
 func NewAlibabaLegalCaseCourtTimeUpdateRequest() *AlibabaLegalCaseCourtTimeUpdateAPIRequest {
 	return &AlibabaLegalCaseCourtTimeUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLegalCaseCourtTimeUpdateAPIRequest) Reset() {
+	r._courtTime = ""
+	r._caseId = 0
+	r._entrustId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaLegalCaseCourtTimeUpdateAPIRequest) SetEntrustId(_entrustId int6
 // GetEntrustId EntrustId Getter
 func (r AlibabaLegalCaseCourtTimeUpdateAPIRequest) GetEntrustId() int64 {
 	return r._entrustId
+}
+
+var poolAlibabaLegalCaseCourtTimeUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLegalCaseCourtTimeUpdateRequest()
+	},
+}
+
+// GetAlibabaLegalCaseCourtTimeUpdateRequest 从 sync.Pool 获取 AlibabaLegalCaseCourtTimeUpdateAPIRequest
+func GetAlibabaLegalCaseCourtTimeUpdateAPIRequest() *AlibabaLegalCaseCourtTimeUpdateAPIRequest {
+	return poolAlibabaLegalCaseCourtTimeUpdateAPIRequest.Get().(*AlibabaLegalCaseCourtTimeUpdateAPIRequest)
+}
+
+// ReleaseAlibabaLegalCaseCourtTimeUpdateAPIRequest 将 AlibabaLegalCaseCourtTimeUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLegalCaseCourtTimeUpdateAPIRequest(v *AlibabaLegalCaseCourtTimeUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaLegalCaseCourtTimeUpdateAPIRequest.Put(v)
 }

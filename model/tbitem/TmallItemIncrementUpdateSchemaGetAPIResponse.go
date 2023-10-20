@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallItemIncrementUpdateSchemaGetAPIResponse struct {
 	TmallItemIncrementUpdateSchemaGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallItemIncrementUpdateSchemaGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallItemIncrementUpdateSchemaGetAPIResponseModel).Reset()
+}
+
 // TmallItemIncrementUpdateSchemaGetAPIResponseModel is 天猫增量更新商品规则获取 成功返回结果
 type TmallItemIncrementUpdateSchemaGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_item_increment_update_schema_get_response"`
@@ -22,4 +29,27 @@ type TmallItemIncrementUpdateSchemaGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回增量更新商品的规则文档
 	UpdateItemResult string `json:"update_item_result,omitempty" xml:"update_item_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallItemIncrementUpdateSchemaGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.UpdateItemResult = ""
+}
+
+var poolTmallItemIncrementUpdateSchemaGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallItemIncrementUpdateSchemaGetAPIResponse)
+	},
+}
+
+// GetTmallItemIncrementUpdateSchemaGetAPIResponse 从 sync.Pool 获取 TmallItemIncrementUpdateSchemaGetAPIResponse
+func GetTmallItemIncrementUpdateSchemaGetAPIResponse() *TmallItemIncrementUpdateSchemaGetAPIResponse {
+	return poolTmallItemIncrementUpdateSchemaGetAPIResponse.Get().(*TmallItemIncrementUpdateSchemaGetAPIResponse)
+}
+
+// ReleaseTmallItemIncrementUpdateSchemaGetAPIResponse 将 TmallItemIncrementUpdateSchemaGetAPIResponse 保存到 sync.Pool
+func ReleaseTmallItemIncrementUpdateSchemaGetAPIResponse(v *TmallItemIncrementUpdateSchemaGetAPIResponse) {
+	v.Reset()
+	poolTmallItemIncrementUpdateSchemaGetAPIResponse.Put(v)
 }

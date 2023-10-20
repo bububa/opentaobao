@@ -2,6 +2,7 @@ package jipiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type TaobaoAlitripSellerModifyListAPIRequest struct {
 // NewTaobaoAlitripSellerModifyListRequest 初始化TaobaoAlitripSellerModifyListAPIRequest对象
 func NewTaobaoAlitripSellerModifyListRequest() *TaobaoAlitripSellerModifyListAPIRequest {
 	return &TaobaoAlitripSellerModifyListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripSellerModifyListAPIRequest) Reset() {
+	r._applyDateEnd = ""
+	r._applyDateStart = ""
+	r._flyDateEnd = ""
+	r._flyDateStart = ""
+	r._modifyDateEnd = ""
+	r._modifyDateStart = ""
+	r._applyId = 0
+	r._currentPage = 0
+	r._orderId = 0
+	r._pageSize = 0
+	r._status = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *TaobaoAlitripSellerModifyListAPIRequest) SetStatus(_status int64) error
 // GetStatus Status Getter
 func (r TaobaoAlitripSellerModifyListAPIRequest) GetStatus() int64 {
 	return r._status
+}
+
+var poolTaobaoAlitripSellerModifyListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripSellerModifyListRequest()
+	},
+}
+
+// GetTaobaoAlitripSellerModifyListRequest 从 sync.Pool 获取 TaobaoAlitripSellerModifyListAPIRequest
+func GetTaobaoAlitripSellerModifyListAPIRequest() *TaobaoAlitripSellerModifyListAPIRequest {
+	return poolTaobaoAlitripSellerModifyListAPIRequest.Get().(*TaobaoAlitripSellerModifyListAPIRequest)
+}
+
+// ReleaseTaobaoAlitripSellerModifyListAPIRequest 将 TaobaoAlitripSellerModifyListAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripSellerModifyListAPIRequest(v *TaobaoAlitripSellerModifyListAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripSellerModifyListAPIRequest.Put(v)
 }

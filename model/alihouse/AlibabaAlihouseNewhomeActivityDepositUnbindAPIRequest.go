@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest struct {
 // NewAlibabaAlihouseNewhomeActivityDepositUnbindRequest 初始化AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest对象
 func NewAlibabaAlihouseNewhomeActivityDepositUnbindRequest() *AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest {
 	return &AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest) Reset() {
+	r._preDepositGoldUnbindDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest) SetPreDepositGol
 // GetPreDepositGoldUnbindDto PreDepositGoldUnbindDto Getter
 func (r AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest) GetPreDepositGoldUnbindDto() *PreDepositGoldUnbindDto {
 	return r._preDepositGoldUnbindDto
+}
+
+var poolAlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeActivityDepositUnbindRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeActivityDepositUnbindRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest
+func GetAlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest() *AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest {
+	return poolAlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest.Get().(*AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest 将 AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest(v *AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest.Put(v)
 }

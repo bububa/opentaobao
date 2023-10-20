@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ErpBillCallbackDto 结构体
 type ErpBillCallbackDto struct {
 	// s失败原因
@@ -14,4 +18,26 @@ type ErpBillCallbackDto struct {
 	Uuid string `json:"uuid,omitempty" xml:"uuid,omitempty"`
 	// warehouseCode
 	WarehouseCode string `json:"warehouse_code,omitempty" xml:"warehouse_code,omitempty"`
+}
+
+var poolErpBillCallbackDto = sync.Pool{
+	New: func() any {
+		return new(ErpBillCallbackDto)
+	},
+}
+
+// GetErpBillCallbackDto() 从对象池中获取ErpBillCallbackDto
+func GetErpBillCallbackDto() *ErpBillCallbackDto {
+	return poolErpBillCallbackDto.Get().(*ErpBillCallbackDto)
+}
+
+// ReleaseErpBillCallbackDto 释放ErpBillCallbackDto
+func ReleaseErpBillCallbackDto(v *ErpBillCallbackDto) {
+	v.Reason = ""
+	v.Success = ""
+	v.BillType = ""
+	v.BizOrderCode = ""
+	v.Uuid = ""
+	v.WarehouseCode = ""
+	poolErpBillCallbackDto.Put(v)
 }

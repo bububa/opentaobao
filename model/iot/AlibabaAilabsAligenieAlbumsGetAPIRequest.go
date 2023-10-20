@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AlibabaAilabsAligenieAlbumsGetAPIRequest struct {
 // NewAlibabaAilabsAligenieAlbumsGetRequest 初始化AlibabaAilabsAligenieAlbumsGetAPIRequest对象
 func NewAlibabaAilabsAligenieAlbumsGetRequest() *AlibabaAilabsAligenieAlbumsGetAPIRequest {
 	return &AlibabaAilabsAligenieAlbumsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsAligenieAlbumsGetAPIRequest) Reset() {
+	r._schema = ""
+	r._userId = ""
+	r._utdId = ""
+	r._ext = ""
+	r._param1 = 0
+	r._param2 = 0
+	r._param3 = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AlibabaAilabsAligenieAlbumsGetAPIRequest) SetParam3(_param3 int64) erro
 // GetParam3 Param3 Getter
 func (r AlibabaAilabsAligenieAlbumsGetAPIRequest) GetParam3() int64 {
 	return r._param3
+}
+
+var poolAlibabaAilabsAligenieAlbumsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsAligenieAlbumsGetRequest()
+	},
+}
+
+// GetAlibabaAilabsAligenieAlbumsGetRequest 从 sync.Pool 获取 AlibabaAilabsAligenieAlbumsGetAPIRequest
+func GetAlibabaAilabsAligenieAlbumsGetAPIRequest() *AlibabaAilabsAligenieAlbumsGetAPIRequest {
+	return poolAlibabaAilabsAligenieAlbumsGetAPIRequest.Get().(*AlibabaAilabsAligenieAlbumsGetAPIRequest)
+}
+
+// ReleaseAlibabaAilabsAligenieAlbumsGetAPIRequest 将 AlibabaAilabsAligenieAlbumsGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsAligenieAlbumsGetAPIRequest(v *AlibabaAilabsAligenieAlbumsGetAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsAligenieAlbumsGetAPIRequest.Put(v)
 }

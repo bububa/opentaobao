@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // AlibabaAlihealthDrugtraceTopYljgServiceGetenddateResultModel 结构体
 type AlibabaAlihealthDrugtraceTopYljgServiceGetenddateResultModel struct {
 	// 服务截止时间
@@ -10,4 +14,24 @@ type AlibabaAlihealthDrugtraceTopYljgServiceGetenddateResultModel struct {
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// true：接口调用成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaAlihealthDrugtraceTopYljgServiceGetenddateResultModel = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugtraceTopYljgServiceGetenddateResultModel)
+	},
+}
+
+// GetAlibabaAlihealthDrugtraceTopYljgServiceGetenddateResultModel() 从对象池中获取AlibabaAlihealthDrugtraceTopYljgServiceGetenddateResultModel
+func GetAlibabaAlihealthDrugtraceTopYljgServiceGetenddateResultModel() *AlibabaAlihealthDrugtraceTopYljgServiceGetenddateResultModel {
+	return poolAlibabaAlihealthDrugtraceTopYljgServiceGetenddateResultModel.Get().(*AlibabaAlihealthDrugtraceTopYljgServiceGetenddateResultModel)
+}
+
+// ReleaseAlibabaAlihealthDrugtraceTopYljgServiceGetenddateResultModel 释放AlibabaAlihealthDrugtraceTopYljgServiceGetenddateResultModel
+func ReleaseAlibabaAlihealthDrugtraceTopYljgServiceGetenddateResultModel(v *AlibabaAlihealthDrugtraceTopYljgServiceGetenddateResultModel) {
+	v.EndDate = ""
+	v.MsgInfo = ""
+	v.MsgCode = ""
+	v.Success = false
+	poolAlibabaAlihealthDrugtraceTopYljgServiceGetenddateResultModel.Put(v)
 }

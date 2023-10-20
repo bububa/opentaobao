@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenApiZzdVehicleOrderRs 结构体
 type OpenApiZzdVehicleOrderRs struct {
 	// 成本中心信息
@@ -84,4 +88,61 @@ type OpenApiZzdVehicleOrderRs struct {
 	ServiceFee int64 `json:"service_fee,omitempty" xml:"service_fee,omitempty"`
 	// 是否特殊订单
 	IsSpecial bool `json:"is_special,omitempty" xml:"is_special,omitempty"`
+}
+
+var poolOpenApiZzdVehicleOrderRs = sync.Pool{
+	New: func() any {
+		return new(OpenApiZzdVehicleOrderRs)
+	},
+}
+
+// GetOpenApiZzdVehicleOrderRs() 从对象池中获取OpenApiZzdVehicleOrderRs
+func GetOpenApiZzdVehicleOrderRs() *OpenApiZzdVehicleOrderRs {
+	return poolOpenApiZzdVehicleOrderRs.Get().(*OpenApiZzdVehicleOrderRs)
+}
+
+// ReleaseOpenApiZzdVehicleOrderRs 释放OpenApiZzdVehicleOrderRs
+func ReleaseOpenApiZzdVehicleOrderRs(v *OpenApiZzdVehicleOrderRs) {
+	v.CostCenterList = v.CostCenterList[:0]
+	v.ClientInfoDos = v.ClientInfoDos[:0]
+	v.CarInfoDoList = v.CarInfoDoList[:0]
+	v.TradeId = ""
+	v.CorpId = ""
+	v.ThirdpartCorpId = ""
+	v.UserId = ""
+	v.UserNick = ""
+	v.DepartName = ""
+	v.ThirdPartApplyId = ""
+	v.ApplyTitle = ""
+	v.Status = ""
+	v.UserConfirmReason = ""
+	v.CancelReason = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.OrderType = ""
+	v.Currency = ""
+	v.SettlementBatchNo = ""
+	v.InvoiceId = ""
+	v.InvoiceTitle = ""
+	v.ProjectCode = ""
+	v.ProjectTitle = ""
+	v.ThirdpartItineraryId = ""
+	v.ItineraryNo = ""
+	v.CancelTime = ""
+	v.PayTime = ""
+	v.SpecialTypes = ""
+	v.TradeType = 0
+	v.TradeAction = 0
+	v.OrderId = 0
+	v.ApplyId = 0
+	v.UserConfirm = 0
+	v.PayType = 0
+	v.SettleType = 0
+	v.Amount = 0
+	v.CorpAmount = 0
+	v.PersonalAmount = 0
+	v.RefundFee = 0
+	v.ServiceFee = 0
+	v.IsSpecial = false
+	poolOpenApiZzdVehicleOrderRs.Put(v)
 }

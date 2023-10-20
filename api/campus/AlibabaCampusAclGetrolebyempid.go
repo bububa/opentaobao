@@ -9,11 +9,6 @@ import (
 // alibaba.campus.acl.getrolebyempid
 //
 // 根据用户查询角色
-func AlibabaCampusAclGetrolebyempid(clt *core.SDKClient, req *campus.AlibabaCampusAclGetrolebyempidAPIRequest, session string) (*campus.AlibabaCampusAclGetrolebyempidAPIResponse, error) {
-	var resp campus.AlibabaCampusAclGetrolebyempidAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusAclGetrolebyempid(clt *core.SDKClient, req *campus.AlibabaCampusAclGetrolebyempidAPIRequest, resp *campus.AlibabaCampusAclGetrolebyempidAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package crm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoCrmGroupAppendAPIRequest struct {
 // NewTaobaoCrmGroupAppendRequest 初始化TaobaoCrmGroupAppendAPIRequest对象
 func NewTaobaoCrmGroupAppendRequest() *TaobaoCrmGroupAppendAPIRequest {
 	return &TaobaoCrmGroupAppendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCrmGroupAppendAPIRequest) Reset() {
+	r._fromGroupId = 0
+	r._toGroupId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoCrmGroupAppendAPIRequest) SetToGroupId(_toGroupId int64) error {
 // GetToGroupId ToGroupId Getter
 func (r TaobaoCrmGroupAppendAPIRequest) GetToGroupId() int64 {
 	return r._toGroupId
+}
+
+var poolTaobaoCrmGroupAppendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCrmGroupAppendRequest()
+	},
+}
+
+// GetTaobaoCrmGroupAppendRequest 从 sync.Pool 获取 TaobaoCrmGroupAppendAPIRequest
+func GetTaobaoCrmGroupAppendAPIRequest() *TaobaoCrmGroupAppendAPIRequest {
+	return poolTaobaoCrmGroupAppendAPIRequest.Get().(*TaobaoCrmGroupAppendAPIRequest)
+}
+
+// ReleaseTaobaoCrmGroupAppendAPIRequest 将 TaobaoCrmGroupAppendAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCrmGroupAppendAPIRequest(v *TaobaoCrmGroupAppendAPIRequest) {
+	v.Reset()
+	poolTaobaoCrmGroupAppendAPIRequest.Put(v)
 }

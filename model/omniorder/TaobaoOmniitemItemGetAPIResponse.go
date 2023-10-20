@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoOmniitemItemGetAPIResponse struct {
 	TaobaoOmniitemItemGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoOmniitemItemGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOmniitemItemGetAPIResponseModel).Reset()
+}
+
 // TaobaoOmniitemItemGetAPIResponseModel is 获取全渠道门店商品 成功返回结果
 type TaobaoOmniitemItemGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"omniitem_item_get_response"`
@@ -22,4 +29,27 @@ type TaobaoOmniitemItemGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
 	Result *PageResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOmniitemItemGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoOmniitemItemGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOmniitemItemGetAPIResponse)
+	},
+}
+
+// GetTaobaoOmniitemItemGetAPIResponse 从 sync.Pool 获取 TaobaoOmniitemItemGetAPIResponse
+func GetTaobaoOmniitemItemGetAPIResponse() *TaobaoOmniitemItemGetAPIResponse {
+	return poolTaobaoOmniitemItemGetAPIResponse.Get().(*TaobaoOmniitemItemGetAPIResponse)
+}
+
+// ReleaseTaobaoOmniitemItemGetAPIResponse 将 TaobaoOmniitemItemGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOmniitemItemGetAPIResponse(v *TaobaoOmniitemItemGetAPIResponse) {
+	v.Reset()
+	poolTaobaoOmniitemItemGetAPIResponse.Put(v)
 }

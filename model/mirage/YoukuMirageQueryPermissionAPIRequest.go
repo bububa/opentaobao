@@ -2,6 +2,7 @@ package mirage
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YoukuMirageQueryPermissionAPIRequest struct {
 // NewYoukuMirageQueryPermissionRequest 初始化YoukuMirageQueryPermissionAPIRequest对象
 func NewYoukuMirageQueryPermissionRequest() *YoukuMirageQueryPermissionAPIRequest {
 	return &YoukuMirageQueryPermissionAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YoukuMirageQueryPermissionAPIRequest) Reset() {
+	r._permissionRequestDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YoukuMirageQueryPermissionAPIRequest) SetPermissionRequestDto(_permissi
 // GetPermissionRequestDto PermissionRequestDto Getter
 func (r YoukuMirageQueryPermissionAPIRequest) GetPermissionRequestDto() *PermissionRequestDto {
 	return r._permissionRequestDto
+}
+
+var poolYoukuMirageQueryPermissionAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYoukuMirageQueryPermissionRequest()
+	},
+}
+
+// GetYoukuMirageQueryPermissionRequest 从 sync.Pool 获取 YoukuMirageQueryPermissionAPIRequest
+func GetYoukuMirageQueryPermissionAPIRequest() *YoukuMirageQueryPermissionAPIRequest {
+	return poolYoukuMirageQueryPermissionAPIRequest.Get().(*YoukuMirageQueryPermissionAPIRequest)
+}
+
+// ReleaseYoukuMirageQueryPermissionAPIRequest 将 YoukuMirageQueryPermissionAPIRequest 放入 sync.Pool
+func ReleaseYoukuMirageQueryPermissionAPIRequest(v *YoukuMirageQueryPermissionAPIRequest) {
+	v.Reset()
+	poolYoukuMirageQueryPermissionAPIRequest.Put(v)
 }

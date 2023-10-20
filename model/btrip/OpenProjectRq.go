@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenProjectRq 结构体
 type OpenProjectRq struct {
 	// 项目代码
@@ -16,4 +20,27 @@ type OpenProjectRq struct {
 	ThirdPartInvoiceId string `json:"third_part_invoice_id,omitempty" xml:"third_part_invoice_id,omitempty"`
 	// 商旅开放平台传2
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
+}
+
+var poolOpenProjectRq = sync.Pool{
+	New: func() any {
+		return new(OpenProjectRq)
+	},
+}
+
+// GetOpenProjectRq() 从对象池中获取OpenProjectRq
+func GetOpenProjectRq() *OpenProjectRq {
+	return poolOpenProjectRq.Get().(*OpenProjectRq)
+}
+
+// ReleaseOpenProjectRq 释放OpenProjectRq
+func ReleaseOpenProjectRq(v *OpenProjectRq) {
+	v.Code = ""
+	v.CorpId = ""
+	v.ProjectName = ""
+	v.ThirdPartCostCenterId = ""
+	v.ThirdPartId = ""
+	v.ThirdPartInvoiceId = ""
+	v.Version = 0
+	poolOpenProjectRq.Put(v)
 }

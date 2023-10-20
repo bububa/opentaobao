@@ -2,6 +2,7 @@ package lstvending
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLstVendingGoodsSaveAPIRequest struct {
 // NewAlibabaLstVendingGoodsSaveRequest 初始化AlibabaLstVendingGoodsSaveAPIRequest对象
 func NewAlibabaLstVendingGoodsSaveRequest() *AlibabaLstVendingGoodsSaveAPIRequest {
 	return &AlibabaLstVendingGoodsSaveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstVendingGoodsSaveAPIRequest) Reset() {
+	r._goodsDTOList = r._goodsDTOList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLstVendingGoodsSaveAPIRequest) SetGoodsDTOList(_goodsDTOList []V
 // GetGoodsDTOList GoodsDTOList Getter
 func (r AlibabaLstVendingGoodsSaveAPIRequest) GetGoodsDTOList() []VendingGoodsDto {
 	return r._goodsDTOList
+}
+
+var poolAlibabaLstVendingGoodsSaveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstVendingGoodsSaveRequest()
+	},
+}
+
+// GetAlibabaLstVendingGoodsSaveRequest 从 sync.Pool 获取 AlibabaLstVendingGoodsSaveAPIRequest
+func GetAlibabaLstVendingGoodsSaveAPIRequest() *AlibabaLstVendingGoodsSaveAPIRequest {
+	return poolAlibabaLstVendingGoodsSaveAPIRequest.Get().(*AlibabaLstVendingGoodsSaveAPIRequest)
+}
+
+// ReleaseAlibabaLstVendingGoodsSaveAPIRequest 将 AlibabaLstVendingGoodsSaveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstVendingGoodsSaveAPIRequest(v *AlibabaLstVendingGoodsSaveAPIRequest) {
+	v.Reset()
+	poolAlibabaLstVendingGoodsSaveAPIRequest.Put(v)
 }

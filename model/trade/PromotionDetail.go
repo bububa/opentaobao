@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // PromotionDetail 结构体
 type PromotionDetail struct {
 	// 优惠id，(由营销工具id、优惠活动id和优惠详情id组成，结构为：营销工具id-优惠活动id_优惠详情id，如mjs-123024_211143）
@@ -18,4 +22,28 @@ type PromotionDetail struct {
 	PromotionName string `json:"promotion_name,omitempty" xml:"promotion_name,omitempty"`
 	// 交易的主订单或子订单号
 	Id string `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolPromotionDetail = sync.Pool{
+	New: func() any {
+		return new(PromotionDetail)
+	},
+}
+
+// GetPromotionDetail() 从对象池中获取PromotionDetail
+func GetPromotionDetail() *PromotionDetail {
+	return poolPromotionDetail.Get().(*PromotionDetail)
+}
+
+// ReleasePromotionDetail 释放PromotionDetail
+func ReleasePromotionDetail(v *PromotionDetail) {
+	v.PromotionId = ""
+	v.PromotionDesc = ""
+	v.GiftItemNum = ""
+	v.GiftItemId = ""
+	v.GiftItemName = ""
+	v.DiscountFee = ""
+	v.PromotionName = ""
+	v.Id = ""
+	poolPromotionDetail.Put(v)
 }

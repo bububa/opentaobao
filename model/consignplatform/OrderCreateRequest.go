@@ -1,5 +1,9 @@
 package consignplatform
 
+import (
+	"sync"
+)
+
 // OrderCreateRequest 结构体
 type OrderCreateRequest struct {
 	// 子订单列表
@@ -16,4 +20,27 @@ type OrderCreateRequest struct {
 	ReceiveAddress *AddressDtoForTop `json:"receive_address,omitempty" xml:"receive_address,omitempty"`
 	// 收件人
 	Receiver *PersonDto `json:"receiver,omitempty" xml:"receiver,omitempty"`
+}
+
+var poolOrderCreateRequest = sync.Pool{
+	New: func() any {
+		return new(OrderCreateRequest)
+	},
+}
+
+// GetOrderCreateRequest() 从对象池中获取OrderCreateRequest
+func GetOrderCreateRequest() *OrderCreateRequest {
+	return poolOrderCreateRequest.Get().(*OrderCreateRequest)
+}
+
+// ReleaseOrderCreateRequest 释放OrderCreateRequest
+func ReleaseOrderCreateRequest(v *OrderCreateRequest) {
+	v.SubOrderList = v.SubOrderList[:0]
+	v.UserMemo = ""
+	v.OuterOrderId = ""
+	v.BuyerMemo = ""
+	v.OrderSource = ""
+	v.ReceiveAddress = nil
+	v.Receiver = nil
+	poolOrderCreateRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package security
 
+import (
+	"sync"
+)
+
 // FakeAppFullInfo 结构体
 type FakeAppFullInfo struct {
 	// 仿冒应用列表(任务完成时才返回)
@@ -10,4 +14,24 @@ type FakeAppFullInfo struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 仿冒应用感染用户总数(任务完成时才返回)
 	TotalInfectedUsers int64 `json:"total_infected_users,omitempty" xml:"total_infected_users,omitempty"`
+}
+
+var poolFakeAppFullInfo = sync.Pool{
+	New: func() any {
+		return new(FakeAppFullInfo)
+	},
+}
+
+// GetFakeAppFullInfo() 从对象池中获取FakeAppFullInfo
+func GetFakeAppFullInfo() *FakeAppFullInfo {
+	return poolFakeAppFullInfo.Get().(*FakeAppFullInfo)
+}
+
+// ReleaseFakeAppFullInfo 释放FakeAppFullInfo
+func ReleaseFakeAppFullInfo(v *FakeAppFullInfo) {
+	v.FakeAppDetails = v.FakeAppDetails[:0]
+	v.FakeAppCount = 0
+	v.Status = 0
+	v.TotalInfectedUsers = 0
+	poolFakeAppFullInfo.Put(v)
 }

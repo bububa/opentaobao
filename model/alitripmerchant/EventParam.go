@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // EventParam 结构体
 type EventParam struct {
 	// 活动 ID
@@ -12,4 +16,25 @@ type EventParam struct {
 	Event string `json:"event,omitempty" xml:"event,omitempty"`
 	// 用户 token
 	Token string `json:"token,omitempty" xml:"token,omitempty"`
+}
+
+var poolEventParam = sync.Pool{
+	New: func() any {
+		return new(EventParam)
+	},
+}
+
+// GetEventParam() 从对象池中获取EventParam
+func GetEventParam() *EventParam {
+	return poolEventParam.Get().(*EventParam)
+}
+
+// ReleaseEventParam 释放EventParam
+func ReleaseEventParam(v *EventParam) {
+	v.OfferIdList = v.OfferIdList[:0]
+	v.OrderIdList = v.OrderIdList[:0]
+	v.HotelIdList = v.HotelIdList[:0]
+	v.Event = ""
+	v.Token = ""
+	poolEventParam.Put(v)
 }

@@ -2,6 +2,7 @@ package jst
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTopBizSellerSignAPIResponse struct {
 	TaobaoTopBizSellerSignAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTopBizSellerSignAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTopBizSellerSignAPIResponseModel).Reset()
+}
+
 // TaobaoTopBizSellerSignAPIResponseModel is 淘宝订单履约-商家erp签约 成功返回结果
 type TaobaoTopBizSellerSignAPIResponseModel struct {
 	XMLName xml.Name `xml:"top_biz_seller_sign_response"`
@@ -26,4 +33,29 @@ type TaobaoTopBizSellerSignAPIResponseModel struct {
 	CallErrMsg string `json:"call_err_msg,omitempty" xml:"call_err_msg,omitempty"`
 	// 调用结果
 	CallResult bool `json:"call_result,omitempty" xml:"call_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTopBizSellerSignAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.CallErrCode = ""
+	m.CallErrMsg = ""
+	m.CallResult = false
+}
+
+var poolTaobaoTopBizSellerSignAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTopBizSellerSignAPIResponse)
+	},
+}
+
+// GetTaobaoTopBizSellerSignAPIResponse 从 sync.Pool 获取 TaobaoTopBizSellerSignAPIResponse
+func GetTaobaoTopBizSellerSignAPIResponse() *TaobaoTopBizSellerSignAPIResponse {
+	return poolTaobaoTopBizSellerSignAPIResponse.Get().(*TaobaoTopBizSellerSignAPIResponse)
+}
+
+// ReleaseTaobaoTopBizSellerSignAPIResponse 将 TaobaoTopBizSellerSignAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTopBizSellerSignAPIResponse(v *TaobaoTopBizSellerSignAPIResponse) {
+	v.Reset()
+	poolTaobaoTopBizSellerSignAPIResponse.Put(v)
 }

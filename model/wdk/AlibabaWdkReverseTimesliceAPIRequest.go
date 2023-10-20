@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkReverseTimesliceAPIRequest struct {
 // NewAlibabaWdkReverseTimesliceRequest 初始化AlibabaWdkReverseTimesliceAPIRequest对象
 func NewAlibabaWdkReverseTimesliceRequest() *AlibabaWdkReverseTimesliceAPIRequest {
 	return &AlibabaWdkReverseTimesliceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkReverseTimesliceAPIRequest) Reset() {
+	r._paramQueryTimeSliceReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkReverseTimesliceAPIRequest) SetParamQueryTimeSliceReq(_paramQ
 // GetParamQueryTimeSliceReq ParamQueryTimeSliceReq Getter
 func (r AlibabaWdkReverseTimesliceAPIRequest) GetParamQueryTimeSliceReq() *QueryTimeSliceReq {
 	return r._paramQueryTimeSliceReq
+}
+
+var poolAlibabaWdkReverseTimesliceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkReverseTimesliceRequest()
+	},
+}
+
+// GetAlibabaWdkReverseTimesliceRequest 从 sync.Pool 获取 AlibabaWdkReverseTimesliceAPIRequest
+func GetAlibabaWdkReverseTimesliceAPIRequest() *AlibabaWdkReverseTimesliceAPIRequest {
+	return poolAlibabaWdkReverseTimesliceAPIRequest.Get().(*AlibabaWdkReverseTimesliceAPIRequest)
+}
+
+// ReleaseAlibabaWdkReverseTimesliceAPIRequest 将 AlibabaWdkReverseTimesliceAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkReverseTimesliceAPIRequest(v *AlibabaWdkReverseTimesliceAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkReverseTimesliceAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest struct {
 // NewTaobaoXhotelItemSelectionSellerStatSummaryRequest 初始化TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest对象
 func NewTaobaoXhotelItemSelectionSellerStatSummaryRequest() *TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest {
 	return &TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest) Reset() {
+	r._date = ""
+	r._hid = ""
+	r._vendor = ""
+	r._supplier = ""
+	r._outHid = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest) SetOutHid(_outHid
 // GetOutHid OutHid Getter
 func (r TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest) GetOutHid() string {
 	return r._outHid
+}
+
+var poolTaobaoXhotelItemSelectionSellerStatSummaryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelItemSelectionSellerStatSummaryRequest()
+	},
+}
+
+// GetTaobaoXhotelItemSelectionSellerStatSummaryRequest 从 sync.Pool 获取 TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest
+func GetTaobaoXhotelItemSelectionSellerStatSummaryAPIRequest() *TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest {
+	return poolTaobaoXhotelItemSelectionSellerStatSummaryAPIRequest.Get().(*TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest)
+}
+
+// ReleaseTaobaoXhotelItemSelectionSellerStatSummaryAPIRequest 将 TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelItemSelectionSellerStatSummaryAPIRequest(v *TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelItemSelectionSellerStatSummaryAPIRequest.Put(v)
 }

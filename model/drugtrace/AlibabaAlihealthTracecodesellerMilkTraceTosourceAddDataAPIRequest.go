@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest struct {
 // NewAlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataRequest 初始化AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest对象
 func NewAlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataRequest() *AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest {
 	return &AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest) Reset() {
+	r._entId = ""
+	r._jsonStr = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest) SetJ
 // GetJsonStr JsonStr Getter
 func (r AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest) GetJsonStr() string {
 	return r._jsonStr
+}
+
+var poolAlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataRequest()
+	},
+}
+
+// GetAlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataRequest 从 sync.Pool 获取 AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest
+func GetAlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest() *AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest {
+	return poolAlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest.Get().(*AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest 将 AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest(v *AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest.Put(v)
 }

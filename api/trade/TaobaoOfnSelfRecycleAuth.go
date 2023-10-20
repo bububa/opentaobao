@@ -9,11 +9,6 @@ import (
 // taobao.ofn.self.recycle.auth
 //
 // 自助回收鉴权
-func TaobaoOfnSelfRecycleAuth(clt *core.SDKClient, req *trade.TaobaoOfnSelfRecycleAuthAPIRequest, session string) (*trade.TaobaoOfnSelfRecycleAuthAPIResponse, error) {
-	var resp trade.TaobaoOfnSelfRecycleAuthAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOfnSelfRecycleAuth(clt *core.SDKClient, req *trade.TaobaoOfnSelfRecycleAuthAPIRequest, resp *trade.TaobaoOfnSelfRecycleAuthAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

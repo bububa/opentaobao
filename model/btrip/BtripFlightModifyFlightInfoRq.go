@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BtripFlightModifyFlightInfoRq 结构体
 type BtripFlightModifyFlightInfoRq struct {
 	// 分销外部订单号
@@ -22,4 +26,30 @@ type BtripFlightModifyFlightInfoRq struct {
 	PassengerName string `json:"passenger_name,omitempty" xml:"passenger_name,omitempty"`
 	// 是否是自愿改签
 	IsVoluntary int64 `json:"is_voluntary,omitempty" xml:"is_voluntary,omitempty"`
+}
+
+var poolBtripFlightModifyFlightInfoRq = sync.Pool{
+	New: func() any {
+		return new(BtripFlightModifyFlightInfoRq)
+	},
+}
+
+// GetBtripFlightModifyFlightInfoRq() 从对象池中获取BtripFlightModifyFlightInfoRq
+func GetBtripFlightModifyFlightInfoRq() *BtripFlightModifyFlightInfoRq {
+	return poolBtripFlightModifyFlightInfoRq.Get().(*BtripFlightModifyFlightInfoRq)
+}
+
+// ReleaseBtripFlightModifyFlightInfoRq 释放BtripFlightModifyFlightInfoRq
+func ReleaseBtripFlightModifyFlightInfoRq(v *BtripFlightModifyFlightInfoRq) {
+	v.DisOrderId = ""
+	v.ModifyFlightNo = ""
+	v.ModifyDepartDate = ""
+	v.DepCity = ""
+	v.ArrCity = ""
+	v.SubChannel = ""
+	v.SupplierCode = ""
+	v.SessionId = ""
+	v.PassengerName = ""
+	v.IsVoluntary = 0
+	poolBtripFlightModifyFlightInfoRq.Put(v)
 }

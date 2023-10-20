@@ -9,11 +9,6 @@ import (
 // alibaba.campus.device.openapi.gettemplatelist
 //
 // 查询设备模板信息
-func AlibabaCampusDeviceOpenapiGettemplatelist(clt *core.SDKClient, req *campus.AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest, session string) (*campus.AlibabaCampusDeviceOpenapiGettemplatelistAPIResponse, error) {
-	var resp campus.AlibabaCampusDeviceOpenapiGettemplatelistAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCampusDeviceOpenapiGettemplatelist(clt *core.SDKClient, req *campus.AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest, resp *campus.AlibabaCampusDeviceOpenapiGettemplatelistAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

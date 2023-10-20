@@ -2,6 +2,7 @@ package jst
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoJstSmsMessageSendAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstSmsMessageSendAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoJstSmsMessageSendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoJstSmsMessageSendAPIResponseModel).Reset()
 }
 
 // TaobaoJstSmsMessageSendAPIResponseModel is 聚石塔数据paas短信发送接口 成功返回结果
@@ -28,4 +35,31 @@ type TaobaoJstSmsMessageSendAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 请求成功
 	RequestSuccess bool `json:"request_success,omitempty" xml:"request_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoJstSmsMessageSendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RequestCode = ""
+	m.RequestId = ""
+	m.Module = ""
+	m.Message = ""
+	m.RequestSuccess = false
+}
+
+var poolTaobaoJstSmsMessageSendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoJstSmsMessageSendAPIResponse)
+	},
+}
+
+// GetTaobaoJstSmsMessageSendAPIResponse 从 sync.Pool 获取 TaobaoJstSmsMessageSendAPIResponse
+func GetTaobaoJstSmsMessageSendAPIResponse() *TaobaoJstSmsMessageSendAPIResponse {
+	return poolTaobaoJstSmsMessageSendAPIResponse.Get().(*TaobaoJstSmsMessageSendAPIResponse)
+}
+
+// ReleaseTaobaoJstSmsMessageSendAPIResponse 将 TaobaoJstSmsMessageSendAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoJstSmsMessageSendAPIResponse(v *TaobaoJstSmsMessageSendAPIResponse) {
+	v.Reset()
+	poolTaobaoJstSmsMessageSendAPIResponse.Put(v)
 }

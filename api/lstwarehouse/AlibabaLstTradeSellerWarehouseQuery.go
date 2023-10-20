@@ -9,11 +9,6 @@ import (
 // alibaba.lst.trade.seller.warehouse.query
 //
 // 查询本地云仓商家的仓库
-func AlibabaLstTradeSellerWarehouseQuery(clt *core.SDKClient, req *lstwarehouse.AlibabaLstTradeSellerWarehouseQueryAPIRequest, session string) (*lstwarehouse.AlibabaLstTradeSellerWarehouseQueryAPIResponse, error) {
-	var resp lstwarehouse.AlibabaLstTradeSellerWarehouseQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLstTradeSellerWarehouseQuery(clt *core.SDKClient, req *lstwarehouse.AlibabaLstTradeSellerWarehouseQueryAPIRequest, resp *lstwarehouse.AlibabaLstTradeSellerWarehouseQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

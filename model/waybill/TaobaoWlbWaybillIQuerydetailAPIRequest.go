@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoWlbWaybillIQuerydetailAPIRequest struct {
 // NewTaobaoWlbWaybillIQuerydetailRequest 初始化TaobaoWlbWaybillIQuerydetailAPIRequest对象
 func NewTaobaoWlbWaybillIQuerydetailRequest() *TaobaoWlbWaybillIQuerydetailAPIRequest {
 	return &TaobaoWlbWaybillIQuerydetailAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbWaybillIQuerydetailAPIRequest) Reset() {
+	r._waybillDetailQueryRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoWlbWaybillIQuerydetailAPIRequest) SetWaybillDetailQueryRequest(_w
 // GetWaybillDetailQueryRequest WaybillDetailQueryRequest Getter
 func (r TaobaoWlbWaybillIQuerydetailAPIRequest) GetWaybillDetailQueryRequest() *WaybillDetailQueryRequest {
 	return r._waybillDetailQueryRequest
+}
+
+var poolTaobaoWlbWaybillIQuerydetailAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbWaybillIQuerydetailRequest()
+	},
+}
+
+// GetTaobaoWlbWaybillIQuerydetailRequest 从 sync.Pool 获取 TaobaoWlbWaybillIQuerydetailAPIRequest
+func GetTaobaoWlbWaybillIQuerydetailAPIRequest() *TaobaoWlbWaybillIQuerydetailAPIRequest {
+	return poolTaobaoWlbWaybillIQuerydetailAPIRequest.Get().(*TaobaoWlbWaybillIQuerydetailAPIRequest)
+}
+
+// ReleaseTaobaoWlbWaybillIQuerydetailAPIRequest 将 TaobaoWlbWaybillIQuerydetailAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbWaybillIQuerydetailAPIRequest(v *TaobaoWlbWaybillIQuerydetailAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbWaybillIQuerydetailAPIRequest.Put(v)
 }

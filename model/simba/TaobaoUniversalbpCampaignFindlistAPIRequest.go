@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoUniversalbpCampaignFindlistAPIRequest struct {
 // NewTaobaoUniversalbpCampaignFindlistRequest 初始化TaobaoUniversalbpCampaignFindlistAPIRequest对象
 func NewTaobaoUniversalbpCampaignFindlistRequest() *TaobaoUniversalbpCampaignFindlistAPIRequest {
 	return &TaobaoUniversalbpCampaignFindlistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpCampaignFindlistAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r._campaignQueryVO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoUniversalbpCampaignFindlistAPIRequest) SetCampaignQueryVO(_campai
 // GetCampaignQueryVO CampaignQueryVO Getter
 func (r TaobaoUniversalbpCampaignFindlistAPIRequest) GetCampaignQueryVO() *CampaignQueryVo {
 	return r._campaignQueryVO
+}
+
+var poolTaobaoUniversalbpCampaignFindlistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpCampaignFindlistRequest()
+	},
+}
+
+// GetTaobaoUniversalbpCampaignFindlistRequest 从 sync.Pool 获取 TaobaoUniversalbpCampaignFindlistAPIRequest
+func GetTaobaoUniversalbpCampaignFindlistAPIRequest() *TaobaoUniversalbpCampaignFindlistAPIRequest {
+	return poolTaobaoUniversalbpCampaignFindlistAPIRequest.Get().(*TaobaoUniversalbpCampaignFindlistAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpCampaignFindlistAPIRequest 将 TaobaoUniversalbpCampaignFindlistAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpCampaignFindlistAPIRequest(v *TaobaoUniversalbpCampaignFindlistAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpCampaignFindlistAPIRequest.Put(v)
 }

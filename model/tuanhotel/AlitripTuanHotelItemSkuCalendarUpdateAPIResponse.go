@@ -2,6 +2,7 @@ package tuanhotel
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlitripTuanHotelItemSkuCalendarUpdateAPIResponse struct {
 	model.CommonResponse
 	AlitripTuanHotelItemSkuCalendarUpdateAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlitripTuanHotelItemSkuCalendarUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripTuanHotelItemSkuCalendarUpdateAPIResponseModel).Reset()
 }
 
 // AlitripTuanHotelItemSkuCalendarUpdateAPIResponseModel is 酒店非标套餐商品日历库存宝贝SKU更新接口 成功返回结果
@@ -32,4 +39,32 @@ type AlitripTuanHotelItemSkuCalendarUpdateAPIResponseModel struct {
 	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
 	// 操作状态
 	Status bool `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripTuanHotelItemSkuCalendarUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TopItemSkuBaseInfoList = m.TopItemSkuBaseInfoList[:0]
+	m.MsgCode = ""
+	m.Message = ""
+	m.ItemId = 0
+	m.SellerId = 0
+	m.Status = false
+}
+
+var poolAlitripTuanHotelItemSkuCalendarUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripTuanHotelItemSkuCalendarUpdateAPIResponse)
+	},
+}
+
+// GetAlitripTuanHotelItemSkuCalendarUpdateAPIResponse 从 sync.Pool 获取 AlitripTuanHotelItemSkuCalendarUpdateAPIResponse
+func GetAlitripTuanHotelItemSkuCalendarUpdateAPIResponse() *AlitripTuanHotelItemSkuCalendarUpdateAPIResponse {
+	return poolAlitripTuanHotelItemSkuCalendarUpdateAPIResponse.Get().(*AlitripTuanHotelItemSkuCalendarUpdateAPIResponse)
+}
+
+// ReleaseAlitripTuanHotelItemSkuCalendarUpdateAPIResponse 将 AlitripTuanHotelItemSkuCalendarUpdateAPIResponse 保存到 sync.Pool
+func ReleaseAlitripTuanHotelItemSkuCalendarUpdateAPIResponse(v *AlitripTuanHotelItemSkuCalendarUpdateAPIResponse) {
+	v.Reset()
+	poolAlitripTuanHotelItemSkuCalendarUpdateAPIResponse.Put(v)
 }

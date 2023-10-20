@@ -1,5 +1,9 @@
 package hotel
 
+import (
+	"sync"
+)
+
 // ItemRateReplyVo 结构体
 type ItemRateReplyVo struct {
 	// 内容
@@ -22,4 +26,30 @@ type ItemRateReplyVo struct {
 	ReplyType int64 `json:"reply_type,omitempty" xml:"reply_type,omitempty"`
 	// 脱敏后的userId
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
+}
+
+var poolItemRateReplyVo = sync.Pool{
+	New: func() any {
+		return new(ItemRateReplyVo)
+	},
+}
+
+// GetItemRateReplyVo() 从对象池中获取ItemRateReplyVo
+func GetItemRateReplyVo() *ItemRateReplyVo {
+	return poolItemRateReplyVo.Get().(*ItemRateReplyVo)
+}
+
+// ReleaseItemRateReplyVo 释放ItemRateReplyVo
+func ReleaseItemRateReplyVo(v *ItemRateReplyVo) {
+	v.Content = ""
+	v.GmtCreate = ""
+	v.MediaInfo = ""
+	v.UserNick = ""
+	v.IntervalDay = 0
+	v.ParentId = 0
+	v.ParentInfo = nil
+	v.ReplyId = 0
+	v.ReplyType = 0
+	v.UserId = 0
+	poolItemRateReplyVo.Put(v)
 }

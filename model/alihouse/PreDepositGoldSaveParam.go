@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // PreDepositGoldSaveParam 结构体
 type PreDepositGoldSaveParam struct {
 	// 商品标题
@@ -26,4 +30,32 @@ type PreDepositGoldSaveParam struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 是否是拍下减库存，默认是支付减库存
 	SubStockAtBuy bool `json:"sub_stock_at_buy,omitempty" xml:"sub_stock_at_buy,omitempty"`
+}
+
+var poolPreDepositGoldSaveParam = sync.Pool{
+	New: func() any {
+		return new(PreDepositGoldSaveParam)
+	},
+}
+
+// GetPreDepositGoldSaveParam() 从对象池中获取PreDepositGoldSaveParam
+func GetPreDepositGoldSaveParam() *PreDepositGoldSaveParam {
+	return poolPreDepositGoldSaveParam.Get().(*PreDepositGoldSaveParam)
+}
+
+// ReleasePreDepositGoldSaveParam 释放PreDepositGoldSaveParam
+func ReleasePreDepositGoldSaveParam(v *PreDepositGoldSaveParam) {
+	v.Name = ""
+	v.Pic = ""
+	v.ValidStartDate = ""
+	v.ValidEndDate = ""
+	v.Starts = ""
+	v.OuterStoreId = ""
+	v.ItemId = 0
+	v.ValidDays = 0
+	v.Price = 0
+	v.Quantity = 0
+	v.Status = 0
+	v.SubStockAtBuy = false
+	poolPreDepositGoldSaveParam.Put(v)
 }

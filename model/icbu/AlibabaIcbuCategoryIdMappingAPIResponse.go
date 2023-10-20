@@ -2,6 +2,7 @@ package icbu
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaIcbuCategoryIdMappingAPIResponse struct {
 	AlibabaIcbuCategoryIdMappingAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaIcbuCategoryIdMappingAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaIcbuCategoryIdMappingAPIResponseModel).Reset()
+}
+
 // AlibabaIcbuCategoryIdMappingAPIResponseModel is 新旧属性的映射 成功返回结果
 type AlibabaIcbuCategoryIdMappingAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_icbu_category_id_mapping_response"`
@@ -22,4 +29,27 @@ type AlibabaIcbuCategoryIdMappingAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 转化的类目id
 	MappingResult int64 `json:"mapping_result,omitempty" xml:"mapping_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaIcbuCategoryIdMappingAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MappingResult = 0
+}
+
+var poolAlibabaIcbuCategoryIdMappingAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaIcbuCategoryIdMappingAPIResponse)
+	},
+}
+
+// GetAlibabaIcbuCategoryIdMappingAPIResponse 从 sync.Pool 获取 AlibabaIcbuCategoryIdMappingAPIResponse
+func GetAlibabaIcbuCategoryIdMappingAPIResponse() *AlibabaIcbuCategoryIdMappingAPIResponse {
+	return poolAlibabaIcbuCategoryIdMappingAPIResponse.Get().(*AlibabaIcbuCategoryIdMappingAPIResponse)
+}
+
+// ReleaseAlibabaIcbuCategoryIdMappingAPIResponse 将 AlibabaIcbuCategoryIdMappingAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaIcbuCategoryIdMappingAPIResponse(v *AlibabaIcbuCategoryIdMappingAPIResponse) {
+	v.Reset()
+	poolAlibabaIcbuCategoryIdMappingAPIResponse.Put(v)
 }

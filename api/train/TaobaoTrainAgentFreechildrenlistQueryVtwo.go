@@ -9,11 +9,6 @@ import (
 // taobao.train.agent.freechildrenlist.query.vtwo
 //
 // 免费儿童列表查询
-func TaobaoTrainAgentFreechildrenlistQueryVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentFreechildrenlistQueryVtwoAPIRequest, session string) (*train.TaobaoTrainAgentFreechildrenlistQueryVtwoAPIResponse, error) {
-	var resp train.TaobaoTrainAgentFreechildrenlistQueryVtwoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTrainAgentFreechildrenlistQueryVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentFreechildrenlistQueryVtwoAPIRequest, resp *train.TaobaoTrainAgentFreechildrenlistQueryVtwoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

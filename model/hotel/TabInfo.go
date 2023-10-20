@@ -1,5 +1,9 @@
 package hotel
 
+import (
+	"sync"
+)
+
 // TabInfo 结构体
 type TabInfo struct {
 	// tab编码
@@ -18,4 +22,28 @@ type TabInfo struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// tab是否点击
 	IsClick bool `json:"is_click,omitempty" xml:"is_click,omitempty"`
+}
+
+var poolTabInfo = sync.Pool{
+	New: func() any {
+		return new(TabInfo)
+	},
+}
+
+// GetTabInfo() 从对象池中获取TabInfo
+func GetTabInfo() *TabInfo {
+	return poolTabInfo.Get().(*TabInfo)
+}
+
+// ReleaseTabInfo 释放TabInfo
+func ReleaseTabInfo(v *TabInfo) {
+	v.TabCode = ""
+	v.TabDetail = ""
+	v.TabName = ""
+	v.TabTrack = ""
+	v.Attitude = 0
+	v.TabId = 0
+	v.Type = 0
+	v.IsClick = false
+	poolTabInfo.Put(v)
 }

@@ -2,6 +2,7 @@ package happytrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaHappytripTaxiDriverBlacklistRemoveAPIRequest struct {
 // NewAlibabaHappytripTaxiDriverBlacklistRemoveRequest 初始化AlibabaHappytripTaxiDriverBlacklistRemoveAPIRequest对象
 func NewAlibabaHappytripTaxiDriverBlacklistRemoveRequest() *AlibabaHappytripTaxiDriverBlacklistRemoveAPIRequest {
 	return &AlibabaHappytripTaxiDriverBlacklistRemoveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHappytripTaxiDriverBlacklistRemoveAPIRequest) Reset() {
+	r._orderId = ""
+	r._uid = ""
+	r._driverId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaHappytripTaxiDriverBlacklistRemoveAPIRequest) SetDriverId(_drive
 // GetDriverId DriverId Getter
 func (r AlibabaHappytripTaxiDriverBlacklistRemoveAPIRequest) GetDriverId() string {
 	return r._driverId
+}
+
+var poolAlibabaHappytripTaxiDriverBlacklistRemoveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHappytripTaxiDriverBlacklistRemoveRequest()
+	},
+}
+
+// GetAlibabaHappytripTaxiDriverBlacklistRemoveRequest 从 sync.Pool 获取 AlibabaHappytripTaxiDriverBlacklistRemoveAPIRequest
+func GetAlibabaHappytripTaxiDriverBlacklistRemoveAPIRequest() *AlibabaHappytripTaxiDriverBlacklistRemoveAPIRequest {
+	return poolAlibabaHappytripTaxiDriverBlacklistRemoveAPIRequest.Get().(*AlibabaHappytripTaxiDriverBlacklistRemoveAPIRequest)
+}
+
+// ReleaseAlibabaHappytripTaxiDriverBlacklistRemoveAPIRequest 将 AlibabaHappytripTaxiDriverBlacklistRemoveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHappytripTaxiDriverBlacklistRemoveAPIRequest(v *AlibabaHappytripTaxiDriverBlacklistRemoveAPIRequest) {
+	v.Reset()
+	poolAlibabaHappytripTaxiDriverBlacklistRemoveAPIRequest.Put(v)
 }

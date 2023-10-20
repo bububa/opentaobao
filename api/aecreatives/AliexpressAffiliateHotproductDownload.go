@@ -9,11 +9,6 @@ import (
 // aliexpress.affiliate.hotproduct.download
 //
 // 查询联盟爆品API
-func AliexpressAffiliateHotproductDownload(clt *core.SDKClient, req *aecreatives.AliexpressAffiliateHotproductDownloadAPIRequest, session string) (*aecreatives.AliexpressAffiliateHotproductDownloadAPIResponse, error) {
-	var resp aecreatives.AliexpressAffiliateHotproductDownloadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressAffiliateHotproductDownload(clt *core.SDKClient, req *aecreatives.AliexpressAffiliateHotproductDownloadAPIRequest, resp *aecreatives.AliexpressAffiliateHotproductDownloadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

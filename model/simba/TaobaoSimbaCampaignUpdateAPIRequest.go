@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoSimbaCampaignUpdateAPIRequest struct {
 // NewTaobaoSimbaCampaignUpdateRequest 初始化TaobaoSimbaCampaignUpdateAPIRequest对象
 func NewTaobaoSimbaCampaignUpdateRequest() *TaobaoSimbaCampaignUpdateAPIRequest {
 	return &TaobaoSimbaCampaignUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaCampaignUpdateAPIRequest) Reset() {
+	r._nick = ""
+	r._title = ""
+	r._onlineStatus = ""
+	r._campaignId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoSimbaCampaignUpdateAPIRequest) SetCampaignId(_campaignId int64) e
 // GetCampaignId CampaignId Getter
 func (r TaobaoSimbaCampaignUpdateAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
+}
+
+var poolTaobaoSimbaCampaignUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaCampaignUpdateRequest()
+	},
+}
+
+// GetTaobaoSimbaCampaignUpdateRequest 从 sync.Pool 获取 TaobaoSimbaCampaignUpdateAPIRequest
+func GetTaobaoSimbaCampaignUpdateAPIRequest() *TaobaoSimbaCampaignUpdateAPIRequest {
+	return poolTaobaoSimbaCampaignUpdateAPIRequest.Get().(*TaobaoSimbaCampaignUpdateAPIRequest)
+}
+
+// ReleaseTaobaoSimbaCampaignUpdateAPIRequest 将 TaobaoSimbaCampaignUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaCampaignUpdateAPIRequest(v *TaobaoSimbaCampaignUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaCampaignUpdateAPIRequest.Put(v)
 }

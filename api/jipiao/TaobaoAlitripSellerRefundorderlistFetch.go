@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.seller.refundorderlist.fetch
 //
 // 代理商纬度退票订单列表提取
-func TaobaoAlitripSellerRefundorderlistFetch(clt *core.SDKClient, req *jipiao.TaobaoAlitripSellerRefundorderlistFetchAPIRequest, session string) (*jipiao.TaobaoAlitripSellerRefundorderlistFetchAPIResponse, error) {
-	var resp jipiao.TaobaoAlitripSellerRefundorderlistFetchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripSellerRefundorderlistFetch(clt *core.SDKClient, req *jipiao.TaobaoAlitripSellerRefundorderlistFetchAPIRequest, resp *jipiao.TaobaoAlitripSellerRefundorderlistFetchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

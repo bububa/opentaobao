@@ -1,5 +1,9 @@
 package tvupadmin
 
+import (
+	"sync"
+)
+
 // SearchOrderInfoDo 结构体
 type SearchOrderInfoDo struct {
 	// 创建时间
@@ -42,4 +46,40 @@ type SearchOrderInfoDo struct {
 	OrderNo int64 `json:"order_no,omitempty" xml:"order_no,omitempty"`
 	// 业务类型
 	BizType int64 `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
+}
+
+var poolSearchOrderInfoDo = sync.Pool{
+	New: func() any {
+		return new(SearchOrderInfoDo)
+	},
+}
+
+// GetSearchOrderInfoDo() 从对象池中获取SearchOrderInfoDo
+func GetSearchOrderInfoDo() *SearchOrderInfoDo {
+	return poolSearchOrderInfoDo.Get().(*SearchOrderInfoDo)
+}
+
+// ReleaseSearchOrderInfoDo 释放SearchOrderInfoDo
+func ReleaseSearchOrderInfoDo(v *SearchOrderInfoDo) {
+	v.GmtModified = ""
+	v.Subject = ""
+	v.UserLogonId = ""
+	v.License = ""
+	v.GmtVaildEnd = ""
+	v.GmtCreate = ""
+	v.YoukuLogonId = ""
+	v.GmtVaildStart = ""
+	v.GmtPaySuccess = ""
+	v.SubjectId = ""
+	v.ClientIp = ""
+	v.Uuid = ""
+	v.Uid = 0
+	v.ActualPaidPrice = 0
+	v.SubjectType = 0
+	v.YoukuUid = 0
+	v.Status = 0
+	v.Price = 0
+	v.OrderNo = 0
+	v.BizType = 0
+	poolSearchOrderInfoDo.Put(v)
 }

@@ -2,6 +2,7 @@ package cainiaohandover
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type CainiaoGlobalSolutionServiceResourceQueryAPIRequest struct {
 // NewCainiaoGlobalSolutionServiceResourceQueryRequest 初始化CainiaoGlobalSolutionServiceResourceQueryAPIRequest对象
 func NewCainiaoGlobalSolutionServiceResourceQueryRequest() *CainiaoGlobalSolutionServiceResourceQueryAPIRequest {
 	return &CainiaoGlobalSolutionServiceResourceQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoGlobalSolutionServiceResourceQueryAPIRequest) Reset() {
+	r._locale = ""
+	r._solutionServiceResParam = nil
+	r._senderParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *CainiaoGlobalSolutionServiceResourceQueryAPIRequest) SetSenderParam(_se
 // GetSenderParam SenderParam Getter
 func (r CainiaoGlobalSolutionServiceResourceQueryAPIRequest) GetSenderParam() *OpenSenderParam {
 	return r._senderParam
+}
+
+var poolCainiaoGlobalSolutionServiceResourceQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoGlobalSolutionServiceResourceQueryRequest()
+	},
+}
+
+// GetCainiaoGlobalSolutionServiceResourceQueryRequest 从 sync.Pool 获取 CainiaoGlobalSolutionServiceResourceQueryAPIRequest
+func GetCainiaoGlobalSolutionServiceResourceQueryAPIRequest() *CainiaoGlobalSolutionServiceResourceQueryAPIRequest {
+	return poolCainiaoGlobalSolutionServiceResourceQueryAPIRequest.Get().(*CainiaoGlobalSolutionServiceResourceQueryAPIRequest)
+}
+
+// ReleaseCainiaoGlobalSolutionServiceResourceQueryAPIRequest 将 CainiaoGlobalSolutionServiceResourceQueryAPIRequest 放入 sync.Pool
+func ReleaseCainiaoGlobalSolutionServiceResourceQueryAPIRequest(v *CainiaoGlobalSolutionServiceResourceQueryAPIRequest) {
+	v.Reset()
+	poolCainiaoGlobalSolutionServiceResourceQueryAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscCrmRechargeQryruleAPIRequest struct {
 // NewAlibabaAlscCrmRechargeQryruleRequest 初始化AlibabaAlscCrmRechargeQryruleAPIRequest对象
 func NewAlibabaAlscCrmRechargeQryruleRequest() *AlibabaAlscCrmRechargeQryruleAPIRequest {
 	return &AlibabaAlscCrmRechargeQryruleAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscCrmRechargeQryruleAPIRequest) Reset() {
+	r._paramPullRechargeRuleByShopReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscCrmRechargeQryruleAPIRequest) SetParamPullRechargeRuleByShop
 // GetParamPullRechargeRuleByShopReq ParamPullRechargeRuleByShopReq Getter
 func (r AlibabaAlscCrmRechargeQryruleAPIRequest) GetParamPullRechargeRuleByShopReq() *PullRechargeRuleByShopReq {
 	return r._paramPullRechargeRuleByShopReq
+}
+
+var poolAlibabaAlscCrmRechargeQryruleAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscCrmRechargeQryruleRequest()
+	},
+}
+
+// GetAlibabaAlscCrmRechargeQryruleRequest 从 sync.Pool 获取 AlibabaAlscCrmRechargeQryruleAPIRequest
+func GetAlibabaAlscCrmRechargeQryruleAPIRequest() *AlibabaAlscCrmRechargeQryruleAPIRequest {
+	return poolAlibabaAlscCrmRechargeQryruleAPIRequest.Get().(*AlibabaAlscCrmRechargeQryruleAPIRequest)
+}
+
+// ReleaseAlibabaAlscCrmRechargeQryruleAPIRequest 将 AlibabaAlscCrmRechargeQryruleAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscCrmRechargeQryruleAPIRequest(v *AlibabaAlscCrmRechargeQryruleAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscCrmRechargeQryruleAPIRequest.Put(v)
 }

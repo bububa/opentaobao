@@ -2,6 +2,7 @@ package aedropshiper
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AliexpressDsRecommendFeedGetAPIResponse struct {
 	AliexpressDsRecommendFeedGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AliexpressDsRecommendFeedGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliexpressDsRecommendFeedGetAPIResponseModel).Reset()
+}
+
 // AliexpressDsRecommendFeedGetAPIResponseModel is 获取推荐商品信息流接口 成功返回结果
 type AliexpressDsRecommendFeedGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_ds_recommend_feed_get_response"`
@@ -26,4 +33,29 @@ type AliexpressDsRecommendFeedGetAPIResponseModel struct {
 	RspCode string `json:"rsp_code,omitempty" xml:"rsp_code,omitempty"`
 	// result object
 	Result *TrafficProductResultDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliexpressDsRecommendFeedGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RspMsg = ""
+	m.RspCode = ""
+	m.Result = nil
+}
+
+var poolAliexpressDsRecommendFeedGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliexpressDsRecommendFeedGetAPIResponse)
+	},
+}
+
+// GetAliexpressDsRecommendFeedGetAPIResponse 从 sync.Pool 获取 AliexpressDsRecommendFeedGetAPIResponse
+func GetAliexpressDsRecommendFeedGetAPIResponse() *AliexpressDsRecommendFeedGetAPIResponse {
+	return poolAliexpressDsRecommendFeedGetAPIResponse.Get().(*AliexpressDsRecommendFeedGetAPIResponse)
+}
+
+// ReleaseAliexpressDsRecommendFeedGetAPIResponse 将 AliexpressDsRecommendFeedGetAPIResponse 保存到 sync.Pool
+func ReleaseAliexpressDsRecommendFeedGetAPIResponse(v *AliexpressDsRecommendFeedGetAPIResponse) {
+	v.Reset()
+	poolAliexpressDsRecommendFeedGetAPIResponse.Put(v)
 }

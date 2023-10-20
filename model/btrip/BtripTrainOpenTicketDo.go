@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BtripTrainOpenTicketDo 结构体
 type BtripTrainOpenTicketDo struct {
 	// 车次号
@@ -32,4 +36,35 @@ type BtripTrainOpenTicketDo struct {
 	OriginTicketPrice int64 `json:"origin_ticket_price,omitempty" xml:"origin_ticket_price,omitempty"`
 	// 是否退改
 	IsChanged bool `json:"is_changed,omitempty" xml:"is_changed,omitempty"`
+}
+
+var poolBtripTrainOpenTicketDo = sync.Pool{
+	New: func() any {
+		return new(BtripTrainOpenTicketDo)
+	},
+}
+
+// GetBtripTrainOpenTicketDo() 从对象池中获取BtripTrainOpenTicketDo
+func GetBtripTrainOpenTicketDo() *BtripTrainOpenTicketDo {
+	return poolBtripTrainOpenTicketDo.Get().(*BtripTrainOpenTicketDo)
+}
+
+// ReleaseBtripTrainOpenTicketDo 释放BtripTrainOpenTicketDo
+func ReleaseBtripTrainOpenTicketDo(v *BtripTrainOpenTicketDo) {
+	v.TrainNo = ""
+	v.TrainType = ""
+	v.DepTime = ""
+	v.ArrTime = ""
+	v.RunTime = ""
+	v.DepCity = ""
+	v.ArrCity = ""
+	v.DepStation = ""
+	v.ArrStation = ""
+	v.Seat = ""
+	v.PassengerName = ""
+	v.TicketPrice = 0
+	v.ServiceFee = 0
+	v.OriginTicketPrice = 0
+	v.IsChanged = false
+	poolBtripTrainOpenTicketDo.Put(v)
 }

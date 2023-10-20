@@ -9,11 +9,6 @@ import (
 // taobao.simba.campaigns.get
 //
 // 取得一个客户的推广计划；
-func TaobaoSimbaCampaignsGet(clt *core.SDKClient, req *simba.TaobaoSimbaCampaignsGetAPIRequest, session string) (*simba.TaobaoSimbaCampaignsGetAPIResponse, error) {
-	var resp simba.TaobaoSimbaCampaignsGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaCampaignsGet(clt *core.SDKClient, req *simba.TaobaoSimbaCampaignsGetAPIRequest, resp *simba.TaobaoSimbaCampaignsGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

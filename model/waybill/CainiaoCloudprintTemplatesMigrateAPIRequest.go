@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type CainiaoCloudprintTemplatesMigrateAPIRequest struct {
 // NewCainiaoCloudprintTemplatesMigrateRequest 初始化CainiaoCloudprintTemplatesMigrateAPIRequest对象
 func NewCainiaoCloudprintTemplatesMigrateRequest() *CainiaoCloudprintTemplatesMigrateAPIRequest {
 	return &CainiaoCloudprintTemplatesMigrateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoCloudprintTemplatesMigrateAPIRequest) Reset() {
+	r._customAreaName = ""
+	r._customAreaContent = ""
+	r._tempalteId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *CainiaoCloudprintTemplatesMigrateAPIRequest) SetTempalteId(_tempalteId 
 // GetTempalteId TempalteId Getter
 func (r CainiaoCloudprintTemplatesMigrateAPIRequest) GetTempalteId() int64 {
 	return r._tempalteId
+}
+
+var poolCainiaoCloudprintTemplatesMigrateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoCloudprintTemplatesMigrateRequest()
+	},
+}
+
+// GetCainiaoCloudprintTemplatesMigrateRequest 从 sync.Pool 获取 CainiaoCloudprintTemplatesMigrateAPIRequest
+func GetCainiaoCloudprintTemplatesMigrateAPIRequest() *CainiaoCloudprintTemplatesMigrateAPIRequest {
+	return poolCainiaoCloudprintTemplatesMigrateAPIRequest.Get().(*CainiaoCloudprintTemplatesMigrateAPIRequest)
+}
+
+// ReleaseCainiaoCloudprintTemplatesMigrateAPIRequest 将 CainiaoCloudprintTemplatesMigrateAPIRequest 放入 sync.Pool
+func ReleaseCainiaoCloudprintTemplatesMigrateAPIRequest(v *CainiaoCloudprintTemplatesMigrateAPIRequest) {
+	v.Reset()
+	poolCainiaoCloudprintTemplatesMigrateAPIRequest.Put(v)
 }

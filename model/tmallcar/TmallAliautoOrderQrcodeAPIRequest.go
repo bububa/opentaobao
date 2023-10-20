@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TmallAliautoOrderQrcodeAPIRequest struct {
 // NewTmallAliautoOrderQrcodeRequest 初始化TmallAliautoOrderQrcodeAPIRequest对象
 func NewTmallAliautoOrderQrcodeRequest() *TmallAliautoOrderQrcodeAPIRequest {
 	return &TmallAliautoOrderQrcodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallAliautoOrderQrcodeAPIRequest) Reset() {
+	r._itemAndSkuNumList = ""
+	r._outerShopId = ""
+	r._receiptId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TmallAliautoOrderQrcodeAPIRequest) SetReceiptId(_receiptId int64) error
 // GetReceiptId ReceiptId Getter
 func (r TmallAliautoOrderQrcodeAPIRequest) GetReceiptId() int64 {
 	return r._receiptId
+}
+
+var poolTmallAliautoOrderQrcodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallAliautoOrderQrcodeRequest()
+	},
+}
+
+// GetTmallAliautoOrderQrcodeRequest 从 sync.Pool 获取 TmallAliautoOrderQrcodeAPIRequest
+func GetTmallAliautoOrderQrcodeAPIRequest() *TmallAliautoOrderQrcodeAPIRequest {
+	return poolTmallAliautoOrderQrcodeAPIRequest.Get().(*TmallAliautoOrderQrcodeAPIRequest)
+}
+
+// ReleaseTmallAliautoOrderQrcodeAPIRequest 将 TmallAliautoOrderQrcodeAPIRequest 放入 sync.Pool
+func ReleaseTmallAliautoOrderQrcodeAPIRequest(v *TmallAliautoOrderQrcodeAPIRequest) {
+	v.Reset()
+	poolTmallAliautoOrderQrcodeAPIRequest.Put(v)
 }

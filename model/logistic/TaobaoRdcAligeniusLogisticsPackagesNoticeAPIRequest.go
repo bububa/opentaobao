@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoRdcAligeniusLogisticsPackagesNoticeAPIRequest struct {
 // NewTaobaoRdcAligeniusLogisticsPackagesNoticeRequest 初始化TaobaoRdcAligeniusLogisticsPackagesNoticeAPIRequest对象
 func NewTaobaoRdcAligeniusLogisticsPackagesNoticeRequest() *TaobaoRdcAligeniusLogisticsPackagesNoticeAPIRequest {
 	return &TaobaoRdcAligeniusLogisticsPackagesNoticeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoRdcAligeniusLogisticsPackagesNoticeAPIRequest) Reset() {
+	r._paramLogisticsNoticeDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoRdcAligeniusLogisticsPackagesNoticeAPIRequest) SetParamLogisticsN
 // GetParamLogisticsNoticeDTO ParamLogisticsNoticeDTO Getter
 func (r TaobaoRdcAligeniusLogisticsPackagesNoticeAPIRequest) GetParamLogisticsNoticeDTO() *LogisticsNoticeDto {
 	return r._paramLogisticsNoticeDTO
+}
+
+var poolTaobaoRdcAligeniusLogisticsPackagesNoticeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoRdcAligeniusLogisticsPackagesNoticeRequest()
+	},
+}
+
+// GetTaobaoRdcAligeniusLogisticsPackagesNoticeRequest 从 sync.Pool 获取 TaobaoRdcAligeniusLogisticsPackagesNoticeAPIRequest
+func GetTaobaoRdcAligeniusLogisticsPackagesNoticeAPIRequest() *TaobaoRdcAligeniusLogisticsPackagesNoticeAPIRequest {
+	return poolTaobaoRdcAligeniusLogisticsPackagesNoticeAPIRequest.Get().(*TaobaoRdcAligeniusLogisticsPackagesNoticeAPIRequest)
+}
+
+// ReleaseTaobaoRdcAligeniusLogisticsPackagesNoticeAPIRequest 将 TaobaoRdcAligeniusLogisticsPackagesNoticeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoRdcAligeniusLogisticsPackagesNoticeAPIRequest(v *TaobaoRdcAligeniusLogisticsPackagesNoticeAPIRequest) {
+	v.Reset()
+	poolTaobaoRdcAligeniusLogisticsPackagesNoticeAPIRequest.Put(v)
 }

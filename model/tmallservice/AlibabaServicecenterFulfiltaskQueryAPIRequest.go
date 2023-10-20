@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaServicecenterFulfiltaskQueryAPIRequest struct {
 // NewAlibabaServicecenterFulfiltaskQueryRequest 初始化AlibabaServicecenterFulfiltaskQueryAPIRequest对象
 func NewAlibabaServicecenterFulfiltaskQueryRequest() *AlibabaServicecenterFulfiltaskQueryAPIRequest {
 	return &AlibabaServicecenterFulfiltaskQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaServicecenterFulfiltaskQueryAPIRequest) Reset() {
+	r._fulfilTaskIdList = r._fulfilTaskIdList[:0]
+	r._gmtCreateStart = ""
+	r._outerId = ""
+	r._gmtCreateEnd = ""
+	r._pageSize = 0
+	r._currentPage = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaServicecenterFulfiltaskQueryAPIRequest) SetCurrentPage(_currentP
 // GetCurrentPage CurrentPage Getter
 func (r AlibabaServicecenterFulfiltaskQueryAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
+}
+
+var poolAlibabaServicecenterFulfiltaskQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaServicecenterFulfiltaskQueryRequest()
+	},
+}
+
+// GetAlibabaServicecenterFulfiltaskQueryRequest 从 sync.Pool 获取 AlibabaServicecenterFulfiltaskQueryAPIRequest
+func GetAlibabaServicecenterFulfiltaskQueryAPIRequest() *AlibabaServicecenterFulfiltaskQueryAPIRequest {
+	return poolAlibabaServicecenterFulfiltaskQueryAPIRequest.Get().(*AlibabaServicecenterFulfiltaskQueryAPIRequest)
+}
+
+// ReleaseAlibabaServicecenterFulfiltaskQueryAPIRequest 将 AlibabaServicecenterFulfiltaskQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaServicecenterFulfiltaskQueryAPIRequest(v *AlibabaServicecenterFulfiltaskQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaServicecenterFulfiltaskQueryAPIRequest.Put(v)
 }

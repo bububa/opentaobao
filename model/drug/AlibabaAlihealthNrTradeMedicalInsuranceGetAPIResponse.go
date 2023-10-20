@@ -2,6 +2,7 @@ package drug
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponse struct {
 	AlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponseModel is 阿里健康医保支付信息获取 成功返回结果
 type AlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_nr_trade_medical_insurance_get_response"`
@@ -22,4 +29,27 @@ type AlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回值总
 	Result *ResponseResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponse 从 sync.Pool 获取 AlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponse
+func GetAlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponse() *AlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponse {
+	return poolAlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponse.Get().(*AlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponse 将 AlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponse(v *AlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponse.Put(v)
 }

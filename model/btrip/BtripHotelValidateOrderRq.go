@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BtripHotelValidateOrderRq 结构体
 type BtripHotelValidateOrderRq struct {
 	// 购买人在分销商平台的用户昵称
@@ -28,4 +32,33 @@ type BtripHotelValidateOrderRq struct {
 	SearchRoomPrice int64 `json:"search_room_price,omitempty" xml:"search_room_price,omitempty"`
 	// 总价
 	TotalPrice int64 `json:"total_price,omitempty" xml:"total_price,omitempty"`
+}
+
+var poolBtripHotelValidateOrderRq = sync.Pool{
+	New: func() any {
+		return new(BtripHotelValidateOrderRq)
+	},
+}
+
+// GetBtripHotelValidateOrderRq() 从对象池中获取BtripHotelValidateOrderRq
+func GetBtripHotelValidateOrderRq() *BtripHotelValidateOrderRq {
+	return poolBtripHotelValidateOrderRq.Get().(*BtripHotelValidateOrderRq)
+}
+
+// ReleaseBtripHotelValidateOrderRq 释放BtripHotelValidateOrderRq
+func ReleaseBtripHotelValidateOrderRq(v *BtripHotelValidateOrderRq) {
+	v.BuyerName = ""
+	v.BuyerUniqueKey = ""
+	v.CheckIn = ""
+	v.CheckOut = ""
+	v.SubChannel = ""
+	v.SupplierCode = ""
+	v.ItemId = 0
+	v.NumberOfAdultsPerRoom = 0
+	v.NumberOfRooms = 0
+	v.RatePlanId = 0
+	v.SearchPromotionAmount = 0
+	v.SearchRoomPrice = 0
+	v.TotalPrice = 0
+	poolBtripHotelValidateOrderRq.Put(v)
 }

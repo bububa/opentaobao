@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihouseNewhomeNewRichReviewSyncAPIResponse struct {
 	AlibabaAlihouseNewhomeNewRichReviewSyncAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihouseNewhomeNewRichReviewSyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihouseNewhomeNewRichReviewSyncAPIResponseModel).Reset()
+}
+
 // AlibabaAlihouseNewhomeNewRichReviewSyncAPIResponseModel is 新评测改造接口同步 成功返回结果
 type AlibabaAlihouseNewhomeNewRichReviewSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihouse_newhome_new_rich_review_sync_response"`
@@ -22,4 +29,27 @@ type AlibabaAlihouseNewhomeNewRichReviewSyncAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果实体类
 	Result *AlibabaAlihouseNewhomeNewRichReviewSyncResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihouseNewhomeNewRichReviewSyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihouseNewhomeNewRichReviewSyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihouseNewhomeNewRichReviewSyncAPIResponse)
+	},
+}
+
+// GetAlibabaAlihouseNewhomeNewRichReviewSyncAPIResponse 从 sync.Pool 获取 AlibabaAlihouseNewhomeNewRichReviewSyncAPIResponse
+func GetAlibabaAlihouseNewhomeNewRichReviewSyncAPIResponse() *AlibabaAlihouseNewhomeNewRichReviewSyncAPIResponse {
+	return poolAlibabaAlihouseNewhomeNewRichReviewSyncAPIResponse.Get().(*AlibabaAlihouseNewhomeNewRichReviewSyncAPIResponse)
+}
+
+// ReleaseAlibabaAlihouseNewhomeNewRichReviewSyncAPIResponse 将 AlibabaAlihouseNewhomeNewRichReviewSyncAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeNewRichReviewSyncAPIResponse(v *AlibabaAlihouseNewhomeNewRichReviewSyncAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeNewRichReviewSyncAPIResponse.Put(v)
 }

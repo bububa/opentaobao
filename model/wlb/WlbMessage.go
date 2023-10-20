@@ -1,5 +1,9 @@
 package wlb
 
+import (
+	"sync"
+)
+
 // WlbMessage 结构体
 type WlbMessage struct {
 	// 创建时间
@@ -16,4 +20,27 @@ type WlbMessage struct {
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// 消息通道ID
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolWlbMessage = sync.Pool{
+	New: func() any {
+		return new(WlbMessage)
+	},
+}
+
+// GetWlbMessage() 从对象池中获取WlbMessage
+func GetWlbMessage() *WlbMessage {
+	return poolWlbMessage.Get().(*WlbMessage)
+}
+
+// ReleaseWlbMessage 释放WlbMessage
+func ReleaseWlbMessage(v *WlbMessage) {
+	v.GmtCreate = ""
+	v.MsgDescription = ""
+	v.MsgContent = ""
+	v.MsgCode = ""
+	v.Status = ""
+	v.UserId = 0
+	v.Id = 0
+	poolWlbMessage.Put(v)
 }

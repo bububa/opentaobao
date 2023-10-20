@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // Consignee 结构体
 type Consignee struct {
 	// 收件人名称
@@ -18,4 +22,28 @@ type Consignee struct {
 	City string `json:"city,omitempty" xml:"city,omitempty"`
 	// 0:高德坐标系，1:其他坐标系（需要坐标修正）
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolConsignee = sync.Pool{
+	New: func() any {
+		return new(Consignee)
+	},
+}
+
+// GetConsignee() 从对象池中获取Consignee
+func GetConsignee() *Consignee {
+	return poolConsignee.Get().(*Consignee)
+}
+
+// ReleaseConsignee 释放Consignee
+func ReleaseConsignee(v *Consignee) {
+	v.Name = ""
+	v.Phone = ""
+	v.Address = ""
+	v.Geo = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.City = ""
+	v.Type = 0
+	poolConsignee.Put(v)
 }

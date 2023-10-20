@@ -1,5 +1,9 @@
 package lstpos
 
+import (
+	"sync"
+)
+
 // InventoryDto 结构体
 type InventoryDto struct {
 	// ISV商品Id
@@ -30,4 +34,34 @@ type InventoryDto struct {
 	DeviceType int64 `json:"device_type,omitempty" xml:"device_type,omitempty"`
 	// 最后修改 精确到毫秒
 	GmtModified int64 `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
+}
+
+var poolInventoryDto = sync.Pool{
+	New: func() any {
+		return new(InventoryDto)
+	},
+}
+
+// GetInventoryDto() 从对象池中获取InventoryDto
+func GetInventoryDto() *InventoryDto {
+	return poolInventoryDto.Get().(*InventoryDto)
+}
+
+// ReleaseInventoryDto 释放InventoryDto
+func ReleaseInventoryDto(v *InventoryDto) {
+	v.IsvGoodsId = ""
+	v.Quantity = ""
+	v.DeleteFlag = ""
+	v.HardwareId = ""
+	v.OperateType = ""
+	v.TransQuantity = ""
+	v.IsvInventoryId = ""
+	v.Brand = ""
+	v.Model = ""
+	v.GoodsId = 0
+	v.GmtCreate = 0
+	v.UserId = 0
+	v.DeviceType = 0
+	v.GmtModified = 0
+	poolInventoryDto.Put(v)
 }

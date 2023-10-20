@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YunosTvpubadminManageDialogDeleteAPIRequest struct {
 // NewYunosTvpubadminManageDialogDeleteRequest 初始化YunosTvpubadminManageDialogDeleteAPIRequest对象
 func NewYunosTvpubadminManageDialogDeleteRequest() *YunosTvpubadminManageDialogDeleteAPIRequest {
 	return &YunosTvpubadminManageDialogDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminManageDialogDeleteAPIRequest) Reset() {
+	r._id = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YunosTvpubadminManageDialogDeleteAPIRequest) SetId(_id int64) error {
 // GetId Id Getter
 func (r YunosTvpubadminManageDialogDeleteAPIRequest) GetId() int64 {
 	return r._id
+}
+
+var poolYunosTvpubadminManageDialogDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminManageDialogDeleteRequest()
+	},
+}
+
+// GetYunosTvpubadminManageDialogDeleteRequest 从 sync.Pool 获取 YunosTvpubadminManageDialogDeleteAPIRequest
+func GetYunosTvpubadminManageDialogDeleteAPIRequest() *YunosTvpubadminManageDialogDeleteAPIRequest {
+	return poolYunosTvpubadminManageDialogDeleteAPIRequest.Get().(*YunosTvpubadminManageDialogDeleteAPIRequest)
+}
+
+// ReleaseYunosTvpubadminManageDialogDeleteAPIRequest 将 YunosTvpubadminManageDialogDeleteAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminManageDialogDeleteAPIRequest(v *YunosTvpubadminManageDialogDeleteAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminManageDialogDeleteAPIRequest.Put(v)
 }

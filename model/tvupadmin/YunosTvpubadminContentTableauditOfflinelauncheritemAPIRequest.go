@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type YunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest struct {
 // NewYunosTvpubadminContentTableauditOfflinelauncheritemRequest 初始化YunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest对象
 func NewYunosTvpubadminContentTableauditOfflinelauncheritemRequest() *YunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest {
 	return &YunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest) Reset() {
+	r._terminalType = ""
+	r._id = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *YunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest) SetId(_i
 // GetId Id Getter
 func (r YunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest) GetId() int64 {
 	return r._id
+}
+
+var poolYunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminContentTableauditOfflinelauncheritemRequest()
+	},
+}
+
+// GetYunosTvpubadminContentTableauditOfflinelauncheritemRequest 从 sync.Pool 获取 YunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest
+func GetYunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest() *YunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest {
+	return poolYunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest.Get().(*YunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest)
+}
+
+// ReleaseYunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest 将 YunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest(v *YunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // yunos.tvpubadmin.adm.ott.query
 //
 // 查询广告素材
-func YunosTvpubadminAdmOttQuery(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminAdmOttQueryAPIRequest, session string) (*tvupadmin.YunosTvpubadminAdmOttQueryAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminAdmOttQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosTvpubadminAdmOttQuery(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminAdmOttQueryAPIRequest, resp *tvupadmin.YunosTvpubadminAdmOttQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

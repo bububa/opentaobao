@@ -1,5 +1,9 @@
 package openim
 
+import (
+	"sync"
+)
+
 // RoamingMessage 结构体
 type RoamingMessage struct {
 	// 消息内容
@@ -12,4 +16,25 @@ type RoamingMessage struct {
 	Uuid int64 `json:"uuid,omitempty" xml:"uuid,omitempty"`
 	// 消息类型
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolRoamingMessage = sync.Pool{
+	New: func() any {
+		return new(RoamingMessage)
+	},
+}
+
+// GetRoamingMessage() 从对象池中获取RoamingMessage
+func GetRoamingMessage() *RoamingMessage {
+	return poolRoamingMessage.Get().(*RoamingMessage)
+}
+
+// ReleaseRoamingMessage 释放RoamingMessage
+func ReleaseRoamingMessage(v *RoamingMessage) {
+	v.ContentList = v.ContentList[:0]
+	v.Time = 0
+	v.Direction = 0
+	v.Uuid = 0
+	v.Type = 0
+	poolRoamingMessage.Put(v)
 }

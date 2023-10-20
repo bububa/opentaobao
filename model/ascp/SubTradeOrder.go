@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // SubTradeOrder 结构体
 type SubTradeOrder struct {
 	// 交易子单ID
@@ -48,4 +52,43 @@ type SubTradeOrder struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 子单金额；单位:分，如:20007，表示:20元7分
 	Payment int64 `json:"payment,omitempty" xml:"payment,omitempty"`
+}
+
+var poolSubTradeOrder = sync.Pool{
+	New: func() any {
+		return new(SubTradeOrder)
+	},
+}
+
+// GetSubTradeOrder() 从对象池中获取SubTradeOrder
+func GetSubTradeOrder() *SubTradeOrder {
+	return poolSubTradeOrder.Get().(*SubTradeOrder)
+}
+
+// ReleaseSubTradeOrder 释放SubTradeOrder
+func ReleaseSubTradeOrder(v *SubTradeOrder) {
+	v.TradeId = ""
+	v.ItemId = ""
+	v.SkuId = ""
+	v.CombineScItemRatio = ""
+	v.CombineScItemCode = ""
+	v.OrderSource = ""
+	v.ItemConsignType = ""
+	v.ActivityId = ""
+	v.ScItemCode = ""
+	v.Currency = ""
+	v.ConsignType = ""
+	v.GiftId = ""
+	v.ParentTradeId = ""
+	v.GiftOrderId = ""
+	v.WarehouseScItemCode = ""
+	v.ScItemBarCode = ""
+	v.ActivityName = ""
+	v.ItemName = ""
+	v.ScItemName = ""
+	v.OwnerCode = ""
+	v.CombineType = ""
+	v.Quantity = 0
+	v.Payment = 0
+	poolSubTradeOrder.Put(v)
 }

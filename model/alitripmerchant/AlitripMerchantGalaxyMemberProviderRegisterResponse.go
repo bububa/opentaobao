@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // AlitripMerchantGalaxyMemberProviderRegisterResponse 结构体
 type AlitripMerchantGalaxyMemberProviderRegisterResponse struct {
 	// 错误信息
@@ -10,4 +14,24 @@ type AlitripMerchantGalaxyMemberProviderRegisterResponse struct {
 	Content bool `json:"content,omitempty" xml:"content,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlitripMerchantGalaxyMemberProviderRegisterResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyMemberProviderRegisterResponse)
+	},
+}
+
+// GetAlitripMerchantGalaxyMemberProviderRegisterResponse() 从对象池中获取AlitripMerchantGalaxyMemberProviderRegisterResponse
+func GetAlitripMerchantGalaxyMemberProviderRegisterResponse() *AlitripMerchantGalaxyMemberProviderRegisterResponse {
+	return poolAlitripMerchantGalaxyMemberProviderRegisterResponse.Get().(*AlitripMerchantGalaxyMemberProviderRegisterResponse)
+}
+
+// ReleaseAlitripMerchantGalaxyMemberProviderRegisterResponse 释放AlitripMerchantGalaxyMemberProviderRegisterResponse
+func ReleaseAlitripMerchantGalaxyMemberProviderRegisterResponse(v *AlitripMerchantGalaxyMemberProviderRegisterResponse) {
+	v.ErrorMsg = ""
+	v.ErrorCode = ""
+	v.Content = false
+	v.Success = false
+	poolAlitripMerchantGalaxyMemberProviderRegisterResponse.Put(v)
 }

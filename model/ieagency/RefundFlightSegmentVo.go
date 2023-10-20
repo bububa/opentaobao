@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // RefundFlightSegmentVo 结构体
 type RefundFlightSegmentVo struct {
 	// 到达机场
@@ -36,4 +40,37 @@ type RefundFlightSegmentVo struct {
 	CodeShare bool `json:"code_share,omitempty" xml:"code_share,omitempty"`
 	// 主航段
 	MainSegment bool `json:"main_segment,omitempty" xml:"main_segment,omitempty"`
+}
+
+var poolRefundFlightSegmentVo = sync.Pool{
+	New: func() any {
+		return new(RefundFlightSegmentVo)
+	},
+}
+
+// GetRefundFlightSegmentVo() 从对象池中获取RefundFlightSegmentVo
+func GetRefundFlightSegmentVo() *RefundFlightSegmentVo {
+	return poolRefundFlightSegmentVo.Get().(*RefundFlightSegmentVo)
+}
+
+// ReleaseRefundFlightSegmentVo 释放RefundFlightSegmentVo
+func ReleaseRefundFlightSegmentVo(v *RefundFlightSegmentVo) {
+	v.ArrAirport = ""
+	v.ArrCity = ""
+	v.ArrTerminal = ""
+	v.ArrTime = ""
+	v.DepAirport = ""
+	v.DepCity = ""
+	v.DepTerminal = ""
+	v.DepTime = ""
+	v.MarketingAirline = ""
+	v.MarketingFlightNumber = ""
+	v.OperatingAirline = ""
+	v.OperatingFlightNumber = ""
+	v.Id = 0
+	v.ItineraryIndex = 0
+	v.SegmentIndex = 0
+	v.CodeShare = false
+	v.MainSegment = false
+	poolRefundFlightSegmentVo.Put(v)
 }

@@ -2,6 +2,7 @@ package openmall
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoOpenmallItemsQueryAPIResponse struct {
 	TaobaoOpenmallItemsQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoOpenmallItemsQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOpenmallItemsQueryAPIResponseModel).Reset()
+}
+
 // TaobaoOpenmallItemsQueryAPIResponseModel is 批量获取商品列表 成功返回结果
 type TaobaoOpenmallItemsQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"openmall_items_query_response"`
@@ -22,4 +29,27 @@ type TaobaoOpenmallItemsQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
 	Result *TaobaoOpenmallItemsQueryResultDo `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOpenmallItemsQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoOpenmallItemsQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOpenmallItemsQueryAPIResponse)
+	},
+}
+
+// GetTaobaoOpenmallItemsQueryAPIResponse 从 sync.Pool 获取 TaobaoOpenmallItemsQueryAPIResponse
+func GetTaobaoOpenmallItemsQueryAPIResponse() *TaobaoOpenmallItemsQueryAPIResponse {
+	return poolTaobaoOpenmallItemsQueryAPIResponse.Get().(*TaobaoOpenmallItemsQueryAPIResponse)
+}
+
+// ReleaseTaobaoOpenmallItemsQueryAPIResponse 将 TaobaoOpenmallItemsQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOpenmallItemsQueryAPIResponse(v *TaobaoOpenmallItemsQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoOpenmallItemsQueryAPIResponse.Put(v)
 }

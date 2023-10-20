@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaItemPublishSubmitAPIResponse struct {
 	AlibabaItemPublishSubmitAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaItemPublishSubmitAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaItemPublishSubmitAPIResponseModel).Reset()
+}
+
 // AlibabaItemPublishSubmitAPIResponseModel is 商品发布 成功返回结果
 type AlibabaItemPublishSubmitAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_item_publish_submit_response"`
@@ -26,4 +33,29 @@ type AlibabaItemPublishSubmitAPIResponseModel struct {
 	Market string `json:"market,omitempty" xml:"market,omitempty"`
 	// 商品ID
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaItemPublishSubmitAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.CreateTime = ""
+	m.Market = ""
+	m.ItemId = 0
+}
+
+var poolAlibabaItemPublishSubmitAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaItemPublishSubmitAPIResponse)
+	},
+}
+
+// GetAlibabaItemPublishSubmitAPIResponse 从 sync.Pool 获取 AlibabaItemPublishSubmitAPIResponse
+func GetAlibabaItemPublishSubmitAPIResponse() *AlibabaItemPublishSubmitAPIResponse {
+	return poolAlibabaItemPublishSubmitAPIResponse.Get().(*AlibabaItemPublishSubmitAPIResponse)
+}
+
+// ReleaseAlibabaItemPublishSubmitAPIResponse 将 AlibabaItemPublishSubmitAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaItemPublishSubmitAPIResponse(v *AlibabaItemPublishSubmitAPIResponse) {
+	v.Reset()
+	poolAlibabaItemPublishSubmitAPIResponse.Put(v)
 }

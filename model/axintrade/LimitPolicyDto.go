@@ -1,5 +1,9 @@
 package axintrade
 
+import (
+	"sync"
+)
+
 // LimitPolicyDto 结构体
 type LimitPolicyDto struct {
 	// 下单开始时间
@@ -22,4 +26,30 @@ type LimitPolicyDto struct {
 	MaxAmount int64 `json:"max_amount,omitempty" xml:"max_amount,omitempty"`
 	// 是否限购
 	IsLimit bool `json:"is_limit,omitempty" xml:"is_limit,omitempty"`
+}
+
+var poolLimitPolicyDto = sync.Pool{
+	New: func() any {
+		return new(LimitPolicyDto)
+	},
+}
+
+// GetLimitPolicyDto() 从对象池中获取LimitPolicyDto
+func GetLimitPolicyDto() *LimitPolicyDto {
+	return poolLimitPolicyDto.Get().(*LimitPolicyDto)
+}
+
+// ReleaseLimitPolicyDto 释放LimitPolicyDto
+func ReleaseLimitPolicyDto(v *LimitPolicyDto) {
+	v.OrderStartDate = ""
+	v.OrderEndDate = ""
+	v.LimitType = 0
+	v.LimitMode = 0
+	v.LimitAmountType = 0
+	v.LimitRangeType = 0
+	v.LimitAmount = 0
+	v.MinAmount = 0
+	v.MaxAmount = 0
+	v.IsLimit = false
+	poolLimitPolicyDto.Put(v)
 }

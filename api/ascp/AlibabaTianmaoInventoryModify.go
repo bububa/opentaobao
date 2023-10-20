@@ -9,11 +9,6 @@ import (
 // alibaba.tianmao.inventory.modify
 //
 // 阿里巴巴.天猫.aic库存.修改
-func AlibabaTianmaoInventoryModify(clt *core.SDKClient, req *ascp.AlibabaTianmaoInventoryModifyAPIRequest, session string) (*ascp.AlibabaTianmaoInventoryModifyAPIResponse, error) {
-	var resp ascp.AlibabaTianmaoInventoryModifyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTianmaoInventoryModify(clt *core.SDKClient, req *ascp.AlibabaTianmaoInventoryModifyAPIRequest, resp *ascp.AlibabaTianmaoInventoryModifyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.fenxiao.product.sku.add
 //
 // 添加产品SKU信息
-func TaobaoFenxiaoProductSkuAdd(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductSkuAddAPIRequest, session string) (*fenxiao.TaobaoFenxiaoProductSkuAddAPIResponse, error) {
-	var resp fenxiao.TaobaoFenxiaoProductSkuAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFenxiaoProductSkuAdd(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductSkuAddAPIRequest, resp *fenxiao.TaobaoFenxiaoProductSkuAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

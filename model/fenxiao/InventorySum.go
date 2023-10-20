@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // InventorySum 结构体
 type InventorySum struct {
 	// 商家仓库编码
@@ -18,4 +22,28 @@ type InventorySum struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 总占用数量
 	OccupyQuantity int64 `json:"occupy_quantity,omitempty" xml:"occupy_quantity,omitempty"`
+}
+
+var poolInventorySum = sync.Pool{
+	New: func() any {
+		return new(InventorySum)
+	},
+}
+
+// GetInventorySum() 从对象池中获取InventorySum
+func GetInventorySum() *InventorySum {
+	return poolInventorySum.Get().(*InventorySum)
+}
+
+// ReleaseInventorySum 释放InventorySum
+func ReleaseInventorySum(v *InventorySum) {
+	v.StoreCode = ""
+	v.InventoryTypeName = ""
+	v.ScItemCode = ""
+	v.ReserveQuantity = 0
+	v.InventoryType = 0
+	v.ScItemId = 0
+	v.Quantity = 0
+	v.OccupyQuantity = 0
+	poolInventorySum.Put(v)
 }

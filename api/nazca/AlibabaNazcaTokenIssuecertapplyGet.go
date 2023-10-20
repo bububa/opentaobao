@@ -9,11 +9,6 @@ import (
 // alibaba.nazca.token.issuecertapply.get
 //
 // 根据token获取出证申请信息
-func AlibabaNazcaTokenIssuecertapplyGet(clt *core.SDKClient, req *nazca.AlibabaNazcaTokenIssuecertapplyGetAPIRequest, session string) (*nazca.AlibabaNazcaTokenIssuecertapplyGetAPIResponse, error) {
-	var resp nazca.AlibabaNazcaTokenIssuecertapplyGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaNazcaTokenIssuecertapplyGet(clt *core.SDKClient, req *nazca.AlibabaNazcaTokenIssuecertapplyGetAPIRequest, resp *nazca.AlibabaNazcaTokenIssuecertapplyGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

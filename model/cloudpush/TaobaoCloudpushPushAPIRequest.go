@@ -2,6 +2,7 @@ package cloudpush
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -59,8 +60,34 @@ type TaobaoCloudpushPushAPIRequest struct {
 // NewTaobaoCloudpushPushRequest 初始化TaobaoCloudpushPushAPIRequest对象
 func NewTaobaoCloudpushPushRequest() *TaobaoCloudpushPushAPIRequest {
 	return &TaobaoCloudpushPushAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(21),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCloudpushPushAPIRequest) Reset() {
+	r._target = ""
+	r._targetValue = ""
+	r._androidActivity = ""
+	r._androidExtParameters = ""
+	r._androidMusic = ""
+	r._androidOpenType = ""
+	r._androidOpenUrl = ""
+	r._batchNumber = ""
+	r._body = ""
+	r._iosBadge = ""
+	r._iosExtParameters = ""
+	r._iosMusic = ""
+	r._summery = ""
+	r._title = ""
+	r._antiHarassDuration = 0
+	r._antiHarassStartTime = 0
+	r._deviceType = 0
+	r._timeout = 0
+	r._type = 0
+	r._remind = false
+	r._storeOffline = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -351,4 +378,21 @@ func (r *TaobaoCloudpushPushAPIRequest) SetStoreOffline(_storeOffline bool) erro
 // GetStoreOffline StoreOffline Getter
 func (r TaobaoCloudpushPushAPIRequest) GetStoreOffline() bool {
 	return r._storeOffline
+}
+
+var poolTaobaoCloudpushPushAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCloudpushPushRequest()
+	},
+}
+
+// GetTaobaoCloudpushPushRequest 从 sync.Pool 获取 TaobaoCloudpushPushAPIRequest
+func GetTaobaoCloudpushPushAPIRequest() *TaobaoCloudpushPushAPIRequest {
+	return poolTaobaoCloudpushPushAPIRequest.Get().(*TaobaoCloudpushPushAPIRequest)
+}
+
+// ReleaseTaobaoCloudpushPushAPIRequest 将 TaobaoCloudpushPushAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCloudpushPushAPIRequest(v *TaobaoCloudpushPushAPIRequest) {
+	v.Reset()
+	poolTaobaoCloudpushPushAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // MerchantBusTicketInfo 结构体
 type MerchantBusTicketInfo struct {
 	// 商家票id
@@ -16,4 +20,27 @@ type MerchantBusTicketInfo struct {
 	TicketPrice int64 `json:"ticket_price,omitempty" xml:"ticket_price,omitempty"`
 	// 0-全票(成人) 1-半票（儿童） 2-免票（携童）
 	TicketType int64 `json:"ticket_type,omitempty" xml:"ticket_type,omitempty"`
+}
+
+var poolMerchantBusTicketInfo = sync.Pool{
+	New: func() any {
+		return new(MerchantBusTicketInfo)
+	},
+}
+
+// GetMerchantBusTicketInfo() 从对象池中获取MerchantBusTicketInfo
+func GetMerchantBusTicketInfo() *MerchantBusTicketInfo {
+	return poolMerchantBusTicketInfo.Get().(*MerchantBusTicketInfo)
+}
+
+// ReleaseMerchantBusTicketInfo 释放MerchantBusTicketInfo
+func ReleaseMerchantBusTicketInfo(v *MerchantBusTicketInfo) {
+	v.AgentTicketId = ""
+	v.RiderSeatNumber = ""
+	v.RiderName = ""
+	v.ServiceCharge = 0
+	v.SubOrderId = 0
+	v.TicketPrice = 0
+	v.TicketType = 0
+	poolMerchantBusTicketInfo.Put(v)
 }

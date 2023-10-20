@@ -2,6 +2,7 @@ package perfect
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTcwmsOutboundLoadBoxcodeCreateAPIRequest struct {
 // NewAlibabaTcwmsOutboundLoadBoxcodeCreateRequest 初始化AlibabaTcwmsOutboundLoadBoxcodeCreateAPIRequest对象
 func NewAlibabaTcwmsOutboundLoadBoxcodeCreateRequest() *AlibabaTcwmsOutboundLoadBoxcodeCreateAPIRequest {
 	return &AlibabaTcwmsOutboundLoadBoxcodeCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTcwmsOutboundLoadBoxcodeCreateAPIRequest) Reset() {
+	r._boxCodeRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTcwmsOutboundLoadBoxcodeCreateAPIRequest) SetBoxCodeRequest(_box
 // GetBoxCodeRequest BoxCodeRequest Getter
 func (r AlibabaTcwmsOutboundLoadBoxcodeCreateAPIRequest) GetBoxCodeRequest() *BoxCodeRequest {
 	return r._boxCodeRequest
+}
+
+var poolAlibabaTcwmsOutboundLoadBoxcodeCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTcwmsOutboundLoadBoxcodeCreateRequest()
+	},
+}
+
+// GetAlibabaTcwmsOutboundLoadBoxcodeCreateRequest 从 sync.Pool 获取 AlibabaTcwmsOutboundLoadBoxcodeCreateAPIRequest
+func GetAlibabaTcwmsOutboundLoadBoxcodeCreateAPIRequest() *AlibabaTcwmsOutboundLoadBoxcodeCreateAPIRequest {
+	return poolAlibabaTcwmsOutboundLoadBoxcodeCreateAPIRequest.Get().(*AlibabaTcwmsOutboundLoadBoxcodeCreateAPIRequest)
+}
+
+// ReleaseAlibabaTcwmsOutboundLoadBoxcodeCreateAPIRequest 将 AlibabaTcwmsOutboundLoadBoxcodeCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTcwmsOutboundLoadBoxcodeCreateAPIRequest(v *AlibabaTcwmsOutboundLoadBoxcodeCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaTcwmsOutboundLoadBoxcodeCreateAPIRequest.Put(v)
 }

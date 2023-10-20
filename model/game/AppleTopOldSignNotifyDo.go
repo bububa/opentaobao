@@ -1,5 +1,9 @@
 package game
 
+import (
+	"sync"
+)
+
 // AppleTopOldSignNotifyDo 结构体
 type AppleTopOldSignNotifyDo struct {
 	// 电子卡卡号
@@ -14,4 +18,26 @@ type AppleTopOldSignNotifyDo struct {
 	FacePrice string `json:"face_price,omitempty" xml:"face_price,omitempty"`
 	// 网关订单号
 	GatewayOrderNo string `json:"gateway_order_no,omitempty" xml:"gateway_order_no,omitempty"`
+}
+
+var poolAppleTopOldSignNotifyDo = sync.Pool{
+	New: func() any {
+		return new(AppleTopOldSignNotifyDo)
+	},
+}
+
+// GetAppleTopOldSignNotifyDo() 从对象池中获取AppleTopOldSignNotifyDo
+func GetAppleTopOldSignNotifyDo() *AppleTopOldSignNotifyDo {
+	return poolAppleTopOldSignNotifyDo.Get().(*AppleTopOldSignNotifyDo)
+}
+
+// ReleaseAppleTopOldSignNotifyDo 释放AppleTopOldSignNotifyDo
+func ReleaseAppleTopOldSignNotifyDo(v *AppleTopOldSignNotifyDo) {
+	v.CardNo = ""
+	v.GoodsId = ""
+	v.OrderNo = ""
+	v.Memo = ""
+	v.FacePrice = ""
+	v.GatewayOrderNo = ""
+	poolAppleTopOldSignNotifyDo.Put(v)
 }

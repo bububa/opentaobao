@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // TradeToolBindParamDto 结构体
 type TradeToolBindParamDto struct {
 	// 绑定对象
@@ -10,4 +14,24 @@ type TradeToolBindParamDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 请求时间戳，精确到毫秒
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
+}
+
+var poolTradeToolBindParamDto = sync.Pool{
+	New: func() any {
+		return new(TradeToolBindParamDto)
+	},
+}
+
+// GetTradeToolBindParamDto() 从对象池中获取TradeToolBindParamDto
+func GetTradeToolBindParamDto() *TradeToolBindParamDto {
+	return poolTradeToolBindParamDto.Get().(*TradeToolBindParamDto)
+}
+
+// ReleaseTradeToolBindParamDto 释放TradeToolBindParamDto
+func ReleaseTradeToolBindParamDto(v *TradeToolBindParamDto) {
+	v.OuterBindParamDto = v.OuterBindParamDto[:0]
+	v.Type = 0
+	v.Status = 0
+	v.Version = 0
+	poolTradeToolBindParamDto.Put(v)
 }

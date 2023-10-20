@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // Suborders 结构体
 type Suborders struct {
 	// 销售单位（非标品）
@@ -48,4 +52,43 @@ type Suborders struct {
 	PickStockFee int64 `json:"pick_stock_fee,omitempty" xml:"pick_stock_fee,omitempty"`
 	// 是否加工
 	Handling bool `json:"handling,omitempty" xml:"handling,omitempty"`
+}
+
+var poolSuborders = sync.Pool{
+	New: func() any {
+		return new(Suborders)
+	},
+}
+
+// GetSuborders() 从对象池中获取Suborders
+func GetSuborders() *Suborders {
+	return poolSuborders.Get().(*Suborders)
+}
+
+// ReleaseSuborders 释放Suborders
+func ReleaseSuborders(v *Suborders) {
+	v.SaleUnit = ""
+	v.OrderFulfillStatus = ""
+	v.SkuName = ""
+	v.BizOrderId = ""
+	v.OrderStatus = ""
+	v.MerchantCode = ""
+	v.SkuCode = ""
+	v.HandlingType = ""
+	v.OutOrderId = ""
+	v.CancelNodeType = ""
+	v.CancelResultCode = ""
+	v.SaleStockQuantity = ""
+	v.StockUnit = ""
+	v.ShopId = ""
+	v.PickSaleStockQuantity = ""
+	v.SaleQuantity = 0
+	v.SalePrice = 0
+	v.OriginFee = 0
+	v.DiscountFee = 0
+	v.PayFee = 0
+	v.PickSaleQuantity = 0
+	v.PickStockFee = 0
+	v.Handling = false
+	poolSuborders.Put(v)
 }

@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripApplySearchAPIRequest struct {
 // NewAlitripBtripApplySearchRequest 初始化AlitripBtripApplySearchAPIRequest对象
 func NewAlitripBtripApplySearchRequest() *AlitripBtripApplySearchAPIRequest {
 	return &AlitripBtripApplySearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripApplySearchAPIRequest) Reset() {
+	r._rq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripApplySearchAPIRequest) SetRq(_rq *OpenSearchRq) error {
 // GetRq Rq Getter
 func (r AlitripBtripApplySearchAPIRequest) GetRq() *OpenSearchRq {
 	return r._rq
+}
+
+var poolAlitripBtripApplySearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripApplySearchRequest()
+	},
+}
+
+// GetAlitripBtripApplySearchRequest 从 sync.Pool 获取 AlitripBtripApplySearchAPIRequest
+func GetAlitripBtripApplySearchAPIRequest() *AlitripBtripApplySearchAPIRequest {
+	return poolAlitripBtripApplySearchAPIRequest.Get().(*AlitripBtripApplySearchAPIRequest)
+}
+
+// ReleaseAlitripBtripApplySearchAPIRequest 将 AlitripBtripApplySearchAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripApplySearchAPIRequest(v *AlitripBtripApplySearchAPIRequest) {
+	v.Reset()
+	poolAlitripBtripApplySearchAPIRequest.Put(v)
 }

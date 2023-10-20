@@ -1,5 +1,9 @@
 package mozi
 
+import (
+	"sync"
+)
+
 // UpdateTenantEmployeeAndAccountRequest 结构体
 type UpdateTenantEmployeeAndAccountRequest struct {
 	// 员工姓名
@@ -20,4 +24,29 @@ type UpdateTenantEmployeeAndAccountRequest struct {
 	AccountId int64 `json:"account_id,omitempty" xml:"account_id,omitempty"`
 	// 租户ID
 	TenantId int64 `json:"tenant_id,omitempty" xml:"tenant_id,omitempty"`
+}
+
+var poolUpdateTenantEmployeeAndAccountRequest = sync.Pool{
+	New: func() any {
+		return new(UpdateTenantEmployeeAndAccountRequest)
+	},
+}
+
+// GetUpdateTenantEmployeeAndAccountRequest() 从对象池中获取UpdateTenantEmployeeAndAccountRequest
+func GetUpdateTenantEmployeeAndAccountRequest() *UpdateTenantEmployeeAndAccountRequest {
+	return poolUpdateTenantEmployeeAndAccountRequest.Get().(*UpdateTenantEmployeeAndAccountRequest)
+}
+
+// ReleaseUpdateTenantEmployeeAndAccountRequest 释放UpdateTenantEmployeeAndAccountRequest
+func ReleaseUpdateTenantEmployeeAndAccountRequest(v *UpdateTenantEmployeeAndAccountRequest) {
+	v.EmployeeName = ""
+	v.CertificateCode = ""
+	v.Operator = ""
+	v.RequestMetaData = ""
+	v.EmployeeCode = ""
+	v.CertificateType = ""
+	v.EmployeeBaseProperties = nil
+	v.AccountId = 0
+	v.TenantId = 0
+	poolUpdateTenantEmployeeAndAccountRequest.Put(v)
 }

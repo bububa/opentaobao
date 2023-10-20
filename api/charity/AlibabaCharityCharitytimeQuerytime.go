@@ -9,11 +9,6 @@ import (
 // alibaba.charity.charitytime.querytime
 //
 // 外部查询公益时
-func AlibabaCharityCharitytimeQuerytime(clt *core.SDKClient, req *charity.AlibabaCharityCharitytimeQuerytimeAPIRequest, session string) (*charity.AlibabaCharityCharitytimeQuerytimeAPIResponse, error) {
-	var resp charity.AlibabaCharityCharitytimeQuerytimeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCharityCharitytimeQuerytime(clt *core.SDKClient, req *charity.AlibabaCharityCharitytimeQuerytimeAPIRequest, resp *charity.AlibabaCharityCharitytimeQuerytimeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

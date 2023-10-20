@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TmallProductSpecsGetAPIRequest struct {
 // NewTmallProductSpecsGetRequest 初始化TmallProductSpecsGetAPIRequest对象
 func NewTmallProductSpecsGetRequest() *TmallProductSpecsGetAPIRequest {
 	return &TmallProductSpecsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallProductSpecsGetAPIRequest) Reset() {
+	r._properties = ""
+	r._productId = 0
+	r._catId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TmallProductSpecsGetAPIRequest) SetCatId(_catId int64) error {
 // GetCatId CatId Getter
 func (r TmallProductSpecsGetAPIRequest) GetCatId() int64 {
 	return r._catId
+}
+
+var poolTmallProductSpecsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallProductSpecsGetRequest()
+	},
+}
+
+// GetTmallProductSpecsGetRequest 从 sync.Pool 获取 TmallProductSpecsGetAPIRequest
+func GetTmallProductSpecsGetAPIRequest() *TmallProductSpecsGetAPIRequest {
+	return poolTmallProductSpecsGetAPIRequest.Get().(*TmallProductSpecsGetAPIRequest)
+}
+
+// ReleaseTmallProductSpecsGetAPIRequest 将 TmallProductSpecsGetAPIRequest 放入 sync.Pool
+func ReleaseTmallProductSpecsGetAPIRequest(v *TmallProductSpecsGetAPIRequest) {
+	v.Reset()
+	poolTmallProductSpecsGetAPIRequest.Put(v)
 }

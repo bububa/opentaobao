@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.recommend.cardinfo.get
 //
 // 快应用卡片信息
-func AlibabaAlihealthRecommendCardinfoGet(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthRecommendCardinfoGetAPIRequest, session string) (*alihealthoutflow.AlibabaAlihealthRecommendCardinfoGetAPIResponse, error) {
-	var resp alihealthoutflow.AlibabaAlihealthRecommendCardinfoGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthRecommendCardinfoGet(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthRecommendCardinfoGetAPIRequest, resp *alihealthoutflow.AlibabaAlihealthRecommendCardinfoGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // TaobaoTbkDgNewuserOrderSumData 结构体
 type TaobaoTbkDgNewuserOrderSumData struct {
 	// resultList
@@ -40,4 +44,39 @@ type TaobaoTbkDgNewuserOrderSumData struct {
 	ValidNum int64 `json:"valid_num,omitempty" xml:"valid_num,omitempty"`
 	// 是否有下一页
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
+}
+
+var poolTaobaoTbkDgNewuserOrderSumData = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkDgNewuserOrderSumData)
+	},
+}
+
+// GetTaobaoTbkDgNewuserOrderSumData() 从对象池中获取TaobaoTbkDgNewuserOrderSumData
+func GetTaobaoTbkDgNewuserOrderSumData() *TaobaoTbkDgNewuserOrderSumData {
+	return poolTaobaoTbkDgNewuserOrderSumData.Get().(*TaobaoTbkDgNewuserOrderSumData)
+}
+
+// ReleaseTaobaoTbkDgNewuserOrderSumData 释放TaobaoTbkDgNewuserOrderSumData
+func ReleaseTaobaoTbkDgNewuserOrderSumData(v *TaobaoTbkDgNewuserOrderSumData) {
+	v.Results = v.Results[:0]
+	v.ActivityId = ""
+	v.BizDate = ""
+	v.AlipayUserCpaPreAmt = ""
+	v.BindBuyUserCpaPreAmt = ""
+	v.RelationId = ""
+	v.Data = nil
+	v.PageNo = 0
+	v.PageSize = 0
+	v.RegUserCnt = 0
+	v.LoginUserCnt = 0
+	v.AlipayUserCnt = 0
+	v.RcvValidUserCnt = 0
+	v.RcvUserCnt = 0
+	v.BindBuyValidUserCnt = 0
+	v.BindCardValidUserCnt = 0
+	v.ReBuyValidUserCnt = 0
+	v.ValidNum = 0
+	v.HasNext = false
+	poolTaobaoTbkDgNewuserOrderSumData.Put(v)
 }

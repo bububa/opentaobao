@@ -9,11 +9,6 @@ import (
 // alibaba.einvoice.tax.opt.salaryrequest.acceptpayment
 //
 // 发薪受理接口
-func AlibabaEinvoiceTaxOptSalaryrequestAcceptpayment(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest, session string) (*einvoice.AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIResponse, error) {
-	var resp einvoice.AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaEinvoiceTaxOptSalaryrequestAcceptpayment(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest, resp *einvoice.AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

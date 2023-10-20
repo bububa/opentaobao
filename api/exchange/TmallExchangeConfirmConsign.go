@@ -9,11 +9,6 @@ import (
 // tmall.exchange.confirm.consign
 //
 // 卖家确认收货并发货
-func TmallExchangeConfirmConsign(clt *core.SDKClient, req *exchange.TmallExchangeConfirmConsignAPIRequest, session string) (*exchange.TmallExchangeConfirmConsignAPIResponse, error) {
-	var resp exchange.TmallExchangeConfirmConsignAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallExchangeConfirmConsign(clt *core.SDKClient, req *exchange.TmallExchangeConfirmConsignAPIRequest, resp *exchange.TmallExchangeConfirmConsignAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

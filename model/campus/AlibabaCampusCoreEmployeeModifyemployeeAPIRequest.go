@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaCampusCoreEmployeeModifyemployeeAPIRequest struct {
 // NewAlibabaCampusCoreEmployeeModifyemployeeRequest 初始化AlibabaCampusCoreEmployeeModifyemployeeAPIRequest对象
 func NewAlibabaCampusCoreEmployeeModifyemployeeRequest() *AlibabaCampusCoreEmployeeModifyemployeeAPIRequest {
 	return &AlibabaCampusCoreEmployeeModifyemployeeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) Reset() {
+	r._accountId = ""
+	r._workBenchContext = nil
+	r._employeeDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) SetEmployeeDto(_empl
 // GetEmployeeDto EmployeeDto Getter
 func (r AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) GetEmployeeDto() *EmployeeDto {
 	return r._employeeDto
+}
+
+var poolAlibabaCampusCoreEmployeeModifyemployeeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusCoreEmployeeModifyemployeeRequest()
+	},
+}
+
+// GetAlibabaCampusCoreEmployeeModifyemployeeRequest 从 sync.Pool 获取 AlibabaCampusCoreEmployeeModifyemployeeAPIRequest
+func GetAlibabaCampusCoreEmployeeModifyemployeeAPIRequest() *AlibabaCampusCoreEmployeeModifyemployeeAPIRequest {
+	return poolAlibabaCampusCoreEmployeeModifyemployeeAPIRequest.Get().(*AlibabaCampusCoreEmployeeModifyemployeeAPIRequest)
+}
+
+// ReleaseAlibabaCampusCoreEmployeeModifyemployeeAPIRequest 将 AlibabaCampusCoreEmployeeModifyemployeeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusCoreEmployeeModifyemployeeAPIRequest(v *AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusCoreEmployeeModifyemployeeAPIRequest.Put(v)
 }

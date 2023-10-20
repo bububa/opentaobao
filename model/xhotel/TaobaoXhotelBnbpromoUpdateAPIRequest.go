@@ -2,6 +2,7 @@ package xhotel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoXhotelBnbpromoUpdateAPIRequest struct {
 // NewTaobaoXhotelBnbpromoUpdateRequest 初始化TaobaoXhotelBnbpromoUpdateAPIRequest对象
 func NewTaobaoXhotelBnbpromoUpdateRequest() *TaobaoXhotelBnbpromoUpdateAPIRequest {
 	return &TaobaoXhotelBnbpromoUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelBnbpromoUpdateAPIRequest) Reset() {
+	r._updatePromoParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoXhotelBnbpromoUpdateAPIRequest) SetUpdatePromoParam(_updatePromoP
 // GetUpdatePromoParam UpdatePromoParam Getter
 func (r TaobaoXhotelBnbpromoUpdateAPIRequest) GetUpdatePromoParam() *UpdatePromoParam {
 	return r._updatePromoParam
+}
+
+var poolTaobaoXhotelBnbpromoUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelBnbpromoUpdateRequest()
+	},
+}
+
+// GetTaobaoXhotelBnbpromoUpdateRequest 从 sync.Pool 获取 TaobaoXhotelBnbpromoUpdateAPIRequest
+func GetTaobaoXhotelBnbpromoUpdateAPIRequest() *TaobaoXhotelBnbpromoUpdateAPIRequest {
+	return poolTaobaoXhotelBnbpromoUpdateAPIRequest.Get().(*TaobaoXhotelBnbpromoUpdateAPIRequest)
+}
+
+// ReleaseTaobaoXhotelBnbpromoUpdateAPIRequest 将 TaobaoXhotelBnbpromoUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelBnbpromoUpdateAPIRequest(v *TaobaoXhotelBnbpromoUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelBnbpromoUpdateAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallServicecenterServicestoreUpdateAPIRequest struct {
 // NewTmallServicecenterServicestoreUpdateRequest 初始化TmallServicecenterServicestoreUpdateAPIRequest对象
 func NewTmallServicecenterServicestoreUpdateRequest() *TmallServicecenterServicestoreUpdateAPIRequest {
 	return &TmallServicecenterServicestoreUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterServicestoreUpdateAPIRequest) Reset() {
+	r._paramServiceStoreDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallServicecenterServicestoreUpdateAPIRequest) SetParamServiceStoreDTO
 // GetParamServiceStoreDTO ParamServiceStoreDTO Getter
 func (r TmallServicecenterServicestoreUpdateAPIRequest) GetParamServiceStoreDTO() *ServiceStoreDto {
 	return r._paramServiceStoreDTO
+}
+
+var poolTmallServicecenterServicestoreUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterServicestoreUpdateRequest()
+	},
+}
+
+// GetTmallServicecenterServicestoreUpdateRequest 从 sync.Pool 获取 TmallServicecenterServicestoreUpdateAPIRequest
+func GetTmallServicecenterServicestoreUpdateAPIRequest() *TmallServicecenterServicestoreUpdateAPIRequest {
+	return poolTmallServicecenterServicestoreUpdateAPIRequest.Get().(*TmallServicecenterServicestoreUpdateAPIRequest)
+}
+
+// ReleaseTmallServicecenterServicestoreUpdateAPIRequest 将 TmallServicecenterServicestoreUpdateAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterServicestoreUpdateAPIRequest(v *TmallServicecenterServicestoreUpdateAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterServicestoreUpdateAPIRequest.Put(v)
 }

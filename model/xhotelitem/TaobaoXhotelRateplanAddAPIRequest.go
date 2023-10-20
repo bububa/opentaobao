@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -159,8 +160,84 @@ type TaobaoXhotelRateplanAddAPIRequest struct {
 // NewTaobaoXhotelRateplanAddRequest 初始化TaobaoXhotelRateplanAddAPIRequest对象
 func NewTaobaoXhotelRateplanAddRequest() *TaobaoXhotelRateplanAddAPIRequest {
 	return &TaobaoXhotelRateplanAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(71),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelRateplanAddAPIRequest) Reset() {
+	r._rateplanCode = ""
+	r._name = ""
+	r._englishName = ""
+	r._extendFee = ""
+	r._startTime = ""
+	r._endTime = ""
+	r._cancelPolicy = ""
+	r._extend = ""
+	r._guaranteeStartTime = ""
+	r._memberLevel = ""
+	r._channel = ""
+	r._vendor = ""
+	r._cancelBeforeHour = ""
+	r._breakfastCal = ""
+	r._cancelPolicyCal = ""
+	r._guaranteeCal = ""
+	r._effectiveTime = ""
+	r._deadlineTime = ""
+	r._rpType = ""
+	r._hourage = ""
+	r._canCheckinEnd = ""
+	r._canCheckinStart = ""
+	r._dinningDesc = ""
+	r._outHid = ""
+	r._outRid = ""
+	r._parentRpCode = ""
+	r._operator = ""
+	r._tagJson = ""
+	r._allotmentReleaseTime = ""
+	r._commonAllotReleaseTime = ""
+	r._resourceType = ""
+	r._canCheckoutEnd = ""
+	r._memberDiscountCal = ""
+	r._guestLimit = ""
+	r._activityType = ""
+	r._onlineBookingBindingInfo = ""
+	r._rights = ""
+	r._freeRoomChargeDstRole = ""
+	r._paymentType = 0
+	r._breakfastCount = 0
+	r._feeBreakfastCount = 0
+	r._feeBreakfastAmount = 0
+	r._feeGovTaxAmount = 0
+	r._feeGovTaxPercent = 0
+	r._feeServiceAmount = 0
+	r._feeServicePercent = 0
+	r._minDays = 0
+	r._maxDays = 0
+	r._minAmount = 0
+	r._minAdvHours = 0
+	r._maxAdvHours = 0
+	r._status = 0
+	r._guaranteeType = 0
+	r._occupancy = 0
+	r._firstStay = 0
+	r._agreement = 0
+	r._cancelBeforeDay = 0
+	r._maxChildAge = 0
+	r._minChildAge = 0
+	r._maxInfantAge = 0
+	r._minInfantAge = 0
+	r._isStudent = 0
+	r._hid = 0
+	r._rid = 0
+	r._superRpFlag = 0
+	r._baseRpFlag = 0
+	r._guaranteeMode = 0
+	r._parentRpid = 0
+	r._source = 0
+	r._bottomPriceFlag = 0
+	r._memDiscFlag = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -1101,4 +1178,21 @@ func (r *TaobaoXhotelRateplanAddAPIRequest) SetMemDiscFlag(_memDiscFlag int64) e
 // GetMemDiscFlag MemDiscFlag Getter
 func (r TaobaoXhotelRateplanAddAPIRequest) GetMemDiscFlag() int64 {
 	return r._memDiscFlag
+}
+
+var poolTaobaoXhotelRateplanAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelRateplanAddRequest()
+	},
+}
+
+// GetTaobaoXhotelRateplanAddRequest 从 sync.Pool 获取 TaobaoXhotelRateplanAddAPIRequest
+func GetTaobaoXhotelRateplanAddAPIRequest() *TaobaoXhotelRateplanAddAPIRequest {
+	return poolTaobaoXhotelRateplanAddAPIRequest.Get().(*TaobaoXhotelRateplanAddAPIRequest)
+}
+
+// ReleaseTaobaoXhotelRateplanAddAPIRequest 将 TaobaoXhotelRateplanAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelRateplanAddAPIRequest(v *TaobaoXhotelRateplanAddAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelRateplanAddAPIRequest.Put(v)
 }

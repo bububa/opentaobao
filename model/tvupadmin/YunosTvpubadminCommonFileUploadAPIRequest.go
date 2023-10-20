@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type YunosTvpubadminCommonFileUploadAPIRequest struct {
 // NewYunosTvpubadminCommonFileUploadRequest 初始化YunosTvpubadminCommonFileUploadAPIRequest对象
 func NewYunosTvpubadminCommonFileUploadRequest() *YunosTvpubadminCommonFileUploadAPIRequest {
 	return &YunosTvpubadminCommonFileUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminCommonFileUploadAPIRequest) Reset() {
+	r._originalFilename = ""
+	r._size = ""
+	r._contentType = ""
+	r._uploadPath = ""
+	r._bytes = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *YunosTvpubadminCommonFileUploadAPIRequest) SetBytes(_bytes *model.File)
 // GetBytes Bytes Getter
 func (r YunosTvpubadminCommonFileUploadAPIRequest) GetBytes() *model.File {
 	return r._bytes
+}
+
+var poolYunosTvpubadminCommonFileUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminCommonFileUploadRequest()
+	},
+}
+
+// GetYunosTvpubadminCommonFileUploadRequest 从 sync.Pool 获取 YunosTvpubadminCommonFileUploadAPIRequest
+func GetYunosTvpubadminCommonFileUploadAPIRequest() *YunosTvpubadminCommonFileUploadAPIRequest {
+	return poolYunosTvpubadminCommonFileUploadAPIRequest.Get().(*YunosTvpubadminCommonFileUploadAPIRequest)
+}
+
+// ReleaseYunosTvpubadminCommonFileUploadAPIRequest 将 YunosTvpubadminCommonFileUploadAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminCommonFileUploadAPIRequest(v *YunosTvpubadminCommonFileUploadAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminCommonFileUploadAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // EtcThemeDetailExcelDto 结构体
 type EtcThemeDetailExcelDto struct {
 	// 业务id
@@ -12,4 +16,25 @@ type EtcThemeDetailExcelDto struct {
 	ProjectType int64 `json:"project_type,omitempty" xml:"project_type,omitempty"`
 	// 排序
 	Sort int64 `json:"sort,omitempty" xml:"sort,omitempty"`
+}
+
+var poolEtcThemeDetailExcelDto = sync.Pool{
+	New: func() any {
+		return new(EtcThemeDetailExcelDto)
+	},
+}
+
+// GetEtcThemeDetailExcelDto() 从对象池中获取EtcThemeDetailExcelDto
+func GetEtcThemeDetailExcelDto() *EtcThemeDetailExcelDto {
+	return poolEtcThemeDetailExcelDto.Get().(*EtcThemeDetailExcelDto)
+}
+
+// ReleaseEtcThemeDetailExcelDto 释放EtcThemeDetailExcelDto
+func ReleaseEtcThemeDetailExcelDto(v *EtcThemeDetailExcelDto) {
+	v.OuterId = ""
+	v.OuterProjectId = ""
+	v.BizType = 0
+	v.ProjectType = 0
+	v.Sort = 0
+	poolEtcThemeDetailExcelDto.Put(v)
 }

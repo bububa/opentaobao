@@ -9,11 +9,6 @@ import (
 // alibaba.damai.mev.open.pushproject
 //
 // pushProject
-func AlibabaDamaiMevOpenPushproject(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushprojectAPIRequest, session string) (*damai.AlibabaDamaiMevOpenPushprojectAPIResponse, error) {
-	var resp damai.AlibabaDamaiMevOpenPushprojectAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMevOpenPushproject(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushprojectAPIRequest, resp *damai.AlibabaDamaiMevOpenPushprojectAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

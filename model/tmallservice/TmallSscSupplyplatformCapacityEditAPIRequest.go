@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallSscSupplyplatformCapacityEditAPIRequest struct {
 // NewTmallSscSupplyplatformCapacityEditRequest 初始化TmallSscSupplyplatformCapacityEditAPIRequest对象
 func NewTmallSscSupplyplatformCapacityEditRequest() *TmallSscSupplyplatformCapacityEditAPIRequest {
 	return &TmallSscSupplyplatformCapacityEditAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallSscSupplyplatformCapacityEditAPIRequest) Reset() {
+	r._paramServiceCapacityAdjustReqDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallSscSupplyplatformCapacityEditAPIRequest) SetParamServiceCapacityAd
 // GetParamServiceCapacityAdjustReqDto ParamServiceCapacityAdjustReqDto Getter
 func (r TmallSscSupplyplatformCapacityEditAPIRequest) GetParamServiceCapacityAdjustReqDto() *ServiceCapacityAdjustReqDto {
 	return r._paramServiceCapacityAdjustReqDto
+}
+
+var poolTmallSscSupplyplatformCapacityEditAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallSscSupplyplatformCapacityEditRequest()
+	},
+}
+
+// GetTmallSscSupplyplatformCapacityEditRequest 从 sync.Pool 获取 TmallSscSupplyplatformCapacityEditAPIRequest
+func GetTmallSscSupplyplatformCapacityEditAPIRequest() *TmallSscSupplyplatformCapacityEditAPIRequest {
+	return poolTmallSscSupplyplatformCapacityEditAPIRequest.Get().(*TmallSscSupplyplatformCapacityEditAPIRequest)
+}
+
+// ReleaseTmallSscSupplyplatformCapacityEditAPIRequest 将 TmallSscSupplyplatformCapacityEditAPIRequest 放入 sync.Pool
+func ReleaseTmallSscSupplyplatformCapacityEditAPIRequest(v *TmallSscSupplyplatformCapacityEditAPIRequest) {
+	v.Reset()
+	poolTmallSscSupplyplatformCapacityEditAPIRequest.Put(v)
 }

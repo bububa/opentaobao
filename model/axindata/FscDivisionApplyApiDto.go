@@ -1,5 +1,9 @@
 package axindata
 
+import (
+	"sync"
+)
+
 // FscDivisionApplyApiDto 结构体
 type FscDivisionApplyApiDto struct {
 	// 行政区划外部编号（供应商侧编号）
@@ -14,4 +18,26 @@ type FscDivisionApplyApiDto struct {
 	CountryName string `json:"country_name,omitempty" xml:"country_name,omitempty"`
 	// 是否境外
 	Abroad bool `json:"abroad,omitempty" xml:"abroad,omitempty"`
+}
+
+var poolFscDivisionApplyApiDto = sync.Pool{
+	New: func() any {
+		return new(FscDivisionApplyApiDto)
+	},
+}
+
+// GetFscDivisionApplyApiDto() 从对象池中获取FscDivisionApplyApiDto
+func GetFscDivisionApplyApiDto() *FscDivisionApplyApiDto {
+	return poolFscDivisionApplyApiDto.Get().(*FscDivisionApplyApiDto)
+}
+
+// ReleaseFscDivisionApplyApiDto 释放FscDivisionApplyApiDto
+func ReleaseFscDivisionApplyApiDto(v *FscDivisionApplyApiDto) {
+	v.DivisionOuterId = ""
+	v.Name = ""
+	v.NameEn = ""
+	v.ParentId = ""
+	v.CountryName = ""
+	v.Abroad = false
+	poolFscDivisionApplyApiDto.Put(v)
 }

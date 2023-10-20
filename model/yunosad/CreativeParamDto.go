@@ -1,5 +1,9 @@
 package yunosad
 
+import (
+	"sync"
+)
+
 // CreativeParamDto 结构体
 type CreativeParamDto struct {
 	// 创意内容
@@ -24,4 +28,31 @@ type CreativeParamDto struct {
 	CreativeTemplateId int64 `json:"creative_template_id,omitempty" xml:"creative_template_id,omitempty"`
 	// 创意类型
 	CreativeType int64 `json:"creative_type,omitempty" xml:"creative_type,omitempty"`
+}
+
+var poolCreativeParamDto = sync.Pool{
+	New: func() any {
+		return new(CreativeParamDto)
+	},
+}
+
+// GetCreativeParamDto() 从对象池中获取CreativeParamDto
+func GetCreativeParamDto() *CreativeParamDto {
+	return poolCreativeParamDto.Get().(*CreativeParamDto)
+}
+
+// ReleaseCreativeParamDto 释放CreativeParamDto
+func ReleaseCreativeParamDto(v *CreativeParamDto) {
+	v.CreativeText = v.CreativeText[:0]
+	v.CreativeImageUrl = v.CreativeImageUrl[:0]
+	v.CreativeIconUrl = v.CreativeIconUrl[:0]
+	v.CreativeId = ""
+	v.Name = ""
+	v.CreativeTitle = ""
+	v.LandingUrl = ""
+	v.ActionType = ""
+	v.SizeCode = ""
+	v.CreativeTemplateId = 0
+	v.CreativeType = 0
+	poolCreativeParamDto.Put(v)
 }

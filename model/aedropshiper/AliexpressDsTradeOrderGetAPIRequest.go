@@ -2,6 +2,7 @@ package aedropshiper
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliexpressDsTradeOrderGetAPIRequest struct {
 // NewAliexpressDsTradeOrderGetRequest 初始化AliexpressDsTradeOrderGetAPIRequest对象
 func NewAliexpressDsTradeOrderGetRequest() *AliexpressDsTradeOrderGetAPIRequest {
 	return &AliexpressDsTradeOrderGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressDsTradeOrderGetAPIRequest) Reset() {
+	r._orderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliexpressDsTradeOrderGetAPIRequest) SetOrderId(_orderId int64) error {
 // GetOrderId OrderId Getter
 func (r AliexpressDsTradeOrderGetAPIRequest) GetOrderId() int64 {
 	return r._orderId
+}
+
+var poolAliexpressDsTradeOrderGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressDsTradeOrderGetRequest()
+	},
+}
+
+// GetAliexpressDsTradeOrderGetRequest 从 sync.Pool 获取 AliexpressDsTradeOrderGetAPIRequest
+func GetAliexpressDsTradeOrderGetAPIRequest() *AliexpressDsTradeOrderGetAPIRequest {
+	return poolAliexpressDsTradeOrderGetAPIRequest.Get().(*AliexpressDsTradeOrderGetAPIRequest)
+}
+
+// ReleaseAliexpressDsTradeOrderGetAPIRequest 将 AliexpressDsTradeOrderGetAPIRequest 放入 sync.Pool
+func ReleaseAliexpressDsTradeOrderGetAPIRequest(v *AliexpressDsTradeOrderGetAPIRequest) {
+	v.Reset()
+	poolAliexpressDsTradeOrderGetAPIRequest.Put(v)
 }

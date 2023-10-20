@@ -1,5 +1,9 @@
 package store
 
+import (
+	"sync"
+)
+
 // TaobaoPlaceStorerelatesubGetT 结构体
 type TaobaoPlaceStorerelatesubGetT struct {
 	// 门店名称
@@ -22,4 +26,30 @@ type TaobaoPlaceStorerelatesubGetT struct {
 	CityCode int64 `json:"city_code,omitempty" xml:"city_code,omitempty"`
 	// 区
 	DistrictCode int64 `json:"district_code,omitempty" xml:"district_code,omitempty"`
+}
+
+var poolTaobaoPlaceStorerelatesubGetT = sync.Pool{
+	New: func() any {
+		return new(TaobaoPlaceStorerelatesubGetT)
+	},
+}
+
+// GetTaobaoPlaceStorerelatesubGetT() 从对象池中获取TaobaoPlaceStorerelatesubGetT
+func GetTaobaoPlaceStorerelatesubGetT() *TaobaoPlaceStorerelatesubGetT {
+	return poolTaobaoPlaceStorerelatesubGetT.Get().(*TaobaoPlaceStorerelatesubGetT)
+}
+
+// ReleaseTaobaoPlaceStorerelatesubGetT 释放TaobaoPlaceStorerelatesubGetT
+func ReleaseTaobaoPlaceStorerelatesubGetT(v *TaobaoPlaceStorerelatesubGetT) {
+	v.Name = ""
+	v.SubName = ""
+	v.Address = ""
+	v.ProvName = ""
+	v.CityName = ""
+	v.DistrictName = ""
+	v.StoreId = 0
+	v.ProvCode = 0
+	v.CityCode = 0
+	v.DistrictCode = 0
+	poolTaobaoPlaceStorerelatesubGetT.Put(v)
 }

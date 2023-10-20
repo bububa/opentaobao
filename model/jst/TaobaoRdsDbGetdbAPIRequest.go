@@ -2,6 +2,7 @@ package jst
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoRdsDbGetdbAPIRequest struct {
 // NewTaobaoRdsDbGetdbRequest 初始化TaobaoRdsDbGetdbAPIRequest对象
 func NewTaobaoRdsDbGetdbRequest() *TaobaoRdsDbGetdbAPIRequest {
 	return &TaobaoRdsDbGetdbAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoRdsDbGetdbAPIRequest) Reset() {
+	r._accountName = ""
+	r._instanceName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoRdsDbGetdbAPIRequest) SetInstanceName(_instanceName string) error
 // GetInstanceName InstanceName Getter
 func (r TaobaoRdsDbGetdbAPIRequest) GetInstanceName() string {
 	return r._instanceName
+}
+
+var poolTaobaoRdsDbGetdbAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoRdsDbGetdbRequest()
+	},
+}
+
+// GetTaobaoRdsDbGetdbRequest 从 sync.Pool 获取 TaobaoRdsDbGetdbAPIRequest
+func GetTaobaoRdsDbGetdbAPIRequest() *TaobaoRdsDbGetdbAPIRequest {
+	return poolTaobaoRdsDbGetdbAPIRequest.Get().(*TaobaoRdsDbGetdbAPIRequest)
+}
+
+// ReleaseTaobaoRdsDbGetdbAPIRequest 将 TaobaoRdsDbGetdbAPIRequest 放入 sync.Pool
+func ReleaseTaobaoRdsDbGetdbAPIRequest(v *TaobaoRdsDbGetdbAPIRequest) {
+	v.Reset()
+	poolTaobaoRdsDbGetdbAPIRequest.Put(v)
 }

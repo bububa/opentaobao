@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.member.token
 //
 // 校验或者刷新token
-func AlitripMerchantGalaxyMemberToken(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyMemberTokenAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyMemberTokenAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyMemberTokenAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyMemberToken(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyMemberTokenAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyMemberTokenAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

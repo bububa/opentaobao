@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // OrderWarehouseRouteGetItem 结构体
 type OrderWarehouseRouteGetItem struct {
 	// 仓库编码 当订单路由到菜鸟仓发货时输出菜鸟仓编码。等待路由仓或由商家仓发货的订单，此内容为空。
@@ -12,4 +16,25 @@ type OrderWarehouseRouteGetItem struct {
 	OrderItemId string `json:"order_item_id,omitempty" xml:"order_item_id,omitempty"`
 	// 通知仓库此订单明细的商品应发数量
 	ItemQty int64 `json:"item_qty,omitempty" xml:"item_qty,omitempty"`
+}
+
+var poolOrderWarehouseRouteGetItem = sync.Pool{
+	New: func() any {
+		return new(OrderWarehouseRouteGetItem)
+	},
+}
+
+// GetOrderWarehouseRouteGetItem() 从对象池中获取OrderWarehouseRouteGetItem
+func GetOrderWarehouseRouteGetItem() *OrderWarehouseRouteGetItem {
+	return poolOrderWarehouseRouteGetItem.Get().(*OrderWarehouseRouteGetItem)
+}
+
+// ReleaseOrderWarehouseRouteGetItem 释放OrderWarehouseRouteGetItem
+func ReleaseOrderWarehouseRouteGetItem(v *OrderWarehouseRouteGetItem) {
+	v.StoreCode = ""
+	v.RoutStatus = ""
+	v.CnOrderCode = ""
+	v.OrderItemId = ""
+	v.ItemQty = 0
+	poolOrderWarehouseRouteGetItem.Put(v)
 }

@@ -1,5 +1,9 @@
 package axintrade
 
+import (
+	"sync"
+)
+
 // RatePlanInfoApiDto 结构体
 type RatePlanInfoApiDto struct {
 	// 每间房rate信息
@@ -32,4 +36,35 @@ type RatePlanInfoApiDto struct {
 	ArrivalTime *ArrivalTimeDto `json:"arrival_time,omitempty" xml:"arrival_time,omitempty"`
 	// 是否即时确认
 	InstantConfirm bool `json:"instant_confirm,omitempty" xml:"instant_confirm,omitempty"`
+}
+
+var poolRatePlanInfoApiDto = sync.Pool{
+	New: func() any {
+		return new(RatePlanInfoApiDto)
+	},
+}
+
+// GetRatePlanInfoApiDto() 从对象池中获取RatePlanInfoApiDto
+func GetRatePlanInfoApiDto() *RatePlanInfoApiDto {
+	return poolRatePlanInfoApiDto.Get().(*RatePlanInfoApiDto)
+}
+
+// ReleaseRatePlanInfoApiDto 释放RatePlanInfoApiDto
+func ReleaseRatePlanInfoApiDto(v *RatePlanInfoApiDto) {
+	v.RateUnitList = v.RateUnitList[:0]
+	v.LatestCheckOutTime = ""
+	v.TotalRoomPrice = ""
+	v.BedTypeDesc = ""
+	v.EarliestCheckInTime = ""
+	v.CurrencyCode = ""
+	v.MaxBookingNum = 0
+	v.MaxOccupancyNum = 0
+	v.CancelPolicy = nil
+	v.MaxInventory = 0
+	v.CnyTotalPrice = 0
+	v.ExchangeRate = 0
+	v.RpType = 0
+	v.ArrivalTime = nil
+	v.InstantConfirm = false
+	poolRatePlanInfoApiDto.Put(v)
 }

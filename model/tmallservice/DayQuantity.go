@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // DayQuantity 结构体
 type DayQuantity struct {
 	// 必须是YYYY-MM-DD格式
@@ -10,4 +14,24 @@ type DayQuantity struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 非必填，
 	Available bool `json:"available,omitempty" xml:"available,omitempty"`
+}
+
+var poolDayQuantity = sync.Pool{
+	New: func() any {
+		return new(DayQuantity)
+	},
+}
+
+// GetDayQuantity() 从对象池中获取DayQuantity
+func GetDayQuantity() *DayQuantity {
+	return poolDayQuantity.Get().(*DayQuantity)
+}
+
+// ReleaseDayQuantity 释放DayQuantity
+func ReleaseDayQuantity(v *DayQuantity) {
+	v.Day = ""
+	v.TimeRange = ""
+	v.Quantity = 0
+	v.Available = false
+	poolDayQuantity.Put(v)
 }

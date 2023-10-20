@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangItemDistributionSpecifyUpdateAPIRequest struct {
 // NewAlibabaDchainAoxiangItemDistributionSpecifyUpdateRequest 初始化AlibabaDchainAoxiangItemDistributionSpecifyUpdateAPIRequest对象
 func NewAlibabaDchainAoxiangItemDistributionSpecifyUpdateRequest() *AlibabaDchainAoxiangItemDistributionSpecifyUpdateAPIRequest {
 	return &AlibabaDchainAoxiangItemDistributionSpecifyUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangItemDistributionSpecifyUpdateAPIRequest) Reset() {
+	r._updateItemDistributionRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangItemDistributionSpecifyUpdateAPIRequest) SetUpdateI
 // GetUpdateItemDistributionRequest UpdateItemDistributionRequest Getter
 func (r AlibabaDchainAoxiangItemDistributionSpecifyUpdateAPIRequest) GetUpdateItemDistributionRequest() *UpdateItemDistributionRequest {
 	return r._updateItemDistributionRequest
+}
+
+var poolAlibabaDchainAoxiangItemDistributionSpecifyUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangItemDistributionSpecifyUpdateRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangItemDistributionSpecifyUpdateRequest 从 sync.Pool 获取 AlibabaDchainAoxiangItemDistributionSpecifyUpdateAPIRequest
+func GetAlibabaDchainAoxiangItemDistributionSpecifyUpdateAPIRequest() *AlibabaDchainAoxiangItemDistributionSpecifyUpdateAPIRequest {
+	return poolAlibabaDchainAoxiangItemDistributionSpecifyUpdateAPIRequest.Get().(*AlibabaDchainAoxiangItemDistributionSpecifyUpdateAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangItemDistributionSpecifyUpdateAPIRequest 将 AlibabaDchainAoxiangItemDistributionSpecifyUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangItemDistributionSpecifyUpdateAPIRequest(v *AlibabaDchainAoxiangItemDistributionSpecifyUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangItemDistributionSpecifyUpdateAPIRequest.Put(v)
 }

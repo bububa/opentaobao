@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // ServiceTradeOrder 结构体
 type ServiceTradeOrder struct {
 	// 服务商品的商家编码
@@ -38,4 +42,38 @@ type ServiceTradeOrder struct {
 	ParentOrderId int64 `json:"parent_order_id,omitempty" xml:"parent_order_id,omitempty"`
 	// 商品价格
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
+}
+
+var poolServiceTradeOrder = sync.Pool{
+	New: func() any {
+		return new(ServiceTradeOrder)
+	},
+}
+
+// GetServiceTradeOrder() 从对象池中获取ServiceTradeOrder
+func GetServiceTradeOrder() *ServiceTradeOrder {
+	return poolServiceTradeOrder.Get().(*ServiceTradeOrder)
+}
+
+// ReleaseServiceTradeOrder 释放ServiceTradeOrder
+func ReleaseServiceTradeOrder(v *ServiceTradeOrder) {
+	v.OuterIdSku = ""
+	v.SkuDesc = ""
+	v.SellerNick = ""
+	v.ShopName = ""
+	v.AuctionTitle = ""
+	v.Attributes = ""
+	v.GmtPay = ""
+	v.AuctionPic = ""
+	v.OuterIdP = ""
+	v.CategoryId = 0
+	v.SkuId = 0
+	v.AuctionId = 0
+	v.PurchasePriceUnit = 0
+	v.OrderId = 0
+	v.BuyAmount = 0
+	v.B2bPriceUnit = 0
+	v.ParentOrderId = 0
+	v.Price = 0
+	poolServiceTradeOrder.Put(v)
 }

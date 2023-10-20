@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.card.info
 //
 // 星河=根据卡类型获取当前的会员体系
-func AlitripMerchantGalaxyCardInfo(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyCardInfoAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyCardInfoAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyCardInfoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyCardInfo(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyCardInfoAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyCardInfoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

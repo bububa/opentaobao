@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // DeviceHistoryBatchQuery 结构体
 type DeviceHistoryBatchQuery struct {
 	// 设备列表
@@ -16,4 +20,27 @@ type DeviceHistoryBatchQuery struct {
 	CampusId string `json:"campus_id,omitempty" xml:"campus_id,omitempty"`
 	// 历史数据查询间隔（min）
 	IntervalMinutes int64 `json:"interval_minutes,omitempty" xml:"interval_minutes,omitempty"`
+}
+
+var poolDeviceHistoryBatchQuery = sync.Pool{
+	New: func() any {
+		return new(DeviceHistoryBatchQuery)
+	},
+}
+
+// GetDeviceHistoryBatchQuery() 从对象池中获取DeviceHistoryBatchQuery
+func GetDeviceHistoryBatchQuery() *DeviceHistoryBatchQuery {
+	return poolDeviceHistoryBatchQuery.Get().(*DeviceHistoryBatchQuery)
+}
+
+// ReleaseDeviceHistoryBatchQuery 释放DeviceHistoryBatchQuery
+func ReleaseDeviceHistoryBatchQuery(v *DeviceHistoryBatchQuery) {
+	v.DeviceUuidList = v.DeviceUuidList[:0]
+	v.StartDate = ""
+	v.EndDate = ""
+	v.KindCode = ""
+	v.PropertyCode = ""
+	v.CampusId = ""
+	v.IntervalMinutes = 0
+	poolDeviceHistoryBatchQuery.Put(v)
 }

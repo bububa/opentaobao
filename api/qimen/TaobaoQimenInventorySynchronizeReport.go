@@ -9,11 +9,6 @@ import (
 // taobao.qimen.inventory.synchronize.report
 //
 // 库存状态同步确认接口
-func TaobaoQimenInventorySynchronizeReport(clt *core.SDKClient, req *qimen.TaobaoQimenInventorySynchronizeReportAPIRequest, session string) (*qimen.TaobaoQimenInventorySynchronizeReportAPIResponse, error) {
-	var resp qimen.TaobaoQimenInventorySynchronizeReportAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoQimenInventorySynchronizeReport(clt *core.SDKClient, req *qimen.TaobaoQimenInventorySynchronizeReportAPIRequest, resp *qimen.TaobaoQimenInventorySynchronizeReportAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

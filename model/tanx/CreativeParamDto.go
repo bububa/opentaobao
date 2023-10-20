@@ -1,5 +1,9 @@
 package tanx
 
+import (
+	"sync"
+)
+
 // CreativeParamDto 结构体
 type CreativeParamDto struct {
 	// dsp系统中的创意id
@@ -22,4 +26,30 @@ type CreativeParamDto struct {
 	CreativePackageFormat int64 `json:"creative_package_format,omitempty" xml:"creative_package_format,omitempty"`
 	// 创意类型。1. mraid, 2. native, 3.H5，4.富媒体
 	DisType int64 `json:"dis_type,omitempty" xml:"dis_type,omitempty"`
+}
+
+var poolCreativeParamDto = sync.Pool{
+	New: func() any {
+		return new(CreativeParamDto)
+	},
+}
+
+// GetCreativeParamDto() 从对象池中获取CreativeParamDto
+func GetCreativeParamDto() *CreativeParamDto {
+	return poolCreativeParamDto.Get().(*CreativeParamDto)
+}
+
+// ReleaseCreativeParamDto 释放CreativeParamDto
+func ReleaseCreativeParamDto(v *CreativeParamDto) {
+	v.CreativeId = ""
+	v.AdboardSize = ""
+	v.AdboardType = ""
+	v.SensitiveType = ""
+	v.AdboardData = ""
+	v.DestinationUrl = ""
+	v.AdvertiserIds = ""
+	v.TemplateId = ""
+	v.CreativePackageFormat = 0
+	v.DisType = 0
+	poolCreativeParamDto.Put(v)
 }

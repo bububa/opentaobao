@@ -2,6 +2,7 @@ package openmall
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoOpenmallTradeAddressParseAPIRequest struct {
 // NewTaobaoOpenmallTradeAddressParseRequest 初始化TaobaoOpenmallTradeAddressParseAPIRequest对象
 func NewTaobaoOpenmallTradeAddressParseRequest() *TaobaoOpenmallTradeAddressParseAPIRequest {
 	return &TaobaoOpenmallTradeAddressParseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpenmallTradeAddressParseAPIRequest) Reset() {
+	r._rawAddress = ""
+	r._distributor = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoOpenmallTradeAddressParseAPIRequest) SetDistributor(_distributor 
 // GetDistributor Distributor Getter
 func (r TaobaoOpenmallTradeAddressParseAPIRequest) GetDistributor() string {
 	return r._distributor
+}
+
+var poolTaobaoOpenmallTradeAddressParseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpenmallTradeAddressParseRequest()
+	},
+}
+
+// GetTaobaoOpenmallTradeAddressParseRequest 从 sync.Pool 获取 TaobaoOpenmallTradeAddressParseAPIRequest
+func GetTaobaoOpenmallTradeAddressParseAPIRequest() *TaobaoOpenmallTradeAddressParseAPIRequest {
+	return poolTaobaoOpenmallTradeAddressParseAPIRequest.Get().(*TaobaoOpenmallTradeAddressParseAPIRequest)
+}
+
+// ReleaseTaobaoOpenmallTradeAddressParseAPIRequest 将 TaobaoOpenmallTradeAddressParseAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpenmallTradeAddressParseAPIRequest(v *TaobaoOpenmallTradeAddressParseAPIRequest) {
+	v.Reset()
+	poolTaobaoOpenmallTradeAddressParseAPIRequest.Put(v)
 }

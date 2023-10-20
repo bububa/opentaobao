@@ -9,11 +9,6 @@ import (
 // alibaba.security.jaq.url.scan
 //
 // url扫描接口
-func AlibabaSecurityJaqUrlScan(clt *core.SDKClient, req *security.AlibabaSecurityJaqUrlScanAPIRequest, session string) (*security.AlibabaSecurityJaqUrlScanAPIResponse, error) {
-	var resp security.AlibabaSecurityJaqUrlScanAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaSecurityJaqUrlScan(clt *core.SDKClient, req *security.AlibabaSecurityJaqUrlScanAPIRequest, resp *security.AlibabaSecurityJaqUrlScanAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.jds.refund.traces.get
 //
 // 获取聚石塔数据共享的交易全链路的退款信息
-func TaobaoJdsRefundTracesGet(clt *core.SDKClient, req *jst.TaobaoJdsRefundTracesGetAPIRequest, session string) (*jst.TaobaoJdsRefundTracesGetAPIResponse, error) {
-	var resp jst.TaobaoJdsRefundTracesGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoJdsRefundTracesGet(clt *core.SDKClient, req *jst.TaobaoJdsRefundTracesGetAPIRequest, resp *jst.TaobaoJdsRefundTracesGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

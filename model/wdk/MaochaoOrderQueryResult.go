@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // MaochaoOrderQueryResult 结构体
 type MaochaoOrderQueryResult struct {
 	// 子订单列表
@@ -10,4 +14,24 @@ type MaochaoOrderQueryResult struct {
 	ReturnMsg string `json:"return_msg,omitempty" xml:"return_msg,omitempty"`
 	// 是否调用成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolMaochaoOrderQueryResult = sync.Pool{
+	New: func() any {
+		return new(MaochaoOrderQueryResult)
+	},
+}
+
+// GetMaochaoOrderQueryResult() 从对象池中获取MaochaoOrderQueryResult
+func GetMaochaoOrderQueryResult() *MaochaoOrderQueryResult {
+	return poolMaochaoOrderQueryResult.Get().(*MaochaoOrderQueryResult)
+}
+
+// ReleaseMaochaoOrderQueryResult 释放MaochaoOrderQueryResult
+func ReleaseMaochaoOrderQueryResult(v *MaochaoOrderQueryResult) {
+	v.SubOrderList = v.SubOrderList[:0]
+	v.ReturnCode = ""
+	v.ReturnMsg = ""
+	v.Success = false
+	poolMaochaoOrderQueryResult.Put(v)
 }

@@ -1,5 +1,9 @@
 package aedropshiper
 
+import (
+	"sync"
+)
+
 // AeopAeProductProperty 结构体
 type AeopAeProductProperty struct {
 	// 属性单位
@@ -16,4 +20,27 @@ type AeopAeProductProperty struct {
 	AttrValueId int64 `json:"attr_value_id,omitempty" xml:"attr_value_id,omitempty"`
 	// 属性Id
 	AttrNameId int64 `json:"attr_name_id,omitempty" xml:"attr_name_id,omitempty"`
+}
+
+var poolAeopAeProductProperty = sync.Pool{
+	New: func() any {
+		return new(AeopAeProductProperty)
+	},
+}
+
+// GetAeopAeProductProperty() 从对象池中获取AeopAeProductProperty
+func GetAeopAeProductProperty() *AeopAeProductProperty {
+	return poolAeopAeProductProperty.Get().(*AeopAeProductProperty)
+}
+
+// ReleaseAeopAeProductProperty 释放AeopAeProductProperty
+func ReleaseAeopAeProductProperty(v *AeopAeProductProperty) {
+	v.AttrValueUnit = ""
+	v.AttrValueStart = ""
+	v.AttrValueEnd = ""
+	v.AttrValue = ""
+	v.AttrName = ""
+	v.AttrValueId = 0
+	v.AttrNameId = 0
+	poolAeopAeProductProperty.Put(v)
 }

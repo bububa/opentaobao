@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ApiPageResult 结构体
 type ApiPageResult struct {
 	// 返回内容
@@ -16,4 +20,27 @@ type ApiPageResult struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 是否还有下一页
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
+}
+
+var poolApiPageResult = sync.Pool{
+	New: func() any {
+		return new(ApiPageResult)
+	},
+}
+
+// GetApiPageResult() 从对象池中获取ApiPageResult
+func GetApiPageResult() *ApiPageResult {
+	return poolApiPageResult.Get().(*ApiPageResult)
+}
+
+// ReleaseApiPageResult 释放ApiPageResult
+func ReleaseApiPageResult(v *ApiPageResult) {
+	v.Models = v.Models[:0]
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.Success = ""
+	v.PageIndex = 0
+	v.PageSize = 0
+	v.HasNext = false
+	poolApiPageResult.Put(v)
 }

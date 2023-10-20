@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // TmsOrderRemarkRequest 结构体
 type TmsOrderRemarkRequest struct {
 	// 商家id
@@ -20,4 +24,29 @@ type TmsOrderRemarkRequest struct {
 	Feature string `json:"feature,omitempty" xml:"feature,omitempty"`
 	// 业务请求时间戳
 	RequestTime int64 `json:"request_time,omitempty" xml:"request_time,omitempty"`
+}
+
+var poolTmsOrderRemarkRequest = sync.Pool{
+	New: func() any {
+		return new(TmsOrderRemarkRequest)
+	},
+}
+
+// GetTmsOrderRemarkRequest() 从对象池中获取TmsOrderRemarkRequest
+func GetTmsOrderRemarkRequest() *TmsOrderRemarkRequest {
+	return poolTmsOrderRemarkRequest.Get().(*TmsOrderRemarkRequest)
+}
+
+// ReleaseTmsOrderRemarkRequest 释放TmsOrderRemarkRequest
+func ReleaseTmsOrderRemarkRequest(v *TmsOrderRemarkRequest) {
+	v.SellerId = ""
+	v.ExpressCode = ""
+	v.RequestId = ""
+	v.Industry = ""
+	v.CpCode = ""
+	v.OperatorName = ""
+	v.Remark = ""
+	v.Feature = ""
+	v.RequestTime = 0
+	poolTmsOrderRemarkRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaWdkMerchantStoreitemQueryAPIRequest struct {
 // NewAlibabaWdkMerchantStoreitemQueryRequest 初始化AlibabaWdkMerchantStoreitemQueryAPIRequest对象
 func NewAlibabaWdkMerchantStoreitemQueryRequest() *AlibabaWdkMerchantStoreitemQueryAPIRequest {
 	return &AlibabaWdkMerchantStoreitemQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkMerchantStoreitemQueryAPIRequest) Reset() {
+	r._skuCode = ""
+	r._merchantCode = ""
+	r._storeId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaWdkMerchantStoreitemQueryAPIRequest) SetStoreId(_storeId string)
 // GetStoreId StoreId Getter
 func (r AlibabaWdkMerchantStoreitemQueryAPIRequest) GetStoreId() string {
 	return r._storeId
+}
+
+var poolAlibabaWdkMerchantStoreitemQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkMerchantStoreitemQueryRequest()
+	},
+}
+
+// GetAlibabaWdkMerchantStoreitemQueryRequest 从 sync.Pool 获取 AlibabaWdkMerchantStoreitemQueryAPIRequest
+func GetAlibabaWdkMerchantStoreitemQueryAPIRequest() *AlibabaWdkMerchantStoreitemQueryAPIRequest {
+	return poolAlibabaWdkMerchantStoreitemQueryAPIRequest.Get().(*AlibabaWdkMerchantStoreitemQueryAPIRequest)
+}
+
+// ReleaseAlibabaWdkMerchantStoreitemQueryAPIRequest 将 AlibabaWdkMerchantStoreitemQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkMerchantStoreitemQueryAPIRequest(v *AlibabaWdkMerchantStoreitemQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkMerchantStoreitemQueryAPIRequest.Put(v)
 }

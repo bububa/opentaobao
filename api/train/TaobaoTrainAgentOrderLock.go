@@ -9,11 +9,6 @@ import (
 // taobao.train.agent.order.lock
 //
 // 锁单
-func TaobaoTrainAgentOrderLock(clt *core.SDKClient, req *train.TaobaoTrainAgentOrderLockAPIRequest, session string) (*train.TaobaoTrainAgentOrderLockAPIResponse, error) {
-	var resp train.TaobaoTrainAgentOrderLockAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTrainAgentOrderLock(clt *core.SDKClient, req *train.TaobaoTrainAgentOrderLockAPIRequest, resp *train.TaobaoTrainAgentOrderLockAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

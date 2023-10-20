@@ -2,6 +2,7 @@ package miniappopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoMiniappWidgetTemplateInstanceUpdateAPIRequest struct {
 // NewTaobaoMiniappWidgetTemplateInstanceUpdateRequest 初始化TaobaoMiniappWidgetTemplateInstanceUpdateAPIRequest对象
 func NewTaobaoMiniappWidgetTemplateInstanceUpdateRequest() *TaobaoMiniappWidgetTemplateInstanceUpdateAPIRequest {
 	return &TaobaoMiniappWidgetTemplateInstanceUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMiniappWidgetTemplateInstanceUpdateAPIRequest) Reset() {
+	r._paramMiniAppInstantiateTemplateAppUpdateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoMiniappWidgetTemplateInstanceUpdateAPIRequest) SetParamMiniAppIns
 // GetParamMiniAppInstantiateTemplateAppUpdateRequest ParamMiniAppInstantiateTemplateAppUpdateRequest Getter
 func (r TaobaoMiniappWidgetTemplateInstanceUpdateAPIRequest) GetParamMiniAppInstantiateTemplateAppUpdateRequest() *MiniAppInstantiateTemplateAppUpdateRequest {
 	return r._paramMiniAppInstantiateTemplateAppUpdateRequest
+}
+
+var poolTaobaoMiniappWidgetTemplateInstanceUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMiniappWidgetTemplateInstanceUpdateRequest()
+	},
+}
+
+// GetTaobaoMiniappWidgetTemplateInstanceUpdateRequest 从 sync.Pool 获取 TaobaoMiniappWidgetTemplateInstanceUpdateAPIRequest
+func GetTaobaoMiniappWidgetTemplateInstanceUpdateAPIRequest() *TaobaoMiniappWidgetTemplateInstanceUpdateAPIRequest {
+	return poolTaobaoMiniappWidgetTemplateInstanceUpdateAPIRequest.Get().(*TaobaoMiniappWidgetTemplateInstanceUpdateAPIRequest)
+}
+
+// ReleaseTaobaoMiniappWidgetTemplateInstanceUpdateAPIRequest 将 TaobaoMiniappWidgetTemplateInstanceUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMiniappWidgetTemplateInstanceUpdateAPIRequest(v *TaobaoMiniappWidgetTemplateInstanceUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoMiniappWidgetTemplateInstanceUpdateAPIRequest.Put(v)
 }

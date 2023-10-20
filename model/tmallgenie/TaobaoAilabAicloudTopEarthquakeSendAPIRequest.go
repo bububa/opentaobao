@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoAilabAicloudTopEarthquakeSendAPIRequest struct {
 // NewTaobaoAilabAicloudTopEarthquakeSendRequest 初始化TaobaoAilabAicloudTopEarthquakeSendAPIRequest对象
 func NewTaobaoAilabAicloudTopEarthquakeSendRequest() *TaobaoAilabAicloudTopEarthquakeSendAPIRequest {
 	return &TaobaoAilabAicloudTopEarthquakeSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopEarthquakeSendAPIRequest) Reset() {
+	r._ext = ""
+	r._signature = ""
+	r._nonceStr = ""
+	r._timestampStr = ""
+	r._earthquakeInfo = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoAilabAicloudTopEarthquakeSendAPIRequest) SetEarthquakeInfo(_earth
 // GetEarthquakeInfo EarthquakeInfo Getter
 func (r TaobaoAilabAicloudTopEarthquakeSendAPIRequest) GetEarthquakeInfo() string {
 	return r._earthquakeInfo
+}
+
+var poolTaobaoAilabAicloudTopEarthquakeSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopEarthquakeSendRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopEarthquakeSendRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopEarthquakeSendAPIRequest
+func GetTaobaoAilabAicloudTopEarthquakeSendAPIRequest() *TaobaoAilabAicloudTopEarthquakeSendAPIRequest {
+	return poolTaobaoAilabAicloudTopEarthquakeSendAPIRequest.Get().(*TaobaoAilabAicloudTopEarthquakeSendAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopEarthquakeSendAPIRequest 将 TaobaoAilabAicloudTopEarthquakeSendAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopEarthquakeSendAPIRequest(v *TaobaoAilabAicloudTopEarthquakeSendAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopEarthquakeSendAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package moscm
 
+import (
+	"sync"
+)
+
 // CspuCriteria 结构体
 type CspuCriteria struct {
 	// 货号
@@ -24,4 +28,31 @@ type CspuCriteria struct {
 	Keyword string `json:"keyword,omitempty" xml:"keyword,omitempty"`
 	// 款号
 	StyleNo string `json:"style_no,omitempty" xml:"style_no,omitempty"`
+}
+
+var poolCspuCriteria = sync.Pool{
+	New: func() any {
+		return new(CspuCriteria)
+	},
+}
+
+// GetCspuCriteria() 从对象池中获取CspuCriteria
+func GetCspuCriteria() *CspuCriteria {
+	return poolCspuCriteria.Get().(*CspuCriteria)
+}
+
+// ReleaseCspuCriteria 释放CspuCriteria
+func ReleaseCspuCriteria(v *CspuCriteria) {
+	v.ArtNos = v.ArtNos[:0]
+	v.Barcodes = v.Barcodes[:0]
+	v.BrandIds = v.BrandIds[:0]
+	v.CatIds = v.CatIds[:0]
+	v.CspuIds = v.CspuIds[:0]
+	v.PropertyValueIds = v.PropertyValueIds[:0]
+	v.SpuIds = v.SpuIds[:0]
+	v.CreateDateEnd = ""
+	v.CreateDateStart = ""
+	v.Keyword = ""
+	v.StyleNo = ""
+	poolCspuCriteria.Put(v)
 }

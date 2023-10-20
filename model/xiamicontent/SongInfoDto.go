@@ -1,5 +1,9 @@
 package xiamicontent
 
+import (
+	"sync"
+)
+
 // SongInfoDto 结构体
 type SongInfoDto struct {
 	// 演唱者列表
@@ -38,4 +42,38 @@ type SongInfoDto struct {
 	HotPartEndTime int64 `json:"hot_part_end_time,omitempty" xml:"hot_part_end_time,omitempty"`
 	// 副歌开始时间戳
 	HotPartStartTime int64 `json:"hot_part_start_time,omitempty" xml:"hot_part_start_time,omitempty"`
+}
+
+var poolSongInfoDto = sync.Pool{
+	New: func() any {
+		return new(SongInfoDto)
+	},
+}
+
+// GetSongInfoDto() 从对象池中获取SongInfoDto
+func GetSongInfoDto() *SongInfoDto {
+	return poolSongInfoDto.Get().(*SongInfoDto)
+}
+
+// ReleaseSongInfoDto 释放SongInfoDto
+func ReleaseSongInfoDto(v *SongInfoDto) {
+	v.Singers = v.Singers[:0]
+	v.Composers = v.Composers[:0]
+	v.Artists = v.Artists[:0]
+	v.Songwriters = v.Songwriters[:0]
+	v.Producers = v.Producers[:0]
+	v.Tags = v.Tags[:0]
+	v.Arrangements = v.Arrangements[:0]
+	v.Lyrics = v.Lyrics[:0]
+	v.SongName = ""
+	v.SongSubName = ""
+	v.WaveformUrl = ""
+	v.Album = nil
+	v.Duration = 0
+	v.CopyrightStatus = 0
+	v.SongId = 0
+	v.PublishStatus = 0
+	v.HotPartEndTime = 0
+	v.HotPartStartTime = 0
+	poolSongInfoDto.Put(v)
 }

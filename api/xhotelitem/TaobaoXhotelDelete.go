@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.delete
 //
 // 删除飞猪酒店数据接口
-func TaobaoXhotelDelete(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelDeleteAPIRequest, session string) (*xhotelitem.TaobaoXhotelDeleteAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelDelete(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelDeleteAPIRequest, resp *xhotelitem.TaobaoXhotelDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

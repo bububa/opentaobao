@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,6 +22,12 @@ type CainiaoDataLogisticsCpDeliveryAgingPredictAPIResponse struct {
 	CainiaoDataLogisticsCpDeliveryAgingPredictAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *CainiaoDataLogisticsCpDeliveryAgingPredictAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.CainiaoDataLogisticsCpDeliveryAgingPredictAPIResponseModel).Reset()
+}
+
 // CainiaoDataLogisticsCpDeliveryAgingPredictAPIResponseModel is CP配送物流时效预测 成功返回结果
 type CainiaoDataLogisticsCpDeliveryAgingPredictAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_data_logistics_cp_delivery_aging_predict_response"`
@@ -28,4 +35,27 @@ type CainiaoDataLogisticsCpDeliveryAgingPredictAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回数据值
 	Data *DeliveryTimingDto `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *CainiaoDataLogisticsCpDeliveryAgingPredictAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = nil
+}
+
+var poolCainiaoDataLogisticsCpDeliveryAgingPredictAPIResponse = sync.Pool{
+	New: func() any {
+		return new(CainiaoDataLogisticsCpDeliveryAgingPredictAPIResponse)
+	},
+}
+
+// GetCainiaoDataLogisticsCpDeliveryAgingPredictAPIResponse 从 sync.Pool 获取 CainiaoDataLogisticsCpDeliveryAgingPredictAPIResponse
+func GetCainiaoDataLogisticsCpDeliveryAgingPredictAPIResponse() *CainiaoDataLogisticsCpDeliveryAgingPredictAPIResponse {
+	return poolCainiaoDataLogisticsCpDeliveryAgingPredictAPIResponse.Get().(*CainiaoDataLogisticsCpDeliveryAgingPredictAPIResponse)
+}
+
+// ReleaseCainiaoDataLogisticsCpDeliveryAgingPredictAPIResponse 将 CainiaoDataLogisticsCpDeliveryAgingPredictAPIResponse 保存到 sync.Pool
+func ReleaseCainiaoDataLogisticsCpDeliveryAgingPredictAPIResponse(v *CainiaoDataLogisticsCpDeliveryAgingPredictAPIResponse) {
+	v.Reset()
+	poolCainiaoDataLogisticsCpDeliveryAgingPredictAPIResponse.Put(v)
 }

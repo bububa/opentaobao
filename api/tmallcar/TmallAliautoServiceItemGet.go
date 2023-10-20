@@ -9,11 +9,6 @@ import (
 // tmall.aliauto.service.item.get
 //
 // 根据门店自定义门店编码查询门店【已上架】服务商品列表
-func TmallAliautoServiceItemGet(clt *core.SDKClient, req *tmallcar.TmallAliautoServiceItemGetAPIRequest, session string) (*tmallcar.TmallAliautoServiceItemGetAPIResponse, error) {
-	var resp tmallcar.TmallAliautoServiceItemGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallAliautoServiceItemGet(clt *core.SDKClient, req *tmallcar.TmallAliautoServiceItemGetAPIRequest, resp *tmallcar.TmallAliautoServiceItemGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

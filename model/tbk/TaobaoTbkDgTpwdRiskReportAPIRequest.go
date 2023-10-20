@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoTbkDgTpwdRiskReportAPIRequest struct {
 // NewTaobaoTbkDgTpwdRiskReportRequest 初始化TaobaoTbkDgTpwdRiskReportAPIRequest对象
 func NewTaobaoTbkDgTpwdRiskReportRequest() *TaobaoTbkDgTpwdRiskReportAPIRequest {
 	return &TaobaoTbkDgTpwdRiskReportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkDgTpwdRiskReportAPIRequest) Reset() {
+	r._pid = ""
+	r._offset = 0
+	r._limit = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoTbkDgTpwdRiskReportAPIRequest) SetLimit(_limit int64) error {
 // GetLimit Limit Getter
 func (r TaobaoTbkDgTpwdRiskReportAPIRequest) GetLimit() int64 {
 	return r._limit
+}
+
+var poolTaobaoTbkDgTpwdRiskReportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkDgTpwdRiskReportRequest()
+	},
+}
+
+// GetTaobaoTbkDgTpwdRiskReportRequest 从 sync.Pool 获取 TaobaoTbkDgTpwdRiskReportAPIRequest
+func GetTaobaoTbkDgTpwdRiskReportAPIRequest() *TaobaoTbkDgTpwdRiskReportAPIRequest {
+	return poolTaobaoTbkDgTpwdRiskReportAPIRequest.Get().(*TaobaoTbkDgTpwdRiskReportAPIRequest)
+}
+
+// ReleaseTaobaoTbkDgTpwdRiskReportAPIRequest 将 TaobaoTbkDgTpwdRiskReportAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkDgTpwdRiskReportAPIRequest(v *TaobaoTbkDgTpwdRiskReportAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkDgTpwdRiskReportAPIRequest.Put(v)
 }

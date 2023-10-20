@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ItemPoolActivityElementOperateRequest 结构体
 type ItemPoolActivityElementOperateRequest struct {
 	// 商品元素列表
@@ -14,4 +18,26 @@ type ItemPoolActivityElementOperateRequest struct {
 	ActId int64 `json:"act_id,omitempty" xml:"act_id,omitempty"`
 	// 商品所属分组序号，默认单个分组则填1
 	GroupNumber int64 `json:"group_number,omitempty" xml:"group_number,omitempty"`
+}
+
+var poolItemPoolActivityElementOperateRequest = sync.Pool{
+	New: func() any {
+		return new(ItemPoolActivityElementOperateRequest)
+	},
+}
+
+// GetItemPoolActivityElementOperateRequest() 从对象池中获取ItemPoolActivityElementOperateRequest
+func GetItemPoolActivityElementOperateRequest() *ItemPoolActivityElementOperateRequest {
+	return poolItemPoolActivityElementOperateRequest.Get().(*ItemPoolActivityElementOperateRequest)
+}
+
+// ReleaseItemPoolActivityElementOperateRequest 释放ItemPoolActivityElementOperateRequest
+func ReleaseItemPoolActivityElementOperateRequest(v *ItemPoolActivityElementOperateRequest) {
+	v.SkuElements = v.SkuElements[:0]
+	v.CreatorId = ""
+	v.CreatorName = ""
+	v.OutActId = ""
+	v.ActId = 0
+	v.GroupNumber = 0
+	poolItemPoolActivityElementOperateRequest.Put(v)
 }

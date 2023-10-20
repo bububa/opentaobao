@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // PosSubOrderDo 结构体
 type PosSubOrderDo struct {
 	// 库存单位，必填
@@ -24,4 +28,31 @@ type PosSubOrderDo struct {
 	DiscountFee int64 `json:"discount_fee,omitempty" xml:"discount_fee,omitempty"`
 	// 商品单价，单位分
 	SkuPrice int64 `json:"sku_price,omitempty" xml:"sku_price,omitempty"`
+}
+
+var poolPosSubOrderDo = sync.Pool{
+	New: func() any {
+		return new(PosSubOrderDo)
+	},
+}
+
+// GetPosSubOrderDo() 从对象池中获取PosSubOrderDo
+func GetPosSubOrderDo() *PosSubOrderDo {
+	return poolPosSubOrderDo.Get().(*PosSubOrderDo)
+}
+
+// ReleasePosSubOrderDo 释放PosSubOrderDo
+func ReleasePosSubOrderDo(v *PosSubOrderDo) {
+	v.StockUnit = ""
+	v.BuyAmountStock = ""
+	v.SkuCode = ""
+	v.OutOrderId = ""
+	v.SaleUnit = ""
+	v.SkuName = ""
+	v.PayFee = 0
+	v.BuyAmountSale = 0
+	v.OriginFee = 0
+	v.DiscountFee = 0
+	v.SkuPrice = 0
+	poolPosSubOrderDo.Put(v)
 }

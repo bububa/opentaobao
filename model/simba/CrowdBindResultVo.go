@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // CrowdBindResultVo 结构体
 type CrowdBindResultVo struct {
 	// 定向关联关系
@@ -8,4 +12,23 @@ type CrowdBindResultVo struct {
 	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
 	// 单元id
 	AdgroupId int64 `json:"adgroup_id,omitempty" xml:"adgroup_id,omitempty"`
+}
+
+var poolCrowdBindResultVo = sync.Pool{
+	New: func() any {
+		return new(CrowdBindResultVo)
+	},
+}
+
+// GetCrowdBindResultVo() 从对象池中获取CrowdBindResultVo
+func GetCrowdBindResultVo() *CrowdBindResultVo {
+	return poolCrowdBindResultVo.Get().(*CrowdBindResultVo)
+}
+
+// ReleaseCrowdBindResultVo 释放CrowdBindResultVo
+func ReleaseCrowdBindResultVo(v *CrowdBindResultVo) {
+	v.CrowdList = v.CrowdList[:0]
+	v.CampaignId = 0
+	v.AdgroupId = 0
+	poolCrowdBindResultVo.Put(v)
 }

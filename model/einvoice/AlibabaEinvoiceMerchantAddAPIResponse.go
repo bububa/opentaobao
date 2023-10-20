@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type AlibabaEinvoiceMerchantAddAPIResponse struct {
 	AlibabaEinvoiceMerchantAddAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaEinvoiceMerchantAddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaEinvoiceMerchantAddAPIResponseModel).Reset()
+}
+
 // AlibabaEinvoiceMerchantAddAPIResponseModel is 发票中台-同平台授权税号适用商户 成功返回结果
 type AlibabaEinvoiceMerchantAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_einvoice_merchant_add_response"`
@@ -23,4 +30,27 @@ type AlibabaEinvoiceMerchantAddAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 新增成功的业务平台门店ID
 	MerchantUserId string `json:"merchant_user_id,omitempty" xml:"merchant_user_id,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaEinvoiceMerchantAddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MerchantUserId = ""
+}
+
+var poolAlibabaEinvoiceMerchantAddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaEinvoiceMerchantAddAPIResponse)
+	},
+}
+
+// GetAlibabaEinvoiceMerchantAddAPIResponse 从 sync.Pool 获取 AlibabaEinvoiceMerchantAddAPIResponse
+func GetAlibabaEinvoiceMerchantAddAPIResponse() *AlibabaEinvoiceMerchantAddAPIResponse {
+	return poolAlibabaEinvoiceMerchantAddAPIResponse.Get().(*AlibabaEinvoiceMerchantAddAPIResponse)
+}
+
+// ReleaseAlibabaEinvoiceMerchantAddAPIResponse 将 AlibabaEinvoiceMerchantAddAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaEinvoiceMerchantAddAPIResponse(v *AlibabaEinvoiceMerchantAddAPIResponse) {
+	v.Reset()
+	poolAlibabaEinvoiceMerchantAddAPIResponse.Put(v)
 }

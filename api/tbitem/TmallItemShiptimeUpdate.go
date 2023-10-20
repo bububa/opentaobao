@@ -42,11 +42,6 @@ import (
 //	    &#34;updateType&#34;: 1 --更新商品
 //	},
 //	删除商品级的发货时间
-func TmallItemShiptimeUpdate(clt *core.SDKClient, req *tbitem.TmallItemShiptimeUpdateAPIRequest, session string) (*tbitem.TmallItemShiptimeUpdateAPIResponse, error) {
-	var resp tbitem.TmallItemShiptimeUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallItemShiptimeUpdate(clt *core.SDKClient, req *tbitem.TmallItemShiptimeUpdateAPIRequest, resp *tbitem.TmallItemShiptimeUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

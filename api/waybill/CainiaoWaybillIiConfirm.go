@@ -9,11 +9,6 @@ import (
 // cainiao.waybill.ii.confirm
 //
 // 物流订单确认
-func CainiaoWaybillIiConfirm(clt *core.SDKClient, req *waybill.CainiaoWaybillIiConfirmAPIRequest, session string) (*waybill.CainiaoWaybillIiConfirmAPIResponse, error) {
-	var resp waybill.CainiaoWaybillIiConfirmAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func CainiaoWaybillIiConfirm(clt *core.SDKClient, req *waybill.CainiaoWaybillIiConfirmAPIRequest, resp *waybill.CainiaoWaybillIiConfirmAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

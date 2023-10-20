@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // ResourceDto 结构体
 type ResourceDto struct {
 	// 下单凭证
@@ -20,4 +24,29 @@ type ResourceDto struct {
 	ActualFee int64 `json:"actual_fee,omitempty" xml:"actual_fee,omitempty"`
 	// 是否有效
 	Valid bool `json:"valid,omitempty" xml:"valid,omitempty"`
+}
+
+var poolResourceDto = sync.Pool{
+	New: func() any {
+		return new(ResourceDto)
+	},
+}
+
+// GetResourceDto() 从对象池中获取ResourceDto
+func GetResourceDto() *ResourceDto {
+	return poolResourceDto.Get().(*ResourceDto)
+}
+
+// ReleaseResourceDto 释放ResourceDto
+func ReleaseResourceDto(v *ResourceDto) {
+	v.ResourceRequestId = ""
+	v.ResourceCode = ""
+	v.ResourceName = ""
+	v.FeeDetail = ""
+	v.InvalidReason = ""
+	v.Features = ""
+	v.OriginaFee = 0
+	v.ActualFee = 0
+	v.Valid = false
+	poolResourceDto.Put(v)
 }

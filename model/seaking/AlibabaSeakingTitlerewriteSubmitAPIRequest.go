@@ -2,6 +2,7 @@ package seaking
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaSeakingTitlerewriteSubmitAPIRequest struct {
 // NewAlibabaSeakingTitlerewriteSubmitRequest 初始化AlibabaSeakingTitlerewriteSubmitAPIRequest对象
 func NewAlibabaSeakingTitlerewriteSubmitRequest() *AlibabaSeakingTitlerewriteSubmitAPIRequest {
 	return &AlibabaSeakingTitlerewriteSubmitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSeakingTitlerewriteSubmitAPIRequest) Reset() {
+	r._titleRewriteDetailList = r._titleRewriteDetailList[:0]
+	r._tokenFrom = ""
+	r._token = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaSeakingTitlerewriteSubmitAPIRequest) SetToken(_token string) err
 // GetToken Token Getter
 func (r AlibabaSeakingTitlerewriteSubmitAPIRequest) GetToken() string {
 	return r._token
+}
+
+var poolAlibabaSeakingTitlerewriteSubmitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSeakingTitlerewriteSubmitRequest()
+	},
+}
+
+// GetAlibabaSeakingTitlerewriteSubmitRequest 从 sync.Pool 获取 AlibabaSeakingTitlerewriteSubmitAPIRequest
+func GetAlibabaSeakingTitlerewriteSubmitAPIRequest() *AlibabaSeakingTitlerewriteSubmitAPIRequest {
+	return poolAlibabaSeakingTitlerewriteSubmitAPIRequest.Get().(*AlibabaSeakingTitlerewriteSubmitAPIRequest)
+}
+
+// ReleaseAlibabaSeakingTitlerewriteSubmitAPIRequest 将 AlibabaSeakingTitlerewriteSubmitAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSeakingTitlerewriteSubmitAPIRequest(v *AlibabaSeakingTitlerewriteSubmitAPIRequest) {
+	v.Reset()
+	poolAlibabaSeakingTitlerewriteSubmitAPIRequest.Put(v)
 }

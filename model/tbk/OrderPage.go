@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // OrderPage 结构体
 type OrderPage struct {
 	// PublisherOrderDto
@@ -20,4 +24,29 @@ type OrderPage struct {
 	HasPre bool `json:"has_pre,omitempty" xml:"has_pre,omitempty"`
 	// 是否还有下一页
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
+}
+
+var poolOrderPage = sync.Pool{
+	New: func() any {
+		return new(OrderPage)
+	},
+}
+
+// GetOrderPage() 从对象池中获取OrderPage
+func GetOrderPage() *OrderPage {
+	return poolOrderPage.Get().(*OrderPage)
+}
+
+// ReleaseOrderPage 释放OrderPage
+func ReleaseOrderPage(v *OrderPage) {
+	v.Results = v.Results[:0]
+	v.Result = v.Result[:0]
+	v.PositionIndex = ""
+	v.PageNo = 0
+	v.PageSize = 0
+	v.PrePage = 0
+	v.NextPage = 0
+	v.HasPre = false
+	v.HasNext = false
+	poolOrderPage.Put(v)
 }

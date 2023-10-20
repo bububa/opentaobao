@@ -1,5 +1,9 @@
 package waybill
 
+import (
+	"sync"
+)
+
 // WaybillCloudPrintApplyNewRequest 结构体
 type WaybillCloudPrintApplyNewRequest struct {
 	// 请求面单信息，数量限制为10
@@ -36,4 +40,37 @@ type WaybillCloudPrintApplyNewRequest struct {
 	MultiPackagesShipment bool `json:"multi_packages_shipment,omitempty" xml:"multi_packages_shipment,omitempty"`
 	// 是否预约上门
 	CallDoorPickUp bool `json:"call_door_pick_up,omitempty" xml:"call_door_pick_up,omitempty"`
+}
+
+var poolWaybillCloudPrintApplyNewRequest = sync.Pool{
+	New: func() any {
+		return new(WaybillCloudPrintApplyNewRequest)
+	},
+}
+
+// GetWaybillCloudPrintApplyNewRequest() 从对象池中获取WaybillCloudPrintApplyNewRequest
+func GetWaybillCloudPrintApplyNewRequest() *WaybillCloudPrintApplyNewRequest {
+	return poolWaybillCloudPrintApplyNewRequest.Get().(*WaybillCloudPrintApplyNewRequest)
+}
+
+// ReleaseWaybillCloudPrintApplyNewRequest 释放WaybillCloudPrintApplyNewRequest
+func ReleaseWaybillCloudPrintApplyNewRequest(v *WaybillCloudPrintApplyNewRequest) {
+	v.TradeOrderInfoDtos = v.TradeOrderInfoDtos[:0]
+	v.CpCode = ""
+	v.ProductCode = ""
+	v.StoreCode = ""
+	v.ResourceCode = ""
+	v.BrandCode = ""
+	v.ExtraInfo = ""
+	v.CustomerCode = ""
+	v.DoorPickUpTime = ""
+	v.DoorPickUpEndTime = ""
+	v.ShippingBranchCode = ""
+	v.Sender = nil
+	v.DmsSorting = false
+	v.ThreePlTiming = false
+	v.NeedEncrypt = false
+	v.MultiPackagesShipment = false
+	v.CallDoorPickUp = false
+	poolWaybillCloudPrintApplyNewRequest.Put(v)
 }

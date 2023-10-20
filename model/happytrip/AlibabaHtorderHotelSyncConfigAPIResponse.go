@@ -2,6 +2,7 @@ package happytrip
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaHtorderHotelSyncConfigAPIResponse struct {
 	model.CommonResponse
 	AlibabaHtorderHotelSyncConfigAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaHtorderHotelSyncConfigAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaHtorderHotelSyncConfigAPIResponseModel).Reset()
 }
 
 // AlibabaHtorderHotelSyncConfigAPIResponseModel is 同步配置信息 成功返回结果
@@ -30,4 +37,31 @@ type AlibabaHtorderHotelSyncConfigAPIResponseModel struct {
 	Succ bool `json:"succ,omitempty" xml:"succ,omitempty"`
 	// 成功OR失败
 	Content bool `json:"content,omitempty" xml:"content,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaHtorderHotelSyncConfigAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrNo = ""
+	m.StackTrace = ""
+	m.ErrInfo = ""
+	m.Succ = false
+	m.Content = false
+}
+
+var poolAlibabaHtorderHotelSyncConfigAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaHtorderHotelSyncConfigAPIResponse)
+	},
+}
+
+// GetAlibabaHtorderHotelSyncConfigAPIResponse 从 sync.Pool 获取 AlibabaHtorderHotelSyncConfigAPIResponse
+func GetAlibabaHtorderHotelSyncConfigAPIResponse() *AlibabaHtorderHotelSyncConfigAPIResponse {
+	return poolAlibabaHtorderHotelSyncConfigAPIResponse.Get().(*AlibabaHtorderHotelSyncConfigAPIResponse)
+}
+
+// ReleaseAlibabaHtorderHotelSyncConfigAPIResponse 将 AlibabaHtorderHotelSyncConfigAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaHtorderHotelSyncConfigAPIResponse(v *AlibabaHtorderHotelSyncConfigAPIResponse) {
+	v.Reset()
+	poolAlibabaHtorderHotelSyncConfigAPIResponse.Put(v)
 }

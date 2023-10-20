@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // Refunderinfo 结构体
 type Refunderinfo struct {
 	// 国家
@@ -22,4 +26,30 @@ type Refunderinfo struct {
 	RefunderPhone string `json:"refunder_phone,omitempty" xml:"refunder_phone,omitempty"`
 	// 邮编
 	RefunderZipCode string `json:"refunder_zip_code,omitempty" xml:"refunder_zip_code,omitempty"`
+}
+
+var poolRefunderinfo = sync.Pool{
+	New: func() any {
+		return new(Refunderinfo)
+	},
+}
+
+// GetRefunderinfo() 从对象池中获取Refunderinfo
+func GetRefunderinfo() *Refunderinfo {
+	return poolRefunderinfo.Get().(*Refunderinfo)
+}
+
+// ReleaseRefunderinfo 释放Refunderinfo
+func ReleaseRefunderinfo(v *Refunderinfo) {
+	v.RefunderCountry = ""
+	v.RefunderProvince = ""
+	v.RefunderCity = ""
+	v.RefunderArea = ""
+	v.RefunderTown = ""
+	v.RefunderDetailAddress = ""
+	v.RefunderName = ""
+	v.RefunderMobile = ""
+	v.RefunderPhone = ""
+	v.RefunderZipCode = ""
+	poolRefunderinfo.Put(v)
 }

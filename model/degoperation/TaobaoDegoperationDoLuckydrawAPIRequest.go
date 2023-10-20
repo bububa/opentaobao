@@ -2,6 +2,7 @@ package degoperation
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoDegoperationDoLuckydrawAPIRequest struct {
 // NewTaobaoDegoperationDoLuckydrawRequest 初始化TaobaoDegoperationDoLuckydrawAPIRequest对象
 func NewTaobaoDegoperationDoLuckydrawRequest() *TaobaoDegoperationDoLuckydrawAPIRequest {
 	return &TaobaoDegoperationDoLuckydrawAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoDegoperationDoLuckydrawAPIRequest) Reset() {
+	r._degAppKey = ""
+	r._degEventKey = ""
+	r._degAccessToken = ""
+	r._source = ""
+	r._uuid = ""
+	r._paramSign = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoDegoperationDoLuckydrawAPIRequest) SetParamSign(_paramSign string
 // GetParamSign ParamSign Getter
 func (r TaobaoDegoperationDoLuckydrawAPIRequest) GetParamSign() string {
 	return r._paramSign
+}
+
+var poolTaobaoDegoperationDoLuckydrawAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoDegoperationDoLuckydrawRequest()
+	},
+}
+
+// GetTaobaoDegoperationDoLuckydrawRequest 从 sync.Pool 获取 TaobaoDegoperationDoLuckydrawAPIRequest
+func GetTaobaoDegoperationDoLuckydrawAPIRequest() *TaobaoDegoperationDoLuckydrawAPIRequest {
+	return poolTaobaoDegoperationDoLuckydrawAPIRequest.Get().(*TaobaoDegoperationDoLuckydrawAPIRequest)
+}
+
+// ReleaseTaobaoDegoperationDoLuckydrawAPIRequest 将 TaobaoDegoperationDoLuckydrawAPIRequest 放入 sync.Pool
+func ReleaseTaobaoDegoperationDoLuckydrawAPIRequest(v *TaobaoDegoperationDoLuckydrawAPIRequest) {
+	v.Reset()
+	poolTaobaoDegoperationDoLuckydrawAPIRequest.Put(v)
 }

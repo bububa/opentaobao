@@ -9,11 +9,6 @@ import (
 // alibaba.member.point.change.sync
 //
 // 成长值/积分变更记录同步
-func AlibabaMemberPointChangeSync(clt *core.SDKClient, req *alimember.AlibabaMemberPointChangeSyncAPIRequest, session string) (*alimember.AlibabaMemberPointChangeSyncAPIResponse, error) {
-	var resp alimember.AlibabaMemberPointChangeSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMemberPointChangeSync(clt *core.SDKClient, req *alimember.AlibabaMemberPointChangeSyncAPIRequest, resp *alimember.AlibabaMemberPointChangeSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

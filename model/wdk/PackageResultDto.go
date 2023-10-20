@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // PackageResultDto 结构体
 type PackageResultDto struct {
 	// 路由节点
@@ -26,4 +30,32 @@ type PackageResultDto struct {
 	WaveTime string `json:"wave_time,omitempty" xml:"wave_time,omitempty"`
 	// 应履约日期
 	FulfillDate string `json:"fulfill_date,omitempty" xml:"fulfill_date,omitempty"`
+}
+
+var poolPackageResultDto = sync.Pool{
+	New: func() any {
+		return new(PackageResultDto)
+	},
+}
+
+// GetPackageResultDto() 从对象池中获取PackageResultDto
+func GetPackageResultDto() *PackageResultDto {
+	return poolPackageResultDto.Get().(*PackageResultDto)
+}
+
+// ReleasePackageResultDto 释放PackageResultDto
+func ReleasePackageResultDto(v *PackageResultDto) {
+	v.RouteNodes = v.RouteNodes[:0]
+	v.TokenCodes = v.TokenCodes[:0]
+	v.OperationalRequirement = ""
+	v.MergeOrderTag = ""
+	v.BuyerAddress = ""
+	v.BuyerPhone = ""
+	v.BuyerName = ""
+	v.TimeOrderTag = ""
+	v.AoiName = ""
+	v.RouteArea = ""
+	v.WaveTime = ""
+	v.FulfillDate = ""
+	poolPackageResultDto.Put(v)
 }

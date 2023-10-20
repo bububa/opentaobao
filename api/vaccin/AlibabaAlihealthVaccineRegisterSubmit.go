@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.vaccine.register.submit
 //
 // cdc回传疫苗登记信息
-func AlibabaAlihealthVaccineRegisterSubmit(clt *core.SDKClient, req *vaccin.AlibabaAlihealthVaccineRegisterSubmitAPIRequest, session string) (*vaccin.AlibabaAlihealthVaccineRegisterSubmitAPIResponse, error) {
-	var resp vaccin.AlibabaAlihealthVaccineRegisterSubmitAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthVaccineRegisterSubmit(clt *core.SDKClient, req *vaccin.AlibabaAlihealthVaccineRegisterSubmitAPIRequest, resp *vaccin.AlibabaAlihealthVaccineRegisterSubmitAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

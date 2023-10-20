@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIRequest struct {
 // NewAlibabaAscpAicSupplierAicinventoryNegativeSaleQueryRequest 初始化AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIRequest对象
 func NewAlibabaAscpAicSupplierAicinventoryNegativeSaleQueryRequest() *AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIRequest {
 	return &AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIRequest) Reset() {
+	r._aicinventoryQueryRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIRequest) SetAicin
 // GetAicinventoryQueryRequest AicinventoryQueryRequest Getter
 func (r AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIRequest) GetAicinventoryQueryRequest() *Aicinventoryqueryrequest {
 	return r._aicinventoryQueryRequest
+}
+
+var poolAlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpAicSupplierAicinventoryNegativeSaleQueryRequest()
+	},
+}
+
+// GetAlibabaAscpAicSupplierAicinventoryNegativeSaleQueryRequest 从 sync.Pool 获取 AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIRequest
+func GetAlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIRequest() *AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIRequest {
+	return poolAlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIRequest.Get().(*AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIRequest)
+}
+
+// ReleaseAlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIRequest 将 AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIRequest(v *AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package moziacl
 
+import (
+	"sync"
+)
+
 // UpdateRolesToPermissionPackageResult 结构体
 type UpdateRolesToPermissionPackageResult struct {
 	// 返回data，此接口此字段返回值为空
@@ -14,4 +18,26 @@ type UpdateRolesToPermissionPackageResult struct {
 	ResponseCode string `json:"response_code,omitempty" xml:"response_code,omitempty"`
 	// 是否调用成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolUpdateRolesToPermissionPackageResult = sync.Pool{
+	New: func() any {
+		return new(UpdateRolesToPermissionPackageResult)
+	},
+}
+
+// GetUpdateRolesToPermissionPackageResult() 从对象池中获取UpdateRolesToPermissionPackageResult
+func GetUpdateRolesToPermissionPackageResult() *UpdateRolesToPermissionPackageResult {
+	return poolUpdateRolesToPermissionPackageResult.Get().(*UpdateRolesToPermissionPackageResult)
+}
+
+// ReleaseUpdateRolesToPermissionPackageResult 释放UpdateRolesToPermissionPackageResult
+func ReleaseUpdateRolesToPermissionPackageResult(v *UpdateRolesToPermissionPackageResult) {
+	v.Data = ""
+	v.RequestId = ""
+	v.ResponseMessage = ""
+	v.ResponseMetaData = ""
+	v.ResponseCode = ""
+	v.Success = false
+	poolUpdateRolesToPermissionPackageResult.Put(v)
 }

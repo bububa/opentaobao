@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAlihealthDrugKytWesGetbyrefentidAPIRequest struct {
 // NewAlibabaAlihealthDrugKytWesGetbyrefentidRequest 初始化AlibabaAlihealthDrugKytWesGetbyrefentidAPIRequest对象
 func NewAlibabaAlihealthDrugKytWesGetbyrefentidRequest() *AlibabaAlihealthDrugKytWesGetbyrefentidAPIRequest {
 	return &AlibabaAlihealthDrugKytWesGetbyrefentidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugKytWesGetbyrefentidAPIRequest) Reset() {
+	r._refEntId = ""
+	r._licenseToken = ""
+	r._destRefEntId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAlihealthDrugKytWesGetbyrefentidAPIRequest) SetDestRefEntId(_des
 // GetDestRefEntId DestRefEntId Getter
 func (r AlibabaAlihealthDrugKytWesGetbyrefentidAPIRequest) GetDestRefEntId() string {
 	return r._destRefEntId
+}
+
+var poolAlibabaAlihealthDrugKytWesGetbyrefentidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugKytWesGetbyrefentidRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugKytWesGetbyrefentidRequest 从 sync.Pool 获取 AlibabaAlihealthDrugKytWesGetbyrefentidAPIRequest
+func GetAlibabaAlihealthDrugKytWesGetbyrefentidAPIRequest() *AlibabaAlihealthDrugKytWesGetbyrefentidAPIRequest {
+	return poolAlibabaAlihealthDrugKytWesGetbyrefentidAPIRequest.Get().(*AlibabaAlihealthDrugKytWesGetbyrefentidAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugKytWesGetbyrefentidAPIRequest 将 AlibabaAlihealthDrugKytWesGetbyrefentidAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytWesGetbyrefentidAPIRequest(v *AlibabaAlihealthDrugKytWesGetbyrefentidAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytWesGetbyrefentidAPIRequest.Put(v)
 }

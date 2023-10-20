@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // BillDealStatusSearchDo 结构体
 type BillDealStatusSearchDo struct {
 	// 出入库号
@@ -50,4 +54,44 @@ type BillDealStatusSearchDo struct {
 	UserId string `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// 处理信息
 	ProcessInfo string `json:"process_info,omitempty" xml:"process_info,omitempty"`
+}
+
+var poolBillDealStatusSearchDo = sync.Pool{
+	New: func() any {
+		return new(BillDealStatusSearchDo)
+	},
+}
+
+// GetBillDealStatusSearchDo() 从对象池中获取BillDealStatusSearchDo
+func GetBillDealStatusSearchDo() *BillDealStatusSearchDo {
+	return poolBillDealStatusSearchDo.Get().(*BillDealStatusSearchDo)
+}
+
+// ReleaseBillDealStatusSearchDo 释放BillDealStatusSearchDo
+func ReleaseBillDealStatusSearchDo(v *BillDealStatusSearchDo) {
+	v.StoreInoutSeqNo = ""
+	v.PhysicType = ""
+	v.UploadFileName = ""
+	v.FromUserName = ""
+	v.RoleType = ""
+	v.CrtDate = ""
+	v.IcCode = ""
+	v.ShortFileName = ""
+	v.RefUserName = ""
+	v.BillTime = ""
+	v.ResultType = ""
+	v.UploadFlag = ""
+	v.ProcessFlag = ""
+	v.ProcessDate = ""
+	v.BillCode = ""
+	v.BillType = ""
+	v.ToUserName = ""
+	v.FromUserId = ""
+	v.FromRefUserId = ""
+	v.ToUserId = ""
+	v.RefUserId = ""
+	v.ToRefUserId = ""
+	v.UserId = ""
+	v.ProcessInfo = ""
+	poolBillDealStatusSearchDo.Put(v)
 }

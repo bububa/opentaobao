@@ -2,6 +2,7 @@ package openim
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoOpenimTribeUnsetmanagerAPIRequest struct {
 // NewTaobaoOpenimTribeUnsetmanagerRequest 初始化TaobaoOpenimTribeUnsetmanagerAPIRequest对象
 func NewTaobaoOpenimTribeUnsetmanagerRequest() *TaobaoOpenimTribeUnsetmanagerAPIRequest {
 	return &TaobaoOpenimTribeUnsetmanagerAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpenimTribeUnsetmanagerAPIRequest) Reset() {
+	r._user = nil
+	r._tid = 0
+	r._member = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoOpenimTribeUnsetmanagerAPIRequest) SetMember(_member *OpenImUser)
 // GetMember Member Getter
 func (r TaobaoOpenimTribeUnsetmanagerAPIRequest) GetMember() *OpenImUser {
 	return r._member
+}
+
+var poolTaobaoOpenimTribeUnsetmanagerAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpenimTribeUnsetmanagerRequest()
+	},
+}
+
+// GetTaobaoOpenimTribeUnsetmanagerRequest 从 sync.Pool 获取 TaobaoOpenimTribeUnsetmanagerAPIRequest
+func GetTaobaoOpenimTribeUnsetmanagerAPIRequest() *TaobaoOpenimTribeUnsetmanagerAPIRequest {
+	return poolTaobaoOpenimTribeUnsetmanagerAPIRequest.Get().(*TaobaoOpenimTribeUnsetmanagerAPIRequest)
+}
+
+// ReleaseTaobaoOpenimTribeUnsetmanagerAPIRequest 将 TaobaoOpenimTribeUnsetmanagerAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpenimTribeUnsetmanagerAPIRequest(v *TaobaoOpenimTribeUnsetmanagerAPIRequest) {
+	v.Reset()
+	poolTaobaoOpenimTribeUnsetmanagerAPIRequest.Put(v)
 }

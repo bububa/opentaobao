@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // MemberBaseInfoDto 结构体
 type MemberBaseInfoDto struct {
 	// 用户英文姓
@@ -16,4 +20,27 @@ type MemberBaseInfoDto struct {
 	Gender string `json:"gender,omitempty" xml:"gender,omitempty"`
 	// 是否接受广告通知
 	Subscription bool `json:"subscription,omitempty" xml:"subscription,omitempty"`
+}
+
+var poolMemberBaseInfoDto = sync.Pool{
+	New: func() any {
+		return new(MemberBaseInfoDto)
+	},
+}
+
+// GetMemberBaseInfoDto() 从对象池中获取MemberBaseInfoDto
+func GetMemberBaseInfoDto() *MemberBaseInfoDto {
+	return poolMemberBaseInfoDto.Get().(*MemberBaseInfoDto)
+}
+
+// ReleaseMemberBaseInfoDto 释放MemberBaseInfoDto
+func ReleaseMemberBaseInfoDto(v *MemberBaseInfoDto) {
+	v.FirstName = ""
+	v.LastName = ""
+	v.Civility = ""
+	v.Language = ""
+	v.Country = ""
+	v.Gender = ""
+	v.Subscription = false
+	poolMemberBaseInfoDto.Put(v)
 }

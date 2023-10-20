@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // CodeRelationDetailListDo 结构体
 type CodeRelationDetailListDo struct {
 	// 包装规格= 数量+ 制剂单位/包装单位
@@ -36,4 +40,37 @@ type CodeRelationDetailListDo struct {
 	PkgUnitDesc string `json:"pkg_unit_desc,omitempty" xml:"pkg_unit_desc,omitempty"`
 	// 制剂单位
 	PrepnUnitDesc string `json:"prepn_unit_desc,omitempty" xml:"prepn_unit_desc,omitempty"`
+}
+
+var poolCodeRelationDetailListDo = sync.Pool{
+	New: func() any {
+		return new(CodeRelationDetailListDo)
+	},
+}
+
+// GetCodeRelationDetailListDo() 从对象池中获取CodeRelationDetailListDo
+func GetCodeRelationDetailListDo() *CodeRelationDetailListDo {
+	return poolCodeRelationDetailListDo.Get().(*CodeRelationDetailListDo)
+}
+
+// ReleaseCodeRelationDetailListDo 释放CodeRelationDetailListDo
+func ReleaseCodeRelationDetailListDo(v *CodeRelationDetailListDo) {
+	v.PkgSpec = ""
+	v.BatchNum = ""
+	v.DutyMan = ""
+	v.ActiveCount = ""
+	v.OtherNum = ""
+	v.SmallNum = ""
+	v.ProduceLine = ""
+	v.ProduceFactory = ""
+	v.PkgRatio = ""
+	v.ProduceDate = ""
+	v.ExprieDate = ""
+	v.ProduceBatchNo = ""
+	v.DrugId = ""
+	v.CodeActiveInfoId = ""
+	v.CodeActiveInfoListId = ""
+	v.PkgUnitDesc = ""
+	v.PrepnUnitDesc = ""
+	poolCodeRelationDetailListDo.Put(v)
 }

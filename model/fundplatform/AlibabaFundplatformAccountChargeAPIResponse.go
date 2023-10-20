@@ -2,6 +2,7 @@ package fundplatform
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaFundplatformAccountChargeAPIResponse struct {
 	AlibabaFundplatformAccountChargeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaFundplatformAccountChargeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaFundplatformAccountChargeAPIResponseModel).Reset()
+}
+
 // AlibabaFundplatformAccountChargeAPIResponseModel is 资金平台余额账户充值 成功返回结果
 type AlibabaFundplatformAccountChargeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_fundplatform_account_charge_response"`
@@ -22,4 +29,27 @@ type AlibabaFundplatformAccountChargeAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *ResultSupport `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaFundplatformAccountChargeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaFundplatformAccountChargeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaFundplatformAccountChargeAPIResponse)
+	},
+}
+
+// GetAlibabaFundplatformAccountChargeAPIResponse 从 sync.Pool 获取 AlibabaFundplatformAccountChargeAPIResponse
+func GetAlibabaFundplatformAccountChargeAPIResponse() *AlibabaFundplatformAccountChargeAPIResponse {
+	return poolAlibabaFundplatformAccountChargeAPIResponse.Get().(*AlibabaFundplatformAccountChargeAPIResponse)
+}
+
+// ReleaseAlibabaFundplatformAccountChargeAPIResponse 将 AlibabaFundplatformAccountChargeAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaFundplatformAccountChargeAPIResponse(v *AlibabaFundplatformAccountChargeAPIResponse) {
+	v.Reset()
+	poolAlibabaFundplatformAccountChargeAPIResponse.Put(v)
 }

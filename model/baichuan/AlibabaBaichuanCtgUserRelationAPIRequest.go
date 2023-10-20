@@ -2,6 +2,7 @@ package baichuan
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaBaichuanCtgUserRelationAPIRequest struct {
 // NewAlibabaBaichuanCtgUserRelationRequest 初始化AlibabaBaichuanCtgUserRelationAPIRequest对象
 func NewAlibabaBaichuanCtgUserRelationRequest() *AlibabaBaichuanCtgUserRelationAPIRequest {
 	return &AlibabaBaichuanCtgUserRelationAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaBaichuanCtgUserRelationAPIRequest) Reset() {
+	r._app = ""
+	r._uid = ""
+	r._tbUid = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaBaichuanCtgUserRelationAPIRequest) SetTbUid(_tbUid string) error
 // GetTbUid TbUid Getter
 func (r AlibabaBaichuanCtgUserRelationAPIRequest) GetTbUid() string {
 	return r._tbUid
+}
+
+var poolAlibabaBaichuanCtgUserRelationAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaBaichuanCtgUserRelationRequest()
+	},
+}
+
+// GetAlibabaBaichuanCtgUserRelationRequest 从 sync.Pool 获取 AlibabaBaichuanCtgUserRelationAPIRequest
+func GetAlibabaBaichuanCtgUserRelationAPIRequest() *AlibabaBaichuanCtgUserRelationAPIRequest {
+	return poolAlibabaBaichuanCtgUserRelationAPIRequest.Get().(*AlibabaBaichuanCtgUserRelationAPIRequest)
+}
+
+// ReleaseAlibabaBaichuanCtgUserRelationAPIRequest 将 AlibabaBaichuanCtgUserRelationAPIRequest 放入 sync.Pool
+func ReleaseAlibabaBaichuanCtgUserRelationAPIRequest(v *AlibabaBaichuanCtgUserRelationAPIRequest) {
+	v.Reset()
+	poolAlibabaBaichuanCtgUserRelationAPIRequest.Put(v)
 }

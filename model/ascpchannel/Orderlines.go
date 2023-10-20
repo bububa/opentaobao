@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // Orderlines 结构体
 type Orderlines struct {
 	// 店铺编码
@@ -22,4 +26,30 @@ type Orderlines struct {
 	OrderLineNo string `json:"order_line_no,omitempty" xml:"order_line_no,omitempty"`
 	// 应发商品数量
 	PlanQty int64 `json:"plan_qty,omitempty" xml:"plan_qty,omitempty"`
+}
+
+var poolOrderlines = sync.Pool{
+	New: func() any {
+		return new(Orderlines)
+	},
+}
+
+// GetOrderlines() 从对象池中获取Orderlines
+func GetOrderlines() *Orderlines {
+	return poolOrderlines.Get().(*Orderlines)
+}
+
+// ReleaseOrderlines 释放Orderlines
+func ReleaseOrderlines(v *Orderlines) {
+	v.ShopCode = ""
+	v.ActualPrice = ""
+	v.RetailPrice = ""
+	v.ItemName = ""
+	v.ItemCode = ""
+	v.ItemId = ""
+	v.SubSourceOrderCode = ""
+	v.SourceOrderCode = ""
+	v.OrderLineNo = ""
+	v.PlanQty = 0
+	poolOrderlines.Put(v)
 }

@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeTradeitemRelationAPIRequest struct {
 // NewAlibabaAlihouseNewhomeTradeitemRelationRequest 初始化AlibabaAlihouseNewhomeTradeitemRelationAPIRequest对象
 func NewAlibabaAlihouseNewhomeTradeitemRelationRequest() *AlibabaAlihouseNewhomeTradeitemRelationAPIRequest {
 	return &AlibabaAlihouseNewhomeTradeitemRelationAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeTradeitemRelationAPIRequest) Reset() {
+	r._relationBindingDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomeTradeitemRelationAPIRequest) SetRelationBindingDt
 // GetRelationBindingDto RelationBindingDto Getter
 func (r AlibabaAlihouseNewhomeTradeitemRelationAPIRequest) GetRelationBindingDto() *RelationBindingDto {
 	return r._relationBindingDto
+}
+
+var poolAlibabaAlihouseNewhomeTradeitemRelationAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeTradeitemRelationRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeTradeitemRelationRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeTradeitemRelationAPIRequest
+func GetAlibabaAlihouseNewhomeTradeitemRelationAPIRequest() *AlibabaAlihouseNewhomeTradeitemRelationAPIRequest {
+	return poolAlibabaAlihouseNewhomeTradeitemRelationAPIRequest.Get().(*AlibabaAlihouseNewhomeTradeitemRelationAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeTradeitemRelationAPIRequest 将 AlibabaAlihouseNewhomeTradeitemRelationAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeTradeitemRelationAPIRequest(v *AlibabaAlihouseNewhomeTradeitemRelationAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeTradeitemRelationAPIRequest.Put(v)
 }

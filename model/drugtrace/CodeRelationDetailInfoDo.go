@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // CodeRelationDetailInfoDo 结构体
 type CodeRelationDetailInfoDo struct {
 	// 处理日期
@@ -38,4 +42,38 @@ type CodeRelationDetailInfoDo struct {
 	CodeActiveInfoId string `json:"code_active_info_id,omitempty" xml:"code_active_info_id,omitempty"`
 	// 企业id
 	EntId string `json:"ent_id,omitempty" xml:"ent_id,omitempty"`
+}
+
+var poolCodeRelationDetailInfoDo = sync.Pool{
+	New: func() any {
+		return new(CodeRelationDetailInfoDo)
+	},
+}
+
+// GetCodeRelationDetailInfoDo() 从对象池中获取CodeRelationDetailInfoDo
+func GetCodeRelationDetailInfoDo() *CodeRelationDetailInfoDo {
+	return poolCodeRelationDetailInfoDo.Get().(*CodeRelationDetailInfoDo)
+}
+
+// ReleaseCodeRelationDetailInfoDo 释放CodeRelationDetailInfoDo
+func ReleaseCodeRelationDetailInfoDo(v *CodeRelationDetailInfoDo) {
+	v.ProcessDate = ""
+	v.RelationType = ""
+	v.Note = ""
+	v.ProcessFlag = ""
+	v.UserCert = ""
+	v.OperIcName = ""
+	v.OperIcCode = ""
+	v.FileName = ""
+	v.UploadFlag = ""
+	v.CrtDate = ""
+	v.ActiveDate = ""
+	v.OtherNum = ""
+	v.SmallNum = ""
+	v.ActiveCount = ""
+	v.ActiveMethod = ""
+	v.ApplySeqNo = ""
+	v.CodeActiveInfoId = ""
+	v.EntId = ""
+	poolCodeRelationDetailInfoDo.Put(v)
 }

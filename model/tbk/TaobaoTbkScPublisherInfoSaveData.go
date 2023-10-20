@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // TaobaoTbkScPublisherInfoSaveData 结构体
 type TaobaoTbkScPublisherInfoSaveData struct {
 	// 渠道昵称
@@ -10,4 +14,24 @@ type TaobaoTbkScPublisherInfoSaveData struct {
 	RelationId int64 `json:"relation_id,omitempty" xml:"relation_id,omitempty"`
 	// 会员运营ID
 	SpecialId int64 `json:"special_id,omitempty" xml:"special_id,omitempty"`
+}
+
+var poolTaobaoTbkScPublisherInfoSaveData = sync.Pool{
+	New: func() any {
+		return new(TaobaoTbkScPublisherInfoSaveData)
+	},
+}
+
+// GetTaobaoTbkScPublisherInfoSaveData() 从对象池中获取TaobaoTbkScPublisherInfoSaveData
+func GetTaobaoTbkScPublisherInfoSaveData() *TaobaoTbkScPublisherInfoSaveData {
+	return poolTaobaoTbkScPublisherInfoSaveData.Get().(*TaobaoTbkScPublisherInfoSaveData)
+}
+
+// ReleaseTaobaoTbkScPublisherInfoSaveData 释放TaobaoTbkScPublisherInfoSaveData
+func ReleaseTaobaoTbkScPublisherInfoSaveData(v *TaobaoTbkScPublisherInfoSaveData) {
+	v.AccountName = ""
+	v.Desc = ""
+	v.RelationId = 0
+	v.SpecialId = 0
+	poolTaobaoTbkScPublisherInfoSaveData.Put(v)
 }

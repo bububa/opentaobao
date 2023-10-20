@@ -2,6 +2,7 @@ package alilabs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAilabUserAuthorizedQueryAPIRequest struct {
 // NewAlibabaAilabUserAuthorizedQueryRequest 初始化AlibabaAilabUserAuthorizedQueryAPIRequest对象
 func NewAlibabaAilabUserAuthorizedQueryRequest() *AlibabaAilabUserAuthorizedQueryAPIRequest {
 	return &AlibabaAilabUserAuthorizedQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabUserAuthorizedQueryAPIRequest) Reset() {
+	r._schemaKey = ""
+	r._merchantUserId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAilabUserAuthorizedQueryAPIRequest) SetMerchantUserId(_merchantU
 // GetMerchantUserId MerchantUserId Getter
 func (r AlibabaAilabUserAuthorizedQueryAPIRequest) GetMerchantUserId() string {
 	return r._merchantUserId
+}
+
+var poolAlibabaAilabUserAuthorizedQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabUserAuthorizedQueryRequest()
+	},
+}
+
+// GetAlibabaAilabUserAuthorizedQueryRequest 从 sync.Pool 获取 AlibabaAilabUserAuthorizedQueryAPIRequest
+func GetAlibabaAilabUserAuthorizedQueryAPIRequest() *AlibabaAilabUserAuthorizedQueryAPIRequest {
+	return poolAlibabaAilabUserAuthorizedQueryAPIRequest.Get().(*AlibabaAilabUserAuthorizedQueryAPIRequest)
+}
+
+// ReleaseAlibabaAilabUserAuthorizedQueryAPIRequest 将 AlibabaAilabUserAuthorizedQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabUserAuthorizedQueryAPIRequest(v *AlibabaAilabUserAuthorizedQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabUserAuthorizedQueryAPIRequest.Put(v)
 }

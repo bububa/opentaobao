@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // HotelListSearchDto 结构体
 type HotelListSearchDto struct {
 	// 酒店设施
@@ -56,4 +60,47 @@ type HotelListSearchDto struct {
 	VoucherInfo *VoucherVo `json:"voucher_info,omitempty" xml:"voucher_info,omitempty"`
 	// 是否满房 0未满房1满房
 	Full bool `json:"full,omitempty" xml:"full,omitempty"`
+}
+
+var poolHotelListSearchDto = sync.Pool{
+	New: func() any {
+		return new(HotelListSearchDto)
+	},
+}
+
+// GetHotelListSearchDto() 从对象池中获取HotelListSearchDto
+func GetHotelListSearchDto() *HotelListSearchDto {
+	return poolHotelListSearchDto.Get().(*HotelListSearchDto)
+}
+
+// ReleaseHotelListSearchDto 释放HotelListSearchDto
+func ReleaseHotelListSearchDto(v *HotelListSearchDto) {
+	v.HotelFacilityList = v.HotelFacilityList[:0]
+	v.FunFacilityList = v.FunFacilityList[:0]
+	v.HotelServiceList = v.HotelServiceList[:0]
+	v.FacilityList = v.FacilityList[:0]
+	v.BrandName = ""
+	v.Address = ""
+	v.Star = ""
+	v.Latitude = ""
+	v.PictureUrl = ""
+	v.NameCn = ""
+	v.HotelId = ""
+	v.Domestic = ""
+	v.BrandUrl = ""
+	v.CityCn = ""
+	v.CountryCn = ""
+	v.RoomNameCn = ""
+	v.Longitude = ""
+	v.BrandCode = ""
+	v.CityPy = ""
+	v.Phone = ""
+	v.PositionType = 0
+	v.Shid = 0
+	v.Price = 0
+	v.Id = 0
+	v.Hot = 0
+	v.VoucherInfo = nil
+	v.Full = false
+	poolHotelListSearchDto.Put(v)
 }

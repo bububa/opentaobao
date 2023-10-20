@@ -2,6 +2,7 @@ package miniappopen
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoMiniappDistributionOrderItemsAllBindAPIResponse struct {
 	TaobaoMiniappDistributionOrderItemsAllBindAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoMiniappDistributionOrderItemsAllBindAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoMiniappDistributionOrderItemsAllBindAPIResponseModel).Reset()
+}
+
 // TaobaoMiniappDistributionOrderItemsAllBindAPIResponseModel is 小程序投放-基于投放计划绑定/解绑全店商品 成功返回结果
 type TaobaoMiniappDistributionOrderItemsAllBindAPIResponseModel struct {
 	XMLName xml.Name `xml:"miniapp_distribution_order_items_all_bind_response"`
@@ -22,4 +29,27 @@ type TaobaoMiniappDistributionOrderItemsAllBindAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 是否绑定/解绑成功
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoMiniappDistributionOrderItemsAllBindAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Model = false
+}
+
+var poolTaobaoMiniappDistributionOrderItemsAllBindAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoMiniappDistributionOrderItemsAllBindAPIResponse)
+	},
+}
+
+// GetTaobaoMiniappDistributionOrderItemsAllBindAPIResponse 从 sync.Pool 获取 TaobaoMiniappDistributionOrderItemsAllBindAPIResponse
+func GetTaobaoMiniappDistributionOrderItemsAllBindAPIResponse() *TaobaoMiniappDistributionOrderItemsAllBindAPIResponse {
+	return poolTaobaoMiniappDistributionOrderItemsAllBindAPIResponse.Get().(*TaobaoMiniappDistributionOrderItemsAllBindAPIResponse)
+}
+
+// ReleaseTaobaoMiniappDistributionOrderItemsAllBindAPIResponse 将 TaobaoMiniappDistributionOrderItemsAllBindAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoMiniappDistributionOrderItemsAllBindAPIResponse(v *TaobaoMiniappDistributionOrderItemsAllBindAPIResponse) {
+	v.Reset()
+	poolTaobaoMiniappDistributionOrderItemsAllBindAPIResponse.Put(v)
 }

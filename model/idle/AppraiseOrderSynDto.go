@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // AppraiseOrderSynDto 结构体
 type AppraiseOrderSynDto struct {
 	// biz_order_id
@@ -12,4 +16,25 @@ type AppraiseOrderSynDto struct {
 	TriggerEvent string `json:"trigger_event,omitempty" xml:"trigger_event,omitempty"`
 	// 根据订单状态不同，传递不同的内容
 	Attribute *Attribute `json:"attribute,omitempty" xml:"attribute,omitempty"`
+}
+
+var poolAppraiseOrderSynDto = sync.Pool{
+	New: func() any {
+		return new(AppraiseOrderSynDto)
+	},
+}
+
+// GetAppraiseOrderSynDto() 从对象池中获取AppraiseOrderSynDto
+func GetAppraiseOrderSynDto() *AppraiseOrderSynDto {
+	return poolAppraiseOrderSynDto.Get().(*AppraiseOrderSynDto)
+}
+
+// ReleaseAppraiseOrderSynDto 释放AppraiseOrderSynDto
+func ReleaseAppraiseOrderSynDto(v *AppraiseOrderSynDto) {
+	v.BizOrderId = ""
+	v.OrderStatus = ""
+	v.OrderSubStatus = ""
+	v.TriggerEvent = ""
+	v.Attribute = nil
+	poolAppraiseOrderSynDto.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // yunos.miniapp.datatunnel.call
 //
 // 对客户提供的api进行统一封装调用。
-func YunosMiniappDatatunnelCall(clt *core.SDKClient, req *yunosminiapp.YunosMiniappDatatunnelCallAPIRequest, session string) (*yunosminiapp.YunosMiniappDatatunnelCallAPIResponse, error) {
-	var resp yunosminiapp.YunosMiniappDatatunnelCallAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosMiniappDatatunnelCall(clt *core.SDKClient, req *yunosminiapp.YunosMiniappDatatunnelCallAPIRequest, resp *yunosminiapp.YunosMiniappDatatunnelCallAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

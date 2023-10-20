@@ -9,11 +9,6 @@ import (
 // taobao.sungari.dispose.submit
 //
 // 商品商家处置信息接口，提供政府部门发送处置信息给阿里
-func TaobaoSungariDisposeSubmit(clt *core.SDKClient, req *sungari.TaobaoSungariDisposeSubmitAPIRequest, session string) (*sungari.TaobaoSungariDisposeSubmitAPIResponse, error) {
-	var resp sungari.TaobaoSungariDisposeSubmitAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSungariDisposeSubmit(clt *core.SDKClient, req *sungari.TaobaoSungariDisposeSubmitAPIRequest, resp *sungari.TaobaoSungariDisposeSubmitAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

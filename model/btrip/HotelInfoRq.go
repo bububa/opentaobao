@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // HotelInfoRq 结构体
 type HotelInfoRq struct {
 	// 渠道子ID
@@ -14,4 +18,26 @@ type HotelInfoRq struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 标准酒店id
 	Shid int64 `json:"shid,omitempty" xml:"shid,omitempty"`
+}
+
+var poolHotelInfoRq = sync.Pool{
+	New: func() any {
+		return new(HotelInfoRq)
+	},
+}
+
+// GetHotelInfoRq() 从对象池中获取HotelInfoRq
+func GetHotelInfoRq() *HotelInfoRq {
+	return poolHotelInfoRq.Get().(*HotelInfoRq)
+}
+
+// ReleaseHotelInfoRq 释放HotelInfoRq
+func ReleaseHotelInfoRq(v *HotelInfoRq) {
+	v.SubChannel = ""
+	v.IsvName = ""
+	v.CityCode = 0
+	v.CurrentPage = 0
+	v.PageSize = 0
+	v.Shid = 0
+	poolHotelInfoRq.Put(v)
 }

@@ -1,5 +1,9 @@
 package paimai
 
+import (
+	"sync"
+)
+
 // ItemTaoSirElDo 结构体
 type ItemTaoSirElDo struct {
 	// 显示文本
@@ -12,4 +16,25 @@ type ItemTaoSirElDo struct {
 	IsLabel bool `json:"is_label,omitempty" xml:"is_label,omitempty"`
 	// 是否输入框
 	IsInput bool `json:"is_input,omitempty" xml:"is_input,omitempty"`
+}
+
+var poolItemTaoSirElDo = sync.Pool{
+	New: func() any {
+		return new(ItemTaoSirElDo)
+	},
+}
+
+// GetItemTaoSirElDo() 从对象池中获取ItemTaoSirElDo
+func GetItemTaoSirElDo() *ItemTaoSirElDo {
+	return poolItemTaoSirElDo.Get().(*ItemTaoSirElDo)
+}
+
+// ReleaseItemTaoSirElDo 释放ItemTaoSirElDo
+func ReleaseItemTaoSirElDo(v *ItemTaoSirElDo) {
+	v.Text = ""
+	v.Type = 0
+	v.IsShowLabel = false
+	v.IsLabel = false
+	v.IsInput = false
+	poolItemTaoSirElDo.Put(v)
 }

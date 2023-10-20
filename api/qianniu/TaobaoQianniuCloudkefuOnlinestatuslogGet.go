@@ -10,11 +10,6 @@ import (
 //
 // 按天查询客服账号的在线状态记录。如：登录，下线，挂起等
 // 有别于taobao.qianniu.cloudkefu.statuslog.get接口，这个接口可以查询30天内的流水，不需要分页查询
-func TaobaoQianniuCloudkefuOnlinestatuslogGet(clt *core.SDKClient, req *qianniu.TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest, session string) (*qianniu.TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponse, error) {
-	var resp qianniu.TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoQianniuCloudkefuOnlinestatuslogGet(clt *core.SDKClient, req *qianniu.TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest, resp *qianniu.TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

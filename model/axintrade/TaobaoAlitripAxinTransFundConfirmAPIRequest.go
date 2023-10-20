@@ -2,6 +2,7 @@ package axintrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAlitripAxinTransFundConfirmAPIRequest struct {
 // NewTaobaoAlitripAxinTransFundConfirmRequest 初始化TaobaoAlitripAxinTransFundConfirmAPIRequest对象
 func NewTaobaoAlitripAxinTransFundConfirmRequest() *TaobaoAlitripAxinTransFundConfirmAPIRequest {
 	return &TaobaoAlitripAxinTransFundConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripAxinTransFundConfirmAPIRequest) Reset() {
+	r._outerOrderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAlitripAxinTransFundConfirmAPIRequest) SetOuterOrderId(_outerOrde
 // GetOuterOrderId OuterOrderId Getter
 func (r TaobaoAlitripAxinTransFundConfirmAPIRequest) GetOuterOrderId() string {
 	return r._outerOrderId
+}
+
+var poolTaobaoAlitripAxinTransFundConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripAxinTransFundConfirmRequest()
+	},
+}
+
+// GetTaobaoAlitripAxinTransFundConfirmRequest 从 sync.Pool 获取 TaobaoAlitripAxinTransFundConfirmAPIRequest
+func GetTaobaoAlitripAxinTransFundConfirmAPIRequest() *TaobaoAlitripAxinTransFundConfirmAPIRequest {
+	return poolTaobaoAlitripAxinTransFundConfirmAPIRequest.Get().(*TaobaoAlitripAxinTransFundConfirmAPIRequest)
+}
+
+// ReleaseTaobaoAlitripAxinTransFundConfirmAPIRequest 将 TaobaoAlitripAxinTransFundConfirmAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripAxinTransFundConfirmAPIRequest(v *TaobaoAlitripAxinTransFundConfirmAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripAxinTransFundConfirmAPIRequest.Put(v)
 }

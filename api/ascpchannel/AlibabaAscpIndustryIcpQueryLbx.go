@@ -9,11 +9,6 @@ import (
 // alibaba.ascp.industry.icp.query.lbx
 //
 // 根据icp订单号查询lbx订单号
-func AlibabaAscpIndustryIcpQueryLbx(clt *core.SDKClient, req *ascpchannel.AlibabaAscpIndustryIcpQueryLbxAPIRequest, session string) (*ascpchannel.AlibabaAscpIndustryIcpQueryLbxAPIResponse, error) {
-	var resp ascpchannel.AlibabaAscpIndustryIcpQueryLbxAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAscpIndustryIcpQueryLbx(clt *core.SDKClient, req *ascpchannel.AlibabaAscpIndustryIcpQueryLbxAPIRequest, resp *ascpchannel.AlibabaAscpIndustryIcpQueryLbxAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

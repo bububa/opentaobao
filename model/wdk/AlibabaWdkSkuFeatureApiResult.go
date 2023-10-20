@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // AlibabaWdkSkuFeatureApiResult 结构体
 type AlibabaWdkSkuFeatureApiResult struct {
 	// 错误编码
@@ -10,4 +14,24 @@ type AlibabaWdkSkuFeatureApiResult struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 业务是否成功
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
+}
+
+var poolAlibabaWdkSkuFeatureApiResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkSkuFeatureApiResult)
+	},
+}
+
+// GetAlibabaWdkSkuFeatureApiResult() 从对象池中获取AlibabaWdkSkuFeatureApiResult
+func GetAlibabaWdkSkuFeatureApiResult() *AlibabaWdkSkuFeatureApiResult {
+	return poolAlibabaWdkSkuFeatureApiResult.Get().(*AlibabaWdkSkuFeatureApiResult)
+}
+
+// ReleaseAlibabaWdkSkuFeatureApiResult 释放AlibabaWdkSkuFeatureApiResult
+func ReleaseAlibabaWdkSkuFeatureApiResult(v *AlibabaWdkSkuFeatureApiResult) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Success = false
+	v.Model = false
+	poolAlibabaWdkSkuFeatureApiResult.Put(v)
 }

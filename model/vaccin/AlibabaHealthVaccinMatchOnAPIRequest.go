@@ -2,6 +2,7 @@ package vaccin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaHealthVaccinMatchOnAPIRequest struct {
 // NewAlibabaHealthVaccinMatchOnRequest 初始化AlibabaHealthVaccinMatchOnAPIRequest对象
 func NewAlibabaHealthVaccinMatchOnRequest() *AlibabaHealthVaccinMatchOnAPIRequest {
 	return &AlibabaHealthVaccinMatchOnAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHealthVaccinMatchOnAPIRequest) Reset() {
+	r._povId = ""
+	r._vaccineId = ""
+	r._isvMatchType = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaHealthVaccinMatchOnAPIRequest) SetIsvMatchType(_isvMatchType str
 // GetIsvMatchType IsvMatchType Getter
 func (r AlibabaHealthVaccinMatchOnAPIRequest) GetIsvMatchType() string {
 	return r._isvMatchType
+}
+
+var poolAlibabaHealthVaccinMatchOnAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHealthVaccinMatchOnRequest()
+	},
+}
+
+// GetAlibabaHealthVaccinMatchOnRequest 从 sync.Pool 获取 AlibabaHealthVaccinMatchOnAPIRequest
+func GetAlibabaHealthVaccinMatchOnAPIRequest() *AlibabaHealthVaccinMatchOnAPIRequest {
+	return poolAlibabaHealthVaccinMatchOnAPIRequest.Get().(*AlibabaHealthVaccinMatchOnAPIRequest)
+}
+
+// ReleaseAlibabaHealthVaccinMatchOnAPIRequest 将 AlibabaHealthVaccinMatchOnAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHealthVaccinMatchOnAPIRequest(v *AlibabaHealthVaccinMatchOnAPIRequest) {
+	v.Reset()
+	poolAlibabaHealthVaccinMatchOnAPIRequest.Put(v)
 }

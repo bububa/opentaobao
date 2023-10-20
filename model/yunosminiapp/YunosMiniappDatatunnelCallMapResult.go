@@ -1,5 +1,9 @@
 package yunosminiapp
 
+import (
+	"sync"
+)
+
 // YunosMiniappDatatunnelCallMapResult 结构体
 type YunosMiniappDatatunnelCallMapResult struct {
 	// 随机字符串
@@ -12,4 +16,25 @@ type YunosMiniappDatatunnelCallMapResult struct {
 	Result *YunosMiniappDatatunnelCallResult `json:"result,omitempty" xml:"result,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolYunosMiniappDatatunnelCallMapResult = sync.Pool{
+	New: func() any {
+		return new(YunosMiniappDatatunnelCallMapResult)
+	},
+}
+
+// GetYunosMiniappDatatunnelCallMapResult() 从对象池中获取YunosMiniappDatatunnelCallMapResult
+func GetYunosMiniappDatatunnelCallMapResult() *YunosMiniappDatatunnelCallMapResult {
+	return poolYunosMiniappDatatunnelCallMapResult.Get().(*YunosMiniappDatatunnelCallMapResult)
+}
+
+// ReleaseYunosMiniappDatatunnelCallMapResult 释放YunosMiniappDatatunnelCallMapResult
+func ReleaseYunosMiniappDatatunnelCallMapResult(v *YunosMiniappDatatunnelCallMapResult) {
+	v.TraceId = ""
+	v.ResultCode = ""
+	v.ResultMsg = ""
+	v.Result = nil
+	v.Success = false
+	poolYunosMiniappDatatunnelCallMapResult.Put(v)
 }

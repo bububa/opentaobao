@@ -2,6 +2,7 @@ package larkiot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoLarkPosBasedataGetworkstationAPIRequest struct {
 // NewTaobaoLarkPosBasedataGetworkstationRequest 初始化TaobaoLarkPosBasedataGetworkstationAPIRequest对象
 func NewTaobaoLarkPosBasedataGetworkstationRequest() *TaobaoLarkPosBasedataGetworkstationAPIRequest {
 	return &TaobaoLarkPosBasedataGetworkstationAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLarkPosBasedataGetworkstationAPIRequest) Reset() {
+	r._cinemaLinkId = ""
+	r._posCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoLarkPosBasedataGetworkstationAPIRequest) SetPosCode(_posCode stri
 // GetPosCode PosCode Getter
 func (r TaobaoLarkPosBasedataGetworkstationAPIRequest) GetPosCode() string {
 	return r._posCode
+}
+
+var poolTaobaoLarkPosBasedataGetworkstationAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLarkPosBasedataGetworkstationRequest()
+	},
+}
+
+// GetTaobaoLarkPosBasedataGetworkstationRequest 从 sync.Pool 获取 TaobaoLarkPosBasedataGetworkstationAPIRequest
+func GetTaobaoLarkPosBasedataGetworkstationAPIRequest() *TaobaoLarkPosBasedataGetworkstationAPIRequest {
+	return poolTaobaoLarkPosBasedataGetworkstationAPIRequest.Get().(*TaobaoLarkPosBasedataGetworkstationAPIRequest)
+}
+
+// ReleaseTaobaoLarkPosBasedataGetworkstationAPIRequest 将 TaobaoLarkPosBasedataGetworkstationAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLarkPosBasedataGetworkstationAPIRequest(v *TaobaoLarkPosBasedataGetworkstationAPIRequest) {
+	v.Reset()
+	poolTaobaoLarkPosBasedataGetworkstationAPIRequest.Put(v)
 }

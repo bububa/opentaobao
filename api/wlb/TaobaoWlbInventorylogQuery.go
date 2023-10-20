@@ -9,11 +9,6 @@ import (
 // taobao.wlb.inventorylog.query
 //
 // 通过商品ID等几个条件来分页查询库存变更记录
-func TaobaoWlbInventorylogQuery(clt *core.SDKClient, req *wlb.TaobaoWlbInventorylogQueryAPIRequest, session string) (*wlb.TaobaoWlbInventorylogQueryAPIResponse, error) {
-	var resp wlb.TaobaoWlbInventorylogQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWlbInventorylogQuery(clt *core.SDKClient, req *wlb.TaobaoWlbInventorylogQueryAPIRequest, resp *wlb.TaobaoWlbInventorylogQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

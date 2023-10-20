@@ -2,6 +2,7 @@ package alihealthmdeer
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -59,8 +60,34 @@ type AlibabaAlihealthMdeerVideoSyncAPIRequest struct {
 // NewAlibabaAlihealthMdeerVideoSyncRequest 初始化AlibabaAlihealthMdeerVideoSyncAPIRequest对象
 func NewAlibabaAlihealthMdeerVideoSyncRequest() *AlibabaAlihealthMdeerVideoSyncAPIRequest {
 	return &AlibabaAlihealthMdeerVideoSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(21),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) Reset() {
+	r._partnerPortraitUrl = ""
+	r._phoneNumber = ""
+	r._authorIntroduction = ""
+	r._authorDepartment = ""
+	r._authorLevel = ""
+	r._hospitalLevel = ""
+	r._hospitalName = ""
+	r._portraitUrl = ""
+	r._authorName = ""
+	r._authorId = ""
+	r._partnerHomepage = ""
+	r._partnerName = ""
+	r._releaseDate = ""
+	r._videoFileUrl = ""
+	r._videoMobileUrl = ""
+	r._videoIntroduction = ""
+	r._videoLength = ""
+	r._disease = ""
+	r._priviewUrl = ""
+	r._videoTitle = ""
+	r._videoId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -351,4 +378,21 @@ func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetVideoId(_videoId string) e
 // GetVideoId VideoId Getter
 func (r AlibabaAlihealthMdeerVideoSyncAPIRequest) GetVideoId() string {
 	return r._videoId
+}
+
+var poolAlibabaAlihealthMdeerVideoSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthMdeerVideoSyncRequest()
+	},
+}
+
+// GetAlibabaAlihealthMdeerVideoSyncRequest 从 sync.Pool 获取 AlibabaAlihealthMdeerVideoSyncAPIRequest
+func GetAlibabaAlihealthMdeerVideoSyncAPIRequest() *AlibabaAlihealthMdeerVideoSyncAPIRequest {
+	return poolAlibabaAlihealthMdeerVideoSyncAPIRequest.Get().(*AlibabaAlihealthMdeerVideoSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthMdeerVideoSyncAPIRequest 将 AlibabaAlihealthMdeerVideoSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthMdeerVideoSyncAPIRequest(v *AlibabaAlihealthMdeerVideoSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthMdeerVideoSyncAPIRequest.Put(v)
 }

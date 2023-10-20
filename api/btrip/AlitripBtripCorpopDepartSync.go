@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.corpop.depart.sync
 //
 // 同步外部平台部门信息至商旅内部
-func AlitripBtripCorpopDepartSync(clt *core.SDKClient, req *btrip.AlitripBtripCorpopDepartSyncAPIRequest, session string) (*btrip.AlitripBtripCorpopDepartSyncAPIResponse, error) {
-	var resp btrip.AlitripBtripCorpopDepartSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripCorpopDepartSync(clt *core.SDKClient, req *btrip.AlitripBtripCorpopDepartSyncAPIRequest, resp *btrip.AlitripBtripCorpopDepartSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

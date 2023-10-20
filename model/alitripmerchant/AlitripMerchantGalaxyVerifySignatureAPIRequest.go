@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlitripMerchantGalaxyVerifySignatureAPIRequest struct {
 // NewAlitripMerchantGalaxyVerifySignatureRequest 初始化AlitripMerchantGalaxyVerifySignatureAPIRequest对象
 func NewAlitripMerchantGalaxyVerifySignatureRequest() *AlitripMerchantGalaxyVerifySignatureAPIRequest {
 	return &AlitripMerchantGalaxyVerifySignatureAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyVerifySignatureAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._token = ""
+	r._jsonString = ""
+	r._jsonSignature = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlitripMerchantGalaxyVerifySignatureAPIRequest) SetJsonSignature(_jsonS
 // GetJsonSignature JsonSignature Getter
 func (r AlitripMerchantGalaxyVerifySignatureAPIRequest) GetJsonSignature() string {
 	return r._jsonSignature
+}
+
+var poolAlitripMerchantGalaxyVerifySignatureAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyVerifySignatureRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyVerifySignatureRequest 从 sync.Pool 获取 AlitripMerchantGalaxyVerifySignatureAPIRequest
+func GetAlitripMerchantGalaxyVerifySignatureAPIRequest() *AlitripMerchantGalaxyVerifySignatureAPIRequest {
+	return poolAlitripMerchantGalaxyVerifySignatureAPIRequest.Get().(*AlitripMerchantGalaxyVerifySignatureAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyVerifySignatureAPIRequest 将 AlitripMerchantGalaxyVerifySignatureAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyVerifySignatureAPIRequest(v *AlitripMerchantGalaxyVerifySignatureAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyVerifySignatureAPIRequest.Put(v)
 }

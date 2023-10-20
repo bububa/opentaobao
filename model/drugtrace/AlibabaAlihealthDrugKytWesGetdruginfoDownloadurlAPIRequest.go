@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihealthDrugKytWesGetdruginfoDownloadurlAPIRequest struct {
 // NewAlibabaAlihealthDrugKytWesGetdruginfoDownloadurlRequest 初始化AlibabaAlihealthDrugKytWesGetdruginfoDownloadurlAPIRequest对象
 func NewAlibabaAlihealthDrugKytWesGetdruginfoDownloadurlRequest() *AlibabaAlihealthDrugKytWesGetdruginfoDownloadurlAPIRequest {
 	return &AlibabaAlihealthDrugKytWesGetdruginfoDownloadurlAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugKytWesGetdruginfoDownloadurlAPIRequest) Reset() {
+	r._refEntId = ""
+	r._licenseToken = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihealthDrugKytWesGetdruginfoDownloadurlAPIRequest) SetLicenseT
 // GetLicenseToken LicenseToken Getter
 func (r AlibabaAlihealthDrugKytWesGetdruginfoDownloadurlAPIRequest) GetLicenseToken() string {
 	return r._licenseToken
+}
+
+var poolAlibabaAlihealthDrugKytWesGetdruginfoDownloadurlAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugKytWesGetdruginfoDownloadurlRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugKytWesGetdruginfoDownloadurlRequest 从 sync.Pool 获取 AlibabaAlihealthDrugKytWesGetdruginfoDownloadurlAPIRequest
+func GetAlibabaAlihealthDrugKytWesGetdruginfoDownloadurlAPIRequest() *AlibabaAlihealthDrugKytWesGetdruginfoDownloadurlAPIRequest {
+	return poolAlibabaAlihealthDrugKytWesGetdruginfoDownloadurlAPIRequest.Get().(*AlibabaAlihealthDrugKytWesGetdruginfoDownloadurlAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugKytWesGetdruginfoDownloadurlAPIRequest 将 AlibabaAlihealthDrugKytWesGetdruginfoDownloadurlAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytWesGetdruginfoDownloadurlAPIRequest(v *AlibabaAlihealthDrugKytWesGetdruginfoDownloadurlAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytWesGetdruginfoDownloadurlAPIRequest.Put(v)
 }

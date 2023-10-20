@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type TaobaoLogisticsOnlineSendAPIRequest struct {
 // NewTaobaoLogisticsOnlineSendRequest 初始化TaobaoLogisticsOnlineSendAPIRequest对象
 func NewTaobaoLogisticsOnlineSendRequest() *TaobaoLogisticsOnlineSendAPIRequest {
 	return &TaobaoLogisticsOnlineSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsOnlineSendAPIRequest) Reset() {
+	r._subTid = r._subTid[:0]
+	r._outSid = ""
+	r._companyCode = ""
+	r._feature = ""
+	r._sellerIp = ""
+	r._tid = 0
+	r._isSplit = 0
+	r._senderId = 0
+	r._cancelId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *TaobaoLogisticsOnlineSendAPIRequest) SetCancelId(_cancelId int64) error
 // GetCancelId CancelId Getter
 func (r TaobaoLogisticsOnlineSendAPIRequest) GetCancelId() int64 {
 	return r._cancelId
+}
+
+var poolTaobaoLogisticsOnlineSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsOnlineSendRequest()
+	},
+}
+
+// GetTaobaoLogisticsOnlineSendRequest 从 sync.Pool 获取 TaobaoLogisticsOnlineSendAPIRequest
+func GetTaobaoLogisticsOnlineSendAPIRequest() *TaobaoLogisticsOnlineSendAPIRequest {
+	return poolTaobaoLogisticsOnlineSendAPIRequest.Get().(*TaobaoLogisticsOnlineSendAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsOnlineSendAPIRequest 将 TaobaoLogisticsOnlineSendAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsOnlineSendAPIRequest(v *TaobaoLogisticsOnlineSendAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsOnlineSendAPIRequest.Put(v)
 }

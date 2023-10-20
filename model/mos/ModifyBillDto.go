@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // ModifyBillDto 结构体
 type ModifyBillDto struct {
 	// 结算行号list
@@ -32,4 +36,35 @@ type ModifyBillDto struct {
 	BillNo string `json:"bill_no,omitempty" xml:"bill_no,omitempty"`
 	// 扩展参数
 	ExtendParams string `json:"extend_params,omitempty" xml:"extend_params,omitempty"`
+}
+
+var poolModifyBillDto = sync.Pool{
+	New: func() any {
+		return new(ModifyBillDto)
+	},
+}
+
+// GetModifyBillDto() 从对象池中获取ModifyBillDto
+func GetModifyBillDto() *ModifyBillDto {
+	return poolModifyBillDto.Get().(*ModifyBillDto)
+}
+
+// ReleaseModifyBillDto 释放ModifyBillDto
+func ReleaseModifyBillDto(v *ModifyBillDto) {
+	v.SettleLineNos = v.SettleLineNos[:0]
+	v.BankBranchCode = ""
+	v.SupplierName = ""
+	v.SupplierNo = ""
+	v.BankCity = ""
+	v.AccountNo = ""
+	v.BankName = ""
+	v.AccountTypes = ""
+	v.BankProvince = ""
+	v.BankCode = ""
+	v.AccountName = ""
+	v.BankBranchName = ""
+	v.CnapsCode = ""
+	v.BillNo = ""
+	v.ExtendParams = ""
+	poolModifyBillDto.Put(v)
 }

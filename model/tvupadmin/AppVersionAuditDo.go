@@ -1,5 +1,9 @@
 package tvupadmin
 
+import (
+	"sync"
+)
+
 // AppVersionAuditDo 结构体
 type AppVersionAuditDo struct {
 	// 应用名
@@ -28,4 +32,33 @@ type AppVersionAuditDo struct {
 	GmtAudit string `json:"gmt_audit,omitempty" xml:"gmt_audit,omitempty"`
 	// 主键ID
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolAppVersionAuditDo = sync.Pool{
+	New: func() any {
+		return new(AppVersionAuditDo)
+	},
+}
+
+// GetAppVersionAuditDo() 从对象池中获取AppVersionAuditDo
+func GetAppVersionAuditDo() *AppVersionAuditDo {
+	return poolAppVersionAuditDo.Get().(*AppVersionAuditDo)
+}
+
+// ReleaseAppVersionAuditDo 释放AppVersionAuditDo
+func ReleaseAppVersionAuditDo(v *AppVersionAuditDo) {
+	v.AppName = ""
+	v.AppPackageName = ""
+	v.VersionName = ""
+	v.VersionCode = ""
+	v.ReleaseNote = ""
+	v.DownloadUrl = ""
+	v.Size = ""
+	v.AuditStatus = ""
+	v.StatusDesc = ""
+	v.GmtCreate = ""
+	v.GmtModify = ""
+	v.GmtAudit = ""
+	v.Id = 0
+	poolAppVersionAuditDo.Put(v)
 }

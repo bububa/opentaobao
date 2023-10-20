@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // PromotionSku 结构体
 type PromotionSku struct {
 	// 商品编码
@@ -18,4 +22,28 @@ type PromotionSku struct {
 	PromotionPriceEndTime string `json:"promotion_price_end_time,omitempty" xml:"promotion_price_end_time,omitempty"`
 	// 时间戳
 	TimeStamp int64 `json:"time_stamp,omitempty" xml:"time_stamp,omitempty"`
+}
+
+var poolPromotionSku = sync.Pool{
+	New: func() any {
+		return new(PromotionSku)
+	},
+}
+
+// GetPromotionSku() 从对象池中获取PromotionSku
+func GetPromotionSku() *PromotionSku {
+	return poolPromotionSku.Get().(*PromotionSku)
+}
+
+// ReleasePromotionSku 释放PromotionSku
+func ReleasePromotionSku(v *PromotionSku) {
+	v.SkuCode = ""
+	v.PurchasePrice = ""
+	v.PurchasePriceStartTime = ""
+	v.PurchasePriceEndTime = ""
+	v.PromotionPrice = ""
+	v.PromotionPriceStartTime = ""
+	v.PromotionPriceEndTime = ""
+	v.TimeStamp = 0
+	poolPromotionSku.Put(v)
 }

@@ -1,7 +1,11 @@
 package hotelhstdf
 
-// HotelPoi 结构体
-type HotelPoi struct {
+import (
+	"sync"
+)
+
+// HotelPOI 结构体
+type HotelPOI struct {
 	// 暂不使用
 	CityName string `json:"city_name,omitempty" xml:"city_name,omitempty"`
 	// 所在国家英文名
@@ -46,4 +50,42 @@ type HotelPoi struct {
 	TrdiDivisionId int64 `json:"trdi_division_id,omitempty" xml:"trdi_division_id,omitempty"`
 	// 类型，3--地铁线路,4--地铁站,20--考点,5--景点,6--机场,7--火车站,8--汽车站,9--医院,10--大学,11--热点搜索,12--城市,13--办公区
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolHotelPOI = sync.Pool{
+	New: func() any {
+		return new(HotelPOI)
+	},
+}
+
+// GetHotelPOI() 从对象池中获取HotelPOI
+func GetHotelPOI() *HotelPOI {
+	return poolHotelPOI.Get().(*HotelPOI)
+}
+
+// ReleaseHotelPOI 释放HotelPOI
+func ReleaseHotelPOI(v *HotelPOI) {
+	v.CityName = ""
+	v.Country = ""
+	v.DivisionTree = ""
+	v.EnName = ""
+	v.Latitude = ""
+	v.Longitude = ""
+	v.Name = ""
+	v.TimeZoneId = ""
+	v.SearchPercent = ""
+	v.City = 0
+	v.CountryCode = 0
+	v.District = 0
+	v.DivisionId = 0
+	v.Domestic = 0
+	v.Hot = 0
+	v.Id = 0
+	v.OrderIndex = 0
+	v.ParentId = 0
+	v.PositionType = 0
+	v.Province = 0
+	v.TrdiDivisionId = 0
+	v.Type = 0
+	poolHotelPOI.Put(v)
 }

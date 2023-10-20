@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // PresalesorderTest 结构体
 type PresalesorderTest struct {
 	// 订单信息
@@ -18,4 +22,28 @@ type PresalesorderTest struct {
 	SenderInfo *Senderinfo `json:"sender_info,omitempty" xml:"sender_info,omitempty"`
 	// 收件人信息
 	ReceiverInfo *Receiverinfo `json:"receiver_info,omitempty" xml:"receiver_info,omitempty"`
+}
+
+var poolPresalesorderTest = sync.Pool{
+	New: func() any {
+		return new(PresalesorderTest)
+	},
+}
+
+// GetPresalesorderTest() 从对象池中获取PresalesorderTest
+func GetPresalesorderTest() *PresalesorderTest {
+	return poolPresalesorderTest.Get().(*PresalesorderTest)
+}
+
+// ReleasePresalesorderTest 释放PresalesorderTest
+func ReleasePresalesorderTest(v *PresalesorderTest) {
+	v.OrderLines = v.OrderLines[:0]
+	v.PresalesOrderCode = ""
+	v.PlaceOrderTime = ""
+	v.TotalAmount = ""
+	v.StoreCode = ""
+	v.Remark = ""
+	v.SenderInfo = nil
+	v.ReceiverInfo = nil
+	poolPresalesorderTest.Put(v)
 }

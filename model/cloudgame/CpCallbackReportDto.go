@@ -1,5 +1,9 @@
 package cloudgame
 
+import (
+	"sync"
+)
+
 // CpCallbackReportDto 结构体
 type CpCallbackReportDto struct {
 	// 云游戏业务类型, 不同业务类型对应bizData格式不同
@@ -16,4 +20,27 @@ type CpCallbackReportDto struct {
 	Uuid string `json:"uuid,omitempty" xml:"uuid,omitempty"`
 	// 时间戳, 毫秒级别
 	ReportTimestamp int64 `json:"report_timestamp,omitempty" xml:"report_timestamp,omitempty"`
+}
+
+var poolCpCallbackReportDto = sync.Pool{
+	New: func() any {
+		return new(CpCallbackReportDto)
+	},
+}
+
+// GetCpCallbackReportDto() 从对象池中获取CpCallbackReportDto
+func GetCpCallbackReportDto() *CpCallbackReportDto {
+	return poolCpCallbackReportDto.Get().(*CpCallbackReportDto)
+}
+
+// ReleaseCpCallbackReportDto 释放CpCallbackReportDto
+func ReleaseCpCallbackReportDto(v *CpCallbackReportDto) {
+	v.BizType = ""
+	v.Ticket = ""
+	v.MixUserId = ""
+	v.CallbackBizData = ""
+	v.GameAppKey = ""
+	v.Uuid = ""
+	v.ReportTimestamp = 0
+	poolCpCallbackReportDto.Put(v)
 }

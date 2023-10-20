@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoFenxiaoProductSkuDeleteAPIRequest struct {
 // NewTaobaoFenxiaoProductSkuDeleteRequest 初始化TaobaoFenxiaoProductSkuDeleteAPIRequest对象
 func NewTaobaoFenxiaoProductSkuDeleteRequest() *TaobaoFenxiaoProductSkuDeleteAPIRequest {
 	return &TaobaoFenxiaoProductSkuDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoProductSkuDeleteAPIRequest) Reset() {
+	r._properties = ""
+	r._productId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoFenxiaoProductSkuDeleteAPIRequest) SetProductId(_productId int64)
 // GetProductId ProductId Getter
 func (r TaobaoFenxiaoProductSkuDeleteAPIRequest) GetProductId() int64 {
 	return r._productId
+}
+
+var poolTaobaoFenxiaoProductSkuDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoProductSkuDeleteRequest()
+	},
+}
+
+// GetTaobaoFenxiaoProductSkuDeleteRequest 从 sync.Pool 获取 TaobaoFenxiaoProductSkuDeleteAPIRequest
+func GetTaobaoFenxiaoProductSkuDeleteAPIRequest() *TaobaoFenxiaoProductSkuDeleteAPIRequest {
+	return poolTaobaoFenxiaoProductSkuDeleteAPIRequest.Get().(*TaobaoFenxiaoProductSkuDeleteAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoProductSkuDeleteAPIRequest 将 TaobaoFenxiaoProductSkuDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoProductSkuDeleteAPIRequest(v *TaobaoFenxiaoProductSkuDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoProductSkuDeleteAPIRequest.Put(v)
 }

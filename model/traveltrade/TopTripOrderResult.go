@@ -1,5 +1,9 @@
 package traveltrade
 
+import (
+	"sync"
+)
+
 // TopTripOrderResult 结构体
 type TopTripOrderResult struct {
 	// 主、子订单优惠信息
@@ -36,4 +40,37 @@ type TopTripOrderResult struct {
 	PostFee int64 `json:"post_fee,omitempty" xml:"post_fee,omitempty"`
 	// 该笔订单是否押金合并支付订单（即该主订单是否已包含押金订单金额）
 	OrderWithDepo bool `json:"order_with_depo,omitempty" xml:"order_with_depo,omitempty"`
+}
+
+var poolTopTripOrderResult = sync.Pool{
+	New: func() any {
+		return new(TopTripOrderResult)
+	},
+}
+
+// GetTopTripOrderResult() 从对象池中获取TopTripOrderResult
+func GetTopTripOrderResult() *TopTripOrderResult {
+	return poolTopTripOrderResult.Get().(*TopTripOrderResult)
+}
+
+// ReleaseTopTripOrderResult 释放TopTripOrderResult
+func ReleaseTopTripOrderResult(v *TopTripOrderResult) {
+	v.PromotionDetails = v.PromotionDetails[:0]
+	v.SubOrders = v.SubOrders[:0]
+	v.ScoreDetails = v.ScoreDetails[:0]
+	v.CreatedTime = ""
+	v.EndTime = ""
+	v.ModifiedTime = ""
+	v.Status = ""
+	v.Type = ""
+	v.OrderIdString = ""
+	v.CancelReason = ""
+	v.RateContent = ""
+	v.BuyerInfo = nil
+	v.OrderId = 0
+	v.PayInfo = nil
+	v.SellerInfo = nil
+	v.PostFee = 0
+	v.OrderWithDepo = false
+	poolTopTripOrderResult.Put(v)
 }

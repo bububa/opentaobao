@@ -1,7 +1,11 @@
 package logistic
 
-// AelogisticsShippingMethodDto 结构体
-type AelogisticsShippingMethodDto struct {
+import (
+	"sync"
+)
+
+// AELogisticsShippingMethodDto 结构体
+type AELogisticsShippingMethodDto struct {
 	// Logistics provider Id of the shipping order such as 1-Cainiao, 2-Pegaki, 3-Frenet, 4-Delivery Hub, etc.
 	LogisticsChannelId string `json:"logistics_channel_id,omitempty" xml:"logistics_channel_id,omitempty"`
 	// Logistics provider of the shipping order such as Cainiao, Pegaki, Frenet, Delivery Hub, etc.
@@ -16,4 +20,27 @@ type AelogisticsShippingMethodDto struct {
 	DeliveryCost int64 `json:"delivery_cost,omitempty" xml:"delivery_cost,omitempty"`
 	// delivery time on working days
 	DeliveryEstimateDays int64 `json:"delivery_estimate_days,omitempty" xml:"delivery_estimate_days,omitempty"`
+}
+
+var poolAELogisticsShippingMethodDto = sync.Pool{
+	New: func() any {
+		return new(AELogisticsShippingMethodDto)
+	},
+}
+
+// GetAELogisticsShippingMethodDto() 从对象池中获取AELogisticsShippingMethodDto
+func GetAELogisticsShippingMethodDto() *AELogisticsShippingMethodDto {
+	return poolAELogisticsShippingMethodDto.Get().(*AELogisticsShippingMethodDto)
+}
+
+// ReleaseAELogisticsShippingMethodDto 释放AELogisticsShippingMethodDto
+func ReleaseAELogisticsShippingMethodDto(v *AELogisticsShippingMethodDto) {
+	v.LogisticsChannelId = ""
+	v.LogisticsChannelName = ""
+	v.DeliveryMethodId = ""
+	v.DeliveryMethodName = ""
+	v.DeliveryProviderName = ""
+	v.DeliveryCost = 0
+	v.DeliveryEstimateDays = 0
+	poolAELogisticsShippingMethodDto.Put(v)
 }

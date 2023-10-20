@@ -9,11 +9,6 @@ import (
 // alibaba.legal.suit.case.get
 //
 // 获取案件信息
-func AlibabaLegalSuitCaseGet(clt *core.SDKClient, req *legalsuit.AlibabaLegalSuitCaseGetAPIRequest, session string) (*legalsuit.AlibabaLegalSuitCaseGetAPIResponse, error) {
-	var resp legalsuit.AlibabaLegalSuitCaseGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaLegalSuitCaseGet(clt *core.SDKClient, req *legalsuit.AlibabaLegalSuitCaseGetAPIRequest, resp *legalsuit.AlibabaLegalSuitCaseGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.dchain.aoxiang.wms.deliveryorder.confirm
 //
 // 回传发货单确认
-func AlibabaDchainAoxiangWmsDeliveryorderConfirm(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangWmsDeliveryorderConfirmAPIRequest, session string) (*ascp.AlibabaDchainAoxiangWmsDeliveryorderConfirmAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangWmsDeliveryorderConfirmAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDchainAoxiangWmsDeliveryorderConfirm(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangWmsDeliveryorderConfirmAPIRequest, resp *ascp.AlibabaDchainAoxiangWmsDeliveryorderConfirmAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

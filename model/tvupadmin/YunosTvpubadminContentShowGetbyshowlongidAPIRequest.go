@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YunosTvpubadminContentShowGetbyshowlongidAPIRequest struct {
 // NewYunosTvpubadminContentShowGetbyshowlongidRequest 初始化YunosTvpubadminContentShowGetbyshowlongidAPIRequest对象
 func NewYunosTvpubadminContentShowGetbyshowlongidRequest() *YunosTvpubadminContentShowGetbyshowlongidAPIRequest {
 	return &YunosTvpubadminContentShowGetbyshowlongidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminContentShowGetbyshowlongidAPIRequest) Reset() {
+	r._showLongId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YunosTvpubadminContentShowGetbyshowlongidAPIRequest) SetShowLongId(_sho
 // GetShowLongId ShowLongId Getter
 func (r YunosTvpubadminContentShowGetbyshowlongidAPIRequest) GetShowLongId() int64 {
 	return r._showLongId
+}
+
+var poolYunosTvpubadminContentShowGetbyshowlongidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminContentShowGetbyshowlongidRequest()
+	},
+}
+
+// GetYunosTvpubadminContentShowGetbyshowlongidRequest 从 sync.Pool 获取 YunosTvpubadminContentShowGetbyshowlongidAPIRequest
+func GetYunosTvpubadminContentShowGetbyshowlongidAPIRequest() *YunosTvpubadminContentShowGetbyshowlongidAPIRequest {
+	return poolYunosTvpubadminContentShowGetbyshowlongidAPIRequest.Get().(*YunosTvpubadminContentShowGetbyshowlongidAPIRequest)
+}
+
+// ReleaseYunosTvpubadminContentShowGetbyshowlongidAPIRequest 将 YunosTvpubadminContentShowGetbyshowlongidAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminContentShowGetbyshowlongidAPIRequest(v *YunosTvpubadminContentShowGetbyshowlongidAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminContentShowGetbyshowlongidAPIRequest.Put(v)
 }

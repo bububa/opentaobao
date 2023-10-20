@@ -9,11 +9,6 @@ import (
 // tmall.servicecenter.worker.create
 //
 // 服务商工人信息创建
-func TmallServicecenterWorkerCreate(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerCreateAPIRequest, session string) (*tmallservice.TmallServicecenterWorkerCreateAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterWorkerCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallServicecenterWorkerCreate(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerCreateAPIRequest, resp *tmallservice.TmallServicecenterWorkerCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

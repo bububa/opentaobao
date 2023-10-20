@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // CampaignBudget 结构体
 type CampaignBudget struct {
 	// 主人昵称
@@ -14,4 +18,26 @@ type CampaignBudget struct {
 	Budget int64 `json:"budget,omitempty" xml:"budget,omitempty"`
 	// 是否平滑消耗，true-是；false-否；在设置了推广计划日限额后，此属性才生效
 	IsSmooth bool `json:"is_smooth,omitempty" xml:"is_smooth,omitempty"`
+}
+
+var poolCampaignBudget = sync.Pool{
+	New: func() any {
+		return new(CampaignBudget)
+	},
+}
+
+// GetCampaignBudget() 从对象池中获取CampaignBudget
+func GetCampaignBudget() *CampaignBudget {
+	return poolCampaignBudget.Get().(*CampaignBudget)
+}
+
+// ReleaseCampaignBudget 释放CampaignBudget
+func ReleaseCampaignBudget(v *CampaignBudget) {
+	v.Nick = ""
+	v.CreateTime = ""
+	v.ModifiedTime = ""
+	v.CampaignId = 0
+	v.Budget = 0
+	v.IsSmooth = false
+	poolCampaignBudget.Put(v)
 }

@@ -2,6 +2,7 @@ package flight
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoFliggyFlightAgentAuxproductPushAPIResponse struct {
 	TaobaoFliggyFlightAgentAuxproductPushAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoFliggyFlightAgentAuxproductPushAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoFliggyFlightAgentAuxproductPushAPIResponseModel).Reset()
+}
+
 // TaobaoFliggyFlightAgentAuxproductPushAPIResponseModel is 飞猪机票辅营商品投放 成功返回结果
 type TaobaoFliggyFlightAgentAuxproductPushAPIResponseModel struct {
 	XMLName xml.Name `xml:"fliggy_flight_agent_auxproduct_push_response"`
@@ -26,4 +33,29 @@ type TaobaoFliggyFlightAgentAuxproductPushAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 是否操作成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoFliggyFlightAgentAuxproductPushAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TracerId = ""
+	m.Message = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoFliggyFlightAgentAuxproductPushAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoFliggyFlightAgentAuxproductPushAPIResponse)
+	},
+}
+
+// GetTaobaoFliggyFlightAgentAuxproductPushAPIResponse 从 sync.Pool 获取 TaobaoFliggyFlightAgentAuxproductPushAPIResponse
+func GetTaobaoFliggyFlightAgentAuxproductPushAPIResponse() *TaobaoFliggyFlightAgentAuxproductPushAPIResponse {
+	return poolTaobaoFliggyFlightAgentAuxproductPushAPIResponse.Get().(*TaobaoFliggyFlightAgentAuxproductPushAPIResponse)
+}
+
+// ReleaseTaobaoFliggyFlightAgentAuxproductPushAPIResponse 将 TaobaoFliggyFlightAgentAuxproductPushAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoFliggyFlightAgentAuxproductPushAPIResponse(v *TaobaoFliggyFlightAgentAuxproductPushAPIResponse) {
+	v.Reset()
+	poolTaobaoFliggyFlightAgentAuxproductPushAPIResponse.Put(v)
 }

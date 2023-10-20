@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangItemBatchUpdateAsyncAPIRequest struct {
 // NewAlibabaDchainAoxiangItemBatchUpdateAsyncRequest 初始化AlibabaDchainAoxiangItemBatchUpdateAsyncAPIRequest对象
 func NewAlibabaDchainAoxiangItemBatchUpdateAsyncRequest() *AlibabaDchainAoxiangItemBatchUpdateAsyncAPIRequest {
 	return &AlibabaDchainAoxiangItemBatchUpdateAsyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangItemBatchUpdateAsyncAPIRequest) Reset() {
+	r._itemUpdateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangItemBatchUpdateAsyncAPIRequest) SetItemUpdateReques
 // GetItemUpdateRequest ItemUpdateRequest Getter
 func (r AlibabaDchainAoxiangItemBatchUpdateAsyncAPIRequest) GetItemUpdateRequest() *ItemBatchUpdateAsyncRequest {
 	return r._itemUpdateRequest
+}
+
+var poolAlibabaDchainAoxiangItemBatchUpdateAsyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangItemBatchUpdateAsyncRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangItemBatchUpdateAsyncRequest 从 sync.Pool 获取 AlibabaDchainAoxiangItemBatchUpdateAsyncAPIRequest
+func GetAlibabaDchainAoxiangItemBatchUpdateAsyncAPIRequest() *AlibabaDchainAoxiangItemBatchUpdateAsyncAPIRequest {
+	return poolAlibabaDchainAoxiangItemBatchUpdateAsyncAPIRequest.Get().(*AlibabaDchainAoxiangItemBatchUpdateAsyncAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangItemBatchUpdateAsyncAPIRequest 将 AlibabaDchainAoxiangItemBatchUpdateAsyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangItemBatchUpdateAsyncAPIRequest(v *AlibabaDchainAoxiangItemBatchUpdateAsyncAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangItemBatchUpdateAsyncAPIRequest.Put(v)
 }

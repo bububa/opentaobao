@@ -2,6 +2,7 @@ package ascpffo
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliexpressAscpPoQueryAPIRequest struct {
 // NewAliexpressAscpPoQueryRequest 初始化AliexpressAscpPoQueryAPIRequest对象
 func NewAliexpressAscpPoQueryRequest() *AliexpressAscpPoQueryAPIRequest {
 	return &AliexpressAscpPoQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressAscpPoQueryAPIRequest) Reset() {
+	r._purchaseOrderQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliexpressAscpPoQueryAPIRequest) SetPurchaseOrderQuery(_purchaseOrderQu
 // GetPurchaseOrderQuery PurchaseOrderQuery Getter
 func (r AliexpressAscpPoQueryAPIRequest) GetPurchaseOrderQuery() *PurchaseOrderQueryDto {
 	return r._purchaseOrderQuery
+}
+
+var poolAliexpressAscpPoQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressAscpPoQueryRequest()
+	},
+}
+
+// GetAliexpressAscpPoQueryRequest 从 sync.Pool 获取 AliexpressAscpPoQueryAPIRequest
+func GetAliexpressAscpPoQueryAPIRequest() *AliexpressAscpPoQueryAPIRequest {
+	return poolAliexpressAscpPoQueryAPIRequest.Get().(*AliexpressAscpPoQueryAPIRequest)
+}
+
+// ReleaseAliexpressAscpPoQueryAPIRequest 将 AliexpressAscpPoQueryAPIRequest 放入 sync.Pool
+func ReleaseAliexpressAscpPoQueryAPIRequest(v *AliexpressAscpPoQueryAPIRequest) {
+	v.Reset()
+	poolAliexpressAscpPoQueryAPIRequest.Put(v)
 }

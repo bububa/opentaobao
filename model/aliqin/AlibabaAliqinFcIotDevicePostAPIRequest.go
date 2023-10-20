@@ -2,6 +2,7 @@ package aliqin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAliqinFcIotDevicePostAPIRequest struct {
 // NewAlibabaAliqinFcIotDevicePostRequest 初始化AlibabaAliqinFcIotDevicePostAPIRequest对象
 func NewAlibabaAliqinFcIotDevicePostRequest() *AlibabaAliqinFcIotDevicePostAPIRequest {
 	return &AlibabaAliqinFcIotDevicePostAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinFcIotDevicePostAPIRequest) Reset() {
+	r._imei = ""
+	r._deviceType = ""
+	r._comments = ""
+	r._midPatChannel = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAliqinFcIotDevicePostAPIRequest) SetMidPatChannel(_midPatChannel
 // GetMidPatChannel MidPatChannel Getter
 func (r AlibabaAliqinFcIotDevicePostAPIRequest) GetMidPatChannel() string {
 	return r._midPatChannel
+}
+
+var poolAlibabaAliqinFcIotDevicePostAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinFcIotDevicePostRequest()
+	},
+}
+
+// GetAlibabaAliqinFcIotDevicePostRequest 从 sync.Pool 获取 AlibabaAliqinFcIotDevicePostAPIRequest
+func GetAlibabaAliqinFcIotDevicePostAPIRequest() *AlibabaAliqinFcIotDevicePostAPIRequest {
+	return poolAlibabaAliqinFcIotDevicePostAPIRequest.Get().(*AlibabaAliqinFcIotDevicePostAPIRequest)
+}
+
+// ReleaseAlibabaAliqinFcIotDevicePostAPIRequest 将 AlibabaAliqinFcIotDevicePostAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinFcIotDevicePostAPIRequest(v *AlibabaAliqinFcIotDevicePostAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinFcIotDevicePostAPIRequest.Put(v)
 }

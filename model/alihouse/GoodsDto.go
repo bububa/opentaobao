@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // GoodsDto 结构体
 type GoodsDto struct {
 	// 服务者id列表
@@ -60,4 +64,49 @@ type GoodsDto struct {
 	TemplateId int64 `json:"template_id,omitempty" xml:"template_id,omitempty"`
 	// 是否支持银行服务 0-否 1-是
 	IsBank int64 `json:"is_bank,omitempty" xml:"is_bank,omitempty"`
+}
+
+var poolGoodsDto = sync.Pool{
+	New: func() any {
+		return new(GoodsDto)
+	},
+}
+
+// GetGoodsDto() 从对象池中获取GoodsDto
+func GetGoodsDto() *GoodsDto {
+	return poolGoodsDto.Get().(*GoodsDto)
+}
+
+// ReleaseGoodsDto 释放GoodsDto
+func ReleaseGoodsDto(v *GoodsDto) {
+	v.OuterConsultantIds = v.OuterConsultantIds[:0]
+	v.OuterHouses = v.OuterHouses[:0]
+	v.OuterLayouts = v.OuterLayouts[:0]
+	v.OuterId = ""
+	v.OuterTid = ""
+	v.ChannelTelephone = ""
+	v.OuterStoreId = ""
+	v.VerifyDeadline = ""
+	v.ItemId = 0
+	v.Type = 0
+	v.DiscountType = 0
+	v.AuditStatus = 0
+	v.IsElectricSign = 0
+	v.IsVerifyConfirm = 0
+	v.MerchantOpenId = 0
+	v.ElecSignatureId = 0
+	v.ElecAgreementId = 0
+	v.VerifyValidDate = 0
+	v.IsAsyncSell = 0
+	v.LimitExtend = nil
+	v.BankCardId = 0
+	v.IsTest = 0
+	v.EtcVersion = 0
+	v.IsUserVerifyConfirm = 0
+	v.BusinessType = 0
+	v.IsAllHouse = 0
+	v.IsVisible = 0
+	v.TemplateId = 0
+	v.IsBank = 0
+	poolGoodsDto.Put(v)
 }

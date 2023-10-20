@@ -2,6 +2,7 @@ package aliexpress
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type AliexpressLogisticsAbnormalorderQueryAPIRequest struct {
 // NewAliexpressLogisticsAbnormalorderQueryRequest 初始化AliexpressLogisticsAbnormalorderQueryAPIRequest对象
 func NewAliexpressLogisticsAbnormalorderQueryRequest() *AliexpressLogisticsAbnormalorderQueryAPIRequest {
 	return &AliexpressLogisticsAbnormalorderQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressLogisticsAbnormalorderQueryAPIRequest) Reset() {
+	r._gmtCreateStart = ""
+	r._warehouseStatusList = ""
+	r._gmtStatusUpdateStart = ""
+	r._intlTrackingNo = ""
+	r._gmtCreateEnd = ""
+	r._gmtStatusUpdateEnd = ""
+	r._tradeOrderId = 0
+	r._pageSize = 0
+	r._currentPage = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *AliexpressLogisticsAbnormalorderQueryAPIRequest) SetCurrentPage(_curren
 // GetCurrentPage CurrentPage Getter
 func (r AliexpressLogisticsAbnormalorderQueryAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
+}
+
+var poolAliexpressLogisticsAbnormalorderQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressLogisticsAbnormalorderQueryRequest()
+	},
+}
+
+// GetAliexpressLogisticsAbnormalorderQueryRequest 从 sync.Pool 获取 AliexpressLogisticsAbnormalorderQueryAPIRequest
+func GetAliexpressLogisticsAbnormalorderQueryAPIRequest() *AliexpressLogisticsAbnormalorderQueryAPIRequest {
+	return poolAliexpressLogisticsAbnormalorderQueryAPIRequest.Get().(*AliexpressLogisticsAbnormalorderQueryAPIRequest)
+}
+
+// ReleaseAliexpressLogisticsAbnormalorderQueryAPIRequest 将 AliexpressLogisticsAbnormalorderQueryAPIRequest 放入 sync.Pool
+func ReleaseAliexpressLogisticsAbnormalorderQueryAPIRequest(v *AliexpressLogisticsAbnormalorderQueryAPIRequest) {
+	v.Reset()
+	poolAliexpressLogisticsAbnormalorderQueryAPIRequest.Put(v)
 }

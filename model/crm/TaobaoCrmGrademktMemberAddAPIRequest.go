@@ -2,6 +2,7 @@ package crm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoCrmGrademktMemberAddAPIRequest struct {
 // NewTaobaoCrmGrademktMemberAddRequest 初始化TaobaoCrmGrademktMemberAddAPIRequest对象
 func NewTaobaoCrmGrademktMemberAddRequest() *TaobaoCrmGrademktMemberAddAPIRequest {
 	return &TaobaoCrmGrademktMemberAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCrmGrademktMemberAddAPIRequest) Reset() {
+	r._parameter = ""
+	r._feather = ""
+	r._buyerNick = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoCrmGrademktMemberAddAPIRequest) SetBuyerNick(_buyerNick string) e
 // GetBuyerNick BuyerNick Getter
 func (r TaobaoCrmGrademktMemberAddAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
+}
+
+var poolTaobaoCrmGrademktMemberAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCrmGrademktMemberAddRequest()
+	},
+}
+
+// GetTaobaoCrmGrademktMemberAddRequest 从 sync.Pool 获取 TaobaoCrmGrademktMemberAddAPIRequest
+func GetTaobaoCrmGrademktMemberAddAPIRequest() *TaobaoCrmGrademktMemberAddAPIRequest {
+	return poolTaobaoCrmGrademktMemberAddAPIRequest.Get().(*TaobaoCrmGrademktMemberAddAPIRequest)
+}
+
+// ReleaseTaobaoCrmGrademktMemberAddAPIRequest 将 TaobaoCrmGrademktMemberAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCrmGrademktMemberAddAPIRequest(v *TaobaoCrmGrademktMemberAddAPIRequest) {
+	v.Reset()
+	poolTaobaoCrmGrademktMemberAddAPIRequest.Put(v)
 }

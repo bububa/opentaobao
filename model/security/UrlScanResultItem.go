@@ -1,5 +1,9 @@
 package security
 
+import (
+	"sync"
+)
+
 // UrlScanResultItem 结构体
 type UrlScanResultItem struct {
 	// 风险类型的描述文字
@@ -16,4 +20,27 @@ type UrlScanResultItem struct {
 	Source string `json:"source,omitempty" xml:"source,omitempty"`
 	// 被钓鱼网站仿冒的对象
 	Target string `json:"target,omitempty" xml:"target,omitempty"`
+}
+
+var poolUrlScanResultItem = sync.Pool{
+	New: func() any {
+		return new(UrlScanResultItem)
+	},
+}
+
+// GetUrlScanResultItem() 从对象池中获取UrlScanResultItem
+func GetUrlScanResultItem() *UrlScanResultItem {
+	return poolUrlScanResultItem.Get().(*UrlScanResultItem)
+}
+
+// ReleaseUrlScanResultItem 释放UrlScanResultItem
+func ReleaseUrlScanResultItem(v *UrlScanResultItem) {
+	v.Desc = ""
+	v.Flag = ""
+	v.Official = ""
+	v.ResultCode = ""
+	v.RiskType = ""
+	v.Source = ""
+	v.Target = ""
+	poolUrlScanResultItem.Put(v)
 }

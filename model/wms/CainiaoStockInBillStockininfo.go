@@ -1,5 +1,9 @@
 package wms
 
+import (
+	"sync"
+)
+
 // CainiaoStockInBillStockininfo 结构体
 type CainiaoStockInBillStockininfo struct {
 	// 入库单信息
@@ -14,4 +18,26 @@ type CainiaoStockInBillStockininfo struct {
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 单据类型：  904 普通入库 306 B2B入库单 601 采购入库
 	OrderType int64 `json:"order_type,omitempty" xml:"order_type,omitempty"`
+}
+
+var poolCainiaoStockInBillStockininfo = sync.Pool{
+	New: func() any {
+		return new(CainiaoStockInBillStockininfo)
+	},
+}
+
+// GetCainiaoStockInBillStockininfo() 从对象池中获取CainiaoStockInBillStockininfo
+func GetCainiaoStockInBillStockininfo() *CainiaoStockInBillStockininfo {
+	return poolCainiaoStockInBillStockininfo.Get().(*CainiaoStockInBillStockininfo)
+}
+
+// ReleaseCainiaoStockInBillStockininfo 释放CainiaoStockInBillStockininfo
+func ReleaseCainiaoStockInBillStockininfo(v *CainiaoStockInBillStockininfo) {
+	v.OrderItemList = v.OrderItemList[:0]
+	v.OrderCode = ""
+	v.CnOrderCode = ""
+	v.ConfirmTime = ""
+	v.Status = ""
+	v.OrderType = 0
+	poolCainiaoStockInBillStockininfo.Put(v)
 }

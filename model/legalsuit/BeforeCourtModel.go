@@ -1,5 +1,9 @@
 package legalsuit
 
+import (
+	"sync"
+)
+
 // BeforeCourtModel 结构体
 type BeforeCourtModel struct {
 	// 反馈附件信息
@@ -44,4 +48,41 @@ type BeforeCourtModel struct {
 	SuitId int64 `json:"suit_id,omitempty" xml:"suit_id,omitempty"`
 	// 委托ID
 	EntrustId int64 `json:"entrust_id,omitempty" xml:"entrust_id,omitempty"`
+}
+
+var poolBeforeCourtModel = sync.Pool{
+	New: func() any {
+		return new(BeforeCourtModel)
+	},
+}
+
+// GetBeforeCourtModel() 从对象池中获取BeforeCourtModel
+func GetBeforeCourtModel() *BeforeCourtModel {
+	return poolBeforeCourtModel.Get().(*BeforeCourtModel)
+}
+
+// ReleaseBeforeCourtModel 释放BeforeCourtModel
+func ReleaseBeforeCourtModel(v *BeforeCourtModel) {
+	v.FeedbackAttachmentList = v.FeedbackAttachmentList[:0]
+	v.AttachmentList = v.AttachmentList[:0]
+	v.CommunicateList = v.CommunicateList[:0]
+	v.RiskPredict = ""
+	v.MainPoint = ""
+	v.OurQuestions = ""
+	v.CourtQuestions = ""
+	v.TheirQuestions = ""
+	v.OurAttitude = ""
+	v.FeedbackContent = ""
+	v.Updater = ""
+	v.Founder = ""
+	v.SupplierCode = ""
+	v.DefendantEstimate = ""
+	v.CallingTime = ""
+	v.OperationType = ""
+	v.AttachmentCount = 0
+	v.FeedbackId = 0
+	v.BeforeCourtId = 0
+	v.SuitId = 0
+	v.EntrustId = 0
+	poolBeforeCourtModel.Put(v)
 }

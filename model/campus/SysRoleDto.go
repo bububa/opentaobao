@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // SysRoleDto 结构体
 type SysRoleDto struct {
 	// 角色key
@@ -24,4 +28,31 @@ type SysRoleDto struct {
 	CreatorId string `json:"creator_id,omitempty" xml:"creator_id,omitempty"`
 	// 角色主键id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolSysRoleDto = sync.Pool{
+	New: func() any {
+		return new(SysRoleDto)
+	},
+}
+
+// GetSysRoleDto() 从对象池中获取SysRoleDto
+func GetSysRoleDto() *SysRoleDto {
+	return poolSysRoleDto.Get().(*SysRoleDto)
+}
+
+// ReleaseSysRoleDto 释放SysRoleDto
+func ReleaseSysRoleDto(v *SysRoleDto) {
+	v.RoleKey = ""
+	v.Tenant = ""
+	v.AppKey = ""
+	v.DeptId = ""
+	v.DeptName = ""
+	v.RoleName = ""
+	v.RoleDesc = ""
+	v.RoleType = ""
+	v.ModifierId = ""
+	v.CreatorId = ""
+	v.Id = 0
+	poolSysRoleDto.Put(v)
 }

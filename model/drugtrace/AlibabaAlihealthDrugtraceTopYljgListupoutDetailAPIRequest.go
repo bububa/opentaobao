@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest struct {
 // NewAlibabaAlihealthDrugtraceTopYljgListupoutDetailRequest 初始化AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest对象
 func NewAlibabaAlihealthDrugtraceTopYljgListupoutDetailRequest() *AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest {
 	return &AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest) Reset() {
+	r._refEntId = ""
+	r._billCode = ""
+	r._fromRefUserId = ""
+	r._toRefUserId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest) SetToRefUser
 // GetToRefUserId ToRefUserId Getter
 func (r AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest) GetToRefUserId() string {
 	return r._toRefUserId
+}
+
+var poolAlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugtraceTopYljgListupoutDetailRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugtraceTopYljgListupoutDetailRequest 从 sync.Pool 获取 AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest
+func GetAlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest() *AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest {
+	return poolAlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest.Get().(*AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest 将 AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest(v *AlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugtraceTopYljgListupoutDetailAPIRequest.Put(v)
 }

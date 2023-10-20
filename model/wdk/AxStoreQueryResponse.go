@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // AxStoreQueryResponse 结构体
 type AxStoreQueryResponse struct {
 	// 负责人姓名
@@ -26,4 +30,32 @@ type AxStoreQueryResponse struct {
 	MerchantCode string `json:"merchant_code,omitempty" xml:"merchant_code,omitempty"`
 	// 门店经营状态 1营业 0闭店
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolAxStoreQueryResponse = sync.Pool{
+	New: func() any {
+		return new(AxStoreQueryResponse)
+	},
+}
+
+// GetAxStoreQueryResponse() 从对象池中获取AxStoreQueryResponse
+func GetAxStoreQueryResponse() *AxStoreQueryResponse {
+	return poolAxStoreQueryResponse.Get().(*AxStoreQueryResponse)
+}
+
+// ReleaseAxStoreQueryResponse 释放AxStoreQueryResponse
+func ReleaseAxStoreQueryResponse(v *AxStoreQueryResponse) {
+	v.PrincipalName = ""
+	v.Principal = ""
+	v.Latitude = ""
+	v.Longitude = ""
+	v.Address = ""
+	v.Area = ""
+	v.City = ""
+	v.Prov = ""
+	v.Name = ""
+	v.Code = ""
+	v.MerchantCode = ""
+	v.Status = 0
+	poolAxStoreQueryResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // TrainChangeTicketInfo 结构体
 type TrainChangeTicketInfo struct {
 	// 改签票号
@@ -48,4 +52,43 @@ type TrainChangeTicketInfo struct {
 	ChangeServiceFee float64 `json:"change_service_fee,omitempty" xml:"change_service_fee,omitempty"`
 	// 第几程
 	SegmentIndex int64 `json:"segment_index,omitempty" xml:"segment_index,omitempty"`
+}
+
+var poolTrainChangeTicketInfo = sync.Pool{
+	New: func() any {
+		return new(TrainChangeTicketInfo)
+	},
+}
+
+// GetTrainChangeTicketInfo() 从对象池中获取TrainChangeTicketInfo
+func GetTrainChangeTicketInfo() *TrainChangeTicketInfo {
+	return poolTrainChangeTicketInfo.Get().(*TrainChangeTicketInfo)
+}
+
+// ReleaseTrainChangeTicketInfo 释放TrainChangeTicketInfo
+func ReleaseTrainChangeTicketInfo(v *TrainChangeTicketInfo) {
+	v.TicketNo = ""
+	v.OriginTicketNo = ""
+	v.ChangeCoachNo = ""
+	v.ChangeSeatNo = ""
+	v.ChangeTrainTypeName = ""
+	v.ChangeSeatTypeName = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.GmtCreate = ""
+	v.GmtModify = ""
+	v.CheckInTime = ""
+	v.CheckOutTime = ""
+	v.OutTicketStatus = ""
+	v.ChangeTrainNo = ""
+	v.FromStationName = ""
+	v.ToStationName = ""
+	v.UserId = ""
+	v.FromCityName = ""
+	v.ToCityName = ""
+	v.ChangeHandlingFee = 0
+	v.ChangeGapFee = 0
+	v.ChangeServiceFee = 0
+	v.SegmentIndex = 0
+	poolTrainChangeTicketInfo.Put(v)
 }

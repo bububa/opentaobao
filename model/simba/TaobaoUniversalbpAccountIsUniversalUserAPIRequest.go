@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoUniversalbpAccountIsUniversalUserAPIRequest struct {
 // NewTaobaoUniversalbpAccountIsUniversalUserRequest 初始化TaobaoUniversalbpAccountIsUniversalUserAPIRequest对象
 func NewTaobaoUniversalbpAccountIsUniversalUserRequest() *TaobaoUniversalbpAccountIsUniversalUserAPIRequest {
 	return &TaobaoUniversalbpAccountIsUniversalUserAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpAccountIsUniversalUserAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoUniversalbpAccountIsUniversalUserAPIRequest) SetTopServiceContext
 // GetTopServiceContext TopServiceContext Getter
 func (r TaobaoUniversalbpAccountIsUniversalUserAPIRequest) GetTopServiceContext() *TopServiceContext {
 	return r._topServiceContext
+}
+
+var poolTaobaoUniversalbpAccountIsUniversalUserAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpAccountIsUniversalUserRequest()
+	},
+}
+
+// GetTaobaoUniversalbpAccountIsUniversalUserRequest 从 sync.Pool 获取 TaobaoUniversalbpAccountIsUniversalUserAPIRequest
+func GetTaobaoUniversalbpAccountIsUniversalUserAPIRequest() *TaobaoUniversalbpAccountIsUniversalUserAPIRequest {
+	return poolTaobaoUniversalbpAccountIsUniversalUserAPIRequest.Get().(*TaobaoUniversalbpAccountIsUniversalUserAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpAccountIsUniversalUserAPIRequest 将 TaobaoUniversalbpAccountIsUniversalUserAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpAccountIsUniversalUserAPIRequest(v *TaobaoUniversalbpAccountIsUniversalUserAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpAccountIsUniversalUserAPIRequest.Put(v)
 }

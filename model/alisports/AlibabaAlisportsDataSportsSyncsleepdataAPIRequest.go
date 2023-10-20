@@ -2,6 +2,7 @@ package alisports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type AlibabaAlisportsDataSportsSyncsleepdataAPIRequest struct {
 // NewAlibabaAlisportsDataSportsSyncsleepdataRequest 初始化AlibabaAlisportsDataSportsSyncsleepdataAPIRequest对象
 func NewAlibabaAlisportsDataSportsSyncsleepdataRequest() *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest {
 	return &AlibabaAlisportsDataSportsSyncsleepdataAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) Reset() {
+	r._alispAppKey = ""
+	r._stime = ""
+	r._soberTime = ""
+	r._shallowTime = ""
+	r._deepTime = ""
+	r._allTime = ""
+	r._aliuid = ""
+	r._alispSign = ""
+	r._alispTime = ""
+	r._etime = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) SetEtime(_etime stri
 // GetEtime Etime Getter
 func (r AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) GetEtime() string {
 	return r._etime
+}
+
+var poolAlibabaAlisportsDataSportsSyncsleepdataAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlisportsDataSportsSyncsleepdataRequest()
+	},
+}
+
+// GetAlibabaAlisportsDataSportsSyncsleepdataRequest 从 sync.Pool 获取 AlibabaAlisportsDataSportsSyncsleepdataAPIRequest
+func GetAlibabaAlisportsDataSportsSyncsleepdataAPIRequest() *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest {
+	return poolAlibabaAlisportsDataSportsSyncsleepdataAPIRequest.Get().(*AlibabaAlisportsDataSportsSyncsleepdataAPIRequest)
+}
+
+// ReleaseAlibabaAlisportsDataSportsSyncsleepdataAPIRequest 将 AlibabaAlisportsDataSportsSyncsleepdataAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlisportsDataSportsSyncsleepdataAPIRequest(v *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) {
+	v.Reset()
+	poolAlibabaAlisportsDataSportsSyncsleepdataAPIRequest.Put(v)
 }

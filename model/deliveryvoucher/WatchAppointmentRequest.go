@@ -1,5 +1,9 @@
 package deliveryvoucher
 
+import (
+	"sync"
+)
+
 // WatchAppointmentRequest 结构体
 type WatchAppointmentRequest struct {
 	// 可扩展字段
@@ -24,4 +28,31 @@ type WatchAppointmentRequest struct {
 	PreviousCapacity int64 `json:"previous_capacity,omitempty" xml:"previous_capacity,omitempty"`
 	// 最终预约数量	type为2必填
 	ActualAppointment int64 `json:"actual_appointment,omitempty" xml:"actual_appointment,omitempty"`
+}
+
+var poolWatchAppointmentRequest = sync.Pool{
+	New: func() any {
+		return new(WatchAppointmentRequest)
+	},
+}
+
+// GetWatchAppointmentRequest() 从对象池中获取WatchAppointmentRequest
+func GetWatchAppointmentRequest() *WatchAppointmentRequest {
+	return poolWatchAppointmentRequest.Get().(*WatchAppointmentRequest)
+}
+
+// ReleaseWatchAppointmentRequest 释放WatchAppointmentRequest
+func ReleaseWatchAppointmentRequest(v *WatchAppointmentRequest) {
+	v.Extend = ""
+	v.OpId = ""
+	v.OperationTime = ""
+	v.Provider = ""
+	v.Date = ""
+	v.MerchantName = ""
+	v.Type = 0
+	v.CurrentCapacity = 0
+	v.MerchantId = 0
+	v.PreviousCapacity = 0
+	v.ActualAppointment = 0
+	poolWatchAppointmentRequest.Put(v)
 }

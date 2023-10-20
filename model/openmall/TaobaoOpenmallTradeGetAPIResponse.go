@@ -2,6 +2,7 @@ package openmall
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoOpenmallTradeGetAPIResponse struct {
 	TaobaoOpenmallTradeGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoOpenmallTradeGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOpenmallTradeGetAPIResponseModel).Reset()
+}
+
 // TaobaoOpenmallTradeGetAPIResponseModel is 查询订单详情 成功返回结果
 type TaobaoOpenmallTradeGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"openmall_trade_get_response"`
@@ -22,4 +29,27 @@ type TaobaoOpenmallTradeGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
 	Result *TopTradeDetailVo `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOpenmallTradeGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoOpenmallTradeGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOpenmallTradeGetAPIResponse)
+	},
+}
+
+// GetTaobaoOpenmallTradeGetAPIResponse 从 sync.Pool 获取 TaobaoOpenmallTradeGetAPIResponse
+func GetTaobaoOpenmallTradeGetAPIResponse() *TaobaoOpenmallTradeGetAPIResponse {
+	return poolTaobaoOpenmallTradeGetAPIResponse.Get().(*TaobaoOpenmallTradeGetAPIResponse)
+}
+
+// ReleaseTaobaoOpenmallTradeGetAPIResponse 将 TaobaoOpenmallTradeGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOpenmallTradeGetAPIResponse(v *TaobaoOpenmallTradeGetAPIResponse) {
+	v.Reset()
+	poolTaobaoOpenmallTradeGetAPIResponse.Put(v)
 }

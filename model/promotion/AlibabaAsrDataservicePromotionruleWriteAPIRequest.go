@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAsrDataservicePromotionruleWriteAPIRequest struct {
 // NewAlibabaAsrDataservicePromotionruleWriteRequest 初始化AlibabaAsrDataservicePromotionruleWriteAPIRequest对象
 func NewAlibabaAsrDataservicePromotionruleWriteRequest() *AlibabaAsrDataservicePromotionruleWriteAPIRequest {
 	return &AlibabaAsrDataservicePromotionruleWriteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAsrDataservicePromotionruleWriteAPIRequest) Reset() {
+	r._poskeyPromotionRuleDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAsrDataservicePromotionruleWriteAPIRequest) SetPoskeyPromotionRu
 // GetPoskeyPromotionRuleDto PoskeyPromotionRuleDto Getter
 func (r AlibabaAsrDataservicePromotionruleWriteAPIRequest) GetPoskeyPromotionRuleDto() *PosKeyPromotionRuleDto {
 	return r._poskeyPromotionRuleDto
+}
+
+var poolAlibabaAsrDataservicePromotionruleWriteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAsrDataservicePromotionruleWriteRequest()
+	},
+}
+
+// GetAlibabaAsrDataservicePromotionruleWriteRequest 从 sync.Pool 获取 AlibabaAsrDataservicePromotionruleWriteAPIRequest
+func GetAlibabaAsrDataservicePromotionruleWriteAPIRequest() *AlibabaAsrDataservicePromotionruleWriteAPIRequest {
+	return poolAlibabaAsrDataservicePromotionruleWriteAPIRequest.Get().(*AlibabaAsrDataservicePromotionruleWriteAPIRequest)
+}
+
+// ReleaseAlibabaAsrDataservicePromotionruleWriteAPIRequest 将 AlibabaAsrDataservicePromotionruleWriteAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAsrDataservicePromotionruleWriteAPIRequest(v *AlibabaAsrDataservicePromotionruleWriteAPIRequest) {
+	v.Reset()
+	poolAlibabaAsrDataservicePromotionruleWriteAPIRequest.Put(v)
 }

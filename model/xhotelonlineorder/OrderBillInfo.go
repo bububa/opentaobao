@@ -1,5 +1,9 @@
 package xhotelonlineorder
 
+import (
+	"sync"
+)
+
 // OrderBillInfo 结构体
 type OrderBillInfo struct {
 	// 离店日期
@@ -38,4 +42,38 @@ type OrderBillInfo struct {
 	OtherFeeDetail *OtherFeeDetail `json:"other_fee_detail,omitempty" xml:"other_fee_detail,omitempty"`
 	// 每日房费类表
 	DailyRoomFee *DailyRoomFee `json:"daily_room_fee,omitempty" xml:"daily_room_fee,omitempty"`
+}
+
+var poolOrderBillInfo = sync.Pool{
+	New: func() any {
+		return new(OrderBillInfo)
+	},
+}
+
+// GetOrderBillInfo() 从对象池中获取OrderBillInfo
+func GetOrderBillInfo() *OrderBillInfo {
+	return poolOrderBillInfo.Get().(*OrderBillInfo)
+}
+
+// ReleaseOrderBillInfo 释放OrderBillInfo
+func ReleaseOrderBillInfo(v *OrderBillInfo) {
+	v.CheckOutDate = ""
+	v.CheckInDate = ""
+	v.RoomNo = ""
+	v.IdNumber = ""
+	v.GuestName = ""
+	v.HotelCode = ""
+	v.OutOrderId = ""
+	v.RequestId = ""
+	v.Remark = ""
+	v.NoCheckoutPrice = 0
+	v.CheckoutPrice = 0
+	v.CheckoutTotalFee = 0
+	v.NoCheckoutTotalFee = 0
+	v.Tid = 0
+	v.NoCheckoutOtherFee = 0
+	v.CheckoutOtherFee = 0
+	v.OtherFeeDetail = nil
+	v.DailyRoomFee = nil
+	poolOrderBillInfo.Put(v)
 }

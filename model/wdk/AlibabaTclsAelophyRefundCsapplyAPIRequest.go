@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTclsAelophyRefundCsapplyAPIRequest struct {
 // NewAlibabaTclsAelophyRefundCsapplyRequest 初始化AlibabaTclsAelophyRefundCsapplyAPIRequest对象
 func NewAlibabaTclsAelophyRefundCsapplyRequest() *AlibabaTclsAelophyRefundCsapplyAPIRequest {
 	return &AlibabaTclsAelophyRefundCsapplyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTclsAelophyRefundCsapplyAPIRequest) Reset() {
+	r._refundCsApplyDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTclsAelophyRefundCsapplyAPIRequest) SetRefundCsApplyDTO(_refundC
 // GetRefundCsApplyDTO RefundCsApplyDTO Getter
 func (r AlibabaTclsAelophyRefundCsapplyAPIRequest) GetRefundCsApplyDTO() *RefundCsApplyDto {
 	return r._refundCsApplyDTO
+}
+
+var poolAlibabaTclsAelophyRefundCsapplyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTclsAelophyRefundCsapplyRequest()
+	},
+}
+
+// GetAlibabaTclsAelophyRefundCsapplyRequest 从 sync.Pool 获取 AlibabaTclsAelophyRefundCsapplyAPIRequest
+func GetAlibabaTclsAelophyRefundCsapplyAPIRequest() *AlibabaTclsAelophyRefundCsapplyAPIRequest {
+	return poolAlibabaTclsAelophyRefundCsapplyAPIRequest.Get().(*AlibabaTclsAelophyRefundCsapplyAPIRequest)
+}
+
+// ReleaseAlibabaTclsAelophyRefundCsapplyAPIRequest 将 AlibabaTclsAelophyRefundCsapplyAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTclsAelophyRefundCsapplyAPIRequest(v *AlibabaTclsAelophyRefundCsapplyAPIRequest) {
+	v.Reset()
+	poolAlibabaTclsAelophyRefundCsapplyAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package maitix
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest struct {
 // NewAlibabaDamaiMaitixDistributionDeliveryCalculateRequest 初始化AlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest对象
 func NewAlibabaDamaiMaitixDistributionDeliveryCalculateRequest() *AlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest {
 	return &AlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest) SetParam(_pa
 // GetParam Param Getter
 func (r AlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest) GetParam() *OpenApiPostFeeParam {
 	return r._param
+}
+
+var poolAlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDamaiMaitixDistributionDeliveryCalculateRequest()
+	},
+}
+
+// GetAlibabaDamaiMaitixDistributionDeliveryCalculateRequest 从 sync.Pool 获取 AlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest
+func GetAlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest() *AlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest {
+	return poolAlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest.Get().(*AlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest)
+}
+
+// ReleaseAlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest 将 AlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest(v *AlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest) {
+	v.Reset()
+	poolAlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package store
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoPlaceStoreItemstoreBandAPIRequest struct {
 // NewTaobaoPlaceStoreItemstoreBandRequest 初始化TaobaoPlaceStoreItemstoreBandAPIRequest对象
 func NewTaobaoPlaceStoreItemstoreBandRequest() *TaobaoPlaceStoreItemstoreBandAPIRequest {
 	return &TaobaoPlaceStoreItemstoreBandAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPlaceStoreItemstoreBandAPIRequest) Reset() {
+	r._storeIds = r._storeIds[:0]
+	r._actionType = ""
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoPlaceStoreItemstoreBandAPIRequest) SetItemId(_itemId int64) error
 // GetItemId ItemId Getter
 func (r TaobaoPlaceStoreItemstoreBandAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolTaobaoPlaceStoreItemstoreBandAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPlaceStoreItemstoreBandRequest()
+	},
+}
+
+// GetTaobaoPlaceStoreItemstoreBandRequest 从 sync.Pool 获取 TaobaoPlaceStoreItemstoreBandAPIRequest
+func GetTaobaoPlaceStoreItemstoreBandAPIRequest() *TaobaoPlaceStoreItemstoreBandAPIRequest {
+	return poolTaobaoPlaceStoreItemstoreBandAPIRequest.Get().(*TaobaoPlaceStoreItemstoreBandAPIRequest)
+}
+
+// ReleaseTaobaoPlaceStoreItemstoreBandAPIRequest 将 TaobaoPlaceStoreItemstoreBandAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPlaceStoreItemstoreBandAPIRequest(v *TaobaoPlaceStoreItemstoreBandAPIRequest) {
+	v.Reset()
+	poolTaobaoPlaceStoreItemstoreBandAPIRequest.Put(v)
 }

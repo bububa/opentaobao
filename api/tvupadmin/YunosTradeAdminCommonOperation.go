@@ -9,11 +9,6 @@ import (
 // yunos.trade.admin.common.operation
 //
 // 迎客松交易相关通用接口
-func YunosTradeAdminCommonOperation(clt *core.SDKClient, req *tvupadmin.YunosTradeAdminCommonOperationAPIRequest, session string) (*tvupadmin.YunosTradeAdminCommonOperationAPIResponse, error) {
-	var resp tvupadmin.YunosTradeAdminCommonOperationAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosTradeAdminCommonOperation(clt *core.SDKClient, req *tvupadmin.YunosTradeAdminCommonOperationAPIRequest, resp *tvupadmin.YunosTradeAdminCommonOperationAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

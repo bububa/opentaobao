@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // DataItem 结构体
 type DataItem struct {
 	// 组合货品erp货品id
@@ -22,4 +26,30 @@ type DataItem struct {
 	SkuId string `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 	// true|false
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolDataItem = sync.Pool{
+	New: func() any {
+		return new(DataItem)
+	},
+}
+
+// GetDataItem() 从对象池中获取DataItem
+func GetDataItem() *DataItem {
+	return poolDataItem.Get().(*DataItem)
+}
+
+// ReleaseDataItem 释放DataItem
+func ReleaseDataItem(v *DataItem) {
+	v.CombineScItemId = ""
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.ScItemId = ""
+	v.Code = ""
+	v.Message = ""
+	v.SellerId = ""
+	v.ItemId = ""
+	v.SkuId = ""
+	v.Success = false
+	poolDataItem.Put(v)
 }

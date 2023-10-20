@@ -1,5 +1,9 @@
 package hotel
 
+import (
+	"sync"
+)
+
 // RoomPrice 结构体
 type RoomPrice struct {
 	// 报价列表
@@ -12,4 +16,25 @@ type RoomPrice struct {
 	WindowJson string `json:"window_json,omitempty" xml:"window_json,omitempty"`
 	// 房型id
 	Srid int64 `json:"srid,omitempty" xml:"srid,omitempty"`
+}
+
+var poolRoomPrice = sync.Pool{
+	New: func() any {
+		return new(RoomPrice)
+	},
+}
+
+// GetRoomPrice() 从对象池中获取RoomPrice
+func GetRoomPrice() *RoomPrice {
+	return poolRoomPrice.Get().(*RoomPrice)
+}
+
+// ReleaseRoomPrice 释放RoomPrice
+func ReleaseRoomPrice(v *RoomPrice) {
+	v.RatePrices = v.RatePrices[:0]
+	v.Name = ""
+	v.BedJson = ""
+	v.WindowJson = ""
+	v.Srid = 0
+	poolRoomPrice.Put(v)
 }

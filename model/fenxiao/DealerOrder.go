@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // DealerOrder 结构体
 type DealerOrder struct {
 	// 产品明细
@@ -54,4 +58,46 @@ type DealerOrder struct {
 	DealerOrderId int64 `json:"dealer_order_id,omitempty" xml:"dealer_order_id,omitempty"`
 	// 供应商备注旗帜。1:红色 2:黄色 3:绿色 4:蓝色 5:粉红色。仅供应商可见。
 	SupplierMemoFlag int64 `json:"supplier_memo_flag,omitempty" xml:"supplier_memo_flag,omitempty"`
+}
+
+var poolDealerOrder = sync.Pool{
+	New: func() any {
+		return new(DealerOrder)
+	},
+}
+
+// GetDealerOrder() 从对象池中获取DealerOrder
+func GetDealerOrder() *DealerOrder {
+	return poolDealerOrder.Get().(*DealerOrder)
+}
+
+// ReleaseDealerOrder 释放DealerOrder
+func ReleaseDealerOrder(v *DealerOrder) {
+	v.DealerOrderDetails = v.DealerOrderDetails[:0]
+	v.Features = v.Features[:0]
+	v.LogisticsType = ""
+	v.LogisticsFee = ""
+	v.RebateFee = ""
+	v.ModifiedTime = ""
+	v.AppliedTime = ""
+	v.AuditTimeApplier = ""
+	v.TotalPrice = ""
+	v.OrderStatus = ""
+	v.CloseReason = ""
+	v.PayType = ""
+	v.SupplierNick = ""
+	v.RefuseReasonSupplier = ""
+	v.RefuseReasonApplier = ""
+	v.ApplierNick = ""
+	v.AuditTimeSupplier = ""
+	v.AlipayNo = ""
+	v.PayTime = ""
+	v.SupplierMemo = ""
+	v.DistMemo = ""
+	v.QuantityCount = 0
+	v.Receiver = nil
+	v.DeliveredQuantityCount = 0
+	v.DealerOrderId = 0
+	v.SupplierMemoFlag = 0
+	poolDealerOrder.Put(v)
 }

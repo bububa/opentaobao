@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaCampusCoreAppGetappusagesAPIRequest struct {
 // NewAlibabaCampusCoreAppGetappusagesRequest 初始化AlibabaCampusCoreAppGetappusagesAPIRequest对象
 func NewAlibabaCampusCoreAppGetappusagesRequest() *AlibabaCampusCoreAppGetappusagesAPIRequest {
 	return &AlibabaCampusCoreAppGetappusagesAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusCoreAppGetappusagesAPIRequest) Reset() {
+	r._workBenchContext = nil
+	r._appid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaCampusCoreAppGetappusagesAPIRequest) SetAppid(_appid int64) erro
 // GetAppid Appid Getter
 func (r AlibabaCampusCoreAppGetappusagesAPIRequest) GetAppid() int64 {
 	return r._appid
+}
+
+var poolAlibabaCampusCoreAppGetappusagesAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusCoreAppGetappusagesRequest()
+	},
+}
+
+// GetAlibabaCampusCoreAppGetappusagesRequest 从 sync.Pool 获取 AlibabaCampusCoreAppGetappusagesAPIRequest
+func GetAlibabaCampusCoreAppGetappusagesAPIRequest() *AlibabaCampusCoreAppGetappusagesAPIRequest {
+	return poolAlibabaCampusCoreAppGetappusagesAPIRequest.Get().(*AlibabaCampusCoreAppGetappusagesAPIRequest)
+}
+
+// ReleaseAlibabaCampusCoreAppGetappusagesAPIRequest 将 AlibabaCampusCoreAppGetappusagesAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusCoreAppGetappusagesAPIRequest(v *AlibabaCampusCoreAppGetappusagesAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusCoreAppGetappusagesAPIRequest.Put(v)
 }

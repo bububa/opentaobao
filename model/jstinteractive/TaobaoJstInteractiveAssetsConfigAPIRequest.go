@@ -2,6 +2,7 @@ package jstinteractive
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoJstInteractiveAssetsConfigAPIRequest struct {
 // NewTaobaoJstInteractiveAssetsConfigRequest 初始化TaobaoJstInteractiveAssetsConfigAPIRequest对象
 func NewTaobaoJstInteractiveAssetsConfigRequest() *TaobaoJstInteractiveAssetsConfigAPIRequest {
 	return &TaobaoJstInteractiveAssetsConfigAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJstInteractiveAssetsConfigAPIRequest) Reset() {
+	r._assetsConfigList = r._assetsConfigList[:0]
+	r._miniAppId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoJstInteractiveAssetsConfigAPIRequest) SetMiniAppId(_miniAppId str
 // GetMiniAppId MiniAppId Getter
 func (r TaobaoJstInteractiveAssetsConfigAPIRequest) GetMiniAppId() string {
 	return r._miniAppId
+}
+
+var poolTaobaoJstInteractiveAssetsConfigAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJstInteractiveAssetsConfigRequest()
+	},
+}
+
+// GetTaobaoJstInteractiveAssetsConfigRequest 从 sync.Pool 获取 TaobaoJstInteractiveAssetsConfigAPIRequest
+func GetTaobaoJstInteractiveAssetsConfigAPIRequest() *TaobaoJstInteractiveAssetsConfigAPIRequest {
+	return poolTaobaoJstInteractiveAssetsConfigAPIRequest.Get().(*TaobaoJstInteractiveAssetsConfigAPIRequest)
+}
+
+// ReleaseTaobaoJstInteractiveAssetsConfigAPIRequest 将 TaobaoJstInteractiveAssetsConfigAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJstInteractiveAssetsConfigAPIRequest(v *TaobaoJstInteractiveAssetsConfigAPIRequest) {
+	v.Reset()
+	poolTaobaoJstInteractiveAssetsConfigAPIRequest.Put(v)
 }

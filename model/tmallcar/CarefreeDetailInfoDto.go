@@ -1,5 +1,9 @@
 package tmallcar
 
+import (
+	"sync"
+)
+
 // CarefreeDetailInfoDto 结构体
 type CarefreeDetailInfoDto struct {
 	// 商品标题
@@ -40,4 +44,39 @@ type CarefreeDetailInfoDto struct {
 	OrderSuccessTime int64 `json:"order_success_time,omitempty" xml:"order_success_time,omitempty"`
 	// 是否免申请
 	FreeApply bool `json:"free_apply,omitempty" xml:"free_apply,omitempty"`
+}
+
+var poolCarefreeDetailInfoDto = sync.Pool{
+	New: func() any {
+		return new(CarefreeDetailInfoDto)
+	},
+}
+
+// GetCarefreeDetailInfoDto() 从对象池中获取CarefreeDetailInfoDto
+func GetCarefreeDetailInfoDto() *CarefreeDetailInfoDto {
+	return poolCarefreeDetailInfoDto.Get().(*CarefreeDetailInfoDto)
+}
+
+// ReleaseCarefreeDetailInfoDto 释放CarefreeDetailInfoDto
+func ReleaseCarefreeDetailInfoDto(v *CarefreeDetailInfoDto) {
+	v.ItemTitle = ""
+	v.ItemPic = ""
+	v.BrandName = ""
+	v.SeriesName = ""
+	v.StoreName = ""
+	v.BizId = 0
+	v.PayStatus = 0
+	v.ServiceOffTime = 0
+	v.HasRefunded = 0
+	v.BrandId = 0
+	v.SeriesId = 0
+	v.StoreId = 0
+	v.BizType = 0
+	v.EarnestPaidTime = 0
+	v.OrderCloseTime = 0
+	v.OrderCancelTime = 0
+	v.Price = 0
+	v.OrderSuccessTime = 0
+	v.FreeApply = false
+	poolCarefreeDetailInfoDto.Put(v)
 }

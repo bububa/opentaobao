@@ -1,5 +1,9 @@
 package wdkitem
 
+import (
+	"sync"
+)
+
 // AlibabaWdkItemMerchantstoreskuUpdateResult 结构体
 type AlibabaWdkItemMerchantstoreskuUpdateResult struct {
 	// code
@@ -10,4 +14,24 @@ type AlibabaWdkItemMerchantstoreskuUpdateResult struct {
 	ErrorDesc string `json:"error_desc,omitempty" xml:"error_desc,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaWdkItemMerchantstoreskuUpdateResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkItemMerchantstoreskuUpdateResult)
+	},
+}
+
+// GetAlibabaWdkItemMerchantstoreskuUpdateResult() 从对象池中获取AlibabaWdkItemMerchantstoreskuUpdateResult
+func GetAlibabaWdkItemMerchantstoreskuUpdateResult() *AlibabaWdkItemMerchantstoreskuUpdateResult {
+	return poolAlibabaWdkItemMerchantstoreskuUpdateResult.Get().(*AlibabaWdkItemMerchantstoreskuUpdateResult)
+}
+
+// ReleaseAlibabaWdkItemMerchantstoreskuUpdateResult 释放AlibabaWdkItemMerchantstoreskuUpdateResult
+func ReleaseAlibabaWdkItemMerchantstoreskuUpdateResult(v *AlibabaWdkItemMerchantstoreskuUpdateResult) {
+	v.Code = ""
+	v.ErrorCode = ""
+	v.ErrorDesc = ""
+	v.Success = false
+	poolAlibabaWdkItemMerchantstoreskuUpdateResult.Put(v)
 }

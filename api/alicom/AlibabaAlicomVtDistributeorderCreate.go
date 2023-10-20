@@ -9,11 +9,6 @@ import (
 // alibaba.alicom.vt.distributeorder.create
 //
 // 通信业务外放下单接口
-func AlibabaAlicomVtDistributeorderCreate(clt *core.SDKClient, req *alicom.AlibabaAlicomVtDistributeorderCreateAPIRequest, session string) (*alicom.AlibabaAlicomVtDistributeorderCreateAPIResponse, error) {
-	var resp alicom.AlibabaAlicomVtDistributeorderCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlicomVtDistributeorderCreate(clt *core.SDKClient, req *alicom.AlibabaAlicomVtDistributeorderCreateAPIRequest, resp *alicom.AlibabaAlicomVtDistributeorderCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

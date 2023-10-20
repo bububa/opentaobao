@@ -2,6 +2,7 @@ package flightuppc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripFlightExternalAlipayEncryptAPIRequest struct {
 // NewAlitripFlightExternalAlipayEncryptRequest 初始化AlitripFlightExternalAlipayEncryptAPIRequest对象
 func NewAlitripFlightExternalAlipayEncryptRequest() *AlitripFlightExternalAlipayEncryptAPIRequest {
 	return &AlitripFlightExternalAlipayEncryptAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripFlightExternalAlipayEncryptAPIRequest) Reset() {
+	r._alipayEncryptReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripFlightExternalAlipayEncryptAPIRequest) SetAlipayEncryptReq(_alip
 // GetAlipayEncryptReq AlipayEncryptReq Getter
 func (r AlitripFlightExternalAlipayEncryptAPIRequest) GetAlipayEncryptReq() *AlipayEncryptReq {
 	return r._alipayEncryptReq
+}
+
+var poolAlitripFlightExternalAlipayEncryptAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripFlightExternalAlipayEncryptRequest()
+	},
+}
+
+// GetAlitripFlightExternalAlipayEncryptRequest 从 sync.Pool 获取 AlitripFlightExternalAlipayEncryptAPIRequest
+func GetAlitripFlightExternalAlipayEncryptAPIRequest() *AlitripFlightExternalAlipayEncryptAPIRequest {
+	return poolAlitripFlightExternalAlipayEncryptAPIRequest.Get().(*AlitripFlightExternalAlipayEncryptAPIRequest)
+}
+
+// ReleaseAlitripFlightExternalAlipayEncryptAPIRequest 将 AlitripFlightExternalAlipayEncryptAPIRequest 放入 sync.Pool
+func ReleaseAlitripFlightExternalAlipayEncryptAPIRequest(v *AlitripFlightExternalAlipayEncryptAPIRequest) {
+	v.Reset()
+	poolAlitripFlightExternalAlipayEncryptAPIRequest.Put(v)
 }

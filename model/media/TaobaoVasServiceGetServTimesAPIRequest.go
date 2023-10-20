@@ -2,6 +2,7 @@ package media
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoVasServiceGetServTimesAPIRequest struct {
 // NewTaobaoVasServiceGetServTimesRequest 初始化TaobaoVasServiceGetServTimesAPIRequest对象
 func NewTaobaoVasServiceGetServTimesRequest() *TaobaoVasServiceGetServTimesAPIRequest {
 	return &TaobaoVasServiceGetServTimesAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoVasServiceGetServTimesAPIRequest) Reset() {
+	r._servCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoVasServiceGetServTimesAPIRequest) SetServCode(_servCode string) e
 // GetServCode ServCode Getter
 func (r TaobaoVasServiceGetServTimesAPIRequest) GetServCode() string {
 	return r._servCode
+}
+
+var poolTaobaoVasServiceGetServTimesAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoVasServiceGetServTimesRequest()
+	},
+}
+
+// GetTaobaoVasServiceGetServTimesRequest 从 sync.Pool 获取 TaobaoVasServiceGetServTimesAPIRequest
+func GetTaobaoVasServiceGetServTimesAPIRequest() *TaobaoVasServiceGetServTimesAPIRequest {
+	return poolTaobaoVasServiceGetServTimesAPIRequest.Get().(*TaobaoVasServiceGetServTimesAPIRequest)
+}
+
+// ReleaseTaobaoVasServiceGetServTimesAPIRequest 将 TaobaoVasServiceGetServTimesAPIRequest 放入 sync.Pool
+func ReleaseTaobaoVasServiceGetServTimesAPIRequest(v *TaobaoVasServiceGetServTimesAPIRequest) {
+	v.Reset()
+	poolTaobaoVasServiceGetServTimesAPIRequest.Put(v)
 }

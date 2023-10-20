@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // WmsOrderProcessReportRequest 结构体
 type WmsOrderProcessReportRequest struct {
 	// (创建发货单)条件必填
@@ -18,4 +22,28 @@ type WmsOrderProcessReportRequest struct {
 	Order *Order `json:"order,omitempty" xml:"order,omitempty"`
 	// 单据作业信息
 	Process *Process `json:"process,omitempty" xml:"process,omitempty"`
+}
+
+var poolWmsOrderProcessReportRequest = sync.Pool{
+	New: func() any {
+		return new(WmsOrderProcessReportRequest)
+	},
+}
+
+// GetWmsOrderProcessReportRequest() 从对象池中获取WmsOrderProcessReportRequest
+func GetWmsOrderProcessReportRequest() *WmsOrderProcessReportRequest {
+	return poolWmsOrderProcessReportRequest.Get().(*WmsOrderProcessReportRequest)
+}
+
+// ReleaseWmsOrderProcessReportRequest 释放WmsOrderProcessReportRequest
+func ReleaseWmsOrderProcessReportRequest(v *WmsOrderProcessReportRequest) {
+	v.OrderLines = v.OrderLines[:0]
+	v.ConfirmOrderLines = v.ConfirmOrderLines[:0]
+	v.ConfirmPackages = v.ConfirmPackages[:0]
+	v.RequestId = ""
+	v.OrderFlag = ""
+	v.RequestTime = 0
+	v.Order = nil
+	v.Process = nil
+	poolWmsOrderProcessReportRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoSimbaRtrptCustGetAPIRequest struct {
 // NewTaobaoSimbaRtrptCustGetRequest 初始化TaobaoSimbaRtrptCustGetAPIRequest对象
 func NewTaobaoSimbaRtrptCustGetRequest() *TaobaoSimbaRtrptCustGetAPIRequest {
 	return &TaobaoSimbaRtrptCustGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaRtrptCustGetAPIRequest) Reset() {
+	r._nick = ""
+	r._theDate = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoSimbaRtrptCustGetAPIRequest) SetTheDate(_theDate string) error {
 // GetTheDate TheDate Getter
 func (r TaobaoSimbaRtrptCustGetAPIRequest) GetTheDate() string {
 	return r._theDate
+}
+
+var poolTaobaoSimbaRtrptCustGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaRtrptCustGetRequest()
+	},
+}
+
+// GetTaobaoSimbaRtrptCustGetRequest 从 sync.Pool 获取 TaobaoSimbaRtrptCustGetAPIRequest
+func GetTaobaoSimbaRtrptCustGetAPIRequest() *TaobaoSimbaRtrptCustGetAPIRequest {
+	return poolTaobaoSimbaRtrptCustGetAPIRequest.Get().(*TaobaoSimbaRtrptCustGetAPIRequest)
+}
+
+// ReleaseTaobaoSimbaRtrptCustGetAPIRequest 将 TaobaoSimbaRtrptCustGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaRtrptCustGetAPIRequest(v *TaobaoSimbaRtrptCustGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaRtrptCustGetAPIRequest.Put(v)
 }

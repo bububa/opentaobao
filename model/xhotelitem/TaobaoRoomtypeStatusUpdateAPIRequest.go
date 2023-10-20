@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoRoomtypeStatusUpdateAPIRequest struct {
 // NewTaobaoRoomtypeStatusUpdateRequest 初始化TaobaoRoomtypeStatusUpdateAPIRequest对象
 func NewTaobaoRoomtypeStatusUpdateRequest() *TaobaoRoomtypeStatusUpdateAPIRequest {
 	return &TaobaoRoomtypeStatusUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoRoomtypeStatusUpdateAPIRequest) Reset() {
+	r._vendor = ""
+	r._outerId = ""
+	r._rid = 0
+	r._status = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoRoomtypeStatusUpdateAPIRequest) SetStatus(_status int64) error {
 // GetStatus Status Getter
 func (r TaobaoRoomtypeStatusUpdateAPIRequest) GetStatus() int64 {
 	return r._status
+}
+
+var poolTaobaoRoomtypeStatusUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoRoomtypeStatusUpdateRequest()
+	},
+}
+
+// GetTaobaoRoomtypeStatusUpdateRequest 从 sync.Pool 获取 TaobaoRoomtypeStatusUpdateAPIRequest
+func GetTaobaoRoomtypeStatusUpdateAPIRequest() *TaobaoRoomtypeStatusUpdateAPIRequest {
+	return poolTaobaoRoomtypeStatusUpdateAPIRequest.Get().(*TaobaoRoomtypeStatusUpdateAPIRequest)
+}
+
+// ReleaseTaobaoRoomtypeStatusUpdateAPIRequest 将 TaobaoRoomtypeStatusUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoRoomtypeStatusUpdateAPIRequest(v *TaobaoRoomtypeStatusUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoRoomtypeStatusUpdateAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package interact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type TaobaoWeitaoFeedSynchronizeNewAPIRequest struct {
 // NewTaobaoWeitaoFeedSynchronizeNewRequest 初始化TaobaoWeitaoFeedSynchronizeNewAPIRequest对象
 func NewTaobaoWeitaoFeedSynchronizeNewRequest() *TaobaoWeitaoFeedSynchronizeNewAPIRequest {
 	return &TaobaoWeitaoFeedSynchronizeNewAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWeitaoFeedSynchronizeNewAPIRequest) Reset() {
+	r._itemIds = r._itemIds[:0]
+	r._detailUrl = ""
+	r._summary = ""
+	r._title = ""
+	r._sbizId = ""
+	r._feedType = 0
+	r._endTime = 0
+	r._startTime = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *TaobaoWeitaoFeedSynchronizeNewAPIRequest) SetStartTime(_startTime int64
 // GetStartTime StartTime Getter
 func (r TaobaoWeitaoFeedSynchronizeNewAPIRequest) GetStartTime() int64 {
 	return r._startTime
+}
+
+var poolTaobaoWeitaoFeedSynchronizeNewAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWeitaoFeedSynchronizeNewRequest()
+	},
+}
+
+// GetTaobaoWeitaoFeedSynchronizeNewRequest 从 sync.Pool 获取 TaobaoWeitaoFeedSynchronizeNewAPIRequest
+func GetTaobaoWeitaoFeedSynchronizeNewAPIRequest() *TaobaoWeitaoFeedSynchronizeNewAPIRequest {
+	return poolTaobaoWeitaoFeedSynchronizeNewAPIRequest.Get().(*TaobaoWeitaoFeedSynchronizeNewAPIRequest)
+}
+
+// ReleaseTaobaoWeitaoFeedSynchronizeNewAPIRequest 将 TaobaoWeitaoFeedSynchronizeNewAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWeitaoFeedSynchronizeNewAPIRequest(v *TaobaoWeitaoFeedSynchronizeNewAPIRequest) {
+	v.Reset()
+	poolTaobaoWeitaoFeedSynchronizeNewAPIRequest.Put(v)
 }

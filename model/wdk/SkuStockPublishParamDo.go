@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // SkuStockPublishParamDo 结构体
 type SkuStockPublishParamDo struct {
 	// 商家门店编码
@@ -16,4 +20,27 @@ type SkuStockPublishParamDo struct {
 	UpdateType int64 `json:"update_type,omitempty" xml:"update_type,omitempty"`
 	// 当时业务发生的时间戳，单位：ms
 	OperationTs int64 `json:"operation_ts,omitempty" xml:"operation_ts,omitempty"`
+}
+
+var poolSkuStockPublishParamDo = sync.Pool{
+	New: func() any {
+		return new(SkuStockPublishParamDo)
+	},
+}
+
+// GetSkuStockPublishParamDo() 从对象池中获取SkuStockPublishParamDo
+func GetSkuStockPublishParamDo() *SkuStockPublishParamDo {
+	return poolSkuStockPublishParamDo.Get().(*SkuStockPublishParamDo)
+}
+
+// ReleaseSkuStockPublishParamDo 释放SkuStockPublishParamDo
+func ReleaseSkuStockPublishParamDo(v *SkuStockPublishParamDo) {
+	v.ShopCode = ""
+	v.Reason = ""
+	v.BillNo = ""
+	v.Barcode = ""
+	v.Quantity = 0
+	v.UpdateType = 0
+	v.OperationTs = 0
+	poolSkuStockPublishParamDo.Put(v)
 }

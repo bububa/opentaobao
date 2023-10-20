@@ -2,6 +2,7 @@ package mozi
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMoziBucAccountListAccountidsAPIRequest struct {
 // NewAlibabaMoziBucAccountListAccountidsRequest 初始化AlibabaMoziBucAccountListAccountidsAPIRequest对象
 func NewAlibabaMoziBucAccountListAccountidsRequest() *AlibabaMoziBucAccountListAccountidsAPIRequest {
 	return &AlibabaMoziBucAccountListAccountidsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMoziBucAccountListAccountidsAPIRequest) Reset() {
+	r._listAccountIds = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMoziBucAccountListAccountidsAPIRequest) SetListAccountIds(_listA
 // GetListAccountIds ListAccountIds Getter
 func (r AlibabaMoziBucAccountListAccountidsAPIRequest) GetListAccountIds() *ListAccountsByAccountIdsRequest {
 	return r._listAccountIds
+}
+
+var poolAlibabaMoziBucAccountListAccountidsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMoziBucAccountListAccountidsRequest()
+	},
+}
+
+// GetAlibabaMoziBucAccountListAccountidsRequest 从 sync.Pool 获取 AlibabaMoziBucAccountListAccountidsAPIRequest
+func GetAlibabaMoziBucAccountListAccountidsAPIRequest() *AlibabaMoziBucAccountListAccountidsAPIRequest {
+	return poolAlibabaMoziBucAccountListAccountidsAPIRequest.Get().(*AlibabaMoziBucAccountListAccountidsAPIRequest)
+}
+
+// ReleaseAlibabaMoziBucAccountListAccountidsAPIRequest 将 AlibabaMoziBucAccountListAccountidsAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMoziBucAccountListAccountidsAPIRequest(v *AlibabaMoziBucAccountListAccountidsAPIRequest) {
+	v.Reset()
+	poolAlibabaMoziBucAccountListAccountidsAPIRequest.Put(v)
 }

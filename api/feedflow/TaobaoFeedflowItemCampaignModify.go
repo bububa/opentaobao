@@ -9,11 +9,6 @@ import (
 // taobao.feedflow.item.campaign.modify
 //
 // 信息流修改计划
-func TaobaoFeedflowItemCampaignModify(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCampaignModifyAPIRequest, session string) (*feedflow.TaobaoFeedflowItemCampaignModifyAPIResponse, error) {
-	var resp feedflow.TaobaoFeedflowItemCampaignModifyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFeedflowItemCampaignModify(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCampaignModifyAPIRequest, resp *feedflow.TaobaoFeedflowItemCampaignModifyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

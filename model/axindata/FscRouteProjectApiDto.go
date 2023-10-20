@@ -1,5 +1,9 @@
 package axindata
 
+import (
+	"sync"
+)
+
 // FscRouteProjectApiDto 结构体
 type FscRouteProjectApiDto struct {
 	// 价格体系
@@ -26,4 +30,32 @@ type FscRouteProjectApiDto struct {
 	DepartFlight *FlightInfoApiDto `json:"depart_flight,omitempty" xml:"depart_flight,omitempty"`
 	// 返程航班
 	ReturnFlight *FlightInfoApiDto `json:"return_flight,omitempty" xml:"return_flight,omitempty"`
+}
+
+var poolFscRouteProjectApiDto = sync.Pool{
+	New: func() any {
+		return new(FscRouteProjectApiDto)
+	},
+}
+
+// GetFscRouteProjectApiDto() 从对象池中获取FscRouteProjectApiDto
+func GetFscRouteProjectApiDto() *FscRouteProjectApiDto {
+	return poolFscRouteProjectApiDto.Get().(*FscRouteProjectApiDto)
+}
+
+// ReleaseFscRouteProjectApiDto 释放FscRouteProjectApiDto
+func ReleaseFscRouteProjectApiDto(v *FscRouteProjectApiDto) {
+	v.PriceList = v.PriceList[:0]
+	v.Date = ""
+	v.ProjectCode = ""
+	v.ContactName = ""
+	v.ContactPhone = ""
+	v.EndSignDate = ""
+	v.BookingUnitPrice = 0
+	v.InvCount = 0
+	v.OccupyCount = 0
+	v.FscSaleCommission = nil
+	v.DepartFlight = nil
+	v.ReturnFlight = nil
+	poolFscRouteProjectApiDto.Put(v)
 }

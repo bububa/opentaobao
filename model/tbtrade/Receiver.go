@@ -1,5 +1,9 @@
 package tbtrade
 
+import (
+	"sync"
+)
+
 // Receiver 结构体
 type Receiver struct {
 	// 交易编号
@@ -32,4 +36,35 @@ type Receiver struct {
 	Matched bool `json:"matched,omitempty" xml:"matched,omitempty"`
 	// 标记订单是否为隐私保护订单，为true时，mobile为隐私号
 	PrivacyProtection bool `json:"privacy_protection,omitempty" xml:"privacy_protection,omitempty"`
+}
+
+var poolReceiver = sync.Pool{
+	New: func() any {
+		return new(Receiver)
+	},
+}
+
+// GetReceiver() 从对象池中获取Receiver
+func GetReceiver() *Receiver {
+	return poolReceiver.Get().(*Receiver)
+}
+
+// ReleaseReceiver 释放Receiver
+func ReleaseReceiver(v *Receiver) {
+	v.OrderId = ""
+	v.Oaid = ""
+	v.AddressDetail = ""
+	v.Town = ""
+	v.District = ""
+	v.City = ""
+	v.State = ""
+	v.Country = ""
+	v.Phone = ""
+	v.Mobile = ""
+	v.Name = ""
+	v.SecretNoExpireTime = ""
+	v.Tid = ""
+	v.Matched = false
+	v.PrivacyProtection = false
+	poolReceiver.Put(v)
 }

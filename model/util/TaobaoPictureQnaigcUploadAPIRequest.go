@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoPictureQnaigcUploadAPIRequest struct {
 // NewTaobaoPictureQnaigcUploadRequest 初始化TaobaoPictureQnaigcUploadAPIRequest对象
 func NewTaobaoPictureQnaigcUploadRequest() *TaobaoPictureQnaigcUploadAPIRequest {
 	return &TaobaoPictureQnaigcUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPictureQnaigcUploadAPIRequest) Reset() {
+	r._uploadRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoPictureQnaigcUploadAPIRequest) SetUploadRequest(_uploadRequest *U
 // GetUploadRequest UploadRequest Getter
 func (r TaobaoPictureQnaigcUploadAPIRequest) GetUploadRequest() *UploadRequest {
 	return r._uploadRequest
+}
+
+var poolTaobaoPictureQnaigcUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPictureQnaigcUploadRequest()
+	},
+}
+
+// GetTaobaoPictureQnaigcUploadRequest 从 sync.Pool 获取 TaobaoPictureQnaigcUploadAPIRequest
+func GetTaobaoPictureQnaigcUploadAPIRequest() *TaobaoPictureQnaigcUploadAPIRequest {
+	return poolTaobaoPictureQnaigcUploadAPIRequest.Get().(*TaobaoPictureQnaigcUploadAPIRequest)
+}
+
+// ReleaseTaobaoPictureQnaigcUploadAPIRequest 将 TaobaoPictureQnaigcUploadAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPictureQnaigcUploadAPIRequest(v *TaobaoPictureQnaigcUploadAPIRequest) {
+	v.Reset()
+	poolTaobaoPictureQnaigcUploadAPIRequest.Put(v)
 }

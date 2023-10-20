@@ -2,6 +2,7 @@ package mei
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallCrmMemberFrontUnbindAPIRequest struct {
 // NewTmallCrmMemberFrontUnbindRequest 初始化TmallCrmMemberFrontUnbindAPIRequest对象
 func NewTmallCrmMemberFrontUnbindRequest() *TmallCrmMemberFrontUnbindAPIRequest {
 	return &TmallCrmMemberFrontUnbindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallCrmMemberFrontUnbindAPIRequest) Reset() {
+	r._userNick = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallCrmMemberFrontUnbindAPIRequest) SetUserNick(_userNick string) erro
 // GetUserNick UserNick Getter
 func (r TmallCrmMemberFrontUnbindAPIRequest) GetUserNick() string {
 	return r._userNick
+}
+
+var poolTmallCrmMemberFrontUnbindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallCrmMemberFrontUnbindRequest()
+	},
+}
+
+// GetTmallCrmMemberFrontUnbindRequest 从 sync.Pool 获取 TmallCrmMemberFrontUnbindAPIRequest
+func GetTmallCrmMemberFrontUnbindAPIRequest() *TmallCrmMemberFrontUnbindAPIRequest {
+	return poolTmallCrmMemberFrontUnbindAPIRequest.Get().(*TmallCrmMemberFrontUnbindAPIRequest)
+}
+
+// ReleaseTmallCrmMemberFrontUnbindAPIRequest 将 TmallCrmMemberFrontUnbindAPIRequest 放入 sync.Pool
+func ReleaseTmallCrmMemberFrontUnbindAPIRequest(v *TmallCrmMemberFrontUnbindAPIRequest) {
+	v.Reset()
+	poolTmallCrmMemberFrontUnbindAPIRequest.Put(v)
 }

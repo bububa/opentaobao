@@ -2,6 +2,7 @@ package wlb
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoWlbOrderJzpartnerQueryAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbOrderJzpartnerQueryAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoWlbOrderJzpartnerQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoWlbOrderJzpartnerQueryAPIResponseModel).Reset()
 }
 
 // TaobaoWlbOrderJzpartnerQueryAPIResponseModel is 查询家装服务商列表 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoWlbOrderJzpartnerQueryAPIResponseModel struct {
 	ResultInfo string `json:"result_info,omitempty" xml:"result_info,omitempty"`
 	// 接口查询成功或者失败
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoWlbOrderJzpartnerQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.InstallList = m.InstallList[:0]
+	m.ServerList = m.ServerList[:0]
+	m.ResultInfo = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoWlbOrderJzpartnerQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoWlbOrderJzpartnerQueryAPIResponse)
+	},
+}
+
+// GetTaobaoWlbOrderJzpartnerQueryAPIResponse 从 sync.Pool 获取 TaobaoWlbOrderJzpartnerQueryAPIResponse
+func GetTaobaoWlbOrderJzpartnerQueryAPIResponse() *TaobaoWlbOrderJzpartnerQueryAPIResponse {
+	return poolTaobaoWlbOrderJzpartnerQueryAPIResponse.Get().(*TaobaoWlbOrderJzpartnerQueryAPIResponse)
+}
+
+// ReleaseTaobaoWlbOrderJzpartnerQueryAPIResponse 将 TaobaoWlbOrderJzpartnerQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoWlbOrderJzpartnerQueryAPIResponse(v *TaobaoWlbOrderJzpartnerQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoWlbOrderJzpartnerQueryAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaTclsFulfillQaOrderCreateAPIResponse struct {
 	model.CommonResponse
 	AlibabaTclsFulfillQaOrderCreateAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaTclsFulfillQaOrderCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaTclsFulfillQaOrderCreateAPIResponseModel).Reset()
 }
 
 // AlibabaTclsFulfillQaOrderCreateAPIResponseModel is 创单接口 成功返回结果
@@ -30,4 +37,31 @@ type AlibabaTclsFulfillQaOrderCreateAPIResponseModel struct {
 	RtErrorCode int64 `json:"rt_error_code,omitempty" xml:"rt_error_code,omitempty"`
 	// 是否成功
 	RtSuccess bool `json:"rt_success,omitempty" xml:"rt_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaTclsFulfillQaOrderCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TraceId = ""
+	m.Data = ""
+	m.RtErrorMsg = ""
+	m.RtErrorCode = 0
+	m.RtSuccess = false
+}
+
+var poolAlibabaTclsFulfillQaOrderCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaTclsFulfillQaOrderCreateAPIResponse)
+	},
+}
+
+// GetAlibabaTclsFulfillQaOrderCreateAPIResponse 从 sync.Pool 获取 AlibabaTclsFulfillQaOrderCreateAPIResponse
+func GetAlibabaTclsFulfillQaOrderCreateAPIResponse() *AlibabaTclsFulfillQaOrderCreateAPIResponse {
+	return poolAlibabaTclsFulfillQaOrderCreateAPIResponse.Get().(*AlibabaTclsFulfillQaOrderCreateAPIResponse)
+}
+
+// ReleaseAlibabaTclsFulfillQaOrderCreateAPIResponse 将 AlibabaTclsFulfillQaOrderCreateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaTclsFulfillQaOrderCreateAPIResponse(v *AlibabaTclsFulfillQaOrderCreateAPIResponse) {
+	v.Reset()
+	poolAlibabaTclsFulfillQaOrderCreateAPIResponse.Put(v)
 }

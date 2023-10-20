@@ -1,5 +1,9 @@
 package axintrade
 
+import (
+	"sync"
+)
+
 // PackageCateringInfoDto 结构体
 type PackageCateringInfoDto struct {
 	// 餐饮名称
@@ -14,4 +18,26 @@ type PackageCateringInfoDto struct {
 	CateringNumType int64 `json:"catering_num_type,omitempty" xml:"catering_num_type,omitempty"`
 	// 餐饮份数
 	CateringNum int64 `json:"catering_num,omitempty" xml:"catering_num,omitempty"`
+}
+
+var poolPackageCateringInfoDto = sync.Pool{
+	New: func() any {
+		return new(PackageCateringInfoDto)
+	},
+}
+
+// GetPackageCateringInfoDto() 从对象池中获取PackageCateringInfoDto
+func GetPackageCateringInfoDto() *PackageCateringInfoDto {
+	return poolPackageCateringInfoDto.Get().(*PackageCateringInfoDto)
+}
+
+// ReleasePackageCateringInfoDto 释放PackageCateringInfoDto
+func ReleasePackageCateringInfoDto(v *PackageCateringInfoDto) {
+	v.CateringName = ""
+	v.CateringRemark = ""
+	v.Remark = ""
+	v.CateringType = 0
+	v.CateringNumType = 0
+	v.CateringNum = 0
+	poolPackageCateringInfoDto.Put(v)
 }

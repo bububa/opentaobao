@@ -9,11 +9,6 @@ import (
 // alibaba.mos.isv.inventory.scrollquery
 //
 // 按专柜滚动查询有库存商品
-func AlibabaMosIsvInventoryScrollquery(clt *core.SDKClient, req *moscm.AlibabaMosIsvInventoryScrollqueryAPIRequest, session string) (*moscm.AlibabaMosIsvInventoryScrollqueryAPIResponse, error) {
-	var resp moscm.AlibabaMosIsvInventoryScrollqueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMosIsvInventoryScrollquery(clt *core.SDKClient, req *moscm.AlibabaMosIsvInventoryScrollqueryAPIRequest, resp *moscm.AlibabaMosIsvInventoryScrollqueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

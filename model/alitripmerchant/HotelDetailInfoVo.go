@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // HotelDetailInfoVo 结构体
 type HotelDetailInfoVo struct {
 	// 设施组
@@ -26,4 +30,32 @@ type HotelDetailInfoVo struct {
 	HealthNotification *FacilityVo `json:"health_notification,omitempty" xml:"health_notification,omitempty"`
 	// 飞猪旗舰店的ID
 	Hid int64 `json:"hid,omitempty" xml:"hid,omitempty"`
+}
+
+var poolHotelDetailInfoVo = sync.Pool{
+	New: func() any {
+		return new(HotelDetailInfoVo)
+	},
+}
+
+// GetHotelDetailInfoVo() 从对象池中获取HotelDetailInfoVo
+func GetHotelDetailInfoVo() *HotelDetailInfoVo {
+	return poolHotelDetailInfoVo.Get().(*HotelDetailInfoVo)
+}
+
+// ReleaseHotelDetailInfoVo 释放HotelDetailInfoVo
+func ReleaseHotelDetailInfoVo(v *HotelDetailInfoVo) {
+	v.FacilityGroupList = v.FacilityGroupList[:0]
+	v.PriceGroupSummaryList = v.PriceGroupSummaryList[:0]
+	v.HotelPictures = v.HotelPictures[:0]
+	v.RoomDetails = v.RoomDetails[:0]
+	v.HotelPolicyList = v.HotelPolicyList[:0]
+	v.NameCn = ""
+	v.HotelId = ""
+	v.AddressInfo = nil
+	v.HotelInfo = nil
+	v.Shid = 0
+	v.HealthNotification = nil
+	v.Hid = 0
+	poolHotelDetailInfoVo.Put(v)
 }

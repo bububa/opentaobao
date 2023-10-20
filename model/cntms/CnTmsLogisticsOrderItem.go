@@ -1,5 +1,9 @@
 package cntms
 
+import (
+	"sync"
+)
+
 // CnTmsLogisticsOrderItem 结构体
 type CnTmsLogisticsOrderItem struct {
 	// ERP订单明细编码
@@ -16,4 +20,27 @@ type CnTmsLogisticsOrderItem struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 商品单价，单位分
 	ItemPrice int64 `json:"item_price,omitempty" xml:"item_price,omitempty"`
+}
+
+var poolCnTmsLogisticsOrderItem = sync.Pool{
+	New: func() any {
+		return new(CnTmsLogisticsOrderItem)
+	},
+}
+
+// GetCnTmsLogisticsOrderItem() 从对象池中获取CnTmsLogisticsOrderItem
+func GetCnTmsLogisticsOrderItem() *CnTmsLogisticsOrderItem {
+	return poolCnTmsLogisticsOrderItem.Get().(*CnTmsLogisticsOrderItem)
+}
+
+// ReleaseCnTmsLogisticsOrderItem 释放CnTmsLogisticsOrderItem
+func ReleaseCnTmsLogisticsOrderItem(v *CnTmsLogisticsOrderItem) {
+	v.OrderItemId = ""
+	v.SubTradeId = ""
+	v.ItemName = ""
+	v.ExtendFields = ""
+	v.Remark = ""
+	v.Quantity = 0
+	v.ItemPrice = 0
+	poolCnTmsLogisticsOrderItem.Put(v)
 }

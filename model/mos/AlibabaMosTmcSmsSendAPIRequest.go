@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMosTmcSmsSendAPIRequest struct {
 // NewAlibabaMosTmcSmsSendRequest 初始化AlibabaMosTmcSmsSendAPIRequest对象
 func NewAlibabaMosTmcSmsSendRequest() *AlibabaMosTmcSmsSendAPIRequest {
 	return &AlibabaMosTmcSmsSendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMosTmcSmsSendAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMosTmcSmsSendAPIRequest) SetParam0(_param0 *SmsSendMessageDto) e
 // GetParam0 Param0 Getter
 func (r AlibabaMosTmcSmsSendAPIRequest) GetParam0() *SmsSendMessageDto {
 	return r._param0
+}
+
+var poolAlibabaMosTmcSmsSendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMosTmcSmsSendRequest()
+	},
+}
+
+// GetAlibabaMosTmcSmsSendRequest 从 sync.Pool 获取 AlibabaMosTmcSmsSendAPIRequest
+func GetAlibabaMosTmcSmsSendAPIRequest() *AlibabaMosTmcSmsSendAPIRequest {
+	return poolAlibabaMosTmcSmsSendAPIRequest.Get().(*AlibabaMosTmcSmsSendAPIRequest)
+}
+
+// ReleaseAlibabaMosTmcSmsSendAPIRequest 将 AlibabaMosTmcSmsSendAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMosTmcSmsSendAPIRequest(v *AlibabaMosTmcSmsSendAPIRequest) {
+	v.Reset()
+	poolAlibabaMosTmcSmsSendAPIRequest.Put(v)
 }

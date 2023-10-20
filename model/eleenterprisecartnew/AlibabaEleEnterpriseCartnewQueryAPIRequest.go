@@ -2,6 +2,7 @@ package eleenterprisecartnew
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaEleEnterpriseCartnewQueryAPIRequest struct {
 // NewAlibabaEleEnterpriseCartnewQueryRequest 初始化AlibabaEleEnterpriseCartnewQueryAPIRequest对象
 func NewAlibabaEleEnterpriseCartnewQueryRequest() *AlibabaEleEnterpriseCartnewQueryAPIRequest {
 	return &AlibabaEleEnterpriseCartnewQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEleEnterpriseCartnewQueryAPIRequest) Reset() {
+	r._phone = ""
+	r._latitude = ""
+	r._longitude = ""
+	r._erestaurantId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaEleEnterpriseCartnewQueryAPIRequest) SetErestaurantId(_erestaura
 // GetErestaurantId ErestaurantId Getter
 func (r AlibabaEleEnterpriseCartnewQueryAPIRequest) GetErestaurantId() string {
 	return r._erestaurantId
+}
+
+var poolAlibabaEleEnterpriseCartnewQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEleEnterpriseCartnewQueryRequest()
+	},
+}
+
+// GetAlibabaEleEnterpriseCartnewQueryRequest 从 sync.Pool 获取 AlibabaEleEnterpriseCartnewQueryAPIRequest
+func GetAlibabaEleEnterpriseCartnewQueryAPIRequest() *AlibabaEleEnterpriseCartnewQueryAPIRequest {
+	return poolAlibabaEleEnterpriseCartnewQueryAPIRequest.Get().(*AlibabaEleEnterpriseCartnewQueryAPIRequest)
+}
+
+// ReleaseAlibabaEleEnterpriseCartnewQueryAPIRequest 将 AlibabaEleEnterpriseCartnewQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEleEnterpriseCartnewQueryAPIRequest(v *AlibabaEleEnterpriseCartnewQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaEleEnterpriseCartnewQueryAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package hotelhstdf
 
+import (
+	"sync"
+)
+
 // BusinessArea 结构体
 type BusinessArea struct {
 	// 商圈标签，英文逗号分隔，注意与酒店标签不是同一类概念
@@ -56,4 +60,47 @@ type BusinessArea struct {
 	Source int64 `json:"source,omitempty" xml:"source,omitempty"`
 	// 最精确的行政区划对应的平台id
 	TrdiDivisionId int64 `json:"trdi_division_id,omitempty" xml:"trdi_division_id,omitempty"`
+}
+
+var poolBusinessArea = sync.Pool{
+	New: func() any {
+		return new(BusinessArea)
+	},
+}
+
+// GetBusinessArea() 从对象池中获取BusinessArea
+func GetBusinessArea() *BusinessArea {
+	return poolBusinessArea.Get().(*BusinessArea)
+}
+
+// ReleaseBusinessArea 释放BusinessArea
+func ReleaseBusinessArea(v *BusinessArea) {
+	v.Tags = v.Tags[:0]
+	v.Area = ""
+	v.AreaPic = ""
+	v.AreaPicNail = ""
+	v.Country = ""
+	v.DivisionTree = ""
+	v.EnName = ""
+	v.Latitude = ""
+	v.Longitude = ""
+	v.Name = ""
+	v.OuterId = ""
+	v.Region = ""
+	v.Summary = ""
+	v.TimeZoneId = ""
+	v.City = 0
+	v.CountryCode = 0
+	v.District = 0
+	v.DivisionId = 0
+	v.Domestic = 0
+	v.ExtentMeter = 0
+	v.Hot = 0
+	v.Id = 0
+	v.Major = 0
+	v.PositionType = 0
+	v.Province = 0
+	v.Source = 0
+	v.TrdiDivisionId = 0
+	poolBusinessArea.Put(v)
 }

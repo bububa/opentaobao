@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseBusinessActivityQueryAPIRequest struct {
 // NewAlibabaAlihouseBusinessActivityQueryRequest 初始化AlibabaAlihouseBusinessActivityQueryAPIRequest对象
 func NewAlibabaAlihouseBusinessActivityQueryRequest() *AlibabaAlihouseBusinessActivityQueryAPIRequest {
 	return &AlibabaAlihouseBusinessActivityQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseBusinessActivityQueryAPIRequest) Reset() {
+	r._merchantOpenId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseBusinessActivityQueryAPIRequest) SetMerchantOpenId(_merc
 // GetMerchantOpenId MerchantOpenId Getter
 func (r AlibabaAlihouseBusinessActivityQueryAPIRequest) GetMerchantOpenId() int64 {
 	return r._merchantOpenId
+}
+
+var poolAlibabaAlihouseBusinessActivityQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseBusinessActivityQueryRequest()
+	},
+}
+
+// GetAlibabaAlihouseBusinessActivityQueryRequest 从 sync.Pool 获取 AlibabaAlihouseBusinessActivityQueryAPIRequest
+func GetAlibabaAlihouseBusinessActivityQueryAPIRequest() *AlibabaAlihouseBusinessActivityQueryAPIRequest {
+	return poolAlibabaAlihouseBusinessActivityQueryAPIRequest.Get().(*AlibabaAlihouseBusinessActivityQueryAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseBusinessActivityQueryAPIRequest 将 AlibabaAlihouseBusinessActivityQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseBusinessActivityQueryAPIRequest(v *AlibabaAlihouseBusinessActivityQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseBusinessActivityQueryAPIRequest.Put(v)
 }

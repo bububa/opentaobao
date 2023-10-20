@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoAilabAicloudTopDeviceControlChildlockAPIRequest struct {
 // NewTaobaoAilabAicloudTopDeviceControlChildlockRequest 初始化TaobaoAilabAicloudTopDeviceControlChildlockAPIRequest对象
 func NewTaobaoAilabAicloudTopDeviceControlChildlockRequest() *TaobaoAilabAicloudTopDeviceControlChildlockAPIRequest {
 	return &TaobaoAilabAicloudTopDeviceControlChildlockAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopDeviceControlChildlockAPIRequest) Reset() {
+	r._param1 = ""
+	r._param0 = nil
+	r._param2 = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoAilabAicloudTopDeviceControlChildlockAPIRequest) SetParam2(_param
 // GetParam2 Param2 Getter
 func (r TaobaoAilabAicloudTopDeviceControlChildlockAPIRequest) GetParam2() bool {
 	return r._param2
+}
+
+var poolTaobaoAilabAicloudTopDeviceControlChildlockAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopDeviceControlChildlockRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopDeviceControlChildlockRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopDeviceControlChildlockAPIRequest
+func GetTaobaoAilabAicloudTopDeviceControlChildlockAPIRequest() *TaobaoAilabAicloudTopDeviceControlChildlockAPIRequest {
+	return poolTaobaoAilabAicloudTopDeviceControlChildlockAPIRequest.Get().(*TaobaoAilabAicloudTopDeviceControlChildlockAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopDeviceControlChildlockAPIRequest 将 TaobaoAilabAicloudTopDeviceControlChildlockAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopDeviceControlChildlockAPIRequest(v *TaobaoAilabAicloudTopDeviceControlChildlockAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopDeviceControlChildlockAPIRequest.Put(v)
 }

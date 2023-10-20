@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoSimbaKeywordscatQscoreGetAPIRequest struct {
 // NewTaobaoSimbaKeywordscatQscoreGetRequest 初始化TaobaoSimbaKeywordscatQscoreGetAPIRequest对象
 func NewTaobaoSimbaKeywordscatQscoreGetRequest() *TaobaoSimbaKeywordscatQscoreGetAPIRequest {
 	return &TaobaoSimbaKeywordscatQscoreGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaKeywordscatQscoreGetAPIRequest) Reset() {
+	r._nick = ""
+	r._adgroupId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoSimbaKeywordscatQscoreGetAPIRequest) SetAdgroupId(_adgroupId int6
 // GetAdgroupId AdgroupId Getter
 func (r TaobaoSimbaKeywordscatQscoreGetAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
+}
+
+var poolTaobaoSimbaKeywordscatQscoreGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaKeywordscatQscoreGetRequest()
+	},
+}
+
+// GetTaobaoSimbaKeywordscatQscoreGetRequest 从 sync.Pool 获取 TaobaoSimbaKeywordscatQscoreGetAPIRequest
+func GetTaobaoSimbaKeywordscatQscoreGetAPIRequest() *TaobaoSimbaKeywordscatQscoreGetAPIRequest {
+	return poolTaobaoSimbaKeywordscatQscoreGetAPIRequest.Get().(*TaobaoSimbaKeywordscatQscoreGetAPIRequest)
+}
+
+// ReleaseTaobaoSimbaKeywordscatQscoreGetAPIRequest 将 TaobaoSimbaKeywordscatQscoreGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaKeywordscatQscoreGetAPIRequest(v *TaobaoSimbaKeywordscatQscoreGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaKeywordscatQscoreGetAPIRequest.Put(v)
 }

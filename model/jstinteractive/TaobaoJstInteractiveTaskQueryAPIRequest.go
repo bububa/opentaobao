@@ -2,6 +2,7 @@ package jstinteractive
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoJstInteractiveTaskQueryAPIRequest struct {
 // NewTaobaoJstInteractiveTaskQueryRequest 初始化TaobaoJstInteractiveTaskQueryAPIRequest对象
 func NewTaobaoJstInteractiveTaskQueryRequest() *TaobaoJstInteractiveTaskQueryAPIRequest {
 	return &TaobaoJstInteractiveTaskQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoJstInteractiveTaskQueryAPIRequest) Reset() {
+	r._mcGwSourceMiniAppId = ""
+	r._mcGwSourceAppKey = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoJstInteractiveTaskQueryAPIRequest) SetMcGwSourceAppKey(_mcGwSourc
 // GetMcGwSourceAppKey McGwSourceAppKey Getter
 func (r TaobaoJstInteractiveTaskQueryAPIRequest) GetMcGwSourceAppKey() string {
 	return r._mcGwSourceAppKey
+}
+
+var poolTaobaoJstInteractiveTaskQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoJstInteractiveTaskQueryRequest()
+	},
+}
+
+// GetTaobaoJstInteractiveTaskQueryRequest 从 sync.Pool 获取 TaobaoJstInteractiveTaskQueryAPIRequest
+func GetTaobaoJstInteractiveTaskQueryAPIRequest() *TaobaoJstInteractiveTaskQueryAPIRequest {
+	return poolTaobaoJstInteractiveTaskQueryAPIRequest.Get().(*TaobaoJstInteractiveTaskQueryAPIRequest)
+}
+
+// ReleaseTaobaoJstInteractiveTaskQueryAPIRequest 将 TaobaoJstInteractiveTaskQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoJstInteractiveTaskQueryAPIRequest(v *TaobaoJstInteractiveTaskQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoJstInteractiveTaskQueryAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package wlbimports
 
+import (
+	"sync"
+)
+
 // AppointmentOrderDifferenceDetailsResponse 结构体
 type AppointmentOrderDifferenceDetailsResponse struct {
 	// 预约单号
@@ -22,4 +26,30 @@ type AppointmentOrderDifferenceDetailsResponse struct {
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// 当前页
 	CurrentPageIndex int64 `json:"current_page_index,omitempty" xml:"current_page_index,omitempty"`
+}
+
+var poolAppointmentOrderDifferenceDetailsResponse = sync.Pool{
+	New: func() any {
+		return new(AppointmentOrderDifferenceDetailsResponse)
+	},
+}
+
+// GetAppointmentOrderDifferenceDetailsResponse() 从对象池中获取AppointmentOrderDifferenceDetailsResponse
+func GetAppointmentOrderDifferenceDetailsResponse() *AppointmentOrderDifferenceDetailsResponse {
+	return poolAppointmentOrderDifferenceDetailsResponse.Get().(*AppointmentOrderDifferenceDetailsResponse)
+}
+
+// ReleaseAppointmentOrderDifferenceDetailsResponse 释放AppointmentOrderDifferenceDetailsResponse
+func ReleaseAppointmentOrderDifferenceDetailsResponse(v *AppointmentOrderDifferenceDetailsResponse) {
+	v.ParcelList = v.ParcelList[:0]
+	v.HandoverOrderCode = ""
+	v.TrackingNumber = ""
+	v.OpCode = ""
+	v.Operator = ""
+	v.OperatorContact = ""
+	v.OpRemark = ""
+	v.PageSize = 0
+	v.TotalCount = 0
+	v.CurrentPageIndex = 0
+	poolAppointmentOrderDifferenceDetailsResponse.Put(v)
 }

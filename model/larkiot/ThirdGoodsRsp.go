@@ -1,5 +1,9 @@
 package larkiot
 
+import (
+	"sync"
+)
+
 // ThirdGoodsRsp 结构体
 type ThirdGoodsRsp struct {
 	// 卖品编码
@@ -20,4 +24,29 @@ type ThirdGoodsRsp struct {
 	MemberFlag string `json:"member_flag,omitempty" xml:"member_flag,omitempty"`
 	// 卖品url
 	GoodsPicUrl string `json:"goods_pic_url,omitempty" xml:"goods_pic_url,omitempty"`
+}
+
+var poolThirdGoodsRsp = sync.Pool{
+	New: func() any {
+		return new(ThirdGoodsRsp)
+	},
+}
+
+// GetThirdGoodsRsp() 从对象池中获取ThirdGoodsRsp
+func GetThirdGoodsRsp() *ThirdGoodsRsp {
+	return poolThirdGoodsRsp.Get().(*ThirdGoodsRsp)
+}
+
+// ReleaseThirdGoodsRsp 释放ThirdGoodsRsp
+func ReleaseThirdGoodsRsp(v *ThirdGoodsRsp) {
+	v.GoodsCode = ""
+	v.GoodsName = ""
+	v.PackageFlag = ""
+	v.StandardPrice = ""
+	v.SettlePrice = ""
+	v.Desc = ""
+	v.GoodsKey = ""
+	v.MemberFlag = ""
+	v.GoodsPicUrl = ""
+	poolThirdGoodsRsp.Put(v)
 }

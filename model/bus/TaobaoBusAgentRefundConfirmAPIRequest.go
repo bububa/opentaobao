@@ -2,6 +2,7 @@ package bus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoBusAgentRefundConfirmAPIRequest struct {
 // NewTaobaoBusAgentRefundConfirmRequest 初始化TaobaoBusAgentRefundConfirmAPIRequest对象
 func NewTaobaoBusAgentRefundConfirmRequest() *TaobaoBusAgentRefundConfirmAPIRequest {
 	return &TaobaoBusAgentRefundConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBusAgentRefundConfirmAPIRequest) Reset() {
+	r._paramAgentConfirmReturnAndRefundRQ = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoBusAgentRefundConfirmAPIRequest) SetParamAgentConfirmReturnAndRef
 // GetParamAgentConfirmReturnAndRefundRQ ParamAgentConfirmReturnAndRefundRQ Getter
 func (r TaobaoBusAgentRefundConfirmAPIRequest) GetParamAgentConfirmReturnAndRefundRQ() *AgentConfirmReturnAndRefundRq {
 	return r._paramAgentConfirmReturnAndRefundRQ
+}
+
+var poolTaobaoBusAgentRefundConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBusAgentRefundConfirmRequest()
+	},
+}
+
+// GetTaobaoBusAgentRefundConfirmRequest 从 sync.Pool 获取 TaobaoBusAgentRefundConfirmAPIRequest
+func GetTaobaoBusAgentRefundConfirmAPIRequest() *TaobaoBusAgentRefundConfirmAPIRequest {
+	return poolTaobaoBusAgentRefundConfirmAPIRequest.Get().(*TaobaoBusAgentRefundConfirmAPIRequest)
+}
+
+// ReleaseTaobaoBusAgentRefundConfirmAPIRequest 将 TaobaoBusAgentRefundConfirmAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBusAgentRefundConfirmAPIRequest(v *TaobaoBusAgentRefundConfirmAPIRequest) {
+	v.Reset()
+	poolTaobaoBusAgentRefundConfirmAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.tcls.aelophy.merchant.channel.order.sliceget
 //
 // 获取履约时间片
-func AlibabaTclsAelophyMerchantChannelOrderSliceget(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantChannelOrderSlicegetAPIRequest, session string) (*wdk.AlibabaTclsAelophyMerchantChannelOrderSlicegetAPIResponse, error) {
-	var resp wdk.AlibabaTclsAelophyMerchantChannelOrderSlicegetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTclsAelophyMerchantChannelOrderSliceget(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantChannelOrderSlicegetAPIRequest, resp *wdk.AlibabaTclsAelophyMerchantChannelOrderSlicegetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // WarehouseCooperationConfirmResultDetail 结构体
 type WarehouseCooperationConfirmResultDetail struct {
 	// 错误码
@@ -10,4 +14,24 @@ type WarehouseCooperationConfirmResultDetail struct {
 	WmsOwnerCode string `json:"wms_owner_code,omitempty" xml:"wms_owner_code,omitempty"`
 	// 合作店铺仓code
 	CooperationWhCode string `json:"cooperation_wh_code,omitempty" xml:"cooperation_wh_code,omitempty"`
+}
+
+var poolWarehouseCooperationConfirmResultDetail = sync.Pool{
+	New: func() any {
+		return new(WarehouseCooperationConfirmResultDetail)
+	},
+}
+
+// GetWarehouseCooperationConfirmResultDetail() 从对象池中获取WarehouseCooperationConfirmResultDetail
+func GetWarehouseCooperationConfirmResultDetail() *WarehouseCooperationConfirmResultDetail {
+	return poolWarehouseCooperationConfirmResultDetail.Get().(*WarehouseCooperationConfirmResultDetail)
+}
+
+// ReleaseWarehouseCooperationConfirmResultDetail 释放WarehouseCooperationConfirmResultDetail
+func ReleaseWarehouseCooperationConfirmResultDetail(v *WarehouseCooperationConfirmResultDetail) {
+	v.Code = ""
+	v.Message = ""
+	v.WmsOwnerCode = ""
+	v.CooperationWhCode = ""
+	poolWarehouseCooperationConfirmResultDetail.Put(v)
 }

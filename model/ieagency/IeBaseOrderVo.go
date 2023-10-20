@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // IeBaseOrderVo 结构体
 type IeBaseOrderVo struct {
 	// 产品标识 student:学生票、nationality：国籍票、group：小团票、gold：金牌机票、card：宝贝机票、common：年龄票、speed：极速机票、age：限年龄票、delay：延时出票
@@ -70,4 +74,54 @@ type IeBaseOrderVo struct {
 	GoldMedalOrder bool `json:"gold_medal_order,omitempty" xml:"gold_medal_order,omitempty"`
 	// 极速出票订单：true:是, false:否
 	SpeedTicketOrder bool `json:"speed_ticket_order,omitempty" xml:"speed_ticket_order,omitempty"`
+}
+
+var poolIeBaseOrderVo = sync.Pool{
+	New: func() any {
+		return new(IeBaseOrderVo)
+	},
+}
+
+// GetIeBaseOrderVo() 从对象池中获取IeBaseOrderVo
+func GetIeBaseOrderVo() *IeBaseOrderVo {
+	return poolIeBaseOrderVo.Get().(*IeBaseOrderVo)
+}
+
+// ReleaseIeBaseOrderVo 释放IeBaseOrderVo
+func ReleaseIeBaseOrderVo(v *IeBaseOrderVo) {
+	v.ProductTags = v.ProductTags[:0]
+	v.ArrAirport = ""
+	v.BookTime = ""
+	v.CloseReason = ""
+	v.CloseTime = ""
+	v.CloseType = ""
+	v.CommissionStatus = ""
+	v.CreditStatus = ""
+	v.DepAirport = ""
+	v.FlightNos = ""
+	v.GmtCreateTime = ""
+	v.InboundArrTime = ""
+	v.InboundDepTime = ""
+	v.OrderStatus = ""
+	v.OutboundArrTime = ""
+	v.OutboundDepTime = ""
+	v.Pay2AgentTime = ""
+	v.PayStatus = ""
+	v.PayTime = ""
+	v.SuccessTime = ""
+	v.TripType = ""
+	v.CommissionPrice = 0
+	v.EstCommissionPrice = 0
+	v.OriginTotalPrice = 0
+	v.PassengerCount = 0
+	v.TotalActivityRemitPrice = 0
+	v.TotalPrice = 0
+	v.TotalRedpackage = 0
+	v.TotalServicePrice = 0
+	v.TotalTaxPrice = 0
+	v.TotalTicketPrice = 0
+	v.TradeOrderId = 0
+	v.GoldMedalOrder = false
+	v.SpeedTicketOrder = false
+	poolIeBaseOrderVo.Put(v)
 }

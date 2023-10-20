@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.travel.fsc.hotel.list.query
 //
 // 供销平台标准酒店信息列表查询
-func TaobaoAlitripTravelFscHotelListQuery(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelFscHotelListQueryAPIRequest, session string) (*axindata.TaobaoAlitripTravelFscHotelListQueryAPIResponse, error) {
-	var resp axindata.TaobaoAlitripTravelFscHotelListQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripTravelFscHotelListQuery(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelFscHotelListQueryAPIRequest, resp *axindata.TaobaoAlitripTravelFscHotelListQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

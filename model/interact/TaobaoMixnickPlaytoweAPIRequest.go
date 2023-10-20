@@ -2,6 +2,7 @@ package interact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoMixnickPlaytoweAPIRequest struct {
 // NewTaobaoMixnickPlaytoweRequest 初始化TaobaoMixnickPlaytoweAPIRequest对象
 func NewTaobaoMixnickPlaytoweRequest() *TaobaoMixnickPlaytoweAPIRequest {
 	return &TaobaoMixnickPlaytoweAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMixnickPlaytoweAPIRequest) Reset() {
+	r._mixMix = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoMixnickPlaytoweAPIRequest) SetMixMix(_mixMix string) error {
 // GetMixMix MixMix Getter
 func (r TaobaoMixnickPlaytoweAPIRequest) GetMixMix() string {
 	return r._mixMix
+}
+
+var poolTaobaoMixnickPlaytoweAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMixnickPlaytoweRequest()
+	},
+}
+
+// GetTaobaoMixnickPlaytoweRequest 从 sync.Pool 获取 TaobaoMixnickPlaytoweAPIRequest
+func GetTaobaoMixnickPlaytoweAPIRequest() *TaobaoMixnickPlaytoweAPIRequest {
+	return poolTaobaoMixnickPlaytoweAPIRequest.Get().(*TaobaoMixnickPlaytoweAPIRequest)
+}
+
+// ReleaseTaobaoMixnickPlaytoweAPIRequest 将 TaobaoMixnickPlaytoweAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMixnickPlaytoweAPIRequest(v *TaobaoMixnickPlaytoweAPIRequest) {
+	v.Reset()
+	poolTaobaoMixnickPlaytoweAPIRequest.Put(v)
 }

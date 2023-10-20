@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // TaobaoQimenSupplierSynchronizeRequest 结构体
 type TaobaoQimenSupplierSynchronizeRequest struct {
 	// add|update, 必填
@@ -30,4 +34,34 @@ type TaobaoQimenSupplierSynchronizeRequest struct {
 	IsValid string `json:"isValid,omitempty" xml:"isValid,omitempty"`
 	// 备注, string (500)
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
+}
+
+var poolTaobaoQimenSupplierSynchronizeRequest = sync.Pool{
+	New: func() any {
+		return new(TaobaoQimenSupplierSynchronizeRequest)
+	},
+}
+
+// GetTaobaoQimenSupplierSynchronizeRequest() 从对象池中获取TaobaoQimenSupplierSynchronizeRequest
+func GetTaobaoQimenSupplierSynchronizeRequest() *TaobaoQimenSupplierSynchronizeRequest {
+	return poolTaobaoQimenSupplierSynchronizeRequest.Get().(*TaobaoQimenSupplierSynchronizeRequest)
+}
+
+// ReleaseTaobaoQimenSupplierSynchronizeRequest 释放TaobaoQimenSupplierSynchronizeRequest
+func ReleaseTaobaoQimenSupplierSynchronizeRequest(v *TaobaoQimenSupplierSynchronizeRequest) {
+	v.ActionType = ""
+	v.SupplierCode = ""
+	v.SupplierName = ""
+	v.Name = ""
+	v.Tel = ""
+	v.Email = ""
+	v.CountryCode = ""
+	v.Province = ""
+	v.City = ""
+	v.Area = ""
+	v.Town = ""
+	v.DetailAddress = ""
+	v.IsValid = ""
+	v.Remark = ""
+	poolTaobaoQimenSupplierSynchronizeRequest.Put(v)
 }

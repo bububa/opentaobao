@@ -2,6 +2,7 @@ package alihealthcrm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -43,8 +44,26 @@ type AlibabaFmhealthWeightLossplanSynclossplanAPIRequest struct {
 // NewAlibabaFmhealthWeightLossplanSynclossplanRequest 初始化AlibabaFmhealthWeightLossplanSynclossplanAPIRequest对象
 func NewAlibabaFmhealthWeightLossplanSynclossplanRequest() *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest {
 	return &AlibabaFmhealthWeightLossplanSynclossplanAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(13),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) Reset() {
+	r._birthday = ""
+	r._weight = ""
+	r._weightGoal = ""
+	r._lossPerWeek = ""
+	r._finishDate = ""
+	r._beginDate = ""
+	r._tpUserId = 0
+	r._gender = 0
+	r._height = 0
+	r._type = 0
+	r._lossLevel = 0
+	r._bodyAge = 0
+	r._totalCalorie = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -231,4 +250,21 @@ func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetTotalCalorie(_t
 // GetTotalCalorie TotalCalorie Getter
 func (r AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) GetTotalCalorie() int64 {
 	return r._totalCalorie
+}
+
+var poolAlibabaFmhealthWeightLossplanSynclossplanAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaFmhealthWeightLossplanSynclossplanRequest()
+	},
+}
+
+// GetAlibabaFmhealthWeightLossplanSynclossplanRequest 从 sync.Pool 获取 AlibabaFmhealthWeightLossplanSynclossplanAPIRequest
+func GetAlibabaFmhealthWeightLossplanSynclossplanAPIRequest() *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest {
+	return poolAlibabaFmhealthWeightLossplanSynclossplanAPIRequest.Get().(*AlibabaFmhealthWeightLossplanSynclossplanAPIRequest)
+}
+
+// ReleaseAlibabaFmhealthWeightLossplanSynclossplanAPIRequest 将 AlibabaFmhealthWeightLossplanSynclossplanAPIRequest 放入 sync.Pool
+func ReleaseAlibabaFmhealthWeightLossplanSynclossplanAPIRequest(v *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) {
+	v.Reset()
+	poolAlibabaFmhealthWeightLossplanSynclossplanAPIRequest.Put(v)
 }

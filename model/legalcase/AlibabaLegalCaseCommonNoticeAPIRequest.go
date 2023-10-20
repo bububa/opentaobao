@@ -2,6 +2,7 @@ package legalcase
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaLegalCaseCommonNoticeAPIRequest struct {
 // NewAlibabaLegalCaseCommonNoticeRequest 初始化AlibabaLegalCaseCommonNoticeAPIRequest对象
 func NewAlibabaLegalCaseCommonNoticeRequest() *AlibabaLegalCaseCommonNoticeAPIRequest {
 	return &AlibabaLegalCaseCommonNoticeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLegalCaseCommonNoticeAPIRequest) Reset() {
+	r._type = ""
+	r._caseId = 0
+	r._entrustId = 0
+	r._noticeModel = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaLegalCaseCommonNoticeAPIRequest) SetNoticeModel(_noticeModel *No
 // GetNoticeModel NoticeModel Getter
 func (r AlibabaLegalCaseCommonNoticeAPIRequest) GetNoticeModel() *NoticeModel {
 	return r._noticeModel
+}
+
+var poolAlibabaLegalCaseCommonNoticeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLegalCaseCommonNoticeRequest()
+	},
+}
+
+// GetAlibabaLegalCaseCommonNoticeRequest 从 sync.Pool 获取 AlibabaLegalCaseCommonNoticeAPIRequest
+func GetAlibabaLegalCaseCommonNoticeAPIRequest() *AlibabaLegalCaseCommonNoticeAPIRequest {
+	return poolAlibabaLegalCaseCommonNoticeAPIRequest.Get().(*AlibabaLegalCaseCommonNoticeAPIRequest)
+}
+
+// ReleaseAlibabaLegalCaseCommonNoticeAPIRequest 将 AlibabaLegalCaseCommonNoticeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLegalCaseCommonNoticeAPIRequest(v *AlibabaLegalCaseCommonNoticeAPIRequest) {
+	v.Reset()
+	poolAlibabaLegalCaseCommonNoticeAPIRequest.Put(v)
 }

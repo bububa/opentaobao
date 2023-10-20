@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OrderUserRefundInfo 结构体
 type OrderUserRefundInfo struct {
 	// 退款子单
@@ -16,4 +20,27 @@ type OrderUserRefundInfo struct {
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
 	// 经营店Id
 	StoreId string `json:"store_id,omitempty" xml:"store_id,omitempty"`
+}
+
+var poolOrderUserRefundInfo = sync.Pool{
+	New: func() any {
+		return new(OrderUserRefundInfo)
+	},
+}
+
+// GetOrderUserRefundInfo() 从对象池中获取OrderUserRefundInfo
+func GetOrderUserRefundInfo() *OrderUserRefundInfo {
+	return poolOrderUserRefundInfo.Get().(*OrderUserRefundInfo)
+}
+
+// ReleaseOrderUserRefundInfo 释放OrderUserRefundInfo
+func ReleaseOrderUserRefundInfo(v *OrderUserRefundInfo) {
+	v.SubRefundOrders = v.SubRefundOrders[:0]
+	v.RefundReason = ""
+	v.Memo = ""
+	v.OutRefundBatchId = ""
+	v.BizOrderId = ""
+	v.ShopId = ""
+	v.StoreId = ""
+	poolOrderUserRefundInfo.Put(v)
 }

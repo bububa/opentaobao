@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // PontusTravelItemTraffic 结构体
 type PontusTravelItemTraffic struct {
 	// 到达时间，当地时间HH:mm
@@ -16,4 +20,27 @@ type PontusTravelItemTraffic struct {
 	TrafficNo string `json:"traffic_no,omitempty" xml:"traffic_no,omitempty"`
 	// 交通公司名，飞机选填
 	Vendor string `json:"vendor,omitempty" xml:"vendor,omitempty"`
+}
+
+var poolPontusTravelItemTraffic = sync.Pool{
+	New: func() any {
+		return new(PontusTravelItemTraffic)
+	},
+}
+
+// GetPontusTravelItemTraffic() 从对象池中获取PontusTravelItemTraffic
+func GetPontusTravelItemTraffic() *PontusTravelItemTraffic {
+	return poolPontusTravelItemTraffic.Get().(*PontusTravelItemTraffic)
+}
+
+// ReleasePontusTravelItemTraffic 释放PontusTravelItemTraffic
+func ReleasePontusTravelItemTraffic(v *PontusTravelItemTraffic) {
+	v.ArrivalTime = ""
+	v.Departure = ""
+	v.DepartureTime = ""
+	v.Destination = ""
+	v.PlaneType = ""
+	v.TrafficNo = ""
+	v.Vendor = ""
+	poolPontusTravelItemTraffic.Put(v)
 }

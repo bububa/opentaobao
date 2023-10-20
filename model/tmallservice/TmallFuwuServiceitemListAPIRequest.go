@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallFuwuServiceitemListAPIRequest struct {
 // NewTmallFuwuServiceitemListRequest 初始化TmallFuwuServiceitemListAPIRequest对象
 func NewTmallFuwuServiceitemListRequest() *TmallFuwuServiceitemListAPIRequest {
 	return &TmallFuwuServiceitemListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallFuwuServiceitemListAPIRequest) Reset() {
+	r._itemids = r._itemids[:0]
+	r._sellerId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallFuwuServiceitemListAPIRequest) SetSellerId(_sellerId int64) error 
 // GetSellerId SellerId Getter
 func (r TmallFuwuServiceitemListAPIRequest) GetSellerId() int64 {
 	return r._sellerId
+}
+
+var poolTmallFuwuServiceitemListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallFuwuServiceitemListRequest()
+	},
+}
+
+// GetTmallFuwuServiceitemListRequest 从 sync.Pool 获取 TmallFuwuServiceitemListAPIRequest
+func GetTmallFuwuServiceitemListAPIRequest() *TmallFuwuServiceitemListAPIRequest {
+	return poolTmallFuwuServiceitemListAPIRequest.Get().(*TmallFuwuServiceitemListAPIRequest)
+}
+
+// ReleaseTmallFuwuServiceitemListAPIRequest 将 TmallFuwuServiceitemListAPIRequest 放入 sync.Pool
+func ReleaseTmallFuwuServiceitemListAPIRequest(v *TmallFuwuServiceitemListAPIRequest) {
+	v.Reset()
+	poolTmallFuwuServiceitemListAPIRequest.Put(v)
 }

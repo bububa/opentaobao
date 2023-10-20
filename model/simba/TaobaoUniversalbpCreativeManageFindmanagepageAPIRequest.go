@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest struct {
 // NewTaobaoUniversalbpCreativeManageFindmanagepageRequest 初始化TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest对象
 func NewTaobaoUniversalbpCreativeManageFindmanagepageRequest() *TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest {
 	return &TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r._creativeQueryVO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest) SetCreativeQue
 // GetCreativeQueryVO CreativeQueryVO Getter
 func (r TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest) GetCreativeQueryVO() *CreativeQueryVo {
 	return r._creativeQueryVO
+}
+
+var poolTaobaoUniversalbpCreativeManageFindmanagepageAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpCreativeManageFindmanagepageRequest()
+	},
+}
+
+// GetTaobaoUniversalbpCreativeManageFindmanagepageRequest 从 sync.Pool 获取 TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest
+func GetTaobaoUniversalbpCreativeManageFindmanagepageAPIRequest() *TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest {
+	return poolTaobaoUniversalbpCreativeManageFindmanagepageAPIRequest.Get().(*TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpCreativeManageFindmanagepageAPIRequest 将 TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpCreativeManageFindmanagepageAPIRequest(v *TaobaoUniversalbpCreativeManageFindmanagepageAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpCreativeManageFindmanagepageAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package bus
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoBusTvmcreateorderSetAPIResponse struct {
 	model.CommonResponse
 	TaobaoBusTvmcreateorderSetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoBusTvmcreateorderSetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoBusTvmcreateorderSetAPIResponseModel).Reset()
 }
 
 // TaobaoBusTvmcreateorderSetAPIResponseModel is 线下自助机创建订单 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoBusTvmcreateorderSetAPIResponseModel struct {
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 	// success
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoBusTvmcreateorderSetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.AlitripOrderId = ""
+	m.ResultCode = ""
+	m.ResultMsg = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoBusTvmcreateorderSetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoBusTvmcreateorderSetAPIResponse)
+	},
+}
+
+// GetTaobaoBusTvmcreateorderSetAPIResponse 从 sync.Pool 获取 TaobaoBusTvmcreateorderSetAPIResponse
+func GetTaobaoBusTvmcreateorderSetAPIResponse() *TaobaoBusTvmcreateorderSetAPIResponse {
+	return poolTaobaoBusTvmcreateorderSetAPIResponse.Get().(*TaobaoBusTvmcreateorderSetAPIResponse)
+}
+
+// ReleaseTaobaoBusTvmcreateorderSetAPIResponse 将 TaobaoBusTvmcreateorderSetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoBusTvmcreateorderSetAPIResponse(v *TaobaoBusTvmcreateorderSetAPIResponse) {
+	v.Reset()
+	poolTaobaoBusTvmcreateorderSetAPIResponse.Put(v)
 }

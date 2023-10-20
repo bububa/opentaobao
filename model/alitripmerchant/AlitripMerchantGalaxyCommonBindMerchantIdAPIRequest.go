@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlitripMerchantGalaxyCommonBindMerchantIdAPIRequest struct {
 // NewAlitripMerchantGalaxyCommonBindMerchantIdRequest 初始化AlitripMerchantGalaxyCommonBindMerchantIdAPIRequest对象
 func NewAlitripMerchantGalaxyCommonBindMerchantIdRequest() *AlitripMerchantGalaxyCommonBindMerchantIdAPIRequest {
 	return &AlitripMerchantGalaxyCommonBindMerchantIdAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyCommonBindMerchantIdAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._bindingMerchantIdUserDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlitripMerchantGalaxyCommonBindMerchantIdAPIRequest) SetBindingMerchant
 // GetBindingMerchantIdUserDto BindingMerchantIdUserDto Getter
 func (r AlitripMerchantGalaxyCommonBindMerchantIdAPIRequest) GetBindingMerchantIdUserDto() *BindingMerchantIdUserDto {
 	return r._bindingMerchantIdUserDto
+}
+
+var poolAlitripMerchantGalaxyCommonBindMerchantIdAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyCommonBindMerchantIdRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyCommonBindMerchantIdRequest 从 sync.Pool 获取 AlitripMerchantGalaxyCommonBindMerchantIdAPIRequest
+func GetAlitripMerchantGalaxyCommonBindMerchantIdAPIRequest() *AlitripMerchantGalaxyCommonBindMerchantIdAPIRequest {
+	return poolAlitripMerchantGalaxyCommonBindMerchantIdAPIRequest.Get().(*AlitripMerchantGalaxyCommonBindMerchantIdAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyCommonBindMerchantIdAPIRequest 将 AlitripMerchantGalaxyCommonBindMerchantIdAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyCommonBindMerchantIdAPIRequest(v *AlitripMerchantGalaxyCommonBindMerchantIdAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyCommonBindMerchantIdAPIRequest.Put(v)
 }

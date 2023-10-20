@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaJymItemExternalGoodsBatchOnsaleAPIRequest struct {
 // NewAlibabaJymItemExternalGoodsBatchOnsaleRequest 初始化AlibabaJymItemExternalGoodsBatchOnsaleAPIRequest对象
 func NewAlibabaJymItemExternalGoodsBatchOnsaleRequest() *AlibabaJymItemExternalGoodsBatchOnsaleAPIRequest {
 	return &AlibabaJymItemExternalGoodsBatchOnsaleAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaJymItemExternalGoodsBatchOnsaleAPIRequest) Reset() {
+	r._goodsOnSaleCommand = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaJymItemExternalGoodsBatchOnsaleAPIRequest) SetGoodsOnSaleCommand
 // GetGoodsOnSaleCommand GoodsOnSaleCommand Getter
 func (r AlibabaJymItemExternalGoodsBatchOnsaleAPIRequest) GetGoodsOnSaleCommand() *GoodsOnSaleCommandDto {
 	return r._goodsOnSaleCommand
+}
+
+var poolAlibabaJymItemExternalGoodsBatchOnsaleAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaJymItemExternalGoodsBatchOnsaleRequest()
+	},
+}
+
+// GetAlibabaJymItemExternalGoodsBatchOnsaleRequest 从 sync.Pool 获取 AlibabaJymItemExternalGoodsBatchOnsaleAPIRequest
+func GetAlibabaJymItemExternalGoodsBatchOnsaleAPIRequest() *AlibabaJymItemExternalGoodsBatchOnsaleAPIRequest {
+	return poolAlibabaJymItemExternalGoodsBatchOnsaleAPIRequest.Get().(*AlibabaJymItemExternalGoodsBatchOnsaleAPIRequest)
+}
+
+// ReleaseAlibabaJymItemExternalGoodsBatchOnsaleAPIRequest 将 AlibabaJymItemExternalGoodsBatchOnsaleAPIRequest 放入 sync.Pool
+func ReleaseAlibabaJymItemExternalGoodsBatchOnsaleAPIRequest(v *AlibabaJymItemExternalGoodsBatchOnsaleAPIRequest) {
+	v.Reset()
+	poolAlibabaJymItemExternalGoodsBatchOnsaleAPIRequest.Put(v)
 }

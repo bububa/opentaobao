@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // InvoiceCreateSimpleResultDto 结构体
 type InvoiceCreateSimpleResultDto struct {
 	// 错误码
@@ -44,4 +48,41 @@ type InvoiceCreateSimpleResultDto struct {
 	RedCreateStatus string `json:"red_create_status,omitempty" xml:"red_create_status,omitempty"`
 	// 开票发票类型，可选值：  0: 电票  1：纸质普票  2：纸质专票
 	InvoiceKind int64 `json:"invoice_kind,omitempty" xml:"invoice_kind,omitempty"`
+}
+
+var poolInvoiceCreateSimpleResultDto = sync.Pool{
+	New: func() any {
+		return new(InvoiceCreateSimpleResultDto)
+	},
+}
+
+// GetInvoiceCreateSimpleResultDto() 从对象池中获取InvoiceCreateSimpleResultDto
+func GetInvoiceCreateSimpleResultDto() *InvoiceCreateSimpleResultDto {
+	return poolInvoiceCreateSimpleResultDto.Get().(*InvoiceCreateSimpleResultDto)
+}
+
+// ReleaseInvoiceCreateSimpleResultDto 释放InvoiceCreateSimpleResultDto
+func ReleaseInvoiceCreateSimpleResultDto(v *InvoiceCreateSimpleResultDto) {
+	v.BizErrorCode = ""
+	v.BizErrorMsg = ""
+	v.CreateStatus = ""
+	v.ErrorType = ""
+	v.InvoiceAmount = ""
+	v.PayeeName = ""
+	v.PayeeRegisterNo = ""
+	v.ProductCode = ""
+	v.SingleSerialNo = ""
+	v.SumPrice = ""
+	v.SumTax = ""
+	v.AntiFakeCode = ""
+	v.DownloadUrl = ""
+	v.DownloadUrlExpires = ""
+	v.InvoiceCode = ""
+	v.InvoiceDate = ""
+	v.InvoiceImageUrl = ""
+	v.InvoiceNo = ""
+	v.RedApplyId = ""
+	v.RedCreateStatus = ""
+	v.InvoiceKind = 0
+	poolInvoiceCreateSimpleResultDto.Put(v)
 }

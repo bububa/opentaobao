@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCampusGuardControllerConfigsyncAPIRequest struct {
 // NewAlibabaCampusGuardControllerConfigsyncRequest 初始化AlibabaCampusGuardControllerConfigsyncAPIRequest对象
 func NewAlibabaCampusGuardControllerConfigsyncRequest() *AlibabaCampusGuardControllerConfigsyncAPIRequest {
 	return &AlibabaCampusGuardControllerConfigsyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusGuardControllerConfigsyncAPIRequest) Reset() {
+	r._controllerQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCampusGuardControllerConfigsyncAPIRequest) SetControllerQuery(_c
 // GetControllerQuery ControllerQuery Getter
 func (r AlibabaCampusGuardControllerConfigsyncAPIRequest) GetControllerQuery() *ControllerQuery {
 	return r._controllerQuery
+}
+
+var poolAlibabaCampusGuardControllerConfigsyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusGuardControllerConfigsyncRequest()
+	},
+}
+
+// GetAlibabaCampusGuardControllerConfigsyncRequest 从 sync.Pool 获取 AlibabaCampusGuardControllerConfigsyncAPIRequest
+func GetAlibabaCampusGuardControllerConfigsyncAPIRequest() *AlibabaCampusGuardControllerConfigsyncAPIRequest {
+	return poolAlibabaCampusGuardControllerConfigsyncAPIRequest.Get().(*AlibabaCampusGuardControllerConfigsyncAPIRequest)
+}
+
+// ReleaseAlibabaCampusGuardControllerConfigsyncAPIRequest 将 AlibabaCampusGuardControllerConfigsyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusGuardControllerConfigsyncAPIRequest(v *AlibabaCampusGuardControllerConfigsyncAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusGuardControllerConfigsyncAPIRequest.Put(v)
 }

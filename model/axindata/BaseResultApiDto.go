@@ -1,5 +1,9 @@
 package axindata
 
+import (
+	"sync"
+)
+
 // BaseResultApiDto 结构体
 type BaseResultApiDto struct {
 	// 错误信息
@@ -18,4 +22,28 @@ type BaseResultApiDto struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 调用是否成功
 	Succ bool `json:"succ,omitempty" xml:"succ,omitempty"`
+}
+
+var poolBaseResultApiDto = sync.Pool{
+	New: func() any {
+		return new(BaseResultApiDto)
+	},
+}
+
+// GetBaseResultApiDto() 从对象池中获取BaseResultApiDto
+func GetBaseResultApiDto() *BaseResultApiDto {
+	return poolBaseResultApiDto.Get().(*BaseResultApiDto)
+}
+
+// ReleaseBaseResultApiDto 释放BaseResultApiDto
+func ReleaseBaseResultApiDto(v *BaseResultApiDto) {
+	v.ErrorMsg = ""
+	v.ErrorCode = ""
+	v.ErCode = ""
+	v.ErMsg = ""
+	v.InfoMsg = ""
+	v.Data = nil
+	v.Success = false
+	v.Succ = false
+	poolBaseResultApiDto.Put(v)
 }

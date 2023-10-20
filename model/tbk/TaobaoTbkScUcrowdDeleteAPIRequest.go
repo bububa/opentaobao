@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTbkScUcrowdDeleteAPIRequest struct {
 // NewTaobaoTbkScUcrowdDeleteRequest 初始化TaobaoTbkScUcrowdDeleteAPIRequest对象
 func NewTaobaoTbkScUcrowdDeleteRequest() *TaobaoTbkScUcrowdDeleteAPIRequest {
 	return &TaobaoTbkScUcrowdDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkScUcrowdDeleteAPIRequest) Reset() {
+	r._ucrowdId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTbkScUcrowdDeleteAPIRequest) SetUcrowdId(_ucrowdId int64) error {
 // GetUcrowdId UcrowdId Getter
 func (r TaobaoTbkScUcrowdDeleteAPIRequest) GetUcrowdId() int64 {
 	return r._ucrowdId
+}
+
+var poolTaobaoTbkScUcrowdDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkScUcrowdDeleteRequest()
+	},
+}
+
+// GetTaobaoTbkScUcrowdDeleteRequest 从 sync.Pool 获取 TaobaoTbkScUcrowdDeleteAPIRequest
+func GetTaobaoTbkScUcrowdDeleteAPIRequest() *TaobaoTbkScUcrowdDeleteAPIRequest {
+	return poolTaobaoTbkScUcrowdDeleteAPIRequest.Get().(*TaobaoTbkScUcrowdDeleteAPIRequest)
+}
+
+// ReleaseTaobaoTbkScUcrowdDeleteAPIRequest 将 TaobaoTbkScUcrowdDeleteAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkScUcrowdDeleteAPIRequest(v *TaobaoTbkScUcrowdDeleteAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkScUcrowdDeleteAPIRequest.Put(v)
 }

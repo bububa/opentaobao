@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAscpLogisticsSellerSendAPIResponse struct {
 	AlibabaAscpLogisticsSellerSendAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAscpLogisticsSellerSendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAscpLogisticsSellerSendAPIResponseModel).Reset()
+}
+
 // AlibabaAscpLogisticsSellerSendAPIResponseModel is 商家配送发货 成功返回结果
 type AlibabaAscpLogisticsSellerSendAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ascp_logistics_seller_send_response"`
@@ -22,4 +29,27 @@ type AlibabaAscpLogisticsSellerSendAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// -
 	Result *ResultDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAscpLogisticsSellerSendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAscpLogisticsSellerSendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAscpLogisticsSellerSendAPIResponse)
+	},
+}
+
+// GetAlibabaAscpLogisticsSellerSendAPIResponse 从 sync.Pool 获取 AlibabaAscpLogisticsSellerSendAPIResponse
+func GetAlibabaAscpLogisticsSellerSendAPIResponse() *AlibabaAscpLogisticsSellerSendAPIResponse {
+	return poolAlibabaAscpLogisticsSellerSendAPIResponse.Get().(*AlibabaAscpLogisticsSellerSendAPIResponse)
+}
+
+// ReleaseAlibabaAscpLogisticsSellerSendAPIResponse 将 AlibabaAscpLogisticsSellerSendAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAscpLogisticsSellerSendAPIResponse(v *AlibabaAscpLogisticsSellerSendAPIResponse) {
+	v.Reset()
+	poolAlibabaAscpLogisticsSellerSendAPIResponse.Put(v)
 }

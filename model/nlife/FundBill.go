@@ -1,5 +1,9 @@
 package nlife
 
+import (
+	"sync"
+)
+
 // FundBill 结构体
 type FundBill struct {
 	// 资金渠道的id:     * 1. type=CASH：为空；      * 2. type=UNIONPAY：银联流水号；      * 3. type=ALIPAY：支付宝订单号；      * 4. type=WECHAT_PAY：微信支付订单号；      * 6. type=CUSTOM_PROMOTION：零售商自有优惠id。      * 7. type=CUSTOM_PREPAY_CARD：零售商自有储值卡id      * 8. type=MALING：为空
@@ -20,4 +24,29 @@ type FundBill struct {
 	Attachment string `json:"attachment,omitempty" xml:"attachment,omitempty"`
 	// 金额/优惠抵扣金额，单位：分
 	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
+}
+
+var poolFundBill = sync.Pool{
+	New: func() any {
+		return new(FundBill)
+	},
+}
+
+// GetFundBill() 从对象池中获取FundBill
+func GetFundBill() *FundBill {
+	return poolFundBill.Get().(*FundBill)
+}
+
+// ReleaseFundBill 释放FundBill
+func ReleaseFundBill(v *FundBill) {
+	v.Id = ""
+	v.Type = ""
+	v.BuyerId = ""
+	v.BuyerIdType = ""
+	v.Title = ""
+	v.Currency = ""
+	v.ExtendParams = ""
+	v.Attachment = ""
+	v.Amount = 0
+	poolFundBill.Put(v)
 }

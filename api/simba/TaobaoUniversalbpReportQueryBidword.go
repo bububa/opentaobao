@@ -9,11 +9,6 @@ import (
 // taobao.universalbp.report.query.bidword
 //
 // 关键词报表查询
-func TaobaoUniversalbpReportQueryBidword(clt *core.SDKClient, req *simba.TaobaoUniversalbpReportQueryBidwordAPIRequest, session string) (*simba.TaobaoUniversalbpReportQueryBidwordAPIResponse, error) {
-	var resp simba.TaobaoUniversalbpReportQueryBidwordAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoUniversalbpReportQueryBidword(clt *core.SDKClient, req *simba.TaobaoUniversalbpReportQueryBidwordAPIRequest, resp *simba.TaobaoUniversalbpReportQueryBidwordAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

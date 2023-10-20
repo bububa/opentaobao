@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // TrainStationVo 结构体
 type TrainStationVo struct {
 	// 坐席列表
@@ -48,4 +52,43 @@ type TrainStationVo struct {
 	ShowIdIcon bool `json:"show_id_icon,omitempty" xml:"show_id_icon,omitempty"`
 	// 是否是静音车厢
 	SilenceCompartment bool `json:"silence_compartment,omitempty" xml:"silence_compartment,omitempty"`
+}
+
+var poolTrainStationVo = sync.Pool{
+	New: func() any {
+		return new(TrainStationVo)
+	},
+}
+
+// GetTrainStationVo() 从对象池中获取TrainStationVo
+func GetTrainStationVo() *TrainStationVo {
+	return poolTrainStationVo.Get().(*TrainStationVo)
+}
+
+// ReleaseTrainStationVo 释放TrainStationVo
+func ReleaseTrainStationVo(v *TrainStationVo) {
+	v.SeatTypes = v.SeatTypes[:0]
+	v.ArrDayTag = ""
+	v.ArrTime = ""
+	v.ArrTimeFull = ""
+	v.ArriveStation = ""
+	v.ArriveStationCode = ""
+	v.CostTime = ""
+	v.DepTime = ""
+	v.DepTimeFull = ""
+	v.DepartStation = ""
+	v.DepartStationCode = ""
+	v.PreSellDateStr = ""
+	v.TrainNo = ""
+	v.CostTimeInt = 0
+	v.EndStation = 0
+	v.Price = 0
+	v.StartStation = 0
+	v.TrainType = 0
+	v.HasMoreTrain = false
+	v.HasStock = false
+	v.RevivalTrain = false
+	v.ShowIdIcon = false
+	v.SilenceCompartment = false
+	poolTrainStationVo.Put(v)
 }

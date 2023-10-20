@@ -1,5 +1,9 @@
 package traderate
 
+import (
+	"sync"
+)
+
 // TaobaoTraderatesGetResults 结构体
 type TaobaoTraderatesGetResults struct {
 	// 评价者角色.可选值:seller(卖家),buyer(买家)
@@ -32,4 +36,35 @@ type TaobaoTraderatesGetResults struct {
 	LogisticsServiceScore int64 `json:"logistics_service_score,omitempty" xml:"logistics_service_score,omitempty"`
 	// 评价信息是否用于记分，&lt;br/&gt;可取值：true(参与记分)和false(不参与记分)
 	ValidScore bool `json:"valid_score,omitempty" xml:"valid_score,omitempty"`
+}
+
+var poolTaobaoTraderatesGetResults = sync.Pool{
+	New: func() any {
+		return new(TaobaoTraderatesGetResults)
+	},
+}
+
+// GetTaobaoTraderatesGetResults() 从对象池中获取TaobaoTraderatesGetResults
+func GetTaobaoTraderatesGetResults() *TaobaoTraderatesGetResults {
+	return poolTaobaoTraderatesGetResults.Get().(*TaobaoTraderatesGetResults)
+}
+
+// ReleaseTaobaoTraderatesGetResults 释放TaobaoTraderatesGetResults
+func ReleaseTaobaoTraderatesGetResults(v *TaobaoTraderatesGetResults) {
+	v.Role = ""
+	v.Nick = ""
+	v.Result = ""
+	v.Created = ""
+	v.RatedNick = ""
+	v.ItemTitle = ""
+	v.ItemPrice = ""
+	v.Content = ""
+	v.Reply = ""
+	v.Ouid = ""
+	v.Tid = 0
+	v.Oid = 0
+	v.NumIid = 0
+	v.LogisticsServiceScore = 0
+	v.ValidScore = false
+	poolTaobaoTraderatesGetResults.Put(v)
 }

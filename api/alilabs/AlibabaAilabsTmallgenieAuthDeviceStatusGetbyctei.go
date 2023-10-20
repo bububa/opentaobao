@@ -9,11 +9,6 @@ import (
 // alibaba.ailabs.tmallgenie.auth.device.status.getbyctei
 //
 // 提供给电信查询设备在线状态值
-func AlibabaAilabsTmallgenieAuthDeviceStatusGetbyctei(clt *core.SDKClient, req *alilabs.AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest, session string) (*alilabs.AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIResponse, error) {
-	var resp alilabs.AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAilabsTmallgenieAuthDeviceStatusGetbyctei(clt *core.SDKClient, req *alilabs.AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIRequest, resp *alilabs.AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

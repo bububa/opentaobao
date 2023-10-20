@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.it.fare.delete
 //
 // 自有政策删除接口，可以根据fareId或outId删除，根据outId删除时，如果outId不唯一，返回失败
-func TaobaoAlitripItFareDelete(clt *core.SDKClient, req *itpolicy.TaobaoAlitripItFareDeleteAPIRequest, session string) (*itpolicy.TaobaoAlitripItFareDeleteAPIResponse, error) {
-	var resp itpolicy.TaobaoAlitripItFareDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripItFareDelete(clt *core.SDKClient, req *itpolicy.TaobaoAlitripItFareDeleteAPIRequest, resp *itpolicy.TaobaoAlitripItFareDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

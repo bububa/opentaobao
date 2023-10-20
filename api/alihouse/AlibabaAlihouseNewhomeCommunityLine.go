@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.newhome.community.line
 //
 // 小区上下架
-func AlibabaAlihouseNewhomeCommunityLine(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeCommunityLineAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeCommunityLineAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeCommunityLineAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseNewhomeCommunityLine(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeCommunityLineAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeCommunityLineAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

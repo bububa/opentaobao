@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // IntentionListRequestDto 结构体
 type IntentionListRequestDto struct {
 	// 市场航司
@@ -22,4 +26,30 @@ type IntentionListRequestDto struct {
 	Page int64 `json:"page,omitempty" xml:"page,omitempty"`
 	// 是否查询可确认意向单
 	OnlyInit bool `json:"only_init,omitempty" xml:"only_init,omitempty"`
+}
+
+var poolIntentionListRequestDto = sync.Pool{
+	New: func() any {
+		return new(IntentionListRequestDto)
+	},
+}
+
+// GetIntentionListRequestDto() 从对象池中获取IntentionListRequestDto
+func GetIntentionListRequestDto() *IntentionListRequestDto {
+	return poolIntentionListRequestDto.Get().(*IntentionListRequestDto)
+}
+
+// ReleaseIntentionListRequestDto 释放IntentionListRequestDto
+func ReleaseIntentionListRequestDto(v *IntentionListRequestDto) {
+	v.MarketingAirline = v.MarketingAirline[:0]
+	v.OperatingFlightNo = v.OperatingFlightNo[:0]
+	v.DepAirportCode = v.DepAirportCode[:0]
+	v.MarketingFlightNo = v.MarketingFlightNo[:0]
+	v.ArrAirportCode = v.ArrAirportCode[:0]
+	v.OperatingAirline = v.OperatingAirline[:0]
+	v.DepTimeEnd = ""
+	v.DepTimeStart = ""
+	v.Page = 0
+	v.OnlyInit = false
+	poolIntentionListRequestDto.Put(v)
 }

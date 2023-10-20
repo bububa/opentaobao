@@ -14,11 +14,6 @@ import (
 // 在线标的：在线标的件数、意向用户数、网拍围观人次
 //
 // 最长6年，年起始时间2017年
-func TaobaoAuctionGovDataAnnuallyGet(clt *core.SDKClient, req *auction.TaobaoAuctionGovDataAnnuallyGetAPIRequest, session string) (*auction.TaobaoAuctionGovDataAnnuallyGetAPIResponse, error) {
-	var resp auction.TaobaoAuctionGovDataAnnuallyGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAuctionGovDataAnnuallyGet(clt *core.SDKClient, req *auction.TaobaoAuctionGovDataAnnuallyGetAPIRequest, resp *auction.TaobaoAuctionGovDataAnnuallyGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

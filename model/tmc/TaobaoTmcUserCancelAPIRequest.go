@@ -2,6 +2,7 @@ package tmc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoTmcUserCancelAPIRequest struct {
 // NewTaobaoTmcUserCancelRequest 初始化TaobaoTmcUserCancelAPIRequest对象
 func NewTaobaoTmcUserCancelRequest() *TaobaoTmcUserCancelAPIRequest {
 	return &TaobaoTmcUserCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTmcUserCancelAPIRequest) Reset() {
+	r._nick = ""
+	r._userPlatform = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoTmcUserCancelAPIRequest) SetUserPlatform(_userPlatform string) er
 // GetUserPlatform UserPlatform Getter
 func (r TaobaoTmcUserCancelAPIRequest) GetUserPlatform() string {
 	return r._userPlatform
+}
+
+var poolTaobaoTmcUserCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTmcUserCancelRequest()
+	},
+}
+
+// GetTaobaoTmcUserCancelRequest 从 sync.Pool 获取 TaobaoTmcUserCancelAPIRequest
+func GetTaobaoTmcUserCancelAPIRequest() *TaobaoTmcUserCancelAPIRequest {
+	return poolTaobaoTmcUserCancelAPIRequest.Get().(*TaobaoTmcUserCancelAPIRequest)
+}
+
+// ReleaseTaobaoTmcUserCancelAPIRequest 将 TaobaoTmcUserCancelAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTmcUserCancelAPIRequest(v *TaobaoTmcUserCancelAPIRequest) {
+	v.Reset()
+	poolTaobaoTmcUserCancelAPIRequest.Put(v)
 }

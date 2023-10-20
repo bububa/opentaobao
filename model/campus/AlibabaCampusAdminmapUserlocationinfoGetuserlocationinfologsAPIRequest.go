@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIRequest stru
 // NewAlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsRequest 初始化AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIRequest对象
 func NewAlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsRequest() *AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIRequest {
 	return &AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIRequest) Reset() {
+	r._param0 = nil
+	r._param1 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIRequest)
 // GetParam1 Param1 Getter
 func (r AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIRequest) GetParam1() *UserLocationInfoQuery {
 	return r._param1
+}
+
+var poolAlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsRequest()
+	},
+}
+
+// GetAlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsRequest 从 sync.Pool 获取 AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIRequest
+func GetAlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIRequest() *AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIRequest {
+	return poolAlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIRequest.Get().(*AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIRequest)
+}
+
+// ReleaseAlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIRequest 将 AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIRequest(v *AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIRequest.Put(v)
 }

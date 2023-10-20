@@ -2,6 +2,7 @@ package wdklogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaWdkLogisticsPusPickupCararrivedAPIRequest struct {
 // NewAlibabaWdkLogisticsPusPickupCararrivedRequest 初始化AlibabaWdkLogisticsPusPickupCararrivedAPIRequest对象
 func NewAlibabaWdkLogisticsPusPickupCararrivedRequest() *AlibabaWdkLogisticsPusPickupCararrivedAPIRequest {
 	return &AlibabaWdkLogisticsPusPickupCararrivedAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkLogisticsPusPickupCararrivedAPIRequest) Reset() {
+	r._stationCode = ""
+	r._carNum = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaWdkLogisticsPusPickupCararrivedAPIRequest) SetCarNum(_carNum str
 // GetCarNum CarNum Getter
 func (r AlibabaWdkLogisticsPusPickupCararrivedAPIRequest) GetCarNum() string {
 	return r._carNum
+}
+
+var poolAlibabaWdkLogisticsPusPickupCararrivedAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkLogisticsPusPickupCararrivedRequest()
+	},
+}
+
+// GetAlibabaWdkLogisticsPusPickupCararrivedRequest 从 sync.Pool 获取 AlibabaWdkLogisticsPusPickupCararrivedAPIRequest
+func GetAlibabaWdkLogisticsPusPickupCararrivedAPIRequest() *AlibabaWdkLogisticsPusPickupCararrivedAPIRequest {
+	return poolAlibabaWdkLogisticsPusPickupCararrivedAPIRequest.Get().(*AlibabaWdkLogisticsPusPickupCararrivedAPIRequest)
+}
+
+// ReleaseAlibabaWdkLogisticsPusPickupCararrivedAPIRequest 将 AlibabaWdkLogisticsPusPickupCararrivedAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkLogisticsPusPickupCararrivedAPIRequest(v *AlibabaWdkLogisticsPusPickupCararrivedAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkLogisticsPusPickupCararrivedAPIRequest.Put(v)
 }

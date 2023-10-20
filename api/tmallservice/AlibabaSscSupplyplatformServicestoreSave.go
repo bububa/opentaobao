@@ -9,11 +9,6 @@ import (
 // alibaba.ssc.supplyplatform.servicestore.save
 //
 // 网点创建、修改
-func AlibabaSscSupplyplatformServicestoreSave(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServicestoreSaveAPIRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServicestoreSaveAPIResponse, error) {
-	var resp tmallservice.AlibabaSscSupplyplatformServicestoreSaveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaSscSupplyplatformServicestoreSave(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServicestoreSaveAPIRequest, resp *tmallservice.AlibabaSscSupplyplatformServicestoreSaveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

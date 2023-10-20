@@ -2,6 +2,7 @@ package security
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaSecurityJaqAppRisksummaryGetAPIRequest struct {
 // NewAlibabaSecurityJaqAppRisksummaryGetRequest 初始化AlibabaSecurityJaqAppRisksummaryGetAPIRequest对象
 func NewAlibabaSecurityJaqAppRisksummaryGetRequest() *AlibabaSecurityJaqAppRisksummaryGetAPIRequest {
 	return &AlibabaSecurityJaqAppRisksummaryGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSecurityJaqAppRisksummaryGetAPIRequest) Reset() {
+	r._itemId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaSecurityJaqAppRisksummaryGetAPIRequest) SetItemId(_itemId string
 // GetItemId ItemId Getter
 func (r AlibabaSecurityJaqAppRisksummaryGetAPIRequest) GetItemId() string {
 	return r._itemId
+}
+
+var poolAlibabaSecurityJaqAppRisksummaryGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSecurityJaqAppRisksummaryGetRequest()
+	},
+}
+
+// GetAlibabaSecurityJaqAppRisksummaryGetRequest 从 sync.Pool 获取 AlibabaSecurityJaqAppRisksummaryGetAPIRequest
+func GetAlibabaSecurityJaqAppRisksummaryGetAPIRequest() *AlibabaSecurityJaqAppRisksummaryGetAPIRequest {
+	return poolAlibabaSecurityJaqAppRisksummaryGetAPIRequest.Get().(*AlibabaSecurityJaqAppRisksummaryGetAPIRequest)
+}
+
+// ReleaseAlibabaSecurityJaqAppRisksummaryGetAPIRequest 将 AlibabaSecurityJaqAppRisksummaryGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSecurityJaqAppRisksummaryGetAPIRequest(v *AlibabaSecurityJaqAppRisksummaryGetAPIRequest) {
+	v.Reset()
+	poolAlibabaSecurityJaqAppRisksummaryGetAPIRequest.Put(v)
 }

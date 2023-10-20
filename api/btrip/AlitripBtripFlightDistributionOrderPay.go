@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.flight.distribution.order.pay
 //
 // 商旅机票分销订单支付
-func AlitripBtripFlightDistributionOrderPay(clt *core.SDKClient, req *btrip.AlitripBtripFlightDistributionOrderPayAPIRequest, session string) (*btrip.AlitripBtripFlightDistributionOrderPayAPIResponse, error) {
-	var resp btrip.AlitripBtripFlightDistributionOrderPayAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripFlightDistributionOrderPay(clt *core.SDKClient, req *btrip.AlitripBtripFlightDistributionOrderPayAPIRequest, resp *btrip.AlitripBtripFlightDistributionOrderPayAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

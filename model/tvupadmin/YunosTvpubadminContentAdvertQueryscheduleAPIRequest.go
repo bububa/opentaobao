@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type YunosTvpubadminContentAdvertQueryscheduleAPIRequest struct {
 // NewYunosTvpubadminContentAdvertQueryscheduleRequest 初始化YunosTvpubadminContentAdvertQueryscheduleAPIRequest对象
 func NewYunosTvpubadminContentAdvertQueryscheduleRequest() *YunosTvpubadminContentAdvertQueryscheduleAPIRequest {
 	return &YunosTvpubadminContentAdvertQueryscheduleAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminContentAdvertQueryscheduleAPIRequest) Reset() {
+	r._gmtStart = ""
+	r._uuid = ""
+	r._range = 0
+	r._pageNo = 0
+	r._pageSize = 0
+	r._license = 0
+	r._sityType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *YunosTvpubadminContentAdvertQueryscheduleAPIRequest) SetSityType(_sityT
 // GetSityType SityType Getter
 func (r YunosTvpubadminContentAdvertQueryscheduleAPIRequest) GetSityType() int64 {
 	return r._sityType
+}
+
+var poolYunosTvpubadminContentAdvertQueryscheduleAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminContentAdvertQueryscheduleRequest()
+	},
+}
+
+// GetYunosTvpubadminContentAdvertQueryscheduleRequest 从 sync.Pool 获取 YunosTvpubadminContentAdvertQueryscheduleAPIRequest
+func GetYunosTvpubadminContentAdvertQueryscheduleAPIRequest() *YunosTvpubadminContentAdvertQueryscheduleAPIRequest {
+	return poolYunosTvpubadminContentAdvertQueryscheduleAPIRequest.Get().(*YunosTvpubadminContentAdvertQueryscheduleAPIRequest)
+}
+
+// ReleaseYunosTvpubadminContentAdvertQueryscheduleAPIRequest 将 YunosTvpubadminContentAdvertQueryscheduleAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminContentAdvertQueryscheduleAPIRequest(v *YunosTvpubadminContentAdvertQueryscheduleAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminContentAdvertQueryscheduleAPIRequest.Put(v)
 }

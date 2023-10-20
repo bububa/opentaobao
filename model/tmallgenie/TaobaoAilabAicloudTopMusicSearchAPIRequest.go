@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoAilabAicloudTopMusicSearchAPIRequest struct {
 // NewTaobaoAilabAicloudTopMusicSearchRequest 初始化TaobaoAilabAicloudTopMusicSearchAPIRequest对象
 func NewTaobaoAilabAicloudTopMusicSearchRequest() *TaobaoAilabAicloudTopMusicSearchAPIRequest {
 	return &TaobaoAilabAicloudTopMusicSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopMusicSearchAPIRequest) Reset() {
+	r._params = ""
+	r._botId = 0
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoAilabAicloudTopMusicSearchAPIRequest) SetPageSize(_pageSize int64
 // GetPageSize PageSize Getter
 func (r TaobaoAilabAicloudTopMusicSearchAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoAilabAicloudTopMusicSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopMusicSearchRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopMusicSearchRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopMusicSearchAPIRequest
+func GetTaobaoAilabAicloudTopMusicSearchAPIRequest() *TaobaoAilabAicloudTopMusicSearchAPIRequest {
+	return poolTaobaoAilabAicloudTopMusicSearchAPIRequest.Get().(*TaobaoAilabAicloudTopMusicSearchAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopMusicSearchAPIRequest 将 TaobaoAilabAicloudTopMusicSearchAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopMusicSearchAPIRequest(v *TaobaoAilabAicloudTopMusicSearchAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopMusicSearchAPIRequest.Put(v)
 }

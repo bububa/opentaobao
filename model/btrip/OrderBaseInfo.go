@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OrderBaseInfo 结构体
 type OrderBaseInfo struct {
 	// 更新时间
@@ -36,4 +40,37 @@ type OrderBaseInfo struct {
 	OrderStatus int64 `json:"order_status,omitempty" xml:"order_status,omitempty"`
 	// 行程类型。0:单程，1:往返，2:中转
 	TripType int64 `json:"trip_type,omitempty" xml:"trip_type,omitempty"`
+}
+
+var poolOrderBaseInfo = sync.Pool{
+	New: func() any {
+		return new(OrderBaseInfo)
+	},
+}
+
+// GetOrderBaseInfo() 从对象池中获取OrderBaseInfo
+func GetOrderBaseInfo() *OrderBaseInfo {
+	return poolOrderBaseInfo.Get().(*OrderBaseInfo)
+}
+
+// ReleaseOrderBaseInfo 释放OrderBaseInfo
+func ReleaseOrderBaseInfo(v *OrderBaseInfo) {
+	v.GmtModify = ""
+	v.CorpId = ""
+	v.ContactName = ""
+	v.ThirdpartApplyId = ""
+	v.CorpName = ""
+	v.GmtCreate = ""
+	v.UserId = ""
+	v.ApplyId = ""
+	v.ThirdpartItineraryId = ""
+	v.BtripTitle = ""
+	v.ItineraryId = ""
+	v.DepartId = ""
+	v.DepartName = ""
+	v.ThirdpartCorpId = ""
+	v.OrderId = 0
+	v.OrderStatus = 0
+	v.TripType = 0
+	poolOrderBaseInfo.Put(v)
 }

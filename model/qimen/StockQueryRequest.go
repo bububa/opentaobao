@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // StockQueryRequest 结构体
 type StockQueryRequest struct {
 	// 仓库编码
@@ -26,4 +30,32 @@ type StockQueryRequest struct {
 	PageSize int64 `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
 	// 扩展属性
 	ExtendProps *TaobaoQimenStockQueryMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+}
+
+var poolStockQueryRequest = sync.Pool{
+	New: func() any {
+		return new(StockQueryRequest)
+	},
+}
+
+// GetStockQueryRequest() 从对象池中获取StockQueryRequest
+func GetStockQueryRequest() *StockQueryRequest {
+	return poolStockQueryRequest.Get().(*StockQueryRequest)
+}
+
+// ReleaseStockQueryRequest 释放StockQueryRequest
+func ReleaseStockQueryRequest(v *StockQueryRequest) {
+	v.WarehouseCode = ""
+	v.OwnerCode = ""
+	v.ItemCode = ""
+	v.ItemId = ""
+	v.InventoryType = ""
+	v.BatchCode = ""
+	v.ProductDate = ""
+	v.ExpireDate = ""
+	v.Remark = ""
+	v.Page = 0
+	v.PageSize = 0
+	v.ExtendProps = nil
+	poolStockQueryRequest.Put(v)
 }

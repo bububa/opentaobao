@@ -9,11 +9,6 @@ import (
 // taobao.oauth.code.create
 //
 // 手淘无线开放的oauthCode颁发接口
-func TaobaoOauthCodeCreate(clt *core.SDKClient, req *mtopopen.TaobaoOauthCodeCreateAPIRequest, session string) (*mtopopen.TaobaoOauthCodeCreateAPIResponse, error) {
-	var resp mtopopen.TaobaoOauthCodeCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOauthCodeCreate(clt *core.SDKClient, req *mtopopen.TaobaoOauthCodeCreateAPIRequest, resp *mtopopen.TaobaoOauthCodeCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // TradeOutBoundDetailCallBackRequest 结构体
 type TradeOutBoundDetailCallBackRequest struct {
 	// 称重品商品实称重量/g
@@ -22,4 +26,30 @@ type TradeOutBoundDetailCallBackRequest struct {
 	SkuCode string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
 	// 是否缺货出
 	IsOutStock bool `json:"is_out_stock,omitempty" xml:"is_out_stock,omitempty"`
+}
+
+var poolTradeOutBoundDetailCallBackRequest = sync.Pool{
+	New: func() any {
+		return new(TradeOutBoundDetailCallBackRequest)
+	},
+}
+
+// GetTradeOutBoundDetailCallBackRequest() 从对象池中获取TradeOutBoundDetailCallBackRequest
+func GetTradeOutBoundDetailCallBackRequest() *TradeOutBoundDetailCallBackRequest {
+	return poolTradeOutBoundDetailCallBackRequest.Get().(*TradeOutBoundDetailCallBackRequest)
+}
+
+// ReleaseTradeOutBoundDetailCallBackRequest 释放TradeOutBoundDetailCallBackRequest
+func ReleaseTradeOutBoundDetailCallBackRequest(v *TradeOutBoundDetailCallBackRequest) {
+	v.SkuWeights = v.SkuWeights[:0]
+	v.OutOfStockSaleQuantity = ""
+	v.ChannelSubOrderNo = ""
+	v.Extension = ""
+	v.ActualSaleQuantity = ""
+	v.ActualStockQuantity = ""
+	v.OutOfStockStockQuantity = ""
+	v.BizSubOrderId = ""
+	v.SkuCode = ""
+	v.IsOutStock = false
+	poolTradeOutBoundDetailCallBackRequest.Put(v)
 }

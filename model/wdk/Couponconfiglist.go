@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // Couponconfiglist 结构体
 type Couponconfiglist struct {
 	// 提货券面额，单位：元，用于展示
@@ -12,4 +16,25 @@ type Couponconfiglist struct {
 	Count int64 `json:"count,omitempty" xml:"count,omitempty"`
 	// 提货券面额（单位：分）
 	UseAmount int64 `json:"use_amount,omitempty" xml:"use_amount,omitempty"`
+}
+
+var poolCouponconfiglist = sync.Pool{
+	New: func() any {
+		return new(Couponconfiglist)
+	},
+}
+
+// GetCouponconfiglist() 从对象池中获取Couponconfiglist
+func GetCouponconfiglist() *Couponconfiglist {
+	return poolCouponconfiglist.Get().(*Couponconfiglist)
+}
+
+// ReleaseCouponconfiglist 释放Couponconfiglist
+func ReleaseCouponconfiglist(v *Couponconfiglist) {
+	v.ViewTotalAmount = ""
+	v.ViewAmount = ""
+	v.UseTotalAmount = 0
+	v.Count = 0
+	v.UseAmount = 0
+	poolCouponconfiglist.Put(v)
 }

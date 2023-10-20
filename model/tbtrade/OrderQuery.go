@@ -1,5 +1,9 @@
 package tbtrade
 
+import (
+	"sync"
+)
+
 // OrderQuery 结构体
 type OrderQuery struct {
 	// 收件人电话号码
@@ -12,4 +16,25 @@ type OrderQuery struct {
 	EndCreated string `json:"end_created,omitempty" xml:"end_created,omitempty"`
 	// 查询交易创建时间结束。格式:yyyy-MM-dd HH:mm:ss
 	StartCreated string `json:"start_created,omitempty" xml:"start_created,omitempty"`
+}
+
+var poolOrderQuery = sync.Pool{
+	New: func() any {
+		return new(OrderQuery)
+	},
+}
+
+// GetOrderQuery() 从对象池中获取OrderQuery
+func GetOrderQuery() *OrderQuery {
+	return poolOrderQuery.Get().(*OrderQuery)
+}
+
+// ReleaseOrderQuery 释放OrderQuery
+func ReleaseOrderQuery(v *OrderQuery) {
+	v.ReceiverPhone = ""
+	v.ReceiverMobile = ""
+	v.ReceiverName = ""
+	v.EndCreated = ""
+	v.StartCreated = ""
+	poolOrderQuery.Put(v)
 }

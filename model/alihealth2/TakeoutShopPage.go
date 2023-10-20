@@ -1,5 +1,9 @@
 package alihealth2
 
+import (
+	"sync"
+)
+
 // TakeoutShopPage 结构体
 type TakeoutShopPage struct {
 	// 店铺信息列表
@@ -16,4 +20,27 @@ type TakeoutShopPage struct {
 	PrevPage int64 `json:"prev_page,omitempty" xml:"prev_page,omitempty"`
 	// 下一页页码
 	NextPage int64 `json:"next_page,omitempty" xml:"next_page,omitempty"`
+}
+
+var poolTakeoutShopPage = sync.Pool{
+	New: func() any {
+		return new(TakeoutShopPage)
+	},
+}
+
+// GetTakeoutShopPage() 从对象池中获取TakeoutShopPage
+func GetTakeoutShopPage() *TakeoutShopPage {
+	return poolTakeoutShopPage.Get().(*TakeoutShopPage)
+}
+
+// ReleaseTakeoutShopPage 释放TakeoutShopPage
+func ReleaseTakeoutShopPage(v *TakeoutShopPage) {
+	v.TakeoutSummaryInfos = v.TakeoutSummaryInfos[:0]
+	v.TotalCount = 0
+	v.Page = 0
+	v.PageSize = 0
+	v.TotalPage = 0
+	v.PrevPage = 0
+	v.NextPage = 0
+	poolTakeoutShopPage.Put(v)
 }

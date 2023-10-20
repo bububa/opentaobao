@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihouseNewhomeVrSyncAPIResponse struct {
 	AlibabaAlihouseNewhomeVrSyncAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihouseNewhomeVrSyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihouseNewhomeVrSyncAPIResponseModel).Reset()
+}
+
 // AlibabaAlihouseNewhomeVrSyncAPIResponseModel is VR关系数据同步 成功返回结果
 type AlibabaAlihouseNewhomeVrSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihouse_newhome_vr_sync_response"`
@@ -22,4 +29,27 @@ type AlibabaAlihouseNewhomeVrSyncAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *AlibabaAlihouseNewhomeVrSyncResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihouseNewhomeVrSyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihouseNewhomeVrSyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihouseNewhomeVrSyncAPIResponse)
+	},
+}
+
+// GetAlibabaAlihouseNewhomeVrSyncAPIResponse 从 sync.Pool 获取 AlibabaAlihouseNewhomeVrSyncAPIResponse
+func GetAlibabaAlihouseNewhomeVrSyncAPIResponse() *AlibabaAlihouseNewhomeVrSyncAPIResponse {
+	return poolAlibabaAlihouseNewhomeVrSyncAPIResponse.Get().(*AlibabaAlihouseNewhomeVrSyncAPIResponse)
+}
+
+// ReleaseAlibabaAlihouseNewhomeVrSyncAPIResponse 将 AlibabaAlihouseNewhomeVrSyncAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeVrSyncAPIResponse(v *AlibabaAlihouseNewhomeVrSyncAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeVrSyncAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeVideoSyncAPIRequest struct {
 // NewAlibabaAlihouseNewhomeVideoSyncRequest 初始化AlibabaAlihouseNewhomeVideoSyncAPIRequest对象
 func NewAlibabaAlihouseNewhomeVideoSyncRequest() *AlibabaAlihouseNewhomeVideoSyncAPIRequest {
 	return &AlibabaAlihouseNewhomeVideoSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeVideoSyncAPIRequest) Reset() {
+	r._video = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomeVideoSyncAPIRequest) SetVideo(_video *VideoDraftD
 // GetVideo Video Getter
 func (r AlibabaAlihouseNewhomeVideoSyncAPIRequest) GetVideo() *VideoDraftDto {
 	return r._video
+}
+
+var poolAlibabaAlihouseNewhomeVideoSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeVideoSyncRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeVideoSyncRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeVideoSyncAPIRequest
+func GetAlibabaAlihouseNewhomeVideoSyncAPIRequest() *AlibabaAlihouseNewhomeVideoSyncAPIRequest {
+	return poolAlibabaAlihouseNewhomeVideoSyncAPIRequest.Get().(*AlibabaAlihouseNewhomeVideoSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeVideoSyncAPIRequest 将 AlibabaAlihouseNewhomeVideoSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeVideoSyncAPIRequest(v *AlibabaAlihouseNewhomeVideoSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeVideoSyncAPIRequest.Put(v)
 }

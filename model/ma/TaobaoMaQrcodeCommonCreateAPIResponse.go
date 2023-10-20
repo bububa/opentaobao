@@ -2,6 +2,7 @@ package ma
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoMaQrcodeCommonCreateAPIResponse struct {
 	TaobaoMaQrcodeCommonCreateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoMaQrcodeCommonCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoMaQrcodeCommonCreateAPIResponseModel).Reset()
+}
+
 // TaobaoMaQrcodeCommonCreateAPIResponseModel is 创建码平台常用二维码 成功返回结果
 type TaobaoMaQrcodeCommonCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"ma_qrcode_common_create_response"`
@@ -24,4 +31,28 @@ type TaobaoMaQrcodeCommonCreateAPIResponseModel struct {
 	Modules []QrcodeDo `json:"modules,omitempty" xml:"modules>qrcode_do,omitempty"`
 	// 执行是否成功
 	Suc bool `json:"suc,omitempty" xml:"suc,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoMaQrcodeCommonCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Modules = m.Modules[:0]
+	m.Suc = false
+}
+
+var poolTaobaoMaQrcodeCommonCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoMaQrcodeCommonCreateAPIResponse)
+	},
+}
+
+// GetTaobaoMaQrcodeCommonCreateAPIResponse 从 sync.Pool 获取 TaobaoMaQrcodeCommonCreateAPIResponse
+func GetTaobaoMaQrcodeCommonCreateAPIResponse() *TaobaoMaQrcodeCommonCreateAPIResponse {
+	return poolTaobaoMaQrcodeCommonCreateAPIResponse.Get().(*TaobaoMaQrcodeCommonCreateAPIResponse)
+}
+
+// ReleaseTaobaoMaQrcodeCommonCreateAPIResponse 将 TaobaoMaQrcodeCommonCreateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoMaQrcodeCommonCreateAPIResponse(v *TaobaoMaQrcodeCommonCreateAPIResponse) {
+	v.Reset()
+	poolTaobaoMaQrcodeCommonCreateAPIResponse.Put(v)
 }

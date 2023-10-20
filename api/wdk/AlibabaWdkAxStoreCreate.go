@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.ax.store.create
 //
 // 翱象经营店创建
-func AlibabaWdkAxStoreCreate(clt *core.SDKClient, req *wdk.AlibabaWdkAxStoreCreateAPIRequest, session string) (*wdk.AlibabaWdkAxStoreCreateAPIResponse, error) {
-	var resp wdk.AlibabaWdkAxStoreCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkAxStoreCreate(clt *core.SDKClient, req *wdk.AlibabaWdkAxStoreCreateAPIRequest, resp *wdk.AlibabaWdkAxStoreCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

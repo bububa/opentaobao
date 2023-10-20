@@ -2,6 +2,7 @@ package mtopopen
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaInteractMediaArtworkAPIRequest struct {
 // NewAlibabaInteractMediaArtworkRequest 初始化AlibabaInteractMediaArtworkAPIRequest对象
 func NewAlibabaInteractMediaArtworkRequest() *AlibabaInteractMediaArtworkAPIRequest {
 	return &AlibabaInteractMediaArtworkAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractMediaArtworkAPIRequest) Reset() {
+	r._id = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaInteractMediaArtworkAPIRequest) SetId(_id string) error {
 // GetId Id Getter
 func (r AlibabaInteractMediaArtworkAPIRequest) GetId() string {
 	return r._id
+}
+
+var poolAlibabaInteractMediaArtworkAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractMediaArtworkRequest()
+	},
+}
+
+// GetAlibabaInteractMediaArtworkRequest 从 sync.Pool 获取 AlibabaInteractMediaArtworkAPIRequest
+func GetAlibabaInteractMediaArtworkAPIRequest() *AlibabaInteractMediaArtworkAPIRequest {
+	return poolAlibabaInteractMediaArtworkAPIRequest.Get().(*AlibabaInteractMediaArtworkAPIRequest)
+}
+
+// ReleaseAlibabaInteractMediaArtworkAPIRequest 将 AlibabaInteractMediaArtworkAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractMediaArtworkAPIRequest(v *AlibabaInteractMediaArtworkAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractMediaArtworkAPIRequest.Put(v)
 }

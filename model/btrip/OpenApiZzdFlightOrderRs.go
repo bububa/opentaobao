@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenApiZzdFlightOrderRs 结构体
 type OpenApiZzdFlightOrderRs struct {
 	// 成本中心信息
@@ -94,4 +98,66 @@ type OpenApiZzdFlightOrderRs struct {
 	IsChanged bool `json:"is_changed,omitempty" xml:"is_changed,omitempty"`
 	// 是否是退票流水
 	IsRefund bool `json:"is_refund,omitempty" xml:"is_refund,omitempty"`
+}
+
+var poolOpenApiZzdFlightOrderRs = sync.Pool{
+	New: func() any {
+		return new(OpenApiZzdFlightOrderRs)
+	},
+}
+
+// GetOpenApiZzdFlightOrderRs() 从对象池中获取OpenApiZzdFlightOrderRs
+func GetOpenApiZzdFlightOrderRs() *OpenApiZzdFlightOrderRs {
+	return poolOpenApiZzdFlightOrderRs.Get().(*OpenApiZzdFlightOrderRs)
+}
+
+// ReleaseOpenApiZzdFlightOrderRs 释放OpenApiZzdFlightOrderRs
+func ReleaseOpenApiZzdFlightOrderRs(v *OpenApiZzdFlightOrderRs) {
+	v.CostCenterList = v.CostCenterList[:0]
+	v.ClientInfodos = v.ClientInfodos[:0]
+	v.Ticketdos = v.Ticketdos[:0]
+	v.TradeId = ""
+	v.CorpId = ""
+	v.ThirdpartCorpId = ""
+	v.UserId = ""
+	v.UserNick = ""
+	v.DepartName = ""
+	v.ThirdPartApplyId = ""
+	v.ApplyTitle = ""
+	v.Status = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.Currency = ""
+	v.Approver = ""
+	v.SettlementBatchNo = ""
+	v.InvoiceId = ""
+	v.InvoiceTitle = ""
+	v.ProjectCode = ""
+	v.ProjectTitle = ""
+	v.ThirdpartItineraryId = ""
+	v.ItineraryNo = ""
+	v.TradeType = 0
+	v.TradeAction = 0
+	v.OrderId = 0
+	v.ApplyId = 0
+	v.PayType = 0
+	v.SettleType = 0
+	v.Amount = 0
+	v.CorpAmount = 0
+	v.PersonalAmount = 0
+	v.RefundFee = 0
+	v.RefundServiceFee = 0
+	v.ServiceFee = 0
+	v.TravelStandardAmount = 0
+	v.ChangeFee = 0
+	v.ChangeServiceFee = 0
+	v.DeliveryFee = 0
+	v.InsuranceFee = 0
+	v.TicketCount = 0
+	v.PassengerCount = 0
+	v.ChangeChargeFee = 0
+	v.RefundChargeFee = 0
+	v.IsChanged = false
+	v.IsRefund = false
+	poolOpenApiZzdFlightOrderRs.Put(v)
 }

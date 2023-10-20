@@ -9,11 +9,6 @@ import (
 // alibaba.ailabs.iot.business.recipestep.insertorupdate
 //
 // 插入或更新食谱步骤
-func AlibabaAilabsIotBusinessRecipestepInsertorupdate(clt *core.SDKClient, req *iot.AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest, session string) (*iot.AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponse, error) {
-	var resp iot.AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAilabsIotBusinessRecipestepInsertorupdate(clt *core.SDKClient, req *iot.AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIRequest, resp *iot.AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

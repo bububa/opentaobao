@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.derby.member.voucher.card.aps.refund
 //
 // Aps退券通知接口
-func AlitripMerchantGalaxyDerbyMemberVoucherCardApsRefund(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyDerbyMemberVoucherCardApsRefund(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

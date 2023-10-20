@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // JourneyRs 结构体
 type JourneyRs struct {
 	// 组成当前行程的航段列表
@@ -20,4 +24,29 @@ type JourneyRs struct {
 	TransferTime int64 `json:"transfer_time,omitempty" xml:"transfer_time,omitempty"`
 	// 是否换机场
 	TransferChangeAirport bool `json:"transfer_change_airport,omitempty" xml:"transfer_change_airport,omitempty"`
+}
+
+var poolJourneyRs = sync.Pool{
+	New: func() any {
+		return new(JourneyRs)
+	},
+}
+
+// GetJourneyRs() 从对象池中获取JourneyRs
+func GetJourneyRs() *JourneyRs {
+	return poolJourneyRs.Get().(*JourneyRs)
+}
+
+// ReleaseJourneyRs 释放JourneyRs
+func ReleaseJourneyRs(v *JourneyRs) {
+	v.SegmentList = v.SegmentList[:0]
+	v.ArrCity = ""
+	v.ArrTime = ""
+	v.DepCity = ""
+	v.DepTime = ""
+	v.Duration = 0
+	v.SeqId = 0
+	v.TransferTime = 0
+	v.TransferChangeAirport = false
+	poolJourneyRs.Put(v)
 }

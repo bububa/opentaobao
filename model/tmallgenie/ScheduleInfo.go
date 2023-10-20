@@ -1,5 +1,9 @@
 package tmallgenie
 
+import (
+	"sync"
+)
+
 // ScheduleInfo 结构体
 type ScheduleInfo struct {
 	// DayOfWeek/DayOfMonth
@@ -16,4 +20,27 @@ type ScheduleInfo struct {
 	Repeat string `json:"repeat,omitempty" xml:"repeat,omitempty"`
 	// 调度间隔
 	Interval int64 `json:"interval,omitempty" xml:"interval,omitempty"`
+}
+
+var poolScheduleInfo = sync.Pool{
+	New: func() any {
+		return new(ScheduleInfo)
+	},
+}
+
+// GetScheduleInfo() 从对象池中获取ScheduleInfo
+func GetScheduleInfo() *ScheduleInfo {
+	return poolScheduleInfo.Get().(*ScheduleInfo)
+}
+
+// ReleaseScheduleInfo 释放ScheduleInfo
+func ReleaseScheduleInfo(v *ScheduleInfo) {
+	v.DayOfXs = v.DayOfXs[:0]
+	v.EndDate = ""
+	v.StartDate = ""
+	v.Time = ""
+	v.Frequency = ""
+	v.Repeat = ""
+	v.Interval = 0
+	poolScheduleInfo.Put(v)
 }

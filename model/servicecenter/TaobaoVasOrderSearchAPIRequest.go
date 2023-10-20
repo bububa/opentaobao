@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type TaobaoVasOrderSearchAPIRequest struct {
 // NewTaobaoVasOrderSearchRequest 初始化TaobaoVasOrderSearchAPIRequest对象
 func NewTaobaoVasOrderSearchRequest() *TaobaoVasOrderSearchAPIRequest {
 	return &TaobaoVasOrderSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoVasOrderSearchAPIRequest) Reset() {
+	r._articleCode = ""
+	r._itemCode = ""
+	r._startCreated = ""
+	r._endCreated = ""
+	r._nick = ""
+	r._bizOrderId = 0
+	r._orderId = 0
+	r._bizType = 0
+	r._pageSize = 0
+	r._pageNo = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *TaobaoVasOrderSearchAPIRequest) SetPageNo(_pageNo int64) error {
 // GetPageNo PageNo Getter
 func (r TaobaoVasOrderSearchAPIRequest) GetPageNo() int64 {
 	return r._pageNo
+}
+
+var poolTaobaoVasOrderSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoVasOrderSearchRequest()
+	},
+}
+
+// GetTaobaoVasOrderSearchRequest 从 sync.Pool 获取 TaobaoVasOrderSearchAPIRequest
+func GetTaobaoVasOrderSearchAPIRequest() *TaobaoVasOrderSearchAPIRequest {
+	return poolTaobaoVasOrderSearchAPIRequest.Get().(*TaobaoVasOrderSearchAPIRequest)
+}
+
+// ReleaseTaobaoVasOrderSearchAPIRequest 将 TaobaoVasOrderSearchAPIRequest 放入 sync.Pool
+func ReleaseTaobaoVasOrderSearchAPIRequest(v *TaobaoVasOrderSearchAPIRequest) {
+	v.Reset()
+	poolTaobaoVasOrderSearchAPIRequest.Put(v)
 }

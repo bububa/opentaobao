@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.newhome.ecode.update
 //
 // 新房货变更E码
-func AlibabaAlihouseNewhomeEcodeUpdate(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeEcodeUpdateAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeEcodeUpdateAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeEcodeUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseNewhomeEcodeUpdate(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeEcodeUpdateAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeEcodeUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

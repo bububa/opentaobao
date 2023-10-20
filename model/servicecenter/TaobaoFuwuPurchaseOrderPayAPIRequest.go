@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoFuwuPurchaseOrderPayAPIRequest struct {
 // NewTaobaoFuwuPurchaseOrderPayRequest 初始化TaobaoFuwuPurchaseOrderPayAPIRequest对象
 func NewTaobaoFuwuPurchaseOrderPayRequest() *TaobaoFuwuPurchaseOrderPayAPIRequest {
 	return &TaobaoFuwuPurchaseOrderPayAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFuwuPurchaseOrderPayAPIRequest) Reset() {
+	r._appkey = ""
+	r._deviceType = ""
+	r._outOrderId = ""
+	r._orderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoFuwuPurchaseOrderPayAPIRequest) SetOrderId(_orderId int64) error 
 // GetOrderId OrderId Getter
 func (r TaobaoFuwuPurchaseOrderPayAPIRequest) GetOrderId() int64 {
 	return r._orderId
+}
+
+var poolTaobaoFuwuPurchaseOrderPayAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFuwuPurchaseOrderPayRequest()
+	},
+}
+
+// GetTaobaoFuwuPurchaseOrderPayRequest 从 sync.Pool 获取 TaobaoFuwuPurchaseOrderPayAPIRequest
+func GetTaobaoFuwuPurchaseOrderPayAPIRequest() *TaobaoFuwuPurchaseOrderPayAPIRequest {
+	return poolTaobaoFuwuPurchaseOrderPayAPIRequest.Get().(*TaobaoFuwuPurchaseOrderPayAPIRequest)
+}
+
+// ReleaseTaobaoFuwuPurchaseOrderPayAPIRequest 将 TaobaoFuwuPurchaseOrderPayAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFuwuPurchaseOrderPayAPIRequest(v *TaobaoFuwuPurchaseOrderPayAPIRequest) {
+	v.Reset()
+	poolTaobaoFuwuPurchaseOrderPayAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alilabs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest struct {
 // NewAlibabaAilabsTmallgenieAuthDeviceStatusGetRequest 初始化AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest对象
 func NewAlibabaAilabsTmallgenieAuthDeviceStatusGetRequest() *AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest {
 	return &AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest) Reset() {
+	r._clientId = ""
+	r._userOpenId = ""
+	r._uuid = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest) SetUuid(_uuid str
 // GetUuid Uuid Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest) GetUuid() string {
 	return r._uuid
+}
+
+var poolAlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsTmallgenieAuthDeviceStatusGetRequest()
+	},
+}
+
+// GetAlibabaAilabsTmallgenieAuthDeviceStatusGetRequest 从 sync.Pool 获取 AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest
+func GetAlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest() *AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest {
+	return poolAlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest.Get().(*AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest)
+}
+
+// ReleaseAlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest 将 AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest(v *AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest.Put(v)
 }

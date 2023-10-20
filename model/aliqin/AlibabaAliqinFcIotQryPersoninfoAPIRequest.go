@@ -2,6 +2,7 @@ package aliqin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAliqinFcIotQryPersoninfoAPIRequest struct {
 // NewAlibabaAliqinFcIotQryPersoninfoRequest 初始化AlibabaAliqinFcIotQryPersoninfoAPIRequest对象
 func NewAlibabaAliqinFcIotQryPersoninfoRequest() *AlibabaAliqinFcIotQryPersoninfoAPIRequest {
 	return &AlibabaAliqinFcIotQryPersoninfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAliqinFcIotQryPersoninfoAPIRequest) Reset() {
+	r._iccid = ""
+	r._userid = ""
+	r._midPatChannel = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAliqinFcIotQryPersoninfoAPIRequest) SetMidPatChannel(_midPatChan
 // GetMidPatChannel MidPatChannel Getter
 func (r AlibabaAliqinFcIotQryPersoninfoAPIRequest) GetMidPatChannel() string {
 	return r._midPatChannel
+}
+
+var poolAlibabaAliqinFcIotQryPersoninfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAliqinFcIotQryPersoninfoRequest()
+	},
+}
+
+// GetAlibabaAliqinFcIotQryPersoninfoRequest 从 sync.Pool 获取 AlibabaAliqinFcIotQryPersoninfoAPIRequest
+func GetAlibabaAliqinFcIotQryPersoninfoAPIRequest() *AlibabaAliqinFcIotQryPersoninfoAPIRequest {
+	return poolAlibabaAliqinFcIotQryPersoninfoAPIRequest.Get().(*AlibabaAliqinFcIotQryPersoninfoAPIRequest)
+}
+
+// ReleaseAlibabaAliqinFcIotQryPersoninfoAPIRequest 将 AlibabaAliqinFcIotQryPersoninfoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAliqinFcIotQryPersoninfoAPIRequest(v *AlibabaAliqinFcIotQryPersoninfoAPIRequest) {
+	v.Reset()
+	poolAlibabaAliqinFcIotQryPersoninfoAPIRequest.Put(v)
 }

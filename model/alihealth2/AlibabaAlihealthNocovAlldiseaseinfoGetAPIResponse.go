@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAlihealthNocovAlldiseaseinfoGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthNocovAlldiseaseinfoGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthNocovAlldiseaseinfoGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthNocovAlldiseaseinfoGetAPIResponseModel).Reset()
 }
 
 // AlibabaAlihealthNocovAlldiseaseinfoGetAPIResponseModel is 获取全国疫情统计数据 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAlihealthNocovAlldiseaseinfoGetAPIResponseModel struct {
 	BizErrMessage string `json:"biz_err_message,omitempty" xml:"biz_err_message,omitempty"`
 	// success
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthNocovAlldiseaseinfoGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = ""
+	m.BizErrCode = ""
+	m.BizErrMessage = ""
+	m.IsSuccess = false
+}
+
+var poolAlibabaAlihealthNocovAlldiseaseinfoGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthNocovAlldiseaseinfoGetAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthNocovAlldiseaseinfoGetAPIResponse 从 sync.Pool 获取 AlibabaAlihealthNocovAlldiseaseinfoGetAPIResponse
+func GetAlibabaAlihealthNocovAlldiseaseinfoGetAPIResponse() *AlibabaAlihealthNocovAlldiseaseinfoGetAPIResponse {
+	return poolAlibabaAlihealthNocovAlldiseaseinfoGetAPIResponse.Get().(*AlibabaAlihealthNocovAlldiseaseinfoGetAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthNocovAlldiseaseinfoGetAPIResponse 将 AlibabaAlihealthNocovAlldiseaseinfoGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthNocovAlldiseaseinfoGetAPIResponse(v *AlibabaAlihealthNocovAlldiseaseinfoGetAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthNocovAlldiseaseinfoGetAPIResponse.Put(v)
 }

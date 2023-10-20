@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIRequest struct {
 // NewAlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundRequest 初始化AlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIRequest对象
 func NewAlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundRequest() *AlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIRequest {
 	return &AlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._derbyBody = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIRequest) SetDerb
 // GetDerbyBody DerbyBody Getter
 func (r AlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIRequest) GetDerbyBody() string {
 	return r._derbyBody
+}
+
+var poolAlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundRequest 从 sync.Pool 获取 AlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIRequest
+func GetAlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIRequest() *AlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIRequest {
+	return poolAlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIRequest.Get().(*AlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIRequest 将 AlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIRequest(v *AlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIRequest.Put(v)
 }

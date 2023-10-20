@@ -2,6 +2,7 @@ package baichuan
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoBaichuanTaokeTraceAPIRequest struct {
 // NewTaobaoBaichuanTaokeTraceRequest 初始化TaobaoBaichuanTaokeTraceAPIRequest对象
 func NewTaobaoBaichuanTaokeTraceRequest() *TaobaoBaichuanTaokeTraceAPIRequest {
 	return &TaobaoBaichuanTaokeTraceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBaichuanTaokeTraceAPIRequest) Reset() {
+	r._name = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoBaichuanTaokeTraceAPIRequest) SetName(_name string) error {
 // GetName Name Getter
 func (r TaobaoBaichuanTaokeTraceAPIRequest) GetName() string {
 	return r._name
+}
+
+var poolTaobaoBaichuanTaokeTraceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBaichuanTaokeTraceRequest()
+	},
+}
+
+// GetTaobaoBaichuanTaokeTraceRequest 从 sync.Pool 获取 TaobaoBaichuanTaokeTraceAPIRequest
+func GetTaobaoBaichuanTaokeTraceAPIRequest() *TaobaoBaichuanTaokeTraceAPIRequest {
+	return poolTaobaoBaichuanTaokeTraceAPIRequest.Get().(*TaobaoBaichuanTaokeTraceAPIRequest)
+}
+
+// ReleaseTaobaoBaichuanTaokeTraceAPIRequest 将 TaobaoBaichuanTaokeTraceAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBaichuanTaokeTraceAPIRequest(v *TaobaoBaichuanTaokeTraceAPIRequest) {
+	v.Reset()
+	poolTaobaoBaichuanTaokeTraceAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package caipiao
 
+import (
+	"sync"
+)
+
 // LotteryWangcaiSellerGoodsInfo 结构体
 type LotteryWangcaiSellerGoodsInfo struct {
 	// 活动结束时间
@@ -12,4 +16,25 @@ type LotteryWangcaiSellerGoodsInfo struct {
 	PresentType int64 `json:"present_type,omitempty" xml:"present_type,omitempty"`
 	// 彩种id
 	LotteryTypeId int64 `json:"lottery_type_id,omitempty" xml:"lottery_type_id,omitempty"`
+}
+
+var poolLotteryWangcaiSellerGoodsInfo = sync.Pool{
+	New: func() any {
+		return new(LotteryWangcaiSellerGoodsInfo)
+	},
+}
+
+// GetLotteryWangcaiSellerGoodsInfo() 从对象池中获取LotteryWangcaiSellerGoodsInfo
+func GetLotteryWangcaiSellerGoodsInfo() *LotteryWangcaiSellerGoodsInfo {
+	return poolLotteryWangcaiSellerGoodsInfo.Get().(*LotteryWangcaiSellerGoodsInfo)
+}
+
+// ReleaseLotteryWangcaiSellerGoodsInfo 释放LotteryWangcaiSellerGoodsInfo
+func ReleaseLotteryWangcaiSellerGoodsInfo(v *LotteryWangcaiSellerGoodsInfo) {
+	v.ActEndTime = ""
+	v.ActBeginTime = ""
+	v.GoodsId = 0
+	v.PresentType = 0
+	v.LotteryTypeId = 0
+	poolLotteryWangcaiSellerGoodsInfo.Put(v)
 }

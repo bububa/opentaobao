@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // ShippingAddressInfo 结构体
 type ShippingAddressInfo struct {
 	// 这里必须写全详细地址
@@ -20,4 +24,29 @@ type ShippingAddressInfo struct {
 	TelNo string `json:"tel_no,omitempty" xml:"tel_no,omitempty"`
 	// 四级地址 镇/街道
 	Town string `json:"town,omitempty" xml:"town,omitempty"`
+}
+
+var poolShippingAddressInfo = sync.Pool{
+	New: func() any {
+		return new(ShippingAddressInfo)
+	},
+}
+
+// GetShippingAddressInfo() 从对象池中获取ShippingAddressInfo
+func GetShippingAddressInfo() *ShippingAddressInfo {
+	return poolShippingAddressInfo.Get().(*ShippingAddressInfo)
+}
+
+// ReleaseShippingAddressInfo 释放ShippingAddressInfo
+func ReleaseShippingAddressInfo(v *ShippingAddressInfo) {
+	v.AddressDetail = ""
+	v.Area = ""
+	v.City = ""
+	v.ConsigneeName = ""
+	v.MobilePhone = ""
+	v.PostCode = ""
+	v.Province = ""
+	v.TelNo = ""
+	v.Town = ""
+	poolShippingAddressInfo.Put(v)
 }

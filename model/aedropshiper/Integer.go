@@ -1,5 +1,9 @@
 package aedropshiper
 
+import (
+	"sync"
+)
+
 // Integer 结构体
 type Integer struct {
 	// product small image urls
@@ -54,4 +58,46 @@ type Integer struct {
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// second level category id
 	SecondLevelCategoryId int64 `json:"second_level_category_id,omitempty" xml:"second_level_category_id,omitempty"`
+}
+
+var poolInteger = sync.Pool{
+	New: func() any {
+		return new(Integer)
+	},
+}
+
+// GetInteger() 从对象池中获取Integer
+func GetInteger() *Integer {
+	return poolInteger.Get().(*Integer)
+}
+
+// ReleaseInteger 释放Integer
+func ReleaseInteger(v *Integer) {
+	v.ProductSmallImageUrls = v.ProductSmallImageUrls[:0]
+	v.TargetSalePrice = ""
+	v.EvaluateRate = ""
+	v.TargetOriginalPrice = ""
+	v.SecondLevelCategoryName = ""
+	v.ProductVideoUrl = ""
+	v.SalePrice = ""
+	v.TargetSalePriceCurrency = ""
+	v.ShopUrl = ""
+	v.ProductDetailUrl = ""
+	v.ProductTitle = ""
+	v.FirstLevelCategoryName = ""
+	v.ProductMainImageUrl = ""
+	v.PlatformProductType = ""
+	v.TargetOriginalPriceCurrency = ""
+	v.ShipToDays = ""
+	v.SalePriceCurrency = ""
+	v.OriginalPrice = ""
+	v.OriginalPriceCurrency = ""
+	v.Discount = ""
+	v.LastestVolume = 0
+	v.SellerId = 0
+	v.ShopId = 0
+	v.FirstLevelCategoryId = 0
+	v.ProductId = 0
+	v.SecondLevelCategoryId = 0
+	poolInteger.Put(v)
 }

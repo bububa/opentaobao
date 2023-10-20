@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // Rulestairs 结构体
 type Rulestairs struct {
 	// 满多少元[单位为分，传入700，代表满7元]，amountAt为true时，必须设置
@@ -30,4 +34,34 @@ type Rulestairs struct {
 	IsExchange bool `json:"is_exchange,omitempty" xml:"is_exchange,omitempty"`
 	// 是否一口价
 	FixPrice bool `json:"fix_price,omitempty" xml:"fix_price,omitempty"`
+}
+
+var poolRulestairs = sync.Pool{
+	New: func() any {
+		return new(Rulestairs)
+	},
+}
+
+// GetRulestairs() 从对象池中获取Rulestairs
+func GetRulestairs() *Rulestairs {
+	return poolRulestairs.Get().(*Rulestairs)
+}
+
+// ReleaseRulestairs 释放Rulestairs
+func ReleaseRulestairs(v *Rulestairs) {
+	v.Amount = 0
+	v.CanExtraItemNum = 0
+	v.Count = 0
+	v.DecreaseMoney = 0
+	v.DiscountRate = 0
+	v.FixPriceAmount = 0
+	v.AmountAt = false
+	v.EnableMultiple = false
+	v.CountAt = false
+	v.CountBegin = false
+	v.Decrease = false
+	v.Discount = false
+	v.IsExchange = false
+	v.FixPrice = false
+	poolRulestairs.Put(v)
 }

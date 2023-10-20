@@ -9,11 +9,6 @@ import (
 // alibaba.damai.maitix.opengateway.perform.status.query
 //
 // queryPerformStatusByPerformId
-func AlibabaDamaiMaitixOpengatewayPerformStatusQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIRequest, session string) (*maitix.AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIResponse, error) {
-	var resp maitix.AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMaitixOpengatewayPerformStatusQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIRequest, resp *maitix.AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

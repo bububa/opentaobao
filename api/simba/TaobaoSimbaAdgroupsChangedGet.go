@@ -9,11 +9,6 @@ import (
 // taobao.simba.adgroups.changed.get
 //
 // 分页获取修改的推广组ID和修改时间
-func TaobaoSimbaAdgroupsChangedGet(clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupsChangedGetAPIRequest, session string) (*simba.TaobaoSimbaAdgroupsChangedGetAPIResponse, error) {
-	var resp simba.TaobaoSimbaAdgroupsChangedGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaAdgroupsChangedGet(clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupsChangedGetAPIRequest, resp *simba.TaobaoSimbaAdgroupsChangedGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

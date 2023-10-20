@@ -1,5 +1,9 @@
 package alimember
 
+import (
+	"sync"
+)
+
 // OrderModel 结构体
 type OrderModel struct {
 	// 单据类型
@@ -10,4 +14,24 @@ type OrderModel struct {
 	OrderIdentityEndTime string `json:"order_identity_end_time,omitempty" xml:"order_identity_end_time,omitempty"`
 	// 该单据对应付费会员结束时间
 	OrderIdentityStartTime string `json:"order_identity_start_time,omitempty" xml:"order_identity_start_time,omitempty"`
+}
+
+var poolOrderModel = sync.Pool{
+	New: func() any {
+		return new(OrderModel)
+	},
+}
+
+// GetOrderModel() 从对象池中获取OrderModel
+func GetOrderModel() *OrderModel {
+	return poolOrderModel.Get().(*OrderModel)
+}
+
+// ReleaseOrderModel 释放OrderModel
+func ReleaseOrderModel(v *OrderModel) {
+	v.OrderType = ""
+	v.OrderNo = ""
+	v.OrderIdentityEndTime = ""
+	v.OrderIdentityStartTime = ""
+	poolOrderModel.Put(v)
 }

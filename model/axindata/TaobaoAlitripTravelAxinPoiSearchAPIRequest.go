@@ -2,6 +2,7 @@ package axindata
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAlitripTravelAxinPoiSearchAPIRequest struct {
 // NewTaobaoAlitripTravelAxinPoiSearchRequest 初始化TaobaoAlitripTravelAxinPoiSearchAPIRequest对象
 func NewTaobaoAlitripTravelAxinPoiSearchRequest() *TaobaoAlitripTravelAxinPoiSearchAPIRequest {
 	return &TaobaoAlitripTravelAxinPoiSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripTravelAxinPoiSearchAPIRequest) Reset() {
+	r._keyWord = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAlitripTravelAxinPoiSearchAPIRequest) SetKeyWord(_keyWord string)
 // GetKeyWord KeyWord Getter
 func (r TaobaoAlitripTravelAxinPoiSearchAPIRequest) GetKeyWord() string {
 	return r._keyWord
+}
+
+var poolTaobaoAlitripTravelAxinPoiSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripTravelAxinPoiSearchRequest()
+	},
+}
+
+// GetTaobaoAlitripTravelAxinPoiSearchRequest 从 sync.Pool 获取 TaobaoAlitripTravelAxinPoiSearchAPIRequest
+func GetTaobaoAlitripTravelAxinPoiSearchAPIRequest() *TaobaoAlitripTravelAxinPoiSearchAPIRequest {
+	return poolTaobaoAlitripTravelAxinPoiSearchAPIRequest.Get().(*TaobaoAlitripTravelAxinPoiSearchAPIRequest)
+}
+
+// ReleaseTaobaoAlitripTravelAxinPoiSearchAPIRequest 将 TaobaoAlitripTravelAxinPoiSearchAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripTravelAxinPoiSearchAPIRequest(v *TaobaoAlitripTravelAxinPoiSearchAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripTravelAxinPoiSearchAPIRequest.Put(v)
 }

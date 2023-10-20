@@ -9,11 +9,6 @@ import (
 // tmall.msd.claim.query
 //
 // 查询待理赔工单数据接口
-func TmallMsdClaimQuery(clt *core.SDKClient, req *tmallservice.TmallMsdClaimQueryAPIRequest, session string) (*tmallservice.TmallMsdClaimQueryAPIResponse, error) {
-	var resp tmallservice.TmallMsdClaimQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallMsdClaimQuery(clt *core.SDKClient, req *tmallservice.TmallMsdClaimQueryAPIRequest, resp *tmallservice.TmallMsdClaimQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

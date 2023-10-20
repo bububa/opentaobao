@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // SkuList 结构体
 type SkuList struct {
 	// 名称
@@ -24,4 +28,31 @@ type SkuList struct {
 	ReservedQuantity int64 `json:"reserved_quantity,omitempty" xml:"reserved_quantity,omitempty"`
 	// 配额可用库存
 	QuotaQuantity int64 `json:"quota_quantity,omitempty" xml:"quota_quantity,omitempty"`
+}
+
+var poolSkuList = sync.Pool{
+	New: func() any {
+		return new(SkuList)
+	},
+}
+
+// GetSkuList() 从对象池中获取SkuList
+func GetSkuList() *SkuList {
+	return poolSkuList.Get().(*SkuList)
+}
+
+// ReleaseSkuList 释放SkuList
+func ReleaseSkuList(v *SkuList) {
+	v.Name = ""
+	v.StandardPrice = ""
+	v.CostPrice = ""
+	v.DealerCostPrice = ""
+	v.OuterId = ""
+	v.Properties = ""
+	v.Id = 0
+	v.Quantity = 0
+	v.ScitemId = 0
+	v.ReservedQuantity = 0
+	v.QuotaQuantity = 0
+	poolSkuList.Put(v)
 }

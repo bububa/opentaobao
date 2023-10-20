@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsExpressSiteTmsSyncAPIRequest struct {
 // NewTaobaoLogisticsExpressSiteTmsSyncRequest 初始化TaobaoLogisticsExpressSiteTmsSyncAPIRequest对象
 func NewTaobaoLogisticsExpressSiteTmsSyncRequest() *TaobaoLogisticsExpressSiteTmsSyncAPIRequest {
 	return &TaobaoLogisticsExpressSiteTmsSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsExpressSiteTmsSyncAPIRequest) Reset() {
+	r._siteUpsetRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsExpressSiteTmsSyncAPIRequest) SetSiteUpsetRequest(_siteU
 // GetSiteUpsetRequest SiteUpsetRequest Getter
 func (r TaobaoLogisticsExpressSiteTmsSyncAPIRequest) GetSiteUpsetRequest() *SiteUpsetRequest {
 	return r._siteUpsetRequest
+}
+
+var poolTaobaoLogisticsExpressSiteTmsSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsExpressSiteTmsSyncRequest()
+	},
+}
+
+// GetTaobaoLogisticsExpressSiteTmsSyncRequest 从 sync.Pool 获取 TaobaoLogisticsExpressSiteTmsSyncAPIRequest
+func GetTaobaoLogisticsExpressSiteTmsSyncAPIRequest() *TaobaoLogisticsExpressSiteTmsSyncAPIRequest {
+	return poolTaobaoLogisticsExpressSiteTmsSyncAPIRequest.Get().(*TaobaoLogisticsExpressSiteTmsSyncAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsExpressSiteTmsSyncAPIRequest 将 TaobaoLogisticsExpressSiteTmsSyncAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsExpressSiteTmsSyncAPIRequest(v *TaobaoLogisticsExpressSiteTmsSyncAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsExpressSiteTmsSyncAPIRequest.Put(v)
 }

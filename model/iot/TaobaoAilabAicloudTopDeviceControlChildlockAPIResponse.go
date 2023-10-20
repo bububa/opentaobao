@@ -2,6 +2,7 @@ package iot
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoAilabAicloudTopDeviceControlChildlockAPIResponse struct {
 	model.CommonResponse
 	TaobaoAilabAicloudTopDeviceControlChildlockAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopDeviceControlChildlockAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAilabAicloudTopDeviceControlChildlockAPIResponseModel).Reset()
 }
 
 // TaobaoAilabAicloudTopDeviceControlChildlockAPIResponseModel is 设备儿童锁 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoAilabAicloudTopDeviceControlChildlockAPIResponseModel struct {
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
 	// 网络请求是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAilabAicloudTopDeviceControlChildlockAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgCode = ""
+	m.MsgInfo = ""
+	m.Model = false
+	m.IsSuccess = false
+}
+
+var poolTaobaoAilabAicloudTopDeviceControlChildlockAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAilabAicloudTopDeviceControlChildlockAPIResponse)
+	},
+}
+
+// GetTaobaoAilabAicloudTopDeviceControlChildlockAPIResponse 从 sync.Pool 获取 TaobaoAilabAicloudTopDeviceControlChildlockAPIResponse
+func GetTaobaoAilabAicloudTopDeviceControlChildlockAPIResponse() *TaobaoAilabAicloudTopDeviceControlChildlockAPIResponse {
+	return poolTaobaoAilabAicloudTopDeviceControlChildlockAPIResponse.Get().(*TaobaoAilabAicloudTopDeviceControlChildlockAPIResponse)
+}
+
+// ReleaseTaobaoAilabAicloudTopDeviceControlChildlockAPIResponse 将 TaobaoAilabAicloudTopDeviceControlChildlockAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAilabAicloudTopDeviceControlChildlockAPIResponse(v *TaobaoAilabAicloudTopDeviceControlChildlockAPIResponse) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopDeviceControlChildlockAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package axintrade
 
+import (
+	"sync"
+)
+
 // BaseResultDto 结构体
 type BaseResultDto struct {
 	// 错误code
@@ -14,4 +18,26 @@ type BaseResultDto struct {
 	NeedRetry bool `json:"need_retry,omitempty" xml:"need_retry,omitempty"`
 	// 是否调用成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolBaseResultDto = sync.Pool{
+	New: func() any {
+		return new(BaseResultDto)
+	},
+}
+
+// GetBaseResultDto() 从对象池中获取BaseResultDto
+func GetBaseResultDto() *BaseResultDto {
+	return poolBaseResultDto.Get().(*BaseResultDto)
+}
+
+// ReleaseBaseResultDto 释放BaseResultDto
+func ReleaseBaseResultDto(v *BaseResultDto) {
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.InfoMsg = ""
+	v.Data = false
+	v.NeedRetry = false
+	v.Success = false
+	poolBaseResultDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package nrt
 
+import (
+	"sync"
+)
+
 // NrtCouponSendDto 结构体
 type NrtCouponSendDto struct {
 	// 业务code
@@ -16,4 +20,27 @@ type NrtCouponSendDto struct {
 	Uuid string `json:"uuid,omitempty" xml:"uuid,omitempty"`
 	// 券类型，247：品类券，276：门店券，357：门店通用券
 	CouponType int64 `json:"coupon_type,omitempty" xml:"coupon_type,omitempty"`
+}
+
+var poolNrtCouponSendDto = sync.Pool{
+	New: func() any {
+		return new(NrtCouponSendDto)
+	},
+}
+
+// GetNrtCouponSendDto() 从对象池中获取NrtCouponSendDto
+func GetNrtCouponSendDto() *NrtCouponSendDto {
+	return poolNrtCouponSendDto.Get().(*NrtCouponSendDto)
+}
+
+// ReleaseNrtCouponSendDto 释放NrtCouponSendDto
+func ReleaseNrtCouponSendDto(v *NrtCouponSendDto) {
+	v.BizCode = ""
+	v.OpenId = ""
+	v.Extra = ""
+	v.Channel = ""
+	v.OutId = ""
+	v.Uuid = ""
+	v.CouponType = 0
+	poolNrtCouponSendDto.Put(v)
 }

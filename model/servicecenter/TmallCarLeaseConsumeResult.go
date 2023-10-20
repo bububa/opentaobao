@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // TmallCarLeaseConsumeResult 结构体
 type TmallCarLeaseConsumeResult struct {
 	// 错误提示
@@ -14,4 +18,26 @@ type TmallCarLeaseConsumeResult struct {
 	Object bool `json:"object,omitempty" xml:"object,omitempty"`
 	// 成功与否
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTmallCarLeaseConsumeResult = sync.Pool{
+	New: func() any {
+		return new(TmallCarLeaseConsumeResult)
+	},
+}
+
+// GetTmallCarLeaseConsumeResult() 从对象池中获取TmallCarLeaseConsumeResult
+func GetTmallCarLeaseConsumeResult() *TmallCarLeaseConsumeResult {
+	return poolTmallCarLeaseConsumeResult.Get().(*TmallCarLeaseConsumeResult)
+}
+
+// ReleaseTmallCarLeaseConsumeResult 释放TmallCarLeaseConsumeResult
+func ReleaseTmallCarLeaseConsumeResult(v *TmallCarLeaseConsumeResult) {
+	v.ErrorMessage = ""
+	v.CostTime = 0
+	v.ErrorCode = 0
+	v.GmtCurrentTime = 0
+	v.Object = false
+	v.Success = false
+	poolTmallCarLeaseConsumeResult.Put(v)
 }

@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // Address 结构体
 type Address struct {
 	// 区域
@@ -16,4 +20,27 @@ type Address struct {
 	DetailAddress string `json:"detail_address,omitempty" xml:"detail_address,omitempty"`
 	// 城市
 	City string `json:"city,omitempty" xml:"city,omitempty"`
+}
+
+var poolAddress = sync.Pool{
+	New: func() any {
+		return new(Address)
+	},
+}
+
+// GetAddress() 从对象池中获取Address
+func GetAddress() *Address {
+	return poolAddress.Get().(*Address)
+}
+
+// ReleaseAddress 释放Address
+func ReleaseAddress(v *Address) {
+	v.Region = ""
+	v.Area = ""
+	v.CountryCode = ""
+	v.Province = ""
+	v.Town = ""
+	v.DetailAddress = ""
+	v.City = ""
+	poolAddress.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.ailab.aicloud.top.message.get.unread.count
 //
 // 开放获取未读留言数量的接口
-func TaobaoAilabAicloudTopMessageGetUnreadCount(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopMessageGetUnreadCountAPIRequest, session string) (*iot.TaobaoAilabAicloudTopMessageGetUnreadCountAPIResponse, error) {
-	var resp iot.TaobaoAilabAicloudTopMessageGetUnreadCountAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAilabAicloudTopMessageGetUnreadCount(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopMessageGetUnreadCountAPIRequest, resp *iot.TaobaoAilabAicloudTopMessageGetUnreadCountAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

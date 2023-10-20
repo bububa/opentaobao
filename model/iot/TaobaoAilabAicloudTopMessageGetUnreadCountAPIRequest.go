@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoAilabAicloudTopMessageGetUnreadCountAPIRequest struct {
 // NewTaobaoAilabAicloudTopMessageGetUnreadCountRequest 初始化TaobaoAilabAicloudTopMessageGetUnreadCountAPIRequest对象
 func NewTaobaoAilabAicloudTopMessageGetUnreadCountRequest() *TaobaoAilabAicloudTopMessageGetUnreadCountAPIRequest {
 	return &TaobaoAilabAicloudTopMessageGetUnreadCountAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopMessageGetUnreadCountAPIRequest) Reset() {
+	r._schema = ""
+	r._userId = ""
+	r._utdId = ""
+	r._ext = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoAilabAicloudTopMessageGetUnreadCountAPIRequest) SetExt(_ext strin
 // GetExt Ext Getter
 func (r TaobaoAilabAicloudTopMessageGetUnreadCountAPIRequest) GetExt() string {
 	return r._ext
+}
+
+var poolTaobaoAilabAicloudTopMessageGetUnreadCountAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopMessageGetUnreadCountRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopMessageGetUnreadCountRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopMessageGetUnreadCountAPIRequest
+func GetTaobaoAilabAicloudTopMessageGetUnreadCountAPIRequest() *TaobaoAilabAicloudTopMessageGetUnreadCountAPIRequest {
+	return poolTaobaoAilabAicloudTopMessageGetUnreadCountAPIRequest.Get().(*TaobaoAilabAicloudTopMessageGetUnreadCountAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopMessageGetUnreadCountAPIRequest 将 TaobaoAilabAicloudTopMessageGetUnreadCountAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopMessageGetUnreadCountAPIRequest(v *TaobaoAilabAicloudTopMessageGetUnreadCountAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopMessageGetUnreadCountAPIRequest.Put(v)
 }

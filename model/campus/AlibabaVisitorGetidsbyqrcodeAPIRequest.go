@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaVisitorGetidsbyqrcodeAPIRequest struct {
 // NewAlibabaVisitorGetidsbyqrcodeRequest 初始化AlibabaVisitorGetidsbyqrcodeAPIRequest对象
 func NewAlibabaVisitorGetidsbyqrcodeRequest() *AlibabaVisitorGetidsbyqrcodeAPIRequest {
 	return &AlibabaVisitorGetidsbyqrcodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaVisitorGetidsbyqrcodeAPIRequest) Reset() {
+	r._date = ""
+	r._qrCode = ""
+	r._companyId = 0
+	r._campusId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaVisitorGetidsbyqrcodeAPIRequest) SetCampusId(_campusId int64) er
 // GetCampusId CampusId Getter
 func (r AlibabaVisitorGetidsbyqrcodeAPIRequest) GetCampusId() int64 {
 	return r._campusId
+}
+
+var poolAlibabaVisitorGetidsbyqrcodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaVisitorGetidsbyqrcodeRequest()
+	},
+}
+
+// GetAlibabaVisitorGetidsbyqrcodeRequest 从 sync.Pool 获取 AlibabaVisitorGetidsbyqrcodeAPIRequest
+func GetAlibabaVisitorGetidsbyqrcodeAPIRequest() *AlibabaVisitorGetidsbyqrcodeAPIRequest {
+	return poolAlibabaVisitorGetidsbyqrcodeAPIRequest.Get().(*AlibabaVisitorGetidsbyqrcodeAPIRequest)
+}
+
+// ReleaseAlibabaVisitorGetidsbyqrcodeAPIRequest 将 AlibabaVisitorGetidsbyqrcodeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaVisitorGetidsbyqrcodeAPIRequest(v *AlibabaVisitorGetidsbyqrcodeAPIRequest) {
+	v.Reset()
+	poolAlibabaVisitorGetidsbyqrcodeAPIRequest.Put(v)
 }

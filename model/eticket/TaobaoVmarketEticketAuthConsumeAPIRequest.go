@@ -2,6 +2,7 @@ package eticket
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoVmarketEticketAuthConsumeAPIRequest struct {
 // NewTaobaoVmarketEticketAuthConsumeRequest 初始化TaobaoVmarketEticketAuthConsumeAPIRequest对象
 func NewTaobaoVmarketEticketAuthConsumeRequest() *TaobaoVmarketEticketAuthConsumeAPIRequest {
 	return &TaobaoVmarketEticketAuthConsumeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoVmarketEticketAuthConsumeAPIRequest) Reset() {
+	r._verifyCode = ""
+	r._operatorid = ""
+	r._serialNum = ""
+	r._storeid = ""
+	r._consumeNum = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoVmarketEticketAuthConsumeAPIRequest) SetConsumeNum(_consumeNum in
 // GetConsumeNum ConsumeNum Getter
 func (r TaobaoVmarketEticketAuthConsumeAPIRequest) GetConsumeNum() int64 {
 	return r._consumeNum
+}
+
+var poolTaobaoVmarketEticketAuthConsumeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoVmarketEticketAuthConsumeRequest()
+	},
+}
+
+// GetTaobaoVmarketEticketAuthConsumeRequest 从 sync.Pool 获取 TaobaoVmarketEticketAuthConsumeAPIRequest
+func GetTaobaoVmarketEticketAuthConsumeAPIRequest() *TaobaoVmarketEticketAuthConsumeAPIRequest {
+	return poolTaobaoVmarketEticketAuthConsumeAPIRequest.Get().(*TaobaoVmarketEticketAuthConsumeAPIRequest)
+}
+
+// ReleaseTaobaoVmarketEticketAuthConsumeAPIRequest 将 TaobaoVmarketEticketAuthConsumeAPIRequest 放入 sync.Pool
+func ReleaseTaobaoVmarketEticketAuthConsumeAPIRequest(v *TaobaoVmarketEticketAuthConsumeAPIRequest) {
+	v.Reset()
+	poolTaobaoVmarketEticketAuthConsumeAPIRequest.Put(v)
 }

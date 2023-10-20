@@ -2,6 +2,7 @@ package wenyuvideo
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YoukuWenyuvideoSeetaGetAPIRequest struct {
 // NewYoukuWenyuvideoSeetaGetRequest 初始化YoukuWenyuvideoSeetaGetAPIRequest对象
 func NewYoukuWenyuvideoSeetaGetRequest() *YoukuWenyuvideoSeetaGetAPIRequest {
 	return &YoukuWenyuvideoSeetaGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YoukuWenyuvideoSeetaGetAPIRequest) Reset() {
+	r._videoStrId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YoukuWenyuvideoSeetaGetAPIRequest) SetVideoStrId(_videoStrId string) er
 // GetVideoStrId VideoStrId Getter
 func (r YoukuWenyuvideoSeetaGetAPIRequest) GetVideoStrId() string {
 	return r._videoStrId
+}
+
+var poolYoukuWenyuvideoSeetaGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYoukuWenyuvideoSeetaGetRequest()
+	},
+}
+
+// GetYoukuWenyuvideoSeetaGetRequest 从 sync.Pool 获取 YoukuWenyuvideoSeetaGetAPIRequest
+func GetYoukuWenyuvideoSeetaGetAPIRequest() *YoukuWenyuvideoSeetaGetAPIRequest {
+	return poolYoukuWenyuvideoSeetaGetAPIRequest.Get().(*YoukuWenyuvideoSeetaGetAPIRequest)
+}
+
+// ReleaseYoukuWenyuvideoSeetaGetAPIRequest 将 YoukuWenyuvideoSeetaGetAPIRequest 放入 sync.Pool
+func ReleaseYoukuWenyuvideoSeetaGetAPIRequest(v *YoukuWenyuvideoSeetaGetAPIRequest) {
+	v.Reset()
+	poolYoukuWenyuvideoSeetaGetAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package mtopopen
 
+import (
+	"sync"
+)
+
 // AlibabaInteractLotteryactivityRegisterResult 结构体
 type AlibabaInteractLotteryactivityRegisterResult struct {
 	// 错误码
@@ -14,4 +18,26 @@ type AlibabaInteractLotteryactivityRegisterResult struct {
 	ModuleMap *Modulemap `json:"module_map,omitempty" xml:"module_map,omitempty"`
 	// 注册抽奖活动失败
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaInteractLotteryactivityRegisterResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaInteractLotteryactivityRegisterResult)
+	},
+}
+
+// GetAlibabaInteractLotteryactivityRegisterResult() 从对象池中获取AlibabaInteractLotteryactivityRegisterResult
+func GetAlibabaInteractLotteryactivityRegisterResult() *AlibabaInteractLotteryactivityRegisterResult {
+	return poolAlibabaInteractLotteryactivityRegisterResult.Get().(*AlibabaInteractLotteryactivityRegisterResult)
+}
+
+// ReleaseAlibabaInteractLotteryactivityRegisterResult 释放AlibabaInteractLotteryactivityRegisterResult
+func ReleaseAlibabaInteractLotteryactivityRegisterResult(v *AlibabaInteractLotteryactivityRegisterResult) {
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.TraceId = ""
+	v.Data = nil
+	v.ModuleMap = nil
+	v.Success = false
+	poolAlibabaInteractLotteryactivityRegisterResult.Put(v)
 }

@@ -1,5 +1,9 @@
 package lsttrade
 
+import (
+	"sync"
+)
+
 // LstShipOrderDto 结构体
 type LstShipOrderDto struct {
 	// 主发货单号
@@ -64,4 +68,51 @@ type LstShipOrderDto struct {
 	PrintTimes string `json:"print_times,omitempty" xml:"print_times,omitempty"`
 	// 创建时间
 	GmtUpdateTime string `json:"gmt_update_time,omitempty" xml:"gmt_update_time,omitempty"`
+}
+
+var poolLstShipOrderDto = sync.Pool{
+	New: func() any {
+		return new(LstShipOrderDto)
+	},
+}
+
+// GetLstShipOrderDto() 从对象池中获取LstShipOrderDto
+func GetLstShipOrderDto() *LstShipOrderDto {
+	return poolLstShipOrderDto.Get().(*LstShipOrderDto)
+}
+
+// ReleaseLstShipOrderDto 释放LstShipOrderDto
+func ReleaseLstShipOrderDto(v *LstShipOrderDto) {
+	v.MainShipOrderId = ""
+	v.MainOrderId = ""
+	v.Disused = ""
+	v.SourceName = ""
+	v.NewMainOrderId = ""
+	v.SubOrderId = ""
+	v.ItemName = ""
+	v.Barcode = ""
+	v.CargoNum = ""
+	v.Quantity = ""
+	v.Price = ""
+	v.ItemAmount = ""
+	v.RefundInfo = ""
+	v.GmtCreateTime = ""
+	v.ShopName = ""
+	v.ShopId = ""
+	v.ShopAliasName = ""
+	v.Province = ""
+	v.City = ""
+	v.Area = ""
+	v.Town = ""
+	v.DetailAddress = ""
+	v.StatusName = ""
+	v.LoadTime = ""
+	v.SignTime = ""
+	v.VehicleInfo = ""
+	v.DriverInfo = ""
+	v.DistributorName = ""
+	v.DistributorPhone = ""
+	v.PrintTimes = ""
+	v.GmtUpdateTime = ""
+	poolLstShipOrderDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package wms
 
+import (
+	"sync"
+)
+
 // Senderinfowlbwmsreturnordernotify 结构体
 type Senderinfowlbwmsreturnordernotify struct {
 	// 发件人邮编
@@ -20,4 +24,29 @@ type Senderinfowlbwmsreturnordernotify struct {
 	SenderMobile string `json:"sender_mobile,omitempty" xml:"sender_mobile,omitempty"`
 	// 发件人电话
 	SenderPhone string `json:"sender_phone,omitempty" xml:"sender_phone,omitempty"`
+}
+
+var poolSenderinfowlbwmsreturnordernotify = sync.Pool{
+	New: func() any {
+		return new(Senderinfowlbwmsreturnordernotify)
+	},
+}
+
+// GetSenderinfowlbwmsreturnordernotify() 从对象池中获取Senderinfowlbwmsreturnordernotify
+func GetSenderinfowlbwmsreturnordernotify() *Senderinfowlbwmsreturnordernotify {
+	return poolSenderinfowlbwmsreturnordernotify.Get().(*Senderinfowlbwmsreturnordernotify)
+}
+
+// ReleaseSenderinfowlbwmsreturnordernotify 释放Senderinfowlbwmsreturnordernotify
+func ReleaseSenderinfowlbwmsreturnordernotify(v *Senderinfowlbwmsreturnordernotify) {
+	v.SenderZipCode = ""
+	v.SenderProvince = ""
+	v.SenderCity = ""
+	v.SenderArea = ""
+	v.SenderTown = ""
+	v.SenderAddress = ""
+	v.SenderName = ""
+	v.SenderMobile = ""
+	v.SenderPhone = ""
+	poolSenderinfowlbwmsreturnordernotify.Put(v)
 }

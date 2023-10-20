@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // SkuInfo 结构体
 type SkuInfo struct {
 	// 容器
@@ -46,4 +50,42 @@ type SkuInfo struct {
 	IsShortage bool `json:"is_shortage,omitempty" xml:"is_shortage,omitempty"`
 	// 是否是标品：true（“标品”），false（“非标品”）
 	IsStandardSku bool `json:"is_standard_sku,omitempty" xml:"is_standard_sku,omitempty"`
+}
+
+var poolSkuInfo = sync.Pool{
+	New: func() any {
+		return new(SkuInfo)
+	},
+}
+
+// GetSkuInfo() 从对象池中获取SkuInfo
+func GetSkuInfo() *SkuInfo {
+	return poolSkuInfo.Get().(*SkuInfo)
+}
+
+// ReleaseSkuInfo 释放SkuInfo
+func ReleaseSkuInfo(v *SkuInfo) {
+	v.Containers = v.Containers[:0]
+	v.ActualSaleQuantity = ""
+	v.ActualStockQuantity = ""
+	v.SkuCode = ""
+	v.FulfillSubOrderId = ""
+	v.Attributes = ""
+	v.SkuName = ""
+	v.SkuPrice = ""
+	v.SkuSaleUnit = ""
+	v.SkuSaleQuantity = ""
+	v.TotalPrice = ""
+	v.RefundAmount = ""
+	v.OutOfStockQuantity = ""
+	v.CancelAmount = ""
+	v.CancelSaleQuantity = ""
+	v.OutOfStockAmount = ""
+	v.SubBizOrderId = ""
+	v.SubSourceOrderId = ""
+	v.DiscountAmount = ""
+	v.SkuStockUnit = ""
+	v.IsShortage = false
+	v.IsStandardSku = false
+	poolSkuInfo.Put(v)
 }

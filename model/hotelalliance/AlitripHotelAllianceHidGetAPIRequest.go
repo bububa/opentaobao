@@ -2,6 +2,7 @@ package hotelalliance
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripHotelAllianceHidGetAPIRequest struct {
 // NewAlitripHotelAllianceHidGetRequest 初始化AlitripHotelAllianceHidGetAPIRequest对象
 func NewAlitripHotelAllianceHidGetRequest() *AlitripHotelAllianceHidGetAPIRequest {
 	return &AlitripHotelAllianceHidGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripHotelAllianceHidGetAPIRequest) Reset() {
+	r._allianceInfoRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripHotelAllianceHidGetAPIRequest) SetAllianceInfoRequest(_allianceI
 // GetAllianceInfoRequest AllianceInfoRequest Getter
 func (r AlitripHotelAllianceHidGetAPIRequest) GetAllianceInfoRequest() *AllianceInfoRequest {
 	return r._allianceInfoRequest
+}
+
+var poolAlitripHotelAllianceHidGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripHotelAllianceHidGetRequest()
+	},
+}
+
+// GetAlitripHotelAllianceHidGetRequest 从 sync.Pool 获取 AlitripHotelAllianceHidGetAPIRequest
+func GetAlitripHotelAllianceHidGetAPIRequest() *AlitripHotelAllianceHidGetAPIRequest {
+	return poolAlitripHotelAllianceHidGetAPIRequest.Get().(*AlitripHotelAllianceHidGetAPIRequest)
+}
+
+// ReleaseAlitripHotelAllianceHidGetAPIRequest 将 AlitripHotelAllianceHidGetAPIRequest 放入 sync.Pool
+func ReleaseAlitripHotelAllianceHidGetAPIRequest(v *AlitripHotelAllianceHidGetAPIRequest) {
+	v.Reset()
+	poolAlitripHotelAllianceHidGetAPIRequest.Put(v)
 }

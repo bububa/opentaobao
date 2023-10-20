@@ -1,5 +1,9 @@
 package pur
 
+import (
+	"sync"
+)
+
 // AccessPackageDto 结构体
 type AccessPackageDto struct {
 	// 图片地址列表
@@ -16,4 +20,27 @@ type AccessPackageDto struct {
 	PackageDesc string `json:"package_desc,omitempty" xml:"package_desc,omitempty"`
 	// 套餐详情
 	DetailInfo string `json:"detail_info,omitempty" xml:"detail_info,omitempty"`
+}
+
+var poolAccessPackageDto = sync.Pool{
+	New: func() any {
+		return new(AccessPackageDto)
+	},
+}
+
+// GetAccessPackageDto() 从对象池中获取AccessPackageDto
+func GetAccessPackageDto() *AccessPackageDto {
+	return poolAccessPackageDto.Get().(*AccessPackageDto)
+}
+
+// ReleaseAccessPackageDto 释放AccessPackageDto
+func ReleaseAccessPackageDto(v *AccessPackageDto) {
+	v.ImgUrlList = v.ImgUrlList[:0]
+	v.ProductSourceValues = v.ProductSourceValues[:0]
+	v.SecurityId = ""
+	v.DataSource = ""
+	v.PackageName = ""
+	v.PackageDesc = ""
+	v.DetailInfo = ""
+	poolAccessPackageDto.Put(v)
 }

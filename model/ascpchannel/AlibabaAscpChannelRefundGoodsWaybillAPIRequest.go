@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpChannelRefundGoodsWaybillAPIRequest struct {
 // NewAlibabaAscpChannelRefundGoodsWaybillRequest 初始化AlibabaAscpChannelRefundGoodsWaybillAPIRequest对象
 func NewAlibabaAscpChannelRefundGoodsWaybillRequest() *AlibabaAscpChannelRefundGoodsWaybillAPIRequest {
 	return &AlibabaAscpChannelRefundGoodsWaybillAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpChannelRefundGoodsWaybillAPIRequest) Reset() {
+	r._refundWayBillReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpChannelRefundGoodsWaybillAPIRequest) SetRefundWayBillReq(_re
 // GetRefundWayBillReq RefundWayBillReq Getter
 func (r AlibabaAscpChannelRefundGoodsWaybillAPIRequest) GetRefundWayBillReq() *ExternalRefundGoodsWaybillRequest {
 	return r._refundWayBillReq
+}
+
+var poolAlibabaAscpChannelRefundGoodsWaybillAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpChannelRefundGoodsWaybillRequest()
+	},
+}
+
+// GetAlibabaAscpChannelRefundGoodsWaybillRequest 从 sync.Pool 获取 AlibabaAscpChannelRefundGoodsWaybillAPIRequest
+func GetAlibabaAscpChannelRefundGoodsWaybillAPIRequest() *AlibabaAscpChannelRefundGoodsWaybillAPIRequest {
+	return poolAlibabaAscpChannelRefundGoodsWaybillAPIRequest.Get().(*AlibabaAscpChannelRefundGoodsWaybillAPIRequest)
+}
+
+// ReleaseAlibabaAscpChannelRefundGoodsWaybillAPIRequest 将 AlibabaAscpChannelRefundGoodsWaybillAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpChannelRefundGoodsWaybillAPIRequest(v *AlibabaAscpChannelRefundGoodsWaybillAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpChannelRefundGoodsWaybillAPIRequest.Put(v)
 }

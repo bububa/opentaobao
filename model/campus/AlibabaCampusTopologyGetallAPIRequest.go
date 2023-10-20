@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaCampusTopologyGetallAPIRequest struct {
 // NewAlibabaCampusTopologyGetallRequest 初始化AlibabaCampusTopologyGetallAPIRequest对象
 func NewAlibabaCampusTopologyGetallRequest() *AlibabaCampusTopologyGetallAPIRequest {
 	return &AlibabaCampusTopologyGetallAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusTopologyGetallAPIRequest) Reset() {
+	r._systemId = ""
+	r._campusId = 0
+	r._companyId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaCampusTopologyGetallAPIRequest) SetCompanyId(_companyId int64) e
 // GetCompanyId CompanyId Getter
 func (r AlibabaCampusTopologyGetallAPIRequest) GetCompanyId() int64 {
 	return r._companyId
+}
+
+var poolAlibabaCampusTopologyGetallAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusTopologyGetallRequest()
+	},
+}
+
+// GetAlibabaCampusTopologyGetallRequest 从 sync.Pool 获取 AlibabaCampusTopologyGetallAPIRequest
+func GetAlibabaCampusTopologyGetallAPIRequest() *AlibabaCampusTopologyGetallAPIRequest {
+	return poolAlibabaCampusTopologyGetallAPIRequest.Get().(*AlibabaCampusTopologyGetallAPIRequest)
+}
+
+// ReleaseAlibabaCampusTopologyGetallAPIRequest 将 AlibabaCampusTopologyGetallAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusTopologyGetallAPIRequest(v *AlibabaCampusTopologyGetallAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusTopologyGetallAPIRequest.Put(v)
 }

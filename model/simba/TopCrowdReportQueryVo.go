@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // TopCrowdReportQueryVo 结构体
 type TopCrowdReportQueryVo struct {
 	// 聚合维度，crowd-人群，date-时间，campaign-计划
@@ -34,4 +38,36 @@ type TopCrowdReportQueryVo struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 是否分页
 	ByPage bool `json:"by_page,omitempty" xml:"by_page,omitempty"`
+}
+
+var poolTopCrowdReportQueryVo = sync.Pool{
+	New: func() any {
+		return new(TopCrowdReportQueryVo)
+	},
+}
+
+// GetTopCrowdReportQueryVo() 从对象池中获取TopCrowdReportQueryVo
+func GetTopCrowdReportQueryVo() *TopCrowdReportQueryVo {
+	return poolTopCrowdReportQueryVo.Get().(*TopCrowdReportQueryVo)
+}
+
+// ReleaseTopCrowdReportQueryVo 释放TopCrowdReportQueryVo
+func ReleaseTopCrowdReportQueryVo(v *TopCrowdReportQueryVo) {
+	v.QueryDomains = v.QueryDomains[:0]
+	v.QueryFieldInList = v.QueryFieldInList[:0]
+	v.BizCodeInList = v.BizCodeInList[:0]
+	v.ProvinceIdInList = v.ProvinceIdInList[:0]
+	v.StrategyOptimizeTargetInList = v.StrategyOptimizeTargetInList[:0]
+	v.StrategyCampaignIdInList = v.StrategyCampaignIdInList[:0]
+	v.SplitType = ""
+	v.UnifyType = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.StrategyCampaignIdOrName = ""
+	v.StrategyTargetTitleLike = ""
+	v.EffectEqual = 0
+	v.Offset = 0
+	v.PageSize = 0
+	v.ByPage = false
+	poolTopCrowdReportQueryVo.Put(v)
 }

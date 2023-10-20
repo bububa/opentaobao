@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallItemSchemaUpdateAPIResponse struct {
 	TmallItemSchemaUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallItemSchemaUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallItemSchemaUpdateAPIResponseModel).Reset()
+}
+
 // TmallItemSchemaUpdateAPIResponseModel is 天猫根据规则编辑商品 成功返回结果
 type TmallItemSchemaUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_item_schema_update_response"`
@@ -24,4 +31,28 @@ type TmallItemSchemaUpdateAPIResponseModel struct {
 	UpdateItemResult string `json:"update_item_result,omitempty" xml:"update_item_result,omitempty"`
 	// 商品更新操作成功时间
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallItemSchemaUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.UpdateItemResult = ""
+	m.GmtModified = ""
+}
+
+var poolTmallItemSchemaUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallItemSchemaUpdateAPIResponse)
+	},
+}
+
+// GetTmallItemSchemaUpdateAPIResponse 从 sync.Pool 获取 TmallItemSchemaUpdateAPIResponse
+func GetTmallItemSchemaUpdateAPIResponse() *TmallItemSchemaUpdateAPIResponse {
+	return poolTmallItemSchemaUpdateAPIResponse.Get().(*TmallItemSchemaUpdateAPIResponse)
+}
+
+// ReleaseTmallItemSchemaUpdateAPIResponse 将 TmallItemSchemaUpdateAPIResponse 保存到 sync.Pool
+func ReleaseTmallItemSchemaUpdateAPIResponse(v *TmallItemSchemaUpdateAPIResponse) {
+	v.Reset()
+	poolTmallItemSchemaUpdateAPIResponse.Put(v)
 }

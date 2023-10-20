@@ -2,6 +2,7 @@ package normalvisa
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoAlitripTravelNormalvisaStoreuserAPIRequest struct {
 // NewTaobaoAlitripTravelNormalvisaStoreuserRequest 初始化TaobaoAlitripTravelNormalvisaStoreuserAPIRequest对象
 func NewTaobaoAlitripTravelNormalvisaStoreuserRequest() *TaobaoAlitripTravelNormalvisaStoreuserAPIRequest {
 	return &TaobaoAlitripTravelNormalvisaStoreuserAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripTravelNormalvisaStoreuserAPIRequest) Reset() {
+	r._normalVisaUserUnitList = r._normalVisaUserUnitList[:0]
+	r._bizOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoAlitripTravelNormalvisaStoreuserAPIRequest) SetBizOrderId(_bizOrd
 // GetBizOrderId BizOrderId Getter
 func (r TaobaoAlitripTravelNormalvisaStoreuserAPIRequest) GetBizOrderId() int64 {
 	return r._bizOrderId
+}
+
+var poolTaobaoAlitripTravelNormalvisaStoreuserAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripTravelNormalvisaStoreuserRequest()
+	},
+}
+
+// GetTaobaoAlitripTravelNormalvisaStoreuserRequest 从 sync.Pool 获取 TaobaoAlitripTravelNormalvisaStoreuserAPIRequest
+func GetTaobaoAlitripTravelNormalvisaStoreuserAPIRequest() *TaobaoAlitripTravelNormalvisaStoreuserAPIRequest {
+	return poolTaobaoAlitripTravelNormalvisaStoreuserAPIRequest.Get().(*TaobaoAlitripTravelNormalvisaStoreuserAPIRequest)
+}
+
+// ReleaseTaobaoAlitripTravelNormalvisaStoreuserAPIRequest 将 TaobaoAlitripTravelNormalvisaStoreuserAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripTravelNormalvisaStoreuserAPIRequest(v *TaobaoAlitripTravelNormalvisaStoreuserAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripTravelNormalvisaStoreuserAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package cainiaocntec
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest struct {
 // NewCainiaoCntecLocallifeCommunitylifeVerifyservicecodeRequest 初始化CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest对象
 func NewCainiaoCntecLocallifeCommunitylifeVerifyservicecodeRequest() *CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest {
 	return &CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest) Reset() {
+	r._orderNo = ""
+	r._feature = ""
+	r._serviceCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest) SetServi
 // GetServiceCode ServiceCode Getter
 func (r CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest) GetServiceCode() string {
 	return r._serviceCode
+}
+
+var poolCainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoCntecLocallifeCommunitylifeVerifyservicecodeRequest()
+	},
+}
+
+// GetCainiaoCntecLocallifeCommunitylifeVerifyservicecodeRequest 从 sync.Pool 获取 CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest
+func GetCainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest() *CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest {
+	return poolCainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest.Get().(*CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest)
+}
+
+// ReleaseCainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest 将 CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest 放入 sync.Pool
+func ReleaseCainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest(v *CainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest) {
+	v.Reset()
+	poolCainiaoCntecLocallifeCommunitylifeVerifyservicecodeAPIRequest.Put(v)
 }

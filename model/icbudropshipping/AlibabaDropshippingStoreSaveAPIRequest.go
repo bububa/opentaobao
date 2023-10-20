@@ -2,6 +2,7 @@ package icbudropshipping
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaDropshippingStoreSaveAPIRequest struct {
 // NewAlibabaDropshippingStoreSaveRequest 初始化AlibabaDropshippingStoreSaveAPIRequest对象
 func NewAlibabaDropshippingStoreSaveRequest() *AlibabaDropshippingStoreSaveAPIRequest {
 	return &AlibabaDropshippingStoreSaveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDropshippingStoreSaveAPIRequest) Reset() {
+	r._storeType = ""
+	r._storeUrl = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaDropshippingStoreSaveAPIRequest) SetStoreUrl(_storeUrl string) e
 // GetStoreUrl StoreUrl Getter
 func (r AlibabaDropshippingStoreSaveAPIRequest) GetStoreUrl() string {
 	return r._storeUrl
+}
+
+var poolAlibabaDropshippingStoreSaveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDropshippingStoreSaveRequest()
+	},
+}
+
+// GetAlibabaDropshippingStoreSaveRequest 从 sync.Pool 获取 AlibabaDropshippingStoreSaveAPIRequest
+func GetAlibabaDropshippingStoreSaveAPIRequest() *AlibabaDropshippingStoreSaveAPIRequest {
+	return poolAlibabaDropshippingStoreSaveAPIRequest.Get().(*AlibabaDropshippingStoreSaveAPIRequest)
+}
+
+// ReleaseAlibabaDropshippingStoreSaveAPIRequest 将 AlibabaDropshippingStoreSaveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDropshippingStoreSaveAPIRequest(v *AlibabaDropshippingStoreSaveAPIRequest) {
+	v.Reset()
+	poolAlibabaDropshippingStoreSaveAPIRequest.Put(v)
 }

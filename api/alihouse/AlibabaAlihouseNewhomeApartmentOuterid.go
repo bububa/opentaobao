@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.newhome.apartment.outerid
 //
 // 公寓更新outerid
-func AlibabaAlihouseNewhomeApartmentOuterid(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeApartmentOuteridAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeApartmentOuteridAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeApartmentOuteridAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseNewhomeApartmentOuterid(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeApartmentOuteridAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeApartmentOuteridAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

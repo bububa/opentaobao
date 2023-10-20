@@ -9,11 +9,6 @@ import (
 // taobao.logistics.express.packageweight.sync
 //
 // TMS包裹重量回传
-func TaobaoLogisticsExpressPackageweightSync(clt *core.SDKClient, req *logistic.TaobaoLogisticsExpressPackageweightSyncAPIRequest, session string) (*logistic.TaobaoLogisticsExpressPackageweightSyncAPIResponse, error) {
-	var resp logistic.TaobaoLogisticsExpressPackageweightSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoLogisticsExpressPackageweightSync(clt *core.SDKClient, req *logistic.TaobaoLogisticsExpressPackageweightSyncAPIRequest, resp *logistic.TaobaoLogisticsExpressPackageweightSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

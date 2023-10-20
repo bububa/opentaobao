@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // RecycleResult 结构体
 type RecycleResult struct {
 	// errMsg
@@ -12,4 +16,25 @@ type RecycleResult struct {
 	SpuStatus int64 `json:"spu_status,omitempty" xml:"spu_status,omitempty"`
 	// success
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolRecycleResult = sync.Pool{
+	New: func() any {
+		return new(RecycleResult)
+	},
+}
+
+// GetRecycleResult() 从对象池中获取RecycleResult
+func GetRecycleResult() *RecycleResult {
+	return poolRecycleResult.Get().(*RecycleResult)
+}
+
+// ReleaseRecycleResult 释放RecycleResult
+func ReleaseRecycleResult(v *RecycleResult) {
+	v.ErrMsg = ""
+	v.ErrCode = ""
+	v.ErrMessage = ""
+	v.SpuStatus = 0
+	v.Success = false
+	poolRecycleResult.Put(v)
 }

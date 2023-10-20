@@ -1,5 +1,9 @@
 package icbu
 
+import (
+	"sync"
+)
+
 // WholesaleTrade 结构体
 type WholesaleTrade struct {
 	// 发货周期，发货时间相关建议使用此项
@@ -24,4 +28,31 @@ type WholesaleTrade struct {
 	ShippingLineTemplateId int64 `json:"shipping_line_template_id,omitempty" xml:"shipping_line_template_id,omitempty"`
 	// 体积，单位是立方厘米，范围是1-9999999
 	Volume int64 `json:"volume,omitempty" xml:"volume,omitempty"`
+}
+
+var poolWholesaleTrade = sync.Pool{
+	New: func() any {
+		return new(WholesaleTrade)
+	},
+}
+
+// GetWholesaleTrade() 从对象池中获取WholesaleTrade
+func GetWholesaleTrade() *WholesaleTrade {
+	return poolWholesaleTrade.Get().(*WholesaleTrade)
+}
+
+// ReleaseWholesaleTrade 释放WholesaleTrade
+func ReleaseWholesaleTrade(v *WholesaleTrade) {
+	v.DeliverPeriods = v.DeliverPeriods[:0]
+	v.PackageSize = ""
+	v.Price = ""
+	v.SaleType = ""
+	v.UnitType = ""
+	v.Weight = ""
+	v.BatchNumber = 0
+	v.HandlingTime = 0
+	v.MinOrderQuantity = 0
+	v.ShippingLineTemplateId = 0
+	v.Volume = 0
+	poolWholesaleTrade.Put(v)
 }

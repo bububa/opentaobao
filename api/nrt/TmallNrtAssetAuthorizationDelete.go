@@ -9,11 +9,6 @@ import (
 // tmall.nrt.asset.authorization.delete
 //
 // 移除资产数据权限授权关系
-func TmallNrtAssetAuthorizationDelete(clt *core.SDKClient, req *nrt.TmallNrtAssetAuthorizationDeleteAPIRequest, session string) (*nrt.TmallNrtAssetAuthorizationDeleteAPIResponse, error) {
-	var resp nrt.TmallNrtAssetAuthorizationDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallNrtAssetAuthorizationDelete(clt *core.SDKClient, req *nrt.TmallNrtAssetAuthorizationDeleteAPIRequest, resp *nrt.TmallNrtAssetAuthorizationDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

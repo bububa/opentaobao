@@ -2,6 +2,7 @@ package wms
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type CainiaoBimTradeorderConsignAPIRequest struct {
 // NewCainiaoBimTradeorderConsignRequest 初始化CainiaoBimTradeorderConsignAPIRequest对象
 func NewCainiaoBimTradeorderConsignRequest() *CainiaoBimTradeorderConsignAPIRequest {
 	return &CainiaoBimTradeorderConsignAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoBimTradeorderConsignAPIRequest) Reset() {
+	r._tradeId = ""
+	r._storeCode = ""
+	r._resId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *CainiaoBimTradeorderConsignAPIRequest) SetResId(_resId string) error {
 // GetResId ResId Getter
 func (r CainiaoBimTradeorderConsignAPIRequest) GetResId() string {
 	return r._resId
+}
+
+var poolCainiaoBimTradeorderConsignAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoBimTradeorderConsignRequest()
+	},
+}
+
+// GetCainiaoBimTradeorderConsignRequest 从 sync.Pool 获取 CainiaoBimTradeorderConsignAPIRequest
+func GetCainiaoBimTradeorderConsignAPIRequest() *CainiaoBimTradeorderConsignAPIRequest {
+	return poolCainiaoBimTradeorderConsignAPIRequest.Get().(*CainiaoBimTradeorderConsignAPIRequest)
+}
+
+// ReleaseCainiaoBimTradeorderConsignAPIRequest 将 CainiaoBimTradeorderConsignAPIRequest 放入 sync.Pool
+func ReleaseCainiaoBimTradeorderConsignAPIRequest(v *CainiaoBimTradeorderConsignAPIRequest) {
+	v.Reset()
+	poolCainiaoBimTradeorderConsignAPIRequest.Put(v)
 }

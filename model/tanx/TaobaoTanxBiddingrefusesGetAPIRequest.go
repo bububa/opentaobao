@@ -2,6 +2,7 @@ package tanx
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoTanxBiddingrefusesGetAPIRequest struct {
 // NewTaobaoTanxBiddingrefusesGetRequest 初始化TaobaoTanxBiddingrefusesGetAPIRequest对象
 func NewTaobaoTanxBiddingrefusesGetRequest() *TaobaoTanxBiddingrefusesGetAPIRequest {
 	return &TaobaoTanxBiddingrefusesGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTanxBiddingrefusesGetAPIRequest) Reset() {
+	r._creativeIds = r._creativeIds[:0]
+	r._token = ""
+	r._startTime = ""
+	r._endTime = ""
+	r._memberId = 0
+	r._signTime = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoTanxBiddingrefusesGetAPIRequest) SetSignTime(_signTime int64) err
 // GetSignTime SignTime Getter
 func (r TaobaoTanxBiddingrefusesGetAPIRequest) GetSignTime() int64 {
 	return r._signTime
+}
+
+var poolTaobaoTanxBiddingrefusesGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTanxBiddingrefusesGetRequest()
+	},
+}
+
+// GetTaobaoTanxBiddingrefusesGetRequest 从 sync.Pool 获取 TaobaoTanxBiddingrefusesGetAPIRequest
+func GetTaobaoTanxBiddingrefusesGetAPIRequest() *TaobaoTanxBiddingrefusesGetAPIRequest {
+	return poolTaobaoTanxBiddingrefusesGetAPIRequest.Get().(*TaobaoTanxBiddingrefusesGetAPIRequest)
+}
+
+// ReleaseTaobaoTanxBiddingrefusesGetAPIRequest 将 TaobaoTanxBiddingrefusesGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTanxBiddingrefusesGetAPIRequest(v *TaobaoTanxBiddingrefusesGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTanxBiddingrefusesGetAPIRequest.Put(v)
 }

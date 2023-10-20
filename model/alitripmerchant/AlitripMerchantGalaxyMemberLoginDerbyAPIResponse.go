@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripMerchantGalaxyMemberLoginDerbyAPIResponse struct {
 	AlitripMerchantGalaxyMemberLoginDerbyAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripMerchantGalaxyMemberLoginDerbyAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripMerchantGalaxyMemberLoginDerbyAPIResponseModel).Reset()
+}
+
 // AlitripMerchantGalaxyMemberLoginDerbyAPIResponseModel is 小程序通过德比登入（会员认证） 成功返回结果
 type AlitripMerchantGalaxyMemberLoginDerbyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_merchant_galaxy_member_login_derby_response"`
@@ -22,4 +29,27 @@ type AlitripMerchantGalaxyMemberLoginDerbyAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 携带优惠券试单结果
 	Result *AlitripMerchantGalaxyMemberLoginDerbyResponse `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripMerchantGalaxyMemberLoginDerbyAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlitripMerchantGalaxyMemberLoginDerbyAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyMemberLoginDerbyAPIResponse)
+	},
+}
+
+// GetAlitripMerchantGalaxyMemberLoginDerbyAPIResponse 从 sync.Pool 获取 AlitripMerchantGalaxyMemberLoginDerbyAPIResponse
+func GetAlitripMerchantGalaxyMemberLoginDerbyAPIResponse() *AlitripMerchantGalaxyMemberLoginDerbyAPIResponse {
+	return poolAlitripMerchantGalaxyMemberLoginDerbyAPIResponse.Get().(*AlitripMerchantGalaxyMemberLoginDerbyAPIResponse)
+}
+
+// ReleaseAlitripMerchantGalaxyMemberLoginDerbyAPIResponse 将 AlitripMerchantGalaxyMemberLoginDerbyAPIResponse 保存到 sync.Pool
+func ReleaseAlitripMerchantGalaxyMemberLoginDerbyAPIResponse(v *AlitripMerchantGalaxyMemberLoginDerbyAPIResponse) {
+	v.Reset()
+	poolAlitripMerchantGalaxyMemberLoginDerbyAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package ticket
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -18,6 +19,12 @@ type AlitripTicketSkusBatchUploadAPIResponse struct {
 	AlitripTicketSkusBatchUploadAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripTicketSkusBatchUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripTicketSkusBatchUploadAPIResponseModel).Reset()
+}
+
 // AlitripTicketSkusBatchUploadAPIResponseModel is 【门票API2.0】门票价格库存同步接口（多票种批量更新） 成功返回结果
 type AlitripTicketSkusBatchUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_ticket_skus_batch_upload_response"`
@@ -25,4 +32,27 @@ type AlitripTicketSkusBatchUploadAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 价格库存同步结果
 	UpdateResult *TicketItemResult `json:"update_result,omitempty" xml:"update_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripTicketSkusBatchUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.UpdateResult = nil
+}
+
+var poolAlitripTicketSkusBatchUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripTicketSkusBatchUploadAPIResponse)
+	},
+}
+
+// GetAlitripTicketSkusBatchUploadAPIResponse 从 sync.Pool 获取 AlitripTicketSkusBatchUploadAPIResponse
+func GetAlitripTicketSkusBatchUploadAPIResponse() *AlitripTicketSkusBatchUploadAPIResponse {
+	return poolAlitripTicketSkusBatchUploadAPIResponse.Get().(*AlitripTicketSkusBatchUploadAPIResponse)
+}
+
+// ReleaseAlitripTicketSkusBatchUploadAPIResponse 将 AlitripTicketSkusBatchUploadAPIResponse 保存到 sync.Pool
+func ReleaseAlitripTicketSkusBatchUploadAPIResponse(v *AlitripTicketSkusBatchUploadAPIResponse) {
+	v.Reset()
+	poolAlitripTicketSkusBatchUploadAPIResponse.Put(v)
 }

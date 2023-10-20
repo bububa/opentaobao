@@ -2,6 +2,7 @@ package tmallgeniescp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTmallgenieScpPlanForecastOemUploadAPIRequest struct {
 // NewAlibabaTmallgenieScpPlanForecastOemUploadRequest 初始化AlibabaTmallgenieScpPlanForecastOemUploadAPIRequest对象
 func NewAlibabaTmallgenieScpPlanForecastOemUploadRequest() *AlibabaTmallgenieScpPlanForecastOemUploadAPIRequest {
 	return &AlibabaTmallgenieScpPlanForecastOemUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTmallgenieScpPlanForecastOemUploadAPIRequest) Reset() {
+	r._supplierForecastRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTmallgenieScpPlanForecastOemUploadAPIRequest) SetSupplierForecas
 // GetSupplierForecastRequest SupplierForecastRequest Getter
 func (r AlibabaTmallgenieScpPlanForecastOemUploadAPIRequest) GetSupplierForecastRequest() *SupplierForecastRequest {
 	return r._supplierForecastRequest
+}
+
+var poolAlibabaTmallgenieScpPlanForecastOemUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTmallgenieScpPlanForecastOemUploadRequest()
+	},
+}
+
+// GetAlibabaTmallgenieScpPlanForecastOemUploadRequest 从 sync.Pool 获取 AlibabaTmallgenieScpPlanForecastOemUploadAPIRequest
+func GetAlibabaTmallgenieScpPlanForecastOemUploadAPIRequest() *AlibabaTmallgenieScpPlanForecastOemUploadAPIRequest {
+	return poolAlibabaTmallgenieScpPlanForecastOemUploadAPIRequest.Get().(*AlibabaTmallgenieScpPlanForecastOemUploadAPIRequest)
+}
+
+// ReleaseAlibabaTmallgenieScpPlanForecastOemUploadAPIRequest 将 AlibabaTmallgenieScpPlanForecastOemUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTmallgenieScpPlanForecastOemUploadAPIRequest(v *AlibabaTmallgenieScpPlanForecastOemUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaTmallgenieScpPlanForecastOemUploadAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package crm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type TaobaoCrmMemberinfoUpdatePrivyAPIRequest struct {
 // NewTaobaoCrmMemberinfoUpdatePrivyRequest 初始化TaobaoCrmMemberinfoUpdatePrivyAPIRequest对象
 func NewTaobaoCrmMemberinfoUpdatePrivyRequest() *TaobaoCrmMemberinfoUpdatePrivyAPIRequest {
 	return &TaobaoCrmMemberinfoUpdatePrivyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCrmMemberinfoUpdatePrivyAPIRequest) Reset() {
+	r._status = ""
+	r._province = ""
+	r._city = ""
+	r._groupIds = ""
+	r._ouid = ""
+	r._grade = 0
+	r._tradeCount = 0
+	r._tradeAmount = 0
+	r._closeTradeCount = 0
+	r._closeTradeAmount = 0
+	r._itemNum = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *TaobaoCrmMemberinfoUpdatePrivyAPIRequest) SetItemNum(_itemNum int64) er
 // GetItemNum ItemNum Getter
 func (r TaobaoCrmMemberinfoUpdatePrivyAPIRequest) GetItemNum() int64 {
 	return r._itemNum
+}
+
+var poolTaobaoCrmMemberinfoUpdatePrivyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCrmMemberinfoUpdatePrivyRequest()
+	},
+}
+
+// GetTaobaoCrmMemberinfoUpdatePrivyRequest 从 sync.Pool 获取 TaobaoCrmMemberinfoUpdatePrivyAPIRequest
+func GetTaobaoCrmMemberinfoUpdatePrivyAPIRequest() *TaobaoCrmMemberinfoUpdatePrivyAPIRequest {
+	return poolTaobaoCrmMemberinfoUpdatePrivyAPIRequest.Get().(*TaobaoCrmMemberinfoUpdatePrivyAPIRequest)
+}
+
+// ReleaseTaobaoCrmMemberinfoUpdatePrivyAPIRequest 将 TaobaoCrmMemberinfoUpdatePrivyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCrmMemberinfoUpdatePrivyAPIRequest(v *TaobaoCrmMemberinfoUpdatePrivyAPIRequest) {
+	v.Reset()
+	poolTaobaoCrmMemberinfoUpdatePrivyAPIRequest.Put(v)
 }

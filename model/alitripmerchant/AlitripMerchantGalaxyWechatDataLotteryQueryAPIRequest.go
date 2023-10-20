@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest struct {
 // NewAlitripMerchantGalaxyWechatDataLotteryQueryRequest 初始化AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest对象
 func NewAlitripMerchantGalaxyWechatDataLotteryQueryRequest() *AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest {
 	return &AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._queryLotteryDataDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest) SetQueryLotteryD
 // GetQueryLotteryDataDTO QueryLotteryDataDTO Getter
 func (r AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest) GetQueryLotteryDataDTO() *QueryLotteryDataDto {
 	return r._queryLotteryDataDTO
+}
+
+var poolAlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyWechatDataLotteryQueryRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyWechatDataLotteryQueryRequest 从 sync.Pool 获取 AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest
+func GetAlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest() *AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest {
+	return poolAlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest.Get().(*AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest 将 AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest(v *AlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyWechatDataLotteryQueryAPIRequest.Put(v)
 }

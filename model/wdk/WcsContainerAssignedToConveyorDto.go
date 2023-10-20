@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // WcsContainerAssignedToConveyorDto 结构体
 type WcsContainerAssignedToConveyorDto struct {
 	// warehouseCode
@@ -20,4 +24,29 @@ type WcsContainerAssignedToConveyorDto struct {
 	ConveyorId int64 `json:"conveyor_id,omitempty" xml:"conveyor_id,omitempty"`
 	// assignedConveyor
 	AssignedConveyor int64 `json:"assigned_conveyor,omitempty" xml:"assigned_conveyor,omitempty"`
+}
+
+var poolWcsContainerAssignedToConveyorDto = sync.Pool{
+	New: func() any {
+		return new(WcsContainerAssignedToConveyorDto)
+	},
+}
+
+// GetWcsContainerAssignedToConveyorDto() 从对象池中获取WcsContainerAssignedToConveyorDto
+func GetWcsContainerAssignedToConveyorDto() *WcsContainerAssignedToConveyorDto {
+	return poolWcsContainerAssignedToConveyorDto.Get().(*WcsContainerAssignedToConveyorDto)
+}
+
+// ReleaseWcsContainerAssignedToConveyorDto 释放WcsContainerAssignedToConveyorDto
+func ReleaseWcsContainerAssignedToConveyorDto(v *WcsContainerAssignedToConveyorDto) {
+	v.WarehouseCode = ""
+	v.BatchCode = ""
+	v.ContainerCode = ""
+	v.WaveCode = ""
+	v.ConveyorAssignedTime = ""
+	v.Uuid = ""
+	v.WarehouseId = 0
+	v.ConveyorId = 0
+	v.AssignedConveyor = 0
+	poolWcsContainerAssignedToConveyorDto.Put(v)
 }

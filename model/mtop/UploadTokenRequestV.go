@@ -1,5 +1,9 @@
 package mtop
 
+import (
+	"sync"
+)
+
 // UploadTokenRequestV 结构体
 type UploadTokenRequestV struct {
 	// 自定义数据
@@ -16,4 +20,27 @@ type UploadTokenRequestV struct {
 	FileSize int64 `json:"file_size,omitempty" xml:"file_size,omitempty"`
 	// 文件内容的CRC32校验和
 	Crc int64 `json:"crc,omitempty" xml:"crc,omitempty"`
+}
+
+var poolUploadTokenRequestV = sync.Pool{
+	New: func() any {
+		return new(UploadTokenRequestV)
+	},
+}
+
+// GetUploadTokenRequestV() 从对象池中获取UploadTokenRequestV
+func GetUploadTokenRequestV() *UploadTokenRequestV {
+	return poolUploadTokenRequestV.Get().(*UploadTokenRequestV)
+}
+
+// ReleaseUploadTokenRequestV 释放UploadTokenRequestV
+func ReleaseUploadTokenRequestV(v *UploadTokenRequestV) {
+	v.PrivateData = ""
+	v.UploadType = ""
+	v.ClientNetType = ""
+	v.FileName = ""
+	v.BizCode = ""
+	v.FileSize = 0
+	v.Crc = 0
+	poolUploadTokenRequestV.Put(v)
 }

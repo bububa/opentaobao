@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // BaseLoopLineDto 结构体
 type BaseLoopLineDto struct {
 	// 环线名称
@@ -18,4 +22,28 @@ type BaseLoopLineDto struct {
 	LoopLineId int64 `json:"loop_line_id,omitempty" xml:"loop_line_id,omitempty"`
 	// 数据源类型（1-新房 2-二手房）
 	SourceType int64 `json:"source_type,omitempty" xml:"source_type,omitempty"`
+}
+
+var poolBaseLoopLineDto = sync.Pool{
+	New: func() any {
+		return new(BaseLoopLineDto)
+	},
+}
+
+// GetBaseLoopLineDto() 从对象池中获取BaseLoopLineDto
+func GetBaseLoopLineDto() *BaseLoopLineDto {
+	return poolBaseLoopLineDto.Get().(*BaseLoopLineDto)
+}
+
+// ReleaseBaseLoopLineDto 释放BaseLoopLineDto
+func ReleaseBaseLoopLineDto(v *BaseLoopLineDto) {
+	v.LoopLineName = ""
+	v.LoopLineFence = ""
+	v.OuterLineId = ""
+	v.IsDeleted = ""
+	v.CityId = 0
+	v.Number = 0
+	v.LoopLineId = 0
+	v.SourceType = 0
+	poolBaseLoopLineDto.Put(v)
 }

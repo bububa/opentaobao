@@ -9,11 +9,6 @@ import (
 // taobao.store.followurl.get
 //
 // 获取关注店铺的URL
-func TaobaoStoreFollowurlGet(clt *core.SDKClient, req *shop.TaobaoStoreFollowurlGetAPIRequest, session string) (*shop.TaobaoStoreFollowurlGetAPIResponse, error) {
-	var resp shop.TaobaoStoreFollowurlGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoStoreFollowurlGet(clt *core.SDKClient, req *shop.TaobaoStoreFollowurlGetAPIRequest, resp *shop.TaobaoStoreFollowurlGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

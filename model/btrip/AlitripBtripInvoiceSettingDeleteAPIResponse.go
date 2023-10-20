@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripBtripInvoiceSettingDeleteAPIResponse struct {
 	AlitripBtripInvoiceSettingDeleteAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripBtripInvoiceSettingDeleteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripBtripInvoiceSettingDeleteAPIResponseModel).Reset()
+}
+
 // AlitripBtripInvoiceSettingDeleteAPIResponseModel is 发票删除 成功返回结果
 type AlitripBtripInvoiceSettingDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_invoice_setting_delete_response"`
@@ -26,4 +33,29 @@ type AlitripBtripInvoiceSettingDeleteAPIResponseModel struct {
 	ResultCode int64 `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 结果
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripBtripInvoiceSettingDeleteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultMsg = ""
+	m.ResultCode = 0
+	m.Result = false
+}
+
+var poolAlitripBtripInvoiceSettingDeleteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripBtripInvoiceSettingDeleteAPIResponse)
+	},
+}
+
+// GetAlitripBtripInvoiceSettingDeleteAPIResponse 从 sync.Pool 获取 AlitripBtripInvoiceSettingDeleteAPIResponse
+func GetAlitripBtripInvoiceSettingDeleteAPIResponse() *AlitripBtripInvoiceSettingDeleteAPIResponse {
+	return poolAlitripBtripInvoiceSettingDeleteAPIResponse.Get().(*AlitripBtripInvoiceSettingDeleteAPIResponse)
+}
+
+// ReleaseAlitripBtripInvoiceSettingDeleteAPIResponse 将 AlitripBtripInvoiceSettingDeleteAPIResponse 保存到 sync.Pool
+func ReleaseAlitripBtripInvoiceSettingDeleteAPIResponse(v *AlitripBtripInvoiceSettingDeleteAPIResponse) {
+	v.Reset()
+	poolAlitripBtripInvoiceSettingDeleteAPIResponse.Put(v)
 }

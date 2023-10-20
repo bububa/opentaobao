@@ -2,6 +2,7 @@ package idleisv
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,14 @@ type AlibabaIdleIsvUserAuthorizeAPIRequest struct {
 // NewAlibabaIdleIsvUserAuthorizeRequest 初始化AlibabaIdleIsvUserAuthorizeAPIRequest对象
 func NewAlibabaIdleIsvUserAuthorizeRequest() *AlibabaIdleIsvUserAuthorizeAPIRequest {
 	return &AlibabaIdleIsvUserAuthorizeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleIsvUserAuthorizeAPIRequest) Reset() {
+	r._addUserAuthorizationCmd = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -53,4 +60,21 @@ func (r *AlibabaIdleIsvUserAuthorizeAPIRequest) SetAddUserAuthorizationCmd(_addU
 // GetAddUserAuthorizationCmd AddUserAuthorizationCmd Getter
 func (r AlibabaIdleIsvUserAuthorizeAPIRequest) GetAddUserAuthorizationCmd() *AddUserAuthorizationCmd {
 	return r._addUserAuthorizationCmd
+}
+
+var poolAlibabaIdleIsvUserAuthorizeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleIsvUserAuthorizeRequest()
+	},
+}
+
+// GetAlibabaIdleIsvUserAuthorizeRequest 从 sync.Pool 获取 AlibabaIdleIsvUserAuthorizeAPIRequest
+func GetAlibabaIdleIsvUserAuthorizeAPIRequest() *AlibabaIdleIsvUserAuthorizeAPIRequest {
+	return poolAlibabaIdleIsvUserAuthorizeAPIRequest.Get().(*AlibabaIdleIsvUserAuthorizeAPIRequest)
+}
+
+// ReleaseAlibabaIdleIsvUserAuthorizeAPIRequest 将 AlibabaIdleIsvUserAuthorizeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleIsvUserAuthorizeAPIRequest(v *AlibabaIdleIsvUserAuthorizeAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleIsvUserAuthorizeAPIRequest.Put(v)
 }

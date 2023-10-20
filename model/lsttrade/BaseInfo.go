@@ -1,5 +1,9 @@
 package lsttrade
 
+import (
+	"sync"
+)
+
 // BaseInfo 结构体
 type BaseInfo struct {
 	// 到达时间
@@ -62,4 +66,50 @@ type BaseInfo struct {
 	OfflineOrder bool `json:"offline_order,omitempty" xml:"offline_order,omitempty"`
 	// 是否车销订单
 	OfflineCarOrder bool `json:"offline_car_order,omitempty" xml:"offline_car_order,omitempty"`
+}
+
+var poolBaseInfo = sync.Pool{
+	New: func() any {
+		return new(BaseInfo)
+	},
+}
+
+// GetBaseInfo() 从对象池中获取BaseInfo
+func GetBaseInfo() *BaseInfo {
+	return poolBaseInfo.Get().(*BaseInfo)
+}
+
+// ReleaseBaseInfo 释放BaseInfo
+func ReleaseBaseInfo(v *BaseInfo) {
+	v.AllDeliveredTime = ""
+	v.BuyerRemarkIcon = ""
+	v.PayTime = ""
+	v.SellerName = ""
+	v.RefundStatus = ""
+	v.AlipayTradeId = ""
+	v.SellerLoginId = ""
+	v.BuyerFeedback = ""
+	v.FlowTemplateCode = ""
+	v.BuyerLoginId = ""
+	v.ModifyTime = ""
+	v.ConfirmedTime = ""
+	v.StoreName = ""
+	v.CloseReason = ""
+	v.TradeType = ""
+	v.OrderStatus = ""
+	v.CreateTime = ""
+	v.OfflineYdId = ""
+	v.OfflineYdName = ""
+	v.ReceiverInfo = nil
+	v.Discount = 0
+	v.SumProductPayment = 0
+	v.MainOrderId = 0
+	v.SellerContact = nil
+	v.BuyerContact = nil
+	v.ShippingFee = 0
+	v.TotalAmount = 0
+	v.LeadsId = 0
+	v.OfflineOrder = false
+	v.OfflineCarOrder = false
+	poolBaseInfo.Put(v)
 }

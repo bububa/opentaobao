@@ -1,5 +1,9 @@
 package alitrippoi
 
+import (
+	"sync"
+)
+
 // FliggyPoiOutParam 结构体
 type FliggyPoiOutParam struct {
 	// 选择城市名
@@ -12,4 +16,25 @@ type FliggyPoiOutParam struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 开始页数
 	PageNum int64 `json:"page_num,omitempty" xml:"page_num,omitempty"`
+}
+
+var poolFliggyPoiOutParam = sync.Pool{
+	New: func() any {
+		return new(FliggyPoiOutParam)
+	},
+}
+
+// GetFliggyPoiOutParam() 从对象池中获取FliggyPoiOutParam
+func GetFliggyPoiOutParam() *FliggyPoiOutParam {
+	return poolFliggyPoiOutParam.Get().(*FliggyPoiOutParam)
+}
+
+// ReleaseFliggyPoiOutParam 释放FliggyPoiOutParam
+func ReleaseFliggyPoiOutParam(v *FliggyPoiOutParam) {
+	v.CityNames = v.CityNames[:0]
+	v.StartData = ""
+	v.CityCode = 0
+	v.PageSize = 0
+	v.PageNum = 0
+	poolFliggyPoiOutParam.Put(v)
 }

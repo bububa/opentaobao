@@ -9,11 +9,6 @@ import (
 // alibaba.mj.member.hasbind
 //
 // 喵街检测用户是否为数字化会员
-func AlibabaMjMemberHasbind(clt *core.SDKClient, req *mos.AlibabaMjMemberHasbindAPIRequest, session string) (*mos.AlibabaMjMemberHasbindAPIResponse, error) {
-	var resp mos.AlibabaMjMemberHasbindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaMjMemberHasbind(clt *core.SDKClient, req *mos.AlibabaMjMemberHasbindAPIRequest, resp *mos.AlibabaMjMemberHasbindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

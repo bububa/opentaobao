@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // BaseInfoDto 结构体
 type BaseInfoDto struct {
 	// 药品信息
@@ -40,4 +44,39 @@ type BaseInfoDto struct {
 	ApprovalLicenceExpiry string `json:"approval_licence_expiry,omitempty" xml:"approval_licence_expiry,omitempty"`
 	// 原批准文号
 	ApprovalLicenceNoOld string `json:"approval_licence_no_old,omitempty" xml:"approval_licence_no_old,omitempty"`
+}
+
+var poolBaseInfoDto = sync.Pool{
+	New: func() any {
+		return new(BaseInfoDto)
+	},
+}
+
+// GetBaseInfoDto() 从对象池中获取BaseInfoDto
+func GetBaseInfoDto() *BaseInfoDto {
+	return poolBaseInfoDto.Get().(*BaseInfoDto)
+}
+
+// ReleaseBaseInfoDto 释放BaseInfoDto
+func ReleaseBaseInfoDto(v *BaseInfoDto) {
+	v.PhysicInfo = ""
+	v.RefEntId = ""
+	v.PkgSpec = ""
+	v.PrepnSpec = ""
+	v.PrepnType = ""
+	v.PhysicName = ""
+	v.PkgRatio = ""
+	v.ExprieDate = ""
+	v.ProduceBatchNo = ""
+	v.ProduceDate = ""
+	v.SubTypeNo = ""
+	v.ProductCode = ""
+	v.ProdId = ""
+	v.ApproveNo = ""
+	v.PhysicType = ""
+	v.ApprovalLicenceExpiryOld = ""
+	v.ApprovalLicenceDate = ""
+	v.ApprovalLicenceExpiry = ""
+	v.ApprovalLicenceNoOld = ""
+	poolBaseInfoDto.Put(v)
 }

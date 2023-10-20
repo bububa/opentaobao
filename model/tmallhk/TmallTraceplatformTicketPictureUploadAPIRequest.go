@@ -2,6 +2,7 @@ package tmallhk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallTraceplatformTicketPictureUploadAPIRequest struct {
 // NewTmallTraceplatformTicketPictureUploadRequest 初始化TmallTraceplatformTicketPictureUploadAPIRequest对象
 func NewTmallTraceplatformTicketPictureUploadRequest() *TmallTraceplatformTicketPictureUploadAPIRequest {
 	return &TmallTraceplatformTicketPictureUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallTraceplatformTicketPictureUploadAPIRequest) Reset() {
+	r._bizOrderId = 0
+	r._file = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallTraceplatformTicketPictureUploadAPIRequest) SetFile(_file *model.F
 // GetFile File Getter
 func (r TmallTraceplatformTicketPictureUploadAPIRequest) GetFile() *model.File {
 	return r._file
+}
+
+var poolTmallTraceplatformTicketPictureUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallTraceplatformTicketPictureUploadRequest()
+	},
+}
+
+// GetTmallTraceplatformTicketPictureUploadRequest 从 sync.Pool 获取 TmallTraceplatformTicketPictureUploadAPIRequest
+func GetTmallTraceplatformTicketPictureUploadAPIRequest() *TmallTraceplatformTicketPictureUploadAPIRequest {
+	return poolTmallTraceplatformTicketPictureUploadAPIRequest.Get().(*TmallTraceplatformTicketPictureUploadAPIRequest)
+}
+
+// ReleaseTmallTraceplatformTicketPictureUploadAPIRequest 将 TmallTraceplatformTicketPictureUploadAPIRequest 放入 sync.Pool
+func ReleaseTmallTraceplatformTicketPictureUploadAPIRequest(v *TmallTraceplatformTicketPictureUploadAPIRequest) {
+	v.Reset()
+	poolTmallTraceplatformTicketPictureUploadAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package tvpay
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTvpayPartnerOrderQueryAPIResponse struct {
 	TaobaoTvpayPartnerOrderQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTvpayPartnerOrderQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTvpayPartnerOrderQueryAPIResponseModel).Reset()
+}
+
 // TaobaoTvpayPartnerOrderQueryAPIResponseModel is 商户查询订单 成功返回结果
 type TaobaoTvpayPartnerOrderQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"tvpay_partner_order_query_response"`
@@ -22,4 +29,27 @@ type TaobaoTvpayPartnerOrderQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// Top返回对象
 	Result *TopResultDo `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTvpayPartnerOrderQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoTvpayPartnerOrderQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTvpayPartnerOrderQueryAPIResponse)
+	},
+}
+
+// GetTaobaoTvpayPartnerOrderQueryAPIResponse 从 sync.Pool 获取 TaobaoTvpayPartnerOrderQueryAPIResponse
+func GetTaobaoTvpayPartnerOrderQueryAPIResponse() *TaobaoTvpayPartnerOrderQueryAPIResponse {
+	return poolTaobaoTvpayPartnerOrderQueryAPIResponse.Get().(*TaobaoTvpayPartnerOrderQueryAPIResponse)
+}
+
+// ReleaseTaobaoTvpayPartnerOrderQueryAPIResponse 将 TaobaoTvpayPartnerOrderQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTvpayPartnerOrderQueryAPIResponse(v *TaobaoTvpayPartnerOrderQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoTvpayPartnerOrderQueryAPIResponse.Put(v)
 }

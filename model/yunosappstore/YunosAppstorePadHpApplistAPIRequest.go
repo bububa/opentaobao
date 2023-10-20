@@ -2,6 +2,7 @@ package yunosappstore
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YunosAppstorePadHpApplistAPIRequest struct {
 // NewYunosAppstorePadHpApplistRequest 初始化YunosAppstorePadHpApplistAPIRequest对象
 func NewYunosAppstorePadHpApplistRequest() *YunosAppstorePadHpApplistAPIRequest {
 	return &YunosAppstorePadHpApplistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosAppstorePadHpApplistAPIRequest) Reset() {
+	r._code = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YunosAppstorePadHpApplistAPIRequest) SetCode(_code string) error {
 // GetCode Code Getter
 func (r YunosAppstorePadHpApplistAPIRequest) GetCode() string {
 	return r._code
+}
+
+var poolYunosAppstorePadHpApplistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosAppstorePadHpApplistRequest()
+	},
+}
+
+// GetYunosAppstorePadHpApplistRequest 从 sync.Pool 获取 YunosAppstorePadHpApplistAPIRequest
+func GetYunosAppstorePadHpApplistAPIRequest() *YunosAppstorePadHpApplistAPIRequest {
+	return poolYunosAppstorePadHpApplistAPIRequest.Get().(*YunosAppstorePadHpApplistAPIRequest)
+}
+
+// ReleaseYunosAppstorePadHpApplistAPIRequest 将 YunosAppstorePadHpApplistAPIRequest 放入 sync.Pool
+func ReleaseYunosAppstorePadHpApplistAPIRequest(v *YunosAppstorePadHpApplistAPIRequest) {
+	v.Reset()
+	poolYunosAppstorePadHpApplistAPIRequest.Put(v)
 }

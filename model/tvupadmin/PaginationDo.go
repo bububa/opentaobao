@@ -1,5 +1,9 @@
 package tvupadmin
 
+import (
+	"sync"
+)
+
 // PaginationDo 结构体
 type PaginationDo struct {
 	// 内容列表
@@ -10,4 +14,24 @@ type PaginationDo struct {
 	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
 	// 单页数量
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolPaginationDo = sync.Pool{
+	New: func() any {
+		return new(PaginationDo)
+	},
+}
+
+// GetPaginationDo() 从对象池中获取PaginationDo
+func GetPaginationDo() *PaginationDo {
+	return poolPaginationDo.Get().(*PaginationDo)
+}
+
+// ReleasePaginationDo 释放PaginationDo
+func ReleasePaginationDo(v *PaginationDo) {
+	v.List = v.List[:0]
+	v.Total = 0
+	v.PageNo = 0
+	v.PageSize = 0
+	poolPaginationDo.Put(v)
 }

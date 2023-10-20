@@ -2,6 +2,7 @@ package tmallhk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallTraceplatformCtsOrderStopAPIRequest struct {
 // NewTmallTraceplatformCtsOrderStopRequest 初始化TmallTraceplatformCtsOrderStopAPIRequest对象
 func NewTmallTraceplatformCtsOrderStopRequest() *TmallTraceplatformCtsOrderStopAPIRequest {
 	return &TmallTraceplatformCtsOrderStopAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallTraceplatformCtsOrderStopAPIRequest) Reset() {
+	r._traceInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallTraceplatformCtsOrderStopAPIRequest) SetTraceInfo(_traceInfo *Trac
 // GetTraceInfo TraceInfo Getter
 func (r TmallTraceplatformCtsOrderStopAPIRequest) GetTraceInfo() *TraceInfo {
 	return r._traceInfo
+}
+
+var poolTmallTraceplatformCtsOrderStopAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallTraceplatformCtsOrderStopRequest()
+	},
+}
+
+// GetTmallTraceplatformCtsOrderStopRequest 从 sync.Pool 获取 TmallTraceplatformCtsOrderStopAPIRequest
+func GetTmallTraceplatformCtsOrderStopAPIRequest() *TmallTraceplatformCtsOrderStopAPIRequest {
+	return poolTmallTraceplatformCtsOrderStopAPIRequest.Get().(*TmallTraceplatformCtsOrderStopAPIRequest)
+}
+
+// ReleaseTmallTraceplatformCtsOrderStopAPIRequest 将 TmallTraceplatformCtsOrderStopAPIRequest 放入 sync.Pool
+func ReleaseTmallTraceplatformCtsOrderStopAPIRequest(v *TmallTraceplatformCtsOrderStopAPIRequest) {
+	v.Reset()
+	poolTmallTraceplatformCtsOrderStopAPIRequest.Put(v)
 }

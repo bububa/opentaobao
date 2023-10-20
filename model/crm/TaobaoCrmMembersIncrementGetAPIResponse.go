@@ -2,6 +2,7 @@ package crm
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoCrmMembersIncrementGetAPIResponse struct {
 	TaobaoCrmMembersIncrementGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoCrmMembersIncrementGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoCrmMembersIncrementGetAPIResponseModel).Reset()
+}
+
 // TaobaoCrmMembersIncrementGetAPIResponseModel is 增量获取卖家会员 成功返回结果
 type TaobaoCrmMembersIncrementGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"crm_members_increment_get_response"`
@@ -24,4 +31,28 @@ type TaobaoCrmMembersIncrementGetAPIResponseModel struct {
 	Members []BasicMember `json:"members,omitempty" xml:"members>basic_member,omitempty"`
 	// 记录的总条数
 	TotalResult int64 `json:"total_result,omitempty" xml:"total_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoCrmMembersIncrementGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Members = m.Members[:0]
+	m.TotalResult = 0
+}
+
+var poolTaobaoCrmMembersIncrementGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoCrmMembersIncrementGetAPIResponse)
+	},
+}
+
+// GetTaobaoCrmMembersIncrementGetAPIResponse 从 sync.Pool 获取 TaobaoCrmMembersIncrementGetAPIResponse
+func GetTaobaoCrmMembersIncrementGetAPIResponse() *TaobaoCrmMembersIncrementGetAPIResponse {
+	return poolTaobaoCrmMembersIncrementGetAPIResponse.Get().(*TaobaoCrmMembersIncrementGetAPIResponse)
+}
+
+// ReleaseTaobaoCrmMembersIncrementGetAPIResponse 将 TaobaoCrmMembersIncrementGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoCrmMembersIncrementGetAPIResponse(v *TaobaoCrmMembersIncrementGetAPIResponse) {
+	v.Reset()
+	poolTaobaoCrmMembersIncrementGetAPIResponse.Put(v)
 }

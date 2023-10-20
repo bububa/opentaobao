@@ -2,6 +2,7 @@ package dengta
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaPicturesDengtaOrderStatusChangeAPIRequest struct {
 // NewAlibabaPicturesDengtaOrderStatusChangeRequest 初始化AlibabaPicturesDengtaOrderStatusChangeAPIRequest对象
 func NewAlibabaPicturesDengtaOrderStatusChangeRequest() *AlibabaPicturesDengtaOrderStatusChangeAPIRequest {
 	return &AlibabaPicturesDengtaOrderStatusChangeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaPicturesDengtaOrderStatusChangeAPIRequest) Reset() {
+	r._remark = ""
+	r._changeTime = ""
+	r._imsOrderId = ""
+	r._aliTaskId = ""
+	r._status = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaPicturesDengtaOrderStatusChangeAPIRequest) SetStatus(_status int
 // GetStatus Status Getter
 func (r AlibabaPicturesDengtaOrderStatusChangeAPIRequest) GetStatus() int64 {
 	return r._status
+}
+
+var poolAlibabaPicturesDengtaOrderStatusChangeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaPicturesDengtaOrderStatusChangeRequest()
+	},
+}
+
+// GetAlibabaPicturesDengtaOrderStatusChangeRequest 从 sync.Pool 获取 AlibabaPicturesDengtaOrderStatusChangeAPIRequest
+func GetAlibabaPicturesDengtaOrderStatusChangeAPIRequest() *AlibabaPicturesDengtaOrderStatusChangeAPIRequest {
+	return poolAlibabaPicturesDengtaOrderStatusChangeAPIRequest.Get().(*AlibabaPicturesDengtaOrderStatusChangeAPIRequest)
+}
+
+// ReleaseAlibabaPicturesDengtaOrderStatusChangeAPIRequest 将 AlibabaPicturesDengtaOrderStatusChangeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaPicturesDengtaOrderStatusChangeAPIRequest(v *AlibabaPicturesDengtaOrderStatusChangeAPIRequest) {
+	v.Reset()
+	poolAlibabaPicturesDengtaOrderStatusChangeAPIRequest.Put(v)
 }

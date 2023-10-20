@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaAlihealthDrugKytSpeciaVaccinGetbyrefentidAPIRequest struct {
 // NewAlibabaAlihealthDrugKytSpeciaVaccinGetbyrefentidRequest 初始化AlibabaAlihealthDrugKytSpeciaVaccinGetbyrefentidAPIRequest对象
 func NewAlibabaAlihealthDrugKytSpeciaVaccinGetbyrefentidRequest() *AlibabaAlihealthDrugKytSpeciaVaccinGetbyrefentidAPIRequest {
 	return &AlibabaAlihealthDrugKytSpeciaVaccinGetbyrefentidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugKytSpeciaVaccinGetbyrefentidAPIRequest) Reset() {
+	r._refEntId = ""
+	r._destRefEntId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaAlihealthDrugKytSpeciaVaccinGetbyrefentidAPIRequest) SetDestRefE
 // GetDestRefEntId DestRefEntId Getter
 func (r AlibabaAlihealthDrugKytSpeciaVaccinGetbyrefentidAPIRequest) GetDestRefEntId() string {
 	return r._destRefEntId
+}
+
+var poolAlibabaAlihealthDrugKytSpeciaVaccinGetbyrefentidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugKytSpeciaVaccinGetbyrefentidRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugKytSpeciaVaccinGetbyrefentidRequest 从 sync.Pool 获取 AlibabaAlihealthDrugKytSpeciaVaccinGetbyrefentidAPIRequest
+func GetAlibabaAlihealthDrugKytSpeciaVaccinGetbyrefentidAPIRequest() *AlibabaAlihealthDrugKytSpeciaVaccinGetbyrefentidAPIRequest {
+	return poolAlibabaAlihealthDrugKytSpeciaVaccinGetbyrefentidAPIRequest.Get().(*AlibabaAlihealthDrugKytSpeciaVaccinGetbyrefentidAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugKytSpeciaVaccinGetbyrefentidAPIRequest 将 AlibabaAlihealthDrugKytSpeciaVaccinGetbyrefentidAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytSpeciaVaccinGetbyrefentidAPIRequest(v *AlibabaAlihealthDrugKytSpeciaVaccinGetbyrefentidAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytSpeciaVaccinGetbyrefentidAPIRequest.Put(v)
 }

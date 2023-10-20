@@ -2,6 +2,7 @@ package wlb
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoWlbOrderJzpartnerQueryAPIRequest struct {
 // NewTaobaoWlbOrderJzpartnerQueryRequest 初始化TaobaoWlbOrderJzpartnerQueryAPIRequest对象
 func NewTaobaoWlbOrderJzpartnerQueryRequest() *TaobaoWlbOrderJzpartnerQueryAPIRequest {
 	return &TaobaoWlbOrderJzpartnerQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbOrderJzpartnerQueryAPIRequest) Reset() {
+	r._taobaoTradeId = 0
+	r._serviceType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoWlbOrderJzpartnerQueryAPIRequest) SetServiceType(_serviceType int
 // GetServiceType ServiceType Getter
 func (r TaobaoWlbOrderJzpartnerQueryAPIRequest) GetServiceType() int64 {
 	return r._serviceType
+}
+
+var poolTaobaoWlbOrderJzpartnerQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbOrderJzpartnerQueryRequest()
+	},
+}
+
+// GetTaobaoWlbOrderJzpartnerQueryRequest 从 sync.Pool 获取 TaobaoWlbOrderJzpartnerQueryAPIRequest
+func GetTaobaoWlbOrderJzpartnerQueryAPIRequest() *TaobaoWlbOrderJzpartnerQueryAPIRequest {
+	return poolTaobaoWlbOrderJzpartnerQueryAPIRequest.Get().(*TaobaoWlbOrderJzpartnerQueryAPIRequest)
+}
+
+// ReleaseTaobaoWlbOrderJzpartnerQueryAPIRequest 将 TaobaoWlbOrderJzpartnerQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbOrderJzpartnerQueryAPIRequest(v *TaobaoWlbOrderJzpartnerQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbOrderJzpartnerQueryAPIRequest.Put(v)
 }

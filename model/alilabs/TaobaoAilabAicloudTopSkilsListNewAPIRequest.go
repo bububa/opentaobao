@@ -2,6 +2,7 @@ package alilabs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type TaobaoAilabAicloudTopSkilsListNewAPIRequest struct {
 // NewTaobaoAilabAicloudTopSkilsListNewRequest 初始化TaobaoAilabAicloudTopSkilsListNewAPIRequest对象
 func NewTaobaoAilabAicloudTopSkilsListNewRequest() *TaobaoAilabAicloudTopSkilsListNewAPIRequest {
 	return &TaobaoAilabAicloudTopSkilsListNewAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAilabAicloudTopSkilsListNewAPIRequest) Reset() {
+	r._schema = ""
+	r._userId = ""
+	r._utdId = ""
+	r._ext = ""
+	r._query = ""
+	r._type = ""
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *TaobaoAilabAicloudTopSkilsListNewAPIRequest) SetPageSize(_pageSize int6
 // GetPageSize PageSize Getter
 func (r TaobaoAilabAicloudTopSkilsListNewAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoAilabAicloudTopSkilsListNewAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAilabAicloudTopSkilsListNewRequest()
+	},
+}
+
+// GetTaobaoAilabAicloudTopSkilsListNewRequest 从 sync.Pool 获取 TaobaoAilabAicloudTopSkilsListNewAPIRequest
+func GetTaobaoAilabAicloudTopSkilsListNewAPIRequest() *TaobaoAilabAicloudTopSkilsListNewAPIRequest {
+	return poolTaobaoAilabAicloudTopSkilsListNewAPIRequest.Get().(*TaobaoAilabAicloudTopSkilsListNewAPIRequest)
+}
+
+// ReleaseTaobaoAilabAicloudTopSkilsListNewAPIRequest 将 TaobaoAilabAicloudTopSkilsListNewAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAilabAicloudTopSkilsListNewAPIRequest(v *TaobaoAilabAicloudTopSkilsListNewAPIRequest) {
+	v.Reset()
+	poolTaobaoAilabAicloudTopSkilsListNewAPIRequest.Put(v)
 }

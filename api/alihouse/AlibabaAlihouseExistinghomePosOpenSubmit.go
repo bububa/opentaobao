@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.existinghome.pos.open.submit
 //
 // pos进件
-func AlibabaAlihouseExistinghomePosOpenSubmit(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomePosOpenSubmitAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomePosOpenSubmitAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseExistinghomePosOpenSubmitAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseExistinghomePosOpenSubmit(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomePosOpenSubmitAPIRequest, resp *alihouse.AlibabaAlihouseExistinghomePosOpenSubmitAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // PromotionContent 结构体
 type PromotionContent struct {
 	// sku列表
@@ -16,4 +20,27 @@ type PromotionContent struct {
 	MerchantCode string `json:"merchant_code,omitempty" xml:"merchant_code,omitempty"`
 	// 进售价类型
 	PromotionType string `json:"promotion_type,omitempty" xml:"promotion_type,omitempty"`
+}
+
+var poolPromotionContent = sync.Pool{
+	New: func() any {
+		return new(PromotionContent)
+	},
+}
+
+// GetPromotionContent() 从对象池中获取PromotionContent
+func GetPromotionContent() *PromotionContent {
+	return poolPromotionContent.Get().(*PromotionContent)
+}
+
+// ReleasePromotionContent 释放PromotionContent
+func ReleasePromotionContent(v *PromotionContent) {
+	v.PromotionSkuList = v.PromotionSkuList[:0]
+	v.CustomerMerchantCode = ""
+	v.CustomerCode = ""
+	v.OuCode = ""
+	v.OuterPromotionCode = ""
+	v.MerchantCode = ""
+	v.PromotionType = ""
+	poolPromotionContent.Put(v)
 }

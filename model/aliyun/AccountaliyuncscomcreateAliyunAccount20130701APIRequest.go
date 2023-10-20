@@ -2,6 +2,7 @@ package aliyun
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AccountAliyuncsComCreateAliyunAccount20130701APIRequest struct {
 // NewAccountAliyuncsComCreateAliyunAccount20130701Request 初始化AccountAliyuncsComCreateAliyunAccount20130701APIRequest对象
 func NewAccountAliyuncsComCreateAliyunAccount20130701Request() *AccountAliyuncsComCreateAliyunAccount20130701APIRequest {
 	return &AccountAliyuncsComCreateAliyunAccount20130701APIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AccountAliyuncsComCreateAliyunAccount20130701APIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AccountAliyuncsComCreateAliyunAccount20130701APIRequest) GetApiParams(pa
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AccountAliyuncsComCreateAliyunAccount20130701APIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAccountAliyuncsComCreateAliyunAccount20130701APIRequest = sync.Pool{
+	New: func() any {
+		return NewAccountAliyuncsComCreateAliyunAccount20130701Request()
+	},
+}
+
+// GetAccountAliyuncsComCreateAliyunAccount20130701Request 从 sync.Pool 获取 AccountAliyuncsComCreateAliyunAccount20130701APIRequest
+func GetAccountAliyuncsComCreateAliyunAccount20130701APIRequest() *AccountAliyuncsComCreateAliyunAccount20130701APIRequest {
+	return poolAccountAliyuncsComCreateAliyunAccount20130701APIRequest.Get().(*AccountAliyuncsComCreateAliyunAccount20130701APIRequest)
+}
+
+// ReleaseAccountAliyuncsComCreateAliyunAccount20130701APIRequest 将 AccountAliyuncsComCreateAliyunAccount20130701APIRequest 放入 sync.Pool
+func ReleaseAccountAliyuncsComCreateAliyunAccount20130701APIRequest(v *AccountAliyuncsComCreateAliyunAccount20130701APIRequest) {
+	v.Reset()
+	poolAccountAliyuncsComCreateAliyunAccount20130701APIRequest.Put(v)
 }

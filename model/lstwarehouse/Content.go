@@ -1,5 +1,9 @@
 package lstwarehouse
 
+import (
+	"sync"
+)
+
 // Content 结构体
 type Content struct {
 	// 品牌名称列表
@@ -92,4 +96,65 @@ type Content struct {
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 成功/失败
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+var poolContent = sync.Pool{
+	New: func() any {
+		return new(Content)
+	},
+}
+
+// GetContent() 从对象池中获取Content
+func GetContent() *Content {
+	return poolContent.Get().(*Content)
+}
+
+// ReleaseContent 释放Content
+func ReleaseContent(v *Content) {
+	v.BrandNameList = v.BrandNameList[:0]
+	v.IsNoRm = ""
+	v.ProductQuoteStatus = ""
+	v.CspuId = ""
+	v.IsOnline = ""
+	v.SaleUnitDesc = ""
+	v.ItmLevel = ""
+	v.RmShipType = ""
+	v.LiquidationStatus = ""
+	v.WhName = ""
+	v.CspuName = ""
+	v.SubWhTypeName = ""
+	v.ItemsId = ""
+	v.Company = ""
+	v.UnitPrice = ""
+	v.StatDate = ""
+	v.AllocOpQty = ""
+	v.BrandName = ""
+	v.BarCodeList = ""
+	v.IsOb = ""
+	v.BackOfferId = ""
+	v.CartonPcs = ""
+	v.IsOos = ""
+	v.FstInboundTime = ""
+	v.MinBuyQty = ""
+	v.MinBuyMultiple = ""
+	v.IsDull = ""
+	v.CateLv2Name = ""
+	v.ParentWhName = ""
+	v.BigAreaName = ""
+	v.CateLv1Name = ""
+	v.CateLv3Name = ""
+	v.UnsaleInstockDays = ""
+	v.SupplierMemberId = ""
+	v.Code = ""
+	v.Desc = ""
+	v.WarehouseType = ""
+	v.WarehouseName = ""
+	v.WarehouseCode = ""
+	v.OssDaysStd001 = 0
+	v.DeportItmQtyStd008 = 0
+	v.DeportItmQtyStd005 = 0
+	v.FstInboundDays = 0
+	v.ItemId = 0
+	v.Result = false
+	poolContent.Put(v)
 }

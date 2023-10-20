@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaSscPurchaseProductQueryAPIRequest struct {
 // NewAlibabaSscPurchaseProductQueryRequest 初始化AlibabaSscPurchaseProductQueryAPIRequest对象
 func NewAlibabaSscPurchaseProductQueryRequest() *AlibabaSscPurchaseProductQueryAPIRequest {
 	return &AlibabaSscPurchaseProductQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSscPurchaseProductQueryAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaSscPurchaseProductQueryAPIRequest) GetApiParams(params url.Values
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaSscPurchaseProductQueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaSscPurchaseProductQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSscPurchaseProductQueryRequest()
+	},
+}
+
+// GetAlibabaSscPurchaseProductQueryRequest 从 sync.Pool 获取 AlibabaSscPurchaseProductQueryAPIRequest
+func GetAlibabaSscPurchaseProductQueryAPIRequest() *AlibabaSscPurchaseProductQueryAPIRequest {
+	return poolAlibabaSscPurchaseProductQueryAPIRequest.Get().(*AlibabaSscPurchaseProductQueryAPIRequest)
+}
+
+// ReleaseAlibabaSscPurchaseProductQueryAPIRequest 将 AlibabaSscPurchaseProductQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSscPurchaseProductQueryAPIRequest(v *AlibabaSscPurchaseProductQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaSscPurchaseProductQueryAPIRequest.Put(v)
 }

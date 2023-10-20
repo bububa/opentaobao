@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,20 @@ type AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIRequest struct {
 // NewAlibabaAlihealthDrugCodeListCodeMedicalInsuranceRequest 初始化AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIRequest对象
 func NewAlibabaAlihealthDrugCodeListCodeMedicalInsuranceRequest() *AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIRequest {
 	return &AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIRequest) Reset() {
+	r._codeList = r._codeList[:0]
+	r._certIsvNo = ""
+	r._invocation = ""
+	r._terminalType = ""
+	r._terminalName = ""
+	r._bureauId = ""
+	r._terminalEntId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -147,4 +160,21 @@ func (r *AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIRequest) SetTerminal
 // GetTerminalEntId TerminalEntId Getter
 func (r AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIRequest) GetTerminalEntId() string {
 	return r._terminalEntId
+}
+
+var poolAlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugCodeListCodeMedicalInsuranceRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugCodeListCodeMedicalInsuranceRequest 从 sync.Pool 获取 AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIRequest
+func GetAlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIRequest() *AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIRequest {
+	return poolAlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIRequest.Get().(*AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIRequest 将 AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIRequest(v *AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIRequest.Put(v)
 }

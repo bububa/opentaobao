@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripFlightDistributionOrderDetailAPIRequest struct {
 // NewAlitripBtripFlightDistributionOrderDetailRequest 初始化AlitripBtripFlightDistributionOrderDetailAPIRequest对象
 func NewAlitripBtripFlightDistributionOrderDetailRequest() *AlitripBtripFlightDistributionOrderDetailAPIRequest {
 	return &AlitripBtripFlightDistributionOrderDetailAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripFlightDistributionOrderDetailAPIRequest) Reset() {
+	r._paramBtripFlightOrderOperateCommonRq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripFlightDistributionOrderDetailAPIRequest) SetParamBtripFligh
 // GetParamBtripFlightOrderOperateCommonRq ParamBtripFlightOrderOperateCommonRq Getter
 func (r AlitripBtripFlightDistributionOrderDetailAPIRequest) GetParamBtripFlightOrderOperateCommonRq() *BtripFlightOrderOperateCommonRq {
 	return r._paramBtripFlightOrderOperateCommonRq
+}
+
+var poolAlitripBtripFlightDistributionOrderDetailAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripFlightDistributionOrderDetailRequest()
+	},
+}
+
+// GetAlitripBtripFlightDistributionOrderDetailRequest 从 sync.Pool 获取 AlitripBtripFlightDistributionOrderDetailAPIRequest
+func GetAlitripBtripFlightDistributionOrderDetailAPIRequest() *AlitripBtripFlightDistributionOrderDetailAPIRequest {
+	return poolAlitripBtripFlightDistributionOrderDetailAPIRequest.Get().(*AlitripBtripFlightDistributionOrderDetailAPIRequest)
+}
+
+// ReleaseAlitripBtripFlightDistributionOrderDetailAPIRequest 将 AlitripBtripFlightDistributionOrderDetailAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripFlightDistributionOrderDetailAPIRequest(v *AlitripBtripFlightDistributionOrderDetailAPIRequest) {
+	v.Reset()
+	poolAlitripBtripFlightDistributionOrderDetailAPIRequest.Put(v)
 }

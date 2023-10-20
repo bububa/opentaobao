@@ -1,5 +1,9 @@
 package tvupadmin
 
+import (
+	"sync"
+)
+
 // UserRightsDo 结构体
 type UserRightsDo struct {
 	// 更新时间
@@ -18,4 +22,28 @@ type UserRightsDo struct {
 	Uid int64 `json:"uid,omitempty" xml:"uid,omitempty"`
 	// 是否连续包月
 	RenewalSupport bool `json:"renewal_support,omitempty" xml:"renewal_support,omitempty"`
+}
+
+var poolUserRightsDo = sync.Pool{
+	New: func() any {
+		return new(UserRightsDo)
+	},
+}
+
+// GetUserRightsDo() 从对象池中获取UserRightsDo
+func GetUserRightsDo() *UserRightsDo {
+	return poolUserRightsDo.Get().(*UserRightsDo)
+}
+
+// ReleaseUserRightsDo 释放UserRightsDo
+func ReleaseUserRightsDo(v *UserRightsDo) {
+	v.GmtModified = ""
+	v.GmtCreate = ""
+	v.GmtEnd = ""
+	v.GmtStart = ""
+	v.Type = ""
+	v.ItemId = ""
+	v.Uid = 0
+	v.RenewalSupport = false
+	poolUserRightsDo.Put(v)
 }

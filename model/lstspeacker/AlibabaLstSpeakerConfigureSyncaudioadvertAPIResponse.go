@@ -2,6 +2,7 @@ package lstspeacker
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaLstSpeakerConfigureSyncaudioadvertAPIResponse struct {
 	model.CommonResponse
 	AlibabaLstSpeakerConfigureSyncaudioadvertAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaLstSpeakerConfigureSyncaudioadvertAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaLstSpeakerConfigureSyncaudioadvertAPIResponseModel).Reset()
 }
 
 // AlibabaLstSpeakerConfigureSyncaudioadvertAPIResponseModel is 同步广告 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaLstSpeakerConfigureSyncaudioadvertAPIResponseModel struct {
 	Succ bool `json:"succ,omitempty" xml:"succ,omitempty"`
 	// 执行结果标识
 	Module bool `json:"module,omitempty" xml:"module,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaLstSpeakerConfigureSyncaudioadvertAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErroMessage = ""
+	m.ErroCode = ""
+	m.Succ = false
+	m.Module = false
+}
+
+var poolAlibabaLstSpeakerConfigureSyncaudioadvertAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaLstSpeakerConfigureSyncaudioadvertAPIResponse)
+	},
+}
+
+// GetAlibabaLstSpeakerConfigureSyncaudioadvertAPIResponse 从 sync.Pool 获取 AlibabaLstSpeakerConfigureSyncaudioadvertAPIResponse
+func GetAlibabaLstSpeakerConfigureSyncaudioadvertAPIResponse() *AlibabaLstSpeakerConfigureSyncaudioadvertAPIResponse {
+	return poolAlibabaLstSpeakerConfigureSyncaudioadvertAPIResponse.Get().(*AlibabaLstSpeakerConfigureSyncaudioadvertAPIResponse)
+}
+
+// ReleaseAlibabaLstSpeakerConfigureSyncaudioadvertAPIResponse 将 AlibabaLstSpeakerConfigureSyncaudioadvertAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaLstSpeakerConfigureSyncaudioadvertAPIResponse(v *AlibabaLstSpeakerConfigureSyncaudioadvertAPIResponse) {
+	v.Reset()
+	poolAlibabaLstSpeakerConfigureSyncaudioadvertAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package wlb
 
+import (
+	"sync"
+)
+
 // PrintData 结构体
 type PrintData struct {
 	// 版本
@@ -14,4 +18,26 @@ type PrintData struct {
 	TemplateUrl string `json:"template_url,omitempty" xml:"template_url,omitempty"`
 	//  是否加密
 	Encrypted bool `json:"encrypted,omitempty" xml:"encrypted,omitempty"`
+}
+
+var poolPrintData = sync.Pool{
+	New: func() any {
+		return new(PrintData)
+	},
+}
+
+// GetPrintData() 从对象池中获取PrintData
+func GetPrintData() *PrintData {
+	return poolPrintData.Get().(*PrintData)
+}
+
+// ReleasePrintData 释放PrintData
+func ReleasePrintData(v *PrintData) {
+	v.Ver = ""
+	v.Data = ""
+	v.Signature = ""
+	v.AddData = ""
+	v.TemplateUrl = ""
+	v.Encrypted = false
+	poolPrintData.Put(v)
 }

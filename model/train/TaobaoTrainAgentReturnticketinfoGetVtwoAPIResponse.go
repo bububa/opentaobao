@@ -2,6 +2,7 @@ package train
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoTrainAgentReturnticketinfoGetVtwoAPIResponse struct {
 	model.CommonResponse
 	TaobaoTrainAgentReturnticketinfoGetVtwoAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoTrainAgentReturnticketinfoGetVtwoAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTrainAgentReturnticketinfoGetVtwoAPIResponseModel).Reset()
 }
 
 // TaobaoTrainAgentReturnticketinfoGetVtwoAPIResponseModel is 代理商获取退票详情回调 成功返回结果
@@ -44,4 +51,38 @@ type TaobaoTrainAgentReturnticketinfoGetVtwoAPIResponseModel struct {
 	OfflineReturn bool `json:"offline_return,omitempty" xml:"offline_return,omitempty"`
 	// 查询返回状态
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTrainAgentReturnticketinfoGetVtwoAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.CertificateUrlList = m.CertificateUrlList[:0]
+	m.ResultMsg = ""
+	m.ResultCode = ""
+	m.RefundDeadline = ""
+	m.Attribute = ""
+	m.OfflineRefundType = 0
+	m.SubOrderId = 0
+	m.MainOrderId = 0
+	m.CertificateType = 0
+	m.VipErrandReturnPrice = 0
+	m.OfflineReturn = false
+	m.IsSuccess = false
+}
+
+var poolTaobaoTrainAgentReturnticketinfoGetVtwoAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTrainAgentReturnticketinfoGetVtwoAPIResponse)
+	},
+}
+
+// GetTaobaoTrainAgentReturnticketinfoGetVtwoAPIResponse 从 sync.Pool 获取 TaobaoTrainAgentReturnticketinfoGetVtwoAPIResponse
+func GetTaobaoTrainAgentReturnticketinfoGetVtwoAPIResponse() *TaobaoTrainAgentReturnticketinfoGetVtwoAPIResponse {
+	return poolTaobaoTrainAgentReturnticketinfoGetVtwoAPIResponse.Get().(*TaobaoTrainAgentReturnticketinfoGetVtwoAPIResponse)
+}
+
+// ReleaseTaobaoTrainAgentReturnticketinfoGetVtwoAPIResponse 将 TaobaoTrainAgentReturnticketinfoGetVtwoAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTrainAgentReturnticketinfoGetVtwoAPIResponse(v *TaobaoTrainAgentReturnticketinfoGetVtwoAPIResponse) {
+	v.Reset()
+	poolTaobaoTrainAgentReturnticketinfoGetVtwoAPIResponse.Put(v)
 }

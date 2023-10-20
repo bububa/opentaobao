@@ -2,6 +2,7 @@ package aeusergrowth
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AliexpressUsergrowthSearchItemsGetAPIResponse struct {
 	AliexpressUsergrowthSearchItemsGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AliexpressUsergrowthSearchItemsGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliexpressUsergrowthSearchItemsGetAPIResponseModel).Reset()
+}
+
 // AliexpressUsergrowthSearchItemsGetAPIResponseModel is 第三方平台搜索AE商品 成功返回结果
 type AliexpressUsergrowthSearchItemsGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_usergrowth_search_items_get_response"`
@@ -22,4 +29,27 @@ type AliexpressUsergrowthSearchItemsGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// response model
 	Result *AliexpressUsergrowthSearchItemsGetResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliexpressUsergrowthSearchItemsGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAliexpressUsergrowthSearchItemsGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliexpressUsergrowthSearchItemsGetAPIResponse)
+	},
+}
+
+// GetAliexpressUsergrowthSearchItemsGetAPIResponse 从 sync.Pool 获取 AliexpressUsergrowthSearchItemsGetAPIResponse
+func GetAliexpressUsergrowthSearchItemsGetAPIResponse() *AliexpressUsergrowthSearchItemsGetAPIResponse {
+	return poolAliexpressUsergrowthSearchItemsGetAPIResponse.Get().(*AliexpressUsergrowthSearchItemsGetAPIResponse)
+}
+
+// ReleaseAliexpressUsergrowthSearchItemsGetAPIResponse 将 AliexpressUsergrowthSearchItemsGetAPIResponse 保存到 sync.Pool
+func ReleaseAliexpressUsergrowthSearchItemsGetAPIResponse(v *AliexpressUsergrowthSearchItemsGetAPIResponse) {
+	v.Reset()
+	poolAliexpressUsergrowthSearchItemsGetAPIResponse.Put(v)
 }

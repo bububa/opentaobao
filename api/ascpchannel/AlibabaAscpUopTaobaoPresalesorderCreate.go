@@ -9,11 +9,6 @@ import (
 // alibaba.ascp.uop.taobao.presalesorder.create
 //
 // 预售商家仓接单
-func AlibabaAscpUopTaobaoPresalesorderCreate(clt *core.SDKClient, req *ascpchannel.AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest, session string) (*ascpchannel.AlibabaAscpUopTaobaoPresalesorderCreateAPIResponse, error) {
-	var resp ascpchannel.AlibabaAscpUopTaobaoPresalesorderCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAscpUopTaobaoPresalesorderCreate(clt *core.SDKClient, req *ascpchannel.AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest, resp *ascpchannel.AlibabaAscpUopTaobaoPresalesorderCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

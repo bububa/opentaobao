@@ -9,11 +9,6 @@ import (
 // alibaba.damai.mev.open.pushface
 //
 // pushFace
-func AlibabaDamaiMevOpenPushface(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushfaceAPIRequest, session string) (*damai.AlibabaDamaiMevOpenPushfaceAPIResponse, error) {
-	var resp damai.AlibabaDamaiMevOpenPushfaceAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMevOpenPushface(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushfaceAPIRequest, resp *damai.AlibabaDamaiMevOpenPushfaceAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

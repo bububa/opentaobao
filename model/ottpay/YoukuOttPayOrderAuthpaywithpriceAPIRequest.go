@@ -2,6 +2,7 @@ package ottpay
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type YoukuOttPayOrderAuthpaywithpriceAPIRequest struct {
 // NewYoukuOttPayOrderAuthpaywithpriceRequest 初始化YoukuOttPayOrderAuthpaywithpriceAPIRequest对象
 func NewYoukuOttPayOrderAuthpaywithpriceRequest() *YoukuOttPayOrderAuthpaywithpriceAPIRequest {
 	return &YoukuOttPayOrderAuthpaywithpriceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YoukuOttPayOrderAuthpaywithpriceAPIRequest) Reset() {
+	r._buyer = ""
+	r._originalOrderNo = ""
+	r._orderNo = ""
+	r._productId = ""
+	r._callbackUrl = ""
+	r._payPrice = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *YoukuOttPayOrderAuthpaywithpriceAPIRequest) SetPayPrice(_payPrice strin
 // GetPayPrice PayPrice Getter
 func (r YoukuOttPayOrderAuthpaywithpriceAPIRequest) GetPayPrice() string {
 	return r._payPrice
+}
+
+var poolYoukuOttPayOrderAuthpaywithpriceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYoukuOttPayOrderAuthpaywithpriceRequest()
+	},
+}
+
+// GetYoukuOttPayOrderAuthpaywithpriceRequest 从 sync.Pool 获取 YoukuOttPayOrderAuthpaywithpriceAPIRequest
+func GetYoukuOttPayOrderAuthpaywithpriceAPIRequest() *YoukuOttPayOrderAuthpaywithpriceAPIRequest {
+	return poolYoukuOttPayOrderAuthpaywithpriceAPIRequest.Get().(*YoukuOttPayOrderAuthpaywithpriceAPIRequest)
+}
+
+// ReleaseYoukuOttPayOrderAuthpaywithpriceAPIRequest 将 YoukuOttPayOrderAuthpaywithpriceAPIRequest 放入 sync.Pool
+func ReleaseYoukuOttPayOrderAuthpaywithpriceAPIRequest(v *YoukuOttPayOrderAuthpaywithpriceAPIRequest) {
+	v.Reset()
+	poolYoukuOttPayOrderAuthpaywithpriceAPIRequest.Put(v)
 }

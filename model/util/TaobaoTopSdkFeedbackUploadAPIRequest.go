@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoTopSdkFeedbackUploadAPIRequest struct {
 // NewTaobaoTopSdkFeedbackUploadRequest 初始化TaobaoTopSdkFeedbackUploadAPIRequest对象
 func NewTaobaoTopSdkFeedbackUploadRequest() *TaobaoTopSdkFeedbackUploadAPIRequest {
 	return &TaobaoTopSdkFeedbackUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTopSdkFeedbackUploadAPIRequest) Reset() {
+	r._type = ""
+	r._content = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoTopSdkFeedbackUploadAPIRequest) SetContent(_content string) error
 // GetContent Content Getter
 func (r TaobaoTopSdkFeedbackUploadAPIRequest) GetContent() string {
 	return r._content
+}
+
+var poolTaobaoTopSdkFeedbackUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTopSdkFeedbackUploadRequest()
+	},
+}
+
+// GetTaobaoTopSdkFeedbackUploadRequest 从 sync.Pool 获取 TaobaoTopSdkFeedbackUploadAPIRequest
+func GetTaobaoTopSdkFeedbackUploadAPIRequest() *TaobaoTopSdkFeedbackUploadAPIRequest {
+	return poolTaobaoTopSdkFeedbackUploadAPIRequest.Get().(*TaobaoTopSdkFeedbackUploadAPIRequest)
+}
+
+// ReleaseTaobaoTopSdkFeedbackUploadAPIRequest 将 TaobaoTopSdkFeedbackUploadAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTopSdkFeedbackUploadAPIRequest(v *TaobaoTopSdkFeedbackUploadAPIRequest) {
+	v.Reset()
+	poolTaobaoTopSdkFeedbackUploadAPIRequest.Put(v)
 }

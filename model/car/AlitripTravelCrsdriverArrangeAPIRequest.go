@@ -2,6 +2,7 @@ package car
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripTravelCrsdriverArrangeAPIRequest struct {
 // NewAlitripTravelCrsdriverArrangeRequest 初始化AlitripTravelCrsdriverArrangeAPIRequest对象
 func NewAlitripTravelCrsdriverArrangeRequest() *AlitripTravelCrsdriverArrangeAPIRequest {
 	return &AlitripTravelCrsdriverArrangeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTravelCrsdriverArrangeAPIRequest) Reset() {
+	r._crsDriverArrangeParam = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripTravelCrsdriverArrangeAPIRequest) SetCrsDriverArrangeParam(_crsD
 // GetCrsDriverArrangeParam CrsDriverArrangeParam Getter
 func (r AlitripTravelCrsdriverArrangeAPIRequest) GetCrsDriverArrangeParam() *CrsDriverArrangeParam {
 	return r._crsDriverArrangeParam
+}
+
+var poolAlitripTravelCrsdriverArrangeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTravelCrsdriverArrangeRequest()
+	},
+}
+
+// GetAlitripTravelCrsdriverArrangeRequest 从 sync.Pool 获取 AlitripTravelCrsdriverArrangeAPIRequest
+func GetAlitripTravelCrsdriverArrangeAPIRequest() *AlitripTravelCrsdriverArrangeAPIRequest {
+	return poolAlitripTravelCrsdriverArrangeAPIRequest.Get().(*AlitripTravelCrsdriverArrangeAPIRequest)
+}
+
+// ReleaseAlitripTravelCrsdriverArrangeAPIRequest 将 AlitripTravelCrsdriverArrangeAPIRequest 放入 sync.Pool
+func ReleaseAlitripTravelCrsdriverArrangeAPIRequest(v *AlitripTravelCrsdriverArrangeAPIRequest) {
+	v.Reset()
+	poolAlitripTravelCrsdriverArrangeAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package alicom
 
+import (
+	"sync"
+)
+
 // IdCardInfo 结构体
 type IdCardInfo struct {
 	// 证件号码
@@ -14,4 +18,26 @@ type IdCardInfo struct {
 	FaceCertPic string `json:"face_cert_pic,omitempty" xml:"face_cert_pic,omitempty"`
 	// 手持证件照
 	HoldCertPic string `json:"hold_cert_pic,omitempty" xml:"hold_cert_pic,omitempty"`
+}
+
+var poolIdCardInfo = sync.Pool{
+	New: func() any {
+		return new(IdCardInfo)
+	},
+}
+
+// GetIdCardInfo() 从对象池中获取IdCardInfo
+func GetIdCardInfo() *IdCardInfo {
+	return poolIdCardInfo.Get().(*IdCardInfo)
+}
+
+// ReleaseIdCardInfo 释放IdCardInfo
+func ReleaseIdCardInfo(v *IdCardInfo) {
+	v.CardNumber = ""
+	v.CardType = ""
+	v.Name = ""
+	v.BackCertPic = ""
+	v.FaceCertPic = ""
+	v.HoldCertPic = ""
+	poolIdCardInfo.Put(v)
 }

@@ -2,6 +2,7 @@ package bill
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoTaeBillsGetAPIResponse struct {
 	TaobaoTaeBillsGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoTaeBillsGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoTaeBillsGetAPIResponseModel).Reset()
+}
+
 // TaobaoTaeBillsGetAPIResponseModel is tae查询账单明细 成功返回结果
 type TaobaoTaeBillsGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tae_bills_get_response"`
@@ -26,4 +33,29 @@ type TaobaoTaeBillsGetAPIResponseModel struct {
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 	// 是否存在下一页
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoTaeBillsGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Bills = m.Bills[:0]
+	m.TotalResults = 0
+	m.HasNext = false
+}
+
+var poolTaobaoTaeBillsGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoTaeBillsGetAPIResponse)
+	},
+}
+
+// GetTaobaoTaeBillsGetAPIResponse 从 sync.Pool 获取 TaobaoTaeBillsGetAPIResponse
+func GetTaobaoTaeBillsGetAPIResponse() *TaobaoTaeBillsGetAPIResponse {
+	return poolTaobaoTaeBillsGetAPIResponse.Get().(*TaobaoTaeBillsGetAPIResponse)
+}
+
+// ReleaseTaobaoTaeBillsGetAPIResponse 将 TaobaoTaeBillsGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoTaeBillsGetAPIResponse(v *TaobaoTaeBillsGetAPIResponse) {
+	v.Reset()
+	poolTaobaoTaeBillsGetAPIResponse.Put(v)
 }

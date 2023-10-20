@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -20,8 +21,14 @@ type CainiaoCntecSupplierOrderServiceAPIRequest struct {
 // NewCainiaoCntecSupplierOrderServiceRequest 初始化CainiaoCntecSupplierOrderServiceAPIRequest对象
 func NewCainiaoCntecSupplierOrderServiceRequest() *CainiaoCntecSupplierOrderServiceAPIRequest {
 	return &CainiaoCntecSupplierOrderServiceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoCntecSupplierOrderServiceAPIRequest) Reset() {
+	r._queryConditioin = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -52,4 +59,21 @@ func (r *CainiaoCntecSupplierOrderServiceAPIRequest) SetQueryConditioin(_queryCo
 // GetQueryConditioin QueryConditioin Getter
 func (r CainiaoCntecSupplierOrderServiceAPIRequest) GetQueryConditioin() *SupplierOrderQueryDto {
 	return r._queryConditioin
+}
+
+var poolCainiaoCntecSupplierOrderServiceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoCntecSupplierOrderServiceRequest()
+	},
+}
+
+// GetCainiaoCntecSupplierOrderServiceRequest 从 sync.Pool 获取 CainiaoCntecSupplierOrderServiceAPIRequest
+func GetCainiaoCntecSupplierOrderServiceAPIRequest() *CainiaoCntecSupplierOrderServiceAPIRequest {
+	return poolCainiaoCntecSupplierOrderServiceAPIRequest.Get().(*CainiaoCntecSupplierOrderServiceAPIRequest)
+}
+
+// ReleaseCainiaoCntecSupplierOrderServiceAPIRequest 将 CainiaoCntecSupplierOrderServiceAPIRequest 放入 sync.Pool
+func ReleaseCainiaoCntecSupplierOrderServiceAPIRequest(v *CainiaoCntecSupplierOrderServiceAPIRequest) {
+	v.Reset()
+	poolCainiaoCntecSupplierOrderServiceAPIRequest.Put(v)
 }

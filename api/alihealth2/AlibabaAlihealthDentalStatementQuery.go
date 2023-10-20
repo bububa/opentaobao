@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.dental.statement.query
 //
 // ISV查询对账单
-func AlibabaAlihealthDentalStatementQuery(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthDentalStatementQueryAPIRequest, session string) (*alihealth2.AlibabaAlihealthDentalStatementQueryAPIResponse, error) {
-	var resp alihealth2.AlibabaAlihealthDentalStatementQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDentalStatementQuery(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthDentalStatementQueryAPIRequest, resp *alihealth2.AlibabaAlihealthDentalStatementQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

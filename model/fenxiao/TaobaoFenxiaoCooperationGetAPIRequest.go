@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type TaobaoFenxiaoCooperationGetAPIRequest struct {
 // NewTaobaoFenxiaoCooperationGetRequest 初始化TaobaoFenxiaoCooperationGetAPIRequest对象
 func NewTaobaoFenxiaoCooperationGetRequest() *TaobaoFenxiaoCooperationGetAPIRequest {
 	return &TaobaoFenxiaoCooperationGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoCooperationGetAPIRequest) Reset() {
+	r._status = ""
+	r._startDate = ""
+	r._endDate = ""
+	r._tradeType = ""
+	r._channelCode = ""
+	r._pageNo = 0
+	r._pageSize = 0
+	r._roleType = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *TaobaoFenxiaoCooperationGetAPIRequest) SetRoleType(_roleType int64) err
 // GetRoleType RoleType Getter
 func (r TaobaoFenxiaoCooperationGetAPIRequest) GetRoleType() int64 {
 	return r._roleType
+}
+
+var poolTaobaoFenxiaoCooperationGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoCooperationGetRequest()
+	},
+}
+
+// GetTaobaoFenxiaoCooperationGetRequest 从 sync.Pool 获取 TaobaoFenxiaoCooperationGetAPIRequest
+func GetTaobaoFenxiaoCooperationGetAPIRequest() *TaobaoFenxiaoCooperationGetAPIRequest {
+	return poolTaobaoFenxiaoCooperationGetAPIRequest.Get().(*TaobaoFenxiaoCooperationGetAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoCooperationGetAPIRequest 将 TaobaoFenxiaoCooperationGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoCooperationGetAPIRequest(v *TaobaoFenxiaoCooperationGetAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoCooperationGetAPIRequest.Put(v)
 }

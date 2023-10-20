@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // InsuranceRecommendRq 结构体
 type InsuranceRecommendRq struct {
 	// 出发城市
@@ -12,4 +16,25 @@ type InsuranceRecommendRq struct {
 	ProvinceName string `json:"province_name,omitempty" xml:"province_name,omitempty"`
 	// 渠道来源：self-&gt;自助机机具;window-&gt;窗口
 	TradeSource string `json:"trade_source,omitempty" xml:"trade_source,omitempty"`
+}
+
+var poolInsuranceRecommendRq = sync.Pool{
+	New: func() any {
+		return new(InsuranceRecommendRq)
+	},
+}
+
+// GetInsuranceRecommendRq() 从对象池中获取InsuranceRecommendRq
+func GetInsuranceRecommendRq() *InsuranceRecommendRq {
+	return poolInsuranceRecommendRq.Get().(*InsuranceRecommendRq)
+}
+
+// ReleaseInsuranceRecommendRq 释放InsuranceRecommendRq
+func ReleaseInsuranceRecommendRq(v *InsuranceRecommendRq) {
+	v.CityName = ""
+	v.MachineNumber = ""
+	v.StationName = ""
+	v.ProvinceName = ""
+	v.TradeSource = ""
+	poolInsuranceRecommendRq.Put(v)
 }

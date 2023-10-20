@@ -2,6 +2,7 @@ package traveltrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlitripTravelHotelticketOrderRefundAPIRequest struct {
 // NewAlitripTravelHotelticketOrderRefundRequest 初始化AlitripTravelHotelticketOrderRefundAPIRequest对象
 func NewAlitripTravelHotelticketOrderRefundRequest() *AlitripTravelHotelticketOrderRefundAPIRequest {
 	return &AlitripTravelHotelticketOrderRefundAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripTravelHotelticketOrderRefundAPIRequest) Reset() {
+	r._orderId = ""
+	r._failMsg = ""
+	r._fliggyOrderId = ""
+	r._status = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlitripTravelHotelticketOrderRefundAPIRequest) SetStatus(_status int64)
 // GetStatus Status Getter
 func (r AlitripTravelHotelticketOrderRefundAPIRequest) GetStatus() int64 {
 	return r._status
+}
+
+var poolAlitripTravelHotelticketOrderRefundAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripTravelHotelticketOrderRefundRequest()
+	},
+}
+
+// GetAlitripTravelHotelticketOrderRefundRequest 从 sync.Pool 获取 AlitripTravelHotelticketOrderRefundAPIRequest
+func GetAlitripTravelHotelticketOrderRefundAPIRequest() *AlitripTravelHotelticketOrderRefundAPIRequest {
+	return poolAlitripTravelHotelticketOrderRefundAPIRequest.Get().(*AlitripTravelHotelticketOrderRefundAPIRequest)
+}
+
+// ReleaseAlitripTravelHotelticketOrderRefundAPIRequest 将 AlitripTravelHotelticketOrderRefundAPIRequest 放入 sync.Pool
+func ReleaseAlitripTravelHotelticketOrderRefundAPIRequest(v *AlitripTravelHotelticketOrderRefundAPIRequest) {
+	v.Reset()
+	poolAlitripTravelHotelticketOrderRefundAPIRequest.Put(v)
 }

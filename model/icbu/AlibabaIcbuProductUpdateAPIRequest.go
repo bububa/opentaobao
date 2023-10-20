@@ -2,6 +2,7 @@ package icbu
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -53,8 +54,31 @@ type AlibabaIcbuProductUpdateAPIRequest struct {
 // NewAlibabaIcbuProductUpdateRequest 初始化AlibabaIcbuProductUpdateAPIRequest对象
 func NewAlibabaIcbuProductUpdateRequest() *AlibabaIcbuProductUpdateAPIRequest {
 	return &AlibabaIcbuProductUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(18),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIcbuProductUpdateAPIRequest) Reset() {
+	r._attributes = r._attributes[:0]
+	r._bulkDiscountPrices = r._bulkDiscountPrices[:0]
+	r._keywords = r._keywords[:0]
+	r._description = ""
+	r._extraContext = ""
+	r._language = ""
+	r._productType = ""
+	r._subject = ""
+	r._market = ""
+	r._productId = ""
+	r._categoryId = 0
+	r._groupId = 0
+	r._mainImage = nil
+	r._productSku = nil
+	r._sourcingTrade = nil
+	r._wholesaleTrade = nil
+	r._customInfo = nil
+	r._isSmartEdit = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -306,4 +330,21 @@ func (r *AlibabaIcbuProductUpdateAPIRequest) SetIsSmartEdit(_isSmartEdit bool) e
 // GetIsSmartEdit IsSmartEdit Getter
 func (r AlibabaIcbuProductUpdateAPIRequest) GetIsSmartEdit() bool {
 	return r._isSmartEdit
+}
+
+var poolAlibabaIcbuProductUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIcbuProductUpdateRequest()
+	},
+}
+
+// GetAlibabaIcbuProductUpdateRequest 从 sync.Pool 获取 AlibabaIcbuProductUpdateAPIRequest
+func GetAlibabaIcbuProductUpdateAPIRequest() *AlibabaIcbuProductUpdateAPIRequest {
+	return poolAlibabaIcbuProductUpdateAPIRequest.Get().(*AlibabaIcbuProductUpdateAPIRequest)
+}
+
+// ReleaseAlibabaIcbuProductUpdateAPIRequest 将 AlibabaIcbuProductUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIcbuProductUpdateAPIRequest(v *AlibabaIcbuProductUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaIcbuProductUpdateAPIRequest.Put(v)
 }

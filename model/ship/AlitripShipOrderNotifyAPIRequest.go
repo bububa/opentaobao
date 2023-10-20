@@ -2,6 +2,7 @@ package ship
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripShipOrderNotifyAPIRequest struct {
 // NewAlitripShipOrderNotifyRequest 初始化AlitripShipOrderNotifyAPIRequest对象
 func NewAlitripShipOrderNotifyRequest() *AlitripShipOrderNotifyAPIRequest {
 	return &AlitripShipOrderNotifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripShipOrderNotifyAPIRequest) Reset() {
+	r._confirmBookRQ = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripShipOrderNotifyAPIRequest) SetConfirmBookRQ(_confirmBookRQ *Ship
 // GetConfirmBookRQ ConfirmBookRQ Getter
 func (r AlitripShipOrderNotifyAPIRequest) GetConfirmBookRQ() *ShipAgentConfirmBookRq {
 	return r._confirmBookRQ
+}
+
+var poolAlitripShipOrderNotifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripShipOrderNotifyRequest()
+	},
+}
+
+// GetAlitripShipOrderNotifyRequest 从 sync.Pool 获取 AlitripShipOrderNotifyAPIRequest
+func GetAlitripShipOrderNotifyAPIRequest() *AlitripShipOrderNotifyAPIRequest {
+	return poolAlitripShipOrderNotifyAPIRequest.Get().(*AlitripShipOrderNotifyAPIRequest)
+}
+
+// ReleaseAlitripShipOrderNotifyAPIRequest 将 AlitripShipOrderNotifyAPIRequest 放入 sync.Pool
+func ReleaseAlitripShipOrderNotifyAPIRequest(v *AlitripShipOrderNotifyAPIRequest) {
+	v.Reset()
+	poolAlitripShipOrderNotifyAPIRequest.Put(v)
 }

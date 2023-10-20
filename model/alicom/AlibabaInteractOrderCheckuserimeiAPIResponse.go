@@ -2,6 +2,7 @@ package alicom
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaInteractOrderCheckuserimeiAPIResponse struct {
 	model.CommonResponse
 	AlibabaInteractOrderCheckuserimeiAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaInteractOrderCheckuserimeiAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaInteractOrderCheckuserimeiAPIResponseModel).Reset()
 }
 
 // AlibabaInteractOrderCheckuserimeiAPIResponseModel is 金融购机验证设备号 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaInteractOrderCheckuserimeiAPIResponseModel struct {
 	SuccessStatus bool `json:"success_status,omitempty" xml:"success_status,omitempty"`
 	// 响应数据
 	Data bool `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaInteractOrderCheckuserimeiAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultCode = ""
+	m.Message = ""
+	m.SuccessStatus = false
+	m.Data = false
+}
+
+var poolAlibabaInteractOrderCheckuserimeiAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaInteractOrderCheckuserimeiAPIResponse)
+	},
+}
+
+// GetAlibabaInteractOrderCheckuserimeiAPIResponse 从 sync.Pool 获取 AlibabaInteractOrderCheckuserimeiAPIResponse
+func GetAlibabaInteractOrderCheckuserimeiAPIResponse() *AlibabaInteractOrderCheckuserimeiAPIResponse {
+	return poolAlibabaInteractOrderCheckuserimeiAPIResponse.Get().(*AlibabaInteractOrderCheckuserimeiAPIResponse)
+}
+
+// ReleaseAlibabaInteractOrderCheckuserimeiAPIResponse 将 AlibabaInteractOrderCheckuserimeiAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaInteractOrderCheckuserimeiAPIResponse(v *AlibabaInteractOrderCheckuserimeiAPIResponse) {
+	v.Reset()
+	poolAlibabaInteractOrderCheckuserimeiAPIResponse.Put(v)
 }

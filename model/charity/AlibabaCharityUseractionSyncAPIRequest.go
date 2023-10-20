@@ -2,6 +2,7 @@ package charity
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCharityUseractionSyncAPIRequest struct {
 // NewAlibabaCharityUseractionSyncRequest 初始化AlibabaCharityUseractionSyncAPIRequest对象
 func NewAlibabaCharityUseractionSyncRequest() *AlibabaCharityUseractionSyncAPIRequest {
 	return &AlibabaCharityUseractionSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCharityUseractionSyncAPIRequest) Reset() {
+	r._channelUserActionDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCharityUseractionSyncAPIRequest) SetChannelUserActionDto(_channe
 // GetChannelUserActionDto ChannelUserActionDto Getter
 func (r AlibabaCharityUseractionSyncAPIRequest) GetChannelUserActionDto() *ChannelUserActionDto {
 	return r._channelUserActionDto
+}
+
+var poolAlibabaCharityUseractionSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCharityUseractionSyncRequest()
+	},
+}
+
+// GetAlibabaCharityUseractionSyncRequest 从 sync.Pool 获取 AlibabaCharityUseractionSyncAPIRequest
+func GetAlibabaCharityUseractionSyncAPIRequest() *AlibabaCharityUseractionSyncAPIRequest {
+	return poolAlibabaCharityUseractionSyncAPIRequest.Get().(*AlibabaCharityUseractionSyncAPIRequest)
+}
+
+// ReleaseAlibabaCharityUseractionSyncAPIRequest 将 AlibabaCharityUseractionSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCharityUseractionSyncAPIRequest(v *AlibabaCharityUseractionSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaCharityUseractionSyncAPIRequest.Put(v)
 }

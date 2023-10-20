@@ -2,6 +2,7 @@ package tmallgeniescp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponse struct {
 	model.CommonResponse
 	AlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponseModel).Reset()
 }
 
 // AlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponseModel is 9.2-同步地点配额 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponseModel struct {
 	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
 	// 返回码
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.DataList = m.DataList[:0]
+	m.ResultMsg = ""
+	m.TraceId = ""
+	m.ResultCode = ""
+}
+
+var poolAlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponse)
+	},
+}
+
+// GetAlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponse 从 sync.Pool 获取 AlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponse
+func GetAlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponse() *AlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponse {
+	return poolAlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponse.Get().(*AlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponse)
+}
+
+// ReleaseAlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponse 将 AlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponse(v *AlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponse) {
+	v.Reset()
+	poolAlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponse.Put(v)
 }

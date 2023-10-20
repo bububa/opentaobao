@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // UpdateResendStatusDto 结构体
 type UpdateResendStatusDto struct {
 	// 描述
@@ -12,4 +16,25 @@ type UpdateResendStatusDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 主订单
 	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
+}
+
+var poolUpdateResendStatusDto = sync.Pool{
+	New: func() any {
+		return new(UpdateResendStatusDto)
+	},
+}
+
+// GetUpdateResendStatusDto() 从对象池中获取UpdateResendStatusDto
+func GetUpdateResendStatusDto() *UpdateResendStatusDto {
+	return poolUpdateResendStatusDto.Get().(*UpdateResendStatusDto)
+}
+
+// ReleaseUpdateResendStatusDto 释放UpdateResendStatusDto
+func ReleaseUpdateResendStatusDto(v *UpdateResendStatusDto) {
+	v.Msg = ""
+	v.ReissueId = ""
+	v.SourceId = ""
+	v.Status = 0
+	v.Tid = 0
+	poolUpdateResendStatusDto.Put(v)
 }

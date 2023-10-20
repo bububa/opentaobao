@@ -2,6 +2,7 @@ package xhotelcrm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -43,8 +44,26 @@ type TaobaoXhotelPotentialMemberBindAPIRequest struct {
 // NewTaobaoXhotelPotentialMemberBindRequest 初始化TaobaoXhotelPotentialMemberBindAPIRequest对象
 func NewTaobaoXhotelPotentialMemberBindRequest() *TaobaoXhotelPotentialMemberBindAPIRequest {
 	return &TaobaoXhotelPotentialMemberBindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(13),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelPotentialMemberBindAPIRequest) Reset() {
+	r._firstName = ""
+	r._lastName = ""
+	r._phone = ""
+	r._email = ""
+	r._cardNo = ""
+	r._grade = ""
+	r._registerDate = ""
+	r._fromDate = ""
+	r._toDate = ""
+	r._sex = ""
+	r._city = ""
+	r._nativePlace = ""
+	r._age = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -231,4 +250,21 @@ func (r *TaobaoXhotelPotentialMemberBindAPIRequest) SetAge(_age int64) error {
 // GetAge Age Getter
 func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetAge() int64 {
 	return r._age
+}
+
+var poolTaobaoXhotelPotentialMemberBindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelPotentialMemberBindRequest()
+	},
+}
+
+// GetTaobaoXhotelPotentialMemberBindRequest 从 sync.Pool 获取 TaobaoXhotelPotentialMemberBindAPIRequest
+func GetTaobaoXhotelPotentialMemberBindAPIRequest() *TaobaoXhotelPotentialMemberBindAPIRequest {
+	return poolTaobaoXhotelPotentialMemberBindAPIRequest.Get().(*TaobaoXhotelPotentialMemberBindAPIRequest)
+}
+
+// ReleaseTaobaoXhotelPotentialMemberBindAPIRequest 将 TaobaoXhotelPotentialMemberBindAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelPotentialMemberBindAPIRequest(v *TaobaoXhotelPotentialMemberBindAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelPotentialMemberBindAPIRequest.Put(v)
 }

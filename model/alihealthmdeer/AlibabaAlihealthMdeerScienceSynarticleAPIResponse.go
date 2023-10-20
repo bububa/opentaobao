@@ -2,6 +2,7 @@ package alihealthmdeer
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihealthMdeerScienceSynarticleAPIResponse struct {
 	AlibabaAlihealthMdeerScienceSynarticleAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthMdeerScienceSynarticleAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthMdeerScienceSynarticleAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthMdeerScienceSynarticleAPIResponseModel is 医知鹿文章同步【保存/更新】 成功返回结果
 type AlibabaAlihealthMdeerScienceSynarticleAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_mdeer_science_synarticle_response"`
@@ -26,4 +33,29 @@ type AlibabaAlihealthMdeerScienceSynarticleAPIResponseModel struct {
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 返回值
 	Model bool `json:"model,omitempty" xml:"model,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthMdeerScienceSynarticleAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgInfo = ""
+	m.MsgCode = ""
+	m.Model = false
+}
+
+var poolAlibabaAlihealthMdeerScienceSynarticleAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthMdeerScienceSynarticleAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthMdeerScienceSynarticleAPIResponse 从 sync.Pool 获取 AlibabaAlihealthMdeerScienceSynarticleAPIResponse
+func GetAlibabaAlihealthMdeerScienceSynarticleAPIResponse() *AlibabaAlihealthMdeerScienceSynarticleAPIResponse {
+	return poolAlibabaAlihealthMdeerScienceSynarticleAPIResponse.Get().(*AlibabaAlihealthMdeerScienceSynarticleAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthMdeerScienceSynarticleAPIResponse 将 AlibabaAlihealthMdeerScienceSynarticleAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthMdeerScienceSynarticleAPIResponse(v *AlibabaAlihealthMdeerScienceSynarticleAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthMdeerScienceSynarticleAPIResponse.Put(v)
 }

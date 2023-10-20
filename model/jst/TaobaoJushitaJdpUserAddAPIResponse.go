@@ -2,6 +2,7 @@ package jst
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoJushitaJdpUserAddAPIResponse struct {
 	TaobaoJushitaJdpUserAddAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoJushitaJdpUserAddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoJushitaJdpUserAddAPIResponseModel).Reset()
+}
+
 // TaobaoJushitaJdpUserAddAPIResponseModel is 添加数据推送用户 成功返回结果
 type TaobaoJushitaJdpUserAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"jushita_jdp_user_add_response"`
@@ -22,4 +29,27 @@ type TaobaoJushitaJdpUserAddAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 是否添加成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoJushitaJdpUserAddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoJushitaJdpUserAddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoJushitaJdpUserAddAPIResponse)
+	},
+}
+
+// GetTaobaoJushitaJdpUserAddAPIResponse 从 sync.Pool 获取 TaobaoJushitaJdpUserAddAPIResponse
+func GetTaobaoJushitaJdpUserAddAPIResponse() *TaobaoJushitaJdpUserAddAPIResponse {
+	return poolTaobaoJushitaJdpUserAddAPIResponse.Get().(*TaobaoJushitaJdpUserAddAPIResponse)
+}
+
+// ReleaseTaobaoJushitaJdpUserAddAPIResponse 将 TaobaoJushitaJdpUserAddAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoJushitaJdpUserAddAPIResponse(v *TaobaoJushitaJdpUserAddAPIResponse) {
+	v.Reset()
+	poolTaobaoJushitaJdpUserAddAPIResponse.Put(v)
 }

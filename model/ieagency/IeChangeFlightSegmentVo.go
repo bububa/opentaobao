@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // IeChangeFlightSegmentVo 结构体
 type IeChangeFlightSegmentVo struct {
 	// 到达机场码
@@ -30,4 +34,34 @@ type IeChangeFlightSegmentVo struct {
 	SegmentIndex int64 `json:"segment_index,omitempty" xml:"segment_index,omitempty"`
 	// 是否共享
 	CodeShare bool `json:"code_share,omitempty" xml:"code_share,omitempty"`
+}
+
+var poolIeChangeFlightSegmentVo = sync.Pool{
+	New: func() any {
+		return new(IeChangeFlightSegmentVo)
+	},
+}
+
+// GetIeChangeFlightSegmentVo() 从对象池中获取IeChangeFlightSegmentVo
+func GetIeChangeFlightSegmentVo() *IeChangeFlightSegmentVo {
+	return poolIeChangeFlightSegmentVo.Get().(*IeChangeFlightSegmentVo)
+}
+
+// ReleaseIeChangeFlightSegmentVo 释放IeChangeFlightSegmentVo
+func ReleaseIeChangeFlightSegmentVo(v *IeChangeFlightSegmentVo) {
+	v.ArrAirport = ""
+	v.ArrCity = ""
+	v.ArrTerminal = ""
+	v.ArrTime = ""
+	v.CabinClassCode = ""
+	v.CabinCode = ""
+	v.DepAirport = ""
+	v.DepCity = ""
+	v.DepTerminal = ""
+	v.DepTime = ""
+	v.MarketingFlightNumber = ""
+	v.OperatingFlightNumber = ""
+	v.SegmentIndex = 0
+	v.CodeShare = false
+	poolIeChangeFlightSegmentVo.Put(v)
 }

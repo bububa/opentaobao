@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest struct {
 // NewTaobaoLogisticsExpressCapacityTmsAsyncRequest 初始化TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest对象
 func NewTaobaoLogisticsExpressCapacityTmsAsyncRequest() *TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest {
 	return &TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest) Reset() {
+	r._capacityRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest) SetCapacityRequest(_c
 // GetCapacityRequest CapacityRequest Getter
 func (r TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest) GetCapacityRequest() *CapacityRequest {
 	return r._capacityRequest
+}
+
+var poolTaobaoLogisticsExpressCapacityTmsAsyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsExpressCapacityTmsAsyncRequest()
+	},
+}
+
+// GetTaobaoLogisticsExpressCapacityTmsAsyncRequest 从 sync.Pool 获取 TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest
+func GetTaobaoLogisticsExpressCapacityTmsAsyncAPIRequest() *TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest {
+	return poolTaobaoLogisticsExpressCapacityTmsAsyncAPIRequest.Get().(*TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsExpressCapacityTmsAsyncAPIRequest 将 TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsExpressCapacityTmsAsyncAPIRequest(v *TaobaoLogisticsExpressCapacityTmsAsyncAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsExpressCapacityTmsAsyncAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package simba
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIResponse struct {
 	TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIResponseModel).Reset()
+}
+
 // TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIResponseModel is 创建异步下载任务 成功返回结果
 type TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIResponseModel struct {
 	XMLName xml.Name `xml:"universalbp_report_async_create_download_task_response"`
@@ -22,4 +29,27 @@ type TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果体
 	Result *TaobaoUniversalbpReportAsyncCreateDownloadTaskTopResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoUniversalbpReportAsyncCreateDownloadTaskAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIResponse)
+	},
+}
+
+// GetTaobaoUniversalbpReportAsyncCreateDownloadTaskAPIResponse 从 sync.Pool 获取 TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIResponse
+func GetTaobaoUniversalbpReportAsyncCreateDownloadTaskAPIResponse() *TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIResponse {
+	return poolTaobaoUniversalbpReportAsyncCreateDownloadTaskAPIResponse.Get().(*TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIResponse)
+}
+
+// ReleaseTaobaoUniversalbpReportAsyncCreateDownloadTaskAPIResponse 将 TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoUniversalbpReportAsyncCreateDownloadTaskAPIResponse(v *TaobaoUniversalbpReportAsyncCreateDownloadTaskAPIResponse) {
+	v.Reset()
+	poolTaobaoUniversalbpReportAsyncCreateDownloadTaskAPIResponse.Put(v)
 }

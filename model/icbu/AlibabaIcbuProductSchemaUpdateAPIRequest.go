@@ -2,6 +2,7 @@ package icbu
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIcbuProductSchemaUpdateAPIRequest struct {
 // NewAlibabaIcbuProductSchemaUpdateRequest 初始化AlibabaIcbuProductSchemaUpdateAPIRequest对象
 func NewAlibabaIcbuProductSchemaUpdateRequest() *AlibabaIcbuProductSchemaUpdateAPIRequest {
 	return &AlibabaIcbuProductSchemaUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIcbuProductSchemaUpdateAPIRequest) Reset() {
+	r._paramProductTopPublishRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIcbuProductSchemaUpdateAPIRequest) SetParamProductTopPublishRequ
 // GetParamProductTopPublishRequest ParamProductTopPublishRequest Getter
 func (r AlibabaIcbuProductSchemaUpdateAPIRequest) GetParamProductTopPublishRequest() *ProductTopPublishRequest {
 	return r._paramProductTopPublishRequest
+}
+
+var poolAlibabaIcbuProductSchemaUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIcbuProductSchemaUpdateRequest()
+	},
+}
+
+// GetAlibabaIcbuProductSchemaUpdateRequest 从 sync.Pool 获取 AlibabaIcbuProductSchemaUpdateAPIRequest
+func GetAlibabaIcbuProductSchemaUpdateAPIRequest() *AlibabaIcbuProductSchemaUpdateAPIRequest {
+	return poolAlibabaIcbuProductSchemaUpdateAPIRequest.Get().(*AlibabaIcbuProductSchemaUpdateAPIRequest)
+}
+
+// ReleaseAlibabaIcbuProductSchemaUpdateAPIRequest 将 AlibabaIcbuProductSchemaUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIcbuProductSchemaUpdateAPIRequest(v *AlibabaIcbuProductSchemaUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaIcbuProductSchemaUpdateAPIRequest.Put(v)
 }

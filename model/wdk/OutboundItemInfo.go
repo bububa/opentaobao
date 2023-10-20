@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OutboundItemInfo 结构体
 type OutboundItemInfo struct {
 	// 容器信息
@@ -16,4 +20,27 @@ type OutboundItemInfo struct {
 	ExternalOrderNo string `json:"external_order_no,omitempty" xml:"external_order_no,omitempty"`
 	// 是否完结
 	OutboundCompleted bool `json:"outbound_completed,omitempty" xml:"outbound_completed,omitempty"`
+}
+
+var poolOutboundItemInfo = sync.Pool{
+	New: func() any {
+		return new(OutboundItemInfo)
+	},
+}
+
+// GetOutboundItemInfo() 从对象池中获取OutboundItemInfo
+func GetOutboundItemInfo() *OutboundItemInfo {
+	return poolOutboundItemInfo.Get().(*OutboundItemInfo)
+}
+
+// ReleaseOutboundItemInfo 释放OutboundItemInfo
+func ReleaseOutboundItemInfo(v *OutboundItemInfo) {
+	v.Containers = v.Containers[:0]
+	v.WholesaleOrderNo = ""
+	v.ProductionDate = ""
+	v.OutboundQuantity = ""
+	v.SkuCode = ""
+	v.ExternalOrderNo = ""
+	v.OutboundCompleted = false
+	poolOutboundItemInfo.Put(v)
 }

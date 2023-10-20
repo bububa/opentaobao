@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // MemberRightCarouselVo 结构体
 type MemberRightCarouselVo struct {
 	// 会员权益
@@ -18,4 +22,28 @@ type MemberRightCarouselVo struct {
 	MemberCardBkPic string `json:"member_card_bk_pic,omitempty" xml:"member_card_bk_pic,omitempty"`
 	// 当前等级=false 小于当前等级为空 大于当前等级为true
 	IfLockCard bool `json:"if_lock_card,omitempty" xml:"if_lock_card,omitempty"`
+}
+
+var poolMemberRightCarouselVo = sync.Pool{
+	New: func() any {
+		return new(MemberRightCarouselVo)
+	},
+}
+
+// GetMemberRightCarouselVo() 从对象池中获取MemberRightCarouselVo
+func GetMemberRightCarouselVo() *MemberRightCarouselVo {
+	return poolMemberRightCarouselVo.Get().(*MemberRightCarouselVo)
+}
+
+// ReleaseMemberRightCarouselVo 释放MemberRightCarouselVo
+func ReleaseMemberRightCarouselVo(v *MemberRightCarouselVo) {
+	v.MemberRight = v.MemberRight[:0]
+	v.HotelLevelEn = ""
+	v.HotelLevelZh = ""
+	v.MemberCardPic = ""
+	v.ReachCondition = ""
+	v.Iconcolor = ""
+	v.MemberCardBkPic = ""
+	v.IfLockCard = false
+	poolMemberRightCarouselVo.Put(v)
 }

@@ -2,6 +2,7 @@ package nlp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoNlpSimilarityAPIRequest struct {
 // NewTaobaoNlpSimilarityRequest 初始化TaobaoNlpSimilarityAPIRequest对象
 func NewTaobaoNlpSimilarityRequest() *TaobaoNlpSimilarityAPIRequest {
 	return &TaobaoNlpSimilarityAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoNlpSimilarityAPIRequest) Reset() {
+	r._texts = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoNlpSimilarityAPIRequest) SetTexts(_texts *Texts) error {
 // GetTexts Texts Getter
 func (r TaobaoNlpSimilarityAPIRequest) GetTexts() *Texts {
 	return r._texts
+}
+
+var poolTaobaoNlpSimilarityAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoNlpSimilarityRequest()
+	},
+}
+
+// GetTaobaoNlpSimilarityRequest 从 sync.Pool 获取 TaobaoNlpSimilarityAPIRequest
+func GetTaobaoNlpSimilarityAPIRequest() *TaobaoNlpSimilarityAPIRequest {
+	return poolTaobaoNlpSimilarityAPIRequest.Get().(*TaobaoNlpSimilarityAPIRequest)
+}
+
+// ReleaseTaobaoNlpSimilarityAPIRequest 将 TaobaoNlpSimilarityAPIRequest 放入 sync.Pool
+func ReleaseTaobaoNlpSimilarityAPIRequest(v *TaobaoNlpSimilarityAPIRequest) {
+	v.Reset()
+	poolTaobaoNlpSimilarityAPIRequest.Put(v)
 }

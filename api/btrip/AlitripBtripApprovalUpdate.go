@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.approval.update
 //
 // 更新审批单
-func AlitripBtripApprovalUpdate(clt *core.SDKClient, req *btrip.AlitripBtripApprovalUpdateAPIRequest, session string) (*btrip.AlitripBtripApprovalUpdateAPIResponse, error) {
-	var resp btrip.AlitripBtripApprovalUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripApprovalUpdate(clt *core.SDKClient, req *btrip.AlitripBtripApprovalUpdateAPIRequest, resp *btrip.AlitripBtripApprovalUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

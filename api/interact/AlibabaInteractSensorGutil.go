@@ -9,11 +9,6 @@ import (
 // alibaba.interact.sensor.gutil
 //
 // canvas工具包
-func AlibabaInteractSensorGutil(clt *core.SDKClient, req *interact.AlibabaInteractSensorGutilAPIRequest, session string) (*interact.AlibabaInteractSensorGutilAPIResponse, error) {
-	var resp interact.AlibabaInteractSensorGutilAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaInteractSensorGutil(clt *core.SDKClient, req *interact.AlibabaInteractSensorGutilAPIRequest, resp *interact.AlibabaInteractSensorGutilAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest struct {
 // NewTmallServicecenterAnomalyrecourseRemarkUpdateRequest 初始化TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest对象
 func NewTmallServicecenterAnomalyrecourseRemarkUpdateRequest() *TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest {
 	return &TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest) Reset() {
+	r._remark = ""
+	r._id = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest) SetId(_id int6
 // GetId Id Getter
 func (r TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest) GetId() int64 {
 	return r._id
+}
+
+var poolTmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterAnomalyrecourseRemarkUpdateRequest()
+	},
+}
+
+// GetTmallServicecenterAnomalyrecourseRemarkUpdateRequest 从 sync.Pool 获取 TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest
+func GetTmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest() *TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest {
+	return poolTmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest.Get().(*TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest)
+}
+
+// ReleaseTmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest 将 TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest(v *TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest.Put(v)
 }

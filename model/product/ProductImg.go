@@ -1,5 +1,9 @@
 package product
 
+import (
+	"sync"
+)
+
 // ProductImg 结构体
 type ProductImg struct {
 	// 图片地址.(绝对地址,格式:http://host/image_path)
@@ -14,4 +18,26 @@ type ProductImg struct {
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// 图片序号。产品里的图片展示顺序，数据越小越靠前。要求是正整数。
 	Position int64 `json:"position,omitempty" xml:"position,omitempty"`
+}
+
+var poolProductImg = sync.Pool{
+	New: func() any {
+		return new(ProductImg)
+	},
+}
+
+// GetProductImg() 从对象池中获取ProductImg
+func GetProductImg() *ProductImg {
+	return poolProductImg.Get().(*ProductImg)
+}
+
+// ReleaseProductImg 释放ProductImg
+func ReleaseProductImg(v *ProductImg) {
+	v.Url = ""
+	v.Created = ""
+	v.Modified = ""
+	v.Id = 0
+	v.ProductId = 0
+	v.Position = 0
+	poolProductImg.Put(v)
 }

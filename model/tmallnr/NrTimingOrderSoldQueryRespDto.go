@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // NrTimingOrderSoldQueryRespDto 结构体
 type NrTimingOrderSoldQueryRespDto struct {
 	// 主订单列表
@@ -10,4 +14,24 @@ type NrTimingOrderSoldQueryRespDto struct {
 	TotalNum int64 `json:"total_num,omitempty" xml:"total_num,omitempty"`
 	// pageSize
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolNrTimingOrderSoldQueryRespDto = sync.Pool{
+	New: func() any {
+		return new(NrTimingOrderSoldQueryRespDto)
+	},
+}
+
+// GetNrTimingOrderSoldQueryRespDto() 从对象池中获取NrTimingOrderSoldQueryRespDto
+func GetNrTimingOrderSoldQueryRespDto() *NrTimingOrderSoldQueryRespDto {
+	return poolNrTimingOrderSoldQueryRespDto.Get().(*NrTimingOrderSoldQueryRespDto)
+}
+
+// ReleaseNrTimingOrderSoldQueryRespDto 释放NrTimingOrderSoldQueryRespDto
+func ReleaseNrTimingOrderSoldQueryRespDto(v *NrTimingOrderSoldQueryRespDto) {
+	v.TradeOrderDetailDTOs = v.TradeOrderDetailDTOs[:0]
+	v.PageNo = 0
+	v.TotalNum = 0
+	v.PageSize = 0
+	poolNrTimingOrderSoldQueryRespDto.Put(v)
 }

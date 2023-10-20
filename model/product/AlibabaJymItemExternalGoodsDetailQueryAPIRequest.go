@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaJymItemExternalGoodsDetailQueryAPIRequest struct {
 // NewAlibabaJymItemExternalGoodsDetailQueryRequest 初始化AlibabaJymItemExternalGoodsDetailQueryAPIRequest对象
 func NewAlibabaJymItemExternalGoodsDetailQueryRequest() *AlibabaJymItemExternalGoodsDetailQueryAPIRequest {
 	return &AlibabaJymItemExternalGoodsDetailQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaJymItemExternalGoodsDetailQueryAPIRequest) Reset() {
+	r._goodsDetailQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaJymItemExternalGoodsDetailQueryAPIRequest) SetGoodsDetailQuery(_
 // GetGoodsDetailQuery GoodsDetailQuery Getter
 func (r AlibabaJymItemExternalGoodsDetailQueryAPIRequest) GetGoodsDetailQuery() *GoodsDetailQueryDto {
 	return r._goodsDetailQuery
+}
+
+var poolAlibabaJymItemExternalGoodsDetailQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaJymItemExternalGoodsDetailQueryRequest()
+	},
+}
+
+// GetAlibabaJymItemExternalGoodsDetailQueryRequest 从 sync.Pool 获取 AlibabaJymItemExternalGoodsDetailQueryAPIRequest
+func GetAlibabaJymItemExternalGoodsDetailQueryAPIRequest() *AlibabaJymItemExternalGoodsDetailQueryAPIRequest {
+	return poolAlibabaJymItemExternalGoodsDetailQueryAPIRequest.Get().(*AlibabaJymItemExternalGoodsDetailQueryAPIRequest)
+}
+
+// ReleaseAlibabaJymItemExternalGoodsDetailQueryAPIRequest 将 AlibabaJymItemExternalGoodsDetailQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaJymItemExternalGoodsDetailQueryAPIRequest(v *AlibabaJymItemExternalGoodsDetailQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaJymItemExternalGoodsDetailQueryAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // WarehouseCooperationBatchConfirmResponse 结构体
 type WarehouseCooperationBatchConfirmResponse struct {
 	// 处理失败的仓（组）
@@ -12,4 +16,25 @@ type WarehouseCooperationBatchConfirmResponse struct {
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
 	// true|false
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolWarehouseCooperationBatchConfirmResponse = sync.Pool{
+	New: func() any {
+		return new(WarehouseCooperationBatchConfirmResponse)
+	},
+}
+
+// GetWarehouseCooperationBatchConfirmResponse() 从对象池中获取WarehouseCooperationBatchConfirmResponse
+func GetWarehouseCooperationBatchConfirmResponse() *WarehouseCooperationBatchConfirmResponse {
+	return poolWarehouseCooperationBatchConfirmResponse.Get().(*WarehouseCooperationBatchConfirmResponse)
+}
+
+// ReleaseWarehouseCooperationBatchConfirmResponse 释放WarehouseCooperationBatchConfirmResponse
+func ReleaseWarehouseCooperationBatchConfirmResponse(v *WarehouseCooperationBatchConfirmResponse) {
+	v.Data = v.Data[:0]
+	v.Code = ""
+	v.Message = ""
+	v.Result = ""
+	v.Success = false
+	poolWarehouseCooperationBatchConfirmResponse.Put(v)
 }

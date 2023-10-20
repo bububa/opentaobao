@@ -2,6 +2,7 @@ package bus
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlitripBusInsuranceRecommendAPIResponse struct {
 	model.CommonResponse
 	AlitripBusInsuranceRecommendAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlitripBusInsuranceRecommendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripBusInsuranceRecommendAPIResponseModel).Reset()
 }
 
 // AlitripBusInsuranceRecommendAPIResponseModel is 汽车票保险推荐接口 成功返回结果
@@ -28,4 +35,30 @@ type AlitripBusInsuranceRecommendAPIResponseModel struct {
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 	// true:成功；false:失败
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripBusInsuranceRecommendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.InsProductList = m.InsProductList[:0]
+	m.ResultCode = ""
+	m.ResultMsg = ""
+	m.IsSuccess = false
+}
+
+var poolAlitripBusInsuranceRecommendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripBusInsuranceRecommendAPIResponse)
+	},
+}
+
+// GetAlitripBusInsuranceRecommendAPIResponse 从 sync.Pool 获取 AlitripBusInsuranceRecommendAPIResponse
+func GetAlitripBusInsuranceRecommendAPIResponse() *AlitripBusInsuranceRecommendAPIResponse {
+	return poolAlitripBusInsuranceRecommendAPIResponse.Get().(*AlitripBusInsuranceRecommendAPIResponse)
+}
+
+// ReleaseAlitripBusInsuranceRecommendAPIResponse 将 AlitripBusInsuranceRecommendAPIResponse 保存到 sync.Pool
+func ReleaseAlitripBusInsuranceRecommendAPIResponse(v *AlitripBusInsuranceRecommendAPIResponse) {
+	v.Reset()
+	poolAlitripBusInsuranceRecommendAPIResponse.Put(v)
 }

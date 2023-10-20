@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // RechargeRuleOpenInfo 结构体
 type RechargeRuleOpenInfo struct {
 	// 规则明细列表
@@ -38,4 +42,38 @@ type RechargeRuleOpenInfo struct {
 	FullGiftSwitch bool `json:"full_gift_switch,omitempty" xml:"full_gift_switch,omitempty"`
 	// 免密开关:0-关闭（默认），1-开启
 	PayNoPwdSwitch bool `json:"pay_no_pwd_switch,omitempty" xml:"pay_no_pwd_switch,omitempty"`
+}
+
+var poolRechargeRuleOpenInfo = sync.Pool{
+	New: func() any {
+		return new(RechargeRuleOpenInfo)
+	},
+}
+
+// GetRechargeRuleOpenInfo() 从对象池中获取RechargeRuleOpenInfo
+func GetRechargeRuleOpenInfo() *RechargeRuleOpenInfo {
+	return poolRechargeRuleOpenInfo.Get().(*RechargeRuleOpenInfo)
+}
+
+// ReleaseRechargeRuleOpenInfo 释放RechargeRuleOpenInfo
+func ReleaseRechargeRuleOpenInfo(v *RechargeRuleOpenInfo) {
+	v.ListRechargeRuleDetailInfoList = v.ListRechargeRuleDetailInfoList[:0]
+	v.ListRechargeRuleDetailInfos = v.ListRechargeRuleDetailInfos[:0]
+	v.CardType = ""
+	v.CreateBy = ""
+	v.DeductionOrder = ""
+	v.GiftType = ""
+	v.GmtCreate = ""
+	v.GmtModified = ""
+	v.RuleId = ""
+	v.RuleName = ""
+	v.ShopId = ""
+	v.UpdateBy = ""
+	v.OutShopId = ""
+	v.ExtInfo = nil
+	v.PayNoPwdCredit = 0
+	v.Deleted = false
+	v.FullGiftSwitch = false
+	v.PayNoPwdSwitch = false
+	poolRechargeRuleOpenInfo.Put(v)
 }

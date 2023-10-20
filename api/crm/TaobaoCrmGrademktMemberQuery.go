@@ -9,11 +9,6 @@ import (
 // taobao.crm.grademkt.member.query
 //
 // 商家通过该接口查询线上店铺会员。
-func TaobaoCrmGrademktMemberQuery(clt *core.SDKClient, req *crm.TaobaoCrmGrademktMemberQueryAPIRequest, session string) (*crm.TaobaoCrmGrademktMemberQueryAPIResponse, error) {
-	var resp crm.TaobaoCrmGrademktMemberQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoCrmGrademktMemberQuery(clt *core.SDKClient, req *crm.TaobaoCrmGrademktMemberQueryAPIRequest, resp *crm.TaobaoCrmGrademktMemberQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

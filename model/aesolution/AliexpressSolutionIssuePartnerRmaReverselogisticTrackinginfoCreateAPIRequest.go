@@ -2,6 +2,7 @@ package aesolution
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIReques
 // NewAliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateRequest 初始化AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest对象
 func NewAliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateRequest() *AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest {
 	return &AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest) Reset() {
+	r._logisticsOrderCreationRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRe
 // GetLogisticsOrderCreationRequest LogisticsOrderCreationRequest Getter
 func (r AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest) GetLogisticsOrderCreationRequest() *LogisticOrderCreationForRmaRequest {
 	return r._logisticsOrderCreationRequest
+}
+
+var poolAliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateRequest()
+	},
+}
+
+// GetAliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateRequest 从 sync.Pool 获取 AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest
+func GetAliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest() *AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest {
+	return poolAliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest.Get().(*AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest)
+}
+
+// ReleaseAliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest 将 AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest 放入 sync.Pool
+func ReleaseAliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest(v *AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest) {
+	v.Reset()
+	poolAliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest.Put(v)
 }

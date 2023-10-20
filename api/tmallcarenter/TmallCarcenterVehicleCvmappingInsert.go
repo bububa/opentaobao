@@ -9,11 +9,6 @@ import (
 // tmall.carcenter.vehicle.cvmapping.insert
 //
 // EPC车辆版本信息与底盘信息库关系绑定
-func TmallCarcenterVehicleCvmappingInsert(clt *core.SDKClient, req *tmallcarenter.TmallCarcenterVehicleCvmappingInsertAPIRequest, session string) (*tmallcarenter.TmallCarcenterVehicleCvmappingInsertAPIResponse, error) {
-	var resp tmallcarenter.TmallCarcenterVehicleCvmappingInsertAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallCarcenterVehicleCvmappingInsert(clt *core.SDKClient, req *tmallcarenter.TmallCarcenterVehicleCvmappingInsertAPIRequest, resp *tmallcarenter.TmallCarcenterVehicleCvmappingInsertAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

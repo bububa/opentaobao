@@ -2,6 +2,7 @@ package shenjing
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaIbShenjingVisitorPadGetinfoAPIRequest struct {
 // NewAlibabaIbShenjingVisitorPadGetinfoRequest 初始化AlibabaIbShenjingVisitorPadGetinfoAPIRequest对象
 func NewAlibabaIbShenjingVisitorPadGetinfoRequest() *AlibabaIbShenjingVisitorPadGetinfoAPIRequest {
 	return &AlibabaIbShenjingVisitorPadGetinfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIbShenjingVisitorPadGetinfoAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaIbShenjingVisitorPadGetinfoAPIRequest) GetApiParams(params url.Va
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaIbShenjingVisitorPadGetinfoAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaIbShenjingVisitorPadGetinfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIbShenjingVisitorPadGetinfoRequest()
+	},
+}
+
+// GetAlibabaIbShenjingVisitorPadGetinfoRequest 从 sync.Pool 获取 AlibabaIbShenjingVisitorPadGetinfoAPIRequest
+func GetAlibabaIbShenjingVisitorPadGetinfoAPIRequest() *AlibabaIbShenjingVisitorPadGetinfoAPIRequest {
+	return poolAlibabaIbShenjingVisitorPadGetinfoAPIRequest.Get().(*AlibabaIbShenjingVisitorPadGetinfoAPIRequest)
+}
+
+// ReleaseAlibabaIbShenjingVisitorPadGetinfoAPIRequest 将 AlibabaIbShenjingVisitorPadGetinfoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIbShenjingVisitorPadGetinfoAPIRequest(v *AlibabaIbShenjingVisitorPadGetinfoAPIRequest) {
+	v.Reset()
+	poolAlibabaIbShenjingVisitorPadGetinfoAPIRequest.Put(v)
 }

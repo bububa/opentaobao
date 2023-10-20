@@ -2,6 +2,7 @@ package alscmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscMerchantExtTicketcodeUseAPIRequest struct {
 // NewAlibabaAlscMerchantExtTicketcodeUseRequest 初始化AlibabaAlscMerchantExtTicketcodeUseAPIRequest对象
 func NewAlibabaAlscMerchantExtTicketcodeUseRequest() *AlibabaAlscMerchantExtTicketcodeUseAPIRequest {
 	return &AlibabaAlscMerchantExtTicketcodeUseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscMerchantExtTicketcodeUseAPIRequest) Reset() {
+	r._useRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscMerchantExtTicketcodeUseAPIRequest) SetUseRequest(_useReques
 // GetUseRequest UseRequest Getter
 func (r AlibabaAlscMerchantExtTicketcodeUseAPIRequest) GetUseRequest() *ExternalTicketUseRequest {
 	return r._useRequest
+}
+
+var poolAlibabaAlscMerchantExtTicketcodeUseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscMerchantExtTicketcodeUseRequest()
+	},
+}
+
+// GetAlibabaAlscMerchantExtTicketcodeUseRequest 从 sync.Pool 获取 AlibabaAlscMerchantExtTicketcodeUseAPIRequest
+func GetAlibabaAlscMerchantExtTicketcodeUseAPIRequest() *AlibabaAlscMerchantExtTicketcodeUseAPIRequest {
+	return poolAlibabaAlscMerchantExtTicketcodeUseAPIRequest.Get().(*AlibabaAlscMerchantExtTicketcodeUseAPIRequest)
+}
+
+// ReleaseAlibabaAlscMerchantExtTicketcodeUseAPIRequest 将 AlibabaAlscMerchantExtTicketcodeUseAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscMerchantExtTicketcodeUseAPIRequest(v *AlibabaAlscMerchantExtTicketcodeUseAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscMerchantExtTicketcodeUseAPIRequest.Put(v)
 }

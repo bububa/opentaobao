@@ -2,6 +2,7 @@ package nazca
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaInfodeptLassenCasestatisticsGetAPIRequest struct {
 // NewAlibabaInfodeptLassenCasestatisticsGetRequest 初始化AlibabaInfodeptLassenCasestatisticsGetAPIRequest对象
 func NewAlibabaInfodeptLassenCasestatisticsGetRequest() *AlibabaInfodeptLassenCasestatisticsGetAPIRequest {
 	return &AlibabaInfodeptLassenCasestatisticsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInfodeptLassenCasestatisticsGetAPIRequest) Reset() {
+	r._areaCode = ""
+	r._startTime = ""
+	r._endTime = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaInfodeptLassenCasestatisticsGetAPIRequest) SetEndTime(_endTime s
 // GetEndTime EndTime Getter
 func (r AlibabaInfodeptLassenCasestatisticsGetAPIRequest) GetEndTime() string {
 	return r._endTime
+}
+
+var poolAlibabaInfodeptLassenCasestatisticsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInfodeptLassenCasestatisticsGetRequest()
+	},
+}
+
+// GetAlibabaInfodeptLassenCasestatisticsGetRequest 从 sync.Pool 获取 AlibabaInfodeptLassenCasestatisticsGetAPIRequest
+func GetAlibabaInfodeptLassenCasestatisticsGetAPIRequest() *AlibabaInfodeptLassenCasestatisticsGetAPIRequest {
+	return poolAlibabaInfodeptLassenCasestatisticsGetAPIRequest.Get().(*AlibabaInfodeptLassenCasestatisticsGetAPIRequest)
+}
+
+// ReleaseAlibabaInfodeptLassenCasestatisticsGetAPIRequest 将 AlibabaInfodeptLassenCasestatisticsGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInfodeptLassenCasestatisticsGetAPIRequest(v *AlibabaInfodeptLassenCasestatisticsGetAPIRequest) {
+	v.Reset()
+	poolAlibabaInfodeptLassenCasestatisticsGetAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseNewhomeReviewIndexSyncAPIRequest struct {
 // NewAlibabaAlihouseNewhomeReviewIndexSyncRequest 初始化AlibabaAlihouseNewhomeReviewIndexSyncAPIRequest对象
 func NewAlibabaAlihouseNewhomeReviewIndexSyncRequest() *AlibabaAlihouseNewhomeReviewIndexSyncAPIRequest {
 	return &AlibabaAlihouseNewhomeReviewIndexSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseNewhomeReviewIndexSyncAPIRequest) Reset() {
+	r._syncProjectNewReviewIndexDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseNewhomeReviewIndexSyncAPIRequest) SetSyncProjectNewRevie
 // GetSyncProjectNewReviewIndexDto SyncProjectNewReviewIndexDto Getter
 func (r AlibabaAlihouseNewhomeReviewIndexSyncAPIRequest) GetSyncProjectNewReviewIndexDto() *SyncProjectNewReviewIndexDto {
 	return r._syncProjectNewReviewIndexDto
+}
+
+var poolAlibabaAlihouseNewhomeReviewIndexSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseNewhomeReviewIndexSyncRequest()
+	},
+}
+
+// GetAlibabaAlihouseNewhomeReviewIndexSyncRequest 从 sync.Pool 获取 AlibabaAlihouseNewhomeReviewIndexSyncAPIRequest
+func GetAlibabaAlihouseNewhomeReviewIndexSyncAPIRequest() *AlibabaAlihouseNewhomeReviewIndexSyncAPIRequest {
+	return poolAlibabaAlihouseNewhomeReviewIndexSyncAPIRequest.Get().(*AlibabaAlihouseNewhomeReviewIndexSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseNewhomeReviewIndexSyncAPIRequest 将 AlibabaAlihouseNewhomeReviewIndexSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseNewhomeReviewIndexSyncAPIRequest(v *AlibabaAlihouseNewhomeReviewIndexSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseNewhomeReviewIndexSyncAPIRequest.Put(v)
 }

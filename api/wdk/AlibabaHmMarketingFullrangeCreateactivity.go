@@ -9,11 +9,6 @@ import (
 // alibaba.hm.marketing.fullrange.createactivity
 //
 // 创建全场活动
-func AlibabaHmMarketingFullrangeCreateactivity(clt *core.SDKClient, req *wdk.AlibabaHmMarketingFullrangeCreateactivityAPIRequest, session string) (*wdk.AlibabaHmMarketingFullrangeCreateactivityAPIResponse, error) {
-	var resp wdk.AlibabaHmMarketingFullrangeCreateactivityAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHmMarketingFullrangeCreateactivity(clt *core.SDKClient, req *wdk.AlibabaHmMarketingFullrangeCreateactivityAPIRequest, resp *wdk.AlibabaHmMarketingFullrangeCreateactivityAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

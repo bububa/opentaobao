@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type AlibabaEinvoiceProdResultFileurlGetAPIRequest struct {
 // NewAlibabaEinvoiceProdResultFileurlGetRequest 初始化AlibabaEinvoiceProdResultFileurlGetAPIRequest对象
 func NewAlibabaEinvoiceProdResultFileurlGetRequest() *AlibabaEinvoiceProdResultFileurlGetAPIRequest {
 	return &AlibabaEinvoiceProdResultFileurlGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceProdResultFileurlGetAPIRequest) Reset() {
+	r._platformUserId = ""
+	r._invoiceNo = ""
+	r._invoiceCode = ""
+	r._fileType = ""
+	r._platformCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *AlibabaEinvoiceProdResultFileurlGetAPIRequest) SetPlatformCode(_platfor
 // GetPlatformCode PlatformCode Getter
 func (r AlibabaEinvoiceProdResultFileurlGetAPIRequest) GetPlatformCode() string {
 	return r._platformCode
+}
+
+var poolAlibabaEinvoiceProdResultFileurlGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceProdResultFileurlGetRequest()
+	},
+}
+
+// GetAlibabaEinvoiceProdResultFileurlGetRequest 从 sync.Pool 获取 AlibabaEinvoiceProdResultFileurlGetAPIRequest
+func GetAlibabaEinvoiceProdResultFileurlGetAPIRequest() *AlibabaEinvoiceProdResultFileurlGetAPIRequest {
+	return poolAlibabaEinvoiceProdResultFileurlGetAPIRequest.Get().(*AlibabaEinvoiceProdResultFileurlGetAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceProdResultFileurlGetAPIRequest 将 AlibabaEinvoiceProdResultFileurlGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceProdResultFileurlGetAPIRequest(v *AlibabaEinvoiceProdResultFileurlGetAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceProdResultFileurlGetAPIRequest.Put(v)
 }

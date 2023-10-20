@@ -2,6 +2,7 @@ package paimai
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAuctionZcMerchantUserCheckAPIRequest struct {
 // NewTaobaoAuctionZcMerchantUserCheckRequest 初始化TaobaoAuctionZcMerchantUserCheckAPIRequest对象
 func NewTaobaoAuctionZcMerchantUserCheckRequest() *TaobaoAuctionZcMerchantUserCheckAPIRequest {
 	return &TaobaoAuctionZcMerchantUserCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAuctionZcMerchantUserCheckAPIRequest) Reset() {
+	r._mobile = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAuctionZcMerchantUserCheckAPIRequest) SetMobile(_mobile string) e
 // GetMobile Mobile Getter
 func (r TaobaoAuctionZcMerchantUserCheckAPIRequest) GetMobile() string {
 	return r._mobile
+}
+
+var poolTaobaoAuctionZcMerchantUserCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAuctionZcMerchantUserCheckRequest()
+	},
+}
+
+// GetTaobaoAuctionZcMerchantUserCheckRequest 从 sync.Pool 获取 TaobaoAuctionZcMerchantUserCheckAPIRequest
+func GetTaobaoAuctionZcMerchantUserCheckAPIRequest() *TaobaoAuctionZcMerchantUserCheckAPIRequest {
+	return poolTaobaoAuctionZcMerchantUserCheckAPIRequest.Get().(*TaobaoAuctionZcMerchantUserCheckAPIRequest)
+}
+
+// ReleaseTaobaoAuctionZcMerchantUserCheckAPIRequest 将 TaobaoAuctionZcMerchantUserCheckAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAuctionZcMerchantUserCheckAPIRequest(v *TaobaoAuctionZcMerchantUserCheckAPIRequest) {
+	v.Reset()
+	poolTaobaoAuctionZcMerchantUserCheckAPIRequest.Put(v)
 }

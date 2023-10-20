@@ -9,11 +9,6 @@ import (
 // yunos.service.cmns.coa.device.get
 //
 // 第三方应用开发者调用此接口查询设备详情
-func YunosServiceCmnsCoaDeviceGet(clt *core.SDKClient, req *cmns.YunosServiceCmnsCoaDeviceGetAPIRequest, session string) (*cmns.YunosServiceCmnsCoaDeviceGetAPIResponse, error) {
-	var resp cmns.YunosServiceCmnsCoaDeviceGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosServiceCmnsCoaDeviceGet(clt *core.SDKClient, req *cmns.YunosServiceCmnsCoaDeviceGetAPIRequest, resp *cmns.YunosServiceCmnsCoaDeviceGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

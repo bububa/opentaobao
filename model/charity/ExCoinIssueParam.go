@@ -1,5 +1,9 @@
 package charity
 
+import (
+	"sync"
+)
+
 // ExCoinIssueParam 结构体
 type ExCoinIssueParam struct {
 	// 开放标识
@@ -14,4 +18,26 @@ type ExCoinIssueParam struct {
 	IssueTime int64 `json:"issue_time,omitempty" xml:"issue_time,omitempty"`
 	// 行为ID
 	ActionId int64 `json:"action_id,omitempty" xml:"action_id,omitempty"`
+}
+
+var poolExCoinIssueParam = sync.Pool{
+	New: func() any {
+		return new(ExCoinIssueParam)
+	},
+}
+
+// GetExCoinIssueParam() 从对象池中获取ExCoinIssueParam
+func GetExCoinIssueParam() *ExCoinIssueParam {
+	return poolExCoinIssueParam.Get().(*ExCoinIssueParam)
+}
+
+// ReleaseExCoinIssueParam 释放ExCoinIssueParam
+func ReleaseExCoinIssueParam(v *ExCoinIssueParam) {
+	v.OpenId = ""
+	v.BizCode = ""
+	v.IdempotentId = ""
+	v.ChannelCode = ""
+	v.IssueTime = 0
+	v.ActionId = 0
+	poolExCoinIssueParam.Put(v)
 }

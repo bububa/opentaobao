@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaJymIndustryInformationCallbakAPIRequest struct {
 // NewAlibabaJymIndustryInformationCallbakRequest 初始化AlibabaJymIndustryInformationCallbakAPIRequest对象
 func NewAlibabaJymIndustryInformationCallbakRequest() *AlibabaJymIndustryInformationCallbakAPIRequest {
 	return &AlibabaJymIndustryInformationCallbakAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaJymIndustryInformationCallbakAPIRequest) Reset() {
+	r._taskId = ""
+	r._bizId = ""
+	r._content = ""
+	r._status = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaJymIndustryInformationCallbakAPIRequest) SetStatus(_status int64
 // GetStatus Status Getter
 func (r AlibabaJymIndustryInformationCallbakAPIRequest) GetStatus() int64 {
 	return r._status
+}
+
+var poolAlibabaJymIndustryInformationCallbakAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaJymIndustryInformationCallbakRequest()
+	},
+}
+
+// GetAlibabaJymIndustryInformationCallbakRequest 从 sync.Pool 获取 AlibabaJymIndustryInformationCallbakAPIRequest
+func GetAlibabaJymIndustryInformationCallbakAPIRequest() *AlibabaJymIndustryInformationCallbakAPIRequest {
+	return poolAlibabaJymIndustryInformationCallbakAPIRequest.Get().(*AlibabaJymIndustryInformationCallbakAPIRequest)
+}
+
+// ReleaseAlibabaJymIndustryInformationCallbakAPIRequest 将 AlibabaJymIndustryInformationCallbakAPIRequest 放入 sync.Pool
+func ReleaseAlibabaJymIndustryInformationCallbakAPIRequest(v *AlibabaJymIndustryInformationCallbakAPIRequest) {
+	v.Reset()
+	poolAlibabaJymIndustryInformationCallbakAPIRequest.Put(v)
 }

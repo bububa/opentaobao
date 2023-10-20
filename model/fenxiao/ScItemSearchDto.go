@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // ScItemSearchDto 结构体
 type ScItemSearchDto struct {
 	// 剔除的货品类型
@@ -40,4 +44,39 @@ type ScItemSearchDto struct {
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
 	// 市场类目ID
 	CategoryId int64 `json:"category_id,omitempty" xml:"category_id,omitempty"`
+}
+
+var poolScItemSearchDto = sync.Pool{
+	New: func() any {
+		return new(ScItemSearchDto)
+	},
+}
+
+// GetScItemSearchDto() 从对象池中获取ScItemSearchDto
+func GetScItemSearchDto() *ScItemSearchDto {
+	return poolScItemSearchDto.Get().(*ScItemSearchDto)
+}
+
+// ReleaseScItemSearchDto 释放ScItemSearchDto
+func ReleaseScItemSearchDto(v *ScItemSearchDto) {
+	v.NonScItemTypeList = v.NonScItemTypeList[:0]
+	v.ScItemTypeList = v.ScItemTypeList[:0]
+	v.OuterIdList = v.OuterIdList[:0]
+	v.WhcBarCodeList = v.WhcBarCodeList[:0]
+	v.MerchantCategoryIdList = v.MerchantCategoryIdList[:0]
+	v.AuctionTags = v.AuctionTags[:0]
+	v.ScItemIdList = v.ScItemIdList[:0]
+	v.ScItemName = ""
+	v.NonFeatureCondition = ""
+	v.BrandName = ""
+	v.ScItemCode = ""
+	v.FeatureCondition = ""
+	v.WhcBarcode = ""
+	v.PageSize = 0
+	v.ItemDim = 0
+	v.ScItemStatus = 0
+	v.ScItemId = 0
+	v.CurrentPage = 0
+	v.CategoryId = 0
+	poolScItemSearchDto.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.ascp.channel.supplier.product.goods.bind
 //
 // 渠道产品与货品绑定接口
-func AlibabaAscpChannelSupplierProductGoodsBind(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelSupplierProductGoodsBindAPIRequest, session string) (*ascpchannel.AlibabaAscpChannelSupplierProductGoodsBindAPIResponse, error) {
-	var resp ascpchannel.AlibabaAscpChannelSupplierProductGoodsBindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAscpChannelSupplierProductGoodsBind(clt *core.SDKClient, req *ascpchannel.AlibabaAscpChannelSupplierProductGoodsBindAPIRequest, resp *ascpchannel.AlibabaAscpChannelSupplierProductGoodsBindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // Buyer 结构体
 type Buyer struct {
 	// 座机
@@ -30,4 +34,34 @@ type Buyer struct {
 	OpenUid string `json:"open_uid,omitempty" xml:"open_uid,omitempty"`
 	// 地址编码
 	Location int64 `json:"location,omitempty" xml:"location,omitempty"`
+}
+
+var poolBuyer = sync.Pool{
+	New: func() any {
+		return new(Buyer)
+	},
+}
+
+// GetBuyer() 从对象池中获取Buyer
+func GetBuyer() *Buyer {
+	return poolBuyer.Get().(*Buyer)
+}
+
+// ReleaseBuyer 释放Buyer
+func ReleaseBuyer(v *Buyer) {
+	v.Phone = ""
+	v.AddressCity = ""
+	v.AddressDistrict = ""
+	v.AddressDetail = ""
+	v.BuyerName = ""
+	v.Email = ""
+	v.Address = ""
+	v.ZipCode = ""
+	v.BuyerNick = ""
+	v.AddressTown = ""
+	v.AddressProvince = ""
+	v.Mobile = ""
+	v.OpenUid = ""
+	v.Location = 0
+	poolBuyer.Put(v)
 }

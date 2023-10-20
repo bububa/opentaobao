@@ -1,5 +1,9 @@
 package icbulogistics
 
+import (
+	"sync"
+)
+
 // ExpressFreightDto 结构体
 type ExpressFreightDto struct {
 	// 费用项列表
@@ -16,4 +20,27 @@ type ExpressFreightDto struct {
 	Warehouse *WarehouseDto `json:"warehouse,omitempty" xml:"warehouse,omitempty"`
 	// 上门揽收信息
 	PickupInfo *PickupInfoDto `json:"pickup_info,omitempty" xml:"pickup_info,omitempty"`
+}
+
+var poolExpressFreightDto = sync.Pool{
+	New: func() any {
+		return new(ExpressFreightDto)
+	},
+}
+
+// GetExpressFreightDto() 从对象池中获取ExpressFreightDto
+func GetExpressFreightDto() *ExpressFreightDto {
+	return poolExpressFreightDto.Get().(*ExpressFreightDto)
+}
+
+// ReleaseExpressFreightDto 释放ExpressFreightDto
+func ReleaseExpressFreightDto(v *ExpressFreightDto) {
+	v.ExpressQuoteItemList = v.ExpressQuoteItemList[:0]
+	v.SalesAmount = ""
+	v.DiscountAmount = ""
+	v.BarCode = ""
+	v.OrderNumber = ""
+	v.Warehouse = nil
+	v.PickupInfo = nil
+	poolExpressFreightDto.Put(v)
 }

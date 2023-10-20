@@ -1,5 +1,9 @@
 package alihealthoutflow
 
+import (
+	"sync"
+)
+
 // DrugUsageVo 结构体
 type DrugUsageVo struct {
 	// 每次用量单位
@@ -16,4 +20,27 @@ type DrugUsageVo struct {
 	Frequency string `json:"frequency,omitempty" xml:"frequency,omitempty"`
 	// 每次你用量
 	DoseValue string `json:"dose_value,omitempty" xml:"dose_value,omitempty"`
+}
+
+var poolDrugUsageVo = sync.Pool{
+	New: func() any {
+		return new(DrugUsageVo)
+	},
+}
+
+// GetDrugUsageVo() 从对象池中获取DrugUsageVo
+func GetDrugUsageVo() *DrugUsageVo {
+	return poolDrugUsageVo.Get().(*DrugUsageVo)
+}
+
+// ReleaseDrugUsageVo 释放DrugUsageVo
+func ReleaseDrugUsageVo(v *DrugUsageVo) {
+	v.MeasureUnit = ""
+	v.DrugUsage = ""
+	v.Days = ""
+	v.FrequencyUnit = ""
+	v.FrequencyValue = ""
+	v.Frequency = ""
+	v.DoseValue = ""
+	poolDrugUsageVo.Put(v)
 }

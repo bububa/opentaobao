@@ -2,6 +2,7 @@ package flight
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripAgentCoordinateGobackAPIRequest struct {
 // NewAlitripAgentCoordinateGobackRequest 初始化AlitripAgentCoordinateGobackAPIRequest对象
 func NewAlitripAgentCoordinateGobackRequest() *AlitripAgentCoordinateGobackAPIRequest {
 	return &AlitripAgentCoordinateGobackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripAgentCoordinateGobackAPIRequest) Reset() {
+	r._gobackDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripAgentCoordinateGobackAPIRequest) SetGobackDto(_gobackDto *GoBack
 // GetGobackDto GobackDto Getter
 func (r AlitripAgentCoordinateGobackAPIRequest) GetGobackDto() *GoBackDto {
 	return r._gobackDto
+}
+
+var poolAlitripAgentCoordinateGobackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripAgentCoordinateGobackRequest()
+	},
+}
+
+// GetAlitripAgentCoordinateGobackRequest 从 sync.Pool 获取 AlitripAgentCoordinateGobackAPIRequest
+func GetAlitripAgentCoordinateGobackAPIRequest() *AlitripAgentCoordinateGobackAPIRequest {
+	return poolAlitripAgentCoordinateGobackAPIRequest.Get().(*AlitripAgentCoordinateGobackAPIRequest)
+}
+
+// ReleaseAlitripAgentCoordinateGobackAPIRequest 将 AlitripAgentCoordinateGobackAPIRequest 放入 sync.Pool
+func ReleaseAlitripAgentCoordinateGobackAPIRequest(v *AlitripAgentCoordinateGobackAPIRequest) {
+	v.Reset()
+	poolAlitripAgentCoordinateGobackAPIRequest.Put(v)
 }

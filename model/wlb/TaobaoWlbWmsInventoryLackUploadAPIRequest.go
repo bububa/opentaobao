@@ -2,6 +2,7 @@ package wlb
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoWlbWmsInventoryLackUploadAPIRequest struct {
 // NewTaobaoWlbWmsInventoryLackUploadRequest 初始化TaobaoWlbWmsInventoryLackUploadAPIRequest对象
 func NewTaobaoWlbWmsInventoryLackUploadRequest() *TaobaoWlbWmsInventoryLackUploadAPIRequest {
 	return &TaobaoWlbWmsInventoryLackUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbWmsInventoryLackUploadAPIRequest) Reset() {
+	r._content = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoWlbWmsInventoryLackUploadAPIRequest) SetContent(_content *WlbWmsI
 // GetContent Content Getter
 func (r TaobaoWlbWmsInventoryLackUploadAPIRequest) GetContent() *WlbWmsInventoryLackUpload {
 	return r._content
+}
+
+var poolTaobaoWlbWmsInventoryLackUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbWmsInventoryLackUploadRequest()
+	},
+}
+
+// GetTaobaoWlbWmsInventoryLackUploadRequest 从 sync.Pool 获取 TaobaoWlbWmsInventoryLackUploadAPIRequest
+func GetTaobaoWlbWmsInventoryLackUploadAPIRequest() *TaobaoWlbWmsInventoryLackUploadAPIRequest {
+	return poolTaobaoWlbWmsInventoryLackUploadAPIRequest.Get().(*TaobaoWlbWmsInventoryLackUploadAPIRequest)
+}
+
+// ReleaseTaobaoWlbWmsInventoryLackUploadAPIRequest 将 TaobaoWlbWmsInventoryLackUploadAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbWmsInventoryLackUploadAPIRequest(v *TaobaoWlbWmsInventoryLackUploadAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbWmsInventoryLackUploadAPIRequest.Put(v)
 }

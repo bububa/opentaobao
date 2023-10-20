@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // CustomerGetOpenReq 结构体
 type CustomerGetOpenReq struct {
 	// saas品牌id
@@ -16,4 +20,27 @@ type CustomerGetOpenReq struct {
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
 	// 顾客id
 	CustomerId string `json:"customer_id,omitempty" xml:"customer_id,omitempty"`
+}
+
+var poolCustomerGetOpenReq = sync.Pool{
+	New: func() any {
+		return new(CustomerGetOpenReq)
+	},
+}
+
+// GetCustomerGetOpenReq() 从对象池中获取CustomerGetOpenReq
+func GetCustomerGetOpenReq() *CustomerGetOpenReq {
+	return poolCustomerGetOpenReq.Get().(*CustomerGetOpenReq)
+}
+
+// ReleaseCustomerGetOpenReq 释放CustomerGetOpenReq
+func ReleaseCustomerGetOpenReq(v *CustomerGetOpenReq) {
+	v.BrandId = ""
+	v.Mobile = ""
+	v.OuterId = ""
+	v.OuterType = ""
+	v.PhysicalCardId = ""
+	v.ShopId = ""
+	v.CustomerId = ""
+	poolCustomerGetOpenReq.Put(v)
 }

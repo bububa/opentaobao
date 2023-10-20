@@ -1,5 +1,9 @@
 package xhotelitem
 
+import (
+	"sync"
+)
+
 // Rate 结构体
 type Rate struct {
 	// 名称
@@ -30,4 +34,34 @@ type Rate struct {
 	JishiquerenTag int64 `json:"jishiqueren_tag,omitempty" xml:"jishiqueren_tag,omitempty"`
 	// 是否使用RoomInventory库存   仅当Rate上使用时有意义
 	UseRoomInventory bool `json:"use_room_inventory,omitempty" xml:"use_room_inventory,omitempty"`
+}
+
+var poolRate = sync.Pool{
+	New: func() any {
+		return new(Rate)
+	},
+}
+
+// GetRate() 从对象池中获取Rate
+func GetRate() *Rate {
+	return poolRate.Get().(*Rate)
+}
+
+// ReleaseRate 释放Rate
+func ReleaseRate(v *Rate) {
+	v.Name = ""
+	v.InventoryPrice = ""
+	v.CreatedTime = ""
+	v.ModifiedTime = ""
+	v.InvPriceWithSwitch = ""
+	v.TagJson = ""
+	v.Gid = 0
+	v.Rpid = 0
+	v.AddBed = 0
+	v.AddBedPrice = 0
+	v.CurrencyCode = 0
+	v.ShijiaTag = 0
+	v.JishiquerenTag = 0
+	v.UseRoomInventory = false
+	poolRate.Put(v)
 }

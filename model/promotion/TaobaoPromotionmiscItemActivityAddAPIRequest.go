@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type TaobaoPromotionmiscItemActivityAddAPIRequest struct {
 // NewTaobaoPromotionmiscItemActivityAddRequest 初始化TaobaoPromotionmiscItemActivityAddAPIRequest对象
 func NewTaobaoPromotionmiscItemActivityAddRequest() *TaobaoPromotionmiscItemActivityAddAPIRequest {
 	return &TaobaoPromotionmiscItemActivityAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPromotionmiscItemActivityAddAPIRequest) Reset() {
+	r._name = ""
+	r._startTime = ""
+	r._endTime = ""
+	r._userTag = ""
+	r._participateRange = 0
+	r._decreaseAmount = 0
+	r._discountRate = 0
+	r._isUserTag = false
+	r._isDecreaseMoney = false
+	r._isDiscount = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *TaobaoPromotionmiscItemActivityAddAPIRequest) SetIsDiscount(_isDiscount
 // GetIsDiscount IsDiscount Getter
 func (r TaobaoPromotionmiscItemActivityAddAPIRequest) GetIsDiscount() bool {
 	return r._isDiscount
+}
+
+var poolTaobaoPromotionmiscItemActivityAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPromotionmiscItemActivityAddRequest()
+	},
+}
+
+// GetTaobaoPromotionmiscItemActivityAddRequest 从 sync.Pool 获取 TaobaoPromotionmiscItemActivityAddAPIRequest
+func GetTaobaoPromotionmiscItemActivityAddAPIRequest() *TaobaoPromotionmiscItemActivityAddAPIRequest {
+	return poolTaobaoPromotionmiscItemActivityAddAPIRequest.Get().(*TaobaoPromotionmiscItemActivityAddAPIRequest)
+}
+
+// ReleaseTaobaoPromotionmiscItemActivityAddAPIRequest 将 TaobaoPromotionmiscItemActivityAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPromotionmiscItemActivityAddAPIRequest(v *TaobaoPromotionmiscItemActivityAddAPIRequest) {
+	v.Reset()
+	poolTaobaoPromotionmiscItemActivityAddAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package dutyfree
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaDutyfreeStockQueryAPIResponse struct {
 	AlibabaDutyfreeStockQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaDutyfreeStockQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaDutyfreeStockQueryAPIResponseModel).Reset()
+}
+
 // AlibabaDutyfreeStockQueryAPIResponseModel is 对外库存查询接口 成功返回结果
 type AlibabaDutyfreeStockQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_dutyfree_stock_query_response"`
@@ -22,4 +29,27 @@ type AlibabaDutyfreeStockQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
 	Result *AlibabaDutyfreeStockQueryResultDo `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaDutyfreeStockQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaDutyfreeStockQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaDutyfreeStockQueryAPIResponse)
+	},
+}
+
+// GetAlibabaDutyfreeStockQueryAPIResponse 从 sync.Pool 获取 AlibabaDutyfreeStockQueryAPIResponse
+func GetAlibabaDutyfreeStockQueryAPIResponse() *AlibabaDutyfreeStockQueryAPIResponse {
+	return poolAlibabaDutyfreeStockQueryAPIResponse.Get().(*AlibabaDutyfreeStockQueryAPIResponse)
+}
+
+// ReleaseAlibabaDutyfreeStockQueryAPIResponse 将 AlibabaDutyfreeStockQueryAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaDutyfreeStockQueryAPIResponse(v *AlibabaDutyfreeStockQueryAPIResponse) {
+	v.Reset()
+	poolAlibabaDutyfreeStockQueryAPIResponse.Put(v)
 }

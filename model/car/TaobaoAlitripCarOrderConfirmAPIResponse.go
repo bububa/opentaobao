@@ -2,6 +2,7 @@ package car
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoAlitripCarOrderConfirmAPIResponse struct {
 	TaobaoAlitripCarOrderConfirmAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoAlitripCarOrderConfirmAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAlitripCarOrderConfirmAPIResponseModel).Reset()
+}
+
 // TaobaoAlitripCarOrderConfirmAPIResponseModel is 司机应答API 成功返回结果
 type TaobaoAlitripCarOrderConfirmAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_car_order_confirm_response"`
@@ -26,4 +33,29 @@ type TaobaoAlitripCarOrderConfirmAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 错误码
 	MessageCode int64 `json:"message_code,omitempty" xml:"message_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAlitripCarOrderConfirmAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Data = ""
+	m.Message = ""
+	m.MessageCode = 0
+}
+
+var poolTaobaoAlitripCarOrderConfirmAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAlitripCarOrderConfirmAPIResponse)
+	},
+}
+
+// GetTaobaoAlitripCarOrderConfirmAPIResponse 从 sync.Pool 获取 TaobaoAlitripCarOrderConfirmAPIResponse
+func GetTaobaoAlitripCarOrderConfirmAPIResponse() *TaobaoAlitripCarOrderConfirmAPIResponse {
+	return poolTaobaoAlitripCarOrderConfirmAPIResponse.Get().(*TaobaoAlitripCarOrderConfirmAPIResponse)
+}
+
+// ReleaseTaobaoAlitripCarOrderConfirmAPIResponse 将 TaobaoAlitripCarOrderConfirmAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAlitripCarOrderConfirmAPIResponse(v *TaobaoAlitripCarOrderConfirmAPIResponse) {
+	v.Reset()
+	poolTaobaoAlitripCarOrderConfirmAPIResponse.Put(v)
 }

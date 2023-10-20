@@ -2,6 +2,7 @@ package bus
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoBusNumbersStockpriceUpdateAPIResponse struct {
 	model.CommonResponse
 	TaobaoBusNumbersStockpriceUpdateAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoBusNumbersStockpriceUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoBusNumbersStockpriceUpdateAPIResponseModel).Reset()
 }
 
 // TaobaoBusNumbersStockpriceUpdateAPIResponseModel is 汽车票更新价格库存 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoBusNumbersStockpriceUpdateAPIResponseModel struct {
 	SuccCount int64 `json:"succ_count,omitempty" xml:"succ_count,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoBusNumbersStockpriceUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ResultCode = ""
+	m.ResultMsg = ""
+	m.SuccCount = 0
+	m.IsSuccess = false
+}
+
+var poolTaobaoBusNumbersStockpriceUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoBusNumbersStockpriceUpdateAPIResponse)
+	},
+}
+
+// GetTaobaoBusNumbersStockpriceUpdateAPIResponse 从 sync.Pool 获取 TaobaoBusNumbersStockpriceUpdateAPIResponse
+func GetTaobaoBusNumbersStockpriceUpdateAPIResponse() *TaobaoBusNumbersStockpriceUpdateAPIResponse {
+	return poolTaobaoBusNumbersStockpriceUpdateAPIResponse.Get().(*TaobaoBusNumbersStockpriceUpdateAPIResponse)
+}
+
+// ReleaseTaobaoBusNumbersStockpriceUpdateAPIResponse 将 TaobaoBusNumbersStockpriceUpdateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoBusNumbersStockpriceUpdateAPIResponse(v *TaobaoBusNumbersStockpriceUpdateAPIResponse) {
+	v.Reset()
+	poolTaobaoBusNumbersStockpriceUpdateAPIResponse.Put(v)
 }

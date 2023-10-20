@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // CustomerVoucherFullOpenReq 结构体
 type CustomerVoucherFullOpenReq struct {
 	// 优惠券状态 NORMAL，DELETED，ISUSED
@@ -18,4 +22,28 @@ type CustomerVoucherFullOpenReq struct {
 	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
 	// 每页大小，默认20
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolCustomerVoucherFullOpenReq = sync.Pool{
+	New: func() any {
+		return new(CustomerVoucherFullOpenReq)
+	},
+}
+
+// GetCustomerVoucherFullOpenReq() 从对象池中获取CustomerVoucherFullOpenReq
+func GetCustomerVoucherFullOpenReq() *CustomerVoucherFullOpenReq {
+	return poolCustomerVoucherFullOpenReq.Get().(*CustomerVoucherFullOpenReq)
+}
+
+// ReleaseCustomerVoucherFullOpenReq 释放CustomerVoucherFullOpenReq
+func ReleaseCustomerVoucherFullOpenReq(v *CustomerVoucherFullOpenReq) {
+	v.VoucherStatusList = v.VoucherStatusList[:0]
+	v.BrandId = ""
+	v.CustomerId = ""
+	v.OutBrandId = ""
+	v.OutShopId = ""
+	v.ShopId = ""
+	v.PageNo = 0
+	v.PageSize = 0
+	poolCustomerVoucherFullOpenReq.Put(v)
 }

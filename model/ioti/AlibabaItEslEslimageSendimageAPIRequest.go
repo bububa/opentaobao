@@ -2,6 +2,7 @@ package ioti
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaItEslEslimageSendimageAPIRequest struct {
 // NewAlibabaItEslEslimageSendimageRequest 初始化AlibabaItEslEslimageSendimageAPIRequest对象
 func NewAlibabaItEslEslimageSendimageRequest() *AlibabaItEslEslimageSendimageAPIRequest {
 	return &AlibabaItEslEslimageSendimageAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaItEslEslimageSendimageAPIRequest) Reset() {
+	r._mac = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaItEslEslimageSendimageAPIRequest) SetMac(_mac string) error {
 // GetMac Mac Getter
 func (r AlibabaItEslEslimageSendimageAPIRequest) GetMac() string {
 	return r._mac
+}
+
+var poolAlibabaItEslEslimageSendimageAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaItEslEslimageSendimageRequest()
+	},
+}
+
+// GetAlibabaItEslEslimageSendimageRequest 从 sync.Pool 获取 AlibabaItEslEslimageSendimageAPIRequest
+func GetAlibabaItEslEslimageSendimageAPIRequest() *AlibabaItEslEslimageSendimageAPIRequest {
+	return poolAlibabaItEslEslimageSendimageAPIRequest.Get().(*AlibabaItEslEslimageSendimageAPIRequest)
+}
+
+// ReleaseAlibabaItEslEslimageSendimageAPIRequest 将 AlibabaItEslEslimageSendimageAPIRequest 放入 sync.Pool
+func ReleaseAlibabaItEslEslimageSendimageAPIRequest(v *AlibabaItEslEslimageSendimageAPIRequest) {
+	v.Reset()
+	poolAlibabaItEslEslimageSendimageAPIRequest.Put(v)
 }

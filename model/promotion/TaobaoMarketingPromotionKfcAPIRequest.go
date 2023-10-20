@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoMarketingPromotionKfcAPIRequest struct {
 // NewTaobaoMarketingPromotionKfcRequest 初始化TaobaoMarketingPromotionKfcAPIRequest对象
 func NewTaobaoMarketingPromotionKfcRequest() *TaobaoMarketingPromotionKfcAPIRequest {
 	return &TaobaoMarketingPromotionKfcAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoMarketingPromotionKfcAPIRequest) Reset() {
+	r._promotionTitle = ""
+	r._promotionDesc = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoMarketingPromotionKfcAPIRequest) SetPromotionDesc(_promotionDesc 
 // GetPromotionDesc PromotionDesc Getter
 func (r TaobaoMarketingPromotionKfcAPIRequest) GetPromotionDesc() string {
 	return r._promotionDesc
+}
+
+var poolTaobaoMarketingPromotionKfcAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoMarketingPromotionKfcRequest()
+	},
+}
+
+// GetTaobaoMarketingPromotionKfcRequest 从 sync.Pool 获取 TaobaoMarketingPromotionKfcAPIRequest
+func GetTaobaoMarketingPromotionKfcAPIRequest() *TaobaoMarketingPromotionKfcAPIRequest {
+	return poolTaobaoMarketingPromotionKfcAPIRequest.Get().(*TaobaoMarketingPromotionKfcAPIRequest)
+}
+
+// ReleaseTaobaoMarketingPromotionKfcAPIRequest 将 TaobaoMarketingPromotionKfcAPIRequest 放入 sync.Pool
+func ReleaseTaobaoMarketingPromotionKfcAPIRequest(v *TaobaoMarketingPromotionKfcAPIRequest) {
+	v.Reset()
+	poolTaobaoMarketingPromotionKfcAPIRequest.Put(v)
 }

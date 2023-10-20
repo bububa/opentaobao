@@ -2,6 +2,7 @@ package security
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaSecurityJaqAppRiskScanbatchAPIResponse struct {
 	AlibabaSecurityJaqAppRiskScanbatchAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaSecurityJaqAppRiskScanbatchAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaSecurityJaqAppRiskScanbatchAPIResponseModel).Reset()
+}
+
 // AlibabaSecurityJaqAppRiskScanbatchAPIResponseModel is 应用风险扫描批量提交接口 成功返回结果
 type AlibabaSecurityJaqAppRiskScanbatchAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_security_jaq_app_risk_scanbatch_response"`
@@ -22,4 +29,27 @@ type AlibabaSecurityJaqAppRiskScanbatchAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 扫描任务信息
 	Result *TaskInfo `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaSecurityJaqAppRiskScanbatchAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaSecurityJaqAppRiskScanbatchAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaSecurityJaqAppRiskScanbatchAPIResponse)
+	},
+}
+
+// GetAlibabaSecurityJaqAppRiskScanbatchAPIResponse 从 sync.Pool 获取 AlibabaSecurityJaqAppRiskScanbatchAPIResponse
+func GetAlibabaSecurityJaqAppRiskScanbatchAPIResponse() *AlibabaSecurityJaqAppRiskScanbatchAPIResponse {
+	return poolAlibabaSecurityJaqAppRiskScanbatchAPIResponse.Get().(*AlibabaSecurityJaqAppRiskScanbatchAPIResponse)
+}
+
+// ReleaseAlibabaSecurityJaqAppRiskScanbatchAPIResponse 将 AlibabaSecurityJaqAppRiskScanbatchAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaSecurityJaqAppRiskScanbatchAPIResponse(v *AlibabaSecurityJaqAppRiskScanbatchAPIResponse) {
+	v.Reset()
+	poolAlibabaSecurityJaqAppRiskScanbatchAPIResponse.Put(v)
 }

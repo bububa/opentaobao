@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoPromotionBenefitActivityTimeUpdateAPIRequest struct {
 // NewTaobaoPromotionBenefitActivityTimeUpdateRequest 初始化TaobaoPromotionBenefitActivityTimeUpdateAPIRequest对象
 func NewTaobaoPromotionBenefitActivityTimeUpdateRequest() *TaobaoPromotionBenefitActivityTimeUpdateAPIRequest {
 	return &TaobaoPromotionBenefitActivityTimeUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPromotionBenefitActivityTimeUpdateAPIRequest) Reset() {
+	r._startTime = ""
+	r._endTime = ""
+	r._relationId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoPromotionBenefitActivityTimeUpdateAPIRequest) SetRelationId(_rela
 // GetRelationId RelationId Getter
 func (r TaobaoPromotionBenefitActivityTimeUpdateAPIRequest) GetRelationId() int64 {
 	return r._relationId
+}
+
+var poolTaobaoPromotionBenefitActivityTimeUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPromotionBenefitActivityTimeUpdateRequest()
+	},
+}
+
+// GetTaobaoPromotionBenefitActivityTimeUpdateRequest 从 sync.Pool 获取 TaobaoPromotionBenefitActivityTimeUpdateAPIRequest
+func GetTaobaoPromotionBenefitActivityTimeUpdateAPIRequest() *TaobaoPromotionBenefitActivityTimeUpdateAPIRequest {
+	return poolTaobaoPromotionBenefitActivityTimeUpdateAPIRequest.Get().(*TaobaoPromotionBenefitActivityTimeUpdateAPIRequest)
+}
+
+// ReleaseTaobaoPromotionBenefitActivityTimeUpdateAPIRequest 将 TaobaoPromotionBenefitActivityTimeUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPromotionBenefitActivityTimeUpdateAPIRequest(v *TaobaoPromotionBenefitActivityTimeUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoPromotionBenefitActivityTimeUpdateAPIRequest.Put(v)
 }

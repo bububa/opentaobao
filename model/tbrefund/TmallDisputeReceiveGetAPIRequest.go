@@ -2,6 +2,7 @@ package tbrefund
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -39,8 +40,24 @@ type TmallDisputeReceiveGetAPIRequest struct {
 // NewTmallDisputeReceiveGetRequest 初始化TmallDisputeReceiveGetAPIRequest对象
 func NewTmallDisputeReceiveGetRequest() *TmallDisputeReceiveGetAPIRequest {
 	return &TmallDisputeReceiveGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(11),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallDisputeReceiveGetAPIRequest) Reset() {
+	r._fields = r._fields[:0]
+	r._status = ""
+	r._type = ""
+	r._buyerNick = ""
+	r._startModified = ""
+	r._endModified = ""
+	r._buyerOpenUid = ""
+	r._pageSize = 0
+	r._refundId = 0
+	r._pageNo = 0
+	r._useHasNext = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -201,4 +218,21 @@ func (r *TmallDisputeReceiveGetAPIRequest) SetUseHasNext(_useHasNext bool) error
 // GetUseHasNext UseHasNext Getter
 func (r TmallDisputeReceiveGetAPIRequest) GetUseHasNext() bool {
 	return r._useHasNext
+}
+
+var poolTmallDisputeReceiveGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallDisputeReceiveGetRequest()
+	},
+}
+
+// GetTmallDisputeReceiveGetRequest 从 sync.Pool 获取 TmallDisputeReceiveGetAPIRequest
+func GetTmallDisputeReceiveGetAPIRequest() *TmallDisputeReceiveGetAPIRequest {
+	return poolTmallDisputeReceiveGetAPIRequest.Get().(*TmallDisputeReceiveGetAPIRequest)
+}
+
+// ReleaseTmallDisputeReceiveGetAPIRequest 将 TmallDisputeReceiveGetAPIRequest 放入 sync.Pool
+func ReleaseTmallDisputeReceiveGetAPIRequest(v *TmallDisputeReceiveGetAPIRequest) {
+	v.Reset()
+	poolTmallDisputeReceiveGetAPIRequest.Put(v)
 }

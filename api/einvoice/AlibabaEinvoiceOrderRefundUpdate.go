@@ -9,11 +9,6 @@ import (
 // alibaba.einvoice.order.refund.update
 //
 // ISV回传订单退款审核结果
-func AlibabaEinvoiceOrderRefundUpdate(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceOrderRefundUpdateAPIRequest, session string) (*einvoice.AlibabaEinvoiceOrderRefundUpdateAPIResponse, error) {
-	var resp einvoice.AlibabaEinvoiceOrderRefundUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaEinvoiceOrderRefundUpdate(clt *core.SDKClient, req *einvoice.AlibabaEinvoiceOrderRefundUpdateAPIRequest, resp *einvoice.AlibabaEinvoiceOrderRefundUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

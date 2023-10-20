@@ -1,5 +1,9 @@
 package cainiaohandover
 
+import (
+	"sync"
+)
+
 // OpenParcelOrderDto 结构体
 type OpenParcelOrderDto struct {
 	// 小包物流订单编码
@@ -10,4 +14,24 @@ type OpenParcelOrderDto struct {
 	ExceptionCode string `json:"exception_code,omitempty" xml:"exception_code,omitempty"`
 	// 小包状态名称
 	StatusName string `json:"status_name,omitempty" xml:"status_name,omitempty"`
+}
+
+var poolOpenParcelOrderDto = sync.Pool{
+	New: func() any {
+		return new(OpenParcelOrderDto)
+	},
+}
+
+// GetOpenParcelOrderDto() 从对象池中获取OpenParcelOrderDto
+func GetOpenParcelOrderDto() *OpenParcelOrderDto {
+	return poolOpenParcelOrderDto.Get().(*OpenParcelOrderDto)
+}
+
+// ReleaseOpenParcelOrderDto 释放OpenParcelOrderDto
+func ReleaseOpenParcelOrderDto(v *OpenParcelOrderDto) {
+	v.OrderCode = ""
+	v.Status = ""
+	v.ExceptionCode = ""
+	v.StatusName = ""
+	poolOpenParcelOrderDto.Put(v)
 }

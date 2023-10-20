@@ -2,6 +2,7 @@ package alihealthoutflow
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthRxCaDeviceSignStatusSaveAPIRequest struct {
 // NewAlibabaAlihealthRxCaDeviceSignStatusSaveRequest 初始化AlibabaAlihealthRxCaDeviceSignStatusSaveAPIRequest对象
 func NewAlibabaAlihealthRxCaDeviceSignStatusSaveRequest() *AlibabaAlihealthRxCaDeviceSignStatusSaveAPIRequest {
 	return &AlibabaAlihealthRxCaDeviceSignStatusSaveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthRxCaDeviceSignStatusSaveAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthRxCaDeviceSignStatusSaveAPIRequest) SetParam0(_param0 *
 // GetParam0 Param0 Getter
 func (r AlibabaAlihealthRxCaDeviceSignStatusSaveAPIRequest) GetParam0() *CaSignStatusSaveRequest {
 	return r._param0
+}
+
+var poolAlibabaAlihealthRxCaDeviceSignStatusSaveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthRxCaDeviceSignStatusSaveRequest()
+	},
+}
+
+// GetAlibabaAlihealthRxCaDeviceSignStatusSaveRequest 从 sync.Pool 获取 AlibabaAlihealthRxCaDeviceSignStatusSaveAPIRequest
+func GetAlibabaAlihealthRxCaDeviceSignStatusSaveAPIRequest() *AlibabaAlihealthRxCaDeviceSignStatusSaveAPIRequest {
+	return poolAlibabaAlihealthRxCaDeviceSignStatusSaveAPIRequest.Get().(*AlibabaAlihealthRxCaDeviceSignStatusSaveAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthRxCaDeviceSignStatusSaveAPIRequest 将 AlibabaAlihealthRxCaDeviceSignStatusSaveAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthRxCaDeviceSignStatusSaveAPIRequest(v *AlibabaAlihealthRxCaDeviceSignStatusSaveAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthRxCaDeviceSignStatusSaveAPIRequest.Put(v)
 }

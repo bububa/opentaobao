@@ -2,6 +2,7 @@ package nlife
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AlibabaNlifeB2cTradeRefundAPIRequest struct {
 // NewAlibabaNlifeB2cTradeRefundRequest 初始化AlibabaNlifeB2cTradeRefundAPIRequest对象
 func NewAlibabaNlifeB2cTradeRefundRequest() *AlibabaNlifeB2cTradeRefundAPIRequest {
 	return &AlibabaNlifeB2cTradeRefundAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaNlifeB2cTradeRefundAPIRequest) Reset() {
+	r._refundBillList = r._refundBillList[:0]
+	r._refundGoodsList = r._refundGoodsList[:0]
+	r._tradeNo = ""
+	r._outRequestNo = ""
+	r._outTradeNo = ""
+	r._storeId = ""
+	r._refundPoints = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AlibabaNlifeB2cTradeRefundAPIRequest) SetRefundPoints(_refundPoints int
 // GetRefundPoints RefundPoints Getter
 func (r AlibabaNlifeB2cTradeRefundAPIRequest) GetRefundPoints() int64 {
 	return r._refundPoints
+}
+
+var poolAlibabaNlifeB2cTradeRefundAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaNlifeB2cTradeRefundRequest()
+	},
+}
+
+// GetAlibabaNlifeB2cTradeRefundRequest 从 sync.Pool 获取 AlibabaNlifeB2cTradeRefundAPIRequest
+func GetAlibabaNlifeB2cTradeRefundAPIRequest() *AlibabaNlifeB2cTradeRefundAPIRequest {
+	return poolAlibabaNlifeB2cTradeRefundAPIRequest.Get().(*AlibabaNlifeB2cTradeRefundAPIRequest)
+}
+
+// ReleaseAlibabaNlifeB2cTradeRefundAPIRequest 将 AlibabaNlifeB2cTradeRefundAPIRequest 放入 sync.Pool
+func ReleaseAlibabaNlifeB2cTradeRefundAPIRequest(v *AlibabaNlifeB2cTradeRefundAPIRequest) {
+	v.Reset()
+	poolAlibabaNlifeB2cTradeRefundAPIRequest.Put(v)
 }

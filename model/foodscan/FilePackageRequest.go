@@ -1,5 +1,9 @@
 package foodscan
 
+import (
+	"sync"
+)
+
 // FilePackageRequest 结构体
 type FilePackageRequest struct {
 	// 城市名称
@@ -40,4 +44,39 @@ type FilePackageRequest struct {
 	Gender int64 `json:"gender,omitempty" xml:"gender,omitempty"`
 	// 1左脚 2右脚
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolFilePackageRequest = sync.Pool{
+	New: func() any {
+		return new(FilePackageRequest)
+	},
+}
+
+// GetFilePackageRequest() 从对象池中获取FilePackageRequest
+func GetFilePackageRequest() *FilePackageRequest {
+	return poolFilePackageRequest.Get().(*FilePackageRequest)
+}
+
+// ReleaseFilePackageRequest 释放FilePackageRequest
+func ReleaseFilePackageRequest(v *FilePackageRequest) {
+	v.City = ""
+	v.NickName = ""
+	v.RoleId = ""
+	v.DistrictAdcode = ""
+	v.UserId = ""
+	v.Platform = ""
+	v.MobileBrand = ""
+	v.Province = ""
+	v.RequestId = ""
+	v.CityAdcode = ""
+	v.CountryCode = ""
+	v.MobileModel = ""
+	v.District = ""
+	v.FileName1 = ""
+	v.FileName2 = ""
+	v.FileName3 = ""
+	v.RelationType = 0
+	v.Gender = 0
+	v.Type = 0
+	poolFilePackageRequest.Put(v)
 }

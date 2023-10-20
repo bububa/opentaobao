@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCampusCoreCompanycampusGetcombycamidAPIRequest struct {
 // NewAlibabaCampusCoreCompanycampusGetcombycamidRequest 初始化AlibabaCampusCoreCompanycampusGetcombycamidAPIRequest对象
 func NewAlibabaCampusCoreCompanycampusGetcombycamidRequest() *AlibabaCampusCoreCompanycampusGetcombycamidAPIRequest {
 	return &AlibabaCampusCoreCompanycampusGetcombycamidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusCoreCompanycampusGetcombycamidAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCampusCoreCompanycampusGetcombycamidAPIRequest) SetParam0(_param
 // GetParam0 Param0 Getter
 func (r AlibabaCampusCoreCompanycampusGetcombycamidAPIRequest) GetParam0() *WorkBenchContext {
 	return r._param0
+}
+
+var poolAlibabaCampusCoreCompanycampusGetcombycamidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusCoreCompanycampusGetcombycamidRequest()
+	},
+}
+
+// GetAlibabaCampusCoreCompanycampusGetcombycamidRequest 从 sync.Pool 获取 AlibabaCampusCoreCompanycampusGetcombycamidAPIRequest
+func GetAlibabaCampusCoreCompanycampusGetcombycamidAPIRequest() *AlibabaCampusCoreCompanycampusGetcombycamidAPIRequest {
+	return poolAlibabaCampusCoreCompanycampusGetcombycamidAPIRequest.Get().(*AlibabaCampusCoreCompanycampusGetcombycamidAPIRequest)
+}
+
+// ReleaseAlibabaCampusCoreCompanycampusGetcombycamidAPIRequest 将 AlibabaCampusCoreCompanycampusGetcombycamidAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusCoreCompanycampusGetcombycamidAPIRequest(v *AlibabaCampusCoreCompanycampusGetcombycamidAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusCoreCompanycampusGetcombycamidAPIRequest.Put(v)
 }

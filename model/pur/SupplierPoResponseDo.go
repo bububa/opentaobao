@@ -1,5 +1,9 @@
 package pur
 
+import (
+	"sync"
+)
+
 // SupplierPoResponseDo 结构体
 type SupplierPoResponseDo struct {
 	// po头编号
@@ -40,4 +44,39 @@ type SupplierPoResponseDo struct {
 	DeliveryBatchNo string `json:"delivery_batch_no,omitempty" xml:"delivery_batch_no,omitempty"`
 	// 反馈状态
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolSupplierPoResponseDo = sync.Pool{
+	New: func() any {
+		return new(SupplierPoResponseDo)
+	},
+}
+
+// GetSupplierPoResponseDo() 从对象池中获取SupplierPoResponseDo
+func GetSupplierPoResponseDo() *SupplierPoResponseDo {
+	return poolSupplierPoResponseDo.Get().(*SupplierPoResponseDo)
+}
+
+// ReleaseSupplierPoResponseDo 释放SupplierPoResponseDo
+func ReleaseSupplierPoResponseDo(v *SupplierPoResponseDo) {
+	v.PoNo = ""
+	v.PoLineNum = ""
+	v.ProcurementMethod = ""
+	v.DelayReason = ""
+	v.DeliveryAmount = ""
+	v.CapacityRecordNo = ""
+	v.Remark = ""
+	v.ResponseType = ""
+	v.EstimatedArrivalDate = ""
+	v.ProductionPeriod = ""
+	v.DemanderPurchaseOrgCode = ""
+	v.DeliveryQty = ""
+	v.ActualArrivalDate = ""
+	v.SupplierCode = ""
+	v.SupplierName = ""
+	v.ProjectCode = ""
+	v.OuCode = ""
+	v.DeliveryBatchNo = ""
+	v.Status = ""
+	poolSupplierPoResponseDo.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.ailab.aicloud.top.device.control.pauseandresume
 //
 // 设备播放暂停
-func TaobaoAilabAicloudTopDeviceControlPauseandresume(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIResponse, error) {
-	var resp iot.TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAilabAicloudTopDeviceControlPauseandresume(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIRequest, resp *iot.TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

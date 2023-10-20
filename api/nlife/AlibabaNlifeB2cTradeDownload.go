@@ -9,11 +9,6 @@ import (
 // alibaba.nlife.b2c.trade.download
 //
 // 下载零售商在零售+平台创建的订单
-func AlibabaNlifeB2cTradeDownload(clt *core.SDKClient, req *nlife.AlibabaNlifeB2cTradeDownloadAPIRequest, session string) (*nlife.AlibabaNlifeB2cTradeDownloadAPIResponse, error) {
-	var resp nlife.AlibabaNlifeB2cTradeDownloadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaNlifeB2cTradeDownload(clt *core.SDKClient, req *nlife.AlibabaNlifeB2cTradeDownloadAPIRequest, resp *nlife.AlibabaNlifeB2cTradeDownloadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

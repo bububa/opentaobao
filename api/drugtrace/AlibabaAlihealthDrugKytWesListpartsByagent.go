@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drug.kyt.wes.listparts.byagent
 //
 // 代理企业查询往来单位列表
-func AlibabaAlihealthDrugKytWesListpartsByagent(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytWesListpartsByagentAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytWesListpartsByagentAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugKytWesListpartsByagentAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugKytWesListpartsByagent(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytWesListpartsByagentAPIRequest, resp *drugtrace.AlibabaAlihealthDrugKytWesListpartsByagentAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

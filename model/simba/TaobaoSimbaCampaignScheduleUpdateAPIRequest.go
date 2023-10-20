@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoSimbaCampaignScheduleUpdateAPIRequest struct {
 // NewTaobaoSimbaCampaignScheduleUpdateRequest 初始化TaobaoSimbaCampaignScheduleUpdateAPIRequest对象
 func NewTaobaoSimbaCampaignScheduleUpdateRequest() *TaobaoSimbaCampaignScheduleUpdateAPIRequest {
 	return &TaobaoSimbaCampaignScheduleUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaCampaignScheduleUpdateAPIRequest) Reset() {
+	r._nick = ""
+	r._schedule = ""
+	r._campaignId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoSimbaCampaignScheduleUpdateAPIRequest) SetCampaignId(_campaignId 
 // GetCampaignId CampaignId Getter
 func (r TaobaoSimbaCampaignScheduleUpdateAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
+}
+
+var poolTaobaoSimbaCampaignScheduleUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaCampaignScheduleUpdateRequest()
+	},
+}
+
+// GetTaobaoSimbaCampaignScheduleUpdateRequest 从 sync.Pool 获取 TaobaoSimbaCampaignScheduleUpdateAPIRequest
+func GetTaobaoSimbaCampaignScheduleUpdateAPIRequest() *TaobaoSimbaCampaignScheduleUpdateAPIRequest {
+	return poolTaobaoSimbaCampaignScheduleUpdateAPIRequest.Get().(*TaobaoSimbaCampaignScheduleUpdateAPIRequest)
+}
+
+// ReleaseTaobaoSimbaCampaignScheduleUpdateAPIRequest 将 TaobaoSimbaCampaignScheduleUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaCampaignScheduleUpdateAPIRequest(v *TaobaoSimbaCampaignScheduleUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaCampaignScheduleUpdateAPIRequest.Put(v)
 }

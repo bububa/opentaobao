@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest struct {
 // NewAlibabaHealthNrCepWarstqtyBatchupdateRequest 初始化AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest对象
 func NewAlibabaHealthNrCepWarstqtyBatchupdateRequest() *AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest {
 	return &AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest) Reset() {
+	r._warStqtyList = r._warStqtyList[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest) SetWarStqtyList(_warSt
 // GetWarStqtyList WarStqtyList Getter
 func (r AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest) GetWarStqtyList() []TopIsvStqtyLstDto {
 	return r._warStqtyList
+}
+
+var poolAlibabaHealthNrCepWarstqtyBatchupdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHealthNrCepWarstqtyBatchupdateRequest()
+	},
+}
+
+// GetAlibabaHealthNrCepWarstqtyBatchupdateRequest 从 sync.Pool 获取 AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest
+func GetAlibabaHealthNrCepWarstqtyBatchupdateAPIRequest() *AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest {
+	return poolAlibabaHealthNrCepWarstqtyBatchupdateAPIRequest.Get().(*AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest)
+}
+
+// ReleaseAlibabaHealthNrCepWarstqtyBatchupdateAPIRequest 将 AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHealthNrCepWarstqtyBatchupdateAPIRequest(v *AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest) {
+	v.Reset()
+	poolAlibabaHealthNrCepWarstqtyBatchupdateAPIRequest.Put(v)
 }

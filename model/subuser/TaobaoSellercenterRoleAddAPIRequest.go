@@ -2,6 +2,7 @@ package subuser
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoSellercenterRoleAddAPIRequest struct {
 // NewTaobaoSellercenterRoleAddRequest 初始化TaobaoSellercenterRoleAddAPIRequest对象
 func NewTaobaoSellercenterRoleAddRequest() *TaobaoSellercenterRoleAddAPIRequest {
 	return &TaobaoSellercenterRoleAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSellercenterRoleAddAPIRequest) Reset() {
+	r._permissionCodes = r._permissionCodes[:0]
+	r._nick = ""
+	r._name = ""
+	r._description = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoSellercenterRoleAddAPIRequest) SetDescription(_description string
 // GetDescription Description Getter
 func (r TaobaoSellercenterRoleAddAPIRequest) GetDescription() string {
 	return r._description
+}
+
+var poolTaobaoSellercenterRoleAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSellercenterRoleAddRequest()
+	},
+}
+
+// GetTaobaoSellercenterRoleAddRequest 从 sync.Pool 获取 TaobaoSellercenterRoleAddAPIRequest
+func GetTaobaoSellercenterRoleAddAPIRequest() *TaobaoSellercenterRoleAddAPIRequest {
+	return poolTaobaoSellercenterRoleAddAPIRequest.Get().(*TaobaoSellercenterRoleAddAPIRequest)
+}
+
+// ReleaseTaobaoSellercenterRoleAddAPIRequest 将 TaobaoSellercenterRoleAddAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSellercenterRoleAddAPIRequest(v *TaobaoSellercenterRoleAddAPIRequest) {
+	v.Reset()
+	poolTaobaoSellercenterRoleAddAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.existinghome.broker.migrate
 //
 // 融合店经纪人迁移
-func AlibabaAlihouseExistinghomeBrokerMigrate(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeBrokerMigrateAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomeBrokerMigrateAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseExistinghomeBrokerMigrateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseExistinghomeBrokerMigrate(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeBrokerMigrateAPIRequest, resp *alihouse.AlibabaAlihouseExistinghomeBrokerMigrateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

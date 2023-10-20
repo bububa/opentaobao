@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // BtripHotelRatePlanInfoDto 结构体
 type BtripHotelRatePlanInfoDto struct {
 	// 每间房rate信息
@@ -24,4 +28,31 @@ type BtripHotelRatePlanInfoDto struct {
 	TotalRoomPrice int64 `json:"total_room_price,omitempty" xml:"total_room_price,omitempty"`
 	// 是否需要填写电子邮箱
 	NeedEmail bool `json:"need_email,omitempty" xml:"need_email,omitempty"`
+}
+
+var poolBtripHotelRatePlanInfoDto = sync.Pool{
+	New: func() any {
+		return new(BtripHotelRatePlanInfoDto)
+	},
+}
+
+// GetBtripHotelRatePlanInfoDto() 从对象池中获取BtripHotelRatePlanInfoDto
+func GetBtripHotelRatePlanInfoDto() *BtripHotelRatePlanInfoDto {
+	return poolBtripHotelRatePlanInfoDto.Get().(*BtripHotelRatePlanInfoDto)
+}
+
+// ReleaseBtripHotelRatePlanInfoDto 释放BtripHotelRatePlanInfoDto
+func ReleaseBtripHotelRatePlanInfoDto(v *BtripHotelRatePlanInfoDto) {
+	v.RateUnits = v.RateUnits[:0]
+	v.BedDesc = ""
+	v.EarliestCheckInTime = ""
+	v.LatestCheckOutTime = ""
+	v.BtripHotelCancelPolicyDTO = nil
+	v.MaxBookingNum = 0
+	v.MaxInventory = 0
+	v.MaxOccupancyNum = 0
+	v.TotalMemberRoomPrice = 0
+	v.TotalRoomPrice = 0
+	v.NeedEmail = false
+	poolBtripHotelRatePlanInfoDto.Put(v)
 }

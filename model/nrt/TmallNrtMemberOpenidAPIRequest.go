@@ -2,6 +2,7 @@ package nrt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallNrtMemberOpenidAPIRequest struct {
 // NewTmallNrtMemberOpenidRequest 初始化TmallNrtMemberOpenidAPIRequest对象
 func NewTmallNrtMemberOpenidRequest() *TmallNrtMemberOpenidAPIRequest {
 	return &TmallNrtMemberOpenidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrtMemberOpenidAPIRequest) Reset() {
+	r._nrtMemberDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallNrtMemberOpenidAPIRequest) SetNrtMemberDto(_nrtMemberDto *NrtMembe
 // GetNrtMemberDto NrtMemberDto Getter
 func (r TmallNrtMemberOpenidAPIRequest) GetNrtMemberDto() *NrtMemberDto {
 	return r._nrtMemberDto
+}
+
+var poolTmallNrtMemberOpenidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrtMemberOpenidRequest()
+	},
+}
+
+// GetTmallNrtMemberOpenidRequest 从 sync.Pool 获取 TmallNrtMemberOpenidAPIRequest
+func GetTmallNrtMemberOpenidAPIRequest() *TmallNrtMemberOpenidAPIRequest {
+	return poolTmallNrtMemberOpenidAPIRequest.Get().(*TmallNrtMemberOpenidAPIRequest)
+}
+
+// ReleaseTmallNrtMemberOpenidAPIRequest 将 TmallNrtMemberOpenidAPIRequest 放入 sync.Pool
+func ReleaseTmallNrtMemberOpenidAPIRequest(v *TmallNrtMemberOpenidAPIRequest) {
+	v.Reset()
+	poolTmallNrtMemberOpenidAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // PageResultDo 结构体
 type PageResultDo struct {
 	// 门店集合
@@ -18,4 +22,28 @@ type PageResultDo struct {
 	PageNum int64 `json:"page_num,omitempty" xml:"page_num,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolPageResultDo = sync.Pool{
+	New: func() any {
+		return new(PageResultDo)
+	},
+}
+
+// GetPageResultDo() 从对象池中获取PageResultDo
+func GetPageResultDo() *PageResultDo {
+	return poolPageResultDo.Get().(*PageResultDo)
+}
+
+// ReleasePageResultDo 释放PageResultDo
+func ReleasePageResultDo(v *PageResultDo) {
+	v.DataList = v.DataList[:0]
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.TotalNum = 0
+	v.PageSize = 0
+	v.TotalPageNum = 0
+	v.PageNum = 0
+	v.Success = false
+	poolPageResultDo.Put(v)
 }

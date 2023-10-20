@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAxChannelSkuStatusUpdateAPIRequest struct {
 // NewAlibabaAxChannelSkuStatusUpdateRequest 初始化AlibabaAxChannelSkuStatusUpdateAPIRequest对象
 func NewAlibabaAxChannelSkuStatusUpdateRequest() *AlibabaAxChannelSkuStatusUpdateAPIRequest {
 	return &AlibabaAxChannelSkuStatusUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAxChannelSkuStatusUpdateAPIRequest) Reset() {
+	r._channelSkuUpdateStatusReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAxChannelSkuStatusUpdateAPIRequest) SetChannelSkuUpdateStatusReq
 // GetChannelSkuUpdateStatusReq ChannelSkuUpdateStatusReq Getter
 func (r AlibabaAxChannelSkuStatusUpdateAPIRequest) GetChannelSkuUpdateStatusReq() *ChannelSkuUpdateStatusReq {
 	return r._channelSkuUpdateStatusReq
+}
+
+var poolAlibabaAxChannelSkuStatusUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAxChannelSkuStatusUpdateRequest()
+	},
+}
+
+// GetAlibabaAxChannelSkuStatusUpdateRequest 从 sync.Pool 获取 AlibabaAxChannelSkuStatusUpdateAPIRequest
+func GetAlibabaAxChannelSkuStatusUpdateAPIRequest() *AlibabaAxChannelSkuStatusUpdateAPIRequest {
+	return poolAlibabaAxChannelSkuStatusUpdateAPIRequest.Get().(*AlibabaAxChannelSkuStatusUpdateAPIRequest)
+}
+
+// ReleaseAlibabaAxChannelSkuStatusUpdateAPIRequest 将 AlibabaAxChannelSkuStatusUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAxChannelSkuStatusUpdateAPIRequest(v *AlibabaAxChannelSkuStatusUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaAxChannelSkuStatusUpdateAPIRequest.Put(v)
 }

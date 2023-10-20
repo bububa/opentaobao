@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // CompanyVirtualShopDto 结构体
 type CompanyVirtualShopDto struct {
 	// 外部虚拟店铺ID
@@ -18,4 +22,28 @@ type CompanyVirtualShopDto struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 是否删除 0 - 否 1 - 是
 	IsDeleted int64 `json:"is_deleted,omitempty" xml:"is_deleted,omitempty"`
+}
+
+var poolCompanyVirtualShopDto = sync.Pool{
+	New: func() any {
+		return new(CompanyVirtualShopDto)
+	},
+}
+
+// GetCompanyVirtualShopDto() 从对象池中获取CompanyVirtualShopDto
+func GetCompanyVirtualShopDto() *CompanyVirtualShopDto {
+	return poolCompanyVirtualShopDto.Get().(*CompanyVirtualShopDto)
+}
+
+// ReleaseCompanyVirtualShopDto 释放CompanyVirtualShopDto
+func ReleaseCompanyVirtualShopDto(v *CompanyVirtualShopDto) {
+	v.OuterShopId = ""
+	v.OuterTargetId = ""
+	v.Name = ""
+	v.Logo = ""
+	v.BackgroundImage = ""
+	v.BannerImage = ""
+	v.Type = 0
+	v.IsDeleted = 0
+	poolCompanyVirtualShopDto.Put(v)
 }

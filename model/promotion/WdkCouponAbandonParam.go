@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // WdkCouponAbandonParam 结构体
 type WdkCouponAbandonParam struct {
 	// 券涞源 写死
@@ -12,4 +16,25 @@ type WdkCouponAbandonParam struct {
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// 卡券实例id
 	VoucherId int64 `json:"voucher_id,omitempty" xml:"voucher_id,omitempty"`
+}
+
+var poolWdkCouponAbandonParam = sync.Pool{
+	New: func() any {
+		return new(WdkCouponAbandonParam)
+	},
+}
+
+// GetWdkCouponAbandonParam() 从对象池中获取WdkCouponAbandonParam
+func GetWdkCouponAbandonParam() *WdkCouponAbandonParam {
+	return poolWdkCouponAbandonParam.Get().(*WdkCouponAbandonParam)
+}
+
+// ReleaseWdkCouponAbandonParam 释放WdkCouponAbandonParam
+func ReleaseWdkCouponAbandonParam(v *WdkCouponAbandonParam) {
+	v.CouponSource = ""
+	v.TemplateId = ""
+	v.MaCode = ""
+	v.UserId = 0
+	v.VoucherId = 0
+	poolWdkCouponAbandonParam.Put(v)
 }

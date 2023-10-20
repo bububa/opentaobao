@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoLogisticsWmsPackageexceptionReportAPIRequest struct {
 // NewTaobaoLogisticsWmsPackageexceptionReportRequest 初始化TaobaoLogisticsWmsPackageexceptionReportAPIRequest对象
 func NewTaobaoLogisticsWmsPackageexceptionReportRequest() *TaobaoLogisticsWmsPackageexceptionReportAPIRequest {
 	return &TaobaoLogisticsWmsPackageexceptionReportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsWmsPackageexceptionReportAPIRequest) Reset() {
+	r._reportExceptionRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoLogisticsWmsPackageexceptionReportAPIRequest) SetReportExceptionR
 // GetReportExceptionRequest ReportExceptionRequest Getter
 func (r TaobaoLogisticsWmsPackageexceptionReportAPIRequest) GetReportExceptionRequest() *ReportExceptionRequest {
 	return r._reportExceptionRequest
+}
+
+var poolTaobaoLogisticsWmsPackageexceptionReportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsWmsPackageexceptionReportRequest()
+	},
+}
+
+// GetTaobaoLogisticsWmsPackageexceptionReportRequest 从 sync.Pool 获取 TaobaoLogisticsWmsPackageexceptionReportAPIRequest
+func GetTaobaoLogisticsWmsPackageexceptionReportAPIRequest() *TaobaoLogisticsWmsPackageexceptionReportAPIRequest {
+	return poolTaobaoLogisticsWmsPackageexceptionReportAPIRequest.Get().(*TaobaoLogisticsWmsPackageexceptionReportAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsWmsPackageexceptionReportAPIRequest 将 TaobaoLogisticsWmsPackageexceptionReportAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsWmsPackageexceptionReportAPIRequest(v *TaobaoLogisticsWmsPackageexceptionReportAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsWmsPackageexceptionReportAPIRequest.Put(v)
 }

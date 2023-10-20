@@ -2,6 +2,7 @@ package icbushowcase
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaScbpShowcaseUpdateproductAPIRequest struct {
 // NewAlibabaScbpShowcaseUpdateproductRequest 初始化AlibabaScbpShowcaseUpdateproductAPIRequest对象
 func NewAlibabaScbpShowcaseUpdateproductRequest() *AlibabaScbpShowcaseUpdateproductAPIRequest {
 	return &AlibabaScbpShowcaseUpdateproductAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpShowcaseUpdateproductAPIRequest) Reset() {
+	r._windowId = 0
+	r._newProductId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaScbpShowcaseUpdateproductAPIRequest) SetNewProductId(_newProduct
 // GetNewProductId NewProductId Getter
 func (r AlibabaScbpShowcaseUpdateproductAPIRequest) GetNewProductId() int64 {
 	return r._newProductId
+}
+
+var poolAlibabaScbpShowcaseUpdateproductAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpShowcaseUpdateproductRequest()
+	},
+}
+
+// GetAlibabaScbpShowcaseUpdateproductRequest 从 sync.Pool 获取 AlibabaScbpShowcaseUpdateproductAPIRequest
+func GetAlibabaScbpShowcaseUpdateproductAPIRequest() *AlibabaScbpShowcaseUpdateproductAPIRequest {
+	return poolAlibabaScbpShowcaseUpdateproductAPIRequest.Get().(*AlibabaScbpShowcaseUpdateproductAPIRequest)
+}
+
+// ReleaseAlibabaScbpShowcaseUpdateproductAPIRequest 将 AlibabaScbpShowcaseUpdateproductAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpShowcaseUpdateproductAPIRequest(v *AlibabaScbpShowcaseUpdateproductAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpShowcaseUpdateproductAPIRequest.Put(v)
 }

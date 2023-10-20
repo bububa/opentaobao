@@ -1,5 +1,9 @@
 package miniappopen
 
+import (
+	"sync"
+)
+
 // TaobaoMiniappDistributionMaterialGetModel 结构体
 type TaobaoMiniappDistributionMaterialGetModel struct {
 	// 素材名字
@@ -20,4 +24,29 @@ type TaobaoMiniappDistributionMaterialGetModel struct {
 	CardId int64 `json:"card_id,omitempty" xml:"card_id,omitempty"`
 	// 支持的投放入口场景id
 	SceneId int64 `json:"scene_id,omitempty" xml:"scene_id,omitempty"`
+}
+
+var poolTaobaoMiniappDistributionMaterialGetModel = sync.Pool{
+	New: func() any {
+		return new(TaobaoMiniappDistributionMaterialGetModel)
+	},
+}
+
+// GetTaobaoMiniappDistributionMaterialGetModel() 从对象池中获取TaobaoMiniappDistributionMaterialGetModel
+func GetTaobaoMiniappDistributionMaterialGetModel() *TaobaoMiniappDistributionMaterialGetModel {
+	return poolTaobaoMiniappDistributionMaterialGetModel.Get().(*TaobaoMiniappDistributionMaterialGetModel)
+}
+
+// ReleaseTaobaoMiniappDistributionMaterialGetModel 释放TaobaoMiniappDistributionMaterialGetModel
+func ReleaseTaobaoMiniappDistributionMaterialGetModel(v *TaobaoMiniappDistributionMaterialGetModel) {
+	v.Name = ""
+	v.DataStr = ""
+	v.Path = ""
+	v.QParamsValueStr = ""
+	v.PParamsValueStr = ""
+	v.Id = 0
+	v.AppId = 0
+	v.CardId = 0
+	v.SceneId = 0
+	poolTaobaoMiniappDistributionMaterialGetModel.Put(v)
 }

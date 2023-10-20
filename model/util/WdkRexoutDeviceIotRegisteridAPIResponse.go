@@ -2,6 +2,7 @@ package util
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type WdkRexoutDeviceIotRegisteridAPIResponse struct {
 	model.CommonResponse
 	WdkRexoutDeviceIotRegisteridAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *WdkRexoutDeviceIotRegisteridAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.WdkRexoutDeviceIotRegisteridAPIResponseModel).Reset()
 }
 
 // WdkRexoutDeviceIotRegisteridAPIResponseModel is 通过设备ID获取三元组-外部 成功返回结果
@@ -28,4 +35,30 @@ type WdkRexoutDeviceIotRegisteridAPIResponseModel struct {
 	Data *IotRegisterResult `json:"data,omitempty" xml:"data,omitempty"`
 	// 结果
 	Succeed bool `json:"succeed,omitempty" xml:"succeed,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *WdkRexoutDeviceIotRegisteridAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.MsgInfo = ""
+	m.MsgCode = ""
+	m.Data = nil
+	m.Succeed = false
+}
+
+var poolWdkRexoutDeviceIotRegisteridAPIResponse = sync.Pool{
+	New: func() any {
+		return new(WdkRexoutDeviceIotRegisteridAPIResponse)
+	},
+}
+
+// GetWdkRexoutDeviceIotRegisteridAPIResponse 从 sync.Pool 获取 WdkRexoutDeviceIotRegisteridAPIResponse
+func GetWdkRexoutDeviceIotRegisteridAPIResponse() *WdkRexoutDeviceIotRegisteridAPIResponse {
+	return poolWdkRexoutDeviceIotRegisteridAPIResponse.Get().(*WdkRexoutDeviceIotRegisteridAPIResponse)
+}
+
+// ReleaseWdkRexoutDeviceIotRegisteridAPIResponse 将 WdkRexoutDeviceIotRegisteridAPIResponse 保存到 sync.Pool
+func ReleaseWdkRexoutDeviceIotRegisteridAPIResponse(v *WdkRexoutDeviceIotRegisteridAPIResponse) {
+	v.Reset()
+	poolWdkRexoutDeviceIotRegisteridAPIResponse.Put(v)
 }

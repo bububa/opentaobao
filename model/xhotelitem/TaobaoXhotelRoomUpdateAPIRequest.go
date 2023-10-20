@@ -2,6 +2,7 @@ package xhotelitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -53,8 +54,31 @@ type TaobaoXhotelRoomUpdateAPIRequest struct {
 // NewTaobaoXhotelRoomUpdateRequest 初始化TaobaoXhotelRoomUpdateAPIRequest对象
 func NewTaobaoXhotelRoomUpdateRequest() *TaobaoXhotelRoomUpdateAPIRequest {
 	return &TaobaoXhotelRoomUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(18),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelRoomUpdateAPIRequest) Reset() {
+	r._outRid = ""
+	r._vendor = ""
+	r._title = ""
+	r._guide = ""
+	r._desc = ""
+	r._receiptType = ""
+	r._receiptOtherTypeDesc = ""
+	r._receiptInfo = ""
+	r._inventory = ""
+	r._roomSwitchCal = ""
+	r._superbookEndTime = ""
+	r._superbookStartTime = ""
+	r._allotmentEndTime = ""
+	r._allotmentStartTime = ""
+	r._gid = 0
+	r._pic = nil
+	r._status = 0
+	r._hasReceipt = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -306,4 +330,21 @@ func (r *TaobaoXhotelRoomUpdateAPIRequest) SetHasReceipt(_hasReceipt bool) error
 // GetHasReceipt HasReceipt Getter
 func (r TaobaoXhotelRoomUpdateAPIRequest) GetHasReceipt() bool {
 	return r._hasReceipt
+}
+
+var poolTaobaoXhotelRoomUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelRoomUpdateRequest()
+	},
+}
+
+// GetTaobaoXhotelRoomUpdateRequest 从 sync.Pool 获取 TaobaoXhotelRoomUpdateAPIRequest
+func GetTaobaoXhotelRoomUpdateAPIRequest() *TaobaoXhotelRoomUpdateAPIRequest {
+	return poolTaobaoXhotelRoomUpdateAPIRequest.Get().(*TaobaoXhotelRoomUpdateAPIRequest)
+}
+
+// ReleaseTaobaoXhotelRoomUpdateAPIRequest 将 TaobaoXhotelRoomUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelRoomUpdateAPIRequest(v *TaobaoXhotelRoomUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelRoomUpdateAPIRequest.Put(v)
 }

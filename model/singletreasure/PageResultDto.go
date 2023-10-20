@@ -1,5 +1,9 @@
 package singletreasure
 
+import (
+	"sync"
+)
+
 // PageResultDto 结构体
 type PageResultDto struct {
 	// 查询结果
@@ -16,4 +20,27 @@ type PageResultDto struct {
 	Size int64 `json:"size,omitempty" xml:"size,omitempty"`
 	// 系统执行成功与否
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolPageResultDto = sync.Pool{
+	New: func() any {
+		return new(PageResultDto)
+	},
+}
+
+// GetPageResultDto() 从对象池中获取PageResultDto
+func GetPageResultDto() *PageResultDto {
+	return poolPageResultDto.Get().(*PageResultDto)
+}
+
+// ReleasePageResultDto 释放PageResultDto
+func ReleasePageResultDto(v *PageResultDto) {
+	v.DataList = v.DataList[:0]
+	v.Message = ""
+	v.TotalCount = 0
+	v.PageNumber = 0
+	v.Code = 0
+	v.Size = 0
+	v.Success = false
+	poolPageResultDto.Put(v)
 }

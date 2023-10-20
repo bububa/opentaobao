@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // IePassengerAuxVo 结构体
 type IePassengerAuxVo struct {
 	// 乘机人姓名
@@ -10,4 +14,24 @@ type IePassengerAuxVo struct {
 	AuxProductVo *IeAuxProductVo `json:"aux_product_vo,omitempty" xml:"aux_product_vo,omitempty"`
 	// 订购数量，默认1
 	BookNum int64 `json:"book_num,omitempty" xml:"book_num,omitempty"`
+}
+
+var poolIePassengerAuxVo = sync.Pool{
+	New: func() any {
+		return new(IePassengerAuxVo)
+	},
+}
+
+// GetIePassengerAuxVo() 从对象池中获取IePassengerAuxVo
+func GetIePassengerAuxVo() *IePassengerAuxVo {
+	return poolIePassengerAuxVo.Get().(*IePassengerAuxVo)
+}
+
+// ReleaseIePassengerAuxVo 释放IePassengerAuxVo
+func ReleaseIePassengerAuxVo(v *IePassengerAuxVo) {
+	v.Name = ""
+	v.FlightVo = nil
+	v.AuxProductVo = nil
+	v.BookNum = 0
+	poolIePassengerAuxVo.Put(v)
 }

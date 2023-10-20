@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenIsvBillSettlementFlightRs 结构体
 type OpenIsvBillSettlementFlightRs struct {
 	// 出行人名称
@@ -144,4 +148,91 @@ type OpenIsvBillSettlementFlightRs struct {
 	AdvanceDay int64 `json:"advance_day,omitempty" xml:"advance_day,omitempty"`
 	// 票据类型，枚举详见语雀
 	VoucherType int64 `json:"voucher_type,omitempty" xml:"voucher_type,omitempty"`
+}
+
+var poolOpenIsvBillSettlementFlightRs = sync.Pool{
+	New: func() any {
+		return new(OpenIsvBillSettlementFlightRs)
+	},
+}
+
+// GetOpenIsvBillSettlementFlightRs() 从对象池中获取OpenIsvBillSettlementFlightRs
+func GetOpenIsvBillSettlementFlightRs() *OpenIsvBillSettlementFlightRs {
+	return poolOpenIsvBillSettlementFlightRs.Get().(*OpenIsvBillSettlementFlightRs)
+}
+
+// ReleaseOpenIsvBillSettlementFlightRs 释放OpenIsvBillSettlementFlightRs
+func ReleaseOpenIsvBillSettlementFlightRs(v *OpenIsvBillSettlementFlightRs) {
+	v.TravelerName = ""
+	v.CabinClass = ""
+	v.BuildFee = ""
+	v.RefundFee = ""
+	v.ArrDate = ""
+	v.OrderId = ""
+	v.DepartmentId = ""
+	v.Discount = ""
+	v.ChangeFee = ""
+	v.UpgradeCost = ""
+	v.OverApplyId = ""
+	v.ApplyId = ""
+	v.BookerId = ""
+	v.MostDifferencePrice = ""
+	v.CostCenterNumber = ""
+	v.ItineraryNum = ""
+	v.InvoiceTitle = ""
+	v.ServiceFee = ""
+	v.ItineraryPrice = ""
+	v.ArrStation = ""
+	v.CostCenter = ""
+	v.SettlementFee = ""
+	v.Index = ""
+	v.BookTime = ""
+	v.FeeType = ""
+	v.FlightNo = ""
+	v.CorpPayOrderFee = ""
+	v.OilFee = ""
+	v.BtripCouponFee = ""
+	v.RepeatRefund = ""
+	v.DeptCity = ""
+	v.ProjectName = ""
+	v.ArrAirportCode = ""
+	v.TicketId = ""
+	v.AirlineCorpCode = ""
+	v.DeptStation = ""
+	v.DeptTime = ""
+	v.MostPrice = ""
+	v.ArrCity = ""
+	v.Cabin = ""
+	v.DepAirportCode = ""
+	v.ProjectCode = ""
+	v.CascadeDepartment = ""
+	v.Department = ""
+	v.MostDifferenceDiscount = ""
+	v.SettlementType = ""
+	v.Coupon = ""
+	v.AlipayTradeNo = ""
+	v.AirlineCorpName = ""
+	v.MostDifferenceFlightNo = ""
+	v.BookerName = ""
+	v.RefundUpgradeCost = ""
+	v.TravelerId = ""
+	v.CapitalDirection = ""
+	v.InsuranceFee = ""
+	v.SealPrice = ""
+	v.SettlementTime = ""
+	v.MostDifferenceDeptTime = ""
+	v.MostDifferenceReason = ""
+	v.NegotiationCouponFee = ""
+	v.ArrTime = ""
+	v.DeptDate = ""
+	v.BookerJobNo = ""
+	v.TravelerJobNo = ""
+	v.BillRecordTime = ""
+	v.SettlementGrantFee = ""
+	v.Remark = ""
+	v.PrimaryId = 0
+	v.Status = 0
+	v.AdvanceDay = 0
+	v.VoucherType = 0
+	poolOpenIsvBillSettlementFlightRs.Put(v)
 }

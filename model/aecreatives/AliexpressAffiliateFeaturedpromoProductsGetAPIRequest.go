@@ -2,6 +2,7 @@ package aecreatives
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -43,8 +44,26 @@ type AliexpressAffiliateFeaturedpromoProductsGetAPIRequest struct {
 // NewAliexpressAffiliateFeaturedpromoProductsGetRequest 初始化AliexpressAffiliateFeaturedpromoProductsGetAPIRequest对象
 func NewAliexpressAffiliateFeaturedpromoProductsGetRequest() *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest {
 	return &AliexpressAffiliateFeaturedpromoProductsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(13),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) Reset() {
+	r._appSignature = ""
+	r._categoryId = ""
+	r._fields = ""
+	r._promotionEndTime = ""
+	r._promotionName = ""
+	r._promotionStartTime = ""
+	r._sort = ""
+	r._targetCurrency = ""
+	r._targetLanguage = ""
+	r._trackingId = ""
+	r._country = ""
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -231,4 +250,21 @@ func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetPageSize(_pag
 // GetPageSize PageSize Getter
 func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAliexpressAffiliateFeaturedpromoProductsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliexpressAffiliateFeaturedpromoProductsGetRequest()
+	},
+}
+
+// GetAliexpressAffiliateFeaturedpromoProductsGetRequest 从 sync.Pool 获取 AliexpressAffiliateFeaturedpromoProductsGetAPIRequest
+func GetAliexpressAffiliateFeaturedpromoProductsGetAPIRequest() *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest {
+	return poolAliexpressAffiliateFeaturedpromoProductsGetAPIRequest.Get().(*AliexpressAffiliateFeaturedpromoProductsGetAPIRequest)
+}
+
+// ReleaseAliexpressAffiliateFeaturedpromoProductsGetAPIRequest 将 AliexpressAffiliateFeaturedpromoProductsGetAPIRequest 放入 sync.Pool
+func ReleaseAliexpressAffiliateFeaturedpromoProductsGetAPIRequest(v *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) {
+	v.Reset()
+	poolAliexpressAffiliateFeaturedpromoProductsGetAPIRequest.Put(v)
 }

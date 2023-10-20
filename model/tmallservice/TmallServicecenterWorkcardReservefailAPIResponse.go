@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallServicecenterWorkcardReservefailAPIResponse struct {
 	TmallServicecenterWorkcardReservefailAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallServicecenterWorkcardReservefailAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallServicecenterWorkcardReservefailAPIResponseModel).Reset()
+}
+
 // TmallServicecenterWorkcardReservefailAPIResponseModel is 预约失败 成功返回结果
 type TmallServicecenterWorkcardReservefailAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_workcard_reservefail_response"`
@@ -22,4 +29,27 @@ type TmallServicecenterWorkcardReservefailAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// -
 	Result *TmallServicecenterWorkcardReservefailResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallServicecenterWorkcardReservefailAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTmallServicecenterWorkcardReservefailAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallServicecenterWorkcardReservefailAPIResponse)
+	},
+}
+
+// GetTmallServicecenterWorkcardReservefailAPIResponse 从 sync.Pool 获取 TmallServicecenterWorkcardReservefailAPIResponse
+func GetTmallServicecenterWorkcardReservefailAPIResponse() *TmallServicecenterWorkcardReservefailAPIResponse {
+	return poolTmallServicecenterWorkcardReservefailAPIResponse.Get().(*TmallServicecenterWorkcardReservefailAPIResponse)
+}
+
+// ReleaseTmallServicecenterWorkcardReservefailAPIResponse 将 TmallServicecenterWorkcardReservefailAPIResponse 保存到 sync.Pool
+func ReleaseTmallServicecenterWorkcardReservefailAPIResponse(v *TmallServicecenterWorkcardReservefailAPIResponse) {
+	v.Reset()
+	poolTmallServicecenterWorkcardReservefailAPIResponse.Put(v)
 }

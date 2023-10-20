@@ -1,5 +1,9 @@
 package bus
 
+import (
+	"sync"
+)
+
 // TaobaoAlitripBusTicketsInsuranceRecommendResult 结构体
 type TaobaoAlitripBusTicketsInsuranceRecommendResult struct {
 	// 扩展预留
@@ -12,4 +16,25 @@ type TaobaoAlitripBusTicketsInsuranceRecommendResult struct {
 	Response *TopStandardInsRecommendResponse `json:"response,omitempty" xml:"response,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoAlitripBusTicketsInsuranceRecommendResult = sync.Pool{
+	New: func() any {
+		return new(TaobaoAlitripBusTicketsInsuranceRecommendResult)
+	},
+}
+
+// GetTaobaoAlitripBusTicketsInsuranceRecommendResult() 从对象池中获取TaobaoAlitripBusTicketsInsuranceRecommendResult
+func GetTaobaoAlitripBusTicketsInsuranceRecommendResult() *TaobaoAlitripBusTicketsInsuranceRecommendResult {
+	return poolTaobaoAlitripBusTicketsInsuranceRecommendResult.Get().(*TaobaoAlitripBusTicketsInsuranceRecommendResult)
+}
+
+// ReleaseTaobaoAlitripBusTicketsInsuranceRecommendResult 释放TaobaoAlitripBusTicketsInsuranceRecommendResult
+func ReleaseTaobaoAlitripBusTicketsInsuranceRecommendResult(v *TaobaoAlitripBusTicketsInsuranceRecommendResult) {
+	v.BizExtMap = ""
+	v.MsgInfo = ""
+	v.MsgCode = ""
+	v.Response = nil
+	v.Success = false
+	poolTaobaoAlitripBusTicketsInsuranceRecommendResult.Put(v)
 }

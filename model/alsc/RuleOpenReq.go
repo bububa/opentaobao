@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // RuleOpenReq 结构体
 type RuleOpenReq struct {
 	// saas品牌id
@@ -14,4 +18,26 @@ type RuleOpenReq struct {
 	PhysicalCardId string `json:"physical_card_id,omitempty" xml:"physical_card_id,omitempty"`
 	// saas门店id
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
+}
+
+var poolRuleOpenReq = sync.Pool{
+	New: func() any {
+		return new(RuleOpenReq)
+	},
+}
+
+// GetRuleOpenReq() 从对象池中获取RuleOpenReq
+func GetRuleOpenReq() *RuleOpenReq {
+	return poolRuleOpenReq.Get().(*RuleOpenReq)
+}
+
+// ReleaseRuleOpenReq 释放RuleOpenReq
+func ReleaseRuleOpenReq(v *RuleOpenReq) {
+	v.BrandId = ""
+	v.Mobile = ""
+	v.OuterId = ""
+	v.OuterType = ""
+	v.PhysicalCardId = ""
+	v.ShopId = ""
+	poolRuleOpenReq.Put(v)
 }

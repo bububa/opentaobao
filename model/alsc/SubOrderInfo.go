@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // SubOrderInfo 结构体
 type SubOrderInfo struct {
 	// 商品ID
@@ -28,4 +32,33 @@ type SubOrderInfo struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 商品总金额,包含配料，做法
 	SubTotalFee int64 `json:"sub_total_fee,omitempty" xml:"sub_total_fee,omitempty"`
+}
+
+var poolSubOrderInfo = sync.Pool{
+	New: func() any {
+		return new(SubOrderInfo)
+	},
+}
+
+// GetSubOrderInfo() 从对象池中获取SubOrderInfo
+func GetSubOrderInfo() *SubOrderInfo {
+	return poolSubOrderInfo.Get().(*SubOrderInfo)
+}
+
+// ReleaseSubOrderInfo 释放SubOrderInfo
+func ReleaseSubOrderInfo(v *SubOrderInfo) {
+	v.OutItemId = ""
+	v.OutItemName = ""
+	v.OutOrderNo = ""
+	v.OutSkuId = ""
+	v.OutSkuName = ""
+	v.OutSubOrderNo = ""
+	v.Remark = ""
+	v.Unit = ""
+	v.Weight = ""
+	v.ItemAttachFee = 0
+	v.Price = 0
+	v.Quantity = 0
+	v.SubTotalFee = 0
+	poolSubOrderInfo.Put(v)
 }

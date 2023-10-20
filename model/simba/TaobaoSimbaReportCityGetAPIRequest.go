@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoSimbaReportCityGetAPIRequest struct {
 // NewTaobaoSimbaReportCityGetRequest 初始化TaobaoSimbaReportCityGetAPIRequest对象
 func NewTaobaoSimbaReportCityGetRequest() *TaobaoSimbaReportCityGetAPIRequest {
 	return &TaobaoSimbaReportCityGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaReportCityGetAPIRequest) Reset() {
+	r._nick = ""
+	r._theDate = ""
+	r._hour = ""
+	r._campaignId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoSimbaReportCityGetAPIRequest) SetCampaignId(_campaignId string) e
 // GetCampaignId CampaignId Getter
 func (r TaobaoSimbaReportCityGetAPIRequest) GetCampaignId() string {
 	return r._campaignId
+}
+
+var poolTaobaoSimbaReportCityGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaReportCityGetRequest()
+	},
+}
+
+// GetTaobaoSimbaReportCityGetRequest 从 sync.Pool 获取 TaobaoSimbaReportCityGetAPIRequest
+func GetTaobaoSimbaReportCityGetAPIRequest() *TaobaoSimbaReportCityGetAPIRequest {
+	return poolTaobaoSimbaReportCityGetAPIRequest.Get().(*TaobaoSimbaReportCityGetAPIRequest)
+}
+
+// ReleaseTaobaoSimbaReportCityGetAPIRequest 将 TaobaoSimbaReportCityGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaReportCityGetAPIRequest(v *TaobaoSimbaReportCityGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaReportCityGetAPIRequest.Put(v)
 }

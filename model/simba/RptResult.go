@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // RptResult 结构体
 type RptResult struct {
 	// ctr
@@ -16,4 +20,27 @@ type RptResult struct {
 	Impression string `json:"impression,omitempty" xml:"impression,omitempty"`
 	// 点击量
 	Click string `json:"click,omitempty" xml:"click,omitempty"`
+}
+
+var poolRptResult = sync.Pool{
+	New: func() any {
+		return new(RptResult)
+	},
+}
+
+// GetRptResult() 从对象池中获取RptResult
+func GetRptResult() *RptResult {
+	return poolRptResult.Get().(*RptResult)
+}
+
+// ReleaseRptResult 释放RptResult
+func ReleaseRptResult(v *RptResult) {
+	v.Ctr = ""
+	v.Cost = ""
+	v.IsAutomatch = ""
+	v.Cpc = ""
+	v.TimePeriod = ""
+	v.Impression = ""
+	v.Click = ""
+	poolRptResult.Put(v)
 }

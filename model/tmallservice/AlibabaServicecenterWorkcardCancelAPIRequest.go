@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -31,8 +32,20 @@ type AlibabaServicecenterWorkcardCancelAPIRequest struct {
 // NewAlibabaServicecenterWorkcardCancelRequest 初始化AlibabaServicecenterWorkcardCancelAPIRequest对象
 func NewAlibabaServicecenterWorkcardCancelRequest() *AlibabaServicecenterWorkcardCancelAPIRequest {
 	return &AlibabaServicecenterWorkcardCancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(7),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaServicecenterWorkcardCancelAPIRequest) Reset() {
+	r._memo = ""
+	r._realTpNick = ""
+	r._reasonDesc = ""
+	r._workcardId = 0
+	r._serviceOrderId = 0
+	r._type = 0
+	r._reasonCode = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -141,4 +154,21 @@ func (r *AlibabaServicecenterWorkcardCancelAPIRequest) SetReasonCode(_reasonCode
 // GetReasonCode ReasonCode Getter
 func (r AlibabaServicecenterWorkcardCancelAPIRequest) GetReasonCode() int64 {
 	return r._reasonCode
+}
+
+var poolAlibabaServicecenterWorkcardCancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaServicecenterWorkcardCancelRequest()
+	},
+}
+
+// GetAlibabaServicecenterWorkcardCancelRequest 从 sync.Pool 获取 AlibabaServicecenterWorkcardCancelAPIRequest
+func GetAlibabaServicecenterWorkcardCancelAPIRequest() *AlibabaServicecenterWorkcardCancelAPIRequest {
+	return poolAlibabaServicecenterWorkcardCancelAPIRequest.Get().(*AlibabaServicecenterWorkcardCancelAPIRequest)
+}
+
+// ReleaseAlibabaServicecenterWorkcardCancelAPIRequest 将 AlibabaServicecenterWorkcardCancelAPIRequest 放入 sync.Pool
+func ReleaseAlibabaServicecenterWorkcardCancelAPIRequest(v *AlibabaServicecenterWorkcardCancelAPIRequest) {
+	v.Reset()
+	poolAlibabaServicecenterWorkcardCancelAPIRequest.Put(v)
 }

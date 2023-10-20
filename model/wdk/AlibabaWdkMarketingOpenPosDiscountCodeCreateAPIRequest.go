@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkMarketingOpenPosDiscountCodeCreateAPIRequest struct {
 // NewAlibabaWdkMarketingOpenPosDiscountCodeCreateRequest 初始化AlibabaWdkMarketingOpenPosDiscountCodeCreateAPIRequest对象
 func NewAlibabaWdkMarketingOpenPosDiscountCodeCreateRequest() *AlibabaWdkMarketingOpenPosDiscountCodeCreateAPIRequest {
 	return &AlibabaWdkMarketingOpenPosDiscountCodeCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkMarketingOpenPosDiscountCodeCreateAPIRequest) Reset() {
+	r._uniqueDiscountCodeRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkMarketingOpenPosDiscountCodeCreateAPIRequest) SetUniqueDiscou
 // GetUniqueDiscountCodeRequest UniqueDiscountCodeRequest Getter
 func (r AlibabaWdkMarketingOpenPosDiscountCodeCreateAPIRequest) GetUniqueDiscountCodeRequest() *UniqueDiscountCodeRequest {
 	return r._uniqueDiscountCodeRequest
+}
+
+var poolAlibabaWdkMarketingOpenPosDiscountCodeCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkMarketingOpenPosDiscountCodeCreateRequest()
+	},
+}
+
+// GetAlibabaWdkMarketingOpenPosDiscountCodeCreateRequest 从 sync.Pool 获取 AlibabaWdkMarketingOpenPosDiscountCodeCreateAPIRequest
+func GetAlibabaWdkMarketingOpenPosDiscountCodeCreateAPIRequest() *AlibabaWdkMarketingOpenPosDiscountCodeCreateAPIRequest {
+	return poolAlibabaWdkMarketingOpenPosDiscountCodeCreateAPIRequest.Get().(*AlibabaWdkMarketingOpenPosDiscountCodeCreateAPIRequest)
+}
+
+// ReleaseAlibabaWdkMarketingOpenPosDiscountCodeCreateAPIRequest 将 AlibabaWdkMarketingOpenPosDiscountCodeCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkMarketingOpenPosDiscountCodeCreateAPIRequest(v *AlibabaWdkMarketingOpenPosDiscountCodeCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkMarketingOpenPosDiscountCodeCreateAPIRequest.Put(v)
 }

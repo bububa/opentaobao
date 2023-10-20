@@ -1,5 +1,9 @@
 package tblogistics
 
+import (
+	"sync"
+)
+
 // AlibabaAscpLogisticsInstantsonlineCalldeliveryTopResult 结构体
 type AlibabaAscpLogisticsInstantsonlineCalldeliveryTopResult struct {
 	// 取号流水号
@@ -14,4 +18,26 @@ type AlibabaAscpLogisticsInstantsonlineCalldeliveryTopResult struct {
 	Features string `json:"features,omitempty" xml:"features,omitempty"`
 	// 执行结果
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaAscpLogisticsInstantsonlineCalldeliveryTopResult = sync.Pool{
+	New: func() any {
+		return new(AlibabaAscpLogisticsInstantsonlineCalldeliveryTopResult)
+	},
+}
+
+// GetAlibabaAscpLogisticsInstantsonlineCalldeliveryTopResult() 从对象池中获取AlibabaAscpLogisticsInstantsonlineCalldeliveryTopResult
+func GetAlibabaAscpLogisticsInstantsonlineCalldeliveryTopResult() *AlibabaAscpLogisticsInstantsonlineCalldeliveryTopResult {
+	return poolAlibabaAscpLogisticsInstantsonlineCalldeliveryTopResult.Get().(*AlibabaAscpLogisticsInstantsonlineCalldeliveryTopResult)
+}
+
+// ReleaseAlibabaAscpLogisticsInstantsonlineCalldeliveryTopResult 释放AlibabaAscpLogisticsInstantsonlineCalldeliveryTopResult
+func ReleaseAlibabaAscpLogisticsInstantsonlineCalldeliveryTopResult(v *AlibabaAscpLogisticsInstantsonlineCalldeliveryTopResult) {
+	v.CwOrderId = ""
+	v.WaybillCode = ""
+	v.ResourceCode = ""
+	v.PickupCode = ""
+	v.Features = ""
+	v.Success = false
+	poolAlibabaAscpLogisticsInstantsonlineCalldeliveryTopResult.Put(v)
 }

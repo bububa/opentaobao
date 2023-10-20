@@ -9,11 +9,6 @@ import (
 // alibaba.security.jaq.rp.ocr.check
 //
 // 聚安全实人认证证件OCR识别功能接口
-func AlibabaSecurityJaqRpOcrCheck(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpOcrCheckAPIRequest, session string) (*security.AlibabaSecurityJaqRpOcrCheckAPIResponse, error) {
-	var resp security.AlibabaSecurityJaqRpOcrCheckAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaSecurityJaqRpOcrCheck(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpOcrCheckAPIRequest, resp *security.AlibabaSecurityJaqRpOcrCheckAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

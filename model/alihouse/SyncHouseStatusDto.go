@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // SyncHouseStatusDto 结构体
 type SyncHouseStatusDto struct {
 	// 外部小区id
@@ -16,4 +20,27 @@ type SyncHouseStatusDto struct {
 	MerchantOpenId int64 `json:"merchant_open_id,omitempty" xml:"merchant_open_id,omitempty"`
 	// 1
 	BillPayItemId int64 `json:"bill_pay_item_id,omitempty" xml:"bill_pay_item_id,omitempty"`
+}
+
+var poolSyncHouseStatusDto = sync.Pool{
+	New: func() any {
+		return new(SyncHouseStatusDto)
+	},
+}
+
+// GetSyncHouseStatusDto() 从对象池中获取SyncHouseStatusDto
+func GetSyncHouseStatusDto() *SyncHouseStatusDto {
+	return poolSyncHouseStatusDto.Get().(*SyncHouseStatusDto)
+}
+
+// ReleaseSyncHouseStatusDto 释放SyncHouseStatusDto
+func ReleaseSyncHouseStatusDto(v *SyncHouseStatusDto) {
+	v.CommunityOuterId = ""
+	v.OuterId = ""
+	v.UpdateTime = ""
+	v.EntrustItemId = 0
+	v.OnlineStatus = 0
+	v.MerchantOpenId = 0
+	v.BillPayItemId = 0
+	poolSyncHouseStatusDto.Put(v)
 }

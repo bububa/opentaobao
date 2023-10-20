@@ -2,6 +2,7 @@ package eleenterpriserestaurant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest struct {
 // NewAlibabaEleEnterpriseRestaurantMultispecmenuRequest 初始化AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest对象
 func NewAlibabaEleEnterpriseRestaurantMultispecmenuRequest() *AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest {
 	return &AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest) Reset() {
+	r._erestaurantId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest) SetErestaurantId
 // GetErestaurantId ErestaurantId Getter
 func (r AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest) GetErestaurantId() string {
 	return r._erestaurantId
+}
+
+var poolAlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEleEnterpriseRestaurantMultispecmenuRequest()
+	},
+}
+
+// GetAlibabaEleEnterpriseRestaurantMultispecmenuRequest 从 sync.Pool 获取 AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest
+func GetAlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest() *AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest {
+	return poolAlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest.Get().(*AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest)
+}
+
+// ReleaseAlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest 将 AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest(v *AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest) {
+	v.Reset()
+	poolAlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest.Put(v)
 }

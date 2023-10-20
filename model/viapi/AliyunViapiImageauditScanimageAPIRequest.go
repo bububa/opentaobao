@@ -2,6 +2,7 @@ package viapi
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AliyunViapiImageauditScanimageAPIRequest struct {
 // NewAliyunViapiImageauditScanimageRequest 初始化AliyunViapiImageauditScanimageAPIRequest对象
 func NewAliyunViapiImageauditScanimageRequest() *AliyunViapiImageauditScanimageAPIRequest {
 	return &AliyunViapiImageauditScanimageAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AliyunViapiImageauditScanimageAPIRequest) Reset() {
+	r._tasks = r._tasks[:0]
+	r._scenes = r._scenes[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AliyunViapiImageauditScanimageAPIRequest) SetScenes(_scenes []string) e
 // GetScenes Scenes Getter
 func (r AliyunViapiImageauditScanimageAPIRequest) GetScenes() []string {
 	return r._scenes
+}
+
+var poolAliyunViapiImageauditScanimageAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAliyunViapiImageauditScanimageRequest()
+	},
+}
+
+// GetAliyunViapiImageauditScanimageRequest 从 sync.Pool 获取 AliyunViapiImageauditScanimageAPIRequest
+func GetAliyunViapiImageauditScanimageAPIRequest() *AliyunViapiImageauditScanimageAPIRequest {
+	return poolAliyunViapiImageauditScanimageAPIRequest.Get().(*AliyunViapiImageauditScanimageAPIRequest)
+}
+
+// ReleaseAliyunViapiImageauditScanimageAPIRequest 将 AliyunViapiImageauditScanimageAPIRequest 放入 sync.Pool
+func ReleaseAliyunViapiImageauditScanimageAPIRequest(v *AliyunViapiImageauditScanimageAPIRequest) {
+	v.Reset()
+	poolAliyunViapiImageauditScanimageAPIRequest.Put(v)
 }

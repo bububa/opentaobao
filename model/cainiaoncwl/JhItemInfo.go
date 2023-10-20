@@ -1,5 +1,9 @@
 package cainiaoncwl
 
+import (
+	"sync"
+)
+
 // JhItemInfo 结构体
 type JhItemInfo struct {
 	// 商品名称
@@ -20,4 +24,29 @@ type JhItemInfo struct {
 	Volume int64 `json:"volume,omitempty" xml:"volume,omitempty"`
 	// 重量，单位，克
 	Weight int64 `json:"weight,omitempty" xml:"weight,omitempty"`
+}
+
+var poolJhItemInfo = sync.Pool{
+	New: func() any {
+		return new(JhItemInfo)
+	},
+}
+
+// GetJhItemInfo() 从对象池中获取JhItemInfo
+func GetJhItemInfo() *JhItemInfo {
+	return poolJhItemInfo.Get().(*JhItemInfo)
+}
+
+// ReleaseJhItemInfo 释放JhItemInfo
+func ReleaseJhItemInfo(v *JhItemInfo) {
+	v.Name = ""
+	v.OuterItemId = ""
+	v.PacakgeRule = ""
+	v.SellRule = ""
+	v.Quantity = 0
+	v.TbItemId = 0
+	v.TbSkuId = 0
+	v.Volume = 0
+	v.Weight = 0
+	poolJhItemInfo.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.qianniu.kefueval.get
 //
 // 获取买家对客服的服务评价
-func TaobaoQianniuKefuevalGet(clt *core.SDKClient, req *wangwang.TaobaoQianniuKefuevalGetAPIRequest, session string) (*wangwang.TaobaoQianniuKefuevalGetAPIResponse, error) {
-	var resp wangwang.TaobaoQianniuKefuevalGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoQianniuKefuevalGet(clt *core.SDKClient, req *wangwang.TaobaoQianniuKefuevalGetAPIRequest, resp *wangwang.TaobaoQianniuKefuevalGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

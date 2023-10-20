@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type TmallServicecenterServiceTypeQueryallAPIRequest struct {
 // NewTmallServicecenterServiceTypeQueryallRequest 初始化TmallServicecenterServiceTypeQueryallAPIRequest对象
 func NewTmallServicecenterServiceTypeQueryallRequest() *TmallServicecenterServiceTypeQueryallAPIRequest {
 	return &TmallServicecenterServiceTypeQueryallAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterServiceTypeQueryallAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r TmallServicecenterServiceTypeQueryallAPIRequest) GetApiParams(params url
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r TmallServicecenterServiceTypeQueryallAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolTmallServicecenterServiceTypeQueryallAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterServiceTypeQueryallRequest()
+	},
+}
+
+// GetTmallServicecenterServiceTypeQueryallRequest 从 sync.Pool 获取 TmallServicecenterServiceTypeQueryallAPIRequest
+func GetTmallServicecenterServiceTypeQueryallAPIRequest() *TmallServicecenterServiceTypeQueryallAPIRequest {
+	return poolTmallServicecenterServiceTypeQueryallAPIRequest.Get().(*TmallServicecenterServiceTypeQueryallAPIRequest)
+}
+
+// ReleaseTmallServicecenterServiceTypeQueryallAPIRequest 将 TmallServicecenterServiceTypeQueryallAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterServiceTypeQueryallAPIRequest(v *TmallServicecenterServiceTypeQueryallAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterServiceTypeQueryallAPIRequest.Put(v)
 }

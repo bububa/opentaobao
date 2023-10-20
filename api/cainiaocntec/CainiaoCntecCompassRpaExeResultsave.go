@@ -9,11 +9,6 @@ import (
 // cainiao.cntec.compass.rpa.exe.resultsave
 //
 // rpa执行结果回传
-func CainiaoCntecCompassRpaExeResultsave(clt *core.SDKClient, req *cainiaocntec.CainiaoCntecCompassRpaExeResultsaveAPIRequest, session string) (*cainiaocntec.CainiaoCntecCompassRpaExeResultsaveAPIResponse, error) {
-	var resp cainiaocntec.CainiaoCntecCompassRpaExeResultsaveAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func CainiaoCntecCompassRpaExeResultsave(clt *core.SDKClient, req *cainiaocntec.CainiaoCntecCompassRpaExeResultsaveAPIRequest, resp *cainiaocntec.CainiaoCntecCompassRpaExeResultsaveAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

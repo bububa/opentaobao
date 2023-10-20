@@ -2,6 +2,7 @@ package cainiaocntec
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest struct {
 // NewCainiaoCntecShopkeeperSupplyStatisticsQueryRequest 初始化CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest对象
 func NewCainiaoCntecShopkeeperSupplyStatisticsQueryRequest() *CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest {
 	return &CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest) Reset() {
+	r._queryActivityDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest) SetQueryActivity
 // GetQueryActivityDto QueryActivityDto Getter
 func (r CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest) GetQueryActivityDto() *QueryActivityDto {
 	return r._queryActivityDto
+}
+
+var poolCainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoCntecShopkeeperSupplyStatisticsQueryRequest()
+	},
+}
+
+// GetCainiaoCntecShopkeeperSupplyStatisticsQueryRequest 从 sync.Pool 获取 CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest
+func GetCainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest() *CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest {
+	return poolCainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest.Get().(*CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest)
+}
+
+// ReleaseCainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest 将 CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest 放入 sync.Pool
+func ReleaseCainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest(v *CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest) {
+	v.Reset()
+	poolCainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest.Put(v)
 }

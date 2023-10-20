@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.travel.fsc.route.api.project.close
 //
 // 关闭团期
-func TaobaoAlitripTravelFscRouteApiProjectClose(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelFscRouteApiProjectCloseAPIRequest, session string) (*axindata.TaobaoAlitripTravelFscRouteApiProjectCloseAPIResponse, error) {
-	var resp axindata.TaobaoAlitripTravelFscRouteApiProjectCloseAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripTravelFscRouteApiProjectClose(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelFscRouteApiProjectCloseAPIRequest, resp *axindata.TaobaoAlitripTravelFscRouteApiProjectCloseAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

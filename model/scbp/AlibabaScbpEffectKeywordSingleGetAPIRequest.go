@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,14 +14,20 @@ import (
 type AlibabaScbpEffectKeywordSingleGetAPIRequest struct {
 	model.Params
 	// IKeywordQuery
-	_p4pKeywordReportQuery *IkeywordQuery
+	_p4pKeywordReportQuery *IKeywordQuery
 }
 
 // NewAlibabaScbpEffectKeywordSingleGetRequest 初始化AlibabaScbpEffectKeywordSingleGetAPIRequest对象
 func NewAlibabaScbpEffectKeywordSingleGetRequest() *AlibabaScbpEffectKeywordSingleGetAPIRequest {
 	return &AlibabaScbpEffectKeywordSingleGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpEffectKeywordSingleGetAPIRequest) Reset() {
+	r._p4pKeywordReportQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -42,13 +49,30 @@ func (r AlibabaScbpEffectKeywordSingleGetAPIRequest) GetRawParams() model.Params
 
 // SetP4pKeywordReportQuery is P4pKeywordReportQuery Setter
 // IKeywordQuery
-func (r *AlibabaScbpEffectKeywordSingleGetAPIRequest) SetP4pKeywordReportQuery(_p4pKeywordReportQuery *IkeywordQuery) error {
+func (r *AlibabaScbpEffectKeywordSingleGetAPIRequest) SetP4pKeywordReportQuery(_p4pKeywordReportQuery *IKeywordQuery) error {
 	r._p4pKeywordReportQuery = _p4pKeywordReportQuery
 	r.Set("p4p_keyword_report_query", _p4pKeywordReportQuery)
 	return nil
 }
 
 // GetP4pKeywordReportQuery P4pKeywordReportQuery Getter
-func (r AlibabaScbpEffectKeywordSingleGetAPIRequest) GetP4pKeywordReportQuery() *IkeywordQuery {
+func (r AlibabaScbpEffectKeywordSingleGetAPIRequest) GetP4pKeywordReportQuery() *IKeywordQuery {
 	return r._p4pKeywordReportQuery
+}
+
+var poolAlibabaScbpEffectKeywordSingleGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpEffectKeywordSingleGetRequest()
+	},
+}
+
+// GetAlibabaScbpEffectKeywordSingleGetRequest 从 sync.Pool 获取 AlibabaScbpEffectKeywordSingleGetAPIRequest
+func GetAlibabaScbpEffectKeywordSingleGetAPIRequest() *AlibabaScbpEffectKeywordSingleGetAPIRequest {
+	return poolAlibabaScbpEffectKeywordSingleGetAPIRequest.Get().(*AlibabaScbpEffectKeywordSingleGetAPIRequest)
+}
+
+// ReleaseAlibabaScbpEffectKeywordSingleGetAPIRequest 将 AlibabaScbpEffectKeywordSingleGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpEffectKeywordSingleGetAPIRequest(v *AlibabaScbpEffectKeywordSingleGetAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpEffectKeywordSingleGetAPIRequest.Put(v)
 }

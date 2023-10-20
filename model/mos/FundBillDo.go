@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // FundBillDo 结构体
 type FundBillDo struct {
 	// 业务扩展参数，json格式
@@ -10,4 +14,24 @@ type FundBillDo struct {
 	FundChannel string `json:"fund_channel,omitempty" xml:"fund_channel,omitempty"`
 	// 金额。单位为人民币（分）。必然返回
 	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
+}
+
+var poolFundBillDo = sync.Pool{
+	New: func() any {
+		return new(FundBillDo)
+	},
+}
+
+// GetFundBillDo() 从对象池中获取FundBillDo
+func GetFundBillDo() *FundBillDo {
+	return poolFundBillDo.Get().(*FundBillDo)
+}
+
+// ReleaseFundBillDo 释放FundBillDo
+func ReleaseFundBillDo(v *FundBillDo) {
+	v.ExtendParams = ""
+	v.SubFundChannel = ""
+	v.FundChannel = ""
+	v.Amount = 0
+	poolFundBillDo.Put(v)
 }

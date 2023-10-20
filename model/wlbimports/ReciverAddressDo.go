@@ -1,5 +1,9 @@
 package wlbimports
 
+import (
+	"sync"
+)
+
 // ReciverAddressDo 结构体
 type ReciverAddressDo struct {
 	// 详细地址，只需填写买家具体的收货地址
@@ -14,4 +18,26 @@ type ReciverAddressDo struct {
 	Province string `json:"province,omitempty" xml:"province,omitempty"`
 	// 国家地址信息
 	Country string `json:"country,omitempty" xml:"country,omitempty"`
+}
+
+var poolReciverAddressDo = sync.Pool{
+	New: func() any {
+		return new(ReciverAddressDo)
+	},
+}
+
+// GetReciverAddressDo() 从对象池中获取ReciverAddressDo
+func GetReciverAddressDo() *ReciverAddressDo {
+	return poolReciverAddressDo.Get().(*ReciverAddressDo)
+}
+
+// ReleaseReciverAddressDo 释放ReciverAddressDo
+func ReleaseReciverAddressDo(v *ReciverAddressDo) {
+	v.DetailAddress = ""
+	v.Street = ""
+	v.District = ""
+	v.City = ""
+	v.Province = ""
+	v.Country = ""
+	poolReciverAddressDo.Put(v)
 }

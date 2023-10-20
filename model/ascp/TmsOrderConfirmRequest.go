@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // TmsOrderConfirmRequest 结构体
 type TmsOrderConfirmRequest struct {
 	// 商家id
@@ -26,4 +30,32 @@ type TmsOrderConfirmRequest struct {
 	OperateTime int64 `json:"operate_time,omitempty" xml:"operate_time,omitempty"`
 	// 业务请求时间
 	RequestTime int64 `json:"request_time,omitempty" xml:"request_time,omitempty"`
+}
+
+var poolTmsOrderConfirmRequest = sync.Pool{
+	New: func() any {
+		return new(TmsOrderConfirmRequest)
+	},
+}
+
+// GetTmsOrderConfirmRequest() 从对象池中获取TmsOrderConfirmRequest
+func GetTmsOrderConfirmRequest() *TmsOrderConfirmRequest {
+	return poolTmsOrderConfirmRequest.Get().(*TmsOrderConfirmRequest)
+}
+
+// ReleaseTmsOrderConfirmRequest 释放TmsOrderConfirmRequest
+func ReleaseTmsOrderConfirmRequest(v *TmsOrderConfirmRequest) {
+	v.SellerId = ""
+	v.ExpressCode = ""
+	v.RequestId = ""
+	v.Industry = ""
+	v.CpCode = ""
+	v.LogisticStatus = ""
+	v.OperatorName = ""
+	v.Description = ""
+	v.Remark = ""
+	v.Feature = ""
+	v.OperateTime = 0
+	v.RequestTime = 0
+	poolTmsOrderConfirmRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.growth.reaching.buzzword.query
 //
 // 查询淘宝热词榜单数据
-func TaobaoGrowthReachingBuzzwordQuery(clt *core.SDKClient, req *usergrowth.TaobaoGrowthReachingBuzzwordQueryAPIRequest, session string) (*usergrowth.TaobaoGrowthReachingBuzzwordQueryAPIResponse, error) {
-	var resp usergrowth.TaobaoGrowthReachingBuzzwordQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoGrowthReachingBuzzwordQuery(clt *core.SDKClient, req *usergrowth.TaobaoGrowthReachingBuzzwordQueryAPIRequest, resp *usergrowth.TaobaoGrowthReachingBuzzwordQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

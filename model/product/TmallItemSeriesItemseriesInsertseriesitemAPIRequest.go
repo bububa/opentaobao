@@ -2,6 +2,7 @@ package product
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallItemSeriesItemseriesInsertseriesitemAPIRequest struct {
 // NewTmallItemSeriesItemseriesInsertseriesitemRequest 初始化TmallItemSeriesItemseriesInsertseriesitemAPIRequest对象
 func NewTmallItemSeriesItemseriesInsertseriesitemRequest() *TmallItemSeriesItemseriesInsertseriesitemAPIRequest {
 	return &TmallItemSeriesItemseriesInsertseriesitemAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallItemSeriesItemseriesInsertseriesitemAPIRequest) Reset() {
+	r._seriesItemRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallItemSeriesItemseriesInsertseriesitemAPIRequest) SetSeriesItemReque
 // GetSeriesItemRequest SeriesItemRequest Getter
 func (r TmallItemSeriesItemseriesInsertseriesitemAPIRequest) GetSeriesItemRequest() *SeriesItemRequest {
 	return r._seriesItemRequest
+}
+
+var poolTmallItemSeriesItemseriesInsertseriesitemAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallItemSeriesItemseriesInsertseriesitemRequest()
+	},
+}
+
+// GetTmallItemSeriesItemseriesInsertseriesitemRequest 从 sync.Pool 获取 TmallItemSeriesItemseriesInsertseriesitemAPIRequest
+func GetTmallItemSeriesItemseriesInsertseriesitemAPIRequest() *TmallItemSeriesItemseriesInsertseriesitemAPIRequest {
+	return poolTmallItemSeriesItemseriesInsertseriesitemAPIRequest.Get().(*TmallItemSeriesItemseriesInsertseriesitemAPIRequest)
+}
+
+// ReleaseTmallItemSeriesItemseriesInsertseriesitemAPIRequest 将 TmallItemSeriesItemseriesInsertseriesitemAPIRequest 放入 sync.Pool
+func ReleaseTmallItemSeriesItemseriesInsertseriesitemAPIRequest(v *TmallItemSeriesItemseriesInsertseriesitemAPIRequest) {
+	v.Reset()
+	poolTmallItemSeriesItemseriesInsertseriesitemAPIRequest.Put(v)
 }

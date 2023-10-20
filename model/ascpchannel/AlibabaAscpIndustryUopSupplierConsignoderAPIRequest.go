@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpIndustryUopSupplierConsignoderAPIRequest struct {
 // NewAlibabaAscpIndustryUopSupplierConsignoderRequest 初始化AlibabaAscpIndustryUopSupplierConsignoderAPIRequest对象
 func NewAlibabaAscpIndustryUopSupplierConsignoderRequest() *AlibabaAscpIndustryUopSupplierConsignoderAPIRequest {
 	return &AlibabaAscpIndustryUopSupplierConsignoderAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpIndustryUopSupplierConsignoderAPIRequest) Reset() {
+	r._erpNormalConsignOrderRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpIndustryUopSupplierConsignoderAPIRequest) SetErpNormalConsig
 // GetErpNormalConsignOrderRequest ErpNormalConsignOrderRequest Getter
 func (r AlibabaAscpIndustryUopSupplierConsignoderAPIRequest) GetErpNormalConsignOrderRequest() *Erpnormalconsignorderrequest {
 	return r._erpNormalConsignOrderRequest
+}
+
+var poolAlibabaAscpIndustryUopSupplierConsignoderAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpIndustryUopSupplierConsignoderRequest()
+	},
+}
+
+// GetAlibabaAscpIndustryUopSupplierConsignoderRequest 从 sync.Pool 获取 AlibabaAscpIndustryUopSupplierConsignoderAPIRequest
+func GetAlibabaAscpIndustryUopSupplierConsignoderAPIRequest() *AlibabaAscpIndustryUopSupplierConsignoderAPIRequest {
+	return poolAlibabaAscpIndustryUopSupplierConsignoderAPIRequest.Get().(*AlibabaAscpIndustryUopSupplierConsignoderAPIRequest)
+}
+
+// ReleaseAlibabaAscpIndustryUopSupplierConsignoderAPIRequest 将 AlibabaAscpIndustryUopSupplierConsignoderAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpIndustryUopSupplierConsignoderAPIRequest(v *AlibabaAscpIndustryUopSupplierConsignoderAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpIndustryUopSupplierConsignoderAPIRequest.Put(v)
 }

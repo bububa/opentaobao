@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoTradeDrugRefuseorderAPIRequest struct {
 // NewTaobaoTradeDrugRefuseorderRequest 初始化TaobaoTradeDrugRefuseorderAPIRequest对象
 func NewTaobaoTradeDrugRefuseorderRequest() *TaobaoTradeDrugRefuseorderAPIRequest {
 	return &TaobaoTradeDrugRefuseorderAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTradeDrugRefuseorderAPIRequest) Reset() {
+	r._refuseReason = ""
+	r._orderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoTradeDrugRefuseorderAPIRequest) SetOrderId(_orderId int64) error 
 // GetOrderId OrderId Getter
 func (r TaobaoTradeDrugRefuseorderAPIRequest) GetOrderId() int64 {
 	return r._orderId
+}
+
+var poolTaobaoTradeDrugRefuseorderAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTradeDrugRefuseorderRequest()
+	},
+}
+
+// GetTaobaoTradeDrugRefuseorderRequest 从 sync.Pool 获取 TaobaoTradeDrugRefuseorderAPIRequest
+func GetTaobaoTradeDrugRefuseorderAPIRequest() *TaobaoTradeDrugRefuseorderAPIRequest {
+	return poolTaobaoTradeDrugRefuseorderAPIRequest.Get().(*TaobaoTradeDrugRefuseorderAPIRequest)
+}
+
+// ReleaseTaobaoTradeDrugRefuseorderAPIRequest 将 TaobaoTradeDrugRefuseorderAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTradeDrugRefuseorderAPIRequest(v *TaobaoTradeDrugRefuseorderAPIRequest) {
+	v.Reset()
+	poolTaobaoTradeDrugRefuseorderAPIRequest.Put(v)
 }

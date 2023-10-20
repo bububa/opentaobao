@@ -11,11 +11,6 @@ import (
 // 查询某计划实时列表
 // 入参1示例：{&#34;biz_code&#34;:&#34;adStrategyDkx&#34;}
 // 入参2示例：{&#34;log_date_list&#34;: [&#34;2021-09-09&#34;],     &#34;campaign_id_list&#34;: [2821811599]}
-func TaobaoOnebpDkxReportReportCampaignRealtime(clt *core.SDKClient, req *scs.TaobaoOnebpDkxReportReportCampaignRealtimeAPIRequest, session string) (*scs.TaobaoOnebpDkxReportReportCampaignRealtimeAPIResponse, error) {
-	var resp scs.TaobaoOnebpDkxReportReportCampaignRealtimeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOnebpDkxReportReportCampaignRealtime(clt *core.SDKClient, req *scs.TaobaoOnebpDkxReportReportCampaignRealtimeAPIRequest, resp *scs.TaobaoOnebpDkxReportReportCampaignRealtimeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

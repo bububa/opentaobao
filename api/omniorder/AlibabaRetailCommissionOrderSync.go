@@ -9,11 +9,6 @@ import (
 // alibaba.retail.commission.order.sync
 //
 // 同步分佣结果
-func AlibabaRetailCommissionOrderSync(clt *core.SDKClient, req *omniorder.AlibabaRetailCommissionOrderSyncAPIRequest, session string) (*omniorder.AlibabaRetailCommissionOrderSyncAPIResponse, error) {
-	var resp omniorder.AlibabaRetailCommissionOrderSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaRetailCommissionOrderSync(clt *core.SDKClient, req *omniorder.AlibabaRetailCommissionOrderSyncAPIRequest, resp *omniorder.AlibabaRetailCommissionOrderSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package cainiaoecc
 
+import (
+	"sync"
+)
+
 // DelayExceptionDetailDto 结构体
 type DelayExceptionDetailDto struct {
 	// CP回复列表
@@ -12,4 +16,25 @@ type DelayExceptionDetailDto struct {
 	ExceptionName string `json:"exception_name,omitempty" xml:"exception_name,omitempty"`
 	// 商家Id
 	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
+}
+
+var poolDelayExceptionDetailDto = sync.Pool{
+	New: func() any {
+		return new(DelayExceptionDetailDto)
+	},
+}
+
+// GetDelayExceptionDetailDto() 从对象池中获取DelayExceptionDetailDto
+func GetDelayExceptionDetailDto() *DelayExceptionDetailDto {
+	return poolDelayExceptionDetailDto.Get().(*DelayExceptionDetailDto)
+}
+
+// ReleaseDelayExceptionDetailDto 释放DelayExceptionDetailDto
+func ReleaseDelayExceptionDetailDto(v *DelayExceptionDetailDto) {
+	v.CpReplyList = v.CpReplyList[:0]
+	v.MailNo = ""
+	v.ExceptionCode = ""
+	v.ExceptionName = ""
+	v.SellerId = 0
+	poolDelayExceptionDetailDto.Put(v)
 }

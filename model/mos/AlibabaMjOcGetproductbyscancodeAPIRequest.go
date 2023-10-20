@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaMjOcGetproductbyscancodeAPIRequest struct {
 // NewAlibabaMjOcGetproductbyscancodeRequest 初始化AlibabaMjOcGetproductbyscancodeAPIRequest对象
 func NewAlibabaMjOcGetproductbyscancodeRequest() *AlibabaMjOcGetproductbyscancodeAPIRequest {
 	return &AlibabaMjOcGetproductbyscancodeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMjOcGetproductbyscancodeAPIRequest) Reset() {
+	r._code = ""
+	r._codeType = ""
+	r._shopCode = ""
+	r._storeCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaMjOcGetproductbyscancodeAPIRequest) SetStoreCode(_storeCode stri
 // GetStoreCode StoreCode Getter
 func (r AlibabaMjOcGetproductbyscancodeAPIRequest) GetStoreCode() string {
 	return r._storeCode
+}
+
+var poolAlibabaMjOcGetproductbyscancodeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMjOcGetproductbyscancodeRequest()
+	},
+}
+
+// GetAlibabaMjOcGetproductbyscancodeRequest 从 sync.Pool 获取 AlibabaMjOcGetproductbyscancodeAPIRequest
+func GetAlibabaMjOcGetproductbyscancodeAPIRequest() *AlibabaMjOcGetproductbyscancodeAPIRequest {
+	return poolAlibabaMjOcGetproductbyscancodeAPIRequest.Get().(*AlibabaMjOcGetproductbyscancodeAPIRequest)
+}
+
+// ReleaseAlibabaMjOcGetproductbyscancodeAPIRequest 将 AlibabaMjOcGetproductbyscancodeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMjOcGetproductbyscancodeAPIRequest(v *AlibabaMjOcGetproductbyscancodeAPIRequest) {
+	v.Reset()
+	poolAlibabaMjOcGetproductbyscancodeAPIRequest.Put(v)
 }

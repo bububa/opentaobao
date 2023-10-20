@@ -9,11 +9,6 @@ import (
 // alibaba.pur.pr.create
 //
 // 下pr单
-func AlibabaPurPrCreate(clt *core.SDKClient, req *pur.AlibabaPurPrCreateAPIRequest, session string) (*pur.AlibabaPurPrCreateAPIResponse, error) {
-	var resp pur.AlibabaPurPrCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaPurPrCreate(clt *core.SDKClient, req *pur.AlibabaPurPrCreateAPIRequest, resp *pur.AlibabaPurPrCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

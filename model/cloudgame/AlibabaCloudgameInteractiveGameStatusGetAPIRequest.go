@@ -2,6 +2,7 @@ package cloudgame
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCloudgameInteractiveGameStatusGetAPIRequest struct {
 // NewAlibabaCloudgameInteractiveGameStatusGetRequest 初始化AlibabaCloudgameInteractiveGameStatusGetAPIRequest对象
 func NewAlibabaCloudgameInteractiveGameStatusGetRequest() *AlibabaCloudgameInteractiveGameStatusGetAPIRequest {
 	return &AlibabaCloudgameInteractiveGameStatusGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCloudgameInteractiveGameStatusGetAPIRequest) Reset() {
+	r._gameStatusGetRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCloudgameInteractiveGameStatusGetAPIRequest) SetGameStatusGetReq
 // GetGameStatusGetRequest GameStatusGetRequest Getter
 func (r AlibabaCloudgameInteractiveGameStatusGetAPIRequest) GetGameStatusGetRequest() *GameStatusGetRequest {
 	return r._gameStatusGetRequest
+}
+
+var poolAlibabaCloudgameInteractiveGameStatusGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCloudgameInteractiveGameStatusGetRequest()
+	},
+}
+
+// GetAlibabaCloudgameInteractiveGameStatusGetRequest 从 sync.Pool 获取 AlibabaCloudgameInteractiveGameStatusGetAPIRequest
+func GetAlibabaCloudgameInteractiveGameStatusGetAPIRequest() *AlibabaCloudgameInteractiveGameStatusGetAPIRequest {
+	return poolAlibabaCloudgameInteractiveGameStatusGetAPIRequest.Get().(*AlibabaCloudgameInteractiveGameStatusGetAPIRequest)
+}
+
+// ReleaseAlibabaCloudgameInteractiveGameStatusGetAPIRequest 将 AlibabaCloudgameInteractiveGameStatusGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCloudgameInteractiveGameStatusGetAPIRequest(v *AlibabaCloudgameInteractiveGameStatusGetAPIRequest) {
+	v.Reset()
+	poolAlibabaCloudgameInteractiveGameStatusGetAPIRequest.Put(v)
 }

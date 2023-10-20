@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // PageResult 结构体
 type PageResult struct {
 	// 分页数据
@@ -16,4 +20,27 @@ type PageResult struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolPageResult = sync.Pool{
+	New: func() any {
+		return new(PageResult)
+	},
+}
+
+// GetPageResult() 从对象池中获取PageResult
+func GetPageResult() *PageResult {
+	return poolPageResult.Get().(*PageResult)
+}
+
+// ReleasePageResult 释放PageResult
+func ReleasePageResult(v *PageResult) {
+	v.ResultData = v.ResultData[:0]
+	v.MsgInfo = ""
+	v.MsgCode = ""
+	v.TotalCount = 0
+	v.PageIndex = 0
+	v.PageSize = 0
+	v.Success = false
+	poolPageResult.Put(v)
 }

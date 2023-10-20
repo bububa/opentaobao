@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscCrmRechargeAccountFlowdetailGetAPIRequest struct {
 // NewAlibabaAlscCrmRechargeAccountFlowdetailGetRequest 初始化AlibabaAlscCrmRechargeAccountFlowdetailGetAPIRequest对象
 func NewAlibabaAlscCrmRechargeAccountFlowdetailGetRequest() *AlibabaAlscCrmRechargeAccountFlowdetailGetAPIRequest {
 	return &AlibabaAlscCrmRechargeAccountFlowdetailGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscCrmRechargeAccountFlowdetailGetAPIRequest) Reset() {
+	r._paramQueryRechargeAccountFlowOpenReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscCrmRechargeAccountFlowdetailGetAPIRequest) SetParamQueryRech
 // GetParamQueryRechargeAccountFlowOpenReq ParamQueryRechargeAccountFlowOpenReq Getter
 func (r AlibabaAlscCrmRechargeAccountFlowdetailGetAPIRequest) GetParamQueryRechargeAccountFlowOpenReq() *QueryRechargeAccountFlowOpenReq {
 	return r._paramQueryRechargeAccountFlowOpenReq
+}
+
+var poolAlibabaAlscCrmRechargeAccountFlowdetailGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscCrmRechargeAccountFlowdetailGetRequest()
+	},
+}
+
+// GetAlibabaAlscCrmRechargeAccountFlowdetailGetRequest 从 sync.Pool 获取 AlibabaAlscCrmRechargeAccountFlowdetailGetAPIRequest
+func GetAlibabaAlscCrmRechargeAccountFlowdetailGetAPIRequest() *AlibabaAlscCrmRechargeAccountFlowdetailGetAPIRequest {
+	return poolAlibabaAlscCrmRechargeAccountFlowdetailGetAPIRequest.Get().(*AlibabaAlscCrmRechargeAccountFlowdetailGetAPIRequest)
+}
+
+// ReleaseAlibabaAlscCrmRechargeAccountFlowdetailGetAPIRequest 将 AlibabaAlscCrmRechargeAccountFlowdetailGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscCrmRechargeAccountFlowdetailGetAPIRequest(v *AlibabaAlscCrmRechargeAccountFlowdetailGetAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscCrmRechargeAccountFlowdetailGetAPIRequest.Put(v)
 }

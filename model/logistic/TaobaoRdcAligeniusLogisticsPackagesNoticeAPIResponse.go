@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoRdcAligeniusLogisticsPackagesNoticeAPIResponse struct {
 	TaobaoRdcAligeniusLogisticsPackagesNoticeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoRdcAligeniusLogisticsPackagesNoticeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoRdcAligeniusLogisticsPackagesNoticeAPIResponseModel).Reset()
+}
+
 // TaobaoRdcAligeniusLogisticsPackagesNoticeAPIResponseModel is 物流多包裹通知 成功返回结果
 type TaobaoRdcAligeniusLogisticsPackagesNoticeAPIResponseModel struct {
 	XMLName xml.Name `xml:"rdc_aligenius_logistics_packages_notice_response"`
@@ -22,4 +29,27 @@ type TaobaoRdcAligeniusLogisticsPackagesNoticeAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *TaobaoRdcAligeniusLogisticsPackagesNoticeResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoRdcAligeniusLogisticsPackagesNoticeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoRdcAligeniusLogisticsPackagesNoticeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoRdcAligeniusLogisticsPackagesNoticeAPIResponse)
+	},
+}
+
+// GetTaobaoRdcAligeniusLogisticsPackagesNoticeAPIResponse 从 sync.Pool 获取 TaobaoRdcAligeniusLogisticsPackagesNoticeAPIResponse
+func GetTaobaoRdcAligeniusLogisticsPackagesNoticeAPIResponse() *TaobaoRdcAligeniusLogisticsPackagesNoticeAPIResponse {
+	return poolTaobaoRdcAligeniusLogisticsPackagesNoticeAPIResponse.Get().(*TaobaoRdcAligeniusLogisticsPackagesNoticeAPIResponse)
+}
+
+// ReleaseTaobaoRdcAligeniusLogisticsPackagesNoticeAPIResponse 将 TaobaoRdcAligeniusLogisticsPackagesNoticeAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoRdcAligeniusLogisticsPackagesNoticeAPIResponse(v *TaobaoRdcAligeniusLogisticsPackagesNoticeAPIResponse) {
+	v.Reset()
+	poolTaobaoRdcAligeniusLogisticsPackagesNoticeAPIResponse.Put(v)
 }

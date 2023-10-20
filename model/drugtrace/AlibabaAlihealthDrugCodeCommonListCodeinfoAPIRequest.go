@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest struct {
 // NewAlibabaAlihealthDrugCodeCommonListCodeinfoRequest 初始化AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest对象
 func NewAlibabaAlihealthDrugCodeCommonListCodeinfoRequest() *AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest {
 	return &AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest) Reset() {
+	r._codeList = r._codeList[:0]
+	r._authRefEntId = ""
+	r._refEntId = ""
+	r._searchSource = ""
+	r._certIsvNo = ""
+	r._invocation = ""
+	r._terminalType = ""
+	r._terminalName = ""
+	r._bureauName = ""
+	r._errorMessage = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest) SetErrorMessage(_
 // GetErrorMessage ErrorMessage Getter
 func (r AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest) GetErrorMessage() string {
 	return r._errorMessage
+}
+
+var poolAlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugCodeCommonListCodeinfoRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugCodeCommonListCodeinfoRequest 从 sync.Pool 获取 AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest
+func GetAlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest() *AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest {
+	return poolAlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest.Get().(*AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest 将 AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest(v *AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest.Put(v)
 }

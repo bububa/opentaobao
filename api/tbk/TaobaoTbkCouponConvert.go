@@ -9,11 +9,6 @@ import (
 // taobao.tbk.coupon.convert
 //
 // 单品券高效转链API
-func TaobaoTbkCouponConvert(clt *core.SDKClient, req *tbk.TaobaoTbkCouponConvertAPIRequest, session string) (*tbk.TaobaoTbkCouponConvertAPIResponse, error) {
-	var resp tbk.TaobaoTbkCouponConvertAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTbkCouponConvert(clt *core.SDKClient, req *tbk.TaobaoTbkCouponConvertAPIRequest, resp *tbk.TaobaoTbkCouponConvertAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

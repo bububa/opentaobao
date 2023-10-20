@@ -9,11 +9,6 @@ import (
 // alibaba.idle.report.media.upload
 //
 // 服务商上传文件、图片
-func AlibabaIdleReportMediaUpload(clt *core.SDKClient, req *idle.AlibabaIdleReportMediaUploadAPIRequest, session string) (*idle.AlibabaIdleReportMediaUploadAPIResponse, error) {
-	var resp idle.AlibabaIdleReportMediaUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIdleReportMediaUpload(clt *core.SDKClient, req *idle.AlibabaIdleReportMediaUploadAPIRequest, resp *idle.AlibabaIdleReportMediaUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

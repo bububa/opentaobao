@@ -1,5 +1,9 @@
 package happytrip
 
+import (
+	"sync"
+)
+
 // TravelHeadDto 结构体
 type TravelHeadDto struct {
 	// 差旅行程列表
@@ -20,4 +24,29 @@ type TravelHeadDto struct {
 	TravelPurpose string `json:"travel_purpose,omitempty" xml:"travel_purpose,omitempty"`
 	// 差旅类型，   ORDINARY：出差（内部项目&amp;会议等），      RECRUITING：出差（外部合作&amp;交流等），      CONFERENCE：外部招待，     MARKETING：公司大型活动，     PUBLIC_RELATIONSHIP：入职&amp;候选人面试，   Training_Lecture：其它
 	TravelType string `json:"travel_type,omitempty" xml:"travel_type,omitempty"`
+}
+
+var poolTravelHeadDto = sync.Pool{
+	New: func() any {
+		return new(TravelHeadDto)
+	},
+}
+
+// GetTravelHeadDto() 从对象池中获取TravelHeadDto
+func GetTravelHeadDto() *TravelHeadDto {
+	return poolTravelHeadDto.Get().(*TravelHeadDto)
+}
+
+// ReleaseTravelHeadDto 释放TravelHeadDto
+func ReleaseTravelHeadDto(v *TravelHeadDto) {
+	v.LineList = v.LineList[:0]
+	v.PeerStaffList = v.PeerStaffList[:0]
+	v.CreateUserId = ""
+	v.OuterTravelHeadId = ""
+	v.Status = ""
+	v.SubmitDate = ""
+	v.SubmitUserId = ""
+	v.TravelPurpose = ""
+	v.TravelType = ""
+	poolTravelHeadDto.Put(v)
 }

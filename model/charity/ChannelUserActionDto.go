@@ -1,5 +1,9 @@
 package charity
 
+import (
+	"sync"
+)
+
 // ChannelUserActionDto 结构体
 type ChannelUserActionDto struct {
 	// 唯一的动作ID,渠道范围内唯一，幂等控制
@@ -26,4 +30,32 @@ type ChannelUserActionDto struct {
 	TimestampLong int64 `json:"timestamp_long,omitempty" xml:"timestamp_long,omitempty"`
 	// 是否强制报名活动，默认false
 	ForeRegActivity bool `json:"fore_reg_activity,omitempty" xml:"fore_reg_activity,omitempty"`
+}
+
+var poolChannelUserActionDto = sync.Pool{
+	New: func() any {
+		return new(ChannelUserActionDto)
+	},
+}
+
+// GetChannelUserActionDto() 从对象池中获取ChannelUserActionDto
+func GetChannelUserActionDto() *ChannelUserActionDto {
+	return poolChannelUserActionDto.Get().(*ChannelUserActionDto)
+}
+
+// ReleaseChannelUserActionDto 释放ChannelUserActionDto
+func ReleaseChannelUserActionDto(v *ChannelUserActionDto) {
+	v.EventId = ""
+	v.CharityTypeSubCode = ""
+	v.FeaturesMap = ""
+	v.Feeling = ""
+	v.CharityTimestamp = ""
+	v.OriContent = ""
+	v.ThirdUserKey = ""
+	v.Version = ""
+	v.ActivityId = 0
+	v.TbUserId = 0
+	v.TimestampLong = 0
+	v.ForeRegActivity = false
+	poolChannelUserActionDto.Put(v)
 }

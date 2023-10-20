@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // AllsparkSellerCouponDetail 结构体
 type AllsparkSellerCouponDetail struct {
 	// 商品优惠券会有商品id集合
@@ -40,4 +44,39 @@ type AllsparkSellerCouponDetail struct {
 	ReserveCount int64 `json:"reserve_count,omitempty" xml:"reserve_count,omitempty"`
 	// 已领取数量
 	ApplyCount int64 `json:"apply_count,omitempty" xml:"apply_count,omitempty"`
+}
+
+var poolAllsparkSellerCouponDetail = sync.Pool{
+	New: func() any {
+		return new(AllsparkSellerCouponDetail)
+	},
+}
+
+// GetAllsparkSellerCouponDetail() 从对象池中获取AllsparkSellerCouponDetail
+func GetAllsparkSellerCouponDetail() *AllsparkSellerCouponDetail {
+	return poolAllsparkSellerCouponDetail.Get().(*AllsparkSellerCouponDetail)
+}
+
+// ReleaseAllsparkSellerCouponDetail 释放AllsparkSellerCouponDetail
+func ReleaseAllsparkSellerCouponDetail(v *AllsparkSellerCouponDetail) {
+	v.ItemIds = v.ItemIds[:0]
+	v.StatusName = ""
+	v.EndTime = ""
+	v.Url = ""
+	v.StartTime = ""
+	v.SpreadId = ""
+	v.Title = ""
+	v.CouponTypeName = ""
+	v.SellerNick = ""
+	v.TotalCount = ""
+	v.ShopName = ""
+	v.CouponType = 0
+	v.Status = 0
+	v.Amount = 0
+	v.SellerId = 0
+	v.StartFee = 0
+	v.PersonLimitCount = 0
+	v.ReserveCount = 0
+	v.ApplyCount = 0
+	poolAllsparkSellerCouponDetail.Put(v)
 }

@@ -1,5 +1,9 @@
 package ieagency
 
+import (
+	"sync"
+)
+
 // IeBookTicketVo 结构体
 type IeBookTicketVo struct {
 	// 航班号id列表
@@ -30,4 +34,34 @@ type IeBookTicketVo struct {
 	TicketTax int64 `json:"ticket_tax,omitempty" xml:"ticket_tax,omitempty"`
 	// 是否联程票
 	ConjTicketFlag bool `json:"conj_ticket_flag,omitempty" xml:"conj_ticket_flag,omitempty"`
+}
+
+var poolIeBookTicketVo = sync.Pool{
+	New: func() any {
+		return new(IeBookTicketVo)
+	},
+}
+
+// GetIeBookTicketVo() 从对象池中获取IeBookTicketVo
+func GetIeBookTicketVo() *IeBookTicketVo {
+	return poolIeBookTicketVo.Get().(*IeBookTicketVo)
+}
+
+// ReleaseIeBookTicketVo 释放IeBookTicketVo
+func ReleaseIeBookTicketVo(v *IeBookTicketVo) {
+	v.FlightIds = v.FlightIds[:0]
+	v.TicketNos = v.TicketNos[:0]
+	v.AuthenticMemo = ""
+	v.AuthenticStatus = ""
+	v.IssueTicketTime = ""
+	v.PassengerCertNo = ""
+	v.PassengerCertType = ""
+	v.PassengerName = ""
+	v.PassengerType = ""
+	v.Id = 0
+	v.PnrId = 0
+	v.TicketPrice = 0
+	v.TicketTax = 0
+	v.ConjTicketFlag = false
+	poolIeBookTicketVo.Put(v)
 }

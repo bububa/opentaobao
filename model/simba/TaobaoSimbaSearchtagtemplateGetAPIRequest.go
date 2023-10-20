@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoSimbaSearchtagtemplateGetAPIRequest struct {
 // NewTaobaoSimbaSearchtagtemplateGetRequest 初始化TaobaoSimbaSearchtagtemplateGetAPIRequest对象
 func NewTaobaoSimbaSearchtagtemplateGetRequest() *TaobaoSimbaSearchtagtemplateGetAPIRequest {
 	return &TaobaoSimbaSearchtagtemplateGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaSearchtagtemplateGetAPIRequest) Reset() {
+	r._subNick = ""
+	r._nick = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoSimbaSearchtagtemplateGetAPIRequest) SetNick(_nick string) error 
 // GetNick Nick Getter
 func (r TaobaoSimbaSearchtagtemplateGetAPIRequest) GetNick() string {
 	return r._nick
+}
+
+var poolTaobaoSimbaSearchtagtemplateGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaSearchtagtemplateGetRequest()
+	},
+}
+
+// GetTaobaoSimbaSearchtagtemplateGetRequest 从 sync.Pool 获取 TaobaoSimbaSearchtagtemplateGetAPIRequest
+func GetTaobaoSimbaSearchtagtemplateGetAPIRequest() *TaobaoSimbaSearchtagtemplateGetAPIRequest {
+	return poolTaobaoSimbaSearchtagtemplateGetAPIRequest.Get().(*TaobaoSimbaSearchtagtemplateGetAPIRequest)
+}
+
+// ReleaseTaobaoSimbaSearchtagtemplateGetAPIRequest 将 TaobaoSimbaSearchtagtemplateGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaSearchtagtemplateGetAPIRequest(v *TaobaoSimbaSearchtagtemplateGetAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaSearchtagtemplateGetAPIRequest.Put(v)
 }

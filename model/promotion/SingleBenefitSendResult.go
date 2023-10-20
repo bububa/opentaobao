@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // SingleBenefitSendResult 结构体
 type SingleBenefitSendResult struct {
 	// 单次发放结果
@@ -14,4 +18,26 @@ type SingleBenefitSendResult struct {
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// 用于宝箱应用，为true表示宝箱任务已完成，需要提示用户
 	IsBaoxiangTaskDone bool `json:"is_baoxiang_task_done,omitempty" xml:"is_baoxiang_task_done,omitempty"`
+}
+
+var poolSingleBenefitSendResult = sync.Pool{
+	New: func() any {
+		return new(SingleBenefitSendResult)
+	},
+}
+
+// GetSingleBenefitSendResult() 从对象池中获取SingleBenefitSendResult
+func GetSingleBenefitSendResult() *SingleBenefitSendResult {
+	return poolSingleBenefitSendResult.Get().(*SingleBenefitSendResult)
+}
+
+// ReleaseSingleBenefitSendResult 释放SingleBenefitSendResult
+func ReleaseSingleBenefitSendResult(v *SingleBenefitSendResult) {
+	v.Results = v.Results[:0]
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.UniqueId = ""
+	v.IsSuccess = false
+	v.IsBaoxiangTaskDone = false
+	poolSingleBenefitSendResult.Put(v)
 }

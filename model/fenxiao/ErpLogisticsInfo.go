@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // ErpLogisticsInfo 结构体
 type ErpLogisticsInfo struct {
 	// 发货类型 CN=菜鸟发货,SC的商家仓发货
@@ -54,4 +58,46 @@ type ErpLogisticsInfo struct {
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 组合货品比例
 	ItemRatio int64 `json:"item_ratio,omitempty" xml:"item_ratio,omitempty"`
+}
+
+var poolErpLogisticsInfo = sync.Pool{
+	New: func() any {
+		return new(ErpLogisticsInfo)
+	},
+}
+
+// GetErpLogisticsInfo() 从对象池中获取ErpLogisticsInfo
+func GetErpLogisticsInfo() *ErpLogisticsInfo {
+	return poolErpLogisticsInfo.Get().(*ErpLogisticsInfo)
+}
+
+// ReleaseErpLogisticsInfo 释放ErpLogisticsInfo
+func ReleaseErpLogisticsInfo(v *ErpLogisticsInfo) {
+	v.ConsignType = ""
+	v.SkuId = ""
+	v.Type = ""
+	v.StoreCode = ""
+	v.ItemCode = ""
+	v.ItemId = ""
+	v.CombineItemId = ""
+	v.CombineItemCode = ""
+	v.BarCode = ""
+	v.DeliveryCps = ""
+	v.BizStoreCode = ""
+	v.BizDeliveryCode = ""
+	v.BizSdType = ""
+	v.SendDivisionCode = ""
+	v.SendCountry = ""
+	v.SendState = ""
+	v.SendCity = ""
+	v.SendDistrict = ""
+	v.SendTown = ""
+	v.BlackDeliveryCps = ""
+	v.WhiteDeliveryCps = ""
+	v.NumIid = 0
+	v.NeedConsignNum = 0
+	v.SubOrderId = 0
+	v.OrderId = 0
+	v.ItemRatio = 0
+	poolErpLogisticsInfo.Put(v)
 }

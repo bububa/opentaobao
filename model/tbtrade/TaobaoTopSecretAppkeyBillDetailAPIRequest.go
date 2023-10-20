@@ -2,6 +2,7 @@ package tbtrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTopSecretAppkeyBillDetailAPIRequest struct {
 // NewTaobaoTopSecretAppkeyBillDetailRequest 初始化TaobaoTopSecretAppkeyBillDetailAPIRequest对象
 func NewTaobaoTopSecretAppkeyBillDetailRequest() *TaobaoTopSecretAppkeyBillDetailAPIRequest {
 	return &TaobaoTopSecretAppkeyBillDetailAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTopSecretAppkeyBillDetailAPIRequest) Reset() {
+	r._appBillQueryRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTopSecretAppkeyBillDetailAPIRequest) SetAppBillQueryRequest(_appB
 // GetAppBillQueryRequest AppBillQueryRequest Getter
 func (r TaobaoTopSecretAppkeyBillDetailAPIRequest) GetAppBillQueryRequest() *AppBillQueryRequest {
 	return r._appBillQueryRequest
+}
+
+var poolTaobaoTopSecretAppkeyBillDetailAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTopSecretAppkeyBillDetailRequest()
+	},
+}
+
+// GetTaobaoTopSecretAppkeyBillDetailRequest 从 sync.Pool 获取 TaobaoTopSecretAppkeyBillDetailAPIRequest
+func GetTaobaoTopSecretAppkeyBillDetailAPIRequest() *TaobaoTopSecretAppkeyBillDetailAPIRequest {
+	return poolTaobaoTopSecretAppkeyBillDetailAPIRequest.Get().(*TaobaoTopSecretAppkeyBillDetailAPIRequest)
+}
+
+// ReleaseTaobaoTopSecretAppkeyBillDetailAPIRequest 将 TaobaoTopSecretAppkeyBillDetailAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTopSecretAppkeyBillDetailAPIRequest(v *TaobaoTopSecretAppkeyBillDetailAPIRequest) {
+	v.Reset()
+	poolTaobaoTopSecretAppkeyBillDetailAPIRequest.Put(v)
 }

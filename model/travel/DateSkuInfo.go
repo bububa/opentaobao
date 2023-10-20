@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // DateSkuInfo 结构体
 type DateSkuInfo struct {
 	// sku销售属性别名；如套餐1  需要调整成其他  需要在这里修改
@@ -10,4 +14,24 @@ type DateSkuInfo struct {
 	Properties []CatPropInfo `json:"properties,omitempty" xml:"properties>cat_prop_info,omitempty"`
 	// sku商品编码
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
+}
+
+var poolDateSkuInfo = sync.Pool{
+	New: func() any {
+		return new(DateSkuInfo)
+	},
+}
+
+// GetDateSkuInfo() 从对象池中获取DateSkuInfo
+func GetDateSkuInfo() *DateSkuInfo {
+	return poolDateSkuInfo.Get().(*DateSkuInfo)
+}
+
+// ReleaseDateSkuInfo 释放DateSkuInfo
+func ReleaseDateSkuInfo(v *DateSkuInfo) {
+	v.Alias = v.Alias[:0]
+	v.DateList = v.DateList[:0]
+	v.Properties = v.Properties[:0]
+	v.OuterId = ""
+	poolDateSkuInfo.Put(v)
 }

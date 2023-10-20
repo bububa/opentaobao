@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaScbpTagAddAPIResponse struct {
 	AlibabaScbpTagAddAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaScbpTagAddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaScbpTagAddAPIResponseModel).Reset()
+}
+
 // AlibabaScbpTagAddAPIResponseModel is 创建关键词分组 成功返回结果
 type AlibabaScbpTagAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_tag_add_response"`
@@ -22,4 +29,27 @@ type AlibabaScbpTagAddAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 分组名称
 	TagName string `json:"tag_name,omitempty" xml:"tag_name,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaScbpTagAddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TagName = ""
+}
+
+var poolAlibabaScbpTagAddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaScbpTagAddAPIResponse)
+	},
+}
+
+// GetAlibabaScbpTagAddAPIResponse 从 sync.Pool 获取 AlibabaScbpTagAddAPIResponse
+func GetAlibabaScbpTagAddAPIResponse() *AlibabaScbpTagAddAPIResponse {
+	return poolAlibabaScbpTagAddAPIResponse.Get().(*AlibabaScbpTagAddAPIResponse)
+}
+
+// ReleaseAlibabaScbpTagAddAPIResponse 将 AlibabaScbpTagAddAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaScbpTagAddAPIResponse(v *AlibabaScbpTagAddAPIResponse) {
+	v.Reset()
+	poolAlibabaScbpTagAddAPIResponse.Put(v)
 }

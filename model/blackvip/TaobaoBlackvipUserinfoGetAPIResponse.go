@@ -2,6 +2,7 @@ package blackvip
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoBlackvipUserinfoGetAPIResponse struct {
 	TaobaoBlackvipUserinfoGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoBlackvipUserinfoGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoBlackvipUserinfoGetAPIResponseModel).Reset()
+}
+
 // TaobaoBlackvipUserinfoGetAPIResponseModel is 88VIP用户信息查询 成功返回结果
 type TaobaoBlackvipUserinfoGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"blackvip_userinfo_get_response"`
@@ -22,4 +29,27 @@ type TaobaoBlackvipUserinfoGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果支持对象
 	Result *ResultSupport `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoBlackvipUserinfoGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoBlackvipUserinfoGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoBlackvipUserinfoGetAPIResponse)
+	},
+}
+
+// GetTaobaoBlackvipUserinfoGetAPIResponse 从 sync.Pool 获取 TaobaoBlackvipUserinfoGetAPIResponse
+func GetTaobaoBlackvipUserinfoGetAPIResponse() *TaobaoBlackvipUserinfoGetAPIResponse {
+	return poolTaobaoBlackvipUserinfoGetAPIResponse.Get().(*TaobaoBlackvipUserinfoGetAPIResponse)
+}
+
+// ReleaseTaobaoBlackvipUserinfoGetAPIResponse 将 TaobaoBlackvipUserinfoGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoBlackvipUserinfoGetAPIResponse(v *TaobaoBlackvipUserinfoGetAPIResponse) {
+	v.Reset()
+	poolTaobaoBlackvipUserinfoGetAPIResponse.Put(v)
 }

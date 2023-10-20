@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaItemPublishMarketGetAPIRequest struct {
 // NewAlibabaItemPublishMarketGetRequest 初始化AlibabaItemPublishMarketGetAPIRequest对象
 func NewAlibabaItemPublishMarketGetRequest() *AlibabaItemPublishMarketGetAPIRequest {
 	return &AlibabaItemPublishMarketGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaItemPublishMarketGetAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaItemPublishMarketGetAPIRequest) GetApiParams(params url.Values) {
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaItemPublishMarketGetAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaItemPublishMarketGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaItemPublishMarketGetRequest()
+	},
+}
+
+// GetAlibabaItemPublishMarketGetRequest 从 sync.Pool 获取 AlibabaItemPublishMarketGetAPIRequest
+func GetAlibabaItemPublishMarketGetAPIRequest() *AlibabaItemPublishMarketGetAPIRequest {
+	return poolAlibabaItemPublishMarketGetAPIRequest.Get().(*AlibabaItemPublishMarketGetAPIRequest)
+}
+
+// ReleaseAlibabaItemPublishMarketGetAPIRequest 将 AlibabaItemPublishMarketGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaItemPublishMarketGetAPIRequest(v *AlibabaItemPublishMarketGetAPIRequest) {
+	v.Reset()
+	poolAlibabaItemPublishMarketGetAPIRequest.Put(v)
 }

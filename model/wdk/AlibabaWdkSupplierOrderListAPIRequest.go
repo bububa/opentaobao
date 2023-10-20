@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkSupplierOrderListAPIRequest struct {
 // NewAlibabaWdkSupplierOrderListRequest 初始化AlibabaWdkSupplierOrderListAPIRequest对象
 func NewAlibabaWdkSupplierOrderListRequest() *AlibabaWdkSupplierOrderListAPIRequest {
 	return &AlibabaWdkSupplierOrderListAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkSupplierOrderListAPIRequest) Reset() {
+	r._supplierOrderQueryRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkSupplierOrderListAPIRequest) SetSupplierOrderQueryRequest(_su
 // GetSupplierOrderQueryRequest SupplierOrderQueryRequest Getter
 func (r AlibabaWdkSupplierOrderListAPIRequest) GetSupplierOrderQueryRequest() *SupplierOrderQueryRequest {
 	return r._supplierOrderQueryRequest
+}
+
+var poolAlibabaWdkSupplierOrderListAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkSupplierOrderListRequest()
+	},
+}
+
+// GetAlibabaWdkSupplierOrderListRequest 从 sync.Pool 获取 AlibabaWdkSupplierOrderListAPIRequest
+func GetAlibabaWdkSupplierOrderListAPIRequest() *AlibabaWdkSupplierOrderListAPIRequest {
+	return poolAlibabaWdkSupplierOrderListAPIRequest.Get().(*AlibabaWdkSupplierOrderListAPIRequest)
+}
+
+// ReleaseAlibabaWdkSupplierOrderListAPIRequest 将 AlibabaWdkSupplierOrderListAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkSupplierOrderListAPIRequest(v *AlibabaWdkSupplierOrderListAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkSupplierOrderListAPIRequest.Put(v)
 }

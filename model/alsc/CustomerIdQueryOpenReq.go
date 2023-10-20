@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // CustomerIdQueryOpenReq 结构体
 type CustomerIdQueryOpenReq struct {
 	// 查询选项，默认查询顾客基础信息， CARD：查询顾客名下的卡列表  ,RECHARGE：查询卡下的储值账户信息  ,POINT：查询顾客的积分信息.
@@ -28,4 +32,33 @@ type CustomerIdQueryOpenReq struct {
 	Phone string `json:"phone,omitempty" xml:"phone,omitempty"`
 	// 支付宝ID
 	AlipayId string `json:"alipay_id,omitempty" xml:"alipay_id,omitempty"`
+}
+
+var poolCustomerIdQueryOpenReq = sync.Pool{
+	New: func() any {
+		return new(CustomerIdQueryOpenReq)
+	},
+}
+
+// GetCustomerIdQueryOpenReq() 从对象池中获取CustomerIdQueryOpenReq
+func GetCustomerIdQueryOpenReq() *CustomerIdQueryOpenReq {
+	return poolCustomerIdQueryOpenReq.Get().(*CustomerIdQueryOpenReq)
+}
+
+// ReleaseCustomerIdQueryOpenReq 释放CustomerIdQueryOpenReq
+func ReleaseCustomerIdQueryOpenReq(v *CustomerIdQueryOpenReq) {
+	v.Options = v.Options[:0]
+	v.BrandId = ""
+	v.CustomerId = ""
+	v.ShopId = ""
+	v.Mobile = ""
+	v.PhysicalCardId = ""
+	v.CardId = ""
+	v.OutBrandId = ""
+	v.OutShopId = ""
+	v.WechatOpenId = ""
+	v.WechatAppId = ""
+	v.Phone = ""
+	v.AlipayId = ""
+	poolCustomerIdQueryOpenReq.Put(v)
 }

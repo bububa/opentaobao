@@ -9,11 +9,6 @@ import (
 // taobao.subway.creative.video.bind
 //
 // 将用户上传的视频绑定到指定的创意上
-func TaobaoSubwayCreativeVideoBind(clt *core.SDKClient, req *simba.TaobaoSubwayCreativeVideoBindAPIRequest, session string) (*simba.TaobaoSubwayCreativeVideoBindAPIResponse, error) {
-	var resp simba.TaobaoSubwayCreativeVideoBindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSubwayCreativeVideoBind(clt *core.SDKClient, req *simba.TaobaoSubwayCreativeVideoBindAPIRequest, resp *simba.TaobaoSubwayCreativeVideoBindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

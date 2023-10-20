@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type YunosTvpubadminDiccontroltaskAddAPIRequest struct {
 // NewYunosTvpubadminDiccontroltaskAddRequest 初始化YunosTvpubadminDiccontroltaskAddAPIRequest对象
 func NewYunosTvpubadminDiccontroltaskAddRequest() *YunosTvpubadminDiccontroltaskAddAPIRequest {
 	return &YunosTvpubadminDiccontroltaskAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminDiccontroltaskAddAPIRequest) Reset() {
+	r._task = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *YunosTvpubadminDiccontroltaskAddAPIRequest) SetTask(_task *DicControlTa
 // GetTask Task Getter
 func (r YunosTvpubadminDiccontroltaskAddAPIRequest) GetTask() *DicControlTaskDo {
 	return r._task
+}
+
+var poolYunosTvpubadminDiccontroltaskAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminDiccontroltaskAddRequest()
+	},
+}
+
+// GetYunosTvpubadminDiccontroltaskAddRequest 从 sync.Pool 获取 YunosTvpubadminDiccontroltaskAddAPIRequest
+func GetYunosTvpubadminDiccontroltaskAddAPIRequest() *YunosTvpubadminDiccontroltaskAddAPIRequest {
+	return poolYunosTvpubadminDiccontroltaskAddAPIRequest.Get().(*YunosTvpubadminDiccontroltaskAddAPIRequest)
+}
+
+// ReleaseYunosTvpubadminDiccontroltaskAddAPIRequest 将 YunosTvpubadminDiccontroltaskAddAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminDiccontroltaskAddAPIRequest(v *YunosTvpubadminDiccontroltaskAddAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminDiccontroltaskAddAPIRequest.Put(v)
 }

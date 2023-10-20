@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscCrmVoucherStatusChangeAPIRequest struct {
 // NewAlibabaAlscCrmVoucherStatusChangeRequest 初始化AlibabaAlscCrmVoucherStatusChangeAPIRequest对象
 func NewAlibabaAlscCrmVoucherStatusChangeRequest() *AlibabaAlscCrmVoucherStatusChangeAPIRequest {
 	return &AlibabaAlscCrmVoucherStatusChangeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscCrmVoucherStatusChangeAPIRequest) Reset() {
+	r._paramVoucherStatusChangeOpenReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscCrmVoucherStatusChangeAPIRequest) SetParamVoucherStatusChang
 // GetParamVoucherStatusChangeOpenReq ParamVoucherStatusChangeOpenReq Getter
 func (r AlibabaAlscCrmVoucherStatusChangeAPIRequest) GetParamVoucherStatusChangeOpenReq() *VoucherStatusChangeOpenReq {
 	return r._paramVoucherStatusChangeOpenReq
+}
+
+var poolAlibabaAlscCrmVoucherStatusChangeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscCrmVoucherStatusChangeRequest()
+	},
+}
+
+// GetAlibabaAlscCrmVoucherStatusChangeRequest 从 sync.Pool 获取 AlibabaAlscCrmVoucherStatusChangeAPIRequest
+func GetAlibabaAlscCrmVoucherStatusChangeAPIRequest() *AlibabaAlscCrmVoucherStatusChangeAPIRequest {
+	return poolAlibabaAlscCrmVoucherStatusChangeAPIRequest.Get().(*AlibabaAlscCrmVoucherStatusChangeAPIRequest)
+}
+
+// ReleaseAlibabaAlscCrmVoucherStatusChangeAPIRequest 将 AlibabaAlscCrmVoucherStatusChangeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscCrmVoucherStatusChangeAPIRequest(v *AlibabaAlscCrmVoucherStatusChangeAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscCrmVoucherStatusChangeAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package alihealthoutflow
 
+import (
+	"sync"
+)
+
 // QuickAppCardInfoVo 结构体
 type QuickAppCardInfoVo struct {
 	// 背景图
@@ -30,4 +34,34 @@ type QuickAppCardInfoVo struct {
 	ButtonTextSize string `json:"button_text_size,omitempty" xml:"button_text_size,omitempty"`
 	// 跳转链接
 	JumpUrl string `json:"jump_url,omitempty" xml:"jump_url,omitempty"`
+}
+
+var poolQuickAppCardInfoVo = sync.Pool{
+	New: func() any {
+		return new(QuickAppCardInfoVo)
+	},
+}
+
+// GetQuickAppCardInfoVo() 从对象池中获取QuickAppCardInfoVo
+func GetQuickAppCardInfoVo() *QuickAppCardInfoVo {
+	return poolQuickAppCardInfoVo.Get().(*QuickAppCardInfoVo)
+}
+
+// ReleaseQuickAppCardInfoVo 释放QuickAppCardInfoVo
+func ReleaseQuickAppCardInfoVo(v *QuickAppCardInfoVo) {
+	v.BgImg = ""
+	v.BgRightIcon = ""
+	v.LogoImg = ""
+	v.Title = ""
+	v.TitleColor = ""
+	v.TitleSize = ""
+	v.SubTitle = ""
+	v.SubTitleColor = ""
+	v.SubTitleSize = ""
+	v.ButtonBgColor = ""
+	v.ButtonText = ""
+	v.ButtonTextColor = ""
+	v.ButtonTextSize = ""
+	v.JumpUrl = ""
+	poolQuickAppCardInfoVo.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -22,8 +23,15 @@ type TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest struct {
 // NewTmallServicecenterServicestoreDeleteservicestorecapacityRequest 初始化TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest对象
 func NewTmallServicecenterServicestoreDeleteservicestorecapacityRequest() *TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest {
 	return &TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest) Reset() {
+	r._serviceStoreCode = ""
+	r._bizType = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -67,4 +75,21 @@ func (r *TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest) Set
 // GetBizType BizType Getter
 func (r TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest) GetBizType() string {
 	return r._bizType
+}
+
+var poolTmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterServicestoreDeleteservicestorecapacityRequest()
+	},
+}
+
+// GetTmallServicecenterServicestoreDeleteservicestorecapacityRequest 从 sync.Pool 获取 TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest
+func GetTmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest() *TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest {
+	return poolTmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest.Get().(*TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest)
+}
+
+// ReleaseTmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest 将 TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest(v *TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest.Put(v)
 }

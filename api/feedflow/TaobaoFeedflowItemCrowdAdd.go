@@ -9,11 +9,6 @@ import (
 // taobao.feedflow.item.crowd.add
 //
 // 单品单元下，新增定向人群
-func TaobaoFeedflowItemCrowdAdd(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCrowdAddAPIRequest, session string) (*feedflow.TaobaoFeedflowItemCrowdAddAPIResponse, error) {
-	var resp feedflow.TaobaoFeedflowItemCrowdAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFeedflowItemCrowdAdd(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCrowdAddAPIRequest, resp *feedflow.TaobaoFeedflowItemCrowdAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

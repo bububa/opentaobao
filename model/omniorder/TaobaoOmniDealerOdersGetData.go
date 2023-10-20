@@ -1,5 +1,9 @@
 package omniorder
 
+import (
+	"sync"
+)
+
 // TaobaoOmniDealerOdersGetData 结构体
 type TaobaoOmniDealerOdersGetData struct {
 	// 子订单
@@ -76,4 +80,57 @@ type TaobaoOmniDealerOdersGetData struct {
 	ExpandCardInfo *ExpandCardInfo `json:"expand_card_info,omitempty" xml:"expand_card_info,omitempty"`
 	// 总金额，单价×数量，不包含运费和折扣，单位：分
 	TotalFee int64 `json:"total_fee,omitempty" xml:"total_fee,omitempty"`
+}
+
+var poolTaobaoOmniDealerOdersGetData = sync.Pool{
+	New: func() any {
+		return new(TaobaoOmniDealerOdersGetData)
+	},
+}
+
+// GetTaobaoOmniDealerOdersGetData() 从对象池中获取TaobaoOmniDealerOdersGetData
+func GetTaobaoOmniDealerOdersGetData() *TaobaoOmniDealerOdersGetData {
+	return poolTaobaoOmniDealerOdersGetData.Get().(*TaobaoOmniDealerOdersGetData)
+}
+
+// ReleaseTaobaoOmniDealerOdersGetData 释放TaobaoOmniDealerOdersGetData
+func ReleaseTaobaoOmniDealerOdersGetData(v *TaobaoOmniDealerOdersGetData) {
+	v.SubOrders = v.SubOrders[:0]
+	v.GmtModified = ""
+	v.BuyerNick = ""
+	v.ReceiverProv = ""
+	v.PayTime = ""
+	v.RefundStatus = ""
+	v.ExpectEnd = ""
+	v.FulfillmentStoreOutId = ""
+	v.FulfillmentType = ""
+	v.ReceiverCity = ""
+	v.ConsignTime = ""
+	v.ReceiverPhone = ""
+	v.ReceiverTown = ""
+	v.SellerNick = ""
+	v.ReceiverName = ""
+	v.ReceiverMobile = ""
+	v.ReceiverArea = ""
+	v.AgingType = ""
+	v.GmtCreate = ""
+	v.ReceiverAddress = ""
+	v.BuyerMessage = ""
+	v.OutOrderId = ""
+	v.ExpectStart = ""
+	v.SellerMemo = ""
+	v.EndTime = ""
+	v.BuyerMemo = ""
+	v.Status = ""
+	v.DiscountFee = 0
+	v.FulfillmentStoreId = 0
+	v.OrderId = 0
+	v.ActualTotalFee = 0
+	v.SellerId = 0
+	v.AdjustFee = 0
+	v.DealerSellerId = 0
+	v.PostFee = 0
+	v.ExpandCardInfo = nil
+	v.TotalFee = 0
+	poolTaobaoOmniDealerOdersGetData.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.ie.agent.refund.refundmoney
 //
 // 卖家进行退款操作
-func TaobaoAlitripIeAgentRefundRefundmoney(clt *core.SDKClient, req *ieagency.TaobaoAlitripIeAgentRefundRefundmoneyAPIRequest, session string) (*ieagency.TaobaoAlitripIeAgentRefundRefundmoneyAPIResponse, error) {
-	var resp ieagency.TaobaoAlitripIeAgentRefundRefundmoneyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripIeAgentRefundRefundmoney(clt *core.SDKClient, req *ieagency.TaobaoAlitripIeAgentRefundRefundmoneyAPIRequest, resp *ieagency.TaobaoAlitripIeAgentRefundRefundmoneyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

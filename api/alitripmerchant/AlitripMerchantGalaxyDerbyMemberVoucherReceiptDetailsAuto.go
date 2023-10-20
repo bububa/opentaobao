@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.derby.member.voucher.receipt.details.auto
 //
 // v5.0付费会员卡开票抬头自匹配
-func AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAuto(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAuto(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherReceiptDetailsAutoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // tmall.item.sku.status.update
 //
 // 商品sku上下架状态更新
-func TmallItemSkuStatusUpdate(clt *core.SDKClient, req *product.TmallItemSkuStatusUpdateAPIRequest, session string) (*product.TmallItemSkuStatusUpdateAPIResponse, error) {
-	var resp product.TmallItemSkuStatusUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TmallItemSkuStatusUpdate(clt *core.SDKClient, req *product.TmallItemSkuStatusUpdateAPIRequest, resp *product.TmallItemSkuStatusUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

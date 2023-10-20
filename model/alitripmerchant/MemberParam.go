@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // MemberParam 结构体
 type MemberParam struct {
 	// 用户英文姓
@@ -28,4 +32,33 @@ type MemberParam struct {
 	OptinAll bool `json:"optin_all,omitempty" xml:"optin_all,omitempty"`
 	// 是否统一向境外提供个人信息
 	DataExportAgreement bool `json:"data_export_agreement,omitempty" xml:"data_export_agreement,omitempty"`
+}
+
+var poolMemberParam = sync.Pool{
+	New: func() any {
+		return new(MemberParam)
+	},
+}
+
+// GetMemberParam() 从对象池中获取MemberParam
+func GetMemberParam() *MemberParam {
+	return poolMemberParam.Get().(*MemberParam)
+}
+
+// ReleaseMemberParam 释放MemberParam
+func ReleaseMemberParam(v *MemberParam) {
+	v.LastName = ""
+	v.FirstName = ""
+	v.Civility = ""
+	v.PhonePre = ""
+	v.Language = ""
+	v.PhoneNum = ""
+	v.Email = ""
+	v.Country = ""
+	v.UserRegisterType = ""
+	v.AcceptedTandC = false
+	v.Subscription = false
+	v.OptinAll = false
+	v.DataExportAgreement = false
+	poolMemberParam.Put(v)
 }

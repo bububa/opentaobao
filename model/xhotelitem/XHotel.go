@@ -1,7 +1,11 @@
 package xhotelitem
 
-// Xhotel 结构体
-type Xhotel struct {
+import (
+	"sync"
+)
+
+// XHotel 结构体
+type XHotel struct {
 	// 卖家自己系统的id
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// 酒店名称
@@ -59,7 +63,7 @@ type Xhotel struct {
 	// 酒店状态：0: 正常;-2:停售；-1：删除
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 淘宝标准酒店信息
-	SHotel *Shotel `json:"s_hotel,omitempty" xml:"s_hotel,omitempty"`
+	SHotel *SHotel `json:"s_hotel,omitempty" xml:"s_hotel,omitempty"`
 	// 0:国内;1:国外
 	Domestic int64 `json:"domestic,omitempty" xml:"domestic,omitempty"`
 	// 省份编码
@@ -78,4 +82,58 @@ type Xhotel struct {
 	HotelType int64 `json:"hotel_type,omitempty" xml:"hotel_type,omitempty"`
 	// 0:可以接待外宾；1:仅内宾
 	ServiceType int64 `json:"service_type,omitempty" xml:"service_type,omitempty"`
+}
+
+var poolXHotel = sync.Pool{
+	New: func() any {
+		return new(XHotel)
+	},
+}
+
+// GetXHotel() 从对象池中获取XHotel
+func GetXHotel() *XHotel {
+	return poolXHotel.Get().(*XHotel)
+}
+
+// ReleaseXHotel 释放XHotel
+func ReleaseXHotel(v *XHotel) {
+	v.OuterId = ""
+	v.Name = ""
+	v.Country = ""
+	v.UsedName = ""
+	v.Business = ""
+	v.Address = ""
+	v.Longitude = ""
+	v.Latitude = ""
+	v.PositionType = ""
+	v.Tel = ""
+	v.Extend = ""
+	v.ErrorInfo = ""
+	v.CreditCardTypes = ""
+	v.NameE = ""
+	v.Vendor = ""
+	v.ModifiedTime = ""
+	v.CreatedTime = ""
+	v.Brand = ""
+	v.Pics = ""
+	v.HotelFacilities = ""
+	v.HotelPolicies = ""
+	v.Description = ""
+	v.Floors = ""
+	v.DecorateTime = ""
+	v.OpeningTime = ""
+	v.BookingNotice = ""
+	v.Hid = 0
+	v.Status = 0
+	v.SHotel = nil
+	v.Domestic = 0
+	v.Province = 0
+	v.City = 0
+	v.District = 0
+	v.MatchStatus = 0
+	v.Shotel = nil
+	v.Rooms = 0
+	v.HotelType = 0
+	v.ServiceType = 0
+	poolXHotel.Put(v)
 }

@@ -1,5 +1,9 @@
 package happytrip
 
+import (
+	"sync"
+)
+
 // TravelLineDto 结构体
 type TravelLineDto struct {
 	// 开始时间
@@ -16,4 +20,27 @@ type TravelLineDto struct {
 	TransportType string `json:"transport_type,omitempty" xml:"transport_type,omitempty"`
 	// 行程说明
 	TravelPurpose string `json:"travel_purpose,omitempty" xml:"travel_purpose,omitempty"`
+}
+
+var poolTravelLineDto = sync.Pool{
+	New: func() any {
+		return new(TravelLineDto)
+	},
+}
+
+// GetTravelLineDto() 从对象池中获取TravelLineDto
+func GetTravelLineDto() *TravelLineDto {
+	return poolTravelLineDto.Get().(*TravelLineDto)
+}
+
+// ReleaseTravelLineDto 释放TravelLineDto
+func ReleaseTravelLineDto(v *TravelLineDto) {
+	v.BeginDate = ""
+	v.EndDate = ""
+	v.FromCity = ""
+	v.ItineraryType = ""
+	v.ToCity = ""
+	v.TransportType = ""
+	v.TravelPurpose = ""
+	poolTravelLineDto.Put(v)
 }

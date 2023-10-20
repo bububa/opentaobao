@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAlihealthDrugtraceTopYljgServiceGetenddateAPIRequest struct {
 // NewAlibabaAlihealthDrugtraceTopYljgServiceGetenddateRequest 初始化AlibabaAlihealthDrugtraceTopYljgServiceGetenddateAPIRequest对象
 func NewAlibabaAlihealthDrugtraceTopYljgServiceGetenddateRequest() *AlibabaAlihealthDrugtraceTopYljgServiceGetenddateAPIRequest {
 	return &AlibabaAlihealthDrugtraceTopYljgServiceGetenddateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugtraceTopYljgServiceGetenddateAPIRequest) Reset() {
+	r._refEntId = ""
+	r._business = 0
+	r._service = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAlihealthDrugtraceTopYljgServiceGetenddateAPIRequest) SetService
 // GetService Service Getter
 func (r AlibabaAlihealthDrugtraceTopYljgServiceGetenddateAPIRequest) GetService() int64 {
 	return r._service
+}
+
+var poolAlibabaAlihealthDrugtraceTopYljgServiceGetenddateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugtraceTopYljgServiceGetenddateRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugtraceTopYljgServiceGetenddateRequest 从 sync.Pool 获取 AlibabaAlihealthDrugtraceTopYljgServiceGetenddateAPIRequest
+func GetAlibabaAlihealthDrugtraceTopYljgServiceGetenddateAPIRequest() *AlibabaAlihealthDrugtraceTopYljgServiceGetenddateAPIRequest {
+	return poolAlibabaAlihealthDrugtraceTopYljgServiceGetenddateAPIRequest.Get().(*AlibabaAlihealthDrugtraceTopYljgServiceGetenddateAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugtraceTopYljgServiceGetenddateAPIRequest 将 AlibabaAlihealthDrugtraceTopYljgServiceGetenddateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugtraceTopYljgServiceGetenddateAPIRequest(v *AlibabaAlihealthDrugtraceTopYljgServiceGetenddateAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugtraceTopYljgServiceGetenddateAPIRequest.Put(v)
 }

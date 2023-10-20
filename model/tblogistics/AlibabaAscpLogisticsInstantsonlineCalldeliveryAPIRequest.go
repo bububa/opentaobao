@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -45,8 +46,27 @@ type AlibabaAscpLogisticsInstantsonlineCalldeliveryAPIRequest struct {
 // NewAlibabaAscpLogisticsInstantsonlineCalldeliveryRequest 初始化AlibabaAscpLogisticsInstantsonlineCalldeliveryAPIRequest对象
 func NewAlibabaAscpLogisticsInstantsonlineCalldeliveryRequest() *AlibabaAscpLogisticsInstantsonlineCalldeliveryAPIRequest {
 	return &AlibabaAscpLogisticsInstantsonlineCalldeliveryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(14),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpLogisticsInstantsonlineCalldeliveryAPIRequest) Reset() {
+	r._itemList = r._itemList[:0]
+	r._outOrderId = ""
+	r._bizType = ""
+	r._pickupCode = ""
+	r._tid = 0
+	r._sender = nil
+	r._receiver = nil
+	r._totalItemValue = 0
+	r._totalItemActualValue = 0
+	r._totalWeight = 0
+	r._selectedResource = nil
+	r._genPickupCodeConfig = nil
+	r._defaultTradeReceiver = false
+	r._defaultGenPickupCode = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -246,4 +266,21 @@ func (r *AlibabaAscpLogisticsInstantsonlineCalldeliveryAPIRequest) SetDefaultGen
 // GetDefaultGenPickupCode DefaultGenPickupCode Getter
 func (r AlibabaAscpLogisticsInstantsonlineCalldeliveryAPIRequest) GetDefaultGenPickupCode() bool {
 	return r._defaultGenPickupCode
+}
+
+var poolAlibabaAscpLogisticsInstantsonlineCalldeliveryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpLogisticsInstantsonlineCalldeliveryRequest()
+	},
+}
+
+// GetAlibabaAscpLogisticsInstantsonlineCalldeliveryRequest 从 sync.Pool 获取 AlibabaAscpLogisticsInstantsonlineCalldeliveryAPIRequest
+func GetAlibabaAscpLogisticsInstantsonlineCalldeliveryAPIRequest() *AlibabaAscpLogisticsInstantsonlineCalldeliveryAPIRequest {
+	return poolAlibabaAscpLogisticsInstantsonlineCalldeliveryAPIRequest.Get().(*AlibabaAscpLogisticsInstantsonlineCalldeliveryAPIRequest)
+}
+
+// ReleaseAlibabaAscpLogisticsInstantsonlineCalldeliveryAPIRequest 将 AlibabaAscpLogisticsInstantsonlineCalldeliveryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpLogisticsInstantsonlineCalldeliveryAPIRequest(v *AlibabaAscpLogisticsInstantsonlineCalldeliveryAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpLogisticsInstantsonlineCalldeliveryAPIRequest.Put(v)
 }

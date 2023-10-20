@@ -2,6 +2,7 @@ package sungari
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoSungariInspectionSubmitAPIRequest struct {
 // NewTaobaoSungariInspectionSubmitRequest 初始化TaobaoSungariInspectionSubmitAPIRequest对象
 func NewTaobaoSungariInspectionSubmitRequest() *TaobaoSungariInspectionSubmitAPIRequest {
 	return &TaobaoSungariInspectionSubmitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSungariInspectionSubmitAPIRequest) Reset() {
+	r._data = ""
+	r._methodName = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoSungariInspectionSubmitAPIRequest) SetMethodName(_methodName stri
 // GetMethodName MethodName Getter
 func (r TaobaoSungariInspectionSubmitAPIRequest) GetMethodName() string {
 	return r._methodName
+}
+
+var poolTaobaoSungariInspectionSubmitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSungariInspectionSubmitRequest()
+	},
+}
+
+// GetTaobaoSungariInspectionSubmitRequest 从 sync.Pool 获取 TaobaoSungariInspectionSubmitAPIRequest
+func GetTaobaoSungariInspectionSubmitAPIRequest() *TaobaoSungariInspectionSubmitAPIRequest {
+	return poolTaobaoSungariInspectionSubmitAPIRequest.Get().(*TaobaoSungariInspectionSubmitAPIRequest)
+}
+
+// ReleaseTaobaoSungariInspectionSubmitAPIRequest 将 TaobaoSungariInspectionSubmitAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSungariInspectionSubmitAPIRequest(v *TaobaoSungariInspectionSubmitAPIRequest) {
+	v.Reset()
+	poolTaobaoSungariInspectionSubmitAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoUniversalbpMaterialAccessallowedAPIRequest struct {
 // NewTaobaoUniversalbpMaterialAccessallowedRequest 初始化TaobaoUniversalbpMaterialAccessallowedAPIRequest对象
 func NewTaobaoUniversalbpMaterialAccessallowedRequest() *TaobaoUniversalbpMaterialAccessallowedAPIRequest {
 	return &TaobaoUniversalbpMaterialAccessallowedAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpMaterialAccessallowedAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r._materialAccessAllowQueryVO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoUniversalbpMaterialAccessallowedAPIRequest) SetMaterialAccessAllo
 // GetMaterialAccessAllowQueryVO MaterialAccessAllowQueryVO Getter
 func (r TaobaoUniversalbpMaterialAccessallowedAPIRequest) GetMaterialAccessAllowQueryVO() *MaterialAccessAllowQueryVo {
 	return r._materialAccessAllowQueryVO
+}
+
+var poolTaobaoUniversalbpMaterialAccessallowedAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpMaterialAccessallowedRequest()
+	},
+}
+
+// GetTaobaoUniversalbpMaterialAccessallowedRequest 从 sync.Pool 获取 TaobaoUniversalbpMaterialAccessallowedAPIRequest
+func GetTaobaoUniversalbpMaterialAccessallowedAPIRequest() *TaobaoUniversalbpMaterialAccessallowedAPIRequest {
+	return poolTaobaoUniversalbpMaterialAccessallowedAPIRequest.Get().(*TaobaoUniversalbpMaterialAccessallowedAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpMaterialAccessallowedAPIRequest 将 TaobaoUniversalbpMaterialAccessallowedAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpMaterialAccessallowedAPIRequest(v *TaobaoUniversalbpMaterialAccessallowedAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpMaterialAccessallowedAPIRequest.Put(v)
 }

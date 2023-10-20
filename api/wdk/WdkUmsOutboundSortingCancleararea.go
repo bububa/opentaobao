@@ -9,11 +9,6 @@ import (
 // wdk.ums.outbound.sorting.cancleararea
 //
 // dps分货-是否能够清场
-func WdkUmsOutboundSortingCancleararea(clt *core.SDKClient, req *wdk.WdkUmsOutboundSortingCanclearareaAPIRequest, session string) (*wdk.WdkUmsOutboundSortingCanclearareaAPIResponse, error) {
-	var resp wdk.WdkUmsOutboundSortingCanclearareaAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func WdkUmsOutboundSortingCancleararea(clt *core.SDKClient, req *wdk.WdkUmsOutboundSortingCanclearareaAPIRequest, resp *wdk.WdkUmsOutboundSortingCanclearareaAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

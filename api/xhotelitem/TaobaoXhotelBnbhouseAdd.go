@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.bnbhouse.add
 //
 // 添加和更新民宿门店的信息
-func TaobaoXhotelBnbhouseAdd(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBnbhouseAddAPIRequest, session string) (*xhotelitem.TaobaoXhotelBnbhouseAddAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelBnbhouseAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelBnbhouseAdd(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBnbhouseAddAPIRequest, resp *xhotelitem.TaobaoXhotelBnbhouseAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

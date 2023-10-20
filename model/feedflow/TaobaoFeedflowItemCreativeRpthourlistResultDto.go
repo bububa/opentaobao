@@ -1,5 +1,9 @@
 package feedflow
 
+import (
+	"sync"
+)
+
 // TaobaoFeedflowItemCreativeRpthourlistResultDto 结构体
 type TaobaoFeedflowItemCreativeRpthourlistResultDto struct {
 	// 返回结果
@@ -12,4 +16,25 @@ type TaobaoFeedflowItemCreativeRpthourlistResultDto struct {
 	ResultCode *ResultCode `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTaobaoFeedflowItemCreativeRpthourlistResultDto = sync.Pool{
+	New: func() any {
+		return new(TaobaoFeedflowItemCreativeRpthourlistResultDto)
+	},
+}
+
+// GetTaobaoFeedflowItemCreativeRpthourlistResultDto() 从对象池中获取TaobaoFeedflowItemCreativeRpthourlistResultDto
+func GetTaobaoFeedflowItemCreativeRpthourlistResultDto() *TaobaoFeedflowItemCreativeRpthourlistResultDto {
+	return poolTaobaoFeedflowItemCreativeRpthourlistResultDto.Get().(*TaobaoFeedflowItemCreativeRpthourlistResultDto)
+}
+
+// ReleaseTaobaoFeedflowItemCreativeRpthourlistResultDto 释放TaobaoFeedflowItemCreativeRpthourlistResultDto
+func ReleaseTaobaoFeedflowItemCreativeRpthourlistResultDto(v *TaobaoFeedflowItemCreativeRpthourlistResultDto) {
+	v.RptList = v.RptList[:0]
+	v.Message = ""
+	v.TotalCount = 0
+	v.ResultCode = nil
+	v.Success = false
+	poolTaobaoFeedflowItemCreativeRpthourlistResultDto.Put(v)
 }

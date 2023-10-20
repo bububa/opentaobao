@@ -2,6 +2,7 @@ package mos
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaMosCommonAuthOperatorInfoAPIResponse struct {
 	model.CommonResponse
 	AlibabaMosCommonAuthOperatorInfoAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaMosCommonAuthOperatorInfoAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaMosCommonAuthOperatorInfoAPIResponseModel).Reset()
 }
 
 // AlibabaMosCommonAuthOperatorInfoAPIResponseModel is 获取当前人员信息 成功返回结果
@@ -36,4 +43,34 @@ type AlibabaMosCommonAuthOperatorInfoAPIResponseModel struct {
 	Issuccess bool `json:"issuccess,omitempty" xml:"issuccess,omitempty"`
 	// 是否同步
 	IsAsync bool `json:"is_async,omitempty" xml:"is_async,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaMosCommonAuthOperatorInfoAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TraceId = ""
+	m.AsyncResult = ""
+	m.Errcode = ""
+	m.Attributes = ""
+	m.ErrMessage = ""
+	m.Data = nil
+	m.Issuccess = false
+	m.IsAsync = false
+}
+
+var poolAlibabaMosCommonAuthOperatorInfoAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaMosCommonAuthOperatorInfoAPIResponse)
+	},
+}
+
+// GetAlibabaMosCommonAuthOperatorInfoAPIResponse 从 sync.Pool 获取 AlibabaMosCommonAuthOperatorInfoAPIResponse
+func GetAlibabaMosCommonAuthOperatorInfoAPIResponse() *AlibabaMosCommonAuthOperatorInfoAPIResponse {
+	return poolAlibabaMosCommonAuthOperatorInfoAPIResponse.Get().(*AlibabaMosCommonAuthOperatorInfoAPIResponse)
+}
+
+// ReleaseAlibabaMosCommonAuthOperatorInfoAPIResponse 将 AlibabaMosCommonAuthOperatorInfoAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaMosCommonAuthOperatorInfoAPIResponse(v *AlibabaMosCommonAuthOperatorInfoAPIResponse) {
+	v.Reset()
+	poolAlibabaMosCommonAuthOperatorInfoAPIResponse.Put(v)
 }

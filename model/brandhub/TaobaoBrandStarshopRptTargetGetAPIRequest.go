@@ -2,6 +2,7 @@ package brandhub
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoBrandStarshopRptTargetGetAPIRequest struct {
 // NewTaobaoBrandStarshopRptTargetGetRequest 初始化TaobaoBrandStarshopRptTargetGetAPIRequest对象
 func NewTaobaoBrandStarshopRptTargetGetRequest() *TaobaoBrandStarshopRptTargetGetAPIRequest {
 	return &TaobaoBrandStarshopRptTargetGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBrandStarshopRptTargetGetAPIRequest) Reset() {
+	r._trafficType = ""
+	r._startDate = ""
+	r._endDate = ""
+	r._pageIndex = ""
+	r._pageSize = ""
+	r._effect = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoBrandStarshopRptTargetGetAPIRequest) SetEffect(_effect string) er
 // GetEffect Effect Getter
 func (r TaobaoBrandStarshopRptTargetGetAPIRequest) GetEffect() string {
 	return r._effect
+}
+
+var poolTaobaoBrandStarshopRptTargetGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBrandStarshopRptTargetGetRequest()
+	},
+}
+
+// GetTaobaoBrandStarshopRptTargetGetRequest 从 sync.Pool 获取 TaobaoBrandStarshopRptTargetGetAPIRequest
+func GetTaobaoBrandStarshopRptTargetGetAPIRequest() *TaobaoBrandStarshopRptTargetGetAPIRequest {
+	return poolTaobaoBrandStarshopRptTargetGetAPIRequest.Get().(*TaobaoBrandStarshopRptTargetGetAPIRequest)
+}
+
+// ReleaseTaobaoBrandStarshopRptTargetGetAPIRequest 将 TaobaoBrandStarshopRptTargetGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBrandStarshopRptTargetGetAPIRequest(v *TaobaoBrandStarshopRptTargetGetAPIRequest) {
+	v.Reset()
+	poolTaobaoBrandStarshopRptTargetGetAPIRequest.Put(v)
 }

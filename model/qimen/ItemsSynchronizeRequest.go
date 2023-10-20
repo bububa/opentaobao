@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // ItemsSynchronizeRequest 结构体
 type ItemsSynchronizeRequest struct {
 	// 同步的商品信息
@@ -12,4 +16,25 @@ type ItemsSynchronizeRequest struct {
 	OwnerCode string `json:"ownerCode,omitempty" xml:"ownerCode,omitempty"`
 	// 扩展属性
 	ExtendProps *TaobaoQimenItemsSynchronizeMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+}
+
+var poolItemsSynchronizeRequest = sync.Pool{
+	New: func() any {
+		return new(ItemsSynchronizeRequest)
+	},
+}
+
+// GetItemsSynchronizeRequest() 从对象池中获取ItemsSynchronizeRequest
+func GetItemsSynchronizeRequest() *ItemsSynchronizeRequest {
+	return poolItemsSynchronizeRequest.Get().(*ItemsSynchronizeRequest)
+}
+
+// ReleaseItemsSynchronizeRequest 释放ItemsSynchronizeRequest
+func ReleaseItemsSynchronizeRequest(v *ItemsSynchronizeRequest) {
+	v.Items = v.Items[:0]
+	v.ActionType = ""
+	v.WarehouseCode = ""
+	v.OwnerCode = ""
+	v.ExtendProps = nil
+	poolItemsSynchronizeRequest.Put(v)
 }

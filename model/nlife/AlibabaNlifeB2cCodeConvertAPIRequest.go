@@ -2,6 +2,7 @@ package nlife
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaNlifeB2cCodeConvertAPIRequest struct {
 // NewAlibabaNlifeB2cCodeConvertRequest 初始化AlibabaNlifeB2cCodeConvertAPIRequest对象
 func NewAlibabaNlifeB2cCodeConvertRequest() *AlibabaNlifeB2cCodeConvertAPIRequest {
 	return &AlibabaNlifeB2cCodeConvertAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaNlifeB2cCodeConvertAPIRequest) Reset() {
+	r._storeId = ""
+	r._url = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaNlifeB2cCodeConvertAPIRequest) SetUrl(_url string) error {
 // GetUrl Url Getter
 func (r AlibabaNlifeB2cCodeConvertAPIRequest) GetUrl() string {
 	return r._url
+}
+
+var poolAlibabaNlifeB2cCodeConvertAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaNlifeB2cCodeConvertRequest()
+	},
+}
+
+// GetAlibabaNlifeB2cCodeConvertRequest 从 sync.Pool 获取 AlibabaNlifeB2cCodeConvertAPIRequest
+func GetAlibabaNlifeB2cCodeConvertAPIRequest() *AlibabaNlifeB2cCodeConvertAPIRequest {
+	return poolAlibabaNlifeB2cCodeConvertAPIRequest.Get().(*AlibabaNlifeB2cCodeConvertAPIRequest)
+}
+
+// ReleaseAlibabaNlifeB2cCodeConvertAPIRequest 将 AlibabaNlifeB2cCodeConvertAPIRequest 放入 sync.Pool
+func ReleaseAlibabaNlifeB2cCodeConvertAPIRequest(v *AlibabaNlifeB2cCodeConvertAPIRequest) {
+	v.Reset()
+	poolAlibabaNlifeB2cCodeConvertAPIRequest.Put(v)
 }

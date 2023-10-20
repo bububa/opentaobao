@@ -2,6 +2,7 @@ package cloudpush
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoCloudpushMessageIosAPIResponse struct {
 	TaobaoCloudpushMessageIosAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoCloudpushMessageIosAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoCloudpushMessageIosAPIResponseModel).Reset()
+}
+
 // TaobaoCloudpushMessageIosAPIResponseModel is 百川云推送发送消息给ios 成功返回结果
 type TaobaoCloudpushMessageIosAPIResponseModel struct {
 	XMLName xml.Name `xml:"cloudpush_message_ios_response"`
@@ -26,4 +33,29 @@ type TaobaoCloudpushMessageIosAPIResponseModel struct {
 	RequestErrorCode int64 `json:"request_error_code,omitempty" xml:"request_error_code,omitempty"`
 	// 请求是否成功.
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoCloudpushMessageIosAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.RequestErrorMsg = ""
+	m.RequestErrorCode = 0
+	m.IsSuccess = false
+}
+
+var poolTaobaoCloudpushMessageIosAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoCloudpushMessageIosAPIResponse)
+	},
+}
+
+// GetTaobaoCloudpushMessageIosAPIResponse 从 sync.Pool 获取 TaobaoCloudpushMessageIosAPIResponse
+func GetTaobaoCloudpushMessageIosAPIResponse() *TaobaoCloudpushMessageIosAPIResponse {
+	return poolTaobaoCloudpushMessageIosAPIResponse.Get().(*TaobaoCloudpushMessageIosAPIResponse)
+}
+
+// ReleaseTaobaoCloudpushMessageIosAPIResponse 将 TaobaoCloudpushMessageIosAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoCloudpushMessageIosAPIResponse(v *TaobaoCloudpushMessageIosAPIResponse) {
+	v.Reset()
+	poolTaobaoCloudpushMessageIosAPIResponse.Put(v)
 }

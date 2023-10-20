@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaHmMarketingFullrangeCreateactivityAPIRequest struct {
 // NewAlibabaHmMarketingFullrangeCreateactivityRequest 初始化AlibabaHmMarketingFullrangeCreateactivityAPIRequest对象
 func NewAlibabaHmMarketingFullrangeCreateactivityRequest() *AlibabaHmMarketingFullrangeCreateactivityAPIRequest {
 	return &AlibabaHmMarketingFullrangeCreateactivityAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHmMarketingFullrangeCreateactivityAPIRequest) Reset() {
+	r._param = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaHmMarketingFullrangeCreateactivityAPIRequest) SetParam(_param *F
 // GetParam Param Getter
 func (r AlibabaHmMarketingFullrangeCreateactivityAPIRequest) GetParam() *FullRangeActivity {
 	return r._param
+}
+
+var poolAlibabaHmMarketingFullrangeCreateactivityAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHmMarketingFullrangeCreateactivityRequest()
+	},
+}
+
+// GetAlibabaHmMarketingFullrangeCreateactivityRequest 从 sync.Pool 获取 AlibabaHmMarketingFullrangeCreateactivityAPIRequest
+func GetAlibabaHmMarketingFullrangeCreateactivityAPIRequest() *AlibabaHmMarketingFullrangeCreateactivityAPIRequest {
+	return poolAlibabaHmMarketingFullrangeCreateactivityAPIRequest.Get().(*AlibabaHmMarketingFullrangeCreateactivityAPIRequest)
+}
+
+// ReleaseAlibabaHmMarketingFullrangeCreateactivityAPIRequest 将 AlibabaHmMarketingFullrangeCreateactivityAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHmMarketingFullrangeCreateactivityAPIRequest(v *AlibabaHmMarketingFullrangeCreateactivityAPIRequest) {
+	v.Reset()
+	poolAlibabaHmMarketingFullrangeCreateactivityAPIRequest.Put(v)
 }

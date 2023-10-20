@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangInventoryFutureplanAPIRequest struct {
 // NewAlibabaDchainAoxiangInventoryFutureplanRequest 初始化AlibabaDchainAoxiangInventoryFutureplanAPIRequest对象
 func NewAlibabaDchainAoxiangInventoryFutureplanRequest() *AlibabaDchainAoxiangInventoryFutureplanAPIRequest {
 	return &AlibabaDchainAoxiangInventoryFutureplanAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangInventoryFutureplanAPIRequest) Reset() {
+	r._publicFuturePlanRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangInventoryFutureplanAPIRequest) SetPublicFuturePlanR
 // GetPublicFuturePlanRequest PublicFuturePlanRequest Getter
 func (r AlibabaDchainAoxiangInventoryFutureplanAPIRequest) GetPublicFuturePlanRequest() *PublicFuturePlanRequest {
 	return r._publicFuturePlanRequest
+}
+
+var poolAlibabaDchainAoxiangInventoryFutureplanAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangInventoryFutureplanRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangInventoryFutureplanRequest 从 sync.Pool 获取 AlibabaDchainAoxiangInventoryFutureplanAPIRequest
+func GetAlibabaDchainAoxiangInventoryFutureplanAPIRequest() *AlibabaDchainAoxiangInventoryFutureplanAPIRequest {
+	return poolAlibabaDchainAoxiangInventoryFutureplanAPIRequest.Get().(*AlibabaDchainAoxiangInventoryFutureplanAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangInventoryFutureplanAPIRequest 将 AlibabaDchainAoxiangInventoryFutureplanAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangInventoryFutureplanAPIRequest(v *AlibabaDchainAoxiangInventoryFutureplanAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangInventoryFutureplanAPIRequest.Put(v)
 }

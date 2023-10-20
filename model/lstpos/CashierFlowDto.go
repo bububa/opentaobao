@@ -1,5 +1,9 @@
 package lstpos
 
+import (
+	"sync"
+)
+
 // CashierFlowDto 结构体
 type CashierFlowDto struct {
 	// 收银商品快照对象列表
@@ -32,4 +36,35 @@ type CashierFlowDto struct {
 	OrderType int64 `json:"order_type,omitempty" xml:"order_type,omitempty"`
 	// 数据来源的设备类型   0：pos，1：自动售货机，9999：其它  缺省值：0
 	DeviceType int64 `json:"device_type,omitempty" xml:"device_type,omitempty"`
+}
+
+var poolCashierFlowDto = sync.Pool{
+	New: func() any {
+		return new(CashierFlowDto)
+	},
+}
+
+// GetCashierFlowDto() 从对象池中获取CashierFlowDto
+func GetCashierFlowDto() *CashierFlowDto {
+	return poolCashierFlowDto.Get().(*CashierFlowDto)
+}
+
+// ReleaseCashierFlowDto 释放CashierFlowDto
+func ReleaseCashierFlowDto(v *CashierFlowDto) {
+	v.CashierGoodsDetailDTOList = v.CashierGoodsDetailDTOList[:0]
+	v.CashierPayDetailDTOList = v.CashierPayDetailDTOList[:0]
+	v.PayStatus = ""
+	v.PayType = ""
+	v.IsvTradeFlowNum = ""
+	v.OriginalTradeFlowNum = ""
+	v.HardwareId = ""
+	v.Brand = ""
+	v.Model = ""
+	v.TotalActualPrice = 0
+	v.TotalPrice = 0
+	v.GmtModified = 0
+	v.GmtCreate = 0
+	v.OrderType = 0
+	v.DeviceType = 0
+	poolCashierFlowDto.Put(v)
 }

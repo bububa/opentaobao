@@ -9,11 +9,6 @@ import (
 // alibaba.cfo.incoming.invoice.register
 //
 // 发票登记接口
-func AlibabaCfoIncomingInvoiceRegister(clt *core.SDKClient, req *fpm.AlibabaCfoIncomingInvoiceRegisterAPIRequest, session string) (*fpm.AlibabaCfoIncomingInvoiceRegisterAPIResponse, error) {
-	var resp fpm.AlibabaCfoIncomingInvoiceRegisterAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaCfoIncomingInvoiceRegister(clt *core.SDKClient, req *fpm.AlibabaCfoIncomingInvoiceRegisterAPIRequest, resp *fpm.AlibabaCfoIncomingInvoiceRegisterAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

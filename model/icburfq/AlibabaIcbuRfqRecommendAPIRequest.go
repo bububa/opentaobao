@@ -2,6 +2,7 @@ package icburfq
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIcbuRfqRecommendAPIRequest struct {
 // NewAlibabaIcbuRfqRecommendRequest 初始化AlibabaIcbuRfqRecommendAPIRequest对象
 func NewAlibabaIcbuRfqRecommendRequest() *AlibabaIcbuRfqRecommendAPIRequest {
 	return &AlibabaIcbuRfqRecommendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIcbuRfqRecommendAPIRequest) Reset() {
+	r._queryDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIcbuRfqRecommendAPIRequest) SetQueryDto(_queryDto *QueryDto) err
 // GetQueryDto QueryDto Getter
 func (r AlibabaIcbuRfqRecommendAPIRequest) GetQueryDto() *QueryDto {
 	return r._queryDto
+}
+
+var poolAlibabaIcbuRfqRecommendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIcbuRfqRecommendRequest()
+	},
+}
+
+// GetAlibabaIcbuRfqRecommendRequest 从 sync.Pool 获取 AlibabaIcbuRfqRecommendAPIRequest
+func GetAlibabaIcbuRfqRecommendAPIRequest() *AlibabaIcbuRfqRecommendAPIRequest {
+	return poolAlibabaIcbuRfqRecommendAPIRequest.Get().(*AlibabaIcbuRfqRecommendAPIRequest)
+}
+
+// ReleaseAlibabaIcbuRfqRecommendAPIRequest 将 AlibabaIcbuRfqRecommendAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIcbuRfqRecommendAPIRequest(v *AlibabaIcbuRfqRecommendAPIRequest) {
+	v.Reset()
+	poolAlibabaIcbuRfqRecommendAPIRequest.Put(v)
 }

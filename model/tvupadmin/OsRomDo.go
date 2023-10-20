@@ -1,5 +1,9 @@
 package tvupadmin
 
+import (
+	"sync"
+)
+
 // OsRomDo 结构体
 type OsRomDo struct {
 	// 下载地址
@@ -22,4 +26,30 @@ type OsRomDo struct {
 	BaseVersionId int64 `json:"base_version_id,omitempty" xml:"base_version_id,omitempty"`
 	// 切片数
 	Splitnum int64 `json:"splitnum,omitempty" xml:"splitnum,omitempty"`
+}
+
+var poolOsRomDo = sync.Pool{
+	New: func() any {
+		return new(OsRomDo)
+	},
+}
+
+// GetOsRomDo() 从对象池中获取OsRomDo
+func GetOsRomDo() *OsRomDo {
+	return poolOsRomDo.Get().(*OsRomDo)
+}
+
+// ReleaseOsRomDo 释放OsRomDo
+func ReleaseOsRomDo(v *OsRomDo) {
+	v.DownloadPath = ""
+	v.Downloadmd5 = ""
+	v.Size = ""
+	v.IsDelete = ""
+	v.GmtCreate = ""
+	v.GmtModify = ""
+	v.Id = 0
+	v.VersionId = 0
+	v.BaseVersionId = 0
+	v.Splitnum = 0
+	poolOsRomDo.Put(v)
 }

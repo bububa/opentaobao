@@ -9,11 +9,6 @@ import (
 // taobao.open.seller.biz.logistic.time.rule
 //
 // 服务商回传商家自定义发货时效
-func TaobaoOpenSellerBizLogisticTimeRule(clt *core.SDKClient, req *logistic.TaobaoOpenSellerBizLogisticTimeRuleAPIRequest, session string) (*logistic.TaobaoOpenSellerBizLogisticTimeRuleAPIResponse, error) {
-	var resp logistic.TaobaoOpenSellerBizLogisticTimeRuleAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpenSellerBizLogisticTimeRule(clt *core.SDKClient, req *logistic.TaobaoOpenSellerBizLogisticTimeRuleAPIRequest, resp *logistic.TaobaoOpenSellerBizLogisticTimeRuleAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

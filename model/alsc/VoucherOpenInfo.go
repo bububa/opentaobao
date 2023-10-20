@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // VoucherOpenInfo 结构体
 type VoucherOpenInfo struct {
 	// 商品id列表
@@ -42,4 +46,40 @@ type VoucherOpenInfo struct {
 	StartFee int64 `json:"start_fee,omitempty" xml:"start_fee,omitempty"`
 	// 每人限领，-1代表不限
 	UserLimit int64 `json:"user_limit,omitempty" xml:"user_limit,omitempty"`
+}
+
+var poolVoucherOpenInfo = sync.Pool{
+	New: func() any {
+		return new(VoucherOpenInfo)
+	},
+}
+
+// GetVoucherOpenInfo() 从对象池中获取VoucherOpenInfo
+func GetVoucherOpenInfo() *VoucherOpenInfo {
+	return poolVoucherOpenInfo.Get().(*VoucherOpenInfo)
+}
+
+// ReleaseVoucherOpenInfo 释放VoucherOpenInfo
+func ReleaseVoucherOpenInfo(v *VoucherOpenInfo) {
+	v.ItemIdList = v.ItemIdList[:0]
+	v.ShopIdList = v.ShopIdList[:0]
+	v.ItemInfoList = v.ItemInfoList[:0]
+	v.ShopInfoList = v.ShopInfoList[:0]
+	v.EndTime = ""
+	v.StartTime = ""
+	v.Status = ""
+	v.Title = ""
+	v.VoucherId = ""
+	v.VoucherTemplateId = ""
+	v.VoucherType = ""
+	v.DiscountRate = ""
+	v.ItemCoverage = ""
+	v.ShopCoverage = ""
+	v.AvailableTime = ""
+	v.ExtInfo = ""
+	v.UseCondition = ""
+	v.Amount = 0
+	v.StartFee = 0
+	v.UserLimit = 0
+	poolVoucherOpenInfo.Put(v)
 }

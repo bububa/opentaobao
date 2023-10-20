@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // TopTravelItem 结构体
 type TopTravelItem struct {
 	// 商家自定义商品编码
@@ -16,4 +20,27 @@ type TopTravelItem struct {
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// skuId
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
+}
+
+var poolTopTravelItem = sync.Pool{
+	New: func() any {
+		return new(TopTravelItem)
+	},
+}
+
+// GetTopTravelItem() 从对象池中获取TopTravelItem
+func GetTopTravelItem() *TopTravelItem {
+	return poolTopTravelItem.Get().(*TopTravelItem)
+}
+
+// ReleaseTopTravelItem 释放TopTravelItem
+func ReleaseTopTravelItem(v *TopTravelItem) {
+	v.OutProductId = ""
+	v.Modified = ""
+	v.Extend = ""
+	v.Created = ""
+	v.OuterId = ""
+	v.ItemId = 0
+	v.SkuId = 0
+	poolTopTravelItem.Put(v)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OutputItemInfoDto 结构体
 type OutputItemInfoDto struct {
 	// 数量
@@ -20,4 +24,29 @@ type OutputItemInfoDto struct {
 	Spec string `json:"spec,omitempty" xml:"spec,omitempty"`
 	// 采购单位
 	Unit string `json:"unit,omitempty" xml:"unit,omitempty"`
+}
+
+var poolOutputItemInfoDto = sync.Pool{
+	New: func() any {
+		return new(OutputItemInfoDto)
+	},
+}
+
+// GetOutputItemInfoDto() 从对象池中获取OutputItemInfoDto
+func GetOutputItemInfoDto() *OutputItemInfoDto {
+	return poolOutputItemInfoDto.Get().(*OutputItemInfoDto)
+}
+
+// ReleaseOutputItemInfoDto 释放OutputItemInfoDto
+func ReleaseOutputItemInfoDto(v *OutputItemInfoDto) {
+	v.Count = ""
+	v.DeptCode = ""
+	v.InventoryUnit = ""
+	v.ItemCode = ""
+	v.Price = ""
+	v.Reason = ""
+	v.Remark = ""
+	v.Spec = ""
+	v.Unit = ""
+	poolOutputItemInfoDto.Put(v)
 }

@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaScbpAdCampaignCreateForbiddenKeywordAPIRequest struct {
 // NewAlibabaScbpAdCampaignCreateForbiddenKeywordRequest 初始化AlibabaScbpAdCampaignCreateForbiddenKeywordAPIRequest对象
 func NewAlibabaScbpAdCampaignCreateForbiddenKeywordRequest() *AlibabaScbpAdCampaignCreateForbiddenKeywordAPIRequest {
 	return &AlibabaScbpAdCampaignCreateForbiddenKeywordAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdCampaignCreateForbiddenKeywordAPIRequest) Reset() {
+	r._topContext = nil
+	r._campaignId = 0
+	r._forbiddenKeywordBatchOperation = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaScbpAdCampaignCreateForbiddenKeywordAPIRequest) SetForbiddenKeyw
 // GetForbiddenKeywordBatchOperation ForbiddenKeywordBatchOperation Getter
 func (r AlibabaScbpAdCampaignCreateForbiddenKeywordAPIRequest) GetForbiddenKeywordBatchOperation() *ForbiddenKeywordBatchOperationDto {
 	return r._forbiddenKeywordBatchOperation
+}
+
+var poolAlibabaScbpAdCampaignCreateForbiddenKeywordAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdCampaignCreateForbiddenKeywordRequest()
+	},
+}
+
+// GetAlibabaScbpAdCampaignCreateForbiddenKeywordRequest 从 sync.Pool 获取 AlibabaScbpAdCampaignCreateForbiddenKeywordAPIRequest
+func GetAlibabaScbpAdCampaignCreateForbiddenKeywordAPIRequest() *AlibabaScbpAdCampaignCreateForbiddenKeywordAPIRequest {
+	return poolAlibabaScbpAdCampaignCreateForbiddenKeywordAPIRequest.Get().(*AlibabaScbpAdCampaignCreateForbiddenKeywordAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdCampaignCreateForbiddenKeywordAPIRequest 将 AlibabaScbpAdCampaignCreateForbiddenKeywordAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdCampaignCreateForbiddenKeywordAPIRequest(v *AlibabaScbpAdCampaignCreateForbiddenKeywordAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdCampaignCreateForbiddenKeywordAPIRequest.Put(v)
 }

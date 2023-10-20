@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // OpenTicketDo 结构体
 type OpenTicketDo struct {
 	// 机票号
@@ -58,4 +62,48 @@ type OpenTicketDo struct {
 	RideTime int64 `json:"ride_time,omitempty" xml:"ride_time,omitempty"`
 	// 是否改签票（true：是；false：否）
 	IsChanged bool `json:"is_changed,omitempty" xml:"is_changed,omitempty"`
+}
+
+var poolOpenTicketDo = sync.Pool{
+	New: func() any {
+		return new(OpenTicketDo)
+	},
+}
+
+// GetOpenTicketDo() 从对象池中获取OpenTicketDo
+func GetOpenTicketDo() *OpenTicketDo {
+	return poolOpenTicketDo.Get().(*OpenTicketDo)
+}
+
+// ReleaseOpenTicketDo 释放OpenTicketDo
+func ReleaseOpenTicketDo(v *OpenTicketDo) {
+	v.TicketNo = ""
+	v.OriginTicketNo = ""
+	v.FlightNo = ""
+	v.AirlineCompany = ""
+	v.AirlineCode = ""
+	v.DepTime = ""
+	v.ArrTime = ""
+	v.DepCityName = ""
+	v.ArrCityName = ""
+	v.DepAirport = ""
+	v.ArrAirport = ""
+	v.DepAirportName = ""
+	v.ArrAirportName = ""
+	v.Cabin = ""
+	v.Cabinclass = ""
+	v.TicketPrice = ""
+	v.Discount = ""
+	v.Currency = ""
+	v.ItineraryNum = ""
+	v.PassengerName = ""
+	v.InsureNo = ""
+	v.InsureStatus = ""
+	v.InsureName = ""
+	v.InsuranceFee = 0
+	v.Oil = 0
+	v.Build = 0
+	v.RideTime = 0
+	v.IsChanged = false
+	poolOpenTicketDo.Put(v)
 }

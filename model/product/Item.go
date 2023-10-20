@@ -1,5 +1,9 @@
 package product
 
+import (
+	"sync"
+)
+
 // Item 结构体
 type Item struct {
 	// 商品图片列表(包括主图)。fields中只设置item_img可以返回ItemImg结构体中所有字段，如果设置为item_img.id、item_img.url、item_img.position等形式就只会返回相应的字段
@@ -62,4 +66,50 @@ type Item struct {
 	AuctionPoint int64 `json:"auction_point,omitempty" xml:"auction_point,omitempty"`
 	// 虚拟商品的状态字段
 	IsVirtual bool `json:"is_virtual,omitempty" xml:"is_virtual,omitempty"`
+}
+
+var poolItem = sync.Pool{
+	New: func() any {
+		return new(Item)
+	},
+}
+
+// GetItem() 从对象池中获取Item
+func GetItem() *Item {
+	return poolItem.Get().(*Item)
+}
+
+// ReleaseItem 释放Item
+func ReleaseItem(v *Item) {
+	v.ItemImgs = v.ItemImgs[:0]
+	v.PropImgs = v.PropImgs[:0]
+	v.Skus = v.Skus[:0]
+	v.Videos = v.Videos[:0]
+	v.Iid = ""
+	v.DetailUrl = ""
+	v.Title = ""
+	v.Nick = ""
+	v.Type = ""
+	v.SellerCids = ""
+	v.Props = ""
+	v.InputPids = ""
+	v.InputStr = ""
+	v.PicUrl = ""
+	v.StuffStatus = ""
+	v.ApproveStatus = ""
+	v.PropertyAlias = ""
+	v.OuterId = ""
+	v.SecondKill = ""
+	v.PropsName = ""
+	v.Barcode = ""
+	v.PromotedPrice = ""
+	v.MainPic34 = ""
+	v.UprightImageUrl = ""
+	v.NumIid = 0
+	v.Cid = 0
+	v.Price = 0
+	v.ProductId = 0
+	v.AuctionPoint = 0
+	v.IsVirtual = false
+	poolItem.Put(v)
 }

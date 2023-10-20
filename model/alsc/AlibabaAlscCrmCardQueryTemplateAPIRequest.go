@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscCrmCardQueryTemplateAPIRequest struct {
 // NewAlibabaAlscCrmCardQueryTemplateRequest 初始化AlibabaAlscCrmCardQueryTemplateAPIRequest对象
 func NewAlibabaAlscCrmCardQueryTemplateRequest() *AlibabaAlscCrmCardQueryTemplateAPIRequest {
 	return &AlibabaAlscCrmCardQueryTemplateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscCrmCardQueryTemplateAPIRequest) Reset() {
+	r._paramQueryCardTemplateOpenReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscCrmCardQueryTemplateAPIRequest) SetParamQueryCardTemplateOpe
 // GetParamQueryCardTemplateOpenReq ParamQueryCardTemplateOpenReq Getter
 func (r AlibabaAlscCrmCardQueryTemplateAPIRequest) GetParamQueryCardTemplateOpenReq() *QueryCardTemplateOpenReq {
 	return r._paramQueryCardTemplateOpenReq
+}
+
+var poolAlibabaAlscCrmCardQueryTemplateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscCrmCardQueryTemplateRequest()
+	},
+}
+
+// GetAlibabaAlscCrmCardQueryTemplateRequest 从 sync.Pool 获取 AlibabaAlscCrmCardQueryTemplateAPIRequest
+func GetAlibabaAlscCrmCardQueryTemplateAPIRequest() *AlibabaAlscCrmCardQueryTemplateAPIRequest {
+	return poolAlibabaAlscCrmCardQueryTemplateAPIRequest.Get().(*AlibabaAlscCrmCardQueryTemplateAPIRequest)
+}
+
+// ReleaseAlibabaAlscCrmCardQueryTemplateAPIRequest 将 AlibabaAlscCrmCardQueryTemplateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscCrmCardQueryTemplateAPIRequest(v *AlibabaAlscCrmCardQueryTemplateAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscCrmCardQueryTemplateAPIRequest.Put(v)
 }

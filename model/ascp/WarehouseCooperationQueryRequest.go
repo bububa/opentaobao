@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // WarehouseCooperationQueryRequest 结构体
 type WarehouseCooperationQueryRequest struct {
 	// 业务请求ID（服务商发起请求的ID）
@@ -20,4 +24,29 @@ type WarehouseCooperationQueryRequest struct {
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
 	// 每一页多少条，不超过200
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolWarehouseCooperationQueryRequest = sync.Pool{
+	New: func() any {
+		return new(WarehouseCooperationQueryRequest)
+	},
+}
+
+// GetWarehouseCooperationQueryRequest() 从对象池中获取WarehouseCooperationQueryRequest
+func GetWarehouseCooperationQueryRequest() *WarehouseCooperationQueryRequest {
+	return poolWarehouseCooperationQueryRequest.Get().(*WarehouseCooperationQueryRequest)
+}
+
+// ReleaseWarehouseCooperationQueryRequest 释放WarehouseCooperationQueryRequest
+func ReleaseWarehouseCooperationQueryRequest(v *WarehouseCooperationQueryRequest) {
+	v.RequestId = ""
+	v.SupplierId = ""
+	v.WarehouseCode = ""
+	v.WmsOwnerCode = ""
+	v.BusinessCode = ""
+	v.RequestTime = 0
+	v.CooperationStatus = 0
+	v.PageIndex = 0
+	v.PageSize = 0
+	poolWarehouseCooperationQueryRequest.Put(v)
 }

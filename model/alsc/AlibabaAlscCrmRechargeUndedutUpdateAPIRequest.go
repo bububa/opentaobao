@@ -2,6 +2,7 @@ package alsc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlscCrmRechargeUndedutUpdateAPIRequest struct {
 // NewAlibabaAlscCrmRechargeUndedutUpdateRequest 初始化AlibabaAlscCrmRechargeUndedutUpdateAPIRequest对象
 func NewAlibabaAlscCrmRechargeUndedutUpdateRequest() *AlibabaAlscCrmRechargeUndedutUpdateAPIRequest {
 	return &AlibabaAlscCrmRechargeUndedutUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlscCrmRechargeUndedutUpdateAPIRequest) Reset() {
+	r._paramUndedutOpenReq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlscCrmRechargeUndedutUpdateAPIRequest) SetParamUndedutOpenReq(_
 // GetParamUndedutOpenReq ParamUndedutOpenReq Getter
 func (r AlibabaAlscCrmRechargeUndedutUpdateAPIRequest) GetParamUndedutOpenReq() *UndedutOpenReq {
 	return r._paramUndedutOpenReq
+}
+
+var poolAlibabaAlscCrmRechargeUndedutUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlscCrmRechargeUndedutUpdateRequest()
+	},
+}
+
+// GetAlibabaAlscCrmRechargeUndedutUpdateRequest 从 sync.Pool 获取 AlibabaAlscCrmRechargeUndedutUpdateAPIRequest
+func GetAlibabaAlscCrmRechargeUndedutUpdateAPIRequest() *AlibabaAlscCrmRechargeUndedutUpdateAPIRequest {
+	return poolAlibabaAlscCrmRechargeUndedutUpdateAPIRequest.Get().(*AlibabaAlscCrmRechargeUndedutUpdateAPIRequest)
+}
+
+// ReleaseAlibabaAlscCrmRechargeUndedutUpdateAPIRequest 将 AlibabaAlscCrmRechargeUndedutUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlscCrmRechargeUndedutUpdateAPIRequest(v *AlibabaAlscCrmRechargeUndedutUpdateAPIRequest) {
+	v.Reset()
+	poolAlibabaAlscCrmRechargeUndedutUpdateAPIRequest.Put(v)
 }

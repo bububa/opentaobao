@@ -2,6 +2,7 @@ package util
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoQimenEventsProduceAPIRequest struct {
 // NewTaobaoQimenEventsProduceRequest 初始化TaobaoQimenEventsProduceAPIRequest对象
 func NewTaobaoQimenEventsProduceRequest() *TaobaoQimenEventsProduceAPIRequest {
 	return &TaobaoQimenEventsProduceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoQimenEventsProduceAPIRequest) Reset() {
+	r._messages = r._messages[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoQimenEventsProduceAPIRequest) SetMessages(_messages []QimenEvent)
 // GetMessages Messages Getter
 func (r TaobaoQimenEventsProduceAPIRequest) GetMessages() []QimenEvent {
 	return r._messages
+}
+
+var poolTaobaoQimenEventsProduceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoQimenEventsProduceRequest()
+	},
+}
+
+// GetTaobaoQimenEventsProduceRequest 从 sync.Pool 获取 TaobaoQimenEventsProduceAPIRequest
+func GetTaobaoQimenEventsProduceAPIRequest() *TaobaoQimenEventsProduceAPIRequest {
+	return poolTaobaoQimenEventsProduceAPIRequest.Get().(*TaobaoQimenEventsProduceAPIRequest)
+}
+
+// ReleaseTaobaoQimenEventsProduceAPIRequest 将 TaobaoQimenEventsProduceAPIRequest 放入 sync.Pool
+func ReleaseTaobaoQimenEventsProduceAPIRequest(v *TaobaoQimenEventsProduceAPIRequest) {
+	v.Reset()
+	poolTaobaoQimenEventsProduceAPIRequest.Put(v)
 }

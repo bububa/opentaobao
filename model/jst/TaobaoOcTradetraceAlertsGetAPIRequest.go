@@ -2,6 +2,7 @@ package jst
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoOcTradetraceAlertsGetAPIRequest struct {
 // NewTaobaoOcTradetraceAlertsGetRequest 初始化TaobaoOcTradetraceAlertsGetAPIRequest对象
 func NewTaobaoOcTradetraceAlertsGetRequest() *TaobaoOcTradetraceAlertsGetAPIRequest {
 	return &TaobaoOcTradetraceAlertsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOcTradetraceAlertsGetAPIRequest) Reset() {
+	r._abnormalType = 0
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoOcTradetraceAlertsGetAPIRequest) SetPageSize(_pageSize int64) err
 // GetPageSize PageSize Getter
 func (r TaobaoOcTradetraceAlertsGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoOcTradetraceAlertsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOcTradetraceAlertsGetRequest()
+	},
+}
+
+// GetTaobaoOcTradetraceAlertsGetRequest 从 sync.Pool 获取 TaobaoOcTradetraceAlertsGetAPIRequest
+func GetTaobaoOcTradetraceAlertsGetAPIRequest() *TaobaoOcTradetraceAlertsGetAPIRequest {
+	return poolTaobaoOcTradetraceAlertsGetAPIRequest.Get().(*TaobaoOcTradetraceAlertsGetAPIRequest)
+}
+
+// ReleaseTaobaoOcTradetraceAlertsGetAPIRequest 将 TaobaoOcTradetraceAlertsGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOcTradetraceAlertsGetAPIRequest(v *TaobaoOcTradetraceAlertsGetAPIRequest) {
+	v.Reset()
+	poolTaobaoOcTradetraceAlertsGetAPIRequest.Put(v)
 }

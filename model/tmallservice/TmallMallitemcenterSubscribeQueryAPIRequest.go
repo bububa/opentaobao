@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallMallitemcenterSubscribeQueryAPIRequest struct {
 // NewTmallMallitemcenterSubscribeQueryRequest 初始化TmallMallitemcenterSubscribeQueryAPIRequest对象
 func NewTmallMallitemcenterSubscribeQueryRequest() *TmallMallitemcenterSubscribeQueryAPIRequest {
 	return &TmallMallitemcenterSubscribeQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallMallitemcenterSubscribeQueryAPIRequest) Reset() {
+	r._query = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallMallitemcenterSubscribeQueryAPIRequest) SetQuery(_query *Spb2bOder
 // GetQuery Query Getter
 func (r TmallMallitemcenterSubscribeQueryAPIRequest) GetQuery() *Spb2bOderQuery {
 	return r._query
+}
+
+var poolTmallMallitemcenterSubscribeQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallMallitemcenterSubscribeQueryRequest()
+	},
+}
+
+// GetTmallMallitemcenterSubscribeQueryRequest 从 sync.Pool 获取 TmallMallitemcenterSubscribeQueryAPIRequest
+func GetTmallMallitemcenterSubscribeQueryAPIRequest() *TmallMallitemcenterSubscribeQueryAPIRequest {
+	return poolTmallMallitemcenterSubscribeQueryAPIRequest.Get().(*TmallMallitemcenterSubscribeQueryAPIRequest)
+}
+
+// ReleaseTmallMallitemcenterSubscribeQueryAPIRequest 将 TmallMallitemcenterSubscribeQueryAPIRequest 放入 sync.Pool
+func ReleaseTmallMallitemcenterSubscribeQueryAPIRequest(v *TmallMallitemcenterSubscribeQueryAPIRequest) {
+	v.Reset()
+	poolTmallMallitemcenterSubscribeQueryAPIRequest.Put(v)
 }

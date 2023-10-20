@@ -1,5 +1,9 @@
 package shop
 
+import (
+	"sync"
+)
+
 // OpenApiSearchResult 结构体
 type OpenApiSearchResult struct {
 	// 店铺信息
@@ -30,4 +34,34 @@ type OpenApiSearchResult struct {
 	ResultCode int64 `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 店铺个数
 	Total int64 `json:"total,omitempty" xml:"total,omitempty"`
+}
+
+var poolOpenApiSearchResult = sync.Pool{
+	New: func() any {
+		return new(OpenApiSearchResult)
+	},
+}
+
+// GetOpenApiSearchResult() 从对象池中获取OpenApiSearchResult
+func GetOpenApiSearchResult() *OpenApiSearchResult {
+	return poolOpenApiSearchResult.Get().(*OpenApiSearchResult)
+}
+
+// ReleaseOpenApiSearchResult 释放OpenApiSearchResult
+func ReleaseOpenApiSearchResult(v *OpenApiSearchResult) {
+	v.Items = v.Items[:0]
+	v.BucketId = ""
+	v.Context = ""
+	v.ExtAttrs = ""
+	v.Query = ""
+	v.RequestId = ""
+	v.ResultMsg = ""
+	v.SearchGroup = ""
+	v.SearchId = ""
+	v.SearchParams = ""
+	v.SessionId = ""
+	v.Count = 0
+	v.ResultCode = 0
+	v.Total = 0
+	poolOpenApiSearchResult.Put(v)
 }

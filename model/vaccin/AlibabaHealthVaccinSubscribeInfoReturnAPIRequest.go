@@ -2,6 +2,7 @@ package vaccin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaHealthVaccinSubscribeInfoReturnAPIRequest struct {
 // NewAlibabaHealthVaccinSubscribeInfoReturnRequest 初始化AlibabaHealthVaccinSubscribeInfoReturnAPIRequest对象
 func NewAlibabaHealthVaccinSubscribeInfoReturnRequest() *AlibabaHealthVaccinSubscribeInfoReturnAPIRequest {
 	return &AlibabaHealthVaccinSubscribeInfoReturnAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHealthVaccinSubscribeInfoReturnAPIRequest) Reset() {
+	r._vaccineIds = ""
+	r._obtainDate = ""
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaHealthVaccinSubscribeInfoReturnAPIRequest) SetPageSize(_pageSize
 // GetPageSize PageSize Getter
 func (r AlibabaHealthVaccinSubscribeInfoReturnAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolAlibabaHealthVaccinSubscribeInfoReturnAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHealthVaccinSubscribeInfoReturnRequest()
+	},
+}
+
+// GetAlibabaHealthVaccinSubscribeInfoReturnRequest 从 sync.Pool 获取 AlibabaHealthVaccinSubscribeInfoReturnAPIRequest
+func GetAlibabaHealthVaccinSubscribeInfoReturnAPIRequest() *AlibabaHealthVaccinSubscribeInfoReturnAPIRequest {
+	return poolAlibabaHealthVaccinSubscribeInfoReturnAPIRequest.Get().(*AlibabaHealthVaccinSubscribeInfoReturnAPIRequest)
+}
+
+// ReleaseAlibabaHealthVaccinSubscribeInfoReturnAPIRequest 将 AlibabaHealthVaccinSubscribeInfoReturnAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHealthVaccinSubscribeInfoReturnAPIRequest(v *AlibabaHealthVaccinSubscribeInfoReturnAPIRequest) {
+	v.Reset()
+	poolAlibabaHealthVaccinSubscribeInfoReturnAPIRequest.Put(v)
 }

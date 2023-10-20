@@ -9,11 +9,6 @@ import (
 // youku.mirage.query.permission
 //
 // 根据节目ID或者VID查询视频或者节目是否可以播放
-func YoukuMirageQueryPermission(clt *core.SDKClient, req *mirage.YoukuMirageQueryPermissionAPIRequest, session string) (*mirage.YoukuMirageQueryPermissionAPIResponse, error) {
-	var resp mirage.YoukuMirageQueryPermissionAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YoukuMirageQueryPermission(clt *core.SDKClient, req *mirage.YoukuMirageQueryPermissionAPIRequest, resp *mirage.YoukuMirageQueryPermissionAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package charity
 
+import (
+	"sync"
+)
+
 // CsrInvoiceAntChainSyncDto 结构体
 type CsrInvoiceAntChainSyncDto struct {
 	// 项目金额集合
@@ -42,4 +46,40 @@ type CsrInvoiceAntChainSyncDto struct {
 	MerchantId int64 `json:"merchant_id,omitempty" xml:"merchant_id,omitempty"`
 	// 店铺id
 	ShopId int64 `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
+}
+
+var poolCsrInvoiceAntChainSyncDto = sync.Pool{
+	New: func() any {
+		return new(CsrInvoiceAntChainSyncDto)
+	},
+}
+
+// GetCsrInvoiceAntChainSyncDto() 从对象池中获取CsrInvoiceAntChainSyncDto
+func GetCsrInvoiceAntChainSyncDto() *CsrInvoiceAntChainSyncDto {
+	return poolCsrInvoiceAntChainSyncDto.Get().(*CsrInvoiceAntChainSyncDto)
+}
+
+// ReleaseCsrInvoiceAntChainSyncDto 释放CsrInvoiceAntChainSyncDto
+func ReleaseCsrInvoiceAntChainSyncDto(v *CsrInvoiceAntChainSyncDto) {
+	v.ProjectList = v.ProjectList[:0]
+	v.BillList = v.BillList[:0]
+	v.FileList = v.FileList[:0]
+	v.BillNoList = v.BillNoList[:0]
+	v.UnifiedCreditCode = ""
+	v.InvoiceOrgId = ""
+	v.MerchantTel = ""
+	v.AccountNumber = ""
+	v.MerchantContact = ""
+	v.AccountBank = ""
+	v.MerchantNickName = ""
+	v.MerchantAddress = ""
+	v.InvoiceId = ""
+	v.InvoiceTitle = ""
+	v.InvoiceRemark = ""
+	v.InvoiceState = 0
+	v.InvoiceAmount = 0
+	v.ApplicationTime = 0
+	v.MerchantId = 0
+	v.ShopId = 0
+	poolCsrInvoiceAntChainSyncDto.Put(v)
 }

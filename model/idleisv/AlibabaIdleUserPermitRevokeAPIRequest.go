@@ -2,6 +2,7 @@ package idleisv
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaIdleUserPermitRevokeAPIRequest struct {
 // NewAlibabaIdleUserPermitRevokeRequest 初始化AlibabaIdleUserPermitRevokeAPIRequest对象
 func NewAlibabaIdleUserPermitRevokeRequest() *AlibabaIdleUserPermitRevokeAPIRequest {
 	return &AlibabaIdleUserPermitRevokeAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIdleUserPermitRevokeAPIRequest) Reset() {
+	r._userPermitCmd = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaIdleUserPermitRevokeAPIRequest) SetUserPermitCmd(_userPermitCmd 
 // GetUserPermitCmd UserPermitCmd Getter
 func (r AlibabaIdleUserPermitRevokeAPIRequest) GetUserPermitCmd() *UserPermitCmd {
 	return r._userPermitCmd
+}
+
+var poolAlibabaIdleUserPermitRevokeAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIdleUserPermitRevokeRequest()
+	},
+}
+
+// GetAlibabaIdleUserPermitRevokeRequest 从 sync.Pool 获取 AlibabaIdleUserPermitRevokeAPIRequest
+func GetAlibabaIdleUserPermitRevokeAPIRequest() *AlibabaIdleUserPermitRevokeAPIRequest {
+	return poolAlibabaIdleUserPermitRevokeAPIRequest.Get().(*AlibabaIdleUserPermitRevokeAPIRequest)
+}
+
+// ReleaseAlibabaIdleUserPermitRevokeAPIRequest 将 AlibabaIdleUserPermitRevokeAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIdleUserPermitRevokeAPIRequest(v *AlibabaIdleUserPermitRevokeAPIRequest) {
+	v.Reset()
+	poolAlibabaIdleUserPermitRevokeAPIRequest.Put(v)
 }

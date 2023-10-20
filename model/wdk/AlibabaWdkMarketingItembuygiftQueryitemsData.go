@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // AlibabaWdkMarketingItembuygiftQueryitemsData 结构体
 type AlibabaWdkMarketingItembuygiftQueryitemsData struct {
 	// 赠品的名称
@@ -16,4 +20,27 @@ type AlibabaWdkMarketingItembuygiftQueryitemsData struct {
 	LimitInfo *LimitInfo `json:"limit_info,omitempty" xml:"limit_info,omitempty"`
 	// 买N赠1的N
 	BuyNum int64 `json:"buy_num,omitempty" xml:"buy_num,omitempty"`
+}
+
+var poolAlibabaWdkMarketingItembuygiftQueryitemsData = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkMarketingItembuygiftQueryitemsData)
+	},
+}
+
+// GetAlibabaWdkMarketingItembuygiftQueryitemsData() 从对象池中获取AlibabaWdkMarketingItembuygiftQueryitemsData
+func GetAlibabaWdkMarketingItembuygiftQueryitemsData() *AlibabaWdkMarketingItembuygiftQueryitemsData {
+	return poolAlibabaWdkMarketingItembuygiftQueryitemsData.Get().(*AlibabaWdkMarketingItembuygiftQueryitemsData)
+}
+
+// ReleaseAlibabaWdkMarketingItembuygiftQueryitemsData 释放AlibabaWdkMarketingItembuygiftQueryitemsData
+func ReleaseAlibabaWdkMarketingItembuygiftQueryitemsData(v *AlibabaWdkMarketingItembuygiftQueryitemsData) {
+	v.GiftSkuName = ""
+	v.GiftSkuCode = ""
+	v.ItemShopRelation = ""
+	v.SkuName = ""
+	v.SkuCode = ""
+	v.LimitInfo = nil
+	v.BuyNum = 0
+	poolAlibabaWdkMarketingItembuygiftQueryitemsData.Put(v)
 }

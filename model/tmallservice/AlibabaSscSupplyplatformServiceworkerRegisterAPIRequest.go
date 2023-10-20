@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaSscSupplyplatformServiceworkerRegisterAPIRequest struct {
 // NewAlibabaSscSupplyplatformServiceworkerRegisterRequest 初始化AlibabaSscSupplyplatformServiceworkerRegisterAPIRequest对象
 func NewAlibabaSscSupplyplatformServiceworkerRegisterRequest() *AlibabaSscSupplyplatformServiceworkerRegisterAPIRequest {
 	return &AlibabaSscSupplyplatformServiceworkerRegisterAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSscSupplyplatformServiceworkerRegisterAPIRequest) Reset() {
+	r._workerRegisterForTopReqDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaSscSupplyplatformServiceworkerRegisterAPIRequest) SetWorkerRegis
 // GetWorkerRegisterForTopReqDto WorkerRegisterForTopReqDto Getter
 func (r AlibabaSscSupplyplatformServiceworkerRegisterAPIRequest) GetWorkerRegisterForTopReqDto() *WorkerRegisterForTopReqDto {
 	return r._workerRegisterForTopReqDto
+}
+
+var poolAlibabaSscSupplyplatformServiceworkerRegisterAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSscSupplyplatformServiceworkerRegisterRequest()
+	},
+}
+
+// GetAlibabaSscSupplyplatformServiceworkerRegisterRequest 从 sync.Pool 获取 AlibabaSscSupplyplatformServiceworkerRegisterAPIRequest
+func GetAlibabaSscSupplyplatformServiceworkerRegisterAPIRequest() *AlibabaSscSupplyplatformServiceworkerRegisterAPIRequest {
+	return poolAlibabaSscSupplyplatformServiceworkerRegisterAPIRequest.Get().(*AlibabaSscSupplyplatformServiceworkerRegisterAPIRequest)
+}
+
+// ReleaseAlibabaSscSupplyplatformServiceworkerRegisterAPIRequest 将 AlibabaSscSupplyplatformServiceworkerRegisterAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSscSupplyplatformServiceworkerRegisterAPIRequest(v *AlibabaSscSupplyplatformServiceworkerRegisterAPIRequest) {
+	v.Reset()
+	poolAlibabaSscSupplyplatformServiceworkerRegisterAPIRequest.Put(v)
 }

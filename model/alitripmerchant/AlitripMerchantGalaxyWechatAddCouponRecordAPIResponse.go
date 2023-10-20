@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripMerchantGalaxyWechatAddCouponRecordAPIResponse struct {
 	AlitripMerchantGalaxyWechatAddCouponRecordAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripMerchantGalaxyWechatAddCouponRecordAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripMerchantGalaxyWechatAddCouponRecordAPIResponseModel).Reset()
+}
+
 // AlitripMerchantGalaxyWechatAddCouponRecordAPIResponseModel is 星河-记录用户微信优惠券领取记录 成功返回结果
 type AlitripMerchantGalaxyWechatAddCouponRecordAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_merchant_galaxy_wechat_add_coupon_record_response"`
@@ -22,4 +29,27 @@ type AlitripMerchantGalaxyWechatAddCouponRecordAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回对象
 	Result *AlitripMerchantGalaxyWechatAddCouponRecordResponse `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripMerchantGalaxyWechatAddCouponRecordAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlitripMerchantGalaxyWechatAddCouponRecordAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyWechatAddCouponRecordAPIResponse)
+	},
+}
+
+// GetAlitripMerchantGalaxyWechatAddCouponRecordAPIResponse 从 sync.Pool 获取 AlitripMerchantGalaxyWechatAddCouponRecordAPIResponse
+func GetAlitripMerchantGalaxyWechatAddCouponRecordAPIResponse() *AlitripMerchantGalaxyWechatAddCouponRecordAPIResponse {
+	return poolAlitripMerchantGalaxyWechatAddCouponRecordAPIResponse.Get().(*AlitripMerchantGalaxyWechatAddCouponRecordAPIResponse)
+}
+
+// ReleaseAlitripMerchantGalaxyWechatAddCouponRecordAPIResponse 将 AlitripMerchantGalaxyWechatAddCouponRecordAPIResponse 保存到 sync.Pool
+func ReleaseAlitripMerchantGalaxyWechatAddCouponRecordAPIResponse(v *AlitripMerchantGalaxyWechatAddCouponRecordAPIResponse) {
+	v.Reset()
+	poolAlitripMerchantGalaxyWechatAddCouponRecordAPIResponse.Put(v)
 }

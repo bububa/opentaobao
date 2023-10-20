@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // ItemEleCertInfo 结构体
 type ItemEleCertInfo struct {
 	// 殊必填（expiryDateType为1或2时必填），电子凭证 有效期 结束时间
@@ -16,4 +20,27 @@ type ItemEleCertInfo struct {
 	ExpiryDays int64 `json:"expiry_days,omitempty" xml:"expiry_days,omitempty"`
 	// 必填，核销门店库id
 	PackageId int64 `json:"package_id,omitempty" xml:"package_id,omitempty"`
+}
+
+var poolItemEleCertInfo = sync.Pool{
+	New: func() any {
+		return new(ItemEleCertInfo)
+	},
+}
+
+// GetItemEleCertInfo() 从对象池中获取ItemEleCertInfo
+func GetItemEleCertInfo() *ItemEleCertInfo {
+	return poolItemEleCertInfo.Get().(*ItemEleCertInfo)
+}
+
+// ReleaseItemEleCertInfo 释放ItemEleCertInfo
+func ReleaseItemEleCertInfo(v *ItemEleCertInfo) {
+	v.ExpiryDateEnd = ""
+	v.ExpiryDateStart = ""
+	v.AutoRefundRate = 0
+	v.ExpiredRefundRate = 0
+	v.ExpiryDateType = 0
+	v.ExpiryDays = 0
+	v.PackageId = 0
+	poolItemEleCertInfo.Put(v)
 }

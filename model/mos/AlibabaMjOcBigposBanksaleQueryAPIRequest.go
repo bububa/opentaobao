@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaMjOcBigposBanksaleQueryAPIRequest struct {
 // NewAlibabaMjOcBigposBanksaleQueryRequest 初始化AlibabaMjOcBigposBanksaleQueryAPIRequest对象
 func NewAlibabaMjOcBigposBanksaleQueryRequest() *AlibabaMjOcBigposBanksaleQueryAPIRequest {
 	return &AlibabaMjOcBigposBanksaleQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMjOcBigposBanksaleQueryAPIRequest) Reset() {
+	r._startTime = ""
+	r._cardNo = ""
+	r._outStoreNo = ""
+	r._endTime = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaMjOcBigposBanksaleQueryAPIRequest) SetEndTime(_endTime string) e
 // GetEndTime EndTime Getter
 func (r AlibabaMjOcBigposBanksaleQueryAPIRequest) GetEndTime() string {
 	return r._endTime
+}
+
+var poolAlibabaMjOcBigposBanksaleQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMjOcBigposBanksaleQueryRequest()
+	},
+}
+
+// GetAlibabaMjOcBigposBanksaleQueryRequest 从 sync.Pool 获取 AlibabaMjOcBigposBanksaleQueryAPIRequest
+func GetAlibabaMjOcBigposBanksaleQueryAPIRequest() *AlibabaMjOcBigposBanksaleQueryAPIRequest {
+	return poolAlibabaMjOcBigposBanksaleQueryAPIRequest.Get().(*AlibabaMjOcBigposBanksaleQueryAPIRequest)
+}
+
+// ReleaseAlibabaMjOcBigposBanksaleQueryAPIRequest 将 AlibabaMjOcBigposBanksaleQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMjOcBigposBanksaleQueryAPIRequest(v *AlibabaMjOcBigposBanksaleQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaMjOcBigposBanksaleQueryAPIRequest.Put(v)
 }

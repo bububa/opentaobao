@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest struct {
 // NewAlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest 初始化AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest对象
 func NewAlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest() *AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest {
 	return &AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest) Reset() {
+	r._paramTaxOptimizationSalaryPaymentAccessReqDTO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest) SetParamTaxO
 // GetParamTaxOptimizationSalaryPaymentAccessReqDTO ParamTaxOptimizationSalaryPaymentAccessReqDTO Getter
 func (r AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest) GetParamTaxOptimizationSalaryPaymentAccessReqDTO() *TaxOptimizationSalaryPaymentAccessReqDto {
 	return r._paramTaxOptimizationSalaryPaymentAccessReqDTO
+}
+
+var poolAlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest()
+	},
+}
+
+// GetAlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest 从 sync.Pool 获取 AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest
+func GetAlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest() *AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest {
+	return poolAlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest.Get().(*AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest)
+}
+
+// ReleaseAlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest 将 AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest(v *AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest.Put(v)
 }

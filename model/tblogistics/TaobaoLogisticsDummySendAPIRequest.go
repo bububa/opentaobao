@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoLogisticsDummySendAPIRequest struct {
 // NewTaobaoLogisticsDummySendRequest 初始化TaobaoLogisticsDummySendAPIRequest对象
 func NewTaobaoLogisticsDummySendRequest() *TaobaoLogisticsDummySendAPIRequest {
 	return &TaobaoLogisticsDummySendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLogisticsDummySendAPIRequest) Reset() {
+	r._feature = ""
+	r._sellerIp = ""
+	r._tid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoLogisticsDummySendAPIRequest) SetTid(_tid int64) error {
 // GetTid Tid Getter
 func (r TaobaoLogisticsDummySendAPIRequest) GetTid() int64 {
 	return r._tid
+}
+
+var poolTaobaoLogisticsDummySendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLogisticsDummySendRequest()
+	},
+}
+
+// GetTaobaoLogisticsDummySendRequest 从 sync.Pool 获取 TaobaoLogisticsDummySendAPIRequest
+func GetTaobaoLogisticsDummySendAPIRequest() *TaobaoLogisticsDummySendAPIRequest {
+	return poolTaobaoLogisticsDummySendAPIRequest.Get().(*TaobaoLogisticsDummySendAPIRequest)
+}
+
+// ReleaseTaobaoLogisticsDummySendAPIRequest 将 TaobaoLogisticsDummySendAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLogisticsDummySendAPIRequest(v *TaobaoLogisticsDummySendAPIRequest) {
+	v.Reset()
+	poolTaobaoLogisticsDummySendAPIRequest.Put(v)
 }

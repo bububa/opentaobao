@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaCampusAclUpdategrantroletouserAPIRequest struct {
 // NewAlibabaCampusAclUpdategrantroletouserRequest 初始化AlibabaCampusAclUpdategrantroletouserAPIRequest对象
 func NewAlibabaCampusAclUpdategrantroletouserRequest() *AlibabaCampusAclUpdategrantroletouserAPIRequest {
 	return &AlibabaCampusAclUpdategrantroletouserAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusAclUpdategrantroletouserAPIRequest) Reset() {
+	r._role = r._role[:0]
+	r._systemId = ""
+	r._userId = ""
+	r._accountId = ""
+	r._companyId = 0
+	r._campusId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaCampusAclUpdategrantroletouserAPIRequest) SetCampusId(_campusId 
 // GetCampusId CampusId Getter
 func (r AlibabaCampusAclUpdategrantroletouserAPIRequest) GetCampusId() int64 {
 	return r._campusId
+}
+
+var poolAlibabaCampusAclUpdategrantroletouserAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusAclUpdategrantroletouserRequest()
+	},
+}
+
+// GetAlibabaCampusAclUpdategrantroletouserRequest 从 sync.Pool 获取 AlibabaCampusAclUpdategrantroletouserAPIRequest
+func GetAlibabaCampusAclUpdategrantroletouserAPIRequest() *AlibabaCampusAclUpdategrantroletouserAPIRequest {
+	return poolAlibabaCampusAclUpdategrantroletouserAPIRequest.Get().(*AlibabaCampusAclUpdategrantroletouserAPIRequest)
+}
+
+// ReleaseAlibabaCampusAclUpdategrantroletouserAPIRequest 将 AlibabaCampusAclUpdategrantroletouserAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusAclUpdategrantroletouserAPIRequest(v *AlibabaCampusAclUpdategrantroletouserAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusAclUpdategrantroletouserAPIRequest.Put(v)
 }

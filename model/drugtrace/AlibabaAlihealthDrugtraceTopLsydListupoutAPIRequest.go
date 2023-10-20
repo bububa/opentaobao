@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -41,8 +42,25 @@ type AlibabaAlihealthDrugtraceTopLsydListupoutAPIRequest struct {
 // NewAlibabaAlihealthDrugtraceTopLsydListupoutRequest 初始化AlibabaAlihealthDrugtraceTopLsydListupoutAPIRequest对象
 func NewAlibabaAlihealthDrugtraceTopLsydListupoutRequest() *AlibabaAlihealthDrugtraceTopLsydListupoutAPIRequest {
 	return &AlibabaAlihealthDrugtraceTopLsydListupoutAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(12),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugtraceTopLsydListupoutAPIRequest) Reset() {
+	r._refEntId = ""
+	r._beginDate = ""
+	r._endDate = ""
+	r._fromUserId = ""
+	r._produceBatchNo = ""
+	r._drugEntBaseInfoId = ""
+	r._billType = ""
+	r._physicType = ""
+	r._status = ""
+	r._billCode = ""
+	r._pageSize = 0
+	r._page = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -216,4 +234,21 @@ func (r *AlibabaAlihealthDrugtraceTopLsydListupoutAPIRequest) SetPage(_page int6
 // GetPage Page Getter
 func (r AlibabaAlihealthDrugtraceTopLsydListupoutAPIRequest) GetPage() int64 {
 	return r._page
+}
+
+var poolAlibabaAlihealthDrugtraceTopLsydListupoutAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugtraceTopLsydListupoutRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugtraceTopLsydListupoutRequest 从 sync.Pool 获取 AlibabaAlihealthDrugtraceTopLsydListupoutAPIRequest
+func GetAlibabaAlihealthDrugtraceTopLsydListupoutAPIRequest() *AlibabaAlihealthDrugtraceTopLsydListupoutAPIRequest {
+	return poolAlibabaAlihealthDrugtraceTopLsydListupoutAPIRequest.Get().(*AlibabaAlihealthDrugtraceTopLsydListupoutAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugtraceTopLsydListupoutAPIRequest 将 AlibabaAlihealthDrugtraceTopLsydListupoutAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugtraceTopLsydListupoutAPIRequest(v *AlibabaAlihealthDrugtraceTopLsydListupoutAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugtraceTopLsydListupoutAPIRequest.Put(v)
 }

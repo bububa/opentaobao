@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.member.derby.state.sync
 //
 // 德比侧同步卡、券状态接口
-func TaobaoXhotelMemberDerbyStateSync(clt *core.SDKClient, req *xhotelcrm.TaobaoXhotelMemberDerbyStateSyncAPIRequest, session string) (*xhotelcrm.TaobaoXhotelMemberDerbyStateSyncAPIResponse, error) {
-	var resp xhotelcrm.TaobaoXhotelMemberDerbyStateSyncAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelMemberDerbyStateSync(clt *core.SDKClient, req *xhotelcrm.TaobaoXhotelMemberDerbyStateSyncAPIRequest, resp *xhotelcrm.TaobaoXhotelMemberDerbyStateSyncAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

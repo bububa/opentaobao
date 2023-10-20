@@ -2,6 +2,7 @@ package interact
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,8 +18,13 @@ type AlibabaInteractSensorCalendarAPIRequest struct {
 // NewAlibabaInteractSensorCalendarRequest 初始化AlibabaInteractSensorCalendarAPIRequest对象
 func NewAlibabaInteractSensorCalendarRequest() *AlibabaInteractSensorCalendarAPIRequest {
 	return &AlibabaInteractSensorCalendarAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(0),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaInteractSensorCalendarAPIRequest) Reset() {
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -36,4 +42,21 @@ func (r AlibabaInteractSensorCalendarAPIRequest) GetApiParams(params url.Values)
 // GetRawParams IRequest interface 方法, 获取API原始参数
 func (r AlibabaInteractSensorCalendarAPIRequest) GetRawParams() model.Params {
 	return r.Params
+}
+
+var poolAlibabaInteractSensorCalendarAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaInteractSensorCalendarRequest()
+	},
+}
+
+// GetAlibabaInteractSensorCalendarRequest 从 sync.Pool 获取 AlibabaInteractSensorCalendarAPIRequest
+func GetAlibabaInteractSensorCalendarAPIRequest() *AlibabaInteractSensorCalendarAPIRequest {
+	return poolAlibabaInteractSensorCalendarAPIRequest.Get().(*AlibabaInteractSensorCalendarAPIRequest)
+}
+
+// ReleaseAlibabaInteractSensorCalendarAPIRequest 将 AlibabaInteractSensorCalendarAPIRequest 放入 sync.Pool
+func ReleaseAlibabaInteractSensorCalendarAPIRequest(v *AlibabaInteractSensorCalendarAPIRequest) {
+	v.Reset()
+	poolAlibabaInteractSensorCalendarAPIRequest.Put(v)
 }

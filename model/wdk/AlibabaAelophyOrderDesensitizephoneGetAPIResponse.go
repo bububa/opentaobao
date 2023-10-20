@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAelophyOrderDesensitizephoneGetAPIResponse struct {
 	model.CommonResponse
 	AlibabaAelophyOrderDesensitizephoneGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAelophyOrderDesensitizephoneGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAelophyOrderDesensitizephoneGetAPIResponseModel).Reset()
 }
 
 // AlibabaAelophyOrderDesensitizephoneGetAPIResponseModel is 获取订单隐私号 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAelophyOrderDesensitizephoneGetAPIResponseModel struct {
 	Model *OrderDesensitizePhoneResult `json:"model,omitempty" xml:"model,omitempty"`
 	// 调用是否成功
 	ApiSuccess bool `json:"api_success,omitempty" xml:"api_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAelophyOrderDesensitizephoneGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ApiErrCode = ""
+	m.ApiErrMsg = ""
+	m.Model = nil
+	m.ApiSuccess = false
+}
+
+var poolAlibabaAelophyOrderDesensitizephoneGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAelophyOrderDesensitizephoneGetAPIResponse)
+	},
+}
+
+// GetAlibabaAelophyOrderDesensitizephoneGetAPIResponse 从 sync.Pool 获取 AlibabaAelophyOrderDesensitizephoneGetAPIResponse
+func GetAlibabaAelophyOrderDesensitizephoneGetAPIResponse() *AlibabaAelophyOrderDesensitizephoneGetAPIResponse {
+	return poolAlibabaAelophyOrderDesensitizephoneGetAPIResponse.Get().(*AlibabaAelophyOrderDesensitizephoneGetAPIResponse)
+}
+
+// ReleaseAlibabaAelophyOrderDesensitizephoneGetAPIResponse 将 AlibabaAelophyOrderDesensitizephoneGetAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAelophyOrderDesensitizephoneGetAPIResponse(v *AlibabaAelophyOrderDesensitizephoneGetAPIResponse) {
+	v.Reset()
+	poolAlibabaAelophyOrderDesensitizephoneGetAPIResponse.Put(v)
 }

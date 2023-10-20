@@ -1,5 +1,9 @@
 package product
 
+import (
+	"sync"
+)
+
 // GoodsPropertyDto 结构体
 type GoodsPropertyDto struct {
 	// 属性可选项
@@ -26,4 +30,32 @@ type GoodsPropertyDto struct {
 	ContentType int64 `json:"content_type,omitempty" xml:"content_type,omitempty"`
 	// 是否可见
 	Visible bool `json:"visible,omitempty" xml:"visible,omitempty"`
+}
+
+var poolGoodsPropertyDto = sync.Pool{
+	New: func() any {
+		return new(GoodsPropertyDto)
+	},
+}
+
+// GetGoodsPropertyDto() 从对象池中获取GoodsPropertyDto
+func GetGoodsPropertyDto() *GoodsPropertyDto {
+	return poolGoodsPropertyDto.Get().(*GoodsPropertyDto)
+}
+
+// ReleaseGoodsPropertyDto 释放GoodsPropertyDto
+func ReleaseGoodsPropertyDto(v *GoodsPropertyDto) {
+	v.Options = v.Options[:0]
+	v.DefaultValue = ""
+	v.AttrUnit = ""
+	v.PropertyName = ""
+	v.Placeholder = ""
+	v.PropertyContentType = 0
+	v.CategoryAttrType = 0
+	v.PropertyRule = nil
+	v.PropertyGrade = 0
+	v.PropertyId = 0
+	v.ContentType = 0
+	v.Visible = false
+	poolGoodsPropertyDto.Put(v)
 }

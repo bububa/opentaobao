@@ -9,11 +9,6 @@ import (
 // alibaba.damai.maitix.distribution.delivery.query
 //
 // 渠道查询物流订单
-func AlibabaDamaiMaitixDistributionDeliveryQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixDistributionDeliveryQueryAPIRequest, session string) (*maitix.AlibabaDamaiMaitixDistributionDeliveryQueryAPIResponse, error) {
-	var resp maitix.AlibabaDamaiMaitixDistributionDeliveryQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDamaiMaitixDistributionDeliveryQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixDistributionDeliveryQueryAPIRequest, resp *maitix.AlibabaDamaiMaitixDistributionDeliveryQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

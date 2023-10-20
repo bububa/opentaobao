@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TaobaoSimbaSerchcrowdPriceBatchUpdateAPIRequest struct {
 // NewTaobaoSimbaSerchcrowdPriceBatchUpdateRequest 初始化TaobaoSimbaSerchcrowdPriceBatchUpdateAPIRequest对象
 func NewTaobaoSimbaSerchcrowdPriceBatchUpdateRequest() *TaobaoSimbaSerchcrowdPriceBatchUpdateAPIRequest {
 	return &TaobaoSimbaSerchcrowdPriceBatchUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaSerchcrowdPriceBatchUpdateAPIRequest) Reset() {
+	r._adgroupCrowdIds = r._adgroupCrowdIds[:0]
+	r._subNick = ""
+	r._nick = ""
+	r._adgroupId = 0
+	r._discount = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TaobaoSimbaSerchcrowdPriceBatchUpdateAPIRequest) SetDiscount(_discount 
 // GetDiscount Discount Getter
 func (r TaobaoSimbaSerchcrowdPriceBatchUpdateAPIRequest) GetDiscount() int64 {
 	return r._discount
+}
+
+var poolTaobaoSimbaSerchcrowdPriceBatchUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaSerchcrowdPriceBatchUpdateRequest()
+	},
+}
+
+// GetTaobaoSimbaSerchcrowdPriceBatchUpdateRequest 从 sync.Pool 获取 TaobaoSimbaSerchcrowdPriceBatchUpdateAPIRequest
+func GetTaobaoSimbaSerchcrowdPriceBatchUpdateAPIRequest() *TaobaoSimbaSerchcrowdPriceBatchUpdateAPIRequest {
+	return poolTaobaoSimbaSerchcrowdPriceBatchUpdateAPIRequest.Get().(*TaobaoSimbaSerchcrowdPriceBatchUpdateAPIRequest)
+}
+
+// ReleaseTaobaoSimbaSerchcrowdPriceBatchUpdateAPIRequest 将 TaobaoSimbaSerchcrowdPriceBatchUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaSerchcrowdPriceBatchUpdateAPIRequest(v *TaobaoSimbaSerchcrowdPriceBatchUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaSerchcrowdPriceBatchUpdateAPIRequest.Put(v)
 }

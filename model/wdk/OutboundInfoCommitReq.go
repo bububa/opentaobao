@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // OutboundInfoCommitReq 结构体
 type OutboundInfoCommitReq struct {
 	// 商品列表
@@ -18,4 +22,28 @@ type OutboundInfoCommitReq struct {
 	MerchantCode string `json:"merchant_code,omitempty" xml:"merchant_code,omitempty"`
 	// 收货类型(信任收货、非信任收货)
 	TrustedInbound bool `json:"trusted_inbound,omitempty" xml:"trusted_inbound,omitempty"`
+}
+
+var poolOutboundInfoCommitReq = sync.Pool{
+	New: func() any {
+		return new(OutboundInfoCommitReq)
+	},
+}
+
+// GetOutboundInfoCommitReq() 从对象池中获取OutboundInfoCommitReq
+func GetOutboundInfoCommitReq() *OutboundInfoCommitReq {
+	return poolOutboundInfoCommitReq.Get().(*OutboundInfoCommitReq)
+}
+
+// ReleaseOutboundInfoCommitReq 释放OutboundInfoCommitReq
+func ReleaseOutboundInfoCommitReq(v *OutboundInfoCommitReq) {
+	v.OutboundItemInfos = v.OutboundItemInfos[:0]
+	v.EstimatedArrivalAt = ""
+	v.OutboundAt = ""
+	v.SupplierName = ""
+	v.SupplierCode = ""
+	v.AsnOrderNo = ""
+	v.MerchantCode = ""
+	v.TrustedInbound = false
+	poolOutboundInfoCommitReq.Put(v)
 }

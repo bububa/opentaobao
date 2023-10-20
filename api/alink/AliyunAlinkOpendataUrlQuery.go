@@ -9,11 +9,6 @@ import (
 // aliyun.alink.opendata.url.query
 //
 // 厂商数据授权访问URL查询
-func AliyunAlinkOpendataUrlQuery(clt *core.SDKClient, req *alink.AliyunAlinkOpendataUrlQueryAPIRequest, session string) (*alink.AliyunAlinkOpendataUrlQueryAPIResponse, error) {
-	var resp alink.AliyunAlinkOpendataUrlQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliyunAlinkOpendataUrlQuery(clt *core.SDKClient, req *alink.AliyunAlinkOpendataUrlQueryAPIRequest, resp *alink.AliyunAlinkOpendataUrlQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

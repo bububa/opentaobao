@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -43,8 +44,26 @@ type AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest struct {
 // NewAlibabaAlihealthDrugKytRemnantbillUploadRequest 初始化AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest对象
 func NewAlibabaAlihealthDrugKytRemnantbillUploadRequest() *AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest {
 	return &AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(13),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest) Reset() {
+	r._refEntId = ""
+	r._billType = ""
+	r._billCode = ""
+	r._billTime = ""
+	r._fromRefUserId = ""
+	r._toRefUserId = ""
+	r._assRefEntId = ""
+	r._disRefEntId = ""
+	r._drugEntBaseInfoId = ""
+	r._produceDate = ""
+	r._expireDate = ""
+	r._produceBatchNo = ""
+	r._inputAmount = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -231,4 +250,21 @@ func (r *AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest) SetInputAmount(_inp
 // GetInputAmount InputAmount Getter
 func (r AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest) GetInputAmount() string {
 	return r._inputAmount
+}
+
+var poolAlibabaAlihealthDrugKytRemnantbillUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthDrugKytRemnantbillUploadRequest()
+	},
+}
+
+// GetAlibabaAlihealthDrugKytRemnantbillUploadRequest 从 sync.Pool 获取 AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest
+func GetAlibabaAlihealthDrugKytRemnantbillUploadAPIRequest() *AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest {
+	return poolAlibabaAlihealthDrugKytRemnantbillUploadAPIRequest.Get().(*AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthDrugKytRemnantbillUploadAPIRequest 将 AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthDrugKytRemnantbillUploadAPIRequest(v *AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthDrugKytRemnantbillUploadAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package product
 
+import (
+	"sync"
+)
+
 // PropertyRuleDto 结构体
 type PropertyRuleDto struct {
 	// 字符串规则，正则表达式
@@ -24,4 +28,31 @@ type PropertyRuleDto struct {
 	MaxLength int64 `json:"max_length,omitempty" xml:"max_length,omitempty"`
 	// 通用规则，是否必填
 	Required bool `json:"required,omitempty" xml:"required,omitempty"`
+}
+
+var poolPropertyRuleDto = sync.Pool{
+	New: func() any {
+		return new(PropertyRuleDto)
+	},
+}
+
+// GetPropertyRuleDto() 从对象池中获取PropertyRuleDto
+func GetPropertyRuleDto() *PropertyRuleDto {
+	return poolPropertyRuleDto.Get().(*PropertyRuleDto)
+}
+
+// ReleasePropertyRuleDto 释放PropertyRuleDto
+func ReleasePropertyRuleDto(v *PropertyRuleDto) {
+	v.Pattern = ""
+	v.PatternMsg = ""
+	v.HighestPrice = 0
+	v.LowestPrice = 0
+	v.Min = 0
+	v.Max = 0
+	v.MinLength = 0
+	v.MaxSize = 0
+	v.MaxCount = 0
+	v.MaxLength = 0
+	v.Required = false
+	poolPropertyRuleDto.Put(v)
 }

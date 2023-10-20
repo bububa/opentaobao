@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.newhome.shopconfig.astore.preview
 //
 // 天猫好房店铺装修-Astore上翻
-func AlibabaAlihouseNewhomeShopconfigAstorePreview(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeShopconfigAstorePreviewAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeShopconfigAstorePreviewAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeShopconfigAstorePreviewAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseNewhomeShopconfigAstorePreview(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeShopconfigAstorePreviewAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeShopconfigAstorePreviewAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

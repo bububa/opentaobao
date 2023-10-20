@@ -9,11 +9,6 @@ import (
 // taobao.simba.adgroup.mobilediscount.delete
 //
 // 批量删除adgroup的移动溢价
-func TaobaoSimbaAdgroupMobilediscountDelete(clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest, session string) (*simba.TaobaoSimbaAdgroupMobilediscountDeleteAPIResponse, error) {
-	var resp simba.TaobaoSimbaAdgroupMobilediscountDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaAdgroupMobilediscountDelete(clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest, resp *simba.TaobaoSimbaAdgroupMobilediscountDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package scs
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -17,6 +18,12 @@ type TaobaoOnebpDkxReportReportAccountRealtimeAPIResponse struct {
 	TaobaoOnebpDkxReportReportAccountRealtimeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoOnebpDkxReportReportAccountRealtimeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOnebpDkxReportReportAccountRealtimeAPIResponseModel).Reset()
+}
+
 // TaobaoOnebpDkxReportReportAccountRealtimeAPIResponseModel is 获取账户实时报表 成功返回结果
 type TaobaoOnebpDkxReportReportAccountRealtimeAPIResponseModel struct {
 	XMLName xml.Name `xml:"onebp_dkx_report_report_account_realtime_response"`
@@ -24,4 +31,27 @@ type TaobaoOnebpDkxReportReportAccountRealtimeAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果体
 	Result *TaobaoOnebpDkxReportReportAccountRealtimeResultDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOnebpDkxReportReportAccountRealtimeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoOnebpDkxReportReportAccountRealtimeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOnebpDkxReportReportAccountRealtimeAPIResponse)
+	},
+}
+
+// GetTaobaoOnebpDkxReportReportAccountRealtimeAPIResponse 从 sync.Pool 获取 TaobaoOnebpDkxReportReportAccountRealtimeAPIResponse
+func GetTaobaoOnebpDkxReportReportAccountRealtimeAPIResponse() *TaobaoOnebpDkxReportReportAccountRealtimeAPIResponse {
+	return poolTaobaoOnebpDkxReportReportAccountRealtimeAPIResponse.Get().(*TaobaoOnebpDkxReportReportAccountRealtimeAPIResponse)
+}
+
+// ReleaseTaobaoOnebpDkxReportReportAccountRealtimeAPIResponse 将 TaobaoOnebpDkxReportReportAccountRealtimeAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOnebpDkxReportReportAccountRealtimeAPIResponse(v *TaobaoOnebpDkxReportReportAccountRealtimeAPIResponse) {
+	v.Reset()
+	poolTaobaoOnebpDkxReportReportAccountRealtimeAPIResponse.Put(v)
 }

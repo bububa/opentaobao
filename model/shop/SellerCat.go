@@ -1,5 +1,9 @@
 package shop
 
+import (
+	"sync"
+)
+
 // SellerCat 结构体
 type SellerCat struct {
 	// 创建时间。格式：yyyy-MM-dd HH:mm:ss
@@ -18,4 +22,28 @@ type SellerCat struct {
 	ParentCid int64 `json:"parent_cid,omitempty" xml:"parent_cid,omitempty"`
 	// 该类目在页面上的排序位置
 	SortOrder int64 `json:"sort_order,omitempty" xml:"sort_order,omitempty"`
+}
+
+var poolSellerCat = sync.Pool{
+	New: func() any {
+		return new(SellerCat)
+	},
+}
+
+// GetSellerCat() 从对象池中获取SellerCat
+func GetSellerCat() *SellerCat {
+	return poolSellerCat.Get().(*SellerCat)
+}
+
+// ReleaseSellerCat 释放SellerCat
+func ReleaseSellerCat(v *SellerCat) {
+	v.Created = ""
+	v.Name = ""
+	v.PicUrl = ""
+	v.Type = ""
+	v.Modified = ""
+	v.Cid = 0
+	v.ParentCid = 0
+	v.SortOrder = 0
+	poolSellerCat.Put(v)
 }

@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest struct {
 // NewTaobaoWdkEquipmentConveyorStatusconfirmRequest 初始化TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest对象
 func NewTaobaoWdkEquipmentConveyorStatusconfirmRequest() *TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest {
 	return &TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest) Reset() {
+	r._warehouseCode = ""
+	r._uuid = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest) SetUuid(_uuid string
 // GetUuid Uuid Getter
 func (r TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest) GetUuid() string {
 	return r._uuid
+}
+
+var poolTaobaoWdkEquipmentConveyorStatusconfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWdkEquipmentConveyorStatusconfirmRequest()
+	},
+}
+
+// GetTaobaoWdkEquipmentConveyorStatusconfirmRequest 从 sync.Pool 获取 TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest
+func GetTaobaoWdkEquipmentConveyorStatusconfirmAPIRequest() *TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest {
+	return poolTaobaoWdkEquipmentConveyorStatusconfirmAPIRequest.Get().(*TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest)
+}
+
+// ReleaseTaobaoWdkEquipmentConveyorStatusconfirmAPIRequest 将 TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWdkEquipmentConveyorStatusconfirmAPIRequest(v *TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest) {
+	v.Reset()
+	poolTaobaoWdkEquipmentConveyorStatusconfirmAPIRequest.Put(v)
 }

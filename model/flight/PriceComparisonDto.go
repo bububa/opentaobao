@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // PriceComparisonDto 结构体
 type PriceComparisonDto struct {
 	// 航班日期
@@ -28,4 +32,33 @@ type PriceComparisonDto struct {
 	PolicyDeployStatus int64 `json:"policy_deploy_status,omitempty" xml:"policy_deploy_status,omitempty"`
 	// 是否销售
 	CanSell bool `json:"can_sell,omitempty" xml:"can_sell,omitempty"`
+}
+
+var poolPriceComparisonDto = sync.Pool{
+	New: func() any {
+		return new(PriceComparisonDto)
+	},
+}
+
+// GetPriceComparisonDto() 从对象池中获取PriceComparisonDto
+func GetPriceComparisonDto() *PriceComparisonDto {
+	return poolPriceComparisonDto.Get().(*PriceComparisonDto)
+}
+
+// ReleasePriceComparisonDto 释放PriceComparisonDto
+func ReleasePriceComparisonDto(v *PriceComparisonDto) {
+	v.TravelDateStr = v.TravelDateStr[:0]
+	v.PolicyIdStr = ""
+	v.ArrDep = ""
+	v.FlightNos = ""
+	v.CarbinList = ""
+	v.PolicyType = 0
+	v.SelfSalePrice = 0
+	v.LowestSalePrice = 0
+	v.PriceDiff = 0
+	v.SaleModeCode = 0
+	v.ProductType = 0
+	v.PolicyDeployStatus = 0
+	v.CanSell = false
+	poolPriceComparisonDto.Put(v)
 }

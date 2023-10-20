@@ -1,7 +1,11 @@
 package tmallcar
 
-// XcarSysLineDto 结构体
-type XcarSysLineDto struct {
+import (
+	"sync"
+)
+
+// XCarSysLineDto 结构体
+type XCarSysLineDto struct {
 	// 最高降幅
 	CarLineMaxDecline string `json:"car_line_max_decline,omitempty" xml:"car_line_max_decline,omitempty"`
 	// 车系保养排名
@@ -24,4 +28,31 @@ type XcarSysLineDto struct {
 	LineVid int64 `json:"line_vid,omitempty" xml:"line_vid,omitempty"`
 	// 状态0.无效 1有效
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolXCarSysLineDto = sync.Pool{
+	New: func() any {
+		return new(XCarSysLineDto)
+	},
+}
+
+// GetXCarSysLineDto() 从对象池中获取XCarSysLineDto
+func GetXCarSysLineDto() *XCarSysLineDto {
+	return poolXCarSysLineDto.Get().(*XCarSysLineDto)
+}
+
+// ReleaseXCarSysLineDto 释放XCarSysLineDto
+func ReleaseXCarSysLineDto(v *XCarSysLineDto) {
+	v.CarLineMaxDecline = ""
+	v.LineRank = ""
+	v.LocalRefPriceRange = ""
+	v.ManuGuiPriceRange = ""
+	v.Pic = ""
+	v.YearCuring = ""
+	v.BrandPid = 0
+	v.BrandVid = 0
+	v.LinePid = 0
+	v.LineVid = 0
+	v.Status = 0
+	poolXCarSysLineDto.Put(v)
 }

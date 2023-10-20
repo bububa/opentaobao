@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.axin.trans.pay.register.create
 //
 // 阿信供销平台-提交支付服务开通接口
-func TaobaoAlitripAxinTransPayRegisterCreate(clt *core.SDKClient, req *axintrade.TaobaoAlitripAxinTransPayRegisterCreateAPIRequest, session string) (*axintrade.TaobaoAlitripAxinTransPayRegisterCreateAPIResponse, error) {
-	var resp axintrade.TaobaoAlitripAxinTransPayRegisterCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripAxinTransPayRegisterCreate(clt *core.SDKClient, req *axintrade.TaobaoAlitripAxinTransPayRegisterCreateAPIRequest, resp *axintrade.TaobaoAlitripAxinTransPayRegisterCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

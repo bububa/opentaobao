@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // Wordscorelist 结构体
 type Wordscorelist struct {
 	// 移动质量得分（另外值为-1:所属的campaign没有该投放设备，且所属的adgroup有该投放设备的投放中的创意、-2:所属的campaign有该投放设备，且所属的adgroup没有该投放设备的投放中的创意、-3:所属的campaign没有该投放设备，且所属的adgroup没有该投放设备的投放中的创意）
@@ -50,4 +54,44 @@ type Wordscorelist struct {
 	MinPrice int64 `json:"min_price,omitempty" xml:"min_price,omitempty"`
 	// 词在pc端是否能首页推左(0:不能推左、1:可以推左)，此标记仅代表首页推左标
 	PcLeftFlag int64 `json:"pc_left_flag,omitempty" xml:"pc_left_flag,omitempty"`
+}
+
+var poolWordscorelist = sync.Pool{
+	New: func() any {
+		return new(Wordscorelist)
+	},
+}
+
+// GetWordscorelist() 从对象池中获取Wordscorelist
+func GetWordscorelist() *Wordscorelist {
+	return poolWordscorelist.Get().(*Wordscorelist)
+}
+
+// ReleaseWordscorelist 释放Wordscorelist
+func ReleaseWordscorelist(v *Wordscorelist) {
+	v.WirelessQscore = ""
+	v.WirelessCvrscore = ""
+	v.WirelessCreativescore = ""
+	v.WirelessCustscore = ""
+	v.WirelessRelescore = ""
+	v.Nick = ""
+	v.Catscore = ""
+	v.Kwscore = ""
+	v.Qscore = ""
+	v.Word = ""
+	v.Cvrscore = ""
+	v.Creativescore = ""
+	v.Custscore = ""
+	v.Pscore = ""
+	v.Relescore = ""
+	v.AdType = ""
+	v.KeywordId = 0
+	v.AdgroupId = 0
+	v.CampaignId = 0
+	v.CustomerId = 0
+	v.Plflag = 0
+	v.WirelessMatchflag = 0
+	v.MinPrice = 0
+	v.PcLeftFlag = 0
+	poolWordscorelist.Put(v)
 }

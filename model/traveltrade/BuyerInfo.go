@@ -1,5 +1,9 @@
 package traveltrade
 
+import (
+	"sync"
+)
+
 // BuyerInfo 结构体
 type BuyerInfo struct {
 	// 买家邮件地址
@@ -12,4 +16,25 @@ type BuyerInfo struct {
 	BuyerPhone string `json:"buyer_phone,omitempty" xml:"buyer_phone,omitempty"`
 	// 买家是否已评价
 	BuyerRate bool `json:"buyer_rate,omitempty" xml:"buyer_rate,omitempty"`
+}
+
+var poolBuyerInfo = sync.Pool{
+	New: func() any {
+		return new(BuyerInfo)
+	},
+}
+
+// GetBuyerInfo() 从对象池中获取BuyerInfo
+func GetBuyerInfo() *BuyerInfo {
+	return poolBuyerInfo.Get().(*BuyerInfo)
+}
+
+// ReleaseBuyerInfo 释放BuyerInfo
+func ReleaseBuyerInfo(v *BuyerInfo) {
+	v.BuyerEmail = ""
+	v.BuyerMessage = ""
+	v.BuyerNick = ""
+	v.BuyerPhone = ""
+	v.BuyerRate = false
+	poolBuyerInfo.Put(v)
 }

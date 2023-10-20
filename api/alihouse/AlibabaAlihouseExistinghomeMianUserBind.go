@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.existinghome.mian.user.bind
 //
 // 主账号入驻
-func AlibabaAlihouseExistinghomeMianUserBind(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeMianUserBindAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomeMianUserBindAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseExistinghomeMianUserBindAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseExistinghomeMianUserBind(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeMianUserBindAPIRequest, resp *alihouse.AlibabaAlihouseExistinghomeMianUserBindAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

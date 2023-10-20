@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoFenxiaoDealerRequisitionorderCloseAPIRequest struct {
 // NewTaobaoFenxiaoDealerRequisitionorderCloseRequest 初始化TaobaoFenxiaoDealerRequisitionorderCloseAPIRequest对象
 func NewTaobaoFenxiaoDealerRequisitionorderCloseRequest() *TaobaoFenxiaoDealerRequisitionorderCloseAPIRequest {
 	return &TaobaoFenxiaoDealerRequisitionorderCloseAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFenxiaoDealerRequisitionorderCloseAPIRequest) Reset() {
+	r._reasonDetail = ""
+	r._dealerOrderId = 0
+	r._reason = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoFenxiaoDealerRequisitionorderCloseAPIRequest) SetReason(_reason i
 // GetReason Reason Getter
 func (r TaobaoFenxiaoDealerRequisitionorderCloseAPIRequest) GetReason() int64 {
 	return r._reason
+}
+
+var poolTaobaoFenxiaoDealerRequisitionorderCloseAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFenxiaoDealerRequisitionorderCloseRequest()
+	},
+}
+
+// GetTaobaoFenxiaoDealerRequisitionorderCloseRequest 从 sync.Pool 获取 TaobaoFenxiaoDealerRequisitionorderCloseAPIRequest
+func GetTaobaoFenxiaoDealerRequisitionorderCloseAPIRequest() *TaobaoFenxiaoDealerRequisitionorderCloseAPIRequest {
+	return poolTaobaoFenxiaoDealerRequisitionorderCloseAPIRequest.Get().(*TaobaoFenxiaoDealerRequisitionorderCloseAPIRequest)
+}
+
+// ReleaseTaobaoFenxiaoDealerRequisitionorderCloseAPIRequest 将 TaobaoFenxiaoDealerRequisitionorderCloseAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFenxiaoDealerRequisitionorderCloseAPIRequest(v *TaobaoFenxiaoDealerRequisitionorderCloseAPIRequest) {
+	v.Reset()
+	poolTaobaoFenxiaoDealerRequisitionorderCloseAPIRequest.Put(v)
 }

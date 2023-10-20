@@ -2,6 +2,7 @@ package alisports
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type AlibabaAlisportsPassportAccountCheckmobileAPIRequest struct {
 // NewAlibabaAlisportsPassportAccountCheckmobileRequest 初始化AlibabaAlisportsPassportAccountCheckmobileAPIRequest对象
 func NewAlibabaAlisportsPassportAccountCheckmobileRequest() *AlibabaAlisportsPassportAccountCheckmobileAPIRequest {
 	return &AlibabaAlisportsPassportAccountCheckmobileAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlisportsPassportAccountCheckmobileAPIRequest) Reset() {
+	r._alispAppKey = ""
+	r._alispTime = ""
+	r._alispSign = ""
+	r._appUid = ""
+	r._nick = ""
+	r._mobile = ""
+	r._gender = ""
+	r._birthday = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *AlibabaAlisportsPassportAccountCheckmobileAPIRequest) SetBirthday(_birt
 // GetBirthday Birthday Getter
 func (r AlibabaAlisportsPassportAccountCheckmobileAPIRequest) GetBirthday() string {
 	return r._birthday
+}
+
+var poolAlibabaAlisportsPassportAccountCheckmobileAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlisportsPassportAccountCheckmobileRequest()
+	},
+}
+
+// GetAlibabaAlisportsPassportAccountCheckmobileRequest 从 sync.Pool 获取 AlibabaAlisportsPassportAccountCheckmobileAPIRequest
+func GetAlibabaAlisportsPassportAccountCheckmobileAPIRequest() *AlibabaAlisportsPassportAccountCheckmobileAPIRequest {
+	return poolAlibabaAlisportsPassportAccountCheckmobileAPIRequest.Get().(*AlibabaAlisportsPassportAccountCheckmobileAPIRequest)
+}
+
+// ReleaseAlibabaAlisportsPassportAccountCheckmobileAPIRequest 将 AlibabaAlisportsPassportAccountCheckmobileAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlisportsPassportAccountCheckmobileAPIRequest(v *AlibabaAlisportsPassportAccountCheckmobileAPIRequest) {
+	v.Reset()
+	poolAlibabaAlisportsPassportAccountCheckmobileAPIRequest.Put(v)
 }

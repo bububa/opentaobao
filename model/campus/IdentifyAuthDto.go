@@ -1,5 +1,9 @@
 package campus
 
+import (
+	"sync"
+)
+
 // IdentifyAuthDto 结构体
 type IdentifyAuthDto struct {
 	// []
@@ -16,4 +20,27 @@ type IdentifyAuthDto struct {
 	Sign string `json:"sign,omitempty" xml:"sign,omitempty"`
 	// 时间戳
 	TimeStamp int64 `json:"time_stamp,omitempty" xml:"time_stamp,omitempty"`
+}
+
+var poolIdentifyAuthDto = sync.Pool{
+	New: func() any {
+		return new(IdentifyAuthDto)
+	},
+}
+
+// GetIdentifyAuthDto() 从对象池中获取IdentifyAuthDto
+func GetIdentifyAuthDto() *IdentifyAuthDto {
+	return poolIdentifyAuthDto.Get().(*IdentifyAuthDto)
+}
+
+// ReleaseIdentifyAuthDto 释放IdentifyAuthDto
+func ReleaseIdentifyAuthDto(v *IdentifyAuthDto) {
+	v.VoucherList = v.VoucherList[:0]
+	v.AuthTypeEnum = ""
+	v.PropertiesJson = ""
+	v.AppCode = ""
+	v.DeviceId = ""
+	v.Sign = ""
+	v.TimeStamp = 0
+	poolIdentifyAuthDto.Put(v)
 }

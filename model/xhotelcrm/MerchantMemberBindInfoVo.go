@@ -1,5 +1,9 @@
 package xhotelcrm
 
+import (
+	"sync"
+)
+
 // MerchantMemberBindInfoVo 结构体
 type MerchantMemberBindInfoVo struct {
 	// 渠道
@@ -10,4 +14,24 @@ type MerchantMemberBindInfoVo struct {
 	Reason string `json:"reason,omitempty" xml:"reason,omitempty"`
 	// 是否完成任务
 	Status bool `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolMerchantMemberBindInfoVo = sync.Pool{
+	New: func() any {
+		return new(MerchantMemberBindInfoVo)
+	},
+}
+
+// GetMerchantMemberBindInfoVo() 从对象池中获取MerchantMemberBindInfoVo
+func GetMerchantMemberBindInfoVo() *MerchantMemberBindInfoVo {
+	return poolMerchantMemberBindInfoVo.Get().(*MerchantMemberBindInfoVo)
+}
+
+// ReleaseMerchantMemberBindInfoVo 释放MerchantMemberBindInfoVo
+func ReleaseMerchantMemberBindInfoVo(v *MerchantMemberBindInfoVo) {
+	v.Fpt = ""
+	v.Time = ""
+	v.Reason = ""
+	v.Status = false
+	poolMerchantMemberBindInfoVo.Put(v)
 }

@@ -1,5 +1,9 @@
 package travel
 
+import (
+	"sync"
+)
+
 // ProductBaseInfo 结构体
 type ProductBaseInfo struct {
 	// 商品图片路径。最多支持5张，第一张为主图 必填，其余四张可选填（多张图片间使用英文逗号分隔）。图片链接支持外链图片（即商家系统中图片链接，必须外网可访问，且格式为png、jpg或jpeg，大小在500k以内），或者用户淘宝空间内的图片链接。对于外链图片，将自动下载并上传用户淘宝图片空间，上传失败的外链图片将自动忽略不计。
@@ -26,4 +30,32 @@ type ProductBaseInfo struct {
 	AccomNights int64 `json:"accom_nights,omitempty" xml:"accom_nights,omitempty"`
 	// 可选，出行人模板id。模板id需要商家以店铺账号身份登录飞猪商家工作台，从卖家工具-&gt;出行人管理中获取。注意：如果传0则代表设置为不需要出行人模板或使用飞猪平台默认的类目模板。
 	TravellerTemplateId int64 `json:"traveller_template_id,omitempty" xml:"traveller_template_id,omitempty"`
+}
+
+var poolProductBaseInfo = sync.Pool{
+	New: func() any {
+		return new(ProductBaseInfo)
+	},
+}
+
+// GetProductBaseInfo() 从对象池中获取ProductBaseInfo
+func GetProductBaseInfo() *ProductBaseInfo {
+	return poolProductBaseInfo.Get().(*ProductBaseInfo)
+}
+
+// ReleaseProductBaseInfo 释放ProductBaseInfo
+func ReleaseProductBaseInfo(v *ProductBaseInfo) {
+	v.PicUrls = v.PicUrls[:0]
+	v.SubTitles = v.SubTitles[:0]
+	v.Desc = ""
+	v.WapDesc = ""
+	v.ToLocations = ""
+	v.Title = ""
+	v.FromLocations = ""
+	v.OutId = ""
+	v.TripMaxDays = 0
+	v.ItemType = 0
+	v.AccomNights = 0
+	v.TravellerTemplateId = 0
+	poolProductBaseInfo.Put(v)
 }

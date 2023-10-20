@@ -9,11 +9,6 @@ import (
 // alitrip.hotel.hstdf.shotel.exportsroomtype
 //
 // 导出一个卖家酒店下的所有标准房型
-func AlitripHotelHstdfShotelExportsroomtype(clt *core.SDKClient, req *hotelhstdf.AlitripHotelHstdfShotelExportsroomtypeAPIRequest, session string) (*hotelhstdf.AlitripHotelHstdfShotelExportsroomtypeAPIResponse, error) {
-	var resp hotelhstdf.AlitripHotelHstdfShotelExportsroomtypeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripHotelHstdfShotelExportsroomtype(clt *core.SDKClient, req *hotelhstdf.AlitripHotelHstdfShotelExportsroomtypeAPIRequest, resp *hotelhstdf.AlitripHotelHstdfShotelExportsroomtypeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

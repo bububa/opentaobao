@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // MerchantOrderPaymentInfo 结构体
 type MerchantOrderPaymentInfo struct {
 	// 其他支付方式支付后获得userId，例如：微信平台的openId
@@ -12,4 +16,25 @@ type MerchantOrderPaymentInfo struct {
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
 	// 付款金额
 	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
+}
+
+var poolMerchantOrderPaymentInfo = sync.Pool{
+	New: func() any {
+		return new(MerchantOrderPaymentInfo)
+	},
+}
+
+// GetMerchantOrderPaymentInfo() 从对象池中获取MerchantOrderPaymentInfo
+func GetMerchantOrderPaymentInfo() *MerchantOrderPaymentInfo {
+	return poolMerchantOrderPaymentInfo.Get().(*MerchantOrderPaymentInfo)
+}
+
+// ReleaseMerchantOrderPaymentInfo 释放MerchantOrderPaymentInfo
+func ReleaseMerchantOrderPaymentInfo(v *MerchantOrderPaymentInfo) {
+	v.Ouid = ""
+	v.SerialNum = ""
+	v.Tuid = ""
+	v.Type = ""
+	v.Amount = 0
+	poolMerchantOrderPaymentInfo.Put(v)
 }

@@ -2,6 +2,7 @@ package lbs
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoLbsMessageUploadAPIRequest struct {
 // NewTaobaoLbsMessageUploadRequest 初始化TaobaoLbsMessageUploadAPIRequest对象
 func NewTaobaoLbsMessageUploadRequest() *TaobaoLbsMessageUploadAPIRequest {
 	return &TaobaoLbsMessageUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLbsMessageUploadAPIRequest) Reset() {
+	r._topic = ""
+	r._body = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoLbsMessageUploadAPIRequest) SetBody(_body string) error {
 // GetBody Body Getter
 func (r TaobaoLbsMessageUploadAPIRequest) GetBody() string {
 	return r._body
+}
+
+var poolTaobaoLbsMessageUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLbsMessageUploadRequest()
+	},
+}
+
+// GetTaobaoLbsMessageUploadRequest 从 sync.Pool 获取 TaobaoLbsMessageUploadAPIRequest
+func GetTaobaoLbsMessageUploadAPIRequest() *TaobaoLbsMessageUploadAPIRequest {
+	return poolTaobaoLbsMessageUploadAPIRequest.Get().(*TaobaoLbsMessageUploadAPIRequest)
+}
+
+// ReleaseTaobaoLbsMessageUploadAPIRequest 将 TaobaoLbsMessageUploadAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLbsMessageUploadAPIRequest(v *TaobaoLbsMessageUploadAPIRequest) {
+	v.Reset()
+	poolTaobaoLbsMessageUploadAPIRequest.Put(v)
 }

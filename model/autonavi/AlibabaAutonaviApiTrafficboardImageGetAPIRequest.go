@@ -2,6 +2,7 @@ package autonavi
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaAutonaviApiTrafficboardImageGetAPIRequest struct {
 // NewAlibabaAutonaviApiTrafficboardImageGetRequest 初始化AlibabaAutonaviApiTrafficboardImageGetAPIRequest对象
 func NewAlibabaAutonaviApiTrafficboardImageGetRequest() *AlibabaAutonaviApiTrafficboardImageGetAPIRequest {
 	return &AlibabaAutonaviApiTrafficboardImageGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAutonaviApiTrafficboardImageGetAPIRequest) Reset() {
+	r._deviceid = ""
+	r._batch = ""
+	r._panelid = ""
+	r._size = ""
+	r._whscale = ""
+	r._adcodes = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaAutonaviApiTrafficboardImageGetAPIRequest) SetAdcodes(_adcodes s
 // GetAdcodes Adcodes Getter
 func (r AlibabaAutonaviApiTrafficboardImageGetAPIRequest) GetAdcodes() string {
 	return r._adcodes
+}
+
+var poolAlibabaAutonaviApiTrafficboardImageGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAutonaviApiTrafficboardImageGetRequest()
+	},
+}
+
+// GetAlibabaAutonaviApiTrafficboardImageGetRequest 从 sync.Pool 获取 AlibabaAutonaviApiTrafficboardImageGetAPIRequest
+func GetAlibabaAutonaviApiTrafficboardImageGetAPIRequest() *AlibabaAutonaviApiTrafficboardImageGetAPIRequest {
+	return poolAlibabaAutonaviApiTrafficboardImageGetAPIRequest.Get().(*AlibabaAutonaviApiTrafficboardImageGetAPIRequest)
+}
+
+// ReleaseAlibabaAutonaviApiTrafficboardImageGetAPIRequest 将 AlibabaAutonaviApiTrafficboardImageGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAutonaviApiTrafficboardImageGetAPIRequest(v *AlibabaAutonaviApiTrafficboardImageGetAPIRequest) {
+	v.Reset()
+	poolAlibabaAutonaviApiTrafficboardImageGetAPIRequest.Put(v)
 }

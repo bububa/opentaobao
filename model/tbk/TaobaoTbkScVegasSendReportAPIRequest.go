@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type TaobaoTbkScVegasSendReportAPIRequest struct {
 // NewTaobaoTbkScVegasSendReportRequest 初始化TaobaoTbkScVegasSendReportAPIRequest对象
 func NewTaobaoTbkScVegasSendReportRequest() *TaobaoTbkScVegasSendReportAPIRequest {
 	return &TaobaoTbkScVegasSendReportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkScVegasSendReportAPIRequest) Reset() {
+	r._bizDate = ""
+	r._pid = ""
+	r._rptDim = ""
+	r._relationId = 0
+	r._activityId = 0
+	r._pageNo = 0
+	r._pageSize = 0
+	r._activityCategory = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *TaobaoTbkScVegasSendReportAPIRequest) SetActivityCategory(_activityCate
 // GetActivityCategory ActivityCategory Getter
 func (r TaobaoTbkScVegasSendReportAPIRequest) GetActivityCategory() int64 {
 	return r._activityCategory
+}
+
+var poolTaobaoTbkScVegasSendReportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkScVegasSendReportRequest()
+	},
+}
+
+// GetTaobaoTbkScVegasSendReportRequest 从 sync.Pool 获取 TaobaoTbkScVegasSendReportAPIRequest
+func GetTaobaoTbkScVegasSendReportAPIRequest() *TaobaoTbkScVegasSendReportAPIRequest {
+	return poolTaobaoTbkScVegasSendReportAPIRequest.Get().(*TaobaoTbkScVegasSendReportAPIRequest)
+}
+
+// ReleaseTaobaoTbkScVegasSendReportAPIRequest 将 TaobaoTbkScVegasSendReportAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkScVegasSendReportAPIRequest(v *TaobaoTbkScVegasSendReportAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkScVegasSendReportAPIRequest.Put(v)
 }

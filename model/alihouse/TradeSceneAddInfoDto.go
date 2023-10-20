@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // TradeSceneAddInfoDto 结构体
 type TradeSceneAddInfoDto struct {
 	// 外部场景ID
@@ -22,4 +26,30 @@ type TradeSceneAddInfoDto struct {
 	CollectionType int64 `json:"collection_type,omitempty" xml:"collection_type,omitempty"`
 	// 是否测试 1-是 0-否
 	IsTest int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
+}
+
+var poolTradeSceneAddInfoDto = sync.Pool{
+	New: func() any {
+		return new(TradeSceneAddInfoDto)
+	},
+}
+
+// GetTradeSceneAddInfoDto() 从对象池中获取TradeSceneAddInfoDto
+func GetTradeSceneAddInfoDto() *TradeSceneAddInfoDto {
+	return poolTradeSceneAddInfoDto.Get().(*TradeSceneAddInfoDto)
+}
+
+// ReleaseTradeSceneAddInfoDto 释放TradeSceneAddInfoDto
+func ReleaseTradeSceneAddInfoDto(v *TradeSceneAddInfoDto) {
+	v.OuterTradeSceneConfigId = ""
+	v.SceneCode = 0
+	v.MerchantOpenId = 0
+	v.BankId = 0
+	v.SignatureId = 0
+	v.AgreementId = 0
+	v.InsteadMerchantOpenId = 0
+	v.InsteadBankId = 0
+	v.CollectionType = 0
+	v.IsTest = 0
+	poolTradeSceneAddInfoDto.Put(v)
 }

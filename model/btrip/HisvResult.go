@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // HisvResult 结构体
 type HisvResult struct {
 	// 审批单列表
@@ -16,4 +20,27 @@ type HisvResult struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 成功标识
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+var poolHisvResult = sync.Pool{
+	New: func() any {
+		return new(HisvResult)
+	},
+}
+
+// GetHisvResult() 从对象池中获取HisvResult
+func GetHisvResult() *HisvResult {
+	return poolHisvResult.Get().(*HisvResult)
+}
+
+// ReleaseHisvResult 释放HisvResult
+func ReleaseHisvResult(v *HisvResult) {
+	v.ModuleList = v.ModuleList[:0]
+	v.ResultMsg = ""
+	v.Module = nil
+	v.ResultCode = 0
+	v.PageInfo = nil
+	v.Success = false
+	v.IsSuccess = false
+	poolHisvResult.Put(v)
 }

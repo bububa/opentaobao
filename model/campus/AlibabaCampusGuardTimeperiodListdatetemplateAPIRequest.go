@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaCampusGuardTimeperiodListdatetemplateAPIRequest struct {
 // NewAlibabaCampusGuardTimeperiodListdatetemplateRequest 初始化AlibabaCampusGuardTimeperiodListdatetemplateAPIRequest对象
 func NewAlibabaCampusGuardTimeperiodListdatetemplateRequest() *AlibabaCampusGuardTimeperiodListdatetemplateAPIRequest {
 	return &AlibabaCampusGuardTimeperiodListdatetemplateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusGuardTimeperiodListdatetemplateAPIRequest) Reset() {
+	r._calenderTemplateQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaCampusGuardTimeperiodListdatetemplateAPIRequest) SetCalenderTemp
 // GetCalenderTemplateQuery CalenderTemplateQuery Getter
 func (r AlibabaCampusGuardTimeperiodListdatetemplateAPIRequest) GetCalenderTemplateQuery() *CalenderTemplateQuery {
 	return r._calenderTemplateQuery
+}
+
+var poolAlibabaCampusGuardTimeperiodListdatetemplateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusGuardTimeperiodListdatetemplateRequest()
+	},
+}
+
+// GetAlibabaCampusGuardTimeperiodListdatetemplateRequest 从 sync.Pool 获取 AlibabaCampusGuardTimeperiodListdatetemplateAPIRequest
+func GetAlibabaCampusGuardTimeperiodListdatetemplateAPIRequest() *AlibabaCampusGuardTimeperiodListdatetemplateAPIRequest {
+	return poolAlibabaCampusGuardTimeperiodListdatetemplateAPIRequest.Get().(*AlibabaCampusGuardTimeperiodListdatetemplateAPIRequest)
+}
+
+// ReleaseAlibabaCampusGuardTimeperiodListdatetemplateAPIRequest 将 AlibabaCampusGuardTimeperiodListdatetemplateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusGuardTimeperiodListdatetemplateAPIRequest(v *AlibabaCampusGuardTimeperiodListdatetemplateAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusGuardTimeperiodListdatetemplateAPIRequest.Put(v)
 }

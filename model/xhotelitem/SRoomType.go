@@ -1,7 +1,11 @@
 package xhotelitem
 
-// SroomType 结构体
-type SroomType struct {
+import (
+	"sync"
+)
+
+// SRoomType 结构体
+type SRoomType struct {
 	// 房型名
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 楼层
@@ -32,4 +36,35 @@ type SroomType struct {
 	MaxOccupancy int64 `json:"max_occupancy,omitempty" xml:"max_occupancy,omitempty"`
 	// 状态。0:正常;-1:删除
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolSRoomType = sync.Pool{
+	New: func() any {
+		return new(SRoomType)
+	},
+}
+
+// GetSRoomType() 从对象池中获取SRoomType
+func GetSRoomType() *SRoomType {
+	return poolSRoomType.Get().(*SRoomType)
+}
+
+// ReleaseSRoomType 释放SRoomType
+func ReleaseSRoomType(v *SRoomType) {
+	v.Name = ""
+	v.Floor = ""
+	v.Internet = ""
+	v.PicUrl = ""
+	v.Facility = ""
+	v.Area = ""
+	v.Extend = ""
+	v.CreatedTime = ""
+	v.ModifiedTime = ""
+	v.WindowType = ""
+	v.Bed = ""
+	v.Srid = 0
+	v.Shid = 0
+	v.MaxOccupancy = 0
+	v.Status = 0
+	poolSRoomType.Put(v)
 }

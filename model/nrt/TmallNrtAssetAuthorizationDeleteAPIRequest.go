@@ -2,6 +2,7 @@ package nrt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallNrtAssetAuthorizationDeleteAPIRequest struct {
 // NewTmallNrtAssetAuthorizationDeleteRequest 初始化TmallNrtAssetAuthorizationDeleteAPIRequest对象
 func NewTmallNrtAssetAuthorizationDeleteRequest() *TmallNrtAssetAuthorizationDeleteAPIRequest {
 	return &TmallNrtAssetAuthorizationDeleteAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallNrtAssetAuthorizationDeleteAPIRequest) Reset() {
+	r._topAssetDataAuthReqDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallNrtAssetAuthorizationDeleteAPIRequest) SetTopAssetDataAuthReqDto(_
 // GetTopAssetDataAuthReqDto TopAssetDataAuthReqDto Getter
 func (r TmallNrtAssetAuthorizationDeleteAPIRequest) GetTopAssetDataAuthReqDto() *TopAssetDataAuthReqDto {
 	return r._topAssetDataAuthReqDto
+}
+
+var poolTmallNrtAssetAuthorizationDeleteAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallNrtAssetAuthorizationDeleteRequest()
+	},
+}
+
+// GetTmallNrtAssetAuthorizationDeleteRequest 从 sync.Pool 获取 TmallNrtAssetAuthorizationDeleteAPIRequest
+func GetTmallNrtAssetAuthorizationDeleteAPIRequest() *TmallNrtAssetAuthorizationDeleteAPIRequest {
+	return poolTmallNrtAssetAuthorizationDeleteAPIRequest.Get().(*TmallNrtAssetAuthorizationDeleteAPIRequest)
+}
+
+// ReleaseTmallNrtAssetAuthorizationDeleteAPIRequest 将 TmallNrtAssetAuthorizationDeleteAPIRequest 放入 sync.Pool
+func ReleaseTmallNrtAssetAuthorizationDeleteAPIRequest(v *TmallNrtAssetAuthorizationDeleteAPIRequest) {
+	v.Reset()
+	poolTmallNrtAssetAuthorizationDeleteAPIRequest.Put(v)
 }

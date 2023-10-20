@@ -1,5 +1,9 @@
 package tmallsc
 
+import (
+	"sync"
+)
+
 // CreateLogisticsOrderRequest 结构体
 type CreateLogisticsOrderRequest struct {
 	// 外部单据id
@@ -20,4 +24,29 @@ type CreateLogisticsOrderRequest struct {
 	FromAddressLocation string `json:"from_address_location,omitempty" xml:"from_address_location,omitempty"`
 	// 取件详细地址
 	FromAddressDetail string `json:"from_address_detail,omitempty" xml:"from_address_detail,omitempty"`
+}
+
+var poolCreateLogisticsOrderRequest = sync.Pool{
+	New: func() any {
+		return new(CreateLogisticsOrderRequest)
+	},
+}
+
+// GetCreateLogisticsOrderRequest() 从对象池中获取CreateLogisticsOrderRequest
+func GetCreateLogisticsOrderRequest() *CreateLogisticsOrderRequest {
+	return poolCreateLogisticsOrderRequest.Get().(*CreateLogisticsOrderRequest)
+}
+
+// ReleaseCreateLogisticsOrderRequest 释放CreateLogisticsOrderRequest
+func ReleaseCreateLogisticsOrderRequest(v *CreateLogisticsOrderRequest) {
+	v.OuterId = ""
+	v.Type = ""
+	v.WorkcardIds = ""
+	v.MailNo = ""
+	v.CompanyName = ""
+	v.ToAddressLocation = ""
+	v.ToAddressDetail = ""
+	v.FromAddressLocation = ""
+	v.FromAddressDetail = ""
+	poolCreateLogisticsOrderRequest.Put(v)
 }

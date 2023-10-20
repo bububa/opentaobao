@@ -1,5 +1,9 @@
 package xhotelonlineorder
 
+import (
+	"sync"
+)
+
 // TopPostTradeRefundDo 结构体
 type TopPostTradeRefundDo struct {
 	// 退款成功时间
@@ -18,4 +22,28 @@ type TopPostTradeRefundDo struct {
 	PostTradeRefundStatus int64 `json:"post_trade_refund_status,omitempty" xml:"post_trade_refund_status,omitempty"`
 	// tid
 	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
+}
+
+var poolTopPostTradeRefundDo = sync.Pool{
+	New: func() any {
+		return new(TopPostTradeRefundDo)
+	},
+}
+
+// GetTopPostTradeRefundDo() 从对象池中获取TopPostTradeRefundDo
+func GetTopPostTradeRefundDo() *TopPostTradeRefundDo {
+	return poolTopPostTradeRefundDo.Get().(*TopPostTradeRefundDo)
+}
+
+// ReleaseTopPostTradeRefundDo 释放TopPostTradeRefundDo
+func ReleaseTopPostTradeRefundDo(v *TopPostTradeRefundDo) {
+	v.RefundSucTime = ""
+	v.Remark = ""
+	v.RefundReason = ""
+	v.CreateTime = ""
+	v.RefundAmount = 0
+	v.PostTradeRefundType = 0
+	v.PostTradeRefundStatus = 0
+	v.Tid = 0
+	poolTopPostTradeRefundDo.Put(v)
 }

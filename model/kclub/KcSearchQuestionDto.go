@@ -1,5 +1,9 @@
 package kclub
 
+import (
+	"sync"
+)
+
 // KcSearchQuestionDto 结构体
 type KcSearchQuestionDto struct {
 	// 父类目列表
@@ -70,4 +74,54 @@ type KcSearchQuestionDto struct {
 	ThreeDayPv int64 `json:"three_day_pv,omitempty" xml:"three_day_pv,omitempty"`
 	// 1天访问pv
 	OneDayPv int64 `json:"one_day_pv,omitempty" xml:"one_day_pv,omitempty"`
+}
+
+var poolKcSearchQuestionDto = sync.Pool{
+	New: func() any {
+		return new(KcSearchQuestionDto)
+	},
+}
+
+// GetKcSearchQuestionDto() 从对象池中获取KcSearchQuestionDto
+func GetKcSearchQuestionDto() *KcSearchQuestionDto {
+	return poolKcSearchQuestionDto.Get().(*KcSearchQuestionDto)
+}
+
+// ReleaseKcSearchQuestionDto 释放KcSearchQuestionDto
+func ReleaseKcSearchQuestionDto(v *KcSearchQuestionDto) {
+	v.CatIdPathList = v.CatIdPathList[:0]
+	v.StartDate = ""
+	v.Ext = ""
+	v.CatName = ""
+	v.CatPathName = ""
+	v.ModifiedUserName = ""
+	v.CreateUserName = ""
+	v.TitleSegment = ""
+	v.Title = ""
+	v.GmtModified = ""
+	v.GmtCreate = ""
+	v.EntityCode = ""
+	v.Uuid = ""
+	v.Score = ""
+	v.SimilarTitle = ""
+	v.EndDate = ""
+	v.CatId = 0
+	v.SimilarId = 0
+	v.QuestionType = 0
+	v.ModifiedUserId = 0
+	v.CreateUserId = 0
+	v.TenantId = 0
+	v.Status = 0
+	v.Id = 0
+	v.Type = 0
+	v.QuestionId = 0
+	v.IsSimilarTitle = 0
+	v.Source = 0
+	v.Version = 0
+	v.TenDayPv = 0
+	v.SevenDayPv = 0
+	v.FiveDayPv = 0
+	v.ThreeDayPv = 0
+	v.OneDayPv = 0
+	poolKcSearchQuestionDto.Put(v)
 }

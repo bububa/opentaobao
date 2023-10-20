@@ -2,6 +2,7 @@ package user
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoMiniappUserInfoGetAPIResponse struct {
 	TaobaoMiniappUserInfoGetAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoMiniappUserInfoGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoMiniappUserInfoGetAPIResponseModel).Reset()
+}
+
 // TaobaoMiniappUserInfoGetAPIResponseModel is 用户开放信息获取 成功返回结果
 type TaobaoMiniappUserInfoGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"miniapp_userInfo_get_response"`
@@ -22,4 +29,27 @@ type TaobaoMiniappUserInfoGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *TaobaoMiniappUserInfoGetResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoMiniappUserInfoGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoMiniappUserInfoGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoMiniappUserInfoGetAPIResponse)
+	},
+}
+
+// GetTaobaoMiniappUserInfoGetAPIResponse 从 sync.Pool 获取 TaobaoMiniappUserInfoGetAPIResponse
+func GetTaobaoMiniappUserInfoGetAPIResponse() *TaobaoMiniappUserInfoGetAPIResponse {
+	return poolTaobaoMiniappUserInfoGetAPIResponse.Get().(*TaobaoMiniappUserInfoGetAPIResponse)
+}
+
+// ReleaseTaobaoMiniappUserInfoGetAPIResponse 将 TaobaoMiniappUserInfoGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoMiniappUserInfoGetAPIResponse(v *TaobaoMiniappUserInfoGetAPIResponse) {
+	v.Reset()
+	poolTaobaoMiniappUserInfoGetAPIResponse.Put(v)
 }

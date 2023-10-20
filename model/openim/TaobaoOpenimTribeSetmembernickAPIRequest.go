@@ -2,6 +2,7 @@ package openim
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,17 @@ type TaobaoOpenimTribeSetmembernickAPIRequest struct {
 // NewTaobaoOpenimTribeSetmembernickRequest 初始化TaobaoOpenimTribeSetmembernickAPIRequest对象
 func NewTaobaoOpenimTribeSetmembernickRequest() *TaobaoOpenimTribeSetmembernickAPIRequest {
 	return &TaobaoOpenimTribeSetmembernickAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpenimTribeSetmembernickAPIRequest) Reset() {
+	r._nick = ""
+	r._user = nil
+	r._tribeId = 0
+	r._member = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -98,4 +108,21 @@ func (r *TaobaoOpenimTribeSetmembernickAPIRequest) SetMember(_member *User) erro
 // GetMember Member Getter
 func (r TaobaoOpenimTribeSetmembernickAPIRequest) GetMember() *User {
 	return r._member
+}
+
+var poolTaobaoOpenimTribeSetmembernickAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpenimTribeSetmembernickRequest()
+	},
+}
+
+// GetTaobaoOpenimTribeSetmembernickRequest 从 sync.Pool 获取 TaobaoOpenimTribeSetmembernickAPIRequest
+func GetTaobaoOpenimTribeSetmembernickAPIRequest() *TaobaoOpenimTribeSetmembernickAPIRequest {
+	return poolTaobaoOpenimTribeSetmembernickAPIRequest.Get().(*TaobaoOpenimTribeSetmembernickAPIRequest)
+}
+
+// ReleaseTaobaoOpenimTribeSetmembernickAPIRequest 将 TaobaoOpenimTribeSetmembernickAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpenimTribeSetmembernickAPIRequest(v *TaobaoOpenimTribeSetmembernickAPIRequest) {
+	v.Reset()
+	poolTaobaoOpenimTribeSetmembernickAPIRequest.Put(v)
 }

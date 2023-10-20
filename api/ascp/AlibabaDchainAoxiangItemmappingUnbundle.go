@@ -9,11 +9,6 @@ import (
 // alibaba.dchain.aoxiang.itemmapping.unbundle
 //
 // 商货关联解绑
-func AlibabaDchainAoxiangItemmappingUnbundle(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangItemmappingUnbundleAPIRequest, session string) (*ascp.AlibabaDchainAoxiangItemmappingUnbundleAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangItemmappingUnbundleAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaDchainAoxiangItemmappingUnbundle(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangItemmappingUnbundleAPIRequest, resp *ascp.AlibabaDchainAoxiangItemmappingUnbundleAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

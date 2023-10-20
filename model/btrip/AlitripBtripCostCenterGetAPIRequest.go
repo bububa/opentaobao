@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlitripBtripCostCenterGetAPIRequest struct {
 // NewAlitripBtripCostCenterGetRequest 初始化AlitripBtripCostCenterGetAPIRequest对象
 func NewAlitripBtripCostCenterGetRequest() *AlitripBtripCostCenterGetAPIRequest {
 	return &AlitripBtripCostCenterGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripCostCenterGetAPIRequest) Reset() {
+	r._corpId = ""
+	r._userId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlitripBtripCostCenterGetAPIRequest) SetUserId(_userId string) error {
 // GetUserId UserId Getter
 func (r AlitripBtripCostCenterGetAPIRequest) GetUserId() string {
 	return r._userId
+}
+
+var poolAlitripBtripCostCenterGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripCostCenterGetRequest()
+	},
+}
+
+// GetAlitripBtripCostCenterGetRequest 从 sync.Pool 获取 AlitripBtripCostCenterGetAPIRequest
+func GetAlitripBtripCostCenterGetAPIRequest() *AlitripBtripCostCenterGetAPIRequest {
+	return poolAlitripBtripCostCenterGetAPIRequest.Get().(*AlitripBtripCostCenterGetAPIRequest)
+}
+
+// ReleaseAlitripBtripCostCenterGetAPIRequest 将 AlitripBtripCostCenterGetAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripCostCenterGetAPIRequest(v *AlitripBtripCostCenterGetAPIRequest) {
+	v.Reset()
+	poolAlitripBtripCostCenterGetAPIRequest.Put(v)
 }

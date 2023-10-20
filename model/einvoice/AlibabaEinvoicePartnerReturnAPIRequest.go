@@ -2,6 +2,7 @@ package einvoice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -57,8 +58,33 @@ type AlibabaEinvoicePartnerReturnAPIRequest struct {
 // NewAlibabaEinvoicePartnerReturnRequest 初始化AlibabaEinvoicePartnerReturnAPIRequest对象
 func NewAlibabaEinvoicePartnerReturnRequest() *AlibabaEinvoicePartnerReturnAPIRequest {
 	return &AlibabaEinvoicePartnerReturnAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(20),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEinvoicePartnerReturnAPIRequest) Reset() {
+	r._antiFakeCode = ""
+	r._ciphertext = ""
+	r._deviceNo = ""
+	r._erpTid = ""
+	r._fileDataType = ""
+	r._invoiceAmount = ""
+	r._invoiceCode = ""
+	r._invoiceDate = ""
+	r._invoiceNo = ""
+	r._payeeRegisterNo = ""
+	r._platformCode = ""
+	r._platformTid = ""
+	r._qrCode = ""
+	r._serialNo = ""
+	r._createResult = ""
+	r._bizErrorCode = ""
+	r._bizErrorMsg = ""
+	r._reqIndex = ""
+	r._invoiceTime = ""
+	r._invoiceFileData = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -336,4 +362,21 @@ func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetInvoiceFileData(_invoiceFile
 // GetInvoiceFileData InvoiceFileData Getter
 func (r AlibabaEinvoicePartnerReturnAPIRequest) GetInvoiceFileData() *model.File {
 	return r._invoiceFileData
+}
+
+var poolAlibabaEinvoicePartnerReturnAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEinvoicePartnerReturnRequest()
+	},
+}
+
+// GetAlibabaEinvoicePartnerReturnRequest 从 sync.Pool 获取 AlibabaEinvoicePartnerReturnAPIRequest
+func GetAlibabaEinvoicePartnerReturnAPIRequest() *AlibabaEinvoicePartnerReturnAPIRequest {
+	return poolAlibabaEinvoicePartnerReturnAPIRequest.Get().(*AlibabaEinvoicePartnerReturnAPIRequest)
+}
+
+// ReleaseAlibabaEinvoicePartnerReturnAPIRequest 将 AlibabaEinvoicePartnerReturnAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEinvoicePartnerReturnAPIRequest(v *AlibabaEinvoicePartnerReturnAPIRequest) {
+	v.Reset()
+	poolAlibabaEinvoicePartnerReturnAPIRequest.Put(v)
 }

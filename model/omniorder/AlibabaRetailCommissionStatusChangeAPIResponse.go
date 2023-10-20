@@ -2,6 +2,7 @@ package omniorder
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaRetailCommissionStatusChangeAPIResponse struct {
 	model.CommonResponse
 	AlibabaRetailCommissionStatusChangeAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaRetailCommissionStatusChangeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaRetailCommissionStatusChangeAPIResponseModel).Reset()
 }
 
 // AlibabaRetailCommissionStatusChangeAPIResponseModel is 分佣状态变更 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaRetailCommissionStatusChangeAPIResponseModel struct {
 	Data bool `json:"data,omitempty" xml:"data,omitempty"`
 	// 是否执行成功
 	SSuccess bool `json:"s_success,omitempty" xml:"s_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaRetailCommissionStatusChangeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.SCode = ""
+	m.Data = false
+	m.SSuccess = false
+}
+
+var poolAlibabaRetailCommissionStatusChangeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaRetailCommissionStatusChangeAPIResponse)
+	},
+}
+
+// GetAlibabaRetailCommissionStatusChangeAPIResponse 从 sync.Pool 获取 AlibabaRetailCommissionStatusChangeAPIResponse
+func GetAlibabaRetailCommissionStatusChangeAPIResponse() *AlibabaRetailCommissionStatusChangeAPIResponse {
+	return poolAlibabaRetailCommissionStatusChangeAPIResponse.Get().(*AlibabaRetailCommissionStatusChangeAPIResponse)
+}
+
+// ReleaseAlibabaRetailCommissionStatusChangeAPIResponse 将 AlibabaRetailCommissionStatusChangeAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaRetailCommissionStatusChangeAPIResponse(v *AlibabaRetailCommissionStatusChangeAPIResponse) {
+	v.Reset()
+	poolAlibabaRetailCommissionStatusChangeAPIResponse.Put(v)
 }

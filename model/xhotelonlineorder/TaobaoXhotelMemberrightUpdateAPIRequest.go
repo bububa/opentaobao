@@ -2,6 +2,7 @@ package xhotelonlineorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoXhotelMemberrightUpdateAPIRequest struct {
 // NewTaobaoXhotelMemberrightUpdateRequest 初始化TaobaoXhotelMemberrightUpdateAPIRequest对象
 func NewTaobaoXhotelMemberrightUpdateRequest() *TaobaoXhotelMemberrightUpdateAPIRequest {
 	return &TaobaoXhotelMemberrightUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoXhotelMemberrightUpdateAPIRequest) Reset() {
+	r._taobaoUserId = 0
+	r._rightType = 0
+	r._hasRight = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoXhotelMemberrightUpdateAPIRequest) SetHasRight(_hasRight bool) er
 // GetHasRight HasRight Getter
 func (r TaobaoXhotelMemberrightUpdateAPIRequest) GetHasRight() bool {
 	return r._hasRight
+}
+
+var poolTaobaoXhotelMemberrightUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoXhotelMemberrightUpdateRequest()
+	},
+}
+
+// GetTaobaoXhotelMemberrightUpdateRequest 从 sync.Pool 获取 TaobaoXhotelMemberrightUpdateAPIRequest
+func GetTaobaoXhotelMemberrightUpdateAPIRequest() *TaobaoXhotelMemberrightUpdateAPIRequest {
+	return poolTaobaoXhotelMemberrightUpdateAPIRequest.Get().(*TaobaoXhotelMemberrightUpdateAPIRequest)
+}
+
+// ReleaseTaobaoXhotelMemberrightUpdateAPIRequest 将 TaobaoXhotelMemberrightUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoXhotelMemberrightUpdateAPIRequest(v *TaobaoXhotelMemberrightUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoXhotelMemberrightUpdateAPIRequest.Put(v)
 }

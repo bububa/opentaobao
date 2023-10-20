@@ -2,6 +2,7 @@ package degoperation
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoDegoperationGetByEventkeyAPIRequest struct {
 // NewTaobaoDegoperationGetByEventkeyRequest 初始化TaobaoDegoperationGetByEventkeyAPIRequest对象
 func NewTaobaoDegoperationGetByEventkeyRequest() *TaobaoDegoperationGetByEventkeyAPIRequest {
 	return &TaobaoDegoperationGetByEventkeyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoDegoperationGetByEventkeyAPIRequest) Reset() {
+	r._degAccessToken = ""
+	r._degAppKey = ""
+	r._eventKey = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoDegoperationGetByEventkeyAPIRequest) SetEventKey(_eventKey string
 // GetEventKey EventKey Getter
 func (r TaobaoDegoperationGetByEventkeyAPIRequest) GetEventKey() string {
 	return r._eventKey
+}
+
+var poolTaobaoDegoperationGetByEventkeyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoDegoperationGetByEventkeyRequest()
+	},
+}
+
+// GetTaobaoDegoperationGetByEventkeyRequest 从 sync.Pool 获取 TaobaoDegoperationGetByEventkeyAPIRequest
+func GetTaobaoDegoperationGetByEventkeyAPIRequest() *TaobaoDegoperationGetByEventkeyAPIRequest {
+	return poolTaobaoDegoperationGetByEventkeyAPIRequest.Get().(*TaobaoDegoperationGetByEventkeyAPIRequest)
+}
+
+// ReleaseTaobaoDegoperationGetByEventkeyAPIRequest 将 TaobaoDegoperationGetByEventkeyAPIRequest 放入 sync.Pool
+func ReleaseTaobaoDegoperationGetByEventkeyAPIRequest(v *TaobaoDegoperationGetByEventkeyAPIRequest) {
+	v.Reset()
+	poolTaobaoDegoperationGetByEventkeyAPIRequest.Put(v)
 }

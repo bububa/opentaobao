@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // SettleAdjustmentResponse 结构体
 type SettleAdjustmentResponse struct {
 	// comments
@@ -32,4 +36,35 @@ type SettleAdjustmentResponse struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// type
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolSettleAdjustmentResponse = sync.Pool{
+	New: func() any {
+		return new(SettleAdjustmentResponse)
+	},
+}
+
+// GetSettleAdjustmentResponse() 从对象池中获取SettleAdjustmentResponse
+func GetSettleAdjustmentResponse() *SettleAdjustmentResponse {
+	return poolSettleAdjustmentResponse.Get().(*SettleAdjustmentResponse)
+}
+
+// ReleaseSettleAdjustmentResponse 释放SettleAdjustmentResponse
+func ReleaseSettleAdjustmentResponse(v *SettleAdjustmentResponse) {
+	v.Comments = ""
+	v.Description = ""
+	v.CreateTime = ""
+	v.ModifiedTime = ""
+	v.PictureUrls = ""
+	v.PriceFactors = ""
+	v.ServiceCode = ""
+	v.BizOrderId = 0
+	v.Cost = 0
+	v.Id = 0
+	v.ParentBizOrderId = 0
+	v.ServiceOrderId = 0
+	v.WorkcardId = 0
+	v.Status = 0
+	v.Type = 0
+	poolSettleAdjustmentResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // BenefitActivityVo 结构体
 type BenefitActivityVo struct {
 	// ISV活动的具体地址
@@ -14,4 +18,26 @@ type BenefitActivityVo struct {
 	StartTime string `json:"start_time,omitempty" xml:"start_time,omitempty"`
 	// 活动类型
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolBenefitActivityVo = sync.Pool{
+	New: func() any {
+		return new(BenefitActivityVo)
+	},
+}
+
+// GetBenefitActivityVo() 从对象池中获取BenefitActivityVo
+func GetBenefitActivityVo() *BenefitActivityVo {
+	return poolBenefitActivityVo.Get().(*BenefitActivityVo)
+}
+
+// ReleaseBenefitActivityVo 释放BenefitActivityVo
+func ReleaseBenefitActivityVo(v *BenefitActivityVo) {
+	v.ActivityUrl = ""
+	v.Desc = ""
+	v.EndTime = ""
+	v.Name = ""
+	v.StartTime = ""
+	v.Type = ""
+	poolBenefitActivityVo.Put(v)
 }

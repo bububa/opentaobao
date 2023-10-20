@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type TmallCarContractDownloadAPIResponse struct {
 	TmallCarContractDownloadAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallCarContractDownloadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallCarContractDownloadAPIResponseModel).Reset()
+}
+
 // TmallCarContractDownloadAPIResponseModel is 合同下载 成功返回结果
 type TmallCarContractDownloadAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_car_contract_download_response"`
@@ -23,4 +30,27 @@ type TmallCarContractDownloadAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果
 	Result *TmallCarContractDownloadResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallCarContractDownloadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTmallCarContractDownloadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallCarContractDownloadAPIResponse)
+	},
+}
+
+// GetTmallCarContractDownloadAPIResponse 从 sync.Pool 获取 TmallCarContractDownloadAPIResponse
+func GetTmallCarContractDownloadAPIResponse() *TmallCarContractDownloadAPIResponse {
+	return poolTmallCarContractDownloadAPIResponse.Get().(*TmallCarContractDownloadAPIResponse)
+}
+
+// ReleaseTmallCarContractDownloadAPIResponse 将 TmallCarContractDownloadAPIResponse 保存到 sync.Pool
+func ReleaseTmallCarContractDownloadAPIResponse(v *TmallCarContractDownloadAPIResponse) {
+	v.Reset()
+	poolTmallCarContractDownloadAPIResponse.Put(v)
 }

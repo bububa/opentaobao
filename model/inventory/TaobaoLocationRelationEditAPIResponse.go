@@ -2,6 +2,7 @@ package inventory
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoLocationRelationEditAPIResponse struct {
 	TaobaoLocationRelationEditAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoLocationRelationEditAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoLocationRelationEditAPIResponseModel).Reset()
+}
+
 // TaobaoLocationRelationEditAPIResponseModel is 地点关联关系增量编辑 成功返回结果
 type TaobaoLocationRelationEditAPIResponseModel struct {
 	XMLName xml.Name `xml:"location_relation_edit_response"`
@@ -26,4 +33,29 @@ type TaobaoLocationRelationEditAPIResponseModel struct {
 	Errorcode string `json:"errorcode,omitempty" xml:"errorcode,omitempty"`
 	// 是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoLocationRelationEditAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorMsg = ""
+	m.Errorcode = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoLocationRelationEditAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoLocationRelationEditAPIResponse)
+	},
+}
+
+// GetTaobaoLocationRelationEditAPIResponse 从 sync.Pool 获取 TaobaoLocationRelationEditAPIResponse
+func GetTaobaoLocationRelationEditAPIResponse() *TaobaoLocationRelationEditAPIResponse {
+	return poolTaobaoLocationRelationEditAPIResponse.Get().(*TaobaoLocationRelationEditAPIResponse)
+}
+
+// ReleaseTaobaoLocationRelationEditAPIResponse 将 TaobaoLocationRelationEditAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoLocationRelationEditAPIResponse(v *TaobaoLocationRelationEditAPIResponse) {
+	v.Reset()
+	poolTaobaoLocationRelationEditAPIResponse.Put(v)
 }

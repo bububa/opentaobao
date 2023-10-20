@@ -1,7 +1,11 @@
 package film
 
-// FcodeMerchantSendCodeRq 结构体
-type FcodeMerchantSendCodeRq struct {
+import (
+	"sync"
+)
+
+// FCodeMerchantSendCodeRq 结构体
+type FCodeMerchantSendCodeRq struct {
 	// 外部业务用户id
 	OutUid string `json:"out_uid,omitempty" xml:"out_uid,omitempty"`
 	// 发券码商品mixId
@@ -24,4 +28,31 @@ type FcodeMerchantSendCodeRq struct {
 	EachNum int64 `json:"each_num,omitempty" xml:"each_num,omitempty"`
 	// 发码总数
 	Number int64 `json:"number,omitempty" xml:"number,omitempty"`
+}
+
+var poolFCodeMerchantSendCodeRq = sync.Pool{
+	New: func() any {
+		return new(FCodeMerchantSendCodeRq)
+	},
+}
+
+// GetFCodeMerchantSendCodeRq() 从对象池中获取FCodeMerchantSendCodeRq
+func GetFCodeMerchantSendCodeRq() *FCodeMerchantSendCodeRq {
+	return poolFCodeMerchantSendCodeRq.Get().(*FCodeMerchantSendCodeRq)
+}
+
+// ReleaseFCodeMerchantSendCodeRq 释放FCodeMerchantSendCodeRq
+func ReleaseFCodeMerchantSendCodeRq(v *FCodeMerchantSendCodeRq) {
+	v.OutUid = ""
+	v.MixId = ""
+	v.ExtOrderId = ""
+	v.OrderTime = ""
+	v.UserIdType = ""
+	v.PartnerCode = ""
+	v.OutUserName = ""
+	v.Feature = ""
+	v.UserIdList = ""
+	v.EachNum = 0
+	v.Number = 0
+	poolFCodeMerchantSendCodeRq.Put(v)
 }

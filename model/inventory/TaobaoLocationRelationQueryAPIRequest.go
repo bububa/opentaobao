@@ -2,6 +2,7 @@ package inventory
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -20,8 +21,14 @@ type TaobaoLocationRelationQueryAPIRequest struct {
 // NewTaobaoLocationRelationQueryRequest 初始化TaobaoLocationRelationQueryAPIRequest对象
 func NewTaobaoLocationRelationQueryRequest() *TaobaoLocationRelationQueryAPIRequest {
 	return &TaobaoLocationRelationQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoLocationRelationQueryAPIRequest) Reset() {
+	r._locationRelation = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -52,4 +59,21 @@ func (r *TaobaoLocationRelationQueryAPIRequest) SetLocationRelation(_locationRel
 // GetLocationRelation LocationRelation Getter
 func (r TaobaoLocationRelationQueryAPIRequest) GetLocationRelation() *LocationRelationDto {
 	return r._locationRelation
+}
+
+var poolTaobaoLocationRelationQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoLocationRelationQueryRequest()
+	},
+}
+
+// GetTaobaoLocationRelationQueryRequest 从 sync.Pool 获取 TaobaoLocationRelationQueryAPIRequest
+func GetTaobaoLocationRelationQueryAPIRequest() *TaobaoLocationRelationQueryAPIRequest {
+	return poolTaobaoLocationRelationQueryAPIRequest.Get().(*TaobaoLocationRelationQueryAPIRequest)
+}
+
+// ReleaseTaobaoLocationRelationQueryAPIRequest 将 TaobaoLocationRelationQueryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoLocationRelationQueryAPIRequest(v *TaobaoLocationRelationQueryAPIRequest) {
+	v.Reset()
+	poolTaobaoLocationRelationQueryAPIRequest.Put(v)
 }

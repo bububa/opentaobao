@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type YunosTvpubadminEpgDesktopOperationAPIRequest struct {
 // NewYunosTvpubadminEpgDesktopOperationRequest 初始化YunosTvpubadminEpgDesktopOperationAPIRequest对象
 func NewYunosTvpubadminEpgDesktopOperationRequest() *YunosTvpubadminEpgDesktopOperationAPIRequest {
 	return &YunosTvpubadminEpgDesktopOperationAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminEpgDesktopOperationAPIRequest) Reset() {
+	r._entityType = ""
+	r._actionType = ""
+	r._parameter = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *YunosTvpubadminEpgDesktopOperationAPIRequest) SetParameter(_parameter s
 // GetParameter Parameter Getter
 func (r YunosTvpubadminEpgDesktopOperationAPIRequest) GetParameter() string {
 	return r._parameter
+}
+
+var poolYunosTvpubadminEpgDesktopOperationAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminEpgDesktopOperationRequest()
+	},
+}
+
+// GetYunosTvpubadminEpgDesktopOperationRequest 从 sync.Pool 获取 YunosTvpubadminEpgDesktopOperationAPIRequest
+func GetYunosTvpubadminEpgDesktopOperationAPIRequest() *YunosTvpubadminEpgDesktopOperationAPIRequest {
+	return poolYunosTvpubadminEpgDesktopOperationAPIRequest.Get().(*YunosTvpubadminEpgDesktopOperationAPIRequest)
+}
+
+// ReleaseYunosTvpubadminEpgDesktopOperationAPIRequest 将 YunosTvpubadminEpgDesktopOperationAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminEpgDesktopOperationAPIRequest(v *YunosTvpubadminEpgDesktopOperationAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminEpgDesktopOperationAPIRequest.Put(v)
 }

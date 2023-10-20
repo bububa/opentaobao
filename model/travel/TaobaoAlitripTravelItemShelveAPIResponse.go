@@ -2,6 +2,7 @@ package travel
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type TaobaoAlitripTravelItemShelveAPIResponse struct {
 	TaobaoAlitripTravelItemShelveAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoAlitripTravelItemShelveAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAlitripTravelItemShelveAPIResponseModel).Reset()
+}
+
 // TaobaoAlitripTravelItemShelveAPIResponseModel is 【API3.0】度假线路商品上下架接口 成功返回结果
 type TaobaoAlitripTravelItemShelveAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_travel_item_shelve_response"`
@@ -23,4 +30,27 @@ type TaobaoAlitripTravelItemShelveAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 商品上下架操作是否成功
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAlitripTravelItemShelveAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = false
+}
+
+var poolTaobaoAlitripTravelItemShelveAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAlitripTravelItemShelveAPIResponse)
+	},
+}
+
+// GetTaobaoAlitripTravelItemShelveAPIResponse 从 sync.Pool 获取 TaobaoAlitripTravelItemShelveAPIResponse
+func GetTaobaoAlitripTravelItemShelveAPIResponse() *TaobaoAlitripTravelItemShelveAPIResponse {
+	return poolTaobaoAlitripTravelItemShelveAPIResponse.Get().(*TaobaoAlitripTravelItemShelveAPIResponse)
+}
+
+// ReleaseTaobaoAlitripTravelItemShelveAPIResponse 将 TaobaoAlitripTravelItemShelveAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAlitripTravelItemShelveAPIResponse(v *TaobaoAlitripTravelItemShelveAPIResponse) {
+	v.Reset()
+	poolTaobaoAlitripTravelItemShelveAPIResponse.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // aliexpress.ascp.item.query
 //
 // AE货品查询API
-func AliexpressAscpItemQuery(clt *core.SDKClient, req *ascpffo.AliexpressAscpItemQueryAPIRequest, session string) (*ascpffo.AliexpressAscpItemQueryAPIResponse, error) {
-	var resp ascpffo.AliexpressAscpItemQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressAscpItemQuery(clt *core.SDKClient, req *ascpffo.AliexpressAscpItemQueryAPIRequest, resp *ascpffo.AliexpressAscpItemQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

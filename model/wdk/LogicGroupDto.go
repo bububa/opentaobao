@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // LogicGroupDto 结构体
 type LogicGroupDto struct {
 	// 分组名称
@@ -18,4 +22,28 @@ type LogicGroupDto struct {
 	Exchange bool `json:"exchange,omitempty" xml:"exchange,omitempty"`
 	// 是否生效分组（多分组情况下，可能为false，例如商品池换购，普通逻辑分组为false，换购分组为true）
 	EffectiveGroup bool `json:"effective_group,omitempty" xml:"effective_group,omitempty"`
+}
+
+var poolLogicGroupDto = sync.Pool{
+	New: func() any {
+		return new(LogicGroupDto)
+	},
+}
+
+// GetLogicGroupDto() 从对象池中获取LogicGroupDto
+func GetLogicGroupDto() *LogicGroupDto {
+	return poolLogicGroupDto.Get().(*LogicGroupDto)
+}
+
+// ReleaseLogicGroupDto 释放LogicGroupDto
+func ReleaseLogicGroupDto(v *LogicGroupDto) {
+	v.Name = ""
+	v.Number = 0
+	v.Type = 0
+	v.ExchangeRule = nil
+	v.Condition = nil
+	v.Action = nil
+	v.Exchange = false
+	v.EffectiveGroup = false
+	poolLogicGroupDto.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // taobao.delivery.templates.get
 //
 // 根据用户ID获取用户下所有模板
-func TaobaoDeliveryTemplatesGet(clt *core.SDKClient, req *tblogistics.TaobaoDeliveryTemplatesGetAPIRequest, session string) (*tblogistics.TaobaoDeliveryTemplatesGetAPIResponse, error) {
-	var resp tblogistics.TaobaoDeliveryTemplatesGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoDeliveryTemplatesGet(clt *core.SDKClient, req *tblogistics.TaobaoDeliveryTemplatesGetAPIRequest, resp *tblogistics.TaobaoDeliveryTemplatesGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

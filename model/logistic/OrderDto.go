@@ -1,5 +1,9 @@
 package logistic
 
+import (
+	"sync"
+)
+
 // OrderDto 结构体
 type OrderDto struct {
 	// products
@@ -30,4 +34,34 @@ type OrderDto struct {
 	SenderAddress *AddressDto `json:"sender_address,omitempty" xml:"sender_address,omitempty"`
 	// invoice
 	Invoice *InvoiceDto `json:"invoice,omitempty" xml:"invoice,omitempty"`
+}
+
+var poolOrderDto = sync.Pool{
+	New: func() any {
+		return new(OrderDto)
+	},
+}
+
+// GetOrderDto() 从对象池中获取OrderDto
+func GetOrderDto() *OrderDto {
+	return poolOrderDto.Get().(*OrderDto)
+}
+
+// ReleaseOrderDto 释放OrderDto
+func ReleaseOrderDto(v *OrderDto) {
+	v.Products = v.Products[:0]
+	v.LogisticsOrderId = ""
+	v.LogisticsChannelOrderId = ""
+	v.TrackingCode = ""
+	v.ShippingMethodId = ""
+	v.LogisticsChannelId = ""
+	v.Status = ""
+	v.TrackingUrl = ""
+	v.LogisticsChannelName = ""
+	v.Parcel = nil
+	v.TradeOrderId = 0
+	v.ReceiptAddress = nil
+	v.SenderAddress = nil
+	v.Invoice = nil
+	poolOrderDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package wlb
 
+import (
+	"sync"
+)
+
 // WlbProcessStatus 结构体
 type WlbProcessStatus struct {
 	// 物流宝订单编码
@@ -22,4 +26,30 @@ type WlbProcessStatus struct {
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
 	// 订单操作状态：WMS_ACCEPT;WMS_PRINT;WMS_PICK;WMS_CHECK;WMS_PACKAGE;WMS_CONSIGN;WMS_CANCEL;WMS_UNKNOWN;WMS_CONFIRMEDTMS_ACCEPT;TMS_STATION_IN;TMS_STATION_OUT;TMS_SIGN;TMS_REJECT;TMS_CANCEL;TMS_UNKNOW;SYS_UNKNOWN
 	StatusCode string `json:"status_code,omitempty" xml:"status_code,omitempty"`
+}
+
+var poolWlbProcessStatus = sync.Pool{
+	New: func() any {
+		return new(WlbProcessStatus)
+	},
+}
+
+// GetWlbProcessStatus() 从对象池中获取WlbProcessStatus
+func GetWlbProcessStatus() *WlbProcessStatus {
+	return poolWlbProcessStatus.Get().(*WlbProcessStatus)
+}
+
+// ReleaseWlbProcessStatus 释放WlbProcessStatus
+func ReleaseWlbProcessStatus(v *WlbProcessStatus) {
+	v.OrderCode = ""
+	v.Operator = ""
+	v.OperateTime = ""
+	v.StoreTpCode = ""
+	v.StoreCode = ""
+	v.TmsTpCode = ""
+	v.TmsOrderCode = ""
+	v.Content = ""
+	v.Remark = ""
+	v.StatusCode = ""
+	poolWlbProcessStatus.Put(v)
 }

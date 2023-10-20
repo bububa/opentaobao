@@ -2,6 +2,7 @@ package user
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoOpenAccountListAPIResponse struct {
 	TaobaoOpenAccountListAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoOpenAccountListAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoOpenAccountListAPIResponseModel).Reset()
+}
+
 // TaobaoOpenAccountListAPIResponseModel is OpenAccount账号信息查询 成功返回结果
 type TaobaoOpenAccountListAPIResponseModel struct {
 	XMLName xml.Name `xml:"open_account_list_response"`
@@ -22,4 +29,27 @@ type TaobaoOpenAccountListAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回信息
 	Datas []OpenaccountObject `json:"datas,omitempty" xml:"datas>openaccount_object,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoOpenAccountListAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Datas = m.Datas[:0]
+}
+
+var poolTaobaoOpenAccountListAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoOpenAccountListAPIResponse)
+	},
+}
+
+// GetTaobaoOpenAccountListAPIResponse 从 sync.Pool 获取 TaobaoOpenAccountListAPIResponse
+func GetTaobaoOpenAccountListAPIResponse() *TaobaoOpenAccountListAPIResponse {
+	return poolTaobaoOpenAccountListAPIResponse.Get().(*TaobaoOpenAccountListAPIResponse)
+}
+
+// ReleaseTaobaoOpenAccountListAPIResponse 将 TaobaoOpenAccountListAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoOpenAccountListAPIResponse(v *TaobaoOpenAccountListAPIResponse) {
+	v.Reset()
+	poolTaobaoOpenAccountListAPIResponse.Put(v)
 }

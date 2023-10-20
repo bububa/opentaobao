@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.rateplan.delete
 //
 // 酒店产品库rateplan删除，同时删除级联的rate，请谨慎使用
-func TaobaoXhotelRateplanDelete(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRateplanDeleteAPIRequest, session string) (*xhotelitem.TaobaoXhotelRateplanDeleteAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelRateplanDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelRateplanDelete(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRateplanDeleteAPIRequest, resp *xhotelitem.TaobaoXhotelRateplanDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package tmallgeniescp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIRequest struct {
 // NewAlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadRequest 初始化AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIRequest对象
 func NewAlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadRequest() *AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIRequest {
 	return &AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIRequest) Reset() {
+	r._currentQuoteRawRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIRequest) SetCur
 // GetCurrentQuoteRawRequest CurrentQuoteRawRequest Getter
 func (r AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIRequest) GetCurrentQuoteRawRequest() *AbstractRequest {
 	return r._currentQuoteRawRequest
+}
+
+var poolAlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadRequest()
+	},
+}
+
+// GetAlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadRequest 从 sync.Pool 获取 AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIRequest
+func GetAlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIRequest() *AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIRequest {
+	return poolAlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIRequest.Get().(*AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIRequest)
+}
+
+// ReleaseAlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIRequest 将 AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIRequest(v *AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package uscesl
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type TaobaoUsceslBizApSearchAPIRequest struct {
 // NewTaobaoUsceslBizApSearchRequest 初始化TaobaoUsceslBizApSearchAPIRequest对象
 func NewTaobaoUsceslBizApSearchRequest() *TaobaoUsceslBizApSearchAPIRequest {
 	return &TaobaoUsceslBizApSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUsceslBizApSearchAPIRequest) Reset() {
+	r._mac = ""
+	r._bizBrandKey = ""
+	r._limit = 0
+	r._currentPage = 0
+	r._storeId = 0
+	r._isActivate = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *TaobaoUsceslBizApSearchAPIRequest) SetIsActivate(_isActivate bool) erro
 // GetIsActivate IsActivate Getter
 func (r TaobaoUsceslBizApSearchAPIRequest) GetIsActivate() bool {
 	return r._isActivate
+}
+
+var poolTaobaoUsceslBizApSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUsceslBizApSearchRequest()
+	},
+}
+
+// GetTaobaoUsceslBizApSearchRequest 从 sync.Pool 获取 TaobaoUsceslBizApSearchAPIRequest
+func GetTaobaoUsceslBizApSearchAPIRequest() *TaobaoUsceslBizApSearchAPIRequest {
+	return poolTaobaoUsceslBizApSearchAPIRequest.Get().(*TaobaoUsceslBizApSearchAPIRequest)
+}
+
+// ReleaseTaobaoUsceslBizApSearchAPIRequest 将 TaobaoUsceslBizApSearchAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUsceslBizApSearchAPIRequest(v *TaobaoUsceslBizApSearchAPIRequest) {
+	v.Reset()
+	poolTaobaoUsceslBizApSearchAPIRequest.Put(v)
 }

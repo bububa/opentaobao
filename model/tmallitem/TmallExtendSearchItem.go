@@ -1,5 +1,9 @@
 package tmallitem
 
+import (
+	"sync"
+)
+
 // TmallExtendSearchItem 结构体
 type TmallExtendSearchItem struct {
 	// 邮费
@@ -34,4 +38,36 @@ type TmallExtendSearchItem struct {
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// 是否折扣
 	IsPromotion bool `json:"is_promotion,omitempty" xml:"is_promotion,omitempty"`
+}
+
+var poolTmallExtendSearchItem = sync.Pool{
+	New: func() any {
+		return new(TmallExtendSearchItem)
+	},
+}
+
+// GetTmallExtendSearchItem() 从对象池中获取TmallExtendSearchItem
+func GetTmallExtendSearchItem() *TmallExtendSearchItem {
+	return poolTmallExtendSearchItem.Get().(*TmallExtendSearchItem)
+}
+
+// ReleaseTmallExtendSearchItem 释放TmallExtendSearchItem
+func ReleaseTmallExtendSearchItem(v *TmallExtendSearchItem) {
+	v.FastPostFee = ""
+	v.Location = ""
+	v.Nick = ""
+	v.PicPath = ""
+	v.Price = ""
+	v.PriceWithRate = ""
+	v.SellerLoc = ""
+	v.Sold = ""
+	v.Title = ""
+	v.Url = ""
+	v.IsCod = 0
+	v.ItemId = 0
+	v.Shipping = 0
+	v.SpuId = 0
+	v.UserId = 0
+	v.IsPromotion = false
+	poolTmallExtendSearchItem.Put(v)
 }

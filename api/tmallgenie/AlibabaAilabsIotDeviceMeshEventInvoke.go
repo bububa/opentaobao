@@ -9,11 +9,6 @@ import (
 // alibaba.ailabs.iot.device.mesh.event.invoke
 //
 // 弹内设备中心事件调用
-func AlibabaAilabsIotDeviceMeshEventInvoke(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsIotDeviceMeshEventInvokeAPIRequest, session string) (*tmallgenie.AlibabaAilabsIotDeviceMeshEventInvokeAPIResponse, error) {
-	var resp tmallgenie.AlibabaAilabsIotDeviceMeshEventInvokeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAilabsIotDeviceMeshEventInvoke(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsIotDeviceMeshEventInvokeAPIRequest, resp *tmallgenie.AlibabaAilabsIotDeviceMeshEventInvokeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

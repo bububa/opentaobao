@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoLogisticsExpressCollectSyncAPIResponse struct {
 	model.CommonResponse
 	TaobaoLogisticsExpressCollectSyncAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoLogisticsExpressCollectSyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoLogisticsExpressCollectSyncAPIResponseModel).Reset()
 }
 
 // TaobaoLogisticsExpressCollectSyncAPIResponseModel is 服饰逆向揽收信息同步 成功返回结果
@@ -30,4 +37,31 @@ type TaobaoLogisticsExpressCollectSyncAPIResponseModel struct {
 	Suc bool `json:"suc,omitempty" xml:"suc,omitempty"`
 	// 是否可重试
 	Retry bool `json:"retry,omitempty" xml:"retry,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoLogisticsExpressCollectSyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.BizErrorMessage = ""
+	m.BizErrorCode = ""
+	m.Data = nil
+	m.Suc = false
+	m.Retry = false
+}
+
+var poolTaobaoLogisticsExpressCollectSyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoLogisticsExpressCollectSyncAPIResponse)
+	},
+}
+
+// GetTaobaoLogisticsExpressCollectSyncAPIResponse 从 sync.Pool 获取 TaobaoLogisticsExpressCollectSyncAPIResponse
+func GetTaobaoLogisticsExpressCollectSyncAPIResponse() *TaobaoLogisticsExpressCollectSyncAPIResponse {
+	return poolTaobaoLogisticsExpressCollectSyncAPIResponse.Get().(*TaobaoLogisticsExpressCollectSyncAPIResponse)
+}
+
+// ReleaseTaobaoLogisticsExpressCollectSyncAPIResponse 将 TaobaoLogisticsExpressCollectSyncAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoLogisticsExpressCollectSyncAPIResponse(v *TaobaoLogisticsExpressCollectSyncAPIResponse) {
+	v.Reset()
+	poolTaobaoLogisticsExpressCollectSyncAPIResponse.Put(v)
 }

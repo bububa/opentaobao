@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,18 @@ type TmallMsdClaimQueryAPIRequest struct {
 // NewTmallMsdClaimQueryRequest 初始化TmallMsdClaimQueryAPIRequest对象
 func NewTmallMsdClaimQueryRequest() *TmallMsdClaimQueryAPIRequest {
 	return &TmallMsdClaimQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(5),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallMsdClaimQueryAPIRequest) Reset() {
+	r._workcardId = 0
+	r._bizOrderId = 0
+	r._pageIndex = 0
+	r._pageSize = 0
+	r._serviceOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -111,4 +122,21 @@ func (r *TmallMsdClaimQueryAPIRequest) SetServiceOrderId(_serviceOrderId int64) 
 // GetServiceOrderId ServiceOrderId Getter
 func (r TmallMsdClaimQueryAPIRequest) GetServiceOrderId() int64 {
 	return r._serviceOrderId
+}
+
+var poolTmallMsdClaimQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallMsdClaimQueryRequest()
+	},
+}
+
+// GetTmallMsdClaimQueryRequest 从 sync.Pool 获取 TmallMsdClaimQueryAPIRequest
+func GetTmallMsdClaimQueryAPIRequest() *TmallMsdClaimQueryAPIRequest {
+	return poolTmallMsdClaimQueryAPIRequest.Get().(*TmallMsdClaimQueryAPIRequest)
+}
+
+// ReleaseTmallMsdClaimQueryAPIRequest 将 TmallMsdClaimQueryAPIRequest 放入 sync.Pool
+func ReleaseTmallMsdClaimQueryAPIRequest(v *TmallMsdClaimQueryAPIRequest) {
+	v.Reset()
+	poolTmallMsdClaimQueryAPIRequest.Put(v)
 }

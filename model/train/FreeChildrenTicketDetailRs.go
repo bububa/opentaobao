@@ -1,5 +1,9 @@
 package train
 
+import (
+	"sync"
+)
+
 // FreeChildrenTicketDetailRs 结构体
 type FreeChildrenTicketDetailRs struct {
 	// 唯一标识
@@ -16,4 +20,27 @@ type FreeChildrenTicketDetailRs struct {
 	OperatorType int64 `json:"operator_type,omitempty" xml:"operator_type,omitempty"`
 	// 状态
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolFreeChildrenTicketDetailRs = sync.Pool{
+	New: func() any {
+		return new(FreeChildrenTicketDetailRs)
+	},
+}
+
+// GetFreeChildrenTicketDetailRs() 从对象池中获取FreeChildrenTicketDetailRs
+func GetFreeChildrenTicketDetailRs() *FreeChildrenTicketDetailRs {
+	return poolFreeChildrenTicketDetailRs.Get().(*FreeChildrenTicketDetailRs)
+}
+
+// ReleaseFreeChildrenTicketDetailRs 释放FreeChildrenTicketDetailRs
+func ReleaseFreeChildrenTicketDetailRs(v *FreeChildrenTicketDetailRs) {
+	v.ApplyNo = ""
+	v.Timeout = ""
+	v.TrainInfo = nil
+	v.PassengerInfo = nil
+	v.FreeChildrenPassengerInfo = nil
+	v.OperatorType = 0
+	v.Status = 0
+	poolFreeChildrenTicketDetailRs.Put(v)
 }

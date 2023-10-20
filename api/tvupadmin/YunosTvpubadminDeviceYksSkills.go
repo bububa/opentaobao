@@ -9,11 +9,6 @@ import (
 // yunos.tvpubadmin.device.yks.skills
 //
 // 根据设备id获取技能列表
-func YunosTvpubadminDeviceYksSkills(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceYksSkillsAPIRequest, session string) (*tvupadmin.YunosTvpubadminDeviceYksSkillsAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminDeviceYksSkillsAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosTvpubadminDeviceYksSkills(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDeviceYksSkillsAPIRequest, resp *tvupadmin.YunosTvpubadminDeviceYksSkillsAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

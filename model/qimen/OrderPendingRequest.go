@@ -1,5 +1,9 @@
 package qimen
 
+import (
+	"sync"
+)
+
 // OrderPendingRequest 结构体
 type OrderPendingRequest struct {
 	// 操作类型(pending=挂起;restore=恢复)
@@ -18,4 +22,28 @@ type OrderPendingRequest struct {
 	Reason string `json:"reason,omitempty" xml:"reason,omitempty"`
 	// 扩展属性
 	ExtendProps *TaobaoQimenOrderPendingMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+}
+
+var poolOrderPendingRequest = sync.Pool{
+	New: func() any {
+		return new(OrderPendingRequest)
+	},
+}
+
+// GetOrderPendingRequest() 从对象池中获取OrderPendingRequest
+func GetOrderPendingRequest() *OrderPendingRequest {
+	return poolOrderPendingRequest.Get().(*OrderPendingRequest)
+}
+
+// ReleaseOrderPendingRequest 释放OrderPendingRequest
+func ReleaseOrderPendingRequest(v *OrderPendingRequest) {
+	v.ActionType = ""
+	v.WarehouseCode = ""
+	v.OwnerCode = ""
+	v.OrderCode = ""
+	v.OrderId = ""
+	v.OrderType = ""
+	v.Reason = ""
+	v.ExtendProps = nil
+	poolOrderPendingRequest.Put(v)
 }

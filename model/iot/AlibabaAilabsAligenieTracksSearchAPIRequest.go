@@ -2,6 +2,7 @@ package iot
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -35,8 +36,22 @@ type AlibabaAilabsAligenieTracksSearchAPIRequest struct {
 // NewAlibabaAilabsAligenieTracksSearchRequest 初始化AlibabaAilabsAligenieTracksSearchAPIRequest对象
 func NewAlibabaAilabsAligenieTracksSearchRequest() *AlibabaAilabsAligenieTracksSearchAPIRequest {
 	return &AlibabaAilabsAligenieTracksSearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(9),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsAligenieTracksSearchAPIRequest) Reset() {
+	r._schema = ""
+	r._userId = ""
+	r._utdId = ""
+	r._ext = ""
+	r._param1 = ""
+	r._param2 = ""
+	r._param3 = ""
+	r._param4 = 0
+	r._param5 = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -171,4 +186,21 @@ func (r *AlibabaAilabsAligenieTracksSearchAPIRequest) SetParam5(_param5 int64) e
 // GetParam5 Param5 Getter
 func (r AlibabaAilabsAligenieTracksSearchAPIRequest) GetParam5() int64 {
 	return r._param5
+}
+
+var poolAlibabaAilabsAligenieTracksSearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsAligenieTracksSearchRequest()
+	},
+}
+
+// GetAlibabaAilabsAligenieTracksSearchRequest 从 sync.Pool 获取 AlibabaAilabsAligenieTracksSearchAPIRequest
+func GetAlibabaAilabsAligenieTracksSearchAPIRequest() *AlibabaAilabsAligenieTracksSearchAPIRequest {
+	return poolAlibabaAilabsAligenieTracksSearchAPIRequest.Get().(*AlibabaAilabsAligenieTracksSearchAPIRequest)
+}
+
+// ReleaseAlibabaAilabsAligenieTracksSearchAPIRequest 将 AlibabaAilabsAligenieTracksSearchAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsAligenieTracksSearchAPIRequest(v *AlibabaAilabsAligenieTracksSearchAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsAligenieTracksSearchAPIRequest.Put(v)
 }

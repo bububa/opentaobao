@@ -9,11 +9,6 @@ import (
 // taobao.simba.insight.catsforecastnew.get
 //
 // 根据给定的词，预测这些词的相关类目
-func TaobaoSimbaInsightCatsforecastnewGet(clt *core.SDKClient, req *simba.TaobaoSimbaInsightCatsforecastnewGetAPIRequest, session string) (*simba.TaobaoSimbaInsightCatsforecastnewGetAPIResponse, error) {
-	var resp simba.TaobaoSimbaInsightCatsforecastnewGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaInsightCatsforecastnewGet(clt *core.SDKClient, req *simba.TaobaoSimbaInsightCatsforecastnewGetAPIRequest, resp *simba.TaobaoSimbaInsightCatsforecastnewGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

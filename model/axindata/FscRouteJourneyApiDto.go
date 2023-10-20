@@ -1,5 +1,9 @@
 package axindata
 
+import (
+	"sync"
+)
+
 // FscRouteJourneyApiDto 结构体
 type FscRouteJourneyApiDto struct {
 	// 日程列表
@@ -14,4 +18,26 @@ type FscRouteJourneyApiDto struct {
 	StartCityName string `json:"start_city_name,omitempty" xml:"start_city_name,omitempty"`
 	// 出发城市Id
 	StartCityId int64 `json:"start_city_id,omitempty" xml:"start_city_id,omitempty"`
+}
+
+var poolFscRouteJourneyApiDto = sync.Pool{
+	New: func() any {
+		return new(FscRouteJourneyApiDto)
+	},
+}
+
+// GetFscRouteJourneyApiDto() 从对象池中获取FscRouteJourneyApiDto
+func GetFscRouteJourneyApiDto() *FscRouteJourneyApiDto {
+	return poolFscRouteJourneyApiDto.Get().(*FscRouteJourneyApiDto)
+}
+
+// ReleaseFscRouteJourneyApiDto 释放FscRouteJourneyApiDto
+func ReleaseFscRouteJourneyApiDto(v *FscRouteJourneyApiDto) {
+	v.RouteScheduleList = v.RouteScheduleList[:0]
+	v.JourneyCode = ""
+	v.JourneyName = ""
+	v.JourneyDesc = ""
+	v.StartCityName = ""
+	v.StartCityId = 0
+	poolFscRouteJourneyApiDto.Put(v)
 }

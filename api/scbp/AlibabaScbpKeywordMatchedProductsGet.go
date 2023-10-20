@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.keyword.matched.products.get
 //
 // 查询和词匹配的推广产品
-func AlibabaScbpKeywordMatchedProductsGet(clt *core.SDKClient, req *scbp.AlibabaScbpKeywordMatchedProductsGetAPIRequest, session string) (*scbp.AlibabaScbpKeywordMatchedProductsGetAPIResponse, error) {
-	var resp scbp.AlibabaScbpKeywordMatchedProductsGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpKeywordMatchedProductsGet(clt *core.SDKClient, req *scbp.AlibabaScbpKeywordMatchedProductsGetAPIRequest, resp *scbp.AlibabaScbpKeywordMatchedProductsGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

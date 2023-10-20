@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoItemUpdateDelistingTmallAPIRequest struct {
 // NewTaobaoItemUpdateDelistingTmallRequest 初始化TaobaoItemUpdateDelistingTmallAPIRequest对象
 func NewTaobaoItemUpdateDelistingTmallRequest() *TaobaoItemUpdateDelistingTmallAPIRequest {
 	return &TaobaoItemUpdateDelistingTmallAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoItemUpdateDelistingTmallAPIRequest) Reset() {
+	r._numIid = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoItemUpdateDelistingTmallAPIRequest) SetNumIid(_numIid int64) erro
 // GetNumIid NumIid Getter
 func (r TaobaoItemUpdateDelistingTmallAPIRequest) GetNumIid() int64 {
 	return r._numIid
+}
+
+var poolTaobaoItemUpdateDelistingTmallAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoItemUpdateDelistingTmallRequest()
+	},
+}
+
+// GetTaobaoItemUpdateDelistingTmallRequest 从 sync.Pool 获取 TaobaoItemUpdateDelistingTmallAPIRequest
+func GetTaobaoItemUpdateDelistingTmallAPIRequest() *TaobaoItemUpdateDelistingTmallAPIRequest {
+	return poolTaobaoItemUpdateDelistingTmallAPIRequest.Get().(*TaobaoItemUpdateDelistingTmallAPIRequest)
+}
+
+// ReleaseTaobaoItemUpdateDelistingTmallAPIRequest 将 TaobaoItemUpdateDelistingTmallAPIRequest 放入 sync.Pool
+func ReleaseTaobaoItemUpdateDelistingTmallAPIRequest(v *TaobaoItemUpdateDelistingTmallAPIRequest) {
+	v.Reset()
+	poolTaobaoItemUpdateDelistingTmallAPIRequest.Put(v)
 }

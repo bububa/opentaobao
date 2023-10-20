@@ -2,6 +2,7 @@ package alitripreceipt
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripReceiptIssueresultNotifyAPIRequest struct {
 // NewAlitripReceiptIssueresultNotifyRequest 初始化AlitripReceiptIssueresultNotifyAPIRequest对象
 func NewAlitripReceiptIssueresultNotifyRequest() *AlitripReceiptIssueresultNotifyAPIRequest {
 	return &AlitripReceiptIssueresultNotifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripReceiptIssueresultNotifyAPIRequest) Reset() {
+	r._param0 = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripReceiptIssueresultNotifyAPIRequest) SetParam0(_param0 *IssueResu
 // GetParam0 Param0 Getter
 func (r AlitripReceiptIssueresultNotifyAPIRequest) GetParam0() *IssueResultNotifyCmd {
 	return r._param0
+}
+
+var poolAlitripReceiptIssueresultNotifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripReceiptIssueresultNotifyRequest()
+	},
+}
+
+// GetAlitripReceiptIssueresultNotifyRequest 从 sync.Pool 获取 AlitripReceiptIssueresultNotifyAPIRequest
+func GetAlitripReceiptIssueresultNotifyAPIRequest() *AlitripReceiptIssueresultNotifyAPIRequest {
+	return poolAlitripReceiptIssueresultNotifyAPIRequest.Get().(*AlitripReceiptIssueresultNotifyAPIRequest)
+}
+
+// ReleaseAlitripReceiptIssueresultNotifyAPIRequest 将 AlitripReceiptIssueresultNotifyAPIRequest 放入 sync.Pool
+func ReleaseAlitripReceiptIssueresultNotifyAPIRequest(v *AlitripReceiptIssueresultNotifyAPIRequest) {
+	v.Reset()
+	poolAlitripReceiptIssueresultNotifyAPIRequest.Put(v)
 }

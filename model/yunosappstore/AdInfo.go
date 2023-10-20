@@ -1,5 +1,9 @@
 package yunosappstore
 
+import (
+	"sync"
+)
+
 // AdInfo 结构体
 type AdInfo struct {
 	// 创意列表
@@ -30,4 +34,34 @@ type AdInfo struct {
 	VerCode int64 `json:"ver_code,omitempty" xml:"ver_code,omitempty"`
 	// 价格
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
+}
+
+var poolAdInfo = sync.Pool{
+	New: func() any {
+		return new(AdInfo)
+	},
+}
+
+// GetAdInfo() 从对象池中获取AdInfo
+func GetAdInfo() *AdInfo {
+	return poolAdInfo.Get().(*AdInfo)
+}
+
+// ReleaseAdInfo 释放AdInfo
+func ReleaseAdInfo(v *AdInfo) {
+	v.Creatives = v.Creatives[:0]
+	v.TraceId = ""
+	v.Intro = ""
+	v.Icon = ""
+	v.VerName = ""
+	v.FeeType = ""
+	v.Name = ""
+	v.Pkg = ""
+	v.Md5 = ""
+	v.Deeplink = ""
+	v.DownloadUrl = ""
+	v.Callbacks = nil
+	v.VerCode = 0
+	v.Price = 0
+	poolAdInfo.Put(v)
 }

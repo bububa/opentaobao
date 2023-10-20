@@ -2,6 +2,7 @@ package axintrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoAlitripTravelAxinHotelOrderPayAPIRequest struct {
 // NewTaobaoAlitripTravelAxinHotelOrderPayRequest 初始化TaobaoAlitripTravelAxinHotelOrderPayAPIRequest对象
 func NewTaobaoAlitripTravelAxinHotelOrderPayRequest() *TaobaoAlitripTravelAxinHotelOrderPayAPIRequest {
 	return &TaobaoAlitripTravelAxinHotelOrderPayAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripTravelAxinHotelOrderPayAPIRequest) Reset() {
+	r._distributorTid = 0
+	r._purchaseOrderId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoAlitripTravelAxinHotelOrderPayAPIRequest) SetPurchaseOrderId(_pur
 // GetPurchaseOrderId PurchaseOrderId Getter
 func (r TaobaoAlitripTravelAxinHotelOrderPayAPIRequest) GetPurchaseOrderId() int64 {
 	return r._purchaseOrderId
+}
+
+var poolTaobaoAlitripTravelAxinHotelOrderPayAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripTravelAxinHotelOrderPayRequest()
+	},
+}
+
+// GetTaobaoAlitripTravelAxinHotelOrderPayRequest 从 sync.Pool 获取 TaobaoAlitripTravelAxinHotelOrderPayAPIRequest
+func GetTaobaoAlitripTravelAxinHotelOrderPayAPIRequest() *TaobaoAlitripTravelAxinHotelOrderPayAPIRequest {
+	return poolTaobaoAlitripTravelAxinHotelOrderPayAPIRequest.Get().(*TaobaoAlitripTravelAxinHotelOrderPayAPIRequest)
+}
+
+// ReleaseTaobaoAlitripTravelAxinHotelOrderPayAPIRequest 将 TaobaoAlitripTravelAxinHotelOrderPayAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripTravelAxinHotelOrderPayAPIRequest(v *TaobaoAlitripTravelAxinHotelOrderPayAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripTravelAxinHotelOrderPayAPIRequest.Put(v)
 }

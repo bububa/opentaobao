@@ -2,6 +2,7 @@ package inventory
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoInventoryPlanQueryAPIResponse struct {
 	TaobaoInventoryPlanQueryAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoInventoryPlanQueryAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoInventoryPlanQueryAPIResponseModel).Reset()
+}
+
 // TaobaoInventoryPlanQueryAPIResponseModel is 计划库存查询 成功返回结果
 type TaobaoInventoryPlanQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"inventory_plan_query_response"`
@@ -22,4 +29,27 @@ type TaobaoInventoryPlanQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
 	Result *TaobaoInventoryPlanQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoInventoryPlanQueryAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTaobaoInventoryPlanQueryAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoInventoryPlanQueryAPIResponse)
+	},
+}
+
+// GetTaobaoInventoryPlanQueryAPIResponse 从 sync.Pool 获取 TaobaoInventoryPlanQueryAPIResponse
+func GetTaobaoInventoryPlanQueryAPIResponse() *TaobaoInventoryPlanQueryAPIResponse {
+	return poolTaobaoInventoryPlanQueryAPIResponse.Get().(*TaobaoInventoryPlanQueryAPIResponse)
+}
+
+// ReleaseTaobaoInventoryPlanQueryAPIResponse 将 TaobaoInventoryPlanQueryAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoInventoryPlanQueryAPIResponse(v *TaobaoInventoryPlanQueryAPIResponse) {
+	v.Reset()
+	poolTaobaoInventoryPlanQueryAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallservice
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -22,8 +23,15 @@ type TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest stru
 // NewTmallServicecenterServicestoreDeleteservicestorecoverserviceRequest 初始化TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest对象
 func NewTmallServicecenterServicestoreDeleteservicestorecoverserviceRequest() *TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest {
 	return &TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest) Reset() {
+	r._serviceStoreCode = ""
+	r._bizType = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -67,4 +75,21 @@ func (r *TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest)
 // GetBizType BizType Getter
 func (r TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest) GetBizType() string {
 	return r._bizType
+}
+
+var poolTmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallServicecenterServicestoreDeleteservicestorecoverserviceRequest()
+	},
+}
+
+// GetTmallServicecenterServicestoreDeleteservicestorecoverserviceRequest 从 sync.Pool 获取 TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest
+func GetTmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest() *TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest {
+	return poolTmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest.Get().(*TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest)
+}
+
+// ReleaseTmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest 将 TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest 放入 sync.Pool
+func ReleaseTmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest(v *TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest) {
+	v.Reset()
+	poolTmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package tbk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoTbkShopRecommendGetAPIRequest struct {
 // NewTaobaoTbkShopRecommendGetRequest 初始化TaobaoTbkShopRecommendGetAPIRequest对象
 func NewTaobaoTbkShopRecommendGetRequest() *TaobaoTbkShopRecommendGetAPIRequest {
 	return &TaobaoTbkShopRecommendGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTbkShopRecommendGetAPIRequest) Reset() {
+	r._fields = ""
+	r._count = 0
+	r._platform = 0
+	r._userId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoTbkShopRecommendGetAPIRequest) SetUserId(_userId int64) error {
 // GetUserId UserId Getter
 func (r TaobaoTbkShopRecommendGetAPIRequest) GetUserId() int64 {
 	return r._userId
+}
+
+var poolTaobaoTbkShopRecommendGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTbkShopRecommendGetRequest()
+	},
+}
+
+// GetTaobaoTbkShopRecommendGetRequest 从 sync.Pool 获取 TaobaoTbkShopRecommendGetAPIRequest
+func GetTaobaoTbkShopRecommendGetAPIRequest() *TaobaoTbkShopRecommendGetAPIRequest {
+	return poolTaobaoTbkShopRecommendGetAPIRequest.Get().(*TaobaoTbkShopRecommendGetAPIRequest)
+}
+
+// ReleaseTaobaoTbkShopRecommendGetAPIRequest 将 TaobaoTbkShopRecommendGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTbkShopRecommendGetAPIRequest(v *TaobaoTbkShopRecommendGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTbkShopRecommendGetAPIRequest.Put(v)
 }

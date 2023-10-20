@@ -1,5 +1,9 @@
 package servicecenter
 
+import (
+	"sync"
+)
+
 // BillRecordDto 结构体
 type BillRecordDto struct {
 	// appkey
@@ -42,4 +46,40 @@ type BillRecordDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 账单分类：1短信
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+var poolBillRecordDto = sync.Pool{
+	New: func() any {
+		return new(BillRecordDto)
+	},
+}
+
+// GetBillRecordDto() 从对象池中获取BillRecordDto
+func GetBillRecordDto() *BillRecordDto {
+	return poolBillRecordDto.Get().(*BillRecordDto)
+}
+
+// ReleaseBillRecordDto 释放BillRecordDto
+func ReleaseBillRecordDto(v *BillRecordDto) {
+	v.Appkey = ""
+	v.Extend1 = ""
+	v.Extend10 = ""
+	v.Extend2 = ""
+	v.Extend3 = ""
+	v.Extend4 = ""
+	v.Extend5 = ""
+	v.Extend6 = ""
+	v.Extend7 = ""
+	v.Extend8 = ""
+	v.Extend9 = ""
+	v.Nick = ""
+	v.OutConfirmId = ""
+	v.OutOrderId = ""
+	v.StartDate = ""
+	v.TargetNo = ""
+	v.Fee = 0
+	v.OrderId = 0
+	v.Status = 0
+	v.Type = 0
+	poolBillRecordDto.Put(v)
 }

@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlibabaTclsAxIntegrationAccountImportAPIRequest struct {
 // NewAlibabaTclsAxIntegrationAccountImportRequest 初始化AlibabaTclsAxIntegrationAccountImportAPIRequest对象
 func NewAlibabaTclsAxIntegrationAccountImportRequest() *AlibabaTclsAxIntegrationAccountImportAPIRequest {
 	return &AlibabaTclsAxIntegrationAccountImportAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTclsAxIntegrationAccountImportAPIRequest) Reset() {
+	r._clientId = ""
+	r._mobile = ""
+	r._email = ""
+	r._username = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlibabaTclsAxIntegrationAccountImportAPIRequest) SetUsername(_username 
 // GetUsername Username Getter
 func (r AlibabaTclsAxIntegrationAccountImportAPIRequest) GetUsername() string {
 	return r._username
+}
+
+var poolAlibabaTclsAxIntegrationAccountImportAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTclsAxIntegrationAccountImportRequest()
+	},
+}
+
+// GetAlibabaTclsAxIntegrationAccountImportRequest 从 sync.Pool 获取 AlibabaTclsAxIntegrationAccountImportAPIRequest
+func GetAlibabaTclsAxIntegrationAccountImportAPIRequest() *AlibabaTclsAxIntegrationAccountImportAPIRequest {
+	return poolAlibabaTclsAxIntegrationAccountImportAPIRequest.Get().(*AlibabaTclsAxIntegrationAccountImportAPIRequest)
+}
+
+// ReleaseAlibabaTclsAxIntegrationAccountImportAPIRequest 将 AlibabaTclsAxIntegrationAccountImportAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTclsAxIntegrationAccountImportAPIRequest(v *AlibabaTclsAxIntegrationAccountImportAPIRequest) {
+	v.Reset()
+	poolAlibabaTclsAxIntegrationAccountImportAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package icbulogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIRequest struct {
 // NewAlibabaOnetouchLogisticsExpressLogisticsOrderCreateRequest 初始化AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIRequest对象
 func NewAlibabaOnetouchLogisticsExpressLogisticsOrderCreateRequest() *AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIRequest {
 	return &AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIRequest) Reset() {
+	r._paramnQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIRequest) SetParam
 // GetParamnQuery ParamnQuery Getter
 func (r AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIRequest) GetParamnQuery() *PlaceOrderDto {
 	return r._paramnQuery
+}
+
+var poolAlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaOnetouchLogisticsExpressLogisticsOrderCreateRequest()
+	},
+}
+
+// GetAlibabaOnetouchLogisticsExpressLogisticsOrderCreateRequest 从 sync.Pool 获取 AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIRequest
+func GetAlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIRequest() *AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIRequest {
+	return poolAlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIRequest.Get().(*AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIRequest)
+}
+
+// ReleaseAlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIRequest 将 AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIRequest(v *AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIRequest.Put(v)
 }

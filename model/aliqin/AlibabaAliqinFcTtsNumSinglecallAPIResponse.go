@@ -2,6 +2,7 @@ package aliqin
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAliqinFcTtsNumSinglecallAPIResponse struct {
 	AlibabaAliqinFcTtsNumSinglecallAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAliqinFcTtsNumSinglecallAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAliqinFcTtsNumSinglecallAPIResponseModel).Reset()
+}
+
 // AlibabaAliqinFcTtsNumSinglecallAPIResponseModel is 文本转语音通知 成功返回结果
 type AlibabaAliqinFcTtsNumSinglecallAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_aliqin_fc_tts_num_singlecall_response"`
@@ -22,4 +29,27 @@ type AlibabaAliqinFcTtsNumSinglecallAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回参数
 	Result *AlibabaAliqinFcTtsNumSinglecallBizResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAliqinFcTtsNumSinglecallAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAliqinFcTtsNumSinglecallAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAliqinFcTtsNumSinglecallAPIResponse)
+	},
+}
+
+// GetAlibabaAliqinFcTtsNumSinglecallAPIResponse 从 sync.Pool 获取 AlibabaAliqinFcTtsNumSinglecallAPIResponse
+func GetAlibabaAliqinFcTtsNumSinglecallAPIResponse() *AlibabaAliqinFcTtsNumSinglecallAPIResponse {
+	return poolAlibabaAliqinFcTtsNumSinglecallAPIResponse.Get().(*AlibabaAliqinFcTtsNumSinglecallAPIResponse)
+}
+
+// ReleaseAlibabaAliqinFcTtsNumSinglecallAPIResponse 将 AlibabaAliqinFcTtsNumSinglecallAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAliqinFcTtsNumSinglecallAPIResponse(v *AlibabaAliqinFcTtsNumSinglecallAPIResponse) {
+	v.Reset()
+	poolAlibabaAliqinFcTtsNumSinglecallAPIResponse.Put(v)
 }

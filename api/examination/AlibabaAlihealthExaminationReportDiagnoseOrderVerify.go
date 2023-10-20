@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.examination.report.diagnose.order.verify
 //
 // 报告解读令牌校验
-func AlibabaAlihealthExaminationReportDiagnoseOrderVerify(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationReportDiagnoseOrderVerifyAPIRequest, session string) (*examination.AlibabaAlihealthExaminationReportDiagnoseOrderVerifyAPIResponse, error) {
-	var resp examination.AlibabaAlihealthExaminationReportDiagnoseOrderVerifyAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthExaminationReportDiagnoseOrderVerify(clt *core.SDKClient, req *examination.AlibabaAlihealthExaminationReportDiagnoseOrderVerifyAPIRequest, resp *examination.AlibabaAlihealthExaminationReportDiagnoseOrderVerifyAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

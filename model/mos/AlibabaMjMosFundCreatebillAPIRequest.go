@@ -2,6 +2,7 @@ package mos
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaMjMosFundCreatebillAPIRequest struct {
 // NewAlibabaMjMosFundCreatebillRequest 初始化AlibabaMjMosFundCreatebillAPIRequest对象
 func NewAlibabaMjMosFundCreatebillRequest() *AlibabaMjMosFundCreatebillAPIRequest {
 	return &AlibabaMjMosFundCreatebillAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaMjMosFundCreatebillAPIRequest) Reset() {
+	r._billDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaMjMosFundCreatebillAPIRequest) SetBillDto(_billDto *CreateBillDt
 // GetBillDto BillDto Getter
 func (r AlibabaMjMosFundCreatebillAPIRequest) GetBillDto() *CreateBillDto {
 	return r._billDto
+}
+
+var poolAlibabaMjMosFundCreatebillAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaMjMosFundCreatebillRequest()
+	},
+}
+
+// GetAlibabaMjMosFundCreatebillRequest 从 sync.Pool 获取 AlibabaMjMosFundCreatebillAPIRequest
+func GetAlibabaMjMosFundCreatebillAPIRequest() *AlibabaMjMosFundCreatebillAPIRequest {
+	return poolAlibabaMjMosFundCreatebillAPIRequest.Get().(*AlibabaMjMosFundCreatebillAPIRequest)
+}
+
+// ReleaseAlibabaMjMosFundCreatebillAPIRequest 将 AlibabaMjMosFundCreatebillAPIRequest 放入 sync.Pool
+func ReleaseAlibabaMjMosFundCreatebillAPIRequest(v *AlibabaMjMosFundCreatebillAPIRequest) {
+	v.Reset()
+	poolAlibabaMjMosFundCreatebillAPIRequest.Put(v)
 }

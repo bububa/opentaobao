@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // DealerOrderDetail 结构体
 type DealerOrderDetail struct {
 	// 属性信息列表，key-value形式。如attr_key为storeCode，attr_value则为仓库编码。
@@ -30,4 +34,34 @@ type DealerOrderDetail struct {
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 	// 该条明细是否已删除。true：已删除；false：未删除。
 	IsDeleted bool `json:"is_deleted,omitempty" xml:"is_deleted,omitempty"`
+}
+
+var poolDealerOrderDetail = sync.Pool{
+	New: func() any {
+		return new(DealerOrderDetail)
+	},
+}
+
+// GetDealerOrderDetail() 从对象池中获取DealerOrderDetail
+func GetDealerOrderDetail() *DealerOrderDetail {
+	return poolDealerOrderDetail.Get().(*DealerOrderDetail)
+}
+
+// ReleaseDealerOrderDetail 释放DealerOrderDetail
+func ReleaseDealerOrderDetail(v *DealerOrderDetail) {
+	v.Features = v.Features[:0]
+	v.FinalPrice = ""
+	v.SkuSpec = ""
+	v.OriginalPrice = ""
+	v.SnapshotUrl = ""
+	v.ProductTitle = ""
+	v.PriceCount = ""
+	v.SkuNumber = ""
+	v.ProductId = 0
+	v.DealerDetailId = 0
+	v.DealerOrderId = 0
+	v.Quantity = 0
+	v.SkuId = 0
+	v.IsDeleted = false
+	poolDealerOrderDetail.Put(v)
 }

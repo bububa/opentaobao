@@ -9,11 +9,6 @@ import (
 // alibaba.tmallgenie.scp.plan.netdemand.upload
 //
 // Net Demand净需求回传
-func AlibabaTmallgenieScpPlanNetdemandUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanNetdemandUploadAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanNetdemandUploadAPIResponse, error) {
-	var resp tmallgeniescp.AlibabaTmallgenieScpPlanNetdemandUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTmallgenieScpPlanNetdemandUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanNetdemandUploadAPIRequest, resp *tmallgeniescp.AlibabaTmallgenieScpPlanNetdemandUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

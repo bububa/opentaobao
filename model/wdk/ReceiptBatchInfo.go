@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ReceiptBatchInfo 结构体
 type ReceiptBatchInfo struct {
 	// 履约单集合
@@ -16,4 +20,27 @@ type ReceiptBatchInfo struct {
 	Attributes string `json:"attributes,omitempty" xml:"attributes,omitempty"`
 	// 容器数量
 	ContainerCount int64 `json:"container_count,omitempty" xml:"container_count,omitempty"`
+}
+
+var poolReceiptBatchInfo = sync.Pool{
+	New: func() any {
+		return new(ReceiptBatchInfo)
+	},
+}
+
+// GetReceiptBatchInfo() 从对象池中获取ReceiptBatchInfo
+func GetReceiptBatchInfo() *ReceiptBatchInfo {
+	return poolReceiptBatchInfo.Get().(*ReceiptBatchInfo)
+}
+
+// ReleaseReceiptBatchInfo 释放ReceiptBatchInfo
+func ReleaseReceiptBatchInfo(v *ReceiptBatchInfo) {
+	v.FulfillOrderList = v.FulfillOrderList[:0]
+	v.ContainerInfoList = v.ContainerInfoList[:0]
+	v.BatchName = ""
+	v.BatchId = ""
+	v.BcFlag = ""
+	v.Attributes = ""
+	v.ContainerCount = 0
+	poolReceiptBatchInfo.Put(v)
 }

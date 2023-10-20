@@ -1,5 +1,9 @@
 package viapi
 
+import (
+	"sync"
+)
+
 // AliyunViapiFacebodyRecognizefaceData 结构体
 type AliyunViapiFacebodyRecognizefaceData struct {
 	// 返回人脸矩形框，分别是[left, top, width, height], 如有多个人脸，则依次顺延，返回矩形框。如有两个人脸则返回[left1, top1, width1, height1, left2, top2, width2, height2]
@@ -28,4 +32,33 @@ type AliyunViapiFacebodyRecognizefaceData struct {
 	LandmarkCount int64 `json:"landmark_count,omitempty" xml:"landmark_count,omitempty"`
 	// 检测出来的人脸个数
 	FaceCount int64 `json:"face_count,omitempty" xml:"face_count,omitempty"`
+}
+
+var poolAliyunViapiFacebodyRecognizefaceData = sync.Pool{
+	New: func() any {
+		return new(AliyunViapiFacebodyRecognizefaceData)
+	},
+}
+
+// GetAliyunViapiFacebodyRecognizefaceData() 从对象池中获取AliyunViapiFacebodyRecognizefaceData
+func GetAliyunViapiFacebodyRecognizefaceData() *AliyunViapiFacebodyRecognizefaceData {
+	return poolAliyunViapiFacebodyRecognizefaceData.Get().(*AliyunViapiFacebodyRecognizefaceData)
+}
+
+// ReleaseAliyunViapiFacebodyRecognizefaceData 释放AliyunViapiFacebodyRecognizefaceData
+func ReleaseAliyunViapiFacebodyRecognizefaceData(v *AliyunViapiFacebodyRecognizefaceData) {
+	v.FaceRectangles = v.FaceRectangles[:0]
+	v.PoseList = v.PoseList[:0]
+	v.Pupils = v.Pupils[:0]
+	v.GenderList = v.GenderList[:0]
+	v.DenseFeatures = v.DenseFeatures[:0]
+	v.FaceProbabilityList = v.FaceProbabilityList[:0]
+	v.AgeList = v.AgeList[:0]
+	v.Glasses = v.Glasses[:0]
+	v.Landmarks = v.Landmarks[:0]
+	v.Expressions = v.Expressions[:0]
+	v.DenseFeatureLength = 0
+	v.LandmarkCount = 0
+	v.FaceCount = 0
+	poolAliyunViapiFacebodyRecognizefaceData.Put(v)
 }

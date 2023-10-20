@@ -2,6 +2,7 @@ package paimai
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoPaimaiItemCooperationSyncAPIResponse struct {
 	TaobaoPaimaiItemCooperationSyncAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoPaimaiItemCooperationSyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoPaimaiItemCooperationSyncAPIResponseModel).Reset()
+}
+
 // TaobaoPaimaiItemCooperationSyncAPIResponseModel is 商品同步 成功返回结果
 type TaobaoPaimaiItemCooperationSyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"paimai_item_cooperation_sync_response"`
@@ -24,4 +31,28 @@ type TaobaoPaimaiItemCooperationSyncAPIResponseModel struct {
 	Value []int64 `json:"value,omitempty" xml:"value>int64,omitempty"`
 	// 结果描述
 	ResultCode *ResultCode `json:"result_code,omitempty" xml:"result_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoPaimaiItemCooperationSyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Value = m.Value[:0]
+	m.ResultCode = nil
+}
+
+var poolTaobaoPaimaiItemCooperationSyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoPaimaiItemCooperationSyncAPIResponse)
+	},
+}
+
+// GetTaobaoPaimaiItemCooperationSyncAPIResponse 从 sync.Pool 获取 TaobaoPaimaiItemCooperationSyncAPIResponse
+func GetTaobaoPaimaiItemCooperationSyncAPIResponse() *TaobaoPaimaiItemCooperationSyncAPIResponse {
+	return poolTaobaoPaimaiItemCooperationSyncAPIResponse.Get().(*TaobaoPaimaiItemCooperationSyncAPIResponse)
+}
+
+// ReleaseTaobaoPaimaiItemCooperationSyncAPIResponse 将 TaobaoPaimaiItemCooperationSyncAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoPaimaiItemCooperationSyncAPIResponse(v *TaobaoPaimaiItemCooperationSyncAPIResponse) {
+	v.Reset()
+	poolTaobaoPaimaiItemCooperationSyncAPIResponse.Put(v)
 }

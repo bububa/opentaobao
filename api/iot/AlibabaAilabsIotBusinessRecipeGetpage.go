@@ -9,11 +9,6 @@ import (
 // alibaba.ailabs.iot.business.recipe.getpage
 //
 // 分页查询食谱数据
-func AlibabaAilabsIotBusinessRecipeGetpage(clt *core.SDKClient, req *iot.AlibabaAilabsIotBusinessRecipeGetpageAPIRequest, session string) (*iot.AlibabaAilabsIotBusinessRecipeGetpageAPIResponse, error) {
-	var resp iot.AlibabaAilabsIotBusinessRecipeGetpageAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAilabsIotBusinessRecipeGetpage(clt *core.SDKClient, req *iot.AlibabaAilabsIotBusinessRecipeGetpageAPIRequest, resp *iot.AlibabaAilabsIotBusinessRecipeGetpageAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

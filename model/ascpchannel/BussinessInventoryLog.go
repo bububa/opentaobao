@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // BussinessInventoryLog 结构体
 type BussinessInventoryLog struct {
 	// 库存类型（包含在仓，不包含在途和物流差异
@@ -30,4 +34,34 @@ type BussinessInventoryLog struct {
 	TradeId string `json:"trade_id,omitempty" xml:"trade_id,omitempty"`
 	// 每日库存结余数量
 	DaySurplusQuantity string `json:"day_surplus_quantity,omitempty" xml:"day_surplus_quantity,omitempty"`
+}
+
+var poolBussinessInventoryLog = sync.Pool{
+	New: func() any {
+		return new(BussinessInventoryLog)
+	},
+}
+
+// GetBussinessInventoryLog() 从对象池中获取BussinessInventoryLog
+func GetBussinessInventoryLog() *BussinessInventoryLog {
+	return poolBussinessInventoryLog.Get().(*BussinessInventoryLog)
+}
+
+// ReleaseBussinessInventoryLog 释放BussinessInventoryLog
+func ReleaseBussinessInventoryLog(v *BussinessInventoryLog) {
+	v.InventoryType = ""
+	v.ScItemCode = ""
+	v.ChangeQuantity = ""
+	v.ScItemId = ""
+	v.ErpOrderCode = ""
+	v.ActivityType = ""
+	v.GmtCreate = ""
+	v.OpOrderId = ""
+	v.OpSubOrderId = ""
+	v.StoreCode = ""
+	v.WmsOrderCode = ""
+	v.SubTradeId = ""
+	v.TradeId = ""
+	v.DaySurplusQuantity = ""
+	poolBussinessInventoryLog.Put(v)
 }

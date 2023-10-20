@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AliexpressLocalLogisticsOrderCreateAPIResponse struct {
 	AliexpressLocalLogisticsOrderCreateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AliexpressLocalLogisticsOrderCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliexpressLocalLogisticsOrderCreateAPIResponseModel).Reset()
+}
+
 // AliexpressLocalLogisticsOrderCreateAPIResponseModel is create logistics order 成功返回结果
 type AliexpressLocalLogisticsOrderCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_local_logistics_order_create_response"`
@@ -25,7 +32,33 @@ type AliexpressLocalLogisticsOrderCreateAPIResponseModel struct {
 	// error code
 	ErrorResultCode string `json:"error_result_code,omitempty" xml:"error_result_code,omitempty"`
 	// response info
-	Data *AelogisticsOrderDto `json:"data,omitempty" xml:"data,omitempty"`
+	Data *AELogisticsOrderDto `json:"data,omitempty" xml:"data,omitempty"`
 	// interface status
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliexpressLocalLogisticsOrderCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ErrorResultMessage = ""
+	m.ErrorResultCode = ""
+	m.Data = nil
+	m.IsSuccess = false
+}
+
+var poolAliexpressLocalLogisticsOrderCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliexpressLocalLogisticsOrderCreateAPIResponse)
+	},
+}
+
+// GetAliexpressLocalLogisticsOrderCreateAPIResponse 从 sync.Pool 获取 AliexpressLocalLogisticsOrderCreateAPIResponse
+func GetAliexpressLocalLogisticsOrderCreateAPIResponse() *AliexpressLocalLogisticsOrderCreateAPIResponse {
+	return poolAliexpressLocalLogisticsOrderCreateAPIResponse.Get().(*AliexpressLocalLogisticsOrderCreateAPIResponse)
+}
+
+// ReleaseAliexpressLocalLogisticsOrderCreateAPIResponse 将 AliexpressLocalLogisticsOrderCreateAPIResponse 保存到 sync.Pool
+func ReleaseAliexpressLocalLogisticsOrderCreateAPIResponse(v *AliexpressLocalLogisticsOrderCreateAPIResponse) {
+	v.Reset()
+	poolAliexpressLocalLogisticsOrderCreateAPIResponse.Put(v)
 }

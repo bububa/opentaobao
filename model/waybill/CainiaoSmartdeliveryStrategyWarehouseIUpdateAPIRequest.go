@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest struct {
 // NewCainiaoSmartdeliveryStrategyWarehouseIUpdateRequest 初始化CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest对象
 func NewCainiaoSmartdeliveryStrategyWarehouseIUpdateRequest() *CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest {
 	return &CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest) Reset() {
+	r._deliveryStrategySetRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest) SetDeliveryStra
 // GetDeliveryStrategySetRequest DeliveryStrategySetRequest Getter
 func (r CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest) GetDeliveryStrategySetRequest() *DeliveryStrategySetRequest {
 	return r._deliveryStrategySetRequest
+}
+
+var poolCainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoSmartdeliveryStrategyWarehouseIUpdateRequest()
+	},
+}
+
+// GetCainiaoSmartdeliveryStrategyWarehouseIUpdateRequest 从 sync.Pool 获取 CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest
+func GetCainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest() *CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest {
+	return poolCainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest.Get().(*CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest)
+}
+
+// ReleaseCainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest 将 CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest 放入 sync.Pool
+func ReleaseCainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest(v *CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest) {
+	v.Reset()
+	poolCainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // DataDetail 结构体
 type DataDetail struct {
 	// 详情
@@ -50,4 +54,44 @@ type DataDetail struct {
 	SkuId string `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 	// 仓库编码，string（50)    卖家下唯一主键
 	ErpWarehouseCode string `json:"erp_warehouse_code,omitempty" xml:"erp_warehouse_code,omitempty"`
+}
+
+var poolDataDetail = sync.Pool{
+	New: func() any {
+		return new(DataDetail)
+	},
+}
+
+// GetDataDetail() 从对象池中获取DataDetail
+func GetDataDetail() *DataDetail {
+	return poolDataDetail.Get().(*DataDetail)
+}
+
+// ReleaseDataDetail 释放DataDetail
+func ReleaseDataDetail(v *DataDetail) {
+	v.Detail = v.Detail[:0]
+	v.Result = ""
+	v.OrderCode = ""
+	v.SendProvince = ""
+	v.SendCity = ""
+	v.SendDistrict = ""
+	v.SendTown = ""
+	v.SendDivisionCode = ""
+	v.TradeId = ""
+	v.SubTradeId = ""
+	v.OrderFlag = ""
+	v.ReceiveProvince = ""
+	v.ReceiveCity = ""
+	v.ReceiveDistrict = ""
+	v.ReceiveTown = ""
+	v.ReceiveDivisionCode = ""
+	v.BlackDeliveryCps = ""
+	v.WhiteDeliveryCps = ""
+	v.ScItemId = ""
+	v.ErrCode = ""
+	v.ErrMsg = ""
+	v.ItemId = ""
+	v.SkuId = ""
+	v.ErpWarehouseCode = ""
+	poolDataDetail.Put(v)
 }

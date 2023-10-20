@@ -2,6 +2,7 @@ package ascpchannel
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAscpAicSupplierAicinventoryPublishAPIRequest struct {
 // NewAlibabaAscpAicSupplierAicinventoryPublishRequest 初始化AlibabaAscpAicSupplierAicinventoryPublishAPIRequest对象
 func NewAlibabaAscpAicSupplierAicinventoryPublishRequest() *AlibabaAscpAicSupplierAicinventoryPublishAPIRequest {
 	return &AlibabaAscpAicSupplierAicinventoryPublishAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpAicSupplierAicinventoryPublishAPIRequest) Reset() {
+	r._aicInventoryPublishRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAscpAicSupplierAicinventoryPublishAPIRequest) SetAicInventoryPub
 // GetAicInventoryPublishRequest AicInventoryPublishRequest Getter
 func (r AlibabaAscpAicSupplierAicinventoryPublishAPIRequest) GetAicInventoryPublishRequest() *Aicinventorypublishrequest {
 	return r._aicInventoryPublishRequest
+}
+
+var poolAlibabaAscpAicSupplierAicinventoryPublishAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpAicSupplierAicinventoryPublishRequest()
+	},
+}
+
+// GetAlibabaAscpAicSupplierAicinventoryPublishRequest 从 sync.Pool 获取 AlibabaAscpAicSupplierAicinventoryPublishAPIRequest
+func GetAlibabaAscpAicSupplierAicinventoryPublishAPIRequest() *AlibabaAscpAicSupplierAicinventoryPublishAPIRequest {
+	return poolAlibabaAscpAicSupplierAicinventoryPublishAPIRequest.Get().(*AlibabaAscpAicSupplierAicinventoryPublishAPIRequest)
+}
+
+// ReleaseAlibabaAscpAicSupplierAicinventoryPublishAPIRequest 将 AlibabaAscpAicSupplierAicinventoryPublishAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpAicSupplierAicinventoryPublishAPIRequest(v *AlibabaAscpAicSupplierAicinventoryPublishAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpAicSupplierAicinventoryPublishAPIRequest.Put(v)
 }

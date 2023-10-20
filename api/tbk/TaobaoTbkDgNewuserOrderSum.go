@@ -9,11 +9,6 @@ import (
 // taobao.tbk.dg.newuser.order.sum
 //
 // 拉新活动汇总API
-func TaobaoTbkDgNewuserOrderSum(clt *core.SDKClient, req *tbk.TaobaoTbkDgNewuserOrderSumAPIRequest, session string) (*tbk.TaobaoTbkDgNewuserOrderSumAPIResponse, error) {
-	var resp tbk.TaobaoTbkDgNewuserOrderSumAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTbkDgNewuserOrderSum(clt *core.SDKClient, req *tbk.TaobaoTbkDgNewuserOrderSumAPIRequest, resp *tbk.TaobaoTbkDgNewuserOrderSumAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

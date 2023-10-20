@@ -9,11 +9,6 @@ import (
 // alibaba.scbp.ad.keyword.update.keyword.status.batch
 //
 // 修改关键词状态
-func AlibabaScbpAdKeywordUpdateKeywordStatusBatch(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest, session string) (*scbp.AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIResponse, error) {
-	var resp scbp.AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaScbpAdKeywordUpdateKeywordStatusBatch(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest, resp *scbp.AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

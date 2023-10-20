@@ -2,6 +2,7 @@ package fenxiao
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoScitemGetAPIRequest struct {
 // NewTaobaoScitemGetRequest 初始化TaobaoScitemGetAPIRequest对象
 func NewTaobaoScitemGetRequest() *TaobaoScitemGetAPIRequest {
 	return &TaobaoScitemGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoScitemGetAPIRequest) Reset() {
+	r._itemId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoScitemGetAPIRequest) SetItemId(_itemId int64) error {
 // GetItemId ItemId Getter
 func (r TaobaoScitemGetAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+var poolTaobaoScitemGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoScitemGetRequest()
+	},
+}
+
+// GetTaobaoScitemGetRequest 从 sync.Pool 获取 TaobaoScitemGetAPIRequest
+func GetTaobaoScitemGetAPIRequest() *TaobaoScitemGetAPIRequest {
+	return poolTaobaoScitemGetAPIRequest.Get().(*TaobaoScitemGetAPIRequest)
+}
+
+// ReleaseTaobaoScitemGetAPIRequest 将 TaobaoScitemGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoScitemGetAPIRequest(v *TaobaoScitemGetAPIRequest) {
+	v.Reset()
+	poolTaobaoScitemGetAPIRequest.Put(v)
 }

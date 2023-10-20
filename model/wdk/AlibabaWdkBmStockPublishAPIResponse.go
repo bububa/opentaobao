@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaWdkBmStockPublishAPIResponse struct {
 	AlibabaWdkBmStockPublishAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaWdkBmStockPublishAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaWdkBmStockPublishAPIResponseModel).Reset()
+}
+
 // AlibabaWdkBmStockPublishAPIResponseModel is 品牌营销涉及到的商品的库存同步接口 成功返回结果
 type AlibabaWdkBmStockPublishAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_bm_stock_publish_response"`
@@ -22,4 +29,27 @@ type AlibabaWdkBmStockPublishAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 出参
 	Result *BmResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaWdkBmStockPublishAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaWdkBmStockPublishAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaWdkBmStockPublishAPIResponse)
+	},
+}
+
+// GetAlibabaWdkBmStockPublishAPIResponse 从 sync.Pool 获取 AlibabaWdkBmStockPublishAPIResponse
+func GetAlibabaWdkBmStockPublishAPIResponse() *AlibabaWdkBmStockPublishAPIResponse {
+	return poolAlibabaWdkBmStockPublishAPIResponse.Get().(*AlibabaWdkBmStockPublishAPIResponse)
+}
+
+// ReleaseAlibabaWdkBmStockPublishAPIResponse 将 AlibabaWdkBmStockPublishAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaWdkBmStockPublishAPIResponse(v *AlibabaWdkBmStockPublishAPIResponse) {
+	v.Reset()
+	poolAlibabaWdkBmStockPublishAPIResponse.Put(v)
 }

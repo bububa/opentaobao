@@ -9,11 +9,6 @@ import (
 // taobao.qimen.channelinventory.query
 //
 // 渠道库存查询
-func TaobaoQimenChannelinventoryQuery(clt *core.SDKClient, req *qimen.TaobaoQimenChannelinventoryQueryAPIRequest, session string) (*qimen.TaobaoQimenChannelinventoryQueryAPIResponse, error) {
-	var resp qimen.TaobaoQimenChannelinventoryQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoQimenChannelinventoryQuery(clt *core.SDKClient, req *qimen.TaobaoQimenChannelinventoryQueryAPIRequest, resp *qimen.TaobaoQimenChannelinventoryQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

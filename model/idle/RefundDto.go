@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // RefundDto 结构体
 type RefundDto struct {
 	// 退款状态 与逆向DisputeStatusEnum 一致，1-9
@@ -20,4 +24,29 @@ type RefundDto struct {
 	RealRefundFee int64 `json:"real_refund_fee,omitempty" xml:"real_refund_fee,omitempty"`
 	// 到达下一个节点的超时时间点
 	Timeout int64 `json:"timeout,omitempty" xml:"timeout,omitempty"`
+}
+
+var poolRefundDto = sync.Pool{
+	New: func() any {
+		return new(RefundDto)
+	},
+}
+
+// GetRefundDto() 从对象池中获取RefundDto
+func GetRefundDto() *RefundDto {
+	return poolRefundDto.Get().(*RefundDto)
+}
+
+// ReleaseRefundDto 释放RefundDto
+func ReleaseRefundDto(v *RefundDto) {
+	v.RefundStatus = ""
+	v.RefundTime = ""
+	v.RefundType = ""
+	v.ReturnGoodsStatus = ""
+	v.ApplyRefundFee = 0
+	v.BizOrderId = 0
+	v.DisputeId = 0
+	v.RealRefundFee = 0
+	v.Timeout = 0
+	poolRefundDto.Put(v)
 }

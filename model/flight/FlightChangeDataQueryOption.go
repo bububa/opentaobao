@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // FlightChangeDataQueryOption 结构体
 type FlightChangeDataQueryOption struct {
 	// 航变信息产生时间截至,格式yyyy-MM-dd
@@ -24,4 +28,31 @@ type FlightChangeDataQueryOption struct {
 	Qsort int64 `json:"qsort,omitempty" xml:"qsort,omitempty"`
 	// 第几页
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
+}
+
+var poolFlightChangeDataQueryOption = sync.Pool{
+	New: func() any {
+		return new(FlightChangeDataQueryOption)
+	},
+}
+
+// GetFlightChangeDataQueryOption() 从对象池中获取FlightChangeDataQueryOption
+func GetFlightChangeDataQueryOption() *FlightChangeDataQueryOption {
+	return poolFlightChangeDataQueryOption.Get().(*FlightChangeDataQueryOption)
+}
+
+// ReleaseFlightChangeDataQueryOption 释放FlightChangeDataQueryOption
+func ReleaseFlightChangeDataQueryOption(v *FlightChangeDataQueryOption) {
+	v.EndFlightChangeTimeStr = ""
+	v.OldArrAirport = ""
+	v.BeginOldDepTimeStr = ""
+	v.EndOldDepTimeStr = ""
+	v.OldDepAirport = ""
+	v.BeginFlightChangeTimeStr = ""
+	v.OldFltNum = ""
+	v.IsConfirmed = 0
+	v.IsGetSelfOnly = 0
+	v.Qsort = 0
+	v.CurrentPage = 0
+	poolFlightChangeDataQueryOption.Put(v)
 }

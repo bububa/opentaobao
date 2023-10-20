@@ -1,5 +1,9 @@
 package alihealthcrm
 
+import (
+	"sync"
+)
+
 // Content 结构体
 type Content struct {
 	// 标题
@@ -18,4 +22,28 @@ type Content struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 卡片已开启数
 	OpenCount int64 `json:"open_count,omitempty" xml:"open_count,omitempty"`
+}
+
+var poolContent = sync.Pool{
+	New: func() any {
+		return new(Content)
+	},
+}
+
+// GetContent() 从对象池中获取Content
+func GetContent() *Content {
+	return poolContent.Get().(*Content)
+}
+
+// ReleaseContent 释放Content
+func ReleaseContent(v *Content) {
+	v.Title = ""
+	v.Link = ""
+	v.TagCode = ""
+	v.ImgUrlClicked = ""
+	v.ImgUrl = ""
+	v.Color = ""
+	v.Status = 0
+	v.OpenCount = 0
+	poolContent.Put(v)
 }

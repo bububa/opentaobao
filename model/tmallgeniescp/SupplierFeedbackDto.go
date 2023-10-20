@@ -1,5 +1,9 @@
 package tmallgeniescp
 
+import (
+	"sync"
+)
+
 // SupplierFeedbackDto 结构体
 type SupplierFeedbackDto struct {
 	// 扩展参数
@@ -18,4 +22,28 @@ type SupplierFeedbackDto struct {
 	LocationCode string `json:"location_code,omitempty" xml:"location_code,omitempty"`
 	// 地点 - 采购分仓目的loc
 	LocationCodeTo string `json:"location_code_to,omitempty" xml:"location_code_to,omitempty"`
+}
+
+var poolSupplierFeedbackDto = sync.Pool{
+	New: func() any {
+		return new(SupplierFeedbackDto)
+	},
+}
+
+// GetSupplierFeedbackDto() 从对象池中获取SupplierFeedbackDto
+func GetSupplierFeedbackDto() *SupplierFeedbackDto {
+	return poolSupplierFeedbackDto.Get().(*SupplierFeedbackDto)
+}
+
+// ReleaseSupplierFeedbackDto 释放SupplierFeedbackDto
+func ReleaseSupplierFeedbackDto(v *SupplierFeedbackDto) {
+	v.ExtendJson = ""
+	v.Tenant = ""
+	v.KeyFigureDate = ""
+	v.CommitQty = ""
+	v.LocId = ""
+	v.PrdId = ""
+	v.LocationCode = ""
+	v.LocationCodeTo = ""
+	poolSupplierFeedbackDto.Put(v)
 }

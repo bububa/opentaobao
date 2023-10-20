@@ -2,6 +2,7 @@ package cntms
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoCntmsLogisticsOrderConsignAPIRequest struct {
 // NewCainiaoCntmsLogisticsOrderConsignRequest 初始化CainiaoCntmsLogisticsOrderConsignAPIRequest对象
 func NewCainiaoCntmsLogisticsOrderConsignRequest() *CainiaoCntmsLogisticsOrderConsignAPIRequest {
 	return &CainiaoCntmsLogisticsOrderConsignAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoCntmsLogisticsOrderConsignAPIRequest) Reset() {
+	r._content = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoCntmsLogisticsOrderConsignAPIRequest) SetContent(_content *CnTms
 // GetContent Content Getter
 func (r CainiaoCntmsLogisticsOrderConsignAPIRequest) GetContent() *CnTmsLogisticsOrderConsignContent {
 	return r._content
+}
+
+var poolCainiaoCntmsLogisticsOrderConsignAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoCntmsLogisticsOrderConsignRequest()
+	},
+}
+
+// GetCainiaoCntmsLogisticsOrderConsignRequest 从 sync.Pool 获取 CainiaoCntmsLogisticsOrderConsignAPIRequest
+func GetCainiaoCntmsLogisticsOrderConsignAPIRequest() *CainiaoCntmsLogisticsOrderConsignAPIRequest {
+	return poolCainiaoCntmsLogisticsOrderConsignAPIRequest.Get().(*CainiaoCntmsLogisticsOrderConsignAPIRequest)
+}
+
+// ReleaseCainiaoCntmsLogisticsOrderConsignAPIRequest 将 CainiaoCntmsLogisticsOrderConsignAPIRequest 放入 sync.Pool
+func ReleaseCainiaoCntmsLogisticsOrderConsignAPIRequest(v *CainiaoCntmsLogisticsOrderConsignAPIRequest) {
+	v.Reset()
+	poolCainiaoCntmsLogisticsOrderConsignAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package maitix
 
+import (
+	"sync"
+)
+
 // ProjectInfoDto 结构体
 type ProjectInfoDto struct {
 	// 场次
@@ -50,4 +54,44 @@ type ProjectInfoDto struct {
 	IsGeneralAgent int64 `json:"is_general_agent,omitempty" xml:"is_general_agent,omitempty"`
 	// 是否测试项目 0-正式项目 1-测试项目
 	IsTest int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
+}
+
+var poolProjectInfoDto = sync.Pool{
+	New: func() any {
+		return new(ProjectInfoDto)
+	},
+}
+
+// GetProjectInfoDto() 从对象池中获取ProjectInfoDto
+func GetProjectInfoDto() *ProjectInfoDto {
+	return poolProjectInfoDto.Get().(*ProjectInfoDto)
+}
+
+// ReleaseProjectInfoDto 释放ProjectInfoDto
+func ReleaseProjectInfoDto(v *ProjectInfoDto) {
+	v.PerformInfoList = v.PerformInfoList[:0]
+	v.TraderIdList = v.TraderIdList[:0]
+	v.TraderNameList = v.TraderNameList[:0]
+	v.ProjectName = ""
+	v.Introduce = ""
+	v.PosterUrl = ""
+	v.Remark = ""
+	v.ClassifyCode = ""
+	v.ClassifyName = ""
+	v.SubClassifyCode = ""
+	v.SubClassifyName = ""
+	v.ThirdClassifyCode = ""
+	v.ThirdClassifyName = ""
+	v.TicketAgencyFee = ""
+	v.ProjectId = 0
+	v.ProjectStatus = 0
+	v.ProjectType = 0
+	v.IsHasSeat = 0
+	v.Country = nil
+	v.Province = nil
+	v.City = nil
+	v.Venue = nil
+	v.IsGeneralAgent = 0
+	v.IsTest = 0
+	poolProjectInfoDto.Put(v)
 }

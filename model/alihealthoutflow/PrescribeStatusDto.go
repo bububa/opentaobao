@@ -1,5 +1,9 @@
 package alihealthoutflow
 
+import (
+	"sync"
+)
+
 // PrescribeStatusDto 结构体
 type PrescribeStatusDto struct {
 	// 拒绝签名原因（仅在拒绝签名状态时回调）
@@ -26,4 +30,32 @@ type PrescribeStatusDto struct {
 	ServiceId int64 `json:"service_id,omitempty" xml:"service_id,omitempty"`
 	// 签名订单状态 2已签名 6拒绝签名 7签名订单已过期删除 9已签名订单作废
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolPrescribeStatusDto = sync.Pool{
+	New: func() any {
+		return new(PrescribeStatusDto)
+	},
+}
+
+// GetPrescribeStatusDto() 从对象池中获取PrescribeStatusDto
+func GetPrescribeStatusDto() *PrescribeStatusDto {
+	return poolPrescribeStatusDto.Get().(*PrescribeStatusDto)
+}
+
+// ReleasePrescribeStatusDto 释放PrescribeStatusDto
+func ReleasePrescribeStatusDto(v *PrescribeStatusDto) {
+	v.Reason = ""
+	v.ClientId = ""
+	v.SignedPdfBase64 = ""
+	v.DeleteTime = ""
+	v.SignedData = ""
+	v.OpenId = ""
+	v.Sign = ""
+	v.TemplateId = ""
+	v.UrId = ""
+	v.UniqueId = ""
+	v.ServiceId = 0
+	v.Status = 0
+	poolPrescribeStatusDto.Put(v)
 }

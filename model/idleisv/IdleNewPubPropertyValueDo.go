@@ -1,5 +1,9 @@
 package idleisv
 
+import (
+	"sync"
+)
+
 // IdleNewPubPropertyValueDo 结构体
 type IdleNewPubPropertyValueDo struct {
 	// 属性下所有的值
@@ -12,4 +16,25 @@ type IdleNewPubPropertyValueDo struct {
 	PropertyId string `json:"property_id,omitempty" xml:"property_id,omitempty"`
 	// 是否多选
 	IsMultiple bool `json:"is_multiple,omitempty" xml:"is_multiple,omitempty"`
+}
+
+var poolIdleNewPubPropertyValueDo = sync.Pool{
+	New: func() any {
+		return new(IdleNewPubPropertyValueDo)
+	},
+}
+
+// GetIdleNewPubPropertyValueDo() 从对象池中获取IdleNewPubPropertyValueDo
+func GetIdleNewPubPropertyValueDo() *IdleNewPubPropertyValueDo {
+	return poolIdleNewPubPropertyValueDo.Get().(*IdleNewPubPropertyValueDo)
+}
+
+// ReleaseIdleNewPubPropertyValueDo 释放IdleNewPubPropertyValueDo
+func ReleaseIdleNewPubPropertyValueDo(v *IdleNewPubPropertyValueDo) {
+	v.ValuesList = v.ValuesList[:0]
+	v.PropertyName = ""
+	v.InputWord = ""
+	v.PropertyId = ""
+	v.IsMultiple = false
+	poolIdleNewPubPropertyValueDo.Put(v)
 }

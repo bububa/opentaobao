@@ -2,6 +2,7 @@ package btrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripBtripFlightDistributionChangeNewcancelAPIRequest struct {
 // NewAlitripBtripFlightDistributionChangeNewcancelRequest 初始化AlitripBtripFlightDistributionChangeNewcancelAPIRequest对象
 func NewAlitripBtripFlightDistributionChangeNewcancelRequest() *AlitripBtripFlightDistributionChangeNewcancelAPIRequest {
 	return &AlitripBtripFlightDistributionChangeNewcancelAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripBtripFlightDistributionChangeNewcancelAPIRequest) Reset() {
+	r._paramBtripFlightModifyCancelRq = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripBtripFlightDistributionChangeNewcancelAPIRequest) SetParamBtripF
 // GetParamBtripFlightModifyCancelRq ParamBtripFlightModifyCancelRq Getter
 func (r AlitripBtripFlightDistributionChangeNewcancelAPIRequest) GetParamBtripFlightModifyCancelRq() *BtripFlightModifyCancelRq {
 	return r._paramBtripFlightModifyCancelRq
+}
+
+var poolAlitripBtripFlightDistributionChangeNewcancelAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripBtripFlightDistributionChangeNewcancelRequest()
+	},
+}
+
+// GetAlitripBtripFlightDistributionChangeNewcancelRequest 从 sync.Pool 获取 AlitripBtripFlightDistributionChangeNewcancelAPIRequest
+func GetAlitripBtripFlightDistributionChangeNewcancelAPIRequest() *AlitripBtripFlightDistributionChangeNewcancelAPIRequest {
+	return poolAlitripBtripFlightDistributionChangeNewcancelAPIRequest.Get().(*AlitripBtripFlightDistributionChangeNewcancelAPIRequest)
+}
+
+// ReleaseAlitripBtripFlightDistributionChangeNewcancelAPIRequest 将 AlitripBtripFlightDistributionChangeNewcancelAPIRequest 放入 sync.Pool
+func ReleaseAlitripBtripFlightDistributionChangeNewcancelAPIRequest(v *AlitripBtripFlightDistributionChangeNewcancelAPIRequest) {
+	v.Reset()
+	poolAlitripBtripFlightDistributionChangeNewcancelAPIRequest.Put(v)
 }

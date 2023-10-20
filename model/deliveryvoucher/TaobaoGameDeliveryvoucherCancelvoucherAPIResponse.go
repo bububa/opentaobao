@@ -2,6 +2,7 @@ package deliveryvoucher
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoGameDeliveryvoucherCancelvoucherAPIResponse struct {
 	TaobaoGameDeliveryvoucherCancelvoucherAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoGameDeliveryvoucherCancelvoucherAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoGameDeliveryvoucherCancelvoucherAPIResponseModel).Reset()
+}
+
 // TaobaoGameDeliveryvoucherCancelvoucherAPIResponseModel is 作废券 成功返回结果
 type TaobaoGameDeliveryvoucherCancelvoucherAPIResponseModel struct {
 	XMLName xml.Name `xml:"game_deliveryvoucher_cancelvoucher_response"`
@@ -26,4 +33,29 @@ type TaobaoGameDeliveryvoucherCancelvoucherAPIResponseModel struct {
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// success
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoGameDeliveryvoucherCancelvoucherAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.ResultCode = ""
+	m.IsSuccess = false
+}
+
+var poolTaobaoGameDeliveryvoucherCancelvoucherAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoGameDeliveryvoucherCancelvoucherAPIResponse)
+	},
+}
+
+// GetTaobaoGameDeliveryvoucherCancelvoucherAPIResponse 从 sync.Pool 获取 TaobaoGameDeliveryvoucherCancelvoucherAPIResponse
+func GetTaobaoGameDeliveryvoucherCancelvoucherAPIResponse() *TaobaoGameDeliveryvoucherCancelvoucherAPIResponse {
+	return poolTaobaoGameDeliveryvoucherCancelvoucherAPIResponse.Get().(*TaobaoGameDeliveryvoucherCancelvoucherAPIResponse)
+}
+
+// ReleaseTaobaoGameDeliveryvoucherCancelvoucherAPIResponse 将 TaobaoGameDeliveryvoucherCancelvoucherAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoGameDeliveryvoucherCancelvoucherAPIResponse(v *TaobaoGameDeliveryvoucherCancelvoucherAPIResponse) {
+	v.Reset()
+	poolTaobaoGameDeliveryvoucherCancelvoucherAPIResponse.Put(v)
 }

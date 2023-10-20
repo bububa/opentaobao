@@ -2,6 +2,7 @@ package axintrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoAlitripAxinTransPaySignCheckAPIRequest struct {
 // NewTaobaoAlitripAxinTransPaySignCheckRequest 初始化TaobaoAlitripAxinTransPaySignCheckAPIRequest对象
 func NewTaobaoAlitripAxinTransPaySignCheckRequest() *TaobaoAlitripAxinTransPaySignCheckAPIRequest {
 	return &TaobaoAlitripAxinTransPaySignCheckAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripAxinTransPaySignCheckAPIRequest) Reset() {
+	r._axinPayCheckSignDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoAlitripAxinTransPaySignCheckAPIRequest) SetAxinPayCheckSignDto(_a
 // GetAxinPayCheckSignDto AxinPayCheckSignDto Getter
 func (r TaobaoAlitripAxinTransPaySignCheckAPIRequest) GetAxinPayCheckSignDto() *AxinPayCheckSignDto {
 	return r._axinPayCheckSignDto
+}
+
+var poolTaobaoAlitripAxinTransPaySignCheckAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripAxinTransPaySignCheckRequest()
+	},
+}
+
+// GetTaobaoAlitripAxinTransPaySignCheckRequest 从 sync.Pool 获取 TaobaoAlitripAxinTransPaySignCheckAPIRequest
+func GetTaobaoAlitripAxinTransPaySignCheckAPIRequest() *TaobaoAlitripAxinTransPaySignCheckAPIRequest {
+	return poolTaobaoAlitripAxinTransPaySignCheckAPIRequest.Get().(*TaobaoAlitripAxinTransPaySignCheckAPIRequest)
+}
+
+// ReleaseTaobaoAlitripAxinTransPaySignCheckAPIRequest 将 TaobaoAlitripAxinTransPaySignCheckAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripAxinTransPaySignCheckAPIRequest(v *TaobaoAlitripAxinTransPaySignCheckAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripAxinTransPaySignCheckAPIRequest.Put(v)
 }

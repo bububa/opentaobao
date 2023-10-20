@@ -2,6 +2,7 @@ package nlp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoNlpSimilarityAPIResponse struct {
 	TaobaoNlpSimilarityAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoNlpSimilarityAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoNlpSimilarityAPIResponseModel).Reset()
+}
+
 // TaobaoNlpSimilarityAPIResponseModel is 文本语言相似度 成功返回结果
 type TaobaoNlpSimilarityAPIResponseModel struct {
 	XMLName xml.Name `xml:"nlp_similarity_response"`
@@ -22,4 +29,27 @@ type TaobaoNlpSimilarityAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
 	Simresult *SimResult `json:"simresult,omitempty" xml:"simresult,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoNlpSimilarityAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Simresult = nil
+}
+
+var poolTaobaoNlpSimilarityAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoNlpSimilarityAPIResponse)
+	},
+}
+
+// GetTaobaoNlpSimilarityAPIResponse 从 sync.Pool 获取 TaobaoNlpSimilarityAPIResponse
+func GetTaobaoNlpSimilarityAPIResponse() *TaobaoNlpSimilarityAPIResponse {
+	return poolTaobaoNlpSimilarityAPIResponse.Get().(*TaobaoNlpSimilarityAPIResponse)
+}
+
+// ReleaseTaobaoNlpSimilarityAPIResponse 将 TaobaoNlpSimilarityAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoNlpSimilarityAPIResponse(v *TaobaoNlpSimilarityAPIResponse) {
+	v.Reset()
+	poolTaobaoNlpSimilarityAPIResponse.Put(v)
 }

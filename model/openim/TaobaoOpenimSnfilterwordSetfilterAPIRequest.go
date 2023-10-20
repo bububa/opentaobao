@@ -2,6 +2,7 @@ package openim
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoOpenimSnfilterwordSetfilterAPIRequest struct {
 // NewTaobaoOpenimSnfilterwordSetfilterRequest 初始化TaobaoOpenimSnfilterwordSetfilterAPIRequest对象
 func NewTaobaoOpenimSnfilterwordSetfilterRequest() *TaobaoOpenimSnfilterwordSetfilterAPIRequest {
 	return &TaobaoOpenimSnfilterwordSetfilterAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoOpenimSnfilterwordSetfilterAPIRequest) Reset() {
+	r._creator = ""
+	r._filterword = ""
+	r._desc = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoOpenimSnfilterwordSetfilterAPIRequest) SetDesc(_desc string) erro
 // GetDesc Desc Getter
 func (r TaobaoOpenimSnfilterwordSetfilterAPIRequest) GetDesc() string {
 	return r._desc
+}
+
+var poolTaobaoOpenimSnfilterwordSetfilterAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoOpenimSnfilterwordSetfilterRequest()
+	},
+}
+
+// GetTaobaoOpenimSnfilterwordSetfilterRequest 从 sync.Pool 获取 TaobaoOpenimSnfilterwordSetfilterAPIRequest
+func GetTaobaoOpenimSnfilterwordSetfilterAPIRequest() *TaobaoOpenimSnfilterwordSetfilterAPIRequest {
+	return poolTaobaoOpenimSnfilterwordSetfilterAPIRequest.Get().(*TaobaoOpenimSnfilterwordSetfilterAPIRequest)
+}
+
+// ReleaseTaobaoOpenimSnfilterwordSetfilterAPIRequest 将 TaobaoOpenimSnfilterwordSetfilterAPIRequest 放入 sync.Pool
+func ReleaseTaobaoOpenimSnfilterwordSetfilterAPIRequest(v *TaobaoOpenimSnfilterwordSetfilterAPIRequest) {
+	v.Reset()
+	poolTaobaoOpenimSnfilterwordSetfilterAPIRequest.Put(v)
 }

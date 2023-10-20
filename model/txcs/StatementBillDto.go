@@ -1,5 +1,9 @@
 package txcs
 
+import (
+	"sync"
+)
+
 // StatementBillDto 结构体
 type StatementBillDto struct {
 	// 结算主体编码
@@ -32,4 +36,35 @@ type StatementBillDto struct {
 	SettlePeridDesc string `json:"settle_perid_desc,omitempty" xml:"settle_perid_desc,omitempty"`
 	// 币种
 	Currency string `json:"currency,omitempty" xml:"currency,omitempty"`
+}
+
+var poolStatementBillDto = sync.Pool{
+	New: func() any {
+		return new(StatementBillDto)
+	},
+}
+
+// GetStatementBillDto() 从对象池中获取StatementBillDto
+func GetStatementBillDto() *StatementBillDto {
+	return poolStatementBillDto.Get().(*StatementBillDto)
+}
+
+// ReleaseStatementBillDto 释放StatementBillDto
+func ReleaseStatementBillDto(v *StatementBillDto) {
+	v.SettlementCompanyCode = ""
+	v.OperateTypeDesc = ""
+	v.OperateType = ""
+	v.BusinessPartnerName = ""
+	v.BusinessPartnerCode = ""
+	v.MerchantCode = ""
+	v.StatementBillCode = ""
+	v.SettlementCompanyName = ""
+	v.BillDay = ""
+	v.BillStatus = ""
+	v.BillStatusDesc = ""
+	v.SettlementTotalAmount = ""
+	v.InvoiceTotalAmount = ""
+	v.SettlePeridDesc = ""
+	v.Currency = ""
+	poolStatementBillDto.Put(v)
 }

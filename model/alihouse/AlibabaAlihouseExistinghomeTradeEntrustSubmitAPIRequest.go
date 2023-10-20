@@ -2,6 +2,7 @@ package alihouse
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihouseExistinghomeTradeEntrustSubmitAPIRequest struct {
 // NewAlibabaAlihouseExistinghomeTradeEntrustSubmitRequest 初始化AlibabaAlihouseExistinghomeTradeEntrustSubmitAPIRequest对象
 func NewAlibabaAlihouseExistinghomeTradeEntrustSubmitRequest() *AlibabaAlihouseExistinghomeTradeEntrustSubmitAPIRequest {
 	return &AlibabaAlihouseExistinghomeTradeEntrustSubmitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihouseExistinghomeTradeEntrustSubmitAPIRequest) Reset() {
+	r._syncUpdateTradeEntrustDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihouseExistinghomeTradeEntrustSubmitAPIRequest) SetSyncUpdateT
 // GetSyncUpdateTradeEntrustDto SyncUpdateTradeEntrustDto Getter
 func (r AlibabaAlihouseExistinghomeTradeEntrustSubmitAPIRequest) GetSyncUpdateTradeEntrustDto() *SyncUpdateTradeEntrustDto {
 	return r._syncUpdateTradeEntrustDto
+}
+
+var poolAlibabaAlihouseExistinghomeTradeEntrustSubmitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihouseExistinghomeTradeEntrustSubmitRequest()
+	},
+}
+
+// GetAlibabaAlihouseExistinghomeTradeEntrustSubmitRequest 从 sync.Pool 获取 AlibabaAlihouseExistinghomeTradeEntrustSubmitAPIRequest
+func GetAlibabaAlihouseExistinghomeTradeEntrustSubmitAPIRequest() *AlibabaAlihouseExistinghomeTradeEntrustSubmitAPIRequest {
+	return poolAlibabaAlihouseExistinghomeTradeEntrustSubmitAPIRequest.Get().(*AlibabaAlihouseExistinghomeTradeEntrustSubmitAPIRequest)
+}
+
+// ReleaseAlibabaAlihouseExistinghomeTradeEntrustSubmitAPIRequest 将 AlibabaAlihouseExistinghomeTradeEntrustSubmitAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihouseExistinghomeTradeEntrustSubmitAPIRequest(v *AlibabaAlihouseExistinghomeTradeEntrustSubmitAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihouseExistinghomeTradeEntrustSubmitAPIRequest.Put(v)
 }

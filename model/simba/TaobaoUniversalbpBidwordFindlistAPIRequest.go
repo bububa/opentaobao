@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoUniversalbpBidwordFindlistAPIRequest struct {
 // NewTaobaoUniversalbpBidwordFindlistRequest 初始化TaobaoUniversalbpBidwordFindlistAPIRequest对象
 func NewTaobaoUniversalbpBidwordFindlistRequest() *TaobaoUniversalbpBidwordFindlistAPIRequest {
 	return &TaobaoUniversalbpBidwordFindlistAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoUniversalbpBidwordFindlistAPIRequest) Reset() {
+	r._topServiceContext = nil
+	r._wordQueryVO = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoUniversalbpBidwordFindlistAPIRequest) SetWordQueryVO(_wordQueryVO
 // GetWordQueryVO WordQueryVO Getter
 func (r TaobaoUniversalbpBidwordFindlistAPIRequest) GetWordQueryVO() *WordQueryVo {
 	return r._wordQueryVO
+}
+
+var poolTaobaoUniversalbpBidwordFindlistAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoUniversalbpBidwordFindlistRequest()
+	},
+}
+
+// GetTaobaoUniversalbpBidwordFindlistRequest 从 sync.Pool 获取 TaobaoUniversalbpBidwordFindlistAPIRequest
+func GetTaobaoUniversalbpBidwordFindlistAPIRequest() *TaobaoUniversalbpBidwordFindlistAPIRequest {
+	return poolTaobaoUniversalbpBidwordFindlistAPIRequest.Get().(*TaobaoUniversalbpBidwordFindlistAPIRequest)
+}
+
+// ReleaseTaobaoUniversalbpBidwordFindlistAPIRequest 将 TaobaoUniversalbpBidwordFindlistAPIRequest 放入 sync.Pool
+func ReleaseTaobaoUniversalbpBidwordFindlistAPIRequest(v *TaobaoUniversalbpBidwordFindlistAPIRequest) {
+	v.Reset()
+	poolTaobaoUniversalbpBidwordFindlistAPIRequest.Put(v)
 }

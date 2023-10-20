@@ -2,6 +2,7 @@ package bus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoBusMerchantOrderGetAPIRequest struct {
 // NewTaobaoBusMerchantOrderGetRequest 初始化TaobaoBusMerchantOrderGetAPIRequest对象
 func NewTaobaoBusMerchantOrderGetRequest() *TaobaoBusMerchantOrderGetAPIRequest {
 	return &TaobaoBusMerchantOrderGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBusMerchantOrderGetAPIRequest) Reset() {
+	r._paramAgentQueryOrderRQ = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoBusMerchantOrderGetAPIRequest) SetParamAgentQueryOrderRQ(_paramAg
 // GetParamAgentQueryOrderRQ ParamAgentQueryOrderRQ Getter
 func (r TaobaoBusMerchantOrderGetAPIRequest) GetParamAgentQueryOrderRQ() *AgentQueryOrderRq {
 	return r._paramAgentQueryOrderRQ
+}
+
+var poolTaobaoBusMerchantOrderGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBusMerchantOrderGetRequest()
+	},
+}
+
+// GetTaobaoBusMerchantOrderGetRequest 从 sync.Pool 获取 TaobaoBusMerchantOrderGetAPIRequest
+func GetTaobaoBusMerchantOrderGetAPIRequest() *TaobaoBusMerchantOrderGetAPIRequest {
+	return poolTaobaoBusMerchantOrderGetAPIRequest.Get().(*TaobaoBusMerchantOrderGetAPIRequest)
+}
+
+// ReleaseTaobaoBusMerchantOrderGetAPIRequest 将 TaobaoBusMerchantOrderGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBusMerchantOrderGetAPIRequest(v *TaobaoBusMerchantOrderGetAPIRequest) {
+	v.Reset()
+	poolTaobaoBusMerchantOrderGetAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package tmallgeniescp
 
+import (
+	"sync"
+)
+
 // IbpInventoryQuantityDto 结构体
 type IbpInventoryQuantityDto struct {
 	// 扩展参数
@@ -12,4 +16,25 @@ type IbpInventoryQuantityDto struct {
 	MaterielCode string `json:"materiel_code,omitempty" xml:"materiel_code,omitempty"`
 	// 库存量
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
+}
+
+var poolIbpInventoryQuantityDto = sync.Pool{
+	New: func() any {
+		return new(IbpInventoryQuantityDto)
+	},
+}
+
+// GetIbpInventoryQuantityDto() 从对象池中获取IbpInventoryQuantityDto
+func GetIbpInventoryQuantityDto() *IbpInventoryQuantityDto {
+	return poolIbpInventoryQuantityDto.Get().(*IbpInventoryQuantityDto)
+}
+
+// ReleaseIbpInventoryQuantityDto 释放IbpInventoryQuantityDto
+func ReleaseIbpInventoryQuantityDto(v *IbpInventoryQuantityDto) {
+	v.ExtendJson = ""
+	v.Tenant = ""
+	v.LocationCode = ""
+	v.MaterielCode = ""
+	v.Quantity = 0
+	poolIbpInventoryQuantityDto.Put(v)
 }

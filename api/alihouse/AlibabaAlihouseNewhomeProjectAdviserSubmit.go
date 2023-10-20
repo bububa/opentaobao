@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.newhome.project.adviser.submit
 //
 // 提交楼盘顾问
-func AlibabaAlihouseNewhomeProjectAdviserSubmit(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeProjectAdviserSubmitAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeProjectAdviserSubmitAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseNewhomeProjectAdviserSubmit(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeProjectAdviserSubmitAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

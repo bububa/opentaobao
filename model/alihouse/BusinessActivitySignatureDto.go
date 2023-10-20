@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // BusinessActivitySignatureDto 结构体
 type BusinessActivitySignatureDto struct {
 	// 下旋文
@@ -18,4 +22,28 @@ type BusinessActivitySignatureDto struct {
 	SignatureType int64 `json:"signature_type,omitempty" xml:"signature_type,omitempty"`
 	// ID
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolBusinessActivitySignatureDto = sync.Pool{
+	New: func() any {
+		return new(BusinessActivitySignatureDto)
+	},
+}
+
+// GetBusinessActivitySignatureDto() 从对象池中获取BusinessActivitySignatureDto
+func GetBusinessActivitySignatureDto() *BusinessActivitySignatureDto {
+	return poolBusinessActivitySignatureDto.Get().(*BusinessActivitySignatureDto)
+}
+
+// ReleaseBusinessActivitySignatureDto 释放BusinessActivitySignatureDto
+func ReleaseBusinessActivitySignatureDto(v *BusinessActivitySignatureDto) {
+	v.BackspinText = ""
+	v.HorizontalText = ""
+	v.SignatureName = ""
+	v.SealUrl = ""
+	v.CenterPattern = 0
+	v.SignatureColor = 0
+	v.SignatureType = 0
+	v.Id = 0
+	poolBusinessActivitySignatureDto.Put(v)
 }

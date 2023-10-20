@@ -1,5 +1,9 @@
 package ship
 
+import (
+	"sync"
+)
+
 // ShipAgentConfirmBookRq 结构体
 type ShipAgentConfirmBookRq struct {
 	// 乘客列表
@@ -30,4 +34,34 @@ type ShipAgentConfirmBookRq struct {
 	TotalPrice int64 `json:"total_price,omitempty" xml:"total_price,omitempty"`
 	// 出票结果
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolShipAgentConfirmBookRq = sync.Pool{
+	New: func() any {
+		return new(ShipAgentConfirmBookRq)
+	},
+}
+
+// GetShipAgentConfirmBookRq() 从对象池中获取ShipAgentConfirmBookRq
+func GetShipAgentConfirmBookRq() *ShipAgentConfirmBookRq {
+	return poolShipAgentConfirmBookRq.Get().(*ShipAgentConfirmBookRq)
+}
+
+// ReleaseShipAgentConfirmBookRq 释放ShipAgentConfirmBookRq
+func ReleaseShipAgentConfirmBookRq(v *ShipAgentConfirmBookRq) {
+	v.PassengerList = v.PassengerList[:0]
+	v.AgentOrderId = ""
+	v.AlitripOrderId = ""
+	v.FetchTicketsAddress = ""
+	v.FetchTicketsNumber = ""
+	v.FetchTicketsPwd = ""
+	v.Message = ""
+	v.OrderAttr = ""
+	v.TicketWicket = ""
+	v.FailedCode = ""
+	v.MainBizOrderId = 0
+	v.TicketCount = 0
+	v.TotalPrice = 0
+	v.Success = false
+	poolShipAgentConfirmBookRq.Put(v)
 }

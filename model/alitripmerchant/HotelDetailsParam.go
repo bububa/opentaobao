@@ -1,5 +1,9 @@
 package alitripmerchant
 
+import (
+	"sync"
+)
+
 // HotelDetailsParam 结构体
 type HotelDetailsParam struct {
 	// 分组过滤请求
@@ -28,4 +32,33 @@ type HotelDetailsParam struct {
 	FewNights int64 `json:"few_nights,omitempty" xml:"few_nights,omitempty"`
 	// 版本号
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
+}
+
+var poolHotelDetailsParam = sync.Pool{
+	New: func() any {
+		return new(HotelDetailsParam)
+	},
+}
+
+// GetHotelDetailsParam() 从对象池中获取HotelDetailsParam
+func GetHotelDetailsParam() *HotelDetailsParam {
+	return poolHotelDetailsParam.Get().(*HotelDetailsParam)
+}
+
+// ReleaseHotelDetailsParam 释放HotelDetailsParam
+func ReleaseHotelDetailsParam(v *HotelDetailsParam) {
+	v.GroupParam = v.GroupParam[:0]
+	v.CheckOut = ""
+	v.CheckIn = ""
+	v.HotelId = ""
+	v.MemberLevel = ""
+	v.ChildrenAges = ""
+	v.RoomType = ""
+	v.Token = ""
+	v.VoucherId = ""
+	v.Shid = 0
+	v.AdultNum = 0
+	v.FewNights = 0
+	v.Version = 0
+	poolHotelDetailsParam.Put(v)
 }

@@ -2,6 +2,7 @@ package baoxian
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -37,8 +38,23 @@ type AlipayBaoxianClaimUpdateAPIRequest struct {
 // NewAlipayBaoxianClaimUpdateRequest 初始化AlipayBaoxianClaimUpdateAPIRequest对象
 func NewAlipayBaoxianClaimUpdateRequest() *AlipayBaoxianClaimUpdateAPIRequest {
 	return &AlipayBaoxianClaimUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(10),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlipayBaoxianClaimUpdateAPIRequest) Reset() {
+	r._progressList = r._progressList[:0]
+	r._claimAttachments = r._claimAttachments[:0]
+	r._bizData = ""
+	r._policyBizNo = ""
+	r._outBizNo = ""
+	r._bizSource = ""
+	r._claimNo = ""
+	r._claimOutBizNo = ""
+	r._spNo = ""
+	r._claimFee = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -186,4 +202,21 @@ func (r *AlipayBaoxianClaimUpdateAPIRequest) SetClaimFee(_claimFee int64) error 
 // GetClaimFee ClaimFee Getter
 func (r AlipayBaoxianClaimUpdateAPIRequest) GetClaimFee() int64 {
 	return r._claimFee
+}
+
+var poolAlipayBaoxianClaimUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlipayBaoxianClaimUpdateRequest()
+	},
+}
+
+// GetAlipayBaoxianClaimUpdateRequest 从 sync.Pool 获取 AlipayBaoxianClaimUpdateAPIRequest
+func GetAlipayBaoxianClaimUpdateAPIRequest() *AlipayBaoxianClaimUpdateAPIRequest {
+	return poolAlipayBaoxianClaimUpdateAPIRequest.Get().(*AlipayBaoxianClaimUpdateAPIRequest)
+}
+
+// ReleaseAlipayBaoxianClaimUpdateAPIRequest 将 AlipayBaoxianClaimUpdateAPIRequest 放入 sync.Pool
+func ReleaseAlipayBaoxianClaimUpdateAPIRequest(v *AlipayBaoxianClaimUpdateAPIRequest) {
+	v.Reset()
+	poolAlipayBaoxianClaimUpdateAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alitrip.btrip.flight.distribution.order.create
 //
 // 商旅机票分销创建订单接口
-func AlitripBtripFlightDistributionOrderCreate(clt *core.SDKClient, req *btrip.AlitripBtripFlightDistributionOrderCreateAPIRequest, session string) (*btrip.AlitripBtripFlightDistributionOrderCreateAPIResponse, error) {
-	var resp btrip.AlitripBtripFlightDistributionOrderCreateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripBtripFlightDistributionOrderCreate(clt *core.SDKClient, req *btrip.AlitripBtripFlightDistributionOrderCreateAPIRequest, resp *btrip.AlitripBtripFlightDistributionOrderCreateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

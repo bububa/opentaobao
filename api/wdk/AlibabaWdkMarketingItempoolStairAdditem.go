@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.marketing.itempool.stair.additem
 //
 // 添加商品池阶梯商品
-func AlibabaWdkMarketingItempoolStairAdditem(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolStairAdditemAPIRequest, session string) (*wdk.AlibabaWdkMarketingItempoolStairAdditemAPIResponse, error) {
-	var resp wdk.AlibabaWdkMarketingItempoolStairAdditemAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkMarketingItempoolStairAdditem(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolStairAdditemAPIRequest, resp *wdk.AlibabaWdkMarketingItempoolStairAdditemAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

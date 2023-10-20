@@ -1,5 +1,9 @@
 package einvoice
 
+import (
+	"sync"
+)
+
 // ResultList 结构体
 type ResultList struct {
 	// 开票明细列表
@@ -16,4 +20,27 @@ type ResultList struct {
 	SeriNo string `json:"seri_no,omitempty" xml:"seri_no,omitempty"`
 	// invoiceStatus
 	InvoiceStatus int64 `json:"invoice_status,omitempty" xml:"invoice_status,omitempty"`
+}
+
+var poolResultList = sync.Pool{
+	New: func() any {
+		return new(ResultList)
+	},
+}
+
+// GetResultList() 从对象池中获取ResultList
+func GetResultList() *ResultList {
+	return poolResultList.Get().(*ResultList)
+}
+
+// ReleaseResultList 释放ResultList
+func ReleaseResultList(v *ResultList) {
+	v.InvoiceItems = v.InvoiceItems[:0]
+	v.PayeeRegisterNo = ""
+	v.Platform = ""
+	v.OrderId = ""
+	v.SumPrice = ""
+	v.SeriNo = ""
+	v.InvoiceStatus = 0
+	poolResultList.Put(v)
 }

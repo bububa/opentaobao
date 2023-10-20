@@ -1,5 +1,9 @@
 package tmallcar
 
+import (
+	"sync"
+)
+
 // CarOrderDetailDto 结构体
 type CarOrderDetailDto struct {
 	// 子订单列表
@@ -30,4 +34,34 @@ type CarOrderDetailDto struct {
 	Sku *TradeItemSkuDto `json:"sku,omitempty" xml:"sku,omitempty"`
 	// 订单商品信息（子订单有效）
 	Item *TradeItemDto `json:"item,omitempty" xml:"item,omitempty"`
+}
+
+var poolCarOrderDetailDto = sync.Pool{
+	New: func() any {
+		return new(CarOrderDetailDto)
+	},
+}
+
+// GetCarOrderDetailDto() 从对象池中获取CarOrderDetailDto
+func GetCarOrderDetailDto() *CarOrderDetailDto {
+	return poolCarOrderDetailDto.Get().(*CarOrderDetailDto)
+}
+
+// ReleaseCarOrderDetailDto 释放CarOrderDetailDto
+func ReleaseCarOrderDetailDto(v *CarOrderDetailDto) {
+	v.SubOrders = v.SubOrders[:0]
+	v.SellerNick = ""
+	v.BuyerNick = ""
+	v.BuyerNameCollect = ""
+	v.BuyerIdentityCollect = ""
+	v.BuyerMobile = ""
+	v.CarDelivery = ""
+	v.OrderId = 0
+	v.ActualPaidFee = 0
+	v.RefundStatus = 0
+	v.PayStatus = 0
+	v.PayOrder = nil
+	v.Sku = nil
+	v.Item = nil
+	poolCarOrderDetailDto.Put(v)
 }

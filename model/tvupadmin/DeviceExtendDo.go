@@ -1,5 +1,9 @@
 package tvupadmin
 
+import (
+	"sync"
+)
+
 // DeviceExtendDo 结构体
 type DeviceExtendDo struct {
 	// 设备型号
@@ -16,4 +20,27 @@ type DeviceExtendDo struct {
 	Bcp int64 `json:"bcp,omitempty" xml:"bcp,omitempty"`
 	// 厂商ID
 	BrandId int64 `json:"brand_id,omitempty" xml:"brand_id,omitempty"`
+}
+
+var poolDeviceExtendDo = sync.Pool{
+	New: func() any {
+		return new(DeviceExtendDo)
+	},
+}
+
+// GetDeviceExtendDo() 从对象池中获取DeviceExtendDo
+func GetDeviceExtendDo() *DeviceExtendDo {
+	return poolDeviceExtendDo.Get().(*DeviceExtendDo)
+}
+
+// ReleaseDeviceExtendDo 释放DeviceExtendDo
+func ReleaseDeviceExtendDo(v *DeviceExtendDo) {
+	v.DeviceModel = ""
+	v.InnerDeviceModel = ""
+	v.TerminalType = ""
+	v.BrandName = ""
+	v.CreateTime = ""
+	v.Bcp = 0
+	v.BrandId = 0
+	poolDeviceExtendDo.Put(v)
 }

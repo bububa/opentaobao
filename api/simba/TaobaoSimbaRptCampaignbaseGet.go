@@ -9,11 +9,6 @@ import (
 // taobao.simba.rpt.campaignbase.get
 //
 // 推广计划报表基础数据对象
-func TaobaoSimbaRptCampaignbaseGet(clt *core.SDKClient, req *simba.TaobaoSimbaRptCampaignbaseGetAPIRequest, session string) (*simba.TaobaoSimbaRptCampaignbaseGetAPIResponse, error) {
-	var resp simba.TaobaoSimbaRptCampaignbaseGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoSimbaRptCampaignbaseGet(clt *core.SDKClient, req *simba.TaobaoSimbaRptCampaignbaseGetAPIRequest, resp *simba.TaobaoSimbaRptCampaignbaseGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // QueryDistributorRequest 结构体
 type QueryDistributorRequest struct {
 	// 业务请求ID，用于幂等
@@ -10,4 +14,24 @@ type QueryDistributorRequest struct {
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
 	// 一页多少条
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+}
+
+var poolQueryDistributorRequest = sync.Pool{
+	New: func() any {
+		return new(QueryDistributorRequest)
+	},
+}
+
+// GetQueryDistributorRequest() 从对象池中获取QueryDistributorRequest
+func GetQueryDistributorRequest() *QueryDistributorRequest {
+	return poolQueryDistributorRequest.Get().(*QueryDistributorRequest)
+}
+
+// ReleaseQueryDistributorRequest 释放QueryDistributorRequest
+func ReleaseQueryDistributorRequest(v *QueryDistributorRequest) {
+	v.RequestId = ""
+	v.RequestTime = 0
+	v.CurrentPage = 0
+	v.PageSize = 0
+	poolQueryDistributorRequest.Put(v)
 }

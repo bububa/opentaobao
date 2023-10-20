@@ -1,5 +1,9 @@
 package aliexpresssumaitong
 
+import (
+	"sync"
+)
+
 // Lines 结构体
 type Lines struct {
 	// 商品税率
@@ -18,4 +22,28 @@ type Lines struct {
 	DeliveryTaxAmount string `json:"delivery_tax_amount,omitempty" xml:"delivery_tax_amount,omitempty"`
 	// 子订单号id
 	SubOrderId string `json:"sub_order_id,omitempty" xml:"sub_order_id,omitempty"`
+}
+
+var poolLines = sync.Pool{
+	New: func() any {
+		return new(Lines)
+	},
+}
+
+// GetLines() 从对象池中获取Lines
+func GetLines() *Lines {
+	return poolLines.Get().(*Lines)
+}
+
+// ReleaseLines 释放Lines
+func ReleaseLines(v *Lines) {
+	v.TaxRates = v.TaxRates[:0]
+	v.DeliveryTaxRates = v.DeliveryTaxRates[:0]
+	v.Quantity = ""
+	v.OrderTaxExcludedAmount = ""
+	v.DeliveryAmount = ""
+	v.OrderTaxAmount = ""
+	v.DeliveryTaxAmount = ""
+	v.SubOrderId = ""
+	poolLines.Put(v)
 }

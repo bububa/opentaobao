@@ -2,6 +2,7 @@ package qimen
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoQimenSnReportAPIResponse struct {
 	TaobaoQimenSnReportAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoQimenSnReportAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoQimenSnReportAPIResponseModel).Reset()
+}
+
 // TaobaoQimenSnReportAPIResponseModel is 发货单SN通知接口 成功返回结果
 type TaobaoQimenSnReportAPIResponseModel struct {
 	XMLName xml.Name `xml:"qimen_sn_report_response"`
@@ -22,4 +29,27 @@ type TaobaoQimenSnReportAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	//
 	Response *TaobaoQimenSnReportResponse `json:"response,omitempty" xml:"response,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoQimenSnReportAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Response = nil
+}
+
+var poolTaobaoQimenSnReportAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoQimenSnReportAPIResponse)
+	},
+}
+
+// GetTaobaoQimenSnReportAPIResponse 从 sync.Pool 获取 TaobaoQimenSnReportAPIResponse
+func GetTaobaoQimenSnReportAPIResponse() *TaobaoQimenSnReportAPIResponse {
+	return poolTaobaoQimenSnReportAPIResponse.Get().(*TaobaoQimenSnReportAPIResponse)
+}
+
+// ReleaseTaobaoQimenSnReportAPIResponse 将 TaobaoQimenSnReportAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoQimenSnReportAPIResponse(v *TaobaoQimenSnReportAPIResponse) {
+	v.Reset()
+	poolTaobaoQimenSnReportAPIResponse.Put(v)
 }

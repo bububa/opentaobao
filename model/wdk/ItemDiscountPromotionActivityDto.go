@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ItemDiscountPromotionActivityDto 结构体
 type ItemDiscountPromotionActivityDto struct {
 	// 活动周几生效
@@ -34,4 +38,36 @@ type ItemDiscountPromotionActivityDto struct {
 	EndTime int64 `json:"end_time,omitempty" xml:"end_time,omitempty"`
 	// 限购信息
 	Limit *LimitDto `json:"limit,omitempty" xml:"limit,omitempty"`
+}
+
+var poolItemDiscountPromotionActivityDto = sync.Pool{
+	New: func() any {
+		return new(ItemDiscountPromotionActivityDto)
+	},
+}
+
+// GetItemDiscountPromotionActivityDto() 从对象池中获取ItemDiscountPromotionActivityDto
+func GetItemDiscountPromotionActivityDto() *ItemDiscountPromotionActivityDto {
+	return poolItemDiscountPromotionActivityDto.Get().(*ItemDiscountPromotionActivityDto)
+}
+
+// ReleaseItemDiscountPromotionActivityDto 释放ItemDiscountPromotionActivityDto
+func ReleaseItemDiscountPromotionActivityDto(v *ItemDiscountPromotionActivityDto) {
+	v.Weekdays = v.Weekdays[:0]
+	v.EveryDayPeriods = v.EveryDayPeriods[:0]
+	v.Terminals = v.Terminals[:0]
+	v.StoreIds = v.StoreIds[:0]
+	v.OuterStoreIds = v.OuterStoreIds[:0]
+	v.MemberCrowdCodes = v.MemberCrowdCodes[:0]
+	v.OutActId = ""
+	v.ActivityName = ""
+	v.Description = ""
+	v.CreatorId = ""
+	v.CreatorName = ""
+	v.DiscountType = 0
+	v.ActId = 0
+	v.StartTime = 0
+	v.EndTime = 0
+	v.Limit = nil
+	poolItemDiscountPromotionActivityDto.Put(v)
 }

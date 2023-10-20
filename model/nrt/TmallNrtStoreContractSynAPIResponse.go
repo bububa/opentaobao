@@ -2,6 +2,7 @@ package nrt
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TmallNrtStoreContractSynAPIResponse struct {
 	model.CommonResponse
 	TmallNrtStoreContractSynAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TmallNrtStoreContractSynAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallNrtStoreContractSynAPIResponseModel).Reset()
 }
 
 // TmallNrtStoreContractSynAPIResponseModel is 喵零合同同步 成功返回结果
@@ -28,4 +35,30 @@ type TmallNrtStoreContractSynAPIResponseModel struct {
 	Data int64 `json:"data,omitempty" xml:"data,omitempty"`
 	// 成功与否
 	Succ bool `json:"succ,omitempty" xml:"succ,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallNrtStoreContractSynAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Errcode = ""
+	m.Errmsg = ""
+	m.Data = 0
+	m.Succ = false
+}
+
+var poolTmallNrtStoreContractSynAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallNrtStoreContractSynAPIResponse)
+	},
+}
+
+// GetTmallNrtStoreContractSynAPIResponse 从 sync.Pool 获取 TmallNrtStoreContractSynAPIResponse
+func GetTmallNrtStoreContractSynAPIResponse() *TmallNrtStoreContractSynAPIResponse {
+	return poolTmallNrtStoreContractSynAPIResponse.Get().(*TmallNrtStoreContractSynAPIResponse)
+}
+
+// ReleaseTmallNrtStoreContractSynAPIResponse 将 TmallNrtStoreContractSynAPIResponse 保存到 sync.Pool
+func ReleaseTmallNrtStoreContractSynAPIResponse(v *TmallNrtStoreContractSynAPIResponse) {
+	v.Reset()
+	poolTmallNrtStoreContractSynAPIResponse.Put(v)
 }

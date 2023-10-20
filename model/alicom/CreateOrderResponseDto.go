@@ -1,5 +1,9 @@
 package alicom
 
+import (
+	"sync"
+)
+
 // CreateOrderResponseDto 结构体
 type CreateOrderResponseDto struct {
 	// 天猫订单号
@@ -14,4 +18,26 @@ type CreateOrderResponseDto struct {
 	SignStr string `json:"sign_str,omitempty" xml:"sign_str,omitempty"`
 	// 支付宝支付订单号
 	AlipayTradeId string `json:"alipay_trade_id,omitempty" xml:"alipay_trade_id,omitempty"`
+}
+
+var poolCreateOrderResponseDto = sync.Pool{
+	New: func() any {
+		return new(CreateOrderResponseDto)
+	},
+}
+
+// GetCreateOrderResponseDto() 从对象池中获取CreateOrderResponseDto
+func GetCreateOrderResponseDto() *CreateOrderResponseDto {
+	return poolCreateOrderResponseDto.Get().(*CreateOrderResponseDto)
+}
+
+// ReleaseCreateOrderResponseDto 释放CreateOrderResponseDto
+func ReleaseCreateOrderResponseDto(v *CreateOrderResponseDto) {
+	v.TmallOrderId = ""
+	v.TransferId = ""
+	v.Price = ""
+	v.PayUrl = ""
+	v.SignStr = ""
+	v.AlipayTradeId = ""
+	poolCreateOrderResponseDto.Put(v)
 }

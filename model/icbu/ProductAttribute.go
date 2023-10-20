@@ -1,5 +1,9 @@
 package icbu
 
+import (
+	"sync"
+)
+
 // ProductAttribute 结构体
 type ProductAttribute struct {
 	// 属性名称
@@ -14,4 +18,26 @@ type ProductAttribute struct {
 	AttributeId int64 `json:"attribute_id,omitempty" xml:"attribute_id,omitempty"`
 	// 属性值ID
 	ValueId int64 `json:"value_id,omitempty" xml:"value_id,omitempty"`
+}
+
+var poolProductAttribute = sync.Pool{
+	New: func() any {
+		return new(ProductAttribute)
+	},
+}
+
+// GetProductAttribute() 从对象池中获取ProductAttribute
+func GetProductAttribute() *ProductAttribute {
+	return poolProductAttribute.Get().(*ProductAttribute)
+}
+
+// ReleaseProductAttribute 释放ProductAttribute
+func ReleaseProductAttribute(v *ProductAttribute) {
+	v.AttributeName = ""
+	v.ValueName = ""
+	v.SkuCustomValueName = ""
+	v.SkuCustomImageUrl = ""
+	v.AttributeId = 0
+	v.ValueId = 0
+	poolProductAttribute.Put(v)
 }

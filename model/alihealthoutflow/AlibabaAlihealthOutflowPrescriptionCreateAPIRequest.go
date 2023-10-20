@@ -2,6 +2,7 @@ package alihealthoutflow
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthOutflowPrescriptionCreateAPIRequest struct {
 // NewAlibabaAlihealthOutflowPrescriptionCreateRequest 初始化AlibabaAlihealthOutflowPrescriptionCreateAPIRequest对象
 func NewAlibabaAlihealthOutflowPrescriptionCreateRequest() *AlibabaAlihealthOutflowPrescriptionCreateAPIRequest {
 	return &AlibabaAlihealthOutflowPrescriptionCreateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthOutflowPrescriptionCreateAPIRequest) Reset() {
+	r._createRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthOutflowPrescriptionCreateAPIRequest) SetCreateRequest(_
 // GetCreateRequest CreateRequest Getter
 func (r AlibabaAlihealthOutflowPrescriptionCreateAPIRequest) GetCreateRequest() *PrescriptionOutflowUpdateRequest {
 	return r._createRequest
+}
+
+var poolAlibabaAlihealthOutflowPrescriptionCreateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthOutflowPrescriptionCreateRequest()
+	},
+}
+
+// GetAlibabaAlihealthOutflowPrescriptionCreateRequest 从 sync.Pool 获取 AlibabaAlihealthOutflowPrescriptionCreateAPIRequest
+func GetAlibabaAlihealthOutflowPrescriptionCreateAPIRequest() *AlibabaAlihealthOutflowPrescriptionCreateAPIRequest {
+	return poolAlibabaAlihealthOutflowPrescriptionCreateAPIRequest.Get().(*AlibabaAlihealthOutflowPrescriptionCreateAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthOutflowPrescriptionCreateAPIRequest 将 AlibabaAlihealthOutflowPrescriptionCreateAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthOutflowPrescriptionCreateAPIRequest(v *AlibabaAlihealthOutflowPrescriptionCreateAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthOutflowPrescriptionCreateAPIRequest.Put(v)
 }

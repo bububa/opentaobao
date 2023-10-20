@@ -2,6 +2,7 @@ package icbu
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -55,8 +56,32 @@ type AlibabaIcbuProductUpdateFieldAPIRequest struct {
 // NewAlibabaIcbuProductUpdateFieldRequest 初始化AlibabaIcbuProductUpdateFieldAPIRequest对象
 func NewAlibabaIcbuProductUpdateFieldRequest() *AlibabaIcbuProductUpdateFieldAPIRequest {
 	return &AlibabaIcbuProductUpdateFieldAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(19),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaIcbuProductUpdateFieldAPIRequest) Reset() {
+	r._attributes = r._attributes[:0]
+	r._bulkDiscountPrices = r._bulkDiscountPrices[:0]
+	r._keywords = r._keywords[:0]
+	r._description = ""
+	r._extraContext = ""
+	r._language = ""
+	r._productType = ""
+	r._subject = ""
+	r._market = ""
+	r._productId = ""
+	r._categoryId = 0
+	r._groupId = 0
+	r._mainImage = nil
+	r._productSku = nil
+	r._sourcingTrade = nil
+	r._wholesaleTrade = nil
+	r._customInfo = nil
+	r._isSmartEdit = false
+	r._useSkuPrice = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -321,4 +346,21 @@ func (r *AlibabaIcbuProductUpdateFieldAPIRequest) SetUseSkuPrice(_useSkuPrice bo
 // GetUseSkuPrice UseSkuPrice Getter
 func (r AlibabaIcbuProductUpdateFieldAPIRequest) GetUseSkuPrice() bool {
 	return r._useSkuPrice
+}
+
+var poolAlibabaIcbuProductUpdateFieldAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaIcbuProductUpdateFieldRequest()
+	},
+}
+
+// GetAlibabaIcbuProductUpdateFieldRequest 从 sync.Pool 获取 AlibabaIcbuProductUpdateFieldAPIRequest
+func GetAlibabaIcbuProductUpdateFieldAPIRequest() *AlibabaIcbuProductUpdateFieldAPIRequest {
+	return poolAlibabaIcbuProductUpdateFieldAPIRequest.Get().(*AlibabaIcbuProductUpdateFieldAPIRequest)
+}
+
+// ReleaseAlibabaIcbuProductUpdateFieldAPIRequest 将 AlibabaIcbuProductUpdateFieldAPIRequest 放入 sync.Pool
+func ReleaseAlibabaIcbuProductUpdateFieldAPIRequest(v *AlibabaIcbuProductUpdateFieldAPIRequest) {
+	v.Reset()
+	poolAlibabaIcbuProductUpdateFieldAPIRequest.Put(v)
 }

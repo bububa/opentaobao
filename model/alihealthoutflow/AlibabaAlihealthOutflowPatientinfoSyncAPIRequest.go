@@ -2,6 +2,7 @@ package alihealthoutflow
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthOutflowPatientinfoSyncAPIRequest struct {
 // NewAlibabaAlihealthOutflowPatientinfoSyncRequest 初始化AlibabaAlihealthOutflowPatientinfoSyncAPIRequest对象
 func NewAlibabaAlihealthOutflowPatientinfoSyncRequest() *AlibabaAlihealthOutflowPatientinfoSyncAPIRequest {
 	return &AlibabaAlihealthOutflowPatientinfoSyncAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthOutflowPatientinfoSyncAPIRequest) Reset() {
+	r._syncPatientInfoRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthOutflowPatientinfoSyncAPIRequest) SetSyncPatientInfoReq
 // GetSyncPatientInfoRequest SyncPatientInfoRequest Getter
 func (r AlibabaAlihealthOutflowPatientinfoSyncAPIRequest) GetSyncPatientInfoRequest() *SyncPatientInfoRequest {
 	return r._syncPatientInfoRequest
+}
+
+var poolAlibabaAlihealthOutflowPatientinfoSyncAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthOutflowPatientinfoSyncRequest()
+	},
+}
+
+// GetAlibabaAlihealthOutflowPatientinfoSyncRequest 从 sync.Pool 获取 AlibabaAlihealthOutflowPatientinfoSyncAPIRequest
+func GetAlibabaAlihealthOutflowPatientinfoSyncAPIRequest() *AlibabaAlihealthOutflowPatientinfoSyncAPIRequest {
+	return poolAlibabaAlihealthOutflowPatientinfoSyncAPIRequest.Get().(*AlibabaAlihealthOutflowPatientinfoSyncAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthOutflowPatientinfoSyncAPIRequest 将 AlibabaAlihealthOutflowPatientinfoSyncAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthOutflowPatientinfoSyncAPIRequest(v *AlibabaAlihealthOutflowPatientinfoSyncAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthOutflowPatientinfoSyncAPIRequest.Put(v)
 }

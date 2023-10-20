@@ -2,6 +2,7 @@ package travel
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type AlitripTravelGereralitemUpdateAPIResponse struct {
 	AlitripTravelGereralitemUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripTravelGereralitemUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripTravelGereralitemUpdateAPIResponseModel).Reset()
+}
+
 // AlitripTravelGereralitemUpdateAPIResponseModel is 除度假线路、门票以外的其他类目商品维护接口（商品ID重复将自动更新） 成功返回结果
 type AlitripTravelGereralitemUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_travel_gereralitem_update_response"`
@@ -23,4 +30,27 @@ type AlitripTravelGereralitemUpdateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 商品发布结果
 	TravelItem *TopTravelItem `json:"travel_item,omitempty" xml:"travel_item,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripTravelGereralitemUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TravelItem = nil
+}
+
+var poolAlitripTravelGereralitemUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripTravelGereralitemUpdateAPIResponse)
+	},
+}
+
+// GetAlitripTravelGereralitemUpdateAPIResponse 从 sync.Pool 获取 AlitripTravelGereralitemUpdateAPIResponse
+func GetAlitripTravelGereralitemUpdateAPIResponse() *AlitripTravelGereralitemUpdateAPIResponse {
+	return poolAlitripTravelGereralitemUpdateAPIResponse.Get().(*AlitripTravelGereralitemUpdateAPIResponse)
+}
+
+// ReleaseAlitripTravelGereralitemUpdateAPIResponse 将 AlitripTravelGereralitemUpdateAPIResponse 保存到 sync.Pool
+func ReleaseAlitripTravelGereralitemUpdateAPIResponse(v *AlitripTravelGereralitemUpdateAPIResponse) {
+	v.Reset()
+	poolAlitripTravelGereralitemUpdateAPIResponse.Put(v)
 }

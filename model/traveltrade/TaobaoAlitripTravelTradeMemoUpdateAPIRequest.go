@@ -2,6 +2,7 @@ package traveltrade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type TaobaoAlitripTravelTradeMemoUpdateAPIRequest struct {
 // NewTaobaoAlitripTravelTradeMemoUpdateRequest 初始化TaobaoAlitripTravelTradeMemoUpdateAPIRequest对象
 func NewTaobaoAlitripTravelTradeMemoUpdateRequest() *TaobaoAlitripTravelTradeMemoUpdateAPIRequest {
 	return &TaobaoAlitripTravelTradeMemoUpdateAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoAlitripTravelTradeMemoUpdateAPIRequest) Reset() {
+	r._memo = ""
+	r._tid = 0
+	r._flag = 0
+	r._reset = false
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *TaobaoAlitripTravelTradeMemoUpdateAPIRequest) SetReset(_reset bool) err
 // GetReset Reset Getter
 func (r TaobaoAlitripTravelTradeMemoUpdateAPIRequest) GetReset() bool {
 	return r._reset
+}
+
+var poolTaobaoAlitripTravelTradeMemoUpdateAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoAlitripTravelTradeMemoUpdateRequest()
+	},
+}
+
+// GetTaobaoAlitripTravelTradeMemoUpdateRequest 从 sync.Pool 获取 TaobaoAlitripTravelTradeMemoUpdateAPIRequest
+func GetTaobaoAlitripTravelTradeMemoUpdateAPIRequest() *TaobaoAlitripTravelTradeMemoUpdateAPIRequest {
+	return poolTaobaoAlitripTravelTradeMemoUpdateAPIRequest.Get().(*TaobaoAlitripTravelTradeMemoUpdateAPIRequest)
+}
+
+// ReleaseTaobaoAlitripTravelTradeMemoUpdateAPIRequest 将 TaobaoAlitripTravelTradeMemoUpdateAPIRequest 放入 sync.Pool
+func ReleaseTaobaoAlitripTravelTradeMemoUpdateAPIRequest(v *TaobaoAlitripTravelTradeMemoUpdateAPIRequest) {
+	v.Reset()
+	poolTaobaoAlitripTravelTradeMemoUpdateAPIRequest.Put(v)
 }

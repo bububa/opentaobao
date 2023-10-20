@@ -2,6 +2,7 @@ package lstbm
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLstBmStoreAddAPIRequest struct {
 // NewAlibabaLstBmStoreAddRequest 初始化AlibabaLstBmStoreAddAPIRequest对象
 func NewAlibabaLstBmStoreAddRequest() *AlibabaLstBmStoreAddAPIRequest {
 	return &AlibabaLstBmStoreAddAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstBmStoreAddAPIRequest) Reset() {
+	r._openStoreDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLstBmStoreAddAPIRequest) SetOpenStoreDto(_openStoreDto *LstTopOp
 // GetOpenStoreDto OpenStoreDto Getter
 func (r AlibabaLstBmStoreAddAPIRequest) GetOpenStoreDto() *LstTopOpenStoreDto {
 	return r._openStoreDto
+}
+
+var poolAlibabaLstBmStoreAddAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstBmStoreAddRequest()
+	},
+}
+
+// GetAlibabaLstBmStoreAddRequest 从 sync.Pool 获取 AlibabaLstBmStoreAddAPIRequest
+func GetAlibabaLstBmStoreAddAPIRequest() *AlibabaLstBmStoreAddAPIRequest {
+	return poolAlibabaLstBmStoreAddAPIRequest.Get().(*AlibabaLstBmStoreAddAPIRequest)
+}
+
+// ReleaseAlibabaLstBmStoreAddAPIRequest 将 AlibabaLstBmStoreAddAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstBmStoreAddAPIRequest(v *AlibabaLstBmStoreAddAPIRequest) {
+	v.Reset()
+	poolAlibabaLstBmStoreAddAPIRequest.Put(v)
 }

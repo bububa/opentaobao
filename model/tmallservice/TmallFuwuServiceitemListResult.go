@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // TmallFuwuServiceitemListResult 结构体
 type TmallFuwuServiceitemListResult struct {
 	// 服务商品信息列表的json对象
@@ -12,4 +16,25 @@ type TmallFuwuServiceitemListResult struct {
 	ErrorType int64 `json:"error_type,omitempty" xml:"error_type,omitempty"`
 	// isSuccess
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+}
+
+var poolTmallFuwuServiceitemListResult = sync.Pool{
+	New: func() any {
+		return new(TmallFuwuServiceitemListResult)
+	},
+}
+
+// GetTmallFuwuServiceitemListResult() 从对象池中获取TmallFuwuServiceitemListResult
+func GetTmallFuwuServiceitemListResult() *TmallFuwuServiceitemListResult {
+	return poolTmallFuwuServiceitemListResult.Get().(*TmallFuwuServiceitemListResult)
+}
+
+// ReleaseTmallFuwuServiceitemListResult 释放TmallFuwuServiceitemListResult
+func ReleaseTmallFuwuServiceitemListResult(v *TmallFuwuServiceitemListResult) {
+	v.ResultData = ""
+	v.Message = ""
+	v.ErrorCode = ""
+	v.ErrorType = 0
+	v.IsSuccess = false
+	poolTmallFuwuServiceitemListResult.Put(v)
 }

@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // StrategyShowResultDto 结构体
 type StrategyShowResultDto struct {
 	// 权益列表
@@ -14,4 +18,26 @@ type StrategyShowResultDto struct {
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
 	// 是否有下一页
 	HasNextPage bool `json:"has_next_page,omitempty" xml:"has_next_page,omitempty"`
+}
+
+var poolStrategyShowResultDto = sync.Pool{
+	New: func() any {
+		return new(StrategyShowResultDto)
+	},
+}
+
+// GetStrategyShowResultDto() 从对象池中获取StrategyShowResultDto
+func GetStrategyShowResultDto() *StrategyShowResultDto {
+	return poolStrategyShowResultDto.Get().(*StrategyShowResultDto)
+}
+
+// ReleaseStrategyShowResultDto 释放StrategyShowResultDto
+func ReleaseStrategyShowResultDto(v *StrategyShowResultDto) {
+	v.ShowBenefits = v.ShowBenefits[:0]
+	v.ExtraData = ""
+	v.TrackingData = ""
+	v.ShowStrategy = nil
+	v.CurrentPage = 0
+	v.HasNextPage = false
+	poolStrategyShowResultDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // TradeFlowGoodsDetailModel 结构体
 type TradeFlowGoodsDetailModel struct {
 	// 商品最小销售单位，如：包、盒、袋
@@ -28,4 +32,33 @@ type TradeFlowGoodsDetailModel struct {
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
 	// 货道编码，方向：从左到右，编码：从1开始
 	CargoRoadNo int64 `json:"cargo_road_no,omitempty" xml:"cargo_road_no,omitempty"`
+}
+
+var poolTradeFlowGoodsDetailModel = sync.Pool{
+	New: func() any {
+		return new(TradeFlowGoodsDetailModel)
+	},
+}
+
+// GetTradeFlowGoodsDetailModel() 从对象池中获取TradeFlowGoodsDetailModel
+func GetTradeFlowGoodsDetailModel() *TradeFlowGoodsDetailModel {
+	return poolTradeFlowGoodsDetailModel.Get().(*TradeFlowGoodsDetailModel)
+}
+
+// ReleaseTradeFlowGoodsDetailModel 释放TradeFlowGoodsDetailModel
+func ReleaseTradeFlowGoodsDetailModel(v *TradeFlowGoodsDetailModel) {
+	v.Unit = ""
+	v.ExternalGoodsId = ""
+	v.GoodsTitle = ""
+	v.Category = ""
+	v.Barcode = ""
+	v.RemainingQuantity = 0
+	v.BizType = 0
+	v.ActualAmount = 0
+	v.Count = 0
+	v.ShelfNo = 0
+	v.TotalAmount = 0
+	v.Price = 0
+	v.CargoRoadNo = 0
+	poolTradeFlowGoodsDetailModel.Put(v)
 }

@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // PublisherOrderDto 结构体
 type PublisherOrderDto struct {
 	// 服务费信息（字段已废弃）
@@ -136,4 +140,87 @@ type PublisherOrderDto struct {
 	PlatformSpecialServiceFee float64 `json:"platform_special_service_fee,omitempty" xml:"platform_special_service_fee,omitempty"`
 	// 平台专项服务费明细节点。解释：各项平台专项服务费类型的类型名称、扣费比率、扣费金额的详细说明
 	PlatformSpecialShareInfoDto *PlatformSpecialShareInfoDto `json:"platform_special_share_info_dto,omitempty" xml:"platform_special_share_info_dto,omitempty"`
+}
+
+var poolPublisherOrderDto = sync.Pool{
+	New: func() any {
+		return new(PublisherOrderDto)
+	},
+}
+
+// GetPublisherOrderDto() 从对象池中获取PublisherOrderDto
+func GetPublisherOrderDto() *PublisherOrderDto {
+	return poolPublisherOrderDto.Get().(*PublisherOrderDto)
+}
+
+// ReleasePublisherOrderDto 释放PublisherOrderDto
+func ReleasePublisherOrderDto(v *PublisherOrderDto) {
+	v.ServiceFeeDtoList = v.ServiceFeeDtoList[:0]
+	v.SubsidyInfoDtoList = v.SubsidyInfoDtoList[:0]
+	v.TbPaidTime = ""
+	v.TkPaidTime = ""
+	v.PayPrice = ""
+	v.PubShareFee = ""
+	v.TradeId = ""
+	v.TkEarningTime = ""
+	v.PubShareRate = ""
+	v.SubsidyRate = ""
+	v.TkTotalRate = ""
+	v.ItemCategoryName = ""
+	v.SellerNick = ""
+	v.AlimamaRate = ""
+	v.SubsidyType = ""
+	v.ItemImg = ""
+	v.PubSharePreFee = ""
+	v.AlipayTotalPrice = ""
+	v.ItemTitle = ""
+	v.SiteName = ""
+	v.SubsidyFee = ""
+	v.AlimamaShareFee = ""
+	v.TradeParentId = ""
+	v.OrderType = ""
+	v.TkCreateTime = ""
+	v.FlowSource = ""
+	v.TerminalType = ""
+	v.ClickTime = ""
+	v.ItemPrice = ""
+	v.ItemId = ""
+	v.AdzoneName = ""
+	v.TotalCommissionRate = ""
+	v.ItemLink = ""
+	v.SellerShopTitle = ""
+	v.IncomeRate = ""
+	v.TotalCommissionFee = ""
+	v.TkDepositTime = ""
+	v.TbDepositTime = ""
+	v.DepositPrice = ""
+	v.AppKey = ""
+	v.TpOrderId = ""
+	v.MarketingType = ""
+	v.ModifiedTime = ""
+	v.ExtraMktId = ""
+	v.Unid = ""
+	v.TalentPid = ""
+	v.TbGmvTotalPrice = ""
+	v.Untts = ""
+	v.TkOrderRole = 0
+	v.AdzoneId = 0
+	v.RefundTag = 0
+	v.PubId = 0
+	v.ItemNum = 0
+	v.TkStatus = 0
+	v.SiteId = 0
+	v.SpecialId = 0
+	v.RelationId = 0
+	v.PubSharePreFeeForCommission = 0
+	v.PubShareFeeForCommission = 0
+	v.PubShareRateForSdy = 0
+	v.TkTotalRateForSdy = 0
+	v.PubSharePreFeeForSdy = 0
+	v.PubShareFeeForSdy = 0
+	v.AlimmShareInfoDto = nil
+	v.PlatformSpecialServiceRate = 0
+	v.PlatformSpecialServiceFee = 0
+	v.PlatformSpecialShareInfoDto = nil
+	poolPublisherOrderDto.Put(v)
 }

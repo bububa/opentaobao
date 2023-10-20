@@ -1,5 +1,9 @@
 package tmallchannel
 
+import (
+	"sync"
+)
+
 // PageResultDto 结构体
 type PageResultDto struct {
 	// 产品信息
@@ -14,4 +18,26 @@ type PageResultDto struct {
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
 	// 是否查询成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolPageResultDto = sync.Pool{
+	New: func() any {
+		return new(PageResultDto)
+	},
+}
+
+// GetPageResultDto() 从对象池中获取PageResultDto
+func GetPageResultDto() *PageResultDto {
+	return poolPageResultDto.Get().(*PageResultDto)
+}
+
+// ReleasePageResultDto 释放PageResultDto
+func ReleasePageResultDto(v *PageResultDto) {
+	v.ProductList = v.ProductList[:0]
+	v.ErrorMessage = ""
+	v.ErrorCode = ""
+	v.TotalCount = 0
+	v.HasNext = false
+	v.Success = false
+	poolPageResultDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package cainiaolocker
 
+import (
+	"sync"
+)
+
 // SingleResult 结构体
 type SingleResult struct {
 	// 错误描述
@@ -10,4 +14,24 @@ type SingleResult struct {
 	Data *CainiaoEndpointLockerTopOrderNoticesendQueryData `json:"data,omitempty" xml:"data,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolSingleResult = sync.Pool{
+	New: func() any {
+		return new(SingleResult)
+	},
+}
+
+// GetSingleResult() 从对象池中获取SingleResult
+func GetSingleResult() *SingleResult {
+	return poolSingleResult.Get().(*SingleResult)
+}
+
+// ReleaseSingleResult 释放SingleResult
+func ReleaseSingleResult(v *SingleResult) {
+	v.ErrorDesc = ""
+	v.ErrorCode = ""
+	v.Data = nil
+	v.Success = false
+	poolSingleResult.Put(v)
 }

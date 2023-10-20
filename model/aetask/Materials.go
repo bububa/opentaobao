@@ -1,5 +1,9 @@
 package aetask
 
+import (
+	"sync"
+)
+
 // Materials 结构体
 type Materials struct {
 	// 物料类型：shop/item/url
@@ -48,4 +52,43 @@ type Materials struct {
 	TaskId int64 `json:"task_id,omitempty" xml:"task_id,omitempty"`
 	// 是否原地跳转
 	BrowseZeroFlag bool `json:"browse_zero_flag,omitempty" xml:"browse_zero_flag,omitempty"`
+}
+
+var poolMaterials = sync.Pool{
+	New: func() any {
+		return new(Materials)
+	},
+}
+
+// GetMaterials() 从对象池中获取Materials
+func GetMaterials() *Materials {
+	return poolMaterials.Get().(*Materials)
+}
+
+// ReleaseMaterials 释放Materials
+func ReleaseMaterials(v *Materials) {
+	v.MaterialUrlType = ""
+	v.MaterialUrl = ""
+	v.UnIssueRecord = ""
+	v.DetailIds = ""
+	v.IdempotentId = ""
+	v.Icon4UnFinish = ""
+	v.ExtendInfo = ""
+	v.Icon4Finished = ""
+	v.BehaviorConfig = ""
+	v.Trace = ""
+	v.MainTitle = ""
+	v.SecondTitle = ""
+	v.IconUrl = ""
+	v.InterestNum = 0
+	v.TaskInstanceId = 0
+	v.Type = 0
+	v.InstanceStatus = 0
+	v.OrderGroup = 0
+	v.TimesJoined = 0
+	v.MaterialConfigId = 0
+	v.TimesLimit = 0
+	v.TaskId = 0
+	v.BrowseZeroFlag = false
+	poolMaterials.Put(v)
 }

@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaDchainAoxiangIndustryWaybillEditAPIRequest struct {
 // NewAlibabaDchainAoxiangIndustryWaybillEditRequest 初始化AlibabaDchainAoxiangIndustryWaybillEditAPIRequest对象
 func NewAlibabaDchainAoxiangIndustryWaybillEditRequest() *AlibabaDchainAoxiangIndustryWaybillEditAPIRequest {
 	return &AlibabaDchainAoxiangIndustryWaybillEditAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaDchainAoxiangIndustryWaybillEditAPIRequest) Reset() {
+	r._tmsOrderUpdateRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaDchainAoxiangIndustryWaybillEditAPIRequest) SetTmsOrderUpdateReq
 // GetTmsOrderUpdateRequest TmsOrderUpdateRequest Getter
 func (r AlibabaDchainAoxiangIndustryWaybillEditAPIRequest) GetTmsOrderUpdateRequest() *TmsOrderUpdateRequest {
 	return r._tmsOrderUpdateRequest
+}
+
+var poolAlibabaDchainAoxiangIndustryWaybillEditAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaDchainAoxiangIndustryWaybillEditRequest()
+	},
+}
+
+// GetAlibabaDchainAoxiangIndustryWaybillEditRequest 从 sync.Pool 获取 AlibabaDchainAoxiangIndustryWaybillEditAPIRequest
+func GetAlibabaDchainAoxiangIndustryWaybillEditAPIRequest() *AlibabaDchainAoxiangIndustryWaybillEditAPIRequest {
+	return poolAlibabaDchainAoxiangIndustryWaybillEditAPIRequest.Get().(*AlibabaDchainAoxiangIndustryWaybillEditAPIRequest)
+}
+
+// ReleaseAlibabaDchainAoxiangIndustryWaybillEditAPIRequest 将 AlibabaDchainAoxiangIndustryWaybillEditAPIRequest 放入 sync.Pool
+func ReleaseAlibabaDchainAoxiangIndustryWaybillEditAPIRequest(v *AlibabaDchainAoxiangIndustryWaybillEditAPIRequest) {
+	v.Reset()
+	poolAlibabaDchainAoxiangIndustryWaybillEditAPIRequest.Put(v)
 }

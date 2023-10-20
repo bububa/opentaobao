@@ -2,6 +2,7 @@ package security
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -71,8 +72,40 @@ type AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest struct {
 // NewAlibabaSecurityJaqLoginpreventionResultFetchRequest 初始化AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest对象
 func NewAlibabaSecurityJaqLoginpreventionResultFetchRequest() *AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest {
 	return &AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(27),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) Reset() {
+	r._idNumber = ""
+	r._sdkToken = ""
+	r._address = ""
+	r._agent = ""
+	r._bankCardNumber = ""
+	r._companyName = ""
+	r._cookie = ""
+	r._currentUrl = ""
+	r._email = ""
+	r._extendData = ""
+	r._ip = ""
+	r._jsToken = ""
+	r._macAddress = ""
+	r._passwordHash = ""
+	r._phoneNumber = ""
+	r._protocolVersion = ""
+	r._referer = ""
+	r._registerIp = ""
+	r._sessionId = ""
+	r._userId = ""
+	r._userName = ""
+	r._accountExist = 0
+	r._idType = 0
+	r._loginType = 0
+	r._passwordCorrect = 0
+	r._registerDate = 0
+	r._source = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -441,4 +474,21 @@ func (r *AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) SetSource(_sour
 // GetSource Source Getter
 func (r AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) GetSource() int64 {
 	return r._source
+}
+
+var poolAlibabaSecurityJaqLoginpreventionResultFetchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaSecurityJaqLoginpreventionResultFetchRequest()
+	},
+}
+
+// GetAlibabaSecurityJaqLoginpreventionResultFetchRequest 从 sync.Pool 获取 AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest
+func GetAlibabaSecurityJaqLoginpreventionResultFetchAPIRequest() *AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest {
+	return poolAlibabaSecurityJaqLoginpreventionResultFetchAPIRequest.Get().(*AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest)
+}
+
+// ReleaseAlibabaSecurityJaqLoginpreventionResultFetchAPIRequest 将 AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest 放入 sync.Pool
+func ReleaseAlibabaSecurityJaqLoginpreventionResultFetchAPIRequest(v *AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) {
+	v.Reset()
+	poolAlibabaSecurityJaqLoginpreventionResultFetchAPIRequest.Put(v)
 }

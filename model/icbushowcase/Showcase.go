@@ -1,5 +1,9 @@
 package icbushowcase
 
+import (
+	"sync"
+)
+
 // Showcase 结构体
 type Showcase struct {
 	// 产品描述
@@ -12,4 +16,25 @@ type Showcase struct {
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// valid
 	Valid bool `json:"valid,omitempty" xml:"valid,omitempty"`
+}
+
+var poolShowcase = sync.Pool{
+	New: func() any {
+		return new(Showcase)
+	},
+}
+
+// GetShowcase() 从对象池中获取Showcase
+func GetShowcase() *Showcase {
+	return poolShowcase.Get().(*Showcase)
+}
+
+// ReleaseShowcase 释放Showcase
+func ReleaseShowcase(v *Showcase) {
+	v.Subject = ""
+	v.ImageUrl = ""
+	v.Id = 0
+	v.ProductId = 0
+	v.Valid = false
+	poolShowcase.Put(v)
 }

@@ -1,5 +1,9 @@
 package youkuott
 
+import (
+	"sync"
+)
+
 // YoukuTvoperatorMediaPageQueryData 结构体
 type YoukuTvoperatorMediaPageQueryData struct {
 	// 分类列表
@@ -46,4 +50,42 @@ type YoukuTvoperatorMediaPageQueryData struct {
 	GmtModified int64 `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
 	// 上线下状态
 	VmacState int64 `json:"vmac_state,omitempty" xml:"vmac_state,omitempty"`
+}
+
+var poolYoukuTvoperatorMediaPageQueryData = sync.Pool{
+	New: func() any {
+		return new(YoukuTvoperatorMediaPageQueryData)
+	},
+}
+
+// GetYoukuTvoperatorMediaPageQueryData() 从对象池中获取YoukuTvoperatorMediaPageQueryData
+func GetYoukuTvoperatorMediaPageQueryData() *YoukuTvoperatorMediaPageQueryData {
+	return poolYoukuTvoperatorMediaPageQueryData.Get().(*YoukuTvoperatorMediaPageQueryData)
+}
+
+// ReleaseYoukuTvoperatorMediaPageQueryData 释放YoukuTvoperatorMediaPageQueryData
+func ReleaseYoukuTvoperatorMediaPageQueryData(v *YoukuTvoperatorMediaPageQueryData) {
+	v.GenreList = v.GenreList[:0]
+	v.DirectorList = v.DirectorList[:0]
+	v.PerformerList = v.PerformerList[:0]
+	v.AreaList = v.AreaList[:0]
+	v.YoukuTags = ""
+	v.Score = ""
+	v.ShowSubtitle = ""
+	v.ShowBannerUrl = ""
+	v.ShowCategoryName = ""
+	v.ShowVthumbUrl = ""
+	v.ShowDesc = ""
+	v.ShowName = ""
+	v.ShowId = ""
+	v.ShowThumbUrl = ""
+	v.EpisodeLast = 0
+	v.Paid = 0
+	v.ReleaseDate = 0
+	v.EpisodeTotal = 0
+	v.PlaySet = 0
+	v.Seconds = 0
+	v.GmtModified = 0
+	v.VmacState = 0
+	poolYoukuTvoperatorMediaPageQueryData.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallchannel
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TmallChannelTradeOrderGetAPIResponse struct {
 	model.CommonResponse
 	TmallChannelTradeOrderGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TmallChannelTradeOrderGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallChannelTradeOrderGetAPIResponseModel).Reset()
 }
 
 // TmallChannelTradeOrderGetAPIResponseModel is 通过主采购单号查询采购单 成功返回结果
@@ -56,4 +63,44 @@ type TmallChannelTradeOrderGetAPIResponseModel struct {
 	ChannelLogisticsOrder *TopChannelLogisticsOrderDto `json:"channel_logistics_order,omitempty" xml:"channel_logistics_order,omitempty"`
 	// 支付信息
 	TopPurchasePayOrder *TopPurchasePayOrderDto `json:"top_purchase_pay_order,omitempty" xml:"top_purchase_pay_order,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallChannelTradeOrderGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.SubOrderList = m.SubOrderList[:0]
+	m.ChannelPurchaseApplyOrderNo = ""
+	m.DistributorNick = ""
+	m.BuyerTaobaoNick = ""
+	m.CreateTime = ""
+	m.ModifiedTime = ""
+	m.PayTime = ""
+	m.Schema = ""
+	m.MainPurchaseOrderNo = 0
+	m.TradeType = 0
+	m.PayType = 0
+	m.Channel = 0
+	m.PostFee = 0
+	m.PayStatus = 0
+	m.LogisticsStatus = 0
+	m.OrderStatus = 0
+	m.ChannelLogisticsOrder = nil
+	m.TopPurchasePayOrder = nil
+}
+
+var poolTmallChannelTradeOrderGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallChannelTradeOrderGetAPIResponse)
+	},
+}
+
+// GetTmallChannelTradeOrderGetAPIResponse 从 sync.Pool 获取 TmallChannelTradeOrderGetAPIResponse
+func GetTmallChannelTradeOrderGetAPIResponse() *TmallChannelTradeOrderGetAPIResponse {
+	return poolTmallChannelTradeOrderGetAPIResponse.Get().(*TmallChannelTradeOrderGetAPIResponse)
+}
+
+// ReleaseTmallChannelTradeOrderGetAPIResponse 将 TmallChannelTradeOrderGetAPIResponse 保存到 sync.Pool
+func ReleaseTmallChannelTradeOrderGetAPIResponse(v *TmallChannelTradeOrderGetAPIResponse) {
+	v.Reset()
+	poolTmallChannelTradeOrderGetAPIResponse.Put(v)
 }

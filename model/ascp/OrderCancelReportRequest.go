@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // OrderCancelReportRequest 结构体
 type OrderCancelReportRequest struct {
 	// 交易平台子订单信息
@@ -22,4 +26,30 @@ type OrderCancelReportRequest struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 业务请求时间（时间戳）
 	RequestTime int64 `json:"request_time,omitempty" xml:"request_time,omitempty"`
+}
+
+var poolOrderCancelReportRequest = sync.Pool{
+	New: func() any {
+		return new(OrderCancelReportRequest)
+	},
+}
+
+// GetOrderCancelReportRequest() 从对象池中获取OrderCancelReportRequest
+func GetOrderCancelReportRequest() *OrderCancelReportRequest {
+	return poolOrderCancelReportRequest.Get().(*OrderCancelReportRequest)
+}
+
+// ReleaseOrderCancelReportRequest 释放OrderCancelReportRequest
+func ReleaseOrderCancelReportRequest(v *OrderCancelReportRequest) {
+	v.SubSourceOrders = v.SubSourceOrders[:0]
+	v.WarehouseCode = ""
+	v.OwnerCode = ""
+	v.OrderCode = ""
+	v.OrderId = ""
+	v.OrderType = ""
+	v.CancelReason = ""
+	v.ExtendProps = ""
+	v.RequestId = ""
+	v.RequestTime = 0
+	poolOrderCancelReportRequest.Put(v)
 }

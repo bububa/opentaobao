@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ApiPageResults 结构体
 type ApiPageResults struct {
 	// 业务结果集
@@ -18,4 +22,28 @@ type ApiPageResults struct {
 	Total int64 `json:"total,omitempty" xml:"total,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolApiPageResults = sync.Pool{
+	New: func() any {
+		return new(ApiPageResults)
+	},
+}
+
+// GetApiPageResults() 从对象池中获取ApiPageResults
+func GetApiPageResults() *ApiPageResults {
+	return poolApiPageResults.Get().(*ApiPageResults)
+}
+
+// ReleaseApiPageResults 释放ApiPageResults
+func ReleaseApiPageResults(v *ApiPageResults) {
+	v.Model = v.Model[:0]
+	v.ErrMsg = ""
+	v.ErrCode = ""
+	v.PageIndex = 0
+	v.PageSize = 0
+	v.PageCount = 0
+	v.Total = 0
+	v.Success = false
+	poolApiPageResults.Put(v)
 }

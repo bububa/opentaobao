@@ -1,5 +1,9 @@
 package examination
 
+import (
+	"sync"
+)
+
 // ReportDiagnoseImMessageRequest 结构体
 type ReportDiagnoseImMessageRequest struct {
 	// 消息媒体url
@@ -22,4 +26,30 @@ type ReportDiagnoseImMessageRequest struct {
 	OrderId string `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 顺序号
 	SeqNo string `json:"seq_no,omitempty" xml:"seq_no,omitempty"`
+}
+
+var poolReportDiagnoseImMessageRequest = sync.Pool{
+	New: func() any {
+		return new(ReportDiagnoseImMessageRequest)
+	},
+}
+
+// GetReportDiagnoseImMessageRequest() 从对象池中获取ReportDiagnoseImMessageRequest
+func GetReportDiagnoseImMessageRequest() *ReportDiagnoseImMessageRequest {
+	return poolReportDiagnoseImMessageRequest.Get().(*ReportDiagnoseImMessageRequest)
+}
+
+// ReleaseReportDiagnoseImMessageRequest 释放ReportDiagnoseImMessageRequest
+func ReleaseReportDiagnoseImMessageRequest(v *ReportDiagnoseImMessageRequest) {
+	v.MessageMediaUrl = ""
+	v.MessageContent = ""
+	v.SendTime = ""
+	v.MessageType = ""
+	v.ReceiverName = ""
+	v.SenderName = ""
+	v.ReceiverId = ""
+	v.SenderId = ""
+	v.OrderId = ""
+	v.SeqNo = ""
+	poolReportDiagnoseImMessageRequest.Put(v)
 }

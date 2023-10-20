@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // BillSettlementDto 结构体
 type BillSettlementDto struct {
 	// 发票列表
@@ -50,4 +54,44 @@ type BillSettlementDto struct {
 	DepartmentCoa string `json:"department_coa,omitempty" xml:"department_coa,omitempty"`
 	// 区域科目段
 	CityCoa string `json:"city_coa,omitempty" xml:"city_coa,omitempty"`
+}
+
+var poolBillSettlementDto = sync.Pool{
+	New: func() any {
+		return new(BillSettlementDto)
+	},
+}
+
+// GetBillSettlementDto() 从对象池中获取BillSettlementDto
+func GetBillSettlementDto() *BillSettlementDto {
+	return poolBillSettlementDto.Get().(*BillSettlementDto)
+}
+
+// ReleaseBillSettlementDto 释放BillSettlementDto
+func ReleaseBillSettlementDto(v *BillSettlementDto) {
+	v.InvoiceDTOList = v.InvoiceDTOList[:0]
+	v.LineNo = ""
+	v.Amount = ""
+	v.TaxRate = ""
+	v.BizSubModuleCode = ""
+	v.InvoiceType = ""
+	v.SupplierNo = ""
+	v.SupplierName = ""
+	v.BankProvince = ""
+	v.BankCity = ""
+	v.AccountNo = ""
+	v.AccountName = ""
+	v.BankCode = ""
+	v.BankName = ""
+	v.BankBranchName = ""
+	v.BankBranchCode = ""
+	v.AccountTypes = ""
+	v.CnapsCode = ""
+	v.Contactor = ""
+	v.Telephone = ""
+	v.Comments = ""
+	v.ExtendParams = ""
+	v.DepartmentCoa = ""
+	v.CityCoa = ""
+	poolBillSettlementDto.Put(v)
 }

@@ -2,6 +2,7 @@ package simba
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoSubwayCreativeVideoBindAPIResponse struct {
 	TaobaoSubwayCreativeVideoBindAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoSubwayCreativeVideoBindAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoSubwayCreativeVideoBindAPIResponseModel).Reset()
+}
+
 // TaobaoSubwayCreativeVideoBindAPIResponseModel is 绑定视频到创意上 成功返回结果
 type TaobaoSubwayCreativeVideoBindAPIResponseModel struct {
 	XMLName xml.Name `xml:"subway_creative_video_bind_response"`
@@ -22,4 +29,27 @@ type TaobaoSubwayCreativeVideoBindAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 是否绑定成功
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoSubwayCreativeVideoBindAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = false
+}
+
+var poolTaobaoSubwayCreativeVideoBindAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoSubwayCreativeVideoBindAPIResponse)
+	},
+}
+
+// GetTaobaoSubwayCreativeVideoBindAPIResponse 从 sync.Pool 获取 TaobaoSubwayCreativeVideoBindAPIResponse
+func GetTaobaoSubwayCreativeVideoBindAPIResponse() *TaobaoSubwayCreativeVideoBindAPIResponse {
+	return poolTaobaoSubwayCreativeVideoBindAPIResponse.Get().(*TaobaoSubwayCreativeVideoBindAPIResponse)
+}
+
+// ReleaseTaobaoSubwayCreativeVideoBindAPIResponse 将 TaobaoSubwayCreativeVideoBindAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoSubwayCreativeVideoBindAPIResponse(v *TaobaoSubwayCreativeVideoBindAPIResponse) {
+	v.Reset()
+	poolTaobaoSubwayCreativeVideoBindAPIResponse.Put(v)
 }

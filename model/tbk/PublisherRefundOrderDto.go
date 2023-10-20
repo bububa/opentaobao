@@ -1,5 +1,9 @@
 package tbk
 
+import (
+	"sync"
+)
+
 // PublisherRefundOrderDto 结构体
 type PublisherRefundOrderDto struct {
 	// 维权编号，是当前订单发生维权退款的编号，非淘宝订单编号，如订单发生多次维权，则会产生多个维权编号
@@ -48,4 +52,43 @@ type PublisherRefundOrderDto struct {
 	RelationId int64 `json:"relation_id,omitempty" xml:"relation_id,omitempty"`
 	// 会员关系id
 	SpecialId int64 `json:"special_id,omitempty" xml:"special_id,omitempty"`
+}
+
+var poolPublisherRefundOrderDto = sync.Pool{
+	New: func() any {
+		return new(PublisherRefundOrderDto)
+	},
+}
+
+// GetPublisherRefundOrderDto() 从对象池中获取PublisherRefundOrderDto
+func GetPublisherRefundOrderDto() *PublisherRefundOrderDto {
+	return poolPublisherRefundOrderDto.Get().(*PublisherRefundOrderDto)
+}
+
+// ReleasePublisherRefundOrderDto 释放PublisherRefundOrderDto
+func ReleasePublisherRefundOrderDto(v *PublisherRefundOrderDto) {
+	v.RefundSuitId = ""
+	v.TbTradeParentId = ""
+	v.TbTradeId = ""
+	v.TbTradeCreateTime = ""
+	v.EarningTime = ""
+	v.TkRefundTime = ""
+	v.TkRefundSuitTime = ""
+	v.ModifiedTime = ""
+	v.ItemTitle = ""
+	v.TkOrderRole = ""
+	v.TbTradeFinishPrice = ""
+	v.RefundFee = ""
+	v.PubShareFee = ""
+	v.TkCommissionFeeRefund = ""
+	v.TkSubsidyFeeRefund = ""
+	v.TkCommissionAlimmRefundFee = ""
+	v.TkSubsidyAlimmRefundFee = ""
+	v.TkCommissionAgentRefundFee = ""
+	v.TkSubsidyAgentRefundFee = ""
+	v.ShowReturnFee = ""
+	v.RefundStatus = 0
+	v.RelationId = 0
+	v.SpecialId = 0
+	poolPublisherRefundOrderDto.Put(v)
 }

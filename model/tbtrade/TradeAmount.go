@@ -1,5 +1,9 @@
 package tbtrade
 
+import (
+	"sync"
+)
+
 // TradeAmount 结构体
 type TradeAmount struct {
 	// 子订单的帐务金额详情列表
@@ -34,4 +38,36 @@ type TradeAmount struct {
 	BuyerObtainPointFee string `json:"buyer_obtain_point_fee,omitempty" xml:"buyer_obtain_point_fee,omitempty"`
 	// 交易主订单编号
 	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
+}
+
+var poolTradeAmount = sync.Pool{
+	New: func() any {
+		return new(TradeAmount)
+	},
+}
+
+// GetTradeAmount() 从对象池中获取TradeAmount
+func GetTradeAmount() *TradeAmount {
+	return poolTradeAmount.Get().(*TradeAmount)
+}
+
+// ReleaseTradeAmount 释放TradeAmount
+func ReleaseTradeAmount(v *TradeAmount) {
+	v.OrderAmounts = v.OrderAmounts[:0]
+	v.PromotionDetails = v.PromotionDetails[:0]
+	v.AlipayNo = ""
+	v.Created = ""
+	v.PayTime = ""
+	v.EndTime = ""
+	v.TotalFee = ""
+	v.PostFee = ""
+	v.CodFee = ""
+	v.BuyerCodFee = ""
+	v.SellerCodFee = ""
+	v.ExpressAgencyFee = ""
+	v.Payment = ""
+	v.CommissionFee = ""
+	v.BuyerObtainPointFee = ""
+	v.Tid = 0
+	poolTradeAmount.Put(v)
 }

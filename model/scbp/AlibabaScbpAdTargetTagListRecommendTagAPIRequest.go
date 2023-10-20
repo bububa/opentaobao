@@ -2,6 +2,7 @@ package scbp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaScbpAdTargetTagListRecommendTagAPIRequest struct {
 // NewAlibabaScbpAdTargetTagListRecommendTagRequest 初始化AlibabaScbpAdTargetTagListRecommendTagAPIRequest对象
 func NewAlibabaScbpAdTargetTagListRecommendTagRequest() *AlibabaScbpAdTargetTagListRecommendTagAPIRequest {
 	return &AlibabaScbpAdTargetTagListRecommendTagAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaScbpAdTargetTagListRecommendTagAPIRequest) Reset() {
+	r._topContext = nil
+	r._campaignId = 0
+	r._recommendQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaScbpAdTargetTagListRecommendTagAPIRequest) SetRecommendQuery(_re
 // GetRecommendQuery RecommendQuery Getter
 func (r AlibabaScbpAdTargetTagListRecommendTagAPIRequest) GetRecommendQuery() *TargetTagRecommendQueryDto {
 	return r._recommendQuery
+}
+
+var poolAlibabaScbpAdTargetTagListRecommendTagAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaScbpAdTargetTagListRecommendTagRequest()
+	},
+}
+
+// GetAlibabaScbpAdTargetTagListRecommendTagRequest 从 sync.Pool 获取 AlibabaScbpAdTargetTagListRecommendTagAPIRequest
+func GetAlibabaScbpAdTargetTagListRecommendTagAPIRequest() *AlibabaScbpAdTargetTagListRecommendTagAPIRequest {
+	return poolAlibabaScbpAdTargetTagListRecommendTagAPIRequest.Get().(*AlibabaScbpAdTargetTagListRecommendTagAPIRequest)
+}
+
+// ReleaseAlibabaScbpAdTargetTagListRecommendTagAPIRequest 将 AlibabaScbpAdTargetTagListRecommendTagAPIRequest 放入 sync.Pool
+func ReleaseAlibabaScbpAdTargetTagListRecommendTagAPIRequest(v *AlibabaScbpAdTargetTagListRecommendTagAPIRequest) {
+	v.Reset()
+	poolAlibabaScbpAdTargetTagListRecommendTagAPIRequest.Put(v)
 }

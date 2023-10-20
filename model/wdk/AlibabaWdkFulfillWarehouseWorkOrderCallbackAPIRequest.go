@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIRequest struct {
 // NewAlibabaWdkFulfillWarehouseWorkOrderCallbackRequest 初始化AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIRequest对象
 func NewAlibabaWdkFulfillWarehouseWorkOrderCallbackRequest() *AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIRequest {
 	return &AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIRequest) Reset() {
+	r._callbackOrder = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIRequest) SetCallbackOrder
 // GetCallbackOrder CallbackOrder Getter
 func (r AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIRequest) GetCallbackOrder() *DrfHalfDayCcCallbackOrder {
 	return r._callbackOrder
+}
+
+var poolAlibabaWdkFulfillWarehouseWorkOrderCallbackAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaWdkFulfillWarehouseWorkOrderCallbackRequest()
+	},
+}
+
+// GetAlibabaWdkFulfillWarehouseWorkOrderCallbackRequest 从 sync.Pool 获取 AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIRequest
+func GetAlibabaWdkFulfillWarehouseWorkOrderCallbackAPIRequest() *AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIRequest {
+	return poolAlibabaWdkFulfillWarehouseWorkOrderCallbackAPIRequest.Get().(*AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIRequest)
+}
+
+// ReleaseAlibabaWdkFulfillWarehouseWorkOrderCallbackAPIRequest 将 AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIRequest 放入 sync.Pool
+func ReleaseAlibabaWdkFulfillWarehouseWorkOrderCallbackAPIRequest(v *AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIRequest) {
+	v.Reset()
+	poolAlibabaWdkFulfillWarehouseWorkOrderCallbackAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package jst
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoJdsTradesStatisticsDiffAPIResponse struct {
 	TaobaoJdsTradesStatisticsDiffAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoJdsTradesStatisticsDiffAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoJdsTradesStatisticsDiffAPIResponseModel).Reset()
+}
+
 // TaobaoJdsTradesStatisticsDiffAPIResponseModel is 订单全链路状态统计差异比较 成功返回结果
 type TaobaoJdsTradesStatisticsDiffAPIResponseModel struct {
 	XMLName xml.Name `xml:"jds_trades_statistics_diff_response"`
@@ -24,4 +31,28 @@ type TaobaoJdsTradesStatisticsDiffAPIResponseModel struct {
 	Tids []int64 `json:"tids,omitempty" xml:"tids>int64,omitempty"`
 	// 总记录数
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoJdsTradesStatisticsDiffAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Tids = m.Tids[:0]
+	m.TotalResults = 0
+}
+
+var poolTaobaoJdsTradesStatisticsDiffAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoJdsTradesStatisticsDiffAPIResponse)
+	},
+}
+
+// GetTaobaoJdsTradesStatisticsDiffAPIResponse 从 sync.Pool 获取 TaobaoJdsTradesStatisticsDiffAPIResponse
+func GetTaobaoJdsTradesStatisticsDiffAPIResponse() *TaobaoJdsTradesStatisticsDiffAPIResponse {
+	return poolTaobaoJdsTradesStatisticsDiffAPIResponse.Get().(*TaobaoJdsTradesStatisticsDiffAPIResponse)
+}
+
+// ReleaseTaobaoJdsTradesStatisticsDiffAPIResponse 将 TaobaoJdsTradesStatisticsDiffAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoJdsTradesStatisticsDiffAPIResponse(v *TaobaoJdsTradesStatisticsDiffAPIResponse) {
+	v.Reset()
+	poolTaobaoJdsTradesStatisticsDiffAPIResponse.Put(v)
 }

@@ -2,6 +2,7 @@ package tblogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -27,8 +28,17 @@ type AlibabaAscpLogisticsConsignResendAPIRequest struct {
 // NewAlibabaAscpLogisticsConsignResendRequest 初始化AlibabaAscpLogisticsConsignResendAPIRequest对象
 func NewAlibabaAscpLogisticsConsignResendRequest() *AlibabaAscpLogisticsConsignResendAPIRequest {
 	return &AlibabaAscpLogisticsConsignResendAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAscpLogisticsConsignResendAPIRequest) Reset() {
+	r._consignPkgs = r._consignPkgs[:0]
+	r._tid = ""
+	r._subTids = ""
+	r._feature = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -98,4 +108,21 @@ func (r *AlibabaAscpLogisticsConsignResendAPIRequest) SetFeature(_feature string
 // GetFeature Feature Getter
 func (r AlibabaAscpLogisticsConsignResendAPIRequest) GetFeature() string {
 	return r._feature
+}
+
+var poolAlibabaAscpLogisticsConsignResendAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAscpLogisticsConsignResendRequest()
+	},
+}
+
+// GetAlibabaAscpLogisticsConsignResendRequest 从 sync.Pool 获取 AlibabaAscpLogisticsConsignResendAPIRequest
+func GetAlibabaAscpLogisticsConsignResendAPIRequest() *AlibabaAscpLogisticsConsignResendAPIRequest {
+	return poolAlibabaAscpLogisticsConsignResendAPIRequest.Get().(*AlibabaAscpLogisticsConsignResendAPIRequest)
+}
+
+// ReleaseAlibabaAscpLogisticsConsignResendAPIRequest 将 AlibabaAscpLogisticsConsignResendAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAscpLogisticsConsignResendAPIRequest(v *AlibabaAscpLogisticsConsignResendAPIRequest) {
+	v.Reset()
+	poolAlibabaAscpLogisticsConsignResendAPIRequest.Put(v)
 }

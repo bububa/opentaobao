@@ -1,5 +1,9 @@
 package mos
 
+import (
+	"sync"
+)
+
 // AlibabaMjMoscarnivalReceiveencryptResultDo 结构体
 type AlibabaMjMoscarnivalReceiveencryptResultDo struct {
 	// 调用链id
@@ -16,4 +20,27 @@ type AlibabaMjMoscarnivalReceiveencryptResultDo struct {
 	ErrCode int64 `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 调用是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolAlibabaMjMoscarnivalReceiveencryptResultDo = sync.Pool{
+	New: func() any {
+		return new(AlibabaMjMoscarnivalReceiveencryptResultDo)
+	},
+}
+
+// GetAlibabaMjMoscarnivalReceiveencryptResultDo() 从对象池中获取AlibabaMjMoscarnivalReceiveencryptResultDo
+func GetAlibabaMjMoscarnivalReceiveencryptResultDo() *AlibabaMjMoscarnivalReceiveencryptResultDo {
+	return poolAlibabaMjMoscarnivalReceiveencryptResultDo.Get().(*AlibabaMjMoscarnivalReceiveencryptResultDo)
+}
+
+// ReleaseAlibabaMjMoscarnivalReceiveencryptResultDo 释放AlibabaMjMoscarnivalReceiveencryptResultDo
+func ReleaseAlibabaMjMoscarnivalReceiveencryptResultDo(v *AlibabaMjMoscarnivalReceiveencryptResultDo) {
+	v.TraceId = ""
+	v.ErrMsg = ""
+	v.ResultCode = ""
+	v.Total = 0
+	v.Data = nil
+	v.ErrCode = 0
+	v.Success = false
+	poolAlibabaMjMoscarnivalReceiveencryptResultDo.Put(v)
 }

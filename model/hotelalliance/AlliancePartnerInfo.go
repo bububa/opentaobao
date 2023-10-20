@@ -1,5 +1,9 @@
 package hotelalliance
 
+import (
+	"sync"
+)
+
 // AlliancePartnerInfo 结构体
 type AlliancePartnerInfo struct {
 	// 公司名称
@@ -24,4 +28,31 @@ type AlliancePartnerInfo struct {
 	PayType int64 `json:"pay_type,omitempty" xml:"pay_type,omitempty"`
 	// 是否生效（0: 失效 1:生效）
 	IsValid int64 `json:"is_valid,omitempty" xml:"is_valid,omitempty"`
+}
+
+var poolAlliancePartnerInfo = sync.Pool{
+	New: func() any {
+		return new(AlliancePartnerInfo)
+	},
+}
+
+// GetAlliancePartnerInfo() 从对象池中获取AlliancePartnerInfo
+func GetAlliancePartnerInfo() *AlliancePartnerInfo {
+	return poolAlliancePartnerInfo.Get().(*AlliancePartnerInfo)
+}
+
+// ReleaseAlliancePartnerInfo 释放AlliancePartnerInfo
+func ReleaseAlliancePartnerInfo(v *AlliancePartnerInfo) {
+	v.CompanyName = ""
+	v.ContactPhone = ""
+	v.AccountName = ""
+	v.ContactName = ""
+	v.AccountNum = ""
+	v.ContactEmail = ""
+	v.CompanyAddress = ""
+	v.MainAccount = ""
+	v.PartnerId = 0
+	v.PayType = 0
+	v.IsValid = 0
+	poolAlliancePartnerInfo.Put(v)
 }

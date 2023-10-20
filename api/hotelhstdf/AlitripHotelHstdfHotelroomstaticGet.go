@@ -9,11 +9,6 @@ import (
 // alitrip.hotel.hstdf.hotelroomstatic.get
 //
 // 根据类型查询分页静态字段
-func AlitripHotelHstdfHotelroomstaticGet(clt *core.SDKClient, req *hotelhstdf.AlitripHotelHstdfHotelroomstaticGetAPIRequest, session string) (*hotelhstdf.AlitripHotelHstdfHotelroomstaticGetAPIResponse, error) {
-	var resp hotelhstdf.AlitripHotelHstdfHotelroomstaticGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripHotelHstdfHotelroomstaticGet(clt *core.SDKClient, req *hotelhstdf.AlitripHotelHstdfHotelroomstaticGetAPIRequest, resp *hotelhstdf.AlitripHotelHstdfHotelroomstaticGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

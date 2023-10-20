@@ -1,5 +1,9 @@
 package lstpos
 
+import (
+	"sync"
+)
+
 // GoodsDto 结构体
 type GoodsDto struct {
 	// 规格
@@ -32,4 +36,35 @@ type GoodsDto struct {
 	GmtModified int64 `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
 	// 创建时间
 	GmtCreate int64 `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
+}
+
+var poolGoodsDto = sync.Pool{
+	New: func() any {
+		return new(GoodsDto)
+	},
+}
+
+// GetGoodsDto() 从对象池中获取GoodsDto
+func GetGoodsDto() *GoodsDto {
+	return poolGoodsDto.Get().(*GoodsDto)
+}
+
+// ReleaseGoodsDto 释放GoodsDto
+func ReleaseGoodsDto(v *GoodsDto) {
+	v.Spec = ""
+	v.ShotTitle = ""
+	v.Title = ""
+	v.BarCode = ""
+	v.Status = ""
+	v.Unit = ""
+	v.ShortcutCode = ""
+	v.IsvCategoryId = ""
+	v.CategoryId = ""
+	v.IsvGoodsId = ""
+	v.PricingMode = ""
+	v.ReservePrice = 0
+	v.OriginalPrice = 0
+	v.GmtModified = 0
+	v.GmtCreate = 0
+	poolGoodsDto.Put(v)
 }

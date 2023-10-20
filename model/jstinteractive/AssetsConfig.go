@@ -1,5 +1,9 @@
 package jstinteractive
 
+import (
+	"sync"
+)
+
 // AssetsConfig 结构体
 type AssetsConfig struct {
 	// 做任务按钮，默认值【去完成】
@@ -32,4 +36,35 @@ type AssetsConfig struct {
 	VideoId int64 `json:"video_id,omitempty" xml:"video_id,omitempty"`
 	// 任务类型，1=浏览商品，1=观看直播
 	TaskType int64 `json:"task_type,omitempty" xml:"task_type,omitempty"`
+}
+
+var poolAssetsConfig = sync.Pool{
+	New: func() any {
+		return new(AssetsConfig)
+	},
+}
+
+// GetAssetsConfig() 从对象池中获取AssetsConfig
+func GetAssetsConfig() *AssetsConfig {
+	return poolAssetsConfig.Get().(*AssetsConfig)
+}
+
+// ReleaseAssetsConfig 释放AssetsConfig
+func ReleaseAssetsConfig(v *AssetsConfig) {
+	v.AcceptBtn = ""
+	v.AwardBtn = ""
+	v.CompleteBtn = ""
+	v.Desc = ""
+	v.Icon = ""
+	v.InitBtn = ""
+	v.SubTitle = ""
+	v.TaskId = ""
+	v.Title = ""
+	v.ShopCompTitle = ""
+	v.Duration = ""
+	v.Action = ""
+	v.ItemId = 0
+	v.VideoId = 0
+	v.TaskType = 0
+	poolAssetsConfig.Put(v)
 }

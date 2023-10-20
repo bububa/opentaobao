@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // CashierShiftFundRequest 结构体
 type CashierShiftFundRequest struct {
 	// 门店编号 示例 DRF4012（优先使用）
@@ -12,4 +16,25 @@ type CashierShiftFundRequest struct {
 	EndTime string `json:"end_time,omitempty" xml:"end_time,omitempty"`
 	// 门店Id（可选，shopCode为空时使用shopId）
 	ShopId int64 `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
+}
+
+var poolCashierShiftFundRequest = sync.Pool{
+	New: func() any {
+		return new(CashierShiftFundRequest)
+	},
+}
+
+// GetCashierShiftFundRequest() 从对象池中获取CashierShiftFundRequest
+func GetCashierShiftFundRequest() *CashierShiftFundRequest {
+	return poolCashierShiftFundRequest.Get().(*CashierShiftFundRequest)
+}
+
+// ReleaseCashierShiftFundRequest 释放CashierShiftFundRequest
+func ReleaseCashierShiftFundRequest(v *CashierShiftFundRequest) {
+	v.ShopCode = ""
+	v.BizDate = ""
+	v.StartTime = ""
+	v.EndTime = ""
+	v.ShopId = 0
+	poolCashierShiftFundRequest.Put(v)
 }

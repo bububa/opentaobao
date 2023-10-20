@@ -1,5 +1,9 @@
 package koubeimall
 
+import (
+	"sync"
+)
+
 // GoodsDetailInfo 结构体
 type GoodsDetailInfo struct {
 	// 菜品标签
@@ -14,4 +18,26 @@ type GoodsDetailInfo struct {
 	GoodsDetailName string `json:"goods_detail_name,omitempty" xml:"goods_detail_name,omitempty"`
 	// 图片模型
 	Picture *Picture `json:"picture,omitempty" xml:"picture,omitempty"`
+}
+
+var poolGoodsDetailInfo = sync.Pool{
+	New: func() any {
+		return new(GoodsDetailInfo)
+	},
+}
+
+// GetGoodsDetailInfo() 从对象池中获取GoodsDetailInfo
+func GetGoodsDetailInfo() *GoodsDetailInfo {
+	return poolGoodsDetailInfo.Get().(*GoodsDetailInfo)
+}
+
+// ReleaseGoodsDetailInfo 释放GoodsDetailInfo
+func ReleaseGoodsDetailInfo(v *GoodsDetailInfo) {
+	v.GoodsDetailTags = v.GoodsDetailTags[:0]
+	v.GoodsDetailDesc = ""
+	v.GoodsDetailScore = ""
+	v.GoodsDetailPrice = ""
+	v.GoodsDetailName = ""
+	v.Picture = nil
+	poolGoodsDetailInfo.Put(v)
 }

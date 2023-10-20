@@ -1,7 +1,11 @@
 package user
 
-// OauthOtherInfo 结构体
-type OauthOtherInfo struct {
+import (
+	"sync"
+)
+
+// OAuthOtherInfo 结构体
+type OAuthOtherInfo struct {
 	// access_token
 	AccessToken string `json:"access_token,omitempty" xml:"access_token,omitempty"`
 	// nick
@@ -16,4 +20,27 @@ type OauthOtherInfo struct {
 	UnionId string `json:"union_id,omitempty" xml:"union_id,omitempty"`
 	// 三方平台类型
 	PlatformType int64 `json:"platform_type,omitempty" xml:"platform_type,omitempty"`
+}
+
+var poolOAuthOtherInfo = sync.Pool{
+	New: func() any {
+		return new(OAuthOtherInfo)
+	},
+}
+
+// GetOAuthOtherInfo() 从对象池中获取OAuthOtherInfo
+func GetOAuthOtherInfo() *OAuthOtherInfo {
+	return poolOAuthOtherInfo.Get().(*OAuthOtherInfo)
+}
+
+// ReleaseOAuthOtherInfo 释放OAuthOtherInfo
+func ReleaseOAuthOtherInfo(v *OAuthOtherInfo) {
+	v.AccessToken = ""
+	v.Nick = ""
+	v.AvatarUrl = ""
+	v.Id = ""
+	v.OpenId = ""
+	v.UnionId = ""
+	v.PlatformType = 0
+	poolOAuthOtherInfo.Put(v)
 }

@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // TopReceiverDo 结构体
 type TopReceiverDo struct {
 	// 收货人全名
@@ -20,4 +24,29 @@ type TopReceiverDo struct {
 	District string `json:"district,omitempty" xml:"district,omitempty"`
 	// 收件人ID (Open Addressee ID)，长度在128个字符之内。
 	Oaid string `json:"oaid,omitempty" xml:"oaid,omitempty"`
+}
+
+var poolTopReceiverDo = sync.Pool{
+	New: func() any {
+		return new(TopReceiverDo)
+	},
+}
+
+// GetTopReceiverDo() 从对象池中获取TopReceiverDo
+func GetTopReceiverDo() *TopReceiverDo {
+	return poolTopReceiverDo.Get().(*TopReceiverDo)
+}
+
+// ReleaseTopReceiverDo 释放TopReceiverDo
+func ReleaseTopReceiverDo(v *TopReceiverDo) {
+	v.Name = ""
+	v.Address = ""
+	v.Zip = ""
+	v.Phone = ""
+	v.MobilePhone = ""
+	v.State = ""
+	v.City = ""
+	v.District = ""
+	v.Oaid = ""
+	poolTopReceiverDo.Put(v)
 }

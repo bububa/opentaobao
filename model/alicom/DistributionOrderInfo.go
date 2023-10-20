@@ -1,5 +1,9 @@
 package alicom
 
+import (
+	"sync"
+)
+
 // DistributionOrderInfo 结构体
 type DistributionOrderInfo struct {
 	// 业务类型
@@ -84,4 +88,61 @@ type DistributionOrderInfo struct {
 	PhoneNoMinConsume int64 `json:"phone_no_min_consume,omitempty" xml:"phone_no_min_consume,omitempty"`
 	// ledgerAmount
 	LedgerAmount int64 `json:"ledger_amount,omitempty" xml:"ledger_amount,omitempty"`
+}
+
+var poolDistributionOrderInfo = sync.Pool{
+	New: func() any {
+		return new(DistributionOrderInfo)
+	},
+}
+
+// GetDistributionOrderInfo() 从对象池中获取DistributionOrderInfo
+func GetDistributionOrderInfo() *DistributionOrderInfo {
+	return poolDistributionOrderInfo.Get().(*DistributionOrderInfo)
+}
+
+// ReleaseDistributionOrderInfo 释放DistributionOrderInfo
+func ReleaseDistributionOrderInfo(v *DistributionOrderInfo) {
+	v.BizType = ""
+	v.BuyerMessage = ""
+	v.BuyerName = ""
+	v.CityName = ""
+	v.DistributorNick = ""
+	v.ExpressCode = ""
+	v.ExpressName = ""
+	v.ExpressNumber = ""
+	v.IspName = ""
+	v.ItemSerialNo = ""
+	v.ItemTitle = ""
+	v.OrderStatus = ""
+	v.OutPackageId = ""
+	v.PhoneNo = ""
+	v.PlanGroupName = ""
+	v.PlanInfo = ""
+	v.ProductSerialNo = ""
+	v.ProvinceName = ""
+	v.Reason = ""
+	v.Remarks = ""
+	v.Status = ""
+	v.SupplierName = ""
+	v.TbOrderCreateTime = ""
+	v.TbOrderNo = ""
+	v.TbOrderPayTime = ""
+	v.OutOrderNo = ""
+	v.PayOrderNo = ""
+	v.PlanName = ""
+	v.ItemProps = ""
+	v.BiometricSeq = ""
+	v.IdCardInfo = nil
+	v.ItemId = 0
+	v.LogisticsFlag = 0
+	v.LogisticsInfo = nil
+	v.LogisticsStatus = 0
+	v.PlanGroupId = 0
+	v.PlanId = 0
+	v.TbOrderPrice = 0
+	v.BuyQuantity = 0
+	v.PhoneNoMinConsume = 0
+	v.LedgerAmount = 0
+	poolDistributionOrderInfo.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // yunos.tvpubadmin.data.query
 //
 // 用于华数查询魔盒上的一些用户统计数据
-func YunosTvpubadminDataQuery(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDataQueryAPIRequest, session string) (*tvupadmin.YunosTvpubadminDataQueryAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminDataQueryAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func YunosTvpubadminDataQuery(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminDataQueryAPIRequest, resp *tvupadmin.YunosTvpubadminDataQueryAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

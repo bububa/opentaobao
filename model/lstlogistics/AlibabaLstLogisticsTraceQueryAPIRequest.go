@@ -2,6 +2,7 @@ package lstlogistics
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaLstLogisticsTraceQueryAPIRequest struct {
 // NewAlibabaLstLogisticsTraceQueryRequest 初始化AlibabaLstLogisticsTraceQueryAPIRequest对象
 func NewAlibabaLstLogisticsTraceQueryRequest() *AlibabaLstLogisticsTraceQueryAPIRequest {
 	return &AlibabaLstLogisticsTraceQueryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaLstLogisticsTraceQueryAPIRequest) Reset() {
+	r._query = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaLstLogisticsTraceQueryAPIRequest) SetQuery(_query *LstLogisticsT
 // GetQuery Query Getter
 func (r AlibabaLstLogisticsTraceQueryAPIRequest) GetQuery() *LstLogisticsTraceQuery {
 	return r._query
+}
+
+var poolAlibabaLstLogisticsTraceQueryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaLstLogisticsTraceQueryRequest()
+	},
+}
+
+// GetAlibabaLstLogisticsTraceQueryRequest 从 sync.Pool 获取 AlibabaLstLogisticsTraceQueryAPIRequest
+func GetAlibabaLstLogisticsTraceQueryAPIRequest() *AlibabaLstLogisticsTraceQueryAPIRequest {
+	return poolAlibabaLstLogisticsTraceQueryAPIRequest.Get().(*AlibabaLstLogisticsTraceQueryAPIRequest)
+}
+
+// ReleaseAlibabaLstLogisticsTraceQueryAPIRequest 将 AlibabaLstLogisticsTraceQueryAPIRequest 放入 sync.Pool
+func ReleaseAlibabaLstLogisticsTraceQueryAPIRequest(v *AlibabaLstLogisticsTraceQueryAPIRequest) {
+	v.Reset()
+	poolAlibabaLstLogisticsTraceQueryAPIRequest.Put(v)
 }

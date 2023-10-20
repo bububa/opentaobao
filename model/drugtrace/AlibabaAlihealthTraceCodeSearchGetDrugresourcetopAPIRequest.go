@@ -2,6 +2,7 @@ package drugtrace
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -29,8 +30,19 @@ type AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest struct {
 // NewAlibabaAlihealthTraceCodeSearchGetDrugresourcetopRequest 初始化AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest对象
 func NewAlibabaAlihealthTraceCodeSearchGetDrugresourcetopRequest() *AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest {
 	return &AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(6),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest) Reset() {
+	r._code = ""
+	r._token = ""
+	r._queryAppName = ""
+	r._clientId = ""
+	r._deviceUtdid = ""
+	r._tbUserId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -126,4 +138,21 @@ func (r *AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest) SetTbUserI
 // GetTbUserId TbUserId Getter
 func (r AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest) GetTbUserId() int64 {
 	return r._tbUserId
+}
+
+var poolAlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthTraceCodeSearchGetDrugresourcetopRequest()
+	},
+}
+
+// GetAlibabaAlihealthTraceCodeSearchGetDrugresourcetopRequest 从 sync.Pool 获取 AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest
+func GetAlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest() *AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest {
+	return poolAlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest.Get().(*AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest 将 AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest(v *AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest.Put(v)
 }

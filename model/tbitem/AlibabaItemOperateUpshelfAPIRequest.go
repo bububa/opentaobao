@@ -2,6 +2,7 @@ package tbitem
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaItemOperateUpshelfAPIRequest struct {
 // NewAlibabaItemOperateUpshelfRequest 初始化AlibabaItemOperateUpshelfAPIRequest对象
 func NewAlibabaItemOperateUpshelfRequest() *AlibabaItemOperateUpshelfAPIRequest {
 	return &AlibabaItemOperateUpshelfAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaItemOperateUpshelfAPIRequest) Reset() {
+	r._itemId = 0
+	r._quantity = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaItemOperateUpshelfAPIRequest) SetQuantity(_quantity int64) error
 // GetQuantity Quantity Getter
 func (r AlibabaItemOperateUpshelfAPIRequest) GetQuantity() int64 {
 	return r._quantity
+}
+
+var poolAlibabaItemOperateUpshelfAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaItemOperateUpshelfRequest()
+	},
+}
+
+// GetAlibabaItemOperateUpshelfRequest 从 sync.Pool 获取 AlibabaItemOperateUpshelfAPIRequest
+func GetAlibabaItemOperateUpshelfAPIRequest() *AlibabaItemOperateUpshelfAPIRequest {
+	return poolAlibabaItemOperateUpshelfAPIRequest.Get().(*AlibabaItemOperateUpshelfAPIRequest)
+}
+
+// ReleaseAlibabaItemOperateUpshelfAPIRequest 将 AlibabaItemOperateUpshelfAPIRequest 放入 sync.Pool
+func ReleaseAlibabaItemOperateUpshelfAPIRequest(v *AlibabaItemOperateUpshelfAPIRequest) {
+	v.Reset()
+	poolAlibabaItemOperateUpshelfAPIRequest.Put(v)
 }

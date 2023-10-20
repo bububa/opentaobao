@@ -1,5 +1,9 @@
 package btrip
 
+import (
+	"sync"
+)
+
 // TimeNodeDo 结构体
 type TimeNodeDo struct {
 	// 标题
@@ -14,4 +18,26 @@ type TimeNodeDo struct {
 	Cost int64 `json:"cost,omitempty" xml:"cost,omitempty"`
 	// 费率
 	CostPercent int64 `json:"cost_percent,omitempty" xml:"cost_percent,omitempty"`
+}
+
+var poolTimeNodeDo = sync.Pool{
+	New: func() any {
+		return new(TimeNodeDo)
+	},
+}
+
+// GetTimeNodeDo() 从对象池中获取TimeNodeDo
+func GetTimeNodeDo() *TimeNodeDo {
+	return poolTimeNodeDo.Get().(*TimeNodeDo)
+}
+
+// ReleaseTimeNodeDo 释放TimeNodeDo
+func ReleaseTimeNodeDo(v *TimeNodeDo) {
+	v.Title = ""
+	v.Content = ""
+	v.TimeType = ""
+	v.TimeStamp = 0
+	v.Cost = 0
+	v.CostPercent = 0
+	poolTimeNodeDo.Put(v)
 }

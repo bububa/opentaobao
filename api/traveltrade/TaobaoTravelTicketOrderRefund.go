@@ -9,11 +9,6 @@ import (
 // taobao.travel.ticket.order.refund
 //
 // 门票系统商通过TOP接口通知飞猪门票是否退票成功，以及退票数量。
-func TaobaoTravelTicketOrderRefund(clt *core.SDKClient, req *traveltrade.TaobaoTravelTicketOrderRefundAPIRequest, session string) (*traveltrade.TaobaoTravelTicketOrderRefundAPIResponse, error) {
-	var resp traveltrade.TaobaoTravelTicketOrderRefundAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoTravelTicketOrderRefund(clt *core.SDKClient, req *traveltrade.TaobaoTravelTicketOrderRefundAPIRequest, resp *traveltrade.TaobaoTravelTicketOrderRefundAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

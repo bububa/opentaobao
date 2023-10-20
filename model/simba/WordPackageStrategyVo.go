@@ -1,5 +1,9 @@
 package simba
 
+import (
+	"sync"
+)
+
 // WordPackageStrategyVo 结构体
 type WordPackageStrategyVo struct {
 	// 词包策略名称
@@ -16,4 +20,27 @@ type WordPackageStrategyVo struct {
 	AdgroupId int64 `json:"adgroup_id,omitempty" xml:"adgroup_id,omitempty"`
 	// 计划id,计划已经存在场景必填,eg:添加主体、编辑计划状态等场景
 	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
+}
+
+var poolWordPackageStrategyVo = sync.Pool{
+	New: func() any {
+		return new(WordPackageStrategyVo)
+	},
+}
+
+// GetWordPackageStrategyVo() 从对象池中获取WordPackageStrategyVo
+func GetWordPackageStrategyVo() *WordPackageStrategyVo {
+	return poolWordPackageStrategyVo.Get().(*WordPackageStrategyVo)
+}
+
+// ReleaseWordPackageStrategyVo 释放WordPackageStrategyVo
+func ReleaseWordPackageStrategyVo(v *WordPackageStrategyVo) {
+	v.StrategyName = ""
+	v.BidPrice = ""
+	v.StrategyId = 0
+	v.WordPackageType = 0
+	v.OnlineStatus = 0
+	v.AdgroupId = 0
+	v.CampaignId = 0
+	poolWordPackageStrategyVo.Put(v)
 }

@@ -2,6 +2,7 @@ package shop
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoShopSellerGetAPIRequest struct {
 // NewTaobaoShopSellerGetRequest 初始化TaobaoShopSellerGetAPIRequest对象
 func NewTaobaoShopSellerGetRequest() *TaobaoShopSellerGetAPIRequest {
 	return &TaobaoShopSellerGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoShopSellerGetAPIRequest) Reset() {
+	r._fields = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoShopSellerGetAPIRequest) SetFields(_fields string) error {
 // GetFields Fields Getter
 func (r TaobaoShopSellerGetAPIRequest) GetFields() string {
 	return r._fields
+}
+
+var poolTaobaoShopSellerGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoShopSellerGetRequest()
+	},
+}
+
+// GetTaobaoShopSellerGetRequest 从 sync.Pool 获取 TaobaoShopSellerGetAPIRequest
+func GetTaobaoShopSellerGetAPIRequest() *TaobaoShopSellerGetAPIRequest {
+	return poolTaobaoShopSellerGetAPIRequest.Get().(*TaobaoShopSellerGetAPIRequest)
+}
+
+// ReleaseTaobaoShopSellerGetAPIRequest 将 TaobaoShopSellerGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoShopSellerGetAPIRequest(v *TaobaoShopSellerGetAPIRequest) {
+	v.Reset()
+	poolTaobaoShopSellerGetAPIRequest.Put(v)
 }

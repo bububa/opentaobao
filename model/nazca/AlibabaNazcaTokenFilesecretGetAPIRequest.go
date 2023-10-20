@@ -2,6 +2,7 @@ package nazca
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type AlibabaNazcaTokenFilesecretGetAPIRequest struct {
 // NewAlibabaNazcaTokenFilesecretGetRequest 初始化AlibabaNazcaTokenFilesecretGetAPIRequest对象
 func NewAlibabaNazcaTokenFilesecretGetRequest() *AlibabaNazcaTokenFilesecretGetAPIRequest {
 	return &AlibabaNazcaTokenFilesecretGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaNazcaTokenFilesecretGetAPIRequest) Reset() {
+	r._platformUserId = ""
+	r._contractNum = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *AlibabaNazcaTokenFilesecretGetAPIRequest) SetContractNum(_contractNum s
 // GetContractNum ContractNum Getter
 func (r AlibabaNazcaTokenFilesecretGetAPIRequest) GetContractNum() string {
 	return r._contractNum
+}
+
+var poolAlibabaNazcaTokenFilesecretGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaNazcaTokenFilesecretGetRequest()
+	},
+}
+
+// GetAlibabaNazcaTokenFilesecretGetRequest 从 sync.Pool 获取 AlibabaNazcaTokenFilesecretGetAPIRequest
+func GetAlibabaNazcaTokenFilesecretGetAPIRequest() *AlibabaNazcaTokenFilesecretGetAPIRequest {
+	return poolAlibabaNazcaTokenFilesecretGetAPIRequest.Get().(*AlibabaNazcaTokenFilesecretGetAPIRequest)
+}
+
+// ReleaseAlibabaNazcaTokenFilesecretGetAPIRequest 将 AlibabaNazcaTokenFilesecretGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaNazcaTokenFilesecretGetAPIRequest(v *AlibabaNazcaTokenFilesecretGetAPIRequest) {
+	v.Reset()
+	poolAlibabaNazcaTokenFilesecretGetAPIRequest.Put(v)
 }

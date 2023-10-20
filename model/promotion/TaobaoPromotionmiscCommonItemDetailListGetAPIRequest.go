@@ -2,6 +2,7 @@ package promotion
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoPromotionmiscCommonItemDetailListGetAPIRequest struct {
 // NewTaobaoPromotionmiscCommonItemDetailListGetRequest 初始化TaobaoPromotionmiscCommonItemDetailListGetAPIRequest对象
 func NewTaobaoPromotionmiscCommonItemDetailListGetRequest() *TaobaoPromotionmiscCommonItemDetailListGetAPIRequest {
 	return &TaobaoPromotionmiscCommonItemDetailListGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoPromotionmiscCommonItemDetailListGetAPIRequest) Reset() {
+	r._activityId = 0
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoPromotionmiscCommonItemDetailListGetAPIRequest) SetPageSize(_page
 // GetPageSize PageSize Getter
 func (r TaobaoPromotionmiscCommonItemDetailListGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoPromotionmiscCommonItemDetailListGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoPromotionmiscCommonItemDetailListGetRequest()
+	},
+}
+
+// GetTaobaoPromotionmiscCommonItemDetailListGetRequest 从 sync.Pool 获取 TaobaoPromotionmiscCommonItemDetailListGetAPIRequest
+func GetTaobaoPromotionmiscCommonItemDetailListGetAPIRequest() *TaobaoPromotionmiscCommonItemDetailListGetAPIRequest {
+	return poolTaobaoPromotionmiscCommonItemDetailListGetAPIRequest.Get().(*TaobaoPromotionmiscCommonItemDetailListGetAPIRequest)
+}
+
+// ReleaseTaobaoPromotionmiscCommonItemDetailListGetAPIRequest 将 TaobaoPromotionmiscCommonItemDetailListGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoPromotionmiscCommonItemDetailListGetAPIRequest(v *TaobaoPromotionmiscCommonItemDetailListGetAPIRequest) {
+	v.Reset()
+	poolTaobaoPromotionmiscCommonItemDetailListGetAPIRequest.Put(v)
 }

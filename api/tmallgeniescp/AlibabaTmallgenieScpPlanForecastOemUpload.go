@@ -9,11 +9,6 @@ import (
 // alibaba.tmallgenie.scp.plan.forecast.oem.upload
 //
 // 供应商预测（OEM-成品）回传接口
-func AlibabaTmallgenieScpPlanForecastOemUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanForecastOemUploadAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanForecastOemUploadAPIResponse, error) {
-	var resp tmallgeniescp.AlibabaTmallgenieScpPlanForecastOemUploadAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTmallgenieScpPlanForecastOemUpload(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanForecastOemUploadAPIRequest, resp *tmallgeniescp.AlibabaTmallgenieScpPlanForecastOemUploadAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ReceiptPayChannelDo 结构体
 type ReceiptPayChannelDo struct {
 	// 付款类型， 现金、支票、银行卡、支付宝、微信
@@ -18,4 +22,28 @@ type ReceiptPayChannelDo struct {
 	Index int64 `json:"index,omitempty" xml:"index,omitempty"`
 	// 付款金额
 	PayAmount int64 `json:"pay_amount,omitempty" xml:"pay_amount,omitempty"`
+}
+
+var poolReceiptPayChannelDo = sync.Pool{
+	New: func() any {
+		return new(ReceiptPayChannelDo)
+	},
+}
+
+// GetReceiptPayChannelDo() 从对象池中获取ReceiptPayChannelDo
+func GetReceiptPayChannelDo() *ReceiptPayChannelDo {
+	return poolReceiptPayChannelDo.Get().(*ReceiptPayChannelDo)
+}
+
+// ReleaseReceiptPayChannelDo 释放ReceiptPayChannelDo
+func ReleaseReceiptPayChannelDo(v *ReceiptPayChannelDo) {
+	v.PayType = ""
+	v.PosNo = ""
+	v.SerialNum = ""
+	v.StoreId = ""
+	v.ChannelOrderId = ""
+	v.PayCode = ""
+	v.Index = 0
+	v.PayAmount = 0
+	poolReceiptPayChannelDo.Put(v)
 }

@@ -1,7 +1,11 @@
 package xhotelitem
 
-// XhotelBaseInfo 结构体
-type XhotelBaseInfo struct {
+import (
+	"sync"
+)
+
+// XHotelBaseInfo 结构体
+type XHotelBaseInfo struct {
 	// 房型基础信息
 	RoomTypeList []RoomType `json:"room_type_list,omitempty" xml:"room_type_list>room_type,omitempty"`
 	// 房价基础信息(需要新增rp时绑定酒店)
@@ -16,4 +20,27 @@ type XhotelBaseInfo struct {
 	Hotel *Hotel `json:"hotel,omitempty" xml:"hotel,omitempty"`
 	// 酒店房型可售详情查询总数
 	TotalHotelDynamicInfo int64 `json:"total_hotel_dynamic_info,omitempty" xml:"total_hotel_dynamic_info,omitempty"`
+}
+
+var poolXHotelBaseInfo = sync.Pool{
+	New: func() any {
+		return new(XHotelBaseInfo)
+	},
+}
+
+// GetXHotelBaseInfo() 从对象池中获取XHotelBaseInfo
+func GetXHotelBaseInfo() *XHotelBaseInfo {
+	return poolXHotelBaseInfo.Get().(*XHotelBaseInfo)
+}
+
+// ReleaseXHotelBaseInfo 释放XHotelBaseInfo
+func ReleaseXHotelBaseInfo(v *XHotelBaseInfo) {
+	v.RoomTypeList = v.RoomTypeList[:0]
+	v.RatePlanList = v.RatePlanList[:0]
+	v.SRoomTypeList = v.SRoomTypeList[:0]
+	v.HotelDynamicInfoList = v.HotelDynamicInfoList[:0]
+	v.TagJson = ""
+	v.Hotel = nil
+	v.TotalHotelDynamicInfo = 0
+	poolXHotelBaseInfo.Put(v)
 }

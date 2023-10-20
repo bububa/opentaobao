@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.booking.reserve.checkin
 //
 // 消费医疗统一预约平台，ISV 确认到店
-func AlibabaAlihealthBookingReserveCheckin(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthBookingReserveCheckinAPIRequest, session string) (*alihealth2.AlibabaAlihealthBookingReserveCheckinAPIResponse, error) {
-	var resp alihealth2.AlibabaAlihealthBookingReserveCheckinAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthBookingReserveCheckin(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthBookingReserveCheckinAPIRequest, resp *alihealth2.AlibabaAlihealthBookingReserveCheckinAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

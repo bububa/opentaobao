@@ -9,11 +9,6 @@ import (
 // alibaba.security.jaq.resource.fetch
 //
 // 在前向化验证流程中提供资源文件服务
-func AlibabaSecurityJaqResourceFetch(clt *core.SDKClient, req *security.AlibabaSecurityJaqResourceFetchAPIRequest, session string) (*security.AlibabaSecurityJaqResourceFetchAPIResponse, error) {
-	var resp security.AlibabaSecurityJaqResourceFetchAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaSecurityJaqResourceFetch(clt *core.SDKClient, req *security.AlibabaSecurityJaqResourceFetchAPIRequest, resp *security.AlibabaSecurityJaqResourceFetchAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.existinghome.rent.trade.bind.item
 //
 // 交易绑定商品
-func AlibabaAlihouseExistinghomeRentTradeBindItem(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeRentTradeBindItemAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomeRentTradeBindItemAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseExistinghomeRentTradeBindItemAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseExistinghomeRentTradeBindItem(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeRentTradeBindItemAPIRequest, resp *alihouse.AlibabaAlihouseExistinghomeRentTradeBindItemAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

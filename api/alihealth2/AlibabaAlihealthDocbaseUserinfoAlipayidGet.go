@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.docbase.userinfo.alipayid.get
 //
 // 根据健康ID获取支付宝ID
-func AlibabaAlihealthDocbaseUserinfoAlipayidGet(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest, session string) (*alihealth2.AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIResponse, error) {
-	var resp alihealth2.AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDocbaseUserinfoAlipayidGet(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest, resp *alihealth2.AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

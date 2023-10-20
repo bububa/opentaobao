@@ -2,6 +2,7 @@ package simba
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoSimbaKeywordFindbyadgroupidAPIRequest struct {
 // NewTaobaoSimbaKeywordFindbyadgroupidRequest 初始化TaobaoSimbaKeywordFindbyadgroupidAPIRequest对象
 func NewTaobaoSimbaKeywordFindbyadgroupidRequest() *TaobaoSimbaKeywordFindbyadgroupidAPIRequest {
 	return &TaobaoSimbaKeywordFindbyadgroupidAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoSimbaKeywordFindbyadgroupidAPIRequest) Reset() {
+	r._adgroupId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoSimbaKeywordFindbyadgroupidAPIRequest) SetAdgroupId(_adgroupId in
 // GetAdgroupId AdgroupId Getter
 func (r TaobaoSimbaKeywordFindbyadgroupidAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
+}
+
+var poolTaobaoSimbaKeywordFindbyadgroupidAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoSimbaKeywordFindbyadgroupidRequest()
+	},
+}
+
+// GetTaobaoSimbaKeywordFindbyadgroupidRequest 从 sync.Pool 获取 TaobaoSimbaKeywordFindbyadgroupidAPIRequest
+func GetTaobaoSimbaKeywordFindbyadgroupidAPIRequest() *TaobaoSimbaKeywordFindbyadgroupidAPIRequest {
+	return poolTaobaoSimbaKeywordFindbyadgroupidAPIRequest.Get().(*TaobaoSimbaKeywordFindbyadgroupidAPIRequest)
+}
+
+// ReleaseTaobaoSimbaKeywordFindbyadgroupidAPIRequest 将 TaobaoSimbaKeywordFindbyadgroupidAPIRequest 放入 sync.Pool
+func ReleaseTaobaoSimbaKeywordFindbyadgroupidAPIRequest(v *TaobaoSimbaKeywordFindbyadgroupidAPIRequest) {
+	v.Reset()
+	poolTaobaoSimbaKeywordFindbyadgroupidAPIRequest.Put(v)
 }

@@ -9,11 +9,6 @@ import (
 // alibaba.tmallgenie.scp.plan.material.purchase.attr.get
 //
 // 物料的采购属性查询
-func AlibabaTmallgenieScpPlanMaterialPurchaseAttrGet(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetAPIResponse, error) {
-	var resp tmallgeniescp.AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTmallgenieScpPlanMaterialPurchaseAttrGet(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetAPIRequest, resp *tmallgeniescp.AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

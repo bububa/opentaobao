@@ -2,6 +2,7 @@ package ieagency
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripTripvpAgentOrderSearchAPIResponse struct {
 	AlitripTripvpAgentOrderSearchAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripTripvpAgentOrderSearchAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripTripvpAgentOrderSearchAPIResponseModel).Reset()
+}
+
 // AlitripTripvpAgentOrderSearchAPIResponseModel is 【国际机票】查询辅营订单列表 成功返回结果
 type AlitripTripvpAgentOrderSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_tripvp_agent_order_search_response"`
@@ -26,4 +33,29 @@ type AlitripTripvpAgentOrderSearchAPIResponseModel struct {
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
 	// 是否有下一页
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripTripvpAgentOrderSearchAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.OrderVos = m.OrderVos[:0]
+	m.CurrentPage = 0
+	m.HasNext = false
+}
+
+var poolAlitripTripvpAgentOrderSearchAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripTripvpAgentOrderSearchAPIResponse)
+	},
+}
+
+// GetAlitripTripvpAgentOrderSearchAPIResponse 从 sync.Pool 获取 AlitripTripvpAgentOrderSearchAPIResponse
+func GetAlitripTripvpAgentOrderSearchAPIResponse() *AlitripTripvpAgentOrderSearchAPIResponse {
+	return poolAlitripTripvpAgentOrderSearchAPIResponse.Get().(*AlitripTripvpAgentOrderSearchAPIResponse)
+}
+
+// ReleaseAlitripTripvpAgentOrderSearchAPIResponse 将 AlitripTripvpAgentOrderSearchAPIResponse 保存到 sync.Pool
+func ReleaseAlitripTripvpAgentOrderSearchAPIResponse(v *AlitripTripvpAgentOrderSearchAPIResponse) {
+	v.Reset()
+	poolAlitripTripvpAgentOrderSearchAPIResponse.Put(v)
 }

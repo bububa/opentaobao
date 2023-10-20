@@ -9,11 +9,6 @@ import (
 // taobao.openmall.refund.get
 //
 // 获取OpenMall退款单详情
-func TaobaoOpenmallRefundGet(clt *core.SDKClient, req *openmall.TaobaoOpenmallRefundGetAPIRequest, session string) (*openmall.TaobaoOpenmallRefundGetAPIResponse, error) {
-	var resp openmall.TaobaoOpenmallRefundGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoOpenmallRefundGet(clt *core.SDKClient, req *openmall.TaobaoOpenmallRefundGetAPIRequest, resp *openmall.TaobaoOpenmallRefundGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -33,8 +34,21 @@ type AlibabaAlihealthTracecodesellerBillUploadAPIRequest struct {
 // NewAlibabaAlihealthTracecodesellerBillUploadRequest 初始化AlibabaAlihealthTracecodesellerBillUploadAPIRequest对象
 func NewAlibabaAlihealthTracecodesellerBillUploadRequest() *AlibabaAlihealthTracecodesellerBillUploadAPIRequest {
 	return &AlibabaAlihealthTracecodesellerBillUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(8),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthTracecodesellerBillUploadAPIRequest) Reset() {
+	r._skeyCode = ""
+	r._billCode = ""
+	r._type = ""
+	r._time = ""
+	r._codeInfo = ""
+	r._entInfoId = 0
+	r._warehouseId = 0
+	r._entMerchantId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -156,4 +170,21 @@ func (r *AlibabaAlihealthTracecodesellerBillUploadAPIRequest) SetEntMerchantId(_
 // GetEntMerchantId EntMerchantId Getter
 func (r AlibabaAlihealthTracecodesellerBillUploadAPIRequest) GetEntMerchantId() int64 {
 	return r._entMerchantId
+}
+
+var poolAlibabaAlihealthTracecodesellerBillUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthTracecodesellerBillUploadRequest()
+	},
+}
+
+// GetAlibabaAlihealthTracecodesellerBillUploadRequest 从 sync.Pool 获取 AlibabaAlihealthTracecodesellerBillUploadAPIRequest
+func GetAlibabaAlihealthTracecodesellerBillUploadAPIRequest() *AlibabaAlihealthTracecodesellerBillUploadAPIRequest {
+	return poolAlibabaAlihealthTracecodesellerBillUploadAPIRequest.Get().(*AlibabaAlihealthTracecodesellerBillUploadAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthTracecodesellerBillUploadAPIRequest 将 AlibabaAlihealthTracecodesellerBillUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthTracecodesellerBillUploadAPIRequest(v *AlibabaAlihealthTracecodesellerBillUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthTracecodesellerBillUploadAPIRequest.Put(v)
 }

@@ -1,5 +1,9 @@
 package tmallchannel
 
+import (
+	"sync"
+)
+
 // ProductTopDto 结构体
 type ProductTopDto struct {
 	// sku列表
@@ -24,4 +28,31 @@ type ProductTopDto struct {
 	SupplierId int64 `json:"supplier_id,omitempty" xml:"supplier_id,omitempty"`
 	// 类目Id
 	CategoryId int64 `json:"category_id,omitempty" xml:"category_id,omitempty"`
+}
+
+var poolProductTopDto = sync.Pool{
+	New: func() any {
+		return new(ProductTopDto)
+	},
+}
+
+// GetProductTopDto() 从对象池中获取ProductTopDto
+func GetProductTopDto() *ProductTopDto {
+	return poolProductTopDto.Get().(*ProductTopDto)
+}
+
+// ReleaseProductTopDto 释放ProductTopDto
+func ReleaseProductTopDto(v *ProductTopDto) {
+	v.SkuList = v.SkuList[:0]
+	v.ProductNumber = ""
+	v.DescPath = ""
+	v.Title = ""
+	v.ProductLineId = 0
+	v.StandardPrice = 0
+	v.ProductId = 0
+	v.ScItemId = 0
+	v.SpuId = 0
+	v.SupplierId = 0
+	v.CategoryId = 0
+	poolProductTopDto.Put(v)
 }

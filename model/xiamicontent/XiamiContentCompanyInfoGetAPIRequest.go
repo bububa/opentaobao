@@ -2,6 +2,7 @@ package xiamicontent
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type XiamiContentCompanyInfoGetAPIRequest struct {
 // NewXiamiContentCompanyInfoGetRequest 初始化XiamiContentCompanyInfoGetAPIRequest对象
 func NewXiamiContentCompanyInfoGetRequest() *XiamiContentCompanyInfoGetAPIRequest {
 	return &XiamiContentCompanyInfoGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *XiamiContentCompanyInfoGetAPIRequest) Reset() {
+	r._companyIds = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *XiamiContentCompanyInfoGetAPIRequest) SetCompanyIds(_companyIds int64) 
 // GetCompanyIds CompanyIds Getter
 func (r XiamiContentCompanyInfoGetAPIRequest) GetCompanyIds() int64 {
 	return r._companyIds
+}
+
+var poolXiamiContentCompanyInfoGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewXiamiContentCompanyInfoGetRequest()
+	},
+}
+
+// GetXiamiContentCompanyInfoGetRequest 从 sync.Pool 获取 XiamiContentCompanyInfoGetAPIRequest
+func GetXiamiContentCompanyInfoGetAPIRequest() *XiamiContentCompanyInfoGetAPIRequest {
+	return poolXiamiContentCompanyInfoGetAPIRequest.Get().(*XiamiContentCompanyInfoGetAPIRequest)
+}
+
+// ReleaseXiamiContentCompanyInfoGetAPIRequest 将 XiamiContentCompanyInfoGetAPIRequest 放入 sync.Pool
+func ReleaseXiamiContentCompanyInfoGetAPIRequest(v *XiamiContentCompanyInfoGetAPIRequest) {
+	v.Reset()
+	poolXiamiContentCompanyInfoGetAPIRequest.Put(v)
 }

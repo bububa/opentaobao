@@ -9,11 +9,6 @@ import (
 // alibaba.ascp.uop.supplier.reverseorder.instorage.result
 //
 // ERP回告销退入库单到仓信息回告
-func AlibabaAscpUopSupplierReverseorderInstorageResult(clt *core.SDKClient, req *ascpchannel.AlibabaAscpUopSupplierReverseorderInstorageResultAPIRequest, session string) (*ascpchannel.AlibabaAscpUopSupplierReverseorderInstorageResultAPIResponse, error) {
-	var resp ascpchannel.AlibabaAscpUopSupplierReverseorderInstorageResultAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAscpUopSupplierReverseorderInstorageResult(clt *core.SDKClient, req *ascpchannel.AlibabaAscpUopSupplierReverseorderInstorageResultAPIRequest, resp *ascpchannel.AlibabaAscpUopSupplierReverseorderInstorageResultAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package gameact
 
+import (
+	"sync"
+)
+
 // AwardVo 结构体
 type AwardVo struct {
 	// 活动名称
@@ -32,4 +36,35 @@ type AwardVo struct {
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
 	// 分组编码
 	GroupCode int64 `json:"group_code,omitempty" xml:"group_code,omitempty"`
+}
+
+var poolAwardVo = sync.Pool{
+	New: func() any {
+		return new(AwardVo)
+	},
+}
+
+// GetAwardVo() 从对象池中获取AwardVo
+func GetAwardVo() *AwardVo {
+	return poolAwardVo.Get().(*AwardVo)
+}
+
+// ReleaseAwardVo 释放AwardVo
+func ReleaseAwardVo(v *AwardVo) {
+	v.Name = ""
+	v.TypeName = ""
+	v.Unit = ""
+	v.GroupDesc = ""
+	v.SimpleDesc = ""
+	v.FullDesc = ""
+	v.HyperlinkDesc = ""
+	v.HyperlinkUrl = ""
+	v.SerialNumber = ""
+	v.AwardId = 0
+	v.ActivityId = 0
+	v.Type = 0
+	v.Amount = 0
+	v.Price = 0
+	v.GroupCode = 0
+	poolAwardVo.Put(v)
 }

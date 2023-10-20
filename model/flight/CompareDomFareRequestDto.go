@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // CompareDomFareRequestDto 结构体
 type CompareDomFareRequestDto struct {
 	// 航空公司
@@ -22,4 +26,30 @@ type CompareDomFareRequestDto struct {
 	PolicyDeployStatus int64 `json:"policy_deploy_status,omitempty" xml:"policy_deploy_status,omitempty"`
 	// 店铺id
 	AgentId int64 `json:"agent_id,omitempty" xml:"agent_id,omitempty"`
+}
+
+var poolCompareDomFareRequestDto = sync.Pool{
+	New: func() any {
+		return new(CompareDomFareRequestDto)
+	},
+}
+
+// GetCompareDomFareRequestDto() 从对象池中获取CompareDomFareRequestDto
+func GetCompareDomFareRequestDto() *CompareDomFareRequestDto {
+	return poolCompareDomFareRequestDto.Get().(*CompareDomFareRequestDto)
+}
+
+// ReleaseCompareDomFareRequestDto 释放CompareDomFareRequestDto
+func ReleaseCompareDomFareRequestDto(v *CompareDomFareRequestDto) {
+	v.AirlineCodes = v.AirlineCodes[:0]
+	v.ProductTypes = v.ProductTypes[:0]
+	v.OdInfos = v.OdInfos[:0]
+	v.SaleModeCodes = v.SaleModeCodes[:0]
+	v.FlightNoStr = ""
+	v.CabinCodeStr = ""
+	v.TripType = 0
+	v.SupportCodeShare = 0
+	v.PolicyDeployStatus = 0
+	v.AgentId = 0
+	poolCompareDomFareRequestDto.Put(v)
 }

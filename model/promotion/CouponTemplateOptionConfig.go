@@ -1,5 +1,9 @@
 package promotion
 
+import (
+	"sync"
+)
+
 // CouponTemplateOptionConfig 结构体
 type CouponTemplateOptionConfig struct {
 	// 外部优惠券模板id
@@ -16,4 +20,27 @@ type CouponTemplateOptionConfig struct {
 	PurchaseId int64 `json:"purchase_id,omitempty" xml:"purchase_id,omitempty"`
 	// 抵用券是否可贬值使用
 	Devalue bool `json:"devalue,omitempty" xml:"devalue,omitempty"`
+}
+
+var poolCouponTemplateOptionConfig = sync.Pool{
+	New: func() any {
+		return new(CouponTemplateOptionConfig)
+	},
+}
+
+// GetCouponTemplateOptionConfig() 从对象池中获取CouponTemplateOptionConfig
+func GetCouponTemplateOptionConfig() *CouponTemplateOptionConfig {
+	return poolCouponTemplateOptionConfig.Get().(*CouponTemplateOptionConfig)
+}
+
+// ReleaseCouponTemplateOptionConfig 释放CouponTemplateOptionConfig
+func ReleaseCouponTemplateOptionConfig(v *CouponTemplateOptionConfig) {
+	v.OutCouponTemplateId = ""
+	v.OutCouponType = ""
+	v.LogoUrl = ""
+	v.PictureUrl = ""
+	v.ContractInstanceId = 0
+	v.PurchaseId = 0
+	v.Devalue = false
+	poolCouponTemplateOptionConfig.Put(v)
 }

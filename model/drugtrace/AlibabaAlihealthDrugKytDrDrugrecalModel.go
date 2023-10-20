@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // AlibabaAlihealthDrugKytDrDrugrecalModel 结构体
 type AlibabaAlihealthDrugKytDrDrugrecalModel struct {
 	// 药品剂型
@@ -38,4 +42,38 @@ type AlibabaAlihealthDrugKytDrDrugrecalModel struct {
 	RecallStatus string `json:"recall_status,omitempty" xml:"recall_status,omitempty"`
 	// 召回级别(1一级2二级3三级)
 	RecallLevel string `json:"recall_level,omitempty" xml:"recall_level,omitempty"`
+}
+
+var poolAlibabaAlihealthDrugKytDrDrugrecalModel = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthDrugKytDrDrugrecalModel)
+	},
+}
+
+// GetAlibabaAlihealthDrugKytDrDrugrecalModel() 从对象池中获取AlibabaAlihealthDrugKytDrDrugrecalModel
+func GetAlibabaAlihealthDrugKytDrDrugrecalModel() *AlibabaAlihealthDrugKytDrDrugrecalModel {
+	return poolAlibabaAlihealthDrugKytDrDrugrecalModel.Get().(*AlibabaAlihealthDrugKytDrDrugrecalModel)
+}
+
+// ReleaseAlibabaAlihealthDrugKytDrDrugrecalModel 释放AlibabaAlihealthDrugKytDrDrugrecalModel
+func ReleaseAlibabaAlihealthDrugKytDrDrugrecalModel(v *AlibabaAlihealthDrugKytDrDrugrecalModel) {
+	v.PrepnTypeDesc = ""
+	v.RecallEndDate = ""
+	v.ProductBatchNos = ""
+	v.ProdcutEntName = ""
+	v.ApproveNo = ""
+	v.PhysicName = ""
+	v.RecallRange = ""
+	v.RecallOpen = ""
+	v.RecallAuditStatus = ""
+	v.PkgSpec = ""
+	v.PrepnSpec = ""
+	v.RecallInfoId = ""
+	v.EntName = ""
+	v.RecallNature = ""
+	v.RecallReason = ""
+	v.RecallBillType = ""
+	v.RecallStatus = ""
+	v.RecallLevel = ""
+	poolAlibabaAlihealthDrugKytDrDrugrecalModel.Put(v)
 }

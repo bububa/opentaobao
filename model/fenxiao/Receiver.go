@@ -1,5 +1,9 @@
 package fenxiao
 
+import (
+	"sync"
+)
+
 // Receiver 结构体
 type Receiver struct {
 	// 邮政编码
@@ -20,4 +24,29 @@ type Receiver struct {
 	CardId string `json:"card_id,omitempty" xml:"card_id,omitempty"`
 	// 收货人的城市
 	City string `json:"city,omitempty" xml:"city,omitempty"`
+}
+
+var poolReceiver = sync.Pool{
+	New: func() any {
+		return new(Receiver)
+	},
+}
+
+// GetReceiver() 从对象池中获取Receiver
+func GetReceiver() *Receiver {
+	return poolReceiver.Get().(*Receiver)
+}
+
+// ReleaseReceiver 释放Receiver
+func ReleaseReceiver(v *Receiver) {
+	v.Zip = ""
+	v.MobilePhone = ""
+	v.Phone = ""
+	v.Address = ""
+	v.Name = ""
+	v.State = ""
+	v.District = ""
+	v.CardId = ""
+	v.City = ""
+	poolReceiver.Put(v)
 }

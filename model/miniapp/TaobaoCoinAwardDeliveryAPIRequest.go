@@ -2,6 +2,7 @@ package miniapp
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoCoinAwardDeliveryAPIRequest struct {
 // NewTaobaoCoinAwardDeliveryRequest 初始化TaobaoCoinAwardDeliveryAPIRequest对象
 func NewTaobaoCoinAwardDeliveryRequest() *TaobaoCoinAwardDeliveryAPIRequest {
 	return &TaobaoCoinAwardDeliveryAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoCoinAwardDeliveryAPIRequest) Reset() {
+	r._param0 = ""
+	r._param1 = 0
+	r._orderDto = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoCoinAwardDeliveryAPIRequest) SetOrderDto(_orderDto *OrderDto) err
 // GetOrderDto OrderDto Getter
 func (r TaobaoCoinAwardDeliveryAPIRequest) GetOrderDto() *OrderDto {
 	return r._orderDto
+}
+
+var poolTaobaoCoinAwardDeliveryAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoCoinAwardDeliveryRequest()
+	},
+}
+
+// GetTaobaoCoinAwardDeliveryRequest 从 sync.Pool 获取 TaobaoCoinAwardDeliveryAPIRequest
+func GetTaobaoCoinAwardDeliveryAPIRequest() *TaobaoCoinAwardDeliveryAPIRequest {
+	return poolTaobaoCoinAwardDeliveryAPIRequest.Get().(*TaobaoCoinAwardDeliveryAPIRequest)
+}
+
+// ReleaseTaobaoCoinAwardDeliveryAPIRequest 将 TaobaoCoinAwardDeliveryAPIRequest 放入 sync.Pool
+func ReleaseTaobaoCoinAwardDeliveryAPIRequest(v *TaobaoCoinAwardDeliveryAPIRequest) {
+	v.Reset()
+	poolTaobaoCoinAwardDeliveryAPIRequest.Put(v)
 }

@@ -1,6 +1,8 @@
 package fundplatform
 
 import (
+	"sync"
+
 	"github.com/bububa/opentaobao/model"
 )
 
@@ -20,4 +22,27 @@ type FundAccountResponse struct {
 	Status *model.File `json:"status,omitempty" xml:"status,omitempty"`
 	// 用户ID
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
+}
+
+var poolFundAccountResponse = sync.Pool{
+	New: func() any {
+		return new(FundAccountResponse)
+	},
+}
+
+// GetFundAccountResponse() 从对象池中获取FundAccountResponse
+func GetFundAccountResponse() *FundAccountResponse {
+	return poolFundAccountResponse.Get().(*FundAccountResponse)
+}
+
+// ReleaseFundAccountResponse 释放FundAccountResponse
+func ReleaseFundAccountResponse(v *FundAccountResponse) {
+	v.OutBizId = ""
+	v.Title = ""
+	v.AccountId = 0
+	v.BalanceAmount = 0
+	v.FreezeAmount = 0
+	v.Status = nil
+	v.UserId = 0
+	poolFundAccountResponse.Put(v)
 }

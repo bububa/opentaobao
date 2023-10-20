@@ -2,6 +2,7 @@ package wdk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest struct {
 // NewAlibabaTxcsBrandmarketingCouponQrcodeGetRequest 初始化AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest对象
 func NewAlibabaTxcsBrandmarketingCouponQrcodeGetRequest() *AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest {
 	return &AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest) Reset() {
+	r._couponQrcodeParamDo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest) SetCouponQrcodePara
 // GetCouponQrcodeParamDo CouponQrcodeParamDo Getter
 func (r AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest) GetCouponQrcodeParamDo() *CouponQrcodeParamDo {
 	return r._couponQrcodeParamDo
+}
+
+var poolAlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaTxcsBrandmarketingCouponQrcodeGetRequest()
+	},
+}
+
+// GetAlibabaTxcsBrandmarketingCouponQrcodeGetRequest 从 sync.Pool 获取 AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest
+func GetAlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest() *AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest {
+	return poolAlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest.Get().(*AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest)
+}
+
+// ReleaseAlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest 将 AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest 放入 sync.Pool
+func ReleaseAlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest(v *AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest) {
+	v.Reset()
+	poolAlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest.Put(v)
 }

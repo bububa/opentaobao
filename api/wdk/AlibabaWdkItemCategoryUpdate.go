@@ -9,11 +9,6 @@ import (
 // alibaba.wdk.item.category.update
 //
 // 修改类目
-func AlibabaWdkItemCategoryUpdate(clt *core.SDKClient, req *wdk.AlibabaWdkItemCategoryUpdateAPIRequest, session string) (*wdk.AlibabaWdkItemCategoryUpdateAPIResponse, error) {
-	var resp wdk.AlibabaWdkItemCategoryUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaWdkItemCategoryUpdate(clt *core.SDKClient, req *wdk.AlibabaWdkItemCategoryUpdateAPIRequest, resp *wdk.AlibabaWdkItemCategoryUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

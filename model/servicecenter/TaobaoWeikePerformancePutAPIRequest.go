@@ -2,6 +2,7 @@ package servicecenter
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -21,8 +22,15 @@ type TaobaoWeikePerformancePutAPIRequest struct {
 // NewTaobaoWeikePerformancePutRequest 初始化TaobaoWeikePerformancePutAPIRequest对象
 func NewTaobaoWeikePerformancePutRequest() *TaobaoWeikePerformancePutAPIRequest {
 	return &TaobaoWeikePerformancePutAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(2),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWeikePerformancePutAPIRequest) Reset() {
+	r._id = 0
+	r._perInfoWrapper = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -66,4 +74,21 @@ func (r *TaobaoWeikePerformancePutAPIRequest) SetPerInfoWrapper(_perInfoWrapper 
 // GetPerInfoWrapper PerInfoWrapper Getter
 func (r TaobaoWeikePerformancePutAPIRequest) GetPerInfoWrapper() *PerformanceInfoWrapper {
 	return r._perInfoWrapper
+}
+
+var poolTaobaoWeikePerformancePutAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWeikePerformancePutRequest()
+	},
+}
+
+// GetTaobaoWeikePerformancePutRequest 从 sync.Pool 获取 TaobaoWeikePerformancePutAPIRequest
+func GetTaobaoWeikePerformancePutAPIRequest() *TaobaoWeikePerformancePutAPIRequest {
+	return poolTaobaoWeikePerformancePutAPIRequest.Get().(*TaobaoWeikePerformancePutAPIRequest)
+}
+
+// ReleaseTaobaoWeikePerformancePutAPIRequest 将 TaobaoWeikePerformancePutAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWeikePerformancePutAPIRequest(v *TaobaoWeikePerformancePutAPIRequest) {
+	v.Reset()
+	poolTaobaoWeikePerformancePutAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package tmallgenie
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindAPIRequest struct {
 // NewAlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindRequest 初始化AlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindAPIRequest对象
 func NewAlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindRequest() *AlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindAPIRequest {
 	return &AlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindAPIRequest) Reset() {
+	r._identifier = ""
+	r._productKey = ""
+	r._digest = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindAPIRequest) SetDigest(
 // GetDigest Digest Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindAPIRequest) GetDigest() string {
 	return r._digest
+}
+
+var poolAlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindRequest()
+	},
+}
+
+// GetAlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindRequest 从 sync.Pool 获取 AlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindAPIRequest
+func GetAlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindAPIRequest() *AlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindAPIRequest {
+	return poolAlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindAPIRequest.Get().(*AlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindAPIRequest)
+}
+
+// ReleaseAlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindAPIRequest 将 AlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindAPIRequest(v *AlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindAPIRequest) {
+	v.Reset()
+	poolAlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindAPIRequest.Put(v)
 }

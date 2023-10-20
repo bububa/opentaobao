@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // ConsignOrder 结构体
 type ConsignOrder struct {
 	// 交易子单列表
@@ -42,4 +46,40 @@ type ConsignOrder struct {
 	CreateTime int64 `json:"create_time,omitempty" xml:"create_time,omitempty"`
 	// 发货单修改时间
 	UpdateTime int64 `json:"update_time,omitempty" xml:"update_time,omitempty"`
+}
+
+var poolConsignOrder = sync.Pool{
+	New: func() any {
+		return new(ConsignOrder)
+	},
+}
+
+// GetConsignOrder() 从对象池中获取ConsignOrder
+func GetConsignOrder() *ConsignOrder {
+	return poolConsignOrder.Get().(*ConsignOrder)
+}
+
+// ReleaseConsignOrder 释放ConsignOrder
+func ReleaseConsignOrder(v *ConsignOrder) {
+	v.SubTradeOrders = v.SubTradeOrders[:0]
+	v.TradeId = ""
+	v.ConsignOrderCode = ""
+	v.WmsOrderCode = ""
+	v.OrderStatus = ""
+	v.ShopCode = ""
+	v.OwnerCode = ""
+	v.WarehouseCode = ""
+	v.DeliveryCps = ""
+	v.AsdpAds = ""
+	v.BuyerMessage = ""
+	v.SellerMessage = ""
+	v.AssemblyType = ""
+	v.MergeTradeIds = ""
+	v.ErpHold = ""
+	v.AutoFlow = 0
+	v.PlanDeliveryTime = 0
+	v.PlanSignTime = 0
+	v.CreateTime = 0
+	v.UpdateTime = 0
+	poolConsignOrder.Put(v)
 }

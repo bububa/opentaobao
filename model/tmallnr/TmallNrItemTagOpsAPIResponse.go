@@ -2,6 +2,7 @@ package tmallnr
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TmallNrItemTagOpsAPIResponse struct {
 	TmallNrItemTagOpsAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TmallNrItemTagOpsAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallNrItemTagOpsAPIResponseModel).Reset()
+}
+
 // TmallNrItemTagOpsAPIResponseModel is 区域零售商品打标去标 成功返回结果
 type TmallNrItemTagOpsAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_nr_item_tag_ops_response"`
@@ -22,4 +29,27 @@ type TmallNrItemTagOpsAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
 	Result *NewRetailResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallNrItemTagOpsAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolTmallNrItemTagOpsAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallNrItemTagOpsAPIResponse)
+	},
+}
+
+// GetTmallNrItemTagOpsAPIResponse 从 sync.Pool 获取 TmallNrItemTagOpsAPIResponse
+func GetTmallNrItemTagOpsAPIResponse() *TmallNrItemTagOpsAPIResponse {
+	return poolTmallNrItemTagOpsAPIResponse.Get().(*TmallNrItemTagOpsAPIResponse)
+}
+
+// ReleaseTmallNrItemTagOpsAPIResponse 将 TmallNrItemTagOpsAPIResponse 保存到 sync.Pool
+func ReleaseTmallNrItemTagOpsAPIResponse(v *TmallNrItemTagOpsAPIResponse) {
+	v.Reset()
+	poolTmallNrItemTagOpsAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // ChangeList 结构体
 type ChangeList struct {
 	// 票号
@@ -46,4 +50,42 @@ type ChangeList struct {
 	PnrXe int64 `json:"pnr_xe,omitempty" xml:"pnr_xe,omitempty"`
 	// 乘机人性别:1表示男性，2表示女性
 	Gender int64 `json:"gender,omitempty" xml:"gender,omitempty"`
+}
+
+var poolChangeList = sync.Pool{
+	New: func() any {
+		return new(ChangeList)
+	},
+}
+
+// GetChangeList() 从对象池中获取ChangeList
+func GetChangeList() *ChangeList {
+	return poolChangeList.Get().(*ChangeList)
+}
+
+// ReleaseChangeList 释放ChangeList
+func ReleaseChangeList(v *ChangeList) {
+	v.Tickets = v.Tickets[:0]
+	v.BeforeChangeSegments = v.BeforeChangeSegments[:0]
+	v.AfterChangeSegments = v.AfterChangeSegments[:0]
+	v.BeforeChangeTickets = v.BeforeChangeTickets[:0]
+	v.CertNo = ""
+	v.PassengerName = ""
+	v.Pnr = ""
+	v.PnrXeTime = ""
+	v.SurName = ""
+	v.GivenName = ""
+	v.CertPeriod = ""
+	v.Nationality = ""
+	v.CertIssueCountry = ""
+	v.Birthday = ""
+	v.CertType = 0
+	v.PassengerType = 0
+	v.Promotion = 0
+	v.TicketPrice = 0
+	v.ChangeFee = 0
+	v.UpgradeFee = 0
+	v.PnrXe = 0
+	v.Gender = 0
+	poolChangeList.Put(v)
 }

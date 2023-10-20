@@ -1,5 +1,9 @@
 package ascp
 
+import (
+	"sync"
+)
+
 // ItemUpdateAsnycResponse 结构体
 type ItemUpdateAsnycResponse struct {
 	// 业务处理结果
@@ -12,4 +16,25 @@ type ItemUpdateAsnycResponse struct {
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
 	// true|false
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolItemUpdateAsnycResponse = sync.Pool{
+	New: func() any {
+		return new(ItemUpdateAsnycResponse)
+	},
+}
+
+// GetItemUpdateAsnycResponse() 从对象池中获取ItemUpdateAsnycResponse
+func GetItemUpdateAsnycResponse() *ItemUpdateAsnycResponse {
+	return poolItemUpdateAsnycResponse.Get().(*ItemUpdateAsnycResponse)
+}
+
+// ReleaseItemUpdateAsnycResponse 释放ItemUpdateAsnycResponse
+func ReleaseItemUpdateAsnycResponse(v *ItemUpdateAsnycResponse) {
+	v.Data = v.Data[:0]
+	v.Code = ""
+	v.Message = ""
+	v.Result = ""
+	v.Success = false
+	poolItemUpdateAsnycResponse.Put(v)
 }

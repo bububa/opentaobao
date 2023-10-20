@@ -2,6 +2,7 @@ package mtop
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoMtopUploadTokenGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoMtopUploadTokenGetAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoMtopUploadTokenGetAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoMtopUploadTokenGetAPIResponseModel).Reset()
 }
 
 // TaobaoMtopUploadTokenGetAPIResponseModel is 获取文件上传授权 成功返回结果
@@ -34,4 +41,33 @@ type TaobaoMtopUploadTokenGetAPIResponseModel struct {
 	MaxRetryTimes int64 `json:"max_retry_times,omitempty" xml:"max_retry_times,omitempty"`
 	// token失效时间点
 	Timeout int64 `json:"timeout,omitempty" xml:"timeout,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoMtopUploadTokenGetAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.Code = ""
+	m.ServerAddress = ""
+	m.Token = ""
+	m.MaxBodyLength = 0
+	m.MaxRetryTimes = 0
+	m.Timeout = 0
+}
+
+var poolTaobaoMtopUploadTokenGetAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoMtopUploadTokenGetAPIResponse)
+	},
+}
+
+// GetTaobaoMtopUploadTokenGetAPIResponse 从 sync.Pool 获取 TaobaoMtopUploadTokenGetAPIResponse
+func GetTaobaoMtopUploadTokenGetAPIResponse() *TaobaoMtopUploadTokenGetAPIResponse {
+	return poolTaobaoMtopUploadTokenGetAPIResponse.Get().(*TaobaoMtopUploadTokenGetAPIResponse)
+}
+
+// ReleaseTaobaoMtopUploadTokenGetAPIResponse 将 TaobaoMtopUploadTokenGetAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoMtopUploadTokenGetAPIResponse(v *TaobaoMtopUploadTokenGetAPIResponse) {
+	v.Reset()
+	poolTaobaoMtopUploadTokenGetAPIResponse.Put(v)
 }

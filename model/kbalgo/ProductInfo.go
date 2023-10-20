@@ -1,5 +1,9 @@
 package kbalgo
 
+import (
+	"sync"
+)
+
 // ProductInfo 结构体
 type ProductInfo struct {
 	// ext
@@ -24,4 +28,31 @@ type ProductInfo struct {
 	ProductId string `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// schema
 	Schema *Schema `json:"schema,omitempty" xml:"schema,omitempty"`
+}
+
+var poolProductInfo = sync.Pool{
+	New: func() any {
+		return new(ProductInfo)
+	},
+}
+
+// GetProductInfo() 从对象池中获取ProductInfo
+func GetProductInfo() *ProductInfo {
+	return poolProductInfo.Get().(*ProductInfo)
+}
+
+// ReleaseProductInfo 释放ProductInfo
+func ReleaseProductInfo(v *ProductInfo) {
+	v.Ext = ""
+	v.GmtStart = ""
+	v.ImageUrl = ""
+	v.Price = ""
+	v.SalesNum = ""
+	v.Description = ""
+	v.OriginPrice = ""
+	v.GmtEnd = ""
+	v.Title = ""
+	v.ProductId = ""
+	v.Schema = nil
+	poolProductInfo.Put(v)
 }

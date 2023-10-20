@@ -9,11 +9,6 @@ import (
 // alibaba.alihealth.drug.code.list.code.gov
 //
 // 政府码查询接口
-func AlibabaAlihealthDrugCodeListCodeGov(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeListCodeGovAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugCodeListCodeGovAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugCodeListCodeGovAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihealthDrugCodeListCodeGov(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugCodeListCodeGovAPIRequest, resp *drugtrace.AlibabaAlihealthDrugCodeListCodeGovAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

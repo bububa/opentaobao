@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.newhome.adviser.message.notice
 //
 // 催促小B发送短信
-func AlibabaAlihouseNewhomeAdviserMessageNotice(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeAdviserMessageNoticeAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeAdviserMessageNoticeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseNewhomeAdviserMessageNotice(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeAdviserMessageNoticeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

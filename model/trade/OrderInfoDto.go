@@ -1,5 +1,9 @@
 package trade
 
+import (
+	"sync"
+)
+
 // OrderInfoDto 结构体
 type OrderInfoDto struct {
 	// 商品摘要
@@ -22,4 +26,30 @@ type OrderInfoDto struct {
 	OrderDetailUrl string `json:"order_detail_url,omitempty" xml:"order_detail_url,omitempty"`
 	// 支付金额描述
 	PayInfo string `json:"pay_info,omitempty" xml:"pay_info,omitempty"`
+}
+
+var poolOrderInfoDto = sync.Pool{
+	New: func() any {
+		return new(OrderInfoDto)
+	},
+}
+
+// GetOrderInfoDto() 从对象池中获取OrderInfoDto
+func GetOrderInfoDto() *OrderInfoDto {
+	return poolOrderInfoDto.Get().(*OrderInfoDto)
+}
+
+// ReleaseOrderInfoDto 释放OrderInfoDto
+func ReleaseOrderInfoDto(v *OrderInfoDto) {
+	v.ItemDigests = v.ItemDigests[:0]
+	v.OrderStatusDesc = ""
+	v.ShopName = ""
+	v.ShopUrl = ""
+	v.Title = ""
+	v.TotalCount = ""
+	v.TotalCountDesc = ""
+	v.PayAmount = ""
+	v.OrderDetailUrl = ""
+	v.PayInfo = ""
+	poolOrderInfoDto.Put(v)
 }

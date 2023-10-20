@@ -2,6 +2,7 @@ package xhotelonlineorder
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlitripXhotelChannelNotifyAPIRequest struct {
 // NewAlitripXhotelChannelNotifyRequest 初始化AlitripXhotelChannelNotifyAPIRequest对象
 func NewAlitripXhotelChannelNotifyRequest() *AlitripXhotelChannelNotifyAPIRequest {
 	return &AlitripXhotelChannelNotifyAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripXhotelChannelNotifyAPIRequest) Reset() {
+	r._orderNotifyQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlitripXhotelChannelNotifyAPIRequest) SetOrderNotifyQuery(_orderNotifyQ
 // GetOrderNotifyQuery OrderNotifyQuery Getter
 func (r AlitripXhotelChannelNotifyAPIRequest) GetOrderNotifyQuery() *OrderNotifyQuery {
 	return r._orderNotifyQuery
+}
+
+var poolAlitripXhotelChannelNotifyAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripXhotelChannelNotifyRequest()
+	},
+}
+
+// GetAlitripXhotelChannelNotifyRequest 从 sync.Pool 获取 AlitripXhotelChannelNotifyAPIRequest
+func GetAlitripXhotelChannelNotifyAPIRequest() *AlitripXhotelChannelNotifyAPIRequest {
+	return poolAlitripXhotelChannelNotifyAPIRequest.Get().(*AlitripXhotelChannelNotifyAPIRequest)
+}
+
+// ReleaseAlitripXhotelChannelNotifyAPIRequest 将 AlitripXhotelChannelNotifyAPIRequest 放入 sync.Pool
+func ReleaseAlitripXhotelChannelNotifyAPIRequest(v *AlitripXhotelChannelNotifyAPIRequest) {
+	v.Reset()
+	poolAlitripXhotelChannelNotifyAPIRequest.Put(v)
 }

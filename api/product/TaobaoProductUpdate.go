@@ -9,11 +9,6 @@ import (
 // taobao.product.update
 //
 // 传入产品ID &lt;br/&gt;可修改字段：outer_id,binds,sale_props,name,price,desc,image &lt;br/&gt;注意：1.可以修改主图,不能修改子图片,主图最大500K,目前仅支持GIF,JPG&lt;br/&gt;      2.商城卖家产品发布24小时后不能作删除或修改操作
-func TaobaoProductUpdate(clt *core.SDKClient, req *product.TaobaoProductUpdateAPIRequest, session string) (*product.TaobaoProductUpdateAPIResponse, error) {
-	var resp product.TaobaoProductUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoProductUpdate(clt *core.SDKClient, req *product.TaobaoProductUpdateAPIRequest, resp *product.TaobaoProductUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

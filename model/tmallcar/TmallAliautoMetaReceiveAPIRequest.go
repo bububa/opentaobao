@@ -2,6 +2,7 @@ package tmallcar
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallAliautoMetaReceiveAPIRequest struct {
 // NewTmallAliautoMetaReceiveRequest 初始化TmallAliautoMetaReceiveAPIRequest对象
 func NewTmallAliautoMetaReceiveRequest() *TmallAliautoMetaReceiveAPIRequest {
 	return &TmallAliautoMetaReceiveAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallAliautoMetaReceiveAPIRequest) Reset() {
+	r._command = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallAliautoMetaReceiveAPIRequest) SetCommand(_command *ResourceMetaCom
 // GetCommand Command Getter
 func (r TmallAliautoMetaReceiveAPIRequest) GetCommand() *ResourceMetaCommand {
 	return r._command
+}
+
+var poolTmallAliautoMetaReceiveAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallAliautoMetaReceiveRequest()
+	},
+}
+
+// GetTmallAliautoMetaReceiveRequest 从 sync.Pool 获取 TmallAliautoMetaReceiveAPIRequest
+func GetTmallAliautoMetaReceiveAPIRequest() *TmallAliautoMetaReceiveAPIRequest {
+	return poolTmallAliautoMetaReceiveAPIRequest.Get().(*TmallAliautoMetaReceiveAPIRequest)
+}
+
+// ReleaseTmallAliautoMetaReceiveAPIRequest 将 TmallAliautoMetaReceiveAPIRequest 放入 sync.Pool
+func ReleaseTmallAliautoMetaReceiveAPIRequest(v *TmallAliautoMetaReceiveAPIRequest) {
+	v.Reset()
+	poolTmallAliautoMetaReceiveAPIRequest.Put(v)
 }

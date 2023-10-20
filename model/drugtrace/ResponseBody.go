@@ -1,5 +1,9 @@
 package drugtrace
 
+import (
+	"sync"
+)
+
 // ResponseBody 结构体
 type ResponseBody struct {
 	// 流向对象
@@ -14,4 +18,26 @@ type ResponseBody struct {
 	QueryCount string `json:"query_count,omitempty" xml:"query_count,omitempty"`
 	// 商品信息、生产信息
 	ProductInfoList *ProductInfoList `json:"product_info_list,omitempty" xml:"product_info_list,omitempty"`
+}
+
+var poolResponseBody = sync.Pool{
+	New: func() any {
+		return new(ResponseBody)
+	},
+}
+
+// GetResponseBody() 从对象池中获取ResponseBody
+func GetResponseBody() *ResponseBody {
+	return poolResponseBody.Get().(*ResponseBody)
+}
+
+// ReleaseResponseBody 释放ResponseBody
+func ReleaseResponseBody(v *ResponseBody) {
+	v.FlowList = v.FlowList[:0]
+	v.FirstQueryTime = ""
+	v.LastBizDate = ""
+	v.Status = ""
+	v.QueryCount = ""
+	v.ProductInfoList = nil
+	poolResponseBody.Put(v)
 }

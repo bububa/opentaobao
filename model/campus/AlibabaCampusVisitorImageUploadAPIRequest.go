@@ -2,6 +2,7 @@ package campus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaCampusVisitorImageUploadAPIRequest struct {
 // NewAlibabaCampusVisitorImageUploadRequest 初始化AlibabaCampusVisitorImageUploadAPIRequest对象
 func NewAlibabaCampusVisitorImageUploadRequest() *AlibabaCampusVisitorImageUploadAPIRequest {
 	return &AlibabaCampusVisitorImageUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaCampusVisitorImageUploadAPIRequest) Reset() {
+	r._noneString = ""
+	r._companyId = 0
+	r._campusId = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaCampusVisitorImageUploadAPIRequest) SetCampusId(_campusId int64)
 // GetCampusId CampusId Getter
 func (r AlibabaCampusVisitorImageUploadAPIRequest) GetCampusId() int64 {
 	return r._campusId
+}
+
+var poolAlibabaCampusVisitorImageUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaCampusVisitorImageUploadRequest()
+	},
+}
+
+// GetAlibabaCampusVisitorImageUploadRequest 从 sync.Pool 获取 AlibabaCampusVisitorImageUploadAPIRequest
+func GetAlibabaCampusVisitorImageUploadAPIRequest() *AlibabaCampusVisitorImageUploadAPIRequest {
+	return poolAlibabaCampusVisitorImageUploadAPIRequest.Get().(*AlibabaCampusVisitorImageUploadAPIRequest)
+}
+
+// ReleaseAlibabaCampusVisitorImageUploadAPIRequest 将 AlibabaCampusVisitorImageUploadAPIRequest 放入 sync.Pool
+func ReleaseAlibabaCampusVisitorImageUploadAPIRequest(v *AlibabaCampusVisitorImageUploadAPIRequest) {
+	v.Reset()
+	poolAlibabaCampusVisitorImageUploadAPIRequest.Put(v)
 }

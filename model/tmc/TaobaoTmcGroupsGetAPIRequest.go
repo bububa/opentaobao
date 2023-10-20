@@ -2,6 +2,7 @@ package tmc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type TaobaoTmcGroupsGetAPIRequest struct {
 // NewTaobaoTmcGroupsGetRequest 初始化TaobaoTmcGroupsGetAPIRequest对象
 func NewTaobaoTmcGroupsGetRequest() *TaobaoTmcGroupsGetAPIRequest {
 	return &TaobaoTmcGroupsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTmcGroupsGetAPIRequest) Reset() {
+	r._groupNames = r._groupNames[:0]
+	r._pageNo = 0
+	r._pageSize = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *TaobaoTmcGroupsGetAPIRequest) SetPageSize(_pageSize int64) error {
 // GetPageSize PageSize Getter
 func (r TaobaoTmcGroupsGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+var poolTaobaoTmcGroupsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTmcGroupsGetRequest()
+	},
+}
+
+// GetTaobaoTmcGroupsGetRequest 从 sync.Pool 获取 TaobaoTmcGroupsGetAPIRequest
+func GetTaobaoTmcGroupsGetAPIRequest() *TaobaoTmcGroupsGetAPIRequest {
+	return poolTaobaoTmcGroupsGetAPIRequest.Get().(*TaobaoTmcGroupsGetAPIRequest)
+}
+
+// ReleaseTaobaoTmcGroupsGetAPIRequest 将 TaobaoTmcGroupsGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTmcGroupsGetAPIRequest(v *TaobaoTmcGroupsGetAPIRequest) {
+	v.Reset()
+	poolTaobaoTmcGroupsGetAPIRequest.Put(v)
 }

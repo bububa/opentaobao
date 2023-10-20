@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.order.query.info
 //
 // 订单页详情查询
-func AlitripMerchantGalaxyOrderQueryInfo(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyOrderQueryInfoAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyOrderQueryInfoAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyOrderQueryInfoAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyOrderQueryInfo(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyOrderQueryInfoAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyOrderQueryInfoAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package waybill
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoWlbWaybillISearchAPIRequest struct {
 // NewTaobaoWlbWaybillISearchRequest 初始化TaobaoWlbWaybillISearchAPIRequest对象
 func NewTaobaoWlbWaybillISearchRequest() *TaobaoWlbWaybillISearchAPIRequest {
 	return &TaobaoWlbWaybillISearchAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoWlbWaybillISearchAPIRequest) Reset() {
+	r._waybillApplyRequest = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoWlbWaybillISearchAPIRequest) SetWaybillApplyRequest(_waybillApply
 // GetWaybillApplyRequest WaybillApplyRequest Getter
 func (r TaobaoWlbWaybillISearchAPIRequest) GetWaybillApplyRequest() *WaybillApplyRequest {
 	return r._waybillApplyRequest
+}
+
+var poolTaobaoWlbWaybillISearchAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoWlbWaybillISearchRequest()
+	},
+}
+
+// GetTaobaoWlbWaybillISearchRequest 从 sync.Pool 获取 TaobaoWlbWaybillISearchAPIRequest
+func GetTaobaoWlbWaybillISearchAPIRequest() *TaobaoWlbWaybillISearchAPIRequest {
+	return poolTaobaoWlbWaybillISearchAPIRequest.Get().(*TaobaoWlbWaybillISearchAPIRequest)
+}
+
+// ReleaseTaobaoWlbWaybillISearchAPIRequest 将 TaobaoWlbWaybillISearchAPIRequest 放入 sync.Pool
+func ReleaseTaobaoWlbWaybillISearchAPIRequest(v *TaobaoWlbWaybillISearchAPIRequest) {
+	v.Reset()
+	poolTaobaoWlbWaybillISearchAPIRequest.Put(v)
 }

@@ -2,6 +2,7 @@ package axindata
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoAlitripTravelFscRouteApiProjectAddAPIResponse struct {
 	TaobaoAlitripTravelFscRouteApiProjectAddAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoAlitripTravelFscRouteApiProjectAddAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoAlitripTravelFscRouteApiProjectAddAPIResponseModel).Reset()
+}
+
 // TaobaoAlitripTravelFscRouteApiProjectAddAPIResponseModel is 新增团期 成功返回结果
 type TaobaoAlitripTravelFscRouteApiProjectAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_travel_fsc_route_api_project_add_response"`
@@ -22,4 +29,27 @@ type TaobaoAlitripTravelFscRouteApiProjectAddAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 通用返回结果
 	TopResult *TaobaoAlitripTravelFscRouteApiProjectAddTopResult `json:"top_result,omitempty" xml:"top_result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoAlitripTravelFscRouteApiProjectAddAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TopResult = nil
+}
+
+var poolTaobaoAlitripTravelFscRouteApiProjectAddAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoAlitripTravelFscRouteApiProjectAddAPIResponse)
+	},
+}
+
+// GetTaobaoAlitripTravelFscRouteApiProjectAddAPIResponse 从 sync.Pool 获取 TaobaoAlitripTravelFscRouteApiProjectAddAPIResponse
+func GetTaobaoAlitripTravelFscRouteApiProjectAddAPIResponse() *TaobaoAlitripTravelFscRouteApiProjectAddAPIResponse {
+	return poolTaobaoAlitripTravelFscRouteApiProjectAddAPIResponse.Get().(*TaobaoAlitripTravelFscRouteApiProjectAddAPIResponse)
+}
+
+// ReleaseTaobaoAlitripTravelFscRouteApiProjectAddAPIResponse 将 TaobaoAlitripTravelFscRouteApiProjectAddAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoAlitripTravelFscRouteApiProjectAddAPIResponse(v *TaobaoAlitripTravelFscRouteApiProjectAddAPIResponse) {
+	v.Reset()
+	poolTaobaoAlitripTravelFscRouteApiProjectAddAPIResponse.Put(v)
 }

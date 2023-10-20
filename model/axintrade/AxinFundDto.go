@@ -1,5 +1,9 @@
 package axintrade
 
+import (
+	"sync"
+)
+
 // AxinFundDto 结构体
 type AxinFundDto struct {
 	// 有效资金单列表
@@ -56,4 +60,47 @@ type AxinFundDto struct {
 	TradeSource int64 `json:"trade_source,omitempty" xml:"trade_source,omitempty"`
 	// 交易方式
 	TradeType int64 `json:"trade_type,omitempty" xml:"trade_type,omitempty"`
+}
+
+var poolAxinFundDto = sync.Pool{
+	New: func() any {
+		return new(AxinFundDto)
+	},
+}
+
+// GetAxinFundDto() 从对象池中获取AxinFundDto
+func GetAxinFundDto() *AxinFundDto {
+	return poolAxinFundDto.Get().(*AxinFundDto)
+}
+
+// ReleaseAxinFundDto 释放AxinFundDto
+func ReleaseAxinFundDto(v *AxinFundDto) {
+	v.FundList = v.FundList[:0]
+	v.AlipayOrderId = ""
+	v.AlipayOuterId = ""
+	v.Attributes = ""
+	v.OuterOrderId = ""
+	v.PayOrderId = ""
+	v.PayTime = ""
+	v.PayerAccount = ""
+	v.PayerAlipayId = ""
+	v.PayerNick = ""
+	v.ReceiverAccount = ""
+	v.ReceiverAlipayId = ""
+	v.ReceiverNick = ""
+	v.ReqVersion = ""
+	v.Smid = ""
+	v.TotalPayedAmount = 0
+	v.Id = 0
+	v.PayFee = 0
+	v.PayFundId = 0
+	v.PayType = 0
+	v.PayerAccountType = 0
+	v.PayerTid = 0
+	v.ReceiverAccountType = 0
+	v.ReceiverTid = 0
+	v.Status = 0
+	v.TradeSource = 0
+	v.TradeType = 0
+	poolAxinFundDto.Put(v)
 }

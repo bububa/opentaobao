@@ -1,5 +1,9 @@
 package lstfundbill
 
+import (
+	"sync"
+)
+
 // LstFundBillOrderDto 结构体
 type LstFundBillOrderDto struct {
 	// 主订单id
@@ -116,4 +120,77 @@ type LstFundBillOrderDto struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 退货数量
 	RefundQuantity int64 `json:"refund_quantity,omitempty" xml:"refund_quantity,omitempty"`
+}
+
+var poolLstFundBillOrderDto = sync.Pool{
+	New: func() any {
+		return new(LstFundBillOrderDto)
+	},
+}
+
+// GetLstFundBillOrderDto() 从对象池中获取LstFundBillOrderDto
+func GetLstFundBillOrderDto() *LstFundBillOrderDto {
+	return poolLstFundBillOrderDto.Get().(*LstFundBillOrderDto)
+}
+
+// ReleaseLstFundBillOrderDto 释放LstFundBillOrderDto
+func ReleaseLstFundBillOrderDto(v *LstFundBillOrderDto) {
+	v.MainOrderId = ""
+	v.TotalSettleAmtHy = ""
+	v.TotalSettleAmt = ""
+	v.TotalItemAmt = ""
+	v.Carriage = ""
+	v.RefundCarriage = ""
+	v.DealType = ""
+	v.AlipayFee = ""
+	v.GmtCreate = ""
+	v.GmtShipped = ""
+	v.GmtConfirmed = ""
+	v.GmtCompleted = ""
+	v.GmtSettled = ""
+	v.OrderId = ""
+	v.CspuName = ""
+	v.CspuId = ""
+	v.Sku = ""
+	v.BarCode = ""
+	v.WarehouseType = ""
+	v.WarehouseName = ""
+	v.SettleAmt = ""
+	v.Price = ""
+	v.ItemAmt = ""
+	v.ItemCommissionAmt = ""
+	v.CarriageCommissionAmt = ""
+	v.WygCommissionAmt = ""
+	v.JrfwCommissionAmt = ""
+	v.RefundId = ""
+	v.RefundStatus = ""
+	v.RefundAmt = ""
+	v.DiscountAmt = ""
+	v.MkZphg = ""
+	v.MkShopMj = ""
+	v.MkShopBy = ""
+	v.MkDpyh = ""
+	v.MkXscx = ""
+	v.MkPurchaseCoupon = ""
+	v.MkBrandCoupon = ""
+	v.MkKdmj = ""
+	v.MkKdmz = ""
+	v.BrandName = ""
+	v.LeadsName = ""
+	v.LeadsId = ""
+	v.LogisticsProv = ""
+	v.LogisticsCity = ""
+	v.LogisticsArea = ""
+	v.SelfOffer = ""
+	v.DeliveryName = ""
+	v.SellerId = ""
+	v.SellerName = ""
+	v.ItemCommissionRate = ""
+	v.PostCommissionRate = ""
+	v.ItemCommissionRefundAmt = ""
+	v.ItemId = ""
+	v.Unit = ""
+	v.Quantity = 0
+	v.RefundQuantity = 0
+	poolLstFundBillOrderDto.Put(v)
 }

@@ -1,5 +1,9 @@
 package legalsuit
 
+import (
+	"sync"
+)
+
 // StandpointRefDto 结构体
 type StandpointRefDto struct {
 	// 口径标签
@@ -32,4 +36,35 @@ type StandpointRefDto struct {
 	RefrenceId int64 `json:"refrence_id,omitempty" xml:"refrence_id,omitempty"`
 	// id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+var poolStandpointRefDto = sync.Pool{
+	New: func() any {
+		return new(StandpointRefDto)
+	},
+}
+
+// GetStandpointRefDto() 从对象池中获取StandpointRefDto
+func GetStandpointRefDto() *StandpointRefDto {
+	return poolStandpointRefDto.Get().(*StandpointRefDto)
+}
+
+// ReleaseStandpointRefDto 释放StandpointRefDto
+func ReleaseStandpointRefDto(v *StandpointRefDto) {
+	v.StandpointLabels = v.StandpointLabels[:0]
+	v.Options = v.Options[:0]
+	v.TableStr = v.TableStr[:0]
+	v.StandpointDesc = ""
+	v.DefenseCaliber = ""
+	v.GmtCreate = ""
+	v.ScenesStrucct = ""
+	v.ScenesName = ""
+	v.CreaterWorkerNo = ""
+	v.Label = ""
+	v.TableSchema = ""
+	v.RefrenceType = ""
+	v.ScenesId = 0
+	v.RefrenceId = 0
+	v.Id = 0
+	poolStandpointRefDto.Put(v)
 }

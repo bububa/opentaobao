@@ -2,6 +2,7 @@ package alihealth2
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaAlihealthBookingReserveConfirmAPIRequest struct {
 // NewAlibabaAlihealthBookingReserveConfirmRequest 初始化AlibabaAlihealthBookingReserveConfirmAPIRequest对象
 func NewAlibabaAlihealthBookingReserveConfirmRequest() *AlibabaAlihealthBookingReserveConfirmAPIRequest {
 	return &AlibabaAlihealthBookingReserveConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthBookingReserveConfirmAPIRequest) Reset() {
+	r._confirm = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaAlihealthBookingReserveConfirmAPIRequest) SetConfirm(_confirm *I
 // GetConfirm Confirm Getter
 func (r AlibabaAlihealthBookingReserveConfirmAPIRequest) GetConfirm() *IsvReserveRequest {
 	return r._confirm
+}
+
+var poolAlibabaAlihealthBookingReserveConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthBookingReserveConfirmRequest()
+	},
+}
+
+// GetAlibabaAlihealthBookingReserveConfirmRequest 从 sync.Pool 获取 AlibabaAlihealthBookingReserveConfirmAPIRequest
+func GetAlibabaAlihealthBookingReserveConfirmAPIRequest() *AlibabaAlihealthBookingReserveConfirmAPIRequest {
+	return poolAlibabaAlihealthBookingReserveConfirmAPIRequest.Get().(*AlibabaAlihealthBookingReserveConfirmAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthBookingReserveConfirmAPIRequest 将 AlibabaAlihealthBookingReserveConfirmAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthBookingReserveConfirmAPIRequest(v *AlibabaAlihealthBookingReserveConfirmAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthBookingReserveConfirmAPIRequest.Put(v)
 }

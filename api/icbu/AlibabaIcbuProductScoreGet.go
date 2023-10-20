@@ -9,11 +9,6 @@ import (
 // alibaba.icbu.product.score.get
 //
 // 产品质量分查询
-func AlibabaIcbuProductScoreGet(clt *core.SDKClient, req *icbu.AlibabaIcbuProductScoreGetAPIRequest, session string) (*icbu.AlibabaIcbuProductScoreGetAPIResponse, error) {
-	var resp icbu.AlibabaIcbuProductScoreGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaIcbuProductScoreGet(clt *core.SDKClient, req *icbu.AlibabaIcbuProductScoreGetAPIRequest, resp *icbu.AlibabaIcbuProductScoreGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

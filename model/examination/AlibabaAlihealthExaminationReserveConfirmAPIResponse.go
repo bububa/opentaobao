@@ -2,6 +2,7 @@ package examination
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaAlihealthExaminationReserveConfirmAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthExaminationReserveConfirmAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthExaminationReserveConfirmAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthExaminationReserveConfirmAPIResponseModel).Reset()
 }
 
 // AlibabaAlihealthExaminationReserveConfirmAPIResponseModel is 体检机构对接_体检套餐预定确认 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaAlihealthExaminationReserveConfirmAPIResponseModel struct {
 	ResponseCode string `json:"response_code,omitempty" xml:"response_code,omitempty"`
 	// 预约电子凭证码值，若返回凭证码值，会展示在订单详情。用户到店/上门后，可以通过该码值来验证订单，不同预约码值不能重复。长度不超过64位
 	VoucherCode string `json:"voucher_code,omitempty" xml:"voucher_code,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthExaminationReserveConfirmAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Message = ""
+	m.UniqReserveCode = ""
+	m.ResponseCode = ""
+	m.VoucherCode = ""
+}
+
+var poolAlibabaAlihealthExaminationReserveConfirmAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthExaminationReserveConfirmAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthExaminationReserveConfirmAPIResponse 从 sync.Pool 获取 AlibabaAlihealthExaminationReserveConfirmAPIResponse
+func GetAlibabaAlihealthExaminationReserveConfirmAPIResponse() *AlibabaAlihealthExaminationReserveConfirmAPIResponse {
+	return poolAlibabaAlihealthExaminationReserveConfirmAPIResponse.Get().(*AlibabaAlihealthExaminationReserveConfirmAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthExaminationReserveConfirmAPIResponse 将 AlibabaAlihealthExaminationReserveConfirmAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthExaminationReserveConfirmAPIResponse(v *AlibabaAlihealthExaminationReserveConfirmAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthExaminationReserveConfirmAPIResponse.Put(v)
 }

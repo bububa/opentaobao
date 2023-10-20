@@ -1,5 +1,9 @@
 package eleenterpriseordernew
 
+import (
+	"sync"
+)
+
 // EnterpriseData 结构体
 type EnterpriseData struct {
 	// 电话号码
@@ -38,4 +42,38 @@ type EnterpriseData struct {
 	DeliverymanInfo *DeliverymanInfoDto `json:"deliveryman_info,omitempty" xml:"deliveryman_info,omitempty"`
 	// 地址信息
 	TrackingInfo *TrackingInfoDto `json:"tracking_info,omitempty" xml:"tracking_info,omitempty"`
+}
+
+var poolEnterpriseData = sync.Pool{
+	New: func() any {
+		return new(EnterpriseData)
+	},
+}
+
+// GetEnterpriseData() 从对象池中获取EnterpriseData
+func GetEnterpriseData() *EnterpriseData {
+	return poolEnterpriseData.Get().(*EnterpriseData)
+}
+
+// ReleaseEnterpriseData 释放EnterpriseData
+func ReleaseEnterpriseData(v *EnterpriseData) {
+	v.PhoneList = v.PhoneList[:0]
+	v.DeliverTime = ""
+	v.Address = ""
+	v.Consignee = ""
+	v.OrderId = ""
+	v.Description = ""
+	v.OnlyRestaurantCode = ""
+	v.CreatedAt = ""
+	v.RestaurantName = ""
+	v.ErestaurantId = ""
+	v.DeliverFee = ""
+	v.StateCode = ""
+	v.LastUpdatedAt = ""
+	v.OriginalPrice = 0
+	v.TotalPrice = 0
+	v.Status = 0
+	v.DeliverymanInfo = nil
+	v.TrackingInfo = nil
+	poolEnterpriseData.Put(v)
 }

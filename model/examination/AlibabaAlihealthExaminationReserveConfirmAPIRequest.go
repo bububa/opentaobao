@@ -2,6 +2,7 @@ package examination
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -63,8 +64,36 @@ type AlibabaAlihealthExaminationReserveConfirmAPIRequest struct {
 // NewAlibabaAlihealthExaminationReserveConfirmRequest 初始化AlibabaAlihealthExaminationReserveConfirmAPIRequest对象
 func NewAlibabaAlihealthExaminationReserveConfirmRequest() *AlibabaAlihealthExaminationReserveConfirmAPIRequest {
 	return &AlibabaAlihealthExaminationReserveConfirmAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(23),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) Reset() {
+	r._addItems = r._addItems[:0]
+	r._addPacks = r._addPacks[:0]
+	r._merchantCode = ""
+	r._name = ""
+	r._reserveNumber = ""
+	r._gender = ""
+	r._birthday = ""
+	r._reserveDate = ""
+	r._packageCode = ""
+	r._married = ""
+	r._storeId = ""
+	r._phone = ""
+	r._certType = ""
+	r._certNumber = ""
+	r._company = ""
+	r._department = ""
+	r._address = ""
+	r._havaReport = ""
+	r._employeeNumber = ""
+	r._serviceType = ""
+	r._reserveTimeStart = ""
+	r._reserveTimeEnd = ""
+	r._serviceAddress = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -381,4 +410,21 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetServiceAddress(
 // GetServiceAddress ServiceAddress Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetServiceAddress() *AddAddress {
 	return r._serviceAddress
+}
+
+var poolAlibabaAlihealthExaminationReserveConfirmAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaAlihealthExaminationReserveConfirmRequest()
+	},
+}
+
+// GetAlibabaAlihealthExaminationReserveConfirmRequest 从 sync.Pool 获取 AlibabaAlihealthExaminationReserveConfirmAPIRequest
+func GetAlibabaAlihealthExaminationReserveConfirmAPIRequest() *AlibabaAlihealthExaminationReserveConfirmAPIRequest {
+	return poolAlibabaAlihealthExaminationReserveConfirmAPIRequest.Get().(*AlibabaAlihealthExaminationReserveConfirmAPIRequest)
+}
+
+// ReleaseAlibabaAlihealthExaminationReserveConfirmAPIRequest 将 AlibabaAlihealthExaminationReserveConfirmAPIRequest 放入 sync.Pool
+func ReleaseAlibabaAlihealthExaminationReserveConfirmAPIRequest(v *AlibabaAlihealthExaminationReserveConfirmAPIRequest) {
+	v.Reset()
+	poolAlibabaAlihealthExaminationReserveConfirmAPIRequest.Put(v)
 }

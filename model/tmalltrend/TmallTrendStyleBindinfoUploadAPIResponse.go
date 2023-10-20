@@ -2,6 +2,7 @@ package tmalltrend
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TmallTrendStyleBindinfoUploadAPIResponse struct {
 	model.CommonResponse
 	TmallTrendStyleBindinfoUploadAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TmallTrendStyleBindinfoUploadAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TmallTrendStyleBindinfoUploadAPIResponseModel).Reset()
 }
 
 // TmallTrendStyleBindinfoUploadAPIResponseModel is 趋势词&款式绑定信息同步API 成功返回结果
@@ -28,4 +35,30 @@ type TmallTrendStyleBindinfoUploadAPIResponseModel struct {
 	RespErrorCode int64 `json:"resp_error_code,omitempty" xml:"resp_error_code,omitempty"`
 	// 是否成功
 	RespSuccess bool `json:"resp_success,omitempty" xml:"resp_success,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TmallTrendStyleBindinfoUploadAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Value = ""
+	m.ErrorMsg = ""
+	m.RespErrorCode = 0
+	m.RespSuccess = false
+}
+
+var poolTmallTrendStyleBindinfoUploadAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TmallTrendStyleBindinfoUploadAPIResponse)
+	},
+}
+
+// GetTmallTrendStyleBindinfoUploadAPIResponse 从 sync.Pool 获取 TmallTrendStyleBindinfoUploadAPIResponse
+func GetTmallTrendStyleBindinfoUploadAPIResponse() *TmallTrendStyleBindinfoUploadAPIResponse {
+	return poolTmallTrendStyleBindinfoUploadAPIResponse.Get().(*TmallTrendStyleBindinfoUploadAPIResponse)
+}
+
+// ReleaseTmallTrendStyleBindinfoUploadAPIResponse 将 TmallTrendStyleBindinfoUploadAPIResponse 保存到 sync.Pool
+func ReleaseTmallTrendStyleBindinfoUploadAPIResponse(v *TmallTrendStyleBindinfoUploadAPIResponse) {
+	v.Reset()
+	poolTmallTrendStyleBindinfoUploadAPIResponse.Put(v)
 }

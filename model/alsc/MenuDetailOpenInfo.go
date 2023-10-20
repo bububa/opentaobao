@@ -1,5 +1,9 @@
 package alsc
 
+import (
+	"sync"
+)
+
 // MenuDetailOpenInfo 结构体
 type MenuDetailOpenInfo struct {
 	// 折扣率
@@ -16,4 +20,27 @@ type MenuDetailOpenInfo struct {
 	DishId string `json:"dish_id,omitempty" xml:"dish_id,omitempty"`
 	// 固定价
 	ProPrice int64 `json:"pro_price,omitempty" xml:"pro_price,omitempty"`
+}
+
+var poolMenuDetailOpenInfo = sync.Pool{
+	New: func() any {
+		return new(MenuDetailOpenInfo)
+	},
+}
+
+// GetMenuDetailOpenInfo() 从对象池中获取MenuDetailOpenInfo
+func GetMenuDetailOpenInfo() *MenuDetailOpenInfo {
+	return poolMenuDetailOpenInfo.Get().(*MenuDetailOpenInfo)
+}
+
+// ReleaseMenuDetailOpenInfo 释放MenuDetailOpenInfo
+func ReleaseMenuDetailOpenInfo(v *MenuDetailOpenInfo) {
+	v.ProDiscount = ""
+	v.ProType = ""
+	v.SkuId = ""
+	v.DishOutNo = ""
+	v.SkuOutNo = ""
+	v.DishId = ""
+	v.ProPrice = 0
+	poolMenuDetailOpenInfo.Put(v)
 }

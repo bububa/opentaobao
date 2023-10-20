@@ -1,5 +1,9 @@
 package cainiaohandover
 
+import (
+	"sync"
+)
+
 // OpenHandoverContentDetailResponse 结构体
 type OpenHandoverContentDetailResponse struct {
 	// 大包关联的小包列表
@@ -30,4 +34,34 @@ type OpenHandoverContentDetailResponse struct {
 	HandoverOrderStatus string `json:"handover_order_status,omitempty" xml:"handover_order_status,omitempty"`
 	// 交接物关联的交接单状态名称
 	HandoverOrderStatusName string `json:"handover_order_status_name,omitempty" xml:"handover_order_status_name,omitempty"`
+}
+
+var poolOpenHandoverContentDetailResponse = sync.Pool{
+	New: func() any {
+		return new(OpenHandoverContentDetailResponse)
+	},
+}
+
+// GetOpenHandoverContentDetailResponse() 从对象池中获取OpenHandoverContentDetailResponse
+func GetOpenHandoverContentDetailResponse() *OpenHandoverContentDetailResponse {
+	return poolOpenHandoverContentDetailResponse.Get().(*OpenHandoverContentDetailResponse)
+}
+
+// ReleaseOpenHandoverContentDetailResponse 释放OpenHandoverContentDetailResponse
+func ReleaseOpenHandoverContentDetailResponse(v *OpenHandoverContentDetailResponse) {
+	v.ParcelOrderList = v.ParcelOrderList[:0]
+	v.OrderCode = ""
+	v.TrackingNumber = ""
+	v.Status = ""
+	v.EstimateWeight = ""
+	v.ActualWeight = ""
+	v.WeightUnit = ""
+	v.EstimateFee = ""
+	v.ActualFee = ""
+	v.FeeCurrency = ""
+	v.FeeUnit = ""
+	v.StatusName = ""
+	v.HandoverOrderStatus = ""
+	v.HandoverOrderStatusName = ""
+	poolOpenHandoverContentDetailResponse.Put(v)
 }

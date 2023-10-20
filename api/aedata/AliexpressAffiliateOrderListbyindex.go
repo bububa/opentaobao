@@ -9,11 +9,6 @@ import (
 // aliexpress.affiliate.order.listbyindex
 //
 // AE联盟推广者订单按游标查询接口
-func AliexpressAffiliateOrderListbyindex(clt *core.SDKClient, req *aedata.AliexpressAffiliateOrderListbyindexAPIRequest, session string) (*aedata.AliexpressAffiliateOrderListbyindexAPIResponse, error) {
-	var resp aedata.AliexpressAffiliateOrderListbyindexAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AliexpressAffiliateOrderListbyindex(clt *core.SDKClient, req *aedata.AliexpressAffiliateOrderListbyindexAPIRequest, resp *aedata.AliexpressAffiliateOrderListbyindexAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

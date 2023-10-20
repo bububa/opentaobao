@@ -2,6 +2,7 @@ package xhotelonlineorder
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type TaobaoXhotelOrderAlipayfaceUpdateAPIResponse struct {
 	TaobaoXhotelOrderAlipayfaceUpdateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *TaobaoXhotelOrderAlipayfaceUpdateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoXhotelOrderAlipayfaceUpdateAPIResponseModel).Reset()
+}
+
 // TaobaoXhotelOrderAlipayfaceUpdateAPIResponseModel is 酒店信用住订单状态更新 成功返回结果
 type TaobaoXhotelOrderAlipayfaceUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_order_alipayface_update_response"`
@@ -22,4 +29,27 @@ type TaobaoXhotelOrderAlipayfaceUpdateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回提示信息
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoXhotelOrderAlipayfaceUpdateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = ""
+}
+
+var poolTaobaoXhotelOrderAlipayfaceUpdateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoXhotelOrderAlipayfaceUpdateAPIResponse)
+	},
+}
+
+// GetTaobaoXhotelOrderAlipayfaceUpdateAPIResponse 从 sync.Pool 获取 TaobaoXhotelOrderAlipayfaceUpdateAPIResponse
+func GetTaobaoXhotelOrderAlipayfaceUpdateAPIResponse() *TaobaoXhotelOrderAlipayfaceUpdateAPIResponse {
+	return poolTaobaoXhotelOrderAlipayfaceUpdateAPIResponse.Get().(*TaobaoXhotelOrderAlipayfaceUpdateAPIResponse)
+}
+
+// ReleaseTaobaoXhotelOrderAlipayfaceUpdateAPIResponse 将 TaobaoXhotelOrderAlipayfaceUpdateAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoXhotelOrderAlipayfaceUpdateAPIResponse(v *TaobaoXhotelOrderAlipayfaceUpdateAPIResponse) {
+	v.Reset()
+	poolTaobaoXhotelOrderAlipayfaceUpdateAPIResponse.Put(v)
 }

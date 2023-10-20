@@ -1,5 +1,9 @@
 package scbp
 
+import (
+	"sync"
+)
+
 // SingleProductEffectDto 结构体
 type SingleProductEffectDto struct {
 	// 产品title
@@ -18,4 +22,28 @@ type SingleProductEffectDto struct {
 	Ctr string `json:"ctr,omitempty" xml:"ctr,omitempty"`
 	// 产品ID
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
+}
+
+var poolSingleProductEffectDto = sync.Pool{
+	New: func() any {
+		return new(SingleProductEffectDto)
+	},
+}
+
+// GetSingleProductEffectDto() 从对象池中获取SingleProductEffectDto
+func GetSingleProductEffectDto() *SingleProductEffectDto {
+	return poolSingleProductEffectDto.Get().(*SingleProductEffectDto)
+}
+
+// ReleaseSingleProductEffectDto 释放SingleProductEffectDto
+func ReleaseSingleProductEffectDto(v *SingleProductEffectDto) {
+	v.Subject = ""
+	v.ImpressionCnt = ""
+	v.StatDate = ""
+	v.ClickCostAvg = ""
+	v.ClickCnt = ""
+	v.Cost = ""
+	v.Ctr = ""
+	v.ProductId = 0
+	poolSingleProductEffectDto.Put(v)
 }

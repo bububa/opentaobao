@@ -2,6 +2,7 @@ package tvupadmin
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type YunosTvpubadminContentShowSetexemptauditAPIRequest struct {
 // NewYunosTvpubadminContentShowSetexemptauditRequest 初始化YunosTvpubadminContentShowSetexemptauditAPIRequest对象
 func NewYunosTvpubadminContentShowSetexemptauditRequest() *YunosTvpubadminContentShowSetexemptauditAPIRequest {
 	return &YunosTvpubadminContentShowSetexemptauditAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *YunosTvpubadminContentShowSetexemptauditAPIRequest) Reset() {
+	r._showLongId = 0
+	r._license = 0
+	r._exemptAudit = 0
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *YunosTvpubadminContentShowSetexemptauditAPIRequest) SetExemptAudit(_exe
 // GetExemptAudit ExemptAudit Getter
 func (r YunosTvpubadminContentShowSetexemptauditAPIRequest) GetExemptAudit() int64 {
 	return r._exemptAudit
+}
+
+var poolYunosTvpubadminContentShowSetexemptauditAPIRequest = sync.Pool{
+	New: func() any {
+		return NewYunosTvpubadminContentShowSetexemptauditRequest()
+	},
+}
+
+// GetYunosTvpubadminContentShowSetexemptauditRequest 从 sync.Pool 获取 YunosTvpubadminContentShowSetexemptauditAPIRequest
+func GetYunosTvpubadminContentShowSetexemptauditAPIRequest() *YunosTvpubadminContentShowSetexemptauditAPIRequest {
+	return poolYunosTvpubadminContentShowSetexemptauditAPIRequest.Get().(*YunosTvpubadminContentShowSetexemptauditAPIRequest)
+}
+
+// ReleaseYunosTvpubadminContentShowSetexemptauditAPIRequest 将 YunosTvpubadminContentShowSetexemptauditAPIRequest 放入 sync.Pool
+func ReleaseYunosTvpubadminContentShowSetexemptauditAPIRequest(v *YunosTvpubadminContentShowSetexemptauditAPIRequest) {
+	v.Reset()
+	poolYunosTvpubadminContentShowSetexemptauditAPIRequest.Put(v)
 }

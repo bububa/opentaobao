@@ -2,6 +2,7 @@ package eleenterpriseemployee
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaEleEnterpriseEmployeeBatchdeleteAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleEnterpriseEmployeeBatchdeleteAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaEleEnterpriseEmployeeBatchdeleteAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaEleEnterpriseEmployeeBatchdeleteAPIResponseModel).Reset()
 }
 
 // AlibabaEleEnterpriseEmployeeBatchdeleteAPIResponseModel is 批量删除员工 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaEleEnterpriseEmployeeBatchdeleteAPIResponseModel struct {
 	EnterpriseRequestid string `json:"enterprise_requestid,omitempty" xml:"enterprise_requestid,omitempty"`
 	// 返回值信息
 	EnterpriseData *EnterpriseData `json:"enterprise_data,omitempty" xml:"enterprise_data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaEleEnterpriseEmployeeBatchdeleteAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.EnterpriseCode = ""
+	m.EnterpriseMsg = ""
+	m.EnterpriseRequestid = ""
+	m.EnterpriseData = nil
+}
+
+var poolAlibabaEleEnterpriseEmployeeBatchdeleteAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaEleEnterpriseEmployeeBatchdeleteAPIResponse)
+	},
+}
+
+// GetAlibabaEleEnterpriseEmployeeBatchdeleteAPIResponse 从 sync.Pool 获取 AlibabaEleEnterpriseEmployeeBatchdeleteAPIResponse
+func GetAlibabaEleEnterpriseEmployeeBatchdeleteAPIResponse() *AlibabaEleEnterpriseEmployeeBatchdeleteAPIResponse {
+	return poolAlibabaEleEnterpriseEmployeeBatchdeleteAPIResponse.Get().(*AlibabaEleEnterpriseEmployeeBatchdeleteAPIResponse)
+}
+
+// ReleaseAlibabaEleEnterpriseEmployeeBatchdeleteAPIResponse 将 AlibabaEleEnterpriseEmployeeBatchdeleteAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaEleEnterpriseEmployeeBatchdeleteAPIResponse(v *AlibabaEleEnterpriseEmployeeBatchdeleteAPIResponse) {
+	v.Reset()
+	poolAlibabaEleEnterpriseEmployeeBatchdeleteAPIResponse.Put(v)
 }

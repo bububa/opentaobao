@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.activity.address.add
 //
 // 营销抽奖活动，奖品邮寄地址填写
-func AlitripMerchantGalaxyActivityAddressAdd(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyActivityAddressAddAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyActivityAddressAddAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyActivityAddressAddAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyActivityAddressAdd(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyActivityAddressAddAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyActivityAddressAddAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

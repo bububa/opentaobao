@@ -9,11 +9,6 @@ import (
 // alibaba.alihouse.newhome.project.adviser.delete
 //
 // 删除楼盘顾问
-func AlibabaAlihouseNewhomeProjectAdviserDelete(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeProjectAdviserDeleteAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeProjectAdviserDeleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaAlihouseNewhomeProjectAdviserDelete(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest, resp *alihouse.AlibabaAlihouseNewhomeProjectAdviserDeleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

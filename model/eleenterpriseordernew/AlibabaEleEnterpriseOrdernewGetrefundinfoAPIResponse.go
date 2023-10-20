@@ -2,6 +2,7 @@ package eleenterpriseordernew
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type AlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponse struct {
 	model.CommonResponse
 	AlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *AlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponseModel).Reset()
 }
 
 // AlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponseModel is 退单和申诉 成功返回结果
@@ -28,4 +35,30 @@ type AlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponseModel struct {
 	EnterpriseRequestid string `json:"enterprise_requestid,omitempty" xml:"enterprise_requestid,omitempty"`
 	// 返回值信息
 	EnterpriseData *StandardOrderTrackingInfoDto `json:"enterprise_data,omitempty" xml:"enterprise_data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.EnterpriseCode = ""
+	m.EnterpriseMsg = ""
+	m.EnterpriseRequestid = ""
+	m.EnterpriseData = nil
+}
+
+var poolAlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponse)
+	},
+}
+
+// GetAlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponse 从 sync.Pool 获取 AlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponse
+func GetAlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponse() *AlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponse {
+	return poolAlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponse.Get().(*AlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponse)
+}
+
+// ReleaseAlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponse 将 AlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponse(v *AlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponse) {
+	v.Reset()
+	poolAlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponse.Put(v)
 }

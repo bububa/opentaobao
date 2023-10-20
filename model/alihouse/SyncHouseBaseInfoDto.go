@@ -1,5 +1,9 @@
 package alihouse
 
+import (
+	"sync"
+)
+
 // SyncHouseBaseInfoDto 结构体
 type SyncHouseBaseInfoDto struct {
 	// 1
@@ -76,4 +80,57 @@ type SyncHouseBaseInfoDto struct {
 	EnterpriseMerchantOpenId int64 `json:"enterprise_merchant_open_id,omitempty" xml:"enterprise_merchant_open_id,omitempty"`
 	// 授权的主体ID  说明： 当签约类型是授权代理人时，授权代理人ID需要必填
 	SigningMerchantOpenId int64 `json:"signing_merchant_open_id,omitempty" xml:"signing_merchant_open_id,omitempty"`
+}
+
+var poolSyncHouseBaseInfoDto = sync.Pool{
+	New: func() any {
+		return new(SyncHouseBaseInfoDto)
+	},
+}
+
+// GetSyncHouseBaseInfoDto() 从对象池中获取SyncHouseBaseInfoDto
+func GetSyncHouseBaseInfoDto() *SyncHouseBaseInfoDto {
+	return poolSyncHouseBaseInfoDto.Get().(*SyncHouseBaseInfoDto)
+}
+
+// ReleaseSyncHouseBaseInfoDto 释放SyncHouseBaseInfoDto
+func ReleaseSyncHouseBaseInfoDto(v *SyncHouseBaseInfoDto) {
+	v.CommunityOuterId = ""
+	v.OuterId = ""
+	v.OuterStoreId = ""
+	v.ECode = ""
+	v.OuterCompanyId = ""
+	v.OuterAgentId = ""
+	v.City = ""
+	v.OuterHouseBaseId = ""
+	v.OuterLayoutsId = ""
+	v.ShowPrice = ""
+	v.InsideArea = ""
+	v.BuildingArea = ""
+	v.CoverPicture = ""
+	v.OnlineStatus = 0
+	v.BusinessType = 0
+	v.Scene = 0
+	v.IsTest = 0
+	v.ItemId = 0
+	v.MerchantOpenId = 0
+	v.HouseCategory = 0
+	v.HouseModel = 0
+	v.RentPrice = 0
+	v.Room = 0
+	v.Hall = 0
+	v.Toilet = 0
+	v.Kitchen = 0
+	v.Balcony = 0
+	v.NewItemId = 0
+	v.EntrustStatus = 0
+	v.AgreementId = 0
+	v.LandlordType = 0
+	v.NaturalMerchantOpenId = 0
+	v.CollectionType = 0
+	v.InsteadMerchantOpenId = 0
+	v.SignType = 0
+	v.EnterpriseMerchantOpenId = 0
+	v.SigningMerchantOpenId = 0
+	poolSyncHouseBaseInfoDto.Put(v)
 }

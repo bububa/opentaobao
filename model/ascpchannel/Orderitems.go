@@ -1,5 +1,9 @@
 package ascpchannel
 
+import (
+	"sync"
+)
+
 // Orderitems 结构体
 type Orderitems struct {
 	// 销退回告明细列表
@@ -20,4 +24,29 @@ type Orderitems struct {
 	ActualReceivedQuantity int64 `json:"actual_received_quantity,omitempty" xml:"actual_received_quantity,omitempty"`
 	// 货品未收货总数量
 	ActualLackQuantity int64 `json:"actual_lack_quantity,omitempty" xml:"actual_lack_quantity,omitempty"`
+}
+
+var poolOrderitems = sync.Pool{
+	New: func() any {
+		return new(Orderitems)
+	},
+}
+
+// GetOrderitems() 从对象池中获取Orderitems
+func GetOrderitems() *Orderitems {
+	return poolOrderitems.Get().(*Orderitems)
+}
+
+// ReleaseOrderitems 释放Orderitems
+func ReleaseOrderitems(v *Orderitems) {
+	v.InstorageDetails = v.InstorageDetails[:0]
+	v.SubOrderCode = ""
+	v.ScItemId = ""
+	v.ErpOrderLine = ""
+	v.ItemQuantity = 0
+	v.LackQuantity = 0
+	v.PlanReturnQuantity = 0
+	v.ActualReceivedQuantity = 0
+	v.ActualLackQuantity = 0
+	poolOrderitems.Put(v)
 }

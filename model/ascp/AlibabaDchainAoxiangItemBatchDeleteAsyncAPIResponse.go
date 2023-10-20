@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaDchainAoxiangItemBatchDeleteAsyncAPIResponse struct {
 	AlibabaDchainAoxiangItemBatchDeleteAsyncAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaDchainAoxiangItemBatchDeleteAsyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaDchainAoxiangItemBatchDeleteAsyncAPIResponseModel).Reset()
+}
+
 // AlibabaDchainAoxiangItemBatchDeleteAsyncAPIResponseModel is 货品与组合货品删除 成功返回结果
 type AlibabaDchainAoxiangItemBatchDeleteAsyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_dchain_aoxiang_item_batch_delete_async_response"`
@@ -22,4 +29,27 @@ type AlibabaDchainAoxiangItemBatchDeleteAsyncAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 请求出参
 	ItemDeleteResponse *ItemDeleteAsyncResponse `json:"item_delete_response,omitempty" xml:"item_delete_response,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaDchainAoxiangItemBatchDeleteAsyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.ItemDeleteResponse = nil
+}
+
+var poolAlibabaDchainAoxiangItemBatchDeleteAsyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaDchainAoxiangItemBatchDeleteAsyncAPIResponse)
+	},
+}
+
+// GetAlibabaDchainAoxiangItemBatchDeleteAsyncAPIResponse 从 sync.Pool 获取 AlibabaDchainAoxiangItemBatchDeleteAsyncAPIResponse
+func GetAlibabaDchainAoxiangItemBatchDeleteAsyncAPIResponse() *AlibabaDchainAoxiangItemBatchDeleteAsyncAPIResponse {
+	return poolAlibabaDchainAoxiangItemBatchDeleteAsyncAPIResponse.Get().(*AlibabaDchainAoxiangItemBatchDeleteAsyncAPIResponse)
+}
+
+// ReleaseAlibabaDchainAoxiangItemBatchDeleteAsyncAPIResponse 将 AlibabaDchainAoxiangItemBatchDeleteAsyncAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaDchainAoxiangItemBatchDeleteAsyncAPIResponse(v *AlibabaDchainAoxiangItemBatchDeleteAsyncAPIResponse) {
+	v.Reset()
+	poolAlibabaDchainAoxiangItemBatchDeleteAsyncAPIResponse.Put(v)
 }

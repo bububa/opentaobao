@@ -9,11 +9,6 @@ import (
 // alitrip.platform.poi.raw.poiout
 //
 // 输出指定城市poi指定信息
-func AlitripPlatformPoiRawPoiout(clt *core.SDKClient, req *alitrippoi.AlitripPlatformPoiRawPoioutAPIRequest, session string) (*alitrippoi.AlitripPlatformPoiRawPoioutAPIResponse, error) {
-	var resp alitrippoi.AlitripPlatformPoiRawPoioutAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripPlatformPoiRawPoiout(clt *core.SDKClient, req *alitrippoi.AlitripPlatformPoiRawPoioutAPIRequest, resp *alitrippoi.AlitripPlatformPoiRawPoioutAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -9,11 +9,6 @@ import (
 // alitrip.merchant.galaxy.wechat.card.query.record
 //
 // 微信会员卡领取记录查询
-func AlitripMerchantGalaxyWechatCardQueryRecord(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyWechatCardQueryRecordAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyWechatCardQueryRecordAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyWechatCardQueryRecordAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlitripMerchantGalaxyWechatCardQueryRecord(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyWechatCardQueryRecordAPIRequest, resp *alitripmerchant.AlitripMerchantGalaxyWechatCardQueryRecordAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

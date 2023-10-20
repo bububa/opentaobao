@@ -1,5 +1,9 @@
 package tmallgenie
 
+import (
+	"sync"
+)
+
 // BotSkillsRelInfo 结构体
 type BotSkillsRelInfo struct {
 	// 结果集
@@ -36,4 +40,37 @@ type BotSkillsRelInfo struct {
 	BotId int64 `json:"bot_id,omitempty" xml:"bot_id,omitempty"`
 	// 技能Id
 	SkillId int64 `json:"skill_id,omitempty" xml:"skill_id,omitempty"`
+}
+
+var poolBotSkillsRelInfo = sync.Pool{
+	New: func() any {
+		return new(BotSkillsRelInfo)
+	},
+}
+
+// GetBotSkillsRelInfo() 从对象池中获取BotSkillsRelInfo
+func GetBotSkillsRelInfo() *BotSkillsRelInfo {
+	return poolBotSkillsRelInfo.Get().(*BotSkillsRelInfo)
+}
+
+// ReleaseBotSkillsRelInfo 释放BotSkillsRelInfo
+func ReleaseBotSkillsRelInfo(v *BotSkillsRelInfo) {
+	v.Results = v.Results[:0]
+	v.ServiceProviders = v.ServiceProviders[:0]
+	v.Samples = ""
+	v.LongDesc = ""
+	v.IconImgUrl = ""
+	v.Category = ""
+	v.Name = ""
+	v.InvocationName = ""
+	v.IcoinImageUrl = ""
+	v.Desc = ""
+	v.Sample = ""
+	v.PageCount = 0
+	v.PageSize = 0
+	v.TotalCount = 0
+	v.CurrentPage = 0
+	v.BotId = 0
+	v.SkillId = 0
+	poolBotSkillsRelInfo.Put(v)
 }

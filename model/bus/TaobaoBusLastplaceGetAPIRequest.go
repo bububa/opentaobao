@@ -2,6 +2,7 @@ package bus
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoBusLastplaceGetAPIRequest struct {
 // NewTaobaoBusLastplaceGetRequest 初始化TaobaoBusLastplaceGetAPIRequest对象
 func NewTaobaoBusLastplaceGetRequest() *TaobaoBusLastplaceGetAPIRequest {
 	return &TaobaoBusLastplaceGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoBusLastplaceGetAPIRequest) Reset() {
+	r._paramLastPlaceSearchRQ = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoBusLastplaceGetAPIRequest) SetParamLastPlaceSearchRQ(_paramLastPl
 // GetParamLastPlaceSearchRQ ParamLastPlaceSearchRQ Getter
 func (r TaobaoBusLastplaceGetAPIRequest) GetParamLastPlaceSearchRQ() *ParamLastPlaceSearchRq {
 	return r._paramLastPlaceSearchRQ
+}
+
+var poolTaobaoBusLastplaceGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoBusLastplaceGetRequest()
+	},
+}
+
+// GetTaobaoBusLastplaceGetRequest 从 sync.Pool 获取 TaobaoBusLastplaceGetAPIRequest
+func GetTaobaoBusLastplaceGetAPIRequest() *TaobaoBusLastplaceGetAPIRequest {
+	return poolTaobaoBusLastplaceGetAPIRequest.Get().(*TaobaoBusLastplaceGetAPIRequest)
+}
+
+// ReleaseTaobaoBusLastplaceGetAPIRequest 将 TaobaoBusLastplaceGetAPIRequest 放入 sync.Pool
+func ReleaseTaobaoBusLastplaceGetAPIRequest(v *TaobaoBusLastplaceGetAPIRequest) {
+	v.Reset()
+	poolTaobaoBusLastplaceGetAPIRequest.Put(v)
 }

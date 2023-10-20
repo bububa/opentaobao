@@ -1,5 +1,9 @@
 package store
 
+import (
+	"sync"
+)
+
 // TopBatchResultDo 结构体
 type TopBatchResultDo struct {
 	// 失败的门店id
@@ -16,4 +20,27 @@ type TopBatchResultDo struct {
 	Failure bool `json:"failure,omitempty" xml:"failure,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+}
+
+var poolTopBatchResultDo = sync.Pool{
+	New: func() any {
+		return new(TopBatchResultDo)
+	},
+}
+
+// GetTopBatchResultDo() 从对象池中获取TopBatchResultDo
+func GetTopBatchResultDo() *TopBatchResultDo {
+	return poolTopBatchResultDo.Get().(*TopBatchResultDo)
+}
+
+// ReleaseTopBatchResultDo 释放TopBatchResultDo
+func ReleaseTopBatchResultDo(v *TopBatchResultDo) {
+	v.ResultList = v.ResultList[:0]
+	v.ErrorCode = ""
+	v.ErrorMsg = ""
+	v.Other = nil
+	v.TotalNum = 0
+	v.Failure = false
+	v.Success = false
+	poolTopBatchResultDo.Put(v)
 }

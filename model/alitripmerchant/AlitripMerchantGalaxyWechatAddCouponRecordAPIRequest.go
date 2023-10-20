@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -25,8 +26,17 @@ type AlitripMerchantGalaxyWechatAddCouponRecordAPIRequest struct {
 // NewAlitripMerchantGalaxyWechatAddCouponRecordRequest 初始化AlitripMerchantGalaxyWechatAddCouponRecordAPIRequest对象
 func NewAlitripMerchantGalaxyWechatAddCouponRecordRequest() *AlitripMerchantGalaxyWechatAddCouponRecordAPIRequest {
 	return &AlitripMerchantGalaxyWechatAddCouponRecordAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(4),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlitripMerchantGalaxyWechatAddCouponRecordAPIRequest) Reset() {
+	r._tenantKey = ""
+	r._token = ""
+	r._cardType = ""
+	r._sendCouponResult = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -96,4 +106,21 @@ func (r *AlitripMerchantGalaxyWechatAddCouponRecordAPIRequest) SetSendCouponResu
 // GetSendCouponResult SendCouponResult Getter
 func (r AlitripMerchantGalaxyWechatAddCouponRecordAPIRequest) GetSendCouponResult() string {
 	return r._sendCouponResult
+}
+
+var poolAlitripMerchantGalaxyWechatAddCouponRecordAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlitripMerchantGalaxyWechatAddCouponRecordRequest()
+	},
+}
+
+// GetAlitripMerchantGalaxyWechatAddCouponRecordRequest 从 sync.Pool 获取 AlitripMerchantGalaxyWechatAddCouponRecordAPIRequest
+func GetAlitripMerchantGalaxyWechatAddCouponRecordAPIRequest() *AlitripMerchantGalaxyWechatAddCouponRecordAPIRequest {
+	return poolAlitripMerchantGalaxyWechatAddCouponRecordAPIRequest.Get().(*AlitripMerchantGalaxyWechatAddCouponRecordAPIRequest)
+}
+
+// ReleaseAlitripMerchantGalaxyWechatAddCouponRecordAPIRequest 将 AlitripMerchantGalaxyWechatAddCouponRecordAPIRequest 放入 sync.Pool
+func ReleaseAlitripMerchantGalaxyWechatAddCouponRecordAPIRequest(v *AlitripMerchantGalaxyWechatAddCouponRecordAPIRequest) {
+	v.Reset()
+	poolAlitripMerchantGalaxyWechatAddCouponRecordAPIRequest.Put(v)
 }

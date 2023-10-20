@@ -2,6 +2,7 @@ package alihealthmedical
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaAlihealthMedicalDoctorMsgSendAPIResponse struct {
 	AlibabaAlihealthMedicalDoctorMsgSendAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaAlihealthMedicalDoctorMsgSendAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaAlihealthMedicalDoctorMsgSendAPIResponseModel).Reset()
+}
+
 // AlibabaAlihealthMedicalDoctorMsgSendAPIResponseModel is 三方医生消息写入 成功返回结果
 type AlibabaAlihealthMedicalDoctorMsgSendAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_medical_doctor_msg_send_response"`
@@ -22,4 +29,27 @@ type AlibabaAlihealthMedicalDoctorMsgSendAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *ServiceResult `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaAlihealthMedicalDoctorMsgSendAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlibabaAlihealthMedicalDoctorMsgSendAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaAlihealthMedicalDoctorMsgSendAPIResponse)
+	},
+}
+
+// GetAlibabaAlihealthMedicalDoctorMsgSendAPIResponse 从 sync.Pool 获取 AlibabaAlihealthMedicalDoctorMsgSendAPIResponse
+func GetAlibabaAlihealthMedicalDoctorMsgSendAPIResponse() *AlibabaAlihealthMedicalDoctorMsgSendAPIResponse {
+	return poolAlibabaAlihealthMedicalDoctorMsgSendAPIResponse.Get().(*AlibabaAlihealthMedicalDoctorMsgSendAPIResponse)
+}
+
+// ReleaseAlibabaAlihealthMedicalDoctorMsgSendAPIResponse 将 AlibabaAlihealthMedicalDoctorMsgSendAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaAlihealthMedicalDoctorMsgSendAPIResponse(v *AlibabaAlihealthMedicalDoctorMsgSendAPIResponse) {
+	v.Reset()
+	poolAlibabaAlihealthMedicalDoctorMsgSendAPIResponse.Put(v)
 }

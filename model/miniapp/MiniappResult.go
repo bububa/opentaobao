@@ -1,5 +1,9 @@
 package miniapp
 
+import (
+	"sync"
+)
+
 // MiniappResult 结构体
 type MiniappResult struct {
 	// model
@@ -12,4 +16,25 @@ type MiniappResult struct {
 	ErrType int64 `json:"err_type,omitempty" xml:"err_type,omitempty"`
 	// true or false
 	Successful bool `json:"successful,omitempty" xml:"successful,omitempty"`
+}
+
+var poolMiniappResult = sync.Pool{
+	New: func() any {
+		return new(MiniappResult)
+	},
+}
+
+// GetMiniappResult() 从对象池中获取MiniappResult
+func GetMiniappResult() *MiniappResult {
+	return poolMiniappResult.Get().(*MiniappResult)
+}
+
+// ReleaseMiniappResult 释放MiniappResult
+func ReleaseMiniappResult(v *MiniappResult) {
+	v.Model = v.Model[:0]
+	v.ErrorType = ""
+	v.ErrorMsg = ""
+	v.ErrType = 0
+	v.Successful = false
+	poolMiniappResult.Put(v)
 }

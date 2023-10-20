@@ -1,5 +1,9 @@
 package mozi
 
+import (
+	"sync"
+)
+
 // PageAllAccountsRequest 结构体
 type PageAllAccountsRequest struct {
 	// 账号类型，21 钉钉 11 淘宝
@@ -22,4 +26,30 @@ type PageAllAccountsRequest struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 是否返回总数
 	ReturnTotalSize bool `json:"return_total_size,omitempty" xml:"return_total_size,omitempty"`
+}
+
+var poolPageAllAccountsRequest = sync.Pool{
+	New: func() any {
+		return new(PageAllAccountsRequest)
+	},
+}
+
+// GetPageAllAccountsRequest() 从对象池中获取PageAllAccountsRequest
+func GetPageAllAccountsRequest() *PageAllAccountsRequest {
+	return poolPageAllAccountsRequest.Get().(*PageAllAccountsRequest)
+}
+
+// ReleasePageAllAccountsRequest 释放PageAllAccountsRequest
+func ReleasePageAllAccountsRequest(v *PageAllAccountsRequest) {
+	v.AccountType = ""
+	v.Available = ""
+	v.RequestMetaData = ""
+	v.HrStatus = ""
+	v.TenantId = 0
+	v.PageSize = 0
+	v.PageNo = 0
+	v.ActiveLevel = 0
+	v.Status = 0
+	v.ReturnTotalSize = false
+	poolPageAllAccountsRequest.Put(v)
 }

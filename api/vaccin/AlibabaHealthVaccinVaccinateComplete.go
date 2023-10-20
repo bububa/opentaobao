@@ -9,11 +9,6 @@ import (
 // alibaba.health.vaccin.vaccinate.complete
 //
 // ISV 将用户完成接种的疫苗同步给免疫规划中心
-func AlibabaHealthVaccinVaccinateComplete(clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinVaccinateCompleteAPIRequest, session string) (*vaccin.AlibabaHealthVaccinVaccinateCompleteAPIResponse, error) {
-	var resp vaccin.AlibabaHealthVaccinVaccinateCompleteAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaHealthVaccinVaccinateComplete(clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinVaccinateCompleteAPIRequest, resp *vaccin.AlibabaHealthVaccinVaccinateCompleteAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

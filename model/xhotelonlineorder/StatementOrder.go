@@ -1,5 +1,9 @@
 package xhotelonlineorder
 
+import (
+	"sync"
+)
+
 // StatementOrder 结构体
 type StatementOrder struct {
 	// 酒店名称
@@ -46,4 +50,42 @@ type StatementOrder struct {
 	RoomSumNights int64 `json:"room_sum_nights,omitempty" xml:"room_sum_nights,omitempty"`
 	// 淘宝订单ID
 	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
+}
+
+var poolStatementOrder = sync.Pool{
+	New: func() any {
+		return new(StatementOrder)
+	},
+}
+
+// GetStatementOrder() 从对象池中获取StatementOrder
+func GetStatementOrder() *StatementOrder {
+	return poolStatementOrder.Get().(*StatementOrder)
+}
+
+// ReleaseStatementOrder 释放StatementOrder
+func ReleaseStatementOrder(v *StatementOrder) {
+	v.HotelName = ""
+	v.AccountType = ""
+	v.CommissionTotal = ""
+	v.TransactionFee = ""
+	v.HotelCommission = ""
+	v.TaobaoCommission = ""
+	v.AlipayTradeNo = ""
+	v.SettleDate = ""
+	v.PromotionDetail = ""
+	v.SellerPromotion = ""
+	v.OtherFee = ""
+	v.Payment = ""
+	v.RoomTypeName = ""
+	v.CheckOut = ""
+	v.CheckIn = ""
+	v.TradeStatus = ""
+	v.PayType = ""
+	v.OutId = ""
+	v.SettleStatus = ""
+	v.TaxAndFee = ""
+	v.RoomSumNights = 0
+	v.Tid = 0
+	poolStatementOrder.Put(v)
 }

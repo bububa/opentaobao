@@ -9,11 +9,6 @@ import (
 // taobao.wlb.item.update
 //
 // 修改物流宝商品信息
-func TaobaoWlbItemUpdate(clt *core.SDKClient, req *wlb.TaobaoWlbItemUpdateAPIRequest, session string) (*wlb.TaobaoWlbItemUpdateAPIResponse, error) {
-	var resp wlb.TaobaoWlbItemUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoWlbItemUpdate(clt *core.SDKClient, req *wlb.TaobaoWlbItemUpdateAPIRequest, resp *wlb.TaobaoWlbItemUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

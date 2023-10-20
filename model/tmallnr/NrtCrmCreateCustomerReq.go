@@ -1,5 +1,9 @@
 package tmallnr
 
+import (
+	"sync"
+)
+
 // NrtCrmCreateCustomerReq 结构体
 type NrtCrmCreateCustomerReq struct {
 	// 手机号
@@ -18,4 +22,28 @@ type NrtCrmCreateCustomerReq struct {
 	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
 	// 导购员id
 	GuiderId int64 `json:"guider_id,omitempty" xml:"guider_id,omitempty"`
+}
+
+var poolNrtCrmCreateCustomerReq = sync.Pool{
+	New: func() any {
+		return new(NrtCrmCreateCustomerReq)
+	},
+}
+
+// GetNrtCrmCreateCustomerReq() 从对象池中获取NrtCrmCreateCustomerReq
+func GetNrtCrmCreateCustomerReq() *NrtCrmCreateCustomerReq {
+	return poolNrtCrmCreateCustomerReq.Get().(*NrtCrmCreateCustomerReq)
+}
+
+// ReleaseNrtCrmCreateCustomerReq 释放NrtCrmCreateCustomerReq
+func ReleaseNrtCrmCreateCustomerReq(v *NrtCrmCreateCustomerReq) {
+	v.Phone = ""
+	v.BizCode = ""
+	v.OpenId = ""
+	v.Name = ""
+	v.WechatName = ""
+	v.ActivityId = 0
+	v.StoreId = 0
+	v.GuiderId = 0
+	poolNrtCrmCreateCustomerReq.Put(v)
 }

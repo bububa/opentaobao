@@ -2,6 +2,7 @@ package alitripmerchant
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlitripMerchantGalaxyCityLikeAPIResponse struct {
 	AlitripMerchantGalaxyCityLikeAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlitripMerchantGalaxyCityLikeAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlitripMerchantGalaxyCityLikeAPIResponseModel).Reset()
+}
+
 // AlitripMerchantGalaxyCityLikeAPIResponseModel is 星河-酒店城市模糊查询 成功返回结果
 type AlitripMerchantGalaxyCityLikeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_merchant_galaxy_city_like_response"`
@@ -22,4 +29,27 @@ type AlitripMerchantGalaxyCityLikeAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 默认描述
 	Result *AlitripMerchantGalaxyCityLikeResponse `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlitripMerchantGalaxyCityLikeAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAlitripMerchantGalaxyCityLikeAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlitripMerchantGalaxyCityLikeAPIResponse)
+	},
+}
+
+// GetAlitripMerchantGalaxyCityLikeAPIResponse 从 sync.Pool 获取 AlitripMerchantGalaxyCityLikeAPIResponse
+func GetAlitripMerchantGalaxyCityLikeAPIResponse() *AlitripMerchantGalaxyCityLikeAPIResponse {
+	return poolAlitripMerchantGalaxyCityLikeAPIResponse.Get().(*AlitripMerchantGalaxyCityLikeAPIResponse)
+}
+
+// ReleaseAlitripMerchantGalaxyCityLikeAPIResponse 将 AlitripMerchantGalaxyCityLikeAPIResponse 保存到 sync.Pool
+func ReleaseAlitripMerchantGalaxyCityLikeAPIResponse(v *AlitripMerchantGalaxyCityLikeAPIResponse) {
+	v.Reset()
+	poolAlitripMerchantGalaxyCityLikeAPIResponse.Put(v)
 }

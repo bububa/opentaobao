@@ -2,6 +2,7 @@ package ascp
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIResponse struct {
 	AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIResponseModel).Reset()
+}
+
 // AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIResponseModel is 指定分销商进行铺货(专享) 成功返回结果
 type AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_dchain_aoxiang_item_distribution_specify_create_response"`
@@ -22,4 +29,27 @@ type AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结构体
 	CreateItemDistributionResponse *TopResponse `json:"create_item_distribution_response,omitempty" xml:"create_item_distribution_response,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.CreateItemDistributionResponse = nil
+}
+
+var poolAlibabaDchainAoxiangItemDistributionSpecifyCreateAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIResponse)
+	},
+}
+
+// GetAlibabaDchainAoxiangItemDistributionSpecifyCreateAPIResponse 从 sync.Pool 获取 AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIResponse
+func GetAlibabaDchainAoxiangItemDistributionSpecifyCreateAPIResponse() *AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIResponse {
+	return poolAlibabaDchainAoxiangItemDistributionSpecifyCreateAPIResponse.Get().(*AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIResponse)
+}
+
+// ReleaseAlibabaDchainAoxiangItemDistributionSpecifyCreateAPIResponse 将 AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIResponse 保存到 sync.Pool
+func ReleaseAlibabaDchainAoxiangItemDistributionSpecifyCreateAPIResponse(v *AlibabaDchainAoxiangItemDistributionSpecifyCreateAPIResponse) {
+	v.Reset()
+	poolAlibabaDchainAoxiangItemDistributionSpecifyCreateAPIResponse.Put(v)
 }

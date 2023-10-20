@@ -2,6 +2,7 @@ package tmallhk
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TmallTraceplatformAwdcInfoUploadAPIRequest struct {
 // NewTmallTraceplatformAwdcInfoUploadRequest 初始化TmallTraceplatformAwdcInfoUploadAPIRequest对象
 func NewTmallTraceplatformAwdcInfoUploadRequest() *TmallTraceplatformAwdcInfoUploadAPIRequest {
 	return &TmallTraceplatformAwdcInfoUploadAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TmallTraceplatformAwdcInfoUploadAPIRequest) Reset() {
+	r._traceInfo = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TmallTraceplatformAwdcInfoUploadAPIRequest) SetTraceInfo(_traceInfo *Aw
 // GetTraceInfo TraceInfo Getter
 func (r TmallTraceplatformAwdcInfoUploadAPIRequest) GetTraceInfo() *AwdcInfo {
 	return r._traceInfo
+}
+
+var poolTmallTraceplatformAwdcInfoUploadAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTmallTraceplatformAwdcInfoUploadRequest()
+	},
+}
+
+// GetTmallTraceplatformAwdcInfoUploadRequest 从 sync.Pool 获取 TmallTraceplatformAwdcInfoUploadAPIRequest
+func GetTmallTraceplatformAwdcInfoUploadAPIRequest() *TmallTraceplatformAwdcInfoUploadAPIRequest {
+	return poolTmallTraceplatformAwdcInfoUploadAPIRequest.Get().(*TmallTraceplatformAwdcInfoUploadAPIRequest)
+}
+
+// ReleaseTmallTraceplatformAwdcInfoUploadAPIRequest 将 TmallTraceplatformAwdcInfoUploadAPIRequest 放入 sync.Pool
+func ReleaseTmallTraceplatformAwdcInfoUploadAPIRequest(v *TmallTraceplatformAwdcInfoUploadAPIRequest) {
+	v.Reset()
+	poolTmallTraceplatformAwdcInfoUploadAPIRequest.Put(v)
 }

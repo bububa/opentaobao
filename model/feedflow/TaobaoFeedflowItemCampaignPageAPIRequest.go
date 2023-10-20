@@ -2,6 +2,7 @@ package feedflow
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoFeedflowItemCampaignPageAPIRequest struct {
 // NewTaobaoFeedflowItemCampaignPageRequest 初始化TaobaoFeedflowItemCampaignPageAPIRequest对象
 func NewTaobaoFeedflowItemCampaignPageRequest() *TaobaoFeedflowItemCampaignPageAPIRequest {
 	return &TaobaoFeedflowItemCampaignPageAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoFeedflowItemCampaignPageAPIRequest) Reset() {
+	r._campaignQuery = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoFeedflowItemCampaignPageAPIRequest) SetCampaignQuery(_campaignQue
 // GetCampaignQuery CampaignQuery Getter
 func (r TaobaoFeedflowItemCampaignPageAPIRequest) GetCampaignQuery() *CampaignQueryDto {
 	return r._campaignQuery
+}
+
+var poolTaobaoFeedflowItemCampaignPageAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoFeedflowItemCampaignPageRequest()
+	},
+}
+
+// GetTaobaoFeedflowItemCampaignPageRequest 从 sync.Pool 获取 TaobaoFeedflowItemCampaignPageAPIRequest
+func GetTaobaoFeedflowItemCampaignPageAPIRequest() *TaobaoFeedflowItemCampaignPageAPIRequest {
+	return poolTaobaoFeedflowItemCampaignPageAPIRequest.Get().(*TaobaoFeedflowItemCampaignPageAPIRequest)
+}
+
+// ReleaseTaobaoFeedflowItemCampaignPageAPIRequest 将 TaobaoFeedflowItemCampaignPageAPIRequest 放入 sync.Pool
+func ReleaseTaobaoFeedflowItemCampaignPageAPIRequest(v *TaobaoFeedflowItemCampaignPageAPIRequest) {
+	v.Reset()
+	poolTaobaoFeedflowItemCampaignPageAPIRequest.Put(v)
 }

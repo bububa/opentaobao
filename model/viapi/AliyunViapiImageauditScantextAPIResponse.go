@@ -2,6 +2,7 @@ package viapi
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -16,6 +17,12 @@ type AliyunViapiImageauditScantextAPIResponse struct {
 	AliyunViapiImageauditScantextAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AliyunViapiImageauditScantextAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliyunViapiImageauditScantextAPIResponseModel).Reset()
+}
+
 // AliyunViapiImageauditScantextAPIResponseModel is 文字内容审核 成功返回结果
 type AliyunViapiImageauditScantextAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliyun_viapi_imageaudit_scantext_response"`
@@ -25,4 +32,28 @@ type AliyunViapiImageauditScantextAPIResponseModel struct {
 	TaobaoRequestId string `json:"taobao_request_id,omitempty" xml:"taobao_request_id,omitempty"`
 	// 系统自动生成
 	Data *AliyunViapiImageauditScantextData `json:"data,omitempty" xml:"data,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliyunViapiImageauditScantextAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.TaobaoRequestId = ""
+	m.Data = nil
+}
+
+var poolAliyunViapiImageauditScantextAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliyunViapiImageauditScantextAPIResponse)
+	},
+}
+
+// GetAliyunViapiImageauditScantextAPIResponse 从 sync.Pool 获取 AliyunViapiImageauditScantextAPIResponse
+func GetAliyunViapiImageauditScantextAPIResponse() *AliyunViapiImageauditScantextAPIResponse {
+	return poolAliyunViapiImageauditScantextAPIResponse.Get().(*AliyunViapiImageauditScantextAPIResponse)
+}
+
+// ReleaseAliyunViapiImageauditScantextAPIResponse 将 AliyunViapiImageauditScantextAPIResponse 保存到 sync.Pool
+func ReleaseAliyunViapiImageauditScantextAPIResponse(v *AliyunViapiImageauditScantextAPIResponse) {
+	v.Reset()
+	poolAliyunViapiImageauditScantextAPIResponse.Put(v)
 }

@@ -1,5 +1,9 @@
 package flight
 
+import (
+	"sync"
+)
+
 // RefundListRequestDto 结构体
 type RefundListRequestDto struct {
 	// 店铺id集合
@@ -12,4 +16,25 @@ type RefundListRequestDto struct {
 	Page int64 `json:"page,omitempty" xml:"page,omitempty"`
 	// 退票单状态:1:待回填费用,2:待退款,3:退款中,4:已完成,5:已拒绝
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolRefundListRequestDto = sync.Pool{
+	New: func() any {
+		return new(RefundListRequestDto)
+	},
+}
+
+// GetRefundListRequestDto() 从对象池中获取RefundListRequestDto
+func GetRefundListRequestDto() *RefundListRequestDto {
+	return poolRefundListRequestDto.Get().(*RefundListRequestDto)
+}
+
+// ReleaseRefundListRequestDto 释放RefundListRequestDto
+func ReleaseRefundListRequestDto(v *RefundListRequestDto) {
+	v.AgentIds = v.AgentIds[:0]
+	v.EndApplyTime = ""
+	v.BeginApplyTime = ""
+	v.Page = 0
+	v.Status = 0
+	poolRefundListRequestDto.Put(v)
 }

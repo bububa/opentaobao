@@ -2,6 +2,7 @@ package aesolution
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -15,6 +16,12 @@ type AliexpressSolutionProductEditAPIResponse struct {
 	AliexpressSolutionProductEditAPIResponseModel
 }
 
+// Reset 清空结构体
+func (m *AliexpressSolutionProductEditAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.AliexpressSolutionProductEditAPIResponseModel).Reset()
+}
+
 // AliexpressSolutionProductEditAPIResponseModel is Edit Product API 成功返回结果
 type AliexpressSolutionProductEditAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_solution_product_edit_response"`
@@ -22,4 +29,27 @@ type AliexpressSolutionProductEditAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
 	Result *PostItemResponseDto `json:"result,omitempty" xml:"result,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *AliexpressSolutionProductEditAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.Result = nil
+}
+
+var poolAliexpressSolutionProductEditAPIResponse = sync.Pool{
+	New: func() any {
+		return new(AliexpressSolutionProductEditAPIResponse)
+	},
+}
+
+// GetAliexpressSolutionProductEditAPIResponse 从 sync.Pool 获取 AliexpressSolutionProductEditAPIResponse
+func GetAliexpressSolutionProductEditAPIResponse() *AliexpressSolutionProductEditAPIResponse {
+	return poolAliexpressSolutionProductEditAPIResponse.Get().(*AliexpressSolutionProductEditAPIResponse)
+}
+
+// ReleaseAliexpressSolutionProductEditAPIResponse 将 AliexpressSolutionProductEditAPIResponse 保存到 sync.Pool
+func ReleaseAliexpressSolutionProductEditAPIResponse(v *AliexpressSolutionProductEditAPIResponse) {
+	v.Reset()
+	poolAliexpressSolutionProductEditAPIResponse.Put(v)
 }

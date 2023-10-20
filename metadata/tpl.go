@@ -32,6 +32,8 @@ type TplParam struct {
 	Desc      string     // 描述
 	IsObject  bool       // 是否是对象
 	IsList    bool       // 是否是数组
+	IsNumber  bool       // 是否是说字
+	IsBool    bool       // 是否是布尔
 	Required  bool       // 是否必须
 }
 
@@ -110,8 +112,11 @@ func (t TplModel) NeedImportModel() bool {
 
 // ExtractModels 提取包内包含的结构体
 func ExtractModels(params []TplParam) []TplModel {
-	var models []TplModel
+	models := make([]TplModel, 0, len(params))
 	for _, p := range params {
+		if strings.HasSuffix(p.Type, "model.File") {
+			continue
+		}
 		if p.IsObject {
 			objType := strings.TrimPrefix(strings.TrimPrefix(p.Type, "[]"), "*")
 			model := TplModel{

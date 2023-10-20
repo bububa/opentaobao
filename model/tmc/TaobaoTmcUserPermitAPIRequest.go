@@ -2,6 +2,7 @@ package tmc
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type TaobaoTmcUserPermitAPIRequest struct {
 // NewTaobaoTmcUserPermitRequest 初始化TaobaoTmcUserPermitAPIRequest对象
 func NewTaobaoTmcUserPermitRequest() *TaobaoTmcUserPermitAPIRequest {
 	return &TaobaoTmcUserPermitAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *TaobaoTmcUserPermitAPIRequest) Reset() {
+	r._topics = r._topics[:0]
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *TaobaoTmcUserPermitAPIRequest) SetTopics(_topics []string) error {
 // GetTopics Topics Getter
 func (r TaobaoTmcUserPermitAPIRequest) GetTopics() []string {
 	return r._topics
+}
+
+var poolTaobaoTmcUserPermitAPIRequest = sync.Pool{
+	New: func() any {
+		return NewTaobaoTmcUserPermitRequest()
+	},
+}
+
+// GetTaobaoTmcUserPermitRequest 从 sync.Pool 获取 TaobaoTmcUserPermitAPIRequest
+func GetTaobaoTmcUserPermitAPIRequest() *TaobaoTmcUserPermitAPIRequest {
+	return poolTaobaoTmcUserPermitAPIRequest.Get().(*TaobaoTmcUserPermitAPIRequest)
+}
+
+// ReleaseTaobaoTmcUserPermitAPIRequest 将 TaobaoTmcUserPermitAPIRequest 放入 sync.Pool
+func ReleaseTaobaoTmcUserPermitAPIRequest(v *TaobaoTmcUserPermitAPIRequest) {
+	v.Reset()
+	poolTaobaoTmcUserPermitAPIRequest.Put(v)
 }

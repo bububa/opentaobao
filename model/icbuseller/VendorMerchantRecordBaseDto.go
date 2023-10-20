@@ -1,5 +1,9 @@
 package icbuseller
 
+import (
+	"sync"
+)
+
 // VendorMerchantRecordBaseDto 结构体
 type VendorMerchantRecordBaseDto struct {
 	// 定制力是否双60
@@ -262,4 +266,150 @@ type VendorMerchantRecordBaseDto struct {
 	P4pStarMonths6m int64 `json:"p4p_star_months_6m,omitempty" xml:"p4p_star_months_6m,omitempty"`
 	// P4P连续活跃月份数
 	P4pCostMonths6m int64 `json:"p4p_cost_months_6m,omitempty" xml:"p4p_cost_months_6m,omitempty"`
+}
+
+var poolVendorMerchantRecordBaseDto = sync.Pool{
+	New: func() any {
+		return new(VendorMerchantRecordBaseDto)
+	},
+}
+
+// GetVendorMerchantRecordBaseDto() 从对象池中获取VendorMerchantRecordBaseDto
+func GetVendorMerchantRecordBaseDto() *VendorMerchantRecordBaseDto {
+	return poolVendorMerchantRecordBaseDto.Get().(*VendorMerchantRecordBaseDto)
+}
+
+// ReleaseVendorMerchantRecordBaseDto 释放VendorMerchantRecordBaseDto
+func ReleaseVendorMerchantRecordBaseDto(v *VendorMerchantRecordBaseDto) {
+	v.Nrts6060 = ""
+	v.Road = ""
+	v.IsVideo = ""
+	v.IsRfq = ""
+	v.WinProdRatioStd001 = ""
+	v.IsCrdScrty = ""
+	v.PcOnlineHourRate = ""
+	v.StayHourPcM = ""
+	v.PcOnlineDayRate = ""
+	v.ActiveMbrRate = ""
+	v.McRate = ""
+	v.KwRate = ""
+	v.Kw200Rate = ""
+	v.IsTortBrand = ""
+	v.HavePriceProd = ""
+	v.HaveRepeatProd = ""
+	v.GoodProdRate = ""
+	v.PotentialProdRate = ""
+	v.P1504Rate = ""
+	v.P304Rate = ""
+	v.IsCompDec = ""
+	v.TradesuccessTime = ""
+	v.DeliveredTime = ""
+	v.PayTime = ""
+	v.CurrentStatus = ""
+	v.OrdNum = ""
+	v.ServiceName = ""
+	v.ServiceCode = ""
+	v.VendorCode = ""
+	v.VendorCompName = ""
+	v.MainCateLv2Desc = ""
+	v.MainCateLv1Desc = ""
+	v.AdminMbrId = ""
+	v.DwInsTime = ""
+	v.StatDate = ""
+	v.Rts6060 = ""
+	v.IsCompExpOk = ""
+	v.IsKwExpOk = ""
+	v.IsStarLowerRisk = ""
+	v.IsP4pCostQualified1 = ""
+	v.IsP4pProdGeq80Cnt = ""
+	v.IsP4pProdGeq30Cnt = ""
+	v.IsHasAb = ""
+	v.IsHasMcFstMon = ""
+	v.IsMc15 = ""
+	v.ContactTime = ""
+	v.IsBlueNewSign = ""
+	v.IsReachNewCustAbCatelv2 = ""
+	v.P4pActivityMonths = ""
+	v.IsP30PotentialProdRate15d = ""
+	v.P30PotentialProdRate = ""
+	v.IsP150PotentialProdRate30d = ""
+	v.IsP150PotentialProdRate60d = ""
+	v.P150PotentialProdRate = ""
+	v.IsP200PotentialProdRate60d = ""
+	v.P200PotentialProdRate = ""
+	v.IsP300PotentialProdRate90d = ""
+	v.P300PotentialProdRate = ""
+	v.IsReachAbCatelv2 = ""
+	v.CrntGsActualBeginTime = ""
+	v.P4pCostAmtCurrentmon = ""
+	v.P4pCatelv2Ctr1Befer30Percent = ""
+	v.P4pCatelv2Ctr1CurrentmonPercent = ""
+	v.P4pIspassCurrentmon = ""
+	v.P4pExpectFeeCurrentmon = ""
+	v.ContactDate = ""
+	v.P4pHostingServiceBeginTime = ""
+	v.P4pHostingServiceEndTime = ""
+	v.P4pFuwuDays = ""
+	v.P4pServiceType = ""
+	v.P4pIsSrvc = ""
+	v.P4pTotalBalance = ""
+	v.P4pLevelBefore = ""
+	v.P4pLevelCurrent = ""
+	v.P4pOptDaysBefer30 = ""
+	v.P4pAgencyOptDaysCurrentmon = ""
+	v.P4pOnDaysBefer30 = ""
+	v.P4pCostDaysBefer30 = ""
+	v.P4pCatelv2AvgdailyImprCntBefer30Percent = ""
+	v.P4pCatelv2AvgdailyClickCntBefer30Percent = ""
+	v.P4pAvgKwordBefer30 = ""
+	v.P4pAvgdailyOnprodsBefer30 = ""
+	v.P4pOnDaysService2now = ""
+	v.P4pOnDaysCurrentmon = ""
+	v.P4pCostDaysService2now = ""
+	v.P4pCostDaysCurrentmon = ""
+	v.P4pCostAmtService2now = ""
+	v.P4pAvgKwordCurrentmon = ""
+	v.P4pAvgdailyOnprodsCurrentmon = ""
+	v.P4pCatelv2Cpc1Befer30Percent = ""
+	v.P4pAvgdailyBudgetBefer30 = ""
+	v.P4pAvgdailyCostAmtBefer30 = ""
+	v.P4pAvgdailyBudgetCurrentmon = ""
+	v.P4pAvgdailyCostAmtCurrentmon = ""
+	v.P4pCatelv2AvgdailyImprCntCurrentmonPercent = ""
+	v.P4pCatelv2AvgdailyClickCntCurrentmon = ""
+	v.AvgAb30 = ""
+	v.NewtastStat = ""
+	v.IsP4pOn30d = ""
+	v.OnExcellentProdRate = ""
+	v.P4pStarOrd = ""
+	v.P4pIsOn = ""
+	v.P4pHadOptSrvc = ""
+	v.P4pCtrService2nowTimes = ""
+	v.P4pIsExceedAvgdailyCostCurrentmon = ""
+	v.P4pCpf2Service2nowTimes = ""
+	v.ActiveDayPcM = 0
+	v.ActiveMbrM = 0
+	v.ProdVideoCnt = 0
+	v.RtsProdCnt = 0
+	v.GoodProdCnt = 0
+	v.PotentialProdCnt = 0
+	v.ProdBlue = 0
+	v.Prod45 = 0
+	v.Prod40 = 0
+	v.ProdCnt = 0
+	v.AgencyProdCnt = 0
+	v.MainCateLv2Std001 = 0
+	v.MainCateLv1Std001 = 0
+	v.LevelStarPage = 0
+	v.LevelStar = 0
+	v.OpenCycle = 0
+	v.FiscalSvrc6mValidOrdCnt = 0
+	v.LatestActualSrvcDays = 0
+	v.ProdScore = 0
+	v.McComplianceRate30d = 0
+	v.AbComplianceRate30d = 0
+	v.Catelv2AvgAbDiff = 0
+	v.P4pStarMonths6m = 0
+	v.P4pCostMonths6m = 0
+	poolVendorMerchantRecordBaseDto.Put(v)
 }

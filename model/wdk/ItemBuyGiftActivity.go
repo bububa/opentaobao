@@ -1,5 +1,9 @@
 package wdk
 
+import (
+	"sync"
+)
+
 // ItemBuyGiftActivity 结构体
 type ItemBuyGiftActivity struct {
 	// 优惠适用场景[APP|POS|POS+APP分别对应的值为1|2|1,2]
@@ -24,4 +28,31 @@ type ItemBuyGiftActivity struct {
 	MemberLimit int64 `json:"member_limit,omitempty" xml:"member_limit,omitempty"`
 	// 五道口活动id
 	ActivityId int64 `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
+}
+
+var poolItemBuyGiftActivity = sync.Pool{
+	New: func() any {
+		return new(ItemBuyGiftActivity)
+	},
+}
+
+// GetItemBuyGiftActivity() 从对象池中获取ItemBuyGiftActivity
+func GetItemBuyGiftActivity() *ItemBuyGiftActivity {
+	return poolItemBuyGiftActivity.Get().(*ItemBuyGiftActivity)
+}
+
+// ReleaseItemBuyGiftActivity 释放ItemBuyGiftActivity
+func ReleaseItemBuyGiftActivity(v *ItemBuyGiftActivity) {
+	v.Terminals = v.Terminals[:0]
+	v.ShopIds = v.ShopIds[:0]
+	v.Description = ""
+	v.OutActId = ""
+	v.ActivityName = ""
+	v.MerchantCrowdCode = ""
+	v.TxdCrowdCode = ""
+	v.StartTime = 0
+	v.EndTime = 0
+	v.MemberLimit = 0
+	v.ActivityId = 0
+	poolItemBuyGiftActivity.Put(v)
 }

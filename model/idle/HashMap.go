@@ -1,5 +1,9 @@
 package idle
 
+import (
+	"sync"
+)
+
 // HashMap 结构体
 type HashMap struct {
 	// 上面区间订单
@@ -24,4 +28,31 @@ type HashMap struct {
 	ContactName string `json:"contact_name,omitempty" xml:"contact_name,omitempty"`
 	// 质检工程师电话
 	ContactMobile string `json:"contact_mobile,omitempty" xml:"contact_mobile,omitempty"`
+}
+
+var poolHashMap = sync.Pool{
+	New: func() any {
+		return new(HashMap)
+	},
+}
+
+// GetHashMap() 从对象池中获取HashMap
+func GetHashMap() *HashMap {
+	return poolHashMap.Get().(*HashMap)
+}
+
+// ReleaseHashMap 释放HashMap
+func ReleaseHashMap(v *HashMap) {
+	v.ShipMailNo = ""
+	v.QaAmount = ""
+	v.ReferenceStartPrice = ""
+	v.ReferenceEndPrice = ""
+	v.Report = ""
+	v.ConfirmFee = ""
+	v.Ac2buyerMailNo = ""
+	v.BuyerCloseReason = ""
+	v.RefundMailNo = ""
+	v.ContactName = ""
+	v.ContactMobile = ""
+	poolHashMap.Put(v)
 }

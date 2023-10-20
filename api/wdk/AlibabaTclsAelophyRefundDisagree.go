@@ -9,11 +9,6 @@ import (
 // alibaba.tcls.aelophy.refund.disagree
 //
 // saas 售后逆向 商户拒绝用户逆向申请
-func AlibabaTclsAelophyRefundDisagree(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyRefundDisagreeAPIRequest, session string) (*wdk.AlibabaTclsAelophyRefundDisagreeAPIResponse, error) {
-	var resp wdk.AlibabaTclsAelophyRefundDisagreeAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaTclsAelophyRefundDisagree(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyRefundDisagreeAPIRequest, resp *wdk.AlibabaTclsAelophyRefundDisagreeAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

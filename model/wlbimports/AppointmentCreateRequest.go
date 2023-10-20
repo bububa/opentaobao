@@ -1,5 +1,9 @@
 package wlbimports
 
+import (
+	"sync"
+)
+
 // AppointmentCreateRequest 结构体
 type AppointmentCreateRequest struct {
 	// 预约大包信息列表（（非自寄模式必填）
@@ -26,4 +30,32 @@ type AppointmentCreateRequest struct {
 	PickupInfo *PickupInfo `json:"pickup_info,omitempty" xml:"pickup_info,omitempty"`
 	// 自寄卡车参数（自寄卡车模式必填）
 	SelfSendTruckInfoRequest *SelfMailTruckInfoRequest `json:"self_send_truck_info_request,omitempty" xml:"self_send_truck_info_request,omitempty"`
+}
+
+var poolAppointmentCreateRequest = sync.Pool{
+	New: func() any {
+		return new(AppointmentCreateRequest)
+	},
+}
+
+// GetAppointmentCreateRequest() 从对象池中获取AppointmentCreateRequest
+func GetAppointmentCreateRequest() *AppointmentCreateRequest {
+	return poolAppointmentCreateRequest.Get().(*AppointmentCreateRequest)
+}
+
+// ReleaseAppointmentCreateRequest 释放AppointmentCreateRequest
+func ReleaseAppointmentCreateRequest(v *AppointmentCreateRequest) {
+	v.HandoverContentSynopsisList = v.HandoverContentSynopsisList[:0]
+	v.LgOrderList = v.LgOrderList[:0]
+	v.ZoneOffSet = ""
+	v.StoreName = ""
+	v.PickupType = ""
+	v.StoreCode = ""
+	v.SellerId = 0
+	v.SenderInfo = nil
+	v.ReceiverInfo = nil
+	v.SelfSendExpressInfoRequest = nil
+	v.PickupInfo = nil
+	v.SelfSendTruckInfoRequest = nil
+	poolAppointmentCreateRequest.Put(v)
 }

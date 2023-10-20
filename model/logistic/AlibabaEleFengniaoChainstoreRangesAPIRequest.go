@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -23,8 +24,16 @@ type AlibabaEleFengniaoChainstoreRangesAPIRequest struct {
 // NewAlibabaEleFengniaoChainstoreRangesRequest 初始化AlibabaEleFengniaoChainstoreRangesAPIRequest对象
 func NewAlibabaEleFengniaoChainstoreRangesRequest() *AlibabaEleFengniaoChainstoreRangesAPIRequest {
 	return &AlibabaEleFengniaoChainstoreRangesAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(3),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaEleFengniaoChainstoreRangesAPIRequest) Reset() {
+	r._merchantCode = ""
+	r._appId = ""
+	r._chainstoreCode = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -81,4 +90,21 @@ func (r *AlibabaEleFengniaoChainstoreRangesAPIRequest) SetChainstoreCode(_chains
 // GetChainstoreCode ChainstoreCode Getter
 func (r AlibabaEleFengniaoChainstoreRangesAPIRequest) GetChainstoreCode() string {
 	return r._chainstoreCode
+}
+
+var poolAlibabaEleFengniaoChainstoreRangesAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaEleFengniaoChainstoreRangesRequest()
+	},
+}
+
+// GetAlibabaEleFengniaoChainstoreRangesRequest 从 sync.Pool 获取 AlibabaEleFengniaoChainstoreRangesAPIRequest
+func GetAlibabaEleFengniaoChainstoreRangesAPIRequest() *AlibabaEleFengniaoChainstoreRangesAPIRequest {
+	return poolAlibabaEleFengniaoChainstoreRangesAPIRequest.Get().(*AlibabaEleFengniaoChainstoreRangesAPIRequest)
+}
+
+// ReleaseAlibabaEleFengniaoChainstoreRangesAPIRequest 将 AlibabaEleFengniaoChainstoreRangesAPIRequest 放入 sync.Pool
+func ReleaseAlibabaEleFengniaoChainstoreRangesAPIRequest(v *AlibabaEleFengniaoChainstoreRangesAPIRequest) {
+	v.Reset()
+	poolAlibabaEleFengniaoChainstoreRangesAPIRequest.Put(v)
 }

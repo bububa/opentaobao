@@ -1,5 +1,9 @@
 package kbalgo
 
+import (
+	"sync"
+)
+
 // Poi 结构体
 type Poi struct {
 	// poi的标签
@@ -28,4 +32,33 @@ type Poi struct {
 	Longitude string `json:"longitude,omitempty" xml:"longitude,omitempty"`
 	// 省份
 	Province string `json:"province,omitempty" xml:"province,omitempty"`
+}
+
+var poolPoi = sync.Pool{
+	New: func() any {
+		return new(Poi)
+	},
+}
+
+// GetPoi() 从对象池中获取Poi
+func GetPoi() *Poi {
+	return poolPoi.Get().(*Poi)
+}
+
+// ReleasePoi 释放Poi
+func ReleasePoi(v *Poi) {
+	v.Labels = v.Labels[:0]
+	v.PoiAddress = ""
+	v.PoiName = ""
+	v.AppKey = ""
+	v.Phone = ""
+	v.City = ""
+	v.ShopBusiness = ""
+	v.AppSchema = ""
+	v.Latitude = ""
+	v.County = ""
+	v.PoiId = ""
+	v.Longitude = ""
+	v.Province = ""
+	poolPoi.Put(v)
 }

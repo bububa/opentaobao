@@ -9,11 +9,6 @@ import (
 // alibaba.guard.access.auth
 //
 // 刷卡鉴权
-func AlibabaGuardAccessAuth(clt *core.SDKClient, req *campus.AlibabaGuardAccessAuthAPIRequest, session string) (*campus.AlibabaGuardAccessAuthAPIResponse, error) {
-	var resp campus.AlibabaGuardAccessAuthAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func AlibabaGuardAccessAuth(clt *core.SDKClient, req *campus.AlibabaGuardAccessAuthAPIRequest, resp *campus.AlibabaGuardAccessAuthAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -1,5 +1,9 @@
 package tmallservice
 
+import (
+	"sync"
+)
+
 // Workcard 结构体
 type Workcard struct {
 	// 签到时间
@@ -42,4 +46,40 @@ type Workcard struct {
 	Sequence int64 `json:"sequence,omitempty" xml:"sequence,omitempty"`
 	// 服务单id
 	SpServiceOrderId int64 `json:"sp_service_order_id,omitempty" xml:"sp_service_order_id,omitempty"`
+}
+
+var poolWorkcard = sync.Pool{
+	New: func() any {
+		return new(Workcard)
+	},
+}
+
+// GetWorkcard() 从对象池中获取Workcard
+func GetWorkcard() *Workcard {
+	return poolWorkcard.Get().(*Workcard)
+}
+
+// ReleaseWorkcard 释放Workcard
+func ReleaseWorkcard(v *Workcard) {
+	v.GmtSignIn = ""
+	v.StatusCode = ""
+	v.GmtIdentify = ""
+	v.GmtReserveStart = ""
+	v.BuyerExpectDate = ""
+	v.GmtAssignWorker = ""
+	v.GmtReserveEnd = ""
+	v.GmtCreate = ""
+	v.AttributeMap = ""
+	v.UsedServiceCount = 0
+	v.ServiceTradeOrder = nil
+	v.ServiceCount = 0
+	v.Id = 0
+	v.LeftServiceCount = 0
+	v.ParentBizOrderId = 0
+	v.ServiceProvider = nil
+	v.MasterTradeOrder = nil
+	v.ServiceDefinition = nil
+	v.Sequence = 0
+	v.SpServiceOrderId = 0
+	poolWorkcard.Put(v)
 }

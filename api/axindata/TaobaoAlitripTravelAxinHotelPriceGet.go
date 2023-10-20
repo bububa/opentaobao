@@ -9,11 +9,6 @@ import (
 // taobao.alitrip.travel.axin.hotel.price.get
 //
 // 酒店报价查询服务
-func TaobaoAlitripTravelAxinHotelPriceGet(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelAxinHotelPriceGetAPIRequest, session string) (*axindata.TaobaoAlitripTravelAxinHotelPriceGetAPIResponse, error) {
-	var resp axindata.TaobaoAlitripTravelAxinHotelPriceGetAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoAlitripTravelAxinHotelPriceGet(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelAxinHotelPriceGetAPIRequest, resp *axindata.TaobaoAlitripTravelAxinHotelPriceGetAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

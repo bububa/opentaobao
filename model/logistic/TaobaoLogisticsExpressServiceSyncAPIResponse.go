@@ -2,6 +2,7 @@ package logistic
 
 import (
 	"encoding/xml"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -13,6 +14,12 @@ import (
 type TaobaoLogisticsExpressServiceSyncAPIResponse struct {
 	model.CommonResponse
 	TaobaoLogisticsExpressServiceSyncAPIResponseModel
+}
+
+// Reset 清空结构体
+func (m *TaobaoLogisticsExpressServiceSyncAPIResponse) Reset() {
+	(&m.CommonResponse).Reset()
+	(&m.TaobaoLogisticsExpressServiceSyncAPIResponseModel).Reset()
 }
 
 // TaobaoLogisticsExpressServiceSyncAPIResponseModel is 服务信息回告接口 成功返回结果
@@ -28,4 +35,30 @@ type TaobaoLogisticsExpressServiceSyncAPIResponseModel struct {
 	BizErrorCode bool `json:"biz_error_code,omitempty" xml:"biz_error_code,omitempty"`
 	// 是否可重试
 	Retry bool `json:"retry,omitempty" xml:"retry,omitempty"`
+}
+
+// Reset 清空结构体
+func (m *TaobaoLogisticsExpressServiceSyncAPIResponseModel) Reset() {
+	m.RequestId = ""
+	m.BizErrorMessage = ""
+	m.Suc = false
+	m.BizErrorCode = false
+	m.Retry = false
+}
+
+var poolTaobaoLogisticsExpressServiceSyncAPIResponse = sync.Pool{
+	New: func() any {
+		return new(TaobaoLogisticsExpressServiceSyncAPIResponse)
+	},
+}
+
+// GetTaobaoLogisticsExpressServiceSyncAPIResponse 从 sync.Pool 获取 TaobaoLogisticsExpressServiceSyncAPIResponse
+func GetTaobaoLogisticsExpressServiceSyncAPIResponse() *TaobaoLogisticsExpressServiceSyncAPIResponse {
+	return poolTaobaoLogisticsExpressServiceSyncAPIResponse.Get().(*TaobaoLogisticsExpressServiceSyncAPIResponse)
+}
+
+// ReleaseTaobaoLogisticsExpressServiceSyncAPIResponse 将 TaobaoLogisticsExpressServiceSyncAPIResponse 保存到 sync.Pool
+func ReleaseTaobaoLogisticsExpressServiceSyncAPIResponse(v *TaobaoLogisticsExpressServiceSyncAPIResponse) {
+	v.Reset()
+	poolTaobaoLogisticsExpressServiceSyncAPIResponse.Put(v)
 }

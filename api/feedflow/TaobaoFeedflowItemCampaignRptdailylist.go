@@ -9,11 +9,6 @@ import (
 // taobao.feedflow.item.campaign.rptdailylist
 //
 // 推广计划分日数据查询
-func TaobaoFeedflowItemCampaignRptdailylist(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCampaignRptdailylistAPIRequest, session string) (*feedflow.TaobaoFeedflowItemCampaignRptdailylistAPIResponse, error) {
-	var resp feedflow.TaobaoFeedflowItemCampaignRptdailylistAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoFeedflowItemCampaignRptdailylist(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCampaignRptdailylistAPIRequest, resp *feedflow.TaobaoFeedflowItemCampaignRptdailylistAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

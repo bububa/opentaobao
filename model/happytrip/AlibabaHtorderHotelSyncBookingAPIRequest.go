@@ -2,6 +2,7 @@ package happytrip
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type AlibabaHtorderHotelSyncBookingAPIRequest struct {
 // NewAlibabaHtorderHotelSyncBookingRequest 初始化AlibabaHtorderHotelSyncBookingAPIRequest对象
 func NewAlibabaHtorderHotelSyncBookingRequest() *AlibabaHtorderHotelSyncBookingAPIRequest {
 	return &AlibabaHtorderHotelSyncBookingAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *AlibabaHtorderHotelSyncBookingAPIRequest) Reset() {
+	r._dataEntity = nil
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *AlibabaHtorderHotelSyncBookingAPIRequest) SetDataEntity(_dataEntity *Sy
 // GetDataEntity DataEntity Getter
 func (r AlibabaHtorderHotelSyncBookingAPIRequest) GetDataEntity() *SyncHotelBookingDataRequestDto {
 	return r._dataEntity
+}
+
+var poolAlibabaHtorderHotelSyncBookingAPIRequest = sync.Pool{
+	New: func() any {
+		return NewAlibabaHtorderHotelSyncBookingRequest()
+	},
+}
+
+// GetAlibabaHtorderHotelSyncBookingRequest 从 sync.Pool 获取 AlibabaHtorderHotelSyncBookingAPIRequest
+func GetAlibabaHtorderHotelSyncBookingAPIRequest() *AlibabaHtorderHotelSyncBookingAPIRequest {
+	return poolAlibabaHtorderHotelSyncBookingAPIRequest.Get().(*AlibabaHtorderHotelSyncBookingAPIRequest)
+}
+
+// ReleaseAlibabaHtorderHotelSyncBookingAPIRequest 将 AlibabaHtorderHotelSyncBookingAPIRequest 放入 sync.Pool
+func ReleaseAlibabaHtorderHotelSyncBookingAPIRequest(v *AlibabaHtorderHotelSyncBookingAPIRequest) {
+	v.Reset()
+	poolAlibabaHtorderHotelSyncBookingAPIRequest.Put(v)
 }

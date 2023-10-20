@@ -1,5 +1,9 @@
 package icbu
 
+import (
+	"sync"
+)
+
 // PhotobankImageDo 结构体
 type PhotobankImageDo struct {
 	// 图片url
@@ -20,4 +24,29 @@ type PhotobankImageDo struct {
 	ReferenceCount int64 `json:"reference_count,omitempty" xml:"reference_count,omitempty"`
 	// 分组id
 	GroupId int64 `json:"group_id,omitempty" xml:"group_id,omitempty"`
+}
+
+var poolPhotobankImageDo = sync.Pool{
+	New: func() any {
+		return new(PhotobankImageDo)
+	},
+}
+
+// GetPhotobankImageDo() 从对象池中获取PhotobankImageDo
+func GetPhotobankImageDo() *PhotobankImageDo {
+	return poolPhotobankImageDo.Get().(*PhotobankImageDo)
+}
+
+// ReleasePhotobankImageDo 释放PhotobankImageDo
+func ReleasePhotobankImageDo(v *PhotobankImageDo) {
+	v.Url = ""
+	v.Id = ""
+	v.FileName = ""
+	v.GmtModified = ""
+	v.OwnerMemberDisplayName = ""
+	v.DisplayName = ""
+	v.FileSize = 0
+	v.ReferenceCount = 0
+	v.GroupId = 0
+	poolPhotobankImageDo.Put(v)
 }

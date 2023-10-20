@@ -1,5 +1,9 @@
 package miniapp
 
+import (
+	"sync"
+)
+
 // AppChannelConfigDto 结构体
 type AppChannelConfigDto struct {
 	// 配置url
@@ -20,4 +24,29 @@ type AppChannelConfigDto struct {
 	MiniappId int64 `json:"miniapp_id,omitempty" xml:"miniapp_id,omitempty"`
 	// 状态是否有效
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+var poolAppChannelConfigDto = sync.Pool{
+	New: func() any {
+		return new(AppChannelConfigDto)
+	},
+}
+
+// GetAppChannelConfigDto() 从对象池中获取AppChannelConfigDto
+func GetAppChannelConfigDto() *AppChannelConfigDto {
+	return poolAppChannelConfigDto.Get().(*AppChannelConfigDto)
+}
+
+// ReleaseAppChannelConfigDto 释放AppChannelConfigDto
+func ReleaseAppChannelConfigDto(v *AppChannelConfigDto) {
+	v.ConfigUrl = ""
+	v.ExtProperties = ""
+	v.Channel = ""
+	v.Description = ""
+	v.Title = ""
+	v.IsvSimpleName = ""
+	v.ArticleCode = ""
+	v.MiniappId = 0
+	v.Status = 0
+	poolAppChannelConfigDto.Put(v)
 }

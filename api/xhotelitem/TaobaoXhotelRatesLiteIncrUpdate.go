@@ -9,11 +9,6 @@ import (
 // taobao.xhotel.rates.lite.incr.update
 //
 // 多个rate的库存房价开关的增量更新接口
-func TaobaoXhotelRatesLiteIncrUpdate(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRatesLiteIncrUpdateAPIRequest, session string) (*xhotelitem.TaobaoXhotelRatesLiteIncrUpdateAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelRatesLiteIncrUpdateAPIResponse
-	err := clt.Post(req, &resp, session)
-	if err != nil {
-		return nil, err
-	}
-	return &resp, nil
+func TaobaoXhotelRatesLiteIncrUpdate(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRatesLiteIncrUpdateAPIRequest, resp *xhotelitem.TaobaoXhotelRatesLiteIncrUpdateAPIResponse, session string) error {
+	return clt.Post(req, resp, session)
 }

@@ -2,6 +2,7 @@ package trade
 
 import (
 	"net/url"
+	"sync"
 
 	"github.com/bububa/opentaobao/model"
 )
@@ -19,8 +20,14 @@ type CainiaoRefundRefundactionsGetAPIRequest struct {
 // NewCainiaoRefundRefundactionsGetRequest 初始化CainiaoRefundRefundactionsGetAPIRequest对象
 func NewCainiaoRefundRefundactionsGetRequest() *CainiaoRefundRefundactionsGetAPIRequest {
 	return &CainiaoRefundRefundactionsGetAPIRequest{
-		Params: model.NewParams(),
+		Params: model.NewParams(1),
 	}
+}
+
+// Reset IRequest interface 方法, 清空结构体
+func (r *CainiaoRefundRefundactionsGetAPIRequest) Reset() {
+	r._orderId = ""
+	r.Params.ToZero()
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
@@ -51,4 +58,21 @@ func (r *CainiaoRefundRefundactionsGetAPIRequest) SetOrderId(_orderId string) er
 // GetOrderId OrderId Getter
 func (r CainiaoRefundRefundactionsGetAPIRequest) GetOrderId() string {
 	return r._orderId
+}
+
+var poolCainiaoRefundRefundactionsGetAPIRequest = sync.Pool{
+	New: func() any {
+		return NewCainiaoRefundRefundactionsGetRequest()
+	},
+}
+
+// GetCainiaoRefundRefundactionsGetRequest 从 sync.Pool 获取 CainiaoRefundRefundactionsGetAPIRequest
+func GetCainiaoRefundRefundactionsGetAPIRequest() *CainiaoRefundRefundactionsGetAPIRequest {
+	return poolCainiaoRefundRefundactionsGetAPIRequest.Get().(*CainiaoRefundRefundactionsGetAPIRequest)
+}
+
+// ReleaseCainiaoRefundRefundactionsGetAPIRequest 将 CainiaoRefundRefundactionsGetAPIRequest 放入 sync.Pool
+func ReleaseCainiaoRefundRefundactionsGetAPIRequest(v *CainiaoRefundRefundactionsGetAPIRequest) {
+	v.Reset()
+	poolCainiaoRefundRefundactionsGetAPIRequest.Put(v)
 }
