@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/uscesl"
 )
 
-// TaobaoUsceslBizApActivate 激活AP价签通讯模块
+// Taobaousceslbizapactivate 激活AP价签通讯模块
 // taobao.uscesl.biz.ap.activate
 //
 // 激活AP价签通讯模块
-func TaobaoUsceslBizApActivate(clt *core.SDKClient, req *uscesl.TaobaoUsceslBizApActivateAPIRequest, session string) (*uscesl.TaobaoUsceslBizApActivateAPIResponse, error) {
-	var resp uscesl.TaobaoUsceslBizApActivateAPIResponse
+func Taobaousceslbizapactivate(clt *core.SDKClient, req *uscesl.TaobaousceslbizapactivateAPIRequest, session string) (*uscesl.TaobaousceslbizapactivateAPIResponse, error) {
+	var resp uscesl.TaobaousceslbizapactivateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

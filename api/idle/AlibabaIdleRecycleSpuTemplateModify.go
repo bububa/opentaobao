@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/idle"
 )
 
-// AlibabaIdleRecycleSpuTemplateModify 闲鱼接收回收商spu模板挂载信息
+// Alibabaidlerecyclesputemplatemodify 闲鱼接收回收商spu模板挂载信息
 // alibaba.idle.recycle.spu.template.modify
 //
 // 闲鱼接收回收商spu模板挂载信息
-func AlibabaIdleRecycleSpuTemplateModify(clt *core.SDKClient, req *idle.AlibabaIdleRecycleSpuTemplateModifyAPIRequest, session string) (*idle.AlibabaIdleRecycleSpuTemplateModifyAPIResponse, error) {
-	var resp idle.AlibabaIdleRecycleSpuTemplateModifyAPIResponse
+func Alibabaidlerecyclesputemplatemodify(clt *core.SDKClient, req *idle.AlibabaidlerecyclesputemplatemodifyAPIRequest, session string) (*idle.AlibabaidlerecyclesputemplatemodifyAPIResponse, error) {
+	var resp idle.AlibabaidlerecyclesputemplatemodifyAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

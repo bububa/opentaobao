@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosDmSysGetDomainAPIResponse 获取动态域名 API返回值
+// YunosdmsysgetdomainAPIResponse 获取动态域名 API返回值
 // yunos.dm.sys.get.domain
 //
 // 返回alios ucp后端域名
-type YunosDmSysGetDomainAPIResponse struct {
+type YunosdmsysgetdomainAPIResponse struct {
 	model.CommonResponse
-	YunosDmSysGetDomainAPIResponseModel
+	YunosdmsysgetdomainAPIResponseModel
 }
 
-// YunosDmSysGetDomainAPIResponseModel is 获取动态域名 成功返回结果
-type YunosDmSysGetDomainAPIResponseModel struct {
+// YunosdmsysgetdomainAPIResponseModel is 获取动态域名 成功返回结果
+type YunosdmsysgetdomainAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_dm_sys_get_domain_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

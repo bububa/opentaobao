@@ -1,7 +1,7 @@
 package idle
 
-// AlibabaIdlePayPlanCreateResult 结构体
-type AlibabaIdlePayPlanCreateResult struct {
+// AlibabaidlepayplancreateResult 结构体
+type AlibabaidlepayplancreateResult struct {
 	// 系统自动生成
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 系统自动生成

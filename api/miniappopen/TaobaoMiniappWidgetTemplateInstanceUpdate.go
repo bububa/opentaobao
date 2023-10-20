@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/miniappopen"
 )
 
-// TaobaoMiniappWidgetTemplateInstanceUpdate 小部件实例化版本更新
+// Taobaominiappwidgettemplateinstanceupdate 小部件实例化版本更新
 // taobao.miniapp.widget.template.instance.update
 //
 // 小部件版本更新
-func TaobaoMiniappWidgetTemplateInstanceUpdate(clt *core.SDKClient, req *miniappopen.TaobaoMiniappWidgetTemplateInstanceUpdateAPIRequest, session string) (*miniappopen.TaobaoMiniappWidgetTemplateInstanceUpdateAPIResponse, error) {
-	var resp miniappopen.TaobaoMiniappWidgetTemplateInstanceUpdateAPIResponse
+func Taobaominiappwidgettemplateinstanceupdate(clt *core.SDKClient, req *miniappopen.TaobaominiappwidgettemplateinstanceupdateAPIRequest, session string) (*miniappopen.TaobaominiappwidgettemplateinstanceupdateAPIResponse, error) {
+	var resp miniappopen.TaobaominiappwidgettemplateinstanceupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

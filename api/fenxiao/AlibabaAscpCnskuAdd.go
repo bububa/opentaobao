@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
 
-// AlibabaAscpCnskuAdd 货品创建
+// Alibabaascpcnskuadd 货品创建
 // alibaba.ascp.cnsku.add
 //
 // 供应链中台货品创建接口
-func AlibabaAscpCnskuAdd(clt *core.SDKClient, req *fenxiao.AlibabaAscpCnskuAddAPIRequest, session string) (*fenxiao.AlibabaAscpCnskuAddAPIResponse, error) {
-	var resp fenxiao.AlibabaAscpCnskuAddAPIResponse
+func Alibabaascpcnskuadd(clt *core.SDKClient, req *fenxiao.AlibabaascpcnskuaddAPIRequest, session string) (*fenxiao.AlibabaascpcnskuaddAPIResponse, error) {
+	var resp fenxiao.AlibabaascpcnskuaddAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

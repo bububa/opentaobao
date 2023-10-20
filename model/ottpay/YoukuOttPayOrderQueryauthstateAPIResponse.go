@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YoukuOttPayOrderQueryauthstateAPIResponse 查询连包签约状态 API返回值
+// YoukuottpayorderqueryauthstateAPIResponse 查询连包签约状态 API返回值
 // youku.ott.pay.order.queryauthstate
 //
 // 查询CP用户连包商品签约状态
-type YoukuOttPayOrderQueryauthstateAPIResponse struct {
+type YoukuottpayorderqueryauthstateAPIResponse struct {
 	model.CommonResponse
-	YoukuOttPayOrderQueryauthstateAPIResponseModel
+	YoukuottpayorderqueryauthstateAPIResponseModel
 }
 
-// YoukuOttPayOrderQueryauthstateAPIResponseModel is 查询连包签约状态 成功返回结果
-type YoukuOttPayOrderQueryauthstateAPIResponseModel struct {
+// YoukuottpayorderqueryauthstateAPIResponseModel is 查询连包签约状态 成功返回结果
+type YoukuottpayorderqueryauthstateAPIResponseModel struct {
 	XMLName xml.Name `xml:"youku_ott_pay_order_queryauthstate_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

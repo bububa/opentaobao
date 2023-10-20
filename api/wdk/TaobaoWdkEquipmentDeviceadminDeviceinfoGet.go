@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// TaobaoWdkEquipmentDeviceadminDeviceinfoGet 获取五道口设备管理信息
+// Taobaowdkequipmentdeviceadmindeviceinfoget 获取五道口设备管理信息
 // taobao.wdk.equipment.deviceadmin.deviceinfo.get
 //
 // 通过仓编码获取五道口设备管理信息
-func TaobaoWdkEquipmentDeviceadminDeviceinfoGet(clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest, session string) (*wdk.TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIResponse, error) {
-	var resp wdk.TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIResponse
+func Taobaowdkequipmentdeviceadmindeviceinfoget(clt *core.SDKClient, req *wdk.TaobaowdkequipmentdeviceadmindeviceinfogetAPIRequest, session string) (*wdk.TaobaowdkequipmentdeviceadmindeviceinfogetAPIResponse, error) {
+	var resp wdk.TaobaowdkequipmentdeviceadmindeviceinfogetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

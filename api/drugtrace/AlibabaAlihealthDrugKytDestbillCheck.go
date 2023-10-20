@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// AlibabaAlihealthDrugKytDestbillCheck 直调审批
+// Alibabaalihealthdrugkytdestbillcheck 直调审批
 // alibaba.alihealth.drug.kyt.destbill.check
 //
 // 为药企提供直调单据审批操作
-func AlibabaAlihealthDrugKytDestbillCheck(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytDestbillCheckAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytDestbillCheckAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugKytDestbillCheckAPIResponse
+func Alibabaalihealthdrugkytdestbillcheck(clt *core.SDKClient, req *drugtrace.AlibabaalihealthdrugkytdestbillcheckAPIRequest, session string) (*drugtrace.AlibabaalihealthdrugkytdestbillcheckAPIResponse, error) {
+	var resp drugtrace.AlibabaalihealthdrugkytdestbillcheckAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

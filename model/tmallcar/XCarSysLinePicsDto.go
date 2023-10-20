@@ -1,7 +1,7 @@
 package tmallcar
 
-// XCarSysLinePicsDto 结构体
-type XCarSysLinePicsDto struct {
+// XcarSysLinePicsDto 结构体
+type XcarSysLinePicsDto struct {
 	// 具体颜色名称，除整体外观外，其他不区分颜色，此值为空，比如 黑色
 	ColorName string `json:"color_name,omitempty" xml:"color_name,omitempty"`
 	// 具体颜色色值，除整体外观外，其他不区分颜色，所以没有色值 比如 FFFF000FFF

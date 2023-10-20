@@ -1,7 +1,7 @@
 package flight
 
-// AlitripPolicyDomfareFlowdataResult 结构体
-type AlitripPolicyDomfareFlowdataResult struct {
+// AlitrippolicydomfareflowdataResult 结构体
+type AlitrippolicydomfareflowdataResult struct {
 	// 返回错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 返回的错误信息

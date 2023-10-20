@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaDchainAoxiangOrderprocessReportAPIResponse 回传仓内作业节点 API返回值
+// AlibabadchainaoxiangorderprocessreportAPIResponse 回传仓内作业节点 API返回值
 // alibaba.dchain.aoxiang.orderprocess.report
 //
 // 回传仓内作业节点
-type AlibabaDchainAoxiangOrderprocessReportAPIResponse struct {
+type AlibabadchainaoxiangorderprocessreportAPIResponse struct {
 	model.CommonResponse
-	AlibabaDchainAoxiangOrderprocessReportAPIResponseModel
+	AlibabadchainaoxiangorderprocessreportAPIResponseModel
 }
 
-// AlibabaDchainAoxiangOrderprocessReportAPIResponseModel is 回传仓内作业节点 成功返回结果
-type AlibabaDchainAoxiangOrderprocessReportAPIResponseModel struct {
+// AlibabadchainaoxiangorderprocessreportAPIResponseModel is 回传仓内作业节点 成功返回结果
+type AlibabadchainaoxiangorderprocessreportAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_dchain_aoxiang_orderprocess_report_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

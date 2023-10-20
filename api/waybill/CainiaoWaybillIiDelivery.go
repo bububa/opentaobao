@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/waybill"
 )
 
-// CainiaoWaybillIiDelivery 派件通知接口
+// Cainiaowaybilliidelivery 派件通知接口
 // cainiao.waybill.ii.delivery
 //
 // 极效前置场景下的使用此接口，通知进行派件
-func CainiaoWaybillIiDelivery(clt *core.SDKClient, req *waybill.CainiaoWaybillIiDeliveryAPIRequest, session string) (*waybill.CainiaoWaybillIiDeliveryAPIResponse, error) {
-	var resp waybill.CainiaoWaybillIiDeliveryAPIResponse
+func Cainiaowaybilliidelivery(clt *core.SDKClient, req *waybill.CainiaowaybilliideliveryAPIRequest, session string) (*waybill.CainiaowaybilliideliveryAPIResponse, error) {
+	var resp waybill.CainiaowaybilliideliveryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

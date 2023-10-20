@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/icburfq"
 )
 
-// AlibabaIcbuRfqRead 是否已读RFQ
+// Alibabaicburfqread 是否已读RFQ
 // alibaba.icbu.rfq.read
 //
 // 是否已读RFQ
-func AlibabaIcbuRfqRead(clt *core.SDKClient, req *icburfq.AlibabaIcbuRfqReadAPIRequest, session string) (*icburfq.AlibabaIcbuRfqReadAPIResponse, error) {
-	var resp icburfq.AlibabaIcbuRfqReadAPIResponse
+func Alibabaicburfqread(clt *core.SDKClient, req *icburfq.AlibabaicburfqreadAPIRequest, session string) (*icburfq.AlibabaicburfqreadAPIResponse, error) {
+	var resp icburfq.AlibabaicburfqreadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

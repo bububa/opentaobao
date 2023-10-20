@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/icburfq"
 )
 
-// AlibabaIcbuQuotationPost 供应商提交报价
+// Alibabaicbuquotationpost 供应商提交报价
 // alibaba.icbu.quotation.post
 //
 // 供应商对RFQ进行报价
-func AlibabaIcbuQuotationPost(clt *core.SDKClient, req *icburfq.AlibabaIcbuQuotationPostAPIRequest, session string) (*icburfq.AlibabaIcbuQuotationPostAPIResponse, error) {
-	var resp icburfq.AlibabaIcbuQuotationPostAPIResponse
+func Alibabaicbuquotationpost(clt *core.SDKClient, req *icburfq.AlibabaicbuquotationpostAPIRequest, session string) (*icburfq.AlibabaicbuquotationpostAPIResponse, error) {
+	var resp icburfq.AlibabaicbuquotationpostAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

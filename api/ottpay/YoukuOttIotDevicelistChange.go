@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ottpay"
 )
 
-// YoukuOttIotDevicelistChange iot设备列表变化接口
+// Youkuottiotdevicelistchange iot设备列表变化接口
 // youku.ott.iot.devicelist.change
 //
 // iot设备列表变化接口
-func YoukuOttIotDevicelistChange(clt *core.SDKClient, req *ottpay.YoukuOttIotDevicelistChangeAPIRequest, session string) (*ottpay.YoukuOttIotDevicelistChangeAPIResponse, error) {
-	var resp ottpay.YoukuOttIotDevicelistChangeAPIResponse
+func Youkuottiotdevicelistchange(clt *core.SDKClient, req *ottpay.YoukuottiotdevicelistchangeAPIRequest, session string) (*ottpay.YoukuottiotdevicelistchangeAPIResponse, error) {
+	var resp ottpay.YoukuottiotdevicelistchangeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wlbimports"
 )
 
-// CainiaoGlobalImPickupAppointmentOrderStatus 预约单状态查询
+// Cainiaoglobalimpickupappointmentorderstatus 预约单状态查询
 // cainiao.global.im.pickup.appointment.order.status
 //
 // 预约单状态查询
-func CainiaoGlobalImPickupAppointmentOrderStatus(clt *core.SDKClient, req *wlbimports.CainiaoGlobalImPickupAppointmentOrderStatusAPIRequest, session string) (*wlbimports.CainiaoGlobalImPickupAppointmentOrderStatusAPIResponse, error) {
-	var resp wlbimports.CainiaoGlobalImPickupAppointmentOrderStatusAPIResponse
+func Cainiaoglobalimpickupappointmentorderstatus(clt *core.SDKClient, req *wlbimports.CainiaoglobalimpickupappointmentorderstatusAPIRequest, session string) (*wlbimports.CainiaoglobalimpickupappointmentorderstatusAPIResponse, error) {
+	var resp wlbimports.CainiaoglobalimpickupappointmentorderstatusAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

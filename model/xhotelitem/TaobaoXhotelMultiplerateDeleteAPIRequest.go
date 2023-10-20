@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoXhotelMultiplerateDeleteAPIRequest 复杂价格删除 API请求
+// TaobaoxhotelmultipleratedeleteAPIRequest 复杂价格删除 API请求
 // taobao.xhotel.multiplerate.delete
 //
 // 酒店产品库rate删除
-type TaobaoXhotelMultiplerateDeleteAPIRequest struct {
+type TaobaoxhotelmultipleratedeleteAPIRequest struct {
 	model.Params
 	// 渠道，和推送房价所使用的渠道保持一致
 	_vendor string
@@ -24,91 +24,91 @@ type TaobaoXhotelMultiplerateDeleteAPIRequest struct {
 	_lengthofstay int64
 }
 
-// NewTaobaoXhotelMultiplerateDeleteRequest 初始化TaobaoXhotelMultiplerateDeleteAPIRequest对象
-func NewTaobaoXhotelMultiplerateDeleteRequest() *TaobaoXhotelMultiplerateDeleteAPIRequest {
-	return &TaobaoXhotelMultiplerateDeleteAPIRequest{
+// NewTaobaoxhotelmultipleratedeleteRequest 初始化TaobaoxhotelmultipleratedeleteAPIRequest对象
+func NewTaobaoxhotelmultipleratedeleteRequest() *TaobaoxhotelmultipleratedeleteAPIRequest {
+	return &TaobaoxhotelmultipleratedeleteAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoXhotelMultiplerateDeleteAPIRequest) GetApiMethodName() string {
+func (r TaobaoxhotelmultipleratedeleteAPIRequest) GetApiMethodName() string {
 	return "taobao.xhotel.multiplerate.delete"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoXhotelMultiplerateDeleteAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoxhotelmultipleratedeleteAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoXhotelMultiplerateDeleteAPIRequest) GetRawParams() model.Params {
+func (r TaobaoxhotelmultipleratedeleteAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetVendor is Vendor Setter
 // 渠道，和推送房价所使用的渠道保持一致
-func (r *TaobaoXhotelMultiplerateDeleteAPIRequest) SetVendor(_vendor string) error {
+func (r *TaobaoxhotelmultipleratedeleteAPIRequest) SetVendor(_vendor string) error {
 	r._vendor = _vendor
 	r.Set("vendor", _vendor)
 	return nil
 }
 
 // GetVendor Vendor Getter
-func (r TaobaoXhotelMultiplerateDeleteAPIRequest) GetVendor() string {
+func (r TaobaoxhotelmultipleratedeleteAPIRequest) GetVendor() string {
 	return r._vendor
 }
 
 // SetRateplanCode is RateplanCode Setter
 // 商家价格政策编码
-func (r *TaobaoXhotelMultiplerateDeleteAPIRequest) SetRateplanCode(_rateplanCode string) error {
+func (r *TaobaoxhotelmultipleratedeleteAPIRequest) SetRateplanCode(_rateplanCode string) error {
 	r._rateplanCode = _rateplanCode
 	r.Set("rateplan_code", _rateplanCode)
 	return nil
 }
 
 // GetRateplanCode RateplanCode Getter
-func (r TaobaoXhotelMultiplerateDeleteAPIRequest) GetRateplanCode() string {
+func (r TaobaoxhotelmultipleratedeleteAPIRequest) GetRateplanCode() string {
 	return r._rateplanCode
 }
 
 // SetOutRid is OutRid Setter
 // 商家房型编码
-func (r *TaobaoXhotelMultiplerateDeleteAPIRequest) SetOutRid(_outRid string) error {
+func (r *TaobaoxhotelmultipleratedeleteAPIRequest) SetOutRid(_outRid string) error {
 	r._outRid = _outRid
 	r.Set("out_rid", _outRid)
 	return nil
 }
 
 // GetOutRid OutRid Getter
-func (r TaobaoXhotelMultiplerateDeleteAPIRequest) GetOutRid() string {
+func (r TaobaoxhotelmultipleratedeleteAPIRequest) GetOutRid() string {
 	return r._outRid
 }
 
 // SetOccupancy is Occupancy Setter
 // 连住天数
-func (r *TaobaoXhotelMultiplerateDeleteAPIRequest) SetOccupancy(_occupancy int64) error {
+func (r *TaobaoxhotelmultipleratedeleteAPIRequest) SetOccupancy(_occupancy int64) error {
 	r._occupancy = _occupancy
 	r.Set("occupancy", _occupancy)
 	return nil
 }
 
 // GetOccupancy Occupancy Getter
-func (r TaobaoXhotelMultiplerateDeleteAPIRequest) GetOccupancy() int64 {
+func (r TaobaoxhotelmultipleratedeleteAPIRequest) GetOccupancy() int64 {
 	return r._occupancy
 }
 
 // SetLengthofstay is Lengthofstay Setter
 // 入住人数
-func (r *TaobaoXhotelMultiplerateDeleteAPIRequest) SetLengthofstay(_lengthofstay int64) error {
+func (r *TaobaoxhotelmultipleratedeleteAPIRequest) SetLengthofstay(_lengthofstay int64) error {
 	r._lengthofstay = _lengthofstay
 	r.Set("lengthofstay", _lengthofstay)
 	return nil
 }
 
 // GetLengthofstay Lengthofstay Getter
-func (r TaobaoXhotelMultiplerateDeleteAPIRequest) GetLengthofstay() int64 {
+func (r TaobaoxhotelmultipleratedeleteAPIRequest) GetLengthofstay() int64 {
 	return r._lengthofstay
 }

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/category"
 )
 
-// AliexpressSocialDiscategoryGet 展示类目获取接口
+// Aliexpresssocialdiscategoryget 展示类目获取接口
 // aliexpress.social.discategory.get
 //
 // AE展示类目获取接口
-func AliexpressSocialDiscategoryGet(clt *core.SDKClient, req *category.AliexpressSocialDiscategoryGetAPIRequest, session string) (*category.AliexpressSocialDiscategoryGetAPIResponse, error) {
-	var resp category.AliexpressSocialDiscategoryGetAPIResponse
+func Aliexpresssocialdiscategoryget(clt *core.SDKClient, req *category.AliexpresssocialdiscategorygetAPIRequest, session string) (*category.AliexpresssocialdiscategorygetAPIResponse, error) {
+	var resp category.AliexpresssocialdiscategorygetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,7 +1,7 @@
 package jst
 
-// TaobaoRdsDbGetdbResultSet 结构体
-type TaobaoRdsDbGetdbResultSet struct {
+// TaobaordsdbgetdbResultSet 结构体
+type TaobaordsdbgetdbResultSet struct {
 	// results
 	Results []string `json:"results,omitempty" xml:"results>string,omitempty"`
 	// exception

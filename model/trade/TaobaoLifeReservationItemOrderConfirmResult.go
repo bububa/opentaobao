@@ -1,7 +1,7 @@
 package trade
 
-// TaobaoLifeReservationItemOrderConfirmResult 结构体
-type TaobaoLifeReservationItemOrderConfirmResult struct {
+// TaobaolifereservationitemorderconfirmResult 结构体
+type TaobaolifereservationitemorderconfirmResult struct {
 	// 内部trace 用于排查问题
 	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
 	// 错误

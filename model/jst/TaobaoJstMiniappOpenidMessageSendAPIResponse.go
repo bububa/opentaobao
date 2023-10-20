@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoJstMiniappOpenidMessageSendAPIResponse 单个openId用户短信发送 API返回值
+// TaobaojstminiappopenidmessagesendAPIResponse 单个openId用户短信发送 API返回值
 // taobao.jst.miniapp.openid.message.send
 //
 // 单个openId用户短信发送
-type TaobaoJstMiniappOpenidMessageSendAPIResponse struct {
+type TaobaojstminiappopenidmessagesendAPIResponse struct {
 	model.CommonResponse
-	TaobaoJstMiniappOpenidMessageSendAPIResponseModel
+	TaobaojstminiappopenidmessagesendAPIResponseModel
 }
 
-// TaobaoJstMiniappOpenidMessageSendAPIResponseModel is 单个openId用户短信发送 成功返回结果
-type TaobaoJstMiniappOpenidMessageSendAPIResponseModel struct {
+// TaobaojstminiappopenidmessagesendAPIResponseModel is 单个openId用户短信发送 成功返回结果
+type TaobaojstminiappopenidmessagesendAPIResponseModel struct {
 	XMLName xml.Name `xml:"jst_miniapp_openid_message_send_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

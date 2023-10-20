@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaHealthVaccinNoticeAnnouncementPublishAPIResponse 支付宝疫苗POV公告通知 API返回值
+// AlibabahealthvaccinnoticeannouncementpublishAPIResponse 支付宝疫苗POV公告通知 API返回值
 // alibaba.health.vaccin.notice.announcement.publish
 //
 // 支付宝疫苗POV发布公告提醒信息
-type AlibabaHealthVaccinNoticeAnnouncementPublishAPIResponse struct {
+type AlibabahealthvaccinnoticeannouncementpublishAPIResponse struct {
 	model.CommonResponse
-	AlibabaHealthVaccinNoticeAnnouncementPublishAPIResponseModel
+	AlibabahealthvaccinnoticeannouncementpublishAPIResponseModel
 }
 
-// AlibabaHealthVaccinNoticeAnnouncementPublishAPIResponseModel is 支付宝疫苗POV公告通知 成功返回结果
-type AlibabaHealthVaccinNoticeAnnouncementPublishAPIResponseModel struct {
+// AlibabahealthvaccinnoticeannouncementpublishAPIResponseModel is 支付宝疫苗POV公告通知 成功返回结果
+type AlibabahealthvaccinnoticeannouncementpublishAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_health_vaccin_notice_announcement_publish_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

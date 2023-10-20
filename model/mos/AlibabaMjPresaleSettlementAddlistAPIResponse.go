@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMjPresaleSettlementAddlistAPIResponse 预售结算数据回传 API返回值
+// AlibabamjpresalesettlementaddlistAPIResponse 预售结算数据回传 API返回值
 // alibaba.mj.presale.settlement.addlist
 //
 // 用于预售活动结算数据的回传。
-type AlibabaMjPresaleSettlementAddlistAPIResponse struct {
+type AlibabamjpresalesettlementaddlistAPIResponse struct {
 	model.CommonResponse
-	AlibabaMjPresaleSettlementAddlistAPIResponseModel
+	AlibabamjpresalesettlementaddlistAPIResponseModel
 }
 
-// AlibabaMjPresaleSettlementAddlistAPIResponseModel is 预售结算数据回传 成功返回结果
-type AlibabaMjPresaleSettlementAddlistAPIResponseModel struct {
+// AlibabamjpresalesettlementaddlistAPIResponseModel is 预售结算数据回传 成功返回结果
+type AlibabamjpresalesettlementaddlistAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mj_presale_settlement_addlist_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

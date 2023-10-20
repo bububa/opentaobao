@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaRetailMarketingItempoolActivitySkuDeleteAPIResponse 删除商品池活动商品【同城零售】 API返回值
+// AlibabaretailmarketingitempoolactivityskudeleteAPIResponse 删除商品池活动商品【同城零售】 API返回值
 // alibaba.retail.marketing.itempool.activity.sku.delete
 //
 // 删除商品池活动商品信息【同城零售】
-type AlibabaRetailMarketingItempoolActivitySkuDeleteAPIResponse struct {
+type AlibabaretailmarketingitempoolactivityskudeleteAPIResponse struct {
 	model.CommonResponse
-	AlibabaRetailMarketingItempoolActivitySkuDeleteAPIResponseModel
+	AlibabaretailmarketingitempoolactivityskudeleteAPIResponseModel
 }
 
-// AlibabaRetailMarketingItempoolActivitySkuDeleteAPIResponseModel is 删除商品池活动商品【同城零售】 成功返回结果
-type AlibabaRetailMarketingItempoolActivitySkuDeleteAPIResponseModel struct {
+// AlibabaretailmarketingitempoolactivityskudeleteAPIResponseModel is 删除商品池活动商品【同城零售】 成功返回结果
+type AlibabaretailmarketingitempoolactivityskudeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_retail_marketing_itempool_activity_sku_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

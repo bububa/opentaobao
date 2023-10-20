@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoWlbSubscriptionQueryAPIResponse 查询商家定购的所有服务 API返回值
+// TaobaowlbsubscriptionqueryAPIResponse 查询商家定购的所有服务 API返回值
 // taobao.wlb.subscription.query
 //
 // 查询商家定购的所有服务,可通过入参状态来筛选
-type TaobaoWlbSubscriptionQueryAPIResponse struct {
+type TaobaowlbsubscriptionqueryAPIResponse struct {
 	model.CommonResponse
-	TaobaoWlbSubscriptionQueryAPIResponseModel
+	TaobaowlbsubscriptionqueryAPIResponseModel
 }
 
-// TaobaoWlbSubscriptionQueryAPIResponseModel is 查询商家定购的所有服务 成功返回结果
-type TaobaoWlbSubscriptionQueryAPIResponseModel struct {
+// TaobaowlbsubscriptionqueryAPIResponseModel is 查询商家定购的所有服务 成功返回结果
+type TaobaowlbsubscriptionqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_subscription_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

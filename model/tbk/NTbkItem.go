@@ -1,7 +1,7 @@
 package tbk
 
-// NTbkItem 结构体
-type NTbkItem struct {
+// NtbkItem 结构体
+type NtbkItem struct {
 	// 商品小图列表
 	SmallImages []string `json:"small_images,omitempty" xml:"small_images>string,omitempty"`
 	// 一级类目名称

@@ -1,7 +1,7 @@
 package simba
 
-// TaobaoUniversalbpLabelDmpFinddmpmoduleconfigTopResult 结构体
-type TaobaoUniversalbpLabelDmpFinddmpmoduleconfigTopResult struct {
+// TaobaouniversalbplabeldmpfinddmpmoduleconfigTopResult 结构体
+type TaobaouniversalbplabeldmpfinddmpmoduleconfigTopResult struct {
 	// 请求系统信息
 	Info *TopInfo `json:"info,omitempty" xml:"info,omitempty"`
 	// 结果集

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoWdkEquipmentWcsWcsinfoUploadAPIResponse 悬挂链业务信息上传 API返回值
+// TaobaowdkequipmentwcswcsinfouploadAPIResponse 悬挂链业务信息上传 API返回值
 // taobao.wdk.equipment.wcs.wcsinfo.upload
 //
 // 五道口仓库悬挂链信息上传
-type TaobaoWdkEquipmentWcsWcsinfoUploadAPIResponse struct {
+type TaobaowdkequipmentwcswcsinfouploadAPIResponse struct {
 	model.CommonResponse
-	TaobaoWdkEquipmentWcsWcsinfoUploadAPIResponseModel
+	TaobaowdkequipmentwcswcsinfouploadAPIResponseModel
 }
 
-// TaobaoWdkEquipmentWcsWcsinfoUploadAPIResponseModel is 悬挂链业务信息上传 成功返回结果
-type TaobaoWdkEquipmentWcsWcsinfoUploadAPIResponseModel struct {
+// TaobaowdkequipmentwcswcsinfouploadAPIResponseModel is 悬挂链业务信息上传 成功返回结果
+type TaobaowdkequipmentwcswcsinfouploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"wdk_equipment_wcs_wcsinfo_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

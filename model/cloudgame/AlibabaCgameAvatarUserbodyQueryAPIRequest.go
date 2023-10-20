@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaCgameAvatarUserbodyQueryAPIRequest 用户Avatar body查询 API请求
+// AlibabacgameavataruserbodyqueryAPIRequest 用户Avatar body查询 API请求
 // alibaba.cgame.avatar.userbody.query
 //
 // Avatar用户body数据查询
-type AlibabaCgameAvatarUserbodyQueryAPIRequest struct {
+type AlibabacgameavataruserbodyqueryAPIRequest struct {
 	model.Params
 	// 查询数据所属用户的mixUserId
 	_mixUserId string
 }
 
-// NewAlibabaCgameAvatarUserbodyQueryRequest 初始化AlibabaCgameAvatarUserbodyQueryAPIRequest对象
-func NewAlibabaCgameAvatarUserbodyQueryRequest() *AlibabaCgameAvatarUserbodyQueryAPIRequest {
-	return &AlibabaCgameAvatarUserbodyQueryAPIRequest{
+// NewAlibabacgameavataruserbodyqueryRequest 初始化AlibabacgameavataruserbodyqueryAPIRequest对象
+func NewAlibabacgameavataruserbodyqueryRequest() *AlibabacgameavataruserbodyqueryAPIRequest {
+	return &AlibabacgameavataruserbodyqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaCgameAvatarUserbodyQueryAPIRequest) GetApiMethodName() string {
+func (r AlibabacgameavataruserbodyqueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.cgame.avatar.userbody.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaCgameAvatarUserbodyQueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabacgameavataruserbodyqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaCgameAvatarUserbodyQueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabacgameavataruserbodyqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetMixUserId is MixUserId Setter
 // 查询数据所属用户的mixUserId
-func (r *AlibabaCgameAvatarUserbodyQueryAPIRequest) SetMixUserId(_mixUserId string) error {
+func (r *AlibabacgameavataruserbodyqueryAPIRequest) SetMixUserId(_mixUserId string) error {
 	r._mixUserId = _mixUserId
 	r.Set("mix_user_id", _mixUserId)
 	return nil
 }
 
 // GetMixUserId MixUserId Getter
-func (r AlibabaCgameAvatarUserbodyQueryAPIRequest) GetMixUserId() string {
+func (r AlibabacgameavataruserbodyqueryAPIRequest) GetMixUserId() string {
 	return r._mixUserId
 }

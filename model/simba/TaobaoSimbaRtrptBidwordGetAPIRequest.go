@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSimbaRtrptBidwordGetAPIRequest 获取推广词实时报表数据 API请求
+// TaobaosimbartrptbidwordgetAPIRequest 获取推广词实时报表数据 API请求
 // taobao.simba.rtrpt.bidword.get
 //
 // 获取推广词报表数据
-type TaobaoSimbaRtrptBidwordGetAPIRequest struct {
+type TaobaosimbartrptbidwordgetAPIRequest struct {
 	model.Params
 	// 用户名
 	_nick string
@@ -22,78 +22,78 @@ type TaobaoSimbaRtrptBidwordGetAPIRequest struct {
 	_adgroupId int64
 }
 
-// NewTaobaoSimbaRtrptBidwordGetRequest 初始化TaobaoSimbaRtrptBidwordGetAPIRequest对象
-func NewTaobaoSimbaRtrptBidwordGetRequest() *TaobaoSimbaRtrptBidwordGetAPIRequest {
-	return &TaobaoSimbaRtrptBidwordGetAPIRequest{
+// NewTaobaosimbartrptbidwordgetRequest 初始化TaobaosimbartrptbidwordgetAPIRequest对象
+func NewTaobaosimbartrptbidwordgetRequest() *TaobaosimbartrptbidwordgetAPIRequest {
+	return &TaobaosimbartrptbidwordgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaRtrptBidwordGetAPIRequest) GetApiMethodName() string {
+func (r TaobaosimbartrptbidwordgetAPIRequest) GetApiMethodName() string {
 	return "taobao.simba.rtrpt.bidword.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaRtrptBidwordGetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaosimbartrptbidwordgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoSimbaRtrptBidwordGetAPIRequest) GetRawParams() model.Params {
+func (r TaobaosimbartrptbidwordgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetNick is Nick Setter
 // 用户名
-func (r *TaobaoSimbaRtrptBidwordGetAPIRequest) SetNick(_nick string) error {
+func (r *TaobaosimbartrptbidwordgetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
 	r.Set("nick", _nick)
 	return nil
 }
 
 // GetNick Nick Getter
-func (r TaobaoSimbaRtrptBidwordGetAPIRequest) GetNick() string {
+func (r TaobaosimbartrptbidwordgetAPIRequest) GetNick() string {
 	return r._nick
 }
 
 // SetTheDate is TheDate Setter
 // 日期，格式yyyy-mm-dd
-func (r *TaobaoSimbaRtrptBidwordGetAPIRequest) SetTheDate(_theDate string) error {
+func (r *TaobaosimbartrptbidwordgetAPIRequest) SetTheDate(_theDate string) error {
 	r._theDate = _theDate
 	r.Set("the_date", _theDate)
 	return nil
 }
 
 // GetTheDate TheDate Getter
-func (r TaobaoSimbaRtrptBidwordGetAPIRequest) GetTheDate() string {
+func (r TaobaosimbartrptbidwordgetAPIRequest) GetTheDate() string {
 	return r._theDate
 }
 
 // SetCampaignId is CampaignId Setter
 // 推广计划id
-func (r *TaobaoSimbaRtrptBidwordGetAPIRequest) SetCampaignId(_campaignId int64) error {
+func (r *TaobaosimbartrptbidwordgetAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
 	r.Set("campaign_id", _campaignId)
 	return nil
 }
 
 // GetCampaignId CampaignId Getter
-func (r TaobaoSimbaRtrptBidwordGetAPIRequest) GetCampaignId() int64 {
+func (r TaobaosimbartrptbidwordgetAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
 // SetAdgroupId is AdgroupId Setter
 // 推广组id
-func (r *TaobaoSimbaRtrptBidwordGetAPIRequest) SetAdgroupId(_adgroupId int64) error {
+func (r *TaobaosimbartrptbidwordgetAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
 	r.Set("adgroup_id", _adgroupId)
 	return nil
 }
 
 // GetAdgroupId AdgroupId Getter
-func (r TaobaoSimbaRtrptBidwordGetAPIRequest) GetAdgroupId() int64 {
+func (r TaobaosimbartrptbidwordgetAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }

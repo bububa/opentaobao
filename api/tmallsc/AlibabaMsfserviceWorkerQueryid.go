@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallsc"
 )
 
-// AlibabaMsfserviceWorkerQueryid 查询师傅workerid
+// Alibabamsfserviceworkerqueryid 查询师傅workerid
 // alibaba.msfservice.worker.queryid
 //
 // 查询师傅workerid
-func AlibabaMsfserviceWorkerQueryid(clt *core.SDKClient, req *tmallsc.AlibabaMsfserviceWorkerQueryidAPIRequest, session string) (*tmallsc.AlibabaMsfserviceWorkerQueryidAPIResponse, error) {
-	var resp tmallsc.AlibabaMsfserviceWorkerQueryidAPIResponse
+func Alibabamsfserviceworkerqueryid(clt *core.SDKClient, req *tmallsc.AlibabamsfserviceworkerqueryidAPIRequest, session string) (*tmallsc.AlibabamsfserviceworkerqueryidAPIResponse, error) {
+	var resp tmallsc.AlibabamsfserviceworkerqueryidAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
 
-// AlitripMerchantGalaxyMemberRegister 星河-微信小程序会员注册
+// Alitripmerchantgalaxymemberregister 星河-微信小程序会员注册
 // alitrip.merchant.galaxy.member.register
 //
 // 星河产品=微信小程序注册雅高会员服务
-func AlitripMerchantGalaxyMemberRegister(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyMemberRegisterAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyMemberRegisterAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyMemberRegisterAPIResponse
+func Alitripmerchantgalaxymemberregister(clt *core.SDKClient, req *alitripmerchant.AlitripmerchantgalaxymemberregisterAPIRequest, session string) (*alitripmerchant.AlitripmerchantgalaxymemberregisterAPIResponse, error) {
+	var resp alitripmerchant.AlitripmerchantgalaxymemberregisterAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

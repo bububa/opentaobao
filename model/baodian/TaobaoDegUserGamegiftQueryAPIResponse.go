@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoDegUserGamegiftQueryAPIResponse 用户数娱游戏礼包查询 API返回值
+// TaobaodegusergamegiftqueryAPIResponse 用户数娱游戏礼包查询 API返回值
 // taobao.deg.user.gamegift.query
 //
 // 查询用户数娱礼包列表
-type TaobaoDegUserGamegiftQueryAPIResponse struct {
+type TaobaodegusergamegiftqueryAPIResponse struct {
 	model.CommonResponse
-	TaobaoDegUserGamegiftQueryAPIResponseModel
+	TaobaodegusergamegiftqueryAPIResponseModel
 }
 
-// TaobaoDegUserGamegiftQueryAPIResponseModel is 用户数娱游戏礼包查询 成功返回结果
-type TaobaoDegUserGamegiftQueryAPIResponseModel struct {
+// TaobaodegusergamegiftqueryAPIResponseModel is 用户数娱游戏礼包查询 成功返回结果
+type TaobaodegusergamegiftqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"deg_user_gamegift_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

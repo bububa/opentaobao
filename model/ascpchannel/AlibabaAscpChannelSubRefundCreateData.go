@@ -1,7 +1,7 @@
 package ascpchannel
 
-// AlibabaAscpChannelSubRefundCreateData 结构体
-type AlibabaAscpChannelSubRefundCreateData struct {
+// AlibabaascpchannelsubrefundcreateData 结构体
+type AlibabaascpchannelsubrefundcreateData struct {
 	// 外部退款单号
 	OutRefundNo string `json:"out_refund_no,omitempty" xml:"out_refund_no,omitempty"`
 	// 供应链渠道退款单号

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMosDeliverySendAPIRequest 发货 API请求
+// AlibabamosdeliverysendAPIRequest 发货 API请求
 // alibaba.mos.delivery.send
 //
 // 订单发货填写快递单
-type AlibabaMosDeliverySendAPIRequest struct {
+type AlibabamosdeliverysendAPIRequest struct {
 	model.Params
 	// 发货信息
 	_deliveryDto *DeliveryDto
 }
 
-// NewAlibabaMosDeliverySendRequest 初始化AlibabaMosDeliverySendAPIRequest对象
-func NewAlibabaMosDeliverySendRequest() *AlibabaMosDeliverySendAPIRequest {
-	return &AlibabaMosDeliverySendAPIRequest{
+// NewAlibabamosdeliverysendRequest 初始化AlibabamosdeliverysendAPIRequest对象
+func NewAlibabamosdeliverysendRequest() *AlibabamosdeliverysendAPIRequest {
+	return &AlibabamosdeliverysendAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaMosDeliverySendAPIRequest) GetApiMethodName() string {
+func (r AlibabamosdeliverysendAPIRequest) GetApiMethodName() string {
 	return "alibaba.mos.delivery.send"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaMosDeliverySendAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabamosdeliverysendAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaMosDeliverySendAPIRequest) GetRawParams() model.Params {
+func (r AlibabamosdeliverysendAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDeliveryDto is DeliveryDto Setter
 // 发货信息
-func (r *AlibabaMosDeliverySendAPIRequest) SetDeliveryDto(_deliveryDto *DeliveryDto) error {
+func (r *AlibabamosdeliverysendAPIRequest) SetDeliveryDto(_deliveryDto *DeliveryDto) error {
 	r._deliveryDto = _deliveryDto
 	r.Set("delivery_dto", _deliveryDto)
 	return nil
 }
 
 // GetDeliveryDto DeliveryDto Getter
-func (r AlibabaMosDeliverySendAPIRequest) GetDeliveryDto() *DeliveryDto {
+func (r AlibabamosdeliverysendAPIRequest) GetDeliveryDto() *DeliveryDto {
 	return r._deliveryDto
 }

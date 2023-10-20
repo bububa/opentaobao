@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/train"
 )
 
-// TaobaoTrainAgentTostationReceive 线下票送票至车站代理商确认用户已取票服务
+// Taobaotrainagenttostationreceive 线下票送票至车站代理商确认用户已取票服务
 // taobao.train.agent.tostation.receive
 //
 // 送票至车站的订单，代理商确认用户已取票
-func TaobaoTrainAgentTostationReceive(clt *core.SDKClient, req *train.TaobaoTrainAgentTostationReceiveAPIRequest, session string) (*train.TaobaoTrainAgentTostationReceiveAPIResponse, error) {
-	var resp train.TaobaoTrainAgentTostationReceiveAPIResponse
+func Taobaotrainagenttostationreceive(clt *core.SDKClient, req *train.TaobaotrainagenttostationreceiveAPIRequest, session string) (*train.TaobaotrainagenttostationreceiveAPIResponse, error) {
+	var resp train.TaobaotrainagenttostationreceiveAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

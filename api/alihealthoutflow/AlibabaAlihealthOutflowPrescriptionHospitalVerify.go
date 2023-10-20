@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihealthoutflow"
 )
 
-// AlibabaAlihealthOutflowPrescriptionHospitalVerify 处方同步至医院返回校验结果
+// Alibabaalihealthoutflowprescriptionhospitalverify 处方同步至医院返回校验结果
 // alibaba.alihealth.outflow.prescription.hospital.verify
 //
 // 处方同步至医院返回校验结果
-func AlibabaAlihealthOutflowPrescriptionHospitalVerify(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIRequest, session string) (*alihealthoutflow.AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIResponse, error) {
-	var resp alihealthoutflow.AlibabaAlihealthOutflowPrescriptionHospitalVerifyAPIResponse
+func Alibabaalihealthoutflowprescriptionhospitalverify(clt *core.SDKClient, req *alihealthoutflow.AlibabaalihealthoutflowprescriptionhospitalverifyAPIRequest, session string) (*alihealthoutflow.AlibabaalihealthoutflowprescriptionhospitalverifyAPIResponse, error) {
+	var resp alihealthoutflow.AlibabaalihealthoutflowprescriptionhospitalverifyAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

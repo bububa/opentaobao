@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoWaybillIiDeliveryAPIResponse 派件通知接口 API返回值
+// CainiaowaybilliideliveryAPIResponse 派件通知接口 API返回值
 // cainiao.waybill.ii.delivery
 //
 // 极效前置场景下的使用此接口，通知进行派件
-type CainiaoWaybillIiDeliveryAPIResponse struct {
+type CainiaowaybilliideliveryAPIResponse struct {
 	model.CommonResponse
-	CainiaoWaybillIiDeliveryAPIResponseModel
+	CainiaowaybilliideliveryAPIResponseModel
 }
 
-// CainiaoWaybillIiDeliveryAPIResponseModel is 派件通知接口 成功返回结果
-type CainiaoWaybillIiDeliveryAPIResponseModel struct {
+// CainiaowaybilliideliveryAPIResponseModel is 派件通知接口 成功返回结果
+type CainiaowaybilliideliveryAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_waybill_ii_delivery_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

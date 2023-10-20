@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripTravelTradeDeliverAPIRequest 飞猪度假-订单发货接口 API请求
+// AlitriptraveltradedeliverAPIRequest 飞猪度假-订单发货接口 API请求
 // alitrip.travel.trade.deliver
 //
 // 航旅度假无需物流普通商品发货接口（不支持二次预约商品），只支持子订单级别发货
-type AlitripTravelTradeDeliverAPIRequest struct {
+type AlitriptraveltradedeliverAPIRequest struct {
 	model.Params
 	// 子订单id
 	_subOrderId int64
 }
 
-// NewAlitripTravelTradeDeliverRequest 初始化AlitripTravelTradeDeliverAPIRequest对象
-func NewAlitripTravelTradeDeliverRequest() *AlitripTravelTradeDeliverAPIRequest {
-	return &AlitripTravelTradeDeliverAPIRequest{
+// NewAlitriptraveltradedeliverRequest 初始化AlitriptraveltradedeliverAPIRequest对象
+func NewAlitriptraveltradedeliverRequest() *AlitriptraveltradedeliverAPIRequest {
+	return &AlitriptraveltradedeliverAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripTravelTradeDeliverAPIRequest) GetApiMethodName() string {
+func (r AlitriptraveltradedeliverAPIRequest) GetApiMethodName() string {
 	return "alitrip.travel.trade.deliver"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripTravelTradeDeliverAPIRequest) GetApiParams(params url.Values) {
+func (r AlitriptraveltradedeliverAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripTravelTradeDeliverAPIRequest) GetRawParams() model.Params {
+func (r AlitriptraveltradedeliverAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSubOrderId is SubOrderId Setter
 // 子订单id
-func (r *AlitripTravelTradeDeliverAPIRequest) SetSubOrderId(_subOrderId int64) error {
+func (r *AlitriptraveltradedeliverAPIRequest) SetSubOrderId(_subOrderId int64) error {
 	r._subOrderId = _subOrderId
 	r.Set("sub_order_id", _subOrderId)
 	return nil
 }
 
 // GetSubOrderId SubOrderId Getter
-func (r AlitripTravelTradeDeliverAPIRequest) GetSubOrderId() int64 {
+func (r AlitriptraveltradedeliverAPIRequest) GetSubOrderId() int64 {
 	return r._subOrderId
 }

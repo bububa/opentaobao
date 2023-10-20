@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/damai"
 )
 
-// AlibabaDamaiMevOpenDeleteperform 大麦换验平台-第三方对外开放-场次接口deletePerform
+// Alibabadamaimevopendeleteperform 大麦换验平台-第三方对外开放-场次接口deletePerform
 // alibaba.damai.mev.open.deleteperform
 //
 // deletePerform
-func AlibabaDamaiMevOpenDeleteperform(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenDeleteperformAPIRequest, session string) (*damai.AlibabaDamaiMevOpenDeleteperformAPIResponse, error) {
-	var resp damai.AlibabaDamaiMevOpenDeleteperformAPIResponse
+func Alibabadamaimevopendeleteperform(clt *core.SDKClient, req *damai.AlibabadamaimevopendeleteperformAPIRequest, session string) (*damai.AlibabadamaimevopendeleteperformAPIResponse, error) {
+	var resp damai.AlibabadamaimevopendeleteperformAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

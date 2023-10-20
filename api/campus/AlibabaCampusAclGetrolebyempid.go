@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/campus"
 )
 
-// AlibabaCampusAclGetrolebyempid 根据用户查询角色
+// Alibabacampusaclgetrolebyempid 根据用户查询角色
 // alibaba.campus.acl.getrolebyempid
 //
 // 根据用户查询角色
-func AlibabaCampusAclGetrolebyempid(clt *core.SDKClient, req *campus.AlibabaCampusAclGetrolebyempidAPIRequest, session string) (*campus.AlibabaCampusAclGetrolebyempidAPIResponse, error) {
-	var resp campus.AlibabaCampusAclGetrolebyempidAPIResponse
+func Alibabacampusaclgetrolebyempid(clt *core.SDKClient, req *campus.AlibabacampusaclgetrolebyempidAPIRequest, session string) (*campus.AlibabacampusaclgetrolebyempidAPIResponse, error) {
+	var resp campus.AlibabacampusaclgetrolebyempidAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

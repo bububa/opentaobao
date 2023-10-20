@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIResponse 容器被预分拣器分配到悬挂链 API返回值
+// TaobaowdkequipmentconveyorwcsbtoccontainerassignedtoconveyorAPIResponse 容器被预分拣器分配到悬挂链 API返回值
 // taobao.wdk.equipment.conveyor.wcsbtoc.containerassignedtoconveyor
 //
 // 容器被预分拣器分配到悬挂链
-type TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIResponse struct {
+type TaobaowdkequipmentconveyorwcsbtoccontainerassignedtoconveyorAPIResponse struct {
 	model.CommonResponse
-	TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIResponseModel
+	TaobaowdkequipmentconveyorwcsbtoccontainerassignedtoconveyorAPIResponseModel
 }
 
-// TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIResponseModel is 容器被预分拣器分配到悬挂链 成功返回结果
-type TaobaoWdkEquipmentConveyorWcsbtocContainerassignedtoconveyorAPIResponseModel struct {
+// TaobaowdkequipmentconveyorwcsbtoccontainerassignedtoconveyorAPIResponseModel is 容器被预分拣器分配到悬挂链 成功返回结果
+type TaobaowdkequipmentconveyorwcsbtoccontainerassignedtoconveyorAPIResponseModel struct {
 	XMLName xml.Name `xml:"wdk_equipment_conveyor_wcsbtoc_containerassignedtoconveyor_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

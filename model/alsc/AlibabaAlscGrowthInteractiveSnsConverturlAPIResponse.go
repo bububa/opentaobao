@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlscGrowthInteractiveSnsConverturlAPIResponse 防封接口 API返回值
+// AlibabaalscgrowthinteractivesnsconverturlAPIResponse 防封接口 API返回值
 // alibaba.alsc.growth.interactive.sns.converturl
 //
 // 防封接口
-type AlibabaAlscGrowthInteractiveSnsConverturlAPIResponse struct {
+type AlibabaalscgrowthinteractivesnsconverturlAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlscGrowthInteractiveSnsConverturlAPIResponseModel
+	AlibabaalscgrowthinteractivesnsconverturlAPIResponseModel
 }
 
-// AlibabaAlscGrowthInteractiveSnsConverturlAPIResponseModel is 防封接口 成功返回结果
-type AlibabaAlscGrowthInteractiveSnsConverturlAPIResponseModel struct {
+// AlibabaalscgrowthinteractivesnsconverturlAPIResponseModel is 防封接口 成功返回结果
+type AlibabaalscgrowthinteractivesnsconverturlAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_growth_interactive_sns_converturl_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

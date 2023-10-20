@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthDrugKytFiledownloadAPIResponse 处理失败单据下载 API返回值
+// AlibabaalihealthdrugkytfiledownloadAPIResponse 处理失败单据下载 API返回值
 // alibaba.alihealth.drug.kyt.filedownload
 //
 // 处理失败单据下载
-type AlibabaAlihealthDrugKytFiledownloadAPIResponse struct {
+type AlibabaalihealthdrugkytfiledownloadAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihealthDrugKytFiledownloadAPIResponseModel
+	AlibabaalihealthdrugkytfiledownloadAPIResponseModel
 }
 
-// AlibabaAlihealthDrugKytFiledownloadAPIResponseModel is 处理失败单据下载 成功返回结果
-type AlibabaAlihealthDrugKytFiledownloadAPIResponseModel struct {
+// AlibabaalihealthdrugkytfiledownloadAPIResponseModel is 处理失败单据下载 成功返回结果
+type AlibabaalihealthdrugkytfiledownloadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drug_kyt_filedownload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

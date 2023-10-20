@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/baoxian"
 )
 
-// AlipayBaoxianClaimUpdate 更新赔案
+// Alipaybaoxianclaimupdate 更新赔案
 // alipay.baoxian.claim.update
 //
 // 更新保险理赔单
-func AlipayBaoxianClaimUpdate(clt *core.SDKClient, req *baoxian.AlipayBaoxianClaimUpdateAPIRequest, session string) (*baoxian.AlipayBaoxianClaimUpdateAPIResponse, error) {
-	var resp baoxian.AlipayBaoxianClaimUpdateAPIResponse
+func Alipaybaoxianclaimupdate(clt *core.SDKClient, req *baoxian.AlipaybaoxianclaimupdateAPIRequest, session string) (*baoxian.AlipaybaoxianclaimupdateAPIResponse, error) {
+	var resp baoxian.AlipaybaoxianclaimupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

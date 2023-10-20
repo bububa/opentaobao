@@ -1,7 +1,7 @@
 package singletreasure
 
-// TaobaoSingletreasureActivityNameQueryResultDto 结构体
-type TaobaoSingletreasureActivityNameQueryResultDto struct {
+// TaobaosingletreasureactivitynamequeryResultDto 结构体
+type TaobaosingletreasureactivitynamequeryResultDto struct {
 	// data结果
 	DataList []ActivityNameCategoryDto `json:"data_list,omitempty" xml:"data_list>activity_name_category_dto,omitempty"`
 	// 请求返回描述信息

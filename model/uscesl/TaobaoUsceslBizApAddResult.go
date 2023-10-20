@@ -1,7 +1,7 @@
 package uscesl
 
-// TaobaoUsceslBizApAddResult 结构体
-type TaobaoUsceslBizApAddResult struct {
+// TaobaousceslbizapaddResult 结构体
+type TaobaousceslbizapaddResult struct {
 	// 业务错误code
 	BusinessCode string `json:"business_code,omitempty" xml:"business_code,omitempty"`
 	// 业务错误文案

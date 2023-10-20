@@ -117,23 +117,23 @@ type PublisherOrderDto struct {
 	// 渠道关系id。解释：渠道管理功能中的渠道关系ID，若该订单来自于渠道方的推广，则会展示对应渠道关系ID
 	RelationId int64 `json:"relation_id,omitempty" xml:"relation_id,omitempty"`
 	// 付款预估佣金收入。解释：付款预估佣金收入=付款金额*佣金提成。以买家付款金额为基数，预估您可能获得的付款佣金收入，包含平台技术服务费金额（最终发钱时会减去平台技术服务费）。注意：因买家退款等原因，可能与结算预估佣金收入不一致。（特别说明：若想知道属于您名下的整体佣金收入，则整体付款佣金收入=付款预估佣金收入+平台专项服务费，为了简化展示报表，不再增加整体佣金收入字段，有需要的淘宝客可自行加和）
-	PubSharePreFeeForCommission *BigDecimal `json:"pub_share_pre_fee_for_commission,omitempty" xml:"pub_share_pre_fee_for_commission,omitempty"`
+	PubSharePreFeeForCommission float64 `json:"pub_share_pre_fee_for_commission,omitempty" xml:"pub_share_pre_fee_for_commission,omitempty"`
 	// 结算预估佣金收入。解释：结算预估佣金收入=付款金额*佣金提成。以买家确认收货的付款金额为基数，预估您可能获得的结算佣金收入，包含技术服务费金额（最终发钱时会减去平台技术服务费）。注意：因买家退款、您违规推广等原因，可能与您最终收入不一致，最终收入以月结后您实际收到的为准。（特别说明：若想知道属于您名下的整体佣金收入，则整体结算佣金收入=结算预估佣金收入+平台专项服务费，为了简化展示报表，不再增加整体佣金收入字段，有需要的淘宝客可自行加和）
-	PubShareFeeForCommission *BigDecimal `json:"pub_share_fee_for_commission,omitempty" xml:"pub_share_fee_for_commission,omitempty"`
+	PubShareFeeForCommission float64 `json:"pub_share_fee_for_commission,omitempty" xml:"pub_share_fee_for_commission,omitempty"`
 	// 补贴分成比率。解释：从补贴中分得的收益比率
-	PubShareRateForSdy *BigDecimal `json:"pub_share_rate_for_sdy,omitempty" xml:"pub_share_rate_for_sdy,omitempty"`
+	PubShareRateForSdy float64 `json:"pub_share_rate_for_sdy,omitempty" xml:"pub_share_rate_for_sdy,omitempty"`
 	// 补贴提成。解释：补贴提成=补贴比率*补贴分成比率。指实际获得的补贴收益比率
-	TkTotalRateForSdy *BigDecimal `json:"tk_total_rate_for_sdy,omitempty" xml:"tk_total_rate_for_sdy,omitempty"`
+	TkTotalRateForSdy float64 `json:"tk_total_rate_for_sdy,omitempty" xml:"tk_total_rate_for_sdy,omitempty"`
 	// 付款预估补贴收入=（付款金额*a补贴比率+付款金额*b补贴比率+……）*补贴分成比率。如果付款金额*a补贴比率＞补贴类型a单笔订单补贴上限，则付款金额*a补贴比率的值取补贴类型a单笔订单补贴上限，b补贴金额等其他类型补贴金额同理。指以买家付款金额为基数，预估您可能获得的补贴收入。因买家退款等原因，可能与结算预估补贴收入不一致。
-	PubSharePreFeeForSdy *BigDecimal `json:"pub_share_pre_fee_for_sdy,omitempty" xml:"pub_share_pre_fee_for_sdy,omitempty"`
+	PubSharePreFeeForSdy float64 `json:"pub_share_pre_fee_for_sdy,omitempty" xml:"pub_share_pre_fee_for_sdy,omitempty"`
 	// 结算预估补贴收入。解释：以买家确认收货的付款金额为基数，预估您可能获得的结算补贴收入。结算预估补贴收入=（结算金额*a补贴比率+结算金额*b补贴比率+……）*补贴分成比率。如果结算金额*a补贴比率＞补贴类型a单笔订单补贴上限，则结算金额*a补贴比率的值取补贴类型a单笔订单补贴上限，b补贴金额等其他类型补贴金额同理。注意：因买家退款、您违规推广等原因，可能与您最终收入不一致，最终收入以月结后您实际收到的为准
-	PubShareFeeForSdy *BigDecimal `json:"pub_share_fee_for_sdy,omitempty" xml:"pub_share_fee_for_sdy,omitempty"`
+	PubShareFeeForSdy float64 `json:"pub_share_fee_for_sdy,omitempty" xml:"pub_share_fee_for_sdy,omitempty"`
 	// 平台技术服务费明细节点。解释：各项平台技术服务费类型的类型名称、扣费比率、扣费金额的详细说明
 	AlimmShareInfoDto *AlimmShareInfoDto `json:"alimm_share_info_dto,omitempty" xml:"alimm_share_info_dto,omitempty"`
 	// 平台专项服务费比率。解释：指该笔订单推广者在各种特殊场景下需支付给淘宝联盟的所有专项服务费比率总和。平台专项服务费比率=专项服务费比率a+专项服务费比率b+…
-	PlatformSpecialServiceRate *BigDecimal `json:"platform_special_service_rate,omitempty" xml:"platform_special_service_rate,omitempty"`
+	PlatformSpecialServiceRate float64 `json:"platform_special_service_rate,omitempty" xml:"platform_special_service_rate,omitempty"`
 	// 平台专项服务费。解释：指该笔订单推广者在各种特殊场景下需支付给淘宝联盟的所有专项服务费用总和。目前包含以下两类：1、内容专项服务费说明：内容场景专项技术服务费，内容推广者在内容场景进行推广需要支付给淘宝联盟的专项技术服务费用；2、流量专项服务费说明：流量通产品合作场景专项技术服务费，推广者在流量通产品能力下，进行流量投放推广需要支付给淘宝联盟的专项技术服务费用。           平台专项服务费=付款金额*平台专项服务费比率。注意：若订单已结算则会按结算金额计算
-	PlatformSpecialServiceFee *BigDecimal `json:"platform_special_service_fee,omitempty" xml:"platform_special_service_fee,omitempty"`
+	PlatformSpecialServiceFee float64 `json:"platform_special_service_fee,omitempty" xml:"platform_special_service_fee,omitempty"`
 	// 平台专项服务费明细节点。解释：各项平台专项服务费类型的类型名称、扣费比率、扣费金额的详细说明
 	PlatformSpecialShareInfoDto *PlatformSpecialShareInfoDto `json:"platform_special_share_info_dto,omitempty" xml:"platform_special_share_info_dto,omitempty"`
 }

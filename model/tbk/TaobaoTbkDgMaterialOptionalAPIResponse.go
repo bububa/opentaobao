@@ -6,22 +6,22 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTbkDgMaterialOptionalAPIResponse 淘宝客-推广者-物料搜索 API返回值
+// TaobaotbkdgmaterialoptionalAPIResponse 淘宝客-推广者-物料搜索 API返回值
 // taobao.tbk.dg.material.optional
 //
 // 通用物料搜索API（导购）
-type TaobaoTbkDgMaterialOptionalAPIResponse struct {
+type TaobaotbkdgmaterialoptionalAPIResponse struct {
 	model.CommonResponse
-	TaobaoTbkDgMaterialOptionalAPIResponseModel
+	TaobaotbkdgmaterialoptionalAPIResponseModel
 }
 
-// TaobaoTbkDgMaterialOptionalAPIResponseModel is 淘宝客-推广者-物料搜索 成功返回结果
-type TaobaoTbkDgMaterialOptionalAPIResponseModel struct {
+// TaobaotbkdgmaterialoptionalAPIResponseModel is 淘宝客-推广者-物料搜索 成功返回结果
+type TaobaotbkdgmaterialoptionalAPIResponseModel struct {
 	XMLName xml.Name `xml:"tbk_dg_material_optional_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// resultList
-	ResultList []TaobaoTbkDgMaterialOptionalMapData `json:"result_list,omitempty" xml:"result_list>taobao_tbk_dg_material_optional_map_data,omitempty"`
+	ResultList []TaobaotbkdgmaterialoptionalMapData `json:"result_list,omitempty" xml:"result_list>taobaotbkdgmaterialoptional_map_data,omitempty"`
 	// 本地化-lbs分页标识，请在下一次翻页时作为入参传入
 	PageResultKey string `json:"page_result_key,omitempty" xml:"page_result_key,omitempty"`
 	// 搜索到符合条件的结果总数

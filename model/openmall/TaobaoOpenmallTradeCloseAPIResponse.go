@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOpenmallTradeCloseAPIResponse 关闭订单 API返回值
+// TaobaoopenmalltradecloseAPIResponse 关闭订单 API返回值
 // taobao.openmall.trade.close
 //
 // 关闭订单
-type TaobaoOpenmallTradeCloseAPIResponse struct {
+type TaobaoopenmalltradecloseAPIResponse struct {
 	model.CommonResponse
-	TaobaoOpenmallTradeCloseAPIResponseModel
+	TaobaoopenmalltradecloseAPIResponseModel
 }
 
-// TaobaoOpenmallTradeCloseAPIResponseModel is 关闭订单 成功返回结果
-type TaobaoOpenmallTradeCloseAPIResponseModel struct {
+// TaobaoopenmalltradecloseAPIResponseModel is 关闭订单 成功返回结果
+type TaobaoopenmalltradecloseAPIResponseModel struct {
 	XMLName xml.Name `xml:"openmall_trade_close_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

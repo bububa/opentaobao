@@ -1,7 +1,7 @@
 package alihouse
 
-// GradeItemDTOList 结构体
-type GradeItemDTOList struct {
+// GradeItemDtolist 结构体
+type GradeItemDtolist struct {
 	// 子项列表
 	StoreLevelSubItemDTOList []StoreLevelSubItemDto `json:"store_level_sub_item_d_t_o_list,omitempty" xml:"store_level_sub_item_d_t_o_list>store_level_sub_item_dto,omitempty"`
 	// 权益名称

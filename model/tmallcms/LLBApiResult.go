@@ -1,7 +1,7 @@
 package tmallcms
 
-// LLBApiResult 结构体
-type LLBApiResult struct {
+// LlbapiResult 结构体
+type LlbapiResult struct {
 	// 错误信息
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 结果对象

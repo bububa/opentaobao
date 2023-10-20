@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaAlihealthDrugKytScqyDelbillinfoResultModel 结构体
-type AlibabaAlihealthDrugKytScqyDelbillinfoResultModel struct {
+// AlibabaalihealthdrugkytscqydelbillinfoResultModel 结构体
+type AlibabaalihealthdrugkytscqydelbillinfoResultModel struct {
 	// 内层对象
 	Models string `json:"models,omitempty" xml:"models,omitempty"`
 	// 状态码

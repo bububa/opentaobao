@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlisportsPassportAuthBindAPIRequest 授权绑定关系接口 API请求
+// AlibabaalisportspassportauthbindAPIRequest 授权绑定关系接口 API请求
 // alibaba.alisports.passport.auth.bind
 //
 // 授权回调绑定关系接口，建立阿里体育openId和三方openId的绑定关系
-type AlibabaAlisportsPassportAuthBindAPIRequest struct {
+type AlibabaalisportspassportauthbindAPIRequest struct {
 	model.Params
 	// 阿里体育业务KEY
 	_alispAppKey string
@@ -20,65 +20,65 @@ type AlibabaAlisportsPassportAuthBindAPIRequest struct {
 	_thirdOpenId string
 }
 
-// NewAlibabaAlisportsPassportAuthBindRequest 初始化AlibabaAlisportsPassportAuthBindAPIRequest对象
-func NewAlibabaAlisportsPassportAuthBindRequest() *AlibabaAlisportsPassportAuthBindAPIRequest {
-	return &AlibabaAlisportsPassportAuthBindAPIRequest{
+// NewAlibabaalisportspassportauthbindRequest 初始化AlibabaalisportspassportauthbindAPIRequest对象
+func NewAlibabaalisportspassportauthbindRequest() *AlibabaalisportspassportauthbindAPIRequest {
+	return &AlibabaalisportspassportauthbindAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlisportsPassportAuthBindAPIRequest) GetApiMethodName() string {
+func (r AlibabaalisportspassportauthbindAPIRequest) GetApiMethodName() string {
 	return "alibaba.alisports.passport.auth.bind"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlisportsPassportAuthBindAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalisportspassportauthbindAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlisportsPassportAuthBindAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalisportspassportauthbindAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetAlispAppKey is AlispAppKey Setter
 // 阿里体育业务KEY
-func (r *AlibabaAlisportsPassportAuthBindAPIRequest) SetAlispAppKey(_alispAppKey string) error {
+func (r *AlibabaalisportspassportauthbindAPIRequest) SetAlispAppKey(_alispAppKey string) error {
 	r._alispAppKey = _alispAppKey
 	r.Set("alisp_app_key", _alispAppKey)
 	return nil
 }
 
 // GetAlispAppKey AlispAppKey Getter
-func (r AlibabaAlisportsPassportAuthBindAPIRequest) GetAlispAppKey() string {
+func (r AlibabaalisportspassportauthbindAPIRequest) GetAlispAppKey() string {
 	return r._alispAppKey
 }
 
 // SetOpenId is OpenId Setter
 // 阿里体育openId
-func (r *AlibabaAlisportsPassportAuthBindAPIRequest) SetOpenId(_openId string) error {
+func (r *AlibabaalisportspassportauthbindAPIRequest) SetOpenId(_openId string) error {
 	r._openId = _openId
 	r.Set("open_id", _openId)
 	return nil
 }
 
 // GetOpenId OpenId Getter
-func (r AlibabaAlisportsPassportAuthBindAPIRequest) GetOpenId() string {
+func (r AlibabaalisportspassportauthbindAPIRequest) GetOpenId() string {
 	return r._openId
 }
 
 // SetThirdOpenId is ThirdOpenId Setter
 // 合作方openId
-func (r *AlibabaAlisportsPassportAuthBindAPIRequest) SetThirdOpenId(_thirdOpenId string) error {
+func (r *AlibabaalisportspassportauthbindAPIRequest) SetThirdOpenId(_thirdOpenId string) error {
 	r._thirdOpenId = _thirdOpenId
 	r.Set("third_open_id", _thirdOpenId)
 	return nil
 }
 
 // GetThirdOpenId ThirdOpenId Getter
-func (r AlibabaAlisportsPassportAuthBindAPIRequest) GetThirdOpenId() string {
+func (r AlibabaalisportspassportauthbindAPIRequest) GetThirdOpenId() string {
 	return r._thirdOpenId
 }

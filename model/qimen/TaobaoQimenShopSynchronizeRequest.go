@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoQimenShopSynchronizeRequest 结构体
-type TaobaoQimenShopSynchronizeRequest struct {
+// TaobaoqimenshopsynchronizeRequest 结构体
+type TaobaoqimenshopsynchronizeRequest struct {
 	// add,update, 必填
 	ActionType string `json:"actionType,omitempty" xml:"actionType,omitempty"`
 	// 店铺

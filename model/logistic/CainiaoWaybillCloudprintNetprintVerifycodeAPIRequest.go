@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest 打印验证码 API请求
+// CainiaowaybillcloudprintnetprintverifycodeAPIRequest 打印验证码 API请求
 // cainiao.waybill.cloudprint.netprint.verifycode
 //
 // 打印获取验证码
-type CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest struct {
+type CainiaowaybillcloudprintnetprintverifycodeAPIRequest struct {
 	model.Params
 	// 请求
 	_printer *CloudPrinterVerifyCodeRequest
 }
 
-// NewCainiaoWaybillCloudprintNetprintVerifycodeRequest 初始化CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest对象
-func NewCainiaoWaybillCloudprintNetprintVerifycodeRequest() *CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest {
-	return &CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest{
+// NewCainiaowaybillcloudprintnetprintverifycodeRequest 初始化CainiaowaybillcloudprintnetprintverifycodeAPIRequest对象
+func NewCainiaowaybillcloudprintnetprintverifycodeRequest() *CainiaowaybillcloudprintnetprintverifycodeAPIRequest {
+	return &CainiaowaybillcloudprintnetprintverifycodeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest) GetApiMethodName() string {
+func (r CainiaowaybillcloudprintnetprintverifycodeAPIRequest) GetApiMethodName() string {
 	return "cainiao.waybill.cloudprint.netprint.verifycode"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest) GetApiParams(params url.Values) {
+func (r CainiaowaybillcloudprintnetprintverifycodeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest) GetRawParams() model.Params {
+func (r CainiaowaybillcloudprintnetprintverifycodeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetPrinter is Printer Setter
 // 请求
-func (r *CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest) SetPrinter(_printer *CloudPrinterVerifyCodeRequest) error {
+func (r *CainiaowaybillcloudprintnetprintverifycodeAPIRequest) SetPrinter(_printer *CloudPrinterVerifyCodeRequest) error {
 	r._printer = _printer
 	r.Set("printer", _printer)
 	return nil
 }
 
 // GetPrinter Printer Getter
-func (r CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest) GetPrinter() *CloudPrinterVerifyCodeRequest {
+func (r CainiaowaybillcloudprintnetprintverifycodeAPIRequest) GetPrinter() *CloudPrinterVerifyCodeRequest {
 	return r._printer
 }

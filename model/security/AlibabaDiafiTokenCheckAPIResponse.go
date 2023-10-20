@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaDiafiTokenCheckAPIResponse 天朗token校验API API返回值
+// AlibabadiafitokencheckAPIResponse 天朗token校验API API返回值
 // alibaba.diafi.token.check
 //
 // 天朗token校验
-type AlibabaDiafiTokenCheckAPIResponse struct {
+type AlibabadiafitokencheckAPIResponse struct {
 	model.CommonResponse
-	AlibabaDiafiTokenCheckAPIResponseModel
+	AlibabadiafitokencheckAPIResponseModel
 }
 
-// AlibabaDiafiTokenCheckAPIResponseModel is 天朗token校验API 成功返回结果
-type AlibabaDiafiTokenCheckAPIResponseModel struct {
+// AlibabadiafitokencheckAPIResponseModel is 天朗token校验API 成功返回结果
+type AlibabadiafitokencheckAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_diafi_token_check_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

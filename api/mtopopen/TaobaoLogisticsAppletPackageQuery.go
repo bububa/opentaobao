@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/mtopopen"
 )
 
-// TaobaoLogisticsAppletPackageQuery 淘宝包裹查询
+// Taobaologisticsappletpackagequery 淘宝包裹查询
 // taobao.logistics.applet.package.query
 //
 // 淘宝包裹查询
-func TaobaoLogisticsAppletPackageQuery(clt *core.SDKClient, req *mtopopen.TaobaoLogisticsAppletPackageQueryAPIRequest, session string) (*mtopopen.TaobaoLogisticsAppletPackageQueryAPIResponse, error) {
-	var resp mtopopen.TaobaoLogisticsAppletPackageQueryAPIResponse
+func Taobaologisticsappletpackagequery(clt *core.SDKClient, req *mtopopen.TaobaologisticsappletpackagequeryAPIRequest, session string) (*mtopopen.TaobaologisticsappletpackagequeryAPIResponse, error) {
+	var resp mtopopen.TaobaologisticsappletpackagequeryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

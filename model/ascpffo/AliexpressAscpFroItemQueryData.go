@@ -1,7 +1,7 @@
 package ascpffo
 
-// AliexpressAscpFroItemQueryData 结构体
-type AliexpressAscpFroItemQueryData struct {
+// AliexpressascpfroitemqueryData 结构体
+type AliexpressascpfroitemqueryData struct {
 	// 商品Id
 	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 商品名称

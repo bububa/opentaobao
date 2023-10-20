@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAilabAicloudTopLikeDeleteAPIResponse 取消收藏 API返回值
+// TaobaoailabaicloudtoplikedeleteAPIResponse 取消收藏 API返回值
 // taobao.ailab.aicloud.top.like.delete
 //
 // 取消收藏
-type TaobaoAilabAicloudTopLikeDeleteAPIResponse struct {
+type TaobaoailabaicloudtoplikedeleteAPIResponse struct {
 	model.CommonResponse
-	TaobaoAilabAicloudTopLikeDeleteAPIResponseModel
+	TaobaoailabaicloudtoplikedeleteAPIResponseModel
 }
 
-// TaobaoAilabAicloudTopLikeDeleteAPIResponseModel is 取消收藏 成功返回结果
-type TaobaoAilabAicloudTopLikeDeleteAPIResponseModel struct {
+// TaobaoailabaicloudtoplikedeleteAPIResponseModel is 取消收藏 成功返回结果
+type TaobaoailabaicloudtoplikedeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"ailab_aicloud_top_like_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

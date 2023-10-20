@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMemberMerchantLevelSettingSyncAPIResponse 商家等级列表同步配置 API返回值
+// AlibabamembermerchantlevelsettingsyncAPIResponse 商家等级列表同步配置 API返回值
 // alibaba.member.merchant.level.setting.sync
 //
 // 商家等级列表同步配置
-type AlibabaMemberMerchantLevelSettingSyncAPIResponse struct {
+type AlibabamembermerchantlevelsettingsyncAPIResponse struct {
 	model.CommonResponse
-	AlibabaMemberMerchantLevelSettingSyncAPIResponseModel
+	AlibabamembermerchantlevelsettingsyncAPIResponseModel
 }
 
-// AlibabaMemberMerchantLevelSettingSyncAPIResponseModel is 商家等级列表同步配置 成功返回结果
-type AlibabaMemberMerchantLevelSettingSyncAPIResponseModel struct {
+// AlibabamembermerchantlevelsettingsyncAPIResponseModel is 商家等级列表同步配置 成功返回结果
+type AlibabamembermerchantlevelsettingsyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_member_merchant_level_setting_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

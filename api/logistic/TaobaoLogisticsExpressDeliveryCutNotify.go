@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/logistic"
 )
 
-// TaobaoLogisticsExpressDeliveryCutNotify TMS配拦截结果回告
+// Taobaologisticsexpressdeliverycutnotify TMS配拦截结果回告
 // taobao.logistics.express.delivery.cut.notify
 //
 // TMS配拦截结果回告
-func TaobaoLogisticsExpressDeliveryCutNotify(clt *core.SDKClient, req *logistic.TaobaoLogisticsExpressDeliveryCutNotifyAPIRequest, session string) (*logistic.TaobaoLogisticsExpressDeliveryCutNotifyAPIResponse, error) {
-	var resp logistic.TaobaoLogisticsExpressDeliveryCutNotifyAPIResponse
+func Taobaologisticsexpressdeliverycutnotify(clt *core.SDKClient, req *logistic.TaobaologisticsexpressdeliverycutnotifyAPIRequest, session string) (*logistic.TaobaologisticsexpressdeliverycutnotifyAPIResponse, error) {
+	var resp logistic.TaobaologisticsexpressdeliverycutnotifyAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAlitripCarDriverStatusUpdateAPIResponse 司机服务状态更新接口 API返回值
+// TaobaoalitripcardriverstatusupdateAPIResponse 司机服务状态更新接口 API返回值
 // taobao.alitrip.car.driver.status.update
 //
 // 飞猪用车业务回调接口，用于服务商实时回传更新司机当前服务状态
-type TaobaoAlitripCarDriverStatusUpdateAPIResponse struct {
+type TaobaoalitripcardriverstatusupdateAPIResponse struct {
 	model.CommonResponse
-	TaobaoAlitripCarDriverStatusUpdateAPIResponseModel
+	TaobaoalitripcardriverstatusupdateAPIResponseModel
 }
 
-// TaobaoAlitripCarDriverStatusUpdateAPIResponseModel is 司机服务状态更新接口 成功返回结果
-type TaobaoAlitripCarDriverStatusUpdateAPIResponseModel struct {
+// TaobaoalitripcardriverstatusupdateAPIResponseModel is 司机服务状态更新接口 成功返回结果
+type TaobaoalitripcardriverstatusupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_car_driver_status_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihouseNewhomeProjectSubmitAPIRequest 提交楼盘信息 API请求
+// AlibabaalihousenewhomeprojectsubmitAPIRequest 提交楼盘信息 API请求
 // alibaba.alihouse.newhome.project.submit
 //
 // 提交楼盘信息
-type AlibabaAlihouseNewhomeProjectSubmitAPIRequest struct {
+type AlibabaalihousenewhomeprojectsubmitAPIRequest struct {
 	model.Params
 	// 楼盘对象
 	_ebbasProjectDto *EbbasProjectDto
 }
 
-// NewAlibabaAlihouseNewhomeProjectSubmitRequest 初始化AlibabaAlihouseNewhomeProjectSubmitAPIRequest对象
-func NewAlibabaAlihouseNewhomeProjectSubmitRequest() *AlibabaAlihouseNewhomeProjectSubmitAPIRequest {
-	return &AlibabaAlihouseNewhomeProjectSubmitAPIRequest{
+// NewAlibabaalihousenewhomeprojectsubmitRequest 初始化AlibabaalihousenewhomeprojectsubmitAPIRequest对象
+func NewAlibabaalihousenewhomeprojectsubmitRequest() *AlibabaalihousenewhomeprojectsubmitAPIRequest {
+	return &AlibabaalihousenewhomeprojectsubmitAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseNewhomeProjectSubmitAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihousenewhomeprojectsubmitAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihouse.newhome.project.submit"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeProjectSubmitAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihousenewhomeprojectsubmitAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihouseNewhomeProjectSubmitAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihousenewhomeprojectsubmitAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetEbbasProjectDto is EbbasProjectDto Setter
 // 楼盘对象
-func (r *AlibabaAlihouseNewhomeProjectSubmitAPIRequest) SetEbbasProjectDto(_ebbasProjectDto *EbbasProjectDto) error {
+func (r *AlibabaalihousenewhomeprojectsubmitAPIRequest) SetEbbasProjectDto(_ebbasProjectDto *EbbasProjectDto) error {
 	r._ebbasProjectDto = _ebbasProjectDto
 	r.Set("ebbas_project_dto", _ebbasProjectDto)
 	return nil
 }
 
 // GetEbbasProjectDto EbbasProjectDto Getter
-func (r AlibabaAlihouseNewhomeProjectSubmitAPIRequest) GetEbbasProjectDto() *EbbasProjectDto {
+func (r AlibabaalihousenewhomeprojectsubmitAPIRequest) GetEbbasProjectDto() *EbbasProjectDto {
 	return r._ebbasProjectDto
 }

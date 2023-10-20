@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallnr"
 )
 
-// AlibabaLsyCrmActivityGet 私域导购查询活动详情
+// Alibabalsycrmactivityget 私域导购查询活动详情
 // alibaba.lsy.crm.activity.get
 //
 // 私域导购查询活动详情
-func AlibabaLsyCrmActivityGet(clt *core.SDKClient, req *tmallnr.AlibabaLsyCrmActivityGetAPIRequest, session string) (*tmallnr.AlibabaLsyCrmActivityGetAPIResponse, error) {
-	var resp tmallnr.AlibabaLsyCrmActivityGetAPIResponse
+func Alibabalsycrmactivityget(clt *core.SDKClient, req *tmallnr.AlibabalsycrmactivitygetAPIRequest, session string) (*tmallnr.AlibabalsycrmactivitygetAPIResponse, error) {
+	var resp tmallnr.AlibabalsycrmactivitygetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

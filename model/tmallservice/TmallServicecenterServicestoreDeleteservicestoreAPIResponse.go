@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallServicecenterServicestoreDeleteservicestoreAPIResponse 删除网点 API返回值
+// TmallservicecenterservicestoredeleteservicestoreAPIResponse 删除网点 API返回值
 // tmall.servicecenter.servicestore.deleteservicestore
 //
 // 删除网点信息。对于同一个服务商，通过 service_store_code 删除网点。
@@ -23,13 +23,13 @@ import (
 // 10, 网点已存在
 // 11, 网点不存在
 // 12, 系统错误
-type TmallServicecenterServicestoreDeleteservicestoreAPIResponse struct {
+type TmallservicecenterservicestoredeleteservicestoreAPIResponse struct {
 	model.CommonResponse
-	TmallServicecenterServicestoreDeleteservicestoreAPIResponseModel
+	TmallservicecenterservicestoredeleteservicestoreAPIResponseModel
 }
 
-// TmallServicecenterServicestoreDeleteservicestoreAPIResponseModel is 删除网点 成功返回结果
-type TmallServicecenterServicestoreDeleteservicestoreAPIResponseModel struct {
+// TmallservicecenterservicestoredeleteservicestoreAPIResponseModel is 删除网点 成功返回结果
+type TmallservicecenterservicestoredeleteservicestoreAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_servicestore_deleteservicestore_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

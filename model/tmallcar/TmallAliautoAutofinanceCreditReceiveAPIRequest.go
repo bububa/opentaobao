@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallAliautoAutofinanceCreditReceiveAPIRequest 接收授信结果通知 API请求
+// TmallaliautoautofinancecreditreceiveAPIRequest 接收授信结果通知 API请求
 // tmall.aliauto.autofinance.credit.receive
 //
 // 天猫汽车的金融业务场景中，需要接收外部ISV对用户授信申请的通知结果.
-type TmallAliautoAutofinanceCreditReceiveAPIRequest struct {
+type TmallaliautoautofinancecreditreceiveAPIRequest struct {
 	model.Params
 	// 授信通知描述
 	_creditReceiveDto *CreditReceiveDto
 }
 
-// NewTmallAliautoAutofinanceCreditReceiveRequest 初始化TmallAliautoAutofinanceCreditReceiveAPIRequest对象
-func NewTmallAliautoAutofinanceCreditReceiveRequest() *TmallAliautoAutofinanceCreditReceiveAPIRequest {
-	return &TmallAliautoAutofinanceCreditReceiveAPIRequest{
+// NewTmallaliautoautofinancecreditreceiveRequest 初始化TmallaliautoautofinancecreditreceiveAPIRequest对象
+func NewTmallaliautoautofinancecreditreceiveRequest() *TmallaliautoautofinancecreditreceiveAPIRequest {
+	return &TmallaliautoautofinancecreditreceiveAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallAliautoAutofinanceCreditReceiveAPIRequest) GetApiMethodName() string {
+func (r TmallaliautoautofinancecreditreceiveAPIRequest) GetApiMethodName() string {
 	return "tmall.aliauto.autofinance.credit.receive"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallAliautoAutofinanceCreditReceiveAPIRequest) GetApiParams(params url.Values) {
+func (r TmallaliautoautofinancecreditreceiveAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallAliautoAutofinanceCreditReceiveAPIRequest) GetRawParams() model.Params {
+func (r TmallaliautoautofinancecreditreceiveAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCreditReceiveDto is CreditReceiveDto Setter
 // 授信通知描述
-func (r *TmallAliautoAutofinanceCreditReceiveAPIRequest) SetCreditReceiveDto(_creditReceiveDto *CreditReceiveDto) error {
+func (r *TmallaliautoautofinancecreditreceiveAPIRequest) SetCreditReceiveDto(_creditReceiveDto *CreditReceiveDto) error {
 	r._creditReceiveDto = _creditReceiveDto
 	r.Set("credit_receive_dto", _creditReceiveDto)
 	return nil
 }
 
 // GetCreditReceiveDto CreditReceiveDto Getter
-func (r TmallAliautoAutofinanceCreditReceiveAPIRequest) GetCreditReceiveDto() *CreditReceiveDto {
+func (r TmallaliautoautofinancecreditreceiveAPIRequest) GetCreditReceiveDto() *CreditReceiveDto {
 	return r._creditReceiveDto
 }

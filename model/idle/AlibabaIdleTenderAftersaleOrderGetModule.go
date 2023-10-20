@@ -1,7 +1,7 @@
 package idle
 
-// AlibabaIdleTenderAftersaleOrderGetModule 结构体
-type AlibabaIdleTenderAftersaleOrderGetModule struct {
+// AlibabaidletenderaftersaleordergetModule 结构体
+type AlibabaidletenderaftersaleordergetModule struct {
 	// 申请服务类型
 	ApplyType string `json:"apply_type,omitempty" xml:"apply_type,omitempty"`
 	// 理赔方案类型

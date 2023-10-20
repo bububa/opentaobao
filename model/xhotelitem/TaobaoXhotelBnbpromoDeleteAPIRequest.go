@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoXhotelBnbpromoDeleteAPIRequest 民宿卖家活动删除 API请求
+// TaobaoxhotelbnbpromodeleteAPIRequest 民宿卖家活动删除 API请求
 // taobao.xhotel.bnbpromo.delete
 //
 // 民宿删除营销活动
-type TaobaoXhotelBnbpromoDeleteAPIRequest struct {
+type TaobaoxhotelbnbpromodeleteAPIRequest struct {
 	model.Params
 	// 外部活动code
 	_outerActivityCode string
 }
 
-// NewTaobaoXhotelBnbpromoDeleteRequest 初始化TaobaoXhotelBnbpromoDeleteAPIRequest对象
-func NewTaobaoXhotelBnbpromoDeleteRequest() *TaobaoXhotelBnbpromoDeleteAPIRequest {
-	return &TaobaoXhotelBnbpromoDeleteAPIRequest{
+// NewTaobaoxhotelbnbpromodeleteRequest 初始化TaobaoxhotelbnbpromodeleteAPIRequest对象
+func NewTaobaoxhotelbnbpromodeleteRequest() *TaobaoxhotelbnbpromodeleteAPIRequest {
+	return &TaobaoxhotelbnbpromodeleteAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoXhotelBnbpromoDeleteAPIRequest) GetApiMethodName() string {
+func (r TaobaoxhotelbnbpromodeleteAPIRequest) GetApiMethodName() string {
 	return "taobao.xhotel.bnbpromo.delete"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoXhotelBnbpromoDeleteAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoxhotelbnbpromodeleteAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoXhotelBnbpromoDeleteAPIRequest) GetRawParams() model.Params {
+func (r TaobaoxhotelbnbpromodeleteAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOuterActivityCode is OuterActivityCode Setter
 // 外部活动code
-func (r *TaobaoXhotelBnbpromoDeleteAPIRequest) SetOuterActivityCode(_outerActivityCode string) error {
+func (r *TaobaoxhotelbnbpromodeleteAPIRequest) SetOuterActivityCode(_outerActivityCode string) error {
 	r._outerActivityCode = _outerActivityCode
 	r.Set("outer_activity_code", _outerActivityCode)
 	return nil
 }
 
 // GetOuterActivityCode OuterActivityCode Getter
-func (r TaobaoXhotelBnbpromoDeleteAPIRequest) GetOuterActivityCode() string {
+func (r TaobaoxhotelbnbpromodeleteAPIRequest) GetOuterActivityCode() string {
 	return r._outerActivityCode
 }

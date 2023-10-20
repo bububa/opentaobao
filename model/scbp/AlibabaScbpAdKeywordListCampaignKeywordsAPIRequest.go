@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest 获取计划关键词 API请求
+// AlibabascbpadkeywordlistcampaignkeywordsAPIRequest 获取计划关键词 API请求
 // alibaba.scbp.ad.keyword.list.campaign.keywords
 //
 // 获取计划关键词
-type AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest struct {
+type AlibabascbpadkeywordlistcampaignkeywordsAPIRequest struct {
 	model.Params
 	// 用户信息
 	_topContext *TopContextDto
@@ -20,65 +20,65 @@ type AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest struct {
 	_campaignKeywordQuery *CampaignKeywordQuery
 }
 
-// NewAlibabaScbpAdKeywordListCampaignKeywordsRequest 初始化AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest对象
-func NewAlibabaScbpAdKeywordListCampaignKeywordsRequest() *AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest {
-	return &AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest{
+// NewAlibabascbpadkeywordlistcampaignkeywordsRequest 初始化AlibabascbpadkeywordlistcampaignkeywordsAPIRequest对象
+func NewAlibabascbpadkeywordlistcampaignkeywordsRequest() *AlibabascbpadkeywordlistcampaignkeywordsAPIRequest {
+	return &AlibabascbpadkeywordlistcampaignkeywordsAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest) GetApiMethodName() string {
+func (r AlibabascbpadkeywordlistcampaignkeywordsAPIRequest) GetApiMethodName() string {
 	return "alibaba.scbp.ad.keyword.list.campaign.keywords"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabascbpadkeywordlistcampaignkeywordsAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest) GetRawParams() model.Params {
+func (r AlibabascbpadkeywordlistcampaignkeywordsAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTopContext is TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest) SetTopContext(_topContext *TopContextDto) error {
+func (r *AlibabascbpadkeywordlistcampaignkeywordsAPIRequest) SetTopContext(_topContext *TopContextDto) error {
 	r._topContext = _topContext
 	r.Set("top_context", _topContext)
 	return nil
 }
 
 // GetTopContext TopContext Getter
-func (r AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest) GetTopContext() *TopContextDto {
+func (r AlibabascbpadkeywordlistcampaignkeywordsAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
 }
 
 // SetCampaignId is CampaignId Setter
 // 计划id
-func (r *AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest) SetCampaignId(_campaignId int64) error {
+func (r *AlibabascbpadkeywordlistcampaignkeywordsAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
 	r.Set("campaign_id", _campaignId)
 	return nil
 }
 
 // GetCampaignId CampaignId Getter
-func (r AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest) GetCampaignId() int64 {
+func (r AlibabascbpadkeywordlistcampaignkeywordsAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
 // SetCampaignKeywordQuery is CampaignKeywordQuery Setter
 // 搜索条件
-func (r *AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest) SetCampaignKeywordQuery(_campaignKeywordQuery *CampaignKeywordQuery) error {
+func (r *AlibabascbpadkeywordlistcampaignkeywordsAPIRequest) SetCampaignKeywordQuery(_campaignKeywordQuery *CampaignKeywordQuery) error {
 	r._campaignKeywordQuery = _campaignKeywordQuery
 	r.Set("campaign_keyword_query", _campaignKeywordQuery)
 	return nil
 }
 
 // GetCampaignKeywordQuery CampaignKeywordQuery Getter
-func (r AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest) GetCampaignKeywordQuery() *CampaignKeywordQuery {
+func (r AlibabascbpadkeywordlistcampaignkeywordsAPIRequest) GetCampaignKeywordQuery() *CampaignKeywordQuery {
 	return r._campaignKeywordQuery
 }

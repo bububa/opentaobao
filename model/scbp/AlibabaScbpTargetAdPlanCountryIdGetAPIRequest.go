@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaScbpTargetAdPlanCountryIdGetAPIRequest 定向推广-国家标签ID获取 API请求
+// AlibabascbptargetadplancountryidgetAPIRequest 定向推广-国家标签ID获取 API请求
 // alibaba.scbp.target.ad.plan.country.id.get
 //
 // 定向推广-国家标签ID获取
-type AlibabaScbpTargetAdPlanCountryIdGetAPIRequest struct {
+type AlibabascbptargetadplancountryidgetAPIRequest struct {
 	model.Params
 }
 
-// NewAlibabaScbpTargetAdPlanCountryIdGetRequest 初始化AlibabaScbpTargetAdPlanCountryIdGetAPIRequest对象
-func NewAlibabaScbpTargetAdPlanCountryIdGetRequest() *AlibabaScbpTargetAdPlanCountryIdGetAPIRequest {
-	return &AlibabaScbpTargetAdPlanCountryIdGetAPIRequest{
+// NewAlibabascbptargetadplancountryidgetRequest 初始化AlibabascbptargetadplancountryidgetAPIRequest对象
+func NewAlibabascbptargetadplancountryidgetRequest() *AlibabascbptargetadplancountryidgetAPIRequest {
+	return &AlibabascbptargetadplancountryidgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaScbpTargetAdPlanCountryIdGetAPIRequest) GetApiMethodName() string {
+func (r AlibabascbptargetadplancountryidgetAPIRequest) GetApiMethodName() string {
 	return "alibaba.scbp.target.ad.plan.country.id.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaScbpTargetAdPlanCountryIdGetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabascbptargetadplancountryidgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaScbpTargetAdPlanCountryIdGetAPIRequest) GetRawParams() model.Params {
+func (r AlibabascbptargetadplancountryidgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

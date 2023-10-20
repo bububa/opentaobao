@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/maitix"
 )
 
-// AlibabaDamaiMaitixDistributionCmbParamencrypt 加密招商一网能支付入参
+// Alibabadamaimaitixdistributioncmbparamencrypt 加密招商一网能支付入参
 // alibaba.damai.maitix.distribution.cmb.paramencrypt
 //
 // encryptParam4Cmb
-func AlibabaDamaiMaitixDistributionCmbParamencrypt(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest, session string) (*maitix.AlibabaDamaiMaitixDistributionCmbParamencryptAPIResponse, error) {
-	var resp maitix.AlibabaDamaiMaitixDistributionCmbParamencryptAPIResponse
+func Alibabadamaimaitixdistributioncmbparamencrypt(clt *core.SDKClient, req *maitix.AlibabadamaimaitixdistributioncmbparamencryptAPIRequest, session string) (*maitix.AlibabadamaimaitixdistributioncmbparamencryptAPIResponse, error) {
+	var resp maitix.AlibabadamaimaitixdistributioncmbparamencryptAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,7 +1,7 @@
 package tmallsc
 
-// AlibabaMsfserviceWorkerQueryidResult 结构体
-type AlibabaMsfserviceWorkerQueryidResult struct {
+// AlibabamsfserviceworkerqueryidResult 结构体
+type AlibabamsfserviceworkerqueryidResult struct {
 	// 失败原因
 	SystemError string `json:"system_error,omitempty" xml:"system_error,omitempty"`
 	// 失败原因

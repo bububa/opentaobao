@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaWdkFulfillDmsDeliveryWorkOrderCallback 末端配配送作业回传
+// Alibabawdkfulfilldmsdeliveryworkordercallback 末端配配送作业回传
 // alibaba.wdk.fulfill.dms.delivery.work.order.callback
 //
 // 末端配配送作业回传。
-func AlibabaWdkFulfillDmsDeliveryWorkOrderCallback(clt *core.SDKClient, req *wdk.AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIRequest, session string) (*wdk.AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse, error) {
-	var resp wdk.AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackAPIResponse
+func Alibabawdkfulfilldmsdeliveryworkordercallback(clt *core.SDKClient, req *wdk.AlibabawdkfulfilldmsdeliveryworkordercallbackAPIRequest, session string) (*wdk.AlibabawdkfulfilldmsdeliveryworkordercallbackAPIResponse, error) {
+	var resp wdk.AlibabawdkfulfilldmsdeliveryworkordercallbackAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

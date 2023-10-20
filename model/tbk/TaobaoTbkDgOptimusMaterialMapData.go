@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaoTbkDgOptimusMaterialMapData 结构体
-type TaobaoTbkDgOptimusMaterialMapData struct {
+// TaobaotbkdgoptimusmaterialMapData 结构体
+type TaobaotbkdgoptimusmaterialMapData struct {
 	// 商品信息-商品小图列表
 	SmallImages []string `json:"small_images,omitempty" xml:"small_images>string,omitempty"`
 	// 商品信息-商品关联词
@@ -195,7 +195,7 @@ type TaobaoTbkDgOptimusMaterialMapData struct {
 	// 淘抢购商品专用-总库存
 	TqgTotalCount int64 `json:"tqg_total_count,omitempty" xml:"tqg_total_count,omitempty"`
 	// 前N件佣金信息-前N件佣金生效或预热时透出以下字段
-	TopnInfo *TopNInfoDto `json:"topn_info,omitempty" xml:"topn_info,omitempty"`
+	TopnInfo *TopNinfoDto `json:"topn_info,omitempty" xml:"topn_info,omitempty"`
 	// 百亿补贴信息
 	BybtInfo *BybtInfoDto `json:"bybt_info,omitempty" xml:"bybt_info,omitempty"`
 	// 猫超买返卡信息

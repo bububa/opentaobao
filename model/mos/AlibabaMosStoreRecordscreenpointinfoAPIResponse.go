@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMosStoreRecordscreenpointinfoAPIResponse 云屏埋点数据记录接口 API返回值
+// AlibabamosstorerecordscreenpointinfoAPIResponse 云屏埋点数据记录接口 API返回值
 // alibaba.mos.store.recordscreenpointinfo
 //
 // 记录云屏埋点数据
-type AlibabaMosStoreRecordscreenpointinfoAPIResponse struct {
+type AlibabamosstorerecordscreenpointinfoAPIResponse struct {
 	model.CommonResponse
-	AlibabaMosStoreRecordscreenpointinfoAPIResponseModel
+	AlibabamosstorerecordscreenpointinfoAPIResponseModel
 }
 
-// AlibabaMosStoreRecordscreenpointinfoAPIResponseModel is 云屏埋点数据记录接口 成功返回结果
-type AlibabaMosStoreRecordscreenpointinfoAPIResponseModel struct {
+// AlibabamosstorerecordscreenpointinfoAPIResponseModel is 云屏埋点数据记录接口 成功返回结果
+type AlibabamosstorerecordscreenpointinfoAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mos_store_recordscreenpointinfo_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
-	Result *AlibabaMosStoreRecordscreenpointinfoResultDo `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabamosstorerecordscreenpointinfoResultDo `json:"result,omitempty" xml:"result,omitempty"`
 }

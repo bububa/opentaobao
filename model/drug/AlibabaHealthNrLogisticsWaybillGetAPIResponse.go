@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaHealthNrLogisticsWaybillGetAPIResponse 电子面单查询接口 API返回值
+// AlibabahealthnrlogisticswaybillgetAPIResponse 电子面单查询接口 API返回值
 // alibaba.health.nr.logistics.waybill.get
 //
 // 商家登录后根据订单号查询物流单号及电子面单信息
-type AlibabaHealthNrLogisticsWaybillGetAPIResponse struct {
+type AlibabahealthnrlogisticswaybillgetAPIResponse struct {
 	model.CommonResponse
-	AlibabaHealthNrLogisticsWaybillGetAPIResponseModel
+	AlibabahealthnrlogisticswaybillgetAPIResponseModel
 }
 
-// AlibabaHealthNrLogisticsWaybillGetAPIResponseModel is 电子面单查询接口 成功返回结果
-type AlibabaHealthNrLogisticsWaybillGetAPIResponseModel struct {
+// AlibabahealthnrlogisticswaybillgetAPIResponseModel is 电子面单查询接口 成功返回结果
+type AlibabahealthnrlogisticswaybillgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_health_nr_logistics_waybill_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

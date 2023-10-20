@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-// AlibabaAlscCrmRuleQuerymdayerule 查询品牌下的会员日规则
+// Alibabaalsccrmrulequerymdayerule 查询品牌下的会员日规则
 // alibaba.alsc.crm.rule.querymdayerule
 //
 // 查询品牌下的会员日规则
-func AlibabaAlscCrmRuleQuerymdayerule(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRuleQuerymdayeruleAPIRequest, session string) (*alsc.AlibabaAlscCrmRuleQuerymdayeruleAPIResponse, error) {
-	var resp alsc.AlibabaAlscCrmRuleQuerymdayeruleAPIResponse
+func Alibabaalsccrmrulequerymdayerule(clt *core.SDKClient, req *alsc.AlibabaalsccrmrulequerymdayeruleAPIRequest, session string) (*alsc.AlibabaalsccrmrulequerymdayeruleAPIResponse, error) {
+	var resp alsc.AlibabaalsccrmrulequerymdayeruleAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

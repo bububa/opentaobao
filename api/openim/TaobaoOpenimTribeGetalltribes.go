@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/openim"
 )
 
-// TaobaoOpenimTribeGetalltribes 获取用户群列表
+// Taobaoopenimtribegetalltribes 获取用户群列表
 // taobao.openim.tribe.getalltribes
 //
 // OPENIM群服务获取用户群列表
-func TaobaoOpenimTribeGetalltribes(clt *core.SDKClient, req *openim.TaobaoOpenimTribeGetalltribesAPIRequest, session string) (*openim.TaobaoOpenimTribeGetalltribesAPIResponse, error) {
-	var resp openim.TaobaoOpenimTribeGetalltribesAPIResponse
+func Taobaoopenimtribegetalltribes(clt *core.SDKClient, req *openim.TaobaoopenimtribegetalltribesAPIRequest, session string) (*openim.TaobaoopenimtribegetalltribesAPIResponse, error) {
+	var resp openim.TaobaoopenimtribegetalltribesAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

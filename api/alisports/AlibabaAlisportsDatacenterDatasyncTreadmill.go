@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alisports"
 )
 
-// AlibabaAlisportsDatacenterDatasyncTreadmill 阿里体育同步跑步机设备数据
+// Alibabaalisportsdatacenterdatasynctreadmill 阿里体育同步跑步机设备数据
 // alibaba.alisports.datacenter.datasync.treadmill
 //
 // 合作方向阿里体育同步跑步机设备的数据
-func AlibabaAlisportsDatacenterDatasyncTreadmill(clt *core.SDKClient, req *alisports.AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest, session string) (*alisports.AlibabaAlisportsDatacenterDatasyncTreadmillAPIResponse, error) {
-	var resp alisports.AlibabaAlisportsDatacenterDatasyncTreadmillAPIResponse
+func Alibabaalisportsdatacenterdatasynctreadmill(clt *core.SDKClient, req *alisports.AlibabaalisportsdatacenterdatasynctreadmillAPIRequest, session string) (*alisports.AlibabaalisportsdatacenterdatasynctreadmillAPIResponse, error) {
+	var resp alisports.AlibabaalisportsdatacenterdatasynctreadmillAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

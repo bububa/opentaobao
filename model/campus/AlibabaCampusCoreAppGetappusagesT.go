@@ -1,7 +1,7 @@
 package campus
 
-// AlibabaCampusCoreAppGetappusagesT 结构体
-type AlibabaCampusCoreAppGetappusagesT struct {
+// AlibabacampuscoreappgetappusagesT 结构体
+type AlibabacampuscoreappgetappusagesT struct {
 	// 应用名称
 	AppName string `json:"app_name,omitempty" xml:"app_name,omitempty"`
 	// 应用图标

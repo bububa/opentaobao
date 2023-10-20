@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIdleIsvOrderDealrefundAPIRequest 闲鱼无忧购入仓模式服务商退款处理接口 API请求
+// AlibabaidleisvorderdealrefundAPIRequest 闲鱼无忧购入仓模式服务商退款处理接口 API请求
 // alibaba.idle.isv.order.dealrefund
 //
 // 闲鱼无忧购业务入仓模式下，用户发起退款后，服务商使用此接口处理退款
-type AlibabaIdleIsvOrderDealrefundAPIRequest struct {
+type AlibabaidleisvorderdealrefundAPIRequest struct {
 	model.Params
 	// 退款参数
 	_paramAppraiseIsvRefundRequest *AppraiseIsvRefundRequest
 }
 
-// NewAlibabaIdleIsvOrderDealrefundRequest 初始化AlibabaIdleIsvOrderDealrefundAPIRequest对象
-func NewAlibabaIdleIsvOrderDealrefundRequest() *AlibabaIdleIsvOrderDealrefundAPIRequest {
-	return &AlibabaIdleIsvOrderDealrefundAPIRequest{
+// NewAlibabaidleisvorderdealrefundRequest 初始化AlibabaidleisvorderdealrefundAPIRequest对象
+func NewAlibabaidleisvorderdealrefundRequest() *AlibabaidleisvorderdealrefundAPIRequest {
+	return &AlibabaidleisvorderdealrefundAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaIdleIsvOrderDealrefundAPIRequest) GetApiMethodName() string {
+func (r AlibabaidleisvorderdealrefundAPIRequest) GetApiMethodName() string {
 	return "alibaba.idle.isv.order.dealrefund"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaIdleIsvOrderDealrefundAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaidleisvorderdealrefundAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaIdleIsvOrderDealrefundAPIRequest) GetRawParams() model.Params {
+func (r AlibabaidleisvorderdealrefundAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamAppraiseIsvRefundRequest is ParamAppraiseIsvRefundRequest Setter
 // 退款参数
-func (r *AlibabaIdleIsvOrderDealrefundAPIRequest) SetParamAppraiseIsvRefundRequest(_paramAppraiseIsvRefundRequest *AppraiseIsvRefundRequest) error {
+func (r *AlibabaidleisvorderdealrefundAPIRequest) SetParamAppraiseIsvRefundRequest(_paramAppraiseIsvRefundRequest *AppraiseIsvRefundRequest) error {
 	r._paramAppraiseIsvRefundRequest = _paramAppraiseIsvRefundRequest
 	r.Set("param_appraise_isv_refund_request", _paramAppraiseIsvRefundRequest)
 	return nil
 }
 
 // GetParamAppraiseIsvRefundRequest ParamAppraiseIsvRefundRequest Getter
-func (r AlibabaIdleIsvOrderDealrefundAPIRequest) GetParamAppraiseIsvRefundRequest() *AppraiseIsvRefundRequest {
+func (r AlibabaidleisvorderdealrefundAPIRequest) GetParamAppraiseIsvRefundRequest() *AppraiseIsvRefundRequest {
 	return r._paramAppraiseIsvRefundRequest
 }

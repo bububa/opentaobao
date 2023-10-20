@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallPromotagTaguserJudgeAPIResponse 用户标签判断接口 API返回值
+// TmallpromotagtaguserjudgeAPIResponse 用户标签判断接口 API返回值
 // tmall.promotag.taguser.judge
 //
 // 查询用户是否有标签
-type TmallPromotagTaguserJudgeAPIResponse struct {
+type TmallpromotagtaguserjudgeAPIResponse struct {
 	model.CommonResponse
-	TmallPromotagTaguserJudgeAPIResponseModel
+	TmallpromotagtaguserjudgeAPIResponseModel
 }
 
-// TmallPromotagTaguserJudgeAPIResponseModel is 用户标签判断接口 成功返回结果
-type TmallPromotagTaguserJudgeAPIResponseModel struct {
+// TmallpromotagtaguserjudgeAPIResponseModel is 用户标签判断接口 成功返回结果
+type TmallpromotagtaguserjudgeAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_promotag_taguser_judge_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

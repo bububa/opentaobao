@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaAlihealthDrugKytScqyPutpackageunbindResultModel 结构体
-type AlibabaAlihealthDrugKytScqyPutpackageunbindResultModel struct {
+// AlibabaalihealthdrugkytscqyputpackageunbindResultModel 结构体
+type AlibabaalihealthdrugkytscqyputpackageunbindResultModel struct {
 	// 消息码
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 消息提示内容

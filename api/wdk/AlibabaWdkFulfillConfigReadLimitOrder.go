@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaWdkFulfillConfigReadLimitOrder 根据仓code查询仓限单配置
+// Alibabawdkfulfillconfigreadlimitorder 根据仓code查询仓限单配置
 // alibaba.wdk.fulfill.config.read.limit.order
 //
 // 根据仓code查询仓限单配置
-func AlibabaWdkFulfillConfigReadLimitOrder(clt *core.SDKClient, req *wdk.AlibabaWdkFulfillConfigReadLimitOrderAPIRequest, session string) (*wdk.AlibabaWdkFulfillConfigReadLimitOrderAPIResponse, error) {
-	var resp wdk.AlibabaWdkFulfillConfigReadLimitOrderAPIResponse
+func Alibabawdkfulfillconfigreadlimitorder(clt *core.SDKClient, req *wdk.AlibabawdkfulfillconfigreadlimitorderAPIRequest, session string) (*wdk.AlibabawdkfulfillconfigreadlimitorderAPIResponse, error) {
+	var resp wdk.AlibabawdkfulfillconfigreadlimitorderAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
 
-// AlitripMerchantGalaxyMemberToken 星河-校验token
+// Alitripmerchantgalaxymembertoken 星河-校验token
 // alitrip.merchant.galaxy.member.token
 //
 // 校验或者刷新token
-func AlitripMerchantGalaxyMemberToken(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyMemberTokenAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyMemberTokenAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyMemberTokenAPIResponse
+func Alitripmerchantgalaxymembertoken(clt *core.SDKClient, req *alitripmerchant.AlitripmerchantgalaxymembertokenAPIRequest, session string) (*alitripmerchant.AlitripmerchantgalaxymembertokenAPIResponse, error) {
+	var resp alitripmerchant.AlitripmerchantgalaxymembertokenAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

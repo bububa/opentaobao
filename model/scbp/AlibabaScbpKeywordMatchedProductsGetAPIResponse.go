@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaScbpKeywordMatchedProductsGetAPIResponse 查询和词匹配的推广产品 API返回值
+// AlibabascbpkeywordmatchedproductsgetAPIResponse 查询和词匹配的推广产品 API返回值
 // alibaba.scbp.keyword.matched.products.get
 //
 // 查询和词匹配的推广产品
-type AlibabaScbpKeywordMatchedProductsGetAPIResponse struct {
+type AlibabascbpkeywordmatchedproductsgetAPIResponse struct {
 	model.CommonResponse
-	AlibabaScbpKeywordMatchedProductsGetAPIResponseModel
+	AlibabascbpkeywordmatchedproductsgetAPIResponseModel
 }
 
-// AlibabaScbpKeywordMatchedProductsGetAPIResponseModel is 查询和词匹配的推广产品 成功返回结果
-type AlibabaScbpKeywordMatchedProductsGetAPIResponseModel struct {
+// AlibabascbpkeywordmatchedproductsgetAPIResponseModel is 查询和词匹配的推广产品 成功返回结果
+type AlibabascbpkeywordmatchedproductsgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_keyword_matched_products_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

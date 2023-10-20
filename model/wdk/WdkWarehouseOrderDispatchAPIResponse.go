@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// WdkWarehouseOrderDispatchAPIResponse 仓作业下发 API返回值
+// WdkwarehouseorderdispatchAPIResponse 仓作业下发 API返回值
 // wdk.warehouse.order.dispatch
 //
 // 牵牛花仓作业下发接口提供
-type WdkWarehouseOrderDispatchAPIResponse struct {
+type WdkwarehouseorderdispatchAPIResponse struct {
 	model.CommonResponse
-	WdkWarehouseOrderDispatchAPIResponseModel
+	WdkwarehouseorderdispatchAPIResponseModel
 }
 
-// WdkWarehouseOrderDispatchAPIResponseModel is 仓作业下发 成功返回结果
-type WdkWarehouseOrderDispatchAPIResponseModel struct {
+// WdkwarehouseorderdispatchAPIResponseModel is 仓作业下发 成功返回结果
+type WdkwarehouseorderdispatchAPIResponseModel struct {
 	XMLName xml.Name `xml:"wdk_warehouse_order_dispatch_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

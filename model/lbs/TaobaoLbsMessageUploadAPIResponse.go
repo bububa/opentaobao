@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoLbsMessageUploadAPIResponse lbs数据采集 API返回值
+// TaobaolbsmessageuploadAPIResponse lbs数据采集 API返回值
 // taobao.lbs.message.upload
 //
 // lbs数据采集
-type TaobaoLbsMessageUploadAPIResponse struct {
+type TaobaolbsmessageuploadAPIResponse struct {
 	model.CommonResponse
-	TaobaoLbsMessageUploadAPIResponseModel
+	TaobaolbsmessageuploadAPIResponseModel
 }
 
-// TaobaoLbsMessageUploadAPIResponseModel is lbs数据采集 成功返回结果
-type TaobaoLbsMessageUploadAPIResponseModel struct {
+// TaobaolbsmessageuploadAPIResponseModel is lbs数据采集 成功返回结果
+type TaobaolbsmessageuploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"lbs_message_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

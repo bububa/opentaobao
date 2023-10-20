@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosServiceCmnsCoaMessageAckAPIResponse 消息回执查询 API返回值
+// YunosservicecmnscoamessageackAPIResponse 消息回执查询 API返回值
 // yunos.service.cmns.coa.message.ack
 //
 // 第三方应用开发者调用此接口查询设备是否收到消息，只能查询此appKey床发的消息
-type YunosServiceCmnsCoaMessageAckAPIResponse struct {
+type YunosservicecmnscoamessageackAPIResponse struct {
 	model.CommonResponse
-	YunosServiceCmnsCoaMessageAckAPIResponseModel
+	YunosservicecmnscoamessageackAPIResponseModel
 }
 
-// YunosServiceCmnsCoaMessageAckAPIResponseModel is 消息回执查询 成功返回结果
-type YunosServiceCmnsCoaMessageAckAPIResponseModel struct {
+// YunosservicecmnscoamessageackAPIResponseModel is 消息回执查询 成功返回结果
+type YunosservicecmnscoamessageackAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_service_cmns_coa_message_ack_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

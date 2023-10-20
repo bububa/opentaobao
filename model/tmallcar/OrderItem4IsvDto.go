@@ -1,7 +1,7 @@
 package tmallcar
 
-// OrderItem4IsvDto 结构体
-type OrderItem4IsvDto struct {
+// OrderItem4isvDto 结构体
+type OrderItem4isvDto struct {
 	// 实际支付金额
 	ActualTotalFee string `json:"actual_total_fee,omitempty" xml:"actual_total_fee,omitempty"`
 	// 扩展属性

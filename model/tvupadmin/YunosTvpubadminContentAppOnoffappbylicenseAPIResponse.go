@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosTvpubadminContentAppOnoffappbylicenseAPIResponse 应用上下架操作 API返回值
+// YunostvpubadmincontentapponoffappbylicenseAPIResponse 应用上下架操作 API返回值
 // yunos.tvpubadmin.content.app.onoffappbylicense
 //
 // 应用上下架操作
-type YunosTvpubadminContentAppOnoffappbylicenseAPIResponse struct {
+type YunostvpubadmincontentapponoffappbylicenseAPIResponse struct {
 	model.CommonResponse
-	YunosTvpubadminContentAppOnoffappbylicenseAPIResponseModel
+	YunostvpubadmincontentapponoffappbylicenseAPIResponseModel
 }
 
-// YunosTvpubadminContentAppOnoffappbylicenseAPIResponseModel is 应用上下架操作 成功返回结果
-type YunosTvpubadminContentAppOnoffappbylicenseAPIResponseModel struct {
+// YunostvpubadmincontentapponoffappbylicenseAPIResponseModel is 应用上下架操作 成功返回结果
+type YunostvpubadmincontentapponoffappbylicenseAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_tvpubadmin_content_app_onoffappbylicense_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

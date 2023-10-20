@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOpentradeSpecialUsersQueryAPIRequest 专属下单标记信息查询 API请求
+// TaobaoopentradespecialusersqueryAPIRequest 专属下单标记信息查询 API请求
 // taobao.opentrade.special.users.query
 //
 // 专属下单标记信息查询
-type TaobaoOpentradeSpecialUsersQueryAPIRequest struct {
+type TaobaoopentradespecialusersqueryAPIRequest struct {
 	model.Params
 	// 用户openId列表，多个以逗号(,)分割
 	_openUserIds []string
@@ -26,104 +26,104 @@ type TaobaoOpentradeSpecialUsersQueryAPIRequest struct {
 	_pageIndex int64
 }
 
-// NewTaobaoOpentradeSpecialUsersQueryRequest 初始化TaobaoOpentradeSpecialUsersQueryAPIRequest对象
-func NewTaobaoOpentradeSpecialUsersQueryRequest() *TaobaoOpentradeSpecialUsersQueryAPIRequest {
-	return &TaobaoOpentradeSpecialUsersQueryAPIRequest{
+// NewTaobaoopentradespecialusersqueryRequest 初始化TaobaoopentradespecialusersqueryAPIRequest对象
+func NewTaobaoopentradespecialusersqueryRequest() *TaobaoopentradespecialusersqueryAPIRequest {
+	return &TaobaoopentradespecialusersqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoOpentradeSpecialUsersQueryAPIRequest) GetApiMethodName() string {
+func (r TaobaoopentradespecialusersqueryAPIRequest) GetApiMethodName() string {
 	return "taobao.opentrade.special.users.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoOpentradeSpecialUsersQueryAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoopentradespecialusersqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoOpentradeSpecialUsersQueryAPIRequest) GetRawParams() model.Params {
+func (r TaobaoopentradespecialusersqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOpenUserIds is OpenUserIds Setter
 // 用户openId列表，多个以逗号(,)分割
-func (r *TaobaoOpentradeSpecialUsersQueryAPIRequest) SetOpenUserIds(_openUserIds []string) error {
+func (r *TaobaoopentradespecialusersqueryAPIRequest) SetOpenUserIds(_openUserIds []string) error {
 	r._openUserIds = _openUserIds
 	r.Set("open_user_ids", _openUserIds)
 	return nil
 }
 
 // GetOpenUserIds OpenUserIds Getter
-func (r TaobaoOpentradeSpecialUsersQueryAPIRequest) GetOpenUserIds() []string {
+func (r TaobaoopentradespecialusersqueryAPIRequest) GetOpenUserIds() []string {
 	return r._openUserIds
 }
 
 // SetStatus is Status Setter
 // 用户状态
-func (r *TaobaoOpentradeSpecialUsersQueryAPIRequest) SetStatus(_status string) error {
+func (r *TaobaoopentradespecialusersqueryAPIRequest) SetStatus(_status string) error {
 	r._status = _status
 	r.Set("status", _status)
 	return nil
 }
 
 // GetStatus Status Getter
-func (r TaobaoOpentradeSpecialUsersQueryAPIRequest) GetStatus() string {
+func (r TaobaoopentradespecialusersqueryAPIRequest) GetStatus() string {
 	return r._status
 }
 
 // SetPageSize is PageSize Setter
 // 分页参数，每页大小
-func (r *TaobaoOpentradeSpecialUsersQueryAPIRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaoopentradespecialusersqueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
 	r.Set("page_size", _pageSize)
 	return nil
 }
 
 // GetPageSize PageSize Getter
-func (r TaobaoOpentradeSpecialUsersQueryAPIRequest) GetPageSize() int64 {
+func (r TaobaoopentradespecialusersqueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
 // SetItemId is ItemId Setter
 // 商品ID
-func (r *TaobaoOpentradeSpecialUsersQueryAPIRequest) SetItemId(_itemId int64) error {
+func (r *TaobaoopentradespecialusersqueryAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
 	r.Set("item_id", _itemId)
 	return nil
 }
 
 // GetItemId ItemId Getter
-func (r TaobaoOpentradeSpecialUsersQueryAPIRequest) GetItemId() int64 {
+func (r TaobaoopentradespecialusersqueryAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
 // SetSkuId is SkuId Setter
 // 商品SKU ID，不存在传0
-func (r *TaobaoOpentradeSpecialUsersQueryAPIRequest) SetSkuId(_skuId int64) error {
+func (r *TaobaoopentradespecialusersqueryAPIRequest) SetSkuId(_skuId int64) error {
 	r._skuId = _skuId
 	r.Set("sku_id", _skuId)
 	return nil
 }
 
 // GetSkuId SkuId Getter
-func (r TaobaoOpentradeSpecialUsersQueryAPIRequest) GetSkuId() int64 {
+func (r TaobaoopentradespecialusersqueryAPIRequest) GetSkuId() int64 {
 	return r._skuId
 }
 
 // SetPageIndex is PageIndex Setter
 // 分页参数，当前页，以0开始
-func (r *TaobaoOpentradeSpecialUsersQueryAPIRequest) SetPageIndex(_pageIndex int64) error {
+func (r *TaobaoopentradespecialusersqueryAPIRequest) SetPageIndex(_pageIndex int64) error {
 	r._pageIndex = _pageIndex
 	r.Set("page_index", _pageIndex)
 	return nil
 }
 
 // GetPageIndex PageIndex Getter
-func (r TaobaoOpentradeSpecialUsersQueryAPIRequest) GetPageIndex() int64 {
+func (r TaobaoopentradespecialusersqueryAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }

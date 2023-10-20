@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMsfserviceWorkerQueryidAPIResponse 查询师傅workerid API返回值
+// AlibabamsfserviceworkerqueryidAPIResponse 查询师傅workerid API返回值
 // alibaba.msfservice.worker.queryid
 //
 // 查询师傅workerid
-type AlibabaMsfserviceWorkerQueryidAPIResponse struct {
+type AlibabamsfserviceworkerqueryidAPIResponse struct {
 	model.CommonResponse
-	AlibabaMsfserviceWorkerQueryidAPIResponseModel
+	AlibabamsfserviceworkerqueryidAPIResponseModel
 }
 
-// AlibabaMsfserviceWorkerQueryidAPIResponseModel is 查询师傅workerid 成功返回结果
-type AlibabaMsfserviceWorkerQueryidAPIResponseModel struct {
+// AlibabamsfserviceworkerqueryidAPIResponseModel is 查询师傅workerid 成功返回结果
+type AlibabamsfserviceworkerqueryidAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_msfservice_worker_queryid_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回对象
-	Result *AlibabaMsfserviceWorkerQueryidResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabamsfserviceworkerqueryidResult `json:"result,omitempty" xml:"result,omitempty"`
 }

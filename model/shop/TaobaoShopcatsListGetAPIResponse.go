@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoShopcatsListGetAPIResponse 获取前台展示的店铺类目 API返回值
+// TaobaoshopcatslistgetAPIResponse 获取前台展示的店铺类目 API返回值
 // taobao.shopcats.list.get
 //
 // 获取淘宝面向买家的浏览导航类目（跟后台卖家商品管理的类目有差异）
-type TaobaoShopcatsListGetAPIResponse struct {
+type TaobaoshopcatslistgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoShopcatsListGetAPIResponseModel
+	TaobaoshopcatslistgetAPIResponseModel
 }
 
-// TaobaoShopcatsListGetAPIResponseModel is 获取前台展示的店铺类目 成功返回结果
-type TaobaoShopcatsListGetAPIResponseModel struct {
+// TaobaoshopcatslistgetAPIResponseModel is 获取前台展示的店铺类目 成功返回结果
+type TaobaoshopcatslistgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"shopcats_list_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

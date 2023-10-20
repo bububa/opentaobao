@@ -1,7 +1,7 @@
 package damai
 
-// AlibabaDamaiMevOpenWithdrawticketResult 结构体
-type AlibabaDamaiMevOpenWithdrawticketResult struct {
+// AlibabadamaimevopenwithdrawticketResult 结构体
+type AlibabadamaimevopenwithdrawticketResult struct {
 	// 错误内容
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 错误码

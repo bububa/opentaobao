@@ -1,7 +1,7 @@
 package uscesl
 
-// TaobaoUsceslBizApDeleteResult 结构体
-type TaobaoUsceslBizApDeleteResult struct {
+// TaobaousceslbizapdeleteResult 结构体
+type TaobaousceslbizapdeleteResult struct {
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 业务执行返回码

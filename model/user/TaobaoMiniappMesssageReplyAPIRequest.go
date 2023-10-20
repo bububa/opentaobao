@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoMiniappMesssageReplyAPIRequest 轻店铺下行回复接口 API请求
+// TaobaominiappmesssagereplyAPIRequest 轻店铺下行回复接口 API请求
 // taobao.miniapp.messsage.reply
 //
 // 外部 isv 调用该进口来进行轻店铺消息的回复
-type TaobaoMiniappMesssageReplyAPIRequest struct {
+type TaobaominiappmesssagereplyAPIRequest struct {
 	model.Params
 	// 入参
 	_param *ReplyMessageDto
 }
 
-// NewTaobaoMiniappMesssageReplyRequest 初始化TaobaoMiniappMesssageReplyAPIRequest对象
-func NewTaobaoMiniappMesssageReplyRequest() *TaobaoMiniappMesssageReplyAPIRequest {
-	return &TaobaoMiniappMesssageReplyAPIRequest{
+// NewTaobaominiappmesssagereplyRequest 初始化TaobaominiappmesssagereplyAPIRequest对象
+func NewTaobaominiappmesssagereplyRequest() *TaobaominiappmesssagereplyAPIRequest {
+	return &TaobaominiappmesssagereplyAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoMiniappMesssageReplyAPIRequest) GetApiMethodName() string {
+func (r TaobaominiappmesssagereplyAPIRequest) GetApiMethodName() string {
 	return "taobao.miniapp.messsage.reply"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoMiniappMesssageReplyAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaominiappmesssagereplyAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoMiniappMesssageReplyAPIRequest) GetRawParams() model.Params {
+func (r TaobaominiappmesssagereplyAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 入参
-func (r *TaobaoMiniappMesssageReplyAPIRequest) SetParam(_param *ReplyMessageDto) error {
+func (r *TaobaominiappmesssagereplyAPIRequest) SetParam(_param *ReplyMessageDto) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r TaobaoMiniappMesssageReplyAPIRequest) GetParam() *ReplyMessageDto {
+func (r TaobaominiappmesssagereplyAPIRequest) GetParam() *ReplyMessageDto {
 	return r._param
 }

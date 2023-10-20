@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoPictureUploadAPIResponse 上传单张图片 API返回值
+// TaobaopictureuploadAPIResponse 上传单张图片 API返回值
 // taobao.picture.upload
 //
 // 图片空间上传接口
-type TaobaoPictureUploadAPIResponse struct {
+type TaobaopictureuploadAPIResponse struct {
 	model.CommonResponse
-	TaobaoPictureUploadAPIResponseModel
+	TaobaopictureuploadAPIResponseModel
 }
 
-// TaobaoPictureUploadAPIResponseModel is 上传单张图片 成功返回结果
-type TaobaoPictureUploadAPIResponseModel struct {
+// TaobaopictureuploadAPIResponseModel is 上传单张图片 成功返回结果
+type TaobaopictureuploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"picture_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

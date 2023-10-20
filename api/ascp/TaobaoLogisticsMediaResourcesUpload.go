@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascp"
 )
 
-// TaobaoLogisticsMediaResourcesUpload 图片与视频上传
+// Taobaologisticsmediaresourcesupload 图片与视频上传
 // taobao.logistics.media.resources.upload
 //
 // 图片与视频上传
-func TaobaoLogisticsMediaResourcesUpload(clt *core.SDKClient, req *ascp.TaobaoLogisticsMediaResourcesUploadAPIRequest, session string) (*ascp.TaobaoLogisticsMediaResourcesUploadAPIResponse, error) {
-	var resp ascp.TaobaoLogisticsMediaResourcesUploadAPIResponse
+func Taobaologisticsmediaresourcesupload(clt *core.SDKClient, req *ascp.TaobaologisticsmediaresourcesuploadAPIRequest, session string) (*ascp.TaobaologisticsmediaresourcesuploadAPIResponse, error) {
+	var resp ascp.TaobaologisticsmediaresourcesuploadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

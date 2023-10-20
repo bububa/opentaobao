@@ -1,7 +1,7 @@
 package tmallgenie
 
-// AlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindResult 结构体
-type AlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindResult struct {
+// AlibabaailabstmallgenieauthdeviceqrcodestaticbindResult 结构体
+type AlibabaailabstmallgenieauthdeviceqrcodestaticbindResult struct {
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 响应结果

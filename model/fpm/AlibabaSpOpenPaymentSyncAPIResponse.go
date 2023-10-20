@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaSpOpenPaymentSyncAPIResponse 付款单同步 API返回值
+// AlibabaspopenpaymentsyncAPIResponse 付款单同步 API返回值
 // alibaba.sp.open.payment.sync
 //
 // 新康众弹外同步付款数据
-type AlibabaSpOpenPaymentSyncAPIResponse struct {
+type AlibabaspopenpaymentsyncAPIResponse struct {
 	model.CommonResponse
-	AlibabaSpOpenPaymentSyncAPIResponseModel
+	AlibabaspopenpaymentsyncAPIResponseModel
 }
 
-// AlibabaSpOpenPaymentSyncAPIResponseModel is 付款单同步 成功返回结果
-type AlibabaSpOpenPaymentSyncAPIResponseModel struct {
+// AlibabaspopenpaymentsyncAPIResponseModel is 付款单同步 成功返回结果
+type AlibabaspopenpaymentsyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_sp_open_payment_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

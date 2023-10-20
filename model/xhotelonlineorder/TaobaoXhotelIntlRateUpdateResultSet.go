@@ -1,7 +1,7 @@
 package xhotelonlineorder
 
-// TaobaoXhotelIntlRateUpdateResultSet 结构体
-type TaobaoXhotelIntlRateUpdateResultSet struct {
+// TaobaoxhotelintlrateupdateResultSet 结构体
+type TaobaoxhotelintlrateupdateResultSet struct {
 	// errorCode
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// sub_error_msg

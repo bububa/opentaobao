@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/promotion"
 )
 
-// AlibabaWdkCouponTemplateCreate 优惠券模版创建
+// Alibabawdkcoupontemplatecreate 优惠券模版创建
 // alibaba.wdk.coupon.template.create
 //
 // 开放给外部商家创建优惠券模版
-func AlibabaWdkCouponTemplateCreate(clt *core.SDKClient, req *promotion.AlibabaWdkCouponTemplateCreateAPIRequest, session string) (*promotion.AlibabaWdkCouponTemplateCreateAPIResponse, error) {
-	var resp promotion.AlibabaWdkCouponTemplateCreateAPIResponse
+func Alibabawdkcoupontemplatecreate(clt *core.SDKClient, req *promotion.AlibabawdkcoupontemplatecreateAPIRequest, session string) (*promotion.AlibabawdkcoupontemplatecreateAPIResponse, error) {
+	var resp promotion.AlibabawdkcoupontemplatecreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

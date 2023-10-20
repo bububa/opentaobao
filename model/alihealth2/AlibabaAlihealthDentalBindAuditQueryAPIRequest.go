@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthDentalBindAuditQueryAPIRequest ISV查询绑定审核状态 API请求
+// AlibabaalihealthdentalbindauditqueryAPIRequest ISV查询绑定审核状态 API请求
 // alibaba.alihealth.dental.bind.audit.query
 //
 // ISV查询绑定审核状态
-type AlibabaAlihealthDentalBindAuditQueryAPIRequest struct {
+type AlibabaalihealthdentalbindauditqueryAPIRequest struct {
 	model.Params
 	// 绑定ID列表
 	_bindIds []string
 }
 
-// NewAlibabaAlihealthDentalBindAuditQueryRequest 初始化AlibabaAlihealthDentalBindAuditQueryAPIRequest对象
-func NewAlibabaAlihealthDentalBindAuditQueryRequest() *AlibabaAlihealthDentalBindAuditQueryAPIRequest {
-	return &AlibabaAlihealthDentalBindAuditQueryAPIRequest{
+// NewAlibabaalihealthdentalbindauditqueryRequest 初始化AlibabaalihealthdentalbindauditqueryAPIRequest对象
+func NewAlibabaalihealthdentalbindauditqueryRequest() *AlibabaalihealthdentalbindauditqueryAPIRequest {
+	return &AlibabaalihealthdentalbindauditqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDentalBindAuditQueryAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihealthdentalbindauditqueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.dental.bind.audit.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDentalBindAuditQueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihealthdentalbindauditqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihealthDentalBindAuditQueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihealthdentalbindauditqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetBindIds is BindIds Setter
 // 绑定ID列表
-func (r *AlibabaAlihealthDentalBindAuditQueryAPIRequest) SetBindIds(_bindIds []string) error {
+func (r *AlibabaalihealthdentalbindauditqueryAPIRequest) SetBindIds(_bindIds []string) error {
 	r._bindIds = _bindIds
 	r.Set("bind_ids", _bindIds)
 	return nil
 }
 
 // GetBindIds BindIds Getter
-func (r AlibabaAlihealthDentalBindAuditQueryAPIRequest) GetBindIds() []string {
+func (r AlibabaalihealthdentalbindauditqueryAPIRequest) GetBindIds() []string {
 	return r._bindIds
 }

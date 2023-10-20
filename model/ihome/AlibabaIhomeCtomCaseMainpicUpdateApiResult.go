@@ -1,7 +1,7 @@
 package ihome
 
-// AlibabaIhomeCtomCaseMainpicUpdateApiResult 结构体
-type AlibabaIhomeCtomCaseMainpicUpdateApiResult struct {
+// AlibabaihomectomcasemainpicupdateApiResult 结构体
+type AlibabaihomectomcasemainpicupdateApiResult struct {
 	// 具体错误信息
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 错误码

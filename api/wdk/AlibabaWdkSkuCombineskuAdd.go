@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaWdkSkuCombineskuAdd 组合商品新增接口
+// Alibabawdkskucombineskuadd 组合商品新增接口
 // alibaba.wdk.sku.combinesku.add
 //
 // 组合商品新增接口
-func AlibabaWdkSkuCombineskuAdd(clt *core.SDKClient, req *wdk.AlibabaWdkSkuCombineskuAddAPIRequest, session string) (*wdk.AlibabaWdkSkuCombineskuAddAPIResponse, error) {
-	var resp wdk.AlibabaWdkSkuCombineskuAddAPIResponse
+func Alibabawdkskucombineskuadd(clt *core.SDKClient, req *wdk.AlibabawdkskucombineskuaddAPIRequest, session string) (*wdk.AlibabawdkskucombineskuaddAPIResponse, error) {
+	var resp wdk.AlibabawdkskucombineskuaddAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

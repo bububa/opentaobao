@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaCsrDonateInvoiceQuerytoblockchainossAPIResponse 触发odps任务离线查询公益宝贝开票对账明细 API返回值
+// AlibabacsrdonateinvoicequerytoblockchainossAPIResponse 触发odps任务离线查询公益宝贝开票对账明细 API返回值
 // alibaba.csr.donate.invoice.querytoblockchainoss
 //
 // 提供给蚂蚁链上公益团队，用于触发odps任务离线查询公益宝贝开票对账明细
-type AlibabaCsrDonateInvoiceQuerytoblockchainossAPIResponse struct {
+type AlibabacsrdonateinvoicequerytoblockchainossAPIResponse struct {
 	model.CommonResponse
-	AlibabaCsrDonateInvoiceQuerytoblockchainossAPIResponseModel
+	AlibabacsrdonateinvoicequerytoblockchainossAPIResponseModel
 }
 
-// AlibabaCsrDonateInvoiceQuerytoblockchainossAPIResponseModel is 触发odps任务离线查询公益宝贝开票对账明细 成功返回结果
-type AlibabaCsrDonateInvoiceQuerytoblockchainossAPIResponseModel struct {
+// AlibabacsrdonateinvoicequerytoblockchainossAPIResponseModel is 触发odps任务离线查询公益宝贝开票对账明细 成功返回结果
+type AlibabacsrdonateinvoicequerytoblockchainossAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_csr_donate_invoice_querytoblockchainoss_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaRetailDevicePayUrlGetAPIRequest 贩卖机支付二维链接获取 API请求
+// AlibabaretaildevicepayUrlgetAPIRequest 贩卖机支付二维链接获取 API请求
 // alibaba.retail.device.payUrl.get
 //
 // 贩卖机支付二维链接获取
-type AlibabaRetailDevicePayUrlGetAPIRequest struct {
+type AlibabaretaildevicepayUrlgetAPIRequest struct {
 	model.Params
 	// 外部订单id
 	_isvOrderId string
@@ -24,91 +24,91 @@ type AlibabaRetailDevicePayUrlGetAPIRequest struct {
 	_itemType int64
 }
 
-// NewAlibabaRetailDevicePayUrlGetRequest 初始化AlibabaRetailDevicePayUrlGetAPIRequest对象
-func NewAlibabaRetailDevicePayUrlGetRequest() *AlibabaRetailDevicePayUrlGetAPIRequest {
-	return &AlibabaRetailDevicePayUrlGetAPIRequest{
+// NewAlibabaretaildevicepayUrlgetRequest 初始化AlibabaretaildevicepayUrlgetAPIRequest对象
+func NewAlibabaretaildevicepayUrlgetRequest() *AlibabaretaildevicepayUrlgetAPIRequest {
+	return &AlibabaretaildevicepayUrlgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaRetailDevicePayUrlGetAPIRequest) GetApiMethodName() string {
+func (r AlibabaretaildevicepayUrlgetAPIRequest) GetApiMethodName() string {
 	return "alibaba.retail.device.payUrl.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaRetailDevicePayUrlGetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaretaildevicepayUrlgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaRetailDevicePayUrlGetAPIRequest) GetRawParams() model.Params {
+func (r AlibabaretaildevicepayUrlgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetIsvOrderId is IsvOrderId Setter
 // 外部订单id
-func (r *AlibabaRetailDevicePayUrlGetAPIRequest) SetIsvOrderId(_isvOrderId string) error {
+func (r *AlibabaretaildevicepayUrlgetAPIRequest) SetIsvOrderId(_isvOrderId string) error {
 	r._isvOrderId = _isvOrderId
 	r.Set("isv_order_id", _isvOrderId)
 	return nil
 }
 
 // GetIsvOrderId IsvOrderId Getter
-func (r AlibabaRetailDevicePayUrlGetAPIRequest) GetIsvOrderId() string {
+func (r AlibabaretaildevicepayUrlgetAPIRequest) GetIsvOrderId() string {
 	return r._isvOrderId
 }
 
 // SetBizName is BizName Setter
 // 业务名称
-func (r *AlibabaRetailDevicePayUrlGetAPIRequest) SetBizName(_bizName string) error {
+func (r *AlibabaretaildevicepayUrlgetAPIRequest) SetBizName(_bizName string) error {
 	r._bizName = _bizName
 	r.Set("biz_name", _bizName)
 	return nil
 }
 
 // GetBizName BizName Getter
-func (r AlibabaRetailDevicePayUrlGetAPIRequest) GetBizName() string {
+func (r AlibabaretaildevicepayUrlgetAPIRequest) GetBizName() string {
 	return r._bizName
 }
 
 // SetDeviceId is DeviceId Setter
 // 设备sn
-func (r *AlibabaRetailDevicePayUrlGetAPIRequest) SetDeviceId(_deviceId string) error {
+func (r *AlibabaretaildevicepayUrlgetAPIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
 	r.Set("device_id", _deviceId)
 	return nil
 }
 
 // GetDeviceId DeviceId Getter
-func (r AlibabaRetailDevicePayUrlGetAPIRequest) GetDeviceId() string {
+func (r AlibabaretaildevicepayUrlgetAPIRequest) GetDeviceId() string {
 	return r._deviceId
 }
 
 // SetItemId is ItemId Setter
 // 商品id
-func (r *AlibabaRetailDevicePayUrlGetAPIRequest) SetItemId(_itemId int64) error {
+func (r *AlibabaretaildevicepayUrlgetAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
 	r.Set("item_id", _itemId)
 	return nil
 }
 
 // GetItemId ItemId Getter
-func (r AlibabaRetailDevicePayUrlGetAPIRequest) GetItemId() int64 {
+func (r AlibabaretaildevicepayUrlgetAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
 // SetItemType is ItemType Setter
 // 1表示商品box，0或者为空表示普通商品
-func (r *AlibabaRetailDevicePayUrlGetAPIRequest) SetItemType(_itemType int64) error {
+func (r *AlibabaretaildevicepayUrlgetAPIRequest) SetItemType(_itemType int64) error {
 	r._itemType = _itemType
 	r.Set("item_type", _itemType)
 	return nil
 }
 
 // GetItemType ItemType Getter
-func (r AlibabaRetailDevicePayUrlGetAPIRequest) GetItemType() int64 {
+func (r AlibabaretaildevicepayUrlgetAPIRequest) GetItemType() int64 {
 	return r._itemType
 }

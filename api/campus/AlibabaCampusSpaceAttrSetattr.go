@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/campus"
 )
 
-// AlibabaCampusSpaceAttrSetattr 新增业务属性实例接口
+// Alibabacampusspaceattrsetattr 新增业务属性实例接口
 // alibaba.campus.space.attr.setattr
 //
 // 新增业务属性实例接口
-func AlibabaCampusSpaceAttrSetattr(clt *core.SDKClient, req *campus.AlibabaCampusSpaceAttrSetattrAPIRequest, session string) (*campus.AlibabaCampusSpaceAttrSetattrAPIResponse, error) {
-	var resp campus.AlibabaCampusSpaceAttrSetattrAPIResponse
+func Alibabacampusspaceattrsetattr(clt *core.SDKClient, req *campus.AlibabacampusspaceattrsetattrAPIRequest, session string) (*campus.AlibabacampusspaceattrsetattrAPIResponse, error) {
+	var resp campus.AlibabacampusspaceattrsetattrAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTrainAgentReturnordersGetVtwoAPIResponse 获取待退票的订单v2--增加鉴权校验 API返回值
+// TaobaotrainagentreturnordersgetvtwoAPIResponse 获取待退票的订单v2--增加鉴权校验 API返回值
 // taobao.train.agent.returnorders.get.vtwo
 //
 // 代理商用来获取待退票的订单列表及数量，防止代理商掉单。
-type TaobaoTrainAgentReturnordersGetVtwoAPIResponse struct {
+type TaobaotrainagentreturnordersgetvtwoAPIResponse struct {
 	model.CommonResponse
-	TaobaoTrainAgentReturnordersGetVtwoAPIResponseModel
+	TaobaotrainagentreturnordersgetvtwoAPIResponseModel
 }
 
-// TaobaoTrainAgentReturnordersGetVtwoAPIResponseModel is 获取待退票的订单v2--增加鉴权校验 成功返回结果
-type TaobaoTrainAgentReturnordersGetVtwoAPIResponseModel struct {
+// TaobaotrainagentreturnordersgetvtwoAPIResponseModel is 获取待退票的订单v2--增加鉴权校验 成功返回结果
+type TaobaotrainagentreturnordersgetvtwoAPIResponseModel struct {
 	XMLName xml.Name `xml:"train_agent_returnorders_get_vtwo_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

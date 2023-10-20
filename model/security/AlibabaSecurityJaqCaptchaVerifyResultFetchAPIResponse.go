@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaSecurityJaqCaptchaVerifyResultFetchAPIResponse 聚安全安全验证检查结果获取接口 API返回值
+// AlibabasecurityjaqcaptchaverifyresultfetchAPIResponse 聚安全安全验证检查结果获取接口 API返回值
 // alibaba.security.jaq.captcha.verify.result.fetch
 //
 // 获取二次验证的结果
-type AlibabaSecurityJaqCaptchaVerifyResultFetchAPIResponse struct {
+type AlibabasecurityjaqcaptchaverifyresultfetchAPIResponse struct {
 	model.CommonResponse
-	AlibabaSecurityJaqCaptchaVerifyResultFetchAPIResponseModel
+	AlibabasecurityjaqcaptchaverifyresultfetchAPIResponseModel
 }
 
-// AlibabaSecurityJaqCaptchaVerifyResultFetchAPIResponseModel is 聚安全安全验证检查结果获取接口 成功返回结果
-type AlibabaSecurityJaqCaptchaVerifyResultFetchAPIResponseModel struct {
+// AlibabasecurityjaqcaptchaverifyresultfetchAPIResponseModel is 聚安全安全验证检查结果获取接口 成功返回结果
+type AlibabasecurityjaqcaptchaverifyresultfetchAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_security_jaq_captcha_verify_result_fetch_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

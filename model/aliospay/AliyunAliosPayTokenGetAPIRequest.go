@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliyunAliosPayTokenGetAPIRequest 获取支付token API请求
+// AliyunaliospaytokengetAPIRequest 获取支付token API请求
 // aliyun.alios.pay.token.get
 //
 // 商户用来获取支付的授权token
-type AliyunAliosPayTokenGetAPIRequest struct {
+type AliyunaliospaytokengetAPIRequest struct {
 	model.Params
 	// 请求参数
 	_getTokenRequest *GetTokenRequest
 }
 
-// NewAliyunAliosPayTokenGetRequest 初始化AliyunAliosPayTokenGetAPIRequest对象
-func NewAliyunAliosPayTokenGetRequest() *AliyunAliosPayTokenGetAPIRequest {
-	return &AliyunAliosPayTokenGetAPIRequest{
+// NewAliyunaliospaytokengetRequest 初始化AliyunaliospaytokengetAPIRequest对象
+func NewAliyunaliospaytokengetRequest() *AliyunaliospaytokengetAPIRequest {
+	return &AliyunaliospaytokengetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AliyunAliosPayTokenGetAPIRequest) GetApiMethodName() string {
+func (r AliyunaliospaytokengetAPIRequest) GetApiMethodName() string {
 	return "aliyun.alios.pay.token.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AliyunAliosPayTokenGetAPIRequest) GetApiParams(params url.Values) {
+func (r AliyunaliospaytokengetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AliyunAliosPayTokenGetAPIRequest) GetRawParams() model.Params {
+func (r AliyunaliospaytokengetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetGetTokenRequest is GetTokenRequest Setter
 // 请求参数
-func (r *AliyunAliosPayTokenGetAPIRequest) SetGetTokenRequest(_getTokenRequest *GetTokenRequest) error {
+func (r *AliyunaliospaytokengetAPIRequest) SetGetTokenRequest(_getTokenRequest *GetTokenRequest) error {
 	r._getTokenRequest = _getTokenRequest
 	r.Set("get_token_request", _getTokenRequest)
 	return nil
 }
 
 // GetGetTokenRequest GetTokenRequest Getter
-func (r AliyunAliosPayTokenGetAPIRequest) GetGetTokenRequest() *GetTokenRequest {
+func (r AliyunaliospaytokengetAPIRequest) GetGetTokenRequest() *GetTokenRequest {
 	return r._getTokenRequest
 }

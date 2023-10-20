@@ -1,9 +1,9 @@
 package hotel
 
-// SHotelInfoObject 结构体
-type SHotelInfoObject struct {
+// ShotelInfoObject 结构体
+type ShotelInfoObject struct {
 	// 房型信息
-	Rooms []SRoomType `json:"rooms,omitempty" xml:"rooms>s_room_type,omitempty"`
+	Rooms []SroomType `json:"rooms,omitempty" xml:"rooms>sroom_type,omitempty"`
 	// 酒店名称
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 酒店类型

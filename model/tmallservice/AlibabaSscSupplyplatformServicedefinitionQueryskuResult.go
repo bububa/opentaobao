@@ -1,7 +1,7 @@
 package tmallservice
 
-// AlibabaSscSupplyplatformServicedefinitionQueryskuResult 结构体
-type AlibabaSscSupplyplatformServicedefinitionQueryskuResult struct {
+// AlibabasscsupplyplatformservicedefinitionqueryskuResult 结构体
+type AlibabasscsupplyplatformservicedefinitionqueryskuResult struct {
 	// 服务sku列表
 	ServiceSkus []ServiceSkuDto `json:"service_skus,omitempty" xml:"service_skus>service_sku_dto,omitempty"`
 	// 对外展示的错误信息

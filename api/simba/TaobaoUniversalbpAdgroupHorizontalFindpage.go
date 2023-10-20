@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// TaobaoUniversalbpAdgroupHorizontalFindpage 查询单元分页列表
+// Taobaouniversalbpadgrouphorizontalfindpage 查询单元分页列表
 // taobao.universalbp.adgroup.horizontal.findpage
 //
 // 查询单元分页列表
-func TaobaoUniversalbpAdgroupHorizontalFindpage(clt *core.SDKClient, req *simba.TaobaoUniversalbpAdgroupHorizontalFindpageAPIRequest, session string) (*simba.TaobaoUniversalbpAdgroupHorizontalFindpageAPIResponse, error) {
-	var resp simba.TaobaoUniversalbpAdgroupHorizontalFindpageAPIResponse
+func Taobaouniversalbpadgrouphorizontalfindpage(clt *core.SDKClient, req *simba.TaobaouniversalbpadgrouphorizontalfindpageAPIRequest, session string) (*simba.TaobaouniversalbpadgrouphorizontalfindpageAPIResponse, error) {
+	var resp simba.TaobaouniversalbpadgrouphorizontalfindpageAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

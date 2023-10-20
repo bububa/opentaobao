@@ -1,7 +1,7 @@
 package flight
 
-// AlitripAgentFlightSellModifyListT 结构体
-type AlitripAgentFlightSellModifyListT struct {
+// AlitripagentflightsellmodifylistT 结构体
+type AlitripagentflightsellmodifylistT struct {
 	// 申请单号
 	ApplyId string `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
 	// 飞猪订单号

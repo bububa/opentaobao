@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallAlihouseTradeCouponRefundOrderQueryAPIRequest 查询电商券履约退款单 API请求
+// TmallalihousetradecouponrefundorderqueryAPIRequest 查询电商券履约退款单 API请求
 // tmall.alihouse.trade.coupon.refund.order.query
 //
 // 查询电商券履约退款单
-type TmallAlihouseTradeCouponRefundOrderQueryAPIRequest struct {
+type TmallalihousetradecouponrefundorderqueryAPIRequest struct {
 	model.Params
 	// 查询参数
 	_query *CouponOrderQuery
 }
 
-// NewTmallAlihouseTradeCouponRefundOrderQueryRequest 初始化TmallAlihouseTradeCouponRefundOrderQueryAPIRequest对象
-func NewTmallAlihouseTradeCouponRefundOrderQueryRequest() *TmallAlihouseTradeCouponRefundOrderQueryAPIRequest {
-	return &TmallAlihouseTradeCouponRefundOrderQueryAPIRequest{
+// NewTmallalihousetradecouponrefundorderqueryRequest 初始化TmallalihousetradecouponrefundorderqueryAPIRequest对象
+func NewTmallalihousetradecouponrefundorderqueryRequest() *TmallalihousetradecouponrefundorderqueryAPIRequest {
+	return &TmallalihousetradecouponrefundorderqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallAlihouseTradeCouponRefundOrderQueryAPIRequest) GetApiMethodName() string {
+func (r TmallalihousetradecouponrefundorderqueryAPIRequest) GetApiMethodName() string {
 	return "tmall.alihouse.trade.coupon.refund.order.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallAlihouseTradeCouponRefundOrderQueryAPIRequest) GetApiParams(params url.Values) {
+func (r TmallalihousetradecouponrefundorderqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallAlihouseTradeCouponRefundOrderQueryAPIRequest) GetRawParams() model.Params {
+func (r TmallalihousetradecouponrefundorderqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetQuery is Query Setter
 // 查询参数
-func (r *TmallAlihouseTradeCouponRefundOrderQueryAPIRequest) SetQuery(_query *CouponOrderQuery) error {
+func (r *TmallalihousetradecouponrefundorderqueryAPIRequest) SetQuery(_query *CouponOrderQuery) error {
 	r._query = _query
 	r.Set("query", _query)
 	return nil
 }
 
 // GetQuery Query Getter
-func (r TmallAlihouseTradeCouponRefundOrderQueryAPIRequest) GetQuery() *CouponOrderQuery {
+func (r TmallalihousetradecouponrefundorderqueryAPIRequest) GetQuery() *CouponOrderQuery {
 	return r._query
 }

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripPolicyProcessAPIRequest 政策进度查询 API请求
+// AlitrippolicyprocessAPIRequest 政策进度查询 API请求
 // alitrip.policy.process
 //
 // 上传特殊类型的单程/往返政策
-type AlitripPolicyProcessAPIRequest struct {
+type AlitrippolicyprocessAPIRequest struct {
 	model.Params
 	// 进度请求入参
 	_policyTaskQueryDTO *PolicyTaskQueryDto
 }
 
-// NewAlitripPolicyProcessRequest 初始化AlitripPolicyProcessAPIRequest对象
-func NewAlitripPolicyProcessRequest() *AlitripPolicyProcessAPIRequest {
-	return &AlitripPolicyProcessAPIRequest{
+// NewAlitrippolicyprocessRequest 初始化AlitrippolicyprocessAPIRequest对象
+func NewAlitrippolicyprocessRequest() *AlitrippolicyprocessAPIRequest {
+	return &AlitrippolicyprocessAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripPolicyProcessAPIRequest) GetApiMethodName() string {
+func (r AlitrippolicyprocessAPIRequest) GetApiMethodName() string {
 	return "alitrip.policy.process"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripPolicyProcessAPIRequest) GetApiParams(params url.Values) {
+func (r AlitrippolicyprocessAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripPolicyProcessAPIRequest) GetRawParams() model.Params {
+func (r AlitrippolicyprocessAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetPolicyTaskQueryDTO is PolicyTaskQueryDTO Setter
 // 进度请求入参
-func (r *AlitripPolicyProcessAPIRequest) SetPolicyTaskQueryDTO(_policyTaskQueryDTO *PolicyTaskQueryDto) error {
+func (r *AlitrippolicyprocessAPIRequest) SetPolicyTaskQueryDTO(_policyTaskQueryDTO *PolicyTaskQueryDto) error {
 	r._policyTaskQueryDTO = _policyTaskQueryDTO
 	r.Set("policy_task_query_d_t_o", _policyTaskQueryDTO)
 	return nil
 }
 
 // GetPolicyTaskQueryDTO PolicyTaskQueryDTO Getter
-func (r AlitripPolicyProcessAPIRequest) GetPolicyTaskQueryDTO() *PolicyTaskQueryDto {
+func (r AlitrippolicyprocessAPIRequest) GetPolicyTaskQueryDTO() *PolicyTaskQueryDto {
 	return r._policyTaskQueryDTO
 }

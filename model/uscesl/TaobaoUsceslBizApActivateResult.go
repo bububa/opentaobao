@@ -1,7 +1,7 @@
 package uscesl
 
-// TaobaoUsceslBizApActivateResult 结构体
-type TaobaoUsceslBizApActivateResult struct {
+// TaobaousceslbizapactivateResult 结构体
+type TaobaousceslbizapactivateResult struct {
 	// 错误信息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 错误编码

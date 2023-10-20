@@ -1,7 +1,7 @@
 package bus
 
-// B2BRefundOrderRq 结构体
-type B2BRefundOrderRq struct {
+// B2brefundOrderRq 结构体
+type B2brefundOrderRq struct {
 	// 飞猪子订单号
 	SubOrderIds []int64 `json:"sub_order_ids,omitempty" xml:"sub_order_ids>int64,omitempty"`
 	// 退票原因

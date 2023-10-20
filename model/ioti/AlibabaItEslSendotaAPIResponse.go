@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaItEslSendotaAPIResponse 电子价签ota接口 API返回值
+// AlibabaiteslsendotaAPIResponse 电子价签ota接口 API返回值
 // alibaba.it.esl.sendota
 //
 // 厂测接口，电子价签ota接口
-type AlibabaItEslSendotaAPIResponse struct {
+type AlibabaiteslsendotaAPIResponse struct {
 	model.CommonResponse
-	AlibabaItEslSendotaAPIResponseModel
+	AlibabaiteslsendotaAPIResponseModel
 }
 
-// AlibabaItEslSendotaAPIResponseModel is 电子价签ota接口 成功返回结果
-type AlibabaItEslSendotaAPIResponseModel struct {
+// AlibabaiteslsendotaAPIResponseModel is 电子价签ota接口 成功返回结果
+type AlibabaiteslsendotaAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_it_esl_sendota_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

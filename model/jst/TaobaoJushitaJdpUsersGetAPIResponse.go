@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoJushitaJdpUsersGetAPIResponse 获取开通的订单同步服务的用户 API返回值
+// TaobaojushitajdpusersgetAPIResponse 获取开通的订单同步服务的用户 API返回值
 // taobao.jushita.jdp.users.get
 //
 // 获取开通的订单同步服务的用户，含有rds的路由关系
-type TaobaoJushitaJdpUsersGetAPIResponse struct {
+type TaobaojushitajdpusersgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoJushitaJdpUsersGetAPIResponseModel
+	TaobaojushitajdpusersgetAPIResponseModel
 }
 
-// TaobaoJushitaJdpUsersGetAPIResponseModel is 获取开通的订单同步服务的用户 成功返回结果
-type TaobaoJushitaJdpUsersGetAPIResponseModel struct {
+// TaobaojushitajdpusersgetAPIResponseModel is 获取开通的订单同步服务的用户 成功返回结果
+type TaobaojushitajdpusersgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"jushita_jdp_users_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

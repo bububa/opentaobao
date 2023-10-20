@@ -3,7 +3,7 @@ package wdk
 // CpsOrderResponse 结构体
 type CpsOrderResponse struct {
 	// 子单列表
-	CpsSubOrder []CpsSubOrderBO `json:"cps_sub_order,omitempty" xml:"cps_sub_order>cps_sub_order_bo,omitempty"`
+	CpsSubOrder []CpsSubOrderBo `json:"cps_sub_order,omitempty" xml:"cps_sub_order>cps_sub_order_bo,omitempty"`
 	// 订单创建时间
 	CreateTime string `json:"create_time,omitempty" xml:"create_time,omitempty"`
 	// 支付成功时间

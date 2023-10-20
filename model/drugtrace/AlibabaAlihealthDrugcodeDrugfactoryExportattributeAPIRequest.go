@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest 导出所有项目的药物属性和药品信息 API请求
+// AlibabaalihealthdrugcodedrugfactoryexportattributeAPIRequest 导出所有项目的药物属性和药品信息 API请求
 // alibaba.alihealth.drugcode.drugfactory.exportattribute
 //
 // 导出所有项目的药物属性和药品信息
-type AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest struct {
+type AlibabaalihealthdrugcodedrugfactoryexportattributeAPIRequest struct {
 	model.Params
 	// 企业id
 	_refEntId string
 }
 
-// NewAlibabaAlihealthDrugcodeDrugfactoryExportattributeRequest 初始化AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest对象
-func NewAlibabaAlihealthDrugcodeDrugfactoryExportattributeRequest() *AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest {
-	return &AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest{
+// NewAlibabaalihealthdrugcodedrugfactoryexportattributeRequest 初始化AlibabaalihealthdrugcodedrugfactoryexportattributeAPIRequest对象
+func NewAlibabaalihealthdrugcodedrugfactoryexportattributeRequest() *AlibabaalihealthdrugcodedrugfactoryexportattributeAPIRequest {
+	return &AlibabaalihealthdrugcodedrugfactoryexportattributeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihealthdrugcodedrugfactoryexportattributeAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.drugcode.drugfactory.exportattribute"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihealthdrugcodedrugfactoryexportattributeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihealthdrugcodedrugfactoryexportattributeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRefEntId is RefEntId Setter
 // 企业id
-func (r *AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest) SetRefEntId(_refEntId string) error {
+func (r *AlibabaalihealthdrugcodedrugfactoryexportattributeAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
 	r.Set("ref_ent_id", _refEntId)
 	return nil
 }
 
 // GetRefEntId RefEntId Getter
-func (r AlibabaAlihealthDrugcodeDrugfactoryExportattributeAPIRequest) GetRefEntId() string {
+func (r AlibabaalihealthdrugcodedrugfactoryexportattributeAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }

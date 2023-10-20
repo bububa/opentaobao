@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaJhsCommunityIdentityStoreAPIResponse 用户信息存储 API返回值
+// AlibabajhscommunityidentitystoreAPIResponse 用户信息存储 API返回值
 // alibaba.jhs.community.identity.store
 //
 // 用户信息存储
-type AlibabaJhsCommunityIdentityStoreAPIResponse struct {
+type AlibabajhscommunityidentitystoreAPIResponse struct {
 	model.CommonResponse
-	AlibabaJhsCommunityIdentityStoreAPIResponseModel
+	AlibabajhscommunityidentitystoreAPIResponseModel
 }
 
-// AlibabaJhsCommunityIdentityStoreAPIResponseModel is 用户信息存储 成功返回结果
-type AlibabaJhsCommunityIdentityStoreAPIResponseModel struct {
+// AlibabajhscommunityidentitystoreAPIResponseModel is 用户信息存储 成功返回结果
+type AlibabajhscommunityidentitystoreAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_jhs_community_identity_store_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

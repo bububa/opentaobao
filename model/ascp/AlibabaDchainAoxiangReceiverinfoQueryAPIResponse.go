@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaDchainAoxiangReceiverinfoQueryAPIResponse 供应链优仓即时配隐私小号查询 API返回值
+// AlibabadchainaoxiangreceiverinfoqueryAPIResponse 供应链优仓即时配隐私小号查询 API返回值
 // alibaba.dchain.aoxiang.receiverinfo.query
 //
 // 供应链优仓即时配隐私小号查询
-type AlibabaDchainAoxiangReceiverinfoQueryAPIResponse struct {
+type AlibabadchainaoxiangreceiverinfoqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaDchainAoxiangReceiverinfoQueryAPIResponseModel
+	AlibabadchainaoxiangreceiverinfoqueryAPIResponseModel
 }
 
-// AlibabaDchainAoxiangReceiverinfoQueryAPIResponseModel is 供应链优仓即时配隐私小号查询 成功返回结果
-type AlibabaDchainAoxiangReceiverinfoQueryAPIResponseModel struct {
+// AlibabadchainaoxiangreceiverinfoqueryAPIResponseModel is 供应链优仓即时配隐私小号查询 成功返回结果
+type AlibabadchainaoxiangreceiverinfoqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_dchain_aoxiang_receiverinfo_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

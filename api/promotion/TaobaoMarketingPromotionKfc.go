@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/promotion"
 )
 
-// TaobaoMarketingPromotionKfc 定向优惠活动名称与描述违禁词检查
+// Taobaomarketingpromotionkfc 定向优惠活动名称与描述违禁词检查
 // taobao.marketing.promotion.kfc
 //
 // 活动名称与描述违禁词检查
-func TaobaoMarketingPromotionKfc(clt *core.SDKClient, req *promotion.TaobaoMarketingPromotionKfcAPIRequest, session string) (*promotion.TaobaoMarketingPromotionKfcAPIResponse, error) {
-	var resp promotion.TaobaoMarketingPromotionKfcAPIResponse
+func Taobaomarketingpromotionkfc(clt *core.SDKClient, req *promotion.TaobaomarketingpromotionkfcAPIRequest, session string) (*promotion.TaobaomarketingpromotionkfcAPIResponse, error) {
+	var resp promotion.TaobaomarketingpromotionkfcAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

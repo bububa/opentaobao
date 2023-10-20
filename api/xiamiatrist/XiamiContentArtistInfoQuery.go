@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/xiamiatrist"
 )
 
-// XiamiContentArtistInfoQuery 搜索艺人列表
+// Xiamicontentartistinfoquery 搜索艺人列表
 // xiami.content.artist.info.query
 //
 // 根据查询条件，搜索相关艺人列表
-func XiamiContentArtistInfoQuery(clt *core.SDKClient, req *xiamiatrist.XiamiContentArtistInfoQueryAPIRequest, session string) (*xiamiatrist.XiamiContentArtistInfoQueryAPIResponse, error) {
-	var resp xiamiatrist.XiamiContentArtistInfoQueryAPIResponse
+func Xiamicontentartistinfoquery(clt *core.SDKClient, req *xiamiatrist.XiamicontentartistinfoqueryAPIRequest, session string) (*xiamiatrist.XiamicontentartistinfoqueryAPIResponse, error) {
+	var resp xiamiatrist.XiamicontentartistinfoqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

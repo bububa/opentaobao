@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaoTbkDgCpaActivityDetailResult 结构体
-type TaobaoTbkDgCpaActivityDetailResult struct {
+// TaobaotbkdgcpaactivitydetailResult 结构体
+type TaobaotbkdgcpaactivitydetailResult struct {
 	// 错误代码
 	BizErrorFeature string `json:"biz_error_feature,omitempty" xml:"biz_error_feature,omitempty"`
 	// 错误描述

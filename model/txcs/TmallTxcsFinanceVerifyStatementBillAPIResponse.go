@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallTxcsFinanceVerifyStatementBillAPIResponse 供应商核销单录入 API返回值
+// TmalltxcsfinanceverifystatementbillAPIResponse 供应商核销单录入 API返回值
 // tmall.txcs.finance.verify.statement.bill
 //
 // 供应商核销单录入
-type TmallTxcsFinanceVerifyStatementBillAPIResponse struct {
+type TmalltxcsfinanceverifystatementbillAPIResponse struct {
 	model.CommonResponse
-	TmallTxcsFinanceVerifyStatementBillAPIResponseModel
+	TmalltxcsfinanceverifystatementbillAPIResponseModel
 }
 
-// TmallTxcsFinanceVerifyStatementBillAPIResponseModel is 供应商核销单录入 成功返回结果
-type TmallTxcsFinanceVerifyStatementBillAPIResponseModel struct {
+// TmalltxcsfinanceverifystatementbillAPIResponseModel is 供应商核销单录入 成功返回结果
+type TmalltxcsfinanceverifystatementbillAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_txcs_finance_verify_statement_bill_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

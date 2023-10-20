@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoItemSkuDeleteAPIResponse 删除SKU API返回值
+// TaobaoitemskudeleteAPIResponse 删除SKU API返回值
 // taobao.item.sku.delete
 //
 // 删除一个sku的数据&lt;br/&gt;需要删除的sku通过属性properties进行匹配查找
-type TaobaoItemSkuDeleteAPIResponse struct {
+type TaobaoitemskudeleteAPIResponse struct {
 	model.CommonResponse
-	TaobaoItemSkuDeleteAPIResponseModel
+	TaobaoitemskudeleteAPIResponseModel
 }
 
-// TaobaoItemSkuDeleteAPIResponseModel is 删除SKU 成功返回结果
-type TaobaoItemSkuDeleteAPIResponseModel struct {
+// TaobaoitemskudeleteAPIResponseModel is 删除SKU 成功返回结果
+type TaobaoitemskudeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"item_sku_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

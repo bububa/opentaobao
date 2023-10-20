@@ -1,7 +1,7 @@
 package tmallcar
 
-// Item4IsvDto 结构体
-type Item4IsvDto struct {
+// Item4isvDto 结构体
+type Item4isvDto struct {
 	// 附加属性
 	Extension string `json:"extension,omitempty" xml:"extension,omitempty"`
 	// 商品缩略图

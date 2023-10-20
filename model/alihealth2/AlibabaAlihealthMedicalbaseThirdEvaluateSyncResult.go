@@ -1,7 +1,7 @@
 package alihealth2
 
-// AlibabaAlihealthMedicalbaseThirdEvaluateSyncResult 结构体
-type AlibabaAlihealthMedicalbaseThirdEvaluateSyncResult struct {
+// AlibabaalihealthmedicalbasethirdevaluatesyncResult 结构体
+type AlibabaalihealthmedicalbasethirdevaluatesyncResult struct {
 	// 错误编码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 错误信息

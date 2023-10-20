@@ -1,7 +1,7 @@
 package idle
 
-// AlibabaIdleRecycleOrderQueryResult 结构体
-type AlibabaIdleRecycleOrderQueryResult struct {
+// AlibabaidlerecycleorderqueryResult 结构体
+type AlibabaidlerecycleorderqueryResult struct {
 	// errMsg
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// 订单信息

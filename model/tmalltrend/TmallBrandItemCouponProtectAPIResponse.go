@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallBrandItemCouponProtectAPIResponse 全域新品店铺优惠券免除 API返回值
+// TmallbranditemcouponprotectAPIResponse 全域新品店铺优惠券免除 API返回值
 // tmall.brand.item.coupon.protect
 //
 // 全域新品店铺优惠券免除申请打标接口
-type TmallBrandItemCouponProtectAPIResponse struct {
+type TmallbranditemcouponprotectAPIResponse struct {
 	model.CommonResponse
-	TmallBrandItemCouponProtectAPIResponseModel
+	TmallbranditemcouponprotectAPIResponseModel
 }
 
-// TmallBrandItemCouponProtectAPIResponseModel is 全域新品店铺优惠券免除 成功返回结果
-type TmallBrandItemCouponProtectAPIResponseModel struct {
+// TmallbranditemcouponprotectAPIResponseModel is 全域新品店铺优惠券免除 成功返回结果
+type TmallbranditemcouponprotectAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_brand_item_coupon_protect_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

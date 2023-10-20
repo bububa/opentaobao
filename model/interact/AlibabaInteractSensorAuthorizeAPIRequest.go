@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaInteractSensorAuthorizeAPIRequest 客户端授权页 API请求
+// AlibabainteractsensorauthorizeAPIRequest 客户端授权页 API请求
 // alibaba.interact.sensor.authorize
 //
 // 客户端授权页
-type AlibabaInteractSensorAuthorizeAPIRequest struct {
+type AlibabainteractsensorauthorizeAPIRequest struct {
 	model.Params
 }
 
-// NewAlibabaInteractSensorAuthorizeRequest 初始化AlibabaInteractSensorAuthorizeAPIRequest对象
-func NewAlibabaInteractSensorAuthorizeRequest() *AlibabaInteractSensorAuthorizeAPIRequest {
-	return &AlibabaInteractSensorAuthorizeAPIRequest{
+// NewAlibabainteractsensorauthorizeRequest 初始化AlibabainteractsensorauthorizeAPIRequest对象
+func NewAlibabainteractsensorauthorizeRequest() *AlibabainteractsensorauthorizeAPIRequest {
+	return &AlibabainteractsensorauthorizeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaInteractSensorAuthorizeAPIRequest) GetApiMethodName() string {
+func (r AlibabainteractsensorauthorizeAPIRequest) GetApiMethodName() string {
 	return "alibaba.interact.sensor.authorize"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaInteractSensorAuthorizeAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabainteractsensorauthorizeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaInteractSensorAuthorizeAPIRequest) GetRawParams() model.Params {
+func (r AlibabainteractsensorauthorizeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

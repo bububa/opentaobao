@@ -1,7 +1,7 @@
 package simba
 
-// ADGroup 结构体
-type ADGroup struct {
+// Adgroup 结构体
+type Adgroup struct {
 	// 推广组主人昵称
 	Nick string `json:"nick,omitempty" xml:"nick,omitempty"`
 	// 商品类目id，从根类目到子类目，用空格分割

@@ -1,7 +1,7 @@
 package trade
 
-// CainiaoCntecSupplierOrderServiceResult 结构体
-type CainiaoCntecSupplierOrderServiceResult struct {
+// CainiaocntecsupplierorderserviceResult 结构体
+type CainiaocntecsupplierorderserviceResult struct {
 	// 订单列表
 	OrderList []SupplierOrder `json:"order_list,omitempty" xml:"order_list>supplier_order,omitempty"`
 	// 错误信息

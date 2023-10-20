@@ -13,9 +13,9 @@ type AccessGoodsDto struct {
 	// 外部商家商品标记值
 	SourceValue string `json:"source_value,omitempty" xml:"source_value,omitempty"`
 	// 最小采购量
-	MinimumPurchaseQuantity *BigDecimal `json:"minimum_purchase_quantity,omitempty" xml:"minimum_purchase_quantity,omitempty"`
+	MinimumPurchaseQuantity float64 `json:"minimum_purchase_quantity,omitempty" xml:"minimum_purchase_quantity,omitempty"`
 	// 阿里侧供应商ID
 	SupplierId int64 `json:"supplier_id,omitempty" xml:"supplier_id,omitempty"`
 	// 税率，如6%则为6
-	TaxRate *BigDecimal `json:"tax_rate,omitempty" xml:"tax_rate,omitempty"`
+	TaxRate float64 `json:"tax_rate,omitempty" xml:"tax_rate,omitempty"`
 }

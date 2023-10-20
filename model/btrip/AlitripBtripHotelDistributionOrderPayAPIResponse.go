@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripBtripHotelDistributionOrderPayAPIResponse 商旅酒店分销订单支付 API返回值
+// AlitripbtriphoteldistributionorderpayAPIResponse 商旅酒店分销订单支付 API返回值
 // alitrip.btrip.hotel.distribution.order.pay
 //
 // 商旅酒店分销订单支付
-type AlitripBtripHotelDistributionOrderPayAPIResponse struct {
+type AlitripbtriphoteldistributionorderpayAPIResponse struct {
 	model.CommonResponse
-	AlitripBtripHotelDistributionOrderPayAPIResponseModel
+	AlitripbtriphoteldistributionorderpayAPIResponseModel
 }
 
-// AlitripBtripHotelDistributionOrderPayAPIResponseModel is 商旅酒店分销订单支付 成功返回结果
-type AlitripBtripHotelDistributionOrderPayAPIResponseModel struct {
+// AlitripbtriphoteldistributionorderpayAPIResponseModel is 商旅酒店分销订单支付 成功返回结果
+type AlitripbtriphoteldistributionorderpayAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_hotel_distribution_order_pay_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

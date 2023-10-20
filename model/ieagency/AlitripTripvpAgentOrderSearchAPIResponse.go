@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripTripvpAgentOrderSearchAPIResponse 【国际机票】查询辅营订单列表 API返回值
+// AlitriptripvpagentordersearchAPIResponse 【国际机票】查询辅营订单列表 API返回值
 // alitrip.tripvp.agent.order.search
 //
 // 【国际机票】查询辅营订单列表
-type AlitripTripvpAgentOrderSearchAPIResponse struct {
+type AlitriptripvpagentordersearchAPIResponse struct {
 	model.CommonResponse
-	AlitripTripvpAgentOrderSearchAPIResponseModel
+	AlitriptripvpagentordersearchAPIResponseModel
 }
 
-// AlitripTripvpAgentOrderSearchAPIResponseModel is 【国际机票】查询辅营订单列表 成功返回结果
-type AlitripTripvpAgentOrderSearchAPIResponseModel struct {
+// AlitriptripvpagentordersearchAPIResponseModel is 【国际机票】查询辅营订单列表 成功返回结果
+type AlitriptripvpagentordersearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_tripvp_agent_order_search_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

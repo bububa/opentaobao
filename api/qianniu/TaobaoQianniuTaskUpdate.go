@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/qianniu"
 )
 
-// TaobaoQianniuTaskUpdate 更新轻任务
+// Taobaoqianniutaskupdate 更新轻任务
 // taobao.qianniu.task.update
 //
 // 由任务执行者调用，sub_status，tag和memo至少提供一个
-func TaobaoQianniuTaskUpdate(clt *core.SDKClient, req *qianniu.TaobaoQianniuTaskUpdateAPIRequest, session string) (*qianniu.TaobaoQianniuTaskUpdateAPIResponse, error) {
-	var resp qianniu.TaobaoQianniuTaskUpdateAPIResponse
+func Taobaoqianniutaskupdate(clt *core.SDKClient, req *qianniu.TaobaoqianniutaskupdateAPIRequest, session string) (*qianniu.TaobaoqianniutaskupdateAPIResponse, error) {
+	var resp qianniu.TaobaoqianniutaskupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

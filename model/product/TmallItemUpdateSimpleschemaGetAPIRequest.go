@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallItemUpdateSimpleschemaGetAPIRequest 官网同购编辑商品的get接口 API请求
+// TmallitemupdatesimpleschemagetAPIRequest 官网同购编辑商品的get接口 API请求
 // tmall.item.update.simpleschema.get
 //
 // 官网同购编辑商品的get接口
-type TmallItemUpdateSimpleschemaGetAPIRequest struct {
+type TmallitemupdatesimpleschemagetAPIRequest struct {
 	model.Params
 	// 商品id
 	_itemId int64
 }
 
-// NewTmallItemUpdateSimpleschemaGetRequest 初始化TmallItemUpdateSimpleschemaGetAPIRequest对象
-func NewTmallItemUpdateSimpleschemaGetRequest() *TmallItemUpdateSimpleschemaGetAPIRequest {
-	return &TmallItemUpdateSimpleschemaGetAPIRequest{
+// NewTmallitemupdatesimpleschemagetRequest 初始化TmallitemupdatesimpleschemagetAPIRequest对象
+func NewTmallitemupdatesimpleschemagetRequest() *TmallitemupdatesimpleschemagetAPIRequest {
+	return &TmallitemupdatesimpleschemagetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallItemUpdateSimpleschemaGetAPIRequest) GetApiMethodName() string {
+func (r TmallitemupdatesimpleschemagetAPIRequest) GetApiMethodName() string {
 	return "tmall.item.update.simpleschema.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallItemUpdateSimpleschemaGetAPIRequest) GetApiParams(params url.Values) {
+func (r TmallitemupdatesimpleschemagetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallItemUpdateSimpleschemaGetAPIRequest) GetRawParams() model.Params {
+func (r TmallitemupdatesimpleschemagetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetItemId is ItemId Setter
 // 商品id
-func (r *TmallItemUpdateSimpleschemaGetAPIRequest) SetItemId(_itemId int64) error {
+func (r *TmallitemupdatesimpleschemagetAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
 	r.Set("item_id", _itemId)
 	return nil
 }
 
 // GetItemId ItemId Getter
-func (r TmallItemUpdateSimpleschemaGetAPIRequest) GetItemId() int64 {
+func (r TmallitemupdatesimpleschemagetAPIRequest) GetItemId() int64 {
 	return r._itemId
 }

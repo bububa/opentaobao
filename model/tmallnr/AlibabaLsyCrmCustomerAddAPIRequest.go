@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaLsyCrmCustomerAddAPIRequest 私域导购添加活动留资入口 API请求
+// AlibabalsycrmcustomeraddAPIRequest 私域导购添加活动留资入口 API请求
 // alibaba.lsy.crm.customer.add
 //
 // 私域导购添加活动留资入口
-type AlibabaLsyCrmCustomerAddAPIRequest struct {
+type AlibabalsycrmcustomeraddAPIRequest struct {
 	model.Params
 	// 入参对象
 	_reqDto *NrtCrmCreateCustomerReq
 }
 
-// NewAlibabaLsyCrmCustomerAddRequest 初始化AlibabaLsyCrmCustomerAddAPIRequest对象
-func NewAlibabaLsyCrmCustomerAddRequest() *AlibabaLsyCrmCustomerAddAPIRequest {
-	return &AlibabaLsyCrmCustomerAddAPIRequest{
+// NewAlibabalsycrmcustomeraddRequest 初始化AlibabalsycrmcustomeraddAPIRequest对象
+func NewAlibabalsycrmcustomeraddRequest() *AlibabalsycrmcustomeraddAPIRequest {
+	return &AlibabalsycrmcustomeraddAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaLsyCrmCustomerAddAPIRequest) GetApiMethodName() string {
+func (r AlibabalsycrmcustomeraddAPIRequest) GetApiMethodName() string {
 	return "alibaba.lsy.crm.customer.add"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaLsyCrmCustomerAddAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabalsycrmcustomeraddAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaLsyCrmCustomerAddAPIRequest) GetRawParams() model.Params {
+func (r AlibabalsycrmcustomeraddAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetReqDto is ReqDto Setter
 // 入参对象
-func (r *AlibabaLsyCrmCustomerAddAPIRequest) SetReqDto(_reqDto *NrtCrmCreateCustomerReq) error {
+func (r *AlibabalsycrmcustomeraddAPIRequest) SetReqDto(_reqDto *NrtCrmCreateCustomerReq) error {
 	r._reqDto = _reqDto
 	r.Set("req_dto", _reqDto)
 	return nil
 }
 
 // GetReqDto ReqDto Getter
-func (r AlibabaLsyCrmCustomerAddAPIRequest) GetReqDto() *NrtCrmCreateCustomerReq {
+func (r AlibabalsycrmcustomeraddAPIRequest) GetReqDto() *NrtCrmCreateCustomerReq {
 	return r._reqDto
 }

@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaHmMarketingExpirePromotionCreateT 结构体
-type AlibabaHmMarketingExpirePromotionCreateT struct {
+// AlibabahmmarketingexpirepromotioncreateT 结构体
+type AlibabahmmarketingexpirepromotioncreateT struct {
 	// 商家code
 	MerchantCode string `json:"merchant_code,omitempty" xml:"merchant_code,omitempty"`
 	// 商品skucode

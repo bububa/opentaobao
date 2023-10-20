@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wlbimports"
 )
 
-// CainiaoGlobalImPickupBigbagExpressPrequery 首公里揽收-快递预查询服务
+// Cainiaoglobalimpickupbigbagexpressprequery 首公里揽收-快递预查询服务
 // cainiao.global.im.pickup.bigbag.express.prequery
 //
 // 快递预查询服务
-func CainiaoGlobalImPickupBigbagExpressPrequery(clt *core.SDKClient, req *wlbimports.CainiaoGlobalImPickupBigbagExpressPrequeryAPIRequest, session string) (*wlbimports.CainiaoGlobalImPickupBigbagExpressPrequeryAPIResponse, error) {
-	var resp wlbimports.CainiaoGlobalImPickupBigbagExpressPrequeryAPIResponse
+func Cainiaoglobalimpickupbigbagexpressprequery(clt *core.SDKClient, req *wlbimports.CainiaoglobalimpickupbigbagexpressprequeryAPIRequest, session string) (*wlbimports.CainiaoglobalimpickupbigbagexpressprequeryAPIResponse, error) {
+	var resp wlbimports.CainiaoglobalimpickupbigbagexpressprequeryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

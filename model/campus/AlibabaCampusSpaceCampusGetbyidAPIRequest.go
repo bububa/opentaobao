@@ -6,13 +6,13 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaCampusSpaceCampusGetbyidAPIRequest 根据园区id获取园区信息 API请求
+// AlibabacampusspacecampusgetbyidAPIRequest 根据园区id获取园区信息 API请求
 // alibaba.campus.space.campus.getbyid
 //
 // 根据园区id获取园区信息
 // HSF接口名称：com.alibaba.campus.api.space.service.top.CampusApiTopService
 // HSF方法名称：getCampusById
-type AlibabaCampusSpaceCampusGetbyidAPIRequest struct {
+type AlibabacampusspacecampusgetbyidAPIRequest struct {
 	model.Params
 	// 园区ID
 	_param0 *WorkBenchContext
@@ -20,52 +20,52 @@ type AlibabaCampusSpaceCampusGetbyidAPIRequest struct {
 	_param1 int64
 }
 
-// NewAlibabaCampusSpaceCampusGetbyidRequest 初始化AlibabaCampusSpaceCampusGetbyidAPIRequest对象
-func NewAlibabaCampusSpaceCampusGetbyidRequest() *AlibabaCampusSpaceCampusGetbyidAPIRequest {
-	return &AlibabaCampusSpaceCampusGetbyidAPIRequest{
+// NewAlibabacampusspacecampusgetbyidRequest 初始化AlibabacampusspacecampusgetbyidAPIRequest对象
+func NewAlibabacampusspacecampusgetbyidRequest() *AlibabacampusspacecampusgetbyidAPIRequest {
+	return &AlibabacampusspacecampusgetbyidAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaCampusSpaceCampusGetbyidAPIRequest) GetApiMethodName() string {
+func (r AlibabacampusspacecampusgetbyidAPIRequest) GetApiMethodName() string {
 	return "alibaba.campus.space.campus.getbyid"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaCampusSpaceCampusGetbyidAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabacampusspacecampusgetbyidAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaCampusSpaceCampusGetbyidAPIRequest) GetRawParams() model.Params {
+func (r AlibabacampusspacecampusgetbyidAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam0 is Param0 Setter
 // 园区ID
-func (r *AlibabaCampusSpaceCampusGetbyidAPIRequest) SetParam0(_param0 *WorkBenchContext) error {
+func (r *AlibabacampusspacecampusgetbyidAPIRequest) SetParam0(_param0 *WorkBenchContext) error {
 	r._param0 = _param0
 	r.Set("param0", _param0)
 	return nil
 }
 
 // GetParam0 Param0 Getter
-func (r AlibabaCampusSpaceCampusGetbyidAPIRequest) GetParam0() *WorkBenchContext {
+func (r AlibabacampusspacecampusgetbyidAPIRequest) GetParam0() *WorkBenchContext {
 	return r._param0
 }
 
 // SetParam1 is Param1 Setter
 // 园区ID
-func (r *AlibabaCampusSpaceCampusGetbyidAPIRequest) SetParam1(_param1 int64) error {
+func (r *AlibabacampusspacecampusgetbyidAPIRequest) SetParam1(_param1 int64) error {
 	r._param1 = _param1
 	r.Set("param1", _param1)
 	return nil
 }
 
 // GetParam1 Param1 Getter
-func (r AlibabaCampusSpaceCampusGetbyidAPIRequest) GetParam1() int64 {
+func (r AlibabacampusspacecampusgetbyidAPIRequest) GetParam1() int64 {
 	return r._param1
 }

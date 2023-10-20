@@ -1,7 +1,7 @@
 package tvupadmin
 
-// YunosTvpubadminManageDialogDeleteTopResult 结构体
-type YunosTvpubadminManageDialogDeleteTopResult struct {
+// YunostvpubadminmanagedialogdeleteTopResult 结构体
+type YunostvpubadminmanagedialogdeleteTopResult struct {
 	// errorCode
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// errorMsg

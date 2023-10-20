@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaoTbkScOptimusMaterialMapData 结构体
-type TaobaoTbkScOptimusMaterialMapData struct {
+// TaobaotbkscoptimusmaterialMapData 结构体
+type TaobaotbkscoptimusmaterialMapData struct {
 	// 商品信息-商品小图列表
 	SmallImages []string `json:"small_images,omitempty" xml:"small_images>string,omitempty"`
 	// 商品信息-商品关联词
@@ -191,7 +191,7 @@ type TaobaoTbkScOptimusMaterialMapData struct {
 	// 营销-聚划算满减开始时间(毫秒)
 	JuPlayStartTime int64 `json:"ju_play_start_time,omitempty" xml:"ju_play_start_time,omitempty"`
 	// 前N件佣金信息-前N件佣金生效或预热时透出以下字段
-	TopnInfo *TopNInfoDto `json:"topn_info,omitempty" xml:"topn_info,omitempty"`
+	TopnInfo *TopNinfoDto `json:"topn_info,omitempty" xml:"topn_info,omitempty"`
 	// 百亿补贴信息
 	BybtInfo *BybtInfoDto `json:"bybt_info,omitempty" xml:"bybt_info,omitempty"`
 	// 猫超买返卡信息

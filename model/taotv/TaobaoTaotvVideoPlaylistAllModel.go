@@ -1,7 +1,7 @@
 package taotv
 
-// TaobaoTaotvVideoPlaylistAllModel 结构体
-type TaobaoTaotvVideoPlaylistAllModel struct {
+// TaobaotaotvvideoplaylistallModel 结构体
+type TaobaotaotvvideoplaylistallModel struct {
 	// playListName
 	PlayListName string `json:"play_list_name,omitempty" xml:"play_list_name,omitempty"`
 	// bgPic

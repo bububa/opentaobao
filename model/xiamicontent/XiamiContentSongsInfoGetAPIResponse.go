@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// XiamiContentSongsInfoGetAPIResponse 获取歌曲信息 API返回值
+// XiamicontentsongsinfogetAPIResponse 获取歌曲信息 API返回值
 // xiami.content.songs.info.get
 //
 // (批量)获取歌曲信息
-type XiamiContentSongsInfoGetAPIResponse struct {
+type XiamicontentsongsinfogetAPIResponse struct {
 	model.CommonResponse
-	XiamiContentSongsInfoGetAPIResponseModel
+	XiamicontentsongsinfogetAPIResponseModel
 }
 
-// XiamiContentSongsInfoGetAPIResponseModel is 获取歌曲信息 成功返回结果
-type XiamiContentSongsInfoGetAPIResponseModel struct {
+// XiamicontentsongsinfogetAPIResponseModel is 获取歌曲信息 成功返回结果
+type XiamicontentsongsinfogetAPIResponseModel struct {
 	XMLName xml.Name `xml:"xiami_content_songs_info_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

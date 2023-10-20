@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMemberIsvPageQueryAPIRequest isv离线会员数据分页查询 API请求
+// AlibabamemberisvpagequeryAPIRequest isv离线会员数据分页查询 API请求
 // alibaba.member.isv.page.query
 //
 // isv离线会员数据分页查询
-type AlibabaMemberIsvPageQueryAPIRequest struct {
+type AlibabamemberisvpagequeryAPIRequest struct {
 	model.Params
 	// 请求
 	_pageQueryIsvCustomerRequest *PageQueryIsvCustomerRequest
 }
 
-// NewAlibabaMemberIsvPageQueryRequest 初始化AlibabaMemberIsvPageQueryAPIRequest对象
-func NewAlibabaMemberIsvPageQueryRequest() *AlibabaMemberIsvPageQueryAPIRequest {
-	return &AlibabaMemberIsvPageQueryAPIRequest{
+// NewAlibabamemberisvpagequeryRequest 初始化AlibabamemberisvpagequeryAPIRequest对象
+func NewAlibabamemberisvpagequeryRequest() *AlibabamemberisvpagequeryAPIRequest {
+	return &AlibabamemberisvpagequeryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaMemberIsvPageQueryAPIRequest) GetApiMethodName() string {
+func (r AlibabamemberisvpagequeryAPIRequest) GetApiMethodName() string {
 	return "alibaba.member.isv.page.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaMemberIsvPageQueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabamemberisvpagequeryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaMemberIsvPageQueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabamemberisvpagequeryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetPageQueryIsvCustomerRequest is PageQueryIsvCustomerRequest Setter
 // 请求
-func (r *AlibabaMemberIsvPageQueryAPIRequest) SetPageQueryIsvCustomerRequest(_pageQueryIsvCustomerRequest *PageQueryIsvCustomerRequest) error {
+func (r *AlibabamemberisvpagequeryAPIRequest) SetPageQueryIsvCustomerRequest(_pageQueryIsvCustomerRequest *PageQueryIsvCustomerRequest) error {
 	r._pageQueryIsvCustomerRequest = _pageQueryIsvCustomerRequest
 	r.Set("page_query_isv_customer_request", _pageQueryIsvCustomerRequest)
 	return nil
 }
 
 // GetPageQueryIsvCustomerRequest PageQueryIsvCustomerRequest Getter
-func (r AlibabaMemberIsvPageQueryAPIRequest) GetPageQueryIsvCustomerRequest() *PageQueryIsvCustomerRequest {
+func (r AlibabamemberisvpagequeryAPIRequest) GetPageQueryIsvCustomerRequest() *PageQueryIsvCustomerRequest {
 	return r._pageQueryIsvCustomerRequest
 }

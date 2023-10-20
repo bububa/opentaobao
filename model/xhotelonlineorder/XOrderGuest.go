@@ -1,7 +1,7 @@
 package xhotelonlineorder
 
-// XOrderGuest 结构体
-type XOrderGuest struct {
+// XorderGuest 结构体
+type XorderGuest struct {
 	// 入住人姓名
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 房间序号

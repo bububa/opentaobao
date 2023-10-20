@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaoTbkScTpwdConvertMapData 结构体
-type TaobaoTbkScTpwdConvertMapData struct {
+// TaobaotbksctpwdconvertMapData 结构体
+type TaobaotbksctpwdconvertMapData struct {
 	// 商品Id
 	NumIid string `json:"num_iid,omitempty" xml:"num_iid,omitempty"`
 	// 商品淘客转链链接

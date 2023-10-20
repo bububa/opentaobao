@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/baichuan"
 )
 
-// TaobaoBaichuanOpenaccountLogindoublecheck 百川登录二次验证
+// Taobaobaichuanopenaccountlogindoublecheck 百川登录二次验证
 // taobao.baichuan.openaccount.logindoublecheck
 //
 // 百川登录二次验证
-func TaobaoBaichuanOpenaccountLogindoublecheck(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest, session string) (*baichuan.TaobaoBaichuanOpenaccountLogindoublecheckAPIResponse, error) {
-	var resp baichuan.TaobaoBaichuanOpenaccountLogindoublecheckAPIResponse
+func Taobaobaichuanopenaccountlogindoublecheck(clt *core.SDKClient, req *baichuan.TaobaobaichuanopenaccountlogindoublecheckAPIRequest, session string) (*baichuan.TaobaobaichuanopenaccountlogindoublecheckAPIResponse, error) {
+	var resp baichuan.TaobaobaichuanopenaccountlogindoublecheckAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

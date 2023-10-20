@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascp"
 )
 
-// AlibabaDchainAoxiangWarehouseStatusUpdate 启用/停用仓资源
+// Alibabadchainaoxiangwarehousestatusupdate 启用/停用仓资源
 // alibaba.dchain.aoxiang.warehouse.status.update
 //
 // 启用/停用仓资源
-func AlibabaDchainAoxiangWarehouseStatusUpdate(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangWarehouseStatusUpdateAPIRequest, session string) (*ascp.AlibabaDchainAoxiangWarehouseStatusUpdateAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangWarehouseStatusUpdateAPIResponse
+func Alibabadchainaoxiangwarehousestatusupdate(clt *core.SDKClient, req *ascp.AlibabadchainaoxiangwarehousestatusupdateAPIRequest, session string) (*ascp.AlibabadchainaoxiangwarehousestatusupdateAPIResponse, error) {
+	var resp ascp.AlibabadchainaoxiangwarehousestatusupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

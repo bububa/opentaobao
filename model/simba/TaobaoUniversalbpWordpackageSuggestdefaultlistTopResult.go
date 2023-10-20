@@ -1,7 +1,7 @@
 package simba
 
-// TaobaoUniversalbpWordpackageSuggestdefaultlistTopResult 结构体
-type TaobaoUniversalbpWordpackageSuggestdefaultlistTopResult struct {
+// TaobaouniversalbpwordpackagesuggestdefaultlistTopResult 结构体
+type TaobaouniversalbpwordpackagesuggestdefaultlistTopResult struct {
 	// 请求系统信息
 	Info *TopInfo `json:"info,omitempty" xml:"info,omitempty"`
 	// 结果集

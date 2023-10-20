@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/aliqin"
 )
 
-// AlibabaAliqinFcIotQryPersoninfo 查询物联卡个人实人认证信息
+// Alibabaaliqinfciotqrypersoninfo 查询物联卡个人实人认证信息
 // alibaba.aliqin.fc.iot.qry.personinfo
 //
 // 查询物联卡个人实人认证信息
-func AlibabaAliqinFcIotQryPersoninfo(clt *core.SDKClient, req *aliqin.AlibabaAliqinFcIotQryPersoninfoAPIRequest, session string) (*aliqin.AlibabaAliqinFcIotQryPersoninfoAPIResponse, error) {
-	var resp aliqin.AlibabaAliqinFcIotQryPersoninfoAPIResponse
+func Alibabaaliqinfciotqrypersoninfo(clt *core.SDKClient, req *aliqin.AlibabaaliqinfciotqrypersoninfoAPIRequest, session string) (*aliqin.AlibabaaliqinfciotqrypersoninfoAPIResponse, error) {
+	var resp aliqin.AlibabaaliqinfciotqrypersoninfoAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripBtripOpenSupplychainTrainTradeAPIRequest 商旅火车票交易流水接口 API请求
+// AlitripbtripopensupplychaintraintradeAPIRequest 商旅火车票交易流水接口 API请求
 // alitrip.btrip.open.supplychain.train.trade
 //
 // 商旅火车票交易流水接口
-type AlitripBtripOpenSupplychainTrainTradeAPIRequest struct {
+type AlitripbtripopensupplychaintraintradeAPIRequest struct {
 	model.Params
 	// 入参
 	_rq *OpenApiZzdSearchRq
 }
 
-// NewAlitripBtripOpenSupplychainTrainTradeRequest 初始化AlitripBtripOpenSupplychainTrainTradeAPIRequest对象
-func NewAlitripBtripOpenSupplychainTrainTradeRequest() *AlitripBtripOpenSupplychainTrainTradeAPIRequest {
-	return &AlitripBtripOpenSupplychainTrainTradeAPIRequest{
+// NewAlitripbtripopensupplychaintraintradeRequest 初始化AlitripbtripopensupplychaintraintradeAPIRequest对象
+func NewAlitripbtripopensupplychaintraintradeRequest() *AlitripbtripopensupplychaintraintradeAPIRequest {
+	return &AlitripbtripopensupplychaintraintradeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripBtripOpenSupplychainTrainTradeAPIRequest) GetApiMethodName() string {
+func (r AlitripbtripopensupplychaintraintradeAPIRequest) GetApiMethodName() string {
 	return "alitrip.btrip.open.supplychain.train.trade"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripBtripOpenSupplychainTrainTradeAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripbtripopensupplychaintraintradeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripBtripOpenSupplychainTrainTradeAPIRequest) GetRawParams() model.Params {
+func (r AlitripbtripopensupplychaintraintradeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRq is Rq Setter
 // 入参
-func (r *AlitripBtripOpenSupplychainTrainTradeAPIRequest) SetRq(_rq *OpenApiZzdSearchRq) error {
+func (r *AlitripbtripopensupplychaintraintradeAPIRequest) SetRq(_rq *OpenApiZzdSearchRq) error {
 	r._rq = _rq
 	r.Set("rq", _rq)
 	return nil
 }
 
 // GetRq Rq Getter
-func (r AlitripBtripOpenSupplychainTrainTradeAPIRequest) GetRq() *OpenApiZzdSearchRq {
+func (r AlitripbtripopensupplychaintraintradeAPIRequest) GetRq() *OpenApiZzdSearchRq {
 	return r._rq
 }

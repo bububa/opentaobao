@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
 
-// YunosTvpubadminContentSingleVideoSubmitauditresult 单视频审核提交审核结果
+// Yunostvpubadmincontentsinglevideosubmitauditresult 单视频审核提交审核结果
 // yunos.tvpubadmin.content.single.video.submitauditresult
 //
 // 单视频审核提交审核结果
-func YunosTvpubadminContentSingleVideoSubmitauditresult(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest, session string) (*tvupadmin.YunosTvpubadminContentSingleVideoSubmitauditresultAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminContentSingleVideoSubmitauditresultAPIResponse
+func Yunostvpubadmincontentsinglevideosubmitauditresult(clt *core.SDKClient, req *tvupadmin.YunostvpubadmincontentsinglevideosubmitauditresultAPIRequest, session string) (*tvupadmin.YunostvpubadmincontentsinglevideosubmitauditresultAPIResponse, error) {
+	var resp tvupadmin.YunostvpubadmincontentsinglevideosubmitauditresultAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

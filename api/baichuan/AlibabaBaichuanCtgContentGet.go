@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/baichuan"
 )
 
-// AlibabaBaichuanCtgContentGet 百川内容平台内容获取
+// Alibababaichuanctgcontentget 百川内容平台内容获取
 // alibaba.baichuan.ctg.content.get
 //
 // 百川内容平台内容获取
-func AlibabaBaichuanCtgContentGet(clt *core.SDKClient, req *baichuan.AlibabaBaichuanCtgContentGetAPIRequest, session string) (*baichuan.AlibabaBaichuanCtgContentGetAPIResponse, error) {
-	var resp baichuan.AlibabaBaichuanCtgContentGetAPIResponse
+func Alibababaichuanctgcontentget(clt *core.SDKClient, req *baichuan.AlibababaichuanctgcontentgetAPIRequest, session string) (*baichuan.AlibababaichuanctgcontentgetAPIResponse, error) {
+	var resp baichuan.AlibababaichuanctgcontentgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

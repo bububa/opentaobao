@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosTvpubadminAdmOttAuditAPIResponse 优酷OTT广告素材审核 API返回值
+// YunostvpubadminadmottauditAPIResponse 优酷OTT广告素材审核 API返回值
 // yunos.tvpubadmin.adm.ott.audit
 //
 // 审核优酷OTT端广告素材
-type YunosTvpubadminAdmOttAuditAPIResponse struct {
+type YunostvpubadminadmottauditAPIResponse struct {
 	model.CommonResponse
-	YunosTvpubadminAdmOttAuditAPIResponseModel
+	YunostvpubadminadmottauditAPIResponseModel
 }
 
-// YunosTvpubadminAdmOttAuditAPIResponseModel is 优酷OTT广告素材审核 成功返回结果
-type YunosTvpubadminAdmOttAuditAPIResponseModel struct {
+// YunostvpubadminadmottauditAPIResponseModel is 优酷OTT广告素材审核 成功返回结果
+type YunostvpubadminadmottauditAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_tvpubadmin_adm_ott_audit_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

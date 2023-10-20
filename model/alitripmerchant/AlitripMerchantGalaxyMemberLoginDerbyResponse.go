@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripMerchantGalaxyMemberLoginDerbyResponse 结构体
-type AlitripMerchantGalaxyMemberLoginDerbyResponse struct {
+// AlitripmerchantgalaxymemberloginderbyResponse 结构体
+type AlitripmerchantgalaxymemberloginderbyResponse struct {
 	// 错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 错误码

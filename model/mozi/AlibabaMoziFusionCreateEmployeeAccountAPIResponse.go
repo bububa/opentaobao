@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMoziFusionCreateEmployeeAccountAPIResponse 创建MOZI自建人员和账号 API返回值
+// AlibabamozifusioncreateemployeeaccountAPIResponse 创建MOZI自建人员和账号 API返回值
 // alibaba.mozi.fusion.create.employee.account
 //
 // 创建MOZI自建人员和账号
-type AlibabaMoziFusionCreateEmployeeAccountAPIResponse struct {
+type AlibabamozifusioncreateemployeeaccountAPIResponse struct {
 	model.CommonResponse
-	AlibabaMoziFusionCreateEmployeeAccountAPIResponseModel
+	AlibabamozifusioncreateemployeeaccountAPIResponseModel
 }
 
-// AlibabaMoziFusionCreateEmployeeAccountAPIResponseModel is 创建MOZI自建人员和账号 成功返回结果
-type AlibabaMoziFusionCreateEmployeeAccountAPIResponseModel struct {
+// AlibabamozifusioncreateemployeeaccountAPIResponseModel is 创建MOZI自建人员和账号 成功返回结果
+type AlibabamozifusioncreateemployeeaccountAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mozi_fusion_create_employee_account_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

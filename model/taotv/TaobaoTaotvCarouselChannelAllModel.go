@@ -1,7 +1,7 @@
 package taotv
 
-// TaobaoTaotvCarouselChannelAllModel 结构体
-type TaobaoTaotvCarouselChannelAllModel struct {
+// TaobaotaotvcarouselchannelallModel 结构体
+type TaobaotaotvcarouselchannelallModel struct {
 	// 频道所有的视频列表
 	VideoList []Videolist `json:"video_list,omitempty" xml:"video_list>videolist,omitempty"`
 	// 频道描述

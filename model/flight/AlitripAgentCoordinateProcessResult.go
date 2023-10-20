@@ -1,7 +1,7 @@
 package flight
 
-// AlitripAgentCoordinateProcessResult 结构体
-type AlitripAgentCoordinateProcessResult struct {
+// AlitripagentcoordinateprocessResult 结构体
+type AlitripagentcoordinateprocessResult struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误原因

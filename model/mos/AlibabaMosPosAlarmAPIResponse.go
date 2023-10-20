@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMosPosAlarmAPIResponse pos故障报警 API返回值
+// AlibabamosposalarmAPIResponse pos故障报警 API返回值
 // alibaba.mos.pos.alarm
 //
 // 故障报警
-type AlibabaMosPosAlarmAPIResponse struct {
+type AlibabamosposalarmAPIResponse struct {
 	model.CommonResponse
-	AlibabaMosPosAlarmAPIResponseModel
+	AlibabamosposalarmAPIResponseModel
 }
 
-// AlibabaMosPosAlarmAPIResponseModel is pos故障报警 成功返回结果
-type AlibabaMosPosAlarmAPIResponseModel struct {
+// AlibabamosposalarmAPIResponseModel is pos故障报警 成功返回结果
+type AlibabamosposalarmAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mos_pos_alarm_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

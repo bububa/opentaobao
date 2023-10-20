@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/trade"
 )
 
-// CainiaoRefundRefundactionsGet 判断该订单能执行的逆向操作集合列表
+// Cainiaorefundrefundactionsget 判断该订单能执行的逆向操作集合列表
 // cainiao.refund.refundactions.get
 //
 // 判断该订单能执行的逆向操作集合列表
-func CainiaoRefundRefundactionsGet(clt *core.SDKClient, req *trade.CainiaoRefundRefundactionsGetAPIRequest, session string) (*trade.CainiaoRefundRefundactionsGetAPIResponse, error) {
-	var resp trade.CainiaoRefundRefundactionsGetAPIResponse
+func Cainiaorefundrefundactionsget(clt *core.SDKClient, req *trade.CainiaorefundrefundactionsgetAPIRequest, session string) (*trade.CainiaorefundrefundactionsgetAPIResponse, error) {
+	var resp trade.CainiaorefundrefundactionsgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

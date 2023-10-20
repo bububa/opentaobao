@@ -1,7 +1,7 @@
 package lstlogistics
 
-// AlibabaLstLogisticsThirdpartSendResult 结构体
-type AlibabaLstLogisticsThirdpartSendResult struct {
+// AlibabalstlogisticsthirdpartsendResult 结构体
+type AlibabalstlogisticsthirdpartsendResult struct {
 	// 错误描述
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 错误码

@@ -1,7 +1,7 @@
 package axindata
 
-// TaobaoAlitripTravelAxinHotelListGetResult 结构体
-type TaobaoAlitripTravelAxinHotelListGetResult struct {
+// TaobaoalitriptravelaxinhotellistgetResult 结构体
+type TaobaoalitriptravelaxinhotellistgetResult struct {
 	// 错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 错误码

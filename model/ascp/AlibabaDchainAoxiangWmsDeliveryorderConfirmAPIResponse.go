@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaDchainAoxiangWmsDeliveryorderConfirmAPIResponse 回传发货单确认 API返回值
+// AlibabadchainaoxiangwmsdeliveryorderconfirmAPIResponse 回传发货单确认 API返回值
 // alibaba.dchain.aoxiang.wms.deliveryorder.confirm
 //
 // 回传发货单确认
-type AlibabaDchainAoxiangWmsDeliveryorderConfirmAPIResponse struct {
+type AlibabadchainaoxiangwmsdeliveryorderconfirmAPIResponse struct {
 	model.CommonResponse
-	AlibabaDchainAoxiangWmsDeliveryorderConfirmAPIResponseModel
+	AlibabadchainaoxiangwmsdeliveryorderconfirmAPIResponseModel
 }
 
-// AlibabaDchainAoxiangWmsDeliveryorderConfirmAPIResponseModel is 回传发货单确认 成功返回结果
-type AlibabaDchainAoxiangWmsDeliveryorderConfirmAPIResponseModel struct {
+// AlibabadchainaoxiangwmsdeliveryorderconfirmAPIResponseModel is 回传发货单确认 成功返回结果
+type AlibabadchainaoxiangwmsdeliveryorderconfirmAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_dchain_aoxiang_wms_deliveryorder_confirm_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

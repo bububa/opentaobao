@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaOnetouchLogisticsExpressAddressCityListAPIResponse 四级地址库-市 API返回值
+// AlibabaonetouchlogisticsexpressaddresscitylistAPIResponse 四级地址库-市 API返回值
 // alibaba.onetouch.logistics.express.address.city.list
 //
 // 四级地址库-市
-type AlibabaOnetouchLogisticsExpressAddressCityListAPIResponse struct {
+type AlibabaonetouchlogisticsexpressaddresscitylistAPIResponse struct {
 	model.CommonResponse
-	AlibabaOnetouchLogisticsExpressAddressCityListAPIResponseModel
+	AlibabaonetouchlogisticsexpressaddresscitylistAPIResponseModel
 }
 
-// AlibabaOnetouchLogisticsExpressAddressCityListAPIResponseModel is 四级地址库-市 成功返回结果
-type AlibabaOnetouchLogisticsExpressAddressCityListAPIResponseModel struct {
+// AlibabaonetouchlogisticsexpressaddresscitylistAPIResponseModel is 四级地址库-市 成功返回结果
+type AlibabaonetouchlogisticsexpressaddresscitylistAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_onetouch_logistics_express_address_city_list_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
-	Result *AlibabaOnetouchLogisticsExpressAddressCityListResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaonetouchlogisticsexpressaddresscitylistResult `json:"result,omitempty" xml:"result,omitempty"`
 }

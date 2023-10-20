@@ -1,7 +1,7 @@
 package product
 
-// TaobaoBanamadpcItemUpdateApiResult 结构体
-type TaobaoBanamadpcItemUpdateApiResult struct {
+// TaobaobanamadpcitemupdateApiResult 结构体
+type TaobaobanamadpcitemupdateApiResult struct {
 	// 错误信息
 	ErMsg string `json:"er_msg,omitempty" xml:"er_msg,omitempty"`
 	// 错误码

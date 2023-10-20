@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/logistic"
 )
 
-// CainiaoWaybillCloudprintNetprintVerifycode 打印验证码
+// Cainiaowaybillcloudprintnetprintverifycode 打印验证码
 // cainiao.waybill.cloudprint.netprint.verifycode
 //
 // 打印获取验证码
-func CainiaoWaybillCloudprintNetprintVerifycode(clt *core.SDKClient, req *logistic.CainiaoWaybillCloudprintNetprintVerifycodeAPIRequest, session string) (*logistic.CainiaoWaybillCloudprintNetprintVerifycodeAPIResponse, error) {
-	var resp logistic.CainiaoWaybillCloudprintNetprintVerifycodeAPIResponse
+func Cainiaowaybillcloudprintnetprintverifycode(clt *core.SDKClient, req *logistic.CainiaowaybillcloudprintnetprintverifycodeAPIRequest, session string) (*logistic.CainiaowaybillcloudprintnetprintverifycodeAPIResponse, error) {
+	var resp logistic.CainiaowaybillcloudprintnetprintverifycodeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

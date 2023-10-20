@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaLstTradeSellerOfflineOrderCancelAPIRequest 供应商-线下订单-取消接口 API请求
+// AlibabalsttradesellerofflineordercancelAPIRequest 供应商-线下订单-取消接口 API请求
 // alibaba.lst.trade.seller.offline.order.cancel
 //
 // 供应商线下订单数据上传之后取消
-type AlibabaLstTradeSellerOfflineOrderCancelAPIRequest struct {
+type AlibabalsttradesellerofflineordercancelAPIRequest struct {
 	model.Params
 	// 入参
 	_offlineOrderCancalParam *LstOfflineOrderCancalParam
 }
 
-// NewAlibabaLstTradeSellerOfflineOrderCancelRequest 初始化AlibabaLstTradeSellerOfflineOrderCancelAPIRequest对象
-func NewAlibabaLstTradeSellerOfflineOrderCancelRequest() *AlibabaLstTradeSellerOfflineOrderCancelAPIRequest {
-	return &AlibabaLstTradeSellerOfflineOrderCancelAPIRequest{
+// NewAlibabalsttradesellerofflineordercancelRequest 初始化AlibabalsttradesellerofflineordercancelAPIRequest对象
+func NewAlibabalsttradesellerofflineordercancelRequest() *AlibabalsttradesellerofflineordercancelAPIRequest {
+	return &AlibabalsttradesellerofflineordercancelAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaLstTradeSellerOfflineOrderCancelAPIRequest) GetApiMethodName() string {
+func (r AlibabalsttradesellerofflineordercancelAPIRequest) GetApiMethodName() string {
 	return "alibaba.lst.trade.seller.offline.order.cancel"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaLstTradeSellerOfflineOrderCancelAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabalsttradesellerofflineordercancelAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaLstTradeSellerOfflineOrderCancelAPIRequest) GetRawParams() model.Params {
+func (r AlibabalsttradesellerofflineordercancelAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOfflineOrderCancalParam is OfflineOrderCancalParam Setter
 // 入参
-func (r *AlibabaLstTradeSellerOfflineOrderCancelAPIRequest) SetOfflineOrderCancalParam(_offlineOrderCancalParam *LstOfflineOrderCancalParam) error {
+func (r *AlibabalsttradesellerofflineordercancelAPIRequest) SetOfflineOrderCancalParam(_offlineOrderCancalParam *LstOfflineOrderCancalParam) error {
 	r._offlineOrderCancalParam = _offlineOrderCancalParam
 	r.Set("offline_order_cancal_param", _offlineOrderCancalParam)
 	return nil
 }
 
 // GetOfflineOrderCancalParam OfflineOrderCancalParam Getter
-func (r AlibabaLstTradeSellerOfflineOrderCancelAPIRequest) GetOfflineOrderCancalParam() *LstOfflineOrderCancalParam {
+func (r AlibabalsttradesellerofflineordercancelAPIRequest) GetOfflineOrderCancalParam() *LstOfflineOrderCancalParam {
 	return r._offlineOrderCancalParam
 }

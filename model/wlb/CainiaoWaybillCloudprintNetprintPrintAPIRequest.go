@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoWaybillCloudprintNetprintPrintAPIRequest 网络打印机打印接口 API请求
+// CainiaowaybillcloudprintnetprintprintAPIRequest 网络打印机打印接口 API请求
 // cainiao.waybill.cloudprint.netprint.print
 //
 // 打印接口
-type CainiaoWaybillCloudprintNetprintPrintAPIRequest struct {
+type CainiaowaybillcloudprintnetprintprintAPIRequest struct {
 	model.Params
 	// 请求
 	_printerPrintData *CloudPrinterPrintRequest
 }
 
-// NewCainiaoWaybillCloudprintNetprintPrintRequest 初始化CainiaoWaybillCloudprintNetprintPrintAPIRequest对象
-func NewCainiaoWaybillCloudprintNetprintPrintRequest() *CainiaoWaybillCloudprintNetprintPrintAPIRequest {
-	return &CainiaoWaybillCloudprintNetprintPrintAPIRequest{
+// NewCainiaowaybillcloudprintnetprintprintRequest 初始化CainiaowaybillcloudprintnetprintprintAPIRequest对象
+func NewCainiaowaybillcloudprintnetprintprintRequest() *CainiaowaybillcloudprintnetprintprintAPIRequest {
+	return &CainiaowaybillcloudprintnetprintprintAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r CainiaoWaybillCloudprintNetprintPrintAPIRequest) GetApiMethodName() string {
+func (r CainiaowaybillcloudprintnetprintprintAPIRequest) GetApiMethodName() string {
 	return "cainiao.waybill.cloudprint.netprint.print"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r CainiaoWaybillCloudprintNetprintPrintAPIRequest) GetApiParams(params url.Values) {
+func (r CainiaowaybillcloudprintnetprintprintAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r CainiaoWaybillCloudprintNetprintPrintAPIRequest) GetRawParams() model.Params {
+func (r CainiaowaybillcloudprintnetprintprintAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetPrinterPrintData is PrinterPrintData Setter
 // 请求
-func (r *CainiaoWaybillCloudprintNetprintPrintAPIRequest) SetPrinterPrintData(_printerPrintData *CloudPrinterPrintRequest) error {
+func (r *CainiaowaybillcloudprintnetprintprintAPIRequest) SetPrinterPrintData(_printerPrintData *CloudPrinterPrintRequest) error {
 	r._printerPrintData = _printerPrintData
 	r.Set("printer_print_data", _printerPrintData)
 	return nil
 }
 
 // GetPrinterPrintData PrinterPrintData Getter
-func (r CainiaoWaybillCloudprintNetprintPrintAPIRequest) GetPrinterPrintData() *CloudPrinterPrintRequest {
+func (r CainiaowaybillcloudprintnetprintprintAPIRequest) GetPrinterPrintData() *CloudPrinterPrintRequest {
 	return r._printerPrintData
 }

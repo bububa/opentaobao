@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaValueCoinIssueAPIResponse 爱豆发放 API返回值
+// AlibabavaluecoinissueAPIResponse 爱豆发放 API返回值
 // alibaba.value.coin.issue
 //
 // 爱豆发放
-type AlibabaValueCoinIssueAPIResponse struct {
+type AlibabavaluecoinissueAPIResponse struct {
 	model.CommonResponse
-	AlibabaValueCoinIssueAPIResponseModel
+	AlibabavaluecoinissueAPIResponseModel
 }
 
-// AlibabaValueCoinIssueAPIResponseModel is 爱豆发放 成功返回结果
-type AlibabaValueCoinIssueAPIResponseModel struct {
+// AlibabavaluecoinissueAPIResponseModel is 爱豆发放 成功返回结果
+type AlibabavaluecoinissueAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_value_coin_issue_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

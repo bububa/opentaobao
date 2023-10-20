@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/campus"
 )
 
-// AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologs 分时间段获取用户历史位置信息
+// Alibabacampusadminmapuserlocationinfogetuserlocationinfologs 分时间段获取用户历史位置信息
 // alibaba.campus.adminmap.userlocationinfo.getuserlocationinfologs
 //
 // 分时间段获取用户历史位置信息
-func AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologs(clt *core.SDKClient, req *campus.AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIRequest, session string) (*campus.AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIResponse, error) {
-	var resp campus.AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsAPIResponse
+func Alibabacampusadminmapuserlocationinfogetuserlocationinfologs(clt *core.SDKClient, req *campus.AlibabacampusadminmapuserlocationinfogetuserlocationinfologsAPIRequest, session string) (*campus.AlibabacampusadminmapuserlocationinfogetuserlocationinfologsAPIResponse, error) {
+	var resp campus.AlibabacampusadminmapuserlocationinfogetuserlocationinfologsAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

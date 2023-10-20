@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// AlibabaScbpProductGroupGet 查询指定产品分组的下一层子分组
+// Alibabascbpproductgroupget 查询指定产品分组的下一层子分组
 // alibaba.scbp.product.group.get
 //
 // 查询指定产品分组的下一层子分组
-func AlibabaScbpProductGroupGet(clt *core.SDKClient, req *scbp.AlibabaScbpProductGroupGetAPIRequest, session string) (*scbp.AlibabaScbpProductGroupGetAPIResponse, error) {
-	var resp scbp.AlibabaScbpProductGroupGetAPIResponse
+func Alibabascbpproductgroupget(clt *core.SDKClient, req *scbp.AlibabascbpproductgroupgetAPIRequest, session string) (*scbp.AlibabascbpproductgroupgetAPIResponse, error) {
+	var resp scbp.AlibabascbpproductgroupgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

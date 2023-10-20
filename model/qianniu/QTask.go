@@ -1,7 +1,7 @@
 package qianniu
 
-// QTask 结构体
-type QTask struct {
+// Qtask 结构体
+type Qtask struct {
 	// 执行者用户昵称
 	ReceiverNick string `json:"receiver_nick,omitempty" xml:"receiver_nick,omitempty"`
 	// 发起人nick
@@ -83,7 +83,7 @@ type QTask struct {
 	// 任务&amp;ldquo;已读&amp;rdquo;、&amp;ldquo;未读&amp;rdquo;状态，0：已读，1：未读
 	ReadStatus int64 `json:"read_status,omitempty" xml:"read_status,omitempty"`
 	// 关联的任务元数据
-	Meta *QTaskMetadata `json:"meta,omitempty" xml:"meta,omitempty"`
+	Meta *QtaskMetadata `json:"meta,omitempty" xml:"meta,omitempty"`
 	// 是否删除
 	IsDeleted int64 `json:"is_deleted,omitempty" xml:"is_deleted,omitempty"`
 	// 父任务的id

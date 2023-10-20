@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoRhinoCrmReviewDeliveryAPIResponse crm实体预询期 API返回值
+// TaobaorhinocrmreviewdeliveryAPIResponse crm实体预询期 API返回值
 // taobao.rhino.crm.review.delivery
 //
 // crm实体预询期
-type TaobaoRhinoCrmReviewDeliveryAPIResponse struct {
+type TaobaorhinocrmreviewdeliveryAPIResponse struct {
 	model.CommonResponse
-	TaobaoRhinoCrmReviewDeliveryAPIResponseModel
+	TaobaorhinocrmreviewdeliveryAPIResponseModel
 }
 
-// TaobaoRhinoCrmReviewDeliveryAPIResponseModel is crm实体预询期 成功返回结果
-type TaobaoRhinoCrmReviewDeliveryAPIResponseModel struct {
+// TaobaorhinocrmreviewdeliveryAPIResponseModel is crm实体预询期 成功返回结果
+type TaobaorhinocrmreviewdeliveryAPIResponseModel struct {
 	XMLName xml.Name `xml:"rhino_crm_review_delivery_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallCcfCrowdActivityuserUploadAPIRequest 品牌营销活动用户上传 API请求
+// TmallccfcrowdactivityuseruploadAPIRequest 品牌营销活动用户上传 API请求
 // tmall.ccf.crowd.activityuser.upload
 //
 // 搜集ISV的活动用户信息，将其沉淀为活动人群数据
-type TmallCcfCrowdActivityuserUploadAPIRequest struct {
+type TmallccfcrowdactivityuseruploadAPIRequest struct {
 	model.Params
 	// 人群类型
 	_crowdTypes []string
@@ -22,78 +22,78 @@ type TmallCcfCrowdActivityuserUploadAPIRequest struct {
 	_activityId int64
 }
 
-// NewTmallCcfCrowdActivityuserUploadRequest 初始化TmallCcfCrowdActivityuserUploadAPIRequest对象
-func NewTmallCcfCrowdActivityuserUploadRequest() *TmallCcfCrowdActivityuserUploadAPIRequest {
-	return &TmallCcfCrowdActivityuserUploadAPIRequest{
+// NewTmallccfcrowdactivityuseruploadRequest 初始化TmallccfcrowdactivityuseruploadAPIRequest对象
+func NewTmallccfcrowdactivityuseruploadRequest() *TmallccfcrowdactivityuseruploadAPIRequest {
+	return &TmallccfcrowdactivityuseruploadAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallCcfCrowdActivityuserUploadAPIRequest) GetApiMethodName() string {
+func (r TmallccfcrowdactivityuseruploadAPIRequest) GetApiMethodName() string {
 	return "tmall.ccf.crowd.activityuser.upload"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallCcfCrowdActivityuserUploadAPIRequest) GetApiParams(params url.Values) {
+func (r TmallccfcrowdactivityuseruploadAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallCcfCrowdActivityuserUploadAPIRequest) GetRawParams() model.Params {
+func (r TmallccfcrowdactivityuseruploadAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCrowdTypes is CrowdTypes Setter
 // 人群类型
-func (r *TmallCcfCrowdActivityuserUploadAPIRequest) SetCrowdTypes(_crowdTypes []string) error {
+func (r *TmallccfcrowdactivityuseruploadAPIRequest) SetCrowdTypes(_crowdTypes []string) error {
 	r._crowdTypes = _crowdTypes
 	r.Set("crowd_types", _crowdTypes)
 	return nil
 }
 
 // GetCrowdTypes CrowdTypes Getter
-func (r TmallCcfCrowdActivityuserUploadAPIRequest) GetCrowdTypes() []string {
+func (r TmallccfcrowdactivityuseruploadAPIRequest) GetCrowdTypes() []string {
 	return r._crowdTypes
 }
 
 // SetTaobaoOpenId is TaobaoOpenId Setter
 // 淘宝小程序的openid
-func (r *TmallCcfCrowdActivityuserUploadAPIRequest) SetTaobaoOpenId(_taobaoOpenId string) error {
+func (r *TmallccfcrowdactivityuseruploadAPIRequest) SetTaobaoOpenId(_taobaoOpenId string) error {
 	r._taobaoOpenId = _taobaoOpenId
 	r.Set("taobao_open_id", _taobaoOpenId)
 	return nil
 }
 
 // GetTaobaoOpenId TaobaoOpenId Getter
-func (r TmallCcfCrowdActivityuserUploadAPIRequest) GetTaobaoOpenId() string {
+func (r TmallccfcrowdactivityuseruploadAPIRequest) GetTaobaoOpenId() string {
 	return r._taobaoOpenId
 }
 
 // SetTaobaoAppKey is TaobaoAppKey Setter
 // 小程序对应的appKey
-func (r *TmallCcfCrowdActivityuserUploadAPIRequest) SetTaobaoAppKey(_taobaoAppKey string) error {
+func (r *TmallccfcrowdactivityuseruploadAPIRequest) SetTaobaoAppKey(_taobaoAppKey string) error {
 	r._taobaoAppKey = _taobaoAppKey
 	r.Set("taobao_app_key", _taobaoAppKey)
 	return nil
 }
 
 // GetTaobaoAppKey TaobaoAppKey Getter
-func (r TmallCcfCrowdActivityuserUploadAPIRequest) GetTaobaoAppKey() string {
+func (r TmallccfcrowdactivityuseruploadAPIRequest) GetTaobaoAppKey() string {
 	return r._taobaoAppKey
 }
 
 // SetActivityId is ActivityId Setter
 // 活动id
-func (r *TmallCcfCrowdActivityuserUploadAPIRequest) SetActivityId(_activityId int64) error {
+func (r *TmallccfcrowdactivityuseruploadAPIRequest) SetActivityId(_activityId int64) error {
 	r._activityId = _activityId
 	r.Set("activity_id", _activityId)
 	return nil
 }
 
 // GetActivityId ActivityId Getter
-func (r TmallCcfCrowdActivityuserUploadAPIRequest) GetActivityId() int64 {
+func (r TmallccfcrowdactivityuseruploadAPIRequest) GetActivityId() int64 {
 	return r._activityId
 }

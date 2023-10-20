@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaSellerVendorTradePurchaseAPIRequest 查看购买人的订单记录以及授权时间 API请求
+// AlibabasellervendortradepurchaseAPIRequest 查看购买人的订单记录以及授权时间 API请求
 // alibaba.seller.vendor.trade.purchase
 //
 // 查看购买人的订单记录以及授权时间
-type AlibabaSellerVendorTradePurchaseAPIRequest struct {
+type AlibabasellervendortradepurchaseAPIRequest struct {
 	model.Params
 	// 买家登录账号
 	_buyerLoginId string
@@ -18,52 +18,52 @@ type AlibabaSellerVendorTradePurchaseAPIRequest struct {
 	_serviceCode string
 }
 
-// NewAlibabaSellerVendorTradePurchaseRequest 初始化AlibabaSellerVendorTradePurchaseAPIRequest对象
-func NewAlibabaSellerVendorTradePurchaseRequest() *AlibabaSellerVendorTradePurchaseAPIRequest {
-	return &AlibabaSellerVendorTradePurchaseAPIRequest{
+// NewAlibabasellervendortradepurchaseRequest 初始化AlibabasellervendortradepurchaseAPIRequest对象
+func NewAlibabasellervendortradepurchaseRequest() *AlibabasellervendortradepurchaseAPIRequest {
+	return &AlibabasellervendortradepurchaseAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaSellerVendorTradePurchaseAPIRequest) GetApiMethodName() string {
+func (r AlibabasellervendortradepurchaseAPIRequest) GetApiMethodName() string {
 	return "alibaba.seller.vendor.trade.purchase"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaSellerVendorTradePurchaseAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabasellervendortradepurchaseAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaSellerVendorTradePurchaseAPIRequest) GetRawParams() model.Params {
+func (r AlibabasellervendortradepurchaseAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetBuyerLoginId is BuyerLoginId Setter
 // 买家登录账号
-func (r *AlibabaSellerVendorTradePurchaseAPIRequest) SetBuyerLoginId(_buyerLoginId string) error {
+func (r *AlibabasellervendortradepurchaseAPIRequest) SetBuyerLoginId(_buyerLoginId string) error {
 	r._buyerLoginId = _buyerLoginId
 	r.Set("buyer_login_id", _buyerLoginId)
 	return nil
 }
 
 // GetBuyerLoginId BuyerLoginId Getter
-func (r AlibabaSellerVendorTradePurchaseAPIRequest) GetBuyerLoginId() string {
+func (r AlibabasellervendortradepurchaseAPIRequest) GetBuyerLoginId() string {
 	return r._buyerLoginId
 }
 
 // SetServiceCode is ServiceCode Setter
 // 服务code
-func (r *AlibabaSellerVendorTradePurchaseAPIRequest) SetServiceCode(_serviceCode string) error {
+func (r *AlibabasellervendortradepurchaseAPIRequest) SetServiceCode(_serviceCode string) error {
 	r._serviceCode = _serviceCode
 	r.Set("service_code", _serviceCode)
 	return nil
 }
 
 // GetServiceCode ServiceCode Getter
-func (r AlibabaSellerVendorTradePurchaseAPIRequest) GetServiceCode() string {
+func (r AlibabasellervendortradepurchaseAPIRequest) GetServiceCode() string {
 	return r._serviceCode
 }

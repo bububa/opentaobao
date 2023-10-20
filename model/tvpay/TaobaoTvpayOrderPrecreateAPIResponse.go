@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTvpayOrderPrecreateAPIResponse tv支付预下单 API返回值
+// TaobaotvpayorderprecreateAPIResponse tv支付预下单 API返回值
 // taobao.tvpay.order.precreate
 //
 // tv支付预下单
-type TaobaoTvpayOrderPrecreateAPIResponse struct {
+type TaobaotvpayorderprecreateAPIResponse struct {
 	model.CommonResponse
-	TaobaoTvpayOrderPrecreateAPIResponseModel
+	TaobaotvpayorderprecreateAPIResponseModel
 }
 
-// TaobaoTvpayOrderPrecreateAPIResponseModel is tv支付预下单 成功返回结果
-type TaobaoTvpayOrderPrecreateAPIResponseModel struct {
+// TaobaotvpayorderprecreateAPIResponseModel is tv支付预下单 成功返回结果
+type TaobaotvpayorderprecreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"tvpay_order_precreate_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

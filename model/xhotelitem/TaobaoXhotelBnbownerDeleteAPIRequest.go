@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoXhotelBnbownerDeleteAPIRequest 民宿房东删除接口 API请求
+// TaobaoxhotelbnbownerdeleteAPIRequest 民宿房东删除接口 API请求
 // taobao.xhotel.bnbowner.delete
 //
 // 民宿房东删除接口，删除房东后，对应的门店及房源会同步删除，请谨慎使用
-type TaobaoXhotelBnbownerDeleteAPIRequest struct {
+type TaobaoxhotelbnbownerdeleteAPIRequest struct {
 	model.Params
 	// 对接系统商名称：可为空不要乱填，需要申请后使用，默认taobao
 	_vendor string
@@ -18,52 +18,52 @@ type TaobaoXhotelBnbownerDeleteAPIRequest struct {
 	_outerId string
 }
 
-// NewTaobaoXhotelBnbownerDeleteRequest 初始化TaobaoXhotelBnbownerDeleteAPIRequest对象
-func NewTaobaoXhotelBnbownerDeleteRequest() *TaobaoXhotelBnbownerDeleteAPIRequest {
-	return &TaobaoXhotelBnbownerDeleteAPIRequest{
+// NewTaobaoxhotelbnbownerdeleteRequest 初始化TaobaoxhotelbnbownerdeleteAPIRequest对象
+func NewTaobaoxhotelbnbownerdeleteRequest() *TaobaoxhotelbnbownerdeleteAPIRequest {
+	return &TaobaoxhotelbnbownerdeleteAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoXhotelBnbownerDeleteAPIRequest) GetApiMethodName() string {
+func (r TaobaoxhotelbnbownerdeleteAPIRequest) GetApiMethodName() string {
 	return "taobao.xhotel.bnbowner.delete"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoXhotelBnbownerDeleteAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoxhotelbnbownerdeleteAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoXhotelBnbownerDeleteAPIRequest) GetRawParams() model.Params {
+func (r TaobaoxhotelbnbownerdeleteAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetVendor is Vendor Setter
 // 对接系统商名称：可为空不要乱填，需要申请后使用，默认taobao
-func (r *TaobaoXhotelBnbownerDeleteAPIRequest) SetVendor(_vendor string) error {
+func (r *TaobaoxhotelbnbownerdeleteAPIRequest) SetVendor(_vendor string) error {
 	r._vendor = _vendor
 	r.Set("vendor", _vendor)
 	return nil
 }
 
 // GetVendor Vendor Getter
-func (r TaobaoXhotelBnbownerDeleteAPIRequest) GetVendor() string {
+func (r TaobaoxhotelbnbownerdeleteAPIRequest) GetVendor() string {
 	return r._vendor
 }
 
 // SetOuterId is OuterId Setter
 // 房东Id，系统商outer_id
-func (r *TaobaoXhotelBnbownerDeleteAPIRequest) SetOuterId(_outerId string) error {
+func (r *TaobaoxhotelbnbownerdeleteAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
 	r.Set("outer_id", _outerId)
 	return nil
 }
 
 // GetOuterId OuterId Getter
-func (r TaobaoXhotelBnbownerDeleteAPIRequest) GetOuterId() string {
+func (r TaobaoxhotelbnbownerdeleteAPIRequest) GetOuterId() string {
 	return r._outerId
 }

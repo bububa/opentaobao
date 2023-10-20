@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpressLocalLogisticsShippingMethodQueryAPIResponse query shipping method API返回值
+// AliexpresslocallogisticsshippingmethodqueryAPIResponse query shipping method API返回值
 // aliexpress.local.logistics.shipping.method.query
 //
 // query shipping method
-type AliexpressLocalLogisticsShippingMethodQueryAPIResponse struct {
+type AliexpresslocallogisticsshippingmethodqueryAPIResponse struct {
 	model.CommonResponse
-	AliexpressLocalLogisticsShippingMethodQueryAPIResponseModel
+	AliexpresslocallogisticsshippingmethodqueryAPIResponseModel
 }
 
-// AliexpressLocalLogisticsShippingMethodQueryAPIResponseModel is query shipping method 成功返回结果
-type AliexpressLocalLogisticsShippingMethodQueryAPIResponseModel struct {
+// AliexpresslocallogisticsshippingmethodqueryAPIResponseModel is query shipping method 成功返回结果
+type AliexpresslocallogisticsshippingmethodqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_local_logistics_shipping_method_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

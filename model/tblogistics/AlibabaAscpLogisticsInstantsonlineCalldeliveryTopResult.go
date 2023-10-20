@@ -1,7 +1,7 @@
 package tblogistics
 
-// AlibabaAscpLogisticsInstantsonlineCalldeliveryTopResult 结构体
-type AlibabaAscpLogisticsInstantsonlineCalldeliveryTopResult struct {
+// AlibabaascplogisticsinstantsonlinecalldeliveryTopResult 结构体
+type AlibabaascplogisticsinstantsonlinecalldeliveryTopResult struct {
 	// 取号流水号
 	CwOrderId string `json:"cw_order_id,omitempty" xml:"cw_order_id,omitempty"`
 	// 物流单号

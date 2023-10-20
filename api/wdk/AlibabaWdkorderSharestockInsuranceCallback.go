@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaWdkorderSharestockInsuranceCallback 共享库存订单投保后回传保单号
+// Alibabawdkordersharestockinsurancecallback 共享库存订单投保后回传保单号
 // alibaba.wdkorder.sharestock.insurance.callback
 //
 // 共享库存订单投保消息获取
-func AlibabaWdkorderSharestockInsuranceCallback(clt *core.SDKClient, req *wdk.AlibabaWdkorderSharestockInsuranceCallbackAPIRequest, session string) (*wdk.AlibabaWdkorderSharestockInsuranceCallbackAPIResponse, error) {
-	var resp wdk.AlibabaWdkorderSharestockInsuranceCallbackAPIResponse
+func Alibabawdkordersharestockinsurancecallback(clt *core.SDKClient, req *wdk.AlibabawdkordersharestockinsurancecallbackAPIRequest, session string) (*wdk.AlibabawdkordersharestockinsurancecallbackAPIResponse, error) {
+	var resp wdk.AlibabawdkordersharestockinsurancecallbackAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

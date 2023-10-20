@@ -1,7 +1,7 @@
 package ascpchannel
 
-// AlibabaAscpAicSupplierAicinventoryNegativeSalePublishData 结构体
-type AlibabaAscpAicSupplierAicinventoryNegativeSalePublishData struct {
+// AlibabaascpaicsupplieraicinventorynegativesalepublishData 结构体
+type AlibabaascpaicsupplieraicinventorynegativesalepublishData struct {
 	// 外部交易号(子)
 	ExtSubOrderId string `json:"ext_sub_order_id,omitempty" xml:"ext_sub_order_id,omitempty"`
 	// 外部交易号(主)

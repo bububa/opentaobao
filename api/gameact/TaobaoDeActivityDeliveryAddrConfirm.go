@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/gameact"
 )
 
-// TaobaoDeActivityDeliveryAddrConfirm 用户收件地址确认
+// Taobaodeactivitydeliveryaddrconfirm 用户收件地址确认
 // taobao.de.activity.delivery.addr.confirm
 //
 // 用户收件地址确认
-func TaobaoDeActivityDeliveryAddrConfirm(clt *core.SDKClient, req *gameact.TaobaoDeActivityDeliveryAddrConfirmAPIRequest, session string) (*gameact.TaobaoDeActivityDeliveryAddrConfirmAPIResponse, error) {
-	var resp gameact.TaobaoDeActivityDeliveryAddrConfirmAPIResponse
+func Taobaodeactivitydeliveryaddrconfirm(clt *core.SDKClient, req *gameact.TaobaodeactivitydeliveryaddrconfirmAPIRequest, session string) (*gameact.TaobaodeactivitydeliveryaddrconfirmAPIResponse, error) {
+	var resp gameact.TaobaodeactivitydeliveryaddrconfirmAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

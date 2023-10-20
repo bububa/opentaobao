@@ -1,7 +1,7 @@
 package tmallservice
 
-// TmallServiceSettleadjustmentOperateResult 结构体
-type TmallServiceSettleadjustmentOperateResult struct {
+// TmallservicesettleadjustmentoperateResult 结构体
+type TmallservicesettleadjustmentoperateResult struct {
 	// 错误信息
 	DisplayMsg string `json:"display_msg,omitempty" xml:"display_msg,omitempty"`
 	// 错误编码

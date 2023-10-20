@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/btrip"
 )
 
-// AlitripBtripProjectDelete 删除项目
+// Alitripbtripprojectdelete 删除项目
 // alitrip.btrip.project.delete
 //
 // 删除项目
-func AlitripBtripProjectDelete(clt *core.SDKClient, req *btrip.AlitripBtripProjectDeleteAPIRequest, session string) (*btrip.AlitripBtripProjectDeleteAPIResponse, error) {
-	var resp btrip.AlitripBtripProjectDeleteAPIResponse
+func Alitripbtripprojectdelete(clt *core.SDKClient, req *btrip.AlitripbtripprojectdeleteAPIRequest, session string) (*btrip.AlitripbtripprojectdeleteAPIResponse, error) {
+	var resp btrip.AlitripbtripprojectdeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

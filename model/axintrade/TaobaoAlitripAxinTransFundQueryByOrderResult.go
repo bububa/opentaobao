@@ -1,7 +1,7 @@
 package axintrade
 
-// TaobaoAlitripAxinTransFundQueryByOrderResult 结构体
-type TaobaoAlitripAxinTransFundQueryByOrderResult struct {
+// TaobaoalitripaxintransfundquerybyorderResult 结构体
+type TaobaoalitripaxintransfundquerybyorderResult struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息

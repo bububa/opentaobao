@@ -1,7 +1,7 @@
 package jae
 
-// TaobaoAplatformWeakgetResult 结构体
-type TaobaoAplatformWeakgetResult struct {
+// TaobaoaplatformweakgetResult 结构体
+type TaobaoaplatformweakgetResult struct {
 	// headers
 	Headers string `json:"headers,omitempty" xml:"headers,omitempty"`
 	// model

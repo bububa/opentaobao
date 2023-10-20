@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
 
-// YunosTvpubadminContentDeviceGetterminaltypemap 获取终端类型表
+// Yunostvpubadmincontentdevicegetterminaltypemap 获取终端类型表
 // yunos.tvpubadmin.content.device.getterminaltypemap
 //
 // 获取终端类型表
-func YunosTvpubadminContentDeviceGetterminaltypemap(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentDeviceGetterminaltypemapAPIRequest, session string) (*tvupadmin.YunosTvpubadminContentDeviceGetterminaltypemapAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminContentDeviceGetterminaltypemapAPIResponse
+func Yunostvpubadmincontentdevicegetterminaltypemap(clt *core.SDKClient, req *tvupadmin.YunostvpubadmincontentdevicegetterminaltypemapAPIRequest, session string) (*tvupadmin.YunostvpubadmincontentdevicegetterminaltypemapAPIResponse, error) {
+	var resp tvupadmin.YunostvpubadmincontentdevicegetterminaltypemapAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

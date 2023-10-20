@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaScbpTargetAdPlanForbiddenWordModifyAPIResponse 定向推广-新增或删除屏蔽词 API返回值
+// AlibabascbptargetadplanforbiddenwordmodifyAPIResponse 定向推广-新增或删除屏蔽词 API返回值
 // alibaba.scbp.target.ad.plan.forbidden.word.modify
 //
 // 定向推广-新增或删除屏蔽词
-type AlibabaScbpTargetAdPlanForbiddenWordModifyAPIResponse struct {
+type AlibabascbptargetadplanforbiddenwordmodifyAPIResponse struct {
 	model.CommonResponse
-	AlibabaScbpTargetAdPlanForbiddenWordModifyAPIResponseModel
+	AlibabascbptargetadplanforbiddenwordmodifyAPIResponseModel
 }
 
-// AlibabaScbpTargetAdPlanForbiddenWordModifyAPIResponseModel is 定向推广-新增或删除屏蔽词 成功返回结果
-type AlibabaScbpTargetAdPlanForbiddenWordModifyAPIResponseModel struct {
+// AlibabascbptargetadplanforbiddenwordmodifyAPIResponseModel is 定向推广-新增或删除屏蔽词 成功返回结果
+type AlibabascbptargetadplanforbiddenwordmodifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_target_ad_plan_forbidden_word_modify_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

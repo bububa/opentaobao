@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaTmallgenieScpPlanBomUploadAPIResponse 计划BOM同步 API返回值
+// AlibabatmallgeniescpplanbomuploadAPIResponse 计划BOM同步 API返回值
 // alibaba.tmallgenie.scp.plan.bom.upload
 //
 // 计划BOM同步
-type AlibabaTmallgenieScpPlanBomUploadAPIResponse struct {
+type AlibabatmallgeniescpplanbomuploadAPIResponse struct {
 	model.CommonResponse
-	AlibabaTmallgenieScpPlanBomUploadAPIResponseModel
+	AlibabatmallgeniescpplanbomuploadAPIResponseModel
 }
 
-// AlibabaTmallgenieScpPlanBomUploadAPIResponseModel is 计划BOM同步 成功返回结果
-type AlibabaTmallgenieScpPlanBomUploadAPIResponseModel struct {
+// AlibabatmallgeniescpplanbomuploadAPIResponseModel is 计划BOM同步 成功返回结果
+type AlibabatmallgeniescpplanbomuploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_tmallgenie_scp_plan_bom_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

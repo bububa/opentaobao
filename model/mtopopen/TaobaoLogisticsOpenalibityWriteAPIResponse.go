@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoLogisticsOpenalibityWriteAPIResponse 为快递公司提供的物流信息通用写入接口 API返回值
+// TaobaologisticsopenalibitywriteAPIResponse 为快递公司提供的物流信息通用写入接口 API返回值
 // taobao.logistics.openalibity.write
 //
 // 为快递公司提供的物流信息通用写入接口
-type TaobaoLogisticsOpenalibityWriteAPIResponse struct {
+type TaobaologisticsopenalibitywriteAPIResponse struct {
 	model.CommonResponse
-	TaobaoLogisticsOpenalibityWriteAPIResponseModel
+	TaobaologisticsopenalibitywriteAPIResponseModel
 }
 
-// TaobaoLogisticsOpenalibityWriteAPIResponseModel is 为快递公司提供的物流信息通用写入接口 成功返回结果
-type TaobaoLogisticsOpenalibityWriteAPIResponseModel struct {
+// TaobaologisticsopenalibitywriteAPIResponseModel is 为快递公司提供的物流信息通用写入接口 成功返回结果
+type TaobaologisticsopenalibitywriteAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_openalibity_write_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

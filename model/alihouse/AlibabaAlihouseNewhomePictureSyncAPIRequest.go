@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihouseNewhomePictureSyncAPIRequest 图片数据同步 API请求
+// AlibabaalihousenewhomepicturesyncAPIRequest 图片数据同步 API请求
 // alibaba.alihouse.newhome.picture.sync
 //
 // 图片数据同步
-type AlibabaAlihouseNewhomePictureSyncAPIRequest struct {
+type AlibabaalihousenewhomepicturesyncAPIRequest struct {
 	model.Params
 	// 数据
 	_projectPictureData *ProjectPictureDto
 }
 
-// NewAlibabaAlihouseNewhomePictureSyncRequest 初始化AlibabaAlihouseNewhomePictureSyncAPIRequest对象
-func NewAlibabaAlihouseNewhomePictureSyncRequest() *AlibabaAlihouseNewhomePictureSyncAPIRequest {
-	return &AlibabaAlihouseNewhomePictureSyncAPIRequest{
+// NewAlibabaalihousenewhomepicturesyncRequest 初始化AlibabaalihousenewhomepicturesyncAPIRequest对象
+func NewAlibabaalihousenewhomepicturesyncRequest() *AlibabaalihousenewhomepicturesyncAPIRequest {
+	return &AlibabaalihousenewhomepicturesyncAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseNewhomePictureSyncAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihousenewhomepicturesyncAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihouse.newhome.picture.sync"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomePictureSyncAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihousenewhomepicturesyncAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihouseNewhomePictureSyncAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihousenewhomepicturesyncAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetProjectPictureData is ProjectPictureData Setter
 // 数据
-func (r *AlibabaAlihouseNewhomePictureSyncAPIRequest) SetProjectPictureData(_projectPictureData *ProjectPictureDto) error {
+func (r *AlibabaalihousenewhomepicturesyncAPIRequest) SetProjectPictureData(_projectPictureData *ProjectPictureDto) error {
 	r._projectPictureData = _projectPictureData
 	r.Set("project_picture_data", _projectPictureData)
 	return nil
 }
 
 // GetProjectPictureData ProjectPictureData Getter
-func (r AlibabaAlihouseNewhomePictureSyncAPIRequest) GetProjectPictureData() *ProjectPictureDto {
+func (r AlibabaalihousenewhomepicturesyncAPIRequest) GetProjectPictureData() *ProjectPictureDto {
 	return r._projectPictureData
 }

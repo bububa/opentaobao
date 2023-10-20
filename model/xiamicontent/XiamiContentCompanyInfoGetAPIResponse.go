@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// XiamiContentCompanyInfoGetAPIResponse 获取厂牌信息 API返回值
+// XiamicontentcompanyinfogetAPIResponse 获取厂牌信息 API返回值
 // xiami.content.company.info.get
 //
 // 获取厂牌信息
-type XiamiContentCompanyInfoGetAPIResponse struct {
+type XiamicontentcompanyinfogetAPIResponse struct {
 	model.CommonResponse
-	XiamiContentCompanyInfoGetAPIResponseModel
+	XiamicontentcompanyinfogetAPIResponseModel
 }
 
-// XiamiContentCompanyInfoGetAPIResponseModel is 获取厂牌信息 成功返回结果
-type XiamiContentCompanyInfoGetAPIResponseModel struct {
+// XiamicontentcompanyinfogetAPIResponseModel is 获取厂牌信息 成功返回结果
+type XiamicontentcompanyinfogetAPIResponseModel struct {
 	XMLName xml.Name `xml:"xiami_content_company_info_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

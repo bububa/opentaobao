@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoXhotelOrderDetailSearchAPIResponse 订单详情查询 API返回值
+// TaobaoxhotelorderdetailsearchAPIResponse 订单详情查询 API返回值
 // taobao.xhotel.order.detail.search
 //
 // 提供订单详情查询
-type TaobaoXhotelOrderDetailSearchAPIResponse struct {
+type TaobaoxhotelorderdetailsearchAPIResponse struct {
 	model.CommonResponse
-	TaobaoXhotelOrderDetailSearchAPIResponseModel
+	TaobaoxhotelorderdetailsearchAPIResponseModel
 }
 
-// TaobaoXhotelOrderDetailSearchAPIResponseModel is 订单详情查询 成功返回结果
-type TaobaoXhotelOrderDetailSearchAPIResponseModel struct {
+// TaobaoxhotelorderdetailsearchAPIResponseModel is 订单详情查询 成功返回结果
+type TaobaoxhotelorderdetailsearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_order_detail_search_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

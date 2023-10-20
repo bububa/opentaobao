@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/bus"
 )
 
-// TaobaoBusInvoiceReturn 发票回调接口
+// Taobaobusinvoicereturn 发票回调接口
 // taobao.bus.invoice.return
 //
 // 汽车票发票回调接口
-func TaobaoBusInvoiceReturn(clt *core.SDKClient, req *bus.TaobaoBusInvoiceReturnAPIRequest, session string) (*bus.TaobaoBusInvoiceReturnAPIResponse, error) {
-	var resp bus.TaobaoBusInvoiceReturnAPIResponse
+func Taobaobusinvoicereturn(clt *core.SDKClient, req *bus.TaobaobusinvoicereturnAPIRequest, session string) (*bus.TaobaobusinvoicereturnAPIResponse, error) {
+	var resp bus.TaobaobusinvoicereturnAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

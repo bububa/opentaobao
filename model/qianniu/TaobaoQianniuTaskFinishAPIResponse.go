@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoQianniuTaskFinishAPIResponse 完成轻任务 API返回值
+// TaobaoqianniutaskfinishAPIResponse 完成轻任务 API返回值
 // taobao.qianniu.task.finish
 //
 // 由任务执行者调用
-type TaobaoQianniuTaskFinishAPIResponse struct {
+type TaobaoqianniutaskfinishAPIResponse struct {
 	model.CommonResponse
-	TaobaoQianniuTaskFinishAPIResponseModel
+	TaobaoqianniutaskfinishAPIResponseModel
 }
 
-// TaobaoQianniuTaskFinishAPIResponseModel is 完成轻任务 成功返回结果
-type TaobaoQianniuTaskFinishAPIResponseModel struct {
+// TaobaoqianniutaskfinishAPIResponseModel is 完成轻任务 成功返回结果
+type TaobaoqianniutaskfinishAPIResponseModel struct {
 	XMLName xml.Name `xml:"qianniu_task_finish_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

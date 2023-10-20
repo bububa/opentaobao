@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoLogisticsWmsOrderMaterialSyncAPIResponse 仓服务商订单包材耗材信息同步 API返回值
+// TaobaologisticswmsordermaterialsyncAPIResponse 仓服务商订单包材耗材信息同步 API返回值
 // taobao.logistics.wms.order.material.sync
 //
 // 仓服务商订单包材耗材信息同步
-type TaobaoLogisticsWmsOrderMaterialSyncAPIResponse struct {
+type TaobaologisticswmsordermaterialsyncAPIResponse struct {
 	model.CommonResponse
-	TaobaoLogisticsWmsOrderMaterialSyncAPIResponseModel
+	TaobaologisticswmsordermaterialsyncAPIResponseModel
 }
 
-// TaobaoLogisticsWmsOrderMaterialSyncAPIResponseModel is 仓服务商订单包材耗材信息同步 成功返回结果
-type TaobaoLogisticsWmsOrderMaterialSyncAPIResponseModel struct {
+// TaobaologisticswmsordermaterialsyncAPIResponseModel is 仓服务商订单包材耗材信息同步 成功返回结果
+type TaobaologisticswmsordermaterialsyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_wms_order_material_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

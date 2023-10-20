@@ -6,48 +6,48 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoQimenOrderCallbackAPIRequest 配送拦截接口 API请求
+// TaobaoqimenordercallbackAPIRequest 配送拦截接口 API请求
 // taobao.qimen.order.callback
 //
 // 配送拦截
-type TaobaoQimenOrderCallbackAPIRequest struct {
+type TaobaoqimenordercallbackAPIRequest struct {
 	model.Params
 	//
 	_request *OrderCallbackRequestDo
 }
 
-// NewTaobaoQimenOrderCallbackRequest 初始化TaobaoQimenOrderCallbackAPIRequest对象
-func NewTaobaoQimenOrderCallbackRequest() *TaobaoQimenOrderCallbackAPIRequest {
-	return &TaobaoQimenOrderCallbackAPIRequest{
+// NewTaobaoqimenordercallbackRequest 初始化TaobaoqimenordercallbackAPIRequest对象
+func NewTaobaoqimenordercallbackRequest() *TaobaoqimenordercallbackAPIRequest {
+	return &TaobaoqimenordercallbackAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoQimenOrderCallbackAPIRequest) GetApiMethodName() string {
+func (r TaobaoqimenordercallbackAPIRequest) GetApiMethodName() string {
 	return "taobao.qimen.order.callback"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoQimenOrderCallbackAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoqimenordercallbackAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoQimenOrderCallbackAPIRequest) GetRawParams() model.Params {
+func (r TaobaoqimenordercallbackAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRequest is Request Setter
-func (r *TaobaoQimenOrderCallbackAPIRequest) SetRequest(_request *OrderCallbackRequestDo) error {
+func (r *TaobaoqimenordercallbackAPIRequest) SetRequest(_request *OrderCallbackRequestDo) error {
 	r._request = _request
 	r.Set("request", _request)
 	return nil
 }
 
 // GetRequest Request Getter
-func (r TaobaoQimenOrderCallbackAPIRequest) GetRequest() *OrderCallbackRequestDo {
+func (r TaobaoqimenordercallbackAPIRequest) GetRequest() *OrderCallbackRequestDo {
 	return r._request
 }

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/axindata"
 )
 
-// TaobaoAlitripTravelFscRouteApiProjectOpen 打开团期
+// Taobaoalitriptravelfscrouteapiprojectopen 打开团期
 // taobao.alitrip.travel.fsc.route.api.project.open
 //
 // 打开团期
-func TaobaoAlitripTravelFscRouteApiProjectOpen(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelFscRouteApiProjectOpenAPIRequest, session string) (*axindata.TaobaoAlitripTravelFscRouteApiProjectOpenAPIResponse, error) {
-	var resp axindata.TaobaoAlitripTravelFscRouteApiProjectOpenAPIResponse
+func Taobaoalitriptravelfscrouteapiprojectopen(clt *core.SDKClient, req *axindata.TaobaoalitriptravelfscrouteapiprojectopenAPIRequest, session string) (*axindata.TaobaoalitriptravelfscrouteapiprojectopenAPIResponse, error) {
+	var resp axindata.TaobaoalitriptravelfscrouteapiprojectopenAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,7 +1,7 @@
 package alihealth2
 
-// TaobaoDrugPriceUpdateResult 结构体
-type TaobaoDrugPriceUpdateResult struct {
+// TaobaodrugpriceupdateResult 结构体
+type TaobaodrugpriceupdateResult struct {
 	// 异常代码
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 异常信息

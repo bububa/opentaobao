@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallCarLeaseRiskcallbackAPIResponse 整车租赁风控模型回调 API返回值
+// TmallcarleaseriskcallbackAPIResponse 整车租赁风控模型回调 API返回值
 // tmall.car.lease.riskcallback
 //
 // 租赁公司回调风控结果
-type TmallCarLeaseRiskcallbackAPIResponse struct {
+type TmallcarleaseriskcallbackAPIResponse struct {
 	model.CommonResponse
-	TmallCarLeaseRiskcallbackAPIResponseModel
+	TmallcarleaseriskcallbackAPIResponseModel
 }
 
-// TmallCarLeaseRiskcallbackAPIResponseModel is 整车租赁风控模型回调 成功返回结果
-type TmallCarLeaseRiskcallbackAPIResponseModel struct {
+// TmallcarleaseriskcallbackAPIResponseModel is 整车租赁风控模型回调 成功返回结果
+type TmallcarleaseriskcallbackAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_car_lease_riskcallback_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果集合
-	Result *TmallCarLeaseRiskcallbackResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *TmallcarleaseriskcallbackResult `json:"result,omitempty" xml:"result,omitempty"`
 }

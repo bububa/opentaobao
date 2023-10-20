@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosServiceCmnsCoaPushAPIRequest 消息推送接口 API请求
+// YunosservicecmnscoapushAPIRequest 消息推送接口 API请求
 // yunos.service.cmns.coa.push
 //
 // 调用CMNS系统的pushMessage接口实现消息通知到YUNOS设备的第三方应用软件。
-type YunosServiceCmnsCoaPushAPIRequest struct {
+type YunosservicecmnscoapushAPIRequest struct {
 	model.Params
 	// 消息结构对象
 	_msgObj *CmnsMessage
 }
 
-// NewYunosServiceCmnsCoaPushRequest 初始化YunosServiceCmnsCoaPushAPIRequest对象
-func NewYunosServiceCmnsCoaPushRequest() *YunosServiceCmnsCoaPushAPIRequest {
-	return &YunosServiceCmnsCoaPushAPIRequest{
+// NewYunosservicecmnscoapushRequest 初始化YunosservicecmnscoapushAPIRequest对象
+func NewYunosservicecmnscoapushRequest() *YunosservicecmnscoapushAPIRequest {
+	return &YunosservicecmnscoapushAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r YunosServiceCmnsCoaPushAPIRequest) GetApiMethodName() string {
+func (r YunosservicecmnscoapushAPIRequest) GetApiMethodName() string {
 	return "yunos.service.cmns.coa.push"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YunosServiceCmnsCoaPushAPIRequest) GetApiParams(params url.Values) {
+func (r YunosservicecmnscoapushAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r YunosServiceCmnsCoaPushAPIRequest) GetRawParams() model.Params {
+func (r YunosservicecmnscoapushAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetMsgObj is MsgObj Setter
 // 消息结构对象
-func (r *YunosServiceCmnsCoaPushAPIRequest) SetMsgObj(_msgObj *CmnsMessage) error {
+func (r *YunosservicecmnscoapushAPIRequest) SetMsgObj(_msgObj *CmnsMessage) error {
 	r._msgObj = _msgObj
 	r.Set("msg_obj", _msgObj)
 	return nil
 }
 
 // GetMsgObj MsgObj Getter
-func (r YunosServiceCmnsCoaPushAPIRequest) GetMsgObj() *CmnsMessage {
+func (r YunosservicecmnscoapushAPIRequest) GetMsgObj() *CmnsMessage {
 	return r._msgObj
 }

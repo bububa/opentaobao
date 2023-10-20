@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoXhotelComboOffshelfAPIResponse 酒店套餐下架 API返回值
+// TaobaoxhotelcombooffshelfAPIResponse 酒店套餐下架 API返回值
 // taobao.xhotel.combo.offshelf
 //
 // 酒店套餐下架
-type TaobaoXhotelComboOffshelfAPIResponse struct {
+type TaobaoxhotelcombooffshelfAPIResponse struct {
 	model.CommonResponse
-	TaobaoXhotelComboOffshelfAPIResponseModel
+	TaobaoxhotelcombooffshelfAPIResponseModel
 }
 
-// TaobaoXhotelComboOffshelfAPIResponseModel is 酒店套餐下架 成功返回结果
-type TaobaoXhotelComboOffshelfAPIResponseModel struct {
+// TaobaoxhotelcombooffshelfAPIResponseModel is 酒店套餐下架 成功返回结果
+type TaobaoxhotelcombooffshelfAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_combo_offshelf_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

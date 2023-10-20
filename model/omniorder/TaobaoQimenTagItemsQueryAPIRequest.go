@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoQimenTagItemsQueryAPIRequest 打标结果查询-标维度 API请求
+// TaobaoqimentagitemsqueryAPIRequest 打标结果查询-标维度 API请求
 // taobao.qimen.tag.items.query
 //
 // 调用该接口，查询打了某个标的商品列表。说明：该接口调用后，返回值的时间较长，建议不要经常调用。
-type TaobaoQimenTagItemsQueryAPIRequest struct {
+type TaobaoqimentagitemsqueryAPIRequest struct {
 	model.Params
 	// 打标值，string（50），TBKU=同步库存标，MDZT=门店自提标，必填
 	_tagType string
@@ -18,52 +18,52 @@ type TaobaoQimenTagItemsQueryAPIRequest struct {
 	_remark string
 }
 
-// NewTaobaoQimenTagItemsQueryRequest 初始化TaobaoQimenTagItemsQueryAPIRequest对象
-func NewTaobaoQimenTagItemsQueryRequest() *TaobaoQimenTagItemsQueryAPIRequest {
-	return &TaobaoQimenTagItemsQueryAPIRequest{
+// NewTaobaoqimentagitemsqueryRequest 初始化TaobaoqimentagitemsqueryAPIRequest对象
+func NewTaobaoqimentagitemsqueryRequest() *TaobaoqimentagitemsqueryAPIRequest {
+	return &TaobaoqimentagitemsqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoQimenTagItemsQueryAPIRequest) GetApiMethodName() string {
+func (r TaobaoqimentagitemsqueryAPIRequest) GetApiMethodName() string {
 	return "taobao.qimen.tag.items.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoQimenTagItemsQueryAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoqimentagitemsqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoQimenTagItemsQueryAPIRequest) GetRawParams() model.Params {
+func (r TaobaoqimentagitemsqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTagType is TagType Setter
 // 打标值，string（50），TBKU=同步库存标，MDZT=门店自提标，必填
-func (r *TaobaoQimenTagItemsQueryAPIRequest) SetTagType(_tagType string) error {
+func (r *TaobaoqimentagitemsqueryAPIRequest) SetTagType(_tagType string) error {
 	r._tagType = _tagType
 	r.Set("tag_type", _tagType)
 	return nil
 }
 
 // GetTagType TagType Getter
-func (r TaobaoQimenTagItemsQueryAPIRequest) GetTagType() string {
+func (r TaobaoqimentagitemsqueryAPIRequest) GetTagType() string {
 	return r._tagType
 }
 
 // SetRemark is Remark Setter
 // 备注，string（500）
-func (r *TaobaoQimenTagItemsQueryAPIRequest) SetRemark(_remark string) error {
+func (r *TaobaoqimentagitemsqueryAPIRequest) SetRemark(_remark string) error {
 	r._remark = _remark
 	r.Set("remark", _remark)
 	return nil
 }
 
 // GetRemark Remark Getter
-func (r TaobaoQimenTagItemsQueryAPIRequest) GetRemark() string {
+func (r TaobaoqimentagitemsqueryAPIRequest) GetRemark() string {
 	return r._remark
 }

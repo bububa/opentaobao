@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest 仓站（网格仓自提点）关系查询 API请求
+// WdklogisticnetworkwarehousedeliveryrelationqueryAPIRequest 仓站（网格仓自提点）关系查询 API请求
 // wdk.logistic.network.warehouse.delivery.relation.query
 //
 // 盒马集市，仓站（网格仓自提点）关系查询
-type WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest struct {
+type WdklogisticnetworkwarehousedeliveryrelationqueryAPIRequest struct {
 	model.Params
 	// 参数
 	_paramWarehouseDeliveryRelationPageQueryRequest *WarehouseDeliveryRelationPageQueryRequest
 }
 
-// NewWdkLogisticNetworkWarehouseDeliveryRelationQueryRequest 初始化WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest对象
-func NewWdkLogisticNetworkWarehouseDeliveryRelationQueryRequest() *WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest {
-	return &WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest{
+// NewWdklogisticnetworkwarehousedeliveryrelationqueryRequest 初始化WdklogisticnetworkwarehousedeliveryrelationqueryAPIRequest对象
+func NewWdklogisticnetworkwarehousedeliveryrelationqueryRequest() *WdklogisticnetworkwarehousedeliveryrelationqueryAPIRequest {
+	return &WdklogisticnetworkwarehousedeliveryrelationqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest) GetApiMethodName() string {
+func (r WdklogisticnetworkwarehousedeliveryrelationqueryAPIRequest) GetApiMethodName() string {
 	return "wdk.logistic.network.warehouse.delivery.relation.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest) GetApiParams(params url.Values) {
+func (r WdklogisticnetworkwarehousedeliveryrelationqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest) GetRawParams() model.Params {
+func (r WdklogisticnetworkwarehousedeliveryrelationqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamWarehouseDeliveryRelationPageQueryRequest is ParamWarehouseDeliveryRelationPageQueryRequest Setter
 // 参数
-func (r *WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest) SetParamWarehouseDeliveryRelationPageQueryRequest(_paramWarehouseDeliveryRelationPageQueryRequest *WarehouseDeliveryRelationPageQueryRequest) error {
+func (r *WdklogisticnetworkwarehousedeliveryrelationqueryAPIRequest) SetParamWarehouseDeliveryRelationPageQueryRequest(_paramWarehouseDeliveryRelationPageQueryRequest *WarehouseDeliveryRelationPageQueryRequest) error {
 	r._paramWarehouseDeliveryRelationPageQueryRequest = _paramWarehouseDeliveryRelationPageQueryRequest
 	r.Set("param_warehouse_delivery_relation_page_query_request", _paramWarehouseDeliveryRelationPageQueryRequest)
 	return nil
 }
 
 // GetParamWarehouseDeliveryRelationPageQueryRequest ParamWarehouseDeliveryRelationPageQueryRequest Getter
-func (r WdkLogisticNetworkWarehouseDeliveryRelationQueryAPIRequest) GetParamWarehouseDeliveryRelationPageQueryRequest() *WarehouseDeliveryRelationPageQueryRequest {
+func (r WdklogisticnetworkwarehousedeliveryrelationqueryAPIRequest) GetParamWarehouseDeliveryRelationPageQueryRequest() *WarehouseDeliveryRelationPageQueryRequest {
 	return r._paramWarehouseDeliveryRelationPageQueryRequest
 }

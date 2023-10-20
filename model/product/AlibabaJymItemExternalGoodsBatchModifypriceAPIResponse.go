@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaJymItemExternalGoodsBatchModifypriceAPIResponse 交易猫外部商家批量商品改价接口 API返回值
+// AlibabajymitemexternalgoodsbatchmodifypriceAPIResponse 交易猫外部商家批量商品改价接口 API返回值
 // alibaba.jym.item.external.goods.batch.modifyprice
 //
 // 供外部B端商家接入，提交批量商品改价请求，返回批量改价任务结果
-type AlibabaJymItemExternalGoodsBatchModifypriceAPIResponse struct {
+type AlibabajymitemexternalgoodsbatchmodifypriceAPIResponse struct {
 	model.CommonResponse
-	AlibabaJymItemExternalGoodsBatchModifypriceAPIResponseModel
+	AlibabajymitemexternalgoodsbatchmodifypriceAPIResponseModel
 }
 
-// AlibabaJymItemExternalGoodsBatchModifypriceAPIResponseModel is 交易猫外部商家批量商品改价接口 成功返回结果
-type AlibabaJymItemExternalGoodsBatchModifypriceAPIResponseModel struct {
+// AlibabajymitemexternalgoodsbatchmodifypriceAPIResponseModel is 交易猫外部商家批量商品改价接口 成功返回结果
+type AlibabajymitemexternalgoodsbatchmodifypriceAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_jym_item_external_goods_batch_modifyprice_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

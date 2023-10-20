@@ -1,7 +1,7 @@
 package pur
 
-// AlibabaCeresSupplierPoQueryResult 结构体
-type AlibabaCeresSupplierPoQueryResult struct {
+// AlibabaceressupplierpoqueryResult 结构体
+type AlibabaceressupplierpoqueryResult struct {
 	// 返回单据消息体List
 	Values []Value `json:"values,omitempty" xml:"values>value,omitempty"`
 	// 返回信息

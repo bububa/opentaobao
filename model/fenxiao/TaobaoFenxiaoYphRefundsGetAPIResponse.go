@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoFenxiaoYphRefundsGetAPIResponse 一盘货商家批量查询退款单信息 API返回值
+// TaobaofenxiaoyphrefundsgetAPIResponse 一盘货商家批量查询退款单信息 API返回值
 // taobao.fenxiao.yph.refunds.get
 //
 // 一盘货商家批量查询退款单信息
-type TaobaoFenxiaoYphRefundsGetAPIResponse struct {
+type TaobaofenxiaoyphrefundsgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoFenxiaoYphRefundsGetAPIResponseModel
+	TaobaofenxiaoyphrefundsgetAPIResponseModel
 }
 
-// TaobaoFenxiaoYphRefundsGetAPIResponseModel is 一盘货商家批量查询退款单信息 成功返回结果
-type TaobaoFenxiaoYphRefundsGetAPIResponseModel struct {
+// TaobaofenxiaoyphrefundsgetAPIResponseModel is 一盘货商家批量查询退款单信息 成功返回结果
+type TaobaofenxiaoyphrefundsgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_yph_refunds_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

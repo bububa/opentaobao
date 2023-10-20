@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkMarketingCouponQueryitemsAPIRequest 查询优惠券活动下的商品 API请求
+// AlibabawdkmarketingcouponqueryitemsAPIRequest 查询优惠券活动下的商品 API请求
 // alibaba.wdk.marketing.coupon.queryitems
 //
 // 查询优惠券活动下面的商品
-type AlibabaWdkMarketingCouponQueryitemsAPIRequest struct {
+type AlibabawdkmarketingcouponqueryitemsAPIRequest struct {
 	model.Params
 	// 查询入参
 	_param *ActivitySkuQuery
 }
 
-// NewAlibabaWdkMarketingCouponQueryitemsRequest 初始化AlibabaWdkMarketingCouponQueryitemsAPIRequest对象
-func NewAlibabaWdkMarketingCouponQueryitemsRequest() *AlibabaWdkMarketingCouponQueryitemsAPIRequest {
-	return &AlibabaWdkMarketingCouponQueryitemsAPIRequest{
+// NewAlibabawdkmarketingcouponqueryitemsRequest 初始化AlibabawdkmarketingcouponqueryitemsAPIRequest对象
+func NewAlibabawdkmarketingcouponqueryitemsRequest() *AlibabawdkmarketingcouponqueryitemsAPIRequest {
+	return &AlibabawdkmarketingcouponqueryitemsAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaWdkMarketingCouponQueryitemsAPIRequest) GetApiMethodName() string {
+func (r AlibabawdkmarketingcouponqueryitemsAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.marketing.coupon.queryitems"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMarketingCouponQueryitemsAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabawdkmarketingcouponqueryitemsAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaWdkMarketingCouponQueryitemsAPIRequest) GetRawParams() model.Params {
+func (r AlibabawdkmarketingcouponqueryitemsAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 查询入参
-func (r *AlibabaWdkMarketingCouponQueryitemsAPIRequest) SetParam(_param *ActivitySkuQuery) error {
+func (r *AlibabawdkmarketingcouponqueryitemsAPIRequest) SetParam(_param *ActivitySkuQuery) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r AlibabaWdkMarketingCouponQueryitemsAPIRequest) GetParam() *ActivitySkuQuery {
+func (r AlibabawdkmarketingcouponqueryitemsAPIRequest) GetParam() *ActivitySkuQuery {
 	return r._param
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoWlbWmsConsignBillGetAPIResponse 获取销售订单发货信息 API返回值
+// TaobaowlbwmsconsignbillgetAPIResponse 获取销售订单发货信息 API返回值
 // taobao.wlb.wms.consign.bill.get
 //
 // 获取销售订单发货信息
-type TaobaoWlbWmsConsignBillGetAPIResponse struct {
+type TaobaowlbwmsconsignbillgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoWlbWmsConsignBillGetAPIResponseModel
+	TaobaowlbwmsconsignbillgetAPIResponseModel
 }
 
-// TaobaoWlbWmsConsignBillGetAPIResponseModel is 获取销售订单发货信息 成功返回结果
-type TaobaoWlbWmsConsignBillGetAPIResponseModel struct {
+// TaobaowlbwmsconsignbillgetAPIResponseModel is 获取销售订单发货信息 成功返回结果
+type TaobaowlbwmsconsignbillgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_wms_consign_bill_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

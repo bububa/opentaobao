@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/xhotelitem"
 )
 
-// TaobaoXhotelBnbpromoUnbind 自促活动解绑接口
+// Taobaoxhotelbnbpromounbind 自促活动解绑接口
 // taobao.xhotel.bnbpromo.unbind
 //
 // 自促活动解绑接口
-func TaobaoXhotelBnbpromoUnbind(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelBnbpromoUnbindAPIRequest, session string) (*xhotelitem.TaobaoXhotelBnbpromoUnbindAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelBnbpromoUnbindAPIResponse
+func Taobaoxhotelbnbpromounbind(clt *core.SDKClient, req *xhotelitem.TaobaoxhotelbnbpromounbindAPIRequest, session string) (*xhotelitem.TaobaoxhotelbnbpromounbindAPIResponse, error) {
+	var resp xhotelitem.TaobaoxhotelbnbpromounbindAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

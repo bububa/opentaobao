@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaoTbkScMaterialOptionalMapData 结构体
-type TaobaoTbkScMaterialOptionalMapData struct {
+// TaobaotbkscmaterialoptionalMapData 结构体
+type TaobaotbkscmaterialoptionalMapData struct {
 	// 商品信息-商品小图列表
 	SmallImages []string `json:"small_images,omitempty" xml:"small_images>string,omitempty"`
 	// 定向计划集合
@@ -177,7 +177,7 @@ type TaobaoTbkScMaterialOptionalMapData struct {
 	// 比价场景专用，当系统检测到入参消费者ID购买当前商品会获得《天天开彩蛋》玩法的彩蛋时，该字段显示1，否则为0
 	RewardInfo int64 `json:"reward_info,omitempty" xml:"reward_info,omitempty"`
 	// 前N件佣金信息-前N件佣金生效或预热时透出以下字段
-	TopnInfo *TopNInfoDto `json:"topn_info,omitempty" xml:"topn_info,omitempty"`
+	TopnInfo *TopNinfoDto `json:"topn_info,omitempty" xml:"topn_info,omitempty"`
 	// 百亿补贴信息
 	BybtInfo *BybtInfoDto `json:"bybt_info,omitempty" xml:"bybt_info,omitempty"`
 	// 猫超买返卡信息

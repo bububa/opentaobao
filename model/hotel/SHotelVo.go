@@ -1,9 +1,9 @@
 package hotel
 
-// SHotelVo 结构体
-type SHotelVo struct {
+// ShotelVo 结构体
+type ShotelVo struct {
 	// 标准房型列表
-	SroomTypes []SRoomTypeVo `json:"sroom_types,omitempty" xml:"sroom_types>s_room_type_vo,omitempty"`
+	SroomTypes []SroomTypeVo `json:"sroom_types,omitempty" xml:"sroom_types>sroom_type_vo,omitempty"`
 	// 地址
 	Address string `json:"address,omitempty" xml:"address,omitempty"`
 	// 品牌code

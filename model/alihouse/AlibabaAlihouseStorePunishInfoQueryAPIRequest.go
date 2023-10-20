@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihouseStorePunishInfoQueryAPIRequest 门店处罚信息查询 API请求
+// AlibabaalihousestorepunishinfoqueryAPIRequest 门店处罚信息查询 API请求
 // alibaba.alihouse.store.punish.info.query
 //
 // 门店处罚信息查询
-type AlibabaAlihouseStorePunishInfoQueryAPIRequest struct {
+type AlibabaalihousestorepunishinfoqueryAPIRequest struct {
 	model.Params
 	// dto
 	_queryStorePunishDto *QueryStorePunishDto
 }
 
-// NewAlibabaAlihouseStorePunishInfoQueryRequest 初始化AlibabaAlihouseStorePunishInfoQueryAPIRequest对象
-func NewAlibabaAlihouseStorePunishInfoQueryRequest() *AlibabaAlihouseStorePunishInfoQueryAPIRequest {
-	return &AlibabaAlihouseStorePunishInfoQueryAPIRequest{
+// NewAlibabaalihousestorepunishinfoqueryRequest 初始化AlibabaalihousestorepunishinfoqueryAPIRequest对象
+func NewAlibabaalihousestorepunishinfoqueryRequest() *AlibabaalihousestorepunishinfoqueryAPIRequest {
+	return &AlibabaalihousestorepunishinfoqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseStorePunishInfoQueryAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihousestorepunishinfoqueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihouse.store.punish.info.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseStorePunishInfoQueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihousestorepunishinfoqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihouseStorePunishInfoQueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihousestorepunishinfoqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetQueryStorePunishDto is QueryStorePunishDto Setter
 // dto
-func (r *AlibabaAlihouseStorePunishInfoQueryAPIRequest) SetQueryStorePunishDto(_queryStorePunishDto *QueryStorePunishDto) error {
+func (r *AlibabaalihousestorepunishinfoqueryAPIRequest) SetQueryStorePunishDto(_queryStorePunishDto *QueryStorePunishDto) error {
 	r._queryStorePunishDto = _queryStorePunishDto
 	r.Set("query_store_punish_dto", _queryStorePunishDto)
 	return nil
 }
 
 // GetQueryStorePunishDto QueryStorePunishDto Getter
-func (r AlibabaAlihouseStorePunishInfoQueryAPIRequest) GetQueryStorePunishDto() *QueryStorePunishDto {
+func (r AlibabaalihousestorepunishinfoqueryAPIRequest) GetQueryStorePunishDto() *QueryStorePunishDto {
 	return r._queryStorePunishDto
 }

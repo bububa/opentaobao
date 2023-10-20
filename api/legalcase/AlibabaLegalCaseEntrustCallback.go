@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/legalcase"
 )
 
-// AlibabaLegalCaseEntrustCallback 委托回调接口
+// Alibabalegalcaseentrustcallback 委托回调接口
 // alibaba.legal.case.entrust.callback
 //
 // 委托回调接口
-func AlibabaLegalCaseEntrustCallback(clt *core.SDKClient, req *legalcase.AlibabaLegalCaseEntrustCallbackAPIRequest, session string) (*legalcase.AlibabaLegalCaseEntrustCallbackAPIResponse, error) {
-	var resp legalcase.AlibabaLegalCaseEntrustCallbackAPIResponse
+func Alibabalegalcaseentrustcallback(clt *core.SDKClient, req *legalcase.AlibabalegalcaseentrustcallbackAPIRequest, session string) (*legalcase.AlibabalegalcaseentrustcallbackAPIResponse, error) {
+	var resp legalcase.AlibabalegalcaseentrustcallbackAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

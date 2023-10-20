@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOnebpDkxAccountAccountQueryAPIResponse 万相台账号余额查询 API返回值
+// TaobaoonebpdkxaccountaccountqueryAPIResponse 万相台账号余额查询 API返回值
 // taobao.onebp.dkx.account.account.query
 //
 // 万相台账号余额查询
-type TaobaoOnebpDkxAccountAccountQueryAPIResponse struct {
+type TaobaoonebpdkxaccountaccountqueryAPIResponse struct {
 	model.CommonResponse
-	TaobaoOnebpDkxAccountAccountQueryAPIResponseModel
+	TaobaoonebpdkxaccountaccountqueryAPIResponseModel
 }
 
-// TaobaoOnebpDkxAccountAccountQueryAPIResponseModel is 万相台账号余额查询 成功返回结果
-type TaobaoOnebpDkxAccountAccountQueryAPIResponseModel struct {
+// TaobaoonebpdkxaccountaccountqueryAPIResponseModel is 万相台账号余额查询 成功返回结果
+type TaobaoonebpdkxaccountaccountqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"onebp_dkx_account_account_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

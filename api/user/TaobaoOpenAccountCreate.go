@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/user"
 )
 
-// TaobaoOpenAccountCreate Open Account导入数据
+// Taobaoopenaccountcreate Open Account导入数据
 // taobao.open.account.create
 //
 // Open Account导入数据
-func TaobaoOpenAccountCreate(clt *core.SDKClient, req *user.TaobaoOpenAccountCreateAPIRequest, session string) (*user.TaobaoOpenAccountCreateAPIResponse, error) {
-	var resp user.TaobaoOpenAccountCreateAPIResponse
+func Taobaoopenaccountcreate(clt *core.SDKClient, req *user.TaobaoopenaccountcreateAPIRequest, session string) (*user.TaobaoopenaccountcreateAPIResponse, error) {
+	var resp user.TaobaoopenaccountcreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

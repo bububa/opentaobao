@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpressDsImageSearchAPIResponse 图片搜索 API返回值
+// AliexpressdsimagesearchAPIResponse 图片搜索 API返回值
 // aliexpress.ds.image.search
 //
 // 图片搜索
-type AliexpressDsImageSearchAPIResponse struct {
+type AliexpressdsimagesearchAPIResponse struct {
 	model.CommonResponse
-	AliexpressDsImageSearchAPIResponseModel
+	AliexpressdsimagesearchAPIResponseModel
 }
 
-// AliexpressDsImageSearchAPIResponseModel is 图片搜索 成功返回结果
-type AliexpressDsImageSearchAPIResponseModel struct {
+// AliexpressdsimagesearchAPIResponseModel is 图片搜索 成功返回结果
+type AliexpressdsimagesearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_ds_image_search_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

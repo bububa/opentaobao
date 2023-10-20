@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOcApContractsignedGetAPIResponse 用户是否签署支付宝代扣协议 API返回值
+// TaobaoocapcontractsignedgetAPIResponse 用户是否签署支付宝代扣协议 API返回值
 // taobao.oc.ap.contractsigned.get
 //
 // 用户是否签署支付宝代扣协议
-type TaobaoOcApContractsignedGetAPIResponse struct {
+type TaobaoocapcontractsignedgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoOcApContractsignedGetAPIResponseModel
+	TaobaoocapcontractsignedgetAPIResponseModel
 }
 
-// TaobaoOcApContractsignedGetAPIResponseModel is 用户是否签署支付宝代扣协议 成功返回结果
-type TaobaoOcApContractsignedGetAPIResponseModel struct {
+// TaobaoocapcontractsignedgetAPIResponseModel is 用户是否签署支付宝代扣协议 成功返回结果
+type TaobaoocapcontractsignedgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"oc_ap_contractsigned_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

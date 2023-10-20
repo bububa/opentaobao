@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaoTbkScVegasSendReportResult 结构体
-type TaobaoTbkScVegasSendReportResult struct {
+// TaobaotbkscvegassendreportResult 结构体
+type TaobaotbkscvegassendreportResult struct {
 	// msgInfo
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// msgCode

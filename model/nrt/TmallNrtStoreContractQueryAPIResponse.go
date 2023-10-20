@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallNrtStoreContractQueryAPIResponse 摊位合同查询接口 API返回值
+// TmallnrtstorecontractqueryAPIResponse 摊位合同查询接口 API返回值
 // tmall.nrt.store.contract.query
 //
 // 摊位合同查询接口
-type TmallNrtStoreContractQueryAPIResponse struct {
+type TmallnrtstorecontractqueryAPIResponse struct {
 	model.CommonResponse
-	TmallNrtStoreContractQueryAPIResponseModel
+	TmallnrtstorecontractqueryAPIResponseModel
 }
 
-// TmallNrtStoreContractQueryAPIResponseModel is 摊位合同查询接口 成功返回结果
-type TmallNrtStoreContractQueryAPIResponseModel struct {
+// TmallnrtstorecontractqueryAPIResponseModel is 摊位合同查询接口 成功返回结果
+type TmallnrtstorecontractqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_nrt_store_contract_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthDoctorLeshuiTicketValidAPIRequest 乐税token验证 API请求
+// AlibabaalihealthdoctorleshuiticketvalidAPIRequest 乐税token验证 API请求
 // alibaba.alihealth.doctor.leshui.ticket.valid
 //
 // 乐税token验证
-type AlibabaAlihealthDoctorLeshuiTicketValidAPIRequest struct {
+type AlibabaalihealthdoctorleshuiticketvalidAPIRequest struct {
 	model.Params
 	// 入参
 	_param *PayTaxValidationRequest
 }
 
-// NewAlibabaAlihealthDoctorLeshuiTicketValidRequest 初始化AlibabaAlihealthDoctorLeshuiTicketValidAPIRequest对象
-func NewAlibabaAlihealthDoctorLeshuiTicketValidRequest() *AlibabaAlihealthDoctorLeshuiTicketValidAPIRequest {
-	return &AlibabaAlihealthDoctorLeshuiTicketValidAPIRequest{
+// NewAlibabaalihealthdoctorleshuiticketvalidRequest 初始化AlibabaalihealthdoctorleshuiticketvalidAPIRequest对象
+func NewAlibabaalihealthdoctorleshuiticketvalidRequest() *AlibabaalihealthdoctorleshuiticketvalidAPIRequest {
+	return &AlibabaalihealthdoctorleshuiticketvalidAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDoctorLeshuiTicketValidAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihealthdoctorleshuiticketvalidAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.doctor.leshui.ticket.valid"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDoctorLeshuiTicketValidAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihealthdoctorleshuiticketvalidAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihealthDoctorLeshuiTicketValidAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihealthdoctorleshuiticketvalidAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 入参
-func (r *AlibabaAlihealthDoctorLeshuiTicketValidAPIRequest) SetParam(_param *PayTaxValidationRequest) error {
+func (r *AlibabaalihealthdoctorleshuiticketvalidAPIRequest) SetParam(_param *PayTaxValidationRequest) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r AlibabaAlihealthDoctorLeshuiTicketValidAPIRequest) GetParam() *PayTaxValidationRequest {
+func (r AlibabaalihealthdoctorleshuiticketvalidAPIRequest) GetParam() *PayTaxValidationRequest {
 	return r._param
 }

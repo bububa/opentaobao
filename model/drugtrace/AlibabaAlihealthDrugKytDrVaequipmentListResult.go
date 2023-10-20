@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaAlihealthDrugKytDrVaequipmentListResult 结构体
-type AlibabaAlihealthDrugKytDrVaequipmentListResult struct {
+// AlibabaalihealthdrugkytdrvaequipmentlistResult 结构体
+type AlibabaalihealthdrugkytdrvaequipmentlistResult struct {
 	// msgInfo
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// msgCode
@@ -39,7 +39,7 @@ type AlibabaAlihealthDrugKytDrVaequipmentListResult struct {
 	// 设备状态
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// model
-	Model *AlibabaAlihealthDrugKytDrVaequipmentListModel `json:"model,omitempty" xml:"model,omitempty"`
+	Model *AlibabaalihealthdrugkytdrvaequipmentlistModel `json:"model,omitempty" xml:"model,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

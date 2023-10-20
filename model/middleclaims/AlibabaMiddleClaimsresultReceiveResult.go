@@ -1,7 +1,7 @@
 package middleclaims
 
-// AlibabaMiddleClaimsresultReceiveResult 结构体
-type AlibabaMiddleClaimsresultReceiveResult struct {
+// AlibabamiddleclaimsresultreceiveResult 结构体
+type AlibabamiddleclaimsresultreceiveResult struct {
 	// 系统调用结果
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 业务结果

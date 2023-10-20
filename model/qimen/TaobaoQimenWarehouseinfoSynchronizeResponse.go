@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoQimenWarehouseinfoSynchronizeResponse 结构体
-type TaobaoQimenWarehouseinfoSynchronizeResponse struct {
+// TaobaoqimenwarehouseinfosynchronizeResponse 结构体
+type TaobaoqimenwarehouseinfosynchronizeResponse struct {
 	// 仓库信息
 	WarehouseInfos []WarehouseInfo `json:"warehouseInfos,omitempty" xml:"warehouseInfos>warehouse_info,omitempty"`
 	// success|failure

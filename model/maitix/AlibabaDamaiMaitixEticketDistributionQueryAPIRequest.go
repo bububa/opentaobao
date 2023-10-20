@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaDamaiMaitixEticketDistributionQueryAPIRequest 分销电子票查询接口 API请求
+// AlibabadamaimaitixeticketdistributionqueryAPIRequest 分销电子票查询接口 API请求
 // alibaba.damai.maitix.eticket.distribution.query
 //
 // 分销电子票查询接口
-type AlibabaDamaiMaitixEticketDistributionQueryAPIRequest struct {
+type AlibabadamaimaitixeticketdistributionqueryAPIRequest struct {
 	model.Params
 	// 入参param
 	_param *EticketQueryParam
 }
 
-// NewAlibabaDamaiMaitixEticketDistributionQueryRequest 初始化AlibabaDamaiMaitixEticketDistributionQueryAPIRequest对象
-func NewAlibabaDamaiMaitixEticketDistributionQueryRequest() *AlibabaDamaiMaitixEticketDistributionQueryAPIRequest {
-	return &AlibabaDamaiMaitixEticketDistributionQueryAPIRequest{
+// NewAlibabadamaimaitixeticketdistributionqueryRequest 初始化AlibabadamaimaitixeticketdistributionqueryAPIRequest对象
+func NewAlibabadamaimaitixeticketdistributionqueryRequest() *AlibabadamaimaitixeticketdistributionqueryAPIRequest {
+	return &AlibabadamaimaitixeticketdistributionqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMaitixEticketDistributionQueryAPIRequest) GetApiMethodName() string {
+func (r AlibabadamaimaitixeticketdistributionqueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.damai.maitix.eticket.distribution.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMaitixEticketDistributionQueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabadamaimaitixeticketdistributionqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaDamaiMaitixEticketDistributionQueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabadamaimaitixeticketdistributionqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 入参param
-func (r *AlibabaDamaiMaitixEticketDistributionQueryAPIRequest) SetParam(_param *EticketQueryParam) error {
+func (r *AlibabadamaimaitixeticketdistributionqueryAPIRequest) SetParam(_param *EticketQueryParam) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r AlibabaDamaiMaitixEticketDistributionQueryAPIRequest) GetParam() *EticketQueryParam {
+func (r AlibabadamaimaitixeticketdistributionqueryAPIRequest) GetParam() *EticketQueryParam {
 	return r._param
 }

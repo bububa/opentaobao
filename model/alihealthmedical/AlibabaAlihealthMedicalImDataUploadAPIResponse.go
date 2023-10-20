@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthMedicalImDataUploadAPIResponse 三方IM图片音频消息上传 API返回值
+// AlibabaalihealthmedicalimdatauploadAPIResponse 三方IM图片音频消息上传 API返回值
 // alibaba.alihealth.medical.im.data.upload
 //
 // 三方IM图片音频消息上传
-type AlibabaAlihealthMedicalImDataUploadAPIResponse struct {
+type AlibabaalihealthmedicalimdatauploadAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihealthMedicalImDataUploadAPIResponseModel
+	AlibabaalihealthmedicalimdatauploadAPIResponseModel
 }
 
-// AlibabaAlihealthMedicalImDataUploadAPIResponseModel is 三方IM图片音频消息上传 成功返回结果
-type AlibabaAlihealthMedicalImDataUploadAPIResponseModel struct {
+// AlibabaalihealthmedicalimdatauploadAPIResponseModel is 三方IM图片音频消息上传 成功返回结果
+type AlibabaalihealthmedicalimdatauploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_medical_im_data_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

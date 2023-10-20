@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOmniorderStorecollectConsumeAPIResponse 全渠道门店自提核销订单 API返回值
+// TaobaoomniorderstorecollectconsumeAPIResponse 全渠道门店自提核销订单 API返回值
 // taobao.omniorder.storecollect.consume
 //
 // 全渠道门店自提核销订单
-type TaobaoOmniorderStorecollectConsumeAPIResponse struct {
+type TaobaoomniorderstorecollectconsumeAPIResponse struct {
 	model.CommonResponse
-	TaobaoOmniorderStorecollectConsumeAPIResponseModel
+	TaobaoomniorderstorecollectconsumeAPIResponseModel
 }
 
-// TaobaoOmniorderStorecollectConsumeAPIResponseModel is 全渠道门店自提核销订单 成功返回结果
-type TaobaoOmniorderStorecollectConsumeAPIResponseModel struct {
+// TaobaoomniorderstorecollectconsumeAPIResponseModel is 全渠道门店自提核销订单 成功返回结果
+type TaobaoomniorderstorecollectconsumeAPIResponseModel struct {
 	XMLName xml.Name `xml:"omniorder_storecollect_consume_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoCarVehicleinfoRegisterAPIResponse 全量车型导入 API返回值
+// TaobaocarvehicleinforegisterAPIResponse 全量车型导入 API返回值
 // taobao.car.vehicleinfo.register
 //
 // 全量车型导入
-type TaobaoCarVehicleinfoRegisterAPIResponse struct {
+type TaobaocarvehicleinforegisterAPIResponse struct {
 	model.CommonResponse
-	TaobaoCarVehicleinfoRegisterAPIResponseModel
+	TaobaocarvehicleinforegisterAPIResponseModel
 }
 
-// TaobaoCarVehicleinfoRegisterAPIResponseModel is 全量车型导入 成功返回结果
-type TaobaoCarVehicleinfoRegisterAPIResponseModel struct {
+// TaobaocarvehicleinforegisterAPIResponseModel is 全量车型导入 成功返回结果
+type TaobaocarvehicleinforegisterAPIResponseModel struct {
 	XMLName xml.Name `xml:"car_vehicleinfo_register_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

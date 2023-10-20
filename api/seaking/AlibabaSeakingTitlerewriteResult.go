@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/seaking"
 )
 
-// AlibabaSeakingTitlerewriteResult 获取标题改写任务结果
+// Alibabaseakingtitlerewriteresult 获取标题改写任务结果
 // alibaba.seaking.titlerewrite.result
 //
 // 获取标题改写任务结果
-func AlibabaSeakingTitlerewriteResult(clt *core.SDKClient, req *seaking.AlibabaSeakingTitlerewriteResultAPIRequest, session string) (*seaking.AlibabaSeakingTitlerewriteResultAPIResponse, error) {
-	var resp seaking.AlibabaSeakingTitlerewriteResultAPIResponse
+func Alibabaseakingtitlerewriteresult(clt *core.SDKClient, req *seaking.AlibabaseakingtitlerewriteresultAPIRequest, session string) (*seaking.AlibabaseakingtitlerewriteresultAPIResponse, error) {
+	var resp seaking.AlibabaseakingtitlerewriteresultAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

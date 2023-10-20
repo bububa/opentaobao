@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAilabUserProfileGetAPIRequest 查询用户信息 API请求
+// AlibabaailabuserprofilegetAPIRequest 查询用户信息 API请求
 // alibaba.ailab.user.profile.get
 //
 // 提供天猫精灵用户头像、昵称的查询接口，供本田车载天猫精灵使用
-type AlibabaAilabUserProfileGetAPIRequest struct {
+type AlibabaailabuserprofilegetAPIRequest struct {
 	model.Params
 	// open uid
 	_openUid string
@@ -18,52 +18,52 @@ type AlibabaAilabUserProfileGetAPIRequest struct {
 	_clientId string
 }
 
-// NewAlibabaAilabUserProfileGetRequest 初始化AlibabaAilabUserProfileGetAPIRequest对象
-func NewAlibabaAilabUserProfileGetRequest() *AlibabaAilabUserProfileGetAPIRequest {
-	return &AlibabaAilabUserProfileGetAPIRequest{
+// NewAlibabaailabuserprofilegetRequest 初始化AlibabaailabuserprofilegetAPIRequest对象
+func NewAlibabaailabuserprofilegetRequest() *AlibabaailabuserprofilegetAPIRequest {
+	return &AlibabaailabuserprofilegetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAilabUserProfileGetAPIRequest) GetApiMethodName() string {
+func (r AlibabaailabuserprofilegetAPIRequest) GetApiMethodName() string {
 	return "alibaba.ailab.user.profile.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAilabUserProfileGetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaailabuserprofilegetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAilabUserProfileGetAPIRequest) GetRawParams() model.Params {
+func (r AlibabaailabuserprofilegetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOpenUid is OpenUid Setter
 // open uid
-func (r *AlibabaAilabUserProfileGetAPIRequest) SetOpenUid(_openUid string) error {
+func (r *AlibabaailabuserprofilegetAPIRequest) SetOpenUid(_openUid string) error {
 	r._openUid = _openUid
 	r.Set("open_uid", _openUid)
 	return nil
 }
 
 // GetOpenUid OpenUid Getter
-func (r AlibabaAilabUserProfileGetAPIRequest) GetOpenUid() string {
+func (r AlibabaailabuserprofilegetAPIRequest) GetOpenUid() string {
 	return r._openUid
 }
 
 // SetClientId is ClientId Setter
 // client id
-func (r *AlibabaAilabUserProfileGetAPIRequest) SetClientId(_clientId string) error {
+func (r *AlibabaailabuserprofilegetAPIRequest) SetClientId(_clientId string) error {
 	r._clientId = _clientId
 	r.Set("client_id", _clientId)
 	return nil
 }
 
 // GetClientId ClientId Getter
-func (r AlibabaAilabUserProfileGetAPIRequest) GetClientId() string {
+func (r AlibabaailabuserprofilegetAPIRequest) GetClientId() string {
 	return r._clientId
 }

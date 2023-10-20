@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaScbpAccountBudgetGetAPIRequest 查询日消耗预算 API请求
+// AlibabascbpaccountbudgetgetAPIRequest 查询日消耗预算 API请求
 // alibaba.scbp.account.budget.get
 //
 // 查询日消耗预算
-type AlibabaScbpAccountBudgetGetAPIRequest struct {
+type AlibabascbpaccountbudgetgetAPIRequest struct {
 	model.Params
 }
 
-// NewAlibabaScbpAccountBudgetGetRequest 初始化AlibabaScbpAccountBudgetGetAPIRequest对象
-func NewAlibabaScbpAccountBudgetGetRequest() *AlibabaScbpAccountBudgetGetAPIRequest {
-	return &AlibabaScbpAccountBudgetGetAPIRequest{
+// NewAlibabascbpaccountbudgetgetRequest 初始化AlibabascbpaccountbudgetgetAPIRequest对象
+func NewAlibabascbpaccountbudgetgetRequest() *AlibabascbpaccountbudgetgetAPIRequest {
+	return &AlibabascbpaccountbudgetgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaScbpAccountBudgetGetAPIRequest) GetApiMethodName() string {
+func (r AlibabascbpaccountbudgetgetAPIRequest) GetApiMethodName() string {
 	return "alibaba.scbp.account.budget.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAccountBudgetGetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabascbpaccountbudgetgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaScbpAccountBudgetGetAPIRequest) GetRawParams() model.Params {
+func (r AlibabascbpaccountbudgetgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

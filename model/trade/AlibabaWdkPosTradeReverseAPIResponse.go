@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkPosTradeReverseAPIResponse 轻pos品牌营销退款接口 API返回值
+// AlibabawdkpostradereverseAPIResponse 轻pos品牌营销退款接口 API返回值
 // alibaba.wdk.pos.trade.reverse
 //
 // 轻pos品牌营销场景，商家调用退款接口
-type AlibabaWdkPosTradeReverseAPIResponse struct {
+type AlibabawdkpostradereverseAPIResponse struct {
 	model.CommonResponse
-	AlibabaWdkPosTradeReverseAPIResponseModel
+	AlibabawdkpostradereverseAPIResponseModel
 }
 
-// AlibabaWdkPosTradeReverseAPIResponseModel is 轻pos品牌营销退款接口 成功返回结果
-type AlibabaWdkPosTradeReverseAPIResponseModel struct {
+// AlibabawdkpostradereverseAPIResponseModel is 轻pos品牌营销退款接口 成功返回结果
+type AlibabawdkpostradereverseAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_pos_trade_reverse_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

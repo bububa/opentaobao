@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest 更新药店 API请求
+// AlibabaalihealthalidocdrugstoreupdateAPIRequest 更新药店 API请求
 // alibaba.alihealth.alidoc.drug.store.update
 //
 // 药店信息更新接口
-type AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest struct {
+type AlibabaalihealthalidocdrugstoreupdateAPIRequest struct {
 	model.Params
 	// 更新对象
 	_drugStoreUpdateTopRequest *DrugStoreUpdateTopRequest
 }
 
-// NewAlibabaAlihealthAlidocDrugStoreUpdateRequest 初始化AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest对象
-func NewAlibabaAlihealthAlidocDrugStoreUpdateRequest() *AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest {
-	return &AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest{
+// NewAlibabaalihealthalidocdrugstoreupdateRequest 初始化AlibabaalihealthalidocdrugstoreupdateAPIRequest对象
+func NewAlibabaalihealthalidocdrugstoreupdateRequest() *AlibabaalihealthalidocdrugstoreupdateAPIRequest {
+	return &AlibabaalihealthalidocdrugstoreupdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihealthalidocdrugstoreupdateAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.alidoc.drug.store.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihealthalidocdrugstoreupdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihealthalidocdrugstoreupdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDrugStoreUpdateTopRequest is DrugStoreUpdateTopRequest Setter
 // 更新对象
-func (r *AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest) SetDrugStoreUpdateTopRequest(_drugStoreUpdateTopRequest *DrugStoreUpdateTopRequest) error {
+func (r *AlibabaalihealthalidocdrugstoreupdateAPIRequest) SetDrugStoreUpdateTopRequest(_drugStoreUpdateTopRequest *DrugStoreUpdateTopRequest) error {
 	r._drugStoreUpdateTopRequest = _drugStoreUpdateTopRequest
 	r.Set("drug_store_update_top_request", _drugStoreUpdateTopRequest)
 	return nil
 }
 
 // GetDrugStoreUpdateTopRequest DrugStoreUpdateTopRequest Getter
-func (r AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest) GetDrugStoreUpdateTopRequest() *DrugStoreUpdateTopRequest {
+func (r AlibabaalihealthalidocdrugstoreupdateAPIRequest) GetDrugStoreUpdateTopRequest() *DrugStoreUpdateTopRequest {
 	return r._drugStoreUpdateTopRequest
 }

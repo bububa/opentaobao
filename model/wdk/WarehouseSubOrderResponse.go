@@ -13,7 +13,7 @@ type WarehouseSubOrderResponse struct {
 	// 交易子单号
 	BizSubOrderId int64 `json:"biz_sub_order_id,omitempty" xml:"biz_sub_order_id,omitempty"`
 	// 库存单位购买数量(应拣数量)
-	BuyStockQuantity *BigDecimal `json:"buy_stock_quantity,omitempty" xml:"buy_stock_quantity,omitempty"`
+	BuyStockQuantity float64 `json:"buy_stock_quantity,omitempty" xml:"buy_stock_quantity,omitempty"`
 	// 库存单位拣货数量
-	PickStockQuantity *BigDecimal `json:"pick_stock_quantity,omitempty" xml:"pick_stock_quantity,omitempty"`
+	PickStockQuantity float64 `json:"pick_stock_quantity,omitempty" xml:"pick_stock_quantity,omitempty"`
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaCampusSpaceAttrSetattrAPIResponse 新增业务属性实例接口 API返回值
+// AlibabacampusspaceattrsetattrAPIResponse 新增业务属性实例接口 API返回值
 // alibaba.campus.space.attr.setattr
 //
 // 新增业务属性实例接口
-type AlibabaCampusSpaceAttrSetattrAPIResponse struct {
+type AlibabacampusspaceattrsetattrAPIResponse struct {
 	model.CommonResponse
-	AlibabaCampusSpaceAttrSetattrAPIResponseModel
+	AlibabacampusspaceattrsetattrAPIResponseModel
 }
 
-// AlibabaCampusSpaceAttrSetattrAPIResponseModel is 新增业务属性实例接口 成功返回结果
-type AlibabaCampusSpaceAttrSetattrAPIResponseModel struct {
+// AlibabacampusspaceattrsetattrAPIResponseModel is 新增业务属性实例接口 成功返回结果
+type AlibabacampusspaceattrsetattrAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_campus_space_attr_setattr_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

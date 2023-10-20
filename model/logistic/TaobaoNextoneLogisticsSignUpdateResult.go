@@ -1,7 +1,7 @@
 package logistic
 
-// TaobaoNextoneLogisticsSignUpdateResult 结构体
-type TaobaoNextoneLogisticsSignUpdateResult struct {
+// TaobaonextonelogisticssignupdateResult 结构体
+type TaobaonextonelogisticssignupdateResult struct {
 	// 返回数据
 	ResultData string `json:"result_data,omitempty" xml:"result_data,omitempty"`
 	// 错误信息

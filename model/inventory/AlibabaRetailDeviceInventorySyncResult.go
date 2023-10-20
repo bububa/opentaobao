@@ -1,7 +1,7 @@
 package inventory
 
-// AlibabaRetailDeviceInventorySyncResult 结构体
-type AlibabaRetailDeviceInventorySyncResult struct {
+// AlibabaretaildeviceinventorysyncResult 结构体
+type AlibabaretaildeviceinventorysyncResult struct {
 	// errorInfos
 	ErrorInfos []ErrorInfo `json:"error_infos,omitempty" xml:"error_infos>error_info,omitempty"`
 	// success

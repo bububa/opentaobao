@@ -1,7 +1,7 @@
 package alilabs
 
-// AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiResult 结构体
-type AlibabaAilabsTmallgenieAuthDeviceStatusGetbycteiResult struct {
+// AlibabaailabstmallgenieauthdevicestatusgetbycteiResult 结构体
+type AlibabaailabstmallgenieauthdevicestatusgetbycteiResult struct {
 	// 结果描述
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 接口返回model

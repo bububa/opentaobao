@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaCampusAclNewListusermenuAPIResponse 查询用户有权限的菜单树 API返回值
+// AlibabacampusaclnewlistusermenuAPIResponse 查询用户有权限的菜单树 API返回值
 // alibaba.campus.acl.new.listusermenu
 //
 // 查询用户有权限的菜单树
-type AlibabaCampusAclNewListusermenuAPIResponse struct {
+type AlibabacampusaclnewlistusermenuAPIResponse struct {
 	model.CommonResponse
-	AlibabaCampusAclNewListusermenuAPIResponseModel
+	AlibabacampusaclnewlistusermenuAPIResponseModel
 }
 
-// AlibabaCampusAclNewListusermenuAPIResponseModel is 查询用户有权限的菜单树 成功返回结果
-type AlibabaCampusAclNewListusermenuAPIResponseModel struct {
+// AlibabacampusaclnewlistusermenuAPIResponseModel is 查询用户有权限的菜单树 成功返回结果
+type AlibabacampusaclnewlistusermenuAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_campus_acl_new_listusermenu_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaRetailCommissionOrderQueryAPIResponse 分销订单查询 API返回值
+// AlibabaretailcommissionorderqueryAPIResponse 分销订单查询 API返回值
 // alibaba.retail.commission.order.query
 //
 // 查询商家的分销订单
-type AlibabaRetailCommissionOrderQueryAPIResponse struct {
+type AlibabaretailcommissionorderqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaRetailCommissionOrderQueryAPIResponseModel
+	AlibabaretailcommissionorderqueryAPIResponseModel
 }
 
-// AlibabaRetailCommissionOrderQueryAPIResponseModel is 分销订单查询 成功返回结果
-type AlibabaRetailCommissionOrderQueryAPIResponseModel struct {
+// AlibabaretailcommissionorderqueryAPIResponseModel is 分销订单查询 成功返回结果
+type AlibabaretailcommissionorderqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_retail_commission_order_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

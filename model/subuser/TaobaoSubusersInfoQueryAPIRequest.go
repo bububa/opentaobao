@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSubusersInfoQueryAPIRequest 根据当前子账号登陆态，获取该子账号基本信息 API请求
+// TaobaosubusersinfoqueryAPIRequest 根据当前子账号登陆态，获取该子账号基本信息 API请求
 // taobao.subusers.info.query
 //
 // 根据当前子账号登陆态，获取该子账号基本信息
-type TaobaoSubusersInfoQueryAPIRequest struct {
+type TaobaosubusersinfoqueryAPIRequest struct {
 	model.Params
 	// 站点信息，淘宝天猫传0，1688传3
 	_site int64
 }
 
-// NewTaobaoSubusersInfoQueryRequest 初始化TaobaoSubusersInfoQueryAPIRequest对象
-func NewTaobaoSubusersInfoQueryRequest() *TaobaoSubusersInfoQueryAPIRequest {
-	return &TaobaoSubusersInfoQueryAPIRequest{
+// NewTaobaosubusersinfoqueryRequest 初始化TaobaosubusersinfoqueryAPIRequest对象
+func NewTaobaosubusersinfoqueryRequest() *TaobaosubusersinfoqueryAPIRequest {
+	return &TaobaosubusersinfoqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoSubusersInfoQueryAPIRequest) GetApiMethodName() string {
+func (r TaobaosubusersinfoqueryAPIRequest) GetApiMethodName() string {
 	return "taobao.subusers.info.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoSubusersInfoQueryAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaosubusersinfoqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoSubusersInfoQueryAPIRequest) GetRawParams() model.Params {
+func (r TaobaosubusersinfoqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSite is Site Setter
 // 站点信息，淘宝天猫传0，1688传3
-func (r *TaobaoSubusersInfoQueryAPIRequest) SetSite(_site int64) error {
+func (r *TaobaosubusersinfoqueryAPIRequest) SetSite(_site int64) error {
 	r._site = _site
 	r.Set("site", _site)
 	return nil
 }
 
 // GetSite Site Getter
-func (r TaobaoSubusersInfoQueryAPIRequest) GetSite() int64 {
+func (r TaobaosubusersinfoqueryAPIRequest) GetSite() int64 {
 	return r._site
 }

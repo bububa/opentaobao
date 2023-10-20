@@ -1,7 +1,7 @@
 package simba
 
-// TaobaoUniversalbpAccountGetCanUseBizcodeTopResult 结构体
-type TaobaoUniversalbpAccountGetCanUseBizcodeTopResult struct {
+// TaobaouniversalbpaccountgetcanusebizcodeTopResult 结构体
+type TaobaouniversalbpaccountgetcanusebizcodeTopResult struct {
 	// 请求系统信息
 	Info *TopInfo `json:"info,omitempty" xml:"info,omitempty"`
 	// 结果集

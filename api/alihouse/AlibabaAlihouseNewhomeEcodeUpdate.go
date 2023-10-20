@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// AlibabaAlihouseNewhomeEcodeUpdate 新房货变更E码
+// Alibabaalihousenewhomeecodeupdate 新房货变更E码
 // alibaba.alihouse.newhome.ecode.update
 //
 // 新房货变更E码
-func AlibabaAlihouseNewhomeEcodeUpdate(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeEcodeUpdateAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeEcodeUpdateAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeEcodeUpdateAPIResponse
+func Alibabaalihousenewhomeecodeupdate(clt *core.SDKClient, req *alihouse.AlibabaalihousenewhomeecodeupdateAPIRequest, session string) (*alihouse.AlibabaalihousenewhomeecodeupdateAPIResponse, error) {
+	var resp alihouse.AlibabaalihousenewhomeecodeupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

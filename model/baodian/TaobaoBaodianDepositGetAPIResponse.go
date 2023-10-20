@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoBaodianDepositGetAPIResponse 宝点用户帐户查询（已迁移） API返回值
+// TaobaobaodiandepositgetAPIResponse 宝点用户帐户查询（已迁移） API返回值
 // taobao.baodian.deposit.get
 //
 // 查询用户宝点帐户信息及当前宝点价格
-type TaobaoBaodianDepositGetAPIResponse struct {
+type TaobaobaodiandepositgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoBaodianDepositGetAPIResponseModel
+	TaobaobaodiandepositgetAPIResponseModel
 }
 
-// TaobaoBaodianDepositGetAPIResponseModel is 宝点用户帐户查询（已迁移） 成功返回结果
-type TaobaoBaodianDepositGetAPIResponseModel struct {
+// TaobaobaodiandepositgetAPIResponseModel is 宝点用户帐户查询（已迁移） 成功返回结果
+type TaobaobaodiandepositgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"baodian_deposit_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"log"
 	"os"
@@ -67,13 +68,17 @@ func catelogHandler(catelogPath string, catelogPatchPath string) ApiPkg {
 	}
 
 	if err != nil {
-		log.Printf("[ERR] Path:%s, %s\n", catelogPath, err.Error())
+		if !errors.Is(err, os.ErrNotExist) {
+			log.Printf("[ERR] Path:%s, %s\n", catelogPath, err.Error())
+		}
 		return apiPkg
 	}
 
 	wd, err := os.Getwd()
 	if err != nil {
-		log.Printf("[ERR] Path:%s, %s\n", catelogPath, err.Error())
+		if !errors.Is(err, os.ErrNotExist) {
+			log.Printf("[ERR] Path:%s, %s\n", catelogPath, err.Error())
+		}
 		return apiPkg
 	}
 
@@ -130,7 +135,7 @@ func catelogHandler(catelogPath string, catelogPatchPath string) ApiPkg {
 			files = append(files, fi.Name())
 		}
 		log.Printf("[INFO] Patch files: %d\n", len(catelogPatchRd))
-	} else {
+	} else if !errors.Is(err, os.ErrNotExist) {
 		log.Printf("[ERR] Patch path: %s, %s\n", catelogPatchPath, err.Error())
 	}
 

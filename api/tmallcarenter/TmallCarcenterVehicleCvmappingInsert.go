@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallcarenter"
 )
 
-// TmallCarcenterVehicleCvmappingInsert EPC车辆版本信息与底盘信息库关系绑定
+// Tmallcarcentervehiclecvmappinginsert EPC车辆版本信息与底盘信息库关系绑定
 // tmall.carcenter.vehicle.cvmapping.insert
 //
 // EPC车辆版本信息与底盘信息库关系绑定
-func TmallCarcenterVehicleCvmappingInsert(clt *core.SDKClient, req *tmallcarenter.TmallCarcenterVehicleCvmappingInsertAPIRequest, session string) (*tmallcarenter.TmallCarcenterVehicleCvmappingInsertAPIResponse, error) {
-	var resp tmallcarenter.TmallCarcenterVehicleCvmappingInsertAPIResponse
+func Tmallcarcentervehiclecvmappinginsert(clt *core.SDKClient, req *tmallcarenter.TmallcarcentervehiclecvmappinginsertAPIRequest, session string) (*tmallcarenter.TmallcarcentervehiclecvmappinginsertAPIResponse, error) {
+	var resp tmallcarenter.TmallcarcentervehiclecvmappinginsertAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// AlibabaAlihouseExistinghomeBankcardSync 结算账号同步
+// Alibabaalihouseexistinghomebankcardsync 结算账号同步
 // alibaba.alihouse.existinghome.bankcard.sync
 //
 // 结算账号同步
-func AlibabaAlihouseExistinghomeBankcardSync(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeBankcardSyncAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomeBankcardSyncAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseExistinghomeBankcardSyncAPIResponse
+func Alibabaalihouseexistinghomebankcardsync(clt *core.SDKClient, req *alihouse.AlibabaalihouseexistinghomebankcardsyncAPIRequest, session string) (*alihouse.AlibabaalihouseexistinghomebankcardsyncAPIResponse, error) {
+	var resp alihouse.AlibabaalihouseexistinghomebankcardsyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

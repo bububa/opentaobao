@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// AlibabaScbpProductPreferentialUpdate 设置P4P产品优先推广状态
+// Alibabascbpproductpreferentialupdate 设置P4P产品优先推广状态
 // alibaba.scbp.product.preferential.update
 //
 // 设置P4P产品优先推广状态
-func AlibabaScbpProductPreferentialUpdate(clt *core.SDKClient, req *scbp.AlibabaScbpProductPreferentialUpdateAPIRequest, session string) (*scbp.AlibabaScbpProductPreferentialUpdateAPIResponse, error) {
-	var resp scbp.AlibabaScbpProductPreferentialUpdateAPIResponse
+func Alibabascbpproductpreferentialupdate(clt *core.SDKClient, req *scbp.AlibabascbpproductpreferentialupdateAPIRequest, session string) (*scbp.AlibabascbpproductpreferentialupdateAPIResponse, error) {
+	var resp scbp.AlibabascbpproductpreferentialupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

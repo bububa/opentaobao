@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaAlihouseNewhomeActivitySaveResult 结构体
-type AlibabaAlihouseNewhomeActivitySaveResult struct {
+// AlibabaalihousenewhomeactivitysaveResult 结构体
+type AlibabaalihousenewhomeactivitysaveResult struct {
 	// 返回编码
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 调用是否成功

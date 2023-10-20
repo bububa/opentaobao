@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripFlightExternalAlipaySnQueryAPIResponse 支付宝小程序查询证书序列号 API返回值
+// AlitripflightexternalalipaysnqueryAPIResponse 支付宝小程序查询证书序列号 API返回值
 // alitrip.flight.external.alipay.sn.query
 //
 // 支付宝小程序查询证书序列号
-type AlitripFlightExternalAlipaySnQueryAPIResponse struct {
+type AlitripflightexternalalipaysnqueryAPIResponse struct {
 	model.CommonResponse
-	AlitripFlightExternalAlipaySnQueryAPIResponseModel
+	AlitripflightexternalalipaysnqueryAPIResponseModel
 }
 
-// AlitripFlightExternalAlipaySnQueryAPIResponseModel is 支付宝小程序查询证书序列号 成功返回结果
-type AlitripFlightExternalAlipaySnQueryAPIResponseModel struct {
+// AlitripflightexternalalipaysnqueryAPIResponseModel is 支付宝小程序查询证书序列号 成功返回结果
+type AlitripflightexternalalipaysnqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_flight_external_alipay_sn_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

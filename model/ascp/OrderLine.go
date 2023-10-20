@@ -3,7 +3,7 @@ package ascp
 // OrderLine 结构体
 type OrderLine struct {
 	// 批次列表
-	Batchs []AlibabaDchainAoxiangWmsDeliveryorderConfirmBatch `json:"batchs,omitempty" xml:"batchs>alibaba_dchain_aoxiang_wms_deliveryorder_confirm_batch,omitempty"`
+	Batchs []AlibabadchainaoxiangwmsdeliveryorderconfirmBatch `json:"batchs,omitempty" xml:"batchs>alibabadchainaoxiangwmsdeliveryorderconfirm_batch,omitempty"`
 	// 交易主单号
 	SourceOrderCode string `json:"source_order_code,omitempty" xml:"source_order_code,omitempty"`
 	// 交易子单号

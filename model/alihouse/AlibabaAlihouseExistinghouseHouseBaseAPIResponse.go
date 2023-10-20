@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihouseExistinghouseHouseBaseAPIResponse （租房）同步房屋信息 API返回值
+// AlibabaalihouseexistinghousehousebaseAPIResponse （租房）同步房屋信息 API返回值
 // alibaba.alihouse.existinghouse.house.base
 //
 // 房屋信息上翻
-type AlibabaAlihouseExistinghouseHouseBaseAPIResponse struct {
+type AlibabaalihouseexistinghousehousebaseAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihouseExistinghouseHouseBaseAPIResponseModel
+	AlibabaalihouseexistinghousehousebaseAPIResponseModel
 }
 
-// AlibabaAlihouseExistinghouseHouseBaseAPIResponseModel is （租房）同步房屋信息 成功返回结果
-type AlibabaAlihouseExistinghouseHouseBaseAPIResponseModel struct {
+// AlibabaalihouseexistinghousehousebaseAPIResponseModel is （租房）同步房屋信息 成功返回结果
+type AlibabaalihouseexistinghousehousebaseAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihouse_existinghouse_house_base_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果
-	Result *AlibabaAlihouseExistinghouseHouseBaseResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaalihouseexistinghousehousebaseResult `json:"result,omitempty" xml:"result,omitempty"`
 }

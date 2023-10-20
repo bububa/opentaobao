@@ -1,7 +1,7 @@
 package cloudgame
 
-// AlibabaCloudgameInteractiveGameStartResult 结构体
-type AlibabaCloudgameInteractiveGameStartResult struct {
+// AlibabacloudgameinteractivegamestartResult 结构体
+type AlibabacloudgameinteractivegamestartResult struct {
 	// 返回状态码
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 返回描述

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// AlibabaAlihouseNewhomeProjectKanameQuery 查询KA楼盘名称
+// Alibabaalihousenewhomeprojectkanamequery 查询KA楼盘名称
 // alibaba.alihouse.newhome.project.kaname.query
 //
 // 查询KA楼盘名称
-func AlibabaAlihouseNewhomeProjectKanameQuery(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeProjectKanameQueryAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeProjectKanameQueryAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeProjectKanameQueryAPIResponse
+func Alibabaalihousenewhomeprojectkanamequery(clt *core.SDKClient, req *alihouse.AlibabaalihousenewhomeprojectkanamequeryAPIRequest, session string) (*alihouse.AlibabaalihousenewhomeprojectkanamequeryAPIResponse, error) {
+	var resp alihouse.AlibabaalihousenewhomeprojectkanamequeryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

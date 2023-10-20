@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest 获取线路主题 API请求
+// TaobaoalitriptravelfscrouteapiproductlabelgetAPIRequest 获取线路主题 API请求
 // taobao.alitrip.travel.fsc.route.api.product.label.get
 //
 // 获取线路主题
-type TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest struct {
+type TaobaoalitriptravelfscrouteapiproductlabelgetAPIRequest struct {
 	model.Params
 	// fscProductLabelQueryRequest
 	_fscProductLabelQueryRequest *FscProductLabelQueryRequest
 }
 
-// NewTaobaoAlitripTravelFscRouteApiProductLabelGetRequest 初始化TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest对象
-func NewTaobaoAlitripTravelFscRouteApiProductLabelGetRequest() *TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest {
-	return &TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest{
+// NewTaobaoalitriptravelfscrouteapiproductlabelgetRequest 初始化TaobaoalitriptravelfscrouteapiproductlabelgetAPIRequest对象
+func NewTaobaoalitriptravelfscrouteapiproductlabelgetRequest() *TaobaoalitriptravelfscrouteapiproductlabelgetAPIRequest {
+	return &TaobaoalitriptravelfscrouteapiproductlabelgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest) GetApiMethodName() string {
+func (r TaobaoalitriptravelfscrouteapiproductlabelgetAPIRequest) GetApiMethodName() string {
 	return "taobao.alitrip.travel.fsc.route.api.product.label.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoalitriptravelfscrouteapiproductlabelgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoalitriptravelfscrouteapiproductlabelgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetFscProductLabelQueryRequest is FscProductLabelQueryRequest Setter
 // fscProductLabelQueryRequest
-func (r *TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest) SetFscProductLabelQueryRequest(_fscProductLabelQueryRequest *FscProductLabelQueryRequest) error {
+func (r *TaobaoalitriptravelfscrouteapiproductlabelgetAPIRequest) SetFscProductLabelQueryRequest(_fscProductLabelQueryRequest *FscProductLabelQueryRequest) error {
 	r._fscProductLabelQueryRequest = _fscProductLabelQueryRequest
 	r.Set("fsc_product_label_query_request", _fscProductLabelQueryRequest)
 	return nil
 }
 
 // GetFscProductLabelQueryRequest FscProductLabelQueryRequest Getter
-func (r TaobaoAlitripTravelFscRouteApiProductLabelGetAPIRequest) GetFscProductLabelQueryRequest() *FscProductLabelQueryRequest {
+func (r TaobaoalitriptravelfscrouteapiproductlabelgetAPIRequest) GetFscProductLabelQueryRequest() *FscProductLabelQueryRequest {
 	return r._fscProductLabelQueryRequest
 }

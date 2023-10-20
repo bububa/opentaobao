@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoQimenItemsMarkingAPIRequest 商品通自动打标 API请求
+// TaobaoqimenitemsmarkingAPIRequest 商品通自动打标 API请求
 // taobao.qimen.items.marking
 //
 // 调用该接口，对商品进行XXXX标的打标、去标的动作。
-type TaobaoQimenItemsMarkingAPIRequest struct {
+type TaobaoqimenitemsmarkingAPIRequest struct {
 	model.Params
 	// 线上商品ID，long，必填
 	_itemIds []string
@@ -22,78 +22,78 @@ type TaobaoQimenItemsMarkingAPIRequest struct {
 	_remark string
 }
 
-// NewTaobaoQimenItemsMarkingRequest 初始化TaobaoQimenItemsMarkingAPIRequest对象
-func NewTaobaoQimenItemsMarkingRequest() *TaobaoQimenItemsMarkingAPIRequest {
-	return &TaobaoQimenItemsMarkingAPIRequest{
+// NewTaobaoqimenitemsmarkingRequest 初始化TaobaoqimenitemsmarkingAPIRequest对象
+func NewTaobaoqimenitemsmarkingRequest() *TaobaoqimenitemsmarkingAPIRequest {
+	return &TaobaoqimenitemsmarkingAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoQimenItemsMarkingAPIRequest) GetApiMethodName() string {
+func (r TaobaoqimenitemsmarkingAPIRequest) GetApiMethodName() string {
 	return "taobao.qimen.items.marking"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoQimenItemsMarkingAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoqimenitemsmarkingAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoQimenItemsMarkingAPIRequest) GetRawParams() model.Params {
+func (r TaobaoqimenitemsmarkingAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetItemIds is ItemIds Setter
 // 线上商品ID，long，必填
-func (r *TaobaoQimenItemsMarkingAPIRequest) SetItemIds(_itemIds []string) error {
+func (r *TaobaoqimenitemsmarkingAPIRequest) SetItemIds(_itemIds []string) error {
 	r._itemIds = _itemIds
 	r.Set("item_ids", _itemIds)
 	return nil
 }
 
 // GetItemIds ItemIds Getter
-func (r TaobaoQimenItemsMarkingAPIRequest) GetItemIds() []string {
+func (r TaobaoqimenitemsmarkingAPIRequest) GetItemIds() []string {
 	return r._itemIds
 }
 
 // SetActionType is ActionType Setter
 // 操作类型，string（50），ADD=打标，DELETE=去标，必填
-func (r *TaobaoQimenItemsMarkingAPIRequest) SetActionType(_actionType string) error {
+func (r *TaobaoqimenitemsmarkingAPIRequest) SetActionType(_actionType string) error {
 	r._actionType = _actionType
 	r.Set("action_type", _actionType)
 	return nil
 }
 
 // GetActionType ActionType Getter
-func (r TaobaoQimenItemsMarkingAPIRequest) GetActionType() string {
+func (r TaobaoqimenitemsmarkingAPIRequest) GetActionType() string {
 	return r._actionType
 }
 
 // SetTagType is TagType Setter
 // 打标值，string（50），TBKU=同步库存标，MDZT=门店自提标，必填
-func (r *TaobaoQimenItemsMarkingAPIRequest) SetTagType(_tagType string) error {
+func (r *TaobaoqimenitemsmarkingAPIRequest) SetTagType(_tagType string) error {
 	r._tagType = _tagType
 	r.Set("tag_type", _tagType)
 	return nil
 }
 
 // GetTagType TagType Getter
-func (r TaobaoQimenItemsMarkingAPIRequest) GetTagType() string {
+func (r TaobaoqimenitemsmarkingAPIRequest) GetTagType() string {
 	return r._tagType
 }
 
 // SetRemark is Remark Setter
 // 备注，string（500）
-func (r *TaobaoQimenItemsMarkingAPIRequest) SetRemark(_remark string) error {
+func (r *TaobaoqimenitemsmarkingAPIRequest) SetRemark(_remark string) error {
 	r._remark = _remark
 	r.Set("remark", _remark)
 	return nil
 }
 
 // GetRemark Remark Getter
-func (r TaobaoQimenItemsMarkingAPIRequest) GetRemark() string {
+func (r TaobaoqimenitemsmarkingAPIRequest) GetRemark() string {
 	return r._remark
 }

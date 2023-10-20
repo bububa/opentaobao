@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthBookingReserveCancelAPIRequest 取消预约 API请求
+// AlibabaalihealthbookingreservecancelAPIRequest 取消预约 API请求
 // alibaba.alihealth.booking.reserve.cancel
 //
 // 消费医疗统一预约平台，ISV取消预约
-type AlibabaAlihealthBookingReserveCancelAPIRequest struct {
+type AlibabaalihealthbookingreservecancelAPIRequest struct {
 	model.Params
 	// cancel
 	_cancel *IsvReserveRequest
 }
 
-// NewAlibabaAlihealthBookingReserveCancelRequest 初始化AlibabaAlihealthBookingReserveCancelAPIRequest对象
-func NewAlibabaAlihealthBookingReserveCancelRequest() *AlibabaAlihealthBookingReserveCancelAPIRequest {
-	return &AlibabaAlihealthBookingReserveCancelAPIRequest{
+// NewAlibabaalihealthbookingreservecancelRequest 初始化AlibabaalihealthbookingreservecancelAPIRequest对象
+func NewAlibabaalihealthbookingreservecancelRequest() *AlibabaalihealthbookingreservecancelAPIRequest {
+	return &AlibabaalihealthbookingreservecancelAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthBookingReserveCancelAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihealthbookingreservecancelAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.booking.reserve.cancel"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthBookingReserveCancelAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihealthbookingreservecancelAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihealthBookingReserveCancelAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihealthbookingreservecancelAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCancel is Cancel Setter
 // cancel
-func (r *AlibabaAlihealthBookingReserveCancelAPIRequest) SetCancel(_cancel *IsvReserveRequest) error {
+func (r *AlibabaalihealthbookingreservecancelAPIRequest) SetCancel(_cancel *IsvReserveRequest) error {
 	r._cancel = _cancel
 	r.Set("cancel", _cancel)
 	return nil
 }
 
 // GetCancel Cancel Getter
-func (r AlibabaAlihealthBookingReserveCancelAPIRequest) GetCancel() *IsvReserveRequest {
+func (r AlibabaalihealthbookingreservecancelAPIRequest) GetCancel() *IsvReserveRequest {
 	return r._cancel
 }

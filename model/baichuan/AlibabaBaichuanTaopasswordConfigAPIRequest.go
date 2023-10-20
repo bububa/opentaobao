@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaBaichuanTaopasswordConfigAPIRequest 淘口令配置数据 API请求
+// AlibababaichuantaopasswordconfigAPIRequest 淘口令配置数据 API请求
 // alibaba.baichuan.taopassword.config
 //
 // 百川淘口令规则配置接口
-type AlibabaBaichuanTaopasswordConfigAPIRequest struct {
+type AlibababaichuantaopasswordconfigAPIRequest struct {
 	model.Params
 }
 
-// NewAlibabaBaichuanTaopasswordConfigRequest 初始化AlibabaBaichuanTaopasswordConfigAPIRequest对象
-func NewAlibabaBaichuanTaopasswordConfigRequest() *AlibabaBaichuanTaopasswordConfigAPIRequest {
-	return &AlibabaBaichuanTaopasswordConfigAPIRequest{
+// NewAlibababaichuantaopasswordconfigRequest 初始化AlibababaichuantaopasswordconfigAPIRequest对象
+func NewAlibababaichuantaopasswordconfigRequest() *AlibababaichuantaopasswordconfigAPIRequest {
+	return &AlibababaichuantaopasswordconfigAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaBaichuanTaopasswordConfigAPIRequest) GetApiMethodName() string {
+func (r AlibababaichuantaopasswordconfigAPIRequest) GetApiMethodName() string {
 	return "alibaba.baichuan.taopassword.config"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaBaichuanTaopasswordConfigAPIRequest) GetApiParams(params url.Values) {
+func (r AlibababaichuantaopasswordconfigAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaBaichuanTaopasswordConfigAPIRequest) GetRawParams() model.Params {
+func (r AlibababaichuantaopasswordconfigAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

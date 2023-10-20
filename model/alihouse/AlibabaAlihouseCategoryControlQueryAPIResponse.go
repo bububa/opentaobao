@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihouseCategoryControlQueryAPIResponse 类目权限查询 API返回值
+// AlibabaalihousecategorycontrolqueryAPIResponse 类目权限查询 API返回值
 // alibaba.alihouse.category.control.query
 //
 // 类目权限查询
-type AlibabaAlihouseCategoryControlQueryAPIResponse struct {
+type AlibabaalihousecategorycontrolqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihouseCategoryControlQueryAPIResponseModel
+	AlibabaalihousecategorycontrolqueryAPIResponseModel
 }
 
-// AlibabaAlihouseCategoryControlQueryAPIResponseModel is 类目权限查询 成功返回结果
-type AlibabaAlihouseCategoryControlQueryAPIResponseModel struct {
+// AlibabaalihousecategorycontrolqueryAPIResponseModel is 类目权限查询 成功返回结果
+type AlibabaalihousecategorycontrolqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihouse_category_control_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

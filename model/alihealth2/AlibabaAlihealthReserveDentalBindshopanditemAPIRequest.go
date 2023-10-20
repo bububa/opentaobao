@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthReserveDentalBindshopanditemAPIRequest 绑定门店信息，商品信息 API请求
+// AlibabaalihealthreservedentalbindshopanditemAPIRequest 绑定门店信息，商品信息 API请求
 // alibaba.alihealth.reserve.dental.bindshopanditem
 //
 // 绑定门店信息，商品信息
-type AlibabaAlihealthReserveDentalBindshopanditemAPIRequest struct {
+type AlibabaalihealthreservedentalbindshopanditemAPIRequest struct {
 	model.Params
 	// bind_list
 	_bindList []BindDto
 }
 
-// NewAlibabaAlihealthReserveDentalBindshopanditemRequest 初始化AlibabaAlihealthReserveDentalBindshopanditemAPIRequest对象
-func NewAlibabaAlihealthReserveDentalBindshopanditemRequest() *AlibabaAlihealthReserveDentalBindshopanditemAPIRequest {
-	return &AlibabaAlihealthReserveDentalBindshopanditemAPIRequest{
+// NewAlibabaalihealthreservedentalbindshopanditemRequest 初始化AlibabaalihealthreservedentalbindshopanditemAPIRequest对象
+func NewAlibabaalihealthreservedentalbindshopanditemRequest() *AlibabaalihealthreservedentalbindshopanditemAPIRequest {
+	return &AlibabaalihealthreservedentalbindshopanditemAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthReserveDentalBindshopanditemAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihealthreservedentalbindshopanditemAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.reserve.dental.bindshopanditem"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthReserveDentalBindshopanditemAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihealthreservedentalbindshopanditemAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihealthReserveDentalBindshopanditemAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihealthreservedentalbindshopanditemAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetBindList is BindList Setter
 // bind_list
-func (r *AlibabaAlihealthReserveDentalBindshopanditemAPIRequest) SetBindList(_bindList []BindDto) error {
+func (r *AlibabaalihealthreservedentalbindshopanditemAPIRequest) SetBindList(_bindList []BindDto) error {
 	r._bindList = _bindList
 	r.Set("bind_list", _bindList)
 	return nil
 }
 
 // GetBindList BindList Getter
-func (r AlibabaAlihealthReserveDentalBindshopanditemAPIRequest) GetBindList() []BindDto {
+func (r AlibabaalihealthreservedentalbindshopanditemAPIRequest) GetBindList() []BindDto {
 	return r._bindList
 }

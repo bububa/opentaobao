@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest 销售活动解绑预存金商品 API请求
+// AlibabaalihousenewhomeactivitydepositunbindAPIRequest 销售活动解绑预存金商品 API请求
 // alibaba.alihouse.newhome.activity.deposit.unbind
 //
 // 销售活动解绑预存金商品
-type AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest struct {
+type AlibabaalihousenewhomeactivitydepositunbindAPIRequest struct {
 	model.Params
 	// 销售活动解绑预存金报文
 	_preDepositGoldUnbindDto *PreDepositGoldUnbindDto
 }
 
-// NewAlibabaAlihouseNewhomeActivityDepositUnbindRequest 初始化AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest对象
-func NewAlibabaAlihouseNewhomeActivityDepositUnbindRequest() *AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest {
-	return &AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest{
+// NewAlibabaalihousenewhomeactivitydepositunbindRequest 初始化AlibabaalihousenewhomeactivitydepositunbindAPIRequest对象
+func NewAlibabaalihousenewhomeactivitydepositunbindRequest() *AlibabaalihousenewhomeactivitydepositunbindAPIRequest {
+	return &AlibabaalihousenewhomeactivitydepositunbindAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihousenewhomeactivitydepositunbindAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihouse.newhome.activity.deposit.unbind"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihousenewhomeactivitydepositunbindAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihousenewhomeactivitydepositunbindAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetPreDepositGoldUnbindDto is PreDepositGoldUnbindDto Setter
 // 销售活动解绑预存金报文
-func (r *AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest) SetPreDepositGoldUnbindDto(_preDepositGoldUnbindDto *PreDepositGoldUnbindDto) error {
+func (r *AlibabaalihousenewhomeactivitydepositunbindAPIRequest) SetPreDepositGoldUnbindDto(_preDepositGoldUnbindDto *PreDepositGoldUnbindDto) error {
 	r._preDepositGoldUnbindDto = _preDepositGoldUnbindDto
 	r.Set("pre_deposit_gold_unbind_dto", _preDepositGoldUnbindDto)
 	return nil
 }
 
 // GetPreDepositGoldUnbindDto PreDepositGoldUnbindDto Getter
-func (r AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest) GetPreDepositGoldUnbindDto() *PreDepositGoldUnbindDto {
+func (r AlibabaalihousenewhomeactivitydepositunbindAPIRequest) GetPreDepositGoldUnbindDto() *PreDepositGoldUnbindDto {
 	return r._preDepositGoldUnbindDto
 }

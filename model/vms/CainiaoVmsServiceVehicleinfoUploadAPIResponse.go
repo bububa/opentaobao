@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoVmsServiceVehicleinfoUploadAPIResponse 新能源车--外部车辆信息回传 API返回值
+// CainiaovmsservicevehicleinfouploadAPIResponse 新能源车--外部车辆信息回传 API返回值
 // cainiao.vms.service.vehicleinfo.upload
 //
 // 新能源车--外部车辆信息回传
-type CainiaoVmsServiceVehicleinfoUploadAPIResponse struct {
+type CainiaovmsservicevehicleinfouploadAPIResponse struct {
 	model.CommonResponse
-	CainiaoVmsServiceVehicleinfoUploadAPIResponseModel
+	CainiaovmsservicevehicleinfouploadAPIResponseModel
 }
 
-// CainiaoVmsServiceVehicleinfoUploadAPIResponseModel is 新能源车--外部车辆信息回传 成功返回结果
-type CainiaoVmsServiceVehicleinfoUploadAPIResponseModel struct {
+// CainiaovmsservicevehicleinfouploadAPIResponseModel is 新能源车--外部车辆信息回传 成功返回结果
+type CainiaovmsservicevehicleinfouploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_vms_service_vehicleinfo_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

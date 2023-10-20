@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoLogisticsExpressCourierSyncAPIResponse 快递公司同步小件员信息 API返回值
+// TaobaologisticsexpresscouriersyncAPIResponse 快递公司同步小件员信息 API返回值
 // taobao.logistics.express.courier.sync
 //
 // 快递公司同步小件员信息
-type TaobaoLogisticsExpressCourierSyncAPIResponse struct {
+type TaobaologisticsexpresscouriersyncAPIResponse struct {
 	model.CommonResponse
-	TaobaoLogisticsExpressCourierSyncAPIResponseModel
+	TaobaologisticsexpresscouriersyncAPIResponseModel
 }
 
-// TaobaoLogisticsExpressCourierSyncAPIResponseModel is 快递公司同步小件员信息 成功返回结果
-type TaobaoLogisticsExpressCourierSyncAPIResponseModel struct {
+// TaobaologisticsexpresscouriersyncAPIResponseModel is 快递公司同步小件员信息 成功返回结果
+type TaobaologisticsexpresscouriersyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_express_courier_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

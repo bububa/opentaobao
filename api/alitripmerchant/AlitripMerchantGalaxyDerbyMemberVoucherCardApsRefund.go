@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
 
-// AlitripMerchantGalaxyDerbyMemberVoucherCardApsRefund Aps退券通知接口
+// Alitripmerchantgalaxyderbymembervouchercardapsrefund Aps退券通知接口
 // alitrip.merchant.galaxy.derby.member.voucher.card.aps.refund
 //
 // Aps退券通知接口
-func AlitripMerchantGalaxyDerbyMemberVoucherCardApsRefund(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherCardApsRefundAPIResponse
+func Alitripmerchantgalaxyderbymembervouchercardapsrefund(clt *core.SDKClient, req *alitripmerchant.AlitripmerchantgalaxyderbymembervouchercardapsrefundAPIRequest, session string) (*alitripmerchant.AlitripmerchantgalaxyderbymembervouchercardapsrefundAPIResponse, error) {
+	var resp alitripmerchant.AlitripmerchantgalaxyderbymembervouchercardapsrefundAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

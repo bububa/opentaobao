@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAlitripAxinTransPayRegisterCreateAPIRequest 提交支付服务开通 API请求
+// TaobaoalitripaxintranspayregistercreateAPIRequest 提交支付服务开通 API请求
 // taobao.alitrip.axin.trans.pay.register.create
 //
 // 阿信供销平台-提交支付服务开通接口
-type TaobaoAlitripAxinTransPayRegisterCreateAPIRequest struct {
+type TaobaoalitripaxintranspayregistercreateAPIRequest struct {
 	model.Params
 	// 提交支付服务开通接口入参
 	_createDTO *AxinPayRegisterCreateDto
 }
 
-// NewTaobaoAlitripAxinTransPayRegisterCreateRequest 初始化TaobaoAlitripAxinTransPayRegisterCreateAPIRequest对象
-func NewTaobaoAlitripAxinTransPayRegisterCreateRequest() *TaobaoAlitripAxinTransPayRegisterCreateAPIRequest {
-	return &TaobaoAlitripAxinTransPayRegisterCreateAPIRequest{
+// NewTaobaoalitripaxintranspayregistercreateRequest 初始化TaobaoalitripaxintranspayregistercreateAPIRequest对象
+func NewTaobaoalitripaxintranspayregistercreateRequest() *TaobaoalitripaxintranspayregistercreateAPIRequest {
+	return &TaobaoalitripaxintranspayregistercreateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripAxinTransPayRegisterCreateAPIRequest) GetApiMethodName() string {
+func (r TaobaoalitripaxintranspayregistercreateAPIRequest) GetApiMethodName() string {
 	return "taobao.alitrip.axin.trans.pay.register.create"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripAxinTransPayRegisterCreateAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoalitripaxintranspayregistercreateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoAlitripAxinTransPayRegisterCreateAPIRequest) GetRawParams() model.Params {
+func (r TaobaoalitripaxintranspayregistercreateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCreateDTO is CreateDTO Setter
 // 提交支付服务开通接口入参
-func (r *TaobaoAlitripAxinTransPayRegisterCreateAPIRequest) SetCreateDTO(_createDTO *AxinPayRegisterCreateDto) error {
+func (r *TaobaoalitripaxintranspayregistercreateAPIRequest) SetCreateDTO(_createDTO *AxinPayRegisterCreateDto) error {
 	r._createDTO = _createDTO
 	r.Set("create_d_t_o", _createDTO)
 	return nil
 }
 
 // GetCreateDTO CreateDTO Getter
-func (r TaobaoAlitripAxinTransPayRegisterCreateAPIRequest) GetCreateDTO() *AxinPayRegisterCreateDto {
+func (r TaobaoalitripaxintranspayregistercreateAPIRequest) GetCreateDTO() *AxinPayRegisterCreateDto {
 	return r._createDTO
 }

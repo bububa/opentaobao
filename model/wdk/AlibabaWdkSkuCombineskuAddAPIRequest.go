@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkSkuCombineskuAddAPIRequest 组合商品新增接口 API请求
+// AlibabawdkskucombineskuaddAPIRequest 组合商品新增接口 API请求
 // alibaba.wdk.sku.combinesku.add
 //
 // 组合商品新增接口
-type AlibabaWdkSkuCombineskuAddAPIRequest struct {
+type AlibabawdkskucombineskuaddAPIRequest struct {
 	model.Params
 	// 请求参数
 	_paramList []SkuDo
 }
 
-// NewAlibabaWdkSkuCombineskuAddRequest 初始化AlibabaWdkSkuCombineskuAddAPIRequest对象
-func NewAlibabaWdkSkuCombineskuAddRequest() *AlibabaWdkSkuCombineskuAddAPIRequest {
-	return &AlibabaWdkSkuCombineskuAddAPIRequest{
+// NewAlibabawdkskucombineskuaddRequest 初始化AlibabawdkskucombineskuaddAPIRequest对象
+func NewAlibabawdkskucombineskuaddRequest() *AlibabawdkskucombineskuaddAPIRequest {
+	return &AlibabawdkskucombineskuaddAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaWdkSkuCombineskuAddAPIRequest) GetApiMethodName() string {
+func (r AlibabawdkskucombineskuaddAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.sku.combinesku.add"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkSkuCombineskuAddAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabawdkskucombineskuaddAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaWdkSkuCombineskuAddAPIRequest) GetRawParams() model.Params {
+func (r AlibabawdkskucombineskuaddAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamList is ParamList Setter
 // 请求参数
-func (r *AlibabaWdkSkuCombineskuAddAPIRequest) SetParamList(_paramList []SkuDo) error {
+func (r *AlibabawdkskucombineskuaddAPIRequest) SetParamList(_paramList []SkuDo) error {
 	r._paramList = _paramList
 	r.Set("param_list", _paramList)
 	return nil
 }
 
 // GetParamList ParamList Getter
-func (r AlibabaWdkSkuCombineskuAddAPIRequest) GetParamList() []SkuDo {
+func (r AlibabawdkskucombineskuaddAPIRequest) GetParamList() []SkuDo {
 	return r._paramList
 }

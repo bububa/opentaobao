@@ -1,7 +1,7 @@
 package product
 
-// TmallItemDapeiTemplateQueryResultSet 结构体
-type TmallItemDapeiTemplateQueryResultSet struct {
+// TmallitemdapeitemplatequeryResultSet 结构体
+type TmallitemdapeitemplatequeryResultSet struct {
 	// firstResult
 	Results []DapeiDo `json:"results,omitempty" xml:"results>dapei_do,omitempty"`
 	// errorMsg

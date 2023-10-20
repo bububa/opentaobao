@@ -1,7 +1,7 @@
 package refund
 
-// TaobaoRdcAligeniusIdentificationCaseResultUpdateResult 结构体
-type TaobaoRdcAligeniusIdentificationCaseResultUpdateResult struct {
+// TaobaordcaligeniusidentificationcaseresultupdateResult 结构体
+type TaobaordcaligeniusidentificationcaseresultupdateResult struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息

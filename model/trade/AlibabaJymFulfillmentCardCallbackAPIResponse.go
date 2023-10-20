@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaJymFulfillmentCardCallbackAPIResponse 外部商家卡密结果回调 API返回值
+// AlibabajymfulfillmentcardcallbackAPIResponse 外部商家卡密结果回调 API返回值
 // alibaba.jym.fulfillment.card.callback
 //
 // 外部商家卡密结果回调
-type AlibabaJymFulfillmentCardCallbackAPIResponse struct {
+type AlibabajymfulfillmentcardcallbackAPIResponse struct {
 	model.CommonResponse
-	AlibabaJymFulfillmentCardCallbackAPIResponseModel
+	AlibabajymfulfillmentcardcallbackAPIResponseModel
 }
 
-// AlibabaJymFulfillmentCardCallbackAPIResponseModel is 外部商家卡密结果回调 成功返回结果
-type AlibabaJymFulfillmentCardCallbackAPIResponseModel struct {
+// AlibabajymfulfillmentcardcallbackAPIResponseModel is 外部商家卡密结果回调 成功返回结果
+type AlibabajymfulfillmentcardcallbackAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_jym_fulfillment_card_callback_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

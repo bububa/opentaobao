@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaScbpTagAddAPIRequest 创建关键词分组 API请求
+// AlibabascbptagaddAPIRequest 创建关键词分组 API请求
 // alibaba.scbp.tag.add
 //
 // 创建关键词分组
-type AlibabaScbpTagAddAPIRequest struct {
+type AlibabascbptagaddAPIRequest struct {
 	model.Params
 	// 分组名称，最多允许创建100个
 	_tagName string
 }
 
-// NewAlibabaScbpTagAddRequest 初始化AlibabaScbpTagAddAPIRequest对象
-func NewAlibabaScbpTagAddRequest() *AlibabaScbpTagAddAPIRequest {
-	return &AlibabaScbpTagAddAPIRequest{
+// NewAlibabascbptagaddRequest 初始化AlibabascbptagaddAPIRequest对象
+func NewAlibabascbptagaddRequest() *AlibabascbptagaddAPIRequest {
+	return &AlibabascbptagaddAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaScbpTagAddAPIRequest) GetApiMethodName() string {
+func (r AlibabascbptagaddAPIRequest) GetApiMethodName() string {
 	return "alibaba.scbp.tag.add"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaScbpTagAddAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabascbptagaddAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaScbpTagAddAPIRequest) GetRawParams() model.Params {
+func (r AlibabascbptagaddAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTagName is TagName Setter
 // 分组名称，最多允许创建100个
-func (r *AlibabaScbpTagAddAPIRequest) SetTagName(_tagName string) error {
+func (r *AlibabascbptagaddAPIRequest) SetTagName(_tagName string) error {
 	r._tagName = _tagName
 	r.Set("tag_name", _tagName)
 	return nil
 }
 
 // GetTagName TagName Getter
-func (r AlibabaScbpTagAddAPIRequest) GetTagName() string {
+func (r AlibabascbptagaddAPIRequest) GetTagName() string {
 	return r._tagName
 }

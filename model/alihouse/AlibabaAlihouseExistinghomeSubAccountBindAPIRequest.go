@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihouseExistinghomeSubAccountBindAPIRequest 子账号入驻 API请求
+// AlibabaalihouseexistinghomesubaccountbindAPIRequest 子账号入驻 API请求
 // alibaba.alihouse.existinghome.sub.account.bind
 //
 // 子账号入驻
-type AlibabaAlihouseExistinghomeSubAccountBindAPIRequest struct {
+type AlibabaalihouseexistinghomesubaccountbindAPIRequest struct {
 	model.Params
 	// dto
 	_subAccountReqDto *SubAccountReqDto
 }
 
-// NewAlibabaAlihouseExistinghomeSubAccountBindRequest 初始化AlibabaAlihouseExistinghomeSubAccountBindAPIRequest对象
-func NewAlibabaAlihouseExistinghomeSubAccountBindRequest() *AlibabaAlihouseExistinghomeSubAccountBindAPIRequest {
-	return &AlibabaAlihouseExistinghomeSubAccountBindAPIRequest{
+// NewAlibabaalihouseexistinghomesubaccountbindRequest 初始化AlibabaalihouseexistinghomesubaccountbindAPIRequest对象
+func NewAlibabaalihouseexistinghomesubaccountbindRequest() *AlibabaalihouseexistinghomesubaccountbindAPIRequest {
+	return &AlibabaalihouseexistinghomesubaccountbindAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseExistinghomeSubAccountBindAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihouseexistinghomesubaccountbindAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihouse.existinghome.sub.account.bind"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseExistinghomeSubAccountBindAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihouseexistinghomesubaccountbindAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihouseExistinghomeSubAccountBindAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihouseexistinghomesubaccountbindAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSubAccountReqDto is SubAccountReqDto Setter
 // dto
-func (r *AlibabaAlihouseExistinghomeSubAccountBindAPIRequest) SetSubAccountReqDto(_subAccountReqDto *SubAccountReqDto) error {
+func (r *AlibabaalihouseexistinghomesubaccountbindAPIRequest) SetSubAccountReqDto(_subAccountReqDto *SubAccountReqDto) error {
 	r._subAccountReqDto = _subAccountReqDto
 	r.Set("sub_account_req_dto", _subAccountReqDto)
 	return nil
 }
 
 // GetSubAccountReqDto SubAccountReqDto Getter
-func (r AlibabaAlihouseExistinghomeSubAccountBindAPIRequest) GetSubAccountReqDto() *SubAccountReqDto {
+func (r AlibabaalihouseexistinghomesubaccountbindAPIRequest) GetSubAccountReqDto() *SubAccountReqDto {
 	return r._subAccountReqDto
 }

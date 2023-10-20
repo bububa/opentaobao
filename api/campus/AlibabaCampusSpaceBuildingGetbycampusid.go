@@ -5,14 +5,14 @@ import (
 	"github.com/bububa/opentaobao/model/campus"
 )
 
-// AlibabaCampusSpaceBuildingGetbycampusid 根据园区ID获取楼宇
+// Alibabacampusspacebuildinggetbycampusid 根据园区ID获取楼宇
 // alibaba.campus.space.building.getbycampusid
 //
 // 根据园区ID获取楼宇
 // HSF接口名称：com.alibaba.campus.api.space.service.top.BuildingApiTopService
 // HSF方法名称：getBuildingList
-func AlibabaCampusSpaceBuildingGetbycampusid(clt *core.SDKClient, req *campus.AlibabaCampusSpaceBuildingGetbycampusidAPIRequest, session string) (*campus.AlibabaCampusSpaceBuildingGetbycampusidAPIResponse, error) {
-	var resp campus.AlibabaCampusSpaceBuildingGetbycampusidAPIResponse
+func Alibabacampusspacebuildinggetbycampusid(clt *core.SDKClient, req *campus.AlibabacampusspacebuildinggetbycampusidAPIRequest, session string) (*campus.AlibabacampusspacebuildinggetbycampusidAPIResponse, error) {
+	var resp campus.AlibabacampusspacebuildinggetbycampusidAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

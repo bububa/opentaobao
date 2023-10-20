@@ -1,7 +1,7 @@
 package tmallgenie
 
-// TaobaoAilabAicloudTopIdListConverterResult 结构体
-type TaobaoAilabAicloudTopIdListConverterResult struct {
+// TaobaoailabaicloudtopidlistconverterResult 结构体
+type TaobaoailabaicloudtopidlistconverterResult struct {
 	// 返回查询内容
 	RtValue []OpenInfoResponse `json:"rt_value,omitempty" xml:"rt_value>open_info_response,omitempty"`
 	// 返回错误信息

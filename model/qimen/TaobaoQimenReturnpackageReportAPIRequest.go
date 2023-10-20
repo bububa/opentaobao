@@ -6,48 +6,48 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoQimenReturnpackageReportAPIRequest 退货包裹状态通知接口 API请求
+// TaobaoqimenreturnpackagereportAPIRequest 退货包裹状态通知接口 API请求
 // taobao.qimen.returnpackage.report
 //
 // 退货包裹状态通知接口
-type TaobaoQimenReturnpackageReportAPIRequest struct {
+type TaobaoqimenreturnpackagereportAPIRequest struct {
 	model.Params
 	//
-	_request *TaobaoQimenReturnpackageReportRequest
+	_request *TaobaoqimenreturnpackagereportRequest
 }
 
-// NewTaobaoQimenReturnpackageReportRequest 初始化TaobaoQimenReturnpackageReportAPIRequest对象
-func NewTaobaoQimenReturnpackageReportRequest() *TaobaoQimenReturnpackageReportAPIRequest {
-	return &TaobaoQimenReturnpackageReportAPIRequest{
+// NewTaobaoqimenreturnpackagereportRequest 初始化TaobaoqimenreturnpackagereportAPIRequest对象
+func NewTaobaoqimenreturnpackagereportRequest() *TaobaoqimenreturnpackagereportAPIRequest {
+	return &TaobaoqimenreturnpackagereportAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoQimenReturnpackageReportAPIRequest) GetApiMethodName() string {
+func (r TaobaoqimenreturnpackagereportAPIRequest) GetApiMethodName() string {
 	return "taobao.qimen.returnpackage.report"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoQimenReturnpackageReportAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoqimenreturnpackagereportAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoQimenReturnpackageReportAPIRequest) GetRawParams() model.Params {
+func (r TaobaoqimenreturnpackagereportAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRequest is Request Setter
-func (r *TaobaoQimenReturnpackageReportAPIRequest) SetRequest(_request *TaobaoQimenReturnpackageReportRequest) error {
+func (r *TaobaoqimenreturnpackagereportAPIRequest) SetRequest(_request *TaobaoqimenreturnpackagereportRequest) error {
 	r._request = _request
 	r.Set("request", _request)
 	return nil
 }
 
 // GetRequest Request Getter
-func (r TaobaoQimenReturnpackageReportAPIRequest) GetRequest() *TaobaoQimenReturnpackageReportRequest {
+func (r TaobaoqimenreturnpackagereportAPIRequest) GetRequest() *TaobaoqimenreturnpackagereportRequest {
 	return r._request
 }

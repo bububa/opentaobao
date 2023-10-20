@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaTclsAelophyBillVerificateCallbackApiResult 结构体
-type AlibabaTclsAelophyBillVerificateCallbackApiResult struct {
+// AlibabatclsaelophybillverificatecallbackApiResult 结构体
+type AlibabatclsaelophybillverificatecallbackApiResult struct {
 	// 错误说明
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// 错误编码

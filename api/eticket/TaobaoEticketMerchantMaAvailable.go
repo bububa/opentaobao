@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/eticket"
 )
 
-// TaobaoEticketMerchantMaAvailable 电子凭证核销前校验接口
+// Taobaoeticketmerchantmaavailable 电子凭证核销前校验接口
 // taobao.eticket.merchant.ma.available
 //
 // 商家验码之前的调用接口，用来判断是否可以进行核销操作
-func TaobaoEticketMerchantMaAvailable(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantMaAvailableAPIRequest, session string) (*eticket.TaobaoEticketMerchantMaAvailableAPIResponse, error) {
-	var resp eticket.TaobaoEticketMerchantMaAvailableAPIResponse
+func Taobaoeticketmerchantmaavailable(clt *core.SDKClient, req *eticket.TaobaoeticketmerchantmaavailableAPIRequest, session string) (*eticket.TaobaoeticketmerchantmaavailableAPIResponse, error) {
+	var resp eticket.TaobaoeticketmerchantmaavailableAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

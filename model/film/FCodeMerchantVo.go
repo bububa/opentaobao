@@ -1,7 +1,7 @@
 package film
 
-// FCodeMerchantVo 结构体
-type FCodeMerchantVo struct {
+// FcodeMerchantVo 结构体
+type FcodeMerchantVo struct {
 	// 码过期时间
 	GmtExpire string `json:"gmt_expire,omitempty" xml:"gmt_expire,omitempty"`
 	// code

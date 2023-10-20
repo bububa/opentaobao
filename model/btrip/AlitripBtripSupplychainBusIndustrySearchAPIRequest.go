@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripBtripSupplychainBusIndustrySearchAPIRequest 汽车票行业搜索接口 API请求
+// AlitripbtripsupplychainbusindustrysearchAPIRequest 汽车票行业搜索接口 API请求
 // alitrip.btrip.supplychain.bus.industry.search
 //
 // 汽车票行业搜索接口
-type AlitripBtripSupplychainBusIndustrySearchAPIRequest struct {
+type AlitripbtripsupplychainbusindustrysearchAPIRequest struct {
 	model.Params
 	// 入参
 	_rq *BusSearchRq
 }
 
-// NewAlitripBtripSupplychainBusIndustrySearchRequest 初始化AlitripBtripSupplychainBusIndustrySearchAPIRequest对象
-func NewAlitripBtripSupplychainBusIndustrySearchRequest() *AlitripBtripSupplychainBusIndustrySearchAPIRequest {
-	return &AlitripBtripSupplychainBusIndustrySearchAPIRequest{
+// NewAlitripbtripsupplychainbusindustrysearchRequest 初始化AlitripbtripsupplychainbusindustrysearchAPIRequest对象
+func NewAlitripbtripsupplychainbusindustrysearchRequest() *AlitripbtripsupplychainbusindustrysearchAPIRequest {
+	return &AlitripbtripsupplychainbusindustrysearchAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripBtripSupplychainBusIndustrySearchAPIRequest) GetApiMethodName() string {
+func (r AlitripbtripsupplychainbusindustrysearchAPIRequest) GetApiMethodName() string {
 	return "alitrip.btrip.supplychain.bus.industry.search"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripBtripSupplychainBusIndustrySearchAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripbtripsupplychainbusindustrysearchAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripBtripSupplychainBusIndustrySearchAPIRequest) GetRawParams() model.Params {
+func (r AlitripbtripsupplychainbusindustrysearchAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRq is Rq Setter
 // 入参
-func (r *AlitripBtripSupplychainBusIndustrySearchAPIRequest) SetRq(_rq *BusSearchRq) error {
+func (r *AlitripbtripsupplychainbusindustrysearchAPIRequest) SetRq(_rq *BusSearchRq) error {
 	r._rq = _rq
 	r.Set("rq", _rq)
 	return nil
 }
 
 // GetRq Rq Getter
-func (r AlitripBtripSupplychainBusIndustrySearchAPIRequest) GetRq() *BusSearchRq {
+func (r AlitripbtripsupplychainbusindustrysearchAPIRequest) GetRq() *BusSearchRq {
 	return r._rq
 }

@@ -25,7 +25,7 @@ type MediateCommunicationModel struct {
 	// id新增不用
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 调解金额
-	MediateAmount *BigDecimal `json:"mediate_amount,omitempty" xml:"mediate_amount,omitempty"`
+	MediateAmount float64 `json:"mediate_amount,omitempty" xml:"mediate_amount,omitempty"`
 	// 卖家是否要求积极应诉
 	SellerAskRespondent bool `json:"seller_ask_respondent,omitempty" xml:"seller_ask_respondent,omitempty"`
 }

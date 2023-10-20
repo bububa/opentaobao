@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest 楼盘快讯删除 API请求
+// AlibabaalihousenewhomeprojectdynamicdeleteAPIRequest 楼盘快讯删除 API请求
 // alibaba.alihouse.newhome.project.dynamic.delete
 //
 // 楼盘快讯删除
-type AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest struct {
+type AlibabaalihousenewhomeprojectdynamicdeleteAPIRequest struct {
 	model.Params
 	// 外部动态ID
 	_outerDynamicId string
@@ -18,52 +18,52 @@ type AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest struct {
 	_outerStoreId string
 }
 
-// NewAlibabaAlihouseNewhomeProjectDynamicDeleteRequest 初始化AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest对象
-func NewAlibabaAlihouseNewhomeProjectDynamicDeleteRequest() *AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest {
-	return &AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest{
+// NewAlibabaalihousenewhomeprojectdynamicdeleteRequest 初始化AlibabaalihousenewhomeprojectdynamicdeleteAPIRequest对象
+func NewAlibabaalihousenewhomeprojectdynamicdeleteRequest() *AlibabaalihousenewhomeprojectdynamicdeleteAPIRequest {
+	return &AlibabaalihousenewhomeprojectdynamicdeleteAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihousenewhomeprojectdynamicdeleteAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihouse.newhome.project.dynamic.delete"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihousenewhomeprojectdynamicdeleteAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihousenewhomeprojectdynamicdeleteAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOuterDynamicId is OuterDynamicId Setter
 // 外部动态ID
-func (r *AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) SetOuterDynamicId(_outerDynamicId string) error {
+func (r *AlibabaalihousenewhomeprojectdynamicdeleteAPIRequest) SetOuterDynamicId(_outerDynamicId string) error {
 	r._outerDynamicId = _outerDynamicId
 	r.Set("outer_dynamic_id", _outerDynamicId)
 	return nil
 }
 
 // GetOuterDynamicId OuterDynamicId Getter
-func (r AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) GetOuterDynamicId() string {
+func (r AlibabaalihousenewhomeprojectdynamicdeleteAPIRequest) GetOuterDynamicId() string {
 	return r._outerDynamicId
 }
 
 // SetOuterStoreId is OuterStoreId Setter
 // 外部门店ID
-func (r *AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) SetOuterStoreId(_outerStoreId string) error {
+func (r *AlibabaalihousenewhomeprojectdynamicdeleteAPIRequest) SetOuterStoreId(_outerStoreId string) error {
 	r._outerStoreId = _outerStoreId
 	r.Set("outer_store_id", _outerStoreId)
 	return nil
 }
 
 // GetOuterStoreId OuterStoreId Getter
-func (r AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) GetOuterStoreId() string {
+func (r AlibabaalihousenewhomeprojectdynamicdeleteAPIRequest) GetOuterStoreId() string {
 	return r._outerStoreId
 }

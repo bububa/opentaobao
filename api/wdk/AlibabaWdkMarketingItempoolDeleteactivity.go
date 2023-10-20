@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaWdkMarketingItempoolDeleteactivity 删除商品池活动
+// Alibabawdkmarketingitempooldeleteactivity 删除商品池活动
 // alibaba.wdk.marketing.itempool.deleteactivity
 //
 // 删除商品池活动
-func AlibabaWdkMarketingItempoolDeleteactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolDeleteactivityAPIRequest, session string) (*wdk.AlibabaWdkMarketingItempoolDeleteactivityAPIResponse, error) {
-	var resp wdk.AlibabaWdkMarketingItempoolDeleteactivityAPIResponse
+func Alibabawdkmarketingitempooldeleteactivity(clt *core.SDKClient, req *wdk.AlibabawdkmarketingitempooldeleteactivityAPIRequest, session string) (*wdk.AlibabawdkmarketingitempooldeleteactivityAPIResponse, error) {
+	var resp wdk.AlibabawdkmarketingitempooldeleteactivityAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

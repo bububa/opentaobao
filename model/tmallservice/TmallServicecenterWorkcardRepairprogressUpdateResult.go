@@ -1,7 +1,7 @@
 package tmallservice
 
-// TmallServicecenterWorkcardRepairprogressUpdateResult 结构体
-type TmallServicecenterWorkcardRepairprogressUpdateResult struct {
+// TmallservicecenterworkcardrepairprogressupdateResult 结构体
+type TmallservicecenterworkcardrepairprogressupdateResult struct {
 	// 错误码
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 错误信息

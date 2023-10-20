@@ -1,7 +1,7 @@
 package happytrip
 
-// AlibabaHappytripTaxiDriverLocationGetStruct 结构体
-type AlibabaHappytripTaxiDriverLocationGetStruct struct {
+// AlibabahappytriptaxidriverlocationgetStruct 结构体
+type AlibabahappytriptaxidriverlocationgetStruct struct {
 	// 纬度
 	Lat string `json:"lat,omitempty" xml:"lat,omitempty"`
 	// 经度

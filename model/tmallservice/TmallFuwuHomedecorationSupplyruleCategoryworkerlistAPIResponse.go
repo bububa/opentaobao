@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallFuwuHomedecorationSupplyruleCategoryworkerlistAPIResponse 基于规则查品牌品类工人接口 API返回值
+// TmallfuwuhomedecorationsupplyrulecategoryworkerlistAPIResponse 基于规则查品牌品类工人接口 API返回值
 // tmall.fuwu.homedecoration.supplyrule.categoryworkerlist
 //
 // 基于规则查品牌品类工人接口
-type TmallFuwuHomedecorationSupplyruleCategoryworkerlistAPIResponse struct {
+type TmallfuwuhomedecorationsupplyrulecategoryworkerlistAPIResponse struct {
 	model.CommonResponse
-	TmallFuwuHomedecorationSupplyruleCategoryworkerlistAPIResponseModel
+	TmallfuwuhomedecorationsupplyrulecategoryworkerlistAPIResponseModel
 }
 
-// TmallFuwuHomedecorationSupplyruleCategoryworkerlistAPIResponseModel is 基于规则查品牌品类工人接口 成功返回结果
-type TmallFuwuHomedecorationSupplyruleCategoryworkerlistAPIResponseModel struct {
+// TmallfuwuhomedecorationsupplyrulecategoryworkerlistAPIResponseModel is 基于规则查品牌品类工人接口 成功返回结果
+type TmallfuwuhomedecorationsupplyrulecategoryworkerlistAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_fuwu_homedecoration_supplyrule_categoryworkerlist_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 响应结果
-	Result *TmallFuwuHomedecorationSupplyruleCategoryworkerlistResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *TmallfuwuhomedecorationsupplyrulecategoryworkerlistResult `json:"result,omitempty" xml:"result,omitempty"`
 }

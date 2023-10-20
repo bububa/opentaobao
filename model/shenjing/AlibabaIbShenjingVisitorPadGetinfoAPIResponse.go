@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIbShenjingVisitorPadGetinfoAPIResponse 获取OSS上传参数 API返回值
+// AlibabaibshenjingvisitorpadgetinfoAPIResponse 获取OSS上传参数 API返回值
 // alibaba.ib.shenjing.visitor.pad.getinfo
 //
 // PAD 端获取OSS上传参数，向OSS服务器上传图片。
-type AlibabaIbShenjingVisitorPadGetinfoAPIResponse struct {
+type AlibabaibshenjingvisitorpadgetinfoAPIResponse struct {
 	model.CommonResponse
-	AlibabaIbShenjingVisitorPadGetinfoAPIResponseModel
+	AlibabaibshenjingvisitorpadgetinfoAPIResponseModel
 }
 
-// AlibabaIbShenjingVisitorPadGetinfoAPIResponseModel is 获取OSS上传参数 成功返回结果
-type AlibabaIbShenjingVisitorPadGetinfoAPIResponseModel struct {
+// AlibabaibshenjingvisitorpadgetinfoAPIResponseModel is 获取OSS上传参数 成功返回结果
+type AlibabaibshenjingvisitorpadgetinfoAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ib_shenjing_visitor_pad_getinfo_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/promotion"
 )
 
-// TaobaoPromotionmiscMjsActivityDelete 删除满就送活动
+// Taobaopromotionmiscmjsactivitydelete 删除满就送活动
 // taobao.promotionmisc.mjs.activity.delete
 //
 // 删除满就送活动
-func TaobaoPromotionmiscMjsActivityDelete(clt *core.SDKClient, req *promotion.TaobaoPromotionmiscMjsActivityDeleteAPIRequest, session string) (*promotion.TaobaoPromotionmiscMjsActivityDeleteAPIResponse, error) {
-	var resp promotion.TaobaoPromotionmiscMjsActivityDeleteAPIResponse
+func Taobaopromotionmiscmjsactivitydelete(clt *core.SDKClient, req *promotion.TaobaopromotionmiscmjsactivitydeleteAPIRequest, session string) (*promotion.TaobaopromotionmiscmjsactivitydeleteAPIResponse, error) {
+	var resp promotion.TaobaopromotionmiscmjsactivitydeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

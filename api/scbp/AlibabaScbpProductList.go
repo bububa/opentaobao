@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// AlibabaScbpProductList 查询P4P产品
+// Alibabascbpproductlist 查询P4P产品
 // alibaba.scbp.product.list
 //
 // 查询P4P产品
-func AlibabaScbpProductList(clt *core.SDKClient, req *scbp.AlibabaScbpProductListAPIRequest, session string) (*scbp.AlibabaScbpProductListAPIResponse, error) {
-	var resp scbp.AlibabaScbpProductListAPIResponse
+func Alibabascbpproductlist(clt *core.SDKClient, req *scbp.AlibabascbpproductlistAPIRequest, session string) (*scbp.AlibabascbpproductlistAPIResponse, error) {
+	var resp scbp.AlibabascbpproductlistAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

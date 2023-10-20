@@ -1,7 +1,7 @@
 package aeusergrowth
 
-// AliexpressUsergrowthRecommendItemsGetData 结构体
-type AliexpressUsergrowthRecommendItemsGetData struct {
+// AliexpressusergrowthrecommenditemsgetData 结构体
+type AliexpressusergrowthrecommenditemsgetData struct {
 	// product id
 	ProductId string `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// sale price,will return local pirce

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTanxAuditCreativeModifyAPIRequest 创意修改接口 API请求
+// TaobaotanxauditcreativemodifyAPIRequest 创意修改接口 API请求
 // taobao.tanx.audit.creative.modify
 //
 // 创意修改接口
-type TaobaoTanxAuditCreativeModifyAPIRequest struct {
+type TaobaotanxauditcreativemodifyAPIRequest struct {
 	model.Params
 	// dsp用户身份认证的TOKEN
 	_token string
@@ -20,65 +20,65 @@ type TaobaoTanxAuditCreativeModifyAPIRequest struct {
 	_signTime int64
 }
 
-// NewTaobaoTanxAuditCreativeModifyRequest 初始化TaobaoTanxAuditCreativeModifyAPIRequest对象
-func NewTaobaoTanxAuditCreativeModifyRequest() *TaobaoTanxAuditCreativeModifyAPIRequest {
-	return &TaobaoTanxAuditCreativeModifyAPIRequest{
+// NewTaobaotanxauditcreativemodifyRequest 初始化TaobaotanxauditcreativemodifyAPIRequest对象
+func NewTaobaotanxauditcreativemodifyRequest() *TaobaotanxauditcreativemodifyAPIRequest {
+	return &TaobaotanxauditcreativemodifyAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoTanxAuditCreativeModifyAPIRequest) GetApiMethodName() string {
+func (r TaobaotanxauditcreativemodifyAPIRequest) GetApiMethodName() string {
 	return "taobao.tanx.audit.creative.modify"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTanxAuditCreativeModifyAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaotanxauditcreativemodifyAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoTanxAuditCreativeModifyAPIRequest) GetRawParams() model.Params {
+func (r TaobaotanxauditcreativemodifyAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetToken is Token Setter
 // dsp用户身份认证的TOKEN
-func (r *TaobaoTanxAuditCreativeModifyAPIRequest) SetToken(_token string) error {
+func (r *TaobaotanxauditcreativemodifyAPIRequest) SetToken(_token string) error {
 	r._token = _token
 	r.Set("token", _token)
 	return nil
 }
 
 // GetToken Token Getter
-func (r TaobaoTanxAuditCreativeModifyAPIRequest) GetToken() string {
+func (r TaobaotanxauditcreativemodifyAPIRequest) GetToken() string {
 	return r._token
 }
 
 // SetMemberId is MemberId Setter
 // DSP用户ID
-func (r *TaobaoTanxAuditCreativeModifyAPIRequest) SetMemberId(_memberId int64) error {
+func (r *TaobaotanxauditcreativemodifyAPIRequest) SetMemberId(_memberId int64) error {
 	r._memberId = _memberId
 	r.Set("member_id", _memberId)
 	return nil
 }
 
 // GetMemberId MemberId Getter
-func (r TaobaoTanxAuditCreativeModifyAPIRequest) GetMemberId() int64 {
+func (r TaobaotanxauditcreativemodifyAPIRequest) GetMemberId() int64 {
 	return r._memberId
 }
 
 // SetSignTime is SignTime Setter
 // 当前时间戳，1970-01-01后的秒数
-func (r *TaobaoTanxAuditCreativeModifyAPIRequest) SetSignTime(_signTime int64) error {
+func (r *TaobaotanxauditcreativemodifyAPIRequest) SetSignTime(_signTime int64) error {
 	r._signTime = _signTime
 	r.Set("sign_time", _signTime)
 	return nil
 }
 
 // GetSignTime SignTime Getter
-func (r TaobaoTanxAuditCreativeModifyAPIRequest) GetSignTime() int64 {
+func (r TaobaotanxauditcreativemodifyAPIRequest) GetSignTime() int64 {
 	return r._signTime
 }

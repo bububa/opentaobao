@@ -9,7 +9,7 @@ type IsvInboundRequestItemDto struct {
 	// 单位
 	Unit string `json:"unit,omitempty" xml:"unit,omitempty"`
 	// 获取或设置货物数量计量单位
-	Quantity *BigDecimal `json:"quantity,omitempty" xml:"quantity,omitempty"`
+	Quantity float64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 单价
-	UnitPrice *BigDecimal `json:"unit_price,omitempty" xml:"unit_price,omitempty"`
+	UnitPrice float64 `json:"unit_price,omitempty" xml:"unit_price,omitempty"`
 }

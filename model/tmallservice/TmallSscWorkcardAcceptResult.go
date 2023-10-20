@@ -1,7 +1,7 @@
 package tmallservice
 
-// TmallSscWorkcardAcceptResult 结构体
-type TmallSscWorkcardAcceptResult struct {
+// TmallsscworkcardacceptResult 结构体
+type TmallsscworkcardacceptResult struct {
 	// 错误提示
 	DisplayMsg string `json:"display_msg,omitempty" xml:"display_msg,omitempty"`
 	// 错误码

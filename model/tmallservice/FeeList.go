@@ -11,5 +11,5 @@ type FeeList struct {
 	// 费用产生时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 费用金额
-	FeeAmount *BigDecimal `json:"fee_amount,omitempty" xml:"fee_amount,omitempty"`
+	FeeAmount float64 `json:"fee_amount,omitempty" xml:"fee_amount,omitempty"`
 }

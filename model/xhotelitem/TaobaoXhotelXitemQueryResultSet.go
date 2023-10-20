@@ -1,7 +1,7 @@
 package xhotelitem
 
-// TaobaoXhotelXitemQueryResultSet 结构体
-type TaobaoXhotelXitemQueryResultSet struct {
+// TaobaoxhotelxitemqueryResultSet 结构体
+type TaobaoxhotelxitemqueryResultSet struct {
 	// 查询到的 x 元素
 	XItems []HotelXitemDo `json:"x_items,omitempty" xml:"x_items>hotel_xitem_do,omitempty"`
 	// 错误信息

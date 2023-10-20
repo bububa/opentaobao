@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoMiniappCloudPictureTokenAPIResponse 云存储上传token获取 API返回值
+// TaobaominiappcloudpicturetokenAPIResponse 云存储上传token获取 API返回值
 // taobao.miniapp.cloud.picture.token
 //
 // 获取图片上传token，作为http://upload.cloud.tmall.com/api/proxy/upload接口上传的凭证。
@@ -19,13 +19,13 @@ import (
 //	&amp;lt;input type=&amp;quot;submit&amp;quot; value=&amp;quot;Submit &amp;quot;/&amp;gt;
 //
 // &amp;lt;/form&amp;gt;
-type TaobaoMiniappCloudPictureTokenAPIResponse struct {
+type TaobaominiappcloudpicturetokenAPIResponse struct {
 	model.CommonResponse
-	TaobaoMiniappCloudPictureTokenAPIResponseModel
+	TaobaominiappcloudpicturetokenAPIResponseModel
 }
 
-// TaobaoMiniappCloudPictureTokenAPIResponseModel is 云存储上传token获取 成功返回结果
-type TaobaoMiniappCloudPictureTokenAPIResponseModel struct {
+// TaobaominiappcloudpicturetokenAPIResponseModel is 云存储上传token获取 成功返回结果
+type TaobaominiappcloudpicturetokenAPIResponseModel struct {
 	XMLName xml.Name `xml:"miniapp_cloud_picture_token_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

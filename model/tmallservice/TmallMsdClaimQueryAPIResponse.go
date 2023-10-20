@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallMsdClaimQueryAPIResponse 查询待理赔工单数据接口 API返回值
+// TmallmsdclaimqueryAPIResponse 查询待理赔工单数据接口 API返回值
 // tmall.msd.claim.query
 //
 // 查询待理赔工单数据接口
-type TmallMsdClaimQueryAPIResponse struct {
+type TmallmsdclaimqueryAPIResponse struct {
 	model.CommonResponse
-	TmallMsdClaimQueryAPIResponseModel
+	TmallmsdclaimqueryAPIResponseModel
 }
 
-// TmallMsdClaimQueryAPIResponseModel is 查询待理赔工单数据接口 成功返回结果
-type TmallMsdClaimQueryAPIResponseModel struct {
+// TmallmsdclaimqueryAPIResponseModel is 查询待理赔工单数据接口 成功返回结果
+type TmallmsdclaimqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_msd_claim_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

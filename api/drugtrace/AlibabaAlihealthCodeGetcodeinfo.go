@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// AlibabaAlihealthCodeGetcodeinfo 码查询功能
+// Alibabaalihealthcodegetcodeinfo 码查询功能
 // alibaba.alihealth.code.getcodeinfo
 //
 // 码查询功能
-func AlibabaAlihealthCodeGetcodeinfo(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthCodeGetcodeinfoAPIRequest, session string) (*drugtrace.AlibabaAlihealthCodeGetcodeinfoAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthCodeGetcodeinfoAPIResponse
+func Alibabaalihealthcodegetcodeinfo(clt *core.SDKClient, req *drugtrace.AlibabaalihealthcodegetcodeinfoAPIRequest, session string) (*drugtrace.AlibabaalihealthcodegetcodeinfoAPIResponse, error) {
+	var resp drugtrace.AlibabaalihealthcodegetcodeinfoAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

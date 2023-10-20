@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/aliqin"
 )
 
-// AlibabaAliqinFcIotCardoffer 查询物联网卡上订购的offer
+// Alibabaaliqinfciotcardoffer 查询物联网卡上订购的offer
 // alibaba.aliqin.fc.iot.cardoffer
 //
 // 查询物联网卡上订购的offer
-func AlibabaAliqinFcIotCardoffer(clt *core.SDKClient, req *aliqin.AlibabaAliqinFcIotCardofferAPIRequest, session string) (*aliqin.AlibabaAliqinFcIotCardofferAPIResponse, error) {
-	var resp aliqin.AlibabaAliqinFcIotCardofferAPIResponse
+func Alibabaaliqinfciotcardoffer(clt *core.SDKClient, req *aliqin.AlibabaaliqinfciotcardofferAPIRequest, session string) (*aliqin.AlibabaaliqinfciotcardofferAPIResponse, error) {
+	var resp aliqin.AlibabaaliqinfciotcardofferAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

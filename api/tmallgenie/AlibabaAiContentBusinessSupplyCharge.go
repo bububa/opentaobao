@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallgenie"
 )
 
-// AlibabaAiContentBusinessSupplyCharge 供销商品充值接口
+// Alibabaaicontentbusinesssupplycharge 供销商品充值接口
 // alibaba.ai.content.business.supply.charge
 //
 // 供销商品充值接口
-func AlibabaAiContentBusinessSupplyCharge(clt *core.SDKClient, req *tmallgenie.AlibabaAiContentBusinessSupplyChargeAPIRequest, session string) (*tmallgenie.AlibabaAiContentBusinessSupplyChargeAPIResponse, error) {
-	var resp tmallgenie.AlibabaAiContentBusinessSupplyChargeAPIResponse
+func Alibabaaicontentbusinesssupplycharge(clt *core.SDKClient, req *tmallgenie.AlibabaaicontentbusinesssupplychargeAPIRequest, session string) (*tmallgenie.AlibabaaicontentbusinesssupplychargeAPIResponse, error) {
+	var resp tmallgenie.AlibabaaicontentbusinesssupplychargeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

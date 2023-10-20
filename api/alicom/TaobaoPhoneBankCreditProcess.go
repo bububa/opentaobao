@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alicom"
 )
 
-// TaobaoPhoneBankCreditProcess 虚拟话费任务银行信用卡办理进度回传
+// Taobaophonebankcreditprocess 虚拟话费任务银行信用卡办理进度回传
 // taobao.phone.bank.credit.process
 //
 // 虚拟话费任务银行信用卡办理进度回传
-func TaobaoPhoneBankCreditProcess(clt *core.SDKClient, req *alicom.TaobaoPhoneBankCreditProcessAPIRequest, session string) (*alicom.TaobaoPhoneBankCreditProcessAPIResponse, error) {
-	var resp alicom.TaobaoPhoneBankCreditProcessAPIResponse
+func Taobaophonebankcreditprocess(clt *core.SDKClient, req *alicom.TaobaophonebankcreditprocessAPIRequest, session string) (*alicom.TaobaophonebankcreditprocessAPIResponse, error) {
+	var resp alicom.TaobaophonebankcreditprocessAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/product"
 )
 
-// TmallItemSeriesItemseriesRemoveitemfromseries 从商品系列中移除商品
+// Tmallitemseriesitemseriesremoveitemfromseries 从商品系列中移除商品
 // tmall.item.series.itemseries.removeitemfromseries
 //
 // 从商品系列中移除商品
-func TmallItemSeriesItemseriesRemoveitemfromseries(clt *core.SDKClient, req *product.TmallItemSeriesItemseriesRemoveitemfromseriesAPIRequest, session string) (*product.TmallItemSeriesItemseriesRemoveitemfromseriesAPIResponse, error) {
-	var resp product.TmallItemSeriesItemseriesRemoveitemfromseriesAPIResponse
+func Tmallitemseriesitemseriesremoveitemfromseries(clt *core.SDKClient, req *product.TmallitemseriesitemseriesremoveitemfromseriesAPIRequest, session string) (*product.TmallitemseriesitemseriesremoveitemfromseriesAPIResponse, error) {
+	var resp product.TmallitemseriesitemseriesremoveitemfromseriesAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

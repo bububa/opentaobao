@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthDentalStoreAuditQueryAPIRequest ISV查询门店审核状态 API请求
+// AlibabaalihealthdentalstoreauditqueryAPIRequest ISV查询门店审核状态 API请求
 // alibaba.alihealth.dental.store.audit.query
 //
 // ISV查询门店审核状态
-type AlibabaAlihealthDentalStoreAuditQueryAPIRequest struct {
+type AlibabaalihealthdentalstoreauditqueryAPIRequest struct {
 	model.Params
 	// 审核ID列表
 	_storeAuditIds []string
 }
 
-// NewAlibabaAlihealthDentalStoreAuditQueryRequest 初始化AlibabaAlihealthDentalStoreAuditQueryAPIRequest对象
-func NewAlibabaAlihealthDentalStoreAuditQueryRequest() *AlibabaAlihealthDentalStoreAuditQueryAPIRequest {
-	return &AlibabaAlihealthDentalStoreAuditQueryAPIRequest{
+// NewAlibabaalihealthdentalstoreauditqueryRequest 初始化AlibabaalihealthdentalstoreauditqueryAPIRequest对象
+func NewAlibabaalihealthdentalstoreauditqueryRequest() *AlibabaalihealthdentalstoreauditqueryAPIRequest {
+	return &AlibabaalihealthdentalstoreauditqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDentalStoreAuditQueryAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihealthdentalstoreauditqueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.dental.store.audit.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDentalStoreAuditQueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihealthdentalstoreauditqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihealthDentalStoreAuditQueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihealthdentalstoreauditqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetStoreAuditIds is StoreAuditIds Setter
 // 审核ID列表
-func (r *AlibabaAlihealthDentalStoreAuditQueryAPIRequest) SetStoreAuditIds(_storeAuditIds []string) error {
+func (r *AlibabaalihealthdentalstoreauditqueryAPIRequest) SetStoreAuditIds(_storeAuditIds []string) error {
 	r._storeAuditIds = _storeAuditIds
 	r.Set("store_audit_ids", _storeAuditIds)
 	return nil
 }
 
 // GetStoreAuditIds StoreAuditIds Getter
-func (r AlibabaAlihealthDentalStoreAuditQueryAPIRequest) GetStoreAuditIds() []string {
+func (r AlibabaalihealthdentalstoreauditqueryAPIRequest) GetStoreAuditIds() []string {
 	return r._storeAuditIds
 }

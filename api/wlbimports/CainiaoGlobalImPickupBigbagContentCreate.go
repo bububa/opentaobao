@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wlbimports"
 )
 
-// CainiaoGlobalImPickupBigbagContentCreate 大包创建
+// Cainiaoglobalimpickupbigbagcontentcreate 大包创建
 // cainiao.global.im.pickup.bigbag.content.create
 //
 // 大包创建
-func CainiaoGlobalImPickupBigbagContentCreate(clt *core.SDKClient, req *wlbimports.CainiaoGlobalImPickupBigbagContentCreateAPIRequest, session string) (*wlbimports.CainiaoGlobalImPickupBigbagContentCreateAPIResponse, error) {
-	var resp wlbimports.CainiaoGlobalImPickupBigbagContentCreateAPIResponse
+func Cainiaoglobalimpickupbigbagcontentcreate(clt *core.SDKClient, req *wlbimports.CainiaoglobalimpickupbigbagcontentcreateAPIRequest, session string) (*wlbimports.CainiaoglobalimpickupbigbagcontentcreateAPIResponse, error) {
+	var resp wlbimports.CainiaoglobalimpickupbigbagcontentcreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

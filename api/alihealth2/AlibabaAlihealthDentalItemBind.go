@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihealth2"
 )
 
-// AlibabaAlihealthDentalItemBind ISV绑定外部门店id和外部商品id
+// Alibabaalihealthdentalitembind ISV绑定外部门店id和外部商品id
 // alibaba.alihealth.dental.item.bind
 //
 // ISV绑定外部门店id和外部商品id
-func AlibabaAlihealthDentalItemBind(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthDentalItemBindAPIRequest, session string) (*alihealth2.AlibabaAlihealthDentalItemBindAPIResponse, error) {
-	var resp alihealth2.AlibabaAlihealthDentalItemBindAPIResponse
+func Alibabaalihealthdentalitembind(clt *core.SDKClient, req *alihealth2.AlibabaalihealthdentalitembindAPIRequest, session string) (*alihealth2.AlibabaalihealthdentalitembindAPIResponse, error) {
+	var resp alihealth2.AlibabaalihealthdentalitembindAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

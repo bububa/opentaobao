@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlisportsDataSportsSyncsleepdataAPIResponse 阿里体育数据中心用户睡眠数据同步接口 API返回值
+// AlibabaalisportsdatasportssyncsleepdataAPIResponse 阿里体育数据中心用户睡眠数据同步接口 API返回值
 // alibaba.alisports.data.sports.syncsleepdata
 //
 // 阿里体育数据中心用户睡眠数据同步接口
-type AlibabaAlisportsDataSportsSyncsleepdataAPIResponse struct {
+type AlibabaalisportsdatasportssyncsleepdataAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlisportsDataSportsSyncsleepdataAPIResponseModel
+	AlibabaalisportsdatasportssyncsleepdataAPIResponseModel
 }
 
-// AlibabaAlisportsDataSportsSyncsleepdataAPIResponseModel is 阿里体育数据中心用户睡眠数据同步接口 成功返回结果
-type AlibabaAlisportsDataSportsSyncsleepdataAPIResponseModel struct {
+// AlibabaalisportsdatasportssyncsleepdataAPIResponseModel is 阿里体育数据中心用户睡眠数据同步接口 成功返回结果
+type AlibabaalisportsdatasportssyncsleepdataAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alisports_data_sports_syncsleepdata_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

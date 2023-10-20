@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/paimai"
 )
 
-// TaobaoAuctionBeikeItemSync 贝壳商品同步接口
+// Taobaoauctionbeikeitemsync 贝壳商品同步接口
 // taobao.auction.beike.item.sync
 //
 // 贝壳商品同步接口
-func TaobaoAuctionBeikeItemSync(clt *core.SDKClient, req *paimai.TaobaoAuctionBeikeItemSyncAPIRequest, session string) (*paimai.TaobaoAuctionBeikeItemSyncAPIResponse, error) {
-	var resp paimai.TaobaoAuctionBeikeItemSyncAPIResponse
+func Taobaoauctionbeikeitemsync(clt *core.SDKClient, req *paimai.TaobaoauctionbeikeitemsyncAPIRequest, session string) (*paimai.TaobaoauctionbeikeitemsyncAPIResponse, error) {
+	var resp paimai.TaobaoauctionbeikeitemsyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

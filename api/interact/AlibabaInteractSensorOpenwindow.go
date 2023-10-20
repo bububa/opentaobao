@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/interact"
 )
 
-// AlibabaInteractSensorOpenwindow 客户端打开新页面
+// Alibabainteractsensoropenwindow 客户端打开新页面
 // alibaba.interact.sensor.openwindow
 //
 // 客户端打开新页面
-func AlibabaInteractSensorOpenwindow(clt *core.SDKClient, req *interact.AlibabaInteractSensorOpenwindowAPIRequest, session string) (*interact.AlibabaInteractSensorOpenwindowAPIResponse, error) {
-	var resp interact.AlibabaInteractSensorOpenwindowAPIResponse
+func Alibabainteractsensoropenwindow(clt *core.SDKClient, req *interact.AlibabainteractsensoropenwindowAPIRequest, session string) (*interact.AlibabainteractsensoropenwindowAPIResponse, error) {
+	var resp interact.AlibabainteractsensoropenwindowAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

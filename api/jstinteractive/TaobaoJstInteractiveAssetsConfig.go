@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/jstinteractive"
 )
 
-// TaobaoJstInteractiveAssetsConfig 任务素材配置接口
+// Taobaojstinteractiveassetsconfig 任务素材配置接口
 // taobao.jst.interactive.assets.config
 //
 // 任务素材配置接口
-func TaobaoJstInteractiveAssetsConfig(clt *core.SDKClient, req *jstinteractive.TaobaoJstInteractiveAssetsConfigAPIRequest, session string) (*jstinteractive.TaobaoJstInteractiveAssetsConfigAPIResponse, error) {
-	var resp jstinteractive.TaobaoJstInteractiveAssetsConfigAPIResponse
+func Taobaojstinteractiveassetsconfig(clt *core.SDKClient, req *jstinteractive.TaobaojstinteractiveassetsconfigAPIRequest, session string) (*jstinteractive.TaobaojstinteractiveassetsconfigAPIResponse, error) {
+	var resp jstinteractive.TaobaojstinteractiveassetsconfigAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

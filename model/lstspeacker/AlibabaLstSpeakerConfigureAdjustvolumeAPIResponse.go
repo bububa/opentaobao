@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaLstSpeakerConfigureAdjustvolumeAPIResponse 音箱音量调节 API返回值
+// AlibabalstspeakerconfigureadjustvolumeAPIResponse 音箱音量调节 API返回值
 // alibaba.lst.speaker.configure.adjustvolume
 //
 // 音箱音量调节
-type AlibabaLstSpeakerConfigureAdjustvolumeAPIResponse struct {
+type AlibabalstspeakerconfigureadjustvolumeAPIResponse struct {
 	model.CommonResponse
-	AlibabaLstSpeakerConfigureAdjustvolumeAPIResponseModel
+	AlibabalstspeakerconfigureadjustvolumeAPIResponseModel
 }
 
-// AlibabaLstSpeakerConfigureAdjustvolumeAPIResponseModel is 音箱音量调节 成功返回结果
-type AlibabaLstSpeakerConfigureAdjustvolumeAPIResponseModel struct {
+// AlibabalstspeakerconfigureadjustvolumeAPIResponseModel is 音箱音量调节 成功返回结果
+type AlibabalstspeakerconfigureadjustvolumeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_lst_speaker_configure_adjustvolume_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

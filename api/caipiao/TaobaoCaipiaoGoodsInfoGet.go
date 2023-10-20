@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/caipiao"
 )
 
-// TaobaoCaipiaoGoodsInfoGet 根据卖家id与appkey获取商品信息
+// Taobaocaipiaogoodsinfoget 根据卖家id与appkey获取商品信息
 // taobao.caipiao.goods.info.get
 //
 // 根据卖家id与appkey获取商品信息。
-func TaobaoCaipiaoGoodsInfoGet(clt *core.SDKClient, req *caipiao.TaobaoCaipiaoGoodsInfoGetAPIRequest, session string) (*caipiao.TaobaoCaipiaoGoodsInfoGetAPIResponse, error) {
-	var resp caipiao.TaobaoCaipiaoGoodsInfoGetAPIResponse
+func Taobaocaipiaogoodsinfoget(clt *core.SDKClient, req *caipiao.TaobaocaipiaogoodsinfogetAPIRequest, session string) (*caipiao.TaobaocaipiaogoodsinfogetAPIResponse, error) {
+	var resp caipiao.TaobaocaipiaogoodsinfogetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

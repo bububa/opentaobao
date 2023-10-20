@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaTclsAelophyMerchantChannelOrderPrecheckApiResult 结构体
-type AlibabaTclsAelophyMerchantChannelOrderPrecheckApiResult struct {
+// AlibabatclsaelophymerchantchannelorderprecheckApiResult 结构体
+type AlibabatclsaelophymerchantchannelorderprecheckApiResult struct {
 	// 返回码说明
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// 返回码

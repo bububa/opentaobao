@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/iot"
 )
 
-// TaobaoAilabAicloudTopAuthGet 登陆
+// Taobaoailabaicloudtopauthget 登陆
 // taobao.ailab.aicloud.top.auth.get
 //
 // 登陆
-func TaobaoAilabAicloudTopAuthGet(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopAuthGetAPIRequest, session string) (*iot.TaobaoAilabAicloudTopAuthGetAPIResponse, error) {
-	var resp iot.TaobaoAilabAicloudTopAuthGetAPIResponse
+func Taobaoailabaicloudtopauthget(clt *core.SDKClient, req *iot.TaobaoailabaicloudtopauthgetAPIRequest, session string) (*iot.TaobaoailabaicloudtopauthgetAPIResponse, error) {
+	var resp iot.TaobaoailabaicloudtopauthgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

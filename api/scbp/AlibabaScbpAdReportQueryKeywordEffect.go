@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// AlibabaScbpAdReportQueryKeywordEffect 关键词报告
+// Alibabascbpadreportquerykeywordeffect 关键词报告
 // alibaba.scbp.ad.report.query.keyword.effect
 //
 // 关键词报告
-func AlibabaScbpAdReportQueryKeywordEffect(clt *core.SDKClient, req *scbp.AlibabaScbpAdReportQueryKeywordEffectAPIRequest, session string) (*scbp.AlibabaScbpAdReportQueryKeywordEffectAPIResponse, error) {
-	var resp scbp.AlibabaScbpAdReportQueryKeywordEffectAPIResponse
+func Alibabascbpadreportquerykeywordeffect(clt *core.SDKClient, req *scbp.AlibabascbpadreportquerykeywordeffectAPIRequest, session string) (*scbp.AlibabascbpadreportquerykeywordeffectAPIResponse, error) {
+	var resp scbp.AlibabascbpadreportquerykeywordeffectAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

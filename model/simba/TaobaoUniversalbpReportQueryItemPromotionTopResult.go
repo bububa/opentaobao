@@ -1,7 +1,7 @@
 package simba
 
-// TaobaoUniversalbpReportQueryItemPromotionTopResult 结构体
-type TaobaoUniversalbpReportQueryItemPromotionTopResult struct {
+// TaobaouniversalbpreportqueryitempromotionTopResult 结构体
+type TaobaouniversalbpreportqueryitempromotionTopResult struct {
 	// 请求系统信息
 	Info *TopInfo `json:"info,omitempty" xml:"info,omitempty"`
 	// 结果集

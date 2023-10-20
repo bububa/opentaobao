@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOpentradeQueueUsersMarkAPIResponse 尖货交易可购买用户标记 API返回值
+// TaobaoopentradequeueusersmarkAPIResponse 尖货交易可购买用户标记 API返回值
 // taobao.opentrade.queue.users.mark
 //
 // 尖货交易用户标记信息回传，根据openId标记用户可购买商品
-type TaobaoOpentradeQueueUsersMarkAPIResponse struct {
+type TaobaoopentradequeueusersmarkAPIResponse struct {
 	model.CommonResponse
-	TaobaoOpentradeQueueUsersMarkAPIResponseModel
+	TaobaoopentradequeueusersmarkAPIResponseModel
 }
 
-// TaobaoOpentradeQueueUsersMarkAPIResponseModel is 尖货交易可购买用户标记 成功返回结果
-type TaobaoOpentradeQueueUsersMarkAPIResponseModel struct {
+// TaobaoopentradequeueusersmarkAPIResponseModel is 尖货交易可购买用户标记 成功返回结果
+type TaobaoopentradequeueusersmarkAPIResponseModel struct {
 	XMLName xml.Name `xml:"opentrade_queue_users_mark_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

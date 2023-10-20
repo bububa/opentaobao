@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripBtripOpenInvoiceSearchAPIResponse 差旅申请用户搜索可用发票列表 API返回值
+// AlitripbtripopeninvoicesearchAPIResponse 差旅申请用户搜索可用发票列表 API返回值
 // alitrip.btrip.open.invoice.search
 //
 // 差旅申请用户搜索可用发票列表
-type AlitripBtripOpenInvoiceSearchAPIResponse struct {
+type AlitripbtripopeninvoicesearchAPIResponse struct {
 	model.CommonResponse
-	AlitripBtripOpenInvoiceSearchAPIResponseModel
+	AlitripbtripopeninvoicesearchAPIResponseModel
 }
 
-// AlitripBtripOpenInvoiceSearchAPIResponseModel is 差旅申请用户搜索可用发票列表 成功返回结果
-type AlitripBtripOpenInvoiceSearchAPIResponseModel struct {
+// AlitripbtripopeninvoicesearchAPIResponseModel is 差旅申请用户搜索可用发票列表 成功返回结果
+type AlitripbtripopeninvoicesearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_btrip_open_invoice_search_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

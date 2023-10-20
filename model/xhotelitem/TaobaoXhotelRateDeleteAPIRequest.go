@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoXhotelRateDeleteAPIRequest rate删除接口 API请求
+// TaobaoxhotelratedeleteAPIRequest rate删除接口 API请求
 // taobao.xhotel.rate.delete
 //
 // 酒店产品库rate删除
-type TaobaoXhotelRateDeleteAPIRequest struct {
+type TaobaoxhotelratedeleteAPIRequest struct {
 	model.Params
 	// 系统商，一般不用填写，使用须申请
 	_vendor string
@@ -20,65 +20,65 @@ type TaobaoXhotelRateDeleteAPIRequest struct {
 	_outRid string
 }
 
-// NewTaobaoXhotelRateDeleteRequest 初始化TaobaoXhotelRateDeleteAPIRequest对象
-func NewTaobaoXhotelRateDeleteRequest() *TaobaoXhotelRateDeleteAPIRequest {
-	return &TaobaoXhotelRateDeleteAPIRequest{
+// NewTaobaoxhotelratedeleteRequest 初始化TaobaoxhotelratedeleteAPIRequest对象
+func NewTaobaoxhotelratedeleteRequest() *TaobaoxhotelratedeleteAPIRequest {
+	return &TaobaoxhotelratedeleteAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoXhotelRateDeleteAPIRequest) GetApiMethodName() string {
+func (r TaobaoxhotelratedeleteAPIRequest) GetApiMethodName() string {
 	return "taobao.xhotel.rate.delete"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoXhotelRateDeleteAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoxhotelratedeleteAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoXhotelRateDeleteAPIRequest) GetRawParams() model.Params {
+func (r TaobaoxhotelratedeleteAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetVendor is Vendor Setter
 // 系统商，一般不用填写，使用须申请
-func (r *TaobaoXhotelRateDeleteAPIRequest) SetVendor(_vendor string) error {
+func (r *TaobaoxhotelratedeleteAPIRequest) SetVendor(_vendor string) error {
 	r._vendor = _vendor
 	r.Set("vendor", _vendor)
 	return nil
 }
 
 // GetVendor Vendor Getter
-func (r TaobaoXhotelRateDeleteAPIRequest) GetVendor() string {
+func (r TaobaoxhotelratedeleteAPIRequest) GetVendor() string {
 	return r._vendor
 }
 
 // SetRateplanCode is RateplanCode Setter
 // 商家价格政策编码
-func (r *TaobaoXhotelRateDeleteAPIRequest) SetRateplanCode(_rateplanCode string) error {
+func (r *TaobaoxhotelratedeleteAPIRequest) SetRateplanCode(_rateplanCode string) error {
 	r._rateplanCode = _rateplanCode
 	r.Set("rateplan_code", _rateplanCode)
 	return nil
 }
 
 // GetRateplanCode RateplanCode Getter
-func (r TaobaoXhotelRateDeleteAPIRequest) GetRateplanCode() string {
+func (r TaobaoxhotelratedeleteAPIRequest) GetRateplanCode() string {
 	return r._rateplanCode
 }
 
 // SetOutRid is OutRid Setter
 // 商家房型ID
-func (r *TaobaoXhotelRateDeleteAPIRequest) SetOutRid(_outRid string) error {
+func (r *TaobaoxhotelratedeleteAPIRequest) SetOutRid(_outRid string) error {
 	r._outRid = _outRid
 	r.Set("out_rid", _outRid)
 	return nil
 }
 
 // GetOutRid OutRid Getter
-func (r TaobaoXhotelRateDeleteAPIRequest) GetOutRid() string {
+func (r TaobaoxhotelratedeleteAPIRequest) GetOutRid() string {
 	return r._outRid
 }

@@ -1,7 +1,7 @@
 package trade
 
-// TaobaoRdcAligeniusOrdermsgUpdateResult 结构体
-type TaobaoRdcAligeniusOrdermsgUpdateResult struct {
+// TaobaordcaligeniusordermsgupdateResult 结构体
+type TaobaordcaligeniusordermsgupdateResult struct {
 	// resultData
 	ResultData string `json:"result_data,omitempty" xml:"result_data,omitempty"`
 	// errorInfo

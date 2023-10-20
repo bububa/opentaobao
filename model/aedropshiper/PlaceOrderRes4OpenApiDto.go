@@ -1,7 +1,7 @@
 package aedropshiper
 
-// PlaceOrderRes4OpenApiDto 结构体
-type PlaceOrderRes4OpenApiDto struct {
+// PlaceOrderRes4openApiDto 结构体
+type PlaceOrderRes4openApiDto struct {
 	// orderList
 	OrderList []int64 `json:"order_list,omitempty" xml:"order_list>int64,omitempty"`
 	// errorCode

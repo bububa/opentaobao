@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/maitix"
 )
 
-// AlibabaDamaiMaitixDistributionExchangepointQuery 分销查询取票点接口
+// Alibabadamaimaitixdistributionexchangepointquery 分销查询取票点接口
 // alibaba.damai.maitix.distribution.exchangepoint.query
 //
 // 分销查询取票点接口
-func AlibabaDamaiMaitixDistributionExchangepointQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixDistributionExchangepointQueryAPIRequest, session string) (*maitix.AlibabaDamaiMaitixDistributionExchangepointQueryAPIResponse, error) {
-	var resp maitix.AlibabaDamaiMaitixDistributionExchangepointQueryAPIResponse
+func Alibabadamaimaitixdistributionexchangepointquery(clt *core.SDKClient, req *maitix.AlibabadamaimaitixdistributionexchangepointqueryAPIRequest, session string) (*maitix.AlibabadamaimaitixdistributionexchangepointqueryAPIResponse, error) {
+	var resp maitix.AlibabadamaimaitixdistributionexchangepointqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

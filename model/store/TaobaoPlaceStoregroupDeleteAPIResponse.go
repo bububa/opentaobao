@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoPlaceStoregroupDeleteAPIResponse 删除门店库 API返回值
+// TaobaoplacestoregroupdeleteAPIResponse 删除门店库 API返回值
 // taobao.place.storegroup.delete
 //
 // 删除门店库
-type TaobaoPlaceStoregroupDeleteAPIResponse struct {
+type TaobaoplacestoregroupdeleteAPIResponse struct {
 	model.CommonResponse
-	TaobaoPlaceStoregroupDeleteAPIResponseModel
+	TaobaoplacestoregroupdeleteAPIResponseModel
 }
 
-// TaobaoPlaceStoregroupDeleteAPIResponseModel is 删除门店库 成功返回结果
-type TaobaoPlaceStoregroupDeleteAPIResponseModel struct {
+// TaobaoplacestoregroupdeleteAPIResponseModel is 删除门店库 成功返回结果
+type TaobaoplacestoregroupdeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"place_storegroup_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

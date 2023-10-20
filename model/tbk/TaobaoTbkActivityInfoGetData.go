@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaoTbkActivityInfoGetData 结构体
-type TaobaoTbkActivityInfoGetData struct {
+// TaobaotbkactivityinfogetData 结构体
+type TaobaotbkactivityinfogetData struct {
 	// 【本地化】微信推广二维码地址
 	WxQrcodeUrl string `json:"wx_qrcode_url,omitempty" xml:"wx_qrcode_url,omitempty"`
 	// 淘客推广长链

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTmcUserTopicsGetAPIRequest 获取用户开通的topic列表 API请求
+// TaobaotmcusertopicsgetAPIRequest 获取用户开通的topic列表 API请求
 // taobao.tmc.user.topics.get
 //
 // 获取用户开通的topic列表，授权消息使用
-type TaobaoTmcUserTopicsGetAPIRequest struct {
+type TaobaotmcusertopicsgetAPIRequest struct {
 	model.Params
 	// 卖家nick
 	_nick string
 }
 
-// NewTaobaoTmcUserTopicsGetRequest 初始化TaobaoTmcUserTopicsGetAPIRequest对象
-func NewTaobaoTmcUserTopicsGetRequest() *TaobaoTmcUserTopicsGetAPIRequest {
-	return &TaobaoTmcUserTopicsGetAPIRequest{
+// NewTaobaotmcusertopicsgetRequest 初始化TaobaotmcusertopicsgetAPIRequest对象
+func NewTaobaotmcusertopicsgetRequest() *TaobaotmcusertopicsgetAPIRequest {
+	return &TaobaotmcusertopicsgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoTmcUserTopicsGetAPIRequest) GetApiMethodName() string {
+func (r TaobaotmcusertopicsgetAPIRequest) GetApiMethodName() string {
 	return "taobao.tmc.user.topics.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTmcUserTopicsGetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaotmcusertopicsgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoTmcUserTopicsGetAPIRequest) GetRawParams() model.Params {
+func (r TaobaotmcusertopicsgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetNick is Nick Setter
 // 卖家nick
-func (r *TaobaoTmcUserTopicsGetAPIRequest) SetNick(_nick string) error {
+func (r *TaobaotmcusertopicsgetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
 	r.Set("nick", _nick)
 	return nil
 }
 
 // GetNick Nick Getter
-func (r TaobaoTmcUserTopicsGetAPIRequest) GetNick() string {
+func (r TaobaotmcusertopicsgetAPIRequest) GetNick() string {
 	return r._nick
 }

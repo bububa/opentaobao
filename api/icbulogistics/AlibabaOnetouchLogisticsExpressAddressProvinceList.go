@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/icbulogistics"
 )
 
-// AlibabaOnetouchLogisticsExpressAddressProvinceList 四级地址库-省
+// Alibabaonetouchlogisticsexpressaddressprovincelist 四级地址库-省
 // alibaba.onetouch.logistics.express.address.province.list
 //
 // 四级地址库-省
-func AlibabaOnetouchLogisticsExpressAddressProvinceList(clt *core.SDKClient, req *icbulogistics.AlibabaOnetouchLogisticsExpressAddressProvinceListAPIRequest, session string) (*icbulogistics.AlibabaOnetouchLogisticsExpressAddressProvinceListAPIResponse, error) {
-	var resp icbulogistics.AlibabaOnetouchLogisticsExpressAddressProvinceListAPIResponse
+func Alibabaonetouchlogisticsexpressaddressprovincelist(clt *core.SDKClient, req *icbulogistics.AlibabaonetouchlogisticsexpressaddressprovincelistAPIRequest, session string) (*icbulogistics.AlibabaonetouchlogisticsexpressaddressprovincelistAPIResponse, error) {
+	var resp icbulogistics.AlibabaonetouchlogisticsexpressaddressprovincelistAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

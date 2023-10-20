@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaAlihouseExistinghomeActivityQueryResult 结构体
-type AlibabaAlihouseExistinghomeActivityQueryResult struct {
+// AlibabaalihouseexistinghomeactivityqueryResult 结构体
+type AlibabaalihouseexistinghomeactivityqueryResult struct {
 	// 结果信息
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// 处理完成后的消息

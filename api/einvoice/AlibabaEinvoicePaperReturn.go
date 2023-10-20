@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/einvoice"
 )
 
-// AlibabaEinvoicePaperReturn 纸质发票结果回传
+// Alibabaeinvoicepaperreturn 纸质发票结果回传
 // alibaba.einvoice.paper.return
 //
 // 纸质发票结果回传
-func AlibabaEinvoicePaperReturn(clt *core.SDKClient, req *einvoice.AlibabaEinvoicePaperReturnAPIRequest, session string) (*einvoice.AlibabaEinvoicePaperReturnAPIResponse, error) {
-	var resp einvoice.AlibabaEinvoicePaperReturnAPIResponse
+func Alibabaeinvoicepaperreturn(clt *core.SDKClient, req *einvoice.AlibabaeinvoicepaperreturnAPIRequest, session string) (*einvoice.AlibabaeinvoicepaperreturnAPIResponse, error) {
+	var resp einvoice.AlibabaeinvoicepaperreturnAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

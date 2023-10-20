@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlscCrmMenuListAPIRequest 获取特价菜单 API请求
+// AlibabaalsccrmmenulistAPIRequest 获取特价菜单 API请求
 // alibaba.alsc.crm.menu.list
 //
 // 获取特价菜单
-type AlibabaAlscCrmMenuListAPIRequest struct {
+type AlibabaalsccrmmenulistAPIRequest struct {
 	model.Params
 	// 获取特价菜单请求参数
 	_menuOpenReq *MenuOpenReq
 }
 
-// NewAlibabaAlscCrmMenuListRequest 初始化AlibabaAlscCrmMenuListAPIRequest对象
-func NewAlibabaAlscCrmMenuListRequest() *AlibabaAlscCrmMenuListAPIRequest {
-	return &AlibabaAlscCrmMenuListAPIRequest{
+// NewAlibabaalsccrmmenulistRequest 初始化AlibabaalsccrmmenulistAPIRequest对象
+func NewAlibabaalsccrmmenulistRequest() *AlibabaalsccrmmenulistAPIRequest {
+	return &AlibabaalsccrmmenulistAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmMenuListAPIRequest) GetApiMethodName() string {
+func (r AlibabaalsccrmmenulistAPIRequest) GetApiMethodName() string {
 	return "alibaba.alsc.crm.menu.list"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmMenuListAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalsccrmmenulistAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlscCrmMenuListAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalsccrmmenulistAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetMenuOpenReq is MenuOpenReq Setter
 // 获取特价菜单请求参数
-func (r *AlibabaAlscCrmMenuListAPIRequest) SetMenuOpenReq(_menuOpenReq *MenuOpenReq) error {
+func (r *AlibabaalsccrmmenulistAPIRequest) SetMenuOpenReq(_menuOpenReq *MenuOpenReq) error {
 	r._menuOpenReq = _menuOpenReq
 	r.Set("menu_open_req", _menuOpenReq)
 	return nil
 }
 
 // GetMenuOpenReq MenuOpenReq Getter
-func (r AlibabaAlscCrmMenuListAPIRequest) GetMenuOpenReq() *MenuOpenReq {
+func (r AlibabaalsccrmmenulistAPIRequest) GetMenuOpenReq() *MenuOpenReq {
 	return r._menuOpenReq
 }

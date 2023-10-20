@@ -1,7 +1,7 @@
 package jipiao
 
-// TaobaoAlitripSellerRefundSearchResultDo 结构体
-type TaobaoAlitripSellerRefundSearchResultDo struct {
+// TaobaoalitripsellerrefundsearchResultDo 结构体
+type TaobaoalitripsellerrefundsearchResultDo struct {
 	// ReturnTicketDo
 	Results []ReturnTicketDo `json:"results,omitempty" xml:"results>return_ticket_do,omitempty"`
 	// 错误码

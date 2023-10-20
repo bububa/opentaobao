@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoVmarketEticketFlowConsumeAPIResponse 无交易类凭证核销 API返回值
+// TaobaovmarketeticketflowconsumeAPIResponse 无交易类凭证核销 API返回值
 // taobao.vmarket.eticket.flow.consume
 //
 // 无交易类凭证核销
-type TaobaoVmarketEticketFlowConsumeAPIResponse struct {
+type TaobaovmarketeticketflowconsumeAPIResponse struct {
 	model.CommonResponse
-	TaobaoVmarketEticketFlowConsumeAPIResponseModel
+	TaobaovmarketeticketflowconsumeAPIResponseModel
 }
 
-// TaobaoVmarketEticketFlowConsumeAPIResponseModel is 无交易类凭证核销 成功返回结果
-type TaobaoVmarketEticketFlowConsumeAPIResponseModel struct {
+// TaobaovmarketeticketflowconsumeAPIResponseModel is 无交易类凭证核销 成功返回结果
+type TaobaovmarketeticketflowconsumeAPIResponseModel struct {
 	XMLName xml.Name `xml:"vmarket_eticket_flow_consume_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

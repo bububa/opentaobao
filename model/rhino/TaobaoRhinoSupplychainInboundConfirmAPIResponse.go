@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoRhinoSupplychainInboundConfirmAPIResponse WMS003成衣入库确认 API返回值
+// TaobaorhinosupplychaininboundconfirmAPIResponse WMS003成衣入库确认 API返回值
 // taobao.rhino.supplychain.inbound.confirm
 //
 // 【WMS003】【同步成衣入库完成信息】
-type TaobaoRhinoSupplychainInboundConfirmAPIResponse struct {
+type TaobaorhinosupplychaininboundconfirmAPIResponse struct {
 	model.CommonResponse
-	TaobaoRhinoSupplychainInboundConfirmAPIResponseModel
+	TaobaorhinosupplychaininboundconfirmAPIResponseModel
 }
 
-// TaobaoRhinoSupplychainInboundConfirmAPIResponseModel is WMS003成衣入库确认 成功返回结果
-type TaobaoRhinoSupplychainInboundConfirmAPIResponseModel struct {
+// TaobaorhinosupplychaininboundconfirmAPIResponseModel is WMS003成衣入库确认 成功返回结果
+type TaobaorhinosupplychaininboundconfirmAPIResponseModel struct {
 	XMLName xml.Name `xml:"rhino_supplychain_inbound_confirm_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

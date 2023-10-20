@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihealthoutflow"
 )
 
-// AlibabaAlihealthDoctorLeshuiApplyNotify 申请单审核结果通知
+// Alibabaalihealthdoctorleshuiapplynotify 申请单审核结果通知
 // alibaba.alihealth.doctor.leshui.apply.notify
 //
 // 申请单审核结果通知
-func AlibabaAlihealthDoctorLeshuiApplyNotify(clt *core.SDKClient, req *alihealthoutflow.AlibabaAlihealthDoctorLeshuiApplyNotifyAPIRequest, session string) (*alihealthoutflow.AlibabaAlihealthDoctorLeshuiApplyNotifyAPIResponse, error) {
-	var resp alihealthoutflow.AlibabaAlihealthDoctorLeshuiApplyNotifyAPIResponse
+func Alibabaalihealthdoctorleshuiapplynotify(clt *core.SDKClient, req *alihealthoutflow.AlibabaalihealthdoctorleshuiapplynotifyAPIRequest, session string) (*alihealthoutflow.AlibabaalihealthdoctorleshuiapplynotifyAPIResponse, error) {
+	var resp alihealthoutflow.AlibabaalihealthdoctorleshuiapplynotifyAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

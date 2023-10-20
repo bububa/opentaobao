@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/aecreatives"
 )
 
-// AliexpressAffiliateProductSmartmatch 联盟物料智能推荐api
+// Aliexpressaffiliateproductsmartmatch 联盟物料智能推荐api
 // aliexpress.affiliate.product.smartmatch
 //
 // 联盟物料算法智能推荐
-func AliexpressAffiliateProductSmartmatch(clt *core.SDKClient, req *aecreatives.AliexpressAffiliateProductSmartmatchAPIRequest, session string) (*aecreatives.AliexpressAffiliateProductSmartmatchAPIResponse, error) {
-	var resp aecreatives.AliexpressAffiliateProductSmartmatchAPIResponse
+func Aliexpressaffiliateproductsmartmatch(clt *core.SDKClient, req *aecreatives.AliexpressaffiliateproductsmartmatchAPIRequest, session string) (*aecreatives.AliexpressaffiliateproductsmartmatchAPIResponse, error) {
+	var resp aecreatives.AliexpressaffiliateproductsmartmatchAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

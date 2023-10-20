@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallNrtMemberOpenidAPIRequest 根据会员手机查询openId API请求
+// TmallnrtmemberopenidAPIRequest 根据会员手机查询openId API请求
 // tmall.nrt.member.openid
 //
 // 根据会员手机查询openId
-type TmallNrtMemberOpenidAPIRequest struct {
+type TmallnrtmemberopenidAPIRequest struct {
 	model.Params
 	// 会员DTO
 	_nrtMemberDto *NrtMemberDto
 }
 
-// NewTmallNrtMemberOpenidRequest 初始化TmallNrtMemberOpenidAPIRequest对象
-func NewTmallNrtMemberOpenidRequest() *TmallNrtMemberOpenidAPIRequest {
-	return &TmallNrtMemberOpenidAPIRequest{
+// NewTmallnrtmemberopenidRequest 初始化TmallnrtmemberopenidAPIRequest对象
+func NewTmallnrtmemberopenidRequest() *TmallnrtmemberopenidAPIRequest {
+	return &TmallnrtmemberopenidAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallNrtMemberOpenidAPIRequest) GetApiMethodName() string {
+func (r TmallnrtmemberopenidAPIRequest) GetApiMethodName() string {
 	return "tmall.nrt.member.openid"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallNrtMemberOpenidAPIRequest) GetApiParams(params url.Values) {
+func (r TmallnrtmemberopenidAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallNrtMemberOpenidAPIRequest) GetRawParams() model.Params {
+func (r TmallnrtmemberopenidAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetNrtMemberDto is NrtMemberDto Setter
 // 会员DTO
-func (r *TmallNrtMemberOpenidAPIRequest) SetNrtMemberDto(_nrtMemberDto *NrtMemberDto) error {
+func (r *TmallnrtmemberopenidAPIRequest) SetNrtMemberDto(_nrtMemberDto *NrtMemberDto) error {
 	r._nrtMemberDto = _nrtMemberDto
 	r.Set("nrt_member_dto", _nrtMemberDto)
 	return nil
 }
 
 // GetNrtMemberDto NrtMemberDto Getter
-func (r TmallNrtMemberOpenidAPIRequest) GetNrtMemberDto() *NrtMemberDto {
+func (r TmallnrtmemberopenidAPIRequest) GetNrtMemberDto() *NrtMemberDto {
 	return r._nrtMemberDto
 }

@@ -1,7 +1,7 @@
 package ju
 
-// AlibabaJhsCommunityActivityDetailsData 结构体
-type AlibabaJhsCommunityActivityDetailsData struct {
+// AlibabajhscommunityactivitydetailsData 结构体
+type AlibabajhscommunityactivitydetailsData struct {
 	// 开幕时间
 	OpeningTime string `json:"opening_time,omitempty" xml:"opening_time,omitempty"`
 	// 淘口令

@@ -6,18 +6,18 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOpenmallTradeBatchGetAPIResponse 批量获取openmall订单 API返回值
+// TaobaoopenmalltradebatchgetAPIResponse 批量获取openmall订单 API返回值
 // taobao.openmall.trade.batch.get
 //
 // 批量获取openmall订单
 // 注意：该接口数据存在延迟，实时数据请通过taobao.openmall.trade.get获取
-type TaobaoOpenmallTradeBatchGetAPIResponse struct {
+type TaobaoopenmalltradebatchgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoOpenmallTradeBatchGetAPIResponseModel
+	TaobaoopenmalltradebatchgetAPIResponseModel
 }
 
-// TaobaoOpenmallTradeBatchGetAPIResponseModel is 批量获取openmall订单 成功返回结果
-type TaobaoOpenmallTradeBatchGetAPIResponseModel struct {
+// TaobaoopenmalltradebatchgetAPIResponseModel is 批量获取openmall订单 成功返回结果
+type TaobaoopenmalltradebatchgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"openmall_trade_batch_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

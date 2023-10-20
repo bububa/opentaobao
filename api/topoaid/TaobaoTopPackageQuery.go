@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/topoaid"
 )
 
-// TaobaoTopPackageQuery 淘系包裹查询
+// Taobaotoppackagequery 淘系包裹查询
 // taobao.top.package.query
 //
 // 淘系包裹查询
-func TaobaoTopPackageQuery(clt *core.SDKClient, req *topoaid.TaobaoTopPackageQueryAPIRequest, session string) (*topoaid.TaobaoTopPackageQueryAPIResponse, error) {
-	var resp topoaid.TaobaoTopPackageQueryAPIResponse
+func Taobaotoppackagequery(clt *core.SDKClient, req *topoaid.TaobaotoppackagequeryAPIRequest, session string) (*topoaid.TaobaotoppackagequeryAPIResponse, error) {
+	var resp topoaid.TaobaotoppackagequeryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

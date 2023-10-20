@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaTianmaoInventoryModifyAPIResponse 阿里巴巴.天猫.aic库存.修改 API返回值
+// AlibabatianmaoinventorymodifyAPIResponse 阿里巴巴.天猫.aic库存.修改 API返回值
 // alibaba.tianmao.inventory.modify
 //
 // 阿里巴巴.天猫.aic库存.修改
-type AlibabaTianmaoInventoryModifyAPIResponse struct {
+type AlibabatianmaoinventorymodifyAPIResponse struct {
 	model.CommonResponse
-	AlibabaTianmaoInventoryModifyAPIResponseModel
+	AlibabatianmaoinventorymodifyAPIResponseModel
 }
 
-// AlibabaTianmaoInventoryModifyAPIResponseModel is 阿里巴巴.天猫.aic库存.修改 成功返回结果
-type AlibabaTianmaoInventoryModifyAPIResponseModel struct {
+// AlibabatianmaoinventorymodifyAPIResponseModel is 阿里巴巴.天猫.aic库存.修改 成功返回结果
+type AlibabatianmaoinventorymodifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_tianmao_inventory_modify_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/eticket"
 )
 
-// TaobaoEticketMerchantMaResend 电子凭证重发回调接口
+// Taobaoeticketmerchantmaresend 电子凭证重发回调接口
 // taobao.eticket.merchant.ma.resend
 //
 // 码商重发电子凭证回调接口
-func TaobaoEticketMerchantMaResend(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantMaResendAPIRequest, session string) (*eticket.TaobaoEticketMerchantMaResendAPIResponse, error) {
-	var resp eticket.TaobaoEticketMerchantMaResendAPIResponse
+func Taobaoeticketmerchantmaresend(clt *core.SDKClient, req *eticket.TaobaoeticketmerchantmaresendAPIRequest, session string) (*eticket.TaobaoeticketmerchantmaresendAPIResponse, error) {
+	var resp eticket.TaobaoeticketmerchantmaresendAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

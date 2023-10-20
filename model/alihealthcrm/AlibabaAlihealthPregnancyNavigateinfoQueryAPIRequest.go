@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthPregnancyNavigateinfoQueryAPIRequest 查询底导数据 API请求
+// AlibabaalihealthpregnancynavigateinfoqueryAPIRequest 查询底导数据 API请求
 // alibaba.alihealth.pregnancy.navigateinfo.query
 //
 // 备孕管理--获取底部导航信息
-type AlibabaAlihealthPregnancyNavigateinfoQueryAPIRequest struct {
+type AlibabaalihealthpregnancynavigateinfoqueryAPIRequest struct {
 	model.Params
 	// 用户id
 	_userId int64
 }
 
-// NewAlibabaAlihealthPregnancyNavigateinfoQueryRequest 初始化AlibabaAlihealthPregnancyNavigateinfoQueryAPIRequest对象
-func NewAlibabaAlihealthPregnancyNavigateinfoQueryRequest() *AlibabaAlihealthPregnancyNavigateinfoQueryAPIRequest {
-	return &AlibabaAlihealthPregnancyNavigateinfoQueryAPIRequest{
+// NewAlibabaalihealthpregnancynavigateinfoqueryRequest 初始化AlibabaalihealthpregnancynavigateinfoqueryAPIRequest对象
+func NewAlibabaalihealthpregnancynavigateinfoqueryRequest() *AlibabaalihealthpregnancynavigateinfoqueryAPIRequest {
+	return &AlibabaalihealthpregnancynavigateinfoqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthPregnancyNavigateinfoQueryAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihealthpregnancynavigateinfoqueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.pregnancy.navigateinfo.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthPregnancyNavigateinfoQueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihealthpregnancynavigateinfoqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihealthPregnancyNavigateinfoQueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihealthpregnancynavigateinfoqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetUserId is UserId Setter
 // 用户id
-func (r *AlibabaAlihealthPregnancyNavigateinfoQueryAPIRequest) SetUserId(_userId int64) error {
+func (r *AlibabaalihealthpregnancynavigateinfoqueryAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
 	r.Set("user_id", _userId)
 	return nil
 }
 
 // GetUserId UserId Getter
-func (r AlibabaAlihealthPregnancyNavigateinfoQueryAPIRequest) GetUserId() int64 {
+func (r AlibabaalihealthpregnancynavigateinfoqueryAPIRequest) GetUserId() int64 {
 	return r._userId
 }

@@ -1,7 +1,7 @@
 package wdkitem
 
-// AlibabaWdkItemMorebarcodeOpsResult 结构体
-type AlibabaWdkItemMorebarcodeOpsResult struct {
+// AlibabawdkitemmorebarcodeopsResult 结构体
+type AlibabawdkitemmorebarcodeopsResult struct {
 	// errorCode
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// errorDesc

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/damai"
 )
 
-// AlibabaDamaiMevOpenPushface 大麦换验平台-第三方对外开放-票面接口pushFace
+// Alibabadamaimevopenpushface 大麦换验平台-第三方对外开放-票面接口pushFace
 // alibaba.damai.mev.open.pushface
 //
 // pushFace
-func AlibabaDamaiMevOpenPushface(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushfaceAPIRequest, session string) (*damai.AlibabaDamaiMevOpenPushfaceAPIResponse, error) {
-	var resp damai.AlibabaDamaiMevOpenPushfaceAPIResponse
+func Alibabadamaimevopenpushface(clt *core.SDKClient, req *damai.AlibabadamaimevopenpushfaceAPIRequest, session string) (*damai.AlibabadamaimevopenpushfaceAPIResponse, error) {
+	var resp damai.AlibabadamaimevopenpushfaceAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

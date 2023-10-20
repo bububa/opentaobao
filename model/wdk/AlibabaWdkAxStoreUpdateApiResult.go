@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaWdkAxStoreUpdateApiResult 结构体
-type AlibabaWdkAxStoreUpdateApiResult struct {
+// AlibabawdkaxstoreupdateApiResult 结构体
+type AlibabawdkaxstoreupdateApiResult struct {
 	// 调用接口返回错误编码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 调用接口返回错误信息

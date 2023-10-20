@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMosOnsiteTradePayAPIRequest 新商场当面付商户扫码付 API请求
+// AlibabamosonsitetradepayAPIRequest 新商场当面付商户扫码付 API请求
 // alibaba.mos.onsite.trade.pay
 //
 // 收银员使用扫码设备读取用户“付款码”后，将二维码或条码信息通过本接口上送至喵街发起支付。
-type AlibabaMosOnsiteTradePayAPIRequest struct {
+type AlibabamosonsitetradepayAPIRequest struct {
 	model.Params
 	// 创建订单请求参数
 	_onsiteTradePayRequest *OnsiteTradePayRequest
 }
 
-// NewAlibabaMosOnsiteTradePayRequest 初始化AlibabaMosOnsiteTradePayAPIRequest对象
-func NewAlibabaMosOnsiteTradePayRequest() *AlibabaMosOnsiteTradePayAPIRequest {
-	return &AlibabaMosOnsiteTradePayAPIRequest{
+// NewAlibabamosonsitetradepayRequest 初始化AlibabamosonsitetradepayAPIRequest对象
+func NewAlibabamosonsitetradepayRequest() *AlibabamosonsitetradepayAPIRequest {
+	return &AlibabamosonsitetradepayAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaMosOnsiteTradePayAPIRequest) GetApiMethodName() string {
+func (r AlibabamosonsitetradepayAPIRequest) GetApiMethodName() string {
 	return "alibaba.mos.onsite.trade.pay"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaMosOnsiteTradePayAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabamosonsitetradepayAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaMosOnsiteTradePayAPIRequest) GetRawParams() model.Params {
+func (r AlibabamosonsitetradepayAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOnsiteTradePayRequest is OnsiteTradePayRequest Setter
 // 创建订单请求参数
-func (r *AlibabaMosOnsiteTradePayAPIRequest) SetOnsiteTradePayRequest(_onsiteTradePayRequest *OnsiteTradePayRequest) error {
+func (r *AlibabamosonsitetradepayAPIRequest) SetOnsiteTradePayRequest(_onsiteTradePayRequest *OnsiteTradePayRequest) error {
 	r._onsiteTradePayRequest = _onsiteTradePayRequest
 	r.Set("onsite_trade_pay_request", _onsiteTradePayRequest)
 	return nil
 }
 
 // GetOnsiteTradePayRequest OnsiteTradePayRequest Getter
-func (r AlibabaMosOnsiteTradePayAPIRequest) GetOnsiteTradePayRequest() *OnsiteTradePayRequest {
+func (r AlibabamosonsitetradepayAPIRequest) GetOnsiteTradePayRequest() *OnsiteTradePayRequest {
 	return r._onsiteTradePayRequest
 }

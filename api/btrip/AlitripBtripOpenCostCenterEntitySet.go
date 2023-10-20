@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/btrip"
 )
 
-// AlitripBtripOpenCostCenterEntitySet 设置成本中心人员信息
+// Alitripbtripopencostcenterentityset 设置成本中心人员信息
 // alitrip.btrip.open.cost.center.entity.set
 //
 // 设置成本中心人员信息
-func AlitripBtripOpenCostCenterEntitySet(clt *core.SDKClient, req *btrip.AlitripBtripOpenCostCenterEntitySetAPIRequest, session string) (*btrip.AlitripBtripOpenCostCenterEntitySetAPIResponse, error) {
-	var resp btrip.AlitripBtripOpenCostCenterEntitySetAPIResponse
+func Alitripbtripopencostcenterentityset(clt *core.SDKClient, req *btrip.AlitripbtripopencostcenterentitysetAPIRequest, session string) (*btrip.AlitripbtripopencostcenterentitysetAPIResponse, error) {
+	var resp btrip.AlitripbtripopencostcenterentitysetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

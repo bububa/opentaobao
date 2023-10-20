@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/miniappopen"
 )
 
-// TaobaoMiniappVirtualItemGet 小程序关联虚拟商品查询
+// Taobaominiappvirtualitemget 小程序关联虚拟商品查询
 // taobao.miniapp.virtual.item.get
 //
 // 小程序关联虚拟商品查询
-func TaobaoMiniappVirtualItemGet(clt *core.SDKClient, req *miniappopen.TaobaoMiniappVirtualItemGetAPIRequest, session string) (*miniappopen.TaobaoMiniappVirtualItemGetAPIResponse, error) {
-	var resp miniappopen.TaobaoMiniappVirtualItemGetAPIResponse
+func Taobaominiappvirtualitemget(clt *core.SDKClient, req *miniappopen.TaobaominiappvirtualitemgetAPIRequest, session string) (*miniappopen.TaobaominiappvirtualitemgetAPIResponse, error) {
+	var resp miniappopen.TaobaominiappvirtualitemgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

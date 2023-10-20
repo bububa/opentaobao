@@ -1,7 +1,7 @@
 package user
 
-// TaobaoRdcAligeniusAccountValidateResult 结构体
-type TaobaoRdcAligeniusAccountValidateResult struct {
+// TaobaordcaligeniusaccountvalidateResult 结构体
+type TaobaordcaligeniusaccountvalidateResult struct {
 	// errorInfo
 	ErrorInfo string `json:"error_info,omitempty" xml:"error_info,omitempty"`
 	// errorCode

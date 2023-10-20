@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaEleFengniaoCarrierdriverLocationAPIResponse 查询骑手当前位置 API返回值
+// AlibabaelefengniaocarrierdriverlocationAPIResponse 查询骑手当前位置 API返回值
 // alibaba.ele.fengniao.carrierdriver.location
 //
 // 查询骑手当前位置
-type AlibabaEleFengniaoCarrierdriverLocationAPIResponse struct {
+type AlibabaelefengniaocarrierdriverlocationAPIResponse struct {
 	model.CommonResponse
-	AlibabaEleFengniaoCarrierdriverLocationAPIResponseModel
+	AlibabaelefengniaocarrierdriverlocationAPIResponseModel
 }
 
-// AlibabaEleFengniaoCarrierdriverLocationAPIResponseModel is 查询骑手当前位置 成功返回结果
-type AlibabaEleFengniaoCarrierdriverLocationAPIResponseModel struct {
+// AlibabaelefengniaocarrierdriverlocationAPIResponseModel is 查询骑手当前位置 成功返回结果
+type AlibabaelefengniaocarrierdriverlocationAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ele_fengniao_carrierdriver_location_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

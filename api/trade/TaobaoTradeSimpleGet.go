@@ -5,7 +5,7 @@ import (
 	"github.com/bububa/opentaobao/model/trade"
 )
 
-// TaobaoTradeSimpleGet 获取交易订单的简易信息
+// Taobaotradesimpleget 获取交易订单的简易信息
 // taobao.trade.simple.get
 //
 // 获取CRM单表交易的详情
@@ -14,8 +14,8 @@ import (
 // &lt;br/&gt;3. 获取红包优惠金额可以使用字段 coupon_fee
 // &lt;br/&gt;4. 请按需获取字段，减少TOP系统的压力
 // &lt;br/&gt;&lt;strong&gt;&lt;a href=&#34;https://console.open.taobao.com/dingWeb.htm?from=tradeapi&#34; target=&#34;_blank&#34;&gt;点击查看更多交易API说明&lt;/a&gt;&lt;/strong&gt;
-func TaobaoTradeSimpleGet(clt *core.SDKClient, req *trade.TaobaoTradeSimpleGetAPIRequest, session string) (*trade.TaobaoTradeSimpleGetAPIResponse, error) {
-	var resp trade.TaobaoTradeSimpleGetAPIResponse
+func Taobaotradesimpleget(clt *core.SDKClient, req *trade.TaobaotradesimplegetAPIRequest, session string) (*trade.TaobaotradesimplegetAPIResponse, error) {
+	var resp trade.TaobaotradesimplegetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaAlihouseNewhomeShopconfigAstorePreviewResult 结构体
-type AlibabaAlihouseNewhomeShopconfigAstorePreviewResult struct {
+// AlibabaalihousenewhomeshopconfigastorepreviewResult 结构体
+type AlibabaalihousenewhomeshopconfigastorepreviewResult struct {
 	// 返回的结果
 	Data []AstoreRespDto `json:"data,omitempty" xml:"data>astore_resp_dto,omitempty"`
 	// 处理完成后的消息

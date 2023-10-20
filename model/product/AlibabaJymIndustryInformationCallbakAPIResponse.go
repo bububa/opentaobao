@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaJymIndustryInformationCallbakAPIResponse VMOS回调行业信息系统 API返回值
+// AlibabajymindustryinformationcallbakAPIResponse VMOS回调行业信息系统 API返回值
 // alibaba.jym.industry.information.callbak
 //
 // VMOS回调交易猫行业信息系统
-type AlibabaJymIndustryInformationCallbakAPIResponse struct {
+type AlibabajymindustryinformationcallbakAPIResponse struct {
 	model.CommonResponse
-	AlibabaJymIndustryInformationCallbakAPIResponseModel
+	AlibabajymindustryinformationcallbakAPIResponseModel
 }
 
-// AlibabaJymIndustryInformationCallbakAPIResponseModel is VMOS回调行业信息系统 成功返回结果
-type AlibabaJymIndustryInformationCallbakAPIResponseModel struct {
+// AlibabajymindustryinformationcallbakAPIResponseModel is VMOS回调行业信息系统 成功返回结果
+type AlibabajymindustryinformationcallbakAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_jym_industry_information_callbak_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

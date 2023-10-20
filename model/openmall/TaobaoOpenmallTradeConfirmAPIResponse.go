@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOpenmallTradeConfirmAPIResponse 确认收货 API返回值
+// TaobaoopenmalltradeconfirmAPIResponse 确认收货 API返回值
 // taobao.openmall.trade.confirm
 //
 // 确认订单收货
-type TaobaoOpenmallTradeConfirmAPIResponse struct {
+type TaobaoopenmalltradeconfirmAPIResponse struct {
 	model.CommonResponse
-	TaobaoOpenmallTradeConfirmAPIResponseModel
+	TaobaoopenmalltradeconfirmAPIResponseModel
 }
 
-// TaobaoOpenmallTradeConfirmAPIResponseModel is 确认收货 成功返回结果
-type TaobaoOpenmallTradeConfirmAPIResponseModel struct {
+// TaobaoopenmalltradeconfirmAPIResponseModel is 确认收货 成功返回结果
+type TaobaoopenmalltradeconfirmAPIResponseModel struct {
 	XMLName xml.Name `xml:"openmall_trade_confirm_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -29,9 +29,9 @@ type SubOrderResponse struct {
 	// 商品单价, 分
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
 	// 库存单位购买数量
-	BuyStockQuantity *BigDecimal `json:"buy_stock_quantity,omitempty" xml:"buy_stock_quantity,omitempty"`
+	BuyStockQuantity float64 `json:"buy_stock_quantity,omitempty" xml:"buy_stock_quantity,omitempty"`
 	// 销售单位购买数量
-	BuySaleQuantity *BigDecimal `json:"buy_sale_quantity,omitempty" xml:"buy_sale_quantity,omitempty"`
+	BuySaleQuantity float64 `json:"buy_sale_quantity,omitempty" xml:"buy_sale_quantity,omitempty"`
 	// 子订单原价
 	OriginalFee int64 `json:"original_fee,omitempty" xml:"original_fee,omitempty"`
 	// 子订单优惠金额

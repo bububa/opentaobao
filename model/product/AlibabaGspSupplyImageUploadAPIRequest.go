@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaGspSupplyImageUploadAPIRequest gsp图片上传 API请求
+// AlibabagspsupplyimageuploadAPIRequest gsp图片上传 API请求
 // alibaba.gsp.supply.image.upload
 //
 // 上传图片至目标海外平台的素材空间
-type AlibabaGspSupplyImageUploadAPIRequest struct {
+type AlibabagspsupplyimageuploadAPIRequest struct {
 	model.Params
 	// 图片名称
 	_fileName string
@@ -18,52 +18,52 @@ type AlibabaGspSupplyImageUploadAPIRequest struct {
 	_fileContent *model.File
 }
 
-// NewAlibabaGspSupplyImageUploadRequest 初始化AlibabaGspSupplyImageUploadAPIRequest对象
-func NewAlibabaGspSupplyImageUploadRequest() *AlibabaGspSupplyImageUploadAPIRequest {
-	return &AlibabaGspSupplyImageUploadAPIRequest{
+// NewAlibabagspsupplyimageuploadRequest 初始化AlibabagspsupplyimageuploadAPIRequest对象
+func NewAlibabagspsupplyimageuploadRequest() *AlibabagspsupplyimageuploadAPIRequest {
+	return &AlibabagspsupplyimageuploadAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaGspSupplyImageUploadAPIRequest) GetApiMethodName() string {
+func (r AlibabagspsupplyimageuploadAPIRequest) GetApiMethodName() string {
 	return "alibaba.gsp.supply.image.upload"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaGspSupplyImageUploadAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabagspsupplyimageuploadAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaGspSupplyImageUploadAPIRequest) GetRawParams() model.Params {
+func (r AlibabagspsupplyimageuploadAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetFileName is FileName Setter
 // 图片名称
-func (r *AlibabaGspSupplyImageUploadAPIRequest) SetFileName(_fileName string) error {
+func (r *AlibabagspsupplyimageuploadAPIRequest) SetFileName(_fileName string) error {
 	r._fileName = _fileName
 	r.Set("file_name", _fileName)
 	return nil
 }
 
 // GetFileName FileName Getter
-func (r AlibabaGspSupplyImageUploadAPIRequest) GetFileName() string {
+func (r AlibabagspsupplyimageuploadAPIRequest) GetFileName() string {
 	return r._fileName
 }
 
 // SetFileContent is FileContent Setter
 // 图片文件流，像素宽度不小于500，不大于2000，像素长度不小于500，不大于2000
-func (r *AlibabaGspSupplyImageUploadAPIRequest) SetFileContent(_fileContent *model.File) error {
+func (r *AlibabagspsupplyimageuploadAPIRequest) SetFileContent(_fileContent *model.File) error {
 	r._fileContent = _fileContent
 	r.Set("file_content", _fileContent)
 	return nil
 }
 
 // GetFileContent FileContent Getter
-func (r AlibabaGspSupplyImageUploadAPIRequest) GetFileContent() *model.File {
+func (r AlibabagspsupplyimageuploadAPIRequest) GetFileContent() *model.File {
 	return r._fileContent
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSimbaCampaignUpdateAPIResponse 更新一个推广计划 API返回值
+// TaobaosimbacampaignupdateAPIResponse 更新一个推广计划 API返回值
 // taobao.simba.campaign.update
 //
 // 更新一个推广计划，可以设置推广计划名字，修改推广计划上下线状态。
-type TaobaoSimbaCampaignUpdateAPIResponse struct {
+type TaobaosimbacampaignupdateAPIResponse struct {
 	model.CommonResponse
-	TaobaoSimbaCampaignUpdateAPIResponseModel
+	TaobaosimbacampaignupdateAPIResponseModel
 }
 
-// TaobaoSimbaCampaignUpdateAPIResponseModel is 更新一个推广计划 成功返回结果
-type TaobaoSimbaCampaignUpdateAPIResponseModel struct {
+// TaobaosimbacampaignupdateAPIResponseModel is 更新一个推广计划 成功返回结果
+type TaobaosimbacampaignupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_campaign_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

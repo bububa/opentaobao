@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// WdkWarehouseOrderCancel 仓作业取消下发
+// Wdkwarehouseordercancel 仓作业取消下发
 // wdk.warehouse.order.cancel
 //
 // 仓作业取消下发
-func WdkWarehouseOrderCancel(clt *core.SDKClient, req *wdk.WdkWarehouseOrderCancelAPIRequest, session string) (*wdk.WdkWarehouseOrderCancelAPIResponse, error) {
-	var resp wdk.WdkWarehouseOrderCancelAPIResponse
+func Wdkwarehouseordercancel(clt *core.SDKClient, req *wdk.WdkwarehouseordercancelAPIRequest, session string) (*wdk.WdkwarehouseordercancelAPIResponse, error) {
+	var resp wdk.WdkwarehouseordercancelAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

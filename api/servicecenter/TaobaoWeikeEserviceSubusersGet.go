@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/servicecenter"
 )
 
-// TaobaoWeikeEserviceSubusersGet 客服外包订单分配的商家子账号列表
+// Taobaoweikeeservicesubusersget 客服外包订单分配的商家子账号列表
 // taobao.weike.eservice.subusers.get
 //
 // 获取客服外包订单分配的商家子账号列表，以及授权状态
-func TaobaoWeikeEserviceSubusersGet(clt *core.SDKClient, req *servicecenter.TaobaoWeikeEserviceSubusersGetAPIRequest, session string) (*servicecenter.TaobaoWeikeEserviceSubusersGetAPIResponse, error) {
-	var resp servicecenter.TaobaoWeikeEserviceSubusersGetAPIResponse
+func Taobaoweikeeservicesubusersget(clt *core.SDKClient, req *servicecenter.TaobaoweikeeservicesubusersgetAPIRequest, session string) (*servicecenter.TaobaoweikeeservicesubusersgetAPIResponse, error) {
+	var resp servicecenter.TaobaoweikeeservicesubusersgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

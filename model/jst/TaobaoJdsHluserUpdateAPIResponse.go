@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoJdsHluserUpdateAPIResponse 订单全链路用户信息修改 API返回值
+// TaobaojdshluserupdateAPIResponse 订单全链路用户信息修改 API返回值
 // taobao.jds.hluser.update
 //
 // 订单全链路用户信息修改，比如是否开放买家端展示
-type TaobaoJdsHluserUpdateAPIResponse struct {
+type TaobaojdshluserupdateAPIResponse struct {
 	model.CommonResponse
-	TaobaoJdsHluserUpdateAPIResponseModel
+	TaobaojdshluserupdateAPIResponseModel
 }
 
-// TaobaoJdsHluserUpdateAPIResponseModel is 订单全链路用户信息修改 成功返回结果
-type TaobaoJdsHluserUpdateAPIResponseModel struct {
+// TaobaojdshluserupdateAPIResponseModel is 订单全链路用户信息修改 成功返回结果
+type TaobaojdshluserupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"jds_hluser_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

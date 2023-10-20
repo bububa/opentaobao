@@ -1,7 +1,7 @@
 package lstpos
 
-// AlibabaLstPosOpenGoodsSyncgoodsdataResultDto 结构体
-type AlibabaLstPosOpenGoodsSyncgoodsdataResultDto struct {
+// AlibabalstposopengoodssyncgoodsdataResultDto 结构体
+type AlibabalstposopengoodssyncgoodsdataResultDto struct {
 	// 接口具体返回的业务数据对象
 	Modules []ErrorResult `json:"modules,omitempty" xml:"modules>error_result,omitempty"`
 	// 错误信息描述

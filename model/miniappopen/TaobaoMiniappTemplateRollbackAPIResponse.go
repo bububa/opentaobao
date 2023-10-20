@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoMiniappTemplateRollbackAPIResponse 回滚实例化应用 API返回值
+// TaobaominiapptemplaterollbackAPIResponse 回滚实例化应用 API返回值
 // taobao.miniapp.template.rollback
 //
 // 将实例化小程序回滚到指定版本
-type TaobaoMiniappTemplateRollbackAPIResponse struct {
+type TaobaominiapptemplaterollbackAPIResponse struct {
 	model.CommonResponse
-	TaobaoMiniappTemplateRollbackAPIResponseModel
+	TaobaominiapptemplaterollbackAPIResponseModel
 }
 
-// TaobaoMiniappTemplateRollbackAPIResponseModel is 回滚实例化应用 成功返回结果
-type TaobaoMiniappTemplateRollbackAPIResponseModel struct {
+// TaobaominiapptemplaterollbackAPIResponseModel is 回滚实例化应用 成功返回结果
+type TaobaominiapptemplaterollbackAPIResponseModel struct {
 	XMLName xml.Name `xml:"miniapp_template_rollback_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

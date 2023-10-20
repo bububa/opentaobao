@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/idle"
 )
 
-// AlibabaIdleReportResultUpload 服务商上传验货报告
+// Alibabaidlereportresultupload 服务商上传验货报告
 // alibaba.idle.report.result.upload
 //
 // 服务商上传验货报告
-func AlibabaIdleReportResultUpload(clt *core.SDKClient, req *idle.AlibabaIdleReportResultUploadAPIRequest, session string) (*idle.AlibabaIdleReportResultUploadAPIResponse, error) {
-	var resp idle.AlibabaIdleReportResultUploadAPIResponse
+func Alibabaidlereportresultupload(clt *core.SDKClient, req *idle.AlibabaidlereportresultuploadAPIRequest, session string) (*idle.AlibabaidlereportresultuploadAPIResponse, error) {
+	var resp idle.AlibabaidlereportresultuploadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

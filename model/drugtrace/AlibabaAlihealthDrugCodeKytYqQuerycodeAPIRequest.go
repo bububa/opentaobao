@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest 查询追溯码对应的药品信息（疫情） API请求
+// AlibabaalihealthdrugcodekytyqquerycodeAPIRequest 查询追溯码对应的药品信息（疫情） API请求
 // alibaba.alihealth.drug.code.kyt.yq.querycode
 //
 // 通过追溯码码得到 药品名称、包装规格、剂型、剂型规格”、有效期至等信息。
-type AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest struct {
+type AlibabaalihealthdrugcodekytyqquerycodeAPIRequest struct {
 	model.Params
 	// 追溯码
 	_codeList []string
@@ -20,65 +20,65 @@ type AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest struct {
 	_bureauId string
 }
 
-// NewAlibabaAlihealthDrugCodeKytYqQuerycodeRequest 初始化AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest对象
-func NewAlibabaAlihealthDrugCodeKytYqQuerycodeRequest() *AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest {
-	return &AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest{
+// NewAlibabaalihealthdrugcodekytyqquerycodeRequest 初始化AlibabaalihealthdrugcodekytyqquerycodeAPIRequest对象
+func NewAlibabaalihealthdrugcodekytyqquerycodeRequest() *AlibabaalihealthdrugcodekytyqquerycodeAPIRequest {
+	return &AlibabaalihealthdrugcodekytyqquerycodeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihealthdrugcodekytyqquerycodeAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.drug.code.kyt.yq.querycode"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihealthdrugcodekytyqquerycodeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihealthdrugcodekytyqquerycodeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCodeList is CodeList Setter
 // 追溯码
-func (r *AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) SetCodeList(_codeList []string) error {
+func (r *AlibabaalihealthdrugcodekytyqquerycodeAPIRequest) SetCodeList(_codeList []string) error {
 	r._codeList = _codeList
 	r.Set("code_list", _codeList)
 	return nil
 }
 
 // GetCodeList CodeList Getter
-func (r AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) GetCodeList() []string {
+func (r AlibabaalihealthdrugcodekytyqquerycodeAPIRequest) GetCodeList() []string {
 	return r._codeList
 }
 
 // SetTerminalName is TerminalName Setter
 // 调用零售药店名称
-func (r *AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) SetTerminalName(_terminalName string) error {
+func (r *AlibabaalihealthdrugcodekytyqquerycodeAPIRequest) SetTerminalName(_terminalName string) error {
 	r._terminalName = _terminalName
 	r.Set("terminal_name", _terminalName)
 	return nil
 }
 
 // GetTerminalName TerminalName Getter
-func (r AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) GetTerminalName() string {
+func (r AlibabaalihealthdrugcodekytyqquerycodeAPIRequest) GetTerminalName() string {
 	return r._terminalName
 }
 
 // SetBureauId is BureauId Setter
 // 门店所属的行政区域ID
-func (r *AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) SetBureauId(_bureauId string) error {
+func (r *AlibabaalihealthdrugcodekytyqquerycodeAPIRequest) SetBureauId(_bureauId string) error {
 	r._bureauId = _bureauId
 	r.Set("bureau_id", _bureauId)
 	return nil
 }
 
 // GetBureauId BureauId Getter
-func (r AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) GetBureauId() string {
+func (r AlibabaalihealthdrugcodekytyqquerycodeAPIRequest) GetBureauId() string {
 	return r._bureauId
 }

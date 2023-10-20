@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaCampusGuardControllerConfigsyncAPIResponse 门禁控制器配置项同步 API返回值
+// AlibabacampusguardcontrollerconfigsyncAPIResponse 门禁控制器配置项同步 API返回值
 // alibaba.campus.guard.controller.configsync
 //
 // 门禁控制器配置项同步
-type AlibabaCampusGuardControllerConfigsyncAPIResponse struct {
+type AlibabacampusguardcontrollerconfigsyncAPIResponse struct {
 	model.CommonResponse
-	AlibabaCampusGuardControllerConfigsyncAPIResponseModel
+	AlibabacampusguardcontrollerconfigsyncAPIResponseModel
 }
 
-// AlibabaCampusGuardControllerConfigsyncAPIResponseModel is 门禁控制器配置项同步 成功返回结果
-type AlibabaCampusGuardControllerConfigsyncAPIResponseModel struct {
+// AlibabacampusguardcontrollerconfigsyncAPIResponseModel is 门禁控制器配置项同步 成功返回结果
+type AlibabacampusguardcontrollerconfigsyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_campus_guard_controller_configsync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaSecurityJaqPornImageSyncDetectAPIResponse 聚安全智能鉴黄同步检测接口 API返回值
+// AlibabasecurityjaqpornimagesyncdetectAPIResponse 聚安全智能鉴黄同步检测接口 API返回值
 // alibaba.security.jaq.porn.image.sync.detect
 //
 // 同步黄图图像检测接口
-type AlibabaSecurityJaqPornImageSyncDetectAPIResponse struct {
+type AlibabasecurityjaqpornimagesyncdetectAPIResponse struct {
 	model.CommonResponse
-	AlibabaSecurityJaqPornImageSyncDetectAPIResponseModel
+	AlibabasecurityjaqpornimagesyncdetectAPIResponseModel
 }
 
-// AlibabaSecurityJaqPornImageSyncDetectAPIResponseModel is 聚安全智能鉴黄同步检测接口 成功返回结果
-type AlibabaSecurityJaqPornImageSyncDetectAPIResponseModel struct {
+// AlibabasecurityjaqpornimagesyncdetectAPIResponseModel is 聚安全智能鉴黄同步检测接口 成功返回结果
+type AlibabasecurityjaqpornimagesyncdetectAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_security_jaq_porn_image_sync_detect_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

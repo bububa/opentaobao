@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaAlihouseExistinghomeHouseDownselfResult 结构体
-type AlibabaAlihouseExistinghomeHouseDownselfResult struct {
+// AlibabaalihouseexistinghomehousedownselfResult 结构体
+type AlibabaalihouseexistinghomehousedownselfResult struct {
 	// code
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 失败信息

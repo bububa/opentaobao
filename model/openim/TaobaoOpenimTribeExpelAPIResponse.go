@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOpenimTribeExpelAPIResponse OPENIM群踢出成员 API返回值
+// TaobaoopenimtribeexpelAPIResponse OPENIM群踢出成员 API返回值
 // taobao.openim.tribe.expel
 //
 // OPENIM群踢出成员
-type TaobaoOpenimTribeExpelAPIResponse struct {
+type TaobaoopenimtribeexpelAPIResponse struct {
 	model.CommonResponse
-	TaobaoOpenimTribeExpelAPIResponseModel
+	TaobaoopenimtribeexpelAPIResponseModel
 }
 
-// TaobaoOpenimTribeExpelAPIResponseModel is OPENIM群踢出成员 成功返回结果
-type TaobaoOpenimTribeExpelAPIResponseModel struct {
+// TaobaoopenimtribeexpelAPIResponseModel is OPENIM群踢出成员 成功返回结果
+type TaobaoopenimtribeexpelAPIResponseModel struct {
 	XMLName xml.Name `xml:"openim_tribe_expel_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

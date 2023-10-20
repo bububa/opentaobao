@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/idle"
 )
 
-// AlibabaIdleRecycleInspectionReport 鉴定报告
+// Alibabaidlerecycleinspectionreport 鉴定报告
 // alibaba.idle.recycle.inspection.report
 //
 // 回收商鉴定报告
-func AlibabaIdleRecycleInspectionReport(clt *core.SDKClient, req *idle.AlibabaIdleRecycleInspectionReportAPIRequest, session string) (*idle.AlibabaIdleRecycleInspectionReportAPIResponse, error) {
-	var resp idle.AlibabaIdleRecycleInspectionReportAPIResponse
+func Alibabaidlerecycleinspectionreport(clt *core.SDKClient, req *idle.AlibabaidlerecycleinspectionreportAPIRequest, session string) (*idle.AlibabaidlerecycleinspectionreportAPIResponse, error) {
+	var resp idle.AlibabaidlerecycleinspectionreportAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

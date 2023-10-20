@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-// AlibabaAlscRightTokenCheck 实物奖品凭证校验
+// Alibabaalscrighttokencheck 实物奖品凭证校验
 // alibaba.alsc.right.token.check
 //
 // 实物奖品凭证校验
-func AlibabaAlscRightTokenCheck(clt *core.SDKClient, req *alsc.AlibabaAlscRightTokenCheckAPIRequest, session string) (*alsc.AlibabaAlscRightTokenCheckAPIResponse, error) {
-	var resp alsc.AlibabaAlscRightTokenCheckAPIResponse
+func Alibabaalscrighttokencheck(clt *core.SDKClient, req *alsc.AlibabaalscrighttokencheckAPIRequest, session string) (*alsc.AlibabaalscrighttokencheckAPIResponse, error) {
+	var resp alsc.AlibabaalscrighttokencheckAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

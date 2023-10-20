@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/servicecenter"
 )
 
-// TaobaoRecyclePredeductSettleSync 同步回收单线下打款明细
+// Taobaorecyclepredeductsettlesync 同步回收单线下打款明细
 // taobao.recycle.prededuct.settle.sync
 //
 // 同步回收单线下打款明细
-func TaobaoRecyclePredeductSettleSync(clt *core.SDKClient, req *servicecenter.TaobaoRecyclePredeductSettleSyncAPIRequest, session string) (*servicecenter.TaobaoRecyclePredeductSettleSyncAPIResponse, error) {
-	var resp servicecenter.TaobaoRecyclePredeductSettleSyncAPIResponse
+func Taobaorecyclepredeductsettlesync(clt *core.SDKClient, req *servicecenter.TaobaorecyclepredeductsettlesyncAPIRequest, session string) (*servicecenter.TaobaorecyclepredeductsettlesyncAPIResponse, error) {
+	var resp servicecenter.TaobaorecyclepredeductsettlesyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alimsg"
 )
 
-// AlibabaLegMsgPost 集团法务消息发送
+// Alibabalegmsgpost 集团法务消息发送
 // alibaba.leg.msg.post
 //
 // 消息发送能力
-func AlibabaLegMsgPost(clt *core.SDKClient, req *alimsg.AlibabaLegMsgPostAPIRequest, session string) (*alimsg.AlibabaLegMsgPostAPIResponse, error) {
-	var resp alimsg.AlibabaLegMsgPostAPIResponse
+func Alibabalegmsgpost(clt *core.SDKClient, req *alimsg.AlibabalegmsgpostAPIRequest, session string) (*alimsg.AlibabalegmsgpostAPIResponse, error) {
+	var resp alimsg.AlibabalegmsgpostAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

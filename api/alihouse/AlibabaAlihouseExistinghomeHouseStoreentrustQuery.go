@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// AlibabaAlihouseExistinghomeHouseStoreentrustQuery 门店委托信息查询
+// Alibabaalihouseexistinghomehousestoreentrustquery 门店委托信息查询
 // alibaba.alihouse.existinghome.house.storeentrust.query
 //
 // 门店委托信息查询
-func AlibabaAlihouseExistinghomeHouseStoreentrustQuery(clt *core.SDKClient, req *alihouse.AlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIRequest, session string) (*alihouse.AlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseExistinghomeHouseStoreentrustQueryAPIResponse
+func Alibabaalihouseexistinghomehousestoreentrustquery(clt *core.SDKClient, req *alihouse.AlibabaalihouseexistinghomehousestoreentrustqueryAPIRequest, session string) (*alihouse.AlibabaalihouseexistinghomehousestoreentrustqueryAPIResponse, error) {
+	var resp alihouse.AlibabaalihouseexistinghomehousestoreentrustqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

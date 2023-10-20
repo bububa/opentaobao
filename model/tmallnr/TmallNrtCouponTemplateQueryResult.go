@@ -1,7 +1,7 @@
 package tmallnr
 
-// TmallNrtCouponTemplateQueryResult 结构体
-type TmallNrtCouponTemplateQueryResult struct {
+// TmallnrtcoupontemplatequeryResult 结构体
+type TmallnrtcoupontemplatequeryResult struct {
 	// 券模版数据
 	Model []NrtCouponTemplateDto `json:"model,omitempty" xml:"model>nrt_coupon_template_dto,omitempty"`
 	// message

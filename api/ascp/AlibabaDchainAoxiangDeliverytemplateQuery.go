@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascp"
 )
 
-// AlibabaDchainAoxiangDeliverytemplateQuery 商家运费模板查询
+// Alibabadchainaoxiangdeliverytemplatequery 商家运费模板查询
 // alibaba.dchain.aoxiang.deliverytemplate.query
 //
 // 商家运费模板查询
-func AlibabaDchainAoxiangDeliverytemplateQuery(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangDeliverytemplateQueryAPIRequest, session string) (*ascp.AlibabaDchainAoxiangDeliverytemplateQueryAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangDeliverytemplateQueryAPIResponse
+func Alibabadchainaoxiangdeliverytemplatequery(clt *core.SDKClient, req *ascp.AlibabadchainaoxiangdeliverytemplatequeryAPIRequest, session string) (*ascp.AlibabadchainaoxiangdeliverytemplatequeryAPIResponse, error) {
+	var resp ascp.AlibabadchainaoxiangdeliverytemplatequeryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

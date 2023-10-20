@@ -1,7 +1,7 @@
 package inventory
 
-// TaobaoInventoryPlanQueryResult 结构体
-type TaobaoInventoryPlanQueryResult struct {
+// TaobaoinventoryplanqueryResult 结构体
+type TaobaoinventoryplanqueryResult struct {
 	// 返回的对象
 	Data *PlanInvTopDto `json:"data,omitempty" xml:"data,omitempty"`
 	// 返回结果码

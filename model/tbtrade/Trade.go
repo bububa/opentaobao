@@ -523,7 +523,7 @@ type Trade struct {
 	// 是否包含邮费。与available_confirm_fee同时使用。可选值:true(包含),false(不包含)
 	HasPostFee bool `json:"has_post_fee,omitempty" xml:"has_post_fee,omitempty"`
 	// 是否3D交易
-	Is3D bool `json:"is_3D,omitempty" xml:"is_3D,omitempty"`
+	Is3d bool `json:"is_3D,omitempty" xml:"is_3D,omitempty"`
 	// 是否保障速递，如果为true，则为保障速递订单，使用线下联系发货接口发货，如果未false，则该订单非保障速递，根据卖家设置的订单流转规则可使用物流宝或者常规物流发货。
 	IsLgtype bool `json:"is_lgtype,omitempty" xml:"is_lgtype,omitempty"`
 	// 表示是否是品牌特卖（常规特卖，不包括特卖惠和特实惠）订单，如果是返回true，如果不是返回false。当此字段与is_force_wlb均为true时，订单强制物流宝发货。

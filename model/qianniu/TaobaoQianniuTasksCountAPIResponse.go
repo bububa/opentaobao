@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoQianniuTasksCountAPIResponse 任务查询条数接口 API返回值
+// TaobaoqianniutaskscountAPIResponse 任务查询条数接口 API返回值
 // taobao.qianniu.tasks.count
 //
 // 任务查询条数接口
-type TaobaoQianniuTasksCountAPIResponse struct {
+type TaobaoqianniutaskscountAPIResponse struct {
 	model.CommonResponse
-	TaobaoQianniuTasksCountAPIResponseModel
+	TaobaoqianniutaskscountAPIResponseModel
 }
 
-// TaobaoQianniuTasksCountAPIResponseModel is 任务查询条数接口 成功返回结果
-type TaobaoQianniuTasksCountAPIResponseModel struct {
+// TaobaoqianniutaskscountAPIResponseModel is 任务查询条数接口 成功返回结果
+type TaobaoqianniutaskscountAPIResponseModel struct {
 	XMLName xml.Name `xml:"qianniu_tasks_count_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

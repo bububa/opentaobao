@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoBusNumbersStockpriceUpdateAPIResponse 汽车票更新价格库存 API返回值
+// TaobaobusnumbersstockpriceupdateAPIResponse 汽车票更新价格库存 API返回值
 // taobao.bus.numbers.stockprice.update
 //
 // 用于汽车票代理商更新价格库存
-type TaobaoBusNumbersStockpriceUpdateAPIResponse struct {
+type TaobaobusnumbersstockpriceupdateAPIResponse struct {
 	model.CommonResponse
-	TaobaoBusNumbersStockpriceUpdateAPIResponseModel
+	TaobaobusnumbersstockpriceupdateAPIResponseModel
 }
 
-// TaobaoBusNumbersStockpriceUpdateAPIResponseModel is 汽车票更新价格库存 成功返回结果
-type TaobaoBusNumbersStockpriceUpdateAPIResponseModel struct {
+// TaobaobusnumbersstockpriceupdateAPIResponseModel is 汽车票更新价格库存 成功返回结果
+type TaobaobusnumbersstockpriceupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"bus_numbers_stockprice_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMoziFusionCreateEmployeeAccountAPIRequest 创建MOZI自建人员和账号 API请求
+// AlibabamozifusioncreateemployeeaccountAPIRequest 创建MOZI自建人员和账号 API请求
 // alibaba.mozi.fusion.create.employee.account
 //
 // 创建MOZI自建人员和账号
-type AlibabaMoziFusionCreateEmployeeAccountAPIRequest struct {
+type AlibabamozifusioncreateemployeeaccountAPIRequest struct {
 	model.Params
 	// 入参
 	_employeeAccount *CreateTenantEmployeeAndAccountRequest
 }
 
-// NewAlibabaMoziFusionCreateEmployeeAccountRequest 初始化AlibabaMoziFusionCreateEmployeeAccountAPIRequest对象
-func NewAlibabaMoziFusionCreateEmployeeAccountRequest() *AlibabaMoziFusionCreateEmployeeAccountAPIRequest {
-	return &AlibabaMoziFusionCreateEmployeeAccountAPIRequest{
+// NewAlibabamozifusioncreateemployeeaccountRequest 初始化AlibabamozifusioncreateemployeeaccountAPIRequest对象
+func NewAlibabamozifusioncreateemployeeaccountRequest() *AlibabamozifusioncreateemployeeaccountAPIRequest {
+	return &AlibabamozifusioncreateemployeeaccountAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaMoziFusionCreateEmployeeAccountAPIRequest) GetApiMethodName() string {
+func (r AlibabamozifusioncreateemployeeaccountAPIRequest) GetApiMethodName() string {
 	return "alibaba.mozi.fusion.create.employee.account"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaMoziFusionCreateEmployeeAccountAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabamozifusioncreateemployeeaccountAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaMoziFusionCreateEmployeeAccountAPIRequest) GetRawParams() model.Params {
+func (r AlibabamozifusioncreateemployeeaccountAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetEmployeeAccount is EmployeeAccount Setter
 // 入参
-func (r *AlibabaMoziFusionCreateEmployeeAccountAPIRequest) SetEmployeeAccount(_employeeAccount *CreateTenantEmployeeAndAccountRequest) error {
+func (r *AlibabamozifusioncreateemployeeaccountAPIRequest) SetEmployeeAccount(_employeeAccount *CreateTenantEmployeeAndAccountRequest) error {
 	r._employeeAccount = _employeeAccount
 	r.Set("employee_account", _employeeAccount)
 	return nil
 }
 
 // GetEmployeeAccount EmployeeAccount Getter
-func (r AlibabaMoziFusionCreateEmployeeAccountAPIRequest) GetEmployeeAccount() *CreateTenantEmployeeAndAccountRequest {
+func (r AlibabamozifusioncreateemployeeaccountAPIRequest) GetEmployeeAccount() *CreateTenantEmployeeAndAccountRequest {
 	return r._employeeAccount
 }

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoWlbItemQueryAPIRequest 分页查询商品 API请求
+// TaobaowlbitemqueryAPIRequest 分页查询商品 API请求
 // taobao.wlb.item.query
 //
 // 根据状态、卖家、SKU等信息查询商品列表
-type TaobaoWlbItemQueryAPIRequest struct {
+type TaobaowlbitemqueryAPIRequest struct {
 	model.Params
 	// 商品名称
 	_name string
@@ -32,143 +32,143 @@ type TaobaoWlbItemQueryAPIRequest struct {
 	_pageSize int64
 }
 
-// NewTaobaoWlbItemQueryRequest 初始化TaobaoWlbItemQueryAPIRequest对象
-func NewTaobaoWlbItemQueryRequest() *TaobaoWlbItemQueryAPIRequest {
-	return &TaobaoWlbItemQueryAPIRequest{
+// NewTaobaowlbitemqueryRequest 初始化TaobaowlbitemqueryAPIRequest对象
+func NewTaobaowlbitemqueryRequest() *TaobaowlbitemqueryAPIRequest {
+	return &TaobaowlbitemqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoWlbItemQueryAPIRequest) GetApiMethodName() string {
+func (r TaobaowlbitemqueryAPIRequest) GetApiMethodName() string {
 	return "taobao.wlb.item.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoWlbItemQueryAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaowlbitemqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoWlbItemQueryAPIRequest) GetRawParams() model.Params {
+func (r TaobaowlbitemqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetName is Name Setter
 // 商品名称
-func (r *TaobaoWlbItemQueryAPIRequest) SetName(_name string) error {
+func (r *TaobaowlbitemqueryAPIRequest) SetName(_name string) error {
 	r._name = _name
 	r.Set("name", _name)
 	return nil
 }
 
 // GetName Name Getter
-func (r TaobaoWlbItemQueryAPIRequest) GetName() string {
+func (r TaobaowlbitemqueryAPIRequest) GetName() string {
 	return r._name
 }
 
 // SetTitle is Title Setter
 // 商品前台销售名字
-func (r *TaobaoWlbItemQueryAPIRequest) SetTitle(_title string) error {
+func (r *TaobaowlbitemqueryAPIRequest) SetTitle(_title string) error {
 	r._title = _title
 	r.Set("title", _title)
 	return nil
 }
 
 // GetTitle Title Getter
-func (r TaobaoWlbItemQueryAPIRequest) GetTitle() string {
+func (r TaobaowlbitemqueryAPIRequest) GetTitle() string {
 	return r._title
 }
 
 // SetItemCode is ItemCode Setter
 // 商家编码
-func (r *TaobaoWlbItemQueryAPIRequest) SetItemCode(_itemCode string) error {
+func (r *TaobaowlbitemqueryAPIRequest) SetItemCode(_itemCode string) error {
 	r._itemCode = _itemCode
 	r.Set("item_code", _itemCode)
 	return nil
 }
 
 // GetItemCode ItemCode Getter
-func (r TaobaoWlbItemQueryAPIRequest) GetItemCode() string {
+func (r TaobaowlbitemqueryAPIRequest) GetItemCode() string {
 	return r._itemCode
 }
 
 // SetIsSku is IsSku Setter
 // 是否是最小库存单元，只有最小库存单元的商品才可以有库存,值只能给&#34;true&#34;,&#34;false&#34;来表示;  若值不在范围内，则按true处理
-func (r *TaobaoWlbItemQueryAPIRequest) SetIsSku(_isSku string) error {
+func (r *TaobaowlbitemqueryAPIRequest) SetIsSku(_isSku string) error {
 	r._isSku = _isSku
 	r.Set("is_sku", _isSku)
 	return nil
 }
 
 // GetIsSku IsSku Getter
-func (r TaobaoWlbItemQueryAPIRequest) GetIsSku() string {
+func (r TaobaowlbitemqueryAPIRequest) GetIsSku() string {
 	return r._isSku
 }
 
 // SetStatus is Status Setter
 // 只能输入以下值或空：  ITEM_STATUS_VALID -- 1 表示 有效；  ITEM_STATUS_LOCK -- 2 表示锁住。  若值不在范围内，按ITEM_STATUS_VALID处理
-func (r *TaobaoWlbItemQueryAPIRequest) SetStatus(_status string) error {
+func (r *TaobaowlbitemqueryAPIRequest) SetStatus(_status string) error {
 	r._status = _status
 	r.Set("status", _status)
 	return nil
 }
 
 // GetStatus Status Getter
-func (r TaobaoWlbItemQueryAPIRequest) GetStatus() string {
+func (r TaobaowlbitemqueryAPIRequest) GetStatus() string {
 	return r._status
 }
 
 // SetItemType is ItemType Setter
 // ITEM类型(只允许输入以下英文或空)  NORMAL 0:普通商品;  COMBINE 1:是否是组合商品  DISTRIBUTION 2:是否是分销商品(货主是别人)  若值不在范围内，则按NORMAL处理
-func (r *TaobaoWlbItemQueryAPIRequest) SetItemType(_itemType string) error {
+func (r *TaobaowlbitemqueryAPIRequest) SetItemType(_itemType string) error {
 	r._itemType = _itemType
 	r.Set("item_type", _itemType)
 	return nil
 }
 
 // GetItemType ItemType Getter
-func (r TaobaoWlbItemQueryAPIRequest) GetItemType() string {
+func (r TaobaowlbitemqueryAPIRequest) GetItemType() string {
 	return r._itemType
 }
 
 // SetParentId is ParentId Setter
 // 父ID,只有is_sku=1时才能有父ID，商品也可以没有付商品
-func (r *TaobaoWlbItemQueryAPIRequest) SetParentId(_parentId int64) error {
+func (r *TaobaowlbitemqueryAPIRequest) SetParentId(_parentId int64) error {
 	r._parentId = _parentId
 	r.Set("parent_id", _parentId)
 	return nil
 }
 
 // GetParentId ParentId Getter
-func (r TaobaoWlbItemQueryAPIRequest) GetParentId() int64 {
+func (r TaobaowlbitemqueryAPIRequest) GetParentId() int64 {
 	return r._parentId
 }
 
 // SetPageNo is PageNo Setter
 // 当前页
-func (r *TaobaoWlbItemQueryAPIRequest) SetPageNo(_pageNo int64) error {
+func (r *TaobaowlbitemqueryAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
 	r.Set("page_no", _pageNo)
 	return nil
 }
 
 // GetPageNo PageNo Getter
-func (r TaobaoWlbItemQueryAPIRequest) GetPageNo() int64 {
+func (r TaobaowlbitemqueryAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
 // SetPageSize is PageSize Setter
 // 分页记录个数，如果用户输入的记录数大于50，则一页显示50条记录
-func (r *TaobaoWlbItemQueryAPIRequest) SetPageSize(_pageSize int64) error {
+func (r *TaobaowlbitemqueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
 	r.Set("page_size", _pageSize)
 	return nil
 }
 
 // GetPageSize PageSize Getter
-func (r TaobaoWlbItemQueryAPIRequest) GetPageSize() int64 {
+func (r TaobaowlbitemqueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

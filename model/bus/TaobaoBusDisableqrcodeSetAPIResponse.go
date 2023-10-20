@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoBusDisableqrcodeSetAPIResponse 自助机失效二维码 API返回值
+// TaobaobusdisableqrcodesetAPIResponse 自助机失效二维码 API返回值
 // taobao.bus.disableqrcode.set
 //
 // 使创建的二维码失效
-type TaobaoBusDisableqrcodeSetAPIResponse struct {
+type TaobaobusdisableqrcodesetAPIResponse struct {
 	model.CommonResponse
-	TaobaoBusDisableqrcodeSetAPIResponseModel
+	TaobaobusdisableqrcodesetAPIResponseModel
 }
 
-// TaobaoBusDisableqrcodeSetAPIResponseModel is 自助机失效二维码 成功返回结果
-type TaobaoBusDisableqrcodeSetAPIResponseModel struct {
+// TaobaobusdisableqrcodesetAPIResponseModel is 自助机失效二维码 成功返回结果
+type TaobaobusdisableqrcodesetAPIResponseModel struct {
 	XMLName xml.Name `xml:"bus_disableqrcode_set_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

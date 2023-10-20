@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/eleenterpriseordernew"
 )
 
-// AlibabaEleEnterpriseOrdernewGetrefundinfo 退单和申诉
+// Alibabaeleenterpriseordernewgetrefundinfo 退单和申诉
 // alibaba.ele.enterprise.ordernew.getrefundinfo
 //
 // 退单和申诉
-func AlibabaEleEnterpriseOrdernewGetrefundinfo(clt *core.SDKClient, req *eleenterpriseordernew.AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest, session string) (*eleenterpriseordernew.AlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponse, error) {
-	var resp eleenterpriseordernew.AlibabaEleEnterpriseOrdernewGetrefundinfoAPIResponse
+func Alibabaeleenterpriseordernewgetrefundinfo(clt *core.SDKClient, req *eleenterpriseordernew.AlibabaeleenterpriseordernewgetrefundinfoAPIRequest, session string) (*eleenterpriseordernew.AlibabaeleenterpriseordernewgetrefundinfoAPIResponse, error) {
+	var resp eleenterpriseordernew.AlibabaeleenterpriseordernewgetrefundinfoAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

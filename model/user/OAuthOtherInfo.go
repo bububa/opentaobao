@@ -1,7 +1,7 @@
 package user
 
-// OAuthOtherInfo 结构体
-type OAuthOtherInfo struct {
+// OauthOtherInfo 结构体
+type OauthOtherInfo struct {
 	// access_token
 	AccessToken string `json:"access_token,omitempty" xml:"access_token,omitempty"`
 	// nick

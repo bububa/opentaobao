@@ -1,7 +1,7 @@
 package cloudgame
 
-// AlibabaCgameMpMpprojectLoginexistaccountResult 结构体
-type AlibabaCgameMpMpprojectLoginexistaccountResult struct {
+// AlibabacgamempmpprojectloginexistaccountResult 结构体
+type AlibabacgamempmpprojectloginexistaccountResult struct {
 	// 0
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// sucess

@@ -1,7 +1,7 @@
 package idle
 
-// AutoTradeAPIParam 结构体
-type AutoTradeAPIParam struct {
+// AutoTradeApiparam 结构体
+type AutoTradeApiparam struct {
 	// 场景
 	Scenario string `json:"scenario,omitempty" xml:"scenario,omitempty"`
 	// AT交易产品标识

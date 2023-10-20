@@ -1,7 +1,7 @@
 package ascpffo
 
-// AliexpressAscpItemQueryData 结构体
-type AliexpressAscpItemQueryData struct {
+// AliexpressascpitemqueryData 结构体
+type AliexpressascpitemqueryData struct {
 	// 扩展字段,JsonString,数据格式Map&lt;String, String&gt; 相关key： 货品实际高度-销售单元：Bheight 货品实际长度-销售单元：Blength 货品实际宽度-销售单元：Bwidth 货品实际重量-销售单元：Bweight 货品实际高度-运输单元：CartonHeight 货品实际长度-运输单元：CartonLength 货品实际宽度-运输单元：CartonWidth 货品实际重量-运输单元：CartonWeight
 	ExtendFields string `json:"extend_fields,omitempty" xml:"extend_fields,omitempty"`
 	// 货品声明价值

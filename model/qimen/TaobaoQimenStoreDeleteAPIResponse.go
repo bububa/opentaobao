@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoQimenStoreDeleteAPIResponse 门店删除接口 API返回值
+// TaobaoqimenstoredeleteAPIResponse 门店删除接口 API返回值
 // taobao.qimen.store.delete
 //
 // 商家在ERP等系统中调用该接口，删除线下门店
-type TaobaoQimenStoreDeleteAPIResponse struct {
+type TaobaoqimenstoredeleteAPIResponse struct {
 	model.CommonResponse
-	TaobaoQimenStoreDeleteAPIResponseModel
+	TaobaoqimenstoredeleteAPIResponseModel
 }
 
-// TaobaoQimenStoreDeleteAPIResponseModel is 门店删除接口 成功返回结果
-type TaobaoQimenStoreDeleteAPIResponseModel struct {
+// TaobaoqimenstoredeleteAPIResponseModel is 门店删除接口 成功返回结果
+type TaobaoqimenstoredeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"qimen_store_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

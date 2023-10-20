@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoUniversalbpMaterialShopGetAPIResponse 获取店铺信息 API返回值
+// TaobaouniversalbpmaterialshopgetAPIResponse 获取店铺信息 API返回值
 // taobao.universalbp.material.shop.get
 //
 // 获取店铺信息
-type TaobaoUniversalbpMaterialShopGetAPIResponse struct {
+type TaobaouniversalbpmaterialshopgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoUniversalbpMaterialShopGetAPIResponseModel
+	TaobaouniversalbpmaterialshopgetAPIResponseModel
 }
 
-// TaobaoUniversalbpMaterialShopGetAPIResponseModel is 获取店铺信息 成功返回结果
-type TaobaoUniversalbpMaterialShopGetAPIResponseModel struct {
+// TaobaouniversalbpmaterialshopgetAPIResponseModel is 获取店铺信息 成功返回结果
+type TaobaouniversalbpmaterialshopgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"universalbp_material_shop_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果体
-	Result *TaobaoUniversalbpMaterialShopGetTopResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *TaobaouniversalbpmaterialshopgetTopResult `json:"result,omitempty" xml:"result,omitempty"`
 }

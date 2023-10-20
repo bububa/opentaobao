@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaJymItemGameSeverQueryAPIResponse 查询商品发布客户端下可用服务器列表 API返回值
+// AlibabajymitemgameseverqueryAPIResponse 查询商品发布客户端下可用服务器列表 API返回值
 // alibaba.jym.item.game.sever.query
 //
 // 查询商品发布客户端下可用服务器列表
-type AlibabaJymItemGameSeverQueryAPIResponse struct {
+type AlibabajymitemgameseverqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaJymItemGameSeverQueryAPIResponseModel
+	AlibabajymitemgameseverqueryAPIResponseModel
 }
 
-// AlibabaJymItemGameSeverQueryAPIResponseModel is 查询商品发布客户端下可用服务器列表 成功返回结果
-type AlibabaJymItemGameSeverQueryAPIResponseModel struct {
+// AlibabajymitemgameseverqueryAPIResponseModel is 查询商品发布客户端下可用服务器列表 成功返回结果
+type AlibabajymitemgameseverqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_jym_item_game_sever_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

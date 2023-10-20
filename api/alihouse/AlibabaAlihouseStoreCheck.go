@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// AlibabaAlihouseStoreCheck 门店对账查询工具
+// Alibabaalihousestorecheck 门店对账查询工具
 // alibaba.alihouse.store.check
 //
 // 门店对账查询工具
-func AlibabaAlihouseStoreCheck(clt *core.SDKClient, req *alihouse.AlibabaAlihouseStoreCheckAPIRequest, session string) (*alihouse.AlibabaAlihouseStoreCheckAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseStoreCheckAPIResponse
+func Alibabaalihousestorecheck(clt *core.SDKClient, req *alihouse.AlibabaalihousestorecheckAPIRequest, session string) (*alihouse.AlibabaalihousestorecheckAPIResponse, error) {
+	var resp alihouse.AlibabaalihousestorecheckAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

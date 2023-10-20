@@ -1,7 +1,7 @@
 package util
 
-// TaobaoPictureQnaigcUploadResult 结构体
-type TaobaoPictureQnaigcUploadResult struct {
+// TaobaopictureqnaigcuploadResult 结构体
+type TaobaopictureqnaigcuploadResult struct {
 	// 上传额外信息
 	BizExtMap string `json:"biz_ext_map,omitempty" xml:"biz_ext_map,omitempty"`
 	// 上传结果状态信息

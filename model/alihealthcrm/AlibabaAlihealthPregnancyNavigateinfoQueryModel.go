@@ -1,7 +1,7 @@
 package alihealthcrm
 
-// AlibabaAlihealthPregnancyNavigateinfoQueryModel 结构体
-type AlibabaAlihealthPregnancyNavigateinfoQueryModel struct {
+// AlibabaalihealthpregnancynavigateinfoqueryModel 结构体
+type AlibabaalihealthpregnancynavigateinfoqueryModel struct {
 	// list
 	List []Content `json:"list,omitempty" xml:"list>content,omitempty"`
 }

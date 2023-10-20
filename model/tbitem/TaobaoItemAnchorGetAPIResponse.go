@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoItemAnchorGetAPIResponse 获取可用宝贝描述规范化模块 API返回值
+// TaobaoitemanchorgetAPIResponse 获取可用宝贝描述规范化模块 API返回值
 // taobao.item.anchor.get
 //
 // 根据类目id和宝贝描述规范化打标类型获取该类目可用的宝贝描述模块中的锚点
-type TaobaoItemAnchorGetAPIResponse struct {
+type TaobaoitemanchorgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoItemAnchorGetAPIResponseModel
+	TaobaoitemanchorgetAPIResponseModel
 }
 
-// TaobaoItemAnchorGetAPIResponseModel is 获取可用宝贝描述规范化模块 成功返回结果
-type TaobaoItemAnchorGetAPIResponseModel struct {
+// TaobaoitemanchorgetAPIResponseModel is 获取可用宝贝描述规范化模块 成功返回结果
+type TaobaoitemanchorgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"item_anchor_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

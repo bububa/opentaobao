@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthOutflowOperationinfoSyncAPIResponse 处方外流-操作信息同步 API返回值
+// AlibabaalihealthoutflowoperationinfosyncAPIResponse 处方外流-操作信息同步 API返回值
 // alibaba.alihealth.outflow.operationinfo.sync
 //
 // 阿里健康-处方外流-对外提供同步操作信息功能
-type AlibabaAlihealthOutflowOperationinfoSyncAPIResponse struct {
+type AlibabaalihealthoutflowoperationinfosyncAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihealthOutflowOperationinfoSyncAPIResponseModel
+	AlibabaalihealthoutflowoperationinfosyncAPIResponseModel
 }
 
-// AlibabaAlihealthOutflowOperationinfoSyncAPIResponseModel is 处方外流-操作信息同步 成功返回结果
-type AlibabaAlihealthOutflowOperationinfoSyncAPIResponseModel struct {
+// AlibabaalihealthoutflowoperationinfosyncAPIResponseModel is 处方外流-操作信息同步 成功返回结果
+type AlibabaalihealthoutflowoperationinfosyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_outflow_operationinfo_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

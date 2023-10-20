@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkSkuCombineskuQueryAPIRequest 组合商品查询接口 API请求
+// AlibabawdkskucombineskuqueryAPIRequest 组合商品查询接口 API请求
 // alibaba.wdk.sku.combinesku.query
 //
 // 查询组合商品接口
-type AlibabaWdkSkuCombineskuQueryAPIRequest struct {
+type AlibabawdkskucombineskuqueryAPIRequest struct {
 	model.Params
 	// 请求参数
 	_param *SkuQueryDo
 }
 
-// NewAlibabaWdkSkuCombineskuQueryRequest 初始化AlibabaWdkSkuCombineskuQueryAPIRequest对象
-func NewAlibabaWdkSkuCombineskuQueryRequest() *AlibabaWdkSkuCombineskuQueryAPIRequest {
-	return &AlibabaWdkSkuCombineskuQueryAPIRequest{
+// NewAlibabawdkskucombineskuqueryRequest 初始化AlibabawdkskucombineskuqueryAPIRequest对象
+func NewAlibabawdkskucombineskuqueryRequest() *AlibabawdkskucombineskuqueryAPIRequest {
+	return &AlibabawdkskucombineskuqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaWdkSkuCombineskuQueryAPIRequest) GetApiMethodName() string {
+func (r AlibabawdkskucombineskuqueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.sku.combinesku.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkSkuCombineskuQueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabawdkskucombineskuqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaWdkSkuCombineskuQueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabawdkskucombineskuqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 请求参数
-func (r *AlibabaWdkSkuCombineskuQueryAPIRequest) SetParam(_param *SkuQueryDo) error {
+func (r *AlibabawdkskucombineskuqueryAPIRequest) SetParam(_param *SkuQueryDo) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r AlibabaWdkSkuCombineskuQueryAPIRequest) GetParam() *SkuQueryDo {
+func (r AlibabawdkskucombineskuqueryAPIRequest) GetParam() *SkuQueryDo {
 	return r._param
 }

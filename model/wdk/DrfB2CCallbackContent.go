@@ -1,7 +1,7 @@
 package wdk
 
-// DrfB2CCallbackContent 结构体
-type DrfB2CCallbackContent struct {
+// DrfB2ccallbackContent 结构体
+type DrfB2ccallbackContent struct {
 	// 商品编码
 	SkuCode string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
 	// 缺货出库存数量

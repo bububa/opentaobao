@@ -1,7 +1,7 @@
 package alitripdivisions
 
-// AlitripPlatformDivisionsQuerybyparentidResult 结构体
-type AlitripPlatformDivisionsQuerybyparentidResult struct {
+// AlitripplatformdivisionsquerybyparentidResult 结构体
+type AlitripplatformdivisionsquerybyparentidResult struct {
 	// mapping code
 	MappingCode string `json:"mapping_code,omitempty" xml:"mapping_code,omitempty"`
 	// msgCode

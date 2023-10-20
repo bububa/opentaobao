@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTanxAuditCreativeModifyAPIResponse 创意修改接口 API返回值
+// TaobaotanxauditcreativemodifyAPIResponse 创意修改接口 API返回值
 // taobao.tanx.audit.creative.modify
 //
 // 创意修改接口
-type TaobaoTanxAuditCreativeModifyAPIResponse struct {
+type TaobaotanxauditcreativemodifyAPIResponse struct {
 	model.CommonResponse
-	TaobaoTanxAuditCreativeModifyAPIResponseModel
+	TaobaotanxauditcreativemodifyAPIResponseModel
 }
 
-// TaobaoTanxAuditCreativeModifyAPIResponseModel is 创意修改接口 成功返回结果
-type TaobaoTanxAuditCreativeModifyAPIResponseModel struct {
+// TaobaotanxauditcreativemodifyAPIResponseModel is 创意修改接口 成功返回结果
+type TaobaotanxauditcreativemodifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"tanx_audit_creative_modify_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaOmniSaasOrderCreateAPIResponse 订单创建接口 API返回值
+// AlibabaomnisaasordercreateAPIResponse 订单创建接口 API返回值
 // alibaba.omni.saas.order.create
 //
 // 服务商利用现有的saas系统和阿里完成交易系统的对接
-type AlibabaOmniSaasOrderCreateAPIResponse struct {
+type AlibabaomnisaasordercreateAPIResponse struct {
 	model.CommonResponse
-	AlibabaOmniSaasOrderCreateAPIResponseModel
+	AlibabaomnisaasordercreateAPIResponseModel
 }
 
-// AlibabaOmniSaasOrderCreateAPIResponseModel is 订单创建接口 成功返回结果
-type AlibabaOmniSaasOrderCreateAPIResponseModel struct {
+// AlibabaomnisaasordercreateAPIResponseModel is 订单创建接口 成功返回结果
+type AlibabaomnisaasordercreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_omni_saas_order_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

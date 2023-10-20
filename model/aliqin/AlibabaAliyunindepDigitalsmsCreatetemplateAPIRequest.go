@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest 数字短信模板创建 API请求
+// AlibabaaliyunindepdigitalsmscreatetemplateAPIRequest 数字短信模板创建 API请求
 // alibaba.aliyunindep.digitalsms.createtemplate
 //
 // 数字短信模板创建，给阿里云一方产品使用，类型：9
-type AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest struct {
+type AlibabaaliyunindepdigitalsmscreatetemplateAPIRequest struct {
 	model.Params
 	// 系统自动生成
 	_templateContents []DigitalSmsTemplateContentDto
@@ -20,65 +20,65 @@ type AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest struct {
 	_applyRemark string
 }
 
-// NewAlibabaAliyunindepDigitalsmsCreatetemplateRequest 初始化AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest对象
-func NewAlibabaAliyunindepDigitalsmsCreatetemplateRequest() *AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest {
-	return &AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest{
+// NewAlibabaaliyunindepdigitalsmscreatetemplateRequest 初始化AlibabaaliyunindepdigitalsmscreatetemplateAPIRequest对象
+func NewAlibabaaliyunindepdigitalsmscreatetemplateRequest() *AlibabaaliyunindepdigitalsmscreatetemplateAPIRequest {
+	return &AlibabaaliyunindepdigitalsmscreatetemplateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) GetApiMethodName() string {
+func (r AlibabaaliyunindepdigitalsmscreatetemplateAPIRequest) GetApiMethodName() string {
 	return "alibaba.aliyunindep.digitalsms.createtemplate"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaaliyunindepdigitalsmscreatetemplateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) GetRawParams() model.Params {
+func (r AlibabaaliyunindepdigitalsmscreatetemplateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTemplateContents is TemplateContents Setter
 // 系统自动生成
-func (r *AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) SetTemplateContents(_templateContents []DigitalSmsTemplateContentDto) error {
+func (r *AlibabaaliyunindepdigitalsmscreatetemplateAPIRequest) SetTemplateContents(_templateContents []DigitalSmsTemplateContentDto) error {
 	r._templateContents = _templateContents
 	r.Set("template_contents", _templateContents)
 	return nil
 }
 
 // GetTemplateContents TemplateContents Getter
-func (r AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) GetTemplateContents() []DigitalSmsTemplateContentDto {
+func (r AlibabaaliyunindepdigitalsmscreatetemplateAPIRequest) GetTemplateContents() []DigitalSmsTemplateContentDto {
 	return r._templateContents
 }
 
 // SetTemplateName is TemplateName Setter
 // 模板名称
-func (r *AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) SetTemplateName(_templateName string) error {
+func (r *AlibabaaliyunindepdigitalsmscreatetemplateAPIRequest) SetTemplateName(_templateName string) error {
 	r._templateName = _templateName
 	r.Set("template_name", _templateName)
 	return nil
 }
 
 // GetTemplateName TemplateName Getter
-func (r AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) GetTemplateName() string {
+func (r AlibabaaliyunindepdigitalsmscreatetemplateAPIRequest) GetTemplateName() string {
 	return r._templateName
 }
 
 // SetApplyRemark is ApplyRemark Setter
 // 申请说明
-func (r *AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) SetApplyRemark(_applyRemark string) error {
+func (r *AlibabaaliyunindepdigitalsmscreatetemplateAPIRequest) SetApplyRemark(_applyRemark string) error {
 	r._applyRemark = _applyRemark
 	r.Set("apply_remark", _applyRemark)
 	return nil
 }
 
 // GetApplyRemark ApplyRemark Getter
-func (r AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) GetApplyRemark() string {
+func (r AlibabaaliyunindepdigitalsmscreatetemplateAPIRequest) GetApplyRemark() string {
 	return r._applyRemark
 }

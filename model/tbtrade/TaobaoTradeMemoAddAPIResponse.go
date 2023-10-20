@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTradeMemoAddAPIResponse 对一笔交易添加备注 API返回值
+// TaobaotradememoaddAPIResponse 对一笔交易添加备注 API返回值
 // taobao.trade.memo.add
 //
 // 根据登录用户的身份（买家或卖家），自动添加相应的交易备注,不能重复调用些接口添加备注，需要更新备注请用taobao.trade.memo.update
-type TaobaoTradeMemoAddAPIResponse struct {
+type TaobaotradememoaddAPIResponse struct {
 	model.CommonResponse
-	TaobaoTradeMemoAddAPIResponseModel
+	TaobaotradememoaddAPIResponseModel
 }
 
-// TaobaoTradeMemoAddAPIResponseModel is 对一笔交易添加备注 成功返回结果
-type TaobaoTradeMemoAddAPIResponseModel struct {
+// TaobaotradememoaddAPIResponseModel is 对一笔交易添加备注 成功返回结果
+type TaobaotradememoaddAPIResponseModel struct {
 	XMLName xml.Name `xml:"trade_memo_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

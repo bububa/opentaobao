@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaScbpAdCampaignCreateAPIRequest 创建计划 API请求
+// AlibabascbpadcampaigncreateAPIRequest 创建计划 API请求
 // alibaba.scbp.ad.campaign.create
 //
 // 创建计划
-type AlibabaScbpAdCampaignCreateAPIRequest struct {
+type AlibabascbpadcampaigncreateAPIRequest struct {
 	model.Params
 	// 用户信息
 	_topContext *TopContextDto
@@ -18,52 +18,52 @@ type AlibabaScbpAdCampaignCreateAPIRequest struct {
 	_campaignOperation *CampaignOperationDto
 }
 
-// NewAlibabaScbpAdCampaignCreateRequest 初始化AlibabaScbpAdCampaignCreateAPIRequest对象
-func NewAlibabaScbpAdCampaignCreateRequest() *AlibabaScbpAdCampaignCreateAPIRequest {
-	return &AlibabaScbpAdCampaignCreateAPIRequest{
+// NewAlibabascbpadcampaigncreateRequest 初始化AlibabascbpadcampaigncreateAPIRequest对象
+func NewAlibabascbpadcampaigncreateRequest() *AlibabascbpadcampaigncreateAPIRequest {
+	return &AlibabascbpadcampaigncreateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaScbpAdCampaignCreateAPIRequest) GetApiMethodName() string {
+func (r AlibabascbpadcampaigncreateAPIRequest) GetApiMethodName() string {
 	return "alibaba.scbp.ad.campaign.create"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAdCampaignCreateAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabascbpadcampaigncreateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaScbpAdCampaignCreateAPIRequest) GetRawParams() model.Params {
+func (r AlibabascbpadcampaigncreateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTopContext is TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdCampaignCreateAPIRequest) SetTopContext(_topContext *TopContextDto) error {
+func (r *AlibabascbpadcampaigncreateAPIRequest) SetTopContext(_topContext *TopContextDto) error {
 	r._topContext = _topContext
 	r.Set("top_context", _topContext)
 	return nil
 }
 
 // GetTopContext TopContext Getter
-func (r AlibabaScbpAdCampaignCreateAPIRequest) GetTopContext() *TopContextDto {
+func (r AlibabascbpadcampaigncreateAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
 }
 
 // SetCampaignOperation is CampaignOperation Setter
 // 返回数据
-func (r *AlibabaScbpAdCampaignCreateAPIRequest) SetCampaignOperation(_campaignOperation *CampaignOperationDto) error {
+func (r *AlibabascbpadcampaigncreateAPIRequest) SetCampaignOperation(_campaignOperation *CampaignOperationDto) error {
 	r._campaignOperation = _campaignOperation
 	r.Set("campaign_operation", _campaignOperation)
 	return nil
 }
 
 // GetCampaignOperation CampaignOperation Getter
-func (r AlibabaScbpAdCampaignCreateAPIRequest) GetCampaignOperation() *CampaignOperationDto {
+func (r AlibabascbpadcampaigncreateAPIRequest) GetCampaignOperation() *CampaignOperationDto {
 	return r._campaignOperation
 }

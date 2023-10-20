@@ -1,7 +1,7 @@
 package wdk
 
-// WdkWmsPickMedicineQueryResult 结构体
-type WdkWmsPickMedicineQueryResult struct {
+// WdkwmspickmedicinequeryResult 结构体
+type WdkwmspickmedicinequeryResult struct {
 	// 拣货单维度药品信息list
 	MedicineItems []MedicineItemDo `json:"medicine_items,omitempty" xml:"medicine_items>medicine_item_do,omitempty"`
 	// 履约单维度药品明细

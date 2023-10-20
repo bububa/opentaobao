@@ -1,7 +1,7 @@
 package servicecenter
 
-// TmallCarLeaseItemActivityGetResult 结构体
-type TmallCarLeaseItemActivityGetResult struct {
+// TmallcarleaseitemactivitygetResult 结构体
+type TmallcarleaseitemactivitygetResult struct {
 	// 动态返回扩展参数：&lt;br/&gt;extInfo:扩展参数字符串
 	Piggyback string `json:"piggyback,omitempty" xml:"piggyback,omitempty"`
 	// 返回码

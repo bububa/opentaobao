@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMosOnsiteTradeIsnewpayorderAPIRequest 是否为新支付订单 API请求
+// AlibabamosonsitetradeisnewpayorderAPIRequest 是否为新支付订单 API请求
 // alibaba.mos.onsite.trade.isnewpayorder
 //
 // 退款时，老支付宝手淘退款接口需要查一下该订单是否为新支付订单
-type AlibabaMosOnsiteTradeIsnewpayorderAPIRequest struct {
+type AlibabamosonsitetradeisnewpayorderAPIRequest struct {
 	model.Params
 	// 外部订单号
 	_outTradeNo string
 }
 
-// NewAlibabaMosOnsiteTradeIsnewpayorderRequest 初始化AlibabaMosOnsiteTradeIsnewpayorderAPIRequest对象
-func NewAlibabaMosOnsiteTradeIsnewpayorderRequest() *AlibabaMosOnsiteTradeIsnewpayorderAPIRequest {
-	return &AlibabaMosOnsiteTradeIsnewpayorderAPIRequest{
+// NewAlibabamosonsitetradeisnewpayorderRequest 初始化AlibabamosonsitetradeisnewpayorderAPIRequest对象
+func NewAlibabamosonsitetradeisnewpayorderRequest() *AlibabamosonsitetradeisnewpayorderAPIRequest {
+	return &AlibabamosonsitetradeisnewpayorderAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaMosOnsiteTradeIsnewpayorderAPIRequest) GetApiMethodName() string {
+func (r AlibabamosonsitetradeisnewpayorderAPIRequest) GetApiMethodName() string {
 	return "alibaba.mos.onsite.trade.isnewpayorder"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaMosOnsiteTradeIsnewpayorderAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabamosonsitetradeisnewpayorderAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaMosOnsiteTradeIsnewpayorderAPIRequest) GetRawParams() model.Params {
+func (r AlibabamosonsitetradeisnewpayorderAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOutTradeNo is OutTradeNo Setter
 // 外部订单号
-func (r *AlibabaMosOnsiteTradeIsnewpayorderAPIRequest) SetOutTradeNo(_outTradeNo string) error {
+func (r *AlibabamosonsitetradeisnewpayorderAPIRequest) SetOutTradeNo(_outTradeNo string) error {
 	r._outTradeNo = _outTradeNo
 	r.Set("out_trade_no", _outTradeNo)
 	return nil
 }
 
 // GetOutTradeNo OutTradeNo Getter
-func (r AlibabaMosOnsiteTradeIsnewpayorderAPIRequest) GetOutTradeNo() string {
+func (r AlibabamosonsitetradeisnewpayorderAPIRequest) GetOutTradeNo() string {
 	return r._outTradeNo
 }

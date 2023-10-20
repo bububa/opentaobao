@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/logistic"
 )
 
-// TaobaoLogisticsAddressSearch 查询卖家地址库
+// Taobaologisticsaddresssearch 查询卖家地址库
 // taobao.logistics.address.search
 //
 // 通过此接口查询卖家地址库，
-func TaobaoLogisticsAddressSearch(clt *core.SDKClient, req *logistic.TaobaoLogisticsAddressSearchAPIRequest, session string) (*logistic.TaobaoLogisticsAddressSearchAPIResponse, error) {
-	var resp logistic.TaobaoLogisticsAddressSearchAPIResponse
+func Taobaologisticsaddresssearch(clt *core.SDKClient, req *logistic.TaobaologisticsaddresssearchAPIRequest, session string) (*logistic.TaobaologisticsaddresssearchAPIResponse, error) {
+	var resp logistic.TaobaologisticsaddresssearchAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

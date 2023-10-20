@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaAlihouseMerchantTradeConfigBindResult 结构体
-type AlibabaAlihouseMerchantTradeConfigBindResult struct {
+// AlibabaalihousemerchanttradeconfigbindResult 结构体
+type AlibabaalihousemerchanttradeconfigbindResult struct {
 	// code
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 返回信息

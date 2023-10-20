@@ -1,7 +1,7 @@
 package alicom
 
-// AlibabaAliqinTaVoiceNumDoublecallBizResult 结构体
-type AlibabaAliqinTaVoiceNumDoublecallBizResult struct {
+// AlibabaaliqintavoicenumdoublecallBizResult 结构体
+type AlibabaaliqintavoicenumdoublecallBizResult struct {
 	// 返回结果
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// 返回信息描述

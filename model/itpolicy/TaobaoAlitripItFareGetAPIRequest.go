@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAlitripItFareGetAPIRequest 【国际机票自有政策】单条查询 API请求
+// TaobaoalitripitfaregetAPIRequest 【国际机票自有政策】单条查询 API请求
 // taobao.alitrip.it.fare.get
 //
 // 通过此接口可以查询单条政策的详情，可以根据fareId或outId查询，用户outId查询时，如果outId不唯一，只返回最新添加的一条数据
-type TaobaoAlitripItFareGetAPIRequest struct {
+type TaobaoalitripitfaregetAPIRequest struct {
 	model.Params
 	// json格式的字符串，扩展属性，预留
 	_extendAttributes string
@@ -20,65 +20,65 @@ type TaobaoAlitripItFareGetAPIRequest struct {
 	_fareId int64
 }
 
-// NewTaobaoAlitripItFareGetRequest 初始化TaobaoAlitripItFareGetAPIRequest对象
-func NewTaobaoAlitripItFareGetRequest() *TaobaoAlitripItFareGetAPIRequest {
-	return &TaobaoAlitripItFareGetAPIRequest{
+// NewTaobaoalitripitfaregetRequest 初始化TaobaoalitripitfaregetAPIRequest对象
+func NewTaobaoalitripitfaregetRequest() *TaobaoalitripitfaregetAPIRequest {
+	return &TaobaoalitripitfaregetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripItFareGetAPIRequest) GetApiMethodName() string {
+func (r TaobaoalitripitfaregetAPIRequest) GetApiMethodName() string {
 	return "taobao.alitrip.it.fare.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripItFareGetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoalitripitfaregetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoAlitripItFareGetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoalitripitfaregetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetExtendAttributes is ExtendAttributes Setter
 // json格式的字符串，扩展属性，预留
-func (r *TaobaoAlitripItFareGetAPIRequest) SetExtendAttributes(_extendAttributes string) error {
+func (r *TaobaoalitripitfaregetAPIRequest) SetExtendAttributes(_extendAttributes string) error {
 	r._extendAttributes = _extendAttributes
 	r.Set("extendAttributes", _extendAttributes)
 	return nil
 }
 
 // GetExtendAttributes ExtendAttributes Getter
-func (r TaobaoAlitripItFareGetAPIRequest) GetExtendAttributes() string {
+func (r TaobaoalitripitfaregetAPIRequest) GetExtendAttributes() string {
 	return r._extendAttributes
 }
 
 // SetOutId is OutId Setter
 // 外部id，为新增时请求参数中的外部政策id
-func (r *TaobaoAlitripItFareGetAPIRequest) SetOutId(_outId string) error {
+func (r *TaobaoalitripitfaregetAPIRequest) SetOutId(_outId string) error {
 	r._outId = _outId
 	r.Set("outId", _outId)
 	return nil
 }
 
 // GetOutId OutId Getter
-func (r TaobaoAlitripItFareGetAPIRequest) GetOutId() string {
+func (r TaobaoalitripitfaregetAPIRequest) GetOutId() string {
 	return r._outId
 }
 
 // SetFareId is FareId Setter
 // 运价id，单条新增成功时返回运价id，fareId和outId必填一个，fareId优先
-func (r *TaobaoAlitripItFareGetAPIRequest) SetFareId(_fareId int64) error {
+func (r *TaobaoalitripitfaregetAPIRequest) SetFareId(_fareId int64) error {
 	r._fareId = _fareId
 	r.Set("fareId", _fareId)
 	return nil
 }
 
 // GetFareId FareId Getter
-func (r TaobaoAlitripItFareGetAPIRequest) GetFareId() int64 {
+func (r TaobaoalitripitfaregetAPIRequest) GetFareId() int64 {
 	return r._fareId
 }

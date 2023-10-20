@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihealth2"
 )
 
-// AlibabaAlihealthTracecodeplatformCodeEntscan 药品商家扫码
+// Alibabaalihealthtracecodeplatformcodeentscan 药品商家扫码
 // alibaba.alihealth.tracecodeplatform.code.entscan
 //
 // 药品商家扫描药品监管码，只有该商家的药才返回
-func AlibabaAlihealthTracecodeplatformCodeEntscan(clt *core.SDKClient, req *alihealth2.AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest, session string) (*alihealth2.AlibabaAlihealthTracecodeplatformCodeEntscanAPIResponse, error) {
-	var resp alihealth2.AlibabaAlihealthTracecodeplatformCodeEntscanAPIResponse
+func Alibabaalihealthtracecodeplatformcodeentscan(clt *core.SDKClient, req *alihealth2.AlibabaalihealthtracecodeplatformcodeentscanAPIRequest, session string) (*alihealth2.AlibabaalihealthtracecodeplatformcodeentscanAPIResponse, error) {
+	var resp alihealth2.AlibabaalihealthtracecodeplatformcodeentscanAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest 设备列表更新通知 API请求
+// AlibabaailabsiotdevicelistupdatenotifyAPIRequest 设备列表更新通知 API请求
 // alibaba.ailabs.iot.device.list.update.notify
 //
 // 用于人工智能实验室IoT合作厂商上报三方接入IoT设备列表更新时的通知
-type AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest struct {
+type AlibabaailabsiotdevicelistupdatenotifyAPIRequest struct {
 	model.Params
 	// 用户OAuth授权后的token
 	_token string
@@ -20,65 +20,65 @@ type AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest struct {
 	_type string
 }
 
-// NewAlibabaAilabsIotDeviceListUpdateNotifyRequest 初始化AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest对象
-func NewAlibabaAilabsIotDeviceListUpdateNotifyRequest() *AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest {
-	return &AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest{
+// NewAlibabaailabsiotdevicelistupdatenotifyRequest 初始化AlibabaailabsiotdevicelistupdatenotifyAPIRequest对象
+func NewAlibabaailabsiotdevicelistupdatenotifyRequest() *AlibabaailabsiotdevicelistupdatenotifyAPIRequest {
+	return &AlibabaailabsiotdevicelistupdatenotifyAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest) GetApiMethodName() string {
+func (r AlibabaailabsiotdevicelistupdatenotifyAPIRequest) GetApiMethodName() string {
 	return "alibaba.ailabs.iot.device.list.update.notify"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaailabsiotdevicelistupdatenotifyAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest) GetRawParams() model.Params {
+func (r AlibabaailabsiotdevicelistupdatenotifyAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetToken is Token Setter
 // 用户OAuth授权后的token
-func (r *AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest) SetToken(_token string) error {
+func (r *AlibabaailabsiotdevicelistupdatenotifyAPIRequest) SetToken(_token string) error {
 	r._token = _token
 	r.Set("token", _token)
 	return nil
 }
 
 // GetToken Token Getter
-func (r AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest) GetToken() string {
+func (r AlibabaailabsiotdevicelistupdatenotifyAPIRequest) GetToken() string {
 	return r._token
 }
 
 // SetSkillId is SkillId Setter
 // 厂商在天猫精灵开放平台申请的技能id
-func (r *AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest) SetSkillId(_skillId string) error {
+func (r *AlibabaailabsiotdevicelistupdatenotifyAPIRequest) SetSkillId(_skillId string) error {
 	r._skillId = _skillId
 	r.Set("skill_id", _skillId)
 	return nil
 }
 
 // GetSkillId SkillId Getter
-func (r AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest) GetSkillId() string {
+func (r AlibabaailabsiotdevicelistupdatenotifyAPIRequest) GetSkillId() string {
 	return r._skillId
 }
 
 // SetType is Type Setter
 // 更新类型 1：设备更新 2：场景更新
-func (r *AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest) SetType(_type string) error {
+func (r *AlibabaailabsiotdevicelistupdatenotifyAPIRequest) SetType(_type string) error {
 	r._type = _type
 	r.Set("type", _type)
 	return nil
 }
 
 // GetType Type Getter
-func (r AlibabaAilabsIotDeviceListUpdateNotifyAPIRequest) GetType() string {
+func (r AlibabaailabsiotdevicelistupdatenotifyAPIRequest) GetType() string {
 	return r._type
 }

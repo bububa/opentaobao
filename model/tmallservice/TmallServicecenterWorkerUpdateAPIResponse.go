@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallServicecenterWorkerUpdateAPIResponse 修改工人信息 API返回值
+// TmallservicecenterworkerupdateAPIResponse 修改工人信息 API返回值
 // tmall.servicecenter.worker.update
 //
 // 修改工人信息。该接口为多个业务公用，部分字段可忽略。对于电器预约安装业务，同一个服务商，通过工人姓名+手机号+biz_type 保证唯一性。工人已存在才可以修改。
@@ -25,13 +25,13 @@ import (
 // 11000, category_id 无效
 // 11001, biz_type 无效
 // 20001,已查询到最后一页
-type TmallServicecenterWorkerUpdateAPIResponse struct {
+type TmallservicecenterworkerupdateAPIResponse struct {
 	model.CommonResponse
-	TmallServicecenterWorkerUpdateAPIResponseModel
+	TmallservicecenterworkerupdateAPIResponseModel
 }
 
-// TmallServicecenterWorkerUpdateAPIResponseModel is 修改工人信息 成功返回结果
-type TmallServicecenterWorkerUpdateAPIResponseModel struct {
+// TmallservicecenterworkerupdateAPIResponseModel is 修改工人信息 成功返回结果
+type TmallservicecenterworkerupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_worker_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

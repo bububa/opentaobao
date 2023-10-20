@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-// TaobaoPlaceStoreExtendAdd 新增门店扩展属性
+// Taobaoplacestoreextendadd 新增门店扩展属性
 // taobao.place.store.extend.add
 //
 // 新增授权用户的门店扩展属性
-func TaobaoPlaceStoreExtendAdd(clt *core.SDKClient, req *alsc.TaobaoPlaceStoreExtendAddAPIRequest, session string) (*alsc.TaobaoPlaceStoreExtendAddAPIResponse, error) {
-	var resp alsc.TaobaoPlaceStoreExtendAddAPIResponse
+func Taobaoplacestoreextendadd(clt *core.SDKClient, req *alsc.TaobaoplacestoreextendaddAPIRequest, session string) (*alsc.TaobaoplacestoreextendaddAPIResponse, error) {
+	var resp alsc.TaobaoplacestoreextendaddAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

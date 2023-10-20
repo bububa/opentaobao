@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaArgusUpdateredriskAPIRequest 更新红线价格 API请求
+// AlibabaargusupdateredriskAPIRequest 更新红线价格 API请求
 // alibaba.argus.updateredrisk
 //
 // 商品健康中心新增红线价格规则
-type AlibabaArgusUpdateredriskAPIRequest struct {
+type AlibabaargusupdateredriskAPIRequest struct {
 	model.Params
 	// 红线价格参数
 	_redRiskUpdateFactor *RedRiskUpdateFactor
 }
 
-// NewAlibabaArgusUpdateredriskRequest 初始化AlibabaArgusUpdateredriskAPIRequest对象
-func NewAlibabaArgusUpdateredriskRequest() *AlibabaArgusUpdateredriskAPIRequest {
-	return &AlibabaArgusUpdateredriskAPIRequest{
+// NewAlibabaargusupdateredriskRequest 初始化AlibabaargusupdateredriskAPIRequest对象
+func NewAlibabaargusupdateredriskRequest() *AlibabaargusupdateredriskAPIRequest {
+	return &AlibabaargusupdateredriskAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaArgusUpdateredriskAPIRequest) GetApiMethodName() string {
+func (r AlibabaargusupdateredriskAPIRequest) GetApiMethodName() string {
 	return "alibaba.argus.updateredrisk"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaArgusUpdateredriskAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaargusupdateredriskAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaArgusUpdateredriskAPIRequest) GetRawParams() model.Params {
+func (r AlibabaargusupdateredriskAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRedRiskUpdateFactor is RedRiskUpdateFactor Setter
 // 红线价格参数
-func (r *AlibabaArgusUpdateredriskAPIRequest) SetRedRiskUpdateFactor(_redRiskUpdateFactor *RedRiskUpdateFactor) error {
+func (r *AlibabaargusupdateredriskAPIRequest) SetRedRiskUpdateFactor(_redRiskUpdateFactor *RedRiskUpdateFactor) error {
 	r._redRiskUpdateFactor = _redRiskUpdateFactor
 	r.Set("red_risk_update_factor", _redRiskUpdateFactor)
 	return nil
 }
 
 // GetRedRiskUpdateFactor RedRiskUpdateFactor Getter
-func (r AlibabaArgusUpdateredriskAPIRequest) GetRedRiskUpdateFactor() *RedRiskUpdateFactor {
+func (r AlibabaargusupdateredriskAPIRequest) GetRedRiskUpdateFactor() *RedRiskUpdateFactor {
 	return r._redRiskUpdateFactor
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponse pad获取二维码 API返回值
+// AlibabaibshenjingvisitorpadgetqrcodelinkAPIResponse pad获取二维码 API返回值
 // alibaba.ib.shenjing.visitor.pad.getqrcodelink
 //
 // pad获取二维码链接。扫码录入人脸。
-type AlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponse struct {
+type AlibabaibshenjingvisitorpadgetqrcodelinkAPIResponse struct {
 	model.CommonResponse
-	AlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponseModel
+	AlibabaibshenjingvisitorpadgetqrcodelinkAPIResponseModel
 }
 
-// AlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponseModel is pad获取二维码 成功返回结果
-type AlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponseModel struct {
+// AlibabaibshenjingvisitorpadgetqrcodelinkAPIResponseModel is pad获取二维码 成功返回结果
+type AlibabaibshenjingvisitorpadgetqrcodelinkAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ib_shenjing_visitor_pad_getqrcodelink_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alicom"
 )
 
-// AlibabaAliqinFcVoiceNumCancelcall 取消呼叫
+// Alibabaaliqinfcvoicenumcancelcall 取消呼叫
 // alibaba.aliqin.fc.voice.num.cancelcall
 //
 // 当通话通过阿里大于呼出后可以通过调用这个接口取消本次通话
-func AlibabaAliqinFcVoiceNumCancelcall(clt *core.SDKClient, req *alicom.AlibabaAliqinFcVoiceNumCancelcallAPIRequest, session string) (*alicom.AlibabaAliqinFcVoiceNumCancelcallAPIResponse, error) {
-	var resp alicom.AlibabaAliqinFcVoiceNumCancelcallAPIResponse
+func Alibabaaliqinfcvoicenumcancelcall(clt *core.SDKClient, req *alicom.AlibabaaliqinfcvoicenumcancelcallAPIRequest, session string) (*alicom.AlibabaaliqinfcvoicenumcancelcallAPIResponse, error) {
+	var resp alicom.AlibabaaliqinfcvoicenumcancelcallAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/interact"
 )
 
-// AlibabaInteractSensorGcanvas gcanvas
+// Alibabainteractsensorgcanvas gcanvas
 // alibaba.interact.sensor.gcanvas
 //
 // gcanvas 功能
-func AlibabaInteractSensorGcanvas(clt *core.SDKClient, req *interact.AlibabaInteractSensorGcanvasAPIRequest, session string) (*interact.AlibabaInteractSensorGcanvasAPIResponse, error) {
-	var resp interact.AlibabaInteractSensorGcanvasAPIResponse
+func Alibabainteractsensorgcanvas(clt *core.SDKClient, req *interact.AlibabainteractsensorgcanvasAPIRequest, session string) (*interact.AlibabainteractsensorgcanvasAPIResponse, error) {
+	var resp interact.AlibabainteractsensorgcanvasAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

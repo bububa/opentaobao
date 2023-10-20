@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTradeReceivetimeDelayAPIResponse 延长交易收货时间 API返回值
+// TaobaotradereceivetimedelayAPIResponse 延长交易收货时间 API返回值
 // taobao.trade.receivetime.delay
 //
 // 延长交易收货时间
-type TaobaoTradeReceivetimeDelayAPIResponse struct {
+type TaobaotradereceivetimedelayAPIResponse struct {
 	model.CommonResponse
-	TaobaoTradeReceivetimeDelayAPIResponseModel
+	TaobaotradereceivetimedelayAPIResponseModel
 }
 
-// TaobaoTradeReceivetimeDelayAPIResponseModel is 延长交易收货时间 成功返回结果
-type TaobaoTradeReceivetimeDelayAPIResponseModel struct {
+// TaobaotradereceivetimedelayAPIResponseModel is 延长交易收货时间 成功返回结果
+type TaobaotradereceivetimedelayAPIResponseModel struct {
 	XMLName xml.Name `xml:"trade_receivetime_delay_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

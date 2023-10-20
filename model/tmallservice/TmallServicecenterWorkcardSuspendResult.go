@@ -1,7 +1,7 @@
 package tmallservice
 
-// TmallServicecenterWorkcardSuspendResult 结构体
-type TmallServicecenterWorkcardSuspendResult struct {
+// TmallservicecenterworkcardsuspendResult 结构体
+type TmallservicecenterworkcardsuspendResult struct {
 	// 错误原因描述
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// 错误码

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkBmCouponQueryAPIResponse 淘鲜达券信息查询接口 API返回值
+// AlibabawdkbmcouponqueryAPIResponse 淘鲜达券信息查询接口 API返回值
 // alibaba.wdk.bm.coupon.query
 //
 // 淘鲜达品牌营销的券信息查询接口，基于券id查询券相关信息：券id、券名称、分摊信息、面额、创建时间、开始时间、结束时间
-type AlibabaWdkBmCouponQueryAPIResponse struct {
+type AlibabawdkbmcouponqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaWdkBmCouponQueryAPIResponseModel
+	AlibabawdkbmcouponqueryAPIResponseModel
 }
 
-// AlibabaWdkBmCouponQueryAPIResponseModel is 淘鲜达券信息查询接口 成功返回结果
-type AlibabaWdkBmCouponQueryAPIResponseModel struct {
+// AlibabawdkbmcouponqueryAPIResponseModel is 淘鲜达券信息查询接口 成功返回结果
+type AlibabawdkbmcouponqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_bm_coupon_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

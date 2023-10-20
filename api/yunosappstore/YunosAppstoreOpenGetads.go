@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/yunosappstore"
 )
 
-// YunosAppstoreOpenGetads 获取外投广告
+// Yunosappstoreopengetads 获取外投广告
 // yunos.appstore.open.getads
 //
 // 将广告外投给外部合作伙伴
-func YunosAppstoreOpenGetads(clt *core.SDKClient, req *yunosappstore.YunosAppstoreOpenGetadsAPIRequest, session string) (*yunosappstore.YunosAppstoreOpenGetadsAPIResponse, error) {
-	var resp yunosappstore.YunosAppstoreOpenGetadsAPIResponse
+func Yunosappstoreopengetads(clt *core.SDKClient, req *yunosappstore.YunosappstoreopengetadsAPIRequest, session string) (*yunosappstore.YunosappstoreopengetadsAPIResponse, error) {
+	var resp yunosappstore.YunosappstoreopengetadsAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

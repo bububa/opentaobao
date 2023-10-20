@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaWdkWholesaleOutboundorderCommit 盒马帮发货信息回传接口
+// Alibabawdkwholesaleoutboundordercommit 盒马帮发货信息回传接口
 // alibaba.wdk.wholesale.outboundorder.commit
 //
 // 盒马帮发货信息回传接口
-func AlibabaWdkWholesaleOutboundorderCommit(clt *core.SDKClient, req *wdk.AlibabaWdkWholesaleOutboundorderCommitAPIRequest, session string) (*wdk.AlibabaWdkWholesaleOutboundorderCommitAPIResponse, error) {
-	var resp wdk.AlibabaWdkWholesaleOutboundorderCommitAPIResponse
+func Alibabawdkwholesaleoutboundordercommit(clt *core.SDKClient, req *wdk.AlibabawdkwholesaleoutboundordercommitAPIRequest, session string) (*wdk.AlibabawdkwholesaleoutboundordercommitAPIResponse, error) {
+	var resp wdk.AlibabawdkwholesaleoutboundordercommitAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

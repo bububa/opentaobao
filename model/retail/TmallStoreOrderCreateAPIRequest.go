@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallStoreOrderCreateAPIRequest 门店订单创建api API请求
+// TmallstoreordercreateAPIRequest 门店订单创建api API请求
 // tmall.store.order.create
 //
 // 门店订单创建api
-type TmallStoreOrderCreateAPIRequest struct {
+type TmallstoreordercreateAPIRequest struct {
 	model.Params
 	// 创建订单请求
 	_createOrderRequest *CreateOrderRequest
@@ -18,52 +18,52 @@ type TmallStoreOrderCreateAPIRequest struct {
 	_appInfo *AppInfo
 }
 
-// NewTmallStoreOrderCreateRequest 初始化TmallStoreOrderCreateAPIRequest对象
-func NewTmallStoreOrderCreateRequest() *TmallStoreOrderCreateAPIRequest {
-	return &TmallStoreOrderCreateAPIRequest{
+// NewTmallstoreordercreateRequest 初始化TmallstoreordercreateAPIRequest对象
+func NewTmallstoreordercreateRequest() *TmallstoreordercreateAPIRequest {
+	return &TmallstoreordercreateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallStoreOrderCreateAPIRequest) GetApiMethodName() string {
+func (r TmallstoreordercreateAPIRequest) GetApiMethodName() string {
 	return "tmall.store.order.create"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallStoreOrderCreateAPIRequest) GetApiParams(params url.Values) {
+func (r TmallstoreordercreateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallStoreOrderCreateAPIRequest) GetRawParams() model.Params {
+func (r TmallstoreordercreateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCreateOrderRequest is CreateOrderRequest Setter
 // 创建订单请求
-func (r *TmallStoreOrderCreateAPIRequest) SetCreateOrderRequest(_createOrderRequest *CreateOrderRequest) error {
+func (r *TmallstoreordercreateAPIRequest) SetCreateOrderRequest(_createOrderRequest *CreateOrderRequest) error {
 	r._createOrderRequest = _createOrderRequest
 	r.Set("create_order_request", _createOrderRequest)
 	return nil
 }
 
 // GetCreateOrderRequest CreateOrderRequest Getter
-func (r TmallStoreOrderCreateAPIRequest) GetCreateOrderRequest() *CreateOrderRequest {
+func (r TmallstoreordercreateAPIRequest) GetCreateOrderRequest() *CreateOrderRequest {
 	return r._createOrderRequest
 }
 
 // SetAppInfo is AppInfo Setter
 // 系统自动生成
-func (r *TmallStoreOrderCreateAPIRequest) SetAppInfo(_appInfo *AppInfo) error {
+func (r *TmallstoreordercreateAPIRequest) SetAppInfo(_appInfo *AppInfo) error {
 	r._appInfo = _appInfo
 	r.Set("app_info", _appInfo)
 	return nil
 }
 
 // GetAppInfo AppInfo Getter
-func (r TmallStoreOrderCreateAPIRequest) GetAppInfo() *AppInfo {
+func (r TmallstoreordercreateAPIRequest) GetAppInfo() *AppInfo {
 	return r._appInfo
 }

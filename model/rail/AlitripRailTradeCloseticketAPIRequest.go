@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripRailTradeCloseticketAPIRequest 出票失败关单接口 API请求
+// AlitriprailtradecloseticketAPIRequest 出票失败关单接口 API请求
 // alitrip.rail.trade.closeticket
 //
 // 出票成功回调接口
-type AlitripRailTradeCloseticketAPIRequest struct {
+type AlitriprailtradecloseticketAPIRequest struct {
 	model.Params
 	// 出票失败原因
 	_errorMsg string
@@ -22,78 +22,78 @@ type AlitripRailTradeCloseticketAPIRequest struct {
 	_agentId int64
 }
 
-// NewAlitripRailTradeCloseticketRequest 初始化AlitripRailTradeCloseticketAPIRequest对象
-func NewAlitripRailTradeCloseticketRequest() *AlitripRailTradeCloseticketAPIRequest {
-	return &AlitripRailTradeCloseticketAPIRequest{
+// NewAlitriprailtradecloseticketRequest 初始化AlitriprailtradecloseticketAPIRequest对象
+func NewAlitriprailtradecloseticketRequest() *AlitriprailtradecloseticketAPIRequest {
+	return &AlitriprailtradecloseticketAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripRailTradeCloseticketAPIRequest) GetApiMethodName() string {
+func (r AlitriprailtradecloseticketAPIRequest) GetApiMethodName() string {
 	return "alitrip.rail.trade.closeticket"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripRailTradeCloseticketAPIRequest) GetApiParams(params url.Values) {
+func (r AlitriprailtradecloseticketAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripRailTradeCloseticketAPIRequest) GetRawParams() model.Params {
+func (r AlitriprailtradecloseticketAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetErrorMsg is ErrorMsg Setter
 // 出票失败原因
-func (r *AlitripRailTradeCloseticketAPIRequest) SetErrorMsg(_errorMsg string) error {
+func (r *AlitriprailtradecloseticketAPIRequest) SetErrorMsg(_errorMsg string) error {
 	r._errorMsg = _errorMsg
 	r.Set("error_msg", _errorMsg)
 	return nil
 }
 
 // GetErrorMsg ErrorMsg Getter
-func (r AlitripRailTradeCloseticketAPIRequest) GetErrorMsg() string {
+func (r AlitriprailtradecloseticketAPIRequest) GetErrorMsg() string {
 	return r._errorMsg
 }
 
 // SetErrorCode is ErrorCode Setter
 // 出票失败码
-func (r *AlitripRailTradeCloseticketAPIRequest) SetErrorCode(_errorCode string) error {
+func (r *AlitriprailtradecloseticketAPIRequest) SetErrorCode(_errorCode string) error {
 	r._errorCode = _errorCode
 	r.Set("error_code", _errorCode)
 	return nil
 }
 
 // GetErrorCode ErrorCode Getter
-func (r AlitripRailTradeCloseticketAPIRequest) GetErrorCode() string {
+func (r AlitriprailtradecloseticketAPIRequest) GetErrorCode() string {
 	return r._errorCode
 }
 
 // SetTpOrderId is TpOrderId Setter
 // 平台订单号
-func (r *AlitripRailTradeCloseticketAPIRequest) SetTpOrderId(_tpOrderId int64) error {
+func (r *AlitriprailtradecloseticketAPIRequest) SetTpOrderId(_tpOrderId int64) error {
 	r._tpOrderId = _tpOrderId
 	r.Set("tp_order_id", _tpOrderId)
 	return nil
 }
 
 // GetTpOrderId TpOrderId Getter
-func (r AlitripRailTradeCloseticketAPIRequest) GetTpOrderId() int64 {
+func (r AlitriprailtradecloseticketAPIRequest) GetTpOrderId() int64 {
 	return r._tpOrderId
 }
 
 // SetAgentId is AgentId Setter
 // 代理商订单号
-func (r *AlitripRailTradeCloseticketAPIRequest) SetAgentId(_agentId int64) error {
+func (r *AlitriprailtradecloseticketAPIRequest) SetAgentId(_agentId int64) error {
 	r._agentId = _agentId
 	r.Set("agent_id", _agentId)
 	return nil
 }
 
 // GetAgentId AgentId Getter
-func (r AlitripRailTradeCloseticketAPIRequest) GetAgentId() int64 {
+func (r AlitriprailtradecloseticketAPIRequest) GetAgentId() int64 {
 	return r._agentId
 }

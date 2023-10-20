@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthMdeerScienceDeletearticleAPIResponse 文章删除 API返回值
+// AlibabaalihealthmdeersciencedeletearticleAPIResponse 文章删除 API返回值
 // alibaba.alihealth.mdeer.science.deletearticle
 //
 // 三方同步文章删除
-type AlibabaAlihealthMdeerScienceDeletearticleAPIResponse struct {
+type AlibabaalihealthmdeersciencedeletearticleAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihealthMdeerScienceDeletearticleAPIResponseModel
+	AlibabaalihealthmdeersciencedeletearticleAPIResponseModel
 }
 
-// AlibabaAlihealthMdeerScienceDeletearticleAPIResponseModel is 文章删除 成功返回结果
-type AlibabaAlihealthMdeerScienceDeletearticleAPIResponseModel struct {
+// AlibabaalihealthmdeersciencedeletearticleAPIResponseModel is 文章删除 成功返回结果
+type AlibabaalihealthmdeersciencedeletearticleAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_mdeer_science_deletearticle_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

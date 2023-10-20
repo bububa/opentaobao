@@ -1,7 +1,7 @@
 package damai
 
-// AlibabaDamaiMevOpenPushstandResult 结构体
-type AlibabaDamaiMevOpenPushstandResult struct {
+// AlibabadamaimevopenpushstandResult 结构体
+type AlibabadamaimevopenpushstandResult struct {
 	// 错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 错误码

@@ -1,7 +1,7 @@
 package taotv
 
-// V5BaseItemRbo 结构体
-type V5BaseItemRbo struct {
+// V5baseItemRbo 结构体
+type V5baseItemRbo struct {
 	// 坑位标题
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 坑位子标题

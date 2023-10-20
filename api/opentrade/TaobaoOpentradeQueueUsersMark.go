@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/opentrade"
 )
 
-// TaobaoOpentradeQueueUsersMark 尖货交易可购买用户标记
+// Taobaoopentradequeueusersmark 尖货交易可购买用户标记
 // taobao.opentrade.queue.users.mark
 //
 // 尖货交易用户标记信息回传，根据openId标记用户可购买商品
-func TaobaoOpentradeQueueUsersMark(clt *core.SDKClient, req *opentrade.TaobaoOpentradeQueueUsersMarkAPIRequest, session string) (*opentrade.TaobaoOpentradeQueueUsersMarkAPIResponse, error) {
-	var resp opentrade.TaobaoOpentradeQueueUsersMarkAPIResponse
+func Taobaoopentradequeueusersmark(clt *core.SDKClient, req *opentrade.TaobaoopentradequeueusersmarkAPIRequest, session string) (*opentrade.TaobaoopentradequeueusersmarkAPIResponse, error) {
+	var resp opentrade.TaobaoopentradequeueusersmarkAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

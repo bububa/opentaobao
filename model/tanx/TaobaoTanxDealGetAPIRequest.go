@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTanxDealGetAPIRequest 对外部dsp提供交易id查询接口 API请求
+// TaobaotanxdealgetAPIRequest 对外部dsp提供交易id查询接口 API请求
 // taobao.tanx.deal.get
 //
 // 对外部dsp提供交易id查询接口
-type TaobaoTanxDealGetAPIRequest struct {
+type TaobaotanxdealgetAPIRequest struct {
 	model.Params
 	// 验证token
 	_token string
@@ -22,78 +22,78 @@ type TaobaoTanxDealGetAPIRequest struct {
 	_signTime int64
 }
 
-// NewTaobaoTanxDealGetRequest 初始化TaobaoTanxDealGetAPIRequest对象
-func NewTaobaoTanxDealGetRequest() *TaobaoTanxDealGetAPIRequest {
-	return &TaobaoTanxDealGetAPIRequest{
+// NewTaobaotanxdealgetRequest 初始化TaobaotanxdealgetAPIRequest对象
+func NewTaobaotanxdealgetRequest() *TaobaotanxdealgetAPIRequest {
+	return &TaobaotanxdealgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoTanxDealGetAPIRequest) GetApiMethodName() string {
+func (r TaobaotanxdealgetAPIRequest) GetApiMethodName() string {
 	return "taobao.tanx.deal.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTanxDealGetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaotanxdealgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoTanxDealGetAPIRequest) GetRawParams() model.Params {
+func (r TaobaotanxdealgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetToken is Token Setter
 // 验证token
-func (r *TaobaoTanxDealGetAPIRequest) SetToken(_token string) error {
+func (r *TaobaotanxdealgetAPIRequest) SetToken(_token string) error {
 	r._token = _token
 	r.Set("token", _token)
 	return nil
 }
 
 // GetToken Token Getter
-func (r TaobaoTanxDealGetAPIRequest) GetToken() string {
+func (r TaobaotanxdealgetAPIRequest) GetToken() string {
 	return r._token
 }
 
 // SetDspId is DspId Setter
 // dsp用户id
-func (r *TaobaoTanxDealGetAPIRequest) SetDspId(_dspId int64) error {
+func (r *TaobaotanxdealgetAPIRequest) SetDspId(_dspId int64) error {
 	r._dspId = _dspId
 	r.Set("dsp_id", _dspId)
 	return nil
 }
 
 // GetDspId DspId Getter
-func (r TaobaoTanxDealGetAPIRequest) GetDspId() int64 {
+func (r TaobaotanxdealgetAPIRequest) GetDspId() int64 {
 	return r._dspId
 }
 
 // SetDealId is DealId Setter
 // 交易id
-func (r *TaobaoTanxDealGetAPIRequest) SetDealId(_dealId int64) error {
+func (r *TaobaotanxdealgetAPIRequest) SetDealId(_dealId int64) error {
 	r._dealId = _dealId
 	r.Set("deal_id", _dealId)
 	return nil
 }
 
 // GetDealId DealId Getter
-func (r TaobaoTanxDealGetAPIRequest) GetDealId() int64 {
+func (r TaobaotanxdealgetAPIRequest) GetDealId() int64 {
 	return r._dealId
 }
 
 // SetSignTime is SignTime Setter
 // 1970年到现在的时间，毫秒
-func (r *TaobaoTanxDealGetAPIRequest) SetSignTime(_signTime int64) error {
+func (r *TaobaotanxdealgetAPIRequest) SetSignTime(_signTime int64) error {
 	r._signTime = _signTime
 	r.Set("sign_time", _signTime)
 	return nil
 }
 
 // GetSignTime SignTime Getter
-func (r TaobaoTanxDealGetAPIRequest) GetSignTime() int64 {
+func (r TaobaotanxdealgetAPIRequest) GetSignTime() int64 {
 	return r._signTime
 }

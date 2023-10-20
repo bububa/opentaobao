@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-// AlibabaSscSupplyplatformServicestoreOffline 网点下线
+// Alibabasscsupplyplatformservicestoreoffline 网点下线
 // alibaba.ssc.supplyplatform.servicestore.offline
 //
 // 网点下线功能
-func AlibabaSscSupplyplatformServicestoreOffline(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServicestoreOfflineAPIRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServicestoreOfflineAPIResponse, error) {
-	var resp tmallservice.AlibabaSscSupplyplatformServicestoreOfflineAPIResponse
+func Alibabasscsupplyplatformservicestoreoffline(clt *core.SDKClient, req *tmallservice.AlibabasscsupplyplatformservicestoreofflineAPIRequest, session string) (*tmallservice.AlibabasscsupplyplatformservicestoreofflineAPIResponse, error) {
+	var resp tmallservice.AlibabasscsupplyplatformservicestoreofflineAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

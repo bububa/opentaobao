@@ -1,9 +1,9 @@
 package taotv
 
-// TaobaoTaotvVideoPlaylistPageModel 结构体
-type TaobaoTaotvVideoPlaylistPageModel struct {
+// TaobaotaotvvideoplaylistpageModel 结构体
+type TaobaotaotvvideoplaylistpageModel struct {
 	// 播单对象
-	DataList []TaobaoTaotvVideoPlaylistPageData `json:"data_list,omitempty" xml:"data_list>taobao_taotv_video_playlist_page_data,omitempty"`
+	DataList []TaobaotaotvvideoplaylistpageData `json:"data_list,omitempty" xml:"data_list>taobaotaotvvideoplaylistpage_data,omitempty"`
 	// 当前页
 	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
 	// 此接口默认每次获取100条

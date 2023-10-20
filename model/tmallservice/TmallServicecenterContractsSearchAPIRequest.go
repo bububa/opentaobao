@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallServicecenterContractsSearchAPIRequest 获取合同类的服务工单信息 API请求
+// TmallservicecentercontractssearchAPIRequest 获取合同类的服务工单信息 API请求
 // tmall.servicecenter.contracts.search
 //
 // 获取合同类的服务工单信息
-type TmallServicecenterContractsSearchAPIRequest struct {
+type TmallservicecentercontractssearchAPIRequest struct {
 	model.Params
 	// 开始时间:  开始时间和结束时间不能超过15分钟
 	_start int64
@@ -18,52 +18,52 @@ type TmallServicecenterContractsSearchAPIRequest struct {
 	_end int64
 }
 
-// NewTmallServicecenterContractsSearchRequest 初始化TmallServicecenterContractsSearchAPIRequest对象
-func NewTmallServicecenterContractsSearchRequest() *TmallServicecenterContractsSearchAPIRequest {
-	return &TmallServicecenterContractsSearchAPIRequest{
+// NewTmallservicecentercontractssearchRequest 初始化TmallservicecentercontractssearchAPIRequest对象
+func NewTmallservicecentercontractssearchRequest() *TmallservicecentercontractssearchAPIRequest {
+	return &TmallservicecentercontractssearchAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallServicecenterContractsSearchAPIRequest) GetApiMethodName() string {
+func (r TmallservicecentercontractssearchAPIRequest) GetApiMethodName() string {
 	return "tmall.servicecenter.contracts.search"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallServicecenterContractsSearchAPIRequest) GetApiParams(params url.Values) {
+func (r TmallservicecentercontractssearchAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallServicecenterContractsSearchAPIRequest) GetRawParams() model.Params {
+func (r TmallservicecentercontractssearchAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetStart is Start Setter
 // 开始时间:  开始时间和结束时间不能超过15分钟
-func (r *TmallServicecenterContractsSearchAPIRequest) SetStart(_start int64) error {
+func (r *TmallservicecentercontractssearchAPIRequest) SetStart(_start int64) error {
 	r._start = _start
 	r.Set("start", _start)
 	return nil
 }
 
 // GetStart Start Getter
-func (r TmallServicecenterContractsSearchAPIRequest) GetStart() int64 {
+func (r TmallservicecentercontractssearchAPIRequest) GetStart() int64 {
 	return r._start
 }
 
 // SetEnd is End Setter
 // 结束时间:  开始时间和结束时间不能超过15分钟
-func (r *TmallServicecenterContractsSearchAPIRequest) SetEnd(_end int64) error {
+func (r *TmallservicecentercontractssearchAPIRequest) SetEnd(_end int64) error {
 	r._end = _end
 	r.Set("end", _end)
 	return nil
 }
 
 // GetEnd End Getter
-func (r TmallServicecenterContractsSearchAPIRequest) GetEnd() int64 {
+func (r TmallservicecentercontractssearchAPIRequest) GetEnd() int64 {
 	return r._end
 }

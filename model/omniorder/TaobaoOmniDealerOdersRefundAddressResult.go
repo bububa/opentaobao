@@ -1,7 +1,7 @@
 package omniorder
 
-// TaobaoOmniDealerOdersRefundAddressResult 结构体
-type TaobaoOmniDealerOdersRefundAddressResult struct {
+// TaobaoomnidealerodersrefundaddressResult 结构体
+type TaobaoomnidealerodersrefundaddressResult struct {
 	// 错误信息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 是否成功

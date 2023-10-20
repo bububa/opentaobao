@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripMerchantGalaxyMemberQueryResponse 结构体
-type AlitripMerchantGalaxyMemberQueryResponse struct {
+// AlitripmerchantgalaxymemberqueryResponse 结构体
+type AlitripmerchantgalaxymemberqueryResponse struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息

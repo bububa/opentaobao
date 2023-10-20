@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoVirtualDsfSupplierInterfaceSwitchAPIResponse 虚拟供应商履约接口切换 API返回值
+// TaobaovirtualdsfsupplierinterfaceswitchAPIResponse 虚拟供应商履约接口切换 API返回值
 // taobao.virtual.dsf.supplier.interface.switch
 //
 // 虚拟供应商履约接口切换
-type TaobaoVirtualDsfSupplierInterfaceSwitchAPIResponse struct {
+type TaobaovirtualdsfsupplierinterfaceswitchAPIResponse struct {
 	model.CommonResponse
-	TaobaoVirtualDsfSupplierInterfaceSwitchAPIResponseModel
+	TaobaovirtualdsfsupplierinterfaceswitchAPIResponseModel
 }
 
-// TaobaoVirtualDsfSupplierInterfaceSwitchAPIResponseModel is 虚拟供应商履约接口切换 成功返回结果
-type TaobaoVirtualDsfSupplierInterfaceSwitchAPIResponseModel struct {
+// TaobaovirtualdsfsupplierinterfaceswitchAPIResponseModel is 虚拟供应商履约接口切换 成功返回结果
+type TaobaovirtualdsfsupplierinterfaceswitchAPIResponseModel struct {
 	XMLName xml.Name `xml:"virtual_dsf_supplier_interface_switch_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

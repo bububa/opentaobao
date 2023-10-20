@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthDrugCodeErrorReportAPIResponse 码信息错误上报 API返回值
+// AlibabaalihealthdrugcodeerrorreportAPIResponse 码信息错误上报 API返回值
 // alibaba.alihealth.drug.code.error.report
 //
 // 提供码信息错误上报功能，用于数据校对
-type AlibabaAlihealthDrugCodeErrorReportAPIResponse struct {
+type AlibabaalihealthdrugcodeerrorreportAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihealthDrugCodeErrorReportAPIResponseModel
+	AlibabaalihealthdrugcodeerrorreportAPIResponseModel
 }
 
-// AlibabaAlihealthDrugCodeErrorReportAPIResponseModel is 码信息错误上报 成功返回结果
-type AlibabaAlihealthDrugCodeErrorReportAPIResponseModel struct {
+// AlibabaalihealthdrugcodeerrorreportAPIResponseModel is 码信息错误上报 成功返回结果
+type AlibabaalihealthdrugcodeerrorreportAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drug_code_error_report_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

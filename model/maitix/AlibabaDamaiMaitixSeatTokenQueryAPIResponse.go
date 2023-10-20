@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaDamaiMaitixSeatTokenQueryAPIResponse 分销商选座获取qtoken API返回值
+// AlibabadamaimaitixseattokenqueryAPIResponse 分销商选座获取qtoken API返回值
 // alibaba.damai.maitix.seat.token.query
 //
 // 选座分销，分销商查询token
-type AlibabaDamaiMaitixSeatTokenQueryAPIResponse struct {
+type AlibabadamaimaitixseattokenqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaDamaiMaitixSeatTokenQueryAPIResponseModel
+	AlibabadamaimaitixseattokenqueryAPIResponseModel
 }
 
-// AlibabaDamaiMaitixSeatTokenQueryAPIResponseModel is 分销商选座获取qtoken 成功返回结果
-type AlibabaDamaiMaitixSeatTokenQueryAPIResponseModel struct {
+// AlibabadamaimaitixseattokenqueryAPIResponseModel is 分销商选座获取qtoken 成功返回结果
+type AlibabadamaimaitixseattokenqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_damai_maitix_seat_token_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

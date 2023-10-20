@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihealth2"
 )
 
-// AlibabaHealthNrCepWarstqtyBatchupdate 批量更新ISV库存
+// Alibabahealthnrcepwarstqtybatchupdate 批量更新ISV库存
 // alibaba.health.nr.cep.warstqty.batchupdate
 //
 // 青岛医保服务-ISV批量更新孔雀翎中库存数据
-func AlibabaHealthNrCepWarstqtyBatchupdate(clt *core.SDKClient, req *alihealth2.AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest, session string) (*alihealth2.AlibabaHealthNrCepWarstqtyBatchupdateAPIResponse, error) {
-	var resp alihealth2.AlibabaHealthNrCepWarstqtyBatchupdateAPIResponse
+func Alibabahealthnrcepwarstqtybatchupdate(clt *core.SDKClient, req *alihealth2.AlibabahealthnrcepwarstqtybatchupdateAPIRequest, session string) (*alihealth2.AlibabahealthnrcepwarstqtybatchupdateAPIResponse, error) {
+	var resp alihealth2.AlibabahealthnrcepwarstqtybatchupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIworkMcMsgSendmobileAPIRequest 发送消息给手机用户 API请求
+// AlibabaiworkmcmsgsendmobileAPIRequest 发送消息给手机用户 API请求
 // alibaba.iwork.mc.msg.sendmobile
 //
 // 给手机用户发送对应操作结果的消息
-type AlibabaIworkMcMsgSendmobileAPIRequest struct {
+type AlibabaiworkmcmsgsendmobileAPIRequest struct {
 	model.Params
 	// 消息对象
 	_mobileReceiverMessageEvent *MobileReceiverMessageEvent
 }
 
-// NewAlibabaIworkMcMsgSendmobileRequest 初始化AlibabaIworkMcMsgSendmobileAPIRequest对象
-func NewAlibabaIworkMcMsgSendmobileRequest() *AlibabaIworkMcMsgSendmobileAPIRequest {
-	return &AlibabaIworkMcMsgSendmobileAPIRequest{
+// NewAlibabaiworkmcmsgsendmobileRequest 初始化AlibabaiworkmcmsgsendmobileAPIRequest对象
+func NewAlibabaiworkmcmsgsendmobileRequest() *AlibabaiworkmcmsgsendmobileAPIRequest {
+	return &AlibabaiworkmcmsgsendmobileAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaIworkMcMsgSendmobileAPIRequest) GetApiMethodName() string {
+func (r AlibabaiworkmcmsgsendmobileAPIRequest) GetApiMethodName() string {
 	return "alibaba.iwork.mc.msg.sendmobile"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaIworkMcMsgSendmobileAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaiworkmcmsgsendmobileAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaIworkMcMsgSendmobileAPIRequest) GetRawParams() model.Params {
+func (r AlibabaiworkmcmsgsendmobileAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetMobileReceiverMessageEvent is MobileReceiverMessageEvent Setter
 // 消息对象
-func (r *AlibabaIworkMcMsgSendmobileAPIRequest) SetMobileReceiverMessageEvent(_mobileReceiverMessageEvent *MobileReceiverMessageEvent) error {
+func (r *AlibabaiworkmcmsgsendmobileAPIRequest) SetMobileReceiverMessageEvent(_mobileReceiverMessageEvent *MobileReceiverMessageEvent) error {
 	r._mobileReceiverMessageEvent = _mobileReceiverMessageEvent
 	r.Set("mobile_receiver_message_event", _mobileReceiverMessageEvent)
 	return nil
 }
 
 // GetMobileReceiverMessageEvent MobileReceiverMessageEvent Getter
-func (r AlibabaIworkMcMsgSendmobileAPIRequest) GetMobileReceiverMessageEvent() *MobileReceiverMessageEvent {
+func (r AlibabaiworkmcmsgsendmobileAPIRequest) GetMobileReceiverMessageEvent() *MobileReceiverMessageEvent {
 	return r._mobileReceiverMessageEvent
 }

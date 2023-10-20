@@ -6,22 +6,22 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripTuanHotelItemInfoGetAPIResponse 宝贝信息查询接口 API返回值
+// AlitriptuanhoteliteminfogetAPIResponse 宝贝信息查询接口 API返回值
 // alitrip.tuan.hotel.item.info.get
 //
 // 商家查询发布的宝贝详情信息
-type AlitripTuanHotelItemInfoGetAPIResponse struct {
+type AlitriptuanhoteliteminfogetAPIResponse struct {
 	model.CommonResponse
-	AlitripTuanHotelItemInfoGetAPIResponseModel
+	AlitriptuanhoteliteminfogetAPIResponseModel
 }
 
-// AlitripTuanHotelItemInfoGetAPIResponseModel is 宝贝信息查询接口 成功返回结果
-type AlitripTuanHotelItemInfoGetAPIResponseModel struct {
+// AlitriptuanhoteliteminfogetAPIResponseModel is 宝贝信息查询接口 成功返回结果
+type AlitriptuanhoteliteminfogetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_tuan_hotel_item_info_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// sku列表
-	TuanItemSkuList []TopTuanItemSkuVOList `json:"tuan_item_sku_list,omitempty" xml:"tuan_item_sku_list>top_tuan_item_sku_vo_list,omitempty"`
+	TuanItemSkuList []TopTuanItemSkuVolist `json:"tuan_item_sku_list,omitempty" xml:"tuan_item_sku_list>top_tuan_item_sku_volist,omitempty"`
 	// 关联门店列表
 	Stores []TopStoreVo `json:"stores,omitempty" xml:"stores>top_store_vo,omitempty"`
 	// 关联POI列表

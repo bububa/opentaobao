@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/servicecenter"
 )
 
-// TmallCarLeaseConsume 汽车租赁核销
+// Tmallcarleaseconsume 汽车租赁核销
 // tmall.car.lease.consume
 //
 // 租赁公司回传信息，核销
-func TmallCarLeaseConsume(clt *core.SDKClient, req *servicecenter.TmallCarLeaseConsumeAPIRequest, session string) (*servicecenter.TmallCarLeaseConsumeAPIResponse, error) {
-	var resp servicecenter.TmallCarLeaseConsumeAPIResponse
+func Tmallcarleaseconsume(clt *core.SDKClient, req *servicecenter.TmallcarleaseconsumeAPIRequest, session string) (*servicecenter.TmallcarleaseconsumeAPIResponse, error) {
+	var resp servicecenter.TmallcarleaseconsumeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

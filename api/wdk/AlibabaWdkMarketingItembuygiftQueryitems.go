@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaWdkMarketingItembuygiftQueryitems 查询买赠活动下的商品
+// Alibabawdkmarketingitembuygiftqueryitems 查询买赠活动下的商品
 // alibaba.wdk.marketing.itembuygift.queryitems
 //
 // 查询买赠活动下的商品
-func AlibabaWdkMarketingItembuygiftQueryitems(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItembuygiftQueryitemsAPIRequest, session string) (*wdk.AlibabaWdkMarketingItembuygiftQueryitemsAPIResponse, error) {
-	var resp wdk.AlibabaWdkMarketingItembuygiftQueryitemsAPIResponse
+func Alibabawdkmarketingitembuygiftqueryitems(clt *core.SDKClient, req *wdk.AlibabawdkmarketingitembuygiftqueryitemsAPIRequest, session string) (*wdk.AlibabawdkmarketingitembuygiftqueryitemsAPIResponse, error) {
+	var resp wdk.AlibabawdkmarketingitembuygiftqueryitemsAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

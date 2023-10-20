@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoBillAccountsGetAPIRequest 查询费用科目信息(限自研商家) API请求
+// TaobaobillaccountsgetAPIRequest 查询费用科目信息(限自研商家) API请求
 // taobao.bill.accounts.get
 //
 // 查询费用账户信息
-type TaobaoBillAccountsGetAPIRequest struct {
+type TaobaobillaccountsgetAPIRequest struct {
 	model.Params
 	// 需要返回的字段
 	_fields []string
@@ -18,52 +18,52 @@ type TaobaoBillAccountsGetAPIRequest struct {
 	_aids []string
 }
 
-// NewTaobaoBillAccountsGetRequest 初始化TaobaoBillAccountsGetAPIRequest对象
-func NewTaobaoBillAccountsGetRequest() *TaobaoBillAccountsGetAPIRequest {
-	return &TaobaoBillAccountsGetAPIRequest{
+// NewTaobaobillaccountsgetRequest 初始化TaobaobillaccountsgetAPIRequest对象
+func NewTaobaobillaccountsgetRequest() *TaobaobillaccountsgetAPIRequest {
+	return &TaobaobillaccountsgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoBillAccountsGetAPIRequest) GetApiMethodName() string {
+func (r TaobaobillaccountsgetAPIRequest) GetApiMethodName() string {
 	return "taobao.bill.accounts.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoBillAccountsGetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaobillaccountsgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoBillAccountsGetAPIRequest) GetRawParams() model.Params {
+func (r TaobaobillaccountsgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetFields is Fields Setter
 // 需要返回的字段
-func (r *TaobaoBillAccountsGetAPIRequest) SetFields(_fields []string) error {
+func (r *TaobaobillaccountsgetAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
 	r.Set("fields", _fields)
 	return nil
 }
 
 // GetFields Fields Getter
-func (r TaobaoBillAccountsGetAPIRequest) GetFields() []string {
+func (r TaobaobillaccountsgetAPIRequest) GetFields() []string {
 	return r._fields
 }
 
 // SetAids is Aids Setter
 // 需要获取的科目ID
-func (r *TaobaoBillAccountsGetAPIRequest) SetAids(_aids []string) error {
+func (r *TaobaobillaccountsgetAPIRequest) SetAids(_aids []string) error {
 	r._aids = _aids
 	r.Set("aids", _aids)
 	return nil
 }
 
 // GetAids Aids Getter
-func (r TaobaoBillAccountsGetAPIRequest) GetAids() []string {
+func (r TaobaobillaccountsgetAPIRequest) GetAids() []string {
 	return r._aids
 }

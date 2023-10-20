@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihouseNewhomeProjectAdviserBindAPIRequest 置业顾问批量绑定楼盘 API请求
+// AlibabaalihousenewhomeprojectadviserbindAPIRequest 置业顾问批量绑定楼盘 API请求
 // alibaba.alihouse.newhome.project.adviser.bind
 //
 // 置业顾问批量绑定楼盘
-type AlibabaAlihouseNewhomeProjectAdviserBindAPIRequest struct {
+type AlibabaalihousenewhomeprojectadviserbindAPIRequest struct {
 	model.Params
 	// 对象
 	_projectAdviserBindDto *ProjectAdviserBindDto
@@ -18,52 +18,52 @@ type AlibabaAlihouseNewhomeProjectAdviserBindAPIRequest struct {
 	_status int64
 }
 
-// NewAlibabaAlihouseNewhomeProjectAdviserBindRequest 初始化AlibabaAlihouseNewhomeProjectAdviserBindAPIRequest对象
-func NewAlibabaAlihouseNewhomeProjectAdviserBindRequest() *AlibabaAlihouseNewhomeProjectAdviserBindAPIRequest {
-	return &AlibabaAlihouseNewhomeProjectAdviserBindAPIRequest{
+// NewAlibabaalihousenewhomeprojectadviserbindRequest 初始化AlibabaalihousenewhomeprojectadviserbindAPIRequest对象
+func NewAlibabaalihousenewhomeprojectadviserbindRequest() *AlibabaalihousenewhomeprojectadviserbindAPIRequest {
+	return &AlibabaalihousenewhomeprojectadviserbindAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihouseNewhomeProjectAdviserBindAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihousenewhomeprojectadviserbindAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihouse.newhome.project.adviser.bind"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeProjectAdviserBindAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihousenewhomeprojectadviserbindAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihouseNewhomeProjectAdviserBindAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihousenewhomeprojectadviserbindAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetProjectAdviserBindDto is ProjectAdviserBindDto Setter
 // 对象
-func (r *AlibabaAlihouseNewhomeProjectAdviserBindAPIRequest) SetProjectAdviserBindDto(_projectAdviserBindDto *ProjectAdviserBindDto) error {
+func (r *AlibabaalihousenewhomeprojectadviserbindAPIRequest) SetProjectAdviserBindDto(_projectAdviserBindDto *ProjectAdviserBindDto) error {
 	r._projectAdviserBindDto = _projectAdviserBindDto
 	r.Set("project_adviser_bind_dto", _projectAdviserBindDto)
 	return nil
 }
 
 // GetProjectAdviserBindDto ProjectAdviserBindDto Getter
-func (r AlibabaAlihouseNewhomeProjectAdviserBindAPIRequest) GetProjectAdviserBindDto() *ProjectAdviserBindDto {
+func (r AlibabaalihousenewhomeprojectadviserbindAPIRequest) GetProjectAdviserBindDto() *ProjectAdviserBindDto {
 	return r._projectAdviserBindDto
 }
 
 // SetStatus is Status Setter
 // 状态：0无效，1有效
-func (r *AlibabaAlihouseNewhomeProjectAdviserBindAPIRequest) SetStatus(_status int64) error {
+func (r *AlibabaalihousenewhomeprojectadviserbindAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
 	r.Set("status", _status)
 	return nil
 }
 
 // GetStatus Status Getter
-func (r AlibabaAlihouseNewhomeProjectAdviserBindAPIRequest) GetStatus() int64 {
+func (r AlibabaalihousenewhomeprojectadviserbindAPIRequest) GetStatus() int64 {
 	return r._status
 }

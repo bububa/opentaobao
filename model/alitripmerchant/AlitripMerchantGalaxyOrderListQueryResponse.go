@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripMerchantGalaxyOrderListQueryResponse 结构体
-type AlitripMerchantGalaxyOrderListQueryResponse struct {
+// AlitripmerchantgalaxyorderlistqueryResponse 结构体
+type AlitripmerchantgalaxyorderlistqueryResponse struct {
 	// 查询结果
 	OrderDtos []OrderDto `json:"order_dtos,omitempty" xml:"order_dtos>order_dto,omitempty"`
 	// 错误码

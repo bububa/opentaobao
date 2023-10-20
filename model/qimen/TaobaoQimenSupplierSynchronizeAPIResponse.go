@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoQimenSupplierSynchronizeAPIResponse 供应商同步接口 API返回值
+// TaobaoqimensuppliersynchronizeAPIResponse 供应商同步接口 API返回值
 // taobao.qimen.supplier.synchronize
 //
 // 这个接口用来同步供应商信息
-type TaobaoQimenSupplierSynchronizeAPIResponse struct {
+type TaobaoqimensuppliersynchronizeAPIResponse struct {
 	model.CommonResponse
-	TaobaoQimenSupplierSynchronizeAPIResponseModel
+	TaobaoqimensuppliersynchronizeAPIResponseModel
 }
 
-// TaobaoQimenSupplierSynchronizeAPIResponseModel is 供应商同步接口 成功返回结果
-type TaobaoQimenSupplierSynchronizeAPIResponseModel struct {
+// TaobaoqimensuppliersynchronizeAPIResponseModel is 供应商同步接口 成功返回结果
+type TaobaoqimensuppliersynchronizeAPIResponseModel struct {
 	XMLName xml.Name `xml:"qimen_supplier_synchronize_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	//
-	Response *TaobaoQimenSupplierSynchronizeResponse `json:"response,omitempty" xml:"response,omitempty"`
+	Response *TaobaoqimensuppliersynchronizeResponse `json:"response,omitempty" xml:"response,omitempty"`
 }

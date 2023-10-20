@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaAlihouseProjectActivitySyncResult 结构体
-type AlibabaAlihouseProjectActivitySyncResult struct {
+// AlibabaalihouseprojectactivitysyncResult 结构体
+type AlibabaalihouseprojectactivitysyncResult struct {
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// code

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIcbuQuotationPostAPIResponse 供应商提交报价 API返回值
+// AlibabaicbuquotationpostAPIResponse 供应商提交报价 API返回值
 // alibaba.icbu.quotation.post
 //
 // 供应商对RFQ进行报价
-type AlibabaIcbuQuotationPostAPIResponse struct {
+type AlibabaicbuquotationpostAPIResponse struct {
 	model.CommonResponse
-	AlibabaIcbuQuotationPostAPIResponseModel
+	AlibabaicbuquotationpostAPIResponseModel
 }
 
-// AlibabaIcbuQuotationPostAPIResponseModel is 供应商提交报价 成功返回结果
-type AlibabaIcbuQuotationPostAPIResponseModel struct {
+// AlibabaicbuquotationpostAPIResponseModel is 供应商提交报价 成功返回结果
+type AlibabaicbuquotationpostAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_icbu_quotation_post_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// AlibabaScbpEffectKeywordSingleGet 单个关键词效果报表
+// Alibabascbpeffectkeywordsingleget 单个关键词效果报表
 // alibaba.scbp.effect.keyword.single.get
 //
 // 单个关键词效果报表
-func AlibabaScbpEffectKeywordSingleGet(clt *core.SDKClient, req *scbp.AlibabaScbpEffectKeywordSingleGetAPIRequest, session string) (*scbp.AlibabaScbpEffectKeywordSingleGetAPIResponse, error) {
-	var resp scbp.AlibabaScbpEffectKeywordSingleGetAPIResponse
+func Alibabascbpeffectkeywordsingleget(clt *core.SDKClient, req *scbp.AlibabascbpeffectkeywordsinglegetAPIRequest, session string) (*scbp.AlibabascbpeffectkeywordsinglegetAPIResponse, error) {
+	var resp scbp.AlibabascbpeffectkeywordsinglegetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

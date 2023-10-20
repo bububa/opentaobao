@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaWdkTraceUrlGet 溯源url透出
+// Alibabawdktraceurlget 溯源url透出
 // alibaba.wdk.trace.url.get
 //
 // 根据shopId和skuCode返回商品溯源url
-func AlibabaWdkTraceUrlGet(clt *core.SDKClient, req *wdk.AlibabaWdkTraceUrlGetAPIRequest, session string) (*wdk.AlibabaWdkTraceUrlGetAPIResponse, error) {
-	var resp wdk.AlibabaWdkTraceUrlGetAPIResponse
+func Alibabawdktraceurlget(clt *core.SDKClient, req *wdk.AlibabawdktraceurlgetAPIRequest, session string) (*wdk.AlibabawdktraceurlgetAPIResponse, error) {
+	var resp wdk.AlibabawdktraceurlgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

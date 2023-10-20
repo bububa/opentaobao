@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripMerchantGalaxyActivityAddressAddResponse 结构体
-type AlitripMerchantGalaxyActivityAddressAddResponse struct {
+// AlitripmerchantgalaxyactivityaddressaddResponse 结构体
+type AlitripmerchantgalaxyactivityaddressaddResponse struct {
 	// 错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 错误代码

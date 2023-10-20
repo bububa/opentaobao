@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/mos"
 )
 
-// AlibabaMjMoscarnivalReceiveencrypt 根据加密手机号领券
+// Alibabamjmoscarnivalreceiveencrypt 根据加密手机号领券
 // alibaba.mj.moscarnival.receiveencrypt
 //
 // 根据加密手机号领券
-func AlibabaMjMoscarnivalReceiveencrypt(clt *core.SDKClient, req *mos.AlibabaMjMoscarnivalReceiveencryptAPIRequest, session string) (*mos.AlibabaMjMoscarnivalReceiveencryptAPIResponse, error) {
-	var resp mos.AlibabaMjMoscarnivalReceiveencryptAPIResponse
+func Alibabamjmoscarnivalreceiveencrypt(clt *core.SDKClient, req *mos.AlibabamjmoscarnivalreceiveencryptAPIRequest, session string) (*mos.AlibabamjmoscarnivalreceiveencryptAPIResponse, error) {
+	var resp mos.AlibabamjmoscarnivalreceiveencryptAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

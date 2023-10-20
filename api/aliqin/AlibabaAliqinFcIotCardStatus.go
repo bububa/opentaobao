@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/aliqin"
 )
 
-// AlibabaAliqinFcIotCardStatus 物联卡状态查询
+// AlibabaaliqinfciotcardStatus 物联卡状态查询
 // alibaba.aliqin.fc.iot.cardStatus
 //
 // 物联卡状态查询
-func AlibabaAliqinFcIotCardStatus(clt *core.SDKClient, req *aliqin.AlibabaAliqinFcIotCardStatusAPIRequest, session string) (*aliqin.AlibabaAliqinFcIotCardStatusAPIResponse, error) {
-	var resp aliqin.AlibabaAliqinFcIotCardStatusAPIResponse
+func AlibabaaliqinfciotcardStatus(clt *core.SDKClient, req *aliqin.AlibabaaliqinfciotcardStatusAPIRequest, session string) (*aliqin.AlibabaaliqinfciotcardStatusAPIResponse, error) {
+	var resp aliqin.AlibabaaliqinfciotcardStatusAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaJhsCommunityUserStatisticsAPIResponse 聚划算社群用户行为上报 API返回值
+// AlibabajhscommunityuserstatisticsAPIResponse 聚划算社群用户行为上报 API返回值
 // alibaba.jhs.community.user.statistics
 //
 // 聚划算社群用户行为上报
-type AlibabaJhsCommunityUserStatisticsAPIResponse struct {
+type AlibabajhscommunityuserstatisticsAPIResponse struct {
 	model.CommonResponse
-	AlibabaJhsCommunityUserStatisticsAPIResponseModel
+	AlibabajhscommunityuserstatisticsAPIResponseModel
 }
 
-// AlibabaJhsCommunityUserStatisticsAPIResponseModel is 聚划算社群用户行为上报 成功返回结果
-type AlibabaJhsCommunityUserStatisticsAPIResponseModel struct {
+// AlibabajhscommunityuserstatisticsAPIResponseModel is 聚划算社群用户行为上报 成功返回结果
+type AlibabajhscommunityuserstatisticsAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_jhs_community_user_statistics_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

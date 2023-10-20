@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alitripdivisions"
 )
 
-// AlitripPlatformDivisionsGetdivisionbyname 根据中文名称与行政区划级别查询行政区划数据
+// Alitripplatformdivisionsgetdivisionbyname 根据中文名称与行政区划级别查询行政区划数据
 // alitrip.platform.divisions.getdivisionbyname
 //
 // 根据中文名称与行政区划级别查询行政区划数据
-func AlitripPlatformDivisionsGetdivisionbyname(clt *core.SDKClient, req *alitripdivisions.AlitripPlatformDivisionsGetdivisionbynameAPIRequest, session string) (*alitripdivisions.AlitripPlatformDivisionsGetdivisionbynameAPIResponse, error) {
-	var resp alitripdivisions.AlitripPlatformDivisionsGetdivisionbynameAPIResponse
+func Alitripplatformdivisionsgetdivisionbyname(clt *core.SDKClient, req *alitripdivisions.AlitripplatformdivisionsgetdivisionbynameAPIRequest, session string) (*alitripdivisions.AlitripplatformdivisionsgetdivisionbynameAPIResponse, error) {
+	var resp alitripdivisions.AlitripplatformdivisionsgetdivisionbynameAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

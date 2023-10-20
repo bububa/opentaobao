@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOpenimTribeGetmembersAPIResponse OPENIM群成员获取 API返回值
+// TaobaoopenimtribegetmembersAPIResponse OPENIM群成员获取 API返回值
 // taobao.openim.tribe.getmembers
 //
 // OPENIM群成员获取
-type TaobaoOpenimTribeGetmembersAPIResponse struct {
+type TaobaoopenimtribegetmembersAPIResponse struct {
 	model.CommonResponse
-	TaobaoOpenimTribeGetmembersAPIResponseModel
+	TaobaoopenimtribegetmembersAPIResponseModel
 }
 
-// TaobaoOpenimTribeGetmembersAPIResponseModel is OPENIM群成员获取 成功返回结果
-type TaobaoOpenimTribeGetmembersAPIResponseModel struct {
+// TaobaoopenimtribegetmembersAPIResponseModel is OPENIM群成员获取 成功返回结果
+type TaobaoopenimtribegetmembersAPIResponseModel struct {
 	XMLName xml.Name `xml:"openim_tribe_getmembers_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

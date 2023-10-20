@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallCcfCrowdActivityuserUploadAPIResponse 品牌营销活动用户上传 API返回值
+// TmallccfcrowdactivityuseruploadAPIResponse 品牌营销活动用户上传 API返回值
 // tmall.ccf.crowd.activityuser.upload
 //
 // 搜集ISV的活动用户信息，将其沉淀为活动人群数据
-type TmallCcfCrowdActivityuserUploadAPIResponse struct {
+type TmallccfcrowdactivityuseruploadAPIResponse struct {
 	model.CommonResponse
-	TmallCcfCrowdActivityuserUploadAPIResponseModel
+	TmallccfcrowdactivityuseruploadAPIResponseModel
 }
 
-// TmallCcfCrowdActivityuserUploadAPIResponseModel is 品牌营销活动用户上传 成功返回结果
-type TmallCcfCrowdActivityuserUploadAPIResponseModel struct {
+// TmallccfcrowdactivityuseruploadAPIResponseModel is 品牌营销活动用户上传 成功返回结果
+type TmallccfcrowdactivityuseruploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_ccf_crowd_activityuser_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

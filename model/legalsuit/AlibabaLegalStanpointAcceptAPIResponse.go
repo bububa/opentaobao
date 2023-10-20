@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaLegalStanpointAcceptAPIResponse 采纳口径 API返回值
+// AlibabalegalstanpointacceptAPIResponse 采纳口径 API返回值
 // alibaba.legal.stanpoint.accept
 //
 // 采纳口径
-type AlibabaLegalStanpointAcceptAPIResponse struct {
+type AlibabalegalstanpointacceptAPIResponse struct {
 	model.CommonResponse
-	AlibabaLegalStanpointAcceptAPIResponseModel
+	AlibabalegalstanpointacceptAPIResponseModel
 }
 
-// AlibabaLegalStanpointAcceptAPIResponseModel is 采纳口径 成功返回结果
-type AlibabaLegalStanpointAcceptAPIResponseModel struct {
+// AlibabalegalstanpointacceptAPIResponseModel is 采纳口径 成功返回结果
+type AlibabalegalstanpointacceptAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_legal_stanpoint_accept_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wlb"
 )
 
-// TaobaoWlbTmsorderQuery 通过物流订单编号查询物流信息
+// Taobaowlbtmsorderquery 通过物流订单编号查询物流信息
 // taobao.wlb.tmsorder.query
 //
 // 通过物流订单编号分页查询物流信息
-func TaobaoWlbTmsorderQuery(clt *core.SDKClient, req *wlb.TaobaoWlbTmsorderQueryAPIRequest, session string) (*wlb.TaobaoWlbTmsorderQueryAPIResponse, error) {
-	var resp wlb.TaobaoWlbTmsorderQueryAPIResponse
+func Taobaowlbtmsorderquery(clt *core.SDKClient, req *wlb.TaobaowlbtmsorderqueryAPIRequest, session string) (*wlb.TaobaowlbtmsorderqueryAPIResponse, error) {
+	var resp wlb.TaobaowlbtmsorderqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

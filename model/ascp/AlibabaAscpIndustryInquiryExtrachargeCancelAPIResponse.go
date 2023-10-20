@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAscpIndustryInquiryExtrachargeCancelAPIResponse 送货入户并安装服务商取消增加费用 API返回值
+// AlibabaascpindustryinquiryextrachargecancelAPIResponse 送货入户并安装服务商取消增加费用 API返回值
 // alibaba.ascp.industry.inquiry.extracharge.cancel
 //
 // 送货入户并安装服务商取消增加费用
-type AlibabaAscpIndustryInquiryExtrachargeCancelAPIResponse struct {
+type AlibabaascpindustryinquiryextrachargecancelAPIResponse struct {
 	model.CommonResponse
-	AlibabaAscpIndustryInquiryExtrachargeCancelAPIResponseModel
+	AlibabaascpindustryinquiryextrachargecancelAPIResponseModel
 }
 
-// AlibabaAscpIndustryInquiryExtrachargeCancelAPIResponseModel is 送货入户并安装服务商取消增加费用 成功返回结果
-type AlibabaAscpIndustryInquiryExtrachargeCancelAPIResponseModel struct {
+// AlibabaascpindustryinquiryextrachargecancelAPIResponseModel is 送货入户并安装服务商取消增加费用 成功返回结果
+type AlibabaascpindustryinquiryextrachargecancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ascp_industry_inquiry_extracharge_cancel_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

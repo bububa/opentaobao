@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/qianniu"
 )
 
-// TaobaoQianniuTaskCancel 取消轻任务
+// Taobaoqianniutaskcancel 取消轻任务
 // taobao.qianniu.task.cancel
 //
 // 由任务发起者调用
-func TaobaoQianniuTaskCancel(clt *core.SDKClient, req *qianniu.TaobaoQianniuTaskCancelAPIRequest, session string) (*qianniu.TaobaoQianniuTaskCancelAPIResponse, error) {
-	var resp qianniu.TaobaoQianniuTaskCancelAPIResponse
+func Taobaoqianniutaskcancel(clt *core.SDKClient, req *qianniu.TaobaoqianniutaskcancelAPIRequest, session string) (*qianniu.TaobaoqianniutaskcancelAPIResponse, error) {
+	var resp qianniu.TaobaoqianniutaskcancelAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlscCrmOpenAssertVerifyAPIResponse 资产核销接口 API返回值
+// AlibabaalsccrmopenassertverifyAPIResponse 资产核销接口 API返回值
 // alibaba.alsc.crm.open.assert.verify
 //
 // 核销储值，积分，券资产
-type AlibabaAlscCrmOpenAssertVerifyAPIResponse struct {
+type AlibabaalsccrmopenassertverifyAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlscCrmOpenAssertVerifyAPIResponseModel
+	AlibabaalsccrmopenassertverifyAPIResponseModel
 }
 
-// AlibabaAlscCrmOpenAssertVerifyAPIResponseModel is 资产核销接口 成功返回结果
-type AlibabaAlscCrmOpenAssertVerifyAPIResponseModel struct {
+// AlibabaalsccrmopenassertverifyAPIResponseModel is 资产核销接口 成功返回结果
+type AlibabaalsccrmopenassertverifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_crm_open_assert_verify_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

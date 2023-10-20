@@ -1,7 +1,7 @@
 package alilabs
 
-// AlibabaAilabsIotDeviceStatusUpdateResult 结构体
-type AlibabaAilabsIotDeviceStatusUpdateResult struct {
+// AlibabaailabsiotdevicestatusupdateResult 结构体
+type AlibabaailabsiotdevicestatusupdateResult struct {
 	// 附加信息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 异常

@@ -1,7 +1,7 @@
 package cainiaolocker
 
-// CainiaoNborderfrontUserOutsideQueryoutsideuserStruct 结构体
-type CainiaoNborderfrontUserOutsideQueryoutsideuserStruct struct {
+// CainiaonborderfrontuseroutsidequeryoutsideuserStruct 结构体
+type CainiaonborderfrontuseroutsidequeryoutsideuserStruct struct {
 	// cpUserId
 	CpUserId string `json:"cp_user_id,omitempty" xml:"cp_user_id,omitempty"`
 	// cpCode

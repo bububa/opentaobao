@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTanxBiddingrefusesGetAPIResponse tanx竞价失败反馈api API返回值
+// TaobaotanxbiddingrefusesgetAPIResponse tanx竞价失败反馈api API返回值
 // taobao.tanx.biddingrefuses.get
 //
 // 竞价失败反馈根据创意id查询API提供
-type TaobaoTanxBiddingrefusesGetAPIResponse struct {
+type TaobaotanxbiddingrefusesgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoTanxBiddingrefusesGetAPIResponseModel
+	TaobaotanxbiddingrefusesgetAPIResponseModel
 }
 
-// TaobaoTanxBiddingrefusesGetAPIResponseModel is tanx竞价失败反馈api 成功返回结果
-type TaobaoTanxBiddingrefusesGetAPIResponseModel struct {
+// TaobaotanxbiddingrefusesgetAPIResponseModel is tanx竞价失败反馈api 成功返回结果
+type TaobaotanxbiddingrefusesgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tanx_biddingrefuses_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

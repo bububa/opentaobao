@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaCampusAclInsertroleAPIResponse 新增角色 API返回值
+// AlibabacampusaclinsertroleAPIResponse 新增角色 API返回值
 // alibaba.campus.acl.insertrole
 //
 // 新增角色
-type AlibabaCampusAclInsertroleAPIResponse struct {
+type AlibabacampusaclinsertroleAPIResponse struct {
 	model.CommonResponse
-	AlibabaCampusAclInsertroleAPIResponseModel
+	AlibabacampusaclinsertroleAPIResponseModel
 }
 
-// AlibabaCampusAclInsertroleAPIResponseModel is 新增角色 成功返回结果
-type AlibabaCampusAclInsertroleAPIResponseModel struct {
+// AlibabacampusaclinsertroleAPIResponseModel is 新增角色 成功返回结果
+type AlibabacampusaclinsertroleAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_campus_acl_insertrole_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

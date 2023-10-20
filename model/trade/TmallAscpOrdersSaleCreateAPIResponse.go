@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallAscpOrdersSaleCreateAPIResponse ASCP渠道中心销售单创建接口 API返回值
+// TmallascporderssalecreateAPIResponse ASCP渠道中心销售单创建接口 API返回值
 // tmall.ascp.orders.sale.create
 //
 // ASCP渠道中心销售单创建接口
-type TmallAscpOrdersSaleCreateAPIResponse struct {
+type TmallascporderssalecreateAPIResponse struct {
 	model.CommonResponse
-	TmallAscpOrdersSaleCreateAPIResponseModel
+	TmallascporderssalecreateAPIResponseModel
 }
 
-// TmallAscpOrdersSaleCreateAPIResponseModel is ASCP渠道中心销售单创建接口 成功返回结果
-type TmallAscpOrdersSaleCreateAPIResponseModel struct {
+// TmallascporderssalecreateAPIResponseModel is ASCP渠道中心销售单创建接口 成功返回结果
+type TmallascporderssalecreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_ascp_orders_sale_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
-	Result *TmallAscpOrdersSaleCreateResultDo `json:"result,omitempty" xml:"result,omitempty"`
+	Result *TmallascporderssalecreateResultDo `json:"result,omitempty" xml:"result,omitempty"`
 }

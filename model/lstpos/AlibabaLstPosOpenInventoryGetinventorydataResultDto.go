@@ -1,7 +1,7 @@
 package lstpos
 
-// AlibabaLstPosOpenInventoryGetinventorydataResultDto 结构体
-type AlibabaLstPosOpenInventoryGetinventorydataResultDto struct {
+// AlibabalstposopeninventorygetinventorydataResultDto 结构体
+type AlibabalstposopeninventorygetinventorydataResultDto struct {
 	// 接口具体返回的业务数据对象
 	ModuleList []InventoryDto `json:"module_list,omitempty" xml:"module_list>inventory_dto,omitempty"`
 	// 错误信息描述

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallcar"
 )
 
-// TmallAliautoReceiptStateUpdate 服务工单状态更新
+// Tmallaliautoreceiptstateupdate 服务工单状态更新
 // tmall.aliauto.receipt.state.update
 //
 // 二轮车服务工单状态更新
-func TmallAliautoReceiptStateUpdate(clt *core.SDKClient, req *tmallcar.TmallAliautoReceiptStateUpdateAPIRequest, session string) (*tmallcar.TmallAliautoReceiptStateUpdateAPIResponse, error) {
-	var resp tmallcar.TmallAliautoReceiptStateUpdateAPIResponse
+func Tmallaliautoreceiptstateupdate(clt *core.SDKClient, req *tmallcar.TmallaliautoreceiptstateupdateAPIRequest, session string) (*tmallcar.TmallaliautoreceiptstateupdateAPIResponse, error) {
+	var resp tmallcar.TmallaliautoreceiptstateupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

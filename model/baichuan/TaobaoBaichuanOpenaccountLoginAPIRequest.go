@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoBaichuanOpenaccountLoginAPIRequest 百川用户名密码登录 API请求
+// TaobaobaichuanopenaccountloginAPIRequest 百川用户名密码登录 API请求
 // taobao.baichuan.openaccount.login
 //
 // 百川用户名密码登录
-type TaobaoBaichuanOpenaccountLoginAPIRequest struct {
+type TaobaobaichuanopenaccountloginAPIRequest struct {
 	model.Params
 	// name
 	_name string
 }
 
-// NewTaobaoBaichuanOpenaccountLoginRequest 初始化TaobaoBaichuanOpenaccountLoginAPIRequest对象
-func NewTaobaoBaichuanOpenaccountLoginRequest() *TaobaoBaichuanOpenaccountLoginAPIRequest {
-	return &TaobaoBaichuanOpenaccountLoginAPIRequest{
+// NewTaobaobaichuanopenaccountloginRequest 初始化TaobaobaichuanopenaccountloginAPIRequest对象
+func NewTaobaobaichuanopenaccountloginRequest() *TaobaobaichuanopenaccountloginAPIRequest {
+	return &TaobaobaichuanopenaccountloginAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoBaichuanOpenaccountLoginAPIRequest) GetApiMethodName() string {
+func (r TaobaobaichuanopenaccountloginAPIRequest) GetApiMethodName() string {
 	return "taobao.baichuan.openaccount.login"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoBaichuanOpenaccountLoginAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaobaichuanopenaccountloginAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoBaichuanOpenaccountLoginAPIRequest) GetRawParams() model.Params {
+func (r TaobaobaichuanopenaccountloginAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetName is Name Setter
 // name
-func (r *TaobaoBaichuanOpenaccountLoginAPIRequest) SetName(_name string) error {
+func (r *TaobaobaichuanopenaccountloginAPIRequest) SetName(_name string) error {
 	r._name = _name
 	r.Set("name", _name)
 	return nil
 }
 
 // GetName Name Getter
-func (r TaobaoBaichuanOpenaccountLoginAPIRequest) GetName() string {
+func (r TaobaobaichuanopenaccountloginAPIRequest) GetName() string {
 	return r._name
 }

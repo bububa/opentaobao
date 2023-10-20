@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAlitripIeAgentOrderHkAPIResponse 【国际机票】手工预定回填PNR API返回值
+// TaobaoalitripieagentorderhkAPIResponse 【国际机票】手工预定回填PNR API返回值
 // taobao.alitrip.ie.agent.order.hk
 //
 // 代理商通过手工预定PNR，并回填。
-type TaobaoAlitripIeAgentOrderHkAPIResponse struct {
+type TaobaoalitripieagentorderhkAPIResponse struct {
 	model.CommonResponse
-	TaobaoAlitripIeAgentOrderHkAPIResponseModel
+	TaobaoalitripieagentorderhkAPIResponseModel
 }
 
-// TaobaoAlitripIeAgentOrderHkAPIResponseModel is 【国际机票】手工预定回填PNR 成功返回结果
-type TaobaoAlitripIeAgentOrderHkAPIResponseModel struct {
+// TaobaoalitripieagentorderhkAPIResponseModel is 【国际机票】手工预定回填PNR 成功返回结果
+type TaobaoalitripieagentorderhkAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_ie_agent_order_hk_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

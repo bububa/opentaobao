@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallCrmMemberFrontUnbindAPIResponse 品牌会员解绑 API返回值
+// TmallcrmmemberfrontunbindAPIResponse 品牌会员解绑 API返回值
 // tmall.crm.member.front.unbind
 //
 // 品牌会员解绑功能
-type TmallCrmMemberFrontUnbindAPIResponse struct {
+type TmallcrmmemberfrontunbindAPIResponse struct {
 	model.CommonResponse
-	TmallCrmMemberFrontUnbindAPIResponseModel
+	TmallcrmmemberfrontunbindAPIResponseModel
 }
 
-// TmallCrmMemberFrontUnbindAPIResponseModel is 品牌会员解绑 成功返回结果
-type TmallCrmMemberFrontUnbindAPIResponseModel struct {
+// TmallcrmmemberfrontunbindAPIResponseModel is 品牌会员解绑 成功返回结果
+type TmallcrmmemberfrontunbindAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_crm_member_front_unbind_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

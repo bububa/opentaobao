@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoLogisticsAppletModifydataSaveAPIResponse 物流小程序修改物流信息回传接口 API返回值
+// TaobaologisticsappletmodifydatasaveAPIResponse 物流小程序修改物流信息回传接口 API返回值
 // taobao.logistics.applet.modifydata.save
 //
 // 物流小程序修改物流信息回传接口
-type TaobaoLogisticsAppletModifydataSaveAPIResponse struct {
+type TaobaologisticsappletmodifydatasaveAPIResponse struct {
 	model.CommonResponse
-	TaobaoLogisticsAppletModifydataSaveAPIResponseModel
+	TaobaologisticsappletmodifydatasaveAPIResponseModel
 }
 
-// TaobaoLogisticsAppletModifydataSaveAPIResponseModel is 物流小程序修改物流信息回传接口 成功返回结果
-type TaobaoLogisticsAppletModifydataSaveAPIResponseModel struct {
+// TaobaologisticsappletmodifydatasaveAPIResponseModel is 物流小程序修改物流信息回传接口 成功返回结果
+type TaobaologisticsappletmodifydatasaveAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_applet_modifydata_save_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

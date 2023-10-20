@@ -1,7 +1,7 @@
 package aliqin
 
-// AlibabaAliqinFcIvrNumCallResult 结构体
-type AlibabaAliqinFcIvrNumCallResult struct {
+// AlibabaaliqinfcivrnumcallResult 结构体
+type AlibabaaliqinfcivrnumcallResult struct {
 	// model
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// code

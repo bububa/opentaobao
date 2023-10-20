@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSimbaReportCityGetAPIRequest 获取城市维度报表 API请求
+// TaobaosimbareportcitygetAPIRequest 获取城市维度报表 API请求
 // taobao.simba.report.city.get
 //
 // 获取城市维度报表
-type TaobaoSimbaReportCityGetAPIRequest struct {
+type TaobaosimbareportcitygetAPIRequest struct {
 	model.Params
 	// 昵称
 	_nick string
@@ -22,78 +22,78 @@ type TaobaoSimbaReportCityGetAPIRequest struct {
 	_campaignId string
 }
 
-// NewTaobaoSimbaReportCityGetRequest 初始化TaobaoSimbaReportCityGetAPIRequest对象
-func NewTaobaoSimbaReportCityGetRequest() *TaobaoSimbaReportCityGetAPIRequest {
-	return &TaobaoSimbaReportCityGetAPIRequest{
+// NewTaobaosimbareportcitygetRequest 初始化TaobaosimbareportcitygetAPIRequest对象
+func NewTaobaosimbareportcitygetRequest() *TaobaosimbareportcitygetAPIRequest {
+	return &TaobaosimbareportcitygetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaReportCityGetAPIRequest) GetApiMethodName() string {
+func (r TaobaosimbareportcitygetAPIRequest) GetApiMethodName() string {
 	return "taobao.simba.report.city.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaReportCityGetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaosimbareportcitygetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoSimbaReportCityGetAPIRequest) GetRawParams() model.Params {
+func (r TaobaosimbareportcitygetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetNick is Nick Setter
 // 昵称
-func (r *TaobaoSimbaReportCityGetAPIRequest) SetNick(_nick string) error {
+func (r *TaobaosimbareportcitygetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
 	r.Set("nick", _nick)
 	return nil
 }
 
 // GetNick Nick Getter
-func (r TaobaoSimbaReportCityGetAPIRequest) GetNick() string {
+func (r TaobaosimbareportcitygetAPIRequest) GetNick() string {
 	return r._nick
 }
 
 // SetTheDate is TheDate Setter
 // 时间
-func (r *TaobaoSimbaReportCityGetAPIRequest) SetTheDate(_theDate string) error {
+func (r *TaobaosimbareportcitygetAPIRequest) SetTheDate(_theDate string) error {
 	r._theDate = _theDate
 	r.Set("the_date", _theDate)
 	return nil
 }
 
 // GetTheDate TheDate Getter
-func (r TaobaoSimbaReportCityGetAPIRequest) GetTheDate() string {
+func (r TaobaosimbareportcitygetAPIRequest) GetTheDate() string {
 	return r._theDate
 }
 
 // SetHour is Hour Setter
 // 当前小时
-func (r *TaobaoSimbaReportCityGetAPIRequest) SetHour(_hour string) error {
+func (r *TaobaosimbareportcitygetAPIRequest) SetHour(_hour string) error {
 	r._hour = _hour
 	r.Set("hour", _hour)
 	return nil
 }
 
 // GetHour Hour Getter
-func (r TaobaoSimbaReportCityGetAPIRequest) GetHour() string {
+func (r TaobaosimbareportcitygetAPIRequest) GetHour() string {
 	return r._hour
 }
 
 // SetCampaignId is CampaignId Setter
 // 计划id
-func (r *TaobaoSimbaReportCityGetAPIRequest) SetCampaignId(_campaignId string) error {
+func (r *TaobaosimbareportcitygetAPIRequest) SetCampaignId(_campaignId string) error {
 	r._campaignId = _campaignId
 	r.Set("campaign_id", _campaignId)
 	return nil
 }
 
 // GetCampaignId CampaignId Getter
-func (r TaobaoSimbaReportCityGetAPIRequest) GetCampaignId() string {
+func (r TaobaosimbareportcitygetAPIRequest) GetCampaignId() string {
 	return r._campaignId
 }

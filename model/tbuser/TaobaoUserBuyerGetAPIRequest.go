@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoUserBuyerGetAPIRequest 查询买家信息API API请求
+// TaobaouserbuyergetAPIRequest 查询买家信息API API请求
 // taobao.user.buyer.get
 //
 // 查询买家信息API，只能买家类应用调用。
-type TaobaoUserBuyerGetAPIRequest struct {
+type TaobaouserbuyergetAPIRequest struct {
 	model.Params
 	// 只返回nick, avatar参数
 	_fields string
 }
 
-// NewTaobaoUserBuyerGetRequest 初始化TaobaoUserBuyerGetAPIRequest对象
-func NewTaobaoUserBuyerGetRequest() *TaobaoUserBuyerGetAPIRequest {
-	return &TaobaoUserBuyerGetAPIRequest{
+// NewTaobaouserbuyergetRequest 初始化TaobaouserbuyergetAPIRequest对象
+func NewTaobaouserbuyergetRequest() *TaobaouserbuyergetAPIRequest {
+	return &TaobaouserbuyergetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoUserBuyerGetAPIRequest) GetApiMethodName() string {
+func (r TaobaouserbuyergetAPIRequest) GetApiMethodName() string {
 	return "taobao.user.buyer.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoUserBuyerGetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaouserbuyergetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoUserBuyerGetAPIRequest) GetRawParams() model.Params {
+func (r TaobaouserbuyergetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetFields is Fields Setter
 // 只返回nick, avatar参数
-func (r *TaobaoUserBuyerGetAPIRequest) SetFields(_fields string) error {
+func (r *TaobaouserbuyergetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
 	r.Set("fields", _fields)
 	return nil
 }
 
 // GetFields Fields Getter
-func (r TaobaoUserBuyerGetAPIRequest) GetFields() string {
+func (r TaobaouserbuyergetAPIRequest) GetFields() string {
 	return r._fields
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YoukuCgameScoreReportAPIResponse 云游戏战绩上传 API返回值
+// YoukucgamescorereportAPIResponse 云游戏战绩上传 API返回值
 // youku.cgame.score.report
 //
 // 云游戏战绩上传API
-type YoukuCgameScoreReportAPIResponse struct {
+type YoukucgamescorereportAPIResponse struct {
 	model.CommonResponse
-	YoukuCgameScoreReportAPIResponseModel
+	YoukucgamescorereportAPIResponseModel
 }
 
-// YoukuCgameScoreReportAPIResponseModel is 云游戏战绩上传 成功返回结果
-type YoukuCgameScoreReportAPIResponseModel struct {
+// YoukucgamescorereportAPIResponseModel is 云游戏战绩上传 成功返回结果
+type YoukucgamescorereportAPIResponseModel struct {
 	XMLName xml.Name `xml:"youku_cgame_score_report_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

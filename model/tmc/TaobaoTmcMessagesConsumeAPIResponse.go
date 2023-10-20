@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTmcMessagesConsumeAPIResponse 消费多条消息 API返回值
+// TaobaotmcmessagesconsumeAPIResponse 消费多条消息 API返回值
 // taobao.tmc.messages.consume
 //
 // 消费多条消息。消费时如果没有返回消息，建议做控制，不要一直调api，浪费应用的流量。如对程序做好优化，若没有消息则，sleep 100ms 等。
-type TaobaoTmcMessagesConsumeAPIResponse struct {
+type TaobaotmcmessagesconsumeAPIResponse struct {
 	model.CommonResponse
-	TaobaoTmcMessagesConsumeAPIResponseModel
+	TaobaotmcmessagesconsumeAPIResponseModel
 }
 
-// TaobaoTmcMessagesConsumeAPIResponseModel is 消费多条消息 成功返回结果
-type TaobaoTmcMessagesConsumeAPIResponseModel struct {
+// TaobaotmcmessagesconsumeAPIResponseModel is 消费多条消息 成功返回结果
+type TaobaotmcmessagesconsumeAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmc_messages_consume_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

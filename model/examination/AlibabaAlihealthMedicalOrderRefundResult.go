@@ -1,7 +1,7 @@
 package examination
 
-// AlibabaAlihealthMedicalOrderRefundResult 结构体
-type AlibabaAlihealthMedicalOrderRefundResult struct {
+// AlibabaalihealthmedicalorderrefundResult 结构体
+type AlibabaalihealthmedicalorderrefundResult struct {
 	// SUCCESS:成功; FAIL:失败; UNKNOWN:未知;
 	ResultStatus string `json:"result_status,omitempty" xml:"result_status,omitempty"`
 	// 结果码

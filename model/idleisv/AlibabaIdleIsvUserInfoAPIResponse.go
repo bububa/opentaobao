@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIdleIsvUserInfoAPIResponse 闲鱼用户信息查询接口 API返回值
+// AlibabaidleisvuserinfoAPIResponse 闲鱼用户信息查询接口 API返回值
 // alibaba.idle.isv.user.info
 //
 // 闲鱼用户信息查询接口
-type AlibabaIdleIsvUserInfoAPIResponse struct {
+type AlibabaidleisvuserinfoAPIResponse struct {
 	model.CommonResponse
-	AlibabaIdleIsvUserInfoAPIResponseModel
+	AlibabaidleisvuserinfoAPIResponseModel
 }
 
-// AlibabaIdleIsvUserInfoAPIResponseModel is 闲鱼用户信息查询接口 成功返回结果
-type AlibabaIdleIsvUserInfoAPIResponseModel struct {
+// AlibabaidleisvuserinfoAPIResponseModel is 闲鱼用户信息查询接口 成功返回结果
+type AlibabaidleisvuserinfoAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_idle_isv_user_info_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

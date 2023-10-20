@@ -1,7 +1,7 @@
 package smartstore
 
-// TmallPopupstoreActivityDeviceQueryResult 结构体
-type TmallPopupstoreActivityDeviceQueryResult struct {
+// TmallpopupstoreactivitydevicequeryResult 结构体
+type TmallpopupstoreactivitydevicequeryResult struct {
 	// 门店列表
 	StoreList []Storelist `json:"store_list,omitempty" xml:"store_list>storelist,omitempty"`
 	// 参与活动的品牌名，逗号分割

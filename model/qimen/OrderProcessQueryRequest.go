@@ -17,5 +17,5 @@ type OrderProcessQueryRequest struct {
 	// 货主编码
 	OwnerCode string `json:"ownerCode,omitempty" xml:"ownerCode,omitempty"`
 	// 扩展属性
-	ExtendProps *TaobaoQimenOrderprocessQueryMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+	ExtendProps *TaobaoqimenorderprocessqueryMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

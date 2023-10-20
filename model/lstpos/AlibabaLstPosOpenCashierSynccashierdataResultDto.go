@@ -1,7 +1,7 @@
 package lstpos
 
-// AlibabaLstPosOpenCashierSynccashierdataResultDto 结构体
-type AlibabaLstPosOpenCashierSynccashierdataResultDto struct {
+// AlibabalstposopencashiersynccashierdataResultDto 结构体
+type AlibabalstposopencashiersynccashierdataResultDto struct {
 	// 单个订单处理结果
 	ModuleList []ErrorResult `json:"module_list,omitempty" xml:"module_list>error_result,omitempty"`
 	// 错误消息

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallIndustryBabyAuthprofileBackflowAPIResponse 孕校云回流档案 API返回值
+// TmallindustrybabyauthprofilebackflowAPIResponse 孕校云回流档案 API返回值
 // tmall.industry.baby.authprofile.backflow
 //
 // 孕校云回流档案
-type TmallIndustryBabyAuthprofileBackflowAPIResponse struct {
+type TmallindustrybabyauthprofilebackflowAPIResponse struct {
 	model.CommonResponse
-	TmallIndustryBabyAuthprofileBackflowAPIResponseModel
+	TmallindustrybabyauthprofilebackflowAPIResponseModel
 }
 
-// TmallIndustryBabyAuthprofileBackflowAPIResponseModel is 孕校云回流档案 成功返回结果
-type TmallIndustryBabyAuthprofileBackflowAPIResponseModel struct {
+// TmallindustrybabyauthprofilebackflowAPIResponseModel is 孕校云回流档案 成功返回结果
+type TmallindustrybabyauthprofilebackflowAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_industry_baby_authprofile_backflow_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

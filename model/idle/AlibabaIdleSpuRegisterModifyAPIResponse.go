@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIdleSpuRegisterModifyAPIResponse 服务商spu挂载接口 API返回值
+// AlibabaidlespuregistermodifyAPIResponse 服务商spu挂载接口 API返回值
 // alibaba.idle.spu.register.modify
 //
 // 闲鱼服务商通过此接口进行spu挂载，指明自己支持对该spu的服务(回收、验货等)
-type AlibabaIdleSpuRegisterModifyAPIResponse struct {
+type AlibabaidlespuregistermodifyAPIResponse struct {
 	model.CommonResponse
-	AlibabaIdleSpuRegisterModifyAPIResponseModel
+	AlibabaidlespuregistermodifyAPIResponseModel
 }
 
-// AlibabaIdleSpuRegisterModifyAPIResponseModel is 服务商spu挂载接口 成功返回结果
-type AlibabaIdleSpuRegisterModifyAPIResponseModel struct {
+// AlibabaidlespuregistermodifyAPIResponseModel is 服务商spu挂载接口 成功返回结果
+type AlibabaidlespuregistermodifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_idle_spu_register_modify_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// result
-	Result *AlibabaIdleSpuRegisterModifyResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaidlespuregistermodifyResult `json:"result,omitempty" xml:"result,omitempty"`
 }

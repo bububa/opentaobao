@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/qimen"
 )
 
-// TaobaoQimenTransferorderCreate 调拨单创建
+// Taobaoqimentransferordercreate 调拨单创建
 // taobao.qimen.transferorder.create
 //
 // 调拨单创建
-func TaobaoQimenTransferorderCreate(clt *core.SDKClient, req *qimen.TaobaoQimenTransferorderCreateAPIRequest, session string) (*qimen.TaobaoQimenTransferorderCreateAPIResponse, error) {
-	var resp qimen.TaobaoQimenTransferorderCreateAPIResponse
+func Taobaoqimentransferordercreate(clt *core.SDKClient, req *qimen.TaobaoqimentransferordercreateAPIRequest, session string) (*qimen.TaobaoqimentransferordercreateAPIResponse, error) {
+	var resp qimen.TaobaoqimentransferordercreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

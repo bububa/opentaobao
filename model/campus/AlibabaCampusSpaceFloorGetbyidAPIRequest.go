@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaCampusSpaceFloorGetbyidAPIRequest 根据id获取楼层 API请求
+// AlibabacampusspacefloorgetbyidAPIRequest 根据id获取楼层 API请求
 // alibaba.campus.space.floor.getbyid
 //
 // 根据id获取楼层
-type AlibabaCampusSpaceFloorGetbyidAPIRequest struct {
+type AlibabacampusspacefloorgetbyidAPIRequest struct {
 	model.Params
 	// 环境上下文
 	_context *WorkBenchContext
@@ -18,52 +18,52 @@ type AlibabaCampusSpaceFloorGetbyidAPIRequest struct {
 	_id int64
 }
 
-// NewAlibabaCampusSpaceFloorGetbyidRequest 初始化AlibabaCampusSpaceFloorGetbyidAPIRequest对象
-func NewAlibabaCampusSpaceFloorGetbyidRequest() *AlibabaCampusSpaceFloorGetbyidAPIRequest {
-	return &AlibabaCampusSpaceFloorGetbyidAPIRequest{
+// NewAlibabacampusspacefloorgetbyidRequest 初始化AlibabacampusspacefloorgetbyidAPIRequest对象
+func NewAlibabacampusspacefloorgetbyidRequest() *AlibabacampusspacefloorgetbyidAPIRequest {
+	return &AlibabacampusspacefloorgetbyidAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaCampusSpaceFloorGetbyidAPIRequest) GetApiMethodName() string {
+func (r AlibabacampusspacefloorgetbyidAPIRequest) GetApiMethodName() string {
 	return "alibaba.campus.space.floor.getbyid"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaCampusSpaceFloorGetbyidAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabacampusspacefloorgetbyidAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaCampusSpaceFloorGetbyidAPIRequest) GetRawParams() model.Params {
+func (r AlibabacampusspacefloorgetbyidAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetContext is Context Setter
 // 环境上下文
-func (r *AlibabaCampusSpaceFloorGetbyidAPIRequest) SetContext(_context *WorkBenchContext) error {
+func (r *AlibabacampusspacefloorgetbyidAPIRequest) SetContext(_context *WorkBenchContext) error {
 	r._context = _context
 	r.Set("context", _context)
 	return nil
 }
 
 // GetContext Context Getter
-func (r AlibabaCampusSpaceFloorGetbyidAPIRequest) GetContext() *WorkBenchContext {
+func (r AlibabacampusspacefloorgetbyidAPIRequest) GetContext() *WorkBenchContext {
 	return r._context
 }
 
 // SetId is Id Setter
 // 楼层id
-func (r *AlibabaCampusSpaceFloorGetbyidAPIRequest) SetId(_id int64) error {
+func (r *AlibabacampusspacefloorgetbyidAPIRequest) SetId(_id int64) error {
 	r._id = _id
 	r.Set("id", _id)
 	return nil
 }
 
 // GetId Id Getter
-func (r AlibabaCampusSpaceFloorGetbyidAPIRequest) GetId() int64 {
+func (r AlibabacampusspacefloorgetbyidAPIRequest) GetId() int64 {
 	return r._id
 }

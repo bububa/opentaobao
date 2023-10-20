@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest 德比付费会员卡查询 API请求
+// AlitripmerchantgalaxyderbymembervouchercardqueryAPIRequest 德比付费会员卡查询 API请求
 // alitrip.merchant.galaxy.derby.member.voucher.card.query
 //
 // 德比付费会员卡查询
-type AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest struct {
+type AlitripmerchantgalaxyderbymembervouchercardqueryAPIRequest struct {
 	model.Params
 	// 1
 	_tenantKey string
@@ -20,65 +20,65 @@ type AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest struct {
 	_memberVoucherCardID string
 }
 
-// NewAlitripMerchantGalaxyDerbyMemberVoucherCardQueryRequest 初始化AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest对象
-func NewAlitripMerchantGalaxyDerbyMemberVoucherCardQueryRequest() *AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest {
-	return &AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest{
+// NewAlitripmerchantgalaxyderbymembervouchercardqueryRequest 初始化AlitripmerchantgalaxyderbymembervouchercardqueryAPIRequest对象
+func NewAlitripmerchantgalaxyderbymembervouchercardqueryRequest() *AlitripmerchantgalaxyderbymembervouchercardqueryAPIRequest {
+	return &AlitripmerchantgalaxyderbymembervouchercardqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest) GetApiMethodName() string {
+func (r AlitripmerchantgalaxyderbymembervouchercardqueryAPIRequest) GetApiMethodName() string {
 	return "alitrip.merchant.galaxy.derby.member.voucher.card.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripmerchantgalaxyderbymembervouchercardqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest) GetRawParams() model.Params {
+func (r AlitripmerchantgalaxyderbymembervouchercardqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTenantKey is TenantKey Setter
 // 1
-func (r *AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest) SetTenantKey(_tenantKey string) error {
+func (r *AlitripmerchantgalaxyderbymembervouchercardqueryAPIRequest) SetTenantKey(_tenantKey string) error {
 	r._tenantKey = _tenantKey
 	r.Set("tenant_key", _tenantKey)
 	return nil
 }
 
 // GetTenantKey TenantKey Getter
-func (r AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest) GetTenantKey() string {
+func (r AlitripmerchantgalaxyderbymembervouchercardqueryAPIRequest) GetTenantKey() string {
 	return r._tenantKey
 }
 
 // SetToken is Token Setter
 // 1
-func (r *AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest) SetToken(_token string) error {
+func (r *AlitripmerchantgalaxyderbymembervouchercardqueryAPIRequest) SetToken(_token string) error {
 	r._token = _token
 	r.Set("token", _token)
 	return nil
 }
 
 // GetToken Token Getter
-func (r AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest) GetToken() string {
+func (r AlitripmerchantgalaxyderbymembervouchercardqueryAPIRequest) GetToken() string {
 	return r._token
 }
 
 // SetMemberVoucherCardID is MemberVoucherCardID Setter
 // 1
-func (r *AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest) SetMemberVoucherCardID(_memberVoucherCardID string) error {
+func (r *AlitripmerchantgalaxyderbymembervouchercardqueryAPIRequest) SetMemberVoucherCardID(_memberVoucherCardID string) error {
 	r._memberVoucherCardID = _memberVoucherCardID
 	r.Set("member_voucher_card_i_d", _memberVoucherCardID)
 	return nil
 }
 
 // GetMemberVoucherCardID MemberVoucherCardID Getter
-func (r AlitripMerchantGalaxyDerbyMemberVoucherCardQueryAPIRequest) GetMemberVoucherCardID() string {
+func (r AlitripmerchantgalaxyderbymembervouchercardqueryAPIRequest) GetMemberVoucherCardID() string {
 	return r._memberVoucherCardID
 }

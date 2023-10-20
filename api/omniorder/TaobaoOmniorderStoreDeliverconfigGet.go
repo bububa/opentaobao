@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/omniorder"
 )
 
-// TaobaoOmniorderStoreDeliverconfigGet 查询门店发货配置内容
+// Taobaoomniorderstoredeliverconfigget 查询门店发货配置内容
 // taobao.omniorder.store.deliverconfig.get
 //
 // 查询门店发货配置内容
-func TaobaoOmniorderStoreDeliverconfigGet(clt *core.SDKClient, req *omniorder.TaobaoOmniorderStoreDeliverconfigGetAPIRequest, session string) (*omniorder.TaobaoOmniorderStoreDeliverconfigGetAPIResponse, error) {
-	var resp omniorder.TaobaoOmniorderStoreDeliverconfigGetAPIResponse
+func Taobaoomniorderstoredeliverconfigget(clt *core.SDKClient, req *omniorder.TaobaoomniorderstoredeliverconfiggetAPIRequest, session string) (*omniorder.TaobaoomniorderstoredeliverconfiggetAPIResponse, error) {
+	var resp omniorder.TaobaoomniorderstoredeliverconfiggetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

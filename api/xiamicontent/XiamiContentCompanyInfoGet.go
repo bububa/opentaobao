@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/xiamicontent"
 )
 
-// XiamiContentCompanyInfoGet 获取厂牌信息
+// Xiamicontentcompanyinfoget 获取厂牌信息
 // xiami.content.company.info.get
 //
 // 获取厂牌信息
-func XiamiContentCompanyInfoGet(clt *core.SDKClient, req *xiamicontent.XiamiContentCompanyInfoGetAPIRequest, session string) (*xiamicontent.XiamiContentCompanyInfoGetAPIResponse, error) {
-	var resp xiamicontent.XiamiContentCompanyInfoGetAPIResponse
+func Xiamicontentcompanyinfoget(clt *core.SDKClient, req *xiamicontent.XiamicontentcompanyinfogetAPIRequest, session string) (*xiamicontent.XiamicontentcompanyinfogetAPIResponse, error) {
+	var resp xiamicontent.XiamicontentcompanyinfogetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

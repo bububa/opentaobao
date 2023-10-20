@@ -1,7 +1,7 @@
 package wdk
 
-// WdkRefundToInsuranceBO 结构体
-type WdkRefundToInsuranceBO struct {
+// WdkRefundToInsuranceBo 结构体
+type WdkRefundToInsuranceBo struct {
 	// 退货原因
 	RefundReason string `json:"refund_reason,omitempty" xml:"refund_reason,omitempty"`
 	// 退款完成时间

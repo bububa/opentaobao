@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeResult 结构体
-type AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeResult struct {
+// AlibabaalihealthdrugtracetoplsydqueryupbillcodeResult 结构体
+type AlibabaalihealthdrugtracetoplsydqueryupbillcodeResult struct {
 	// model
 	ModelList []BillUpstreamDto `json:"model_list,omitempty" xml:"model_list>bill_upstream_dto,omitempty"`
 	// msgInfo

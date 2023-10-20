@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallCarOrderQueryAPIRequest 天猫汽车整车订单查询 API请求
+// TmallcarorderqueryAPIRequest 天猫汽车整车订单查询 API请求
 // tmall.car.order.query
 //
 // 天猫汽车商家通过该接口查看整车订单信息
-type TmallCarOrderQueryAPIRequest struct {
+type TmallcarorderqueryAPIRequest struct {
 	model.Params
 	// 入参
 	_topOrderQuery *TopOrderQuery
 }
 
-// NewTmallCarOrderQueryRequest 初始化TmallCarOrderQueryAPIRequest对象
-func NewTmallCarOrderQueryRequest() *TmallCarOrderQueryAPIRequest {
-	return &TmallCarOrderQueryAPIRequest{
+// NewTmallcarorderqueryRequest 初始化TmallcarorderqueryAPIRequest对象
+func NewTmallcarorderqueryRequest() *TmallcarorderqueryAPIRequest {
+	return &TmallcarorderqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallCarOrderQueryAPIRequest) GetApiMethodName() string {
+func (r TmallcarorderqueryAPIRequest) GetApiMethodName() string {
 	return "tmall.car.order.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallCarOrderQueryAPIRequest) GetApiParams(params url.Values) {
+func (r TmallcarorderqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallCarOrderQueryAPIRequest) GetRawParams() model.Params {
+func (r TmallcarorderqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTopOrderQuery is TopOrderQuery Setter
 // 入参
-func (r *TmallCarOrderQueryAPIRequest) SetTopOrderQuery(_topOrderQuery *TopOrderQuery) error {
+func (r *TmallcarorderqueryAPIRequest) SetTopOrderQuery(_topOrderQuery *TopOrderQuery) error {
 	r._topOrderQuery = _topOrderQuery
 	r.Set("top_order_query", _topOrderQuery)
 	return nil
 }
 
 // GetTopOrderQuery TopOrderQuery Getter
-func (r TmallCarOrderQueryAPIRequest) GetTopOrderQuery() *TopOrderQuery {
+func (r TmallcarorderqueryAPIRequest) GetTopOrderQuery() *TopOrderQuery {
 	return r._topOrderQuery
 }

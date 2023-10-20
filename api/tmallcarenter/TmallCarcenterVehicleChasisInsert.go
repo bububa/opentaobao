@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallcarenter"
 )
 
-// TmallCarcenterVehicleChasisInsert EPC车型底盘压缩库新增接口
+// Tmallcarcentervehiclechasisinsert EPC车型底盘压缩库新增接口
 // tmall.carcenter.vehicle.chasis.insert
 //
 // EPC车型底盘压缩库新增接口
-func TmallCarcenterVehicleChasisInsert(clt *core.SDKClient, req *tmallcarenter.TmallCarcenterVehicleChasisInsertAPIRequest, session string) (*tmallcarenter.TmallCarcenterVehicleChasisInsertAPIResponse, error) {
-	var resp tmallcarenter.TmallCarcenterVehicleChasisInsertAPIResponse
+func Tmallcarcentervehiclechasisinsert(clt *core.SDKClient, req *tmallcarenter.TmallcarcentervehiclechasisinsertAPIRequest, session string) (*tmallcarenter.TmallcarcentervehiclechasisinsertAPIResponse, error) {
+	var resp tmallcarenter.TmallcarcentervehiclechasisinsertAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

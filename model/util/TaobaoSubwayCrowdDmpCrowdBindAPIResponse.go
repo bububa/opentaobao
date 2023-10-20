@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSubwayCrowdDmpCrowdBindAPIResponse 直通车绑定达摩盘人群 API返回值
+// TaobaosubwaycrowddmpcrowdbindAPIResponse 直通车绑定达摩盘人群 API返回值
 // taobao.subway.crowd.dmp.crowd.bind
 //
 // 直通车绑定达摩盘人群
-type TaobaoSubwayCrowdDmpCrowdBindAPIResponse struct {
+type TaobaosubwaycrowddmpcrowdbindAPIResponse struct {
 	model.CommonResponse
-	TaobaoSubwayCrowdDmpCrowdBindAPIResponseModel
+	TaobaosubwaycrowddmpcrowdbindAPIResponseModel
 }
 
-// TaobaoSubwayCrowdDmpCrowdBindAPIResponseModel is 直通车绑定达摩盘人群 成功返回结果
-type TaobaoSubwayCrowdDmpCrowdBindAPIResponseModel struct {
+// TaobaosubwaycrowddmpcrowdbindAPIResponseModel is 直通车绑定达摩盘人群 成功返回结果
+type TaobaosubwaycrowddmpcrowdbindAPIResponseModel struct {
 	XMLName xml.Name `xml:"subway_crowd_dmp_crowd_bind_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

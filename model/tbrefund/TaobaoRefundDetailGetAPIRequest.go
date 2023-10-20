@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoRefundDetailGetAPIRequest 退款详情页渲染 API请求
+// TaobaorefunddetailgetAPIRequest 退款详情页渲染 API请求
 // taobao.refund.detail.get
 //
 // 退款详情页渲染
-type TaobaoRefundDetailGetAPIRequest struct {
+type TaobaorefunddetailgetAPIRequest struct {
 	model.Params
 	// 需要返回的字段。目前支持有：allowedOperations,refund_version
 	_fields string
@@ -18,52 +18,52 @@ type TaobaoRefundDetailGetAPIRequest struct {
 	_refundId int64
 }
 
-// NewTaobaoRefundDetailGetRequest 初始化TaobaoRefundDetailGetAPIRequest对象
-func NewTaobaoRefundDetailGetRequest() *TaobaoRefundDetailGetAPIRequest {
-	return &TaobaoRefundDetailGetAPIRequest{
+// NewTaobaorefunddetailgetRequest 初始化TaobaorefunddetailgetAPIRequest对象
+func NewTaobaorefunddetailgetRequest() *TaobaorefunddetailgetAPIRequest {
+	return &TaobaorefunddetailgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoRefundDetailGetAPIRequest) GetApiMethodName() string {
+func (r TaobaorefunddetailgetAPIRequest) GetApiMethodName() string {
 	return "taobao.refund.detail.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoRefundDetailGetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaorefunddetailgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoRefundDetailGetAPIRequest) GetRawParams() model.Params {
+func (r TaobaorefunddetailgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetFields is Fields Setter
 // 需要返回的字段。目前支持有：allowedOperations,refund_version
-func (r *TaobaoRefundDetailGetAPIRequest) SetFields(_fields string) error {
+func (r *TaobaorefunddetailgetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
 	r.Set("fields", _fields)
 	return nil
 }
 
 // GetFields Fields Getter
-func (r TaobaoRefundDetailGetAPIRequest) GetFields() string {
+func (r TaobaorefunddetailgetAPIRequest) GetFields() string {
 	return r._fields
 }
 
 // SetRefundId is RefundId Setter
 // 退款编号
-func (r *TaobaoRefundDetailGetAPIRequest) SetRefundId(_refundId int64) error {
+func (r *TaobaorefunddetailgetAPIRequest) SetRefundId(_refundId int64) error {
 	r._refundId = _refundId
 	r.Set("refund_id", _refundId)
 	return nil
 }
 
 // GetRefundId RefundId Getter
-func (r TaobaoRefundDetailGetAPIRequest) GetRefundId() int64 {
+func (r TaobaorefunddetailgetAPIRequest) GetRefundId() int64 {
 	return r._refundId
 }

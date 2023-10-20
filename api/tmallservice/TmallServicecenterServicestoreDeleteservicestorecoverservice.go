@@ -5,13 +5,13 @@ import (
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-// TmallServicecenterServicestoreDeleteservicestorecoverservice 删除网点覆盖的服务
+// Tmallservicecenterservicestoredeleteservicestorecoverservice 删除网点覆盖的服务
 // tmall.servicecenter.servicestore.deleteservicestorecoverservice
 //
 // 天猫服务平台删除网点覆盖的服务，
 // 必选字段：serviceStoreCode、bizType
-func TmallServicecenterServicestoreDeleteservicestorecoverservice(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIRequest, session string) (*tmallservice.TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIResponse
+func Tmallservicecenterservicestoredeleteservicestorecoverservice(clt *core.SDKClient, req *tmallservice.TmallservicecenterservicestoredeleteservicestorecoverserviceAPIRequest, session string) (*tmallservice.TmallservicecenterservicestoredeleteservicestorecoverserviceAPIResponse, error) {
+	var resp tmallservice.TmallservicecenterservicestoredeleteservicestorecoverserviceAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

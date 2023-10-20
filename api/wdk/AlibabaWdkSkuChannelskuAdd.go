@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaWdkSkuChannelskuAdd 新增渠道商品
+// Alibabawdkskuchannelskuadd 新增渠道商品
 // alibaba.wdk.sku.channelsku.add
 //
 // 盒马帮1期新增渠道商品
-func AlibabaWdkSkuChannelskuAdd(clt *core.SDKClient, req *wdk.AlibabaWdkSkuChannelskuAddAPIRequest, session string) (*wdk.AlibabaWdkSkuChannelskuAddAPIResponse, error) {
-	var resp wdk.AlibabaWdkSkuChannelskuAddAPIResponse
+func Alibabawdkskuchannelskuadd(clt *core.SDKClient, req *wdk.AlibabawdkskuchannelskuaddAPIRequest, session string) (*wdk.AlibabawdkskuchannelskuaddAPIResponse, error) {
+	var resp wdk.AlibabawdkskuchannelskuaddAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

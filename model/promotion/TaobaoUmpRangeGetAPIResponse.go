@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoUmpRangeGetAPIResponse 查询活动范围 API返回值
+// TaobaoumprangegetAPIResponse 查询活动范围 API返回值
 // taobao.ump.range.get
 //
 // 查询某个卖家所有参加或者不参加某项活动的物品
-type TaobaoUmpRangeGetAPIResponse struct {
+type TaobaoumprangegetAPIResponse struct {
 	model.CommonResponse
-	TaobaoUmpRangeGetAPIResponseModel
+	TaobaoumprangegetAPIResponseModel
 }
 
-// TaobaoUmpRangeGetAPIResponseModel is 查询活动范围 成功返回结果
-type TaobaoUmpRangeGetAPIResponseModel struct {
+// TaobaoumprangegetAPIResponseModel is 查询活动范围 成功返回结果
+type TaobaoumprangegetAPIResponseModel struct {
 	XMLName xml.Name `xml:"ump_range_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

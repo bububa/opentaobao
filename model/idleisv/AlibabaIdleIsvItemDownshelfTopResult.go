@@ -1,7 +1,7 @@
 package idleisv
 
-// AlibabaIdleIsvItemDownshelfTopResult 结构体
-type AlibabaIdleIsvItemDownshelfTopResult struct {
+// AlibabaidleisvitemdownshelfTopResult 结构体
+type AlibabaidleisvitemdownshelfTopResult struct {
 	// data
 	Data bool `json:"data,omitempty" xml:"data,omitempty"`
 }

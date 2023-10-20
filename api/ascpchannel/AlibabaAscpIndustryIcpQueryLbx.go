@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascpchannel"
 )
 
-// AlibabaAscpIndustryIcpQueryLbx icp订单号查询lbx订单号
+// Alibabaascpindustryicpquerylbx icp订单号查询lbx订单号
 // alibaba.ascp.industry.icp.query.lbx
 //
 // 根据icp订单号查询lbx订单号
-func AlibabaAscpIndustryIcpQueryLbx(clt *core.SDKClient, req *ascpchannel.AlibabaAscpIndustryIcpQueryLbxAPIRequest, session string) (*ascpchannel.AlibabaAscpIndustryIcpQueryLbxAPIResponse, error) {
-	var resp ascpchannel.AlibabaAscpIndustryIcpQueryLbxAPIResponse
+func Alibabaascpindustryicpquerylbx(clt *core.SDKClient, req *ascpchannel.AlibabaascpindustryicpquerylbxAPIRequest, session string) (*ascpchannel.AlibabaascpindustryicpquerylbxAPIResponse, error) {
+	var resp ascpchannel.AlibabaascpindustryicpquerylbxAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

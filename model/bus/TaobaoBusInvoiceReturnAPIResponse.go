@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoBusInvoiceReturnAPIResponse 发票回调接口 API返回值
+// TaobaobusinvoicereturnAPIResponse 发票回调接口 API返回值
 // taobao.bus.invoice.return
 //
 // 汽车票发票回调接口
-type TaobaoBusInvoiceReturnAPIResponse struct {
+type TaobaobusinvoicereturnAPIResponse struct {
 	model.CommonResponse
-	TaobaoBusInvoiceReturnAPIResponseModel
+	TaobaobusinvoicereturnAPIResponseModel
 }
 
-// TaobaoBusInvoiceReturnAPIResponseModel is 发票回调接口 成功返回结果
-type TaobaoBusInvoiceReturnAPIResponseModel struct {
+// TaobaobusinvoicereturnAPIResponseModel is 发票回调接口 成功返回结果
+type TaobaobusinvoicereturnAPIResponseModel struct {
 	XMLName xml.Name `xml:"bus_invoice_return_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallgeniescp"
 )
 
-// AlibabaTmallgenieScpPlanMaterialPurchaseAttrGet 物料的采购属性查询
+// Alibabatmallgeniescpplanmaterialpurchaseattrget 物料的采购属性查询
 // alibaba.tmallgenie.scp.plan.material.purchase.attr.get
 //
 // 物料的采购属性查询
-func AlibabaTmallgenieScpPlanMaterialPurchaseAttrGet(clt *core.SDKClient, req *tmallgeniescp.AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetAPIRequest, session string) (*tmallgeniescp.AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetAPIResponse, error) {
-	var resp tmallgeniescp.AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetAPIResponse
+func Alibabatmallgeniescpplanmaterialpurchaseattrget(clt *core.SDKClient, req *tmallgeniescp.AlibabatmallgeniescpplanmaterialpurchaseattrgetAPIRequest, session string) (*tmallgeniescp.AlibabatmallgeniescpplanmaterialpurchaseattrgetAPIResponse, error) {
+	var resp tmallgeniescp.AlibabatmallgeniescpplanmaterialpurchaseattrgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

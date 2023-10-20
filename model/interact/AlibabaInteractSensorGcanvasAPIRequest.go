@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaInteractSensorGcanvasAPIRequest gcanvas API请求
+// AlibabainteractsensorgcanvasAPIRequest gcanvas API请求
 // alibaba.interact.sensor.gcanvas
 //
 // gcanvas 功能
-type AlibabaInteractSensorGcanvasAPIRequest struct {
+type AlibabainteractsensorgcanvasAPIRequest struct {
 	model.Params
 }
 
-// NewAlibabaInteractSensorGcanvasRequest 初始化AlibabaInteractSensorGcanvasAPIRequest对象
-func NewAlibabaInteractSensorGcanvasRequest() *AlibabaInteractSensorGcanvasAPIRequest {
-	return &AlibabaInteractSensorGcanvasAPIRequest{
+// NewAlibabainteractsensorgcanvasRequest 初始化AlibabainteractsensorgcanvasAPIRequest对象
+func NewAlibabainteractsensorgcanvasRequest() *AlibabainteractsensorgcanvasAPIRequest {
+	return &AlibabainteractsensorgcanvasAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaInteractSensorGcanvasAPIRequest) GetApiMethodName() string {
+func (r AlibabainteractsensorgcanvasAPIRequest) GetApiMethodName() string {
 	return "alibaba.interact.sensor.gcanvas"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaInteractSensorGcanvasAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabainteractsensorgcanvasAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaInteractSensorGcanvasAPIRequest) GetRawParams() model.Params {
+func (r AlibabainteractsensorgcanvasAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

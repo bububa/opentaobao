@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaTclsAelophyMerchantOrderUploadAPIResponse 商家订单数据上传 API返回值
+// AlibabatclsaelophymerchantorderuploadAPIResponse 商家订单数据上传 API返回值
 // alibaba.tcls.aelophy.merchant.order.upload
 //
 // 商家订单数据上传
-type AlibabaTclsAelophyMerchantOrderUploadAPIResponse struct {
+type AlibabatclsaelophymerchantorderuploadAPIResponse struct {
 	model.CommonResponse
-	AlibabaTclsAelophyMerchantOrderUploadAPIResponseModel
+	AlibabatclsaelophymerchantorderuploadAPIResponseModel
 }
 
-// AlibabaTclsAelophyMerchantOrderUploadAPIResponseModel is 商家订单数据上传 成功返回结果
-type AlibabaTclsAelophyMerchantOrderUploadAPIResponseModel struct {
+// AlibabatclsaelophymerchantorderuploadAPIResponseModel is 商家订单数据上传 成功返回结果
+type AlibabatclsaelophymerchantorderuploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_tcls_aelophy_merchant_order_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 根据站点名称查询产品
-	ApiResult *AlibabaTclsAelophyMerchantOrderUploadApiResult `json:"api_result,omitempty" xml:"api_result,omitempty"`
+	ApiResult *AlibabatclsaelophymerchantorderuploadApiResult `json:"api_result,omitempty" xml:"api_result,omitempty"`
 }

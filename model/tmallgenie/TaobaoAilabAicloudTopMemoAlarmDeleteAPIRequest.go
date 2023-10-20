@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAilabAicloudTopMemoAlarmDeleteAPIRequest 天猫精灵闹钟删除 API请求
+// TaobaoailabaicloudtopmemoalarmdeleteAPIRequest 天猫精灵闹钟删除 API请求
 // taobao.ailab.aicloud.top.memo.alarm.delete
 //
 // 天猫精灵闹钟删除
-type TaobaoAilabAicloudTopMemoAlarmDeleteAPIRequest struct {
+type TaobaoailabaicloudtopmemoalarmdeleteAPIRequest struct {
 	model.Params
 	// schema
 	_schema string
@@ -24,91 +24,91 @@ type TaobaoAilabAicloudTopMemoAlarmDeleteAPIRequest struct {
 	_memoId int64
 }
 
-// NewTaobaoAilabAicloudTopMemoAlarmDeleteRequest 初始化TaobaoAilabAicloudTopMemoAlarmDeleteAPIRequest对象
-func NewTaobaoAilabAicloudTopMemoAlarmDeleteRequest() *TaobaoAilabAicloudTopMemoAlarmDeleteAPIRequest {
-	return &TaobaoAilabAicloudTopMemoAlarmDeleteAPIRequest{
+// NewTaobaoailabaicloudtopmemoalarmdeleteRequest 初始化TaobaoailabaicloudtopmemoalarmdeleteAPIRequest对象
+func NewTaobaoailabaicloudtopmemoalarmdeleteRequest() *TaobaoailabaicloudtopmemoalarmdeleteAPIRequest {
+	return &TaobaoailabaicloudtopmemoalarmdeleteAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoAilabAicloudTopMemoAlarmDeleteAPIRequest) GetApiMethodName() string {
+func (r TaobaoailabaicloudtopmemoalarmdeleteAPIRequest) GetApiMethodName() string {
 	return "taobao.ailab.aicloud.top.memo.alarm.delete"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAilabAicloudTopMemoAlarmDeleteAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoailabaicloudtopmemoalarmdeleteAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoAilabAicloudTopMemoAlarmDeleteAPIRequest) GetRawParams() model.Params {
+func (r TaobaoailabaicloudtopmemoalarmdeleteAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSchema is Schema Setter
 // schema
-func (r *TaobaoAilabAicloudTopMemoAlarmDeleteAPIRequest) SetSchema(_schema string) error {
+func (r *TaobaoailabaicloudtopmemoalarmdeleteAPIRequest) SetSchema(_schema string) error {
 	r._schema = _schema
 	r.Set("schema", _schema)
 	return nil
 }
 
 // GetSchema Schema Getter
-func (r TaobaoAilabAicloudTopMemoAlarmDeleteAPIRequest) GetSchema() string {
+func (r TaobaoailabaicloudtopmemoalarmdeleteAPIRequest) GetSchema() string {
 	return r._schema
 }
 
 // SetUtdId is UtdId Setter
 // 手持设备ID
-func (r *TaobaoAilabAicloudTopMemoAlarmDeleteAPIRequest) SetUtdId(_utdId string) error {
+func (r *TaobaoailabaicloudtopmemoalarmdeleteAPIRequest) SetUtdId(_utdId string) error {
 	r._utdId = _utdId
 	r.Set("utd_id", _utdId)
 	return nil
 }
 
 // GetUtdId UtdId Getter
-func (r TaobaoAilabAicloudTopMemoAlarmDeleteAPIRequest) GetUtdId() string {
+func (r TaobaoailabaicloudtopmemoalarmdeleteAPIRequest) GetUtdId() string {
 	return r._utdId
 }
 
 // SetExt is Ext Setter
 // 扩展信息json段，用于存放APP类型，APP版本等等信息。
-func (r *TaobaoAilabAicloudTopMemoAlarmDeleteAPIRequest) SetExt(_ext string) error {
+func (r *TaobaoailabaicloudtopmemoalarmdeleteAPIRequest) SetExt(_ext string) error {
 	r._ext = _ext
 	r.Set("ext", _ext)
 	return nil
 }
 
 // GetExt Ext Getter
-func (r TaobaoAilabAicloudTopMemoAlarmDeleteAPIRequest) GetExt() string {
+func (r TaobaoailabaicloudtopmemoalarmdeleteAPIRequest) GetExt() string {
 	return r._ext
 }
 
 // SetUserId is UserId Setter
 // 企业用户ID
-func (r *TaobaoAilabAicloudTopMemoAlarmDeleteAPIRequest) SetUserId(_userId string) error {
+func (r *TaobaoailabaicloudtopmemoalarmdeleteAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
 	r.Set("user_id", _userId)
 	return nil
 }
 
 // GetUserId UserId Getter
-func (r TaobaoAilabAicloudTopMemoAlarmDeleteAPIRequest) GetUserId() string {
+func (r TaobaoailabaicloudtopmemoalarmdeleteAPIRequest) GetUserId() string {
 	return r._userId
 }
 
 // SetMemoId is MemoId Setter
 // 闹钟ID
-func (r *TaobaoAilabAicloudTopMemoAlarmDeleteAPIRequest) SetMemoId(_memoId int64) error {
+func (r *TaobaoailabaicloudtopmemoalarmdeleteAPIRequest) SetMemoId(_memoId int64) error {
 	r._memoId = _memoId
 	r.Set("memo_id", _memoId)
 	return nil
 }
 
 // GetMemoId MemoId Getter
-func (r TaobaoAilabAicloudTopMemoAlarmDeleteAPIRequest) GetMemoId() int64 {
+func (r TaobaoailabaicloudtopmemoalarmdeleteAPIRequest) GetMemoId() int64 {
 	return r._memoId
 }

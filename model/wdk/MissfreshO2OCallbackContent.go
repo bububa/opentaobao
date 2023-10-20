@@ -1,7 +1,7 @@
 package wdk
 
-// MissfreshO2OCallbackContent 结构体
-type MissfreshO2OCallbackContent struct {
+// MissfreshO2ocallbackContent 结构体
+type MissfreshO2ocallbackContent struct {
 	// 商品编码
 	SkuCode string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
 	// 缺货出库存数量

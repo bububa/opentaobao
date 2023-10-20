@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// AlibabaAlihouseNewhomeCommunitySubmit 提交小区信息
+// Alibabaalihousenewhomecommunitysubmit 提交小区信息
 // alibaba.alihouse.newhome.community.submit
 //
 // 提交小区信息
-func AlibabaAlihouseNewhomeCommunitySubmit(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeCommunitySubmitAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeCommunitySubmitAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeCommunitySubmitAPIResponse
+func Alibabaalihousenewhomecommunitysubmit(clt *core.SDKClient, req *alihouse.AlibabaalihousenewhomecommunitysubmitAPIRequest, session string) (*alihouse.AlibabaalihousenewhomecommunitysubmitAPIResponse, error) {
+	var resp alihouse.AlibabaalihousenewhomecommunitysubmitAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

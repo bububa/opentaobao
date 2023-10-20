@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaTclsAelophyRefundCsapplyNewApiResult 结构体
-type AlibabaTclsAelophyRefundCsapplyNewApiResult struct {
+// AlibabatclsaelophyrefundcsapplynewApiResult 结构体
+type AlibabatclsaelophyrefundcsapplynewApiResult struct {
 	// 错误信息
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// 错误编码

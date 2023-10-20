@@ -17,5 +17,5 @@ type OrderCancelRequest struct {
 	// 取消原因
 	CancelReason string `json:"cancelReason,omitempty" xml:"cancelReason,omitempty"`
 	// 扩展属性
-	ExtendProps *TaobaoQimenOrderCancelMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+	ExtendProps *TaobaoqimenordercancelMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

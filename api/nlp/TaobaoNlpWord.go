@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/nlp"
 )
 
-// TaobaoNlpWord 文本语言词法分析
+// Taobaonlpword 文本语言词法分析
 // taobao.nlp.word
 //
 // 提供文本语言处理中的词法分析功能,开放中文分词和词权重计算功能。
-func TaobaoNlpWord(clt *core.SDKClient, req *nlp.TaobaoNlpWordAPIRequest, session string) (*nlp.TaobaoNlpWordAPIResponse, error) {
-	var resp nlp.TaobaoNlpWordAPIResponse
+func Taobaonlpword(clt *core.SDKClient, req *nlp.TaobaonlpwordAPIRequest, session string) (*nlp.TaobaonlpwordAPIResponse, error) {
+	var resp nlp.TaobaonlpwordAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

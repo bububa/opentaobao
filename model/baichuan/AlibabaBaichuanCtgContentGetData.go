@@ -1,7 +1,7 @@
 package baichuan
 
-// AlibabaBaichuanCtgContentGetData 结构体
-type AlibabaBaichuanCtgContentGetData struct {
+// AlibababaichuanctgcontentgetData 结构体
+type AlibababaichuanctgcontentgetData struct {
 	// title
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// publishTime

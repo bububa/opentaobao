@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallServicecenterWorkcardLogisticsinfoUpdateAPIResponse 物流单信息回传接口 API返回值
+// TmallservicecenterworkcardlogisticsinfoupdateAPIResponse 物流单信息回传接口 API返回值
 // tmall.servicecenter.workcard.logisticsinfo.update
 //
 // 物流单信息回传接口
-type TmallServicecenterWorkcardLogisticsinfoUpdateAPIResponse struct {
+type TmallservicecenterworkcardlogisticsinfoupdateAPIResponse struct {
 	model.CommonResponse
-	TmallServicecenterWorkcardLogisticsinfoUpdateAPIResponseModel
+	TmallservicecenterworkcardlogisticsinfoupdateAPIResponseModel
 }
 
-// TmallServicecenterWorkcardLogisticsinfoUpdateAPIResponseModel is 物流单信息回传接口 成功返回结果
-type TmallServicecenterWorkcardLogisticsinfoUpdateAPIResponseModel struct {
+// TmallservicecenterworkcardlogisticsinfoupdateAPIResponseModel is 物流单信息回传接口 成功返回结果
+type TmallservicecenterworkcardlogisticsinfoupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_servicecenter_workcard_logisticsinfo_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

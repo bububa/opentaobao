@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// TaobaoSimbaCampaignBudgetGet 取得一个推广计划的日限额
+// Taobaosimbacampaignbudgetget 取得一个推广计划的日限额
 // taobao.simba.campaign.budget.get
 //
 // 取得一个推广计划的日限额
-func TaobaoSimbaCampaignBudgetGet(clt *core.SDKClient, req *simba.TaobaoSimbaCampaignBudgetGetAPIRequest, session string) (*simba.TaobaoSimbaCampaignBudgetGetAPIResponse, error) {
-	var resp simba.TaobaoSimbaCampaignBudgetGetAPIResponse
+func Taobaosimbacampaignbudgetget(clt *core.SDKClient, req *simba.TaobaosimbacampaignbudgetgetAPIRequest, session string) (*simba.TaobaosimbacampaignbudgetgetAPIResponse, error) {
+	var resp simba.TaobaosimbacampaignbudgetgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

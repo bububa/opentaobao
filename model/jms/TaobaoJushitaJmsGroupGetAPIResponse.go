@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoJushitaJmsGroupGetAPIResponse 查询ONS分组 API返回值
+// TaobaojushitajmsgroupgetAPIResponse 查询ONS分组 API返回值
 // taobao.jushita.jms.group.get
 //
 // 查询当前appkey在ONS中已有的分组
-type TaobaoJushitaJmsGroupGetAPIResponse struct {
+type TaobaojushitajmsgroupgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoJushitaJmsGroupGetAPIResponseModel
+	TaobaojushitajmsgroupgetAPIResponseModel
 }
 
-// TaobaoJushitaJmsGroupGetAPIResponseModel is 查询ONS分组 成功返回结果
-type TaobaoJushitaJmsGroupGetAPIResponseModel struct {
+// TaobaojushitajmsgroupgetAPIResponseModel is 查询ONS分组 成功返回结果
+type TaobaojushitajmsgroupgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"jushita_jms_group_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

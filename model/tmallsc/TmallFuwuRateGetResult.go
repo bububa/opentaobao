@@ -1,7 +1,7 @@
 package tmallsc
 
-// TmallFuwuRateGetResult 结构体
-type TmallFuwuRateGetResult struct {
+// TmallfuwurategetResult 结构体
+type TmallfuwurategetResult struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 评价信息json字符串

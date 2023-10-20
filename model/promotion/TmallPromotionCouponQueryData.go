@@ -1,7 +1,7 @@
 package promotion
 
-// TmallPromotionCouponQueryData 结构体
-type TmallPromotionCouponQueryData struct {
+// TmallpromotioncouponqueryData 结构体
+type TmallpromotioncouponqueryData struct {
 	// discount
 	Discount string `json:"discount,omitempty" xml:"discount,omitempty"`
 	// startFee

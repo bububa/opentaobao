@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoJstSmsTemplateDeleteAPIResponse 淘宝短信模板删除 API返回值
+// TaobaojstsmstemplatedeleteAPIResponse 淘宝短信模板删除 API返回值
 // taobao.jst.sms.template.delete
 //
 // 淘宝短信模板删除
-type TaobaoJstSmsTemplateDeleteAPIResponse struct {
+type TaobaojstsmstemplatedeleteAPIResponse struct {
 	model.CommonResponse
-	TaobaoJstSmsTemplateDeleteAPIResponseModel
+	TaobaojstsmstemplatedeleteAPIResponseModel
 }
 
-// TaobaoJstSmsTemplateDeleteAPIResponseModel is 淘宝短信模板删除 成功返回结果
-type TaobaoJstSmsTemplateDeleteAPIResponseModel struct {
+// TaobaojstsmstemplatedeleteAPIResponseModel is 淘宝短信模板删除 成功返回结果
+type TaobaojstsmstemplatedeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"jst_sms_template_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

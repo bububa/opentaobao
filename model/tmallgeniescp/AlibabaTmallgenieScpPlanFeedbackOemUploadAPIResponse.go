@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaTmallgenieScpPlanFeedbackOemUploadAPIResponse 14-供应商反馈（OEM）同步接口 API返回值
+// AlibabatmallgeniescpplanfeedbackoemuploadAPIResponse 14-供应商反馈（OEM）同步接口 API返回值
 // alibaba.tmallgenie.scp.plan.feedback.oem.upload
 //
 // 供应商反馈（OEM）同步接口
-type AlibabaTmallgenieScpPlanFeedbackOemUploadAPIResponse struct {
+type AlibabatmallgeniescpplanfeedbackoemuploadAPIResponse struct {
 	model.CommonResponse
-	AlibabaTmallgenieScpPlanFeedbackOemUploadAPIResponseModel
+	AlibabatmallgeniescpplanfeedbackoemuploadAPIResponseModel
 }
 
-// AlibabaTmallgenieScpPlanFeedbackOemUploadAPIResponseModel is 14-供应商反馈（OEM）同步接口 成功返回结果
-type AlibabaTmallgenieScpPlanFeedbackOemUploadAPIResponseModel struct {
+// AlibabatmallgeniescpplanfeedbackoemuploadAPIResponseModel is 14-供应商反馈（OEM）同步接口 成功返回结果
+type AlibabatmallgeniescpplanfeedbackoemuploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_tmallgenie_scp_plan_feedback_oem_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

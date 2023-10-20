@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaAelophyShopUpdaterangeApiResult 结构体
-type AlibabaAelophyShopUpdaterangeApiResult struct {
+// AlibabaaelophyshopupdaterangeApiResult 结构体
+type AlibabaaelophyshopupdaterangeApiResult struct {
 	// 错误信息
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// 错误码

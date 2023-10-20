@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthMedicalbaseThirdEvaluateSyncAPIRequest 三方评论信息同步 API请求
+// AlibabaalihealthmedicalbasethirdevaluatesyncAPIRequest 三方评论信息同步 API请求
 // alibaba.alihealth.medicalbase.third.evaluate.sync
 //
 // 三方评论信息同步
-type AlibabaAlihealthMedicalbaseThirdEvaluateSyncAPIRequest struct {
+type AlibabaalihealthmedicalbasethirdevaluatesyncAPIRequest struct {
 	model.Params
 	// 请求参数
 	_evaluateRequest *MedicalBaseTopRequestDto
 }
 
-// NewAlibabaAlihealthMedicalbaseThirdEvaluateSyncRequest 初始化AlibabaAlihealthMedicalbaseThirdEvaluateSyncAPIRequest对象
-func NewAlibabaAlihealthMedicalbaseThirdEvaluateSyncRequest() *AlibabaAlihealthMedicalbaseThirdEvaluateSyncAPIRequest {
-	return &AlibabaAlihealthMedicalbaseThirdEvaluateSyncAPIRequest{
+// NewAlibabaalihealthmedicalbasethirdevaluatesyncRequest 初始化AlibabaalihealthmedicalbasethirdevaluatesyncAPIRequest对象
+func NewAlibabaalihealthmedicalbasethirdevaluatesyncRequest() *AlibabaalihealthmedicalbasethirdevaluatesyncAPIRequest {
+	return &AlibabaalihealthmedicalbasethirdevaluatesyncAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthMedicalbaseThirdEvaluateSyncAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihealthmedicalbasethirdevaluatesyncAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.medicalbase.third.evaluate.sync"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthMedicalbaseThirdEvaluateSyncAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihealthmedicalbasethirdevaluatesyncAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihealthMedicalbaseThirdEvaluateSyncAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihealthmedicalbasethirdevaluatesyncAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetEvaluateRequest is EvaluateRequest Setter
 // 请求参数
-func (r *AlibabaAlihealthMedicalbaseThirdEvaluateSyncAPIRequest) SetEvaluateRequest(_evaluateRequest *MedicalBaseTopRequestDto) error {
+func (r *AlibabaalihealthmedicalbasethirdevaluatesyncAPIRequest) SetEvaluateRequest(_evaluateRequest *MedicalBaseTopRequestDto) error {
 	r._evaluateRequest = _evaluateRequest
 	r.Set("evaluate_request", _evaluateRequest)
 	return nil
 }
 
 // GetEvaluateRequest EvaluateRequest Getter
-func (r AlibabaAlihealthMedicalbaseThirdEvaluateSyncAPIRequest) GetEvaluateRequest() *MedicalBaseTopRequestDto {
+func (r AlibabaalihealthmedicalbasethirdevaluatesyncAPIRequest) GetEvaluateRequest() *MedicalBaseTopRequestDto {
 	return r._evaluateRequest
 }

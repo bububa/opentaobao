@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripUppcMemberGainAPIResponse 航司权益数据回流 API返回值
+// AlitripuppcmembergainAPIResponse 航司权益数据回流 API返回值
 // alitrip.uppc.member.gain
 //
 // 航司权益数据回流
-type AlitripUppcMemberGainAPIResponse struct {
+type AlitripuppcmembergainAPIResponse struct {
 	model.CommonResponse
-	AlitripUppcMemberGainAPIResponseModel
+	AlitripuppcmembergainAPIResponseModel
 }
 
-// AlitripUppcMemberGainAPIResponseModel is 航司权益数据回流 成功返回结果
-type AlitripUppcMemberGainAPIResponseModel struct {
+// AlitripuppcmembergainAPIResponseModel is 航司权益数据回流 成功返回结果
+type AlitripuppcmembergainAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_uppc_member_gain_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

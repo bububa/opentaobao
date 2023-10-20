@@ -1,7 +1,7 @@
 package rail
 
-// AlitripRailTradeCloseticketResultSet 结构体
-type AlitripRailTradeCloseticketResultSet struct {
+// AlitriprailtradecloseticketResultSet 结构体
+type AlitriprailtradecloseticketResultSet struct {
 	// errorMsg
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// errorCode

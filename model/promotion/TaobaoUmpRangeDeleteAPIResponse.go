@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoUmpRangeDeleteAPIResponse 删除活动范围 API返回值
+// TaobaoumprangedeleteAPIResponse 删除活动范围 API返回值
 // taobao.ump.range.delete
 //
 // 去指先前指定在某项活动中，某些类型的物品参加或者不参加活动的设置
-type TaobaoUmpRangeDeleteAPIResponse struct {
+type TaobaoumprangedeleteAPIResponse struct {
 	model.CommonResponse
-	TaobaoUmpRangeDeleteAPIResponseModel
+	TaobaoumprangedeleteAPIResponseModel
 }
 
-// TaobaoUmpRangeDeleteAPIResponseModel is 删除活动范围 成功返回结果
-type TaobaoUmpRangeDeleteAPIResponseModel struct {
+// TaobaoumprangedeleteAPIResponseModel is 删除活动范围 成功返回结果
+type TaobaoumprangedeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"ump_range_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

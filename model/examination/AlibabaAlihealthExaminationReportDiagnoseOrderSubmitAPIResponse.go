@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthExaminationReportDiagnoseOrderSubmitAPIResponse 体检报告人工解读订单 API返回值
+// AlibabaalihealthexaminationreportdiagnoseordersubmitAPIResponse 体检报告人工解读订单 API返回值
 // alibaba.alihealth.examination.report.diagnose.order.submit
 //
 // 体检报告人工解读订单信息推送给ISV，进行人工解读
-type AlibabaAlihealthExaminationReportDiagnoseOrderSubmitAPIResponse struct {
+type AlibabaalihealthexaminationreportdiagnoseordersubmitAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihealthExaminationReportDiagnoseOrderSubmitAPIResponseModel
+	AlibabaalihealthexaminationreportdiagnoseordersubmitAPIResponseModel
 }
 
-// AlibabaAlihealthExaminationReportDiagnoseOrderSubmitAPIResponseModel is 体检报告人工解读订单 成功返回结果
-type AlibabaAlihealthExaminationReportDiagnoseOrderSubmitAPIResponseModel struct {
+// AlibabaalihealthexaminationreportdiagnoseordersubmitAPIResponseModel is 体检报告人工解读订单 成功返回结果
+type AlibabaalihealthexaminationreportdiagnoseordersubmitAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_examination_report_diagnose_order_submit_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

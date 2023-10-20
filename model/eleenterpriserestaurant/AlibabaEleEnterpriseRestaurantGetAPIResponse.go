@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaEleEnterpriseRestaurantGetAPIResponse 查询餐厅信息 API返回值
+// AlibabaeleenterpriserestaurantgetAPIResponse 查询餐厅信息 API返回值
 // alibaba.ele.enterprise.restaurant.get
 //
 // 查询餐厅信息
-type AlibabaEleEnterpriseRestaurantGetAPIResponse struct {
+type AlibabaeleenterpriserestaurantgetAPIResponse struct {
 	model.CommonResponse
-	AlibabaEleEnterpriseRestaurantGetAPIResponseModel
+	AlibabaeleenterpriserestaurantgetAPIResponseModel
 }
 
-// AlibabaEleEnterpriseRestaurantGetAPIResponseModel is 查询餐厅信息 成功返回结果
-type AlibabaEleEnterpriseRestaurantGetAPIResponseModel struct {
+// AlibabaeleenterpriserestaurantgetAPIResponseModel is 查询餐厅信息 成功返回结果
+type AlibabaeleenterpriserestaurantgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ele_enterprise_restaurant_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

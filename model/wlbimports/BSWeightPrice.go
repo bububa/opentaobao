@@ -1,7 +1,7 @@
 package wlbimports
 
-// BSWeightPrice 结构体
-type BSWeightPrice struct {
+// BsweightPrice 结构体
+type BsweightPrice struct {
 	// 首重
 	BasicWeight int64 `json:"basic_weight,omitempty" xml:"basic_weight,omitempty"`
 	// 首重价格

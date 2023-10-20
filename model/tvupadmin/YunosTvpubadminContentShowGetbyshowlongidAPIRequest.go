@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosTvpubadminContentShowGetbyshowlongidAPIRequest 迎客松根据节目longid获取节目元数据 API请求
+// YunostvpubadmincontentshowgetbyshowlongidAPIRequest 迎客松根据节目longid获取节目元数据 API请求
 // yunos.tvpubadmin.content.show.getbyshowlongid
 //
 // 迎客松根据节目longid获取节目元数据
-type YunosTvpubadminContentShowGetbyshowlongidAPIRequest struct {
+type YunostvpubadmincontentshowgetbyshowlongidAPIRequest struct {
 	model.Params
 	// 节目longid
 	_showLongId int64
 }
 
-// NewYunosTvpubadminContentShowGetbyshowlongidRequest 初始化YunosTvpubadminContentShowGetbyshowlongidAPIRequest对象
-func NewYunosTvpubadminContentShowGetbyshowlongidRequest() *YunosTvpubadminContentShowGetbyshowlongidAPIRequest {
-	return &YunosTvpubadminContentShowGetbyshowlongidAPIRequest{
+// NewYunostvpubadmincontentshowgetbyshowlongidRequest 初始化YunostvpubadmincontentshowgetbyshowlongidAPIRequest对象
+func NewYunostvpubadmincontentshowgetbyshowlongidRequest() *YunostvpubadmincontentshowgetbyshowlongidAPIRequest {
+	return &YunostvpubadmincontentshowgetbyshowlongidAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminContentShowGetbyshowlongidAPIRequest) GetApiMethodName() string {
+func (r YunostvpubadmincontentshowgetbyshowlongidAPIRequest) GetApiMethodName() string {
 	return "yunos.tvpubadmin.content.show.getbyshowlongid"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminContentShowGetbyshowlongidAPIRequest) GetApiParams(params url.Values) {
+func (r YunostvpubadmincontentshowgetbyshowlongidAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r YunosTvpubadminContentShowGetbyshowlongidAPIRequest) GetRawParams() model.Params {
+func (r YunostvpubadmincontentshowgetbyshowlongidAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetShowLongId is ShowLongId Setter
 // 节目longid
-func (r *YunosTvpubadminContentShowGetbyshowlongidAPIRequest) SetShowLongId(_showLongId int64) error {
+func (r *YunostvpubadmincontentshowgetbyshowlongidAPIRequest) SetShowLongId(_showLongId int64) error {
 	r._showLongId = _showLongId
 	r.Set("show_long_id", _showLongId)
 	return nil
 }
 
 // GetShowLongId ShowLongId Getter
-func (r YunosTvpubadminContentShowGetbyshowlongidAPIRequest) GetShowLongId() int64 {
+func (r YunostvpubadmincontentshowgetbyshowlongidAPIRequest) GetShowLongId() int64 {
 	return r._showLongId
 }

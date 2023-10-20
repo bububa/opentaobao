@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaCampusGuardantGateSyncAPIRequest 网点数据同步 API请求
+// AlibabacampusguardantgatesyncAPIRequest 网点数据同步 API请求
 // alibaba.campus.guardant.gate.sync
 //
 // 门禁供应商创建网点同步
-type AlibabaCampusGuardantGateSyncAPIRequest struct {
+type AlibabacampusguardantgatesyncAPIRequest struct {
 	model.Params
 	// md5
 	_token string
@@ -18,52 +18,52 @@ type AlibabaCampusGuardantGateSyncAPIRequest struct {
 	_data string
 }
 
-// NewAlibabaCampusGuardantGateSyncRequest 初始化AlibabaCampusGuardantGateSyncAPIRequest对象
-func NewAlibabaCampusGuardantGateSyncRequest() *AlibabaCampusGuardantGateSyncAPIRequest {
-	return &AlibabaCampusGuardantGateSyncAPIRequest{
+// NewAlibabacampusguardantgatesyncRequest 初始化AlibabacampusguardantgatesyncAPIRequest对象
+func NewAlibabacampusguardantgatesyncRequest() *AlibabacampusguardantgatesyncAPIRequest {
+	return &AlibabacampusguardantgatesyncAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaCampusGuardantGateSyncAPIRequest) GetApiMethodName() string {
+func (r AlibabacampusguardantgatesyncAPIRequest) GetApiMethodName() string {
 	return "alibaba.campus.guardant.gate.sync"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaCampusGuardantGateSyncAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabacampusguardantgatesyncAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaCampusGuardantGateSyncAPIRequest) GetRawParams() model.Params {
+func (r AlibabacampusguardantgatesyncAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetToken is Token Setter
 // md5
-func (r *AlibabaCampusGuardantGateSyncAPIRequest) SetToken(_token string) error {
+func (r *AlibabacampusguardantgatesyncAPIRequest) SetToken(_token string) error {
 	r._token = _token
 	r.Set("token", _token)
 	return nil
 }
 
 // GetToken Token Getter
-func (r AlibabaCampusGuardantGateSyncAPIRequest) GetToken() string {
+func (r AlibabacampusguardantgatesyncAPIRequest) GetToken() string {
 	return r._token
 }
 
 // SetData is Data Setter
 // data
-func (r *AlibabaCampusGuardantGateSyncAPIRequest) SetData(_data string) error {
+func (r *AlibabacampusguardantgatesyncAPIRequest) SetData(_data string) error {
 	r._data = _data
 	r.Set("data", _data)
 	return nil
 }
 
 // GetData Data Getter
-func (r AlibabaCampusGuardantGateSyncAPIRequest) GetData() string {
+func (r AlibabacampusguardantgatesyncAPIRequest) GetData() string {
 	return r._data
 }

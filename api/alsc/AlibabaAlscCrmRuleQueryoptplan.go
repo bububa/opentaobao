@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-// AlibabaAlscCrmRuleQueryoptplan 查询运营计划
+// Alibabaalsccrmrulequeryoptplan 查询运营计划
 // alibaba.alsc.crm.rule.queryoptplan
 //
 // 查询运营计划
-func AlibabaAlscCrmRuleQueryoptplan(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRuleQueryoptplanAPIRequest, session string) (*alsc.AlibabaAlscCrmRuleQueryoptplanAPIResponse, error) {
-	var resp alsc.AlibabaAlscCrmRuleQueryoptplanAPIResponse
+func Alibabaalsccrmrulequeryoptplan(clt *core.SDKClient, req *alsc.AlibabaalsccrmrulequeryoptplanAPIRequest, session string) (*alsc.AlibabaalsccrmrulequeryoptplanAPIResponse, error) {
+	var resp alsc.AlibabaalsccrmrulequeryoptplanAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

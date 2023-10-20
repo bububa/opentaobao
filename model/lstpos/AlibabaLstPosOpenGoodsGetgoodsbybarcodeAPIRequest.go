@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest ISV条码库查询接口 API请求
+// AlibabalstposopengoodsgetgoodsbybarcodeAPIRequest ISV条码库查询接口 API请求
 // alibaba.lst.pos.open.goods.getgoodsbybarcode
 //
 // ISV条码库查询接口
-type AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest struct {
+type AlibabalstposopengoodsgetgoodsbybarcodeAPIRequest struct {
 	model.Params
 	// 商品条码
 	_barcode string
 }
 
-// NewAlibabaLstPosOpenGoodsGetgoodsbybarcodeRequest 初始化AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest对象
-func NewAlibabaLstPosOpenGoodsGetgoodsbybarcodeRequest() *AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest {
-	return &AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest{
+// NewAlibabalstposopengoodsgetgoodsbybarcodeRequest 初始化AlibabalstposopengoodsgetgoodsbybarcodeAPIRequest对象
+func NewAlibabalstposopengoodsgetgoodsbybarcodeRequest() *AlibabalstposopengoodsgetgoodsbybarcodeAPIRequest {
+	return &AlibabalstposopengoodsgetgoodsbybarcodeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest) GetApiMethodName() string {
+func (r AlibabalstposopengoodsgetgoodsbybarcodeAPIRequest) GetApiMethodName() string {
 	return "alibaba.lst.pos.open.goods.getgoodsbybarcode"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabalstposopengoodsgetgoodsbybarcodeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest) GetRawParams() model.Params {
+func (r AlibabalstposopengoodsgetgoodsbybarcodeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetBarcode is Barcode Setter
 // 商品条码
-func (r *AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest) SetBarcode(_barcode string) error {
+func (r *AlibabalstposopengoodsgetgoodsbybarcodeAPIRequest) SetBarcode(_barcode string) error {
 	r._barcode = _barcode
 	r.Set("barcode", _barcode)
 	return nil
 }
 
 // GetBarcode Barcode Getter
-func (r AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest) GetBarcode() string {
+func (r AlibabalstposopengoodsgetgoodsbybarcodeAPIRequest) GetBarcode() string {
 	return r._barcode
 }

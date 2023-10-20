@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoWlbItemUpdateAPIRequest 物流宝商品修改 API请求
+// TaobaowlbitemupdateAPIRequest 物流宝商品修改 API请求
 // taobao.wlb.item.update
 //
 // 修改物流宝商品信息
-type TaobaoWlbItemUpdateAPIRequest struct {
+type TaobaowlbitemupdateAPIRequest struct {
 	model.Params
 	// 要修改的商品名称
 	_name string
@@ -50,260 +50,260 @@ type TaobaoWlbItemUpdateAPIRequest struct {
 	_isDangerous bool
 }
 
-// NewTaobaoWlbItemUpdateRequest 初始化TaobaoWlbItemUpdateAPIRequest对象
-func NewTaobaoWlbItemUpdateRequest() *TaobaoWlbItemUpdateAPIRequest {
-	return &TaobaoWlbItemUpdateAPIRequest{
+// NewTaobaowlbitemupdateRequest 初始化TaobaowlbitemupdateAPIRequest对象
+func NewTaobaowlbitemupdateRequest() *TaobaowlbitemupdateAPIRequest {
+	return &TaobaowlbitemupdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoWlbItemUpdateAPIRequest) GetApiMethodName() string {
+func (r TaobaowlbitemupdateAPIRequest) GetApiMethodName() string {
 	return "taobao.wlb.item.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoWlbItemUpdateAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaowlbitemupdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoWlbItemUpdateAPIRequest) GetRawParams() model.Params {
+func (r TaobaowlbitemupdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetName is Name Setter
 // 要修改的商品名称
-func (r *TaobaoWlbItemUpdateAPIRequest) SetName(_name string) error {
+func (r *TaobaowlbitemupdateAPIRequest) SetName(_name string) error {
 	r._name = _name
 	r.Set("name", _name)
 	return nil
 }
 
 // GetName Name Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetName() string {
+func (r TaobaowlbitemupdateAPIRequest) GetName() string {
 	return r._name
 }
 
 // SetTitle is Title Setter
 // 要修改的商品标题
-func (r *TaobaoWlbItemUpdateAPIRequest) SetTitle(_title string) error {
+func (r *TaobaowlbitemupdateAPIRequest) SetTitle(_title string) error {
 	r._title = _title
 	r.Set("title", _title)
 	return nil
 }
 
 // GetTitle Title Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetTitle() string {
+func (r TaobaowlbitemupdateAPIRequest) GetTitle() string {
 	return r._title
 }
 
 // SetRemark is Remark Setter
 // 要修改的商品备注
-func (r *TaobaoWlbItemUpdateAPIRequest) SetRemark(_remark string) error {
+func (r *TaobaowlbitemupdateAPIRequest) SetRemark(_remark string) error {
 	r._remark = _remark
 	r.Set("remark", _remark)
 	return nil
 }
 
 // GetRemark Remark Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetRemark() string {
+func (r TaobaowlbitemupdateAPIRequest) GetRemark() string {
 	return r._remark
 }
 
 // SetUpdatePropertyKeyList is UpdatePropertyKeyList Setter
 // 需要修改的商品属性值的列表，如果属性不存在，则新增属性
-func (r *TaobaoWlbItemUpdateAPIRequest) SetUpdatePropertyKeyList(_updatePropertyKeyList string) error {
+func (r *TaobaowlbitemupdateAPIRequest) SetUpdatePropertyKeyList(_updatePropertyKeyList string) error {
 	r._updatePropertyKeyList = _updatePropertyKeyList
 	r.Set("update_property_key_list", _updatePropertyKeyList)
 	return nil
 }
 
 // GetUpdatePropertyKeyList UpdatePropertyKeyList Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetUpdatePropertyKeyList() string {
+func (r TaobaowlbitemupdateAPIRequest) GetUpdatePropertyKeyList() string {
 	return r._updatePropertyKeyList
 }
 
 // SetUpdatePropertyValueList is UpdatePropertyValueList Setter
 // 需要修改的属性值的列表
-func (r *TaobaoWlbItemUpdateAPIRequest) SetUpdatePropertyValueList(_updatePropertyValueList string) error {
+func (r *TaobaowlbitemupdateAPIRequest) SetUpdatePropertyValueList(_updatePropertyValueList string) error {
 	r._updatePropertyValueList = _updatePropertyValueList
 	r.Set("update_property_value_list", _updatePropertyValueList)
 	return nil
 }
 
 // GetUpdatePropertyValueList UpdatePropertyValueList Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetUpdatePropertyValueList() string {
+func (r TaobaowlbitemupdateAPIRequest) GetUpdatePropertyValueList() string {
 	return r._updatePropertyValueList
 }
 
 // SetDeletePropertyKeyList is DeletePropertyKeyList Setter
 // 需要删除的商品属性key列表
-func (r *TaobaoWlbItemUpdateAPIRequest) SetDeletePropertyKeyList(_deletePropertyKeyList string) error {
+func (r *TaobaowlbitemupdateAPIRequest) SetDeletePropertyKeyList(_deletePropertyKeyList string) error {
 	r._deletePropertyKeyList = _deletePropertyKeyList
 	r.Set("delete_property_key_list", _deletePropertyKeyList)
 	return nil
 }
 
 // GetDeletePropertyKeyList DeletePropertyKeyList Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetDeletePropertyKeyList() string {
+func (r TaobaowlbitemupdateAPIRequest) GetDeletePropertyKeyList() string {
 	return r._deletePropertyKeyList
 }
 
 // SetColor is Color Setter
 // 商品颜色
-func (r *TaobaoWlbItemUpdateAPIRequest) SetColor(_color string) error {
+func (r *TaobaowlbitemupdateAPIRequest) SetColor(_color string) error {
 	r._color = _color
 	r.Set("color", _color)
 	return nil
 }
 
 // GetColor Color Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetColor() string {
+func (r TaobaowlbitemupdateAPIRequest) GetColor() string {
 	return r._color
 }
 
 // SetGoodsCat is GoodsCat Setter
 // 商品货类
-func (r *TaobaoWlbItemUpdateAPIRequest) SetGoodsCat(_goodsCat string) error {
+func (r *TaobaowlbitemupdateAPIRequest) SetGoodsCat(_goodsCat string) error {
 	r._goodsCat = _goodsCat
 	r.Set("goods_cat", _goodsCat)
 	return nil
 }
 
 // GetGoodsCat GoodsCat Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetGoodsCat() string {
+func (r TaobaowlbitemupdateAPIRequest) GetGoodsCat() string {
 	return r._goodsCat
 }
 
 // SetPricingCat is PricingCat Setter
 // 商品计价货类
-func (r *TaobaoWlbItemUpdateAPIRequest) SetPricingCat(_pricingCat string) error {
+func (r *TaobaowlbitemupdateAPIRequest) SetPricingCat(_pricingCat string) error {
 	r._pricingCat = _pricingCat
 	r.Set("pricing_cat", _pricingCat)
 	return nil
 }
 
 // GetPricingCat PricingCat Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetPricingCat() string {
+func (r TaobaowlbitemupdateAPIRequest) GetPricingCat() string {
 	return r._pricingCat
 }
 
 // SetPackageMaterial is PackageMaterial Setter
 // 商品包装材料类型
-func (r *TaobaoWlbItemUpdateAPIRequest) SetPackageMaterial(_packageMaterial string) error {
+func (r *TaobaowlbitemupdateAPIRequest) SetPackageMaterial(_packageMaterial string) error {
 	r._packageMaterial = _packageMaterial
 	r.Set("package_material", _packageMaterial)
 	return nil
 }
 
 // GetPackageMaterial PackageMaterial Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetPackageMaterial() string {
+func (r TaobaowlbitemupdateAPIRequest) GetPackageMaterial() string {
 	return r._packageMaterial
 }
 
 // SetId is Id Setter
 // 要修改的商品id
-func (r *TaobaoWlbItemUpdateAPIRequest) SetId(_id int64) error {
+func (r *TaobaowlbitemupdateAPIRequest) SetId(_id int64) error {
 	r._id = _id
 	r.Set("id", _id)
 	return nil
 }
 
 // GetId Id Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetId() int64 {
+func (r TaobaowlbitemupdateAPIRequest) GetId() int64 {
 	return r._id
 }
 
 // SetWeight is Weight Setter
 // 商品重量，单位G
-func (r *TaobaoWlbItemUpdateAPIRequest) SetWeight(_weight int64) error {
+func (r *TaobaowlbitemupdateAPIRequest) SetWeight(_weight int64) error {
 	r._weight = _weight
 	r.Set("weight", _weight)
 	return nil
 }
 
 // GetWeight Weight Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetWeight() int64 {
+func (r TaobaowlbitemupdateAPIRequest) GetWeight() int64 {
 	return r._weight
 }
 
 // SetLength is Length Setter
 // 商品长度，单位厘米
-func (r *TaobaoWlbItemUpdateAPIRequest) SetLength(_length int64) error {
+func (r *TaobaowlbitemupdateAPIRequest) SetLength(_length int64) error {
 	r._length = _length
 	r.Set("length", _length)
 	return nil
 }
 
 // GetLength Length Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetLength() int64 {
+func (r TaobaowlbitemupdateAPIRequest) GetLength() int64 {
 	return r._length
 }
 
 // SetWidth is Width Setter
 // 商品宽度，单位厘米
-func (r *TaobaoWlbItemUpdateAPIRequest) SetWidth(_width int64) error {
+func (r *TaobaowlbitemupdateAPIRequest) SetWidth(_width int64) error {
 	r._width = _width
 	r.Set("width", _width)
 	return nil
 }
 
 // GetWidth Width Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetWidth() int64 {
+func (r TaobaowlbitemupdateAPIRequest) GetWidth() int64 {
 	return r._width
 }
 
 // SetHeight is Height Setter
 // 商品高度，单位厘米
-func (r *TaobaoWlbItemUpdateAPIRequest) SetHeight(_height int64) error {
+func (r *TaobaowlbitemupdateAPIRequest) SetHeight(_height int64) error {
 	r._height = _height
 	r.Set("height", _height)
 	return nil
 }
 
 // GetHeight Height Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetHeight() int64 {
+func (r TaobaowlbitemupdateAPIRequest) GetHeight() int64 {
 	return r._height
 }
 
 // SetVolume is Volume Setter
 // 商品体积，单位立方厘米
-func (r *TaobaoWlbItemUpdateAPIRequest) SetVolume(_volume int64) error {
+func (r *TaobaowlbitemupdateAPIRequest) SetVolume(_volume int64) error {
 	r._volume = _volume
 	r.Set("volume", _volume)
 	return nil
 }
 
 // GetVolume Volume Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetVolume() int64 {
+func (r TaobaowlbitemupdateAPIRequest) GetVolume() int64 {
 	return r._volume
 }
 
 // SetIsFriable is IsFriable Setter
 // 是否易碎品
-func (r *TaobaoWlbItemUpdateAPIRequest) SetIsFriable(_isFriable bool) error {
+func (r *TaobaowlbitemupdateAPIRequest) SetIsFriable(_isFriable bool) error {
 	r._isFriable = _isFriable
 	r.Set("is_friable", _isFriable)
 	return nil
 }
 
 // GetIsFriable IsFriable Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetIsFriable() bool {
+func (r TaobaowlbitemupdateAPIRequest) GetIsFriable() bool {
 	return r._isFriable
 }
 
 // SetIsDangerous is IsDangerous Setter
 // 是否危险品
-func (r *TaobaoWlbItemUpdateAPIRequest) SetIsDangerous(_isDangerous bool) error {
+func (r *TaobaowlbitemupdateAPIRequest) SetIsDangerous(_isDangerous bool) error {
 	r._isDangerous = _isDangerous
 	r.Set("is_dangerous", _isDangerous)
 	return nil
 }
 
 // GetIsDangerous IsDangerous Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetIsDangerous() bool {
+func (r TaobaowlbitemupdateAPIRequest) GetIsDangerous() bool {
 	return r._isDangerous
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkReverseCreatefeatchAPIResponse 逆向取货 API返回值
+// AlibabawdkreversecreatefeatchAPIResponse 逆向取货 API返回值
 // alibaba.wdk.reverse.createfeatch
 //
 // 发起逆向取货
-type AlibabaWdkReverseCreatefeatchAPIResponse struct {
+type AlibabawdkreversecreatefeatchAPIResponse struct {
 	model.CommonResponse
-	AlibabaWdkReverseCreatefeatchAPIResponseModel
+	AlibabawdkreversecreatefeatchAPIResponseModel
 }
 
-// AlibabaWdkReverseCreatefeatchAPIResponseModel is 逆向取货 成功返回结果
-type AlibabaWdkReverseCreatefeatchAPIResponseModel struct {
+// AlibabawdkreversecreatefeatchAPIResponseModel is 逆向取货 成功返回结果
+type AlibabawdkreversecreatefeatchAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_reverse_createfeatch_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

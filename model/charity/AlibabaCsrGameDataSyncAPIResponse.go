@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaCsrGameDataSyncAPIResponse 公益互动 外部游戏数据同步 API返回值
+// AlibabacsrgamedatasyncAPIResponse 公益互动 外部游戏数据同步 API返回值
 // alibaba.csr.game.data.sync
 //
 // 公益互动 外部游戏数据同步
-type AlibabaCsrGameDataSyncAPIResponse struct {
+type AlibabacsrgamedatasyncAPIResponse struct {
 	model.CommonResponse
-	AlibabaCsrGameDataSyncAPIResponseModel
+	AlibabacsrgamedatasyncAPIResponseModel
 }
 
-// AlibabaCsrGameDataSyncAPIResponseModel is 公益互动 外部游戏数据同步 成功返回结果
-type AlibabaCsrGameDataSyncAPIResponseModel struct {
+// AlibabacsrgamedatasyncAPIResponseModel is 公益互动 外部游戏数据同步 成功返回结果
+type AlibabacsrgamedatasyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_csr_game_data_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

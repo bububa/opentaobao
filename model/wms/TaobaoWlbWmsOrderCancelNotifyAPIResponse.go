@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoWlbWmsOrderCancelNotifyAPIResponse 单据取消接口 API返回值
+// TaobaowlbwmsordercancelnotifyAPIResponse 单据取消接口 API返回值
 // taobao.wlb.wms.order.cancel.notify
 //
 // 单据取消接口
-type TaobaoWlbWmsOrderCancelNotifyAPIResponse struct {
+type TaobaowlbwmsordercancelnotifyAPIResponse struct {
 	model.CommonResponse
-	TaobaoWlbWmsOrderCancelNotifyAPIResponseModel
+	TaobaowlbwmsordercancelnotifyAPIResponseModel
 }
 
-// TaobaoWlbWmsOrderCancelNotifyAPIResponseModel is 单据取消接口 成功返回结果
-type TaobaoWlbWmsOrderCancelNotifyAPIResponseModel struct {
+// TaobaowlbwmsordercancelnotifyAPIResponseModel is 单据取消接口 成功返回结果
+type TaobaowlbwmsordercancelnotifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_wms_order_cancel_notify_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

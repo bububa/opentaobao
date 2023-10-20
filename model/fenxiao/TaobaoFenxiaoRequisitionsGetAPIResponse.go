@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoFenxiaoRequisitionsGetAPIResponse 合作申请查询 API返回值
+// TaobaofenxiaorequisitionsgetAPIResponse 合作申请查询 API返回值
 // taobao.fenxiao.requisitions.get
 //
 // 合作申请查询
-type TaobaoFenxiaoRequisitionsGetAPIResponse struct {
+type TaobaofenxiaorequisitionsgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoFenxiaoRequisitionsGetAPIResponseModel
+	TaobaofenxiaorequisitionsgetAPIResponseModel
 }
 
-// TaobaoFenxiaoRequisitionsGetAPIResponseModel is 合作申请查询 成功返回结果
-type TaobaoFenxiaoRequisitionsGetAPIResponseModel struct {
+// TaobaofenxiaorequisitionsgetAPIResponseModel is 合作申请查询 成功返回结果
+type TaobaofenxiaorequisitionsgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_requisitions_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

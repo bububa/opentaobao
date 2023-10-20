@@ -1,7 +1,7 @@
 package happytrip
 
-// AlibabaHappytripTaxiOrderComplaintGetStruct 结构体
-type AlibabaHappytripTaxiOrderComplaintGetStruct struct {
+// AlibabahappytriptaxiordercomplaintgetStruct 结构体
+type AlibabahappytriptaxiordercomplaintgetStruct struct {
 	// 供应商订单号
 	OrderId string `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 供应商工单号

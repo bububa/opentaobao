@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripMerchantGalaxyWechatLoginAPIRequest 星河-用户使用微信登陆 API请求
+// AlitripmerchantgalaxywechatloginAPIRequest 星河-用户使用微信登陆 API请求
 // alitrip.merchant.galaxy.wechat.login
 //
 // 星河产品=用户微信小程序登陆
-type AlitripMerchantGalaxyWechatLoginAPIRequest struct {
+type AlitripmerchantgalaxywechatloginAPIRequest struct {
 	model.Params
 	// 租户身份信息
 	_tenantKey string
@@ -18,52 +18,52 @@ type AlitripMerchantGalaxyWechatLoginAPIRequest struct {
 	_loginParam *LoginParam
 }
 
-// NewAlitripMerchantGalaxyWechatLoginRequest 初始化AlitripMerchantGalaxyWechatLoginAPIRequest对象
-func NewAlitripMerchantGalaxyWechatLoginRequest() *AlitripMerchantGalaxyWechatLoginAPIRequest {
-	return &AlitripMerchantGalaxyWechatLoginAPIRequest{
+// NewAlitripmerchantgalaxywechatloginRequest 初始化AlitripmerchantgalaxywechatloginAPIRequest对象
+func NewAlitripmerchantgalaxywechatloginRequest() *AlitripmerchantgalaxywechatloginAPIRequest {
+	return &AlitripmerchantgalaxywechatloginAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripMerchantGalaxyWechatLoginAPIRequest) GetApiMethodName() string {
+func (r AlitripmerchantgalaxywechatloginAPIRequest) GetApiMethodName() string {
 	return "alitrip.merchant.galaxy.wechat.login"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripMerchantGalaxyWechatLoginAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripmerchantgalaxywechatloginAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripMerchantGalaxyWechatLoginAPIRequest) GetRawParams() model.Params {
+func (r AlitripmerchantgalaxywechatloginAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTenantKey is TenantKey Setter
 // 租户身份信息
-func (r *AlitripMerchantGalaxyWechatLoginAPIRequest) SetTenantKey(_tenantKey string) error {
+func (r *AlitripmerchantgalaxywechatloginAPIRequest) SetTenantKey(_tenantKey string) error {
 	r._tenantKey = _tenantKey
 	r.Set("tenant_key", _tenantKey)
 	return nil
 }
 
 // GetTenantKey TenantKey Getter
-func (r AlitripMerchantGalaxyWechatLoginAPIRequest) GetTenantKey() string {
+func (r AlitripmerchantgalaxywechatloginAPIRequest) GetTenantKey() string {
 	return r._tenantKey
 }
 
 // SetLoginParam is LoginParam Setter
 // 微信小程序登陆请求参数
-func (r *AlitripMerchantGalaxyWechatLoginAPIRequest) SetLoginParam(_loginParam *LoginParam) error {
+func (r *AlitripmerchantgalaxywechatloginAPIRequest) SetLoginParam(_loginParam *LoginParam) error {
 	r._loginParam = _loginParam
 	r.Set("login_param", _loginParam)
 	return nil
 }
 
 // GetLoginParam LoginParam Getter
-func (r AlitripMerchantGalaxyWechatLoginAPIRequest) GetLoginParam() *LoginParam {
+func (r AlitripmerchantgalaxywechatloginAPIRequest) GetLoginParam() *LoginParam {
 	return r._loginParam
 }

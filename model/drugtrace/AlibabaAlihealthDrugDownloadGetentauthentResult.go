@@ -1,9 +1,9 @@
 package drugtrace
 
-// AlibabaAlihealthDrugDownloadGetentauthentResult 结构体
-type AlibabaAlihealthDrugDownloadGetentauthentResult struct {
+// AlibabaalihealthdrugdownloadgetentauthentResult 结构体
+type AlibabaalihealthdrugdownloadgetentauthentResult struct {
 	// list
-	AuthList []AlibabaAlihealthDrugDownloadGetentauthentModel `json:"auth_list,omitempty" xml:"auth_list>alibaba_alihealth_drug_download_getentauthent_model,omitempty"`
+	AuthList []AlibabaalihealthdrugdownloadgetentauthentModel `json:"auth_list,omitempty" xml:"auth_list>alibabaalihealthdrugdownloadgetentauthent_model,omitempty"`
 	// msgCode
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// msgInfo

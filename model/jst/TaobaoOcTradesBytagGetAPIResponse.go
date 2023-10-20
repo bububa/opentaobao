@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOcTradesBytagGetAPIResponse 标签查询订单 API返回值
+// TaobaooctradesbytaggetAPIResponse 标签查询订单 API返回值
 // taobao.oc.trades.bytag.get
 //
 // 根据标签查询订单编号
-type TaobaoOcTradesBytagGetAPIResponse struct {
+type TaobaooctradesbytaggetAPIResponse struct {
 	model.CommonResponse
-	TaobaoOcTradesBytagGetAPIResponseModel
+	TaobaooctradesbytaggetAPIResponseModel
 }
 
-// TaobaoOcTradesBytagGetAPIResponseModel is 标签查询订单 成功返回结果
-type TaobaoOcTradesBytagGetAPIResponseModel struct {
+// TaobaooctradesbytaggetAPIResponseModel is 标签查询订单 成功返回结果
+type TaobaooctradesbytaggetAPIResponseModel struct {
 	XMLName xml.Name `xml:"oc_trades_bytag_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthTracecodesearchGetshowurlVivoAPIResponse 获取药品扫码落地页vivo API返回值
+// AlibabaalihealthtracecodesearchgetshowurlvivoAPIResponse 获取药品扫码落地页vivo API返回值
 // alibaba.alihealth.tracecodesearch.getshowurl.vivo
 //
 // 获取药品扫码落地页vivo
-type AlibabaAlihealthTracecodesearchGetshowurlVivoAPIResponse struct {
+type AlibabaalihealthtracecodesearchgetshowurlvivoAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihealthTracecodesearchGetshowurlVivoAPIResponseModel
+	AlibabaalihealthtracecodesearchgetshowurlvivoAPIResponseModel
 }
 
-// AlibabaAlihealthTracecodesearchGetshowurlVivoAPIResponseModel is 获取药品扫码落地页vivo 成功返回结果
-type AlibabaAlihealthTracecodesearchGetshowurlVivoAPIResponseModel struct {
+// AlibabaalihealthtracecodesearchgetshowurlvivoAPIResponseModel is 获取药品扫码落地页vivo 成功返回结果
+type AlibabaalihealthtracecodesearchgetshowurlvivoAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_tracecodesearch_getshowurl_vivo_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

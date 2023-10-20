@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoCrmMembersGetAPIResponse 获取卖家的会员（基本查询） API返回值
+// TaobaocrmmembersgetAPIResponse 获取卖家的会员（基本查询） API返回值
 // taobao.crm.members.get
 //
 // 查询卖家的会员，进行基本的查询，返回符合条件的会员列表
-type TaobaoCrmMembersGetAPIResponse struct {
+type TaobaocrmmembersgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoCrmMembersGetAPIResponseModel
+	TaobaocrmmembersgetAPIResponseModel
 }
 
-// TaobaoCrmMembersGetAPIResponseModel is 获取卖家的会员（基本查询） 成功返回结果
-type TaobaoCrmMembersGetAPIResponseModel struct {
+// TaobaocrmmembersgetAPIResponseModel is 获取卖家的会员（基本查询） 成功返回结果
+type TaobaocrmmembersgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"crm_members_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

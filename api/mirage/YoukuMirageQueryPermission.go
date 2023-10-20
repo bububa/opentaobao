@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/mirage"
 )
 
-// YoukuMirageQueryPermission 优酷播控查询是否可播API
+// Youkumiragequerypermission 优酷播控查询是否可播API
 // youku.mirage.query.permission
 //
 // 根据节目ID或者VID查询视频或者节目是否可以播放
-func YoukuMirageQueryPermission(clt *core.SDKClient, req *mirage.YoukuMirageQueryPermissionAPIRequest, session string) (*mirage.YoukuMirageQueryPermissionAPIResponse, error) {
-	var resp mirage.YoukuMirageQueryPermissionAPIResponse
+func Youkumiragequerypermission(clt *core.SDKClient, req *mirage.YoukumiragequerypermissionAPIRequest, session string) (*mirage.YoukumiragequerypermissionAPIResponse, error) {
+	var resp mirage.YoukumiragequerypermissionAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

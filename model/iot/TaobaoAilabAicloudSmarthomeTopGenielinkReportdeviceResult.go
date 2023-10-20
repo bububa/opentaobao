@@ -1,7 +1,7 @@
 package iot
 
-// TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceResult 结构体
-type TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceResult struct {
+// TaobaoailabaicloudsmarthometopgenielinkreportdeviceResult 结构体
+type TaobaoailabaicloudsmarthometopgenielinkreportdeviceResult struct {
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// exception

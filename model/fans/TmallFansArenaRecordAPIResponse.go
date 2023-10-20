@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallFansArenaRecordAPIResponse 记录完成擂台的用户 API返回值
+// TmallfansarenarecordAPIResponse 记录完成擂台的用户 API返回值
 // tmall.fans.arena.record
 //
 // 记录完成擂台的用户和完成分数
-type TmallFansArenaRecordAPIResponse struct {
+type TmallfansarenarecordAPIResponse struct {
 	model.CommonResponse
-	TmallFansArenaRecordAPIResponseModel
+	TmallfansarenarecordAPIResponseModel
 }
 
-// TmallFansArenaRecordAPIResponseModel is 记录完成擂台的用户 成功返回结果
-type TmallFansArenaRecordAPIResponseModel struct {
+// TmallfansarenarecordAPIResponseModel is 记录完成擂台的用户 成功返回结果
+type TmallfansarenarecordAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_fans_arena_record_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

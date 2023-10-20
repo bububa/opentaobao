@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaWdkItemMerchantCategoryQuery 查询商品的商家叶子类目
+// Alibabawdkitemmerchantcategoryquery 查询商品的商家叶子类目
 // alibaba.wdk.item.merchant.category.query
 //
 // 查询商品的商家叶子类目
-func AlibabaWdkItemMerchantCategoryQuery(clt *core.SDKClient, req *wdk.AlibabaWdkItemMerchantCategoryQueryAPIRequest, session string) (*wdk.AlibabaWdkItemMerchantCategoryQueryAPIResponse, error) {
-	var resp wdk.AlibabaWdkItemMerchantCategoryQueryAPIResponse
+func Alibabawdkitemmerchantcategoryquery(clt *core.SDKClient, req *wdk.AlibabawdkitemmerchantcategoryqueryAPIRequest, session string) (*wdk.AlibabawdkitemmerchantcategoryqueryAPIResponse, error) {
+	var resp wdk.AlibabawdkitemmerchantcategoryqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

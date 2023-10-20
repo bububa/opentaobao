@@ -1,7 +1,7 @@
 package tmallservice
 
-// TmallMallitemcenterServiceproductQueryResult 结构体
-type TmallMallitemcenterServiceproductQueryResult struct {
+// TmallmallitemcenterserviceproductqueryResult 结构体
+type TmallmallitemcenterserviceproductqueryResult struct {
 	// 返回数据
 	ResultDataList []ResultData `json:"result_data_list,omitempty" xml:"result_data_list>result_data,omitempty"`
 	// message

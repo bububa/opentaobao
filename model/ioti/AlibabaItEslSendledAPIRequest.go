@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaItEslSendledAPIRequest 厂测LED控制 API请求
+// AlibabaiteslsendledAPIRequest 厂测LED控制 API请求
 // alibaba.it.esl.sendled
 //
 // 针对厂测生产的的价签，增加led闪灯的接口，进行led 闪灯测试
-type AlibabaItEslSendledAPIRequest struct {
+type AlibabaiteslsendledAPIRequest struct {
 	model.Params
 	// mac
 	_macAp string
@@ -18,52 +18,52 @@ type AlibabaItEslSendledAPIRequest struct {
 	_type string
 }
 
-// NewAlibabaItEslSendledRequest 初始化AlibabaItEslSendledAPIRequest对象
-func NewAlibabaItEslSendledRequest() *AlibabaItEslSendledAPIRequest {
-	return &AlibabaItEslSendledAPIRequest{
+// NewAlibabaiteslsendledRequest 初始化AlibabaiteslsendledAPIRequest对象
+func NewAlibabaiteslsendledRequest() *AlibabaiteslsendledAPIRequest {
+	return &AlibabaiteslsendledAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaItEslSendledAPIRequest) GetApiMethodName() string {
+func (r AlibabaiteslsendledAPIRequest) GetApiMethodName() string {
 	return "alibaba.it.esl.sendled"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaItEslSendledAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaiteslsendledAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaItEslSendledAPIRequest) GetRawParams() model.Params {
+func (r AlibabaiteslsendledAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetMacAp is MacAp Setter
 // mac
-func (r *AlibabaItEslSendledAPIRequest) SetMacAp(_macAp string) error {
+func (r *AlibabaiteslsendledAPIRequest) SetMacAp(_macAp string) error {
 	r._macAp = _macAp
 	r.Set("mac_ap", _macAp)
 	return nil
 }
 
 // GetMacAp MacAp Getter
-func (r AlibabaItEslSendledAPIRequest) GetMacAp() string {
+func (r AlibabaiteslsendledAPIRequest) GetMacAp() string {
 	return r._macAp
 }
 
 // SetType is Type Setter
 // 0、1、2、3：关蓝绿红
-func (r *AlibabaItEslSendledAPIRequest) SetType(_type string) error {
+func (r *AlibabaiteslsendledAPIRequest) SetType(_type string) error {
 	r._type = _type
 	r.Set("type", _type)
 	return nil
 }
 
 // GetType Type Getter
-func (r AlibabaItEslSendledAPIRequest) GetType() string {
+func (r AlibabaiteslsendledAPIRequest) GetType() string {
 	return r._type
 }

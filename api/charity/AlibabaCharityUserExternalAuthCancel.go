@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/charity"
 )
 
-// AlibabaCharityUserExternalAuthCancel 取消外部授权
+// Alibabacharityuserexternalauthcancel 取消外部授权
 // alibaba.charity.user.external.auth.cancel
 //
 // 取消外部授权
-func AlibabaCharityUserExternalAuthCancel(clt *core.SDKClient, req *charity.AlibabaCharityUserExternalAuthCancelAPIRequest, session string) (*charity.AlibabaCharityUserExternalAuthCancelAPIResponse, error) {
-	var resp charity.AlibabaCharityUserExternalAuthCancelAPIResponse
+func Alibabacharityuserexternalauthcancel(clt *core.SDKClient, req *charity.AlibabacharityuserexternalauthcancelAPIRequest, session string) (*charity.AlibabacharityuserexternalauthcancelAPIResponse, error) {
+	var resp charity.AlibabacharityuserexternalauthcancelAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAilabsIotDeviceMeshEventInvokeAPIResponse 弹内设备中心事件调用 API返回值
+// AlibabaailabsiotdevicemesheventinvokeAPIResponse 弹内设备中心事件调用 API返回值
 // alibaba.ailabs.iot.device.mesh.event.invoke
 //
 // 弹内设备中心事件调用
-type AlibabaAilabsIotDeviceMeshEventInvokeAPIResponse struct {
+type AlibabaailabsiotdevicemesheventinvokeAPIResponse struct {
 	model.CommonResponse
-	AlibabaAilabsIotDeviceMeshEventInvokeAPIResponseModel
+	AlibabaailabsiotdevicemesheventinvokeAPIResponseModel
 }
 
-// AlibabaAilabsIotDeviceMeshEventInvokeAPIResponseModel is 弹内设备中心事件调用 成功返回结果
-type AlibabaAilabsIotDeviceMeshEventInvokeAPIResponseModel struct {
+// AlibabaailabsiotdevicemesheventinvokeAPIResponseModel is 弹内设备中心事件调用 成功返回结果
+type AlibabaailabsiotdevicemesheventinvokeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailabs_iot_device_mesh_event_invoke_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

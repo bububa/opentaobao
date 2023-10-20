@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// TmallCityretailFulfillAbnormalCenterAbnormalStatusChange 同城零售履约异常中心异常单处理结果回调接口
+// Tmallcityretailfulfillabnormalcenterabnormalstatuschange 同城零售履约异常中心异常单处理结果回调接口
 // tmall.cityretail.fulfill.abnormal.center.abnormal.status.change
 //
 // 同城零售履约异常中心异常单处理结果回调接口
-func TmallCityretailFulfillAbnormalCenterAbnormalStatusChange(clt *core.SDKClient, req *wdk.TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest, session string) (*wdk.TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIResponse, error) {
-	var resp wdk.TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIResponse
+func Tmallcityretailfulfillabnormalcenterabnormalstatuschange(clt *core.SDKClient, req *wdk.TmallcityretailfulfillabnormalcenterabnormalstatuschangeAPIRequest, session string) (*wdk.TmallcityretailfulfillabnormalcenterabnormalstatuschangeAPIResponse, error) {
+	var resp wdk.TmallcityretailfulfillabnormalcenterabnormalstatuschangeAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

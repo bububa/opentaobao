@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaWdkOrderSyncWithitemApiResult 结构体
-type AlibabaWdkOrderSyncWithitemApiResult struct {
+// AlibabawdkordersyncwithitemApiResult 结构体
+type AlibabawdkordersyncwithitemApiResult struct {
 	// 调用接口返回错误码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 调用接口返回错误信息

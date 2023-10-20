@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/omniorder"
 )
 
-// AlibabaRetailCommissionOrderSync 分佣数据传输
+// Alibabaretailcommissionordersync 分佣数据传输
 // alibaba.retail.commission.order.sync
 //
 // 同步分佣结果
-func AlibabaRetailCommissionOrderSync(clt *core.SDKClient, req *omniorder.AlibabaRetailCommissionOrderSyncAPIRequest, session string) (*omniorder.AlibabaRetailCommissionOrderSyncAPIResponse, error) {
-	var resp omniorder.AlibabaRetailCommissionOrderSyncAPIResponse
+func Alibabaretailcommissionordersync(clt *core.SDKClient, req *omniorder.AlibabaretailcommissionordersyncAPIRequest, session string) (*omniorder.AlibabaretailcommissionordersyncAPIResponse, error) {
+	var resp omniorder.AlibabaretailcommissionordersyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

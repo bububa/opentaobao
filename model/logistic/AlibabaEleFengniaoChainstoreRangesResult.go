@@ -1,7 +1,7 @@
 package logistic
 
-// AlibabaEleFengniaoChainstoreRangesResult 结构体
-type AlibabaEleFengniaoChainstoreRangesResult struct {
+// AlibabaelefengniaochainstorerangesResult 结构体
+type AlibabaelefengniaochainstorerangesResult struct {
 	// ranges
 	Ranges []Range `json:"ranges,omitempty" xml:"ranges>range,omitempty"`
 	// 到达圈标识

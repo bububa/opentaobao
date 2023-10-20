@@ -4,8 +4,8 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallCarContractDownloadResult 结构体
-type TmallCarContractDownloadResult struct {
+// TmallcarcontractdownloadResult 结构体
+type TmallcarcontractdownloadResult struct {
 	// 错误码
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 错误信息

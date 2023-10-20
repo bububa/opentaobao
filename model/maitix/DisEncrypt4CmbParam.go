@@ -1,7 +1,7 @@
 package maitix
 
-// DisEncrypt4CmbParam 结构体
-type DisEncrypt4CmbParam struct {
+// DisEncrypt4cmbParam 结构体
+type DisEncrypt4cmbParam struct {
 	// 订单金额
 	Amount string `json:"amount,omitempty" xml:"amount,omitempty"`
 	// 订单日期

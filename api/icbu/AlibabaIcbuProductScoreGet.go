@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/icbu"
 )
 
-// AlibabaIcbuProductScoreGet 产品质量分查询
+// Alibabaicbuproductscoreget 产品质量分查询
 // alibaba.icbu.product.score.get
 //
 // 产品质量分查询
-func AlibabaIcbuProductScoreGet(clt *core.SDKClient, req *icbu.AlibabaIcbuProductScoreGetAPIRequest, session string) (*icbu.AlibabaIcbuProductScoreGetAPIResponse, error) {
-	var resp icbu.AlibabaIcbuProductScoreGetAPIResponse
+func Alibabaicbuproductscoreget(clt *core.SDKClient, req *icbu.AlibabaicbuproductscoregetAPIRequest, session string) (*icbu.AlibabaicbuproductscoregetAPIResponse, error) {
+	var resp icbu.AlibabaicbuproductscoregetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

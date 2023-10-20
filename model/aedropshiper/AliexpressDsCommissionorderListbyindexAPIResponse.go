@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpressDsCommissionorderListbyindexAPIResponse 联盟订单分页查询 API返回值
+// AliexpressdscommissionorderlistbyindexAPIResponse 联盟订单分页查询 API返回值
 // aliexpress.ds.commissionorder.listbyindex
 //
 // 联盟订单分页查询
-type AliexpressDsCommissionorderListbyindexAPIResponse struct {
+type AliexpressdscommissionorderlistbyindexAPIResponse struct {
 	model.CommonResponse
-	AliexpressDsCommissionorderListbyindexAPIResponseModel
+	AliexpressdscommissionorderlistbyindexAPIResponseModel
 }
 
-// AliexpressDsCommissionorderListbyindexAPIResponseModel is 联盟订单分页查询 成功返回结果
-type AliexpressDsCommissionorderListbyindexAPIResponseModel struct {
+// AliexpressdscommissionorderlistbyindexAPIResponseModel is 联盟订单分页查询 成功返回结果
+type AliexpressdscommissionorderlistbyindexAPIResponseModel struct {
 	XMLName xml.Name `xml:"aliexpress_ds_commissionorder_listbyindex_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

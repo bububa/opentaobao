@@ -1,7 +1,7 @@
 package iotticket
 
-// MakeMaintainPlanV2TopRequest 结构体
-type MakeMaintainPlanV2TopRequest struct {
+// MakeMaintainPlanV2topRequest 结构体
+type MakeMaintainPlanV2topRequest struct {
 	// 维修项
 	IotMaintainPlanItemList []IotMaintainPlanItemTopRequest `json:"iot_maintain_plan_item_list,omitempty" xml:"iot_maintain_plan_item_list>iot_maintain_plan_item_top_request,omitempty"`
 	// 问题列表（需要映射）

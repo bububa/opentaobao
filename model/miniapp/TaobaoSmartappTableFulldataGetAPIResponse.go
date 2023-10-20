@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSmartappTableFulldataGetAPIResponse 智能应用工作表地址查询 API返回值
+// TaobaosmartapptablefulldatagetAPIResponse 智能应用工作表地址查询 API返回值
 // taobao.smartapp.table.fulldata.get
 //
 // 智能应用工作表地址查询
-type TaobaoSmartappTableFulldataGetAPIResponse struct {
+type TaobaosmartapptablefulldatagetAPIResponse struct {
 	model.CommonResponse
-	TaobaoSmartappTableFulldataGetAPIResponseModel
+	TaobaosmartapptablefulldatagetAPIResponseModel
 }
 
-// TaobaoSmartappTableFulldataGetAPIResponseModel is 智能应用工作表地址查询 成功返回结果
-type TaobaoSmartappTableFulldataGetAPIResponseModel struct {
+// TaobaosmartapptablefulldatagetAPIResponseModel is 智能应用工作表地址查询 成功返回结果
+type TaobaosmartapptablefulldatagetAPIResponseModel struct {
 	XMLName xml.Name `xml:"smartapp_table_fulldata_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

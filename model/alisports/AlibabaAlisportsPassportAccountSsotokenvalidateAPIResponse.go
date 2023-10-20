@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlisportsPassportAccountSsotokenvalidateAPIResponse sso_token验证 API返回值
+// AlibabaalisportspassportaccountssotokenvalidateAPIResponse sso_token验证 API返回值
 // alibaba.alisports.passport.account.ssotokenvalidate
 //
 // sso_token验证
-type AlibabaAlisportsPassportAccountSsotokenvalidateAPIResponse struct {
+type AlibabaalisportspassportaccountssotokenvalidateAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlisportsPassportAccountSsotokenvalidateAPIResponseModel
+	AlibabaalisportspassportaccountssotokenvalidateAPIResponseModel
 }
 
-// AlibabaAlisportsPassportAccountSsotokenvalidateAPIResponseModel is sso_token验证 成功返回结果
-type AlibabaAlisportsPassportAccountSsotokenvalidateAPIResponseModel struct {
+// AlibabaalisportspassportaccountssotokenvalidateAPIResponseModel is sso_token验证 成功返回结果
+type AlibabaalisportspassportaccountssotokenvalidateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alisports_passport_account_ssotokenvalidate_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

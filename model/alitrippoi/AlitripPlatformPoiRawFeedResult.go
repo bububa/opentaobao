@@ -1,7 +1,7 @@
 package alitrippoi
 
-// AlitripPlatformPoiRawFeedResult 结构体
-type AlitripPlatformPoiRawFeedResult struct {
+// AlitripplatformpoirawfeedResult 结构体
+type AlitripplatformpoirawfeedResult struct {
 	// 错误信息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 返回码

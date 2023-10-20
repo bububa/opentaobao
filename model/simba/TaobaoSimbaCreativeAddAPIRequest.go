@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSimbaCreativeAddAPIRequest 增加创意 API请求
+// TaobaosimbacreativeaddAPIRequest 增加创意 API请求
 // taobao.simba.creative.add
 //
 // 创建一个创意
-type TaobaoSimbaCreativeAddAPIRequest struct {
+type TaobaosimbacreativeaddAPIRequest struct {
 	model.Params
 	// 主人昵称
 	_nick string
@@ -24,91 +24,91 @@ type TaobaoSimbaCreativeAddAPIRequest struct {
 	_adgroupId int64
 }
 
-// NewTaobaoSimbaCreativeAddRequest 初始化TaobaoSimbaCreativeAddAPIRequest对象
-func NewTaobaoSimbaCreativeAddRequest() *TaobaoSimbaCreativeAddAPIRequest {
-	return &TaobaoSimbaCreativeAddAPIRequest{
+// NewTaobaosimbacreativeaddRequest 初始化TaobaosimbacreativeaddAPIRequest对象
+func NewTaobaosimbacreativeaddRequest() *TaobaosimbacreativeaddAPIRequest {
+	return &TaobaosimbacreativeaddAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoSimbaCreativeAddAPIRequest) GetApiMethodName() string {
+func (r TaobaosimbacreativeaddAPIRequest) GetApiMethodName() string {
 	return "taobao.simba.creative.add"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaCreativeAddAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaosimbacreativeaddAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoSimbaCreativeAddAPIRequest) GetRawParams() model.Params {
+func (r TaobaosimbacreativeaddAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetNick is Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaCreativeAddAPIRequest) SetNick(_nick string) error {
+func (r *TaobaosimbacreativeaddAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
 	r.Set("nick", _nick)
 	return nil
 }
 
 // GetNick Nick Getter
-func (r TaobaoSimbaCreativeAddAPIRequest) GetNick() string {
+func (r TaobaosimbacreativeaddAPIRequest) GetNick() string {
 	return r._nick
 }
 
 // SetTitle is Title Setter
 // 创意标题，最多30个汉字
-func (r *TaobaoSimbaCreativeAddAPIRequest) SetTitle(_title string) error {
+func (r *TaobaosimbacreativeaddAPIRequest) SetTitle(_title string) error {
 	r._title = _title
 	r.Set("title", _title)
 	return nil
 }
 
 // GetTitle Title Getter
-func (r TaobaoSimbaCreativeAddAPIRequest) GetTitle() string {
+func (r TaobaosimbacreativeaddAPIRequest) GetTitle() string {
 	return r._title
 }
 
 // SetImgUrl is ImgUrl Setter
 // 创意图片地址，必须是推广组对应商品的图片之一
-func (r *TaobaoSimbaCreativeAddAPIRequest) SetImgUrl(_imgUrl string) error {
+func (r *TaobaosimbacreativeaddAPIRequest) SetImgUrl(_imgUrl string) error {
 	r._imgUrl = _imgUrl
 	r.Set("img_url", _imgUrl)
 	return nil
 }
 
 // GetImgUrl ImgUrl Getter
-func (r TaobaoSimbaCreativeAddAPIRequest) GetImgUrl() string {
+func (r TaobaosimbacreativeaddAPIRequest) GetImgUrl() string {
 	return r._imgUrl
 }
 
 // SetAdExaminationCode is AdExaminationCode Setter
 // 广审批准文号
-func (r *TaobaoSimbaCreativeAddAPIRequest) SetAdExaminationCode(_adExaminationCode string) error {
+func (r *TaobaosimbacreativeaddAPIRequest) SetAdExaminationCode(_adExaminationCode string) error {
 	r._adExaminationCode = _adExaminationCode
 	r.Set("ad_examination_code", _adExaminationCode)
 	return nil
 }
 
 // GetAdExaminationCode AdExaminationCode Getter
-func (r TaobaoSimbaCreativeAddAPIRequest) GetAdExaminationCode() string {
+func (r TaobaosimbacreativeaddAPIRequest) GetAdExaminationCode() string {
 	return r._adExaminationCode
 }
 
 // SetAdgroupId is AdgroupId Setter
 // 推广组Id
-func (r *TaobaoSimbaCreativeAddAPIRequest) SetAdgroupId(_adgroupId int64) error {
+func (r *TaobaosimbacreativeaddAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
 	r.Set("adgroup_id", _adgroupId)
 	return nil
 }
 
 // GetAdgroupId AdgroupId Getter
-func (r TaobaoSimbaCreativeAddAPIRequest) GetAdgroupId() int64 {
+func (r TaobaosimbacreativeaddAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }

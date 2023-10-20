@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoMiniappCloudMongoUpdateAPIRequest 更新MongoDB中的数据 API请求
+// TaobaominiappcloudmongoupdateAPIRequest 更新MongoDB中的数据 API请求
 // taobao.miniapp.cloud.mongo.update
 //
 // 更新MongoDB中的数据
-type TaobaoMiniappCloudMongoUpdateAPIRequest struct {
+type TaobaominiappcloudmongoupdateAPIRequest struct {
 	model.Params
 	// 更新条件
 	_filter string
@@ -22,78 +22,78 @@ type TaobaoMiniappCloudMongoUpdateAPIRequest struct {
 	_env string
 }
 
-// NewTaobaoMiniappCloudMongoUpdateRequest 初始化TaobaoMiniappCloudMongoUpdateAPIRequest对象
-func NewTaobaoMiniappCloudMongoUpdateRequest() *TaobaoMiniappCloudMongoUpdateAPIRequest {
-	return &TaobaoMiniappCloudMongoUpdateAPIRequest{
+// NewTaobaominiappcloudmongoupdateRequest 初始化TaobaominiappcloudmongoupdateAPIRequest对象
+func NewTaobaominiappcloudmongoupdateRequest() *TaobaominiappcloudmongoupdateAPIRequest {
+	return &TaobaominiappcloudmongoupdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoMiniappCloudMongoUpdateAPIRequest) GetApiMethodName() string {
+func (r TaobaominiappcloudmongoupdateAPIRequest) GetApiMethodName() string {
 	return "taobao.miniapp.cloud.mongo.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoMiniappCloudMongoUpdateAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaominiappcloudmongoupdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoMiniappCloudMongoUpdateAPIRequest) GetRawParams() model.Params {
+func (r TaobaominiappcloudmongoupdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetFilter is Filter Setter
 // 更新条件
-func (r *TaobaoMiniappCloudMongoUpdateAPIRequest) SetFilter(_filter string) error {
+func (r *TaobaominiappcloudmongoupdateAPIRequest) SetFilter(_filter string) error {
 	r._filter = _filter
 	r.Set("filter", _filter)
 	return nil
 }
 
 // GetFilter Filter Getter
-func (r TaobaoMiniappCloudMongoUpdateAPIRequest) GetFilter() string {
+func (r TaobaominiappcloudmongoupdateAPIRequest) GetFilter() string {
 	return r._filter
 }
 
 // SetCollection is Collection Setter
 // MongoDB表名
-func (r *TaobaoMiniappCloudMongoUpdateAPIRequest) SetCollection(_collection string) error {
+func (r *TaobaominiappcloudmongoupdateAPIRequest) SetCollection(_collection string) error {
 	r._collection = _collection
 	r.Set("collection", _collection)
 	return nil
 }
 
 // GetCollection Collection Getter
-func (r TaobaoMiniappCloudMongoUpdateAPIRequest) GetCollection() string {
+func (r TaobaominiappcloudmongoupdateAPIRequest) GetCollection() string {
 	return r._collection
 }
 
 // SetRecord is Record Setter
 // 待写入的数据
-func (r *TaobaoMiniappCloudMongoUpdateAPIRequest) SetRecord(_record string) error {
+func (r *TaobaominiappcloudmongoupdateAPIRequest) SetRecord(_record string) error {
 	r._record = _record
 	r.Set("record", _record)
 	return nil
 }
 
 // GetRecord Record Getter
-func (r TaobaoMiniappCloudMongoUpdateAPIRequest) GetRecord() string {
+func (r TaobaominiappcloudmongoupdateAPIRequest) GetRecord() string {
 	return r._record
 }
 
 // SetEnv is Env Setter
 // 要操作的环境，默认是测试环境
-func (r *TaobaoMiniappCloudMongoUpdateAPIRequest) SetEnv(_env string) error {
+func (r *TaobaominiappcloudmongoupdateAPIRequest) SetEnv(_env string) error {
 	r._env = _env
 	r.Set("env", _env)
 	return nil
 }
 
 // GetEnv Env Getter
-func (r TaobaoMiniappCloudMongoUpdateAPIRequest) GetEnv() string {
+func (r TaobaominiappcloudmongoupdateAPIRequest) GetEnv() string {
 	return r._env
 }

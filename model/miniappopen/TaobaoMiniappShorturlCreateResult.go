@@ -1,7 +1,7 @@
 package miniappopen
 
-// TaobaoMiniappShorturlCreateResult 结构体
-type TaobaoMiniappShorturlCreateResult struct {
+// TaobaominiappshorturlcreateResult 结构体
+type TaobaominiappshorturlcreateResult struct {
 	// model
 	Model *MiniAppShortUrlDto `json:"model,omitempty" xml:"model,omitempty"`
 }

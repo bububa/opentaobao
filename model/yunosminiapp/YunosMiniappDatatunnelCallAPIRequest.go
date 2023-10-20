@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosMiniappDatatunnelCallAPIRequest 车载小程序外部服务调用 API请求
+// YunosminiappdatatunnelcallAPIRequest 车载小程序外部服务调用 API请求
 // yunos.miniapp.datatunnel.call
 //
 // 对客户提供的api进行统一封装调用。
-type YunosMiniappDatatunnelCallAPIRequest struct {
+type YunosminiappdatatunnelcallAPIRequest struct {
 	model.Params
 	// 参数
-	_param *YunosMiniappDatatunnelCallBaseRequest
+	_param *YunosminiappdatatunnelcallBaseRequest
 }
 
-// NewYunosMiniappDatatunnelCallRequest 初始化YunosMiniappDatatunnelCallAPIRequest对象
-func NewYunosMiniappDatatunnelCallRequest() *YunosMiniappDatatunnelCallAPIRequest {
-	return &YunosMiniappDatatunnelCallAPIRequest{
+// NewYunosminiappdatatunnelcallRequest 初始化YunosminiappdatatunnelcallAPIRequest对象
+func NewYunosminiappdatatunnelcallRequest() *YunosminiappdatatunnelcallAPIRequest {
+	return &YunosminiappdatatunnelcallAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r YunosMiniappDatatunnelCallAPIRequest) GetApiMethodName() string {
+func (r YunosminiappdatatunnelcallAPIRequest) GetApiMethodName() string {
 	return "yunos.miniapp.datatunnel.call"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YunosMiniappDatatunnelCallAPIRequest) GetApiParams(params url.Values) {
+func (r YunosminiappdatatunnelcallAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r YunosMiniappDatatunnelCallAPIRequest) GetRawParams() model.Params {
+func (r YunosminiappdatatunnelcallAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 参数
-func (r *YunosMiniappDatatunnelCallAPIRequest) SetParam(_param *YunosMiniappDatatunnelCallBaseRequest) error {
+func (r *YunosminiappdatatunnelcallAPIRequest) SetParam(_param *YunosminiappdatatunnelcallBaseRequest) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r YunosMiniappDatatunnelCallAPIRequest) GetParam() *YunosMiniappDatatunnelCallBaseRequest {
+func (r YunosminiappdatatunnelcallAPIRequest) GetParam() *YunosminiappdatatunnelcallBaseRequest {
 	return r._param
 }

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/interact"
 )
 
-// AlibabaInteractSensorNetworkstatus 网络状态
+// Alibabainteractsensornetworkstatus 网络状态
 // alibaba.interact.sensor.networkstatus
 //
 // 客户端网络状态
-func AlibabaInteractSensorNetworkstatus(clt *core.SDKClient, req *interact.AlibabaInteractSensorNetworkstatusAPIRequest, session string) (*interact.AlibabaInteractSensorNetworkstatusAPIResponse, error) {
-	var resp interact.AlibabaInteractSensorNetworkstatusAPIResponse
+func Alibabainteractsensornetworkstatus(clt *core.SDKClient, req *interact.AlibabainteractsensornetworkstatusAPIRequest, session string) (*interact.AlibabainteractsensornetworkstatusAPIResponse, error) {
+	var resp interact.AlibabainteractsensornetworkstatusAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

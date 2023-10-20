@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponse 9.2-同步地点配额 API返回值
+// AlibabatmallgeniescpplanlocationquoteuploadAPIResponse 9.2-同步地点配额 API返回值
 // alibaba.tmallgenie.scp.plan.location.quote.upload
 //
 // 同步地点配额
-type AlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponse struct {
+type AlibabatmallgeniescpplanlocationquoteuploadAPIResponse struct {
 	model.CommonResponse
-	AlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponseModel
+	AlibabatmallgeniescpplanlocationquoteuploadAPIResponseModel
 }
 
-// AlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponseModel is 9.2-同步地点配额 成功返回结果
-type AlibabaTmallgenieScpPlanLocationQuoteUploadAPIResponseModel struct {
+// AlibabatmallgeniescpplanlocationquoteuploadAPIResponseModel is 9.2-同步地点配额 成功返回结果
+type AlibabatmallgeniescpplanlocationquoteuploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_tmallgenie_scp_plan_location_quote_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

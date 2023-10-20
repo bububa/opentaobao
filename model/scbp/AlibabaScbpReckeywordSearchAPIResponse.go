@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaScbpReckeywordSearchAPIResponse 推荐词-词推词 API返回值
+// AlibabascbpreckeywordsearchAPIResponse 推荐词-词推词 API返回值
 // alibaba.scbp.reckeyword.search
 //
 // 推荐词-词推词
-type AlibabaScbpReckeywordSearchAPIResponse struct {
+type AlibabascbpreckeywordsearchAPIResponse struct {
 	model.CommonResponse
-	AlibabaScbpReckeywordSearchAPIResponseModel
+	AlibabascbpreckeywordsearchAPIResponseModel
 }
 
-// AlibabaScbpReckeywordSearchAPIResponseModel is 推荐词-词推词 成功返回结果
-type AlibabaScbpReckeywordSearchAPIResponseModel struct {
+// AlibabascbpreckeywordsearchAPIResponseModel is 推荐词-词推词 成功返回结果
+type AlibabascbpreckeywordsearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_reckeyword_search_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

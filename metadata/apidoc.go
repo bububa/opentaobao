@@ -31,6 +31,9 @@ const (
 	// PRICE_PARAM_TYPE 价格类型
 	PRICE_PARAM_TYPE ApiParamType = "Price"
 
+	// BIG_DECIMAL_PARAM_TYPE Decimal类型
+	BIG_DECIMAL_PARAM_TYPE ApiParamType = "BigDecimal"
+
 	// BYTE_PARAM_TYPE byte 类型
 	BYTE_PARAM_TYPE ApiParamType = "byte"
 
@@ -82,7 +85,7 @@ func (d ApiDoc) Filename() string {
 
 // Title 获取淘宝API文档对应golang API名
 func (d ApiDoc) Title() string {
-	name := strings.Title(strings.ReplaceAll(d.Name, "-", "_"))
+	name := util.UpperCamelCase(strings.ReplaceAll(d.Name, "-", "_"))
 	return strings.TrimSpace(strings.ReplaceAll(name, ".", ""))
 }
 
@@ -142,7 +145,8 @@ type ApiParam struct {
 
 // TplParam 转化为API模版参数结构体
 func (p ApiParam) TplParam(apiName string) TplParam {
-	name := strings.ReplaceAll(strings.Title(strings.ReplaceAll(p.Name, "_", ".")), ".", "")
+	// name := strings.ReplaceAll(strings.Title(strings.ReplaceAll(p.Name, "_", ".")), ".", "")
+	name := util.UpperCamelCase(strings.ReplaceAll(p.Name, ".", "_"))
 	param := TplParam{
 		Name:     name,
 		Label:    strings.ToLower(string(name[0])) + name[1:],
@@ -163,6 +167,8 @@ func (p ApiParam) TplParam(apiName string) TplParam {
 		param.Type = "bool"
 	case PRICE_PARAM_TYPE:
 		param.Type = "float64"
+	case BIG_DECIMAL_PARAM_TYPE:
+		param.Type = "float64"
 	case FIELD_LIST_PARAM_TYPE:
 		param.SnakeType = "string"
 		param.Type = "[]string"
@@ -172,7 +178,7 @@ func (p ApiParam) TplParam(apiName string) TplParam {
 	case JSON_PARAM_TYPE:
 		param.Type = "string"
 	default:
-		paramType = strings.Title(paramType)
+		paramType = util.UpperCamelCase(paramType)
 		replaceMp := map[string]string{
 			"DTO": "Dto",
 			"DTo": "Dto",

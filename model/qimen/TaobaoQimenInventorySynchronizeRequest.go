@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoQimenInventorySynchronizeRequest 结构体
-type TaobaoQimenInventorySynchronizeRequest struct {
+// TaobaoqimeninventorysynchronizeRequest 结构体
+type TaobaoqimeninventorysynchronizeRequest struct {
 	// 货主编码,货主编码,string(50),,
 	OwnerCode string `json:"ownerCode,omitempty" xml:"ownerCode,omitempty"`
 	// 仓库编码,仓库编码,string(50),,

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlinkDeviceDetailGetAPIRequest 获取设备详情 API请求
+// AlibabaalinkdevicedetailgetAPIRequest 获取设备详情 API请求
 // alibaba.alink.device.detail.get
 //
 // 阿里智能获取设备详情
-type AlibabaAlinkDeviceDetailGetAPIRequest struct {
+type AlibabaalinkdevicedetailgetAPIRequest struct {
 	model.Params
 	// 设备id
 	_uuid string
 }
 
-// NewAlibabaAlinkDeviceDetailGetRequest 初始化AlibabaAlinkDeviceDetailGetAPIRequest对象
-func NewAlibabaAlinkDeviceDetailGetRequest() *AlibabaAlinkDeviceDetailGetAPIRequest {
-	return &AlibabaAlinkDeviceDetailGetAPIRequest{
+// NewAlibabaalinkdevicedetailgetRequest 初始化AlibabaalinkdevicedetailgetAPIRequest对象
+func NewAlibabaalinkdevicedetailgetRequest() *AlibabaalinkdevicedetailgetAPIRequest {
+	return &AlibabaalinkdevicedetailgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlinkDeviceDetailGetAPIRequest) GetApiMethodName() string {
+func (r AlibabaalinkdevicedetailgetAPIRequest) GetApiMethodName() string {
 	return "alibaba.alink.device.detail.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlinkDeviceDetailGetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalinkdevicedetailgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlinkDeviceDetailGetAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalinkdevicedetailgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetUuid is Uuid Setter
 // 设备id
-func (r *AlibabaAlinkDeviceDetailGetAPIRequest) SetUuid(_uuid string) error {
+func (r *AlibabaalinkdevicedetailgetAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
 	r.Set("uuid", _uuid)
 	return nil
 }
 
 // GetUuid Uuid Getter
-func (r AlibabaAlinkDeviceDetailGetAPIRequest) GetUuid() string {
+func (r AlibabaalinkdevicedetailgetAPIRequest) GetUuid() string {
 	return r._uuid
 }

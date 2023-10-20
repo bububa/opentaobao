@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoUserOpenidGetAPIResponse 查询用户openId API返回值
+// TaobaouseropenidgetAPIResponse 查询用户openId API返回值
 // taobao.user.openid.get
 //
 // 查询用户openId
-type TaobaoUserOpenidGetAPIResponse struct {
+type TaobaouseropenidgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoUserOpenidGetAPIResponseModel
+	TaobaouseropenidgetAPIResponseModel
 }
 
-// TaobaoUserOpenidGetAPIResponseModel is 查询用户openId 成功返回结果
-type TaobaoUserOpenidGetAPIResponseModel struct {
+// TaobaouseropenidgetAPIResponseModel is 查询用户openId 成功返回结果
+type TaobaouseropenidgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"user_openid_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

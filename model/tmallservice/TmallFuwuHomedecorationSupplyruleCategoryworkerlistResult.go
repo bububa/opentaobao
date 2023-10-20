@@ -1,7 +1,7 @@
 package tmallservice
 
-// TmallFuwuHomedecorationSupplyruleCategoryworkerlistResult 结构体
-type TmallFuwuHomedecorationSupplyruleCategoryworkerlistResult struct {
+// TmallfuwuhomedecorationsupplyrulecategoryworkerlistResult 结构体
+type TmallfuwuhomedecorationsupplyrulecategoryworkerlistResult struct {
 	// 品牌品类工人数据
 	DataList []SupplyCategoryWorkerDto `json:"data_list,omitempty" xml:"data_list>supply_category_worker_dto,omitempty"`
 	// 错误码

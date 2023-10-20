@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallItemVipAddSchemaGetAPIRequest vip商家发布商品的获取规则接口 API请求
+// TmallitemvipaddschemagetAPIRequest vip商家发布商品的获取规则接口 API请求
 // tmall.item.vip.add.schema.get
 //
 // 获取vip商家发布商品的规则
-type TmallItemVipAddSchemaGetAPIRequest struct {
+type TmallitemvipaddschemagetAPIRequest struct {
 	model.Params
 }
 
-// NewTmallItemVipAddSchemaGetRequest 初始化TmallItemVipAddSchemaGetAPIRequest对象
-func NewTmallItemVipAddSchemaGetRequest() *TmallItemVipAddSchemaGetAPIRequest {
-	return &TmallItemVipAddSchemaGetAPIRequest{
+// NewTmallitemvipaddschemagetRequest 初始化TmallitemvipaddschemagetAPIRequest对象
+func NewTmallitemvipaddschemagetRequest() *TmallitemvipaddschemagetAPIRequest {
+	return &TmallitemvipaddschemagetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallItemVipAddSchemaGetAPIRequest) GetApiMethodName() string {
+func (r TmallitemvipaddschemagetAPIRequest) GetApiMethodName() string {
 	return "tmall.item.vip.add.schema.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallItemVipAddSchemaGetAPIRequest) GetApiParams(params url.Values) {
+func (r TmallitemvipaddschemagetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallItemVipAddSchemaGetAPIRequest) GetRawParams() model.Params {
+func (r TmallitemvipaddschemagetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

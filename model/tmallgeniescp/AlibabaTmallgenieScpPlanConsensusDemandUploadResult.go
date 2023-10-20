@@ -1,7 +1,7 @@
 package tmallgeniescp
 
-// AlibabaTmallgenieScpPlanConsensusDemandUploadResult 结构体
-type AlibabaTmallgenieScpPlanConsensusDemandUploadResult struct {
+// AlibabatmallgeniescpplanconsensusdemanduploadResult 结构体
+type AlibabatmallgeniescpplanconsensusdemanduploadResult struct {
 	// 结果描述
 	Msg string `json:"msg,omitempty" xml:"msg,omitempty"`
 	// 结果码

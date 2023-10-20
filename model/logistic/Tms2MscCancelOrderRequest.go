@@ -1,7 +1,7 @@
 package logistic
 
-// Tms2MscCancelOrderRequest 结构体
-type Tms2MscCancelOrderRequest struct {
+// Tms2mscCancelOrderRequest 结构体
+type Tms2mscCancelOrderRequest struct {
 	// 电联信息（组）
 	PhoneCallInfos []TmsPhoneCallInfoDto `json:"phone_call_infos,omitempty" xml:"phone_call_infos>tms_phone_call_info_dto,omitempty"`
 	// 服务类型

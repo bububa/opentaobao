@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// AlibabaScbpTagRename 重命名关键词分组
+// Alibabascbptagrename 重命名关键词分组
 // alibaba.scbp.tag.rename
 //
 // 重命名关键词分组
-func AlibabaScbpTagRename(clt *core.SDKClient, req *scbp.AlibabaScbpTagRenameAPIRequest, session string) (*scbp.AlibabaScbpTagRenameAPIResponse, error) {
-	var resp scbp.AlibabaScbpTagRenameAPIResponse
+func Alibabascbptagrename(clt *core.SDKClient, req *scbp.AlibabascbptagrenameAPIRequest, session string) (*scbp.AlibabascbptagrenameAPIResponse, error) {
+	var resp scbp.AlibabascbptagrenameAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

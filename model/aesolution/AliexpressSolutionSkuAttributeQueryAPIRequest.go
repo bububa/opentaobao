@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliexpressSolutionSkuAttributeQueryAPIRequest Query the sku attribute information belonged to a specific category API请求
+// AliexpresssolutionskuattributequeryAPIRequest Query the sku attribute information belonged to a specific category API请求
 // aliexpress.solution.sku.attribute.query
 //
 // Query the sku attribute information belonged to a specific category, customized for oversea merchants.
-type AliexpressSolutionSkuAttributeQueryAPIRequest struct {
+type AliexpresssolutionskuattributequeryAPIRequest struct {
 	model.Params
 	// input parameters
 	_querySkuAttributeInfoRequest *SkuAttributeInfoQueryRequest
 }
 
-// NewAliexpressSolutionSkuAttributeQueryRequest 初始化AliexpressSolutionSkuAttributeQueryAPIRequest对象
-func NewAliexpressSolutionSkuAttributeQueryRequest() *AliexpressSolutionSkuAttributeQueryAPIRequest {
-	return &AliexpressSolutionSkuAttributeQueryAPIRequest{
+// NewAliexpresssolutionskuattributequeryRequest 初始化AliexpresssolutionskuattributequeryAPIRequest对象
+func NewAliexpresssolutionskuattributequeryRequest() *AliexpresssolutionskuattributequeryAPIRequest {
+	return &AliexpresssolutionskuattributequeryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AliexpressSolutionSkuAttributeQueryAPIRequest) GetApiMethodName() string {
+func (r AliexpresssolutionskuattributequeryAPIRequest) GetApiMethodName() string {
 	return "aliexpress.solution.sku.attribute.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AliexpressSolutionSkuAttributeQueryAPIRequest) GetApiParams(params url.Values) {
+func (r AliexpresssolutionskuattributequeryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AliexpressSolutionSkuAttributeQueryAPIRequest) GetRawParams() model.Params {
+func (r AliexpresssolutionskuattributequeryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetQuerySkuAttributeInfoRequest is QuerySkuAttributeInfoRequest Setter
 // input parameters
-func (r *AliexpressSolutionSkuAttributeQueryAPIRequest) SetQuerySkuAttributeInfoRequest(_querySkuAttributeInfoRequest *SkuAttributeInfoQueryRequest) error {
+func (r *AliexpresssolutionskuattributequeryAPIRequest) SetQuerySkuAttributeInfoRequest(_querySkuAttributeInfoRequest *SkuAttributeInfoQueryRequest) error {
 	r._querySkuAttributeInfoRequest = _querySkuAttributeInfoRequest
 	r.Set("query_sku_attribute_info_request", _querySkuAttributeInfoRequest)
 	return nil
 }
 
 // GetQuerySkuAttributeInfoRequest QuerySkuAttributeInfoRequest Getter
-func (r AliexpressSolutionSkuAttributeQueryAPIRequest) GetQuerySkuAttributeInfoRequest() *SkuAttributeInfoQueryRequest {
+func (r AliexpresssolutionskuattributequeryAPIRequest) GetQuerySkuAttributeInfoRequest() *SkuAttributeInfoQueryRequest {
 	return r._querySkuAttributeInfoRequest
 }

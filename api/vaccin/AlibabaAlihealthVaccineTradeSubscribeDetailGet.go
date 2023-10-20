@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/vaccin"
 )
 
-// AlibabaAlihealthVaccineTradeSubscribeDetailGet 私立疫苗交易-预约详情获取
+// Alibabaalihealthvaccinetradesubscribedetailget 私立疫苗交易-预约详情获取
 // alibaba.alihealth.vaccine.trade.subscribe.detail.get
 //
 // 私立疫苗交易-预约详情获取
-func AlibabaAlihealthVaccineTradeSubscribeDetailGet(clt *core.SDKClient, req *vaccin.AlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest, session string) (*vaccin.AlibabaAlihealthVaccineTradeSubscribeDetailGetAPIResponse, error) {
-	var resp vaccin.AlibabaAlihealthVaccineTradeSubscribeDetailGetAPIResponse
+func Alibabaalihealthvaccinetradesubscribedetailget(clt *core.SDKClient, req *vaccin.AlibabaalihealthvaccinetradesubscribedetailgetAPIRequest, session string) (*vaccin.AlibabaalihealthvaccinetradesubscribedetailgetAPIResponse, error) {
+	var resp vaccin.AlibabaalihealthvaccinetradesubscribedetailgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

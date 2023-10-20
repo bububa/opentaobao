@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaBenefitQueryAPIResponse 奖池奖品查询列表 API返回值
+// AlibababenefitqueryAPIResponse 奖池奖品查询列表 API返回值
 // alibaba.benefit.query
 //
 // 功能：奖池奖品查询列表
@@ -16,16 +16,16 @@ import (
 // appkey验证通过的，才会查数据 并透出，否则直接失败。
 // 因为appkey是系统参数，并且程序内部可以验证appkey和业务身份appName的关系
 // 是否一致，所以可以保证参数appName的合法性，没有越权。
-type AlibabaBenefitQueryAPIResponse struct {
+type AlibababenefitqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaBenefitQueryAPIResponseModel
+	AlibababenefitqueryAPIResponseModel
 }
 
-// AlibabaBenefitQueryAPIResponseModel is 奖池奖品查询列表 成功返回结果
-type AlibabaBenefitQueryAPIResponseModel struct {
+// AlibababenefitqueryAPIResponseModel is 奖池奖品查询列表 成功返回结果
+type AlibababenefitqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_benefit_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
-	Result *AlibabaBenefitQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibababenefitqueryResult `json:"result,omitempty" xml:"result,omitempty"`
 }

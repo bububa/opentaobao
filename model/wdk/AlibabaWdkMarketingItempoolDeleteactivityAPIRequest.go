@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkMarketingItempoolDeleteactivityAPIRequest 删除商品池活动 API请求
+// AlibabawdkmarketingitempooldeleteactivityAPIRequest 删除商品池活动 API请求
 // alibaba.wdk.marketing.itempool.deleteactivity
 //
 // 删除商品池活动
-type AlibabaWdkMarketingItempoolDeleteactivityAPIRequest struct {
+type AlibabawdkmarketingitempooldeleteactivityAPIRequest struct {
 	model.Params
 	// 需要删除的活动的信息
 	_param *CommonActivityParam
 }
 
-// NewAlibabaWdkMarketingItempoolDeleteactivityRequest 初始化AlibabaWdkMarketingItempoolDeleteactivityAPIRequest对象
-func NewAlibabaWdkMarketingItempoolDeleteactivityRequest() *AlibabaWdkMarketingItempoolDeleteactivityAPIRequest {
-	return &AlibabaWdkMarketingItempoolDeleteactivityAPIRequest{
+// NewAlibabawdkmarketingitempooldeleteactivityRequest 初始化AlibabawdkmarketingitempooldeleteactivityAPIRequest对象
+func NewAlibabawdkmarketingitempooldeleteactivityRequest() *AlibabawdkmarketingitempooldeleteactivityAPIRequest {
+	return &AlibabawdkmarketingitempooldeleteactivityAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaWdkMarketingItempoolDeleteactivityAPIRequest) GetApiMethodName() string {
+func (r AlibabawdkmarketingitempooldeleteactivityAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.marketing.itempool.deleteactivity"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMarketingItempoolDeleteactivityAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabawdkmarketingitempooldeleteactivityAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaWdkMarketingItempoolDeleteactivityAPIRequest) GetRawParams() model.Params {
+func (r AlibabawdkmarketingitempooldeleteactivityAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 需要删除的活动的信息
-func (r *AlibabaWdkMarketingItempoolDeleteactivityAPIRequest) SetParam(_param *CommonActivityParam) error {
+func (r *AlibabawdkmarketingitempooldeleteactivityAPIRequest) SetParam(_param *CommonActivityParam) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r AlibabaWdkMarketingItempoolDeleteactivityAPIRequest) GetParam() *CommonActivityParam {
+func (r AlibabawdkmarketingitempooldeleteactivityAPIRequest) GetParam() *CommonActivityParam {
 	return r._param
 }

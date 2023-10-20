@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/baichuan"
 )
 
-// TaobaoBaichuanOpenaccountRegister 百川账号注册
+// Taobaobaichuanopenaccountregister 百川账号注册
 // taobao.baichuan.openaccount.register
 //
 // 百川账号注册
-func TaobaoBaichuanOpenaccountRegister(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountRegisterAPIRequest, session string) (*baichuan.TaobaoBaichuanOpenaccountRegisterAPIResponse, error) {
-	var resp baichuan.TaobaoBaichuanOpenaccountRegisterAPIResponse
+func Taobaobaichuanopenaccountregister(clt *core.SDKClient, req *baichuan.TaobaobaichuanopenaccountregisterAPIRequest, session string) (*baichuan.TaobaobaichuanopenaccountregisterAPIResponse, error) {
+	var resp baichuan.TaobaobaichuanopenaccountregisterAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoQimenTagItemsQueryAPIResponse 打标结果查询-标维度 API返回值
+// TaobaoqimentagitemsqueryAPIResponse 打标结果查询-标维度 API返回值
 // taobao.qimen.tag.items.query
 //
 // 调用该接口，查询打了某个标的商品列表。说明：该接口调用后，返回值的时间较长，建议不要经常调用。
-type TaobaoQimenTagItemsQueryAPIResponse struct {
+type TaobaoqimentagitemsqueryAPIResponse struct {
 	model.CommonResponse
-	TaobaoQimenTagItemsQueryAPIResponseModel
+	TaobaoqimentagitemsqueryAPIResponseModel
 }
 
-// TaobaoQimenTagItemsQueryAPIResponseModel is 打标结果查询-标维度 成功返回结果
-type TaobaoQimenTagItemsQueryAPIResponseModel struct {
+// TaobaoqimentagitemsqueryAPIResponseModel is 打标结果查询-标维度 成功返回结果
+type TaobaoqimentagitemsqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"qimen_tag_items_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

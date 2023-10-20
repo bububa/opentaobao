@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/logistic"
 )
 
-// AlibabaEleFengniaoOrderQuery 查询订单基本信息
+// Alibabaelefengniaoorderquery 查询订单基本信息
 // alibaba.ele.fengniao.order.query
 //
 // 查询订单基本信息
-func AlibabaEleFengniaoOrderQuery(clt *core.SDKClient, req *logistic.AlibabaEleFengniaoOrderQueryAPIRequest, session string) (*logistic.AlibabaEleFengniaoOrderQueryAPIResponse, error) {
-	var resp logistic.AlibabaEleFengniaoOrderQueryAPIResponse
+func Alibabaelefengniaoorderquery(clt *core.SDKClient, req *logistic.AlibabaelefengniaoorderqueryAPIRequest, session string) (*logistic.AlibabaelefengniaoorderqueryAPIResponse, error) {
+	var resp logistic.AlibabaelefengniaoorderqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

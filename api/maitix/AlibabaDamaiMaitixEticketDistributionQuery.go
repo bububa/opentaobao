@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/maitix"
 )
 
-// AlibabaDamaiMaitixEticketDistributionQuery 分销电子票查询接口
+// Alibabadamaimaitixeticketdistributionquery 分销电子票查询接口
 // alibaba.damai.maitix.eticket.distribution.query
 //
 // 分销电子票查询接口
-func AlibabaDamaiMaitixEticketDistributionQuery(clt *core.SDKClient, req *maitix.AlibabaDamaiMaitixEticketDistributionQueryAPIRequest, session string) (*maitix.AlibabaDamaiMaitixEticketDistributionQueryAPIResponse, error) {
-	var resp maitix.AlibabaDamaiMaitixEticketDistributionQueryAPIResponse
+func Alibabadamaimaitixeticketdistributionquery(clt *core.SDKClient, req *maitix.AlibabadamaimaitixeticketdistributionqueryAPIRequest, session string) (*maitix.AlibabadamaimaitixeticketdistributionqueryAPIResponse, error) {
+	var resp maitix.AlibabadamaimaitixeticketdistributionqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,9 +1,9 @@
 package hotel
 
-// SHotelDailyPrice 结构体
-type SHotelDailyPrice struct {
+// ShotelDailyPrice 结构体
+type ShotelDailyPrice struct {
 	// 本shid下所有标准房型的当日库价
-	SroomTypeDailyPriceList []SRoomTypeDailyPrice `json:"sroom_type_daily_price_list,omitempty" xml:"sroom_type_daily_price_list>s_room_type_daily_price,omitempty"`
+	SroomTypeDailyPriceList []SroomTypeDailyPrice `json:"sroom_type_daily_price_list,omitempty" xml:"sroom_type_daily_price_list>sroom_type_daily_price,omitempty"`
 	// 离店日期
 	End string `json:"end,omitempty" xml:"end,omitempty"`
 	// 错误码

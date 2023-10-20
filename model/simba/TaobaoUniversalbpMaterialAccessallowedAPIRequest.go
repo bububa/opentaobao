@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoUniversalbpMaterialAccessallowedAPIRequest 物料准入判断 API请求
+// TaobaouniversalbpmaterialaccessallowedAPIRequest 物料准入判断 API请求
 // taobao.universalbp.material.accessallowed
 //
 // 入参推广信息，出参相关主体是否可投放。如果投放了风控不准入的商品，无法正常投放。
-type TaobaoUniversalbpMaterialAccessallowedAPIRequest struct {
+type TaobaouniversalbpmaterialaccessallowedAPIRequest struct {
 	model.Params
 	// topServiceContext
 	_topServiceContext *TopServiceContext
@@ -18,52 +18,52 @@ type TaobaoUniversalbpMaterialAccessallowedAPIRequest struct {
 	_materialAccessAllowQueryVO *MaterialAccessAllowQueryVo
 }
 
-// NewTaobaoUniversalbpMaterialAccessallowedRequest 初始化TaobaoUniversalbpMaterialAccessallowedAPIRequest对象
-func NewTaobaoUniversalbpMaterialAccessallowedRequest() *TaobaoUniversalbpMaterialAccessallowedAPIRequest {
-	return &TaobaoUniversalbpMaterialAccessallowedAPIRequest{
+// NewTaobaouniversalbpmaterialaccessallowedRequest 初始化TaobaouniversalbpmaterialaccessallowedAPIRequest对象
+func NewTaobaouniversalbpmaterialaccessallowedRequest() *TaobaouniversalbpmaterialaccessallowedAPIRequest {
+	return &TaobaouniversalbpmaterialaccessallowedAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoUniversalbpMaterialAccessallowedAPIRequest) GetApiMethodName() string {
+func (r TaobaouniversalbpmaterialaccessallowedAPIRequest) GetApiMethodName() string {
 	return "taobao.universalbp.material.accessallowed"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoUniversalbpMaterialAccessallowedAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaouniversalbpmaterialaccessallowedAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoUniversalbpMaterialAccessallowedAPIRequest) GetRawParams() model.Params {
+func (r TaobaouniversalbpmaterialaccessallowedAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTopServiceContext is TopServiceContext Setter
 // topServiceContext
-func (r *TaobaoUniversalbpMaterialAccessallowedAPIRequest) SetTopServiceContext(_topServiceContext *TopServiceContext) error {
+func (r *TaobaouniversalbpmaterialaccessallowedAPIRequest) SetTopServiceContext(_topServiceContext *TopServiceContext) error {
 	r._topServiceContext = _topServiceContext
 	r.Set("top_service_context", _topServiceContext)
 	return nil
 }
 
 // GetTopServiceContext TopServiceContext Getter
-func (r TaobaoUniversalbpMaterialAccessallowedAPIRequest) GetTopServiceContext() *TopServiceContext {
+func (r TaobaouniversalbpmaterialaccessallowedAPIRequest) GetTopServiceContext() *TopServiceContext {
 	return r._topServiceContext
 }
 
 // SetMaterialAccessAllowQueryVO is MaterialAccessAllowQueryVO Setter
 // materialAccessAllowQueryVO
-func (r *TaobaoUniversalbpMaterialAccessallowedAPIRequest) SetMaterialAccessAllowQueryVO(_materialAccessAllowQueryVO *MaterialAccessAllowQueryVo) error {
+func (r *TaobaouniversalbpmaterialaccessallowedAPIRequest) SetMaterialAccessAllowQueryVO(_materialAccessAllowQueryVO *MaterialAccessAllowQueryVo) error {
 	r._materialAccessAllowQueryVO = _materialAccessAllowQueryVO
 	r.Set("material_access_allow_query_v_o", _materialAccessAllowQueryVO)
 	return nil
 }
 
 // GetMaterialAccessAllowQueryVO MaterialAccessAllowQueryVO Getter
-func (r TaobaoUniversalbpMaterialAccessallowedAPIRequest) GetMaterialAccessAllowQueryVO() *MaterialAccessAllowQueryVo {
+func (r TaobaouniversalbpmaterialaccessallowedAPIRequest) GetMaterialAccessAllowQueryVO() *MaterialAccessAllowQueryVo {
 	return r._materialAccessAllowQueryVO
 }

@@ -1,7 +1,7 @@
 package wdk
 
-// EbeecakeO2OCallbackContent 结构体
-type EbeecakeO2OCallbackContent struct {
+// EbeecakeO2ocallbackContent 结构体
+type EbeecakeO2ocallbackContent struct {
 	// 状态
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 作业内容单号

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoDeliveryTemplateDeleteAPIResponse 删除运费模板 API返回值
+// TaobaodeliverytemplatedeleteAPIResponse 删除运费模板 API返回值
 // taobao.delivery.template.delete
 //
 // 根据用户指定的模板ID删除指定的模板
-type TaobaoDeliveryTemplateDeleteAPIResponse struct {
+type TaobaodeliverytemplatedeleteAPIResponse struct {
 	model.CommonResponse
-	TaobaoDeliveryTemplateDeleteAPIResponseModel
+	TaobaodeliverytemplatedeleteAPIResponseModel
 }
 
-// TaobaoDeliveryTemplateDeleteAPIResponseModel is 删除运费模板 成功返回结果
-type TaobaoDeliveryTemplateDeleteAPIResponseModel struct {
+// TaobaodeliverytemplatedeleteAPIResponseModel is 删除运费模板 成功返回结果
+type TaobaodeliverytemplatedeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"delivery_template_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

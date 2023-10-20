@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/logistic"
 )
 
-// AliexpressLocalLogisticsOrderInfoQuery query order details
+// Aliexpresslocallogisticsorderinfoquery query order details
 // aliexpress.local.logistics.order.info.query
 //
 // query order details
-func AliexpressLocalLogisticsOrderInfoQuery(clt *core.SDKClient, req *logistic.AliexpressLocalLogisticsOrderInfoQueryAPIRequest, session string) (*logistic.AliexpressLocalLogisticsOrderInfoQueryAPIResponse, error) {
-	var resp logistic.AliexpressLocalLogisticsOrderInfoQueryAPIResponse
+func Aliexpresslocallogisticsorderinfoquery(clt *core.SDKClient, req *logistic.AliexpresslocallogisticsorderinfoqueryAPIRequest, session string) (*logistic.AliexpresslocallogisticsorderinfoqueryAPIResponse, error) {
+	var resp logistic.AliexpresslocallogisticsorderinfoqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

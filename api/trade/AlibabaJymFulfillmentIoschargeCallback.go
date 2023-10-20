@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/trade"
 )
 
-// AlibabaJymFulfillmentIoschargeCallback 代充充值回调
+// Alibabajymfulfillmentioschargecallback 代充充值回调
 // alibaba.jym.fulfillment.ioscharge.callback
 //
 // 代充充值回调
-func AlibabaJymFulfillmentIoschargeCallback(clt *core.SDKClient, req *trade.AlibabaJymFulfillmentIoschargeCallbackAPIRequest, session string) (*trade.AlibabaJymFulfillmentIoschargeCallbackAPIResponse, error) {
-	var resp trade.AlibabaJymFulfillmentIoschargeCallbackAPIResponse
+func Alibabajymfulfillmentioschargecallback(clt *core.SDKClient, req *trade.AlibabajymfulfillmentioschargecallbackAPIRequest, session string) (*trade.AlibabajymfulfillmentioschargecallbackAPIResponse, error) {
+	var resp trade.AlibabajymfulfillmentioschargecallbackAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

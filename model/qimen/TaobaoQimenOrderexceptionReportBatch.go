@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoQimenOrderexceptionReportBatch 结构体
-type TaobaoQimenOrderexceptionReportBatch struct {
+// TaobaoqimenorderexceptionreportBatch 结构体
+type TaobaoqimenorderexceptionreportBatch struct {
 	// 奇门仓储字段
 	BatchCode string `json:"batchCode,omitempty" xml:"batchCode,omitempty"`
 	// 奇门仓储字段

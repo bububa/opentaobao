@@ -1,7 +1,7 @@
 package omniorder
 
-// TaobaoOmniitemCategoryGetResult 结构体
-type TaobaoOmniitemCategoryGetResult struct {
+// TaobaoomniitemcategorygetResult 结构体
+type TaobaoomniitemcategorygetResult struct {
 	// data
 	Datas []OmniItemCategoryDto `json:"datas,omitempty" xml:"datas>omni_item_category_dto,omitempty"`
 	// 错误码

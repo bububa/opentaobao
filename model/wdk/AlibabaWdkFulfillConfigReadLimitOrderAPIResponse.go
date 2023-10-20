@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkFulfillConfigReadLimitOrderAPIResponse 根据仓code查询仓限单配置 API返回值
+// AlibabawdkfulfillconfigreadlimitorderAPIResponse 根据仓code查询仓限单配置 API返回值
 // alibaba.wdk.fulfill.config.read.limit.order
 //
 // 根据仓code查询仓限单配置
-type AlibabaWdkFulfillConfigReadLimitOrderAPIResponse struct {
+type AlibabawdkfulfillconfigreadlimitorderAPIResponse struct {
 	model.CommonResponse
-	AlibabaWdkFulfillConfigReadLimitOrderAPIResponseModel
+	AlibabawdkfulfillconfigreadlimitorderAPIResponseModel
 }
 
-// AlibabaWdkFulfillConfigReadLimitOrderAPIResponseModel is 根据仓code查询仓限单配置 成功返回结果
-type AlibabaWdkFulfillConfigReadLimitOrderAPIResponseModel struct {
+// AlibabawdkfulfillconfigreadlimitorderAPIResponseModel is 根据仓code查询仓限单配置 成功返回结果
+type AlibabawdkfulfillconfigreadlimitorderAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_fulfill_config_read_limit_order_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

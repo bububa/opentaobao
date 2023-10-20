@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaItApAddressSetAPIResponse setApAddressNew API返回值
+// AlibabaitapaddresssetAPIResponse setApAddressNew API返回值
 // alibaba.it.ap.address.set
 //
 // 该接口可为ISV系统提供 ap位置信息维护的功能
-type AlibabaItApAddressSetAPIResponse struct {
+type AlibabaitapaddresssetAPIResponse struct {
 	model.CommonResponse
-	AlibabaItApAddressSetAPIResponseModel
+	AlibabaitapaddresssetAPIResponseModel
 }
 
-// AlibabaItApAddressSetAPIResponseModel is setApAddressNew 成功返回结果
-type AlibabaItApAddressSetAPIResponseModel struct {
+// AlibabaitapaddresssetAPIResponseModel is setApAddressNew 成功返回结果
+type AlibabaitapaddresssetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_it_ap_address_set_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
-	Result *AlibabaItApAddressSetResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaitapaddresssetResult `json:"result,omitempty" xml:"result,omitempty"`
 }

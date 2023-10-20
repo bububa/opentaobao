@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAlitripItFareAddrtAPIResponse 【国际机票自有政策】单条往返添加 API返回值
+// TaobaoalitripitfareaddrtAPIResponse 【国际机票自有政策】单条往返添加 API返回值
 // taobao.alitrip.it.fare.addrt
 //
 // 自有政策往返添加接口
-type TaobaoAlitripItFareAddrtAPIResponse struct {
+type TaobaoalitripitfareaddrtAPIResponse struct {
 	model.CommonResponse
-	TaobaoAlitripItFareAddrtAPIResponseModel
+	TaobaoalitripitfareaddrtAPIResponseModel
 }
 
-// TaobaoAlitripItFareAddrtAPIResponseModel is 【国际机票自有政策】单条往返添加 成功返回结果
-type TaobaoAlitripItFareAddrtAPIResponseModel struct {
+// TaobaoalitripitfareaddrtAPIResponseModel is 【国际机票自有政策】单条往返添加 成功返回结果
+type TaobaoalitripitfareaddrtAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_it_fare_addrt_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

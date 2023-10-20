@@ -1,7 +1,7 @@
 package aecreatives
 
-// AliexpressAffiliateImageSearchResponse 结构体
-type AliexpressAffiliateImageSearchResponse struct {
+// AliexpressaffiliateimagesearchResponse 结构体
+type AliexpressaffiliateimagesearchResponse struct {
 	// 返回结果状态码
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 默认描述

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaScbpTagListAPIResponse 查询所有分组 API返回值
+// AlibabascbptaglistAPIResponse 查询所有分组 API返回值
 // alibaba.scbp.tag.list
 //
 // 查询所有分组
-type AlibabaScbpTagListAPIResponse struct {
+type AlibabascbptaglistAPIResponse struct {
 	model.CommonResponse
-	AlibabaScbpTagListAPIResponseModel
+	AlibabascbptaglistAPIResponseModel
 }
 
-// AlibabaScbpTagListAPIResponseModel is 查询所有分组 成功返回结果
-type AlibabaScbpTagListAPIResponseModel struct {
+// AlibabascbptaglistAPIResponseModel is 查询所有分组 成功返回结果
+type AlibabascbptaglistAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_tag_list_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

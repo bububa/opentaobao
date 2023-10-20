@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/axintrade"
 )
 
-// TaobaoAlitripAxinTransPayRegisterAudit 阿信支付入驻审核通知
+// Taobaoalitripaxintranspayregisteraudit 阿信支付入驻审核通知
 // taobao.alitrip.axin.trans.pay.register.audit
 //
 // 阿信支付入驻审核通知
-func TaobaoAlitripAxinTransPayRegisterAudit(clt *core.SDKClient, req *axintrade.TaobaoAlitripAxinTransPayRegisterAuditAPIRequest, session string) (*axintrade.TaobaoAlitripAxinTransPayRegisterAuditAPIResponse, error) {
-	var resp axintrade.TaobaoAlitripAxinTransPayRegisterAuditAPIResponse
+func Taobaoalitripaxintranspayregisteraudit(clt *core.SDKClient, req *axintrade.TaobaoalitripaxintranspayregisterauditAPIRequest, session string) (*axintrade.TaobaoalitripaxintranspayregisterauditAPIResponse, error) {
+	var resp axintrade.TaobaoalitripaxintranspayregisterauditAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

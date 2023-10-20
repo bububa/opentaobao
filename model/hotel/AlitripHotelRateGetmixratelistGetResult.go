@@ -1,7 +1,7 @@
 package hotel
 
-// AlitripHotelRateGetmixratelistGetResult 结构体
-type AlitripHotelRateGetmixratelistGetResult struct {
+// AlitriphotelrategetmixratelistgetResult 结构体
+type AlitriphotelrategetmixratelistgetResult struct {
 	// mappingCode
 	MappingCode string `json:"mapping_code,omitempty" xml:"mapping_code,omitempty"`
 	// msgCode

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAlitripAxinTransPayRegisterAuditAPIResponse 阿信支付入驻审核通知 API返回值
+// TaobaoalitripaxintranspayregisterauditAPIResponse 阿信支付入驻审核通知 API返回值
 // taobao.alitrip.axin.trans.pay.register.audit
 //
 // 阿信支付入驻审核通知
-type TaobaoAlitripAxinTransPayRegisterAuditAPIResponse struct {
+type TaobaoalitripaxintranspayregisterauditAPIResponse struct {
 	model.CommonResponse
-	TaobaoAlitripAxinTransPayRegisterAuditAPIResponseModel
+	TaobaoalitripaxintranspayregisterauditAPIResponseModel
 }
 
-// TaobaoAlitripAxinTransPayRegisterAuditAPIResponseModel is 阿信支付入驻审核通知 成功返回结果
-type TaobaoAlitripAxinTransPayRegisterAuditAPIResponseModel struct {
+// TaobaoalitripaxintranspayregisterauditAPIResponseModel is 阿信支付入驻审核通知 成功返回结果
+type TaobaoalitripaxintranspayregisterauditAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_axin_trans_pay_register_audit_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

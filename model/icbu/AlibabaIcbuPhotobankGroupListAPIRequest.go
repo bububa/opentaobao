@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIcbuPhotobankGroupListAPIRequest 图片银行分组信息获取 API请求
+// AlibabaicbuphotobankgrouplistAPIRequest 图片银行分组信息获取 API请求
 // alibaba.icbu.photobank.group.list
 //
 // 图片银行分组信息获取
-type AlibabaIcbuPhotobankGroupListAPIRequest struct {
+type AlibabaicbuphotobankgrouplistAPIRequest struct {
 	model.Params
 	// 补充信息
 	_extraContext string
@@ -18,52 +18,52 @@ type AlibabaIcbuPhotobankGroupListAPIRequest struct {
 	_id int64
 }
 
-// NewAlibabaIcbuPhotobankGroupListRequest 初始化AlibabaIcbuPhotobankGroupListAPIRequest对象
-func NewAlibabaIcbuPhotobankGroupListRequest() *AlibabaIcbuPhotobankGroupListAPIRequest {
-	return &AlibabaIcbuPhotobankGroupListAPIRequest{
+// NewAlibabaicbuphotobankgrouplistRequest 初始化AlibabaicbuphotobankgrouplistAPIRequest对象
+func NewAlibabaicbuphotobankgrouplistRequest() *AlibabaicbuphotobankgrouplistAPIRequest {
+	return &AlibabaicbuphotobankgrouplistAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaIcbuPhotobankGroupListAPIRequest) GetApiMethodName() string {
+func (r AlibabaicbuphotobankgrouplistAPIRequest) GetApiMethodName() string {
 	return "alibaba.icbu.photobank.group.list"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaIcbuPhotobankGroupListAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaicbuphotobankgrouplistAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaIcbuPhotobankGroupListAPIRequest) GetRawParams() model.Params {
+func (r AlibabaicbuphotobankgrouplistAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetExtraContext is ExtraContext Setter
 // 补充信息
-func (r *AlibabaIcbuPhotobankGroupListAPIRequest) SetExtraContext(_extraContext string) error {
+func (r *AlibabaicbuphotobankgrouplistAPIRequest) SetExtraContext(_extraContext string) error {
 	r._extraContext = _extraContext
 	r.Set("extra_context", _extraContext)
 	return nil
 }
 
 // GetExtraContext ExtraContext Getter
-func (r AlibabaIcbuPhotobankGroupListAPIRequest) GetExtraContext() string {
+func (r AlibabaicbuphotobankgrouplistAPIRequest) GetExtraContext() string {
 	return r._extraContext
 }
 
 // SetId is Id Setter
 // 查询图片分组信息，如果传入id，则获取当前分组和所有子分组信息，否则获取所有一级分组信息
-func (r *AlibabaIcbuPhotobankGroupListAPIRequest) SetId(_id int64) error {
+func (r *AlibabaicbuphotobankgrouplistAPIRequest) SetId(_id int64) error {
 	r._id = _id
 	r.Set("id", _id)
 	return nil
 }
 
 // GetId Id Getter
-func (r AlibabaIcbuPhotobankGroupListAPIRequest) GetId() int64 {
+func (r AlibabaicbuphotobankgrouplistAPIRequest) GetId() int64 {
 	return r._id
 }

@@ -1,7 +1,7 @@
 package happytrip
 
-// AlibabaHappytripFreeloginGetusercontextResult 结构体
-type AlibabaHappytripFreeloginGetusercontextResult struct {
+// AlibabahappytripfreelogingetusercontextResult 结构体
+type AlibabahappytripfreelogingetusercontextResult struct {
 	// 错误消息
 	Errmsg string `json:"errmsg,omitempty" xml:"errmsg,omitempty"`
 	// 返回的结果值

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkFinanceOrderBackflowAPIRequest 财务订单回流 API请求
+// AlibabawdkfinanceorderbackflowAPIRequest 财务订单回流 API请求
 // alibaba.wdk.finance.order.backflow
 //
 // 星巴克拉取财务订单回流数据
-type AlibabaWdkFinanceOrderBackflowAPIRequest struct {
+type AlibabawdkfinanceorderbackflowAPIRequest struct {
 	model.Params
 	// 财务订单回流入参
 	_financeOrderDetailRequest *FinanceOrderDetailRequest
 }
 
-// NewAlibabaWdkFinanceOrderBackflowRequest 初始化AlibabaWdkFinanceOrderBackflowAPIRequest对象
-func NewAlibabaWdkFinanceOrderBackflowRequest() *AlibabaWdkFinanceOrderBackflowAPIRequest {
-	return &AlibabaWdkFinanceOrderBackflowAPIRequest{
+// NewAlibabawdkfinanceorderbackflowRequest 初始化AlibabawdkfinanceorderbackflowAPIRequest对象
+func NewAlibabawdkfinanceorderbackflowRequest() *AlibabawdkfinanceorderbackflowAPIRequest {
+	return &AlibabawdkfinanceorderbackflowAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaWdkFinanceOrderBackflowAPIRequest) GetApiMethodName() string {
+func (r AlibabawdkfinanceorderbackflowAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.finance.order.backflow"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkFinanceOrderBackflowAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabawdkfinanceorderbackflowAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaWdkFinanceOrderBackflowAPIRequest) GetRawParams() model.Params {
+func (r AlibabawdkfinanceorderbackflowAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetFinanceOrderDetailRequest is FinanceOrderDetailRequest Setter
 // 财务订单回流入参
-func (r *AlibabaWdkFinanceOrderBackflowAPIRequest) SetFinanceOrderDetailRequest(_financeOrderDetailRequest *FinanceOrderDetailRequest) error {
+func (r *AlibabawdkfinanceorderbackflowAPIRequest) SetFinanceOrderDetailRequest(_financeOrderDetailRequest *FinanceOrderDetailRequest) error {
 	r._financeOrderDetailRequest = _financeOrderDetailRequest
 	r.Set("finance_order_detail_request", _financeOrderDetailRequest)
 	return nil
 }
 
 // GetFinanceOrderDetailRequest FinanceOrderDetailRequest Getter
-func (r AlibabaWdkFinanceOrderBackflowAPIRequest) GetFinanceOrderDetailRequest() *FinanceOrderDetailRequest {
+func (r AlibabawdkfinanceorderbackflowAPIRequest) GetFinanceOrderDetailRequest() *FinanceOrderDetailRequest {
 	return r._financeOrderDetailRequest
 }

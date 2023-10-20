@@ -1,7 +1,7 @@
 package aliqin
 
-// AlibabaAliqinFcIotQryPersoninfoResult 结构体
-type AlibabaAliqinFcIotQryPersoninfoResult struct {
+// AlibabaaliqinfciotqrypersoninfoResult 结构体
+type AlibabaaliqinfciotqrypersoninfoResult struct {
 	// model
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// code

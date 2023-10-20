@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkTimeGetAPIRequest 获得当前系统时间 API请求
+// AlibabawdktimegetAPIRequest 获得当前系统时间 API请求
 // alibaba.wdk.time.get
 //
 // 获得当前系统时间
-type AlibabaWdkTimeGetAPIRequest struct {
+type AlibabawdktimegetAPIRequest struct {
 	model.Params
 }
 
-// NewAlibabaWdkTimeGetRequest 初始化AlibabaWdkTimeGetAPIRequest对象
-func NewAlibabaWdkTimeGetRequest() *AlibabaWdkTimeGetAPIRequest {
-	return &AlibabaWdkTimeGetAPIRequest{
+// NewAlibabawdktimegetRequest 初始化AlibabawdktimegetAPIRequest对象
+func NewAlibabawdktimegetRequest() *AlibabawdktimegetAPIRequest {
+	return &AlibabawdktimegetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaWdkTimeGetAPIRequest) GetApiMethodName() string {
+func (r AlibabawdktimegetAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.time.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkTimeGetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabawdktimegetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaWdkTimeGetAPIRequest) GetRawParams() model.Params {
+func (r AlibabawdktimegetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

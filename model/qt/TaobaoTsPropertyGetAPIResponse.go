@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTsPropertyGetAPIResponse 淘宝服务属性查询 API返回值
+// TaobaotspropertygetAPIResponse 淘宝服务属性查询 API返回值
 // taobao.ts.property.get
 //
 // 淘宝服务属性查询
-type TaobaoTsPropertyGetAPIResponse struct {
+type TaobaotspropertygetAPIResponse struct {
 	model.CommonResponse
-	TaobaoTsPropertyGetAPIResponseModel
+	TaobaotspropertygetAPIResponseModel
 }
 
-// TaobaoTsPropertyGetAPIResponseModel is 淘宝服务属性查询 成功返回结果
-type TaobaoTsPropertyGetAPIResponseModel struct {
+// TaobaotspropertygetAPIResponseModel is 淘宝服务属性查询 成功返回结果
+type TaobaotspropertygetAPIResponseModel struct {
 	XMLName xml.Name `xml:"ts_property_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

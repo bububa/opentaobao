@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAilabAicloudTopDeviceSettingsResetAPIResponse 重置设备个性化设置 API返回值
+// TaobaoailabaicloudtopdevicesettingsresetAPIResponse 重置设备个性化设置 API返回值
 // taobao.ailab.aicloud.top.device.settings.reset
 //
 // 重置设备个性化设置
-type TaobaoAilabAicloudTopDeviceSettingsResetAPIResponse struct {
+type TaobaoailabaicloudtopdevicesettingsresetAPIResponse struct {
 	model.CommonResponse
-	TaobaoAilabAicloudTopDeviceSettingsResetAPIResponseModel
+	TaobaoailabaicloudtopdevicesettingsresetAPIResponseModel
 }
 
-// TaobaoAilabAicloudTopDeviceSettingsResetAPIResponseModel is 重置设备个性化设置 成功返回结果
-type TaobaoAilabAicloudTopDeviceSettingsResetAPIResponseModel struct {
+// TaobaoailabaicloudtopdevicesettingsresetAPIResponseModel is 重置设备个性化设置 成功返回结果
+type TaobaoailabaicloudtopdevicesettingsresetAPIResponseModel struct {
 	XMLName xml.Name `xml:"ailab_aicloud_top_device_settings_reset_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

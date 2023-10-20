@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaScbpEffectAccountDateGetAPIResponse 获取最近报表生成时间 API返回值
+// AlibabascbpeffectaccountdategetAPIResponse 获取最近报表生成时间 API返回值
 // alibaba.scbp.effect.account.date.get
 //
 // 获取最近报表生成时间,格式为yyyy-MM-dd
-type AlibabaScbpEffectAccountDateGetAPIResponse struct {
+type AlibabascbpeffectaccountdategetAPIResponse struct {
 	model.CommonResponse
-	AlibabaScbpEffectAccountDateGetAPIResponseModel
+	AlibabascbpeffectaccountdategetAPIResponseModel
 }
 
-// AlibabaScbpEffectAccountDateGetAPIResponseModel is 获取最近报表生成时间 成功返回结果
-type AlibabaScbpEffectAccountDateGetAPIResponseModel struct {
+// AlibabascbpeffectaccountdategetAPIResponseModel is 获取最近报表生成时间 成功返回结果
+type AlibabascbpeffectaccountdategetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_effect_account_date_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

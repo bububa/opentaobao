@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaTclsAelophyRefundCsapplyAPIRequest 商家代客售后提交逆向申请 API请求
+// AlibabatclsaelophyrefundcsapplyAPIRequest 商家代客售后提交逆向申请 API请求
 // alibaba.tcls.aelophy.refund.csapply
 //
 // 商家代客售后提交逆向申请
-type AlibabaTclsAelophyRefundCsapplyAPIRequest struct {
+type AlibabatclsaelophyrefundcsapplyAPIRequest struct {
 	model.Params
 	// 逆向申请入参
 	_refundCsApplyDTO *RefundCsApplyDto
 }
 
-// NewAlibabaTclsAelophyRefundCsapplyRequest 初始化AlibabaTclsAelophyRefundCsapplyAPIRequest对象
-func NewAlibabaTclsAelophyRefundCsapplyRequest() *AlibabaTclsAelophyRefundCsapplyAPIRequest {
-	return &AlibabaTclsAelophyRefundCsapplyAPIRequest{
+// NewAlibabatclsaelophyrefundcsapplyRequest 初始化AlibabatclsaelophyrefundcsapplyAPIRequest对象
+func NewAlibabatclsaelophyrefundcsapplyRequest() *AlibabatclsaelophyrefundcsapplyAPIRequest {
+	return &AlibabatclsaelophyrefundcsapplyAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaTclsAelophyRefundCsapplyAPIRequest) GetApiMethodName() string {
+func (r AlibabatclsaelophyrefundcsapplyAPIRequest) GetApiMethodName() string {
 	return "alibaba.tcls.aelophy.refund.csapply"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaTclsAelophyRefundCsapplyAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabatclsaelophyrefundcsapplyAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaTclsAelophyRefundCsapplyAPIRequest) GetRawParams() model.Params {
+func (r AlibabatclsaelophyrefundcsapplyAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRefundCsApplyDTO is RefundCsApplyDTO Setter
 // 逆向申请入参
-func (r *AlibabaTclsAelophyRefundCsapplyAPIRequest) SetRefundCsApplyDTO(_refundCsApplyDTO *RefundCsApplyDto) error {
+func (r *AlibabatclsaelophyrefundcsapplyAPIRequest) SetRefundCsApplyDTO(_refundCsApplyDTO *RefundCsApplyDto) error {
 	r._refundCsApplyDTO = _refundCsApplyDTO
 	r.Set("refund_cs_apply_d_t_o", _refundCsApplyDTO)
 	return nil
 }
 
 // GetRefundCsApplyDTO RefundCsApplyDTO Getter
-func (r AlibabaTclsAelophyRefundCsapplyAPIRequest) GetRefundCsApplyDTO() *RefundCsApplyDto {
+func (r AlibabatclsaelophyrefundcsapplyAPIRequest) GetRefundCsApplyDTO() *RefundCsApplyDto {
 	return r._refundCsApplyDTO
 }

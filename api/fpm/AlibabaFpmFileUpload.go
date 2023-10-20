@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/fpm"
 )
 
-// AlibabaFpmFileUpload 结算单文件上传
+// Alibabafpmfileupload 结算单文件上传
 // alibaba.fpm.file.upload
 //
 // 结算单文件上传
-func AlibabaFpmFileUpload(clt *core.SDKClient, req *fpm.AlibabaFpmFileUploadAPIRequest, session string) (*fpm.AlibabaFpmFileUploadAPIResponse, error) {
-	var resp fpm.AlibabaFpmFileUploadAPIResponse
+func Alibabafpmfileupload(clt *core.SDKClient, req *fpm.AlibabafpmfileuploadAPIRequest, session string) (*fpm.AlibabafpmfileuploadAPIResponse, error) {
+	var resp fpm.AlibabafpmfileuploadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

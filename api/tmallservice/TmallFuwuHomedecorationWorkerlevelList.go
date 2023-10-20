@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-// TmallFuwuHomedecorationWorkerlevelList 查询工人分层数据接口
+// Tmallfuwuhomedecorationworkerlevellist 查询工人分层数据接口
 // tmall.fuwu.homedecoration.workerlevel.list
 //
 // 查询工人分层数据接口
-func TmallFuwuHomedecorationWorkerlevelList(clt *core.SDKClient, req *tmallservice.TmallFuwuHomedecorationWorkerlevelListAPIRequest, session string) (*tmallservice.TmallFuwuHomedecorationWorkerlevelListAPIResponse, error) {
-	var resp tmallservice.TmallFuwuHomedecorationWorkerlevelListAPIResponse
+func Tmallfuwuhomedecorationworkerlevellist(clt *core.SDKClient, req *tmallservice.TmallfuwuhomedecorationworkerlevellistAPIRequest, session string) (*tmallservice.TmallfuwuhomedecorationworkerlevellistAPIResponse, error) {
+	var resp tmallservice.TmallfuwuhomedecorationworkerlevellistAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

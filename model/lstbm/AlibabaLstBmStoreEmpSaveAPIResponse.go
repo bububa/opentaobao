@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaLstBmStoreEmpSaveAPIResponse 保存品牌商自有门店和内部业代之间的关系 API返回值
+// AlibabalstbmstoreempsaveAPIResponse 保存品牌商自有门店和内部业代之间的关系 API返回值
 // alibaba.lst.bm.store.emp.save
 //
 // 保存品牌商自有门店和内部业代之间的关系
-type AlibabaLstBmStoreEmpSaveAPIResponse struct {
+type AlibabalstbmstoreempsaveAPIResponse struct {
 	model.CommonResponse
-	AlibabaLstBmStoreEmpSaveAPIResponseModel
+	AlibabalstbmstoreempsaveAPIResponseModel
 }
 
-// AlibabaLstBmStoreEmpSaveAPIResponseModel is 保存品牌商自有门店和内部业代之间的关系 成功返回结果
-type AlibabaLstBmStoreEmpSaveAPIResponseModel struct {
+// AlibabalstbmstoreempsaveAPIResponseModel is 保存品牌商自有门店和内部业代之间的关系 成功返回结果
+type AlibabalstbmstoreempsaveAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_lst_bm_store_emp_save_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

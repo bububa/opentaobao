@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaScbpAccountBudgetGetAPIResponse 查询日消耗预算 API返回值
+// AlibabascbpaccountbudgetgetAPIResponse 查询日消耗预算 API返回值
 // alibaba.scbp.account.budget.get
 //
 // 查询日消耗预算
-type AlibabaScbpAccountBudgetGetAPIResponse struct {
+type AlibabascbpaccountbudgetgetAPIResponse struct {
 	model.CommonResponse
-	AlibabaScbpAccountBudgetGetAPIResponseModel
+	AlibabascbpaccountbudgetgetAPIResponseModel
 }
 
-// AlibabaScbpAccountBudgetGetAPIResponseModel is 查询日消耗预算 成功返回结果
-type AlibabaScbpAccountBudgetGetAPIResponseModel struct {
+// AlibabascbpaccountbudgetgetAPIResponseModel is 查询日消耗预算 成功返回结果
+type AlibabascbpaccountbudgetgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_account_budget_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

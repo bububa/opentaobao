@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alicom"
 )
 
-// AlibabaAliqinTaNumberSinglecallbyvoice 根据号码tts单呼
+// Alibabaaliqintanumbersinglecallbyvoice 根据号码tts单呼
 // alibaba.aliqin.ta.number.singlecallbyvoice
 //
 // 根据号码语音单呼
-func AlibabaAliqinTaNumberSinglecallbyvoice(clt *core.SDKClient, req *alicom.AlibabaAliqinTaNumberSinglecallbyvoiceAPIRequest, session string) (*alicom.AlibabaAliqinTaNumberSinglecallbyvoiceAPIResponse, error) {
-	var resp alicom.AlibabaAliqinTaNumberSinglecallbyvoiceAPIResponse
+func Alibabaaliqintanumbersinglecallbyvoice(clt *core.SDKClient, req *alicom.AlibabaaliqintanumbersinglecallbyvoiceAPIRequest, session string) (*alicom.AlibabaaliqintanumbersinglecallbyvoiceAPIResponse, error) {
+	var resp alicom.AlibabaaliqintanumbersinglecallbyvoiceAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

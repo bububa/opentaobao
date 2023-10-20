@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAlitripTravelFscRouteApiProjectAddAPIRequest 新增团期 API请求
+// TaobaoalitriptravelfscrouteapiprojectaddAPIRequest 新增团期 API请求
 // taobao.alitrip.travel.fsc.route.api.project.add
 //
 // 新增团期
-type TaobaoAlitripTravelFscRouteApiProjectAddAPIRequest struct {
+type TaobaoalitriptravelfscrouteapiprojectaddAPIRequest struct {
 	model.Params
 	// fscProjectModifyRequest
 	_fscProjectModifyRequest *FscProjectModifyRequest
 }
 
-// NewTaobaoAlitripTravelFscRouteApiProjectAddRequest 初始化TaobaoAlitripTravelFscRouteApiProjectAddAPIRequest对象
-func NewTaobaoAlitripTravelFscRouteApiProjectAddRequest() *TaobaoAlitripTravelFscRouteApiProjectAddAPIRequest {
-	return &TaobaoAlitripTravelFscRouteApiProjectAddAPIRequest{
+// NewTaobaoalitriptravelfscrouteapiprojectaddRequest 初始化TaobaoalitriptravelfscrouteapiprojectaddAPIRequest对象
+func NewTaobaoalitriptravelfscrouteapiprojectaddRequest() *TaobaoalitriptravelfscrouteapiprojectaddAPIRequest {
+	return &TaobaoalitriptravelfscrouteapiprojectaddAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripTravelFscRouteApiProjectAddAPIRequest) GetApiMethodName() string {
+func (r TaobaoalitriptravelfscrouteapiprojectaddAPIRequest) GetApiMethodName() string {
 	return "taobao.alitrip.travel.fsc.route.api.project.add"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripTravelFscRouteApiProjectAddAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoalitriptravelfscrouteapiprojectaddAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoAlitripTravelFscRouteApiProjectAddAPIRequest) GetRawParams() model.Params {
+func (r TaobaoalitriptravelfscrouteapiprojectaddAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetFscProjectModifyRequest is FscProjectModifyRequest Setter
 // fscProjectModifyRequest
-func (r *TaobaoAlitripTravelFscRouteApiProjectAddAPIRequest) SetFscProjectModifyRequest(_fscProjectModifyRequest *FscProjectModifyRequest) error {
+func (r *TaobaoalitriptravelfscrouteapiprojectaddAPIRequest) SetFscProjectModifyRequest(_fscProjectModifyRequest *FscProjectModifyRequest) error {
 	r._fscProjectModifyRequest = _fscProjectModifyRequest
 	r.Set("fsc_project_modify_request", _fscProjectModifyRequest)
 	return nil
 }
 
 // GetFscProjectModifyRequest FscProjectModifyRequest Getter
-func (r TaobaoAlitripTravelFscRouteApiProjectAddAPIRequest) GetFscProjectModifyRequest() *FscProjectModifyRequest {
+func (r TaobaoalitriptravelfscrouteapiprojectaddAPIRequest) GetFscProjectModifyRequest() *FscProjectModifyRequest {
 	return r._fscProjectModifyRequest
 }

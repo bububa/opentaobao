@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AliyunIndustryTttmProduceSyncAPIRequest 天天特卖生产进度同步 API请求
+// AliyunindustrytttmproducesyncAPIRequest 天天特卖生产进度同步 API请求
 // aliyun.industry.tttm.produce.sync
 //
 // 天天特卖生产进度同步
-type AliyunIndustryTttmProduceSyncAPIRequest struct {
+type AliyunindustrytttmproducesyncAPIRequest struct {
 	model.Params
 	// 计划单
 	_syncPlan *SyncPlanDto
 }
 
-// NewAliyunIndustryTttmProduceSyncRequest 初始化AliyunIndustryTttmProduceSyncAPIRequest对象
-func NewAliyunIndustryTttmProduceSyncRequest() *AliyunIndustryTttmProduceSyncAPIRequest {
-	return &AliyunIndustryTttmProduceSyncAPIRequest{
+// NewAliyunindustrytttmproducesyncRequest 初始化AliyunindustrytttmproducesyncAPIRequest对象
+func NewAliyunindustrytttmproducesyncRequest() *AliyunindustrytttmproducesyncAPIRequest {
+	return &AliyunindustrytttmproducesyncAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AliyunIndustryTttmProduceSyncAPIRequest) GetApiMethodName() string {
+func (r AliyunindustrytttmproducesyncAPIRequest) GetApiMethodName() string {
 	return "aliyun.industry.tttm.produce.sync"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AliyunIndustryTttmProduceSyncAPIRequest) GetApiParams(params url.Values) {
+func (r AliyunindustrytttmproducesyncAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AliyunIndustryTttmProduceSyncAPIRequest) GetRawParams() model.Params {
+func (r AliyunindustrytttmproducesyncAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSyncPlan is SyncPlan Setter
 // 计划单
-func (r *AliyunIndustryTttmProduceSyncAPIRequest) SetSyncPlan(_syncPlan *SyncPlanDto) error {
+func (r *AliyunindustrytttmproducesyncAPIRequest) SetSyncPlan(_syncPlan *SyncPlanDto) error {
 	r._syncPlan = _syncPlan
 	r.Set("sync_plan", _syncPlan)
 	return nil
 }
 
 // GetSyncPlan SyncPlan Getter
-func (r AliyunIndustryTttmProduceSyncAPIRequest) GetSyncPlan() *SyncPlanDto {
+func (r AliyunindustrytttmproducesyncAPIRequest) GetSyncPlan() *SyncPlanDto {
 	return r._syncPlan
 }

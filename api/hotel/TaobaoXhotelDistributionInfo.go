@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/hotel"
 )
 
-// TaobaoXhotelDistributionInfo 飞猪分销通用酒店标准信息接口
+// Taobaoxhoteldistributioninfo 飞猪分销通用酒店标准信息接口
 // taobao.xhotel.distribution.info
 //
 // 飞猪分销通用酒店标准信息接口
-func TaobaoXhotelDistributionInfo(clt *core.SDKClient, req *hotel.TaobaoXhotelDistributionInfoAPIRequest, session string) (*hotel.TaobaoXhotelDistributionInfoAPIResponse, error) {
-	var resp hotel.TaobaoXhotelDistributionInfoAPIResponse
+func Taobaoxhoteldistributioninfo(clt *core.SDKClient, req *hotel.TaobaoxhoteldistributioninfoAPIRequest, session string) (*hotel.TaobaoxhoteldistributioninfoAPIResponse, error) {
+	var resp hotel.TaobaoxhoteldistributioninfoAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaWdkSkuCombineskuUpdateApiResult 结构体
-type AlibabaWdkSkuCombineskuUpdateApiResult struct {
+// AlibabawdkskucombineskuupdateApiResult 结构体
+type AlibabawdkskucombineskuupdateApiResult struct {
 	// 单个商品更新异常编码（异常才有值）
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 单个商品更新异常信息（异常才有值）

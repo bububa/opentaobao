@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallPromotagTaguserSaveAPIRequest 给用户打上优惠标签 API请求
+// TmallpromotagtagusersaveAPIRequest 给用户打上优惠标签 API请求
 // tmall.promotag.taguser.save
 //
 // 给用户载体打标
-type TmallPromotagTaguserSaveAPIRequest struct {
+type TmallpromotagtagusersaveAPIRequest struct {
 	model.Params
 	// 昵称
 	_nick string
@@ -22,78 +22,78 @@ type TmallPromotagTaguserSaveAPIRequest struct {
 	_tagId int64
 }
 
-// NewTmallPromotagTaguserSaveRequest 初始化TmallPromotagTaguserSaveAPIRequest对象
-func NewTmallPromotagTaguserSaveRequest() *TmallPromotagTaguserSaveAPIRequest {
-	return &TmallPromotagTaguserSaveAPIRequest{
+// NewTmallpromotagtagusersaveRequest 初始化TmallpromotagtagusersaveAPIRequest对象
+func NewTmallpromotagtagusersaveRequest() *TmallpromotagtagusersaveAPIRequest {
+	return &TmallpromotagtagusersaveAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallPromotagTaguserSaveAPIRequest) GetApiMethodName() string {
+func (r TmallpromotagtagusersaveAPIRequest) GetApiMethodName() string {
 	return "tmall.promotag.taguser.save"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallPromotagTaguserSaveAPIRequest) GetApiParams(params url.Values) {
+func (r TmallpromotagtagusersaveAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallPromotagTaguserSaveAPIRequest) GetRawParams() model.Params {
+func (r TmallpromotagtagusersaveAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetNick is Nick Setter
 // 昵称
-func (r *TmallPromotagTaguserSaveAPIRequest) SetNick(_nick string) error {
+func (r *TmallpromotagtagusersaveAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
 	r.Set("nick", _nick)
 	return nil
 }
 
 // GetNick Nick Getter
-func (r TmallPromotagTaguserSaveAPIRequest) GetNick() string {
+func (r TmallpromotagtagusersaveAPIRequest) GetNick() string {
 	return r._nick
 }
 
 // SetOuid is Ouid Setter
 // 用户ID
-func (r *TmallPromotagTaguserSaveAPIRequest) SetOuid(_ouid string) error {
+func (r *TmallpromotagtagusersaveAPIRequest) SetOuid(_ouid string) error {
 	r._ouid = _ouid
 	r.Set("ouid", _ouid)
 	return nil
 }
 
 // GetOuid Ouid Getter
-func (r TmallPromotagTaguserSaveAPIRequest) GetOuid() string {
+func (r TmallpromotagtagusersaveAPIRequest) GetOuid() string {
 	return r._ouid
 }
 
 // SetOpenid is Openid Setter
 // 用户ID
-func (r *TmallPromotagTaguserSaveAPIRequest) SetOpenid(_openid string) error {
+func (r *TmallpromotagtagusersaveAPIRequest) SetOpenid(_openid string) error {
 	r._openid = _openid
 	r.Set("openid", _openid)
 	return nil
 }
 
 // GetOpenid Openid Getter
-func (r TmallPromotagTaguserSaveAPIRequest) GetOpenid() string {
+func (r TmallpromotagtagusersaveAPIRequest) GetOpenid() string {
 	return r._openid
 }
 
 // SetTagId is TagId Setter
 // 标签ID
-func (r *TmallPromotagTaguserSaveAPIRequest) SetTagId(_tagId int64) error {
+func (r *TmallpromotagtagusersaveAPIRequest) SetTagId(_tagId int64) error {
 	r._tagId = _tagId
 	r.Set("tag_id", _tagId)
 	return nil
 }
 
 // GetTagId TagId Getter
-func (r TmallPromotagTaguserSaveAPIRequest) GetTagId() int64 {
+func (r TmallpromotagtagusersaveAPIRequest) GetTagId() int64 {
 	return r._tagId
 }

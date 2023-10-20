@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAlitripTravelItemElementManageAPIResponse 【API3.0】资源元素管理接口 API返回值
+// TaobaoalitriptravelitemelementmanageAPIResponse 【API3.0】资源元素管理接口 API返回值
 // taobao.alitrip.travel.item.element.manage
 //
 // 资源元素管理接口：提供商家管理（增删改）基本资源元素信息。基本资源元素可供多个商品共享
-type TaobaoAlitripTravelItemElementManageAPIResponse struct {
+type TaobaoalitriptravelitemelementmanageAPIResponse struct {
 	model.CommonResponse
-	TaobaoAlitripTravelItemElementManageAPIResponseModel
+	TaobaoalitriptravelitemelementmanageAPIResponseModel
 }
 
-// TaobaoAlitripTravelItemElementManageAPIResponseModel is 【API3.0】资源元素管理接口 成功返回结果
-type TaobaoAlitripTravelItemElementManageAPIResponseModel struct {
+// TaobaoalitriptravelitemelementmanageAPIResponseModel is 【API3.0】资源元素管理接口 成功返回结果
+type TaobaoalitriptravelitemelementmanageAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_travel_item_element_manage_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

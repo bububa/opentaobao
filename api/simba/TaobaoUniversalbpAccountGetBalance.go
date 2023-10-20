@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// TaobaoUniversalbpAccountGetBalance 获取账户余额，现金余额
+// Taobaouniversalbpaccountgetbalance 获取账户余额，现金余额
 // taobao.universalbp.account.get.balance
 //
 // 获取账户实时现金余额
-func TaobaoUniversalbpAccountGetBalance(clt *core.SDKClient, req *simba.TaobaoUniversalbpAccountGetBalanceAPIRequest, session string) (*simba.TaobaoUniversalbpAccountGetBalanceAPIResponse, error) {
-	var resp simba.TaobaoUniversalbpAccountGetBalanceAPIResponse
+func Taobaouniversalbpaccountgetbalance(clt *core.SDKClient, req *simba.TaobaouniversalbpaccountgetbalanceAPIRequest, session string) (*simba.TaobaouniversalbpaccountgetbalanceAPIResponse, error) {
+	var resp simba.TaobaouniversalbpaccountgetbalanceAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

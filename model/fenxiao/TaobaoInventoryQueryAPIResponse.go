@@ -6,18 +6,18 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoInventoryQueryAPIResponse 查询商品库存信息 API返回值
+// TaobaoinventoryqueryAPIResponse 查询商品库存信息 API返回值
 // taobao.inventory.query
 //
 // 建议使用新接口：tmall.inventory.query.forstore ，新ISV不推荐使用。
 // 商家查询商品总体库存信息
-type TaobaoInventoryQueryAPIResponse struct {
+type TaobaoinventoryqueryAPIResponse struct {
 	model.CommonResponse
-	TaobaoInventoryQueryAPIResponseModel
+	TaobaoinventoryqueryAPIResponseModel
 }
 
-// TaobaoInventoryQueryAPIResponseModel is 查询商品库存信息 成功返回结果
-type TaobaoInventoryQueryAPIResponseModel struct {
+// TaobaoinventoryqueryAPIResponseModel is 查询商品库存信息 成功返回结果
+type TaobaoinventoryqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"inventory_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package tmallgenie
 
-// AlibabaAilabsAligenieOpencontentPushResult 结构体
-type AlibabaAilabsAligenieOpencontentPushResult struct {
+// AlibabaailabsaligenieopencontentpushResult 结构体
+type AlibabaailabsaligenieopencontentpushResult struct {
 	// retMsg
 	RetMsg string `json:"ret_msg,omitempty" xml:"ret_msg,omitempty"`
 	// retCode

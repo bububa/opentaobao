@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoMiniappDistributionMaterialDeleteAPIResponse 小程序投放 --- 删除投放素材 API返回值
+// TaobaominiappdistributionmaterialdeleteAPIResponse 小程序投放 --- 删除投放素材 API返回值
 // taobao.miniapp.distribution.material.delete
 //
 // 删除已录入的投放入口素材信息。
-type TaobaoMiniappDistributionMaterialDeleteAPIResponse struct {
+type TaobaominiappdistributionmaterialdeleteAPIResponse struct {
 	model.CommonResponse
-	TaobaoMiniappDistributionMaterialDeleteAPIResponseModel
+	TaobaominiappdistributionmaterialdeleteAPIResponseModel
 }
 
-// TaobaoMiniappDistributionMaterialDeleteAPIResponseModel is 小程序投放 --- 删除投放素材 成功返回结果
-type TaobaoMiniappDistributionMaterialDeleteAPIResponseModel struct {
+// TaobaominiappdistributionmaterialdeleteAPIResponseModel is 小程序投放 --- 删除投放素材 成功返回结果
+type TaobaominiappdistributionmaterialdeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"miniapp_distribution_material_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

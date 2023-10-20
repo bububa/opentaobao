@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/mtopopen"
 )
 
-// AlibabaInteractAopdataRegister 资源位数据推送接口
+// Alibabainteractaopdataregister 资源位数据推送接口
 // alibaba.interact.aopdata.register
 //
 // 提供给isv，查询以及推送浮层资源位的三方活动数据
-func AlibabaInteractAopdataRegister(clt *core.SDKClient, req *mtopopen.AlibabaInteractAopdataRegisterAPIRequest, session string) (*mtopopen.AlibabaInteractAopdataRegisterAPIResponse, error) {
-	var resp mtopopen.AlibabaInteractAopdataRegisterAPIResponse
+func Alibabainteractaopdataregister(clt *core.SDKClient, req *mtopopen.AlibabainteractaopdataregisterAPIRequest, session string) (*mtopopen.AlibabainteractaopdataregisterAPIResponse, error) {
+	var resp mtopopen.AlibabainteractaopdataregisterAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

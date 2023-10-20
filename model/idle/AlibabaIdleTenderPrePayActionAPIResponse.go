@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIdleTenderPrePayActionAPIResponse 服务商预付款完成接口 API返回值
+// AlibabaidletenderprepayactionAPIResponse 服务商预付款完成接口 API返回值
 // alibaba.idle.tender.pre.pay.action
 //
 // 服务商预付款完成接口
-type AlibabaIdleTenderPrePayActionAPIResponse struct {
+type AlibabaidletenderprepayactionAPIResponse struct {
 	model.CommonResponse
-	AlibabaIdleTenderPrePayActionAPIResponseModel
+	AlibabaidletenderprepayactionAPIResponseModel
 }
 
-// AlibabaIdleTenderPrePayActionAPIResponseModel is 服务商预付款完成接口 成功返回结果
-type AlibabaIdleTenderPrePayActionAPIResponseModel struct {
+// AlibabaidletenderprepayactionAPIResponseModel is 服务商预付款完成接口 成功返回结果
+type AlibabaidletenderprepayactionAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_idle_tender_pre_pay_action_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package axindata
 
-// TaobaoAlitripTravelFscRouteApiPoiGetTopResult 结构体
-type TaobaoAlitripTravelFscRouteApiPoiGetTopResult struct {
+// TaobaoalitriptravelfscrouteapipoigetTopResult 结构体
+type TaobaoalitriptravelfscrouteapipoigetTopResult struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息

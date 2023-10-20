@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaFenxiaoCbutotaobaoRelationAddAPIResponse 1688分销铺货到淘宝关系添加 API返回值
+// AlibabafenxiaocbutotaobaorelationaddAPIResponse 1688分销铺货到淘宝关系添加 API返回值
 // alibaba.fenxiao.cbutotaobao.relation.add
 //
 // 1688分销铺货到淘宝关系添加
-type AlibabaFenxiaoCbutotaobaoRelationAddAPIResponse struct {
+type AlibabafenxiaocbutotaobaorelationaddAPIResponse struct {
 	model.CommonResponse
-	AlibabaFenxiaoCbutotaobaoRelationAddAPIResponseModel
+	AlibabafenxiaocbutotaobaorelationaddAPIResponseModel
 }
 
-// AlibabaFenxiaoCbutotaobaoRelationAddAPIResponseModel is 1688分销铺货到淘宝关系添加 成功返回结果
-type AlibabaFenxiaoCbutotaobaoRelationAddAPIResponseModel struct {
+// AlibabafenxiaocbutotaobaorelationaddAPIResponseModel is 1688分销铺货到淘宝关系添加 成功返回结果
+type AlibabafenxiaocbutotaobaorelationaddAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_fenxiao_cbutotaobao_relation_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoCcoSelfCoordinateBreakOrderAPIResponse 天猫国际直购供应商毁单通知 API返回值
+// TaobaoccoselfcoordinatebreakorderAPIResponse 天猫国际直购供应商毁单通知 API返回值
 // taobao.cco.self.coordinate.break.order
 //
 // 天猫国际直购供应商毁单通知
-type TaobaoCcoSelfCoordinateBreakOrderAPIResponse struct {
+type TaobaoccoselfcoordinatebreakorderAPIResponse struct {
 	model.CommonResponse
-	TaobaoCcoSelfCoordinateBreakOrderAPIResponseModel
+	TaobaoccoselfcoordinatebreakorderAPIResponseModel
 }
 
-// TaobaoCcoSelfCoordinateBreakOrderAPIResponseModel is 天猫国际直购供应商毁单通知 成功返回结果
-type TaobaoCcoSelfCoordinateBreakOrderAPIResponseModel struct {
+// TaobaoccoselfcoordinatebreakorderAPIResponseModel is 天猫国际直购供应商毁单通知 成功返回结果
+type TaobaoccoselfcoordinatebreakorderAPIResponseModel struct {
 	XMLName xml.Name `xml:"cco_self_coordinate_break_order_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

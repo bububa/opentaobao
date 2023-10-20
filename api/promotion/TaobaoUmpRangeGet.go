@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/promotion"
 )
 
-// TaobaoUmpRangeGet 查询活动范围
+// Taobaoumprangeget 查询活动范围
 // taobao.ump.range.get
 //
 // 查询某个卖家所有参加或者不参加某项活动的物品
-func TaobaoUmpRangeGet(clt *core.SDKClient, req *promotion.TaobaoUmpRangeGetAPIRequest, session string) (*promotion.TaobaoUmpRangeGetAPIResponse, error) {
-	var resp promotion.TaobaoUmpRangeGetAPIResponse
+func Taobaoumprangeget(clt *core.SDKClient, req *promotion.TaobaoumprangegetAPIRequest, session string) (*promotion.TaobaoumprangegetAPIResponse, error) {
+	var resp promotion.TaobaoumprangegetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

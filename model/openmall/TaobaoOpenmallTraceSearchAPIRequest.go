@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOpenmallTraceSearchAPIRequest 获取Openmall订单物流流转信息 API请求
+// TaobaoopenmalltracesearchAPIRequest 获取Openmall订单物流流转信息 API请求
 // taobao.openmall.trace.search
 //
 // 获取Openmall订单物流流转信息
-type TaobaoOpenmallTraceSearchAPIRequest struct {
+type TaobaoopenmalltracesearchAPIRequest struct {
 	model.Params
 	// 签约支付宝代扣的账号
 	_distributor string
@@ -18,52 +18,52 @@ type TaobaoOpenmallTraceSearchAPIRequest struct {
 	_tid int64
 }
 
-// NewTaobaoOpenmallTraceSearchRequest 初始化TaobaoOpenmallTraceSearchAPIRequest对象
-func NewTaobaoOpenmallTraceSearchRequest() *TaobaoOpenmallTraceSearchAPIRequest {
-	return &TaobaoOpenmallTraceSearchAPIRequest{
+// NewTaobaoopenmalltracesearchRequest 初始化TaobaoopenmalltracesearchAPIRequest对象
+func NewTaobaoopenmalltracesearchRequest() *TaobaoopenmalltracesearchAPIRequest {
+	return &TaobaoopenmalltracesearchAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoOpenmallTraceSearchAPIRequest) GetApiMethodName() string {
+func (r TaobaoopenmalltracesearchAPIRequest) GetApiMethodName() string {
 	return "taobao.openmall.trace.search"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoOpenmallTraceSearchAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoopenmalltracesearchAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoOpenmallTraceSearchAPIRequest) GetRawParams() model.Params {
+func (r TaobaoopenmalltracesearchAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDistributor is Distributor Setter
 // 签约支付宝代扣的账号
-func (r *TaobaoOpenmallTraceSearchAPIRequest) SetDistributor(_distributor string) error {
+func (r *TaobaoopenmalltracesearchAPIRequest) SetDistributor(_distributor string) error {
 	r._distributor = _distributor
 	r.Set("distributor", _distributor)
 	return nil
 }
 
 // GetDistributor Distributor Getter
-func (r TaobaoOpenmallTraceSearchAPIRequest) GetDistributor() string {
+func (r TaobaoopenmalltracesearchAPIRequest) GetDistributor() string {
 	return r._distributor
 }
 
 // SetTid is Tid Setter
 // 淘宝订单编号
-func (r *TaobaoOpenmallTraceSearchAPIRequest) SetTid(_tid int64) error {
+func (r *TaobaoopenmalltracesearchAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
 	r.Set("tid", _tid)
 	return nil
 }
 
 // GetTid Tid Getter
-func (r TaobaoOpenmallTraceSearchAPIRequest) GetTid() int64 {
+func (r TaobaoopenmalltracesearchAPIRequest) GetTid() int64 {
 	return r._tid
 }

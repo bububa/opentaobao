@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest 根据单据号码查询码单据详情和码信息 API请求
+// AlibabaalihealthdrugkytquerycoderelationfrombillcodeAPIRequest 根据单据号码查询码单据详情和码信息 API请求
 // alibaba.alihealth.drug.kyt.query.code.relation.from.billcode
 //
 // 根据单据号码查询码单据详情和码信息
-type AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest struct {
+type AlibabaalihealthdrugkytquerycoderelationfrombillcodeAPIRequest struct {
 	model.Params
 	// 单据号码
 	_billCode string
@@ -18,52 +18,52 @@ type AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest struct {
 	_refEntId string
 }
 
-// NewAlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeRequest 初始化AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest对象
-func NewAlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeRequest() *AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest {
-	return &AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest{
+// NewAlibabaalihealthdrugkytquerycoderelationfrombillcodeRequest 初始化AlibabaalihealthdrugkytquerycoderelationfrombillcodeAPIRequest对象
+func NewAlibabaalihealthdrugkytquerycoderelationfrombillcodeRequest() *AlibabaalihealthdrugkytquerycoderelationfrombillcodeAPIRequest {
+	return &AlibabaalihealthdrugkytquerycoderelationfrombillcodeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihealthdrugkytquerycoderelationfrombillcodeAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.drug.kyt.query.code.relation.from.billcode"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihealthdrugkytquerycoderelationfrombillcodeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihealthdrugkytquerycoderelationfrombillcodeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetBillCode is BillCode Setter
 // 单据号码
-func (r *AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest) SetBillCode(_billCode string) error {
+func (r *AlibabaalihealthdrugkytquerycoderelationfrombillcodeAPIRequest) SetBillCode(_billCode string) error {
 	r._billCode = _billCode
 	r.Set("bill_code", _billCode)
 	return nil
 }
 
 // GetBillCode BillCode Getter
-func (r AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest) GetBillCode() string {
+func (r AlibabaalihealthdrugkytquerycoderelationfrombillcodeAPIRequest) GetBillCode() string {
 	return r._billCode
 }
 
 // SetRefEntId is RefEntId Setter
 // 企业refEntId
-func (r *AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest) SetRefEntId(_refEntId string) error {
+func (r *AlibabaalihealthdrugkytquerycoderelationfrombillcodeAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
 	r.Set("ref_ent_id", _refEntId)
 	return nil
 }
 
 // GetRefEntId RefEntId Getter
-func (r AlibabaAlihealthDrugKytQueryCodeRelationFromBillcodeAPIRequest) GetRefEntId() string {
+func (r AlibabaalihealthdrugkytquerycoderelationfrombillcodeAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }

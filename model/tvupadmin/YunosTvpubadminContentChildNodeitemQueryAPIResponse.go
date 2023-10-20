@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosTvpubadminContentChildNodeitemQueryAPIResponse 查询少儿大厅类目内容 API返回值
+// YunostvpubadmincontentchildnodeitemqueryAPIResponse 查询少儿大厅类目内容 API返回值
 // yunos.tvpubadmin.content.child.nodeitem.query
 //
 // 查询少儿大厅类目内容信息
-type YunosTvpubadminContentChildNodeitemQueryAPIResponse struct {
+type YunostvpubadmincontentchildnodeitemqueryAPIResponse struct {
 	model.CommonResponse
-	YunosTvpubadminContentChildNodeitemQueryAPIResponseModel
+	YunostvpubadmincontentchildnodeitemqueryAPIResponseModel
 }
 
-// YunosTvpubadminContentChildNodeitemQueryAPIResponseModel is 查询少儿大厅类目内容 成功返回结果
-type YunosTvpubadminContentChildNodeitemQueryAPIResponseModel struct {
+// YunostvpubadmincontentchildnodeitemqueryAPIResponseModel is 查询少儿大厅类目内容 成功返回结果
+type YunostvpubadmincontentchildnodeitemqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_tvpubadmin_content_child_nodeitem_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

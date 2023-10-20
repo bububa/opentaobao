@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// AlibabaScbpEffectProductSingleGet 单个产品的报表
+// Alibabascbpeffectproductsingleget 单个产品的报表
 // alibaba.scbp.effect.product.single.get
 //
 // 单个产品的报表
-func AlibabaScbpEffectProductSingleGet(clt *core.SDKClient, req *scbp.AlibabaScbpEffectProductSingleGetAPIRequest, session string) (*scbp.AlibabaScbpEffectProductSingleGetAPIResponse, error) {
-	var resp scbp.AlibabaScbpEffectProductSingleGetAPIResponse
+func Alibabascbpeffectproductsingleget(clt *core.SDKClient, req *scbp.AlibabascbpeffectproductsinglegetAPIRequest, session string) (*scbp.AlibabascbpeffectproductsinglegetAPIResponse, error) {
+	var resp scbp.AlibabascbpeffectproductsinglegetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

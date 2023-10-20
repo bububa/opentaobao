@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthPwSpecialSynchronodeAPIResponse 合作方同步状态至阿里健康 API返回值
+// AlibabaalihealthpwspecialsynchronodeAPIResponse 合作方同步状态至阿里健康 API返回值
 // alibaba.alihealth.pw.special.synchronode
 //
 // 合作方同步状态至阿里健康
-type AlibabaAlihealthPwSpecialSynchronodeAPIResponse struct {
+type AlibabaalihealthpwspecialsynchronodeAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihealthPwSpecialSynchronodeAPIResponseModel
+	AlibabaalihealthpwspecialsynchronodeAPIResponseModel
 }
 
-// AlibabaAlihealthPwSpecialSynchronodeAPIResponseModel is 合作方同步状态至阿里健康 成功返回结果
-type AlibabaAlihealthPwSpecialSynchronodeAPIResponseModel struct {
+// AlibabaalihealthpwspecialsynchronodeAPIResponseModel is 合作方同步状态至阿里健康 成功返回结果
+type AlibabaalihealthpwspecialsynchronodeAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_pw_special_synchronode_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

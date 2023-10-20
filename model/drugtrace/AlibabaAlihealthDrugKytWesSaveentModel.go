@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaAlihealthDrugKytWesSaveentModel 结构体
-type AlibabaAlihealthDrugKytWesSaveentModel struct {
+// AlibabaalihealthdrugkytwessaveentModel 结构体
+type AlibabaalihealthdrugkytwessaveentModel struct {
 	// 新增失败的时候错误原因
 	CheckMsg string `json:"check_msg,omitempty" xml:"check_msg,omitempty"`
 	// 新增成功后分配的往来单位refEntId

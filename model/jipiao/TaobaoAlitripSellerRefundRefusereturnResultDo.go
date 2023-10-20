@@ -1,7 +1,7 @@
 package jipiao
 
-// TaobaoAlitripSellerRefundRefusereturnResultDo 结构体
-type TaobaoAlitripSellerRefundRefusereturnResultDo struct {
+// TaobaoalitripsellerrefundrefusereturnResultDo 结构体
+type TaobaoalitripsellerrefundrefusereturnResultDo struct {
 	// 系统自动生成
 	ErrorCode string `json:"errorCode,omitempty" xml:"errorCode,omitempty"`
 	// 系统自动生成

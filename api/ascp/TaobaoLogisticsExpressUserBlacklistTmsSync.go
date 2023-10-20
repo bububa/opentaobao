@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascp"
 )
 
-// TaobaoLogisticsExpressUserBlacklistTmsSync 上门取退用户黑名单同步
+// Taobaologisticsexpressuserblacklisttmssync 上门取退用户黑名单同步
 // taobao.logistics.express.user.blacklist.tms.sync
 //
 // 上门取退用户黑名单同步
-func TaobaoLogisticsExpressUserBlacklistTmsSync(clt *core.SDKClient, req *ascp.TaobaoLogisticsExpressUserBlacklistTmsSyncAPIRequest, session string) (*ascp.TaobaoLogisticsExpressUserBlacklistTmsSyncAPIResponse, error) {
-	var resp ascp.TaobaoLogisticsExpressUserBlacklistTmsSyncAPIResponse
+func Taobaologisticsexpressuserblacklisttmssync(clt *core.SDKClient, req *ascp.TaobaologisticsexpressuserblacklisttmssyncAPIRequest, session string) (*ascp.TaobaologisticsexpressuserblacklisttmssyncAPIResponse, error) {
+	var resp ascp.TaobaologisticsexpressuserblacklisttmssyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

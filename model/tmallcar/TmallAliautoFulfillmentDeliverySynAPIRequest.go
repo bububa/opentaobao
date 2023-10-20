@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallAliautoFulfillmentDeliverySynAPIRequest 交付状态及物流信息同步 API请求
+// TmallaliautofulfillmentdeliverysynAPIRequest 交付状态及物流信息同步 API请求
 // tmall.aliauto.fulfillment.delivery.syn
 //
 // 交付状态及物流信息同步
-type TmallAliautoFulfillmentDeliverySynAPIRequest struct {
+type TmallaliautofulfillmentdeliverysynAPIRequest struct {
 	model.Params
 	// 入参
 	_req *SyncInfoReq
 }
 
-// NewTmallAliautoFulfillmentDeliverySynRequest 初始化TmallAliautoFulfillmentDeliverySynAPIRequest对象
-func NewTmallAliautoFulfillmentDeliverySynRequest() *TmallAliautoFulfillmentDeliverySynAPIRequest {
-	return &TmallAliautoFulfillmentDeliverySynAPIRequest{
+// NewTmallaliautofulfillmentdeliverysynRequest 初始化TmallaliautofulfillmentdeliverysynAPIRequest对象
+func NewTmallaliautofulfillmentdeliverysynRequest() *TmallaliautofulfillmentdeliverysynAPIRequest {
+	return &TmallaliautofulfillmentdeliverysynAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallAliautoFulfillmentDeliverySynAPIRequest) GetApiMethodName() string {
+func (r TmallaliautofulfillmentdeliverysynAPIRequest) GetApiMethodName() string {
 	return "tmall.aliauto.fulfillment.delivery.syn"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallAliautoFulfillmentDeliverySynAPIRequest) GetApiParams(params url.Values) {
+func (r TmallaliautofulfillmentdeliverysynAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallAliautoFulfillmentDeliverySynAPIRequest) GetRawParams() model.Params {
+func (r TmallaliautofulfillmentdeliverysynAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetReq is Req Setter
 // 入参
-func (r *TmallAliautoFulfillmentDeliverySynAPIRequest) SetReq(_req *SyncInfoReq) error {
+func (r *TmallaliautofulfillmentdeliverysynAPIRequest) SetReq(_req *SyncInfoReq) error {
 	r._req = _req
 	r.Set("req", _req)
 	return nil
 }
 
 // GetReq Req Getter
-func (r TmallAliautoFulfillmentDeliverySynAPIRequest) GetReq() *SyncInfoReq {
+func (r TmallaliautofulfillmentdeliverysynAPIRequest) GetReq() *SyncInfoReq {
 	return r._req
 }

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/util"
 )
 
-// TaobaoQimenTradeUserDelete 删除奇门订单链路用户
+// Taobaoqimentradeuserdelete 删除奇门订单链路用户
 // taobao.qimen.trade.user.delete
 //
 // 删除奇门订单链路用户
-func TaobaoQimenTradeUserDelete(clt *core.SDKClient, req *util.TaobaoQimenTradeUserDeleteAPIRequest, session string) (*util.TaobaoQimenTradeUserDeleteAPIResponse, error) {
-	var resp util.TaobaoQimenTradeUserDeleteAPIResponse
+func Taobaoqimentradeuserdelete(clt *core.SDKClient, req *util.TaobaoqimentradeuserdeleteAPIRequest, session string) (*util.TaobaoqimentradeuserdeleteAPIResponse, error) {
+	var resp util.TaobaoqimentradeuserdeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

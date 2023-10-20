@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoMessageaccountMesssageNormalSendAPIRequest 下行普通消息 API请求
+// TaobaomessageaccountmesssagenormalsendAPIRequest 下行普通消息 API请求
 // taobao.messageaccount.messsage.normal.send
 //
 // 消息号下行单个普通消息
-type TaobaoMessageaccountMesssageNormalSendAPIRequest struct {
+type TaobaomessageaccountmesssagenormalsendAPIRequest struct {
 	model.Params
 	// 下行普通消息
 	_param *NormalMessageDto
 }
 
-// NewTaobaoMessageaccountMesssageNormalSendRequest 初始化TaobaoMessageaccountMesssageNormalSendAPIRequest对象
-func NewTaobaoMessageaccountMesssageNormalSendRequest() *TaobaoMessageaccountMesssageNormalSendAPIRequest {
-	return &TaobaoMessageaccountMesssageNormalSendAPIRequest{
+// NewTaobaomessageaccountmesssagenormalsendRequest 初始化TaobaomessageaccountmesssagenormalsendAPIRequest对象
+func NewTaobaomessageaccountmesssagenormalsendRequest() *TaobaomessageaccountmesssagenormalsendAPIRequest {
+	return &TaobaomessageaccountmesssagenormalsendAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoMessageaccountMesssageNormalSendAPIRequest) GetApiMethodName() string {
+func (r TaobaomessageaccountmesssagenormalsendAPIRequest) GetApiMethodName() string {
 	return "taobao.messageaccount.messsage.normal.send"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoMessageaccountMesssageNormalSendAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaomessageaccountmesssagenormalsendAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoMessageaccountMesssageNormalSendAPIRequest) GetRawParams() model.Params {
+func (r TaobaomessageaccountmesssagenormalsendAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 下行普通消息
-func (r *TaobaoMessageaccountMesssageNormalSendAPIRequest) SetParam(_param *NormalMessageDto) error {
+func (r *TaobaomessageaccountmesssagenormalsendAPIRequest) SetParam(_param *NormalMessageDto) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r TaobaoMessageaccountMesssageNormalSendAPIRequest) GetParam() *NormalMessageDto {
+func (r TaobaomessageaccountmesssagenormalsendAPIRequest) GetParam() *NormalMessageDto {
 	return r._param
 }

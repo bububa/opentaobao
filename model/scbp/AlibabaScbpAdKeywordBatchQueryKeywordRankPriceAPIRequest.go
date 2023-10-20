@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest 批量查询关键词前五名排价 API请求
+// AlibabascbpadkeywordbatchquerykeywordrankpriceAPIRequest 批量查询关键词前五名排价 API请求
 // alibaba.scbp.ad.keyword.batch.query.keyword.rank.price
 //
 // 批量查询关键词前五名排价
-type AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest struct {
+type AlibabascbpadkeywordbatchquerykeywordrankpriceAPIRequest struct {
 	model.Params
 	// 关键词信息集合
 	_keywordList []KeywordInfo
@@ -20,65 +20,65 @@ type AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest struct {
 	_campaignId int64
 }
 
-// NewAlibabaScbpAdKeywordBatchQueryKeywordRankPriceRequest 初始化AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest对象
-func NewAlibabaScbpAdKeywordBatchQueryKeywordRankPriceRequest() *AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest {
-	return &AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest{
+// NewAlibabascbpadkeywordbatchquerykeywordrankpriceRequest 初始化AlibabascbpadkeywordbatchquerykeywordrankpriceAPIRequest对象
+func NewAlibabascbpadkeywordbatchquerykeywordrankpriceRequest() *AlibabascbpadkeywordbatchquerykeywordrankpriceAPIRequest {
+	return &AlibabascbpadkeywordbatchquerykeywordrankpriceAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest) GetApiMethodName() string {
+func (r AlibabascbpadkeywordbatchquerykeywordrankpriceAPIRequest) GetApiMethodName() string {
 	return "alibaba.scbp.ad.keyword.batch.query.keyword.rank.price"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabascbpadkeywordbatchquerykeywordrankpriceAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest) GetRawParams() model.Params {
+func (r AlibabascbpadkeywordbatchquerykeywordrankpriceAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetKeywordList is KeywordList Setter
 // 关键词信息集合
-func (r *AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest) SetKeywordList(_keywordList []KeywordInfo) error {
+func (r *AlibabascbpadkeywordbatchquerykeywordrankpriceAPIRequest) SetKeywordList(_keywordList []KeywordInfo) error {
 	r._keywordList = _keywordList
 	r.Set("keyword_list", _keywordList)
 	return nil
 }
 
 // GetKeywordList KeywordList Getter
-func (r AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest) GetKeywordList() []KeywordInfo {
+func (r AlibabascbpadkeywordbatchquerykeywordrankpriceAPIRequest) GetKeywordList() []KeywordInfo {
 	return r._keywordList
 }
 
 // SetTopContext is TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest) SetTopContext(_topContext *TopContextDto) error {
+func (r *AlibabascbpadkeywordbatchquerykeywordrankpriceAPIRequest) SetTopContext(_topContext *TopContextDto) error {
 	r._topContext = _topContext
 	r.Set("top_context", _topContext)
 	return nil
 }
 
 // GetTopContext TopContext Getter
-func (r AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest) GetTopContext() *TopContextDto {
+func (r AlibabascbpadkeywordbatchquerykeywordrankpriceAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
 }
 
 // SetCampaignId is CampaignId Setter
 // 计划id
-func (r *AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest) SetCampaignId(_campaignId int64) error {
+func (r *AlibabascbpadkeywordbatchquerykeywordrankpriceAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
 	r.Set("campaign_id", _campaignId)
 	return nil
 }
 
 // GetCampaignId CampaignId Getter
-func (r AlibabaScbpAdKeywordBatchQueryKeywordRankPriceAPIRequest) GetCampaignId() int64 {
+func (r AlibabascbpadkeywordbatchquerykeywordrankpriceAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }

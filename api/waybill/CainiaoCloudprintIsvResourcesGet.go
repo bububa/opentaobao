@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/waybill"
 )
 
-// CainiaoCloudprintIsvResourcesGet isv资源查询
+// Cainiaocloudprintisvresourcesget isv资源查询
 // cainiao.cloudprint.isv.resources.get
 //
 // isv资源查询，包括isv模板、打印项、预设的自定义区等
-func CainiaoCloudprintIsvResourcesGet(clt *core.SDKClient, req *waybill.CainiaoCloudprintIsvResourcesGetAPIRequest, session string) (*waybill.CainiaoCloudprintIsvResourcesGetAPIResponse, error) {
-	var resp waybill.CainiaoCloudprintIsvResourcesGetAPIResponse
+func Cainiaocloudprintisvresourcesget(clt *core.SDKClient, req *waybill.CainiaocloudprintisvresourcesgetAPIRequest, session string) (*waybill.CainiaocloudprintisvresourcesgetAPIResponse, error) {
+	var resp waybill.CainiaocloudprintisvresourcesgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

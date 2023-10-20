@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// TaobaoSimbaAdgroupsbyadgroupidsGet 批量得到推广组
+// Taobaosimbaadgroupsbyadgroupidsget 批量得到推广组
 // taobao.simba.adgroupsbyadgroupids.get
 //
 // 批量得到推广组
-func TaobaoSimbaAdgroupsbyadgroupidsGet(clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest, session string) (*simba.TaobaoSimbaAdgroupsbyadgroupidsGetAPIResponse, error) {
-	var resp simba.TaobaoSimbaAdgroupsbyadgroupidsGetAPIResponse
+func Taobaosimbaadgroupsbyadgroupidsget(clt *core.SDKClient, req *simba.TaobaosimbaadgroupsbyadgroupidsgetAPIRequest, session string) (*simba.TaobaosimbaadgroupsbyadgroupidsgetAPIResponse, error) {
+	var resp simba.TaobaosimbaadgroupsbyadgroupidsgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaCampusGuardDataSyncAPIResponse 卡巴数据同步 API返回值
+// AlibabacampusguarddatasyncAPIResponse 卡巴数据同步 API返回值
 // alibaba.campus.guard.data.sync
 //
 // 数据同步门禁系统
-type AlibabaCampusGuardDataSyncAPIResponse struct {
+type AlibabacampusguarddatasyncAPIResponse struct {
 	model.CommonResponse
-	AlibabaCampusGuardDataSyncAPIResponseModel
+	AlibabacampusguarddatasyncAPIResponseModel
 }
 
-// AlibabaCampusGuardDataSyncAPIResponseModel is 卡巴数据同步 成功返回结果
-type AlibabaCampusGuardDataSyncAPIResponseModel struct {
+// AlibabacampusguarddatasyncAPIResponseModel is 卡巴数据同步 成功返回结果
+type AlibabacampusguarddatasyncAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_campus_guard_data_sync_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

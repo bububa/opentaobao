@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoXhotelOrderOfflineSettleCancelAPIResponse 线下信用住取消结账专用接口 API返回值
+// TaobaoxhotelorderofflinesettlecancelAPIResponse 线下信用住取消结账专用接口 API返回值
 // taobao.xhotel.order.offline.settle.cancel
 //
 // 线下信用住取消结账专用接口
-type TaobaoXhotelOrderOfflineSettleCancelAPIResponse struct {
+type TaobaoxhotelorderofflinesettlecancelAPIResponse struct {
 	model.CommonResponse
-	TaobaoXhotelOrderOfflineSettleCancelAPIResponseModel
+	TaobaoxhotelorderofflinesettlecancelAPIResponseModel
 }
 
-// TaobaoXhotelOrderOfflineSettleCancelAPIResponseModel is 线下信用住取消结账专用接口 成功返回结果
-type TaobaoXhotelOrderOfflineSettleCancelAPIResponseModel struct {
+// TaobaoxhotelorderofflinesettlecancelAPIResponseModel is 线下信用住取消结账专用接口 成功返回结果
+type TaobaoxhotelorderofflinesettlecancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_order_offline_settle_cancel_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

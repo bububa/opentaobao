@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihealthmdeer"
 )
 
-// AlibabaAlihealthMdeerScienceSynVideo 视频同步【保存/更新】
+// AlibabaalihealthmdeersciencesynVideo 视频同步【保存/更新】
 // alibaba.alihealth.mdeer.science.synVideo
 //
 // 视频同步【保存/更新】
-func AlibabaAlihealthMdeerScienceSynVideo(clt *core.SDKClient, req *alihealthmdeer.AlibabaAlihealthMdeerScienceSynVideoAPIRequest, session string) (*alihealthmdeer.AlibabaAlihealthMdeerScienceSynVideoAPIResponse, error) {
-	var resp alihealthmdeer.AlibabaAlihealthMdeerScienceSynVideoAPIResponse
+func AlibabaalihealthmdeersciencesynVideo(clt *core.SDKClient, req *alihealthmdeer.AlibabaalihealthmdeersciencesynVideoAPIRequest, session string) (*alihealthmdeer.AlibabaalihealthmdeersciencesynVideoAPIResponse, error) {
+	var resp alihealthmdeer.AlibabaalihealthmdeersciencesynVideoAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoCrmGroupMoveAPIResponse 分组移动 API返回值
+// TaobaocrmgroupmoveAPIResponse 分组移动 API返回值
 // taobao.crm.group.move
 //
 // 将一个分组下的所有会员移动到另一个分组，会员从原分组中删除&lt;br/&gt;注：移动属性为异步任务建议先调用taobao.crm.grouptask.check 确保涉及属性上没有任务。
-type TaobaoCrmGroupMoveAPIResponse struct {
+type TaobaocrmgroupmoveAPIResponse struct {
 	model.CommonResponse
-	TaobaoCrmGroupMoveAPIResponseModel
+	TaobaocrmgroupmoveAPIResponseModel
 }
 
-// TaobaoCrmGroupMoveAPIResponseModel is 分组移动 成功返回结果
-type TaobaoCrmGroupMoveAPIResponseModel struct {
+// TaobaocrmgroupmoveAPIResponseModel is 分组移动 成功返回结果
+type TaobaocrmgroupmoveAPIResponseModel struct {
 	XMLName xml.Name `xml:"crm_group_move_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

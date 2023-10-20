@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoCaipiaoMarketingPutAPIRequest 创建或修改商家送彩票活动 API请求
+// TaobaocaipiaomarketingputAPIRequest 创建或修改商家送彩票活动 API请求
 // taobao.caipiao.marketing.put
 //
 // 卖家通过此接口新增或修改送彩票活动的配置，比如活动时间、活动的条件等。
@@ -20,45 +20,45 @@ import (
 // https://gw.alicdn.com/tfs/TB1tzpNSXXXXXacXVXXXXXXXXXX-790-280.png
 // https://gw.alicdn.com/tfs/TB1UXdxSXXXXXXsapXXXXXXXXXX-790-280.png
 // https://gw.alicdn.com/tfs/TB1_gV.SXXXXXbZXpXXXXXXXXXX-790-280.png
-type TaobaoCaipiaoMarketingPutAPIRequest struct {
+type TaobaocaipiaomarketingputAPIRequest struct {
 	model.Params
 	// 活动详情设置
 	_detail *WangcaiMarketingDetail
 }
 
-// NewTaobaoCaipiaoMarketingPutRequest 初始化TaobaoCaipiaoMarketingPutAPIRequest对象
-func NewTaobaoCaipiaoMarketingPutRequest() *TaobaoCaipiaoMarketingPutAPIRequest {
-	return &TaobaoCaipiaoMarketingPutAPIRequest{
+// NewTaobaocaipiaomarketingputRequest 初始化TaobaocaipiaomarketingputAPIRequest对象
+func NewTaobaocaipiaomarketingputRequest() *TaobaocaipiaomarketingputAPIRequest {
+	return &TaobaocaipiaomarketingputAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoCaipiaoMarketingPutAPIRequest) GetApiMethodName() string {
+func (r TaobaocaipiaomarketingputAPIRequest) GetApiMethodName() string {
 	return "taobao.caipiao.marketing.put"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoCaipiaoMarketingPutAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaocaipiaomarketingputAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoCaipiaoMarketingPutAPIRequest) GetRawParams() model.Params {
+func (r TaobaocaipiaomarketingputAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDetail is Detail Setter
 // 活动详情设置
-func (r *TaobaoCaipiaoMarketingPutAPIRequest) SetDetail(_detail *WangcaiMarketingDetail) error {
+func (r *TaobaocaipiaomarketingputAPIRequest) SetDetail(_detail *WangcaiMarketingDetail) error {
 	r._detail = _detail
 	r.Set("detail", _detail)
 	return nil
 }
 
 // GetDetail Detail Getter
-func (r TaobaoCaipiaoMarketingPutAPIRequest) GetDetail() *WangcaiMarketingDetail {
+func (r TaobaocaipiaomarketingputAPIRequest) GetDetail() *WangcaiMarketingDetail {
 	return r._detail
 }

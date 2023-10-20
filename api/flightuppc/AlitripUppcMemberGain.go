@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/flightuppc"
 )
 
-// AlitripUppcMemberGain 航司权益数据回流
+// Alitripuppcmembergain 航司权益数据回流
 // alitrip.uppc.member.gain
 //
 // 航司权益数据回流
-func AlitripUppcMemberGain(clt *core.SDKClient, req *flightuppc.AlitripUppcMemberGainAPIRequest, session string) (*flightuppc.AlitripUppcMemberGainAPIResponse, error) {
-	var resp flightuppc.AlitripUppcMemberGainAPIResponse
+func Alitripuppcmembergain(clt *core.SDKClient, req *flightuppc.AlitripuppcmembergainAPIRequest, session string) (*flightuppc.AlitripuppcmembergainAPIResponse, error) {
+	var resp flightuppc.AlitripuppcmembergainAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

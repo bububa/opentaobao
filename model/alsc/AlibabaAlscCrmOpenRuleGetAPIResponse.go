@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlscCrmOpenRuleGetAPIResponse 查询规则 API返回值
+// AlibabaalsccrmopenrulegetAPIResponse 查询规则 API返回值
 // alibaba.alsc.crm.open.rule.get
 //
 // 查询会员规则
-type AlibabaAlscCrmOpenRuleGetAPIResponse struct {
+type AlibabaalsccrmopenrulegetAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlscCrmOpenRuleGetAPIResponseModel
+	AlibabaalsccrmopenrulegetAPIResponseModel
 }
 
-// AlibabaAlscCrmOpenRuleGetAPIResponseModel is 查询规则 成功返回结果
-type AlibabaAlscCrmOpenRuleGetAPIResponseModel struct {
+// AlibabaalsccrmopenrulegetAPIResponseModel is 查询规则 成功返回结果
+type AlibabaalsccrmopenrulegetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_crm_open_rule_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

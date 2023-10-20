@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaTclsAxIntegrationAccountImportApiResult 结构体
-type AlibabaTclsAxIntegrationAccountImportApiResult struct {
+// AlibabatclsaxintegrationaccountimportApiResult 结构体
+type AlibabatclsaxintegrationaccountimportApiResult struct {
 	// 扩展信息
 	Ext string `json:"ext,omitempty" xml:"ext,omitempty"`
 	// 错误码

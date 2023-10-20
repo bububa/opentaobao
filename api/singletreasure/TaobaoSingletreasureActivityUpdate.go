@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/singletreasure"
 )
 
-// TaobaoSingletreasureActivityUpdate 修改活动接口
+// Taobaosingletreasureactivityupdate 修改活动接口
 // taobao.singletreasure.activity.update
 //
 // 修改活动接口
-func TaobaoSingletreasureActivityUpdate(clt *core.SDKClient, req *singletreasure.TaobaoSingletreasureActivityUpdateAPIRequest, session string) (*singletreasure.TaobaoSingletreasureActivityUpdateAPIResponse, error) {
-	var resp singletreasure.TaobaoSingletreasureActivityUpdateAPIResponse
+func Taobaosingletreasureactivityupdate(clt *core.SDKClient, req *singletreasure.TaobaosingletreasureactivityupdateAPIRequest, session string) (*singletreasure.TaobaosingletreasureactivityupdateAPIResponse, error) {
+	var resp singletreasure.TaobaosingletreasureactivityupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

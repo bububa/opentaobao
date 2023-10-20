@@ -5,7 +5,7 @@ import (
 	"github.com/bububa/opentaobao/model/product"
 )
 
-// TaobaoProductsSearch 搜索产品信息
+// Taobaoproductssearch 搜索产品信息
 // taobao.products.search
 //
 // 只有天猫商家发布商品时才需要用到，并非商品搜索api，当前暂不提供商品搜索api。&lt;br/&gt;二种方式搜索所有产品信息(二种至少传一种): &lt;br/&gt;
@@ -17,8 +17,8 @@ import (
 //
 //	传入suite_items_str 按规格搜索套装产品。
 //	返回字段增加suite_items_str,is_suite_effecitve支持。
-func TaobaoProductsSearch(clt *core.SDKClient, req *product.TaobaoProductsSearchAPIRequest, session string) (*product.TaobaoProductsSearchAPIResponse, error) {
-	var resp product.TaobaoProductsSearchAPIResponse
+func Taobaoproductssearch(clt *core.SDKClient, req *product.TaobaoproductssearchAPIRequest, session string) (*product.TaobaoproductssearchAPIResponse, error) {
+	var resp product.TaobaoproductssearchAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

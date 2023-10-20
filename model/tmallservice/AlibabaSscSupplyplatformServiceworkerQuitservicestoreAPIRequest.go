@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest 工人退出网点 API请求
+// AlibabasscsupplyplatformserviceworkerquitservicestoreAPIRequest 工人退出网点 API请求
 // alibaba.ssc.supplyplatform.serviceworker.quitservicestore
 //
 // 工人退出网点
-type AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest struct {
+type AlibabasscsupplyplatformserviceworkerquitservicestoreAPIRequest struct {
 	model.Params
 	// 工人退出网点model
 	_workerQuitServiceStoreForTopReqDto *WorkerQuitServiceStoreForTopReqDto
 }
 
-// NewAlibabaSscSupplyplatformServiceworkerQuitservicestoreRequest 初始化AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest对象
-func NewAlibabaSscSupplyplatformServiceworkerQuitservicestoreRequest() *AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest {
-	return &AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest{
+// NewAlibabasscsupplyplatformserviceworkerquitservicestoreRequest 初始化AlibabasscsupplyplatformserviceworkerquitservicestoreAPIRequest对象
+func NewAlibabasscsupplyplatformserviceworkerquitservicestoreRequest() *AlibabasscsupplyplatformserviceworkerquitservicestoreAPIRequest {
+	return &AlibabasscsupplyplatformserviceworkerquitservicestoreAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest) GetApiMethodName() string {
+func (r AlibabasscsupplyplatformserviceworkerquitservicestoreAPIRequest) GetApiMethodName() string {
 	return "alibaba.ssc.supplyplatform.serviceworker.quitservicestore"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabasscsupplyplatformserviceworkerquitservicestoreAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest) GetRawParams() model.Params {
+func (r AlibabasscsupplyplatformserviceworkerquitservicestoreAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetWorkerQuitServiceStoreForTopReqDto is WorkerQuitServiceStoreForTopReqDto Setter
 // 工人退出网点model
-func (r *AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest) SetWorkerQuitServiceStoreForTopReqDto(_workerQuitServiceStoreForTopReqDto *WorkerQuitServiceStoreForTopReqDto) error {
+func (r *AlibabasscsupplyplatformserviceworkerquitservicestoreAPIRequest) SetWorkerQuitServiceStoreForTopReqDto(_workerQuitServiceStoreForTopReqDto *WorkerQuitServiceStoreForTopReqDto) error {
 	r._workerQuitServiceStoreForTopReqDto = _workerQuitServiceStoreForTopReqDto
 	r.Set("worker_quit_service_store_for_top_req_dto", _workerQuitServiceStoreForTopReqDto)
 	return nil
 }
 
 // GetWorkerQuitServiceStoreForTopReqDto WorkerQuitServiceStoreForTopReqDto Getter
-func (r AlibabaSscSupplyplatformServiceworkerQuitservicestoreAPIRequest) GetWorkerQuitServiceStoreForTopReqDto() *WorkerQuitServiceStoreForTopReqDto {
+func (r AlibabasscsupplyplatformserviceworkerquitservicestoreAPIRequest) GetWorkerQuitServiceStoreForTopReqDto() *WorkerQuitServiceStoreForTopReqDto {
 	return r._workerQuitServiceStoreForTopReqDto
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaEinvoiceAmountCheckAPIResponse 开票量核对接口 API返回值
+// AlibabaeinvoiceamountcheckAPIResponse 开票量核对接口 API返回值
 // alibaba.einvoice.amount.check
 //
 // 跟开票服务商核对历史开票量，用来对账
-type AlibabaEinvoiceAmountCheckAPIResponse struct {
+type AlibabaeinvoiceamountcheckAPIResponse struct {
 	model.CommonResponse
-	AlibabaEinvoiceAmountCheckAPIResponseModel
+	AlibabaeinvoiceamountcheckAPIResponseModel
 }
 
-// AlibabaEinvoiceAmountCheckAPIResponseModel is 开票量核对接口 成功返回结果
-type AlibabaEinvoiceAmountCheckAPIResponseModel struct {
+// AlibabaeinvoiceamountcheckAPIResponseModel is 开票量核对接口 成功返回结果
+type AlibabaeinvoiceamountcheckAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_einvoice_amount_check_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

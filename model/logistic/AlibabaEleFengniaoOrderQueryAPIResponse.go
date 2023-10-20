@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaEleFengniaoOrderQueryAPIResponse 查询订单基本信息 API返回值
+// AlibabaelefengniaoorderqueryAPIResponse 查询订单基本信息 API返回值
 // alibaba.ele.fengniao.order.query
 //
 // 查询订单基本信息
-type AlibabaEleFengniaoOrderQueryAPIResponse struct {
+type AlibabaelefengniaoorderqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaEleFengniaoOrderQueryAPIResponseModel
+	AlibabaelefengniaoorderqueryAPIResponseModel
 }
 
-// AlibabaEleFengniaoOrderQueryAPIResponseModel is 查询订单基本信息 成功返回结果
-type AlibabaEleFengniaoOrderQueryAPIResponseModel struct {
+// AlibabaelefengniaoorderqueryAPIResponseModel is 查询订单基本信息 成功返回结果
+type AlibabaelefengniaoorderqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ele_fengniao_order_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

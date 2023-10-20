@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/fenxiao"
 )
 
-// TmallSupplychainChannelProductRelease 供应商铺货
+// Tmallsupplychainchannelproductrelease 供应商铺货
 // tmall.supplychain.channel.product.release
 //
 // 供应商渠道铺货接口
-func TmallSupplychainChannelProductRelease(clt *core.SDKClient, req *fenxiao.TmallSupplychainChannelProductReleaseAPIRequest, session string) (*fenxiao.TmallSupplychainChannelProductReleaseAPIResponse, error) {
-	var resp fenxiao.TmallSupplychainChannelProductReleaseAPIResponse
+func Tmallsupplychainchannelproductrelease(clt *core.SDKClient, req *fenxiao.TmallsupplychainchannelproductreleaseAPIRequest, session string) (*fenxiao.TmallsupplychainchannelproductreleaseAPIResponse, error) {
+	var resp fenxiao.TmallsupplychainchannelproductreleaseAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,7 +1,7 @@
 package tmallhk
 
-// CCICCheckCodeDo 结构体
-type CCICCheckCodeDo struct {
+// CciccheckCodeDo 结构体
+type CciccheckCodeDo struct {
 	// enterUrl
 	EnterUrl string `json:"enter_url,omitempty" xml:"enter_url,omitempty"`
 	// enterable

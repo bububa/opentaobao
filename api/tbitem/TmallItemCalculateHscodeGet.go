@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tbitem"
 )
 
-// TmallItemCalculateHscodeGet 算法获取hscode
+// Tmallitemcalculatehscodeget 算法获取hscode
 // tmall.item.calculate.hscode.get
 //
 // 算法获取hscode
-func TmallItemCalculateHscodeGet(clt *core.SDKClient, req *tbitem.TmallItemCalculateHscodeGetAPIRequest, session string) (*tbitem.TmallItemCalculateHscodeGetAPIResponse, error) {
-	var resp tbitem.TmallItemCalculateHscodeGetAPIResponse
+func Tmallitemcalculatehscodeget(clt *core.SDKClient, req *tbitem.TmallitemcalculatehscodegetAPIRequest, session string) (*tbitem.TmallitemcalculatehscodegetAPIResponse, error) {
+	var resp tbitem.TmallitemcalculatehscodegetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

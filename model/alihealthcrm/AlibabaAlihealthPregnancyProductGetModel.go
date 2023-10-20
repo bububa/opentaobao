@@ -1,7 +1,7 @@
 package alihealthcrm
 
-// AlibabaAlihealthPregnancyProductGetModel 结构体
-type AlibabaAlihealthPregnancyProductGetModel struct {
+// AlibabaalihealthpregnancyproductgetModel 结构体
+type AlibabaalihealthpregnancyproductgetModel struct {
 	// 文章列表
 	Contents []Contents `json:"contents,omitempty" xml:"contents>contents,omitempty"`
 	// 总页数

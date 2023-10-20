@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaWdkFinanceOrderBackflowApiResult 结构体
-type AlibabaWdkFinanceOrderBackflowApiResult struct {
+// AlibabawdkfinanceorderbackflowApiResult 结构体
+type AlibabawdkfinanceorderbackflowApiResult struct {
 	// 调用接口返回错误码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 调用接口返回错误信息

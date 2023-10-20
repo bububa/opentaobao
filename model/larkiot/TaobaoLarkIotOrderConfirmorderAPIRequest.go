@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoLarkIotOrderConfirmorderAPIRequest iot渠道卖品落单 API请求
+// TaobaolarkiotorderconfirmorderAPIRequest iot渠道卖品落单 API请求
 // taobao.lark.iot.order.confirmorder
 //
 // 云智对接无人超市，接收无人超市订单信息
-type TaobaoLarkIotOrderConfirmorderAPIRequest struct {
+type TaobaolarkiotorderconfirmorderAPIRequest struct {
 	model.Params
 	// 渠道编码
 	_channelCode string
@@ -34,156 +34,156 @@ type TaobaoLarkIotOrderConfirmorderAPIRequest struct {
 	_operatorUserId string
 }
 
-// NewTaobaoLarkIotOrderConfirmorderRequest 初始化TaobaoLarkIotOrderConfirmorderAPIRequest对象
-func NewTaobaoLarkIotOrderConfirmorderRequest() *TaobaoLarkIotOrderConfirmorderAPIRequest {
-	return &TaobaoLarkIotOrderConfirmorderAPIRequest{
+// NewTaobaolarkiotorderconfirmorderRequest 初始化TaobaolarkiotorderconfirmorderAPIRequest对象
+func NewTaobaolarkiotorderconfirmorderRequest() *TaobaolarkiotorderconfirmorderAPIRequest {
+	return &TaobaolarkiotorderconfirmorderAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetApiMethodName() string {
+func (r TaobaolarkiotorderconfirmorderAPIRequest) GetApiMethodName() string {
 	return "taobao.lark.iot.order.confirmorder"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaolarkiotorderconfirmorderAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetRawParams() model.Params {
+func (r TaobaolarkiotorderconfirmorderAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetChannelCode is ChannelCode Setter
 // 渠道编码
-func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetChannelCode(_channelCode string) error {
+func (r *TaobaolarkiotorderconfirmorderAPIRequest) SetChannelCode(_channelCode string) error {
 	r._channelCode = _channelCode
 	r.Set("channel_code", _channelCode)
 	return nil
 }
 
 // GetChannelCode ChannelCode Getter
-func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetChannelCode() string {
+func (r TaobaolarkiotorderconfirmorderAPIRequest) GetChannelCode() string {
 	return r._channelCode
 }
 
 // SetCinemaLinkId is CinemaLinkId Setter
 // 影院内码
-func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetCinemaLinkId(_cinemaLinkId string) error {
+func (r *TaobaolarkiotorderconfirmorderAPIRequest) SetCinemaLinkId(_cinemaLinkId string) error {
 	r._cinemaLinkId = _cinemaLinkId
 	r.Set("cinema_link_id", _cinemaLinkId)
 	return nil
 }
 
 // GetCinemaLinkId CinemaLinkId Getter
-func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetCinemaLinkId() string {
+func (r TaobaolarkiotorderconfirmorderAPIRequest) GetCinemaLinkId() string {
 	return r._cinemaLinkId
 }
 
 // SetOutGoodsOrderId is OutGoodsOrderId Setter
 // 外部订单号
-func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetOutGoodsOrderId(_outGoodsOrderId string) error {
+func (r *TaobaolarkiotorderconfirmorderAPIRequest) SetOutGoodsOrderId(_outGoodsOrderId string) error {
 	r._outGoodsOrderId = _outGoodsOrderId
 	r.Set("out_goods_order_id", _outGoodsOrderId)
 	return nil
 }
 
 // GetOutGoodsOrderId OutGoodsOrderId Getter
-func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetOutGoodsOrderId() string {
+func (r TaobaolarkiotorderconfirmorderAPIRequest) GetOutGoodsOrderId() string {
 	return r._outGoodsOrderId
 }
 
 // SetWorkstationId is WorkstationId Setter
 // 工作站id
-func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetWorkstationId(_workstationId string) error {
+func (r *TaobaolarkiotorderconfirmorderAPIRequest) SetWorkstationId(_workstationId string) error {
 	r._workstationId = _workstationId
 	r.Set("workstation_id", _workstationId)
 	return nil
 }
 
 // GetWorkstationId WorkstationId Getter
-func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetWorkstationId() string {
+func (r TaobaolarkiotorderconfirmorderAPIRequest) GetWorkstationId() string {
 	return r._workstationId
 }
 
 // SetWorkstationName is WorkstationName Setter
 // 工作站名称
-func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetWorkstationName(_workstationName string) error {
+func (r *TaobaolarkiotorderconfirmorderAPIRequest) SetWorkstationName(_workstationName string) error {
 	r._workstationName = _workstationName
 	r.Set("workstation_name", _workstationName)
 	return nil
 }
 
 // GetWorkstationName WorkstationName Getter
-func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetWorkstationName() string {
+func (r TaobaolarkiotorderconfirmorderAPIRequest) GetWorkstationName() string {
 	return r._workstationName
 }
 
 // SetPaymentList is PaymentList Setter
 // 支付方式
-func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetPaymentList(_paymentList string) error {
+func (r *TaobaolarkiotorderconfirmorderAPIRequest) SetPaymentList(_paymentList string) error {
 	r._paymentList = _paymentList
 	r.Set("payment_list", _paymentList)
 	return nil
 }
 
 // GetPaymentList PaymentList Getter
-func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetPaymentList() string {
+func (r TaobaolarkiotorderconfirmorderAPIRequest) GetPaymentList() string {
 	return r._paymentList
 }
 
 // SetPromotionList is PromotionList Setter
 // 优惠列表
-func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetPromotionList(_promotionList string) error {
+func (r *TaobaolarkiotorderconfirmorderAPIRequest) SetPromotionList(_promotionList string) error {
 	r._promotionList = _promotionList
 	r.Set("promotion_list", _promotionList)
 	return nil
 }
 
 // GetPromotionList PromotionList Getter
-func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetPromotionList() string {
+func (r TaobaolarkiotorderconfirmorderAPIRequest) GetPromotionList() string {
 	return r._promotionList
 }
 
 // SetGoodsList is GoodsList Setter
 // 卖品列表
-func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetGoodsList(_goodsList string) error {
+func (r *TaobaolarkiotorderconfirmorderAPIRequest) SetGoodsList(_goodsList string) error {
 	r._goodsList = _goodsList
 	r.Set("goods_list", _goodsList)
 	return nil
 }
 
 // GetGoodsList GoodsList Getter
-func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetGoodsList() string {
+func (r TaobaolarkiotorderconfirmorderAPIRequest) GetGoodsList() string {
 	return r._goodsList
 }
 
 // SetMobile is Mobile Setter
 // 手机号
-func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetMobile(_mobile string) error {
+func (r *TaobaolarkiotorderconfirmorderAPIRequest) SetMobile(_mobile string) error {
 	r._mobile = _mobile
 	r.Set("mobile", _mobile)
 	return nil
 }
 
 // GetMobile Mobile Getter
-func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetMobile() string {
+func (r TaobaolarkiotorderconfirmorderAPIRequest) GetMobile() string {
 	return r._mobile
 }
 
 // SetOperatorUserId is OperatorUserId Setter
 // 管理员
-func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetOperatorUserId(_operatorUserId string) error {
+func (r *TaobaolarkiotorderconfirmorderAPIRequest) SetOperatorUserId(_operatorUserId string) error {
 	r._operatorUserId = _operatorUserId
 	r.Set("operator_user_id", _operatorUserId)
 	return nil
 }
 
 // GetOperatorUserId OperatorUserId Getter
-func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetOperatorUserId() string {
+func (r TaobaolarkiotorderconfirmorderAPIRequest) GetOperatorUserId() string {
 	return r._operatorUserId
 }

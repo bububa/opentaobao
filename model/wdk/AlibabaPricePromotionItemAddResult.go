@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaPricePromotionItemAddResult 结构体
-type AlibabaPricePromotionItemAddResult struct {
+// AlibabapricepromotionitemaddResult 结构体
+type AlibabapricepromotionitemaddResult struct {
 	// 信息
 	Msg string `json:"msg,omitempty" xml:"msg,omitempty"`
 	// 编码

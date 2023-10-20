@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaSeakingTaskReportAPIRequest 跳转任务发布成功商品ID回传 API请求
+// AlibabaseakingtaskreportAPIRequest 跳转任务发布成功商品ID回传 API请求
 // alibaba.seaking.task.report
 //
 // 跳转任务发布成功商品ID回传
-type AlibabaSeakingTaskReportAPIRequest struct {
+type AlibabaseakingtaskreportAPIRequest struct {
 	model.Params
 	// 上报数据详情
 	_reportDetail []TaskDetailReportDto
@@ -22,78 +22,78 @@ type AlibabaSeakingTaskReportAPIRequest struct {
 	_tokenFrom string
 }
 
-// NewAlibabaSeakingTaskReportRequest 初始化AlibabaSeakingTaskReportAPIRequest对象
-func NewAlibabaSeakingTaskReportRequest() *AlibabaSeakingTaskReportAPIRequest {
-	return &AlibabaSeakingTaskReportAPIRequest{
+// NewAlibabaseakingtaskreportRequest 初始化AlibabaseakingtaskreportAPIRequest对象
+func NewAlibabaseakingtaskreportRequest() *AlibabaseakingtaskreportAPIRequest {
+	return &AlibabaseakingtaskreportAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaSeakingTaskReportAPIRequest) GetApiMethodName() string {
+func (r AlibabaseakingtaskreportAPIRequest) GetApiMethodName() string {
 	return "alibaba.seaking.task.report"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaSeakingTaskReportAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaseakingtaskreportAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaSeakingTaskReportAPIRequest) GetRawParams() model.Params {
+func (r AlibabaseakingtaskreportAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetReportDetail is ReportDetail Setter
 // 上报数据详情
-func (r *AlibabaSeakingTaskReportAPIRequest) SetReportDetail(_reportDetail []TaskDetailReportDto) error {
+func (r *AlibabaseakingtaskreportAPIRequest) SetReportDetail(_reportDetail []TaskDetailReportDto) error {
 	r._reportDetail = _reportDetail
 	r.Set("report_detail", _reportDetail)
 	return nil
 }
 
 // GetReportDetail ReportDetail Getter
-func (r AlibabaSeakingTaskReportAPIRequest) GetReportDetail() []TaskDetailReportDto {
+func (r AlibabaseakingtaskreportAPIRequest) GetReportDetail() []TaskDetailReportDto {
 	return r._reportDetail
 }
 
 // SetTaskType is TaskType Setter
 // 任务类型(title/image)
-func (r *AlibabaSeakingTaskReportAPIRequest) SetTaskType(_taskType string) error {
+func (r *AlibabaseakingtaskreportAPIRequest) SetTaskType(_taskType string) error {
 	r._taskType = _taskType
 	r.Set("task_type", _taskType)
 	return nil
 }
 
 // GetTaskType TaskType Getter
-func (r AlibabaSeakingTaskReportAPIRequest) GetTaskType() string {
+func (r AlibabaseakingtaskreportAPIRequest) GetTaskType() string {
 	return r._taskType
 }
 
 // SetToken is Token Setter
 // 用户token
-func (r *AlibabaSeakingTaskReportAPIRequest) SetToken(_token string) error {
+func (r *AlibabaseakingtaskreportAPIRequest) SetToken(_token string) error {
 	r._token = _token
 	r.Set("token", _token)
 	return nil
 }
 
 // GetToken Token Getter
-func (r AlibabaSeakingTaskReportAPIRequest) GetToken() string {
+func (r AlibabaseakingtaskreportAPIRequest) GetToken() string {
 	return r._token
 }
 
 // SetTokenFrom is TokenFrom Setter
 // token来源站点
-func (r *AlibabaSeakingTaskReportAPIRequest) SetTokenFrom(_tokenFrom string) error {
+func (r *AlibabaseakingtaskreportAPIRequest) SetTokenFrom(_tokenFrom string) error {
 	r._tokenFrom = _tokenFrom
 	r.Set("token_from", _tokenFrom)
 	return nil
 }
 
 // GetTokenFrom TokenFrom Getter
-func (r AlibabaSeakingTaskReportAPIRequest) GetTokenFrom() string {
+func (r AlibabaseakingtaskreportAPIRequest) GetTokenFrom() string {
 	return r._tokenFrom
 }

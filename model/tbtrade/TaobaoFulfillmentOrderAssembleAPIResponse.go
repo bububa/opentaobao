@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoFulfillmentOrderAssembleAPIResponse 拆合单结果回传接口 API返回值
+// TaobaofulfillmentorderassembleAPIResponse 拆合单结果回传接口 API返回值
 // taobao.fulfillment.order.assemble
 //
 // 拆合单结果回传接口
-type TaobaoFulfillmentOrderAssembleAPIResponse struct {
+type TaobaofulfillmentorderassembleAPIResponse struct {
 	model.CommonResponse
-	TaobaoFulfillmentOrderAssembleAPIResponseModel
+	TaobaofulfillmentorderassembleAPIResponseModel
 }
 
-// TaobaoFulfillmentOrderAssembleAPIResponseModel is 拆合单结果回传接口 成功返回结果
-type TaobaoFulfillmentOrderAssembleAPIResponseModel struct {
+// TaobaofulfillmentorderassembleAPIResponseModel is 拆合单结果回传接口 成功返回结果
+type TaobaofulfillmentorderassembleAPIResponseModel struct {
 	XMLName xml.Name `xml:"fulfillment_order_assemble_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascp"
 )
 
-// AlibabaDchainAoxiangConsignorderGiftReverse 赠品绑赠回滚
+// Alibabadchainaoxiangconsignordergiftreverse 赠品绑赠回滚
 // alibaba.dchain.aoxiang.consignorder.gift.reverse
 //
 // 赠品绑赠回滚
-func AlibabaDchainAoxiangConsignorderGiftReverse(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangConsignorderGiftReverseAPIRequest, session string) (*ascp.AlibabaDchainAoxiangConsignorderGiftReverseAPIResponse, error) {
-	var resp ascp.AlibabaDchainAoxiangConsignorderGiftReverseAPIResponse
+func Alibabadchainaoxiangconsignordergiftreverse(clt *core.SDKClient, req *ascp.AlibabadchainaoxiangconsignordergiftreverseAPIRequest, session string) (*ascp.AlibabadchainaoxiangconsignordergiftreverseAPIResponse, error) {
+	var resp ascp.AlibabadchainaoxiangconsignordergiftreverseAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

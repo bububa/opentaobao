@@ -1,7 +1,7 @@
 package icbulogistics
 
-// AlibabaOnetouchLogisticsExpressLogisticsOrderCreateResult 结构体
-type AlibabaOnetouchLogisticsExpressLogisticsOrderCreateResult struct {
+// AlibabaonetouchlogisticsexpresslogisticsordercreateResult 结构体
+type AlibabaonetouchlogisticsexpresslogisticsordercreateResult struct {
 	// 返回结果描述
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 结果对象

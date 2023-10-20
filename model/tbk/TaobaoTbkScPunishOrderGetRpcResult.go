@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaoTbkScPunishOrderGetRpcResult 结构体
-type TaobaoTbkScPunishOrderGetRpcResult struct {
+// TaobaotbkscpunishordergetRpcResult 结构体
+type TaobaotbkscpunishordergetRpcResult struct {
 	// 业务出错的描述
 	BizErrorDesc string `json:"biz_error_desc,omitempty" xml:"biz_error_desc,omitempty"`
 	// 执行结果

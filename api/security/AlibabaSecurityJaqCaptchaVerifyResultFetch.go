@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/security"
 )
 
-// AlibabaSecurityJaqCaptchaVerifyResultFetch 聚安全安全验证检查结果获取接口
+// Alibabasecurityjaqcaptchaverifyresultfetch 聚安全安全验证检查结果获取接口
 // alibaba.security.jaq.captcha.verify.result.fetch
 //
 // 获取二次验证的结果
-func AlibabaSecurityJaqCaptchaVerifyResultFetch(clt *core.SDKClient, req *security.AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest, session string) (*security.AlibabaSecurityJaqCaptchaVerifyResultFetchAPIResponse, error) {
-	var resp security.AlibabaSecurityJaqCaptchaVerifyResultFetchAPIResponse
+func Alibabasecurityjaqcaptchaverifyresultfetch(clt *core.SDKClient, req *security.AlibabasecurityjaqcaptchaverifyresultfetchAPIRequest, session string) (*security.AlibabasecurityjaqcaptchaverifyresultfetchAPIResponse, error) {
+	var resp security.AlibabasecurityjaqcaptchaverifyresultfetchAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

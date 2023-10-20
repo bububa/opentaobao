@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlscCrmOpenAssertRefundAPIResponse 资产核销回退接口 API返回值
+// AlibabaalsccrmopenassertrefundAPIResponse 资产核销回退接口 API返回值
 // alibaba.alsc.crm.open.assert.refund
 //
 // 回退已经核销的储值积分券资产
-type AlibabaAlscCrmOpenAssertRefundAPIResponse struct {
+type AlibabaalsccrmopenassertrefundAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlscCrmOpenAssertRefundAPIResponseModel
+	AlibabaalsccrmopenassertrefundAPIResponseModel
 }
 
-// AlibabaAlscCrmOpenAssertRefundAPIResponseModel is 资产核销回退接口 成功返回结果
-type AlibabaAlscCrmOpenAssertRefundAPIResponseModel struct {
+// AlibabaalsccrmopenassertrefundAPIResponseModel is 资产核销回退接口 成功返回结果
+type AlibabaalsccrmopenassertrefundAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_crm_open_assert_refund_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMjOcOutboundAPIResponse 零售商品发货 API返回值
+// AlibabamjocoutboundAPIResponse 零售商品发货 API返回值
 // alibaba.mj.oc.outbound
 //
 // 用于接收发货的数据
-type AlibabaMjOcOutboundAPIResponse struct {
+type AlibabamjocoutboundAPIResponse struct {
 	model.CommonResponse
-	AlibabaMjOcOutboundAPIResponseModel
+	AlibabamjocoutboundAPIResponseModel
 }
 
-// AlibabaMjOcOutboundAPIResponseModel is 零售商品发货 成功返回结果
-type AlibabaMjOcOutboundAPIResponseModel struct {
+// AlibabamjocoutboundAPIResponseModel is 零售商品发货 成功返回结果
+type AlibabamjocoutboundAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mj_oc_outbound_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

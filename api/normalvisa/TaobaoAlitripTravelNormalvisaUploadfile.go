@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/normalvisa"
 )
 
-// TaobaoAlitripTravelNormalvisaUploadfile 上传电子签证
+// Taobaoalitriptravelnormalvisauploadfile 上传电子签证
 // taobao.alitrip.travel.normalvisa.uploadfile
 //
 // 上传电子签证
-func TaobaoAlitripTravelNormalvisaUploadfile(clt *core.SDKClient, req *normalvisa.TaobaoAlitripTravelNormalvisaUploadfileAPIRequest, session string) (*normalvisa.TaobaoAlitripTravelNormalvisaUploadfileAPIResponse, error) {
-	var resp normalvisa.TaobaoAlitripTravelNormalvisaUploadfileAPIResponse
+func Taobaoalitriptravelnormalvisauploadfile(clt *core.SDKClient, req *normalvisa.TaobaoalitriptravelnormalvisauploadfileAPIRequest, session string) (*normalvisa.TaobaoalitriptravelnormalvisauploadfileAPIResponse, error) {
+	var resp normalvisa.TaobaoalitriptravelnormalvisauploadfileAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

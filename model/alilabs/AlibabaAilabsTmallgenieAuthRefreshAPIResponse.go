@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAilabsTmallgenieAuthRefreshAPIResponse 刷新token API返回值
+// AlibabaailabstmallgenieauthrefreshAPIResponse 刷新token API返回值
 // alibaba.ailabs.tmallgenie.auth.refresh
 //
 // 通过此接口刷新天猫精灵授权token
-type AlibabaAilabsTmallgenieAuthRefreshAPIResponse struct {
+type AlibabaailabstmallgenieauthrefreshAPIResponse struct {
 	model.CommonResponse
-	AlibabaAilabsTmallgenieAuthRefreshAPIResponseModel
+	AlibabaailabstmallgenieauthrefreshAPIResponseModel
 }
 
-// AlibabaAilabsTmallgenieAuthRefreshAPIResponseModel is 刷新token 成功返回结果
-type AlibabaAilabsTmallgenieAuthRefreshAPIResponseModel struct {
+// AlibabaailabstmallgenieauthrefreshAPIResponseModel is 刷新token 成功返回结果
+type AlibabaailabstmallgenieauthrefreshAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailabs_tmallgenie_auth_refresh_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

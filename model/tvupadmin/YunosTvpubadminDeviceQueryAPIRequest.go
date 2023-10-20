@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosTvpubadminDeviceQueryAPIRequest 获取设备列表 API请求
+// YunostvpubadmindevicequeryAPIRequest 获取设备列表 API请求
 // yunos.tvpubadmin.device.query
 //
 // 获取设备列表
-type YunosTvpubadminDeviceQueryAPIRequest struct {
+type YunostvpubadmindevicequeryAPIRequest struct {
 	model.Params
 	// 终端类型
 	_terminalType string
@@ -24,91 +24,91 @@ type YunosTvpubadminDeviceQueryAPIRequest struct {
 	_pageSize int64
 }
 
-// NewYunosTvpubadminDeviceQueryRequest 初始化YunosTvpubadminDeviceQueryAPIRequest对象
-func NewYunosTvpubadminDeviceQueryRequest() *YunosTvpubadminDeviceQueryAPIRequest {
-	return &YunosTvpubadminDeviceQueryAPIRequest{
+// NewYunostvpubadmindevicequeryRequest 初始化YunostvpubadmindevicequeryAPIRequest对象
+func NewYunostvpubadmindevicequeryRequest() *YunostvpubadmindevicequeryAPIRequest {
+	return &YunostvpubadmindevicequeryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminDeviceQueryAPIRequest) GetApiMethodName() string {
+func (r YunostvpubadmindevicequeryAPIRequest) GetApiMethodName() string {
 	return "yunos.tvpubadmin.device.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminDeviceQueryAPIRequest) GetApiParams(params url.Values) {
+func (r YunostvpubadmindevicequeryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r YunosTvpubadminDeviceQueryAPIRequest) GetRawParams() model.Params {
+func (r YunostvpubadmindevicequeryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTerminalType is TerminalType Setter
 // 终端类型
-func (r *YunosTvpubadminDeviceQueryAPIRequest) SetTerminalType(_terminalType string) error {
+func (r *YunostvpubadmindevicequeryAPIRequest) SetTerminalType(_terminalType string) error {
 	r._terminalType = _terminalType
 	r.Set("terminal_type", _terminalType)
 	return nil
 }
 
 // GetTerminalType TerminalType Getter
-func (r YunosTvpubadminDeviceQueryAPIRequest) GetTerminalType() string {
+func (r YunostvpubadmindevicequeryAPIRequest) GetTerminalType() string {
 	return r._terminalType
 }
 
 // SetBrandId is BrandId Setter
 // 品牌ID
-func (r *YunosTvpubadminDeviceQueryAPIRequest) SetBrandId(_brandId int64) error {
+func (r *YunostvpubadmindevicequeryAPIRequest) SetBrandId(_brandId int64) error {
 	r._brandId = _brandId
 	r.Set("brand_id", _brandId)
 	return nil
 }
 
 // GetBrandId BrandId Getter
-func (r YunosTvpubadminDeviceQueryAPIRequest) GetBrandId() int64 {
+func (r YunostvpubadmindevicequeryAPIRequest) GetBrandId() int64 {
 	return r._brandId
 }
 
 // SetLicense is License Setter
 // 牌照方
-func (r *YunosTvpubadminDeviceQueryAPIRequest) SetLicense(_license int64) error {
+func (r *YunostvpubadmindevicequeryAPIRequest) SetLicense(_license int64) error {
 	r._license = _license
 	r.Set("license", _license)
 	return nil
 }
 
 // GetLicense License Getter
-func (r YunosTvpubadminDeviceQueryAPIRequest) GetLicense() int64 {
+func (r YunostvpubadmindevicequeryAPIRequest) GetLicense() int64 {
 	return r._license
 }
 
 // SetPageNo is PageNo Setter
 // 页码值
-func (r *YunosTvpubadminDeviceQueryAPIRequest) SetPageNo(_pageNo int64) error {
+func (r *YunostvpubadmindevicequeryAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
 	r.Set("page_no", _pageNo)
 	return nil
 }
 
 // GetPageNo PageNo Getter
-func (r YunosTvpubadminDeviceQueryAPIRequest) GetPageNo() int64 {
+func (r YunostvpubadmindevicequeryAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
 // SetPageSize is PageSize Setter
 // 每页条数
-func (r *YunosTvpubadminDeviceQueryAPIRequest) SetPageSize(_pageSize int64) error {
+func (r *YunostvpubadmindevicequeryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
 	r.Set("page_size", _pageSize)
 	return nil
 }
 
 // GetPageSize PageSize Getter
-func (r YunosTvpubadminDeviceQueryAPIRequest) GetPageSize() int64 {
+func (r YunostvpubadmindevicequeryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

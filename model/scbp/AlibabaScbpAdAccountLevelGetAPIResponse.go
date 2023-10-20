@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaScbpAdAccountLevelGetAPIResponse 查询推广账户等级 API返回值
+// AlibabascbpadaccountlevelgetAPIResponse 查询推广账户等级 API返回值
 // alibaba.scbp.ad.account.level.get
 //
 // 查询推广账户等级
-type AlibabaScbpAdAccountLevelGetAPIResponse struct {
+type AlibabascbpadaccountlevelgetAPIResponse struct {
 	model.CommonResponse
-	AlibabaScbpAdAccountLevelGetAPIResponseModel
+	AlibabascbpadaccountlevelgetAPIResponseModel
 }
 
-// AlibabaScbpAdAccountLevelGetAPIResponseModel is 查询推广账户等级 成功返回结果
-type AlibabaScbpAdAccountLevelGetAPIResponseModel struct {
+// AlibabascbpadaccountlevelgetAPIResponseModel is 查询推广账户等级 成功返回结果
+type AlibabascbpadaccountlevelgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_ad_account_level_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

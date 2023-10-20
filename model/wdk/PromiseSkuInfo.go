@@ -7,5 +7,5 @@ type PromiseSkuInfo struct {
 	// 商品履约线路
 	LineInstances string `json:"line_instances,omitempty" xml:"line_instances,omitempty"`
 	// 加购数量
-	Quantity *BigDecimal `json:"quantity,omitempty" xml:"quantity,omitempty"`
+	Quantity float64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 }

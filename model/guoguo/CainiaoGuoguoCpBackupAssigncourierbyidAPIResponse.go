@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoGuoguoCpBackupAssigncourierbyidAPIResponse 根据菜鸟账号ID指派小件员 API返回值
+// CainiaoguoguocpbackupassigncourierbyidAPIResponse 根据菜鸟账号ID指派小件员 API返回值
 // cainiao.guoguo.cp.backup.assigncourierbyid
 //
 // 根据菜鸟账号ID指派小件员
-type CainiaoGuoguoCpBackupAssigncourierbyidAPIResponse struct {
+type CainiaoguoguocpbackupassigncourierbyidAPIResponse struct {
 	model.CommonResponse
-	CainiaoGuoguoCpBackupAssigncourierbyidAPIResponseModel
+	CainiaoguoguocpbackupassigncourierbyidAPIResponseModel
 }
 
-// CainiaoGuoguoCpBackupAssigncourierbyidAPIResponseModel is 根据菜鸟账号ID指派小件员 成功返回结果
-type CainiaoGuoguoCpBackupAssigncourierbyidAPIResponseModel struct {
+// CainiaoguoguocpbackupassigncourierbyidAPIResponseModel is 根据菜鸟账号ID指派小件员 成功返回结果
+type CainiaoguoguocpbackupassigncourierbyidAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_guoguo_cp_backup_assigncourierbyid_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

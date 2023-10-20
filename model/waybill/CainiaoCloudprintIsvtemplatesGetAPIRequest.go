@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoCloudprintIsvtemplatesGetAPIRequest 获取商家使用的标准模板 API请求
+// CainiaocloudprintisvtemplatesgetAPIRequest 获取商家使用的标准模板 API请求
 // cainiao.cloudprint.isvtemplates.get
 //
 // 获取商家使用的标准模板
-type CainiaoCloudprintIsvtemplatesGetAPIRequest struct {
+type CainiaocloudprintisvtemplatesgetAPIRequest struct {
 	model.Params
 }
 
-// NewCainiaoCloudprintIsvtemplatesGetRequest 初始化CainiaoCloudprintIsvtemplatesGetAPIRequest对象
-func NewCainiaoCloudprintIsvtemplatesGetRequest() *CainiaoCloudprintIsvtemplatesGetAPIRequest {
-	return &CainiaoCloudprintIsvtemplatesGetAPIRequest{
+// NewCainiaocloudprintisvtemplatesgetRequest 初始化CainiaocloudprintisvtemplatesgetAPIRequest对象
+func NewCainiaocloudprintisvtemplatesgetRequest() *CainiaocloudprintisvtemplatesgetAPIRequest {
+	return &CainiaocloudprintisvtemplatesgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r CainiaoCloudprintIsvtemplatesGetAPIRequest) GetApiMethodName() string {
+func (r CainiaocloudprintisvtemplatesgetAPIRequest) GetApiMethodName() string {
 	return "cainiao.cloudprint.isvtemplates.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r CainiaoCloudprintIsvtemplatesGetAPIRequest) GetApiParams(params url.Values) {
+func (r CainiaocloudprintisvtemplatesgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r CainiaoCloudprintIsvtemplatesGetAPIRequest) GetRawParams() model.Params {
+func (r CainiaocloudprintisvtemplatesgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

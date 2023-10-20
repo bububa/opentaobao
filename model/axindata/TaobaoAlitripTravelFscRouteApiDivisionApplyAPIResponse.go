@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAlitripTravelFscRouteApiDivisionApplyAPIResponse 线路供应商提交新增城市申请 API返回值
+// TaobaoalitriptravelfscrouteapidivisionapplyAPIResponse 线路供应商提交新增城市申请 API返回值
 // taobao.alitrip.travel.fsc.route.api.division.apply
 //
 // 线路供应商提交新增城市申请
-type TaobaoAlitripTravelFscRouteApiDivisionApplyAPIResponse struct {
+type TaobaoalitriptravelfscrouteapidivisionapplyAPIResponse struct {
 	model.CommonResponse
-	TaobaoAlitripTravelFscRouteApiDivisionApplyAPIResponseModel
+	TaobaoalitriptravelfscrouteapidivisionapplyAPIResponseModel
 }
 
-// TaobaoAlitripTravelFscRouteApiDivisionApplyAPIResponseModel is 线路供应商提交新增城市申请 成功返回结果
-type TaobaoAlitripTravelFscRouteApiDivisionApplyAPIResponseModel struct {
+// TaobaoalitriptravelfscrouteapidivisionapplyAPIResponseModel is 线路供应商提交新增城市申请 成功返回结果
+type TaobaoalitriptravelfscrouteapidivisionapplyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_travel_fsc_route_api_division_apply_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 通用返回结果
-	TopResult *TaobaoAlitripTravelFscRouteApiDivisionApplyTopResult `json:"top_result,omitempty" xml:"top_result,omitempty"`
+	TopResult *TaobaoalitriptravelfscrouteapidivisionapplyTopResult `json:"top_result,omitempty" xml:"top_result,omitempty"`
 }

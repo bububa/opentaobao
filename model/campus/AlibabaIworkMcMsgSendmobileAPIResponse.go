@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIworkMcMsgSendmobileAPIResponse 发送消息给手机用户 API返回值
+// AlibabaiworkmcmsgsendmobileAPIResponse 发送消息给手机用户 API返回值
 // alibaba.iwork.mc.msg.sendmobile
 //
 // 给手机用户发送对应操作结果的消息
-type AlibabaIworkMcMsgSendmobileAPIResponse struct {
+type AlibabaiworkmcmsgsendmobileAPIResponse struct {
 	model.CommonResponse
-	AlibabaIworkMcMsgSendmobileAPIResponseModel
+	AlibabaiworkmcmsgsendmobileAPIResponseModel
 }
 
-// AlibabaIworkMcMsgSendmobileAPIResponseModel is 发送消息给手机用户 成功返回结果
-type AlibabaIworkMcMsgSendmobileAPIResponseModel struct {
+// AlibabaiworkmcmsgsendmobileAPIResponseModel is 发送消息给手机用户 成功返回结果
+type AlibabaiworkmcmsgsendmobileAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_iwork_mc_msg_sendmobile_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

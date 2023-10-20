@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YoukuOttIotDevicelistChangeAPIResponse iot设备列表变化接口 API返回值
+// YoukuottiotdevicelistchangeAPIResponse iot设备列表变化接口 API返回值
 // youku.ott.iot.devicelist.change
 //
 // iot设备列表变化接口
-type YoukuOttIotDevicelistChangeAPIResponse struct {
+type YoukuottiotdevicelistchangeAPIResponse struct {
 	model.CommonResponse
-	YoukuOttIotDevicelistChangeAPIResponseModel
+	YoukuottiotdevicelistchangeAPIResponseModel
 }
 
-// YoukuOttIotDevicelistChangeAPIResponseModel is iot设备列表变化接口 成功返回结果
-type YoukuOttIotDevicelistChangeAPIResponseModel struct {
+// YoukuottiotdevicelistchangeAPIResponseModel is iot设备列表变化接口 成功返回结果
+type YoukuottiotdevicelistchangeAPIResponseModel struct {
 	XMLName xml.Name `xml:"youku_ott_iot_devicelist_change_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

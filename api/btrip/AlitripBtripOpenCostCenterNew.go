@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/btrip"
 )
 
-// AlitripBtripOpenCostCenterNew 新增成本中心
+// Alitripbtripopencostcenternew 新增成本中心
 // alitrip.btrip.open.cost.center.new
 //
 // 新增成本中心
-func AlitripBtripOpenCostCenterNew(clt *core.SDKClient, req *btrip.AlitripBtripOpenCostCenterNewAPIRequest, session string) (*btrip.AlitripBtripOpenCostCenterNewAPIResponse, error) {
-	var resp btrip.AlitripBtripOpenCostCenterNewAPIResponse
+func Alitripbtripopencostcenternew(clt *core.SDKClient, req *btrip.AlitripbtripopencostcenternewAPIRequest, session string) (*btrip.AlitripbtripopencostcenternewAPIResponse, error) {
+	var resp btrip.AlitripbtripopencostcenternewAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

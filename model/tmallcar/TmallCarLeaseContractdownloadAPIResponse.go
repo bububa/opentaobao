@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallCarLeaseContractdownloadAPIResponse 天猫开新车租后合同下载 API返回值
+// TmallcarleasecontractdownloadAPIResponse 天猫开新车租后合同下载 API返回值
 // tmall.car.lease.contractdownload
 //
 // 天猫开新车租后合同下载
-type TmallCarLeaseContractdownloadAPIResponse struct {
+type TmallcarleasecontractdownloadAPIResponse struct {
 	model.CommonResponse
-	TmallCarLeaseContractdownloadAPIResponseModel
+	TmallcarleasecontractdownloadAPIResponseModel
 }
 
-// TmallCarLeaseContractdownloadAPIResponseModel is 天猫开新车租后合同下载 成功返回结果
-type TmallCarLeaseContractdownloadAPIResponseModel struct {
+// TmallcarleasecontractdownloadAPIResponseModel is 天猫开新车租后合同下载 成功返回结果
+type TmallcarleasecontractdownloadAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_car_lease_contractdownload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,12 +6,12 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallServiceSettleadjustmentOperateAPIRequest 天猫服务调整单操作 API请求
+// TmallservicesettleadjustmentoperateAPIRequest 天猫服务调整单操作 API请求
 // tmall.service.settleadjustment.operate
 //
 // 提供给服务商在对结算有异议时，发起结算调整单。
 // 通过说明调整单ID，调整费用值，调整原因进行结算调整单修改。
-type TmallServiceSettleadjustmentOperateAPIRequest struct {
+type TmallservicesettleadjustmentoperateAPIRequest struct {
 	model.Params
 	// 审批备注
 	_memo string
@@ -21,65 +21,65 @@ type TmallServiceSettleadjustmentOperateAPIRequest struct {
 	_settlementAdjustmentOrderId int64
 }
 
-// NewTmallServiceSettleadjustmentOperateRequest 初始化TmallServiceSettleadjustmentOperateAPIRequest对象
-func NewTmallServiceSettleadjustmentOperateRequest() *TmallServiceSettleadjustmentOperateAPIRequest {
-	return &TmallServiceSettleadjustmentOperateAPIRequest{
+// NewTmallservicesettleadjustmentoperateRequest 初始化TmallservicesettleadjustmentoperateAPIRequest对象
+func NewTmallservicesettleadjustmentoperateRequest() *TmallservicesettleadjustmentoperateAPIRequest {
+	return &TmallservicesettleadjustmentoperateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallServiceSettleadjustmentOperateAPIRequest) GetApiMethodName() string {
+func (r TmallservicesettleadjustmentoperateAPIRequest) GetApiMethodName() string {
 	return "tmall.service.settleadjustment.operate"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallServiceSettleadjustmentOperateAPIRequest) GetApiParams(params url.Values) {
+func (r TmallservicesettleadjustmentoperateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallServiceSettleadjustmentOperateAPIRequest) GetRawParams() model.Params {
+func (r TmallservicesettleadjustmentoperateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetMemo is Memo Setter
 // 审批备注
-func (r *TmallServiceSettleadjustmentOperateAPIRequest) SetMemo(_memo string) error {
+func (r *TmallservicesettleadjustmentoperateAPIRequest) SetMemo(_memo string) error {
 	r._memo = _memo
 	r.Set("memo", _memo)
 	return nil
 }
 
 // GetMemo Memo Getter
-func (r TmallServiceSettleadjustmentOperateAPIRequest) GetMemo() string {
+func (r TmallservicesettleadjustmentoperateAPIRequest) GetMemo() string {
 	return r._memo
 }
 
 // SetOperateCode is OperateCode Setter
 // 操作动作
-func (r *TmallServiceSettleadjustmentOperateAPIRequest) SetOperateCode(_operateCode string) error {
+func (r *TmallservicesettleadjustmentoperateAPIRequest) SetOperateCode(_operateCode string) error {
 	r._operateCode = _operateCode
 	r.Set("operate_code", _operateCode)
 	return nil
 }
 
 // GetOperateCode OperateCode Getter
-func (r TmallServiceSettleadjustmentOperateAPIRequest) GetOperateCode() string {
+func (r TmallservicesettleadjustmentoperateAPIRequest) GetOperateCode() string {
 	return r._operateCode
 }
 
 // SetSettlementAdjustmentOrderId is SettlementAdjustmentOrderId Setter
 // 调整单ID（也即退款单ID）
-func (r *TmallServiceSettleadjustmentOperateAPIRequest) SetSettlementAdjustmentOrderId(_settlementAdjustmentOrderId int64) error {
+func (r *TmallservicesettleadjustmentoperateAPIRequest) SetSettlementAdjustmentOrderId(_settlementAdjustmentOrderId int64) error {
 	r._settlementAdjustmentOrderId = _settlementAdjustmentOrderId
 	r.Set("settlement_adjustment_order_id", _settlementAdjustmentOrderId)
 	return nil
 }
 
 // GetSettlementAdjustmentOrderId SettlementAdjustmentOrderId Getter
-func (r TmallServiceSettleadjustmentOperateAPIRequest) GetSettlementAdjustmentOrderId() int64 {
+func (r TmallservicesettleadjustmentoperateAPIRequest) GetSettlementAdjustmentOrderId() int64 {
 	return r._settlementAdjustmentOrderId
 }

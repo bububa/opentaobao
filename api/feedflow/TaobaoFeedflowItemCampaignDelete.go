@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/feedflow"
 )
 
-// TaobaoFeedflowItemCampaignDelete 删除计划
+// Taobaofeedflowitemcampaigndelete 删除计划
 // taobao.feedflow.item.campaign.delete
 //
 // 删除计划
-func TaobaoFeedflowItemCampaignDelete(clt *core.SDKClient, req *feedflow.TaobaoFeedflowItemCampaignDeleteAPIRequest, session string) (*feedflow.TaobaoFeedflowItemCampaignDeleteAPIResponse, error) {
-	var resp feedflow.TaobaoFeedflowItemCampaignDeleteAPIResponse
+func Taobaofeedflowitemcampaigndelete(clt *core.SDKClient, req *feedflow.TaobaofeedflowitemcampaigndeleteAPIRequest, session string) (*feedflow.TaobaofeedflowitemcampaigndeleteAPIResponse, error) {
+	var resp feedflow.TaobaofeedflowitemcampaigndeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

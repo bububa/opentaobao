@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaDatabankOpenOneserviceGetdataAPIResponse 瓴羊DaaS消费者运营CGP取数接口 API返回值
+// AlibabadatabankopenoneservicegetdataAPIResponse 瓴羊DaaS消费者运营CGP取数接口 API返回值
 // alibaba.databank.open.oneservice.getdata
 //
 // 瓴羊DaaS消费者运营CGP取数接口
-type AlibabaDatabankOpenOneserviceGetdataAPIResponse struct {
+type AlibabadatabankopenoneservicegetdataAPIResponse struct {
 	model.CommonResponse
-	AlibabaDatabankOpenOneserviceGetdataAPIResponseModel
+	AlibabadatabankopenoneservicegetdataAPIResponseModel
 }
 
-// AlibabaDatabankOpenOneserviceGetdataAPIResponseModel is 瓴羊DaaS消费者运营CGP取数接口 成功返回结果
-type AlibabaDatabankOpenOneserviceGetdataAPIResponseModel struct {
+// AlibabadatabankopenoneservicegetdataAPIResponseModel is 瓴羊DaaS消费者运营CGP取数接口 成功返回结果
+type AlibabadatabankopenoneservicegetdataAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_databank_open_oneservice_getdata_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

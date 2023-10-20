@@ -1,7 +1,7 @@
 package youkudsp
 
-// YoukuDspDeliveryResourceMultigetMap 结构体
-type YoukuDspDeliveryResourceMultigetMap struct {
+// YoukudspdeliveryresourcemultigetMap 结构体
+type YoukudspdeliveryresourcemultigetMap struct {
 	// 图片json
 	Imgs string `json:"imgs,omitempty" xml:"imgs,omitempty"`
 	// 标题

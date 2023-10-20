@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tvpay"
 )
 
-// TaobaoTvpayPromotionInfoGet tv支付查询消费抽奖配置
+// Taobaotvpaypromotioninfoget tv支付查询消费抽奖配置
 // taobao.tvpay.promotion.info.get
 //
 // 查询消费抽奖配置
-func TaobaoTvpayPromotionInfoGet(clt *core.SDKClient, req *tvpay.TaobaoTvpayPromotionInfoGetAPIRequest, session string) (*tvpay.TaobaoTvpayPromotionInfoGetAPIResponse, error) {
-	var resp tvpay.TaobaoTvpayPromotionInfoGetAPIResponse
+func Taobaotvpaypromotioninfoget(clt *core.SDKClient, req *tvpay.TaobaotvpaypromotioninfogetAPIRequest, session string) (*tvpay.TaobaotvpaypromotioninfogetAPIResponse, error) {
+	var resp tvpay.TaobaotvpaypromotioninfogetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

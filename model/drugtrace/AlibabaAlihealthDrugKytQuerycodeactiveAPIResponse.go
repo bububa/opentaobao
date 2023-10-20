@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthDrugKytQuerycodeactiveAPIResponse 查询码是否激活 API返回值
+// AlibabaalihealthdrugkytquerycodeactiveAPIResponse 查询码是否激活 API返回值
 // alibaba.alihealth.drug.kyt.querycodeactive
 //
 // 查询码是否激活
-type AlibabaAlihealthDrugKytQuerycodeactiveAPIResponse struct {
+type AlibabaalihealthdrugkytquerycodeactiveAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihealthDrugKytQuerycodeactiveAPIResponseModel
+	AlibabaalihealthdrugkytquerycodeactiveAPIResponseModel
 }
 
-// AlibabaAlihealthDrugKytQuerycodeactiveAPIResponseModel is 查询码是否激活 成功返回结果
-type AlibabaAlihealthDrugKytQuerycodeactiveAPIResponseModel struct {
+// AlibabaalihealthdrugkytquerycodeactiveAPIResponseModel is 查询码是否激活 成功返回结果
+type AlibabaalihealthdrugkytquerycodeactiveAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drug_kyt_querycodeactive_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

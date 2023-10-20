@@ -1,7 +1,7 @@
 package xhotelitem
 
-// XHotel 结构体
-type XHotel struct {
+// Xhotel 结构体
+type Xhotel struct {
 	// 卖家自己系统的id
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// 酒店名称
@@ -59,7 +59,7 @@ type XHotel struct {
 	// 酒店状态：0: 正常;-2:停售；-1：删除
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 淘宝标准酒店信息
-	SHotel *SHotel `json:"s_hotel,omitempty" xml:"s_hotel,omitempty"`
+	SHotel *Shotel `json:"s_hotel,omitempty" xml:"s_hotel,omitempty"`
 	// 0:国内;1:国外
 	Domestic int64 `json:"domestic,omitempty" xml:"domestic,omitempty"`
 	// 省份编码

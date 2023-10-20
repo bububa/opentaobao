@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallsc"
 )
 
-// TmallServicecenterReservecondUpdate 主动预约条件更新
+// Tmallservicecenterreservecondupdate 主动预约条件更新
 // tmall.servicecenter.reservecond.update
 //
 // 1、设置主动预约开通条件
-func TmallServicecenterReservecondUpdate(clt *core.SDKClient, req *tmallsc.TmallServicecenterReservecondUpdateAPIRequest, session string) (*tmallsc.TmallServicecenterReservecondUpdateAPIResponse, error) {
-	var resp tmallsc.TmallServicecenterReservecondUpdateAPIResponse
+func Tmallservicecenterreservecondupdate(clt *core.SDKClient, req *tmallsc.TmallservicecenterreservecondupdateAPIRequest, session string) (*tmallsc.TmallservicecenterreservecondupdateAPIResponse, error) {
+	var resp tmallsc.TmallservicecenterreservecondupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

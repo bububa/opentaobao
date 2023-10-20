@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoFenxiaoOrderConfirmPaidAPIResponse 确认收款 API返回值
+// TaobaofenxiaoorderconfirmpaidAPIResponse 确认收款 API返回值
 // taobao.fenxiao.order.confirm.paid
 //
 // 供应商确认收款（非支付宝交易）。
-type TaobaoFenxiaoOrderConfirmPaidAPIResponse struct {
+type TaobaofenxiaoorderconfirmpaidAPIResponse struct {
 	model.CommonResponse
-	TaobaoFenxiaoOrderConfirmPaidAPIResponseModel
+	TaobaofenxiaoorderconfirmpaidAPIResponseModel
 }
 
-// TaobaoFenxiaoOrderConfirmPaidAPIResponseModel is 确认收款 成功返回结果
-type TaobaoFenxiaoOrderConfirmPaidAPIResponseModel struct {
+// TaobaofenxiaoorderconfirmpaidAPIResponseModel is 确认收款 成功返回结果
+type TaobaofenxiaoorderconfirmpaidAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_order_confirm_paid_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

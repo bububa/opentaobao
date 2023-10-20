@@ -1,7 +1,7 @@
 package idle
 
-// ConsignmentV2OrderTO 结构体
-type ConsignmentV2OrderTO struct {
+// ConsignmentV2orderTo 结构体
+type ConsignmentV2orderTo struct {
 	// appkey
 	Appkey string `json:"appkey,omitempty" xml:"appkey,omitempty"`
 	// 订单id

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alilabs"
 )
 
-// AlibabaAilabsTmallgenieAuthDeviceGet 获取设备详情
+// Alibabaailabstmallgenieauthdeviceget 获取设备详情
 // alibaba.ailabs.tmallgenie.auth.device.get
 //
 // 通过此接口获取设备详情
-func AlibabaAilabsTmallgenieAuthDeviceGet(clt *core.SDKClient, req *alilabs.AlibabaAilabsTmallgenieAuthDeviceGetAPIRequest, session string) (*alilabs.AlibabaAilabsTmallgenieAuthDeviceGetAPIResponse, error) {
-	var resp alilabs.AlibabaAilabsTmallgenieAuthDeviceGetAPIResponse
+func Alibabaailabstmallgenieauthdeviceget(clt *core.SDKClient, req *alilabs.AlibabaailabstmallgenieauthdevicegetAPIRequest, session string) (*alilabs.AlibabaailabstmallgenieauthdevicegetAPIResponse, error) {
+	var resp alilabs.AlibabaailabstmallgenieauthdevicegetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

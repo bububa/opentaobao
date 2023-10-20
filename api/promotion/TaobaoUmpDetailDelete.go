@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/promotion"
 )
 
-// TaobaoUmpDetailDelete 删除活动详情
+// Taobaoumpdetaildelete 删除活动详情
 // taobao.ump.detail.delete
 //
 // 删除活动详情
-func TaobaoUmpDetailDelete(clt *core.SDKClient, req *promotion.TaobaoUmpDetailDeleteAPIRequest, session string) (*promotion.TaobaoUmpDetailDeleteAPIResponse, error) {
-	var resp promotion.TaobaoUmpDetailDeleteAPIResponse
+func Taobaoumpdetaildelete(clt *core.SDKClient, req *promotion.TaobaoumpdetaildeleteAPIRequest, session string) (*promotion.TaobaoumpdetaildeleteAPIResponse, error) {
+	var resp promotion.TaobaoumpdetaildeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

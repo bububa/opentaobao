@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/qimen"
 )
 
-// TaobaoQimenStoreCreate 门店新增接口
+// Taobaoqimenstorecreate 门店新增接口
 // taobao.qimen.store.create
 //
 // isv调用接口来讲线下门店同步到线上
-func TaobaoQimenStoreCreate(clt *core.SDKClient, req *qimen.TaobaoQimenStoreCreateAPIRequest, session string) (*qimen.TaobaoQimenStoreCreateAPIResponse, error) {
-	var resp qimen.TaobaoQimenStoreCreateAPIResponse
+func Taobaoqimenstorecreate(clt *core.SDKClient, req *qimen.TaobaoqimenstorecreateAPIRequest, session string) (*qimen.TaobaoqimenstorecreateAPIResponse, error) {
+	var resp qimen.TaobaoqimenstorecreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

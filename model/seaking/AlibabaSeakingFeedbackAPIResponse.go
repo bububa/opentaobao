@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaSeakingFeedbackAPIResponse API服务发布成功商品ID回传 API返回值
+// AlibabaseakingfeedbackAPIResponse API服务发布成功商品ID回传 API返回值
 // alibaba.seaking.feedback
 //
 // API服务发布成功商品ID回传，用于跟进商品id后续的使用情况
-type AlibabaSeakingFeedbackAPIResponse struct {
+type AlibabaseakingfeedbackAPIResponse struct {
 	model.CommonResponse
-	AlibabaSeakingFeedbackAPIResponseModel
+	AlibabaseakingfeedbackAPIResponseModel
 }
 
-// AlibabaSeakingFeedbackAPIResponseModel is API服务发布成功商品ID回传 成功返回结果
-type AlibabaSeakingFeedbackAPIResponseModel struct {
+// AlibabaseakingfeedbackAPIResponseModel is API服务发布成功商品ID回传 成功返回结果
+type AlibabaseakingfeedbackAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_seaking_feedback_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

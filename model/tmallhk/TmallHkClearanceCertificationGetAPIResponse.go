@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallHkClearanceCertificationGetAPIResponse 获取订单清关材料实名信息 API返回值
+// TmallhkclearancecertificationgetAPIResponse 获取订单清关材料实名信息 API返回值
 // tmall.hk.clearance.certification.get
 //
 // 获取订单清关材料实名信息
-type TmallHkClearanceCertificationGetAPIResponse struct {
+type TmallhkclearancecertificationgetAPIResponse struct {
 	model.CommonResponse
-	TmallHkClearanceCertificationGetAPIResponseModel
+	TmallhkclearancecertificationgetAPIResponseModel
 }
 
-// TmallHkClearanceCertificationGetAPIResponseModel is 获取订单清关材料实名信息 成功返回结果
-type TmallHkClearanceCertificationGetAPIResponseModel struct {
+// TmallhkclearancecertificationgetAPIResponseModel is 获取订单清关材料实名信息 成功返回结果
+type TmallhkclearancecertificationgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_hk_clearance_certification_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

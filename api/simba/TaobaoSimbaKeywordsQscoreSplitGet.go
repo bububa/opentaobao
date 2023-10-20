@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// TaobaoSimbaKeywordsQscoreSplitGet 新质量分服务
+// Taobaosimbakeywordsqscoresplitget 新质量分服务
 // taobao.simba.keywords.qscore.split.get
 //
 // 获取关键词新的质量分
-func TaobaoSimbaKeywordsQscoreSplitGet(clt *core.SDKClient, req *simba.TaobaoSimbaKeywordsQscoreSplitGetAPIRequest, session string) (*simba.TaobaoSimbaKeywordsQscoreSplitGetAPIResponse, error) {
-	var resp simba.TaobaoSimbaKeywordsQscoreSplitGetAPIResponse
+func Taobaosimbakeywordsqscoresplitget(clt *core.SDKClient, req *simba.TaobaosimbakeywordsqscoresplitgetAPIRequest, session string) (*simba.TaobaosimbakeywordsqscoresplitgetAPIResponse, error) {
+	var resp simba.TaobaosimbakeywordsqscoresplitgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoXhotelBnbcommonAddAPIResponse 通用调用top接口 API返回值
+// TaobaoxhotelbnbcommonaddAPIResponse 通用调用top接口 API返回值
 // taobao.xhotel.bnbcommon.add
 //
 // 通用调用top接口
-type TaobaoXhotelBnbcommonAddAPIResponse struct {
+type TaobaoxhotelbnbcommonaddAPIResponse struct {
 	model.CommonResponse
-	TaobaoXhotelBnbcommonAddAPIResponseModel
+	TaobaoxhotelbnbcommonaddAPIResponseModel
 }
 
-// TaobaoXhotelBnbcommonAddAPIResponseModel is 通用调用top接口 成功返回结果
-type TaobaoXhotelBnbcommonAddAPIResponseModel struct {
+// TaobaoxhotelbnbcommonaddAPIResponseModel is 通用调用top接口 成功返回结果
+type TaobaoxhotelbnbcommonaddAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_bnbcommon_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

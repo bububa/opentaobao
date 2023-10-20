@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaCsrDonateOrgInvoiceDrawAPIResponse 机构开具商家票据信息 API返回值
+// AlibabacsrdonateorginvoicedrawAPIResponse 机构开具商家票据信息 API返回值
 // alibaba.csr.donate.org.invoice.draw
 //
 // 机构开具商家票据信息
-type AlibabaCsrDonateOrgInvoiceDrawAPIResponse struct {
+type AlibabacsrdonateorginvoicedrawAPIResponse struct {
 	model.CommonResponse
-	AlibabaCsrDonateOrgInvoiceDrawAPIResponseModel
+	AlibabacsrdonateorginvoicedrawAPIResponseModel
 }
 
-// AlibabaCsrDonateOrgInvoiceDrawAPIResponseModel is 机构开具商家票据信息 成功返回结果
-type AlibabaCsrDonateOrgInvoiceDrawAPIResponseModel struct {
+// AlibabacsrdonateorginvoicedrawAPIResponseModel is 机构开具商家票据信息 成功返回结果
+type AlibabacsrdonateorginvoicedrawAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_csr_donate_org_invoice_draw_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

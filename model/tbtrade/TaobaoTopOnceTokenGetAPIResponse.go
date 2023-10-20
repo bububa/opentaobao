@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTopOnceTokenGetAPIResponse 网关一次性token获取 API返回值
+// TaobaotoponcetokengetAPIResponse 网关一次性token获取 API返回值
 // taobao.top.once.token.get
 //
 // 网关一次性token获取，对接文档:
-type TaobaoTopOnceTokenGetAPIResponse struct {
+type TaobaotoponcetokengetAPIResponse struct {
 	model.CommonResponse
-	TaobaoTopOnceTokenGetAPIResponseModel
+	TaobaotoponcetokengetAPIResponseModel
 }
 
-// TaobaoTopOnceTokenGetAPIResponseModel is 网关一次性token获取 成功返回结果
-type TaobaoTopOnceTokenGetAPIResponseModel struct {
+// TaobaotoponcetokengetAPIResponseModel is 网关一次性token获取 成功返回结果
+type TaobaotoponcetokengetAPIResponseModel struct {
 	XMLName xml.Name `xml:"top_once_token_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

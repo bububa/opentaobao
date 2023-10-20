@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/trade"
 )
 
-// TmallAscpOrdersSaleCreate ASCP渠道中心销售单创建接口
+// Tmallascporderssalecreate ASCP渠道中心销售单创建接口
 // tmall.ascp.orders.sale.create
 //
 // ASCP渠道中心销售单创建接口
-func TmallAscpOrdersSaleCreate(clt *core.SDKClient, req *trade.TmallAscpOrdersSaleCreateAPIRequest, session string) (*trade.TmallAscpOrdersSaleCreateAPIResponse, error) {
-	var resp trade.TmallAscpOrdersSaleCreateAPIResponse
+func Tmallascporderssalecreate(clt *core.SDKClient, req *trade.TmallascporderssalecreateAPIRequest, session string) (*trade.TmallascporderssalecreateAPIResponse, error) {
+	var resp trade.TmallascporderssalecreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

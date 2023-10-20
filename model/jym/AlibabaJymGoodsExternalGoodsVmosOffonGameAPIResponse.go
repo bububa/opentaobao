@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponse 基于游戏id临时上下架智能发布入口 API返回值
+// AlibabajymgoodsexternalgoodsvmosoffongameAPIResponse 基于游戏id临时上下架智能发布入口 API返回值
 // alibaba.jym.goods.external.goods.vmos.offon.game
 //
 // 基于游戏id临时上下架智能发布入口
-type AlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponse struct {
+type AlibabajymgoodsexternalgoodsvmosoffongameAPIResponse struct {
 	model.CommonResponse
-	AlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponseModel
+	AlibabajymgoodsexternalgoodsvmosoffongameAPIResponseModel
 }
 
-// AlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponseModel is 基于游戏id临时上下架智能发布入口 成功返回结果
-type AlibabaJymGoodsExternalGoodsVmosOffonGameAPIResponseModel struct {
+// AlibabajymgoodsexternalgoodsvmosoffongameAPIResponseModel is 基于游戏id临时上下架智能发布入口 成功返回结果
+type AlibabajymgoodsexternalgoodsvmosoffongameAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_jym_goods_external_goods_vmos_offon_game_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

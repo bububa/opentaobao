@@ -5,7 +5,7 @@ import (
 	"github.com/bububa/opentaobao/model/tbitem"
 )
 
-// TmallItemShiptimeUpdate 更新商品发货时间
+// Tmallitemshiptimeupdate 更新商品发货时间
 // tmall.item.shiptime.update
 //
 // 增加更新删除商品/SKU发货时间(支持同一商品下的SKU同时批量更新)
@@ -42,8 +42,8 @@ import (
 //	    &#34;updateType&#34;: 1 --更新商品
 //	},
 //	删除商品级的发货时间
-func TmallItemShiptimeUpdate(clt *core.SDKClient, req *tbitem.TmallItemShiptimeUpdateAPIRequest, session string) (*tbitem.TmallItemShiptimeUpdateAPIResponse, error) {
-	var resp tbitem.TmallItemShiptimeUpdateAPIResponse
+func Tmallitemshiptimeupdate(clt *core.SDKClient, req *tbitem.TmallitemshiptimeupdateAPIRequest, session string) (*tbitem.TmallitemshiptimeupdateAPIResponse, error) {
+	var resp tbitem.TmallitemshiptimeupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

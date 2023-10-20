@@ -1,7 +1,7 @@
 package taotv
 
-// TaobaoTaotvCarouselPlaylistGetResult 结构体
-type TaobaoTaotvCarouselPlaylistGetResult struct {
+// TaobaotaotvcarouselplaylistgetResult 结构体
+type TaobaotaotvcarouselplaylistgetResult struct {
 	// msgCode
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// msgInfo

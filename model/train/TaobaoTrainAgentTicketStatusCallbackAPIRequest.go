@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTrainAgentTicketStatusCallbackAPIRequest 代理商票状态查询回调 API请求
+// TaobaotrainagentticketstatuscallbackAPIRequest 代理商票状态查询回调 API请求
 // taobao.train.agent.ticket.status.callback
 //
 // 代理商票状态查询结果回调
-type TaobaoTrainAgentTicketStatusCallbackAPIRequest struct {
+type TaobaotrainagentticketstatuscallbackAPIRequest struct {
 	model.Params
 	// 描述信息
 	_msg string
@@ -20,65 +20,65 @@ type TaobaoTrainAgentTicketStatusCallbackAPIRequest struct {
 	_ticketStatus int64
 }
 
-// NewTaobaoTrainAgentTicketStatusCallbackRequest 初始化TaobaoTrainAgentTicketStatusCallbackAPIRequest对象
-func NewTaobaoTrainAgentTicketStatusCallbackRequest() *TaobaoTrainAgentTicketStatusCallbackAPIRequest {
-	return &TaobaoTrainAgentTicketStatusCallbackAPIRequest{
+// NewTaobaotrainagentticketstatuscallbackRequest 初始化TaobaotrainagentticketstatuscallbackAPIRequest对象
+func NewTaobaotrainagentticketstatuscallbackRequest() *TaobaotrainagentticketstatuscallbackAPIRequest {
+	return &TaobaotrainagentticketstatuscallbackAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoTrainAgentTicketStatusCallbackAPIRequest) GetApiMethodName() string {
+func (r TaobaotrainagentticketstatuscallbackAPIRequest) GetApiMethodName() string {
 	return "taobao.train.agent.ticket.status.callback"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTrainAgentTicketStatusCallbackAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaotrainagentticketstatuscallbackAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoTrainAgentTicketStatusCallbackAPIRequest) GetRawParams() model.Params {
+func (r TaobaotrainagentticketstatuscallbackAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetMsg is Msg Setter
 // 描述信息
-func (r *TaobaoTrainAgentTicketStatusCallbackAPIRequest) SetMsg(_msg string) error {
+func (r *TaobaotrainagentticketstatuscallbackAPIRequest) SetMsg(_msg string) error {
 	r._msg = _msg
 	r.Set("msg", _msg)
 	return nil
 }
 
 // GetMsg Msg Getter
-func (r TaobaoTrainAgentTicketStatusCallbackAPIRequest) GetMsg() string {
+func (r TaobaotrainagentticketstatuscallbackAPIRequest) GetMsg() string {
 	return r._msg
 }
 
 // SetId is Id Setter
 // 唯一编号
-func (r *TaobaoTrainAgentTicketStatusCallbackAPIRequest) SetId(_id string) error {
+func (r *TaobaotrainagentticketstatuscallbackAPIRequest) SetId(_id string) error {
 	r._id = _id
 	r.Set("id", _id)
 	return nil
 }
 
 // GetId Id Getter
-func (r TaobaoTrainAgentTicketStatusCallbackAPIRequest) GetId() string {
+func (r TaobaotrainagentticketstatuscallbackAPIRequest) GetId() string {
 	return r._id
 }
 
 // SetTicketStatus is TicketStatus Setter
 // 车票状态
-func (r *TaobaoTrainAgentTicketStatusCallbackAPIRequest) SetTicketStatus(_ticketStatus int64) error {
+func (r *TaobaotrainagentticketstatuscallbackAPIRequest) SetTicketStatus(_ticketStatus int64) error {
 	r._ticketStatus = _ticketStatus
 	r.Set("ticket_status", _ticketStatus)
 	return nil
 }
 
 // GetTicketStatus TicketStatus Getter
-func (r TaobaoTrainAgentTicketStatusCallbackAPIRequest) GetTicketStatus() int64 {
+func (r TaobaotrainagentticketstatuscallbackAPIRequest) GetTicketStatus() int64 {
 	return r._ticketStatus
 }

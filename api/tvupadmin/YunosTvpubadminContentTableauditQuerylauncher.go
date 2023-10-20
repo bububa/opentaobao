@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tvupadmin"
 )
 
-// YunosTvpubadminContentTableauditQuerylauncher 运营位管控-查询联盟一体机运营位元数据列表
+// Yunostvpubadmincontenttableauditquerylauncher 运营位管控-查询联盟一体机运营位元数据列表
 // yunos.tvpubadmin.content.tableaudit.querylauncher
 //
 // 运营位管控-查询联盟一体机运营位元数据列表
-func YunosTvpubadminContentTableauditQuerylauncher(clt *core.SDKClient, req *tvupadmin.YunosTvpubadminContentTableauditQuerylauncherAPIRequest, session string) (*tvupadmin.YunosTvpubadminContentTableauditQuerylauncherAPIResponse, error) {
-	var resp tvupadmin.YunosTvpubadminContentTableauditQuerylauncherAPIResponse
+func Yunostvpubadmincontenttableauditquerylauncher(clt *core.SDKClient, req *tvupadmin.YunostvpubadmincontenttableauditquerylauncherAPIRequest, session string) (*tvupadmin.YunostvpubadmincontenttableauditquerylauncherAPIResponse, error) {
+	var resp tvupadmin.YunostvpubadmincontenttableauditquerylauncherAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

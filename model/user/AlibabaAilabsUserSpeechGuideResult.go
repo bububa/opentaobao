@@ -1,7 +1,7 @@
 package user
 
-// AlibabaAilabsUserSpeechGuideResult 结构体
-type AlibabaAilabsUserSpeechGuideResult struct {
+// AlibabaailabsuserspeechguideResult 结构体
+type AlibabaailabsuserspeechguideResult struct {
 	// 出错信息
 	RetMsg string `json:"ret_msg,omitempty" xml:"ret_msg,omitempty"`
 	// 0表示成功

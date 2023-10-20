@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoDeliveryTemplateGetAPIResponse 获取用户指定运费模板信息 API返回值
+// TaobaodeliverytemplategetAPIResponse 获取用户指定运费模板信息 API返回值
 // taobao.delivery.template.get
 //
 // 获取用户指定运费模板信息
-type TaobaoDeliveryTemplateGetAPIResponse struct {
+type TaobaodeliverytemplategetAPIResponse struct {
 	model.CommonResponse
-	TaobaoDeliveryTemplateGetAPIResponseModel
+	TaobaodeliverytemplategetAPIResponseModel
 }
 
-// TaobaoDeliveryTemplateGetAPIResponseModel is 获取用户指定运费模板信息 成功返回结果
-type TaobaoDeliveryTemplateGetAPIResponseModel struct {
+// TaobaodeliverytemplategetAPIResponseModel is 获取用户指定运费模板信息 成功返回结果
+type TaobaodeliverytemplategetAPIResponseModel struct {
 	XMLName xml.Name `xml:"delivery_template_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

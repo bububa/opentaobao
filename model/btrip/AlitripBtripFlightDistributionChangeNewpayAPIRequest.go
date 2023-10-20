@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripBtripFlightDistributionChangeNewpayAPIRequest 商旅机票改签支付V2 API请求
+// AlitripbtripflightdistributionchangenewpayAPIRequest 商旅机票改签支付V2 API请求
 // alitrip.btrip.flight.distribution.change.newpay
 //
 // 商旅机票改签支付V2
-type AlitripBtripFlightDistributionChangeNewpayAPIRequest struct {
+type AlitripbtripflightdistributionchangenewpayAPIRequest struct {
 	model.Params
 	// 改签支付入参
 	_paramBtripFlightModifyPayRq *BtripFlightModifyPayRq
 }
 
-// NewAlitripBtripFlightDistributionChangeNewpayRequest 初始化AlitripBtripFlightDistributionChangeNewpayAPIRequest对象
-func NewAlitripBtripFlightDistributionChangeNewpayRequest() *AlitripBtripFlightDistributionChangeNewpayAPIRequest {
-	return &AlitripBtripFlightDistributionChangeNewpayAPIRequest{
+// NewAlitripbtripflightdistributionchangenewpayRequest 初始化AlitripbtripflightdistributionchangenewpayAPIRequest对象
+func NewAlitripbtripflightdistributionchangenewpayRequest() *AlitripbtripflightdistributionchangenewpayAPIRequest {
+	return &AlitripbtripflightdistributionchangenewpayAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripBtripFlightDistributionChangeNewpayAPIRequest) GetApiMethodName() string {
+func (r AlitripbtripflightdistributionchangenewpayAPIRequest) GetApiMethodName() string {
 	return "alitrip.btrip.flight.distribution.change.newpay"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripBtripFlightDistributionChangeNewpayAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripbtripflightdistributionchangenewpayAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripBtripFlightDistributionChangeNewpayAPIRequest) GetRawParams() model.Params {
+func (r AlitripbtripflightdistributionchangenewpayAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamBtripFlightModifyPayRq is ParamBtripFlightModifyPayRq Setter
 // 改签支付入参
-func (r *AlitripBtripFlightDistributionChangeNewpayAPIRequest) SetParamBtripFlightModifyPayRq(_paramBtripFlightModifyPayRq *BtripFlightModifyPayRq) error {
+func (r *AlitripbtripflightdistributionchangenewpayAPIRequest) SetParamBtripFlightModifyPayRq(_paramBtripFlightModifyPayRq *BtripFlightModifyPayRq) error {
 	r._paramBtripFlightModifyPayRq = _paramBtripFlightModifyPayRq
 	r.Set("param_btrip_flight_modify_pay_rq", _paramBtripFlightModifyPayRq)
 	return nil
 }
 
 // GetParamBtripFlightModifyPayRq ParamBtripFlightModifyPayRq Getter
-func (r AlitripBtripFlightDistributionChangeNewpayAPIRequest) GetParamBtripFlightModifyPayRq() *BtripFlightModifyPayRq {
+func (r AlitripbtripflightdistributionchangenewpayAPIRequest) GetParamBtripFlightModifyPayRq() *BtripFlightModifyPayRq {
 	return r._paramBtripFlightModifyPayRq
 }

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTaotvVideoPlaylistPageAPIRequest 分页获取所有播单 API请求
+// TaobaotaotvvideoplaylistpageAPIRequest 分页获取所有播单 API请求
 // taobao.taotv.video.playlist.page
 //
 // 获取所有播单信息（分页）
-type TaobaoTaotvVideoPlaylistPageAPIRequest struct {
+type TaobaotaotvvideoplaylistpageAPIRequest struct {
 	model.Params
 	// 客户端信息
 	_systemInfo string
@@ -18,52 +18,52 @@ type TaobaoTaotvVideoPlaylistPageAPIRequest struct {
 	_pageNo int64
 }
 
-// NewTaobaoTaotvVideoPlaylistPageRequest 初始化TaobaoTaotvVideoPlaylistPageAPIRequest对象
-func NewTaobaoTaotvVideoPlaylistPageRequest() *TaobaoTaotvVideoPlaylistPageAPIRequest {
-	return &TaobaoTaotvVideoPlaylistPageAPIRequest{
+// NewTaobaotaotvvideoplaylistpageRequest 初始化TaobaotaotvvideoplaylistpageAPIRequest对象
+func NewTaobaotaotvvideoplaylistpageRequest() *TaobaotaotvvideoplaylistpageAPIRequest {
+	return &TaobaotaotvvideoplaylistpageAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoTaotvVideoPlaylistPageAPIRequest) GetApiMethodName() string {
+func (r TaobaotaotvvideoplaylistpageAPIRequest) GetApiMethodName() string {
 	return "taobao.taotv.video.playlist.page"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTaotvVideoPlaylistPageAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaotaotvvideoplaylistpageAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoTaotvVideoPlaylistPageAPIRequest) GetRawParams() model.Params {
+func (r TaobaotaotvvideoplaylistpageAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSystemInfo is SystemInfo Setter
 // 客户端信息
-func (r *TaobaoTaotvVideoPlaylistPageAPIRequest) SetSystemInfo(_systemInfo string) error {
+func (r *TaobaotaotvvideoplaylistpageAPIRequest) SetSystemInfo(_systemInfo string) error {
 	r._systemInfo = _systemInfo
 	r.Set("system_info", _systemInfo)
 	return nil
 }
 
 // GetSystemInfo SystemInfo Getter
-func (r TaobaoTaotvVideoPlaylistPageAPIRequest) GetSystemInfo() string {
+func (r TaobaotaotvvideoplaylistpageAPIRequest) GetSystemInfo() string {
 	return r._systemInfo
 }
 
 // SetPageNo is PageNo Setter
 // 当前页（从1开始）
-func (r *TaobaoTaotvVideoPlaylistPageAPIRequest) SetPageNo(_pageNo int64) error {
+func (r *TaobaotaotvvideoplaylistpageAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
 	r.Set("page_no", _pageNo)
 	return nil
 }
 
 // GetPageNo PageNo Getter
-func (r TaobaoTaotvVideoPlaylistPageAPIRequest) GetPageNo() int64 {
+func (r TaobaotaotvvideoplaylistpageAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }

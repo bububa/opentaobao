@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoInvTurnoverQueryAPIResponse 业务库存流水查询 API返回值
+// TaobaoinvturnoverqueryAPIResponse 业务库存流水查询 API返回值
 // taobao.inv.turnover.query
 //
 // 业务库存流水
-type TaobaoInvTurnoverQueryAPIResponse struct {
+type TaobaoinvturnoverqueryAPIResponse struct {
 	model.CommonResponse
-	TaobaoInvTurnoverQueryAPIResponseModel
+	TaobaoinvturnoverqueryAPIResponseModel
 }
 
-// TaobaoInvTurnoverQueryAPIResponseModel is 业务库存流水查询 成功返回结果
-type TaobaoInvTurnoverQueryAPIResponseModel struct {
+// TaobaoinvturnoverqueryAPIResponseModel is 业务库存流水查询 成功返回结果
+type TaobaoinvturnoverqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"inv_turnover_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 接口返回model
-	Result *TaobaoInvTurnoverQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *TaobaoinvturnoverqueryResult `json:"result,omitempty" xml:"result,omitempty"`
 }

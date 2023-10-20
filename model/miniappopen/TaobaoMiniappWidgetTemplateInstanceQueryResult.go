@@ -1,7 +1,7 @@
 package miniappopen
 
-// TaobaoMiniappWidgetTemplateInstanceQueryResult 结构体
-type TaobaoMiniappWidgetTemplateInstanceQueryResult struct {
+// TaobaominiappwidgettemplateinstancequeryResult 结构体
+type TaobaominiappwidgettemplateinstancequeryResult struct {
 	// 返回结果
 	Model []MiniappInstanceAppAllVersionsDto `json:"model,omitempty" xml:"model>miniapp_instance_app_all_versions_dto,omitempty"`
 	// 错误码

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoXhotelMemberDerbyCouponSendAPIResponse 发券 API返回值
+// TaobaoxhotelmemberderbycouponsendAPIResponse 发券 API返回值
 // taobao.xhotel.member.derby.coupon.send
 //
 // 发券
-type TaobaoXhotelMemberDerbyCouponSendAPIResponse struct {
+type TaobaoxhotelmemberderbycouponsendAPIResponse struct {
 	model.CommonResponse
-	TaobaoXhotelMemberDerbyCouponSendAPIResponseModel
+	TaobaoxhotelmemberderbycouponsendAPIResponseModel
 }
 
-// TaobaoXhotelMemberDerbyCouponSendAPIResponseModel is 发券 成功返回结果
-type TaobaoXhotelMemberDerbyCouponSendAPIResponseModel struct {
+// TaobaoxhotelmemberderbycouponsendAPIResponseModel is 发券 成功返回结果
+type TaobaoxhotelmemberderbycouponsendAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_member_derby_coupon_send_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

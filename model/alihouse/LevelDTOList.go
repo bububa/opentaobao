@@ -1,9 +1,9 @@
 package alihouse
 
-// LevelDTOList 结构体
-type LevelDTOList struct {
+// LevelDtolist 结构体
+type LevelDtolist struct {
 	// 权益列表
-	GradeItemDTOList []GradeItemDTOList `json:"grade_item_d_t_o_list,omitempty" xml:"grade_item_d_t_o_list>grade_item_dto_list,omitempty"`
+	GradeItemDTOList []GradeItemDtolist `json:"grade_item_d_t_o_list,omitempty" xml:"grade_item_d_t_o_list>grade_item_dtolist,omitempty"`
 	// 等级编号
 	LevelCode string `json:"level_code,omitempty" xml:"level_code,omitempty"`
 	// 外部门店ID

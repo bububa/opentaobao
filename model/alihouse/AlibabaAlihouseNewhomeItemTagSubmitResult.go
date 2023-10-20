@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaAlihouseNewhomeItemTagSubmitResult 结构体
-type AlibabaAlihouseNewhomeItemTagSubmitResult struct {
+// AlibabaalihousenewhomeitemtagsubmitResult 结构体
+type AlibabaalihousenewhomeitemtagsubmitResult struct {
 	// 错误消息
 	Msg string `json:"msg,omitempty" xml:"msg,omitempty"`
 	// 错误code

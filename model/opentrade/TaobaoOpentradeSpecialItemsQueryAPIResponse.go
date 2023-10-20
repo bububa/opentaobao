@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOpentradeSpecialItemsQueryAPIResponse 专属下单获取商品绑定信息 API返回值
+// TaobaoopentradespecialitemsqueryAPIResponse 专属下单获取商品绑定信息 API返回值
 // taobao.opentrade.special.items.query
 //
 // 专属下单获取商品绑定信息
-type TaobaoOpentradeSpecialItemsQueryAPIResponse struct {
+type TaobaoopentradespecialitemsqueryAPIResponse struct {
 	model.CommonResponse
-	TaobaoOpentradeSpecialItemsQueryAPIResponseModel
+	TaobaoopentradespecialitemsqueryAPIResponseModel
 }
 
-// TaobaoOpentradeSpecialItemsQueryAPIResponseModel is 专属下单获取商品绑定信息 成功返回结果
-type TaobaoOpentradeSpecialItemsQueryAPIResponseModel struct {
+// TaobaoopentradespecialitemsqueryAPIResponseModel is 专属下单获取商品绑定信息 成功返回结果
+type TaobaoopentradespecialitemsqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"opentrade_special_items_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

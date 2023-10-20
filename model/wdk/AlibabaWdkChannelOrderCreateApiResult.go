@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaWdkChannelOrderCreateApiResult 结构体
-type AlibabaWdkChannelOrderCreateApiResult struct {
+// AlibabawdkchannelordercreateApiResult 结构体
+type AlibabawdkchannelordercreateApiResult struct {
 	// 错误编码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 错误信息

@@ -1,9 +1,9 @@
 package promotion
 
-// TmallPromotionCouponQueryResult 结构体
-type TmallPromotionCouponQueryResult struct {
+// TmallpromotioncouponqueryResult 结构体
+type TmallpromotioncouponqueryResult struct {
 	// data
-	DataList []TmallPromotionCouponQueryData `json:"data_list,omitempty" xml:"data_list>tmall_promotion_coupon_query_data,omitempty"`
+	DataList []TmallpromotioncouponqueryData `json:"data_list,omitempty" xml:"data_list>tmallpromotioncouponquery_data,omitempty"`
 	// errorMsg
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// resultCode

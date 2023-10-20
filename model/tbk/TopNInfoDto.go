@@ -1,7 +1,7 @@
 package tbk
 
-// TopNInfoDto 结构体
-type TopNInfoDto struct {
+// TopNinfoDto 结构体
+type TopNinfoDto struct {
 	// 前N件佣金结束时间
 	TopnEndTime string `json:"topn_end_time,omitempty" xml:"topn_end_time,omitempty"`
 	// 前N件佣金开始时间

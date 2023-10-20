@@ -1,7 +1,7 @@
 package tmallservice
 
-// TmallServicecenterWorkcardReservefailResult 结构体
-type TmallServicecenterWorkcardReservefailResult struct {
+// TmallservicecenterworkcardreservefailResult 结构体
+type TmallservicecenterworkcardreservefailResult struct {
 	// 用于对外展示的错误信息
 	DisplayMsg string `json:"display_msg,omitempty" xml:"display_msg,omitempty"`
 	// 消息代码

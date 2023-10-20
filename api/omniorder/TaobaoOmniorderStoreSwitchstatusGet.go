@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/omniorder"
 )
 
-// TaobaoOmniorderStoreSwitchstatusGet switchstatus.get
+// Taobaoomniorderstoreswitchstatusget switchstatus.get
 // taobao.omniorder.store.switchstatus.get
 //
 // 查询门店发货、门店自提状态
-func TaobaoOmniorderStoreSwitchstatusGet(clt *core.SDKClient, req *omniorder.TaobaoOmniorderStoreSwitchstatusGetAPIRequest, session string) (*omniorder.TaobaoOmniorderStoreSwitchstatusGetAPIResponse, error) {
-	var resp omniorder.TaobaoOmniorderStoreSwitchstatusGetAPIResponse
+func Taobaoomniorderstoreswitchstatusget(clt *core.SDKClient, req *omniorder.TaobaoomniorderstoreswitchstatusgetAPIRequest, session string) (*omniorder.TaobaoomniorderstoreswitchstatusgetAPIResponse, error) {
+	var resp omniorder.TaobaoomniorderstoreswitchstatusgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

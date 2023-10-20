@@ -1,7 +1,7 @@
 package film
 
-// FCodeMerchantSendCodeRq 结构体
-type FCodeMerchantSendCodeRq struct {
+// FcodeMerchantSendCodeRq 结构体
+type FcodeMerchantSendCodeRq struct {
 	// 外部业务用户id
 	OutUid string `json:"out_uid,omitempty" xml:"out_uid,omitempty"`
 	// 发券码商品mixId

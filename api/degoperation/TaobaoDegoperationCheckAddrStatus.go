@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/degoperation"
 )
 
-// TaobaoDegoperationCheckAddrStatus 地址
+// Taobaodegoperationcheckaddrstatus 地址
 // taobao.degoperation.check.addr.status
 //
 // 激励
-func TaobaoDegoperationCheckAddrStatus(clt *core.SDKClient, req *degoperation.TaobaoDegoperationCheckAddrStatusAPIRequest, session string) (*degoperation.TaobaoDegoperationCheckAddrStatusAPIResponse, error) {
-	var resp degoperation.TaobaoDegoperationCheckAddrStatusAPIResponse
+func Taobaodegoperationcheckaddrstatus(clt *core.SDKClient, req *degoperation.TaobaodegoperationcheckaddrstatusAPIRequest, session string) (*degoperation.TaobaodegoperationcheckaddrstatusAPIResponse, error) {
+	var resp degoperation.TaobaodegoperationcheckaddrstatusAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

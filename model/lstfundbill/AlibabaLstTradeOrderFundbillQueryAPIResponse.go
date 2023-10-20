@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaLstTradeOrderFundbillQueryAPIResponse 结算明细数据查询（品牌商视角） API返回值
+// AlibabalsttradeorderfundbillqueryAPIResponse 结算明细数据查询（品牌商视角） API返回值
 // alibaba.lst.trade.order.fundbill.query
 //
 // 按照指定日期提供交易账单维度的结算明细数据，比供应商工作台上的结算账单还多一些数据项。
-type AlibabaLstTradeOrderFundbillQueryAPIResponse struct {
+type AlibabalsttradeorderfundbillqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaLstTradeOrderFundbillQueryAPIResponseModel
+	AlibabalsttradeorderfundbillqueryAPIResponseModel
 }
 
-// AlibabaLstTradeOrderFundbillQueryAPIResponseModel is 结算明细数据查询（品牌商视角） 成功返回结果
-type AlibabaLstTradeOrderFundbillQueryAPIResponseModel struct {
+// AlibabalsttradeorderfundbillqueryAPIResponseModel is 结算明细数据查询（品牌商视角） 成功返回结果
+type AlibabalsttradeorderfundbillqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_lst_trade_order_fundbill_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

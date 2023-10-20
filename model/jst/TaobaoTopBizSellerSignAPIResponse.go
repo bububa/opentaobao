@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTopBizSellerSignAPIResponse 淘宝订单履约-商家erp签约 API返回值
+// TaobaotopbizsellersignAPIResponse 淘宝订单履约-商家erp签约 API返回值
 // taobao.top.biz.seller.sign
 //
 // 淘宝订单履约-商家erp签约，包含各场景的签约
-type TaobaoTopBizSellerSignAPIResponse struct {
+type TaobaotopbizsellersignAPIResponse struct {
 	model.CommonResponse
-	TaobaoTopBizSellerSignAPIResponseModel
+	TaobaotopbizsellersignAPIResponseModel
 }
 
-// TaobaoTopBizSellerSignAPIResponseModel is 淘宝订单履约-商家erp签约 成功返回结果
-type TaobaoTopBizSellerSignAPIResponseModel struct {
+// TaobaotopbizsellersignAPIResponseModel is 淘宝订单履约-商家erp签约 成功返回结果
+type TaobaotopbizsellersignAPIResponseModel struct {
 	XMLName xml.Name `xml:"top_biz_seller_sign_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/mozi"
 )
 
-// AlibabaMoziVdsTenantApiServiceTenantbyid 按租户ID查询租户信息
+// Alibabamozivdstenantapiservicetenantbyid 按租户ID查询租户信息
 // alibaba.mozi.vds.tenant.api.service.tenantbyid
 //
 // 按租户ID查询租户信息
-func AlibabaMoziVdsTenantApiServiceTenantbyid(clt *core.SDKClient, req *mozi.AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest, session string) (*mozi.AlibabaMoziVdsTenantApiServiceTenantbyidAPIResponse, error) {
-	var resp mozi.AlibabaMoziVdsTenantApiServiceTenantbyidAPIResponse
+func Alibabamozivdstenantapiservicetenantbyid(clt *core.SDKClient, req *mozi.AlibabamozivdstenantapiservicetenantbyidAPIRequest, session string) (*mozi.AlibabamozivdstenantapiservicetenantbyidAPIResponse, error) {
+	var resp mozi.AlibabamozivdstenantapiservicetenantbyidAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

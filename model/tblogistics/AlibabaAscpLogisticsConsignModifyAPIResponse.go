@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAscpLogisticsConsignModifyAPIResponse 修改物流公司和运单号 API返回值
+// AlibabaascplogisticsconsignmodifyAPIResponse 修改物流公司和运单号 API返回值
 // alibaba.ascp.logistics.consign.modify
 //
 // 修改物流公司和运单号
-type AlibabaAscpLogisticsConsignModifyAPIResponse struct {
+type AlibabaascplogisticsconsignmodifyAPIResponse struct {
 	model.CommonResponse
-	AlibabaAscpLogisticsConsignModifyAPIResponseModel
+	AlibabaascplogisticsconsignmodifyAPIResponseModel
 }
 
-// AlibabaAscpLogisticsConsignModifyAPIResponseModel is 修改物流公司和运单号 成功返回结果
-type AlibabaAscpLogisticsConsignModifyAPIResponseModel struct {
+// AlibabaascplogisticsconsignmodifyAPIResponseModel is 修改物流公司和运单号 成功返回结果
+type AlibabaascplogisticsconsignmodifyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ascp_logistics_consign_modify_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -1,7 +1,7 @@
 package tmallnr
 
-// AlibabaLsyCrmActivityGetbaseinfoResultDo 结构体
-type AlibabaLsyCrmActivityGetbaseinfoResultDo struct {
+// AlibabalsycrmactivitygetbaseinfoResultDo 结构体
+type AlibabalsycrmactivitygetbaseinfoResultDo struct {
 	// 错误信息
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// 错误码

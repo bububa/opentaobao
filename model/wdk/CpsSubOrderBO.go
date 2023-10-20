@@ -1,7 +1,7 @@
 package wdk
 
-// CpsSubOrderBO 结构体
-type CpsSubOrderBO struct {
+// CpsSubOrderBo 结构体
+type CpsSubOrderBo struct {
 	// 业务子订单ID
 	BizSubOrderId string `json:"biz_sub_order_id,omitempty" xml:"biz_sub_order_id,omitempty"`
 	// 商品名称

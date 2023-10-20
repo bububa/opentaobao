@@ -1,7 +1,7 @@
 package traveltrade
 
-// AlitripTravelBookinfoQueryModule 结构体
-type AlitripTravelBookinfoQueryModule struct {
+// AlitriptravelbookinfoqueryModule 结构体
+type AlitriptravelbookinfoqueryModule struct {
 	// 出行人信息
 	TravellerInfos []TravellerInfos `json:"traveller_infos,omitempty" xml:"traveller_infos>traveller_infos,omitempty"`
 	// 时段结束时间

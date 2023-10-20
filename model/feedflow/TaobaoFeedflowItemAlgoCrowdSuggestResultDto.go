@@ -1,7 +1,7 @@
 package feedflow
 
-// TaobaoFeedflowItemAlgoCrowdSuggestResultDto 结构体
-type TaobaoFeedflowItemAlgoCrowdSuggestResultDto struct {
+// TaobaofeedflowitemalgocrowdsuggestResultDto 结构体
+type TaobaofeedflowitemalgocrowdsuggestResultDto struct {
 	// 人群列表
 	Crowds []CrowdDto `json:"crowds,omitempty" xml:"crowds>crowd_dto,omitempty"`
 	// 失败时候的消息

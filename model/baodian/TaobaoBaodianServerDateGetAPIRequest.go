@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoBaodianServerDateGetAPIRequest 服务器时间获取 API请求
+// TaobaobaodianserverdategetAPIRequest 服务器时间获取 API请求
 // taobao.baodian.server.date.get
 //
 // 获取服务器时间
-type TaobaoBaodianServerDateGetAPIRequest struct {
+type TaobaobaodianserverdategetAPIRequest struct {
 	model.Params
 }
 
-// NewTaobaoBaodianServerDateGetRequest 初始化TaobaoBaodianServerDateGetAPIRequest对象
-func NewTaobaoBaodianServerDateGetRequest() *TaobaoBaodianServerDateGetAPIRequest {
-	return &TaobaoBaodianServerDateGetAPIRequest{
+// NewTaobaobaodianserverdategetRequest 初始化TaobaobaodianserverdategetAPIRequest对象
+func NewTaobaobaodianserverdategetRequest() *TaobaobaodianserverdategetAPIRequest {
+	return &TaobaobaodianserverdategetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoBaodianServerDateGetAPIRequest) GetApiMethodName() string {
+func (r TaobaobaodianserverdategetAPIRequest) GetApiMethodName() string {
 	return "taobao.baodian.server.date.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoBaodianServerDateGetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaobaodianserverdategetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoBaodianServerDateGetAPIRequest) GetRawParams() model.Params {
+func (r TaobaobaodianserverdategetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

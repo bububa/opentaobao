@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse 设置订单支付 API返回值
+// AlibabaeleenterpriseordernewpaymentstatusAPIResponse 设置订单支付 API返回值
 // alibaba.ele.enterprise.ordernew.paymentstatus
 //
 // 设置订单支付成功
-type AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponse struct {
+type AlibabaeleenterpriseordernewpaymentstatusAPIResponse struct {
 	model.CommonResponse
-	AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponseModel
+	AlibabaeleenterpriseordernewpaymentstatusAPIResponseModel
 }
 
-// AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponseModel is 设置订单支付 成功返回结果
-type AlibabaEleEnterpriseOrdernewPaymentstatusAPIResponseModel struct {
+// AlibabaeleenterpriseordernewpaymentstatusAPIResponseModel is 设置订单支付 成功返回结果
+type AlibabaeleenterpriseordernewpaymentstatusAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ele_enterprise_ordernew_paymentstatus_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

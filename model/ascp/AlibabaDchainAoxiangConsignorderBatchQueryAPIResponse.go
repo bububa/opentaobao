@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaDchainAoxiangConsignorderBatchQueryAPIResponse 发货单批量查询 API返回值
+// AlibabadchainaoxiangconsignorderbatchqueryAPIResponse 发货单批量查询 API返回值
 // alibaba.dchain.aoxiang.consignorder.batch.query
 //
 // 发货单批量查询
-type AlibabaDchainAoxiangConsignorderBatchQueryAPIResponse struct {
+type AlibabadchainaoxiangconsignorderbatchqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaDchainAoxiangConsignorderBatchQueryAPIResponseModel
+	AlibabadchainaoxiangconsignorderbatchqueryAPIResponseModel
 }
 
-// AlibabaDchainAoxiangConsignorderBatchQueryAPIResponseModel is 发货单批量查询 成功返回结果
-type AlibabaDchainAoxiangConsignorderBatchQueryAPIResponseModel struct {
+// AlibabadchainaoxiangconsignorderbatchqueryAPIResponseModel is 发货单批量查询 成功返回结果
+type AlibabadchainaoxiangconsignorderbatchqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_dchain_aoxiang_consignorder_batch_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

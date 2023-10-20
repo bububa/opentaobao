@@ -1,9 +1,9 @@
 package aliqin
 
-// AlibabaAliqinFcIotCardofferResult 结构体
-type AlibabaAliqinFcIotCardofferResult struct {
+// AlibabaaliqinfciotcardofferResult 结构体
+type AlibabaaliqinfciotcardofferResult struct {
 	// 结果对象
-	Models []AlibabaAliqinFcIotCardofferModel `json:"models,omitempty" xml:"models>alibaba_aliqin_fc_iot_cardoffer_model,omitempty"`
+	Models []AlibabaaliqinfciotcardofferModel `json:"models,omitempty" xml:"models>alibabaaliqinfciotcardoffer_model,omitempty"`
 	// 1.成功；2.失败
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 错误信息

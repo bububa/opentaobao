@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSellercenterSubusersGetAPIResponse 查询指定账户的子账号列表 API返回值
+// TaobaosellercentersubusersgetAPIResponse 查询指定账户的子账号列表 API返回值
 // taobao.sellercenter.subusers.get
 //
 // 根据主账号nick查询该账号下所有的子账号列表，只能查询属于自己的账号信息 (主账号以及所属子账号)
-type TaobaoSellercenterSubusersGetAPIResponse struct {
+type TaobaosellercentersubusersgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoSellercenterSubusersGetAPIResponseModel
+	TaobaosellercentersubusersgetAPIResponseModel
 }
 
-// TaobaoSellercenterSubusersGetAPIResponseModel is 查询指定账户的子账号列表 成功返回结果
-type TaobaoSellercenterSubusersGetAPIResponseModel struct {
+// TaobaosellercentersubusersgetAPIResponseModel is 查询指定账户的子账号列表 成功返回结果
+type TaobaosellercentersubusersgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"sellercenter_subusers_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

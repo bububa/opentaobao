@@ -1,7 +1,7 @@
 package scs
 
-// TaobaoOnebpDkxCampaignCampaignAddResultDto 结构体
-type TaobaoOnebpDkxCampaignCampaignAddResultDto struct {
+// TaobaoonebpdkxcampaigncampaignaddResultDto 结构体
+type TaobaoonebpdkxcampaigncampaignaddResultDto struct {
 	// 返回消息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 返回结果

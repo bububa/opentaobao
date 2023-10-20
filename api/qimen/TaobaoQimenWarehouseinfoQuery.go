@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/qimen"
 )
 
-// TaobaoQimenWarehouseinfoQuery 货主仓库资源查询接口
+// Taobaoqimenwarehouseinfoquery 货主仓库资源查询接口
 // taobao.qimen.warehouseinfo.query
 //
 // 货主仓库资源查询
-func TaobaoQimenWarehouseinfoQuery(clt *core.SDKClient, req *qimen.TaobaoQimenWarehouseinfoQueryAPIRequest, session string) (*qimen.TaobaoQimenWarehouseinfoQueryAPIResponse, error) {
-	var resp qimen.TaobaoQimenWarehouseinfoQueryAPIResponse
+func Taobaoqimenwarehouseinfoquery(clt *core.SDKClient, req *qimen.TaobaoqimenwarehouseinfoqueryAPIRequest, session string) (*qimen.TaobaoqimenwarehouseinfoqueryAPIResponse, error) {
+	var resp qimen.TaobaoqimenwarehouseinfoqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

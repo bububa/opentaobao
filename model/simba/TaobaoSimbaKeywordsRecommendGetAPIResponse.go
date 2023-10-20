@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSimbaKeywordsRecommendGetAPIResponse 取得一个推广组的推荐关键词列表 API返回值
+// TaobaosimbakeywordsrecommendgetAPIResponse 取得一个推广组的推荐关键词列表 API返回值
 // taobao.simba.keywords.recommend.get
 //
 // 取得一个推广组的推荐关键词列表
-type TaobaoSimbaKeywordsRecommendGetAPIResponse struct {
+type TaobaosimbakeywordsrecommendgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoSimbaKeywordsRecommendGetAPIResponseModel
+	TaobaosimbakeywordsrecommendgetAPIResponseModel
 }
 
-// TaobaoSimbaKeywordsRecommendGetAPIResponseModel is 取得一个推广组的推荐关键词列表 成功返回结果
-type TaobaoSimbaKeywordsRecommendGetAPIResponseModel struct {
+// TaobaosimbakeywordsrecommendgetAPIResponseModel is 取得一个推广组的推荐关键词列表 成功返回结果
+type TaobaosimbakeywordsrecommendgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_keywords_recommend_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

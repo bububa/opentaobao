@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlscCrmCustomerUpdateAPIResponse 更新顾客信息 API返回值
+// AlibabaalsccrmcustomerupdateAPIResponse 更新顾客信息 API返回值
 // alibaba.alsc.crm.customer.update
 //
 // 更新顾客信息
-type AlibabaAlscCrmCustomerUpdateAPIResponse struct {
+type AlibabaalsccrmcustomerupdateAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlscCrmCustomerUpdateAPIResponseModel
+	AlibabaalsccrmcustomerupdateAPIResponseModel
 }
 
-// AlibabaAlscCrmCustomerUpdateAPIResponseModel is 更新顾客信息 成功返回结果
-type AlibabaAlscCrmCustomerUpdateAPIResponseModel struct {
+// AlibabaalsccrmcustomerupdateAPIResponseModel is 更新顾客信息 成功返回结果
+type AlibabaalsccrmcustomerupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_crm_customer_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

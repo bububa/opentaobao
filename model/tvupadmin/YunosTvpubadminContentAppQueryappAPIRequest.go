@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosTvpubadminContentAppQueryappAPIRequest 查询应用信息 API请求
+// YunostvpubadmincontentappqueryappAPIRequest 查询应用信息 API请求
 // yunos.tvpubadmin.content.app.queryapp
 //
 // 查询应用信息
-type YunosTvpubadminContentAppQueryappAPIRequest struct {
+type YunostvpubadmincontentappqueryappAPIRequest struct {
 	model.Params
 	// 查询条件
 	_query string
 }
 
-// NewYunosTvpubadminContentAppQueryappRequest 初始化YunosTvpubadminContentAppQueryappAPIRequest对象
-func NewYunosTvpubadminContentAppQueryappRequest() *YunosTvpubadminContentAppQueryappAPIRequest {
-	return &YunosTvpubadminContentAppQueryappAPIRequest{
+// NewYunostvpubadmincontentappqueryappRequest 初始化YunostvpubadmincontentappqueryappAPIRequest对象
+func NewYunostvpubadmincontentappqueryappRequest() *YunostvpubadmincontentappqueryappAPIRequest {
+	return &YunostvpubadmincontentappqueryappAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminContentAppQueryappAPIRequest) GetApiMethodName() string {
+func (r YunostvpubadmincontentappqueryappAPIRequest) GetApiMethodName() string {
 	return "yunos.tvpubadmin.content.app.queryapp"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminContentAppQueryappAPIRequest) GetApiParams(params url.Values) {
+func (r YunostvpubadmincontentappqueryappAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r YunosTvpubadminContentAppQueryappAPIRequest) GetRawParams() model.Params {
+func (r YunostvpubadmincontentappqueryappAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetQuery is Query Setter
 // 查询条件
-func (r *YunosTvpubadminContentAppQueryappAPIRequest) SetQuery(_query string) error {
+func (r *YunostvpubadmincontentappqueryappAPIRequest) SetQuery(_query string) error {
 	r._query = _query
 	r.Set("query", _query)
 	return nil
 }
 
 // GetQuery Query Getter
-func (r YunosTvpubadminContentAppQueryappAPIRequest) GetQuery() string {
+func (r YunostvpubadmincontentappqueryappAPIRequest) GetQuery() string {
 	return r._query
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoLogisticsExpressOrderTmsCancelAPIResponse 服务商上门取退时间取消接口 API返回值
+// TaobaologisticsexpressordertmscancelAPIResponse 服务商上门取退时间取消接口 API返回值
 // taobao.logistics.express.order.tms.cancel
 //
 // 服务商上门取退时间取消接口
-type TaobaoLogisticsExpressOrderTmsCancelAPIResponse struct {
+type TaobaologisticsexpressordertmscancelAPIResponse struct {
 	model.CommonResponse
-	TaobaoLogisticsExpressOrderTmsCancelAPIResponseModel
+	TaobaologisticsexpressordertmscancelAPIResponseModel
 }
 
-// TaobaoLogisticsExpressOrderTmsCancelAPIResponseModel is 服务商上门取退时间取消接口 成功返回结果
-type TaobaoLogisticsExpressOrderTmsCancelAPIResponseModel struct {
+// TaobaologisticsexpressordertmscancelAPIResponseModel is 服务商上门取退时间取消接口 成功返回结果
+type TaobaologisticsexpressordertmscancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_express_order_tms_cancel_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

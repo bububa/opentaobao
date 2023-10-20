@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaJymIndustryOutsidegamepropertysyncQuerypropertyinfoAPIResponse 外部查询游戏属性库属性信息 API返回值
+// AlibabajymindustryoutsidegamepropertysyncquerypropertyinfoAPIResponse 外部查询游戏属性库属性信息 API返回值
 // alibaba.jym.industry.outsidegamepropertysync.querypropertyinfo
 //
 // 外部查询游戏属性库属性信息
-type AlibabaJymIndustryOutsidegamepropertysyncQuerypropertyinfoAPIResponse struct {
+type AlibabajymindustryoutsidegamepropertysyncquerypropertyinfoAPIResponse struct {
 	model.CommonResponse
-	AlibabaJymIndustryOutsidegamepropertysyncQuerypropertyinfoAPIResponseModel
+	AlibabajymindustryoutsidegamepropertysyncquerypropertyinfoAPIResponseModel
 }
 
-// AlibabaJymIndustryOutsidegamepropertysyncQuerypropertyinfoAPIResponseModel is 外部查询游戏属性库属性信息 成功返回结果
-type AlibabaJymIndustryOutsidegamepropertysyncQuerypropertyinfoAPIResponseModel struct {
+// AlibabajymindustryoutsidegamepropertysyncquerypropertyinfoAPIResponseModel is 外部查询游戏属性库属性信息 成功返回结果
+type AlibabajymindustryoutsidegamepropertysyncquerypropertyinfoAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_jym_industry_outsidegamepropertysync_querypropertyinfo_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

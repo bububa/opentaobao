@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/perfect"
 )
 
-// AlibabaTcwmsOutboundLoadBoxcodeCreate 创建箱号
+// Alibabatcwmsoutboundloadboxcodecreate 创建箱号
 // alibaba.tcwms.outbound.load.boxcode.create
 //
 // 创建箱号
-func AlibabaTcwmsOutboundLoadBoxcodeCreate(clt *core.SDKClient, req *perfect.AlibabaTcwmsOutboundLoadBoxcodeCreateAPIRequest, session string) (*perfect.AlibabaTcwmsOutboundLoadBoxcodeCreateAPIResponse, error) {
-	var resp perfect.AlibabaTcwmsOutboundLoadBoxcodeCreateAPIResponse
+func Alibabatcwmsoutboundloadboxcodecreate(clt *core.SDKClient, req *perfect.AlibabatcwmsoutboundloadboxcodecreateAPIRequest, session string) (*perfect.AlibabatcwmsoutboundloadboxcodecreateAPIResponse, error) {
+	var resp perfect.AlibabatcwmsoutboundloadboxcodecreateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

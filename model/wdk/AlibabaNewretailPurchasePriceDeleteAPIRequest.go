@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaNewretailPurchasePriceDeleteAPIRequest 共享库存 商户删除采购价 API请求
+// AlibabanewretailpurchasepricedeleteAPIRequest 共享库存 商户删除采购价 API请求
 // alibaba.newretail.purchase.price.delete
 //
 // 共享库存 商户删除采购价
-type AlibabaNewretailPurchasePriceDeleteAPIRequest struct {
+type AlibabanewretailpurchasepricedeleteAPIRequest struct {
 	model.Params
 	// 调用入参
 	_deletePurchasePriceRequest *DeletePurchasePriceRequest
 }
 
-// NewAlibabaNewretailPurchasePriceDeleteRequest 初始化AlibabaNewretailPurchasePriceDeleteAPIRequest对象
-func NewAlibabaNewretailPurchasePriceDeleteRequest() *AlibabaNewretailPurchasePriceDeleteAPIRequest {
-	return &AlibabaNewretailPurchasePriceDeleteAPIRequest{
+// NewAlibabanewretailpurchasepricedeleteRequest 初始化AlibabanewretailpurchasepricedeleteAPIRequest对象
+func NewAlibabanewretailpurchasepricedeleteRequest() *AlibabanewretailpurchasepricedeleteAPIRequest {
+	return &AlibabanewretailpurchasepricedeleteAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaNewretailPurchasePriceDeleteAPIRequest) GetApiMethodName() string {
+func (r AlibabanewretailpurchasepricedeleteAPIRequest) GetApiMethodName() string {
 	return "alibaba.newretail.purchase.price.delete"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaNewretailPurchasePriceDeleteAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabanewretailpurchasepricedeleteAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaNewretailPurchasePriceDeleteAPIRequest) GetRawParams() model.Params {
+func (r AlibabanewretailpurchasepricedeleteAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDeletePurchasePriceRequest is DeletePurchasePriceRequest Setter
 // 调用入参
-func (r *AlibabaNewretailPurchasePriceDeleteAPIRequest) SetDeletePurchasePriceRequest(_deletePurchasePriceRequest *DeletePurchasePriceRequest) error {
+func (r *AlibabanewretailpurchasepricedeleteAPIRequest) SetDeletePurchasePriceRequest(_deletePurchasePriceRequest *DeletePurchasePriceRequest) error {
 	r._deletePurchasePriceRequest = _deletePurchasePriceRequest
 	r.Set("delete_purchase_price_request", _deletePurchasePriceRequest)
 	return nil
 }
 
 // GetDeletePurchasePriceRequest DeletePurchasePriceRequest Getter
-func (r AlibabaNewretailPurchasePriceDeleteAPIRequest) GetDeletePurchasePriceRequest() *DeletePurchasePriceRequest {
+func (r AlibabanewretailpurchasepricedeleteAPIRequest) GetDeletePurchasePriceRequest() *DeletePurchasePriceRequest {
 	return r._deletePurchasePriceRequest
 }

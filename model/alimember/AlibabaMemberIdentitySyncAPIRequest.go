@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMemberIdentitySyncAPIRequest 会员身份信息同步 API请求
+// AlibabamemberidentitysyncAPIRequest 会员身份信息同步 API请求
 // alibaba.member.identity.sync
 //
 // 会员身份信息同步
-type AlibabaMemberIdentitySyncAPIRequest struct {
+type AlibabamemberidentitysyncAPIRequest struct {
 	model.Params
 	// 会员身份同步信息
 	_syncDto *SyncMemberIdentityDto
 }
 
-// NewAlibabaMemberIdentitySyncRequest 初始化AlibabaMemberIdentitySyncAPIRequest对象
-func NewAlibabaMemberIdentitySyncRequest() *AlibabaMemberIdentitySyncAPIRequest {
-	return &AlibabaMemberIdentitySyncAPIRequest{
+// NewAlibabamemberidentitysyncRequest 初始化AlibabamemberidentitysyncAPIRequest对象
+func NewAlibabamemberidentitysyncRequest() *AlibabamemberidentitysyncAPIRequest {
+	return &AlibabamemberidentitysyncAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaMemberIdentitySyncAPIRequest) GetApiMethodName() string {
+func (r AlibabamemberidentitysyncAPIRequest) GetApiMethodName() string {
 	return "alibaba.member.identity.sync"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaMemberIdentitySyncAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabamemberidentitysyncAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaMemberIdentitySyncAPIRequest) GetRawParams() model.Params {
+func (r AlibabamemberidentitysyncAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSyncDto is SyncDto Setter
 // 会员身份同步信息
-func (r *AlibabaMemberIdentitySyncAPIRequest) SetSyncDto(_syncDto *SyncMemberIdentityDto) error {
+func (r *AlibabamemberidentitysyncAPIRequest) SetSyncDto(_syncDto *SyncMemberIdentityDto) error {
 	r._syncDto = _syncDto
 	r.Set("sync_dto", _syncDto)
 	return nil
 }
 
 // GetSyncDto SyncDto Getter
-func (r AlibabaMemberIdentitySyncAPIRequest) GetSyncDto() *SyncMemberIdentityDto {
+func (r AlibabamemberidentitysyncAPIRequest) GetSyncDto() *SyncMemberIdentityDto {
 	return r._syncDto
 }

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YoukuWenyuvideoPersionSearchAPIRequest 根据人物名称查询人物列表 API请求
+// YoukuwenyuvideopersionsearchAPIRequest 根据人物名称查询人物列表 API请求
 // youku.wenyuvideo.persion.search
 //
 // 根据人物名称查询人物列表
-type YoukuWenyuvideoPersionSearchAPIRequest struct {
+type YoukuwenyuvideopersionsearchAPIRequest struct {
 	model.Params
 	// 人物名字，搜索规则是完全匹配，即只返回同名人物列表
 	_personName string
 }
 
-// NewYoukuWenyuvideoPersionSearchRequest 初始化YoukuWenyuvideoPersionSearchAPIRequest对象
-func NewYoukuWenyuvideoPersionSearchRequest() *YoukuWenyuvideoPersionSearchAPIRequest {
-	return &YoukuWenyuvideoPersionSearchAPIRequest{
+// NewYoukuwenyuvideopersionsearchRequest 初始化YoukuwenyuvideopersionsearchAPIRequest对象
+func NewYoukuwenyuvideopersionsearchRequest() *YoukuwenyuvideopersionsearchAPIRequest {
+	return &YoukuwenyuvideopersionsearchAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r YoukuWenyuvideoPersionSearchAPIRequest) GetApiMethodName() string {
+func (r YoukuwenyuvideopersionsearchAPIRequest) GetApiMethodName() string {
 	return "youku.wenyuvideo.persion.search"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YoukuWenyuvideoPersionSearchAPIRequest) GetApiParams(params url.Values) {
+func (r YoukuwenyuvideopersionsearchAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r YoukuWenyuvideoPersionSearchAPIRequest) GetRawParams() model.Params {
+func (r YoukuwenyuvideopersionsearchAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetPersonName is PersonName Setter
 // 人物名字，搜索规则是完全匹配，即只返回同名人物列表
-func (r *YoukuWenyuvideoPersionSearchAPIRequest) SetPersonName(_personName string) error {
+func (r *YoukuwenyuvideopersionsearchAPIRequest) SetPersonName(_personName string) error {
 	r._personName = _personName
 	r.Set("person_name", _personName)
 	return nil
 }
 
 // GetPersonName PersonName Getter
-func (r YoukuWenyuvideoPersionSearchAPIRequest) GetPersonName() string {
+func (r YoukuwenyuvideopersionsearchAPIRequest) GetPersonName() string {
 	return r._personName
 }

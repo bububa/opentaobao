@@ -1,7 +1,7 @@
 package normalvisa
 
-// TaobaoAlitripTravelNormalvisaUploadfileResultSet 结构体
-type TaobaoAlitripTravelNormalvisaUploadfileResultSet struct {
+// TaobaoalitriptravelnormalvisauploadfileResultSet 结构体
+type TaobaoalitriptravelnormalvisauploadfileResultSet struct {
 	// 结果列表
 	Results []bool `json:"results,omitempty" xml:"results>bool,omitempty"`
 	// 异常

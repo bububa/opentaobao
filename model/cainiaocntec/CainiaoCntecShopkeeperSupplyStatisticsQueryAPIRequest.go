@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest 团购业务供货商查询门店统计数据 API请求
+// CainiaocntecshopkeepersupplystatisticsqueryAPIRequest 团购业务供货商查询门店统计数据 API请求
 // cainiao.cntec.shopkeeper.supply.statistics.query
 //
 // 查询门店售卖商品统计数据
-type CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest struct {
+type CainiaocntecshopkeepersupplystatisticsqueryAPIRequest struct {
 	model.Params
 	// 查询参数
 	_queryActivityDto *QueryActivityDto
 }
 
-// NewCainiaoCntecShopkeeperSupplyStatisticsQueryRequest 初始化CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest对象
-func NewCainiaoCntecShopkeeperSupplyStatisticsQueryRequest() *CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest {
-	return &CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest{
+// NewCainiaocntecshopkeepersupplystatisticsqueryRequest 初始化CainiaocntecshopkeepersupplystatisticsqueryAPIRequest对象
+func NewCainiaocntecshopkeepersupplystatisticsqueryRequest() *CainiaocntecshopkeepersupplystatisticsqueryAPIRequest {
+	return &CainiaocntecshopkeepersupplystatisticsqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest) GetApiMethodName() string {
+func (r CainiaocntecshopkeepersupplystatisticsqueryAPIRequest) GetApiMethodName() string {
 	return "cainiao.cntec.shopkeeper.supply.statistics.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest) GetApiParams(params url.Values) {
+func (r CainiaocntecshopkeepersupplystatisticsqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest) GetRawParams() model.Params {
+func (r CainiaocntecshopkeepersupplystatisticsqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetQueryActivityDto is QueryActivityDto Setter
 // 查询参数
-func (r *CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest) SetQueryActivityDto(_queryActivityDto *QueryActivityDto) error {
+func (r *CainiaocntecshopkeepersupplystatisticsqueryAPIRequest) SetQueryActivityDto(_queryActivityDto *QueryActivityDto) error {
 	r._queryActivityDto = _queryActivityDto
 	r.Set("query_activity_dto", _queryActivityDto)
 	return nil
 }
 
 // GetQueryActivityDto QueryActivityDto Getter
-func (r CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest) GetQueryActivityDto() *QueryActivityDto {
+func (r CainiaocntecshopkeepersupplystatisticsqueryAPIRequest) GetQueryActivityDto() *QueryActivityDto {
 	return r._queryActivityDto
 }

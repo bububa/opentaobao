@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaScbpAdGroupCreateForbiddenProductAPIRequest 创建屏蔽品 API请求
+// AlibabascbpadgroupcreateforbiddenproductAPIRequest 创建屏蔽品 API请求
 // alibaba.scbp.ad.group.create.forbidden.product
 //
 // 创建屏蔽品
-type AlibabaScbpAdGroupCreateForbiddenProductAPIRequest struct {
+type AlibabascbpadgroupcreateforbiddenproductAPIRequest struct {
 	model.Params
 	// 用户信息
 	_topContext *TopContextDto
@@ -20,65 +20,65 @@ type AlibabaScbpAdGroupCreateForbiddenProductAPIRequest struct {
 	_forbiddenProductBatchOperation *ForbiddenProductBatchOperationDto
 }
 
-// NewAlibabaScbpAdGroupCreateForbiddenProductRequest 初始化AlibabaScbpAdGroupCreateForbiddenProductAPIRequest对象
-func NewAlibabaScbpAdGroupCreateForbiddenProductRequest() *AlibabaScbpAdGroupCreateForbiddenProductAPIRequest {
-	return &AlibabaScbpAdGroupCreateForbiddenProductAPIRequest{
+// NewAlibabascbpadgroupcreateforbiddenproductRequest 初始化AlibabascbpadgroupcreateforbiddenproductAPIRequest对象
+func NewAlibabascbpadgroupcreateforbiddenproductRequest() *AlibabascbpadgroupcreateforbiddenproductAPIRequest {
+	return &AlibabascbpadgroupcreateforbiddenproductAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) GetApiMethodName() string {
+func (r AlibabascbpadgroupcreateforbiddenproductAPIRequest) GetApiMethodName() string {
 	return "alibaba.scbp.ad.group.create.forbidden.product"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabascbpadgroupcreateforbiddenproductAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) GetRawParams() model.Params {
+func (r AlibabascbpadgroupcreateforbiddenproductAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTopContext is TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) SetTopContext(_topContext *TopContextDto) error {
+func (r *AlibabascbpadgroupcreateforbiddenproductAPIRequest) SetTopContext(_topContext *TopContextDto) error {
 	r._topContext = _topContext
 	r.Set("top_context", _topContext)
 	return nil
 }
 
 // GetTopContext TopContext Getter
-func (r AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) GetTopContext() *TopContextDto {
+func (r AlibabascbpadgroupcreateforbiddenproductAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
 }
 
 // SetCampaignId is CampaignId Setter
 // 计划id
-func (r *AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) SetCampaignId(_campaignId int64) error {
+func (r *AlibabascbpadgroupcreateforbiddenproductAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
 	r.Set("campaign_id", _campaignId)
 	return nil
 }
 
 // GetCampaignId CampaignId Getter
-func (r AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) GetCampaignId() int64 {
+func (r AlibabascbpadgroupcreateforbiddenproductAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
 // SetForbiddenProductBatchOperation is ForbiddenProductBatchOperation Setter
 // 查询条件
-func (r *AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) SetForbiddenProductBatchOperation(_forbiddenProductBatchOperation *ForbiddenProductBatchOperationDto) error {
+func (r *AlibabascbpadgroupcreateforbiddenproductAPIRequest) SetForbiddenProductBatchOperation(_forbiddenProductBatchOperation *ForbiddenProductBatchOperationDto) error {
 	r._forbiddenProductBatchOperation = _forbiddenProductBatchOperation
 	r.Set("forbidden_product_batch_operation", _forbiddenProductBatchOperation)
 	return nil
 }
 
 // GetForbiddenProductBatchOperation ForbiddenProductBatchOperation Getter
-func (r AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) GetForbiddenProductBatchOperation() *ForbiddenProductBatchOperationDto {
+func (r AlibabascbpadgroupcreateforbiddenproductAPIRequest) GetForbiddenProductBatchOperation() *ForbiddenProductBatchOperationDto {
 	return r._forbiddenProductBatchOperation
 }

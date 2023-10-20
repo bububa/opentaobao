@@ -1,7 +1,7 @@
 package trade
 
-// AlitripRailTradeRefundResultSet 结构体
-type AlitripRailTradeRefundResultSet struct {
+// AlitriprailtraderefundResultSet 结构体
+type AlitriprailtraderefundResultSet struct {
 	// errorCode
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// errorMsg

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlscCrmCardBindcustomerAPIResponse 卡号绑定顾客 API返回值
+// AlibabaalsccrmcardbindcustomerAPIResponse 卡号绑定顾客 API返回值
 // alibaba.alsc.crm.card.bindcustomer
 //
 // 为卡号绑定顾客
-type AlibabaAlscCrmCardBindcustomerAPIResponse struct {
+type AlibabaalsccrmcardbindcustomerAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlscCrmCardBindcustomerAPIResponseModel
+	AlibabaalsccrmcardbindcustomerAPIResponseModel
 }
 
-// AlibabaAlscCrmCardBindcustomerAPIResponseModel is 卡号绑定顾客 成功返回结果
-type AlibabaAlscCrmCardBindcustomerAPIResponseModel struct {
+// AlibabaalsccrmcardbindcustomerAPIResponseModel is 卡号绑定顾客 成功返回结果
+type AlibabaalsccrmcardbindcustomerAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_crm_card_bindcustomer_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

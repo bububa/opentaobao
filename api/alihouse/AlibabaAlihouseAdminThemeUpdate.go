@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// AlibabaAlihouseAdminThemeUpdate 云主题更新
+// Alibabaalihouseadminthemeupdate 云主题更新
 // alibaba.alihouse.admin.theme.update
 //
 // 云主题更新
-func AlibabaAlihouseAdminThemeUpdate(clt *core.SDKClient, req *alihouse.AlibabaAlihouseAdminThemeUpdateAPIRequest, session string) (*alihouse.AlibabaAlihouseAdminThemeUpdateAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseAdminThemeUpdateAPIResponse
+func Alibabaalihouseadminthemeupdate(clt *core.SDKClient, req *alihouse.AlibabaalihouseadminthemeupdateAPIRequest, session string) (*alihouse.AlibabaalihouseadminthemeupdateAPIResponse, error) {
+	var resp alihouse.AlibabaalihouseadminthemeupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

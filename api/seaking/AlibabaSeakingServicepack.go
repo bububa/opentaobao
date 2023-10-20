@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/seaking"
 )
 
-// AlibabaSeakingServicepack 获取海王用户权限包
+// Alibabaseakingservicepack 获取海王用户权限包
 // alibaba.seaking.servicepack
 //
 // 获取海王用户权限包
-func AlibabaSeakingServicepack(clt *core.SDKClient, req *seaking.AlibabaSeakingServicepackAPIRequest, session string) (*seaking.AlibabaSeakingServicepackAPIResponse, error) {
-	var resp seaking.AlibabaSeakingServicepackAPIResponse
+func Alibabaseakingservicepack(clt *core.SDKClient, req *seaking.AlibabaseakingservicepackAPIRequest, session string) (*seaking.AlibabaseakingservicepackAPIResponse, error) {
+	var resp seaking.AlibabaseakingservicepackAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/bus"
 )
 
-// TaobaoBusNumbersUpdate 汽车票车次更新服务
+// Taobaobusnumbersupdate 汽车票车次更新服务
 // taobao.bus.numbers.update
 //
 // 用于汽车票车次信息的新增、更新和逻辑删除
-func TaobaoBusNumbersUpdate(clt *core.SDKClient, req *bus.TaobaoBusNumbersUpdateAPIRequest, session string) (*bus.TaobaoBusNumbersUpdateAPIResponse, error) {
-	var resp bus.TaobaoBusNumbersUpdateAPIResponse
+func Taobaobusnumbersupdate(clt *core.SDKClient, req *bus.TaobaobusnumbersupdateAPIRequest, session string) (*bus.TaobaobusnumbersupdateAPIResponse, error) {
+	var resp bus.TaobaobusnumbersupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

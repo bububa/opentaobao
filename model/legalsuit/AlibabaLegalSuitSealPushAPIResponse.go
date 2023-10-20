@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaLegalSuitSealPushAPIResponse 法宝推送用印 API返回值
+// AlibabalegalsuitsealpushAPIResponse 法宝推送用印 API返回值
 // alibaba.legal.suit.seal.push
 //
 // 法宝推送用印
-type AlibabaLegalSuitSealPushAPIResponse struct {
+type AlibabalegalsuitsealpushAPIResponse struct {
 	model.CommonResponse
-	AlibabaLegalSuitSealPushAPIResponseModel
+	AlibabalegalsuitsealpushAPIResponseModel
 }
 
-// AlibabaLegalSuitSealPushAPIResponseModel is 法宝推送用印 成功返回结果
-type AlibabaLegalSuitSealPushAPIResponseModel struct {
+// AlibabalegalsuitsealpushAPIResponseModel is 法宝推送用印 成功返回结果
+type AlibabalegalsuitsealpushAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_legal_suit_seal_push_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

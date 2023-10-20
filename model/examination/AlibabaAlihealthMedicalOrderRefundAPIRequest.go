@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthMedicalOrderRefundAPIRequest 退款接口 API请求
+// AlibabaalihealthmedicalorderrefundAPIRequest 退款接口 API请求
 // alibaba.alihealth.medical.order.refund
 //
 // 退款接口
-type AlibabaAlihealthMedicalOrderRefundAPIRequest struct {
+type AlibabaalihealthmedicalorderrefundAPIRequest struct {
 	model.Params
 	// 入参
 	_orderRefundRequest *OrderRefundRequest
 }
 
-// NewAlibabaAlihealthMedicalOrderRefundRequest 初始化AlibabaAlihealthMedicalOrderRefundAPIRequest对象
-func NewAlibabaAlihealthMedicalOrderRefundRequest() *AlibabaAlihealthMedicalOrderRefundAPIRequest {
-	return &AlibabaAlihealthMedicalOrderRefundAPIRequest{
+// NewAlibabaalihealthmedicalorderrefundRequest 初始化AlibabaalihealthmedicalorderrefundAPIRequest对象
+func NewAlibabaalihealthmedicalorderrefundRequest() *AlibabaalihealthmedicalorderrefundAPIRequest {
+	return &AlibabaalihealthmedicalorderrefundAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthMedicalOrderRefundAPIRequest) GetApiMethodName() string {
+func (r AlibabaalihealthmedicalorderrefundAPIRequest) GetApiMethodName() string {
 	return "alibaba.alihealth.medical.order.refund"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthMedicalOrderRefundAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalihealthmedicalorderrefundAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlihealthMedicalOrderRefundAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalihealthmedicalorderrefundAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOrderRefundRequest is OrderRefundRequest Setter
 // 入参
-func (r *AlibabaAlihealthMedicalOrderRefundAPIRequest) SetOrderRefundRequest(_orderRefundRequest *OrderRefundRequest) error {
+func (r *AlibabaalihealthmedicalorderrefundAPIRequest) SetOrderRefundRequest(_orderRefundRequest *OrderRefundRequest) error {
 	r._orderRefundRequest = _orderRefundRequest
 	r.Set("order_refund_request", _orderRefundRequest)
 	return nil
 }
 
 // GetOrderRefundRequest OrderRefundRequest Getter
-func (r AlibabaAlihealthMedicalOrderRefundAPIRequest) GetOrderRefundRequest() *OrderRefundRequest {
+func (r AlibabaalihealthmedicalorderrefundAPIRequest) GetOrderRefundRequest() *OrderRefundRequest {
 	return r._orderRefundRequest
 }

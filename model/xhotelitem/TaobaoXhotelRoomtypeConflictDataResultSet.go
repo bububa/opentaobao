@@ -1,7 +1,7 @@
 package xhotelitem
 
-// TaobaoXhotelRoomtypeConflictDataResultSet 结构体
-type TaobaoXhotelRoomtypeConflictDataResultSet struct {
+// TaobaoxhotelroomtypeconflictdataResultSet 结构体
+type TaobaoxhotelroomtypeconflictdataResultSet struct {
 	// 结果集
 	Results []RoomTypeCheckResultDo `json:"results,omitempty" xml:"results>room_type_check_result_do,omitempty"`
 	// 警告信息

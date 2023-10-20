@@ -1,7 +1,7 @@
 package tmallservice
 
-// TmallFuwuServiceitemListResult 结构体
-type TmallFuwuServiceitemListResult struct {
+// TmallfuwuserviceitemlistResult 结构体
+type TmallfuwuserviceitemlistResult struct {
 	// 服务商品信息列表的json对象
 	ResultData string `json:"result_data,omitempty" xml:"result_data,omitempty"`
 	// message

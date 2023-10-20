@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponse 根据交易单号判断是否为菜鸟发货订单 API返回值
+// CainiaocbossworkplatformlogisticsiscainiaoorderAPIResponse 根据交易单号判断是否为菜鸟发货订单 API返回值
 // cainiao.cboss.workplatform.logistics.iscainiaoorder
 //
 // 根据交易单号判断是否为菜鸟发货订单
-type CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponse struct {
+type CainiaocbossworkplatformlogisticsiscainiaoorderAPIResponse struct {
 	model.CommonResponse
-	CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponseModel
+	CainiaocbossworkplatformlogisticsiscainiaoorderAPIResponseModel
 }
 
-// CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponseModel is 根据交易单号判断是否为菜鸟发货订单 成功返回结果
-type CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponseModel struct {
+// CainiaocbossworkplatformlogisticsiscainiaoorderAPIResponseModel is 根据交易单号判断是否为菜鸟发货订单 成功返回结果
+type CainiaocbossworkplatformlogisticsiscainiaoorderAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_cboss_workplatform_logistics_iscainiaoorder_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

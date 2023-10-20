@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaAlihouseNewhomeShopconfigAstoreSyncResult 结构体
-type AlibabaAlihouseNewhomeShopconfigAstoreSyncResult struct {
+// AlibabaalihousenewhomeshopconfigastoresyncResult 结构体
+type AlibabaalihousenewhomeshopconfigastoresyncResult struct {
 	// 处理完成后的消息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 错误/成功码

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaLegalSuitPaymentPushAPIResponse 外部推送缴费 API返回值
+// AlibabalegalsuitpaymentpushAPIResponse 外部推送缴费 API返回值
 // alibaba.legal.suit.payment.push
 //
 // 外部推送缴费
-type AlibabaLegalSuitPaymentPushAPIResponse struct {
+type AlibabalegalsuitpaymentpushAPIResponse struct {
 	model.CommonResponse
-	AlibabaLegalSuitPaymentPushAPIResponseModel
+	AlibabalegalsuitpaymentpushAPIResponseModel
 }
 
-// AlibabaLegalSuitPaymentPushAPIResponseModel is 外部推送缴费 成功返回结果
-type AlibabaLegalSuitPaymentPushAPIResponseModel struct {
+// AlibabalegalsuitpaymentpushAPIResponseModel is 外部推送缴费 成功返回结果
+type AlibabalegalsuitpaymentpushAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_legal_suit_payment_push_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

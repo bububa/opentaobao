@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlinkMessageConfigSetAPIResponse 消息提醒开关 API返回值
+// AlibabaalinkmessageconfigsetAPIResponse 消息提醒开关 API返回值
 // alibaba.alink.message.config.set
 //
 // 阿里智能消息开关
-type AlibabaAlinkMessageConfigSetAPIResponse struct {
+type AlibabaalinkmessageconfigsetAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlinkMessageConfigSetAPIResponseModel
+	AlibabaalinkmessageconfigsetAPIResponseModel
 }
 
-// AlibabaAlinkMessageConfigSetAPIResponseModel is 消息提醒开关 成功返回结果
-type AlibabaAlinkMessageConfigSetAPIResponseModel struct {
+// AlibabaalinkmessageconfigsetAPIResponseModel is 消息提醒开关 成功返回结果
+type AlibabaalinkmessageconfigsetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alink_message_config_set_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

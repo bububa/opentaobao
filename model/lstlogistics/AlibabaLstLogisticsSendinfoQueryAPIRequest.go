@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaLstLogisticsSendinfoQueryAPIRequest 供应商-异云-查询主订单包含的物流单 API请求
+// AlibabalstlogisticssendinfoqueryAPIRequest 供应商-异云-查询主订单包含的物流单 API请求
 // alibaba.lst.logistics.sendinfo.query
 //
 // 查询主订单包含的物流单
-type AlibabaLstLogisticsSendinfoQueryAPIRequest struct {
+type AlibabalstlogisticssendinfoqueryAPIRequest struct {
 	model.Params
 	// 入参
 	_query *LstLogisticsInfoQuery
 }
 
-// NewAlibabaLstLogisticsSendinfoQueryRequest 初始化AlibabaLstLogisticsSendinfoQueryAPIRequest对象
-func NewAlibabaLstLogisticsSendinfoQueryRequest() *AlibabaLstLogisticsSendinfoQueryAPIRequest {
-	return &AlibabaLstLogisticsSendinfoQueryAPIRequest{
+// NewAlibabalstlogisticssendinfoqueryRequest 初始化AlibabalstlogisticssendinfoqueryAPIRequest对象
+func NewAlibabalstlogisticssendinfoqueryRequest() *AlibabalstlogisticssendinfoqueryAPIRequest {
+	return &AlibabalstlogisticssendinfoqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaLstLogisticsSendinfoQueryAPIRequest) GetApiMethodName() string {
+func (r AlibabalstlogisticssendinfoqueryAPIRequest) GetApiMethodName() string {
 	return "alibaba.lst.logistics.sendinfo.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaLstLogisticsSendinfoQueryAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabalstlogisticssendinfoqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaLstLogisticsSendinfoQueryAPIRequest) GetRawParams() model.Params {
+func (r AlibabalstlogisticssendinfoqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetQuery is Query Setter
 // 入参
-func (r *AlibabaLstLogisticsSendinfoQueryAPIRequest) SetQuery(_query *LstLogisticsInfoQuery) error {
+func (r *AlibabalstlogisticssendinfoqueryAPIRequest) SetQuery(_query *LstLogisticsInfoQuery) error {
 	r._query = _query
 	r.Set("query", _query)
 	return nil
 }
 
 // GetQuery Query Getter
-func (r AlibabaLstLogisticsSendinfoQueryAPIRequest) GetQuery() *LstLogisticsInfoQuery {
+func (r AlibabalstlogisticssendinfoqueryAPIRequest) GetQuery() *LstLogisticsInfoQuery {
 	return r._query
 }

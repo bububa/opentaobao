@@ -7,7 +7,7 @@ type SingleResult struct {
 	// 参照返回码定义列表
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// data
-	Data *CainiaoEndpointLockerTopOrderNoticesendQueryData `json:"data,omitempty" xml:"data,omitempty"`
+	Data *CainiaoendpointlockertopordernoticesendqueryData `json:"data,omitempty" xml:"data,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

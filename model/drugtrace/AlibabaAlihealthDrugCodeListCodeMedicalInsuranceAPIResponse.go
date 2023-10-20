@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponse 根据码获取码信息接口-医保 API返回值
+// AlibabaalihealthdrugcodelistcodemedicalinsuranceAPIResponse 根据码获取码信息接口-医保 API返回值
 // alibaba.alihealth.drug.code.list.code.medical.insurance
 //
 // 服务描述
@@ -16,16 +16,16 @@ import (
 // 若所传的监管码是非最小包装监管码，且存在药品混包的情况，则此接口不支持。这种
 // 情况下，需要分多次调用该接口。
 // 核查平台优先过滤非8开头的，长度非20位数字的码信息。
-type AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponse struct {
+type AlibabaalihealthdrugcodelistcodemedicalinsuranceAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponseModel
+	AlibabaalihealthdrugcodelistcodemedicalinsuranceAPIResponseModel
 }
 
-// AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponseModel is 根据码获取码信息接口-医保 成功返回结果
-type AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponseModel struct {
+// AlibabaalihealthdrugcodelistcodemedicalinsuranceAPIResponseModel is 根据码获取码信息接口-医保 成功返回结果
+type AlibabaalihealthdrugcodelistcodemedicalinsuranceAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drug_code_list_code_medical_insurance_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 最外层结果
-	Result *AlibabaAlihealthDrugCodeListCodeMedicalInsuranceResultModel `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaalihealthdrugcodelistcodemedicalinsuranceResultModel `json:"result,omitempty" xml:"result,omitempty"`
 }

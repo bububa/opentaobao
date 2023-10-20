@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaAlihouseAdminThemeCreateResult 结构体
-type AlibabaAlihouseAdminThemeCreateResult struct {
+// AlibabaalihouseadminthemecreateResult 结构体
+type AlibabaalihouseadminthemecreateResult struct {
 	// code
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// message

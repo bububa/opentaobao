@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// TaobaoSimbaInsightCatsinfoGet 类目信息获取
+// Taobaosimbainsightcatsinfoget 类目信息获取
 // taobao.simba.insight.catsinfo.get
 //
 // 获取类目信息，此接口既提供所有顶级类目的查询，又提供给定类目id自身信息和子类目信息的查询，所以可以根据此接口逐层获取所有的类目信息
-func TaobaoSimbaInsightCatsinfoGet(clt *core.SDKClient, req *simba.TaobaoSimbaInsightCatsinfoGetAPIRequest, session string) (*simba.TaobaoSimbaInsightCatsinfoGetAPIResponse, error) {
-	var resp simba.TaobaoSimbaInsightCatsinfoGetAPIResponse
+func Taobaosimbainsightcatsinfoget(clt *core.SDKClient, req *simba.TaobaosimbainsightcatsinfogetAPIRequest, session string) (*simba.TaobaosimbainsightcatsinfogetAPIResponse, error) {
+	var resp simba.TaobaosimbainsightcatsinfogetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

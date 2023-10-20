@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AlitripMerchantGalaxyCouponInvalidListResponse 结构体
-type AlitripMerchantGalaxyCouponInvalidListResponse struct {
+// AlitripmerchantgalaxycouponinvalidlistResponse 结构体
+type AlitripmerchantgalaxycouponinvalidlistResponse struct {
 	// 优惠券详情
 	Contents []CouponInfo `json:"contents,omitempty" xml:"contents>coupon_info,omitempty"`
 	// 错误编码

@@ -1,7 +1,7 @@
 package bus
 
-// B2BRefundOrderRp 结构体
-type B2BRefundOrderRp struct {
+// B2brefundOrderRp 结构体
+type B2brefundOrderRp struct {
 	// results
 	Results []string `json:"results,omitempty" xml:"results>string,omitempty"`
 	// errorCode

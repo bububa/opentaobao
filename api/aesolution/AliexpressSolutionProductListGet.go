@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/aesolution"
 )
 
-// AliexpressSolutionProductListGet Get product list
+// Aliexpresssolutionproductlistget Get product list
 // aliexpress.solution.product.list.get
 //
 // Get product list
-func AliexpressSolutionProductListGet(clt *core.SDKClient, req *aesolution.AliexpressSolutionProductListGetAPIRequest, session string) (*aesolution.AliexpressSolutionProductListGetAPIResponse, error) {
-	var resp aesolution.AliexpressSolutionProductListGetAPIResponse
+func Aliexpresssolutionproductlistget(clt *core.SDKClient, req *aesolution.AliexpresssolutionproductlistgetAPIRequest, session string) (*aesolution.AliexpresssolutionproductlistgetAPIResponse, error) {
+	var resp aesolution.AliexpresssolutionproductlistgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

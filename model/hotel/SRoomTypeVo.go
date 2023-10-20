@@ -1,7 +1,7 @@
 package hotel
 
-// SRoomTypeVo 结构体
-type SRoomTypeVo struct {
+// SroomTypeVo 结构体
+type SroomTypeVo struct {
 	// 面积
 	Area string `json:"area,omitempty" xml:"area,omitempty"`
 	// 设施文本
@@ -33,5 +33,5 @@ type SRoomTypeVo struct {
 	// 上下架状态，0--下架，其他状态-下架
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 房型附加属性集合
-	SroomTypeProperties *SRoomTypePropertiesSetVo `json:"sroom_type_properties,omitempty" xml:"sroom_type_properties,omitempty"`
+	SroomTypeProperties *SroomTypePropertiesSetVo `json:"sroom_type_properties,omitempty" xml:"sroom_type_properties,omitempty"`
 }

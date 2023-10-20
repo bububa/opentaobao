@@ -1,7 +1,7 @@
 package iot
 
-// TaobaoAilabAicloudTopDeviceDetailinfoGetResult 结构体
-type TaobaoAilabAicloudTopDeviceDetailinfoGetResult struct {
+// TaobaoailabaicloudtopdevicedetailinfogetResult 结构体
+type TaobaoailabaicloudtopdevicedetailinfogetResult struct {
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// code

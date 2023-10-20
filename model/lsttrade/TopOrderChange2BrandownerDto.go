@@ -1,7 +1,7 @@
 package lsttrade
 
-// TopOrderChange2BrandownerDto 结构体
-type TopOrderChange2BrandownerDto struct {
+// TopOrderChange2brandownerDto 结构体
+type TopOrderChange2brandownerDto struct {
 	// FORWARD_ORDER 正向订单表示正常购买流程,REVERSE_ORDER 逆向订单表示退款流程
 	BizType string `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
 	// 退款单id

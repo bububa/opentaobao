@@ -1,5 +1,5 @@
 package qimen
 
-// TaobaoQimenStockoutConfirmMap 结构体
-type TaobaoQimenStockoutConfirmMap struct {
+// TaobaoqimenstockoutconfirmMap 结构体
+type TaobaoqimenstockoutconfirmMap struct {
 }

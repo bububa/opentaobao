@@ -1,7 +1,7 @@
 package idle
 
-// AlibabaIdleIsvItemRechargeEditTopResult 结构体
-type AlibabaIdleIsvItemRechargeEditTopResult struct {
+// AlibabaidleisvitemrechargeeditTopResult 结构体
+type AlibabaidleisvitemrechargeeditTopResult struct {
 	// 错误码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 错误信息

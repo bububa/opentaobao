@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaAlihealthDrugcodeUserDataResult 结构体
-type AlibabaAlihealthDrugcodeUserDataResult struct {
+// AlibabaalihealthdrugcodeuserdataResult 结构体
+type AlibabaalihealthdrugcodeuserdataResult struct {
 	// 无
 	Headers string `json:"headers,omitempty" xml:"headers,omitempty"`
 	// model

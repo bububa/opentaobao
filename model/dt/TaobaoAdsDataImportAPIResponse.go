@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAdsDataImportAPIResponse 数据导入 API返回值
+// TaobaoadsdataimportAPIResponse 数据导入 API返回值
 // taobao.ads.data.import
 //
 // 数据导入
-type TaobaoAdsDataImportAPIResponse struct {
+type TaobaoadsdataimportAPIResponse struct {
 	model.CommonResponse
-	TaobaoAdsDataImportAPIResponseModel
+	TaobaoadsdataimportAPIResponseModel
 }
 
-// TaobaoAdsDataImportAPIResponseModel is 数据导入 成功返回结果
-type TaobaoAdsDataImportAPIResponseModel struct {
+// TaobaoadsdataimportAPIResponseModel is 数据导入 成功返回结果
+type TaobaoadsdataimportAPIResponseModel struct {
 	XMLName xml.Name `xml:"ads_data_import_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// WdkRexoutDeviceInfoGetAPIRequest 获取设备详情-外部对接 API请求
+// WdkrexoutdeviceinfogetAPIRequest 获取设备详情-外部对接 API请求
 // wdk.rexout.device.info.get
 //
 // 获取设备详情-外部对接
-type WdkRexoutDeviceInfoGetAPIRequest struct {
+type WdkrexoutdeviceinfogetAPIRequest struct {
 	model.Params
 	// ak
 	_accessKey string
@@ -20,65 +20,65 @@ type WdkRexoutDeviceInfoGetAPIRequest struct {
 	_uuid string
 }
 
-// NewWdkRexoutDeviceInfoGetRequest 初始化WdkRexoutDeviceInfoGetAPIRequest对象
-func NewWdkRexoutDeviceInfoGetRequest() *WdkRexoutDeviceInfoGetAPIRequest {
-	return &WdkRexoutDeviceInfoGetAPIRequest{
+// NewWdkrexoutdeviceinfogetRequest 初始化WdkrexoutdeviceinfogetAPIRequest对象
+func NewWdkrexoutdeviceinfogetRequest() *WdkrexoutdeviceinfogetAPIRequest {
+	return &WdkrexoutdeviceinfogetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r WdkRexoutDeviceInfoGetAPIRequest) GetApiMethodName() string {
+func (r WdkrexoutdeviceinfogetAPIRequest) GetApiMethodName() string {
 	return "wdk.rexout.device.info.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r WdkRexoutDeviceInfoGetAPIRequest) GetApiParams(params url.Values) {
+func (r WdkrexoutdeviceinfogetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r WdkRexoutDeviceInfoGetAPIRequest) GetRawParams() model.Params {
+func (r WdkrexoutdeviceinfogetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetAccessKey is AccessKey Setter
 // ak
-func (r *WdkRexoutDeviceInfoGetAPIRequest) SetAccessKey(_accessKey string) error {
+func (r *WdkrexoutdeviceinfogetAPIRequest) SetAccessKey(_accessKey string) error {
 	r._accessKey = _accessKey
 	r.Set("access_key", _accessKey)
 	return nil
 }
 
 // GetAccessKey AccessKey Getter
-func (r WdkRexoutDeviceInfoGetAPIRequest) GetAccessKey() string {
+func (r WdkrexoutdeviceinfogetAPIRequest) GetAccessKey() string {
 	return r._accessKey
 }
 
 // SetAccessSign is AccessSign Setter
 // 签名
-func (r *WdkRexoutDeviceInfoGetAPIRequest) SetAccessSign(_accessSign string) error {
+func (r *WdkrexoutdeviceinfogetAPIRequest) SetAccessSign(_accessSign string) error {
 	r._accessSign = _accessSign
 	r.Set("access_sign", _accessSign)
 	return nil
 }
 
 // GetAccessSign AccessSign Getter
-func (r WdkRexoutDeviceInfoGetAPIRequest) GetAccessSign() string {
+func (r WdkrexoutdeviceinfogetAPIRequest) GetAccessSign() string {
 	return r._accessSign
 }
 
 // SetUuid is Uuid Setter
 // 设备ID
-func (r *WdkRexoutDeviceInfoGetAPIRequest) SetUuid(_uuid string) error {
+func (r *WdkrexoutdeviceinfogetAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
 	r.Set("uuid", _uuid)
 	return nil
 }
 
 // GetUuid Uuid Getter
-func (r WdkRexoutDeviceInfoGetAPIRequest) GetUuid() string {
+func (r WdkrexoutdeviceinfogetAPIRequest) GetUuid() string {
 	return r._uuid
 }

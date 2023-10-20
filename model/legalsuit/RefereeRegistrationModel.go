@@ -3,19 +3,19 @@ package legalsuit
 // RefereeRegistrationModel 结构体
 type RefereeRegistrationModel struct {
 	// 反馈附件
-	FeedbackAttachmentList []LFileModel `json:"feedback_attachment_list,omitempty" xml:"feedback_attachment_list>l_file_model,omitempty"`
+	FeedbackAttachmentList []LfileModel `json:"feedback_attachment_list,omitempty" xml:"feedback_attachment_list>lfile_model,omitempty"`
 	// 调解凭证附件列表
 	MediationCertificateFiles []FileModel `json:"mediation_certificate_files,omitempty" xml:"mediation_certificate_files>file_model,omitempty"`
 	// 裁定书附件列表
-	WrittenVerdictFiles []LFileModel `json:"written_verdict_files,omitempty" xml:"written_verdict_files>l_file_model,omitempty"`
+	WrittenVerdictFiles []LfileModel `json:"written_verdict_files,omitempty" xml:"written_verdict_files>lfile_model,omitempty"`
 	// 和解协议附件列表
-	SettlementAgreeFiles []LFileModel `json:"settlement_agree_files,omitempty" xml:"settlement_agree_files>l_file_model,omitempty"`
+	SettlementAgreeFiles []LfileModel `json:"settlement_agree_files,omitempty" xml:"settlement_agree_files>lfile_model,omitempty"`
 	// 裁决书附件列表
-	JudgeFiles []LFileModel `json:"judge_files,omitempty" xml:"judge_files>l_file_model,omitempty"`
+	JudgeFiles []LfileModel `json:"judge_files,omitempty" xml:"judge_files>lfile_model,omitempty"`
 	// 撤诉文件附件列表
-	DroppedFiles []LFileModel `json:"dropped_files,omitempty" xml:"dropped_files>l_file_model,omitempty"`
+	DroppedFiles []LfileModel `json:"dropped_files,omitempty" xml:"dropped_files>lfile_model,omitempty"`
 	// 其他附件附件列表
-	OtherFiles []LFileModel `json:"other_files,omitempty" xml:"other_files>l_file_model,omitempty"`
+	OtherFiles []LfileModel `json:"other_files,omitempty" xml:"other_files>lfile_model,omitempty"`
 	// 是否开庭
 	IsCourtOpened string `json:"is_court_opened,omitempty" xml:"is_court_opened,omitempty"`
 	// 主要观点

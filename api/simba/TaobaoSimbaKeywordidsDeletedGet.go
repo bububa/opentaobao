@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// TaobaoSimbaKeywordidsDeletedGet 获取删除的词ID
+// Taobaosimbakeywordidsdeletedget 获取删除的词ID
 // taobao.simba.keywordids.deleted.get
 //
 // 获取删除的词ID
-func TaobaoSimbaKeywordidsDeletedGet(clt *core.SDKClient, req *simba.TaobaoSimbaKeywordidsDeletedGetAPIRequest, session string) (*simba.TaobaoSimbaKeywordidsDeletedGetAPIResponse, error) {
-	var resp simba.TaobaoSimbaKeywordidsDeletedGetAPIResponse
+func Taobaosimbakeywordidsdeletedget(clt *core.SDKClient, req *simba.TaobaosimbakeywordidsdeletedgetAPIRequest, session string) (*simba.TaobaosimbakeywordidsdeletedgetAPIResponse, error) {
+	var resp simba.TaobaosimbakeywordidsdeletedgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

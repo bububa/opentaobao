@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/aecreatives"
 )
 
-// AliexpressAffiliateHotproductDownload 联盟营销爆品下载接口
+// Aliexpressaffiliatehotproductdownload 联盟营销爆品下载接口
 // aliexpress.affiliate.hotproduct.download
 //
 // 查询联盟爆品API
-func AliexpressAffiliateHotproductDownload(clt *core.SDKClient, req *aecreatives.AliexpressAffiliateHotproductDownloadAPIRequest, session string) (*aecreatives.AliexpressAffiliateHotproductDownloadAPIResponse, error) {
-	var resp aecreatives.AliexpressAffiliateHotproductDownloadAPIResponse
+func Aliexpressaffiliatehotproductdownload(clt *core.SDKClient, req *aecreatives.AliexpressaffiliatehotproductdownloadAPIRequest, session string) (*aecreatives.AliexpressaffiliatehotproductdownloadAPIResponse, error) {
+	var resp aecreatives.AliexpressaffiliatehotproductdownloadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlscCrmRuleQuerytaglistAPIRequest 查询标签列表 API请求
+// AlibabaalsccrmrulequerytaglistAPIRequest 查询标签列表 API请求
 // alibaba.alsc.crm.rule.querytaglist
 //
 // 查询标签列表
-type AlibabaAlscCrmRuleQuerytaglistAPIRequest struct {
+type AlibabaalsccrmrulequerytaglistAPIRequest struct {
 	model.Params
 	// 请求参数
 	_paramPlanRuleQueryOpenReq *PlanRuleQueryOpenReq
 }
 
-// NewAlibabaAlscCrmRuleQuerytaglistRequest 初始化AlibabaAlscCrmRuleQuerytaglistAPIRequest对象
-func NewAlibabaAlscCrmRuleQuerytaglistRequest() *AlibabaAlscCrmRuleQuerytaglistAPIRequest {
-	return &AlibabaAlscCrmRuleQuerytaglistAPIRequest{
+// NewAlibabaalsccrmrulequerytaglistRequest 初始化AlibabaalsccrmrulequerytaglistAPIRequest对象
+func NewAlibabaalsccrmrulequerytaglistRequest() *AlibabaalsccrmrulequerytaglistAPIRequest {
+	return &AlibabaalsccrmrulequerytaglistAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmRuleQuerytaglistAPIRequest) GetApiMethodName() string {
+func (r AlibabaalsccrmrulequerytaglistAPIRequest) GetApiMethodName() string {
 	return "alibaba.alsc.crm.rule.querytaglist"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmRuleQuerytaglistAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalsccrmrulequerytaglistAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlscCrmRuleQuerytaglistAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalsccrmrulequerytaglistAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamPlanRuleQueryOpenReq is ParamPlanRuleQueryOpenReq Setter
 // 请求参数
-func (r *AlibabaAlscCrmRuleQuerytaglistAPIRequest) SetParamPlanRuleQueryOpenReq(_paramPlanRuleQueryOpenReq *PlanRuleQueryOpenReq) error {
+func (r *AlibabaalsccrmrulequerytaglistAPIRequest) SetParamPlanRuleQueryOpenReq(_paramPlanRuleQueryOpenReq *PlanRuleQueryOpenReq) error {
 	r._paramPlanRuleQueryOpenReq = _paramPlanRuleQueryOpenReq
 	r.Set("param_plan_rule_query_open_req", _paramPlanRuleQueryOpenReq)
 	return nil
 }
 
 // GetParamPlanRuleQueryOpenReq ParamPlanRuleQueryOpenReq Getter
-func (r AlibabaAlscCrmRuleQuerytaglistAPIRequest) GetParamPlanRuleQueryOpenReq() *PlanRuleQueryOpenReq {
+func (r AlibabaalsccrmrulequerytaglistAPIRequest) GetParamPlanRuleQueryOpenReq() *PlanRuleQueryOpenReq {
 	return r._paramPlanRuleQueryOpenReq
 }

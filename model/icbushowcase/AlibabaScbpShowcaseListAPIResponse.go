@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaScbpShowcaseListAPIResponse 橱窗查询 API返回值
+// AlibabascbpshowcaselistAPIResponse 橱窗查询 API返回值
 // alibaba.scbp.showcase.list
 //
 // 橱窗查询
-type AlibabaScbpShowcaseListAPIResponse struct {
+type AlibabascbpshowcaselistAPIResponse struct {
 	model.CommonResponse
-	AlibabaScbpShowcaseListAPIResponseModel
+	AlibabascbpshowcaselistAPIResponseModel
 }
 
-// AlibabaScbpShowcaseListAPIResponseModel is 橱窗查询 成功返回结果
-type AlibabaScbpShowcaseListAPIResponseModel struct {
+// AlibabascbpshowcaselistAPIResponseModel is 橱窗查询 成功返回结果
+type AlibabascbpshowcaselistAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scbp_showcase_list_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

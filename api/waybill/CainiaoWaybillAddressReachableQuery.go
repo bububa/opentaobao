@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/waybill"
 )
 
-// CainiaoWaybillAddressReachableQuery 地址可达查询
+// Cainiaowaybilladdressreachablequery 地址可达查询
 // cainiao.waybill.address.reachable.query
 //
 // 地址可达查询
-func CainiaoWaybillAddressReachableQuery(clt *core.SDKClient, req *waybill.CainiaoWaybillAddressReachableQueryAPIRequest, session string) (*waybill.CainiaoWaybillAddressReachableQueryAPIResponse, error) {
-	var resp waybill.CainiaoWaybillAddressReachableQueryAPIResponse
+func Cainiaowaybilladdressreachablequery(clt *core.SDKClient, req *waybill.CainiaowaybilladdressreachablequeryAPIRequest, session string) (*waybill.CainiaowaybilladdressreachablequeryAPIResponse, error) {
+	var resp waybill.CainiaowaybilladdressreachablequeryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

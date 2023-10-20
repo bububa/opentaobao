@@ -1,7 +1,7 @@
 package wdk
 
-// SfB2CFmsCallbackContent 结构体
-type SfB2CFmsCallbackContent struct {
+// SfB2cfmsCallbackContent 结构体
+type SfB2cfmsCallbackContent struct {
 	// 快递包裹信息
 	Packages []ExpressPackage `json:"packages,omitempty" xml:"packages>express_package,omitempty"`
 	// 商品编码

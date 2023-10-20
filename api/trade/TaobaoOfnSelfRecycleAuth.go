@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/trade"
 )
 
-// TaobaoOfnSelfRecycleAuth 自助回收鉴权
+// Taobaoofnselfrecycleauth 自助回收鉴权
 // taobao.ofn.self.recycle.auth
 //
 // 自助回收鉴权
-func TaobaoOfnSelfRecycleAuth(clt *core.SDKClient, req *trade.TaobaoOfnSelfRecycleAuthAPIRequest, session string) (*trade.TaobaoOfnSelfRecycleAuthAPIResponse, error) {
-	var resp trade.TaobaoOfnSelfRecycleAuthAPIResponse
+func Taobaoofnselfrecycleauth(clt *core.SDKClient, req *trade.TaobaoofnselfrecycleauthAPIRequest, session string) (*trade.TaobaoofnselfrecycleauthAPIResponse, error) {
+	var resp trade.TaobaoofnselfrecycleauthAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

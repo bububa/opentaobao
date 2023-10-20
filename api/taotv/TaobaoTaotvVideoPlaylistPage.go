@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/taotv"
 )
 
-// TaobaoTaotvVideoPlaylistPage 分页获取所有播单
+// Taobaotaotvvideoplaylistpage 分页获取所有播单
 // taobao.taotv.video.playlist.page
 //
 // 获取所有播单信息（分页）
-func TaobaoTaotvVideoPlaylistPage(clt *core.SDKClient, req *taotv.TaobaoTaotvVideoPlaylistPageAPIRequest, session string) (*taotv.TaobaoTaotvVideoPlaylistPageAPIResponse, error) {
-	var resp taotv.TaobaoTaotvVideoPlaylistPageAPIResponse
+func Taobaotaotvvideoplaylistpage(clt *core.SDKClient, req *taotv.TaobaotaotvvideoplaylistpageAPIRequest, session string) (*taotv.TaobaotaotvvideoplaylistpageAPIResponse, error) {
+	var resp taotv.TaobaotaotvvideoplaylistpageAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,7 +1,7 @@
 package alilabs
 
-// AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetResult 结构体
-type AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetResult struct {
+// AlibabaailabstmallgenieauthdevicewithdeviceidgetResult 结构体
+type AlibabaailabstmallgenieauthdevicewithdeviceidgetResult struct {
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 用户安全ID
@@ -13,7 +13,7 @@ type AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetResult struct {
 	// 设备Mac地址
 	DeviceId string `json:"device_id,omitempty" xml:"device_id,omitempty"`
 	// 结果
-	Result *AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaailabstmallgenieauthdevicewithdeviceidgetResult `json:"result,omitempty" xml:"result,omitempty"`
 	// code
 	Code int64 `json:"code,omitempty" xml:"code,omitempty"`
 }

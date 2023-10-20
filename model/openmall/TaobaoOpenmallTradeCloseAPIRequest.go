@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOpenmallTradeCloseAPIRequest 关闭订单 API请求
+// TaobaoopenmalltradecloseAPIRequest 关闭订单 API请求
 // taobao.openmall.trade.close
 //
 // 关闭订单
-type TaobaoOpenmallTradeCloseAPIRequest struct {
+type TaobaoopenmalltradecloseAPIRequest struct {
 	model.Params
 	// 分销者信息
 	_distributor string
@@ -20,65 +20,65 @@ type TaobaoOpenmallTradeCloseAPIRequest struct {
 	_tid int64
 }
 
-// NewTaobaoOpenmallTradeCloseRequest 初始化TaobaoOpenmallTradeCloseAPIRequest对象
-func NewTaobaoOpenmallTradeCloseRequest() *TaobaoOpenmallTradeCloseAPIRequest {
-	return &TaobaoOpenmallTradeCloseAPIRequest{
+// NewTaobaoopenmalltradecloseRequest 初始化TaobaoopenmalltradecloseAPIRequest对象
+func NewTaobaoopenmalltradecloseRequest() *TaobaoopenmalltradecloseAPIRequest {
+	return &TaobaoopenmalltradecloseAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoOpenmallTradeCloseAPIRequest) GetApiMethodName() string {
+func (r TaobaoopenmalltradecloseAPIRequest) GetApiMethodName() string {
 	return "taobao.openmall.trade.close"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoOpenmallTradeCloseAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoopenmalltradecloseAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoOpenmallTradeCloseAPIRequest) GetRawParams() model.Params {
+func (r TaobaoopenmalltradecloseAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDistributor is Distributor Setter
 // 分销者信息
-func (r *TaobaoOpenmallTradeCloseAPIRequest) SetDistributor(_distributor string) error {
+func (r *TaobaoopenmalltradecloseAPIRequest) SetDistributor(_distributor string) error {
 	r._distributor = _distributor
 	r.Set("distributor", _distributor)
 	return nil
 }
 
 // GetDistributor Distributor Getter
-func (r TaobaoOpenmallTradeCloseAPIRequest) GetDistributor() string {
+func (r TaobaoopenmalltradecloseAPIRequest) GetDistributor() string {
 	return r._distributor
 }
 
 // SetReason is Reason Setter
 // 关单原因
-func (r *TaobaoOpenmallTradeCloseAPIRequest) SetReason(_reason string) error {
+func (r *TaobaoopenmalltradecloseAPIRequest) SetReason(_reason string) error {
 	r._reason = _reason
 	r.Set("reason", _reason)
 	return nil
 }
 
 // GetReason Reason Getter
-func (r TaobaoOpenmallTradeCloseAPIRequest) GetReason() string {
+func (r TaobaoopenmalltradecloseAPIRequest) GetReason() string {
 	return r._reason
 }
 
 // SetTid is Tid Setter
 // 淘宝订单号
-func (r *TaobaoOpenmallTradeCloseAPIRequest) SetTid(_tid int64) error {
+func (r *TaobaoopenmalltradecloseAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
 	r.Set("tid", _tid)
 	return nil
 }
 
 // GetTid Tid Getter
-func (r TaobaoOpenmallTradeCloseAPIRequest) GetTid() int64 {
+func (r TaobaoopenmalltradecloseAPIRequest) GetTid() int64 {
 	return r._tid
 }

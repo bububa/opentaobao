@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/mos"
 )
 
-// AlibabaMosBrandCoproductGroupUserCount 按照查询条件统计总数
+// Alibabamosbrandcoproductgroupusercount 按照查询条件统计总数
 // alibaba.mos.brand.coproduct.group.user.count
 //
 // 按照查询条件统计总数
-func AlibabaMosBrandCoproductGroupUserCount(clt *core.SDKClient, req *mos.AlibabaMosBrandCoproductGroupUserCountAPIRequest, session string) (*mos.AlibabaMosBrandCoproductGroupUserCountAPIResponse, error) {
-	var resp mos.AlibabaMosBrandCoproductGroupUserCountAPIResponse
+func Alibabamosbrandcoproductgroupusercount(clt *core.SDKClient, req *mos.AlibabamosbrandcoproductgroupusercountAPIRequest, session string) (*mos.AlibabamosbrandcoproductgroupusercountAPIResponse, error) {
+	var resp mos.AlibabamosbrandcoproductgroupusercountAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

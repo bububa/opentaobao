@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaCloudgameInteractiveGameRoomShutdownAPIRequest 强制关闭房间 API请求
+// AlibabacloudgameinteractivegameroomshutdownAPIRequest 强制关闭房间 API请求
 // alibaba.cloudgame.interactive.game.room.shutdown
 //
 // 强制关闭房间
-type AlibabaCloudgameInteractiveGameRoomShutdownAPIRequest struct {
+type AlibabacloudgameinteractivegameroomshutdownAPIRequest struct {
 	model.Params
 	// 请求入参
 	_shutdownRoomRequest *ShutdownRoomRequest
 }
 
-// NewAlibabaCloudgameInteractiveGameRoomShutdownRequest 初始化AlibabaCloudgameInteractiveGameRoomShutdownAPIRequest对象
-func NewAlibabaCloudgameInteractiveGameRoomShutdownRequest() *AlibabaCloudgameInteractiveGameRoomShutdownAPIRequest {
-	return &AlibabaCloudgameInteractiveGameRoomShutdownAPIRequest{
+// NewAlibabacloudgameinteractivegameroomshutdownRequest 初始化AlibabacloudgameinteractivegameroomshutdownAPIRequest对象
+func NewAlibabacloudgameinteractivegameroomshutdownRequest() *AlibabacloudgameinteractivegameroomshutdownAPIRequest {
+	return &AlibabacloudgameinteractivegameroomshutdownAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaCloudgameInteractiveGameRoomShutdownAPIRequest) GetApiMethodName() string {
+func (r AlibabacloudgameinteractivegameroomshutdownAPIRequest) GetApiMethodName() string {
 	return "alibaba.cloudgame.interactive.game.room.shutdown"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaCloudgameInteractiveGameRoomShutdownAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabacloudgameinteractivegameroomshutdownAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaCloudgameInteractiveGameRoomShutdownAPIRequest) GetRawParams() model.Params {
+func (r AlibabacloudgameinteractivegameroomshutdownAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetShutdownRoomRequest is ShutdownRoomRequest Setter
 // 请求入参
-func (r *AlibabaCloudgameInteractiveGameRoomShutdownAPIRequest) SetShutdownRoomRequest(_shutdownRoomRequest *ShutdownRoomRequest) error {
+func (r *AlibabacloudgameinteractivegameroomshutdownAPIRequest) SetShutdownRoomRequest(_shutdownRoomRequest *ShutdownRoomRequest) error {
 	r._shutdownRoomRequest = _shutdownRoomRequest
 	r.Set("shutdown_room_request", _shutdownRoomRequest)
 	return nil
 }
 
 // GetShutdownRoomRequest ShutdownRoomRequest Getter
-func (r AlibabaCloudgameInteractiveGameRoomShutdownAPIRequest) GetShutdownRoomRequest() *ShutdownRoomRequest {
+func (r AlibabacloudgameinteractivegameroomshutdownAPIRequest) GetShutdownRoomRequest() *ShutdownRoomRequest {
 	return r._shutdownRoomRequest
 }

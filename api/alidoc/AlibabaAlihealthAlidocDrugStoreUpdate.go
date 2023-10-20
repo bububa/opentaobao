@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alidoc"
 )
 
-// AlibabaAlihealthAlidocDrugStoreUpdate 更新药店
+// Alibabaalihealthalidocdrugstoreupdate 更新药店
 // alibaba.alihealth.alidoc.drug.store.update
 //
 // 药店信息更新接口
-func AlibabaAlihealthAlidocDrugStoreUpdate(clt *core.SDKClient, req *alidoc.AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest, session string) (*alidoc.AlibabaAlihealthAlidocDrugStoreUpdateAPIResponse, error) {
-	var resp alidoc.AlibabaAlihealthAlidocDrugStoreUpdateAPIResponse
+func Alibabaalihealthalidocdrugstoreupdate(clt *core.SDKClient, req *alidoc.AlibabaalihealthalidocdrugstoreupdateAPIRequest, session string) (*alidoc.AlibabaalihealthalidocdrugstoreupdateAPIResponse, error) {
+	var resp alidoc.AlibabaalihealthalidocdrugstoreupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoJushitaJmsUserDeleteAPIResponse 删除ONS消息同步用户 API返回值
+// TaobaojushitajmsuserdeleteAPIResponse 删除ONS消息同步用户 API返回值
 // taobao.jushita.jms.user.delete
 //
 // 删除ONS消息同步用户，删除后用户的消息将不会推送到聚石塔的ONS中
-type TaobaoJushitaJmsUserDeleteAPIResponse struct {
+type TaobaojushitajmsuserdeleteAPIResponse struct {
 	model.CommonResponse
-	TaobaoJushitaJmsUserDeleteAPIResponseModel
+	TaobaojushitajmsuserdeleteAPIResponseModel
 }
 
-// TaobaoJushitaJmsUserDeleteAPIResponseModel is 删除ONS消息同步用户 成功返回结果
-type TaobaoJushitaJmsUserDeleteAPIResponseModel struct {
+// TaobaojushitajmsuserdeleteAPIResponseModel is 删除ONS消息同步用户 成功返回结果
+type TaobaojushitajmsuserdeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"jushita_jms_user_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

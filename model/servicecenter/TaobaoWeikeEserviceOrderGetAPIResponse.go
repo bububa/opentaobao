@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoWeikeEserviceOrderGetAPIResponse 客服外包订单查询 API返回值
+// TaobaoweikeeserviceordergetAPIResponse 客服外包订单查询 API返回值
 // taobao.weike.eservice.order.get
 //
 // 用于客服外包中服务商查询订单列表
-type TaobaoWeikeEserviceOrderGetAPIResponse struct {
+type TaobaoweikeeserviceordergetAPIResponse struct {
 	model.CommonResponse
-	TaobaoWeikeEserviceOrderGetAPIResponseModel
+	TaobaoweikeeserviceordergetAPIResponseModel
 }
 
-// TaobaoWeikeEserviceOrderGetAPIResponseModel is 客服外包订单查询 成功返回结果
-type TaobaoWeikeEserviceOrderGetAPIResponseModel struct {
+// TaobaoweikeeserviceordergetAPIResponseModel is 客服外包订单查询 成功返回结果
+type TaobaoweikeeserviceordergetAPIResponseModel struct {
 	XMLName xml.Name `xml:"weike_eservice_order_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

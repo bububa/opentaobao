@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/traveltrade"
 )
 
-// AlitripTravelHotelticketProductProductupdatepush 产品批量变更推送通知
+// Alitriptravelhotelticketproductproductupdatepush 产品批量变更推送通知
 // alitrip.travel.hotelticket.product.productupdatepush
 //
 // 产品批量变更推送通知
-func AlitripTravelHotelticketProductProductupdatepush(clt *core.SDKClient, req *traveltrade.AlitripTravelHotelticketProductProductupdatepushAPIRequest, session string) (*traveltrade.AlitripTravelHotelticketProductProductupdatepushAPIResponse, error) {
-	var resp traveltrade.AlitripTravelHotelticketProductProductupdatepushAPIResponse
+func Alitriptravelhotelticketproductproductupdatepush(clt *core.SDKClient, req *traveltrade.AlitriptravelhotelticketproductproductupdatepushAPIRequest, session string) (*traveltrade.AlitriptravelhotelticketproductproductupdatepushAPIResponse, error) {
+	var resp traveltrade.AlitriptravelhotelticketproductproductupdatepushAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

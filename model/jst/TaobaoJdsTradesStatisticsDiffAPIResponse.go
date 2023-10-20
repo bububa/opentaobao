@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoJdsTradesStatisticsDiffAPIResponse 订单全链路状态统计差异比较 API返回值
+// TaobaojdstradesstatisticsdiffAPIResponse 订单全链路状态统计差异比较 API返回值
 // taobao.jds.trades.statistics.diff
 //
 // 订单全链路状态统计差异比较
-type TaobaoJdsTradesStatisticsDiffAPIResponse struct {
+type TaobaojdstradesstatisticsdiffAPIResponse struct {
 	model.CommonResponse
-	TaobaoJdsTradesStatisticsDiffAPIResponseModel
+	TaobaojdstradesstatisticsdiffAPIResponseModel
 }
 
-// TaobaoJdsTradesStatisticsDiffAPIResponseModel is 订单全链路状态统计差异比较 成功返回结果
-type TaobaoJdsTradesStatisticsDiffAPIResponseModel struct {
+// TaobaojdstradesstatisticsdiffAPIResponseModel is 订单全链路状态统计差异比较 成功返回结果
+type TaobaojdstradesstatisticsdiffAPIResponseModel struct {
 	XMLName xml.Name `xml:"jds_trades_statistics_diff_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

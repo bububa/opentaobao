@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-// TmallServicecenterSettlementStoretransferAudit 新康众审批门店分账
+// Tmallservicecentersettlementstoretransferaudit 新康众审批门店分账
 // tmall.servicecenter.settlement.storetransfer.audit
 //
 // 新康众审批门店分账
-func TmallServicecenterSettlementStoretransferAudit(clt *core.SDKClient, req *tmallservice.TmallServicecenterSettlementStoretransferAuditAPIRequest, session string) (*tmallservice.TmallServicecenterSettlementStoretransferAuditAPIResponse, error) {
-	var resp tmallservice.TmallServicecenterSettlementStoretransferAuditAPIResponse
+func Tmallservicecentersettlementstoretransferaudit(clt *core.SDKClient, req *tmallservice.TmallservicecentersettlementstoretransferauditAPIRequest, session string) (*tmallservice.TmallservicecentersettlementstoretransferauditAPIResponse, error) {
+	var resp tmallservice.TmallservicecentersettlementstoretransferauditAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

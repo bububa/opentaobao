@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/damaiticklet"
 )
 
-// AlibabaDamaiMxOpengatewayScript 第三方剧本数据推送
+// Alibabadamaimxopengatewayscript 第三方剧本数据推送
 // alibaba.damai.mx.opengateway.script
 //
 // 第三方剧本数据推送
-func AlibabaDamaiMxOpengatewayScript(clt *core.SDKClient, req *damaiticklet.AlibabaDamaiMxOpengatewayScriptAPIRequest, session string) (*damaiticklet.AlibabaDamaiMxOpengatewayScriptAPIResponse, error) {
-	var resp damaiticklet.AlibabaDamaiMxOpengatewayScriptAPIResponse
+func Alibabadamaimxopengatewayscript(clt *core.SDKClient, req *damaiticklet.AlibabadamaimxopengatewayscriptAPIRequest, session string) (*damaiticklet.AlibabadamaimxopengatewayscriptAPIResponse, error) {
+	var resp damaiticklet.AlibabadamaimxopengatewayscriptAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

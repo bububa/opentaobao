@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoQimenExpressinfoQueryResponse 结构体
-type TaobaoQimenExpressinfoQueryResponse struct {
+// TaobaoqimenexpressinfoqueryResponse 结构体
+type TaobaoqimenexpressinfoqueryResponse struct {
 	// 奇门仓储字段
 	ExpressInfos []ExpressInfo `json:"expressInfos,omitempty" xml:"expressInfos>express_info,omitempty"`
 	// 响应结果:success|failure

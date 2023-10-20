@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponse 接收中央随机化系统和临床研究机构的绑定确认状态 API返回值
+// AlibabaalihealthdrugcodecenterreceiveboundstatusAPIResponse 接收中央随机化系统和临床研究机构的绑定确认状态 API返回值
 // alibaba.alihealth.drugcode.center.receive.bound.status
 //
 // 临床用药试验-接收中央随机化系统和临床研究机构的绑定确认状态
-type AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponse struct {
+type AlibabaalihealthdrugcodecenterreceiveboundstatusAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponseModel
+	AlibabaalihealthdrugcodecenterreceiveboundstatusAPIResponseModel
 }
 
-// AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponseModel is 接收中央随机化系统和临床研究机构的绑定确认状态 成功返回结果
-type AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIResponseModel struct {
+// AlibabaalihealthdrugcodecenterreceiveboundstatusAPIResponseModel is 接收中央随机化系统和临床研究机构的绑定确认状态 成功返回结果
+type AlibabaalihealthdrugcodecenterreceiveboundstatusAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drugcode_center_receive_bound_status_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

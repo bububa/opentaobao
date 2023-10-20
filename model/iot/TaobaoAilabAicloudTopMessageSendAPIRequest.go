@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAilabAicloudTopMessageSendAPIRequest 发送留言 API请求
+// TaobaoailabaicloudtopmessagesendAPIRequest 发送留言 API请求
 // taobao.ailab.aicloud.top.message.send
 //
 // 供准入的外部用户实现发送留言功能，APP端发送，设备端读取
-type TaobaoAilabAicloudTopMessageSendAPIRequest struct {
+type TaobaoailabaicloudtopmessagesendAPIRequest struct {
 	model.Params
 	// 扩展信息，用于存放APP类型等
 	_ext string
@@ -24,91 +24,91 @@ type TaobaoAilabAicloudTopMessageSendAPIRequest struct {
 	_audioPath string
 }
 
-// NewTaobaoAilabAicloudTopMessageSendRequest 初始化TaobaoAilabAicloudTopMessageSendAPIRequest对象
-func NewTaobaoAilabAicloudTopMessageSendRequest() *TaobaoAilabAicloudTopMessageSendAPIRequest {
-	return &TaobaoAilabAicloudTopMessageSendAPIRequest{
+// NewTaobaoailabaicloudtopmessagesendRequest 初始化TaobaoailabaicloudtopmessagesendAPIRequest对象
+func NewTaobaoailabaicloudtopmessagesendRequest() *TaobaoailabaicloudtopmessagesendAPIRequest {
+	return &TaobaoailabaicloudtopmessagesendAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoAilabAicloudTopMessageSendAPIRequest) GetApiMethodName() string {
+func (r TaobaoailabaicloudtopmessagesendAPIRequest) GetApiMethodName() string {
 	return "taobao.ailab.aicloud.top.message.send"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAilabAicloudTopMessageSendAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoailabaicloudtopmessagesendAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoAilabAicloudTopMessageSendAPIRequest) GetRawParams() model.Params {
+func (r TaobaoailabaicloudtopmessagesendAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetExt is Ext Setter
 // 扩展信息，用于存放APP类型等
-func (r *TaobaoAilabAicloudTopMessageSendAPIRequest) SetExt(_ext string) error {
+func (r *TaobaoailabaicloudtopmessagesendAPIRequest) SetExt(_ext string) error {
 	r._ext = _ext
 	r.Set("ext", _ext)
 	return nil
 }
 
 // GetExt Ext Getter
-func (r TaobaoAilabAicloudTopMessageSendAPIRequest) GetExt() string {
+func (r TaobaoailabaicloudtopmessagesendAPIRequest) GetExt() string {
 	return r._ext
 }
 
 // SetUtdId is UtdId Setter
 // 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
-func (r *TaobaoAilabAicloudTopMessageSendAPIRequest) SetUtdId(_utdId string) error {
+func (r *TaobaoailabaicloudtopmessagesendAPIRequest) SetUtdId(_utdId string) error {
 	r._utdId = _utdId
 	r.Set("utd_id", _utdId)
 	return nil
 }
 
 // GetUtdId UtdId Getter
-func (r TaobaoAilabAicloudTopMessageSendAPIRequest) GetUtdId() string {
+func (r TaobaoailabaicloudtopmessagesendAPIRequest) GetUtdId() string {
 	return r._utdId
 }
 
 // SetUserId is UserId Setter
 // 用户ID，此处传入第三方账户体系的用户id
-func (r *TaobaoAilabAicloudTopMessageSendAPIRequest) SetUserId(_userId string) error {
+func (r *TaobaoailabaicloudtopmessagesendAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
 	r.Set("user_id", _userId)
 	return nil
 }
 
 // GetUserId UserId Getter
-func (r TaobaoAilabAicloudTopMessageSendAPIRequest) GetUserId() string {
+func (r TaobaoailabaicloudtopmessagesendAPIRequest) GetUserId() string {
 	return r._userId
 }
 
 // SetSchema is Schema Setter
 // 账户体系隔离
-func (r *TaobaoAilabAicloudTopMessageSendAPIRequest) SetSchema(_schema string) error {
+func (r *TaobaoailabaicloudtopmessagesendAPIRequest) SetSchema(_schema string) error {
 	r._schema = _schema
 	r.Set("schema", _schema)
 	return nil
 }
 
 // GetSchema Schema Getter
-func (r TaobaoAilabAicloudTopMessageSendAPIRequest) GetSchema() string {
+func (r TaobaoailabaicloudtopmessagesendAPIRequest) GetSchema() string {
 	return r._schema
 }
 
 // SetAudioPath is AudioPath Setter
 // 用户上传到OSS上的文件路径，不包含域名
-func (r *TaobaoAilabAicloudTopMessageSendAPIRequest) SetAudioPath(_audioPath string) error {
+func (r *TaobaoailabaicloudtopmessagesendAPIRequest) SetAudioPath(_audioPath string) error {
 	r._audioPath = _audioPath
 	r.Set("audio_path", _audioPath)
 	return nil
 }
 
 // GetAudioPath AudioPath Getter
-func (r TaobaoAilabAicloudTopMessageSendAPIRequest) GetAudioPath() string {
+func (r TaobaoailabaicloudtopmessagesendAPIRequest) GetAudioPath() string {
 	return r._audioPath
 }

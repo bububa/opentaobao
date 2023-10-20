@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaRetailMarketingItempoolActivitySkuAddAPIRequest 商品池活动新增商品 API请求
+// AlibabaretailmarketingitempoolactivityskuaddAPIRequest 商品池活动新增商品 API请求
 // alibaba.retail.marketing.itempool.activity.sku.add
 //
 // 新增或更新商品池活动商品信息【同城零售】
-type AlibabaRetailMarketingItempoolActivitySkuAddAPIRequest struct {
+type AlibabaretailmarketingitempoolactivityskuaddAPIRequest struct {
 	model.Params
 	// 入参
 	_param *ItemPoolActivityElementOperateRequest
 }
 
-// NewAlibabaRetailMarketingItempoolActivitySkuAddRequest 初始化AlibabaRetailMarketingItempoolActivitySkuAddAPIRequest对象
-func NewAlibabaRetailMarketingItempoolActivitySkuAddRequest() *AlibabaRetailMarketingItempoolActivitySkuAddAPIRequest {
-	return &AlibabaRetailMarketingItempoolActivitySkuAddAPIRequest{
+// NewAlibabaretailmarketingitempoolactivityskuaddRequest 初始化AlibabaretailmarketingitempoolactivityskuaddAPIRequest对象
+func NewAlibabaretailmarketingitempoolactivityskuaddRequest() *AlibabaretailmarketingitempoolactivityskuaddAPIRequest {
+	return &AlibabaretailmarketingitempoolactivityskuaddAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaRetailMarketingItempoolActivitySkuAddAPIRequest) GetApiMethodName() string {
+func (r AlibabaretailmarketingitempoolactivityskuaddAPIRequest) GetApiMethodName() string {
 	return "alibaba.retail.marketing.itempool.activity.sku.add"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaRetailMarketingItempoolActivitySkuAddAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaretailmarketingitempoolactivityskuaddAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaRetailMarketingItempoolActivitySkuAddAPIRequest) GetRawParams() model.Params {
+func (r AlibabaretailmarketingitempoolactivityskuaddAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 入参
-func (r *AlibabaRetailMarketingItempoolActivitySkuAddAPIRequest) SetParam(_param *ItemPoolActivityElementOperateRequest) error {
+func (r *AlibabaretailmarketingitempoolactivityskuaddAPIRequest) SetParam(_param *ItemPoolActivityElementOperateRequest) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r AlibabaRetailMarketingItempoolActivitySkuAddAPIRequest) GetParam() *ItemPoolActivityElementOperateRequest {
+func (r AlibabaretailmarketingitempoolactivityskuaddAPIRequest) GetParam() *ItemPoolActivityElementOperateRequest {
 	return r._param
 }

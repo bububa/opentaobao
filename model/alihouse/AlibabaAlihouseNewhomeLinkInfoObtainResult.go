@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaAlihouseNewhomeLinkInfoObtainResult 结构体
-type AlibabaAlihouseNewhomeLinkInfoObtainResult struct {
+// AlibabaalihousenewhomelinkinfoobtainResult 结构体
+type AlibabaalihousenewhomelinkinfoobtainResult struct {
 	// 返回链接地址
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// code

@@ -1,7 +1,7 @@
 package tmallcar
 
-// XCarSysLineDto 结构体
-type XCarSysLineDto struct {
+// XcarSysLineDto 结构体
+type XcarSysLineDto struct {
 	// 最高降幅
 	CarLineMaxDecline string `json:"car_line_max_decline,omitempty" xml:"car_line_max_decline,omitempty"`
 	// 车系保养排名

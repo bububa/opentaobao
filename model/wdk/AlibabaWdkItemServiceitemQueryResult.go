@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaWdkItemServiceitemQueryResult 结构体
-type AlibabaWdkItemServiceitemQueryResult struct {
+// AlibabawdkitemserviceitemqueryResult 结构体
+type AlibabawdkitemserviceitemqueryResult struct {
 	// result
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
 	// success

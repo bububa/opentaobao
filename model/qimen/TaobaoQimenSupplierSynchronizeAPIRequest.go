@@ -6,48 +6,48 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoQimenSupplierSynchronizeAPIRequest 供应商同步接口 API请求
+// TaobaoqimensuppliersynchronizeAPIRequest 供应商同步接口 API请求
 // taobao.qimen.supplier.synchronize
 //
 // 这个接口用来同步供应商信息
-type TaobaoQimenSupplierSynchronizeAPIRequest struct {
+type TaobaoqimensuppliersynchronizeAPIRequest struct {
 	model.Params
 	//
-	_request *TaobaoQimenSupplierSynchronizeRequest
+	_request *TaobaoqimensuppliersynchronizeRequest
 }
 
-// NewTaobaoQimenSupplierSynchronizeRequest 初始化TaobaoQimenSupplierSynchronizeAPIRequest对象
-func NewTaobaoQimenSupplierSynchronizeRequest() *TaobaoQimenSupplierSynchronizeAPIRequest {
-	return &TaobaoQimenSupplierSynchronizeAPIRequest{
+// NewTaobaoqimensuppliersynchronizeRequest 初始化TaobaoqimensuppliersynchronizeAPIRequest对象
+func NewTaobaoqimensuppliersynchronizeRequest() *TaobaoqimensuppliersynchronizeAPIRequest {
+	return &TaobaoqimensuppliersynchronizeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoQimenSupplierSynchronizeAPIRequest) GetApiMethodName() string {
+func (r TaobaoqimensuppliersynchronizeAPIRequest) GetApiMethodName() string {
 	return "taobao.qimen.supplier.synchronize"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoQimenSupplierSynchronizeAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoqimensuppliersynchronizeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoQimenSupplierSynchronizeAPIRequest) GetRawParams() model.Params {
+func (r TaobaoqimensuppliersynchronizeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRequest is Request Setter
-func (r *TaobaoQimenSupplierSynchronizeAPIRequest) SetRequest(_request *TaobaoQimenSupplierSynchronizeRequest) error {
+func (r *TaobaoqimensuppliersynchronizeAPIRequest) SetRequest(_request *TaobaoqimensuppliersynchronizeRequest) error {
 	r._request = _request
 	r.Set("request", _request)
 	return nil
 }
 
 // GetRequest Request Getter
-func (r TaobaoQimenSupplierSynchronizeAPIRequest) GetRequest() *TaobaoQimenSupplierSynchronizeRequest {
+func (r TaobaoqimensuppliersynchronizeAPIRequest) GetRequest() *TaobaoqimensuppliersynchronizeRequest {
 	return r._request
 }

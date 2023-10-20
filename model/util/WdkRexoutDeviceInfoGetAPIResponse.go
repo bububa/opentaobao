@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// WdkRexoutDeviceInfoGetAPIResponse 获取设备详情-外部对接 API返回值
+// WdkrexoutdeviceinfogetAPIResponse 获取设备详情-外部对接 API返回值
 // wdk.rexout.device.info.get
 //
 // 获取设备详情-外部对接
-type WdkRexoutDeviceInfoGetAPIResponse struct {
+type WdkrexoutdeviceinfogetAPIResponse struct {
 	model.CommonResponse
-	WdkRexoutDeviceInfoGetAPIResponseModel
+	WdkrexoutdeviceinfogetAPIResponseModel
 }
 
-// WdkRexoutDeviceInfoGetAPIResponseModel is 获取设备详情-外部对接 成功返回结果
-type WdkRexoutDeviceInfoGetAPIResponseModel struct {
+// WdkrexoutdeviceinfogetAPIResponseModel is 获取设备详情-外部对接 成功返回结果
+type WdkrexoutdeviceinfogetAPIResponseModel struct {
 	XMLName xml.Name `xml:"wdk_rexout_device_info_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

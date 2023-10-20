@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoQimenItemmappingQueryRequest 结构体
-type TaobaoQimenItemmappingQueryRequest struct {
+// TaobaoqimenitemmappingqueryRequest 结构体
+type TaobaoqimenitemmappingqueryRequest struct {
 	// 奇门仓储字段,C123,string(50),,
 	QueryType string `json:"queryType,omitempty" xml:"queryType,omitempty"`
 	// 奇门仓储字段,C123,string(50),,

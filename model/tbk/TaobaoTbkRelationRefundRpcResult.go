@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaoTbkRelationRefundRpcResult 结构体
-type TaobaoTbkRelationRefundRpcResult struct {
+// TaobaotbkrelationrefundRpcResult 结构体
+type TaobaotbkrelationrefundRpcResult struct {
 	// 返回信息
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 	// 业务错误信息

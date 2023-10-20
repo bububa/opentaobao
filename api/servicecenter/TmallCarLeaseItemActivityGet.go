@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/servicecenter"
 )
 
-// TmallCarLeaseItemActivityGet 查询汽车租赁活动信息
+// Tmallcarleaseitemactivityget 查询汽车租赁活动信息
 // tmall.car.lease.item.activity.get
 //
 // 查询汽车租赁活动信息
-func TmallCarLeaseItemActivityGet(clt *core.SDKClient, req *servicecenter.TmallCarLeaseItemActivityGetAPIRequest, session string) (*servicecenter.TmallCarLeaseItemActivityGetAPIResponse, error) {
-	var resp servicecenter.TmallCarLeaseItemActivityGetAPIResponse
+func Tmallcarleaseitemactivityget(clt *core.SDKClient, req *servicecenter.TmallcarleaseitemactivitygetAPIRequest, session string) (*servicecenter.TmallcarleaseitemactivitygetAPIResponse, error) {
+	var resp servicecenter.TmallcarleaseitemactivitygetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallcampus"
 )
 
-// TmallCampusAuthstatusQuery 学生认证状态查询
+// Tmallcampusauthstatusquery 学生认证状态查询
 // tmall.campus.authstatus.query
 //
 // 学生认证状态查询
-func TmallCampusAuthstatusQuery(clt *core.SDKClient, req *tmallcampus.TmallCampusAuthstatusQueryAPIRequest, session string) (*tmallcampus.TmallCampusAuthstatusQueryAPIResponse, error) {
-	var resp tmallcampus.TmallCampusAuthstatusQueryAPIResponse
+func Tmallcampusauthstatusquery(clt *core.SDKClient, req *tmallcampus.TmallcampusauthstatusqueryAPIRequest, session string) (*tmallcampus.TmallcampusauthstatusqueryAPIResponse, error) {
+	var resp tmallcampus.TmallcampusauthstatusqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

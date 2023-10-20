@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaIdleUserPermitQueryAPIResponse 查询服务商与卖家之间的订单消息绑定关系 API返回值
+// AlibabaidleuserpermitqueryAPIResponse 查询服务商与卖家之间的订单消息绑定关系 API返回值
 // alibaba.idle.user.permit.query
 //
 // 查询服务商与卖家之间的订单消息绑定关系
-type AlibabaIdleUserPermitQueryAPIResponse struct {
+type AlibabaidleuserpermitqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaIdleUserPermitQueryAPIResponseModel
+	AlibabaidleuserpermitqueryAPIResponseModel
 }
 
-// AlibabaIdleUserPermitQueryAPIResponseModel is 查询服务商与卖家之间的订单消息绑定关系 成功返回结果
-type AlibabaIdleUserPermitQueryAPIResponseModel struct {
+// AlibabaidleuserpermitqueryAPIResponseModel is 查询服务商与卖家之间的订单消息绑定关系 成功返回结果
+type AlibabaidleuserpermitqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_idle_user_permit_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

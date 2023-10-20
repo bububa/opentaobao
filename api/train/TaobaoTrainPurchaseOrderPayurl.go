@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/train"
 )
 
-// TaobaoTrainPurchaseOrderPayurl 火车票采购商接口-获取支付链接
+// Taobaotrainpurchaseorderpayurl 火车票采购商接口-获取支付链接
 // taobao.train.purchase.order.payurl
 //
 // 火车票采购商接口-获取支付链接
-func TaobaoTrainPurchaseOrderPayurl(clt *core.SDKClient, req *train.TaobaoTrainPurchaseOrderPayurlAPIRequest, session string) (*train.TaobaoTrainPurchaseOrderPayurlAPIResponse, error) {
-	var resp train.TaobaoTrainPurchaseOrderPayurlAPIResponse
+func Taobaotrainpurchaseorderpayurl(clt *core.SDKClient, req *train.TaobaotrainpurchaseorderpayurlAPIRequest, session string) (*train.TaobaotrainpurchaseorderpayurlAPIResponse, error) {
+	var resp train.TaobaotrainpurchaseorderpayurlAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

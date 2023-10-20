@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripMerchantGalaxyWechatCardQueryRecordAPIRequest 微信会员卡领取记录查询 API请求
+// AlitripmerchantgalaxywechatcardqueryrecordAPIRequest 微信会员卡领取记录查询 API请求
 // alitrip.merchant.galaxy.wechat.card.query.record
 //
 // 微信会员卡领取记录查询
-type AlitripMerchantGalaxyWechatCardQueryRecordAPIRequest struct {
+type AlitripmerchantgalaxywechatcardqueryrecordAPIRequest struct {
 	model.Params
 	// 租户Id
 	_tenantKey string
@@ -18,52 +18,52 @@ type AlitripMerchantGalaxyWechatCardQueryRecordAPIRequest struct {
 	_token string
 }
 
-// NewAlitripMerchantGalaxyWechatCardQueryRecordRequest 初始化AlitripMerchantGalaxyWechatCardQueryRecordAPIRequest对象
-func NewAlitripMerchantGalaxyWechatCardQueryRecordRequest() *AlitripMerchantGalaxyWechatCardQueryRecordAPIRequest {
-	return &AlitripMerchantGalaxyWechatCardQueryRecordAPIRequest{
+// NewAlitripmerchantgalaxywechatcardqueryrecordRequest 初始化AlitripmerchantgalaxywechatcardqueryrecordAPIRequest对象
+func NewAlitripmerchantgalaxywechatcardqueryrecordRequest() *AlitripmerchantgalaxywechatcardqueryrecordAPIRequest {
+	return &AlitripmerchantgalaxywechatcardqueryrecordAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripMerchantGalaxyWechatCardQueryRecordAPIRequest) GetApiMethodName() string {
+func (r AlitripmerchantgalaxywechatcardqueryrecordAPIRequest) GetApiMethodName() string {
 	return "alitrip.merchant.galaxy.wechat.card.query.record"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripMerchantGalaxyWechatCardQueryRecordAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripmerchantgalaxywechatcardqueryrecordAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripMerchantGalaxyWechatCardQueryRecordAPIRequest) GetRawParams() model.Params {
+func (r AlitripmerchantgalaxywechatcardqueryrecordAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTenantKey is TenantKey Setter
 // 租户Id
-func (r *AlitripMerchantGalaxyWechatCardQueryRecordAPIRequest) SetTenantKey(_tenantKey string) error {
+func (r *AlitripmerchantgalaxywechatcardqueryrecordAPIRequest) SetTenantKey(_tenantKey string) error {
 	r._tenantKey = _tenantKey
 	r.Set("tenant_key", _tenantKey)
 	return nil
 }
 
 // GetTenantKey TenantKey Getter
-func (r AlitripMerchantGalaxyWechatCardQueryRecordAPIRequest) GetTenantKey() string {
+func (r AlitripmerchantgalaxywechatcardqueryrecordAPIRequest) GetTenantKey() string {
 	return r._tenantKey
 }
 
 // SetToken is Token Setter
 // 用户登录凭证
-func (r *AlitripMerchantGalaxyWechatCardQueryRecordAPIRequest) SetToken(_token string) error {
+func (r *AlitripmerchantgalaxywechatcardqueryrecordAPIRequest) SetToken(_token string) error {
 	r._token = _token
 	r.Set("token", _token)
 	return nil
 }
 
 // GetToken Token Getter
-func (r AlitripMerchantGalaxyWechatCardQueryRecordAPIRequest) GetToken() string {
+func (r AlitripmerchantgalaxywechatcardqueryrecordAPIRequest) GetToken() string {
 	return r._token
 }

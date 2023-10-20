@@ -1,7 +1,7 @@
 package drugtrace
 
-// PUserEntInfoDto 结构体
-type PUserEntInfoDto struct {
+// PuserEntInfoDto 结构体
+type PuserEntInfoDto struct {
 	// 所在地编码
 	DictRegionCode string `json:"dict_region_code,omitempty" xml:"dict_region_code,omitempty"`
 	// 所在地明细

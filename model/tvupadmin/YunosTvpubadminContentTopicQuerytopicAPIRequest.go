@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosTvpubadminContentTopicQuerytopicAPIRequest 迎客松专题查询 API请求
+// YunostvpubadmincontenttopicquerytopicAPIRequest 迎客松专题查询 API请求
 // yunos.tvpubadmin.content.topic.querytopic
 //
 // 迎客松专题查询
-type YunosTvpubadminContentTopicQuerytopicAPIRequest struct {
+type YunostvpubadmincontenttopicquerytopicAPIRequest struct {
 	model.Params
 	// TopicAuditQueryBO
 	_topicAuditQuery string
 }
 
-// NewYunosTvpubadminContentTopicQuerytopicRequest 初始化YunosTvpubadminContentTopicQuerytopicAPIRequest对象
-func NewYunosTvpubadminContentTopicQuerytopicRequest() *YunosTvpubadminContentTopicQuerytopicAPIRequest {
-	return &YunosTvpubadminContentTopicQuerytopicAPIRequest{
+// NewYunostvpubadmincontenttopicquerytopicRequest 初始化YunostvpubadmincontenttopicquerytopicAPIRequest对象
+func NewYunostvpubadmincontenttopicquerytopicRequest() *YunostvpubadmincontenttopicquerytopicAPIRequest {
+	return &YunostvpubadmincontenttopicquerytopicAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminContentTopicQuerytopicAPIRequest) GetApiMethodName() string {
+func (r YunostvpubadmincontenttopicquerytopicAPIRequest) GetApiMethodName() string {
 	return "yunos.tvpubadmin.content.topic.querytopic"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminContentTopicQuerytopicAPIRequest) GetApiParams(params url.Values) {
+func (r YunostvpubadmincontenttopicquerytopicAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r YunosTvpubadminContentTopicQuerytopicAPIRequest) GetRawParams() model.Params {
+func (r YunostvpubadmincontenttopicquerytopicAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTopicAuditQuery is TopicAuditQuery Setter
 // TopicAuditQueryBO
-func (r *YunosTvpubadminContentTopicQuerytopicAPIRequest) SetTopicAuditQuery(_topicAuditQuery string) error {
+func (r *YunostvpubadmincontenttopicquerytopicAPIRequest) SetTopicAuditQuery(_topicAuditQuery string) error {
 	r._topicAuditQuery = _topicAuditQuery
 	r.Set("topic_audit_query", _topicAuditQuery)
 	return nil
 }
 
 // GetTopicAuditQuery TopicAuditQuery Getter
-func (r YunosTvpubadminContentTopicQuerytopicAPIRequest) GetTopicAuditQuery() string {
+func (r YunostvpubadmincontenttopicquerytopicAPIRequest) GetTopicAuditQuery() string {
 	return r._topicAuditQuery
 }

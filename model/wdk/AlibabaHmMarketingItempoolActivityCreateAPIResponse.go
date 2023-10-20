@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaHmMarketingItempoolActivityCreateAPIResponse 创建活动新接口 API返回值
+// AlibabahmmarketingitempoolactivitycreateAPIResponse 创建活动新接口 API返回值
 // alibaba.hm.marketing.itempool.activity.create
 //
 // 创建活动新接口，支持新工具玩法
-type AlibabaHmMarketingItempoolActivityCreateAPIResponse struct {
+type AlibabahmmarketingitempoolactivitycreateAPIResponse struct {
 	model.CommonResponse
-	AlibabaHmMarketingItempoolActivityCreateAPIResponseModel
+	AlibabahmmarketingitempoolactivitycreateAPIResponseModel
 }
 
-// AlibabaHmMarketingItempoolActivityCreateAPIResponseModel is 创建活动新接口 成功返回结果
-type AlibabaHmMarketingItempoolActivityCreateAPIResponseModel struct {
+// AlibabahmmarketingitempoolactivitycreateAPIResponseModel is 创建活动新接口 成功返回结果
+type AlibabahmmarketingitempoolactivitycreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_hm_marketing_itempool_activity_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

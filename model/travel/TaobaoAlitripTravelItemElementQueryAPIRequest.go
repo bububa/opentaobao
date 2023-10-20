@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAlitripTravelItemElementQueryAPIRequest 【API3.0】资源元素查询接口 API请求
+// TaobaoalitriptravelitemelementqueryAPIRequest 【API3.0】资源元素查询接口 API请求
 // taobao.alitrip.travel.item.element.query
 //
 // 提供资源元素查询接口，支持商家查询已经发布过的资源元素
-type TaobaoAlitripTravelItemElementQueryAPIRequest struct {
+type TaobaoalitriptravelitemelementqueryAPIRequest struct {
 	model.Params
 	// 需要查询的资源元素列表，最大列表长度为50
 	_outerIds []string
 }
 
-// NewTaobaoAlitripTravelItemElementQueryRequest 初始化TaobaoAlitripTravelItemElementQueryAPIRequest对象
-func NewTaobaoAlitripTravelItemElementQueryRequest() *TaobaoAlitripTravelItemElementQueryAPIRequest {
-	return &TaobaoAlitripTravelItemElementQueryAPIRequest{
+// NewTaobaoalitriptravelitemelementqueryRequest 初始化TaobaoalitriptravelitemelementqueryAPIRequest对象
+func NewTaobaoalitriptravelitemelementqueryRequest() *TaobaoalitriptravelitemelementqueryAPIRequest {
+	return &TaobaoalitriptravelitemelementqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoAlitripTravelItemElementQueryAPIRequest) GetApiMethodName() string {
+func (r TaobaoalitriptravelitemelementqueryAPIRequest) GetApiMethodName() string {
 	return "taobao.alitrip.travel.item.element.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripTravelItemElementQueryAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoalitriptravelitemelementqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoAlitripTravelItemElementQueryAPIRequest) GetRawParams() model.Params {
+func (r TaobaoalitriptravelitemelementqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOuterIds is OuterIds Setter
 // 需要查询的资源元素列表，最大列表长度为50
-func (r *TaobaoAlitripTravelItemElementQueryAPIRequest) SetOuterIds(_outerIds []string) error {
+func (r *TaobaoalitriptravelitemelementqueryAPIRequest) SetOuterIds(_outerIds []string) error {
 	r._outerIds = _outerIds
 	r.Set("outer_ids", _outerIds)
 	return nil
 }
 
 // GetOuterIds OuterIds Getter
-func (r TaobaoAlitripTravelItemElementQueryAPIRequest) GetOuterIds() []string {
+func (r TaobaoalitriptravelitemelementqueryAPIRequest) GetOuterIds() []string {
 	return r._outerIds
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaDchainAoxiangWarehouseCreateUpdateAPIResponse 仓库信息同步 API返回值
+// AlibabadchainaoxiangwarehousecreateupdateAPIResponse 仓库信息同步 API返回值
 // alibaba.dchain.aoxiang.warehouse.create.update
 //
 // 仓库信息同步
-type AlibabaDchainAoxiangWarehouseCreateUpdateAPIResponse struct {
+type AlibabadchainaoxiangwarehousecreateupdateAPIResponse struct {
 	model.CommonResponse
-	AlibabaDchainAoxiangWarehouseCreateUpdateAPIResponseModel
+	AlibabadchainaoxiangwarehousecreateupdateAPIResponseModel
 }
 
-// AlibabaDchainAoxiangWarehouseCreateUpdateAPIResponseModel is 仓库信息同步 成功返回结果
-type AlibabaDchainAoxiangWarehouseCreateUpdateAPIResponseModel struct {
+// AlibabadchainaoxiangwarehousecreateupdateAPIResponseModel is 仓库信息同步 成功返回结果
+type AlibabadchainaoxiangwarehousecreateupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_dchain_aoxiang_warehouse_create_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

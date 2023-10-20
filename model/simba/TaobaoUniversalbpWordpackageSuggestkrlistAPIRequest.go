@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest 关键词包建议 API请求
+// TaobaouniversalbpwordpackagesuggestkrlistAPIRequest 关键词包建议 API请求
 // taobao.universalbp.wordpackage.suggestkrlist
 //
 // 入参推广信息，出参建议的全部关键词包
-type TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest struct {
+type TaobaouniversalbpwordpackagesuggestkrlistAPIRequest struct {
 	model.Params
 	// topServiceContext
 	_topServiceContext *TopServiceContext
@@ -18,52 +18,52 @@ type TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest struct {
 	_wordPackageSuggestQueryVO *WordPackageSuggestQueryVo
 }
 
-// NewTaobaoUniversalbpWordpackageSuggestkrlistRequest 初始化TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest对象
-func NewTaobaoUniversalbpWordpackageSuggestkrlistRequest() *TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest {
-	return &TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest{
+// NewTaobaouniversalbpwordpackagesuggestkrlistRequest 初始化TaobaouniversalbpwordpackagesuggestkrlistAPIRequest对象
+func NewTaobaouniversalbpwordpackagesuggestkrlistRequest() *TaobaouniversalbpwordpackagesuggestkrlistAPIRequest {
+	return &TaobaouniversalbpwordpackagesuggestkrlistAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest) GetApiMethodName() string {
+func (r TaobaouniversalbpwordpackagesuggestkrlistAPIRequest) GetApiMethodName() string {
 	return "taobao.universalbp.wordpackage.suggestkrlist"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaouniversalbpwordpackagesuggestkrlistAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest) GetRawParams() model.Params {
+func (r TaobaouniversalbpwordpackagesuggestkrlistAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTopServiceContext is TopServiceContext Setter
 // topServiceContext
-func (r *TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest) SetTopServiceContext(_topServiceContext *TopServiceContext) error {
+func (r *TaobaouniversalbpwordpackagesuggestkrlistAPIRequest) SetTopServiceContext(_topServiceContext *TopServiceContext) error {
 	r._topServiceContext = _topServiceContext
 	r.Set("top_service_context", _topServiceContext)
 	return nil
 }
 
 // GetTopServiceContext TopServiceContext Getter
-func (r TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest) GetTopServiceContext() *TopServiceContext {
+func (r TaobaouniversalbpwordpackagesuggestkrlistAPIRequest) GetTopServiceContext() *TopServiceContext {
 	return r._topServiceContext
 }
 
 // SetWordPackageSuggestQueryVO is WordPackageSuggestQueryVO Setter
 // wordPackageSuggestQueryVO
-func (r *TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest) SetWordPackageSuggestQueryVO(_wordPackageSuggestQueryVO *WordPackageSuggestQueryVo) error {
+func (r *TaobaouniversalbpwordpackagesuggestkrlistAPIRequest) SetWordPackageSuggestQueryVO(_wordPackageSuggestQueryVO *WordPackageSuggestQueryVo) error {
 	r._wordPackageSuggestQueryVO = _wordPackageSuggestQueryVO
 	r.Set("word_package_suggest_query_v_o", _wordPackageSuggestQueryVO)
 	return nil
 }
 
 // GetWordPackageSuggestQueryVO WordPackageSuggestQueryVO Getter
-func (r TaobaoUniversalbpWordpackageSuggestkrlistAPIRequest) GetWordPackageSuggestQueryVO() *WordPackageSuggestQueryVo {
+func (r TaobaouniversalbpwordpackagesuggestkrlistAPIRequest) GetWordPackageSuggestQueryVO() *WordPackageSuggestQueryVo {
 	return r._wordPackageSuggestQueryVO
 }

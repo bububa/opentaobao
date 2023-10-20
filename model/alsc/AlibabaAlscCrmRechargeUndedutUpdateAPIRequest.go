@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlscCrmRechargeUndedutUpdateAPIRequest 储值消费退款(逆向) API请求
+// AlibabaalsccrmrechargeundedutupdateAPIRequest 储值消费退款(逆向) API请求
 // alibaba.alsc.crm.recharge.undedut.update
 //
 // 新增储值消费退款接口
-type AlibabaAlscCrmRechargeUndedutUpdateAPIRequest struct {
+type AlibabaalsccrmrechargeundedutupdateAPIRequest struct {
 	model.Params
 	// 入参
 	_paramUndedutOpenReq *UndedutOpenReq
 }
 
-// NewAlibabaAlscCrmRechargeUndedutUpdateRequest 初始化AlibabaAlscCrmRechargeUndedutUpdateAPIRequest对象
-func NewAlibabaAlscCrmRechargeUndedutUpdateRequest() *AlibabaAlscCrmRechargeUndedutUpdateAPIRequest {
-	return &AlibabaAlscCrmRechargeUndedutUpdateAPIRequest{
+// NewAlibabaalsccrmrechargeundedutupdateRequest 初始化AlibabaalsccrmrechargeundedutupdateAPIRequest对象
+func NewAlibabaalsccrmrechargeundedutupdateRequest() *AlibabaalsccrmrechargeundedutupdateAPIRequest {
+	return &AlibabaalsccrmrechargeundedutupdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAlscCrmRechargeUndedutUpdateAPIRequest) GetApiMethodName() string {
+func (r AlibabaalsccrmrechargeundedutupdateAPIRequest) GetApiMethodName() string {
 	return "alibaba.alsc.crm.recharge.undedut.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmRechargeUndedutUpdateAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaalsccrmrechargeundedutupdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAlscCrmRechargeUndedutUpdateAPIRequest) GetRawParams() model.Params {
+func (r AlibabaalsccrmrechargeundedutupdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamUndedutOpenReq is ParamUndedutOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmRechargeUndedutUpdateAPIRequest) SetParamUndedutOpenReq(_paramUndedutOpenReq *UndedutOpenReq) error {
+func (r *AlibabaalsccrmrechargeundedutupdateAPIRequest) SetParamUndedutOpenReq(_paramUndedutOpenReq *UndedutOpenReq) error {
 	r._paramUndedutOpenReq = _paramUndedutOpenReq
 	r.Set("param_undedut_open_req", _paramUndedutOpenReq)
 	return nil
 }
 
 // GetParamUndedutOpenReq ParamUndedutOpenReq Getter
-func (r AlibabaAlscCrmRechargeUndedutUpdateAPIRequest) GetParamUndedutOpenReq() *UndedutOpenReq {
+func (r AlibabaalsccrmrechargeundedutupdateAPIRequest) GetParamUndedutOpenReq() *UndedutOpenReq {
 	return r._paramUndedutOpenReq
 }

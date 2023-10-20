@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoXhotelItemSelectionSellerStatSummaryAPIResponse 商家数据-选品整体概况 API返回值
+// TaobaoxhotelitemselectionsellerstatsummaryAPIResponse 商家数据-选品整体概况 API返回值
 // taobao.xhotel.item.selection.seller.stat.summary
 //
 // 商家数据-选品整体概况
-type TaobaoXhotelItemSelectionSellerStatSummaryAPIResponse struct {
+type TaobaoxhotelitemselectionsellerstatsummaryAPIResponse struct {
 	model.CommonResponse
-	TaobaoXhotelItemSelectionSellerStatSummaryAPIResponseModel
+	TaobaoxhotelitemselectionsellerstatsummaryAPIResponseModel
 }
 
-// TaobaoXhotelItemSelectionSellerStatSummaryAPIResponseModel is 商家数据-选品整体概况 成功返回结果
-type TaobaoXhotelItemSelectionSellerStatSummaryAPIResponseModel struct {
+// TaobaoxhotelitemselectionsellerstatsummaryAPIResponseModel is 商家数据-选品整体概况 成功返回结果
+type TaobaoxhotelitemselectionsellerstatsummaryAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_item_selection_seller_stat_summary_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

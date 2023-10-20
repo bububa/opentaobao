@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponse 码上放心数据落地-获取每天日报 API返回值
+// AlibabaalihealthdrugdownloadgetentdailytaskdtolistAPIResponse 码上放心数据落地-获取每天日报 API返回值
 // alibaba.alihealth.drug.download.getentdailytaskdtolist
 //
 // 码上放心数据落地-获取每天日报
-type AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponse struct {
+type AlibabaalihealthdrugdownloadgetentdailytaskdtolistAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponseModel
+	AlibabaalihealthdrugdownloadgetentdailytaskdtolistAPIResponseModel
 }
 
-// AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponseModel is 码上放心数据落地-获取每天日报 成功返回结果
-type AlibabaAlihealthDrugDownloadGetentdailytaskdtolistAPIResponseModel struct {
+// AlibabaalihealthdrugdownloadgetentdailytaskdtolistAPIResponseModel is 码上放心数据落地-获取每天日报 成功返回结果
+type AlibabaalihealthdrugdownloadgetentdailytaskdtolistAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_drug_download_getentdailytaskdtolist_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

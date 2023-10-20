@@ -1,7 +1,7 @@
 package cloudgame
 
-// AlibabaCgameAvatarUserbodyQueryData 结构体
-type AlibabaCgameAvatarUserbodyQueryData struct {
+// AlibabacgameavataruserbodyqueryData 结构体
+type AlibabacgameavataruserbodyqueryData struct {
 	// body traceID
 	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
 	// 脸部数据

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAilabsBotsSkilsListAPIResponse 对外设备获取技能列表 API返回值
+// AlibabaailabsbotsskilslistAPIResponse 对外设备获取技能列表 API返回值
 // alibaba.ailabs.bots.skils.list
 //
 // 获取ai开放平台技能列表
-type AlibabaAilabsBotsSkilsListAPIResponse struct {
+type AlibabaailabsbotsskilslistAPIResponse struct {
 	model.CommonResponse
-	AlibabaAilabsBotsSkilsListAPIResponseModel
+	AlibabaailabsbotsskilslistAPIResponseModel
 }
 
-// AlibabaAilabsBotsSkilsListAPIResponseModel is 对外设备获取技能列表 成功返回结果
-type AlibabaAilabsBotsSkilsListAPIResponseModel struct {
+// AlibabaailabsbotsskilslistAPIResponseModel is 对外设备获取技能列表 成功返回结果
+type AlibabaailabsbotsskilslistAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailabs_bots_skils_list_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

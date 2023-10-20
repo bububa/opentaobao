@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaInteractOrderCheckuserimeiAPIResponse 金融购机验证设备号 API返回值
+// AlibabainteractordercheckuserimeiAPIResponse 金融购机验证设备号 API返回值
 // alibaba.interact.order.checkuserimei
 //
 // 金融购机验证用户身份信息
-type AlibabaInteractOrderCheckuserimeiAPIResponse struct {
+type AlibabainteractordercheckuserimeiAPIResponse struct {
 	model.CommonResponse
-	AlibabaInteractOrderCheckuserimeiAPIResponseModel
+	AlibabainteractordercheckuserimeiAPIResponseModel
 }
 
-// AlibabaInteractOrderCheckuserimeiAPIResponseModel is 金融购机验证设备号 成功返回结果
-type AlibabaInteractOrderCheckuserimeiAPIResponseModel struct {
+// AlibabainteractordercheckuserimeiAPIResponseModel is 金融购机验证设备号 成功返回结果
+type AlibabainteractordercheckuserimeiAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_order_checkuserimei_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

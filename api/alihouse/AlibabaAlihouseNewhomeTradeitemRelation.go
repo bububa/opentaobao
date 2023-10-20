@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// AlibabaAlihouseNewhomeTradeitemRelation 货独立绑定货品
+// Alibabaalihousenewhometradeitemrelation 货独立绑定货品
 // alibaba.alihouse.newhome.tradeitem.relation
 //
 // 货独立绑定货品
-func AlibabaAlihouseNewhomeTradeitemRelation(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeTradeitemRelationAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeTradeitemRelationAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeTradeitemRelationAPIResponse
+func Alibabaalihousenewhometradeitemrelation(clt *core.SDKClient, req *alihouse.AlibabaalihousenewhometradeitemrelationAPIRequest, session string) (*alihouse.AlibabaalihousenewhometradeitemrelationAPIResponse, error) {
+	var resp alihouse.AlibabaalihousenewhometradeitemrelationAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

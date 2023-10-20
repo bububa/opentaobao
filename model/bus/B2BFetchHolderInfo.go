@@ -1,7 +1,7 @@
 package bus
 
-// B2BFetchHolderInfo 结构体
-type B2BFetchHolderInfo struct {
+// B2bfetchHolderInfo 结构体
+type B2bfetchHolderInfo struct {
 	// 取票人证件号码
 	FetchCertNumber string `json:"fetch_cert_number,omitempty" xml:"fetch_cert_number,omitempty"`
 	// 取票人证件类型

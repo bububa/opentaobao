@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoCaipiaoLotterytypesGetAPIResponse 获取可用的彩种列表 API返回值
+// TaobaocaipiaolotterytypesgetAPIResponse 获取可用的彩种列表 API返回值
 // taobao.caipiao.lotterytypes.get
 //
 // 获取彩票系统支持的可用于赠送的彩种列表
-type TaobaoCaipiaoLotterytypesGetAPIResponse struct {
+type TaobaocaipiaolotterytypesgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoCaipiaoLotterytypesGetAPIResponseModel
+	TaobaocaipiaolotterytypesgetAPIResponseModel
 }
 
-// TaobaoCaipiaoLotterytypesGetAPIResponseModel is 获取可用的彩种列表 成功返回结果
-type TaobaoCaipiaoLotterytypesGetAPIResponseModel struct {
+// TaobaocaipiaolotterytypesgetAPIResponseModel is 获取可用的彩种列表 成功返回结果
+type TaobaocaipiaolotterytypesgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"caipiao_lotterytypes_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

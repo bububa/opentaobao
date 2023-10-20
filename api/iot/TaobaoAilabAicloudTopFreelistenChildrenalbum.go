@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/iot"
 )
 
-// TaobaoAilabAicloudTopFreelistenChildrenalbum 儿童音频列表
+// Taobaoailabaicloudtopfreelistenchildrenalbum 儿童音频列表
 // taobao.ailab.aicloud.top.freelisten.childrenalbum
 //
 // 儿童音频列表
-func TaobaoAilabAicloudTopFreelistenChildrenalbum(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopFreelistenChildrenalbumAPIRequest, session string) (*iot.TaobaoAilabAicloudTopFreelistenChildrenalbumAPIResponse, error) {
-	var resp iot.TaobaoAilabAicloudTopFreelistenChildrenalbumAPIResponse
+func Taobaoailabaicloudtopfreelistenchildrenalbum(clt *core.SDKClient, req *iot.TaobaoailabaicloudtopfreelistenchildrenalbumAPIRequest, session string) (*iot.TaobaoailabaicloudtopfreelistenchildrenalbumAPIResponse, error) {
+	var resp iot.TaobaoailabaicloudtopfreelistenchildrenalbumAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

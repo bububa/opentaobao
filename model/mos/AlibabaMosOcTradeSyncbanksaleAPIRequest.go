@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaMosOcTradeSyncbanksaleAPIRequest 云闪付、银行卡销售数据回传接口 API请求
+// AlibabamosoctradesyncbanksaleAPIRequest 云闪付、银行卡销售数据回传接口 API请求
 // alibaba.mos.oc.trade.syncbanksale
 //
 // 云闪付、银行卡销售数据回传
-type AlibabaMosOcTradeSyncbanksaleAPIRequest struct {
+type AlibabamosoctradesyncbanksaleAPIRequest struct {
 	model.Params
 	// pos云闪付、银行卡销售数据
 	_posBankSaleInfoDto *PosBankSaleInfoDto
 }
 
-// NewAlibabaMosOcTradeSyncbanksaleRequest 初始化AlibabaMosOcTradeSyncbanksaleAPIRequest对象
-func NewAlibabaMosOcTradeSyncbanksaleRequest() *AlibabaMosOcTradeSyncbanksaleAPIRequest {
-	return &AlibabaMosOcTradeSyncbanksaleAPIRequest{
+// NewAlibabamosoctradesyncbanksaleRequest 初始化AlibabamosoctradesyncbanksaleAPIRequest对象
+func NewAlibabamosoctradesyncbanksaleRequest() *AlibabamosoctradesyncbanksaleAPIRequest {
+	return &AlibabamosoctradesyncbanksaleAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaMosOcTradeSyncbanksaleAPIRequest) GetApiMethodName() string {
+func (r AlibabamosoctradesyncbanksaleAPIRequest) GetApiMethodName() string {
 	return "alibaba.mos.oc.trade.syncbanksale"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaMosOcTradeSyncbanksaleAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabamosoctradesyncbanksaleAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaMosOcTradeSyncbanksaleAPIRequest) GetRawParams() model.Params {
+func (r AlibabamosoctradesyncbanksaleAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetPosBankSaleInfoDto is PosBankSaleInfoDto Setter
 // pos云闪付、银行卡销售数据
-func (r *AlibabaMosOcTradeSyncbanksaleAPIRequest) SetPosBankSaleInfoDto(_posBankSaleInfoDto *PosBankSaleInfoDto) error {
+func (r *AlibabamosoctradesyncbanksaleAPIRequest) SetPosBankSaleInfoDto(_posBankSaleInfoDto *PosBankSaleInfoDto) error {
 	r._posBankSaleInfoDto = _posBankSaleInfoDto
 	r.Set("pos_bank_sale_info_dto", _posBankSaleInfoDto)
 	return nil
 }
 
 // GetPosBankSaleInfoDto PosBankSaleInfoDto Getter
-func (r AlibabaMosOcTradeSyncbanksaleAPIRequest) GetPosBankSaleInfoDto() *PosBankSaleInfoDto {
+func (r AlibabamosoctradesyncbanksaleAPIRequest) GetPosBankSaleInfoDto() *PosBankSaleInfoDto {
 	return r._posBankSaleInfoDto
 }

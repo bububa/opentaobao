@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/campus"
 )
 
-// AlibabaIworkMcMsgSenddefault 给注册用户发送消息
+// Alibabaiworkmcmsgsenddefault 给注册用户发送消息
 // alibaba.iwork.mc.msg.senddefault
 //
 // 给神鲸注册用户发送对应操作结果的消息
-func AlibabaIworkMcMsgSenddefault(clt *core.SDKClient, req *campus.AlibabaIworkMcMsgSenddefaultAPIRequest, session string) (*campus.AlibabaIworkMcMsgSenddefaultAPIResponse, error) {
-	var resp campus.AlibabaIworkMcMsgSenddefaultAPIResponse
+func Alibabaiworkmcmsgsenddefault(clt *core.SDKClient, req *campus.AlibabaiworkmcmsgsenddefaultAPIRequest, session string) (*campus.AlibabaiworkmcmsgsenddefaultAPIResponse, error) {
+	var resp campus.AlibabaiworkmcmsgsenddefaultAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

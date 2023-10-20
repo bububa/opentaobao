@@ -1,7 +1,7 @@
 package c2m
 
-// TaobaoSebpOrganizationGetorderinfoResultDo 结构体
-type TaobaoSebpOrganizationGetorderinfoResultDo struct {
+// TaobaosebporganizationgetorderinfoResultDo 结构体
+type TaobaosebporganizationgetorderinfoResultDo struct {
 	// 错误信息
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 错误码

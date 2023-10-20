@@ -1,7 +1,7 @@
 package trade
 
-// IOSChargeCallbackRequestDto 结构体
-type IOSChargeCallbackRequestDto struct {
+// IoschargeCallbackRequestDto 结构体
+type IoschargeCallbackRequestDto struct {
 	// 商家订单号
 	VendorOrderNo string `json:"vendor_order_no,omitempty" xml:"vendor_order_no,omitempty"`
 	// 失败的错误码

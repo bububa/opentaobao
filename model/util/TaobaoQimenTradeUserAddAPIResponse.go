@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoQimenTradeUserAddAPIResponse 添加奇门订单链路用户 API返回值
+// TaobaoqimentradeuseraddAPIResponse 添加奇门订单链路用户 API返回值
 // taobao.qimen.trade.user.add
 //
 // 添加奇门订单链路用户
-type TaobaoQimenTradeUserAddAPIResponse struct {
+type TaobaoqimentradeuseraddAPIResponse struct {
 	model.CommonResponse
-	TaobaoQimenTradeUserAddAPIResponseModel
+	TaobaoqimentradeuseraddAPIResponseModel
 }
 
-// TaobaoQimenTradeUserAddAPIResponseModel is 添加奇门订单链路用户 成功返回结果
-type TaobaoQimenTradeUserAddAPIResponseModel struct {
+// TaobaoqimentradeuseraddAPIResponseModel is 添加奇门订单链路用户 成功返回结果
+type TaobaoqimentradeuseraddAPIResponseModel struct {
 	XMLName xml.Name `xml:"qimen_trade_user_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

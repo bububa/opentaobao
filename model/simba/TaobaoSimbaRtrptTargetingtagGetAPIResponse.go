@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSimbaRtrptTargetingtagGetAPIResponse 搜索人群实时报表 API返回值
+// TaobaosimbartrpttargetingtaggetAPIResponse 搜索人群实时报表 API返回值
 // taobao.simba.rtrpt.targetingtag.get
 //
 // 获取搜搜人群实时报表
-type TaobaoSimbaRtrptTargetingtagGetAPIResponse struct {
+type TaobaosimbartrpttargetingtaggetAPIResponse struct {
 	model.CommonResponse
-	TaobaoSimbaRtrptTargetingtagGetAPIResponseModel
+	TaobaosimbartrpttargetingtaggetAPIResponseModel
 }
 
-// TaobaoSimbaRtrptTargetingtagGetAPIResponseModel is 搜索人群实时报表 成功返回结果
-type TaobaoSimbaRtrptTargetingtagGetAPIResponseModel struct {
+// TaobaosimbartrpttargetingtaggetAPIResponseModel is 搜索人群实时报表 成功返回结果
+type TaobaosimbartrpttargetingtaggetAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_rtrpt_targetingtag_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

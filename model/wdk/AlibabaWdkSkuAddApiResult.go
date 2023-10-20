@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaWdkSkuAddApiResult 结构体
-type AlibabaWdkSkuAddApiResult struct {
+// AlibabawdkskuaddApiResult 结构体
+type AlibabawdkskuaddApiResult struct {
 	// 错误编码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 错误信息

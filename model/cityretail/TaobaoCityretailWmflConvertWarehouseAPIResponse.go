@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoCityretailWmflConvertWarehouseAPIResponse 同城零售完美履约转仓 API返回值
+// TaobaocityretailwmflconvertwarehouseAPIResponse 同城零售完美履约转仓 API返回值
 // taobao.cityretail.wmfl.convert.warehouse
 //
 // 同城零售完美履约转仓
-type TaobaoCityretailWmflConvertWarehouseAPIResponse struct {
+type TaobaocityretailwmflconvertwarehouseAPIResponse struct {
 	model.CommonResponse
-	TaobaoCityretailWmflConvertWarehouseAPIResponseModel
+	TaobaocityretailwmflconvertwarehouseAPIResponseModel
 }
 
-// TaobaoCityretailWmflConvertWarehouseAPIResponseModel is 同城零售完美履约转仓 成功返回结果
-type TaobaoCityretailWmflConvertWarehouseAPIResponseModel struct {
+// TaobaocityretailwmflconvertwarehouseAPIResponseModel is 同城零售完美履约转仓 成功返回结果
+type TaobaocityretailwmflconvertwarehouseAPIResponseModel struct {
 	XMLName xml.Name `xml:"cityretail_wmfl_convert_warehouse_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

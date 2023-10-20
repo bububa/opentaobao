@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaScbpAccountIsarrearsGetAPIRequest 查询关键词推广账户是否欠款 API请求
+// AlibabascbpaccountisarrearsgetAPIRequest 查询关键词推广账户是否欠款 API请求
 // alibaba.scbp.account.isarrears.get
 //
 // 查询关键词推广账户是否欠款
-type AlibabaScbpAccountIsarrearsGetAPIRequest struct {
+type AlibabascbpaccountisarrearsgetAPIRequest struct {
 	model.Params
 }
 
-// NewAlibabaScbpAccountIsarrearsGetRequest 初始化AlibabaScbpAccountIsarrearsGetAPIRequest对象
-func NewAlibabaScbpAccountIsarrearsGetRequest() *AlibabaScbpAccountIsarrearsGetAPIRequest {
-	return &AlibabaScbpAccountIsarrearsGetAPIRequest{
+// NewAlibabascbpaccountisarrearsgetRequest 初始化AlibabascbpaccountisarrearsgetAPIRequest对象
+func NewAlibabascbpaccountisarrearsgetRequest() *AlibabascbpaccountisarrearsgetAPIRequest {
+	return &AlibabascbpaccountisarrearsgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaScbpAccountIsarrearsGetAPIRequest) GetApiMethodName() string {
+func (r AlibabascbpaccountisarrearsgetAPIRequest) GetApiMethodName() string {
 	return "alibaba.scbp.account.isarrears.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAccountIsarrearsGetAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabascbpaccountisarrearsgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaScbpAccountIsarrearsGetAPIRequest) GetRawParams() model.Params {
+func (r AlibabascbpaccountisarrearsgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

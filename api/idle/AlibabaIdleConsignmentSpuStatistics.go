@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/idle"
 )
 
-// AlibabaIdleConsignmentSpuStatistics 闲鱼帮卖同步服务商交易统计信息
+// Alibabaidleconsignmentspustatistics 闲鱼帮卖同步服务商交易统计信息
 // alibaba.idle.consignment.spu.statistics
 //
 // 闲鱼帮卖同步服务商交易统计信息
-func AlibabaIdleConsignmentSpuStatistics(clt *core.SDKClient, req *idle.AlibabaIdleConsignmentSpuStatisticsAPIRequest, session string) (*idle.AlibabaIdleConsignmentSpuStatisticsAPIResponse, error) {
-	var resp idle.AlibabaIdleConsignmentSpuStatisticsAPIResponse
+func Alibabaidleconsignmentspustatistics(clt *core.SDKClient, req *idle.AlibabaidleconsignmentspustatisticsAPIRequest, session string) (*idle.AlibabaidleconsignmentspustatisticsAPIResponse, error) {
+	var resp idle.AlibabaidleconsignmentspustatisticsAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

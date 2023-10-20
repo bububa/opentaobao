@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaAlihealthDrugCodeKytWesGetlicenseResultModel 结构体
-type AlibabaAlihealthDrugCodeKytWesGetlicenseResultModel struct {
+// AlibabaalihealthdrugcodekytwesgetlicenseResultModel 结构体
+type AlibabaalihealthdrugcodekytwesgetlicenseResultModel struct {
 	// licenseToken
 	LicenseToken string `json:"license_token,omitempty" xml:"license_token,omitempty"`
 	// 状态码

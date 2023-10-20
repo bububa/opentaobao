@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/interact"
 )
 
-// AlibabaInteractSensorTitlebarhide 隐藏titleBar
+// Alibabainteractsensortitlebarhide 隐藏titleBar
 // alibaba.interact.sensor.titlebarhide
 //
 // 隐藏titleBar
-func AlibabaInteractSensorTitlebarhide(clt *core.SDKClient, req *interact.AlibabaInteractSensorTitlebarhideAPIRequest, session string) (*interact.AlibabaInteractSensorTitlebarhideAPIResponse, error) {
-	var resp interact.AlibabaInteractSensorTitlebarhideAPIResponse
+func Alibabainteractsensortitlebarhide(clt *core.SDKClient, req *interact.AlibabainteractsensortitlebarhideAPIRequest, session string) (*interact.AlibabainteractsensortitlebarhideAPIResponse, error) {
+	var resp interact.AlibabainteractsensortitlebarhideAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

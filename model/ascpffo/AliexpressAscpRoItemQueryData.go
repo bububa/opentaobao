@@ -1,7 +1,7 @@
 package ascpffo
 
-// AliexpressAscpRoItemQueryData 结构体
-type AliexpressAscpRoItemQueryData struct {
+// AliexpressascproitemqueryData 结构体
+type AliexpressascproitemqueryData struct {
 	// 退供单号
 	ReturnOrderNo string `json:"return_order_no,omitempty" xml:"return_order_no,omitempty"`
 	// 货品名称

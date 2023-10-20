@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaFundplatformCardordersInfoQueryAPIResponse 根据制卡单分页查询卡信息 API返回值
+// AlibabafundplatformcardordersinfoqueryAPIResponse 根据制卡单分页查询卡信息 API返回值
 // alibaba.fundplatform.cardorders.info.query
 //
 // 该接口由汇金实现，外部调用。通过制卡单号分页查询卡信息
-type AlibabaFundplatformCardordersInfoQueryAPIResponse struct {
+type AlibabafundplatformcardordersinfoqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaFundplatformCardordersInfoQueryAPIResponseModel
+	AlibabafundplatformcardordersinfoqueryAPIResponseModel
 }
 
-// AlibabaFundplatformCardordersInfoQueryAPIResponseModel is 根据制卡单分页查询卡信息 成功返回结果
-type AlibabaFundplatformCardordersInfoQueryAPIResponseModel struct {
+// AlibabafundplatformcardordersinfoqueryAPIResponseModel is 根据制卡单分页查询卡信息 成功返回结果
+type AlibabafundplatformcardordersinfoqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_fundplatform_cardorders_info_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

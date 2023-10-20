@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoWlbOrderCancelAPIResponse 取消物流宝订单 API返回值
+// TaobaowlbordercancelAPIResponse 取消物流宝订单 API返回值
 // taobao.wlb.order.cancel
 //
 // 取消物流宝订单
-type TaobaoWlbOrderCancelAPIResponse struct {
+type TaobaowlbordercancelAPIResponse struct {
 	model.CommonResponse
-	TaobaoWlbOrderCancelAPIResponseModel
+	TaobaowlbordercancelAPIResponseModel
 }
 
-// TaobaoWlbOrderCancelAPIResponseModel is 取消物流宝订单 成功返回结果
-type TaobaoWlbOrderCancelAPIResponseModel struct {
+// TaobaowlbordercancelAPIResponseModel is 取消物流宝订单 成功返回结果
+type TaobaowlbordercancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"wlb_order_cancel_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

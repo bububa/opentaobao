@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaSeakingTitlerewriteResultAPIResponse 获取标题改写任务结果 API返回值
+// AlibabaseakingtitlerewriteresultAPIResponse 获取标题改写任务结果 API返回值
 // alibaba.seaking.titlerewrite.result
 //
 // 获取标题改写任务结果
-type AlibabaSeakingTitlerewriteResultAPIResponse struct {
+type AlibabaseakingtitlerewriteresultAPIResponse struct {
 	model.CommonResponse
-	AlibabaSeakingTitlerewriteResultAPIResponseModel
+	AlibabaseakingtitlerewriteresultAPIResponseModel
 }
 
-// AlibabaSeakingTitlerewriteResultAPIResponseModel is 获取标题改写任务结果 成功返回结果
-type AlibabaSeakingTitlerewriteResultAPIResponseModel struct {
+// AlibabaseakingtitlerewriteresultAPIResponseModel is 获取标题改写任务结果 成功返回结果
+type AlibabaseakingtitlerewriteresultAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_seaking_titlerewrite_result_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

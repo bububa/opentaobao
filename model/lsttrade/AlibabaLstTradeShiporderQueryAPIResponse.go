@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaLstTradeShiporderQueryAPIResponse 供应商数据开放--发货单接口 API返回值
+// AlibabalsttradeshiporderqueryAPIResponse 供应商数据开放--发货单接口 API返回值
 // alibaba.lst.trade.shiporder.query
 //
 // 供应商数据开放--发货单接口
-type AlibabaLstTradeShiporderQueryAPIResponse struct {
+type AlibabalsttradeshiporderqueryAPIResponse struct {
 	model.CommonResponse
-	AlibabaLstTradeShiporderQueryAPIResponseModel
+	AlibabalsttradeshiporderqueryAPIResponseModel
 }
 
-// AlibabaLstTradeShiporderQueryAPIResponseModel is 供应商数据开放--发货单接口 成功返回结果
-type AlibabaLstTradeShiporderQueryAPIResponseModel struct {
+// AlibabalsttradeshiporderqueryAPIResponseModel is 供应商数据开放--发货单接口 成功返回结果
+type AlibabalsttradeshiporderqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_lst_trade_shiporder_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

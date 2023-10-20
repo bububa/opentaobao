@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaTclsAelophyWarehouseOrderGet 仓作业单获取
+// Alibabatclsaelophywarehouseorderget 仓作业单获取
 // alibaba.tcls.aelophy.warehouse.order.get
 //
 // 仓作业单获取
-func AlibabaTclsAelophyWarehouseOrderGet(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyWarehouseOrderGetAPIRequest, session string) (*wdk.AlibabaTclsAelophyWarehouseOrderGetAPIResponse, error) {
-	var resp wdk.AlibabaTclsAelophyWarehouseOrderGetAPIResponse
+func Alibabatclsaelophywarehouseorderget(clt *core.SDKClient, req *wdk.AlibabatclsaelophywarehouseordergetAPIRequest, session string) (*wdk.AlibabatclsaelophywarehouseordergetAPIResponse, error) {
+	var resp wdk.AlibabatclsaelophywarehouseordergetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

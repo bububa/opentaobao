@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoMixnickPlaytoweAPIResponse 互动mixNick转微淘 API返回值
+// TaobaomixnickplaytoweAPIResponse 互动mixNick转微淘 API返回值
 // taobao.mixnick.playtowe
 //
 // 微淘应用的混淆nick转为互动类型混淆nick
-type TaobaoMixnickPlaytoweAPIResponse struct {
+type TaobaomixnickplaytoweAPIResponse struct {
 	model.CommonResponse
-	TaobaoMixnickPlaytoweAPIResponseModel
+	TaobaomixnickplaytoweAPIResponseModel
 }
 
-// TaobaoMixnickPlaytoweAPIResponseModel is 互动mixNick转微淘 成功返回结果
-type TaobaoMixnickPlaytoweAPIResponseModel struct {
+// TaobaomixnickplaytoweAPIResponseModel is 互动mixNick转微淘 成功返回结果
+type TaobaomixnickplaytoweAPIResponseModel struct {
 	XMLName xml.Name `xml:"mixnick_playtowe_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

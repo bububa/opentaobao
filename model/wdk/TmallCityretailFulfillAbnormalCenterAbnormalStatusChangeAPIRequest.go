@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest 同城零售履约异常中心异常单处理结果回调接口 API请求
+// TmallcityretailfulfillabnormalcenterabnormalstatuschangeAPIRequest 同城零售履约异常中心异常单处理结果回调接口 API请求
 // tmall.cityretail.fulfill.abnormal.center.abnormal.status.change
 //
 // 同城零售履约异常中心异常单处理结果回调接口
-type TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest struct {
+type TmallcityretailfulfillabnormalcenterabnormalstatuschangeAPIRequest struct {
 	model.Params
 	// 入参
 	_abnormalStatusChangeDto []AbnormalStatusChangeDto
 }
 
-// NewTmallCityretailFulfillAbnormalCenterAbnormalStatusChangeRequest 初始化TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest对象
-func NewTmallCityretailFulfillAbnormalCenterAbnormalStatusChangeRequest() *TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest {
-	return &TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest{
+// NewTmallcityretailfulfillabnormalcenterabnormalstatuschangeRequest 初始化TmallcityretailfulfillabnormalcenterabnormalstatuschangeAPIRequest对象
+func NewTmallcityretailfulfillabnormalcenterabnormalstatuschangeRequest() *TmallcityretailfulfillabnormalcenterabnormalstatuschangeAPIRequest {
+	return &TmallcityretailfulfillabnormalcenterabnormalstatuschangeAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest) GetApiMethodName() string {
+func (r TmallcityretailfulfillabnormalcenterabnormalstatuschangeAPIRequest) GetApiMethodName() string {
 	return "tmall.cityretail.fulfill.abnormal.center.abnormal.status.change"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest) GetApiParams(params url.Values) {
+func (r TmallcityretailfulfillabnormalcenterabnormalstatuschangeAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest) GetRawParams() model.Params {
+func (r TmallcityretailfulfillabnormalcenterabnormalstatuschangeAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetAbnormalStatusChangeDto is AbnormalStatusChangeDto Setter
 // 入参
-func (r *TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest) SetAbnormalStatusChangeDto(_abnormalStatusChangeDto []AbnormalStatusChangeDto) error {
+func (r *TmallcityretailfulfillabnormalcenterabnormalstatuschangeAPIRequest) SetAbnormalStatusChangeDto(_abnormalStatusChangeDto []AbnormalStatusChangeDto) error {
 	r._abnormalStatusChangeDto = _abnormalStatusChangeDto
 	r.Set("abnormal_status_change_dto", _abnormalStatusChangeDto)
 	return nil
 }
 
 // GetAbnormalStatusChangeDto AbnormalStatusChangeDto Getter
-func (r TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest) GetAbnormalStatusChangeDto() []AbnormalStatusChangeDto {
+func (r TmallcityretailfulfillabnormalcenterabnormalstatuschangeAPIRequest) GetAbnormalStatusChangeDto() []AbnormalStatusChangeDto {
 	return r._abnormalStatusChangeDto
 }

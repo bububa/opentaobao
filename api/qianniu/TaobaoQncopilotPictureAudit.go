@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/qianniu"
 )
 
-// TaobaoQncopilotPictureAudit AIGC创作图片审核
+// Taobaoqncopilotpictureaudit AIGC创作图片审核
 // taobao.qncopilot.picture.audit
 //
 // AIGC创作图片审核
-func TaobaoQncopilotPictureAudit(clt *core.SDKClient, req *qianniu.TaobaoQncopilotPictureAuditAPIRequest, session string) (*qianniu.TaobaoQncopilotPictureAuditAPIResponse, error) {
-	var resp qianniu.TaobaoQncopilotPictureAuditAPIResponse
+func Taobaoqncopilotpictureaudit(clt *core.SDKClient, req *qianniu.TaobaoqncopilotpictureauditAPIRequest, session string) (*qianniu.TaobaoqncopilotpictureauditAPIResponse, error) {
+	var resp qianniu.TaobaoqncopilotpictureauditAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

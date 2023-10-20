@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaNewretailPurchasePriceSaveAPIRequest 共享库存 采购价上传接口 API请求
+// AlibabanewretailpurchasepricesaveAPIRequest 共享库存 采购价上传接口 API请求
 // alibaba.newretail.purchase.price.save
 //
 // 共享库存业务 供应商上传商品采购价
-type AlibabaNewretailPurchasePriceSaveAPIRequest struct {
+type AlibabanewretailpurchasepricesaveAPIRequest struct {
 	model.Params
 	// 接口入参
 	_savePurchasePriceRequest *SavePurchasePriceRequest
 }
 
-// NewAlibabaNewretailPurchasePriceSaveRequest 初始化AlibabaNewretailPurchasePriceSaveAPIRequest对象
-func NewAlibabaNewretailPurchasePriceSaveRequest() *AlibabaNewretailPurchasePriceSaveAPIRequest {
-	return &AlibabaNewretailPurchasePriceSaveAPIRequest{
+// NewAlibabanewretailpurchasepricesaveRequest 初始化AlibabanewretailpurchasepricesaveAPIRequest对象
+func NewAlibabanewretailpurchasepricesaveRequest() *AlibabanewretailpurchasepricesaveAPIRequest {
+	return &AlibabanewretailpurchasepricesaveAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaNewretailPurchasePriceSaveAPIRequest) GetApiMethodName() string {
+func (r AlibabanewretailpurchasepricesaveAPIRequest) GetApiMethodName() string {
 	return "alibaba.newretail.purchase.price.save"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaNewretailPurchasePriceSaveAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabanewretailpurchasepricesaveAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaNewretailPurchasePriceSaveAPIRequest) GetRawParams() model.Params {
+func (r AlibabanewretailpurchasepricesaveAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetSavePurchasePriceRequest is SavePurchasePriceRequest Setter
 // 接口入参
-func (r *AlibabaNewretailPurchasePriceSaveAPIRequest) SetSavePurchasePriceRequest(_savePurchasePriceRequest *SavePurchasePriceRequest) error {
+func (r *AlibabanewretailpurchasepricesaveAPIRequest) SetSavePurchasePriceRequest(_savePurchasePriceRequest *SavePurchasePriceRequest) error {
 	r._savePurchasePriceRequest = _savePurchasePriceRequest
 	r.Set("save_purchase_price_request", _savePurchasePriceRequest)
 	return nil
 }
 
 // GetSavePurchasePriceRequest SavePurchasePriceRequest Getter
-func (r AlibabaNewretailPurchasePriceSaveAPIRequest) GetSavePurchasePriceRequest() *SavePurchasePriceRequest {
+func (r AlibabanewretailpurchasepricesaveAPIRequest) GetSavePurchasePriceRequest() *SavePurchasePriceRequest {
 	return r._savePurchasePriceRequest
 }

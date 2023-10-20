@@ -1,7 +1,7 @@
 package alihouse
 
-// AlibabaAlihouseExistinghomePosApplySubmitResult 结构体
-type AlibabaAlihouseExistinghomePosApplySubmitResult struct {
+// AlibabaalihouseexistinghomeposapplysubmitResult 结构体
+type AlibabaalihouseexistinghomeposapplysubmitResult struct {
 	// 编码
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 信息

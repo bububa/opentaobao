@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAilabsAligenieOpenvideoPushAPIResponse 天猫精灵内容库视频分集数据推送接口 API返回值
+// AlibabaailabsaligenieopenvideopushAPIResponse 天猫精灵内容库视频分集数据推送接口 API返回值
 // alibaba.ailabs.aligenie.openvideo.push
 //
 // 天猫精灵内容库视频分集数据推送接口
-type AlibabaAilabsAligenieOpenvideoPushAPIResponse struct {
+type AlibabaailabsaligenieopenvideopushAPIResponse struct {
 	model.CommonResponse
-	AlibabaAilabsAligenieOpenvideoPushAPIResponseModel
+	AlibabaailabsaligenieopenvideopushAPIResponseModel
 }
 
-// AlibabaAilabsAligenieOpenvideoPushAPIResponseModel is 天猫精灵内容库视频分集数据推送接口 成功返回结果
-type AlibabaAilabsAligenieOpenvideoPushAPIResponseModel struct {
+// AlibabaailabsaligenieopenvideopushAPIResponseModel is 天猫精灵内容库视频分集数据推送接口 成功返回结果
+type AlibabaailabsaligenieopenvideopushAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailabs_aligenie_openvideo_push_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

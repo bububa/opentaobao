@@ -1,7 +1,7 @@
 package tbk
 
-// TaobaoTbkScRelationRecordMapData 结构体
-type TaobaoTbkScRelationRecordMapData struct {
+// TaobaotbkscrelationrecordMapData 结构体
+type TaobaotbkscrelationrecordMapData struct {
 	// 带授权的备案链接
 	Url string `json:"url,omitempty" xml:"url,omitempty"`
 	// 已废弃，请调用淘口令生成接口

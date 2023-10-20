@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/tmallnr"
 )
 
-// TmallNrtCertificateSend 有价礼包发放电子凭证
+// Tmallnrtcertificatesend 有价礼包发放电子凭证
 // tmall.nrt.certificate.send
 //
 // 支持有价礼包发放电子凭证
-func TmallNrtCertificateSend(clt *core.SDKClient, req *tmallnr.TmallNrtCertificateSendAPIRequest, session string) (*tmallnr.TmallNrtCertificateSendAPIResponse, error) {
-	var resp tmallnr.TmallNrtCertificateSendAPIResponse
+func Tmallnrtcertificatesend(clt *core.SDKClient, req *tmallnr.TmallnrtcertificatesendAPIRequest, session string) (*tmallnr.TmallnrtcertificatesendAPIResponse, error) {
+	var resp tmallnr.TmallnrtcertificatesendAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

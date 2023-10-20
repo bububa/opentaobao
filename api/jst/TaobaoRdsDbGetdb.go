@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/jst"
 )
 
-// TaobaoRdsDbGetdb rds获取RDS的DB
+// Taobaordsdbgetdb rds获取RDS的DB
 // taobao.rds.db.getdb
 //
 // rds获取RDS的DB
-func TaobaoRdsDbGetdb(clt *core.SDKClient, req *jst.TaobaoRdsDbGetdbAPIRequest, session string) (*jst.TaobaoRdsDbGetdbAPIResponse, error) {
-	var resp jst.TaobaoRdsDbGetdbAPIResponse
+func Taobaordsdbgetdb(clt *core.SDKClient, req *jst.TaobaordsdbgetdbAPIRequest, session string) (*jst.TaobaordsdbgetdbAPIResponse, error) {
+	var resp jst.TaobaordsdbgetdbAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

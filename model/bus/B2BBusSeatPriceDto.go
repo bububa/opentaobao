@@ -1,7 +1,7 @@
 package bus
 
-// B2BBusSeatPriceDto 结构体
-type B2BBusSeatPriceDto struct {
+// B2bbusSeatPriceDto 结构体
+type B2bbusSeatPriceDto struct {
 	// 出发城市
 	DepCityName string `json:"dep_city_name,omitempty" xml:"dep_city_name,omitempty"`
 	// 出发时间

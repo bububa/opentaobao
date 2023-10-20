@@ -1,7 +1,7 @@
 package tuanhotel
 
-// TopTuanItemSkuVOList 结构体
-type TopTuanItemSkuVOList struct {
+// TopTuanItemSkuVolist 结构体
+type TopTuanItemSkuVolist struct {
 	// 宝贝标题
 	ItemTitle string `json:"item_title,omitempty" xml:"item_title,omitempty"`
 	// 套餐原价

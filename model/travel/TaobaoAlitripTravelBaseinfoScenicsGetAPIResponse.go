@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAlitripTravelBaseinfoScenicsGetAPIResponse 【API3.0】基础信息获取接口：景点数据查询 API返回值
+// TaobaoalitriptravelbaseinfoscenicsgetAPIResponse 【API3.0】基础信息获取接口：景点数据查询 API返回值
 // taobao.alitrip.travel.baseinfo.scenics.get
 //
 // 商品发布辅助接口，用于飞猪度假或门票商品发布时 获取可用的景点（及景点下收费项目）信息列表。
-type TaobaoAlitripTravelBaseinfoScenicsGetAPIResponse struct {
+type TaobaoalitriptravelbaseinfoscenicsgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoAlitripTravelBaseinfoScenicsGetAPIResponseModel
+	TaobaoalitriptravelbaseinfoscenicsgetAPIResponseModel
 }
 
-// TaobaoAlitripTravelBaseinfoScenicsGetAPIResponseModel is 【API3.0】基础信息获取接口：景点数据查询 成功返回结果
-type TaobaoAlitripTravelBaseinfoScenicsGetAPIResponseModel struct {
+// TaobaoalitriptravelbaseinfoscenicsgetAPIResponseModel is 【API3.0】基础信息获取接口：景点数据查询 成功返回结果
+type TaobaoalitriptravelbaseinfoscenicsgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_travel_baseinfo_scenics_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

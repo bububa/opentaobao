@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/scbp"
 )
 
-// AlibabaScbpTargetAdPlanCountryIdGet 定向推广-国家标签ID获取
+// Alibabascbptargetadplancountryidget 定向推广-国家标签ID获取
 // alibaba.scbp.target.ad.plan.country.id.get
 //
 // 定向推广-国家标签ID获取
-func AlibabaScbpTargetAdPlanCountryIdGet(clt *core.SDKClient, req *scbp.AlibabaScbpTargetAdPlanCountryIdGetAPIRequest, session string) (*scbp.AlibabaScbpTargetAdPlanCountryIdGetAPIResponse, error) {
-	var resp scbp.AlibabaScbpTargetAdPlanCountryIdGetAPIResponse
+func Alibabascbptargetadplancountryidget(clt *core.SDKClient, req *scbp.AlibabascbptargetadplancountryidgetAPIRequest, session string) (*scbp.AlibabascbptargetadplancountryidgetAPIResponse, error) {
+	var resp scbp.AlibabascbptargetadplancountryidgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

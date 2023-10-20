@@ -1,7 +1,7 @@
 package user
 
-// TaobaoMiniappUserInfoGetResult 结构体
-type TaobaoMiniappUserInfoGetResult struct {
+// TaobaominiappuserInfogetResult 结构体
+type TaobaominiappuserInfogetResult struct {
 	// 错误信息
 	ErrMessage string `json:"err_message,omitempty" xml:"err_message,omitempty"`
 	// 错误码

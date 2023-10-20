@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAscpIndustryUopSupplierConsignoderAPIRequest 商家推单 API请求
+// AlibabaascpindustryuopsupplierconsignoderAPIRequest 商家推单 API请求
 // alibaba.ascp.industry.uop.supplier.consignoder
 //
 // 商家推单
-type AlibabaAscpIndustryUopSupplierConsignoderAPIRequest struct {
+type AlibabaascpindustryuopsupplierconsignoderAPIRequest struct {
 	model.Params
 	// 发货主单信息
 	_erpNormalConsignOrderRequest *Erpnormalconsignorderrequest
 }
 
-// NewAlibabaAscpIndustryUopSupplierConsignoderRequest 初始化AlibabaAscpIndustryUopSupplierConsignoderAPIRequest对象
-func NewAlibabaAscpIndustryUopSupplierConsignoderRequest() *AlibabaAscpIndustryUopSupplierConsignoderAPIRequest {
-	return &AlibabaAscpIndustryUopSupplierConsignoderAPIRequest{
+// NewAlibabaascpindustryuopsupplierconsignoderRequest 初始化AlibabaascpindustryuopsupplierconsignoderAPIRequest对象
+func NewAlibabaascpindustryuopsupplierconsignoderRequest() *AlibabaascpindustryuopsupplierconsignoderAPIRequest {
+	return &AlibabaascpindustryuopsupplierconsignoderAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAscpIndustryUopSupplierConsignoderAPIRequest) GetApiMethodName() string {
+func (r AlibabaascpindustryuopsupplierconsignoderAPIRequest) GetApiMethodName() string {
 	return "alibaba.ascp.industry.uop.supplier.consignoder"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAscpIndustryUopSupplierConsignoderAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaascpindustryuopsupplierconsignoderAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAscpIndustryUopSupplierConsignoderAPIRequest) GetRawParams() model.Params {
+func (r AlibabaascpindustryuopsupplierconsignoderAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetErpNormalConsignOrderRequest is ErpNormalConsignOrderRequest Setter
 // 发货主单信息
-func (r *AlibabaAscpIndustryUopSupplierConsignoderAPIRequest) SetErpNormalConsignOrderRequest(_erpNormalConsignOrderRequest *Erpnormalconsignorderrequest) error {
+func (r *AlibabaascpindustryuopsupplierconsignoderAPIRequest) SetErpNormalConsignOrderRequest(_erpNormalConsignOrderRequest *Erpnormalconsignorderrequest) error {
 	r._erpNormalConsignOrderRequest = _erpNormalConsignOrderRequest
 	r.Set("erp_normal_consign_order_request", _erpNormalConsignOrderRequest)
 	return nil
 }
 
 // GetErpNormalConsignOrderRequest ErpNormalConsignOrderRequest Getter
-func (r AlibabaAscpIndustryUopSupplierConsignoderAPIRequest) GetErpNormalConsignOrderRequest() *Erpnormalconsignorderrequest {
+func (r AlibabaascpindustryuopsupplierconsignoderAPIRequest) GetErpNormalConsignOrderRequest() *Erpnormalconsignorderrequest {
 	return r._erpNormalConsignOrderRequest
 }

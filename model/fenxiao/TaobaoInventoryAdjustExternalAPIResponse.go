@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoInventoryAdjustExternalAPIResponse 非交易库存调整单 API返回值
+// TaobaoinventoryadjustexternalAPIResponse 非交易库存调整单 API返回值
 // taobao.inventory.adjust.external
 //
 // 商家非交易调整库存，调拨出库、盘点等时调用
-type TaobaoInventoryAdjustExternalAPIResponse struct {
+type TaobaoinventoryadjustexternalAPIResponse struct {
 	model.CommonResponse
-	TaobaoInventoryAdjustExternalAPIResponseModel
+	TaobaoinventoryadjustexternalAPIResponseModel
 }
 
-// TaobaoInventoryAdjustExternalAPIResponseModel is 非交易库存调整单 成功返回结果
-type TaobaoInventoryAdjustExternalAPIResponseModel struct {
+// TaobaoinventoryadjustexternalAPIResponseModel is 非交易库存调整单 成功返回结果
+type TaobaoinventoryadjustexternalAPIResponseModel struct {
 	XMLName xml.Name `xml:"inventory_adjust_external_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

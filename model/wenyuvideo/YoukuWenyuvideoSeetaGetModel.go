@@ -1,7 +1,7 @@
 package wenyuvideo
 
-// YoukuWenyuvideoSeetaGetModel 结构体
-type YoukuWenyuvideoSeetaGetModel struct {
+// YoukuwenyuvideoseetagetModel 结构体
+type YoukuwenyuvideoseetagetModel struct {
 	// logo数组
 	Logos []string `json:"logos,omitempty" xml:"logos>string,omitempty"`
 	// 名字数组

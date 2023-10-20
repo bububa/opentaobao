@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoGlobalImPickupAppointmentOrderCancelAPIRequest 首公里揽收-取消预约单 API请求
+// CainiaoglobalimpickupappointmentordercancelAPIRequest 首公里揽收-取消预约单 API请求
 // cainiao.global.im.pickup.appointment.order.cancel
 //
 // 首公里揽收-取消预约单创建
-type CainiaoGlobalImPickupAppointmentOrderCancelAPIRequest struct {
+type CainiaoglobalimpickupappointmentordercancelAPIRequest struct {
 	model.Params
 	// 预约单取消请求参数
 	_appointmentOrderCancelRequset *AppointmentOrderCancelRequset
 }
 
-// NewCainiaoGlobalImPickupAppointmentOrderCancelRequest 初始化CainiaoGlobalImPickupAppointmentOrderCancelAPIRequest对象
-func NewCainiaoGlobalImPickupAppointmentOrderCancelRequest() *CainiaoGlobalImPickupAppointmentOrderCancelAPIRequest {
-	return &CainiaoGlobalImPickupAppointmentOrderCancelAPIRequest{
+// NewCainiaoglobalimpickupappointmentordercancelRequest 初始化CainiaoglobalimpickupappointmentordercancelAPIRequest对象
+func NewCainiaoglobalimpickupappointmentordercancelRequest() *CainiaoglobalimpickupappointmentordercancelAPIRequest {
+	return &CainiaoglobalimpickupappointmentordercancelAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r CainiaoGlobalImPickupAppointmentOrderCancelAPIRequest) GetApiMethodName() string {
+func (r CainiaoglobalimpickupappointmentordercancelAPIRequest) GetApiMethodName() string {
 	return "cainiao.global.im.pickup.appointment.order.cancel"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r CainiaoGlobalImPickupAppointmentOrderCancelAPIRequest) GetApiParams(params url.Values) {
+func (r CainiaoglobalimpickupappointmentordercancelAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r CainiaoGlobalImPickupAppointmentOrderCancelAPIRequest) GetRawParams() model.Params {
+func (r CainiaoglobalimpickupappointmentordercancelAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetAppointmentOrderCancelRequset is AppointmentOrderCancelRequset Setter
 // 预约单取消请求参数
-func (r *CainiaoGlobalImPickupAppointmentOrderCancelAPIRequest) SetAppointmentOrderCancelRequset(_appointmentOrderCancelRequset *AppointmentOrderCancelRequset) error {
+func (r *CainiaoglobalimpickupappointmentordercancelAPIRequest) SetAppointmentOrderCancelRequset(_appointmentOrderCancelRequset *AppointmentOrderCancelRequset) error {
 	r._appointmentOrderCancelRequset = _appointmentOrderCancelRequset
 	r.Set("appointment_order_cancel_requset", _appointmentOrderCancelRequset)
 	return nil
 }
 
 // GetAppointmentOrderCancelRequset AppointmentOrderCancelRequset Getter
-func (r CainiaoGlobalImPickupAppointmentOrderCancelAPIRequest) GetAppointmentOrderCancelRequset() *AppointmentOrderCancelRequset {
+func (r CainiaoglobalimpickupappointmentordercancelAPIRequest) GetAppointmentOrderCancelRequset() *AppointmentOrderCancelRequset {
 	return r._appointmentOrderCancelRequset
 }

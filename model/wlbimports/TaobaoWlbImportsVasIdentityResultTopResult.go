@@ -1,7 +1,7 @@
 package wlbimports
 
-// TaobaoWlbImportsVasIdentityResultTopResult 结构体
-type TaobaoWlbImportsVasIdentityResultTopResult struct {
+// TaobaowlbimportsvasidentityresultTopResult 结构体
+type TaobaowlbimportsvasidentityresultTopResult struct {
 	// 返回错误信息
 	SubErrorMsg string `json:"sub_error_msg,omitempty" xml:"sub_error_msg,omitempty"`
 	// 错误编码
@@ -11,7 +11,7 @@ type TaobaoWlbImportsVasIdentityResultTopResult struct {
 	// 错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 鉴定结果
-	Result *TaobaoWlbImportsVasIdentityResultResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *TaobaowlbimportsvasidentityresultResult `json:"result,omitempty" xml:"result,omitempty"`
 	// 总数
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 	// 是否成功

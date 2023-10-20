@@ -1,7 +1,7 @@
 package tmallservice
 
-// AlibabaSscSupplyplatformServiceworkerAvailableworkerResult 结构体
-type AlibabaSscSupplyplatformServiceworkerAvailableworkerResult struct {
+// AlibabasscsupplyplatformserviceworkeravailableworkerResult 结构体
+type AlibabasscsupplyplatformserviceworkeravailableworkerResult struct {
 	// 可用工人列表
 	Value []WorkerDto `json:"value,omitempty" xml:"value>worker_dto,omitempty"`
 	// 错误码

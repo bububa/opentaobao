@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosTvpubadminContentVideoGetauditlistAPIResponse 迎客松视频审核记录查询 API返回值
+// YunostvpubadmincontentvideogetauditlistAPIResponse 迎客松视频审核记录查询 API返回值
 // yunos.tvpubadmin.content.video.getauditlist
 //
 // 迎客松视频审核记录查询
-type YunosTvpubadminContentVideoGetauditlistAPIResponse struct {
+type YunostvpubadmincontentvideogetauditlistAPIResponse struct {
 	model.CommonResponse
-	YunosTvpubadminContentVideoGetauditlistAPIResponseModel
+	YunostvpubadmincontentvideogetauditlistAPIResponseModel
 }
 
-// YunosTvpubadminContentVideoGetauditlistAPIResponseModel is 迎客松视频审核记录查询 成功返回结果
-type YunosTvpubadminContentVideoGetauditlistAPIResponseModel struct {
+// YunostvpubadmincontentvideogetauditlistAPIResponseModel is 迎客松视频审核记录查询 成功返回结果
+type YunostvpubadmincontentvideogetauditlistAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_tvpubadmin_content_video_getauditlist_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

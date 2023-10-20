@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/paimai"
 )
 
-// TaobaoPaimaiItemCooperationSync 商品同步
+// Taobaopaimaiitemcooperationsync 商品同步
 // taobao.paimai.item.cooperation.sync
 //
 // 商品同步
-func TaobaoPaimaiItemCooperationSync(clt *core.SDKClient, req *paimai.TaobaoPaimaiItemCooperationSyncAPIRequest, session string) (*paimai.TaobaoPaimaiItemCooperationSyncAPIResponse, error) {
-	var resp paimai.TaobaoPaimaiItemCooperationSyncAPIResponse
+func Taobaopaimaiitemcooperationsync(clt *core.SDKClient, req *paimai.TaobaopaimaiitemcooperationsyncAPIRequest, session string) (*paimai.TaobaopaimaiitemcooperationsyncAPIResponse, error) {
+	var resp paimai.TaobaopaimaiitemcooperationsyncAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/jst"
 )
 
-// TaobaoRdsDbDelete RDS数据库删除
+// Taobaordsdbdelete RDS数据库删除
 // taobao.rds.db.delete
 //
 // 通过api删除用户RDS的数据库
-func TaobaoRdsDbDelete(clt *core.SDKClient, req *jst.TaobaoRdsDbDeleteAPIRequest, session string) (*jst.TaobaoRdsDbDeleteAPIResponse, error) {
-	var resp jst.TaobaoRdsDbDeleteAPIResponse
+func Taobaordsdbdelete(clt *core.SDKClient, req *jst.TaobaordsdbdeleteAPIRequest, session string) (*jst.TaobaordsdbdeleteAPIResponse, error) {
+	var resp jst.TaobaordsdbdeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

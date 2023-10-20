@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TmallChannelProductsGetAPIRequest 查询供应商的产品数据 API请求
+// TmallchannelproductsgetAPIRequest 查询供应商的产品数据 API请求
 // tmall.channel.products.get
 //
 // 查询供应商的产品数据。
@@ -18,45 +18,45 @@ import (
 // * 入参fields仅对传入pids生效（只有按ID查询时，才能查询额外的数据）
 // * 查询结果按照产品发布时间倒序，即时间近的数据在前。
 // * 传入channel 渠道，会只返回相应渠道的产品
-type TmallChannelProductsGetAPIRequest struct {
+type TmallchannelproductsgetAPIRequest struct {
 	model.Params
 	// top_query_product_d_o
 	_topQueryProductDO *TopQueryProductDo
 }
 
-// NewTmallChannelProductsGetRequest 初始化TmallChannelProductsGetAPIRequest对象
-func NewTmallChannelProductsGetRequest() *TmallChannelProductsGetAPIRequest {
-	return &TmallChannelProductsGetAPIRequest{
+// NewTmallchannelproductsgetRequest 初始化TmallchannelproductsgetAPIRequest对象
+func NewTmallchannelproductsgetRequest() *TmallchannelproductsgetAPIRequest {
+	return &TmallchannelproductsgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TmallChannelProductsGetAPIRequest) GetApiMethodName() string {
+func (r TmallchannelproductsgetAPIRequest) GetApiMethodName() string {
 	return "tmall.channel.products.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallChannelProductsGetAPIRequest) GetApiParams(params url.Values) {
+func (r TmallchannelproductsgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TmallChannelProductsGetAPIRequest) GetRawParams() model.Params {
+func (r TmallchannelproductsgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTopQueryProductDO is TopQueryProductDO Setter
 // top_query_product_d_o
-func (r *TmallChannelProductsGetAPIRequest) SetTopQueryProductDO(_topQueryProductDO *TopQueryProductDo) error {
+func (r *TmallchannelproductsgetAPIRequest) SetTopQueryProductDO(_topQueryProductDO *TopQueryProductDo) error {
 	r._topQueryProductDO = _topQueryProductDO
 	r.Set("top_query_product_d_o", _topQueryProductDO)
 	return nil
 }
 
 // GetTopQueryProductDO TopQueryProductDO Getter
-func (r TmallChannelProductsGetAPIRequest) GetTopQueryProductDO() *TopQueryProductDo {
+func (r TmallchannelproductsgetAPIRequest) GetTopQueryProductDO() *TopQueryProductDo {
 	return r._topQueryProductDO
 }

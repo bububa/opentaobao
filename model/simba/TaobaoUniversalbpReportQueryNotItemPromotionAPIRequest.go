@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest 其他主体报表查询 API请求
+// TaobaouniversalbpreportquerynotitempromotionAPIRequest 其他主体报表查询 API请求
 // taobao.universalbp.report.query.not.item.promotion
 //
 // 其他主体报表查询
-type TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest struct {
+type TaobaouniversalbpreportquerynotitempromotionAPIRequest struct {
 	model.Params
 	// topServiceContext
 	_topServiceContext *TopServiceContext
@@ -18,52 +18,52 @@ type TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest struct {
 	_topOtherPromotionReportQueryVO *TopOtherPromotionReportQueryVo
 }
 
-// NewTaobaoUniversalbpReportQueryNotItemPromotionRequest 初始化TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest对象
-func NewTaobaoUniversalbpReportQueryNotItemPromotionRequest() *TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest {
-	return &TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest{
+// NewTaobaouniversalbpreportquerynotitempromotionRequest 初始化TaobaouniversalbpreportquerynotitempromotionAPIRequest对象
+func NewTaobaouniversalbpreportquerynotitempromotionRequest() *TaobaouniversalbpreportquerynotitempromotionAPIRequest {
+	return &TaobaouniversalbpreportquerynotitempromotionAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest) GetApiMethodName() string {
+func (r TaobaouniversalbpreportquerynotitempromotionAPIRequest) GetApiMethodName() string {
 	return "taobao.universalbp.report.query.not.item.promotion"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaouniversalbpreportquerynotitempromotionAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest) GetRawParams() model.Params {
+func (r TaobaouniversalbpreportquerynotitempromotionAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTopServiceContext is TopServiceContext Setter
 // topServiceContext
-func (r *TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest) SetTopServiceContext(_topServiceContext *TopServiceContext) error {
+func (r *TaobaouniversalbpreportquerynotitempromotionAPIRequest) SetTopServiceContext(_topServiceContext *TopServiceContext) error {
 	r._topServiceContext = _topServiceContext
 	r.Set("top_service_context", _topServiceContext)
 	return nil
 }
 
 // GetTopServiceContext TopServiceContext Getter
-func (r TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest) GetTopServiceContext() *TopServiceContext {
+func (r TaobaouniversalbpreportquerynotitempromotionAPIRequest) GetTopServiceContext() *TopServiceContext {
 	return r._topServiceContext
 }
 
 // SetTopOtherPromotionReportQueryVO is TopOtherPromotionReportQueryVO Setter
 // topOtherPromotionReportQueryVO
-func (r *TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest) SetTopOtherPromotionReportQueryVO(_topOtherPromotionReportQueryVO *TopOtherPromotionReportQueryVo) error {
+func (r *TaobaouniversalbpreportquerynotitempromotionAPIRequest) SetTopOtherPromotionReportQueryVO(_topOtherPromotionReportQueryVO *TopOtherPromotionReportQueryVo) error {
 	r._topOtherPromotionReportQueryVO = _topOtherPromotionReportQueryVO
 	r.Set("top_other_promotion_report_query_v_o", _topOtherPromotionReportQueryVO)
 	return nil
 }
 
 // GetTopOtherPromotionReportQueryVO TopOtherPromotionReportQueryVO Getter
-func (r TaobaoUniversalbpReportQueryNotItemPromotionAPIRequest) GetTopOtherPromotionReportQueryVO() *TopOtherPromotionReportQueryVo {
+func (r TaobaouniversalbpreportquerynotitempromotionAPIRequest) GetTopOtherPromotionReportQueryVO() *TopOtherPromotionReportQueryVo {
 	return r._topOtherPromotionReportQueryVO
 }

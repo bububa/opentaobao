@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoAirislandKefuevalGetAPIRequest 客服评价详情接口_V2 API请求
+// TaobaoairislandkefuevalgetAPIRequest 客服评价详情接口_V2 API请求
 // taobao.airisland.kefueval.get
 //
 // 获取买家对客服的服务评价
@@ -20,7 +20,7 @@ import (
 // 3. 变更eval_recer：可空，返回脱敏的买家nick，如：摩天轮 -&gt; 摩**
 //
 // 4. 新增labelName：可空
-type TaobaoAirislandKefuevalGetAPIRequest struct {
+type TaobaoairislandkefuevalgetAPIRequest struct {
 	model.Params
 	// 客服的nick，多个用逗号分隔，不要超过10个，带cntaobao的长nick
 	_queryIds string
@@ -30,65 +30,65 @@ type TaobaoAirislandKefuevalGetAPIRequest struct {
 	_etime string
 }
 
-// NewTaobaoAirislandKefuevalGetRequest 初始化TaobaoAirislandKefuevalGetAPIRequest对象
-func NewTaobaoAirislandKefuevalGetRequest() *TaobaoAirislandKefuevalGetAPIRequest {
-	return &TaobaoAirislandKefuevalGetAPIRequest{
+// NewTaobaoairislandkefuevalgetRequest 初始化TaobaoairislandkefuevalgetAPIRequest对象
+func NewTaobaoairislandkefuevalgetRequest() *TaobaoairislandkefuevalgetAPIRequest {
+	return &TaobaoairislandkefuevalgetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoAirislandKefuevalGetAPIRequest) GetApiMethodName() string {
+func (r TaobaoairislandkefuevalgetAPIRequest) GetApiMethodName() string {
 	return "taobao.airisland.kefueval.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAirislandKefuevalGetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoairislandkefuevalgetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoAirislandKefuevalGetAPIRequest) GetRawParams() model.Params {
+func (r TaobaoairislandkefuevalgetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetQueryIds is QueryIds Setter
 // 客服的nick，多个用逗号分隔，不要超过10个，带cntaobao的长nick
-func (r *TaobaoAirislandKefuevalGetAPIRequest) SetQueryIds(_queryIds string) error {
+func (r *TaobaoairislandkefuevalgetAPIRequest) SetQueryIds(_queryIds string) error {
 	r._queryIds = _queryIds
 	r.Set("query_ids", _queryIds)
 	return nil
 }
 
 // GetQueryIds QueryIds Getter
-func (r TaobaoAirislandKefuevalGetAPIRequest) GetQueryIds() string {
+func (r TaobaoairislandkefuevalgetAPIRequest) GetQueryIds() string {
 	return r._queryIds
 }
 
 // SetBtime is Btime Setter
 // 开始时间，格式yyyyMMddHHmmss，时间范围：[now-90d,now-1d]
-func (r *TaobaoAirislandKefuevalGetAPIRequest) SetBtime(_btime string) error {
+func (r *TaobaoairislandkefuevalgetAPIRequest) SetBtime(_btime string) error {
 	r._btime = _btime
 	r.Set("btime", _btime)
 	return nil
 }
 
 // GetBtime Btime Getter
-func (r TaobaoAirislandKefuevalGetAPIRequest) GetBtime() string {
+func (r TaobaoairislandkefuevalgetAPIRequest) GetBtime() string {
 	return r._btime
 }
 
 // SetEtime is Etime Setter
 // 结束时间，格式yyyyMMddHHmmss，时间范围：[now-90d,now-1d]
-func (r *TaobaoAirislandKefuevalGetAPIRequest) SetEtime(_etime string) error {
+func (r *TaobaoairislandkefuevalgetAPIRequest) SetEtime(_etime string) error {
 	r._etime = _etime
 	r.Set("etime", _etime)
 	return nil
 }
 
 // GetEtime Etime Getter
-func (r TaobaoAirislandKefuevalGetAPIRequest) GetEtime() string {
+func (r TaobaoairislandkefuevalgetAPIRequest) GetEtime() string {
 	return r._etime
 }

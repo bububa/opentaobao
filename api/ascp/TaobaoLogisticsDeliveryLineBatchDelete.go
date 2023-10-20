@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/ascp"
 )
 
-// TaobaoLogisticsDeliveryLineBatchDelete 线路能力删除
+// Taobaologisticsdeliverylinebatchdelete 线路能力删除
 // taobao.logistics.delivery.line.batch.delete
 //
 // 线路能力删除
-func TaobaoLogisticsDeliveryLineBatchDelete(clt *core.SDKClient, req *ascp.TaobaoLogisticsDeliveryLineBatchDeleteAPIRequest, session string) (*ascp.TaobaoLogisticsDeliveryLineBatchDeleteAPIResponse, error) {
-	var resp ascp.TaobaoLogisticsDeliveryLineBatchDeleteAPIResponse
+func Taobaologisticsdeliverylinebatchdelete(clt *core.SDKClient, req *ascp.TaobaologisticsdeliverylinebatchdeleteAPIRequest, session string) (*ascp.TaobaologisticsdeliverylinebatchdeleteAPIResponse, error) {
+	var resp ascp.TaobaologisticsdeliverylinebatchdeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

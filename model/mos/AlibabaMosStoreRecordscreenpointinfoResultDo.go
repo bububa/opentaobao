@@ -1,7 +1,7 @@
 package mos
 
-// AlibabaMosStoreRecordscreenpointinfoResultDo 结构体
-type AlibabaMosStoreRecordscreenpointinfoResultDo struct {
+// AlibabamosstorerecordscreenpointinfoResultDo 结构体
+type AlibabamosstorerecordscreenpointinfoResultDo struct {
 	// errMsg
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// errCode

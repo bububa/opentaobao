@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripBtripCityCarApplyApproveAPIRequest 三方市内用车申请单审批 API请求
+// AlitripbtripcitycarapplyapproveAPIRequest 三方市内用车申请单审批 API请求
 // alitrip.btrip.city.car.apply.approve
 //
 // 三方市内用车申请单审批
-type AlitripBtripCityCarApplyApproveAPIRequest struct {
+type AlitripbtripcitycarapplyapproveAPIRequest struct {
 	model.Params
 	// 入参对象
 	_rq *CityCarApplyApproveRq
 }
 
-// NewAlitripBtripCityCarApplyApproveRequest 初始化AlitripBtripCityCarApplyApproveAPIRequest对象
-func NewAlitripBtripCityCarApplyApproveRequest() *AlitripBtripCityCarApplyApproveAPIRequest {
-	return &AlitripBtripCityCarApplyApproveAPIRequest{
+// NewAlitripbtripcitycarapplyapproveRequest 初始化AlitripbtripcitycarapplyapproveAPIRequest对象
+func NewAlitripbtripcitycarapplyapproveRequest() *AlitripbtripcitycarapplyapproveAPIRequest {
+	return &AlitripbtripcitycarapplyapproveAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripBtripCityCarApplyApproveAPIRequest) GetApiMethodName() string {
+func (r AlitripbtripcitycarapplyapproveAPIRequest) GetApiMethodName() string {
 	return "alitrip.btrip.city.car.apply.approve"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripBtripCityCarApplyApproveAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripbtripcitycarapplyapproveAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripBtripCityCarApplyApproveAPIRequest) GetRawParams() model.Params {
+func (r AlitripbtripcitycarapplyapproveAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRq is Rq Setter
 // 入参对象
-func (r *AlitripBtripCityCarApplyApproveAPIRequest) SetRq(_rq *CityCarApplyApproveRq) error {
+func (r *AlitripbtripcitycarapplyapproveAPIRequest) SetRq(_rq *CityCarApplyApproveRq) error {
 	r._rq = _rq
 	r.Set("rq", _rq)
 	return nil
 }
 
 // GetRq Rq Getter
-func (r AlitripBtripCityCarApplyApproveAPIRequest) GetRq() *CityCarApplyApproveRq {
+func (r AlitripbtripcitycarapplyapproveAPIRequest) GetRq() *CityCarApplyApproveRq {
 	return r._rq
 }

@@ -21,7 +21,7 @@ type CodeFullInfoDto struct {
 	// 药品基本信息对象
 	DrugEntBaseDTO *DrugEntBaseDto `json:"drug_ent_base_d_t_o,omitempty" xml:"drug_ent_base_d_t_o,omitempty"`
 	// 企业信息对象
-	PUserEntDTO *PUserEntDto `json:"p_user_ent_d_t_o,omitempty" xml:"p_user_ent_d_t_o,omitempty"`
+	PUserEntDTO *PuserEntDto `json:"p_user_ent_d_t_o,omitempty" xml:"p_user_ent_d_t_o,omitempty"`
 	// 追溯码状态对象
 	CodeStatusTypeDTO *CodeStatusTypeDto `json:"code_status_type_d_t_o,omitempty" xml:"code_status_type_d_t_o,omitempty"`
 	// 码包装层级

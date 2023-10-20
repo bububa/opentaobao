@@ -5,7 +5,7 @@ import (
 	"github.com/bububa/opentaobao/model/wangwang"
 )
 
-// TaobaoAirislandKefuevalGet 客服评价详情接口_V2
+// Taobaoairislandkefuevalget 客服评价详情接口_V2
 // taobao.airisland.kefueval.get
 //
 // 获取买家对客服的服务评价
@@ -19,8 +19,8 @@ import (
 // 3. 变更eval_recer：可空，返回脱敏的买家nick，如：摩天轮 -&gt; 摩**
 //
 // 4. 新增labelName：可空
-func TaobaoAirislandKefuevalGet(clt *core.SDKClient, req *wangwang.TaobaoAirislandKefuevalGetAPIRequest, session string) (*wangwang.TaobaoAirislandKefuevalGetAPIResponse, error) {
-	var resp wangwang.TaobaoAirislandKefuevalGetAPIResponse
+func Taobaoairislandkefuevalget(clt *core.SDKClient, req *wangwang.TaobaoairislandkefuevalgetAPIRequest, session string) (*wangwang.TaobaoairislandkefuevalgetAPIResponse, error) {
+	var resp wangwang.TaobaoairislandkefuevalgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

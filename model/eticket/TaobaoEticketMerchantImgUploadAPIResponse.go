@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoEticketMerchantImgUploadAPIResponse 码商上传二维码图片 API返回值
+// TaobaoeticketmerchantimguploadAPIResponse 码商上传二维码图片 API返回值
 // taobao.eticket.merchant.img.upload
 //
 // 电子凭证的码商可以通过这个接口，上传二维码图片
-type TaobaoEticketMerchantImgUploadAPIResponse struct {
+type TaobaoeticketmerchantimguploadAPIResponse struct {
 	model.CommonResponse
-	TaobaoEticketMerchantImgUploadAPIResponseModel
+	TaobaoeticketmerchantimguploadAPIResponseModel
 }
 
-// TaobaoEticketMerchantImgUploadAPIResponseModel is 码商上传二维码图片 成功返回结果
-type TaobaoEticketMerchantImgUploadAPIResponseModel struct {
+// TaobaoeticketmerchantimguploadAPIResponseModel is 码商上传二维码图片 成功返回结果
+type TaobaoeticketmerchantimguploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"eticket_merchant_img_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

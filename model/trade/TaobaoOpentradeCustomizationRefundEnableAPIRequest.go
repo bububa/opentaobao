@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoOpentradeCustomizationRefundEnableAPIRequest 定制订单设置允许仅退款 API请求
+// TaobaoopentradecustomizationrefundenableAPIRequest 定制订单设置允许仅退款 API请求
 // taobao.opentrade.customization.refund.enable
 //
 // 定制订单设置允许仅退款
-type TaobaoOpentradeCustomizationRefundEnableAPIRequest struct {
+type TaobaoopentradecustomizationrefundenableAPIRequest struct {
 	model.Params
 	// 主订单ID
 	_tradeId int64
 }
 
-// NewTaobaoOpentradeCustomizationRefundEnableRequest 初始化TaobaoOpentradeCustomizationRefundEnableAPIRequest对象
-func NewTaobaoOpentradeCustomizationRefundEnableRequest() *TaobaoOpentradeCustomizationRefundEnableAPIRequest {
-	return &TaobaoOpentradeCustomizationRefundEnableAPIRequest{
+// NewTaobaoopentradecustomizationrefundenableRequest 初始化TaobaoopentradecustomizationrefundenableAPIRequest对象
+func NewTaobaoopentradecustomizationrefundenableRequest() *TaobaoopentradecustomizationrefundenableAPIRequest {
+	return &TaobaoopentradecustomizationrefundenableAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoOpentradeCustomizationRefundEnableAPIRequest) GetApiMethodName() string {
+func (r TaobaoopentradecustomizationrefundenableAPIRequest) GetApiMethodName() string {
 	return "taobao.opentrade.customization.refund.enable"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoOpentradeCustomizationRefundEnableAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaoopentradecustomizationrefundenableAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoOpentradeCustomizationRefundEnableAPIRequest) GetRawParams() model.Params {
+func (r TaobaoopentradecustomizationrefundenableAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetTradeId is TradeId Setter
 // 主订单ID
-func (r *TaobaoOpentradeCustomizationRefundEnableAPIRequest) SetTradeId(_tradeId int64) error {
+func (r *TaobaoopentradecustomizationrefundenableAPIRequest) SetTradeId(_tradeId int64) error {
 	r._tradeId = _tradeId
 	r.Set("trade_id", _tradeId)
 	return nil
 }
 
 // GetTradeId TradeId Getter
-func (r TaobaoOpentradeCustomizationRefundEnableAPIRequest) GetTradeId() int64 {
+func (r TaobaoopentradecustomizationrefundenableAPIRequest) GetTradeId() int64 {
 	return r._tradeId
 }

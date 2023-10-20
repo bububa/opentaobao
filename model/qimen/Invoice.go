@@ -17,5 +17,5 @@ type Invoice struct {
 	// 税号
 	TaxNumber string `json:"taxNumber,omitempty" xml:"taxNumber,omitempty"`
 	// 订单详情
-	Detail *TaobaoQimenDeliveryorderBatchconfirmDetail `json:"detail,omitempty" xml:"detail,omitempty"`
+	Detail *TaobaoqimendeliveryorderbatchconfirmDetail `json:"detail,omitempty" xml:"detail,omitempty"`
 }

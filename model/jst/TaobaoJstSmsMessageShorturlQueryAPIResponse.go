@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoJstSmsMessageShorturlQueryAPIResponse 聚石塔短链信息查询 API返回值
+// TaobaojstsmsmessageshorturlqueryAPIResponse 聚石塔短链信息查询 API返回值
 // taobao.jst.sms.message.shorturl.query
 //
 // 聚石塔短链信息查询
-type TaobaoJstSmsMessageShorturlQueryAPIResponse struct {
+type TaobaojstsmsmessageshorturlqueryAPIResponse struct {
 	model.CommonResponse
-	TaobaoJstSmsMessageShorturlQueryAPIResponseModel
+	TaobaojstsmsmessageshorturlqueryAPIResponseModel
 }
 
-// TaobaoJstSmsMessageShorturlQueryAPIResponseModel is 聚石塔短链信息查询 成功返回结果
-type TaobaoJstSmsMessageShorturlQueryAPIResponseModel struct {
+// TaobaojstsmsmessageshorturlqueryAPIResponseModel is 聚石塔短链信息查询 成功返回结果
+type TaobaojstsmsmessageshorturlqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"jst_sms_message_shorturl_query_response"`
 	// 请求成功
 	RCode string `json:"r_code,omitempty" xml:"r_code,omitempty"`

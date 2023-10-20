@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alitripmerchant"
 )
 
-// AlitripMerchantGalaxyDerbyMemberVoucherReceiptAuto 德比付费会员卡开票自匹配
+// Alitripmerchantgalaxyderbymembervoucherreceiptauto 德比付费会员卡开票自匹配
 // alitrip.merchant.galaxy.derby.member.voucher.receipt.auto
 //
 // 德比付费会员卡开票自匹配
-func AlitripMerchantGalaxyDerbyMemberVoucherReceiptAuto(clt *core.SDKClient, req *alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoAPIRequest, session string) (*alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoAPIResponse, error) {
-	var resp alitripmerchant.AlitripMerchantGalaxyDerbyMemberVoucherReceiptAutoAPIResponse
+func Alitripmerchantgalaxyderbymembervoucherreceiptauto(clt *core.SDKClient, req *alitripmerchant.AlitripmerchantgalaxyderbymembervoucherreceiptautoAPIRequest, session string) (*alitripmerchant.AlitripmerchantgalaxyderbymembervoucherreceiptautoAPIResponse, error) {
+	var resp alitripmerchant.AlitripmerchantgalaxyderbymembervoucherreceiptautoAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/miniapp"
 )
 
-// TaobaoMiniappExtDeliverySellChannelConfigsQuery 查询商家配置的信息
+// Taobaominiappextdeliverysellchannelconfigsquery 查询商家配置的信息
 // taobao.miniapp.ext.delivery.sell.channel.configs.query
 //
 // 查询商家配置的信息
-func TaobaoMiniappExtDeliverySellChannelConfigsQuery(clt *core.SDKClient, req *miniapp.TaobaoMiniappExtDeliverySellChannelConfigsQueryAPIRequest, session string) (*miniapp.TaobaoMiniappExtDeliverySellChannelConfigsQueryAPIResponse, error) {
-	var resp miniapp.TaobaoMiniappExtDeliverySellChannelConfigsQueryAPIResponse
+func Taobaominiappextdeliverysellchannelconfigsquery(clt *core.SDKClient, req *miniapp.TaobaominiappextdeliverysellchannelconfigsqueryAPIRequest, session string) (*miniapp.TaobaominiappextdeliverysellchannelconfigsqueryAPIResponse, error) {
+	var resp miniapp.TaobaominiappextdeliverysellchannelconfigsqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

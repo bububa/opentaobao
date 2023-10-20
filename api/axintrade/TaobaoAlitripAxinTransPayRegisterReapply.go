@@ -5,13 +5,13 @@ import (
 	"github.com/bububa/opentaobao/model/axintrade"
 )
 
-// TaobaoAlitripAxinTransPayRegisterReapply 阿信支付入驻重新申请
+// Taobaoalitripaxintranspayregisterreapply 阿信支付入驻重新申请
 // taobao.alitrip.axin.trans.pay.register.reapply
 //
 // 阿信支付入驻重新申请
 // 用于支付平台驳回，商户提交时的业务场景
-func TaobaoAlitripAxinTransPayRegisterReapply(clt *core.SDKClient, req *axintrade.TaobaoAlitripAxinTransPayRegisterReapplyAPIRequest, session string) (*axintrade.TaobaoAlitripAxinTransPayRegisterReapplyAPIResponse, error) {
-	var resp axintrade.TaobaoAlitripAxinTransPayRegisterReapplyAPIResponse
+func Taobaoalitripaxintranspayregisterreapply(clt *core.SDKClient, req *axintrade.TaobaoalitripaxintranspayregisterreapplyAPIRequest, session string) (*axintrade.TaobaoalitripaxintranspayregisterreapplyAPIResponse, error) {
+	var resp axintrade.TaobaoalitripaxintranspayregisterreapplyAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

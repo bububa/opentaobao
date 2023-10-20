@@ -1,7 +1,7 @@
 package feedflow
 
-// TaobaoFeedflowItemTargetValidlistResultDto 结构体
-type TaobaoFeedflowItemTargetValidlistResultDto struct {
+// TaobaofeedflowitemtargetvalidlistResultDto 结构体
+type TaobaofeedflowitemtargetvalidlistResultDto struct {
 	// 定向结构
 	Targets []TargetDto `json:"targets,omitempty" xml:"targets>target_dto,omitempty"`
 	// 成功

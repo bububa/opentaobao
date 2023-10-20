@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAilabsTmallgenieAuthDeviceUnbindAPIResponse 解绑设备 API返回值
+// AlibabaailabstmallgenieauthdeviceunbindAPIResponse 解绑设备 API返回值
 // alibaba.ailabs.tmallgenie.auth.device.unbind
 //
 // 通过此接口解绑天猫精灵设备
-type AlibabaAilabsTmallgenieAuthDeviceUnbindAPIResponse struct {
+type AlibabaailabstmallgenieauthdeviceunbindAPIResponse struct {
 	model.CommonResponse
-	AlibabaAilabsTmallgenieAuthDeviceUnbindAPIResponseModel
+	AlibabaailabstmallgenieauthdeviceunbindAPIResponseModel
 }
 
-// AlibabaAilabsTmallgenieAuthDeviceUnbindAPIResponseModel is 解绑设备 成功返回结果
-type AlibabaAilabsTmallgenieAuthDeviceUnbindAPIResponseModel struct {
+// AlibabaailabstmallgenieauthdeviceunbindAPIResponseModel is 解绑设备 成功返回结果
+type AlibabaailabstmallgenieauthdeviceunbindAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailabs_tmallgenie_auth_device_unbind_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回包装类
-	Result *AlibabaAilabsTmallgenieAuthDeviceUnbindResult `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabaailabstmallgenieauthdeviceunbindResult `json:"result,omitempty" xml:"result,omitempty"`
 }

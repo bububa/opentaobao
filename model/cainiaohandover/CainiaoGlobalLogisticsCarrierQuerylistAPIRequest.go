@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoGlobalLogisticsCarrierQuerylistAPIRequest 实际承运商查询 API请求
+// CainiaogloballogisticscarrierquerylistAPIRequest 实际承运商查询 API请求
 // cainiao.global.logistics.carrier.querylist
 //
 // 查询出所有的实际承运商
-type CainiaoGlobalLogisticsCarrierQuerylistAPIRequest struct {
+type CainiaogloballogisticscarrierquerylistAPIRequest struct {
 	model.Params
 	// 多语言(暂不支持，保留入参)
 	_locale string
 }
 
-// NewCainiaoGlobalLogisticsCarrierQuerylistRequest 初始化CainiaoGlobalLogisticsCarrierQuerylistAPIRequest对象
-func NewCainiaoGlobalLogisticsCarrierQuerylistRequest() *CainiaoGlobalLogisticsCarrierQuerylistAPIRequest {
-	return &CainiaoGlobalLogisticsCarrierQuerylistAPIRequest{
+// NewCainiaogloballogisticscarrierquerylistRequest 初始化CainiaogloballogisticscarrierquerylistAPIRequest对象
+func NewCainiaogloballogisticscarrierquerylistRequest() *CainiaogloballogisticscarrierquerylistAPIRequest {
+	return &CainiaogloballogisticscarrierquerylistAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r CainiaoGlobalLogisticsCarrierQuerylistAPIRequest) GetApiMethodName() string {
+func (r CainiaogloballogisticscarrierquerylistAPIRequest) GetApiMethodName() string {
 	return "cainiao.global.logistics.carrier.querylist"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r CainiaoGlobalLogisticsCarrierQuerylistAPIRequest) GetApiParams(params url.Values) {
+func (r CainiaogloballogisticscarrierquerylistAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r CainiaoGlobalLogisticsCarrierQuerylistAPIRequest) GetRawParams() model.Params {
+func (r CainiaogloballogisticscarrierquerylistAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetLocale is Locale Setter
 // 多语言(暂不支持，保留入参)
-func (r *CainiaoGlobalLogisticsCarrierQuerylistAPIRequest) SetLocale(_locale string) error {
+func (r *CainiaogloballogisticscarrierquerylistAPIRequest) SetLocale(_locale string) error {
 	r._locale = _locale
 	r.Set("locale", _locale)
 	return nil
 }
 
 // GetLocale Locale Getter
-func (r CainiaoGlobalLogisticsCarrierQuerylistAPIRequest) GetLocale() string {
+func (r CainiaogloballogisticscarrierquerylistAPIRequest) GetLocale() string {
 	return r._locale
 }

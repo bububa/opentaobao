@@ -1,7 +1,7 @@
 package tmallservice
 
-// TmallMallitemcenterSubscribeQueryResult 结构体
-type TmallMallitemcenterSubscribeQueryResult struct {
+// TmallmallitemcentersubscribequeryResult 结构体
+type TmallmallitemcentersubscribequeryResult struct {
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 错误码

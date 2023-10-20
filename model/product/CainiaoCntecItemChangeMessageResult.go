@@ -1,7 +1,7 @@
 package product
 
-// CainiaoCntecItemChangeMessageResult 结构体
-type CainiaoCntecItemChangeMessageResult struct {
+// CainiaocntecitemchangemessageResult 结构体
+type CainiaocntecitemchangemessageResult struct {
 	// 错误码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 错误信息

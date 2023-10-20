@@ -1,7 +1,7 @@
 package qimen
 
-// TaobaoQimenStockchangeReportBatch 结构体
-type TaobaoQimenStockchangeReportBatch struct {
+// TaobaoqimenstockchangereportBatch 结构体
+type TaobaoqimenstockchangereportBatch struct {
 	// 批次编号
 	BatchCode string `json:"batchCode,omitempty" xml:"batchCode,omitempty"`
 	// 生产日期(YYYY-MM-DD)

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alsc"
 )
 
-// AlibabaAlscSaasCodecCodeAttrsQuery 码业务属性查询
+// Alibabaalscsaascodeccodeattrsquery 码业务属性查询
 // alibaba.alsc.saas.codec.code.attrs.query
 //
 // 码业务属性查询
-func AlibabaAlscSaasCodecCodeAttrsQuery(clt *core.SDKClient, req *alsc.AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest, session string) (*alsc.AlibabaAlscSaasCodecCodeAttrsQueryAPIResponse, error) {
-	var resp alsc.AlibabaAlscSaasCodecCodeAttrsQueryAPIResponse
+func Alibabaalscsaascodeccodeattrsquery(clt *core.SDKClient, req *alsc.AlibabaalscsaascodeccodeattrsqueryAPIRequest, session string) (*alsc.AlibabaalscsaascodeccodeattrsqueryAPIResponse, error) {
+	var resp alsc.AlibabaalscsaascodeccodeattrsqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

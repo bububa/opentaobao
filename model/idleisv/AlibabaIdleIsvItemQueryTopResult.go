@@ -1,7 +1,7 @@
 package idleisv
 
-// AlibabaIdleIsvItemQueryTopResult 结构体
-type AlibabaIdleIsvItemQueryTopResult struct {
+// AlibabaidleisvitemqueryTopResult 结构体
+type AlibabaidleisvitemqueryTopResult struct {
 	// 错误码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 错误信息

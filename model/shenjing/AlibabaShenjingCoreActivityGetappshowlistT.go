@@ -1,7 +1,7 @@
 package shenjing
 
-// AlibabaShenjingCoreActivityGetappshowlistT 结构体
-type AlibabaShenjingCoreActivityGetappshowlistT struct {
+// AlibabashenjingcoreactivitygetappshowlistT 结构体
+type AlibabashenjingcoreactivitygetappshowlistT struct {
 	// 获取地址
 	FullAdress string `json:"full_adress,omitempty" xml:"full_adress,omitempty"`
 	// 活动详情的URL地址

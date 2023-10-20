@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihealthVaccineTradeOrderChannelGetAPIResponse 通过订单ID与卖家ID获取订单渠道 API返回值
+// AlibabaalihealthvaccinetradeorderchannelgetAPIResponse 通过订单ID与卖家ID获取订单渠道 API返回值
 // alibaba.alihealth.vaccine.trade.order.channel.get
 //
 // 通过订单ID与卖家ID获取订单渠道
-type AlibabaAlihealthVaccineTradeOrderChannelGetAPIResponse struct {
+type AlibabaalihealthvaccinetradeorderchannelgetAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlihealthVaccineTradeOrderChannelGetAPIResponseModel
+	AlibabaalihealthvaccinetradeorderchannelgetAPIResponseModel
 }
 
-// AlibabaAlihealthVaccineTradeOrderChannelGetAPIResponseModel is 通过订单ID与卖家ID获取订单渠道 成功返回结果
-type AlibabaAlihealthVaccineTradeOrderChannelGetAPIResponseModel struct {
+// AlibabaalihealthvaccinetradeorderchannelgetAPIResponseModel is 通过订单ID与卖家ID获取订单渠道 成功返回结果
+type AlibabaalihealthvaccinetradeorderchannelgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alihealth_vaccine_trade_order_channel_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

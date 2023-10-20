@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAscpLogisticsSellerWriteoffAPIRequest 商家配送核销 API请求
+// AlibabaascplogisticssellerwriteoffAPIRequest 商家配送核销 API请求
 // alibaba.ascp.logistics.seller.writeoff
 //
 // 商家配送核销
-type AlibabaAscpLogisticsSellerWriteoffAPIRequest struct {
+type AlibabaascplogisticssellerwriteoffAPIRequest struct {
 	model.Params
 	// 核销码
 	_receiveCode string
@@ -18,52 +18,52 @@ type AlibabaAscpLogisticsSellerWriteoffAPIRequest struct {
 	_lpOrderId int64
 }
 
-// NewAlibabaAscpLogisticsSellerWriteoffRequest 初始化AlibabaAscpLogisticsSellerWriteoffAPIRequest对象
-func NewAlibabaAscpLogisticsSellerWriteoffRequest() *AlibabaAscpLogisticsSellerWriteoffAPIRequest {
-	return &AlibabaAscpLogisticsSellerWriteoffAPIRequest{
+// NewAlibabaascplogisticssellerwriteoffRequest 初始化AlibabaascplogisticssellerwriteoffAPIRequest对象
+func NewAlibabaascplogisticssellerwriteoffRequest() *AlibabaascplogisticssellerwriteoffAPIRequest {
+	return &AlibabaascplogisticssellerwriteoffAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaAscpLogisticsSellerWriteoffAPIRequest) GetApiMethodName() string {
+func (r AlibabaascplogisticssellerwriteoffAPIRequest) GetApiMethodName() string {
 	return "alibaba.ascp.logistics.seller.writeoff"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAscpLogisticsSellerWriteoffAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaascplogisticssellerwriteoffAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaAscpLogisticsSellerWriteoffAPIRequest) GetRawParams() model.Params {
+func (r AlibabaascplogisticssellerwriteoffAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetReceiveCode is ReceiveCode Setter
 // 核销码
-func (r *AlibabaAscpLogisticsSellerWriteoffAPIRequest) SetReceiveCode(_receiveCode string) error {
+func (r *AlibabaascplogisticssellerwriteoffAPIRequest) SetReceiveCode(_receiveCode string) error {
 	r._receiveCode = _receiveCode
 	r.Set("receive_code", _receiveCode)
 	return nil
 }
 
 // GetReceiveCode ReceiveCode Getter
-func (r AlibabaAscpLogisticsSellerWriteoffAPIRequest) GetReceiveCode() string {
+func (r AlibabaascplogisticssellerwriteoffAPIRequest) GetReceiveCode() string {
 	return r._receiveCode
 }
 
 // SetLpOrderId is LpOrderId Setter
 // 所要核销的核销物流单ID，在alibaba.ascp.logistics.seller.orders.get中获取。
-func (r *AlibabaAscpLogisticsSellerWriteoffAPIRequest) SetLpOrderId(_lpOrderId int64) error {
+func (r *AlibabaascplogisticssellerwriteoffAPIRequest) SetLpOrderId(_lpOrderId int64) error {
 	r._lpOrderId = _lpOrderId
 	r.Set("lp_order_id", _lpOrderId)
 	return nil
 }
 
 // GetLpOrderId LpOrderId Getter
-func (r AlibabaAscpLogisticsSellerWriteoffAPIRequest) GetLpOrderId() int64 {
+func (r AlibabaascplogisticssellerwriteoffAPIRequest) GetLpOrderId() int64 {
 	return r._lpOrderId
 }

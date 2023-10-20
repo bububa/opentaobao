@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/icburfq"
 )
 
-// AlibabaIcbuRfqMyequity 我的权益
+// Alibabaicburfqmyequity 我的权益
 // alibaba.icbu.rfq.myequity
 //
 // 查询供应商权益接口
-func AlibabaIcbuRfqMyequity(clt *core.SDKClient, req *icburfq.AlibabaIcbuRfqMyequityAPIRequest, session string) (*icburfq.AlibabaIcbuRfqMyequityAPIResponse, error) {
-	var resp icburfq.AlibabaIcbuRfqMyequityAPIResponse
+func Alibabaicburfqmyequity(clt *core.SDKClient, req *icburfq.AlibabaicburfqmyequityAPIRequest, session string) (*icburfq.AlibabaicburfqmyequityAPIResponse, error) {
+	var resp icburfq.AlibabaicburfqmyequityAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

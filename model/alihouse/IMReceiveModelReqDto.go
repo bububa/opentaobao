@@ -1,7 +1,7 @@
 package alihouse
 
-// IMReceiveModelReqDto 结构体
-type IMReceiveModelReqDto struct {
+// ImreceiveModelReqDto 结构体
+type ImreceiveModelReqDto struct {
 	// 外部id列表，根据type区分
 	TagIds []string `json:"tag_ids,omitempty" xml:"tag_ids>string,omitempty"`
 	// 外部门店id

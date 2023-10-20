@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// AlibabaAlihouseNewhomeProjectPresalepermitDelete 删除楼盘预售证
+// Alibabaalihousenewhomeprojectpresalepermitdelete 删除楼盘预售证
 // alibaba.alihouse.newhome.project.presalepermit.delete
 //
 // 删除楼盘预售证信息
-func AlibabaAlihouseNewhomeProjectPresalepermitDelete(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIResponse, error) {
-	var resp alihouse.AlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIResponse
+func Alibabaalihousenewhomeprojectpresalepermitdelete(clt *core.SDKClient, req *alihouse.AlibabaalihousenewhomeprojectpresalepermitdeleteAPIRequest, session string) (*alihouse.AlibabaalihousenewhomeprojectpresalepermitdeleteAPIResponse, error) {
+	var resp alihouse.AlibabaalihousenewhomeprojectpresalepermitdeleteAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

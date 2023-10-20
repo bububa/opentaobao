@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlscCrmCardBatchActiveAPIResponse 批量激活卡 API返回值
+// AlibabaalsccrmcardbatchactiveAPIResponse 批量激活卡 API返回值
 // alibaba.alsc.crm.card.batch.active
 //
 // 批量激活卡
-type AlibabaAlscCrmCardBatchActiveAPIResponse struct {
+type AlibabaalsccrmcardbatchactiveAPIResponse struct {
 	model.CommonResponse
-	AlibabaAlscCrmCardBatchActiveAPIResponseModel
+	AlibabaalsccrmcardbatchactiveAPIResponseModel
 }
 
-// AlibabaAlscCrmCardBatchActiveAPIResponseModel is 批量激活卡 成功返回结果
-type AlibabaAlscCrmCardBatchActiveAPIResponseModel struct {
+// AlibabaalsccrmcardbatchactiveAPIResponseModel is 批量激活卡 成功返回结果
+type AlibabaalsccrmcardbatchactiveAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_crm_card_batch_active_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

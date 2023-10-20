@@ -1,7 +1,7 @@
 package ju
 
-// AlibabaJhsCommunitySubmittingTextData 结构体
-type AlibabaJhsCommunitySubmittingTextData struct {
+// AlibabajhscommunitysubmittingtextData 结构体
+type AlibabajhscommunitysubmittingtextData struct {
 	// 微信直播二维码
 	WechatLiveQR string `json:"wechat_live_q_r,omitempty" xml:"wechat_live_q_r,omitempty"`
 	// 去微信直播

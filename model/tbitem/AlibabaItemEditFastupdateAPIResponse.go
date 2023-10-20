@@ -6,19 +6,19 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaItemEditFastupdateAPIResponse 商品编辑增量更新 API返回值
+// AlibabaitemeditfastupdateAPIResponse 商品编辑增量更新 API返回值
 // alibaba.item.edit.fastupdate
 //
 // 商品编辑增量更新;
 // &lt;br/&gt;该接口编辑sku，只能更新价格、库存等信息，不能新增sku;
 // &lt;br/&gt;新增sku用全量接口alibaba.item.edit.submit，先设置销售属性;
-type AlibabaItemEditFastupdateAPIResponse struct {
+type AlibabaitemeditfastupdateAPIResponse struct {
 	model.CommonResponse
-	AlibabaItemEditFastupdateAPIResponseModel
+	AlibabaitemeditfastupdateAPIResponseModel
 }
 
-// AlibabaItemEditFastupdateAPIResponseModel is 商品编辑增量更新 成功返回结果
-type AlibabaItemEditFastupdateAPIResponseModel struct {
+// AlibabaitemeditfastupdateAPIResponseModel is 商品编辑增量更新 成功返回结果
+type AlibabaitemeditfastupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_item_edit_fastupdate_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/damai"
 )
 
-// AlibabaDamaiMevOpenDeletestand 大麦换验平台-第三方对外开放-看台接口deleteStand
+// Alibabadamaimevopendeletestand 大麦换验平台-第三方对外开放-看台接口deleteStand
 // alibaba.damai.mev.open.deletestand
 //
 // deleteStand
-func AlibabaDamaiMevOpenDeletestand(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenDeletestandAPIRequest, session string) (*damai.AlibabaDamaiMevOpenDeletestandAPIResponse, error) {
-	var resp damai.AlibabaDamaiMevOpenDeletestandAPIResponse
+func Alibabadamaimevopendeletestand(clt *core.SDKClient, req *damai.AlibabadamaimevopendeletestandAPIRequest, session string) (*damai.AlibabadamaimevopendeletestandAPIResponse, error) {
+	var resp damai.AlibabadamaimevopendeletestandAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

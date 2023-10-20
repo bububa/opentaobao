@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/qt"
 )
 
-// TaobaoQtReportGet 查询质检报告
+// Taobaoqtreportget 查询质检报告
 // taobao.qt.report.get
 //
 // 质检报告查询
-func TaobaoQtReportGet(clt *core.SDKClient, req *qt.TaobaoQtReportGetAPIRequest, session string) (*qt.TaobaoQtReportGetAPIResponse, error) {
-	var resp qt.TaobaoQtReportGetAPIResponse
+func Taobaoqtreportget(clt *core.SDKClient, req *qt.TaobaoqtreportgetAPIRequest, session string) (*qt.TaobaoqtreportgetAPIResponse, error) {
+	var resp qt.TaobaoqtreportgetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

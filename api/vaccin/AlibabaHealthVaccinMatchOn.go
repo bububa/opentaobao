@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/vaccin"
 )
 
-// AlibabaHealthVaccinMatchOn isv自主上下线疫苗，可以选择上线还是下线
+// Alibabahealthvaccinmatchon isv自主上下线疫苗，可以选择上线还是下线
 // alibaba.health.vaccin.match.on
 //
 // isv自主上下线疫苗，可以选择上线还是下线
-func AlibabaHealthVaccinMatchOn(clt *core.SDKClient, req *vaccin.AlibabaHealthVaccinMatchOnAPIRequest, session string) (*vaccin.AlibabaHealthVaccinMatchOnAPIResponse, error) {
-	var resp vaccin.AlibabaHealthVaccinMatchOnAPIResponse
+func Alibabahealthvaccinmatchon(clt *core.SDKClient, req *vaccin.AlibabahealthvaccinmatchonAPIRequest, session string) (*vaccin.AlibabahealthvaccinmatchonAPIResponse, error) {
+	var resp vaccin.AlibabahealthvaccinmatchonAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

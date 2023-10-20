@@ -5,7 +5,7 @@ type Money struct {
 	// currencyCode
 	CurrencyCode string `json:"currency_code,omitempty" xml:"currency_code,omitempty"`
 	// amount
-	Amount *BigDecimal `json:"amount,omitempty" xml:"amount,omitempty"`
+	Amount float64 `json:"amount,omitempty" xml:"amount,omitempty"`
 	// cent
 	Cent int64 `json:"cent,omitempty" xml:"cent,omitempty"`
 }

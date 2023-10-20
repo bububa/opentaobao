@@ -5,7 +5,7 @@ import (
 	"github.com/bububa/opentaobao/model/promotion"
 )
 
-// AlibabaBenefitQuery 奖池奖品查询列表
+// Alibababenefitquery 奖池奖品查询列表
 // alibaba.benefit.query
 //
 // 功能：奖池奖品查询列表
@@ -15,8 +15,8 @@ import (
 // appkey验证通过的，才会查数据 并透出，否则直接失败。
 // 因为appkey是系统参数，并且程序内部可以验证appkey和业务身份appName的关系
 // 是否一致，所以可以保证参数appName的合法性，没有越权。
-func AlibabaBenefitQuery(clt *core.SDKClient, req *promotion.AlibabaBenefitQueryAPIRequest, session string) (*promotion.AlibabaBenefitQueryAPIResponse, error) {
-	var resp promotion.AlibabaBenefitQueryAPIResponse
+func Alibababenefitquery(clt *core.SDKClient, req *promotion.AlibababenefitqueryAPIRequest, session string) (*promotion.AlibababenefitqueryAPIResponse, error) {
+	var resp promotion.AlibababenefitqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

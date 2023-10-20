@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTsPropertyGetAPIRequest 淘宝服务属性查询 API请求
+// TaobaotspropertygetAPIRequest 淘宝服务属性查询 API请求
 // taobao.ts.property.get
 //
 // 淘宝服务属性查询
-type TaobaoTsPropertyGetAPIRequest struct {
+type TaobaotspropertygetAPIRequest struct {
 	model.Params
 	// 服务收费项code
 	_serviceItemCode string
 }
 
-// NewTaobaoTsPropertyGetRequest 初始化TaobaoTsPropertyGetAPIRequest对象
-func NewTaobaoTsPropertyGetRequest() *TaobaoTsPropertyGetAPIRequest {
-	return &TaobaoTsPropertyGetAPIRequest{
+// NewTaobaotspropertygetRequest 初始化TaobaotspropertygetAPIRequest对象
+func NewTaobaotspropertygetRequest() *TaobaotspropertygetAPIRequest {
+	return &TaobaotspropertygetAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoTsPropertyGetAPIRequest) GetApiMethodName() string {
+func (r TaobaotspropertygetAPIRequest) GetApiMethodName() string {
 	return "taobao.ts.property.get"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTsPropertyGetAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaotspropertygetAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoTsPropertyGetAPIRequest) GetRawParams() model.Params {
+func (r TaobaotspropertygetAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetServiceItemCode is ServiceItemCode Setter
 // 服务收费项code
-func (r *TaobaoTsPropertyGetAPIRequest) SetServiceItemCode(_serviceItemCode string) error {
+func (r *TaobaotspropertygetAPIRequest) SetServiceItemCode(_serviceItemCode string) error {
 	r._serviceItemCode = _serviceItemCode
 	r.Set("service_item_code", _serviceItemCode)
 	return nil
 }
 
 // GetServiceItemCode ServiceItemCode Getter
-func (r TaobaoTsPropertyGetAPIRequest) GetServiceItemCode() string {
+func (r TaobaotspropertygetAPIRequest) GetServiceItemCode() string {
 	return r._serviceItemCode
 }

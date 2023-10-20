@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSmartappTableAddAPIResponse 智能应用服务登记工作表数据新增 API返回值
+// TaobaosmartapptableaddAPIResponse 智能应用服务登记工作表数据新增 API返回值
 // taobao.smartapp.table.add
 //
 // 智能应用服务登记工作表数据新增
-type TaobaoSmartappTableAddAPIResponse struct {
+type TaobaosmartapptableaddAPIResponse struct {
 	model.CommonResponse
-	TaobaoSmartappTableAddAPIResponseModel
+	TaobaosmartapptableaddAPIResponseModel
 }
 
-// TaobaoSmartappTableAddAPIResponseModel is 智能应用服务登记工作表数据新增 成功返回结果
-type TaobaoSmartappTableAddAPIResponseModel struct {
+// TaobaosmartapptableaddAPIResponseModel is 智能应用服务登记工作表数据新增 成功返回结果
+type TaobaosmartapptableaddAPIResponseModel struct {
 	XMLName xml.Name `xml:"smartapp_table_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

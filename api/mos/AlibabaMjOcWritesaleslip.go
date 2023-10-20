@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/mos"
 )
 
-// AlibabaMjOcWritesaleslip 开票占库
+// Alibabamjocwritesaleslip 开票占库
 // alibaba.mj.oc.writesaleslip
 //
 // 开票占库
-func AlibabaMjOcWritesaleslip(clt *core.SDKClient, req *mos.AlibabaMjOcWritesaleslipAPIRequest, session string) (*mos.AlibabaMjOcWritesaleslipAPIResponse, error) {
-	var resp mos.AlibabaMjOcWritesaleslipAPIResponse
+func Alibabamjocwritesaleslip(clt *core.SDKClient, req *mos.AlibabamjocwritesaleslipAPIRequest, session string) (*mos.AlibabamjocwritesaleslipAPIResponse, error) {
+	var resp mos.AlibabamjocwritesaleslipAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

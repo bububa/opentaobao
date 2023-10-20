@@ -1,7 +1,7 @@
 package wms
 
-// TaobaoWlbWmsItemCombinationGetResult 结构体
-type TaobaoWlbWmsItemCombinationGetResult struct {
+// TaobaowlbwmsitemcombinationgetResult 结构体
+type TaobaowlbwmsitemcombinationgetResult struct {
 	// 子货品列表
 	SubItemList []SubItemList `json:"sub_item_list,omitempty" xml:"sub_item_list>sub_item_list,omitempty"`
 	// 错误编码

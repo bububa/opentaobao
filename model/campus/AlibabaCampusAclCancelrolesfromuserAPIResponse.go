@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaCampusAclCancelrolesfromuserAPIResponse 撤销用户授予的角色 API返回值
+// AlibabacampusaclcancelrolesfromuserAPIResponse 撤销用户授予的角色 API返回值
 // alibaba.campus.acl.cancelrolesfromuser
 //
 // 撤销用户授予的角色
-type AlibabaCampusAclCancelrolesfromuserAPIResponse struct {
+type AlibabacampusaclcancelrolesfromuserAPIResponse struct {
 	model.CommonResponse
-	AlibabaCampusAclCancelrolesfromuserAPIResponseModel
+	AlibabacampusaclcancelrolesfromuserAPIResponseModel
 }
 
-// AlibabaCampusAclCancelrolesfromuserAPIResponseModel is 撤销用户授予的角色 成功返回结果
-type AlibabaCampusAclCancelrolesfromuserAPIResponseModel struct {
+// AlibabacampusaclcancelrolesfromuserAPIResponseModel is 撤销用户授予的角色 成功返回结果
+type AlibabacampusaclcancelrolesfromuserAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_campus_acl_cancelrolesfromuser_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

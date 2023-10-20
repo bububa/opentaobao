@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkWholesaleOutboundorderCommitAPIRequest 盒马帮发货信息回传接口 API请求
+// AlibabawdkwholesaleoutboundordercommitAPIRequest 盒马帮发货信息回传接口 API请求
 // alibaba.wdk.wholesale.outboundorder.commit
 //
 // 盒马帮发货信息回传接口
-type AlibabaWdkWholesaleOutboundorderCommitAPIRequest struct {
+type AlibabawdkwholesaleoutboundordercommitAPIRequest struct {
 	model.Params
 	// 发货信息参数
 	_outboundInfoCommitReq *OutboundInfoCommitReq
 }
 
-// NewAlibabaWdkWholesaleOutboundorderCommitRequest 初始化AlibabaWdkWholesaleOutboundorderCommitAPIRequest对象
-func NewAlibabaWdkWholesaleOutboundorderCommitRequest() *AlibabaWdkWholesaleOutboundorderCommitAPIRequest {
-	return &AlibabaWdkWholesaleOutboundorderCommitAPIRequest{
+// NewAlibabawdkwholesaleoutboundordercommitRequest 初始化AlibabawdkwholesaleoutboundordercommitAPIRequest对象
+func NewAlibabawdkwholesaleoutboundordercommitRequest() *AlibabawdkwholesaleoutboundordercommitAPIRequest {
+	return &AlibabawdkwholesaleoutboundordercommitAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaWdkWholesaleOutboundorderCommitAPIRequest) GetApiMethodName() string {
+func (r AlibabawdkwholesaleoutboundordercommitAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.wholesale.outboundorder.commit"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkWholesaleOutboundorderCommitAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabawdkwholesaleoutboundordercommitAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaWdkWholesaleOutboundorderCommitAPIRequest) GetRawParams() model.Params {
+func (r AlibabawdkwholesaleoutboundordercommitAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetOutboundInfoCommitReq is OutboundInfoCommitReq Setter
 // 发货信息参数
-func (r *AlibabaWdkWholesaleOutboundorderCommitAPIRequest) SetOutboundInfoCommitReq(_outboundInfoCommitReq *OutboundInfoCommitReq) error {
+func (r *AlibabawdkwholesaleoutboundordercommitAPIRequest) SetOutboundInfoCommitReq(_outboundInfoCommitReq *OutboundInfoCommitReq) error {
 	r._outboundInfoCommitReq = _outboundInfoCommitReq
 	r.Set("outbound_info_commit_req", _outboundInfoCommitReq)
 	return nil
 }
 
 // GetOutboundInfoCommitReq OutboundInfoCommitReq Getter
-func (r AlibabaWdkWholesaleOutboundorderCommitAPIRequest) GetOutboundInfoCommitReq() *OutboundInfoCommitReq {
+func (r AlibabawdkwholesaleoutboundordercommitAPIRequest) GetOutboundInfoCommitReq() *OutboundInfoCommitReq {
 	return r._outboundInfoCommitReq
 }

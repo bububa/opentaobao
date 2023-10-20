@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTmcGroupDeleteAPIResponse 删除指定的分组或分组下的用户 API返回值
+// TaobaotmcgroupdeleteAPIResponse 删除指定的分组或分组下的用户 API返回值
 // taobao.tmc.group.delete
 //
 // 删除指定的分组或分组下的用户，授权消息使用
-type TaobaoTmcGroupDeleteAPIResponse struct {
+type TaobaotmcgroupdeleteAPIResponse struct {
 	model.CommonResponse
-	TaobaoTmcGroupDeleteAPIResponseModel
+	TaobaotmcgroupdeleteAPIResponseModel
 }
 
-// TaobaoTmcGroupDeleteAPIResponseModel is 删除指定的分组或分组下的用户 成功返回结果
-type TaobaoTmcGroupDeleteAPIResponseModel struct {
+// TaobaotmcgroupdeleteAPIResponseModel is 删除指定的分组或分组下的用户 成功返回结果
+type TaobaotmcgroupdeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmc_group_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

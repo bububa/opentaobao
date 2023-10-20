@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/alicom"
 )
 
-// AlibabaAliqinFlowAlipayIsbindingtbaccount 判断支付宝用户是否绑定淘宝账号
+// Alibabaaliqinflowalipayisbindingtbaccount 判断支付宝用户是否绑定淘宝账号
 // alibaba.aliqin.flow.alipay.isbindingtbaccount
 //
 // 判断支付宝用户是否绑定淘宝账号
-func AlibabaAliqinFlowAlipayIsbindingtbaccount(clt *core.SDKClient, req *alicom.AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest, session string) (*alicom.AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse, error) {
-	var resp alicom.AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse
+func Alibabaaliqinflowalipayisbindingtbaccount(clt *core.SDKClient, req *alicom.AlibabaaliqinflowalipayisbindingtbaccountAPIRequest, session string) (*alicom.AlibabaaliqinflowalipayisbindingtbaccountAPIResponse, error) {
+	var resp alicom.AlibabaaliqinflowalipayisbindingtbaccountAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

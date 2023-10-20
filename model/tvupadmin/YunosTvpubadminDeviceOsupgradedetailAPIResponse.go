@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// YunosTvpubadminDeviceOsupgradedetailAPIResponse 获取系统升级详情 API返回值
+// YunostvpubadmindeviceosupgradedetailAPIResponse 获取系统升级详情 API返回值
 // yunos.tvpubadmin.device.osupgradedetail
 //
 // 获取系统升级详情
-type YunosTvpubadminDeviceOsupgradedetailAPIResponse struct {
+type YunostvpubadmindeviceosupgradedetailAPIResponse struct {
 	model.CommonResponse
-	YunosTvpubadminDeviceOsupgradedetailAPIResponseModel
+	YunostvpubadmindeviceosupgradedetailAPIResponseModel
 }
 
-// YunosTvpubadminDeviceOsupgradedetailAPIResponseModel is 获取系统升级详情 成功返回结果
-type YunosTvpubadminDeviceOsupgradedetailAPIResponseModel struct {
+// YunostvpubadmindeviceosupgradedetailAPIResponseModel is 获取系统升级详情 成功返回结果
+type YunostvpubadmindeviceosupgradedetailAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_tvpubadmin_device_osupgradedetail_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

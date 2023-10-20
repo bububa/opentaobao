@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/miniappcloud"
 )
 
-// TaobaoMiniappCloudMongoUpdate 更新MongoDB中的数据
+// Taobaominiappcloudmongoupdate 更新MongoDB中的数据
 // taobao.miniapp.cloud.mongo.update
 //
 // 更新MongoDB中的数据
-func TaobaoMiniappCloudMongoUpdate(clt *core.SDKClient, req *miniappcloud.TaobaoMiniappCloudMongoUpdateAPIRequest, session string) (*miniappcloud.TaobaoMiniappCloudMongoUpdateAPIResponse, error) {
-	var resp miniappcloud.TaobaoMiniappCloudMongoUpdateAPIResponse
+func Taobaominiappcloudmongoupdate(clt *core.SDKClient, req *miniappcloud.TaobaominiappcloudmongoupdateAPIRequest, session string) (*miniappcloud.TaobaominiappcloudmongoupdateAPIResponse, error) {
+	var resp miniappcloud.TaobaominiappcloudmongoupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

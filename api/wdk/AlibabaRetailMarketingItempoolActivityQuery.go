@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaRetailMarketingItempoolActivityQuery 查询商品池活动【同城零售】
+// Alibabaretailmarketingitempoolactivityquery 查询商品池活动【同城零售】
 // alibaba.retail.marketing.itempool.activity.query
 //
 // 查询商品池活动【同城零售】
-func AlibabaRetailMarketingItempoolActivityQuery(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingItempoolActivityQueryAPIRequest, session string) (*wdk.AlibabaRetailMarketingItempoolActivityQueryAPIResponse, error) {
-	var resp wdk.AlibabaRetailMarketingItempoolActivityQueryAPIResponse
+func Alibabaretailmarketingitempoolactivityquery(clt *core.SDKClient, req *wdk.AlibabaretailmarketingitempoolactivityqueryAPIRequest, session string) (*wdk.AlibabaretailmarketingitempoolactivityqueryAPIResponse, error) {
+	var resp wdk.AlibabaretailmarketingitempoolactivityqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

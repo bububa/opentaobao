@@ -1,7 +1,7 @@
 package tbk
 
-// NTbkShop 结构体
-type NTbkShop struct {
+// NtbkShop 结构体
+type NtbkShop struct {
 	// 店铺推广链接
 	ClickUrl string `json:"click_url,omitempty" xml:"click_url,omitempty"`
 	// 店铺地址

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/train"
 )
 
-// TaobaoTrainAgentOrderFail 出票失败
+// Taobaotrainagentorderfail 出票失败
 // taobao.train.agent.order.fail
 //
 // 出票失败
-func TaobaoTrainAgentOrderFail(clt *core.SDKClient, req *train.TaobaoTrainAgentOrderFailAPIRequest, session string) (*train.TaobaoTrainAgentOrderFailAPIResponse, error) {
-	var resp train.TaobaoTrainAgentOrderFailAPIResponse
+func Taobaotrainagentorderfail(clt *core.SDKClient, req *train.TaobaotrainagentorderfailAPIRequest, session string) (*train.TaobaotrainagentorderfailAPIResponse, error) {
+	var resp train.TaobaotrainagentorderfailAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

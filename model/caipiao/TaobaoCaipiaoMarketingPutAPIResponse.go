@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoCaipiaoMarketingPutAPIResponse 创建或修改商家送彩票活动 API返回值
+// TaobaocaipiaomarketingputAPIResponse 创建或修改商家送彩票活动 API返回值
 // taobao.caipiao.marketing.put
 //
 // 卖家通过此接口新增或修改送彩票活动的配置，比如活动时间、活动的条件等。
@@ -20,13 +20,13 @@ import (
 // https://gw.alicdn.com/tfs/TB1tzpNSXXXXXacXVXXXXXXXXXX-790-280.png
 // https://gw.alicdn.com/tfs/TB1UXdxSXXXXXXsapXXXXXXXXXX-790-280.png
 // https://gw.alicdn.com/tfs/TB1_gV.SXXXXXbZXpXXXXXXXXXX-790-280.png
-type TaobaoCaipiaoMarketingPutAPIResponse struct {
+type TaobaocaipiaomarketingputAPIResponse struct {
 	model.CommonResponse
-	TaobaoCaipiaoMarketingPutAPIResponseModel
+	TaobaocaipiaomarketingputAPIResponseModel
 }
 
-// TaobaoCaipiaoMarketingPutAPIResponseModel is 创建或修改商家送彩票活动 成功返回结果
-type TaobaoCaipiaoMarketingPutAPIResponseModel struct {
+// TaobaocaipiaomarketingputAPIResponseModel is 创建或修改商家送彩票活动 成功返回结果
+type TaobaocaipiaomarketingputAPIResponseModel struct {
 	XMLName xml.Name `xml:"caipiao_marketing_put_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

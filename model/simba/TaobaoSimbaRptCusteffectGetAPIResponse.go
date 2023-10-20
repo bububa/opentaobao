@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSimbaRptCusteffectGetAPIResponse 用户账户报表效果数据查询（只有汇总数据，无分类数据） API返回值
+// TaobaosimbarptcusteffectgetAPIResponse 用户账户报表效果数据查询（只有汇总数据，无分类数据） API返回值
 // taobao.simba.rpt.custeffect.get
 //
 // 用户账户报表效果数据查询（只有汇总数据，无分类数据）
-type TaobaoSimbaRptCusteffectGetAPIResponse struct {
+type TaobaosimbarptcusteffectgetAPIResponse struct {
 	model.CommonResponse
-	TaobaoSimbaRptCusteffectGetAPIResponseModel
+	TaobaosimbarptcusteffectgetAPIResponseModel
 }
 
-// TaobaoSimbaRptCusteffectGetAPIResponseModel is 用户账户报表效果数据查询（只有汇总数据，无分类数据） 成功返回结果
-type TaobaoSimbaRptCusteffectGetAPIResponseModel struct {
+// TaobaosimbarptcusteffectgetAPIResponseModel is 用户账户报表效果数据查询（只有汇总数据，无分类数据） 成功返回结果
+type TaobaosimbarptcusteffectgetAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_rpt_custeffect_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

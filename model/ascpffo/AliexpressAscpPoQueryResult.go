@@ -1,7 +1,7 @@
 package ascpffo
 
-// AliexpressAscpPoQueryResult 结构体
-type AliexpressAscpPoQueryResult struct {
+// AliexpressascppoqueryResult 结构体
+type AliexpressascppoqueryResult struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息

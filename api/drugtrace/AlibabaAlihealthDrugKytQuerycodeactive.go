@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-// AlibabaAlihealthDrugKytQuerycodeactive 查询码是否激活
+// Alibabaalihealthdrugkytquerycodeactive 查询码是否激活
 // alibaba.alihealth.drug.kyt.querycodeactive
 //
 // 查询码是否激活
-func AlibabaAlihealthDrugKytQuerycodeactive(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugKytQuerycodeactiveAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugKytQuerycodeactiveAPIResponse, error) {
-	var resp drugtrace.AlibabaAlihealthDrugKytQuerycodeactiveAPIResponse
+func Alibabaalihealthdrugkytquerycodeactive(clt *core.SDKClient, req *drugtrace.AlibabaalihealthdrugkytquerycodeactiveAPIRequest, session string) (*drugtrace.AlibabaalihealthdrugkytquerycodeactiveAPIResponse, error) {
+	var resp drugtrace.AlibabaalihealthdrugkytquerycodeactiveAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

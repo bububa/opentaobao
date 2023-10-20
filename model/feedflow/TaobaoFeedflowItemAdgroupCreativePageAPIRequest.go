@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoFeedflowItemAdgroupCreativePageAPIRequest 信息流单元下查看创意 API请求
+// TaobaofeedflowitemadgroupcreativepageAPIRequest 信息流单元下查看创意 API请求
 // taobao.feedflow.item.adgroup.creative.page
 //
 // 信息流单元下查看创意
-type TaobaoFeedflowItemAdgroupCreativePageAPIRequest struct {
+type TaobaofeedflowitemadgroupcreativepageAPIRequest struct {
 	model.Params
 	// 绑定查询条件
 	_creativeBindQuery *CreativeBindQueryDto
 }
 
-// NewTaobaoFeedflowItemAdgroupCreativePageRequest 初始化TaobaoFeedflowItemAdgroupCreativePageAPIRequest对象
-func NewTaobaoFeedflowItemAdgroupCreativePageRequest() *TaobaoFeedflowItemAdgroupCreativePageAPIRequest {
-	return &TaobaoFeedflowItemAdgroupCreativePageAPIRequest{
+// NewTaobaofeedflowitemadgroupcreativepageRequest 初始化TaobaofeedflowitemadgroupcreativepageAPIRequest对象
+func NewTaobaofeedflowitemadgroupcreativepageRequest() *TaobaofeedflowitemadgroupcreativepageAPIRequest {
+	return &TaobaofeedflowitemadgroupcreativepageAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoFeedflowItemAdgroupCreativePageAPIRequest) GetApiMethodName() string {
+func (r TaobaofeedflowitemadgroupcreativepageAPIRequest) GetApiMethodName() string {
 	return "taobao.feedflow.item.adgroup.creative.page"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoFeedflowItemAdgroupCreativePageAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaofeedflowitemadgroupcreativepageAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoFeedflowItemAdgroupCreativePageAPIRequest) GetRawParams() model.Params {
+func (r TaobaofeedflowitemadgroupcreativepageAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetCreativeBindQuery is CreativeBindQuery Setter
 // 绑定查询条件
-func (r *TaobaoFeedflowItemAdgroupCreativePageAPIRequest) SetCreativeBindQuery(_creativeBindQuery *CreativeBindQueryDto) error {
+func (r *TaobaofeedflowitemadgroupcreativepageAPIRequest) SetCreativeBindQuery(_creativeBindQuery *CreativeBindQueryDto) error {
 	r._creativeBindQuery = _creativeBindQuery
 	r.Set("creative_bind_query", _creativeBindQuery)
 	return nil
 }
 
 // GetCreativeBindQuery CreativeBindQuery Getter
-func (r TaobaoFeedflowItemAdgroupCreativePageAPIRequest) GetCreativeBindQuery() *CreativeBindQueryDto {
+func (r TaobaofeedflowitemadgroupcreativepageAPIRequest) GetCreativeBindQuery() *CreativeBindQueryDto {
 	return r._creativeBindQuery
 }

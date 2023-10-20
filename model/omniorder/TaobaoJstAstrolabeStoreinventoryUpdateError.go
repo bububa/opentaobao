@@ -1,7 +1,7 @@
 package omniorder
 
-// TaobaoJstAstrolabeStoreinventoryUpdateError 结构体
-type TaobaoJstAstrolabeStoreinventoryUpdateError struct {
+// TaobaojstastrolabestoreinventoryupdateError 结构体
+type TaobaojstastrolabestoreinventoryupdateError struct {
 	// 错误描述
 	Description string `json:"description,omitempty" xml:"description,omitempty"`
 	// 处理失败的流水号

@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaCampusGuardDataSyncAPIRequest 卡巴数据同步 API请求
+// AlibabacampusguarddatasyncAPIRequest 卡巴数据同步 API请求
 // alibaba.campus.guard.data.sync
 //
 // 数据同步门禁系统
-type AlibabaCampusGuardDataSyncAPIRequest struct {
+type AlibabacampusguarddatasyncAPIRequest struct {
 	model.Params
 	// 1-刷卡流水
 	_dataType string
@@ -20,65 +20,65 @@ type AlibabaCampusGuardDataSyncAPIRequest struct {
 	_data string
 }
 
-// NewAlibabaCampusGuardDataSyncRequest 初始化AlibabaCampusGuardDataSyncAPIRequest对象
-func NewAlibabaCampusGuardDataSyncRequest() *AlibabaCampusGuardDataSyncAPIRequest {
-	return &AlibabaCampusGuardDataSyncAPIRequest{
+// NewAlibabacampusguarddatasyncRequest 初始化AlibabacampusguarddatasyncAPIRequest对象
+func NewAlibabacampusguarddatasyncRequest() *AlibabacampusguarddatasyncAPIRequest {
+	return &AlibabacampusguarddatasyncAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaCampusGuardDataSyncAPIRequest) GetApiMethodName() string {
+func (r AlibabacampusguarddatasyncAPIRequest) GetApiMethodName() string {
 	return "alibaba.campus.guard.data.sync"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaCampusGuardDataSyncAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabacampusguarddatasyncAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaCampusGuardDataSyncAPIRequest) GetRawParams() model.Params {
+func (r AlibabacampusguarddatasyncAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDataType is DataType Setter
 // 1-刷卡流水
-func (r *AlibabaCampusGuardDataSyncAPIRequest) SetDataType(_dataType string) error {
+func (r *AlibabacampusguarddatasyncAPIRequest) SetDataType(_dataType string) error {
 	r._dataType = _dataType
 	r.Set("data_type", _dataType)
 	return nil
 }
 
 // GetDataType DataType Getter
-func (r AlibabaCampusGuardDataSyncAPIRequest) GetDataType() string {
+func (r AlibabacampusguarddatasyncAPIRequest) GetDataType() string {
 	return r._dataType
 }
 
 // SetSupplierName is SupplierName Setter
 // 供应商名称
-func (r *AlibabaCampusGuardDataSyncAPIRequest) SetSupplierName(_supplierName string) error {
+func (r *AlibabacampusguarddatasyncAPIRequest) SetSupplierName(_supplierName string) error {
 	r._supplierName = _supplierName
 	r.Set("supplier_name", _supplierName)
 	return nil
 }
 
 // GetSupplierName SupplierName Getter
-func (r AlibabaCampusGuardDataSyncAPIRequest) GetSupplierName() string {
+func (r AlibabacampusguarddatasyncAPIRequest) GetSupplierName() string {
 	return r._supplierName
 }
 
 // SetData is Data Setter
 // json串
-func (r *AlibabaCampusGuardDataSyncAPIRequest) SetData(_data string) error {
+func (r *AlibabacampusguarddatasyncAPIRequest) SetData(_data string) error {
 	r._data = _data
 	r.Set("data", _data)
 	return nil
 }
 
 // GetData Data Getter
-func (r AlibabaCampusGuardDataSyncAPIRequest) GetData() string {
+func (r AlibabacampusguarddatasyncAPIRequest) GetData() string {
 	return r._data
 }

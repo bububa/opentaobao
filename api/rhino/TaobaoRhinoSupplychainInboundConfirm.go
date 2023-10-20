@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/rhino"
 )
 
-// TaobaoRhinoSupplychainInboundConfirm WMS003成衣入库确认
+// Taobaorhinosupplychaininboundconfirm WMS003成衣入库确认
 // taobao.rhino.supplychain.inbound.confirm
 //
 // 【WMS003】【同步成衣入库完成信息】
-func TaobaoRhinoSupplychainInboundConfirm(clt *core.SDKClient, req *rhino.TaobaoRhinoSupplychainInboundConfirmAPIRequest, session string) (*rhino.TaobaoRhinoSupplychainInboundConfirmAPIResponse, error) {
-	var resp rhino.TaobaoRhinoSupplychainInboundConfirmAPIResponse
+func Taobaorhinosupplychaininboundconfirm(clt *core.SDKClient, req *rhino.TaobaorhinosupplychaininboundconfirmAPIRequest, session string) (*rhino.TaobaorhinosupplychaininboundconfirmAPIResponse, error) {
+	var resp rhino.TaobaorhinosupplychaininboundconfirmAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

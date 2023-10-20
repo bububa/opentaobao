@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/xhotelitem"
 )
 
-// TaobaoXhotelRateUpdate 价格推送接口（全量更新）
+// Taobaoxhotelrateupdate 价格推送接口（全量更新）
 // taobao.xhotel.rate.update
 //
 // 酒店产品库rate更新
-func TaobaoXhotelRateUpdate(clt *core.SDKClient, req *xhotelitem.TaobaoXhotelRateUpdateAPIRequest, session string) (*xhotelitem.TaobaoXhotelRateUpdateAPIResponse, error) {
-	var resp xhotelitem.TaobaoXhotelRateUpdateAPIResponse
+func Taobaoxhotelrateupdate(clt *core.SDKClient, req *xhotelitem.TaobaoxhotelrateupdateAPIRequest, session string) (*xhotelitem.TaobaoxhotelrateupdateAPIResponse, error) {
+	var resp xhotelitem.TaobaoxhotelrateupdateAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkSkuCategoryUpdateAPIRequest 商家类目修改接口 API请求
+// AlibabawdkskucategoryupdateAPIRequest 商家类目修改接口 API请求
 // alibaba.wdk.sku.category.update
 //
 // 商家类目修改接口
-type AlibabaWdkSkuCategoryUpdateAPIRequest struct {
+type AlibabawdkskucategoryupdateAPIRequest struct {
 	model.Params
 	// 更新请求模型
 	_param *CategoryDo
 }
 
-// NewAlibabaWdkSkuCategoryUpdateRequest 初始化AlibabaWdkSkuCategoryUpdateAPIRequest对象
-func NewAlibabaWdkSkuCategoryUpdateRequest() *AlibabaWdkSkuCategoryUpdateAPIRequest {
-	return &AlibabaWdkSkuCategoryUpdateAPIRequest{
+// NewAlibabawdkskucategoryupdateRequest 初始化AlibabawdkskucategoryupdateAPIRequest对象
+func NewAlibabawdkskucategoryupdateRequest() *AlibabawdkskucategoryupdateAPIRequest {
+	return &AlibabawdkskucategoryupdateAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaWdkSkuCategoryUpdateAPIRequest) GetApiMethodName() string {
+func (r AlibabawdkskucategoryupdateAPIRequest) GetApiMethodName() string {
 	return "alibaba.wdk.sku.category.update"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkSkuCategoryUpdateAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabawdkskucategoryupdateAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaWdkSkuCategoryUpdateAPIRequest) GetRawParams() model.Params {
+func (r AlibabawdkskucategoryupdateAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParam is Param Setter
 // 更新请求模型
-func (r *AlibabaWdkSkuCategoryUpdateAPIRequest) SetParam(_param *CategoryDo) error {
+func (r *AlibabawdkskucategoryupdateAPIRequest) SetParam(_param *CategoryDo) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r AlibabaWdkSkuCategoryUpdateAPIRequest) GetParam() *CategoryDo {
+func (r AlibabawdkskucategoryupdateAPIRequest) GetParam() *CategoryDo {
 	return r._param
 }

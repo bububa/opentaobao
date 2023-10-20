@@ -1,7 +1,7 @@
 package servicecenter
 
-// TmallCarLeaseConsumeResult 结构体
-type TmallCarLeaseConsumeResult struct {
+// TmallcarleaseconsumeResult 结构体
+type TmallcarleaseconsumeResult struct {
 	// 错误提示
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 耗时

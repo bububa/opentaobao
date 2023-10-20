@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/eleenterprisecartnew"
 )
 
-// AlibabaEleEnterpriseCartnewQuery 新版购物车查询
+// Alibabaeleenterprisecartnewquery 新版购物车查询
 // alibaba.ele.enterprise.cartnew.query
 //
 // 新版购物车查询
-func AlibabaEleEnterpriseCartnewQuery(clt *core.SDKClient, req *eleenterprisecartnew.AlibabaEleEnterpriseCartnewQueryAPIRequest, session string) (*eleenterprisecartnew.AlibabaEleEnterpriseCartnewQueryAPIResponse, error) {
-	var resp eleenterprisecartnew.AlibabaEleEnterpriseCartnewQueryAPIResponse
+func Alibabaeleenterprisecartnewquery(clt *core.SDKClient, req *eleenterprisecartnew.AlibabaeleenterprisecartnewqueryAPIRequest, session string) (*eleenterprisecartnew.AlibabaeleenterprisecartnewqueryAPIResponse, error) {
+	var resp eleenterprisecartnew.AlibabaeleenterprisecartnewqueryAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

@@ -1,7 +1,7 @@
 package alihealthpw
 
-// SNodeDto 结构体
-type SNodeDto struct {
+// SnodeDto 结构体
+type SnodeDto struct {
 	// 患者姓名
 	PatientName string `json:"patient_name,omitempty" xml:"patient_name,omitempty"`
 	// 医疗费用补助

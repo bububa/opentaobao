@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAiArServiceDetectAPIResponse ailab AR图像检索 API返回值
+// AlibabaaiarservicedetectAPIResponse ailab AR图像检索 API返回值
 // alibaba.ai.ar.service.detect
 //
 // ailab AR图像检索
-type AlibabaAiArServiceDetectAPIResponse struct {
+type AlibabaaiarservicedetectAPIResponse struct {
 	model.CommonResponse
-	AlibabaAiArServiceDetectAPIResponseModel
+	AlibabaaiarservicedetectAPIResponseModel
 }
 
-// AlibabaAiArServiceDetectAPIResponseModel is ailab AR图像检索 成功返回结果
-type AlibabaAiArServiceDetectAPIResponseModel struct {
+// AlibabaaiarservicedetectAPIResponseModel is ailab AR图像检索 成功返回结果
+type AlibabaaiarservicedetectAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ai_ar_service_detect_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripBtripOpenCostCenterDeleteAPIRequest 删除成本中心 API请求
+// AlitripbtripopencostcenterdeleteAPIRequest 删除成本中心 API请求
 // alitrip.btrip.open.cost.center.delete
 //
 // 删除成本中心
-type AlitripBtripOpenCostCenterDeleteAPIRequest struct {
+type AlitripbtripopencostcenterdeleteAPIRequest struct {
 	model.Params
 	// 入参对象
 	_rq *OpenCostCenterDeleteRq
 }
 
-// NewAlitripBtripOpenCostCenterDeleteRequest 初始化AlitripBtripOpenCostCenterDeleteAPIRequest对象
-func NewAlitripBtripOpenCostCenterDeleteRequest() *AlitripBtripOpenCostCenterDeleteAPIRequest {
-	return &AlitripBtripOpenCostCenterDeleteAPIRequest{
+// NewAlitripbtripopencostcenterdeleteRequest 初始化AlitripbtripopencostcenterdeleteAPIRequest对象
+func NewAlitripbtripopencostcenterdeleteRequest() *AlitripbtripopencostcenterdeleteAPIRequest {
+	return &AlitripbtripopencostcenterdeleteAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripBtripOpenCostCenterDeleteAPIRequest) GetApiMethodName() string {
+func (r AlitripbtripopencostcenterdeleteAPIRequest) GetApiMethodName() string {
 	return "alitrip.btrip.open.cost.center.delete"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripBtripOpenCostCenterDeleteAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripbtripopencostcenterdeleteAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripBtripOpenCostCenterDeleteAPIRequest) GetRawParams() model.Params {
+func (r AlitripbtripopencostcenterdeleteAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRq is Rq Setter
 // 入参对象
-func (r *AlitripBtripOpenCostCenterDeleteAPIRequest) SetRq(_rq *OpenCostCenterDeleteRq) error {
+func (r *AlitripbtripopencostcenterdeleteAPIRequest) SetRq(_rq *OpenCostCenterDeleteRq) error {
 	r._rq = _rq
 	r.Set("rq", _rq)
 	return nil
 }
 
 // GetRq Rq Getter
-func (r AlitripBtripOpenCostCenterDeleteAPIRequest) GetRq() *OpenCostCenterDeleteRq {
+func (r AlitripbtripopencostcenterdeleteAPIRequest) GetRq() *OpenCostCenterDeleteRq {
 	return r._rq
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaLegalStandpointSceneQueryAPIResponse 查询场景 API返回值
+// AlibabalegalstandpointscenequeryAPIResponse 查询场景 API返回值
 // alibaba.legal.standpoint.scene.query
 //
 // 查询场景
-type AlibabaLegalStandpointSceneQueryAPIResponse struct {
+type AlibabalegalstandpointscenequeryAPIResponse struct {
 	model.CommonResponse
-	AlibabaLegalStandpointSceneQueryAPIResponseModel
+	AlibabalegalstandpointscenequeryAPIResponseModel
 }
 
-// AlibabaLegalStandpointSceneQueryAPIResponseModel is 查询场景 成功返回结果
-type AlibabaLegalStandpointSceneQueryAPIResponseModel struct {
+// AlibabalegalstandpointscenequeryAPIResponseModel is 查询场景 成功返回结果
+type AlibabalegalstandpointscenequeryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_legal_standpoint_scene_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

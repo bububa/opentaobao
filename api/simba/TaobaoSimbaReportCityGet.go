@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// TaobaoSimbaReportCityGet 获取城市维度报表
+// Taobaosimbareportcityget 获取城市维度报表
 // taobao.simba.report.city.get
 //
 // 获取城市维度报表
-func TaobaoSimbaReportCityGet(clt *core.SDKClient, req *simba.TaobaoSimbaReportCityGetAPIRequest, session string) (*simba.TaobaoSimbaReportCityGetAPIResponse, error) {
-	var resp simba.TaobaoSimbaReportCityGetAPIResponse
+func Taobaosimbareportcityget(clt *core.SDKClient, req *simba.TaobaosimbareportcitygetAPIRequest, session string) (*simba.TaobaosimbareportcitygetAPIResponse, error) {
+	var resp simba.TaobaosimbareportcitygetAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

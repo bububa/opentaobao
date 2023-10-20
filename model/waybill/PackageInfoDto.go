@@ -23,5 +23,5 @@ type PackageInfoDto struct {
 	// 包裹高，单位厘米
 	Height int64 `json:"height,omitempty" xml:"height,omitempty"`
 	// 物品价值，单位元
-	GoodValue *BigDecimal `json:"good_value,omitempty" xml:"good_value,omitempty"`
+	GoodValue float64 `json:"good_value,omitempty" xml:"good_value,omitempty"`
 }

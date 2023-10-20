@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaEinvoiceIncomeDeviceReturnAPIRequest 服务商回传客户端设备列表 API请求
+// AlibabaeinvoiceincomedevicereturnAPIRequest 服务商回传客户端设备列表 API请求
 // alibaba.einvoice.income.device.return
 //
 // 服务商回传客户端agent所处环境的设备列表，比如扫描仪
-type AlibabaEinvoiceIncomeDeviceReturnAPIRequest struct {
+type AlibabaeinvoiceincomedevicereturnAPIRequest struct {
 	model.Params
 	// 设备列表，success=true时必填
 	_deviceList []string
@@ -24,91 +24,91 @@ type AlibabaEinvoiceIncomeDeviceReturnAPIRequest struct {
 	_success bool
 }
 
-// NewAlibabaEinvoiceIncomeDeviceReturnRequest 初始化AlibabaEinvoiceIncomeDeviceReturnAPIRequest对象
-func NewAlibabaEinvoiceIncomeDeviceReturnRequest() *AlibabaEinvoiceIncomeDeviceReturnAPIRequest {
-	return &AlibabaEinvoiceIncomeDeviceReturnAPIRequest{
+// NewAlibabaeinvoiceincomedevicereturnRequest 初始化AlibabaeinvoiceincomedevicereturnAPIRequest对象
+func NewAlibabaeinvoiceincomedevicereturnRequest() *AlibabaeinvoiceincomedevicereturnAPIRequest {
+	return &AlibabaeinvoiceincomedevicereturnAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaEinvoiceIncomeDeviceReturnAPIRequest) GetApiMethodName() string {
+func (r AlibabaeinvoiceincomedevicereturnAPIRequest) GetApiMethodName() string {
 	return "alibaba.einvoice.income.device.return"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaEinvoiceIncomeDeviceReturnAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabaeinvoiceincomedevicereturnAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaEinvoiceIncomeDeviceReturnAPIRequest) GetRawParams() model.Params {
+func (r AlibabaeinvoiceincomedevicereturnAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetDeviceList is DeviceList Setter
 // 设备列表，success=true时必填
-func (r *AlibabaEinvoiceIncomeDeviceReturnAPIRequest) SetDeviceList(_deviceList []string) error {
+func (r *AlibabaeinvoiceincomedevicereturnAPIRequest) SetDeviceList(_deviceList []string) error {
 	r._deviceList = _deviceList
 	r.Set("device_list", _deviceList)
 	return nil
 }
 
 // GetDeviceList DeviceList Getter
-func (r AlibabaEinvoiceIncomeDeviceReturnAPIRequest) GetDeviceList() []string {
+func (r AlibabaeinvoiceincomedevicereturnAPIRequest) GetDeviceList() []string {
 	return r._deviceList
 }
 
 // SetErrorCode is ErrorCode Setter
 // 错误码，success=false时必填
-func (r *AlibabaEinvoiceIncomeDeviceReturnAPIRequest) SetErrorCode(_errorCode string) error {
+func (r *AlibabaeinvoiceincomedevicereturnAPIRequest) SetErrorCode(_errorCode string) error {
 	r._errorCode = _errorCode
 	r.Set("error_code", _errorCode)
 	return nil
 }
 
 // GetErrorCode ErrorCode Getter
-func (r AlibabaEinvoiceIncomeDeviceReturnAPIRequest) GetErrorCode() string {
+func (r AlibabaeinvoiceincomedevicereturnAPIRequest) GetErrorCode() string {
 	return r._errorCode
 }
 
 // SetErrorMessage is ErrorMessage Setter
 // 错误信息，success=false时必填
-func (r *AlibabaEinvoiceIncomeDeviceReturnAPIRequest) SetErrorMessage(_errorMessage string) error {
+func (r *AlibabaeinvoiceincomedevicereturnAPIRequest) SetErrorMessage(_errorMessage string) error {
 	r._errorMessage = _errorMessage
 	r.Set("error_message", _errorMessage)
 	return nil
 }
 
 // GetErrorMessage ErrorMessage Getter
-func (r AlibabaEinvoiceIncomeDeviceReturnAPIRequest) GetErrorMessage() string {
+func (r AlibabaeinvoiceincomedevicereturnAPIRequest) GetErrorMessage() string {
 	return r._errorMessage
 }
 
 // SetReqIndex is ReqIndex Setter
 // 请求标识
-func (r *AlibabaEinvoiceIncomeDeviceReturnAPIRequest) SetReqIndex(_reqIndex string) error {
+func (r *AlibabaeinvoiceincomedevicereturnAPIRequest) SetReqIndex(_reqIndex string) error {
 	r._reqIndex = _reqIndex
 	r.Set("req_index", _reqIndex)
 	return nil
 }
 
 // GetReqIndex ReqIndex Getter
-func (r AlibabaEinvoiceIncomeDeviceReturnAPIRequest) GetReqIndex() string {
+func (r AlibabaeinvoiceincomedevicereturnAPIRequest) GetReqIndex() string {
 	return r._reqIndex
 }
 
 // SetSuccess is Success Setter
 // 查询设备是否成功，true=成功，false=失败
-func (r *AlibabaEinvoiceIncomeDeviceReturnAPIRequest) SetSuccess(_success bool) error {
+func (r *AlibabaeinvoiceincomedevicereturnAPIRequest) SetSuccess(_success bool) error {
 	r._success = _success
 	r.Set("success", _success)
 	return nil
 }
 
 // GetSuccess Success Getter
-func (r AlibabaEinvoiceIncomeDeviceReturnAPIRequest) GetSuccess() bool {
+func (r AlibabaeinvoiceincomedevicereturnAPIRequest) GetSuccess() bool {
 	return r._success
 }

@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/logistic"
 )
 
-// TaobaoLogisticsErpDeliveryCut ERP发起配拦截
+// Taobaologisticserpdeliverycut ERP发起配拦截
 // taobao.logistics.erp.delivery.cut
 //
 // ERP发起配拦截
-func TaobaoLogisticsErpDeliveryCut(clt *core.SDKClient, req *logistic.TaobaoLogisticsErpDeliveryCutAPIRequest, session string) (*logistic.TaobaoLogisticsErpDeliveryCutAPIResponse, error) {
-	var resp logistic.TaobaoLogisticsErpDeliveryCutAPIResponse
+func Taobaologisticserpdeliverycut(clt *core.SDKClient, req *logistic.TaobaologisticserpdeliverycutAPIRequest, session string) (*logistic.TaobaologisticserpdeliverycutAPIResponse, error) {
+	var resp logistic.TaobaologisticserpdeliverycutAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

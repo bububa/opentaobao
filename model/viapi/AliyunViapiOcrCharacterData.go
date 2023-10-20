@@ -1,7 +1,7 @@
 package viapi
 
-// AliyunViapiOcrCharacterData 结构体
-type AliyunViapiOcrCharacterData struct {
+// AliyunviapiocrcharacterData 结构体
+type AliyunviapiocrcharacterData struct {
 	// 返回识别信息
-	Results []AliyunViapiOcrCharacterResult `json:"results,omitempty" xml:"results>aliyun_viapi_ocr_character_result,omitempty"`
+	Results []AliyunviapiocrcharacterResult `json:"results,omitempty" xml:"results>aliyunviapiocrcharacter_result,omitempty"`
 }

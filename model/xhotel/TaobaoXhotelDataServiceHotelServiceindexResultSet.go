@@ -1,7 +1,7 @@
 package xhotel
 
-// TaobaoXhotelDataServiceHotelServiceindexResultSet 结构体
-type TaobaoXhotelDataServiceHotelServiceindexResultSet struct {
+// TaobaoxhoteldataservicehotelserviceindexResultSet 结构体
+type TaobaoxhoteldataservicehotelserviceindexResultSet struct {
 	// errorMsg
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// errorCode

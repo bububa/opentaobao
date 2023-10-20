@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/promotion"
 )
 
-// TmallPromotagTagApply 优惠标签申请
+// Tmallpromotagtagapply 优惠标签申请
 // tmall.promotag.tag.apply
 //
 // 创建优惠标签
-func TmallPromotagTagApply(clt *core.SDKClient, req *promotion.TmallPromotagTagApplyAPIRequest, session string) (*promotion.TmallPromotagTagApplyAPIResponse, error) {
-	var resp promotion.TmallPromotagTagApplyAPIResponse
+func Tmallpromotagtagapply(clt *core.SDKClient, req *promotion.TmallpromotagtagapplyAPIRequest, session string) (*promotion.TmallpromotagtagapplyAPIResponse, error) {
+	var resp promotion.TmallpromotagtagapplyAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

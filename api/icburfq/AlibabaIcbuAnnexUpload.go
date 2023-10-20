@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/icburfq"
 )
 
-// AlibabaIcbuAnnexUpload 上传附件获取附件files_str
+// Alibabaicbuannexupload 上传附件获取附件files_str
 // alibaba.icbu.annex.upload
 //
 // 上传附件获取附件files_str
-func AlibabaIcbuAnnexUpload(clt *core.SDKClient, req *icburfq.AlibabaIcbuAnnexUploadAPIRequest, session string) (*icburfq.AlibabaIcbuAnnexUploadAPIResponse, error) {
-	var resp icburfq.AlibabaIcbuAnnexUploadAPIResponse
+func Alibabaicbuannexupload(clt *core.SDKClient, req *icburfq.AlibabaicbuannexuploadAPIRequest, session string) (*icburfq.AlibabaicbuannexuploadAPIResponse, error) {
+	var resp icburfq.AlibabaicbuannexuploadAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err

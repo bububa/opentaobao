@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoMiniappDistributionOrderCreateAPIResponse 创建小程序投放计划 API返回值
+// TaobaominiappdistributionordercreateAPIResponse 创建小程序投放计划 API返回值
 // taobao.miniapp.distribution.order.create
 //
 // 帮助商家，创建小程序的投放计划。该api，仅针对特定场景开放，目前仅支持客服场景，具体支持的场景列表请联系技术支持或业务对接人确认。
-type TaobaoMiniappDistributionOrderCreateAPIResponse struct {
+type TaobaominiappdistributionordercreateAPIResponse struct {
 	model.CommonResponse
-	TaobaoMiniappDistributionOrderCreateAPIResponseModel
+	TaobaominiappdistributionordercreateAPIResponseModel
 }
 
-// TaobaoMiniappDistributionOrderCreateAPIResponseModel is 创建小程序投放计划 成功返回结果
-type TaobaoMiniappDistributionOrderCreateAPIResponseModel struct {
+// TaobaominiappdistributionordercreateAPIResponseModel is 创建小程序投放计划 成功返回结果
+type TaobaominiappdistributionordercreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"miniapp_distribution_order_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

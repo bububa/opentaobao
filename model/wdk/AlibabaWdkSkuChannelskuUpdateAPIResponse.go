@@ -6,20 +6,20 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaWdkSkuChannelskuUpdateAPIResponse 更新渠道商品 API返回值
+// AlibabawdkskuchannelskuupdateAPIResponse 更新渠道商品 API返回值
 // alibaba.wdk.sku.channelsku.update
 //
 // 批量更新渠道商品，商家通过Top接入
-type AlibabaWdkSkuChannelskuUpdateAPIResponse struct {
+type AlibabawdkskuchannelskuupdateAPIResponse struct {
 	model.CommonResponse
-	AlibabaWdkSkuChannelskuUpdateAPIResponseModel
+	AlibabawdkskuchannelskuupdateAPIResponseModel
 }
 
-// AlibabaWdkSkuChannelskuUpdateAPIResponseModel is 更新渠道商品 成功返回结果
-type AlibabaWdkSkuChannelskuUpdateAPIResponseModel struct {
+// AlibabawdkskuchannelskuupdateAPIResponseModel is 更新渠道商品 成功返回结果
+type AlibabawdkskuchannelskuupdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_sku_channelsku_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 调用结果
-	Result *AlibabaWdkSkuChannelskuUpdateApiResults `json:"result,omitempty" xml:"result,omitempty"`
+	Result *AlibabawdkskuchannelskuupdateApiResults `json:"result,omitempty" xml:"result,omitempty"`
 }

@@ -6,34 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest 查询当天可添加的余量 API请求
+// TaobaobaichuanitemsubscribedailyleftqueryAPIRequest 查询当天可添加的余量 API请求
 // taobao.baichuan.item.subscribe.daily.left.query
 //
 // 查询当天可添加的余量
-type TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest struct {
+type TaobaobaichuanitemsubscribedailyleftqueryAPIRequest struct {
 	model.Params
 }
 
-// NewTaobaoBaichuanItemSubscribeDailyLeftQueryRequest 初始化TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest对象
-func NewTaobaoBaichuanItemSubscribeDailyLeftQueryRequest() *TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest {
-	return &TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest{
+// NewTaobaobaichuanitemsubscribedailyleftqueryRequest 初始化TaobaobaichuanitemsubscribedailyleftqueryAPIRequest对象
+func NewTaobaobaichuanitemsubscribedailyleftqueryRequest() *TaobaobaichuanitemsubscribedailyleftqueryAPIRequest {
+	return &TaobaobaichuanitemsubscribedailyleftqueryAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest) GetApiMethodName() string {
+func (r TaobaobaichuanitemsubscribedailyleftqueryAPIRequest) GetApiMethodName() string {
 	return "taobao.baichuan.item.subscribe.daily.left.query"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest) GetApiParams(params url.Values) {
+func (r TaobaobaichuanitemsubscribedailyleftqueryAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r TaobaoBaichuanItemSubscribeDailyLeftQueryAPIRequest) GetRawParams() model.Params {
+func (r TaobaobaichuanitemsubscribedailyleftqueryAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }

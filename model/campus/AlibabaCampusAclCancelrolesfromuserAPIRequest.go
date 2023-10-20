@@ -6,11 +6,11 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaCampusAclCancelrolesfromuserAPIRequest 撤销用户授予的角色 API请求
+// AlibabacampusaclcancelrolesfromuserAPIRequest 撤销用户授予的角色 API请求
 // alibaba.campus.acl.cancelrolesfromuser
 //
 // 撤销用户授予的角色
-type AlibabaCampusAclCancelrolesfromuserAPIRequest struct {
+type AlibabacampusaclcancelrolesfromuserAPIRequest struct {
 	model.Params
 	// 系统自动生成
 	_role []RoleReq
@@ -26,104 +26,104 @@ type AlibabaCampusAclCancelrolesfromuserAPIRequest struct {
 	_campusId int64
 }
 
-// NewAlibabaCampusAclCancelrolesfromuserRequest 初始化AlibabaCampusAclCancelrolesfromuserAPIRequest对象
-func NewAlibabaCampusAclCancelrolesfromuserRequest() *AlibabaCampusAclCancelrolesfromuserAPIRequest {
-	return &AlibabaCampusAclCancelrolesfromuserAPIRequest{
+// NewAlibabacampusaclcancelrolesfromuserRequest 初始化AlibabacampusaclcancelrolesfromuserAPIRequest对象
+func NewAlibabacampusaclcancelrolesfromuserRequest() *AlibabacampusaclcancelrolesfromuserAPIRequest {
+	return &AlibabacampusaclcancelrolesfromuserAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlibabaCampusAclCancelrolesfromuserAPIRequest) GetApiMethodName() string {
+func (r AlibabacampusaclcancelrolesfromuserAPIRequest) GetApiMethodName() string {
 	return "alibaba.campus.acl.cancelrolesfromuser"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaCampusAclCancelrolesfromuserAPIRequest) GetApiParams(params url.Values) {
+func (r AlibabacampusaclcancelrolesfromuserAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlibabaCampusAclCancelrolesfromuserAPIRequest) GetRawParams() model.Params {
+func (r AlibabacampusaclcancelrolesfromuserAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetRole is Role Setter
 // 系统自动生成
-func (r *AlibabaCampusAclCancelrolesfromuserAPIRequest) SetRole(_role []RoleReq) error {
+func (r *AlibabacampusaclcancelrolesfromuserAPIRequest) SetRole(_role []RoleReq) error {
 	r._role = _role
 	r.Set("role", _role)
 	return nil
 }
 
 // GetRole Role Getter
-func (r AlibabaCampusAclCancelrolesfromuserAPIRequest) GetRole() []RoleReq {
+func (r AlibabacampusaclcancelrolesfromuserAPIRequest) GetRole() []RoleReq {
 	return r._role
 }
 
 // SetSystemId is SystemId Setter
 // 系统id
-func (r *AlibabaCampusAclCancelrolesfromuserAPIRequest) SetSystemId(_systemId string) error {
+func (r *AlibabacampusaclcancelrolesfromuserAPIRequest) SetSystemId(_systemId string) error {
 	r._systemId = _systemId
 	r.Set("system_id", _systemId)
 	return nil
 }
 
 // GetSystemId SystemId Getter
-func (r AlibabaCampusAclCancelrolesfromuserAPIRequest) GetSystemId() string {
+func (r AlibabacampusaclcancelrolesfromuserAPIRequest) GetSystemId() string {
 	return r._systemId
 }
 
 // SetUserId is UserId Setter
 // 操作人id(不填默认appCode)
-func (r *AlibabaCampusAclCancelrolesfromuserAPIRequest) SetUserId(_userId string) error {
+func (r *AlibabacampusaclcancelrolesfromuserAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
 	r.Set("user_id", _userId)
 	return nil
 }
 
 // GetUserId UserId Getter
-func (r AlibabaCampusAclCancelrolesfromuserAPIRequest) GetUserId() string {
+func (r AlibabacampusaclcancelrolesfromuserAPIRequest) GetUserId() string {
 	return r._userId
 }
 
 // SetAccountId is AccountId Setter
 // 用户账号
-func (r *AlibabaCampusAclCancelrolesfromuserAPIRequest) SetAccountId(_accountId string) error {
+func (r *AlibabacampusaclcancelrolesfromuserAPIRequest) SetAccountId(_accountId string) error {
 	r._accountId = _accountId
 	r.Set("account_id", _accountId)
 	return nil
 }
 
 // GetAccountId AccountId Getter
-func (r AlibabaCampusAclCancelrolesfromuserAPIRequest) GetAccountId() string {
+func (r AlibabacampusaclcancelrolesfromuserAPIRequest) GetAccountId() string {
 	return r._accountId
 }
 
 // SetCompanyId is CompanyId Setter
 // 公司id
-func (r *AlibabaCampusAclCancelrolesfromuserAPIRequest) SetCompanyId(_companyId int64) error {
+func (r *AlibabacampusaclcancelrolesfromuserAPIRequest) SetCompanyId(_companyId int64) error {
 	r._companyId = _companyId
 	r.Set("company_id", _companyId)
 	return nil
 }
 
 // GetCompanyId CompanyId Getter
-func (r AlibabaCampusAclCancelrolesfromuserAPIRequest) GetCompanyId() int64 {
+func (r AlibabacampusaclcancelrolesfromuserAPIRequest) GetCompanyId() int64 {
 	return r._companyId
 }
 
 // SetCampusId is CampusId Setter
 // 园区id
-func (r *AlibabaCampusAclCancelrolesfromuserAPIRequest) SetCampusId(_campusId int64) error {
+func (r *AlibabacampusaclcancelrolesfromuserAPIRequest) SetCampusId(_campusId int64) error {
 	r._campusId = _campusId
 	r.Set("campus_id", _campusId)
 	return nil
 }
 
 // GetCampusId CampusId Getter
-func (r AlibabaCampusAclCancelrolesfromuserAPIRequest) GetCampusId() int64 {
+func (r AlibabacampusaclcancelrolesfromuserAPIRequest) GetCampusId() int64 {
 	return r._campusId
 }

@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoLogisticsErpDeliveryCutAPIResponse ERP发起配拦截 API返回值
+// TaobaologisticserpdeliverycutAPIResponse ERP发起配拦截 API返回值
 // taobao.logistics.erp.delivery.cut
 //
 // ERP发起配拦截
-type TaobaoLogisticsErpDeliveryCutAPIResponse struct {
+type TaobaologisticserpdeliverycutAPIResponse struct {
 	model.CommonResponse
-	TaobaoLogisticsErpDeliveryCutAPIResponseModel
+	TaobaologisticserpdeliverycutAPIResponseModel
 }
 
-// TaobaoLogisticsErpDeliveryCutAPIResponseModel is ERP发起配拦截 成功返回结果
-type TaobaoLogisticsErpDeliveryCutAPIResponseModel struct {
+// TaobaologisticserpdeliverycutAPIResponseModel is ERP发起配拦截 成功返回结果
+type TaobaologisticserpdeliverycutAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_erp_delivery_cut_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

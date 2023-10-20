@@ -1,7 +1,7 @@
 package logistic
 
-// TaobaoRdcAligeniusWarehouseReverseEventUpdateResult 结构体
-type TaobaoRdcAligeniusWarehouseReverseEventUpdateResult struct {
+// TaobaordcaligeniuswarehousereverseeventupdateResult 结构体
+type TaobaordcaligeniuswarehousereverseeventupdateResult struct {
 	// 错误描述
 	FailInfo string `json:"fail_info,omitempty" xml:"fail_info,omitempty"`
 	// 错误码

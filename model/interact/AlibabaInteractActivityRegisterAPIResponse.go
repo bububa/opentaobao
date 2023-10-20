@@ -6,17 +6,17 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaInteractActivityRegisterAPIResponse ISV互动应用活动注册服务 API返回值
+// AlibabainteractactivityregisterAPIResponse ISV互动应用活动注册服务 API返回值
 // alibaba.interact.activity.register
 //
 // 为支持卖家由ISV互动应用可以在手淘店铺首页透出，提供ISV互动应用创建的活动注册到手淘的服务
-type AlibabaInteractActivityRegisterAPIResponse struct {
+type AlibabainteractactivityregisterAPIResponse struct {
 	model.CommonResponse
-	AlibabaInteractActivityRegisterAPIResponseModel
+	AlibabainteractactivityregisterAPIResponseModel
 }
 
-// AlibabaInteractActivityRegisterAPIResponseModel is ISV互动应用活动注册服务 成功返回结果
-type AlibabaInteractActivityRegisterAPIResponseModel struct {
+// AlibabainteractactivityregisterAPIResponseModel is ISV互动应用活动注册服务 成功返回结果
+type AlibabainteractactivityregisterAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_activity_register_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

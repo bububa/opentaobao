@@ -1,7 +1,7 @@
 package drugtrace
 
-// AlibabaAlihealthDrugCodeKytQuerycodeflowModel 结构体
-type AlibabaAlihealthDrugCodeKytQuerycodeflowModel struct {
+// AlibabaalihealthdrugcodekytquerycodeflowModel 结构体
+type AlibabaalihealthdrugcodekytquerycodeflowModel struct {
 	// 流向信息，如没有下游企业数据查看权限，部分数据会显示为空，发送授权邀请后可以正常显示
 	CodeQueryFlows []CodeQueryFlows `json:"code_query_flows,omitempty" xml:"code_query_flows>code_query_flows,omitempty"`
 	// 追溯码

@@ -1,7 +1,7 @@
 package interact
 
-// AlibabaInteractUserIsloginMtopResult 结构体
-type AlibabaInteractUserIsloginMtopResult struct {
+// AlibabainteractuserisloginMtopResult 结构体
+type AlibabainteractuserisloginMtopResult struct {
 	// model
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// msgCode

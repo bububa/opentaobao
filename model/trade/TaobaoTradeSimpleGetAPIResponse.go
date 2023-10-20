@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoTradeSimpleGetAPIResponse 获取交易订单的简易信息 API返回值
+// TaobaotradesimplegetAPIResponse 获取交易订单的简易信息 API返回值
 // taobao.trade.simple.get
 //
 // 获取CRM单表交易的详情
@@ -15,13 +15,13 @@ import (
 // &lt;br/&gt;3. 获取红包优惠金额可以使用字段 coupon_fee
 // &lt;br/&gt;4. 请按需获取字段，减少TOP系统的压力
 // &lt;br/&gt;&lt;strong&gt;&lt;a href=&#34;https://console.open.taobao.com/dingWeb.htm?from=tradeapi&#34; target=&#34;_blank&#34;&gt;点击查看更多交易API说明&lt;/a&gt;&lt;/strong&gt;
-type TaobaoTradeSimpleGetAPIResponse struct {
+type TaobaotradesimplegetAPIResponse struct {
 	model.CommonResponse
-	TaobaoTradeSimpleGetAPIResponseModel
+	TaobaotradesimplegetAPIResponseModel
 }
 
-// TaobaoTradeSimpleGetAPIResponseModel is 获取交易订单的简易信息 成功返回结果
-type TaobaoTradeSimpleGetAPIResponseModel struct {
+// TaobaotradesimplegetAPIResponseModel is 获取交易订单的简易信息 成功返回结果
+type TaobaotradesimplegetAPIResponseModel struct {
 	XMLName xml.Name `xml:"trade_simple_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

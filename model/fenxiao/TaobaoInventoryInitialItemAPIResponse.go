@@ -6,18 +6,18 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoInventoryInitialItemAPIResponse 商品库存初始化 API返回值
+// TaobaoinventoryinitialitemAPIResponse 商品库存初始化 API返回值
 // taobao.inventory.initial.item
 //
 // 建议使用新接口：taobao.inventory.merchant.adjust ，该接口会逐步停用。
 // 商家仓商品初始化在各个仓中库存
-type TaobaoInventoryInitialItemAPIResponse struct {
+type TaobaoinventoryinitialitemAPIResponse struct {
 	model.CommonResponse
-	TaobaoInventoryInitialItemAPIResponseModel
+	TaobaoinventoryinitialitemAPIResponseModel
 }
 
-// TaobaoInventoryInitialItemAPIResponseModel is 商品库存初始化 成功返回结果
-type TaobaoInventoryInitialItemAPIResponseModel struct {
+// TaobaoinventoryinitialitemAPIResponseModel is 商品库存初始化 成功返回结果
+type TaobaoinventoryinitialitemAPIResponseModel struct {
 	XMLName xml.Name `xml:"inventory_initial_item_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`

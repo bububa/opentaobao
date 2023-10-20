@@ -6,49 +6,49 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlitripBtripFlightDistributionFlightlistAPIRequest 商旅机票航班列表接口 API请求
+// AlitripbtripflightdistributionflightlistAPIRequest 商旅机票航班列表接口 API请求
 // alitrip.btrip.flight.distribution.flightlist
 //
 // 商旅机票航班列表接口，用于分销询价
-type AlitripBtripFlightDistributionFlightlistAPIRequest struct {
+type AlitripbtripflightdistributionflightlistAPIRequest struct {
 	model.Params
 	// 机票搜索入参
 	_paramFlightSearchListRQ *BtripFlightSearchListRq
 }
 
-// NewAlitripBtripFlightDistributionFlightlistRequest 初始化AlitripBtripFlightDistributionFlightlistAPIRequest对象
-func NewAlitripBtripFlightDistributionFlightlistRequest() *AlitripBtripFlightDistributionFlightlistAPIRequest {
-	return &AlitripBtripFlightDistributionFlightlistAPIRequest{
+// NewAlitripbtripflightdistributionflightlistRequest 初始化AlitripbtripflightdistributionflightlistAPIRequest对象
+func NewAlitripbtripflightdistributionflightlistRequest() *AlitripbtripflightdistributionflightlistAPIRequest {
+	return &AlitripbtripflightdistributionflightlistAPIRequest{
 		Params: model.NewParams(),
 	}
 }
 
 // GetApiMethodName IRequest interface 方法, 获取Api method
-func (r AlitripBtripFlightDistributionFlightlistAPIRequest) GetApiMethodName() string {
+func (r AlitripbtripflightdistributionflightlistAPIRequest) GetApiMethodName() string {
 	return "alitrip.btrip.flight.distribution.flightlist"
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripBtripFlightDistributionFlightlistAPIRequest) GetApiParams(params url.Values) {
+func (r AlitripbtripflightdistributionflightlistAPIRequest) GetApiParams(params url.Values) {
 	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
 }
 
 // GetRawParams IRequest interface 方法, 获取API原始参数
-func (r AlitripBtripFlightDistributionFlightlistAPIRequest) GetRawParams() model.Params {
+func (r AlitripbtripflightdistributionflightlistAPIRequest) GetRawParams() model.Params {
 	return r.Params
 }
 
 // SetParamFlightSearchListRQ is ParamFlightSearchListRQ Setter
 // 机票搜索入参
-func (r *AlitripBtripFlightDistributionFlightlistAPIRequest) SetParamFlightSearchListRQ(_paramFlightSearchListRQ *BtripFlightSearchListRq) error {
+func (r *AlitripbtripflightdistributionflightlistAPIRequest) SetParamFlightSearchListRQ(_paramFlightSearchListRQ *BtripFlightSearchListRq) error {
 	r._paramFlightSearchListRQ = _paramFlightSearchListRQ
 	r.Set("param_flight_search_list_r_q", _paramFlightSearchListRQ)
 	return nil
 }
 
 // GetParamFlightSearchListRQ ParamFlightSearchListRQ Getter
-func (r AlitripBtripFlightDistributionFlightlistAPIRequest) GetParamFlightSearchListRQ() *BtripFlightSearchListRq {
+func (r AlitripbtripflightdistributionflightlistAPIRequest) GetParamFlightSearchListRQ() *BtripFlightSearchListRq {
 	return r._paramFlightSearchListRQ
 }

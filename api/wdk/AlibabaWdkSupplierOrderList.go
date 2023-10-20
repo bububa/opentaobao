@@ -5,12 +5,12 @@ import (
 	"github.com/bububa/opentaobao/model/wdk"
 )
 
-// AlibabaWdkSupplierOrderList 五道口供应商维度正向订单拉取
+// Alibabawdksupplierorderlist 五道口供应商维度正向订单拉取
 // alibaba.wdk.supplier.order.list
 //
 // 五道口供应商维度正向订单拉取
-func AlibabaWdkSupplierOrderList(clt *core.SDKClient, req *wdk.AlibabaWdkSupplierOrderListAPIRequest, session string) (*wdk.AlibabaWdkSupplierOrderListAPIResponse, error) {
-	var resp wdk.AlibabaWdkSupplierOrderListAPIResponse
+func Alibabawdksupplierorderlist(clt *core.SDKClient, req *wdk.AlibabawdksupplierorderlistAPIRequest, session string) (*wdk.AlibabawdksupplierorderlistAPIResponse, error) {
+	var resp wdk.AlibabawdksupplierorderlistAPIResponse
 	err := clt.Post(req, &resp, session)
 	if err != nil {
 		return nil, err
